@@ -22,6 +22,8 @@ REQUIRED_MANUSCRIPT_FILES = (
     "bhsm_v1_technical_note.md",
 )
 
+FULL_MANUSCRIPT = MANUSCRIPT / "BHSM_v1_technical_note_full.md"
+
 FORBIDDEN_PHRASES = (
     "fully proven",
     "complete derivation",
@@ -30,6 +32,22 @@ FORBIDDEN_PHRASES = (
     "h_t theorem proven",
     "dressed branch final",
     "all predictions confirmed",
+)
+
+REQUIRED_FULL_MANUSCRIPT_SECTIONS = (
+    "# The Berger",
+    "# Abstract",
+    "# Introduction",
+    "# Framework",
+    "# Gauge and Field Ledger",
+    "# Flavor Predictions",
+    "# CKM and CP Structure",
+    "# Gauge, Higgs, and Electroweak Screens",
+    "# H_T Gap and Scalar Sector",
+    "# Bare vs Dressed Branches",
+    "# Falsification Ledger",
+    "# Limitations",
+    "# Conclusion",
 )
 
 
@@ -46,15 +64,23 @@ def test_required_manuscript_files_exist():
         assert (MANUSCRIPT / name).is_file()
 
 
+def test_full_manuscript_exists_and_has_required_sections():
+    assert FULL_MANUSCRIPT.is_file()
+    text = _read(FULL_MANUSCRIPT)
+
+    for section in REQUIRED_FULL_MANUSCRIPT_SECTIONS:
+        assert section in text
+
+
 def test_forbidden_overclaiming_phrases_absent_from_paper():
-    text = _paper_text().lower()
+    text = (_paper_text() + "\n" + _read(FULL_MANUSCRIPT)).lower()
 
     for phrase in FORBIDDEN_PHRASES:
         assert phrase not in text
 
 
 def test_frozen_constants_and_branch_distinction_appear():
-    text = _paper_text()
+    text = _paper_text() + "\n" + _read(FULL_MANUSCRIPT)
 
     assert "BHSM = Berger–Hopf Standard Model" in text
     assert "a = alpha^{-1}/(12*pi^2)" in text
@@ -64,9 +90,19 @@ def test_frozen_constants_and_branch_distinction_appear():
     assert "candidate, not final canonical adoption" in text
 
 
+def test_full_manuscript_has_reproducibility_section():
+    text = _read(FULL_MANUSCRIPT)
+
+    assert "# Repository and Reproducibility" in text
+    assert "bhsm-v1.0-freeze" in text
+    assert "03039feb14fb4c988edce8453f6ee5b234797eb2" in text
+    assert "bhsm-v1.1-paper" in text
+    assert "275 passed" in text
+
+
 def test_dressed_branch_matches_frozen_prediction_set():
     frozen = _read(THEORY / "bhsm_v1_frozen_prediction_set.md")
-    branches = _read(MANUSCRIPT / "bare_vs_dressed_branches.md")
+    branches = _read(MANUSCRIPT / "bare_vs_dressed_branches.md") + "\n" + _read(FULL_MANUSCRIPT)
 
     for value in (
         "0.008310500554068288",
