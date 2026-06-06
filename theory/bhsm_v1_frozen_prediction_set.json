@@ -1,0 +1,1387 @@
+{
+  "comparison": {
+    "bare_score": {
+      "PASS": 22
+    },
+    "branches": [
+      "BHSM_BARE_V1",
+      "BHSM_DRESSED_V1_CANDIDATE"
+    ],
+    "dressed_score": {
+      "PASS": 21,
+      "SCHEME_SENSITIVE": 1
+    },
+    "no_retuning": true,
+    "rows": [
+      {
+        "bare": 0.008310500554068288,
+        "changed": true,
+        "dressed": 0.004155250277034144,
+        "quantity": "c/t"
+      },
+      {
+        "bare": 1.2690463017606151e-05,
+        "changed": false,
+        "dressed": 1.2690463017606151e-05,
+        "quantity": "u/t"
+      },
+      {
+        "bare": 0.021933971495439474,
+        "changed": false,
+        "dressed": 0.021933971495439474,
+        "quantity": "s/b"
+      },
+      {
+        "bare": 0.0011165200546001757,
+        "changed": false,
+        "dressed": 0.0011165200546001757,
+        "quantity": "d/b"
+      },
+      {
+        "bare": 0.0035623676140463315,
+        "changed": false,
+        "dressed": 0.0035623676140463315,
+        "quantity": "sin_theta_13"
+      }
+    ],
+    "tolerance_bands": {
+      "charged_lepton_ratios": 0.25,
+      "ckm_angles": 0.1,
+      "ckm_cp_jarlskog": 0.1,
+      "exact_status": "pass_fail",
+      "gauge_couplings": 0.01,
+      "higgs_electroweak_v": 0.01,
+      "higgs_mass_zeroth_order": 0.02,
+      "ht_gap": "binary_pass_fail",
+      "pmns_effective": 0.05,
+      "quark_ratios_otherwise": "SCHEME_SENSITIVE",
+      "quark_ratios_scheme_aware": 0.25,
+      "scalar_decoupling": "binary_scaffold_pass_fail"
+    }
+  },
+  "prediction_sets": [
+    {
+      "falsification_ledger": [
+        {
+          "id": "F1",
+          "implications": [
+            "Geometry branch becomes conditional rather than action-derived."
+          ],
+          "statement": "If alpha-anchored a cannot be derived from the internal action, BHSM geometry weakens.",
+          "status": "OPEN_PROOF_OBLIGATION",
+          "title": "Canonical Geometry Failure"
+        },
+        {
+          "id": "F2",
+          "implications": [
+            "Flavor hierarchy branch weakens or must be revised."
+          ],
+          "statement": "If Omega_f cannot be derived from the twisted Dirac/bundle action, mass hierarchy predictions remain unsupported.",
+          "status": "OPEN_PROOF_OBLIGATION",
+          "title": "Mode-Selection Failure"
+        },
+        {
+          "id": "F3",
+          "implications": [
+            "Quark flavor mapping is constrained by common-scale running comparisons."
+          ],
+          "statement": "If scheme-consistent quark ratios disagree beyond fixed tolerance bands, BHSM flavor mapping fails or must be revised.",
+          "status": "FALSIFIABLE_NUMERICAL_BRANCH",
+          "title": "Common-Scale Quark Failure"
+        },
+        {
+          "id": "F4",
+          "implications": [
+            "CKM internal-rule screen must survive frozen tolerance bands."
+          ],
+          "statement": "If canonical BHSM V_us, V_cb, V_ub, delta, and J fail outside fixed tolerances, BHSM flavor mapping is falsified or constrained.",
+          "status": "FALSIFIABLE_NUMERICAL_BRANCH",
+          "title": "CKM Failure"
+        },
+        {
+          "id": "F5",
+          "implications": [
+            "PMNS rows are effective-extension screens, not minimal-SM outputs."
+          ],
+          "statement": "If neutrino ordering, octant, or phase decisively contradict BHSM effective-extension outputs, the neutrino branch fails.",
+          "status": "EFFECTIVE_EXTENSION_BRANCH",
+          "title": "PMNS Effective Failure"
+        },
+        {
+          "id": "F6",
+          "implications": [
+            "Proxy H_T success must be replaced by the full spectrum."
+          ],
+          "statement": "If the full twisted Dirac/H_T spectrum produces extra light states below 4 pi^2 v, the SM-equivalent BHSM mapping fails.",
+          "status": "OPEN_SPECTRAL_THEOREM",
+          "title": "H_T Gap Failure"
+        },
+        {
+          "id": "F7",
+          "implications": [
+            "Scalar/topographic scaffold must be proven in the full action."
+          ],
+          "statement": "If unscreened light scalar/topographic modes remain, BHSM fails as a Standard-Model-equivalent low-energy theory.",
+          "status": "OPEN_ACTION_LEVEL_PROOF",
+          "title": "Scalar Decoupling Failure"
+        },
+        {
+          "id": "F8",
+          "implications": [
+            "One-loop/electroweak matching screen must survive higher-order matching."
+          ],
+          "statement": "If higher-loop/threshold RG matching moves coupling agreement away from the electroweak scale beyond tolerance, the coupling branch weakens.",
+          "status": "OPEN_RG_MATCHING",
+          "title": "RG Matching Failure"
+        },
+        {
+          "id": "F9",
+          "implications": [
+            "Frozen branches are invalidated by residual-driven retuning."
+          ],
+          "statement": "Any post-freeze adjustment of a, S, modes, or Z_virt based on residuals invalidates the v1.0 prediction set.",
+          "status": "FREEZE_CONSTRAINT",
+          "title": "No-Retuning Failure"
+        }
+      ],
+      "outputs": {
+        "charged_lepton_ratios": {
+          "heavy": 1.0,
+          "light": 0.00029729106456492414,
+          "middle": 0.06007447093260976
+        },
+        "ckm": {
+          "angles": {
+            "sin_theta_12": 0.2256184580048353,
+            "sin_theta_13": 0.0035623676140463315,
+            "sin_theta_23": 0.04386794299087895
+          },
+          "delta": 1.1283791670955126,
+          "jarlskog": 3.1011702945437805e-05,
+          "matrix_magnitudes": [
+            [
+              0.9742095600721029,
+              0.22561702639894465,
+              0.0035623676140463315
+            ],
+            [
+              0.2254664853946855,
+              0.9732628072432431,
+              0.04386766463774175
+            ],
+            [
+              0.008977584746899065,
+              0.04308671994825354,
+              0.9990309992869156
+            ]
+          ],
+          "status": "BHSM_CANONICAL_FLAVOR_SCREEN"
+        },
+        "down_quark_ratios": {
+          "heavy": 1.0,
+          "light": 0.0011165200546001757,
+          "middle": 0.021933971495439474
+        },
+        "gauge_couplings": {
+          "alpha_1": 0.01688686394038963,
+          "alpha_2": 0.03377372788077926,
+          "alpha_3": 0.1182080475827274,
+          "alpha_em_inv_mew": 128.30485721416164,
+          "sin2_theta_w": 0.23076923076923078
+        },
+        "higgs_electroweak": {
+          "M_lift": 9718.396740299762,
+          "m_H_approx_v_over_2": 123.08493260412614,
+          "v_gev": 246.16986520825228
+        },
+        "ht_gap_status": {
+          "basis_size": 54,
+          "first_complement_eigenvalue": 1.4630400252994733,
+          "first_ht_complement_gap": 19586.72266333732,
+          "lambda2": 0.07957747154594767,
+          "limitations": "Level 2 finite-basis matrix scaffold only; full analytic H_T spectrum remains open.",
+          "margin": 1.4628370793107024,
+          "model_level": "DIRAC_PROXY_LEVEL_2",
+          "passes": true,
+          "status": "PROXY_AUDIT",
+          "theorem_complete": false,
+          "zero_mode_count": 3
+        },
+        "pmns_effective": {
+          "delta_m2_21_over_delta_m2_31": 0.029189410277135206,
+          "sin2_theta_12": 0.3114412756254819,
+          "sin2_theta_13": 0.021892057707851405,
+          "sin2_theta_23": 0.5437841154157028
+        },
+        "scalar_decoupling_status": {
+          "classifications": [
+            {
+              "conditional": false,
+              "coupling_strength": 1.0,
+              "coupling_type": "higgs_projection",
+              "eigenvalue": 125.1,
+              "gap": 9718.396740299762,
+              "is_higgs_projection": true,
+              "is_light": true,
+              "mode_id": "phi_0",
+              "passes": true,
+              "sector": "higgs",
+              "status": "light_higgs_projection"
+            },
+            {
+              "conditional": false,
+              "coupling_strength": 0.5,
+              "coupling_type": "heavy_orthogonal",
+              "eigenvalue": 10690.23641432974,
+              "gap": 9718.396740299762,
+              "is_higgs_projection": false,
+              "is_light": false,
+              "mode_id": "phi_1",
+              "passes": true,
+              "sector": "orthogonal",
+              "status": "heavy_orthogonal"
+            },
+            {
+              "conditional": true,
+              "coupling_strength": 0.3333333333333333,
+              "coupling_type": "derivative_filtered",
+              "eigenvalue": 2429.5991850749406,
+              "gap": 9718.396740299762,
+              "is_higgs_projection": false,
+              "is_light": true,
+              "mode_id": "phi_2",
+              "passes": true,
+              "sector": "orthogonal",
+              "status": "conditional_derivative_filtered"
+            },
+            {
+              "conditional": true,
+              "coupling_strength": 0.25,
+              "coupling_type": "curvature_filtered",
+              "eigenvalue": 1943.6793480599524,
+              "gap": 9718.396740299762,
+              "is_higgs_projection": false,
+              "is_light": true,
+              "mode_id": "phi_3",
+              "passes": true,
+              "sector": "orthogonal",
+              "status": "conditional_curvature_filtered"
+            },
+            {
+              "conditional": true,
+              "coupling_strength": 0.2,
+              "coupling_type": "screened",
+              "eigenvalue": 1619.7327900499604,
+              "gap": 9718.396740299762,
+              "is_higgs_projection": false,
+              "is_light": true,
+              "mode_id": "phi_4",
+              "passes": true,
+              "sector": "orthogonal",
+              "status": "conditional_screened"
+            },
+            {
+              "conditional": false,
+              "coupling_strength": 0.16666666666666666,
+              "coupling_type": "heavy_orthogonal",
+              "eigenvalue": 14577.595110449643,
+              "gap": 9718.396740299762,
+              "is_higgs_projection": false,
+              "is_light": false,
+              "mode_id": "phi_5",
+              "passes": true,
+              "sector": "orthogonal",
+              "status": "heavy_orthogonal"
+            }
+          ],
+          "conditional_modes": [
+            {
+              "conditional": true,
+              "coupling_strength": 0.3333333333333333,
+              "coupling_type": "derivative_filtered",
+              "eigenvalue": 2429.5991850749406,
+              "gap": 9718.396740299762,
+              "is_higgs_projection": false,
+              "is_light": true,
+              "mode_id": "phi_2",
+              "passes": true,
+              "sector": "orthogonal",
+              "status": "conditional_derivative_filtered"
+            },
+            {
+              "conditional": true,
+              "coupling_strength": 0.25,
+              "coupling_type": "curvature_filtered",
+              "eigenvalue": 1943.6793480599524,
+              "gap": 9718.396740299762,
+              "is_higgs_projection": false,
+              "is_light": true,
+              "mode_id": "phi_3",
+              "passes": true,
+              "sector": "orthogonal",
+              "status": "conditional_curvature_filtered"
+            },
+            {
+              "conditional": true,
+              "coupling_strength": 0.2,
+              "coupling_type": "screened",
+              "eigenvalue": 1619.7327900499604,
+              "gap": 9718.396740299762,
+              "is_higgs_projection": false,
+              "is_light": true,
+              "mode_id": "phi_4",
+              "passes": true,
+              "sector": "orthogonal",
+              "status": "conditional_screened"
+            }
+          ],
+          "dangerous_light_modes": [],
+          "exactly_one_light_higgs_projection": true,
+          "gap": 9718.396740299762,
+          "light_higgs_projection_count": 1,
+          "limitations": "Full action-level scalar/topographic decoupling remains OPEN; filtered and screened modes are conditional.",
+          "mode_count": 6,
+          "passes": true,
+          "status": "FINITE_BASIS_SCAFFOLD",
+          "theorem_complete": false
+        },
+        "up_quark_ratios": {
+          "heavy": 1.0,
+          "light": 1.2690463017606151e-05,
+          "middle": 0.008310500554068288
+        }
+      },
+      "score_summary": {
+        "branch": "BHSM_BARE_V1",
+        "falsification_criteria": [
+          {
+            "id": "F1",
+            "implications": [
+              "Geometry branch becomes conditional rather than action-derived."
+            ],
+            "statement": "If alpha-anchored a cannot be derived from the internal action, BHSM geometry weakens.",
+            "status": "OPEN_PROOF_OBLIGATION",
+            "title": "Canonical Geometry Failure"
+          },
+          {
+            "id": "F2",
+            "implications": [
+              "Flavor hierarchy branch weakens or must be revised."
+            ],
+            "statement": "If Omega_f cannot be derived from the twisted Dirac/bundle action, mass hierarchy predictions remain unsupported.",
+            "status": "OPEN_PROOF_OBLIGATION",
+            "title": "Mode-Selection Failure"
+          },
+          {
+            "id": "F3",
+            "implications": [
+              "Quark flavor mapping is constrained by common-scale running comparisons."
+            ],
+            "statement": "If scheme-consistent quark ratios disagree beyond fixed tolerance bands, BHSM flavor mapping fails or must be revised.",
+            "status": "FALSIFIABLE_NUMERICAL_BRANCH",
+            "title": "Common-Scale Quark Failure"
+          },
+          {
+            "id": "F4",
+            "implications": [
+              "CKM internal-rule screen must survive frozen tolerance bands."
+            ],
+            "statement": "If canonical BHSM V_us, V_cb, V_ub, delta, and J fail outside fixed tolerances, BHSM flavor mapping is falsified or constrained.",
+            "status": "FALSIFIABLE_NUMERICAL_BRANCH",
+            "title": "CKM Failure"
+          },
+          {
+            "id": "F5",
+            "implications": [
+              "PMNS rows are effective-extension screens, not minimal-SM outputs."
+            ],
+            "statement": "If neutrino ordering, octant, or phase decisively contradict BHSM effective-extension outputs, the neutrino branch fails.",
+            "status": "EFFECTIVE_EXTENSION_BRANCH",
+            "title": "PMNS Effective Failure"
+          },
+          {
+            "id": "F6",
+            "implications": [
+              "Proxy H_T success must be replaced by the full spectrum."
+            ],
+            "statement": "If the full twisted Dirac/H_T spectrum produces extra light states below 4 pi^2 v, the SM-equivalent BHSM mapping fails.",
+            "status": "OPEN_SPECTRAL_THEOREM",
+            "title": "H_T Gap Failure"
+          },
+          {
+            "id": "F7",
+            "implications": [
+              "Scalar/topographic scaffold must be proven in the full action."
+            ],
+            "statement": "If unscreened light scalar/topographic modes remain, BHSM fails as a Standard-Model-equivalent low-energy theory.",
+            "status": "OPEN_ACTION_LEVEL_PROOF",
+            "title": "Scalar Decoupling Failure"
+          },
+          {
+            "id": "F8",
+            "implications": [
+              "One-loop/electroweak matching screen must survive higher-order matching."
+            ],
+            "statement": "If higher-loop/threshold RG matching moves coupling agreement away from the electroweak scale beyond tolerance, the coupling branch weakens.",
+            "status": "OPEN_RG_MATCHING",
+            "title": "RG Matching Failure"
+          },
+          {
+            "id": "F9",
+            "implications": [
+              "Frozen branches are invalidated by residual-driven retuning."
+            ],
+            "statement": "Any post-freeze adjustment of a, S, modes, or Z_virt based on residuals invalidates the v1.0 prediction set.",
+            "status": "FREEZE_CONSTRAINT",
+            "title": "No-Retuning Failure"
+          }
+        ],
+        "rows": [
+          {
+            "id": "charged_leptons.middle",
+            "passes": true,
+            "predicted": 0.06007447093260976,
+            "reference": 0.05946353426831603,
+            "relative_error": 0.010274139803682273,
+            "status": "PASS",
+            "tolerance": 0.25
+          },
+          {
+            "id": "charged_leptons.light",
+            "passes": true,
+            "predicted": 0.00029729106456492414,
+            "reference": 0.0002875853753250115,
+            "relative_error": 0.03374889710210006,
+            "status": "PASS",
+            "tolerance": 0.25
+          },
+          {
+            "id": "up_quarks.middle",
+            "passes": true,
+            "predicted": 0.008310500554068288,
+            "reference": 0.007354218541895883,
+            "relative_error": 0.13003176431657681,
+            "status": "PASS",
+            "tolerance": 0.25
+          },
+          {
+            "id": "up_quarks.light",
+            "passes": true,
+            "predicted": 1.2690463017606151e-05,
+            "reference": 1.2507962244484336e-05,
+            "relative_error": 0.014590767828891764,
+            "status": "PASS",
+            "tolerance": 0.25
+          },
+          {
+            "id": "down_quarks.middle",
+            "passes": true,
+            "predicted": 0.021933971495439474,
+            "reference": 0.022344497607655504,
+            "relative_error": 0.018372581895749498,
+            "status": "PASS",
+            "tolerance": 0.25
+          },
+          {
+            "id": "down_quarks.light",
+            "passes": true,
+            "predicted": 0.0011165200546001757,
+            "reference": 0.0011172248803827751,
+            "relative_error": 0.0006308718996286248,
+            "status": "PASS",
+            "tolerance": 0.25
+          },
+          {
+            "id": "ckm.sin_theta_12",
+            "passes": true,
+            "predicted": 0.2256184580048353,
+            "reference": 0.22497,
+            "relative_error": 0.0028824198996990243,
+            "status": "PASS",
+            "tolerance": 0.1
+          },
+          {
+            "id": "ckm.sin_theta_23",
+            "passes": true,
+            "predicted": 0.04386794299087895,
+            "reference": 0.04108,
+            "relative_error": 0.06786618770396666,
+            "status": "PASS",
+            "tolerance": 0.1
+          },
+          {
+            "id": "ckm.sin_theta_13",
+            "passes": true,
+            "predicted": 0.0035623676140463315,
+            "reference": 0.00382,
+            "relative_error": 0.06744303297216456,
+            "status": "PASS",
+            "tolerance": 0.1
+          },
+          {
+            "id": "ckm.delta_cp",
+            "passes": true,
+            "predicted": 1.1283791670955126,
+            "reference": 1.196,
+            "relative_error": 0.05653915794689582,
+            "status": "PASS",
+            "tolerance": 0.1
+          },
+          {
+            "id": "ckm.jarlskog",
+            "passes": true,
+            "predicted": 3.1011702945437805e-05,
+            "reference": 3e-05,
+            "relative_error": 0.03372343151459347,
+            "status": "PASS",
+            "tolerance": 0.1
+          },
+          {
+            "id": "pmns.sin2_theta_12",
+            "passes": true,
+            "predicted": 0.3114412756254819,
+            "reference": 0.307,
+            "relative_error": 0.01446669584847528,
+            "status": "PASS",
+            "tolerance": 0.05
+          },
+          {
+            "id": "pmns.sin2_theta_13",
+            "passes": true,
+            "predicted": 0.021892057707851405,
+            "reference": 0.0222,
+            "relative_error": 0.013871274421107907,
+            "status": "PASS",
+            "tolerance": 0.05
+          },
+          {
+            "id": "pmns.sin2_theta_23",
+            "passes": true,
+            "predicted": 0.5437841154157028,
+            "reference": 0.558,
+            "relative_error": 0.02547649567078357,
+            "status": "PASS",
+            "tolerance": 0.05
+          },
+          {
+            "id": "pmns.delta_m2_21_over_delta_m2_31",
+            "passes": true,
+            "predicted": 0.029189410277135206,
+            "reference": 0.02947953913388955,
+            "relative_error": 0.009841702593675023,
+            "status": "PASS",
+            "tolerance": 0.05
+          },
+          {
+            "id": "gauge.alpha_3",
+            "passes": true,
+            "predicted": 0.1182080475827274,
+            "reference": 0.1179,
+            "relative_error": 0.0026127869612162834,
+            "status": "PASS",
+            "tolerance": 0.01
+          },
+          {
+            "id": "gauge.sin2_theta_w",
+            "passes": true,
+            "predicted": 0.23076923076923078,
+            "reference": 0.23122,
+            "relative_error": 0.0019495252606574985,
+            "status": "PASS",
+            "tolerance": 0.01
+          },
+          {
+            "id": "gauge.alpha_em_inv_mew",
+            "passes": true,
+            "predicted": 128.30485721416164,
+            "reference": 127.95,
+            "relative_error": 0.0027734053471015273,
+            "status": "PASS",
+            "tolerance": 0.01
+          },
+          {
+            "id": "higgs.v",
+            "passes": true,
+            "predicted": 246.16986520825228,
+            "reference": 246.21965,
+            "relative_error": 0.00020219666362016953,
+            "status": "PASS",
+            "tolerance": 0.01
+          },
+          {
+            "id": "higgs.m_h_zeroth",
+            "passes": true,
+            "predicted": 123.08493260412614,
+            "reference": 125.1,
+            "relative_error": 0.01610765304455521,
+            "status": "PASS",
+            "tolerance": 0.02
+          },
+          {
+            "id": "ht_gap.passes",
+            "passes": true,
+            "predicted": true,
+            "reference": true,
+            "relative_error": null,
+            "status": "PASS",
+            "tolerance": "binary"
+          },
+          {
+            "id": "scalar_decoupling.passes",
+            "passes": true,
+            "predicted": true,
+            "reference": true,
+            "relative_error": null,
+            "status": "PASS",
+            "tolerance": "binary"
+          }
+        ],
+        "status_counts": {
+          "PASS": 22
+        },
+        "tolerances_declared_before_scoring": true
+      },
+      "tolerance_bands": {
+        "charged_lepton_ratios": 0.25,
+        "ckm_angles": 0.1,
+        "ckm_cp_jarlskog": 0.1,
+        "exact_status": "pass_fail",
+        "gauge_couplings": 0.01,
+        "higgs_electroweak_v": 0.01,
+        "higgs_mass_zeroth_order": 0.02,
+        "ht_gap": "binary_pass_fail",
+        "pmns_effective": 0.05,
+        "quark_ratios_otherwise": "SCHEME_SENSITIVE",
+        "quark_ratios_scheme_aware": 0.25,
+        "scalar_decoupling": "binary_scaffold_pass_fail"
+      },
+      "version": {
+        "branch": "BHSM_BARE_V1",
+        "dressing_rules": [],
+        "geometry_a": 1.157054135733433,
+        "mode_ledger": {
+          "charged_leptons": {
+            "heavy": [
+              0,
+              0
+            ],
+            "light": [
+              9,
+              3
+            ],
+            "middle": [
+              5,
+              2
+            ]
+          },
+          "down_quarks": {
+            "heavy": [
+              0,
+              0
+            ],
+            "light": [
+              8,
+              2
+            ],
+            "middle": [
+              6,
+              3
+            ]
+          },
+          "up_quarks": {
+            "heavy": [
+              0,
+              0
+            ],
+            "light": [
+              10,
+              1
+            ],
+            "middle": [
+              6,
+              0
+            ]
+          }
+        },
+        "name": "BHSM v1.0",
+        "notes": [
+          "Frozen no-retuning prediction set.",
+          "Changing a, S, modes, or Z_virt based on residuals invalidates v1.0."
+        ],
+        "overlap_s": 0.07957747154594767,
+        "status": "FROZEN_BARE_CANONICAL"
+      }
+    },
+    {
+      "falsification_ledger": [
+        {
+          "id": "F1",
+          "implications": [
+            "Geometry branch becomes conditional rather than action-derived."
+          ],
+          "statement": "If alpha-anchored a cannot be derived from the internal action, BHSM geometry weakens.",
+          "status": "OPEN_PROOF_OBLIGATION",
+          "title": "Canonical Geometry Failure"
+        },
+        {
+          "id": "F2",
+          "implications": [
+            "Flavor hierarchy branch weakens or must be revised."
+          ],
+          "statement": "If Omega_f cannot be derived from the twisted Dirac/bundle action, mass hierarchy predictions remain unsupported.",
+          "status": "OPEN_PROOF_OBLIGATION",
+          "title": "Mode-Selection Failure"
+        },
+        {
+          "id": "F3",
+          "implications": [
+            "Quark flavor mapping is constrained by common-scale running comparisons."
+          ],
+          "statement": "If scheme-consistent quark ratios disagree beyond fixed tolerance bands, BHSM flavor mapping fails or must be revised.",
+          "status": "FALSIFIABLE_NUMERICAL_BRANCH",
+          "title": "Common-Scale Quark Failure"
+        },
+        {
+          "id": "F4",
+          "implications": [
+            "CKM internal-rule screen must survive frozen tolerance bands."
+          ],
+          "statement": "If canonical BHSM V_us, V_cb, V_ub, delta, and J fail outside fixed tolerances, BHSM flavor mapping is falsified or constrained.",
+          "status": "FALSIFIABLE_NUMERICAL_BRANCH",
+          "title": "CKM Failure"
+        },
+        {
+          "id": "F5",
+          "implications": [
+            "PMNS rows are effective-extension screens, not minimal-SM outputs."
+          ],
+          "statement": "If neutrino ordering, octant, or phase decisively contradict BHSM effective-extension outputs, the neutrino branch fails.",
+          "status": "EFFECTIVE_EXTENSION_BRANCH",
+          "title": "PMNS Effective Failure"
+        },
+        {
+          "id": "F6",
+          "implications": [
+            "Proxy H_T success must be replaced by the full spectrum."
+          ],
+          "statement": "If the full twisted Dirac/H_T spectrum produces extra light states below 4 pi^2 v, the SM-equivalent BHSM mapping fails.",
+          "status": "OPEN_SPECTRAL_THEOREM",
+          "title": "H_T Gap Failure"
+        },
+        {
+          "id": "F7",
+          "implications": [
+            "Scalar/topographic scaffold must be proven in the full action."
+          ],
+          "statement": "If unscreened light scalar/topographic modes remain, BHSM fails as a Standard-Model-equivalent low-energy theory.",
+          "status": "OPEN_ACTION_LEVEL_PROOF",
+          "title": "Scalar Decoupling Failure"
+        },
+        {
+          "id": "F8",
+          "implications": [
+            "One-loop/electroweak matching screen must survive higher-order matching."
+          ],
+          "statement": "If higher-loop/threshold RG matching moves coupling agreement away from the electroweak scale beyond tolerance, the coupling branch weakens.",
+          "status": "OPEN_RG_MATCHING",
+          "title": "RG Matching Failure"
+        },
+        {
+          "id": "F9",
+          "implications": [
+            "Frozen branches are invalidated by residual-driven retuning."
+          ],
+          "statement": "Any post-freeze adjustment of a, S, modes, or Z_virt based on residuals invalidates the v1.0 prediction set.",
+          "status": "FREEZE_CONSTRAINT",
+          "title": "No-Retuning Failure"
+        }
+      ],
+      "outputs": {
+        "charged_lepton_ratios": {
+          "heavy": 1.0,
+          "light": 0.00029729106456492414,
+          "middle": 0.06007447093260976
+        },
+        "ckm": {
+          "angles": {
+            "sin_theta_12": 0.2256184580048353,
+            "sin_theta_13": 0.0035623676140463315,
+            "sin_theta_23": 0.04386794299087895
+          },
+          "delta": 1.1283791670955126,
+          "jarlskog": 3.1011702945437805e-05,
+          "matrix_magnitudes": [
+            [
+              0.9742095600721029,
+              0.22561702639894465,
+              0.0035623676140463315
+            ],
+            [
+              0.2254664853946855,
+              0.9732628072432431,
+              0.04386766463774175
+            ],
+            [
+              0.008977584746899065,
+              0.04308671994825354,
+              0.9990309992869156
+            ]
+          ],
+          "status": "BHSM_CANONICAL_FLAVOR_SCREEN"
+        },
+        "down_quark_ratios": {
+          "heavy": 1.0,
+          "light": 0.0011165200546001757,
+          "middle": 0.021933971495439474
+        },
+        "gauge_couplings": {
+          "alpha_1": 0.01688686394038963,
+          "alpha_2": 0.03377372788077926,
+          "alpha_3": 0.1182080475827274,
+          "alpha_em_inv_mew": 128.30485721416164,
+          "sin2_theta_w": 0.23076923076923078
+        },
+        "higgs_electroweak": {
+          "M_lift": 9718.396740299762,
+          "m_H_approx_v_over_2": 123.08493260412614,
+          "v_gev": 246.16986520825228
+        },
+        "ht_gap_status": {
+          "basis_size": 54,
+          "first_complement_eigenvalue": 1.4630400252994733,
+          "first_ht_complement_gap": 19586.72266333732,
+          "lambda2": 0.07957747154594767,
+          "limitations": "Level 2 finite-basis matrix scaffold only; full analytic H_T spectrum remains open.",
+          "margin": 1.4628370793107024,
+          "model_level": "DIRAC_PROXY_LEVEL_2",
+          "passes": true,
+          "status": "PROXY_AUDIT",
+          "theorem_complete": false,
+          "zero_mode_count": 3
+        },
+        "pmns_effective": {
+          "delta_m2_21_over_delta_m2_31": 0.029189410277135206,
+          "sin2_theta_12": 0.3114412756254819,
+          "sin2_theta_13": 0.021892057707851405,
+          "sin2_theta_23": 0.5437841154157028
+        },
+        "scalar_decoupling_status": {
+          "classifications": [
+            {
+              "conditional": false,
+              "coupling_strength": 1.0,
+              "coupling_type": "higgs_projection",
+              "eigenvalue": 125.1,
+              "gap": 9718.396740299762,
+              "is_higgs_projection": true,
+              "is_light": true,
+              "mode_id": "phi_0",
+              "passes": true,
+              "sector": "higgs",
+              "status": "light_higgs_projection"
+            },
+            {
+              "conditional": false,
+              "coupling_strength": 0.5,
+              "coupling_type": "heavy_orthogonal",
+              "eigenvalue": 10690.23641432974,
+              "gap": 9718.396740299762,
+              "is_higgs_projection": false,
+              "is_light": false,
+              "mode_id": "phi_1",
+              "passes": true,
+              "sector": "orthogonal",
+              "status": "heavy_orthogonal"
+            },
+            {
+              "conditional": true,
+              "coupling_strength": 0.3333333333333333,
+              "coupling_type": "derivative_filtered",
+              "eigenvalue": 2429.5991850749406,
+              "gap": 9718.396740299762,
+              "is_higgs_projection": false,
+              "is_light": true,
+              "mode_id": "phi_2",
+              "passes": true,
+              "sector": "orthogonal",
+              "status": "conditional_derivative_filtered"
+            },
+            {
+              "conditional": true,
+              "coupling_strength": 0.25,
+              "coupling_type": "curvature_filtered",
+              "eigenvalue": 1943.6793480599524,
+              "gap": 9718.396740299762,
+              "is_higgs_projection": false,
+              "is_light": true,
+              "mode_id": "phi_3",
+              "passes": true,
+              "sector": "orthogonal",
+              "status": "conditional_curvature_filtered"
+            },
+            {
+              "conditional": true,
+              "coupling_strength": 0.2,
+              "coupling_type": "screened",
+              "eigenvalue": 1619.7327900499604,
+              "gap": 9718.396740299762,
+              "is_higgs_projection": false,
+              "is_light": true,
+              "mode_id": "phi_4",
+              "passes": true,
+              "sector": "orthogonal",
+              "status": "conditional_screened"
+            },
+            {
+              "conditional": false,
+              "coupling_strength": 0.16666666666666666,
+              "coupling_type": "heavy_orthogonal",
+              "eigenvalue": 14577.595110449643,
+              "gap": 9718.396740299762,
+              "is_higgs_projection": false,
+              "is_light": false,
+              "mode_id": "phi_5",
+              "passes": true,
+              "sector": "orthogonal",
+              "status": "heavy_orthogonal"
+            }
+          ],
+          "conditional_modes": [
+            {
+              "conditional": true,
+              "coupling_strength": 0.3333333333333333,
+              "coupling_type": "derivative_filtered",
+              "eigenvalue": 2429.5991850749406,
+              "gap": 9718.396740299762,
+              "is_higgs_projection": false,
+              "is_light": true,
+              "mode_id": "phi_2",
+              "passes": true,
+              "sector": "orthogonal",
+              "status": "conditional_derivative_filtered"
+            },
+            {
+              "conditional": true,
+              "coupling_strength": 0.25,
+              "coupling_type": "curvature_filtered",
+              "eigenvalue": 1943.6793480599524,
+              "gap": 9718.396740299762,
+              "is_higgs_projection": false,
+              "is_light": true,
+              "mode_id": "phi_3",
+              "passes": true,
+              "sector": "orthogonal",
+              "status": "conditional_curvature_filtered"
+            },
+            {
+              "conditional": true,
+              "coupling_strength": 0.2,
+              "coupling_type": "screened",
+              "eigenvalue": 1619.7327900499604,
+              "gap": 9718.396740299762,
+              "is_higgs_projection": false,
+              "is_light": true,
+              "mode_id": "phi_4",
+              "passes": true,
+              "sector": "orthogonal",
+              "status": "conditional_screened"
+            }
+          ],
+          "dangerous_light_modes": [],
+          "exactly_one_light_higgs_projection": true,
+          "gap": 9718.396740299762,
+          "light_higgs_projection_count": 1,
+          "limitations": "Full action-level scalar/topographic decoupling remains OPEN; filtered and screened modes are conditional.",
+          "mode_count": 6,
+          "passes": true,
+          "status": "FINITE_BASIS_SCAFFOLD",
+          "theorem_complete": false
+        },
+        "up_quark_ratios": {
+          "heavy": 1.0,
+          "light": 1.2690463017606151e-05,
+          "middle": 0.004155250277034144
+        }
+      },
+      "score_summary": {
+        "branch": "BHSM_DRESSED_V1_CANDIDATE",
+        "falsification_criteria": [
+          {
+            "id": "F1",
+            "implications": [
+              "Geometry branch becomes conditional rather than action-derived."
+            ],
+            "statement": "If alpha-anchored a cannot be derived from the internal action, BHSM geometry weakens.",
+            "status": "OPEN_PROOF_OBLIGATION",
+            "title": "Canonical Geometry Failure"
+          },
+          {
+            "id": "F2",
+            "implications": [
+              "Flavor hierarchy branch weakens or must be revised."
+            ],
+            "statement": "If Omega_f cannot be derived from the twisted Dirac/bundle action, mass hierarchy predictions remain unsupported.",
+            "status": "OPEN_PROOF_OBLIGATION",
+            "title": "Mode-Selection Failure"
+          },
+          {
+            "id": "F3",
+            "implications": [
+              "Quark flavor mapping is constrained by common-scale running comparisons."
+            ],
+            "statement": "If scheme-consistent quark ratios disagree beyond fixed tolerance bands, BHSM flavor mapping fails or must be revised.",
+            "status": "FALSIFIABLE_NUMERICAL_BRANCH",
+            "title": "Common-Scale Quark Failure"
+          },
+          {
+            "id": "F4",
+            "implications": [
+              "CKM internal-rule screen must survive frozen tolerance bands."
+            ],
+            "statement": "If canonical BHSM V_us, V_cb, V_ub, delta, and J fail outside fixed tolerances, BHSM flavor mapping is falsified or constrained.",
+            "status": "FALSIFIABLE_NUMERICAL_BRANCH",
+            "title": "CKM Failure"
+          },
+          {
+            "id": "F5",
+            "implications": [
+              "PMNS rows are effective-extension screens, not minimal-SM outputs."
+            ],
+            "statement": "If neutrino ordering, octant, or phase decisively contradict BHSM effective-extension outputs, the neutrino branch fails.",
+            "status": "EFFECTIVE_EXTENSION_BRANCH",
+            "title": "PMNS Effective Failure"
+          },
+          {
+            "id": "F6",
+            "implications": [
+              "Proxy H_T success must be replaced by the full spectrum."
+            ],
+            "statement": "If the full twisted Dirac/H_T spectrum produces extra light states below 4 pi^2 v, the SM-equivalent BHSM mapping fails.",
+            "status": "OPEN_SPECTRAL_THEOREM",
+            "title": "H_T Gap Failure"
+          },
+          {
+            "id": "F7",
+            "implications": [
+              "Scalar/topographic scaffold must be proven in the full action."
+            ],
+            "statement": "If unscreened light scalar/topographic modes remain, BHSM fails as a Standard-Model-equivalent low-energy theory.",
+            "status": "OPEN_ACTION_LEVEL_PROOF",
+            "title": "Scalar Decoupling Failure"
+          },
+          {
+            "id": "F8",
+            "implications": [
+              "One-loop/electroweak matching screen must survive higher-order matching."
+            ],
+            "statement": "If higher-loop/threshold RG matching moves coupling agreement away from the electroweak scale beyond tolerance, the coupling branch weakens.",
+            "status": "OPEN_RG_MATCHING",
+            "title": "RG Matching Failure"
+          },
+          {
+            "id": "F9",
+            "implications": [
+              "Frozen branches are invalidated by residual-driven retuning."
+            ],
+            "statement": "Any post-freeze adjustment of a, S, modes, or Z_virt based on residuals invalidates the v1.0 prediction set.",
+            "status": "FREEZE_CONSTRAINT",
+            "title": "No-Retuning Failure"
+          }
+        ],
+        "rows": [
+          {
+            "id": "charged_leptons.middle",
+            "passes": true,
+            "predicted": 0.06007447093260976,
+            "reference": 0.05946353426831603,
+            "relative_error": 0.010274139803682273,
+            "status": "PASS",
+            "tolerance": 0.25
+          },
+          {
+            "id": "charged_leptons.light",
+            "passes": true,
+            "predicted": 0.00029729106456492414,
+            "reference": 0.0002875853753250115,
+            "relative_error": 0.03374889710210006,
+            "status": "PASS",
+            "tolerance": 0.25
+          },
+          {
+            "id": "up_quarks.middle",
+            "passes": false,
+            "predicted": 0.004155250277034144,
+            "reference": 0.007354218541895883,
+            "relative_error": 0.4349841178417116,
+            "status": "SCHEME_SENSITIVE",
+            "tolerance": 0.25
+          },
+          {
+            "id": "up_quarks.light",
+            "passes": true,
+            "predicted": 1.2690463017606151e-05,
+            "reference": 1.2507962244484336e-05,
+            "relative_error": 0.014590767828891764,
+            "status": "PASS",
+            "tolerance": 0.25
+          },
+          {
+            "id": "down_quarks.middle",
+            "passes": true,
+            "predicted": 0.021933971495439474,
+            "reference": 0.022344497607655504,
+            "relative_error": 0.018372581895749498,
+            "status": "PASS",
+            "tolerance": 0.25
+          },
+          {
+            "id": "down_quarks.light",
+            "passes": true,
+            "predicted": 0.0011165200546001757,
+            "reference": 0.0011172248803827751,
+            "relative_error": 0.0006308718996286248,
+            "status": "PASS",
+            "tolerance": 0.25
+          },
+          {
+            "id": "ckm.sin_theta_12",
+            "passes": true,
+            "predicted": 0.2256184580048353,
+            "reference": 0.22497,
+            "relative_error": 0.0028824198996990243,
+            "status": "PASS",
+            "tolerance": 0.1
+          },
+          {
+            "id": "ckm.sin_theta_23",
+            "passes": true,
+            "predicted": 0.04386794299087895,
+            "reference": 0.04108,
+            "relative_error": 0.06786618770396666,
+            "status": "PASS",
+            "tolerance": 0.1
+          },
+          {
+            "id": "ckm.sin_theta_13",
+            "passes": true,
+            "predicted": 0.0035623676140463315,
+            "reference": 0.00382,
+            "relative_error": 0.06744303297216456,
+            "status": "PASS",
+            "tolerance": 0.1
+          },
+          {
+            "id": "ckm.delta_cp",
+            "passes": true,
+            "predicted": 1.1283791670955126,
+            "reference": 1.196,
+            "relative_error": 0.05653915794689582,
+            "status": "PASS",
+            "tolerance": 0.1
+          },
+          {
+            "id": "ckm.jarlskog",
+            "passes": true,
+            "predicted": 3.1011702945437805e-05,
+            "reference": 3e-05,
+            "relative_error": 0.03372343151459347,
+            "status": "PASS",
+            "tolerance": 0.1
+          },
+          {
+            "id": "pmns.sin2_theta_12",
+            "passes": true,
+            "predicted": 0.3114412756254819,
+            "reference": 0.307,
+            "relative_error": 0.01446669584847528,
+            "status": "PASS",
+            "tolerance": 0.05
+          },
+          {
+            "id": "pmns.sin2_theta_13",
+            "passes": true,
+            "predicted": 0.021892057707851405,
+            "reference": 0.0222,
+            "relative_error": 0.013871274421107907,
+            "status": "PASS",
+            "tolerance": 0.05
+          },
+          {
+            "id": "pmns.sin2_theta_23",
+            "passes": true,
+            "predicted": 0.5437841154157028,
+            "reference": 0.558,
+            "relative_error": 0.02547649567078357,
+            "status": "PASS",
+            "tolerance": 0.05
+          },
+          {
+            "id": "pmns.delta_m2_21_over_delta_m2_31",
+            "passes": true,
+            "predicted": 0.029189410277135206,
+            "reference": 0.02947953913388955,
+            "relative_error": 0.009841702593675023,
+            "status": "PASS",
+            "tolerance": 0.05
+          },
+          {
+            "id": "gauge.alpha_3",
+            "passes": true,
+            "predicted": 0.1182080475827274,
+            "reference": 0.1179,
+            "relative_error": 0.0026127869612162834,
+            "status": "PASS",
+            "tolerance": 0.01
+          },
+          {
+            "id": "gauge.sin2_theta_w",
+            "passes": true,
+            "predicted": 0.23076923076923078,
+            "reference": 0.23122,
+            "relative_error": 0.0019495252606574985,
+            "status": "PASS",
+            "tolerance": 0.01
+          },
+          {
+            "id": "gauge.alpha_em_inv_mew",
+            "passes": true,
+            "predicted": 128.30485721416164,
+            "reference": 127.95,
+            "relative_error": 0.0027734053471015273,
+            "status": "PASS",
+            "tolerance": 0.01
+          },
+          {
+            "id": "higgs.v",
+            "passes": true,
+            "predicted": 246.16986520825228,
+            "reference": 246.21965,
+            "relative_error": 0.00020219666362016953,
+            "status": "PASS",
+            "tolerance": 0.01
+          },
+          {
+            "id": "higgs.m_h_zeroth",
+            "passes": true,
+            "predicted": 123.08493260412614,
+            "reference": 125.1,
+            "relative_error": 0.01610765304455521,
+            "status": "PASS",
+            "tolerance": 0.02
+          },
+          {
+            "id": "ht_gap.passes",
+            "passes": true,
+            "predicted": true,
+            "reference": true,
+            "relative_error": null,
+            "status": "PASS",
+            "tolerance": "binary"
+          },
+          {
+            "id": "scalar_decoupling.passes",
+            "passes": true,
+            "predicted": true,
+            "reference": true,
+            "relative_error": null,
+            "status": "PASS",
+            "tolerance": "binary"
+          }
+        ],
+        "status_counts": {
+          "PASS": 21,
+          "SCHEME_SENSITIVE": 1
+        },
+        "tolerances_declared_before_scoring": true
+      },
+      "tolerance_bands": {
+        "charged_lepton_ratios": 0.25,
+        "ckm_angles": 0.1,
+        "ckm_cp_jarlskog": 0.1,
+        "exact_status": "pass_fail",
+        "gauge_couplings": 0.01,
+        "higgs_electroweak_v": 0.01,
+        "higgs_mass_zeroth_order": 0.02,
+        "ht_gap": "binary_pass_fail",
+        "pmns_effective": 0.05,
+        "quark_ratios_otherwise": "SCHEME_SENSITIVE",
+        "quark_ratios_scheme_aware": 0.25,
+        "scalar_decoupling": "binary_scaffold_pass_fail"
+      },
+      "version": {
+        "branch": "BHSM_DRESSED_V1_CANDIDATE",
+        "dressing_rules": [
+          {
+            "applies_to": "MODE_SPECIFIC",
+            "factor": 0.5,
+            "generation": "middle",
+            "mode": [
+              6,
+              0
+            ],
+            "notes": [
+              "Condition checked from internal data only: j=0, q=6, Omega_u=6.",
+              "Interpreted as probability-level weak-doublet projection dressing for a pure Hopf-fiber upper weak-doublet mode.",
+              "Not canonically adopted in this phase."
+            ],
+            "sector": "up_quarks",
+            "source": "WEAK_DOUBLE_PROJECTION",
+            "status": "VIRTUAL_ENV_LINKED"
+          }
+        ],
+        "geometry_a": 1.157054135733433,
+        "mode_ledger": {
+          "charged_leptons": {
+            "heavy": [
+              0,
+              0
+            ],
+            "light": [
+              9,
+              3
+            ],
+            "middle": [
+              5,
+              2
+            ]
+          },
+          "down_quarks": {
+            "heavy": [
+              0,
+              0
+            ],
+            "light": [
+              8,
+              2
+            ],
+            "middle": [
+              6,
+              3
+            ]
+          },
+          "up_quarks": {
+            "heavy": [
+              0,
+              0
+            ],
+            "light": [
+              10,
+              1
+            ],
+            "middle": [
+              6,
+              0
+            ]
+          }
+        },
+        "name": "BHSM v1.0",
+        "notes": [
+          "Frozen no-retuning prediction set.",
+          "Changing a, S, modes, or Z_virt based on residuals invalidates v1.0."
+        ],
+        "overlap_s": 0.07957747154594767,
+        "status": "FROZEN_DRESSED_CANDIDATE"
+      }
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "assumptions": [
+    {
+      "evidence": [
+        "Level 2 finite-basis proxy inserts and audits three protected zero modes.",
+        "Gate 32C convergence scan kept zero_mode_count = 3 across requested bases."
+      ],
+      "id": "A1",
+      "limitations": [
+        "The full twisted Dirac kernel has not been computed in the complete internal action."
+      ],
+      "statement": "dim ker D_twist = 3.",
+      "status": "VERIFIED_PROXY"
+    },
+    {
+      "evidence": [
+        "Current finite-basis scaffolds track chirality labels."
+      ],
+      "id": "A2",
+      "limitations": [
+        "Absence of mirror zero modes has not been proven for the full twisted Dirac spectrum."
+      ],
+      "statement": "No opposite-chirality mirror zero modes.",
+      "status": "OPEN"
+    },
+    {
+      "evidence": [
+        "The audit projects a protected kernel before testing H_perp."
+      ],
+      "id": "A3",
+      "limitations": [
+        "Identification of the physical light subspace remains an action-level assumption."
+      ],
+      "statement": "The physical light subspace is exactly ker D_twist.",
+      "status": "ASSUMED"
+    },
+    {
+      "evidence": [
+        "Gate 32B computed the required finite-basis Dirac lower bound at natural cutoff.",
+        "Gate 32C found worst direct margin 1.4628370793070644 and worst Gershgorin margin 1.4366234871740744 in the requested convergence scan."
+      ],
+      "id": "A4",
+      "limitations": [
+        "This is finite-basis proxy evidence, not a complete Hilbert-space lower bound."
+      ],
+      "statement": "The complement satisfies d_lower >= 0.8038064161349437 for Lambda^2 = 1/(4 pi).",
+      "status": "VERIFIED_PROXY"
+    },
+    {
+      "evidence": [
+        "Gate 28D and positivity tests verify PSD profile terms preserve proxy complement gaps."
+      ],
+      "id": "A5",
+      "limitations": [
+        "The full curvature/profile operator has not been derived and proven PSD on H_perp."
+      ],
+      "statement": "V_profile restricted to H_perp is positive semidefinite: V_profile|H_perp >= 0.",
+      "status": "VERIFIED_PROXY"
+    },
+    {
+      "evidence": [
+        "Tracked as an open claim in the claims ledger."
+      ],
+      "id": "A6",
+      "limitations": [
+        "No independent topological proof is implemented."
+      ],
+      "statement": "The trace U(1) is topological/nondynamical.",
+      "status": "OPEN"
+    },
+    {
+      "evidence": [
+        "Gate 30B scalar/topographic decoupling scaffold audits one light Higgs projection and no dangerous light direct-coupled scalar in the proxy inventory."
+      ],
+      "id": "A7",
+      "limitations": [
+        "Full action-level scalar/topographic decoupling remains open."
+      ],
+      "statement": "Scalar orthogonal modes are lifted or screened separately.",
+      "status": "VERIFIED_PROXY"
+    }
+  ],
+  "conclusion": "If A1-A7 are proven in the full internal action, then the no-extra-light-state theorem follows.",
+  "steps": [
+    {
+      "conclusion": "A sufficient dimensionless H_T lower bound follows from the Dirac lower bound and nonnegative profile term.",
+      "depends_on": [
+        "A4",
+        "A5"
+      ],
+      "id": "S1",
+      "statement": "Heat-lift inequality: d + mu_H(1 - exp(-d/Lambda^2)) + V_min >= mu_H."
+    },
+    {
+      "conclusion": "The complement clears the dimensionless Hopf-gap target.",
+      "depends_on": [
+        "A4",
+        "A5",
+        "S1"
+      ],
+      "id": "S2",
+      "statement": "If A4 and A5 hold, then H_T|H_perp >= mu_H."
+    },
+    {
+      "conclusion": "The complement lies above the Hopf lift scale under the stated unit matching.",
+      "depends_on": [
+        "S2"
+      ],
+      "id": "S3",
+      "statement": "Since mu_H = (4 pi^2 v)^2 r_int^2 in dimensionless units, complement modes are heavier than 4 pi^2 v."
+    },
+    {
+      "conclusion": "The protected light fermion family count is three if the kernel assumptions are proven.",
+      "depends_on": [
+        "A1",
+        "A2",
+        "A3"
+      ],
+      "id": "S4",
+      "statement": "A1-A3 leave exactly three protected chiral families light."
+    },
+    {
+      "conclusion": "No additional trace-U(1) or scalar/topographic light state remains under those assumptions.",
+      "depends_on": [
+        "A6",
+        "A7"
+      ],
+      "id": "S5",
+      "statement": "A6-A7 remove extra gauge/scalar light states."
+    }
+  ],
+  "theorem_complete": false,
+  "title": "Conditional H_T No-Extra-Light-State Theorem Scaffold"
+}

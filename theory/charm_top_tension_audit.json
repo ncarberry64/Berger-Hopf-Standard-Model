@@ -1,0 +1,422 @@
+{
+  "canonical_geometry": {
+    "a": 1.157054135733433,
+    "name": "ALPHA_ANCHORED"
+  },
+  "charm_mode_diagnostic": {
+    "adopted_factor": null,
+    "current_charm_mode": {
+      "lambda": 60.1958738286423,
+      "mode": [
+        6,
+        0
+      ],
+      "omega_u": 6,
+      "prediction": 0.008310500554068288,
+      "q": 6
+    },
+    "first_five_admissible_modes": [
+      {
+        "lambda": 60.1958738286423,
+        "mode": [
+          6,
+          0
+        ],
+        "suppression": 0.008310500554068288
+      },
+      {
+        "lambda": 141.68155347314186,
+        "mode": [
+          10,
+          1
+        ],
+        "suppression": 1.2690463017606151e-05
+      },
+      {
+        "lambda": 257.87742730178417,
+        "mode": [
+          14,
+          2
+        ],
+        "suppression": 1.2238874209310043e-09
+      },
+      {
+        "lambda": 408.7834953145692,
+        "mode": [
+          18,
+          3
+        ],
+        "suppression": 7.454511563251954e-15
+      },
+      {
+        "lambda": 594.399757511497,
+        "mode": [
+          22,
+          4
+        ],
+        "suppression": 2.8675475795726386e-21
+      }
+    ],
+    "ledger_changed": false,
+    "next_admissible_mode": {
+      "assessment_vs_threshold_reference": "overcorrects",
+      "lambda": 141.68155347314186,
+      "mode": [
+        10,
+        1
+      ],
+      "suppression": 1.2690463017606151e-05
+    },
+    "references": {
+      "mixed_default_c_over_t": 0.007354218541895883,
+      "threshold_common_scale_c_over_t": 0.004251569034944846
+    },
+    "required_normalization_factor": {
+      "mixed_default": 0.8849308767924611,
+      "threshold_common_scale": 0.5115900067973103
+    },
+    "simple_factor_diagnostic": [
+      {
+        "candidate": "1/2",
+        "diagnostic_only": true,
+        "distance_to_threshold_factor": 0.01159000679731026,
+        "value": 0.5
+      },
+      {
+        "candidate": "1/sqrt(3)",
+        "diagnostic_only": true,
+        "distance_to_threshold_factor": 0.06576026239231558,
+        "value": 0.5773502691896258
+      },
+      {
+        "candidate": "1/3",
+        "diagnostic_only": true,
+        "distance_to_threshold_factor": 0.17825667346397694,
+        "value": 0.3333333333333333
+      },
+      {
+        "candidate": "1/sqrt(2)",
+        "diagnostic_only": true,
+        "distance_to_threshold_factor": 0.1955167743892372,
+        "value": 0.7071067811865475
+      },
+      {
+        "candidate": "2*sqrt(alpha)",
+        "diagnostic_only": true,
+        "distance_to_threshold_factor": 0.3407409205336278,
+        "value": 0.17084908626368245
+      },
+      {
+        "candidate": "sqrt(alpha)",
+        "diagnostic_only": true,
+        "distance_to_threshold_factor": 0.42616546366546904,
+        "value": 0.08542454313184122
+      }
+    ]
+  },
+  "ct_summary": {
+    "fixed_nf_reference": 0.004266868071316746,
+    "fixed_nf_relative_error": 0.9476816285776762,
+    "piecewise_nf_reference": 0.004251569034944846,
+    "piecewise_nf_relative_error": 0.9546902533539826
+  },
+  "fixed_nf": [
+    {
+      "id": "mass_ratio.up_quarks.middle",
+      "log_error": 0.28951796781365763,
+      "notes": [
+        "APPROXIMATE_RUNNING_SCAFFOLD with p=0.5217391304347826.",
+        "No threshold matching or higher-loop QCD is implemented.",
+        "Scheme-consistent comparison."
+      ],
+      "predicted": 0.008310500554068288,
+      "reference": 0.004266868071316746,
+      "relative_error": 0.9476816285776762,
+      "scale": "91.1876 GeV",
+      "scheme": "COMMON_SCALE_APPROX",
+      "scheme_consistent": true,
+      "status": "APPROXIMATE_RUNNING_SCAFFOLD",
+      "target_scale": 91.1876
+    },
+    {
+      "id": "mass_ratio.up_quarks.light",
+      "log_error": 0.2071435784044071,
+      "notes": [
+        "APPROXIMATE_RUNNING_SCAFFOLD with p=0.5217391304347826.",
+        "No threshold matching or higher-loop QCD is implemented.",
+        "Scheme-consistent comparison."
+      ],
+      "predicted": 1.2690463017606151e-05,
+      "reference": 7.876511100850345e-06,
+      "relative_error": 0.6111782050603717,
+      "scale": "91.1876 GeV",
+      "scheme": "COMMON_SCALE_APPROX",
+      "scheme_consistent": true,
+      "status": "APPROXIMATE_RUNNING_SCAFFOLD",
+      "target_scale": 91.1876
+    },
+    {
+      "id": "mass_ratio.down_quarks.middle",
+      "log_error": 0.03992923975161353,
+      "notes": [
+        "APPROXIMATE_RUNNING_SCAFFOLD with p=0.5217391304347826.",
+        "No threshold matching or higher-loop QCD is implemented.",
+        "Scheme-consistent comparison."
+      ],
+      "predicted": 0.021933971495439474,
+      "reference": 0.020007279304305587,
+      "relative_error": 0.09629955986665618,
+      "scale": "91.1876 GeV",
+      "scheme": "COMMON_SCALE_APPROX",
+      "scheme_consistent": true,
+      "status": "APPROXIMATE_RUNNING_SCAFFOLD",
+      "target_scale": 91.1876
+    },
+    {
+      "id": "mass_ratio.down_quarks.light",
+      "log_error": 0.047708488819516885,
+      "notes": [
+        "APPROXIMATE_RUNNING_SCAFFOLD with p=0.5217391304347826.",
+        "No threshold matching or higher-loop QCD is implemented.",
+        "Scheme-consistent comparison."
+      ],
+      "predicted": 0.0011165200546001757,
+      "reference": 0.0010003639652152794,
+      "relative_error": 0.11611382799049477,
+      "scale": "91.1876 GeV",
+      "scheme": "COMMON_SCALE_APPROX",
+      "scheme_consistent": true,
+      "status": "APPROXIMATE_RUNNING_SCAFFOLD",
+      "target_scale": 91.1876
+    }
+  ],
+  "likely_root_cause_classification": {
+    "approximate_running_scaffold_issue": true,
+    "genuine_bhsm_charm_mode_tension": "possible",
+    "missing_threshold_matching": true,
+    "missing_up_sector_representation_normalization": "diagnostic_only",
+    "summary": "The c/t tension is not removed by the approximate threshold-aware scaffold. It remains localized to the charm/up-sector comparison and may reflect top/charm reference ambiguity, missing precision threshold matching, a missing representation normalization, or a genuine BHSM charm-mode tension.",
+    "top_charm_reference_inconsistency": true
+  },
+  "limitations": [
+    "Diagnostic only; no BHSM parameter, geometry, S, mode ledger, or normalization factor is changed.",
+    "Top running-mass-like variant is a label-only placeholder reusing current values.",
+    "Piecewise running remains approximate and is not precision QCD."
+  ],
+  "model_changed": false,
+  "piecewise_nf": [
+    {
+      "exponent_policy": "PIECEWISE_NF_APPROX",
+      "id": "mass_ratio.up_quarks.middle",
+      "log_error": 0.29107794745212545,
+      "notes": [
+        "PIECEWISE_NF_APPROX; approximate threshold-aware scaffold.",
+        "No precision QCD matching, higher-loop running, or uncertainty propagation is implemented.",
+        "Top reference variant `CURRENT_AMBIGUOUS_TOP` reuses the current repo value as sensitivity labeling only.",
+        "Scheme-consistent comparison."
+      ],
+      "predicted": 0.008310500554068288,
+      "reference": 0.004251569034944846,
+      "relative_error": 0.9546902533539826,
+      "scale": "91.1876 GeV",
+      "scheme": "COMMON_SCALE_THRESHOLD_APPROX",
+      "scheme_consistent": true,
+      "status": "THRESHOLD_AWARE_APPROXIMATE_RUNNING_SCAFFOLD",
+      "target_scale": 91.1876,
+      "top_reference_variant": "CURRENT_AMBIGUOUS_TOP"
+    },
+    {
+      "exponent_policy": "PIECEWISE_NF_APPROX",
+      "id": "mass_ratio.up_quarks.light",
+      "log_error": 0.2076247356204453,
+      "notes": [
+        "PIECEWISE_NF_APPROX; approximate threshold-aware scaffold.",
+        "No precision QCD matching, higher-loop running, or uncertainty propagation is implemented.",
+        "Top reference variant `CURRENT_AMBIGUOUS_TOP` reuses the current repo value as sensitivity labeling only.",
+        "Scheme-consistent comparison."
+      ],
+      "predicted": 1.2690463017606151e-05,
+      "reference": 7.867789503652917e-06,
+      "relative_error": 0.6129642273365508,
+      "scale": "91.1876 GeV",
+      "scheme": "COMMON_SCALE_THRESHOLD_APPROX",
+      "scheme_consistent": true,
+      "status": "THRESHOLD_AWARE_APPROXIMATE_RUNNING_SCAFFOLD",
+      "target_scale": 91.1876,
+      "top_reference_variant": "CURRENT_AMBIGUOUS_TOP"
+    },
+    {
+      "exponent_policy": "PIECEWISE_NF_APPROX",
+      "id": "mass_ratio.down_quarks.middle",
+      "log_error": 0.040410396967651654,
+      "notes": [
+        "PIECEWISE_NF_APPROX; approximate threshold-aware scaffold.",
+        "No precision QCD matching, higher-loop running, or uncertainty propagation is implemented.",
+        "Scheme-consistent comparison."
+      ],
+      "predicted": 0.021933971495439474,
+      "reference": 0.019985125405342665,
+      "relative_error": 0.09751482918269905,
+      "scale": "91.1876 GeV",
+      "scheme": "COMMON_SCALE_THRESHOLD_APPROX",
+      "scheme_consistent": true,
+      "status": "THRESHOLD_AWARE_APPROXIMATE_RUNNING_SCAFFOLD",
+      "target_scale": 91.1876,
+      "top_reference_variant": "CURRENT_AMBIGUOUS_TOP"
+    },
+    {
+      "exponent_policy": "PIECEWISE_NF_APPROX",
+      "id": "mass_ratio.down_quarks.light",
+      "log_error": 0.048189646035555145,
+      "notes": [
+        "PIECEWISE_NF_APPROX; approximate threshold-aware scaffold.",
+        "No precision QCD matching, higher-loop running, or uncertainty propagation is implemented.",
+        "Scheme-consistent comparison."
+      ],
+      "predicted": 0.0011165200546001757,
+      "reference": 0.0009992562702671331,
+      "relative_error": 0.11735106180689185,
+      "scale": "91.1876 GeV",
+      "scheme": "COMMON_SCALE_THRESHOLD_APPROX",
+      "scheme_consistent": true,
+      "status": "THRESHOLD_AWARE_APPROXIMATE_RUNNING_SCAFFOLD",
+      "target_scale": 91.1876,
+      "top_reference_variant": "CURRENT_AMBIGUOUS_TOP"
+    }
+  ],
+  "target_scale": 91.1876,
+  "top_reference_audit": [
+    {
+      "exponent_policy": "PIECEWISE_NF_APPROX",
+      "id": "mass_ratio.up_quarks.middle",
+      "log_error": 0.29107794745212545,
+      "notes": [
+        "PIECEWISE_NF_APPROX; approximate threshold-aware scaffold.",
+        "No precision QCD matching, higher-loop running, or uncertainty propagation is implemented.",
+        "Top reference variant `CURRENT_AMBIGUOUS_TOP` reuses the current repo value as sensitivity labeling only.",
+        "Scheme-consistent comparison."
+      ],
+      "predicted": 0.008310500554068288,
+      "reference": 0.004251569034944846,
+      "relative_error": 0.9546902533539826,
+      "scale": "91.1876 GeV",
+      "scheme": "COMMON_SCALE_THRESHOLD_APPROX",
+      "scheme_consistent": true,
+      "sensitivity_only": true,
+      "status": "THRESHOLD_AWARE_APPROXIMATE_RUNNING_SCAFFOLD",
+      "target_scale": 91.1876,
+      "top_reference_variant": "CURRENT_AMBIGUOUS_TOP",
+      "variant_note": "Variant changes labels only and reuses current top value; no precise top running mass is invented."
+    },
+    {
+      "exponent_policy": "PIECEWISE_NF_APPROX",
+      "id": "mass_ratio.up_quarks.light",
+      "log_error": 0.2076247356204453,
+      "notes": [
+        "PIECEWISE_NF_APPROX; approximate threshold-aware scaffold.",
+        "No precision QCD matching, higher-loop running, or uncertainty propagation is implemented.",
+        "Top reference variant `CURRENT_AMBIGUOUS_TOP` reuses the current repo value as sensitivity labeling only.",
+        "Scheme-consistent comparison."
+      ],
+      "predicted": 1.2690463017606151e-05,
+      "reference": 7.867789503652917e-06,
+      "relative_error": 0.6129642273365508,
+      "scale": "91.1876 GeV",
+      "scheme": "COMMON_SCALE_THRESHOLD_APPROX",
+      "scheme_consistent": true,
+      "sensitivity_only": true,
+      "status": "THRESHOLD_AWARE_APPROXIMATE_RUNNING_SCAFFOLD",
+      "target_scale": 91.1876,
+      "top_reference_variant": "CURRENT_AMBIGUOUS_TOP",
+      "variant_note": "Variant changes labels only and reuses current top value; no precise top running mass is invented."
+    },
+    {
+      "exponent_policy": "PIECEWISE_NF_APPROX",
+      "id": "mass_ratio.up_quarks.middle",
+      "log_error": 0.29107794745212545,
+      "notes": [
+        "PIECEWISE_NF_APPROX; approximate threshold-aware scaffold.",
+        "No precision QCD matching, higher-loop running, or uncertainty propagation is implemented.",
+        "Top reference variant `TOP_POLE_LIKE_CURRENT` reuses the current repo value as sensitivity labeling only.",
+        "Scheme-consistent comparison."
+      ],
+      "predicted": 0.008310500554068288,
+      "reference": 0.004251569034944846,
+      "relative_error": 0.9546902533539826,
+      "scale": "91.1876 GeV",
+      "scheme": "COMMON_SCALE_THRESHOLD_APPROX",
+      "scheme_consistent": true,
+      "sensitivity_only": true,
+      "status": "THRESHOLD_AWARE_APPROXIMATE_RUNNING_SCAFFOLD",
+      "target_scale": 91.1876,
+      "top_reference_variant": "TOP_POLE_LIKE_CURRENT",
+      "variant_note": "Variant changes labels only and reuses current top value; no precise top running mass is invented."
+    },
+    {
+      "exponent_policy": "PIECEWISE_NF_APPROX",
+      "id": "mass_ratio.up_quarks.light",
+      "log_error": 0.2076247356204453,
+      "notes": [
+        "PIECEWISE_NF_APPROX; approximate threshold-aware scaffold.",
+        "No precision QCD matching, higher-loop running, or uncertainty propagation is implemented.",
+        "Top reference variant `TOP_POLE_LIKE_CURRENT` reuses the current repo value as sensitivity labeling only.",
+        "Scheme-consistent comparison."
+      ],
+      "predicted": 1.2690463017606151e-05,
+      "reference": 7.867789503652917e-06,
+      "relative_error": 0.6129642273365508,
+      "scale": "91.1876 GeV",
+      "scheme": "COMMON_SCALE_THRESHOLD_APPROX",
+      "scheme_consistent": true,
+      "sensitivity_only": true,
+      "status": "THRESHOLD_AWARE_APPROXIMATE_RUNNING_SCAFFOLD",
+      "target_scale": 91.1876,
+      "top_reference_variant": "TOP_POLE_LIKE_CURRENT",
+      "variant_note": "Variant changes labels only and reuses current top value; no precise top running mass is invented."
+    },
+    {
+      "exponent_policy": "PIECEWISE_NF_APPROX",
+      "id": "mass_ratio.up_quarks.middle",
+      "log_error": 0.29107794745212545,
+      "notes": [
+        "PIECEWISE_NF_APPROX; approximate threshold-aware scaffold.",
+        "No precision QCD matching, higher-loop running, or uncertainty propagation is implemented.",
+        "Top reference variant `TOP_RUNNING_MASS_PLACEHOLDER` reuses the current repo value as sensitivity labeling only.",
+        "Scheme-consistent comparison."
+      ],
+      "predicted": 0.008310500554068288,
+      "reference": 0.004251569034944846,
+      "relative_error": 0.9546902533539826,
+      "scale": "91.1876 GeV",
+      "scheme": "COMMON_SCALE_THRESHOLD_APPROX",
+      "scheme_consistent": true,
+      "sensitivity_only": true,
+      "status": "THRESHOLD_AWARE_APPROXIMATE_RUNNING_SCAFFOLD",
+      "target_scale": 91.1876,
+      "top_reference_variant": "TOP_RUNNING_MASS_PLACEHOLDER",
+      "variant_note": "Variant changes labels only and reuses current top value; no precise top running mass is invented."
+    },
+    {
+      "exponent_policy": "PIECEWISE_NF_APPROX",
+      "id": "mass_ratio.up_quarks.light",
+      "log_error": 0.2076247356204453,
+      "notes": [
+        "PIECEWISE_NF_APPROX; approximate threshold-aware scaffold.",
+        "No precision QCD matching, higher-loop running, or uncertainty propagation is implemented.",
+        "Top reference variant `TOP_RUNNING_MASS_PLACEHOLDER` reuses the current repo value as sensitivity labeling only.",
+        "Scheme-consistent comparison."
+      ],
+      "predicted": 1.2690463017606151e-05,
+      "reference": 7.867789503652917e-06,
+      "relative_error": 0.6129642273365508,
+      "scale": "91.1876 GeV",
+      "scheme": "COMMON_SCALE_THRESHOLD_APPROX",
+      "scheme_consistent": true,
+      "sensitivity_only": true,
+      "status": "THRESHOLD_AWARE_APPROXIMATE_RUNNING_SCAFFOLD",
+      "target_scale": 91.1876,
+      "top_reference_variant": "TOP_RUNNING_MASS_PLACEHOLDER",
+      "variant_note": "Variant changes labels only and reuses current top value; no precise top running mass is invented."
+    }
+  ]
+}

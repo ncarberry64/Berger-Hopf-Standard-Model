@@ -1,0 +1,190 @@
+{
+  "base_ratios": {
+    "charged_leptons": {
+      "heavy": 1.0,
+      "light": 0.00029729106456492414,
+      "middle": 0.06007447093260976
+    },
+    "down_quarks": {
+      "heavy": 1.0,
+      "light": 0.0011165200546001757,
+      "middle": 0.021933971495439474
+    },
+    "up_quarks": {
+      "heavy": 1.0,
+      "light": 1.2690463017606151e-05,
+      "middle": 0.008310500554068288
+    }
+  },
+  "candidate_factors": [
+    {
+      "adopted": false,
+      "applies_to": "all_modes",
+      "c_over_t": 0.008310500554068288,
+      "c_over_t_relative_error": 0.9546902533539826,
+      "distance_to_required_factor": 0.48840999320268974,
+      "factor": 1.0,
+      "sin_theta_13": 0.0035623676140463315,
+      "source_rule": "NONE",
+      "status": "DIAGNOSTIC_ONLY",
+      "u_over_t": 1.2690463017606151e-05
+    },
+    {
+      "adopted": false,
+      "applies_to": "pure_fiber_up_nonzero_j0",
+      "c_over_t": 0.004155250277034144,
+      "c_over_t_relative_error": 0.0226548733230087,
+      "distance_to_required_factor": 0.01159000679731026,
+      "factor": 0.5,
+      "sin_theta_13": 0.0035623676140463315,
+      "source_rule": "WEAK_DOUBLE_PROJECTION",
+      "status": "DIAGNOSTIC_ONLY",
+      "u_over_t": 1.2690463017606151e-05
+    },
+    {
+      "adopted": false,
+      "applies_to": "pure_fiber_up_nonzero_j0",
+      "c_over_t": 0.005876411296836246,
+      "c_over_t_relative_error": 0.3821747332658516,
+      "distance_to_required_factor": 0.1955167743892372,
+      "factor": 0.7071067811865475,
+      "sin_theta_13": 0.0035623676140463315,
+      "source_rule": "AMPLITUDE_PROJECTION",
+      "status": "DIAGNOSTIC_ONLY",
+      "u_over_t": 1.2690463017606151e-05
+    },
+    {
+      "adopted": false,
+      "applies_to": "all_quark_modes",
+      "c_over_t": 0.002770166851356096,
+      "c_over_t_relative_error": 0.34843658221533913,
+      "distance_to_required_factor": 0.17825667346397694,
+      "factor": 0.3333333333333333,
+      "sin_theta_13": 0.0020567339009220542,
+      "source_rule": "COFRAME_AVERAGE",
+      "status": "DIAGNOSTIC_ONLY",
+      "u_over_t": 4.23015433920205e-06
+    },
+    {
+      "adopted": false,
+      "applies_to": "all_quark_modes",
+      "c_over_t": 0.004798069731991861,
+      "c_over_t_relative_error": 0.12854094395625976,
+      "distance_to_required_factor": 0.06576026239231558,
+      "factor": 0.5773502691896258,
+      "sin_theta_13": 0.002706814038561922,
+      "source_rule": "COFRAME_AMPLITUDE",
+      "status": "DIAGNOSTIC_ONLY",
+      "u_over_t": 7.326842239355902e-06
+    },
+    {
+      "adopted": false,
+      "applies_to": "all_nonzero_modes",
+      "c_over_t": 0.0007099207130281969,
+      "c_over_t_relative_error": 0.833021478142973,
+      "distance_to_required_factor": 0.42616546366546904,
+      "factor": 0.08542454313184122,
+      "sin_theta_13": 0.0010411901869545892,
+      "source_rule": "ALPHA_SUPPRESSED",
+      "status": "DIAGNOSTIC_ONLY",
+      "u_over_t": 1.0840770054105326e-06
+    },
+    {
+      "adopted": false,
+      "applies_to": "all_nonzero_modes",
+      "c_over_t": 0.0014198414260563938,
+      "c_over_t_relative_error": 0.6660429562859461,
+      "distance_to_required_factor": 0.3407409205336278,
+      "factor": 0.17084908626368245,
+      "sin_theta_13": 0.0014724652834009586,
+      "source_rule": "ALPHA_SUPPRESSED",
+      "status": "DIAGNOSTIC_ONLY",
+      "u_over_t": 2.168154010821065e-06
+    }
+  ],
+  "canonical_geometry": {
+    "a": 1.157054135733433,
+    "name": "ALPHA_ANCHORED"
+  },
+  "conclusion": "The 1/2 factor is numerically suggestive for c/t but remains DIAGNOSTIC_ONLY. No implemented representation rule independently forces adoption.",
+  "limitations": [
+    "No empirical residual is used to select or adopt a factor.",
+    "No canonical ratio, geometry, S, or mode ledger is changed.",
+    "Action-level derivation of any representation normalization remains open."
+  ],
+  "required_factor": 0.5115900067973103,
+  "scope_diagnostics": [
+    {
+      "adopted": false,
+      "c_over_t": 0.004155250277034144,
+      "c_over_t_relative_error": 0.0226548733230087,
+      "factor": 0.5,
+      "s_over_b": 0.021933971495439474,
+      "scope": "middle_up_mode_only",
+      "sin_theta_13": 0.0035623676140463315,
+      "status": "DIAGNOSTIC_ONLY",
+      "u_over_t": 1.2690463017606151e-05,
+      "u_over_t_relative_error": 0.6129642273365508
+    },
+    {
+      "adopted": false,
+      "c_over_t": 0.004155250277034144,
+      "c_over_t_relative_error": 0.0226548733230087,
+      "factor": 0.5,
+      "s_over_b": 0.021933971495439474,
+      "scope": "pure_fiber_up_nonzero_j0",
+      "sin_theta_13": 0.0035623676140463315,
+      "status": "DIAGNOSTIC_ONLY",
+      "u_over_t": 1.2690463017606151e-05,
+      "u_over_t_relative_error": 0.6129642273365508
+    },
+    {
+      "adopted": false,
+      "c_over_t": 0.004155250277034144,
+      "c_over_t_relative_error": 0.0226548733230087,
+      "factor": 0.5,
+      "s_over_b": 0.021933971495439474,
+      "scope": "all_up_sector_modes",
+      "sin_theta_13": 0.0025189742969715027,
+      "status": "DIAGNOSTIC_ONLY",
+      "u_over_t": 6.3452315088030755e-06,
+      "u_over_t_relative_error": 0.19351788633172462
+    },
+    {
+      "adopted": false,
+      "c_over_t": 0.004155250277034144,
+      "c_over_t_relative_error": 0.0226548733230087,
+      "factor": 0.5,
+      "s_over_b": 0.010966985747719737,
+      "scope": "all_quark_modes",
+      "sin_theta_13": 0.0025189742969715027,
+      "status": "DIAGNOSTIC_ONLY",
+      "u_over_t": 6.3452315088030755e-06,
+      "u_over_t_relative_error": 0.19351788633172462
+    },
+    {
+      "adopted": false,
+      "c_over_t": 0.008310500554068288,
+      "c_over_t_relative_error": 0.9546902533539826,
+      "factor": 0.5,
+      "s_over_b": 0.021933971495439474,
+      "scope": "no_modes",
+      "sin_theta_13": 0.0035623676140463315,
+      "status": "DIAGNOSTIC_ONLY",
+      "u_over_t": 1.2690463017606151e-05,
+      "u_over_t_relative_error": 0.6129642273365508
+    }
+  ],
+  "status_counts": {
+    "ACTION_LINKED": 0,
+    "ADOPTED_CANONICAL": 0,
+    "DIAGNOSTIC_ONLY": 12,
+    "REJECTED": 0
+  },
+  "threshold_references": {
+    "mass_ratio.down_quarks.light": 0.0009992562702671331,
+    "mass_ratio.down_quarks.middle": 0.019985125405342665,
+    "mass_ratio.up_quarks.light": 7.867789503652917e-06,
+    "mass_ratio.up_quarks.middle": 0.004251569034944846
+  }
+}

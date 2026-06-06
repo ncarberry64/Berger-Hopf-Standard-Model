@@ -1,0 +1,398 @@
+{
+  "limitations": [
+    "No external mass data are fetched.",
+    "COMMON_SCALE_PLACEHOLDER reuses current values and does not implement QCD running.",
+    "Quark cross-generation comparisons remain scheme-sensitive until common-scale running is supplied."
+  ],
+  "ratio_references": {
+    "COMMON_SCALE_PLACEHOLDER": {
+      "charged_leptons.light": {
+        "denominator": "tau",
+        "notes": [
+          "Placeholder only; values are not QCD-run to a common scale.",
+          "Do not interpret this as a completed common-scale mass scheme.",
+          "Scheme-sensitive comparison; common-scale running remains open."
+        ],
+        "numerator": "e",
+        "ratio": 0.0002875853753250115,
+        "scale": "OPEN_COMMON_SCALE_RUNNING_NOT_IMPLEMENTED",
+        "scheme": "COMMON_SCALE_PLACEHOLDER",
+        "scheme_consistent": false
+      },
+      "charged_leptons.middle": {
+        "denominator": "tau",
+        "notes": [
+          "Placeholder only; values are not QCD-run to a common scale.",
+          "Do not interpret this as a completed common-scale mass scheme.",
+          "Scheme-sensitive comparison; common-scale running remains open."
+        ],
+        "numerator": "mu",
+        "ratio": 0.05946353426831603,
+        "scale": "OPEN_COMMON_SCALE_RUNNING_NOT_IMPLEMENTED",
+        "scheme": "COMMON_SCALE_PLACEHOLDER",
+        "scheme_consistent": false
+      },
+      "down_quarks.light": {
+        "denominator": "b",
+        "notes": [
+          "Placeholder only; values are not QCD-run to a common scale.",
+          "Do not interpret this as a completed common-scale mass scheme.",
+          "Scheme-sensitive comparison; common-scale running remains open."
+        ],
+        "numerator": "d",
+        "ratio": 0.0011172248803827751,
+        "scale": "OPEN_COMMON_SCALE_RUNNING_NOT_IMPLEMENTED",
+        "scheme": "COMMON_SCALE_PLACEHOLDER",
+        "scheme_consistent": false
+      },
+      "down_quarks.middle": {
+        "denominator": "b",
+        "notes": [
+          "Placeholder only; values are not QCD-run to a common scale.",
+          "Do not interpret this as a completed common-scale mass scheme.",
+          "Scheme-sensitive comparison; common-scale running remains open."
+        ],
+        "numerator": "s",
+        "ratio": 0.022344497607655504,
+        "scale": "OPEN_COMMON_SCALE_RUNNING_NOT_IMPLEMENTED",
+        "scheme": "COMMON_SCALE_PLACEHOLDER",
+        "scheme_consistent": false
+      },
+      "up_quarks.light": {
+        "denominator": "t",
+        "notes": [
+          "Placeholder only; values are not QCD-run to a common scale.",
+          "Do not interpret this as a completed common-scale mass scheme.",
+          "Scheme-sensitive comparison; common-scale running remains open."
+        ],
+        "numerator": "u",
+        "ratio": 1.2507962244484336e-05,
+        "scale": "OPEN_COMMON_SCALE_RUNNING_NOT_IMPLEMENTED",
+        "scheme": "COMMON_SCALE_PLACEHOLDER",
+        "scheme_consistent": false
+      },
+      "up_quarks.middle": {
+        "denominator": "t",
+        "notes": [
+          "Placeholder only; values are not QCD-run to a common scale.",
+          "Do not interpret this as a completed common-scale mass scheme.",
+          "Scheme-sensitive comparison; common-scale running remains open."
+        ],
+        "numerator": "c",
+        "ratio": 0.007354218541895883,
+        "scale": "OPEN_COMMON_SCALE_RUNNING_NOT_IMPLEMENTED",
+        "scheme": "COMMON_SCALE_PLACEHOLDER",
+        "scheme_consistent": false
+      }
+    },
+    "MIXED_DEFAULT": {
+      "charged_leptons.light": {
+        "denominator": "tau",
+        "notes": [
+          "Charged lepton reference; scheme-stable for this audit.",
+          "Scheme-consistent comparison."
+        ],
+        "numerator": "e",
+        "ratio": 0.0002875853753250115,
+        "scale": "on-shell",
+        "scheme": "pole",
+        "scheme_consistent": true
+      },
+      "charged_leptons.middle": {
+        "denominator": "tau",
+        "notes": [
+          "Charged lepton reference; scheme-stable for this audit.",
+          "Scheme-consistent comparison."
+        ],
+        "numerator": "mu",
+        "ratio": 0.05946353426831603,
+        "scale": "on-shell",
+        "scheme": "pole",
+        "scheme_consistent": true
+      },
+      "down_quarks.light": {
+        "denominator": "b",
+        "notes": [
+          "Current repo value; not run to a common bottom scale.",
+          "Current repo value; mixed with light-quark references.",
+          "Scheme-sensitive comparison; common-scale running remains open."
+        ],
+        "numerator": "d",
+        "ratio": 0.0011172248803827751,
+        "scale": "2 GeV light-reference/bottom self-scale reference",
+        "scheme": "MSbar_mixed",
+        "scheme_consistent": false
+      },
+      "down_quarks.middle": {
+        "denominator": "b",
+        "notes": [
+          "Current repo value; not run to a common bottom scale.",
+          "Current repo value; mixed with light-quark references.",
+          "Scheme-sensitive comparison; common-scale running remains open."
+        ],
+        "numerator": "s",
+        "ratio": 0.022344497607655504,
+        "scale": "2 GeV strange-reference/bottom self-scale reference",
+        "scheme": "MSbar_mixed",
+        "scheme_consistent": false
+      },
+      "up_quarks.light": {
+        "denominator": "t",
+        "notes": [
+          "Current repo value; not run to a common top scale.",
+          "Current repo value; mixed with light-quark references.",
+          "Scheme-sensitive comparison; common-scale running remains open."
+        ],
+        "numerator": "u",
+        "ratio": 1.2507962244484336e-05,
+        "scale": "2 GeV light-reference/top mass reference",
+        "scheme": "MSbar_mixed/mixed_top_reference",
+        "scheme_consistent": false
+      },
+      "up_quarks.middle": {
+        "denominator": "t",
+        "notes": [
+          "Current repo value; not run to a common top scale.",
+          "Current repo value; mixed with light-quark references.",
+          "Scheme-sensitive comparison; common-scale running remains open."
+        ],
+        "numerator": "c",
+        "ratio": 0.007354218541895883,
+        "scale": "self-scale charm-reference/top mass reference",
+        "scheme": "MSbar_mixed/mixed_top_reference",
+        "scheme_consistent": false
+      }
+    }
+  },
+  "schemes": {
+    "COMMON_SCALE_PLACEHOLDER": {
+      "b": {
+        "notes": [
+          "Placeholder only; values are not QCD-run to a common scale.",
+          "Do not interpret this as a completed common-scale mass scheme."
+        ],
+        "particle": "b",
+        "scale": "OPEN_COMMON_SCALE_RUNNING_NOT_IMPLEMENTED",
+        "scheme": "COMMON_SCALE_PLACEHOLDER",
+        "source_label": "placeholder_reuses_repo_current_values",
+        "uncertainty": null,
+        "unit": "GeV",
+        "value": 4.18
+      },
+      "c": {
+        "notes": [
+          "Placeholder only; values are not QCD-run to a common scale.",
+          "Do not interpret this as a completed common-scale mass scheme."
+        ],
+        "particle": "c",
+        "scale": "OPEN_COMMON_SCALE_RUNNING_NOT_IMPLEMENTED",
+        "scheme": "COMMON_SCALE_PLACEHOLDER",
+        "source_label": "placeholder_reuses_repo_current_values",
+        "uncertainty": null,
+        "unit": "GeV",
+        "value": 1.27
+      },
+      "d": {
+        "notes": [
+          "Placeholder only; values are not QCD-run to a common scale.",
+          "Do not interpret this as a completed common-scale mass scheme."
+        ],
+        "particle": "d",
+        "scale": "OPEN_COMMON_SCALE_RUNNING_NOT_IMPLEMENTED",
+        "scheme": "COMMON_SCALE_PLACEHOLDER",
+        "source_label": "placeholder_reuses_repo_current_values",
+        "uncertainty": null,
+        "unit": "GeV",
+        "value": 0.00467
+      },
+      "e": {
+        "notes": [
+          "Placeholder only; values are not QCD-run to a common scale.",
+          "Do not interpret this as a completed common-scale mass scheme."
+        ],
+        "particle": "e",
+        "scale": "OPEN_COMMON_SCALE_RUNNING_NOT_IMPLEMENTED",
+        "scheme": "COMMON_SCALE_PLACEHOLDER",
+        "source_label": "placeholder_reuses_repo_current_values",
+        "uncertainty": null,
+        "unit": "MeV",
+        "value": 0.51099895
+      },
+      "mu": {
+        "notes": [
+          "Placeholder only; values are not QCD-run to a common scale.",
+          "Do not interpret this as a completed common-scale mass scheme."
+        ],
+        "particle": "mu",
+        "scale": "OPEN_COMMON_SCALE_RUNNING_NOT_IMPLEMENTED",
+        "scheme": "COMMON_SCALE_PLACEHOLDER",
+        "source_label": "placeholder_reuses_repo_current_values",
+        "uncertainty": null,
+        "unit": "MeV",
+        "value": 105.6583755
+      },
+      "s": {
+        "notes": [
+          "Placeholder only; values are not QCD-run to a common scale.",
+          "Do not interpret this as a completed common-scale mass scheme."
+        ],
+        "particle": "s",
+        "scale": "OPEN_COMMON_SCALE_RUNNING_NOT_IMPLEMENTED",
+        "scheme": "COMMON_SCALE_PLACEHOLDER",
+        "source_label": "placeholder_reuses_repo_current_values",
+        "uncertainty": null,
+        "unit": "GeV",
+        "value": 0.0934
+      },
+      "t": {
+        "notes": [
+          "Placeholder only; values are not QCD-run to a common scale.",
+          "Do not interpret this as a completed common-scale mass scheme."
+        ],
+        "particle": "t",
+        "scale": "OPEN_COMMON_SCALE_RUNNING_NOT_IMPLEMENTED",
+        "scheme": "COMMON_SCALE_PLACEHOLDER",
+        "source_label": "placeholder_reuses_repo_current_values",
+        "uncertainty": null,
+        "unit": "GeV",
+        "value": 172.69
+      },
+      "tau": {
+        "notes": [
+          "Placeholder only; values are not QCD-run to a common scale.",
+          "Do not interpret this as a completed common-scale mass scheme."
+        ],
+        "particle": "tau",
+        "scale": "OPEN_COMMON_SCALE_RUNNING_NOT_IMPLEMENTED",
+        "scheme": "COMMON_SCALE_PLACEHOLDER",
+        "source_label": "placeholder_reuses_repo_current_values",
+        "uncertainty": null,
+        "unit": "MeV",
+        "value": 1776.86
+      },
+      "u": {
+        "notes": [
+          "Placeholder only; values are not QCD-run to a common scale.",
+          "Do not interpret this as a completed common-scale mass scheme."
+        ],
+        "particle": "u",
+        "scale": "OPEN_COMMON_SCALE_RUNNING_NOT_IMPLEMENTED",
+        "scheme": "COMMON_SCALE_PLACEHOLDER",
+        "source_label": "placeholder_reuses_repo_current_values",
+        "uncertainty": null,
+        "unit": "GeV",
+        "value": 0.00216
+      }
+    },
+    "MIXED_DEFAULT": {
+      "b": {
+        "notes": [
+          "Current repo value; mixed with light-quark references."
+        ],
+        "particle": "b",
+        "scale": "bottom self-scale reference",
+        "scheme": "MSbar_mixed",
+        "source_label": "repo_current",
+        "uncertainty": null,
+        "unit": "GeV",
+        "value": 4.18
+      },
+      "c": {
+        "notes": [
+          "Current repo value; not run to a common top scale."
+        ],
+        "particle": "c",
+        "scale": "self-scale charm-reference",
+        "scheme": "MSbar_mixed",
+        "source_label": "repo_current",
+        "uncertainty": null,
+        "unit": "GeV",
+        "value": 1.27
+      },
+      "d": {
+        "notes": [
+          "Current repo value; not run to a common bottom scale."
+        ],
+        "particle": "d",
+        "scale": "2 GeV light-reference",
+        "scheme": "MSbar_mixed",
+        "source_label": "repo_current",
+        "uncertainty": null,
+        "unit": "GeV",
+        "value": 0.00467
+      },
+      "e": {
+        "notes": [
+          "Charged lepton reference; scheme-stable for this audit."
+        ],
+        "particle": "e",
+        "scale": "on-shell",
+        "scheme": "pole",
+        "source_label": "repo_current",
+        "uncertainty": null,
+        "unit": "MeV",
+        "value": 0.51099895
+      },
+      "mu": {
+        "notes": [
+          "Charged lepton reference; scheme-stable for this audit."
+        ],
+        "particle": "mu",
+        "scale": "on-shell",
+        "scheme": "pole",
+        "source_label": "repo_current",
+        "uncertainty": null,
+        "unit": "MeV",
+        "value": 105.6583755
+      },
+      "s": {
+        "notes": [
+          "Current repo value; not run to a common bottom scale."
+        ],
+        "particle": "s",
+        "scale": "2 GeV strange-reference",
+        "scheme": "MSbar_mixed",
+        "source_label": "repo_current",
+        "uncertainty": null,
+        "unit": "GeV",
+        "value": 0.0934
+      },
+      "t": {
+        "notes": [
+          "Current repo value; mixed with light-quark references."
+        ],
+        "particle": "t",
+        "scale": "top mass reference",
+        "scheme": "mixed_top_reference",
+        "source_label": "repo_current",
+        "uncertainty": null,
+        "unit": "GeV",
+        "value": 172.69
+      },
+      "tau": {
+        "notes": [
+          "Charged lepton reference; scheme-stable for this audit."
+        ],
+        "particle": "tau",
+        "scale": "on-shell",
+        "scheme": "pole",
+        "source_label": "repo_current",
+        "uncertainty": null,
+        "unit": "MeV",
+        "value": 1776.86
+      },
+      "u": {
+        "notes": [
+          "Current repo value; not run to a common top scale."
+        ],
+        "particle": "u",
+        "scale": "2 GeV light-reference",
+        "scheme": "MSbar_mixed",
+        "source_label": "repo_current",
+        "uncertainty": null,
+        "unit": "GeV",
+        "value": 0.00216
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+[project]
+name = "berger-hopf-sm-completion"
+version = "0.1.0"
+description = "Conditional Berger-Hopf Standard Model completion screens and audits."
+requires-python = ">=3.10"
+dependencies = [
+  "numpy",
+  "scipy",
+  "pytest",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+addopts = "-ra"
+

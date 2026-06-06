@@ -1,0 +1,297 @@
+[
+  {
+    "dependencies": [
+      "admitted SM chiral representation pattern"
+    ],
+    "id": "sm_gauge_ledger",
+    "limitations": [
+      "The representation pattern is admitted rather than derived from pure geometry."
+    ],
+    "statement": "The admitted chiral representation ledger is the anomaly-free Standard Model gauge and matter ledger.",
+    "status": "DERIVED_CONDITIONAL",
+    "test_modules": [
+      "tests/test_hypercharges.py",
+      "tests/test_anomalies.py"
+    ],
+    "title": "Standard Model Gauge Ledger"
+  },
+  {
+    "dependencies": [
+      "admitted chiral representation pattern",
+      "Higgs-selected U(1) normalization"
+    ],
+    "id": "hypercharge_derivation",
+    "limitations": [
+      "This is conditional on the admitted representation pattern and U(1) normalization."
+    ],
+    "statement": "Hypercharges follow from Yukawa invariance and anomaly cancellation once the chiral pattern and Higgs-selected U(1) are admitted.",
+    "status": "VERIFIED_TEST",
+    "test_modules": [
+      "tests/test_hypercharges.py"
+    ],
+    "title": "Hypercharge Derivation"
+  },
+  {
+    "dependencies": [
+      "hypercharge_derivation"
+    ],
+    "id": "anomaly_cancellation",
+    "limitations": [
+      "The test audits the admitted one-generation ledger; it is not a derivation of the ledger itself."
+    ],
+    "statement": "One-generation gauge and mixed anomaly residuals vanish in the implemented left-Weyl ledger.",
+    "status": "VERIFIED_TEST",
+    "test_modules": [
+      "tests/test_anomalies.py"
+    ],
+    "title": "Anomaly Cancellation"
+  },
+  {
+    "dependencies": [
+      "full twisted Dirac operator construction"
+    ],
+    "id": "three_generation_index",
+    "limitations": [
+      "The index-three kernel has not been computed in this repository."
+    ],
+    "statement": "Three generations are reduced to an index-three twisted Dirac kernel.",
+    "status": "OPEN",
+    "test_modules": [],
+    "title": "Three-Generation Index Condition"
+  },
+  {
+    "dependencies": [
+      "three_generation_index",
+      "full protected spectrum computation"
+    ],
+    "id": "no_fourth_generation",
+    "limitations": [
+      "The protected spectrum is not yet computed, so this remains open."
+    ],
+    "statement": "No fourth protected chiral generation is expected only after the protected kernel computation is completed.",
+    "status": "OPEN",
+    "test_modules": [],
+    "title": "No Fourth Protected Chiral Generation"
+  },
+  {
+    "dependencies": [
+      "supplied mode ledger",
+      "universal overlap rule"
+    ],
+    "id": "yukawa_overlap_structure",
+    "limitations": [
+      "Mode-selection rules are operational audits, not yet derived from the full action; numerical matches are screens, not predictions."
+    ],
+    "statement": "Charged-sector Yukawa hierarchies are screened by the supplied universal overlap rule and mode ledger.",
+    "status": "STRONG_SCREEN",
+    "test_modules": [
+      "tests/test_mode_selection.py"
+    ],
+    "title": "Yukawa Overlap Structure"
+  },
+  {
+    "dependencies": [
+      "supplied boundary operators",
+      "nonnegative Hopf-charge Berger domain"
+    ],
+    "id": "charged_sector_mode_ledger",
+    "limitations": [
+      "The boundary operators Omega_f are ACTION_LINKED by symbolic phase factors but are not fully ACTION_DERIVED from variation or spectrum of the twisted Dirac/bundle action."
+    ],
+    "statement": "The supplied boundary operators recover the charged-sector mode ledger without mass inputs.",
+    "status": "VERIFIED_TEST",
+    "test_modules": [
+      "tests/test_mode_selection.py",
+      "tests/test_boundary_derivation.py"
+    ],
+    "title": "Charged-Sector Mode Ledger"
+  },
+  {
+    "dependencies": [
+      "left-handed internal bases"
+    ],
+    "id": "ckm_screen",
+    "limitations": [
+      "No independent CKM fit or dynamical derivation is implemented yet."
+    ],
+    "statement": "CKM mixing is represented as left-handed up/down internal-basis misalignment.",
+    "status": "DERIVED_CONDITIONAL",
+    "test_modules": [],
+    "title": "CKM Screen"
+  },
+  {
+    "dependencies": [
+      "effective neutrino extension"
+    ],
+    "id": "pmns_effective_extension",
+    "limitations": [
+      "Neutrino masses are not part of the minimal Standard Model ledger in this repository."
+    ],
+    "statement": "PMNS mixing is treated only as an effective neutrino-sector extension.",
+    "status": "DERIVED_CONDITIONAL",
+    "test_modules": [],
+    "title": "PMNS Effective Extension"
+  },
+  {
+    "dependencies": [
+      "supplied coupling relations"
+    ],
+    "id": "gauge_coupling_screen",
+    "limitations": [
+      "Gate 29B implements one-loop RG matching scaffolding only; full two-/three-loop threshold matching remains OPEN and is not a completed theorem."
+    ],
+    "statement": "The supplied gauge coupling relations are electroweak-scale matching screens with a one-loop RG scaffold.",
+    "status": "STRONG_SCREEN",
+    "test_modules": [
+      "tests/test_couplings.py",
+      "tests/test_rg_matching.py"
+    ],
+    "title": "Gauge Coupling Matching Screen"
+  },
+  {
+    "dependencies": [
+      "supplied electroweak scale formula",
+      "reference Planck energy and alpha input"
+    ],
+    "id": "electroweak_scale_hopf_screen",
+    "limitations": [
+      "The calculation is a numerical screen and not an independent prediction."
+    ],
+    "statement": "The supplied Hopf-scale formula numerically screens the electroweak scale.",
+    "status": "STRONG_SCREEN",
+    "test_modules": [
+      "tests/test_higgs_scale.py"
+    ],
+    "title": "Electroweak Scale Hopf Screen"
+  },
+  {
+    "dependencies": [
+      "Berger scalar spectrum proxy",
+      "DIRAC_PROXY_LEVEL_1 finite-basis scaffold",
+      "DIRAC_PROXY_LEVEL_2 matrix scaffold",
+      "natural heat-kernel cutoff",
+      "finite-basis lower-bound inequalities",
+      "finite-basis convergence scan",
+      "sufficient theorem scaffold assumptions A1-A7"
+    ],
+    "id": "ht_proxy_spectral_gap",
+    "limitations": [
+      "Gate 32D formalizes sufficient proxy theorem assumptions A1-A7, but those assumptions are not proven in the full internal action; the theorem remains open."
+    ],
+    "statement": "The no-extra-light-state condition has executable scalar and twisted-Dirac finite-basis proxy spectral audits, plus a formal sufficient theorem scaffold listing assumptions A1-A7.",
+    "status": "PROXY_AUDIT",
+    "test_modules": [
+      "tests/test_spectral_gap.py",
+      "tests/test_positivity.py",
+      "tests/test_twisted_dirac_ht.py",
+      "tests/test_twisted_dirac_level2.py",
+      "tests/test_spectral_bounds.py",
+      "tests/test_theorem_scaffold.py"
+    ],
+    "title": "H_T Proxy Spectral Gap"
+  },
+  {
+    "dependencies": [
+      "finite-basis proxy operators",
+      "protected zero-mode projector"
+    ],
+    "id": "psd_curvature_profile_positivity",
+    "limitations": [
+      "This is a finite-basis proxy construction, not the full curvature/profile operator in the complete action."
+    ],
+    "statement": "A sufficient positive-semidefinite curvature/profile construction preserves the proxy Hopf gap on H_perp.",
+    "status": "PROXY_AUDIT",
+    "test_modules": [
+      "tests/test_positivity.py"
+    ],
+    "title": "PSD Curvature/Profile Positivity"
+  },
+  {
+    "dependencies": [
+      "full action",
+      "scalar spectrum analysis"
+    ],
+    "id": "scalar_decoupling",
+    "limitations": [
+      "Gate 30B implements a scalar/topographic decoupling scaffold only; full action-level scalar decoupling remains OPEN and not proven."
+    ],
+    "statement": "Scalar/topographic decoupling has a finite-basis scaffold, but remains to be proven in the full action.",
+    "status": "OPEN",
+    "test_modules": [
+      "tests/test_scalar_decoupling.py"
+    ],
+    "title": "Scalar Decoupling"
+  },
+  {
+    "dependencies": [
+      "topological U(1) construction"
+    ],
+    "id": "trace_u1_topological_condition",
+    "limitations": [
+      "No independent topological proof is implemented."
+    ],
+    "statement": "The trace U(1) topological condition remains an open structural input.",
+    "status": "OPEN",
+    "test_modules": [],
+    "title": "Trace U(1) Topological Condition"
+  },
+  {
+    "dependencies": [],
+    "id": "forbidden_pure_geometry_derivation",
+    "limitations": [
+      "The current repository is a conditional audit and screen suite."
+    ],
+    "statement": "The repository must not claim a rigorous first-principles derivation of the Standard Model from pure geometry alone.",
+    "status": "FORBIDDEN",
+    "test_modules": [],
+    "title": "Forbidden Pure-Geometry Derivation Claim"
+  },
+  {
+    "dependencies": [],
+    "id": "forbidden_confinement_proof",
+    "limitations": [
+      "No confinement proof is implemented or audited."
+    ],
+    "statement": "The repository must not claim a proof of Yang-Mills confinement.",
+    "status": "FORBIDDEN",
+    "test_modules": [],
+    "title": "Forbidden Yang-Mills Confinement Claim"
+  },
+  {
+    "dependencies": [
+      "full twisted Dirac H_T spectrum"
+    ],
+    "id": "forbidden_completed_no_extra_light_theorem",
+    "limitations": [
+      "Only proxy spectral-gap and positivity audits are implemented."
+    ],
+    "statement": "The repository must not claim the no-extra-light-state theorem is complete before the full H_T spectrum is computed.",
+    "status": "FORBIDDEN",
+    "test_modules": [],
+    "title": "Forbidden Completed No-Extra-Light-State Claim"
+  },
+  {
+    "dependencies": [],
+    "id": "forbidden_neutrino_minimal_sm",
+    "limitations": [
+      "Neutrino masses are treated only as an effective extension."
+    ],
+    "statement": "The repository must not claim neutrino masses are part of the minimal Standard Model.",
+    "status": "FORBIDDEN",
+    "test_modules": [],
+    "title": "Forbidden Minimal-SM Neutrino-Mass Claim"
+  },
+  {
+    "dependencies": [
+      "independent derivation of mode-selection rules"
+    ],
+    "id": "forbidden_numerical_predictions",
+    "limitations": [
+      "Implemented numerical results are screens unless upgraded by future derivations."
+    ],
+    "statement": "The repository must not claim numerical matches are predictions before independent mode-selection rules are derived.",
+    "status": "FORBIDDEN",
+    "test_modules": [],
+    "title": "Forbidden Numerical-Prediction Claim"
+  }
+]

@@ -1,0 +1,525 @@
+{
+  "anomalies_cancel": true,
+  "anomaly_residuals": {
+    "SU2_SU2_U1": "0",
+    "SU3_SU3_U1": "0",
+    "U1_U1_U1": "0",
+    "gravity_gravity_U1": "0"
+  },
+  "boundary_derivation_status": {
+    "down": "ACTION_LINKED",
+    "lepton": "ACTION_LINKED",
+    "up": "ACTION_LINKED"
+  },
+  "ckm": {
+    "angles": {
+      "sin_theta_12": 0.2256184580048353,
+      "sin_theta_13": 0.0035623676140463315,
+      "sin_theta_23": 0.04386794299087895
+    },
+    "cp_phase_status": "HOPF_PHASE_CP_SCREEN",
+    "delta": {
+      "S": 0.07957747154594767,
+      "delta": 1.1283791670955126,
+      "delta_q": 4,
+      "formula": "delta_CKM = (q_u - q_d) * sqrt(S)",
+      "geometry": "ALPHA_ANCHORED",
+      "q_d": 4,
+      "q_u": 8,
+      "status": "HOPF_PHASE_CP_SCREEN"
+    },
+    "geometry": {
+      "a": 1.157054135733433,
+      "name": "ALPHA_ANCHORED",
+      "status": "CANONICAL"
+    },
+    "jarlskog": 3.1011702945437805e-05,
+    "limitation": "Canonical flavor matrix uses internal-rule mass ratios and Hopf phase CP screen; full action derivation of Omega_f remains open.",
+    "mass_ratios": {
+      "charged_leptons": {
+        "heavy": 1.0,
+        "light": 0.00029729106456492414,
+        "middle": 0.06007447093260976
+      },
+      "down_quarks": {
+        "heavy": 1.0,
+        "light": 0.0011165200546001757,
+        "middle": 0.021933971495439474
+      },
+      "up_quarks": {
+        "heavy": 1.0,
+        "light": 1.2690463017606151e-05,
+        "middle": 0.008310500554068288
+      }
+    },
+    "matrix_magnitudes": [
+      [
+        0.9742095600721029,
+        0.22561702639894465,
+        0.0035623676140463315
+      ],
+      [
+        0.2254664853946855,
+        0.9732628072432431,
+        0.04386766463774175
+      ],
+      [
+        0.008977584746899065,
+        0.04308671994825354,
+        0.9990309992869156
+      ]
+    ],
+    "status": "BHSM_CANONICAL_FLAVOR_SCREEN"
+  },
+  "couplings": {
+    "relative_error": {
+      "alpha_3": 0.0026127869612162834,
+      "alpha_em_inv_mew": 0.0027734053471015273,
+      "sin2_theta_w": 0.0019495252606574985
+    },
+    "rg_matching": {
+      "electroweak_window_gev": [
+        50.0,
+        150.0
+      ],
+      "limitations": "Full two-/three-loop threshold matching remains OPEN; this is a one-loop scaffold.",
+      "reference_mu_gev": 91.1876,
+      "rows": {
+        "alpha1": {
+          "geometric_alpha": 0.01688686394038963,
+          "in_electroweak_window": true,
+          "matching_scale_gev": 67.28220608143282,
+          "reference_alpha": 0.016943627024574085
+        },
+        "alpha2": {
+          "geometric_alpha": 0.03377372788077926,
+          "in_electroweak_window": true,
+          "matching_scale_gev": 95.67565410615404,
+          "reference_alpha": 0.033801370774030094
+        },
+        "alpha3": {
+          "geometric_alpha": 0.1182080475827274,
+          "in_electroweak_window": true,
+          "matching_scale_gev": 89.39627857688689,
+          "reference_alpha": 0.1179
+        }
+      },
+      "status": "ONE_LOOP_SCAFFOLD"
+    },
+    "screen_status": "screened",
+    "values": {
+      "alpha_1": 0.01688686394038963,
+      "alpha_2": 0.03377372788077926,
+      "alpha_3": 0.1182080475827274,
+      "alpha_em_inv_mew": 128.30485721416164,
+      "sin2_theta_w": 0.23076923076923078
+    }
+  },
+  "expected_mode_ledger": {
+    "down": [
+      [
+        6,
+        3
+      ],
+      [
+        8,
+        2
+      ]
+    ],
+    "lepton": [
+      [
+        5,
+        2
+      ],
+      [
+        9,
+        3
+      ]
+    ],
+    "up": [
+      [
+        6,
+        0
+      ],
+      [
+        10,
+        1
+      ]
+    ]
+  },
+  "field_ledger": [
+    {
+      "chirality": "left",
+      "generations": 3,
+      "name": "Q_L",
+      "representation": {
+        "hypercharge": "1/6",
+        "su2": "2",
+        "su3": "3"
+      }
+    },
+    {
+      "chirality": "right",
+      "generations": 3,
+      "name": "u_R",
+      "representation": {
+        "hypercharge": "2/3",
+        "su2": "1",
+        "su3": "3"
+      }
+    },
+    {
+      "chirality": "right",
+      "generations": 3,
+      "name": "d_R",
+      "representation": {
+        "hypercharge": "-1/3",
+        "su2": "1",
+        "su3": "3"
+      }
+    },
+    {
+      "chirality": "left",
+      "generations": 3,
+      "name": "L_L",
+      "representation": {
+        "hypercharge": "-1/2",
+        "su2": "2",
+        "su3": "1"
+      }
+    },
+    {
+      "chirality": "right",
+      "generations": 3,
+      "name": "e_R",
+      "representation": {
+        "hypercharge": "-1",
+        "su2": "1",
+        "su3": "1"
+      }
+    }
+  ],
+  "gauge_group": "SU(3)_c x SU(2)_L x U(1)_Y",
+  "generation_mode_ledger": {
+    "charged_leptons": [
+      {
+        "action": 0.0,
+        "generation_rank": "heavy",
+        "j": 0,
+        "k": 0,
+        "q": 0,
+        "sector": "charged_leptons"
+      },
+      {
+        "action": 35.33877427301784,
+        "generation_rank": "middle",
+        "j": 2,
+        "k": 5,
+        "q": 1,
+        "sector": "charged_leptons"
+      },
+      {
+        "action": 102.04896845716057,
+        "generation_rank": "light",
+        "j": 3,
+        "k": 9,
+        "q": 3,
+        "sector": "charged_leptons"
+      }
+    ],
+    "down_quarks": [
+      {
+        "action": 0.0,
+        "generation_rank": "heavy",
+        "j": 0,
+        "k": 0,
+        "q": 0,
+        "sector": "down_quarks"
+      },
+      {
+        "action": 48.0,
+        "generation_rank": "middle",
+        "j": 3,
+        "k": 6,
+        "q": 0,
+        "sector": "down_quarks"
+      },
+      {
+        "action": 85.42038836828547,
+        "generation_rank": "light",
+        "j": 2,
+        "k": 8,
+        "q": 4,
+        "sector": "down_quarks"
+      }
+    ],
+    "up_quarks": [
+      {
+        "action": 0.0,
+        "generation_rank": "heavy",
+        "j": 0,
+        "k": 0,
+        "q": 0,
+        "sector": "up_quarks"
+      },
+      {
+        "action": 60.1958738286423,
+        "generation_rank": "middle",
+        "j": 0,
+        "k": 6,
+        "q": 6,
+        "sector": "up_quarks"
+      },
+      {
+        "action": 141.68155347314186,
+        "generation_rank": "light",
+        "j": 1,
+        "k": 10,
+        "q": 8,
+        "sector": "up_quarks"
+      }
+    ]
+  },
+  "geometry_config": {
+    "a": 1.157054135733433,
+    "name": "ALPHA_ANCHORED",
+    "notes": [
+      "Selected as canonical only when BHSM assumptions include epsilon_alpha = alpha^{-1}/(12*pi^2) - 1.",
+      "This selection rule does not inspect empirical mass or CKM residuals.",
+      "Adopted because the BHSM scale sector contains epsilon_alpha = alpha^{-1}/(12*pi^2) - 1.",
+      "Not chosen by fitting residuals."
+    ],
+    "source": "alpha^{-1}/(12*pi^2) Hopf/electroweak residual",
+    "status": "CANONICAL"
+  },
+  "higgs": {
+    "expression": "H(x,y)=H(x)Phi(y)",
+    "name": "H",
+    "profile": "Phi(y)",
+    "representation": {
+      "hypercharge": "1/2",
+      "su2": "2",
+      "su3": "1"
+    }
+  },
+  "higgs_sector": {
+    "empirical": {
+      "v_gev": 246.21965
+    },
+    "higgs_expression": "H(x,y)=H(x)Phi(y)",
+    "outputs": {
+      "epsilon_alpha": 0.15705413573343296,
+      "m_lift_gev": 9718.396740299762,
+      "v_gev": 246.16986520825228
+    },
+    "relative_error": {
+      "v_gev": 0.00020219666362016953
+    },
+    "status": "screened"
+  },
+  "ht_gap": {
+    "basis_size": 54,
+    "first_complement_eigenvalue": 1.4630400252994733,
+    "first_ht_complement_gap": 19586.72266333732,
+    "lambda2": 0.07957747154594767,
+    "limitations": "Level 2 finite-basis matrix scaffold only; full analytic H_T spectrum remains open.",
+    "margin": 1.4628370793107024,
+    "model_level": "DIRAC_PROXY_LEVEL_2",
+    "passes": true,
+    "status": "PROXY_AUDIT",
+    "theorem_complete": false,
+    "zero_mode_count": 3
+  },
+  "lagrangian_blocks": {
+    "effective_neutrino": "\\frac{c_{ij}}{\\Lambda}(L_i H)(L_j H)",
+    "fermion_kinetic": "\\bar{Q_L} i\\gamma^\\mu D_\\mu Q_L + \\bar{u_R} i\\gamma^\\mu D_\\mu u_R + \\bar{d_R} i\\gamma^\\mu D_\\mu d_R + \\bar{L_L} i\\gamma^\\mu D_\\mu L_L + \\bar{e_R} i\\gamma^\\mu D_\\mu e_R",
+    "gauge_kinetic": "-\\frac14 G_{\\mu\\nu}^a G^{a\\mu\\nu} -\\frac14 W_{\\mu\\nu}^i W^{i\\mu\\nu} -\\frac14 B_{\\mu\\nu} B^{\\mu\\nu}",
+    "higgs": "(D_\\mu H)^\\dagger(D^\\mu H) -[-\\mu^2 H^\\dagger H + \\lambda(H^\\dagger H)^2]",
+    "topographic_internal": "\\mathcal L_{\\rm topo/int}",
+    "yukawa": "-\\bar Q_L Y_d H d_R -\\bar Q_L Y_u \\tilde H u_R -\\bar L_L Y_e H e_R + h.c."
+  },
+  "left_weyl_hypercharges": {
+    "H": "1/2",
+    "L": "-1/2",
+    "Q": "1/6",
+    "d_c": "1/3",
+    "e_c": "1",
+    "u_c": "-2/3"
+  },
+  "model_level": "BHSM_WORKING_LOW_ENERGY_REINTERPRETATION",
+  "open_action_level_derivations": [
+    "derive Omega_f from the full twisted Dirac/bundle action",
+    "compute the full analytic twisted Dirac H_T spectrum",
+    "prove assumptions A1-A7 in the full internal action",
+    "complete two-/three-loop threshold RG matching",
+    "prove scalar/topographic decoupling from the full action"
+  ],
+  "physical_hypercharges": {
+    "L_L": "-1/2",
+    "Q_L": "1/6",
+    "d_R": "-1/3",
+    "e_R": "-1",
+    "u_R": "2/3"
+  },
+  "pmns": {
+    "alpha": 0.0072973525692838015,
+    "angles": {
+      "delta_m2_21_over_delta_m2_31": 0.029189410277135206,
+      "sin2_theta_12": 0.3114412756254819,
+      "sin2_theta_13": 0.021892057707851405,
+      "sin2_theta_23": 0.5437841154157028
+    },
+    "limitation": "PMNS rows use an effective neutrino-sector extension; neutrino masses are not part of the minimal Standard Model ledger.",
+    "status": "EFFECTIVE_EXTENSION_SCREEN"
+  },
+  "scalar_decoupling": {
+    "classifications": [
+      {
+        "conditional": false,
+        "coupling_strength": 1.0,
+        "coupling_type": "higgs_projection",
+        "eigenvalue": 125.1,
+        "gap": 9718.396740299762,
+        "is_higgs_projection": true,
+        "is_light": true,
+        "mode_id": "phi_0",
+        "passes": true,
+        "sector": "higgs",
+        "status": "light_higgs_projection"
+      },
+      {
+        "conditional": false,
+        "coupling_strength": 0.5,
+        "coupling_type": "heavy_orthogonal",
+        "eigenvalue": 10690.23641432974,
+        "gap": 9718.396740299762,
+        "is_higgs_projection": false,
+        "is_light": false,
+        "mode_id": "phi_1",
+        "passes": true,
+        "sector": "orthogonal",
+        "status": "heavy_orthogonal"
+      },
+      {
+        "conditional": true,
+        "coupling_strength": 0.3333333333333333,
+        "coupling_type": "derivative_filtered",
+        "eigenvalue": 2429.5991850749406,
+        "gap": 9718.396740299762,
+        "is_higgs_projection": false,
+        "is_light": true,
+        "mode_id": "phi_2",
+        "passes": true,
+        "sector": "orthogonal",
+        "status": "conditional_derivative_filtered"
+      },
+      {
+        "conditional": true,
+        "coupling_strength": 0.25,
+        "coupling_type": "curvature_filtered",
+        "eigenvalue": 1943.6793480599524,
+        "gap": 9718.396740299762,
+        "is_higgs_projection": false,
+        "is_light": true,
+        "mode_id": "phi_3",
+        "passes": true,
+        "sector": "orthogonal",
+        "status": "conditional_curvature_filtered"
+      },
+      {
+        "conditional": true,
+        "coupling_strength": 0.2,
+        "coupling_type": "screened",
+        "eigenvalue": 1619.7327900499604,
+        "gap": 9718.396740299762,
+        "is_higgs_projection": false,
+        "is_light": true,
+        "mode_id": "phi_4",
+        "passes": true,
+        "sector": "orthogonal",
+        "status": "conditional_screened"
+      },
+      {
+        "conditional": false,
+        "coupling_strength": 0.16666666666666666,
+        "coupling_type": "heavy_orthogonal",
+        "eigenvalue": 14577.595110449643,
+        "gap": 9718.396740299762,
+        "is_higgs_projection": false,
+        "is_light": false,
+        "mode_id": "phi_5",
+        "passes": true,
+        "sector": "orthogonal",
+        "status": "heavy_orthogonal"
+      }
+    ],
+    "conditional_modes": [
+      {
+        "conditional": true,
+        "coupling_strength": 0.3333333333333333,
+        "coupling_type": "derivative_filtered",
+        "eigenvalue": 2429.5991850749406,
+        "gap": 9718.396740299762,
+        "is_higgs_projection": false,
+        "is_light": true,
+        "mode_id": "phi_2",
+        "passes": true,
+        "sector": "orthogonal",
+        "status": "conditional_derivative_filtered"
+      },
+      {
+        "conditional": true,
+        "coupling_strength": 0.25,
+        "coupling_type": "curvature_filtered",
+        "eigenvalue": 1943.6793480599524,
+        "gap": 9718.396740299762,
+        "is_higgs_projection": false,
+        "is_light": true,
+        "mode_id": "phi_3",
+        "passes": true,
+        "sector": "orthogonal",
+        "status": "conditional_curvature_filtered"
+      },
+      {
+        "conditional": true,
+        "coupling_strength": 0.2,
+        "coupling_type": "screened",
+        "eigenvalue": 1619.7327900499604,
+        "gap": 9718.396740299762,
+        "is_higgs_projection": false,
+        "is_light": true,
+        "mode_id": "phi_4",
+        "passes": true,
+        "sector": "orthogonal",
+        "status": "conditional_screened"
+      }
+    ],
+    "dangerous_light_modes": [],
+    "exactly_one_light_higgs_projection": true,
+    "gap": 9718.396740299762,
+    "light_higgs_projection_count": 1,
+    "limitations": "Full action-level scalar/topographic decoupling remains OPEN; filtered and screened modes are conditional.",
+    "mode_count": 6,
+    "passes": true,
+    "status": "FINITE_BASIS_SCAFFOLD",
+    "theorem_complete": false
+  },
+  "theorem_complete": false,
+  "yukawa_ratios": {
+    "charged_leptons": {
+      "heavy": 1.0,
+      "light": 0.00029729106456492414,
+      "middle": 0.06007447093260976
+    },
+    "down_quarks": {
+      "heavy": 1.0,
+      "light": 0.0011165200546001757,
+      "middle": 0.021933971495439474
+    },
+    "up_quarks": {
+      "heavy": 1.0,
+      "light": 1.2690463017606151e-05,
+      "middle": 0.008310500554068288
+    }
+  }
+}

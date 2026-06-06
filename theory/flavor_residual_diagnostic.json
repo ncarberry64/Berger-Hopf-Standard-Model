@@ -1,0 +1,263 @@
+{
+  "ckm_rule_breakdown": {
+    "adopted_alternative": null,
+    "current_rule": {
+      "formula": "sqrt(u/t)",
+      "log_error": -0.03032462899899103,
+      "reference": 0.00382,
+      "relative_error": 0.06744303297216456,
+      "status": "IMPLEMENTED_SCREEN",
+      "value": 0.0035623676140463315
+    },
+    "exploratory_alternatives": [
+      {
+        "formula": "sqrt(u/t) * sqrt(d/s)",
+        "id": "sqrt_u_over_t_times_sqrt_d_over_s",
+        "log_error_vs_sin13": -0.6769500022970298,
+        "relative_error_vs_sin13": 0.7895979350975137,
+        "status": "EXPLORATORY_ONLY",
+        "value": 0.0008037358879274976
+      },
+      {
+        "formula": "sqrt(u/t) * (s/b)",
+        "id": "sqrt_u_over_t_times_s_over_b",
+        "log_error_vs_sin13": -1.6892073542574602,
+        "relative_error_vs_sin13": 0.979545322067338,
+        "status": "EXPLORATORY_ONLY",
+        "value": 7.813686970276896e-05
+      },
+      {
+        "delta_lambda_lr": 81.48567964449956,
+        "formula": "sqrt(u/t) * exp[-S Delta lambda_LR]",
+        "id": "sqrt_u_over_t_times_exp_delta_lambda_lr",
+        "log_error_vs_sin13": -2.846474343961616,
+        "relative_error_vs_sin13": 0.9985759486297027,
+        "status": "EXPLORATORY_ONLY",
+        "value": 5.43987623453582e-06
+      }
+    ],
+    "note": "Alternatives are diagnostics only and are not adopted as model rules."
+  },
+  "constant_sensitivity_table": [
+    {
+      "S": 0.07957747154594767,
+      "a": 0.573,
+      "c_over_t": 0.15023974540099852,
+      "relative_error": {
+        "c_over_t": 19.429056404171995,
+        "sin_theta_13": 11.222184720275772,
+        "u_over_t": 173.27610717323776
+      },
+      "sensitivity_only": true,
+      "sin_theta_13": 0.04668874563145345,
+      "u_over_t": 0.002179838968638564
+    },
+    {
+      "S": 0.07957747154594767,
+      "a": 1.0,
+      "c_over_t": 0.021933971495439474,
+      "relative_error": {
+        "c_over_t": 1.9825019980688525,
+        "sin_theta_13": 1.209699566673167,
+        "u_over_t": 4.696480633145636
+      },
+      "sensitivity_only": true,
+      "sin_theta_13": 0.008441052344691499,
+      "u_over_t": 7.125136468582184e-05
+    },
+    {
+      "S": 0.07957747154594767,
+      "a": 1.157054135733433,
+      "c_over_t": 0.008310500554068288,
+      "relative_error": {
+        "c_over_t": 0.13003176431657681,
+        "sin_theta_13": 0.06744303297216456,
+        "u_over_t": 0.014590767828891764
+      },
+      "sensitivity_only": true,
+      "sin_theta_13": 0.0035623676140463315,
+      "u_over_t": 1.2690463017606151e-05
+    }
+  ],
+  "constants_audit": {
+    "conceptual_sensitivity_values": {
+      "S": 0.07957747154594767,
+      "a_values": [
+        0.573,
+        1.0,
+        1.157054135733433
+      ]
+    },
+    "current": {
+      "S": 0.07957747154594767,
+      "a": 1.157054135733433,
+      "geometry": "ALPHA_ANCHORED"
+    },
+    "note": "These values are compared diagnostically and do not revise the model default.",
+    "sensitivity_only": true
+  },
+  "likely_root_cause_classification": {
+    "ckm_rule_limitation": true,
+    "constants_or_implementation_mismatch": false,
+    "genuine_bhsm_tension": "possible under current rules",
+    "mass_scheme_comparison_issue": true,
+    "missing_representation_normalization_factor": "open",
+    "mode_selection_issue": "not resolved; next admissible mode sensitivity is diagnostic only",
+    "summary": "The localized tension is not caused by a constants mismatch or missing CKM implementation. It traces to the current up-sector overlap ledger and the sqrt(u/t) V_ub screen, with quark mass-scheme sensitivity and possible missing representation/left-right normalization remaining open."
+  },
+  "limitations": [
+    "Diagnostic only; no parameters, modes, or CKM rules are tuned.",
+    "Exploratory CKM alternatives are not adopted."
+  ],
+  "mass_scheme": {
+    "affected_rows": [
+      "mass_ratio.up_quarks.middle",
+      "mass_ratio.up_quarks.light",
+      "mass_ratio.down_quarks.middle",
+      "mass_ratio.down_quarks.light"
+    ],
+    "note": "The repository does not implement a uniform renormalization scheme/scale for u, c, and t mass references. This marks the comparison as scheme-sensitive but does not hide the residual.",
+    "scheme_sensitive": true
+  },
+  "model_changed": false,
+  "up_admissible_scan": {
+    "a": 1.157054135733433,
+    "current_light_mode": [
+      10,
+      1
+    ],
+    "first_five": [
+      {
+        "lambda": 60.1958738286423,
+        "log_error_vs_u_over_t": 2.8224406211411224,
+        "mode": [
+          6,
+          0
+        ],
+        "omega_u": 6,
+        "q": 6,
+        "relative_error_vs_u_over_t": 663.4168243898392,
+        "suppression": 0.008310500554068288
+      },
+      {
+        "lambda": 141.68155347314186,
+        "log_error_vs_u_over_t": 0.006290906178497327,
+        "mode": [
+          10,
+          1
+        ],
+        "omega_u": 6,
+        "q": 8,
+        "relative_error_vs_u_over_t": 0.014590767828891764,
+        "suppression": 1.2690463017606151e-05
+      },
+      {
+        "lambda": 257.87742730178417,
+        "log_error_vs_u_over_t": -4.009445090501657,
+        "mode": [
+          14,
+          2
+        ],
+        "omega_u": 6,
+        "q": 10,
+        "relative_error_vs_u_over_t": 0.9999021513339257,
+        "suppression": 1.2238874209310043e-09
+      },
+      {
+        "lambda": 408.7834953145692,
+        "log_error_vs_u_over_t": -9.224767368899341,
+        "mode": [
+          18,
+          3
+        ],
+        "omega_u": 6,
+        "q": 12,
+        "relative_error_vs_u_over_t": 0.9999999994040187,
+        "suppression": 7.454511563251954e-15
+      },
+      {
+        "lambda": 594.399757511497,
+        "log_error_vs_u_over_t": -15.639675929014551,
+        "mode": [
+          22,
+          4
+        ],
+        "omega_u": 6,
+        "q": 14,
+        "relative_error_vs_u_over_t": 0.9999999999999998,
+        "suppression": 2.8675475795726386e-21
+      }
+    ],
+    "geometry": "ALPHA_ANCHORED",
+    "k_max": 40,
+    "ledger_changed": false,
+    "next_mode_assessment": {
+      "assessment": "overcorrects",
+      "next_mode_after_current_light": [
+        14,
+        2
+      ],
+      "note": "Ledger is not changed; this is an admissible-mode sensitivity diagnostic.",
+      "reference_u_over_t": 1.2507962244484336e-05,
+      "suppression": 1.2238874209310043e-09
+    },
+    "rule": "Omega_u = q - 2j = 6, q even, q >= 6"
+  },
+  "up_sector": {
+    "S": 0.07957747154594767,
+    "a": 1.157054135733433,
+    "geometry": "ALPHA_ANCHORED",
+    "light_mode": {
+      "S": 0.07957747154594767,
+      "a": 1.157054135733433,
+      "geometry": "ALPHA_ANCHORED",
+      "lambda": 141.68155347314186,
+      "mode": [
+        10,
+        1
+      ],
+      "omega_u": 6,
+      "q": 8,
+      "sector": "up_quarks",
+      "suppression": 1.2690463017606151e-05
+    },
+    "log_error": {
+      "c_over_t": 0.0530906513360964,
+      "sin_theta_13": -0.03032462899899103,
+      "u_over_t": 0.006290906178497327
+    },
+    "middle_mode": {
+      "S": 0.07957747154594767,
+      "a": 1.157054135733433,
+      "geometry": "ALPHA_ANCHORED",
+      "lambda": 60.1958738286423,
+      "mode": [
+        6,
+        0
+      ],
+      "omega_u": 6,
+      "q": 6,
+      "sector": "up_quarks",
+      "suppression": 0.008310500554068288
+    },
+    "notes": [
+      "Up-sector references are scheme-sensitive because no uniform quark mass scheme/scale is implemented.",
+      "No mode or overlap parameter is changed by this diagnostic."
+    ],
+    "predicted": {
+      "c_over_t": 0.008310500554068288,
+      "sqrt_u_over_t": 0.0035623676140463315,
+      "u_over_t": 1.2690463017606151e-05
+    },
+    "reference": {
+      "c_over_t": 0.007354218541895883,
+      "sin_theta_13": 0.00382,
+      "u_over_t": 1.2507962244484336e-05
+    },
+    "relative_error": {
+      "c_over_t": 0.13003176431657681,
+      "sin_theta_13": 0.06744303297216456,
+      "u_over_t": 0.014590767828891764
+    }
+  }
+}

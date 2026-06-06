@@ -1,0 +1,107 @@
+[
+  {
+    "gap_id": "ht_full_spectrum",
+    "title": "Full twisted Dirac / H_T spectrum",
+    "status": "DIRAC_PROXY_LEVEL_2 + SPECTRAL_BOUND_SCAFFOLD + BASIS_CONVERGENCE_AUDIT + THEOREM_SCAFFOLD",
+    "current_best_evidence": {
+      "tests": ["tests/test_twisted_dirac_level2.py", "tests/test_spectral_bounds.py", "tests/test_theorem_scaffold.py"],
+      "basis_size": 54,
+      "zero_mode_count": 3,
+      "first_complement_eigenvalue": 1.4630400252994733,
+      "ht_gap": 19586.72266333732,
+      "margin": 1.4628370793107024,
+      "required_dirac_lower_bound": 0.8038064161349437,
+      "lower_bounds": {
+        "direct_finite_spectrum": 19586.72266333732,
+        "minmax_restricted_complement": 19586.72266333732,
+        "gershgorin_restricted_complement": 19586.696449745185,
+        "weyl_profile_bound": 19586.72266333732
+      },
+      "basis_convergence": {
+        "cases": 18,
+        "k_max_values": [4, 6, 8, 10, 12, 16],
+        "a_values": [0.573, 1.0, "alpha_inverse/(12*pi**2)"],
+        "worst_direct_margin": 1.4628370793070644,
+        "worst_gershgorin_margin": 1.4366234871740744,
+        "zero_mode_count_stayed_three": true,
+        "all_cases_passed": true,
+        "nonmonotonic_behavior": "No nonmonotonic first-complement change beyond tolerance in the requested scan."
+      },
+      "theorem_scaffold": {
+        "theorem_complete": false,
+        "assumptions": ["A1", "A2", "A3", "A4", "A5", "A6", "A7"],
+        "status_counts": {
+          "VERIFIED_PROXY": 4,
+          "OPEN": 2,
+          "ASSUMED": 1
+        },
+        "conclusion": "If A1-A7 are proven in the full internal action, then the no-extra-light-state theorem follows."
+      }
+    },
+    "blockers": [
+      "Replace finite-basis proxy matrix with the full analytic twisted Dirac H_T spectrum.",
+      "Control the complete Hilbert-space complement H_perp."
+    ],
+    "next_required_step": "Compute the full twisted Dirac H_T spectrum or a rigorous lower bound on H_perp.",
+    "claim_allowed": "Gate 32D: formal sufficient theorem scaffold added. The theorem is not complete; it lists the exact assumptions A1-A7 that must be proven in the full internal action.",
+    "claim_forbidden": "Do not claim the no-extra-light-state theorem is proven."
+  },
+  {
+    "gap_id": "boundary_operators",
+    "title": "Boundary operators Omega_f",
+    "status": "ACTION_LINKED",
+    "current_best_evidence": {
+      "equations": ["Omega_l = -q + 2j = 3", "Omega_u = q - 2j = 6", "Omega_d = q + 4j = 12"],
+      "tests": ["tests/test_boundary_derivation.py"]
+    },
+    "blockers": [
+      "Derive coefficients from variation or spectrum of the full twisted Dirac/bundle action."
+    ],
+    "next_required_step": "Derive (-1,2), (1,-2), and (1,4) from the full action-level phase structure.",
+    "claim_allowed": "Boundary operators are ACTION_LINKED by symbolic phase factors.",
+    "claim_forbidden": "Do not claim boundary operators are fully ACTION_DERIVED."
+  },
+  {
+    "gap_id": "rg_matching",
+    "title": "RG matching",
+    "status": "ONE_LOOP_SCAFFOLD",
+    "current_best_evidence": {
+      "geometric_values": {
+        "alpha1": 0.01688686394038963,
+        "alpha2": 0.03377372788077926,
+        "alpha3": 0.1182080475827274
+      },
+      "matching_scales_gev": {
+        "alpha1": 67.282,
+        "alpha2": 95.676,
+        "alpha3": 89.396
+      },
+      "tests": ["tests/test_rg_matching.py"]
+    },
+    "blockers": [
+      "Two-loop and three-loop beta-function matching are placeholders.",
+      "Threshold corrections are not implemented."
+    ],
+    "next_required_step": "Implement explicit two-/three-loop threshold matching.",
+    "claim_allowed": "Geometric couplings behave as electroweak-scale matching conditions in the one-loop scaffold.",
+    "claim_forbidden": "Do not claim full RG matching is complete."
+  },
+  {
+    "gap_id": "scalar_decoupling",
+    "title": "Scalar/topographic decoupling",
+    "status": "FINITE_BASIS_SCAFFOLD",
+    "current_best_evidence": {
+      "light_higgs_projection_count": 1,
+      "dangerous_light_scalar_count": 0,
+      "conditional_filtered_screened_modes": 5,
+      "tests": ["tests/test_scalar_decoupling.py"]
+    },
+    "blockers": [
+      "Full action-level scalar spectrum is not computed.",
+      "Filtered and screened couplings remain conditional."
+    ],
+    "next_required_step": "Prove scalar/topographic decoupling from the full action-level spectrum and couplings.",
+    "claim_allowed": "Scalar/topographic decoupling scaffold implemented and audited.",
+    "claim_forbidden": "Do not claim scalar decoupling is proven."
+  }
+]
