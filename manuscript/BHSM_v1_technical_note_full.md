@@ -15,7 +15,7 @@ This manuscript is built from the repository audit ledgers and does not modify t
 
 # Repository and Reproducibility
 
-This technical note is assembled from the private development repository for the Berger-Hopf Standard Model project. It is a manuscript artifact on the paper branch and does not alter the frozen model.
+This technical note is assembled from the private development repository for the Berger-Hopf Standard Model project. It is a manuscript artifact on the paper branch and does not alter the frozen model. The structure follows a reproducible-research posture: numerical screens, assumptions, limitations, and falsification criteria are kept in versioned files rather than being adjusted inside the manuscript narrative [Reproducible-Research].
 
 | Item | Value |
 | --- | --- |
@@ -69,6 +69,12 @@ readable as a technical note. The underlying code and ledgers already define
 the model outputs, residual audit, virtual-dressing adoption audit, and
 falsification ledger. The paper branch reorganizes those materials into a
 linear presentation without changing the frozen model.
+
+The Standard Model remains the reference low-energy quantum field theory for
+the gauge and matter ledger used here [SM-Review]. BHSM is therefore not
+presented as replacing the Standard Model. It is a frozen no-retuning
+geometric reinterpretation framework whose outputs are compared against
+standard phenomenological ledgers and reference quantities [PDG].
 
 The core claim discipline is:
 
@@ -135,6 +141,13 @@ lambda_{k,j}(a) = a^2 (k - 2j)^2 + 2((2j + 1)k - 2j^2)
 The resulting numbers are screens from the frozen internal ledger, not fitted
 mass parameters.
 
+The use of an internal Berger-Hopf mode ledger places BHSM near a broad family
+of spectral, higher-dimensional, and internal-geometric approaches to particle
+physics [Spectral-Geometry], [Internal-Geometry]. The v1.0 repository does not
+claim that those analogies prove the model; they provide context for why a
+geometric mode ledger can be audited as a structured alternative to free
+Yukawa inputs.
+
 # Gauge and Field Ledger
 
 The working model card records the Standard Model gauge group:
@@ -164,11 +177,23 @@ usual gauge, fermion kinetic, Higgs, Yukawa, effective neutrino, and
 topographic/internal sectors. The neutrino sector is treated as an effective
 extension rather than as part of the minimal Standard Model.
 
+The gauge and field ledger follows the usual Standard Model representation
+bookkeeping [SM-Review]. Hypercharge and anomaly checks in the repository are
+therefore ledger-consistency tests inside the admitted BHSM setup, not a claim
+that the Standard Model gauge structure has been obtained without assumptions.
+
 # Flavor Predictions
 
 The frozen flavor outputs are generated from the fixed mode ledger and overlap
 rule. The term prediction here means frozen model-output ledger entry, not a
 claim of a completed first-principles derivation.
+
+In the Standard Model, Yukawa matrices encode flavor masses and mixings as
+inputs rather than as values fixed by the gauge symmetry alone. BHSM addresses
+this familiar flavor-parameter problem by freezing an internal overlap ledger
+and then auditing the residuals [Flavor-Problem]. The quark rows remain
+scheme-sensitive because light, charm, bottom, and top mass references require
+careful common-scale and scheme treatment [Quark-Masses], [PDG].
 
 ## Charged Fermion Ratios
 
@@ -196,6 +221,11 @@ The PMNS rows are effective-extension screens:
 
 These entries are not minimal-Standard-Model predictions. They are included as
 effective neutrino-sector screens with explicit limitations.
+
+The PMNS rows are framed as effective-extension outputs because neutrino
+masses and mixings are outside the minimal Standard Model matter ledger used
+for the charged-sector freeze [PMNS-Review]. They should be read as
+extension-level screens, not as minimal-model predictions.
 
 # CKM and CP Structure
 
@@ -236,6 +266,11 @@ The frozen CKM matrix magnitude screen is:
 The CKM sector remains an internal-rule flavor screen. Full action derivation
 of the boundary operators `Omega_f` remains open.
 
+CKM mixing and CP violation are standard phenomenological targets for flavor
+models [CKM-CP]. BHSM v1.0 freezes the angle rules and the Hopf-phase CP screen
+before residual comparison. The CKM entries are therefore no-retuning screens,
+not fitted post hoc matrix elements.
+
 # Gauge, Higgs, and Electroweak Screens
 
 ## Gauge Couplings
@@ -267,6 +302,11 @@ The frozen electroweak outputs are:
 These are electroweak-scale screens. They are not presented as an independent
 proof of the Higgs sector.
 
+The gauge-coupling rows are interpreted as electroweak-scale matching screens,
+not constants at every scale. Higher-order threshold matching is left open in
+the repository, and the quark-mass comparison pipeline separately records the
+scheme dependence of running masses [EFT-Review], [Quark-Masses], [PDG].
+
 # H_T Gap and Scalar Sector
 
 ## H_T Gap
@@ -285,6 +325,11 @@ The frozen repository records the `H_T` sector as a finite-basis proxy audit:
 
 The no-extra-light-state theorem remains open until the full analytic twisted
 Dirac `H_T` spectrum replaces the finite-basis proxy scaffold.
+
+The `H_T` audit is written in the language of finite-basis spectral bounds and
+internal operators, which is naturally adjacent to spectral/internal geometry
+programs [Spectral-Geometry]. The present result remains a proxy audit because
+the full twisted Dirac spectrum has not been computed.
 
 ## Scalar and Topographic Sector
 
@@ -338,6 +383,11 @@ unchanged.
 
 The virtual dressing adoption audit marks the rule as `ADOPTION_CANDIDATE`.
 It is not `ADOPTED_CANONICAL_DRESSED`.
+
+The dressed branch can be read as a controlled effective comparison layer:
+the virtual-environment factor is applied before residual scoring, and its
+scope is local to `c/t` [EFT-Review]. This is why the manuscript keeps
+`BHSM_BARE_V1` and `BHSM_DRESSED_V1_CANDIDATE` separate.
 
 # Falsification Ledger
 
@@ -420,3 +470,18 @@ frozen model-output ledger and explicit failure ledger that can be audited
 without retuning. The next technical work remains action-level derivation of
 `Omega_f`, full analytic `H_T` spectral computation, scalar/topographic
 decoupling from the full action, and precision QCD/RG matching.
+
+# References
+
+Bibliography scaffold. All entries are placeholders; VERIFY BEFORE SUBMISSION.
+
+- [SM-Review] Standard Model gauge and matter content review. VERIFY BEFORE SUBMISSION.
+- [PDG] Particle Data Group review and numerical reference tables. VERIFY BEFORE SUBMISSION.
+- [Flavor-Problem] Review of the Standard Model flavor hierarchy and Yukawa free-parameter problem. VERIFY BEFORE SUBMISSION.
+- [CKM-CP] CKM mixing and CP violation review or original-source cluster. VERIFY BEFORE SUBMISSION.
+- [PMNS-Review] Neutrino mixing and PMNS phenomenology review. VERIFY BEFORE SUBMISSION.
+- [Spectral-Geometry] Spectral/internal-geometry approaches to particle physics. VERIFY BEFORE SUBMISSION.
+- [Internal-Geometry] Higher-dimensional or internal-geometric reinterpretation programs. VERIFY BEFORE SUBMISSION.
+- [EFT-Review] Effective field theory review for low-energy matching and operator language. VERIFY BEFORE SUBMISSION.
+- [Quark-Masses] Quark mass schemes, running masses, and scheme dependence review. VERIFY BEFORE SUBMISSION.
+- [Reproducible-Research] Reproducible computational research practices. VERIFY BEFORE SUBMISSION.

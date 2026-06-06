@@ -23,6 +23,7 @@ REQUIRED_MANUSCRIPT_FILES = (
 )
 
 FULL_MANUSCRIPT = MANUSCRIPT / "BHSM_v1_technical_note_full.md"
+REFERENCES = MANUSCRIPT / "references.md"
 
 FORBIDDEN_PHRASES = (
     "fully proven",
@@ -48,6 +49,19 @@ REQUIRED_FULL_MANUSCRIPT_SECTIONS = (
     "# Falsification Ledger",
     "# Limitations",
     "# Conclusion",
+    "# References",
+)
+
+REQUIRED_CITATION_LABELS = (
+    "[SM-Review]",
+    "[CKM-CP]",
+    "[PMNS-Review]",
+    "[Flavor-Problem]",
+    "[Spectral-Geometry]",
+    "[EFT-Review]",
+    "[PDG]",
+    "[Quark-Masses]",
+    "[Reproducible-Research]",
 )
 
 
@@ -62,6 +76,7 @@ def _paper_text() -> str:
 def test_required_manuscript_files_exist():
     for name in REQUIRED_MANUSCRIPT_FILES:
         assert (MANUSCRIPT / name).is_file()
+    assert REFERENCES.is_file()
 
 
 def test_full_manuscript_exists_and_has_required_sections():
@@ -98,6 +113,17 @@ def test_full_manuscript_has_reproducibility_section():
     assert "03039feb14fb4c988edce8453f6ee5b234797eb2" in text
     assert "bhsm-v1.1-paper" in text
     assert "275 passed" in text
+
+
+def test_references_scaffold_and_citation_placeholders_exist():
+    full_text = _read(FULL_MANUSCRIPT)
+    references = _read(REFERENCES)
+
+    assert "# References" in full_text
+    assert "VERIFY BEFORE SUBMISSION" in references
+    for label in REQUIRED_CITATION_LABELS:
+        assert label in full_text
+        assert label in references
 
 
 def test_dressed_branch_matches_frozen_prediction_set():
