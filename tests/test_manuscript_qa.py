@@ -1,3 +1,4 @@
+import subprocess
 from pathlib import Path
 
 
@@ -24,6 +25,8 @@ REQUIRED_MANUSCRIPT_FILES = (
 
 FULL_MANUSCRIPT = MANUSCRIPT / "BHSM_v1_technical_note_full.md"
 REFERENCES = MANUSCRIPT / "references.md"
+LATEX_MANUSCRIPT = MANUSCRIPT / "BHSM_v1_technical_note.tex"
+SUBMISSION_CHECKLIST = MANUSCRIPT / "submission_checklist.md"
 
 FORBIDDEN_PHRASES = (
     "fully proven",
@@ -90,6 +93,8 @@ def test_required_manuscript_files_exist():
     for name in REQUIRED_MANUSCRIPT_FILES:
         assert (MANUSCRIPT / name).is_file()
     assert REFERENCES.is_file()
+    assert LATEX_MANUSCRIPT.is_file()
+    assert SUBMISSION_CHECKLIST.is_file()
 
 
 def test_full_manuscript_exists_and_has_required_sections():
@@ -101,14 +106,22 @@ def test_full_manuscript_exists_and_has_required_sections():
 
 
 def test_forbidden_overclaiming_phrases_absent_from_paper():
-    text = (_paper_text() + "\n" + _read(FULL_MANUSCRIPT)).lower()
+    text = (
+        _paper_text()
+        + "\n"
+        + _read(FULL_MANUSCRIPT)
+        + "\n"
+        + _read(LATEX_MANUSCRIPT)
+        + "\n"
+        + _read(SUBMISSION_CHECKLIST)
+    ).lower()
 
     for phrase in FORBIDDEN_PHRASES:
         assert phrase not in text
 
 
 def test_frozen_constants_and_branch_distinction_appear():
-    text = _paper_text() + "\n" + _read(FULL_MANUSCRIPT)
+    text = _paper_text() + "\n" + _read(FULL_MANUSCRIPT) + "\n" + _read(LATEX_MANUSCRIPT)
 
     assert "BHSM = Berger–Hopf Standard Model" in text
     assert "a = alpha^{-1}/(12*pi^2)" in text
@@ -174,11 +187,71 @@ def test_limitations_match_open_proof_obligations():
 
 
 def test_falsification_criteria_f1_to_f9_are_present():
-    paper = _read(MANUSCRIPT / "falsification_ledger.md")
+    paper = _read(MANUSCRIPT / "falsification_ledger.md") + "\n" + _read(LATEX_MANUSCRIPT)
     source = _read(THEORY / "bhsm_v1_falsification_ledger.md")
 
     for index in range(1, 10):
         criterion = f"`F{index}`"
-        assert criterion in paper
+        latex_criterion = f"F{index}"
+        assert criterion in paper or latex_criterion in paper
         assert criterion in source
     assert "Any post-freeze adjustment of `a`, `S`, modes, or `Z_virt`" in paper
+
+
+def test_latex_manuscript_has_publication_ready_sections():
+    text = _read(LATEX_MANUSCRIPT)
+
+    for section in (
+        "\\section{Introduction}",
+        "\\section{Framework and Frozen Configuration}",
+        "\\section{Gauge and Field Ledger}",
+        "\\section{Flavor Prediction Ledger}",
+        "\\section{CKM and CP Structure}",
+        "\\section{Gauge, Higgs, and Electroweak Screens}",
+        "\\section{Bare vs Dressed Branches}",
+        "\\section{Falsification Ledger}",
+        "\\section{Limitations and Open Proof Obligations}",
+        "\\section{Publication Declarations}",
+        "\\section{References}",
+    ):
+        assert section in text
+
+    assert "\\Bare" in text
+    assert "\\Dressed" in text
+    assert "a=\\alpha^{-1}/(12\\pi^2)" in text
+    assert "S=1/(4\\pi)" in text
+    assert "changes only $c/t$" in text
+    assert "candidate, not final canonical adoption" in text
+    assert "not analytically proven" in text
+    assert "Scalar/topographic decoupling remains open" in text
+    assert "Precision QCD/RG matching remains open" in text
+    assert "AI-assisted drafting/coding support" in text
+
+
+def test_submission_checklist_tracks_remaining_publication_blockers():
+    text = _read(SUBMISSION_CHECKLIST)
+
+    assert "No `src/` model logic changed" in text
+    assert "`BHSM_BARE_V1`" in text
+    assert "`BHSM_DRESSED_V1_CANDIDATE`" in text
+    assert "`H_T` remains proxy/scaffold audited" in text
+    assert "`Omega_f` remains action-linked" in text
+    assert "PDF visual proofread" in text
+
+
+def test_typesetting_pass_does_not_modify_source_model_files():
+    result = subprocess.run(
+        [
+            r"C:\Program Files\Git\cmd\git.exe",
+            "diff",
+            "--name-only",
+            "HEAD",
+        ],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    changed = [line.strip().replace("\\", "/") for line in result.stdout.splitlines() if line.strip()]
+
+    assert not [path for path in changed if path.startswith("src/")]
