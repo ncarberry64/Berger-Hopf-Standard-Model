@@ -1,6 +1,6 @@
 # Introduction
 
-The Berger-Hopf Standard Model (BHSM) is a frozen, no-retuning geometric
+The Berger–Hopf Standard Model (BHSM) is a frozen, no-retuning geometric
 reinterpretation framework for Standard Model flavor, couplings, generations,
 and electroweak-scale structure. The v1.0 freeze is not a new fit performed
 inside this manuscript. It is the documented repository state at commit

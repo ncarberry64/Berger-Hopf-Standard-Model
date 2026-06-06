@@ -1,7 +1,7 @@
 # Conclusion
 
 The frozen BHSM v1.0 repository defines a reproducible no-retuning prediction
-and falsification package for a Berger-Hopf reinterpretation of Standard Model
+and falsification package for a Berger–Hopf reinterpretation of Standard Model
 flavor, couplings, generations, and electroweak-scale structure.
 
 The paper branch reorganizes that package into a technical manuscript. It
