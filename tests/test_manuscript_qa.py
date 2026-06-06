@@ -58,10 +58,23 @@ REQUIRED_CITATION_LABELS = (
     "[PMNS-Review]",
     "[Flavor-Problem]",
     "[Spectral-Geometry]",
+    "[Internal-Geometry]",
     "[EFT-Review]",
     "[PDG]",
     "[Quark-Masses]",
     "[Reproducible-Research]",
+)
+
+VERIFIED_REFERENCE_MARKERS = (
+    "10.1103/PhysRevD.110.030001",
+    "10.1103/PhysRevLett.10.531",
+    "10.1143/PTP.49.652",
+    "10.1016/0550-3213(79)90316-X",
+    "10.1103/RevModPhys.59.671",
+    "10.1007/978-94-017-9162-5",
+    "10.1146/annurev.nucl.56.080805.140508",
+    "10.1016/S0010-4655(00)00155-7",
+    "10.1371/journal.pcbi.1003285",
 )
 
 
@@ -115,15 +128,22 @@ def test_full_manuscript_has_reproducibility_section():
     assert "275 passed" in text
 
 
-def test_references_scaffold_and_citation_placeholders_exist():
+def test_references_are_present_and_cover_manuscript_labels():
     full_text = _read(FULL_MANUSCRIPT)
     references = _read(REFERENCES)
 
     assert "# References" in full_text
-    assert "VERIFY BEFORE SUBMISSION" in references
     for label in REQUIRED_CITATION_LABELS:
         assert label in full_text
         assert label in references
+
+    for marker in VERIFIED_REFERENCE_MARKERS:
+        assert marker in references
+
+    remaining_verify_lines = [
+        line for line in references.splitlines() if "VERIFY BEFORE SUBMISSION" in line
+    ]
+    assert remaining_verify_lines == []
 
 
 def test_dressed_branch_matches_frozen_prediction_set():
