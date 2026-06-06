@@ -20,12 +20,18 @@
 \setlength{\parskip}{0.55em}
 \setlength{\parindent}{0pt}
 \renewcommand{\arraystretch}{1.15}
+\setlength{\emergencystretch}{2em}
+\Urlmuskip=0mu plus 2mu
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 
 \newcommand{\BHSM}{BHSM}
 \newcommand{\Bare}{\texttt{BHSM\_BARE\_V1}}
-\newcommand{\Dressed}{\texttt{BHSM\_DRESSED\_V1\_CANDIDATE}}
+\newcommand{\Dressed}{\texttt{BHSM\_DRESSED\_V1}\allowbreak\texttt{\_CANDIDATE}}
 \newcommand{\HT}{\ensuremath{H_T}}
 \newcommand{\Omegaf}{\ensuremath{\Omega_f}}
+\newcommand{\CommitHash}{\texttt{03039feb14fb4c988edce}\allowbreak\texttt{8453f6ee5b234797eb2}}
+\newcommand{\RepoURL}{\url{https://github.com/ncarberry64/Berger-Hopf-Standard-Model}}
+\newcommand{\doi}[1]{\href{https://doi.org/#1}{\nolinkurl{#1}}}
 
 \title{The Berger--Hopf Standard Model: A Frozen v1.0 Geometric Reinterpretation of Standard Model Flavor, Couplings, and Generations}
 \author{N. Carberry}
@@ -39,7 +45,7 @@ The Berger--Hopf Standard Model (\BHSM) is a no-retuning, alpha-anchored
 geometric reinterpretation framework for Standard Model flavor, couplings,
 generations, and electroweak-scale structure. This technical note typesets the
 frozen v1.0 repository state at commit
-\texttt{03039feb14fb4c988edce8453f6ee5b234797eb2} and tag
+\CommitHash{} and tag
 \texttt{bhsm-v1.0-freeze}. The frozen construction fixes the Berger anisotropy
 $a=\alpha^{-1}/(12\pi^2)$, the universal overlap width $S=1/(4\pi)$, and a
 charged-sector mode ledger for charged leptons, up quarks, and down quarks.
@@ -62,7 +68,7 @@ action.
 no-retuning geometric reinterpretation framework for Standard Model flavor,
 couplings, generations, and electroweak-scale structure. The v1.0 freeze is not
 a new fit performed inside this manuscript. It is the documented repository
-state at commit \texttt{03039feb14fb4c988edce8453f6ee5b234797eb2}, tag
+state at commit \CommitHash{}, tag
 \texttt{bhsm-v1.0-freeze}, where the test suite passed with 269 tests at the
 freeze and 278 tests on the current paper branch.
 
@@ -85,13 +91,13 @@ This technical note is assembled from the private development repository for
 the Berger--Hopf Standard Model project. It is a manuscript artifact on the
 paper branch and does not alter the frozen model.
 
-\begin{longtable}{@{}ll@{}}
+\begin{longtable}{@{}L{0.28\linewidth}L{0.66\linewidth}@{}}
 \toprule
 Item & Value \\
 \midrule
-Repository & \url{https://github.com/ncarberry64/Berger-Hopf-Standard-Model} \\
+Repository & \RepoURL{} \\
 Frozen tag & \texttt{bhsm-v1.0-freeze} \\
-Model freeze commit & \texttt{03039feb14fb4c988edce8453f6ee5b234797eb2} \\
+Model freeze commit & \CommitHash{} \\
 Manuscript branch & \texttt{bhsm-v1.1-paper} \\
 Freeze tests & \texttt{269 passed} \\
 Paper-branch QA tests & \texttt{278 passed} \\
@@ -111,7 +117,8 @@ width before any manuscript scoring.
 \begin{table}[h]
 \centering
 \caption{Frozen constants.}
-\begin{tabular}{@{}lll@{}}
+\small
+\begin{tabular}{@{}L{0.25\linewidth}L{0.37\linewidth}L{0.27\linewidth}@{}}
 \toprule
 Quantity & Frozen value & Status \\
 \midrule
@@ -165,6 +172,7 @@ the anomaly-free Standard Model ledger conditionally.
 \begin{table}[h]
 \centering
 \caption{Frozen \Bare{} charged-sector and CKM outputs.}
+\small
 \begin{tabular}{@{}lll@{}}
 \toprule
 Quantity & Value & Status \\
@@ -187,7 +195,8 @@ $\sin\theta_{13}$ & $0.0035623676140463315$ & CKM screen \\
 \begin{table}[h]
 \centering
 \caption{Frozen \Dressed{} changes relative to \Bare{}.}
-\begin{tabular}{@{}llll@{}}
+\small
+\begin{tabular}{@{}L{0.13\linewidth}L{0.25\linewidth}L{0.25\linewidth}L{0.12\linewidth}@{}}
 \toprule
 Quantity & \Bare{} & \Dressed{} & Changed \\
 \midrule
@@ -219,9 +228,11 @@ The Hopf-phase CP screen computes
   \delta_{\rm CKM}^{\rm BHSM}=\Delta q\sqrt{S},
 \]
 with $\Delta q$ from the light up/down Hopf charges. The frozen branch reports
-$\delta_{\rm CKM}=1.1283791670955126$ and
-$J_{\rm CKM}=3.1011702945437805\times10^{-5}$. The phase is a model-output
-screen, not an empirical insertion.
+\[
+  \delta_{\rm CKM}=1.1283791670955126,\qquad
+  J_{\rm CKM}=3.1011702945437805\times10^{-5}.
+\]
+The phase is a model-output screen, not an empirical insertion.
 
 \section{Gauge, Higgs, and Electroweak Screens}
 
@@ -263,15 +274,16 @@ decoupling from the action remains open.
 
 \section{Bare vs Dressed Branches}
 
-\Bare{} is the pure alpha-anchored Berger--Hopf overlap model. \Dressed{} is
-the same frozen model except for the local virtual-environment factor
-$Z_{\rm virt}^{u,2}=1/2$ applied only to $c/t$. The branches are separate
-ledger entries. The dressed branch is an adoption candidate, not final canonical
-adoption.
+The bare branch is the pure alpha-anchored Berger--Hopf overlap model. The
+dressed-candidate branch is the same frozen model except for the local
+virtual-environment factor $Z_{\rm virt}^{u,2}=1/2$ applied only to $c/t$. The
+branches are separate ledger entries. The dressed branch is an adoption
+candidate, not final canonical adoption.
 
 \section{Falsification Ledger}
 
-\begin{longtable}{@{}p{0.08\linewidth}p{0.68\linewidth}p{0.18\linewidth}@{}}
+\small
+\begin{longtable}{@{}L{0.06\linewidth}L{0.66\linewidth}L{0.20\linewidth}@{}}
 \caption{Frozen falsification criteria.}\\
 \toprule
 ID & Criterion & Status \\
@@ -296,6 +308,7 @@ F9 & Any post-freeze adjustment of $a$, $S$, modes, or $Z_{\rm virt}$ based on r
 \begin{table}[h]
 \centering
 \caption{Fixed tolerance bands.}
+\small
 \begin{tabular}{@{}ll@{}}
 \toprule
 Class & Tolerance \\
@@ -318,7 +331,8 @@ scalar decoupling & binary scaffold pass/fail \\
 
 \section{Limitations and Open Proof Obligations}
 
-\begin{longtable}{@{}p{0.34\linewidth}p{0.56\linewidth}@{}}
+\small
+\begin{longtable}{@{}L{0.30\linewidth}L{0.60\linewidth}@{}}
 \caption{Open proof obligations.}\\
 \toprule
 Topic & Current limitation \\
@@ -353,8 +367,7 @@ author.
 repository availability are by author decision.
 
 \textbf{Code availability.} The \BHSM{} v1.0 freeze is identified by tag
-\texttt{bhsm-v1.0-freeze} and commit
-\texttt{03039feb14fb4c988edce8453f6ee5b234797eb2}.
+\texttt{bhsm-v1.0-freeze}. Its commit is \CommitHash{}.
 
 \textbf{AI/tool assistance.} Manuscript and repository organization used
 AI-assisted drafting/coding support; scientific responsibility remains with the
@@ -376,46 +389,47 @@ QCD/RG matching.
 \begin{enumerate}
 \item S. Navas et al. (Particle Data Group), ``Review of Particle Physics,''
 \textit{Physical Review D} \textbf{110}, 030001 (2024).
-DOI: \texttt{10.1103/PhysRevD.110.030001}.
+DOI: \doi{10.1103/PhysRevD.110.030001}.
 \item S. L. Glashow, ``Partial-symmetries of weak interactions,''
 \textit{Nuclear Physics} \textbf{22}, 579--588 (1961).
-DOI: \texttt{10.1016/0029-5582(61)90469-2}.
+DOI: \doi{10.1016/0029-5582(61)90469-2}.
 \item S. Weinberg, ``A Model of Leptons,'' \textit{Physical Review Letters}
-\textbf{19}, 1264--1266 (1967). DOI: \texttt{10.1103/PhysRevLett.19.1264}.
+\textbf{19}, 1264--1266 (1967). DOI: \doi{10.1103/PhysRevLett.19.1264}.
 \item C. D. Froggatt and H. B. Nielsen, ``Hierarchy of quark masses, Cabibbo
 angles and CP violation,'' \textit{Nuclear Physics B} \textbf{147}, 277--298
-(1979). DOI: \texttt{10.1016/0550-3213(79)90316-X}.
+(1979). DOI: \doi{10.1016/0550-3213(79)90316-X}.
 \item N. Cabibbo, ``Unitary Symmetry and Leptonic Decays,''
 \textit{Physical Review Letters} \textbf{10}, 531--533 (1963).
-DOI: \texttt{10.1103/PhysRevLett.10.531}.
+DOI: \doi{10.1103/PhysRevLett.10.531}.
 \item M. Kobayashi and T. Maskawa, ``CP-Violation in the Renormalizable Theory
 of Weak Interaction,'' \textit{Progress of Theoretical Physics} \textbf{49},
-652--657 (1973). DOI: \texttt{10.1143/PTP.49.652}.
+652--657 (1973). DOI: \doi{10.1143/PTP.49.652}.
 \item Z. Maki, M. Nakagawa, and S. Sakata, ``Remarks on the Unified Model of
 Elementary Particles,'' \textit{Progress of Theoretical Physics} \textbf{28},
-870--880 (1962). DOI: \texttt{10.1143/PTP.28.870}.
+870--880 (1962). DOI: \doi{10.1143/PTP.28.870}.
 \item S. M. Bilenky and S. T. Petcov, ``Massive neutrinos and neutrino
 oscillations,'' \textit{Reviews of Modern Physics} \textbf{59}, 671--754
-(1987). DOI: \texttt{10.1103/RevModPhys.59.671}.
+(1987). DOI: \doi{10.1103/RevModPhys.59.671}.
 \item A. Connes, \textit{Noncommutative Geometry}, Academic Press (1994).
 ISBN: \texttt{0-12-185860-X}.
 \item W. D. van Suijlekom, \textit{Noncommutative Geometry and the Standard
 Model of Elementary Particle Physics}, Springer (2015).
-DOI: \texttt{10.1007/978-94-017-9162-5}.
+DOI: \doi{10.1007/978-94-017-9162-5}.
 \item J. M. Overduin and P. S. Wesson, ``Kaluza-Klein gravity,''
 \textit{Physics Reports} \textbf{283}, 303--378 (1997).
-DOI: \texttt{10.1016/S0370-1573(96)00046-4}.
+DOI: \doi{10.1016/S0370-1573(96)00046-4}.
 \item C. P. Burgess, ``An Introduction to Effective Field Theory,''
 \textit{Annual Review of Nuclear and Particle Science} \textbf{57}, 329--362
-(2007). DOI: \texttt{10.1146/annurev.nucl.56.080805.140508}.
+(2007). DOI: \doi{10.1146/annurev.nucl.56.080805.140508}.
 \item K. G. Chetyrkin, J. H. Kuhn, and M. Steinhauser, ``RunDec: A Mathematica
 package for running and decoupling of the strong coupling and quark masses,''
 \textit{Computer Physics Communications} \textbf{133}, 43--65 (2000).
-DOI: \texttt{10.1016/S0010-4655(00)00155-7}.
+DOI: \doi{10.1016/S0010-4655(00)00155-7}.
 \item G. K. Sandve, A. Nekrutenko, J. Taylor, and E. Hovig, ``Ten Simple Rules
 for Reproducible Computational Research,'' \textit{PLOS Computational Biology}
 \textbf{9}(10), e1003285 (2013).
-DOI: \texttt{10.1371/journal.pcbi.1003285}.
+DOI: \doi{10.1371/journal.pcbi.1003285}.
 \end{enumerate}
 
 \end{document}
+

@@ -26,6 +26,8 @@ Status: publication-readiness draft for the `bhsm-v1.1-paper` branch.
   `manuscript/BHSM_v1_technical_note.tex`
 - [x] PDF manuscript generated:
   `manuscript/BHSM_v1_technical_note.pdf`
+- [x] PDF visual proofread/layout pass completed with no remaining overfull or
+  underfull box warnings in the final LaTeX log.
 
 ## Required Claim Discipline
 
@@ -55,6 +57,6 @@ Status: publication-readiness draft for the `bhsm-v1.1-paper` branch.
 - [ ] Confirm author affiliation, acknowledgements, and funding wording.
 - [ ] Decide whether the private repository should be made visible, mirrored,
   archived, or cited by private-access statement.
-- [ ] Perform a final PDF visual proofread after compilation.
+- [ ] Perform final author/content proofread after compilation.
 - [ ] Confirm whether `BHSM_DRESSED_V1_CANDIDATE` should remain candidate-only
   in the submitted version.
