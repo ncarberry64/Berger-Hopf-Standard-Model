@@ -26,3 +26,18 @@ Open mirror risk count: `3`
 - Mirror-mode exclusion remains a proof obligation for the complete twisted Dirac operator.
 - The current finite scaffold reports mirror risks rather than hiding them.
 - No frozen BHSM predictions are changed.
+
+## v1.3I Mirror-Exclusion Derivation Update
+
+v1.3I evaluates three model-internal channels for each generated mirror
+candidate: weak chiral projector, Higgs-selected `U(1)` phase, and the v1.2
+sector boundary functional.
+
+Result: `mirror_lepton`, `mirror_up`, and `mirror_down` are classified
+`EXCLUDED` by the `EXCLUDED_BY_CHIRAL_PROJECTOR` channel. The Higgs-`U(1)` and
+boundary-functional channels remain `OPEN` and are not used to force
+exclusion.
+
+The full `H_T` theorem remains incomplete because the topological index,
+formal/coordinate zero-mode alignment, and infinite-basis complement bound
+remain open.

@@ -103,6 +103,17 @@ Correct claim: the diagonal finite scaffold passes, but the full `H_T` theorem
 still requires topological index, mirror-exclusion, and infinite-basis
 complement-bound derivations.
 
+### Mirror Exclusion Derivation
+
+v1.3I audits the generated mirror candidates against the weak chiral
+projector, Higgs-selected `U(1)` phase, and v1.2 sector boundary functional.
+The chiral projector channel excludes `mirror_lepton`, `mirror_up`, and
+`mirror_down`; the Higgs-`U(1)` and boundary-functional channels remain open.
+
+Correct claim: mirror candidates are excluded at the chiral-projector scaffold
+channel, but the full `H_T` theorem still requires the topological index,
+formal/coordinate zero-mode alignment, and infinite-basis complement bound.
+
 ## Limitations and Open Proof Obligations
 
 The release preserves the repository's claim discipline:

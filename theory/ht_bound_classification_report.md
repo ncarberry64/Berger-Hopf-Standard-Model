@@ -59,6 +59,17 @@ The diagonal finite scaffold passes, but the mirror exclusion and
 infinite-basis diagonal complement theorem remain open. The full `H_T` theorem
 therefore remains incomplete.
 
+## v1.3I Mirror-Exclusion Derivation Update
+
+v1.3I closes the generated mirror-candidate risk at the scaffold channel level:
+`mirror_lepton`, `mirror_up`, and `mirror_down` are excluded by the weak chiral
+projector channel. The Higgs-`U(1)` and boundary-functional mirror channels are
+still reported as `OPEN`.
+
+The full `H_T` theorem remains incomplete because the topological index
+theorem, formal/coordinate zero-mode alignment, and infinite-basis complement
+bound remain open.
+
 ## Limitations
 
 - The report is an analytic-bound development scaffold over DIRAC_PROXY_LEVEL_2.

@@ -33,3 +33,18 @@ Open mirror risk count: `3`
 - Finite scaffold index and boundary-functional index are not a full topological index theorem.
 - Mirror-mode exclusion remains open in the complete twisted Dirac operator.
 - The diagonal complement bound is finite-scaffold evidence, not an infinite-basis theorem.
+
+## v1.3I Mirror-Exclusion Derivation Update
+
+The generated opposite-chirality mirror candidates are excluded by the
+model-internal weak chiral projector channel:
+
+| Mirror | Channel | Final |
+| --- | --- | --- |
+| `mirror_lepton` | `EXCLUDED_BY_CHIRAL_PROJECTOR` | `EXCLUDED` |
+| `mirror_up` | `EXCLUDED_BY_CHIRAL_PROJECTOR` | `EXCLUDED` |
+| `mirror_down` | `EXCLUDED_BY_CHIRAL_PROJECTOR` | `EXCLUDED` |
+
+The scaffold index remains `3` and `theorem_complete` remains `False`.
+The full theorem still requires the topological index theorem and
+infinite-basis complement bound.

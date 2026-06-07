@@ -51,6 +51,12 @@ candidates. The finite diagonal complement lower bound clears the required
 Dirac threshold, but all three opposite-chirality mirror candidates remain
 `OPEN_MIRROR_RISK`.
 
+v1.3I audits those mirror candidates through chiral, Higgs-`U(1)`, and
+boundary-functional channels. The weak chiral projector excludes all three
+generated mirror candidates at the scaffold-channel level; theorem completion
+remains false because the topological index and infinite-basis complement
+bound remain open.
+
 Frozen baseline:
 
 - Tag: `bhsm-v1.0-freeze`

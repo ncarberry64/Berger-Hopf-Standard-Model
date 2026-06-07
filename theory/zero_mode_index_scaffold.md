@@ -36,3 +36,13 @@ v1.3H adds a dedicated diagonal complement lower-bound and mirror-mode audit.
 The finite scaffold index remains `3`, but opposite-chirality mirror candidates
 are generated explicitly and classified as `OPEN_MIRROR_RISK`. The index status
 therefore remains `INDEX_SCAFFOLD`, not `INDEX_THEOREM_PROVEN`.
+
+## v1.3I Mirror-Exclusion Derivation Update
+
+v1.3I audits whether the mirror candidates are excluded by model-internal
+structure. The weak chiral projector channel excludes all three generated
+opposite-chirality mirror candidates. Higgs-selected `U(1)` phase and
+sector-boundary-functional channels remain open rather than forced.
+
+The scaffold index remains `3`, but the full topological index theorem remains
+open.

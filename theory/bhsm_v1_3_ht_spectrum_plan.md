@@ -477,3 +477,42 @@ Recommended v1.3I task: derive or rule out the `OPEN_MIRROR_RISK` candidates
 from the full chiral projector, Higgs-selected `U(1)` phase, and sector
 boundary functional, or prove the topological index theorem that excludes
 opposite-chirality kernel states.
+
+## v1.3I Mirror-Exclusion Derivation Status
+
+Status: `IMPLEMENTED`
+
+BHSM v1.3I audits whether mirror zero modes are excluded by the weak chiral
+projector, Higgs-selected `U(1)` boundary phase, and v1.2 sector boundary
+functional.
+
+Generated reports:
+
+- `theory/mirror_exclusion_derivation_report.md`
+- `theory/mirror_exclusion_derivation_report.json`
+- `manuscript/v1_3i_mirror_exclusion_note.md`
+- `notebooks/31_mirror_exclusion_derivation.ipynb`
+
+Current channel result:
+
+- `mirror_lepton`: `EXCLUDED` by `EXCLUDED_BY_CHIRAL_PROJECTOR`;
+- `mirror_up`: `EXCLUDED` by `EXCLUDED_BY_CHIRAL_PROJECTOR`;
+- `mirror_down`: `EXCLUDED` by `EXCLUDED_BY_CHIRAL_PROJECTOR`;
+- Higgs-selected `U(1)` phase channel remains `OPEN`;
+- sector boundary-functional channel remains `OPEN`;
+- scaffold index remains `3`;
+- theorem_complete remains `False`.
+
+Correct claim:
+
+```text
+BHSM v1.3I audits whether mirror zero modes are excluded by the chiral
+projector, Higgs-selected U(1) boundary phase, and v1.2 sector boundary
+functional. It does not prove the full H_T theorem unless mirror exclusion,
+the index theorem, and the infinite-basis complement bound are all closed.
+```
+
+Recommended v1.3J task: attack the remaining `OPEN_ALIGNMENT_GAP` between the
+formal sector-labeled zero-mode scaffold and the finite Level 2 coordinate
+protected block, or derive the full topological index theorem
+`Index(D_twist)=3`.
