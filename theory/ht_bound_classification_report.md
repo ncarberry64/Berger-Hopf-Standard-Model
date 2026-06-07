@@ -3,6 +3,7 @@
 Theorem complete: `False`
 Weakest analytic block: `zero_complement_projector`
 Weakest matrix term: `sector_coupling`
+Sector-coupling bound status: v1.3B adds finite spectral, Frobenius, row-sum, Weyl, and relative-bound estimates. The baseline is norm-bound sufficient; larger robustness cases can remain finite-basis-only passes.
 
 BHSM v1.3A inventories and classifies the Level 2 H_T operator terms for analytic-bound development. It does not prove the full no-extra-light-state theorem.
 
@@ -24,14 +25,15 @@ BHSM v1.3A inventories and classifies the Level 2 H_T operator terms for analyti
 1. Restrict the finite Level 2 Dirac matrix to the complement of the three protected zero modes.
 2. Use the exact finite-basis diagonal contribution and finite q/residual ranges for diagonal sign-indefinite terms.
 3. Control sector off-diagonal blocks with Gershgorin and restricted min-max bounds.
-4. Square the symmetric Level 2 Dirac matrix and take the conservative complement lower bound.
-5. Apply the monotone heat-lift inequality with Lambda^2 = 1/(4*pi).
-6. Add only PSD curvature/profile contributions, so Weyl's lower bound cannot decrease.
-7. Keep theorem_complete=False until the zero-mode/complement split and off-diagonal bounds are proven in the full action.
+4. Use the v1.3B sector-coupling operator-norm audit to distinguish norm-certified cases from finite-basis-only passes.
+5. Square the symmetric Level 2 Dirac matrix and take the conservative complement lower bound.
+6. Apply the monotone heat-lift inequality with Lambda^2 = 1/(4*pi).
+7. Add only PSD curvature/profile contributions, so Weyl's lower bound cannot decrease.
+8. Keep theorem_complete=False until the zero-mode/complement split and off-diagonal bounds are proven in the full action.
 
 ## Next Upgrade Target
 
-Prove the full-action zero-mode/complement decomposition dim ker D_twist = 3 and an infinite-basis bound for the sector-coupling block.
+Prove the full-action zero-mode/complement decomposition dim ker D_twist = 3 and lift the sector-coupling norm estimate to an infinite-basis operator bound.
 
 ## Limitations
 

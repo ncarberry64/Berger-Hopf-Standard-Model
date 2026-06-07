@@ -143,3 +143,48 @@ action-level statement `dim ker D_twist = 3` and the infinite-dimensional
 complement decomposition remain open. The weakest matrix term is
 `sector_coupling`, whose current control is finite-basis Gershgorin / min-max
 rather than an infinite-basis operator-norm bound.
+
+## v1.3B Sector-Coupling Bound Status
+
+Status: `IMPLEMENTED`
+
+BHSM v1.3B isolates the Level 2 sector-coupling perturbation:
+
+```text
+K_sector = D_full^dagger D_full - D_0^dagger D_0
+```
+
+where `D_0` disables `sector_coupling` and
+`offdiag_boundary_coupling`. The audit computes finite spectral,
+Frobenius, row-sum, Weyl, and relative-bound estimates on the protected
+finite-basis complement.
+
+Generated reports:
+
+- `theory/sector_coupling_bound_report.md`
+- `theory/sector_coupling_bound_report.json`
+- `manuscript/v1_3b_sector_coupling_bound_note.md`
+- `notebooks/24_sector_coupling_bounds.ipynb`
+
+Baseline result:
+
+- Required Dirac lower bound: `0.8038064161349437`
+- Base complement lower bound before sector coupling: `1.4641`
+- Full complement lower bound with sector coupling: `1.463040025299567`
+- Sector-coupling spectral norm: `0.4720872031830534`
+- Weyl lower bound: `0.9920127968169465`
+- Classification: `NORM_BOUND_SUFFICIENT`
+
+Robustness result:
+
+- Cases scanned: `72`
+- All finite-basis cases pass: `True`
+- All norm bounds sufficient: `False`
+- Classification set:
+  `NORM_BOUND_SUFFICIENT`,
+  `NORM_BOUND_INSUFFICIENT_BUT_FINITE_BASIS_PASSES`
+
+This improves the sector-coupling audit but does not complete the theorem:
+some larger/perturbed finite-basis cases pass by direct spectrum while the
+conservative norm bound is insufficient. Those cases remain finite-basis
+evidence, not analytic proof.

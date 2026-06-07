@@ -23,6 +23,7 @@ class HTInventoryReport:
     combined_bound_chain: tuple[str, ...]
     weakest_term: str
     weakest_matrix_term: str
+    sector_coupling_bound_status: str
     next_upgrade_target: str
     theorem_complete: bool
     limitations: tuple[str, ...]
@@ -50,6 +51,7 @@ def combined_bound_plan(inventory: HTBoundInventory | None = None) -> tuple[str,
         "Restrict the finite Level 2 Dirac matrix to the complement of the three protected zero modes.",
         "Use the exact finite-basis diagonal contribution and finite q/residual ranges for diagonal sign-indefinite terms.",
         "Control sector off-diagonal blocks with Gershgorin and restricted min-max bounds.",
+        "Use the v1.3B sector-coupling operator-norm audit to distinguish norm-certified cases from finite-basis-only passes.",
         "Square the symmetric Level 2 Dirac matrix and take the conservative complement lower bound.",
         "Apply the monotone heat-lift inequality with Lambda^2 = 1/(4*pi).",
         "Add only PSD curvature/profile contributions, so Weyl's lower bound cannot decrease.",
@@ -92,9 +94,13 @@ def build_ht_inventory_report() -> HTInventoryReport:
         combined_bound_chain=combined_bound_plan(inventory),
         weakest_term=weakest_term(inventory),
         weakest_matrix_term=weakest_matrix_term(inventory),
+        sector_coupling_bound_status=(
+            "v1.3B adds finite spectral, Frobenius, row-sum, Weyl, and relative-bound estimates. "
+            "The baseline is norm-bound sufficient; larger robustness cases can remain finite-basis-only passes."
+        ),
         next_upgrade_target=(
             "Prove the full-action zero-mode/complement decomposition "
-            "dim ker D_twist = 3 and an infinite-basis bound for the sector-coupling block."
+            "dim ker D_twist = 3 and lift the sector-coupling norm estimate to an infinite-basis operator bound."
         ),
         theorem_complete=False,
         limitations=(
@@ -135,6 +141,7 @@ def export_ht_bound_classification_markdown(path: str | Path) -> None:
         f"Theorem complete: `{report.theorem_complete}`",
         f"Weakest analytic block: `{report.weakest_term}`",
         f"Weakest matrix term: `{report.weakest_matrix_term}`",
+        f"Sector-coupling bound status: {report.sector_coupling_bound_status}",
         "",
         "BHSM v1.3A inventories and classifies the Level 2 H_T operator terms for analytic-bound development. It does not prove the full no-extra-light-state theorem.",
         "",
