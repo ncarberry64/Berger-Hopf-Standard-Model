@@ -378,3 +378,58 @@ H_T/scalar-sector mechanisms.
 
 This ontology layer does not change frozen predictions and does not complete
 the full `H_T` theorem.
+
+## v1.3G Zero-Mode and Complement-Split Status
+
+Status: `IMPLEMENTED`
+
+BHSM v1.3G formalizes the zero-mode/index and complement-projector scaffold
+needed for the `H_T` no-extra-light-state theorem.
+
+Generated reports:
+
+- `theory/zero_mode_index_scaffold.md`
+- `theory/zero_mode_index_scaffold.json`
+- `theory/complement_projector_report.md`
+- `theory/complement_projector_report.json`
+- `theory/index_theorem_scaffold_report.md`
+- `theory/index_theorem_scaffold_report.json`
+- `manuscript/v1_3g_zero_mode_complement_note.md`
+- `notebooks/29_zero_mode_complement_split.ipynb`
+
+Target decomposition:
+
+```text
+H = ker(D_twist) direct_sum H_perp
+```
+
+Target kernel/index:
+
+```text
+dim ker(D_twist) = 3
+Index(D_twist) = 3
+```
+
+Current scaffold result:
+
+- exactly three protected zero-mode candidates are identified;
+- finite Level 2 projectors satisfy `P0^2=P0`, `P_perp^2=P_perp`, and
+  `P0 P_perp=0`;
+- the finite sector-coupling block vanishes on the protected coordinate block;
+- the heat lift preserves zero Dirac-squared modes;
+- mirror opposite-chirality zero modes remain `OPEN`;
+- theorem_complete remains `False`.
+
+Correct claim:
+
+```text
+BHSM v1.3G formalizes the zero-mode/index and complement-projector scaffold
+needed for the H_T no-extra-light-state theorem. It does not prove the full
+index theorem unless the topological and mirror-mode assumptions are derived
+from the complete operator.
+```
+
+Recommended v1.3H task: attack the diagonal complement lower bound and mirror
+mode exclusion in the complete twisted Dirac operator, so assumptions `I1`,
+`I3`, `I5`, and the infinite-dimensional projector compatibility can be
+upgraded from scaffold/open status.

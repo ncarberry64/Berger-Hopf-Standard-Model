@@ -33,3 +33,18 @@ Theorem complete: `False`
 
 - The full twisted Dirac Hilbert space has not been derived from the complete internal action.
 - The protected zero-mode labels are formal scaffold labels, not a completed kernel proof.
+
+## v1.3G Zero-Mode/Complement Update
+
+v1.3G adds a dedicated zero-mode/index and complement-projector scaffold.
+The formal target remains:
+
+```text
+H = ker(D_twist) direct_sum H_perp
+dim ker(D_twist) = 3
+```
+
+The finite Level 2 projector identities pass, and the finite sector-coupling
+block vanishes on the protected coordinate block. The mirror-mode exclusion
+and full topological index calculation remain open; theorem_complete remains
+`False`.

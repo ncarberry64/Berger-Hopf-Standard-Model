@@ -41,6 +41,11 @@ observable particles. Any extra observable light state remains forbidden
 unless experimentally identified or lifted/screened by the `H_T` and
 scalar-sector mechanisms.
 
+v1.3G adds a zero-mode/index and complement-projector scaffold for
+`H = ker(D_twist) direct_sum H_perp` with target `dim ker(D_twist)=3`. The
+finite Level 2 projector identities pass, but the full topological index
+calculation and mirror-mode exclusion remain open.
+
 Frozen baseline:
 
 - Tag: `bhsm-v1.0-freeze`

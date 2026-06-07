@@ -81,6 +81,17 @@ automatically new observable particles. Extra observable light states remain
 forbidden unless experimentally identified or lifted/screened by the
 `H_T`/scalar-sector mechanisms.
 
+### Zero-Mode and Complement Split
+
+v1.3G adds a zero-mode/index and complement-projector scaffold for the target
+decomposition `H = ker(D_twist) direct_sum H_perp` with
+`dim ker(D_twist)=3`. The finite projector identities pass and the finite
+sector-coupling block vanishes on the protected coordinate block.
+
+Correct claim: this formalizes the scaffold needed for the `H_T`
+no-extra-light-state theorem. It does not prove the full index theorem; the
+topological index calculation and mirror-mode exclusion remain open.
+
 ## Limitations and Open Proof Obligations
 
 The release preserves the repository's claim discipline:

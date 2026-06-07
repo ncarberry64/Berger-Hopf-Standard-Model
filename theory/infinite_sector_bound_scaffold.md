@@ -55,6 +55,20 @@ If A1-A6 hold on the full Hilbert-space domain, then K_sector is D0^2-relative b
 - Prove the protected zero-mode subspace and complement projector in the full action.
 - Prove the diagonal complement lower bound A6 on H_perp.
 
+## v1.3G Zero-Mode/Complement Update
+
+v1.3G adds:
+
+- `theory/zero_mode_index_scaffold.md`
+- `theory/complement_projector_report.md`
+- `theory/index_theorem_scaffold_report.md`
+
+The finite projector identities pass and exactly three protected zero-mode
+candidates are recorded. The assumptions `I1`, `I3`, and `I5` remain open:
+the topological index calculation, mirror zero-mode exclusion, and
+trace-`U(1)` condition still need full-operator derivations. The infinite
+sector-bound theorem therefore remains `THEOREM_SCAFFOLD`.
+
 ## Limitations
 
 - This report defines assumptions under which the finite relative-bound evidence would extend beyond truncations.

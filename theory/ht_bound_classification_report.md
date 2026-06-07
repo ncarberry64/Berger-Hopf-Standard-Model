@@ -35,6 +35,17 @@ BHSM v1.3A inventories and classifies the Level 2 H_T operator terms for analyti
 
 Prove the full-action zero-mode/complement decomposition dim ker D_twist = 3 and prove assumptions A1-A6 from the complete operator.
 
+## v1.3G Zero-Mode/Complement Update
+
+v1.3G formalizes the weak `zero_complement_projector` block as a dedicated
+zero-mode/index and complement-projector scaffold. The finite Level 2
+projector identities pass, the heat lift preserves protected zero modes, and
+the finite sector-coupling block vanishes on the protected coordinate block.
+
+The classification of `zero_complement_projector` remains `FINITE_BASIS_ONLY`
+because the full topological index calculation, mirror zero-mode exclusion,
+and infinite-dimensional complement projector compatibility remain open.
+
 ## Limitations
 
 - The report is an analytic-bound development scaffold over DIRAC_PROXY_LEVEL_2.
