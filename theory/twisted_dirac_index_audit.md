@@ -48,3 +48,15 @@ model-internal weak chiral projector channel:
 The scaffold index remains `3` and `theorem_complete` remains `False`.
 The full theorem still requires the topological index theorem and
 infinite-basis complement bound.
+
+## v1.3J Zero-Mode Alignment Update
+
+The formal/coordinate alignment audit finds:
+
+- `zero_mode_lepton -> coordinate 0`: `ALIGNED`;
+- `zero_mode_up -> coordinate 18`: `OPEN_ALIGNMENT_GAP`;
+- `zero_mode_down -> coordinate 36`: `OPEN_ALIGNMENT_GAP`.
+
+Thus the finite scaffold index remains `3`, but one-to-one alignment between
+the formal sector-labeled kernel and the finite coordinate-protected block is
+not proven.

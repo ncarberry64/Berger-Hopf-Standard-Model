@@ -41,3 +41,11 @@ exclusion.
 The full `H_T` theorem remains incomplete because the topological index,
 formal/coordinate zero-mode alignment, and infinite-basis complement bound
 remain open.
+
+## v1.3J Alignment Cross-Check
+
+v1.3J preserves the v1.3I mirror-exclusion result: all generated mirror
+candidates remain excluded by the weak chiral projector channel. The remaining
+zero-mode blocker is not mirror risk but formal/coordinate alignment:
+`zero_mode_up` and `zero_mode_down` are present in the finite basis but are not
+inside the finite coordinate-protected block.

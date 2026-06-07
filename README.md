@@ -114,6 +114,17 @@ Correct claim: mirror candidates are excluded at the chiral-projector scaffold
 channel, but the full `H_T` theorem still requires the topological index,
 formal/coordinate zero-mode alignment, and infinite-basis complement bound.
 
+### Zero-Mode Alignment
+
+v1.3J audits whether the formal sector-labeled protected zero-mode scaffold is
+the same as the finite Level 2 coordinate-protected block. The result is
+partial alignment: `zero_mode_lepton` aligns with coordinate `0`, while
+`zero_mode_up` and `zero_mode_down` are present at coordinates `18` and `36`
+but are not inside the finite coordinate-protected block.
+
+Correct claim: the alignment gap is clarified, not closed. The full `H_T`
+theorem still requires a full operator/index/complement proof.
+
 ## Limitations and Open Proof Obligations
 
 The release preserves the repository's claim discipline:

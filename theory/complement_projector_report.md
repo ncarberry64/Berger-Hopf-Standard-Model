@@ -35,3 +35,12 @@ exclusion. The finite coordinate-complement diagonal lower bound is `1.4641`,
 which clears `d_required = 0.8038064161349437`. The full theorem remains open
 because formal/coordinate zero-mode alignment and mirror-mode exclusion are not
 proven in the complete operator.
+
+## v1.3J Zero-Mode Alignment Update
+
+v1.3J confirms that the finite coordinate-protected block contains three
+coordinates, but they are not identical to the three formal sector-labeled
+zero-mode candidates. The lepton formal label aligns with coordinate `0`;
+the up and down formal labels match finite basis coordinates `18` and `36`,
+which are not in the coordinate-protected block. The complement-projector
+status therefore remains a scaffold.

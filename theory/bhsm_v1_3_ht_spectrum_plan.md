@@ -516,3 +516,43 @@ Recommended v1.3J task: attack the remaining `OPEN_ALIGNMENT_GAP` between the
 formal sector-labeled zero-mode scaffold and the finite Level 2 coordinate
 protected block, or derive the full topological index theorem
 `Index(D_twist)=3`.
+
+## v1.3J Zero-Mode Alignment Status
+
+Status: `IMPLEMENTED`
+
+BHSM v1.3J audits the alignment between formal protected zero-mode labels and
+the finite Level 2 coordinate-protected block.
+
+Generated reports:
+
+- `theory/zero_mode_alignment_report.md`
+- `theory/zero_mode_alignment_report.json`
+- `manuscript/v1_3j_zero_mode_alignment_note.md`
+- `notebooks/32_zero_mode_alignment.ipynb`
+
+Alignment result:
+
+- exactly three formal protected labels are present;
+- exactly three finite coordinate-protected states are present;
+- `zero_mode_lepton -> coordinate 0`: `ALIGNED`;
+- `zero_mode_up -> coordinate 18`: `OPEN_ALIGNMENT_GAP`;
+- `zero_mode_down -> coordinate 36`: `OPEN_ALIGNMENT_GAP`;
+- one-to-one alignment is `False`;
+- open alignment gap remains `True`;
+- mirror exclusion remains intact;
+- theorem_complete remains `False`.
+
+Correct claim:
+
+```text
+BHSM v1.3J audits the alignment between formal protected zero-mode labels and
+the finite Level 2 coordinate-protected block. It does not prove the full H_T
+theorem unless the full operator, index theorem, and infinite-basis complement
+split are certified.
+```
+
+Recommended v1.3K task: either revise the Level 2 coordinate-protection
+construction to protect the formal sector-labeled kernel directly, or derive a
+change-of-basis/projection theorem showing why the current finite coordinate
+block represents the formal three-sector kernel.

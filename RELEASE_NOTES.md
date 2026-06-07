@@ -57,6 +57,11 @@ generated mirror candidates at the scaffold-channel level; theorem completion
 remains false because the topological index and infinite-basis complement
 bound remain open.
 
+v1.3J audits the alignment between the formal protected zero-mode labels and
+the finite Level 2 coordinate-protected block. The result is partial alignment:
+the lepton label aligns, while the up/down labels remain
+`OPEN_ALIGNMENT_GAP`.
+
 Frozen baseline:
 
 - Tag: `bhsm-v1.0-freeze`

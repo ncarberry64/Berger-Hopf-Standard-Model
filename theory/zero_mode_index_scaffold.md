@@ -46,3 +46,17 @@ sector-boundary-functional channels remain open rather than forced.
 
 The scaffold index remains `3`, but the full topological index theorem remains
 open.
+
+## v1.3J Zero-Mode Alignment Update
+
+v1.3J audits the alignment between the formal protected zero-mode labels and
+the finite Level 2 coordinate-protected block. The result is partial:
+
+| Formal label | Matching coordinate | Status |
+| --- | --- | --- |
+| `zero_mode_lepton` | `0` | `ALIGNED` |
+| `zero_mode_up` | `18` | `OPEN_ALIGNMENT_GAP` |
+| `zero_mode_down` | `36` | `OPEN_ALIGNMENT_GAP` |
+
+The scaffold index remains `3`, mirror exclusion remains intact, and the
+formal/coordinate alignment gap remains open.

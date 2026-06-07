@@ -70,6 +70,16 @@ The full `H_T` theorem remains incomplete because the topological index
 theorem, formal/coordinate zero-mode alignment, and infinite-basis complement
 bound remain open.
 
+## v1.3J Zero-Mode Alignment Update
+
+v1.3J audits the formal/coordinate alignment blocker directly. The result is
+`PARTIALLY_ALIGNED`: the lepton formal zero-mode label aligns with coordinate
+`0`, while the up/down formal labels are present at coordinates `18` and `36`
+but are not in the finite coordinate-protected block.
+
+The `zero_complement_projector` term therefore remains the weakest analytic
+block and remains scaffolded.
+
 ## Limitations
 
 - The report is an analytic-bound development scaffold over DIRAC_PROXY_LEVEL_2.
