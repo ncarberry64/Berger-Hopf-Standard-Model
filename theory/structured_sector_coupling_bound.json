@@ -1523,5 +1523,29 @@
     }
   ],
   "theorem_complete": false,
+  "v1_3d_uniform_relative_bound_update": {
+    "all_b_k_zero": true,
+    "all_rows_pass": true,
+    "classification": "UNIFORM_BOUND_CANDIDATE",
+    "limitations": [
+      "UNIFORM_BOUND_CANDIDATE is finite truncation evidence, not a proof of the infinite-basis theorem.",
+      "The full H_T theorem remains open until zero-mode/complement and infinite-basis limits are certified."
+    ],
+    "max_a_k": 0.03095889839310559,
+    "max_band_width": 2,
+    "min_finite_basis_lower_bound": 1.4599918132873242,
+    "min_structured_lower_bound": 1.418773076862654,
+    "scan_rows": 108,
+    "theorem_complete": false,
+    "trend_summary": {
+      "a_K": "stable",
+      "b_K": "stable",
+      "band_width": "stable",
+      "finite_basis_lower_bound": "stable",
+      "sparsity": "increasing",
+      "structured_lower_bound": "stable"
+    },
+    "uniform_report": "theory/uniform_relative_bound_report.json"
+  },
   "zero_mode_count": 3
 }

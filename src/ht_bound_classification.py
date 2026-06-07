@@ -97,12 +97,12 @@ def build_ht_inventory_report() -> HTInventoryReport:
         sector_coupling_bound_status=(
             "v1.3B adds finite spectral, Frobenius, row-sum, Weyl, and relative-bound estimates. "
             "v1.3C adds structured block and generalized relative-bound diagnostics. "
-            "The baseline and robustness cases are finite-basis relative-bound candidates; "
-            "uniform infinite-basis control remains open."
+            "v1.3D tests uniform-in-k_max stability through k_max=32. "
+            "The scan supports UNIFORM_BOUND_CANDIDATE status, but the infinite-basis proof remains open."
         ),
         next_upgrade_target=(
             "Prove the full-action zero-mode/complement decomposition "
-            "dim ker D_twist = 3 and lift the structured sector-coupling relative bound to a uniform infinite-basis estimate."
+            "dim ker D_twist = 3 and convert the finite uniform sector-coupling scan into an analytic infinite-basis estimate."
         ),
         theorem_complete=False,
         limitations=(

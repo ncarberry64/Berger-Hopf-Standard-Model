@@ -68,3 +68,33 @@ BHSM v1.3C investigates structured relative bounds for the Level 2 sector-coupli
 - The structured bound is finite-basis unless made uniform in k_max.
 - The full zero-mode/complement proof remains open.
 - This audit does not prove the full H_T theorem.
+
+## v1.3D Uniform-in-k_max Update
+
+The v1.3D audit tests the structured relative-bound certificate over increasing
+finite-basis truncations:
+
+- Report: `theory/uniform_relative_bound_report.md`
+- Scan rows: `108`
+- `k_max`: `4, 6, 8, 10, 12, 16, 20, 24, 32`
+- Anisotropies: `alpha^{-1}/(12*pi^2)`, `1.0`, `0.573`
+- Perturbations: baseline and v1.3B sector-coupling perturbations
+- Classification: `UNIFORM_BOUND_CANDIDATE`
+- All rows pass the required Dirac lower bound: `True`
+- All `b_K` values remain zero: `True`
+- Max `a_K`: `0.03095889839310559`
+- Minimum structured lower bound: `1.418773076862654`
+- Minimum finite-basis lower bound: `1.4599918132873242`
+- Maximum mode-block bandwidth: `2`
+
+Trend summary for the canonical baseline:
+
+- `a_K`: stable
+- `b_K`: stable at zero
+- sparsity: increasing
+- band width: stable
+- structured lower bound: stable
+- finite-basis complement lower bound: stable
+
+This supports a uniform-bound candidate across the tested finite truncations,
+but it does not prove the infinite-basis result.

@@ -235,3 +235,48 @@ This strengthens finite-basis and semi-analytic sector-coupling control, but it
 does not complete the theorem. The bound must still be made uniform in the
 infinite-basis limit and paired with a full proof of the zero-mode/complement
 decomposition.
+
+## v1.3D Uniform Relative-Bound Status
+
+Status: `IMPLEMENTED`
+
+BHSM v1.3D tests whether the structured sector-coupling relative-bound
+certificate remains stable as `k_max` increases.
+
+Generated reports:
+
+- `theory/uniform_relative_bound_report.md`
+- `theory/uniform_relative_bound_report.json`
+- `manuscript/v1_3d_uniform_relative_bound_note.md`
+- `notebooks/26_uniform_relative_bounds.ipynb`
+
+Scan definition:
+
+- `k_max = 4, 6, 8, 10, 12, 16, 20, 24, 32`
+- `a = alpha^{-1}/(12*pi^2), 1.0, 0.573`
+- baseline plus v1.3B sector-coupling perturbations
+
+Result:
+
+- Scan rows: `108`
+- Classification: `UNIFORM_BOUND_CANDIDATE`
+- All rows pass the required Dirac lower bound: `True`
+- All `b_K` values remain zero: `True`
+- Max `a_K`: `0.03095889839310559`
+- Minimum structured lower bound: `1.418773076862654`
+- Minimum finite-basis lower bound: `1.4599918132873242`
+- Maximum mode-block bandwidth: `2`
+
+Canonical-baseline trend summary:
+
+- `a_K`: stable
+- `b_K`: stable at zero
+- sparsity: increasing
+- band width: stable
+- structured lower bound: stable
+- finite-basis complement lower bound: stable
+
+The scan supports a uniform-bound candidate across tested finite truncations,
+but it does not prove the infinite-basis result. Remaining blockers are the
+finite-to-infinite upgrade, the full zero-mode/complement split, and the lack
+of a compactness or finite-rank theorem for the growing sector-coupling block.
