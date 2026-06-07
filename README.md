@@ -1,3 +1,63 @@
+# Berger-Hopf Standard Model
+
+BHSM = Berger-Hopf Standard Model.
+
+This repository is a public research release for the Berger-Hopf Standard
+Model project. It contains the frozen BHSM v1.0 executable model framework and
+the BHSM v1.1 technical note / preprint package.
+
+The frozen v1.0 baseline is a no-retuning prediction and falsification package:
+the canonical geometry, overlap width, charged-sector mode ledger, tolerance
+bands, and bare/dressed-candidate outputs are fixed. Post-freeze adjustment of
+`a`, `S`, modes, tolerances, or `Z_virt` based on residuals invalidates the
+frozen v1.0 prediction set.
+
+## Quickstart
+
+```powershell
+python -m pytest -q
+```
+
+Current paper-branch test status: `281 passed`.
+
+## Branches and Tag
+
+| Ref | Meaning |
+| --- | --- |
+| `main` | v1.0 frozen model baseline |
+| `bhsm-v1.1-paper` | paper/preprint branch |
+| `bhsm-v1.0-freeze` | frozen v1.0 model tag |
+
+## Public Release Contents
+
+- `src/`: executable BHSM audit/model modules.
+- `tests/`: pytest coverage for the model, ledgers, scaffolds, and manuscript
+  checks.
+- `theory/`: machine-readable and manuscript-readable audit ledgers.
+- `manuscript/BHSM_v1_technical_note.tex`: v1.1 technical note source.
+- `manuscript/BHSM_v1_technical_note.pdf`: built preprint-style PDF.
+- `manuscript/BHSM_v1_technical_note_full.md`: unified Markdown manuscript.
+- `manuscript/release_checklist.md`: release-readiness checklist.
+
+## Limitations and Open Proof Obligations
+
+The release preserves the repository's claim discipline:
+
+- The full twisted Dirac / `H_T` spectrum remains open.
+- The `H_T` no-extra-light-state theorem remains proxy/scaffold audited, not
+  analytically proven.
+- Scalar/topographic decoupling remains scaffold audited, not fully proven from
+  the action.
+- Boundary operators `Omega_f` are action-linked, not fully action-derived.
+- Precision QCD/RG matching remains open.
+- `BHSM_DRESSED_V1_CANDIDATE` is a dressed candidate branch, not final
+  canonical adoption.
+
+## License
+
+All rights reserved. This repository is not released under an open-source
+license at this time. See `LICENSE.md`.
+
 # Berger-Hopf Standard Model Completion Program
 
 This repository formalizes, audits, and numerically tests a conditional
