@@ -98,11 +98,12 @@ def build_ht_inventory_report() -> HTInventoryReport:
             "v1.3B adds finite spectral, Frobenius, row-sum, Weyl, and relative-bound estimates. "
             "v1.3C adds structured block and generalized relative-bound diagnostics. "
             "v1.3D tests uniform-in-k_max stability through k_max=32. "
-            "The scan supports UNIFORM_BOUND_CANDIDATE status, but the infinite-basis proof remains open."
+            "v1.3E defines the Hilbert-space/domain assumptions needed to upgrade the scan. "
+            "The status remains THEOREM_SCAFFOLD, not proven."
         ),
         next_upgrade_target=(
             "Prove the full-action zero-mode/complement decomposition "
-            "dim ker D_twist = 3 and convert the finite uniform sector-coupling scan into an analytic infinite-basis estimate."
+            "dim ker D_twist = 3 and prove assumptions A1-A6 from the complete operator."
         ),
         theorem_complete=False,
         limitations=(

@@ -150,3 +150,22 @@ BHSM v1.3D tests whether the structured sector-coupling relative bound is unifor
 
 - UNIFORM_BOUND_CANDIDATE is finite truncation evidence, not a proof of the infinite-basis theorem.
 - The full H_T theorem remains open until zero-mode/complement and infinite-basis limits are certified.
+
+## v1.3E Hilbert-Space Domain Scaffold Update
+
+The v1.3E audit converts this finite uniform-bound evidence into an explicit
+Hilbert-space/domain theorem scaffold.
+
+- Domain report: `theory/hilbert_space_domain_scaffold.md`
+- Infinite-bound scaffold: `theory/infinite_sector_bound_scaffold.md`
+- Theorem status: `THEOREM_SCAFFOLD`
+- Theorem complete: `False`
+- Conservative candidate: `a_K^max = 0.04`, `b_K = 0`
+- Candidate diagonal lower bound: `d0 = 1.4641`
+- Candidate structured lower bound: `1.405536`
+- Required Dirac lower bound: `0.8038064161349437`
+- Candidate margin: `0.6017295838650562`
+
+The finite evidence remains separated from proof. The v1.3E implication is
+conditional on assumptions A1-A6, including the full zero-mode/complement split
+and an infinite-basis relative-bound estimate.

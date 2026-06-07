@@ -1,0 +1,117 @@
+{
+  "domain": {
+    "basis_label": "e_{k,j,q,chi,sector}",
+    "chiralities": [
+      -1,
+      1
+    ],
+    "complement_definition": "H_perp is the closed orthogonal complement of span(protected_zero_modes).",
+    "hopf_charge_rule": "q = k - 2j",
+    "j_range_rule": "0 <= j <= floor(k/2)",
+    "k_range": "k in nonnegative integers",
+    "limitations": [
+      "The full twisted Dirac Hilbert space has not been derived from the complete internal action.",
+      "The protected zero-mode labels are formal scaffold labels, not a completed kernel proof."
+    ],
+    "name": "BHSM Level 2 charged-sector Hilbert-space scaffold",
+    "protected_zero_modes": [
+      {
+        "chirality": -1,
+        "j": 0,
+        "k": 0,
+        "protected_zero_mode": true,
+        "q": 0,
+        "sector": "lepton"
+      },
+      {
+        "chirality": -1,
+        "j": 0,
+        "k": 0,
+        "protected_zero_mode": true,
+        "q": 0,
+        "sector": "up"
+      },
+      {
+        "chirality": -1,
+        "j": 0,
+        "k": 0,
+        "protected_zero_mode": true,
+        "q": 0,
+        "sector": "down"
+      }
+    ],
+    "sectors": [
+      "lepton",
+      "up",
+      "down"
+    ],
+    "status": "DOMAIN_SCAFFOLD"
+  },
+  "operator_domains": [
+    {
+      "acts_on": "H_perp and protected zero-mode span",
+      "assumptions": [
+        "D0^2 is self-adjoint on the closure of the finite-support core."
+      ],
+      "common_core": "finite-support sequences in the Hilbert basis labels",
+      "domain_definition": "psi with sum lambda_{k,j}^2 |psi_{k,j,chi,sector}|^2 finite",
+      "expression": "D0^2",
+      "limitations": [
+        "Self-adjointness is stated as a domain assumption, not proven here."
+      ],
+      "name": "diagonal_berger_dirac_kinetic",
+      "preserves_complement": true,
+      "preserves_protected_zero_modes": true,
+      "status": "DOMAIN_SCAFFOLD"
+    },
+    {
+      "acts_on": "sector labels at fixed k, j, q, chi",
+      "assumptions": [
+        "K_sector preserves k, j, q, and chi and only mixes sector labels."
+      ],
+      "common_core": "finite-support sequences in the Hilbert basis labels",
+      "domain_definition": "relative-bound domain inherited from D0^2 on the common core",
+      "expression": "K_sector",
+      "limitations": [
+        "Uniform relative boundedness is an assumption to be proven beyond finite scans."
+      ],
+      "name": "sector_coupling",
+      "preserves_complement": true,
+      "preserves_protected_zero_modes": true,
+      "status": "RELATIVE_BOUND_SCAFFOLD"
+    },
+    {
+      "acts_on": "protected light subspace",
+      "assumptions": [
+        "dim ker D_twist = 3 in the full action."
+      ],
+      "common_core": "protected zero-mode labels",
+      "domain_definition": "span of the three protected zero-mode labels",
+      "expression": "P0 H",
+      "limitations": [
+        "The full kernel computation remains open."
+      ],
+      "name": "protected_zero_mode_subspace",
+      "preserves_complement": false,
+      "preserves_protected_zero_modes": true,
+      "status": "KERNEL_SCAFFOLD"
+    },
+    {
+      "acts_on": "heavy complement sector",
+      "assumptions": [
+        "The complement projector is well-defined and compatible with the block decomposition."
+      ],
+      "common_core": "finite-support labels excluding protected zero-mode labels",
+      "domain_definition": "closed complement of the protected zero-mode span",
+      "expression": "H_perp = (P0 H)^perp",
+      "limitations": [
+        "The infinite-dimensional projector compatibility is not proven here."
+      ],
+      "name": "orthogonal_complement",
+      "preserves_complement": true,
+      "preserves_protected_zero_modes": false,
+      "status": "COMPLEMENT_SCAFFOLD"
+    }
+  ],
+  "theorem_complete": false
+}

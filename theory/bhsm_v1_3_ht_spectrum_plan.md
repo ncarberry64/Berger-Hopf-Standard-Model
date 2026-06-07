@@ -280,3 +280,64 @@ The scan supports a uniform-bound candidate across tested finite truncations,
 but it does not prove the infinite-basis result. Remaining blockers are the
 finite-to-infinite upgrade, the full zero-mode/complement split, and the lack
 of a compactness or finite-rank theorem for the growing sector-coupling block.
+
+## v1.3E Hilbert-Space Domain Scaffold Status
+
+Status: `IMPLEMENTED`
+
+BHSM v1.3E converts the v1.3D finite uniform-bound evidence into a formal
+Hilbert-space/domain theorem scaffold.
+
+Generated reports:
+
+- `theory/hilbert_space_domain_scaffold.md`
+- `theory/hilbert_space_domain_scaffold.json`
+- `theory/infinite_sector_bound_scaffold.md`
+- `theory/infinite_sector_bound_scaffold.json`
+- `manuscript/v1_3e_hilbert_space_bound_note.md`
+- `notebooks/27_hilbert_space_infinite_bound.ipynb`
+
+Formal basis labels:
+
+```text
+e_{k,j,q,chi,sector}
+```
+
+with `k >= 0`, `0 <= j <= floor(k/2)`, `q = k - 2j`,
+`chi in {-1,+1}`, and `sector in {lepton, up, down}`.
+
+Theorem scaffold status:
+
+- Status: `THEOREM_SCAFFOLD`
+- Theorem complete: `False`
+- Finite evidence bridge: `UNIFORM_BOUND_CANDIDATE`
+- Conservative assumption candidate: `a_K^max = 0.04`, `b_K = 0`
+- Candidate diagonal lower bound: `d0 = 1.4641`
+- Candidate structured lower bound: `1.405536`
+- Required Dirac lower bound: `0.8038064161349437`
+- Candidate margin: `0.6017295838650562`
+
+Assumptions A1-A6:
+
+- A1: `K_sector` preserves `(k,j,q,chi)` and only mixes sectors.
+- A2: `K_sector` has uniformly bounded mode-block bandwidth.
+- A3: `K_sector` is `D0^2`-relative bounded on `H_perp` with
+  `a_K <= 0.04`, `b_K = 0`.
+- A4: `K_sector` vanishes on protected zero modes.
+- A5: the complement projection is well-defined and commutes with the relevant
+  block decomposition.
+- A6: the diagonal complement lower bound clears the relative-bound
+  requirement.
+
+Correct claim:
+
+```text
+BHSM v1.3E defines the Hilbert-space/domain assumptions under which the
+structured sector-coupling relative bound would extend beyond finite
+truncations. It does not prove the full H_T theorem until those assumptions
+and the zero-mode/complement split are derived from the complete operator.
+```
+
+Recommended v1.3F task: prove or further constrain A5 and A6: the protected
+kernel/complement projection and the diagonal complement lower bound on the
+infinite Hilbert space.

@@ -2151,5 +2151,32 @@
       "slope_per_k": 3.3525258443038642e-15,
       "status": "stable"
     }
-  ]
+  ],
+  "v1_3e_hilbert_space_domain_update": {
+    "assumption_ids": [
+      "A1",
+      "A2",
+      "A3",
+      "A4",
+      "A5",
+      "A6"
+    ],
+    "conservative_candidate": {
+      "a_k_max": 0.04,
+      "b_k": 0.0,
+      "candidate_structured_lower_bound": 1.405536,
+      "d0_candidate": 1.4641,
+      "margin": 0.6017295838650562,
+      "passes": true,
+      "required_dirac_lower_bound": 0.8038064161349437
+    },
+    "domain_report": "theory/hilbert_space_domain_scaffold.json",
+    "infinite_bound_scaffold": "theory/infinite_sector_bound_scaffold.json",
+    "limitations": [
+      "This report defines assumptions under which the finite relative-bound evidence would extend beyond truncations.",
+      "It does not prove those assumptions or complete the full H_T theorem."
+    ],
+    "theorem_complete": false,
+    "theorem_status": "THEOREM_SCAFFOLD"
+  }
 }
