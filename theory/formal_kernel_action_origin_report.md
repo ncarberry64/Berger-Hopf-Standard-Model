@@ -41,3 +41,17 @@ Remaining obligations:
 - The formal kernel is boundary/basis-derived in this scaffold, not fully action-derived.
 - Coordinates are finite-basis implementation labels for sector-labeled states.
 - No frozen predictions are changed.
+
+## v1.3O Coordinate-Free Symbolic Update
+
+v1.3O separates the invariant formal kernel from its finite coordinates:
+
+```text
+K_formal = span{|ell,0,0,q=0,chi=-1>, |u,0,0,q=0,chi=-1>, |d,0,0,q=0,chi=-1>}
+H_perp = K_formal^perp
+```
+
+The same sector-major basis formula realizes this subspace as `(0,18,36)` at
+`k_max=4`, while the legacy coordinate-first block `(0,1,2)` remains only a
+regression comparison. The status remains scaffold-level:
+`theorem_complete=False`.

@@ -738,3 +738,48 @@ Recommended v1.3O task: derive the formal-kernel projector and diagonal
 complement lower bound directly from a closed symbolic
 `DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL` operator formula, then separate finite
 basis-ordering facts from coordinate-free subspace statements.
+
+## v1.3O Symbolic Formal-Kernel Operator Status
+
+Status: `IMPLEMENTED`
+
+BHSM v1.3O records the corrected formal-kernel scaffold as a coordinate-free
+subspace plus symbolic Level 2 operator:
+
+```text
+K_formal = span{|ell,0,0,q=0,chi=-1>, |u,0,0,q=0,chi=-1>, |d,0,0,q=0,chi=-1>}
+H_perp = K_formal^perp
+D_FK^2 = D_diag^2 + V_Hopf + V_boundary + V_chi + K_sector + P_lift^perp
+```
+
+Generated reports:
+
+- `theory/formal_kernel_symbolic_operator.md`
+- `theory/formal_kernel_symbolic_operator.json`
+- `theory/coordinate_free_subspace_report.md`
+- `theory/coordinate_free_subspace_report.json`
+- `manuscript/v1_3o_symbolic_formal_kernel_note.md`
+- `notebooks/37_symbolic_formal_kernel_operator.ipynb`
+
+Result:
+
+- coordinate-free protected subspace contains exactly one lepton, one up, and
+  one down heavy `(0,0,q=0,chi=-1)` state;
+- basis realization formula:
+  `M(k_max)=sum_{k=0}^{k_max}(floor(k/2)+1)`, `ell=0`, `u=2M`, `d=4M`;
+- at `k_max=4`, the corrected formal-kernel coordinates are `(0,18,36)`;
+- old coordinate-first block `(0,1,2)` is not the formal kernel;
+- symbolic complement-bound implication clears the finite Level 2 threshold
+  under the semi-analytic lower-bound and PSD profile assumptions;
+- theorem_complete remains `False`.
+
+Correct claim:
+
+```text
+BHSM v1.3O gives a closed symbolic formal-kernel scaffold and finite basis
+realization. It does not prove the full no-extra-light-state theorem.
+```
+
+Recommended v1.3P task: upgrade the coordinate-free scaffold by proving or
+bounding the `K_formal` complement split and sector-coupling relative bound in
+the infinite-basis domain, rather than relying on finite realization evidence.

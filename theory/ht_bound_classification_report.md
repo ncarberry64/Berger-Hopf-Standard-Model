@@ -170,6 +170,32 @@ Semi-analytic lower-bound table:
 This strengthens the corrected formal-kernel scaffold, but does not complete
 the full twisted Dirac / `H_T` theorem.
 
+## v1.3O Symbolic Formal-Kernel Bound Classification Update
+
+v1.3O adds a coordinate-free subspace and symbolic operator classification:
+
+```text
+K_formal = span{|ell,0,0,q=0,chi=-1>, |u,0,0,q=0,chi=-1>, |d,0,0,q=0,chi=-1>}
+H_perp = K_formal^perp
+D_FK^2 = D_diag^2 + V_Hopf + V_boundary + V_chi + K_sector + P_lift^perp
+```
+
+Term classifications:
+
+| Term | Classification | Bound role |
+| --- | --- | --- |
+| `D_diag^2` | `DIAGONAL_EXACT` | diagonal complement minimum |
+| `V_Hopf` | `SIGN_INDEFINITE_BOUNDED` | semi-analytic/Gershgorin row |
+| `V_boundary` | `SIGN_INDEFINITE_BOUNDED` | semi-analytic/Gershgorin row |
+| `V_chi` | `SIGN_INDEFINITE_BOUNDED` | semi-analytic/Gershgorin row |
+| `K_sector` | `OFF_DIAGONAL_BOUNDED` | structured relative-bound candidate |
+| `P_lift^perp` | `PSD_EXACT` | monotone heat-lift lower bound |
+| `V_profile` | `PSD_EXACT` if assumed | nonnegative profile contribution |
+
+All terms are recorded as preserving the formal kernel in the corrected
+scaffold. This is a coordinate-free scaffold plus finite realization, not
+`FULL_OPERATOR_PROVEN`.
+
 ## Limitations
 
 - The report is an analytic-bound development scaffold over DIRAC_PROXY_LEVEL_2.

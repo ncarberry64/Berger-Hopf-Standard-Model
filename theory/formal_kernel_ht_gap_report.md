@@ -99,3 +99,21 @@ bound:
 | Gershgorin lower bound | `6.721838618515489` |
 | structured relative lower bound | `6.729508865520464` |
 | exact finite lower bound | `6.8171156827281205` |
+
+## v1.3O Symbolic Formal-Kernel Operator Update
+
+v1.3O records the corrected Level 2 scaffold as the symbolic operator
+
+```text
+D_FK^2 = D_diag^2 + V_Hopf + V_boundary + V_chi + K_sector + P_lift^perp
+```
+
+with coordinate-free protected subspace
+
+```text
+K_formal = span{|ell,0,0,q=0,chi=-1>, |u,0,0,q=0,chi=-1>, |d,0,0,q=0,chi=-1>}
+H_perp = K_formal^perp
+```
+
+The finite realization still gives `(0,18,36)` at `k_max=4`; the `H_T` theorem
+status remains `False`.
