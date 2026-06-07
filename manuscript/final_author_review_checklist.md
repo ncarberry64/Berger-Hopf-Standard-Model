@@ -24,6 +24,7 @@ ledgers.
 - [ ] Data availability statement approved.
 - [ ] Code availability statement approved.
 - [ ] AI/tool-assistance statement approved.
+- [ ] Acknowledgments statement approved.
 - [ ] Repository visibility/citation decision made.
 
 ## Scientific Claim Discipline

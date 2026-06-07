@@ -452,6 +452,12 @@ The v1.0 no-retuning rule is strict: changing `a`, `S`, the supplied mode
 ledger, tolerance bands, or `Z_virt` based on residuals invalidates the frozen
 package.
 
+# Acknowledgments
+
+The author thanks the open-source scientific Python community and independent
+research communities for tools and discussion environments that supported this
+work.
+
 # Conclusion
 
 The frozen BHSM v1.0 repository defines a reproducible no-retuning prediction

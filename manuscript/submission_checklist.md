@@ -49,6 +49,7 @@ Status: publication-readiness draft for the `bhsm-v1.1-paper` branch.
 - [x] Data availability statement included.
 - [x] Code availability statement included with freeze tag and commit.
 - [x] AI/tool assistance statement included.
+- [x] Acknowledgments statement included.
 
 ## Remaining Before External Submission
 
