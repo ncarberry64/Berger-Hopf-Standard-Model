@@ -34,6 +34,13 @@ H_T|_{H_perp} >= (4 pi^2 v)^2
 This planning branch does not retune predictions and does not claim completion
 of the `H_T` theorem.
 
+v1.3F adds a state ontology and particle/mode classification ledger. It
+clarifies that internal Berger-Hopf modes, virtual excitations, and
+virtual-environment dressing contributions are not automatically new
+observable particles. Any extra observable light state remains forbidden
+unless experimentally identified or lifted/screened by the `H_T` and
+scalar-sector mechanisms.
+
 Frozen baseline:
 
 - Tag: `bhsm-v1.0-freeze`

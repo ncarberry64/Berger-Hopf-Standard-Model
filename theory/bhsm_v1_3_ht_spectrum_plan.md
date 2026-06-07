@@ -341,3 +341,40 @@ and the zero-mode/complement split are derived from the complete operator.
 Recommended v1.3F task: prove or further constrain A5 and A6: the protected
 kernel/complement projection and the diagonal complement lower bound on the
 infinite Hilbert space.
+
+## v1.3F State Ontology Status
+
+Status: `IMPLEMENTED`
+
+BHSM v1.3F adds a state ontology and particle/mode classification ledger.
+
+Generated reports:
+
+- `theory/bhsm_state_ontology.md`
+- `theory/bhsm_state_ontology.json`
+- `manuscript/v1_3f_state_ontology_note.md`
+- `notebooks/28_state_ontology.ipynb`
+
+Ontology categories:
+
+- `ON_SHELL_SM_PARTICLE`
+- `COMPOSITE_QCD_STATE`
+- `INTERNAL_BERGER_HOPF_MODE`
+- `VIRTUAL_EXCITATION`
+- `DRESSING_CONTRIBUTION`
+- `HEAVY_LIFTED_STATE`
+- `SCREENED_TOPOGRAPHIC_STATE`
+- `FORBIDDEN_EXTRA_LIGHT_STATE`
+- `OPEN_UNCLASSIFIED`
+
+Correct claim:
+
+```text
+BHSM v1.3F clarifies that internal modes and virtual dressing contributions
+are not automatically new observable particles. Extra observable light states
+remain forbidden unless identified experimentally or lifted/screened by the
+H_T/scalar-sector mechanisms.
+```
+
+This ontology layer does not change frozen predictions and does not complete
+the full `H_T` theorem.

@@ -69,6 +69,18 @@ and basis-convergence scaffolds are preserved. The v1.3 target is an
 analytic or semi-analytic twisted Dirac / `H_T` spectral bound with
 `theorem_complete=False` until proven.
 
+### BHSM State Ontology
+
+v1.3F adds a state ontology ledger that distinguishes accepted on-shell SM
+particles, QCD composites, internal Berger-Hopf modes, virtual excitations,
+dressing contributions, heavy lifted modes, screened topographic states, and
+forbidden extra-light states.
+
+Correct claim: internal modes and virtual dressing contributions are not
+automatically new observable particles. Extra observable light states remain
+forbidden unless experimentally identified or lifted/screened by the
+`H_T`/scalar-sector mechanisms.
+
 ## Limitations and Open Proof Obligations
 
 The release preserves the repository's claim discipline:
