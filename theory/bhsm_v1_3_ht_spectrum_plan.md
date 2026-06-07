@@ -188,3 +188,50 @@ This improves the sector-coupling audit but does not complete the theorem:
 some larger/perturbed finite-basis cases pass by direct spectrum while the
 conservative norm bound is insufficient. Those cases remain finite-basis
 evidence, not analytic proof.
+
+## v1.3C Structured Sector-Coupling Bound Status
+
+Status: `IMPLEMENTED`
+
+BHSM v1.3C analyzes additional structure in the Level 2 sector-coupling block.
+At the Dirac-matrix level the coupling:
+
+- connects distinct charged sectors only;
+- preserves `k`, `j`, Hopf charge `q`, and chirality;
+- vanishes on the protected zero-mode coordinate block;
+- is sparse in the finite basis;
+- is block-banded after ordering by `(k,j,chirality)`;
+- is finite-rank only at fixed `k_max`, not certified finite-rank as
+  `k_max -> infinity`.
+
+Generated reports:
+
+- `theory/structured_sector_coupling_bound.md`
+- `theory/structured_sector_coupling_bound.json`
+- `manuscript/v1_3c_structured_sector_bound_note.md`
+- `notebooks/25_structured_sector_coupling_bounds.ipynb`
+
+The structured finite-basis relative-bound diagnostic computes:
+
+```text
+a_K = ||B^{-1/2} K_sector B^{-1/2}||
+```
+
+on the protected complement. Baseline result:
+
+- `a_K`: `0.015621013485509948`
+- Structured lower bound: `1.4412292741558648`
+- Required Dirac lower bound: `0.8038064161349437`
+- Classification: `RELATIVE_BOUND_CANDIDATE`
+
+Robustness result:
+
+- Cases scanned: `84`
+- All structured finite-basis bounds sufficient: `True`
+- All finite-basis gaps pass: `True`
+- All classifications remain `RELATIVE_BOUND_CANDIDATE`
+
+This strengthens finite-basis and semi-analytic sector-coupling control, but it
+does not complete the theorem. The bound must still be made uniform in the
+infinite-basis limit and paired with a full proof of the zero-mode/complement
+decomposition.

@@ -112,3 +112,22 @@ BHSM v1.3B bounds the Level 2 sector-coupling block by operator-norm and relativ
 
 - Operator norms are finite-matrix estimates on the Level 2 complement.
 - The full analytic H_T spectrum and the full zero-mode complement proof remain open.
+
+## v1.3C Structured Relative-Bound Update
+
+The v1.3C structured audit refines this raw norm estimate by using the
+sector-coupling selection rules and the finite generalized relative bound
+`||B^{-1/2} K B^{-1/2}||`.
+
+- Structured report: `theory/structured_sector_coupling_bound.md`
+- Baseline structured classification: `RELATIVE_BOUND_CANDIDATE`
+- Baseline `a_K`: `0.015621013485509948`
+- Baseline structured lower bound: `1.4412292741558648`
+- Required Dirac lower bound: `0.8038064161349437`
+- Robustness cases: `84`
+- All structured finite-basis bounds sufficient: `True`
+- Theorem complete: `False`
+
+This strengthens finite-basis/semi-analytic control of the sector-coupling
+block, but it remains a candidate bound until made uniform in the
+infinite-basis limit and paired with a full zero-mode/complement proof.

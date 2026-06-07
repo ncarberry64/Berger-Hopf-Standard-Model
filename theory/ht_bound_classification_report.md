@@ -3,7 +3,7 @@
 Theorem complete: `False`
 Weakest analytic block: `zero_complement_projector`
 Weakest matrix term: `sector_coupling`
-Sector-coupling bound status: v1.3B adds finite spectral, Frobenius, row-sum, Weyl, and relative-bound estimates. The baseline is norm-bound sufficient; larger robustness cases can remain finite-basis-only passes.
+Sector-coupling bound status: v1.3B adds finite spectral, Frobenius, row-sum, Weyl, and relative-bound estimates. v1.3C adds structured block and generalized relative-bound diagnostics. The baseline and robustness cases are finite-basis relative-bound candidates; uniform infinite-basis control remains open.
 
 BHSM v1.3A inventories and classifies the Level 2 H_T operator terms for analytic-bound development. It does not prove the full no-extra-light-state theorem.
 
@@ -33,7 +33,7 @@ BHSM v1.3A inventories and classifies the Level 2 H_T operator terms for analyti
 
 ## Next Upgrade Target
 
-Prove the full-action zero-mode/complement decomposition dim ker D_twist = 3 and lift the sector-coupling norm estimate to an infinite-basis operator bound.
+Prove the full-action zero-mode/complement decomposition dim ker D_twist = 3 and lift the structured sector-coupling relative bound to a uniform infinite-basis estimate.
 
 ## Limitations
 
