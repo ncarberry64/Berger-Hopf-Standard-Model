@@ -61,6 +61,15 @@ Open parts:
 - Proves within the scaffold: the charged-sector omega coefficients follow from the explicit symbolic sector boundary functional.
 - Does not prove: the full twisted Dirac/bundle action uniquely generates that functional.
 
+## v1.2B Parent-Action Reduction
+
+Parent-action reduction status: `REDUCED_FROM_PARENT_ACTION`.
+Parent-action theorem complete: `False`.
+
+- Fiber coefficient requires: `I_HOPF, I_U1`.
+- Base coefficient requires: `I_BASE, I_WEAK, I_COF`.
+- Target requires: `I_BDY`.
+
 ## Assumptions
 
 - The sector boundary functional is supplied as a symbolic action-origin scaffold.

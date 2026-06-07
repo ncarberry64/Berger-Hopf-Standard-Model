@@ -103,3 +103,21 @@ The remaining proof obligation is to obtain the sector boundary functional
 itself from the full Berger-Hopf twisted Dirac/bundle action. Until then,
 `Omega_f` is action-origin scaffolded, not a completed first-principles
 derivation.
+
+## v1.2B Parent-Action Reduction
+
+The v1.2B branch adds a symbolic parent internal-action scaffold:
+
+```text
+S_int = int_I bar(Psi)(i slash D_Berger + A_Hopf + A_base + A_Higgs-U(1) + P_L + P_cof)Psi + S_boundary
+```
+
+The scaffold reduces:
+
+- `I_HOPF` and `I_U1` to the fiber coefficient;
+- `I_BASE`, `I_WEAK`, and `I_COF` to the base coefficient;
+- `I_BDY` to the sector target.
+
+The reduction status is `REDUCED_FROM_PARENT_ACTION`, while
+`theorem_complete` remains `False`. The full unique derivation from the
+complete Berger-Hopf twisted Dirac/bundle action remains open.

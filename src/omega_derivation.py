@@ -14,6 +14,7 @@ from bundle_boundary_conditions import (
     derived_coefficients,
     default_sector_boundary_functionals,
 )
+from boundary_functional_derivation import build_parent_action_derivation_report
 from internal_action import default_internal_action_terms
 from mode_selection import EXPECTED_LEDGER, HEAVY_MODE, hopf_charge
 
@@ -43,6 +44,7 @@ class OmegaDerivationReport:
     steps: tuple[OmegaDerivationStep, ...]
     coefficient_status_table: tuple[dict[str, Any], ...]
     dependency_graph: dict[str, Any]
+    parent_action_reduction: dict[str, Any]
     recovered_mode_ledger: dict[str, Any]
     assumptions: tuple[str, ...]
     limitations: tuple[str, ...]
@@ -235,6 +237,7 @@ def build_omega_action_origin_report(k_max: int = 12) -> OmegaDerivationReport:
     """Build the v1.2 omega action-origin report."""
 
     functionals = default_sector_boundary_functionals()
+    parent_report = build_parent_action_derivation_report()
     steps = tuple(
         step
         for functional in functionals.values()
@@ -248,6 +251,12 @@ def build_omega_action_origin_report(k_max: int = 12) -> OmegaDerivationReport:
         steps=steps,
         coefficient_status_table=coefficient_rows(functionals),
         dependency_graph=dependency_graph(functionals),
+        parent_action_reduction={
+            "status": parent_report.status.value,
+            "theorem_complete": parent_report.theorem_complete,
+            "necessary_terms": parent_report.necessary_terms,
+            "limitations": parent_report.limitations,
+        },
         recovered_mode_ledger=recovered_mode_ledger(k_max),
         assumptions=(
             "The sector boundary functional is supplied as a symbolic action-origin scaffold.",
@@ -335,6 +344,15 @@ def export_omega_action_origin_markdown(path: str | Path, k_max: int = 12) -> No
             "",
             "- Proves within the scaffold: the charged-sector omega coefficients follow from the explicit symbolic sector boundary functional.",
             "- Does not prove: the full twisted Dirac/bundle action uniquely generates that functional.",
+            "",
+            "## v1.2B Parent-Action Reduction",
+            "",
+            f"Parent-action reduction status: `{report.parent_action_reduction['status']}`.",
+            f"Parent-action theorem complete: `{report.parent_action_reduction['theorem_complete']}`.",
+            "",
+            "- Fiber coefficient requires: `I_HOPF, I_U1`.",
+            "- Base coefficient requires: `I_BASE, I_WEAK, I_COF`.",
+            "- Target requires: `I_BDY`.",
         ]
     )
     lines.extend(

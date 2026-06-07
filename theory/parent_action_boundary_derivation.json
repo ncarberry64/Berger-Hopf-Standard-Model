@@ -1,0 +1,564 @@
+{
+  "action_terms": [
+    {
+      "contribution": "parent kinetic operator and mode domain",
+      "expression": "\\bar\\Psi i\\slashed D_{\\rm Berger}\\Psi",
+      "id": "I_D",
+      "limitations": [
+        "Symbolic parent-action scaffold only.",
+        "Full unique action derivation remains open."
+      ],
+      "name": "Berger twisted Dirac kinetic term",
+      "status": "ACTION_SCAFFOLD"
+    },
+    {
+      "contribution": "hopf_fiber_orientation",
+      "expression": "\\bar\\Psi A_{\\rm Hopf}\\Psi",
+      "id": "I_HOPF",
+      "limitations": [
+        "Symbolic parent-action scaffold only.",
+        "Full unique action derivation remains open."
+      ],
+      "name": "Hopf-fiber connection",
+      "status": "REDUCED_FROM_PARENT_ACTION"
+    },
+    {
+      "contribution": "hypercharge_higgs_boundary",
+      "expression": "\\bar\\Psi A_{\\rm Higgs-U(1)}\\Psi",
+      "id": "I_U1",
+      "limitations": [
+        "Symbolic parent-action scaffold only.",
+        "Full unique action derivation remains open."
+      ],
+      "name": "Higgs-selected U(1) boundary connection",
+      "status": "REDUCED_FROM_PARENT_ACTION"
+    },
+    {
+      "contribution": "base_node_phase",
+      "expression": "\\bar\\Psi A_{\\rm base}\\Psi",
+      "id": "I_BASE",
+      "limitations": [
+        "Symbolic parent-action scaffold only.",
+        "Full unique action derivation remains open."
+      ],
+      "name": "base S^2 angular connection",
+      "status": "REDUCED_FROM_PARENT_ACTION"
+    },
+    {
+      "contribution": "chirality_sign and weak_component_sign",
+      "expression": "\\bar\\Psi P_L\\Psi",
+      "id": "I_WEAK",
+      "limitations": [
+        "Symbolic parent-action scaffold only.",
+        "Full unique action derivation remains open."
+      ],
+      "name": "weak/chirality projector term",
+      "status": "REDUCED_FROM_PARENT_ACTION"
+    },
+    {
+      "contribution": "coframe_participation",
+      "expression": "\\bar\\Psi P_{\\rm cof}\\Psi",
+      "id": "I_COF",
+      "limitations": [
+        "Symbolic parent-action scaffold only.",
+        "Full unique action derivation remains open."
+      ],
+      "name": "coframe triplet projector term",
+      "status": "REDUCED_FROM_PARENT_ACTION"
+    },
+    {
+      "contribution": "family_index and sector_winding_multiplier",
+      "expression": "S_{\\rm boundary}[\\Psi,\\Phi_0]",
+      "id": "I_BDY",
+      "limitations": [
+        "Symbolic parent-action scaffold only.",
+        "Full unique action derivation remains open."
+      ],
+      "name": "sector boundary winding/index term",
+      "status": "REDUCED_FROM_PARENT_ACTION"
+    }
+  ],
+  "bundle_fields": [
+    {
+      "boundary_role": "carries Hopf charge q and base node j",
+      "id": "Psi",
+      "name": "internal twisted spinor",
+      "representation_role": "charged-sector fermion ledger",
+      "status": "ACTION_SCAFFOLD"
+    },
+    {
+      "boundary_role": "locks trace/U(1) boundary orientation",
+      "id": "Phi0",
+      "name": "Higgs-selected internal profile",
+      "representation_role": "Higgs-selected U(1) direction",
+      "status": "ACTION_SCAFFOLD"
+    }
+  ],
+  "coefficient_table": [
+    {
+      "coefficient": "fiber_q",
+      "dependencies": [
+        "I_HOPF",
+        "I_U1"
+      ],
+      "open_reason": null,
+      "parent_action_status": "REDUCED_FROM_PARENT_ACTION",
+      "sector": "lepton",
+      "source": "hopf_fiber_orientation * hypercharge_higgs_boundary",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": -1
+    },
+    {
+      "coefficient": "base_j",
+      "dependencies": [
+        "I_BASE",
+        "I_WEAK",
+        "I_COF"
+      ],
+      "open_reason": null,
+      "parent_action_status": "REDUCED_FROM_PARENT_ACTION",
+      "sector": "lepton",
+      "source": "base_node_phase * chirality_sign * weak_component_sign * coframe_participation",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": 2
+    },
+    {
+      "coefficient": "target",
+      "dependencies": [
+        "I_BDY"
+      ],
+      "open_reason": null,
+      "parent_action_status": "REDUCED_FROM_PARENT_ACTION",
+      "sector": "lepton",
+      "source": "family_index * sector_winding_multiplier",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": 3
+    },
+    {
+      "coefficient": "fiber_q",
+      "dependencies": [
+        "I_HOPF",
+        "I_U1"
+      ],
+      "open_reason": null,
+      "parent_action_status": "REDUCED_FROM_PARENT_ACTION",
+      "sector": "up",
+      "source": "hopf_fiber_orientation * hypercharge_higgs_boundary",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": 1
+    },
+    {
+      "coefficient": "base_j",
+      "dependencies": [
+        "I_BASE",
+        "I_WEAK",
+        "I_COF"
+      ],
+      "open_reason": null,
+      "parent_action_status": "REDUCED_FROM_PARENT_ACTION",
+      "sector": "up",
+      "source": "base_node_phase * chirality_sign * weak_component_sign * coframe_participation",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": -2
+    },
+    {
+      "coefficient": "target",
+      "dependencies": [
+        "I_BDY"
+      ],
+      "open_reason": null,
+      "parent_action_status": "REDUCED_FROM_PARENT_ACTION",
+      "sector": "up",
+      "source": "family_index * sector_winding_multiplier",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": 6
+    },
+    {
+      "coefficient": "fiber_q",
+      "dependencies": [
+        "I_HOPF",
+        "I_U1"
+      ],
+      "open_reason": null,
+      "parent_action_status": "REDUCED_FROM_PARENT_ACTION",
+      "sector": "down",
+      "source": "hopf_fiber_orientation * hypercharge_higgs_boundary",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": 1
+    },
+    {
+      "coefficient": "base_j",
+      "dependencies": [
+        "I_BASE",
+        "I_WEAK",
+        "I_COF"
+      ],
+      "open_reason": null,
+      "parent_action_status": "REDUCED_FROM_PARENT_ACTION",
+      "sector": "down",
+      "source": "base_node_phase * chirality_sign * weak_component_sign * coframe_participation",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": 4
+    },
+    {
+      "coefficient": "target",
+      "dependencies": [
+        "I_BDY"
+      ],
+      "open_reason": null,
+      "parent_action_status": "REDUCED_FROM_PARENT_ACTION",
+      "sector": "down",
+      "source": "family_index * sector_winding_multiplier",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": 12
+    }
+  ],
+  "limitations": [
+    "The sector boundary functional is reduced from a symbolic parent internal-action scaffold.",
+    "This is not a full unique derivation from the complete Berger-Hopf twisted Dirac/bundle action.",
+    "No empirical mass, CKM, PMNS, or residual inputs are used."
+  ],
+  "necessary_terms": {
+    "base_j": [
+      "I_BASE",
+      "I_WEAK",
+      "I_COF"
+    ],
+    "fiber_q": [
+      "I_HOPF",
+      "I_U1"
+    ],
+    "target": [
+      "I_BDY"
+    ]
+  },
+  "parent_action": "S_int = int_I bar(Psi)(i slash D_Berger + A_Hopf + A_base + A_Higgs-U(1) + P_L + P_cof)Psi + S_boundary",
+  "projection_operators": [
+    {
+      "acts_on": "Psi",
+      "contribution": "chirality_sign",
+      "expression": "P_L",
+      "id": "P_L",
+      "name": "weak chirality projector",
+      "status": "REDUCED_FROM_PARENT_ACTION"
+    },
+    {
+      "acts_on": "Psi",
+      "contribution": "weak_component_sign",
+      "expression": "P_w",
+      "id": "P_w",
+      "name": "weak component projector",
+      "status": "REDUCED_FROM_PARENT_ACTION"
+    },
+    {
+      "acts_on": "Psi",
+      "contribution": "coframe_participation",
+      "expression": "P_{\\rm cof}",
+      "id": "P_cof",
+      "name": "coframe participation projector",
+      "status": "REDUCED_FROM_PARENT_ACTION"
+    }
+  ],
+  "reductions": [
+    {
+      "functional": {
+        "action_term": {
+          "expression": "\\mathcal B_{lepton}[\\Psi,\\Phi_0]",
+          "id": "I_BDY_lepton",
+          "limitations": [
+            "This is not yet obtained by varying the full internal action."
+          ],
+          "name": "lepton sector boundary functional",
+          "role": "combines Hopf, base, weak, coframe, U(1), and generation factors",
+          "source_factor": "sector_boundary_functional",
+          "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL"
+        },
+        "base_node_phase": 1,
+        "base_status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+        "chirality_sign": 1,
+        "coframe_participation": 2,
+        "conditions": [],
+        "family_index": 3,
+        "fiber_status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+        "hopf_fiber_orientation": -1,
+        "hopf_parity": "odd",
+        "hypercharge_higgs_boundary": 1,
+        "sector": "lepton",
+        "sector_winding_multiplier": 1,
+        "target_status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+        "weak_component_sign": 1
+      },
+      "limitations": [
+        "Reduction is symbolic and parent-action scaffold level.",
+        "Full unique derivation from the complete Berger-Hopf twisted Dirac/bundle action remains open."
+      ],
+      "parent_action_status": "REDUCED_FROM_PARENT_ACTION",
+      "reduction_steps": [
+        {
+          "id": "lepton.fiber_reduction",
+          "open_reason": null,
+          "output_factors": [
+            "hopf_fiber_orientation",
+            "hypercharge_higgs_boundary"
+          ],
+          "parent_terms": [
+            "I_HOPF",
+            "I_U1"
+          ],
+          "sector": "lepton",
+          "statement": "Hopf fiber and Higgs-U(1) terms reduce to the q-coefficient inputs.",
+          "status": "REDUCED_FROM_PARENT_ACTION",
+          "values": {
+            "hopf_fiber_orientation": -1,
+            "hypercharge_higgs_boundary": 1
+          }
+        },
+        {
+          "id": "lepton.base_reduction",
+          "open_reason": null,
+          "output_factors": [
+            "base_node_phase",
+            "chirality_sign",
+            "weak_component_sign",
+            "coframe_participation"
+          ],
+          "parent_terms": [
+            "I_BASE",
+            "I_WEAK",
+            "I_COF"
+          ],
+          "sector": "lepton",
+          "statement": "Base, weak/chirality, and coframe terms reduce to the j-coefficient inputs.",
+          "status": "REDUCED_FROM_PARENT_ACTION",
+          "values": {
+            "base_node_phase": 1,
+            "chirality_sign": 1,
+            "coframe_participation": 2,
+            "weak_component_sign": 1
+          }
+        },
+        {
+          "id": "lepton.target_reduction",
+          "open_reason": null,
+          "output_factors": [
+            "family_index",
+            "sector_winding_multiplier"
+          ],
+          "parent_terms": [
+            "I_BDY"
+          ],
+          "sector": "lepton",
+          "statement": "Boundary winding/index term reduces to the generation target inputs.",
+          "status": "REDUCED_FROM_PARENT_ACTION",
+          "values": {
+            "family_index": 3,
+            "sector_winding_multiplier": 1
+          }
+        }
+      ],
+      "sector": "lepton",
+      "theorem_complete": false
+    },
+    {
+      "functional": {
+        "action_term": {
+          "expression": "\\mathcal B_{up}[\\Psi,\\Phi_0]",
+          "id": "I_BDY_up",
+          "limitations": [
+            "This is not yet obtained by varying the full internal action."
+          ],
+          "name": "up sector boundary functional",
+          "role": "combines Hopf, base, weak, coframe, U(1), and generation factors",
+          "source_factor": "sector_boundary_functional",
+          "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL"
+        },
+        "base_node_phase": 1,
+        "base_status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+        "chirality_sign": -1,
+        "coframe_participation": 2,
+        "conditions": [],
+        "family_index": 3,
+        "fiber_status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+        "hopf_fiber_orientation": 1,
+        "hopf_parity": "even_q_ge_6",
+        "hypercharge_higgs_boundary": 1,
+        "sector": "up",
+        "sector_winding_multiplier": 2,
+        "target_status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+        "weak_component_sign": 1
+      },
+      "limitations": [
+        "Reduction is symbolic and parent-action scaffold level.",
+        "Full unique derivation from the complete Berger-Hopf twisted Dirac/bundle action remains open."
+      ],
+      "parent_action_status": "REDUCED_FROM_PARENT_ACTION",
+      "reduction_steps": [
+        {
+          "id": "up.fiber_reduction",
+          "open_reason": null,
+          "output_factors": [
+            "hopf_fiber_orientation",
+            "hypercharge_higgs_boundary"
+          ],
+          "parent_terms": [
+            "I_HOPF",
+            "I_U1"
+          ],
+          "sector": "up",
+          "statement": "Hopf fiber and Higgs-U(1) terms reduce to the q-coefficient inputs.",
+          "status": "REDUCED_FROM_PARENT_ACTION",
+          "values": {
+            "hopf_fiber_orientation": 1,
+            "hypercharge_higgs_boundary": 1
+          }
+        },
+        {
+          "id": "up.base_reduction",
+          "open_reason": null,
+          "output_factors": [
+            "base_node_phase",
+            "chirality_sign",
+            "weak_component_sign",
+            "coframe_participation"
+          ],
+          "parent_terms": [
+            "I_BASE",
+            "I_WEAK",
+            "I_COF"
+          ],
+          "sector": "up",
+          "statement": "Base, weak/chirality, and coframe terms reduce to the j-coefficient inputs.",
+          "status": "REDUCED_FROM_PARENT_ACTION",
+          "values": {
+            "base_node_phase": 1,
+            "chirality_sign": -1,
+            "coframe_participation": 2,
+            "weak_component_sign": 1
+          }
+        },
+        {
+          "id": "up.target_reduction",
+          "open_reason": null,
+          "output_factors": [
+            "family_index",
+            "sector_winding_multiplier"
+          ],
+          "parent_terms": [
+            "I_BDY"
+          ],
+          "sector": "up",
+          "statement": "Boundary winding/index term reduces to the generation target inputs.",
+          "status": "REDUCED_FROM_PARENT_ACTION",
+          "values": {
+            "family_index": 3,
+            "sector_winding_multiplier": 2
+          }
+        }
+      ],
+      "sector": "up",
+      "theorem_complete": false
+    },
+    {
+      "functional": {
+        "action_term": {
+          "expression": "\\mathcal B_{down}[\\Psi,\\Phi_0]",
+          "id": "I_BDY_down",
+          "limitations": [
+            "This is not yet obtained by varying the full internal action."
+          ],
+          "name": "down sector boundary functional",
+          "role": "combines Hopf, base, weak, coframe, U(1), and generation factors",
+          "source_factor": "sector_boundary_functional",
+          "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL"
+        },
+        "base_node_phase": 1,
+        "base_status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+        "chirality_sign": 1,
+        "coframe_participation": 4,
+        "conditions": [],
+        "family_index": 3,
+        "fiber_status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+        "hopf_fiber_orientation": 1,
+        "hopf_parity": "0_mod_4",
+        "hypercharge_higgs_boundary": 1,
+        "sector": "down",
+        "sector_winding_multiplier": 4,
+        "target_status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+        "weak_component_sign": 1
+      },
+      "limitations": [
+        "Reduction is symbolic and parent-action scaffold level.",
+        "Full unique derivation from the complete Berger-Hopf twisted Dirac/bundle action remains open."
+      ],
+      "parent_action_status": "REDUCED_FROM_PARENT_ACTION",
+      "reduction_steps": [
+        {
+          "id": "down.fiber_reduction",
+          "open_reason": null,
+          "output_factors": [
+            "hopf_fiber_orientation",
+            "hypercharge_higgs_boundary"
+          ],
+          "parent_terms": [
+            "I_HOPF",
+            "I_U1"
+          ],
+          "sector": "down",
+          "statement": "Hopf fiber and Higgs-U(1) terms reduce to the q-coefficient inputs.",
+          "status": "REDUCED_FROM_PARENT_ACTION",
+          "values": {
+            "hopf_fiber_orientation": 1,
+            "hypercharge_higgs_boundary": 1
+          }
+        },
+        {
+          "id": "down.base_reduction",
+          "open_reason": null,
+          "output_factors": [
+            "base_node_phase",
+            "chirality_sign",
+            "weak_component_sign",
+            "coframe_participation"
+          ],
+          "parent_terms": [
+            "I_BASE",
+            "I_WEAK",
+            "I_COF"
+          ],
+          "sector": "down",
+          "statement": "Base, weak/chirality, and coframe terms reduce to the j-coefficient inputs.",
+          "status": "REDUCED_FROM_PARENT_ACTION",
+          "values": {
+            "base_node_phase": 1,
+            "chirality_sign": 1,
+            "coframe_participation": 4,
+            "weak_component_sign": 1
+          }
+        },
+        {
+          "id": "down.target_reduction",
+          "open_reason": null,
+          "output_factors": [
+            "family_index",
+            "sector_winding_multiplier"
+          ],
+          "parent_terms": [
+            "I_BDY"
+          ],
+          "sector": "down",
+          "statement": "Boundary winding/index term reduces to the generation target inputs.",
+          "status": "REDUCED_FROM_PARENT_ACTION",
+          "values": {
+            "family_index": 3,
+            "sector_winding_multiplier": 4
+          }
+        }
+      ],
+      "sector": "down",
+      "theorem_complete": false
+    }
+  ],
+  "status": "REDUCED_FROM_PARENT_ACTION",
+  "theorem_complete": false,
+  "title": "BHSM v1.2B Parent Internal-Action Boundary Derivation Scaffold"
+}
