@@ -109,3 +109,37 @@ twisted Dirac matrix terms:
 
 Then classify which terms admit direct analytic lower bounds and which still
 depend on finite-basis estimates.
+
+## v1.3A Term Inventory Status
+
+Status: `IMPLEMENTED`
+
+BHSM v1.3A inventories and classifies the Level 2 `H_T` operator terms for
+analytic-bound development. It does not prove the full no-extra-light-state
+theorem, and `theorem_complete` remains `False`.
+
+Generated reports:
+
+- `theory/ht_level2_term_inventory.md`
+- `theory/ht_level2_term_inventory.json`
+- `theory/ht_bound_classification_report.md`
+- `theory/ht_bound_classification_report.json`
+- `manuscript/v1_3a_ht_term_inventory_note.md`
+- `notebooks/23_ht_term_inventory.ipynb`
+
+Current classifications:
+
+- `berger_dirac_kinetic`: `DIAGONAL_EXACT`
+- `hopf_twist`: `SIGN_INDEFINITE_BOUNDED`
+- `boundary_term`: `SIGN_INDEFINITE_BOUNDED`
+- `chirality_term`: `SIGN_INDEFINITE_BOUNDED`
+- `sector_coupling`: `OFF_DIAGONAL_BOUNDED`
+- `heat_lift`: `PSD_EXACT`
+- `psd_profile`: `PSD_EXACT`
+- `zero_complement_projector`: `FINITE_BASIS_ONLY`
+
+The weakest analytic block is `zero_complement_projector`, because the full
+action-level statement `dim ker D_twist = 3` and the infinite-dimensional
+complement decomposition remain open. The weakest matrix term is
+`sector_coupling`, whose current control is finite-basis Gershgorin / min-max
+rather than an infinite-basis operator-norm bound.
