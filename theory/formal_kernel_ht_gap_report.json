@@ -1,0 +1,286 @@
+{
+  "audit": {
+    "formal_kernel_protected": true,
+    "formal_protected_coordinates": [
+      0,
+      18,
+      36
+    ],
+    "heat_lift_preserves_formal_kernel": true,
+    "ht_report": {
+      "assumptions": [
+        "The formal protected kernel is the sector-labeled coordinate block (0,18,36) for the default k_max=4 basis.",
+        "The corrected Level 2 variant zeros rows and columns for the formal protected block.",
+        "Natural Lambda^2 = 1/(4*pi) is used when lambda2 is omitted."
+      ],
+      "basis_convergence_candidate": "PENDING_RERUN_UNDER_FORMAL_KERNEL_VARIANT",
+      "basis_size": 54,
+      "first_complement_eigenvalue": 6.8171156827281205,
+      "first_ht_complement_gap": 19592.076941940737,
+      "limitations": [
+        "This is a corrected finite-basis Level 2 scaffold.",
+        "Structured, uniform, and basis-convergence audits must be rerun under this formal-kernel variant before stronger H_T claims.",
+        "The full H_T theorem remains open."
+      ],
+      "margin": 6.81711568272658,
+      "model_level": "DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL",
+      "passes_mu_h": true,
+      "protected_coordinates": [
+        0,
+        18,
+        36
+      ],
+      "protected_sectors": [
+        "lepton",
+        "up",
+        "down"
+      ],
+      "required_dirac_lower_bound": 0.8038064161349437,
+      "sector_coupling_frobenius_norm": 0.10529905521507689,
+      "sector_coupling_row_sum_norm": 0.021249999999999998,
+      "sector_coupling_spectral_norm": 0.02105708357088191,
+      "sector_coupling_vanishes_on_formal_kernel": true,
+      "structured_relative_bound_candidate": "FORMAL_KERNEL_RECOMPUTED_FINITE_BASIS",
+      "theorem_complete": false
+    },
+    "limitations": [
+      "The corrected formal-kernel operator is a finite-basis scaffold variant.",
+      "It does not change frozen BHSM v1.0/v1.1 predictions.",
+      "It does not prove the full H_T no-extra-light-state theorem."
+    ],
+    "matrix_symmetric": true,
+    "new_variant": "DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL",
+    "old_protected_coordinates": [
+      0,
+      1,
+      2
+    ],
+    "old_variant": "DIRAC_PROXY_LEVEL_2_COORDINATE_FIRST",
+    "projector_idempotent": true,
+    "projector_orthogonal_to_complement": true,
+    "projector_rank": 3,
+    "sector_coupling_vanishes_on_formal_kernel": true,
+    "status": "FORMAL_KERNEL_GAP_RESTORED",
+    "theorem_complete": false,
+    "title": "BHSM v1.3L Corrected Formal-Kernel H_T Operator Audit"
+  },
+  "correct_claim": "BHSM v1.3L corrects the Level 2 H_T scaffold to protect the formal sector-labeled kernel. The corrected formal-kernel gap is recomputed before any Level 2 H_T claim can rely on it.",
+  "formal_kernel_scan": [
+    {
+      "a": 1.157054135733433,
+      "basis_size": 54,
+      "first_complement_eigenvalue": 7.2322929398408276,
+      "ht_gap": 19592.49211919785,
+      "k_max": 4,
+      "margin": 7.232292939839681,
+      "passes": true,
+      "protected_coordinates": [
+        0,
+        18,
+        36
+      ],
+      "protected_sectors": [
+        "lepton",
+        "up",
+        "down"
+      ],
+      "status": "FORMAL_KERNEL_GAP_RESTORED",
+      "theorem_complete": false
+    },
+    {
+      "a": 1.0,
+      "basis_size": 54,
+      "first_complement_eigenvalue": 6.8171156827281205,
+      "ht_gap": 19592.076941940737,
+      "k_max": 4,
+      "margin": 6.81711568272658,
+      "passes": true,
+      "protected_coordinates": [
+        0,
+        18,
+        36
+      ],
+      "protected_sectors": [
+        "lepton",
+        "up",
+        "down"
+      ],
+      "status": "FORMAL_KERNEL_GAP_RESTORED",
+      "theorem_complete": false
+    },
+    {
+      "a": 0.573,
+      "basis_size": 54,
+      "first_complement_eigenvalue": 4.833981204821929,
+      "ht_gap": 19590.093807462832,
+      "k_max": 4,
+      "margin": 4.833981204821612,
+      "passes": true,
+      "protected_coordinates": [
+        0,
+        18,
+        36
+      ],
+      "protected_sectors": [
+        "lepton",
+        "up",
+        "down"
+      ],
+      "status": "FORMAL_KERNEL_GAP_RESTORED",
+      "theorem_complete": false
+    },
+    {
+      "a": 1.157054135733433,
+      "basis_size": 96,
+      "first_complement_eigenvalue": 7.232292939840859,
+      "ht_gap": 19592.49211919785,
+      "k_max": 6,
+      "margin": 7.232292939839681,
+      "passes": true,
+      "protected_coordinates": [
+        0,
+        32,
+        64
+      ],
+      "protected_sectors": [
+        "lepton",
+        "up",
+        "down"
+      ],
+      "status": "FORMAL_KERNEL_GAP_RESTORED",
+      "theorem_complete": false
+    },
+    {
+      "a": 1.0,
+      "basis_size": 96,
+      "first_complement_eigenvalue": 6.817115682727939,
+      "ht_gap": 19592.076941940737,
+      "k_max": 6,
+      "margin": 6.81711568272658,
+      "passes": true,
+      "protected_coordinates": [
+        0,
+        32,
+        64
+      ],
+      "protected_sectors": [
+        "lepton",
+        "up",
+        "down"
+      ],
+      "status": "FORMAL_KERNEL_GAP_RESTORED",
+      "theorem_complete": false
+    },
+    {
+      "a": 0.573,
+      "basis_size": 96,
+      "first_complement_eigenvalue": 4.833981204821945,
+      "ht_gap": 19590.093807462832,
+      "k_max": 6,
+      "margin": 4.833981204821612,
+      "passes": true,
+      "protected_coordinates": [
+        0,
+        32,
+        64
+      ],
+      "protected_sectors": [
+        "lepton",
+        "up",
+        "down"
+      ],
+      "status": "FORMAL_KERNEL_GAP_RESTORED",
+      "theorem_complete": false
+    },
+    {
+      "a": 1.157054135733433,
+      "basis_size": 150,
+      "first_complement_eigenvalue": 7.232292939840811,
+      "ht_gap": 19592.49211919785,
+      "k_max": 8,
+      "margin": 7.232292939839681,
+      "passes": true,
+      "protected_coordinates": [
+        0,
+        50,
+        100
+      ],
+      "protected_sectors": [
+        "lepton",
+        "up",
+        "down"
+      ],
+      "status": "FORMAL_KERNEL_GAP_RESTORED",
+      "theorem_complete": false
+    },
+    {
+      "a": 1.0,
+      "basis_size": 150,
+      "first_complement_eigenvalue": 6.817115682728141,
+      "ht_gap": 19592.076941940737,
+      "k_max": 8,
+      "margin": 6.81711568272658,
+      "passes": true,
+      "protected_coordinates": [
+        0,
+        50,
+        100
+      ],
+      "protected_sectors": [
+        "lepton",
+        "up",
+        "down"
+      ],
+      "status": "FORMAL_KERNEL_GAP_RESTORED",
+      "theorem_complete": false
+    },
+    {
+      "a": 0.573,
+      "basis_size": 150,
+      "first_complement_eigenvalue": 4.833981204822106,
+      "ht_gap": 19590.093807462832,
+      "k_max": 8,
+      "margin": 4.833981204821612,
+      "passes": true,
+      "protected_coordinates": [
+        0,
+        50,
+        100
+      ],
+      "protected_sectors": [
+        "lepton",
+        "up",
+        "down"
+      ],
+      "status": "FORMAL_KERNEL_GAP_RESTORED",
+      "theorem_complete": false
+    }
+  ],
+  "legacy_vs_formal_gap_table": [
+    {
+      "first_complement_eigenvalue": 1.4630400252994733,
+      "ht_gap": 19586.72266333732,
+      "margin": 1.4628370793107024,
+      "passes": true,
+      "protected_coordinates": [
+        0,
+        1,
+        2
+      ],
+      "variant": "DIRAC_PROXY_LEVEL_2_COORDINATE_FIRST"
+    },
+    {
+      "first_complement_eigenvalue": 6.8171156827281205,
+      "ht_gap": 19592.076941940737,
+      "margin": 6.81711568272658,
+      "passes": true,
+      "protected_coordinates": [
+        0,
+        18,
+        36
+      ],
+      "variant": "DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL"
+    }
+  ],
+  "theorem_complete": false
+}

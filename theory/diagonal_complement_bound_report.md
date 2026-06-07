@@ -47,3 +47,16 @@ v1.3K recomputes the gap using the formal sector-labeled projector
 `(0,18,36)` and finds that the formal projector does not preserve the old
 Level 2 gap. The diagonal complement bound must therefore be rebuilt after a
 corrected formal-kernel Level 2 operator is implemented.
+
+## v1.3L Corrected Formal-Kernel Diagonal Update
+
+v1.3L implements that corrected finite-basis operator. With the formal
+sector-labeled kernel protected directly, the first complement eigenvalue is:
+
+| Variant | Protected coordinates | First complement eigenvalue | Required lower bound | Passes |
+| --- | --- | --- | --- | --- |
+| `DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL` | `(0,18,36)` | `6.8171156827281205` | `0.8038064161349437` | `True` |
+
+This restores the finite-basis diagonal/complement lower-bound screen under
+the formal projector. It remains a Level 2 scaffold result, not the full
+analytic twisted Dirac spectrum.

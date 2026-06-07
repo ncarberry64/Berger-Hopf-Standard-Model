@@ -1,67 +1,95 @@
 {
-    "a":  1.0,
-    "assumptions":  [
-                        "The finite Level 2 protected coordinate block represents the three protected zero modes.",
-                        "The formal sector-labeled kernel and finite coordinate block must be identified in the complete operator."
-                    ],
-    "basis_size":  54,
-    "commutes_with_block_decomposition":  true,
-    "complement_excludes_zero_modes":  true,
-    "heat_lift_preserves_zero_modes":  true,
-    "k_max":  4,
-    "limitations":  [
-                        "Finite-basis projector identities do not prove the infinite-dimensional complement split.",
-                        "The full statement H = ker D_twist plus H_perp remains an index/domain proof obligation."
-                    ],
-    "model_level":  "DIRAC_PROXY_LEVEL_2",
-    "p0_idempotent":  true,
-    "p0_p_perp_zero":  true,
-    "p_perp_idempotent":  true,
-    "projector_status":  "COMPLEMENT_PROJECTOR_SCAFFOLD",
-    "sector_coupling_vanishes_on_zero_block":  true,
-    "theorem_complete":  false,
-    "zero_mode_count":  3,
-    "v1_3h_diagonal_mirror_update":  {
-                                         "status":  "IMPLEMENTED",
-                                         "theorem_complete":  false,
-                                         "required_dirac_lower_bound":  0.80380641613494375,
-                                         "finite_diagonal_complement_lower_bound":  1.4641,
-                                         "diagonal_bound_clears_required":  true,
-                                         "mirror_exclusion_status":  "OPEN_MIRROR_RISK",
-                                         "open_mirror_risk_count":  3,
-                                         "claim":  "BHSM v1.3H audits the diagonal complement lower bound and mirror-mode exclusion conditions; it does not prove the full H_T theorem."
-                                     },
-    "v1_3j_zero_mode_alignment_update":  {
-                                             "status":  "IMPLEMENTED",
-                                             "theorem_complete":  false,
-                                             "one_to_one_alignment":  false,
-                                             "open_alignment_gap_remains":  true,
-                                             "mirror_exclusion_intact":  true,
-                                             "aligned":  [
-                                                             "zero_mode_lepton -\u003e coordinate 0"
-                                                         ],
-                                             "open_alignment_gaps":  [
-                                                                         "zero_mode_up -\u003e coordinate 18",
-                                                                         "zero_mode_down -\u003e coordinate 36"
-                                                                     ],
-                                             "claim":  "BHSM v1.3J audits formal/coordinate zero-mode alignment and finds partial alignment; it does not prove the full H_T theorem."
-                                         },
-    "v1_3k_sector_labeled_kernel_update":  {
-                                               "status":  "IMPLEMENTED",
-                                               "theorem_complete":  false,
-                                               "legacy_protected_coordinates":  [
-                                                                                    0,
-                                                                                    1,
-                                                                                    2
-                                                                                ],
-                                               "formal_protected_coordinates":  [
-                                                                                    0,
-                                                                                    18,
-                                                                                    36
-                                                                                ],
-                                               "classification":  "FORMAL_KERNEL_NOT_PROTECTED",
-                                               "formal_gap_passes":  false,
-                                               "previous_gap_survives":  false,
-                                               "claim":  "BHSM v1.3K audits formal sector-labeled protected kernel construction and reports that the current Level 2 matrix does not protect the formal up/down kernel coordinates."
-                                           }
+  "a": 1.0,
+  "assumptions": [
+    "The finite Level 2 protected coordinate block represents the three protected zero modes.",
+    "The formal sector-labeled kernel and finite coordinate block must be identified in the complete operator."
+  ],
+  "basis_size": 54,
+  "commutes_with_block_decomposition": true,
+  "complement_excludes_zero_modes": true,
+  "heat_lift_preserves_zero_modes": true,
+  "k_max": 4,
+  "limitations": [
+    "Finite-basis projector identities do not prove the infinite-dimensional complement split.",
+    "The full statement H = ker D_twist plus H_perp remains an index/domain proof obligation."
+  ],
+  "model_level": "DIRAC_PROXY_LEVEL_2",
+  "p0_idempotent": true,
+  "p0_p_perp_zero": true,
+  "p_perp_idempotent": true,
+  "projector_status": "COMPLEMENT_PROJECTOR_SCAFFOLD",
+  "sector_coupling_vanishes_on_zero_block": true,
+  "theorem_complete": false,
+  "v1_3h_diagonal_mirror_update": {
+    "claim": "BHSM v1.3H audits the diagonal complement lower bound and mirror-mode exclusion conditions; it does not prove the full H_T theorem.",
+    "diagonal_bound_clears_required": true,
+    "finite_diagonal_complement_lower_bound": 1.4641,
+    "mirror_exclusion_status": "OPEN_MIRROR_RISK",
+    "open_mirror_risk_count": 3,
+    "required_dirac_lower_bound": 0.8038064161349437,
+    "status": "IMPLEMENTED",
+    "theorem_complete": false
+  },
+  "v1_3j_zero_mode_alignment_update": {
+    "aligned": [
+      "zero_mode_lepton -> coordinate 0"
+    ],
+    "claim": "BHSM v1.3J audits formal/coordinate zero-mode alignment and finds partial alignment; it does not prove the full H_T theorem.",
+    "mirror_exclusion_intact": true,
+    "one_to_one_alignment": false,
+    "open_alignment_gap_remains": true,
+    "open_alignment_gaps": [
+      "zero_mode_up -> coordinate 18",
+      "zero_mode_down -> coordinate 36"
+    ],
+    "status": "IMPLEMENTED",
+    "theorem_complete": false
+  },
+  "v1_3k_sector_labeled_kernel_update": {
+    "claim": "BHSM v1.3K audits formal sector-labeled protected kernel construction and reports that the current Level 2 matrix does not protect the formal up/down kernel coordinates.",
+    "classification": "FORMAL_KERNEL_NOT_PROTECTED",
+    "formal_gap_passes": false,
+    "formal_protected_coordinates": [
+      0,
+      18,
+      36
+    ],
+    "legacy_protected_coordinates": [
+      0,
+      1,
+      2
+    ],
+    "previous_gap_survives": false,
+    "status": "IMPLEMENTED",
+    "theorem_complete": false
+  },
+  "v1_3l_formal_kernel_operator_update": {
+    "claim": "Corrected finite-basis formal-kernel Level 2 scaffold; full H_T theorem remains open.",
+    "first_complement_eigenvalue": 6.8171156827281205,
+    "formal_kernel_protected": true,
+    "formal_protected_coordinates": [
+      0,
+      18,
+      36
+    ],
+    "ht_gap": 19592.076941940737,
+    "margin": 6.81711568272658,
+    "new_variant": "DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL",
+    "old_protected_coordinates": [
+      0,
+      1,
+      2
+    ],
+    "passes_mu_h": true,
+    "protected_sectors": [
+      "lepton",
+      "up",
+      "down"
+    ],
+    "required_dirac_lower_bound": 0.8038064161349437,
+    "sector_coupling_vanishes_on_formal_kernel": true,
+    "status": "FORMAL_KERNEL_GAP_RESTORED",
+    "theorem_complete": false
+  },
+  "zero_mode_count": 3
 }

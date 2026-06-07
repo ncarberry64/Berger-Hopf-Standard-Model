@@ -52,3 +52,20 @@ the complement gap. The formal projector is idempotent, but the formal up/down
 coordinates are not zero-protected by the current Level 2 operator and sector
 coupling does not vanish on the formal kernel. The previous coordinate-first
 gap does not survive this recomputation.
+
+## v1.3L Corrected Formal-Kernel Projector Update
+
+v1.3L implements the corrected Level 2 projector over the formal
+sector-labeled kernel. The protected coordinates at `k_max=4` are `(0,18,36)`,
+with sector distribution `{'lepton': 1, 'up': 1, 'down': 1}`.
+
+For `DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL`:
+
+- `P0` has rank `3`;
+- `P0^2=P0` passes in the finite basis;
+- `P0 P_perp=0` passes in the finite basis;
+- heat lift preserves the formal protected coordinates;
+- sector coupling vanishes on the formal protected block.
+
+The complement-projector status remains scaffold-level because the full
+infinite-dimensional kernel/complement theorem is still open.

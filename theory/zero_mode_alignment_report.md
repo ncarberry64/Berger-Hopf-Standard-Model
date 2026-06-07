@@ -46,3 +46,19 @@ Result: the formal sector-labeled kernel is present in the finite basis, but
 the current Level 2 matrix does not protect the formal up/down coordinates.
 The formal-projector `H_T` gap recomputation fails, so the alignment gap
 remains a serious Level 2 kernel-protection blocker.
+
+## v1.3L Corrected Formal-Kernel Operator Update
+
+v1.3L adds `DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL`, which protects the formal
+sector-labeled coordinates `(0,18,36)` directly. Under that corrected finite
+Level 2 variant:
+
+| Formal label | Coordinate | Corrected status |
+| --- | --- | --- |
+| `zero_mode_lepton` | `0` | `ALIGNED` |
+| `zero_mode_up` | `18` | `ALIGNED_IN_FORMAL_KERNEL_VARIANT` |
+| `zero_mode_down` | `36` | `ALIGNED_IN_FORMAL_KERNEL_VARIANT` |
+
+The corrected variant restores the finite-basis formal-kernel gap, but it is
+still a scaffold. A full action-level proof of the protected kernel and
+infinite-basis complement split remains open.

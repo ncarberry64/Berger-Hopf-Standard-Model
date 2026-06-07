@@ -91,6 +91,29 @@ and idempotent, but the current Level 2 matrix does not protect formal up/down
 coordinates. Recomputing the `H_T` gap with `P0_formal` collapses the finite
 gap, so the previous Level 2 gap does not survive as a formal-kernel audit.
 
+## v1.3L Corrected Formal-Kernel Operator Update
+
+v1.3L introduces `DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL`, a corrected Level 2
+variant whose protected block is the formal sector-labeled kernel
+`(0,18,36)` at `k_max=4`.
+
+Corrected finite-basis result:
+
+| Quantity | Value |
+| --- | --- |
+| status | `FORMAL_KERNEL_GAP_RESTORED` |
+| protected sectors | `('lepton', 'up', 'down')` |
+| first complement eigenvalue | `6.8171156827281205` |
+| required Dirac lower bound | `0.8038064161349437` |
+| H_T gap | `19592.076941940737` |
+| margin vs mu_H | `6.81711568272658` |
+| sector coupling vanishes on formal kernel | `True` |
+
+The immediate finite-basis kernel bookkeeping issue is corrected. The
+`zero_complement_projector` term remains `FINITE_BASIS_ONLY` until the formal
+kernel, complement projector, and infinite-basis lower bound are derived from
+the complete twisted Dirac / bundle action.
+
 ## Limitations
 
 - The report is an analytic-bound development scaffold over DIRAC_PROXY_LEVEL_2.

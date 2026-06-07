@@ -599,3 +599,51 @@ Recommended v1.3L task: implement a corrected Level 2 operator variant whose
 protected zero block is built from formal sector-labeled coordinates
 `(0,18,36)`, then rerun the sector-coupling, lower-bound, and convergence
 audits from that corrected scaffold.
+
+## v1.3L Corrected Formal-Kernel Operator Status
+
+Status: `IMPLEMENTED`
+
+BHSM v1.3L implements `DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL`, a corrected
+finite-basis Level 2 operator variant whose protected block is the formal
+sector-labeled kernel rather than the legacy coordinate-first block.
+
+Generated reports:
+
+- `theory/formal_kernel_operator_report.md`
+- `theory/formal_kernel_operator_report.json`
+- `theory/formal_kernel_ht_gap_report.md`
+- `theory/formal_kernel_ht_gap_report.json`
+- `manuscript/v1_3l_formal_kernel_operator_note.md`
+- `notebooks/34_formal_kernel_operator.ipynb`
+
+Result:
+
+- old protected coordinates: `(0,1,2)`;
+- corrected formal protected coordinates at `k_max=4`: `(0,18,36)`;
+- protected sectors: one lepton, one up, one down;
+- projector rank: `3`;
+- projector identities pass;
+- matrix symmetry passes;
+- heat lift preserves the formal kernel;
+- sector coupling vanishes on the formal kernel;
+- first complement eigenvalue: `6.8171156827281205`;
+- required Dirac lower bound: `0.8038064161349437`;
+- `H_T` gap: `19592.076941940737`;
+- margin vs `mu_H`: `6.81711568272658`;
+- status: `FORMAL_KERNEL_GAP_RESTORED`;
+- theorem_complete remains `False`.
+
+Correct claim:
+
+```text
+BHSM v1.3L corrects the Level 2 H_T scaffold to protect the formal
+sector-labeled kernel rather than the old coordinate-first block. The
+corrected formal-kernel gap is recomputed, but the full H_T theorem remains
+open until the complete operator, index theorem, and infinite-basis complement
+split are certified.
+```
+
+Recommended v1.3M task: rerun the sector-coupling, structured relative-bound,
+uniform relative-bound, and basis-convergence audits using
+`DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL` as the baseline operator variant.

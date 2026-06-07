@@ -1,319 +1,347 @@
 {
-    "combined_bound_chain":  [
-                                 "Restrict the finite Level 2 Dirac matrix to the complement of the three protected zero modes.",
-                                 "Use the exact finite-basis diagonal contribution and finite q/residual ranges for diagonal sign-indefinite terms.",
-                                 "Control sector off-diagonal blocks with Gershgorin and restricted min-max bounds.",
-                                 "Use the v1.3B sector-coupling operator-norm audit to distinguish norm-certified cases from finite-basis-only passes.",
-                                 "Square the symmetric Level 2 Dirac matrix and take the conservative complement lower bound.",
-                                 "Apply the monotone heat-lift inequality with Lambda^2 = 1/(4*pi).",
-                                 "Add only PSD curvature/profile contributions, so Weyl\u0027s lower bound cannot decrease.",
-                                 "Keep theorem_complete=False until the zero-mode/complement split and off-diagonal bounds are proven in the full action."
-                             ],
-    "inventory":  {
-                      "classifications":  [
-                                              {
-                                                  "analytic_status":  "exact for the Level 2 finite-basis diagonal block",
-                                                  "can_lower_complement_gap":  false,
-                                                  "classification":  "DIAGONAL_EXACT",
-                                                  "lower_bound_method":  "exact diagonal minimum after complement restriction; min-max check after squaring",
-                                                  "term_id":  "berger_dirac_kinetic",
-                                                  "upgrade_requirement":  "derive a closed Berger twisted-Dirac diagonal lower bound"
-                                              },
-                                              {
-                                                  "analytic_status":  "bounded in finite basis by explicit coefficient and mode ranges",
-                                                  "can_lower_complement_gap":  true,
-                                                  "classification":  "SIGN_INDEFINITE_BOUNDED",
-                                                  "lower_bound_method":  "Weyl bound with explicit coefficient and finite q range",
-                                                  "term_id":  "hopf_twist",
-                                                  "upgrade_requirement":  "prove global coefficient-weighted mode bounds on H_perp"
-                                              },
-                                              {
-                                                  "analytic_status":  "bounded in finite basis by explicit coefficient and mode ranges",
-                                                  "can_lower_complement_gap":  true,
-                                                  "classification":  "SIGN_INDEFINITE_BOUNDED",
-                                                  "lower_bound_method":  "Weyl bound using the bounded residual range in the finite basis",
-                                                  "term_id":  "boundary_term",
-                                                  "upgrade_requirement":  "prove global coefficient-weighted mode bounds on H_perp"
-                                              },
-                                              {
-                                                  "analytic_status":  "bounded in finite basis by explicit coefficient and mode ranges",
-                                                  "can_lower_complement_gap":  true,
-                                                  "classification":  "SIGN_INDEFINITE_BOUNDED",
-                                                  "lower_bound_method":  "Weyl bound from explicit chirality coefficient",
-                                                  "term_id":  "chirality_term",
-                                                  "upgrade_requirement":  "prove global coefficient-weighted mode bounds on H_perp"
-                                              },
-                                              {
-                                                  "analytic_status":  "bounded in finite basis by Gershgorin and restricted min-max estimates",
-                                                  "can_lower_complement_gap":  true,
-                                                  "classification":  "OFF_DIAGONAL_BOUNDED",
-                                                  "lower_bound_method":  "Gershgorin bound and restricted min-max finite-basis check",
-                                                  "term_id":  "sector_coupling",
-                                                  "upgrade_requirement":  "prove an infinite-basis operator-norm or relative-bound estimate"
-                                              },
-                                              {
-                                                  "analytic_status":  "nonnegative contribution controlled exactly under the PSD assumption",
-                                                  "can_lower_complement_gap":  false,
-                                                  "classification":  "PSD_EXACT",
-                                                  "lower_bound_method":  "PSD nonnegative monotone heat-lift inequality",
-                                                  "term_id":  "heat_lift",
-                                                  "upgrade_requirement":  "derive the profile or heat-lift input from the complete action"
-                                              },
-                                              {
-                                                  "analytic_status":  "nonnegative contribution controlled exactly under the PSD assumption",
-                                                  "can_lower_complement_gap":  false,
-                                                  "classification":  "PSD_EXACT",
-                                                  "lower_bound_method":  "PSD nonnegative Weyl contribution",
-                                                  "term_id":  "psd_profile",
-                                                  "upgrade_requirement":  "derive the profile or heat-lift input from the complete action"
-                                              },
-                                              {
-                                                  "analytic_status":  "finite-basis evidence only",
-                                                  "can_lower_complement_gap":  false,
-                                                  "classification":  "FINITE_BASIS_ONLY",
-                                                  "lower_bound_method":  "min-max restricted complement in finite basis",
-                                                  "term_id":  "zero_complement_projector",
-                                                  "upgrade_requirement":  "prove the protected kernel and complement decomposition in the full action"
-                                              }
-                                          ],
-                      "limitations":  [
-                                          "This inventory classifies the current Level 2 finite-basis proxy; it is not the full analytic H_T spectrum.",
-                                          "Frozen v1.0/v1.1 predictions, constants, tolerances, and mode ledgers are not changed."
-                                      ],
-                      "model_level":  "DIRAC_PROXY_LEVEL_2",
-                      "terms":  [
-                                    {
-                                        "assumptions":  [
-                                                            "Level 2 matrix uses the existing Berger anisotropy and finite mode basis.",
-                                                            "The protected zero-mode rows and columns are projected out by construction."
-                                                        ],
-                                        "can_lower_complement_gap":  false,
-                                        "classification":  "DIAGONAL_EXACT",
-                                        "id":  "berger_dirac_kinetic",
-                                        "limitations":  [
-                                                            "The term is exact only inside DIRAC_PROXY_LEVEL_2.",
-                                                            "A closed analytic Berger twisted-Dirac spectrum is not derived here."
-                                                        ],
-                                        "lower_bound_method":  "exact diagonal minimum after complement restriction; min-max check after squaring",
-                                        "matrix_structure":  "diagonal in the finite Dirac basis before the D^dagger D construction",
-                                        "name":  "Berger / Dirac kinetic diagonal contribution",
-                                        "operator_role":  "dominant signed diagonal Dirac proxy contribution before squaring",
-                                        "preserves_zero_modes":  true,
-                                        "source_module":  "twisted_dirac",
-                                        "source_symbol":  "build_level2_dirac_matrix"
-                                    },
-                                    {
-                                        "assumptions":  [
-                                                            "The finite basis has bounded Hopf charges.",
-                                                            "The Hopf coefficient is fixed before residual comparison."
-                                                        ],
-                                        "can_lower_complement_gap":  true,
-                                        "classification":  "SIGN_INDEFINITE_BOUNDED",
-                                        "id":  "hopf_twist",
-                                        "limitations":  [
-                                                            "The current lower bound is finite-basis bounded, not a global analytic q-bound."
-                                                        ],
-                                        "lower_bound_method":  "Weyl bound with explicit coefficient and finite q range",
-                                        "matrix_structure":  "diagonal but sign-indefinite because q can have either sign in general basis choices",
-                                        "name":  "Hopf twist contribution",
-                                        "operator_role":  "Hopf-charge dependent diagonal twist",
-                                        "preserves_zero_modes":  true,
-                                        "source_module":  "twisted_dirac",
-                                        "source_symbol":  "level2_hopf_twist_term"
-                                    },
-                                    {
-                                        "assumptions":  [
-                                                            "Boundary coefficients are those from the v1.2 action-origin scaffold.",
-                                                            "Boundary strength is explicit and nonnegative."
-                                                        ],
-                                        "can_lower_complement_gap":  true,
-                                        "classification":  "SIGN_INDEFINITE_BOUNDED",
-                                        "id":  "boundary_term",
-                                        "limitations":  [
-                                                            "The full action-level uniqueness of the complete internal action remains open.",
-                                                            "A global analytic residual bound beyond the finite basis is not proven here."
-                                                        ],
-                                        "lower_bound_method":  "Weyl bound using the bounded residual range in the finite basis",
-                                        "matrix_structure":  "diagonal residual term; sign may vary by sector and mode",
-                                        "name":  "Action-linked boundary residual contribution",
-                                        "operator_role":  "sector boundary residual term tied to the omega scaffold",
-                                        "preserves_zero_modes":  true,
-                                        "source_module":  "twisted_dirac",
-                                        "source_symbol":  "level2_boundary_term"
-                                    },
-                                    {
-                                        "assumptions":  [
-                                                            "Chirality labels are explicit finite-basis labels.",
-                                                            "The coefficient is not fitted to residuals."
-                                                        ],
-                                        "can_lower_complement_gap":  true,
-                                        "classification":  "SIGN_INDEFINITE_BOUNDED",
-                                        "id":  "chirality_term",
-                                        "limitations":  [
-                                                            "The chirality splitting is still a Level 2 proxy term."
-                                                        ],
-                                        "lower_bound_method":  "Weyl bound from explicit chirality coefficient",
-                                        "matrix_structure":  "diagonal sign-indefinite term",
-                                        "name":  "Chirality splitting contribution",
-                                        "operator_role":  "left/right chirality dependent diagonal splitting",
-                                        "preserves_zero_modes":  true,
-                                        "source_module":  "twisted_dirac",
-                                        "source_symbol":  "level2_chirality_term"
-                                    },
-                                    {
-                                        "assumptions":  [
-                                                            "Off-diagonal strengths are explicit and nonnegative.",
-                                                            "Only same-(k,j,chirality) cross-sector couplings are allowed in Level 2."
-                                                        ],
-                                        "can_lower_complement_gap":  true,
-                                        "classification":  "OFF_DIAGONAL_BOUNDED",
-                                        "id":  "sector_coupling",
-                                        "limitations":  [
-                                                            "This is the weakest matrix term for analytic upgrade because the present control is finite-basis.",
-                                                            "No infinite-basis operator-norm bound is proven here."
-                                                        ],
-                                        "lower_bound_method":  "Gershgorin bound and restricted min-max finite-basis check",
-                                        "matrix_structure":  "off-diagonal symmetric finite matrix block",
-                                        "name":  "Sector and boundary off-diagonal coupling",
-                                        "operator_role":  "symmetric off-diagonal coupling between sectors with matching k, j, chirality",
-                                        "preserves_zero_modes":  true,
-                                        "source_module":  "twisted_dirac",
-                                        "source_symbol":  "level2_sector_coupling_term"
-                                    },
-                                    {
-                                        "assumptions":  [
-                                                            "The cutoff Lambda^2 is supplied explicitly and defaults to 1/(4*pi).",
-                                                            "Dirac-squared input d is nonnegative."
-                                                        ],
-                                        "can_lower_complement_gap":  false,
-                                        "classification":  "PSD_EXACT",
-                                        "id":  "heat_lift",
-                                        "limitations":  [
-                                                            "The heat lift inherits any incompleteness in the lower bound for D^dagger D on the complement."
-                                                        ],
-                                        "lower_bound_method":  "PSD nonnegative monotone heat-lift inequality",
-                                        "matrix_structure":  "spectral functional of D^dagger D",
-                                        "name":  "Heat-kernel Hopf lift",
-                                        "operator_role":  "monotone heat lift d + mu_H(1-exp(-d/Lambda^2))",
-                                        "preserves_zero_modes":  true,
-                                        "source_module":  "ht_operator",
-                                        "source_symbol":  "build_ht_spectrum"
-                                    },
-                                    {
-                                        "assumptions":  [
-                                                            "Profile operators are PSD unless explicit failure tests opt into negative profiles.",
-                                                            "The curvature/profile positivity condition is imposed on the complement."
-                                                        ],
-                                        "can_lower_complement_gap":  false,
-                                        "classification":  "PSD_EXACT",
-                                        "id":  "psd_profile",
-                                        "limitations":  [
-                                                            "The full curvature/profile operator from the action is not computed here."
-                                                        ],
-                                        "lower_bound_method":  "PSD nonnegative Weyl contribution",
-                                        "matrix_structure":  "PSD vector or matrix contribution; negative profiles are rejected by default",
-                                        "name":  "Positive-semidefinite curvature/profile contribution",
-                                        "operator_role":  "optional PSD profile contribution on H_perp",
-                                        "preserves_zero_modes":  true,
-                                        "source_module":  "ht_operator",
-                                        "source_symbol":  "_profile_values"
-                                    },
-                                    {
-                                        "assumptions":  [
-                                                            "Exactly three protected zero modes are inserted or projected in the Level 2 scaffold.",
-                                                            "The complement is taken orthogonal to that finite coordinate subspace."
-                                                        ],
-                                        "can_lower_complement_gap":  false,
-                                        "classification":  "FINITE_BASIS_ONLY",
-                                        "id":  "zero_complement_projector",
-                                        "limitations":  [
-                                                            "This is the weakest analytic block: dim ker D_twist = 3 is not proven in the full action.",
-                                                            "The infinite-dimensional complement separation remains open."
-                                                        ],
-                                        "lower_bound_method":  "min-max restricted complement in finite basis",
-                                        "matrix_structure":  "coordinate projector in the Level 2 finite basis",
-                                        "name":  "Zero-mode and complement projector",
-                                        "operator_role":  "separates three protected zero modes from H_perp in the finite basis",
-                                        "preserves_zero_modes":  true,
-                                        "source_module":  "twisted_dirac / positivity",
-                                        "source_symbol":  "zero_mode_subspace / complement_projector"
-                                    }
-                                ],
-                      "theorem_complete":  false,
-                      "title":  "BHSM v1.3A Level 2 H_T Term Inventory"
-                  },
-    "limitations":  [
-                        "The report is an analytic-bound development scaffold over DIRAC_PROXY_LEVEL_2.",
-                        "It does not prove the full no-extra-light-state theorem.",
-                        "No frozen v1.0/v1.1 predictions or v1.2 action-origin outputs are changed."
-                    ],
-    "next_upgrade_target":  "Prove the full-action zero-mode/complement decomposition dim ker D_twist = 3 and prove assumptions A1-A6 from the complete operator.",
-    "sector_coupling_bound_status":  "v1.3B adds finite spectral, Frobenius, row-sum, Weyl, and relative-bound estimates. v1.3C adds structured block and generalized relative-bound diagnostics. v1.3D tests uniform-in-k_max stability through k_max=32. v1.3E defines the Hilbert-space/domain assumptions needed to upgrade the scan. The status remains THEOREM_SCAFFOLD, not proven.",
-    "theorem_complete":  false,
-    "title":  "BHSM v1.3A H_T Analytic-Bound Classification Report",
-    "weakest_matrix_term":  "sector_coupling",
-    "weakest_term":  "zero_complement_projector",
-    "v1_3g_zero_mode_complement_update":  {
-                                              "status":  "IMPLEMENTED",
-                                              "theorem_complete":  false,
-                                              "zero_mode_count":  3,
-                                              "mirror_zero_mode_status":  "OPEN",
-                                              "index_status":  "INDEX_SCAFFOLD",
-                                              "complement_projector_status":  "COMPLEMENT_PROJECTOR_SCAFFOLD",
-                                              "claim":  "BHSM v1.3G formalizes the zero-mode/index and complement-projector scaffold; it does not prove the full index theorem."
-                                          },
-    "v1_3h_diagonal_mirror_update":  {
-                                         "status":  "IMPLEMENTED",
-                                         "theorem_complete":  false,
-                                         "required_dirac_lower_bound":  0.80380641613494375,
-                                         "finite_diagonal_complement_lower_bound":  1.4641,
-                                         "diagonal_bound_clears_required":  true,
-                                         "mirror_exclusion_status":  "OPEN_MIRROR_RISK",
-                                         "open_mirror_risk_count":  3,
-                                         "claim":  "BHSM v1.3H audits the diagonal complement lower bound and mirror-mode exclusion conditions; it does not prove the full H_T theorem."
-                                     },
-    "v1_3i_mirror_exclusion_update":  {
-                                          "status":  "IMPLEMENTED",
-                                          "theorem_complete":  false,
-                                          "scaffold_index":  3,
-                                          "excluded_count":  3,
-                                          "open_mirror_risk_count":  0,
-                                          "exclusion_channel":  "EXCLUDED_BY_CHIRAL_PROJECTOR",
-                                          "higgs_u1_phase_channel":  "OPEN",
-                                          "boundary_functional_channel":  "OPEN",
-                                          "claim":  "BHSM v1.3I excludes generated mirror candidates at the chiral-projector scaffold channel, but does not prove the full H_T theorem."
-                                      },
-    "v1_3j_zero_mode_alignment_update":  {
-                                             "status":  "IMPLEMENTED",
-                                             "theorem_complete":  false,
-                                             "one_to_one_alignment":  false,
-                                             "open_alignment_gap_remains":  true,
-                                             "mirror_exclusion_intact":  true,
-                                             "aligned":  [
-                                                             "zero_mode_lepton -\u003e coordinate 0"
-                                                         ],
-                                             "open_alignment_gaps":  [
-                                                                         "zero_mode_up -\u003e coordinate 18",
-                                                                         "zero_mode_down -\u003e coordinate 36"
-                                                                     ],
-                                             "claim":  "BHSM v1.3J audits formal/coordinate zero-mode alignment and finds partial alignment; it does not prove the full H_T theorem."
-                                         },
-    "v1_3k_sector_labeled_kernel_update":  {
-                                               "status":  "IMPLEMENTED",
-                                               "theorem_complete":  false,
-                                               "legacy_protected_coordinates":  [
-                                                                                    0,
-                                                                                    1,
-                                                                                    2
-                                                                                ],
-                                               "formal_protected_coordinates":  [
-                                                                                    0,
-                                                                                    18,
-                                                                                    36
-                                                                                ],
-                                               "classification":  "FORMAL_KERNEL_NOT_PROTECTED",
-                                               "formal_gap_passes":  false,
-                                               "previous_gap_survives":  false,
-                                               "claim":  "BHSM v1.3K audits formal sector-labeled protected kernel construction and reports that the current Level 2 matrix does not protect the formal up/down kernel coordinates."
-                                           }
+  "combined_bound_chain": [
+    "Restrict the finite Level 2 Dirac matrix to the complement of the three protected zero modes.",
+    "Use the exact finite-basis diagonal contribution and finite q/residual ranges for diagonal sign-indefinite terms.",
+    "Control sector off-diagonal blocks with Gershgorin and restricted min-max bounds.",
+    "Use the v1.3B sector-coupling operator-norm audit to distinguish norm-certified cases from finite-basis-only passes.",
+    "Square the symmetric Level 2 Dirac matrix and take the conservative complement lower bound.",
+    "Apply the monotone heat-lift inequality with Lambda^2 = 1/(4*pi).",
+    "Add only PSD curvature/profile contributions, so Weyl's lower bound cannot decrease.",
+    "Keep theorem_complete=False until the zero-mode/complement split and off-diagonal bounds are proven in the full action."
+  ],
+  "inventory": {
+    "classifications": [
+      {
+        "analytic_status": "exact for the Level 2 finite-basis diagonal block",
+        "can_lower_complement_gap": false,
+        "classification": "DIAGONAL_EXACT",
+        "lower_bound_method": "exact diagonal minimum after complement restriction; min-max check after squaring",
+        "term_id": "berger_dirac_kinetic",
+        "upgrade_requirement": "derive a closed Berger twisted-Dirac diagonal lower bound"
+      },
+      {
+        "analytic_status": "bounded in finite basis by explicit coefficient and mode ranges",
+        "can_lower_complement_gap": true,
+        "classification": "SIGN_INDEFINITE_BOUNDED",
+        "lower_bound_method": "Weyl bound with explicit coefficient and finite q range",
+        "term_id": "hopf_twist",
+        "upgrade_requirement": "prove global coefficient-weighted mode bounds on H_perp"
+      },
+      {
+        "analytic_status": "bounded in finite basis by explicit coefficient and mode ranges",
+        "can_lower_complement_gap": true,
+        "classification": "SIGN_INDEFINITE_BOUNDED",
+        "lower_bound_method": "Weyl bound using the bounded residual range in the finite basis",
+        "term_id": "boundary_term",
+        "upgrade_requirement": "prove global coefficient-weighted mode bounds on H_perp"
+      },
+      {
+        "analytic_status": "bounded in finite basis by explicit coefficient and mode ranges",
+        "can_lower_complement_gap": true,
+        "classification": "SIGN_INDEFINITE_BOUNDED",
+        "lower_bound_method": "Weyl bound from explicit chirality coefficient",
+        "term_id": "chirality_term",
+        "upgrade_requirement": "prove global coefficient-weighted mode bounds on H_perp"
+      },
+      {
+        "analytic_status": "bounded in finite basis by Gershgorin and restricted min-max estimates",
+        "can_lower_complement_gap": true,
+        "classification": "OFF_DIAGONAL_BOUNDED",
+        "lower_bound_method": "Gershgorin bound and restricted min-max finite-basis check",
+        "term_id": "sector_coupling",
+        "upgrade_requirement": "prove an infinite-basis operator-norm or relative-bound estimate"
+      },
+      {
+        "analytic_status": "nonnegative contribution controlled exactly under the PSD assumption",
+        "can_lower_complement_gap": false,
+        "classification": "PSD_EXACT",
+        "lower_bound_method": "PSD nonnegative monotone heat-lift inequality",
+        "term_id": "heat_lift",
+        "upgrade_requirement": "derive the profile or heat-lift input from the complete action"
+      },
+      {
+        "analytic_status": "nonnegative contribution controlled exactly under the PSD assumption",
+        "can_lower_complement_gap": false,
+        "classification": "PSD_EXACT",
+        "lower_bound_method": "PSD nonnegative Weyl contribution",
+        "term_id": "psd_profile",
+        "upgrade_requirement": "derive the profile or heat-lift input from the complete action"
+      },
+      {
+        "analytic_status": "finite-basis evidence only",
+        "can_lower_complement_gap": false,
+        "classification": "FINITE_BASIS_ONLY",
+        "lower_bound_method": "min-max restricted complement in finite basis",
+        "term_id": "zero_complement_projector",
+        "upgrade_requirement": "prove the protected kernel and complement decomposition in the full action"
+      }
+    ],
+    "limitations": [
+      "This inventory classifies the current Level 2 finite-basis proxy; it is not the full analytic H_T spectrum.",
+      "Frozen v1.0/v1.1 predictions, constants, tolerances, and mode ledgers are not changed."
+    ],
+    "model_level": "DIRAC_PROXY_LEVEL_2",
+    "terms": [
+      {
+        "assumptions": [
+          "Level 2 matrix uses the existing Berger anisotropy and finite mode basis.",
+          "The protected zero-mode rows and columns are projected out by construction."
+        ],
+        "can_lower_complement_gap": false,
+        "classification": "DIAGONAL_EXACT",
+        "id": "berger_dirac_kinetic",
+        "limitations": [
+          "The term is exact only inside DIRAC_PROXY_LEVEL_2.",
+          "A closed analytic Berger twisted-Dirac spectrum is not derived here."
+        ],
+        "lower_bound_method": "exact diagonal minimum after complement restriction; min-max check after squaring",
+        "matrix_structure": "diagonal in the finite Dirac basis before the D^dagger D construction",
+        "name": "Berger / Dirac kinetic diagonal contribution",
+        "operator_role": "dominant signed diagonal Dirac proxy contribution before squaring",
+        "preserves_zero_modes": true,
+        "source_module": "twisted_dirac",
+        "source_symbol": "build_level2_dirac_matrix"
+      },
+      {
+        "assumptions": [
+          "The finite basis has bounded Hopf charges.",
+          "The Hopf coefficient is fixed before residual comparison."
+        ],
+        "can_lower_complement_gap": true,
+        "classification": "SIGN_INDEFINITE_BOUNDED",
+        "id": "hopf_twist",
+        "limitations": [
+          "The current lower bound is finite-basis bounded, not a global analytic q-bound."
+        ],
+        "lower_bound_method": "Weyl bound with explicit coefficient and finite q range",
+        "matrix_structure": "diagonal but sign-indefinite because q can have either sign in general basis choices",
+        "name": "Hopf twist contribution",
+        "operator_role": "Hopf-charge dependent diagonal twist",
+        "preserves_zero_modes": true,
+        "source_module": "twisted_dirac",
+        "source_symbol": "level2_hopf_twist_term"
+      },
+      {
+        "assumptions": [
+          "Boundary coefficients are those from the v1.2 action-origin scaffold.",
+          "Boundary strength is explicit and nonnegative."
+        ],
+        "can_lower_complement_gap": true,
+        "classification": "SIGN_INDEFINITE_BOUNDED",
+        "id": "boundary_term",
+        "limitations": [
+          "The full action-level uniqueness of the complete internal action remains open.",
+          "A global analytic residual bound beyond the finite basis is not proven here."
+        ],
+        "lower_bound_method": "Weyl bound using the bounded residual range in the finite basis",
+        "matrix_structure": "diagonal residual term; sign may vary by sector and mode",
+        "name": "Action-linked boundary residual contribution",
+        "operator_role": "sector boundary residual term tied to the omega scaffold",
+        "preserves_zero_modes": true,
+        "source_module": "twisted_dirac",
+        "source_symbol": "level2_boundary_term"
+      },
+      {
+        "assumptions": [
+          "Chirality labels are explicit finite-basis labels.",
+          "The coefficient is not fitted to residuals."
+        ],
+        "can_lower_complement_gap": true,
+        "classification": "SIGN_INDEFINITE_BOUNDED",
+        "id": "chirality_term",
+        "limitations": [
+          "The chirality splitting is still a Level 2 proxy term."
+        ],
+        "lower_bound_method": "Weyl bound from explicit chirality coefficient",
+        "matrix_structure": "diagonal sign-indefinite term",
+        "name": "Chirality splitting contribution",
+        "operator_role": "left/right chirality dependent diagonal splitting",
+        "preserves_zero_modes": true,
+        "source_module": "twisted_dirac",
+        "source_symbol": "level2_chirality_term"
+      },
+      {
+        "assumptions": [
+          "Off-diagonal strengths are explicit and nonnegative.",
+          "Only same-(k,j,chirality) cross-sector couplings are allowed in Level 2."
+        ],
+        "can_lower_complement_gap": true,
+        "classification": "OFF_DIAGONAL_BOUNDED",
+        "id": "sector_coupling",
+        "limitations": [
+          "This is the weakest matrix term for analytic upgrade because the present control is finite-basis.",
+          "No infinite-basis operator-norm bound is proven here."
+        ],
+        "lower_bound_method": "Gershgorin bound and restricted min-max finite-basis check",
+        "matrix_structure": "off-diagonal symmetric finite matrix block",
+        "name": "Sector and boundary off-diagonal coupling",
+        "operator_role": "symmetric off-diagonal coupling between sectors with matching k, j, chirality",
+        "preserves_zero_modes": true,
+        "source_module": "twisted_dirac",
+        "source_symbol": "level2_sector_coupling_term"
+      },
+      {
+        "assumptions": [
+          "The cutoff Lambda^2 is supplied explicitly and defaults to 1/(4*pi).",
+          "Dirac-squared input d is nonnegative."
+        ],
+        "can_lower_complement_gap": false,
+        "classification": "PSD_EXACT",
+        "id": "heat_lift",
+        "limitations": [
+          "The heat lift inherits any incompleteness in the lower bound for D^dagger D on the complement."
+        ],
+        "lower_bound_method": "PSD nonnegative monotone heat-lift inequality",
+        "matrix_structure": "spectral functional of D^dagger D",
+        "name": "Heat-kernel Hopf lift",
+        "operator_role": "monotone heat lift d + mu_H(1-exp(-d/Lambda^2))",
+        "preserves_zero_modes": true,
+        "source_module": "ht_operator",
+        "source_symbol": "build_ht_spectrum"
+      },
+      {
+        "assumptions": [
+          "Profile operators are PSD unless explicit failure tests opt into negative profiles.",
+          "The curvature/profile positivity condition is imposed on the complement."
+        ],
+        "can_lower_complement_gap": false,
+        "classification": "PSD_EXACT",
+        "id": "psd_profile",
+        "limitations": [
+          "The full curvature/profile operator from the action is not computed here."
+        ],
+        "lower_bound_method": "PSD nonnegative Weyl contribution",
+        "matrix_structure": "PSD vector or matrix contribution; negative profiles are rejected by default",
+        "name": "Positive-semidefinite curvature/profile contribution",
+        "operator_role": "optional PSD profile contribution on H_perp",
+        "preserves_zero_modes": true,
+        "source_module": "ht_operator",
+        "source_symbol": "_profile_values"
+      },
+      {
+        "assumptions": [
+          "Exactly three protected zero modes are inserted or projected in the Level 2 scaffold.",
+          "The complement is taken orthogonal to that finite coordinate subspace."
+        ],
+        "can_lower_complement_gap": false,
+        "classification": "FINITE_BASIS_ONLY",
+        "id": "zero_complement_projector",
+        "limitations": [
+          "This is the weakest analytic block: dim ker D_twist = 3 is not proven in the full action.",
+          "The infinite-dimensional complement separation remains open."
+        ],
+        "lower_bound_method": "min-max restricted complement in finite basis",
+        "matrix_structure": "coordinate projector in the Level 2 finite basis",
+        "name": "Zero-mode and complement projector",
+        "operator_role": "separates three protected zero modes from H_perp in the finite basis",
+        "preserves_zero_modes": true,
+        "source_module": "twisted_dirac / positivity",
+        "source_symbol": "zero_mode_subspace / complement_projector"
+      }
+    ],
+    "theorem_complete": false,
+    "title": "BHSM v1.3A Level 2 H_T Term Inventory"
+  },
+  "limitations": [
+    "The report is an analytic-bound development scaffold over DIRAC_PROXY_LEVEL_2.",
+    "It does not prove the full no-extra-light-state theorem.",
+    "No frozen v1.0/v1.1 predictions or v1.2 action-origin outputs are changed."
+  ],
+  "next_upgrade_target": "Prove the full-action zero-mode/complement decomposition dim ker D_twist = 3 and prove assumptions A1-A6 from the complete operator.",
+  "sector_coupling_bound_status": "v1.3B adds finite spectral, Frobenius, row-sum, Weyl, and relative-bound estimates. v1.3C adds structured block and generalized relative-bound diagnostics. v1.3D tests uniform-in-k_max stability through k_max=32. v1.3E defines the Hilbert-space/domain assumptions needed to upgrade the scan. The status remains THEOREM_SCAFFOLD, not proven.",
+  "theorem_complete": false,
+  "title": "BHSM v1.3A H_T Analytic-Bound Classification Report",
+  "v1_3g_zero_mode_complement_update": {
+    "claim": "BHSM v1.3G formalizes the zero-mode/index and complement-projector scaffold; it does not prove the full index theorem.",
+    "complement_projector_status": "COMPLEMENT_PROJECTOR_SCAFFOLD",
+    "index_status": "INDEX_SCAFFOLD",
+    "mirror_zero_mode_status": "OPEN",
+    "status": "IMPLEMENTED",
+    "theorem_complete": false,
+    "zero_mode_count": 3
+  },
+  "v1_3h_diagonal_mirror_update": {
+    "claim": "BHSM v1.3H audits the diagonal complement lower bound and mirror-mode exclusion conditions; it does not prove the full H_T theorem.",
+    "diagonal_bound_clears_required": true,
+    "finite_diagonal_complement_lower_bound": 1.4641,
+    "mirror_exclusion_status": "OPEN_MIRROR_RISK",
+    "open_mirror_risk_count": 3,
+    "required_dirac_lower_bound": 0.8038064161349437,
+    "status": "IMPLEMENTED",
+    "theorem_complete": false
+  },
+  "v1_3i_mirror_exclusion_update": {
+    "boundary_functional_channel": "OPEN",
+    "claim": "BHSM v1.3I excludes generated mirror candidates at the chiral-projector scaffold channel, but does not prove the full H_T theorem.",
+    "excluded_count": 3,
+    "exclusion_channel": "EXCLUDED_BY_CHIRAL_PROJECTOR",
+    "higgs_u1_phase_channel": "OPEN",
+    "open_mirror_risk_count": 0,
+    "scaffold_index": 3,
+    "status": "IMPLEMENTED",
+    "theorem_complete": false
+  },
+  "v1_3j_zero_mode_alignment_update": {
+    "aligned": [
+      "zero_mode_lepton -> coordinate 0"
+    ],
+    "claim": "BHSM v1.3J audits formal/coordinate zero-mode alignment and finds partial alignment; it does not prove the full H_T theorem.",
+    "mirror_exclusion_intact": true,
+    "one_to_one_alignment": false,
+    "open_alignment_gap_remains": true,
+    "open_alignment_gaps": [
+      "zero_mode_up -> coordinate 18",
+      "zero_mode_down -> coordinate 36"
+    ],
+    "status": "IMPLEMENTED",
+    "theorem_complete": false
+  },
+  "v1_3k_sector_labeled_kernel_update": {
+    "claim": "BHSM v1.3K audits formal sector-labeled protected kernel construction and reports that the current Level 2 matrix does not protect the formal up/down kernel coordinates.",
+    "classification": "FORMAL_KERNEL_NOT_PROTECTED",
+    "formal_gap_passes": false,
+    "formal_protected_coordinates": [
+      0,
+      18,
+      36
+    ],
+    "legacy_protected_coordinates": [
+      0,
+      1,
+      2
+    ],
+    "previous_gap_survives": false,
+    "status": "IMPLEMENTED",
+    "theorem_complete": false
+  },
+  "v1_3l_formal_kernel_operator_update": {
+    "claim": "Corrected finite-basis formal-kernel Level 2 scaffold; full H_T theorem remains open.",
+    "first_complement_eigenvalue": 6.8171156827281205,
+    "formal_kernel_protected": true,
+    "formal_protected_coordinates": [
+      0,
+      18,
+      36
+    ],
+    "ht_gap": 19592.076941940737,
+    "margin": 6.81711568272658,
+    "new_variant": "DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL",
+    "old_protected_coordinates": [
+      0,
+      1,
+      2
+    ],
+    "passes_mu_h": true,
+    "protected_sectors": [
+      "lepton",
+      "up",
+      "down"
+    ],
+    "required_dirac_lower_bound": 0.8038064161349437,
+    "sector_coupling_vanishes_on_formal_kernel": true,
+    "status": "FORMAL_KERNEL_GAP_RESTORED",
+    "theorem_complete": false
+  },
+  "weakest_matrix_term": "sector_coupling",
+  "weakest_term": "zero_complement_projector"
 }

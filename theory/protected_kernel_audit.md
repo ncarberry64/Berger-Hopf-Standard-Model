@@ -33,3 +33,25 @@ Alignment gap closes: `False`
 - The formal sector-labeled kernel is present in the finite basis but is not protected by the current Level 2 matrix.
 - The full H_T theorem remains open.
 - No frozen model output is changed.
+
+## v1.3L Corrected Operator Update
+
+v1.3L introduces `DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL`, a corrected finite
+Level 2 variant whose protected block is the formal sector-labeled kernel
+`(0,18,36)` rather than the legacy coordinate-first block `(0,1,2)`.
+
+Under the corrected variant:
+
+| Quantity | Value |
+| --- | --- |
+| status | `FORMAL_KERNEL_GAP_RESTORED` |
+| formal kernel protected | `True` |
+| sector coupling vanishes on formal kernel | `True` |
+| first complement eigenvalue | `6.8171156827281205` |
+| H_T gap | `19592.076941940737` |
+| margin vs mu_H | `6.81711568272658` |
+
+The v1.3K failure remains an important audit result for the legacy
+coordinate-first scaffold. The v1.3L correction supersedes that scaffold for
+future Level 2 formal-kernel `H_T` audits, without changing frozen BHSM
+predictions.
