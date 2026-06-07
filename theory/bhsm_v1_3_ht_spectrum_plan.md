@@ -647,3 +647,46 @@ split are certified.
 Recommended v1.3M task: rerun the sector-coupling, structured relative-bound,
 uniform relative-bound, and basis-convergence audits using
 `DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL` as the baseline operator variant.
+
+## v1.3M Formal-Kernel Regression and Convergence Status
+
+Status: `IMPLEMENTED`
+
+BHSM v1.3M reruns the finite-basis `H_T` lower-bound, sector-coupling,
+structured relative-bound, and basis-convergence audits using the corrected
+formal sector-labeled kernel.
+
+Generated reports:
+
+- `theory/formal_kernel_regression_report.md`
+- `theory/formal_kernel_regression_report.json`
+- `theory/formal_kernel_convergence_report.md`
+- `theory/formal_kernel_convergence_report.json`
+- `manuscript/v1_3m_formal_kernel_regression_note.md`
+- `notebooks/35_formal_kernel_regression.ipynb`
+
+Result:
+
+- corrected protected coordinates: `(0,18,36)` at `k_max=4`;
+- protected sectors: one lepton, one up, one down;
+- direct finite-spectrum lower bound: `6.8171156827281205`;
+- min-max complement lower bound: `6.8171156827281205`;
+- Gershgorin lower bound: `6.721838618515489`;
+- sector-coupling structured lower bound: `6.729508865520464`;
+- convergence classification: `FORMAL_KERNEL_CONVERGENCE_SUPPORTED`;
+- convergence rows: `27`;
+- all convergence rows pass: `True`;
+- worst direct margin: `4.833981204821612`;
+- theorem_complete remains `False`.
+
+Correct claim:
+
+```text
+BHSM v1.3M reruns the H_T gap and bound audits using the corrected formal
+sector-labeled kernel. It supersedes coordinate-first Level 2 conclusions
+where those depended on the old protected block.
+```
+
+Recommended v1.3N task: move from corrected finite-basis formal-kernel
+evidence toward an action-derived formal-kernel projector or a semi-analytic
+closed-form complement lower bound for `DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL`.

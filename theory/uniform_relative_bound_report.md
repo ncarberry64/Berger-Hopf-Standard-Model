@@ -169,3 +169,25 @@ Hilbert-space/domain theorem scaffold.
 The finite evidence remains separated from proof. The v1.3E implication is
 conditional on assumptions A1-A6, including the full zero-mode/complement split
 and an infinite-basis relative-bound estimate.
+
+## v1.3M Corrected Formal-Kernel Convergence Update
+
+v1.3M reruns the convergence audit with
+`DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL`.
+
+Corrected formal-kernel convergence summary:
+
+| Quantity | Value |
+| --- | --- |
+| classification | `FORMAL_KERNEL_CONVERGENCE_SUPPORTED` |
+| scan rows | `27` |
+| k_max values | `4, 6, 8, 10, 12, 16, 20, 24, 32` |
+| anisotropies | `alpha^{-1}/(12*pi^2), 1.0, 0.573` |
+| all rows pass | `True` |
+| worst direct margin | `4.833981204821612` |
+| worst Gershgorin margin | `3.949470723972136` |
+| minimum first complement eigenvalue | `4.83398120481994` |
+
+This supersedes coordinate-first convergence conclusions where they depended
+on the old protected block. It remains finite-basis evidence, not a full
+infinite-basis theorem.

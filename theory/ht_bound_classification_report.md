@@ -114,6 +114,29 @@ The immediate finite-basis kernel bookkeeping issue is corrected. The
 kernel, complement projector, and infinite-basis lower bound are derived from
 the complete twisted Dirac / bundle action.
 
+## v1.3M Corrected Formal-Kernel Regression Update
+
+v1.3M reruns the lower-bound, sector-coupling, structured relative-bound, and
+basis-convergence audits using `DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL`.
+
+Corrected result:
+
+| Quantity | Value |
+| --- | --- |
+| regression status | `FORMAL_KERNEL_CONVERGENCE_SUPPORTED` |
+| direct lower bound | `6.8171156827281205` |
+| min-max lower bound | `6.8171156827281205` |
+| Gershgorin lower bound | `6.721838618515489` |
+| sector-coupling structured lower bound | `6.729508865520464` |
+| convergence rows | `27` |
+| all convergence rows pass | `True` |
+| worst direct margin | `4.833981204821612` |
+
+Coordinate-first Level 2 conclusions are superseded where they depended on
+the old protected block `(0,1,2)`. The corrected formal-kernel baseline should
+be used for future Level 2 `H_T` regression, convergence, and bound audits.
+Theorem status remains `False`.
+
 ## Limitations
 
 - The report is an analytic-bound development scaffold over DIRAC_PROXY_LEVEL_2.

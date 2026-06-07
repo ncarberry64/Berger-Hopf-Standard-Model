@@ -1,0 +1,109 @@
+{
+  "assumptions": [
+    "The corrected Level 2 operator protects the formal sector-labeled kernel directly.",
+    "The natural cutoff Lambda^2=1/(4*pi) is used.",
+    "No empirical flavor, CKM, PMNS, prediction-ledger, or residual-audit data enter the regression."
+  ],
+  "corrected_gap_stable": true,
+  "limitations": [
+    "All rows are finite-basis Level 2 scaffold rows.",
+    "The full H_T theorem remains open.",
+    "Coordinate-first conclusions are superseded only where they depended on the old protected block."
+  ],
+  "lower_bound_rows": [
+    {
+      "direct_finite_spectrum_lower_bound": 1.4630400252994733,
+      "gershgorin_lower_bound": 1.4366234871740744,
+      "ht_gap": 19586.72266333732,
+      "margin": 1.4628370793107024,
+      "minmax_complement_lower_bound": 1.4630400252994733,
+      "passes_mu_h": true,
+      "protected_coordinates": [
+        0,
+        1,
+        2
+      ],
+      "protected_sectors": [
+        "lepton",
+        "lepton",
+        "lepton"
+      ],
+      "required_dirac_lower_bound": 0.8038064161349437,
+      "theorem_complete": false,
+      "variant": "DIRAC_PROXY_LEVEL_2_COORDINATE_FIRST"
+    },
+    {
+      "direct_finite_spectrum_lower_bound": 6.8171156827281205,
+      "gershgorin_lower_bound": 6.721838618515489,
+      "ht_gap": 19592.076941940737,
+      "margin": 6.81711568272658,
+      "minmax_complement_lower_bound": 6.8171156827281205,
+      "passes_mu_h": true,
+      "protected_coordinates": [
+        0,
+        18,
+        36
+      ],
+      "protected_sectors": [
+        "lepton",
+        "up",
+        "down"
+      ],
+      "required_dirac_lower_bound": 0.8038064161349437,
+      "theorem_complete": false,
+      "variant": "DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL"
+    }
+  ],
+  "previous_conclusions_revised": [
+    "Coordinate-first protected block `(0,1,2)` is superseded for formal-kernel H_T audits.",
+    "Corrected formal-kernel first complement eigenvalue is larger than the legacy coordinate-first value.",
+    "Corrected sector-coupling norms are recomputed on the formal complement and are much smaller in the baseline row.",
+    "Theorem status remains incomplete because the full action, index theorem, and infinite-basis split remain open."
+  ],
+  "sector_coupling_rows": [
+    {
+      "base_complement_lower_bound": 1.4641,
+      "classification": "NORM_BOUND_SUFFICIENT",
+      "finite_basis_passes": true,
+      "frobenius_norm": 1.5673539133570085,
+      "full_complement_lower_bound": 1.463040025299567,
+      "offdiag_boundary_coupling": 0.005,
+      "protected_coordinates": [
+        0,
+        1,
+        2
+      ],
+      "relative_a_k": 0.3224419118796895,
+      "row_sum_norm": 0.47862045138889886,
+      "sector_coupling": 0.01,
+      "spectral_norm": 0.4720872031830534,
+      "structured_lower_bound": 1.4412292741558648,
+      "theorem_complete": false,
+      "variant": "DIRAC_PROXY_LEVEL_2_COORDINATE_FIRST",
+      "weyl_lower_bound": 0.9920127968169465
+    },
+    {
+      "base_complement_lower_bound": 6.833527254265818,
+      "classification": "RELATIVE_BOUND_CANDIDATE",
+      "finite_basis_passes": true,
+      "frobenius_norm": 1.582154927031561,
+      "full_complement_lower_bound": 6.8171156827281205,
+      "offdiag_boundary_coupling": 0.005,
+      "protected_coordinates": [
+        0,
+        18,
+        36
+      ],
+      "relative_a_k": 0.015221771257357651,
+      "row_sum_norm": 0.47862045138889886,
+      "sector_coupling": 0.01,
+      "spectral_norm": 0.47208720318305375,
+      "structured_lower_bound": 6.729508865520464,
+      "theorem_complete": false,
+      "variant": "DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL",
+      "weyl_lower_bound": 6.361440051082765
+    }
+  ],
+  "theorem_complete": false,
+  "title": "BHSM v1.3M Formal-Kernel H_T Regression Audit"
+}

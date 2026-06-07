@@ -60,3 +60,19 @@ Status: `FORMAL_KERNEL_GAP_RESTORED`
 - This is a corrected finite-basis Level 2 scaffold.
 - Structured, uniform, and basis-convergence audits must be rerun under this formal-kernel variant before stronger H_T claims.
 - The full H_T theorem remains open.
+
+## v1.3M Regression and Convergence Update
+
+v1.3M performs those reruns under `DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL`.
+
+| Quantity | Corrected formal-kernel value |
+| --- | --- |
+| direct finite-spectrum lower bound | `6.8171156827281205` |
+| min-max complement lower bound | `6.8171156827281205` |
+| Gershgorin lower bound | `6.721838618515489` |
+| sector-coupling structured lower bound | `6.729508865520464` |
+| convergence classification | `FORMAL_KERNEL_CONVERGENCE_SUPPORTED` |
+| all convergence rows pass | `True` |
+
+Coordinate-first Level 2 conclusions are superseded where they depended on
+the old protected block.

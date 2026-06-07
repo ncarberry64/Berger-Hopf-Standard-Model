@@ -131,3 +131,23 @@ sector-coupling selection rules and the finite generalized relative bound
 This strengthens finite-basis/semi-analytic control of the sector-coupling
 block, but it remains a candidate bound until made uniform in the
 infinite-basis limit and paired with a full zero-mode/complement proof.
+
+## v1.3M Corrected Formal-Kernel Regression Update
+
+v1.3M reruns the sector-coupling audit on the corrected formal-kernel
+complement. Coordinate-first rows above remain historical v1.3B evidence.
+
+Corrected baseline:
+
+| Quantity | Coordinate-first | Formal-kernel corrected |
+| --- | --- | --- |
+| protected coordinates | `(0,1,2)` | `(0,18,36)` |
+| base complement lower bound | `1.4641` | `6.833527254265818` |
+| full complement lower bound | `1.463040025299567` | `6.8171156827281205` |
+| spectral norm | `0.4720872031830534` | `0.47208720318305375` |
+| Weyl lower bound | `0.9920127968169465` | `6.361440051082765` |
+| relative `a_K` | `0.3224419118796895` | `0.015221771257357651` |
+| structured lower bound | `1.4412292741558648` | `6.729508865520464` |
+
+The corrected formal-kernel sector-coupling bound is stronger in the baseline,
+but remains finite-basis scaffold evidence. The full theorem remains open.

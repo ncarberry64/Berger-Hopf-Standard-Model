@@ -98,3 +98,23 @@ Trend summary for the canonical baseline:
 
 This supports a uniform-bound candidate across the tested finite truncations,
 but it does not prove the infinite-basis result.
+
+## v1.3M Formal-Kernel Structured-Bound Update
+
+v1.3M reruns the structured relative-bound estimate on
+`DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL`.
+
+Corrected formal-kernel baseline:
+
+| Quantity | Value |
+| --- | --- |
+| protected coordinates | `(0,18,36)` |
+| full complement lower bound | `6.8171156827281205` |
+| base complement lower bound | `6.833527254265818` |
+| relative `a_K` | `0.015221771257357651` |
+| structured lower bound | `6.729508865520464` |
+| classification | `RELATIVE_BOUND_CANDIDATE` |
+
+The previous structured report remains useful for historical coordinate-first
+comparison, but formal-kernel `H_T` claims should use the corrected v1.3M
+baseline.
