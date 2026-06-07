@@ -690,3 +690,51 @@ where those depended on the old protected block.
 Recommended v1.3N task: move from corrected finite-basis formal-kernel
 evidence toward an action-derived formal-kernel projector or a semi-analytic
 closed-form complement lower bound for `DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL`.
+
+## v1.3N Formal-Kernel Action-Origin and Semi-Analytic Bound Status
+
+Status: `IMPLEMENTED`
+
+BHSM v1.3N constrains the corrected formal-kernel projector from the BHSM
+sector/boundary/action scaffold and builds a semi-analytic complement-bound
+scaffold.
+
+Generated reports:
+
+- `theory/formal_kernel_action_origin_report.md`
+- `theory/formal_kernel_action_origin_report.json`
+- `theory/semi_analytic_complement_bound_report.md`
+- `theory/semi_analytic_complement_bound_report.json`
+- `manuscript/v1_3n_formal_kernel_action_origin_note.md`
+- `notebooks/36_formal_kernel_action_origin.ipynb`
+
+Result:
+
+- projector derivation status: `FORMAL_KERNEL_BASIS_DERIVED`;
+- sector kernel status: `FORMAL_KERNEL_BOUNDARY_DERIVED`;
+- parent-action channel: `REDUCED_FROM_PARENT_ACTION`;
+- formal coordinates at `k_max=4`: `(0,18,36)`;
+- old coordinate-first block `(0,1,2)` is not the formal kernel;
+- semi-analytic complement-bound status:
+  `SEMI_ANALYTIC_BOUND_SCAFFOLD_PASSES`;
+- first diagonal complement mode: lepton coordinate `1`,
+  `(k,j,q,chi)=(1,0,1,-1)`;
+- diagonal lower bound: `6.833527254265818`;
+- structured relative lower bound: `6.729508865520464`;
+- required lower bound: `0.8038064161349437`;
+- theorem_complete remains `False`.
+
+Correct claim:
+
+```text
+BHSM v1.3N derives or constrains the corrected formal-kernel projector from
+the BHSM sector/boundary/action scaffold and builds a semi-analytic
+complement-bound scaffold. It does not prove the full H_T theorem unless the
+complete twisted Dirac operator, index theorem, and infinite-basis complement
+bound are all certified.
+```
+
+Recommended v1.3O task: derive the formal-kernel projector and diagonal
+complement lower bound directly from a closed symbolic
+`DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL` operator formula, then separate finite
+basis-ordering facts from coordinate-free subspace statements.

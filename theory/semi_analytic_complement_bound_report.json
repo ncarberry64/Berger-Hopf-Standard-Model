@@ -1,0 +1,44 @@
+{
+  "assumptions": [
+    "The Level 2 diagonal formula is evaluated symbolically for complement modes.",
+    "The formal sector-labeled kernel is removed before the complement is scanned.",
+    "Sector-coupling control uses the corrected formal-kernel structured relative-bound row."
+  ],
+  "clears_required_bound": true,
+  "diagonal_lower_bound": 6.833527254265818,
+  "exact_finite_lower_bound": 6.8171156827281205,
+  "first_diagonal_complement_mode": {
+    "chirality": -1,
+    "coordinate": 1,
+    "diagonal_dirac_value": -2.6141016151377547,
+    "diagonal_square": 6.833527254265818,
+    "explanation": "Old coordinate-first lepton modes are complement states unless they are the formal sector-labeled heavy mode.",
+    "j": 0,
+    "k": 1,
+    "old_coordinate_first_protected": true,
+    "protected_formal_kernel": false,
+    "q": 1,
+    "sector": "lepton"
+  },
+  "gershgorin_lower_bound": 6.721838618515489,
+  "limitations": [
+    "The bound is semi-analytic inside DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL, not the full twisted Dirac operator.",
+    "Gershgorin and structured-relative estimates remain finite-basis scaffold bounds.",
+    "The full H_T theorem remains open."
+  ],
+  "model_level": "DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL",
+  "old_coordinate_first_coordinates": [
+    0,
+    1,
+    2
+  ],
+  "protected_coordinates": [
+    0,
+    18,
+    36
+  ],
+  "required_dirac_lower_bound": 0.8038064161349437,
+  "status": "SEMI_ANALYTIC_BOUND_SCAFFOLD_PASSES",
+  "structured_relative_lower_bound": 6.729508865520464,
+  "theorem_complete": false
+}

@@ -137,6 +137,39 @@ the old protected block `(0,1,2)`. The corrected formal-kernel baseline should
 be used for future Level 2 `H_T` regression, convergence, and bound audits.
 Theorem status remains `False`.
 
+## v1.3N Formal-Kernel Action-Origin / Semi-Analytic Bound Update
+
+v1.3N constrains the corrected formal-kernel projector from sector labels,
+the v1.2 boundary-functional/parent-action scaffold, protected chirality, and
+the Level 2 sector-major basis ordering. The finite coordinate placement is:
+
+```text
+coordinate = sector_index * 2*M(k_max)
+M(k_max)=sum_{k=0}^{k_max}(floor(k/2)+1)
+```
+
+For `k_max=4`, this gives `(0,18,36)`.
+
+Status:
+
+- projector origin: `FORMAL_KERNEL_BASIS_DERIVED`;
+- parent-action channel: `REDUCED_FROM_PARENT_ACTION`;
+- semi-analytic complement bound: `SEMI_ANALYTIC_BOUND_SCAFFOLD_PASSES`;
+- theorem_complete: `False`.
+
+Semi-analytic lower-bound table:
+
+| Bound | Value |
+| --- | --- |
+| required Dirac lower bound | `0.8038064161349437` |
+| diagonal complement lower bound | `6.833527254265818` |
+| Gershgorin lower bound | `6.721838618515489` |
+| structured relative lower bound | `6.729508865520464` |
+| exact finite lower bound | `6.8171156827281205` |
+
+This strengthens the corrected formal-kernel scaffold, but does not complete
+the full twisted Dirac / `H_T` theorem.
+
 ## Limitations
 
 - The report is an analytic-bound development scaffold over DIRAC_PROXY_LEVEL_2.

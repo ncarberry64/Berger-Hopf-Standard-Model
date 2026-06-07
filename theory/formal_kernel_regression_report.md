@@ -31,3 +31,20 @@ BHSM v1.3M reruns the H_T gap and bound audits using the corrected formal sector
 - All rows are finite-basis Level 2 scaffold rows.
 - The full H_T theorem remains open.
 - Coordinate-first conclusions are superseded only where they depended on the old protected block.
+
+## v1.3N Action-Origin / Semi-Analytic Update
+
+v1.3N constrains the formal-kernel projector from the BHSM sector,
+boundary-functional, parent-action, and basis-ordering scaffolds.
+
+| Quantity | Value |
+| --- | --- |
+| projector derivation status | `FORMAL_KERNEL_BASIS_DERIVED` |
+| parent-action status | `REDUCED_FROM_PARENT_ACTION` |
+| formal coordinates | `(0,18,36)` |
+| semi-analytic bound status | `SEMI_ANALYTIC_BOUND_SCAFFOLD_PASSES` |
+| diagonal complement lower bound | `6.833527254265818` |
+| structured relative lower bound | `6.729508865520464` |
+
+The corrected formal kernel remains a scaffolded boundary/basis-derived object,
+not a completed full-action projector theorem.

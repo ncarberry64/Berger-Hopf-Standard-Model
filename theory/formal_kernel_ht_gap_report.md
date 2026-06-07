@@ -76,3 +76,26 @@ v1.3M performs those reruns under `DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL`.
 
 Coordinate-first Level 2 conclusions are superseded where they depended on
 the old protected block.
+
+## v1.3N Action-Origin / Semi-Analytic Bound Update
+
+v1.3N derives the finite coordinates `(0,18,36)` from:
+
+- sector-labeled protected heavy modes;
+- protected chirality `chi=-1`;
+- v1.2 sector boundary functional and parent-action reduction;
+- Level 2 sector-major basis ordering.
+
+Status: `FORMAL_KERNEL_BASIS_DERIVED`, not
+`FORMAL_KERNEL_ACTION_DERIVED`.
+
+The semi-analytic complement-bound scaffold clears the required Dirac lower
+bound:
+
+| Bound | Value |
+| --- | --- |
+| required Dirac lower bound | `0.8038064161349437` |
+| diagonal complement lower bound | `6.833527254265818` |
+| Gershgorin lower bound | `6.721838618515489` |
+| structured relative lower bound | `6.729508865520464` |
+| exact finite lower bound | `6.8171156827281205` |
