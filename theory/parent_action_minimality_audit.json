@@ -1,0 +1,687 @@
+{
+  "criteria": [
+    {
+      "evidence": [
+        {
+          "base_status": "OPEN",
+          "base_value": 2,
+          "fiber_status": "OPEN",
+          "fiber_value": null,
+          "open_reasons": [
+            "missing boundary-functional input(s): hopf_fiber_orientation; missing parent action term(s): I_HOPF"
+          ],
+          "parent_status": "OPEN",
+          "recovered_expected_modes": null,
+          "sector": "lepton",
+          "target_status": "OPEN",
+          "target_value": 3,
+          "variant_id": "remove_I_HOPF"
+        },
+        {
+          "base_status": "OPEN",
+          "base_value": -2,
+          "fiber_status": "OPEN",
+          "fiber_value": null,
+          "open_reasons": [
+            "missing boundary-functional input(s): hopf_fiber_orientation; missing parent action term(s): I_HOPF"
+          ],
+          "parent_status": "OPEN",
+          "recovered_expected_modes": null,
+          "sector": "up",
+          "target_status": "OPEN",
+          "target_value": 6,
+          "variant_id": "remove_I_HOPF"
+        },
+        {
+          "base_status": "OPEN",
+          "base_value": 4,
+          "fiber_status": "OPEN",
+          "fiber_value": null,
+          "open_reasons": [
+            "missing boundary-functional input(s): hopf_fiber_orientation; missing parent action term(s): I_HOPF"
+          ],
+          "parent_status": "OPEN",
+          "recovered_expected_modes": null,
+          "sector": "down",
+          "target_status": "OPEN",
+          "target_value": 12,
+          "variant_id": "remove_I_HOPF"
+        }
+      ],
+      "id": "minimal_I_HOPF",
+      "limitations": [
+        "Minimality is tested inside the symbolic parent-action scaffold.",
+        "This does not prove global minimality of the complete internal action."
+      ],
+      "passes": true,
+      "removed_term": "I_HOPF",
+      "required_for": "fiber_q opens"
+    },
+    {
+      "evidence": [
+        {
+          "base_status": "OPEN",
+          "base_value": 2,
+          "fiber_status": "OPEN",
+          "fiber_value": null,
+          "open_reasons": [
+            "missing boundary-functional input(s): hypercharge_higgs_boundary; missing parent action term(s): I_U1"
+          ],
+          "parent_status": "OPEN",
+          "recovered_expected_modes": null,
+          "sector": "lepton",
+          "target_status": "OPEN",
+          "target_value": 3,
+          "variant_id": "remove_I_U1"
+        },
+        {
+          "base_status": "OPEN",
+          "base_value": -2,
+          "fiber_status": "OPEN",
+          "fiber_value": null,
+          "open_reasons": [
+            "missing boundary-functional input(s): hypercharge_higgs_boundary; missing parent action term(s): I_U1"
+          ],
+          "parent_status": "OPEN",
+          "recovered_expected_modes": null,
+          "sector": "up",
+          "target_status": "OPEN",
+          "target_value": 6,
+          "variant_id": "remove_I_U1"
+        },
+        {
+          "base_status": "OPEN",
+          "base_value": 4,
+          "fiber_status": "OPEN",
+          "fiber_value": null,
+          "open_reasons": [
+            "missing boundary-functional input(s): hypercharge_higgs_boundary; missing parent action term(s): I_U1"
+          ],
+          "parent_status": "OPEN",
+          "recovered_expected_modes": null,
+          "sector": "down",
+          "target_status": "OPEN",
+          "target_value": 12,
+          "variant_id": "remove_I_U1"
+        }
+      ],
+      "id": "minimal_I_U1",
+      "limitations": [
+        "Minimality is tested inside the symbolic parent-action scaffold.",
+        "This does not prove global minimality of the complete internal action."
+      ],
+      "passes": true,
+      "removed_term": "I_U1",
+      "required_for": "fiber_q opens"
+    },
+    {
+      "evidence": [
+        {
+          "base_status": "OPEN",
+          "base_value": null,
+          "fiber_status": "OPEN",
+          "fiber_value": -1,
+          "open_reasons": [
+            "missing boundary-functional input(s): base_node_phase; missing parent action term(s): I_BASE"
+          ],
+          "parent_status": "OPEN",
+          "recovered_expected_modes": null,
+          "sector": "lepton",
+          "target_status": "OPEN",
+          "target_value": 3,
+          "variant_id": "remove_I_BASE"
+        },
+        {
+          "base_status": "OPEN",
+          "base_value": null,
+          "fiber_status": "OPEN",
+          "fiber_value": 1,
+          "open_reasons": [
+            "missing boundary-functional input(s): base_node_phase; missing parent action term(s): I_BASE"
+          ],
+          "parent_status": "OPEN",
+          "recovered_expected_modes": null,
+          "sector": "up",
+          "target_status": "OPEN",
+          "target_value": 6,
+          "variant_id": "remove_I_BASE"
+        },
+        {
+          "base_status": "OPEN",
+          "base_value": null,
+          "fiber_status": "OPEN",
+          "fiber_value": 1,
+          "open_reasons": [
+            "missing boundary-functional input(s): base_node_phase; missing parent action term(s): I_BASE"
+          ],
+          "parent_status": "OPEN",
+          "recovered_expected_modes": null,
+          "sector": "down",
+          "target_status": "OPEN",
+          "target_value": 12,
+          "variant_id": "remove_I_BASE"
+        }
+      ],
+      "id": "minimal_I_BASE",
+      "limitations": [
+        "Minimality is tested inside the symbolic parent-action scaffold.",
+        "This does not prove global minimality of the complete internal action."
+      ],
+      "passes": true,
+      "removed_term": "I_BASE",
+      "required_for": "base_j opens"
+    },
+    {
+      "evidence": [
+        {
+          "base_status": "OPEN",
+          "base_value": null,
+          "fiber_status": "OPEN",
+          "fiber_value": -1,
+          "open_reasons": [
+            "missing boundary-functional input(s): chirality_sign, weak_component_sign; missing parent action term(s): I_WEAK"
+          ],
+          "parent_status": "OPEN",
+          "recovered_expected_modes": null,
+          "sector": "lepton",
+          "target_status": "OPEN",
+          "target_value": 3,
+          "variant_id": "remove_I_WEAK"
+        },
+        {
+          "base_status": "OPEN",
+          "base_value": null,
+          "fiber_status": "OPEN",
+          "fiber_value": 1,
+          "open_reasons": [
+            "missing boundary-functional input(s): chirality_sign, weak_component_sign; missing parent action term(s): I_WEAK"
+          ],
+          "parent_status": "OPEN",
+          "recovered_expected_modes": null,
+          "sector": "up",
+          "target_status": "OPEN",
+          "target_value": 6,
+          "variant_id": "remove_I_WEAK"
+        },
+        {
+          "base_status": "OPEN",
+          "base_value": null,
+          "fiber_status": "OPEN",
+          "fiber_value": 1,
+          "open_reasons": [
+            "missing boundary-functional input(s): chirality_sign, weak_component_sign; missing parent action term(s): I_WEAK"
+          ],
+          "parent_status": "OPEN",
+          "recovered_expected_modes": null,
+          "sector": "down",
+          "target_status": "OPEN",
+          "target_value": 12,
+          "variant_id": "remove_I_WEAK"
+        }
+      ],
+      "id": "minimal_I_WEAK",
+      "limitations": [
+        "Minimality is tested inside the symbolic parent-action scaffold.",
+        "This does not prove global minimality of the complete internal action."
+      ],
+      "passes": true,
+      "removed_term": "I_WEAK",
+      "required_for": "base_j opens"
+    },
+    {
+      "evidence": [
+        {
+          "base_status": "OPEN",
+          "base_value": null,
+          "fiber_status": "OPEN",
+          "fiber_value": -1,
+          "open_reasons": [
+            "missing boundary-functional input(s): coframe_participation; missing parent action term(s): I_COF"
+          ],
+          "parent_status": "OPEN",
+          "recovered_expected_modes": null,
+          "sector": "lepton",
+          "target_status": "OPEN",
+          "target_value": 3,
+          "variant_id": "remove_I_COF"
+        },
+        {
+          "base_status": "OPEN",
+          "base_value": null,
+          "fiber_status": "OPEN",
+          "fiber_value": 1,
+          "open_reasons": [
+            "missing boundary-functional input(s): coframe_participation; missing parent action term(s): I_COF"
+          ],
+          "parent_status": "OPEN",
+          "recovered_expected_modes": null,
+          "sector": "up",
+          "target_status": "OPEN",
+          "target_value": 6,
+          "variant_id": "remove_I_COF"
+        },
+        {
+          "base_status": "OPEN",
+          "base_value": null,
+          "fiber_status": "OPEN",
+          "fiber_value": 1,
+          "open_reasons": [
+            "missing boundary-functional input(s): coframe_participation; missing parent action term(s): I_COF"
+          ],
+          "parent_status": "OPEN",
+          "recovered_expected_modes": null,
+          "sector": "down",
+          "target_status": "OPEN",
+          "target_value": 12,
+          "variant_id": "remove_I_COF"
+        }
+      ],
+      "id": "minimal_I_COF",
+      "limitations": [
+        "Minimality is tested inside the symbolic parent-action scaffold.",
+        "This does not prove global minimality of the complete internal action."
+      ],
+      "passes": true,
+      "removed_term": "I_COF",
+      "required_for": "base_j opens"
+    },
+    {
+      "evidence": [
+        {
+          "base_status": "OPEN",
+          "base_value": 2,
+          "fiber_status": "OPEN",
+          "fiber_value": -1,
+          "open_reasons": [
+            "missing boundary-functional input(s): family_index, sector_winding_multiplier; missing parent action term(s): I_BDY"
+          ],
+          "parent_status": "OPEN",
+          "recovered_expected_modes": null,
+          "sector": "lepton",
+          "target_status": "OPEN",
+          "target_value": null,
+          "variant_id": "remove_I_BDY"
+        },
+        {
+          "base_status": "OPEN",
+          "base_value": -2,
+          "fiber_status": "OPEN",
+          "fiber_value": 1,
+          "open_reasons": [
+            "missing boundary-functional input(s): family_index, sector_winding_multiplier; missing parent action term(s): I_BDY"
+          ],
+          "parent_status": "OPEN",
+          "recovered_expected_modes": null,
+          "sector": "up",
+          "target_status": "OPEN",
+          "target_value": null,
+          "variant_id": "remove_I_BDY"
+        },
+        {
+          "base_status": "OPEN",
+          "base_value": 4,
+          "fiber_status": "OPEN",
+          "fiber_value": 1,
+          "open_reasons": [
+            "missing boundary-functional input(s): family_index, sector_winding_multiplier; missing parent action term(s): I_BDY"
+          ],
+          "parent_status": "OPEN",
+          "recovered_expected_modes": null,
+          "sector": "down",
+          "target_status": "OPEN",
+          "target_value": null,
+          "variant_id": "remove_I_BDY"
+        }
+      ],
+      "id": "minimal_I_BDY",
+      "limitations": [
+        "Minimality is tested inside the symbolic parent-action scaffold.",
+        "This does not prove global minimality of the complete internal action."
+      ],
+      "passes": true,
+      "removed_term": "I_BDY",
+      "required_for": "target opens"
+    }
+  ],
+  "limitations": [
+    "Term-removal minimality is local to the v1.2B symbolic parent-action scaffold.",
+    "No empirical flavor or residual data are used."
+  ],
+  "outcomes": [
+    {
+      "base_status": "OPEN",
+      "base_value": 2,
+      "fiber_status": "OPEN",
+      "fiber_value": null,
+      "open_reasons": [
+        "missing boundary-functional input(s): hopf_fiber_orientation; missing parent action term(s): I_HOPF"
+      ],
+      "parent_status": "OPEN",
+      "recovered_expected_modes": null,
+      "sector": "lepton",
+      "target_status": "OPEN",
+      "target_value": 3,
+      "variant_id": "remove_I_HOPF"
+    },
+    {
+      "base_status": "OPEN",
+      "base_value": -2,
+      "fiber_status": "OPEN",
+      "fiber_value": null,
+      "open_reasons": [
+        "missing boundary-functional input(s): hopf_fiber_orientation; missing parent action term(s): I_HOPF"
+      ],
+      "parent_status": "OPEN",
+      "recovered_expected_modes": null,
+      "sector": "up",
+      "target_status": "OPEN",
+      "target_value": 6,
+      "variant_id": "remove_I_HOPF"
+    },
+    {
+      "base_status": "OPEN",
+      "base_value": 4,
+      "fiber_status": "OPEN",
+      "fiber_value": null,
+      "open_reasons": [
+        "missing boundary-functional input(s): hopf_fiber_orientation; missing parent action term(s): I_HOPF"
+      ],
+      "parent_status": "OPEN",
+      "recovered_expected_modes": null,
+      "sector": "down",
+      "target_status": "OPEN",
+      "target_value": 12,
+      "variant_id": "remove_I_HOPF"
+    },
+    {
+      "base_status": "OPEN",
+      "base_value": 2,
+      "fiber_status": "OPEN",
+      "fiber_value": null,
+      "open_reasons": [
+        "missing boundary-functional input(s): hypercharge_higgs_boundary; missing parent action term(s): I_U1"
+      ],
+      "parent_status": "OPEN",
+      "recovered_expected_modes": null,
+      "sector": "lepton",
+      "target_status": "OPEN",
+      "target_value": 3,
+      "variant_id": "remove_I_U1"
+    },
+    {
+      "base_status": "OPEN",
+      "base_value": -2,
+      "fiber_status": "OPEN",
+      "fiber_value": null,
+      "open_reasons": [
+        "missing boundary-functional input(s): hypercharge_higgs_boundary; missing parent action term(s): I_U1"
+      ],
+      "parent_status": "OPEN",
+      "recovered_expected_modes": null,
+      "sector": "up",
+      "target_status": "OPEN",
+      "target_value": 6,
+      "variant_id": "remove_I_U1"
+    },
+    {
+      "base_status": "OPEN",
+      "base_value": 4,
+      "fiber_status": "OPEN",
+      "fiber_value": null,
+      "open_reasons": [
+        "missing boundary-functional input(s): hypercharge_higgs_boundary; missing parent action term(s): I_U1"
+      ],
+      "parent_status": "OPEN",
+      "recovered_expected_modes": null,
+      "sector": "down",
+      "target_status": "OPEN",
+      "target_value": 12,
+      "variant_id": "remove_I_U1"
+    },
+    {
+      "base_status": "OPEN",
+      "base_value": null,
+      "fiber_status": "OPEN",
+      "fiber_value": -1,
+      "open_reasons": [
+        "missing boundary-functional input(s): base_node_phase; missing parent action term(s): I_BASE"
+      ],
+      "parent_status": "OPEN",
+      "recovered_expected_modes": null,
+      "sector": "lepton",
+      "target_status": "OPEN",
+      "target_value": 3,
+      "variant_id": "remove_I_BASE"
+    },
+    {
+      "base_status": "OPEN",
+      "base_value": null,
+      "fiber_status": "OPEN",
+      "fiber_value": 1,
+      "open_reasons": [
+        "missing boundary-functional input(s): base_node_phase; missing parent action term(s): I_BASE"
+      ],
+      "parent_status": "OPEN",
+      "recovered_expected_modes": null,
+      "sector": "up",
+      "target_status": "OPEN",
+      "target_value": 6,
+      "variant_id": "remove_I_BASE"
+    },
+    {
+      "base_status": "OPEN",
+      "base_value": null,
+      "fiber_status": "OPEN",
+      "fiber_value": 1,
+      "open_reasons": [
+        "missing boundary-functional input(s): base_node_phase; missing parent action term(s): I_BASE"
+      ],
+      "parent_status": "OPEN",
+      "recovered_expected_modes": null,
+      "sector": "down",
+      "target_status": "OPEN",
+      "target_value": 12,
+      "variant_id": "remove_I_BASE"
+    },
+    {
+      "base_status": "OPEN",
+      "base_value": null,
+      "fiber_status": "OPEN",
+      "fiber_value": -1,
+      "open_reasons": [
+        "missing boundary-functional input(s): chirality_sign, weak_component_sign; missing parent action term(s): I_WEAK"
+      ],
+      "parent_status": "OPEN",
+      "recovered_expected_modes": null,
+      "sector": "lepton",
+      "target_status": "OPEN",
+      "target_value": 3,
+      "variant_id": "remove_I_WEAK"
+    },
+    {
+      "base_status": "OPEN",
+      "base_value": null,
+      "fiber_status": "OPEN",
+      "fiber_value": 1,
+      "open_reasons": [
+        "missing boundary-functional input(s): chirality_sign, weak_component_sign; missing parent action term(s): I_WEAK"
+      ],
+      "parent_status": "OPEN",
+      "recovered_expected_modes": null,
+      "sector": "up",
+      "target_status": "OPEN",
+      "target_value": 6,
+      "variant_id": "remove_I_WEAK"
+    },
+    {
+      "base_status": "OPEN",
+      "base_value": null,
+      "fiber_status": "OPEN",
+      "fiber_value": 1,
+      "open_reasons": [
+        "missing boundary-functional input(s): chirality_sign, weak_component_sign; missing parent action term(s): I_WEAK"
+      ],
+      "parent_status": "OPEN",
+      "recovered_expected_modes": null,
+      "sector": "down",
+      "target_status": "OPEN",
+      "target_value": 12,
+      "variant_id": "remove_I_WEAK"
+    },
+    {
+      "base_status": "OPEN",
+      "base_value": null,
+      "fiber_status": "OPEN",
+      "fiber_value": -1,
+      "open_reasons": [
+        "missing boundary-functional input(s): coframe_participation; missing parent action term(s): I_COF"
+      ],
+      "parent_status": "OPEN",
+      "recovered_expected_modes": null,
+      "sector": "lepton",
+      "target_status": "OPEN",
+      "target_value": 3,
+      "variant_id": "remove_I_COF"
+    },
+    {
+      "base_status": "OPEN",
+      "base_value": null,
+      "fiber_status": "OPEN",
+      "fiber_value": 1,
+      "open_reasons": [
+        "missing boundary-functional input(s): coframe_participation; missing parent action term(s): I_COF"
+      ],
+      "parent_status": "OPEN",
+      "recovered_expected_modes": null,
+      "sector": "up",
+      "target_status": "OPEN",
+      "target_value": 6,
+      "variant_id": "remove_I_COF"
+    },
+    {
+      "base_status": "OPEN",
+      "base_value": null,
+      "fiber_status": "OPEN",
+      "fiber_value": 1,
+      "open_reasons": [
+        "missing boundary-functional input(s): coframe_participation; missing parent action term(s): I_COF"
+      ],
+      "parent_status": "OPEN",
+      "recovered_expected_modes": null,
+      "sector": "down",
+      "target_status": "OPEN",
+      "target_value": 12,
+      "variant_id": "remove_I_COF"
+    },
+    {
+      "base_status": "OPEN",
+      "base_value": 2,
+      "fiber_status": "OPEN",
+      "fiber_value": -1,
+      "open_reasons": [
+        "missing boundary-functional input(s): family_index, sector_winding_multiplier; missing parent action term(s): I_BDY"
+      ],
+      "parent_status": "OPEN",
+      "recovered_expected_modes": null,
+      "sector": "lepton",
+      "target_status": "OPEN",
+      "target_value": null,
+      "variant_id": "remove_I_BDY"
+    },
+    {
+      "base_status": "OPEN",
+      "base_value": -2,
+      "fiber_status": "OPEN",
+      "fiber_value": 1,
+      "open_reasons": [
+        "missing boundary-functional input(s): family_index, sector_winding_multiplier; missing parent action term(s): I_BDY"
+      ],
+      "parent_status": "OPEN",
+      "recovered_expected_modes": null,
+      "sector": "up",
+      "target_status": "OPEN",
+      "target_value": null,
+      "variant_id": "remove_I_BDY"
+    },
+    {
+      "base_status": "OPEN",
+      "base_value": 4,
+      "fiber_status": "OPEN",
+      "fiber_value": 1,
+      "open_reasons": [
+        "missing boundary-functional input(s): family_index, sector_winding_multiplier; missing parent action term(s): I_BDY"
+      ],
+      "parent_status": "OPEN",
+      "recovered_expected_modes": null,
+      "sector": "down",
+      "target_status": "OPEN",
+      "target_value": null,
+      "variant_id": "remove_I_BDY"
+    }
+  ],
+  "status": "MINIMAL_UNDER_TESTED_PARENT_TERMS",
+  "theorem_complete": false,
+  "title": "BHSM v1.2C Parent-Action Minimality Audit",
+  "variants": [
+    {
+      "description": "Remove parent action term I_HOPF.",
+      "expected_effect": "fiber_q opens",
+      "id": "remove_I_HOPF",
+      "overrides": null,
+      "removed_terms": [
+        "I_HOPF"
+      ],
+      "status": "AUDIT_VARIANT"
+    },
+    {
+      "description": "Remove parent action term I_U1.",
+      "expected_effect": "fiber_q opens",
+      "id": "remove_I_U1",
+      "overrides": null,
+      "removed_terms": [
+        "I_U1"
+      ],
+      "status": "AUDIT_VARIANT"
+    },
+    {
+      "description": "Remove parent action term I_BASE.",
+      "expected_effect": "base_j opens",
+      "id": "remove_I_BASE",
+      "overrides": null,
+      "removed_terms": [
+        "I_BASE"
+      ],
+      "status": "AUDIT_VARIANT"
+    },
+    {
+      "description": "Remove parent action term I_WEAK.",
+      "expected_effect": "base_j opens",
+      "id": "remove_I_WEAK",
+      "overrides": null,
+      "removed_terms": [
+        "I_WEAK"
+      ],
+      "status": "AUDIT_VARIANT"
+    },
+    {
+      "description": "Remove parent action term I_COF.",
+      "expected_effect": "base_j opens",
+      "id": "remove_I_COF",
+      "overrides": null,
+      "removed_terms": [
+        "I_COF"
+      ],
+      "status": "AUDIT_VARIANT"
+    },
+    {
+      "description": "Remove parent action term I_BDY.",
+      "expected_effect": "target opens",
+      "id": "remove_I_BDY",
+      "overrides": null,
+      "removed_terms": [
+        "I_BDY"
+      ],
+      "status": "AUDIT_VARIANT"
+    }
+  ]
+}

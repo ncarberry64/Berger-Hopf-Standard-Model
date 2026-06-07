@@ -39,6 +39,13 @@ S_int = int_I bar(Psi)(i slash D_Berger + A_Hopf + A_base + A_Higgs-U(1) + P_L +
 - Base coefficient requires: `I_BASE, I_WEAK, I_COF`.
 - Target requires: `I_BDY`.
 
+## v1.2C Minimality and Uniqueness Audit
+
+- Minimality status: `MINIMAL_UNDER_TESTED_PARENT_TERMS`.
+- Uniqueness status: `UNIQUE_UNDER_BHSM_AXIOMS`.
+- Competing variants found: `[]`.
+- Theorem complete: `False`.
+
 ## What v1.2B Shows and Does Not Show
 
 - Shows: the sector boundary functional is reduced from the symbolic parent internal-action scaffold.

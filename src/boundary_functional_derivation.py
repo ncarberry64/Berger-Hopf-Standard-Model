@@ -36,6 +36,7 @@ class ParentActionDerivationReport:
     reductions: tuple[ReducedBoundaryFunctional, ...]
     coefficient_table: tuple[dict[str, Any], ...]
     necessary_terms: dict[str, tuple[str, ...]]
+    v1_2c_audit_summary: dict[str, Any]
     limitations: tuple[str, ...]
 
 
@@ -67,6 +68,11 @@ def build_parent_action_derivation_report() -> ParentActionDerivationReport:
         if all(reduction.parent_action_status == ParentReductionStatus.REDUCED_FROM_PARENT_ACTION for reduction in reductions)
         else ParentReductionStatus.OPEN
     )
+    from action_minimality import build_minimality_audit
+    from action_uniqueness import build_uniqueness_audit
+
+    minimality = build_minimality_audit()
+    uniqueness = build_uniqueness_audit()
     return ParentActionDerivationReport(
         title="BHSM v1.2B Parent Internal-Action Boundary Derivation Scaffold",
         parent_action=symbolic_parent_action_expression(),
@@ -81,6 +87,16 @@ def build_parent_action_derivation_report() -> ParentActionDerivationReport:
             "fiber_q": ("I_HOPF", "I_U1"),
             "base_j": ("I_BASE", "I_WEAK", "I_COF"),
             "target": ("I_BDY",),
+        },
+        v1_2c_audit_summary={
+            "minimality_status": minimality.status,
+            "uniqueness_status": uniqueness.status,
+            "competing_variants": [
+                criterion.variant_id
+                for criterion in uniqueness.criteria
+                if getattr(criterion, "status").value == "COMPETING_VARIANT_EXISTS"
+            ],
+            "theorem_complete": False,
         },
         limitations=(
             "The sector boundary functional is reduced from a symbolic parent internal-action scaffold.",
@@ -153,6 +169,13 @@ def export_parent_action_derivation_markdown(path: str | Path) -> None:
             f"- Fiber coefficient requires: `{', '.join(report.necessary_terms['fiber_q'])}`.",
             f"- Base coefficient requires: `{', '.join(report.necessary_terms['base_j'])}`.",
             f"- Target requires: `{', '.join(report.necessary_terms['target'])}`.",
+            "",
+            "## v1.2C Minimality and Uniqueness Audit",
+            "",
+            f"- Minimality status: `{report.v1_2c_audit_summary['minimality_status']}`.",
+            f"- Uniqueness status: `{report.v1_2c_audit_summary['uniqueness_status']}`.",
+            f"- Competing variants found: `{report.v1_2c_audit_summary['competing_variants']}`.",
+            f"- Theorem complete: `{report.v1_2c_audit_summary['theorem_complete']}`.",
             "",
             "## What v1.2B Shows and Does Not Show",
             "",

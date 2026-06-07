@@ -54,3 +54,16 @@ The tests verify:
 BHSM v1.2B reduces the sector boundary functional from a symbolic parent
 internal-action scaffold. A full unique derivation from the complete
 Berger-Hopf twisted Dirac/bundle action remains open unless proven.
+
+## v1.2C Minimality and Uniqueness Addendum
+
+The v1.2C audit removes each required parent-action ingredient and confirms
+that the corresponding coefficient opens:
+
+- `I_HOPF` or `I_U1` removal opens the fiber coefficient;
+- `I_BASE`, `I_WEAK`, or `I_COF` removal opens the base coefficient;
+- `I_BDY` removal opens the target.
+
+The controlled nearby variants tested in v1.2C do not recover the charged-sector
+mode ledger under the current BHSM axioms. The audit status is
+`UNIQUE_UNDER_BHSM_AXIOMS`, with `theorem_complete=False`.
