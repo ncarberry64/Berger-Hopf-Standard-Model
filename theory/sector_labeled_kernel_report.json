@@ -1,0 +1,137 @@
+{
+  "coordinate_first_projector": {
+    "coordinate_indices": [
+      0,
+      1,
+      2
+    ],
+    "idempotent": true,
+    "limitations": [
+      "Legacy Level 2 scaffold protects the first coordinate positions.",
+      "v1.3J showed this is not the same as the formal sector-labeled kernel."
+    ],
+    "matrix_shape": [
+      54,
+      54
+    ],
+    "name": "P0_coordinate_first",
+    "orthogonal_to_complement": true,
+    "rank": 3,
+    "sector_distribution": {
+      "lepton": 3
+    }
+  },
+  "formal_projector": {
+    "coordinate_indices": [
+      0,
+      18,
+      36
+    ],
+    "idempotent": true,
+    "limitations": [
+      "Projector is built from formal sector-labeled coordinates.",
+      "It does not alter the Level 2 matrix construction."
+    ],
+    "matrix_shape": [
+      54,
+      54
+    ],
+    "name": "P0_formal_sector_labeled",
+    "orthogonal_to_complement": true,
+    "rank": 3,
+    "sector_distribution": {
+      "down": 1,
+      "lepton": 1,
+      "up": 1
+    }
+  },
+  "protected_kernel_vectors": [
+    {
+      "coordinate_index": 0,
+      "label_id": "zero_mode_lepton",
+      "limitations": [
+        "Coordinate unit vector for the formal sector-labeled zero-mode scaffold."
+      ],
+      "nonzero_entries": [
+        0
+      ],
+      "vector_norm": 1.0
+    },
+    {
+      "coordinate_index": 18,
+      "label_id": "zero_mode_up",
+      "limitations": [
+        "Coordinate unit vector for the formal sector-labeled zero-mode scaffold."
+      ],
+      "nonzero_entries": [
+        18
+      ],
+      "vector_norm": 1.0
+    },
+    {
+      "coordinate_index": 36,
+      "label_id": "zero_mode_down",
+      "limitations": [
+        "Coordinate unit vector for the formal sector-labeled zero-mode scaffold."
+      ],
+      "nonzero_entries": [
+        36
+      ],
+      "vector_norm": 1.0
+    }
+  ],
+  "sector_labeled_zero_modes": [
+    {
+      "boundary_condition": "sector boundary functional for lepton",
+      "chirality": -1,
+      "coordinate_index": 0,
+      "id": "zero_mode_lepton",
+      "j": 0,
+      "k": 0,
+      "limitations": [
+        "The heavy (0,0) zero-mode label is formal sector data.",
+        "Presence in the finite basis does not by itself prove coordinate protection."
+      ],
+      "omega_target": 3,
+      "omega_value": 0,
+      "present_in_basis": true,
+      "q": 0,
+      "sector": "lepton"
+    },
+    {
+      "boundary_condition": "sector boundary functional for up",
+      "chirality": -1,
+      "coordinate_index": 18,
+      "id": "zero_mode_up",
+      "j": 0,
+      "k": 0,
+      "limitations": [
+        "The heavy (0,0) zero-mode label is formal sector data.",
+        "Presence in the finite basis does not by itself prove coordinate protection."
+      ],
+      "omega_target": 6,
+      "omega_value": 0,
+      "present_in_basis": true,
+      "q": 0,
+      "sector": "up"
+    },
+    {
+      "boundary_condition": "sector boundary functional for down",
+      "chirality": -1,
+      "coordinate_index": 36,
+      "id": "zero_mode_down",
+      "j": 0,
+      "k": 0,
+      "limitations": [
+        "The heavy (0,0) zero-mode label is formal sector data.",
+        "Presence in the finite basis does not by itself prove coordinate protection."
+      ],
+      "omega_target": 12,
+      "omega_value": 0,
+      "present_in_basis": true,
+      "q": 0,
+      "sector": "down"
+    }
+  ],
+  "theorem_complete": false
+}

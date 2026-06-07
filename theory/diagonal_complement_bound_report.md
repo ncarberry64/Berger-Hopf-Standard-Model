@@ -39,3 +39,11 @@ Formal/coordinate alignment: `OPEN_ALIGNMENT_GAP`
 - The finite diagonal lower bound is not the full infinite-basis bound.
 - Formal zero-mode labels are not yet proven identical to the finite coordinate protected block.
 - The complete twisted Dirac operator may modify the diagonal spectrum.
+
+## v1.3K Sector-Labeled Kernel Update
+
+The v1.3H diagonal bound used the legacy coordinate-first protected block.
+v1.3K recomputes the gap using the formal sector-labeled projector
+`(0,18,36)` and finds that the formal projector does not preserve the old
+Level 2 gap. The diagonal complement bound must therefore be rebuilt after a
+corrected formal-kernel Level 2 operator is implemented.

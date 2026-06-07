@@ -62,6 +62,11 @@ the finite Level 2 coordinate-protected block. The result is partial alignment:
 the lepton label aligns, while the up/down labels remain
 `OPEN_ALIGNMENT_GAP`.
 
+v1.3K builds the formal sector-labeled protected projector directly from
+coordinates `(0,18,36)` and recomputes the gap. The current Level 2 scaffold is
+classified `FORMAL_KERNEL_NOT_PROTECTED`; the old coordinate-first gap does not
+survive the formal-projector audit.
+
 Frozen baseline:
 
 - Tag: `bhsm-v1.0-freeze`

@@ -44,3 +44,11 @@ zero-mode candidates. The lepton formal label aligns with coordinate `0`;
 the up and down formal labels match finite basis coordinates `18` and `36`,
 which are not in the coordinate-protected block. The complement-projector
 status therefore remains a scaffold.
+
+## v1.3K Sector-Labeled Kernel Update
+
+v1.3K builds the formal projector from coordinates `(0,18,36)` and recomputes
+the complement gap. The formal projector is idempotent, but the formal up/down
+coordinates are not zero-protected by the current Level 2 operator and sector
+coupling does not vanish on the formal kernel. The previous coordinate-first
+gap does not survive this recomputation.

@@ -35,3 +35,14 @@ Mirror exclusion intact: `True`
 - This audit does not alter the finite Level 2 coordinate ordering or protected block.
 - The current scaffold has one exact formal/coordinate alignment and two open alignment gaps.
 - The full H_T theorem remains open until the full operator/index/complement split is certified.
+
+## v1.3K Sector-Labeled Kernel Update
+
+v1.3K constructs `P0_formal` directly from the formal sector-labeled kernel
+coordinates `(0,18,36)` and compares it to the legacy coordinate-first block
+`(0,1,2)`.
+
+Result: the formal sector-labeled kernel is present in the finite basis, but
+the current Level 2 matrix does not protect the formal up/down coordinates.
+The formal-projector `H_T` gap recomputation fails, so the alignment gap
+remains a serious Level 2 kernel-protection blocker.

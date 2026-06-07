@@ -80,6 +80,17 @@ but are not in the finite coordinate-protected block.
 The `zero_complement_projector` term therefore remains the weakest analytic
 block and remains scaffolded.
 
+## v1.3K Sector-Labeled Kernel Update
+
+v1.3K tests whether the Level 2 protected block should be the formal
+sector-labeled kernel. The formal projector uses coordinates `(0,18,36)`,
+whereas the legacy Level 2 scaffold protected `(0,1,2)`.
+
+Outcome: `FORMAL_KERNEL_NOT_PROTECTED`. The formal projector is well-defined
+and idempotent, but the current Level 2 matrix does not protect formal up/down
+coordinates. Recomputing the `H_T` gap with `P0_formal` collapses the finite
+gap, so the previous Level 2 gap does not survive as a formal-kernel audit.
+
 ## Limitations
 
 - The report is an analytic-bound development scaffold over DIRAC_PROXY_LEVEL_2.

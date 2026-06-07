@@ -556,3 +556,46 @@ Recommended v1.3K task: either revise the Level 2 coordinate-protection
 construction to protect the formal sector-labeled kernel directly, or derive a
 change-of-basis/projection theorem showing why the current finite coordinate
 block represents the formal three-sector kernel.
+
+## v1.3K Sector-Labeled Kernel Status
+
+Status: `IMPLEMENTED`
+
+BHSM v1.3K audits whether the finite Level 2 protected kernel corresponds to
+the formal sector-labeled BHSM zero modes.
+
+Generated reports:
+
+- `theory/sector_labeled_kernel_report.md`
+- `theory/sector_labeled_kernel_report.json`
+- `theory/protected_kernel_audit.md`
+- `theory/protected_kernel_audit.json`
+- `manuscript/v1_3k_sector_labeled_kernel_note.md`
+- `notebooks/33_sector_labeled_kernel.ipynb`
+
+Result:
+
+- legacy coordinate-first protected block: `(0,1,2)`;
+- formal sector-labeled protected kernel: `(0,18,36)`;
+- formal kernel sector distribution: one lepton, one up, one down;
+- formal projector is idempotent and rank `3`;
+- formal up/down coordinates are not protected by the current Level 2 matrix;
+- sector coupling does not vanish on the formal kernel;
+- formal-projector `H_T` gap recomputation fails;
+- previous Level 2 gap does not survive the formal-projector audit;
+- classification: `FORMAL_KERNEL_NOT_PROTECTED`;
+- theorem_complete remains `False`.
+
+Correct claim:
+
+```text
+BHSM v1.3K audits whether the finite Level 2 protected kernel corresponds to
+the formal sector-labeled BHSM zero modes. If the scaffold protected coordinate
+positions rather than formal sector labels, the correction must be reported
+and the H_T gap recomputed.
+```
+
+Recommended v1.3L task: implement a corrected Level 2 operator variant whose
+protected zero block is built from formal sector-labeled coordinates
+`(0,18,36)`, then rerun the sector-coupling, lower-bound, and convergence
+audits from that corrected scaffold.

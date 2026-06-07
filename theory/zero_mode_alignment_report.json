@@ -1,277 +1,295 @@
 {
-  "alignment_maps": [
-    {
-      "chirality_matches": true,
-      "coordinate_block_index": 0,
-      "formal_label": {
-        "boundary_condition": "sector boundary functional for lepton",
-        "boundary_policy_satisfied": true,
-        "boundary_policy_status": "HEAVY_MODE_PROTECTED_SEPARATELY",
-        "chirality": -1,
-        "id": "zero_mode_lepton",
-        "j": 0,
-        "k": 0,
-        "limitations": [
-          "The heavy (0,0) mode is included separately from nonzero boundary-operator selection.",
-          "Formal labels remain scaffold labels until the full index theorem is proven."
-        ],
-        "omega_rule": "Omega_l = -q + 2j = 3 for nonzero selected modes; heavy (0,0) is protected separately",
-        "omega_target": 3,
-        "omega_value": 0,
-        "q": 0,
-        "sector": "lepton"
-      },
-      "heat_lift_preserves_matching_state": true,
-      "limitations": [
-        "ALIGNED requires the matching coordinate to be inside the finite protected block.",
-        "OPEN_ALIGNMENT_GAP means the formal label exists in the basis but is not coordinate-protected."
-      ],
-      "matching_coordinate_chirality": -1,
-      "matching_coordinate_index": 0,
-      "matching_coordinate_protected": true,
-      "matching_coordinate_sector": "lepton",
-      "sector_coupling_vanishes_on_matching_state": true,
-      "sector_matches": true,
-      "status": "ALIGNED"
-    },
-    {
-      "chirality_matches": true,
-      "coordinate_block_index": null,
-      "formal_label": {
-        "boundary_condition": "sector boundary functional for up",
-        "boundary_policy_satisfied": true,
-        "boundary_policy_status": "HEAVY_MODE_PROTECTED_SEPARATELY",
-        "chirality": -1,
-        "id": "zero_mode_up",
-        "j": 0,
-        "k": 0,
-        "limitations": [
-          "The heavy (0,0) mode is included separately from nonzero boundary-operator selection.",
-          "Formal labels remain scaffold labels until the full index theorem is proven."
-        ],
-        "omega_rule": "Omega_u = q - 2j = 6 for nonzero selected modes; heavy (0,0) is protected separately",
-        "omega_target": 6,
-        "omega_value": 0,
-        "q": 0,
-        "sector": "up"
-      },
-      "heat_lift_preserves_matching_state": false,
-      "limitations": [
-        "ALIGNED requires the matching coordinate to be inside the finite protected block.",
-        "OPEN_ALIGNMENT_GAP means the formal label exists in the basis but is not coordinate-protected."
-      ],
-      "matching_coordinate_chirality": -1,
-      "matching_coordinate_index": 18,
-      "matching_coordinate_protected": false,
-      "matching_coordinate_sector": "up",
-      "sector_coupling_vanishes_on_matching_state": false,
-      "sector_matches": true,
-      "status": "OPEN_ALIGNMENT_GAP"
-    },
-    {
-      "chirality_matches": true,
-      "coordinate_block_index": null,
-      "formal_label": {
-        "boundary_condition": "sector boundary functional for down",
-        "boundary_policy_satisfied": true,
-        "boundary_policy_status": "HEAVY_MODE_PROTECTED_SEPARATELY",
-        "chirality": -1,
-        "id": "zero_mode_down",
-        "j": 0,
-        "k": 0,
-        "limitations": [
-          "The heavy (0,0) mode is included separately from nonzero boundary-operator selection.",
-          "Formal labels remain scaffold labels until the full index theorem is proven."
-        ],
-        "omega_rule": "Omega_d = q + 4j = 12 for nonzero selected modes; heavy (0,0) is protected separately",
-        "omega_target": 12,
-        "omega_value": 0,
-        "q": 0,
-        "sector": "down"
-      },
-      "heat_lift_preserves_matching_state": false,
-      "limitations": [
-        "ALIGNED requires the matching coordinate to be inside the finite protected block.",
-        "OPEN_ALIGNMENT_GAP means the formal label exists in the basis but is not coordinate-protected."
-      ],
-      "matching_coordinate_chirality": -1,
-      "matching_coordinate_index": 36,
-      "matching_coordinate_protected": false,
-      "matching_coordinate_sector": "down",
-      "sector_coupling_vanishes_on_matching_state": false,
-      "sector_matches": true,
-      "status": "OPEN_ALIGNMENT_GAP"
-    }
-  ],
-  "all_three_coordinate_states_present": true,
-  "all_three_formal_labels_present": true,
-  "coordinate_protected_states": [
-    {
-      "chirality": -1,
-      "coordinate_index": 0,
-      "coordinate_protected": true,
-      "dirac_squared": 0.0,
-      "heat_lift_preserves": true,
-      "j": 0,
-      "k": 0,
-      "limitations": [
-        "Coordinate protection is by finite-matrix construction.",
-        "The coordinate block is not automatically identical to the formal sector-labeled kernel."
-      ],
-      "protection_mechanism": "finite Level 2 coordinate zero block",
-      "q": 0,
-      "sector": "lepton",
-      "sector_coupling_vanishes": true
-    },
-    {
-      "chirality": -1,
-      "coordinate_index": 1,
-      "coordinate_protected": true,
-      "dirac_squared": 0.0,
-      "heat_lift_preserves": true,
-      "j": 0,
-      "k": 1,
-      "limitations": [
-        "Coordinate protection is by finite-matrix construction.",
-        "The coordinate block is not automatically identical to the formal sector-labeled kernel."
-      ],
-      "protection_mechanism": "finite Level 2 coordinate zero block",
-      "q": 1,
-      "sector": "lepton",
-      "sector_coupling_vanishes": true
-    },
-    {
-      "chirality": -1,
-      "coordinate_index": 2,
-      "coordinate_protected": true,
-      "dirac_squared": 0.0,
-      "heat_lift_preserves": true,
-      "j": 0,
-      "k": 2,
-      "limitations": [
-        "Coordinate protection is by finite-matrix construction.",
-        "The coordinate block is not automatically identical to the formal sector-labeled kernel."
-      ],
-      "protection_mechanism": "finite Level 2 coordinate zero block",
-      "q": 2,
-      "sector": "lepton",
-      "sector_coupling_vanishes": true
-    }
-  ],
-  "criteria": [
-    {
-      "evidence": [
-        "formal_label_count=3"
-      ],
-      "id": "A1",
-      "limitations": [
-        "Formal labels are index-scaffold data."
-      ],
-      "passes": true,
-      "statement": "Exactly three formal protected zero-mode labels are present."
-    },
-    {
-      "evidence": [
-        "coordinate_protected_count=3"
-      ],
-      "id": "A2",
-      "limitations": [
-        "Coordinate protection is by finite Level 2 construction."
-      ],
-      "passes": true,
-      "statement": "Exactly three finite coordinate-protected states are present."
-    },
-    {
-      "evidence": [
-        "zero_mode_lepton->index 0",
-        "zero_mode_up->index 18",
-        "zero_mode_down->index 36"
-      ],
-      "id": "A3",
-      "limitations": [
-        "Presence in the basis is weaker than coordinate protection."
-      ],
-      "passes": true,
-      "statement": "Each formal label has a matching sector/chirality coordinate in the finite basis."
-    },
-    {
-      "evidence": [
-        "zero_mode_lepton:ALIGNED",
-        "zero_mode_up:OPEN_ALIGNMENT_GAP",
-        "zero_mode_down:OPEN_ALIGNMENT_GAP"
-      ],
-      "id": "A4",
-      "limitations": [
-        "This criterion currently fails for up/down formal labels, so the alignment gap remains open."
-      ],
-      "passes": false,
-      "statement": "Each matching coordinate is in the finite protected block and is preserved by heat lift and sector coupling."
-    }
-  ],
-  "formal_labels": [
-    {
-      "boundary_condition": "sector boundary functional for lepton",
-      "boundary_policy_satisfied": true,
-      "boundary_policy_status": "HEAVY_MODE_PROTECTED_SEPARATELY",
-      "chirality": -1,
-      "id": "zero_mode_lepton",
-      "j": 0,
-      "k": 0,
-      "limitations": [
-        "The heavy (0,0) mode is included separately from nonzero boundary-operator selection.",
-        "Formal labels remain scaffold labels until the full index theorem is proven."
-      ],
-      "omega_rule": "Omega_l = -q + 2j = 3 for nonzero selected modes; heavy (0,0) is protected separately",
-      "omega_target": 3,
-      "omega_value": 0,
-      "q": 0,
-      "sector": "lepton"
-    },
-    {
-      "boundary_condition": "sector boundary functional for up",
-      "boundary_policy_satisfied": true,
-      "boundary_policy_status": "HEAVY_MODE_PROTECTED_SEPARATELY",
-      "chirality": -1,
-      "id": "zero_mode_up",
-      "j": 0,
-      "k": 0,
-      "limitations": [
-        "The heavy (0,0) mode is included separately from nonzero boundary-operator selection.",
-        "Formal labels remain scaffold labels until the full index theorem is proven."
-      ],
-      "omega_rule": "Omega_u = q - 2j = 6 for nonzero selected modes; heavy (0,0) is protected separately",
-      "omega_target": 6,
-      "omega_value": 0,
-      "q": 0,
-      "sector": "up"
-    },
-    {
-      "boundary_condition": "sector boundary functional for down",
-      "boundary_policy_satisfied": true,
-      "boundary_policy_status": "HEAVY_MODE_PROTECTED_SEPARATELY",
-      "chirality": -1,
-      "id": "zero_mode_down",
-      "j": 0,
-      "k": 0,
-      "limitations": [
-        "The heavy (0,0) mode is included separately from nonzero boundary-operator selection.",
-        "Formal labels remain scaffold labels until the full index theorem is proven."
-      ],
-      "omega_rule": "Omega_d = q + 4j = 12 for nonzero selected modes; heavy (0,0) is protected separately",
-      "omega_target": 12,
-      "omega_value": 0,
-      "q": 0,
-      "sector": "down"
-    }
-  ],
-  "limitations": [
-    "This audit does not alter the finite Level 2 coordinate ordering or protected block.",
-    "The current scaffold has one exact formal/coordinate alignment and two open alignment gaps.",
-    "The full H_T theorem remains open until the full operator/index/complement split is certified."
-  ],
-  "mirror_exclusion_intact": true,
-  "one_to_one_alignment": false,
-  "open_alignment_gap_remains": true,
-  "theorem_complete": false,
-  "title": "BHSM v1.3J Zero-Mode Alignment Audit"
+    "alignment_maps":  [
+                           {
+                               "chirality_matches":  true,
+                               "coordinate_block_index":  0,
+                               "formal_label":  {
+                                                    "boundary_condition":  "sector boundary functional for lepton",
+                                                    "boundary_policy_satisfied":  true,
+                                                    "boundary_policy_status":  "HEAVY_MODE_PROTECTED_SEPARATELY",
+                                                    "chirality":  -1,
+                                                    "id":  "zero_mode_lepton",
+                                                    "j":  0,
+                                                    "k":  0,
+                                                    "limitations":  [
+                                                                        "The heavy (0,0) mode is included separately from nonzero boundary-operator selection.",
+                                                                        "Formal labels remain scaffold labels until the full index theorem is proven."
+                                                                    ],
+                                                    "omega_rule":  "Omega_l = -q + 2j = 3 for nonzero selected modes; heavy (0,0) is protected separately",
+                                                    "omega_target":  3,
+                                                    "omega_value":  0,
+                                                    "q":  0,
+                                                    "sector":  "lepton"
+                                                },
+                               "heat_lift_preserves_matching_state":  true,
+                               "limitations":  [
+                                                   "ALIGNED requires the matching coordinate to be inside the finite protected block.",
+                                                   "OPEN_ALIGNMENT_GAP means the formal label exists in the basis but is not coordinate-protected."
+                                               ],
+                               "matching_coordinate_chirality":  -1,
+                               "matching_coordinate_index":  0,
+                               "matching_coordinate_protected":  true,
+                               "matching_coordinate_sector":  "lepton",
+                               "sector_coupling_vanishes_on_matching_state":  true,
+                               "sector_matches":  true,
+                               "status":  "ALIGNED"
+                           },
+                           {
+                               "chirality_matches":  true,
+                               "coordinate_block_index":  null,
+                               "formal_label":  {
+                                                    "boundary_condition":  "sector boundary functional for up",
+                                                    "boundary_policy_satisfied":  true,
+                                                    "boundary_policy_status":  "HEAVY_MODE_PROTECTED_SEPARATELY",
+                                                    "chirality":  -1,
+                                                    "id":  "zero_mode_up",
+                                                    "j":  0,
+                                                    "k":  0,
+                                                    "limitations":  [
+                                                                        "The heavy (0,0) mode is included separately from nonzero boundary-operator selection.",
+                                                                        "Formal labels remain scaffold labels until the full index theorem is proven."
+                                                                    ],
+                                                    "omega_rule":  "Omega_u = q - 2j = 6 for nonzero selected modes; heavy (0,0) is protected separately",
+                                                    "omega_target":  6,
+                                                    "omega_value":  0,
+                                                    "q":  0,
+                                                    "sector":  "up"
+                                                },
+                               "heat_lift_preserves_matching_state":  false,
+                               "limitations":  [
+                                                   "ALIGNED requires the matching coordinate to be inside the finite protected block.",
+                                                   "OPEN_ALIGNMENT_GAP means the formal label exists in the basis but is not coordinate-protected."
+                                               ],
+                               "matching_coordinate_chirality":  -1,
+                               "matching_coordinate_index":  18,
+                               "matching_coordinate_protected":  false,
+                               "matching_coordinate_sector":  "up",
+                               "sector_coupling_vanishes_on_matching_state":  false,
+                               "sector_matches":  true,
+                               "status":  "OPEN_ALIGNMENT_GAP"
+                           },
+                           {
+                               "chirality_matches":  true,
+                               "coordinate_block_index":  null,
+                               "formal_label":  {
+                                                    "boundary_condition":  "sector boundary functional for down",
+                                                    "boundary_policy_satisfied":  true,
+                                                    "boundary_policy_status":  "HEAVY_MODE_PROTECTED_SEPARATELY",
+                                                    "chirality":  -1,
+                                                    "id":  "zero_mode_down",
+                                                    "j":  0,
+                                                    "k":  0,
+                                                    "limitations":  [
+                                                                        "The heavy (0,0) mode is included separately from nonzero boundary-operator selection.",
+                                                                        "Formal labels remain scaffold labels until the full index theorem is proven."
+                                                                    ],
+                                                    "omega_rule":  "Omega_d = q + 4j = 12 for nonzero selected modes; heavy (0,0) is protected separately",
+                                                    "omega_target":  12,
+                                                    "omega_value":  0,
+                                                    "q":  0,
+                                                    "sector":  "down"
+                                                },
+                               "heat_lift_preserves_matching_state":  false,
+                               "limitations":  [
+                                                   "ALIGNED requires the matching coordinate to be inside the finite protected block.",
+                                                   "OPEN_ALIGNMENT_GAP means the formal label exists in the basis but is not coordinate-protected."
+                                               ],
+                               "matching_coordinate_chirality":  -1,
+                               "matching_coordinate_index":  36,
+                               "matching_coordinate_protected":  false,
+                               "matching_coordinate_sector":  "down",
+                               "sector_coupling_vanishes_on_matching_state":  false,
+                               "sector_matches":  true,
+                               "status":  "OPEN_ALIGNMENT_GAP"
+                           }
+                       ],
+    "all_three_coordinate_states_present":  true,
+    "all_three_formal_labels_present":  true,
+    "coordinate_protected_states":  [
+                                        {
+                                            "chirality":  -1,
+                                            "coordinate_index":  0,
+                                            "coordinate_protected":  true,
+                                            "dirac_squared":  0.0,
+                                            "heat_lift_preserves":  true,
+                                            "j":  0,
+                                            "k":  0,
+                                            "limitations":  [
+                                                                "Coordinate protection is by finite-matrix construction.",
+                                                                "The coordinate block is not automatically identical to the formal sector-labeled kernel."
+                                                            ],
+                                            "protection_mechanism":  "finite Level 2 coordinate zero block",
+                                            "q":  0,
+                                            "sector":  "lepton",
+                                            "sector_coupling_vanishes":  true
+                                        },
+                                        {
+                                            "chirality":  -1,
+                                            "coordinate_index":  1,
+                                            "coordinate_protected":  true,
+                                            "dirac_squared":  0.0,
+                                            "heat_lift_preserves":  true,
+                                            "j":  0,
+                                            "k":  1,
+                                            "limitations":  [
+                                                                "Coordinate protection is by finite-matrix construction.",
+                                                                "The coordinate block is not automatically identical to the formal sector-labeled kernel."
+                                                            ],
+                                            "protection_mechanism":  "finite Level 2 coordinate zero block",
+                                            "q":  1,
+                                            "sector":  "lepton",
+                                            "sector_coupling_vanishes":  true
+                                        },
+                                        {
+                                            "chirality":  -1,
+                                            "coordinate_index":  2,
+                                            "coordinate_protected":  true,
+                                            "dirac_squared":  0.0,
+                                            "heat_lift_preserves":  true,
+                                            "j":  0,
+                                            "k":  2,
+                                            "limitations":  [
+                                                                "Coordinate protection is by finite-matrix construction.",
+                                                                "The coordinate block is not automatically identical to the formal sector-labeled kernel."
+                                                            ],
+                                            "protection_mechanism":  "finite Level 2 coordinate zero block",
+                                            "q":  2,
+                                            "sector":  "lepton",
+                                            "sector_coupling_vanishes":  true
+                                        }
+                                    ],
+    "criteria":  [
+                     {
+                         "evidence":  [
+                                          "formal_label_count=3"
+                                      ],
+                         "id":  "A1",
+                         "limitations":  [
+                                             "Formal labels are index-scaffold data."
+                                         ],
+                         "passes":  true,
+                         "statement":  "Exactly three formal protected zero-mode labels are present."
+                     },
+                     {
+                         "evidence":  [
+                                          "coordinate_protected_count=3"
+                                      ],
+                         "id":  "A2",
+                         "limitations":  [
+                                             "Coordinate protection is by finite Level 2 construction."
+                                         ],
+                         "passes":  true,
+                         "statement":  "Exactly three finite coordinate-protected states are present."
+                     },
+                     {
+                         "evidence":  [
+                                          "zero_mode_lepton-\u003eindex 0",
+                                          "zero_mode_up-\u003eindex 18",
+                                          "zero_mode_down-\u003eindex 36"
+                                      ],
+                         "id":  "A3",
+                         "limitations":  [
+                                             "Presence in the basis is weaker than coordinate protection."
+                                         ],
+                         "passes":  true,
+                         "statement":  "Each formal label has a matching sector/chirality coordinate in the finite basis."
+                     },
+                     {
+                         "evidence":  [
+                                          "zero_mode_lepton:ALIGNED",
+                                          "zero_mode_up:OPEN_ALIGNMENT_GAP",
+                                          "zero_mode_down:OPEN_ALIGNMENT_GAP"
+                                      ],
+                         "id":  "A4",
+                         "limitations":  [
+                                             "This criterion currently fails for up/down formal labels, so the alignment gap remains open."
+                                         ],
+                         "passes":  false,
+                         "statement":  "Each matching coordinate is in the finite protected block and is preserved by heat lift and sector coupling."
+                     }
+                 ],
+    "formal_labels":  [
+                          {
+                              "boundary_condition":  "sector boundary functional for lepton",
+                              "boundary_policy_satisfied":  true,
+                              "boundary_policy_status":  "HEAVY_MODE_PROTECTED_SEPARATELY",
+                              "chirality":  -1,
+                              "id":  "zero_mode_lepton",
+                              "j":  0,
+                              "k":  0,
+                              "limitations":  [
+                                                  "The heavy (0,0) mode is included separately from nonzero boundary-operator selection.",
+                                                  "Formal labels remain scaffold labels until the full index theorem is proven."
+                                              ],
+                              "omega_rule":  "Omega_l = -q + 2j = 3 for nonzero selected modes; heavy (0,0) is protected separately",
+                              "omega_target":  3,
+                              "omega_value":  0,
+                              "q":  0,
+                              "sector":  "lepton"
+                          },
+                          {
+                              "boundary_condition":  "sector boundary functional for up",
+                              "boundary_policy_satisfied":  true,
+                              "boundary_policy_status":  "HEAVY_MODE_PROTECTED_SEPARATELY",
+                              "chirality":  -1,
+                              "id":  "zero_mode_up",
+                              "j":  0,
+                              "k":  0,
+                              "limitations":  [
+                                                  "The heavy (0,0) mode is included separately from nonzero boundary-operator selection.",
+                                                  "Formal labels remain scaffold labels until the full index theorem is proven."
+                                              ],
+                              "omega_rule":  "Omega_u = q - 2j = 6 for nonzero selected modes; heavy (0,0) is protected separately",
+                              "omega_target":  6,
+                              "omega_value":  0,
+                              "q":  0,
+                              "sector":  "up"
+                          },
+                          {
+                              "boundary_condition":  "sector boundary functional for down",
+                              "boundary_policy_satisfied":  true,
+                              "boundary_policy_status":  "HEAVY_MODE_PROTECTED_SEPARATELY",
+                              "chirality":  -1,
+                              "id":  "zero_mode_down",
+                              "j":  0,
+                              "k":  0,
+                              "limitations":  [
+                                                  "The heavy (0,0) mode is included separately from nonzero boundary-operator selection.",
+                                                  "Formal labels remain scaffold labels until the full index theorem is proven."
+                                              ],
+                              "omega_rule":  "Omega_d = q + 4j = 12 for nonzero selected modes; heavy (0,0) is protected separately",
+                              "omega_target":  12,
+                              "omega_value":  0,
+                              "q":  0,
+                              "sector":  "down"
+                          }
+                      ],
+    "limitations":  [
+                        "This audit does not alter the finite Level 2 coordinate ordering or protected block.",
+                        "The current scaffold has one exact formal/coordinate alignment and two open alignment gaps.",
+                        "The full H_T theorem remains open until the full operator/index/complement split is certified."
+                    ],
+    "mirror_exclusion_intact":  true,
+    "one_to_one_alignment":  false,
+    "open_alignment_gap_remains":  true,
+    "theorem_complete":  false,
+    "title":  "BHSM v1.3J Zero-Mode Alignment Audit",
+    "v1_3k_sector_labeled_kernel_update":  {
+                                               "status":  "IMPLEMENTED",
+                                               "theorem_complete":  false,
+                                               "legacy_protected_coordinates":  [
+                                                                                    0,
+                                                                                    1,
+                                                                                    2
+                                                                                ],
+                                               "formal_protected_coordinates":  [
+                                                                                    0,
+                                                                                    18,
+                                                                                    36
+                                                                                ],
+                                               "classification":  "FORMAL_KERNEL_NOT_PROTECTED",
+                                               "formal_gap_passes":  false,
+                                               "previous_gap_survives":  false,
+                                               "claim":  "BHSM v1.3K audits formal sector-labeled protected kernel construction and reports that the current Level 2 matrix does not protect the formal up/down kernel coordinates."
+                                           }
 }

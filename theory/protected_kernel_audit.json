@@ -1,0 +1,144 @@
+{
+  "alignment_gap_closes": false,
+  "assumptions": [
+    "The formal BHSM kernel is the sector-labeled lepton/up/down heavy-mode triplet.",
+    "The finite Level 2 basis ordering is inspected without changing the operator."
+  ],
+  "correction_result": {
+    "classification": "FORMAL_KERNEL_NOT_PROTECTED",
+    "formal_first_complement_eigenvalue": 6.209787055308341e-15,
+    "formal_gap_passes": false,
+    "formal_ht_gap": 1.5286098598742102e-09,
+    "formal_margin": -19585.259826256482,
+    "formal_projector_name": "P0_formal_sector_labeled",
+    "formal_protected_coordinates": [
+      0,
+      18,
+      36
+    ],
+    "limitations": [
+      "Formal-projector recomputation is finite-basis scaffold evidence.",
+      "Failure under the formal projector exposes a Level 2 kernel-protection blocker, not a change to frozen predictions."
+    ],
+    "old_first_complement_eigenvalue": 1.463040025299567,
+    "old_ht_gap": 19586.72266333732,
+    "old_margin": 1.4628370793107024,
+    "old_projector_name": "P0_coordinate_first",
+    "old_protected_coordinates": [
+      0,
+      1,
+      2
+    ],
+    "previous_gap_survives": false
+  },
+  "formal_kernel_heat_preserved": false,
+  "formal_kernel_present": true,
+  "formal_kernel_rank": 3,
+  "formal_kernel_sector_coupling_vanishes": false,
+  "formal_projector": {
+    "coordinate_indices": [
+      0,
+      18,
+      36
+    ],
+    "idempotent": true,
+    "limitations": [
+      "Projector is built from formal sector-labeled coordinates.",
+      "It does not alter the Level 2 matrix construction."
+    ],
+    "matrix_shape": [
+      54,
+      54
+    ],
+    "name": "P0_formal_sector_labeled",
+    "orthogonal_to_complement": true,
+    "rank": 3,
+    "sector_distribution": {
+      "down": 1,
+      "lepton": 1,
+      "up": 1
+    }
+  },
+  "limitations": [
+    "The formal sector-labeled kernel is present in the finite basis but is not protected by the current Level 2 matrix.",
+    "The full H_T theorem remains open.",
+    "No frozen model output is changed."
+  ],
+  "old_projector": {
+    "coordinate_indices": [
+      0,
+      1,
+      2
+    ],
+    "idempotent": true,
+    "limitations": [
+      "Legacy Level 2 scaffold protects the first coordinate positions.",
+      "v1.3J showed this is not the same as the formal sector-labeled kernel."
+    ],
+    "matrix_shape": [
+      54,
+      54
+    ],
+    "name": "P0_coordinate_first",
+    "orthogonal_to_complement": true,
+    "rank": 3,
+    "sector_distribution": {
+      "lepton": 3
+    }
+  },
+  "sector_labeled_modes": [
+    {
+      "boundary_condition": "sector boundary functional for lepton",
+      "chirality": -1,
+      "coordinate_index": 0,
+      "id": "zero_mode_lepton",
+      "j": 0,
+      "k": 0,
+      "limitations": [
+        "The heavy (0,0) zero-mode label is formal sector data.",
+        "Presence in the finite basis does not by itself prove coordinate protection."
+      ],
+      "omega_target": 3,
+      "omega_value": 0,
+      "present_in_basis": true,
+      "q": 0,
+      "sector": "lepton"
+    },
+    {
+      "boundary_condition": "sector boundary functional for up",
+      "chirality": -1,
+      "coordinate_index": 18,
+      "id": "zero_mode_up",
+      "j": 0,
+      "k": 0,
+      "limitations": [
+        "The heavy (0,0) zero-mode label is formal sector data.",
+        "Presence in the finite basis does not by itself prove coordinate protection."
+      ],
+      "omega_target": 6,
+      "omega_value": 0,
+      "present_in_basis": true,
+      "q": 0,
+      "sector": "up"
+    },
+    {
+      "boundary_condition": "sector boundary functional for down",
+      "chirality": -1,
+      "coordinate_index": 36,
+      "id": "zero_mode_down",
+      "j": 0,
+      "k": 0,
+      "limitations": [
+        "The heavy (0,0) zero-mode label is formal sector data.",
+        "Presence in the finite basis does not by itself prove coordinate protection."
+      ],
+      "omega_target": 12,
+      "omega_value": 0,
+      "present_in_basis": true,
+      "q": 0,
+      "sector": "down"
+    }
+  ],
+  "theorem_complete": false,
+  "title": "BHSM v1.3K Protected Kernel Audit"
+}

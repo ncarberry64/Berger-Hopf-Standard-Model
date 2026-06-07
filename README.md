@@ -125,6 +125,16 @@ but are not inside the finite coordinate-protected block.
 Correct claim: the alignment gap is clarified, not closed. The full `H_T`
 theorem still requires a full operator/index/complement proof.
 
+### Sector-Labeled Protected Kernel
+
+v1.3K constructs the formal protected kernel from the sector-labeled
+lepton/up/down zero modes at coordinates `(0,18,36)` and compares it with the
+legacy coordinate-first protected block `(0,1,2)`.
+
+Result: `FORMAL_KERNEL_NOT_PROTECTED`. The formal projector is valid, but the
+current Level 2 matrix does not protect the formal up/down coordinates, and
+the `H_T` gap fails when recomputed with `P0_formal`.
+
 ## Limitations and Open Proof Obligations
 
 The release preserves the repository's claim discipline:
