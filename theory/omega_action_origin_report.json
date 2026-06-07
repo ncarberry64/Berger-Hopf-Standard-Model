@@ -1,0 +1,423 @@
+{
+  "action_terms": [
+    {
+      "expression": "\\bar\\Psi i\\widehat D_I \\Psi",
+      "id": "I_D",
+      "limitations": [
+        "Full twisted Dirac spectrum remains open."
+      ],
+      "name": "internal Dirac kinetic term",
+      "role": "supplies the internal mode operator before sector boundary projection",
+      "source_factor": "twisted_dirac_operator",
+      "status": "ACTION_LINKED"
+    },
+    {
+      "expression": "\\bar\\Psi \\gamma^\\chi D_\\psi \\Psi",
+      "id": "I_HOPF",
+      "limitations": [
+        "The fiber orientation is derived inside the finite symbolic boundary functional."
+      ],
+      "name": "Hopf-fiber covariant derivative",
+      "role": "couples boundary phase orientation to Hopf charge q",
+      "source_factor": "hopf_fiber_phase",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL"
+    },
+    {
+      "expression": "\\bar\\Psi \\gamma^\\theta D_\\theta \\Psi+\\bar\\Psi \\gamma^\\phi D_\\phi \\Psi",
+      "id": "I_BASE",
+      "limitations": [
+        "The base coefficient is derived inside the symbolic boundary functional."
+      ],
+      "name": "base S^2 angular derivative",
+      "role": "couples weak/base boundary phase to the j node count",
+      "source_factor": "base_node_phase",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL"
+    },
+    {
+      "expression": "\\Phi_0^\\dagger D_{\\rm tr} \\Phi_0",
+      "id": "I_U1",
+      "limitations": [
+        "Trace U(1) topological/nondynamical condition remains an assumption."
+      ],
+      "name": "Higgs-selected U(1) boundary phase",
+      "role": "locks the admissible trace/U(1) boundary phase for each charged sector",
+      "source_factor": "hypercharge_higgs_boundary",
+      "status": "ACTION_LINKED"
+    },
+    {
+      "expression": "P_{\\chi,w}\\Psi",
+      "id": "I_WEAK",
+      "limitations": [
+        "The projector algebra is symbolic and finite-sector only."
+      ],
+      "name": "weak-doublet chirality projector",
+      "role": "sets the weak-component and chirality sign in the base boundary factor",
+      "source_factor": "chirality_weak_component",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL"
+    },
+    {
+      "expression": "P_{\\rm cof}^{(3)}\\Psi",
+      "id": "I_COF",
+      "limitations": [
+        "Full coframe coupling from the bundle action remains open."
+      ],
+      "name": "quark coframe triplet projector",
+      "role": "records coframe multiplicity in quark-sector boundary winding",
+      "source_factor": "coframe_triplet_participation",
+      "status": "ACTION_LINKED"
+    }
+  ],
+  "assumptions": [
+    "The sector boundary functional is supplied as a symbolic action-origin scaffold.",
+    "No empirical masses, residuals, or CKM values are used to select coefficients.",
+    "Canonical a and S remain fixed by the v1.0/v1.1 frozen model package."
+  ],
+  "coefficient_status_table": [
+    {
+      "coefficient": "fiber_q",
+      "sector": "lepton",
+      "source": "hopf_fiber_orientation * hypercharge_higgs_boundary",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": -1
+    },
+    {
+      "coefficient": "base_j",
+      "sector": "lepton",
+      "source": "base_node_phase * chirality_sign * weak_component_sign * coframe_participation",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": 2
+    },
+    {
+      "coefficient": "target",
+      "sector": "lepton",
+      "source": "family_index * sector_winding_multiplier",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": 3
+    },
+    {
+      "coefficient": "fiber_q",
+      "sector": "up",
+      "source": "hopf_fiber_orientation * hypercharge_higgs_boundary",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": 1
+    },
+    {
+      "coefficient": "base_j",
+      "sector": "up",
+      "source": "base_node_phase * chirality_sign * weak_component_sign * coframe_participation",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": -2
+    },
+    {
+      "coefficient": "target",
+      "sector": "up",
+      "source": "family_index * sector_winding_multiplier",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": 6
+    },
+    {
+      "coefficient": "fiber_q",
+      "sector": "down",
+      "source": "hopf_fiber_orientation * hypercharge_higgs_boundary",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": 1
+    },
+    {
+      "coefficient": "base_j",
+      "sector": "down",
+      "source": "base_node_phase * chirality_sign * weak_component_sign * coframe_participation",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": 4
+    },
+    {
+      "coefficient": "target",
+      "sector": "down",
+      "source": "family_index * sector_winding_multiplier",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": 12
+    }
+  ],
+  "limitations": [
+    "DERIVED_FROM_BOUNDARY_FUNCTIONAL means derived inside the explicit symbolic boundary functional only.",
+    "Omega_f is not yet derived from a completed variation/spectrum of the full Berger-Hopf internal action.",
+    "The v1.0/v1.1 frozen prediction packages are not modified by this report."
+  ],
+  "model_version": "BHSM_V1_2_ACTION_ORIGIN_DEVELOPMENT",
+  "recovered_mode_ledger": {
+    "k_max": 12,
+    "recovered_all": true,
+    "sectors": {
+      "down": {
+        "equation": "Omega_d = q+4j = 12",
+        "expected": [
+          [
+            6,
+            3
+          ],
+          [
+            8,
+            2
+          ]
+        ],
+        "heavy": [
+          0,
+          0
+        ],
+        "recovered_expected": true,
+        "selected": [
+          [
+            6,
+            3
+          ],
+          [
+            8,
+            2
+          ]
+        ]
+      },
+      "lepton": {
+        "equation": "Omega_ell = -q+2j = 3",
+        "expected": [
+          [
+            5,
+            2
+          ],
+          [
+            9,
+            3
+          ]
+        ],
+        "heavy": [
+          0,
+          0
+        ],
+        "recovered_expected": true,
+        "selected": [
+          [
+            5,
+            2
+          ],
+          [
+            9,
+            3
+          ]
+        ]
+      },
+      "up": {
+        "equation": "Omega_u = q-2j = 6",
+        "expected": [
+          [
+            6,
+            0
+          ],
+          [
+            10,
+            1
+          ]
+        ],
+        "heavy": [
+          0,
+          0
+        ],
+        "recovered_expected": true,
+        "selected": [
+          [
+            6,
+            0
+          ],
+          [
+            10,
+            1
+          ]
+        ]
+      }
+    }
+  },
+  "steps": [
+    {
+      "dependencies": [
+        "I_HOPF",
+        "I_U1"
+      ],
+      "expression": "c_q = hopf_fiber_orientation * hypercharge_higgs_boundary",
+      "id": "lepton.fiber",
+      "limitations": [
+        "This is a finite symbolic boundary functional, not the full action variation."
+      ],
+      "sector": "lepton",
+      "statement": "Boundary variation of the Hopf-fiber phase fixes the q coefficient.",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": -1
+    },
+    {
+      "dependencies": [
+        "I_BASE",
+        "I_WEAK",
+        "I_COF"
+      ],
+      "expression": "c_j = base_node_phase * chirality_sign * weak_component_sign * coframe_participation",
+      "id": "lepton.base",
+      "limitations": [
+        "Coframe participation remains action-linked pending the full bundle derivation."
+      ],
+      "sector": "lepton",
+      "statement": "Base node phase, chirality, weak component, and coframe participation fix the j coefficient.",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": 2
+    },
+    {
+      "dependencies": [
+        "I_BDY"
+      ],
+      "expression": "target = family_index * sector_winding_multiplier",
+      "id": "lepton.target",
+      "limitations": [
+        "The winding multiplier remains part of the symbolic boundary functional."
+      ],
+      "sector": "lepton",
+      "statement": "Generation index and sector winding fix the boundary target.",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": 3
+    },
+    {
+      "dependencies": [
+        "lepton.fiber",
+        "lepton.base",
+        "lepton.target"
+      ],
+      "expression": "Omega_ell = -q+2j = 3",
+      "id": "lepton.equation",
+      "limitations": [
+        "This does not upgrade Omega_f to a completed first-principles action derivation."
+      ],
+      "sector": "lepton",
+      "statement": "The sector boundary equation follows from the functional coefficients.",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": "Omega_ell = -q+2j = 3"
+    },
+    {
+      "dependencies": [
+        "I_HOPF",
+        "I_U1"
+      ],
+      "expression": "c_q = hopf_fiber_orientation * hypercharge_higgs_boundary",
+      "id": "up.fiber",
+      "limitations": [
+        "This is a finite symbolic boundary functional, not the full action variation."
+      ],
+      "sector": "up",
+      "statement": "Boundary variation of the Hopf-fiber phase fixes the q coefficient.",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": 1
+    },
+    {
+      "dependencies": [
+        "I_BASE",
+        "I_WEAK",
+        "I_COF"
+      ],
+      "expression": "c_j = base_node_phase * chirality_sign * weak_component_sign * coframe_participation",
+      "id": "up.base",
+      "limitations": [
+        "Coframe participation remains action-linked pending the full bundle derivation."
+      ],
+      "sector": "up",
+      "statement": "Base node phase, chirality, weak component, and coframe participation fix the j coefficient.",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": -2
+    },
+    {
+      "dependencies": [
+        "I_BDY"
+      ],
+      "expression": "target = family_index * sector_winding_multiplier",
+      "id": "up.target",
+      "limitations": [
+        "The winding multiplier remains part of the symbolic boundary functional."
+      ],
+      "sector": "up",
+      "statement": "Generation index and sector winding fix the boundary target.",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": 6
+    },
+    {
+      "dependencies": [
+        "up.fiber",
+        "up.base",
+        "up.target"
+      ],
+      "expression": "Omega_u = q-2j = 6",
+      "id": "up.equation",
+      "limitations": [
+        "This does not upgrade Omega_f to a completed first-principles action derivation."
+      ],
+      "sector": "up",
+      "statement": "The sector boundary equation follows from the functional coefficients.",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": "Omega_u = q-2j = 6"
+    },
+    {
+      "dependencies": [
+        "I_HOPF",
+        "I_U1"
+      ],
+      "expression": "c_q = hopf_fiber_orientation * hypercharge_higgs_boundary",
+      "id": "down.fiber",
+      "limitations": [
+        "This is a finite symbolic boundary functional, not the full action variation."
+      ],
+      "sector": "down",
+      "statement": "Boundary variation of the Hopf-fiber phase fixes the q coefficient.",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": 1
+    },
+    {
+      "dependencies": [
+        "I_BASE",
+        "I_WEAK",
+        "I_COF"
+      ],
+      "expression": "c_j = base_node_phase * chirality_sign * weak_component_sign * coframe_participation",
+      "id": "down.base",
+      "limitations": [
+        "Coframe participation remains action-linked pending the full bundle derivation."
+      ],
+      "sector": "down",
+      "statement": "Base node phase, chirality, weak component, and coframe participation fix the j coefficient.",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": 4
+    },
+    {
+      "dependencies": [
+        "I_BDY"
+      ],
+      "expression": "target = family_index * sector_winding_multiplier",
+      "id": "down.target",
+      "limitations": [
+        "The winding multiplier remains part of the symbolic boundary functional."
+      ],
+      "sector": "down",
+      "statement": "Generation index and sector winding fix the boundary target.",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": 12
+    },
+    {
+      "dependencies": [
+        "down.fiber",
+        "down.base",
+        "down.target"
+      ],
+      "expression": "Omega_d = q+4j = 12",
+      "id": "down.equation",
+      "limitations": [
+        "This does not upgrade Omega_f to a completed first-principles action derivation."
+      ],
+      "sector": "down",
+      "statement": "The sector boundary equation follows from the functional coefficients.",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": "Omega_d = q+4j = 12"
+    }
+  ],
+  "theorem_complete": false,
+  "title": "BHSM v1.2 Omega Action-Origin Scaffold"
+}
