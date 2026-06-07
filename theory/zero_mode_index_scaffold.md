@@ -29,3 +29,10 @@ Mirror zero-mode status: `OPEN`
 - Index(D_twist)=3 is scaffolded, not proven.
 - Mirror zero-mode exclusion remains open until derived from the complete operator.
 - This module does not change frozen BHSM predictions or branch outputs.
+
+## v1.3H Diagonal/Mirror Update
+
+v1.3H adds a dedicated diagonal complement lower-bound and mirror-mode audit.
+The finite scaffold index remains `3`, but opposite-chirality mirror candidates
+are generated explicitly and classified as `OPEN_MIRROR_RISK`. The index status
+therefore remains `INDEX_SCAFFOLD`, not `INDEX_THEOREM_PROVEN`.

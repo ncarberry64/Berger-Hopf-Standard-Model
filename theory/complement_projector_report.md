@@ -27,3 +27,11 @@ Theorem complete: `False`
 
 - Finite-basis projector identities do not prove the infinite-dimensional complement split.
 - The full statement H = ker D_twist plus H_perp remains an index/domain proof obligation.
+
+## v1.3H Diagonal/Mirror Update
+
+v1.3H separates the finite diagonal complement lower bound from mirror-mode
+exclusion. The finite coordinate-complement diagonal lower bound is `1.4641`,
+which clears `d_required = 0.8038064161349437`. The full theorem remains open
+because formal/coordinate zero-mode alignment and mirror-mode exclusion are not
+proven in the complete operator.

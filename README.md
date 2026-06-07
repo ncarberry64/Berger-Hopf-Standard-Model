@@ -92,6 +92,17 @@ Correct claim: this formalizes the scaffold needed for the `H_T`
 no-extra-light-state theorem. It does not prove the full index theorem; the
 topological index calculation and mirror-mode exclusion remain open.
 
+### Diagonal Complement and Mirror Modes
+
+v1.3H audits the finite diagonal complement lower bound and opposite-chirality
+mirror candidates. The finite coordinate-complement diagonal lower bound is
+`1.4641`, clearing `d_required = 0.8038064161349437`, while all three generated
+mirror candidates remain `OPEN_MIRROR_RISK`.
+
+Correct claim: the diagonal finite scaffold passes, but the full `H_T` theorem
+still requires topological index, mirror-exclusion, and infinite-basis
+complement-bound derivations.
+
 ## Limitations and Open Proof Obligations
 
 The release preserves the repository's claim discipline:

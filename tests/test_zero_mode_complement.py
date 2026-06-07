@@ -223,5 +223,5 @@ def test_generated_zero_mode_artifacts_are_present_and_conservative():
     assert scaffold_data["target_kernel_dimension"] == 3
     assert scaffold_data["theorem_complete"] is False
     assert "does not prove the full index theorem" in note_text
-    assert "INDEX_THEOREM_PROVEN" not in zero_text
+    assert "not `INDEX_THEOREM_PROVEN`" in zero_text
     assert "fully proven" not in note_text.lower()

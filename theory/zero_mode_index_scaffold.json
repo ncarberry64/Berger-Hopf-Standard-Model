@@ -1,164 +1,174 @@
 {
-  "assumptions": [
-    {
-      "evidence": [
-        "Three protected-family labels are present in the scaffold."
-      ],
-      "id": "I1",
-      "limitations": [
-        "The topological index calculation has not been completed."
-      ],
-      "statement": "The twisted bundle charge/topological number gives total index three.",
-      "status": "OPEN"
-    },
-    {
-      "evidence": [
-        "The U(1) boundary phase is part of the v1.2 parent-action scaffold."
-      ],
-      "id": "I2",
-      "limitations": [
-        "The full spectral consequence remains open."
-      ],
-      "statement": "The Higgs-selected U(1) boundary phase selects the protected chiral kernel.",
-      "status": "ACTION_LINKED"
-    },
-    {
-      "evidence": [
-        "No mirror modes are inserted in the scaffold."
-      ],
-      "id": "I3",
-      "limitations": [
-        "Mirror exclusion must be proven from the complete operator."
-      ],
-      "statement": "No opposite-chirality mirror zero modes survive in the physical kernel.",
-      "status": "OPEN"
-    },
-    {
-      "evidence": [
-        "v1.2B/v1.2C reduced and audited the symbolic boundary functional."
-      ],
-      "id": "I4",
-      "limitations": [
-        "Global uniqueness of the complete internal action remains open."
-      ],
-      "statement": "The v1.2 sector boundary functional is the boundary condition for the full kernel problem.",
-      "status": "REDUCED_FROM_PARENT_ACTION"
-    },
-    {
-      "evidence": [
-        "The condition is carried in the theorem scaffold and claims ledger."
-      ],
-      "id": "I5",
-      "limitations": [
-        "A full action-level proof remains open."
-      ],
-      "statement": "The trace U(1) is topological/nondynamical and does not add a light gauge zero mode.",
-      "status": "OPEN"
-    }
-  ],
-  "candidates": [
-    {
-      "boundary_condition": "sector boundary functional for lepton",
-      "chirality": -1,
-      "id": "zero_mode_lepton",
-      "index_contribution": 1,
-      "j": 0,
-      "k": 0,
-      "limitations": [
-        "Candidate is protected in the scaffold, not proven from the full twisted Dirac operator.",
-        "Absence of an opposite-chirality mirror zero mode remains an index-theorem assumption."
-      ],
-      "mirror_mode_status": "OPEN",
-      "q": 0,
-      "sector": "lepton",
-      "status": "PROTECTED"
-    },
-    {
-      "boundary_condition": "sector boundary functional for up",
-      "chirality": -1,
-      "id": "zero_mode_up",
-      "index_contribution": 1,
-      "j": 0,
-      "k": 0,
-      "limitations": [
-        "Candidate is protected in the scaffold, not proven from the full twisted Dirac operator.",
-        "Absence of an opposite-chirality mirror zero mode remains an index-theorem assumption."
-      ],
-      "mirror_mode_status": "OPEN",
-      "q": 0,
-      "sector": "up",
-      "status": "PROTECTED"
-    },
-    {
-      "boundary_condition": "sector boundary functional for down",
-      "chirality": -1,
-      "id": "zero_mode_down",
-      "index_contribution": 1,
-      "j": 0,
-      "k": 0,
-      "limitations": [
-        "Candidate is protected in the scaffold, not proven from the full twisted Dirac operator.",
-        "Absence of an opposite-chirality mirror zero mode remains an index-theorem assumption."
-      ],
-      "mirror_mode_status": "OPEN",
-      "q": 0,
-      "sector": "down",
-      "status": "PROTECTED"
-    }
-  ],
-  "contributions": [
-    {
-      "assumptions": [
-        "The chirality orientation is fixed by the BHSM protected-family convention.",
-        "No opposite-chirality mirror zero mode cancels this contribution."
-      ],
-      "limitations": [
-        "This contribution is scaffolded until derived from the full index theorem."
-      ],
-      "negative_chirality_zero_modes": 1,
-      "net_index_contribution": 1,
-      "positive_chirality_zero_modes": 0,
-      "protected_modes": 1,
-      "sector": "lepton"
-    },
-    {
-      "assumptions": [
-        "The chirality orientation is fixed by the BHSM protected-family convention.",
-        "No opposite-chirality mirror zero mode cancels this contribution."
-      ],
-      "limitations": [
-        "This contribution is scaffolded until derived from the full index theorem."
-      ],
-      "negative_chirality_zero_modes": 1,
-      "net_index_contribution": 1,
-      "positive_chirality_zero_modes": 0,
-      "protected_modes": 1,
-      "sector": "up"
-    },
-    {
-      "assumptions": [
-        "The chirality orientation is fixed by the BHSM protected-family convention.",
-        "No opposite-chirality mirror zero mode cancels this contribution."
-      ],
-      "limitations": [
-        "This contribution is scaffolded until derived from the full index theorem."
-      ],
-      "negative_chirality_zero_modes": 1,
-      "net_index_contribution": 1,
-      "positive_chirality_zero_modes": 0,
-      "protected_modes": 1,
-      "sector": "down"
-    }
-  ],
-  "index_status": "INDEX_SCAFFOLD",
-  "limitations": [
-    "Index(D_twist)=3 is scaffolded, not proven.",
-    "Mirror zero-mode exclusion remains open until derived from the complete operator.",
-    "This module does not change frozen BHSM predictions or branch outputs."
-  ],
-  "mirror_zero_mode_status": "OPEN",
-  "target_index": 3,
-  "target_kernel_dimension": 3,
-  "theorem_complete": false,
-  "title": "BHSM v1.3G Zero-Mode Index Scaffold"
+    "assumptions":  [
+                        {
+                            "evidence":  [
+                                             "Three protected-family labels are present in the scaffold."
+                                         ],
+                            "id":  "I1",
+                            "limitations":  [
+                                                "The topological index calculation has not been completed."
+                                            ],
+                            "statement":  "The twisted bundle charge/topological number gives total index three.",
+                            "status":  "OPEN"
+                        },
+                        {
+                            "evidence":  [
+                                             "The U(1) boundary phase is part of the v1.2 parent-action scaffold."
+                                         ],
+                            "id":  "I2",
+                            "limitations":  [
+                                                "The full spectral consequence remains open."
+                                            ],
+                            "statement":  "The Higgs-selected U(1) boundary phase selects the protected chiral kernel.",
+                            "status":  "ACTION_LINKED"
+                        },
+                        {
+                            "evidence":  [
+                                             "No mirror modes are inserted in the scaffold."
+                                         ],
+                            "id":  "I3",
+                            "limitations":  [
+                                                "Mirror exclusion must be proven from the complete operator."
+                                            ],
+                            "statement":  "No opposite-chirality mirror zero modes survive in the physical kernel.",
+                            "status":  "OPEN"
+                        },
+                        {
+                            "evidence":  [
+                                             "v1.2B/v1.2C reduced and audited the symbolic boundary functional."
+                                         ],
+                            "id":  "I4",
+                            "limitations":  [
+                                                "Global uniqueness of the complete internal action remains open."
+                                            ],
+                            "statement":  "The v1.2 sector boundary functional is the boundary condition for the full kernel problem.",
+                            "status":  "REDUCED_FROM_PARENT_ACTION"
+                        },
+                        {
+                            "evidence":  [
+                                             "The condition is carried in the theorem scaffold and claims ledger."
+                                         ],
+                            "id":  "I5",
+                            "limitations":  [
+                                                "A full action-level proof remains open."
+                                            ],
+                            "statement":  "The trace U(1) is topological/nondynamical and does not add a light gauge zero mode.",
+                            "status":  "OPEN"
+                        }
+                    ],
+    "candidates":  [
+                       {
+                           "boundary_condition":  "sector boundary functional for lepton",
+                           "chirality":  -1,
+                           "id":  "zero_mode_lepton",
+                           "index_contribution":  1,
+                           "j":  0,
+                           "k":  0,
+                           "limitations":  [
+                                               "Candidate is protected in the scaffold, not proven from the full twisted Dirac operator.",
+                                               "Absence of an opposite-chirality mirror zero mode remains an index-theorem assumption."
+                                           ],
+                           "mirror_mode_status":  "OPEN",
+                           "q":  0,
+                           "sector":  "lepton",
+                           "status":  "PROTECTED"
+                       },
+                       {
+                           "boundary_condition":  "sector boundary functional for up",
+                           "chirality":  -1,
+                           "id":  "zero_mode_up",
+                           "index_contribution":  1,
+                           "j":  0,
+                           "k":  0,
+                           "limitations":  [
+                                               "Candidate is protected in the scaffold, not proven from the full twisted Dirac operator.",
+                                               "Absence of an opposite-chirality mirror zero mode remains an index-theorem assumption."
+                                           ],
+                           "mirror_mode_status":  "OPEN",
+                           "q":  0,
+                           "sector":  "up",
+                           "status":  "PROTECTED"
+                       },
+                       {
+                           "boundary_condition":  "sector boundary functional for down",
+                           "chirality":  -1,
+                           "id":  "zero_mode_down",
+                           "index_contribution":  1,
+                           "j":  0,
+                           "k":  0,
+                           "limitations":  [
+                                               "Candidate is protected in the scaffold, not proven from the full twisted Dirac operator.",
+                                               "Absence of an opposite-chirality mirror zero mode remains an index-theorem assumption."
+                                           ],
+                           "mirror_mode_status":  "OPEN",
+                           "q":  0,
+                           "sector":  "down",
+                           "status":  "PROTECTED"
+                       }
+                   ],
+    "contributions":  [
+                          {
+                              "assumptions":  [
+                                                  "The chirality orientation is fixed by the BHSM protected-family convention.",
+                                                  "No opposite-chirality mirror zero mode cancels this contribution."
+                                              ],
+                              "limitations":  [
+                                                  "This contribution is scaffolded until derived from the full index theorem."
+                                              ],
+                              "negative_chirality_zero_modes":  1,
+                              "net_index_contribution":  1,
+                              "positive_chirality_zero_modes":  0,
+                              "protected_modes":  1,
+                              "sector":  "lepton"
+                          },
+                          {
+                              "assumptions":  [
+                                                  "The chirality orientation is fixed by the BHSM protected-family convention.",
+                                                  "No opposite-chirality mirror zero mode cancels this contribution."
+                                              ],
+                              "limitations":  [
+                                                  "This contribution is scaffolded until derived from the full index theorem."
+                                              ],
+                              "negative_chirality_zero_modes":  1,
+                              "net_index_contribution":  1,
+                              "positive_chirality_zero_modes":  0,
+                              "protected_modes":  1,
+                              "sector":  "up"
+                          },
+                          {
+                              "assumptions":  [
+                                                  "The chirality orientation is fixed by the BHSM protected-family convention.",
+                                                  "No opposite-chirality mirror zero mode cancels this contribution."
+                                              ],
+                              "limitations":  [
+                                                  "This contribution is scaffolded until derived from the full index theorem."
+                                              ],
+                              "negative_chirality_zero_modes":  1,
+                              "net_index_contribution":  1,
+                              "positive_chirality_zero_modes":  0,
+                              "protected_modes":  1,
+                              "sector":  "down"
+                          }
+                      ],
+    "index_status":  "INDEX_SCAFFOLD",
+    "limitations":  [
+                        "Index(D_twist)=3 is scaffolded, not proven.",
+                        "Mirror zero-mode exclusion remains open until derived from the complete operator.",
+                        "This module does not change frozen BHSM predictions or branch outputs."
+                    ],
+    "mirror_zero_mode_status":  "OPEN",
+    "target_index":  3,
+    "target_kernel_dimension":  3,
+    "theorem_complete":  false,
+    "title":  "BHSM v1.3G Zero-Mode Index Scaffold",
+    "v1_3h_diagonal_mirror_update":  {
+                                         "status":  "IMPLEMENTED",
+                                         "theorem_complete":  false,
+                                         "required_dirac_lower_bound":  0.80380641613494375,
+                                         "finite_diagonal_complement_lower_bound":  1.4641,
+                                         "diagonal_bound_clears_required":  true,
+                                         "mirror_exclusion_status":  "OPEN_MIRROR_RISK",
+                                         "open_mirror_risk_count":  3,
+                                         "claim":  "BHSM v1.3H audits the diagonal complement lower bound and mirror-mode exclusion conditions; it does not prove the full H_T theorem."
+                                     }
 }

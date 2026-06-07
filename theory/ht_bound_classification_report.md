@@ -46,6 +46,19 @@ The classification of `zero_complement_projector` remains `FINITE_BASIS_ONLY`
 because the full topological index calculation, mirror zero-mode exclusion,
 and infinite-dimensional complement projector compatibility remain open.
 
+## v1.3H Diagonal Complement and Mirror-Mode Update
+
+v1.3H audits two pieces of the `zero_complement_projector` blocker:
+
+- the finite diagonal coordinate-complement lower bound before sector coupling
+  is `1.4641`, clearing `d_required = 0.8038064161349437`;
+- opposite-chirality candidates paired with the three protected zero-mode
+  labels are generated and classified as `OPEN_MIRROR_RISK`.
+
+The diagonal finite scaffold passes, but the mirror exclusion and
+infinite-basis diagonal complement theorem remain open. The full `H_T` theorem
+therefore remains incomplete.
+
 ## Limitations
 
 - The report is an analytic-bound development scaffold over DIRAC_PROXY_LEVEL_2.

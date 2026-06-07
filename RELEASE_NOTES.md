@@ -46,6 +46,11 @@ v1.3G adds a zero-mode/index and complement-projector scaffold for
 finite Level 2 projector identities pass, but the full topological index
 calculation and mirror-mode exclusion remain open.
 
+v1.3H audits the diagonal complement lower bound and generated mirror-mode
+candidates. The finite diagonal complement lower bound clears the required
+Dirac threshold, but all three opposite-chirality mirror candidates remain
+`OPEN_MIRROR_RISK`.
+
 Frozen baseline:
 
 - Tag: `bhsm-v1.0-freeze`

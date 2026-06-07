@@ -433,3 +433,47 @@ Recommended v1.3H task: attack the diagonal complement lower bound and mirror
 mode exclusion in the complete twisted Dirac operator, so assumptions `I1`,
 `I3`, `I5`, and the infinite-dimensional projector compatibility can be
 upgraded from scaffold/open status.
+
+## v1.3H Diagonal Complement and Mirror-Mode Status
+
+Status: `IMPLEMENTED`
+
+BHSM v1.3H audits the diagonal complement lower bound and mirror-mode
+exclusion conditions needed for the `H_T` no-extra-light-state theorem.
+
+Generated reports:
+
+- `theory/diagonal_complement_bound_report.md`
+- `theory/diagonal_complement_bound_report.json`
+- `theory/mirror_mode_exclusion_report.md`
+- `theory/mirror_mode_exclusion_report.json`
+- `theory/twisted_dirac_index_audit.md`
+- `theory/twisted_dirac_index_audit.json`
+- `manuscript/v1_3h_diagonal_mirror_note.md`
+- `notebooks/30_diagonal_complement_mirror_audit.ipynb`
+
+Current finite-scaffold result:
+
+- required Dirac lower bound: `0.8038064161349437`;
+- finite diagonal coordinate-complement lower bound: `1.4641`;
+- first complement mode: `basis_index=18`, `sector=up`, `(k,j,q,chi)=(0,0,0,-1)`;
+- diagonal finite scaffold clears the required bound;
+- mirror candidates `mirror_lepton`, `mirror_up`, and `mirror_down` are all
+  classified as `OPEN_MIRROR_RISK`;
+- scaffold index: `3`;
+- theorem_complete remains `False`.
+
+Correct claim:
+
+```text
+BHSM v1.3H audits the diagonal complement lower bound and mirror-mode
+exclusion conditions needed for the H_T no-extra-light-state theorem. It does
+not prove the full theorem unless the topological index, mirror exclusion, and
+infinite-basis complement bound are derived from the complete twisted Dirac
+operator.
+```
+
+Recommended v1.3I task: derive or rule out the `OPEN_MIRROR_RISK` candidates
+from the full chiral projector, Higgs-selected `U(1)` phase, and sector
+boundary functional, or prove the topological index theorem that excludes
+opposite-chirality kernel states.
