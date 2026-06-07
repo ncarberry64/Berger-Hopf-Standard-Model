@@ -57,6 +57,18 @@ Correct claim: BHSM v1.2 audits whether the parent-action scaffold is minimal
 and unique under the current BHSM axioms. It does not claim full uniqueness of
 the complete internal action.
 
+## v1.3 Development Branch
+
+Branch: `bhsm-v1.3-ht-spectrum`
+
+Purpose: attack the full twisted Dirac / `H_T` spectrum gap, the largest
+remaining Standard-Model-equivalence blocker.
+
+Status: planning branch. Existing Level 2 finite-basis, spectral lower-bound,
+and basis-convergence scaffolds are preserved. The v1.3 target is an
+analytic or semi-analytic twisted Dirac / `H_T` spectral bound with
+`theorem_complete=False` until proven.
+
 ## Limitations and Open Proof Obligations
 
 The release preserves the repository's claim discipline:

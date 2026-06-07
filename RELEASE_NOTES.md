@@ -18,6 +18,22 @@ This is a development addendum only. It does not alter `BHSM_BARE_V1`,
 tolerances, or v1.1 public release outputs. It does not claim global uniqueness
 of the complete Berger-Hopf internal action.
 
+## Unreleased / Development: v1.3 H_T Spectrum
+
+Branch: `bhsm-v1.3-ht-spectrum`
+
+The v1.3 development branch is opened to attack the full twisted Dirac /
+`H_T` spectrum gap. Current finite-basis Level 2, spectral lower-bound, and
+basis-convergence scaffolds are preserved. The near-term target is an analytic
+or semi-analytic lower-bound program for:
+
+```text
+H_T|_{H_perp} >= (4 pi^2 v)^2
+```
+
+This planning branch does not retune predictions and does not claim completion
+of the `H_T` theorem.
+
 Frozen baseline:
 
 - Tag: `bhsm-v1.0-freeze`
