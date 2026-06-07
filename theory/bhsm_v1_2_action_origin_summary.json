@@ -1,0 +1,214 @@
+{
+  "branch": "bhsm-v1.2-action-origin",
+  "correct_claim": "BHSM v1.2C audits whether the parent-action scaffold is minimal and unique under the current BHSM axioms. It does not claim full uniqueness of the complete internal action unless competing variants are excluded by explicit tests.",
+  "frozen_outputs_changed": false,
+  "limitations": [
+    "Does not prove global uniqueness of the complete Berger-Hopf internal action.",
+    "Does not compute the full twisted Dirac/bundle spectrum.",
+    "Does not alter frozen v1.0/v1.1 predictions.",
+    "Does not retune any mass or CKM output."
+  ],
+  "main_result": "The charged-sector boundary operators are derived from an explicit symbolic sector boundary functional, and that functional is reduced from a symbolic parent internal-action scaffold. Minimality and tested-variant uniqueness audits find the scaffold unique under current BHSM axioms.",
+  "minimality_status": "MINIMAL_UNDER_TESTED_PARENT_TERMS",
+  "minimality_table": [
+    {
+      "passes": true,
+      "removed_term": "I_HOPF",
+      "required_for": "fiber_q opens"
+    },
+    {
+      "passes": true,
+      "removed_term": "I_U1",
+      "required_for": "fiber_q opens"
+    },
+    {
+      "passes": true,
+      "removed_term": "I_BASE",
+      "required_for": "base_j opens"
+    },
+    {
+      "passes": true,
+      "removed_term": "I_WEAK",
+      "required_for": "base_j opens"
+    },
+    {
+      "passes": true,
+      "removed_term": "I_COF",
+      "required_for": "base_j opens"
+    },
+    {
+      "passes": true,
+      "removed_term": "I_BDY",
+      "required_for": "target opens"
+    }
+  ],
+  "omega_coefficient_status": [
+    {
+      "coefficient": "fiber_q",
+      "dependencies": [
+        "I_HOPF",
+        "I_U1"
+      ],
+      "open_reason": null,
+      "sector": "lepton",
+      "source": "hopf_fiber_orientation * hypercharge_higgs_boundary",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": -1
+    },
+    {
+      "coefficient": "base_j",
+      "dependencies": [
+        "I_BASE",
+        "I_WEAK",
+        "I_COF"
+      ],
+      "open_reason": null,
+      "sector": "lepton",
+      "source": "base_node_phase * chirality_sign * weak_component_sign * coframe_participation",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": 2
+    },
+    {
+      "coefficient": "target",
+      "dependencies": [
+        "I_BDY"
+      ],
+      "open_reason": null,
+      "sector": "lepton",
+      "source": "family_index * sector_winding_multiplier",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": 3
+    },
+    {
+      "coefficient": "fiber_q",
+      "dependencies": [
+        "I_HOPF",
+        "I_U1"
+      ],
+      "open_reason": null,
+      "sector": "up",
+      "source": "hopf_fiber_orientation * hypercharge_higgs_boundary",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": 1
+    },
+    {
+      "coefficient": "base_j",
+      "dependencies": [
+        "I_BASE",
+        "I_WEAK",
+        "I_COF"
+      ],
+      "open_reason": null,
+      "sector": "up",
+      "source": "base_node_phase * chirality_sign * weak_component_sign * coframe_participation",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": -2
+    },
+    {
+      "coefficient": "target",
+      "dependencies": [
+        "I_BDY"
+      ],
+      "open_reason": null,
+      "sector": "up",
+      "source": "family_index * sector_winding_multiplier",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": 6
+    },
+    {
+      "coefficient": "fiber_q",
+      "dependencies": [
+        "I_HOPF",
+        "I_U1"
+      ],
+      "open_reason": null,
+      "sector": "down",
+      "source": "hopf_fiber_orientation * hypercharge_higgs_boundary",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": 1
+    },
+    {
+      "coefficient": "base_j",
+      "dependencies": [
+        "I_BASE",
+        "I_WEAK",
+        "I_COF"
+      ],
+      "open_reason": null,
+      "sector": "down",
+      "source": "base_node_phase * chirality_sign * weak_component_sign * coframe_participation",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": 4
+    },
+    {
+      "coefficient": "target",
+      "dependencies": [
+        "I_BDY"
+      ],
+      "open_reason": null,
+      "sector": "down",
+      "source": "family_index * sector_winding_multiplier",
+      "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+      "value": 12
+    }
+  ],
+  "omega_equations": {
+    "down": "Omega_d = q + 4j = 12",
+    "lepton": "Omega_ell = -q + 2j = 3",
+    "up": "Omega_u = q - 2j = 6"
+  },
+  "parent_action_reduction_status": "REDUCED_FROM_PARENT_ACTION",
+  "theorem_complete": false,
+  "title": "BHSM v1.2 Action-Origin Development Summary",
+  "uniqueness_status": "UNIQUE_UNDER_BHSM_AXIOMS",
+  "uniqueness_variant_table": [
+    {
+      "frozen_outputs_would_change_if_adopted": true,
+      "recovers_mode_ledger": false,
+      "status": "FAILS_SM_LEDGER",
+      "variant": "flip_hopf_orientation"
+    },
+    {
+      "frozen_outputs_would_change_if_adopted": true,
+      "recovers_mode_ledger": false,
+      "status": "FAILS_SM_LEDGER",
+      "variant": "flip_weak_chirality"
+    },
+    {
+      "frozen_outputs_would_change_if_adopted": true,
+      "recovers_mode_ledger": false,
+      "status": "FAILS_SM_LEDGER",
+      "variant": "remove_coframe_triplet"
+    },
+    {
+      "frozen_outputs_would_change_if_adopted": true,
+      "recovers_mode_ledger": false,
+      "status": "FAILS_SM_LEDGER",
+      "variant": "coframe_singlet"
+    },
+    {
+      "frozen_outputs_would_change_if_adopted": true,
+      "recovers_mode_ledger": false,
+      "status": "FAILS_SM_LEDGER",
+      "variant": "shift_boundary_winding"
+    },
+    {
+      "frozen_outputs_would_change_if_adopted": true,
+      "recovers_mode_ledger": false,
+      "status": "FAILS_SM_LEDGER",
+      "variant": "swap_weak_component_sign"
+    },
+    {
+      "frozen_outputs_would_change_if_adopted": true,
+      "recovers_mode_ledger": false,
+      "status": "FAILS_SM_LEDGER",
+      "variant": "trace_u1_dynamical"
+    },
+    {
+      "frozen_outputs_would_change_if_adopted": true,
+      "recovers_mode_ledger": false,
+      "status": "FAILS_SM_LEDGER",
+      "variant": "disable_higgs_u1"
+    }
+  ]
+}

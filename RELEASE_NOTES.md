@@ -2,6 +2,22 @@
 
 Branch: `bhsm-v1.1-paper`
 
+## Unreleased / Development: v1.2 Action-Origin Development
+
+Branch: `bhsm-v1.2-action-origin`
+
+The v1.2 development branch packages the action-origin audit for the
+charged-sector boundary operators. The charged-sector operators are derived
+from an explicit symbolic sector boundary functional, and that functional is
+reduced from a symbolic parent internal-action scaffold. Minimality and
+tested-variant uniqueness audits find the scaffold
+`UNIQUE_UNDER_BHSM_AXIOMS`.
+
+This is a development addendum only. It does not alter `BHSM_BARE_V1`,
+`BHSM_DRESSED_V1_CANDIDATE`, canonical constants, frozen predictions,
+tolerances, or v1.1 public release outputs. It does not claim global uniqueness
+of the complete Berger-Hopf internal action.
+
 Frozen baseline:
 
 - Tag: `bhsm-v1.0-freeze`

@@ -39,6 +39,24 @@ Current paper-branch test status: `281 passed`.
 - `manuscript/BHSM_v1_technical_note_full.md`: unified Markdown manuscript.
 - `manuscript/release_checklist.md`: release-readiness checklist.
 
+## v1.2 Development Branch
+
+Branch: `bhsm-v1.2-action-origin`
+
+Purpose: develop the action-origin program for the charged-sector boundary
+operators `Omega_f` without changing the frozen v1.0/v1.1 prediction packages.
+
+Status: omega coefficients are derived from an explicit symbolic sector
+boundary functional; that functional is reduced from a symbolic parent
+internal-action scaffold; minimality and tested-variant uniqueness audits find
+the scaffold `UNIQUE_UNDER_BHSM_AXIOMS`.
+
+Current v1.2 branch tests: `310 passed`.
+
+Correct claim: BHSM v1.2 audits whether the parent-action scaffold is minimal
+and unique under the current BHSM axioms. It does not claim full uniqueness of
+the complete internal action.
+
 ## Limitations and Open Proof Obligations
 
 The release preserves the repository's claim discipline:
