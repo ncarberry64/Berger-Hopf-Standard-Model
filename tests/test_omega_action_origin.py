@@ -1,9 +1,12 @@
+from dataclasses import replace
 from math import isclose
 from pathlib import Path
 
 from bhsm_v1 import build_bhsm_bare_v1, build_bhsm_dressed_v1_candidate, compare_bhsm_v1_branches
 from bundle_boundary_conditions import (
     CoefficientDerivationStatus,
+    derive_base_coefficient,
+    derive_fiber_coefficient,
     default_sector_boundary_functionals,
 )
 from constants import S_OVERLAP
@@ -82,6 +85,52 @@ def test_coefficients_report_statuses_explicitly():
     assert [row for row in rows if row["status"] == "ASSUMED"] == []
 
 
+def test_boundary_functional_derives_coefficients_before_mode_comparison():
+    report = build_omega_action_origin_report()
+
+    assert report.coefficient_status_table
+    assert report.recovered_mode_ledger["recovered_all"] is True
+    assert all(row["status"] != "OPEN" for row in report.coefficient_status_table)
+    assert all("dependencies" in row for row in report.coefficient_status_table)
+
+
+def test_changing_representation_inputs_changes_coefficients_predictably():
+    up = default_sector_boundary_functionals()["up"]
+
+    flipped = replace(up, chirality_sign=1)
+    doubled = replace(up, coframe_participation=4)
+    reversed_fiber = replace(up, hopf_fiber_orientation=-1)
+
+    assert derive_base_coefficient(flipped).value == 2
+    assert derive_base_coefficient(doubled).value == -4
+    assert derive_fiber_coefficient(reversed_fiber).value == -1
+
+
+def test_missing_weak_chirality_or_coframe_inputs_open_derivation():
+    up = default_sector_boundary_functionals()["up"]
+
+    missing_chirality = replace(up, chirality_sign=None)
+    missing_component = replace(up, weak_component_sign=None)
+    missing_coframe = replace(up, coframe_participation=None)
+
+    for functional in (missing_chirality, missing_component, missing_coframe):
+        coefficient = derive_base_coefficient(functional)
+        assert coefficient.value is None
+        assert coefficient.status == CoefficientDerivationStatus.OPEN
+        assert coefficient.open_reason is not None
+
+
+def test_dependency_graph_reports_assumptions_and_open_parts():
+    report = build_omega_action_origin_report()
+    graph = report.dependency_graph
+
+    assert "I_HOPF" in graph["nodes"]
+    assert "I_BASE" in graph["nodes"]
+    assert graph["coefficients"]["up"]["base_j"]["dependencies"] == ("I_BASE", "I_WEAK", "I_COF")
+    assert graph["coefficients"]["lepton"]["fiber_q"]["dependencies"] == ("I_HOPF", "I_U1")
+    assert any("full internal action" in item for item in graph["open_parts"])
+
+
 def test_report_preserves_claim_discipline():
     report = build_omega_action_origin_report()
 
@@ -89,6 +138,7 @@ def test_report_preserves_claim_discipline():
     assert any("not yet derived" in item for item in report.limitations)
     assert all(step.status != CoefficientDerivationStatus.OPEN for step in report.steps)
     assert any("No empirical masses" in item for item in report.assumptions)
+    assert any("full internal action" in item for item in report.dependency_graph["open_parts"])
 
 
 def test_no_empirical_masses_or_ckm_are_used_in_omega_modules():

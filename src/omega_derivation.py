@@ -11,6 +11,7 @@ from berger_spectrum import berger_lambda
 from bundle_boundary_conditions import (
     CoefficientDerivationStatus,
     SectorBoundaryFunctional,
+    derived_coefficients,
     default_sector_boundary_functionals,
 )
 from internal_action import default_internal_action_terms
@@ -41,6 +42,7 @@ class OmegaDerivationReport:
     action_terms: tuple[Any, ...]
     steps: tuple[OmegaDerivationStep, ...]
     coefficient_status_table: tuple[dict[str, Any], ...]
+    dependency_graph: dict[str, Any]
     recovered_mode_ledger: dict[str, Any]
     assumptions: tuple[str, ...]
     limitations: tuple[str, ...]
@@ -74,32 +76,55 @@ def coefficient_rows(functionals: dict[str, SectorBoundaryFunctional] | None = N
     functionals = default_sector_boundary_functionals() if functionals is None else functionals
     rows = []
     for sector, functional in functionals.items():
-        rows.extend(
-            [
+        for coefficient in derived_coefficients(functional):
+            rows.append(
                 {
                     "sector": sector,
-                    "coefficient": "fiber_q",
-                    "value": functional.fiber_coefficient,
-                    "status": functional.fiber_status.value,
-                    "source": "hopf_fiber_orientation * hypercharge_higgs_boundary",
-                },
-                {
-                    "sector": sector,
-                    "coefficient": "base_j",
-                    "value": functional.base_coefficient,
-                    "status": functional.base_status.value,
-                    "source": "base_node_phase * chirality_sign * weak_component_sign * coframe_participation",
-                },
-                {
-                    "sector": sector,
-                    "coefficient": "target",
-                    "value": functional.target,
-                    "status": functional.target_status.value,
-                    "source": "family_index * sector_winding_multiplier",
-                },
-            ]
-        )
+                    "coefficient": coefficient.name,
+                    "value": coefficient.value,
+                    "status": coefficient.status.value,
+                    "source": coefficient.source,
+                    "dependencies": coefficient.dependencies,
+                    "open_reason": coefficient.open_reason,
+                }
+            )
     return tuple(rows)
+
+
+def dependency_graph(functionals: dict[str, SectorBoundaryFunctional] | None = None) -> dict[str, Any]:
+    """Return coefficient dependencies and remaining open action obligations."""
+
+    functionals = default_sector_boundary_functionals() if functionals is None else functionals
+    graph: dict[str, Any] = {
+        "nodes": {
+            "I_D": "internal Dirac kinetic scaffold",
+            "I_HOPF": "Hopf-fiber covariant derivative",
+            "I_BASE": "base S^2 angular derivative",
+            "I_U1": "Higgs-selected U(1) boundary phase",
+            "I_WEAK": "weak-doublet chirality projector",
+            "I_COF": "quark coframe triplet projector",
+            "I_BDY": "sector boundary functional",
+        },
+        "coefficients": {},
+        "open_parts": (
+            "derive the sector boundary functional from variation of the full internal action",
+            "derive coframe triplet participation from the complete bundle action",
+            "derive the Higgs-selected U(1) boundary phase from the full topological sector",
+            "compute the full twisted Dirac/bundle spectrum",
+        ),
+    }
+    for sector, functional in functionals.items():
+        graph["coefficients"][sector] = {
+            coefficient.name: {
+                "value": coefficient.value,
+                "status": coefficient.status.value,
+                "source": coefficient.source,
+                "dependencies": coefficient.dependencies,
+                "open_reason": coefficient.open_reason,
+            }
+            for coefficient in derived_coefficients(functional)
+        }
+    return graph
 
 
 def derivation_steps_for_sector(functional: SectorBoundaryFunctional) -> tuple[OmegaDerivationStep, ...]:
@@ -222,6 +247,7 @@ def build_omega_action_origin_report(k_max: int = 12) -> OmegaDerivationReport:
         action_terms=default_internal_action_terms(),
         steps=steps,
         coefficient_status_table=coefficient_rows(functionals),
+        dependency_graph=dependency_graph(functionals),
         recovered_mode_ledger=recovered_mode_ledger(k_max),
         assumptions=(
             "The sector boundary functional is supplied as a symbolic action-origin scaffold.",
@@ -291,6 +317,26 @@ def export_omega_action_origin_markdown(path: str | Path, k_max: int = 12) -> No
     lines.extend(["", "## Recovered Boundary Equations", ""])
     for sector, data in report.recovered_mode_ledger["sectors"].items():
         lines.append(f"- `{sector}`: `{data['equation']}`, selected `{data['selected']}`, recovered `{data['recovered_expected']}`")
+    lines.extend(["", "## Dependency Graph Summary", ""])
+    for sector, coefficients in report.dependency_graph["coefficients"].items():
+        lines.append(f"### {sector}")
+        for name, data in coefficients.items():
+            deps = ", ".join(data["dependencies"])
+            lines.append(
+                f"- `{name}` = `{data['value']}` from `{data['source']}` using `{deps}`; status `{data['status']}`."
+            )
+    lines.extend(
+        [
+            "",
+            "Open parts:",
+            *[f"- {item}" for item in report.dependency_graph["open_parts"]],
+            "",
+            "## What v1.2 Proves and Does Not Prove",
+            "",
+            "- Proves within the scaffold: the charged-sector omega coefficients follow from the explicit symbolic sector boundary functional.",
+            "- Does not prove: the full twisted Dirac/bundle action uniquely generates that functional.",
+        ]
+    )
     lines.extend(
         [
             "",

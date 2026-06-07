@@ -35,6 +35,32 @@ Theorem complete: `False`
 - `up`: `Omega_u = q-2j = 6`, selected `[(6, 0), (10, 1)]`, recovered `True`
 - `down`: `Omega_d = q+4j = 12`, selected `[(6, 3), (8, 2)]`, recovered `True`
 
+## Dependency Graph Summary
+
+### lepton
+- `fiber_q` = `-1` from `hopf_fiber_orientation * hypercharge_higgs_boundary` using `I_HOPF, I_U1`; status `DERIVED_FROM_BOUNDARY_FUNCTIONAL`.
+- `base_j` = `2` from `base_node_phase * chirality_sign * weak_component_sign * coframe_participation` using `I_BASE, I_WEAK, I_COF`; status `DERIVED_FROM_BOUNDARY_FUNCTIONAL`.
+- `target` = `3` from `family_index * sector_winding_multiplier` using `I_BDY`; status `DERIVED_FROM_BOUNDARY_FUNCTIONAL`.
+### up
+- `fiber_q` = `1` from `hopf_fiber_orientation * hypercharge_higgs_boundary` using `I_HOPF, I_U1`; status `DERIVED_FROM_BOUNDARY_FUNCTIONAL`.
+- `base_j` = `-2` from `base_node_phase * chirality_sign * weak_component_sign * coframe_participation` using `I_BASE, I_WEAK, I_COF`; status `DERIVED_FROM_BOUNDARY_FUNCTIONAL`.
+- `target` = `6` from `family_index * sector_winding_multiplier` using `I_BDY`; status `DERIVED_FROM_BOUNDARY_FUNCTIONAL`.
+### down
+- `fiber_q` = `1` from `hopf_fiber_orientation * hypercharge_higgs_boundary` using `I_HOPF, I_U1`; status `DERIVED_FROM_BOUNDARY_FUNCTIONAL`.
+- `base_j` = `4` from `base_node_phase * chirality_sign * weak_component_sign * coframe_participation` using `I_BASE, I_WEAK, I_COF`; status `DERIVED_FROM_BOUNDARY_FUNCTIONAL`.
+- `target` = `12` from `family_index * sector_winding_multiplier` using `I_BDY`; status `DERIVED_FROM_BOUNDARY_FUNCTIONAL`.
+
+Open parts:
+- derive the sector boundary functional from variation of the full internal action
+- derive coframe triplet participation from the complete bundle action
+- derive the Higgs-selected U(1) boundary phase from the full topological sector
+- compute the full twisted Dirac/bundle spectrum
+
+## What v1.2 Proves and Does Not Prove
+
+- Proves within the scaffold: the charged-sector omega coefficients follow from the explicit symbolic sector boundary functional.
+- Does not prove: the full twisted Dirac/bundle action uniquely generates that functional.
+
 ## Assumptions
 
 - The sector boundary functional is supplied as a symbolic action-origin scaffold.

@@ -75,6 +75,11 @@
   "coefficient_status_table": [
     {
       "coefficient": "fiber_q",
+      "dependencies": [
+        "I_HOPF",
+        "I_U1"
+      ],
+      "open_reason": null,
       "sector": "lepton",
       "source": "hopf_fiber_orientation * hypercharge_higgs_boundary",
       "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
@@ -82,6 +87,12 @@
     },
     {
       "coefficient": "base_j",
+      "dependencies": [
+        "I_BASE",
+        "I_WEAK",
+        "I_COF"
+      ],
+      "open_reason": null,
       "sector": "lepton",
       "source": "base_node_phase * chirality_sign * weak_component_sign * coframe_participation",
       "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
@@ -89,6 +100,10 @@
     },
     {
       "coefficient": "target",
+      "dependencies": [
+        "I_BDY"
+      ],
+      "open_reason": null,
       "sector": "lepton",
       "source": "family_index * sector_winding_multiplier",
       "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
@@ -96,6 +111,11 @@
     },
     {
       "coefficient": "fiber_q",
+      "dependencies": [
+        "I_HOPF",
+        "I_U1"
+      ],
+      "open_reason": null,
       "sector": "up",
       "source": "hopf_fiber_orientation * hypercharge_higgs_boundary",
       "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
@@ -103,6 +123,12 @@
     },
     {
       "coefficient": "base_j",
+      "dependencies": [
+        "I_BASE",
+        "I_WEAK",
+        "I_COF"
+      ],
+      "open_reason": null,
       "sector": "up",
       "source": "base_node_phase * chirality_sign * weak_component_sign * coframe_participation",
       "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
@@ -110,6 +136,10 @@
     },
     {
       "coefficient": "target",
+      "dependencies": [
+        "I_BDY"
+      ],
+      "open_reason": null,
       "sector": "up",
       "source": "family_index * sector_winding_multiplier",
       "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
@@ -117,6 +147,11 @@
     },
     {
       "coefficient": "fiber_q",
+      "dependencies": [
+        "I_HOPF",
+        "I_U1"
+      ],
+      "open_reason": null,
       "sector": "down",
       "source": "hopf_fiber_orientation * hypercharge_higgs_boundary",
       "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
@@ -124,6 +159,12 @@
     },
     {
       "coefficient": "base_j",
+      "dependencies": [
+        "I_BASE",
+        "I_WEAK",
+        "I_COF"
+      ],
+      "open_reason": null,
       "sector": "down",
       "source": "base_node_phase * chirality_sign * weak_component_sign * coframe_participation",
       "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
@@ -131,12 +172,131 @@
     },
     {
       "coefficient": "target",
+      "dependencies": [
+        "I_BDY"
+      ],
+      "open_reason": null,
       "sector": "down",
       "source": "family_index * sector_winding_multiplier",
       "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
       "value": 12
     }
   ],
+  "dependency_graph": {
+    "coefficients": {
+      "down": {
+        "base_j": {
+          "dependencies": [
+            "I_BASE",
+            "I_WEAK",
+            "I_COF"
+          ],
+          "open_reason": null,
+          "source": "base_node_phase * chirality_sign * weak_component_sign * coframe_participation",
+          "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+          "value": 4
+        },
+        "fiber_q": {
+          "dependencies": [
+            "I_HOPF",
+            "I_U1"
+          ],
+          "open_reason": null,
+          "source": "hopf_fiber_orientation * hypercharge_higgs_boundary",
+          "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+          "value": 1
+        },
+        "target": {
+          "dependencies": [
+            "I_BDY"
+          ],
+          "open_reason": null,
+          "source": "family_index * sector_winding_multiplier",
+          "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+          "value": 12
+        }
+      },
+      "lepton": {
+        "base_j": {
+          "dependencies": [
+            "I_BASE",
+            "I_WEAK",
+            "I_COF"
+          ],
+          "open_reason": null,
+          "source": "base_node_phase * chirality_sign * weak_component_sign * coframe_participation",
+          "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+          "value": 2
+        },
+        "fiber_q": {
+          "dependencies": [
+            "I_HOPF",
+            "I_U1"
+          ],
+          "open_reason": null,
+          "source": "hopf_fiber_orientation * hypercharge_higgs_boundary",
+          "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+          "value": -1
+        },
+        "target": {
+          "dependencies": [
+            "I_BDY"
+          ],
+          "open_reason": null,
+          "source": "family_index * sector_winding_multiplier",
+          "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+          "value": 3
+        }
+      },
+      "up": {
+        "base_j": {
+          "dependencies": [
+            "I_BASE",
+            "I_WEAK",
+            "I_COF"
+          ],
+          "open_reason": null,
+          "source": "base_node_phase * chirality_sign * weak_component_sign * coframe_participation",
+          "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+          "value": -2
+        },
+        "fiber_q": {
+          "dependencies": [
+            "I_HOPF",
+            "I_U1"
+          ],
+          "open_reason": null,
+          "source": "hopf_fiber_orientation * hypercharge_higgs_boundary",
+          "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+          "value": 1
+        },
+        "target": {
+          "dependencies": [
+            "I_BDY"
+          ],
+          "open_reason": null,
+          "source": "family_index * sector_winding_multiplier",
+          "status": "DERIVED_FROM_BOUNDARY_FUNCTIONAL",
+          "value": 6
+        }
+      }
+    },
+    "nodes": {
+      "I_BASE": "base S^2 angular derivative",
+      "I_BDY": "sector boundary functional",
+      "I_COF": "quark coframe triplet projector",
+      "I_D": "internal Dirac kinetic scaffold",
+      "I_HOPF": "Hopf-fiber covariant derivative",
+      "I_U1": "Higgs-selected U(1) boundary phase",
+      "I_WEAK": "weak-doublet chirality projector"
+    },
+    "open_parts": [
+      "derive the sector boundary functional from variation of the full internal action",
+      "derive coframe triplet participation from the complete bundle action",
+      "derive the Higgs-selected U(1) boundary phase from the full topological sector",
+      "compute the full twisted Dirac/bundle spectrum"
+    ]
+  },
   "limitations": [
     "DERIVED_FROM_BOUNDARY_FUNCTIONAL means derived inside the explicit symbolic boundary functional only.",
     "Omega_f is not yet derived from a completed variation/spectrum of the full Berger-Hopf internal action.",

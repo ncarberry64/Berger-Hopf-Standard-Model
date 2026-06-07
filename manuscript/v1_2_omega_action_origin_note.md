@@ -51,6 +51,31 @@ functional implemented in `src/omega_derivation.py`. It does not mean the
 operators have been fully derived from variation or spectrum of the complete
 Berger-Hopf internal action.
 
+## Dependency Graph
+
+The coefficient dependencies are:
+
+| Coefficient | Symbolic source | Boundary/action terms |
+| --- | --- | --- |
+| `fiber_q` | `hopf_fiber_orientation * hypercharge_higgs_boundary` | `I_HOPF`, `I_U1` |
+| `base_j` | `base_node_phase * chirality_sign * weak_component_sign * coframe_participation` | `I_BASE`, `I_WEAK`, `I_COF` |
+| `target` | `family_index * sector_winding_multiplier` | `I_BDY` |
+
+Open parts:
+
+- derive the sector boundary functional from variation of the full internal action;
+- derive coframe triplet participation from the complete bundle action;
+- derive the Higgs-selected U(1) boundary phase from the full topological sector;
+- compute the full twisted Dirac/bundle spectrum.
+
+## What v1.2 Proves and Does Not Prove
+
+Within the scaffold, v1.2 proves that the charged-sector omega coefficients
+follow from the explicit symbolic sector boundary functional.
+
+It does not prove that the full twisted Dirac/bundle action uniquely generates
+that functional. That remains the central action-origin proof obligation.
+
 ## Mode Ledger Recovery
 
 Using the action-origin functional, the expected charged-sector ledger is

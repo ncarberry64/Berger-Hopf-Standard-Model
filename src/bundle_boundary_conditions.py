@@ -32,20 +32,32 @@ class BoundaryCondition:
 
 
 @dataclass(frozen=True)
+class BoundaryCoefficient:
+    """Derived coefficient plus dependency/status metadata."""
+
+    name: str
+    value: int | None
+    status: CoefficientDerivationStatus
+    source: str
+    dependencies: tuple[str, ...]
+    open_reason: str | None = None
+
+
+@dataclass(frozen=True)
 class SectorBoundaryFunctional:
     """Action-like sector boundary functional for one charged sector."""
 
     sector: str
     action_term: InternalActionTerm
     conditions: tuple[BoundaryCondition, ...]
-    hopf_fiber_orientation: int
-    base_node_phase: int
-    chirality_sign: int
-    weak_component_sign: int
-    coframe_participation: int
-    hypercharge_higgs_boundary: int
-    family_index: int
-    sector_winding_multiplier: int
+    hopf_fiber_orientation: int | None
+    base_node_phase: int | None
+    chirality_sign: int | None
+    weak_component_sign: int | None
+    coframe_participation: int | None
+    hypercharge_higgs_boundary: int | None
+    family_index: int | None
+    sector_winding_multiplier: int | None
     hopf_parity: str
     fiber_status: CoefficientDerivationStatus
     base_status: CoefficientDerivationStatus
@@ -55,24 +67,133 @@ class SectorBoundaryFunctional:
     def fiber_coefficient(self) -> int:
         """Return the coefficient multiplying Hopf charge q."""
 
-        return self.hopf_fiber_orientation * self.hypercharge_higgs_boundary
+        coefficient = derive_fiber_coefficient(self)
+        if coefficient.value is None:
+            raise ValueError(coefficient.open_reason)
+        return coefficient.value
 
     @property
     def base_coefficient(self) -> int:
         """Return the coefficient multiplying the base node j."""
 
-        return (
-            self.base_node_phase
-            * self.chirality_sign
-            * self.weak_component_sign
-            * self.coframe_participation
-        )
+        coefficient = derive_base_coefficient(self)
+        if coefficient.value is None:
+            raise ValueError(coefficient.open_reason)
+        return coefficient.value
 
     @property
     def target(self) -> int:
         """Return the generation/winding target."""
 
-        return self.family_index * self.sector_winding_multiplier
+        coefficient = derive_target(self)
+        if coefficient.value is None:
+            raise ValueError(coefficient.open_reason)
+        return coefficient.value
+
+
+def _missing_factor_reason(factors: dict[str, int | None]) -> str | None:
+    missing = [name for name, value in factors.items() if value is None]
+    if not missing:
+        return None
+    return "missing boundary-functional input(s): " + ", ".join(missing)
+
+
+def derive_fiber_coefficient(functional: SectorBoundaryFunctional) -> BoundaryCoefficient:
+    """Derive the Hopf-fiber coefficient from functional inputs."""
+
+    factors = {
+        "hopf_fiber_orientation": functional.hopf_fiber_orientation,
+        "hypercharge_higgs_boundary": functional.hypercharge_higgs_boundary,
+    }
+    open_reason = _missing_factor_reason(factors)
+    source = "hopf_fiber_orientation * hypercharge_higgs_boundary"
+    if open_reason is not None:
+        return BoundaryCoefficient(
+            name="fiber_q",
+            value=None,
+            status=CoefficientDerivationStatus.OPEN,
+            source=source,
+            dependencies=("I_HOPF", "I_U1"),
+            open_reason=open_reason,
+        )
+    return BoundaryCoefficient(
+        name="fiber_q",
+        value=int(functional.hopf_fiber_orientation * functional.hypercharge_higgs_boundary),
+        status=functional.fiber_status,
+        source=source,
+        dependencies=("I_HOPF", "I_U1"),
+    )
+
+
+def derive_base_coefficient(functional: SectorBoundaryFunctional) -> BoundaryCoefficient:
+    """Derive the base-node coefficient from functional inputs."""
+
+    factors = {
+        "base_node_phase": functional.base_node_phase,
+        "chirality_sign": functional.chirality_sign,
+        "weak_component_sign": functional.weak_component_sign,
+        "coframe_participation": functional.coframe_participation,
+    }
+    open_reason = _missing_factor_reason(factors)
+    source = "base_node_phase * chirality_sign * weak_component_sign * coframe_participation"
+    if open_reason is not None:
+        return BoundaryCoefficient(
+            name="base_j",
+            value=None,
+            status=CoefficientDerivationStatus.OPEN,
+            source=source,
+            dependencies=("I_BASE", "I_WEAK", "I_COF"),
+            open_reason=open_reason,
+        )
+    return BoundaryCoefficient(
+        name="base_j",
+        value=int(
+            functional.base_node_phase
+            * functional.chirality_sign
+            * functional.weak_component_sign
+            * functional.coframe_participation
+        ),
+        status=functional.base_status,
+        source=source,
+        dependencies=("I_BASE", "I_WEAK", "I_COF"),
+    )
+
+
+def derive_target(functional: SectorBoundaryFunctional) -> BoundaryCoefficient:
+    """Derive the boundary target from generation and sector winding."""
+
+    factors = {
+        "family_index": functional.family_index,
+        "sector_winding_multiplier": functional.sector_winding_multiplier,
+    }
+    open_reason = _missing_factor_reason(factors)
+    source = "family_index * sector_winding_multiplier"
+    if open_reason is not None:
+        return BoundaryCoefficient(
+            name="target",
+            value=None,
+            status=CoefficientDerivationStatus.OPEN,
+            source=source,
+            dependencies=("I_BDY",),
+            open_reason=open_reason,
+        )
+    return BoundaryCoefficient(
+        name="target",
+        value=int(functional.family_index * functional.sector_winding_multiplier),
+        status=functional.target_status,
+        source=source,
+        dependencies=("I_BDY",),
+    )
+
+
+def derived_coefficients(functional: SectorBoundaryFunctional) -> tuple[BoundaryCoefficient, ...]:
+    """Return all derived coefficients for a sector boundary functional."""
+
+    return (
+        derive_fiber_coefficient(functional),
+        derive_base_coefficient(functional),
+        derive_target(functional),
+    )
 
 
 def _condition(
