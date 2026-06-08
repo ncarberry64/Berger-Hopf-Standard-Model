@@ -1,0 +1,101 @@
+{
+  "correct_claim": "The corrected formal-kernel H_T scaffold is strong and clears current finite/semi-analytic thresholds; the full H_T theorem remains open pending infinite-basis, domain, and index proofs.",
+  "forbidden_claims": [
+    "Do not claim FULL_HT_THEOREM_PROVEN.",
+    "Do not claim the no-extra-light-state theorem is proven.",
+    "Do not use coordinate-first protected block (0,1,2) as the corrected formal kernel."
+  ],
+  "formal_kernel": "K_formal = span{|ell,0,0,q=0,chi=-1>, |u,0,0,q=0,chi=-1>, |d,0,0,q=0,chi=-1>}",
+  "formal_kernel_coordinates": [
+    0,
+    18,
+    36
+  ],
+  "heat_lift_and_psd_profile_preserved": true,
+  "infinite_basis_report": {
+    "exact_finite_lower_bound": 6.8171156827281205,
+    "heat_lift_lower_bound": 19591.98933512353,
+    "limitations": [
+      "Finite/semi-analytic evidence is strong but is not an infinite-basis theorem.",
+      "The full operator domain and topological index theorem remain open."
+    ],
+    "nodes": [
+      {
+        "finite_evidence": [
+          "structured relative lower bound = 6.729508865520464",
+          "exact finite lower bound = 6.8171156827281205",
+          "heat-lift lower bound = 19591.98933512353"
+        ],
+        "id": "finite_formal_kernel_bound",
+        "open_obligations": [],
+        "statement": "Corrected formal-kernel finite/semi-analytic lower bound clears the required threshold.",
+        "status": "FORMAL_KERNEL_SCAFFOLD_STRONG"
+      },
+      {
+        "finite_evidence": [
+          "formal-kernel convergence scans pass in finite truncations"
+        ],
+        "id": "infinite_basis_complement",
+        "open_obligations": [
+          "Prove an infinite-basis uniform complement lower bound independent of k_max.",
+          "Prove compactness/relative-bound hypotheses for the complete operator."
+        ],
+        "statement": "H_perp complement lower bound survives the infinite-basis limit.",
+        "status": "INFINITE_BASIS_OPEN"
+      },
+      {
+        "finite_evidence": [
+          "finite matrices are symmetric/Hermitian in the Level 2 scaffold"
+        ],
+        "id": "operator_domain",
+        "open_obligations": [
+          "Specify the full Hilbert-space domain.",
+          "Prove self-adjointness and domain stability under twist/profile terms."
+        ],
+        "statement": "The complete H_T operator domain is self-adjoint with the same complement split.",
+        "status": "INFINITE_BASIS_OPEN"
+      }
+    ],
+    "required_dirac_lower_bound": 0.8038064161349437,
+    "status": "FORMAL_KERNEL_SCAFFOLD_STRONG",
+    "structured_relative_lower_bound": 6.729508865520464,
+    "theorem_complete": false,
+    "title": "BHSM Infinite-Basis H_T Bound Closure Attempt"
+  },
+  "kernel_nodes": [
+    {
+      "evidence": [
+        "Corrected finite Level 2 formal-kernel coordinates are (0,18,36) at k_max=4.",
+        "Protected sectors are one lepton, one up, and one down."
+      ],
+      "id": "kernel_basis_realization",
+      "open_obligations": [],
+      "statement": "K_formal = span{|ell,0,0,q=0,chi=-1>, |u,0,0,q=0,chi=-1>, |d,0,0,q=0,chi=-1>}",
+      "status": "KERNEL_SCAFFOLD_CONFIRMED"
+    },
+    {
+      "evidence": [
+        "Finite formal-kernel scaffold realizes three protected states."
+      ],
+      "id": "index_dim_kernel",
+      "open_obligations": [
+        "Prove the topological index theorem for the complete twisted Dirac operator.",
+        "Exclude mirror zero modes from the full chiral operator, not only the scaffold channels."
+      ],
+      "statement": "dim ker D_twist = 3",
+      "status": "INDEX_THEOREM_OPEN"
+    }
+  ],
+  "remaining_open_nodes": [
+    "Prove an infinite-basis uniform complement lower bound independent of k_max.",
+    "Prove compactness/relative-bound hypotheses for the complete operator.",
+    "Specify the full Hilbert-space domain.",
+    "Prove self-adjointness and domain stability under twist/profile terms.",
+    "Prove the topological index theorem for the complete twisted Dirac operator.",
+    "Exclude mirror zero modes from the full chiral operator, not only the scaffold channels."
+  ],
+  "sector_coupling_uniform_relative_bound_status": "UNIFORM_BOUND_CANDIDATE",
+  "status": "FORMAL_KERNEL_SCAFFOLD_STRONG",
+  "theorem_complete": false,
+  "title": "BHSM Full H_T Theorem Closure Attempt"
+}

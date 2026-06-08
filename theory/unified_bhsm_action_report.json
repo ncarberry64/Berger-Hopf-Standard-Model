@@ -1,0 +1,165 @@
+{
+  "edges": [
+    [
+      "omega_f",
+      "mode_ledger"
+    ],
+    [
+      "mode_ledger",
+      "ckm_cp"
+    ],
+    [
+      "alpha_geometry",
+      "ckm_cp"
+    ],
+    [
+      "overlap_width",
+      "ckm_cp"
+    ],
+    [
+      "omega_f",
+      "formal_kernel"
+    ],
+    [
+      "formal_kernel",
+      "ht_gap"
+    ],
+    [
+      "ht_gap",
+      "scalar_topographic"
+    ]
+  ],
+  "empirical_residual_dependency_detected": false,
+  "gate_statuses": {
+    "ht_gap": "FORMAL_KERNEL_SCAFFOLD_STRONG",
+    "qcd_rg": "PRECISION_INPUTS_REQUIRED",
+    "scalar_topographic": "SCREENING_SCAFFOLD_PASSES",
+    "virtual_dressing": "VIRTUAL_DRESSING_ADOPTION_CANDIDATE"
+  },
+  "hidden_circularity_detected": false,
+  "limitations": [
+    "The unified graph is dependency-clean but has open theorem nodes.",
+    "Frozen predictions are not retuned or changed."
+  ],
+  "nodes": [
+    {
+      "depends_on": [],
+      "id": "alpha_geometry",
+      "open_obligations": [],
+      "statement": "a=alpha^{-1}/(12*pi^2)",
+      "status": "FROZEN"
+    },
+    {
+      "depends_on": [],
+      "id": "overlap_width",
+      "open_obligations": [],
+      "statement": "S=1/(4*pi)",
+      "status": "FROZEN"
+    },
+    {
+      "depends_on": [],
+      "id": "omega_f",
+      "open_obligations": [
+        "derive boundary functional from complete action globally"
+      ],
+      "statement": "charged-sector boundary operators Omega_f",
+      "status": "BOUNDARY_FUNCTIONAL_DERIVED"
+    },
+    {
+      "depends_on": [
+        "omega_f"
+      ],
+      "id": "mode_ledger",
+      "open_obligations": [],
+      "statement": "frozen charged-sector mode ledger",
+      "status": "FROZEN"
+    },
+    {
+      "depends_on": [
+        "mode_ledger",
+        "alpha_geometry",
+        "overlap_width"
+      ],
+      "id": "ckm_cp",
+      "open_obligations": [
+        "derive full flavor matrix from complete action"
+      ],
+      "statement": "CKM/CP internal-rule scaffold",
+      "status": "FROZEN_SCREEN"
+    },
+    {
+      "depends_on": [
+        "omega_f"
+      ],
+      "id": "formal_kernel",
+      "open_obligations": [
+        "prove full topological index theorem"
+      ],
+      "statement": "formal sector-labeled H_T kernel",
+      "status": "STRONG_SCAFFOLD"
+    },
+    {
+      "depends_on": [
+        "formal_kernel"
+      ],
+      "id": "ht_gap",
+      "open_obligations": [
+        "prove infinite-basis complement bound",
+        "prove full operator domain"
+      ],
+      "statement": "H_T no-extra-light gap",
+      "status": "STRONG_SCAFFOLD"
+    },
+    {
+      "depends_on": [
+        "ht_gap"
+      ],
+      "id": "scalar_topographic",
+      "open_obligations": [
+        "prove global scalar/topographic action decoupling"
+      ],
+      "statement": "scalar/topographic decoupling",
+      "status": "STRONG_SCAFFOLD"
+    },
+    {
+      "depends_on": [],
+      "id": "virtual_dressing",
+      "open_obligations": [
+        "derive full virtual loop/threshold dressing factor"
+      ],
+      "statement": "Z_virt^{u,2}=1/2 candidate branch",
+      "status": "THEOREM_CANDIDATE"
+    },
+    {
+      "depends_on": [],
+      "id": "qcd_rg",
+      "open_obligations": [
+        "supply validated precision-QCD inputs"
+      ],
+      "statement": "precision QCD/RG comparison",
+      "status": "OPEN"
+    },
+    {
+      "depends_on": [],
+      "id": "state_ontology",
+      "open_obligations": [
+        "connect ontology to complete spectral theorem"
+      ],
+      "statement": "state ontology",
+      "status": "SCAFFOLD"
+    }
+  ],
+  "open_nodes": [
+    "omega_f",
+    "ckm_cp",
+    "formal_kernel",
+    "ht_gap",
+    "scalar_topographic",
+    "virtual_dressing",
+    "qcd_rg",
+    "state_ontology"
+  ],
+  "status": "ACTION_SCAFFOLD_WITH_OPEN_NODES",
+  "theorem_complete": false,
+  "title": "BHSM Unified Action Dependency Closure Report"
+}

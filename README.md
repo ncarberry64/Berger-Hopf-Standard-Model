@@ -579,6 +579,34 @@ change to `a`, `S`, modes, or `Z_virt` invalidates the v1.0 package. The
 dressed branch is a candidate prediction branch, not a completed proof or final
 canonical adoption.
 
+## Final Closure Campaign
+
+Branch: `bhsm-final-closure-campaign`
+
+Purpose: attempt final closure of the remaining BHSM theorem nodes after the
+v1.6 scalar/topographic screening scaffold, without changing the frozen v1.0
+prediction package or prior release outputs.
+
+Final status: `BHSM_STRONG_SCAFFOLD`
+
+Current conclusion: BHSM is a strong no-retuning geometric Standard Model
+reinterpretation framework with frozen predictions and multiple theorem
+scaffolds, but not a fully closed first-principles theorem package.
+
+Remaining open obligations include:
+
+- proving the full twisted Dirac / `H_T` spectrum and infinite-basis complement
+  lower bound;
+- proving self-adjointness, domain stability, topological index, and full
+  mirror-mode exclusion for the complete operator;
+- deriving the scalar/topographic screening and virtual dressing mechanisms
+  from the complete action;
+- supplying validated precision-QCD common-scheme inputs and threshold
+  matching;
+- closing the unified action dependency graph without scaffold assumptions.
+
+Frozen outputs remain unchanged.
+
 ## Quick Start
 
 ```powershell

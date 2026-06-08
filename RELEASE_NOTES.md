@@ -102,6 +102,30 @@ basis realizations, semi-analytic scaffolds, finite-basis scaffolds, adoption
 candidates, open items, and forbidden states. It reports no hidden circularity
 or dependency on empirical residual machinery.
 
+## Unreleased / Development: Final Closure Campaign
+
+Branch: `bhsm-final-closure-campaign`
+
+The final closure campaign attempts to close the remaining BHSM theorem nodes
+after the v1.6 scalar/topographic screening scaffold. It runs five gates:
+
+- Gate 1: full `H_T` theorem closure attempt;
+- Gate 2: virtual dressing closure attempt;
+- Gate 3: precision QCD/RG closure attempt;
+- Gate 4: unified action dependency closure;
+- Gate 5: final theorem ledger and open obligations.
+
+Final status: `BHSM_STRONG_SCAFFOLD`.
+
+Correct claim: BHSM is a strong no-retuning geometric Standard Model
+reinterpretation framework with frozen predictions and multiple theorem
+scaffolds, but not a fully closed first-principles theorem package.
+
+The campaign does not change frozen predictions, canonical constants, mode
+ledgers, tolerance bands, or release tags. It does not claim completion of the
+full twisted Dirac / `H_T` theorem, scalar/topographic action proof, virtual
+dressing theorem, precision QCD matching, or unified action closure.
+
 ## Unreleased / Development: v1.4 Precision QCD/RG Matching
 
 Branch: `bhsm-v1.4-precision-qcd-rg`
