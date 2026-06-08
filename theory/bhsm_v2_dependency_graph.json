@@ -1,0 +1,282 @@
+{
+  "edges": [
+    {
+      "relation": "supports",
+      "source": "omega_f",
+      "target": "mode_ledger"
+    },
+    {
+      "relation": "supports",
+      "source": "parent_action_scaffold",
+      "target": "omega_f"
+    },
+    {
+      "relation": "supports",
+      "source": "omega_f",
+      "target": "formal_kernel"
+    },
+    {
+      "relation": "supports",
+      "source": "state_ontology",
+      "target": "formal_kernel"
+    },
+    {
+      "relation": "supports",
+      "source": "formal_kernel",
+      "target": "ht_gap"
+    },
+    {
+      "relation": "supports",
+      "source": "scalar_decoupling",
+      "target": "ht_gap"
+    },
+    {
+      "relation": "supports",
+      "source": "state_ontology",
+      "target": "scalar_decoupling"
+    },
+    {
+      "relation": "supports",
+      "source": "state_ontology",
+      "target": "virtual_dressing"
+    },
+    {
+      "relation": "supports",
+      "source": "mode_ledger",
+      "target": "ckm_cp"
+    },
+    {
+      "relation": "supports",
+      "source": "alpha_geometry",
+      "target": "ckm_cp"
+    },
+    {
+      "relation": "supports",
+      "source": "overlap_width",
+      "target": "ckm_cp"
+    },
+    {
+      "relation": "supports",
+      "source": "alpha_geometry",
+      "target": "pmns_effective"
+    },
+    {
+      "relation": "supports",
+      "source": "ht_gap",
+      "target": "forbidden_extra_light"
+    },
+    {
+      "relation": "supports",
+      "source": "scalar_decoupling",
+      "target": "forbidden_extra_light"
+    }
+  ],
+  "empirical_residual_dependency_detected": false,
+  "hidden_circularity_detected": false,
+  "limitations": [
+    "This graph is a theorem/status ledger, not a completed derivation.",
+    "Frozen predictions remain frozen and are not selected by graph residuals."
+  ],
+  "nodes": [
+    {
+      "depends_on": [],
+      "evidence": [
+        "Canonical alpha-anchored geometry frozen in v1."
+      ],
+      "id": "alpha_geometry",
+      "limitations": [
+        "Not chosen by residual minimization."
+      ],
+      "status": "FROZEN_PREDICTION",
+      "title": "a = alpha^{-1}/(12*pi^2)"
+    },
+    {
+      "depends_on": [],
+      "evidence": [
+        "Universal overlap width frozen in v1."
+      ],
+      "id": "overlap_width",
+      "limitations": [
+        "No retuning allowed."
+      ],
+      "status": "FROZEN_PREDICTION",
+      "title": "S = 1/(4*pi)"
+    },
+    {
+      "depends_on": [
+        "omega_f"
+      ],
+      "evidence": [
+        "Mode ledger is frozen for v1 branches."
+      ],
+      "id": "mode_ledger",
+      "limitations": [
+        "Full action derivation of all mode-selection rules remains linked to omega_f."
+      ],
+      "status": "FROZEN_PREDICTION",
+      "title": "charged-sector mode ledger"
+    },
+    {
+      "depends_on": [
+        "parent_action_scaffold"
+      ],
+      "evidence": [
+        "v1.2 derives coefficients from symbolic sector boundary functional."
+      ],
+      "id": "omega_f",
+      "limitations": [
+        "Full unique derivation from the complete internal action remains open."
+      ],
+      "status": "BOUNDARY_FUNCTIONAL_DERIVED",
+      "title": "boundary operators Omega_f"
+    },
+    {
+      "depends_on": [],
+      "evidence": [
+        "v1.2B reduces symbolic parent action to sector boundary functional."
+      ],
+      "id": "parent_action_scaffold",
+      "limitations": [
+        "Global uniqueness of complete Berger-Hopf action remains open."
+      ],
+      "status": "PARENT_ACTION_REDUCED",
+      "title": "parent internal-action scaffold"
+    },
+    {
+      "depends_on": [
+        "omega_f",
+        "state_ontology"
+      ],
+      "evidence": [
+        "v1.3O coordinate-free K_formal realized as (0,18,36) at k_max=4."
+      ],
+      "id": "formal_kernel",
+      "limitations": [
+        "Full topological index theorem remains open."
+      ],
+      "status": "BASIS_REALIZED",
+      "title": "formal sector-labeled kernel"
+    },
+    {
+      "depends_on": [
+        "formal_kernel",
+        "scalar_decoupling"
+      ],
+      "evidence": [
+        "Corrected formal-kernel lower-bound scaffold clears finite Level 2 threshold."
+      ],
+      "id": "ht_gap",
+      "limitations": [
+        "Full twisted Dirac / H_T theorem remains open."
+      ],
+      "status": "SEMI_ANALYTIC_SCAFFOLD",
+      "title": "H_T no-extra-light gap"
+    },
+    {
+      "depends_on": [
+        "state_ontology"
+      ],
+      "evidence": [
+        "v1.5 current proxy inventory has one Higgs projection and no current forbidden/open scalar modes."
+      ],
+      "id": "scalar_decoupling",
+      "limitations": [
+        "Full scalar action proof remains open."
+      ],
+      "status": "FINITE_BASIS_SCAFFOLD",
+      "title": "scalar/topographic decoupling"
+    },
+    {
+      "depends_on": [
+        "state_ontology"
+      ],
+      "evidence": [
+        "Dressed candidate changes only c/t."
+      ],
+      "id": "virtual_dressing",
+      "limitations": [
+        "Candidate branch, not final canonical adoption."
+      ],
+      "status": "ADOPTION_CANDIDATE",
+      "title": "Z_virt^{u,2}=1/2 dressed branch"
+    },
+    {
+      "depends_on": [],
+      "evidence": [
+        "v1.4 adds approximate and placeholder reference-set architecture."
+      ],
+      "id": "qcd_rg_matching",
+      "limitations": [
+        "Precision QCD threshold matching remains open."
+      ],
+      "status": "OPEN",
+      "title": "QCD/RG matching"
+    },
+    {
+      "depends_on": [
+        "mode_ledger",
+        "alpha_geometry",
+        "overlap_width"
+      ],
+      "evidence": [
+        "Frozen v1 prediction ledger includes CKM/CP outputs."
+      ],
+      "id": "ckm_cp",
+      "limitations": [
+        "Full action derivation of flavor matrices remains open."
+      ],
+      "status": "FROZEN_PREDICTION",
+      "title": "CKM/CP internal-rule screen"
+    },
+    {
+      "depends_on": [
+        "alpha_geometry"
+      ],
+      "evidence": [
+        "Effective-extension PMNS screen is frozen as a screen."
+      ],
+      "id": "pmns_effective",
+      "limitations": [
+        "Not a minimal Standard Model neutrino-mass prediction."
+      ],
+      "status": "FROZEN_PREDICTION",
+      "title": "PMNS effective extension"
+    },
+    {
+      "depends_on": [],
+      "evidence": [
+        "v1.3F separates internal modes, virtual contributions, and observable states."
+      ],
+      "id": "state_ontology",
+      "limitations": [
+        "Ontology is not a spectral proof."
+      ],
+      "status": "FINITE_BASIS_SCAFFOLD",
+      "title": "state ontology"
+    },
+    {
+      "depends_on": [
+        "ht_gap",
+        "scalar_decoupling"
+      ],
+      "evidence": [
+        "Unscreened light direct-coupled extra states are falsifiers."
+      ],
+      "id": "forbidden_extra_light",
+      "limitations": [
+        "Requires full spectrum to certify absence globally."
+      ],
+      "status": "FORBIDDEN",
+      "title": "extra unscreened light states"
+    }
+  ],
+  "open_obligations": [
+    "Prove the full twisted Dirac / H_T spectrum and infinite-basis complement bound.",
+    "Prove Index(D_twist)=3 and complete mirror-mode exclusion from the full operator.",
+    "Prove scalar/topographic decoupling from the full internal action.",
+    "Complete precision QCD/RG threshold matching for quark mass comparisons.",
+    "Derive full flavor matrices from the complete action rather than internal-rule screens."
+  ],
+  "theorem_complete": false,
+  "title": "BHSM v2.0 Integrated Dependency Graph"
+}

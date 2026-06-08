@@ -1,0 +1,26 @@
+# BHSM Theorem Status Ledger
+
+Theorem complete: `False`
+Hidden circularity detected: `False`
+Empirical residual dependency detected: `False`
+
+## Ledger Rows
+
+| ID | Status | Completed | Allowed claim | Forbidden upgrade |
+| --- | --- | --- | --- | --- |
+| `frozen_v1_predictions` | `FROZEN_PREDICTION` | `True` | Frozen no-retuning model outputs are reproducible. | Do not claim all entries are final confirmed predictions. |
+| `omega_f` | `BOUNDARY_FUNCTIONAL_DERIVED` | `False` | Derived from symbolic sector boundary functional and parent-action scaffold. | Do not claim complete action derivation. |
+| `parent_action` | `PARENT_ACTION_REDUCED` | `False` | Reduced from symbolic parent scaffold under current axioms. | Do not claim full internal action proven. |
+| `formal_kernel` | `BASIS_REALIZED` | `False` | Coordinate-free scaffold and finite basis realization are implemented. | Do not claim full index theorem. |
+| `ht_gap` | `SEMI_ANALYTIC_SCAFFOLD` | `False` | Corrected formal-kernel finite/semi-analytic scaffold clears current thresholds. | Do not claim no-extra-light-state theorem proven. |
+| `scalar_decoupling` | `FINITE_BASIS_SCAFFOLD` | `False` | Current proxy inventory has no forbidden/open scalar modes. | Do not claim scalar decoupling fully proven. |
+| `qcd_rg` | `OPEN` | `False` | Approximate/reference-set scaffolds are implemented. | Do not claim precision QCD matching complete. |
+| `virtual_dressing` | `ADOPTION_CANDIDATE` | `False` | Dressed branch remains candidate and changes only c/t. | Do not claim dressed branch final. |
+
+## Open Obligations
+
+1. Prove the full twisted Dirac / H_T spectrum and infinite-basis complement bound.
+2. Prove Index(D_twist)=3 and complete mirror-mode exclusion from the full operator.
+3. Prove scalar/topographic decoupling from the full internal action.
+4. Complete precision QCD/RG threshold matching for quark mass comparisons.
+5. Derive full flavor matrices from the complete action rather than internal-rule screens.

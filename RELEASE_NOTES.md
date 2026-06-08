@@ -67,6 +67,39 @@ coordinates `(0,18,36)` and recomputes the gap. The current Level 2 scaffold is
 classified `FORMAL_KERNEL_NOT_PROTECTED`; the old coordinate-first gap does not
 survive the formal-projector audit.
 
+v1.3L-O correct and package the formal-kernel `H_T` scaffold. The corrected
+reference is `DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL`, with coordinate-free
+`K_formal = span{|ell,0,0,q=0,chi=-1>, |u,0,0,q=0,chi=-1>, |d,0,0,q=0,chi=-1>}`
+and finite `k_max=4` realization `(0,18,36)`. Coordinate-first conclusions
+depending on `(0,1,2)` are superseded. The full `H_T` theorem remains open.
+
+## Unreleased / Development: BHSM Completion Campaign
+
+Branch: `bhsm-completion-campaign`
+
+The completion campaign packages v1.3 formal-kernel `H_T` results, adds
+scheme-aware QCD/RG comparison scaffolds, strengthens scalar/topographic
+decoupling scaffolds, and builds a unified dependency/theorem ledger. It does
+not retune predictions and does not claim completed first-principles proof
+unless every theorem dependency is explicitly closed.
+
+Gate 2 adds the v1.4 QCD/RG matching scaffold. It records
+`MIXED_DEFAULT`, `COMMON_SCALE_APPROX`, `THRESHOLD_AWARE_APPROX`, and
+`PRECISION_QCD_PLACEHOLDER` reference sets, recomputes quark-ratio comparison
+tables including dressed `c/t`, and keeps precision QCD as an explicit future
+placeholder. Frozen BHSM ratios are compared but not changed.
+
+Gate 3 adds the v1.5 scalar/topographic decoupling scaffold. The current proxy
+inventory has exactly one light Higgs projection and zero forbidden/open
+current scalar modes. Filtered and screened topographic modes remain
+conditional scaffolds, not full action-level scalar decoupling proof.
+
+Gate 4 adds the v2.0 dependency graph and theorem ledger. The graph separates
+frozen predictions, boundary-functional derivations, parent-action reductions,
+basis realizations, semi-analytic scaffolds, finite-basis scaffolds, adoption
+candidates, open items, and forbidden states. It reports no hidden circularity
+or dependency on empirical residual machinery.
+
 Frozen baseline:
 
 - Tag: `bhsm-v1.0-freeze`

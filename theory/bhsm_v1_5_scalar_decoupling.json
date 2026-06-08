@@ -1,0 +1,426 @@
+{
+  "conditions": [
+    {
+      "evidence": [
+        "Current proxy inventory has one light Higgs projection."
+      ],
+      "id": "SD1",
+      "limitations": [
+        "Full scalar action proof remains open."
+      ],
+      "statement": "Exactly one light Higgs projection is allowed.",
+      "status": "FINITE_BASIS_VERIFIED"
+    },
+    {
+      "evidence": [
+        "Current proxy inventory has no unscreened direct-coupled light scalar."
+      ],
+      "id": "SD2",
+      "limitations": [
+        "Filtered/screened modes are conditional, not fully proven safe."
+      ],
+      "statement": "Every orthogonal scalar is heavy, derivative-filtered, curvature-filtered, or screened.",
+      "status": "SCAFFOLD_VERIFIED"
+    },
+    {
+      "evidence": [
+        "v1.3F state ontology classifies screened topographic states separately from observable particles."
+      ],
+      "id": "SD3",
+      "limitations": [
+        "Ontology does not replace an action-level decoupling proof."
+      ],
+      "statement": "A screened scalar/topographic mode is not a new on-shell light particle.",
+      "status": "STATE_ONTOLOGY_LINKED"
+    },
+    {
+      "evidence": [
+        "Forbidden/open scalar categories are explicit in the scalar state ledger."
+      ],
+      "id": "SD4",
+      "limitations": [
+        "A future full spectrum could still reveal an open risk."
+      ],
+      "statement": "Any unscreened direct-coupled light scalar is a falsifier or open scalar risk.",
+      "status": "FALSIFIER_RULE"
+    }
+  ],
+  "current_audit": {
+    "classifications": [
+      {
+        "conditional": false,
+        "coupling_strength": 1.0,
+        "coupling_type": "higgs_projection",
+        "eigenvalue": 125.1,
+        "gap": 9720.362165098726,
+        "is_higgs_projection": true,
+        "is_light": true,
+        "mode_id": "phi_0",
+        "passes": true,
+        "sector": "higgs",
+        "status": "light_higgs_projection"
+      },
+      {
+        "conditional": false,
+        "coupling_strength": 0.5,
+        "coupling_type": "heavy_orthogonal",
+        "eigenvalue": 10692.3983816086,
+        "gap": 9720.362165098726,
+        "is_higgs_projection": false,
+        "is_light": false,
+        "mode_id": "phi_1",
+        "passes": true,
+        "sector": "orthogonal",
+        "status": "heavy_orthogonal"
+      },
+      {
+        "conditional": true,
+        "coupling_strength": 0.3333333333333333,
+        "coupling_type": "derivative_filtered",
+        "eigenvalue": 2430.0905412746815,
+        "gap": 9720.362165098726,
+        "is_higgs_projection": false,
+        "is_light": true,
+        "mode_id": "phi_2",
+        "passes": true,
+        "sector": "orthogonal",
+        "status": "conditional_derivative_filtered"
+      },
+      {
+        "conditional": true,
+        "coupling_strength": 0.25,
+        "coupling_type": "curvature_filtered",
+        "eigenvalue": 1944.0724330197452,
+        "gap": 9720.362165098726,
+        "is_higgs_projection": false,
+        "is_light": true,
+        "mode_id": "phi_3",
+        "passes": true,
+        "sector": "orthogonal",
+        "status": "conditional_curvature_filtered"
+      },
+      {
+        "conditional": true,
+        "coupling_strength": 0.2,
+        "coupling_type": "screened",
+        "eigenvalue": 1620.0603608497877,
+        "gap": 9720.362165098726,
+        "is_higgs_projection": false,
+        "is_light": true,
+        "mode_id": "phi_4",
+        "passes": true,
+        "sector": "orthogonal",
+        "status": "conditional_screened"
+      },
+      {
+        "conditional": false,
+        "coupling_strength": 0.16666666666666666,
+        "coupling_type": "heavy_orthogonal",
+        "eigenvalue": 14580.54324764809,
+        "gap": 9720.362165098726,
+        "is_higgs_projection": false,
+        "is_light": false,
+        "mode_id": "phi_5",
+        "passes": true,
+        "sector": "orthogonal",
+        "status": "heavy_orthogonal"
+      }
+    ],
+    "conditional_modes": [
+      {
+        "conditional": true,
+        "coupling_strength": 0.3333333333333333,
+        "coupling_type": "derivative_filtered",
+        "eigenvalue": 2430.0905412746815,
+        "gap": 9720.362165098726,
+        "is_higgs_projection": false,
+        "is_light": true,
+        "mode_id": "phi_2",
+        "passes": true,
+        "sector": "orthogonal",
+        "status": "conditional_derivative_filtered"
+      },
+      {
+        "conditional": true,
+        "coupling_strength": 0.25,
+        "coupling_type": "curvature_filtered",
+        "eigenvalue": 1944.0724330197452,
+        "gap": 9720.362165098726,
+        "is_higgs_projection": false,
+        "is_light": true,
+        "mode_id": "phi_3",
+        "passes": true,
+        "sector": "orthogonal",
+        "status": "conditional_curvature_filtered"
+      },
+      {
+        "conditional": true,
+        "coupling_strength": 0.2,
+        "coupling_type": "screened",
+        "eigenvalue": 1620.0603608497877,
+        "gap": 9720.362165098726,
+        "is_higgs_projection": false,
+        "is_light": true,
+        "mode_id": "phi_4",
+        "passes": true,
+        "sector": "orthogonal",
+        "status": "conditional_screened"
+      }
+    ],
+    "dangerous_light_modes": [],
+    "exactly_one_light_higgs_projection": true,
+    "gap": 9720.362165098726,
+    "light_higgs_projection_count": 1,
+    "limitations": "Full action-level scalar/topographic decoupling remains OPEN; filtered and screened modes are conditional.",
+    "mode_count": 6,
+    "passes": true,
+    "status": "SCAFFOLD_AUDIT",
+    "theorem_complete": false
+  },
+  "forbidden_or_open_current_modes": [],
+  "gap": 9720.362165098726,
+  "limitations": [
+    "Full scalar/topographic decoupling from the action remains open.",
+    "Conditional filtered/screened modes are scaffold-audited, not fully proven safe.",
+    "No frozen BHSM predictions are changed."
+  ],
+  "scalar_inventory": {
+    "category_definitions": [
+      {
+        "allowed": true,
+        "category": "SM_HIGGS_PROJECTION",
+        "conditional": false,
+        "eigenvalue": null,
+        "light": true,
+        "mode_id": "category_higgs",
+        "notes": [
+          "Exactly one light Higgs projection is allowed."
+        ],
+        "on_shell_particle": true,
+        "status": "ALLOWED_UNIQUE_LIGHT_HIGGS"
+      },
+      {
+        "allowed": true,
+        "category": "HEAVY_LIFTED_SCALAR",
+        "conditional": false,
+        "eigenvalue": null,
+        "light": false,
+        "mode_id": "category_heavy",
+        "notes": [
+          "Orthogonal scalars above the Hopf gap are allowed."
+        ],
+        "on_shell_particle": false,
+        "status": "ALLOWED_HEAVY"
+      },
+      {
+        "allowed": true,
+        "category": "DERIVATIVE_SCREENED_TOPOGRAPHIC_MODE",
+        "conditional": true,
+        "eigenvalue": null,
+        "light": true,
+        "mode_id": "category_derivative",
+        "notes": [
+          "Derivative-filtered modes are conditional, not fully proven safe."
+        ],
+        "on_shell_particle": false,
+        "status": "CONDITIONAL_SCREENED"
+      },
+      {
+        "allowed": true,
+        "category": "CURVATURE_FILTERED_MODE",
+        "conditional": true,
+        "eigenvalue": null,
+        "light": true,
+        "mode_id": "category_curvature",
+        "notes": [
+          "Curvature-filtered modes are conditional, not fully proven safe."
+        ],
+        "on_shell_particle": false,
+        "status": "CONDITIONAL_SCREENED"
+      },
+      {
+        "allowed": true,
+        "category": "SCREENED_TOPOGRAPHIC_MODE",
+        "conditional": true,
+        "eigenvalue": null,
+        "light": true,
+        "mode_id": "category_screened",
+        "notes": [
+          "Screened modes are not counted as new on-shell light particles in the scaffold."
+        ],
+        "on_shell_particle": false,
+        "status": "CONDITIONAL_SCREENED"
+      },
+      {
+        "allowed": false,
+        "category": "FORBIDDEN_EXTRA_LIGHT_SCALAR",
+        "conditional": false,
+        "eigenvalue": null,
+        "light": true,
+        "mode_id": "category_forbidden",
+        "notes": [
+          "An unscreened direct-coupled light scalar is forbidden."
+        ],
+        "on_shell_particle": true,
+        "status": "FALSIFIER_TEMPLATE"
+      },
+      {
+        "allowed": false,
+        "category": "OPEN_SCALAR_RISK",
+        "conditional": true,
+        "eigenvalue": null,
+        "light": true,
+        "mode_id": "category_open",
+        "notes": [
+          "Any unclassified light scalar remains an open risk."
+        ],
+        "on_shell_particle": null,
+        "status": "OPEN_RISK_TEMPLATE"
+      }
+    ],
+    "current_inventory": [
+      {
+        "allowed": true,
+        "category": "SM_HIGGS_PROJECTION",
+        "conditional": false,
+        "eigenvalue": 125.1,
+        "light": true,
+        "mode_id": "phi_0",
+        "notes": [
+          "Current proxy scalar inventory row.",
+          "Conditional rows require action-level screening proof."
+        ],
+        "on_shell_particle": true,
+        "status": "light_higgs_projection"
+      },
+      {
+        "allowed": true,
+        "category": "HEAVY_LIFTED_SCALAR",
+        "conditional": false,
+        "eigenvalue": 10692.3983816086,
+        "light": false,
+        "mode_id": "phi_1",
+        "notes": [
+          "Current proxy scalar inventory row.",
+          "Conditional rows require action-level screening proof."
+        ],
+        "on_shell_particle": false,
+        "status": "heavy_orthogonal"
+      },
+      {
+        "allowed": true,
+        "category": "DERIVATIVE_SCREENED_TOPOGRAPHIC_MODE",
+        "conditional": true,
+        "eigenvalue": 2430.0905412746815,
+        "light": true,
+        "mode_id": "phi_2",
+        "notes": [
+          "Current proxy scalar inventory row.",
+          "Conditional rows require action-level screening proof."
+        ],
+        "on_shell_particle": false,
+        "status": "conditional_derivative_filtered"
+      },
+      {
+        "allowed": true,
+        "category": "CURVATURE_FILTERED_MODE",
+        "conditional": true,
+        "eigenvalue": 1944.0724330197452,
+        "light": true,
+        "mode_id": "phi_3",
+        "notes": [
+          "Current proxy scalar inventory row.",
+          "Conditional rows require action-level screening proof."
+        ],
+        "on_shell_particle": false,
+        "status": "conditional_curvature_filtered"
+      },
+      {
+        "allowed": true,
+        "category": "SCREENED_TOPOGRAPHIC_MODE",
+        "conditional": true,
+        "eigenvalue": 1620.0603608497877,
+        "light": true,
+        "mode_id": "phi_4",
+        "notes": [
+          "Current proxy scalar inventory row.",
+          "Conditional rows require action-level screening proof."
+        ],
+        "on_shell_particle": false,
+        "status": "conditional_screened"
+      },
+      {
+        "allowed": true,
+        "category": "HEAVY_LIFTED_SCALAR",
+        "conditional": false,
+        "eigenvalue": 14580.54324764809,
+        "light": false,
+        "mode_id": "phi_5",
+        "notes": [
+          "Current proxy scalar inventory row.",
+          "Conditional rows require action-level screening proof."
+        ],
+        "on_shell_particle": false,
+        "status": "heavy_orthogonal"
+      }
+    ],
+    "limitations": [
+      "The inventory is finite-basis/proxy scaffold evidence.",
+      "Forbidden and open-risk rows are definitions/falsifier templates unless present in current_inventory."
+    ]
+  },
+  "screening": {
+    "conditions": [
+      {
+        "id": "S1",
+        "limitations": [
+          "Requires full scalar spectrum to prove globally."
+        ],
+        "name": "mass_gap_condition",
+        "statement": "Orthogonal scalar/topographic modes above 4*pi^2*v are heavy lifted states.",
+        "status": "SUFFICIENT_CONDITION_SCAFFOLD",
+        "suppresses_direct_on_shell_scalar": true
+      },
+      {
+        "id": "S2",
+        "limitations": [
+          "Requires action-level derivative coupling derivation."
+        ],
+        "name": "derivative_filter",
+        "statement": "Derivative-coupled light modes are conditionally screened at low momentum.",
+        "status": "CONDITIONAL_SCREENING_SCAFFOLD",
+        "suppresses_direct_on_shell_scalar": true
+      },
+      {
+        "id": "S3",
+        "limitations": [
+          "Requires curvature/profile operator proof."
+        ],
+        "name": "curvature_filter",
+        "statement": "Curvature-filtered modes couple only through filtered topographic channels.",
+        "status": "CONDITIONAL_SCREENING_SCAFFOLD",
+        "suppresses_direct_on_shell_scalar": true
+      },
+      {
+        "id": "S4",
+        "limitations": [
+          "Screening is scaffold-audited, not fully action-proven."
+        ],
+        "name": "screened_topographic_channel",
+        "statement": "Screened topographic modes are not new on-shell light particles in the scaffold ontology.",
+        "status": "CONDITIONAL_SCREENING_SCAFFOLD",
+        "suppresses_direct_on_shell_scalar": true
+      }
+    ],
+    "example_curvature_filter": 0.000999000999000999,
+    "example_derivative_suppression": 1e-06,
+    "limitations": [
+      "Screening conditions are sufficient scaffolds.",
+      "A direct unscreened light scalar remains forbidden/open risk."
+    ],
+    "theorem_complete": false
+  },
+  "status": "SCALAR_DECOUPLING_SCAFFOLD_PASSES",
+  "theorem_complete": false,
+  "title": "BHSM v1.5 Scalar/Topographic Decoupling Scaffold"
+}

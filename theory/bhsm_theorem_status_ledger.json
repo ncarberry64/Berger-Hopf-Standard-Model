@@ -1,0 +1,115 @@
+{
+  "empirical_residual_dependency_detected": false,
+  "hidden_circularity_detected": false,
+  "open_obligations": [
+    "Prove the full twisted Dirac / H_T spectrum and infinite-basis complement bound.",
+    "Prove Index(D_twist)=3 and complete mirror-mode exclusion from the full operator.",
+    "Prove scalar/topographic decoupling from the full internal action.",
+    "Complete precision QCD/RG threshold matching for quark mass comparisons.",
+    "Derive full flavor matrices from the complete action rather than internal-rule screens."
+  ],
+  "rows": [
+    {
+      "allowed_claim": "Frozen no-retuning model outputs are reproducible.",
+      "blockers": [],
+      "claim": "BHSM v1.0/v1.1 frozen outputs",
+      "completed": true,
+      "forbidden_upgrade": "Do not claim all entries are final confirmed predictions.",
+      "id": "frozen_v1_predictions",
+      "status": "FROZEN_PREDICTION"
+    },
+    {
+      "allowed_claim": "Derived from symbolic sector boundary functional and parent-action scaffold.",
+      "blockers": [
+        "derive full boundary functional from complete action"
+      ],
+      "claim": "charged-sector boundary operators",
+      "completed": false,
+      "forbidden_upgrade": "Do not claim complete action derivation.",
+      "id": "omega_f",
+      "status": "BOUNDARY_FUNCTIONAL_DERIVED"
+    },
+    {
+      "allowed_claim": "Reduced from symbolic parent scaffold under current axioms.",
+      "blockers": [
+        "prove global uniqueness of complete Berger-Hopf internal action"
+      ],
+      "claim": "parent internal action scaffold",
+      "completed": false,
+      "forbidden_upgrade": "Do not claim full internal action proven.",
+      "id": "parent_action",
+      "status": "PARENT_ACTION_REDUCED"
+    },
+    {
+      "allowed_claim": "Coordinate-free scaffold and finite basis realization are implemented.",
+      "blockers": [
+        "prove full topological index theorem",
+        "prove infinite-basis split"
+      ],
+      "claim": "formal kernel K_formal",
+      "completed": false,
+      "forbidden_upgrade": "Do not claim full index theorem.",
+      "id": "formal_kernel",
+      "status": "BASIS_REALIZED"
+    },
+    {
+      "allowed_claim": "Corrected formal-kernel finite/semi-analytic scaffold clears current thresholds.",
+      "blockers": [
+        "full H_T spectrum",
+        "profile positivity",
+        "infinite-basis complement bound"
+      ],
+      "claim": "H_T no-extra-light gap",
+      "completed": false,
+      "forbidden_upgrade": "Do not claim no-extra-light-state theorem proven.",
+      "id": "ht_gap",
+      "status": "SEMI_ANALYTIC_SCAFFOLD"
+    },
+    {
+      "allowed_claim": "Current proxy inventory has no forbidden/open scalar modes.",
+      "blockers": [
+        "full scalar action proof"
+      ],
+      "claim": "scalar/topographic decoupling",
+      "completed": false,
+      "forbidden_upgrade": "Do not claim scalar decoupling fully proven.",
+      "id": "scalar_decoupling",
+      "status": "FINITE_BASIS_SCAFFOLD"
+    },
+    {
+      "allowed_claim": "Approximate/reference-set scaffolds are implemented.",
+      "blockers": [
+        "precision threshold matching",
+        "uncertainty propagation"
+      ],
+      "claim": "QCD/RG matching",
+      "completed": false,
+      "forbidden_upgrade": "Do not claim precision QCD matching complete.",
+      "id": "qcd_rg",
+      "status": "OPEN"
+    },
+    {
+      "allowed_claim": "Dressed branch remains candidate and changes only c/t.",
+      "blockers": [
+        "canonical adoption decision"
+      ],
+      "claim": "dressed candidate branch",
+      "completed": false,
+      "forbidden_upgrade": "Do not claim dressed branch final.",
+      "id": "virtual_dressing",
+      "status": "ADOPTION_CANDIDATE"
+    }
+  ],
+  "status_counts": {
+    "ADOPTION_CANDIDATE": 1,
+    "BASIS_REALIZED": 1,
+    "BOUNDARY_FUNCTIONAL_DERIVED": 1,
+    "FINITE_BASIS_SCAFFOLD": 1,
+    "FROZEN_PREDICTION": 1,
+    "OPEN": 1,
+    "PARENT_ACTION_REDUCED": 1,
+    "SEMI_ANALYTIC_SCAFFOLD": 1
+  },
+  "theorem_complete": false,
+  "title": "BHSM Theorem Status Ledger"
+}

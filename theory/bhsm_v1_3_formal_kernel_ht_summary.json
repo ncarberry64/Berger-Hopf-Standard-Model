@@ -1,0 +1,45 @@
+{
+  "title": "BHSM v1.3 Formal-Kernel H_T Summary",
+  "status": "FORMAL_KERNEL_HT_SCAFFOLD_PACKAGED",
+  "theorem_complete": false,
+  "corrected_reference": "DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL",
+  "superseded_reference": "DIRAC_PROXY_LEVEL_2_COORDINATE_FIRST",
+  "coordinate_first_superseded_where_dependent_on": [0, 1, 2],
+  "formal_kernel": {
+    "subspace": "K_formal = span{|ell,0,0,q=0,chi=-1>, |u,0,0,q=0,chi=-1>, |d,0,0,q=0,chi=-1>}",
+    "complement": "H_perp = K_formal^perp",
+    "basis_formula": "M(k_max)=sum_{k=0}^{k_max}(floor(k/2)+1); ell=0; u=2M; d=4M",
+    "k_max_4_coordinates": [0, 18, 36]
+  },
+  "corrected_bounds": {
+    "required_dirac_lower_bound": 0.8038064161349437,
+    "structured_relative_lower_bound": 6.729508865520464,
+    "exact_finite_lower_bound": 6.8171156827281205,
+    "heat_lift_lower_bound": 19591.98933512353
+  },
+  "gates": [
+    {"gate": "v1.3A", "result": "term inventory", "status": "SCAFFOLD"},
+    {"gate": "v1.3B", "result": "sector-coupling norm bound", "status": "NORM_BOUND_SUFFICIENT_BASELINE"},
+    {"gate": "v1.3C", "result": "structured sector-coupling bound", "status": "RELATIVE_BOUND_CANDIDATE"},
+    {"gate": "v1.3D", "result": "uniform relative-bound scan", "status": "UNIFORM_BOUND_CANDIDATE"},
+    {"gate": "v1.3E", "result": "Hilbert-space domain scaffold", "status": "DOMAIN_SCAFFOLD"},
+    {"gate": "v1.3F", "result": "state ontology", "status": "STATE_ONTOLOGY_SCAFFOLD"},
+    {"gate": "v1.3G", "result": "zero-mode/complement split", "status": "INDEX_SCAFFOLD"},
+    {"gate": "v1.3H", "result": "diagonal/mirror audit", "status": "MIRROR_AUDIT_SCAFFOLD"},
+    {"gate": "v1.3I", "result": "mirror exclusion scaffold", "status": "MIRROR_EXCLUSION_SCAFFOLD"},
+    {"gate": "v1.3J", "result": "alignment audit", "status": "OPEN_ALIGNMENT_GAP_FOUND"},
+    {"gate": "v1.3K", "result": "formal projector audit", "status": "COORDINATE_ARTIFACT_FOUND"},
+    {"gate": "v1.3L", "result": "formal-kernel operator", "status": "FORMAL_KERNEL_GAP_RESTORED"},
+    {"gate": "v1.3M", "result": "formal-kernel regression/convergence", "status": "FORMAL_KERNEL_CONVERGENCE_SUPPORTED"},
+    {"gate": "v1.3N", "result": "action-origin and semi-analytic bound", "status": "SEMI_ANALYTIC_BOUND_SCAFFOLD_PASSES"},
+    {"gate": "v1.3O", "result": "symbolic formal kernel", "status": "COORDINATE_FREE_SCAFFOLD"}
+  ],
+  "limitations": [
+    "Full twisted Dirac / H_T theorem remains open.",
+    "Topological index theorem remains open.",
+    "Infinite-basis complement split remains open.",
+    "Profile positivity remains a sufficient condition.",
+    "No frozen predictions are changed."
+  ],
+  "correct_claim": "BHSM v1.3 packages a corrected formal-kernel Level 2 H_T scaffold; it does not prove the full no-extra-light-state theorem."
+}

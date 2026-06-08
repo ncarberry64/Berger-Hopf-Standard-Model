@@ -1,0 +1,54 @@
+{
+  "title": "BHSM Completion Campaign Report",
+  "branch": "bhsm-completion-campaign",
+  "commit": "PENDING_FINAL_COMMIT",
+  "theorem_complete": false,
+  "gates": [
+    {
+      "id": "gate_1",
+      "title": "v1.3 corrected formal-kernel H_T package",
+      "status": "COMPLETED",
+      "stop_condition_triggered": false
+    },
+    {
+      "id": "gate_2",
+      "title": "v1.4 QCD/RG matching scaffold",
+      "status": "COMPLETED",
+      "stop_condition_triggered": false
+    },
+    {
+      "id": "gate_3",
+      "title": "v1.5 scalar/topographic decoupling scaffold",
+      "status": "COMPLETED",
+      "stop_condition_triggered": false
+    },
+    {
+      "id": "gate_4",
+      "title": "v2.0 dependency graph and theorem ledger",
+      "status": "COMPLETED",
+      "stop_condition_triggered": false
+    },
+    {
+      "id": "gate_5",
+      "title": "final campaign QA",
+      "status": "PENDING_FINAL_QA",
+      "stop_condition_triggered": false
+    }
+  ],
+  "frozen_outputs_changed": false,
+  "current_theorem_status": "OPEN_SCAFFOLD_PACKAGE",
+  "open_proof_obligations": [
+    "Prove the full twisted Dirac / H_T spectrum and infinite-basis complement bound.",
+    "Prove Index(D_twist)=3 and complete mirror-mode exclusion from the full operator.",
+    "Prove scalar/topographic decoupling from the full internal action.",
+    "Complete precision QCD/RG threshold matching for quark mass comparisons.",
+    "Derive full flavor matrices from the complete action rather than internal-rule screens."
+  ],
+  "readiness": {
+    "v1_3_development_tag": "READY_AFTER_FINAL_QA",
+    "v1_4_continuation": "READY",
+    "v2_0_integrated_paper": "ROADMAP_READY_NOT_PROOF_PAPER"
+  },
+  "recommended_next_branch": "bhsm-v1.4-precision-qcd-rg",
+  "correct_global_claim": "This campaign strengthens BHSM as a no-retuning geometric reinterpretation framework by packaging the corrected formal-kernel H_T scaffold, improving scheme-aware QCD/RG comparison, strengthening scalar/topographic decoupling scaffolds, and creating an integrated theorem/dependency ledger. It does not claim a completed first-principles proof unless every required theorem dependency is closed."
+}
