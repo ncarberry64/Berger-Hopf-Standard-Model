@@ -30,6 +30,7 @@ claim a completed first-principles proof.
 - Old coordinate-first block `(0,1,2)` is superseded where previous conclusions depended on it.
 - v1.4 QCD/RG matching is scaffolded with `MIXED_DEFAULT`, `COMMON_SCALE_APPROX`, `THRESHOLD_AWARE_APPROX`, and `PRECISION_QCD_PLACEHOLDER`.
 - v1.5 scalar/topographic action scaffold distinguishes the SM Higgs projection from heavy, screened, virtual, and forbidden scalar/topographic modes; the current inventory has one light Higgs projection and no current forbidden/open scalar risks.
+- v1.6 scalar/topographic screening scaffold constrains derivative-screening and curvature-screening channels and reports zero current `OPEN_SCALAR_RISK` rows.
 - v2.0 dependency graph reports no hidden circularity and no empirical residual dependency.
 - Final test result on the v1.5 scalar-action branch: `497 passed`.
 - Safety scan: no secrets, private correspondence, unrelated large binaries, or local/private data found.
@@ -47,7 +48,7 @@ claim a completed first-principles proof.
 
 1. Prove the full twisted Dirac / `(H_T)` spectrum and infinite-basis complement bound.
 2. Prove `Index(D_twist)=3` and complete mirror-mode exclusion from the full operator.
-3. Prove scalar/topographic decoupling from the full internal action beyond the v1.5 action scaffold.
+3. Prove scalar/topographic decoupling from the full internal action beyond the v1.5 action scaffold and v1.6 screening scaffold.
 4. Complete precision QCD/RG threshold matching for quark mass comparisons.
 5. Derive full flavor matrices from the complete action rather than internal-rule screens.
 
@@ -98,11 +99,28 @@ decoupling from the complete action.
 
 Test result on the v1.5 branch: `497 passed`.
 
+## v1.6 Scalar/Topographic Screening Branch Update
+
+Branch `bhsm-v1.6-scalar-screening-proof` extends the v1.5 scalar action
+scaffold with:
+
+- derivative-screening conditions;
+- curvature-screening conditions;
+- matter-coupling audit rows for every v1.5 scalar/topographic mode;
+- fifth-force exclusion rows;
+- an explicit direct light scalar falsifier.
+
+The v1.6 scaffold reports `SCREENING_SCAFFOLD_PASSES`, zero current
+`OPEN_SCALAR_RISK` rows, and `theorem_complete=False`. It does not change
+frozen BHSM predictions and does not claim a full scalar-screening theorem.
+
+Test result on the v1.6 branch: `507 passed`.
+
 ## Limitations
 
 - No frozen predictions were retuned.
 - No theorem is marked complete.
 - Precision QCD matching remains placeholder-level.
-- Scalar/topographic decoupling remains scaffold-level; v1.5 is action-level
-  scaffold evidence, not a complete action proof.
+- Scalar/topographic decoupling remains scaffold-level; v1.5/v1.6 are
+  action/screening scaffold evidence, not a complete action proof.
 - The full `(H_T)` theorem remains open.

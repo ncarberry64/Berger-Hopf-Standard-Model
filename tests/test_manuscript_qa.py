@@ -257,9 +257,13 @@ def test_typesetting_pass_does_not_modify_source_model_files():
         "src/bhsm_dependency_graph.py",
         "src/bhsm_theorem_ledger.py",
         "src/fifth_force_bounds.py",
+        "src/fifth_force_exclusion.py",
         "src/scalar_action.py",
         "src/scalar_decoupling_proof.py",
+        "src/scalar_screening_action.py",
         "src/topographic_action.py",
+        "src/derivative_screening.py",
+        "src/curvature_screening.py",
     }
 
     assert not [

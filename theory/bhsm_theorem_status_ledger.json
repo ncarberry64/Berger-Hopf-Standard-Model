@@ -4,7 +4,7 @@
   "open_obligations": [
     "Prove the full twisted Dirac / H_T spectrum and infinite-basis complement bound.",
     "Prove Index(D_twist)=3 and complete mirror-mode exclusion from the full operator.",
-    "Prove scalar/topographic decoupling from the full internal action beyond the v1.5 action scaffold.",
+    "Prove scalar/topographic decoupling from the full internal action beyond the v1.5 action scaffold and v1.6 screening scaffold.",
     "Complete precision QCD/RG threshold matching for quark mass comparisons.",
     "Derive full flavor matrices from the complete action rather than internal-rule screens."
   ],
@@ -66,7 +66,7 @@
       "status": "SEMI_ANALYTIC_SCAFFOLD"
     },
     {
-      "allowed_claim": "v1.5 action-level scaffold has exactly one Higgs projection and no current forbidden/open scalar risks.",
+      "allowed_claim": "v1.6 screening scaffold conditionally excludes current fifth-force channels with exactly one Higgs projection and no current forbidden/open scalar risks.",
       "blockers": [
         "full scalar/topographic action proof",
         "global absence of unscreened light scalar risks"
@@ -124,6 +124,13 @@
     "open_scalar_risks": 0,
     "status": "SCALAR_ACTION_SCAFFOLD_PASSES",
     "summary": "Action-level scalar/topographic scaffold added; full scalar decoupling from the complete action remains open.",
+    "theorem_complete": false
+  },
+  "v1_6_scalar_screening_update": {
+    "branch": "bhsm-v1.6-scalar-screening-proof",
+    "open_scalar_risks": 0,
+    "status": "SCREENING_SCAFFOLD_PASSES",
+    "summary": "Derivative-screening and curvature-screening sufficient-condition scaffolds added; full screening theorem remains open.",
     "theorem_complete": false
   }
 }

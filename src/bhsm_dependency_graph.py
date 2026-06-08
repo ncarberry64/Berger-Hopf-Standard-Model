@@ -66,7 +66,7 @@ def bhsm_dependency_nodes() -> tuple[DependencyNode, ...]:
         DependencyNode("parent_action_scaffold", "parent internal-action scaffold", PARENT_ACTION_REDUCED, (), ("v1.2B reduces symbolic parent action to sector boundary functional.",), ("Global uniqueness of complete Berger-Hopf action remains open.",)),
         DependencyNode("formal_kernel", "formal sector-labeled kernel", BASIS_REALIZED, ("omega_f", "state_ontology"), ("v1.3O coordinate-free K_formal realized as (0,18,36) at k_max=4.",), ("Full topological index theorem remains open.",)),
         DependencyNode("ht_gap", "H_T no-extra-light gap", SEMI_ANALYTIC_SCAFFOLD, ("formal_kernel", "scalar_decoupling"), ("Corrected formal-kernel lower-bound scaffold clears finite Level 2 threshold.",), ("Full twisted Dirac / H_T theorem remains open.",)),
-        DependencyNode("scalar_decoupling", "scalar/topographic decoupling", FINITE_BASIS_SCAFFOLD, ("state_ontology",), ("v1.5 action-level scaffold distinguishes the Higgs projection from heavy, screened, virtual, and forbidden scalar/topographic modes.", "H_T-linked complement lifting uses the corrected DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL scaffold as evidence, not a closed theorem dependency.", "Current inventory has one Higgs projection and no current forbidden/open scalar risks."), ("Full scalar/topographic decoupling from the complete action remains open.",)),
+        DependencyNode("scalar_decoupling", "scalar/topographic decoupling", FINITE_BASIS_SCAFFOLD, ("state_ontology",), ("v1.5 action-level scaffold distinguishes the Higgs projection from heavy, screened, virtual, and forbidden scalar/topographic modes.", "v1.6 derives/constrains derivative-screening and curvature-screening channels as sufficient scaffold conditions.", "H_T-linked complement lifting uses the corrected DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL scaffold as evidence, not a closed theorem dependency.", "Current inventory has one Higgs projection and no current forbidden/open scalar risks."), ("Full scalar/topographic decoupling from the complete action remains open.",)),
         DependencyNode("virtual_dressing", "Z_virt^{u,2}=1/2 dressed branch", ADOPTION_CANDIDATE, ("state_ontology",), ("Dressed candidate changes only c/t.",), ("Candidate branch, not final canonical adoption.",)),
         DependencyNode("qcd_rg_matching", "QCD/RG matching", OPEN, (), ("v1.4 adds approximate and placeholder reference-set architecture.",), ("Precision QCD threshold matching remains open.",)),
         DependencyNode("ckm_cp", "CKM/CP internal-rule screen", FROZEN_PREDICTION, ("mode_ledger", "alpha_geometry", "overlap_width"), ("Frozen v1 prediction ledger includes CKM/CP outputs.",), ("Full action derivation of flavor matrices remains open.",)),
@@ -122,7 +122,7 @@ def smallest_open_obligations() -> tuple[str, ...]:
     return (
         "Prove the full twisted Dirac / H_T spectrum and infinite-basis complement bound.",
         "Prove Index(D_twist)=3 and complete mirror-mode exclusion from the full operator.",
-        "Prove scalar/topographic decoupling from the full internal action beyond the v1.5 action scaffold.",
+        "Prove scalar/topographic decoupling from the full internal action beyond the v1.5 action scaffold and v1.6 screening scaffold.",
         "Complete precision QCD/RG threshold matching for quark mass comparisons.",
         "Derive full flavor matrices from the complete action rather than internal-rule screens.",
     )

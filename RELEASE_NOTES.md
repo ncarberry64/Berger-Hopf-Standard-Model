@@ -135,6 +135,23 @@ unscreened light scalar channel as an explicit falsifier. It does not change
 frozen BHSM predictions and does not claim full scalar decoupling from the
 complete action.
 
+## Unreleased / Development: v1.6 Scalar/Topographic Screening Proof
+
+Branch: `bhsm-v1.6-scalar-screening-proof`
+
+The v1.6 focused branch extends the v1.5 scalar action scaffold with
+derivative-screening, curvature-screening, matter-coupling, and fifth-force
+exclusion scaffolds. It audits every v1.5 scalar/topographic channel and
+reports zero current `OPEN_SCALAR_RISK` rows.
+
+This branch constrains derivative couplings of the form
+`L_int ~ (1/M_*) partial_mu phi J^mu_topo` and curvature/topographic couplings
+of the form `L_int ~ phi R_topo` as sufficient screening conditions. It keeps
+direct unscreened light scalar coupling as an explicit falsifier.
+
+It does not change frozen BHSM predictions and does not claim a full
+scalar-screening theorem from the complete action.
+
 Frozen baseline:
 
 - Tag: `bhsm-v1.0-freeze`

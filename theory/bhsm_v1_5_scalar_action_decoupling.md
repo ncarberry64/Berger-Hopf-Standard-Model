@@ -59,3 +59,12 @@ The forbidden unscreened light scalar channel is retained as a falsifier rule. I
 - Conditional derivative/curvature screening remains to be proven from the complete action.
 - H_T-dependent scalar complement lifting uses DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL scaffold status.
 - No frozen BHSM predictions are changed.
+
+## v1.6 Screening Follow-Up
+
+Branch `bhsm-v1.6-scalar-screening-proof` adds derivative-screening,
+curvature-screening, matter-coupling, and fifth-force exclusion scaffolds for
+the v1.5 scalar/topographic channels. It reports zero current
+`OPEN_SCALAR_RISK` rows and keeps the direct unscreened light scalar channel
+as a forbidden falsifier. It does not claim a full scalar-screening theorem
+from the complete action.
