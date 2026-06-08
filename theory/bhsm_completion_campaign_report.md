@@ -2,7 +2,7 @@
 
 Branch: `bhsm-completion-campaign`
 
-Commit: `PENDING_FINAL_COMMIT`
+Implementation commit: `dc25122`
 
 Theorem complete: `False`
 
@@ -20,7 +20,7 @@ claim a completed first-principles proof.
 | Gate 2: v1.4 QCD/RG matching scaffold | `COMPLETED` | no final scheme-consistent precision-QCD failure because precision set remains placeholder |
 | Gate 3: v1.5 scalar/topographic decoupling scaffold | `COMPLETED` | zero forbidden/open current scalar modes |
 | Gate 4: v2.0 dependency graph and theorem ledger | `COMPLETED` | no hidden circularity or empirical residual dependency |
-| Gate 5: final campaign QA | `PENDING_FINAL_QA` | final tests/safety scan/frozen check pending |
+| Gate 5: final campaign QA | `COMPLETED` | final tests, safety scan, frozen-output check passed |
 
 ## Core Results
 
@@ -31,6 +31,8 @@ claim a completed first-principles proof.
 - v1.4 QCD/RG matching is scaffolded with `MIXED_DEFAULT`, `COMMON_SCALE_APPROX`, `THRESHOLD_AWARE_APPROX`, and `PRECISION_QCD_PLACEHOLDER`.
 - v1.5 scalar/topographic audit has one light Higgs projection and no current forbidden/open scalar modes.
 - v2.0 dependency graph reports no hidden circularity and no empirical residual dependency.
+- Final test result: `478 passed`.
+- Safety scan: no secrets, private correspondence, unrelated large binaries, or local/private data found.
 
 ## Frozen-Output Status
 
