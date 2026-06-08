@@ -54,3 +54,10 @@ Empirical residual dependency detected: `False`
 
 - This graph is a theorem/status ledger, not a completed derivation.
 - Frozen predictions remain frozen and are not selected by graph residuals.
+
+## v1.4 Precision QCD/RG Update
+
+The `qcd_rg_matching` node remains `OPEN`. Branch
+`bhsm-v1.4-precision-qcd-rg` adds precision-oriented reference-set metadata,
+threshold-aware scaffold rows, and uncertainty propagation scaffolds. It does
+not close the precision QCD/RG proof obligation.

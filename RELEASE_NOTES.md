@@ -100,6 +100,17 @@ basis realizations, semi-analytic scaffolds, finite-basis scaffolds, adoption
 candidates, open items, and forbidden states. It reports no hidden circularity
 or dependency on empirical residual machinery.
 
+## Unreleased / Development: v1.4 Precision QCD/RG Matching
+
+Branch: `bhsm-v1.4-precision-qcd-rg`
+
+The v1.4 focused branch upgrades the quark-mass comparison architecture with
+precision-oriented metadata, threshold-aware running scaffolds, uncertainty
+propagation scaffolds, and placeholder shells for future PDG-style and
+precision-QCD reference inputs. It does not change frozen BHSM predictions,
+does not tune `a`, `S`, modes, tolerances, or `Z_virt`, and does not claim
+precision quark matching is solved.
+
 Frozen baseline:
 
 - Tag: `bhsm-v1.0-freeze`

@@ -59,6 +59,21 @@ claim a completed first-principles proof.
 
 Recommended next branch: `bhsm-v1.4-precision-qcd-rg`.
 
+## v1.4 Precision QCD/RG Branch Update
+
+Branch `bhsm-v1.4-precision-qcd-rg` extends the campaign's QCD/RG scaffold
+with:
+
+- `PDG_STYLE_REFERENCE_PLACEHOLDER`;
+- `PRECISION_QCD_PLACEHOLDER`;
+- explicit one-loop and threshold-aware running result rows;
+- uncertainty propagation scaffold;
+- fixed tolerance-band classifications;
+- separate bare and dressed-candidate quark-ratio rows.
+
+This update does not change frozen BHSM predictions and does not claim
+precision quark matching is solved.
+
 ## Limitations
 
 - No frozen predictions were retuned.

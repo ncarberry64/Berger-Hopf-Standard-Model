@@ -24,3 +24,11 @@ Empirical residual dependency detected: `False`
 3. Prove scalar/topographic decoupling from the full internal action.
 4. Complete precision QCD/RG threshold matching for quark mass comparisons.
 5. Derive full flavor matrices from the complete action rather than internal-rule screens.
+
+## v1.4 Precision QCD/RG Update
+
+The `qcd_rg` row remains `OPEN`. Branch `bhsm-v1.4-precision-qcd-rg` adds a
+precision-oriented comparison architecture with placeholder PDG-style and
+precision-QCD reference sets, but no final precision-QCD reference values are
+supplied. The forbidden upgrade remains: do not claim precision QCD matching
+complete.
