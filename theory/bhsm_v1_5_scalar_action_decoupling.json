@@ -1,0 +1,424 @@
+{
+  "report": {
+    "corrected_ht_dependency": {
+      "exact_finite_lower_bound": 6.8171156827281205,
+      "formal_kernel_coordinates_kmax4": [
+        0,
+        18,
+        36
+      ],
+      "limitations": [
+        "Scalar complement lifting may depend on H_T scaffold status.",
+        "The old coordinate-first H_T conclusions are not used.",
+        "The full H_T theorem remains open."
+      ],
+      "model_level": "DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL",
+      "old_coordinate_first_superseded": true,
+      "structured_relative_lower_bound": 6.729508865520464,
+      "theorem_complete": false
+    },
+    "dangerous_proxy_modes": [],
+    "decoupling_conditions": [
+      {
+        "evidence": [
+          "Current proxy inventory has one light Higgs projection."
+        ],
+        "id": "SD1",
+        "limitations": [
+          "Full scalar action proof remains open."
+        ],
+        "statement": "Exactly one light Higgs projection is allowed.",
+        "status": "FINITE_BASIS_VERIFIED"
+      },
+      {
+        "evidence": [
+          "Current proxy inventory has no unscreened direct-coupled light scalar."
+        ],
+        "id": "SD2",
+        "limitations": [
+          "Filtered/screened modes are conditional, not fully proven safe."
+        ],
+        "statement": "Every orthogonal scalar is heavy, derivative-filtered, curvature-filtered, or screened.",
+        "status": "SCAFFOLD_VERIFIED"
+      },
+      {
+        "evidence": [
+          "v1.3F state ontology classifies screened topographic states separately from observable particles."
+        ],
+        "id": "SD3",
+        "limitations": [
+          "Ontology does not replace an action-level decoupling proof."
+        ],
+        "statement": "A screened scalar/topographic mode is not a new on-shell light particle.",
+        "status": "STATE_ONTOLOGY_LINKED"
+      },
+      {
+        "evidence": [
+          "Forbidden/open scalar categories are explicit in the scalar state ledger."
+        ],
+        "id": "SD4",
+        "limitations": [
+          "A future full spectrum could still reveal an open risk."
+        ],
+        "statement": "Any unscreened direct-coupled light scalar is a falsifier or open scalar risk.",
+        "status": "FALSIFIER_RULE"
+      }
+    ],
+    "fifth_force_bounds": [
+      {
+        "compton_range_m": 1.5773539600319745e-18,
+        "couples_to_ordinary_matter": true,
+        "curvature_screened": false,
+        "derivative_screened": false,
+        "effective_mass_gev": 125.1,
+        "limitations": [
+          "Mass/range row is a scaffold estimate.",
+          "Screening proof requires the full scalar/topographic action."
+        ],
+        "mode_id": "phi_0",
+        "screened": false,
+        "status": "SM_HIGGS_ALLOWED",
+        "violates_low_energy_ontology": false
+      },
+      {
+        "compton_range_m": 1.8454884802965363e-20,
+        "couples_to_ordinary_matter": false,
+        "curvature_screened": false,
+        "derivative_screened": false,
+        "effective_mass_gev": 10692.3983816086,
+        "limitations": [
+          "Mass/range row is a scaffold estimate.",
+          "Screening proof requires the full scalar/topographic action."
+        ],
+        "mode_id": "phi_1",
+        "screened": false,
+        "status": "HEAVY_RANGE_SUPPRESSED",
+        "violates_low_energy_ontology": false
+      },
+      {
+        "compton_range_m": 8.120149313304761e-20,
+        "couples_to_ordinary_matter": false,
+        "curvature_screened": false,
+        "derivative_screened": true,
+        "effective_mass_gev": 2430.0905412746815,
+        "limitations": [
+          "Mass/range row is a scaffold estimate.",
+          "Screening proof requires the full scalar/topographic action."
+        ],
+        "mode_id": "phi_2",
+        "screened": false,
+        "status": "DERIVATIVE_SCREENED_CONDITIONAL",
+        "violates_low_energy_ontology": false
+      },
+      {
+        "compton_range_m": 1.0150186641630952e-19,
+        "couples_to_ordinary_matter": false,
+        "curvature_screened": true,
+        "derivative_screened": false,
+        "effective_mass_gev": 1944.0724330197452,
+        "limitations": [
+          "Mass/range row is a scaffold estimate.",
+          "Screening proof requires the full scalar/topographic action."
+        ],
+        "mode_id": "phi_3",
+        "screened": false,
+        "status": "CURVATURE_SCREENED_CONDITIONAL",
+        "violates_low_energy_ontology": false
+      },
+      {
+        "compton_range_m": 1.2180223969957142e-19,
+        "couples_to_ordinary_matter": false,
+        "curvature_screened": false,
+        "derivative_screened": false,
+        "effective_mass_gev": 1620.0603608497877,
+        "limitations": [
+          "Mass/range row is a scaffold estimate.",
+          "Screening proof requires the full scalar/topographic action."
+        ],
+        "mode_id": "phi_4",
+        "screened": true,
+        "status": "SCREENED_TOPOGRAPHIC_CONDITIONAL",
+        "violates_low_energy_ontology": false
+      },
+      {
+        "compton_range_m": 1.3533582188841268e-20,
+        "couples_to_ordinary_matter": false,
+        "curvature_screened": false,
+        "derivative_screened": false,
+        "effective_mass_gev": 14580.54324764809,
+        "limitations": [
+          "Mass/range row is a scaffold estimate.",
+          "Screening proof requires the full scalar/topographic action."
+        ],
+        "mode_id": "phi_5",
+        "screened": false,
+        "status": "HEAVY_RANGE_SUPPRESSED",
+        "violates_low_energy_ontology": false
+      }
+    ],
+    "forbidden_scalar_modes": [],
+    "limitations": [
+      "This is an action-level scaffold, not FULL_ACTION_PROVEN.",
+      "Conditional derivative/curvature screening remains to be proven from the complete action.",
+      "H_T-dependent scalar complement lifting uses DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL scaffold status.",
+      "No frozen BHSM predictions are changed."
+    ],
+    "open_scalar_risks": [],
+    "scalar_action_terms": [
+      {
+        "assumptions": [
+          "H(x,y)=H(x) Phi_0(y) is the unique light Higgs projection."
+        ],
+        "channel": "HIGGS_PROJECTED_LIGHT_MODE",
+        "expression": "|D_mu H_0|^2 - V(H_0)",
+        "forbids_unscreened_light_scalar": false,
+        "id": "SA1",
+        "lifts_complement": false,
+        "limitations": [
+          "Uniqueness must be proven from the full scalar action."
+        ],
+        "preserves_single_higgs_projection": true,
+        "screens_direct_coupling": false,
+        "status": "ACTION_SCAFFOLD"
+      },
+      {
+        "assumptions": [
+          "Orthogonal scalar complement satisfies the Hopf/H_T lift condition."
+        ],
+        "channel": "HOPF_GAP_LIFTED",
+        "expression": "m_perp^2 |Phi_perp|^2, m_perp >= 4*pi^2*v",
+        "forbids_unscreened_light_scalar": false,
+        "id": "SA2",
+        "lifts_complement": true,
+        "limitations": [
+          "Full scalar spectrum remains open."
+        ],
+        "preserves_single_higgs_projection": true,
+        "screens_direct_coupling": true,
+        "status": "HOPF_GAP_SCAFFOLD"
+      },
+      {
+        "assumptions": [
+          "Uses corrected DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL scaffold, not coordinate-first H_T."
+        ],
+        "channel": "HT_COMPLEMENT_LIFTED",
+        "expression": "Phi_perp H_T Phi_perp",
+        "forbids_unscreened_light_scalar": false,
+        "id": "SA3",
+        "lifts_complement": true,
+        "limitations": [
+          "Full H_T theorem remains open."
+        ],
+        "preserves_single_higgs_projection": true,
+        "screens_direct_coupling": true,
+        "status": "HT_FORMAL_KERNEL_LINKED"
+      },
+      {
+        "assumptions": [
+          "Topographic mode couples through derivative-filtered channels."
+        ],
+        "channel": "DERIVATIVE_SCREENED",
+        "expression": "(partial_mu T_loc)^2 / Lambda_T^2",
+        "forbids_unscreened_light_scalar": false,
+        "id": "SA4",
+        "lifts_complement": false,
+        "limitations": [
+          "Action-level derivative coupling proof remains open."
+        ],
+        "preserves_single_higgs_projection": true,
+        "screens_direct_coupling": true,
+        "status": "SCREENING_SCAFFOLD"
+      },
+      {
+        "assumptions": [
+          "Curvature-filtered modes do not mediate unscreened fifth forces."
+        ],
+        "channel": "CURVATURE_SCREENED",
+        "expression": "K[rho_Phi] T_loc^2",
+        "forbids_unscreened_light_scalar": false,
+        "id": "SA5",
+        "lifts_complement": false,
+        "limitations": [
+          "Curvature/profile proof remains open."
+        ],
+        "preserves_single_higgs_projection": true,
+        "screens_direct_coupling": true,
+        "status": "SCREENING_SCAFFOLD"
+      },
+      {
+        "assumptions": [
+          "Virtual-only contributions are not on-shell light particles."
+        ],
+        "channel": "VIRTUAL_ONLY",
+        "expression": "virtual/off-shell scalar-topographic exchange",
+        "forbids_unscreened_light_scalar": false,
+        "id": "SA6",
+        "lifts_complement": false,
+        "limitations": [
+          "Ontology classification is not a full action proof."
+        ],
+        "preserves_single_higgs_projection": true,
+        "screens_direct_coupling": true,
+        "status": "STATE_ONTOLOGY_LINKED"
+      },
+      {
+        "assumptions": [
+          "Unscreened direct-coupled light scalar is not allowed in the SM-equivalent low-energy limit."
+        ],
+        "channel": "FORBIDDEN_UNSCREENED_LIGHT_SCALAR",
+        "expression": "g_phi psi_bar psi phi_light",
+        "forbids_unscreened_light_scalar": true,
+        "id": "SA7",
+        "lifts_complement": false,
+        "limitations": [
+          "If found in the full action, scalar decoupling fails or remains open risk."
+        ],
+        "preserves_single_higgs_projection": false,
+        "screens_direct_coupling": false,
+        "status": "FALSIFIER_RULE"
+      }
+    ],
+    "scalar_modes": [
+      {
+        "channel": "HIGGS_PROJECTED_LIGHT_MODE",
+        "coupling_to_matter": "SM Higgs coupling",
+        "curvature_screened": false,
+        "derivative_screened": false,
+        "effective_mass_gev": null,
+        "label": "H(x) Phi_0(y)",
+        "limitations": [
+          "The SM Higgs projection is the unique allowed light scalar."
+        ],
+        "mode_id": "higgs_projection",
+        "on_shell_light_particle": true,
+        "status": "ALLOWED_SM_HIGGS",
+        "virtual_only": false
+      },
+      {
+        "channel": "HOPF_GAP_LIFTED",
+        "coupling_to_matter": "lifted/decoupled",
+        "curvature_screened": false,
+        "derivative_screened": false,
+        "effective_mass_gev": 40000.0,
+        "label": "Phi_perp",
+        "limitations": [
+          "Mass is a scaffold scale representative."
+        ],
+        "mode_id": "heavy_scalar_complement",
+        "on_shell_light_particle": false,
+        "status": "HEAVY_LIFTED_STATE",
+        "virtual_only": false
+      },
+      {
+        "channel": "HT_COMPLEMENT_LIFTED",
+        "coupling_to_matter": "lifted/decoupled",
+        "curvature_screened": false,
+        "derivative_screened": false,
+        "effective_mass_gev": 40000.0,
+        "label": "Phi_perp|H_perp",
+        "limitations": [
+          "Depends on corrected formal-kernel H_T scaffold."
+        ],
+        "mode_id": "ht_scalar_complement",
+        "on_shell_light_particle": false,
+        "status": "HT_COMPLEMENT_LIFTED",
+        "virtual_only": false
+      },
+      {
+        "channel": "DERIVATIVE_SCREENED",
+        "coupling_to_matter": "derivative-filtered",
+        "curvature_screened": false,
+        "derivative_screened": true,
+        "effective_mass_gev": 100.0,
+        "label": "T_der",
+        "limitations": [
+          "Conditional until derivative coupling is action-proven."
+        ],
+        "mode_id": "derivative_topographic",
+        "on_shell_light_particle": false,
+        "status": "DERIVATIVE_SCREENED_CONDITIONAL",
+        "virtual_only": false
+      },
+      {
+        "channel": "CURVATURE_SCREENED",
+        "coupling_to_matter": "curvature-filtered",
+        "curvature_screened": true,
+        "derivative_screened": false,
+        "effective_mass_gev": 100.0,
+        "label": "T_curv",
+        "limitations": [
+          "Conditional until curvature filter is action-proven."
+        ],
+        "mode_id": "curvature_topographic",
+        "on_shell_light_particle": false,
+        "status": "CURVATURE_SCREENED_CONDITIONAL",
+        "virtual_only": false
+      },
+      {
+        "channel": "VIRTUAL_ONLY",
+        "coupling_to_matter": "virtual-only",
+        "curvature_screened": false,
+        "derivative_screened": false,
+        "effective_mass_gev": null,
+        "label": "T_virtual",
+        "limitations": [
+          "No on-shell mass/range is assigned to virtual-only mode."
+        ],
+        "mode_id": "virtual_topographic",
+        "on_shell_light_particle": false,
+        "status": "VIRTUAL_ONLY_NOT_PARTICLE",
+        "virtual_only": true
+      }
+    ],
+    "status": "SCALAR_ACTION_SCAFFOLD_PASSES",
+    "theorem_complete": false,
+    "title": "BHSM v1.5 Scalar/Topographic Action-Decoupling Proof Scaffold",
+    "topographic_action_terms": [
+      {
+        "channel": "DERIVATIVE_SCREENED",
+        "curvature_filtered": false,
+        "derivative_order": 2,
+        "expression": "(nabla_mu T_loc)^2 / Lambda_T^2",
+        "id": "TA1",
+        "limitations": [
+          "Low-energy derivative suppression must be derived from full topographic action."
+        ],
+        "status": "DERIVATIVE_SCREENING_SCAFFOLD",
+        "suppresses_fifth_force": true,
+        "virtual_only": false
+      },
+      {
+        "channel": "CURVATURE_SCREENED",
+        "curvature_filtered": true,
+        "derivative_order": 0,
+        "expression": "K[rho_Phi] T_loc^2",
+        "id": "TA2",
+        "limitations": [
+          "Curvature/profile positivity must be proven in the complete action."
+        ],
+        "status": "CURVATURE_SCREENING_SCAFFOLD",
+        "suppresses_fifth_force": true,
+        "virtual_only": false
+      },
+      {
+        "channel": "VIRTUAL_ONLY",
+        "curvature_filtered": false,
+        "derivative_order": 0,
+        "expression": "off-shell T_loc exchange",
+        "id": "TA3",
+        "limitations": [
+          "Virtual-only classification is ontology-linked, not a full path-integral proof."
+        ],
+        "status": "VIRTUAL_ONLY_ONTOLOGY_LINKED",
+        "suppresses_fifth_force": true,
+        "virtual_only": true
+      }
+    ]
+  },
+  "unscreened_scalar_risk_example": {
+    "classification": "FORBIDDEN_UNSCREENED_LIGHT_SCALAR",
+    "mode_id": "risk",
+    "reported_not_hidden": true,
+    "violates_low_energy_ontology": true
+  }
+}

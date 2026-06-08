@@ -4,7 +4,7 @@
   "open_obligations": [
     "Prove the full twisted Dirac / H_T spectrum and infinite-basis complement bound.",
     "Prove Index(D_twist)=3 and complete mirror-mode exclusion from the full operator.",
-    "Prove scalar/topographic decoupling from the full internal action.",
+    "Prove scalar/topographic decoupling from the full internal action beyond the v1.5 action scaffold.",
     "Complete precision QCD/RG threshold matching for quark mass comparisons.",
     "Derive full flavor matrices from the complete action rather than internal-rule screens."
   ],
@@ -66,9 +66,10 @@
       "status": "SEMI_ANALYTIC_SCAFFOLD"
     },
     {
-      "allowed_claim": "Current proxy inventory has no forbidden/open scalar modes.",
+      "allowed_claim": "v1.5 action-level scaffold has exactly one Higgs projection and no current forbidden/open scalar risks.",
       "blockers": [
-        "full scalar action proof"
+        "full scalar/topographic action proof",
+        "global absence of unscreened light scalar risks"
       ],
       "claim": "scalar/topographic decoupling",
       "completed": false,
@@ -114,16 +115,15 @@
   "title": "BHSM Theorem Status Ledger",
   "v1_4_precision_qcd_rg_update": {
     "branch": "bhsm-v1.4-precision-qcd-rg",
-    "correct_claim": "BHSM v1.4 improves the scheme-aware QCD/RG comparison framework; it does not change frozen BHSM predictions and does not claim precision quark matching is solved.",
-    "frozen_predictions_changed": false,
-    "reference_sets": [
-      "MIXED_DEFAULT",
-      "COMMON_SCALE_APPROX",
-      "THRESHOLD_AWARE_APPROX",
-      "PDG_STYLE_REFERENCE_PLACEHOLDER",
-      "PRECISION_QCD_PLACEHOLDER"
-    ],
-    "status": "PRECISION_ORIENTED_QCD_RG_SCAFFOLD",
+    "status": "OPEN",
+    "summary": "Precision-oriented QCD/RG comparison architecture added; final precision-QCD reference values remain unsupplied.",
+    "theorem_complete": false
+  },
+  "v1_5_scalar_action_decoupling_update": {
+    "branch": "bhsm-v1.5-scalar-action-proof",
+    "open_scalar_risks": 0,
+    "status": "SCALAR_ACTION_SCAFFOLD_PASSES",
+    "summary": "Action-level scalar/topographic scaffold added; full scalar decoupling from the complete action remains open.",
     "theorem_complete": false
   }
 }

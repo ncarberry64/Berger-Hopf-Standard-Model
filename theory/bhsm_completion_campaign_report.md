@@ -29,9 +29,9 @@ claim a completed first-principles proof.
 - Corrected finite coordinates at `k_max=4`: `(0,18,36)`.
 - Old coordinate-first block `(0,1,2)` is superseded where previous conclusions depended on it.
 - v1.4 QCD/RG matching is scaffolded with `MIXED_DEFAULT`, `COMMON_SCALE_APPROX`, `THRESHOLD_AWARE_APPROX`, and `PRECISION_QCD_PLACEHOLDER`.
-- v1.5 scalar/topographic audit has one light Higgs projection and no current forbidden/open scalar modes.
+- v1.5 scalar/topographic action scaffold distinguishes the SM Higgs projection from heavy, screened, virtual, and forbidden scalar/topographic modes; the current inventory has one light Higgs projection and no current forbidden/open scalar risks.
 - v2.0 dependency graph reports no hidden circularity and no empirical residual dependency.
-- Final test result: `478 passed`.
+- Final test result on the v1.5 scalar-action branch: `497 passed`.
 - Safety scan: no secrets, private correspondence, unrelated large binaries, or local/private data found.
 
 ## Frozen-Output Status
@@ -47,7 +47,7 @@ claim a completed first-principles proof.
 
 1. Prove the full twisted Dirac / `(H_T)` spectrum and infinite-basis complement bound.
 2. Prove `Index(D_twist)=3` and complete mirror-mode exclusion from the full operator.
-3. Prove scalar/topographic decoupling from the full internal action.
+3. Prove scalar/topographic decoupling from the full internal action beyond the v1.5 action scaffold.
 4. Complete precision QCD/RG threshold matching for quark mass comparisons.
 5. Derive full flavor matrices from the complete action rather than internal-rule screens.
 
@@ -74,10 +74,35 @@ with:
 This update does not change frozen BHSM predictions and does not claim
 precision quark matching is solved.
 
+## v1.5 Scalar/Topographic Action-Decoupling Branch Update
+
+Branch `bhsm-v1.5-scalar-action-proof` extends the scalar/topographic audit
+from a finite-basis inventory toward an action-level scaffold with explicit
+channels:
+
+- `HIGGS_PROJECTED_LIGHT_MODE`;
+- `HOPF_GAP_LIFTED`;
+- `HT_COMPLEMENT_LIFTED`;
+- `DERIVATIVE_SCREENED`;
+- `CURVATURE_SCREENED`;
+- `VIRTUAL_ONLY`;
+- `FORBIDDEN_UNSCREENED_LIGHT_SCALAR`;
+- `OPEN_SCALAR_RISK`.
+
+The v1.5 scaffold uses the corrected
+`DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL` dependency for H_T-linked scalar
+complement lifting. It reports zero current `OPEN_SCALAR_RISK` rows and keeps
+the forbidden unscreened light scalar channel as an explicit falsifier. This
+does not change frozen BHSM predictions and does not claim full scalar
+decoupling from the complete action.
+
+Test result on the v1.5 branch: `497 passed`.
+
 ## Limitations
 
 - No frozen predictions were retuned.
 - No theorem is marked complete.
 - Precision QCD matching remains placeholder-level.
-- Scalar/topographic decoupling remains scaffold-level.
+- Scalar/topographic decoupling remains scaffold-level; v1.5 is action-level
+  scaffold evidence, not a complete action proof.
 - The full `(H_T)` theorem remains open.

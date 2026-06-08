@@ -13,7 +13,7 @@ Empirical residual dependency detected: `False`
 | `parent_action` | `PARENT_ACTION_REDUCED` | `False` | Reduced from symbolic parent scaffold under current axioms. | Do not claim full internal action proven. |
 | `formal_kernel` | `BASIS_REALIZED` | `False` | Coordinate-free scaffold and finite basis realization are implemented. | Do not claim full index theorem. |
 | `ht_gap` | `SEMI_ANALYTIC_SCAFFOLD` | `False` | Corrected formal-kernel finite/semi-analytic scaffold clears current thresholds. | Do not claim no-extra-light-state theorem proven. |
-| `scalar_decoupling` | `FINITE_BASIS_SCAFFOLD` | `False` | Current proxy inventory has no forbidden/open scalar modes. | Do not claim scalar decoupling fully proven. |
+| `scalar_decoupling` | `FINITE_BASIS_SCAFFOLD` | `False` | v1.5 action-level scaffold has exactly one Higgs projection and no current forbidden/open scalar risks. | Do not claim scalar decoupling fully proven. |
 | `qcd_rg` | `OPEN` | `False` | Approximate/reference-set scaffolds are implemented. | Do not claim precision QCD matching complete. |
 | `virtual_dressing` | `ADOPTION_CANDIDATE` | `False` | Dressed branch remains candidate and changes only c/t. | Do not claim dressed branch final. |
 
@@ -21,7 +21,7 @@ Empirical residual dependency detected: `False`
 
 1. Prove the full twisted Dirac / H_T spectrum and infinite-basis complement bound.
 2. Prove Index(D_twist)=3 and complete mirror-mode exclusion from the full operator.
-3. Prove scalar/topographic decoupling from the full internal action.
+3. Prove scalar/topographic decoupling from the full internal action beyond the v1.5 action scaffold.
 4. Complete precision QCD/RG threshold matching for quark mass comparisons.
 5. Derive full flavor matrices from the complete action rather than internal-rule screens.
 
@@ -32,3 +32,12 @@ precision-oriented comparison architecture with placeholder PDG-style and
 precision-QCD reference sets, but no final precision-QCD reference values are
 supplied. The forbidden upgrade remains: do not claim precision QCD matching
 complete.
+
+## v1.5 Scalar/Topographic Action-Decoupling Update
+
+The `scalar_decoupling` row remains incomplete. Branch
+`bhsm-v1.5-scalar-action-proof` adds an action-level scalar/topographic
+scaffold with exactly one Higgs projection, heavy/H_T lifted complement modes,
+derivative/curvature screened modes, virtual-only channels, and an explicit
+forbidden unscreened light scalar falsifier. The forbidden upgrade remains:
+do not claim scalar decoupling fully proven.

@@ -89,10 +89,12 @@ Gate 2 adds the v1.4 QCD/RG matching scaffold. It records
 tables including dressed `c/t`, and keeps precision QCD as an explicit future
 placeholder. Frozen BHSM ratios are compared but not changed.
 
-Gate 3 adds the v1.5 scalar/topographic decoupling scaffold. The current proxy
-inventory has exactly one light Higgs projection and zero forbidden/open
-current scalar modes. Filtered and screened topographic modes remain
-conditional scaffolds, not full action-level scalar decoupling proof.
+Gate 3 adds the v1.5 scalar/topographic decoupling scaffold. The current
+action-level scaffold distinguishes the SM Higgs projection from heavy,
+screened, virtual, and forbidden scalar/topographic modes. It reports exactly
+one light Higgs projection and zero current `OPEN_SCALAR_RISK` rows. Filtered
+and screened topographic modes remain conditional scaffolds, not full
+action-level scalar decoupling proof.
 
 Gate 4 adds the v2.0 dependency graph and theorem ledger. The graph separates
 frozen predictions, boundary-functional derivations, parent-action reductions,
@@ -110,6 +112,28 @@ propagation scaffolds, and placeholder shells for future PDG-style and
 precision-QCD reference inputs. It does not change frozen BHSM predictions,
 does not tune `a`, `S`, modes, tolerances, or `Z_virt`, and does not claim
 precision quark matching is solved.
+
+## Unreleased / Development: v1.5 Scalar/Topographic Action-Decoupling
+
+Branch: `bhsm-v1.5-scalar-action-proof`
+
+The v1.5 focused branch extends scalar/topographic decoupling toward an
+action-level scaffold. It separates:
+
+- `HIGGS_PROJECTED_LIGHT_MODE`;
+- `HOPF_GAP_LIFTED`;
+- `HT_COMPLEMENT_LIFTED`;
+- `DERIVATIVE_SCREENED`;
+- `CURVATURE_SCREENED`;
+- `VIRTUAL_ONLY`;
+- `FORBIDDEN_UNSCREENED_LIGHT_SCALAR`;
+- `OPEN_SCALAR_RISK`.
+
+The scaffold uses the corrected `DIRAC_PROXY_LEVEL_2_FORMAL_KERNEL`
+dependency for H_T-linked scalar complement lifting and keeps the forbidden
+unscreened light scalar channel as an explicit falsifier. It does not change
+frozen BHSM predictions and does not claim full scalar decoupling from the
+complete action.
 
 Frozen baseline:
 

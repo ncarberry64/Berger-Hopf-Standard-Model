@@ -46,7 +46,7 @@ Empirical residual dependency detected: `False`
 
 1. Prove the full twisted Dirac / H_T spectrum and infinite-basis complement bound.
 2. Prove Index(D_twist)=3 and complete mirror-mode exclusion from the full operator.
-3. Prove scalar/topographic decoupling from the full internal action.
+3. Prove scalar/topographic decoupling from the full internal action beyond the v1.5 action scaffold.
 4. Complete precision QCD/RG threshold matching for quark mass comparisons.
 5. Derive full flavor matrices from the complete action rather than internal-rule screens.
 
@@ -61,3 +61,12 @@ The `qcd_rg_matching` node remains `OPEN`. Branch
 `bhsm-v1.4-precision-qcd-rg` adds precision-oriented reference-set metadata,
 threshold-aware scaffold rows, and uncertainty propagation scaffolds. It does
 not close the precision QCD/RG proof obligation.
+
+## v1.5 Scalar/Topographic Action-Decoupling Update
+
+The `scalar_decoupling` node remains a scaffold. Branch
+`bhsm-v1.5-scalar-action-proof` adds action-level scalar/topographic channels
+for the Higgs projection, Hopf/H_T lifted complements, derivative and
+curvature screening, virtual-only contributions, and forbidden unscreened
+light scalar risks. It reports zero current open scalar risks and does not
+close the full scalar/topographic action proof obligation.
