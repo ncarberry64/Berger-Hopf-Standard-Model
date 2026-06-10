@@ -307,6 +307,14 @@ def test_typesetting_pass_does_not_modify_source_model_files():
         "src/projector_graph_domain_stability.py",
         "src/complete_operator_bound_transfer.py",
         "src/ht_domain_stability_decision.py",
+        "src/full_ht_theorem_closure.py",
+        "src/complete_operator_identification_closure.py",
+        "src/projector_commutator_closure.py",
+        "src/projector_graph_domain_closure.py",
+        "src/lower_bound_transfer_closure.py",
+        "src/index_theorem_final_proof.py",
+        "src/mirror_exclusion_final_proof.py",
+        "src/full_bhsm_theorem_completion.py",
     }
 
     assert not [

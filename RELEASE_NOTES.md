@@ -65,6 +65,26 @@ ledgers, virtual dressing, scalar/QCD outputs, or v2.3 index/mirror reports. It
 does not prove the full H_T theorem; complete-operator identification,
 commutator/domain stability, and final index/mirror upgrades remain open.
 
+# Unreleased / Development: v2.5 Full H_T Theorem Closure Attempt
+
+Branch: `bhsm-v2.5-full-ht-theorem-closure`
+
+The v2.5 branch attempts full H_T theorem closure rather than stopping at a
+generic scaffold status. The attempt checks complete-operator identification,
+projector-perturbation commutators, projector graph-domain stability,
+lower-bound transfer, topological index, and mirror exclusion.
+
+Final result:
+
+- full H_T result: `STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP`
+- full BHSM theorem result: `STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP`
+- single named gap: `COMPLETE_OPERATOR_IDENTIFICATION_THEOREM_GAP`
+- recommended next branch: `bhsm-v2.6-complete-operator-identification`
+
+No theorem is marked proven from conditional assumptions. Frozen predictions,
+canonical constants, frozen modes, tolerances, outputs, and virtual dressing are
+unchanged. Final paper remains blocked.
+
 # Unreleased / Development: v2.1 Perturbation Domain and Infinite-Bound Proof
 
 Branch: `bhsm-v2.1-perturbation-domain-bound-proof`
