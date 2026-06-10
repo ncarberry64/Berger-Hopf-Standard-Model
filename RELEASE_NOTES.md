@@ -126,6 +126,29 @@ ledgers, tolerance bands, or release tags. It does not claim completion of the
 full twisted Dirac / `H_T` theorem, scalar/topographic action proof, virtual
 dressing theorem, precision QCD matching, or unified action closure.
 
+## Unreleased / Development: Full Theorem Completion Attempt
+
+Branch: `bhsm-full-theorem-completion`
+
+This branch starts from `bhsm-final-closure-campaign` at commit
+`069f1aa2a869bf810d29d2450ba62686513d8153` and attempts to determine whether
+the BHSM theorem package can honestly be upgraded before a final paper. It
+adds explicit completion-decision reports for:
+
+- full operator domain and self-adjointness;
+- infinite-basis/formal-kernel `H_T` theorem dependencies;
+- topological index and mirror exclusion;
+- scalar/topographic full-action proof;
+- virtual dressing derivation status;
+- unified action theorem package status.
+
+Current decision: `BHSM_THEOREM_CANDIDATE_WITH_OPEN_ASSUMPTIONS`.
+
+Final paper/Zenodo release is not allowed from this branch unless the status
+is upgraded to `FULL_BHSM_THEOREM_PACKAGE_COMPLETE` by implemented,
+dependency-clean proofs. Frozen BHSM predictions and prior scaffold outputs
+remain unchanged.
+
 ## Unreleased / Development: v1.4 Precision QCD/RG Matching
 
 Branch: `bhsm-v1.4-precision-qcd-rg`

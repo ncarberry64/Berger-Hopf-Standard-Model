@@ -1,0 +1,209 @@
+{
+  "final_paper_allowed": false,
+  "forbidden_claims": [
+    "Do not claim the full BHSM theorem package is complete while any node remains open.",
+    "Do not prepare final paper/Zenodo release unless status is FULL_BHSM_THEOREM_PACKAGE_COMPLETE."
+  ],
+  "frozen_outputs_changed": false,
+  "nodes": [
+    {
+      "gate_status": "FROZEN",
+      "id": "canonical_constants",
+      "limitations": [
+        "Frozen constants are not retuned in this branch."
+      ],
+      "open_obligations": [],
+      "status": "ACTION_DERIVED",
+      "theorem_complete": true,
+      "title": "alpha-anchored geometry and universal overlap width"
+    },
+    {
+      "gate_status": "SELF_ADJOINT_DOMAIN_OPEN",
+      "id": "operator_domain",
+      "limitations": [
+        "Domain proof is required before H_T theorem closure."
+      ],
+      "open_obligations": [
+        "prove density and core stability in the complete Hilbert space",
+        "derive the complete Berger twisted Dirac spectral domain",
+        "prove self-adjointness via Kato-Rellich or equivalent relative-bound conditions in the complete operator",
+        "prove the formal kernel/complement split for the complete Hilbert-space operator"
+      ],
+      "status": "OPEN",
+      "theorem_complete": false,
+      "title": "full operator domain and self-adjointness"
+    },
+    {
+      "gate_status": "FORMAL_KERNEL_SCAFFOLD_STRONG",
+      "id": "ht_gap",
+      "limitations": [
+        "Do not claim FULL_HT_THEOREM_PROVEN.",
+        "Do not claim the no-extra-light-state theorem is proven.",
+        "Do not use coordinate-first protected block (0,1,2) as the corrected formal kernel."
+      ],
+      "open_obligations": [
+        "Prove an infinite-basis uniform complement lower bound independent of k_max.",
+        "Prove compactness/relative-bound hypotheses for the complete operator.",
+        "Specify the full Hilbert-space domain.",
+        "Prove self-adjointness and domain stability under twist/profile terms.",
+        "Prove the topological index theorem for the complete twisted Dirac operator.",
+        "Exclude mirror zero modes from the full chiral operator, not only the scaffold channels."
+      ],
+      "status": "STRONG_SCAFFOLD",
+      "theorem_complete": false,
+      "title": "full twisted Dirac / H_T no-extra-light theorem"
+    },
+    {
+      "gate_status": "INDEX_THEOREM_OPEN",
+      "id": "index",
+      "limitations": [
+        "The current index equals 3 in the scaffold but is not a full topological theorem.",
+        "No empirical masses, CKM values, or residuals enter this report."
+      ],
+      "open_obligations": [
+        "derive the topological index of the complete twisted Dirac operator",
+        "prove absence of additional protected kernel states in the complete operator",
+        "prove the formal-kernel/complement split independently of finite truncation"
+      ],
+      "status": "OPEN",
+      "theorem_complete": false,
+      "title": "topological index dim ker D_twist = 3"
+    },
+    {
+      "gate_status": "MIRROR_EXCLUSION_OPEN",
+      "id": "mirror_exclusion",
+      "limitations": [
+        "The chiral projector scaffold excludes generated mirrors, but full-operator mirror exclusion is not complete.",
+        "No empirical masses, CKM values, or residuals enter this report."
+      ],
+      "open_obligations": [
+        "close the Higgs-selected U(1) mirror channel in the complete operator",
+        "close the boundary-functional mirror channel in the complete operator",
+        "connect mirror exclusion to the full topological index theorem"
+      ],
+      "status": "OPEN",
+      "theorem_complete": false,
+      "title": "full mirror-mode exclusion"
+    },
+    {
+      "gate_status": "SCALAR_FULL_ACTION_PROOF_OPEN",
+      "id": "scalar_topographic",
+      "limitations": [
+        "The v1.6 scaffold passes with zero current open scalar risk rows.",
+        "This wrapper does not upgrade scaffold screening to a complete action proof."
+      ],
+      "open_obligations": [
+        "derive all scalar/topographic screening channels from the complete action",
+        "prove global absence of unscreened direct light scalar matter couplings",
+        "connect scalar complement lifting to the full H_T theorem"
+      ],
+      "status": "STRONG_SCAFFOLD",
+      "theorem_complete": false,
+      "title": "scalar/topographic full action decoupling"
+    },
+    {
+      "gate_status": "VIRTUAL_DRESSING_ADOPTION_CANDIDATE",
+      "id": "virtual_dressing",
+      "limitations": [
+        "The rule is structurally linked and candidate-level, not canonically adopted.",
+        "No empirical residual is used to set the factor.",
+        "Frozen bare and dressed branches are not changed."
+      ],
+      "open_obligations": [
+        "Derive the virtual-environment dressing factor from the full loop/threshold action.",
+        "Prove that weak-doublet projection uniquely yields Z_virt^{u,2}=1/2 in the complete theory.",
+        "Keep BHSM_DRESSED_V1_CANDIDATE noncanonical until the loop derivation is complete."
+      ],
+      "status": "THEOREM_CANDIDATE",
+      "theorem_complete": false,
+      "title": "virtual dressing Z_virt^{u,2}=1/2"
+    },
+    {
+      "gate_status": "PRECISION_INPUTS_REQUIRED",
+      "id": "qcd_rg",
+      "limitations": [
+        "No precision QCD values are invented.",
+        "Approximate scaffold tensions are not final precision-QCD verdicts.",
+        "Frozen BHSM predictions are not changed."
+      ],
+      "open_obligations": [
+        "Supply validated precision-QCD common-scheme quark mass inputs.",
+        "Implement validated two-/three-loop threshold matching if precision closure is required.",
+        "Propagate uncertainties from supplied precision inputs."
+      ],
+      "status": "OPEN",
+      "theorem_complete": false,
+      "title": "precision QCD/RG comparison"
+    },
+    {
+      "gate_status": "ACTION_SCAFFOLD_WITH_OPEN_NODES",
+      "id": "unified_action",
+      "limitations": [
+        "The unified graph is dependency-clean but has open theorem nodes.",
+        "Frozen predictions are not retuned or changed."
+      ],
+      "open_obligations": [
+        "omega_f",
+        "ckm_cp",
+        "formal_kernel",
+        "ht_gap",
+        "scalar_topographic",
+        "virtual_dressing",
+        "qcd_rg",
+        "state_ontology"
+      ],
+      "status": "STRONG_SCAFFOLD",
+      "theorem_complete": false,
+      "title": "unified action dependency closure"
+    },
+    {
+      "gate_status": "ACTIVE",
+      "id": "forbidden_claims",
+      "limitations": [
+        "Forbidden claims remain forbidden unless proofs are implemented and checked."
+      ],
+      "open_obligations": [],
+      "status": "FORBIDDEN",
+      "theorem_complete": true,
+      "title": "forbidden overclaim guard"
+    }
+  ],
+  "open_obligations": [
+    "prove density and core stability in the complete Hilbert space",
+    "derive the complete Berger twisted Dirac spectral domain",
+    "prove self-adjointness via Kato-Rellich or equivalent relative-bound conditions in the complete operator",
+    "prove the formal kernel/complement split for the complete Hilbert-space operator",
+    "Prove an infinite-basis uniform complement lower bound independent of k_max.",
+    "Prove compactness/relative-bound hypotheses for the complete operator.",
+    "Specify the full Hilbert-space domain.",
+    "Prove self-adjointness and domain stability under twist/profile terms.",
+    "Prove the topological index theorem for the complete twisted Dirac operator.",
+    "Exclude mirror zero modes from the full chiral operator, not only the scaffold channels.",
+    "derive the topological index of the complete twisted Dirac operator",
+    "prove absence of additional protected kernel states in the complete operator",
+    "prove the formal-kernel/complement split independently of finite truncation",
+    "close the Higgs-selected U(1) mirror channel in the complete operator",
+    "close the boundary-functional mirror channel in the complete operator",
+    "connect mirror exclusion to the full topological index theorem",
+    "derive all scalar/topographic screening channels from the complete action",
+    "prove global absence of unscreened direct light scalar matter couplings",
+    "connect scalar complement lifting to the full H_T theorem",
+    "Derive the virtual-environment dressing factor from the full loop/threshold action.",
+    "Prove that weak-doublet projection uniquely yields Z_virt^{u,2}=1/2 in the complete theory.",
+    "Keep BHSM_DRESSED_V1_CANDIDATE noncanonical until the loop derivation is complete.",
+    "Supply validated precision-QCD common-scheme quark mass inputs.",
+    "Implement validated two-/three-loop threshold matching if precision closure is required.",
+    "Propagate uncertainties from supplied precision inputs.",
+    "omega_f",
+    "ckm_cp",
+    "formal_kernel",
+    "ht_gap",
+    "scalar_topographic",
+    "virtual_dressing",
+    "qcd_rg",
+    "state_ontology"
+  ],
+  "status": "BHSM_THEOREM_PACKAGE_INCOMPLETE",
+  "theorem_complete": false,
+  "title": "BHSM Full Theorem Package Completion Attempt"
+}

@@ -607,6 +607,27 @@ Remaining open obligations include:
 
 Frozen outputs remain unchanged.
 
+## Full Theorem Completion Branch
+
+Branch: `bhsm-full-theorem-completion`
+
+Purpose: attempt to upgrade BHSM beyond `BHSM_STRONG_SCAFFOLD` before any
+final paper or Zenodo release. This branch adds explicit theorem-completion
+decision reports for the full operator domain, topological index, mirror
+exclusion, scalar/topographic full-action proof, and unified theorem package.
+
+Current status: `BHSM_THEOREM_CANDIDATE_WITH_OPEN_ASSUMPTIONS`
+
+Final paper allowed: `False`
+
+The branch does not change frozen predictions, canonical constants, mode
+ledgers, tolerance bands, v1.2 action-origin outputs, v1.3 formal-kernel
+outputs, v1.4 QCD/RG scaffolds, or v1.5/v1.6 scalar scaffolds. It stops short
+of paper release because the full operator domain/self-adjointness,
+topological index, full mirror exclusion, infinite-basis `H_T` complement
+bound, scalar full-action proof, virtual dressing loop derivation, and
+precision QCD inputs remain open.
+
 ## Quick Start
 
 ```powershell

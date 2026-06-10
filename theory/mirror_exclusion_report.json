@@ -1,0 +1,253 @@
+{
+  "boundary_functional_channel_closed": false,
+  "chiral_channel_excludes_all_generated": true,
+  "higgs_u1_channel_closed": false,
+  "limitations": [
+    "The chiral projector scaffold excludes generated mirrors, but full-operator mirror exclusion is not complete.",
+    "No empirical masses, CKM values, or residuals enter this report."
+  ],
+  "open_obligations": [
+    "close the Higgs-selected U(1) mirror channel in the complete operator",
+    "close the boundary-functional mirror channel in the complete operator",
+    "connect mirror exclusion to the full topological index theorem"
+  ],
+  "scaffold_report": {
+    "assumptions": [
+      "The protected kernel chirality is the BHSM scaffold chirality chi=-1.",
+      "The weak chiral projector is model-internal structure from the v1.2 action scaffold.",
+      "Higgs-U(1) and boundary-functional channels are reported conservatively when not chirality-resolved."
+    ],
+    "derivations": [
+      {
+        "boundary_functional_result": {
+          "derived_from_internal_structure": false,
+          "j": 0,
+          "k": 0,
+          "limitations": [
+            "Boundary-functional mirror exclusion remains open until the full kernel boundary problem is solved.",
+            "This channel is reported, not used to force exclusion."
+          ],
+          "omega_value": 0,
+          "q": 0,
+          "rationale": [
+            "The v1.2 boundary functional supplies Omega_f and the sector target.",
+            "The heavy/protected zero-mode branch is treated separately from nonzero operational mode selection.",
+            "Therefore a nonzero residual at (0,0) is not used by itself as a mirror-exclusion proof."
+          ],
+          "residual": -3,
+          "sector": "lepton",
+          "status": "OPEN",
+          "target": 3
+        },
+        "chiral_projector_result": {
+          "candidate_chirality": 1,
+          "derived_from_internal_structure": true,
+          "limitations": [
+            "This is a projector-channel exclusion scaffold, not the full index theorem.",
+            "The full operator must still prove that no opposite-chirality kernel survives outside this channel."
+          ],
+          "projector_name": "weak-doublet chirality projector",
+          "protected_chirality": -1,
+          "rationale": [
+            "Candidate chirality is opposite to the protected kernel chirality.",
+            "The BHSM weak-doublet chiral projector admits the protected chirality in the zero-mode scaffold."
+          ],
+          "sector": "lepton",
+          "source_term": "I_WEAK",
+          "status": "EXCLUDED_BY_CHIRAL_PROJECTOR"
+        },
+        "exclusion_channels": [
+          "EXCLUDED_BY_CHIRAL_PROJECTOR"
+        ],
+        "final_classification": "EXCLUDED",
+        "higgs_u1_phase_result": {
+          "candidate_chirality": 1,
+          "derived_from_internal_structure": false,
+          "hypercharge_higgs_boundary": 1,
+          "limitations": [
+            "Higgs-U(1) channel remains open for mirror exclusion.",
+            "This does not weaken the separate chiral-projector exclusion channel."
+          ],
+          "rationale": [
+            "The Higgs-selected U(1) boundary phase is present in the v1.2 parent-action scaffold.",
+            "The current scaffold does not yet derive a chirality-resolved phase mismatch for mirror candidates."
+          ],
+          "sector": "lepton",
+          "source_term": "I_U1",
+          "status": "OPEN"
+        },
+        "j": 0,
+        "k": 0,
+        "limitations": [
+          "Final mirror classification is channel-local and does not complete the H_T theorem.",
+          "Topological index and infinite-basis complement assumptions remain open."
+        ],
+        "mirror_chirality": 1,
+        "mirror_id": "mirror_lepton",
+        "omega_value": 0,
+        "protected_mode_id": "zero_mode_lepton",
+        "q": 0,
+        "sector": "lepton",
+        "theorem_complete": false
+      },
+      {
+        "boundary_functional_result": {
+          "derived_from_internal_structure": false,
+          "j": 0,
+          "k": 0,
+          "limitations": [
+            "Boundary-functional mirror exclusion remains open until the full kernel boundary problem is solved.",
+            "This channel is reported, not used to force exclusion."
+          ],
+          "omega_value": 0,
+          "q": 0,
+          "rationale": [
+            "The v1.2 boundary functional supplies Omega_f and the sector target.",
+            "The heavy/protected zero-mode branch is treated separately from nonzero operational mode selection.",
+            "Therefore a nonzero residual at (0,0) is not used by itself as a mirror-exclusion proof."
+          ],
+          "residual": -6,
+          "sector": "up",
+          "status": "OPEN",
+          "target": 6
+        },
+        "chiral_projector_result": {
+          "candidate_chirality": 1,
+          "derived_from_internal_structure": true,
+          "limitations": [
+            "This is a projector-channel exclusion scaffold, not the full index theorem.",
+            "The full operator must still prove that no opposite-chirality kernel survives outside this channel."
+          ],
+          "projector_name": "weak-doublet chirality projector",
+          "protected_chirality": -1,
+          "rationale": [
+            "Candidate chirality is opposite to the protected kernel chirality.",
+            "The BHSM weak-doublet chiral projector admits the protected chirality in the zero-mode scaffold."
+          ],
+          "sector": "up",
+          "source_term": "I_WEAK",
+          "status": "EXCLUDED_BY_CHIRAL_PROJECTOR"
+        },
+        "exclusion_channels": [
+          "EXCLUDED_BY_CHIRAL_PROJECTOR"
+        ],
+        "final_classification": "EXCLUDED",
+        "higgs_u1_phase_result": {
+          "candidate_chirality": 1,
+          "derived_from_internal_structure": false,
+          "hypercharge_higgs_boundary": 1,
+          "limitations": [
+            "Higgs-U(1) channel remains open for mirror exclusion.",
+            "This does not weaken the separate chiral-projector exclusion channel."
+          ],
+          "rationale": [
+            "The Higgs-selected U(1) boundary phase is present in the v1.2 parent-action scaffold.",
+            "The current scaffold does not yet derive a chirality-resolved phase mismatch for mirror candidates."
+          ],
+          "sector": "up",
+          "source_term": "I_U1",
+          "status": "OPEN"
+        },
+        "j": 0,
+        "k": 0,
+        "limitations": [
+          "Final mirror classification is channel-local and does not complete the H_T theorem.",
+          "Topological index and infinite-basis complement assumptions remain open."
+        ],
+        "mirror_chirality": 1,
+        "mirror_id": "mirror_up",
+        "omega_value": 0,
+        "protected_mode_id": "zero_mode_up",
+        "q": 0,
+        "sector": "up",
+        "theorem_complete": false
+      },
+      {
+        "boundary_functional_result": {
+          "derived_from_internal_structure": false,
+          "j": 0,
+          "k": 0,
+          "limitations": [
+            "Boundary-functional mirror exclusion remains open until the full kernel boundary problem is solved.",
+            "This channel is reported, not used to force exclusion."
+          ],
+          "omega_value": 0,
+          "q": 0,
+          "rationale": [
+            "The v1.2 boundary functional supplies Omega_f and the sector target.",
+            "The heavy/protected zero-mode branch is treated separately from nonzero operational mode selection.",
+            "Therefore a nonzero residual at (0,0) is not used by itself as a mirror-exclusion proof."
+          ],
+          "residual": -12,
+          "sector": "down",
+          "status": "OPEN",
+          "target": 12
+        },
+        "chiral_projector_result": {
+          "candidate_chirality": 1,
+          "derived_from_internal_structure": true,
+          "limitations": [
+            "This is a projector-channel exclusion scaffold, not the full index theorem.",
+            "The full operator must still prove that no opposite-chirality kernel survives outside this channel."
+          ],
+          "projector_name": "weak-doublet chirality projector",
+          "protected_chirality": -1,
+          "rationale": [
+            "Candidate chirality is opposite to the protected kernel chirality.",
+            "The BHSM weak-doublet chiral projector admits the protected chirality in the zero-mode scaffold."
+          ],
+          "sector": "down",
+          "source_term": "I_WEAK",
+          "status": "EXCLUDED_BY_CHIRAL_PROJECTOR"
+        },
+        "exclusion_channels": [
+          "EXCLUDED_BY_CHIRAL_PROJECTOR"
+        ],
+        "final_classification": "EXCLUDED",
+        "higgs_u1_phase_result": {
+          "candidate_chirality": 1,
+          "derived_from_internal_structure": false,
+          "hypercharge_higgs_boundary": 1,
+          "limitations": [
+            "Higgs-U(1) channel remains open for mirror exclusion.",
+            "This does not weaken the separate chiral-projector exclusion channel."
+          ],
+          "rationale": [
+            "The Higgs-selected U(1) boundary phase is present in the v1.2 parent-action scaffold.",
+            "The current scaffold does not yet derive a chirality-resolved phase mismatch for mirror candidates."
+          ],
+          "sector": "down",
+          "source_term": "I_U1",
+          "status": "OPEN"
+        },
+        "j": 0,
+        "k": 0,
+        "limitations": [
+          "Final mirror classification is channel-local and does not complete the H_T theorem.",
+          "Topological index and infinite-basis complement assumptions remain open."
+        ],
+        "mirror_chirality": 1,
+        "mirror_id": "mirror_down",
+        "omega_value": 0,
+        "protected_mode_id": "zero_mode_down",
+        "q": 0,
+        "sector": "down",
+        "theorem_complete": false
+      }
+    ],
+    "excluded_count": 3,
+    "lifted_count": 0,
+    "limitations": [
+      "Mirror exclusion by the chiral channel does not prove the full topological index theorem.",
+      "Formal/coordinate zero-mode alignment remains a separate open obligation.",
+      "The infinite-basis complement bound remains open."
+    ],
+    "open_mirror_risk_count": 0,
+    "scaffold_index": 3,
+    "theorem_complete": false,
+    "title": "BHSM v1.3I Mirror Exclusion Derivation Report"
+  },
+  "status": "MIRROR_EXCLUSION_OPEN",
+  "theorem_complete": false,
+  "title": "BHSM Full Mirror-Mode Exclusion Theorem Attempt"
+}
