@@ -8,7 +8,7 @@ from complete_operator_identification_closure import build_complete_operator_ide
 from constants import S_OVERLAP
 from formal_kernel_projector import DEFAULT_FORMAL_COORDINATES, OLD_COORDINATE_FIRST_KERNEL, formal_kernel_basis_vectors
 from full_bhsm_theorem_completion import build_full_bhsm_theorem_completion_report
-from full_ht_theorem_closure import PROJECTOR_GRAPH_DOMAIN_STABILITY_GAP, build_full_ht_theorem_closure_report
+from full_ht_theorem_closure import HT_LOWER_BOUND_TRANSFER_GAP, PROJECTOR_GRAPH_DOMAIN_STABILITY_GAP, build_full_ht_theorem_closure_report
 from projector_commutator_closure import build_projector_commutator_closure_report
 from projector_commutator_control import PROJECTOR_DEFINITION_PROVEN, build_projector_definition_audit_report, export_projector_commutator_control_json, export_projector_commutator_control_markdown
 from projector_commutator_control_decision import PROJECTOR_COMMUTATOR_CONTROL_CLOSED, PROJECTOR_COMMUTATOR_CONTROL_PROVEN, build_projector_commutator_control_decision, export_projector_commutator_control_decision_json, export_projector_commutator_control_decision_markdown
@@ -111,8 +111,8 @@ def test_projector_commutator_decision_closes_and_downstream_moves_to_graph_doma
     assert closure.final_status == "PROJECTOR_COMMUTATORS_CONTROLLED"
     assert closure.theorem_complete is True
     assert ht.theorem_complete is False
-    assert ht.single_named_gap == PROJECTOR_GRAPH_DOMAIN_STABILITY_GAP
-    assert ht.recommended_next_branch == "bhsm-v2.15-projector-graph-domain-stability"
+    assert ht.single_named_gap == HT_LOWER_BOUND_TRANSFER_GAP
+    assert ht.recommended_next_branch == "bhsm-v2.16-ht-lower-bound-transfer"
     assert bhsm.final_paper_allowed is False
 
 

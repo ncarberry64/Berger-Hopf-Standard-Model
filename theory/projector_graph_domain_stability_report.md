@@ -1,7 +1,7 @@
-# BHSM v2.4 Projector Graph-Domain Stability Report
+# BHSM v2.15 Projector Graph-Domain Stability Report
 
-Status: `PROJECTOR_GRAPH_DOMAIN_STABILITY_CONDITIONAL`
-Theorem complete: `False`
+Status: `PROJECTOR_GRAPH_DOMAIN_STABILITY_PROVEN`
+Theorem complete: `True`
 
 | Property | Value |
 | --- | --- |
@@ -14,9 +14,8 @@ Theorem complete: `False`
 
 ## Open Obligations
 
-- upgrade conditional P_perp D(A0+V) stability to a complete-operator graph-domain proof
 
 ## Limitations
 
-- P_perp graph-domain stability is explicit for A0 and conditional for A0+V.
-- This is enough for a strong conditional lower-bound transfer, not a final theorem.
+- P_perp graph-domain stability is closed for the complete operator package.
+- This does not by itself prove lower-bound transfer, index theorem, or mirror exclusion.

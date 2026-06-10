@@ -21,6 +21,7 @@ from full_bhsm_theorem_completion import (
 from full_ht_theorem_closure import (
     BHSM_THEOREM_FAILURE,
     FULL_HT_THEOREM_PROVEN,
+    HT_LOWER_BOUND_TRANSFER_GAP,
     PROJECTOR_GRAPH_DOMAIN_STABILITY_GAP,
     STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP,
     build_full_ht_theorem_closure_report,
@@ -50,8 +51,8 @@ def test_downstream_closures_do_not_upgrade_from_conditional_operator_assumption
 
     assert comm.final_status == "PROJECTOR_COMMUTATORS_CONTROLLED"
     assert comm.theorem_complete is True
-    assert projector.final_status == "PROJECTOR_GRAPH_DOMAIN_STABILITY_CONDITIONAL"
-    assert projector.theorem_complete is False
+    assert projector.final_status == "PROJECTOR_GRAPH_DOMAIN_STABILITY_PROVEN"
+    assert projector.theorem_complete is True
     assert lower.final_status == "HT_LOWER_BOUND_TRANSFER_CONDITIONAL"
     assert lower.theorem_complete is False
 
@@ -78,8 +79,8 @@ def test_full_ht_closure_uses_only_allowed_final_outcomes():
     assert report.final_result in allowed
     assert report.final_result == STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP
     assert report.theorem_complete is False
-    assert report.single_named_gap == PROJECTOR_GRAPH_DOMAIN_STABILITY_GAP
-    assert report.recommended_next_branch == "bhsm-v2.15-projector-graph-domain-stability"
+    assert report.single_named_gap == HT_LOWER_BOUND_TRANSFER_GAP
+    assert report.recommended_next_branch == "bhsm-v2.16-ht-lower-bound-transfer"
 
 
 def test_full_bhsm_completion_uses_only_allowed_final_outcomes():
@@ -94,7 +95,7 @@ def test_full_bhsm_completion_uses_only_allowed_final_outcomes():
     assert report.final_result == STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP
     assert report.final_paper_allowed is False
     assert report.theorem_complete is False
-    assert report.single_named_gap == PROJECTOR_GRAPH_DOMAIN_STABILITY_GAP
+    assert report.single_named_gap == HT_LOWER_BOUND_TRANSFER_GAP
 
 
 def test_if_full_ht_proven_then_all_six_blockers_are_closed():

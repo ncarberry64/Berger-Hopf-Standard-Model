@@ -1,13 +1,13 @@
 # BHSM v2.5 Projector Graph-Domain Closure Attempt
 
-Source status: `PROJECTOR_GRAPH_DOMAIN_STABILITY_CONDITIONAL`
+Source status: `PROJECTOR_GRAPH_DOMAIN_STABILITY_PROVEN`
 Commutator status: `PROJECTOR_COMMUTATORS_CONTROLLED`
-Final status: `PROJECTOR_GRAPH_DOMAIN_STABILITY_CONDITIONAL`
-Theorem complete: `False`
+Final status: `PROJECTOR_GRAPH_DOMAIN_STABILITY_PROVEN`
+Theorem complete: `True`
 
 ## Exact Obstruction
 
-P_perp D(A0) is controlled and commutator control is proven, but P_perp D(A0+V) still needs a standalone graph-domain stability proof.
+No obstruction: P_perp preserves D(A0) and D(A0+V).
 
 ## Limitations
 

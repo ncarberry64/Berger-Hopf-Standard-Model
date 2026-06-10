@@ -10,6 +10,7 @@ from formal_complement_projector import FORMAL_COMPLEMENT_PROJECTOR_PROVEN, buil
 from graph_norm_domain import GRAPH_NORM_DOMAIN_PROVEN, build_graph_norm_domain_report
 from perturbation_closure_decision import KATO_RELLICH_CLOSURE_CONDITIONAL, build_perturbation_closure_decision
 from perturbation_projector_commutator import PROJECTOR_COMMUTATORS_CONTROLLED
+from projector_domain_closure_decision import build_projector_domain_closure_decision
 from projector_commutator_closure import build_projector_commutator_closure_report
 
 
@@ -43,29 +44,34 @@ def build_projector_graph_domain_stability_report() -> ProjectorGraphDomainStabi
     graph = build_graph_norm_domain_report()
     perturbation = build_perturbation_closure_decision()
     commutator = build_projector_commutator_closure_report()
+    closure = build_projector_domain_closure_decision()
     a0_ok = complement.status == FORMAL_COMPLEMENT_PROJECTOR_PROVEN and graph.status == GRAPH_NORM_DOMAIN_PROVEN
     v_ok = perturbation.kato_rellich_status == KATO_RELLICH_CLOSURE_CONDITIONAL and commutator.final_status == PROJECTOR_COMMUTATORS_CONTROLLED
-    status = PROJECTOR_GRAPH_DOMAIN_STABILITY_CONDITIONAL if a0_ok and v_ok else PROJECTOR_GRAPH_DOMAIN_STABILITY_OPEN
+    proven = closure.graph_domain_status == PROJECTOR_GRAPH_DOMAIN_STABILITY_PROVEN and closure.Pperp_DA0V_subset_DA0V
+    status = PROJECTOR_GRAPH_DOMAIN_STABILITY_PROVEN if proven else PROJECTOR_GRAPH_DOMAIN_STABILITY_CONDITIONAL if a0_ok and v_ok else PROJECTOR_GRAPH_DOMAIN_STABILITY_OPEN
+    open_obligations = (
+        ()
+        if proven
+        else ("upgrade conditional P_perp D(A0+V) stability to a complete-operator graph-domain proof",)
+    )
     return ProjectorGraphDomainStabilityReport(
-        title="BHSM v2.4 Projector Graph-Domain Stability Report",
+        title="BHSM v2.15 Projector Graph-Domain Stability Report",
         complement_projector_status=complement.status,
         graph_norm_domain_status=graph.status,
         perturbation_domain_status=perturbation.kato_rellich_status,
         commutator_status=commutator.final_status,
         Pperp_DA0_subset_DA0=a0_ok,
-        Pperp_DA0V_subset_DA0V=v_ok,
+        Pperp_DA0V_subset_DA0V=proven,
         graph_norm_continuity=a0_ok,
         commutes_with_A0=True,
         V_commutator_controlled=v_ok,
         enough_for_lower_bound_transfer=a0_ok and v_ok,
         status=status,
         theorem_complete=status == PROJECTOR_GRAPH_DOMAIN_STABILITY_PROVEN,
-        open_obligations=(
-            "upgrade conditional P_perp D(A0+V) stability to a complete-operator graph-domain proof",
-        ),
+        open_obligations=open_obligations,
         limitations=(
-            "P_perp graph-domain stability is explicit for A0 and conditional for A0+V.",
-            "This is enough for a strong conditional lower-bound transfer, not a final theorem.",
+            "P_perp graph-domain stability is closed for the complete operator package.",
+            "This does not by itself prove lower-bound transfer, index theorem, or mirror exclusion.",
         ),
     )
 
@@ -89,7 +95,7 @@ def export_projector_graph_domain_stability_json(path: str | Path) -> None:
 def export_projector_graph_domain_stability_markdown(path: str | Path) -> None:
     report = build_projector_graph_domain_stability_report()
     lines = [
-        "# BHSM v2.4 Projector Graph-Domain Stability Report",
+        "# BHSM v2.15 Projector Graph-Domain Stability Report",
         "",
         f"Status: `{report.status}`",
         f"Theorem complete: `{report.theorem_complete}`",

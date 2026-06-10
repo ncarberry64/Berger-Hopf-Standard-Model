@@ -39,6 +39,7 @@ from perturbation_projector_commutator import (
 )
 from projector_graph_domain_stability import (
     PROJECTOR_GRAPH_DOMAIN_STABILITY_CONDITIONAL,
+    PROJECTOR_GRAPH_DOMAIN_STABILITY_PROVEN,
     build_projector_graph_domain_stability_report,
     export_projector_graph_domain_stability_json,
     export_projector_graph_domain_stability_markdown,
@@ -74,11 +75,11 @@ def test_perturbation_domain_stability_requires_termwise_checks():
     assert report.theorem_complete is False
 
 
-def test_projector_graph_domain_stability_is_conditional_with_commutator_checks():
+def test_projector_graph_domain_stability_is_proven_with_commutator_checks():
     projector = build_projector_graph_domain_stability_report()
     commutator = build_perturbation_projector_commutator_report()
 
-    assert projector.status == PROJECTOR_GRAPH_DOMAIN_STABILITY_CONDITIONAL
+    assert projector.status == PROJECTOR_GRAPH_DOMAIN_STABILITY_PROVEN
     assert projector.Pperp_DA0_subset_DA0 is True
     assert projector.Pperp_DA0V_subset_DA0V is True
     assert projector.commutes_with_A0 is True
@@ -143,7 +144,7 @@ def test_v24_exports_generate(tmp_path):
 
     assert json.loads(outputs["operator_json"].read_text())["status"] == COMPLETE_OPERATOR_IDENTIFICATION_PROVEN
     assert json.loads(outputs["comm_json"].read_text())["status"] == PROJECTOR_COMMUTATORS_CONDITIONAL
-    assert json.loads(outputs["projector_json"].read_text())["status"] == PROJECTOR_GRAPH_DOMAIN_STABILITY_CONDITIONAL
+    assert json.loads(outputs["projector_json"].read_text())["status"] == PROJECTOR_GRAPH_DOMAIN_STABILITY_PROVEN
     assert json.loads(outputs["transfer_json"].read_text())["status"] == HT_LOWER_BOUND_TRANSFER_CONDITIONAL
     assert json.loads(outputs["domain_json"].read_text())["status"] == HT_DOMAIN_STABILITY_BRIDGE_CONDITIONAL_STRONG
     assert json.loads(outputs["decision_json"].read_text())["ht_dependency_status"] == HT_DOMAIN_STABILITY_BRIDGE_CONDITIONAL_STRONG

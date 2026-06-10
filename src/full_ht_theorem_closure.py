@@ -85,7 +85,7 @@ def build_full_ht_theorem_closure_report() -> FullHTTheoremClosureReport:
             obstruction = projector.exact_obstruction
         elif not lower.theorem_complete:
             gap = HT_LOWER_BOUND_TRANSFER_GAP
-            branch = "bhsm-v2.14-ht-lower-bound-transfer"
+            branch = "bhsm-v2.16-ht-lower-bound-transfer"
             target = gap
             obstruction = lower.exact_obstruction
         elif not index.theorem_complete:

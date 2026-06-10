@@ -14,7 +14,7 @@ from complete_operator_identification_decision import (
 from constants import S_OVERLAP
 from formal_kernel_projector import DEFAULT_FORMAL_COORDINATES, OLD_COORDINATE_FIRST_KERNEL, formal_kernel_basis_vectors
 from full_bhsm_theorem_completion import build_full_bhsm_theorem_completion_report
-from full_ht_theorem_closure import PROJECTOR_GRAPH_DOMAIN_STABILITY_GAP, build_full_ht_theorem_closure_report
+from full_ht_theorem_closure import HT_LOWER_BOUND_TRANSFER_GAP, build_full_ht_theorem_closure_report
 from operator_identification_theorem import (
     COMPLETE_OPERATOR_IDENTIFICATION_BLOCKED_BY_MISSING_TERM,
     COMPLETE_OPERATOR_IDENTIFICATION_PROVEN,
@@ -28,7 +28,7 @@ from complete_berger_hopf_operator import export_complete_berger_hopf_operator_j
 from bundle_dirac_derivation import export_bundle_dirac_derivation_json, export_bundle_dirac_derivation_markdown
 
 
-SINGLE_THEOREM_GAP = PROJECTOR_GRAPH_DOMAIN_STABILITY_GAP
+SINGLE_THEOREM_GAP = HT_LOWER_BOUND_TRANSFER_GAP
 
 
 def test_every_complete_operator_term_is_classified_and_single_gap_is_visible():
@@ -97,9 +97,9 @@ def test_downstream_theorems_do_not_upgrade_from_v26_blocker():
     bhsm = build_full_bhsm_theorem_completion_report()
 
     assert ht.theorem_complete is False
-    assert ht.recommended_next_branch == "bhsm-v2.15-projector-graph-domain-stability"
+    assert ht.recommended_next_branch == "bhsm-v2.16-ht-lower-bound-transfer"
     assert ht.recommended_target_theorem == SINGLE_THEOREM_GAP
-    assert "commutator" in ht.exact_obstruction.lower()
+    assert "index/mirror" in ht.exact_obstruction.lower()
     assert bhsm.theorem_complete is False
     assert bhsm.final_paper_allowed is False
 

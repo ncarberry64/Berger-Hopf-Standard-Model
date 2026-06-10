@@ -368,6 +368,10 @@ def test_typesetting_pass_does_not_modify_source_model_files():
         "src/projector_commutator_relative_bound.py",
         "src/projector_commutator_domain_control.py",
         "src/projector_commutator_control_decision.py",
+        "src/interacting_graph_domain.py",
+        "src/projector_domain_invariance.py",
+        "src/projector_graph_norm_control.py",
+        "src/projector_domain_closure_decision.py",
     }
 
     assert not [

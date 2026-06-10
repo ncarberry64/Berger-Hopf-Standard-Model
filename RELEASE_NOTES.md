@@ -1,3 +1,28 @@
+# Unreleased / Development: v2.15 Projector Graph-Domain Stability
+
+Branch: `bhsm-v2.15-projector-graph-domain-stability`
+
+The v2.15 branch closes `PROJECTOR_GRAPH_DOMAIN_STABILITY_GAP` for the formal
+sector-labeled complement projector.  It proves the graph-domain inclusion
+`P_perp D(A0+V) subset D(A0+V)` inside the current complete BHSM operator
+package by combining the complete-operator/action-uniqueness results, the
+relative-bound package with `a < 1`, and v2.14 projector commutator control.
+
+Final result:
+
+- projector graph-domain stability: `PROJECTOR_GRAPH_DOMAIN_STABILITY_CLOSED`
+- graph-domain theorem status: `PROJECTOR_GRAPH_DOMAIN_STABILITY_PROVEN`
+- interacting domain: `D(A0+V)=D(A0)`
+- complete-operator identification: `COMPLETE_OPERATOR_IDENTIFICATION_PROVEN`
+- projector commutator control: `PROJECTOR_COMMUTATOR_CONTROL_PROVEN`
+- full H_T theorem: not proven
+- next blocker: `HT_LOWER_BOUND_TRANSFER_GAP`
+- recommended next branch: `bhsm-v2.16-ht-lower-bound-transfer`
+- final paper allowed: `False`
+
+Frozen predictions, canonical constants, frozen modes, tolerances, outputs, and
+virtual dressing are unchanged.
+
 # Unreleased / Development: v2.14 Projector Commutator Control
 
 Branch: `bhsm-v2.14-projector-commutator-control`

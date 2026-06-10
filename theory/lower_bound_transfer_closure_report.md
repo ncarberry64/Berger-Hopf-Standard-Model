@@ -1,14 +1,14 @@
 # BHSM v2.5 Lower-Bound Transfer Closure Attempt
 
 Source status: `HT_LOWER_BOUND_TRANSFER_CONDITIONAL`
-Projector graph-domain status: `PROJECTOR_GRAPH_DOMAIN_STABILITY_CONDITIONAL`
+Projector graph-domain status: `PROJECTOR_GRAPH_DOMAIN_STABILITY_PROVEN`
 Final status: `HT_LOWER_BOUND_TRANSFER_CONDITIONAL`
 Theorem complete: `False`
 Clears required threshold: `True`
 
 ## Exact Obstruction
 
-The numeric lower bound clears the required threshold, but transfer to H_perp remains conditional on projector graph-domain and index/mirror proof closure.
+Projector graph-domain stability is proven and the numeric lower bound clears the threshold, but full transfer remains conditional on index/mirror proof closure.
 
 ## Limitations
 

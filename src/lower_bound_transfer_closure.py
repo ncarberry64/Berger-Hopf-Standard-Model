@@ -30,11 +30,12 @@ def build_lower_bound_transfer_closure_report() -> LowerBoundTransferClosureRepo
     report = build_complete_operator_bound_transfer_report()
     projector = build_projector_graph_domain_closure_report()
     proven = report.status == HT_LOWER_BOUND_TRANSFER_PROVEN and projector.theorem_complete
-    obstruction = (
-        "No obstruction: lower bound transfers to H_perp."
-        if proven
-        else "The numeric lower bound clears the required threshold, but transfer to H_perp remains conditional on projector graph-domain and index/mirror proof closure."
-    )
+    if proven:
+        obstruction = "No obstruction: lower bound transfers to H_perp."
+    elif projector.theorem_complete:
+        obstruction = "Projector graph-domain stability is proven and the numeric lower bound clears the threshold, but full transfer remains conditional on index/mirror proof closure."
+    else:
+        obstruction = "The numeric lower bound clears the required threshold, but transfer to H_perp remains conditional on projector graph-domain and index/mirror proof closure."
     return LowerBoundTransferClosureReport(
         title="BHSM v2.5 Lower-Bound Transfer Closure Attempt",
         source_status=report.status,

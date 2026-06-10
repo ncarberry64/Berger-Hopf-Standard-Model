@@ -1,0 +1,136 @@
+{
+  "Pperp_DA0V_subset_DA0V": true,
+  "Pperp_DA0_subset_DA0": true,
+  "all_terms_classified": true,
+  "assumptions": [
+    "The v2.15 interacting graph-domain equality D(A0+V)=D(A0) holds.",
+    "The v2.14 termwise commutator classifications cover every complete-operator term."
+  ],
+  "blocking_terms": [],
+  "interacting_domain_status": "INTERACTING_DOMAIN_EQUALS_REFERENCE_DOMAIN_PROVEN",
+  "limitations": [
+    "This closes projector graph-domain invariance only; it does not close lower-bound transfer or index/mirror theorem gates."
+  ],
+  "rows": [
+    {
+      "bounded_on_interacting_graph_norm": true,
+      "classification": "DOMAIN_STABLE_EXACTLY",
+      "domain_action": "P_perp commutes with diagonal A0 on D(A0)",
+      "evidence": [
+        "A0 is diagonal in the formal kernel/complement split."
+      ],
+      "limitations": [],
+      "lower_bound_safe": true,
+      "preserves_D_A0": true,
+      "preserves_D_A0V": true,
+      "term_id": "D_diag^2"
+    },
+    {
+      "bounded_on_interacting_graph_norm": true,
+      "classification": "DOMAIN_STABLE_BY_COMMUTATOR_CONTROL",
+      "domain_action": "Hopf term preserves sector-labeled domain blocks",
+      "evidence": [
+        "v2.14 classifies [P_perp,V_Hopf] as zero by sector."
+      ],
+      "limitations": [],
+      "lower_bound_safe": true,
+      "preserves_D_A0": true,
+      "preserves_D_A0V": true,
+      "term_id": "V_Hopf"
+    },
+    {
+      "bounded_on_interacting_graph_norm": true,
+      "classification": "DOMAIN_STABLE_BY_COMMUTATOR_CONTROL",
+      "domain_action": "Boundary functional preserves omega-sector blocks",
+      "evidence": [
+        "v2.14 classifies [P_perp,V_boundary] as zero by sector."
+      ],
+      "limitations": [],
+      "lower_bound_safe": true,
+      "preserves_D_A0": true,
+      "preserves_D_A0V": true,
+      "term_id": "V_boundary"
+    },
+    {
+      "bounded_on_interacting_graph_norm": true,
+      "classification": "DOMAIN_STABLE_BY_COMMUTATOR_CONTROL",
+      "domain_action": "Chirality term preserves protected chirality split",
+      "evidence": [
+        "v2.14 classifies [P_perp,V_chi] as zero by chirality."
+      ],
+      "limitations": [],
+      "lower_bound_safe": true,
+      "preserves_D_A0": true,
+      "preserves_D_A0V": true,
+      "term_id": "V_chi"
+    },
+    {
+      "bounded_on_interacting_graph_norm": true,
+      "classification": "DOMAIN_STABLE_BY_RELATIVE_BOUND",
+      "domain_action": "Sector-coupling commutator is relatively A0-bounded",
+      "evidence": [
+        "v2.14 gives a_C = 0.015621013485509948 for the nonzero sector-coupling commutator."
+      ],
+      "limitations": [],
+      "lower_bound_safe": true,
+      "preserves_D_A0": true,
+      "preserves_D_A0V": true,
+      "term_id": "K_sector"
+    },
+    {
+      "bounded_on_interacting_graph_norm": true,
+      "classification": "DOMAIN_STABLE_EXACTLY",
+      "domain_action": "Lift is supported on the complement projector",
+      "evidence": [
+        "P_perp_lift is constructed from P_perp support."
+      ],
+      "limitations": [],
+      "lower_bound_safe": true,
+      "preserves_D_A0": true,
+      "preserves_D_A0V": true,
+      "term_id": "P_perp_lift"
+    },
+    {
+      "bounded_on_interacting_graph_norm": true,
+      "classification": "DOMAIN_STABLE_BY_GRAPH_NORM_EQUIVALENCE",
+      "domain_action": "PSD profile term is bounded/lower-bound safe on the represented profile sector",
+      "evidence": [
+        "D(A0+V)=D(A0) and graph norms are equivalent in the v2.15 interacting-domain audit."
+      ],
+      "limitations": [],
+      "lower_bound_safe": true,
+      "preserves_D_A0": true,
+      "preserves_D_A0V": true,
+      "term_id": "V_PSD"
+    },
+    {
+      "bounded_on_interacting_graph_norm": true,
+      "classification": "DOMAIN_STABLE_BY_LIFT_SCREENING",
+      "domain_action": "Represented topographic sector maps into lifted/screened complement channels",
+      "evidence": [
+        "v2.11/v2.12 represent mixed and bundle-curvature channels by topographic lift/screening sectors."
+      ],
+      "limitations": [],
+      "lower_bound_safe": true,
+      "preserves_D_A0": true,
+      "preserves_D_A0V": true,
+      "term_id": "topographic_represented_sector"
+    },
+    {
+      "bounded_on_interacting_graph_norm": true,
+      "classification": "DOMAIN_STABLE_BY_LIFT_SCREENING",
+      "domain_action": "Curvature/topographic remainder is represented by lift/profile support",
+      "evidence": [
+        "v2.13 action uniqueness forbids an independent unrepresented curvature term."
+      ],
+      "limitations": [],
+      "lower_bound_safe": true,
+      "preserves_D_A0": true,
+      "preserves_D_A0V": true,
+      "term_id": "complete_operator_curvature_topographic"
+    }
+  ],
+  "status": "PROJECTOR_DOMAIN_INVARIANCE_PROVEN",
+  "theorem_complete": true,
+  "title": "BHSM v2.15 Projector Domain-Invariance Report"
+}

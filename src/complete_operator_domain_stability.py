@@ -9,8 +9,8 @@ from pathlib import Path
 from complete_operator_bound_transfer import HT_LOWER_BOUND_TRANSFER_CONDITIONAL, build_complete_operator_bound_transfer_report
 from complete_twisted_dirac_operator import COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL, COMPLETE_OPERATOR_IDENTIFICATION_PROVEN, build_complete_twisted_dirac_operator_report
 from perturbation_closure_decision import KATO_RELLICH_CLOSURE_CONDITIONAL, build_perturbation_closure_decision
-from perturbation_projector_commutator import PROJECTOR_COMMUTATORS_CONDITIONAL, build_perturbation_projector_commutator_report
-from projector_graph_domain_stability import PROJECTOR_GRAPH_DOMAIN_STABILITY_CONDITIONAL, build_projector_graph_domain_stability_report
+from projector_commutator_closure import build_projector_commutator_closure_report
+from projector_graph_domain_stability import PROJECTOR_GRAPH_DOMAIN_STABILITY_CONDITIONAL, PROJECTOR_GRAPH_DOMAIN_STABILITY_PROVEN, build_projector_graph_domain_stability_report
 
 
 PERTURBATION_DOMAIN_STABILITY_PROVEN = "PERTURBATION_DOMAIN_STABILITY_PROVEN"
@@ -68,16 +68,17 @@ def build_complete_operator_domain_stability_report() -> CompleteOperatorDomainS
     operator = build_complete_twisted_dirac_operator_report()
     perturbation = build_perturbation_closure_decision()
     projector = build_projector_graph_domain_stability_report()
-    commutator = build_perturbation_projector_commutator_report()
+    commutator = build_projector_commutator_closure_report()
     transfer = build_complete_operator_bound_transfer_report()
     terms = perturbation_domain_terms()
     termwise = all(row.maps_DA0_to_H and row.preserves_common_domain for row in terms)
     perturbation_status = PERTURBATION_DOMAIN_STABILITY_CONDITIONAL if perturbation.kato_rellich_status == KATO_RELLICH_CLOSURE_CONDITIONAL and termwise else PERTURBATION_DOMAIN_STABILITY_OPEN
+    commutator_obligations = () if commutator.theorem_complete else (commutator.exact_obstruction,)
     if operator.status not in {COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL, COMPLETE_OPERATOR_IDENTIFICATION_PROVEN}:
         status = HT_THEOREM_BLOCKED_BY_COMPLETE_OPERATOR_IDENTIFICATION
-    elif perturbation_status != PERTURBATION_DOMAIN_STABILITY_CONDITIONAL or projector.status != PROJECTOR_GRAPH_DOMAIN_STABILITY_CONDITIONAL:
+    elif perturbation_status != PERTURBATION_DOMAIN_STABILITY_CONDITIONAL or projector.status not in {PROJECTOR_GRAPH_DOMAIN_STABILITY_CONDITIONAL, PROJECTOR_GRAPH_DOMAIN_STABILITY_PROVEN}:
         status = HT_THEOREM_BLOCKED_BY_DOMAIN_STABILITY
-    elif commutator.status == PROJECTOR_COMMUTATORS_CONDITIONAL and transfer.status == HT_LOWER_BOUND_TRANSFER_CONDITIONAL:
+    elif commutator.final_status == "PROJECTOR_COMMUTATORS_CONTROLLED" and transfer.status == HT_LOWER_BOUND_TRANSFER_CONDITIONAL:
         status = HT_DOMAIN_STABILITY_BRIDGE_CONDITIONAL_STRONG
     else:
         status = HT_THEOREM_BLOCKED_BY_DOMAIN_STABILITY
@@ -86,7 +87,7 @@ def build_complete_operator_domain_stability_report() -> CompleteOperatorDomainS
         complete_operator_identification_status=operator.status,
         perturbation_domain_stability_status=perturbation_status,
         projector_graph_domain_stability_status=projector.status,
-        commutator_control_status=commutator.status,
+        commutator_control_status=commutator.final_status,
         lower_bound_transfer_status=transfer.status,
         perturbation_terms=terms,
         all_termwise_checks_pass=termwise,
@@ -95,7 +96,7 @@ def build_complete_operator_domain_stability_report() -> CompleteOperatorDomainS
         open_obligations=(
             *operator.open_obligations,
             *projector.open_obligations,
-            *commutator.open_obligations,
+            *commutator_obligations,
             *transfer.open_obligations,
         ),
         limitations=(

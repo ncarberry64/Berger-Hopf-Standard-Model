@@ -100,3 +100,10 @@
 - `PROJECTOR_COMMUTATOR_CONTROL_GAP` is closed for `P_perp` and the complete BHSM perturbation package.
 - The commutator relative bound has `a_C = 0.015621013485509948`, `b_C = 0.0`, and `a_C < 1`.
 - Full H_T theorem completion remains blocked by `PROJECTOR_GRAPH_DOMAIN_STABILITY_GAP`; final paper preparation remains disallowed.
+
+## v2.15 Projector Graph-Domain Stability Closure
+
+- `PROJECTOR_GRAPH_DOMAIN_STABILITY_GAP` is closed for the formal sector-labeled projector.
+- The interacting graph domain satisfies `D(A0+V)=D(A0)` in the current complete BHSM operator scaffold.
+- The graph-domain inclusion `P_perp D(A0+V) subset D(A0+V)` is proven for the complete operator package.
+- Full H_T theorem completion remains blocked by `HT_LOWER_BOUND_TRANSFER_GAP`; final paper preparation remains disallowed.

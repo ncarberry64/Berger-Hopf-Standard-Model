@@ -55,6 +55,14 @@ def build_complete_operator_bound_transfer_report() -> CompleteOperatorBoundTran
         status = HT_LOWER_BOUND_TRANSFER_CONDITIONAL
     else:
         status = HT_LOWER_BOUND_TRANSFER_BLOCKED_BY_INDEX_MIRROR
+    open_obligations = (
+        ()
+        if status == HT_LOWER_BOUND_TRANSFER_PROVEN
+        else (
+            *((("upgrade projector graph-domain stability from conditional to proven",) if domain.status != PROJECTOR_GRAPH_DOMAIN_STABILITY_PROVEN else ())),
+            "upgrade topological index and mirror exclusion from conditional to proven before claiming final H_T transfer",
+        )
+    )
     return CompleteOperatorBoundTransferReport(
         title="BHSM v2.4 Complete Operator Lower-Bound Transfer Report",
         complement_lower_bound_status=lower.status,
@@ -67,12 +75,9 @@ def build_complete_operator_bound_transfer_report() -> CompleteOperatorBoundTran
         applies_to_H_perp=clears and domain_ok,
         status=status,
         theorem_complete=status == HT_LOWER_BOUND_TRANSFER_PROVEN,
-        open_obligations=(
-            "upgrade projector graph-domain stability from conditional to proven",
-            "upgrade topological index and mirror exclusion from conditional to proven before claiming final H_T transfer",
-        ),
+        open_obligations=open_obligations,
         limitations=(
-            "The lower bound transfers to H_perp only conditionally in v2.4.",
+            "The lower bound transfers to H_perp only conditionally until index/mirror closure is proven.",
             "It is not a final H_T theorem because index/mirror and complete-domain hypotheses remain conditional.",
         ),
     )

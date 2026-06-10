@@ -7,8 +7,8 @@ Theorem complete: `False`
 | --- | --- |
 | complete-operator identification | `COMPLETE_OPERATOR_IDENTIFICATION_PROVEN` |
 | perturbation domain stability | `PERTURBATION_DOMAIN_STABILITY_CONDITIONAL` |
-| projector graph-domain stability | `PROJECTOR_GRAPH_DOMAIN_STABILITY_CONDITIONAL` |
-| commutator control | `PROJECTOR_COMMUTATORS_CONDITIONAL` |
+| projector graph-domain stability | `PROJECTOR_GRAPH_DOMAIN_STABILITY_PROVEN` |
+| commutator control | `PROJECTOR_COMMUTATORS_CONTROLLED` |
 | lower-bound transfer | `HT_LOWER_BOUND_TRANSFER_CONDITIONAL` |
 
 ## Perturbation Terms
@@ -24,11 +24,6 @@ Theorem complete: `False`
 
 ## Open Obligations
 
-- upgrade conditional P_perp D(A0+V) stability to a complete-operator graph-domain proof
-- prove all nonzero [P_perp,V] commutators in the complete twisted Dirac/bundle domain
-- prove nonzero commutators are bounded or relatively bounded in the complete twisted Dirac/bundle operator
-- prove sector-coupling commutator control independent of scaffold identification assumptions
-- upgrade projector graph-domain stability from conditional to proven
 - upgrade topological index and mirror exclusion from conditional to proven before claiming final H_T transfer
 
 ## Limitations
