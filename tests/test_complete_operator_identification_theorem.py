@@ -29,7 +29,7 @@ from bundle_dirac_derivation import export_bundle_dirac_derivation_json, export_
 
 
 SINGLE_BLOCKING_TERM = "lichnerowicz_bundle_curvature_remainder"
-SINGLE_THEOREM_GAP = "BUNDLE_CURVATURE_REMAINDER_FORMULA_AND_BOUND_GAP"
+SINGLE_THEOREM_GAP = "COMPLETE_BHSM_BUNDLE_CONNECTION_CURVATURE_FORMULA_GAP"
 
 
 def test_every_complete_operator_term_is_classified_and_single_gap_is_visible():
@@ -79,7 +79,7 @@ def test_final_v26_decision_uses_allowed_result_and_blocks_final_paper():
     assert decision.final_result == STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP
     assert decision.theorem_complete is False
     assert decision.blocking_term == SINGLE_BLOCKING_TERM
-    assert decision.recommended_next_branch == "bhsm-v2.8-curvature-remainder-formula-bound"
+    assert decision.recommended_next_branch == "bhsm-v2.9-complete-bundle-connection-curvature"
     assert decision.recommended_target_theorem == SINGLE_THEOREM_GAP
     assert decision.final_paper_allowed is False
 
@@ -99,7 +99,7 @@ def test_downstream_theorems_do_not_upgrade_from_v26_blocker():
     bhsm = build_full_bhsm_theorem_completion_report()
 
     assert ht.theorem_complete is False
-    assert ht.recommended_next_branch == "bhsm-v2.8-curvature-remainder-formula-bound"
+    assert ht.recommended_next_branch == "bhsm-v2.9-complete-bundle-connection-curvature"
     assert ht.recommended_target_theorem == SINGLE_THEOREM_GAP
     assert SINGLE_BLOCKING_TERM in ht.exact_obstruction
     assert bhsm.theorem_complete is False

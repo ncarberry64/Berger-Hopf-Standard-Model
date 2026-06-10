@@ -1,3 +1,28 @@
+# Unreleased / Development: v2.8 Curvature Remainder Formula and Bound
+
+Branch: `bhsm-v2.8-curvature-remainder-formula-bound`
+
+The v2.8 branch formalizes the Lichnerowicz-type expression for the remaining
+bundle-curvature term and audits its basis, sector, formal-kernel, complement,
+relative-bound, and lower-bound-transfer implications.
+
+Final result:
+
+- formula/bound decision: `STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP`
+- formula status: `REMAINDER_FORMULA_OPEN`
+- basis-action status: `REMAINDER_BASIS_ACTION_OPEN`
+- kernel/complement status: `REMAINDER_KERNEL_COMPLEMENT_OPEN`
+- final classification: `REMAINDER_OPEN`
+- exact remaining gap: `COMPLETE_BHSM_BUNDLE_CONNECTION_CURVATURE_FORMULA_GAP`
+- recommended next branch: `bhsm-v2.9-complete-bundle-connection-curvature`
+- final paper allowed: `False`
+
+The Lichnerowicz identity is now explicit, but the complete BHSM bundle
+connection curvature formula is still missing. No zero, represented, PSD,
+screened/lifted, or relative-bound-safe classification is adopted without that
+formula/action proof. Frozen predictions, canonical constants, frozen modes,
+tolerances, outputs, and virtual dressing are unchanged.
+
 # Unreleased / Development: v2.7 Bundle Curvature Remainder
 
 Branch: `bhsm-v2.7-bundle-curvature-remainder`

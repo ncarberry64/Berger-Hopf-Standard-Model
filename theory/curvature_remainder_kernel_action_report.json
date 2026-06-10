@@ -1,0 +1,42 @@
+{
+  "basis_action_status": "REMAINDER_BASIS_ACTION_OPEN",
+  "checks": [
+    {
+      "check_id": "R_on_K_formal",
+      "conclusion": "not proven zero on the formal lepton/up/down kernel",
+      "limitation": "Requires explicit curvature action on protected states.",
+      "status": "OPEN"
+    },
+    {
+      "check_id": "R_on_H_perp",
+      "conclusion": "not proven lower-bound safe on H_perp",
+      "limitation": "Requires PSD, relative-bound, or screening proof.",
+      "status": "OPEN"
+    },
+    {
+      "check_id": "commutator_Pperp_R",
+      "conclusion": "[P_perp,R_bundle] is not computed",
+      "limitation": "Requires explicit matrix/operator action.",
+      "status": "OPEN"
+    },
+    {
+      "check_id": "lower_bound_transfer",
+      "conclusion": "lower-bound transfer cannot include R_bundle",
+      "limitation": "No nonzero bound constants are available.",
+      "status": "OPEN"
+    },
+    {
+      "check_id": "mirror_channels",
+      "conclusion": "mirror leakage not excluded for R_bundle",
+      "limitation": "Requires chirality-resolved curvature action.",
+      "status": "OPEN"
+    }
+  ],
+  "limitations": [
+    "The formal kernel remains lepton/up/down sector-labeled, but R_bundle is not proven to vanish on it.",
+    "No lower-bound transfer upgrade is possible while kernel/complement action is open."
+  ],
+  "status": "REMAINDER_KERNEL_COMPLEMENT_OPEN",
+  "theorem_complete": false,
+  "title": "BHSM v2.8 Curvature Remainder Kernel/Complement Action Report"
+}

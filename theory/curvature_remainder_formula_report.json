@@ -1,0 +1,57 @@
+{
+  "components": [
+    {
+      "component_id": "hopf_curvature_contraction",
+      "limitation": "Coefficient-level contraction in the complete bundle connection is not derived.",
+      "represented_by": "V_Hopf",
+      "status": "REPRESENTED_SYMBOLICALLY",
+      "symbolic_term": "c(F_Hopf)"
+    },
+    {
+      "component_id": "boundary_curvature_contraction",
+      "limitation": "Boundary functional curvature is action-linked but not fully action-derived.",
+      "represented_by": "V_boundary",
+      "status": "REPRESENTED_SYMBOLICALLY",
+      "symbolic_term": "c(F_boundary)"
+    },
+    {
+      "component_id": "chirality_curvature_contraction",
+      "limitation": "Chirality action is scaffold-controlled, not a full curvature theorem.",
+      "represented_by": "V_chi",
+      "status": "REPRESENTED_SYMBOLICALLY",
+      "symbolic_term": "c(F_chi)"
+    },
+    {
+      "component_id": "sector_curvature_contraction",
+      "limitation": "Sector off-diagonal curvature coefficients are not derived from the complete connection.",
+      "represented_by": "K_sector",
+      "status": "REPRESENTED_SYMBOLICALLY",
+      "symbolic_term": "c(F_sector)"
+    },
+    {
+      "component_id": "profile_curvature_contraction",
+      "limitation": "Only safe if the curvature contraction is proven PSD/profile-controlled.",
+      "represented_by": "V_PSD",
+      "status": "CONDITIONAL_PROFILE_REPRESENTATION",
+      "symbolic_term": "c(F_profile)"
+    },
+    {
+      "component_id": "unresolved_mixed_curvature",
+      "limitation": "The complete mixed bundle-curvature formula/action is not specified.",
+      "represented_by": "not represented",
+      "status": "OPEN",
+      "symbolic_term": "c(F_mixed^BH) - represented contractions"
+    }
+  ],
+  "exact_missing_input": "COMPLETE_BHSM_BUNDLE_CONNECTION_CURVATURE_FORMULA_GAP",
+  "lichnerowicz_identity": "D_BH^2 = nabla_BH^* nabla_BH + scal_BH/4 + c(F_BH)",
+  "limitations": [
+    "The Lichnerowicz structure is formalized but the complete mixed curvature contraction is not derived.",
+    "No harmless classification follows until the missing connection-curvature formula is supplied."
+  ],
+  "remainder_formula": "R_bundle = c(F_BH) - (V_Hopf + V_boundary + V_chi + K_sector + V_PSD represented curvature contractions)",
+  "status": "REMAINDER_FORMULA_OPEN",
+  "term_id": "lichnerowicz_bundle_curvature_remainder",
+  "theorem_complete": false,
+  "title": "BHSM v2.8 Curvature Remainder Formula Report"
+}

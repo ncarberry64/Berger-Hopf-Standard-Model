@@ -326,6 +326,13 @@ def test_typesetting_pass_does_not_modify_source_model_files():
         "src/curvature_remainder_audit.py",
         "src/curvature_remainder_bound.py",
         "src/curvature_remainder_closure_decision.py",
+        "src/curvature_remainder_formula.py",
+        "src/curvature_remainder_basis_action.py",
+        "src/curvature_remainder_sector_action.py",
+        "src/curvature_remainder_kernel_action.py",
+        "src/curvature_remainder_relative_bound.py",
+        "src/curvature_remainder_lower_bound_transfer.py",
+        "src/curvature_remainder_formula_decision.py",
     }
 
     assert not [

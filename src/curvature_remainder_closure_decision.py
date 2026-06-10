@@ -13,6 +13,11 @@ from curvature_remainder_audit import (
     build_curvature_remainder_audit_report,
 )
 from curvature_remainder_bound import build_curvature_remainder_bound_report
+from curvature_remainder_formula_decision import (
+    BHSM_THEOREM_FAILURE as FORMULA_BHSM_THEOREM_FAILURE,
+    CURVATURE_REMAINDER_FORMULA_BOUND_CLOSED,
+    build_curvature_remainder_formula_decision,
+)
 
 
 BUNDLE_CURVATURE_REMAINDER_CLOSED = "BUNDLE_CURVATURE_REMAINDER_CLOSED"
@@ -40,9 +45,10 @@ def build_curvature_remainder_closure_decision() -> CurvatureRemainderClosureDec
 
     audit = build_curvature_remainder_audit_report()
     bound = build_curvature_remainder_bound_report()
-    if audit.final_classification in SAFE_REMAINDER_CLASSIFICATIONS and bound.theorem_complete:
+    formula = build_curvature_remainder_formula_decision()
+    if formula.final_result == CURVATURE_REMAINDER_FORMULA_BOUND_CLOSED:
         final = BUNDLE_CURVATURE_REMAINDER_CLOSED
-    elif audit.final_classification == REMAINDER_REAL_MISSING_TERM:
+    elif formula.final_result == FORMULA_BHSM_THEOREM_FAILURE or audit.final_classification == REMAINDER_REAL_MISSING_TERM:
         final = BHSM_THEOREM_FAILURE
     else:
         final = STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP
@@ -53,9 +59,9 @@ def build_curvature_remainder_closure_decision() -> CurvatureRemainderClosureDec
         theorem_complete=final == BUNDLE_CURVATURE_REMAINDER_CLOSED,
         complete_operator_may_upgrade=final == BUNDLE_CURVATURE_REMAINDER_CLOSED,
         blocking_term=audit.term_id,
-        exact_remaining_gap=audit.exact_remaining_gap,
-        recommended_next_branch="bhsm-v2.8-curvature-remainder-formula-bound",
-        recommended_target_theorem=audit.exact_remaining_gap,
+        exact_remaining_gap=formula.exact_remaining_gap,
+        recommended_next_branch=formula.recommended_next_branch,
+        recommended_target_theorem=formula.recommended_target_theorem,
         final_paper_allowed=False,
         limitations=(
             "The final paper remains blocked unless the full BHSM theorem package is complete.",

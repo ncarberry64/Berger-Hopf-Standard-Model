@@ -14,8 +14,8 @@ Final paper allowed: `False`
 
 The missing term `lichnerowicz_bundle_curvature_remainder` is not proven zero, screened/lifted, or represented by an existing A0+V term.
 
-Recommended next branch: `bhsm-v2.8-curvature-remainder-formula-bound`
-Recommended target theorem: `BUNDLE_CURVATURE_REMAINDER_FORMULA_AND_BOUND_GAP`
+Recommended next branch: `bhsm-v2.9-complete-bundle-connection-curvature`
+Recommended target theorem: `COMPLETE_BHSM_BUNDLE_CONNECTION_CURVATURE_FORMULA_GAP`
 
 ## Limitations
 

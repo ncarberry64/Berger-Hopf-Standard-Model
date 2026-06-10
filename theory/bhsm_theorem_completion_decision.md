@@ -60,13 +60,15 @@ Do not prepare final paper/Zenodo release; attack the full operator domain, topo
 - This decision does not claim first-principles theorem closure.
 
 
-## v2.7 Bundle Curvature Remainder Update
+## v2.8 Curvature Remainder Formula and Bound Update
 
-- v2.7 final result: `STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP`
-- remainder classification: `REMAINDER_OPEN`
-- blocking term: `lichnerowicz_bundle_curvature_remainder`
-- exact remaining gap: `BUNDLE_CURVATURE_REMAINDER_FORMULA_AND_BOUND_GAP`
-- recommended next branch: `bhsm-v2.8-curvature-remainder-formula-bound`
+- v2.8 final result: `STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP`
+- formula status: `REMAINDER_FORMULA_OPEN`
+- basis-action status: `REMAINDER_BASIS_ACTION_OPEN`
+- kernel-action status: `REMAINDER_KERNEL_COMPLEMENT_OPEN`
+- final classification: `REMAINDER_OPEN`
+- exact remaining gap: `COMPLETE_BHSM_BUNDLE_CONNECTION_CURVATURE_FORMULA_GAP`
+- recommended next branch: `bhsm-v2.9-complete-bundle-connection-curvature`
 - final paper allowed: `False`
 
-The complete-operator theorem remains blocked because the bundle-curvature remainder formula/action is not derived strongly enough to prove zero, representation, PSD control, screening/lifting, or relative-bound safety.
+The Lichnerowicz identity is formalized, but the complete BHSM bundle connection curvature formula is still missing. No harmless classification is adopted.

@@ -30,7 +30,7 @@ from operator_identification_theorem import COMPLETE_OPERATOR_IDENTIFICATION_PRO
 from operator_term_inventory import build_operator_term_inventory_report
 
 
-EXACT_GAP = "BUNDLE_CURVATURE_REMAINDER_FORMULA_AND_BOUND_GAP"
+EXACT_GAP = "COMPLETE_BHSM_BUNDLE_CONNECTION_CURVATURE_FORMULA_GAP"
 
 
 def test_lichnerowicz_remainder_inventory_is_explicit():
@@ -60,7 +60,7 @@ def test_remainder_is_classified_exactly_once_as_open():
     assert report.final_classification in FINAL_REMAINDER_CLASSIFICATIONS
     assert report.final_classification == REMAINDER_OPEN
     assert passing == [REMAINDER_OPEN]
-    assert report.exact_remaining_gap == EXACT_GAP
+    assert report.exact_remaining_gap == "BUNDLE_CURVATURE_REMAINDER_FORMULA_AND_BOUND_GAP"
     assert report.theorem_complete is False
 
 
@@ -83,7 +83,7 @@ def test_closure_decision_names_next_gap_without_failure_overclaim():
     assert report.final_result != BHSM_THEOREM_FAILURE
     assert report.remainder_classification == REMAINDER_OPEN
     assert report.exact_remaining_gap == EXACT_GAP
-    assert report.recommended_next_branch == "bhsm-v2.8-curvature-remainder-formula-bound"
+    assert report.recommended_next_branch == "bhsm-v2.9-complete-bundle-connection-curvature"
     assert report.final_paper_allowed is False
 
 
@@ -105,7 +105,7 @@ def test_downstream_full_ht_and_bhsm_do_not_upgrade_from_curvature_gap():
 
     assert ht.theorem_complete is False
     assert ht.recommended_target_theorem == EXACT_GAP
-    assert ht.recommended_next_branch == "bhsm-v2.8-curvature-remainder-formula-bound"
+    assert ht.recommended_next_branch == "bhsm-v2.9-complete-bundle-connection-curvature"
     assert bhsm.theorem_complete is False
     assert bhsm.final_paper_allowed is False
 
