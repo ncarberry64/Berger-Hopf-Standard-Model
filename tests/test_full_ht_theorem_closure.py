@@ -39,7 +39,7 @@ def test_complete_operator_identification_is_the_single_named_gap():
     assert report.source_status == COMPLETE_OPERATOR_IDENTIFICATION_BLOCKED_BY_MISSING_TERM
     assert report.final_status == COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL
     assert report.theorem_complete is False
-    assert report.next_target_theorem == "COMPLETE_BHSM_BUNDLE_CONNECTION_CURVATURE_FORMULA_GAP"
+    assert report.next_target_theorem == "MIXED_HOPF_BASE_BOUNDARY_COFRAME_CONNECTION_GAP"
     assert "lichnerowicz_bundle_curvature_remainder" in report.blocking_components
 
 
@@ -79,7 +79,7 @@ def test_full_ht_closure_uses_only_allowed_final_outcomes():
     assert report.final_result == STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP
     assert report.theorem_complete is False
     assert report.single_named_gap == COMPLETE_OPERATOR_IDENTIFICATION_THEOREM_GAP
-    assert report.recommended_next_branch == "bhsm-v2.9-complete-bundle-connection-curvature"
+    assert report.recommended_next_branch == "bhsm-v2.10-mixed-connection-coefficients"
 
 
 def test_full_bhsm_completion_uses_only_allowed_final_outcomes():

@@ -1,3 +1,28 @@
+# Unreleased / Development: v2.9 Complete Bundle Connection Curvature
+
+Branch: `bhsm-v2.9-complete-bundle-connection-curvature`
+
+The v2.9 branch inventories the complete BHSM bundle connection, maps each
+curvature contribution to the existing operator package or to `R_bundle`, and
+audits the Lichnerowicz curvature action.
+
+Final result:
+
+- connection-curvature decision: `STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP`
+- connection status: `COMPLETE_BUNDLE_CONNECTION_OPEN`
+- curvature formula status: `CURVATURE_FORMULA_OPEN`
+- `R_bundle` classification: `REMAINDER_OPEN`
+- exact missing component: `mixed_hopf_base_boundary_coframe_connection`
+- exact remaining gap: `MIXED_HOPF_BASE_BOUNDARY_COFRAME_CONNECTION_GAP`
+- recommended next branch: `bhsm-v2.10-mixed-connection-coefficients`
+- final paper allowed: `False`
+
+Every listed connection component and curvature contribution is classified, but
+the mixed Hopf/base/boundary/coframe connection coefficients and Clifford
+curvature contraction are still missing. Frozen predictions, canonical
+constants, frozen modes, tolerances, outputs, and virtual dressing are
+unchanged.
+
 # Unreleased / Development: v2.8 Curvature Remainder Formula and Bound
 
 Branch: `bhsm-v2.8-curvature-remainder-formula-bound`

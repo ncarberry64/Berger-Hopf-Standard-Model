@@ -62,3 +62,10 @@
 - Close `COMPLETE_BHSM_BUNDLE_CONNECTION_CURVATURE_FORMULA_GAP` by specifying the complete BHSM bundle connection curvature formula, including mixed Hopf/base/fiber, boundary-functional, Higgs-U1, chirality, sector, coframe, and profile curvature contractions.
 - Then derive the action of `lichnerowicz_bundle_curvature_remainder` on the formal kernel, `H_perp`, mirror channels, and charged sectors before attempting a zero/represented/PSD/screened/relative-bound classification.
 - Do not prepare the final paper while v2.8 result remains `STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP`.
+
+
+## v2.9 Mixed Connection Coefficient Obligation
+
+- Close `MIXED_HOPF_BASE_BOUNDARY_COFRAME_CONNECTION_GAP` by specifying the mixed Hopf/base/boundary/coframe connection coefficients and their Clifford curvature contraction.
+- Then reclassify `mixed_curvature_remainder` as zero, represented, PSD/profile-controlled, screened/lifted, relatively bounded safe, safe after re-audit, or theorem-breaking.
+- Do not prepare the final paper while v2.9 result remains `STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP`.

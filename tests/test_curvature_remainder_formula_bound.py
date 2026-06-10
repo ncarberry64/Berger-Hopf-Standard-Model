@@ -23,7 +23,7 @@ from full_ht_theorem_closure import build_full_ht_theorem_closure_report
 from operator_identification_theorem import COMPLETE_OPERATOR_IDENTIFICATION_PROVEN, build_operator_identification_theorem_report
 
 
-EXACT_GAP = "COMPLETE_BHSM_BUNDLE_CONNECTION_CURVATURE_FORMULA_GAP"
+EXACT_GAP = "MIXED_HOPF_BASE_BOUNDARY_COFRAME_CONNECTION_GAP"
 
 
 def test_formula_status_is_explicit_and_open():
@@ -33,7 +33,7 @@ def test_formula_status_is_explicit_and_open():
     assert report.term_id == "lichnerowicz_bundle_curvature_remainder"
     assert "D_BH^2" in report.lichnerowicz_identity
     assert "R_bundle" in report.remainder_formula
-    assert report.exact_missing_input == EXACT_GAP
+    assert report.exact_missing_input == "COMPLETE_BHSM_BUNDLE_CONNECTION_CURVATURE_FORMULA_GAP"
     assert report.theorem_complete is False
 
 
@@ -70,7 +70,7 @@ def test_formula_decision_uses_exact_allowed_final_classification():
     assert decision.final_classification in FINAL_CLASSIFICATIONS
     assert decision.final_classification == "REMAINDER_OPEN"
     assert decision.exact_remaining_gap == EXACT_GAP
-    assert decision.recommended_next_branch == "bhsm-v2.9-complete-bundle-connection-curvature"
+    assert decision.recommended_next_branch == "bhsm-v2.10-mixed-connection-coefficients"
     assert decision.final_paper_allowed is False
     assert decision.theorem_complete is False
 

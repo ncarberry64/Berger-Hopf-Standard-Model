@@ -1,0 +1,87 @@
+{
+  "all_contributions_classified": true,
+  "limitations": [
+    "Every curvature contribution is classified.",
+    "The mixed curvature contribution maps to new R_bundle and remains open."
+  ],
+  "r_bundle_classification": "REMAINDER_OPEN",
+  "r_bundle_rows": [
+    "mixed_curvature_remainder"
+  ],
+  "rows": [
+    {
+      "classification": "MAPPED_TO_EXISTING_OPERATOR_PACKAGE",
+      "contribution_id": "diagonal_curvature_contribution",
+      "limitation": "Diagonal curvature is represented by the reference operator package.",
+      "mapped_to": "A0"
+    },
+    {
+      "classification": "MAPPED_TO_EXISTING_OPERATOR_PACKAGE",
+      "contribution_id": "hopf_curvature_contribution",
+      "limitation": "Hopf contribution is represented at the symbolic operator level.",
+      "mapped_to": "V_Hopf"
+    },
+    {
+      "classification": "MAPPED_TO_EXISTING_OPERATOR_PACKAGE",
+      "contribution_id": "fiber_curvature_contribution",
+      "limitation": "Trace/topological assumptions remain inherited.",
+      "mapped_to": "V_Hopf + V_boundary"
+    },
+    {
+      "classification": "MAPPED_TO_EXISTING_OPERATOR_PACKAGE",
+      "contribution_id": "base_curvature_contribution",
+      "limitation": "Mixed base/fiber terms are not included here.",
+      "mapped_to": "A0 + V_boundary"
+    },
+    {
+      "classification": "MAPPED_TO_EXISTING_OPERATOR_PACKAGE",
+      "contribution_id": "boundary_curvature_contribution",
+      "limitation": "Uses v1.2/v2 boundary functional scaffold.",
+      "mapped_to": "V_boundary"
+    },
+    {
+      "classification": "MAPPED_TO_EXISTING_OPERATOR_PACKAGE",
+      "contribution_id": "chirality_curvature_contribution",
+      "limitation": "Mixed chirality curvature is handled by the mixed remainder row.",
+      "mapped_to": "V_chi"
+    },
+    {
+      "classification": "MAPPED_TO_EXISTING_OPERATOR_PACKAGE",
+      "contribution_id": "sector_mixing_curvature_contribution",
+      "limitation": "Sector curvature is represented but coefficients remain scaffold-level.",
+      "mapped_to": "K_sector"
+    },
+    {
+      "classification": "MAPPED_TO_EXISTING_OPERATOR_PACKAGE",
+      "contribution_id": "higgs_u1_curvature_contribution",
+      "limitation": "Mirror-channel curvature action remains conditional.",
+      "mapped_to": "V_Hopf + V_boundary"
+    },
+    {
+      "classification": "MAPPED_TO_EXISTING_OPERATOR_PACKAGE",
+      "contribution_id": "lift_profile_curvature_contribution",
+      "limitation": "Safe only when mapped into lift/profile package.",
+      "mapped_to": "P_perp_lift + V_PSD"
+    },
+    {
+      "classification": "MAPPED_TO_EXISTING_OPERATOR_PACKAGE",
+      "contribution_id": "scalar_topographic_curvature_contribution",
+      "limitation": "Full scalar proof remains separate.",
+      "mapped_to": "scalar/topographic screened sector"
+    },
+    {
+      "classification": "MAPPED_TO_EXISTING_OPERATOR_PACKAGE",
+      "contribution_id": "mirror_curvature_contribution",
+      "limitation": "Complete mirror curvature remains conditional.",
+      "mapped_to": "V_chi + Higgs-U1 + boundary channels"
+    },
+    {
+      "classification": "REMAINDER_OPEN",
+      "contribution_id": "mixed_curvature_remainder",
+      "limitation": "The mixed connection coefficients and Clifford contraction are not defined.",
+      "mapped_to": "new R_bundle"
+    }
+  ],
+  "theorem_complete": false,
+  "title": "BHSM v2.9 Curvature Formula to Operator Map"
+}

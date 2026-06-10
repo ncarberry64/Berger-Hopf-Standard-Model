@@ -1,0 +1,148 @@
+{
+  "all_components_classified": true,
+  "blocking_components": [
+    "mirror_channel_connection",
+    "mixed_hopf_base_boundary_coframe_connection"
+  ],
+  "components": [
+    {
+      "component_id": "berger_metric_spin_connection",
+      "curvature_contribution": "diagonal_curvature_contribution",
+      "evidence": [
+        "diagonal reference operator and Berger core are represented"
+      ],
+      "limitation": "Does not determine mixed bundle curvature by itself.",
+      "represented_by": "A0",
+      "role": "Berger metric/spin connection",
+      "status": "DERIVED_FROM_EXISTING_BHSM_STRUCTURE"
+    },
+    {
+      "component_id": "hopf_twist_connection",
+      "curvature_contribution": "hopf_curvature_contribution",
+      "evidence": [
+        "Hopf twist is represented in the perturbation package"
+      ],
+      "limitation": "Curvature contraction is represented only at the symbolic term level.",
+      "represented_by": "V_Hopf",
+      "role": "Hopf twist connection",
+      "status": "REPRESENTED_BY_EXISTING_TERM"
+    },
+    {
+      "component_id": "u1_fiber_connection",
+      "curvature_contribution": "fiber_curvature_contribution",
+      "evidence": [
+        "Higgs-selected U1 and Hopf/fiber data are represented"
+      ],
+      "limitation": "Trace/nondynamical assumptions must be retained.",
+      "represented_by": "V_Hopf + V_boundary",
+      "role": "U1/fiber connection",
+      "status": "REPRESENTED_BY_EXISTING_TERM"
+    },
+    {
+      "component_id": "base_s2_connection",
+      "curvature_contribution": "base_curvature_contribution",
+      "evidence": [
+        "base contribution is represented in diagonal and boundary scaffolds"
+      ],
+      "limitation": "Complete mixed base/fiber commutators are not derived.",
+      "represented_by": "A0 + V_boundary",
+      "role": "base/S2 connection",
+      "status": "REPRESENTED_BY_EXISTING_TERM"
+    },
+    {
+      "component_id": "boundary_functional_connection",
+      "curvature_contribution": "boundary_curvature_contribution",
+      "evidence": [
+        "v1.2/v2 action-origin scaffolds supply the boundary functional"
+      ],
+      "limitation": "Global derivation from a full action remains a separate limitation.",
+      "represented_by": "V_boundary",
+      "role": "boundary functional connection",
+      "status": "DERIVED_FROM_EXISTING_BHSM_STRUCTURE"
+    },
+    {
+      "component_id": "chirality_projector_connection",
+      "curvature_contribution": "chirality_curvature_contribution",
+      "evidence": [
+        "chiral projector channel is represented and tested"
+      ],
+      "limitation": "Does not prove all mixed curvature contractions preserve chirality.",
+      "represented_by": "V_chi",
+      "role": "chirality/projector connection",
+      "status": "REPRESENTED_BY_EXISTING_TERM"
+    },
+    {
+      "component_id": "sector_lepton_up_down_connection",
+      "curvature_contribution": "sector_mixing_curvature_contribution",
+      "evidence": [
+        "sector-labeled formal kernel and sector-coupling scaffolds are represented"
+      ],
+      "limitation": "Complete sector curvature coefficients remain symbolic.",
+      "represented_by": "K_sector + V_boundary",
+      "role": "sector lepton/up/down connection",
+      "status": "REPRESENTED_BY_EXISTING_TERM"
+    },
+    {
+      "component_id": "higgs_u1_connection",
+      "curvature_contribution": "higgs_u1_curvature_contribution",
+      "evidence": [
+        "Higgs-selected U1 channel is represented"
+      ],
+      "limitation": "Standalone curvature action on mirrors remains conditional.",
+      "represented_by": "V_Hopf + V_boundary",
+      "role": "Higgs-U1 connection",
+      "status": "REPRESENTED_BY_EXISTING_TERM"
+    },
+    {
+      "component_id": "lift_profile_heat_connection",
+      "curvature_contribution": "lift_profile_curvature_contribution",
+      "evidence": [
+        "lift/profile channels are screened, lifted, or PSD-controlled in scaffolds"
+      ],
+      "limitation": "Only applies once the remainder is mapped into this package.",
+      "represented_by": "P_perp_lift + V_PSD",
+      "role": "lift/profile/heat connection",
+      "status": "SCREENED_OR_LIFTED"
+    },
+    {
+      "component_id": "scalar_topographic_leakage_channel",
+      "curvature_contribution": "scalar_topographic_curvature_contribution",
+      "evidence": [
+        "scalar/topographic screening scaffold excludes low-energy leakage at audit level"
+      ],
+      "limitation": "Full scalar action proof remains separate.",
+      "represented_by": "scalar/topographic screened sector",
+      "role": "scalar/topographic leakage channel",
+      "status": "SCREENED_OR_LIFTED"
+    },
+    {
+      "component_id": "mirror_channel_connection",
+      "curvature_contribution": "mirror_curvature_contribution",
+      "evidence": [
+        "mirror candidates are scaffold-excluded by chiral projector, with Higgs-U1/boundary channels conditional"
+      ],
+      "limitation": "Complete curvature action on mirror channels is not independently proven.",
+      "represented_by": "V_chi + Higgs-U1 + boundary channels",
+      "role": "mirror channel",
+      "status": "CONDITIONAL"
+    },
+    {
+      "component_id": "mixed_hopf_base_boundary_coframe_connection",
+      "curvature_contribution": "mixed_curvature_remainder",
+      "evidence": [
+        "no repo object specifies the full mixed connection coefficients and Clifford contraction"
+      ],
+      "limitation": "Single missing connection component blocking the complete curvature formula.",
+      "represented_by": "not represented",
+      "role": "mixed Hopf/base/boundary/coframe connection",
+      "status": "MISSING"
+    }
+  ],
+  "exact_missing_component": "mixed_hopf_base_boundary_coframe_connection",
+  "limitations": [
+    "Every listed connection component is classified.",
+    "The mixed Hopf/base/boundary/coframe connection remains the first missing geometric input."
+  ],
+  "theorem_complete": false,
+  "title": "BHSM v2.9 Bundle Connection Components Report"
+}

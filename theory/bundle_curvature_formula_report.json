@@ -1,0 +1,113 @@
+{
+  "all_contributions_mapped": true,
+  "contributions": [
+    {
+      "contribution_id": "diagonal_curvature_contribution",
+      "formula_piece": "[nabla_Berger,nabla_Berger]",
+      "limitation": "Diagonal curvature is represented by the reference operator package.",
+      "mapped_operator_term": "A0",
+      "source_component": "berger_metric_spin_connection",
+      "status": "CURVATURE_FORMULA_DERIVED"
+    },
+    {
+      "contribution_id": "hopf_curvature_contribution",
+      "formula_piece": "[nabla_Hopf,nabla_Hopf]",
+      "limitation": "Hopf contribution is represented at the symbolic operator level.",
+      "mapped_operator_term": "V_Hopf",
+      "source_component": "hopf_twist_connection",
+      "status": "CURVATURE_FORMULA_DERIVED"
+    },
+    {
+      "contribution_id": "fiber_curvature_contribution",
+      "formula_piece": "[nabla_U1/fiber,nabla_U1/fiber]",
+      "limitation": "Trace/topological assumptions remain inherited.",
+      "mapped_operator_term": "V_Hopf + V_boundary",
+      "source_component": "u1_fiber_connection",
+      "status": "CURVATURE_FORMULA_DERIVED"
+    },
+    {
+      "contribution_id": "base_curvature_contribution",
+      "formula_piece": "[nabla_base,nabla_base]",
+      "limitation": "Mixed base/fiber terms are not included here.",
+      "mapped_operator_term": "A0 + V_boundary",
+      "source_component": "base_s2_connection",
+      "status": "CURVATURE_FORMULA_DERIVED"
+    },
+    {
+      "contribution_id": "boundary_curvature_contribution",
+      "formula_piece": "[nabla_boundary,nabla_boundary]",
+      "limitation": "Uses v1.2/v2 boundary functional scaffold.",
+      "mapped_operator_term": "V_boundary",
+      "source_component": "boundary_functional_connection",
+      "status": "CURVATURE_FORMULA_DERIVED"
+    },
+    {
+      "contribution_id": "chirality_curvature_contribution",
+      "formula_piece": "[nabla_chi,nabla_chi]",
+      "limitation": "Mixed chirality curvature is handled by the mixed remainder row.",
+      "mapped_operator_term": "V_chi",
+      "source_component": "chirality_projector_connection",
+      "status": "CURVATURE_FORMULA_DERIVED"
+    },
+    {
+      "contribution_id": "sector_mixing_curvature_contribution",
+      "formula_piece": "[nabla_sector,nabla_sector]",
+      "limitation": "Sector curvature is represented but coefficients remain scaffold-level.",
+      "mapped_operator_term": "K_sector",
+      "source_component": "sector_lepton_up_down_connection",
+      "status": "CURVATURE_FORMULA_CONDITIONAL"
+    },
+    {
+      "contribution_id": "higgs_u1_curvature_contribution",
+      "formula_piece": "[nabla_Higgs-U1,nabla_Higgs-U1]",
+      "limitation": "Mirror-channel curvature action remains conditional.",
+      "mapped_operator_term": "V_Hopf + V_boundary",
+      "source_component": "higgs_u1_connection",
+      "status": "CURVATURE_FORMULA_CONDITIONAL"
+    },
+    {
+      "contribution_id": "lift_profile_curvature_contribution",
+      "formula_piece": "[nabla_lift/profile,nabla_lift/profile]",
+      "limitation": "Safe only when mapped into lift/profile package.",
+      "mapped_operator_term": "P_perp_lift + V_PSD",
+      "source_component": "lift_profile_heat_connection",
+      "status": "CURVATURE_FORMULA_CONDITIONAL"
+    },
+    {
+      "contribution_id": "scalar_topographic_curvature_contribution",
+      "formula_piece": "[nabla_scalar/topographic,nabla_scalar/topographic]",
+      "limitation": "Full scalar proof remains separate.",
+      "mapped_operator_term": "scalar/topographic screened sector",
+      "source_component": "scalar_topographic_leakage_channel",
+      "status": "CURVATURE_FORMULA_CONDITIONAL"
+    },
+    {
+      "contribution_id": "mirror_curvature_contribution",
+      "formula_piece": "[nabla_mirror,nabla_mirror]",
+      "limitation": "Complete mirror curvature remains conditional.",
+      "mapped_operator_term": "V_chi + Higgs-U1 + boundary channels",
+      "source_component": "mirror_channel_connection",
+      "status": "CURVATURE_FORMULA_CONDITIONAL"
+    },
+    {
+      "contribution_id": "mixed_curvature_remainder",
+      "formula_piece": "sum_{i<j} [nabla_i,nabla_j] for mixed Hopf/base/boundary/coframe channels",
+      "limitation": "The mixed connection coefficients and Clifford contraction are not defined.",
+      "mapped_operator_term": "new R_bundle",
+      "source_component": "mixed_hopf_base_boundary_coframe_connection",
+      "status": "CURVATURE_FORMULA_OPEN"
+    }
+  ],
+  "curvature_symbol": "F_BH = [nabla_BH,nabla_BH]",
+  "formula": "F_BH = sum_i F_i + sum_{i<j} F_{ij}^{mixed}",
+  "limitations": [
+    "Every curvature contribution is mapped to an operator target or to new R_bundle.",
+    "The mixed curvature remainder remains open because the mixed connection coefficients are missing."
+  ],
+  "open_contributions": [
+    "mixed_curvature_remainder"
+  ],
+  "status": "CURVATURE_FORMULA_OPEN",
+  "theorem_complete": false,
+  "title": "BHSM v2.9 Bundle Curvature Formula Report"
+}

@@ -16,8 +16,8 @@ Blocking term: `lichnerowicz_bundle_curvature_remainder`
 
 The missing term `lichnerowicz_bundle_curvature_remainder` is not proven zero, screened/lifted, or represented by an existing A0+V term.
 
-Recommended next branch: `bhsm-v2.9-complete-bundle-connection-curvature`
-Recommended target theorem: `COMPLETE_BHSM_BUNDLE_CONNECTION_CURVATURE_FORMULA_GAP`
+Recommended next branch: `bhsm-v2.10-mixed-connection-coefficients`
+Recommended target theorem: `MIXED_HOPF_BASE_BOUNDARY_COFRAME_CONNECTION_GAP`
 
 ## Limitations
 

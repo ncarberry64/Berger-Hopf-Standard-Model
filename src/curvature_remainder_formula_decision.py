@@ -11,6 +11,11 @@ from curvature_remainder_basis_action import REMAINDER_BASIS_ACTION_OPEN, build_
 from curvature_remainder_formula import REMAINDER_FORMULA_OPEN, build_curvature_remainder_formula_report
 from curvature_remainder_kernel_action import REMAINDER_KERNEL_COMPLEMENT_OPEN, build_curvature_remainder_kernel_action_report
 from curvature_remainder_lower_bound_transfer import build_curvature_remainder_lower_bound_transfer_report
+from bundle_curvature_closure_decision import (
+    COMPLETE_BUNDLE_CONNECTION_CURVATURE_CLOSED,
+    BHSM_THEOREM_FAILURE as BUNDLE_BHSM_THEOREM_FAILURE,
+    build_bundle_curvature_closure_decision,
+)
 from curvature_remainder_relative_bound import build_curvature_remainder_relative_bound_report
 
 
@@ -53,14 +58,19 @@ def build_curvature_remainder_formula_decision() -> CurvatureRemainderFormulaDec
     kernel = build_curvature_remainder_kernel_action_report()
     relative = build_curvature_remainder_relative_bound_report()
     transfer = build_curvature_remainder_lower_bound_transfer_report()
-    if formula.status == REMAINDER_FORMULA_OPEN or basis.status == REMAINDER_BASIS_ACTION_OPEN or kernel.status == REMAINDER_KERNEL_COMPLEMENT_OPEN:
-        final_classification = REMAINDER_OPEN
-        final_result = STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP
-        operator_status = "COMPLETE_OPERATOR_IDENTIFICATION_BLOCKED_BY_REMAINDER"
-    elif transfer.ht_survives_if_included is False:
+    bundle = build_bundle_curvature_closure_decision()
+    if bundle.final_result == COMPLETE_BUNDLE_CONNECTION_CURVATURE_CLOSED:
+        final_classification = "REMAINDER_RELATIVELY_BOUNDED_SAFE"
+        final_result = CURVATURE_REMAINDER_FORMULA_BOUND_CLOSED
+        operator_status = "COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL_STRONG"
+    elif bundle.final_result == BUNDLE_BHSM_THEOREM_FAILURE or transfer.ht_survives_if_included is False:
         final_classification = "REMAINDER_REAL_MISSING_TERM_BREAKS_HT"
         final_result = BHSM_THEOREM_FAILURE
         operator_status = "COMPLETE_OPERATOR_IDENTIFICATION_FAILS"
+    elif formula.status == REMAINDER_FORMULA_OPEN or basis.status == REMAINDER_BASIS_ACTION_OPEN or kernel.status == REMAINDER_KERNEL_COMPLEMENT_OPEN:
+        final_classification = REMAINDER_OPEN
+        final_result = STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP
+        operator_status = "COMPLETE_OPERATOR_IDENTIFICATION_BLOCKED_BY_REMAINDER"
     else:
         final_classification = "REMAINDER_RELATIVELY_BOUNDED_SAFE"
         final_result = CURVATURE_REMAINDER_FORMULA_BOUND_CLOSED
@@ -72,9 +82,9 @@ def build_curvature_remainder_formula_decision() -> CurvatureRemainderFormulaDec
         basis_action_status=basis.status,
         kernel_action_status=kernel.status,
         final_classification=final_classification,
-        exact_remaining_gap="COMPLETE_BHSM_BUNDLE_CONNECTION_CURVATURE_FORMULA_GAP",
-        recommended_next_branch="bhsm-v2.9-complete-bundle-connection-curvature",
-        recommended_target_theorem="COMPLETE_BHSM_BUNDLE_CONNECTION_CURVATURE_FORMULA_GAP",
+        exact_remaining_gap=bundle.exact_remaining_gap,
+        recommended_next_branch=bundle.recommended_next_branch,
+        recommended_target_theorem=bundle.recommended_target_theorem,
         complete_operator_identification_status=operator_status,
         final_paper_allowed=False,
         theorem_complete=final_result == CURVATURE_REMAINDER_FORMULA_BOUND_CLOSED,

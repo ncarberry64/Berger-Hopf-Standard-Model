@@ -11,10 +11,10 @@ Final paper allowed: `False`
 
 ## Exact Remaining Gap
 
-`COMPLETE_BHSM_BUNDLE_CONNECTION_CURVATURE_FORMULA_GAP`
+`MIXED_HOPF_BASE_BOUNDARY_COFRAME_CONNECTION_GAP`
 
-Recommended next branch: `bhsm-v2.9-complete-bundle-connection-curvature`
-Recommended target theorem: `COMPLETE_BHSM_BUNDLE_CONNECTION_CURVATURE_FORMULA_GAP`
+Recommended next branch: `bhsm-v2.10-mixed-connection-coefficients`
+Recommended target theorem: `MIXED_HOPF_BASE_BOUNDARY_COFRAME_CONNECTION_GAP`
 
 ## Limitations
 

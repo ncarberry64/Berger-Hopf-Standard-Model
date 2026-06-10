@@ -18,7 +18,7 @@ All terms classified: `True`
 | `trace_u1_nondynamical` | `True` | `excluded from dynamical H_T` | `FORBIDDEN_BY_AXIOM` | Requires retention of the topological/nondynamical axiom. |
 | `scalar_topographic_leakage` | `True` | `V_PSD or screened/lifted scalar sector` | `DERIVED_SCREENED_OR_LIFTED` | Full scalar action theorem is not part of this v2.6 operator proof. |
 | `mirror_channel_terms` | `True` | `chiral/Higgs-U1/boundary channels` | `REPRESENTED_BY_EXISTING_TERM` | Full mirror theorem remains conditional. |
-| `lichnerowicz_bundle_curvature_remainder` | `True` | `not represented by a proven existing term` | `OPEN` | Single missing complete-operator identification theorem gap remains: COMPLETE_BHSM_BUNDLE_CONNECTION_CURVATURE_FORMULA_GAP. |
+| `lichnerowicz_bundle_curvature_remainder` | `True` | `not represented by a proven existing term` | `OPEN` | Single missing complete-operator identification theorem gap remains: MIXED_HOPF_BASE_BOUNDARY_COFRAME_CONNECTION_GAP. |
 
 ## Required Open or Missing Terms
 

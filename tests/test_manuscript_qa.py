@@ -333,6 +333,12 @@ def test_typesetting_pass_does_not_modify_source_model_files():
         "src/curvature_remainder_relative_bound.py",
         "src/curvature_remainder_lower_bound_transfer.py",
         "src/curvature_remainder_formula_decision.py",
+        "src/complete_bundle_connection.py",
+        "src/bundle_connection_components.py",
+        "src/bundle_curvature_formula.py",
+        "src/lichnerowicz_curvature_action.py",
+        "src/curvature_formula_to_operator_map.py",
+        "src/bundle_curvature_closure_decision.py",
     }
 
     assert not [

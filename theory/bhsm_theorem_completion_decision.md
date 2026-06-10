@@ -60,15 +60,15 @@ Do not prepare final paper/Zenodo release; attack the full operator domain, topo
 - This decision does not claim first-principles theorem closure.
 
 
-## v2.8 Curvature Remainder Formula and Bound Update
+## v2.9 Complete Bundle Connection Curvature Update
 
-- v2.8 final result: `STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP`
-- formula status: `REMAINDER_FORMULA_OPEN`
-- basis-action status: `REMAINDER_BASIS_ACTION_OPEN`
-- kernel-action status: `REMAINDER_KERNEL_COMPLEMENT_OPEN`
-- final classification: `REMAINDER_OPEN`
-- exact remaining gap: `COMPLETE_BHSM_BUNDLE_CONNECTION_CURVATURE_FORMULA_GAP`
-- recommended next branch: `bhsm-v2.9-complete-bundle-connection-curvature`
+- v2.9 final result: `STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP`
+- connection status: `COMPLETE_BUNDLE_CONNECTION_OPEN`
+- curvature formula status: `CURVATURE_FORMULA_OPEN`
+- R_bundle classification: `REMAINDER_OPEN`
+- exact missing component: `mixed_hopf_base_boundary_coframe_connection`
+- exact remaining gap: `MIXED_HOPF_BASE_BOUNDARY_COFRAME_CONNECTION_GAP`
+- recommended next branch: `bhsm-v2.10-mixed-connection-coefficients`
 - final paper allowed: `False`
 
-The Lichnerowicz identity is formalized, but the complete BHSM bundle connection curvature formula is still missing. No harmless classification is adopted.
+The complete connection inventory is explicit, but the mixed Hopf/base/boundary/coframe connection coefficients and Clifford contraction are still missing. No full H_T theorem upgrade is made.
