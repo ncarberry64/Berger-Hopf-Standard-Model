@@ -6,6 +6,17 @@ import json
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
+from curvature_remainder_audit import (
+    REMAINDER_OPEN,
+    REMAINDER_PSD_PROFILE_CONTROLLED,
+    REMAINDER_REAL_MISSING_TERM,
+    REMAINDER_RELATIVELY_BOUNDED_SAFE,
+    REMAINDER_REPRESENTED_BY_EXISTING_TERM,
+    REMAINDER_SCREENED_OR_LIFTED,
+    REMAINDER_ZERO,
+)
+from curvature_remainder_closure_decision import build_curvature_remainder_closure_decision
+
 
 DERIVED_AND_INCLUDED = "DERIVED_AND_INCLUDED"
 DERIVED_ZERO_OR_CANCELLED = "DERIVED_ZERO_OR_CANCELLED"
@@ -52,6 +63,31 @@ class OperatorTermInventoryReport:
 def complete_operator_terms() -> tuple[OperatorTerm, ...]:
     """Return the complete-operator term inventory currently auditable in repo."""
 
+    curvature_decision = build_curvature_remainder_closure_decision()
+    curvature_classification = {
+        REMAINDER_ZERO: DERIVED_ZERO_OR_CANCELLED,
+        REMAINDER_REPRESENTED_BY_EXISTING_TERM: REPRESENTED_BY_EXISTING_TERM,
+        REMAINDER_PSD_PROFILE_CONTROLLED: REPRESENTED_BY_EXISTING_TERM,
+        REMAINDER_SCREENED_OR_LIFTED: DERIVED_SCREENED_OR_LIFTED,
+        REMAINDER_RELATIVELY_BOUNDED_SAFE: CONDITIONAL_IDENTIFICATION,
+        REMAINDER_REAL_MISSING_TERM: MISSING_TERM,
+        REMAINDER_OPEN: OPEN,
+    }[curvature_decision.remainder_classification]
+    curvature_represented_by = (
+        "not represented by a proven existing term"
+        if curvature_classification in BLOCKING_CLASSIFICATIONS
+        else "closed by v2.7 curvature remainder decision"
+    )
+    curvature_evidence = (
+        f"v2.7 classification: {curvature_decision.remainder_classification}",
+        f"v2.7 final result: {curvature_decision.final_result}",
+    )
+    curvature_limitation = (
+        "Single missing complete-operator identification theorem gap remains: "
+        f"{curvature_decision.exact_remaining_gap}."
+        if curvature_classification in BLOCKING_CLASSIFICATIONS
+        else "Curvature remainder is closed by the v2.7 audit."
+    )
     return (
         OperatorTerm("berger_diagonal_kinetic", "Berger/Dirac diagonal kinetic contribution", "A0 = D_diag^2", True, DERIVED_AND_INCLUDED, ("v1.9 diagonal reference operator proven",), "Does not by itself identify all twisted/bundle perturbations."),
         OperatorTerm("hopf_fiber_twist", "Hopf fibration/twist contribution", "V_Hopf", True, DERIVED_AND_INCLUDED, ("v2.1 Hopf/boundary/chirality bound scaffold includes V_Hopf",), "Complete-action derivation is inherited from scaffold terms."),
@@ -65,7 +101,7 @@ def complete_operator_terms() -> tuple[OperatorTerm, ...]:
         OperatorTerm("trace_u1_nondynamical", "trace U1 topological/nondynamical channel", "excluded from dynamical H_T", True, FORBIDDEN_BY_AXIOM, ("trace U1 is treated as topological/nondynamical in theorem scaffolds",), "Requires retention of the topological/nondynamical axiom."),
         OperatorTerm("scalar_topographic_leakage", "scalar/topographic leakage into H_T", "V_PSD or screened/lifted scalar sector", True, DERIVED_SCREENED_OR_LIFTED, ("scalar/topographic scaffold screens/lifts non-Higgs modes",), "Full scalar action theorem is not part of this v2.6 operator proof."),
         OperatorTerm("mirror_channel_terms", "mirror-sector contributions", "chiral/Higgs-U1/boundary channels", True, REPRESENTED_BY_EXISTING_TERM, ("v2.3 mirror-channel reports account for generated mirror candidates",), "Full mirror theorem remains conditional."),
-        OperatorTerm("lichnerowicz_bundle_curvature_remainder", "possible curvature/remainder term in squaring the complete twisted Dirac/bundle operator", "not represented by a proven existing term", True, OPEN, ("no repo proof shows this term vanishes, is PSD/profile, or is represented by A0+V",), "Single missing complete-operator identification theorem gap."),
+        OperatorTerm("lichnerowicz_bundle_curvature_remainder", "possible curvature/remainder term in squaring the complete twisted Dirac/bundle operator", curvature_represented_by, True, curvature_classification, curvature_evidence, curvature_limitation),
     )
 
 
@@ -75,7 +111,7 @@ def build_operator_term_inventory_report() -> OperatorTermInventoryReport:
     blocking = tuple(term.term_id for term in terms if term.required_for_ht and term.classification in BLOCKING_CLASSIFICATIONS)
     status = "OPERATOR_TERM_INVENTORY_BLOCKED" if blocking else "OPERATOR_TERM_INVENTORY_COMPLETE"
     return OperatorTermInventoryReport(
-        title="BHSM v2.6 Complete Operator Term Inventory Report",
+        title="BHSM v2.7 Complete Operator Term Inventory Report",
         terms=terms,
         all_terms_classified=all_classified,
         required_open_or_missing_terms=blocking,
@@ -83,7 +119,7 @@ def build_operator_term_inventory_report() -> OperatorTermInventoryReport:
         theorem_complete=not blocking,
         limitations=(
             "Every listed term has an explicit classification.",
-            "The Lichnerowicz/bundle-curvature remainder is not hidden; it blocks complete identification until resolved.",
+            "The Lichnerowicz/bundle-curvature remainder is not hidden; v2.7 keeps it open until a formula/bound theorem is supplied.",
         ),
     )
 
@@ -107,7 +143,7 @@ def export_operator_term_inventory_json(path: str | Path) -> None:
 def export_operator_term_inventory_markdown(path: str | Path) -> None:
     report = build_operator_term_inventory_report()
     lines = [
-        "# BHSM v2.6 Complete Operator Term Inventory Report",
+        "# BHSM v2.7 Complete Operator Term Inventory Report",
         "",
         f"Status: `{report.status}`",
         f"Theorem complete: `{report.theorem_complete}`",

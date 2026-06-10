@@ -39,7 +39,7 @@ def test_complete_operator_identification_is_the_single_named_gap():
     assert report.source_status == COMPLETE_OPERATOR_IDENTIFICATION_BLOCKED_BY_MISSING_TERM
     assert report.final_status == COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL
     assert report.theorem_complete is False
-    assert report.next_target_theorem == "BUNDLE_CONNECTION_CURVATURE_CLOSURE_GAP"
+    assert report.next_target_theorem == "BUNDLE_CURVATURE_REMAINDER_FORMULA_AND_BOUND_GAP"
     assert "lichnerowicz_bundle_curvature_remainder" in report.blocking_components
 
 
@@ -79,7 +79,7 @@ def test_full_ht_closure_uses_only_allowed_final_outcomes():
     assert report.final_result == STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP
     assert report.theorem_complete is False
     assert report.single_named_gap == COMPLETE_OPERATOR_IDENTIFICATION_THEOREM_GAP
-    assert report.recommended_next_branch == "bhsm-v2.7-bundle-curvature-remainder"
+    assert report.recommended_next_branch == "bhsm-v2.8-curvature-remainder-formula-bound"
 
 
 def test_full_bhsm_completion_uses_only_allowed_final_outcomes():

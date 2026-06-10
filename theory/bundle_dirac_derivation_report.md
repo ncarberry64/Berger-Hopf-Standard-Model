@@ -1,4 +1,4 @@
-# BHSM v2.6 Bundle Dirac Derivation Report
+# BHSM v2.7 Bundle Dirac Derivation Report
 
 Status: `BUNDLE_DIRAC_DERIVATION_BLOCKED_BY_REMAINDER`
 Theorem complete: `False`

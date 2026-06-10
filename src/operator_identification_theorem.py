@@ -8,6 +8,8 @@ from pathlib import Path
 
 from bundle_dirac_derivation import build_bundle_dirac_derivation_report
 from complete_berger_hopf_operator import build_complete_berger_hopf_operator_report
+from curvature_remainder_audit import REMAINDER_RELATIVELY_BOUNDED_SAFE
+from curvature_remainder_closure_decision import BUNDLE_CURVATURE_REMAINDER_CLOSED, build_curvature_remainder_closure_decision
 from operator_missing_term_audit import build_operator_missing_term_audit_report
 from operator_term_inventory import build_operator_term_inventory_report
 
@@ -42,8 +44,24 @@ def build_operator_identification_theorem_report() -> OperatorIdentificationTheo
     derivation = build_bundle_dirac_derivation_report()
     inventory = build_operator_term_inventory_report()
     missing = build_operator_missing_term_audit_report()
-    if not missing.blocking_term and inventory.theorem_complete and derivation.theorem_complete and operator.theorem_complete:
+    curvature = build_curvature_remainder_closure_decision()
+    if (
+        not missing.blocking_term
+        and inventory.theorem_complete
+        and derivation.theorem_complete
+        and operator.theorem_complete
+        and curvature.final_result == BUNDLE_CURVATURE_REMAINDER_CLOSED
+        and curvature.remainder_classification != REMAINDER_RELATIVELY_BOUNDED_SAFE
+    ):
         status = COMPLETE_OPERATOR_IDENTIFICATION_PROVEN
+    elif (
+        not missing.blocking_term
+        and inventory.theorem_complete
+        and derivation.theorem_complete
+        and operator.theorem_complete
+        and curvature.final_result == BUNDLE_CURVATURE_REMAINDER_CLOSED
+    ):
+        status = COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL_STRONG
     elif missing.blocking_term:
         status = COMPLETE_OPERATOR_IDENTIFICATION_BLOCKED_BY_MISSING_TERM
     else:
@@ -54,7 +72,7 @@ def build_operator_identification_theorem_report() -> OperatorIdentificationTheo
         else "The missing term `lichnerowicz_bundle_curvature_remainder` is not proven zero, screened/lifted, or represented by an existing A0+V term."
     )
     return OperatorIdentificationTheoremReport(
-        title="BHSM v2.6 Complete Operator Identification Theorem Attempt",
+        title="BHSM v2.7 Complete Operator Identification Theorem Attempt",
         proposed_identity="D_BH^2 = A0 + V on D(A0), up to terms proven zero, screened, lifted, represented, or axiom-forbidden",
         operator_status=operator.status,
         derivation_status=derivation.status,
@@ -64,8 +82,8 @@ def build_operator_identification_theorem_report() -> OperatorIdentificationTheo
         status=status,
         theorem_complete=status == COMPLETE_OPERATOR_IDENTIFICATION_PROVEN,
         exact_obstruction=obstruction,
-        next_branch="bhsm-v2.7-bundle-curvature-remainder",
-        next_target_theorem="BUNDLE_CONNECTION_CURVATURE_CLOSURE_GAP",
+        next_branch=curvature.recommended_next_branch,
+        next_target_theorem=curvature.recommended_target_theorem,
         limitations=(
             "The theorem attempt accounts for every listed candidate contribution.",
             "It refuses proven status while the curvature/torsion-like remainder remains open.",
@@ -92,7 +110,7 @@ def export_operator_identification_theorem_json(path: str | Path) -> None:
 def export_operator_identification_theorem_markdown(path: str | Path) -> None:
     report = build_operator_identification_theorem_report()
     lines = [
-        "# BHSM v2.6 Complete Operator Identification Theorem Attempt",
+        "# BHSM v2.7 Complete Operator Identification Theorem Attempt",
         "",
         f"Status: `{report.status}`",
         f"Theorem complete: `{report.theorem_complete}`",

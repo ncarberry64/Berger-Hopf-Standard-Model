@@ -39,7 +39,7 @@ def build_bundle_dirac_derivation_report() -> BundleDiracDerivationReport:
     )
     unresolved = next((step.step_id for step in steps if step.status == OPEN), "")
     return BundleDiracDerivationReport(
-        title="BHSM v2.6 Bundle Dirac Derivation Report",
+        title="BHSM v2.7 Bundle Dirac Derivation Report",
         steps=steps,
         unresolved_step=unresolved,
         status="BUNDLE_DIRAC_DERIVATION_BLOCKED_BY_REMAINDER" if unresolved else "BUNDLE_DIRAC_DERIVATION_COMPLETE",
@@ -67,7 +67,7 @@ def export_bundle_dirac_derivation_json(path: str | Path) -> None:
 def export_bundle_dirac_derivation_markdown(path: str | Path) -> None:
     report = build_bundle_dirac_derivation_report()
     lines = [
-        "# BHSM v2.6 Bundle Dirac Derivation Report",
+        "# BHSM v2.7 Bundle Dirac Derivation Report",
         "",
         f"Status: `{report.status}`",
         f"Theorem complete: `{report.theorem_complete}`",

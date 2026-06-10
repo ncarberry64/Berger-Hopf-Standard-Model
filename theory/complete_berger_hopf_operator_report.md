@@ -1,4 +1,4 @@
-# BHSM v2.6 Complete Berger-Hopf Operator Report
+# BHSM v2.7 Complete Berger-Hopf Operator Report
 
 Operator: `D_BH^2`
 Decomposition: `A0 + V = D_diag^2 + V_Hopf + V_boundary + V_chi + K_sector + P_perp_lift + V_PSD`

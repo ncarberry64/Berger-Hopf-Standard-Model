@@ -49,3 +49,9 @@
 
 - Close `BUNDLE_CONNECTION_CURVATURE_CLOSURE_GAP` by proving the `lichnerowicz_bundle_curvature_remainder` is zero, represented by the existing `A0+V` package, positive semidefinite/profile-controlled, screened/lifted, or explicitly included with renewed lower-bound transfer.
 - Do not prepare the final paper while v2.6 result remains `STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP`.
+
+
+## v2.7 Bundle Curvature Remainder Obligation
+
+- Close `BUNDLE_CURVATURE_REMAINDER_FORMULA_AND_BOUND_GAP` by deriving the explicit action/formula for `lichnerowicz_bundle_curvature_remainder` and proving it is zero, represented by `A0+V`, PSD/profile-controlled, screened/lifted, relatively bounded safe, or else adding it as a real missing operator term with renewed bounds.
+- Do not prepare the final paper while v2.7 result remains `STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP`.

@@ -8,8 +8,8 @@ Unique blocking terms: `('lichnerowicz_bundle_curvature_remainder',)`
 
 | Audit | Candidate contribution | Disposition | Blocking | Evidence |
 | --- | --- | --- | --- | --- |
-| `connection_curvature_terms` | connection curvature terms | `OPEN` | `True` | no repo proof shows this term vanishes, is PSD/profile, or is represented by A0+V |
-| `torsion_like_terms` | torsion-like terms if applicable | `OPEN` | `True` | no repo proof shows this term vanishes, is PSD/profile, or is represented by A0+V |
+| `connection_curvature_terms` | connection curvature terms | `OPEN` | `True` | v2.7 classification: REMAINDER_OPEN; v2.7 final result: STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP |
+| `torsion_like_terms` | torsion-like terms if applicable | `OPEN` | `True` | v2.7 classification: REMAINDER_OPEN; v2.7 final result: STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP |
 | `bundle_connection_terms` | bundle connection terms | `REPRESENTED_BY_EXISTING_TERM` | `False` | v2.3 Higgs-U1 mirror channel and boundary/Hopf representation |
 | `sector_off_diagonal_terms` | sector off-diagonal terms | `REPRESENTED_BY_EXISTING_TERM` | `False` | v1.3-v2.1 sector coupling bound scaffolds represent this block |
 | `mirror_channel_terms` | mirror-channel terms | `REPRESENTED_BY_EXISTING_TERM` | `False` | v2.3 mirror-channel reports account for generated mirror candidates |

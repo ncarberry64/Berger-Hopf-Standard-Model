@@ -9,8 +9,8 @@ Final paper allowed: `False`
 
 `COMPLETE_OPERATOR_IDENTIFICATION_THEOREM_GAP`
 
-Recommended next branch: `bhsm-v2.7-bundle-curvature-remainder`
-Recommended target theorem: `BUNDLE_CONNECTION_CURVATURE_CLOSURE_GAP`
+Recommended next branch: `bhsm-v2.8-curvature-remainder-formula-bound`
+Recommended target theorem: `BUNDLE_CURVATURE_REMAINDER_FORMULA_AND_BOUND_GAP`
 
 ## Exact Obstruction
 

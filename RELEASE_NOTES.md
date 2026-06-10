@@ -1,3 +1,26 @@
+# Unreleased / Development: v2.7 Bundle Curvature Remainder
+
+Branch: `bhsm-v2.7-bundle-curvature-remainder`
+
+The v2.7 branch audits the single missing Lichnerowicz/bundle-curvature
+remainder that blocked v2.6 complete-operator identification. It inventories
+the geometric origin, bundle-connection sources, possible dispositions, and
+lower-bound requirements for `lichnerowicz_bundle_curvature_remainder`.
+
+Final result:
+
+- curvature decision: `STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP`
+- remainder classification: `REMAINDER_OPEN`
+- blocking term: `lichnerowicz_bundle_curvature_remainder`
+- exact remaining gap: `BUNDLE_CURVATURE_REMAINDER_FORMULA_AND_BOUND_GAP`
+- recommended next branch: `bhsm-v2.8-curvature-remainder-formula-bound`
+- final paper allowed: `False`
+
+The audit does not claim zero, representation by `A0+V`, PSD/profile control,
+screening/lifting, or relative-bound safety without the missing formula/action
+proof. Frozen predictions, canonical constants, frozen modes, tolerances,
+outputs, and virtual dressing are unchanged.
+
 # Unreleased / Development: v2.6 Complete Operator Identification
 
 Branch: `bhsm-v2.6-complete-operator-identification`

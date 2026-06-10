@@ -50,7 +50,7 @@ def build_complete_operator_identification_closure_report() -> CompleteOperatorI
         else v26_decision.exact_obstruction
     )
     return CompleteOperatorIdentificationClosureReport(
-        title="BHSM v2.6 Complete-Operator Identification Closure Attempt",
+        title="BHSM v2.7 Complete-Operator Identification Closure Attempt",
         source_status=v26_decision.operator_identification_status,
         final_status=COMPLETE_OPERATOR_IDENTIFICATION_PROVEN if proven else COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL,
         theorem_complete=proven,
@@ -59,7 +59,7 @@ def build_complete_operator_identification_closure_report() -> CompleteOperatorI
         next_branch=v26_decision.recommended_next_branch,
         next_target_theorem=v26_decision.recommended_target_theorem,
         limitations=(
-            "v2.6 does not invent an exact action-level derivation for missing complete-operator terms.",
+            "v2.7 does not invent an exact action-level derivation for missing complete-operator terms.",
             "No downstream H_T closure may be marked proven while this identification remains conditional.",
         ),
     )
@@ -84,7 +84,7 @@ def export_complete_operator_identification_closure_json(path: str | Path) -> No
 def export_complete_operator_identification_closure_markdown(path: str | Path) -> None:
     report = build_complete_operator_identification_closure_report()
     lines = [
-        "# BHSM v2.6 Complete-Operator Identification Closure Attempt",
+        "# BHSM v2.7 Complete-Operator Identification Closure Attempt",
         "",
         f"Source status: `{report.source_status}`",
         f"Final status: `{report.final_status}`",

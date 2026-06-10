@@ -27,7 +27,7 @@ def build_complete_berger_hopf_operator_report() -> CompleteBergerHopfOperatorRe
     represented = tuple(term.term_id for term in inventory.terms if term.term_id not in inventory.required_open_or_missing_terms)
     unresolved = inventory.required_open_or_missing_terms
     return CompleteBergerHopfOperatorReport(
-        title="BHSM v2.6 Complete Berger-Hopf Operator Report",
+        title="BHSM v2.7 Complete Berger-Hopf Operator Report",
         operator_symbol="D_BH^2",
         current_decomposition="A0 + V = D_diag^2 + V_Hopf + V_boundary + V_chi + K_sector + P_perp_lift + V_PSD",
         domain="D(A0) with formal-kernel/complement projector domain conditions from v2.4",
@@ -61,7 +61,7 @@ def export_complete_berger_hopf_operator_json(path: str | Path) -> None:
 def export_complete_berger_hopf_operator_markdown(path: str | Path) -> None:
     report = build_complete_berger_hopf_operator_report()
     lines = [
-        "# BHSM v2.6 Complete Berger-Hopf Operator Report",
+        "# BHSM v2.7 Complete Berger-Hopf Operator Report",
         "",
         f"Operator: `{report.operator_symbol}`",
         f"Decomposition: `{report.current_decomposition}`",

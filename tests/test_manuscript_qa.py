@@ -321,6 +321,11 @@ def test_typesetting_pass_does_not_modify_source_model_files():
         "src/operator_missing_term_audit.py",
         "src/operator_identification_theorem.py",
         "src/complete_operator_identification_decision.py",
+        "src/lichnerowicz_bundle_curvature.py",
+        "src/bundle_connection_curvature.py",
+        "src/curvature_remainder_audit.py",
+        "src/curvature_remainder_bound.py",
+        "src/curvature_remainder_closure_decision.py",
     }
 
     assert not [

@@ -1,10 +1,10 @@
-# BHSM v2.6 Complete-Operator Identification Closure Attempt
+# BHSM v2.7 Complete-Operator Identification Closure Attempt
 
 Source status: `COMPLETE_OPERATOR_IDENTIFICATION_BLOCKED_BY_MISSING_TERM`
 Final status: `COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL`
 Theorem complete: `False`
-Next target theorem: `BUNDLE_CONNECTION_CURVATURE_CLOSURE_GAP`
-Recommended next branch: `bhsm-v2.7-bundle-curvature-remainder`
+Next target theorem: `BUNDLE_CURVATURE_REMAINDER_FORMULA_AND_BOUND_GAP`
+Recommended next branch: `bhsm-v2.8-curvature-remainder-formula-bound`
 
 ## Blocking Components
 
@@ -18,5 +18,5 @@ The missing term `lichnerowicz_bundle_curvature_remainder` is not proven zero, s
 
 ## Limitations
 
-- v2.6 does not invent an exact action-level derivation for missing complete-operator terms.
+- v2.7 does not invent an exact action-level derivation for missing complete-operator terms.
 - No downstream H_T closure may be marked proven while this identification remains conditional.

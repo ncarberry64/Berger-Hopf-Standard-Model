@@ -1,0 +1,77 @@
+{
+  "all_sources_inventoried": true,
+  "components": [
+    {
+      "component_id": "hopf_fiber_connection",
+      "curvature_status": "REPRESENTED_AT_CONNECTION_LEVEL",
+      "limitations": [
+        "Connection source represented, curvature-square remainder not separately proven."
+      ],
+      "remainder_risk": "curvature contraction not independently closed",
+      "represented_term": "V_Hopf",
+      "source": "Hopf fiber covariant derivative"
+    },
+    {
+      "component_id": "higgs_u1_connection",
+      "curvature_status": "REPRESENTED_AT_CONNECTION_LEVEL",
+      "limitations": [
+        "Trace/topological channel assumptions do not by themselves prove the full bundle-curvature contraction vanishes."
+      ],
+      "remainder_risk": "curvature contraction not independently closed",
+      "represented_term": "V_Hopf + V_boundary",
+      "source": "Higgs-selected U1 boundary phase"
+    },
+    {
+      "component_id": "base_connection",
+      "curvature_status": "REPRESENTED_AT_CONNECTION_LEVEL",
+      "limitations": [
+        "Base contribution participates in diagonal/operator package but lacks a complete curvature remainder formula."
+      ],
+      "remainder_risk": "curvature contraction not independently closed",
+      "represented_term": "A0 + V_boundary",
+      "source": "S2 base angular derivative"
+    },
+    {
+      "component_id": "weak_chirality_connection",
+      "curvature_status": "REPRESENTED_AT_CONNECTION_LEVEL",
+      "limitations": [
+        "Chiral action is scaffold-controlled, not a complete curvature theorem."
+      ],
+      "remainder_risk": "mirror leakage remains a theorem dependency",
+      "represented_term": "V_chi",
+      "source": "weak/chirality projector channel"
+    },
+    {
+      "component_id": "coframe_sector_connection",
+      "curvature_status": "REPRESENTED_AT_CONNECTION_LEVEL",
+      "limitations": [
+        "Sector coupling has bounds, but the curvature-origin remainder is not explicitly derived."
+      ],
+      "remainder_risk": "sector-coupling curvature action is not derived",
+      "represented_term": "K_sector + V_boundary",
+      "source": "quark coframe and sector boundary functional"
+    },
+    {
+      "component_id": "profile_topographic_connection",
+      "curvature_status": "REPRESENTED_AT_PROFILE_LEVEL",
+      "limitations": [
+        "No current proof maps the Lichnerowicz remainder into the PSD profile package."
+      ],
+      "remainder_risk": "only safe if the remainder maps to PSD/profile term",
+      "represented_term": "V_PSD",
+      "source": "PSD/profile and topographic channel"
+    }
+  ],
+  "limitations": [
+    "All known connection sources are inventoried.",
+    "Connection-level representation does not automatically close the Lichnerowicz curvature remainder."
+  ],
+  "theorem_complete": false,
+  "title": "BHSM v2.7 Bundle Connection Curvature Report",
+  "unresolved_components": [
+    "hopf_fiber_connection",
+    "higgs_u1_connection",
+    "base_connection",
+    "coframe_sector_connection"
+  ]
+}

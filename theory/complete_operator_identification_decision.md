@@ -1,4 +1,4 @@
-# BHSM v2.6 Complete Operator Identification Decision
+# BHSM v2.7 Complete Operator Identification Decision
 
 Final result: `STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP`
 Operator-identification status: `COMPLETE_OPERATOR_IDENTIFICATION_BLOCKED_BY_MISSING_TERM`
@@ -14,8 +14,8 @@ Final paper allowed: `False`
 
 The missing term `lichnerowicz_bundle_curvature_remainder` is not proven zero, screened/lifted, or represented by an existing A0+V term.
 
-Recommended next branch: `bhsm-v2.7-bundle-curvature-remainder`
-Recommended target theorem: `BUNDLE_CONNECTION_CURVATURE_CLOSURE_GAP`
+Recommended next branch: `bhsm-v2.8-curvature-remainder-formula-bound`
+Recommended target theorem: `BUNDLE_CURVATURE_REMAINDER_FORMULA_AND_BOUND_GAP`
 
 ## Limitations
 

@@ -42,7 +42,7 @@ def build_complete_operator_identification_decision() -> CompleteOperatorIdentif
     else:
         final = STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP
     return CompleteOperatorIdentificationDecision(
-        title="BHSM v2.6 Complete Operator Identification Decision",
+        title="BHSM v2.7 Complete Operator Identification Decision",
         operator_identification_status=theorem.status,
         final_result=final,
         theorem_complete=final == COMPLETE_OPERATOR_IDENTIFICATION_PROVEN,
@@ -78,7 +78,7 @@ def export_complete_operator_identification_decision_json(path: str | Path) -> N
 def export_complete_operator_identification_decision_markdown(path: str | Path) -> None:
     report = build_complete_operator_identification_decision()
     lines = [
-        "# BHSM v2.6 Complete Operator Identification Decision",
+        "# BHSM v2.7 Complete Operator Identification Decision",
         "",
         f"Final result: `{report.final_result}`",
         f"Operator-identification status: `{report.operator_identification_status}`",

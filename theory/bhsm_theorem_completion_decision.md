@@ -60,13 +60,13 @@ Do not prepare final paper/Zenodo release; attack the full operator domain, topo
 - This decision does not claim first-principles theorem closure.
 
 
-## v2.6 Complete-Operator Identification Update
+## v2.7 Bundle Curvature Remainder Update
 
-- v2.6 final result: `STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP`
-- operator-identification status: `COMPLETE_OPERATOR_IDENTIFICATION_BLOCKED_BY_MISSING_TERM`
-- single missing term: `lichnerowicz_bundle_curvature_remainder`
-- target theorem gap: `BUNDLE_CONNECTION_CURVATURE_CLOSURE_GAP`
-- recommended next branch: `bhsm-v2.7-bundle-curvature-remainder`
+- v2.7 final result: `STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP`
+- remainder classification: `REMAINDER_OPEN`
+- blocking term: `lichnerowicz_bundle_curvature_remainder`
+- exact remaining gap: `BUNDLE_CURVATURE_REMAINDER_FORMULA_AND_BOUND_GAP`
+- recommended next branch: `bhsm-v2.8-curvature-remainder-formula-bound`
 - final paper allowed: `False`
 
-Exact obstruction: The missing term `lichnerowicz_bundle_curvature_remainder` is not proven zero, screened/lifted, or represented by an existing A0+V term.
+The complete-operator theorem remains blocked because the bundle-curvature remainder formula/action is not derived strongly enough to prove zero, representation, PSD control, screening/lifting, or relative-bound safety.

@@ -1,4 +1,4 @@
-# BHSM v2.6 Complete Operator Term Inventory Report
+# BHSM v2.7 Complete Operator Term Inventory Report
 
 Status: `OPERATOR_TERM_INVENTORY_BLOCKED`
 Theorem complete: `False`
@@ -18,7 +18,7 @@ All terms classified: `True`
 | `trace_u1_nondynamical` | `True` | `excluded from dynamical H_T` | `FORBIDDEN_BY_AXIOM` | Requires retention of the topological/nondynamical axiom. |
 | `scalar_topographic_leakage` | `True` | `V_PSD or screened/lifted scalar sector` | `DERIVED_SCREENED_OR_LIFTED` | Full scalar action theorem is not part of this v2.6 operator proof. |
 | `mirror_channel_terms` | `True` | `chiral/Higgs-U1/boundary channels` | `REPRESENTED_BY_EXISTING_TERM` | Full mirror theorem remains conditional. |
-| `lichnerowicz_bundle_curvature_remainder` | `True` | `not represented by a proven existing term` | `OPEN` | Single missing complete-operator identification theorem gap. |
+| `lichnerowicz_bundle_curvature_remainder` | `True` | `not represented by a proven existing term` | `OPEN` | Single missing complete-operator identification theorem gap remains: BUNDLE_CURVATURE_REMAINDER_FORMULA_AND_BOUND_GAP. |
 
 ## Required Open or Missing Terms
 
@@ -27,4 +27,4 @@ All terms classified: `True`
 ## Limitations
 
 - Every listed term has an explicit classification.
-- The Lichnerowicz/bundle-curvature remainder is not hidden; it blocks complete identification until resolved.
+- The Lichnerowicz/bundle-curvature remainder is not hidden; v2.7 keeps it open until a formula/bound theorem is supplied.
