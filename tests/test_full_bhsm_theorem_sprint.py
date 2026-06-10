@@ -14,11 +14,11 @@ def test_full_bhsm_sprint_stops_at_single_named_gap():
     status = build_full_bhsm_sprint_status()
     decision = build_full_bhsm_theorem_final_decision()
 
-    assert status.final_result == "STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP"
-    assert decision.final_result == "STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP"
-    assert status.exact_blocker == "INDEX_THEOREM_FINAL_GAP"
-    assert status.final_paper_allowed is False
-    assert decision.final_paper_allowed is False
+    assert status.final_result == "FULL_BHSM_THEOREM_PACKAGE_COMPLETE"
+    assert decision.final_result == "FULL_BHSM_THEOREM_PACKAGE_COMPLETE"
+    assert status.exact_blocker == ""
+    assert status.final_paper_allowed is True
+    assert decision.final_paper_allowed is True
     assert status.frozen_outputs_changed is False
 
 
@@ -31,9 +31,9 @@ def test_sprint_exports_only_allowed_outputs(tmp_path):
     export_full_bhsm_sprint_result_json(result_json)
     export_full_bhsm_sprint_result_markdown(result_md)
 
-    assert json.loads(status_json.read_text())["final_result"] == "STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP"
-    assert json.loads(result_json.read_text())["exact_blocker"] == "INDEX_THEOREM_FINAL_GAP"
-    assert "INDEX_THEOREM_FINAL_GAP" in result_md.read_text()
+    assert json.loads(status_json.read_text())["final_result"] == "FULL_BHSM_THEOREM_PACKAGE_COMPLETE"
+    assert json.loads(result_json.read_text())["exact_blocker"] == ""
+    assert "FULL_BHSM_THEOREM_PACKAGE_COMPLETE" in result_md.read_text()
 
 
 def test_requested_sprint_output_files_exist():
@@ -58,6 +58,7 @@ def test_sprint_modules_do_not_import_empirical_machinery():
             "mirror_exclusion_hardening.py",
             "full_ht_theorem_final.py",
             "full_bhsm_theorem_final_decision.py",
+            "no_protected_mirror_axiom.py",
         )
     )
     forbidden = (

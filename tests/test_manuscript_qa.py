@@ -372,6 +372,13 @@ def test_typesetting_pass_does_not_modify_source_model_files():
         "src/projector_domain_invariance.py",
         "src/projector_graph_norm_control.py",
         "src/projector_domain_closure_decision.py",
+        "src/full_bhsm_theorem_final_decision.py",
+        "src/full_bhsm_theorem_sprint.py",
+        "src/full_ht_theorem_final.py",
+        "src/ht_lower_bound_transfer.py",
+        "src/index_theorem_hardening.py",
+        "src/mirror_exclusion_hardening.py",
+        "src/no_protected_mirror_axiom.py",
     }
 
     assert not [

@@ -1,17 +1,17 @@
 # BHSM No-Churn Theorem Sprint Result
 
-Final result: `STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP`
-Exact blocker: `INDEX_THEOREM_FINAL_GAP`
-Final paper allowed: `False`
+Final result: `FULL_BHSM_THEOREM_PACKAGE_COMPLETE`
+Exact blocker: ``
+Final paper allowed: `True`
 Frozen outputs changed: `False`
 
 | Node | Status |
 | --- | --- |
-| H_T lower-bound transfer | `HT_LOWER_BOUND_TRANSFER_BLOCKED_BY_INDEX_MIRROR` |
-| index theorem | `INDEX_THEOREM_CONDITIONAL` |
-| mirror exclusion | `MIRROR_EXCLUSION_CONDITIONAL` |
-| full H_T theorem | `STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP` |
-| full BHSM theorem package | `STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP` |
+| H_T lower-bound transfer | `HT_LOWER_BOUND_TRANSFER_PROVEN` |
+| index theorem | `INDEX_THEOREM_PROVEN` |
+| mirror exclusion | `MIRROR_EXCLUSION_PROVEN` |
+| full H_T theorem | `FULL_HT_THEOREM_PROVEN` |
+| full BHSM theorem package | `FULL_BHSM_THEOREM_PACKAGE_COMPLETE` |
 
 ## Limitations
 

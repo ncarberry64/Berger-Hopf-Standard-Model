@@ -9,8 +9,8 @@ from complete_operator_identification_closure import build_complete_operator_ide
 from complete_twisted_dirac_operator import COMPLETE_OPERATOR_IDENTIFICATION_PROVEN
 from complement_lower_bound_bridge import build_complement_lower_bound_bridge_report
 from formal_kernel_projector import DEFAULT_FORMAL_COORDINATES, OLD_COORDINATE_FIRST_KERNEL, build_formal_kernel_projector_report
-from index_theorem_final_proof import build_index_theorem_final_proof_report
-from mirror_exclusion_final_proof import build_mirror_exclusion_final_proof_report
+from index_theorem_hardening import build_index_theorem_hardening_report
+from mirror_exclusion_hardening import build_mirror_exclusion_hardening_report
 from projector_commutator_control_decision import PROJECTOR_COMMUTATOR_CONTROL_CLOSED, build_projector_commutator_control_decision
 from projector_graph_domain_stability import PROJECTOR_GRAPH_DOMAIN_STABILITY_PROVEN, build_projector_graph_domain_stability_report
 
@@ -49,8 +49,8 @@ def build_ht_lower_bound_transfer_sprint_report() -> HTLowerBoundTransferSprintR
     commutator = build_projector_commutator_control_decision()
     projector = build_projector_graph_domain_stability_report()
     lower = build_complement_lower_bound_bridge_report()
-    index = build_index_theorem_final_proof_report()
-    mirror = build_mirror_exclusion_final_proof_report()
+    index = build_index_theorem_hardening_report()
+    mirror = build_mirror_exclusion_hardening_report()
     kernel = build_formal_kernel_projector_report()
     sectors = tuple(row.sector for row in kernel.kernel_basis)
     formal_coordinates = tuple(row.coordinate_hint_kmax4 for row in kernel.kernel_basis)
@@ -66,7 +66,7 @@ def build_ht_lower_bound_transfer_sprint_report() -> HTLowerBoundTransferSprintR
         and lower.clears_required_threshold
         and lower.applies_to_H_perp
     )
-    no_mirror_leakage = mirror.theorem_complete
+    no_mirror_leakage = mirror.theorem_complete and mirror.protected_mirror_count == 0
     no_extra_light = prerequisites and index.theorem_complete and no_mirror_leakage
     if not lower.clears_required_threshold:
         status = HT_LOWER_BOUND_TRANSFER_FAILS

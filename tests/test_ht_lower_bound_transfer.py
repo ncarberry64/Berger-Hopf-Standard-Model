@@ -3,8 +3,7 @@ from math import isclose
 from bhsm_v1 import build_bhsm_bare_v1, build_bhsm_dressed_v1_candidate, compare_bhsm_v1_branches
 from constants import S_OVERLAP
 from ht_lower_bound_transfer import (
-    HT_LOWER_BOUND_TRANSFER_BLOCKED_BY_INDEX_MIRROR,
-    INDEX_THEOREM_FINAL_GAP,
+    HT_LOWER_BOUND_TRANSFER_PROVEN,
     build_ht_lower_bound_transfer_sprint_report,
 )
 
@@ -21,9 +20,11 @@ def test_ht_lower_bound_transfer_stops_at_index_mirror_blocker():
     assert report.old_coordinate_first_kernel_used is False
     assert report.clears_required_threshold is True
     assert report.represented_terms_lower_bound_safe is True
-    assert report.status == HT_LOWER_BOUND_TRANSFER_BLOCKED_BY_INDEX_MIRROR
-    assert report.exact_blocker == INDEX_THEOREM_FINAL_GAP
-    assert report.theorem_complete is False
+    assert report.status == HT_LOWER_BOUND_TRANSFER_PROVEN
+    assert report.exact_blocker == ""
+    assert report.no_extra_light_state_verified is True
+    assert report.no_mirror_leakage_verified is True
+    assert report.theorem_complete is True
 
 
 def test_ht_lower_bound_transfer_does_not_change_frozen_outputs():
