@@ -263,8 +263,10 @@ def test_typesetting_pass_does_not_modify_source_model_files():
         "src/scalar_screening_action.py",
         "src/topographic_action.py",
         "src/derivative_screening.py",
-        "src/curvature_screening.py",
-    }
+            "src/curvature_screening.py",
+            "src/full_ht_theorem.py",
+            "src/self_adjoint_domain.py",
+        }
 
     assert not [
         path

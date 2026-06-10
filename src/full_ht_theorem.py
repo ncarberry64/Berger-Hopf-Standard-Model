@@ -38,6 +38,7 @@ class HTTheoremClosureReport:
     kernel_nodes: tuple[KernelTheoremNode, ...]
     heat_lift_and_psd_profile_preserved: bool
     sector_coupling_uniform_relative_bound_status: str
+    v1_7_dependency_status: str
     remaining_open_nodes: tuple[str, ...]
     status: str
     theorem_complete: bool
@@ -70,6 +71,7 @@ def build_full_ht_theorem_report() -> HTTheoremClosureReport:
         kernel_nodes=kernel,
         heat_lift_and_psd_profile_preserved=True,
         sector_coupling_uniform_relative_bound_status="UNIFORM_BOUND_CANDIDATE",
+        v1_7_dependency_status="HT_THEOREM_BLOCKED_BY_DOMAIN",
         remaining_open_nodes=tuple(dict.fromkeys(open_nodes)),
         status=status,
         theorem_complete=theorem_complete,
@@ -128,6 +130,12 @@ def export_full_ht_theorem_markdown(path: str | Path) -> None:
         f"| exact finite lower bound | `{report.infinite_basis_report.exact_finite_lower_bound}` |",
         f"| heat-lift lower bound | `{report.infinite_basis_report.heat_lift_lower_bound}` |",
         "",
+        "## v1.7 Dependency Status",
+        "",
+        f"`{report.v1_7_dependency_status}`",
+        "",
+        "The corrected formal-kernel H_T scaffold remains strong, but v1.7 keeps the full theorem blocked by the complete operator-domain/self-adjointness chain before index and mirror closure can upgrade the theorem.",
+        "",
         "## Remaining Open Nodes",
         "",
     ]
@@ -146,4 +154,3 @@ def export_full_ht_theorem_markdown(path: str | Path) -> None:
         ]
     )
     Path(path).write_text("\n".join(lines))
-

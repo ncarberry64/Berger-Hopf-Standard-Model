@@ -1,0 +1,164 @@
+{
+  "domain_status": "SELF_ADJOINT_DOMAIN_OPEN",
+  "formal_kernel": [
+    "|ell,0,0,q=0,chi=-1>",
+    "|u,0,0,q=0,chi=-1>",
+    "|d,0,0,q=0,chi=-1>"
+  ],
+  "frozen_outputs_changed": false,
+  "ht_dependency_status": "HT_THEOREM_BLOCKED_BY_DOMAIN",
+  "index_mirror_report": {
+    "boundary_functional_channel_closed": false,
+    "chiral_channel_excludes_generated_mirrors": true,
+    "formal_kernel": [
+      "|ell,0,0,q=0,chi=-1>",
+      "|u,0,0,q=0,chi=-1>",
+      "|d,0,0,q=0,chi=-1>"
+    ],
+    "higgs_u1_channel_closed": false,
+    "index_status": "INDEX_THEOREM_OPEN",
+    "mirror_status": "MIRROR_EXCLUSION_OPEN",
+    "open_obligations": [
+      "derive the topological index of the complete twisted Dirac operator",
+      "prove absence of additional protected kernel states in the complete operator",
+      "prove the formal-kernel/complement split independently of finite truncation",
+      "close the Higgs-selected U(1) mirror channel in the complete operator",
+      "close the boundary-functional mirror channel in the complete operator",
+      "connect mirror exclusion to the full topological index theorem"
+    ],
+    "scaffold_index": 3,
+    "sector_labels": [
+      "ell",
+      "u",
+      "d"
+    ],
+    "target_index": 3,
+    "theorem_complete": false
+  },
+  "index_status": "INDEX_THEOREM_OPEN",
+  "limitations": [
+    "v1.7 strengthens the dependency audit but does not close the full domain/index/mirror theorem chain.",
+    "The old coordinate-first kernel (0,1,2) is rejected for corrected formal-kernel reports.",
+    "No frozen predictions, constants, mode ledgers, tolerances, or prior scaffold outputs are changed."
+  ],
+  "mirror_status": "MIRROR_EXCLUSION_OPEN",
+  "old_coordinate_first_kernel_rejected": [
+    0,
+    1,
+    2
+  ],
+  "open_obligations": [
+    "prove density and core stability in the complete Hilbert space",
+    "derive the complete Berger twisted Dirac spectral domain",
+    "prove self-adjointness via Kato-Rellich or equivalent relative-bound conditions in the complete operator",
+    "prove the formal kernel/complement split for the complete Hilbert-space operator",
+    "prove infinite-basis Hopf twist relative boundedness",
+    "prove complete boundary functional relative boundedness",
+    "prove chirality projector preserves the full operator domain",
+    "upgrade uniform scan to an infinite-basis sector-coupling theorem",
+    "prove full formal-kernel complement projector and domain stability",
+    "derive the topological index of the complete twisted Dirac operator",
+    "prove absence of additional protected kernel states in the complete operator",
+    "prove the formal-kernel/complement split independently of finite truncation",
+    "close the Higgs-selected U(1) mirror channel in the complete operator",
+    "close the boundary-functional mirror channel in the complete operator",
+    "connect mirror exclusion to the full topological index theorem"
+  ],
+  "relative_bound_report": {
+    "all_bounds_below_one": true,
+    "all_infinite_basis_compatible": false,
+    "limitations": [
+      "All listed relative-a estimates are below 1 in the current scaffold.",
+      "Several terms remain finite/scaffold or uniform-scan evidence, not complete infinite-basis proofs."
+    ],
+    "max_relative_a": 0.015621013485509948,
+    "status": "RELATIVE_BOUND_CONDITIONAL",
+    "terms": [
+      {
+        "below_one": true,
+        "evidence_scope": "definition of base operator",
+        "infinite_basis_compatible": true,
+        "open_obligations": [],
+        "operator_role": "unperturbed diagonal operator",
+        "relative_a": 0.0,
+        "relative_b": 0.0,
+        "term_id": "D_diag_squared"
+      },
+      {
+        "below_one": true,
+        "evidence_scope": "finite/scaffold boundedness",
+        "infinite_basis_compatible": false,
+        "open_obligations": [
+          "prove infinite-basis Hopf twist relative boundedness"
+        ],
+        "operator_role": "Hopf twist term",
+        "relative_a": 0.0,
+        "relative_b": 0.0,
+        "term_id": "V_Hopf"
+      },
+      {
+        "below_one": true,
+        "evidence_scope": "finite/scaffold boundedness",
+        "infinite_basis_compatible": false,
+        "open_obligations": [
+          "prove complete boundary functional relative boundedness"
+        ],
+        "operator_role": "sector boundary term",
+        "relative_a": 0.0,
+        "relative_b": 0.0,
+        "term_id": "V_boundary"
+      },
+      {
+        "below_one": true,
+        "evidence_scope": "projector scaffold",
+        "infinite_basis_compatible": false,
+        "open_obligations": [
+          "prove chirality projector preserves the full operator domain"
+        ],
+        "operator_role": "chirality projector term",
+        "relative_a": 0.0,
+        "relative_b": 0.0,
+        "term_id": "V_chi"
+      },
+      {
+        "below_one": true,
+        "evidence_scope": "uniform scan and structured relative-bound candidate through k_max=32",
+        "infinite_basis_compatible": false,
+        "open_obligations": [
+          "upgrade uniform scan to an infinite-basis sector-coupling theorem"
+        ],
+        "operator_role": "sector-coupling block",
+        "relative_a": 0.015621013485509948,
+        "relative_b": 0.0,
+        "term_id": "K_sector"
+      },
+      {
+        "below_one": true,
+        "evidence_scope": "PSD monotone lift",
+        "infinite_basis_compatible": false,
+        "open_obligations": [
+          "prove full formal-kernel complement projector and domain stability"
+        ],
+        "operator_role": "heat lift on the formal complement",
+        "relative_a": 0.0,
+        "relative_b": 0.0,
+        "term_id": "P_perp_lift"
+      },
+      {
+        "below_one": true,
+        "evidence_scope": "PSD construction",
+        "infinite_basis_compatible": true,
+        "open_obligations": [],
+        "operator_role": "positive semidefinite profile contribution",
+        "relative_a": 0.0,
+        "relative_b": 0.0,
+        "term_id": "PSD_profile"
+      }
+    ],
+    "theorem_complete": false
+  },
+  "relative_bound_status": "RELATIVE_BOUND_CONDITIONAL",
+  "self_adjoint_report_status": "SELF_ADJOINT_DOMAIN_OPEN",
+  "theorem_complete": false,
+  "title": "BHSM v1.7 Operator-Domain and Index Closure Report"
+}

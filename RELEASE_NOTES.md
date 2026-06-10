@@ -149,6 +149,37 @@ is upgraded to `FULL_BHSM_THEOREM_PACKAGE_COMPLETE` by implemented,
 dependency-clean proofs. Frozen BHSM predictions and prior scaffold outputs
 remain unchanged.
 
+## Unreleased / Development: v1.7 Operator-Domain and Index Chain
+
+Branch: `bhsm-v1.7-operator-domain-index`
+
+The v1.7 focused branch attacks the upstream chain feeding the full `H_T`
+theorem:
+
+```text
+D(D_FK) -> self-adjointness -> dim ker D_twist = 3 -> mirror exclusion -> H_T complement theorem
+```
+
+It adds a Kato-Rellich/relative-bound audit for Hopf, boundary, chirality,
+sector-coupling, heat-lift, PSD-profile, and complement-projector terms. The
+current relative-a estimates are below one, including sector coupling
+`a_K = 0.015621013485509948`, but the result remains
+`RELATIVE_BOUND_CONDITIONAL` because infinite-basis compatibility and complete
+domain preservation are not proven.
+
+Current v1.7 status:
+
+- full operator domain: `SELF_ADJOINT_DOMAIN_OPEN`;
+- relative-bound audit: `RELATIVE_BOUND_CONDITIONAL`;
+- topological index: `INDEX_THEOREM_OPEN`;
+- mirror exclusion: `MIRROR_EXCLUSION_OPEN`;
+- `H_T` dependency: `HT_THEOREM_BLOCKED_BY_DOMAIN`.
+
+The corrected sector-labeled formal kernel is preserved and the old
+coordinate-first kernel `(0,1,2)` remains rejected. Frozen BHSM predictions and
+prior scaffold outputs remain unchanged. Final paper/Zenodo release remains
+blocked.
+
 ## Unreleased / Development: v1.4 Precision QCD/RG Matching
 
 Branch: `bhsm-v1.4-precision-qcd-rg`
