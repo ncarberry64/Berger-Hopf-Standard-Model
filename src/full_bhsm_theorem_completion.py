@@ -40,7 +40,7 @@ def build_full_bhsm_theorem_completion_report() -> FullBHSMTheoremCompletionRepo
     else:
         result = STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP
     return FullBHSMTheoremCompletionReport(
-        title="BHSM v2.5 Full BHSM Theorem Completion Decision",
+        title="BHSM v2.6 Full BHSM Theorem Completion Decision",
         final_result=result,
         full_ht_result=ht.final_result,
         final_paper_allowed=result == FULL_BHSM_THEOREM_PACKAGE_COMPLETE,
@@ -75,7 +75,7 @@ def export_full_bhsm_theorem_completion_json(path: str | Path) -> None:
 def export_full_bhsm_theorem_completion_markdown(path: str | Path) -> None:
     report = build_full_bhsm_theorem_completion_report()
     lines = [
-        "# BHSM v2.5 Full BHSM Theorem Completion Decision",
+        "# BHSM v2.6 Full BHSM Theorem Completion Decision",
         "",
         f"Final result: `{report.final_result}`",
         f"Full H_T result: `{report.full_ht_result}`",

@@ -1,3 +1,26 @@
+# Unreleased / Development: v2.6 Complete Operator Identification
+
+Branch: `bhsm-v2.6-complete-operator-identification`
+
+The v2.6 branch audits the complete Berger-Hopf twisted Dirac/bundle operator
+identification needed before downstream `H_T` theorem closure can honestly
+advance. The audit inventories the operator terms, derives the currently
+represented `A0+V` decomposition, checks for hidden missing terms, and makes a
+strict theorem decision.
+
+Final result:
+
+- operator-identification status: `COMPLETE_OPERATOR_IDENTIFICATION_BLOCKED_BY_MISSING_TERM`
+- v2.6 decision: `STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP`
+- single missing term: `lichnerowicz_bundle_curvature_remainder`
+- target theorem gap: `BUNDLE_CONNECTION_CURVATURE_CLOSURE_GAP`
+- recommended next branch: `bhsm-v2.7-bundle-curvature-remainder`
+- final paper allowed: `False`
+
+No theorem is marked proven from conditional assumptions. Frozen predictions,
+canonical constants, frozen modes, tolerances, outputs, and virtual dressing are
+unchanged.
+
 # Unreleased / Development: v2.2 Formal Complement Stability
 
 Branch: `bhsm-v2.2-formal-complement-stability`

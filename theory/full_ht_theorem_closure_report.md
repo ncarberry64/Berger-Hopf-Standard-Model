@@ -1,4 +1,4 @@
-# BHSM v2.5 Full H_T Theorem Closure Attempt
+# BHSM v2.6 Full H_T Theorem Closure Status
 
 Final result: `STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP`
 Theorem complete: `False`
@@ -16,12 +16,12 @@ Theorem complete: `False`
 
 `COMPLETE_OPERATOR_IDENTIFICATION_THEOREM_GAP`
 
-Recommended next branch: `bhsm-v2.6-complete-operator-identification`
-Recommended target theorem: `COMPLETE_OPERATOR_IDENTIFICATION_THEOREM_GAP`
+Recommended next branch: `bhsm-v2.7-bundle-curvature-remainder`
+Recommended target theorem: `BUNDLE_CONNECTION_CURVATURE_CLOSURE_GAP`
 
 ## Exact Obstruction
 
-The perturbation/profile package remains a theorem-candidate scaffold, not a derivation of the exact complete Berger-Hopf twisted Dirac/bundle operator.
+The missing term `lichnerowicz_bundle_curvature_remainder` is not proven zero, screened/lifted, or represented by an existing A0+V term.
 
 ## Limitations
 

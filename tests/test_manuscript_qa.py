@@ -315,6 +315,12 @@ def test_typesetting_pass_does_not_modify_source_model_files():
         "src/index_theorem_final_proof.py",
         "src/mirror_exclusion_final_proof.py",
         "src/full_bhsm_theorem_completion.py",
+        "src/complete_berger_hopf_operator.py",
+        "src/bundle_dirac_derivation.py",
+        "src/operator_term_inventory.py",
+        "src/operator_missing_term_audit.py",
+        "src/operator_identification_theorem.py",
+        "src/complete_operator_identification_decision.py",
     }
 
     assert not [

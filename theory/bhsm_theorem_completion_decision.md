@@ -59,10 +59,14 @@ Do not prepare final paper/Zenodo release; attack the full operator domain, topo
 - This decision does not alter BHSM_BARE_V1 or BHSM_DRESSED_V1_CANDIDATE.
 - This decision does not claim first-principles theorem closure.
 
-## v2.4 Complete-Operator Domain-Stability Update
 
-- H_T dependency status: `HT_DOMAIN_STABILITY_BRIDGE_CONDITIONAL_STRONG`
-- Complete-operator identification: `COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL`
-- Projector graph-domain stability: `PROJECTOR_GRAPH_DOMAIN_STABILITY_CONDITIONAL`
-- Lower-bound transfer: `HT_LOWER_BOUND_TRANSFER_CONDITIONAL`
-- Final paper allowed: `False` unless `FULL_BHSM_THEOREM_PACKAGE_COMPLETE` is reached.
+## v2.6 Complete-Operator Identification Update
+
+- v2.6 final result: `STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP`
+- operator-identification status: `COMPLETE_OPERATOR_IDENTIFICATION_BLOCKED_BY_MISSING_TERM`
+- single missing term: `lichnerowicz_bundle_curvature_remainder`
+- target theorem gap: `BUNDLE_CONNECTION_CURVATURE_CLOSURE_GAP`
+- recommended next branch: `bhsm-v2.7-bundle-curvature-remainder`
+- final paper allowed: `False`
+
+Exact obstruction: The missing term `lichnerowicz_bundle_curvature_remainder` is not proven zero, screened/lifted, or represented by an existing A0+V term.

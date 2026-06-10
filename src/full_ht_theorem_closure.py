@@ -64,7 +64,7 @@ def build_full_ht_theorem_closure_report() -> FullHTTheoremClosureReport:
         gap = COMPLETE_OPERATOR_IDENTIFICATION_THEOREM_GAP
         obstruction = operator.exact_obstruction
     return FullHTTheoremClosureReport(
-        title="BHSM v2.5 Full H_T Theorem Closure Attempt",
+        title="BHSM v2.6 Full H_T Theorem Closure Status",
         complete_operator_status=operator.final_status,
         commutator_status=comm.final_status,
         projector_graph_domain_status=projector.final_status,
@@ -103,7 +103,7 @@ def export_full_ht_theorem_closure_json(path: str | Path) -> None:
 def export_full_ht_theorem_closure_markdown(path: str | Path) -> None:
     report = build_full_ht_theorem_closure_report()
     lines = [
-        "# BHSM v2.5 Full H_T Theorem Closure Attempt",
+        "# BHSM v2.6 Full H_T Theorem Closure Status",
         "",
         f"Final result: `{report.final_result}`",
         f"Theorem complete: `{report.theorem_complete}`",

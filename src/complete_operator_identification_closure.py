@@ -11,6 +11,10 @@ from complete_twisted_dirac_operator import (
     COMPLETE_OPERATOR_IDENTIFICATION_PROVEN,
     build_complete_twisted_dirac_operator_report,
 )
+from complete_operator_identification_decision import (
+    COMPLETE_OPERATOR_IDENTIFICATION_PROVEN as V26_COMPLETE_OPERATOR_IDENTIFICATION_PROVEN,
+    build_complete_operator_identification_decision,
+)
 
 
 COMPLETE_OPERATOR_IDENTIFICATION_THEOREM_GAP = "COMPLETE_OPERATOR_IDENTIFICATION_THEOREM_GAP"
@@ -33,24 +37,29 @@ def build_complete_operator_identification_closure_report() -> CompleteOperatorI
     """Attempt to close complete-operator identification without overclaiming."""
 
     report = build_complete_twisted_dirac_operator_report()
+    v26_decision = build_complete_operator_identification_decision()
     blocking = tuple(row.component_id for row in report.components if row.status != "COMPONENT_IDENTIFIED")
-    proven = report.status == COMPLETE_OPERATOR_IDENTIFICATION_PROVEN and not blocking
+    proven = (
+        report.status == COMPLETE_OPERATOR_IDENTIFICATION_PROVEN
+        and not blocking
+        and v26_decision.final_result == V26_COMPLETE_OPERATOR_IDENTIFICATION_PROVEN
+    )
     obstruction = (
         "No obstruction: complete operator is identified."
         if proven
-        else "The perturbation/profile package remains a theorem-candidate scaffold, not a derivation of the exact complete Berger-Hopf twisted Dirac/bundle operator."
+        else v26_decision.exact_obstruction
     )
     return CompleteOperatorIdentificationClosureReport(
-        title="BHSM v2.5 Complete-Operator Identification Closure Attempt",
-        source_status=report.status,
+        title="BHSM v2.6 Complete-Operator Identification Closure Attempt",
+        source_status=v26_decision.operator_identification_status,
         final_status=COMPLETE_OPERATOR_IDENTIFICATION_PROVEN if proven else COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL,
         theorem_complete=proven,
-        blocking_components=blocking,
+        blocking_components=blocking + ((v26_decision.blocking_term,) if v26_decision.blocking_term else ()),
         exact_obstruction=obstruction,
-        next_branch="bhsm-v2.6-complete-operator-identification",
-        next_target_theorem=COMPLETE_OPERATOR_IDENTIFICATION_THEOREM_GAP,
+        next_branch=v26_decision.recommended_next_branch,
+        next_target_theorem=v26_decision.recommended_target_theorem,
         limitations=(
-            "v2.5 does not invent an exact action-level derivation for missing complete-operator terms.",
+            "v2.6 does not invent an exact action-level derivation for missing complete-operator terms.",
             "No downstream H_T closure may be marked proven while this identification remains conditional.",
         ),
     )
@@ -75,7 +84,7 @@ def export_complete_operator_identification_closure_json(path: str | Path) -> No
 def export_complete_operator_identification_closure_markdown(path: str | Path) -> None:
     report = build_complete_operator_identification_closure_report()
     lines = [
-        "# BHSM v2.5 Complete-Operator Identification Closure Attempt",
+        "# BHSM v2.6 Complete-Operator Identification Closure Attempt",
         "",
         f"Source status: `{report.source_status}`",
         f"Final status: `{report.final_status}`",

@@ -43,3 +43,9 @@
 - prove all nonzero projector-perturbation commutators on the complete graph domain;
 - upgrade projector graph-domain stability from conditional to proven;
 - upgrade topological index and mirror exclusion from conditional to proven before claiming final H_T transfer.
+
+
+## v2.6 Complete-Operator Identification Obligation
+
+- Close `BUNDLE_CONNECTION_CURVATURE_CLOSURE_GAP` by proving the `lichnerowicz_bundle_curvature_remainder` is zero, represented by the existing `A0+V` package, positive semidefinite/profile-controlled, screened/lifted, or explicitly included with renewed lower-bound transfer.
+- Do not prepare the final paper while v2.6 result remains `STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP`.

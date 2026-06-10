@@ -1,0 +1,86 @@
+{
+  "blocking_term": "lichnerowicz_bundle_curvature_remainder",
+  "hidden_missing_terms": false,
+  "limitations": [
+    "The audit does not hide the connection-curvature/torsion-like remainder.",
+    "The first blocking item is treated as the single named theorem gap for the next branch."
+  ],
+  "rows": [
+    {
+      "audit_id": "connection_curvature_terms",
+      "blocking": true,
+      "candidate_contribution": "connection curvature terms",
+      "disposition": "OPEN",
+      "evidence": "no repo proof shows this term vanishes, is PSD/profile, or is represented by A0+V"
+    },
+    {
+      "audit_id": "torsion_like_terms",
+      "blocking": true,
+      "candidate_contribution": "torsion-like terms if applicable",
+      "disposition": "OPEN",
+      "evidence": "no repo proof shows this term vanishes, is PSD/profile, or is represented by A0+V"
+    },
+    {
+      "audit_id": "bundle_connection_terms",
+      "blocking": false,
+      "candidate_contribution": "bundle connection terms",
+      "disposition": "REPRESENTED_BY_EXISTING_TERM",
+      "evidence": "v2.3 Higgs-U1 mirror channel and boundary/Hopf representation"
+    },
+    {
+      "audit_id": "sector_off_diagonal_terms",
+      "blocking": false,
+      "candidate_contribution": "sector off-diagonal terms",
+      "disposition": "REPRESENTED_BY_EXISTING_TERM",
+      "evidence": "v1.3-v2.1 sector coupling bound scaffolds represent this block"
+    },
+    {
+      "audit_id": "mirror_channel_terms",
+      "blocking": false,
+      "candidate_contribution": "mirror-channel terms",
+      "disposition": "REPRESENTED_BY_EXISTING_TERM",
+      "evidence": "v2.3 mirror-channel reports account for generated mirror candidates"
+    },
+    {
+      "audit_id": "higgs_u1_terms",
+      "blocking": false,
+      "candidate_contribution": "Higgs-U1 terms",
+      "disposition": "REPRESENTED_BY_EXISTING_TERM",
+      "evidence": "v2.3 Higgs-U1 mirror channel and boundary/Hopf representation"
+    },
+    {
+      "audit_id": "boundary_functional_terms",
+      "blocking": false,
+      "candidate_contribution": "boundary-functional terms",
+      "disposition": "DERIVED_AND_INCLUDED",
+      "evidence": "v1.2/v2.1 boundary functional represented in perturbation package"
+    },
+    {
+      "audit_id": "topographic_scalar_leakage",
+      "blocking": false,
+      "candidate_contribution": "topographic/scalar leakage into H_T",
+      "disposition": "DERIVED_SCREENED_OR_LIFTED",
+      "evidence": "scalar/topographic scaffold screens/lifts non-Higgs modes"
+    },
+    {
+      "audit_id": "projection_lift_terms",
+      "blocking": false,
+      "candidate_contribution": "projection/lift terms",
+      "disposition": "DERIVED_AND_INCLUDED",
+      "evidence": "v2.2 complement projector and lift/projector domain scaffold"
+    },
+    {
+      "audit_id": "heat_profile_terms",
+      "blocking": false,
+      "candidate_contribution": "heat-kernel/profile terms",
+      "disposition": "DERIVED_AND_INCLUDED",
+      "evidence": "v2.1/v2.4 lift term included"
+    }
+  ],
+  "status": "OPERATOR_MISSING_TERM_AUDIT_BLOCKED",
+  "theorem_complete": false,
+  "title": "BHSM v2.6 Operator Missing-Term Audit",
+  "unique_blocking_terms": [
+    "lichnerowicz_bundle_curvature_remainder"
+  ]
+}

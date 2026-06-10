@@ -9,6 +9,7 @@ from complete_operator_identification_closure import (
     export_complete_operator_identification_closure_json,
     export_complete_operator_identification_closure_markdown,
 )
+from operator_identification_theorem import COMPLETE_OPERATOR_IDENTIFICATION_BLOCKED_BY_MISSING_TERM
 from complete_twisted_dirac_operator import COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL
 from constants import S_OVERLAP
 from full_bhsm_theorem_completion import (
@@ -35,11 +36,11 @@ from projector_graph_domain_closure import build_projector_graph_domain_closure_
 def test_complete_operator_identification_is_the_single_named_gap():
     report = build_complete_operator_identification_closure_report()
 
-    assert report.source_status == COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL
+    assert report.source_status == COMPLETE_OPERATOR_IDENTIFICATION_BLOCKED_BY_MISSING_TERM
     assert report.final_status == COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL
     assert report.theorem_complete is False
-    assert report.next_target_theorem == COMPLETE_OPERATOR_IDENTIFICATION_THEOREM_GAP
-    assert "V" in report.blocking_components
+    assert report.next_target_theorem == "BUNDLE_CONNECTION_CURVATURE_CLOSURE_GAP"
+    assert "lichnerowicz_bundle_curvature_remainder" in report.blocking_components
 
 
 def test_downstream_closures_do_not_upgrade_from_conditional_operator_assumption():
@@ -78,7 +79,7 @@ def test_full_ht_closure_uses_only_allowed_final_outcomes():
     assert report.final_result == STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP
     assert report.theorem_complete is False
     assert report.single_named_gap == COMPLETE_OPERATOR_IDENTIFICATION_THEOREM_GAP
-    assert report.recommended_next_branch == "bhsm-v2.6-complete-operator-identification"
+    assert report.recommended_next_branch == "bhsm-v2.7-bundle-curvature-remainder"
 
 
 def test_full_bhsm_completion_uses_only_allowed_final_outcomes():

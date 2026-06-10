@@ -1,0 +1,39 @@
+{
+  "limitations": [
+    "The derivation remains symbolic until the bundle-curvature remainder is resolved."
+  ],
+  "status": "BUNDLE_DIRAC_DERIVATION_BLOCKED_BY_REMAINDER",
+  "steps": [
+    {
+      "limitation": "",
+      "output_term": "berger_diagonal_kinetic",
+      "statement": "Square the diagonal Berger core.",
+      "status": "DERIVED_AND_INCLUDED",
+      "step_id": "square_diagonal_berger_core"
+    },
+    {
+      "limitation": "",
+      "output_term": "hopf/boundary/chirality package",
+      "statement": "Include Hopf, boundary, and chirality contributions.",
+      "status": "DERIVED_AND_INCLUDED",
+      "step_id": "include_hopf_boundary_chirality"
+    },
+    {
+      "limitation": "",
+      "output_term": "K_sector + P_perp_lift + V_PSD",
+      "statement": "Include sector coupling, complement lift, heat lift, and PSD profile.",
+      "status": "REPRESENTED_BY_EXISTING_TERM",
+      "step_id": "include_sector_and_lift_profile"
+    },
+    {
+      "limitation": "No proof currently shows this term vanishes, is represented, or is screened/lifted.",
+      "output_term": "lichnerowicz_bundle_curvature_remainder",
+      "statement": "Resolve the bundle-curvature remainder in the squared complete twisted Dirac operator.",
+      "status": "OPEN",
+      "step_id": "resolve_lichnerowicz_remainder"
+    }
+  ],
+  "theorem_complete": false,
+  "title": "BHSM v2.6 Bundle Dirac Derivation Report",
+  "unresolved_step": "resolve_lichnerowicz_remainder"
+}

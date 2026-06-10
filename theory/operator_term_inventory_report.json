@@ -1,0 +1,158 @@
+{
+  "all_terms_classified": true,
+  "limitations": [
+    "Every listed term has an explicit classification.",
+    "The Lichnerowicz/bundle-curvature remainder is not hidden; it blocks complete identification until resolved."
+  ],
+  "required_open_or_missing_terms": [
+    "lichnerowicz_bundle_curvature_remainder"
+  ],
+  "status": "OPERATOR_TERM_INVENTORY_BLOCKED",
+  "terms": [
+    {
+      "classification": "DERIVED_AND_INCLUDED",
+      "evidence": [
+        "v1.9 diagonal reference operator proven"
+      ],
+      "limitation": "Does not by itself identify all twisted/bundle perturbations.",
+      "represented_by": "A0 = D_diag^2",
+      "required_for_ht": true,
+      "role": "Berger/Dirac diagonal kinetic contribution",
+      "term_id": "berger_diagonal_kinetic"
+    },
+    {
+      "classification": "DERIVED_AND_INCLUDED",
+      "evidence": [
+        "v2.1 Hopf/boundary/chirality bound scaffold includes V_Hopf"
+      ],
+      "limitation": "Complete-action derivation is inherited from scaffold terms.",
+      "represented_by": "V_Hopf",
+      "required_for_ht": true,
+      "role": "Hopf fibration/twist contribution",
+      "term_id": "hopf_fiber_twist"
+    },
+    {
+      "classification": "DERIVED_AND_INCLUDED",
+      "evidence": [
+        "v1.2/v2.1 boundary functional represented in perturbation package"
+      ],
+      "limitation": "Global boundary problem remains linked to complete-operator proof.",
+      "represented_by": "V_boundary",
+      "required_for_ht": true,
+      "role": "sector boundary functional contribution",
+      "term_id": "boundary_functional"
+    },
+    {
+      "classification": "DERIVED_AND_INCLUDED",
+      "evidence": [
+        "chiral projector channel is represented and tested"
+      ],
+      "limitation": "Mirror exclusion remains a separate theorem dependency.",
+      "represented_by": "V_chi",
+      "required_for_ht": true,
+      "role": "weak chirality contribution",
+      "term_id": "chirality_projector"
+    },
+    {
+      "classification": "REPRESENTED_BY_EXISTING_TERM",
+      "evidence": [
+        "v1.3-v2.1 sector coupling bound scaffolds represent this block"
+      ],
+      "limitation": "Complete operator source for the coupling is still tied to action-scaffold assumptions.",
+      "represented_by": "K_sector",
+      "required_for_ht": true,
+      "role": "off-diagonal sector coupling contribution",
+      "term_id": "sector_coupling"
+    },
+    {
+      "classification": "DERIVED_AND_INCLUDED",
+      "evidence": [
+        "v2.2 complement projector and lift/projector domain scaffold"
+      ],
+      "limitation": "Projector graph-domain stability remains conditional downstream.",
+      "represented_by": "P_perp_lift",
+      "required_for_ht": true,
+      "role": "formal kernel/complement lift contribution",
+      "term_id": "formal_kernel_complement_lift"
+    },
+    {
+      "classification": "DERIVED_AND_INCLUDED",
+      "evidence": [
+        "v2.1/v2.4 lift term included"
+      ],
+      "limitation": "Exact heat-kernel construction is represented at scaffold level.",
+      "represented_by": "P_perp_lift",
+      "required_for_ht": true,
+      "role": "heat-kernel lift contribution",
+      "term_id": "heat_lift"
+    },
+    {
+      "classification": "REPRESENTED_BY_EXISTING_TERM",
+      "evidence": [
+        "PSD profile construction and scalar/topographic screening scaffolds"
+      ],
+      "limitation": "Full scalar action proof remains separate from H_T operator identification.",
+      "represented_by": "V_PSD",
+      "required_for_ht": true,
+      "role": "positive semidefinite topographic/profile contribution",
+      "term_id": "psd_profile"
+    },
+    {
+      "classification": "REPRESENTED_BY_EXISTING_TERM",
+      "evidence": [
+        "v2.3 Higgs-U1 mirror channel and boundary/Hopf representation"
+      ],
+      "limitation": "Standalone complete mirror channel remains conditional.",
+      "represented_by": "V_boundary + V_Hopf",
+      "required_for_ht": true,
+      "role": "Higgs-selected U1 bundle phase contribution",
+      "term_id": "higgs_u1_connection"
+    },
+    {
+      "classification": "FORBIDDEN_BY_AXIOM",
+      "evidence": [
+        "trace U1 is treated as topological/nondynamical in theorem scaffolds"
+      ],
+      "limitation": "Requires retention of the topological/nondynamical axiom.",
+      "represented_by": "excluded from dynamical H_T",
+      "required_for_ht": true,
+      "role": "trace U1 topological/nondynamical channel",
+      "term_id": "trace_u1_nondynamical"
+    },
+    {
+      "classification": "DERIVED_SCREENED_OR_LIFTED",
+      "evidence": [
+        "scalar/topographic scaffold screens/lifts non-Higgs modes"
+      ],
+      "limitation": "Full scalar action theorem is not part of this v2.6 operator proof.",
+      "represented_by": "V_PSD or screened/lifted scalar sector",
+      "required_for_ht": true,
+      "role": "scalar/topographic leakage into H_T",
+      "term_id": "scalar_topographic_leakage"
+    },
+    {
+      "classification": "REPRESENTED_BY_EXISTING_TERM",
+      "evidence": [
+        "v2.3 mirror-channel reports account for generated mirror candidates"
+      ],
+      "limitation": "Full mirror theorem remains conditional.",
+      "represented_by": "chiral/Higgs-U1/boundary channels",
+      "required_for_ht": true,
+      "role": "mirror-sector contributions",
+      "term_id": "mirror_channel_terms"
+    },
+    {
+      "classification": "OPEN",
+      "evidence": [
+        "no repo proof shows this term vanishes, is PSD/profile, or is represented by A0+V"
+      ],
+      "limitation": "Single missing complete-operator identification theorem gap.",
+      "represented_by": "not represented by a proven existing term",
+      "required_for_ht": true,
+      "role": "possible curvature/remainder term in squaring the complete twisted Dirac/bundle operator",
+      "term_id": "lichnerowicz_bundle_curvature_remainder"
+    }
+  ],
+  "theorem_complete": false,
+  "title": "BHSM v2.6 Complete Operator Term Inventory Report"
+}
