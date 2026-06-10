@@ -272,6 +272,12 @@ def test_typesetting_pass_does_not_modify_source_model_files():
         "src/graph_norm_domain.py",
         "src/kato_rellich_preconditions.py",
         "src/ht_domain_bridge.py",
+        "src/perturbation_operator.py",
+        "src/perturbation_symmetry.py",
+        "src/perturbation_domain_inclusion.py",
+        "src/relative_bound_closure.py",
+        "src/lower_bound_preservation.py",
+        "src/kato_rellich_closure.py",
     }
 
     assert not [

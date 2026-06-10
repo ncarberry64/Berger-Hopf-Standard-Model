@@ -1,15 +1,17 @@
 {
   "diagonal_reference_status": "DIAGONAL_REFERENCE_OPERATOR_PROVEN",
-  "domain_bridge_status": "HT_THEOREM_REFERENCE_OPERATOR_CLOSED",
+  "domain_bridge_status": "HT_THEOREM_BLOCKED_BY_PERTURBATION",
   "formal_complement_status": "FORMAL_COMPLEMENT_CONDITIONAL",
   "full_ht_theorem_status_improved": true,
   "graph_norm_domain_status": "GRAPH_NORM_DOMAIN_PROVEN",
   "index_status": "INDEX_THEOREM_OPEN",
+  "kato_rellich_closure_status": "KATO_RELLICH_CLOSURE_CONDITIONAL",
   "kato_rellich_precondition_status": "KATO_RELLICH_PRECONDITIONS_CONDITIONAL",
   "limitations": [
     "The H_T theorem is strengthened from a domain blocker to a candidate bridge only conditionally.",
     "Full H_T theorem proof still requires proven self-adjointness, complement stability, index, and mirror closure."
   ],
+  "lower_bound_preservation_status": "LOWER_BOUND_CONDITIONAL",
   "open_obligations": [
     "prove the q^2/lambda_diag comparison for the complete Berger twisted spectrum",
     "prove Omega_f growth is relatively bounded by the complete diagonal operator",
@@ -26,7 +28,15 @@
     "prove the formal-kernel/complement split independently of finite truncation",
     "prove perturbation symmetry on D(A0) for the complete operator",
     "prove perturbation domain inclusion for Hopf, boundary, sector, lift, and projector terms",
-    "combine the closed reference operator with proven perturbation bounds and complement stability"
+    "combine the closed reference operator with proven perturbation bounds and complement stability",
+    "prove q-growth is A0-relative bounded on D(A0)",
+    "prove Omega_f growth is A0-relative bounded on D(A0)",
+    "upgrade sparse/banded finite-scan evidence to a complete infinite-basis operator bound",
+    "prove formal complement projector preserves D(A0)",
+    "prove the relative-bound closure without finite-scan assumptions",
+    "prove formal complement stability before applying the bound to H_perp",
+    "combine with index and mirror exclusion before claiming full H_T theorem",
+    "prove perturbation domain inclusion for the complete operator on D(A0)"
   ],
   "self_adjointness_status": "SELF_ADJOINT_DOMAIN_CONDITIONAL",
   "theorem_complete": false,

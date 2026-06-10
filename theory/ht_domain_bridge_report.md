@@ -1,6 +1,6 @@
 # BHSM v1.8 H_T Domain Bridge Report
 
-Domain bridge status: `HT_THEOREM_REFERENCE_OPERATOR_CLOSED`
+Domain bridge status: `HT_THEOREM_BLOCKED_BY_PERTURBATION`
 Theorem complete: `False`
 Full H_T theorem status improved: `True`
 
@@ -13,6 +13,8 @@ Full H_T theorem status improved: `True`
 | Diagonal reference | `DIAGONAL_REFERENCE_OPERATOR_PROVEN` |
 | Graph-norm domain | `GRAPH_NORM_DOMAIN_PROVEN` |
 | Kato-Rellich preconditions | `KATO_RELLICH_PRECONDITIONS_CONDITIONAL` |
+| Kato-Rellich closure | `KATO_RELLICH_CLOSURE_CONDITIONAL` |
+| Lower-bound preservation | `LOWER_BOUND_CONDITIONAL` |
 
 ## Open Obligations
 
@@ -32,6 +34,14 @@ Full H_T theorem status improved: `True`
 - prove perturbation symmetry on D(A0) for the complete operator
 - prove perturbation domain inclusion for Hopf, boundary, sector, lift, and projector terms
 - combine the closed reference operator with proven perturbation bounds and complement stability
+- prove q-growth is A0-relative bounded on D(A0)
+- prove Omega_f growth is A0-relative bounded on D(A0)
+- upgrade sparse/banded finite-scan evidence to a complete infinite-basis operator bound
+- prove formal complement projector preserves D(A0)
+- prove the relative-bound closure without finite-scan assumptions
+- prove formal complement stability before applying the bound to H_perp
+- combine with index and mirror exclusion before claiming full H_T theorem
+- prove perturbation domain inclusion for the complete operator on D(A0)
 
 ## Limitations
 

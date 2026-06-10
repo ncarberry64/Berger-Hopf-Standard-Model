@@ -233,6 +233,32 @@ formal-complement stability, topological index, and mirror exclusion remain
 open. Frozen outputs remain unchanged and final paper/Zenodo release remains
 blocked.
 
+## Unreleased / Development: v2.0 Kato-Rellich Perturbation Closure
+
+Branch: `bhsm-v2.0-kato-rellich-perturbation-closure`
+
+The v2.0 focused branch attacks the perturbation side of the Kato-Rellich
+route relative to the proven diagonal reference operator `A0 = D_diag^2`.
+
+Current v2.0 status:
+
+- perturbation symmetry: `PERTURBATION_SYMMETRY_CONDITIONAL`;
+- perturbation domain inclusion: `PERTURBATION_DOMAIN_INCLUSION_CONDITIONAL`;
+- relative-bound closure: `RELATIVE_BOUND_CONDITIONAL`;
+- Kato-Rellich closure: `KATO_RELLICH_CLOSURE_CONDITIONAL`;
+- lower-bound preservation: `LOWER_BOUND_CONDITIONAL`;
+- H_T dependency: `HT_THEOREM_BLOCKED_BY_PERTURBATION`.
+
+The relative-bound estimate remains favorable:
+
+```text
+a <= 0.015621013485509948 < 1
+```
+
+but complete infinite-basis perturbation bounds and D(A0)-level domain
+inclusion are not fully proven. Frozen outputs remain unchanged and final
+paper/Zenodo release remains blocked.
+
 ## Unreleased / Development: v1.4 Precision QCD/RG Matching
 
 Branch: `bhsm-v1.4-precision-qcd-rg`

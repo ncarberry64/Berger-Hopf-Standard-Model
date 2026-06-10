@@ -1,0 +1,95 @@
+{
+  "limitations": [
+    "This is an operator-theoretic inventory, not a full perturbation theorem.",
+    "Finite-scan evidence is flagged explicitly where used."
+  ],
+  "perturbation_expression": "V = V_Hopf + V_boundary + V_chi + K_sector",
+  "reference_operator": "A0 = D_diag^2",
+  "status": "PERTURBATION_INVENTORIED",
+  "terms": [
+    {
+      "action_on_basis": "depends on q=k-2j and preserves sector, k, j, chi",
+      "domain_status": "DOMAIN_CONDITIONAL",
+      "finite_scan_evidence_used": false,
+      "infinite_basis_status": "CONDITIONAL",
+      "open_obligations": [
+        "prove q-growth is A0-relative bounded on D(A0)"
+      ],
+      "relative_a": 0.0,
+      "relative_b": 0.0,
+      "symbolic_form": "Hopf fiber twist multiplication/relative diagonal term",
+      "symmetry_status": "SYMMETRIC_CANDIDATE",
+      "term_id": "V_Hopf"
+    },
+    {
+      "action_on_basis": "depends on Omega_f(k,j,q,sector) and preserves basis labels",
+      "domain_status": "DOMAIN_CONDITIONAL",
+      "finite_scan_evidence_used": false,
+      "infinite_basis_status": "CONDITIONAL",
+      "open_obligations": [
+        "prove Omega_f growth is A0-relative bounded on D(A0)"
+      ],
+      "relative_a": 0.0,
+      "relative_b": 0.0,
+      "symbolic_form": "sector boundary functional contribution",
+      "symmetry_status": "SYMMETRIC_CANDIDATE",
+      "term_id": "V_boundary"
+    },
+    {
+      "action_on_basis": "bounded multiplication by chirality/projector data",
+      "domain_status": "DOMAIN_INCLUDED",
+      "finite_scan_evidence_used": false,
+      "infinite_basis_status": "PROVEN_BOUNDED",
+      "open_obligations": [],
+      "relative_a": 0.0,
+      "relative_b": 1.0,
+      "symbolic_form": "weak chirality projector contribution",
+      "symmetry_status": "SYMMETRY_PROVEN",
+      "term_id": "V_chi"
+    },
+    {
+      "action_on_basis": "couples sectors while preserving k,j,q,chi in the scaffold rule",
+      "domain_status": "DOMAIN_CONDITIONAL",
+      "finite_scan_evidence_used": true,
+      "infinite_basis_status": "CONDITIONAL",
+      "open_obligations": [
+        "upgrade sparse/banded finite-scan evidence to a complete infinite-basis operator bound"
+      ],
+      "relative_a": 0.015621013485509948,
+      "relative_b": 0.0,
+      "symbolic_form": "off-diagonal sector-coupling block",
+      "symmetry_status": "SYMMETRIC_CANDIDATE",
+      "term_id": "K_sector"
+    },
+    {
+      "action_on_basis": "PSD complement lift after formal-kernel projection",
+      "domain_status": "DOMAIN_CONDITIONAL",
+      "finite_scan_evidence_used": false,
+      "infinite_basis_status": "CONDITIONAL",
+      "open_obligations": [
+        "prove formal complement projector preserves D(A0)"
+      ],
+      "relative_a": 0.0,
+      "relative_b": 0.0,
+      "symbolic_form": "heat lift on the formal complement",
+      "symmetry_status": "SYMMETRY_PROVEN",
+      "term_id": "P_perp_lift"
+    },
+    {
+      "action_on_basis": "nonnegative quadratic-form addition",
+      "domain_status": "DOMAIN_INCLUDED",
+      "finite_scan_evidence_used": false,
+      "infinite_basis_status": "PROVEN_PSD_SCAFFOLD",
+      "open_obligations": [],
+      "relative_a": 0.0,
+      "relative_b": 0.0,
+      "symbolic_form": "positive semidefinite profile contribution",
+      "symmetry_status": "SYMMETRY_PROVEN",
+      "term_id": "PSD_profile"
+    }
+  ],
+  "theorem_complete": false,
+  "title": "BHSM v2.0 Perturbation Operator Inventory",
+  "total_relative_a": 0.015621013485509948,
+  "total_relative_b": 1.0
+}

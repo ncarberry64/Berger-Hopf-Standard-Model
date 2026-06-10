@@ -14,7 +14,11 @@ from uniform_relative_bound import UNIFORM_RELATIVE_BOUND_PROVEN, build_uniform_
 
 HT_THEOREM_DOMAIN_BRIDGE_PROVEN = "HT_THEOREM_DOMAIN_BRIDGE_PROVEN"
 HT_THEOREM_REFERENCE_OPERATOR_CLOSED = "HT_THEOREM_REFERENCE_OPERATOR_CLOSED"
+HT_KATO_RELLICH_BRIDGE_PROVEN = "HT_KATO_RELLICH_BRIDGE_PROVEN"
 HT_THEOREM_CANDIDATE_STRENGTHENED = "HT_THEOREM_CANDIDATE_STRENGTHENED"
+HT_THEOREM_CONDITIONAL_ON_COMPLEMENT = "HT_THEOREM_CONDITIONAL_ON_COMPLEMENT"
+HT_THEOREM_BLOCKED_BY_PERTURBATION = "HT_THEOREM_BLOCKED_BY_PERTURBATION"
+HT_THEOREM_BLOCKED_BY_LOWER_BOUND = "HT_THEOREM_BLOCKED_BY_LOWER_BOUND"
 HT_THEOREM_CONDITIONAL_ON_INDEX = "HT_THEOREM_CONDITIONAL_ON_INDEX"
 HT_THEOREM_BLOCKED_BY_DOMAIN = "HT_THEOREM_BLOCKED_BY_DOMAIN"
 HT_THEOREM_BLOCKED_BY_COMPLEMENT = "HT_THEOREM_BLOCKED_BY_COMPLEMENT"
@@ -33,6 +37,8 @@ class HTDomainBridgeReport:
     diagonal_reference_status: str
     graph_norm_domain_status: str
     kato_rellich_precondition_status: str
+    kato_rellich_closure_status: str
+    lower_bound_preservation_status: str
     domain_bridge_status: str
     full_ht_theorem_status_improved: bool
     theorem_complete: bool
@@ -53,10 +59,14 @@ def build_ht_domain_bridge_report() -> HTDomainBridgeReport:
         KATO_RELLICH_PRECONDITIONS_COMPLETE,
         build_kato_rellich_precondition_report,
     )
+    from kato_rellich_closure import KATO_RELLICH_CLOSURE_PROVEN, build_kato_rellich_closure_report
+    from lower_bound_preservation import LOWER_BOUND_PRESERVED, build_lower_bound_preservation_report
 
     diagonal = build_diagonal_reference_operator_report()
     graph = build_graph_norm_domain_report()
     kato = build_kato_rellich_precondition_report()
+    kato_closure = build_kato_rellich_closure_report()
+    lower = build_lower_bound_preservation_report()
     relative_proven = relative.status == UNIFORM_RELATIVE_BOUND_PROVEN
     self_adjoint_proven = self_adjoint.status == SELF_ADJOINT_DOMAIN_PROVEN
     complement_stable = complement.status == FORMAL_COMPLEMENT_STABLE
@@ -64,10 +74,12 @@ def build_ht_domain_bridge_report() -> HTDomainBridgeReport:
     reference_closed = diagonal.status == DIAGONAL_REFERENCE_OPERATOR_PROVEN and graph.status == GRAPH_NORM_DOMAIN_PROVEN
     if relative_proven and self_adjoint_proven and complement_stable and index_proven:
         status = FULL_HT_THEOREM_PROVEN
+    elif kato_closure.status == KATO_RELLICH_CLOSURE_PROVEN and lower.status == LOWER_BOUND_PRESERVED:
+        status = HT_KATO_RELLICH_BRIDGE_PROVEN
     elif kato.status == KATO_RELLICH_PRECONDITIONS_COMPLETE:
         status = HT_THEOREM_DOMAIN_BRIDGE_PROVEN
     elif reference_closed:
-        status = HT_THEOREM_REFERENCE_OPERATOR_CLOSED
+        status = HT_THEOREM_BLOCKED_BY_PERTURBATION if not kato_closure.can_apply_kato_rellich else HT_THEOREM_REFERENCE_OPERATOR_CLOSED
     elif relative.all_a_below_one and self_adjoint.relative_bound_below_one and complement.status != "FAILS_COMPLEMENT_STABILITY":
         status = HT_THEOREM_CANDIDATE_STRENGTHENED
     elif not complement_stable:
@@ -82,6 +94,8 @@ def build_ht_domain_bridge_report() -> HTDomainBridgeReport:
                 *(item for check in complement.checks for item in check.open_obligations),
                 *index.open_obligations,
                 *(item for row in kato.preconditions for item in row.open_obligations),
+                *kato_closure.open_obligations,
+                *lower.open_obligations,
             )
         )
     )
@@ -94,8 +108,10 @@ def build_ht_domain_bridge_report() -> HTDomainBridgeReport:
         diagonal_reference_status=diagonal.status,
         graph_norm_domain_status=graph.status,
         kato_rellich_precondition_status=kato.status,
+        kato_rellich_closure_status=kato_closure.status,
+        lower_bound_preservation_status=lower.status,
         domain_bridge_status=status,
-        full_ht_theorem_status_improved=status in {HT_THEOREM_CANDIDATE_STRENGTHENED, HT_THEOREM_REFERENCE_OPERATOR_CLOSED},
+        full_ht_theorem_status_improved=status in {HT_THEOREM_CANDIDATE_STRENGTHENED, HT_THEOREM_REFERENCE_OPERATOR_CLOSED, HT_THEOREM_BLOCKED_BY_PERTURBATION},
         theorem_complete=status == FULL_HT_THEOREM_PROVEN,
         open_obligations=open_obligations,
         limitations=(
@@ -143,6 +159,8 @@ def export_ht_domain_bridge_markdown(path: str | Path) -> None:
         f"| Diagonal reference | `{report.diagonal_reference_status}` |",
         f"| Graph-norm domain | `{report.graph_norm_domain_status}` |",
         f"| Kato-Rellich preconditions | `{report.kato_rellich_precondition_status}` |",
+        f"| Kato-Rellich closure | `{report.kato_rellich_closure_status}` |",
+        f"| Lower-bound preservation | `{report.lower_bound_preservation_status}` |",
         "",
         "## Open Obligations",
         "",

@@ -1,0 +1,76 @@
+{
+  "a_less_than_one": true,
+  "all_infinite_bounds_proven": false,
+  "limitations": [
+    "a<1 is retained, but not every infinite-basis term bound is proven."
+  ],
+  "status": "RELATIVE_BOUND_CONDITIONAL",
+  "term_bounds": [
+    {
+      "a": 0.0,
+      "b": 0.0,
+      "bound_expression": "||V_Hopf psi|| <= 0.0 ||A0 psi|| + 0.0 ||psi||",
+      "finite_scan_evidence_used": false,
+      "infinite_bound_proven": false,
+      "open_obligations": [
+        "prove q-growth is A0-relative bounded on D(A0)"
+      ],
+      "term_id": "V_Hopf"
+    },
+    {
+      "a": 0.0,
+      "b": 0.0,
+      "bound_expression": "||V_boundary psi|| <= 0.0 ||A0 psi|| + 0.0 ||psi||",
+      "finite_scan_evidence_used": false,
+      "infinite_bound_proven": false,
+      "open_obligations": [
+        "prove Omega_f growth is A0-relative bounded on D(A0)"
+      ],
+      "term_id": "V_boundary"
+    },
+    {
+      "a": 0.0,
+      "b": 1.0,
+      "bound_expression": "||V_chi psi|| <= 0.0 ||A0 psi|| + 1.0 ||psi||",
+      "finite_scan_evidence_used": false,
+      "infinite_bound_proven": true,
+      "open_obligations": [],
+      "term_id": "V_chi"
+    },
+    {
+      "a": 0.015621013485509948,
+      "b": 0.0,
+      "bound_expression": "||K_sector psi|| <= 0.015621013485509948 ||A0 psi|| + 0.0 ||psi||",
+      "finite_scan_evidence_used": true,
+      "infinite_bound_proven": false,
+      "open_obligations": [
+        "upgrade sparse/banded finite-scan evidence to a complete infinite-basis operator bound"
+      ],
+      "term_id": "K_sector"
+    },
+    {
+      "a": 0.0,
+      "b": 0.0,
+      "bound_expression": "||P_perp_lift psi|| <= 0.0 ||A0 psi|| + 0.0 ||psi||",
+      "finite_scan_evidence_used": false,
+      "infinite_bound_proven": false,
+      "open_obligations": [
+        "prove formal complement projector preserves D(A0)"
+      ],
+      "term_id": "P_perp_lift"
+    },
+    {
+      "a": 0.0,
+      "b": 0.0,
+      "bound_expression": "||PSD_profile psi|| <= 0.0 ||A0 psi|| + 0.0 ||psi||",
+      "finite_scan_evidence_used": false,
+      "infinite_bound_proven": true,
+      "open_obligations": [],
+      "term_id": "PSD_profile"
+    }
+  ],
+  "theorem_complete": false,
+  "title": "BHSM v2.0 Relative-Bound Closure Report",
+  "total_a": 0.015621013485509948,
+  "total_b": 1.0
+}

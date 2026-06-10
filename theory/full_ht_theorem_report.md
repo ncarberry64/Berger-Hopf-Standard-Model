@@ -26,7 +26,7 @@ The corrected formal-kernel H_T scaffold remains strong, but v1.7 keeps the full
 
 ## v1.8 Domain Bridge Status
 
-`HT_THEOREM_REFERENCE_OPERATOR_CLOSED`
+`HT_THEOREM_BLOCKED_BY_PERTURBATION`
 
 The v1.8 domain bridge records favorable conditional infinite-basis relative-bound structure, but it does not prove the full H_T theorem.
 
