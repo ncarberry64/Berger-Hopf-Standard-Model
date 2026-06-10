@@ -13,7 +13,7 @@ Theorem complete: `False`
 
 ## Exact Obstruction
 
-The commutator rows are scaffold-controlled, but nonzero conditional commutators cannot be upgraded before complete-operator identification is proven.
+The commutator rows are scaffold-controlled, but nonzero conditional commutators still require complete graph-domain commutator control.
 
 ## Limitations
 

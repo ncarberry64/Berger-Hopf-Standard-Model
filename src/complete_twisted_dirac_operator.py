@@ -9,6 +9,10 @@ from pathlib import Path
 from diagonal_reference_operator import DIAGONAL_REFERENCE_OPERATOR_PROVEN, build_diagonal_reference_operator_report
 from formal_kernel_projector import DEFAULT_FORMAL_COORDINATES, OLD_COORDINATE_FIRST_KERNEL, build_formal_kernel_projector_report
 from perturbation_closure_decision import RELATIVE_BOUND_CONDITIONAL_WITH_EXPLICIT_ASSUMPTIONS, build_perturbation_closure_decision
+from complete_operator_action_uniqueness_decision import (
+    COMPLETE_OPERATOR_ACTION_UNIQUENESS_CLOSED,
+    build_complete_operator_action_uniqueness_decision,
+)
 
 
 COMPLETE_OPERATOR_IDENTIFICATION_PROVEN = "COMPLETE_OPERATOR_IDENTIFICATION_PROVEN"
@@ -48,6 +52,8 @@ def build_complete_twisted_dirac_operator_report() -> CompleteTwistedDiracOperat
     diagonal = build_diagonal_reference_operator_report()
     perturbation = build_perturbation_closure_decision()
     kernel = build_formal_kernel_projector_report()
+    uniqueness = build_complete_operator_action_uniqueness_decision()
+    uniqueness_closed = uniqueness.final_result == COMPLETE_OPERATOR_ACTION_UNIQUENESS_CLOSED
     components = (
         CompleteOperatorComponent(
             "A0",
@@ -62,10 +68,10 @@ def build_complete_twisted_dirac_operator_report() -> CompleteTwistedDiracOperat
             "V",
             "Hopf, boundary, chirality, sector-coupling perturbation package",
             perturbation.relative_bound_status,
-            perturbation.relative_bound_status == RELATIVE_BOUND_CONDITIONAL_WITH_EXPLICIT_ASSUMPTIONS,
-            "COMPONENT_CONDITIONAL",
-            ("v2.1 termwise relative bounds and common-domain assumptions hold",),
-            ("the perturbation package is not derived as the unique complete twisted Dirac/bundle operator",),
+            uniqueness_closed and perturbation.relative_bound_status == RELATIVE_BOUND_CONDITIONAL_WITH_EXPLICIT_ASSUMPTIONS,
+            "COMPONENT_IDENTIFIED" if uniqueness_closed else "COMPONENT_CONDITIONAL",
+            ("v2.13 complete-operator action uniqueness closes the perturbation package selection",),
+            ("commutator/domain control remains a downstream H_T dependency",),
         ),
         CompleteOperatorComponent(
             "K_formal",
@@ -81,8 +87,8 @@ def build_complete_twisted_dirac_operator_report() -> CompleteTwistedDiracOperat
             "heat-lift and PSD profile contribution",
             perturbation.lift_projector_domain_status,
             True,
-            "COMPONENT_CONDITIONAL",
-            ("PSD/lift terms preserve the scaffold D(A0) domain conditionally",),
+            "COMPONENT_IDENTIFIED" if uniqueness_closed else "COMPONENT_CONDITIONAL",
+            ("PSD/lift terms are part of the unique v2.13 operator package",),
             ("full profile positivity belongs to scalar/topographic action closure",),
         ),
     )
@@ -106,13 +112,13 @@ def build_complete_twisted_dirac_operator_report() -> CompleteTwistedDiracOperat
         theorem_candidate_model=candidate,
         status=status,
         theorem_complete=status == COMPLETE_OPERATOR_IDENTIFICATION_PROVEN,
-        open_obligations=(
+        open_obligations=() if status == COMPLETE_OPERATOR_IDENTIFICATION_PROVEN else (
             "derive the perturbation package from the complete Berger-Hopf twisted Dirac/bundle action",
             "prove the theorem-candidate operator is the exact complete operator, not only a controlled scaffold representation",
         ),
         limitations=(
             "This audit identifies the complete-operator candidate chain without changing frozen predictions.",
-            "It deliberately refuses COMPLETE_OPERATOR_IDENTIFICATION_PROVEN while V remains action-scaffold conditional.",
+            "v2.13 upgrades only complete-operator identification; H_T commutator/domain/index/mirror gates remain separate.",
         ),
     )
 

@@ -25,13 +25,13 @@ from curvature_remainder_closure_decision import (
 )
 from formal_kernel_projector import DEFAULT_FORMAL_COORDINATES, OLD_COORDINATE_FIRST_KERNEL, formal_kernel_basis_vectors
 from full_bhsm_theorem_completion import build_full_bhsm_theorem_completion_report
-from full_ht_theorem_closure import build_full_ht_theorem_closure_report
+from full_ht_theorem_closure import PROJECTOR_COMMUTATOR_CONTROL_GAP, build_full_ht_theorem_closure_report
 from lichnerowicz_bundle_curvature import REMAINDER_TERM_ID, build_lichnerowicz_bundle_curvature_report, export_lichnerowicz_bundle_curvature_json, export_lichnerowicz_bundle_curvature_markdown
 from operator_identification_theorem import COMPLETE_OPERATOR_IDENTIFICATION_PROVEN, build_operator_identification_theorem_report
 from operator_term_inventory import build_operator_term_inventory_report
 
 
-EXACT_GAP = "COMPLETE_OPERATOR_ACTION_UNIQUENESS_GAP"
+EXACT_GAP = PROJECTOR_COMMUTATOR_CONTROL_GAP
 
 
 def test_lichnerowicz_remainder_inventory_is_explicit():
@@ -93,9 +93,9 @@ def test_complete_operator_cannot_be_proven_while_remainder_open():
     decision = build_complete_operator_identification_decision()
     inventory = build_operator_term_inventory_report()
 
-    assert theorem.status != COMPLETE_OPERATOR_IDENTIFICATION_PROVEN
-    assert theorem.theorem_complete is False
-    assert decision.final_result == STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP
+    assert theorem.status == COMPLETE_OPERATOR_IDENTIFICATION_PROVEN
+    assert theorem.theorem_complete is True
+    assert decision.final_result == COMPLETE_OPERATOR_IDENTIFICATION_PROVEN
     assert inventory.required_open_or_missing_terms == ()
     assert inventory.theorem_complete is True
 
@@ -106,7 +106,7 @@ def test_downstream_full_ht_and_bhsm_do_not_upgrade_from_curvature_gap():
 
     assert ht.theorem_complete is False
     assert ht.recommended_target_theorem == EXACT_GAP
-    assert ht.recommended_next_branch == "bhsm-v2.13-complete-operator-action-uniqueness"
+    assert ht.recommended_next_branch == "bhsm-v2.14-projector-commutator-control"
     assert bhsm.theorem_complete is False
     assert bhsm.final_paper_allowed is False
 

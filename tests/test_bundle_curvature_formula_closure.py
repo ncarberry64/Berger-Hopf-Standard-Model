@@ -10,7 +10,7 @@ from constants import S_OVERLAP
 from curvature_remainder_after_mixed_rule import REMAINDER_REPRESENTED_BY_TOPOGRAPHIC_SECTOR, build_curvature_remainder_after_mixed_rule_report, export_curvature_remainder_after_mixed_rule_json, export_curvature_remainder_after_mixed_rule_markdown
 from formal_kernel_projector import DEFAULT_FORMAL_COORDINATES, OLD_COORDINATE_FIRST_KERNEL, formal_kernel_basis_vectors
 from full_bhsm_theorem_completion import build_full_bhsm_theorem_completion_report
-from full_ht_theorem_closure import build_full_ht_theorem_closure_report
+from full_ht_theorem_closure import PROJECTOR_COMMUTATOR_CONTROL_GAP, build_full_ht_theorem_closure_report
 from mixed_coefficient_rule_decision import MIXED_COEFFICIENT_RULE_CLOSED, build_mixed_coefficient_rule_decision
 from mixed_connection_closure_decision import MIXED_CONNECTION_REPRESENTED_BY_TOPOGRAPHIC_SECTOR, build_mixed_connection_closure_decision
 from operator_identification_theorem import COMPLETE_OPERATOR_IDENTIFICATION_PROVEN, build_operator_identification_theorem_report
@@ -68,10 +68,10 @@ def test_complete_operator_and_full_ht_are_not_overclaimed():
     ht = build_full_ht_theorem_closure_report()
     bhsm = build_full_bhsm_theorem_completion_report()
 
-    assert operator.status != COMPLETE_OPERATOR_IDENTIFICATION_PROVEN
-    assert operator.next_target_theorem == "COMPLETE_OPERATOR_ACTION_UNIQUENESS_GAP"
+    assert operator.status == COMPLETE_OPERATOR_IDENTIFICATION_PROVEN
+    assert operator.next_target_theorem == ""
     assert ht.theorem_complete is False
-    assert ht.recommended_target_theorem == "COMPLETE_OPERATOR_ACTION_UNIQUENESS_GAP"
+    assert ht.recommended_target_theorem == PROJECTOR_COMMUTATOR_CONTROL_GAP
     assert bhsm.final_paper_allowed is False
 
 
@@ -160,4 +160,3 @@ def test_v212_does_not_change_frozen_outputs():
     assert isclose(bare_after.version.geometry_a, 1.157054135733433, rel_tol=0.0, abs_tol=1e-15)
     assert isclose(bare_after.version.overlap_s, S_OVERLAP, rel_tol=0.0, abs_tol=1e-15)
     assert changed == [{"quantity": "c/t", "bare": 0.008310500554068288, "dressed": 0.004155250277034144, "changed": True}]
-

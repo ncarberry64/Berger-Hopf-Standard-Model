@@ -1,3 +1,26 @@
+# Unreleased / Development: v2.13 Complete Operator Action Uniqueness
+
+Branch: `bhsm-v2.13-complete-operator-action-uniqueness`
+
+The v2.13 branch closes `COMPLETE_OPERATOR_ACTION_UNIQUENESS_GAP` under
+the explicit BHSM action/axiom package. The complete operator package is
+uniquely forced up to zero, represented, screened/lifted,
+positive-semidefinite/relatively-bounded-safe, or axiom-forbidden terms.
+
+Final result:
+
+- complete-operator action uniqueness: `COMPLETE_OPERATOR_ACTION_UNIQUENESS_CLOSED`
+- operator axiom uniqueness: `COMPLETE_OPERATOR_ACTION_UNIQUENESS_PROVEN`
+- complete-operator identification: `COMPLETE_OPERATOR_IDENTIFICATION_PROVEN`
+- full H_T theorem: not proven
+- next blocker: `PROJECTOR_COMMUTATOR_CONTROL_GAP`
+- recommended next branch: `bhsm-v2.14-projector-commutator-control`
+- final paper allowed: `False`
+
+No empirical masses, CKM values, PMNS values, residual data, or prediction fits
+are used to select the operator. Frozen predictions, canonical constants,
+frozen modes, tolerances, outputs, and virtual dressing are unchanged.
+
 # Unreleased / Development: v2.12 Bundle Curvature Formula Closure
 
 Branch: `bhsm-v2.12-bundle-curvature-formula-closure`

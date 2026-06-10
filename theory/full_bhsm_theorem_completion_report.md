@@ -7,14 +7,14 @@ Final paper allowed: `False`
 
 ## Single Named Gap
 
-`COMPLETE_OPERATOR_IDENTIFICATION_THEOREM_GAP`
+`PROJECTOR_COMMUTATOR_CONTROL_GAP`
 
-Recommended next branch: `bhsm-v2.13-complete-operator-action-uniqueness`
-Recommended target theorem: `COMPLETE_OPERATOR_ACTION_UNIQUENESS_GAP`
+Recommended next branch: `bhsm-v2.14-projector-commutator-control`
+Recommended target theorem: `PROJECTOR_COMMUTATOR_CONTROL_GAP`
 
 ## Exact Obstruction
 
-The curvature formula is closed, but the complete operator remains action-uniqueness/perturbation-package conditional rather than proven from the full internal action.
+The commutator rows are scaffold-controlled, but nonzero conditional commutators still require complete graph-domain commutator control.
 
 ## Limitations
 

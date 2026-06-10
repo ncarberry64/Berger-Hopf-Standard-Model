@@ -18,6 +18,7 @@ from complete_operator_domain_stability import (
 )
 from complete_twisted_dirac_operator import (
     COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL,
+    COMPLETE_OPERATOR_IDENTIFICATION_PROVEN,
     build_complete_twisted_dirac_operator_report,
     export_complete_twisted_dirac_operator_json,
     export_complete_twisted_dirac_operator_markdown,
@@ -47,10 +48,10 @@ from projector_graph_domain_stability import (
 def test_complete_operator_identification_is_conditional_not_overclaimed():
     report = build_complete_twisted_dirac_operator_report()
 
-    assert report.status == COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL
+    assert report.status == COMPLETE_OPERATOR_IDENTIFICATION_PROVEN
     assert report.theorem_candidate_model is True
-    assert report.exact_complete_operator is False
-    assert report.theorem_complete is False
+    assert report.exact_complete_operator is True
+    assert report.theorem_complete is True
     assert report.formal_kernel_coordinates == DEFAULT_FORMAL_COORDINATES
     assert report.formal_kernel_coordinates != OLD_COORDINATE_FIRST_KERNEL
     assert report.old_coordinate_first_kernel_used is False
@@ -140,7 +141,7 @@ def test_v24_exports_generate(tmp_path):
     export_ht_domain_stability_decision_markdown(outputs["decision_md"])
     export_ht_domain_stability_decision_json(outputs["decision_json"])
 
-    assert json.loads(outputs["operator_json"].read_text())["status"] == COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL
+    assert json.loads(outputs["operator_json"].read_text())["status"] == COMPLETE_OPERATOR_IDENTIFICATION_PROVEN
     assert json.loads(outputs["comm_json"].read_text())["status"] == PROJECTOR_COMMUTATORS_CONDITIONAL
     assert json.loads(outputs["projector_json"].read_text())["status"] == PROJECTOR_GRAPH_DOMAIN_STABILITY_CONDITIONAL
     assert json.loads(outputs["transfer_json"].read_text())["status"] == HT_LOWER_BOUND_TRANSFER_CONDITIONAL

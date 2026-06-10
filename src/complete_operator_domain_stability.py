@@ -7,7 +7,7 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 
 from complete_operator_bound_transfer import HT_LOWER_BOUND_TRANSFER_CONDITIONAL, build_complete_operator_bound_transfer_report
-from complete_twisted_dirac_operator import COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL, build_complete_twisted_dirac_operator_report
+from complete_twisted_dirac_operator import COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL, COMPLETE_OPERATOR_IDENTIFICATION_PROVEN, build_complete_twisted_dirac_operator_report
 from perturbation_closure_decision import KATO_RELLICH_CLOSURE_CONDITIONAL, build_perturbation_closure_decision
 from perturbation_projector_commutator import PROJECTOR_COMMUTATORS_CONDITIONAL, build_perturbation_projector_commutator_report
 from projector_graph_domain_stability import PROJECTOR_GRAPH_DOMAIN_STABILITY_CONDITIONAL, build_projector_graph_domain_stability_report
@@ -73,7 +73,7 @@ def build_complete_operator_domain_stability_report() -> CompleteOperatorDomainS
     terms = perturbation_domain_terms()
     termwise = all(row.maps_DA0_to_H and row.preserves_common_domain for row in terms)
     perturbation_status = PERTURBATION_DOMAIN_STABILITY_CONDITIONAL if perturbation.kato_rellich_status == KATO_RELLICH_CLOSURE_CONDITIONAL and termwise else PERTURBATION_DOMAIN_STABILITY_OPEN
-    if operator.status != COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL:
+    if operator.status not in {COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL, COMPLETE_OPERATOR_IDENTIFICATION_PROVEN}:
         status = HT_THEOREM_BLOCKED_BY_COMPLETE_OPERATOR_IDENTIFICATION
     elif perturbation_status != PERTURBATION_DOMAIN_STABILITY_CONDITIONAL or projector.status != PROJECTOR_GRAPH_DOMAIN_STABILITY_CONDITIONAL:
         status = HT_THEOREM_BLOCKED_BY_DOMAIN_STABILITY
@@ -100,7 +100,7 @@ def build_complete_operator_domain_stability_report() -> CompleteOperatorDomainS
         ),
         limitations=(
             "v2.4 strengthens the domain-stability bridge to explicit termwise conditional control.",
-            "It does not mark the bridge proven because complete-operator identification and commutator proofs remain conditional.",
+            "It does not mark the bridge proven because commutator/domain and index/mirror proofs remain conditional.",
         ),
     )
 

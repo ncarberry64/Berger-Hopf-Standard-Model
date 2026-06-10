@@ -33,7 +33,7 @@ def build_projector_commutator_closure_report() -> ProjectorCommutatorClosureRep
     obstruction = (
         "No obstruction: all projector commutators are controlled on the complete graph domain."
         if proven
-        else "The commutator rows are scaffold-controlled, but nonzero conditional commutators cannot be upgraded before complete-operator identification is proven."
+        else "The commutator rows are scaffold-controlled, but nonzero conditional commutators still require complete graph-domain commutator control."
     )
     return ProjectorCommutatorClosureReport(
         title="BHSM v2.5 Projector-Commutator Closure Attempt",

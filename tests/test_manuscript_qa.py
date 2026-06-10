@@ -356,6 +356,12 @@ def test_typesetting_pass_does_not_modify_source_model_files():
         "src/bundle_curvature_term_map.py",
         "src/curvature_remainder_after_mixed_rule.py",
         "src/topographic_curvature_representation.py",
+        "src/operator_action_uniqueness.py",
+        "src/parent_action_to_operator.py",
+        "src/operator_variation_audit.py",
+        "src/operator_alternative_term_audit.py",
+        "src/operator_axiom_uniqueness.py",
+        "src/complete_operator_action_uniqueness_decision.py",
     }
 
     assert not [

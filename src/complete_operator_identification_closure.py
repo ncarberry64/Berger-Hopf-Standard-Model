@@ -59,8 +59,8 @@ def build_complete_operator_identification_closure_report() -> CompleteOperatorI
         next_branch=v26_decision.recommended_next_branch,
         next_target_theorem=v26_decision.recommended_target_theorem,
         limitations=(
-            "v2.7 does not invent an exact action-level derivation for missing complete-operator terms.",
-            "No downstream H_T closure may be marked proven while this identification remains conditional.",
+            "v2.13 closes the action-level uniqueness step under the explicit BHSM axioms.",
+            "Downstream H_T closure still requires commutator, graph-domain, lower-bound, index, and mirror gates.",
         ),
     )
 

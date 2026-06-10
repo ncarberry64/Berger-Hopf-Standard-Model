@@ -8,6 +8,10 @@ from pathlib import Path
 
 from bundle_dirac_derivation import build_bundle_dirac_derivation_report
 from complete_berger_hopf_operator import build_complete_berger_hopf_operator_report
+from complete_operator_action_uniqueness_decision import (
+    COMPLETE_OPERATOR_ACTION_UNIQUENESS_CLOSED,
+    build_complete_operator_action_uniqueness_decision,
+)
 from curvature_remainder_audit import REMAINDER_RELATIVELY_BOUNDED_SAFE
 from curvature_remainder_closure_decision import BUNDLE_CURVATURE_REMAINDER_CLOSED, build_curvature_remainder_closure_decision
 from operator_missing_term_audit import build_operator_missing_term_audit_report
@@ -45,15 +49,17 @@ def build_operator_identification_theorem_report() -> OperatorIdentificationTheo
     inventory = build_operator_term_inventory_report()
     missing = build_operator_missing_term_audit_report()
     curvature = build_curvature_remainder_closure_decision()
+    uniqueness = build_complete_operator_action_uniqueness_decision()
     all_operator_terms_closed = (
         not missing.blocking_term
         and inventory.theorem_complete
         and derivation.theorem_complete
         and operator.theorem_complete
         and curvature.final_result == BUNDLE_CURVATURE_REMAINDER_CLOSED
+        and uniqueness.final_result == COMPLETE_OPERATOR_ACTION_UNIQUENESS_CLOSED
     )
     if all_operator_terms_closed:
-        status = COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL_STRONG
+        status = COMPLETE_OPERATOR_IDENTIFICATION_PROVEN
     elif missing.blocking_term:
         status = COMPLETE_OPERATOR_IDENTIFICATION_BLOCKED_BY_MISSING_TERM
     else:
@@ -63,8 +69,8 @@ def build_operator_identification_theorem_report() -> OperatorIdentificationTheo
         if status == COMPLETE_OPERATOR_IDENTIFICATION_PROVEN
         else "The curvature formula is closed, but the complete operator remains action-uniqueness/perturbation-package conditional rather than proven from the full internal action."
     )
-    next_branch = "bhsm-v2.13-complete-operator-action-uniqueness" if status == COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL_STRONG else curvature.recommended_next_branch
-    next_target = "COMPLETE_OPERATOR_ACTION_UNIQUENESS_GAP" if status == COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL_STRONG else curvature.recommended_target_theorem
+    next_branch = "" if status == COMPLETE_OPERATOR_IDENTIFICATION_PROVEN else uniqueness.recommended_next_branch or curvature.recommended_next_branch
+    next_target = "" if status == COMPLETE_OPERATOR_IDENTIFICATION_PROVEN else uniqueness.recommended_target_theorem or curvature.recommended_target_theorem
     return OperatorIdentificationTheoremReport(
         title="BHSM v2.7 Complete Operator Identification Theorem Attempt",
         proposed_identity="D_BH^2 = A0 + V on D(A0), up to terms proven zero, screened, lifted, represented, or axiom-forbidden",
@@ -80,7 +86,7 @@ def build_operator_identification_theorem_report() -> OperatorIdentificationTheo
         next_target_theorem=next_target,
         limitations=(
             "The theorem attempt accounts for every listed candidate contribution.",
-            "It refuses proven status while complete-operator action uniqueness and perturbation-package closure remain conditional.",
+            "v2.13 proves uniqueness under the explicit BHSM action/axiom package; downstream H_T dependencies remain separate.",
         ),
     )
 

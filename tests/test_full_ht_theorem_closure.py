@@ -21,6 +21,7 @@ from full_bhsm_theorem_completion import (
 from full_ht_theorem_closure import (
     BHSM_THEOREM_FAILURE,
     FULL_HT_THEOREM_PROVEN,
+    PROJECTOR_COMMUTATOR_CONTROL_GAP,
     STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP,
     build_full_ht_theorem_closure_report,
     export_full_ht_theorem_closure_json,
@@ -36,10 +37,10 @@ from projector_graph_domain_closure import build_projector_graph_domain_closure_
 def test_complete_operator_identification_is_the_single_named_gap():
     report = build_complete_operator_identification_closure_report()
 
-    assert report.source_status == "COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL_STRONG"
-    assert report.final_status == COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL
-    assert report.theorem_complete is False
-    assert report.next_target_theorem == "COMPLETE_OPERATOR_ACTION_UNIQUENESS_GAP"
+    assert report.source_status == "COMPLETE_OPERATOR_IDENTIFICATION_PROVEN"
+    assert report.final_status == "COMPLETE_OPERATOR_IDENTIFICATION_PROVEN"
+    assert report.theorem_complete is True
+    assert report.next_target_theorem == ""
 
 
 def test_downstream_closures_do_not_upgrade_from_conditional_operator_assumption():
@@ -77,8 +78,8 @@ def test_full_ht_closure_uses_only_allowed_final_outcomes():
     assert report.final_result in allowed
     assert report.final_result == STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP
     assert report.theorem_complete is False
-    assert report.single_named_gap == COMPLETE_OPERATOR_IDENTIFICATION_THEOREM_GAP
-    assert report.recommended_next_branch == "bhsm-v2.13-complete-operator-action-uniqueness"
+    assert report.single_named_gap == PROJECTOR_COMMUTATOR_CONTROL_GAP
+    assert report.recommended_next_branch == "bhsm-v2.14-projector-commutator-control"
 
 
 def test_full_bhsm_completion_uses_only_allowed_final_outcomes():
@@ -93,7 +94,7 @@ def test_full_bhsm_completion_uses_only_allowed_final_outcomes():
     assert report.final_result == STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP
     assert report.final_paper_allowed is False
     assert report.theorem_complete is False
-    assert report.single_named_gap == COMPLETE_OPERATOR_IDENTIFICATION_THEOREM_GAP
+    assert report.single_named_gap == PROJECTOR_COMMUTATOR_CONTROL_GAP
 
 
 def test_if_full_ht_proven_then_all_six_blockers_are_closed():
@@ -155,7 +156,7 @@ def test_v25_exports_generate(tmp_path):
     export_full_bhsm_theorem_completion_markdown(paths["bhsm_md"])
     export_full_bhsm_theorem_completion_json(paths["bhsm_json"])
 
-    assert json.loads(paths["operator_json"].read_text())["final_status"] == COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL
+    assert json.loads(paths["operator_json"].read_text())["final_status"] == "COMPLETE_OPERATOR_IDENTIFICATION_PROVEN"
     assert json.loads(paths["ht_json"].read_text())["final_result"] == STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP
     assert json.loads(paths["bhsm_json"].read_text())["final_result"] == STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP
 

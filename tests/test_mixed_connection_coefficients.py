@@ -7,7 +7,7 @@ from clifford_curvature_contraction import CLIFFORD_CONTRACTION_CONDITIONAL, bui
 from constants import S_OVERLAP
 from formal_kernel_projector import DEFAULT_FORMAL_COORDINATES, OLD_COORDINATE_FIRST_KERNEL, formal_kernel_basis_vectors
 from full_bhsm_theorem_completion import build_full_bhsm_theorem_completion_report
-from full_ht_theorem_closure import build_full_ht_theorem_closure_report
+from full_ht_theorem_closure import PROJECTOR_COMMUTATOR_CONTROL_GAP, build_full_ht_theorem_closure_report
 from hopf_base_boundary_coframe import build_hopf_base_boundary_coframe_report, export_hopf_base_boundary_coframe_json, export_hopf_base_boundary_coframe_markdown
 from mixed_connection_closure_decision import (
     MIXED_CONNECTION_CLOSED,
@@ -82,10 +82,10 @@ def test_complete_operator_and_full_ht_do_not_overclaim():
     ht = build_full_ht_theorem_closure_report()
     bhsm = build_full_bhsm_theorem_completion_report()
 
-    assert operator.status != COMPLETE_OPERATOR_IDENTIFICATION_PROVEN
-    assert operator.next_target_theorem == "COMPLETE_OPERATOR_ACTION_UNIQUENESS_GAP"
+    assert operator.status == COMPLETE_OPERATOR_IDENTIFICATION_PROVEN
+    assert operator.next_target_theorem == ""
     assert ht.theorem_complete is False
-    assert ht.recommended_target_theorem == "COMPLETE_OPERATOR_ACTION_UNIQUENESS_GAP"
+    assert ht.recommended_target_theorem == PROJECTOR_COMMUTATOR_CONTROL_GAP
     assert bhsm.theorem_complete is False
     assert bhsm.final_paper_allowed is False
 

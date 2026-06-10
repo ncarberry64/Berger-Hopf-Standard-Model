@@ -13,8 +13,6 @@ Final paper allowed: `False`
 
 ## Open Obligations
 
-- derive the perturbation package from the complete Berger-Hopf twisted Dirac/bundle action
-- prove the theorem-candidate operator is the exact complete operator, not only a controlled scaffold representation
 - upgrade conditional P_perp D(A0+V) stability to a complete-operator graph-domain proof
 - prove all nonzero [P_perp,V] commutators in the complete twisted Dirac/bundle domain
 - prove nonzero commutators are bounded or relatively bounded in the complete twisted Dirac/bundle operator

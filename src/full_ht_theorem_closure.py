@@ -20,6 +20,11 @@ from projector_graph_domain_stability import PROJECTOR_GRAPH_DOMAIN_STABILITY_PR
 FULL_HT_THEOREM_PROVEN = "FULL_HT_THEOREM_PROVEN"
 STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP = "STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP"
 BHSM_THEOREM_FAILURE = "BHSM_THEOREM_FAILURE"
+PROJECTOR_COMMUTATOR_CONTROL_GAP = "PROJECTOR_COMMUTATOR_CONTROL_GAP"
+PROJECTOR_GRAPH_DOMAIN_STABILITY_GAP = "PROJECTOR_GRAPH_DOMAIN_STABILITY_GAP"
+HT_LOWER_BOUND_TRANSFER_GAP = "HT_LOWER_BOUND_TRANSFER_GAP"
+INDEX_THEOREM_FINAL_GAP = "INDEX_THEOREM_FINAL_GAP"
+MIRROR_EXCLUSION_FINAL_GAP = "MIRROR_EXCLUSION_FINAL_GAP"
 
 
 @dataclass(frozen=True)
@@ -58,11 +63,41 @@ def build_full_ht_theorem_closure_report() -> FullHTTheoremClosureReport:
     if all_closed:
         result = FULL_HT_THEOREM_PROVEN
         gap = ""
+        branch = ""
+        target = ""
         obstruction = "No obstruction."
     else:
         result = STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP
-        gap = COMPLETE_OPERATOR_IDENTIFICATION_THEOREM_GAP
-        obstruction = operator.exact_obstruction
+        if operator.final_status != COMPLETE_OPERATOR_IDENTIFICATION_PROVEN:
+            gap = COMPLETE_OPERATOR_IDENTIFICATION_THEOREM_GAP
+            branch = operator.next_branch
+            target = operator.next_target_theorem
+            obstruction = operator.exact_obstruction
+        elif comm.final_status != PROJECTOR_COMMUTATORS_CONTROLLED:
+            gap = PROJECTOR_COMMUTATOR_CONTROL_GAP
+            branch = "bhsm-v2.14-projector-commutator-control"
+            target = gap
+            obstruction = comm.exact_obstruction
+        elif projector.final_status != PROJECTOR_GRAPH_DOMAIN_STABILITY_PROVEN:
+            gap = PROJECTOR_GRAPH_DOMAIN_STABILITY_GAP
+            branch = "bhsm-v2.14-projector-graph-domain-stability"
+            target = gap
+            obstruction = projector.exact_obstruction
+        elif not lower.theorem_complete:
+            gap = HT_LOWER_BOUND_TRANSFER_GAP
+            branch = "bhsm-v2.14-ht-lower-bound-transfer"
+            target = gap
+            obstruction = lower.exact_obstruction
+        elif not index.theorem_complete:
+            gap = INDEX_THEOREM_FINAL_GAP
+            branch = "bhsm-v2.14-index-theorem-final"
+            target = gap
+            obstruction = index.exact_obstruction
+        else:
+            gap = MIRROR_EXCLUSION_FINAL_GAP
+            branch = "bhsm-v2.14-mirror-exclusion-final"
+            target = gap
+            obstruction = mirror.exact_obstruction
     return FullHTTheoremClosureReport(
         title="BHSM v2.6 Full H_T Theorem Closure Status",
         complete_operator_status=operator.final_status,
@@ -74,8 +109,8 @@ def build_full_ht_theorem_closure_report() -> FullHTTheoremClosureReport:
         final_result=result,
         theorem_complete=result == FULL_HT_THEOREM_PROVEN,
         single_named_gap=gap,
-        recommended_next_branch=operator.next_branch if gap else "",
-        recommended_target_theorem=operator.next_target_theorem if gap else "",
+        recommended_next_branch=branch,
+        recommended_target_theorem=target,
         exact_obstruction=obstruction,
         limitations=(
             "The closure attempt does not stop at a generic scaffold label; it names the first theorem gap blocking downstream upgrades.",

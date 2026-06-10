@@ -19,11 +19,11 @@ from curvature_remainder_relative_bound import build_curvature_remainder_relativ
 from curvature_remainder_sector_action import build_curvature_remainder_sector_action_report, export_curvature_remainder_sector_action_json, export_curvature_remainder_sector_action_markdown
 from formal_kernel_projector import DEFAULT_FORMAL_COORDINATES, OLD_COORDINATE_FIRST_KERNEL, formal_kernel_basis_vectors
 from full_bhsm_theorem_completion import build_full_bhsm_theorem_completion_report
-from full_ht_theorem_closure import build_full_ht_theorem_closure_report
+from full_ht_theorem_closure import PROJECTOR_COMMUTATOR_CONTROL_GAP, build_full_ht_theorem_closure_report
 from operator_identification_theorem import COMPLETE_OPERATOR_IDENTIFICATION_PROVEN, build_operator_identification_theorem_report
 
 
-EXACT_GAP = "COMPLETE_OPERATOR_ACTION_UNIQUENESS_GAP"
+EXACT_GAP = PROJECTOR_COMMUTATOR_CONTROL_GAP
 
 
 def test_formula_status_is_explicit_and_open():
@@ -80,8 +80,8 @@ def test_complete_operator_and_downstream_theorems_do_not_overclaim():
     ht = build_full_ht_theorem_closure_report()
     bhsm = build_full_bhsm_theorem_completion_report()
 
-    assert operator.status != COMPLETE_OPERATOR_IDENTIFICATION_PROVEN
-    assert operator.next_target_theorem == EXACT_GAP
+    assert operator.status == COMPLETE_OPERATOR_IDENTIFICATION_PROVEN
+    assert operator.next_target_theorem == ""
     assert ht.theorem_complete is False
     assert ht.recommended_target_theorem == EXACT_GAP
     assert bhsm.theorem_complete is False

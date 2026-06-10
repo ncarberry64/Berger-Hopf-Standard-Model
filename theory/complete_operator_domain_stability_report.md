@@ -5,7 +5,7 @@ Theorem complete: `False`
 
 | Dependency | Status |
 | --- | --- |
-| complete-operator identification | `COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL` |
+| complete-operator identification | `COMPLETE_OPERATOR_IDENTIFICATION_PROVEN` |
 | perturbation domain stability | `PERTURBATION_DOMAIN_STABILITY_CONDITIONAL` |
 | projector graph-domain stability | `PROJECTOR_GRAPH_DOMAIN_STABILITY_CONDITIONAL` |
 | commutator control | `PROJECTOR_COMMUTATORS_CONDITIONAL` |
@@ -24,8 +24,6 @@ Theorem complete: `False`
 
 ## Open Obligations
 
-- derive the perturbation package from the complete Berger-Hopf twisted Dirac/bundle action
-- prove the theorem-candidate operator is the exact complete operator, not only a controlled scaffold representation
 - upgrade conditional P_perp D(A0+V) stability to a complete-operator graph-domain proof
 - prove all nonzero [P_perp,V] commutators in the complete twisted Dirac/bundle domain
 - prove nonzero commutators are bounded or relatively bounded in the complete twisted Dirac/bundle operator
@@ -36,4 +34,4 @@ Theorem complete: `False`
 ## Limitations
 
 - v2.4 strengthens the domain-stability bridge to explicit termwise conditional control.
-- It does not mark the bridge proven because complete-operator identification and commutator proofs remain conditional.
+- It does not mark the bridge proven because commutator/domain and index/mirror proofs remain conditional.

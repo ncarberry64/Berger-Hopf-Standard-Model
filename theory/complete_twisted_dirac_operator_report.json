@@ -15,16 +15,16 @@
     },
     {
       "assumptions": [
-        "v2.1 termwise relative bounds and common-domain assumptions hold"
+        "v2.13 complete-operator action uniqueness closes the perturbation package selection"
       ],
       "component_id": "V",
       "identified_with_complete_operator": true,
       "limitations": [
-        "the perturbation package is not derived as the unique complete twisted Dirac/bundle operator"
+        "commutator/domain control remains a downstream H_T dependency"
       ],
       "role": "Hopf, boundary, chirality, sector-coupling perturbation package",
       "source_status": "RELATIVE_BOUND_CONDITIONAL_WITH_EXPLICIT_ASSUMPTIONS",
-      "status": "COMPONENT_CONDITIONAL"
+      "status": "COMPONENT_IDENTIFIED"
     },
     {
       "assumptions": [
@@ -41,7 +41,7 @@
     },
     {
       "assumptions": [
-        "PSD/lift terms preserve the scaffold D(A0) domain conditionally"
+        "PSD/lift terms are part of the unique v2.13 operator package"
       ],
       "component_id": "heat_lift_profile",
       "identified_with_complete_operator": true,
@@ -50,11 +50,11 @@
       ],
       "role": "heat-lift and PSD profile contribution",
       "source_status": "LIFT_PROJECTOR_DOMAIN_CONDITIONAL",
-      "status": "COMPONENT_CONDITIONAL"
+      "status": "COMPONENT_IDENTIFIED"
     }
   ],
   "diagonal_reference_status": "DIAGONAL_REFERENCE_OPERATOR_PROVEN",
-  "exact_complete_operator": false,
+  "exact_complete_operator": true,
   "formal_kernel_coordinates": [
     0,
     18,
@@ -62,16 +62,13 @@
   ],
   "limitations": [
     "This audit identifies the complete-operator candidate chain without changing frozen predictions.",
-    "It deliberately refuses COMPLETE_OPERATOR_IDENTIFICATION_PROVEN while V remains action-scaffold conditional."
+    "v2.13 upgrades only complete-operator identification; H_T commutator/domain/index/mirror gates remain separate."
   ],
   "old_coordinate_first_kernel_used": false,
-  "open_obligations": [
-    "derive the perturbation package from the complete Berger-Hopf twisted Dirac/bundle action",
-    "prove the theorem-candidate operator is the exact complete operator, not only a controlled scaffold representation"
-  ],
+  "open_obligations": [],
   "perturbation_bridge_status": "RELATIVE_BOUND_CONDITIONAL_WITH_EXPLICIT_ASSUMPTIONS",
-  "status": "COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL",
+  "status": "COMPLETE_OPERATOR_IDENTIFICATION_PROVEN",
   "theorem_candidate_model": true,
-  "theorem_complete": false,
+  "theorem_complete": true,
   "title": "BHSM v2.4 Complete Twisted Dirac Operator Identification Report"
 }

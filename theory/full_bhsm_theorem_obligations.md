@@ -88,3 +88,9 @@
 - `BUNDLE_CURVATURE_FORMULA_CONDITIONAL_GAP` is closed under `BUNDLE_CONNECTION_SEPARATION_WITH_TOPOGRAPHIC_REPRESENTATION`.
 - The independent `R_bundle` channel is represented by the topographic/profile sector, not added as a new lower-bound term.
 - Full H_T theorem completion remains blocked by `COMPLETE_OPERATOR_ACTION_UNIQUENESS_GAP`; final paper preparation remains disallowed.
+
+## v2.13 Complete Operator Action-Uniqueness Closure
+
+- `COMPLETE_OPERATOR_ACTION_UNIQUENESS_GAP` is closed under the explicit BHSM action/axiom package.
+- Complete-operator identification upgrades to `COMPLETE_OPERATOR_IDENTIFICATION_PROVEN`.
+- Full H_T theorem completion remains blocked by `PROJECTOR_COMMUTATOR_CONTROL_GAP`; final paper preparation remains disallowed.

@@ -1,0 +1,155 @@
+{
+  "all_ingredients_classified": true,
+  "blocking_ingredients": [],
+  "ingredients": [
+    {
+      "evidence": [
+        "Berger diagonal reference operator and Hopf twist are already represented in the complete-operator package."
+      ],
+      "forced_operator_terms": [
+        "A0",
+        "V_Hopf"
+      ],
+      "ingredient_id": "berger_hopf_geometry",
+      "limitations": [
+        "This is an action-origin uniqueness input, not a new prediction."
+      ],
+      "role": "Berger diagonal/Hopf geometric core",
+      "status": "ACTION_DERIVED"
+    },
+    {
+      "evidence": [
+        "v1.2/v1.2B/v1.2C derive the omega functional from the symbolic parent boundary scaffold under BHSM axioms."
+      ],
+      "forced_operator_terms": [
+        "V_boundary"
+      ],
+      "ingredient_id": "sector_boundary_functional",
+      "limitations": [
+        "Global uniqueness of arbitrary actions is not claimed beyond the listed BHSM axioms."
+      ],
+      "role": "charged-sector boundary functional",
+      "status": "ACTION_DERIVED"
+    },
+    {
+      "evidence": [
+        "Chiral projector channel excludes generated mirror candidates in the scaffold chain."
+      ],
+      "forced_operator_terms": [
+        "V_chi"
+      ],
+      "ingredient_id": "chirality_projection",
+      "limitations": [
+        "Full H_T still depends on separate mirror/index closure."
+      ],
+      "role": "weak chirality projector and mirror guard",
+      "status": "ACTION_DERIVED"
+    },
+    {
+      "evidence": [
+        "Sector-labeled formal kernel and sector-coupling block are the only allowed lepton/up/down mixing package."
+      ],
+      "forced_operator_terms": [
+        "K_sector"
+      ],
+      "ingredient_id": "sector_lepton_up_down_structure",
+      "limitations": [
+        "Sector coupling commutator control remains a downstream H_T dependency."
+      ],
+      "role": "lepton/up/down sector structure",
+      "status": "ACTION_DERIVED"
+    },
+    {
+      "evidence": [
+        "Formal kernel coordinates are sector-labeled and not coordinate-first."
+      ],
+      "forced_operator_terms": [
+        "P_perp_lift"
+      ],
+      "ingredient_id": "formal_kernel_complement_projector",
+      "limitations": [
+        "Projector graph-domain stability remains downstream."
+      ],
+      "role": "formal kernel and complement projector",
+      "status": "ACTION_DERIVED"
+    },
+    {
+      "evidence": [
+        "PSD/profile and lift terms are represented by existing operator package terms."
+      ],
+      "forced_operator_terms": [
+        "P_perp_lift",
+        "V_PSD"
+      ],
+      "ingredient_id": "lift_profile_psd_sector",
+      "limitations": [
+        "Scalar/topographic decoupling remains separately audited."
+      ],
+      "role": "heat lift and positive semidefinite profile sector",
+      "status": "REPRESENTED_BY_EXISTING_TERM"
+    },
+    {
+      "evidence": [
+        "v2.11/v2.12 close mixed coefficient and bundle-curvature formula gaps with BUNDLE_CONNECTION_SEPARATION_WITH_TOPOGRAPHIC_REPRESENTATION."
+      ],
+      "forced_operator_terms": [
+        "topographic represented sector"
+      ],
+      "ingredient_id": "topographic_representation",
+      "limitations": [
+        "This is a BHSM axiom-level uniqueness input, not empirical fitting."
+      ],
+      "role": "topographic representation of mixed connection and R_bundle",
+      "status": "AXIOM_DERIVED"
+    },
+    {
+      "evidence": [
+        "Free mixed coefficients are forbidden because they would alter local SM bundle dynamics."
+      ],
+      "forced_operator_terms": [
+        "forbid independent free mixed operator terms"
+      ],
+      "ingredient_id": "local_sm_bundle_separation",
+      "limitations": [
+        "Uniqueness is under the BHSM local-separation axiom."
+      ],
+      "role": "local Standard Model bundle dynamics remain locally unchanged",
+      "status": "AXIOM_DERIVED"
+    },
+    {
+      "evidence": [
+        "Alternative terms that open mirror leakage are theorem-failing rather than allowed deformations."
+      ],
+      "forced_operator_terms": [
+        "forbid mirror-opening perturbations"
+      ],
+      "ingredient_id": "no_mirror_leakage",
+      "limitations": [
+        "Full mirror theorem is downstream; this uniqueness audit only forbids adding mirror-opening terms."
+      ],
+      "role": "mirror leakage guard",
+      "status": "AXIOM_DERIVED"
+    },
+    {
+      "evidence": [
+        "The old coordinate-first protected block is excluded by formal sector-label alignment."
+      ],
+      "forced_operator_terms": [
+        "force sector-labeled formal kernel"
+      ],
+      "ingredient_id": "coordinate_first_kernel_exclusion",
+      "limitations": [
+        "This prevents an artifact from selecting the operator package."
+      ],
+      "role": "exclude coordinate-first kernel artifact",
+      "status": "ZERO_BY_SYMMETRY"
+    }
+  ],
+  "limitations": [
+    "The inventory closes the action-origin ingredient list under current BHSM axioms.",
+    "It does not by itself prove the full H_T theorem or authorize final paper preparation."
+  ],
+  "status": "OPERATOR_ACTION_INGREDIENTS_CLOSED",
+  "theorem_complete": true,
+  "title": "BHSM v2.13 Operator Action Ingredient Inventory"
+}

@@ -14,7 +14,7 @@ from complete_operator_identification_decision import (
 from constants import S_OVERLAP
 from formal_kernel_projector import DEFAULT_FORMAL_COORDINATES, OLD_COORDINATE_FIRST_KERNEL, formal_kernel_basis_vectors
 from full_bhsm_theorem_completion import build_full_bhsm_theorem_completion_report
-from full_ht_theorem_closure import build_full_ht_theorem_closure_report
+from full_ht_theorem_closure import PROJECTOR_COMMUTATOR_CONTROL_GAP, build_full_ht_theorem_closure_report
 from operator_identification_theorem import (
     COMPLETE_OPERATOR_IDENTIFICATION_BLOCKED_BY_MISSING_TERM,
     COMPLETE_OPERATOR_IDENTIFICATION_PROVEN,
@@ -28,7 +28,7 @@ from complete_berger_hopf_operator import export_complete_berger_hopf_operator_j
 from bundle_dirac_derivation import export_bundle_dirac_derivation_json, export_bundle_dirac_derivation_markdown
 
 
-SINGLE_THEOREM_GAP = "COMPLETE_OPERATOR_ACTION_UNIQUENESS_GAP"
+SINGLE_THEOREM_GAP = PROJECTOR_COMMUTATOR_CONTROL_GAP
 
 
 def test_every_complete_operator_term_is_classified_and_single_gap_is_visible():
@@ -64,22 +64,21 @@ def test_complete_operator_and_bundle_derivation_refuse_theorem_completion():
 def test_operator_identification_theorem_is_blocked_not_proven():
     report = build_operator_identification_theorem_report()
 
-    assert report.status == "COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL_STRONG"
-    assert report.status != COMPLETE_OPERATOR_IDENTIFICATION_PROVEN
-    assert report.theorem_complete is False
+    assert report.status == COMPLETE_OPERATOR_IDENTIFICATION_PROVEN
+    assert report.theorem_complete is True
     assert report.blocking_term == ""
-    assert report.next_target_theorem == SINGLE_THEOREM_GAP
-    assert "action-uniqueness" in report.exact_obstruction
+    assert report.next_target_theorem == ""
+    assert report.exact_obstruction == "No obstruction."
 
 
 def test_final_v26_decision_uses_allowed_result_and_blocks_final_paper():
     decision = build_complete_operator_identification_decision()
 
-    assert decision.final_result == STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP
-    assert decision.theorem_complete is False
+    assert decision.final_result == COMPLETE_OPERATOR_IDENTIFICATION_PROVEN
+    assert decision.theorem_complete is True
     assert decision.blocking_term == ""
-    assert decision.recommended_next_branch == "bhsm-v2.13-complete-operator-action-uniqueness"
-    assert decision.recommended_target_theorem == SINGLE_THEOREM_GAP
+    assert decision.recommended_next_branch == ""
+    assert decision.recommended_target_theorem == ""
     assert decision.final_paper_allowed is False
 
 
@@ -98,9 +97,9 @@ def test_downstream_theorems_do_not_upgrade_from_v26_blocker():
     bhsm = build_full_bhsm_theorem_completion_report()
 
     assert ht.theorem_complete is False
-    assert ht.recommended_next_branch == "bhsm-v2.13-complete-operator-action-uniqueness"
+    assert ht.recommended_next_branch == "bhsm-v2.14-projector-commutator-control"
     assert ht.recommended_target_theorem == SINGLE_THEOREM_GAP
-    assert "complete operator" in ht.exact_obstruction.lower()
+    assert "commutator" in ht.exact_obstruction.lower()
     assert bhsm.theorem_complete is False
     assert bhsm.final_paper_allowed is False
 
@@ -170,7 +169,7 @@ def test_requested_v26_report_files_exist():
     )
     missing = [path for path in expected if not root.joinpath(path).exists()]
     assert missing == []
-    assert STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP in root.joinpath("theory/complete_operator_identification_decision.md").read_text()
+    assert COMPLETE_OPERATOR_IDENTIFICATION_PROVEN in root.joinpath("theory/complete_operator_identification_decision.md").read_text()
 
 
 def test_v26_does_not_change_frozen_outputs():
