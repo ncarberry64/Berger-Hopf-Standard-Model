@@ -9,8 +9,8 @@ Final paper allowed: `False`
 
 `COMPLETE_OPERATOR_IDENTIFICATION_THEOREM_GAP`
 
-Recommended next branch: `bhsm-v2.10-mixed-connection-coefficients`
-Recommended target theorem: `MIXED_HOPF_BASE_BOUNDARY_COFRAME_CONNECTION_GAP`
+Recommended next branch: `bhsm-v2.11-mixed-connection-coefficient-rule`
+Recommended target theorem: `MIXED_CONNECTION_COEFFICIENT_RULE_GAP`
 
 ## Exact Obstruction
 

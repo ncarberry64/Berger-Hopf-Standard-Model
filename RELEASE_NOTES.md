@@ -1,3 +1,28 @@
+# Unreleased / Development: v2.10 Mixed Connection Coefficients
+
+Branch: `bhsm-v2.10-mixed-connection-coefficients`
+
+The v2.10 branch identifies the mixed Hopf/base/boundary/coframe connection
+coefficient slots that feed the open Lichnerowicz bundle-curvature remainder.
+It audits the resulting mixed curvature, Clifford contraction, and relative
+bound requirements.
+
+Final result:
+
+- mixed connection decision: `STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP`
+- mixed connection classification: `MIXED_CONNECTION_OPEN`
+- coefficient status: `MIXED_COEFFICIENT_OPEN`
+- curvature status: `MIXED_CURVATURE_OPEN`
+- Clifford status: `CLIFFORD_CONTRACTION_OPEN`
+- exact missing rule: `MIXED_HOPF_BASE_BOUNDARY_COFRAME_COEFFICIENT_RULE`
+- exact remaining gap: `MIXED_CONNECTION_COEFFICIENT_RULE_GAP`
+- recommended next branch: `bhsm-v2.11-mixed-connection-coefficient-rule`
+- final paper allowed: `False`
+
+No coefficient is chosen by tuning or residual improvement. Frozen predictions,
+canonical constants, frozen modes, tolerances, outputs, and virtual dressing are
+unchanged.
+
 # Unreleased / Development: v2.9 Complete Bundle Connection Curvature
 
 Branch: `bhsm-v2.9-complete-bundle-connection-curvature`

@@ -69,3 +69,10 @@
 - Close `MIXED_HOPF_BASE_BOUNDARY_COFRAME_CONNECTION_GAP` by specifying the mixed Hopf/base/boundary/coframe connection coefficients and their Clifford curvature contraction.
 - Then reclassify `mixed_curvature_remainder` as zero, represented, PSD/profile-controlled, screened/lifted, relatively bounded safe, safe after re-audit, or theorem-breaking.
 - Do not prepare the final paper while v2.9 result remains `STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP`.
+
+
+## v2.10 Mixed Connection Coefficient Rule Obligation
+
+- Close `MIXED_CONNECTION_COEFFICIENT_RULE_GAP` by deriving `MIXED_HOPF_BASE_BOUNDARY_COFRAME_COEFFICIENT_RULE` from BHSM geometry rather than fitting or assuming it.
+- Then compute `F_mixed`, `Cl(F_mixed)`, and the resulting action on the formal kernel, `H_perp`, and mirror channels before reattempting the R_bundle classification.
+- Do not prepare the final paper while v2.10 result remains `STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP`.

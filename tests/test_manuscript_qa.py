@@ -339,6 +339,12 @@ def test_typesetting_pass_does_not_modify_source_model_files():
         "src/lichnerowicz_curvature_action.py",
         "src/curvature_formula_to_operator_map.py",
         "src/bundle_curvature_closure_decision.py",
+        "src/mixed_connection_coefficients.py",
+        "src/hopf_base_boundary_coframe.py",
+        "src/mixed_curvature_contraction.py",
+        "src/clifford_curvature_contraction.py",
+        "src/mixed_connection_remainder_bound.py",
+        "src/mixed_connection_closure_decision.py",
     }
 
     assert not [

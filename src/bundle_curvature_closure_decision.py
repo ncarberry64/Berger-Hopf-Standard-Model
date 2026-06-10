@@ -10,6 +10,11 @@ from bundle_connection_components import build_bundle_connection_components_repo
 from bundle_curvature_formula import CURVATURE_FORMULA_DERIVED, CURVATURE_FORMULA_OPEN, build_bundle_curvature_formula_report
 from curvature_formula_to_operator_map import build_curvature_formula_to_operator_map_report
 from lichnerowicz_curvature_action import build_lichnerowicz_curvature_action_report
+from mixed_connection_closure_decision import (
+    BHSM_THEOREM_FAILURE as MIXED_BHSM_THEOREM_FAILURE,
+    MIXED_CONNECTION_CLOSED,
+    build_mixed_connection_closure_decision,
+)
 
 
 COMPLETE_BUNDLE_CONNECTION_CURVATURE_CLOSED = "COMPLETE_BUNDLE_CONNECTION_CURVATURE_CLOSED"
@@ -39,9 +44,13 @@ def build_bundle_curvature_closure_decision() -> BundleCurvatureClosureDecision:
     formula = build_bundle_curvature_formula_report()
     action = build_lichnerowicz_curvature_action_report()
     mapping = build_curvature_formula_to_operator_map_report()
-    if formula.status == CURVATURE_FORMULA_DERIVED and mapping.r_bundle_classification != "REMAINDER_OPEN":
+    mixed = build_mixed_connection_closure_decision()
+    if mixed.final_result == MIXED_CONNECTION_CLOSED and formula.status == CURVATURE_FORMULA_DERIVED and mapping.r_bundle_classification != "REMAINDER_OPEN":
         final = COMPLETE_BUNDLE_CONNECTION_CURVATURE_CLOSED
         operator_status = "COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL_STRONG"
+    elif mixed.final_result == MIXED_BHSM_THEOREM_FAILURE:
+        final = BHSM_THEOREM_FAILURE
+        operator_status = "COMPLETE_OPERATOR_IDENTIFICATION_FAILS"
     else:
         final = STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP
         operator_status = "COMPLETE_OPERATOR_IDENTIFICATION_BLOCKED_BY_REMAINDER"
@@ -51,10 +60,10 @@ def build_bundle_curvature_closure_decision() -> BundleCurvatureClosureDecision:
         connection_status="COMPLETE_BUNDLE_CONNECTION_OPEN" if components.blocking_components else "COMPLETE_BUNDLE_CONNECTION_DEFINED",
         curvature_formula_status=formula.status,
         r_bundle_classification=mapping.r_bundle_classification,
-        exact_remaining_gap="MIXED_HOPF_BASE_BOUNDARY_COFRAME_CONNECTION_GAP",
+        exact_remaining_gap=mixed.exact_remaining_gap,
         exact_missing_component=components.exact_missing_component,
-        recommended_next_branch="bhsm-v2.10-mixed-connection-coefficients",
-        recommended_target_theorem="MIXED_HOPF_BASE_BOUNDARY_COFRAME_CONNECTION_GAP",
+        recommended_next_branch=mixed.recommended_next_branch,
+        recommended_target_theorem=mixed.recommended_target_theorem,
         complete_operator_identification_status=operator_status,
         final_paper_allowed=False,
         theorem_complete=final == COMPLETE_BUNDLE_CONNECTION_CURVATURE_CLOSED,

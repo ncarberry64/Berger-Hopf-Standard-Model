@@ -28,7 +28,7 @@ from lichnerowicz_curvature_action import build_lichnerowicz_curvature_action_re
 from operator_identification_theorem import COMPLETE_OPERATOR_IDENTIFICATION_PROVEN, build_operator_identification_theorem_report
 
 
-EXACT_GAP = "MIXED_HOPF_BASE_BOUNDARY_COFRAME_CONNECTION_GAP"
+EXACT_GAP = "MIXED_CONNECTION_COEFFICIENT_RULE_GAP"
 MISSING_COMPONENT = "mixed_hopf_base_boundary_coframe_connection"
 
 
@@ -81,7 +81,7 @@ def test_bundle_curvature_closure_decision_names_next_gap_without_overclaim():
     assert report.final_result != COMPLETE_BUNDLE_CONNECTION_CURVATURE_CLOSED
     assert report.exact_remaining_gap == EXACT_GAP
     assert report.exact_missing_component == MISSING_COMPONENT
-    assert report.recommended_next_branch == "bhsm-v2.10-mixed-connection-coefficients"
+    assert report.recommended_next_branch == "bhsm-v2.11-mixed-connection-coefficient-rule"
     assert report.final_paper_allowed is False
     assert report.theorem_complete is False
 

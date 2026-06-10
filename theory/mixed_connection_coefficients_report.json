@@ -1,0 +1,111 @@
+{
+  "all_coefficients_classified": true,
+  "coefficients": [
+    {
+      "acts_on": [
+        "Hopf/base/fiber modes",
+        "H_perp"
+      ],
+      "coefficient_id": "hopf_fiber_base_cross",
+      "limitation": "The coefficient rule C_HB(q,j) is not derived from the full connection.",
+      "source_terms": [
+        "Hopf fiber",
+        "base/S2"
+      ],
+      "status": "MIXED_COEFFICIENT_OPEN",
+      "symbolic_form": "C_HB(q,j) [nabla_H,nabla_B]"
+    },
+    {
+      "acts_on": [
+        "lepton",
+        "up",
+        "down",
+        "boundary functional"
+      ],
+      "coefficient_id": "base_boundary_cross",
+      "limitation": "The coefficient rule tying base nodes to boundary functional phases is not derived.",
+      "source_terms": [
+        "base/S2",
+        "boundary functional"
+      ],
+      "status": "MIXED_COEFFICIENT_OPEN",
+      "symbolic_form": "C_Bbd(j,Omega_f) [nabla_B,nabla_boundary]"
+    },
+    {
+      "acts_on": [
+        "up",
+        "down",
+        "coframe channels"
+      ],
+      "coefficient_id": "boundary_coframe_cross",
+      "limitation": "The coframe participation coefficient in the mixed connection is not fixed.",
+      "source_terms": [
+        "boundary functional",
+        "coframe"
+      ],
+      "status": "MIXED_COEFFICIENT_OPEN",
+      "symbolic_form": "C_bdC(Omega_f,cof) [nabla_boundary,nabla_cof]"
+    },
+    {
+      "acts_on": [
+        "charged sectors",
+        "mirror channels",
+        "formal kernel"
+      ],
+      "coefficient_id": "hopf_boundary_coframe_mixed",
+      "limitation": "The triple mixed coefficient is the exact missing geometric rule.",
+      "source_terms": [
+        "Hopf fiber",
+        "boundary functional",
+        "coframe"
+      ],
+      "status": "MIXED_COEFFICIENT_OPEN",
+      "symbolic_form": "C_HbdC(q,Omega_f,cof) mixed triple contraction"
+    },
+    {
+      "acts_on": [
+        "chirality",
+        "mirror channels"
+      ],
+      "coefficient_id": "chirality_dependence",
+      "limitation": "The chirality-resolved mixed coefficient is not derived.",
+      "source_terms": [
+        "chirality projector",
+        "mixed connection"
+      ],
+      "status": "MIXED_COEFFICIENT_OPEN",
+      "symbolic_form": "C_chi(chi) mixed chirality sign"
+    },
+    {
+      "acts_on": [
+        "lepton",
+        "up",
+        "down"
+      ],
+      "coefficient_id": "sector_dependence",
+      "limitation": "The sector weights of the mixed connection are not derived.",
+      "source_terms": [
+        "lepton/up/down sector labels",
+        "mixed connection"
+      ],
+      "status": "MIXED_COEFFICIENT_OPEN",
+      "symbolic_form": "C_sector(f) mixed sector weight"
+    }
+  ],
+  "exact_missing_rule": "MIXED_HOPF_BASE_BOUNDARY_COFRAME_COEFFICIENT_RULE",
+  "limitations": [
+    "The mixed coefficient slots are identified, but their BHSM geometric rule is not derived.",
+    "No numerical or residual fit is used to choose coefficients."
+  ],
+  "open_coefficients": [
+    "hopf_fiber_base_cross",
+    "base_boundary_cross",
+    "boundary_coframe_cross",
+    "hopf_boundary_coframe_mixed",
+    "chirality_dependence",
+    "sector_dependence"
+  ],
+  "status": "MIXED_COEFFICIENT_OPEN",
+  "theorem_complete": false,
+  "title": "BHSM v2.10 Mixed Connection Coefficients Report"
+}

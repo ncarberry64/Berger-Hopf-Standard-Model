@@ -60,15 +60,16 @@ Do not prepare final paper/Zenodo release; attack the full operator domain, topo
 - This decision does not claim first-principles theorem closure.
 
 
-## v2.9 Complete Bundle Connection Curvature Update
+## v2.10 Mixed Connection Coefficients Update
 
-- v2.9 final result: `STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP`
-- connection status: `COMPLETE_BUNDLE_CONNECTION_OPEN`
-- curvature formula status: `CURVATURE_FORMULA_OPEN`
-- R_bundle classification: `REMAINDER_OPEN`
-- exact missing component: `mixed_hopf_base_boundary_coframe_connection`
-- exact remaining gap: `MIXED_HOPF_BASE_BOUNDARY_COFRAME_CONNECTION_GAP`
-- recommended next branch: `bhsm-v2.10-mixed-connection-coefficients`
+- v2.10 final result: `STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP`
+- mixed connection classification: `MIXED_CONNECTION_OPEN`
+- coefficient status: `MIXED_COEFFICIENT_OPEN`
+- curvature status: `MIXED_CURVATURE_OPEN`
+- Clifford status: `CLIFFORD_CONTRACTION_OPEN`
+- exact missing rule: `MIXED_HOPF_BASE_BOUNDARY_COFRAME_COEFFICIENT_RULE`
+- exact remaining gap: `MIXED_CONNECTION_COEFFICIENT_RULE_GAP`
+- recommended next branch: `bhsm-v2.11-mixed-connection-coefficient-rule`
 - final paper allowed: `False`
 
-The complete connection inventory is explicit, but the mixed Hopf/base/boundary/coframe connection coefficients and Clifford contraction are still missing. No full H_T theorem upgrade is made.
+The mixed coefficient slots are identified, but the BHSM geometric rule fixing those coefficients is still missing. No Clifford contraction or lower-bound transfer is claimed.

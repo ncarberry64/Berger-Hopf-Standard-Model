@@ -30,7 +30,7 @@ from operator_identification_theorem import COMPLETE_OPERATOR_IDENTIFICATION_PRO
 from operator_term_inventory import build_operator_term_inventory_report
 
 
-EXACT_GAP = "MIXED_HOPF_BASE_BOUNDARY_COFRAME_CONNECTION_GAP"
+EXACT_GAP = "MIXED_CONNECTION_COEFFICIENT_RULE_GAP"
 
 
 def test_lichnerowicz_remainder_inventory_is_explicit():
@@ -83,7 +83,7 @@ def test_closure_decision_names_next_gap_without_failure_overclaim():
     assert report.final_result != BHSM_THEOREM_FAILURE
     assert report.remainder_classification == REMAINDER_OPEN
     assert report.exact_remaining_gap == EXACT_GAP
-    assert report.recommended_next_branch == "bhsm-v2.10-mixed-connection-coefficients"
+    assert report.recommended_next_branch == "bhsm-v2.11-mixed-connection-coefficient-rule"
     assert report.final_paper_allowed is False
 
 
@@ -105,7 +105,7 @@ def test_downstream_full_ht_and_bhsm_do_not_upgrade_from_curvature_gap():
 
     assert ht.theorem_complete is False
     assert ht.recommended_target_theorem == EXACT_GAP
-    assert ht.recommended_next_branch == "bhsm-v2.10-mixed-connection-coefficients"
+    assert ht.recommended_next_branch == "bhsm-v2.11-mixed-connection-coefficient-rule"
     assert bhsm.theorem_complete is False
     assert bhsm.final_paper_allowed is False
 
