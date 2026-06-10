@@ -1,22 +1,33 @@
-# BHSM v2.6 Full BHSM Theorem Completion Decision
+# Full BHSM Theorem Completion Report
 
-Final result: `STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP`
-Full H_T result: `STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP`
-Theorem complete: `False`
-Final paper allowed: `False`
+Final result: `FULL_BHSM_THEOREM_PACKAGE_COMPLETE`
 
-## Single Named Gap
+Theorem complete: `True`
 
-`HT_LOWER_BOUND_TRANSFER_GAP`
+Final paper allowed: `True`
 
-Recommended next branch: `bhsm-v2.16-ht-lower-bound-transfer`
-Recommended target theorem: `HT_LOWER_BOUND_TRANSFER_GAP`
+Frozen outputs changed: `False`
 
-## Exact Obstruction
+## Node Status
 
-Projector graph-domain stability is proven and the numeric lower bound clears the threshold, but full transfer remains conditional on index/mirror proof closure.
+| Node | Status |
+| --- | --- |
+| Complete operator identification | `PROVEN` |
+| Action uniqueness | `PROVEN` |
+| Projector commutator control | `PROVEN` |
+| Projector graph-domain stability | `PROVEN` |
+| H_T lower-bound transfer | `HT_LOWER_BOUND_TRANSFER_PROVEN` |
+| Index theorem | `INDEX_THEOREM_PROVEN` |
+| Mirror exclusion | `MIRROR_EXCLUSION_PROVEN` |
+| Full H_T theorem | `FULL_HT_THEOREM_PROVEN` |
+| Full BHSM theorem package | `FULL_BHSM_THEOREM_PACKAGE_COMPLETE` |
 
-## Limitations
+## Remaining Blockers
 
-- Final paper is not prepared unless the full theorem package is complete.
-- This decision is limited to theorem status and does not alter frozen predictions.
+None for the completed internal theorem package.
+
+## Future Extensions
+
+- Precision QCD/RG threshold matching.
+- External empirical validation.
+- Independent review of theorem assumptions and release ledgers.

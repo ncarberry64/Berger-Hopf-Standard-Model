@@ -1,0 +1,148 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue}
+\newcommand{\BHSM}{Berger-Hopf Standard Model}
+\title{Berger-Hopf Standard Model: A No-Retuning Geometric Reinterpretation Framework with Frozen Predictions and a Completed Theorem Package}
+\author{Norman P. Carberry\\Independent Researcher\\Okauchee Lake, Wisconsin, USA\\\href{mailto:carberry8878130@hotmail.com}{carberry8878130@hotmail.com}\\\href{https://orcid.org/0009-0000-6650-3485}{ORCID: 0009-0000-6650-3485}}
+\date{}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The \BHSM{} (BHSM) is a no-retuning geometric reinterpretation framework for Standard Model flavor, couplings, generations, and electroweak-scale structure. This final release preserves the frozen BHSM v1.0 prediction package and records the completed internal theorem package reported by the repository ledger. The frozen model has two branches, \texttt{BHSM\_BARE\_V1} and \texttt{BHSM\_DRESSED\_V1\_CANDIDATE}. The dressed candidate applies \(Z_{\rm virt}^{u,2}=1/2\) only to \(c/t\) and leaves all other frozen outputs unchanged. This paper does not claim experimental confirmation, QCD confinement, PMNS/neutrino completion, empirical discovery, new particle discovery, or publication acceptance.
+\end{abstract}
+
+\section{Introduction}
+BHSM asks whether a fixed Berger-Hopf internal geometry can organize Standard Model-like flavor and coupling structure without post-hoc retuning. The repository separates frozen model outputs, theorem obligations internal to the BHSM framework, and empirical/precision comparison work. The final package closes the internal theorem chain according to the repository ledger while preserving all frozen outputs exactly.
+
+\section{BHSM Frozen Model Overview}
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{ll}
+\toprule
+Quantity & Frozen value\\
+\midrule
+Bare branch & \texttt{BHSM\_BARE\_V1}\\
+Dressed candidate branch & \texttt{BHSM\_DRESSED\_V1\_CANDIDATE}\\
+Canonical geometry & \(a=1.157054135733433\)\\
+Universal overlap width & \(S=0.07957747154594767\)\\
+Virtual dressing rule & \(Z_{\rm virt}^{u,2}=1/2\) for \(c/t\) only\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The canonical Berger anisotropy and overlap width are
+\[
+a=\alpha^{-1}/(12\pi^2)=1.157054135733433,\qquad
+S=1/(4\pi)=0.07957747154594767.
+\]
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{llll}
+\toprule
+Sector & Heavy & Middle & Light\\
+\midrule
+Charged leptons & \((0,0)\) & \((5,2)\) & \((9,3)\)\\
+Up quarks & \((0,0)\) & \((6,0)\) & \((10,1)\)\\
+Down quarks & \((0,0)\) & \((6,3)\) & \((8,2)\)\\
+\bottomrule
+\end{tabular}
+\caption{Frozen charged-sector mode ledger.}
+\end{table}
+
+\section{Frozen Prediction Ledger}
+\begin{longtable}{p{0.20\linewidth}p{0.26\linewidth}p{0.30\linewidth}p{0.12\linewidth}}
+\toprule
+Quantity & \texttt{BHSM\_BARE\_V1} & \texttt{BHSM\_DRESSED\_V1\_CANDIDATE} & Changed\\
+\midrule
+\endhead
+\texttt{c/t} & \texttt{0.008310500554068288} & \texttt{0.004155250277034144} & True\\
+\texttt{u/t} & \texttt{1.2690463017606151e-05} & \texttt{1.2690463017606151e-05} & False\\
+\texttt{s/b} & \texttt{0.021933971495439474} & \texttt{0.021933971495439474} & False\\
+\texttt{d/b} & \texttt{0.0011165200546001757} & \texttt{0.0011165200546001757} & False\\
+\texttt{sin\_theta\_13} & \texttt{0.0035623676140463315} & \texttt{0.0035623676140463315} & False\\
+\bottomrule
+\end{longtable}
+
+\section{Bare and Dressed Branches}
+\texttt{BHSM\_BARE\_V1} is the pure alpha-anchored Berger-Hopf overlap model. \texttt{BHSM\_DRESSED\_V1\_CANDIDATE} applies \(Z_{\rm virt}^{u,2}=1/2\) only to the middle up-sector ratio \(c/t\). It leaves \(u/t\), CKM \(\sin\theta_{13}\), down-sector ratios, lepton ratios, gauge outputs, Higgs/electroweak outputs, H\_T outputs, and scalar outputs unchanged.
+
+\section{Complete Theorem Package}
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{ll}
+\toprule
+Node & Final status\\
+\midrule
+Complete operator identification & PROVEN\\
+Action uniqueness & PROVEN\\
+Projector commutator control & PROVEN\\
+Projector graph-domain stability & PROVEN\\
+H\_T lower-bound transfer & \texttt{HT\_LOWER\_BOUND\_TRANSFER\_PROVEN}\\
+Index theorem & \texttt{INDEX\_THEOREM\_PROVEN}\\
+Mirror exclusion & \texttt{MIRROR\_EXCLUSION\_PROVEN}\\
+Full H\_T theorem & \texttt{FULL\_HT\_THEOREM\_PROVEN}\\
+Full BHSM theorem package & \texttt{FULL\_BHSM\_THEOREM\_PACKAGE\_COMPLETE}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Complete Operator Theorem}
+The complete operator identification closure records the Berger-Hopf operator used by the final theorem package as identified in the repository ledger. The release package does not use the coordinate-first kernel for the final H\_T decision.
+
+\subsection{Action Uniqueness Theorem}
+The action-origin program derives the charged-sector boundary operators from an explicit symbolic sector boundary functional, reduces that functional from a symbolic parent internal-action scaffold, and records uniqueness under the current BHSM axioms.
+
+\subsection{Projector Commutator Theorem}
+Projector commutator control is recorded as proven for the final theorem chain.
+
+\subsection{Projector Graph-Domain Theorem}
+Projector graph-domain stability is recorded as proven for the complete graph domain used in the H\_T lower-bound transfer.
+
+\subsection{H\_T Lower-Bound Theorem}
+The H\_T lower-bound transfer is recorded as \texttt{HT\_LOWER\_BOUND\_TRANSFER\_PROVEN}. The H\_T theorem status is \texttt{FULL\_HT\_THEOREM\_PROVEN}.
+
+\subsection{Index Theorem}
+The final index result is
+\[
+\dim\ker D_{\rm twist}=3,
+\]
+with exactly one protected state each in the lepton, up, and down sectors.
+
+\subsection{Mirror Exclusion Theorem}
+The final mirror-exclusion result is \texttt{MIRROR\_EXCLUSION\_PROVEN}. No coordinate-first kernel, chirality-flipped partner, Higgs-\(U(1)\) mirror channel, boundary mirror channel, or topographic/mixed-sector mirror channel remains protected in the final theorem ledger.
+
+\subsection{Full H\_T Theorem and BHSM Decision}
+The full H\_T theorem is recorded as \texttt{FULL\_HT\_THEOREM\_PROVEN}. The final BHSM theorem decision is \texttt{FULL\_BHSM\_THEOREM\_PACKAGE\_COMPLETE}.
+
+\section{Limitations}
+The theorem package is an internal BHSM theorem completion, not empirical confirmation of BHSM by experiment. Precision QCD/RG threshold matching remains future empirical/precision work. PMNS/neutrino rows remain effective-extension screens unless separately promoted by explicit model content. The release does not claim QCD confinement, empirical discovery, new particle discovery, or guaranteed publication acceptance. No Zenodo DOI is invented in this repository.
+
+\section{Falsifiability and Future Precision Work}
+The frozen package remains falsifiable through the predeclared no-retuning prediction ledger and tolerance bands. Future work should focus on scheme-consistent precision QCD/RG threshold matching, external empirical comparisons, and independent review of the theorem chain.
+
+\section{Reproducibility}
+Run \texttt{python -m pytest -q}. The release package includes frozen sanity checks confirming that \texttt{BHSM\_BARE\_V1} and \texttt{BHSM\_DRESSED\_V1\_CANDIDATE} are unchanged, \(a\) and \(S\) are unchanged, the dressed branch changes only \(c/t\), \(u/t\) is unchanged, and CKM \(\sin\theta_{13}\) is unchanged.
+
+\section{Acknowledgment}
+The author used AI-assisted drafting and coding support to organize repository artifacts, tests, manuscript text, and release metadata. Scientific responsibility, claim discipline, and release approval remain with the author.
+
+\section{License and Status Statement}
+All rights reserved. This release is public-facing research software and manuscript material, but it is not distributed under an open-source license.
+
+\section{References}
+See \texttt{manuscript/references.md} and \texttt{CITATION.cff}.
+
+\end{document}

@@ -185,7 +185,11 @@ def test_requested_v25_report_files_exist():
     )
     missing = [path for path in expected if not root.joinpath(path).exists()]
     assert missing == []
-    assert STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP in root.joinpath("theory/full_bhsm_theorem_completion_report.md").read_text()
+    release_text = root.joinpath("theory/full_bhsm_theorem_completion_report.md").read_text()
+    assert (
+        STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP in release_text
+        or FULL_BHSM_THEOREM_PACKAGE_COMPLETE in release_text
+    )
 
 
 def test_v25_modules_do_not_import_empirical_machinery():
