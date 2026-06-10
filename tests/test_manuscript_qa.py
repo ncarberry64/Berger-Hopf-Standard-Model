@@ -351,6 +351,11 @@ def test_typesetting_pass_does_not_modify_source_model_files():
         "src/hopf_base_mixed_rule.py",
         "src/mixed_coefficient_minimality.py",
         "src/mixed_coefficient_rule_decision.py",
+        "src/bundle_curvature_formula_closure.py",
+        "src/bundle_curvature_formula_decision.py",
+        "src/bundle_curvature_term_map.py",
+        "src/curvature_remainder_after_mixed_rule.py",
+        "src/topographic_curvature_representation.py",
     }
 
     assert not [

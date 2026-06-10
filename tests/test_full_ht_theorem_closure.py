@@ -36,11 +36,10 @@ from projector_graph_domain_closure import build_projector_graph_domain_closure_
 def test_complete_operator_identification_is_the_single_named_gap():
     report = build_complete_operator_identification_closure_report()
 
-    assert report.source_status == COMPLETE_OPERATOR_IDENTIFICATION_BLOCKED_BY_MISSING_TERM
+    assert report.source_status == "COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL_STRONG"
     assert report.final_status == COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL
     assert report.theorem_complete is False
-    assert report.next_target_theorem == "BUNDLE_CURVATURE_FORMULA_CONDITIONAL_GAP"
-    assert "lichnerowicz_bundle_curvature_remainder" in report.blocking_components
+    assert report.next_target_theorem == "COMPLETE_OPERATOR_ACTION_UNIQUENESS_GAP"
 
 
 def test_downstream_closures_do_not_upgrade_from_conditional_operator_assumption():
@@ -79,7 +78,7 @@ def test_full_ht_closure_uses_only_allowed_final_outcomes():
     assert report.final_result == STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP
     assert report.theorem_complete is False
     assert report.single_named_gap == COMPLETE_OPERATOR_IDENTIFICATION_THEOREM_GAP
-    assert report.recommended_next_branch == "bhsm-v2.12-bundle-curvature-conditional-closure"
+    assert report.recommended_next_branch == "bhsm-v2.13-complete-operator-action-uniqueness"
 
 
 def test_full_bhsm_completion_uses_only_allowed_final_outcomes():

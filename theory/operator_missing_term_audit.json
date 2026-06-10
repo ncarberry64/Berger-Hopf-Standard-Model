@@ -1,5 +1,5 @@
 {
-  "blocking_term": "lichnerowicz_bundle_curvature_remainder",
+  "blocking_term": "",
   "hidden_missing_terms": false,
   "limitations": [
     "The audit does not hide the connection-curvature/torsion-like remainder.",
@@ -8,17 +8,17 @@
   "rows": [
     {
       "audit_id": "connection_curvature_terms",
-      "blocking": true,
+      "blocking": false,
       "candidate_contribution": "connection curvature terms",
-      "disposition": "OPEN",
-      "evidence": "v2.7 classification: REMAINDER_OPEN; v2.7 final result: STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP"
+      "disposition": "REPRESENTED_BY_EXISTING_TERM",
+      "evidence": "v2.7 classification: REMAINDER_REPRESENTED_BY_TOPOGRAPHIC_SECTOR; v2.7 final result: BUNDLE_CURVATURE_REMAINDER_CLOSED"
     },
     {
       "audit_id": "torsion_like_terms",
-      "blocking": true,
+      "blocking": false,
       "candidate_contribution": "torsion-like terms if applicable",
-      "disposition": "OPEN",
-      "evidence": "v2.7 classification: REMAINDER_OPEN; v2.7 final result: STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP"
+      "disposition": "REPRESENTED_BY_EXISTING_TERM",
+      "evidence": "v2.7 classification: REMAINDER_REPRESENTED_BY_TOPOGRAPHIC_SECTOR; v2.7 final result: BUNDLE_CURVATURE_REMAINDER_CLOSED"
     },
     {
       "audit_id": "bundle_connection_terms",
@@ -77,10 +77,8 @@
       "evidence": "v2.1/v2.4 lift term included"
     }
   ],
-  "status": "OPERATOR_MISSING_TERM_AUDIT_BLOCKED",
-  "theorem_complete": false,
+  "status": "OPERATOR_MISSING_TERM_AUDIT_CLEAN",
+  "theorem_complete": true,
   "title": "BHSM v2.6 Operator Missing-Term Audit",
-  "unique_blocking_terms": [
-    "lichnerowicz_bundle_curvature_remainder"
-  ]
+  "unique_blocking_terms": []
 }

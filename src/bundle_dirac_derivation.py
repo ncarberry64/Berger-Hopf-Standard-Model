@@ -44,7 +44,7 @@ def build_bundle_dirac_derivation_report() -> BundleDiracDerivationReport:
         unresolved_step=unresolved,
         status="BUNDLE_DIRAC_DERIVATION_BLOCKED_BY_REMAINDER" if unresolved else "BUNDLE_DIRAC_DERIVATION_COMPLETE",
         theorem_complete=not unresolved,
-        limitations=("The derivation remains symbolic until the bundle-curvature remainder is resolved.",),
+        limitations=("The derivation remains symbolic until complete-operator action uniqueness is proven.",),
     )
 
 

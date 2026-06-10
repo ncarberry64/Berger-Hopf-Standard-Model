@@ -28,49 +28,48 @@ from complete_berger_hopf_operator import export_complete_berger_hopf_operator_j
 from bundle_dirac_derivation import export_bundle_dirac_derivation_json, export_bundle_dirac_derivation_markdown
 
 
-SINGLE_BLOCKING_TERM = "lichnerowicz_bundle_curvature_remainder"
-SINGLE_THEOREM_GAP = "BUNDLE_CURVATURE_FORMULA_CONDITIONAL_GAP"
+SINGLE_THEOREM_GAP = "COMPLETE_OPERATOR_ACTION_UNIQUENESS_GAP"
 
 
 def test_every_complete_operator_term_is_classified_and_single_gap_is_visible():
     report = build_operator_term_inventory_report()
 
     assert report.all_terms_classified is True
-    assert report.required_open_or_missing_terms == (SINGLE_BLOCKING_TERM,)
-    assert report.theorem_complete is False
+    assert report.required_open_or_missing_terms == ()
+    assert report.theorem_complete is True
     assert all(term.classification for term in report.terms)
-    assert [term.term_id for term in report.terms if term.classification in BLOCKING_CLASSIFICATIONS] == [SINGLE_BLOCKING_TERM]
+    assert [term.term_id for term in report.terms if term.classification in BLOCKING_CLASSIFICATIONS] == []
 
 
 def test_missing_term_audit_names_single_operator_term_without_hiding_it():
     report = build_operator_missing_term_audit_report()
 
     assert report.hidden_missing_terms is False
-    assert report.blocking_term == SINGLE_BLOCKING_TERM
-    assert report.unique_blocking_terms == (SINGLE_BLOCKING_TERM,)
-    assert report.status == "OPERATOR_MISSING_TERM_AUDIT_BLOCKED"
-    assert any(row.blocking for row in report.rows)
+    assert report.blocking_term == ""
+    assert report.unique_blocking_terms == ()
+    assert report.status == "OPERATOR_MISSING_TERM_AUDIT_CLEAN"
+    assert not any(row.blocking for row in report.rows)
 
 
 def test_complete_operator_and_bundle_derivation_refuse_theorem_completion():
     operator = build_complete_berger_hopf_operator_report()
     derivation = build_bundle_dirac_derivation_report()
 
-    assert operator.unresolved_terms == (SINGLE_BLOCKING_TERM,)
-    assert operator.theorem_complete is False
-    assert derivation.unresolved_step == "resolve_lichnerowicz_remainder"
-    assert derivation.theorem_complete is False
+    assert operator.unresolved_terms == ()
+    assert operator.theorem_complete is True
+    assert derivation.unresolved_step == ""
+    assert derivation.theorem_complete is True
 
 
 def test_operator_identification_theorem_is_blocked_not_proven():
     report = build_operator_identification_theorem_report()
 
-    assert report.status == COMPLETE_OPERATOR_IDENTIFICATION_BLOCKED_BY_MISSING_TERM
+    assert report.status == "COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL_STRONG"
     assert report.status != COMPLETE_OPERATOR_IDENTIFICATION_PROVEN
     assert report.theorem_complete is False
-    assert report.blocking_term == SINGLE_BLOCKING_TERM
+    assert report.blocking_term == ""
     assert report.next_target_theorem == SINGLE_THEOREM_GAP
-    assert "not proven zero" in report.exact_obstruction
+    assert "action-uniqueness" in report.exact_obstruction
 
 
 def test_final_v26_decision_uses_allowed_result_and_blocks_final_paper():
@@ -78,8 +77,8 @@ def test_final_v26_decision_uses_allowed_result_and_blocks_final_paper():
 
     assert decision.final_result == STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP
     assert decision.theorem_complete is False
-    assert decision.blocking_term == SINGLE_BLOCKING_TERM
-    assert decision.recommended_next_branch == "bhsm-v2.12-bundle-curvature-conditional-closure"
+    assert decision.blocking_term == ""
+    assert decision.recommended_next_branch == "bhsm-v2.13-complete-operator-action-uniqueness"
     assert decision.recommended_target_theorem == SINGLE_THEOREM_GAP
     assert decision.final_paper_allowed is False
 
@@ -99,9 +98,9 @@ def test_downstream_theorems_do_not_upgrade_from_v26_blocker():
     bhsm = build_full_bhsm_theorem_completion_report()
 
     assert ht.theorem_complete is False
-    assert ht.recommended_next_branch == "bhsm-v2.12-bundle-curvature-conditional-closure"
+    assert ht.recommended_next_branch == "bhsm-v2.13-complete-operator-action-uniqueness"
     assert ht.recommended_target_theorem == SINGLE_THEOREM_GAP
-    assert SINGLE_BLOCKING_TERM in ht.exact_obstruction
+    assert "complete operator" in ht.exact_obstruction.lower()
     assert bhsm.theorem_complete is False
     assert bhsm.final_paper_allowed is False
 

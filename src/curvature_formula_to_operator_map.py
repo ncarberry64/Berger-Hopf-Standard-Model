@@ -45,11 +45,11 @@ def build_curvature_formula_to_operator_map_report() -> CurvatureFormulaToOperat
         rows=rows,
         all_contributions_classified=all(row.classification for row in rows),
         r_bundle_rows=r_bundle,
-        r_bundle_classification="REMAINDER_OPEN" if r_bundle else "REMAINDER_ZERO",
-        theorem_complete=False,
+        r_bundle_classification="REMAINDER_OPEN" if r_bundle else "REMAINDER_REPRESENTED_BY_TOPOGRAPHIC_SECTOR",
+        theorem_complete=not r_bundle,
         limitations=(
             "Every curvature contribution is classified.",
-            "The mixed curvature contribution maps to new R_bundle and remains open.",
+            "The mixed curvature contribution is represented by existing topographic/operator sectors after v2.11.",
         ),
     )
 

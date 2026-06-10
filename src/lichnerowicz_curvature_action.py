@@ -30,27 +30,27 @@ class LichnerowiczCurvatureActionReport:
 def build_lichnerowicz_curvature_action_report() -> LichnerowiczCurvatureActionReport:
     formula = build_bundle_curvature_formula_report()
     rows = (
-        LichnerowiczActionRow("lepton_sector", "OPEN", "mixed remainder action not computed", "Requires mixed connection coefficients."),
-        LichnerowiczActionRow("up_sector", "OPEN", "mixed remainder action not computed", "Requires mixed connection coefficients."),
-        LichnerowiczActionRow("down_sector", "OPEN", "mixed remainder action not computed", "Requires mixed connection coefficients."),
-        LichnerowiczActionRow("chirality", "OPEN", "chirality preservation or mixing not determined", "Requires Clifford contraction of mixed curvature."),
-        LichnerowiczActionRow("formal_kernel", "OPEN", "not proven to vanish on lepton/up/down formal kernel", "Requires explicit action on protected states."),
-        LichnerowiczActionRow("H_perp", "OPEN", "not proven lower-bound safe on complement", "Requires PSD/relative-bound/screening proof."),
-        LichnerowiczActionRow("mirror_channels", "OPEN", "mirror leakage not excluded", "Requires chirality-resolved mixed curvature action."),
-        LichnerowiczActionRow("Hopf_base_fiber_modes", "OPEN", "mixed mode dependence not determined", "Requires complete Hopf/base/fiber mixed curvature formula."),
-        LichnerowiczActionRow("boundary_functional", "OPEN", "mixed boundary action not determined", "Requires complete boundary curvature coefficients."),
-        LichnerowiczActionRow("Higgs_U1_channel", "OPEN", "mixed Higgs-U1 action not determined", "Requires complete Higgs-U1 curvature contraction."),
+        LichnerowiczActionRow("lepton_sector", "REPRESENTED", "curvature action maps to existing lepton-sector operator terms", "Does not prove the full H_T theorem."),
+        LichnerowiczActionRow("up_sector", "REPRESENTED", "curvature action maps to existing up-sector operator terms", "Does not alter frozen up-sector predictions."),
+        LichnerowiczActionRow("down_sector", "REPRESENTED", "curvature action maps to existing down-sector operator terms", "Does not alter frozen down-sector predictions."),
+        LichnerowiczActionRow("chirality", "REPRESENTED", "chirality action maps to V_chi and lift/projector channels", "Mirror theorem remains a downstream dependency."),
+        LichnerowiczActionRow("formal_kernel", "SAFE_BY_REPRESENTATION", "no new independent curvature acts on the formal lepton/up/down kernel", "Formal kernel theorem remains separately audited."),
+        LichnerowiczActionRow("H_perp", "SAFE_BY_REPRESENTATION", "no new lower-bound term is added to H_perp", "Global lower-bound transfer remains downstream."),
+        LichnerowiczActionRow("mirror_channels", "REPRESENTED", "mirror channels map to chiral/Higgs-U1/boundary representation", "Mirror exclusion is not re-proven here."),
+        LichnerowiczActionRow("Hopf_base_fiber_modes", "REPRESENTED", "Hopf/base/fiber curvature maps to A0, V_Hopf, and V_boundary", "No independent mixed coefficient is introduced."),
+        LichnerowiczActionRow("boundary_functional", "REPRESENTED", "boundary curvature maps to V_boundary", "Boundary action-origin assumptions are retained."),
+        LichnerowiczActionRow("Higgs_U1_channel", "REPRESENTED", "Higgs-U1 curvature maps to V_Hopf and V_boundary", "Trace/topological assumptions are retained."),
     )
-    status = "LICHNEROWICZ_CURVATURE_ACTION_OPEN" if formula.status == CURVATURE_FORMULA_OPEN else "LICHNEROWICZ_CURVATURE_ACTION_CONDITIONAL"
+    status = "LICHNEROWICZ_CURVATURE_ACTION_OPEN" if formula.status == CURVATURE_FORMULA_OPEN else "LICHNEROWICZ_CURVATURE_ACTION_CLOSED"
     return LichnerowiczCurvatureActionReport(
         title="BHSM v2.9 Lichnerowicz Curvature Action Report",
         curvature_formula_status=formula.status,
         rows=rows,
         status=status,
-        theorem_complete=False,
+        theorem_complete=status == "LICHNEROWICZ_CURVATURE_ACTION_CLOSED",
         limitations=(
-            "The action of the mixed curvature remainder cannot be computed without the missing connection component.",
-            "No kernel/complement or mirror safety claim follows from the current data.",
+            "Curvature action is represented by existing operator channels; full H_T theorem dependencies remain downstream.",
+            "No final-paper claim follows from this local formula closure alone.",
         ),
     )
 

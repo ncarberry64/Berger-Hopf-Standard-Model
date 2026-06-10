@@ -1,20 +1,19 @@
 # BHSM v2.7 Complete-Operator Identification Closure Attempt
 
-Source status: `COMPLETE_OPERATOR_IDENTIFICATION_BLOCKED_BY_MISSING_TERM`
+Source status: `COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL_STRONG`
 Final status: `COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL`
 Theorem complete: `False`
-Next target theorem: `BUNDLE_CURVATURE_FORMULA_CONDITIONAL_GAP`
-Recommended next branch: `bhsm-v2.12-bundle-curvature-conditional-closure`
+Next target theorem: `COMPLETE_OPERATOR_ACTION_UNIQUENESS_GAP`
+Recommended next branch: `bhsm-v2.13-complete-operator-action-uniqueness`
 
 ## Blocking Components
 
 - `V`
 - `heat_lift_profile`
-- `lichnerowicz_bundle_curvature_remainder`
 
 ## Exact Obstruction
 
-The missing term `lichnerowicz_bundle_curvature_remainder` is not proven zero, screened/lifted, or represented by an existing A0+V term.
+The curvature formula is closed, but the complete operator remains action-uniqueness/perturbation-package conditional rather than proven from the full internal action.
 
 ## Limitations
 

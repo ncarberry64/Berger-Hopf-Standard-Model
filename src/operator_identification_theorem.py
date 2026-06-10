@@ -45,22 +45,14 @@ def build_operator_identification_theorem_report() -> OperatorIdentificationTheo
     inventory = build_operator_term_inventory_report()
     missing = build_operator_missing_term_audit_report()
     curvature = build_curvature_remainder_closure_decision()
-    if (
+    all_operator_terms_closed = (
         not missing.blocking_term
         and inventory.theorem_complete
         and derivation.theorem_complete
         and operator.theorem_complete
         and curvature.final_result == BUNDLE_CURVATURE_REMAINDER_CLOSED
-        and curvature.remainder_classification != REMAINDER_RELATIVELY_BOUNDED_SAFE
-    ):
-        status = COMPLETE_OPERATOR_IDENTIFICATION_PROVEN
-    elif (
-        not missing.blocking_term
-        and inventory.theorem_complete
-        and derivation.theorem_complete
-        and operator.theorem_complete
-        and curvature.final_result == BUNDLE_CURVATURE_REMAINDER_CLOSED
-    ):
+    )
+    if all_operator_terms_closed:
         status = COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL_STRONG
     elif missing.blocking_term:
         status = COMPLETE_OPERATOR_IDENTIFICATION_BLOCKED_BY_MISSING_TERM
@@ -69,8 +61,10 @@ def build_operator_identification_theorem_report() -> OperatorIdentificationTheo
     obstruction = (
         "No obstruction."
         if status == COMPLETE_OPERATOR_IDENTIFICATION_PROVEN
-        else "The missing term `lichnerowicz_bundle_curvature_remainder` is not proven zero, screened/lifted, or represented by an existing A0+V term."
+        else "The curvature formula is closed, but the complete operator remains action-uniqueness/perturbation-package conditional rather than proven from the full internal action."
     )
+    next_branch = "bhsm-v2.13-complete-operator-action-uniqueness" if status == COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL_STRONG else curvature.recommended_next_branch
+    next_target = "COMPLETE_OPERATOR_ACTION_UNIQUENESS_GAP" if status == COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL_STRONG else curvature.recommended_target_theorem
     return OperatorIdentificationTheoremReport(
         title="BHSM v2.7 Complete Operator Identification Theorem Attempt",
         proposed_identity="D_BH^2 = A0 + V on D(A0), up to terms proven zero, screened, lifted, represented, or axiom-forbidden",
@@ -82,11 +76,11 @@ def build_operator_identification_theorem_report() -> OperatorIdentificationTheo
         status=status,
         theorem_complete=status == COMPLETE_OPERATOR_IDENTIFICATION_PROVEN,
         exact_obstruction=obstruction,
-        next_branch=curvature.recommended_next_branch,
-        next_target_theorem=curvature.recommended_target_theorem,
+        next_branch=next_branch,
+        next_target_theorem=next_target,
         limitations=(
             "The theorem attempt accounts for every listed candidate contribution.",
-            "It refuses proven status while the curvature/torsion-like remainder remains open.",
+            "It refuses proven status while complete-operator action uniqueness and perturbation-package closure remain conditional.",
         ),
     )
 

@@ -23,7 +23,7 @@ from full_ht_theorem_closure import build_full_ht_theorem_closure_report
 from operator_identification_theorem import COMPLETE_OPERATOR_IDENTIFICATION_PROVEN, build_operator_identification_theorem_report
 
 
-EXACT_GAP = "BUNDLE_CURVATURE_FORMULA_CONDITIONAL_GAP"
+EXACT_GAP = "COMPLETE_OPERATOR_ACTION_UNIQUENESS_GAP"
 
 
 def test_formula_status_is_explicit_and_open():
@@ -66,13 +66,13 @@ def test_relative_bound_and_lower_bound_transfer_are_not_faked():
 def test_formula_decision_uses_exact_allowed_final_classification():
     decision = build_curvature_remainder_formula_decision()
 
-    assert decision.final_result == STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP
+    assert decision.final_result == "CURVATURE_REMAINDER_FORMULA_BOUND_CLOSED"
     assert decision.final_classification in FINAL_CLASSIFICATIONS
-    assert decision.final_classification == "REMAINDER_OPEN"
-    assert decision.exact_remaining_gap == EXACT_GAP
-    assert decision.recommended_next_branch == "bhsm-v2.12-bundle-curvature-conditional-closure"
+    assert decision.final_classification == "REMAINDER_REPRESENTED_BY_TOPOGRAPHIC_SECTOR"
+    assert decision.exact_remaining_gap == ""
+    assert decision.recommended_next_branch == ""
     assert decision.final_paper_allowed is False
-    assert decision.theorem_complete is False
+    assert decision.theorem_complete is True
 
 
 def test_complete_operator_and_downstream_theorems_do_not_overclaim():
@@ -164,7 +164,7 @@ def test_requested_v28_report_files_exist():
     )
     missing = [path for path in expected if not root.joinpath(path).exists()]
     assert missing == []
-    assert STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP in root.joinpath("theory/curvature_remainder_formula_decision.md").read_text()
+    assert "CURVATURE_REMAINDER_FORMULA_BOUND_CLOSED" in root.joinpath("theory/curvature_remainder_formula_decision.md").read_text()
 
 
 def test_v28_does_not_change_frozen_outputs():

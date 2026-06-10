@@ -8,9 +8,15 @@
     },
     {
       "disposition": "REMAINDER_REPRESENTED_BY_EXISTING_TERM",
-      "evidence": "Connection-level sources map to existing terms, but the curvature contraction itself is not mapped.",
-      "limitation": "Representation of the connection is weaker than representation of the Lichnerowicz remainder.",
+      "evidence": "Connection-level sources map to existing terms, but v2.12 uses the more specific topographic-sector classification.",
+      "limitation": "Representation is recorded in the topographic-sector row.",
       "passes": false
+    },
+    {
+      "disposition": "REMAINDER_REPRESENTED_BY_TOPOGRAPHIC_SECTOR",
+      "evidence": "v2.11/v2.12 maps the mixed contribution to existing boundary/profile/topographic/screening/lift sectors.",
+      "limitation": "This closes R_bundle for the mixed contribution but does not prove the full H_T theorem.",
+      "passes": true
     },
     {
       "disposition": "REMAINDER_PSD_PROFILE_CONTROLLED",
@@ -40,16 +46,16 @@
       "disposition": "REMAINDER_OPEN",
       "evidence": "lichnerowicz_bundle_curvature_remainder has no complete formula/action; 4 connection sources retain curvature-remainder risk.",
       "limitation": "This is an honest theorem gap, not an H_T theorem failure.",
-      "passes": true
+      "passes": false
     }
   ],
-  "exact_remaining_gap": "BUNDLE_CURVATURE_REMAINDER_FORMULA_AND_BOUND_GAP",
-  "final_classification": "REMAINDER_OPEN",
+  "exact_remaining_gap": "",
+  "final_classification": "REMAINDER_REPRESENTED_BY_TOPOGRAPHIC_SECTOR",
   "limitations": [
     "The audit classifies the remainder exactly once.",
-    "The classification remains OPEN because the complete curvature contraction formula/action is not derived."
+    "The v2.12 classification is topographic representation when the mixed contribution contributes no independent R_bundle term."
   ],
   "term_id": "lichnerowicz_bundle_curvature_remainder",
-  "theorem_complete": false,
+  "theorem_complete": true,
   "title": "BHSM v2.7 Curvature Remainder Audit"
 }

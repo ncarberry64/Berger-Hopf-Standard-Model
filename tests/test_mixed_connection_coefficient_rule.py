@@ -154,11 +154,11 @@ def test_full_ht_and_bhsm_package_do_not_overclaim():
     bhsm = build_full_bhsm_theorem_completion_report()
 
     assert ht.theorem_complete is False
-    assert ht.recommended_target_theorem == "BUNDLE_CURVATURE_FORMULA_CONDITIONAL_GAP"
-    assert ht.recommended_next_branch == "bhsm-v2.12-bundle-curvature-conditional-closure"
+    assert ht.recommended_target_theorem == "COMPLETE_OPERATOR_ACTION_UNIQUENESS_GAP"
+    assert ht.recommended_next_branch == "bhsm-v2.13-complete-operator-action-uniqueness"
     assert bhsm.theorem_complete is False
     assert bhsm.final_paper_allowed is False
-    assert bhsm.recommended_target_theorem == "BUNDLE_CURVATURE_FORMULA_CONDITIONAL_GAP"
+    assert bhsm.recommended_target_theorem == "COMPLETE_OPERATOR_ACTION_UNIQUENESS_GAP"
 
 
 def test_v211_modules_do_not_import_empirical_or_residual_machinery():

@@ -1,3 +1,28 @@
+# Unreleased / Development: v2.12 Bundle Curvature Formula Closure
+
+Branch: `bhsm-v2.12-bundle-curvature-formula-closure`
+
+The v2.12 branch closes the downstream
+`BUNDLE_CURVATURE_FORMULA_CONDITIONAL_GAP` by applying the v2.11
+`BUNDLE_CONNECTION_SEPARATION_WITH_TOPOGRAPHIC_REPRESENTATION` axiom to the
+remaining mixed Hopf/base/boundary/coframe curvature channel.
+
+Final result:
+
+- bundle curvature formula decision: `BUNDLE_CURVATURE_FORMULA_CLOSED`
+- term-map status: `BUNDLE_CURVATURE_TERM_MAP_CLOSED`
+- `R_bundle` classification: `REMAINDER_REPRESENTED_BY_TOPOGRAPHIC_SECTOR`
+- independent `R_bundle` contribution: none
+- lower-bound contribution added by the remainder: `0.0`
+- complete-operator status: `COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL_STRONG`
+- next blocker: `COMPLETE_OPERATOR_ACTION_UNIQUENESS_GAP`
+- final paper allowed: `False`
+
+This closure does not prove the full H_T theorem or the full BHSM theorem
+package. It only closes the bundle-curvature formula gap under the
+topographic-representation rule. Frozen predictions, canonical constants,
+frozen modes, tolerances, outputs, and virtual dressing are unchanged.
+
 # Unreleased / Development: v2.11 Mixed Connection Coefficient Rule
 
 Branch: `bhsm-v2.11-mixed-connection-coefficient-rule`

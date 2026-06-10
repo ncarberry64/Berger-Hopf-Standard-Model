@@ -1,15 +1,15 @@
 # BHSM v2.6 Operator Missing-Term Audit
 
-Status: `OPERATOR_MISSING_TERM_AUDIT_BLOCKED`
-Theorem complete: `False`
+Status: `OPERATOR_MISSING_TERM_AUDIT_CLEAN`
+Theorem complete: `True`
 Hidden missing terms: `False`
-Blocking term: `lichnerowicz_bundle_curvature_remainder`
-Unique blocking terms: `('lichnerowicz_bundle_curvature_remainder',)`
+Blocking term: ``
+Unique blocking terms: `()`
 
 | Audit | Candidate contribution | Disposition | Blocking | Evidence |
 | --- | --- | --- | --- | --- |
-| `connection_curvature_terms` | connection curvature terms | `OPEN` | `True` | v2.7 classification: REMAINDER_OPEN; v2.7 final result: STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP |
-| `torsion_like_terms` | torsion-like terms if applicable | `OPEN` | `True` | v2.7 classification: REMAINDER_OPEN; v2.7 final result: STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP |
+| `connection_curvature_terms` | connection curvature terms | `REPRESENTED_BY_EXISTING_TERM` | `False` | v2.7 classification: REMAINDER_REPRESENTED_BY_TOPOGRAPHIC_SECTOR; v2.7 final result: BUNDLE_CURVATURE_REMAINDER_CLOSED |
+| `torsion_like_terms` | torsion-like terms if applicable | `REPRESENTED_BY_EXISTING_TERM` | `False` | v2.7 classification: REMAINDER_REPRESENTED_BY_TOPOGRAPHIC_SECTOR; v2.7 final result: BUNDLE_CURVATURE_REMAINDER_CLOSED |
 | `bundle_connection_terms` | bundle connection terms | `REPRESENTED_BY_EXISTING_TERM` | `False` | v2.3 Higgs-U1 mirror channel and boundary/Hopf representation |
 | `sector_off_diagonal_terms` | sector off-diagonal terms | `REPRESENTED_BY_EXISTING_TERM` | `False` | v1.3-v2.1 sector coupling bound scaffolds represent this block |
 | `mirror_channel_terms` | mirror-channel terms | `REPRESENTED_BY_EXISTING_TERM` | `False` | v2.3 mirror-channel reports account for generated mirror candidates |

@@ -37,7 +37,7 @@ def build_complete_berger_hopf_operator_report() -> CompleteBergerHopfOperatorRe
         theorem_complete=not unresolved,
         limitations=(
             "The current decomposition accounts for the named scaffold terms.",
-            "Exact equality D_BH^2 = A0+V is blocked by unresolved bundle-curvature remainder accounting.",
+            "Exact equality D_BH^2 = A0+V remains conditional on complete-operator action uniqueness.",
         ),
     )
 

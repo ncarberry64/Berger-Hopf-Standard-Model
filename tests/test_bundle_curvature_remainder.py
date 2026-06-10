@@ -10,6 +10,7 @@ from curvature_remainder_audit import (
     FINAL_REMAINDER_CLASSIFICATIONS,
     REMAINDER_OPEN,
     REMAINDER_REAL_MISSING_TERM,
+    REMAINDER_REPRESENTED_BY_TOPOGRAPHIC_SECTOR,
     build_curvature_remainder_audit_report,
     export_curvature_remainder_audit_json,
     export_curvature_remainder_audit_markdown,
@@ -30,7 +31,7 @@ from operator_identification_theorem import COMPLETE_OPERATOR_IDENTIFICATION_PRO
 from operator_term_inventory import build_operator_term_inventory_report
 
 
-EXACT_GAP = "BUNDLE_CURVATURE_FORMULA_CONDITIONAL_GAP"
+EXACT_GAP = "COMPLETE_OPERATOR_ACTION_UNIQUENESS_GAP"
 
 
 def test_lichnerowicz_remainder_inventory_is_explicit():
@@ -52,38 +53,38 @@ def test_bundle_connection_sources_are_inventoried_but_not_closed():
     assert report.unresolved_components
 
 
-def test_remainder_is_classified_exactly_once_as_open():
+def test_remainder_is_classified_exactly_once_as_topographic_representation():
     report = build_curvature_remainder_audit_report()
     passing = [row.disposition for row in report.checks if row.passes]
 
     assert report.term_id == REMAINDER_TERM_ID
     assert report.final_classification in FINAL_REMAINDER_CLASSIFICATIONS
-    assert report.final_classification == REMAINDER_OPEN
-    assert passing == [REMAINDER_OPEN]
-    assert report.exact_remaining_gap == "BUNDLE_CURVATURE_REMAINDER_FORMULA_AND_BOUND_GAP"
-    assert report.theorem_complete is False
+    assert report.final_classification == REMAINDER_REPRESENTED_BY_TOPOGRAPHIC_SECTOR
+    assert passing == [REMAINDER_REPRESENTED_BY_TOPOGRAPHIC_SECTOR]
+    assert report.exact_remaining_gap == ""
+    assert report.theorem_complete is True
 
 
-def test_bound_report_does_not_recompute_lower_bound_for_open_remainder():
+def test_bound_report_does_not_add_new_lower_bound_term_for_represented_remainder():
     report = build_curvature_remainder_bound_report()
 
-    assert report.remainder_classification == REMAINDER_OPEN
-    assert report.a_remainder is None
-    assert report.b_remainder is None
-    assert report.a_total is None
-    assert report.lower_bound_recomputed is False
-    assert report.lower_bound_safe is False
-    assert report.theorem_complete is False
+    assert report.remainder_classification == REMAINDER_REPRESENTED_BY_TOPOGRAPHIC_SECTOR
+    assert report.a_remainder == 0.0
+    assert report.b_remainder == 0.0
+    assert report.a_total == 0.0
+    assert report.lower_bound_recomputed is True
+    assert report.lower_bound_safe is True
+    assert report.theorem_complete is True
 
 
-def test_closure_decision_names_next_gap_without_failure_overclaim():
+def test_closure_decision_closes_remainder_without_final_paper_overclaim():
     report = build_curvature_remainder_closure_decision()
 
-    assert report.final_result == STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP
+    assert report.final_result == "BUNDLE_CURVATURE_REMAINDER_CLOSED"
     assert report.final_result != BHSM_THEOREM_FAILURE
-    assert report.remainder_classification == REMAINDER_OPEN
-    assert report.exact_remaining_gap == EXACT_GAP
-    assert report.recommended_next_branch == "bhsm-v2.12-bundle-curvature-conditional-closure"
+    assert report.remainder_classification == REMAINDER_REPRESENTED_BY_TOPOGRAPHIC_SECTOR
+    assert report.exact_remaining_gap == ""
+    assert report.recommended_next_branch == ""
     assert report.final_paper_allowed is False
 
 
@@ -95,8 +96,8 @@ def test_complete_operator_cannot_be_proven_while_remainder_open():
     assert theorem.status != COMPLETE_OPERATOR_IDENTIFICATION_PROVEN
     assert theorem.theorem_complete is False
     assert decision.final_result == STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP
-    assert inventory.required_open_or_missing_terms == (REMAINDER_TERM_ID,)
-    assert inventory.theorem_complete is False
+    assert inventory.required_open_or_missing_terms == ()
+    assert inventory.theorem_complete is True
 
 
 def test_downstream_full_ht_and_bhsm_do_not_upgrade_from_curvature_gap():
@@ -105,7 +106,7 @@ def test_downstream_full_ht_and_bhsm_do_not_upgrade_from_curvature_gap():
 
     assert ht.theorem_complete is False
     assert ht.recommended_target_theorem == EXACT_GAP
-    assert ht.recommended_next_branch == "bhsm-v2.12-bundle-curvature-conditional-closure"
+    assert ht.recommended_next_branch == "bhsm-v2.13-complete-operator-action-uniqueness"
     assert bhsm.theorem_complete is False
     assert bhsm.final_paper_allowed is False
 
@@ -178,7 +179,7 @@ def test_requested_v27_report_files_exist():
     )
     missing = [path for path in expected if not root.joinpath(path).exists()]
     assert missing == []
-    assert STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP in root.joinpath("theory/curvature_remainder_closure_decision.md").read_text()
+    assert "BUNDLE_CURVATURE_REMAINDER_CLOSED" in root.joinpath("theory/curvature_remainder_closure_decision.md").read_text()
 
 
 def test_v27_does_not_change_frozen_outputs():

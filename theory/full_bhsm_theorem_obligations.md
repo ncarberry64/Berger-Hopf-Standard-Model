@@ -82,3 +82,9 @@
 - `MIXED_CONNECTION_COEFFICIENT_RULE_GAP` is closed under `BUNDLE_CONNECTION_SEPARATION_WITH_TOPOGRAPHIC_REPRESENTATION`.
 - The mixed Hopf/base/boundary/coframe contribution is represented through existing boundary/profile/topographic/screening/lift sectors, not as a new free coefficient.
 - Final theorem completion remains blocked by downstream conditional bundle-curvature/formula obligations; final paper preparation remains disallowed.
+
+## v2.12 Bundle Curvature Formula Closure
+
+- `BUNDLE_CURVATURE_FORMULA_CONDITIONAL_GAP` is closed under `BUNDLE_CONNECTION_SEPARATION_WITH_TOPOGRAPHIC_REPRESENTATION`.
+- The independent `R_bundle` channel is represented by the topographic/profile sector, not added as a new lower-bound term.
+- Full H_T theorem completion remains blocked by `COMPLETE_OPERATOR_ACTION_UNIQUENESS_GAP`; final paper preparation remains disallowed.

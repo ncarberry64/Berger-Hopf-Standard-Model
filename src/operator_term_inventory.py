@@ -12,6 +12,7 @@ from curvature_remainder_audit import (
     REMAINDER_REAL_MISSING_TERM,
     REMAINDER_RELATIVELY_BOUNDED_SAFE,
     REMAINDER_REPRESENTED_BY_EXISTING_TERM,
+    REMAINDER_REPRESENTED_BY_TOPOGRAPHIC_SECTOR,
     REMAINDER_SCREENED_OR_LIFTED,
     REMAINDER_ZERO,
 )
@@ -67,6 +68,7 @@ def complete_operator_terms() -> tuple[OperatorTerm, ...]:
     curvature_classification = {
         REMAINDER_ZERO: DERIVED_ZERO_OR_CANCELLED,
         REMAINDER_REPRESENTED_BY_EXISTING_TERM: REPRESENTED_BY_EXISTING_TERM,
+        REMAINDER_REPRESENTED_BY_TOPOGRAPHIC_SECTOR: REPRESENTED_BY_EXISTING_TERM,
         REMAINDER_PSD_PROFILE_CONTROLLED: REPRESENTED_BY_EXISTING_TERM,
         REMAINDER_SCREENED_OR_LIFTED: DERIVED_SCREENED_OR_LIFTED,
         REMAINDER_RELATIVELY_BOUNDED_SAFE: CONDITIONAL_IDENTIFICATION,
@@ -119,7 +121,7 @@ def build_operator_term_inventory_report() -> OperatorTermInventoryReport:
         theorem_complete=not blocking,
         limitations=(
             "Every listed term has an explicit classification.",
-            "The Lichnerowicz/bundle-curvature remainder is not hidden; v2.7 keeps it open until a formula/bound theorem is supplied.",
+            "The Lichnerowicz/bundle-curvature remainder is not hidden; v2.12 maps it through the topographic representation rule when closed.",
         ),
     )
 

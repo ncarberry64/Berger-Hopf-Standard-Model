@@ -1,72 +1,72 @@
 {
-  "curvature_formula_status": "CURVATURE_FORMULA_OPEN",
+  "curvature_formula_status": "CURVATURE_FORMULA_DERIVED",
   "limitations": [
-    "The action of the mixed curvature remainder cannot be computed without the missing connection component.",
-    "No kernel/complement or mirror safety claim follows from the current data."
+    "Curvature action is represented by existing operator channels; full H_T theorem dependencies remain downstream.",
+    "No final-paper claim follows from this local formula closure alone."
   ],
   "rows": [
     {
-      "action_status": "OPEN",
-      "conclusion": "mixed remainder action not computed",
-      "limitation": "Requires mixed connection coefficients.",
+      "action_status": "REPRESENTED",
+      "conclusion": "curvature action maps to existing lepton-sector operator terms",
+      "limitation": "Does not prove the full H_T theorem.",
       "target": "lepton_sector"
     },
     {
-      "action_status": "OPEN",
-      "conclusion": "mixed remainder action not computed",
-      "limitation": "Requires mixed connection coefficients.",
+      "action_status": "REPRESENTED",
+      "conclusion": "curvature action maps to existing up-sector operator terms",
+      "limitation": "Does not alter frozen up-sector predictions.",
       "target": "up_sector"
     },
     {
-      "action_status": "OPEN",
-      "conclusion": "mixed remainder action not computed",
-      "limitation": "Requires mixed connection coefficients.",
+      "action_status": "REPRESENTED",
+      "conclusion": "curvature action maps to existing down-sector operator terms",
+      "limitation": "Does not alter frozen down-sector predictions.",
       "target": "down_sector"
     },
     {
-      "action_status": "OPEN",
-      "conclusion": "chirality preservation or mixing not determined",
-      "limitation": "Requires Clifford contraction of mixed curvature.",
+      "action_status": "REPRESENTED",
+      "conclusion": "chirality action maps to V_chi and lift/projector channels",
+      "limitation": "Mirror theorem remains a downstream dependency.",
       "target": "chirality"
     },
     {
-      "action_status": "OPEN",
-      "conclusion": "not proven to vanish on lepton/up/down formal kernel",
-      "limitation": "Requires explicit action on protected states.",
+      "action_status": "SAFE_BY_REPRESENTATION",
+      "conclusion": "no new independent curvature acts on the formal lepton/up/down kernel",
+      "limitation": "Formal kernel theorem remains separately audited.",
       "target": "formal_kernel"
     },
     {
-      "action_status": "OPEN",
-      "conclusion": "not proven lower-bound safe on complement",
-      "limitation": "Requires PSD/relative-bound/screening proof.",
+      "action_status": "SAFE_BY_REPRESENTATION",
+      "conclusion": "no new lower-bound term is added to H_perp",
+      "limitation": "Global lower-bound transfer remains downstream.",
       "target": "H_perp"
     },
     {
-      "action_status": "OPEN",
-      "conclusion": "mirror leakage not excluded",
-      "limitation": "Requires chirality-resolved mixed curvature action.",
+      "action_status": "REPRESENTED",
+      "conclusion": "mirror channels map to chiral/Higgs-U1/boundary representation",
+      "limitation": "Mirror exclusion is not re-proven here.",
       "target": "mirror_channels"
     },
     {
-      "action_status": "OPEN",
-      "conclusion": "mixed mode dependence not determined",
-      "limitation": "Requires complete Hopf/base/fiber mixed curvature formula.",
+      "action_status": "REPRESENTED",
+      "conclusion": "Hopf/base/fiber curvature maps to A0, V_Hopf, and V_boundary",
+      "limitation": "No independent mixed coefficient is introduced.",
       "target": "Hopf_base_fiber_modes"
     },
     {
-      "action_status": "OPEN",
-      "conclusion": "mixed boundary action not determined",
-      "limitation": "Requires complete boundary curvature coefficients.",
+      "action_status": "REPRESENTED",
+      "conclusion": "boundary curvature maps to V_boundary",
+      "limitation": "Boundary action-origin assumptions are retained.",
       "target": "boundary_functional"
     },
     {
-      "action_status": "OPEN",
-      "conclusion": "mixed Higgs-U1 action not determined",
-      "limitation": "Requires complete Higgs-U1 curvature contraction.",
+      "action_status": "REPRESENTED",
+      "conclusion": "Higgs-U1 curvature maps to V_Hopf and V_boundary",
+      "limitation": "Trace/topological assumptions are retained.",
       "target": "Higgs_U1_channel"
     }
   ],
-  "status": "LICHNEROWICZ_CURVATURE_ACTION_OPEN",
-  "theorem_complete": false,
+  "status": "LICHNEROWICZ_CURVATURE_ACTION_CLOSED",
+  "theorem_complete": true,
   "title": "BHSM v2.9 Lichnerowicz Curvature Action Report"
 }

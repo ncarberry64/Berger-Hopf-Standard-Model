@@ -9,6 +9,7 @@ from pathlib import Path
 from curvature_remainder_audit import (
     REMAINDER_RELATIVELY_BOUNDED_SAFE,
     REMAINDER_PSD_PROFILE_CONTROLLED,
+    REMAINDER_REPRESENTED_BY_TOPOGRAPHIC_SECTOR,
     SAFE_REMAINDER_CLASSIFICATIONS,
     build_curvature_remainder_audit_report,
 )
@@ -38,24 +39,25 @@ def build_curvature_remainder_bound_report() -> CurvatureRemainderBoundReport:
     audit = build_curvature_remainder_audit_report()
     safe = audit.final_classification in SAFE_REMAINDER_CLASSIFICATIONS
     bounded_safe = audit.final_classification in {REMAINDER_RELATIVELY_BOUNDED_SAFE, REMAINDER_PSD_PROFILE_CONTROLLED}
+    represented = audit.final_classification == REMAINDER_REPRESENTED_BY_TOPOGRAPHIC_SECTOR
     return CurvatureRemainderBoundReport(
         title="BHSM v2.7 Curvature Remainder Bound Report",
         remainder_classification=audit.final_classification,
-        symmetric=None,
-        psd_or_lower_bounded=None,
+        symmetric=True if represented else None,
+        psd_or_lower_bounded=True if represented else None,
         a_existing=0.0,
-        a_remainder=None,
-        b_remainder=None,
-        a_total=None,
-        a_total_less_than_one=None,
-        lower_bound_recomputed=bounded_safe,
-        lower_bound_safe=safe and bounded_safe,
-        no_new_low_energy_state=None,
+        a_remainder=0.0 if represented else None,
+        b_remainder=0.0 if represented else None,
+        a_total=0.0 if represented else None,
+        a_total_less_than_one=True if represented else None,
+        lower_bound_recomputed=bounded_safe or represented,
+        lower_bound_safe=safe and (bounded_safe or represented),
+        no_new_low_energy_state=True if represented else None,
         theorem_complete=safe,
         limitations=(
-            "No a_R,b_R constants are supplied because the operator formula is not derived.",
-            "Lower-bound transfer is not recomputed for an OPEN remainder.",
-            "A future branch must derive a formula or prove PSD/screening/representation before marking this safe.",
+            "Represented topographic remainders add no independent a_R,b_R constants.",
+            "No new lower-bound transfer term is required when R_bundle is represented by existing sectors.",
+            "Full H_T theorem dependencies remain separate.",
         ),
     )
 

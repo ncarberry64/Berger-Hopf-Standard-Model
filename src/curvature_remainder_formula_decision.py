@@ -7,6 +7,7 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 
 from curvature_remainder_audit import REMAINDER_OPEN
+from curvature_remainder_after_mixed_rule import build_curvature_remainder_after_mixed_rule_report
 from curvature_remainder_basis_action import REMAINDER_BASIS_ACTION_OPEN, build_curvature_remainder_basis_action_report
 from curvature_remainder_formula import REMAINDER_FORMULA_OPEN, build_curvature_remainder_formula_report
 from curvature_remainder_kernel_action import REMAINDER_KERNEL_COMPLEMENT_OPEN, build_curvature_remainder_kernel_action_report
@@ -26,6 +27,7 @@ BHSM_THEOREM_FAILURE = "BHSM_THEOREM_FAILURE"
 FINAL_CLASSIFICATIONS = {
     "REMAINDER_ZERO",
     "REMAINDER_REPRESENTED_BY_EXISTING_TERM",
+    "REMAINDER_REPRESENTED_BY_TOPOGRAPHIC_SECTOR",
     "REMAINDER_PSD_PROFILE_CONTROLLED",
     "REMAINDER_SCREENED_OR_LIFTED",
     "REMAINDER_RELATIVELY_BOUNDED_SAFE",
@@ -59,8 +61,9 @@ def build_curvature_remainder_formula_decision() -> CurvatureRemainderFormulaDec
     relative = build_curvature_remainder_relative_bound_report()
     transfer = build_curvature_remainder_lower_bound_transfer_report()
     bundle = build_bundle_curvature_closure_decision()
+    after_mixed = build_curvature_remainder_after_mixed_rule_report()
     if bundle.final_result == COMPLETE_BUNDLE_CONNECTION_CURVATURE_CLOSED:
-        final_classification = "REMAINDER_RELATIVELY_BOUNDED_SAFE"
+        final_classification = after_mixed.r_bundle_classification
         final_result = CURVATURE_REMAINDER_FORMULA_BOUND_CLOSED
         operator_status = "COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL_STRONG"
     elif bundle.final_result == BUNDLE_BHSM_THEOREM_FAILURE or transfer.ht_survives_if_included is False:
@@ -89,8 +92,8 @@ def build_curvature_remainder_formula_decision() -> CurvatureRemainderFormulaDec
         final_paper_allowed=False,
         theorem_complete=final_result == CURVATURE_REMAINDER_FORMULA_BOUND_CLOSED,
         limitations=(
-            "The formal Lichnerowicz expression is written, but the complete BHSM bundle connection curvature formula is not derived.",
-            "No zero, represented, PSD, screened, or relatively bounded classification is adopted without the missing formula/action.",
+            "The formal Lichnerowicz expression is mapped through the v2.12 bundle curvature formula closure.",
+            "No new independent lower-bound term is introduced by the represented mixed curvature contribution.",
             "Final paper preparation remains blocked.",
         ),
     )

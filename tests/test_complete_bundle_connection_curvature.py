@@ -18,7 +18,7 @@ from bundle_curvature_closure_decision import (
     export_bundle_curvature_closure_decision_json,
     export_bundle_curvature_closure_decision_markdown,
 )
-from bundle_curvature_formula import CURVATURE_FORMULA_CONDITIONAL, build_bundle_curvature_formula_report, export_bundle_curvature_formula_json, export_bundle_curvature_formula_markdown
+from bundle_curvature_formula import CURVATURE_FORMULA_DERIVED, build_bundle_curvature_formula_report, export_bundle_curvature_formula_json, export_bundle_curvature_formula_markdown
 from complete_bundle_connection import build_complete_bundle_connection_report, export_complete_bundle_connection_json, export_complete_bundle_connection_markdown
 from constants import S_OVERLAP
 from curvature_formula_to_operator_map import build_curvature_formula_to_operator_map_report, export_curvature_formula_to_operator_map_json, export_curvature_formula_to_operator_map_markdown
@@ -29,7 +29,7 @@ from lichnerowicz_curvature_action import build_lichnerowicz_curvature_action_re
 from operator_identification_theorem import COMPLETE_OPERATOR_IDENTIFICATION_PROVEN, build_operator_identification_theorem_report
 
 
-EXACT_GAP = "BUNDLE_CURVATURE_FORMULA_CONDITIONAL_GAP"
+EXACT_GAP = "COMPLETE_OPERATOR_ACTION_UNIQUENESS_GAP"
 MISSING_COMPONENT = "mixed_hopf_base_boundary_coframe_connection"
 REMAINING_COMPONENT = "mirror_channel_connection"
 
@@ -59,34 +59,33 @@ def test_every_curvature_contribution_is_mapped_and_remainder_is_open_once():
     report = build_bundle_curvature_formula_report()
     mapping = build_curvature_formula_to_operator_map_report()
 
-    assert report.status == CURVATURE_FORMULA_CONDITIONAL
+    assert report.status == CURVATURE_FORMULA_DERIVED
     assert report.all_contributions_mapped is True
     assert report.open_contributions == ()
     assert mapping.all_contributions_classified is True
     assert mapping.r_bundle_rows == ()
-    assert mapping.r_bundle_classification == "REMAINDER_ZERO"
+    assert mapping.r_bundle_classification == "REMAINDER_REPRESENTED_BY_TOPOGRAPHIC_SECTOR"
 
 
 def test_lichnerowicz_action_is_open_on_required_targets():
     report = build_lichnerowicz_curvature_action_report()
     targets = {row.target for row in report.rows}
 
-    assert report.status == "LICHNEROWICZ_CURVATURE_ACTION_CONDITIONAL"
+    assert report.status == "LICHNEROWICZ_CURVATURE_ACTION_CLOSED"
     assert {"lepton_sector", "up_sector", "down_sector", "formal_kernel", "H_perp", "mirror_channels"}.issubset(targets)
-    assert all(row.action_status == "OPEN" for row in report.rows)
-    assert report.theorem_complete is False
+    assert all(row.action_status != "OPEN" for row in report.rows)
+    assert report.theorem_complete is True
 
 
 def test_bundle_curvature_closure_decision_names_next_gap_without_overclaim():
     report = build_bundle_curvature_closure_decision()
 
-    assert report.final_result == STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP
-    assert report.final_result != COMPLETE_BUNDLE_CONNECTION_CURVATURE_CLOSED
-    assert report.exact_remaining_gap == EXACT_GAP
+    assert report.final_result == COMPLETE_BUNDLE_CONNECTION_CURVATURE_CLOSED
+    assert report.exact_remaining_gap == ""
     assert report.exact_missing_component == ""
-    assert report.recommended_next_branch == "bhsm-v2.12-bundle-curvature-conditional-closure"
+    assert report.recommended_next_branch == ""
     assert report.final_paper_allowed is False
-    assert report.theorem_complete is False
+    assert report.theorem_complete is True
 
 
 def test_complete_operator_and_full_ht_do_not_upgrade_from_missing_mixed_connection():
@@ -174,7 +173,7 @@ def test_requested_v29_report_files_exist():
     )
     missing = [path for path in expected if not root.joinpath(path).exists()]
     assert missing == []
-    assert STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP in root.joinpath("theory/bundle_curvature_closure_decision.md").read_text()
+    assert COMPLETE_BUNDLE_CONNECTION_CURVATURE_CLOSED in root.joinpath("theory/bundle_curvature_closure_decision.md").read_text()
 
 
 def test_v29_does_not_change_frozen_outputs():

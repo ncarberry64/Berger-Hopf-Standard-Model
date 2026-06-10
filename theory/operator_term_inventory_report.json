@@ -2,12 +2,10 @@
   "all_terms_classified": true,
   "limitations": [
     "Every listed term has an explicit classification.",
-    "The Lichnerowicz/bundle-curvature remainder is not hidden; v2.7 keeps it open until a formula/bound theorem is supplied."
+    "The Lichnerowicz/bundle-curvature remainder is not hidden; v2.12 maps it through the topographic representation rule when closed."
   ],
-  "required_open_or_missing_terms": [
-    "lichnerowicz_bundle_curvature_remainder"
-  ],
-  "status": "OPERATOR_TERM_INVENTORY_BLOCKED",
+  "required_open_or_missing_terms": [],
+  "status": "OPERATOR_TERM_INVENTORY_COMPLETE",
   "terms": [
     {
       "classification": "DERIVED_AND_INCLUDED",
@@ -142,18 +140,18 @@
       "term_id": "mirror_channel_terms"
     },
     {
-      "classification": "OPEN",
+      "classification": "REPRESENTED_BY_EXISTING_TERM",
       "evidence": [
-        "v2.7 classification: REMAINDER_OPEN",
-        "v2.7 final result: STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP"
+        "v2.7 classification: REMAINDER_REPRESENTED_BY_TOPOGRAPHIC_SECTOR",
+        "v2.7 final result: BUNDLE_CURVATURE_REMAINDER_CLOSED"
       ],
-      "limitation": "Single missing complete-operator identification theorem gap remains: MIXED_CONNECTION_COEFFICIENT_RULE_GAP.",
-      "represented_by": "not represented by a proven existing term",
+      "limitation": "Curvature remainder is closed by the v2.7 audit.",
+      "represented_by": "closed by v2.7 curvature remainder decision",
       "required_for_ht": true,
       "role": "possible curvature/remainder term in squaring the complete twisted Dirac/bundle operator",
       "term_id": "lichnerowicz_bundle_curvature_remainder"
     }
   ],
-  "theorem_complete": false,
+  "theorem_complete": true,
   "title": "BHSM v2.7 Complete Operator Term Inventory Report"
 }
