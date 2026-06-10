@@ -9,7 +9,8 @@ from pathlib import Path
 from formal_complement_projector import FORMAL_COMPLEMENT_PROJECTOR_PROVEN, build_formal_complement_projector_report
 from graph_norm_domain import GRAPH_NORM_DOMAIN_PROVEN, build_graph_norm_domain_report
 from perturbation_closure_decision import KATO_RELLICH_CLOSURE_CONDITIONAL, build_perturbation_closure_decision
-from perturbation_projector_commutator import PROJECTOR_COMMUTATORS_CONDITIONAL, PROJECTOR_COMMUTATORS_CONTROLLED, build_perturbation_projector_commutator_report
+from perturbation_projector_commutator import PROJECTOR_COMMUTATORS_CONTROLLED
+from projector_commutator_closure import build_projector_commutator_closure_report
 
 
 PROJECTOR_GRAPH_DOMAIN_STABILITY_PROVEN = "PROJECTOR_GRAPH_DOMAIN_STABILITY_PROVEN"
@@ -41,17 +42,16 @@ def build_projector_graph_domain_stability_report() -> ProjectorGraphDomainStabi
     complement = build_formal_complement_projector_report()
     graph = build_graph_norm_domain_report()
     perturbation = build_perturbation_closure_decision()
-    commutator = build_perturbation_projector_commutator_report()
+    commutator = build_projector_commutator_closure_report()
     a0_ok = complement.status == FORMAL_COMPLEMENT_PROJECTOR_PROVEN and graph.status == GRAPH_NORM_DOMAIN_PROVEN
-    v_ok = perturbation.kato_rellich_status == KATO_RELLICH_CLOSURE_CONDITIONAL and commutator.status in {PROJECTOR_COMMUTATORS_CONDITIONAL, PROJECTOR_COMMUTATORS_CONTROLLED}
-    proven = a0_ok and commutator.status == PROJECTOR_COMMUTATORS_CONTROLLED
-    status = PROJECTOR_GRAPH_DOMAIN_STABILITY_PROVEN if proven else PROJECTOR_GRAPH_DOMAIN_STABILITY_CONDITIONAL if a0_ok and v_ok else PROJECTOR_GRAPH_DOMAIN_STABILITY_OPEN
+    v_ok = perturbation.kato_rellich_status == KATO_RELLICH_CLOSURE_CONDITIONAL and commutator.final_status == PROJECTOR_COMMUTATORS_CONTROLLED
+    status = PROJECTOR_GRAPH_DOMAIN_STABILITY_CONDITIONAL if a0_ok and v_ok else PROJECTOR_GRAPH_DOMAIN_STABILITY_OPEN
     return ProjectorGraphDomainStabilityReport(
         title="BHSM v2.4 Projector Graph-Domain Stability Report",
         complement_projector_status=complement.status,
         graph_norm_domain_status=graph.status,
         perturbation_domain_status=perturbation.kato_rellich_status,
-        commutator_status=commutator.status,
+        commutator_status=commutator.final_status,
         Pperp_DA0_subset_DA0=a0_ok,
         Pperp_DA0V_subset_DA0V=v_ok,
         graph_norm_continuity=a0_ok,
@@ -62,7 +62,6 @@ def build_projector_graph_domain_stability_report() -> ProjectorGraphDomainStabi
         theorem_complete=status == PROJECTOR_GRAPH_DOMAIN_STABILITY_PROVEN,
         open_obligations=(
             "upgrade conditional P_perp D(A0+V) stability to a complete-operator graph-domain proof",
-            "prove all nonzero [P_perp,V] commutators in the complete twisted Dirac/bundle domain",
         ),
         limitations=(
             "P_perp graph-domain stability is explicit for A0 and conditional for A0+V.",

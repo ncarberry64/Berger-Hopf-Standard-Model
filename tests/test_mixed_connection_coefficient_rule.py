@@ -25,7 +25,7 @@ from coframe_compatibility_rule import (
 from constants import S_OVERLAP
 from formal_kernel_projector import DEFAULT_FORMAL_COORDINATES, OLD_COORDINATE_FIRST_KERNEL, formal_kernel_basis_vectors
 from full_bhsm_theorem_completion import build_full_bhsm_theorem_completion_report
-from full_ht_theorem_closure import PROJECTOR_COMMUTATOR_CONTROL_GAP, build_full_ht_theorem_closure_report
+from full_ht_theorem_closure import PROJECTOR_GRAPH_DOMAIN_STABILITY_GAP, build_full_ht_theorem_closure_report
 from hopf_base_mixed_rule import (
     HOPF_BASE_MIXED_OPEN,
     build_hopf_base_mixed_rule_report,
@@ -154,11 +154,11 @@ def test_full_ht_and_bhsm_package_do_not_overclaim():
     bhsm = build_full_bhsm_theorem_completion_report()
 
     assert ht.theorem_complete is False
-    assert ht.recommended_target_theorem == PROJECTOR_COMMUTATOR_CONTROL_GAP
-    assert ht.recommended_next_branch == "bhsm-v2.14-projector-commutator-control"
+    assert ht.recommended_target_theorem == PROJECTOR_GRAPH_DOMAIN_STABILITY_GAP
+    assert ht.recommended_next_branch == "bhsm-v2.15-projector-graph-domain-stability"
     assert bhsm.theorem_complete is False
     assert bhsm.final_paper_allowed is False
-    assert bhsm.recommended_target_theorem == PROJECTOR_COMMUTATOR_CONTROL_GAP
+    assert bhsm.recommended_target_theorem == PROJECTOR_GRAPH_DOMAIN_STABILITY_GAP
 
 
 def test_v211_modules_do_not_import_empirical_or_residual_machinery():

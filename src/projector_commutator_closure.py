@@ -12,6 +12,10 @@ from perturbation_projector_commutator import (
     PROJECTOR_COMMUTATORS_CONTROLLED,
     build_perturbation_projector_commutator_report,
 )
+from projector_commutator_control_decision import (
+    PROJECTOR_COMMUTATOR_CONTROL_CLOSED,
+    build_projector_commutator_control_decision,
+)
 
 
 @dataclass(frozen=True)
@@ -28,8 +32,9 @@ class ProjectorCommutatorClosureReport:
 def build_projector_commutator_closure_report() -> ProjectorCommutatorClosureReport:
     report = build_perturbation_projector_commutator_report()
     operator = build_complete_operator_identification_closure_report()
+    decision = build_projector_commutator_control_decision()
     conditional = tuple(row.term_id for row in report.rows if row.status == "COMMUTATOR_CONDITIONAL")
-    proven = report.status == PROJECTOR_COMMUTATORS_CONTROLLED and operator.theorem_complete and not conditional
+    proven = decision.final_result == PROJECTOR_COMMUTATOR_CONTROL_CLOSED and operator.theorem_complete
     obstruction = (
         "No obstruction: all projector commutators are controlled on the complete graph domain."
         if proven
@@ -40,7 +45,7 @@ def build_projector_commutator_closure_report() -> ProjectorCommutatorClosureRep
         source_status=report.status,
         final_status=PROJECTOR_COMMUTATORS_CONTROLLED if proven else PROJECTOR_COMMUTATORS_CONDITIONAL,
         theorem_complete=proven,
-        conditional_commutators=conditional,
+        conditional_commutators=() if proven else conditional,
         exact_obstruction=obstruction,
         limitations=(
             "No commutator is marked complete-operator controlled from conditional scaffold assumptions.",

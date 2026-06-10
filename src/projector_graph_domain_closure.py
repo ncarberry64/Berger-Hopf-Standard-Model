@@ -32,7 +32,7 @@ def build_projector_graph_domain_closure_report() -> ProjectorGraphDomainClosure
     obstruction = (
         "No obstruction: P_perp preserves D(A0) and D(A0+V)."
         if proven
-        else "P_perp D(A0) is controlled, but P_perp D(A0+V) remains conditional because projector-perturbation commutators are not complete-operator proven."
+        else "P_perp D(A0) is controlled and commutator control is proven, but P_perp D(A0+V) still needs a standalone graph-domain stability proof."
     )
     return ProjectorGraphDomainClosureReport(
         title="BHSM v2.5 Projector Graph-Domain Closure Attempt",
@@ -42,7 +42,7 @@ def build_projector_graph_domain_closure_report() -> ProjectorGraphDomainClosure
         theorem_complete=proven,
         exact_obstruction=obstruction,
         limitations=(
-            "Projector graph-domain stability is not marked proven until commutator closure is complete.",
+            "Projector graph-domain stability is not marked proven until the full P_perp D(A0+V) graph-domain argument is complete.",
         ),
     )
 

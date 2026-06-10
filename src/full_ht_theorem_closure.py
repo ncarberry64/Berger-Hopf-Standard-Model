@@ -80,7 +80,7 @@ def build_full_ht_theorem_closure_report() -> FullHTTheoremClosureReport:
             obstruction = comm.exact_obstruction
         elif projector.final_status != PROJECTOR_GRAPH_DOMAIN_STABILITY_PROVEN:
             gap = PROJECTOR_GRAPH_DOMAIN_STABILITY_GAP
-            branch = "bhsm-v2.14-projector-graph-domain-stability"
+            branch = "bhsm-v2.15-projector-graph-domain-stability"
             target = gap
             obstruction = projector.exact_obstruction
         elif not lower.theorem_complete:

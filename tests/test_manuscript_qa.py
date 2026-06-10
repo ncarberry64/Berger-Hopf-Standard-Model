@@ -362,6 +362,12 @@ def test_typesetting_pass_does_not_modify_source_model_files():
         "src/operator_alternative_term_audit.py",
         "src/operator_axiom_uniqueness.py",
         "src/complete_operator_action_uniqueness_decision.py",
+        "src/projector_commutator_control.py",
+        "src/projector_operator_commutators.py",
+        "src/projector_termwise_commutator_audit.py",
+        "src/projector_commutator_relative_bound.py",
+        "src/projector_commutator_domain_control.py",
+        "src/projector_commutator_control_decision.py",
     }
 
     assert not [

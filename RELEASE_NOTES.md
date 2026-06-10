@@ -1,3 +1,29 @@
+# Unreleased / Development: v2.14 Projector Commutator Control
+
+Branch: `bhsm-v2.14-projector-commutator-control`
+
+The v2.14 branch closes `PROJECTOR_COMMUTATOR_CONTROL_GAP` for the formal
+sector-labeled complement projector and the complete BHSM operator package.
+The formal kernel remains `(0,18,36)` with one protected lepton, up, and down
+state; the old coordinate-first kernel `(0,1,2)` is not used.
+
+Final result:
+
+- projector commutator control: `PROJECTOR_COMMUTATOR_CONTROL_CLOSED`
+- commutator theorem status: `PROJECTOR_COMMUTATOR_CONTROL_PROVEN`
+- total relative commutator bound: `a_C = 0.015621013485509948`, `b_C = 0.0`
+- complete-operator identification: `COMPLETE_OPERATOR_IDENTIFICATION_PROVEN`
+- action uniqueness: `COMPLETE_OPERATOR_ACTION_UNIQUENESS_CLOSED`
+- full H_T theorem: not proven
+- next blocker: `PROJECTOR_GRAPH_DOMAIN_STABILITY_GAP`
+- recommended next branch: `bhsm-v2.15-projector-graph-domain-stability`
+- final paper allowed: `False`
+
+No empirical masses, CKM values, PMNS values, residual data, or prediction fits
+are used in the commutator-control proof. Frozen predictions, canonical
+constants, frozen modes, tolerances, outputs, and virtual dressing are
+unchanged.
+
 # Unreleased / Development: v2.13 Complete Operator Action Uniqueness
 
 Branch: `bhsm-v2.13-complete-operator-action-uniqueness`

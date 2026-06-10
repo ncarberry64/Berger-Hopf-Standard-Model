@@ -6,7 +6,7 @@ Theorem complete: `False`
 | Blocker | Status |
 | --- | --- |
 | complete operator | `COMPLETE_OPERATOR_IDENTIFICATION_PROVEN` |
-| commutator control | `PROJECTOR_COMMUTATORS_CONDITIONAL` |
+| commutator control | `PROJECTOR_COMMUTATORS_CONTROLLED` |
 | projector graph-domain | `PROJECTOR_GRAPH_DOMAIN_STABILITY_CONDITIONAL` |
 | lower-bound transfer | `HT_LOWER_BOUND_TRANSFER_CONDITIONAL` |
 | index theorem | `INDEX_THEOREM_CONDITIONAL` |
@@ -14,14 +14,14 @@ Theorem complete: `False`
 
 ## Single Named Gap
 
-`PROJECTOR_COMMUTATOR_CONTROL_GAP`
+`PROJECTOR_GRAPH_DOMAIN_STABILITY_GAP`
 
-Recommended next branch: `bhsm-v2.14-projector-commutator-control`
-Recommended target theorem: `PROJECTOR_COMMUTATOR_CONTROL_GAP`
+Recommended next branch: `bhsm-v2.15-projector-graph-domain-stability`
+Recommended target theorem: `PROJECTOR_GRAPH_DOMAIN_STABILITY_GAP`
 
 ## Exact Obstruction
 
-The commutator rows are scaffold-controlled, but nonzero conditional commutators still require complete graph-domain commutator control.
+P_perp D(A0) is controlled and commutator control is proven, but P_perp D(A0+V) still needs a standalone graph-domain stability proof.
 
 ## Limitations
 

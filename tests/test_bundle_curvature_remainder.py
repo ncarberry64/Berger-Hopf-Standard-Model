@@ -25,13 +25,13 @@ from curvature_remainder_closure_decision import (
 )
 from formal_kernel_projector import DEFAULT_FORMAL_COORDINATES, OLD_COORDINATE_FIRST_KERNEL, formal_kernel_basis_vectors
 from full_bhsm_theorem_completion import build_full_bhsm_theorem_completion_report
-from full_ht_theorem_closure import PROJECTOR_COMMUTATOR_CONTROL_GAP, build_full_ht_theorem_closure_report
+from full_ht_theorem_closure import PROJECTOR_GRAPH_DOMAIN_STABILITY_GAP, build_full_ht_theorem_closure_report
 from lichnerowicz_bundle_curvature import REMAINDER_TERM_ID, build_lichnerowicz_bundle_curvature_report, export_lichnerowicz_bundle_curvature_json, export_lichnerowicz_bundle_curvature_markdown
 from operator_identification_theorem import COMPLETE_OPERATOR_IDENTIFICATION_PROVEN, build_operator_identification_theorem_report
 from operator_term_inventory import build_operator_term_inventory_report
 
 
-EXACT_GAP = PROJECTOR_COMMUTATOR_CONTROL_GAP
+EXACT_GAP = PROJECTOR_GRAPH_DOMAIN_STABILITY_GAP
 
 
 def test_lichnerowicz_remainder_inventory_is_explicit():
@@ -106,7 +106,7 @@ def test_downstream_full_ht_and_bhsm_do_not_upgrade_from_curvature_gap():
 
     assert ht.theorem_complete is False
     assert ht.recommended_target_theorem == EXACT_GAP
-    assert ht.recommended_next_branch == "bhsm-v2.14-projector-commutator-control"
+    assert ht.recommended_next_branch == "bhsm-v2.15-projector-graph-domain-stability"
     assert bhsm.theorem_complete is False
     assert bhsm.final_paper_allowed is False
 

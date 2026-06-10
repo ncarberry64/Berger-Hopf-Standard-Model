@@ -16,7 +16,7 @@ from complete_twisted_dirac_operator import COMPLETE_OPERATOR_IDENTIFICATION_PRO
 from constants import S_OVERLAP
 from formal_kernel_projector import DEFAULT_FORMAL_COORDINATES, OLD_COORDINATE_FIRST_KERNEL, formal_kernel_basis_vectors
 from full_bhsm_theorem_completion import build_full_bhsm_theorem_completion_report
-from full_ht_theorem_closure import PROJECTOR_COMMUTATOR_CONTROL_GAP, build_full_ht_theorem_closure_report
+from full_ht_theorem_closure import PROJECTOR_GRAPH_DOMAIN_STABILITY_GAP, build_full_ht_theorem_closure_report
 from mixed_coefficient_rule_decision import MIXED_COEFFICIENT_RULE_CLOSED, build_mixed_coefficient_rule_decision
 from operator_action_uniqueness import (
     BLOCKING_INGREDIENT_STATUSES,
@@ -118,11 +118,11 @@ def test_full_ht_is_not_overclaimed_after_operator_identification_closes():
     assert ht.complete_operator_status == COMPLETE_OPERATOR_IDENTIFICATION_PROVEN
     assert ht.theorem_complete is False
     assert ht.final_result == "STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP"
-    assert ht.single_named_gap == PROJECTOR_COMMUTATOR_CONTROL_GAP
-    assert ht.recommended_next_branch == "bhsm-v2.14-projector-commutator-control"
+    assert ht.single_named_gap == PROJECTOR_GRAPH_DOMAIN_STABILITY_GAP
+    assert ht.recommended_next_branch == "bhsm-v2.15-projector-graph-domain-stability"
     assert bhsm.theorem_complete is False
     assert bhsm.final_paper_allowed is False
-    assert bhsm.recommended_target_theorem == PROJECTOR_COMMUTATOR_CONTROL_GAP
+    assert bhsm.recommended_target_theorem == PROJECTOR_GRAPH_DOMAIN_STABILITY_GAP
 
 
 def test_v211_v212_topographic_closures_remain_intact():

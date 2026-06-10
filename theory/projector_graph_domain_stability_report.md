@@ -15,7 +15,6 @@ Theorem complete: `False`
 ## Open Obligations
 
 - upgrade conditional P_perp D(A0+V) stability to a complete-operator graph-domain proof
-- prove all nonzero [P_perp,V] commutators in the complete twisted Dirac/bundle domain
 
 ## Limitations
 
