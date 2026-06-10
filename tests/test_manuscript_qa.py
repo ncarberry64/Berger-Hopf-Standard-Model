@@ -263,10 +263,16 @@ def test_typesetting_pass_does_not_modify_source_model_files():
         "src/scalar_screening_action.py",
         "src/topographic_action.py",
         "src/derivative_screening.py",
-            "src/curvature_screening.py",
-            "src/full_ht_theorem.py",
-            "src/self_adjoint_domain.py",
-        }
+        "src/curvature_screening.py",
+        "src/full_ht_theorem.py",
+        "src/self_adjoint_domain.py",
+        "src/diagonal_reference_operator.py",
+        "src/finite_core_domain.py",
+        "src/essential_self_adjointness.py",
+        "src/graph_norm_domain.py",
+        "src/kato_rellich_preconditions.py",
+        "src/ht_domain_bridge.py",
+    }
 
     assert not [
         path

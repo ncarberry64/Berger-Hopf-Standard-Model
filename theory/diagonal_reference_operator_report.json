@@ -1,0 +1,23 @@
+{
+  "action_on_basis": "A0 e_(sector,k,j,q,chi) = lambda_diag(k,j,a) e_(sector,k,j,q,chi)",
+  "closure_candidate": "maximal real diagonal multiplication operator on l2 with domain sum lambda_n^2 |x_n|^2 < infinity",
+  "eigenvalue_law": {
+    "formula": "lambda_diag(k,j,a) = a^2 (k-2j)^2 + 2((2j+1)k - 2j^2)",
+    "growth_statement": "For fixed finite sector/chirality multiplicity, shell minima grow unbounded along k except the protected k=0 shell; complement growth is unbounded in the scaffold law.",
+    "lower_bound": 0.0,
+    "multiplicity_structure": "finite multiplicity per (k,j) from sector and chirality labels",
+    "real_valued": true,
+    "tends_to_infinity": true
+  },
+  "finite_core_status": "FINITE_CORE_DENSE",
+  "limitations": [
+    "This proves the diagonal multiplication-operator foundation in the abstract l2 scaffold.",
+    "It does not prove relative boundedness of all BHSM perturbations."
+  ],
+  "operator_symbol": "A0 = D_diag^2",
+  "self_adjoint_extension_candidate": "closure of A0|C_fin",
+  "status": "DIAGONAL_REFERENCE_OPERATOR_PROVEN",
+  "symmetric_on_finite_core": true,
+  "theorem_complete": true,
+  "title": "BHSM v1.9 Diagonal Reference Operator Report"
+}

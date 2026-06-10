@@ -1,6 +1,6 @@
 # BHSM v1.8 H_T Domain Bridge Report
 
-Domain bridge status: `HT_THEOREM_CANDIDATE_STRENGTHENED`
+Domain bridge status: `HT_THEOREM_REFERENCE_OPERATOR_CLOSED`
 Theorem complete: `False`
 Full H_T theorem status improved: `True`
 
@@ -10,6 +10,9 @@ Full H_T theorem status improved: `True`
 | Self-adjointness | `SELF_ADJOINT_DOMAIN_CONDITIONAL` |
 | Formal complement | `FORMAL_COMPLEMENT_CONDITIONAL` |
 | Index | `INDEX_THEOREM_OPEN` |
+| Diagonal reference | `DIAGONAL_REFERENCE_OPERATOR_PROVEN` |
+| Graph-norm domain | `GRAPH_NORM_DOMAIN_PROVEN` |
+| Kato-Rellich preconditions | `KATO_RELLICH_PRECONDITIONS_CONDITIONAL` |
 
 ## Open Obligations
 
@@ -26,6 +29,9 @@ Full H_T theorem status improved: `True`
 - derive the topological index of the complete twisted Dirac operator
 - prove absence of additional protected kernel states in the complete operator
 - prove the formal-kernel/complement split independently of finite truncation
+- prove perturbation symmetry on D(A0) for the complete operator
+- prove perturbation domain inclusion for Hopf, boundary, sector, lift, and projector terms
+- combine the closed reference operator with proven perturbation bounds and complement stability
 
 ## Limitations
 

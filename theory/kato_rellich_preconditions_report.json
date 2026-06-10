@@ -1,0 +1,65 @@
+{
+  "limitations": [
+    "The diagonal reference operator and graph-norm domain are closed.",
+    "Kato-Rellich closure remains conditional because perturbation symmetry/domain inclusion and complete infinite-basis bounds are not all proven."
+  ],
+  "preconditions": [
+    {
+      "id": "reference_self_adjointness",
+      "open_obligations": [],
+      "passes": true,
+      "statement": "A0 is essentially self-adjoint on C_fin.",
+      "status": "DIAGONAL_CORE_ESSENTIALLY_SELF_ADJOINT_PROVEN"
+    },
+    {
+      "id": "graph_domain",
+      "open_obligations": [],
+      "passes": true,
+      "statement": "D(A0) is the graph-norm closure of C_fin.",
+      "status": "GRAPH_NORM_DOMAIN_PROVEN"
+    },
+    {
+      "id": "perturbation_symmetry",
+      "open_obligations": [
+        "prove perturbation symmetry on D(A0) for the complete operator"
+      ],
+      "passes": false,
+      "statement": "Perturbations are symmetric on a common dense domain.",
+      "status": "CONDITIONAL"
+    },
+    {
+      "id": "relative_bound",
+      "open_obligations": [
+        "prove the q^2/lambda_diag comparison for the complete Berger twisted spectrum",
+        "prove Omega_f growth is relatively bounded by the complete diagonal operator",
+        "prove sparse/banded sector-coupling rule and a_K bound in the complete infinite basis"
+      ],
+      "passes": true,
+      "statement": "Perturbation relative bound satisfies a < 1.",
+      "status": "UNIFORM_RELATIVE_BOUND_CONDITIONAL"
+    },
+    {
+      "id": "domain_inclusion",
+      "open_obligations": [
+        "prove perturbation domain inclusion for Hopf, boundary, sector, lift, and projector terms"
+      ],
+      "passes": false,
+      "statement": "Perturbations map D(A0) into the required Hilbert/domain space.",
+      "status": "OPEN"
+    },
+    {
+      "id": "lower_bound_preservation",
+      "open_obligations": [
+        "combine the closed reference operator with proven perturbation bounds and complement stability"
+      ],
+      "passes": false,
+      "statement": "The lower-bound chain survives the Kato-Rellich closure.",
+      "status": "CONDITIONAL"
+    }
+  ],
+  "relative_bound_below_one": true,
+  "relative_bound_value": 0.015621013485509948,
+  "status": "KATO_RELLICH_PRECONDITIONS_CONDITIONAL",
+  "theorem_complete": false,
+  "title": "BHSM v1.9 Kato-Rellich Precondition Report"
+}

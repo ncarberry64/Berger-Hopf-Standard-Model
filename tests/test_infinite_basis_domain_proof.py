@@ -13,7 +13,7 @@ from formal_complement_stability import (
 from full_ht_theorem import build_full_ht_theorem_report
 from ht_domain_bridge import (
     FULL_HT_THEOREM_PROVEN,
-    HT_THEOREM_CANDIDATE_STRENGTHENED,
+    HT_THEOREM_REFERENCE_OPERATOR_CLOSED,
     build_ht_domain_bridge_report,
     export_ht_domain_bridge_json,
     export_ht_domain_bridge_markdown,
@@ -85,11 +85,11 @@ def test_ht_domain_bridge_strengthens_but_does_not_prove_ht():
     bridge = build_ht_domain_bridge_report()
     ht = build_full_ht_theorem_report()
 
-    assert bridge.domain_bridge_status == HT_THEOREM_CANDIDATE_STRENGTHENED
+    assert bridge.domain_bridge_status == HT_THEOREM_REFERENCE_OPERATOR_CLOSED
     assert bridge.domain_bridge_status != FULL_HT_THEOREM_PROVEN
     assert bridge.theorem_complete is False
     assert bridge.full_ht_theorem_status_improved is True
-    assert ht.v1_8_domain_bridge_status == HT_THEOREM_CANDIDATE_STRENGTHENED
+    assert ht.v1_8_domain_bridge_status == HT_THEOREM_REFERENCE_OPERATOR_CLOSED
     assert ht.theorem_complete is False
 
 
@@ -122,7 +122,7 @@ def test_v18_exports_generate(tmp_path):
     assert json.loads(paths["relative_json"].read_text())["status"] == UNIFORM_RELATIVE_BOUND_CONDITIONAL
     assert json.loads(paths["self_json"].read_text())["status"] == SELF_ADJOINT_DOMAIN_CONDITIONAL
     assert json.loads(paths["complement_json"].read_text())["status"] == FORMAL_COMPLEMENT_CONDITIONAL
-    assert json.loads(paths["bridge_json"].read_text())["domain_bridge_status"] == HT_THEOREM_CANDIDATE_STRENGTHENED
+    assert json.loads(paths["bridge_json"].read_text())["domain_bridge_status"] == HT_THEOREM_REFERENCE_OPERATOR_CLOSED
 
 
 def test_v18_modules_do_not_import_empirical_machinery():
@@ -180,6 +180,5 @@ def test_generated_v18_artifacts_exist_and_are_conservative():
     for path in paths:
         assert path.exists(), path
     text = "\n".join(path.read_text() for path in paths if path.suffix == ".md")
-    assert "HT_THEOREM_CANDIDATE_STRENGTHENED" in text
+    assert "HT_THEOREM_REFERENCE_OPERATOR_CLOSED" in text
     assert "not prove" in text.lower() or "not a proof" in text.lower()
-

@@ -1,0 +1,54 @@
+{
+  "closure": "maximal real diagonal multiplication operator on l2",
+  "deficiency_indices": [
+    0,
+    0
+  ],
+  "finite_core": "C_fin",
+  "limitations": [
+    "Essential self-adjointness is proven only for the diagonal reference operator.",
+    "Full BHSM self-adjointness still requires Kato-Rellich preconditions for perturbations."
+  ],
+  "operator_symbol": "A0 = D_diag^2",
+  "proof_routes": [
+    {
+      "evidence": [
+        "basis is complete in l2",
+        "finite sequences are dense",
+        "eigenvalues are real",
+        "maximal diagonal closure has domain sum lambda_n^2 |x_n|^2 < infinity"
+      ],
+      "id": "diagonal_multiplication_operator",
+      "limitations": [
+        "This route applies to the diagonal reference operator, not to the full perturbed BHSM operator."
+      ],
+      "passes": true,
+      "statement": "A real diagonal multiplication operator on l2 with finite sequences as a core is essentially self-adjoint; its closure is the maximal diagonal operator."
+    },
+    {
+      "evidence": [
+        "real diagonal eigenvalues imply no nonzero deficiency vector for z=+/- i"
+      ],
+      "id": "deficiency_index_check",
+      "limitations": [
+        "The calculation is for the diagonal multiplication closure."
+      ],
+      "passes": true,
+      "statement": "For non-real z, (A0^* - z)x=0 has only the zero l2 solution because (lambda_n - z)x_n=0 and lambda_n is real."
+    },
+    {
+      "evidence": [
+        "tail sums of |x_n|^2 + lambda_n^2 |x_n|^2 go to zero by definition of the graph domain"
+      ],
+      "id": "graph_norm_core",
+      "limitations": [
+        "Perturbation graph-norm equivalence is separate."
+      ],
+      "passes": true,
+      "statement": "Finite truncations converge in graph norm for every vector in the maximal diagonal domain."
+    }
+  ],
+  "status": "DIAGONAL_CORE_ESSENTIALLY_SELF_ADJOINT_PROVEN",
+  "theorem_complete": true,
+  "title": "BHSM v1.9 Diagonal-Core Essential Self-Adjointness Report"
+}

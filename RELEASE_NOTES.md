@@ -209,6 +209,30 @@ self-adjoint domain proof, formal-complement stability proof, topological
 index theorem, and mirror exclusion theorem. Frozen outputs remain unchanged
 and final paper/Zenodo release remains blocked.
 
+## Unreleased / Development: v1.9 Diagonal-Core Self-Adjointness
+
+Branch: `bhsm-v1.9-diagonal-core-self-adjointness`
+
+The v1.9 focused branch closes the diagonal reference-operator foundation for
+the Kato-Rellich route. It proves essential self-adjointness for the abstract
+real diagonal multiplication operator `A0 = D_diag^2` on the finite-mode core
+`C_fin` in the sector-labeled `l2` basis.
+
+Current v1.9 status:
+
+- finite core: `FINITE_CORE_DENSE`;
+- diagonal reference operator: `DIAGONAL_REFERENCE_OPERATOR_PROVEN`;
+- essential self-adjointness: `DIAGONAL_CORE_ESSENTIALLY_SELF_ADJOINT_PROVEN`;
+- graph-norm domain: `GRAPH_NORM_DOMAIN_PROVEN`;
+- Kato-Rellich preconditions: `KATO_RELLICH_PRECONDITIONS_CONDITIONAL`;
+- H_T dependency: `HT_THEOREM_REFERENCE_OPERATOR_CLOSED`.
+
+This closes the reference-operator foundation only. Perturbation symmetry,
+perturbation domain inclusion, complete infinite-basis relative bounds,
+formal-complement stability, topological index, and mirror exclusion remain
+open. Frozen outputs remain unchanged and final paper/Zenodo release remains
+blocked.
+
 ## Unreleased / Development: v1.4 Precision QCD/RG Matching
 
 Branch: `bhsm-v1.4-precision-qcd-rg`
