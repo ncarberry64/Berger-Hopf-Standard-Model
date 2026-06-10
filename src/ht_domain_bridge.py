@@ -61,12 +61,14 @@ def build_ht_domain_bridge_report() -> HTDomainBridgeReport:
     )
     from kato_rellich_closure import KATO_RELLICH_CLOSURE_PROVEN, build_kato_rellich_closure_report
     from lower_bound_preservation import LOWER_BOUND_PRESERVED, build_lower_bound_preservation_report
+    from perturbation_closure_decision import build_perturbation_closure_decision
 
     diagonal = build_diagonal_reference_operator_report()
     graph = build_graph_norm_domain_report()
     kato = build_kato_rellich_precondition_report()
     kato_closure = build_kato_rellich_closure_report()
     lower = build_lower_bound_preservation_report()
+    perturbation_decision = build_perturbation_closure_decision()
     relative_proven = relative.status == UNIFORM_RELATIVE_BOUND_PROVEN
     self_adjoint_proven = self_adjoint.status == SELF_ADJOINT_DOMAIN_PROVEN
     complement_stable = complement.status == FORMAL_COMPLEMENT_STABLE
@@ -78,6 +80,8 @@ def build_ht_domain_bridge_report() -> HTDomainBridgeReport:
         status = HT_KATO_RELLICH_BRIDGE_PROVEN
     elif kato.status == KATO_RELLICH_PRECONDITIONS_COMPLETE:
         status = HT_THEOREM_DOMAIN_BRIDGE_PROVEN
+    elif perturbation_decision.ht_dependency_status == HT_THEOREM_CONDITIONAL_ON_COMPLEMENT:
+        status = HT_THEOREM_CONDITIONAL_ON_COMPLEMENT
     elif reference_closed:
         status = HT_THEOREM_BLOCKED_BY_PERTURBATION if not kato_closure.can_apply_kato_rellich else HT_THEOREM_REFERENCE_OPERATOR_CLOSED
     elif relative.all_a_below_one and self_adjoint.relative_bound_below_one and complement.status != "FAILS_COMPLEMENT_STABILITY":
@@ -96,6 +100,7 @@ def build_ht_domain_bridge_report() -> HTDomainBridgeReport:
                 *(item for row in kato.preconditions for item in row.open_obligations),
                 *kato_closure.open_obligations,
                 *lower.open_obligations,
+                *perturbation_decision.open_obligations,
             )
         )
     )
@@ -108,14 +113,14 @@ def build_ht_domain_bridge_report() -> HTDomainBridgeReport:
         diagonal_reference_status=diagonal.status,
         graph_norm_domain_status=graph.status,
         kato_rellich_precondition_status=kato.status,
-        kato_rellich_closure_status=kato_closure.status,
-        lower_bound_preservation_status=lower.status,
+        kato_rellich_closure_status=perturbation_decision.kato_rellich_status,
+        lower_bound_preservation_status=perturbation_decision.lower_bound_status,
         domain_bridge_status=status,
-        full_ht_theorem_status_improved=status in {HT_THEOREM_CANDIDATE_STRENGTHENED, HT_THEOREM_REFERENCE_OPERATOR_CLOSED, HT_THEOREM_BLOCKED_BY_PERTURBATION},
+        full_ht_theorem_status_improved=status in {HT_THEOREM_CANDIDATE_STRENGTHENED, HT_THEOREM_REFERENCE_OPERATOR_CLOSED, HT_THEOREM_BLOCKED_BY_PERTURBATION, HT_THEOREM_CONDITIONAL_ON_COMPLEMENT},
         theorem_complete=status == FULL_HT_THEOREM_PROVEN,
         open_obligations=open_obligations,
         limitations=(
-            "The H_T theorem is strengthened from a domain blocker to a candidate bridge only conditionally.",
+            "The H_T theorem is strengthened from a perturbation blocker to a complement-conditional bridge only conditionally.",
             "Full H_T theorem proof still requires proven self-adjointness, complement stability, index, and mirror closure.",
         ),
     )

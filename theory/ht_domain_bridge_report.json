@@ -1,6 +1,6 @@
 {
   "diagonal_reference_status": "DIAGONAL_REFERENCE_OPERATOR_PROVEN",
-  "domain_bridge_status": "HT_THEOREM_BLOCKED_BY_PERTURBATION",
+  "domain_bridge_status": "HT_THEOREM_CONDITIONAL_ON_COMPLEMENT",
   "formal_complement_status": "FORMAL_COMPLEMENT_CONDITIONAL",
   "full_ht_theorem_status_improved": true,
   "graph_norm_domain_status": "GRAPH_NORM_DOMAIN_PROVEN",
@@ -8,10 +8,10 @@
   "kato_rellich_closure_status": "KATO_RELLICH_CLOSURE_CONDITIONAL",
   "kato_rellich_precondition_status": "KATO_RELLICH_PRECONDITIONS_CONDITIONAL",
   "limitations": [
-    "The H_T theorem is strengthened from a domain blocker to a candidate bridge only conditionally.",
+    "The H_T theorem is strengthened from a perturbation blocker to a complement-conditional bridge only conditionally.",
     "Full H_T theorem proof still requires proven self-adjointness, complement stability, index, and mirror closure."
   ],
-  "lower_bound_preservation_status": "LOWER_BOUND_CONDITIONAL",
+  "lower_bound_preservation_status": "LOWER_BOUND_BLOCKED_BY_COMPLEMENT",
   "open_obligations": [
     "prove the q^2/lambda_diag comparison for the complete Berger twisted spectrum",
     "prove Omega_f growth is relatively bounded by the complete diagonal operator",
@@ -36,10 +36,27 @@
     "prove the relative-bound closure without finite-scan assumptions",
     "prove formal complement stability before applying the bound to H_perp",
     "combine with index and mirror exclusion before claiming full H_T theorem",
-    "prove perturbation domain inclusion for the complete operator on D(A0)"
+    "prove perturbation domain inclusion for the complete operator on D(A0)",
+    "prove scaffold domain and symmetry assumptions for the complete twisted Dirac/bundle operator",
+    "derive the sector-coupling sparse bound from the complete infinite-basis action",
+    "prove formal complement stability before using the lower bound as a final H_T theorem",
+    "combine with final index and mirror closure before any full theorem claim"
   ],
   "self_adjointness_status": "SELF_ADJOINT_DOMAIN_CONDITIONAL",
   "theorem_complete": false,
   "title": "BHSM v1.8 H_T Domain Bridge Report",
-  "uniform_relative_bound_status": "UNIFORM_RELATIVE_BOUND_CONDITIONAL"
+  "uniform_relative_bound_status": "UNIFORM_RELATIVE_BOUND_CONDITIONAL",
+  "v2_1_update": {
+    "common_domain_status": "COMMON_DOMAIN_EQUALS_DA0_CONDITIONAL",
+    "hopf_boundary_chi_status": "HOPF_BOUNDARY_CHI_BOUNDS_CONDITIONAL",
+    "ht_dependency_status": "HT_THEOREM_CONDITIONAL_ON_COMPLEMENT",
+    "kato_rellich_status": "KATO_RELLICH_CLOSURE_CONDITIONAL",
+    "lift_projector_domain_status": "LIFT_PROJECTOR_DOMAIN_CONDITIONAL",
+    "lower_bound_status": "LOWER_BOUND_BLOCKED_BY_COMPLEMENT",
+    "note": "v2.1 supersedes the finite-scan perturbation blocker with explicit conditional infinite-basis bounds; formal complement stability remains open.",
+    "perturbation_symmetry_status": "PERTURBATION_SYMMETRY_TERMWISE_CONDITIONAL",
+    "relative_bound_status": "RELATIVE_BOUND_CONDITIONAL_WITH_EXPLICIT_ASSUMPTIONS",
+    "sector_coupling_status": "SECTOR_COUPLING_INFINITE_BOUND_CONDITIONAL",
+    "theorem_complete": false
+  }
 }

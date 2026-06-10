@@ -1,6 +1,6 @@
 # BHSM v1.8 H_T Domain Bridge Report
 
-Domain bridge status: `HT_THEOREM_BLOCKED_BY_PERTURBATION`
+Domain bridge status: `HT_THEOREM_CONDITIONAL_ON_COMPLEMENT`
 Theorem complete: `False`
 Full H_T theorem status improved: `True`
 
@@ -14,7 +14,7 @@ Full H_T theorem status improved: `True`
 | Graph-norm domain | `GRAPH_NORM_DOMAIN_PROVEN` |
 | Kato-Rellich preconditions | `KATO_RELLICH_PRECONDITIONS_CONDITIONAL` |
 | Kato-Rellich closure | `KATO_RELLICH_CLOSURE_CONDITIONAL` |
-| Lower-bound preservation | `LOWER_BOUND_CONDITIONAL` |
+| Lower-bound preservation | `LOWER_BOUND_BLOCKED_BY_COMPLEMENT` |
 
 ## Open Obligations
 
@@ -42,8 +42,26 @@ Full H_T theorem status improved: `True`
 - prove formal complement stability before applying the bound to H_perp
 - combine with index and mirror exclusion before claiming full H_T theorem
 - prove perturbation domain inclusion for the complete operator on D(A0)
+- prove scaffold domain and symmetry assumptions for the complete twisted Dirac/bundle operator
+- derive the sector-coupling sparse bound from the complete infinite-basis action
+- prove formal complement stability before using the lower bound as a final H_T theorem
+- combine with final index and mirror closure before any full theorem claim
 
 ## Limitations
 
-- The H_T theorem is strengthened from a domain blocker to a candidate bridge only conditionally.
+- The H_T theorem is strengthened from a perturbation blocker to a complement-conditional bridge only conditionally.
 - Full H_T theorem proof still requires proven self-adjointness, complement stability, index, and mirror closure.
+
+## v2.1 Update
+
+- common_domain_status: `COMMON_DOMAIN_EQUALS_DA0_CONDITIONAL`
+- perturbation_symmetry_status: `PERTURBATION_SYMMETRY_TERMWISE_CONDITIONAL`
+- sector_coupling_status: `SECTOR_COUPLING_INFINITE_BOUND_CONDITIONAL`
+- hopf_boundary_chi_status: `HOPF_BOUNDARY_CHI_BOUNDS_CONDITIONAL`
+- lift_projector_domain_status: `LIFT_PROJECTOR_DOMAIN_CONDITIONAL`
+- relative_bound_status: `RELATIVE_BOUND_CONDITIONAL_WITH_EXPLICIT_ASSUMPTIONS`
+- kato_rellich_status: `KATO_RELLICH_CLOSURE_CONDITIONAL`
+- lower_bound_status: `LOWER_BOUND_BLOCKED_BY_COMPLEMENT`
+- ht_dependency_status: `HT_THEOREM_CONDITIONAL_ON_COMPLEMENT`
+- theorem_complete: `False`
+- note: `v2.1 supersedes the finite-scan perturbation blocker with explicit conditional infinite-basis bounds; formal complement stability remains open.`

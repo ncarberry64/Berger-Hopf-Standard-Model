@@ -26,7 +26,7 @@ The corrected formal-kernel H_T scaffold remains strong, but v1.7 keeps the full
 
 ## v1.8 Domain Bridge Status
 
-`HT_THEOREM_BLOCKED_BY_PERTURBATION`
+`HT_THEOREM_CONDITIONAL_ON_COMPLEMENT`
 
 The v1.8 domain bridge records favorable conditional infinite-basis relative-bound structure, but it does not prove the full H_T theorem.
 
@@ -48,3 +48,17 @@ The corrected formal-kernel H_T scaffold is strong and clears current finite/sem
 - Do not claim FULL_HT_THEOREM_PROVEN.
 - Do not claim the no-extra-light-state theorem is proven.
 - Do not use coordinate-first protected block (0,1,2) as the corrected formal kernel.
+
+## v2.1 Update
+
+- common_domain_status: `COMMON_DOMAIN_EQUALS_DA0_CONDITIONAL`
+- perturbation_symmetry_status: `PERTURBATION_SYMMETRY_TERMWISE_CONDITIONAL`
+- sector_coupling_status: `SECTOR_COUPLING_INFINITE_BOUND_CONDITIONAL`
+- hopf_boundary_chi_status: `HOPF_BOUNDARY_CHI_BOUNDS_CONDITIONAL`
+- lift_projector_domain_status: `LIFT_PROJECTOR_DOMAIN_CONDITIONAL`
+- relative_bound_status: `RELATIVE_BOUND_CONDITIONAL_WITH_EXPLICIT_ASSUMPTIONS`
+- kato_rellich_status: `KATO_RELLICH_CLOSURE_CONDITIONAL`
+- lower_bound_status: `LOWER_BOUND_BLOCKED_BY_COMPLEMENT`
+- ht_dependency_status: `HT_THEOREM_CONDITIONAL_ON_COMPLEMENT`
+- theorem_complete: `False`
+- note: `v2.1 supersedes the finite-scan perturbation blocker with explicit conditional infinite-basis bounds; formal complement stability remains open.`

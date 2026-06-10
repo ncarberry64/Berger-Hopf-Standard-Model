@@ -1,0 +1,100 @@
+{
+  "common_domain_equals_DA0": true,
+  "common_domain_expression": "D(A0) cap D(V_Hopf) cap D(V_boundary) cap D(V_chi) cap D(K_sector) cap D(P_perp_lift)",
+  "finite_core_common_core": true,
+  "graph_norm_domain_status": "GRAPH_NORM_DOMAIN_PROVEN",
+  "limitations": [
+    "The common domain equals D(A0) under explicit v2.1 scaffold assumptions.",
+    "The equality is not marked proven for the complete operator."
+  ],
+  "open_obligations": [
+    "upgrade scaffold termwise D(A0) preservation to the complete twisted Dirac/bundle operator",
+    "prove the formal complement projector preserves D(A0) in the infinite-basis limit"
+  ],
+  "status": "COMMON_DOMAIN_EQUALS_DA0_CONDITIONAL",
+  "terms": [
+    {
+      "assumptions": [
+        "the q-growth comparison holds for the complete Berger twisted diagonal action"
+      ],
+      "limitations": [
+        "The comparison is explicit in the scaffold but not yet an analytic theorem for the complete operator."
+      ],
+      "maps_DA0_to_H": true,
+      "preserves_graph_norm_finiteness": true,
+      "status": "DA0_DOMAIN_CONDITIONAL",
+      "symmetry_relevant": true,
+      "term_id": "V_Hopf"
+    },
+    {
+      "assumptions": [
+        "Omega_f growth remains at most linearly controlled by the complete diagonal action."
+      ],
+      "limitations": [
+        "The v1.2 action-origin functional is reduced from a symbolic parent scaffold, not the full action."
+      ],
+      "maps_DA0_to_H": true,
+      "preserves_graph_norm_finiteness": true,
+      "status": "DA0_DOMAIN_CONDITIONAL",
+      "symmetry_relevant": true,
+      "term_id": "V_boundary"
+    },
+    {
+      "assumptions": [
+        "chirality remains a bounded involutive/projector label in the complete basis"
+      ],
+      "limitations": [
+        "This does not settle mirror-mode exclusion by itself."
+      ],
+      "maps_DA0_to_H": true,
+      "preserves_graph_norm_finiteness": true,
+      "status": "DA0_DOMAIN_CONDITIONAL",
+      "symmetry_relevant": true,
+      "term_id": "V_chi"
+    },
+    {
+      "assumptions": [
+        "The complete sector-coupling rule has the same fixed-label sparse support as the formal-kernel scaffold.",
+        "The sector-coupling weights are uniformly bounded by the stated scaffold weight.",
+        "The diagonal reference action dominates the fixed-label sector-coupling quadratic form."
+      ],
+      "limitations": [
+        "The bound is independent of k_max under the scaffold rule, but the rule is not yet derived from the complete operator.",
+        "This is not a proof of the full H_T theorem."
+      ],
+      "maps_DA0_to_H": true,
+      "preserves_graph_norm_finiteness": true,
+      "status": "DA0_DOMAIN_CONDITIONAL",
+      "symmetry_relevant": true,
+      "term_id": "K_sector"
+    },
+    {
+      "assumptions": [
+        "the formal complement projector has a bounded infinite-basis limit preserving D(A0)"
+      ],
+      "limitations": [
+        "Formal complement stability remains a later theorem obligation."
+      ],
+      "maps_DA0_to_H": true,
+      "preserves_graph_norm_finiteness": true,
+      "status": "DA0_DOMAIN_CONDITIONAL",
+      "symmetry_relevant": true,
+      "term_id": "P_perp_lift"
+    },
+    {
+      "assumptions": [
+        "the profile contribution is nonnegative on the formal complement"
+      ],
+      "limitations": [
+        "The full scalar/topographic action proof is separate from this perturbation bridge."
+      ],
+      "maps_DA0_to_H": true,
+      "preserves_graph_norm_finiteness": true,
+      "status": "DA0_DOMAIN_CONDITIONAL",
+      "symmetry_relevant": true,
+      "term_id": "PSD_profile"
+    }
+  ],
+  "theorem_complete": false,
+  "title": "BHSM v2.1 Perturbation Common-Domain Proof Scaffold"
+}

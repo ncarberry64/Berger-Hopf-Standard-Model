@@ -1,3 +1,28 @@
+# Unreleased / Development: v2.1 Perturbation Domain and Infinite-Bound Proof
+
+Branch: `bhsm-v2.1-perturbation-domain-bound-proof`
+
+The v2.1 focused branch strengthens the v2.0 Kato-Rellich perturbation bridge.
+It adds executable reports for the common domain, termwise perturbation
+symmetry, infinite-basis sector-coupling bounds, Hopf/boundary/chirality
+bounds, lift/projector domain behavior, and a consolidated perturbation closure
+decision.
+
+Status remains conservative:
+
+- common domain: `COMMON_DOMAIN_EQUALS_DA0_CONDITIONAL`
+- perturbation symmetry: `PERTURBATION_SYMMETRY_TERMWISE_CONDITIONAL`
+- sector coupling: `SECTOR_COUPLING_INFINITE_BOUND_CONDITIONAL`
+- relative-bound closure: `RELATIVE_BOUND_CONDITIONAL_WITH_EXPLICIT_ASSUMPTIONS`
+- Kato-Rellich closure: `KATO_RELLICH_CLOSURE_CONDITIONAL`
+- lower-bound status: `LOWER_BOUND_BLOCKED_BY_COMPLEMENT`
+- H_T dependency: `HT_THEOREM_CONDITIONAL_ON_COMPLEMENT`
+
+This branch does not change frozen BHSM predictions, canonical constants,
+tolerances, the mode ledger, or the virtual dressing rule. It does not prove the
+full H_T theorem; formal complement stability and complete-operator
+identification remain open.
+
 # BHSM v1.1 Preprint Package Release Notes
 
 Branch: `bhsm-v1.1-paper`

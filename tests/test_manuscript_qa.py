@@ -278,6 +278,12 @@ def test_typesetting_pass_does_not_modify_source_model_files():
         "src/relative_bound_closure.py",
         "src/lower_bound_preservation.py",
         "src/kato_rellich_closure.py",
+        "src/perturbation_domain_proof.py",
+        "src/perturbation_symmetry_closure.py",
+        "src/sector_coupling_infinite_bound.py",
+        "src/hopf_boundary_infinite_bound.py",
+        "src/lift_projector_domain.py",
+        "src/perturbation_closure_decision.py",
     }
 
     assert not [

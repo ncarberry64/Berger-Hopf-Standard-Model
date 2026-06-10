@@ -33,3 +33,10 @@
 31. virtual_dressing
 32. qcd_rg
 33. state_ontology
+
+## v2.1 Remaining Perturbation/Complement Obligations
+
+- prove scaffold domain and symmetry assumptions for the complete twisted Dirac/bundle operator
+- derive the sector-coupling sparse bound from the complete infinite-basis action
+- prove formal complement stability before using the lower bound as a final H_T theorem
+- combine with final index and mirror closure before any full theorem claim

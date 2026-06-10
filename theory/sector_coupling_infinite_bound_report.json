@@ -1,0 +1,45 @@
+{
+  "finite_scan_evidence_used": false,
+  "independent_of_kmax": true,
+  "limitations": [
+    "The bound is independent of k_max under the scaffold rule, but the rule is not yet derived from the complete operator.",
+    "This is not a proof of the full H_T theorem."
+  ],
+  "method": "Schur row/column bound plus relative domination by A0 on fixed-label sector blocks",
+  "open_obligations": [
+    "derive the fixed-label sparse sector-coupling rule from the complete twisted Dirac/bundle operator",
+    "prove the uniform weight bound in the complete infinite basis",
+    "prove compatibility with the final formal complement projector"
+  ],
+  "pattern": {
+    "assumptions": [
+      "The complete sector-coupling rule has the same fixed-label sparse support as the formal-kernel scaffold.",
+      "The sector-coupling weights are uniformly bounded by the stated scaffold weight.",
+      "The diagonal reference action dominates the fixed-label sector-coupling quadratic form."
+    ],
+    "column_support_bound": 2,
+    "connects": "distinct charged sectors at fixed (k,j,q,chi)",
+    "independent_of_kmax": true,
+    "limitations": [
+      "The bound is independent of k_max under the scaffold rule, but the rule is not yet derived from the complete operator.",
+      "This is not a proof of the full H_T theorem."
+    ],
+    "max_weight_bound": 0.007810506742754974,
+    "preserves": [
+      "k",
+      "j",
+      "q",
+      "chirality"
+    ],
+    "row_support_bound": 2,
+    "term_id": "K_sector",
+    "vanishes_on_kernel": true
+  },
+  "relative_a": 0.015621013485509948,
+  "relative_b": 0.0,
+  "schur_column_sum_bound": 0.015621013485509948,
+  "schur_row_sum_bound": 0.015621013485509948,
+  "status": "SECTOR_COUPLING_INFINITE_BOUND_CONDITIONAL",
+  "theorem_complete": false,
+  "title": "BHSM v2.1 Sector-Coupling Infinite-Basis Bound"
+}

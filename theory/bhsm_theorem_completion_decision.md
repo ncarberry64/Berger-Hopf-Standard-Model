@@ -55,3 +55,10 @@ Do not prepare final paper/Zenodo release; attack the full operator domain, topo
 
 - This decision does not alter BHSM_BARE_V1 or BHSM_DRESSED_V1_CANDIDATE.
 - This decision does not claim first-principles theorem closure.
+
+## v2.1 Perturbation Update
+
+- H_T dependency status: `HT_THEOREM_CONDITIONAL_ON_COMPLEMENT`
+- Kato-Rellich status: `KATO_RELLICH_CLOSURE_CONDITIONAL`
+- Lower-bound status: `LOWER_BOUND_BLOCKED_BY_COMPLEMENT`
+- Final paper allowed: `False` unless `FULL_BHSM_THEOREM_PACKAGE_COMPLETE` is reached.

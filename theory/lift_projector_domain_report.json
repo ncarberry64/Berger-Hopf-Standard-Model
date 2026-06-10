@@ -1,0 +1,49 @@
+{
+  "all_preserve_DA0": true,
+  "limitations": [
+    "The domain behavior is controlled under the formal-kernel scaffold.",
+    "This does not close the final formal complement stability theorem."
+  ],
+  "open_obligations": [
+    "prove the formal complement projector and its infinite-basis limit preserve D(A0)",
+    "prove profile positivity from the complete topographic action"
+  ],
+  "projector_commutes_with_formal_kernel_scaffold": true,
+  "status": "LIFT_PROJECTOR_DOMAIN_CONDITIONAL",
+  "terms": [
+    {
+      "assumptions": [
+        "the formal complement projector has a bounded infinite-basis limit preserving D(A0)"
+      ],
+      "bounded": true,
+      "limitations": [
+        "Formal complement stability remains a later theorem obligation."
+      ],
+      "operator_role": "bounded formal-complement heat-lift projector",
+      "preserves_DA0": true,
+      "psd": true,
+      "relative_a": 0.0,
+      "relative_b": 0.0,
+      "symmetric_on_DA0": true,
+      "term_id": "P_perp_lift"
+    },
+    {
+      "assumptions": [
+        "the profile contribution is nonnegative on the formal complement"
+      ],
+      "bounded": true,
+      "limitations": [
+        "The full scalar/topographic action proof is separate from this perturbation bridge."
+      ],
+      "operator_role": "positive semidefinite topographic/profile contribution",
+      "preserves_DA0": true,
+      "psd": true,
+      "relative_a": 0.0,
+      "relative_b": 0.0,
+      "symmetric_on_DA0": true,
+      "term_id": "PSD_profile"
+    }
+  ],
+  "theorem_complete": false,
+  "title": "BHSM v2.1 Lift/Projector Domain Report"
+}
