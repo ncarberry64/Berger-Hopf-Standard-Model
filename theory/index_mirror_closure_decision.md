@@ -24,3 +24,11 @@ Theorem complete: `False`
 
 - Index and mirror channels are conditionally closed inside the current scaffold.
 - Full H_T theorem remains blocked by complete-operator domain stability and full topological proofs.
+
+## v2.4 Downstream Domain-Stability Update
+
+- H_T domain-stability decision: `HT_DOMAIN_STABILITY_BRIDGE_CONDITIONAL_STRONG`
+- Theorem complete: `False`
+- Final paper allowed: `False`
+
+The v2.3 index/mirror decision remains a conditional index/mirror scaffold; v2.4 does not upgrade it to a proven index or mirror theorem.

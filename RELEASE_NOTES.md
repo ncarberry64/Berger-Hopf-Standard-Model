@@ -42,6 +42,29 @@ full H_T theorem; complete-operator topological index proof, standalone
 complete-operator mirror exclusion, and perturbation/projector domain-stability
 upgrades remain open.
 
+# Unreleased / Development: v2.4 Complete-Operator Domain Stability
+
+Branch: `bhsm-v2.4-complete-operator-domain-stability`
+
+The v2.4 focused branch audits whether the v2.1/v2.2 perturbation,
+projector, commutator, and lower-bound scaffolds are sufficient to advance the
+complete-operator domain-stability blocker. The bridge is strengthened to a
+termwise, dependency-clean conditional result, but it is not marked proven.
+
+Status remains conservative:
+
+- complete-operator identification: `COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL`
+- perturbation domain stability: `PERTURBATION_DOMAIN_STABILITY_CONDITIONAL`
+- projector graph-domain stability: `PROJECTOR_GRAPH_DOMAIN_STABILITY_CONDITIONAL`
+- projector commutator control: `PROJECTOR_COMMUTATORS_CONDITIONAL`
+- lower-bound transfer: `HT_LOWER_BOUND_TRANSFER_CONDITIONAL`
+- H_T dependency: `HT_DOMAIN_STABILITY_BRIDGE_CONDITIONAL_STRONG`
+
+This branch does not change frozen BHSM predictions, constants, tolerances, mode
+ledgers, virtual dressing, scalar/QCD outputs, or v2.3 index/mirror reports. It
+does not prove the full H_T theorem; complete-operator identification,
+commutator/domain stability, and final index/mirror upgrades remain open.
+
 # Unreleased / Development: v2.1 Perturbation Domain and Infinite-Bound Proof
 
 Branch: `bhsm-v2.1-perturbation-domain-bound-proof`

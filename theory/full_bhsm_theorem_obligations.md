@@ -36,3 +36,10 @@
 34. virtual_dressing
 35. qcd_rg
 36. state_ontology
+
+## v2.4 Remaining Complete-Operator Domain-Stability Obligations
+
+- prove the perturbation package is the exact complete Berger-Hopf twisted Dirac/bundle operator, not only a theorem-candidate scaffold;
+- prove all nonzero projector-perturbation commutators on the complete graph domain;
+- upgrade projector graph-domain stability from conditional to proven;
+- upgrade topological index and mirror exclusion from conditional to proven before claiming final H_T transfer.

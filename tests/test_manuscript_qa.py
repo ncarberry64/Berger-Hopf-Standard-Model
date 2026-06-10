@@ -301,6 +301,12 @@ def test_typesetting_pass_does_not_modify_source_model_files():
         "src/mirror_exclusion_theorem.py",
         "src/operator_domain_index_closure.py",
         "src/twisted_dirac_index_theorem.py",
+        "src/complete_operator_domain_stability.py",
+        "src/complete_twisted_dirac_operator.py",
+        "src/perturbation_projector_commutator.py",
+        "src/projector_graph_domain_stability.py",
+        "src/complete_operator_bound_transfer.py",
+        "src/ht_domain_stability_decision.py",
     }
 
     assert not [

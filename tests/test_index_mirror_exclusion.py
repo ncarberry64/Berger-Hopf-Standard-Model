@@ -29,6 +29,7 @@ from higgs_u1_mirror_channel import (
     export_higgs_u1_mirror_channel_markdown,
 )
 from ht_domain_bridge import build_ht_domain_bridge_report
+from ht_domain_bridge import HT_DOMAIN_STABILITY_BRIDGE_CONDITIONAL_STRONG
 from index_mirror_closure_decision import (
     HT_THEOREM_CONDITIONAL_ON_DOMAIN_STABILITY,
     build_index_mirror_closure_decision,
@@ -93,7 +94,7 @@ def test_ht_dependency_moves_to_domain_stability_not_full_theorem():
 
     assert decision.ht_dependency_status == HT_THEOREM_CONDITIONAL_ON_DOMAIN_STABILITY
     assert decision.theorem_complete is False
-    assert bridge.domain_bridge_status == HT_THEOREM_CONDITIONAL_ON_DOMAIN_STABILITY
+    assert bridge.domain_bridge_status == HT_DOMAIN_STABILITY_BRIDGE_CONDITIONAL_STRONG
     assert bridge.theorem_complete is False
 
 

@@ -5,7 +5,7 @@ from pathlib import Path
 from bhsm_v1 import build_bhsm_bare_v1, build_bhsm_dressed_v1_candidate, compare_bhsm_v1_branches
 from constants import S_OVERLAP
 from essential_self_adjointness import DIAGONAL_CORE_ESSENTIALLY_SELF_ADJOINT_PROVEN
-from ht_domain_bridge import HT_THEOREM_CONDITIONAL_ON_DOMAIN_STABILITY, build_ht_domain_bridge_report
+from ht_domain_bridge import HT_DOMAIN_STABILITY_BRIDGE_CONDITIONAL_STRONG, build_ht_domain_bridge_report
 from kato_rellich_closure import (
     KATO_RELLICH_CLOSURE_CONDITIONAL,
     build_kato_rellich_closure_report,
@@ -100,7 +100,7 @@ def test_lower_bound_preservation_is_conditional():
 def test_ht_bridge_blocks_on_perturbation_not_full_theorem():
     report = build_ht_domain_bridge_report()
 
-    assert report.domain_bridge_status == HT_THEOREM_CONDITIONAL_ON_DOMAIN_STABILITY
+    assert report.domain_bridge_status == HT_DOMAIN_STABILITY_BRIDGE_CONDITIONAL_STRONG
     assert report.kato_rellich_closure_status == KATO_RELLICH_CLOSURE_CONDITIONAL
     assert report.lower_bound_preservation_status == "LOWER_BOUND_BLOCKED_BY_COMPLEMENT"
     assert report.theorem_complete is False

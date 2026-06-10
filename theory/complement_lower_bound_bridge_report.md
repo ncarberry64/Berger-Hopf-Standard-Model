@@ -23,3 +23,11 @@ Applies to H_perp: `True`
 
 - The lower bound applies to H_perp conditionally under the v2.2 projector/domain scaffold.
 - This does not complete the index or mirror-mode portions of the theorem.
+
+## v2.4 Complete-Operator Domain-Stability Update
+
+- Domain-stability decision: `HT_DOMAIN_STABILITY_BRIDGE_CONDITIONAL_STRONG`
+- Lower-bound transfer: `HT_LOWER_BOUND_TRANSFER_CONDITIONAL`
+- Theorem complete: `False`
+
+The v2.2 lower-bound bridge remains valid only conditionally under the v2.4 complete-operator domain-stability scaffold. It is not a final H_T theorem.

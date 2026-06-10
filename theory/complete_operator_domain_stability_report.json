@@ -1,0 +1,99 @@
+{
+  "all_termwise_checks_pass": true,
+  "commutator_control_status": "PROJECTOR_COMMUTATORS_CONDITIONAL",
+  "complete_operator_identification_status": "COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL",
+  "limitations": [
+    "v2.4 strengthens the domain-stability bridge to explicit termwise conditional control.",
+    "It does not mark the bridge proven because complete-operator identification and commutator proofs remain conditional."
+  ],
+  "lower_bound_transfer_status": "HT_LOWER_BOUND_TRANSFER_CONDITIONAL",
+  "open_obligations": [
+    "derive the perturbation package from the complete Berger-Hopf twisted Dirac/bundle action",
+    "prove the theorem-candidate operator is the exact complete operator, not only a controlled scaffold representation",
+    "upgrade conditional P_perp D(A0+V) stability to a complete-operator graph-domain proof",
+    "prove all nonzero [P_perp,V] commutators in the complete twisted Dirac/bundle domain",
+    "prove nonzero commutators are bounded or relatively bounded in the complete twisted Dirac/bundle operator",
+    "prove sector-coupling commutator control independent of scaffold identification assumptions",
+    "upgrade projector graph-domain stability from conditional to proven",
+    "upgrade topological index and mirror exclusion from conditional to proven before claiming final H_T transfer"
+  ],
+  "perturbation_domain_stability_status": "PERTURBATION_DOMAIN_STABILITY_CONDITIONAL",
+  "perturbation_terms": [
+    {
+      "assumptions": [
+        "v2.1 common-domain and relative-bound scaffold applies to D(A0)"
+      ],
+      "limitations": [
+        "complete Hopf covariant derivative domain proof remains conditional"
+      ],
+      "maps_DA0_to_H": true,
+      "preserves_common_domain": true,
+      "status": "PERTURBATION_TERM_DOMAIN_CONDITIONAL",
+      "term_id": "V_Hopf"
+    },
+    {
+      "assumptions": [
+        "v2.1 common-domain and relative-bound scaffold applies to D(A0)"
+      ],
+      "limitations": [
+        "complete boundary functional domain proof remains conditional"
+      ],
+      "maps_DA0_to_H": true,
+      "preserves_common_domain": true,
+      "status": "PERTURBATION_TERM_DOMAIN_CONDITIONAL",
+      "term_id": "V_boundary"
+    },
+    {
+      "assumptions": [
+        "v2.1 common-domain and relative-bound scaffold applies to D(A0)"
+      ],
+      "limitations": [
+        "chirality projector is controlled, but complete action domain linkage remains conditional"
+      ],
+      "maps_DA0_to_H": true,
+      "preserves_common_domain": true,
+      "status": "PERTURBATION_TERM_DOMAIN_CONDITIONAL",
+      "term_id": "V_chi"
+    },
+    {
+      "assumptions": [
+        "v2.1 common-domain and relative-bound scaffold applies to D(A0)"
+      ],
+      "limitations": [
+        "sector-coupling complete operator identification remains conditional"
+      ],
+      "maps_DA0_to_H": true,
+      "preserves_common_domain": true,
+      "status": "PERTURBATION_TERM_DOMAIN_CONDITIONAL",
+      "term_id": "K_sector"
+    },
+    {
+      "assumptions": [
+        "v2.1 common-domain and relative-bound scaffold applies to D(A0)"
+      ],
+      "limitations": [
+        "projector/domain stability is handled by the v2.4 graph-domain bridge"
+      ],
+      "maps_DA0_to_H": true,
+      "preserves_common_domain": true,
+      "status": "PERTURBATION_TERM_DOMAIN_CONDITIONAL",
+      "term_id": "P_perp_lift"
+    },
+    {
+      "assumptions": [
+        "v2.1 common-domain and relative-bound scaffold applies to D(A0)"
+      ],
+      "limitations": [
+        "profile positivity/domain invariance remains scalar-action conditional"
+      ],
+      "maps_DA0_to_H": true,
+      "preserves_common_domain": true,
+      "status": "PERTURBATION_TERM_DOMAIN_CONDITIONAL",
+      "term_id": "PSD_profile"
+    }
+  ],
+  "projector_graph_domain_stability_status": "PROJECTOR_GRAPH_DOMAIN_STABILITY_CONDITIONAL",
+  "status": "HT_DOMAIN_STABILITY_BRIDGE_CONDITIONAL_STRONG",
+  "theorem_complete": false,
+  "title": "BHSM v2.4 Complete-Operator Domain-Stability Report"
+}

@@ -1,0 +1,105 @@
+{
+  "all_commutators_controlled": true,
+  "all_complete_operator_proven": false,
+  "limitations": [
+    "Commutators are controlled in the explicit scaffold chain.",
+    "They are not all zero or complete-operator proven, so the status remains conditional."
+  ],
+  "open_obligations": [
+    "prove nonzero commutators are bounded or relatively bounded in the complete twisted Dirac/bundle operator",
+    "prove sector-coupling commutator control independent of scaffold identification assumptions"
+  ],
+  "perturbation_bridge_status": "KATO_RELLICH_CLOSURE_CONDITIONAL",
+  "projector_status": "FORMAL_COMPLEMENT_PROJECTOR_PROVEN",
+  "rows": [
+    {
+      "assumptions": [
+        "A0 is diagonal in the sector-labeled basis"
+      ],
+      "bounded": true,
+      "commutator": "0 on the diagonal formal-kernel decomposition",
+      "limitations": [],
+      "relative_a": 0.0,
+      "relatively_bounded": true,
+      "status": "COMMUTATOR_CONTROLLED",
+      "term_id": "[P_perp,A0]",
+      "vanishes": true
+    },
+    {
+      "assumptions": [
+        "Hopf term preserves the formal kernel/complement split in the scaffold"
+      ],
+      "bounded": true,
+      "commutator": "conditional zero/bounded on named formal kernel",
+      "limitations": [
+        "complete-operator Hopf domain invariance remains to prove"
+      ],
+      "relative_a": 0.0,
+      "relatively_bounded": true,
+      "status": "COMMUTATOR_CONDITIONAL",
+      "term_id": "[P_perp,V_Hopf]",
+      "vanishes": false
+    },
+    {
+      "assumptions": [
+        "v1.2 boundary functional preserves protected sector labels"
+      ],
+      "bounded": true,
+      "commutator": "conditional zero/bounded on named formal kernel",
+      "limitations": [
+        "full boundary problem remains action-scaffold conditional"
+      ],
+      "relative_a": 0.0,
+      "relatively_bounded": true,
+      "status": "COMMUTATOR_CONDITIONAL",
+      "term_id": "[P_perp,V_boundary]",
+      "vanishes": false
+    },
+    {
+      "assumptions": [
+        "chiral projector acts diagonally on chirality labels"
+      ],
+      "bounded": true,
+      "commutator": "zero for the protected chirality projector channel",
+      "limitations": [],
+      "relative_a": 0.0,
+      "relatively_bounded": true,
+      "status": "COMMUTATOR_CONTROLLED",
+      "term_id": "[P_perp,V_chi]",
+      "vanishes": true
+    },
+    {
+      "assumptions": [
+        "sector coupling vanishes on the formal kernel and has the v2.1 relative-bound estimate"
+      ],
+      "bounded": true,
+      "commutator": "zero on protected block, relatively bounded on complement",
+      "limitations": [
+        "upgrade structured bound to complete-operator theorem"
+      ],
+      "relative_a": 0.015621013485509948,
+      "relatively_bounded": true,
+      "status": "COMMUTATOR_CONDITIONAL",
+      "term_id": "[P_perp,K_sector]",
+      "vanishes": false
+    },
+    {
+      "assumptions": [
+        "lift/profile terms are bounded or PSD on the scaffold complement"
+      ],
+      "bounded": true,
+      "commutator": "bounded PSD lift/profile channel",
+      "limitations": [
+        "profile positivity/domain invariance remains action-level conditional"
+      ],
+      "relative_a": 0.0,
+      "relatively_bounded": true,
+      "status": "COMMUTATOR_CONDITIONAL",
+      "term_id": "[P_perp,P_lift+PSD]",
+      "vanishes": false
+    }
+  ],
+  "status": "PROJECTOR_COMMUTATORS_CONDITIONAL",
+  "theorem_complete": false,
+  "title": "BHSM v2.4 Perturbation Projector Commutator Report"
+}

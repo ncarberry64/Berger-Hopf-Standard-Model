@@ -58,3 +58,11 @@ Do not prepare final paper/Zenodo release; attack the full operator domain, topo
 
 - This decision does not alter BHSM_BARE_V1 or BHSM_DRESSED_V1_CANDIDATE.
 - This decision does not claim first-principles theorem closure.
+
+## v2.4 Complete-Operator Domain-Stability Update
+
+- H_T dependency status: `HT_DOMAIN_STABILITY_BRIDGE_CONDITIONAL_STRONG`
+- Complete-operator identification: `COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL`
+- Projector graph-domain stability: `PROJECTOR_GRAPH_DOMAIN_STABILITY_CONDITIONAL`
+- Lower-bound transfer: `HT_LOWER_BOUND_TRANSFER_CONDITIONAL`
+- Final paper allowed: `False` unless `FULL_BHSM_THEOREM_PACKAGE_COMPLETE` is reached.

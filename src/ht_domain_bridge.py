@@ -22,6 +22,8 @@ HT_THEOREM_BLOCKED_BY_LOWER_BOUND = "HT_THEOREM_BLOCKED_BY_LOWER_BOUND"
 HT_THEOREM_CONDITIONAL_ON_INDEX = "HT_THEOREM_CONDITIONAL_ON_INDEX"
 HT_THEOREM_CONDITIONAL_ON_INDEX_MIRROR = "HT_THEOREM_CONDITIONAL_ON_INDEX_MIRROR"
 HT_THEOREM_CONDITIONAL_ON_DOMAIN_STABILITY = "HT_THEOREM_CONDITIONAL_ON_DOMAIN_STABILITY"
+HT_DOMAIN_STABILITY_BRIDGE_CONDITIONAL_STRONG = "HT_DOMAIN_STABILITY_BRIDGE_CONDITIONAL_STRONG"
+HT_DOMAIN_STABILITY_BRIDGE_PROVEN = "HT_DOMAIN_STABILITY_BRIDGE_PROVEN"
 HT_THEOREM_BLOCKED_BY_DOMAIN = "HT_THEOREM_BLOCKED_BY_DOMAIN"
 HT_THEOREM_BLOCKED_BY_COMPLEMENT = "HT_THEOREM_BLOCKED_BY_COMPLEMENT"
 FULL_HT_THEOREM_PROVEN = "FULL_HT_THEOREM_PROVEN"
@@ -66,6 +68,7 @@ def build_ht_domain_bridge_report() -> HTDomainBridgeReport:
     from perturbation_closure_decision import build_perturbation_closure_decision
     from formal_complement_closure_decision import build_formal_complement_closure_decision
     from index_mirror_closure_decision import build_index_mirror_closure_decision
+    from ht_domain_stability_decision import build_ht_domain_stability_decision
 
     diagonal = build_diagonal_reference_operator_report()
     graph = build_graph_norm_domain_report()
@@ -75,6 +78,7 @@ def build_ht_domain_bridge_report() -> HTDomainBridgeReport:
     perturbation_decision = build_perturbation_closure_decision()
     complement_decision = build_formal_complement_closure_decision()
     index_mirror_decision = build_index_mirror_closure_decision()
+    domain_stability_decision = build_ht_domain_stability_decision()
     relative_proven = relative.status == UNIFORM_RELATIVE_BOUND_PROVEN
     self_adjoint_proven = self_adjoint.status == SELF_ADJOINT_DOMAIN_PROVEN
     complement_stable = complement.status == FORMAL_COMPLEMENT_STABLE
@@ -82,6 +86,10 @@ def build_ht_domain_bridge_report() -> HTDomainBridgeReport:
     reference_closed = diagonal.status == DIAGONAL_REFERENCE_OPERATOR_PROVEN and graph.status == GRAPH_NORM_DOMAIN_PROVEN
     if relative_proven and self_adjoint_proven and complement_stable and index_proven:
         status = FULL_HT_THEOREM_PROVEN
+    elif domain_stability_decision.ht_dependency_status == HT_DOMAIN_STABILITY_BRIDGE_PROVEN:
+        status = HT_DOMAIN_STABILITY_BRIDGE_PROVEN
+    elif domain_stability_decision.ht_dependency_status == HT_DOMAIN_STABILITY_BRIDGE_CONDITIONAL_STRONG:
+        status = HT_DOMAIN_STABILITY_BRIDGE_CONDITIONAL_STRONG
     elif kato_closure.status == KATO_RELLICH_CLOSURE_PROVEN and lower.status == LOWER_BOUND_PRESERVED:
         status = HT_KATO_RELLICH_BRIDGE_PROVEN
     elif kato.status == KATO_RELLICH_PRECONDITIONS_COMPLETE:
@@ -113,6 +121,7 @@ def build_ht_domain_bridge_report() -> HTDomainBridgeReport:
                 *perturbation_decision.open_obligations,
                 *complement_decision.open_obligations,
                 *index_mirror_decision.open_obligations,
+                *domain_stability_decision.open_obligations,
             )
         )
     )
@@ -128,7 +137,7 @@ def build_ht_domain_bridge_report() -> HTDomainBridgeReport:
         kato_rellich_closure_status=perturbation_decision.kato_rellich_status,
         lower_bound_preservation_status=perturbation_decision.lower_bound_status,
         domain_bridge_status=status,
-        full_ht_theorem_status_improved=status in {HT_THEOREM_CANDIDATE_STRENGTHENED, HT_THEOREM_REFERENCE_OPERATOR_CLOSED, HT_THEOREM_BLOCKED_BY_PERTURBATION, HT_THEOREM_CONDITIONAL_ON_COMPLEMENT, HT_THEOREM_CONDITIONAL_ON_INDEX_MIRROR, HT_THEOREM_CONDITIONAL_ON_DOMAIN_STABILITY},
+        full_ht_theorem_status_improved=status in {HT_THEOREM_CANDIDATE_STRENGTHENED, HT_THEOREM_REFERENCE_OPERATOR_CLOSED, HT_THEOREM_BLOCKED_BY_PERTURBATION, HT_THEOREM_CONDITIONAL_ON_COMPLEMENT, HT_THEOREM_CONDITIONAL_ON_INDEX_MIRROR, HT_THEOREM_CONDITIONAL_ON_DOMAIN_STABILITY, HT_DOMAIN_STABILITY_BRIDGE_CONDITIONAL_STRONG, HT_DOMAIN_STABILITY_BRIDGE_PROVEN},
         theorem_complete=status == FULL_HT_THEOREM_PROVEN,
         open_obligations=open_obligations,
         limitations=(
