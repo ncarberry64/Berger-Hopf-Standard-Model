@@ -62,3 +62,9 @@ Do not prepare final paper/Zenodo release; attack the full operator domain, topo
 - Kato-Rellich status: `KATO_RELLICH_CLOSURE_CONDITIONAL`
 - Lower-bound status: `LOWER_BOUND_BLOCKED_BY_COMPLEMENT`
 - Final paper allowed: `False` unless `FULL_BHSM_THEOREM_PACKAGE_COMPLETE` is reached.
+
+## v2.2 Formal Complement Update
+
+- H_T dependency status: `HT_THEOREM_CONDITIONAL_ON_INDEX_MIRROR`
+- Complement lower-bound bridge: `COMPLEMENT_LOWER_BOUND_CONDITIONAL`
+- Final paper allowed: `False` unless `FULL_BHSM_THEOREM_PACKAGE_COMPLETE` is reached.

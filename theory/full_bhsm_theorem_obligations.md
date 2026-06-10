@@ -40,3 +40,9 @@
 - derive the sector-coupling sparse bound from the complete infinite-basis action
 - prove formal complement stability before using the lower bound as a final H_T theorem
 - combine with final index and mirror closure before any full theorem claim
+
+## v2.2 Remaining Index/Mirror Obligations
+
+- prove topological index theorem for the complete twisted Dirac operator
+- exclude mirror zero modes in the complete chiral operator
+- upgrade conditional perturbation-domain stability to complete-operator proof

@@ -1,3 +1,20 @@
+# Unreleased / Development: v2.2 Formal Complement Stability
+
+Branch: `bhsm-v2.2-formal-complement-stability`
+
+The v2.2 focused branch closes the formal projector algebra and finite-projector convergence bridge for the corrected sector-labeled kernel. The lower bound now applies to `H_perp` conditionally under projector/domain scaffold assumptions.
+
+Status remains conservative:
+
+- formal kernel projector: `FORMAL_KERNEL_PROJECTOR_PROVEN`
+- formal complement projector: `FORMAL_COMPLEMENT_PROJECTOR_PROVEN`
+- domain stability: `PROJECTOR_DOMAIN_STABILITY_CONDITIONAL`
+- finite-projector convergence: `FINITE_PROJECTOR_CONVERGENCE_PROVEN`
+- complement lower-bound bridge: `COMPLEMENT_LOWER_BOUND_CONDITIONAL`
+- H_T dependency: `HT_THEOREM_CONDITIONAL_ON_INDEX_MIRROR`
+
+This branch does not change frozen BHSM predictions, constants, tolerances, mode ledgers, or virtual dressing. It does not prove the full H_T theorem; topological index and mirror exclusion remain open.
+
 # Unreleased / Development: v2.1 Perturbation Domain and Infinite-Bound Proof
 
 Branch: `bhsm-v2.1-perturbation-domain-bound-proof`

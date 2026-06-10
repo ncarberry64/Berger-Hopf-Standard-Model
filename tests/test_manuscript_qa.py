@@ -284,6 +284,12 @@ def test_typesetting_pass_does_not_modify_source_model_files():
         "src/hopf_boundary_infinite_bound.py",
         "src/lift_projector_domain.py",
         "src/perturbation_closure_decision.py",
+        "src/formal_kernel_projector.py",
+        "src/formal_complement_projector.py",
+        "src/projector_domain_stability.py",
+        "src/finite_projector_convergence.py",
+        "src/complement_lower_bound_bridge.py",
+        "src/formal_complement_closure_decision.py",
     }
 
     assert not [

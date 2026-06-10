@@ -1,6 +1,6 @@
 # BHSM v1.8 H_T Domain Bridge Report
 
-Domain bridge status: `HT_THEOREM_CONDITIONAL_ON_COMPLEMENT`
+Domain bridge status: `HT_THEOREM_CONDITIONAL_ON_INDEX_MIRROR`
 Theorem complete: `False`
 Full H_T theorem status improved: `True`
 
@@ -46,22 +46,22 @@ Full H_T theorem status improved: `True`
 - derive the sector-coupling sparse bound from the complete infinite-basis action
 - prove formal complement stability before using the lower bound as a final H_T theorem
 - combine with final index and mirror closure before any full theorem claim
+- prove topological index theorem for the complete twisted Dirac operator
+- exclude mirror zero modes in the complete chiral operator
+- upgrade conditional perturbation-domain stability to complete-operator proof
 
 ## Limitations
 
 - The H_T theorem is strengthened from a perturbation blocker to a complement-conditional bridge only conditionally.
 - Full H_T theorem proof still requires proven self-adjointness, complement stability, index, and mirror closure.
 
-## v2.1 Update
+## v2.2 Update
 
-- common_domain_status: `COMMON_DOMAIN_EQUALS_DA0_CONDITIONAL`
-- perturbation_symmetry_status: `PERTURBATION_SYMMETRY_TERMWISE_CONDITIONAL`
-- sector_coupling_status: `SECTOR_COUPLING_INFINITE_BOUND_CONDITIONAL`
-- hopf_boundary_chi_status: `HOPF_BOUNDARY_CHI_BOUNDS_CONDITIONAL`
-- lift_projector_domain_status: `LIFT_PROJECTOR_DOMAIN_CONDITIONAL`
-- relative_bound_status: `RELATIVE_BOUND_CONDITIONAL_WITH_EXPLICIT_ASSUMPTIONS`
-- kato_rellich_status: `KATO_RELLICH_CLOSURE_CONDITIONAL`
-- lower_bound_status: `LOWER_BOUND_BLOCKED_BY_COMPLEMENT`
-- ht_dependency_status: `HT_THEOREM_CONDITIONAL_ON_COMPLEMENT`
+- formal_kernel_projector_status: `FORMAL_KERNEL_PROJECTOR_PROVEN`
+- formal_complement_projector_status: `FORMAL_COMPLEMENT_PROJECTOR_PROVEN`
+- domain_stability_status: `PROJECTOR_DOMAIN_STABILITY_CONDITIONAL`
+- finite_projector_convergence_status: `FINITE_PROJECTOR_CONVERGENCE_PROVEN`
+- complement_lower_bound_status: `COMPLEMENT_LOWER_BOUND_CONDITIONAL`
+- ht_dependency_status: `HT_THEOREM_CONDITIONAL_ON_INDEX_MIRROR`
 - theorem_complete: `False`
-- note: `v2.1 supersedes the finite-scan perturbation blocker with explicit conditional infinite-basis bounds; formal complement stability remains open.`
+- note: `v2.2 closes projector algebra and finite-projector convergence; full H_T remains conditional on index/mirror and complete-operator domain proof.`
