@@ -1,0 +1,83 @@
+{
+  "components": [
+    {
+      "definition": "H is the l2-completion of sector-labeled modes |sector,k,j,q,chi>.",
+      "evidence": [
+        "mode labels and corrected formal kernel are explicit"
+      ],
+      "id": "hilbert_basis",
+      "open_obligations": [],
+      "status": "INFINITE_DOMAIN_DEFINED"
+    },
+    {
+      "definition": "C_fin is the finite-support span of Berger-Hopf twisted spinor modes.",
+      "evidence": [
+        "finite truncations are nested subspaces of the same labeled basis"
+      ],
+      "id": "finite_core",
+      "open_obligations": [],
+      "status": "INFINITE_DOMAIN_DEFINED"
+    },
+    {
+      "definition": "D(D0) is the graph-norm closure of C_fin for the diagonal reference operator D0.",
+      "evidence": [
+        "diagonal eigenvalue scaffold is real and lower bounded"
+      ],
+      "id": "graph_norm_closure",
+      "open_obligations": [
+        "prove the complete diagonal Berger/twisted Dirac spectrum and graph-norm closure"
+      ],
+      "status": "INFINITE_DOMAIN_CONDITIONAL"
+    },
+    {
+      "definition": "Perturbations are defined on D(D0) if relatively bounded or bounded on the graph norm.",
+      "evidence": [
+        "v1.7 relative-a estimates are below one in the scaffold"
+      ],
+      "id": "perturbation_domain",
+      "open_obligations": [
+        "upgrade every finite/scaffold bound to an infinite-basis operator bound"
+      ],
+      "status": "INFINITE_DOMAIN_CONDITIONAL"
+    },
+    {
+      "definition": "K_formal is the span of the three sector-labeled q=0, chi=-1 states.",
+      "evidence": [
+        "the corrected formal kernel is coordinate-free and sector-labeled"
+      ],
+      "id": "formal_kernel_domain",
+      "open_obligations": [],
+      "status": "INFINITE_DOMAIN_DEFINED"
+    },
+    {
+      "definition": "H_perp is K_formal^perp in the l2 Hilbert space.",
+      "evidence": [
+        "orthogonal complement is well-defined for the finite-rank formal kernel"
+      ],
+      "id": "formal_complement_domain",
+      "open_obligations": [
+        "prove the full operator leaves K_formal and/or H_perp invariant or block-controlled"
+      ],
+      "status": "INFINITE_DOMAIN_CONDITIONAL"
+    }
+  ],
+  "dense_core": "C_fin = finite-support span of the infinite labeled basis",
+  "diagonal_reference_operator": "D0^2 = diagonal Berger/twisted Dirac reference square",
+  "formal_complement": "H_perp = K_formal^perp",
+  "formal_kernel": [
+    "|ell,0,0,q=0,chi=-1>",
+    "|u,0,0,q=0,chi=-1>",
+    "|d,0,0,q=0,chi=-1>"
+  ],
+  "graph_norm": "||psi||_D0^2 = ||psi||^2 + ||D0 psi||^2",
+  "hilbert_space": "H = l2({sector,k,j,q,chi}) over sector in {ell,u,d}, q=k-2j",
+  "infinite_basis": "|sector,k,j,q,chi> with k>=0, 0<=j<=k, chi in {-1,+1}",
+  "limitations": [
+    "The infinite Hilbert/domain scaffold is explicit, but graph-norm closure and perturbation domains remain conditional.",
+    "The old coordinate-first kernel (0,1,2) is not used."
+  ],
+  "old_coordinate_first_kernel_used": false,
+  "status": "INFINITE_DOMAIN_CONDITIONAL",
+  "theorem_complete": false,
+  "title": "BHSM v1.8 Infinite-Basis Domain Report"
+}

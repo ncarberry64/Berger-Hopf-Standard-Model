@@ -24,6 +24,12 @@ k_max=4 coordinates: `(0, 18, 36)`
 
 The corrected formal-kernel H_T scaffold remains strong, but v1.7 keeps the full theorem blocked by the complete operator-domain/self-adjointness chain before index and mirror closure can upgrade the theorem.
 
+## v1.8 Domain Bridge Status
+
+`HT_THEOREM_CANDIDATE_STRENGTHENED`
+
+The v1.8 domain bridge records favorable conditional infinite-basis relative-bound structure, but it does not prove the full H_T theorem.
+
 ## Remaining Open Nodes
 
 - Prove an infinite-basis uniform complement lower bound independent of k_max.

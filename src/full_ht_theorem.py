@@ -39,6 +39,7 @@ class HTTheoremClosureReport:
     heat_lift_and_psd_profile_preserved: bool
     sector_coupling_uniform_relative_bound_status: str
     v1_7_dependency_status: str
+    v1_8_domain_bridge_status: str
     remaining_open_nodes: tuple[str, ...]
     status: str
     theorem_complete: bool
@@ -49,7 +50,10 @@ class HTTheoremClosureReport:
 def build_full_ht_theorem_report() -> HTTheoremClosureReport:
     """Attempt to close the full H_T theorem without overclaiming."""
 
+    from ht_domain_bridge import build_ht_domain_bridge_report
+
     infinite = build_infinite_basis_ht_bound_report()
+    bridge = build_ht_domain_bridge_report()
     kernel = kernel_theorem_nodes()
     open_nodes = []
     for node in infinite.nodes:
@@ -72,6 +76,7 @@ def build_full_ht_theorem_report() -> HTTheoremClosureReport:
         heat_lift_and_psd_profile_preserved=True,
         sector_coupling_uniform_relative_bound_status="UNIFORM_BOUND_CANDIDATE",
         v1_7_dependency_status="HT_THEOREM_BLOCKED_BY_DOMAIN",
+        v1_8_domain_bridge_status=bridge.domain_bridge_status,
         remaining_open_nodes=tuple(dict.fromkeys(open_nodes)),
         status=status,
         theorem_complete=theorem_complete,
@@ -135,6 +140,12 @@ def export_full_ht_theorem_markdown(path: str | Path) -> None:
         f"`{report.v1_7_dependency_status}`",
         "",
         "The corrected formal-kernel H_T scaffold remains strong, but v1.7 keeps the full theorem blocked by the complete operator-domain/self-adjointness chain before index and mirror closure can upgrade the theorem.",
+        "",
+        "## v1.8 Domain Bridge Status",
+        "",
+        f"`{report.v1_8_domain_bridge_status}`",
+        "",
+        "The v1.8 domain bridge records favorable conditional infinite-basis relative-bound structure, but it does not prove the full H_T theorem.",
         "",
         "## Remaining Open Nodes",
         "",

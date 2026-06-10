@@ -180,6 +180,35 @@ coordinate-first kernel `(0,1,2)` remains rejected. Frozen BHSM predictions and
 prior scaffold outputs remain unchanged. Final paper/Zenodo release remains
 blocked.
 
+## Unreleased / Development: v1.8 Infinite-Basis Domain Proof
+
+Branch: `bhsm-v1.8-infinite-basis-domain-proof`
+
+The v1.8 focused branch attacks the infinite-basis operator-domain and
+relative-bound blocker identified in v1.7. It defines the infinite
+sector-labeled Hilbert basis, finite-mode core, graph norm, diagonal reference
+operator, formal kernel, formal complement, and complement projector.
+
+Current v1.8 status:
+
+- infinite-basis domain: `INFINITE_DOMAIN_CONDITIONAL`;
+- uniform relative-bound theorem attempt: `UNIFORM_RELATIVE_BOUND_CONDITIONAL`;
+- self-adjointness closure: `SELF_ADJOINT_DOMAIN_CONDITIONAL`;
+- formal complement stability: `FORMAL_COMPLEMENT_CONDITIONAL`;
+- H_T bridge: `HT_THEOREM_CANDIDATE_STRENGTHENED`.
+
+The aggregate relative-a estimate remains favorable:
+
+```text
+total a <= 0.015621013485509948 < 1
+```
+
+This strengthens the H_T theorem candidate but does not prove the full theorem.
+Full closure still requires the complete infinite-basis relative-bound proof,
+self-adjoint domain proof, formal-complement stability proof, topological
+index theorem, and mirror exclusion theorem. Frozen outputs remain unchanged
+and final paper/Zenodo release remains blocked.
+
 ## Unreleased / Development: v1.4 Precision QCD/RG Matching
 
 Branch: `bhsm-v1.4-precision-qcd-rg`

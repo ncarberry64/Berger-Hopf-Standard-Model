@@ -1,0 +1,66 @@
+{
+  "checks": [
+    {
+      "id": "idempotence",
+      "open_obligations": [],
+      "passes": true,
+      "proof_scope": "finite-rank Hilbert-space projection",
+      "statement": "P_perp^2 = P_perp for P_perp = I - P_K."
+    },
+    {
+      "id": "self_adjointness",
+      "open_obligations": [],
+      "passes": true,
+      "proof_scope": "finite-rank orthogonal projection",
+      "statement": "P_perp^* = P_perp."
+    },
+    {
+      "id": "sector_kernel",
+      "open_obligations": [],
+      "passes": true,
+      "proof_scope": "coordinate-free formal label",
+      "statement": "K_formal remains one lepton, one up, one down protected state."
+    },
+    {
+      "id": "no_coordinate_first",
+      "open_obligations": [],
+      "passes": true,
+      "proof_scope": "explicit rejection",
+      "statement": "The coordinate-first block (0,1,2) is not used."
+    },
+    {
+      "id": "operator_invariance",
+      "open_obligations": [
+        "prove full operator block invariance or controlled off-block coupling"
+      ],
+      "passes": false,
+      "proof_scope": "conditional complete-operator statement",
+      "statement": "D_FK maps K_formal and H_perp into controlled blocks."
+    },
+    {
+      "id": "finite_projector_limit",
+      "open_obligations": [
+        "prove nested finite projectors converge to the coordinate-free formal projector"
+      ],
+      "passes": false,
+      "proof_scope": "conditional nested-basis statement",
+      "statement": "finite formal-kernel projectors converge strongly to P_K."
+    }
+  ],
+  "complement": "H_perp = K_formal^perp",
+  "finite_projector_converges_conditionally": true,
+  "formal_kernel": [
+    "|ell,0,0,q=0,chi=-1>",
+    "|u,0,0,q=0,chi=-1>",
+    "|d,0,0,q=0,chi=-1>"
+  ],
+  "limitations": [
+    "Projection algebra is clean for the finite-rank formal kernel.",
+    "Full operator invariance and finite-projector convergence remain conditional."
+  ],
+  "old_coordinate_first_artifact_reintroduced": false,
+  "projector": "P_perp = I - P_K_formal",
+  "status": "FORMAL_COMPLEMENT_CONDITIONAL",
+  "theorem_complete": false,
+  "title": "BHSM v1.8 Formal Complement Stability Report"
+}
