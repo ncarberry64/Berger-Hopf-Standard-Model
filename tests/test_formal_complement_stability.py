@@ -104,7 +104,7 @@ def test_ht_dependency_moves_to_index_mirror_not_full_theorem():
 
     assert decision.ht_dependency_status == HT_THEOREM_CONDITIONAL_ON_INDEX_MIRROR
     assert decision.theorem_complete is False
-    assert bridge.domain_bridge_status == HT_THEOREM_CONDITIONAL_ON_INDEX_MIRROR
+    assert bridge.domain_bridge_status == "HT_THEOREM_CONDITIONAL_ON_DOMAIN_STABILITY"
     assert bridge.theorem_complete is False
 
 

@@ -290,6 +290,17 @@ def test_typesetting_pass_does_not_modify_source_model_files():
         "src/finite_projector_convergence.py",
         "src/complement_lower_bound_bridge.py",
         "src/formal_complement_closure_decision.py",
+        "src/topological_index_operator.py",
+        "src/twisted_dirac_index_closure.py",
+        "src/index_sector_count.py",
+        "src/full_mirror_exclusion.py",
+        "src/chiral_projector_closure.py",
+        "src/higgs_u1_mirror_channel.py",
+        "src/boundary_mirror_channel.py",
+        "src/index_mirror_closure_decision.py",
+        "src/mirror_exclusion_theorem.py",
+        "src/operator_domain_index_closure.py",
+        "src/twisted_dirac_index_theorem.py",
     }
 
     assert not [

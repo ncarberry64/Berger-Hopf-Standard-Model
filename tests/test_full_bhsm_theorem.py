@@ -18,9 +18,9 @@ from full_bhsm_theorem import (
     export_full_bhsm_theorem_obligations_markdown,
 )
 from full_operator_domain import build_full_operator_domain_report
-from mirror_exclusion_theorem import MIRROR_EXCLUSION_OPEN, build_mirror_exclusion_theorem_report
+from mirror_exclusion_theorem import MIRROR_EXCLUSION_CONDITIONAL, build_mirror_exclusion_theorem_report
 from scalar_full_action_theorem import SCALAR_FULL_ACTION_PROOF_OPEN, build_scalar_full_action_theorem_report
-from twisted_dirac_index_theorem import INDEX_THEOREM_OPEN, build_twisted_dirac_index_theorem_report
+from twisted_dirac_index_theorem import INDEX_THEOREM_CONDITIONAL, build_twisted_dirac_index_theorem_report
 
 
 def test_wrapper_theorem_reports_remain_open_where_proofs_are_missing():
@@ -30,8 +30,8 @@ def test_wrapper_theorem_reports_remain_open_where_proofs_are_missing():
     scalar = build_scalar_full_action_theorem_report()
 
     assert domain.theorem_complete is False
-    assert index.status == INDEX_THEOREM_OPEN
-    assert mirror.status == MIRROR_EXCLUSION_OPEN
+    assert index.status == INDEX_THEOREM_CONDITIONAL
+    assert mirror.status == MIRROR_EXCLUSION_CONDITIONAL
     assert scalar.status == SCALAR_FULL_ACTION_PROOF_OPEN
     assert scalar.exactly_one_higgs_projection is True
     assert scalar.open_scalar_risk_count == 0
@@ -111,4 +111,3 @@ def test_generated_completion_artifacts_exist_and_are_conservative():
     text = "\n".join(path.read_text() for path in paths if path.suffix == ".md")
     assert "FULL_BHSM_THEOREM_PACKAGE_COMPLETE" not in json.loads(paths[3].with_suffix(".json").read_text()).get("final_status", "")
     assert "Final paper allowed: `False`" in text
-

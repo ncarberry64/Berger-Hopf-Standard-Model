@@ -7,8 +7,8 @@ from constants import S_OVERLAP
 from full_ht_theorem import build_full_ht_theorem_report
 from operator_domain_index_closure import (
     HT_THEOREM_BLOCKED_BY_DOMAIN,
-    INDEX_THEOREM_OPEN,
-    MIRROR_EXCLUSION_OPEN,
+    INDEX_THEOREM_CONDITIONAL,
+    MIRROR_EXCLUSION_CONDITIONAL,
     RELATIVE_BOUND_CONDITIONAL,
     build_operator_domain_index_closure_report,
     build_relative_bound_audit_report,
@@ -50,8 +50,8 @@ def test_domain_index_mirror_chain_blocks_ht_without_overclaim():
     ht = build_full_ht_theorem_report()
 
     assert report.domain_status == SELF_ADJOINT_DOMAIN_OPEN
-    assert report.index_status == INDEX_THEOREM_OPEN
-    assert report.mirror_status == MIRROR_EXCLUSION_OPEN
+    assert report.index_status == INDEX_THEOREM_CONDITIONAL
+    assert report.mirror_status == MIRROR_EXCLUSION_CONDITIONAL
     assert report.ht_dependency_status == HT_THEOREM_BLOCKED_BY_DOMAIN
     assert report.theorem_complete is False
     assert ht.v1_7_dependency_status == HT_THEOREM_BLOCKED_BY_DOMAIN
@@ -86,7 +86,7 @@ def test_operator_domain_index_exports(tmp_path):
     assert data["theorem_complete"] is False
     assert "Relative-Bound Audit" in closure_md.read_text()
     assert json.loads(domain_json.read_text())["status"] == SELF_ADJOINT_DOMAIN_OPEN
-    assert json.loads(index_json.read_text())["mirror_status"] == MIRROR_EXCLUSION_OPEN
+    assert json.loads(index_json.read_text())["mirror_status"] == MIRROR_EXCLUSION_CONDITIONAL
 
 
 def test_operator_domain_index_modules_do_not_import_empirical_machinery():
@@ -147,4 +147,3 @@ def test_generated_v17_artifacts_exist_and_are_conservative():
     text = paths[0].read_text() + paths[6].read_text()
     assert "HT_THEOREM_BLOCKED_BY_DOMAIN" in text
     assert "does not prove" in text.lower()
-

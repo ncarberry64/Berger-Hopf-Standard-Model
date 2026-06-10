@@ -1,31 +1,22 @@
 {
-  "boundary_functional_channel_closed": false,
-  "chiral_channel_excludes_generated_mirrors": true,
-  "formal_kernel": [
-    "|ell,0,0,q=0,chi=-1>",
-    "|u,0,0,q=0,chi=-1>",
-    "|d,0,0,q=0,chi=-1>"
+  "complement_lower_bound_status": "COMPLEMENT_LOWER_BOUND_CONDITIONAL",
+  "ht_dependency_status": "HT_THEOREM_CONDITIONAL_ON_DOMAIN_STABILITY",
+  "index_theorem_status": "INDEX_THEOREM_CONDITIONAL",
+  "limitations": [
+    "Index and mirror channels are conditionally closed inside the current scaffold.",
+    "Full H_T theorem remains blocked by complete-operator domain stability and full topological proofs."
   ],
-  "higgs_u1_channel_closed": false,
-  "index_status": "INDEX_THEOREM_CONDITIONAL",
-  "mirror_status": "MIRROR_EXCLUSION_CONDITIONAL",
+  "mirror_exclusion_status": "MIRROR_EXCLUSION_CONDITIONAL",
   "open_obligations": [
     "derive the index density/topological charge formula for the complete twisted Dirac operator",
     "prove no additional hidden protected kernel states exist in the complete Hilbert space",
-    "prove the formal-kernel/complement split independently of finite truncation",
     "The chiral projector excludes scaffold mirror candidates by internal chirality data.",
     "The complete operator must still prove no opposite-chirality kernel survives outside this channel.",
     "derive a chirality-resolved Higgs-selected U1 mirror phase mismatch in the complete operator",
     "derive v1.2 boundary-functional mirror exclusion from the full kernel boundary problem",
     "prove no mirror state in H_perp lies below the H_T threshold in the complete operator",
-    "connect mirror exclusion to the full topological index theorem"
+    "upgrade perturbation/projector domain stability from conditional scaffold control to complete-operator proof"
   ],
-  "scaffold_index": 3,
-  "sector_labels": [
-    "ell",
-    "u",
-    "d"
-  ],
-  "target_index": 3,
-  "theorem_complete": false
+  "theorem_complete": false,
+  "title": "BHSM v2.3 Index/Mirror Closure Decision"
 }

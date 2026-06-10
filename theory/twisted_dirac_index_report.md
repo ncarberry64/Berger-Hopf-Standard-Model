@@ -1,6 +1,6 @@
 # BHSM Twisted Dirac Topological Index Theorem Attempt
 
-Status: `INDEX_THEOREM_OPEN`
+Status: `INDEX_THEOREM_CONDITIONAL`
 Theorem complete: `False`
 
 ## Index Summary
@@ -12,8 +12,8 @@ Theorem complete: `False`
 
 ## Open Obligations
 
-- derive the topological index of the complete twisted Dirac operator
-- prove absence of additional protected kernel states in the complete operator
+- derive the index density/topological charge formula for the complete twisted Dirac operator
+- prove no additional hidden protected kernel states exist in the complete Hilbert space
 - prove the formal-kernel/complement split independently of finite truncation
 
 ## Limitations

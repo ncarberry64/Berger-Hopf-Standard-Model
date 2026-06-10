@@ -1,6 +1,6 @@
 # BHSM v1.8 H_T Domain Bridge Report
 
-Domain bridge status: `HT_THEOREM_CONDITIONAL_ON_INDEX_MIRROR`
+Domain bridge status: `HT_THEOREM_CONDITIONAL_ON_DOMAIN_STABILITY`
 Theorem complete: `False`
 Full H_T theorem status improved: `True`
 
@@ -9,7 +9,7 @@ Full H_T theorem status improved: `True`
 | Uniform relative bound | `UNIFORM_RELATIVE_BOUND_CONDITIONAL` |
 | Self-adjointness | `SELF_ADJOINT_DOMAIN_CONDITIONAL` |
 | Formal complement | `FORMAL_COMPLEMENT_CONDITIONAL` |
-| Index | `INDEX_THEOREM_OPEN` |
+| Index | `INDEX_THEOREM_CONDITIONAL` |
 | Diagonal reference | `DIAGONAL_REFERENCE_OPERATOR_PROVEN` |
 | Graph-norm domain | `GRAPH_NORM_DOMAIN_PROVEN` |
 | Kato-Rellich preconditions | `KATO_RELLICH_PRECONDITIONS_CONDITIONAL` |
@@ -28,8 +28,8 @@ Full H_T theorem status improved: `True`
 - prove perturbations preserve the graph-norm domain
 - prove full operator block invariance or controlled off-block coupling
 - prove nested finite projectors converge to the coordinate-free formal projector
-- derive the topological index of the complete twisted Dirac operator
-- prove absence of additional protected kernel states in the complete operator
+- derive the index density/topological charge formula for the complete twisted Dirac operator
+- prove no additional hidden protected kernel states exist in the complete Hilbert space
 - prove the formal-kernel/complement split independently of finite truncation
 - prove perturbation symmetry on D(A0) for the complete operator
 - prove perturbation domain inclusion for Hopf, boundary, sector, lift, and projector terms
@@ -49,19 +49,14 @@ Full H_T theorem status improved: `True`
 - prove topological index theorem for the complete twisted Dirac operator
 - exclude mirror zero modes in the complete chiral operator
 - upgrade conditional perturbation-domain stability to complete-operator proof
+- The chiral projector excludes scaffold mirror candidates by internal chirality data.
+- The complete operator must still prove no opposite-chirality kernel survives outside this channel.
+- derive a chirality-resolved Higgs-selected U1 mirror phase mismatch in the complete operator
+- derive v1.2 boundary-functional mirror exclusion from the full kernel boundary problem
+- prove no mirror state in H_perp lies below the H_T threshold in the complete operator
+- upgrade perturbation/projector domain stability from conditional scaffold control to complete-operator proof
 
 ## Limitations
 
 - The H_T theorem is strengthened from a perturbation blocker to a complement-conditional bridge only conditionally.
 - Full H_T theorem proof still requires proven self-adjointness, complement stability, index, and mirror closure.
-
-## v2.2 Update
-
-- formal_kernel_projector_status: `FORMAL_KERNEL_PROJECTOR_PROVEN`
-- formal_complement_projector_status: `FORMAL_COMPLEMENT_PROJECTOR_PROVEN`
-- domain_stability_status: `PROJECTOR_DOMAIN_STABILITY_CONDITIONAL`
-- finite_projector_convergence_status: `FINITE_PROJECTOR_CONVERGENCE_PROVEN`
-- complement_lower_bound_status: `COMPLEMENT_LOWER_BOUND_CONDITIONAL`
-- ht_dependency_status: `HT_THEOREM_CONDITIONAL_ON_INDEX_MIRROR`
-- theorem_complete: `False`
-- note: `v2.2 closes projector algebra and finite-projector convergence; full H_T remains conditional on index/mirror and complete-operator domain proof.`

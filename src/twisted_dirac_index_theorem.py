@@ -16,6 +16,7 @@ from twisted_dirac_index_audit import TwistedDiracIndexAudit, build_twisted_dira
 
 INDEX_THEOREM_PROVEN = "INDEX_THEOREM_PROVEN"
 INDEX_THEOREM_CANDIDATE = "INDEX_THEOREM_CANDIDATE"
+INDEX_THEOREM_CONDITIONAL = "INDEX_THEOREM_CONDITIONAL"
 INDEX_THEOREM_OPEN = "INDEX_THEOREM_OPEN"
 FAILS_INDEX_OR_MIRROR = "FAILS_INDEX_OR_MIRROR"
 
@@ -40,10 +41,13 @@ def build_twisted_dirac_index_theorem_report() -> TwistedDiracIndexTheoremReport
     """Build the conservative index theorem report."""
 
     audit = build_twisted_dirac_index_audit()
+    from twisted_dirac_index_closure import build_twisted_dirac_index_closure_report
+
+    closure = build_twisted_dirac_index_closure_report()
     sectors = tuple(candidate.sector for candidate in audit.zero_mode_report.candidates)
     hard_failure = audit.target_index != audit.finite_scaffold_index
     theorem_complete = False
-    status = FAILS_INDEX_OR_MIRROR if hard_failure else INDEX_THEOREM_OPEN
+    status = FAILS_INDEX_OR_MIRROR if hard_failure else closure.status
     return TwistedDiracIndexTheoremReport(
         title="BHSM Twisted Dirac Topological Index Theorem Attempt",
         audit=audit,
@@ -54,8 +58,7 @@ def build_twisted_dirac_index_theorem_report() -> TwistedDiracIndexTheoremReport
         status=status,
         theorem_complete=theorem_complete,
         open_obligations=(
-            "derive the topological index of the complete twisted Dirac operator",
-            "prove absence of additional protected kernel states in the complete operator",
+            *closure.open_obligations,
             "prove the formal-kernel/complement split independently of finite truncation",
         ),
         limitations=(
@@ -110,4 +113,3 @@ def export_twisted_dirac_index_theorem_markdown(path: str | Path) -> None:
         "",
     ]
     Path(path).write_text("\n".join(lines))
-

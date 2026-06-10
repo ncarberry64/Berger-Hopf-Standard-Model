@@ -12,8 +12,8 @@ Final paper allowed: `False`
 | `canonical_constants` | `ACTION_DERIVED` | `FROZEN` | `True` | none |
 | `operator_domain` | `OPEN` | `SELF_ADJOINT_DOMAIN_OPEN` | `False` | prove density and core stability in the complete Hilbert space<br>derive the complete Berger twisted Dirac spectral domain<br>prove self-adjointness via Kato-Rellich or equivalent relative-bound conditions in the complete operator<br>prove the formal kernel/complement split for the complete Hilbert-space operator |
 | `ht_gap` | `STRONG_SCAFFOLD` | `FORMAL_KERNEL_SCAFFOLD_STRONG` | `False` | Prove an infinite-basis uniform complement lower bound independent of k_max.<br>Prove compactness/relative-bound hypotheses for the complete operator.<br>Specify the full Hilbert-space domain.<br>Prove self-adjointness and domain stability under twist/profile terms.<br>Prove the topological index theorem for the complete twisted Dirac operator.<br>Exclude mirror zero modes from the full chiral operator, not only the scaffold channels. |
-| `index` | `OPEN` | `INDEX_THEOREM_OPEN` | `False` | derive the topological index of the complete twisted Dirac operator<br>prove absence of additional protected kernel states in the complete operator<br>prove the formal-kernel/complement split independently of finite truncation |
-| `mirror_exclusion` | `OPEN` | `MIRROR_EXCLUSION_OPEN` | `False` | close the Higgs-selected U(1) mirror channel in the complete operator<br>close the boundary-functional mirror channel in the complete operator<br>connect mirror exclusion to the full topological index theorem |
+| `index` | `OPEN` | `INDEX_THEOREM_CONDITIONAL` | `False` | derive the index density/topological charge formula for the complete twisted Dirac operator<br>prove no additional hidden protected kernel states exist in the complete Hilbert space<br>prove the formal-kernel/complement split independently of finite truncation |
+| `mirror_exclusion` | `OPEN` | `MIRROR_EXCLUSION_CONDITIONAL` | `False` | The chiral projector excludes scaffold mirror candidates by internal chirality data.<br>The complete operator must still prove no opposite-chirality kernel survives outside this channel.<br>derive a chirality-resolved Higgs-selected U1 mirror phase mismatch in the complete operator<br>derive v1.2 boundary-functional mirror exclusion from the full kernel boundary problem<br>prove no mirror state in H_perp lies below the H_T threshold in the complete operator<br>connect mirror exclusion to the full topological index theorem |
 | `scalar_topographic` | `STRONG_SCAFFOLD` | `SCALAR_FULL_ACTION_PROOF_OPEN` | `False` | derive all scalar/topographic screening channels from the complete action<br>prove global absence of unscreened direct light scalar matter couplings<br>connect scalar complement lifting to the full H_T theorem |
 | `virtual_dressing` | `THEOREM_CANDIDATE` | `VIRTUAL_DRESSING_ADOPTION_CANDIDATE` | `False` | Derive the virtual-environment dressing factor from the full loop/threshold action.<br>Prove that weak-doublet projection uniquely yields Z_virt^{u,2}=1/2 in the complete theory.<br>Keep BHSM_DRESSED_V1_CANDIDATE noncanonical until the loop derivation is complete. |
 | `qcd_rg` | `OPEN` | `PRECISION_INPUTS_REQUIRED` | `False` | Supply validated precision-QCD common-scheme quark mass inputs.<br>Implement validated two-/three-loop threshold matching if precision closure is required.<br>Propagate uncertainties from supplied precision inputs. |
@@ -32,11 +32,14 @@ Final paper allowed: `False`
 - Prove self-adjointness and domain stability under twist/profile terms.
 - Prove the topological index theorem for the complete twisted Dirac operator.
 - Exclude mirror zero modes from the full chiral operator, not only the scaffold channels.
-- derive the topological index of the complete twisted Dirac operator
-- prove absence of additional protected kernel states in the complete operator
+- derive the index density/topological charge formula for the complete twisted Dirac operator
+- prove no additional hidden protected kernel states exist in the complete Hilbert space
 - prove the formal-kernel/complement split independently of finite truncation
-- close the Higgs-selected U(1) mirror channel in the complete operator
-- close the boundary-functional mirror channel in the complete operator
+- The chiral projector excludes scaffold mirror candidates by internal chirality data.
+- The complete operator must still prove no opposite-chirality kernel survives outside this channel.
+- derive a chirality-resolved Higgs-selected U1 mirror phase mismatch in the complete operator
+- derive v1.2 boundary-functional mirror exclusion from the full kernel boundary problem
+- prove no mirror state in H_perp lies below the H_T threshold in the complete operator
 - connect mirror exclusion to the full topological index theorem
 - derive all scalar/topographic screening channels from the complete action
 - prove global absence of unscreened direct light scalar matter couplings

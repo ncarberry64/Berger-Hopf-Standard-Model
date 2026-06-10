@@ -2,8 +2,8 @@
 
 Domain status: `SELF_ADJOINT_DOMAIN_OPEN`
 Relative-bound status: `RELATIVE_BOUND_CONDITIONAL`
-Index status: `INDEX_THEOREM_OPEN`
-Mirror status: `MIRROR_EXCLUSION_OPEN`
+Index status: `INDEX_THEOREM_CONDITIONAL`
+Mirror status: `MIRROR_EXCLUSION_CONDITIONAL`
 H_T dependency status: `HT_THEOREM_BLOCKED_BY_DOMAIN`
 Theorem complete: `False`
 Frozen outputs changed: `False`
@@ -47,11 +47,14 @@ Rejected coordinate-first kernel: `(0, 1, 2)`
 - prove chirality projector preserves the full operator domain
 - upgrade uniform scan to an infinite-basis sector-coupling theorem
 - prove full formal-kernel complement projector and domain stability
-- derive the topological index of the complete twisted Dirac operator
-- prove absence of additional protected kernel states in the complete operator
+- derive the index density/topological charge formula for the complete twisted Dirac operator
+- prove no additional hidden protected kernel states exist in the complete Hilbert space
 - prove the formal-kernel/complement split independently of finite truncation
-- close the Higgs-selected U(1) mirror channel in the complete operator
-- close the boundary-functional mirror channel in the complete operator
+- The chiral projector excludes scaffold mirror candidates by internal chirality data.
+- The complete operator must still prove no opposite-chirality kernel survives outside this channel.
+- derive a chirality-resolved Higgs-selected U1 mirror phase mismatch in the complete operator
+- derive v1.2 boundary-functional mirror exclusion from the full kernel boundary problem
+- prove no mirror state in H_perp lies below the H_T threshold in the complete operator
 - connect mirror exclusion to the full topological index theorem
 
 ## Limitations

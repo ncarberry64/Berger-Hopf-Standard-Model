@@ -30,7 +30,7 @@ from graph_norm_domain import (
     export_graph_norm_domain_json,
     export_graph_norm_domain_markdown,
 )
-from ht_domain_bridge import HT_THEOREM_CONDITIONAL_ON_INDEX_MIRROR, build_ht_domain_bridge_report
+from ht_domain_bridge import HT_THEOREM_CONDITIONAL_ON_DOMAIN_STABILITY, build_ht_domain_bridge_report
 from kato_rellich_preconditions import (
     KATO_RELLICH_PRECONDITIONS_CONDITIONAL,
     build_kato_rellich_precondition_report,
@@ -101,7 +101,7 @@ def test_kato_rellich_preconditions_remain_conditional():
 def test_ht_bridge_records_reference_operator_closed_not_full_proof():
     report = build_ht_domain_bridge_report()
 
-    assert report.domain_bridge_status == HT_THEOREM_CONDITIONAL_ON_INDEX_MIRROR
+    assert report.domain_bridge_status == HT_THEOREM_CONDITIONAL_ON_DOMAIN_STABILITY
     assert report.diagonal_reference_status == DIAGONAL_REFERENCE_OPERATOR_PROVEN
     assert report.graph_norm_domain_status == GRAPH_NORM_DOMAIN_PROVEN
     assert report.kato_rellich_precondition_status == KATO_RELLICH_PRECONDITIONS_CONDITIONAL

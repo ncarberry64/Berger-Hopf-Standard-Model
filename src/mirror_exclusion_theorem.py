@@ -11,6 +11,7 @@ from mirror_exclusion_derivation import MirrorExclusionReport, build_mirror_excl
 
 MIRROR_EXCLUSION_PROVEN = "MIRROR_EXCLUSION_PROVEN"
 MIRROR_EXCLUSION_CANDIDATE = "MIRROR_EXCLUSION_CANDIDATE"
+MIRROR_EXCLUSION_CONDITIONAL = "MIRROR_EXCLUSION_CONDITIONAL"
 MIRROR_EXCLUSION_OPEN = "MIRROR_EXCLUSION_OPEN"
 FAILS_INDEX_OR_MIRROR = "FAILS_INDEX_OR_MIRROR"
 
@@ -34,11 +35,14 @@ def build_mirror_exclusion_theorem_report() -> MirrorExclusionTheoremReport:
     """Build the conservative mirror-exclusion theorem report."""
 
     scaffold = build_mirror_exclusion_report()
+    from full_mirror_exclusion import build_full_mirror_exclusion_report
+
+    closure = build_full_mirror_exclusion_report()
     chiral_excludes = scaffold.excluded_count == len(scaffold.derivations)
-    higgs_closed = False
-    boundary_closed = False
-    theorem_complete = chiral_excludes and higgs_closed and boundary_closed
-    status = MIRROR_EXCLUSION_PROVEN if theorem_complete else MIRROR_EXCLUSION_OPEN
+    higgs_closed = closure.higgs_u1_mirror_channel_status == "HIGGS_U1_MIRROR_CHANNEL_CLOSED"
+    boundary_closed = closure.boundary_mirror_channel_status == "BOUNDARY_MIRROR_CHANNEL_CLOSED"
+    theorem_complete = False
+    status = closure.status
     return MirrorExclusionTheoremReport(
         title="BHSM Full Mirror-Mode Exclusion Theorem Attempt",
         scaffold_report=scaffold,
@@ -48,8 +52,7 @@ def build_mirror_exclusion_theorem_report() -> MirrorExclusionTheoremReport:
         status=status,
         theorem_complete=theorem_complete,
         open_obligations=(
-            "close the Higgs-selected U(1) mirror channel in the complete operator",
-            "close the boundary-functional mirror channel in the complete operator",
+            *closure.open_obligations,
             "connect mirror exclusion to the full topological index theorem",
         ),
         limitations=(
@@ -103,4 +106,3 @@ def export_mirror_exclusion_theorem_markdown(path: str | Path) -> None:
         "",
     ]
     Path(path).write_text("\n".join(lines))
-

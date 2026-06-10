@@ -162,7 +162,9 @@ def build_index_mirror_closure_report() -> IndexMirrorClosureReport:
     if index.status.endswith("OPEN"):
         index_status = INDEX_THEOREM_OPEN
     mirror_status = MIRROR_EXCLUSION_CONDITIONAL if mirror.chiral_channel_excludes_all_generated else MIRROR_EXCLUSION_OPEN
-    if not mirror.higgs_u1_channel_closed or not mirror.boundary_functional_channel_closed:
+    if mirror.status == MIRROR_EXCLUSION_CONDITIONAL:
+        mirror_status = MIRROR_EXCLUSION_CONDITIONAL
+    elif not mirror.higgs_u1_channel_closed or not mirror.boundary_functional_channel_closed:
         mirror_status = MIRROR_EXCLUSION_OPEN
     open_obligations = tuple(
         dict.fromkeys(
@@ -374,4 +376,3 @@ def export_index_mirror_closure_json(path: str | Path) -> None:
 
     report = build_operator_domain_index_closure_report()
     Path(path).write_text(json.dumps(_jsonable(report.index_mirror_report), indent=2, sort_keys=True) + "\n")
-

@@ -12,7 +12,7 @@ from hopf_boundary_infinite_bound import (
     export_hopf_boundary_infinite_bound_json,
     export_hopf_boundary_infinite_bound_markdown,
 )
-from ht_domain_bridge import HT_THEOREM_CONDITIONAL_ON_INDEX_MIRROR, build_ht_domain_bridge_report
+from ht_domain_bridge import HT_THEOREM_CONDITIONAL_ON_DOMAIN_STABILITY, build_ht_domain_bridge_report
 from perturbation_closure_decision import HT_THEOREM_CONDITIONAL_ON_COMPLEMENT
 from lift_projector_domain import (
     LIFT_PROJECTOR_DOMAIN_CONDITIONAL,
@@ -106,7 +106,7 @@ def test_relative_kato_lower_and_ht_decision_are_not_overclaimed():
     assert decision.lower_bound_status == LOWER_BOUND_BLOCKED_BY_COMPLEMENT
     assert decision.ht_dependency_status == HT_THEOREM_CONDITIONAL_ON_COMPLEMENT
     assert decision.theorem_complete is False
-    assert bridge.domain_bridge_status == HT_THEOREM_CONDITIONAL_ON_INDEX_MIRROR
+    assert bridge.domain_bridge_status == HT_THEOREM_CONDITIONAL_ON_DOMAIN_STABILITY
     assert bridge.theorem_complete is False
 
 

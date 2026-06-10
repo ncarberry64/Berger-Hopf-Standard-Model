@@ -27,11 +27,14 @@ Do not prepare final paper/Zenodo release; attack the full operator domain, topo
 - Prove self-adjointness and domain stability under twist/profile terms.
 - Prove the topological index theorem for the complete twisted Dirac operator.
 - Exclude mirror zero modes from the full chiral operator, not only the scaffold channels.
-- derive the topological index of the complete twisted Dirac operator
-- prove absence of additional protected kernel states in the complete operator
+- derive the index density/topological charge formula for the complete twisted Dirac operator
+- prove no additional hidden protected kernel states exist in the complete Hilbert space
 - prove the formal-kernel/complement split independently of finite truncation
-- close the Higgs-selected U(1) mirror channel in the complete operator
-- close the boundary-functional mirror channel in the complete operator
+- The chiral projector excludes scaffold mirror candidates by internal chirality data.
+- The complete operator must still prove no opposite-chirality kernel survives outside this channel.
+- derive a chirality-resolved Higgs-selected U1 mirror phase mismatch in the complete operator
+- derive v1.2 boundary-functional mirror exclusion from the full kernel boundary problem
+- prove no mirror state in H_perp lies below the H_T threshold in the complete operator
 - connect mirror exclusion to the full topological index theorem
 - derive all scalar/topographic screening channels from the complete action
 - prove global absence of unscreened direct light scalar matter couplings
@@ -55,16 +58,3 @@ Do not prepare final paper/Zenodo release; attack the full operator domain, topo
 
 - This decision does not alter BHSM_BARE_V1 or BHSM_DRESSED_V1_CANDIDATE.
 - This decision does not claim first-principles theorem closure.
-
-## v2.1 Perturbation Update
-
-- H_T dependency status: `HT_THEOREM_CONDITIONAL_ON_COMPLEMENT`
-- Kato-Rellich status: `KATO_RELLICH_CLOSURE_CONDITIONAL`
-- Lower-bound status: `LOWER_BOUND_BLOCKED_BY_COMPLEMENT`
-- Final paper allowed: `False` unless `FULL_BHSM_THEOREM_PACKAGE_COMPLETE` is reached.
-
-## v2.2 Formal Complement Update
-
-- H_T dependency status: `HT_THEOREM_CONDITIONAL_ON_INDEX_MIRROR`
-- Complement lower-bound bridge: `COMPLEMENT_LOWER_BOUND_CONDITIONAL`
-- Final paper allowed: `False` unless `FULL_BHSM_THEOREM_PACKAGE_COMPLETE` is reached.

@@ -15,6 +15,33 @@ Status remains conservative:
 
 This branch does not change frozen BHSM predictions, constants, tolerances, mode ledgers, or virtual dressing. It does not prove the full H_T theorem; topological index and mirror exclusion remain open.
 
+# Unreleased / Development: v2.3 Index and Mirror Exclusion
+
+Branch: `bhsm-v2.3-index-mirror-exclusion`
+
+The v2.3 focused branch sharpens the corrected formal-kernel topological-index
+and mirror-exclusion scaffold. The sector count is verified as one protected
+formal state in each charged sector, the visible scaffold index remains 3, and
+the generated opposite-chirality mirror candidates are excluded by the internal
+chiral projector channel at scaffold level.
+
+Status remains conservative:
+
+- topological index operator: `INDEX_THEOREM_CONDITIONAL`
+- twisted Dirac index closure: `INDEX_THEOREM_CONDITIONAL`
+- sector count: `SECTOR_COUNT_PROVEN`
+- chiral projector closure: `CHIRAL_PROJECTOR_CLOSURE_CONDITIONAL`
+- Higgs-selected U1 mirror channel: `HIGGS_U1_MIRROR_CHANNEL_CONDITIONAL`
+- v1.2 boundary mirror channel: `BOUNDARY_MIRROR_CHANNEL_CONDITIONAL`
+- full mirror exclusion: `MIRROR_EXCLUSION_CONDITIONAL`
+- H_T dependency: `HT_THEOREM_CONDITIONAL_ON_DOMAIN_STABILITY`
+
+This branch does not change frozen BHSM predictions, constants, tolerances, mode
+ledgers, virtual dressing, or v1.2 action-origin outputs. It does not prove the
+full H_T theorem; complete-operator topological index proof, standalone
+complete-operator mirror exclusion, and perturbation/projector domain-stability
+upgrades remain open.
+
 # Unreleased / Development: v2.1 Perturbation Domain and Infinite-Bound Proof
 
 Branch: `bhsm-v2.1-perturbation-domain-bound-proof`
