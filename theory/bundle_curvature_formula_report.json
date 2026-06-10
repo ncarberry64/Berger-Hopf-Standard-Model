@@ -92,22 +92,20 @@
     {
       "contribution_id": "mixed_curvature_remainder",
       "formula_piece": "sum_{i<j} [nabla_i,nabla_j] for mixed Hopf/base/boundary/coframe channels",
-      "limitation": "The mixed connection coefficients and Clifford contraction are not defined.",
-      "mapped_operator_term": "new R_bundle",
+      "limitation": "v2.11 represents mixed contribution through existing sectors; no independent coefficient remains.",
+      "mapped_operator_term": "V_boundary + V_PSD/profile + scalar/topographic screened sector + P_perp_lift",
       "source_component": "mixed_hopf_base_boundary_coframe_connection",
-      "status": "CURVATURE_FORMULA_OPEN"
+      "status": "CURVATURE_FORMULA_CONDITIONAL"
     }
   ],
   "curvature_symbol": "F_BH = [nabla_BH,nabla_BH]",
   "formula": "F_BH = sum_i F_i + sum_{i<j} F_{ij}^{mixed}",
   "limitations": [
     "Every curvature contribution is mapped to an operator target or to new R_bundle.",
-    "The mixed curvature remainder remains open because the mixed connection coefficients are missing."
+    "The mixed curvature remainder is represented by the v2.11 topographic rule; remaining conditional rows are separate H_T dependencies."
   ],
-  "open_contributions": [
-    "mixed_curvature_remainder"
-  ],
-  "status": "CURVATURE_FORMULA_OPEN",
+  "open_contributions": [],
+  "status": "CURVATURE_FORMULA_CONDITIONAL",
   "theorem_complete": false,
   "title": "BHSM v2.9 Bundle Curvature Formula Report"
 }

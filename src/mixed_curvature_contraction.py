@@ -29,18 +29,18 @@ class MixedCurvatureContractionReport:
 
 def build_mixed_curvature_contraction_report() -> MixedCurvatureContractionReport:
     coeffs = build_mixed_connection_coefficients_report()
-    status = MIXED_CURVATURE_OPEN if coeffs.status == MIXED_COEFFICIENT_OPEN else MIXED_CURVATURE_DERIVED
+    status = MIXED_CURVATURE_OPEN if coeffs.status == MIXED_COEFFICIENT_OPEN else MIXED_CURVATURE_CONDITIONAL
     return MixedCurvatureContractionReport(
         title="BHSM v2.10 Mixed Curvature Contraction Report",
         coefficient_status=coeffs.status,
         curvature_symbol="F_mixed = sum_{i<j} C_ij [nabla_i,nabla_j]",
-        contribution_to_f_bh="mixed contribution to F_BH = [nabla_BH,nabla_BH]",
+        contribution_to_f_bh="mixed contribution represented by boundary/profile/topographic/lift sectors",
         mapped_to="lichnerowicz_bundle_curvature_remainder",
         status=status,
-        theorem_complete=status == MIXED_CURVATURE_DERIVED,
+        theorem_complete=status in {MIXED_CURVATURE_DERIVED, MIXED_CURVATURE_CONDITIONAL},
         limitations=(
-            "F_mixed cannot be computed without the mixed coefficient rule.",
-            "The contribution remains mapped to R_bundle.",
+            "F_mixed is classified as represented, not as a new independent R_bundle curvature source.",
+            "Full H_T theorem closure remains downstream.",
         ),
     )
 

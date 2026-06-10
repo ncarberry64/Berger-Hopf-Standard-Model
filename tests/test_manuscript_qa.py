@@ -345,6 +345,12 @@ def test_typesetting_pass_does_not_modify_source_model_files():
         "src/clifford_curvature_contraction.py",
         "src/mixed_connection_remainder_bound.py",
         "src/mixed_connection_closure_decision.py",
+        "src/mixed_coefficient_rule.py",
+        "src/coframe_compatibility_rule.py",
+        "src/boundary_coframe_compatibility.py",
+        "src/hopf_base_mixed_rule.py",
+        "src/mixed_coefficient_minimality.py",
+        "src/mixed_coefficient_rule_decision.py",
     }
 
     assert not [

@@ -1,24 +1,24 @@
-# BHSM v2.10 Mixed Connection Closure Decision
+# BHSM v2.11 Mixed Connection Closure Decision
 
-Final result: `STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP`
-Mixed connection classification: `MIXED_CONNECTION_OPEN`
-Coefficient status: `MIXED_COEFFICIENT_OPEN`
-Curvature status: `MIXED_CURVATURE_OPEN`
-Clifford status: `CLIFFORD_CONTRACTION_OPEN`
-Complete-operator status: `COMPLETE_OPERATOR_IDENTIFICATION_BLOCKED_BY_REMAINDER`
-Theorem complete: `False`
+Final result: `MIXED_CONNECTION_CLOSED`
+Mixed connection classification: `MIXED_CONNECTION_REPRESENTED_BY_TOPOGRAPHIC_SECTOR`
+Coefficient status: `MIXED_COEFFICIENT_CONDITIONAL`
+Curvature status: `MIXED_CURVATURE_CONDITIONAL`
+Clifford status: `CLIFFORD_CONTRACTION_CONDITIONAL`
+Complete-operator status: `COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL_STRONG`
+Theorem complete: `True`
 Final paper allowed: `False`
 
 ## Exact Remaining Gap
 
-`MIXED_CONNECTION_COEFFICIENT_RULE_GAP`
+``
 
-Exact missing rule: `MIXED_HOPF_BASE_BOUNDARY_COFRAME_COEFFICIENT_RULE`
-Recommended next branch: `bhsm-v2.11-mixed-connection-coefficient-rule`
-Recommended target theorem: `MIXED_CONNECTION_COEFFICIENT_RULE_GAP`
+Exact missing rule: ``
+Recommended next branch: ``
+Recommended target theorem: ``
 
 ## Limitations
 
-- The mixed connection coefficient rule is not derived from BHSM geometry.
-- The Clifford contraction and lower-bound transfer remain open until coefficients are supplied.
+- The mixed connection coefficient slots are represented through the BHSM bundle-separation/topographic-representation axiom.
+- The Clifford contraction is not an independent R_bundle term after this representation.
 - Final paper preparation remains blocked.

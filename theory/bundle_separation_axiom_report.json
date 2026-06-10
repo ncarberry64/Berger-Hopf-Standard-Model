@@ -1,0 +1,35 @@
+{
+  "allows_topographic_representation": true,
+  "axiom_id": "BUNDLE_CONNECTION_SEPARATION_WITH_TOPOGRAPHIC_REPRESENTATION",
+  "clauses": [
+    {
+      "clause_id": "local_sm_bundle_unchanged",
+      "consequence": "Mixed Hopf/base/topographic structure cannot introduce an independent SM gauge curvature source.",
+      "limitation": "This is a BHSM structural axiom, not an external theorem of the Standard Model.",
+      "statement": "Local Standard Model bundle, gauge, and Dirac dynamics remain locally unchanged.",
+      "status": "BUNDLE_SEPARATION_AXIOM_FORMALIZED"
+    },
+    {
+      "clause_id": "topographic_representation",
+      "consequence": "Mixed coefficient slots must map to existing BHSM operator packages or remain a real missing term.",
+      "limitation": "The axiom classifies representation channels but does not prove the full H_T theorem by itself.",
+      "statement": "Mixed topographic/geometric effects enter through existing scalar, boundary, profile, screening, or lift sectors.",
+      "status": "BUNDLE_SEPARATION_AXIOM_FORMALIZED"
+    },
+    {
+      "clause_id": "no_free_mixed_coefficient",
+      "consequence": "A fitted or independent mixed coefficient is forbidden.",
+      "limitation": "If representation fails, the result is a theorem gap or failure, not a tunable parameter.",
+      "statement": "No new free Hopf/base/boundary/coframe coefficient may be introduced or fit.",
+      "status": "BUNDLE_SEPARATION_AXIOM_FORMALIZED"
+    }
+  ],
+  "forbids_free_mixed_coefficient": true,
+  "limitations": [
+    "The axiom is internal to BHSM and does not prove the complete H_T theorem alone.",
+    "It forbids fitted mixed coefficients and forces representation, screening, lift, PSD/profile control, or an explicit failure."
+  ],
+  "status": "BUNDLE_SEPARATION_AXIOM_FORMALIZED",
+  "theorem_complete": true,
+  "title": "BHSM v2.11 Bundle-Separation / Topographic-Representation Axiom Report"
+}

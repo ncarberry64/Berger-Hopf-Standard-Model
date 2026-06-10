@@ -9,8 +9,8 @@ Final paper allowed: `False`
 
 `COMPLETE_OPERATOR_IDENTIFICATION_THEOREM_GAP`
 
-Recommended next branch: `bhsm-v2.11-mixed-connection-coefficient-rule`
-Recommended target theorem: `MIXED_CONNECTION_COEFFICIENT_RULE_GAP`
+Recommended next branch: `bhsm-v2.12-bundle-curvature-conditional-closure`
+Recommended target theorem: `BUNDLE_CURVATURE_FORMULA_CONDITIONAL_GAP`
 
 ## Exact Obstruction
 

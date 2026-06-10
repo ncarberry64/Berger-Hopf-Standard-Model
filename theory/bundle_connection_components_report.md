@@ -2,7 +2,7 @@
 
 All components classified: `True`
 Theorem complete: `False`
-Exact missing component: `mixed_hopf_base_boundary_coframe_connection`
+Exact missing component: ``
 
 | Component | Role | Represented by | Status | Curvature contribution | Limitation |
 | --- | --- | --- | --- | --- | --- |
@@ -17,14 +17,13 @@ Exact missing component: `mixed_hopf_base_boundary_coframe_connection`
 | `lift_profile_heat_connection` | lift/profile/heat connection | `P_perp_lift + V_PSD` | `SCREENED_OR_LIFTED` | `lift_profile_curvature_contribution` | Only applies once the remainder is mapped into this package. |
 | `scalar_topographic_leakage_channel` | scalar/topographic leakage channel | `scalar/topographic screened sector` | `SCREENED_OR_LIFTED` | `scalar_topographic_curvature_contribution` | Full scalar action proof remains separate. |
 | `mirror_channel_connection` | mirror channel | `V_chi + Higgs-U1 + boundary channels` | `CONDITIONAL` | `mirror_curvature_contribution` | Complete curvature action on mirror channels is not independently proven. |
-| `mixed_hopf_base_boundary_coframe_connection` | mixed Hopf/base/boundary/coframe connection | `not represented` | `MISSING` | `mixed_curvature_remainder` | Single missing connection component blocking the complete curvature formula. |
+| `mixed_hopf_base_boundary_coframe_connection` | mixed Hopf/base/boundary/coframe connection | `V_boundary + V_PSD/profile + scalar/topographic screened sector + P_perp_lift` | `REPRESENTED_BY_EXISTING_TERM` | `mixed_curvature_remainder` | Representation closes the free mixed coefficient route; full H_T theorem dependencies remain separate. |
 
 ## Blocking Components
 
 - `mirror_channel_connection`
-- `mixed_hopf_base_boundary_coframe_connection`
 
 ## Limitations
 
 - Every listed connection component is classified.
-- The mixed Hopf/base/boundary/coframe connection remains the first missing geometric input.
+- The mixed Hopf/base/boundary/coframe connection is represented by the v2.11 topographic rule.

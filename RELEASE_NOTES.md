@@ -1,3 +1,28 @@
+# Unreleased / Development: v2.11 Mixed Connection Coefficient Rule
+
+Branch: `bhsm-v2.11-mixed-connection-coefficient-rule`
+
+The v2.11 branch formalizes
+`BUNDLE_CONNECTION_SEPARATION_WITH_TOPOGRAPHIC_REPRESENTATION`: local Standard
+Model bundle dynamics remain locally unchanged, and mixed
+Hopf/base/boundary/coframe effects are represented through existing
+boundary/profile/topographic/screening/lift sectors rather than a new free
+bundle-curvature coefficient.
+
+Final result:
+
+- mixed coefficient rule decision: `MIXED_COEFFICIENT_RULE_CLOSED`
+- mixed coefficient rule status: `MIXED_COEFFICIENT_RULE_REPRESENTED_BY_TOPOGRAPHIC_SECTOR`
+- mixed connection classification: `MIXED_CONNECTION_REPRESENTED_BY_TOPOGRAPHIC_SECTOR`
+- independent free mixed coefficient: forbidden
+- `R_bundle` contribution from the mixed coefficient rule: none
+- downstream blocker: `BUNDLE_CURVATURE_FORMULA_CONDITIONAL_GAP`
+- final paper allowed: `False`
+
+No coefficient is chosen by tuning or residual improvement. Frozen predictions,
+canonical constants, frozen modes, tolerances, outputs, and virtual dressing are
+unchanged.
+
 # Unreleased / Development: v2.10 Mixed Connection Coefficients
 
 Branch: `bhsm-v2.10-mixed-connection-coefficients`

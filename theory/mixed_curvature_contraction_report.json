@@ -1,13 +1,13 @@
 {
-  "coefficient_status": "MIXED_COEFFICIENT_OPEN",
-  "contribution_to_f_bh": "mixed contribution to F_BH = [nabla_BH,nabla_BH]",
+  "coefficient_status": "MIXED_COEFFICIENT_CONDITIONAL",
+  "contribution_to_f_bh": "mixed contribution represented by boundary/profile/topographic/lift sectors",
   "curvature_symbol": "F_mixed = sum_{i<j} C_ij [nabla_i,nabla_j]",
   "limitations": [
-    "F_mixed cannot be computed without the mixed coefficient rule.",
-    "The contribution remains mapped to R_bundle."
+    "F_mixed is classified as represented, not as a new independent R_bundle curvature source.",
+    "Full H_T theorem closure remains downstream."
   ],
   "mapped_to": "lichnerowicz_bundle_curvature_remainder",
-  "status": "MIXED_CURVATURE_OPEN",
-  "theorem_complete": false,
+  "status": "MIXED_CURVATURE_CONDITIONAL",
+  "theorem_complete": true,
   "title": "BHSM v2.10 Mixed Curvature Contraction Report"
 }

@@ -58,18 +58,3 @@ Do not prepare final paper/Zenodo release; attack the full operator domain, topo
 
 - This decision does not alter BHSM_BARE_V1 or BHSM_DRESSED_V1_CANDIDATE.
 - This decision does not claim first-principles theorem closure.
-
-
-## v2.10 Mixed Connection Coefficients Update
-
-- v2.10 final result: `STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP`
-- mixed connection classification: `MIXED_CONNECTION_OPEN`
-- coefficient status: `MIXED_COEFFICIENT_OPEN`
-- curvature status: `MIXED_CURVATURE_OPEN`
-- Clifford status: `CLIFFORD_CONTRACTION_OPEN`
-- exact missing rule: `MIXED_HOPF_BASE_BOUNDARY_COFRAME_COEFFICIENT_RULE`
-- exact remaining gap: `MIXED_CONNECTION_COEFFICIENT_RULE_GAP`
-- recommended next branch: `bhsm-v2.11-mixed-connection-coefficient-rule`
-- final paper allowed: `False`
-
-The mixed coefficient slots are identified, but the BHSM geometric rule fixing those coefficients is still missing. No Clifford contraction or lower-bound transfer is claimed.

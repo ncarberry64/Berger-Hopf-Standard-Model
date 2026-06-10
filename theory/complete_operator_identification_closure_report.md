@@ -3,8 +3,8 @@
 Source status: `COMPLETE_OPERATOR_IDENTIFICATION_BLOCKED_BY_MISSING_TERM`
 Final status: `COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL`
 Theorem complete: `False`
-Next target theorem: `MIXED_CONNECTION_COEFFICIENT_RULE_GAP`
-Recommended next branch: `bhsm-v2.11-mixed-connection-coefficient-rule`
+Next target theorem: `BUNDLE_CURVATURE_FORMULA_CONDITIONAL_GAP`
+Recommended next branch: `bhsm-v2.12-bundle-curvature-conditional-closure`
 
 ## Blocking Components
 

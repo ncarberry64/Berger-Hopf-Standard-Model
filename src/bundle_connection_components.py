@@ -55,7 +55,7 @@ def bundle_connection_components() -> tuple[BundleConnectionComponent, ...]:
         BundleConnectionComponent("lift_profile_heat_connection", "lift/profile/heat connection", "P_perp_lift + V_PSD", SCREENED_OR_LIFTED, "lift_profile_curvature_contribution", ("lift/profile channels are screened, lifted, or PSD-controlled in scaffolds",), "Only applies once the remainder is mapped into this package."),
         BundleConnectionComponent("scalar_topographic_leakage_channel", "scalar/topographic leakage channel", "scalar/topographic screened sector", SCREENED_OR_LIFTED, "scalar_topographic_curvature_contribution", ("scalar/topographic screening scaffold excludes low-energy leakage at audit level",), "Full scalar action proof remains separate."),
         BundleConnectionComponent("mirror_channel_connection", "mirror channel", "V_chi + Higgs-U1 + boundary channels", CONDITIONAL, "mirror_curvature_contribution", ("mirror candidates are scaffold-excluded by chiral projector, with Higgs-U1/boundary channels conditional",), "Complete curvature action on mirror channels is not independently proven."),
-        BundleConnectionComponent("mixed_hopf_base_boundary_coframe_connection", "mixed Hopf/base/boundary/coframe connection", "not represented", MISSING, "mixed_curvature_remainder", ("no repo object specifies the full mixed connection coefficients and Clifford contraction",), "Single missing connection component blocking the complete curvature formula."),
+        BundleConnectionComponent("mixed_hopf_base_boundary_coframe_connection", "mixed Hopf/base/boundary/coframe connection", "V_boundary + V_PSD/profile + scalar/topographic screened sector + P_perp_lift", REPRESENTED_BY_EXISTING_TERM, "mixed_curvature_remainder", ("v2.11 bundle-separation/topographic-representation axiom forbids an independent mixed coefficient",), "Representation closes the free mixed coefficient route; full H_T theorem dependencies remain separate."),
     )
 
 
@@ -72,7 +72,7 @@ def build_bundle_connection_components_report() -> BundleConnectionComponentsRep
         theorem_complete=not blocking,
         limitations=(
             "Every listed connection component is classified.",
-            "The mixed Hopf/base/boundary/coframe connection remains the first missing geometric input.",
+            "The mixed Hopf/base/boundary/coframe connection is represented by the v2.11 topographic rule.",
         ),
     )
 

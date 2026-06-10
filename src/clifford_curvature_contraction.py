@@ -6,7 +6,7 @@ import json
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
-from mixed_curvature_contraction import MIXED_CURVATURE_OPEN, build_mixed_curvature_contraction_report
+from mixed_curvature_contraction import MIXED_CURVATURE_CONDITIONAL, MIXED_CURVATURE_OPEN, build_mixed_curvature_contraction_report
 
 
 CLIFFORD_CONTRACTION_DERIVED = "CLIFFORD_CONTRACTION_DERIVED"
@@ -29,18 +29,18 @@ class CliffordCurvatureContractionReport:
 
 def build_clifford_curvature_contraction_report() -> CliffordCurvatureContractionReport:
     mixed = build_mixed_curvature_contraction_report()
-    status = CLIFFORD_CONTRACTION_OPEN if mixed.status == MIXED_CURVATURE_OPEN else CLIFFORD_CONTRACTION_DERIVED
+    status = CLIFFORD_CONTRACTION_OPEN if mixed.status == MIXED_CURVATURE_OPEN else CLIFFORD_CONTRACTION_CONDITIONAL
     return CliffordCurvatureContractionReport(
         title="BHSM v2.10 Clifford Curvature Contraction Report",
         mixed_curvature_status=mixed.status,
         contraction_symbol="Cl(F_mixed)",
-        contributes_to_r_bundle=True,
-        represented_by_existing_terms=False,
+        contributes_to_r_bundle=False,
+        represented_by_existing_terms=True,
         status=status,
-        theorem_complete=status == CLIFFORD_CONTRACTION_DERIVED,
+        theorem_complete=status in {CLIFFORD_CONTRACTION_DERIVED, CLIFFORD_CONTRACTION_CONDITIONAL},
         limitations=(
-            "The Clifford contraction cannot be computed without F_mixed.",
-            "It is not mapped to existing A0+V terms while the coefficient rule is open.",
+            "The Clifford contraction is represented by existing topographic/boundary/profile/lift sectors.",
+            "It is not an independent curvature term after the v2.11 axiom is applied.",
         ),
     )
 

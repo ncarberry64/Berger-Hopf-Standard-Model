@@ -76,3 +76,9 @@
 - Close `MIXED_CONNECTION_COEFFICIENT_RULE_GAP` by deriving `MIXED_HOPF_BASE_BOUNDARY_COFRAME_COEFFICIENT_RULE` from BHSM geometry rather than fitting or assuming it.
 - Then compute `F_mixed`, `Cl(F_mixed)`, and the resulting action on the formal kernel, `H_perp`, and mirror channels before reattempting the R_bundle classification.
 - Do not prepare the final paper while v2.10 result remains `STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP`.
+
+## v2.11 Mixed Coefficient Rule Status
+
+- `MIXED_CONNECTION_COEFFICIENT_RULE_GAP` is closed under `BUNDLE_CONNECTION_SEPARATION_WITH_TOPOGRAPHIC_REPRESENTATION`.
+- The mixed Hopf/base/boundary/coframe contribution is represented through existing boundary/profile/topographic/screening/lift sectors, not as a new free coefficient.
+- Final theorem completion remains blocked by downstream conditional bundle-curvature/formula obligations; final paper preparation remains disallowed.

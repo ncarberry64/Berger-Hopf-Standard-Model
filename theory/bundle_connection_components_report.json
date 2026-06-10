@@ -1,8 +1,7 @@
 {
   "all_components_classified": true,
   "blocking_components": [
-    "mirror_channel_connection",
-    "mixed_hopf_base_boundary_coframe_connection"
+    "mirror_channel_connection"
   ],
   "components": [
     {
@@ -130,18 +129,18 @@
       "component_id": "mixed_hopf_base_boundary_coframe_connection",
       "curvature_contribution": "mixed_curvature_remainder",
       "evidence": [
-        "no repo object specifies the full mixed connection coefficients and Clifford contraction"
+        "v2.11 bundle-separation/topographic-representation axiom forbids an independent mixed coefficient"
       ],
-      "limitation": "Single missing connection component blocking the complete curvature formula.",
-      "represented_by": "not represented",
+      "limitation": "Representation closes the free mixed coefficient route; full H_T theorem dependencies remain separate.",
+      "represented_by": "V_boundary + V_PSD/profile + scalar/topographic screened sector + P_perp_lift",
       "role": "mixed Hopf/base/boundary/coframe connection",
-      "status": "MISSING"
+      "status": "REPRESENTED_BY_EXISTING_TERM"
     }
   ],
-  "exact_missing_component": "mixed_hopf_base_boundary_coframe_connection",
+  "exact_missing_component": "",
   "limitations": [
     "Every listed connection component is classified.",
-    "The mixed Hopf/base/boundary/coframe connection remains the first missing geometric input."
+    "The mixed Hopf/base/boundary/coframe connection is represented by the v2.11 topographic rule."
   ],
   "theorem_complete": false,
   "title": "BHSM v2.9 Bundle Connection Components Report"

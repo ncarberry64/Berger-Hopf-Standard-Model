@@ -2,22 +2,22 @@
 
 Final result: `STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP`
 Connection status: `COMPLETE_BUNDLE_CONNECTION_OPEN`
-Curvature formula status: `CURVATURE_FORMULA_OPEN`
-R_bundle classification: `REMAINDER_OPEN`
+Curvature formula status: `CURVATURE_FORMULA_CONDITIONAL`
+R_bundle classification: `REMAINDER_ZERO`
 Complete-operator status: `COMPLETE_OPERATOR_IDENTIFICATION_BLOCKED_BY_REMAINDER`
 Theorem complete: `False`
 Final paper allowed: `False`
 
 ## Exact Remaining Gap
 
-`MIXED_CONNECTION_COEFFICIENT_RULE_GAP`
+`BUNDLE_CURVATURE_FORMULA_CONDITIONAL_GAP`
 
-Exact missing component: `mixed_hopf_base_boundary_coframe_connection`
-Recommended next branch: `bhsm-v2.11-mixed-connection-coefficient-rule`
-Recommended target theorem: `MIXED_CONNECTION_COEFFICIENT_RULE_GAP`
+Exact missing component: ``
+Recommended next branch: `bhsm-v2.12-bundle-curvature-conditional-closure`
+Recommended target theorem: `BUNDLE_CURVATURE_FORMULA_CONDITIONAL_GAP`
 
 ## Limitations
 
-- The complete connection is not closed while the mixed Hopf/base/boundary/coframe component is missing.
-- R_bundle remains open because its mixed curvature action is not computed.
+- The mixed Hopf/base/boundary/coframe component is represented by the v2.11 topographic rule.
+- The complete bundle curvature formula may still be conditional because separate mirror/sector/scalar dependencies remain.
 - Final paper preparation remains blocked.

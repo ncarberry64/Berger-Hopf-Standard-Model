@@ -1,7 +1,7 @@
 # BHSM v2.10 Hopf/Base/Boundary/Coframe Report
 
-Coefficient status: `MIXED_COEFFICIENT_OPEN`
-Status: `HOPF_BASE_BOUNDARY_COFRAME_OPEN`
+Coefficient status: `MIXED_COEFFICIENT_CONDITIONAL`
+Status: `HOPF_BASE_BOUNDARY_COFRAME_DERIVED`
 Theorem complete: `False`
 
 | Feature | Status | Conclusion | Limitation |

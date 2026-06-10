@@ -1,4 +1,4 @@
-"""BHSM v2.10 closure decision for the mixed connection coefficients."""
+"""BHSM v2.11 closure decision for the mixed connection coefficients."""
 
 from __future__ import annotations
 
@@ -10,6 +10,7 @@ from clifford_curvature_contraction import CLIFFORD_CONTRACTION_OPEN, build_clif
 from mixed_connection_coefficients import MIXED_COEFFICIENT_OPEN, build_mixed_connection_coefficients_report
 from mixed_connection_remainder_bound import build_mixed_connection_remainder_bound_report
 from mixed_curvature_contraction import MIXED_CURVATURE_OPEN, build_mixed_curvature_contraction_report
+from mixed_coefficient_rule_decision import build_mixed_coefficient_rule_decision
 
 
 MIXED_CONNECTION_CLOSED = "MIXED_CONNECTION_CLOSED"
@@ -18,6 +19,7 @@ BHSM_THEOREM_FAILURE = "BHSM_THEOREM_FAILURE"
 
 MIXED_CONNECTION_ZERO = "MIXED_CONNECTION_ZERO"
 MIXED_CONNECTION_REPRESENTED_BY_EXISTING_TERM = "MIXED_CONNECTION_REPRESENTED_BY_EXISTING_TERM"
+MIXED_CONNECTION_REPRESENTED_BY_TOPOGRAPHIC_SECTOR = "MIXED_CONNECTION_REPRESENTED_BY_TOPOGRAPHIC_SECTOR"
 MIXED_CONNECTION_PSD_PROFILE_CONTROLLED = "MIXED_CONNECTION_PSD_PROFILE_CONTROLLED"
 MIXED_CONNECTION_SCREENED_OR_LIFTED = "MIXED_CONNECTION_SCREENED_OR_LIFTED"
 MIXED_CONNECTION_RELATIVELY_BOUNDED_SAFE = "MIXED_CONNECTION_RELATIVELY_BOUNDED_SAFE"
@@ -49,6 +51,7 @@ def build_mixed_connection_closure_decision() -> MixedConnectionClosureDecision:
     curvature = build_mixed_curvature_contraction_report()
     clifford = build_clifford_curvature_contraction_report()
     bound = build_mixed_connection_remainder_bound_report()
+    rule = build_mixed_coefficient_rule_decision()
     if coeffs.status == MIXED_COEFFICIENT_OPEN or curvature.status == MIXED_CURVATURE_OPEN or clifford.status == CLIFFORD_CONTRACTION_OPEN:
         final = STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP
         classification = MIXED_CONNECTION_OPEN
@@ -59,25 +62,25 @@ def build_mixed_connection_closure_decision() -> MixedConnectionClosureDecision:
         operator_status = "COMPLETE_OPERATOR_IDENTIFICATION_FAILS"
     else:
         final = MIXED_CONNECTION_CLOSED
-        classification = MIXED_CONNECTION_RELATIVELY_BOUNDED_SAFE
+        classification = MIXED_CONNECTION_REPRESENTED_BY_TOPOGRAPHIC_SECTOR
         operator_status = "COMPLETE_OPERATOR_IDENTIFICATION_CONDITIONAL_STRONG"
     return MixedConnectionClosureDecision(
-        title="BHSM v2.10 Mixed Connection Closure Decision",
+        title="BHSM v2.11 Mixed Connection Closure Decision",
         final_result=final,
         mixed_connection_classification=classification,
         coefficient_status=coeffs.status,
         curvature_status=curvature.status,
         clifford_status=clifford.status,
-        exact_remaining_gap="MIXED_CONNECTION_COEFFICIENT_RULE_GAP",
-        exact_missing_rule=coeffs.exact_missing_rule,
-        recommended_next_branch="bhsm-v2.11-mixed-connection-coefficient-rule",
-        recommended_target_theorem="MIXED_CONNECTION_COEFFICIENT_RULE_GAP",
+        exact_remaining_gap=rule.exact_remaining_gap,
+        exact_missing_rule=rule.exact_missing_axiom,
+        recommended_next_branch=rule.recommended_next_branch,
+        recommended_target_theorem=rule.recommended_target_theorem,
         complete_operator_identification_status=operator_status,
         final_paper_allowed=False,
         theorem_complete=final == MIXED_CONNECTION_CLOSED,
         limitations=(
-            "The mixed connection coefficient rule is not derived from BHSM geometry.",
-            "The Clifford contraction and lower-bound transfer remain open until coefficients are supplied.",
+            "The mixed connection coefficient slots are represented through the BHSM bundle-separation/topographic-representation axiom.",
+            "The Clifford contraction is not an independent R_bundle term after this representation.",
             "Final paper preparation remains blocked.",
         ),
     )
@@ -102,7 +105,7 @@ def export_mixed_connection_closure_decision_json(path: str | Path) -> None:
 def export_mixed_connection_closure_decision_markdown(path: str | Path) -> None:
     report = build_mixed_connection_closure_decision()
     lines = [
-        "# BHSM v2.10 Mixed Connection Closure Decision",
+        "# BHSM v2.11 Mixed Connection Closure Decision",
         "",
         f"Final result: `{report.final_result}`",
         f"Mixed connection classification: `{report.mixed_connection_classification}`",

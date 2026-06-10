@@ -7,6 +7,7 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 
 from bundle_connection_components import MISSING, OPEN, CONDITIONAL, build_bundle_connection_components_report
+from mixed_connection_closure_decision import MIXED_CONNECTION_CLOSED, build_mixed_connection_closure_decision
 
 
 CURVATURE_FORMULA_DERIVED = "CURVATURE_FORMULA_DERIVED"
@@ -39,6 +40,10 @@ class BundleCurvatureFormulaReport:
 
 
 def curvature_contributions() -> tuple[CurvatureContribution, ...]:
+    mixed = build_mixed_connection_closure_decision()
+    mixed_status = CURVATURE_FORMULA_CONDITIONAL if mixed.final_result == MIXED_CONNECTION_CLOSED else CURVATURE_FORMULA_OPEN
+    mixed_target = "V_boundary + V_PSD/profile + scalar/topographic screened sector + P_perp_lift" if mixed.final_result == MIXED_CONNECTION_CLOSED else "new R_bundle"
+    mixed_limitation = "v2.11 represents mixed contribution through existing sectors; no independent coefficient remains." if mixed.final_result == MIXED_CONNECTION_CLOSED else "The mixed connection coefficients and Clifford contraction are not defined."
     return (
         CurvatureContribution("diagonal_curvature_contribution", "[nabla_Berger,nabla_Berger]", "berger_metric_spin_connection", "A0", CURVATURE_FORMULA_DERIVED, "Diagonal curvature is represented by the reference operator package."),
         CurvatureContribution("hopf_curvature_contribution", "[nabla_Hopf,nabla_Hopf]", "hopf_twist_connection", "V_Hopf", CURVATURE_FORMULA_DERIVED, "Hopf contribution is represented at the symbolic operator level."),
@@ -51,7 +56,7 @@ def curvature_contributions() -> tuple[CurvatureContribution, ...]:
         CurvatureContribution("lift_profile_curvature_contribution", "[nabla_lift/profile,nabla_lift/profile]", "lift_profile_heat_connection", "P_perp_lift + V_PSD", CURVATURE_FORMULA_CONDITIONAL, "Safe only when mapped into lift/profile package."),
         CurvatureContribution("scalar_topographic_curvature_contribution", "[nabla_scalar/topographic,nabla_scalar/topographic]", "scalar_topographic_leakage_channel", "scalar/topographic screened sector", CURVATURE_FORMULA_CONDITIONAL, "Full scalar proof remains separate."),
         CurvatureContribution("mirror_curvature_contribution", "[nabla_mirror,nabla_mirror]", "mirror_channel_connection", "V_chi + Higgs-U1 + boundary channels", CURVATURE_FORMULA_CONDITIONAL, "Complete mirror curvature remains conditional."),
-        CurvatureContribution("mixed_curvature_remainder", "sum_{i<j} [nabla_i,nabla_j] for mixed Hopf/base/boundary/coframe channels", "mixed_hopf_base_boundary_coframe_connection", "new R_bundle", CURVATURE_FORMULA_OPEN, "The mixed connection coefficients and Clifford contraction are not defined."),
+        CurvatureContribution("mixed_curvature_remainder", "sum_{i<j} [nabla_i,nabla_j] for mixed Hopf/base/boundary/coframe channels", "mixed_hopf_base_boundary_coframe_connection", mixed_target, mixed_status, mixed_limitation),
     )
 
 
@@ -79,7 +84,7 @@ def build_bundle_curvature_formula_report() -> BundleCurvatureFormulaReport:
         theorem_complete=status == CURVATURE_FORMULA_DERIVED,
         limitations=(
             "Every curvature contribution is mapped to an operator target or to new R_bundle.",
-            "The mixed curvature remainder remains open because the mixed connection coefficients are missing.",
+            "The mixed curvature remainder is represented by the v2.11 topographic rule; remaining conditional rows are separate H_T dependencies.",
         ),
     )
 

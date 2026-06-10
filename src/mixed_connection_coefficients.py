@@ -6,6 +6,11 @@ import json
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
+from mixed_coefficient_rule import (
+    MIXED_COEFFICIENT_RULE_OPEN,
+    build_mixed_coefficient_rule_report,
+)
+
 
 MIXED_COEFFICIENT_DERIVED = "MIXED_COEFFICIENT_DERIVED"
 MIXED_COEFFICIENT_CONDITIONAL = "MIXED_COEFFICIENT_CONDITIONAL"
@@ -36,6 +41,19 @@ class MixedConnectionCoefficientReport:
 
 
 def mixed_connection_coefficients() -> tuple[MixedConnectionCoefficient, ...]:
+    rule = build_mixed_coefficient_rule_report()
+    if rule.rule_status != MIXED_COEFFICIENT_RULE_OPEN:
+        return tuple(
+            MixedConnectionCoefficient(
+                row.slot,
+                (row.geometric_source, row.representation_target),
+                row.value_or_rule,
+                MIXED_COEFFICIENT_CONDITIONAL,
+                (row.representation_target, "H_perp"),
+                row.limitation,
+            )
+            for row in rule.rows
+        )
     return (
         MixedConnectionCoefficient("hopf_fiber_base_cross", ("Hopf fiber", "base/S2"), "C_HB(q,j) [nabla_H,nabla_B]", MIXED_COEFFICIENT_OPEN, ("Hopf/base/fiber modes", "H_perp"), "The coefficient rule C_HB(q,j) is not derived from the full connection."),
         MixedConnectionCoefficient("base_boundary_cross", ("base/S2", "boundary functional"), "C_Bbd(j,Omega_f) [nabla_B,nabla_boundary]", MIXED_COEFFICIENT_OPEN, ("lepton", "up", "down", "boundary functional"), "The coefficient rule tying base nodes to boundary functional phases is not derived."),
@@ -49,16 +67,18 @@ def mixed_connection_coefficients() -> tuple[MixedConnectionCoefficient, ...]:
 def build_mixed_connection_coefficients_report() -> MixedConnectionCoefficientReport:
     coefficients = mixed_connection_coefficients()
     open_ids = tuple(row.coefficient_id for row in coefficients if row.status == MIXED_COEFFICIENT_OPEN)
+    rule = build_mixed_coefficient_rule_report()
     return MixedConnectionCoefficientReport(
         title="BHSM v2.10 Mixed Connection Coefficients Report",
         coefficients=coefficients,
         all_coefficients_classified=all(row.status for row in coefficients),
         open_coefficients=open_ids,
-        exact_missing_rule="MIXED_HOPF_BASE_BOUNDARY_COFRAME_COEFFICIENT_RULE",
-        status=MIXED_COEFFICIENT_OPEN if open_ids else MIXED_COEFFICIENT_DERIVED,
+        exact_missing_rule="" if not open_ids else "MIXED_HOPF_BASE_BOUNDARY_COFRAME_COEFFICIENT_RULE",
+        status=MIXED_COEFFICIENT_OPEN if open_ids else MIXED_COEFFICIENT_CONDITIONAL,
         theorem_complete=not open_ids,
         limitations=(
-            "The mixed coefficient slots are identified, but their BHSM geometric rule is not derived.",
+            "The mixed coefficient slots are represented through the v2.11 bundle-separation/topographic-representation rule.",
+            f"Rule status: {rule.rule_status}.",
             "No numerical or residual fit is used to choose coefficients.",
         ),
     )

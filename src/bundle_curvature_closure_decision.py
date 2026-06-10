@@ -54,22 +54,30 @@ def build_bundle_curvature_closure_decision() -> BundleCurvatureClosureDecision:
     else:
         final = STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP
         operator_status = "COMPLETE_OPERATOR_IDENTIFICATION_BLOCKED_BY_REMAINDER"
+    if mixed.final_result == MIXED_CONNECTION_CLOSED and final != COMPLETE_BUNDLE_CONNECTION_CURVATURE_CLOSED:
+        exact_gap = "BUNDLE_CURVATURE_FORMULA_CONDITIONAL_GAP"
+        next_branch = "bhsm-v2.12-bundle-curvature-conditional-closure"
+        next_target = "BUNDLE_CURVATURE_FORMULA_CONDITIONAL_GAP"
+    else:
+        exact_gap = mixed.exact_remaining_gap
+        next_branch = mixed.recommended_next_branch
+        next_target = mixed.recommended_target_theorem
     return BundleCurvatureClosureDecision(
         title="BHSM v2.9 Complete Bundle Connection Curvature Closure Decision",
         final_result=final,
         connection_status="COMPLETE_BUNDLE_CONNECTION_OPEN" if components.blocking_components else "COMPLETE_BUNDLE_CONNECTION_DEFINED",
         curvature_formula_status=formula.status,
         r_bundle_classification=mapping.r_bundle_classification,
-        exact_remaining_gap=mixed.exact_remaining_gap,
+        exact_remaining_gap=exact_gap,
         exact_missing_component=components.exact_missing_component,
-        recommended_next_branch=mixed.recommended_next_branch,
-        recommended_target_theorem=mixed.recommended_target_theorem,
+        recommended_next_branch=next_branch,
+        recommended_target_theorem=next_target,
         complete_operator_identification_status=operator_status,
         final_paper_allowed=False,
         theorem_complete=final == COMPLETE_BUNDLE_CONNECTION_CURVATURE_CLOSED,
         limitations=(
-            "The complete connection is not closed while the mixed Hopf/base/boundary/coframe component is missing.",
-            "R_bundle remains open because its mixed curvature action is not computed.",
+            "The mixed Hopf/base/boundary/coframe component is represented by the v2.11 topographic rule.",
+            "The complete bundle curvature formula may still be conditional because separate mirror/sector/scalar dependencies remain.",
             "Final paper preparation remains blocked.",
         ),
     )

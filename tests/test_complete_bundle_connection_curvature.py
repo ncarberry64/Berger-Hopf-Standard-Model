@@ -6,6 +6,7 @@ from bhsm_v1 import build_bhsm_bare_v1, build_bhsm_dressed_v1_candidate, compare
 from bundle_connection_components import (
     BLOCKING_COMPONENT_STATUSES,
     MISSING,
+    REPRESENTED_BY_EXISTING_TERM,
     build_bundle_connection_components_report,
     export_bundle_connection_components_json,
     export_bundle_connection_components_markdown,
@@ -17,7 +18,7 @@ from bundle_curvature_closure_decision import (
     export_bundle_curvature_closure_decision_json,
     export_bundle_curvature_closure_decision_markdown,
 )
-from bundle_curvature_formula import CURVATURE_FORMULA_OPEN, build_bundle_curvature_formula_report, export_bundle_curvature_formula_json, export_bundle_curvature_formula_markdown
+from bundle_curvature_formula import CURVATURE_FORMULA_CONDITIONAL, build_bundle_curvature_formula_report, export_bundle_curvature_formula_json, export_bundle_curvature_formula_markdown
 from complete_bundle_connection import build_complete_bundle_connection_report, export_complete_bundle_connection_json, export_complete_bundle_connection_markdown
 from constants import S_OVERLAP
 from curvature_formula_to_operator_map import build_curvature_formula_to_operator_map_report, export_curvature_formula_to_operator_map_json, export_curvature_formula_to_operator_map_markdown
@@ -28,17 +29,19 @@ from lichnerowicz_curvature_action import build_lichnerowicz_curvature_action_re
 from operator_identification_theorem import COMPLETE_OPERATOR_IDENTIFICATION_PROVEN, build_operator_identification_theorem_report
 
 
-EXACT_GAP = "MIXED_CONNECTION_COEFFICIENT_RULE_GAP"
+EXACT_GAP = "BUNDLE_CURVATURE_FORMULA_CONDITIONAL_GAP"
 MISSING_COMPONENT = "mixed_hopf_base_boundary_coframe_connection"
+REMAINING_COMPONENT = "mirror_channel_connection"
 
 
 def test_every_connection_component_is_classified_and_missing_component_is_named():
     report = build_bundle_connection_components_report()
 
     assert report.all_components_classified is True
-    assert report.exact_missing_component == MISSING_COMPONENT
-    assert MISSING_COMPONENT in report.blocking_components
-    assert any(row.component_id == MISSING_COMPONENT and row.status == MISSING for row in report.components)
+    assert report.exact_missing_component == ""
+    assert MISSING_COMPONENT not in report.blocking_components
+    assert REMAINING_COMPONENT in report.blocking_components
+    assert any(row.component_id == MISSING_COMPONENT and row.status == REPRESENTED_BY_EXISTING_TERM for row in report.components)
     assert all(row.status for row in report.components)
     assert report.theorem_complete is False
 
@@ -47,7 +50,7 @@ def test_complete_bundle_connection_stays_open_until_mixed_component_defined():
     report = build_complete_bundle_connection_report()
 
     assert report.status == "COMPLETE_BUNDLE_CONNECTION_OPEN"
-    assert report.exact_missing_component == MISSING_COMPONENT
+    assert report.exact_missing_component == ""
     assert report.theorem_complete is False
     assert "nabla_mixed" in report.decomposition
 
@@ -56,19 +59,19 @@ def test_every_curvature_contribution_is_mapped_and_remainder_is_open_once():
     report = build_bundle_curvature_formula_report()
     mapping = build_curvature_formula_to_operator_map_report()
 
-    assert report.status == CURVATURE_FORMULA_OPEN
+    assert report.status == CURVATURE_FORMULA_CONDITIONAL
     assert report.all_contributions_mapped is True
-    assert report.open_contributions == ("mixed_curvature_remainder",)
+    assert report.open_contributions == ()
     assert mapping.all_contributions_classified is True
-    assert mapping.r_bundle_rows == ("mixed_curvature_remainder",)
-    assert mapping.r_bundle_classification == "REMAINDER_OPEN"
+    assert mapping.r_bundle_rows == ()
+    assert mapping.r_bundle_classification == "REMAINDER_ZERO"
 
 
 def test_lichnerowicz_action_is_open_on_required_targets():
     report = build_lichnerowicz_curvature_action_report()
     targets = {row.target for row in report.rows}
 
-    assert report.status == "LICHNEROWICZ_CURVATURE_ACTION_OPEN"
+    assert report.status == "LICHNEROWICZ_CURVATURE_ACTION_CONDITIONAL"
     assert {"lepton_sector", "up_sector", "down_sector", "formal_kernel", "H_perp", "mirror_channels"}.issubset(targets)
     assert all(row.action_status == "OPEN" for row in report.rows)
     assert report.theorem_complete is False
@@ -80,8 +83,8 @@ def test_bundle_curvature_closure_decision_names_next_gap_without_overclaim():
     assert report.final_result == STILL_BLOCKED_BY_SINGLE_NAMED_THEOREM_GAP
     assert report.final_result != COMPLETE_BUNDLE_CONNECTION_CURVATURE_CLOSED
     assert report.exact_remaining_gap == EXACT_GAP
-    assert report.exact_missing_component == MISSING_COMPONENT
-    assert report.recommended_next_branch == "bhsm-v2.11-mixed-connection-coefficient-rule"
+    assert report.exact_missing_component == ""
+    assert report.recommended_next_branch == "bhsm-v2.12-bundle-curvature-conditional-closure"
     assert report.final_paper_allowed is False
     assert report.theorem_complete is False
 

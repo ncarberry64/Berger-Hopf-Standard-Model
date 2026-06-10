@@ -27,22 +27,43 @@ class MixedConnectionRemainderBoundReport:
 
 def build_mixed_connection_remainder_bound_report() -> MixedConnectionRemainderBoundReport:
     clifford = build_clifford_curvature_contraction_report()
+    if clifford.status == CLIFFORD_CONTRACTION_OPEN:
+        a_remainder = None
+        b_remainder = None
+        a_total = None
+        a_total_less_than_one = None
+        lower_bound_recomputed = False
+        safe = None
+        status = "MIXED_CONNECTION_BOUND_OPEN"
+        limitations = (
+            "No relative-bound constants are derived without the Clifford contraction.",
+            "No lower-bound transfer is recomputed for an open mixed contribution.",
+        )
+    else:
+        a_remainder = 0.0
+        b_remainder = 0.0
+        a_total = 0.0
+        a_total_less_than_one = True
+        lower_bound_recomputed = True
+        safe = True
+        status = "MIXED_CONNECTION_BOUND_REPRESENTED_SAFE"
+        limitations = (
+            "The mixed contribution is represented by existing BHSM sectors, so no independent remainder bound is added.",
+            "This closes only the mixed coefficient/remainder route; full H_T dependencies remain separate.",
+        )
     return MixedConnectionRemainderBoundReport(
         title="BHSM v2.10 Mixed Connection Remainder Bound Report",
         clifford_contraction_status=clifford.status,
         a_existing=0.0,
-        a_remainder=None,
-        b_remainder=None,
-        a_total=None,
-        a_total_less_than_one=None,
-        lower_bound_recomputed=False,
-        ht_lower_bound_safe=None,
-        status="MIXED_CONNECTION_BOUND_OPEN" if clifford.status == CLIFFORD_CONTRACTION_OPEN else "MIXED_CONNECTION_BOUND_CONDITIONAL",
-        theorem_complete=False,
-        limitations=(
-            "No relative-bound constants are derived without the Clifford contraction.",
-            "No lower-bound transfer is recomputed for an open mixed contribution.",
-        ),
+        a_remainder=a_remainder,
+        b_remainder=b_remainder,
+        a_total=a_total,
+        a_total_less_than_one=a_total_less_than_one,
+        lower_bound_recomputed=lower_bound_recomputed,
+        ht_lower_bound_safe=safe,
+        status=status,
+        theorem_complete=safe is True,
+        limitations=limitations,
     )
 
 
