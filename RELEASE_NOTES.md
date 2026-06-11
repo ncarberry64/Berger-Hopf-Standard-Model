@@ -1,4 +1,40 @@
-# BHSM v1.1 Preprint Package Release Notes
+# Release Notes
+
+## BHSM Final Paper Package v1.2.0
+
+This release prepares a Zenodo-ready final paper package for the
+Berger-Hopf Standard Model (BHSM) while preserving the frozen no-retuning
+prediction set.
+
+### Included
+
+- Final paper Markdown, LaTeX, and PDF where local tooling supports it.
+- Frozen prediction summary in `docs/frozen_predictions.md` and JSON form.
+- Claim-status table using `DERIVED_CONDITIONAL`, `VERIFIED_TEST`,
+  `STRONG_SCREEN`, `PROXY_AUDIT`, `OPEN`, and `FORBIDDEN`.
+- Reproducibility guide.
+- Falsification criteria F1-F9.
+- Zenodo release notes and metadata scaffold.
+- Release integrity test.
+
+### Claim Scope
+
+BHSM is presented as a no-retuning geometric reinterpretation framework. This
+release does not claim a full derivation of the Standard Model from first
+principles, QCD confinement, quantum gravity, a final Standard Model
+replacement, experimental confirmation, or post-data retuning.
+
+### Reproduce
+
+```powershell
+python -m pip install -e .
+python -m pytest
+```
+
+Zenodo DOI is assigned after release archival if GitHub-Zenodo integration is
+enabled. No DOI is invented in this repository.
+
+## BHSM v1.1 Preprint Package Release Notes
 
 Branch: `bhsm-v1.1-paper`
 
