@@ -1,20 +1,59 @@
-# Berger-Hopf Standard Model
+# Berger-Hopf Standard Model (BHSM)
 
-BHSM = Berger-Hopf Standard Model.
+BHSM is a frozen no-retuning geometric reinterpretation framework for
+Standard Model structure. It attempts to derive particle-sector structure,
+mass-ratio patterns, and no-extra-light-state constraints from Berger-Hopf
+internal geometry. The internal theorem package is complete according to the
+repository ledger, while empirical acceptance remains external.
 
-This repository is the public research release for the completed BHSM internal
-theorem package and the frozen no-retuning executable prediction set. BHSM is a
-Berger-Hopf geometric reinterpretation framework for Standard Model flavor,
-couplings, generations, and electroweak-scale structure.
+## Status
 
-BHSM is not presented here as an experimentally confirmed replacement of the
-Standard Model. Empirical validation, precision QCD/RG comparison, and future
-phenomenology remain separate from the internal theorem completion recorded in
-this repository.
+```text
+Final theorem package: COMPLETE
+Release tag: bhsm-final-theorem-v1.0
+Tests: 757 passed
+Frozen outputs: unchanged
+Zenodo DOI: pending
+```
 
-## Final Status
+Important caution: this release is an internal theorem-package completion and
+reproducibility artifact. It is not a claim of experimental confirmation or an
+accepted replacement of the Standard Model.
 
-| Item | Status |
+## Quick Links
+
+- [Final paper PDF](manuscript/BHSM_final_paper.pdf)
+- [Final paper Markdown](manuscript/BHSM_final_paper.md)
+- [Final theorem status](theory/full_bhsm_theorem_completion_report.md)
+- [Frozen prediction ledger](theory/bhsm_v1_frozen_prediction_set.md)
+- [Reproducibility instructions](docs/reproducibility.md)
+- [Release notes](RELEASE_NOTES.md)
+- [Citation instructions](CITATION.cff)
+- [License/status](LICENSE.md)
+
+## Where to Start
+
+- For non-specialists: [plain-language overview](docs/BHSM_plain_language_overview.md)
+- For physicists: [final paper PDF](manuscript/BHSM_final_paper.pdf)
+- For theorem reviewers: [reviewer attack guide](docs/reviewer_attack_guide.md)
+- For reproducibility: [reproducibility guide](docs/reproducibility.md)
+- For frozen predictions: [frozen predictions guide](docs/frozen_predictions.md)
+- For claim status: [claim status table](docs/claim_status_table.md)
+- For limitations: [external validation notes](docs/limitations_and_external_validation.md)
+
+## Repository Map
+
+| Path | Purpose |
+| --- | --- |
+| `src/` | theorem/model code |
+| `tests/` | regression and guard tests |
+| `theory/` | theorem ledger and status files |
+| `manuscript/` | final paper sources and PDF |
+| `docs/` | reader and reviewer guides |
+
+## Final Theorem Status
+
+| Node | Status |
 | --- | --- |
 | Complete operator identification | `PROVEN` |
 | Action uniqueness | `PROVEN` |
@@ -23,9 +62,11 @@ this repository.
 | H_T lower-bound transfer | `PROVEN` |
 | Index theorem | `PROVEN` |
 | Mirror exclusion | `PROVEN` |
-| Full H_T theorem | `FULL_HT_THEOREM_PROVEN` |
-| Full BHSM theorem package | `FULL_BHSM_THEOREM_PACKAGE_COMPLETE` |
-| Frozen outputs | `unchanged` |
+| Full H_T theorem | `PROVEN` |
+| Full BHSM theorem package | `COMPLETE` |
+
+See [theorem status summary](docs/theorem_status_summary.md) and
+[full theorem completion report](theory/full_bhsm_theorem_completion_report.md).
 
 ## Frozen Model
 
@@ -43,7 +84,7 @@ The dressed candidate changes only `c/t`; it leaves `u/t`, CKM
 `sin_theta_13`, down-sector ratios, lepton ratios, gauge outputs,
 Higgs/electroweak outputs, H_T status, and scalar outputs unchanged.
 
-## Frozen Prediction Table
+## Frozen Prediction Snapshot
 
 | Quantity | `BHSM_BARE_V1` | `BHSM_DRESSED_V1_CANDIDATE` | Changed |
 | --- | --- | --- | --- |
@@ -53,60 +94,44 @@ Higgs/electroweak outputs, H_T status, and scalar outputs unchanged.
 | `d/b` | `0.0011165200546001757` | `0.0011165200546001757` | `False` |
 | `sin_theta_13` | `0.0035623676140463315` | `0.0035623676140463315` | `False` |
 
+For the fuller model-output ledger, see
+[docs/frozen_predictions.md](docs/frozen_predictions.md) and
+[theory/bhsm_prediction_ledger.md](theory/bhsm_prediction_ledger.md).
+
 ## Reproduce
 
 ```powershell
 python -m pytest -q
 ```
 
-The final release validation on this branch passed the full pytest suite and
-the frozen sanity check.
+Expected final release result: `757 passed`.
 
-## Final Paper
+If your local result differs, see [docs/reproducibility.md](docs/reproducibility.md).
 
-The final paper package is in:
+## Claims Boundary
 
-- `manuscript/BHSM_final_paper.md`
-- `manuscript/BHSM_final_paper.tex`
-- `manuscript/BHSM_final_paper.pdf`
+Allowed:
 
-## Cite
+- completed internal theorem package according to the repository ledger;
+- frozen predictions unchanged;
+- reproducible release package;
+- final paper attached.
 
-Use `CITATION.cff` for repository citation metadata. The release tag is:
+Not allowed:
 
-```text
-bhsm-final-theorem-v1.0
-```
+- experimentally confirmed replacement of the Standard Model;
+- accepted by the scientific community;
+- proven QCD confinement;
+- new particle discovery;
+- guaranteed correctness.
 
-No Zenodo DOI is written into the repository unless Zenodo mints one after the
-GitHub release.
+## Citation and DOI
 
-## Branches and Tags
-
-| Ref | Meaning |
-| --- | --- |
-| `main` | frozen v1.0 baseline history |
-| `bhsm-final-paper-release` | final theorem paper and release package |
-| `bhsm-v1.0-freeze` | frozen model tag |
-| `bhsm-v1.1-preprint` | v1.1 preprint package tag |
-| `bhsm-final-theorem-v1.0` | final theorem package tag |
-
-## No-Retuning Rule
-
-The frozen package is invalidated if `a`, `S`, the mode ledger, tolerance
-bands, frozen outputs, or `Z_virt` are changed based on residuals.
-
-## Limitations and Future Work
-
-- Experimental confirmation is not claimed by repository theorem completion.
-- Precision QCD/RG threshold matching remains future empirical/precision work.
-- PMNS/neutrino rows remain effective-extension screens unless separately
-  promoted by explicit model content.
-- The release does not claim QCD confinement, empirical discovery, new particle
-  discovery, or guaranteed publication acceptance.
-- Zenodo DOI status is pending unless and until Zenodo mints one.
+`CITATION.cff` exists for GitHub citation display. `.zenodo.json` exists for
+Zenodo metadata. Zenodo DOI is pending unless Zenodo mints one after a GitHub
+release. No DOI is invented in this repository.
 
 ## License
 
 All rights reserved. This repository is not released under an open-source
-license. See `LICENSE.md`.
+license. See [LICENSE.md](LICENSE.md).

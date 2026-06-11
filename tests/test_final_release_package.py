@@ -1,4 +1,5 @@
 import json
+import re
 from math import isclose
 from pathlib import Path
 
@@ -29,6 +30,13 @@ def test_final_release_files_exist_and_state_completed_theorem_package():
         "RELEASE_NOTES.md",
         "CITATION.cff",
         ".zenodo.json",
+        "docs/BHSM_plain_language_overview.md",
+        "docs/reviewer_attack_guide.md",
+        "docs/reproducibility.md",
+        "docs/frozen_predictions.md",
+        "docs/theorem_status_summary.md",
+        "docs/limitations_and_external_validation.md",
+        "docs/claim_status_table.md",
     )
     missing = [path for path in expected if not ROOT.joinpath(path).exists()]
     assert missing == []
@@ -93,6 +101,42 @@ def test_final_release_does_not_invent_zenodo_doi():
     assert "10.5281/zenodo" not in text.lower()
     assert "doi.org/10.5281" not in text.lower()
     assert "DOI pending Zenodo release" in text or "Zenodo DOI: pending" in text
+
+
+def test_readme_links_resolve_locally():
+    readme = _read("README.md")
+    links = re.findall(r"\[[^\]]+\]\(([^)]+)\)", readme)
+    local_links = [
+        link.split("#", 1)[0]
+        for link in links
+        if link and not link.startswith(("http://", "https://", "mailto:"))
+    ]
+
+    missing = [link for link in local_links if link and not ROOT.joinpath(link).exists()]
+    assert missing == []
+
+
+def test_user_facing_docs_preserve_claim_boundaries():
+    docs = (
+        "README.md",
+        "docs/BHSM_plain_language_overview.md",
+        "docs/reviewer_attack_guide.md",
+        "docs/reproducibility.md",
+        "docs/frozen_predictions.md",
+        "docs/theorem_status_summary.md",
+        "docs/limitations_and_external_validation.md",
+        "docs/claim_status_table.md",
+    )
+    text = "\n".join(_read(path) for path in docs)
+
+    assert "Final theorem package: COMPLETE" in text
+    assert "757 passed" in text
+    assert "Zenodo DOI: pending" in text
+    assert "not a claim of experimental confirmation" in text
+    assert "accepted replacement of the Standard Model" in text
+    assert "new particle discovery" in text
+    assert "QCD confinement" in text
+    assert "guaranteed correctness" in text
 
 
 def test_final_release_preserves_frozen_outputs():
