@@ -230,8 +230,9 @@ See `docs/reproducibility.md`.
 
 ## Citation and Archival Information
 
-Use `CITATION.cff`. Zenodo archival should be triggered through GitHub-Zenodo
-integration after the GitHub release, if enabled. Do not manually invent a DOI.
+Use `CITATION.cff`.
+
+Archival DOI: `10.5281/zenodo.20663419`.
 
 ## AI-Assisted Drafting Acknowledgment
 

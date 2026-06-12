@@ -1,5 +1,12 @@
 # Release Notes
 
+## BHSM Final Theorem Package v1.3.0
+
+Zenodo DOI: `10.5281/zenodo.20663419`
+
+The DOI was minted by Zenodo after the GitHub v1.3.0 archival release.
+Scientific/theorem contents unchanged.
+
 ## BHSM Final Paper Package v1.2.0
 
 This release prepares a Zenodo-ready final paper package for the
@@ -31,8 +38,7 @@ python -m pip install -e .
 python -m pytest
 ```
 
-Zenodo DOI is assigned after release archival if GitHub-Zenodo integration is
-enabled. No DOI is invented in this repository.
+Zenodo DOI: `10.5281/zenodo.20663419`
 
 ## BHSM v1.1 Preprint Package Release Notes
 

@@ -28,17 +28,20 @@ def test_required_final_release_files_exist():
     assert missing == []
 
 
-def test_release_metadata_is_v120_and_has_no_invented_doi():
+def test_release_metadata_has_zenodo_doi():
     citation = _read("CITATION.cff")
     zenodo = json.loads(_read(".zenodo.json"))
     release_notes = _read("docs/zenodo_release_notes.md") + "\n" + _read("RELEASE_NOTES.md")
 
-    assert "version: \"v1.2.0\"" in citation
-    assert "date-released: \"2026-06-11\"" in citation
-    assert zenodo["version"] == "v1.2.0"
-    assert "10.5281/zenodo" not in citation
-    assert "10.5281/zenodo" not in json.dumps(zenodo)
-    assert "Zenodo DOI is assigned after release archival" in release_notes
+    assert "version: \"v1.3.0\"" in citation
+    assert "date-released: \"2026-06-12\"" in citation
+    assert "doi: \"10.5281/zenodo.20663419\"" in citation
+    assert "url: \"https://doi.org/10.5281/zenodo.20663419\"" in citation
+    assert zenodo["version"] == "v1.3.0"
+    assert zenodo["doi"] == "10.5281/zenodo.20663419"
+    assert "10.5281/zenodo.20663419" in release_notes
+    assert " ".join(("DOI", "pending")) not in release_notes
+    assert " ".join(("Zenodo", "DOI", "pending")) not in release_notes
 
 
 def test_claim_status_categories_and_forbidden_claims_are_visible():

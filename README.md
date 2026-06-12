@@ -1,5 +1,7 @@
 # Berger-Hopf Standard Model (BHSM)
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
+
 BHSM is a frozen no-retuning geometric reinterpretation framework for Standard
 Model flavor, couplings, generations, and electroweak-scale structure. The
 repository contains executable screens, ledgers, tests, and manuscript material
@@ -12,10 +14,10 @@ Model.
 ## Current Release Preparation
 
 ```text
-Release branch: release/bhsm-final-paper-v1.2.0
-Version: v1.2.0
+Release tag: v1.3.0
+Version: v1.3.0
 Frozen outputs: unchanged
-Zenodo DOI: assigned after release archival
+Zenodo DOI: 10.5281/zenodo.20663419
 ```
 
 ## What Is Frozen?
@@ -105,7 +107,9 @@ Claim status is summarized in:
 ## Citation and Archival
 
 Use `CITATION.cff` for GitHub citation display. `.zenodo.json` is included for
-Zenodo metadata. Do not write a DOI manually before Zenodo assigns one.
+Zenodo metadata.
+
+DOI: `10.5281/zenodo.20663419`
 
 ## License
 
