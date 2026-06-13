@@ -71,6 +71,13 @@ your checkout is clean.
   exploratory clean repair candidate for CKM 2-3 mixing; not part of the
   official frozen release.
 
+## Completion Candidate Package
+
+- [BHSM_FULL_COMPLETION_V1_CANDIDATE](candidates/BHSM_FULL_COMPLETION_V1_CANDIDATE.md):
+  not official; frozen branches remain unchanged; candidate mechanisms live
+  under `candidates/`, audits live under `audits/`, and no confirmation claim
+  is made.
+
 ## Claim Boundary
 
 Allowed claims:

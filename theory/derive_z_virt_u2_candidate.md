@@ -1,0 +1,33 @@
+# Derive Z_virt u2 Candidate
+
+```json
+{
+  "factor": 0.5,
+  "classification": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+  "fitted_from_residual": false,
+  "routes": [
+    {
+      "route": "middle-up mode parity",
+      "result": "supports a special pure-fiber middle-up channel but does not force 1/2"
+    },
+    {
+      "route": "Hopf fiber projection",
+      "result": "structurally compatible with a half-projection interpretation"
+    },
+    {
+      "route": "boundary operator Omega_u = 6",
+      "result": "identifies the mode channel but does not uniquely determine the amplitude factor"
+    },
+    {
+      "route": "two-state virtual dressing / half-occupation",
+      "result": "best current structural motivation for 1/2"
+    },
+    {
+      "route": "internal action or H_T proxy",
+      "result": "insufficient for an action-level derivation in this branch"
+    }
+  ],
+  "conclusion": "Z_virt^{u,2}=1/2 is preserved as the released candidate factor, but this audit does not derive it uniquely from the internal action.",
+  "next_action": "derive the half-projection rule from the Berger-Hopf internal action or reject promotion"
+}
+```

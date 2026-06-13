@@ -1,0 +1,13 @@
+# Charged Lepton Virtual Dressing Candidate
+
+```json
+{
+  "classification": "OPEN_LEPTON_PRECISION_WARNING",
+  "candidate_status": "LEPTON_DRESSING_REJECTED",
+  "official_status": "NOT_OFFICIAL",
+  "rule": null,
+  "reason": "No single pre-registered lepton virtual dressing rule is derived or cleanly motivated in this branch without fitting separate factors.",
+  "official_lepton_predictions_changed": false,
+  "next_action": "derive a mode-structured lepton dressing rule or leave the lepton precision gap open"
+}
+```
