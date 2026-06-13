@@ -1,0 +1,540 @@
+{
+  "status": "EXPLORATORY_CANDIDATE",
+  "z_virt_u2": 0.5,
+  "reference_notes": [
+    "PDG-style direct CKM magnitudes use the 2024 PDG CKM matrix review values for element-by-element comparison; Vtb is a direct single-top style value and can exceed unity within uncertainty.",
+    "J_CKM uses the repository's existing PDG-style reference value 3.0e-5."
+  ],
+  "rows": [
+    {
+      "candidate": {
+        "label": "no_correction",
+        "power": null,
+        "factor": 1.0,
+        "status": "EXPLORATORY_CANDIDATE"
+      },
+      "sin_theta_12": 0.2256184580048353,
+      "sin_theta_23": 0.04386794299087895,
+      "sin_theta_13": 0.0035623676140463315,
+      "delta": 1.1283791670955126,
+      "matrix_magnitudes": [
+        [
+          0.9742095600721029,
+          0.22561702639894465,
+          0.0035623676140463315
+        ],
+        [
+          0.2254664853946855,
+          0.9732628072432431,
+          0.04386766463774175
+        ],
+        [
+          0.008977584746899065,
+          0.04308671994825354,
+          0.9990309992869156
+        ]
+      ],
+      "jarlskog": 3.1011702945437805e-05,
+      "residuals": [
+        {
+          "quantity": "Vud",
+          "predicted": 0.9742095600721029,
+          "reference": 0.97367,
+          "absolute_error": 0.0005395600721028737,
+          "relative_error": 0.0005541508643615123
+        },
+        {
+          "quantity": "Vus",
+          "predicted": 0.22561702639894465,
+          "reference": 0.22431,
+          "absolute_error": 0.001307026398944644,
+          "relative_error": 0.005826875301790576
+        },
+        {
+          "quantity": "Vub",
+          "predicted": 0.0035623676140463315,
+          "reference": 0.00382,
+          "absolute_error": 0.0002576323859536686,
+          "relative_error": 0.06744303297216456
+        },
+        {
+          "quantity": "Vcd",
+          "predicted": 0.2254664853946855,
+          "reference": 0.221,
+          "absolute_error": 0.004466485394685499,
+          "relative_error": 0.02021034115242307
+        },
+        {
+          "quantity": "Vcs",
+          "predicted": 0.9732628072432431,
+          "reference": 0.975,
+          "absolute_error": 0.001737192756756878,
+          "relative_error": 0.001781736160776285
+        },
+        {
+          "quantity": "Vcb",
+          "predicted": 0.04386766463774175,
+          "reference": 0.0411,
+          "absolute_error": 0.0027676646377417513,
+          "relative_error": 0.0673397722078285
+        },
+        {
+          "quantity": "Vtd",
+          "predicted": 0.008977584746899065,
+          "reference": 0.0086,
+          "absolute_error": 0.0003775847468990654,
+          "relative_error": 0.043905203127798303
+        },
+        {
+          "quantity": "Vts",
+          "predicted": 0.04308671994825354,
+          "reference": 0.0415,
+          "absolute_error": 0.0015867199482535385,
+          "relative_error": 0.03823421562056719
+        },
+        {
+          "quantity": "Vtb",
+          "predicted": 0.9990309992869156,
+          "reference": 1.01,
+          "absolute_error": 0.010969000713084376,
+          "relative_error": 0.010860396745628095
+        },
+        {
+          "quantity": "J_CKM",
+          "predicted": 3.1011702945437805e-05,
+          "reference": 3e-05,
+          "absolute_error": 1.0117029454378042e-06,
+          "relative_error": 0.03372343151459347
+        }
+      ],
+      "improves_vcb_vts": false,
+      "damages_rest": false,
+      "conclusion": "baseline frozen CKM screen; no mixing dressing applied"
+    },
+    {
+      "candidate": {
+        "label": "Z^(1/4)",
+        "power": 0.25,
+        "factor": 0.8408964152537145,
+        "status": "EXPLORATORY_CANDIDATE"
+      },
+      "sin_theta_12": 0.2256184580048353,
+      "sin_theta_23": 0.03688839600558442,
+      "sin_theta_13": 0.0035623676140463315,
+      "delta": 1.1283791670955126,
+      "matrix_magnitudes": [
+        [
+          0.9742095600721029,
+          0.22561702639894465,
+          0.0035623676140463315
+        ],
+        [
+          0.22551973915954102,
+          0.9735399892958395,
+          0.03688816193942917
+        ],
+        [
+          0.007521988668714378,
+          0.036288381622151325,
+          0.9993130505730988
+        ]
+      ],
+      "jarlskog": 2.6084992200903215e-05,
+      "residuals": [
+        {
+          "quantity": "Vud",
+          "predicted": 0.9742095600721029,
+          "reference": 0.97367,
+          "absolute_error": 0.0005395600721028737,
+          "relative_error": 0.0005541508643615123
+        },
+        {
+          "quantity": "Vus",
+          "predicted": 0.22561702639894465,
+          "reference": 0.22431,
+          "absolute_error": 0.001307026398944644,
+          "relative_error": 0.005826875301790576
+        },
+        {
+          "quantity": "Vub",
+          "predicted": 0.0035623676140463315,
+          "reference": 0.00382,
+          "absolute_error": 0.0002576323859536686,
+          "relative_error": 0.06744303297216456
+        },
+        {
+          "quantity": "Vcd",
+          "predicted": 0.22551973915954102,
+          "reference": 0.221,
+          "absolute_error": 0.004519739159541014,
+          "relative_error": 0.020451308414212735
+        },
+        {
+          "quantity": "Vcs",
+          "predicted": 0.9735399892958395,
+          "reference": 0.975,
+          "absolute_error": 0.0014600107041604637,
+          "relative_error": 0.001497446876062014
+        },
+        {
+          "quantity": "Vcb",
+          "predicted": 0.03688816193942917,
+          "reference": 0.0411,
+          "absolute_error": 0.004211838060570829,
+          "relative_error": 0.1024778116927209
+        },
+        {
+          "quantity": "Vtd",
+          "predicted": 0.007521988668714378,
+          "reference": 0.0086,
+          "absolute_error": 0.0010780113312856216,
+          "relative_error": 0.12535015480065367
+        },
+        {
+          "quantity": "Vts",
+          "predicted": 0.036288381622151325,
+          "reference": 0.0415,
+          "absolute_error": 0.005211618377848677,
+          "relative_error": 0.1255811657312934
+        },
+        {
+          "quantity": "Vtb",
+          "predicted": 0.9993130505730988,
+          "reference": 1.01,
+          "absolute_error": 0.010686949426901182,
+          "relative_error": 0.010581138046436815
+        },
+        {
+          "quantity": "J_CKM",
+          "predicted": 2.6084992200903215e-05,
+          "reference": 3e-05,
+          "absolute_error": 3.915007799096786e-06,
+          "relative_error": 0.13050025996989287
+        }
+      ],
+      "improves_vcb_vts": false,
+      "damages_rest": true,
+      "conclusion": "does not improve both Vcb and Vts relative to the baseline"
+    },
+    {
+      "candidate": {
+        "label": "Z^(1/8)",
+        "power": 0.125,
+        "factor": 0.9170040432046712,
+        "status": "EXPLORATORY_CANDIDATE"
+      },
+      "sin_theta_12": 0.2256184580048353,
+      "sin_theta_23": 0.04022708108970801,
+      "sin_theta_13": 0.0035623676140463315,
+      "delta": 1.1283791670955126,
+      "matrix_magnitudes": [
+        [
+          0.9742095600721029,
+          0.22561702639894465,
+          0.0035623676140463315
+        ],
+        [
+          0.22549563944215573,
+          0.9734133341368977,
+          0.04022682583875576
+        ],
+        [
+          0.008212773995003168,
+          0.03954033792706119,
+          0.999184223264119
+        ]
+      ],
+      "jarlskog": 2.8442218575561272e-05,
+      "residuals": [
+        {
+          "quantity": "Vud",
+          "predicted": 0.9742095600721029,
+          "reference": 0.97367,
+          "absolute_error": 0.0005395600721028737,
+          "relative_error": 0.0005541508643615123
+        },
+        {
+          "quantity": "Vus",
+          "predicted": 0.22561702639894465,
+          "reference": 0.22431,
+          "absolute_error": 0.001307026398944644,
+          "relative_error": 0.005826875301790576
+        },
+        {
+          "quantity": "Vub",
+          "predicted": 0.0035623676140463315,
+          "reference": 0.00382,
+          "absolute_error": 0.0002576323859536686,
+          "relative_error": 0.06744303297216456
+        },
+        {
+          "quantity": "Vcd",
+          "predicted": 0.22549563944215573,
+          "reference": 0.221,
+          "absolute_error": 0.004495639442155724,
+          "relative_error": 0.020342259919256672
+        },
+        {
+          "quantity": "Vcs",
+          "predicted": 0.9734133341368977,
+          "reference": 0.975,
+          "absolute_error": 0.001586665863102299,
+          "relative_error": 0.0016273496031818451
+        },
+        {
+          "quantity": "Vcb",
+          "predicted": 0.04022682583875576,
+          "reference": 0.0411,
+          "absolute_error": 0.0008731741612442376,
+          "relative_error": 0.021245113412268556
+        },
+        {
+          "quantity": "Vtd",
+          "predicted": 0.008212773995003168,
+          "reference": 0.0086,
+          "absolute_error": 0.000387226004996832,
+          "relative_error": 0.04502627965079442
+        },
+        {
+          "quantity": "Vts",
+          "predicted": 0.03954033792706119,
+          "reference": 0.0415,
+          "absolute_error": 0.0019596620729388156,
+          "relative_error": 0.04722077284189917
+        },
+        {
+          "quantity": "Vtb",
+          "predicted": 0.999184223264119,
+          "reference": 1.01,
+          "absolute_error": 0.010815776735880966,
+          "relative_error": 0.010708689837505907
+        },
+        {
+          "quantity": "J_CKM",
+          "predicted": 2.8442218575561272e-05,
+          "reference": 3e-05,
+          "absolute_error": 1.5577814244387284e-06,
+          "relative_error": 0.05192604748129095
+        }
+      ],
+      "improves_vcb_vts": false,
+      "damages_rest": true,
+      "conclusion": "does not improve both Vcb and Vts relative to the baseline"
+    },
+    {
+      "candidate": {
+        "label": "Z^(1/16)",
+        "power": 0.0625,
+        "factor": 0.9576032806985737,
+        "status": "EXPLORATORY_CANDIDATE"
+      },
+      "sin_theta_12": 0.2256184580048353,
+      "sin_theta_23": 0.042008086125563684,
+      "sin_theta_13": 0.0035623676140463315,
+      "delta": 1.1283791670955126,
+      "matrix_magnitudes": [
+        [
+          0.9742095600721029,
+          0.22561702639894465,
+          0.0035623676140463315
+        ],
+        [
+          0.22548175271100673,
+          0.9733413184947186,
+          0.04200781957368631
+        ],
+        [
+          0.008585584341913154,
+          0.04127511489821541,
+          0.9991109310940638
+        ]
+      ],
+      "jarlskog": 2.9699284510537134e-05,
+      "residuals": [
+        {
+          "quantity": "Vud",
+          "predicted": 0.9742095600721029,
+          "reference": 0.97367,
+          "absolute_error": 0.0005395600721028737,
+          "relative_error": 0.0005541508643615123
+        },
+        {
+          "quantity": "Vus",
+          "predicted": 0.22561702639894465,
+          "reference": 0.22431,
+          "absolute_error": 0.001307026398944644,
+          "relative_error": 0.005826875301790576
+        },
+        {
+          "quantity": "Vub",
+          "predicted": 0.0035623676140463315,
+          "reference": 0.00382,
+          "absolute_error": 0.0002576323859536686,
+          "relative_error": 0.06744303297216456
+        },
+        {
+          "quantity": "Vcd",
+          "predicted": 0.22548175271100673,
+          "reference": 0.221,
+          "absolute_error": 0.004481752711006731,
+          "relative_error": 0.020279424031704667
+        },
+        {
+          "quantity": "Vcs",
+          "predicted": 0.9733413184947186,
+          "reference": 0.975,
+          "absolute_error": 0.0016586815052813675,
+          "relative_error": 0.0017012118002885821
+        },
+        {
+          "quantity": "Vcb",
+          "predicted": 0.04200781957368631,
+          "reference": 0.0411,
+          "absolute_error": 0.0009078195736863109,
+          "relative_error": 0.02208806748628494
+        },
+        {
+          "quantity": "Vtd",
+          "predicted": 0.008585584341913154,
+          "reference": 0.0086,
+          "absolute_error": 1.4415658086845695e-05,
+          "relative_error": 0.001676239312423918
+        },
+        {
+          "quantity": "Vts",
+          "predicted": 0.04127511489821541,
+          "reference": 0.0415,
+          "absolute_error": 0.00022488510178458876,
+          "relative_error": 0.005418918115291295
+        },
+        {
+          "quantity": "Vtb",
+          "predicted": 0.9991109310940638,
+          "reference": 1.01,
+          "absolute_error": 0.010889068905936217,
+          "relative_error": 0.010781256342511106
+        },
+        {
+          "quantity": "J_CKM",
+          "predicted": 2.9699284510537134e-05,
+          "reference": 3e-05,
+          "absolute_error": 3.007154894628672e-07,
+          "relative_error": 0.01002384964876224
+        }
+      ],
+      "improves_vcb_vts": true,
+      "damages_rest": false,
+      "conclusion": "improves Vcb/Vts without material damage to non-2-3 rows in this audit"
+    }
+  ],
+  "best_candidate": {
+    "candidate": {
+      "label": "Z^(1/16)",
+      "power": 0.0625,
+      "factor": 0.9576032806985737,
+      "status": "EXPLORATORY_CANDIDATE"
+    },
+    "sin_theta_12": 0.2256184580048353,
+    "sin_theta_23": 0.042008086125563684,
+    "sin_theta_13": 0.0035623676140463315,
+    "delta": 1.1283791670955126,
+    "matrix_magnitudes": [
+      [
+        0.9742095600721029,
+        0.22561702639894465,
+        0.0035623676140463315
+      ],
+      [
+        0.22548175271100673,
+        0.9733413184947186,
+        0.04200781957368631
+      ],
+      [
+        0.008585584341913154,
+        0.04127511489821541,
+        0.9991109310940638
+      ]
+    ],
+    "jarlskog": 2.9699284510537134e-05,
+    "residuals": [
+      {
+        "quantity": "Vud",
+        "predicted": 0.9742095600721029,
+        "reference": 0.97367,
+        "absolute_error": 0.0005395600721028737,
+        "relative_error": 0.0005541508643615123
+      },
+      {
+        "quantity": "Vus",
+        "predicted": 0.22561702639894465,
+        "reference": 0.22431,
+        "absolute_error": 0.001307026398944644,
+        "relative_error": 0.005826875301790576
+      },
+      {
+        "quantity": "Vub",
+        "predicted": 0.0035623676140463315,
+        "reference": 0.00382,
+        "absolute_error": 0.0002576323859536686,
+        "relative_error": 0.06744303297216456
+      },
+      {
+        "quantity": "Vcd",
+        "predicted": 0.22548175271100673,
+        "reference": 0.221,
+        "absolute_error": 0.004481752711006731,
+        "relative_error": 0.020279424031704667
+      },
+      {
+        "quantity": "Vcs",
+        "predicted": 0.9733413184947186,
+        "reference": 0.975,
+        "absolute_error": 0.0016586815052813675,
+        "relative_error": 0.0017012118002885821
+      },
+      {
+        "quantity": "Vcb",
+        "predicted": 0.04200781957368631,
+        "reference": 0.0411,
+        "absolute_error": 0.0009078195736863109,
+        "relative_error": 0.02208806748628494
+      },
+      {
+        "quantity": "Vtd",
+        "predicted": 0.008585584341913154,
+        "reference": 0.0086,
+        "absolute_error": 1.4415658086845695e-05,
+        "relative_error": 0.001676239312423918
+      },
+      {
+        "quantity": "Vts",
+        "predicted": 0.04127511489821541,
+        "reference": 0.0415,
+        "absolute_error": 0.00022488510178458876,
+        "relative_error": 0.005418918115291295
+      },
+      {
+        "quantity": "Vtb",
+        "predicted": 0.9991109310940638,
+        "reference": 1.01,
+        "absolute_error": 0.010889068905936217,
+        "relative_error": 0.010781256342511106
+      },
+      {
+        "quantity": "J_CKM",
+        "predicted": 2.9699284510537134e-05,
+        "reference": 3e-05,
+        "absolute_error": 3.007154894628672e-07,
+        "relative_error": 0.01002384964876224
+      }
+    ],
+    "improves_vcb_vts": true,
+    "damages_rest": false,
+    "conclusion": "improves Vcb/Vts without material damage to non-2-3 rows in this audit"
+  },
+  "limitations": [
+    "Exploratory audit only; not part of BHSM_BARE_V1 or BHSM_DRESSED_V1_CANDIDATE.",
+    "Only pre-declared powers of the existing Z_virt^{u,2}=1/2 are tested.",
+    "Any adopted mixing-dressing rule must be frozen before future external comparisons."
+  ]
+}
