@@ -1,0 +1,20 @@
+{
+  "issue_id": "P1-2",
+  "title": "Common-scale quark RG validation",
+  "status": "BLOCKS_FULL_COMPLETION",
+  "blocker": "COMMON_SCALE_QUARK_RG_INPUTS_MISSING",
+  "classification": "EXTERNAL_INPUT_REQUIRED",
+  "pass_fail_criteria": [
+    "Validated common-scale u/t, c/t, d/b, s/b references must be available.",
+    "Mixed-scale PDG-style values cannot be used as a precision verdict."
+  ],
+  "evidence": [
+    "Repo contains approximate/scaffold running utilities.",
+    "Repo does not contain validated precision common-scale quark mass inputs with uncertainties."
+  ],
+  "unchanged_quantities": [
+    "quark ratios unchanged",
+    "dressed c/t unchanged"
+  ],
+  "next_action": "add validated common-scale quark references and uncertainty propagation"
+}
