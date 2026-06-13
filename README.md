@@ -65,6 +65,12 @@ your checkout is clean.
 - [Zenodo/GitHub release notes](docs/zenodo_release_notes.md)
 - [Release checklist](docs/release_checklist.md)
 
+## Candidate Branches and Audits
+
+- [BHSM_MIXING_DRESSED_V1_CANDIDATE](candidates/BHSM_MIXING_DRESSED_V1_CANDIDATE.md):
+  exploratory clean repair candidate for CKM 2-3 mixing; not part of the
+  official frozen release.
+
 ## Claim Boundary
 
 Allowed claims:
