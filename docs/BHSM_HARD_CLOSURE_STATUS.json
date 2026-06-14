@@ -1,0 +1,337 @@
+{
+  "final_status": "PARTIAL_COMPLETION_WITH_BLOCKERS",
+  "promotion_allowed": false,
+  "no_retuning_preserved": true,
+  "frozen_sanity": {
+    "BHSM_BARE_V1_unchanged": true,
+    "BHSM_DRESSED_V1_CANDIDATE_unchanged": true,
+    "dressed_branch_changes_only_c_over_t": true,
+    "u_over_t_unchanged": true,
+    "ckm_sin_theta_13_unchanged": true,
+    "changed_rows": [
+      {
+        "quantity": "c/t",
+        "bare": 0.008310500554068288,
+        "dressed": 0.004155250277034144,
+        "changed": true
+      }
+    ]
+  },
+  "solved_issues": [
+    {
+      "issue_id": "P1-2",
+      "title": "Common-scale quark RG validation",
+      "status": "CLOSED_SOLVED",
+      "blocker": null,
+      "classification": "COMMON_SCALE_RG_VALIDATED_WARNING",
+      "pass_fail_criteria": [
+        "Validated common-scale u/t, c/t, d/b, s/b references must be available.",
+        "Mixed-scale PDG-style values cannot be used as a precision verdict."
+      ],
+      "evidence": [
+        "Common-scale input validated: True.",
+        "Reference scale: M_Z = 91.1876 GeV.",
+        "Reference scheme: MSbar running quark masses at M_Z in SM convention.",
+        "Dressed c/t improves versus bare: True.",
+        "Warning-level dressed ratios: ('u/t',).",
+        "Precision quark matching remains warning-level because uncertainties are not propagated and u/t remains outside tolerance."
+      ],
+      "unchanged_quantities": [
+        "quark ratios unchanged",
+        "dressed c/t unchanged"
+      ],
+      "next_action": "propagate common-scale uncertainties and investigate the remaining u/t tension without retuning"
+    },
+    {
+      "issue_id": "P2-1",
+      "title": "Gauge coupling precision lock",
+      "status": "CLOSED_SOLVED",
+      "blocker": null,
+      "classification": "GAUGE_PRECISION_SURVIVAL",
+      "pass_fail_criteria": [
+        "Use explicit electroweak matching convention.",
+        "All one-loop matching scales must lie in the electroweak window.",
+        "alpha_3 screen must remain within 1 percent."
+      ],
+      "evidence": [
+        "alpha_3 relative error: 0.0026127869612162834.",
+        "one-loop matching scales in electroweak window: True.",
+        "Two-/three-loop threshold matching remains a separate precision extension, not a retuning step."
+      ],
+      "unchanged_quantities": [
+        "gauge coupling formulas unchanged"
+      ],
+      "next_action": "keep convention explicit and extend to higher-loop thresholds without retuning"
+    }
+  ],
+  "rejected_candidates": [],
+  "remaining_blockers": [
+    {
+      "issue_id": "P0-1",
+      "title": "Derive released Z_virt^{u,2}=1/2",
+      "status": "BLOCKS_FULL_COMPLETION",
+      "blocker": "Z_VIRT_U2_NOT_DERIVED",
+      "classification": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+      "pass_fail_criteria": [
+        "Z=1/2 must follow from BHSM structure without c/t residual input.",
+        "If the half factor is only a two-state interpretation, it remains open."
+      ],
+      "evidence": [
+        "Middle-up mode (6,0) is a pure-fiber j=0 up-sector mode.",
+        "Omega_u=6 identifies the channel but does not force the 1/2 amplitude.",
+        "Two-state virtual half-occupation is structurally plausible but not derived from the action."
+      ],
+      "unchanged_quantities": [
+        "Z_virt^{u,2}=1/2 preserved",
+        "official branches unchanged"
+      ],
+      "next_action": "derive the half-occupation/projection factor from the internal action or reject the released dressing promotion"
+    },
+    {
+      "issue_id": "P0-2",
+      "title": "Derive or reject CKM mixing exponent 1/16",
+      "status": "BLOCKS_FULL_COMPLETION",
+      "blocker": "CKM_1_16_EXPONENT_NOT_DERIVED",
+      "classification": "CANDIDATE_EXPONENT_NOT_DERIVED",
+      "pass_fail_criteria": [
+        "1/16 must follow independently from BHSM structure.",
+        "Residual improvement alone is not a derivation."
+      ],
+      "evidence": [
+        "Candidate improves Vcb: True.",
+        "Candidate improves Vts: True.",
+        "Non-2-3 damage flag: False.",
+        "No independent 16-fold phase/covering/order derivation is present in the repo."
+      ],
+      "unchanged_quantities": [
+        "s12 unchanged",
+        "s13 unchanged",
+        "delta_cp unchanged"
+      ],
+      "next_action": "derive or reject the exponent before any official promotion"
+    },
+    {
+      "issue_id": "P0-3",
+      "title": "Boundary operator action derivation",
+      "status": "BLOCKS_FULL_COMPLETION",
+      "blocker": "BOUNDARY_OPERATORS_NOT_ACTION_DERIVED",
+      "classification": "ACTION_LINKED",
+      "pass_fail_criteria": [
+        "Omega_l, Omega_u, Omega_d must follow from an action/spectral/boundary principle.",
+        "Recovery of the mode ledger alone is not enough."
+      ],
+      "evidence": [
+        "Operational and action-linked scaffolds recover Omega_l=-q+2j=3.",
+        "Operational and action-linked scaffolds recover Omega_u=q-2j=6.",
+        "Operational and action-linked scaffolds recover Omega_d=q+4j=12.",
+        "A unique derivation from the complete internal action is not present on this branch."
+      ],
+      "unchanged_quantities": [
+        "mode ledger unchanged",
+        "frozen outputs unchanged"
+      ],
+      "next_action": "derive the sector boundary functional from the complete internal action"
+    },
+    {
+      "issue_id": "P1-1",
+      "title": "Charged-lepton precision dressing",
+      "status": "BLOCKS_FULL_COMPLETION",
+      "blocker": "LEPTON_PRECISION_NOT_SOLVED",
+      "classification": "LEPTON_DRESSING_CANDIDATE_NOT_OFFICIAL",
+      "pass_fail_criteria": [
+        "One fixed lepton-mode rule must improve mu/tau and e/tau.",
+        "Separate fitted electron and muon factors are forbidden."
+      ],
+      "evidence": [
+        "Candidate rule: Z_l(k,j)=exp[-eta_l*(q^2+j^2)].",
+        "Fit input mu/tau relative error after dressing: 0.0.",
+        "Held-out e/tau relative error after dressing: 0.0035997951408065676.",
+        "The rule improves both rows but eta_l is fit from mu/tau and not independently derived.",
+        "Official frozen lepton predictions remain unchanged."
+      ],
+      "unchanged_quantities": [
+        "charged-lepton ratios unchanged",
+        "quark and CKM sectors unchanged"
+      ],
+      "next_action": "derive eta_l and charged-lepton scope independently before any official promotion"
+    },
+    {
+      "issue_id": "P2-2",
+      "title": "Scalar/Higgs/gap full proof",
+      "status": "BLOCKS_FULL_COMPLETION",
+      "blocker": "FULL_SPECTRUM_GAP_PROOF_MISSING",
+      "classification": "STRONG_PROXY_SURVIVAL",
+      "pass_fail_criteria": [
+        "Full-spectrum proof or rigorous bound must exist.",
+        "Proxy/scaffold pass is not proof-level closure."
+      ],
+      "evidence": [
+        "Scalar scaffold passes: True.",
+        "Dangerous light scalar count: 0.",
+        "Full action-level spectrum proof remains absent."
+      ],
+      "unchanged_quantities": [
+        "scalar scaffold unchanged",
+        "H_T proxy status not upgraded"
+      ],
+      "next_action": "complete full-spectrum scalar/H_T proof inputs"
+    }
+  ],
+  "results": [
+    {
+      "issue_id": "P0-1",
+      "title": "Derive released Z_virt^{u,2}=1/2",
+      "status": "BLOCKS_FULL_COMPLETION",
+      "blocker": "Z_VIRT_U2_NOT_DERIVED",
+      "classification": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+      "pass_fail_criteria": [
+        "Z=1/2 must follow from BHSM structure without c/t residual input.",
+        "If the half factor is only a two-state interpretation, it remains open."
+      ],
+      "evidence": [
+        "Middle-up mode (6,0) is a pure-fiber j=0 up-sector mode.",
+        "Omega_u=6 identifies the channel but does not force the 1/2 amplitude.",
+        "Two-state virtual half-occupation is structurally plausible but not derived from the action."
+      ],
+      "unchanged_quantities": [
+        "Z_virt^{u,2}=1/2 preserved",
+        "official branches unchanged"
+      ],
+      "next_action": "derive the half-occupation/projection factor from the internal action or reject the released dressing promotion"
+    },
+    {
+      "issue_id": "P0-2",
+      "title": "Derive or reject CKM mixing exponent 1/16",
+      "status": "BLOCKS_FULL_COMPLETION",
+      "blocker": "CKM_1_16_EXPONENT_NOT_DERIVED",
+      "classification": "CANDIDATE_EXPONENT_NOT_DERIVED",
+      "pass_fail_criteria": [
+        "1/16 must follow independently from BHSM structure.",
+        "Residual improvement alone is not a derivation."
+      ],
+      "evidence": [
+        "Candidate improves Vcb: True.",
+        "Candidate improves Vts: True.",
+        "Non-2-3 damage flag: False.",
+        "No independent 16-fold phase/covering/order derivation is present in the repo."
+      ],
+      "unchanged_quantities": [
+        "s12 unchanged",
+        "s13 unchanged",
+        "delta_cp unchanged"
+      ],
+      "next_action": "derive or reject the exponent before any official promotion"
+    },
+    {
+      "issue_id": "P0-3",
+      "title": "Boundary operator action derivation",
+      "status": "BLOCKS_FULL_COMPLETION",
+      "blocker": "BOUNDARY_OPERATORS_NOT_ACTION_DERIVED",
+      "classification": "ACTION_LINKED",
+      "pass_fail_criteria": [
+        "Omega_l, Omega_u, Omega_d must follow from an action/spectral/boundary principle.",
+        "Recovery of the mode ledger alone is not enough."
+      ],
+      "evidence": [
+        "Operational and action-linked scaffolds recover Omega_l=-q+2j=3.",
+        "Operational and action-linked scaffolds recover Omega_u=q-2j=6.",
+        "Operational and action-linked scaffolds recover Omega_d=q+4j=12.",
+        "A unique derivation from the complete internal action is not present on this branch."
+      ],
+      "unchanged_quantities": [
+        "mode ledger unchanged",
+        "frozen outputs unchanged"
+      ],
+      "next_action": "derive the sector boundary functional from the complete internal action"
+    },
+    {
+      "issue_id": "P1-1",
+      "title": "Charged-lepton precision dressing",
+      "status": "BLOCKS_FULL_COMPLETION",
+      "blocker": "LEPTON_PRECISION_NOT_SOLVED",
+      "classification": "LEPTON_DRESSING_CANDIDATE_NOT_OFFICIAL",
+      "pass_fail_criteria": [
+        "One fixed lepton-mode rule must improve mu/tau and e/tau.",
+        "Separate fitted electron and muon factors are forbidden."
+      ],
+      "evidence": [
+        "Candidate rule: Z_l(k,j)=exp[-eta_l*(q^2+j^2)].",
+        "Fit input mu/tau relative error after dressing: 0.0.",
+        "Held-out e/tau relative error after dressing: 0.0035997951408065676.",
+        "The rule improves both rows but eta_l is fit from mu/tau and not independently derived.",
+        "Official frozen lepton predictions remain unchanged."
+      ],
+      "unchanged_quantities": [
+        "charged-lepton ratios unchanged",
+        "quark and CKM sectors unchanged"
+      ],
+      "next_action": "derive eta_l and charged-lepton scope independently before any official promotion"
+    },
+    {
+      "issue_id": "P1-2",
+      "title": "Common-scale quark RG validation",
+      "status": "CLOSED_SOLVED",
+      "blocker": null,
+      "classification": "COMMON_SCALE_RG_VALIDATED_WARNING",
+      "pass_fail_criteria": [
+        "Validated common-scale u/t, c/t, d/b, s/b references must be available.",
+        "Mixed-scale PDG-style values cannot be used as a precision verdict."
+      ],
+      "evidence": [
+        "Common-scale input validated: True.",
+        "Reference scale: M_Z = 91.1876 GeV.",
+        "Reference scheme: MSbar running quark masses at M_Z in SM convention.",
+        "Dressed c/t improves versus bare: True.",
+        "Warning-level dressed ratios: ('u/t',).",
+        "Precision quark matching remains warning-level because uncertainties are not propagated and u/t remains outside tolerance."
+      ],
+      "unchanged_quantities": [
+        "quark ratios unchanged",
+        "dressed c/t unchanged"
+      ],
+      "next_action": "propagate common-scale uncertainties and investigate the remaining u/t tension without retuning"
+    },
+    {
+      "issue_id": "P2-1",
+      "title": "Gauge coupling precision lock",
+      "status": "CLOSED_SOLVED",
+      "blocker": null,
+      "classification": "GAUGE_PRECISION_SURVIVAL",
+      "pass_fail_criteria": [
+        "Use explicit electroweak matching convention.",
+        "All one-loop matching scales must lie in the electroweak window.",
+        "alpha_3 screen must remain within 1 percent."
+      ],
+      "evidence": [
+        "alpha_3 relative error: 0.0026127869612162834.",
+        "one-loop matching scales in electroweak window: True.",
+        "Two-/three-loop threshold matching remains a separate precision extension, not a retuning step."
+      ],
+      "unchanged_quantities": [
+        "gauge coupling formulas unchanged"
+      ],
+      "next_action": "keep convention explicit and extend to higher-loop thresholds without retuning"
+    },
+    {
+      "issue_id": "P2-2",
+      "title": "Scalar/Higgs/gap full proof",
+      "status": "BLOCKS_FULL_COMPLETION",
+      "blocker": "FULL_SPECTRUM_GAP_PROOF_MISSING",
+      "classification": "STRONG_PROXY_SURVIVAL",
+      "pass_fail_criteria": [
+        "Full-spectrum proof or rigorous bound must exist.",
+        "Proxy/scaffold pass is not proof-level closure."
+      ],
+      "evidence": [
+        "Scalar scaffold passes: True.",
+        "Dangerous light scalar count: 0.",
+        "Full action-level spectrum proof remains absent."
+      ],
+      "unchanged_quantities": [
+        "scalar scaffold unchanged",
+        "H_T proxy status not upgraded"
+      ],
+      "next_action": "complete full-spectrum scalar/H_T proof inputs"
+    }
+  ]
+}
