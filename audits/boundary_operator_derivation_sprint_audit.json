@@ -1,0 +1,152 @@
+{
+  "action_derived": false,
+  "action_spectral_boundary_result": {
+    "answer": "No non-fitted action variation, spectral condition, self-adjoint-domain condition, or boundary condition was found that forces all three formulas.",
+    "derivation_found": false
+  },
+  "additional_structure_required": "A complete internal action/bundle boundary functional, a variational or self-adjoint-domain argument that fixes the Hopf/base coefficients, a derivation of sector winding targets, and a spectral check that no competing boundary functional recovers the same ledger by post-hoc assignment.",
+  "boundary_derived": false,
+  "classification": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+  "coefficient_forcing": {
+    "answer": "The coefficients are reproduced from assigned Hopf fiber, chirality, weak-component, and coframe factors. The repo does not show that those factors are forced by the complete BHSM action.",
+    "forced": false
+  },
+  "findings": [
+    {
+      "action_linked_evidence": "Symbolic phase factors reproduce the operational coefficients: {'hopf_fiber_phase': -1, 'base_node_phase': 1, 'chirality_sign': 1, 'weak_component_sign': 1, 'coframe_factor': 2, 'family_index': 3, 'hypercharge_factor': -1, 'sector_winding_multiplier': 1}.",
+      "base_coefficient_on_j": 2,
+      "derivation_gap": "The phase factors are inputs to the scaffold. The repository does not derive them from variation, self-adjoint boundary conditions, or the spectrum of the full twisted Dirac/bundle action.",
+      "derivation_status": "ACTION_LINKED",
+      "equation": "Omega_lepton = -1 q + 2 j = 3",
+      "fiber_coefficient_on_q": -1,
+      "heavy_mode": [
+        0,
+        0
+      ],
+      "sector": "lepton",
+      "selected_mode_charges": [
+        1,
+        3
+      ],
+      "selected_modes": [
+        [
+          5,
+          2
+        ],
+        [
+          9,
+          3
+        ]
+      ],
+      "selected_modes_satisfy_target": true,
+      "target": 3
+    },
+    {
+      "action_linked_evidence": "Symbolic phase factors reproduce the operational coefficients: {'hopf_fiber_phase': 1, 'base_node_phase': 1, 'chirality_sign': -1, 'weak_component_sign': 1, 'coframe_factor': 2, 'family_index': 3, 'hypercharge_factor': 1, 'sector_winding_multiplier': 2}.",
+      "base_coefficient_on_j": -2,
+      "derivation_gap": "The phase factors are inputs to the scaffold. The repository does not derive them from variation, self-adjoint boundary conditions, or the spectrum of the full twisted Dirac/bundle action.",
+      "derivation_status": "ACTION_LINKED",
+      "equation": "Omega_up = 1 q + -2 j = 6",
+      "fiber_coefficient_on_q": 1,
+      "heavy_mode": [
+        0,
+        0
+      ],
+      "sector": "up",
+      "selected_mode_charges": [
+        6,
+        8
+      ],
+      "selected_modes": [
+        [
+          6,
+          0
+        ],
+        [
+          10,
+          1
+        ]
+      ],
+      "selected_modes_satisfy_target": true,
+      "target": 6
+    },
+    {
+      "action_linked_evidence": "Symbolic phase factors reproduce the operational coefficients: {'hopf_fiber_phase': 1, 'base_node_phase': 1, 'chirality_sign': 1, 'weak_component_sign': 1, 'coframe_factor': 4, 'family_index': 3, 'hypercharge_factor': 1, 'sector_winding_multiplier': 4}.",
+      "base_coefficient_on_j": 4,
+      "derivation_gap": "The phase factors are inputs to the scaffold. The repository does not derive them from variation, self-adjoint boundary conditions, or the spectrum of the full twisted Dirac/bundle action.",
+      "derivation_status": "ACTION_LINKED",
+      "equation": "Omega_down = 1 q + 4 j = 12",
+      "fiber_coefficient_on_q": 1,
+      "heavy_mode": [
+        0,
+        0
+      ],
+      "sector": "down",
+      "selected_mode_charges": [
+        0,
+        4
+      ],
+      "selected_modes": [
+        [
+          6,
+          3
+        ],
+        [
+          8,
+          2
+        ]
+      ],
+      "selected_modes_satisfy_target": true,
+      "target": 12
+    }
+  ],
+  "frozen_sanity": {
+    "BHSM_BARE_V1_unchanged": true,
+    "BHSM_DRESSED_V1_CANDIDATE_unchanged": true,
+    "changed_rows": [
+      {
+        "bare": 0.008310500554068288,
+        "changed": true,
+        "dressed": 0.004155250277034144,
+        "quantity": "c/t"
+      }
+    ],
+    "ckm_sin_theta_13_unchanged": true,
+    "dressed_branch_changes_only_c_over_t": true,
+    "u_over_t_unchanged": true
+  },
+  "helps_derive_ckm_exponent_1_16": false,
+  "helps_derive_z_virt_u2_half": false,
+  "limitations": [
+    "The sprint audits existing BHSM repository evidence only.",
+    "It does not introduce a new internal action or new spectral theorem.",
+    "It does not alter frozen prediction branches or mode ledgers.",
+    "It does not derive Z_virt^{u,2}=1/2 or the CKM 1/16 mixing exponent."
+  ],
+  "official_frozen_outputs_changed": false,
+  "p0_blocker": "BOUNDARY_OPERATORS_NOT_ACTION_DERIVED",
+  "p0_boundary_blocker_closed": false,
+  "shared_boundary_principle": {
+    "answer": "A shared symbolic phase bookkeeping rule exists, but it is not an action/spectral/boundary derivation.",
+    "classification": "STRUCTURALLY_MOTIVATED_NOT_DERIVED"
+  },
+  "sources_inspected": [
+    "theory/boundary_operator_scaffold.md",
+    "theory/boundary_operator_action_derivation.md",
+    "theory/boundary_operator_completion_attempt.md",
+    "theory/proof_gap_report.md",
+    "theory/gate_ledger.md",
+    "src/boundary_derivation.py",
+    "src/mode_selection.py",
+    "src/twisted_dirac.py",
+    "tests/test_boundary_derivation.py",
+    "tests/test_mode_selection.py",
+    "tests/test_boundary_operator_closure.py"
+  ],
+  "spectral_derived": false,
+  "target_origin": {
+    "answer": "The targets equal family index times sector winding multipliers and are satisfied by the selected modes. This is not, by itself, an independent derivation of the targets.",
+    "selected_modes_only": false
+  },
+  "title": "BHSM focused P0 boundary-operator derivation sprint"
+}
