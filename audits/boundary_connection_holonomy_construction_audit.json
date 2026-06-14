@@ -1,0 +1,362 @@
+{
+  "berger_axis_connection_status": "BERGER_AXIS_CONNECTION_STRUCTURAL_CANDIDATE",
+  "blockers_closed": [],
+  "blockers_remaining": [
+    "define universal A_boundary",
+    "derive sector projectors P_f",
+    "derive coefficient signs and factors",
+    "derive cyclic quotient dimension",
+    "derive identity/traceless stochastic protection"
+  ],
+  "boundary_connection_status": "BOUNDARY_CONNECTION_HOLONOMY_STRUCTURAL_CANDIDATE",
+  "candidate_components": [
+    "hopf_q_connection_part",
+    "berger_axis_connection_part",
+    "sector_projected_linear_holonomy",
+    "electroweak_alpha_surface_scale",
+    "neutrino_boundary_leakage_refinement"
+  ],
+  "ckm_consequence_status": "CKM_H_MIX_DIM4_ANALOGY_ONLY",
+  "coefficient_origin_status": "COEFFICIENT_ORIGIN_STRUCTURAL_CANDIDATE",
+  "coefficient_rules": [
+    {
+      "a_q": -1,
+      "b_j": 2,
+      "coefficient_origin": [
+        "negative Hopf sign is compatible with lepton charge orientation",
+        "factor 2 is compatible with weak/base doublet participation"
+      ],
+      "missing_origin": [
+        "derive the negative q orientation from a concrete connection",
+        "derive the base factor 2 from weak/boundary geometry rather than assigning it"
+      ],
+      "sector": "lepton",
+      "status": "COEFFICIENT_ORIGIN_STRUCTURAL_CANDIDATE"
+    },
+    {
+      "a_q": 1,
+      "b_j": -2,
+      "coefficient_origin": [
+        "positive Hopf sign is compatible with up-sector orientation",
+        "negative base sign is compatible with upper weak-component orientation"
+      ],
+      "missing_origin": [
+        "derive the base sign from the projected connection",
+        "derive factor 2 without using the desired mode pair"
+      ],
+      "sector": "up",
+      "status": "COEFFICIENT_ORIGIN_STRUCTURAL_CANDIDATE"
+    },
+    {
+      "a_q": 1,
+      "b_j": 4,
+      "coefficient_origin": [
+        "positive Hopf sign is compatible with down-sector orientation",
+        "factor 4 is compatible with coframe/color participation plus base doubling"
+      ],
+      "missing_origin": [
+        "derive factor 4 from coframe/color geometry inside A_boundary",
+        "derive down/up base-sign split from the same universal connection"
+      ],
+      "sector": "down",
+      "status": "COEFFICIENT_ORIGIN_STRUCTURAL_CANDIDATE"
+    }
+  ],
+  "connection_candidates": [
+    {
+      "candidate_id": "hopf",
+      "derived": false,
+      "evidence_found": [
+        "BHSM uses Hopf charge q=k-2j and Hopf/U(1) phase language.",
+        "A Hopf-fiber connection can account naturally for the q part of Omega_f."
+      ],
+      "evidence_missing": [
+        "No explicit Hopf connection one-form A_boundary is implemented.",
+        "The j-dependent base terms 2j, -2j, and 4j do not follow from Hopf q alone."
+      ],
+      "status": "HOPF_CONNECTION_STRUCTURAL_CANDIDATE",
+      "title": "Hopf fiber connection"
+    },
+    {
+      "candidate_id": "berger_axis",
+      "derived": false,
+      "evidence_found": [
+        "The alpha-anchored Berger geometry distinguishes a preferred internal axis.",
+        "A squashed-axis connection is compatible with a q/base split."
+      ],
+      "evidence_missing": [
+        "No sigma_3 or Berger-axis connection is explicitly tied to sector coefficients.",
+        "Factors 2 and 4 are not derived from anisotropy alone."
+      ],
+      "status": "BERGER_AXIS_CONNECTION_STRUCTURAL_CANDIDATE",
+      "title": "Berger squashing axis connection"
+    },
+    {
+      "candidate_id": "sector_projected",
+      "derived": false,
+      "evidence_found": [
+        "Linear projected rules A_f=a_f A_q+b_f A_j reproduce the charged-sector boundary levels.",
+        "Existing boundary scaffolds link coefficient signs to sector orientation, weak component, chirality, and coframe factors."
+      ],
+      "evidence_missing": [
+        "The universal connection A_boundary and projectors P_f are not constructed.",
+        "Coefficient origins remain structural candidates rather than consequences of a connection."
+      ],
+      "status": "SECTOR_PROJECTED_CONNECTION_STRUCTURAL_CANDIDATE",
+      "title": "Sector-projected boundary connection"
+    },
+    {
+      "candidate_id": "topographic_surface",
+      "derived": false,
+      "evidence_found": [
+        "Topographic and stochastic-output language exists in the repo narrative."
+      ],
+      "evidence_missing": [
+        "No mathematical surface connection with computable holonomy is implemented.",
+        "Ontology is not an action-level proof."
+      ],
+      "status": "TOPOGRAPHIC_SURFACE_CONNECTION_INTERPRETATION_ONLY",
+      "title": "White-hole/topographic surface phase connection"
+    },
+    {
+      "candidate_id": "electroweak",
+      "derived": false,
+      "evidence_found": [
+        "The alpha/pi stochastic scale is compatible with electromagnetic/U(1) dressing.",
+        "Hypercharge and anomaly ledgers are implemented elsewhere."
+      ],
+      "evidence_missing": [
+        "Electroweak U(1) does not by itself produce Omega_l=3, Omega_u=6, Omega_d=12.",
+        "No gauge connection derivation fixes the sector base coefficients."
+      ],
+      "status": "ELECTROWEAK_BOUNDARY_CONNECTION_STRUCTURAL_CANDIDATE",
+      "title": "Electroweak/U(1) boundary connection"
+    }
+  ],
+  "derived_components": [],
+  "does_dim_H_equal_abs_Omega_follow": false,
+  "does_holonomy_produce_3_6_12": true,
+  "does_lepton_8_9_follow": false,
+  "electroweak_boundary_connection_status": "ELECTROWEAK_BOUNDARY_CONNECTION_STRUCTURAL_CANDIDATE",
+  "files_concepts_searched": [
+    "Hopf charge and U(1) phase language",
+    "Berger anisotropy and internal-axis notes",
+    "boundary operator scaffold and phase contribution records",
+    "virtual/stochastic dressing notes",
+    "electroweak and hypercharge ledgers",
+    "topographic surface/scalar scaffold notes"
+  ],
+  "forbidden_claims_absent": true,
+  "frozen_predictions_modified": false,
+  "frozen_sanity": {
+    "BHSM_BARE_V1_unchanged": true,
+    "BHSM_DRESSED_V1_CANDIDATE_unchanged": true,
+    "changed_rows": [
+      {
+        "bare": 0.008310500554068288,
+        "changed": true,
+        "dressed": 0.004155250277034144,
+        "quantity": "c/t"
+      }
+    ],
+    "ckm_sin_theta_13_unchanged": true,
+    "dressed_branch_changes_only_c_over_t": true,
+    "u_over_t_unchanged": true
+  },
+  "holonomy_integer_status": {
+    "down": {
+      "Omega": 12,
+      "integer": true,
+      "primitive_candidate": true,
+      "status": "INTEGRAL_LEVEL_CONFIRMED_CONNECTION_OPEN"
+    },
+    "lepton": {
+      "Omega": 3,
+      "integer": true,
+      "primitive_candidate": true,
+      "status": "INTEGRAL_LEVEL_CONFIRMED_CONNECTION_OPEN"
+    },
+    "up": {
+      "Omega": 6,
+      "integer": true,
+      "primitive_candidate": true,
+      "status": "INTEGRAL_LEVEL_CONFIRMED_CONNECTION_OPEN"
+    }
+  },
+  "hopf_connection_status": "HOPF_CONNECTION_STRUCTURAL_CANDIDATE",
+  "lepton_channel_consequence": {
+    "Omega_l": 3,
+    "active_fraction": 0.8888888888888888,
+    "assumptions_enabled": true,
+    "derived": false,
+    "dim_H_l": 3,
+    "eta_l": 0.002064728414019306,
+    "status": "LEPTON_8_9_CHANNEL_RULE_STRUCTURAL_CANDIDATE"
+  },
+  "missing_assumptions": [
+    "hopf: No explicit Hopf connection one-form A_boundary is implemented.",
+    "hopf: The j-dependent base terms 2j, -2j, and 4j do not follow from Hopf q alone.",
+    "berger_axis: No sigma_3 or Berger-axis connection is explicitly tied to sector coefficients.",
+    "berger_axis: Factors 2 and 4 are not derived from anisotropy alone.",
+    "sector_projected: The universal connection A_boundary and projectors P_f are not constructed.",
+    "sector_projected: Coefficient origins remain structural candidates rather than consequences of a connection.",
+    "topographic_surface: No mathematical surface connection with computable holonomy is implemented.",
+    "topographic_surface: Ontology is not an action-level proof.",
+    "electroweak: Electroweak U(1) does not by itself produce Omega_l=3, Omega_u=6, Omega_d=12.",
+    "electroweak: No gauge connection derivation fixes the sector base coefficients.",
+    "lepton: derive the negative q orientation from a concrete connection",
+    "lepton: derive the base factor 2 from weak/boundary geometry rather than assigning it",
+    "up: derive the base sign from the projected connection",
+    "up: derive factor 2 without using the desired mode pair",
+    "down: derive factor 4 from coframe/color geometry inside A_boundary",
+    "down: derive down/up base-sign split from the same universal connection",
+    "construct universal A_boundary and sector projectors P_f",
+    "derive a_f,b_f from geometry rather than structural coefficient ledger",
+    "derive dim(H)=|Omega| from holonomy quotient",
+    "derive identity/traceless stochastic protection before promoting lepton 8/9"
+  ],
+  "mode_pair_checks": {
+    "down": {
+      "constant": true,
+      "level": 12,
+      "rows": [
+        {
+          "j": 3,
+          "mode": [
+            6,
+            3
+          ],
+          "omega": 12,
+          "q": 0
+        },
+        {
+          "j": 2,
+          "mode": [
+            8,
+            2
+          ],
+          "omega": 12,
+          "q": 4
+        }
+      ]
+    },
+    "lepton": {
+      "constant": true,
+      "level": 3,
+      "rows": [
+        {
+          "j": 2,
+          "mode": [
+            5,
+            2
+          ],
+          "omega": 3,
+          "q": 1
+        },
+        {
+          "j": 3,
+          "mode": [
+            9,
+            3
+          ],
+          "omega": 3,
+          "q": 3
+        }
+      ]
+    },
+    "up": {
+      "constant": true,
+      "level": 6,
+      "rows": [
+        {
+          "j": 0,
+          "mode": [
+            6,
+            0
+          ],
+          "omega": 6,
+          "q": 6
+        },
+        {
+          "j": 1,
+          "mode": [
+            10,
+            1
+          ],
+          "omega": 6,
+          "q": 8
+        }
+      ]
+    }
+  },
+  "neutrino_consequence_status": "NEUTRINO_LEAKAGE_CHANNEL_REFINED",
+  "official_branch_comparison": {
+    "bare_score": {
+      "PASS": 22
+    },
+    "branches": [
+      "BHSM_BARE_V1",
+      "BHSM_DRESSED_V1_CANDIDATE"
+    ],
+    "dressed_score": {
+      "PASS": 21,
+      "SCHEME_SENSITIVE": 1
+    },
+    "no_retuning": true,
+    "rows": [
+      {
+        "bare": 0.008310500554068288,
+        "changed": true,
+        "dressed": 0.004155250277034144,
+        "quantity": "c/t"
+      },
+      {
+        "bare": 1.2690463017606151e-05,
+        "changed": false,
+        "dressed": 1.2690463017606151e-05,
+        "quantity": "u/t"
+      },
+      {
+        "bare": 0.021933971495439474,
+        "changed": false,
+        "dressed": 0.021933971495439474,
+        "quantity": "s/b"
+      },
+      {
+        "bare": 0.0011165200546001757,
+        "changed": false,
+        "dressed": 0.0011165200546001757,
+        "quantity": "d/b"
+      },
+      {
+        "bare": 0.0035623676140463315,
+        "changed": false,
+        "dressed": 0.0035623676140463315,
+        "quantity": "sin_theta_13"
+      }
+    ],
+    "tolerance_bands": {
+      "charged_lepton_ratios": 0.25,
+      "ckm_angles": 0.1,
+      "ckm_cp_jarlskog": 0.1,
+      "exact_status": "pass_fail",
+      "gauge_couplings": 0.01,
+      "higgs_electroweak_v": 0.01,
+      "higgs_mass_zeroth_order": 0.02,
+      "ht_gap": "binary_pass_fail",
+      "pmns_effective": 0.05,
+      "quark_ratios_otherwise": "SCHEME_SENSITIVE",
+      "quark_ratios_scheme_aware": 0.25,
+      "scalar_decoupling": "binary_scaffold_pass_fail"
+    }
+  },
+  "official_dressed_changes_only_c_over_t": true,
+  "official_outputs_modified": false,
+  "prs_opened": false,
+  "pure_fiber_consequence_status": "PURE_FIBER_DOUBLE_BRANCH_ANALOGY_ONLY",
+  "rejected_components": [],
+  "safe_to_merge_as_candidate_only": true,
+  "sector_projected_connection_status": "SECTOR_PROJECTED_CONNECTION_STRUCTURAL_CANDIDATE",
+  "title": "BHSM boundary connection holonomy construction sprint",
+  "topographic_surface_connection_status": "TOPOGRAPHIC_SURFACE_CONNECTION_INTERPRETATION_ONLY"
+}
