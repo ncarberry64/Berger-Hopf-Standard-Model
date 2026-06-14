@@ -144,8 +144,10 @@ def test_lepton_boundary_quark_rg_and_gauge_statuses_are_conservative():
     quark_rg = json.loads(_read("audits/common_scale_quark_rg_audit.json"))
     gauge = json.loads(_read("audits/gauge_coupling_completion_audit.json"))
 
-    assert lepton["classification"] == "OPEN_LEPTON_PRECISION_WARNING"
-    assert lepton["candidate_status"] != "LEPTON_DRESSING_DERIVED"
+    assert lepton["classification"] == "LEPTON_DRESSING_CANDIDATE_NOT_OFFICIAL"
+    assert lepton["eta_classification"] == "ETA_L_STRUCTURALLY_MOTIVATED_NOT_DERIVED"
+    assert lepton["candidate_status"] == "CANDIDATE_NOT_OFFICIAL"
+    assert lepton["closes_lepton_precision_blocker"] is False
     assert boundary["classification"] == "ACTION_LINKED"
     assert boundary_payload()["overstated"] is False
     assert quark_rg["classification"] == "EXTERNAL_INPUT_REQUIRED"

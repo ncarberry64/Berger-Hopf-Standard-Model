@@ -18,6 +18,9 @@ from bhsm_virtual_mixing_solution import (
     REQUIRED_CANDIDATE_WORDING,
     build_mixing_candidate_report,
 )
+from charged_lepton_eta_derivation import audit_payload as charged_lepton_eta_payload
+from charged_lepton_precision_closure import audit_payload as charged_lepton_precision_payload
+from charged_lepton_precision_closure import render_markdown as render_charged_lepton_precision_markdown
 from prediction_ledger import CKM_REFERENCES
 
 
@@ -47,7 +50,19 @@ def _write(path: str | Path, text: str) -> None:
 def _write_json(path: str | Path, payload: Any) -> None:
     output_path = Path(path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    output_path.write_text(json.dumps(_jsonable(payload), indent=2), encoding="utf-8")
+
+
+def _jsonable(value: object) -> object:
+    if hasattr(value, "__dataclass_fields__"):
+        return _jsonable(asdict(value))
+    if isinstance(value, tuple):
+        return [_jsonable(item) for item in value]
+    if isinstance(value, list):
+        return [_jsonable(item) for item in value]
+    if isinstance(value, dict):
+        return {str(key): _jsonable(item) for key, item in value.items()}
+    return value
 
 
 def frozen_branch_check() -> dict[str, Any]:
@@ -165,16 +180,25 @@ def full_ckm_payload() -> dict[str, Any]:
 def charged_lepton_payload() -> dict[str, Any]:
     """Return charged-lepton candidate status."""
 
+    precision = charged_lepton_precision_payload()
+    eta = charged_lepton_eta_payload()
     return {
-        "classification": "OPEN_LEPTON_PRECISION_WARNING",
-        "candidate_status": "LEPTON_DRESSING_REJECTED",
+        "classification": precision["classification"],
+        "eta_classification": eta["classification"],
+        "candidate_status": precision["candidate_status"],
         "official_status": "NOT_OFFICIAL",
-        "rule": None,
+        "rule": precision["candidate_rule"],
+        "formula_integrity_checked": True,
+        "eta_derivation_status": eta["classification"],
+        "best_independent_eta_candidate": eta["best_independent_candidate"],
         "reason": (
-            "No single pre-registered lepton virtual dressing rule is derived or "
-            "cleanly motivated in this branch without fitting separate factors."
+            "A single mode-dependent charged-lepton dressing candidate improves both rows, "
+            "but eta_l remains not independently derived and the rule is not official."
         ),
+        "baseline_residuals": precision["baseline_residuals"],
+        "candidate_rows": precision["candidate_rows"],
         "official_lepton_predictions_changed": False,
+        "closes_lepton_precision_blocker": False,
         "next_action": "derive a mode-structured lepton dressing rule or leave the lepton precision gap open",
     }
 
@@ -277,11 +301,11 @@ def scorecard_rows() -> tuple[CompletionItem, ...]:
         CompletionItem(
             "charged leptons",
             "OPEN_DERIVATION_REQUIRED",
-            "not official",
-            "OPEN_LEPTON_PRECISION_WARNING",
-            "no clean lepton dressing adopted",
-            "precision residuals remain",
-            "derive single mode-structured rule",
+            "candidate",
+            "ETA_L_STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+            "one-parameter mode rule improves both rows but eta_l is not derived",
+            "candidate remains non-official",
+            "derive eta_l and charged-lepton scope independently",
         ),
         CompletionItem(
             "quark RG/common-scale",
@@ -343,6 +367,7 @@ def full_manifest_payload() -> dict[str, Any]:
             "released c/t virtual mass dressing",
             "candidate CKM 2-3 mixing dressing",
             "charged-lepton precision warning",
+            "non-official charged-lepton mode dressing candidate",
             "gauge coupling comparison",
             "quark RG audit",
             "boundary operator derivation status",
@@ -365,6 +390,7 @@ def full_manifest_payload() -> dict[str, Any]:
         "candidate_additions": [
             "BHSM_MIXING_DRESSED_V1_CANDIDATE",
             "BHSM_LEPTON_DRESSED_V1_CANDIDATE status file",
+            "charged-lepton formula-integrity and eta-derivation audits",
             "derivation-attempt notes",
             "completion audits",
             "completion scorecard",
@@ -372,7 +398,7 @@ def full_manifest_payload() -> dict[str, Any]:
         "unresolved_derivations": [
             "derive Z_virt^{u,2}=1/2",
             "derive or reject CKM exponent 1/16",
-            "charged-lepton precision rule",
+            "derive charged-lepton eta_l and scope independently",
             "validated common-scale quark RG inputs",
             "boundary operator full action derivation",
             "full scalar/Higgs/gap spectral proof inputs",
@@ -437,7 +463,7 @@ def render_manifest_markdown() -> str:
 def render_payload_markdown(title: str, payload: dict[str, Any]) -> str:
     """Render a simple payload note."""
 
-    lines = [f"# {title}", "", "```json", json.dumps(payload, indent=2), "```", ""]
+    lines = [f"# {title}", "", "```json", json.dumps(_jsonable(payload), indent=2), "```", ""]
     return "\n".join(lines)
 
 
@@ -489,7 +515,7 @@ def generate_all_completion_outputs() -> None:
     _write_json("audits/charged_lepton_dressing_candidate_audit.json", payloads["charged_lepton_dressing_candidate"])
     _write("audits/charged_lepton_dressing_candidate_audit.md", render_payload_markdown("Charged Lepton Dressing Candidate Audit", payloads["charged_lepton_dressing_candidate"]))
     _write_json("candidates/BHSM_LEPTON_DRESSED_V1_CANDIDATE.json", payloads["charged_lepton_dressing_candidate"])
-    _write("candidates/BHSM_LEPTON_DRESSED_V1_CANDIDATE.md", render_payload_markdown("BHSM_LEPTON_DRESSED_V1_CANDIDATE", payloads["charged_lepton_dressing_candidate"]))
+    _write("candidates/BHSM_LEPTON_DRESSED_V1_CANDIDATE.md", render_charged_lepton_precision_markdown(charged_lepton_precision_payload()))
 
     _write("theory/quark_rg_scheme_note.md", render_payload_markdown("Quark RG Scheme Note", payloads["common_scale_quark_rg"]))
     _write_json("audits/common_scale_quark_rg_audit.json", payloads["common_scale_quark_rg"])

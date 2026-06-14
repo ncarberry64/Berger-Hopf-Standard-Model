@@ -8,7 +8,7 @@ Status rows are candidate/audit classifications, not official release changes.
 | c/t mass dressing | `CAVEATED_SURVIVAL` | official candidate | `STRUCTURALLY_MOTIVATED_NOT_DERIVED` | Z=1/2 preserved; no residual fit performed here | derivation gap | derive half-projection rule |
 | CKM 2-3 mixing dressing | `CANDIDATE_SURVIVAL` | candidate | `OPEN_DERIVATION_REQUIRED` | Z^(1/16) improves Vcb/Vts with no damage flags | candidate exponent not derived | derive or reject 1/16 |
 | full CKM matrix | `CANDIDATE_SURVIVAL` | candidate | `OPEN_DERIVATION_REQUIRED` | matrix reconstructed and residuals reported | future input drift | freeze rule before future comparisons |
-| charged leptons | `OPEN_DERIVATION_REQUIRED` | not official | `OPEN_LEPTON_PRECISION_WARNING` | no clean lepton dressing adopted | precision residuals remain | derive single mode-structured rule |
+| charged leptons | `OPEN_DERIVATION_REQUIRED` | candidate | `ETA_L_STRUCTURALLY_MOTIVATED_NOT_DERIVED` | one-parameter mode rule improves both rows but eta_l is not derived | candidate remains non-official | derive eta_l and charged-lepton scope independently |
 | quark RG/common-scale | `OPEN_DERIVATION_REQUIRED` | audit | `EXTERNAL_INPUT_REQUIRED` | mixed-scale screens not precision verdicts | scheme dependence | supply validated common-scale inputs |
 | gauge couplings | `CAVEATED_SURVIVAL` | audit | `GAUGE_COARSE_SURVIVAL` | matching convention recorded; no retuning | precision convention/scale | complete threshold/RG convention audit |
 | boundary operators | `OPEN_DERIVATION_REQUIRED` | audit | `ACTION_LINKED` | operators recover ledger but full action derivation remains | action-origin gap | derive boundary functional from full action |

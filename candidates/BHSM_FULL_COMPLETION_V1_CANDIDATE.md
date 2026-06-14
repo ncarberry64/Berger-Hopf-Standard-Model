@@ -28,6 +28,7 @@ This candidate attempts to unify bare Berger-Hopf geometry, the released `c/t` v
 
 - BHSM_MIXING_DRESSED_V1_CANDIDATE
 - BHSM_LEPTON_DRESSED_V1_CANDIDATE status file
+- charged-lepton formula-integrity and eta-derivation audits
 - derivation-attempt notes
 - completion audits
 - completion scorecard
@@ -36,7 +37,7 @@ This candidate attempts to unify bare Berger-Hopf geometry, the released `c/t` v
 
 - derive Z_virt^{u,2}=1/2
 - derive or reject CKM exponent 1/16
-- charged-lepton precision rule
+- derive charged-lepton eta_l and scope independently
 - validated common-scale quark RG inputs
 - boundary operator full action derivation
 - full scalar/Higgs/gap spectral proof inputs
