@@ -1,0 +1,405 @@
+{
+  "blockers_closed": [],
+  "blockers_remaining": [
+    "derive Omega_f as an integral boundary flux or holonomy from a concrete A_boundary",
+    "derive dim(H_f)=|Omega_f| rather than postulating cyclic residues",
+    "derive End(H_f) as the stochastic dressing channel algebra",
+    "derive identity-channel protection from trace/gauge/normalization conservation",
+    "derive Brownian activity on traceless su(d_f) channels",
+    "derive pure-fiber double branch rather than analogy",
+    "derive CKM H_mix dimension 4 rather than analogy"
+  ],
+  "boundary_action_status": "BOUNDARY_ACTION_FLUX_STRUCTURAL_CANDIDATE",
+  "boundary_algebra_status": "BOUNDARY_ALGEBRA_REGULAR_REP_STRUCTURAL_CANDIDATE",
+  "calculations": {
+    "active_traceless_fraction_3": {
+      "denominator": 9,
+      "numerator": 8,
+      "value": 0.8888888888888888
+    },
+    "active_traceless_fraction_from_Omega_3": {
+      "denominator": 9,
+      "numerator": 8,
+      "value": 0.8888888888888888
+    },
+    "ckm_channel_dilution_1_2_dim4": 0.9576032806985737,
+    "cyclic_channel_dimension_3": 3,
+    "end_algebra_split_label_3": "C I_3 + su(3)",
+    "endomorphism_channel_count_3": 9,
+    "identity_channel_count_3": 1,
+    "lepton_eta_flux_rule_3": 0.002064728414019306,
+    "pure_fiber_rank_projection_2_1": {
+      "denominator": 2,
+      "numerator": 1,
+      "value": 0.5
+    },
+    "traceless_channel_count_3": 8
+  },
+  "candidate_components": [
+    "boundary_flux_quantization",
+    "cyclic_channel_space",
+    "boundary_algebra_regular_rep",
+    "boundary_action_flux",
+    "identity_channel_protection",
+    "traceless_brownian_activity",
+    "lepton_8_9",
+    "pure_fiber_double_branch",
+    "ckm_h_mix_dim4",
+    "neutrino_leakage_refinement"
+  ],
+  "charged_boundary_flux_table": {
+    "down_light": {
+      "candidate_dim_H": 12,
+      "candidate_flux_number": {
+        "denominator": 1,
+        "numerator": 12,
+        "value": 12.0
+      },
+      "endomorphism_channels": 144,
+      "integer_boundary_level": true,
+      "mode": [
+        8,
+        2
+      ],
+      "omega": 12,
+      "q": 4,
+      "sector": "down",
+      "traceless_channels": 143
+    },
+    "down_middle": {
+      "candidate_dim_H": 12,
+      "candidate_flux_number": {
+        "denominator": 1,
+        "numerator": 12,
+        "value": 12.0
+      },
+      "endomorphism_channels": 144,
+      "integer_boundary_level": true,
+      "mode": [
+        6,
+        3
+      ],
+      "omega": 12,
+      "q": 0,
+      "sector": "down",
+      "traceless_channels": 143
+    },
+    "lepton_light": {
+      "candidate_dim_H": 3,
+      "candidate_flux_number": {
+        "denominator": 1,
+        "numerator": 3,
+        "value": 3.0
+      },
+      "endomorphism_channels": 9,
+      "integer_boundary_level": true,
+      "mode": [
+        9,
+        3
+      ],
+      "omega": 3,
+      "q": 3,
+      "sector": "lepton",
+      "traceless_channels": 8
+    },
+    "lepton_middle": {
+      "candidate_dim_H": 3,
+      "candidate_flux_number": {
+        "denominator": 1,
+        "numerator": 3,
+        "value": 3.0
+      },
+      "endomorphism_channels": 9,
+      "integer_boundary_level": true,
+      "mode": [
+        5,
+        2
+      ],
+      "omega": 3,
+      "q": 1,
+      "sector": "lepton",
+      "traceless_channels": 8
+    },
+    "up_light": {
+      "candidate_dim_H": 6,
+      "candidate_flux_number": {
+        "denominator": 1,
+        "numerator": 6,
+        "value": 6.0
+      },
+      "endomorphism_channels": 36,
+      "integer_boundary_level": true,
+      "mode": [
+        10,
+        1
+      ],
+      "omega": 6,
+      "q": 8,
+      "sector": "up",
+      "traceless_channels": 35
+    },
+    "up_middle": {
+      "candidate_dim_H": 6,
+      "candidate_flux_number": {
+        "denominator": 1,
+        "numerator": 6,
+        "value": 6.0
+      },
+      "endomorphism_channels": 36,
+      "integer_boundary_level": true,
+      "mode": [
+        6,
+        0
+      ],
+      "omega": 6,
+      "q": 6,
+      "sector": "up",
+      "traceless_channels": 35
+    }
+  },
+  "ckm_status": "CKM_H_MIX_DIM4_ANALOGY_ONLY",
+  "cyclic_channel_space_status": "CYCLIC_CHANNEL_SPACE_STRUCTURAL_CANDIDATE",
+  "derived_components": [],
+  "does_dim_H_equal_abs_Omega_follow": false,
+  "does_identity_channel_protection_follow": false,
+  "does_lepton_8_9_follow": false,
+  "does_traceless_activity_follow": false,
+  "flux_quantization_status": "BOUNDARY_FLUX_QUANTIZATION_STRUCTURAL_CANDIDATE",
+  "forbidden_claims_absent": true,
+  "frozen_predictions_modified": false,
+  "frozen_sanity": {
+    "BHSM_BARE_V1_unchanged": true,
+    "BHSM_DRESSED_V1_CANDIDATE_unchanged": true,
+    "changed_rows": [
+      {
+        "bare": 0.008310500554068288,
+        "changed": true,
+        "dressed": 0.004155250277034144,
+        "quantity": "c/t"
+      }
+    ],
+    "ckm_sin_theta_13_unchanged": true,
+    "dressed_branch_changes_only_c_over_t": true,
+    "u_over_t_unchanged": true
+  },
+  "geometric_quantization_status": "GEOMETRIC_QUANTIZATION_DIMENSION_OPEN",
+  "identity_protection_status": "IDENTITY_CHANNEL_PROTECTION_STRUCTURAL_CANDIDATE",
+  "lepton_status": "LEPTON_8_9_CHANNEL_RULE_STRUCTURAL_CANDIDATE",
+  "missing_assumptions": [
+    "flux_quantization: No implemented boundary one-form A_boundary has integral Omega_f=(1/2pi) integral A_boundary.",
+    "flux_quantization: No complete variation derives Omega_f as a flux rather than a boundary selection functional.",
+    "flux_quantization: Sector signs and cofactors are not yet derived from an integral flux object.",
+    "cyclic_channel_space: No proof makes physical boundary channels residues modulo Omega_f.",
+    "cyclic_channel_space: No proof selects the regular cyclic representation as H_f.",
+    "geometric_quantization: No compact boundary phase space, line bundle, curvature two-form, or Chern number is implemented for this channel count.",
+    "geometric_quantization: No geometric-quantization theorem is matched to concrete BHSM boundary data.",
+    "boundary_algebra: No boundary quotient algebra A_f=C[Z_|Omega_f|] is derived from the internal action.",
+    "boundary_algebra: No proof identifies the regular representation with the stochastic dressing channel space.",
+    "boundary_action: The candidate term is not derived from the full Berger-Hopf internal action.",
+    "boundary_action: Stationarity has not been shown to leave exactly |Omega_f0| residual channels.",
+    "identity_protection: No repository stochastic rule proves dressing acts on density/covariance endomorphisms.",
+    "identity_protection: No action-level conservation law proves the identity channel is protected from relative mass-ratio dressing.",
+    "traceless_activity: No Brownian generator on su(d_f) is derived from BHSM virtual dressing dynamics.",
+    "traceless_activity: No proof excludes identity-channel stochastic activity except as common normalization.",
+    "derive Omega_f as an integral boundary flux or holonomy from a concrete A_boundary",
+    "derive dim(H_f)=|Omega_f| rather than postulating cyclic residues",
+    "derive End(H_f) as the stochastic dressing channel algebra",
+    "derive identity-channel protection from trace/gauge/normalization conservation",
+    "derive Brownian activity on traceless su(d_f) channels",
+    "derive pure-fiber double branch rather than analogy",
+    "derive CKM H_mix dimension 4 rather than analogy"
+  ],
+  "neutrino_consequence": {
+    "candidate_only": true,
+    "no_numerical_PMNS_claims": true,
+    "note": "Boundary-channel language refines the candidate leakage ledger: neutral modes may occupy weakly field-attached residual or quotient channels rather than charged EM-dressed traceless channels.",
+    "ordinary_FTL_claim": false,
+    "status": "NEUTRINO_LEAKAGE_CHANNEL_REFINED"
+  },
+  "neutrino_status": "NEUTRINO_LEAKAGE_CHANNEL_REFINED",
+  "official_branch_comparison": {
+    "bare_score": {
+      "PASS": 22
+    },
+    "branches": [
+      "BHSM_BARE_V1",
+      "BHSM_DRESSED_V1_CANDIDATE"
+    ],
+    "dressed_score": {
+      "PASS": 21,
+      "SCHEME_SENSITIVE": 1
+    },
+    "no_retuning": true,
+    "rows": [
+      {
+        "bare": 0.008310500554068288,
+        "changed": true,
+        "dressed": 0.004155250277034144,
+        "quantity": "c/t"
+      },
+      {
+        "bare": 1.2690463017606151e-05,
+        "changed": false,
+        "dressed": 1.2690463017606151e-05,
+        "quantity": "u/t"
+      },
+      {
+        "bare": 0.021933971495439474,
+        "changed": false,
+        "dressed": 0.021933971495439474,
+        "quantity": "s/b"
+      },
+      {
+        "bare": 0.0011165200546001757,
+        "changed": false,
+        "dressed": 0.0011165200546001757,
+        "quantity": "d/b"
+      },
+      {
+        "bare": 0.0035623676140463315,
+        "changed": false,
+        "dressed": 0.0035623676140463315,
+        "quantity": "sin_theta_13"
+      }
+    ],
+    "tolerance_bands": {
+      "charged_lepton_ratios": 0.25,
+      "ckm_angles": 0.1,
+      "ckm_cp_jarlskog": 0.1,
+      "exact_status": "pass_fail",
+      "gauge_couplings": 0.01,
+      "higgs_electroweak_v": 0.01,
+      "higgs_mass_zeroth_order": 0.02,
+      "ht_gap": "binary_pass_fail",
+      "pmns_effective": 0.05,
+      "quark_ratios_otherwise": "SCHEME_SENSITIVE",
+      "quark_ratios_scheme_aware": 0.25,
+      "scalar_decoupling": "binary_scaffold_pass_fail"
+    }
+  },
+  "official_dressed_changes_only_c_over_t": true,
+  "official_outputs_modified": false,
+  "prs_opened": false,
+  "pure_fiber_status": "PURE_FIBER_DOUBLE_BRANCH_ANALOGY_ONLY",
+  "rejected_components": [],
+  "routes": [
+    {
+      "candidate_only": true,
+      "derived": false,
+      "evidence_found": [
+        "Omega_l, Omega_u, and Omega_d are integer boundary levels on the supplied mode ledger.",
+        "Each sector's two non-heavy modes lie on the same integer boundary level.",
+        "Existing notes use Hopf, boundary phase, orientation, and holonomy language."
+      ],
+      "evidence_missing": [
+        "No implemented boundary one-form A_boundary has integral Omega_f=(1/2pi) integral A_boundary.",
+        "No complete variation derives Omega_f as a flux rather than a boundary selection functional.",
+        "Sector signs and cofactors are not yet derived from an integral flux object."
+      ],
+      "route_id": "flux_quantization",
+      "status": "BOUNDARY_FLUX_QUANTIZATION_STRUCTURAL_CANDIDATE",
+      "title": "Boundary flux quantization"
+    },
+    {
+      "candidate_only": true,
+      "derived": false,
+      "evidence_found": [
+        "A cyclic phase basis exp(2*pi*i*r/|Omega_f|) gives |Omega_f| channels.",
+        "The construction is compatible with Hopf U(1) periodicity language."
+      ],
+      "evidence_missing": [
+        "No proof makes physical boundary channels residues modulo Omega_f.",
+        "No proof selects the regular cyclic representation as H_f."
+      ],
+      "route_id": "cyclic_channel_space",
+      "status": "CYCLIC_CHANNEL_SPACE_STRUCTURAL_CANDIDATE",
+      "title": "Holonomy and cyclic phase space"
+    },
+    {
+      "candidate_only": true,
+      "derived": false,
+      "evidence_found": [
+        "The proposed dimension rule resembles flux/Chern-number degeneracy statements."
+      ],
+      "evidence_missing": [
+        "No compact boundary phase space, line bundle, curvature two-form, or Chern number is implemented for this channel count.",
+        "No geometric-quantization theorem is matched to concrete BHSM boundary data."
+      ],
+      "route_id": "geometric_quantization",
+      "status": "GEOMETRIC_QUANTIZATION_DIMENSION_OPEN",
+      "title": "Geometric quantization finite dimension"
+    },
+    {
+      "candidate_only": true,
+      "derived": false,
+      "evidence_found": [
+        "The group algebra C[Z_|Omega_f|] has a regular representation of dimension |Omega_f|.",
+        "Its identity element gives a natural coherent-channel candidate."
+      ],
+      "evidence_missing": [
+        "No boundary quotient algebra A_f=C[Z_|Omega_f|] is derived from the internal action.",
+        "No proof identifies the regular representation with the stochastic dressing channel space."
+      ],
+      "route_id": "boundary_algebra",
+      "status": "BOUNDARY_ALGEBRA_REGULAR_REP_STRUCTURAL_CANDIDATE",
+      "title": "Boundary algebra / regular representation"
+    },
+    {
+      "candidate_only": true,
+      "derived": false,
+      "evidence_found": [
+        "A constraint or penalty term can be written that would enforce Omega_f=Omega_f0.",
+        "The existing mode ledger is consistent with stationary constant boundary levels."
+      ],
+      "evidence_missing": [
+        "The candidate term is not derived from the full Berger-Hopf internal action.",
+        "Stationarity has not been shown to leave exactly |Omega_f0| residual channels."
+      ],
+      "route_id": "boundary_action",
+      "status": "BOUNDARY_ACTION_FLUX_STRUCTURAL_CANDIDATE",
+      "title": "Boundary action variation"
+    },
+    {
+      "candidate_only": true,
+      "derived": false,
+      "evidence_found": [
+        "Trace-preserving endomorphism language naturally splits End(H)=C I + traceless channels.",
+        "The identity component is common-mode and can be interpreted as normalization/gauge-coherent."
+      ],
+      "evidence_missing": [
+        "No repository stochastic rule proves dressing acts on density/covariance endomorphisms.",
+        "No action-level conservation law proves the identity channel is protected from relative mass-ratio dressing."
+      ],
+      "route_id": "identity_protection",
+      "status": "IDENTITY_CHANNEL_PROTECTION_STRUCTURAL_CANDIDATE",
+      "title": "Identity-channel protection"
+    },
+    {
+      "candidate_only": true,
+      "derived": false,
+      "evidence_found": [
+        "Zero-mean stochastic fluctuations are naturally traceless after removing common-mode identity drift.",
+        "The active fraction (d^2-1)/d^2 follows if total channels are End(H) and active channels are traceless."
+      ],
+      "evidence_missing": [
+        "No Brownian generator on su(d_f) is derived from BHSM virtual dressing dynamics.",
+        "No proof excludes identity-channel stochastic activity except as common normalization."
+      ],
+      "route_id": "traceless_activity",
+      "status": "TRACELESS_BROWNIAN_ACTIVITY_STRUCTURAL_CANDIDATE",
+      "title": "Active traceless Brownian stochastic channels"
+    }
+  ],
+  "safe_to_merge_as_candidate_only": true,
+  "searched_repo_concepts": [
+    "boundary one-forms and action scaffolds",
+    "Hopf/Berger fiber and holonomy notes",
+    "mode-selection and omega ledgers",
+    "virtual/stochastic dressing audits",
+    "CKM mixing-dressing candidate audits",
+    "PMNS effective-extension ledgers"
+  ],
+  "theorem_status": "BOUNDARY_FLUX_QUANTIZATION_STRUCTURAL_CANDIDATE",
+  "title": "BHSM boundary flux quantization and identity-channel protection theorem sprint",
+  "traceless_activity_status": "TRACELESS_BROWNIAN_ACTIVITY_STRUCTURAL_CANDIDATE"
+}
