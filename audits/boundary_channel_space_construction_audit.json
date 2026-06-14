@@ -1,0 +1,277 @@
+{
+  "blockers_closed": [],
+  "blockers_remaining": [
+    "derive dim(H_f)=|Omega_f| from boundary quotient/holonomy/action",
+    "derive identity-channel protection",
+    "derive traceless-channel Brownian activity",
+    "derive pure-fiber doublet rather than analogy",
+    "derive CKM dim(H_mix)=4 rather than analogy"
+  ],
+  "boundary_levels": {
+    "down_light": {
+      "candidate_dim_H": 12,
+      "end_channels": 144,
+      "mode": [
+        8,
+        2
+      ],
+      "omega": 12,
+      "q": 4,
+      "sector": "down"
+    },
+    "down_middle": {
+      "candidate_dim_H": 12,
+      "end_channels": 144,
+      "mode": [
+        6,
+        3
+      ],
+      "omega": 12,
+      "q": 0,
+      "sector": "down"
+    },
+    "lepton_light": {
+      "candidate_dim_H": 3,
+      "end_channels": 9,
+      "mode": [
+        9,
+        3
+      ],
+      "omega": 3,
+      "q": 3,
+      "sector": "lepton"
+    },
+    "lepton_middle": {
+      "candidate_dim_H": 3,
+      "end_channels": 9,
+      "mode": [
+        5,
+        2
+      ],
+      "omega": 3,
+      "q": 1,
+      "sector": "lepton"
+    },
+    "up_light": {
+      "candidate_dim_H": 6,
+      "end_channels": 36,
+      "mode": [
+        10,
+        1
+      ],
+      "omega": 6,
+      "q": 8,
+      "sector": "up"
+    },
+    "up_middle": {
+      "candidate_dim_H": 6,
+      "end_channels": 36,
+      "mode": [
+        6,
+        0
+      ],
+      "omega": 6,
+      "q": 6,
+      "sector": "up"
+    }
+  },
+  "calculations": {
+    "active_fraction_from_dim_3": 0.8888888888888888,
+    "active_traceless_count_3": 8,
+    "cyclic_channel_dimension_3": 3,
+    "end_channel_count_3": 9,
+    "lepton_eta_8alpha_9pi": 0.002064728414019306
+  },
+  "candidate_components": [
+    "boundary_channel_space",
+    "lepton_8_9",
+    "pure_fiber_analogy",
+    "ckm_mix_analogy",
+    "neutrino_leakage"
+  ],
+  "ckm_consequence": "The End-space channel language is compatible by analogy with a 16-channel CKM 2-3 correlation space, but it does not derive dim(H_mix)=4.",
+  "ckm_consequence_status": "CKM_MIX_CHANNEL_SPACE_SUPPORTED_BY_ANALOGY",
+  "derived_components": [],
+  "does_active_traceless_fraction_follow": false,
+  "does_dim_H_equal_abs_Omega_follow": false,
+  "does_identity_channel_protection_follow": false,
+  "forbidden_claims_absent": true,
+  "frozen_predictions_modified": false,
+  "frozen_sanity": {
+    "BHSM_BARE_V1_unchanged": true,
+    "BHSM_DRESSED_V1_CANDIDATE_unchanged": true,
+    "changed_rows": [
+      {
+        "bare": 0.008310500554068288,
+        "changed": true,
+        "dressed": 0.004155250277034144,
+        "quantity": "c/t"
+      }
+    ],
+    "ckm_sin_theta_13_unchanged": true,
+    "dressed_branch_changes_only_c_over_t": true,
+    "u_over_t_unchanged": true
+  },
+  "lepton_status": "LEPTON_8_9_CHANNEL_RULE_STRUCTURAL_CANDIDATE",
+  "missing_assumptions": [
+    "Route A: derive boundary equivalence modulo Omega_f",
+    "Route A: derive exactly |Omega_f| inequivalent channel residues",
+    "Route A: derive primitive winding interpretation from the complete boundary action",
+    "Route B: derive that Omega_f sets the phase denominator",
+    "Route B: derive the cyclic phase representation without choosing it post hoc",
+    "Route B: derive compatibility with sector boundary signs and cofactors",
+    "Route C: derive the quotient algebra A_f=C[Z_|Omega_f|] from the boundary operator",
+    "Route C: derive that the regular representation is the stochastic channel space",
+    "Route C: derive identity-channel protection rather than assuming it",
+    "Route D: derive the boundary penalty term by variation of the full action",
+    "Route D: derive residual |Omega_f0| channels after stationarity",
+    "Route D: derive sector coefficients and signs before selecting the modes",
+    "derive dim(H_f)=|Omega_f| from boundary quotient/holonomy/action",
+    "derive identity-channel protection",
+    "derive traceless-channel Brownian activity",
+    "derive pure-fiber doublet rather than analogy",
+    "derive CKM dim(H_mix)=4 rather than analogy"
+  ],
+  "neutrino_consequence": {
+    "candidate_only": true,
+    "no_numerical_PMNS_claims": true,
+    "note": "Neutral leakage modes may occupy weakly field-attached residual boundary channels rather than charged EM-dressed channels.",
+    "ordinary_FTL_claim": false
+  },
+  "neutrino_consequence_status": "NEUTRINO_LEAKAGE_CHANNEL_CANDIDATE",
+  "official_branch_comparison": {
+    "bare_score": {
+      "PASS": 22
+    },
+    "branches": [
+      "BHSM_BARE_V1",
+      "BHSM_DRESSED_V1_CANDIDATE"
+    ],
+    "dressed_score": {
+      "PASS": 21,
+      "SCHEME_SENSITIVE": 1
+    },
+    "no_retuning": true,
+    "rows": [
+      {
+        "bare": 0.008310500554068288,
+        "changed": true,
+        "dressed": 0.004155250277034144,
+        "quantity": "c/t"
+      },
+      {
+        "bare": 1.2690463017606151e-05,
+        "changed": false,
+        "dressed": 1.2690463017606151e-05,
+        "quantity": "u/t"
+      },
+      {
+        "bare": 0.021933971495439474,
+        "changed": false,
+        "dressed": 0.021933971495439474,
+        "quantity": "s/b"
+      },
+      {
+        "bare": 0.0011165200546001757,
+        "changed": false,
+        "dressed": 0.0011165200546001757,
+        "quantity": "d/b"
+      },
+      {
+        "bare": 0.0035623676140463315,
+        "changed": false,
+        "dressed": 0.0035623676140463315,
+        "quantity": "sin_theta_13"
+      }
+    ],
+    "tolerance_bands": {
+      "charged_lepton_ratios": 0.25,
+      "ckm_angles": 0.1,
+      "ckm_cp_jarlskog": 0.1,
+      "exact_status": "pass_fail",
+      "gauge_couplings": 0.01,
+      "higgs_electroweak_v": 0.01,
+      "higgs_mass_zeroth_order": 0.02,
+      "ht_gap": "binary_pass_fail",
+      "pmns_effective": 0.05,
+      "quark_ratios_otherwise": "SCHEME_SENSITIVE",
+      "quark_ratios_scheme_aware": 0.25,
+      "scalar_decoupling": "binary_scaffold_pass_fail"
+    }
+  },
+  "official_dressed_changes_only_c_over_t": true,
+  "official_outputs_modified": false,
+  "prs_opened": false,
+  "pure_fiber_consequence": "The cyclic-channel language is compatible by analogy with a two-orientation pure-fiber space, but it does not derive that doublet.",
+  "pure_fiber_consequence_status": "PURE_FIBER_DOUBLE_CHANNEL_SUPPORTED_BY_ANALOGY",
+  "rejected_components": [],
+  "routes": [
+    {
+      "derived": false,
+      "evidence": [
+        "Omega_f values are integer primitive boundary levels on the supplied charged-sector ledger.",
+        "A cyclic residue basis |r>, r=0,...,|Omega_f|-1 would give dim(H_f)=|Omega_f|."
+      ],
+      "missing_assumptions": [
+        "derive boundary equivalence modulo Omega_f",
+        "derive exactly |Omega_f| inequivalent channel residues",
+        "derive primitive winding interpretation from the complete boundary action"
+      ],
+      "route_id": "A",
+      "status": "STRUCTURAL_CANDIDATE",
+      "supports_dimension_rule": true,
+      "title": "Boundary winding quantization"
+    },
+    {
+      "derived": false,
+      "evidence": [
+        "A Z_Omega phase basis exp(2*pi*i*n/Omega_f) would naturally have |Omega_f| states.",
+        "Existing BHSM notes use Hopf and boundary-phase language."
+      ],
+      "missing_assumptions": [
+        "derive that Omega_f sets the phase denominator",
+        "derive the cyclic phase representation without choosing it post hoc",
+        "derive compatibility with sector boundary signs and cofactors"
+      ],
+      "route_id": "B",
+      "status": "STRUCTURAL_CANDIDATE",
+      "supports_dimension_rule": true,
+      "title": "Holonomy phase quantization"
+    },
+    {
+      "derived": false,
+      "evidence": [
+        "The regular representation of C[Z_|Omega_f|] has dimension |Omega_f|.",
+        "The identity element of the algebra suggests a coherent protected channel candidate."
+      ],
+      "missing_assumptions": [
+        "derive the quotient algebra A_f=C[Z_|Omega_f|] from the boundary operator",
+        "derive that the regular representation is the stochastic channel space",
+        "derive identity-channel protection rather than assuming it"
+      ],
+      "route_id": "C",
+      "status": "STRUCTURAL_CANDIDATE",
+      "supports_dimension_rule": true,
+      "title": "Finite boundary algebra representation"
+    },
+    {
+      "derived": false,
+      "evidence": [
+        "A penalty lambda_f*(Omega_f-Omega_f0)^2 would make non-heavy stationary modes sit on Omega_f0.",
+        "The current mode-pair invariants already sit on constant levels 3, 6, and 12."
+      ],
+      "missing_assumptions": [
+        "derive the boundary penalty term by variation of the full action",
+        "derive residual |Omega_f0| channels after stationarity",
+        "derive sector coefficients and signs before selecting the modes"
+      ],
+      "route_id": "D",
+      "status": "STRUCTURAL_CANDIDATE",
+      "supports_dimension_rule": true,
+      "title": "Stationary boundary action"
+    }
+  ],
+  "safe_to_merge_as_candidate_only": true,
+  "theorem_status": "BOUNDARY_CHANNEL_SPACE_STRUCTURAL_CANDIDATE",
+  "title": "BHSM boundary channel-space construction sprint"
+}
