@@ -1,20 +1,263 @@
 {
+  "blocker": null,
+  "branch_summary": {
+    "dressed_candidate_all_ratios_pass": false,
+    "dressed_candidate_failing_ratios": [
+      "u/t"
+    ],
+    "real_tensions": [
+      "u/t"
+    ]
+  },
+  "classification": "COMMON_SCALE_RG_VALIDATED_WARNING",
+  "closes_common_scale_input_blocker": true,
+  "common_scale_input_validated": true,
+  "common_scale_quark_precision_claimable": false,
+  "ct_dressing_effect": {
+    "bare_relative_error": 1.3266716413893933,
+    "dressed_improves_c_over_t": true,
+    "dressed_relative_error": 0.16333582069469663,
+    "rows": [
+      {
+        "absolute_error": 0.004738659815464711,
+        "branch": "BHSM_BARE_V1",
+        "classification": "COMMON_SCALE_RG_VALIDATED_WARNING",
+        "log_error": 0.3667350964818595,
+        "passes_tolerance": false,
+        "predicted": 0.008310500554068288,
+        "ratio": "c/t",
+        "real_tension": true,
+        "reference": 0.0035718407386035773,
+        "relative_error": 1.3266716413893933,
+        "tolerance": 0.25
+      },
+      {
+        "absolute_error": 0.0005834095384305666,
+        "branch": "BHSM_DRESSED_V1_CANDIDATE",
+        "classification": "COMMON_SCALE_RG_VALIDATED_SURVIVAL",
+        "log_error": 0.06570510081787827,
+        "passes_tolerance": true,
+        "predicted": 0.004155250277034144,
+        "ratio": "c/t",
+        "real_tension": false,
+        "reference": 0.0035718407386035773,
+        "relative_error": 0.16333582069469663,
+        "tolerance": 0.25
+      }
+    ]
+  },
+  "frozen_predictions_modified": false,
+  "frozen_sanity": {
+    "BHSM_BARE_V1_unchanged": true,
+    "BHSM_DRESSED_V1_CANDIDATE_unchanged": true,
+    "changed_rows": [
+      {
+        "bare": 0.008310500554068288,
+        "changed": true,
+        "dressed": 0.004155250277034144,
+        "quantity": "c/t"
+      }
+    ],
+    "ckm_sin_theta_13_unchanged": true,
+    "dressed_branch_changes_only_c_over_t": true,
+    "u_over_t_unchanged": true
+  },
   "issue_id": "P1-2",
-  "title": "Common-scale quark RG validation",
-  "status": "BLOCKS_FULL_COMPLETION",
-  "blocker": "COMMON_SCALE_QUARK_RG_INPUTS_MISSING",
-  "classification": "EXTERNAL_INPUT_REQUIRED",
-  "pass_fail_criteria": [
-    "Validated common-scale u/t, c/t, d/b, s/b references must be available.",
-    "Mixed-scale PDG-style values cannot be used as a precision verdict."
+  "limitations": [
+    "The M_Z table supplies common-scale reference ratios but no uncertainty propagation.",
+    "The dressed c/t branch is compared as frozen; it is not retuned.",
+    "u/t remains outside the scheme-aware tolerance and is reported as a real warning-level tension.",
+    "This audit closes the missing-input blocker only; full precision quark matching remains open."
   ],
-  "evidence": [
-    "Repo contains approximate/scaffold running utilities.",
-    "Repo does not contain validated precision common-scale quark mass inputs with uncertainties."
+  "mixed_scale_used_as_precision_reference": false,
+  "official_outputs_modified": false,
+  "reference": {
+    "computed_from_source_yukawas_or_masses": "computed_from_source_masses",
+    "direct_from_source": false,
+    "masses": {
+      "b": {
+        "uncertainty": null,
+        "unit": "GeV",
+        "value": 2.89
+      },
+      "c": {
+        "uncertainty": null,
+        "unit": "GeV",
+        "value": 0.619
+      },
+      "d": {
+        "uncertainty": null,
+        "unit": "MeV",
+        "value": 2.9
+      },
+      "s": {
+        "uncertainty": null,
+        "unit": "MeV",
+        "value": 55.0
+      },
+      "t": {
+        "uncertainty": null,
+        "unit": "GeV",
+        "value": 173.3
+      },
+      "u": {
+        "uncertainty": null,
+        "unit": "MeV",
+        "value": 1.27
+      }
+    },
+    "precision_limitations": [
+      "This file supplies a common-scale MSbar reference table for audit use.",
+      "It does not implement a new BHSM running calculation.",
+      "Uncertainties are not included in the cited table excerpt used here; uncertainty fields are therefore null.",
+      "The resulting comparison is a scheme-aware screen, not a claim of precision QCD closure."
+    ],
+    "ratios": {
+      "c/t": {
+        "denominator": "t",
+        "numerator": "c",
+        "uncertainty": null,
+        "value": 0.0035718407386035773
+      },
+      "d/b": {
+        "denominator": "b",
+        "numerator": "d",
+        "uncertainty": null,
+        "value": 0.0010034602076124566
+      },
+      "s/b": {
+        "denominator": "b",
+        "numerator": "s",
+        "uncertainty": null,
+        "value": 0.01903114186851211
+      },
+      "u/t": {
+        "denominator": "t",
+        "numerator": "u",
+        "uncertainty": null,
+        "value": 7.328332371609925e-06
+      }
+    },
+    "scale": "M_Z = 91.1876 GeV",
+    "scheme": "MSbar running quark masses at M_Z in SM convention",
+    "source_citation_text": "A. Abdalgabar, A. S. Cornell, A. Deandrea, and A. Tarhini, Eur. Phys. J. C 74, 2893 (2014), Sec. 2.1, quoting Z.-z. Xing, H. Zhang, and S. Zhou, Phys. Rev. D 77, 113016 (2008), arXiv:0712.1419.",
+    "source_note": "Common-scale M_Z values are taken from a published table of running fermion masses used for SM renormalization-group studies. The table cites Xing, Zhang, and Zhou, Phys. Rev. D 77, 113016 (2008), arXiv:0712.1419, for updated running quark and lepton masses.",
+    "source_url": "https://link.springer.com/article/10.1140/epjc/s10052-014-2893-4",
+    "status": "VALIDATED_COMMON_SCALE_REFERENCE",
+    "validated_common_scale": true
+  },
+  "rows": [
+    {
+      "absolute_error": 0.004738659815464711,
+      "branch": "BHSM_BARE_V1",
+      "classification": "COMMON_SCALE_RG_VALIDATED_WARNING",
+      "log_error": 0.3667350964818595,
+      "passes_tolerance": false,
+      "predicted": 0.008310500554068288,
+      "ratio": "c/t",
+      "real_tension": true,
+      "reference": 0.0035718407386035773,
+      "relative_error": 1.3266716413893933,
+      "tolerance": 0.25
+    },
+    {
+      "absolute_error": 5.362130645996226e-06,
+      "branch": "BHSM_BARE_V1",
+      "classification": "COMMON_SCALE_RG_VALIDATED_WARNING",
+      "log_error": 0.23847230958339555,
+      "passes_tolerance": false,
+      "predicted": 1.2690463017606151e-05,
+      "ratio": "u/t",
+      "real_tension": true,
+      "reference": 7.328332371609925e-06,
+      "relative_error": 0.7316986149221621,
+      "tolerance": 0.25
+    },
+    {
+      "absolute_error": 0.0029028296269273633,
+      "branch": "BHSM_BARE_V1",
+      "classification": "COMMON_SCALE_RG_VALIDATED_SURVIVAL",
+      "log_error": 0.061652428003834935,
+      "passes_tolerance": true,
+      "predicted": 0.021933971495439474,
+      "ratio": "s/b",
+      "real_tension": false,
+      "reference": 0.01903114186851211,
+      "relative_error": 0.15253050221491055,
+      "tolerance": 0.25
+    },
+    {
+      "absolute_error": 0.0001130598469877191,
+      "branch": "BHSM_BARE_V1",
+      "classification": "COMMON_SCALE_RG_VALIDATED_SURVIVAL",
+      "log_error": 0.046366373003045004,
+      "passes_tolerance": true,
+      "predicted": 0.0011165200546001757,
+      "ratio": "d/b",
+      "real_tension": false,
+      "reference": 0.0010034602076124566,
+      "relative_error": 0.11266998544638215,
+      "tolerance": 0.25
+    },
+    {
+      "absolute_error": 0.0005834095384305666,
+      "branch": "BHSM_DRESSED_V1_CANDIDATE",
+      "classification": "COMMON_SCALE_RG_VALIDATED_SURVIVAL",
+      "log_error": 0.06570510081787827,
+      "passes_tolerance": true,
+      "predicted": 0.004155250277034144,
+      "ratio": "c/t",
+      "real_tension": false,
+      "reference": 0.0035718407386035773,
+      "relative_error": 0.16333582069469663,
+      "tolerance": 0.25
+    },
+    {
+      "absolute_error": 5.362130645996226e-06,
+      "branch": "BHSM_DRESSED_V1_CANDIDATE",
+      "classification": "COMMON_SCALE_RG_VALIDATED_WARNING",
+      "log_error": 0.23847230958339555,
+      "passes_tolerance": false,
+      "predicted": 1.2690463017606151e-05,
+      "ratio": "u/t",
+      "real_tension": true,
+      "reference": 7.328332371609925e-06,
+      "relative_error": 0.7316986149221621,
+      "tolerance": 0.25
+    },
+    {
+      "absolute_error": 0.0029028296269273633,
+      "branch": "BHSM_DRESSED_V1_CANDIDATE",
+      "classification": "COMMON_SCALE_RG_VALIDATED_SURVIVAL",
+      "log_error": 0.061652428003834935,
+      "passes_tolerance": true,
+      "predicted": 0.021933971495439474,
+      "ratio": "s/b",
+      "real_tension": false,
+      "reference": 0.01903114186851211,
+      "relative_error": 0.15253050221491055,
+      "tolerance": 0.25
+    },
+    {
+      "absolute_error": 0.0001130598469877191,
+      "branch": "BHSM_DRESSED_V1_CANDIDATE",
+      "classification": "COMMON_SCALE_RG_VALIDATED_SURVIVAL",
+      "log_error": 0.046366373003045004,
+      "passes_tolerance": true,
+      "predicted": 0.0011165200546001757,
+      "ratio": "d/b",
+      "real_tension": false,
+      "reference": 0.0010034602076124566,
+      "relative_error": 0.11266998544638215,
+      "tolerance": 0.25
+    }
   ],
-  "unchanged_quantities": [
-    "quark ratios unchanged",
-    "dressed c/t unchanged"
-  ],
-  "next_action": "add validated common-scale quark references and uncertainty propagation"
+  "status": "CLOSED_SOLVED",
+  "title": "BHSM common-scale quark RG closure audit",
+  "tolerance": 0.25,
+  "u_d_s_survival": {
+    "d/b": true,
+    "s/b": true,
+    "u/t": false
+  }
 }

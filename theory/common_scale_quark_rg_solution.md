@@ -1,9 +1,9 @@
 # Common-scale quark RG validation
 
 Issue: `P1-2`
-Status: `BLOCKS_FULL_COMPLETION`
-Classification: `EXTERNAL_INPUT_REQUIRED`
-Blocker: `COMMON_SCALE_QUARK_RG_INPUTS_MISSING`
+Status: `CLOSED_SOLVED`
+Classification: `COMMON_SCALE_RG_VALIDATED_WARNING`
+Blocker: `None`
 
 ## Pass/Fail Criteria
 
@@ -12,8 +12,12 @@ Blocker: `COMMON_SCALE_QUARK_RG_INPUTS_MISSING`
 
 ## Evidence
 
-- Repo contains approximate/scaffold running utilities.
-- Repo does not contain validated precision common-scale quark mass inputs with uncertainties.
+- Common-scale input validated: True.
+- Reference scale: M_Z = 91.1876 GeV.
+- Reference scheme: MSbar running quark masses at M_Z in SM convention.
+- Dressed c/t improves versus bare: True.
+- Warning-level dressed ratios: ('u/t',).
+- Precision quark matching remains warning-level because uncertainties are not propagated and u/t remains outside tolerance.
 
 ## Unchanged Quantities
 
@@ -22,4 +26,4 @@ Blocker: `COMMON_SCALE_QUARK_RG_INPUTS_MISSING`
 
 ## Next Action
 
-add validated common-scale quark references and uncertainty propagation
+propagate common-scale uncertainties and investigate the remaining u/t tension without retuning

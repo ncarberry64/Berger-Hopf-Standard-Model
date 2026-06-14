@@ -1,7 +1,13 @@
-"""Regenerate the common-scale quark RG hard-closure audit."""
+"""Regenerate the common-scale quark RG closure audit."""
 
-from bhsm_hard_closure import generate_hard_closure_outputs
+from pathlib import Path
+import sys
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
+
+from common_scale_quark_rg_closure import export_common_scale_quark_rg_closure_outputs
 
 
 if __name__ == "__main__":
-    generate_hard_closure_outputs()
+    export_common_scale_quark_rg_closure_outputs()

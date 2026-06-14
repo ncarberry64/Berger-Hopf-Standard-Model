@@ -19,6 +19,30 @@
   },
   "solved_issues": [
     {
+      "issue_id": "P1-2",
+      "title": "Common-scale quark RG validation",
+      "status": "CLOSED_SOLVED",
+      "blocker": null,
+      "classification": "COMMON_SCALE_RG_VALIDATED_WARNING",
+      "pass_fail_criteria": [
+        "Validated common-scale u/t, c/t, d/b, s/b references must be available.",
+        "Mixed-scale PDG-style values cannot be used as a precision verdict."
+      ],
+      "evidence": [
+        "Common-scale input validated: True.",
+        "Reference scale: M_Z = 91.1876 GeV.",
+        "Reference scheme: MSbar running quark masses at M_Z in SM convention.",
+        "Dressed c/t improves versus bare: True.",
+        "Warning-level dressed ratios: ('u/t',).",
+        "Precision quark matching remains warning-level because uncertainties are not propagated and u/t remains outside tolerance."
+      ],
+      "unchanged_quantities": [
+        "quark ratios unchanged",
+        "dressed c/t unchanged"
+      ],
+      "next_action": "propagate common-scale uncertainties and investigate the remaining u/t tension without retuning"
+    },
+    {
       "issue_id": "P2-1",
       "title": "Gauge coupling precision lock",
       "status": "CLOSED_SOLVED",
@@ -127,26 +151,6 @@
         "quark and CKM sectors unchanged"
       ],
       "next_action": "derive a mode-dependent lepton dressing rule or keep precision warning open"
-    },
-    {
-      "issue_id": "P1-2",
-      "title": "Common-scale quark RG validation",
-      "status": "BLOCKS_FULL_COMPLETION",
-      "blocker": "COMMON_SCALE_QUARK_RG_INPUTS_MISSING",
-      "classification": "EXTERNAL_INPUT_REQUIRED",
-      "pass_fail_criteria": [
-        "Validated common-scale u/t, c/t, d/b, s/b references must be available.",
-        "Mixed-scale PDG-style values cannot be used as a precision verdict."
-      ],
-      "evidence": [
-        "Repo contains approximate/scaffold running utilities.",
-        "Repo does not contain validated precision common-scale quark mass inputs with uncertainties."
-      ],
-      "unchanged_quantities": [
-        "quark ratios unchanged",
-        "dressed c/t unchanged"
-      ],
-      "next_action": "add validated common-scale quark references and uncertainty propagation"
     },
     {
       "issue_id": "P2-2",
@@ -260,22 +264,26 @@
     {
       "issue_id": "P1-2",
       "title": "Common-scale quark RG validation",
-      "status": "BLOCKS_FULL_COMPLETION",
-      "blocker": "COMMON_SCALE_QUARK_RG_INPUTS_MISSING",
-      "classification": "EXTERNAL_INPUT_REQUIRED",
+      "status": "CLOSED_SOLVED",
+      "blocker": null,
+      "classification": "COMMON_SCALE_RG_VALIDATED_WARNING",
       "pass_fail_criteria": [
         "Validated common-scale u/t, c/t, d/b, s/b references must be available.",
         "Mixed-scale PDG-style values cannot be used as a precision verdict."
       ],
       "evidence": [
-        "Repo contains approximate/scaffold running utilities.",
-        "Repo does not contain validated precision common-scale quark mass inputs with uncertainties."
+        "Common-scale input validated: True.",
+        "Reference scale: M_Z = 91.1876 GeV.",
+        "Reference scheme: MSbar running quark masses at M_Z in SM convention.",
+        "Dressed c/t improves versus bare: True.",
+        "Warning-level dressed ratios: ('u/t',).",
+        "Precision quark matching remains warning-level because uncertainties are not propagated and u/t remains outside tolerance."
       ],
       "unchanged_quantities": [
         "quark ratios unchanged",
         "dressed c/t unchanged"
       ],
-      "next_action": "add validated common-scale quark references and uncertainty propagation"
+      "next_action": "propagate common-scale uncertainties and investigate the remaining u/t tension without retuning"
     },
     {
       "issue_id": "P2-1",

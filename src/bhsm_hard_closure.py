@@ -14,6 +14,11 @@ from typing import Any
 
 from bhsm_v1 import compare_bhsm_v1_branches
 from bhsm_virtual_mixing_solution import build_mixing_candidate_report
+from common_scale_quark_rg_closure import (
+    _jsonable as common_scale_quark_rg_jsonable,
+    closure_audit_payload as common_scale_quark_rg_audit_payload,
+    render_markdown as render_common_scale_quark_rg_markdown,
+)
 from gauge_couplings import gauge_coupling_screen
 from rg_matching import matching_report
 from scalar_decoupling import build_scalar_proxy_spectrum, hopf_gap_mass, scalar_decoupling_report
@@ -174,22 +179,28 @@ def charged_lepton_closure() -> ClosureResult:
 def common_scale_quark_rg_closure() -> ClosureResult:
     """Attempt closure of common-scale quark RG validation."""
 
+    audit = common_scale_quark_rg_audit_payload()
+    closed = bool(audit["closes_common_scale_input_blocker"])
     return ClosureResult(
         issue_id="P1-2",
         title="Common-scale quark RG validation",
-        status=BLOCKS_FULL_COMPLETION,
-        blocker="COMMON_SCALE_QUARK_RG_INPUTS_MISSING",
-        classification="EXTERNAL_INPUT_REQUIRED",
+        status=CLOSED_SOLVED if closed else BLOCKS_FULL_COMPLETION,
+        blocker=None if closed else "COMMON_SCALE_QUARK_RG_INPUTS_MISSING",
+        classification=audit["classification"],
         pass_fail_criteria=(
             "Validated common-scale u/t, c/t, d/b, s/b references must be available.",
             "Mixed-scale PDG-style values cannot be used as a precision verdict.",
         ),
         evidence=(
-            "Repo contains approximate/scaffold running utilities.",
-            "Repo does not contain validated precision common-scale quark mass inputs with uncertainties.",
+            f"Common-scale input validated: {audit['common_scale_input_validated']}.",
+            f"Reference scale: {audit['reference']['scale']}.",
+            f"Reference scheme: {audit['reference']['scheme']}.",
+            f"Dressed c/t improves versus bare: {audit['ct_dressing_effect']['dressed_improves_c_over_t']}.",
+            f"Warning-level dressed ratios: {audit['branch_summary']['real_tensions']}.",
+            "Precision quark matching remains warning-level because uncertainties are not propagated and u/t remains outside tolerance.",
         ),
         unchanged_quantities=("quark ratios unchanged", "dressed c/t unchanged"),
-        next_action="add validated common-scale quark references and uncertainty propagation",
+        next_action="propagate common-scale uncertainties and investigate the remaining u/t tension without retuning",
     )
 
 
@@ -391,8 +402,13 @@ def generate_hard_closure_outputs() -> None:
         theory_path, md_path, json_path = FILE_MAP[result.issue_id]
         rendered = render_result_markdown(result)
         _write(theory_path, rendered)
-        _write(md_path, rendered)
-        _write_json(json_path, asdict(result))
+        if result.issue_id == "P1-2":
+            audit = common_scale_quark_rg_audit_payload()
+            _write(md_path, render_common_scale_quark_rg_markdown(audit))
+            _write_json(json_path, common_scale_quark_rg_jsonable(audit))
+        else:
+            _write(md_path, rendered)
+            _write_json(json_path, asdict(result))
     _write("docs/BHSM_HARD_CLOSURE_STATUS.md", render_status_markdown())
     _write_json("docs/BHSM_HARD_CLOSURE_STATUS.json", hard_closure_status_payload())
 
