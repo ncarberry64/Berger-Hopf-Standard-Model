@@ -1,0 +1,537 @@
+{
+  "baseline_residuals": [
+    {
+      "absolute_error": 0.0006109366642937306,
+      "mode": [
+        5,
+        2
+      ],
+      "mode_norm": 5,
+      "predicted": 0.06007447093260976,
+      "q": 1,
+      "quantity": "mu/tau",
+      "rank": "middle",
+      "reference": 0.05946353426831603,
+      "relative_error": 0.010274139803682273
+    },
+    {
+      "absolute_error": 9.705689239912637e-06,
+      "mode": [
+        9,
+        3
+      ],
+      "mode_norm": 18,
+      "predicted": 0.00029729106456492414,
+      "q": 3,
+      "quantity": "e/tau",
+      "rank": "light",
+      "reference": 0.0002875853753250115,
+      "relative_error": 0.03374889710210006
+    }
+  ],
+  "best_independent_candidate": "fine_structure_alpha_over_pi",
+  "best_precision_candidate": "fine_structure_alpha_over_pi",
+  "candidate_eta_values": [
+    {
+      "closes_lepton_blocker": false,
+      "derived": false,
+      "e_tau_prediction": 0.0002606971341627339,
+      "e_tau_relative_error": 0.09349655256944192,
+      "eta_value": 0.0072973525692838015,
+      "formula": "alpha",
+      "id": "fine_structure_alpha",
+      "improves_both": false,
+      "improves_e_tau": false,
+      "improves_mu_tau": false,
+      "independent_of_lepton_residuals": true,
+      "mu_tau_prediction": 0.05792205410426646,
+      "mu_tau_relative_error": 0.025923117134174747,
+      "notes": [
+        "Uses a BHSM gauge input, but no lepton-boundary derivation fixes eta_l=alpha."
+      ],
+      "numerical_coincidence_only": false,
+      "passes_precision_screen": false,
+      "relative_difference_to_fitted_eta": 2.5695327570855624,
+      "source": "BHSM low-energy fine-structure input",
+      "source_category": "gauge",
+      "structurally_motivated": true
+    },
+    {
+      "closes_lepton_blocker": false,
+      "derived": false,
+      "e_tau_prediction": 0.0002851173710930778,
+      "e_tau_relative_error": 0.008581814110486348,
+      "eta_value": 0.002322819465771719,
+      "formula": "alpha/pi",
+      "id": "fine_structure_alpha_over_pi",
+      "improves_both": true,
+      "improves_e_tau": true,
+      "improves_mu_tau": true,
+      "independent_of_lepton_residuals": true,
+      "mu_tau_prediction": 0.05938079618056731,
+      "mu_tau_relative_error": 0.001391408848579023,
+      "notes": [
+        "Independent of lepton residuals and improves both rows in this audit.",
+        "The repo does not derive the pi denominator from a charged-lepton loop/action."
+      ],
+      "numerical_coincidence_only": false,
+      "passes_precision_screen": true,
+      "relative_difference_to_fitted_eta": 0.13621756563721776,
+      "source": "fine-structure input with one geometric circle factor",
+      "source_category": "gauge_geometry",
+      "structurally_motivated": true
+    },
+    {
+      "closes_lepton_blocker": false,
+      "derived": false,
+      "e_tau_prediction": 0.00021936743808193823,
+      "e_tau_relative_error": 0.2372093405861738,
+      "eta_value": 0.01688686394038963,
+      "formula": "1/(6*pi^2)",
+      "id": "gauge_alpha_1",
+      "improves_both": false,
+      "improves_e_tau": false,
+      "improves_mu_tau": false,
+      "independent_of_lepton_residuals": true,
+      "mu_tau_prediction": 0.05521036211278344,
+      "mu_tau_relative_error": 0.07152572089544978,
+      "notes": [
+        "Uses a supplied gauge screen, not a lepton dressing derivation."
+      ],
+      "numerical_coincidence_only": false,
+      "passes_precision_screen": false,
+      "relative_difference_to_fitted_eta": 7.260285278443626,
+      "source": "geometric gauge screen alpha_1",
+      "source_category": "gauge",
+      "structurally_motivated": true
+    },
+    {
+      "closes_lepton_blocker": false,
+      "derived": false,
+      "e_tau_prediction": 0.00016186854778517512,
+      "e_tau_relative_error": 0.4371461079957869,
+      "eta_value": 0.03377372788077926,
+      "formula": "2/(6*pi^2)",
+      "id": "gauge_alpha_2",
+      "improves_both": false,
+      "improves_e_tau": false,
+      "improves_mu_tau": false,
+      "independent_of_lepton_residuals": true,
+      "mu_tau_prediction": 0.050740090379556735,
+      "mu_tau_relative_error": 0.14670241175703894,
+      "notes": [
+        "Uses a supplied gauge screen, not a lepton dressing derivation."
+      ],
+      "numerical_coincidence_only": false,
+      "passes_precision_screen": false,
+      "relative_difference_to_fitted_eta": 15.520570556887252,
+      "source": "geometric gauge screen alpha_2",
+      "source_category": "gauge",
+      "structurally_motivated": true
+    },
+    {
+      "closes_lepton_blocker": false,
+      "derived": false,
+      "e_tau_prediction": 3.5409028067561593e-05,
+      "e_tau_relative_error": 0.8768747262354893,
+      "eta_value": 0.1182080475827274,
+      "formula": "7/(6*pi^2)",
+      "id": "gauge_alpha_3",
+      "improves_both": false,
+      "improves_e_tau": false,
+      "improves_mu_tau": false,
+      "independent_of_lepton_residuals": true,
+      "mu_tau_prediction": 0.03326629548723636,
+      "mu_tau_relative_error": 0.4405597330099895,
+      "notes": [
+        "QCD-like screen is not structurally scoped to charged leptons."
+      ],
+      "numerical_coincidence_only": false,
+      "passes_precision_screen": false,
+      "relative_difference_to_fitted_eta": 56.82199694910538,
+      "source": "geometric gauge screen alpha_3",
+      "source_category": "gauge",
+      "structurally_motivated": true
+    },
+    {
+      "closes_lepton_blocker": false,
+      "derived": false,
+      "e_tau_prediction": 7.097425363686957e-05,
+      "e_tau_relative_error": 0.7532063181006379,
+      "eta_value": 0.07957747154594767,
+      "formula": "S=1/(4*pi)",
+      "id": "universal_overlap_width",
+      "improves_both": false,
+      "improves_e_tau": false,
+      "improves_mu_tau": false,
+      "independent_of_lepton_residuals": true,
+      "mu_tau_prediction": 0.04035428629973908,
+      "mu_tau_relative_error": 0.321360783608164,
+      "notes": [
+        "S is already used in bare overlaps; reusing it as eta_l over-suppresses leptons."
+      ],
+      "numerical_coincidence_only": false,
+      "passes_precision_screen": false,
+      "relative_difference_to_fitted_eta": 37.92567732097162,
+      "source": "universal overlap width",
+      "source_category": "overlap_width",
+      "structurally_motivated": true
+    },
+    {
+      "closes_lepton_blocker": false,
+      "derived": false,
+      "e_tau_prediction": 0.0002776891750854857,
+      "e_tau_relative_error": 0.034411347337609706,
+      "eta_value": 0.0037894034069498894,
+      "formula": "S/(3+6+12)",
+      "id": "overlap_width_per_boundary_sum",
+      "improves_both": false,
+      "improves_e_tau": false,
+      "improves_mu_tau": true,
+      "independent_of_lepton_residuals": true,
+      "mu_tau_prediction": 0.05894695417842057,
+      "mu_tau_relative_error": 0.008687342524319217,
+      "notes": [
+        "Uses boundary targets and S, but no action rule derives this normalization."
+      ],
+      "numerical_coincidence_only": false,
+      "passes_precision_screen": false,
+      "relative_difference_to_fitted_eta": 0.8536036819510298,
+      "source": "universal width divided by Omega_l+Omega_u+Omega_d",
+      "source_category": "boundary",
+      "structurally_motivated": true
+    },
+    {
+      "closes_lepton_blocker": false,
+      "derived": false,
+      "e_tau_prediction": 0.00028455528522570317,
+      "e_tau_relative_error": 0.010536314984320432,
+      "eta_value": 0.002432450856427934,
+      "formula": "alpha/Omega_l",
+      "id": "alpha_per_lepton_boundary",
+      "improves_both": true,
+      "improves_e_tau": true,
+      "improves_mu_tau": true,
+      "independent_of_lepton_residuals": true,
+      "mu_tau_prediction": 0.05934825510387311,
+      "mu_tau_relative_error": 0.0019386530898541747,
+      "notes": [
+        "Numerically close to fitted eta_l, but dividing by Omega_l is not derived."
+      ],
+      "numerical_coincidence_only": true,
+      "passes_precision_screen": false,
+      "relative_difference_to_fitted_eta": 0.18984425236185407,
+      "source": "fine-structure input divided by lepton boundary target",
+      "source_category": "boundary_gauge",
+      "structurally_motivated": true
+    },
+    {
+      "closes_lepton_blocker": false,
+      "derived": false,
+      "e_tau_prediction": 0.00029085347457495663,
+      "e_tau_relative_error": 0.011363927133818003,
+      "eta_value": 0.001216225428213967,
+      "formula": "alpha/Omega_u",
+      "id": "alpha_per_up_boundary",
+      "improves_both": true,
+      "improves_e_tau": true,
+      "improves_mu_tau": true,
+      "independent_of_lepton_residuals": true,
+      "mu_tau_prediction": 0.059710258968947154,
+      "mu_tau_relative_error": 0.004149176527547719,
+      "notes": [
+        "Wrong-sector boundary target for charged leptons; diagnostic only."
+      ],
+      "numerical_coincidence_only": true,
+      "passes_precision_screen": false,
+      "relative_difference_to_fitted_eta": 0.40507787381907295,
+      "source": "fine-structure input divided by up boundary target",
+      "source_category": "boundary_gauge",
+      "structurally_motivated": false
+    },
+    {
+      "closes_lepton_blocker": false,
+      "derived": false,
+      "e_tau_prediction": 0.0002940546532343876,
+      "e_tau_relative_error": 0.02249515609778464,
+      "eta_value": 0.0006081127141069835,
+      "formula": "alpha/Omega_d",
+      "id": "alpha_per_down_boundary",
+      "improves_both": true,
+      "improves_e_tau": true,
+      "improves_mu_tau": true,
+      "independent_of_lepton_residuals": true,
+      "mu_tau_prediction": 0.05989208809858458,
+      "mu_tau_relative_error": 0.007207002334149855,
+      "notes": [
+        "Wrong-sector boundary target for charged leptons; diagnostic only."
+      ],
+      "numerical_coincidence_only": true,
+      "passes_precision_screen": false,
+      "relative_difference_to_fitted_eta": 0.7025389369095365,
+      "source": "fine-structure input divided by down boundary target",
+      "source_category": "boundary_gauge",
+      "structurally_motivated": false
+    },
+    {
+      "closes_lepton_blocker": false,
+      "derived": false,
+      "e_tau_prediction": 1.7597154820844104e-05,
+      "e_tau_relative_error": 0.9388106756090888,
+      "eta_value": 0.15705413573343296,
+      "formula": "alpha^{-1}/(12*pi^2)-1",
+      "id": "epsilon_alpha",
+      "improves_both": false,
+      "improves_e_tau": false,
+      "improves_mu_tau": false,
+      "independent_of_lepton_residuals": true,
+      "mu_tau_prediction": 0.027393733863723024,
+      "mu_tau_relative_error": 0.5393187740890936,
+      "notes": [
+        "Higgs scale residual is far too large as a lepton dressing eta."
+      ],
+      "numerical_coincidence_only": false,
+      "passes_precision_screen": false,
+      "relative_difference_to_fitted_eta": 75.82373529490464,
+      "source": "alpha-anchored Higgs/electroweak residual",
+      "source_category": "higgs_scale",
+      "structurally_motivated": true
+    },
+    {
+      "closes_lepton_blocker": false,
+      "derived": false,
+      "e_tau_prediction": 0.0002970179621954995,
+      "e_tau_relative_error": 0.032799257819796514,
+      "eta_value": 5.105880692270916e-05,
+      "formula": "1/(64*pi^5)",
+      "id": "inverse_hopf_gap",
+      "improves_both": true,
+      "improves_e_tau": true,
+      "improves_mu_tau": true,
+      "independent_of_lepton_residuals": true,
+      "mu_tau_prediction": 0.060059136236059664,
+      "mu_tau_relative_error": 0.010016255761995486,
+      "notes": [
+        "Gap inverse is independent but too small to repair the warning."
+      ],
+      "numerical_coincidence_only": false,
+      "passes_precision_screen": false,
+      "relative_difference_to_fitted_eta": 0.9750243554607085,
+      "source": "dimensionless Hopf gap",
+      "source_category": "gap",
+      "structurally_motivated": true
+    },
+    {
+      "closes_lepton_blocker": false,
+      "derived": false,
+      "e_tau_prediction": 0.0001641179734475285,
+      "e_tau_relative_error": 0.4293243414688513,
+      "eta_value": 0.033007008598092635,
+      "formula": "log(2)/(3+6+12)",
+      "id": "zvirt_log_per_boundary_sum",
+      "improves_both": false,
+      "improves_e_tau": false,
+      "improves_mu_tau": false,
+      "independent_of_lepton_residuals": true,
+      "mu_tau_prediction": 0.050934980734853454,
+      "mu_tau_relative_error": 0.14342493493540706,
+      "notes": [
+        "Uses existing Z_virt, but Z_virt itself remains not derived and is up-sector scoped."
+      ],
+      "numerical_coincidence_only": false,
+      "passes_precision_screen": false,
+      "relative_difference_to_fitted_eta": 15.145526379008418,
+      "source": "existing Z_virt^{u,2}=1/2 amplitude and boundary target sum",
+      "source_category": "virtual_boundary",
+      "structurally_motivated": true
+    },
+    {
+      "closes_lepton_blocker": false,
+      "derived": false,
+      "e_tau_prediction": 0.0002794037621199171,
+      "e_tau_relative_error": 0.028449336812930916,
+      "eta_value": 0.0034474312523851813,
+      "formula": "log(2)/(64*pi)",
+      "id": "zvirt_log_per_64pi",
+      "improves_both": true,
+      "improves_e_tau": true,
+      "improves_mu_tau": true,
+      "independent_of_lepton_residuals": true,
+      "mu_tau_prediction": 0.05904783148154214,
+      "mu_tau_relative_error": 0.006990885958747748,
+      "notes": [
+        "A geometric coincidence check only; no BHSM rule selects 64*pi here."
+      ],
+      "numerical_coincidence_only": true,
+      "passes_precision_screen": false,
+      "relative_difference_to_fitted_eta": 0.6863264679011053,
+      "source": "existing Z_virt and Hopf-gap exponent scale",
+      "source_category": "virtual_gap",
+      "structurally_motivated": true
+    }
+  ],
+  "candidate_sources": [
+    "BHSM low-energy fine-structure input",
+    "fine-structure input with one geometric circle factor",
+    "geometric gauge screen alpha_1",
+    "geometric gauge screen alpha_2",
+    "geometric gauge screen alpha_3",
+    "universal overlap width",
+    "universal width divided by Omega_l+Omega_u+Omega_d",
+    "fine-structure input divided by lepton boundary target",
+    "fine-structure input divided by up boundary target",
+    "fine-structure input divided by down boundary target",
+    "alpha-anchored Higgs/electroweak residual",
+    "dimensionless Hopf gap",
+    "existing Z_virt^{u,2}=1/2 amplitude and boundary target sum",
+    "existing Z_virt and Hopf-gap exponent scale"
+  ],
+  "candidate_status": "CANDIDATE_NOT_OFFICIAL",
+  "classification": "ETA_L_STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+  "closes_lepton_blocker": false,
+  "fitted_eta_l": 0.0020443439144236667,
+  "frozen_sanity": {
+    "BHSM_BARE_V1_unchanged": true,
+    "BHSM_DRESSED_V1_CANDIDATE_unchanged": true,
+    "changed_rows": [
+      {
+        "bare": 0.008310500554068288,
+        "changed": true,
+        "dressed": 0.004155250277034144,
+        "quantity": "c/t"
+      }
+    ],
+    "ckm_sin_theta_13_unchanged": true,
+    "dressed_branch_changes_only_c_over_t": true,
+    "u_over_t_unchanged": true
+  },
+  "notes": [
+    "The fitted eta_l remains the only value that exactly fits mu/tau by construction.",
+    "alpha/pi is the strongest independent structural candidate in this inventory, but the pi denominator is not derived from the BHSM charged-lepton action.",
+    "Numerically close boundary-normalized candidates are rejected unless a boundary rule independently fixes them.",
+    "The lepton precision blocker stays open until eta_l has an independent pre-residual derivation."
+  ],
+  "official_branch_comparison": {
+    "bare_score": {
+      "PASS": 22
+    },
+    "branches": [
+      "BHSM_BARE_V1",
+      "BHSM_DRESSED_V1_CANDIDATE"
+    ],
+    "dressed_score": {
+      "PASS": 21,
+      "SCHEME_SENSITIVE": 1
+    },
+    "no_retuning": true,
+    "rows": [
+      {
+        "bare": 0.008310500554068288,
+        "changed": true,
+        "dressed": 0.004155250277034144,
+        "quantity": "c/t"
+      },
+      {
+        "bare": 1.2690463017606151e-05,
+        "changed": false,
+        "dressed": 1.2690463017606151e-05,
+        "quantity": "u/t"
+      },
+      {
+        "bare": 0.021933971495439474,
+        "changed": false,
+        "dressed": 0.021933971495439474,
+        "quantity": "s/b"
+      },
+      {
+        "bare": 0.0011165200546001757,
+        "changed": false,
+        "dressed": 0.0011165200546001757,
+        "quantity": "d/b"
+      },
+      {
+        "bare": 0.0035623676140463315,
+        "changed": false,
+        "dressed": 0.0035623676140463315,
+        "quantity": "sin_theta_13"
+      }
+    ],
+    "tolerance_bands": {
+      "charged_lepton_ratios": 0.25,
+      "ckm_angles": 0.1,
+      "ckm_cp_jarlskog": 0.1,
+      "exact_status": "pass_fail",
+      "gauge_couplings": 0.01,
+      "higgs_electroweak_v": 0.01,
+      "higgs_mass_zeroth_order": 0.02,
+      "ht_gap": "binary_pass_fail",
+      "pmns_effective": 0.05,
+      "quark_ratios_otherwise": "SCHEME_SENSITIVE",
+      "quark_ratios_scheme_aware": 0.25,
+      "scalar_decoupling": "binary_scaffold_pass_fail"
+    }
+  },
+  "official_lepton_ratios_changed": false,
+  "official_outputs_changed": false,
+  "promotion_criteria": [
+    "derive eta_l from an action, spectrum, boundary condition, or independently fixed BHSM scale",
+    "pre-register eta_l before lepton residual comparison",
+    "retain improvement for both mu/tau and e/tau",
+    "show charged-lepton scope without altering frozen quark, CKM, gauge, Higgs, or H_T outputs"
+  ],
+  "rejection_criteria": [
+    "eta_l remains fit from mu/tau",
+    "candidate value is chosen only because it is numerically close to fitted eta_l",
+    "candidate damages the held-out e/tau screen",
+    "candidate requires post-freeze official output changes"
+  ],
+  "relative_difference_to_fitted_eta": {
+    "alpha_per_down_boundary": 0.7025389369095365,
+    "alpha_per_lepton_boundary": 0.18984425236185407,
+    "alpha_per_up_boundary": 0.40507787381907295,
+    "epsilon_alpha": 75.82373529490464,
+    "fine_structure_alpha": 2.5695327570855624,
+    "fine_structure_alpha_over_pi": 0.13621756563721776,
+    "gauge_alpha_1": 7.260285278443626,
+    "gauge_alpha_2": 15.520570556887252,
+    "gauge_alpha_3": 56.82199694910538,
+    "inverse_hopf_gap": 0.9750243554607085,
+    "overlap_width_per_boundary_sum": 0.8536036819510298,
+    "universal_overlap_width": 37.92567732097162,
+    "zvirt_log_per_64pi": 0.6863264679011053,
+    "zvirt_log_per_boundary_sum": 15.145526379008418
+  },
+  "title": "BHSM charged-lepton eta_l derivation audit",
+  "whether_candidate_is_derived": {
+    "alpha_per_down_boundary": false,
+    "alpha_per_lepton_boundary": false,
+    "alpha_per_up_boundary": false,
+    "epsilon_alpha": false,
+    "fine_structure_alpha": false,
+    "fine_structure_alpha_over_pi": false,
+    "gauge_alpha_1": false,
+    "gauge_alpha_2": false,
+    "gauge_alpha_3": false,
+    "inverse_hopf_gap": false,
+    "overlap_width_per_boundary_sum": false,
+    "universal_overlap_width": false,
+    "zvirt_log_per_64pi": false,
+    "zvirt_log_per_boundary_sum": false
+  },
+  "whether_candidate_is_independent": {
+    "alpha_per_down_boundary": true,
+    "alpha_per_lepton_boundary": true,
+    "alpha_per_up_boundary": true,
+    "epsilon_alpha": true,
+    "fine_structure_alpha": true,
+    "fine_structure_alpha_over_pi": true,
+    "gauge_alpha_1": true,
+    "gauge_alpha_2": true,
+    "gauge_alpha_3": true,
+    "inverse_hopf_gap": true,
+    "overlap_width_per_boundary_sum": true,
+    "universal_overlap_width": true,
+    "zvirt_log_per_64pi": true,
+    "zvirt_log_per_boundary_sum": true
+  }
+}
