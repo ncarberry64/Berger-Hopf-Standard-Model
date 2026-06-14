@@ -14,6 +14,11 @@ from typing import Any
 
 from bhsm_v1 import compare_bhsm_v1_branches
 from bhsm_virtual_mixing_solution import build_mixing_candidate_report
+from charged_lepton_precision_closure import (
+    _jsonable as charged_lepton_precision_jsonable,
+    audit_payload as charged_lepton_precision_audit_payload,
+    render_markdown as render_charged_lepton_precision_markdown,
+)
 from common_scale_quark_rg_closure import (
     _jsonable as common_scale_quark_rg_jsonable,
     closure_audit_payload as common_scale_quark_rg_audit_payload,
@@ -157,22 +162,29 @@ def boundary_operator_closure() -> ClosureResult:
 def charged_lepton_closure() -> ClosureResult:
     """Attempt closure of charged-lepton precision dressing."""
 
+    audit = charged_lepton_precision_audit_payload()
+    candidate_rows = audit["candidate_rows"]
+    held_out = next(row for row in candidate_rows if row.held_out)
+    fit_row = next(row for row in candidate_rows if row.fitted_input)
     return ClosureResult(
         issue_id="P1-1",
         title="Charged-lepton precision dressing",
         status=BLOCKS_FULL_COMPLETION,
         blocker="LEPTON_PRECISION_NOT_SOLVED",
-        classification="OPEN_LEPTON_PRECISION_WARNING",
+        classification=audit["classification"],
         pass_fail_criteria=(
             "One fixed lepton-mode rule must improve mu/tau and e/tau.",
             "Separate fitted electron and muon factors are forbidden.",
         ),
         evidence=(
-            "No single derived/pre-registered lepton dressing rule is available in repo inputs.",
+            f"Candidate rule: {audit['candidate_rule']['formula']}.",
+            f"Fit input mu/tau relative error after dressing: {fit_row.relative_error}.",
+            f"Held-out e/tau relative error after dressing: {held_out.relative_error}.",
+            "The rule improves both rows but eta_l is fit from mu/tau and not independently derived.",
             "Official frozen lepton predictions remain unchanged.",
         ),
         unchanged_quantities=("charged-lepton ratios unchanged", "quark and CKM sectors unchanged"),
-        next_action="derive a mode-dependent lepton dressing rule or keep precision warning open",
+        next_action="derive eta_l and charged-lepton scope independently before any official promotion",
     )
 
 
@@ -402,7 +414,11 @@ def generate_hard_closure_outputs() -> None:
         theory_path, md_path, json_path = FILE_MAP[result.issue_id]
         rendered = render_result_markdown(result)
         _write(theory_path, rendered)
-        if result.issue_id == "P1-2":
+        if result.issue_id == "P1-1":
+            audit = charged_lepton_precision_audit_payload()
+            _write(md_path, render_charged_lepton_precision_markdown(audit))
+            _write_json(json_path, charged_lepton_precision_jsonable(audit))
+        elif result.issue_id == "P1-2":
             audit = common_scale_quark_rg_audit_payload()
             _write(md_path, render_common_scale_quark_rg_markdown(audit))
             _write_json(json_path, common_scale_quark_rg_jsonable(audit))

@@ -1,9 +1,185 @@
 {
-  "classification": "OPEN_LEPTON_PRECISION_WARNING",
-  "candidate_status": "LEPTON_DRESSING_REJECTED",
-  "official_status": "NOT_OFFICIAL",
-  "rule": null,
-  "reason": "No single pre-registered lepton virtual dressing rule is derived or cleanly motivated in this branch without fitting separate factors.",
-  "official_lepton_predictions_changed": false,
-  "next_action": "derive a mode-structured lepton dressing rule or leave the lepton precision gap open"
+  "baseline_residuals": [
+    {
+      "absolute_error": 0.0006109366642937306,
+      "mode": [
+        5,
+        2
+      ],
+      "mode_norm": 5,
+      "predicted": 0.06007447093260976,
+      "q": 1,
+      "quantity": "mu/tau",
+      "rank": "middle",
+      "reference": 0.05946353426831603,
+      "relative_error": 0.010274139803682273
+    },
+    {
+      "absolute_error": 9.705689239912637e-06,
+      "mode": [
+        9,
+        3
+      ],
+      "mode_norm": 18,
+      "predicted": 0.00029729106456492414,
+      "q": 3,
+      "quantity": "e/tau",
+      "rank": "light",
+      "reference": 0.0002875853753250115,
+      "relative_error": 0.03374889710210006
+    }
+  ],
+  "blocker": "LEPTON_PRECISION_NOT_SOLVED",
+  "candidate_rows": [
+    {
+      "baseline_relative_error": 0.010274139803682273,
+      "dressed_prediction": 0.05946353426831603,
+      "dressing_factor": 0.9898303446570663,
+      "fitted_input": true,
+      "held_out": false,
+      "improved": true,
+      "mode": [
+        5,
+        2
+      ],
+      "mode_norm": 5,
+      "rank": "middle",
+      "reference": 0.05946353426831603,
+      "relative_error": 0.0
+    },
+    {
+      "baseline_relative_error": 0.03374889710210006,
+      "dressed_prediction": 0.0002865501268883495,
+      "dressing_factor": 0.9638706340121804,
+      "fitted_input": false,
+      "held_out": true,
+      "improved": true,
+      "mode": [
+        9,
+        3
+      ],
+      "mode_norm": 18,
+      "rank": "light",
+      "reference": 0.0002875853753250115,
+      "relative_error": 0.0035997951408065676
+    }
+  ],
+  "candidate_rule": {
+    "derived": false,
+    "fit_input_ratio": "mu/tau",
+    "fit_parameter": "eta_l",
+    "fit_parameter_value": 0.0020443439144236667,
+    "formula": "Z_l(k,j)=exp[-eta_l*(q^2+j^2)]",
+    "held_out_ratio": "e/tau",
+    "name": "charged_lepton_mode_norm_exponential",
+    "per_particle_fitted_factors_used": false,
+    "pre_registered_in_this_sprint": true
+  },
+  "candidate_status": "CANDIDATE_NOT_OFFICIAL",
+  "classification": "LEPTON_DRESSING_CANDIDATE_NOT_OFFICIAL",
+  "closes_lepton_precision_blocker": false,
+  "damage_checks": {
+    "extended_to_quarks_or_ckm": false,
+    "extension_allowed": false,
+    "official_branch_comparison": {
+      "bare_score": {
+        "PASS": 22
+      },
+      "branches": [
+        "BHSM_BARE_V1",
+        "BHSM_DRESSED_V1_CANDIDATE"
+      ],
+      "dressed_score": {
+        "PASS": 21,
+        "SCHEME_SENSITIVE": 1
+      },
+      "no_retuning": true,
+      "rows": [
+        {
+          "bare": 0.008310500554068288,
+          "changed": true,
+          "dressed": 0.004155250277034144,
+          "quantity": "c/t"
+        },
+        {
+          "bare": 1.2690463017606151e-05,
+          "changed": false,
+          "dressed": 1.2690463017606151e-05,
+          "quantity": "u/t"
+        },
+        {
+          "bare": 0.021933971495439474,
+          "changed": false,
+          "dressed": 0.021933971495439474,
+          "quantity": "s/b"
+        },
+        {
+          "bare": 0.0011165200546001757,
+          "changed": false,
+          "dressed": 0.0011165200546001757,
+          "quantity": "d/b"
+        },
+        {
+          "bare": 0.0035623676140463315,
+          "changed": false,
+          "dressed": 0.0035623676140463315,
+          "quantity": "sin_theta_13"
+        }
+      ],
+      "tolerance_bands": {
+        "charged_lepton_ratios": 0.25,
+        "ckm_angles": 0.1,
+        "ckm_cp_jarlskog": 0.1,
+        "exact_status": "pass_fail",
+        "gauge_couplings": 0.01,
+        "higgs_electroweak_v": 0.01,
+        "higgs_mass_zeroth_order": 0.02,
+        "ht_gap": "binary_pass_fail",
+        "pmns_effective": 0.05,
+        "quark_ratios_otherwise": "SCHEME_SENSITIVE",
+        "quark_ratios_scheme_aware": 0.25,
+        "scalar_decoupling": "binary_scaffold_pass_fail"
+      }
+    },
+    "reason": "The candidate is explicitly charged-lepton scoped. Extending the fitted eta_l to quarks or CKM would change official frozen outputs without a derivation."
+  },
+  "frozen_predictions_modified": false,
+  "frozen_sanity": {
+    "BHSM_BARE_V1_unchanged": true,
+    "BHSM_DRESSED_V1_CANDIDATE_unchanged": true,
+    "changed_rows": [
+      {
+        "bare": 0.008310500554068288,
+        "changed": true,
+        "dressed": 0.004155250277034144,
+        "quantity": "c/t"
+      }
+    ],
+    "ckm_sin_theta_13_unchanged": true,
+    "dressed_branch_changes_only_c_over_t": true,
+    "u_over_t_unchanged": true
+  },
+  "limitations": [
+    "One parameter is fit from mu/tau, so this is not a derivation.",
+    "The candidate is not part of BHSM_BARE_V1 or BHSM_DRESSED_V1_CANDIDATE.",
+    "No time/location variation is used.",
+    "No ordinary running/scheme explanation is claimed."
+  ],
+  "official_lepton_ratios_changed": false,
+  "official_outputs_modified": false,
+  "promotion_criteria": [
+    "derive eta_l independently from BHSM internal dynamics",
+    "pre-freeze the rule before future external comparisons",
+    "show the charged-lepton scope follows from the action rather than convenience",
+    "show no damage to quark, CKM, gauge, Higgs, or H_T screens"
+  ],
+  "recommendation": "Keep official lepton ratios frozen. The one-parameter mode-norm candidate improves mu/tau and the held-out e/tau row, but eta_l is fit from mu/tau rather than derived, so the candidate remains non-official.",
+  "rejection_criteria": [
+    "eta_l remains fitted from mu/tau",
+    "the held-out e/tau row fails under updated references",
+    "the rule requires separate electron and muon factors",
+    "extension outside charged leptons damages frozen outputs"
+  ],
+  "status": "BLOCKS_FULL_COMPLETION",
+  "title": "BHSM charged-lepton precision dressing audit"
 }
