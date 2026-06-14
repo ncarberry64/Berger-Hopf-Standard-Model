@@ -1,0 +1,421 @@
+{
+  "blockers_closed": [
+    "independent_chi_d_indicator_replaced_by_B_T3_projector"
+  ],
+  "blockers_remaining": [
+    "derive 3B as the actual coframe/color multiplicity operator inside A_boundary",
+    "derive lower_doublet_projector(T3)=1/2-T3 as a boundary projector, not only SM bookkeeping",
+    "derive the product (3B)(1/2-T3) from the full color/coframe boundary connection",
+    "derive cyclic quotient dimension dim(H)=|Omega| separately",
+    "derive identity/traceless protection before promoting lepton 8/9"
+  ],
+  "boundary_connection_consequence_status": "BOUNDARY_CONNECTION_HOLONOMY_PARTIAL",
+  "candidate_components": [
+    "colored_lower_projector",
+    "down_coframe_bonus_partial",
+    "neutrino_projector_consequence"
+  ],
+  "colored_lower_projector_status": "COLORED_LOWER_PROJECTOR_PARTIAL_DERIVATION",
+  "derived_components": [],
+  "does_chi_d_follow_from_B_T3": true,
+  "does_formula_reproduce_omega_l_u_d": true,
+  "does_this_close_down_bonus": false,
+  "down_coframe_bonus_status": "DOWN_COFAME_BONUS_PARTIAL_DERIVATION",
+  "files_concepts_searched": [
+    "SM field ledger and hypercharge records",
+    "boundary_derivation coframe factors",
+    "sector-projector SM-ledger audit",
+    "mode ledgers and anomaly inheritance tests"
+  ],
+  "forbidden_claims_absent": true,
+  "frozen_predictions_modified": false,
+  "frozen_sanity": {
+    "BHSM_BARE_V1_unchanged": true,
+    "BHSM_DRESSED_V1_CANDIDATE_unchanged": true,
+    "changed_rows": [
+      {
+        "bare": 0.008310500554068288,
+        "changed": true,
+        "dressed": 0.004155250277034144,
+        "quantity": "c/t"
+      }
+    ],
+    "ckm_sin_theta_13_unchanged": true,
+    "dressed_branch_changes_only_c_over_t": true,
+    "u_over_t_unchanged": true
+  },
+  "j_coefficient_status": "J_COEFFICIENT_T3_COLOR_LOWER_PARTIAL",
+  "lepton_8_9_consequence_status": "LEPTON_8_9_CHANNEL_RULE_STRUCTURAL_CANDIDATE",
+  "missing_assumptions": [
+    "derive 3B as the actual coframe/color multiplicity operator inside A_boundary",
+    "derive lower_doublet_projector(T3)=1/2-T3 as a boundary projector, not only SM bookkeeping",
+    "derive the product (3B)(1/2-T3) from the full color/coframe boundary connection",
+    "derive cyclic quotient dimension dim(H)=|Omega| separately",
+    "derive identity/traceless protection before promoting lepton 8/9"
+  ],
+  "mode_pair_checks": {
+    "charged_lepton": {
+      "constant": true,
+      "level": {
+        "denominator": 1,
+        "numerator": 3,
+        "value": 3.0
+      },
+      "rows": [
+        {
+          "j": 2,
+          "mode": [
+            5,
+            2
+          ],
+          "omega": {
+            "denominator": 1,
+            "numerator": 3,
+            "value": 3.0
+          },
+          "q": 1
+        },
+        {
+          "j": 3,
+          "mode": [
+            9,
+            3
+          ],
+          "omega": {
+            "denominator": 1,
+            "numerator": 3,
+            "value": 3.0
+          },
+          "q": 3
+        }
+      ],
+      "sector": "charged_lepton"
+    },
+    "down": {
+      "constant": true,
+      "level": {
+        "denominator": 1,
+        "numerator": 12,
+        "value": 12.0
+      },
+      "rows": [
+        {
+          "j": 3,
+          "mode": [
+            6,
+            3
+          ],
+          "omega": {
+            "denominator": 1,
+            "numerator": 12,
+            "value": 12.0
+          },
+          "q": 0
+        },
+        {
+          "j": 2,
+          "mode": [
+            8,
+            2
+          ],
+          "omega": {
+            "denominator": 1,
+            "numerator": 12,
+            "value": 12.0
+          },
+          "q": 4
+        }
+      ],
+      "sector": "down"
+    },
+    "up": {
+      "constant": true,
+      "level": {
+        "denominator": 1,
+        "numerator": 6,
+        "value": 6.0
+      },
+      "rows": [
+        {
+          "j": 0,
+          "mode": [
+            6,
+            0
+          ],
+          "omega": {
+            "denominator": 1,
+            "numerator": 6,
+            "value": 6.0
+          },
+          "q": 6
+        },
+        {
+          "j": 1,
+          "mode": [
+            10,
+            1
+          ],
+          "omega": {
+            "denominator": 1,
+            "numerator": 6,
+            "value": 6.0
+          },
+          "q": 8
+        }
+      ],
+      "sector": "up"
+    }
+  },
+  "neutrino_candidate": {
+    "candidate_only": true,
+    "coefficients": {
+      "a": {
+        "denominator": 1,
+        "numerator": -1,
+        "value": -1.0
+      },
+      "b": {
+        "denominator": 1,
+        "numerator": -2,
+        "value": -2.0
+      },
+      "chi_colored_lower": {
+        "denominator": 1,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "sector": "neutrino",
+      "status": "NEUTRINO_PROJECTOR_CONSEQUENCE_CANDIDATE"
+    },
+    "formula": "Omega_nu=-q-2j",
+    "no_numerical_PMNS_claims": true,
+    "ordinary_FTL_claim": false
+  },
+  "neutrino_projector_consequence_status": "NEUTRINO_PROJECTOR_CONSEQUENCE_CANDIDATE",
+  "official_branch_comparison": {
+    "bare_score": {
+      "PASS": 22
+    },
+    "branches": [
+      "BHSM_BARE_V1",
+      "BHSM_DRESSED_V1_CANDIDATE"
+    ],
+    "dressed_score": {
+      "PASS": 21,
+      "SCHEME_SENSITIVE": 1
+    },
+    "no_retuning": true,
+    "rows": [
+      {
+        "bare": 0.008310500554068288,
+        "changed": true,
+        "dressed": 0.004155250277034144,
+        "quantity": "c/t"
+      },
+      {
+        "bare": 1.2690463017606151e-05,
+        "changed": false,
+        "dressed": 1.2690463017606151e-05,
+        "quantity": "u/t"
+      },
+      {
+        "bare": 0.021933971495439474,
+        "changed": false,
+        "dressed": 0.021933971495439474,
+        "quantity": "s/b"
+      },
+      {
+        "bare": 0.0011165200546001757,
+        "changed": false,
+        "dressed": 0.0011165200546001757,
+        "quantity": "d/b"
+      },
+      {
+        "bare": 0.0035623676140463315,
+        "changed": false,
+        "dressed": 0.0035623676140463315,
+        "quantity": "sin_theta_13"
+      }
+    ],
+    "tolerance_bands": {
+      "charged_lepton_ratios": 0.25,
+      "ckm_angles": 0.1,
+      "ckm_cp_jarlskog": 0.1,
+      "exact_status": "pass_fail",
+      "gauge_couplings": 0.01,
+      "higgs_electroweak_v": 0.01,
+      "higgs_mass_zeroth_order": 0.02,
+      "ht_gap": "binary_pass_fail",
+      "pmns_effective": 0.05,
+      "quark_ratios_otherwise": "SCHEME_SENSITIVE",
+      "quark_ratios_scheme_aware": 0.25,
+      "scalar_decoupling": "binary_scaffold_pass_fail"
+    }
+  },
+  "official_dressed_changes_only_c_over_t": true,
+  "official_outputs_modified": false,
+  "prs_opened": false,
+  "q_coefficient_status": "Q_COEFFICIENT_3B_MINUS_L_SUPPORTED",
+  "safe_to_merge_as_candidate_only": true,
+  "sector_coefficients": {
+    "charged_lepton": {
+      "a": {
+        "denominator": 1,
+        "numerator": -1,
+        "value": -1.0
+      },
+      "b": {
+        "denominator": 1,
+        "numerator": 2,
+        "value": 2.0
+      },
+      "chi_colored_lower": {
+        "denominator": 1,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "sector": "charged_lepton",
+      "status": "COLORED_LOWER_PROJECTOR_PARTIAL_DERIVATION"
+    },
+    "down": {
+      "a": {
+        "denominator": 1,
+        "numerator": 1,
+        "value": 1.0
+      },
+      "b": {
+        "denominator": 1,
+        "numerator": 4,
+        "value": 4.0
+      },
+      "chi_colored_lower": {
+        "denominator": 1,
+        "numerator": 1,
+        "value": 1.0
+      },
+      "sector": "down",
+      "status": "COLORED_LOWER_PROJECTOR_PARTIAL_DERIVATION"
+    },
+    "neutrino": {
+      "a": {
+        "denominator": 1,
+        "numerator": -1,
+        "value": -1.0
+      },
+      "b": {
+        "denominator": 1,
+        "numerator": -2,
+        "value": -2.0
+      },
+      "chi_colored_lower": {
+        "denominator": 1,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "sector": "neutrino",
+      "status": "NEUTRINO_PROJECTOR_CONSEQUENCE_CANDIDATE"
+    },
+    "up": {
+      "a": {
+        "denominator": 1,
+        "numerator": 1,
+        "value": 1.0
+      },
+      "b": {
+        "denominator": 1,
+        "numerator": -2,
+        "value": -2.0
+      },
+      "chi_colored_lower": {
+        "denominator": 1,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "sector": "up",
+      "status": "COLORED_LOWER_PROJECTOR_PARTIAL_DERIVATION"
+    }
+  },
+  "sector_data": {
+    "charged_lepton": {
+      "B": {
+        "denominator": 1,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "L": {
+        "denominator": 1,
+        "numerator": 1,
+        "value": 1.0
+      },
+      "T3": {
+        "denominator": 2,
+        "numerator": -1,
+        "value": -0.5
+      },
+      "candidate_only": false,
+      "sector": "charged_lepton",
+      "source": "SM lepton doublet lower component"
+    },
+    "down": {
+      "B": {
+        "denominator": 3,
+        "numerator": 1,
+        "value": 0.3333333333333333
+      },
+      "L": {
+        "denominator": 1,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "T3": {
+        "denominator": 2,
+        "numerator": -1,
+        "value": -0.5
+      },
+      "candidate_only": false,
+      "sector": "down",
+      "source": "SM quark doublet lower component"
+    },
+    "neutrino": {
+      "B": {
+        "denominator": 1,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "L": {
+        "denominator": 1,
+        "numerator": 1,
+        "value": 1.0
+      },
+      "T3": {
+        "denominator": 2,
+        "numerator": 1,
+        "value": 0.5
+      },
+      "candidate_only": true,
+      "sector": "neutrino",
+      "source": "SM lepton doublet upper component; candidate-only neutral sector"
+    },
+    "up": {
+      "B": {
+        "denominator": 3,
+        "numerator": 1,
+        "value": 0.3333333333333333
+      },
+      "L": {
+        "denominator": 1,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "T3": {
+        "denominator": 2,
+        "numerator": 1,
+        "value": 0.5
+      },
+      "candidate_only": false,
+      "sector": "up",
+      "source": "SM quark doublet upper component"
+    }
+  },
+  "title": "BHSM colored lower-doublet coframe bonus audit"
+}
