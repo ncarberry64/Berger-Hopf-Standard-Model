@@ -1,0 +1,467 @@
+{
+  "anomaly_inheritance_safe": true,
+  "blockers_closed": [
+    "q_coefficient_from_3B_minus_L",
+    "weak_isospin_part_of_j_coefficient"
+  ],
+  "blockers_remaining": [
+    "derive chi_d from the full color/coframe boundary connection rather than assigning a down indicator",
+    "derive b=-4T3+2chi_d from the connection/action rather than a representation-shaped formula",
+    "derive the sector projector P_f as an operator acting on A_boundary",
+    "derive cyclic quotient dimension dim(H)=|Omega| separately",
+    "derive identity/traceless protection before promoting lepton 8/9"
+  ],
+  "boundary_connection_consequence_status": "BOUNDARY_CONNECTION_HOLONOMY_PARTIAL",
+  "candidate_components": [
+    "sector_projector_formula",
+    "down_type_coframe_bonus",
+    "neutrino_projector_consequence",
+    "boundary_connection_consequence"
+  ],
+  "coefficient_origin_status": "COEFFICIENT_ORIGIN_PARTIAL",
+  "derived_components": [],
+  "does_down_bonus_follow_independently": false,
+  "does_formula_reproduce_omega_l_u_d": true,
+  "does_j_coefficient_follow_from_T3": true,
+  "does_q_coefficient_follow_from_3B_minus_L": true,
+  "down_coframe_bonus_status": "DOWN_COFRAME_BONUS_STRUCTURAL_CANDIDATE",
+  "files_concepts_searched": [
+    "SM field ledger and hypercharge derivation",
+    "boundary_derivation phase/coframe scaffold",
+    "mode ledgers and boundary operator notes",
+    "anomaly cancellation tests",
+    "virtual/coframe candidate notes"
+  ],
+  "forbidden_claims_absent": true,
+  "frozen_predictions_modified": false,
+  "frozen_sanity": {
+    "BHSM_BARE_V1_unchanged": true,
+    "BHSM_DRESSED_V1_CANDIDATE_unchanged": true,
+    "changed_rows": [
+      {
+        "bare": 0.008310500554068288,
+        "changed": true,
+        "dressed": 0.004155250277034144,
+        "quantity": "c/t"
+      }
+    ],
+    "ckm_sin_theta_13_unchanged": true,
+    "dressed_branch_changes_only_c_over_t": true,
+    "u_over_t_unchanged": true
+  },
+  "j_coefficient_status": "J_COEFFICIENT_T3_PARTIAL",
+  "lepton_8_9_consequence_status": "LEPTON_8_9_CHANNEL_RULE_STRUCTURAL_CANDIDATE",
+  "missing_assumptions": [
+    "derive chi_d from the full color/coframe boundary connection rather than assigning a down indicator",
+    "derive b=-4T3+2chi_d from the connection/action rather than a representation-shaped formula",
+    "derive the sector projector P_f as an operator acting on A_boundary",
+    "derive cyclic quotient dimension dim(H)=|Omega| separately",
+    "derive identity/traceless protection before promoting lepton 8/9"
+  ],
+  "mode_pair_checks": {
+    "charged_lepton": {
+      "constant": true,
+      "level": {
+        "denominator": 1,
+        "numerator": 3,
+        "value": 3.0
+      },
+      "rows": [
+        {
+          "j": 2,
+          "mode": [
+            5,
+            2
+          ],
+          "omega": {
+            "denominator": 1,
+            "numerator": 3,
+            "value": 3.0
+          },
+          "q": 1
+        },
+        {
+          "j": 3,
+          "mode": [
+            9,
+            3
+          ],
+          "omega": {
+            "denominator": 1,
+            "numerator": 3,
+            "value": 3.0
+          },
+          "q": 3
+        }
+      ],
+      "sector": "charged_lepton"
+    },
+    "down": {
+      "constant": true,
+      "level": {
+        "denominator": 1,
+        "numerator": 12,
+        "value": 12.0
+      },
+      "rows": [
+        {
+          "j": 3,
+          "mode": [
+            6,
+            3
+          ],
+          "omega": {
+            "denominator": 1,
+            "numerator": 12,
+            "value": 12.0
+          },
+          "q": 0
+        },
+        {
+          "j": 2,
+          "mode": [
+            8,
+            2
+          ],
+          "omega": {
+            "denominator": 1,
+            "numerator": 12,
+            "value": 12.0
+          },
+          "q": 4
+        }
+      ],
+      "sector": "down"
+    },
+    "up": {
+      "constant": true,
+      "level": {
+        "denominator": 1,
+        "numerator": 6,
+        "value": 6.0
+      },
+      "rows": [
+        {
+          "j": 0,
+          "mode": [
+            6,
+            0
+          ],
+          "omega": {
+            "denominator": 1,
+            "numerator": 6,
+            "value": 6.0
+          },
+          "q": 6
+        },
+        {
+          "j": 1,
+          "mode": [
+            10,
+            1
+          ],
+          "omega": {
+            "denominator": 1,
+            "numerator": 6,
+            "value": 6.0
+          },
+          "q": 8
+        }
+      ],
+      "sector": "up"
+    }
+  },
+  "neutrino_candidate": {
+    "candidate_only": true,
+    "coefficients": {
+      "a": {
+        "denominator": 1,
+        "numerator": -1,
+        "value": -1.0
+      },
+      "b": {
+        "denominator": 1,
+        "numerator": -2,
+        "value": -2.0
+      },
+      "notes": [
+        "a=3B-L uses SM baryon/lepton orientation.",
+        "b=-4T3+2chi_d uses weak-isospin orientation plus candidate down-type coframe indicator."
+      ],
+      "sector": "neutrino",
+      "status": "NEUTRINO_PROJECTOR_CONSEQUENCE_CANDIDATE"
+    },
+    "example_formula": "Omega_nu=-q-2j",
+    "no_numerical_PMNS_claims": true,
+    "ordinary_FTL_claim": false
+  },
+  "neutrino_projector_consequence_status": "NEUTRINO_PROJECTOR_CONSEQUENCE_CANDIDATE",
+  "official_branch_comparison": {
+    "bare_score": {
+      "PASS": 22
+    },
+    "branches": [
+      "BHSM_BARE_V1",
+      "BHSM_DRESSED_V1_CANDIDATE"
+    ],
+    "dressed_score": {
+      "PASS": 21,
+      "SCHEME_SENSITIVE": 1
+    },
+    "no_retuning": true,
+    "rows": [
+      {
+        "bare": 0.008310500554068288,
+        "changed": true,
+        "dressed": 0.004155250277034144,
+        "quantity": "c/t"
+      },
+      {
+        "bare": 1.2690463017606151e-05,
+        "changed": false,
+        "dressed": 1.2690463017606151e-05,
+        "quantity": "u/t"
+      },
+      {
+        "bare": 0.021933971495439474,
+        "changed": false,
+        "dressed": 0.021933971495439474,
+        "quantity": "s/b"
+      },
+      {
+        "bare": 0.0011165200546001757,
+        "changed": false,
+        "dressed": 0.0011165200546001757,
+        "quantity": "d/b"
+      },
+      {
+        "bare": 0.0035623676140463315,
+        "changed": false,
+        "dressed": 0.0035623676140463315,
+        "quantity": "sin_theta_13"
+      }
+    ],
+    "tolerance_bands": {
+      "charged_lepton_ratios": 0.25,
+      "ckm_angles": 0.1,
+      "ckm_cp_jarlskog": 0.1,
+      "exact_status": "pass_fail",
+      "gauge_couplings": 0.01,
+      "higgs_electroweak_v": 0.01,
+      "higgs_mass_zeroth_order": 0.02,
+      "ht_gap": "binary_pass_fail",
+      "pmns_effective": 0.05,
+      "quark_ratios_otherwise": "SCHEME_SENSITIVE",
+      "quark_ratios_scheme_aware": 0.25,
+      "scalar_decoupling": "binary_scaffold_pass_fail"
+    }
+  },
+  "official_dressed_changes_only_c_over_t": true,
+  "official_outputs_modified": false,
+  "projector_coefficients": {
+    "charged_lepton": {
+      "a": {
+        "denominator": 1,
+        "numerator": -1,
+        "value": -1.0
+      },
+      "b": {
+        "denominator": 1,
+        "numerator": 2,
+        "value": 2.0
+      },
+      "notes": [
+        "a=3B-L uses SM baryon/lepton orientation.",
+        "b=-4T3+2chi_d uses weak-isospin orientation plus candidate down-type coframe indicator."
+      ],
+      "sector": "charged_lepton",
+      "status": "COEFFICIENT_ORIGIN_PARTIAL"
+    },
+    "down": {
+      "a": {
+        "denominator": 1,
+        "numerator": 1,
+        "value": 1.0
+      },
+      "b": {
+        "denominator": 1,
+        "numerator": 4,
+        "value": 4.0
+      },
+      "notes": [
+        "a=3B-L uses SM baryon/lepton orientation.",
+        "b=-4T3+2chi_d uses weak-isospin orientation plus candidate down-type coframe indicator."
+      ],
+      "sector": "down",
+      "status": "COEFFICIENT_ORIGIN_PARTIAL"
+    },
+    "neutrino": {
+      "a": {
+        "denominator": 1,
+        "numerator": -1,
+        "value": -1.0
+      },
+      "b": {
+        "denominator": 1,
+        "numerator": -2,
+        "value": -2.0
+      },
+      "notes": [
+        "a=3B-L uses SM baryon/lepton orientation.",
+        "b=-4T3+2chi_d uses weak-isospin orientation plus candidate down-type coframe indicator."
+      ],
+      "sector": "neutrino",
+      "status": "NEUTRINO_PROJECTOR_CONSEQUENCE_CANDIDATE"
+    },
+    "up": {
+      "a": {
+        "denominator": 1,
+        "numerator": 1,
+        "value": 1.0
+      },
+      "b": {
+        "denominator": 1,
+        "numerator": -2,
+        "value": -2.0
+      },
+      "notes": [
+        "a=3B-L uses SM baryon/lepton orientation.",
+        "b=-4T3+2chi_d uses weak-isospin orientation plus candidate down-type coframe indicator."
+      ],
+      "sector": "up",
+      "status": "COEFFICIENT_ORIGIN_PARTIAL"
+    }
+  },
+  "prs_opened": false,
+  "q_coefficient_status": "Q_COEFFICIENT_3B_MINUS_L_SUPPORTED",
+  "rejected_components": [],
+  "safe_to_merge_as_candidate_only": true,
+  "sector_projector_status": "SECTOR_PROJECTOR_PARTIAL_DERIVATION",
+  "sm_projector_data": {
+    "charged_lepton": {
+      "B": {
+        "denominator": 1,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "L": {
+        "denominator": 1,
+        "numerator": 1,
+        "value": 1.0
+      },
+      "T3": {
+        "denominator": 2,
+        "numerator": -1,
+        "value": -0.5
+      },
+      "chi_d": {
+        "denominator": 1,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "color_rank": 1,
+      "hypercharge": {
+        "denominator": 2,
+        "numerator": -1,
+        "value": -0.5
+      },
+      "sector": "charged_lepton",
+      "source": "SM lepton doublet lower component",
+      "weak_component": "lower"
+    },
+    "down": {
+      "B": {
+        "denominator": 3,
+        "numerator": 1,
+        "value": 0.3333333333333333
+      },
+      "L": {
+        "denominator": 1,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "T3": {
+        "denominator": 2,
+        "numerator": -1,
+        "value": -0.5
+      },
+      "chi_d": {
+        "denominator": 1,
+        "numerator": 1,
+        "value": 1.0
+      },
+      "color_rank": 3,
+      "hypercharge": {
+        "denominator": 6,
+        "numerator": 1,
+        "value": 0.16666666666666666
+      },
+      "sector": "down",
+      "source": "SM quark doublet lower component plus down-type coframe indicator",
+      "weak_component": "lower"
+    },
+    "neutrino": {
+      "B": {
+        "denominator": 1,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "L": {
+        "denominator": 1,
+        "numerator": 1,
+        "value": 1.0
+      },
+      "T3": {
+        "denominator": 2,
+        "numerator": 1,
+        "value": 0.5
+      },
+      "chi_d": {
+        "denominator": 1,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "color_rank": 1,
+      "hypercharge": {
+        "denominator": 2,
+        "numerator": -1,
+        "value": -0.5
+      },
+      "sector": "neutrino",
+      "source": "SM lepton doublet upper component; candidate-only neutral sector",
+      "weak_component": "upper"
+    },
+    "up": {
+      "B": {
+        "denominator": 3,
+        "numerator": 1,
+        "value": 0.3333333333333333
+      },
+      "L": {
+        "denominator": 1,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "T3": {
+        "denominator": 2,
+        "numerator": 1,
+        "value": 0.5
+      },
+      "chi_d": {
+        "denominator": 1,
+        "numerator": 0,
+        "value": 0.0
+      },
+      "color_rank": 3,
+      "hypercharge": {
+        "denominator": 6,
+        "numerator": 1,
+        "value": 0.16666666666666666
+      },
+      "sector": "up",
+      "source": "SM quark doublet upper component",
+      "weak_component": "upper"
+    }
+  },
+  "title": "BHSM sector projector derivation from SM representation ledger"
+}
