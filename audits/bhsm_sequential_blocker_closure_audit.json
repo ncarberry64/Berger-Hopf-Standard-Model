@@ -1,0 +1,234 @@
+{
+  "attempts": [
+    {
+      "blocker_id": "lepton_8alpha_9pi",
+      "candidate_only": true,
+      "closed": false,
+      "closure_requirements": [
+        "Omega_l=3 justified independently",
+        "Omega_l^2 channel counting justified",
+        "exactly one coherent/protected channel justified",
+        "8/9 follows without residual fitting"
+      ],
+      "evidence_found": [
+        "Omega_l=3 is present in boundary operator and mode-selection files.",
+        "The screened candidate improves mu/tau and e/tau relative to baseline.",
+        "Preferred eta_l=0.0020647284140193063.",
+        "mu/tau relative error=0.00010191730405677259.",
+        "e/tau relative error=0.0039653282281388235."
+      ],
+      "exact_obstruction": "The 8/9 screen is structurally plausible but remains an interpretive channel-count rule.",
+      "missing_requirements": [
+        "No repository action/spectrum argument forces Omega_l^2 as a channel count.",
+        "No proof identifies exactly one coherent lepton boundary channel."
+      ],
+      "official_outputs_changed": false,
+      "status": "SCREENED_ALPHA_PI_LEPTON_CANDIDATE_NOT_DERIVED",
+      "target": "eta_l=(alpha/pi)*(1-1/Omega_l^2)=8alpha/(9pi)"
+    },
+    {
+      "blocker_id": "pure_fiber_one_half",
+      "candidate_only": true,
+      "closed": false,
+      "closure_requirements": [
+        "j=0, k!=0 forces two virtual fiber-orientation branches",
+        "physical mass projection has rank one of two",
+        "factor is not inferred from c/t residual"
+      ],
+      "evidence_found": [
+        "Middle-up mode (6,0) has j=0 and is a nonzero pure-fiber mode.",
+        "Existing virtual-environment notes interpret a half projection as plausible.",
+        "two virtual fiber-orientation branches; physical projection selects one, giving rank ratio 1/2"
+      ],
+      "exact_obstruction": "The half factor remains a pure-fiber doublet candidate, not a forced spectral result.",
+      "missing_requirements": [
+        "No existing Berger/Hopf action or spectrum proves a two-branch doublet for every nonzero pure-fiber mode.",
+        "No rank-one physical projection theorem is implemented."
+      ],
+      "official_outputs_changed": false,
+      "status": "PURE_FIBER_DOUBLET_CANDIDATE_NOT_DERIVED",
+      "target": "Z_virt^{u,2}=1/2 for middle-up mode (6,0)"
+    },
+    {
+      "blocker_id": "boundary_action",
+      "candidate_only": true,
+      "closed": false,
+      "closure_requirements": [
+        "variational principle forces primitive constant boundary levels",
+        "sector signs and coefficients follow from sector structure",
+        "mode-pair invariance is a consequence rather than an input"
+      ],
+      "evidence_found": [
+        "Mode-pair invariants are exact for the current charged-sector ledger.",
+        "Omega_l=-q+2j=3, Omega_u=q-2j=6, Omega_d=q+4j=12 recover the non-heavy modes.",
+        "Boundary scaffolds are action-linked and tested, but not uniquely varied from the full action."
+      ],
+      "exact_obstruction": "The boundary operators are strongly structured and mode-pair invariant, but their full action origin remains open.",
+      "missing_requirements": [
+        "No full action variation derives the sector boundary functional.",
+        "No stationarity proof fixes the signs/coefficient choices uniquely."
+      ],
+      "official_outputs_changed": false,
+      "status": "BOUNDARY_MODE_PAIR_INVARIANT_DERIVED_ACTION_OPEN",
+      "target": "action-level origin of Omega_l, Omega_u, Omega_d"
+    },
+    {
+      "blocker_id": "ckm_one_sixteenth",
+      "candidate_only": true,
+      "closed": false,
+      "closure_requirements": [
+        "mass/probability to amplitude square-root layer independently justified",
+        "internal mode to left-handed weak component square-root layer independently justified",
+        "up-sector dressing to up/down mismatch square-root layer independently justified",
+        "diagonal mass dressing to off-diagonal correlation square-root layer independently justified"
+      ],
+      "evidence_found": [
+        "Existing CKM candidate improves Vcb and Vts without J_CKM damage.",
+        "Official CKM sin_theta_13 remains unchanged.",
+        "Four projection layers are documented as an interpretive chain."
+      ],
+      "exact_obstruction": "interpretive only; all four projection layers are not independently derived",
+      "missing_requirements": [
+        "All four projection layers are not independently supported by action/spectrum proofs.",
+        "Blocker 2 is not closed, so the Z_mass input is still candidate-level."
+      ],
+      "official_outputs_changed": false,
+      "status": "CKM_FOUR_PROJECTION_CANDIDATE_NOT_DERIVED",
+      "target": "Z_mix=Z_mass^(1/16)"
+    },
+    {
+      "blocker_id": "neutrino_pmns",
+      "candidate_only": true,
+      "closed": false,
+      "closure_requirements": [
+        "derive an actual neutrino mode ledger",
+        "derive PMNS structure from leakage/topological modes",
+        "avoid ordinary faster-than-light interpretation"
+      ],
+      "evidence_found": [
+        "PMNS effective-extension screens already exist in pmns.py.",
+        "Existing ledgers explicitly keep neutrino masses outside the minimal Standard Model.",
+        "Neutrinos are logged as possible topological leakage modes: weakly field-attached, ghost-like residual boundary modes."
+      ],
+      "exact_obstruction": "The ledger can be stated safely as candidate-only, but no full neutrino/PMNS derivation is present.",
+      "missing_requirements": [
+        "No full neutrino leakage operator or mode spectrum is implemented.",
+        "No new numerical PMNS claim is derived in this sprint."
+      ],
+      "official_outputs_changed": false,
+      "status": "NEUTRINO_LEAKAGE_LEDGER_CANDIDATE_ONLY",
+      "target": "candidate-only neutrino/PMNS leakage ledger"
+    }
+  ],
+  "best_candidate_only_strengthening": "The screened lepton eta_l=8alpha/(9pi) and pure-fiber/CKM projection explanations are clearer, but remain candidate-only.",
+  "best_derivation_found": null,
+  "blocker_order": [
+    "lepton_8alpha_9pi",
+    "pure_fiber_one_half",
+    "boundary_action",
+    "ckm_one_sixteenth",
+    "neutrino_pmns"
+  ],
+  "blockers_closed": [],
+  "blockers_remaining": [
+    "lepton_8alpha_9pi",
+    "pure_fiber_one_half",
+    "boundary_action",
+    "ckm_one_sixteenth",
+    "neutrino_pmns"
+  ],
+  "candidate_components": [
+    "lepton_8alpha_9pi",
+    "pure_fiber_one_half",
+    "boundary_action",
+    "ckm_one_sixteenth",
+    "neutrino_pmns"
+  ],
+  "derived_components": [],
+  "forbidden_claims_absent": true,
+  "frozen_predictions_modified": false,
+  "frozen_sanity": {
+    "BHSM_BARE_V1_unchanged": true,
+    "BHSM_DRESSED_V1_CANDIDATE_unchanged": true,
+    "changed_rows": [
+      {
+        "bare": 0.008310500554068288,
+        "changed": true,
+        "dressed": 0.004155250277034144,
+        "quantity": "c/t"
+      }
+    ],
+    "ckm_sin_theta_13_unchanged": true,
+    "dressed_branch_changes_only_c_over_t": true,
+    "u_over_t_unchanged": true
+  },
+  "official_branch_comparison": {
+    "bare_score": {
+      "PASS": 22
+    },
+    "branches": [
+      "BHSM_BARE_V1",
+      "BHSM_DRESSED_V1_CANDIDATE"
+    ],
+    "dressed_score": {
+      "PASS": 21,
+      "SCHEME_SENSITIVE": 1
+    },
+    "no_retuning": true,
+    "rows": [
+      {
+        "bare": 0.008310500554068288,
+        "changed": true,
+        "dressed": 0.004155250277034144,
+        "quantity": "c/t"
+      },
+      {
+        "bare": 1.2690463017606151e-05,
+        "changed": false,
+        "dressed": 1.2690463017606151e-05,
+        "quantity": "u/t"
+      },
+      {
+        "bare": 0.021933971495439474,
+        "changed": false,
+        "dressed": 0.021933971495439474,
+        "quantity": "s/b"
+      },
+      {
+        "bare": 0.0011165200546001757,
+        "changed": false,
+        "dressed": 0.0011165200546001757,
+        "quantity": "d/b"
+      },
+      {
+        "bare": 0.0035623676140463315,
+        "changed": false,
+        "dressed": 0.0035623676140463315,
+        "quantity": "sin_theta_13"
+      }
+    ],
+    "tolerance_bands": {
+      "charged_lepton_ratios": 0.25,
+      "ckm_angles": 0.1,
+      "ckm_cp_jarlskog": 0.1,
+      "exact_status": "pass_fail",
+      "gauge_couplings": 0.01,
+      "higgs_electroweak_v": 0.01,
+      "higgs_mass_zeroth_order": 0.02,
+      "ht_gap": "binary_pass_fail",
+      "pmns_effective": 0.05,
+      "quark_ratios_otherwise": "SCHEME_SENSITIVE",
+      "quark_ratios_scheme_aware": 0.25,
+      "scalar_decoupling": "binary_scaffold_pass_fail"
+    }
+  },
+  "official_outputs_modified": false,
+  "prs_opened": false,
+  "rejected_components": [
+    "forced closure of lepton 8/9 without channel-count proof",
+    "forced pure-fiber 1/2 without doublet/rank theorem",
+    "official CKM promotion without four projection proofs"
+  ],
+  "safe_to_merge_as_candidate_only": true,
+  "title": "BHSM sequential blocker closure audit"
+}
