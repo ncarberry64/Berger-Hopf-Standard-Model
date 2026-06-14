@@ -19,7 +19,7 @@ The sprint uses no time, location, or environment variation. Any such rule would
 
 ## Candidate Fixed Mode-Dressing Rule
 
-Formula: `Z_l(k,j)=exp[-eta_l*(q^2+j^2)]`
+Formula: `Z_l(k,j)=exp[-eta_l*(q^2+j^2)], q=k-2j`
 Fit input: `mu/tau`
 Held-out row: `e/tau`
 eta_l: `0.0020443439144236667`

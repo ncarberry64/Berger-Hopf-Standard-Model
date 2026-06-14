@@ -69,11 +69,12 @@
     "fit_input_ratio": "mu/tau",
     "fit_parameter": "eta_l",
     "fit_parameter_value": 0.0020443439144236667,
-    "formula": "Z_l(k,j)=exp[-eta_l*(q^2+j^2)]",
+    "formula": "Z_l(k,j)=exp[-eta_l*(q^2+j^2)], q=k-2j",
     "held_out_ratio": "e/tau",
     "name": "charged_lepton_mode_norm_exponential",
     "per_particle_fitted_factors_used": false,
-    "pre_registered_in_this_sprint": true
+    "pre_registered_in_this_sprint": true,
+    "q_definition": "q is Hopf charge k-2j, not the coordinate k"
   },
   "candidate_status": "CANDIDATE_NOT_OFFICIAL",
   "classification": "LEPTON_DRESSING_CANDIDATE_NOT_OFFICIAL",

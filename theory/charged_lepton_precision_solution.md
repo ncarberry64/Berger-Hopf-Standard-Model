@@ -12,7 +12,7 @@ Blocker: `LEPTON_PRECISION_NOT_SOLVED`
 
 ## Evidence
 
-- Candidate rule: Z_l(k,j)=exp[-eta_l*(q^2+j^2)].
+- Candidate rule: Z_l(k,j)=exp[-eta_l*(q^2+j^2)] with Hopf charge q=k-2j.
 - Fit input mu/tau relative error after dressing: 0.0.
 - Held-out e/tau relative error after dressing: 0.0035997951408065676.
 - The rule improves both rows but eta_l is fit from mu/tau and not independently derived.

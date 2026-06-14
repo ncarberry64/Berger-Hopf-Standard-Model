@@ -1,0 +1,235 @@
+{
+  "actual_implemented_formula": "Z_l(k,j)=exp[-eta_l*((k-2j)^2+j^2)]",
+  "best_numerical_candidate": "q",
+  "best_structurally_motivated_candidate": "q^2+j^2",
+  "candidate_norms": [
+    {
+      "electron_exponent": 3.0,
+      "electron_held_out_prediction": 0.0002883129481062665,
+      "electron_relative_error": 0.0025299366507519337,
+      "eta_from_mu_tau": 0.010221719572118334,
+      "formula": "Z_l=exp[-eta_l*q]",
+      "improves_electron": true,
+      "included": true,
+      "mu_dressed_prediction": 0.05946353426831603,
+      "mu_exponent": 1.0,
+      "mu_relative_error": 0.0,
+      "norm_name": "q",
+      "official": false,
+      "structural_note": "Hopf-fiber-only diagnostic; numerically strong but ignores base index."
+    },
+    {
+      "electron_exponent": 3.0,
+      "electron_held_out_prediction": 0.00029276759258900855,
+      "electron_relative_error": 0.018019752423573097,
+      "eta_from_mu_tau": 0.005110859786059167,
+      "formula": "Z_l=exp[-eta_l*j]",
+      "improves_electron": true,
+      "included": true,
+      "mu_dressed_prediction": 0.05946353426831603,
+      "mu_exponent": 2.0,
+      "mu_relative_error": 0.0,
+      "norm_name": "j",
+      "official": false,
+      "structural_note": "Base-index-only diagnostic; ignores Hopf charge."
+    },
+    {
+      "electron_exponent": 6.0,
+      "electron_held_out_prediction": 0.00029127511564232207,
+      "electron_relative_error": 0.012830069377278494,
+      "eta_from_mu_tau": 0.003407239857372778,
+      "formula": "Z_l=exp[-eta_l*(q+j)]",
+      "improves_electron": true,
+      "included": true,
+      "mu_dressed_prediction": 0.05946353426831603,
+      "mu_exponent": 3.0,
+      "mu_relative_error": 0.0,
+      "norm_name": "q+j",
+      "official": false,
+      "structural_note": "Simple additive Hopf/base diagnostic."
+    },
+    {
+      "electron_exponent": 18.0,
+      "electron_held_out_prediction": 0.0002865501268883495,
+      "electron_relative_error": 0.0035997951408065676,
+      "eta_from_mu_tau": 0.0020443439144236667,
+      "formula": "Z_l=exp[-eta_l*(q^2+j^2)]",
+      "improves_electron": true,
+      "included": true,
+      "mu_dressed_prediction": 0.05946353426831603,
+      "mu_exponent": 5.0,
+      "mu_relative_error": 0.0,
+      "norm_name": "q^2+j^2",
+      "official": false,
+      "structural_note": "Current predeclared Hopf/base norm candidate using q=k-2j."
+    },
+    {
+      "electron_exponent": 4.242640687119285,
+      "electron_held_out_prediction": 0.0002915808497597548,
+      "electron_relative_error": 0.013893176696582217,
+      "eta_from_mu_tau": 0.004571291962039332,
+      "formula": "Z_l=exp[-eta_l*sqrt(q^2+j^2)]",
+      "improves_electron": true,
+      "included": true,
+      "mu_dressed_prediction": 0.05946353426831603,
+      "mu_exponent": 2.23606797749979,
+      "mu_relative_error": 0.0,
+      "norm_name": "sqrt(q^2+j^2)",
+      "official": false,
+      "structural_note": "Euclidean Hopf/base amplitude diagnostic."
+    },
+    {
+      "electron_exponent": 6.0,
+      "electron_held_out_prediction": 0.0002883129481062665,
+      "electron_relative_error": 0.0025299366507519337,
+      "eta_from_mu_tau": 0.005110859786059167,
+      "formula": "Z_l=exp[-eta_l*(2q)]",
+      "improves_electron": true,
+      "included": true,
+      "mu_dressed_prediction": 0.05946353426831603,
+      "mu_exponent": 2.0,
+      "mu_relative_error": 0.0,
+      "norm_name": "2q",
+      "official": false,
+      "structural_note": "Fiber-weight diagnostic; numerically degenerate with q for held-out ratio ordering."
+    },
+    {
+      "electron_exponent": 12.0,
+      "electron_held_out_prediction": 0.0002921270254774223,
+      "electron_relative_error": 0.015792354347915302,
+      "eta_from_mu_tau": 0.001460245653159762,
+      "formula": "Z_l=exp[-eta_l*(q+3j)]",
+      "improves_electron": true,
+      "included": true,
+      "mu_dressed_prediction": 0.05946353426831603,
+      "mu_exponent": 7.0,
+      "mu_relative_error": 0.0,
+      "norm_name": "q+3j",
+      "official": false,
+      "structural_note": "Diagnostic only; a three-base-weight variant motivated by generation/coframe bookkeeping, not adopted."
+    }
+  ],
+  "candidate_status": "CANDIDATE_NOT_OFFICIAL",
+  "classification": "FORMULA_CONSISTENT",
+  "documentation_and_code_match": true,
+  "frozen_sanity": {
+    "BHSM_BARE_V1_unchanged": true,
+    "BHSM_DRESSED_V1_CANDIDATE_unchanged": true,
+    "changed_rows": [
+      {
+        "bare": 0.008310500554068288,
+        "changed": true,
+        "dressed": 0.004155250277034144,
+        "quantity": "c/t"
+      }
+    ],
+    "ckm_sin_theta_13_unchanged": true,
+    "dressed_branch_changes_only_c_over_t": true,
+    "u_over_t_unchanged": true
+  },
+  "lepton_precision_blocker_closed": false,
+  "limitations": [
+    "All candidate norms fit eta_l from mu/tau, so none is independently derived.",
+    "The q^2+j^2 candidate uses Hopf charge q=k-2j, not the coordinate k.",
+    "The best numerical held-out candidate is still exploratory and non-official.",
+    "Frozen BHSM_BARE_V1 and BHSM_DRESSED_V1_CANDIDATE outputs are unchanged.",
+    "The lepton precision blocker remains open.",
+    "Official branch comparison changes only ['c/t']."
+  ],
+  "mode_exponents": [
+    {
+      "implemented_exponent": 5.0,
+      "implemented_expression": "q^2+j^2 with q=k-2j",
+      "j": 2,
+      "k": 5,
+      "mode": [
+        5,
+        2
+      ],
+      "particle_ratio": "mu/tau",
+      "q_hopf": 1,
+      "rank": "middle",
+      "tau_effective_exponent": 0.0
+    },
+    {
+      "implemented_exponent": 18.0,
+      "implemented_expression": "q^2+j^2 with q=k-2j",
+      "j": 3,
+      "k": 9,
+      "mode": [
+        9,
+        3
+      ],
+      "particle_ratio": "e/tau",
+      "q_hopf": 3,
+      "rank": "light",
+      "tau_effective_exponent": 0.0
+    }
+  ],
+  "official_branch_comparison": {
+    "bare_score": {
+      "PASS": 22
+    },
+    "branches": [
+      "BHSM_BARE_V1",
+      "BHSM_DRESSED_V1_CANDIDATE"
+    ],
+    "dressed_score": {
+      "PASS": 21,
+      "SCHEME_SENSITIVE": 1
+    },
+    "no_retuning": true,
+    "rows": [
+      {
+        "bare": 0.008310500554068288,
+        "changed": true,
+        "dressed": 0.004155250277034144,
+        "quantity": "c/t"
+      },
+      {
+        "bare": 1.2690463017606151e-05,
+        "changed": false,
+        "dressed": 1.2690463017606151e-05,
+        "quantity": "u/t"
+      },
+      {
+        "bare": 0.021933971495439474,
+        "changed": false,
+        "dressed": 0.021933971495439474,
+        "quantity": "s/b"
+      },
+      {
+        "bare": 0.0011165200546001757,
+        "changed": false,
+        "dressed": 0.0011165200546001757,
+        "quantity": "d/b"
+      },
+      {
+        "bare": 0.0035623676140463315,
+        "changed": false,
+        "dressed": 0.0035623676140463315,
+        "quantity": "sin_theta_13"
+      }
+    ],
+    "tolerance_bands": {
+      "charged_lepton_ratios": 0.25,
+      "ckm_angles": 0.1,
+      "ckm_cp_jarlskog": 0.1,
+      "exact_status": "pass_fail",
+      "gauge_couplings": 0.01,
+      "higgs_electroweak_v": 0.01,
+      "higgs_mass_zeroth_order": 0.02,
+      "ht_gap": "binary_pass_fail",
+      "pmns_effective": 0.05,
+      "quark_ratios_otherwise": "SCHEME_SENSITIVE",
+      "quark_ratios_scheme_aware": 0.25,
+      "scalar_decoupling": "binary_scaffold_pass_fail"
+    }
+  },
+  "official_lepton_ratios_changed": false,
+  "official_outputs_changed": false,
+  "originally_reported_formula": "Z_l(k,j)=exp[-eta_l*(q^2+j^2)]",
+  "prior_candidate_result_remains_valid": true,
+  "q_definition": "q = k - 2j",
+  "title": "BHSM charged-lepton dressing formula integrity audit"
+}

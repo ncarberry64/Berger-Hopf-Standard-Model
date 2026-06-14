@@ -2,7 +2,8 @@
 
 This sprint tests one fixed mode-dependent dressing rule for charged leptons:
 
-    Z_l(k,j) = exp[-eta_l * (q^2 + j^2)].
+    Z_l(k,j) = exp[-eta_l * (q^2 + j^2)], where q=k-2j is the
+    Hopf charge.
 
 The single parameter eta_l is fit from mu/tau only; e/tau is then a held-out
 check.  Because eta_l is not independently derived, the candidate is not
@@ -109,7 +110,7 @@ def frozen_lepton_ratios() -> dict[str, float]:
 
 
 def mode_norm(mode: tuple[int, int]) -> int:
-    """Return the predeclared Hopf/base norm q^2 + j^2."""
+    """Return the predeclared Hopf/base norm q^2 + j^2 with q=k-2j."""
 
     k, j = mode
     q = hopf_charge(k, j)
@@ -155,7 +156,7 @@ def fit_eta_from_mu_tau() -> float:
 
 
 def dressing_factor(mode: tuple[int, int], eta_l: float) -> float:
-    """Return exp[-eta_l*(q^2+j^2)]."""
+    """Return exp[-eta_l*(q^2+j^2)] with Hopf charge q=k-2j."""
 
     return exp(-float(eta_l) * float(mode_norm(mode)))
 
@@ -276,7 +277,8 @@ def audit_payload() -> dict[str, Any]:
         "baseline_residuals": baseline_residuals(),
         "candidate_rule": {
             "name": "charged_lepton_mode_norm_exponential",
-            "formula": "Z_l(k,j)=exp[-eta_l*(q^2+j^2)]",
+            "formula": "Z_l(k,j)=exp[-eta_l*(q^2+j^2)], q=k-2j",
+            "q_definition": "q is Hopf charge k-2j, not the coordinate k",
             "fit_parameter": result.fit_parameter_name,
             "fit_parameter_value": result.fit_parameter_value,
             "fit_input_ratio": result.fit_input_ratio,
