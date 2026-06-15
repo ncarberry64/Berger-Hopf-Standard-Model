@@ -37,6 +37,7 @@ BHSM is not yet a completed replacement of the Standard Model. The long-term goa
 ## What Is Not Yet Proven
 
 - Full derivation of the local Standard Model gauge group from BHSM.
+- Derivation of the preserved local SM input layer as a low-energy BHSM output.
 - Full derivation of `S_boundary -> A_rep`.
 - Full derivation of the sector target degree law.
 - Numerical closure of the continuous mass engine.
@@ -65,6 +66,7 @@ Start with:
 - `theory/full_bhsm_empirical_gate_plan.md`
 - `theory/full_bhsm_completion_results.json`
 - `docs/current_bhsm_status.md`
+- `theory/sm_low_energy_limit_derivation_gate.md`
 
 Candidate master equation:
 

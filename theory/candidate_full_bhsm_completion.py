@@ -530,6 +530,8 @@ Guardrail: This is not a derivation of the full local gauge group.
 - [Open proof obligations](full_bhsm_open_proof_obligations.md)
 - [Empirical gate plan](full_bhsm_empirical_gate_plan.md)
 - [Candidate release notes](full_bhsm_candidate_release_notes.md)
+- [SM low-energy limit derivation gate](sm_low_energy_limit_derivation_gate.md)
+- [SM input dependency audit](sm_input_dependency_audit.md)
 """
 
 
@@ -561,6 +563,7 @@ def render_master_equation_map() -> str:
 - [Open proof obligations](full_bhsm_open_proof_obligations.md)
 - [Empirical gate plan](full_bhsm_empirical_gate_plan.md)
 - [Candidate release notes](full_bhsm_candidate_release_notes.md)
+- [SM low-energy limit derivation gate](sm_low_energy_limit_derivation_gate.md)
 """
     )
 

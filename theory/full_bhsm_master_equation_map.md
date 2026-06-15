@@ -23,3 +23,4 @@
 - [Open proof obligations](full_bhsm_open_proof_obligations.md)
 - [Empirical gate plan](full_bhsm_empirical_gate_plan.md)
 - [Candidate release notes](full_bhsm_candidate_release_notes.md)
+- [SM low-energy limit derivation gate](sm_low_energy_limit_derivation_gate.md)

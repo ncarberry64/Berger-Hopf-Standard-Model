@@ -28,3 +28,5 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 - [Empirical gate plan](../theory/full_bhsm_empirical_gate_plan.md)
 - [GitHub landing status](github_landing_status.md)
 - [Claim summary](github_claim_summary.md)
+- [SM low-energy limit derivation gate](../theory/sm_low_energy_limit_derivation_gate.md)
+- [SM input dependency audit](../theory/sm_input_dependency_audit.md)
