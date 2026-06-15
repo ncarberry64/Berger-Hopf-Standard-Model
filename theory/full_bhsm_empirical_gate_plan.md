@@ -17,3 +17,12 @@
 | Solar System constraints | pre-registered candidate pattern or residual screen | accepted Standard Model, astrophysical, or cosmological reference analysis | scheme-controlled public data with uncertainties | to be fixed before external scoring | stronger candidate screen, not automatic proof | candidate tension or falsification depending on pre-registered gate |
 | cosmological low-z anisotropy | pre-registered candidate pattern or residual screen | accepted Standard Model, astrophysical, or cosmological reference analysis | scheme-controlled public data with uncertainties | to be fixed before external scoring | stronger candidate screen, not automatic proof | candidate tension or falsification depending on pre-registered gate |
 | DESI/Euclid curvature and expansion tests | pre-registered candidate pattern or residual screen | accepted Standard Model, astrophysical, or cosmological reference analysis | scheme-controlled public data with uncertainties | to be fixed before external scoring | stronger candidate screen, not automatic proof | candidate tension or falsification depending on pre-registered gate |
+
+## Status Cross-Links
+
+- [Current BHSM status](../docs/current_bhsm_status.md)
+- [Full BHSM candidate synthesis](full_bhsm_completion_v1_candidate.md)
+- [Master equation map](full_bhsm_master_equation_map.md)
+- [Claim status matrix](full_bhsm_claim_status_matrix.md)
+- [Open proof obligations](full_bhsm_open_proof_obligations.md)
+- [Candidate release notes](full_bhsm_candidate_release_notes.md)

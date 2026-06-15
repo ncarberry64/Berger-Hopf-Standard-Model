@@ -247,3 +247,12 @@ ratio = 1:2:7
 Status: `GAUGE_COUPLING_ACTIVE_GENERATOR_COUNT_STRUCTURAL_CANDIDATE`
 
 Guardrail: This is not a derivation of the full local gauge group.
+
+## Status Cross-Links
+
+- [Current BHSM status](../docs/current_bhsm_status.md)
+- [Master equation map](full_bhsm_master_equation_map.md)
+- [Claim status matrix](full_bhsm_claim_status_matrix.md)
+- [Open proof obligations](full_bhsm_open_proof_obligations.md)
+- [Empirical gate plan](full_bhsm_empirical_gate_plan.md)
+- [Candidate release notes](full_bhsm_candidate_release_notes.md)

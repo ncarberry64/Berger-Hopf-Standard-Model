@@ -14,3 +14,12 @@
 | alpha_G = C_G/(6*pi^2) | structural_candidate |
 | I_ff' mixing kernel | open_proof_obligation |
 | raw heat-kernel spectral action mass screen | failed_or_limited_candidate |
+
+## Status Cross-Links
+
+- [Current BHSM status](../docs/current_bhsm_status.md)
+- [Full BHSM candidate synthesis](full_bhsm_completion_v1_candidate.md)
+- [Claim status matrix](full_bhsm_claim_status_matrix.md)
+- [Open proof obligations](full_bhsm_open_proof_obligations.md)
+- [Empirical gate plan](full_bhsm_empirical_gate_plan.md)
+- [Candidate release notes](full_bhsm_candidate_release_notes.md)

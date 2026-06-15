@@ -20,3 +20,12 @@ Status: `candidate_only`
 - No new official mass formula.
 - No official dark-matter claim.
 - No claim that Full BHSM is proven.
+
+## Status Cross-Links
+
+- [Current BHSM status](../docs/current_bhsm_status.md)
+- [Full BHSM candidate synthesis](full_bhsm_completion_v1_candidate.md)
+- [Master equation map](full_bhsm_master_equation_map.md)
+- [Claim status matrix](full_bhsm_claim_status_matrix.md)
+- [Open proof obligations](full_bhsm_open_proof_obligations.md)
+- [Empirical gate plan](full_bhsm_empirical_gate_plan.md)

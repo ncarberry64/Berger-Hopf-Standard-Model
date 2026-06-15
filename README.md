@@ -1,124 +1,139 @@
 # Berger-Hopf Standard Model (BHSM)
 
-BHSM is a frozen no-retuning geometric reinterpretation framework for Standard
-Model flavor, couplings, generations, and electroweak-scale structure. The
-repository contains executable screens, ledgers, tests, and manuscript material
-for auditing the framework.
+Status: Full BHSM v1.0 Candidate -- repo-audited candidate architecture, not yet a completed proof or replacement of the Standard Model.
 
-This is a careful research package. It is not a claim of experimental
-confirmation, community acceptance, or a final replacement of the Standard
-Model.
+Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a completed replacement of the Standard Model. Its strategic objective is replacement by derivation: the Standard Model should ultimately emerge as the low-energy effective limit of BHSM. Until that derivation is achieved, local SM gauge structure remains a preserved infrared layer, while BHSM provides a candidate Berger-Hopf/topographic completion of the flavor, channel, generation, response, and collective-threshold architecture.
 
-## Current Release Preparation
+## What BHSM Is
+
+BHSM is a no-retuning Berger-Hopf/topographic candidate framework for Standard Model flavor, channel, generation, response, mass-structure, and boundary-geometry layers. It preserves the local Standard Model gauge layer as an infrared input until that layer is derived from BHSM.
+
+BHSM is not yet a completed replacement of the Standard Model. The long-term goal is replacement by derivation.
+
+## Current Status
+
+- Full BHSM candidate architecture synthesis complete.
+- Full BHSM proven: no.
+- Standard Model fully derived: no.
+- Mass numerical closure: no.
+- Frozen predictions changed: no.
+- Official predictions changed: no.
+- Discrete geometric skeleton: test-backed candidate.
+- Fermion ledger generation: conditional and test-backed.
+- Heat-kernel spectral-action mass engine: Tier C ordering only; not the existing BHSM engine.
+- Branch threshold and hidden response signals: indicated.
+- Collective curvature layer: candidate-only connected extension.
+- Dark matter: effective collective curvature residue candidate only; no solution claim.
+
+## What Is Test-Backed
+
+- Frozen prediction integrity.
+- Candidate-architecture ledgers.
+- Representation-to-mode and boundary-channel scaffolds.
+- Generation-count and fourth-order stability scaffolds.
+- Response-layer and branch-threshold audits.
+- Candidate synthesis package schema and guardrails.
+
+## What Is Not Yet Proven
+
+- Full derivation of the local Standard Model gauge group from BHSM.
+- Full derivation of `S_boundary -> A_rep`.
+- Full derivation of the sector target degree law.
+- Numerical closure of the continuous mass engine.
+- Derivation of the existing BHSM bare engine from collective threshold principles.
+- Empirical validation of the collective-curvature/dark-matter interpretation.
+
+## Frozen Prediction Layer
+
+The official frozen outputs remain read-only:
+
+- `BHSM_BARE_V1`
+- `BHSM_DRESSED_V1_CANDIDATE`
+- `docs/frozen_predictions.md`
+- `docs/frozen_predictions.json`
+
+The dressed candidate rule remains unchanged: `Z_virt^{u,2}=1/2` applies only to `c/t`.
+
+## Candidate Synthesis Layer
+
+Start with:
+
+- `theory/full_bhsm_completion_v1_candidate.md`
+- `theory/full_bhsm_master_equation_map.md`
+- `theory/full_bhsm_claim_status_matrix.md`
+- `theory/full_bhsm_open_proof_obligations.md`
+- `theory/full_bhsm_empirical_gate_plan.md`
+- `theory/full_bhsm_completion_results.json`
+- `docs/current_bhsm_status.md`
+
+Candidate master equation:
 
 ```text
-Release branch: release/bhsm-final-paper-v1.2.0
-Version: v1.2.0
-Frozen outputs: unchanged
-Zenodo DOI: assigned after release archival
+S_BHSM,candidate =
+S_SM,local
++ S_T
++ S_boundary
++ S_response
++ S_collective-threshold
 ```
 
-## What Is Frozen?
+## Connected Topographic-Curvature Extension
 
-| Item | Frozen value |
-| --- | --- |
-| Bare branch | `BHSM_BARE_V1` |
-| Dressed candidate branch | `BHSM_DRESSED_V1_CANDIDATE` |
-| Canonical geometry | `a = 1.157054135733433` |
-| Universal overlap width | `S = 0.07957747154594767` |
-| Virtual dressing rule | `Z_virt^{u,2}=1/2` applied only to `c/t` |
+The collective-curvature layer is a connected topographic-gravity extension candidate. It does not claim that dark matter is solved, and it does not claim that particle dark matter is disproven. Empirical gravity tests remain required.
 
-The no-retuning rule forbids post-data changes to `a`, `S`, modes, tolerances,
-frozen outputs, or `Z_virt` in order to improve residuals.
-
-## What Should a Skeptical Reader Run First?
+## How To Reproduce
 
 ```powershell
+git clone https://github.com/ncarberry64/Berger-Hopf-Standard-Model.git
+cd Berger-Hopf-Standard-Model
 python -m pip install -e .
-python -m pytest
+python -m pytest -q
 ```
 
-The tests audit frozen outputs, claim ledgers, prediction ledgers, manuscript
-guardrails, and release-file presence. If your test count differs from the
-release checklist, confirm that you are on the release branch or tag and that
-your checkout is clean.
+Optional audit tools:
 
-## Key Files
+```powershell
+python tools/audit_forbidden_claims.py
+python tools/audit_bhsm_status.py
+python tools/audit_frozen_prediction_integrity.py
+```
+
+## Repository Map
 
 | Path | Purpose |
 | --- | --- |
 | `src/` | executable model, screen, and audit code |
-| `tests/` | regression, guard, and release-integrity tests |
-| `theory/` | machine-readable and human-readable theory ledgers |
-| `manuscript/` | final paper source, generated PDF, and manuscript notes |
-| `docs/` | reader, reviewer, reproducibility, and Zenodo release guides |
+| `tests/` | regression, guardrail, and integrity tests |
+| `theory/` | theory ledgers, candidate synthesis, and machine-readable reports |
+| `docs/` | GitHub-facing reader, claim, reproducibility, and release-status docs |
+| `audits/` | sprint audit scripts and reports |
+| `candidates/` | non-official candidate variants |
+| `manuscript/` | manuscript source and paper artifacts |
+| `tools/` | repository status and guardrail audit helpers |
 
-## Start Here
+## Claim Hygiene
 
-- [Final paper PDF](manuscript/BHSM_final_paper.pdf)
-- [Final paper Markdown](manuscript/BHSM_final_paper.md)
-- [Manuscript generation notes](manuscript/README.md)
-- [Frozen predictions](docs/frozen_predictions.md)
-- [Claim status table](docs/claim_status_table.md)
-- [Falsification criteria](docs/falsification_criteria.md)
-- [Reproducibility](docs/reproducibility.md)
-- [Zenodo/GitHub release notes](docs/zenodo_release_notes.md)
-- [Release checklist](docs/release_checklist.md)
+Allowed public language includes:
 
-## Candidate Branches and Audits
+- candidate completion framework
+- repo-audited candidate architecture
+- test-backed discrete geometric skeleton
+- conditional fermion ledger generation
+- mass numerical closure unresolved
+- replacement by derivation remains the long-term goal
+- collective-curvature dark-matter interpretation candidate
+- connected topographic-gravity extension
 
-- [BHSM_MIXING_DRESSED_V1_CANDIDATE](candidates/BHSM_MIXING_DRESSED_V1_CANDIDATE.md):
-  exploratory clean repair candidate for CKM 2-3 mixing; not part of the
-  official frozen release.
+Forbidden public language includes claims that BHSM proves or has replaced the Standard Model, solves dark matter, disproves particle dark matter, closes the mass engine, or derives all Standard Model constants.
 
-## Completion Candidate Package
+## Citation / DOI
 
-- [BHSM_FULL_COMPLETION_V1_CANDIDATE](candidates/BHSM_FULL_COMPLETION_V1_CANDIDATE.md):
-  not official; frozen branches remain unchanged; candidate mechanisms live
-  under `candidates/`, audits live under `audits/`, and no confirmation claim
-  is made.
+Use `CITATION.cff` for citation metadata. Zenodo metadata is recorded in `.zenodo.json`; do not create or edit external release metadata without explicit author instruction.
 
-## Claim Boundary
+## Contact / Author
 
-Allowed claims:
-
-- BHSM is a frozen no-retuning geometric reinterpretation framework.
-- The repository contains executable prediction/screen ledgers.
-- Hypercharge, anomaly, mode-selection, coupling, flavor, H_T proxy, scalar,
-  and reproducibility audits are implemented with explicit statuses.
-- Some results are derived-conditional, verified by tests, strong screens, or
-  proxy audits as labeled.
-
-Forbidden claims:
-
-- a full derivation of the Standard Model from first principles;
-- a proof of confinement;
-- a proof of quantum gravity;
-- a final replacement of the Standard Model;
-- experimental confirmation by the particle-physics community;
-- post-data retuning.
-
-## Outputs and Ledgers
-
-The frozen prediction set is defined by:
-
-- `theory/bhsm_v1_frozen_prediction_set.md`
-- `theory/bhsm_v1_frozen_prediction_set.json`
-- `theory/bhsm_prediction_ledger.md`
-- `theory/bhsm_prediction_ledger.json`
-- `docs/frozen_predictions.md`
-- `docs/frozen_predictions.json`
-
-Claim status is summarized in:
-
-- `docs/claim_status_table.md`
-- `theory/claims_ledger.json`
-- `manuscript/claims_ledger.md`
-
-## Citation and Archival
-
-Use `CITATION.cff` for GitHub citation display. `.zenodo.json` is included for
-Zenodo metadata. Do not write a DOI manually before Zenodo assigns one.
+Author: Norman P. Carberry
+ORCID: https://orcid.org/0009-0000-6650-3485
 
 ## License
 

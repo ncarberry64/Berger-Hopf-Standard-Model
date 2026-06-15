@@ -17,3 +17,12 @@
 | NEUTRINO_CONJUGATE_COVER_MASS_ENGINE_CANDIDATE | Neutrino Conjugate Cover Mass Engine Candidate | structural_candidate | repo audit files and tests | covered by synthesis tests | upstream action derivation or empirical screen may fail | repo-audited candidate or conditional screen | completed theorem without listed proof obligations |
 | GAUGE_COUPLING_ACTIVE_GENERATOR_COUNT_STRUCTURAL_CANDIDATE | Gauge Coupling Active Generator Count Structural Candidate | structural_candidate | repo audit files and tests | covered by synthesis tests | active-generator count may not derive full local gauge dynamics | repo-audited candidate or conditional screen | completed theorem without listed proof obligations |
 | NO_NUMERICAL_CLOSURE | No Numerical Closure | failed_or_limited_candidate | repo audit files and tests | covered by synthesis tests | mass engine remains unresolved | numerical closure remains open | completed theorem without listed proof obligations |
+
+## Status Cross-Links
+
+- [Current BHSM status](../docs/current_bhsm_status.md)
+- [Full BHSM candidate synthesis](full_bhsm_completion_v1_candidate.md)
+- [Master equation map](full_bhsm_master_equation_map.md)
+- [Open proof obligations](full_bhsm_open_proof_obligations.md)
+- [Empirical gate plan](full_bhsm_empirical_gate_plan.md)
+- [Candidate release notes](full_bhsm_candidate_release_notes.md)

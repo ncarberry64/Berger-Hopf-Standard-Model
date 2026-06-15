@@ -14,3 +14,12 @@ O11. Empirically test collective-curvature dark-matter interpretation. Status: `
 O12. Complete RG/higher-loop gauge matching. Status: `open_proof_obligation`
 O13. Complete Higgs/scalar spectrum and decoupling. Status: `open_proof_obligation`
 O14. Harmonize quark reference schemes. Status: `open_proof_obligation`
+
+## Status Cross-Links
+
+- [Current BHSM status](../docs/current_bhsm_status.md)
+- [Full BHSM candidate synthesis](full_bhsm_completion_v1_candidate.md)
+- [Master equation map](full_bhsm_master_equation_map.md)
+- [Claim status matrix](full_bhsm_claim_status_matrix.md)
+- [Empirical gate plan](full_bhsm_empirical_gate_plan.md)
+- [Candidate release notes](full_bhsm_candidate_release_notes.md)
