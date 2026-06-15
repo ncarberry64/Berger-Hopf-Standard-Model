@@ -1,0 +1,16 @@
+# Full BHSM Master Equation Map
+
+| equation | classification |
+| --- | --- |
+| O_q = 3B - L | partial_derivation |
+| O_j = -4T3 + 2(3B)(1/2 - T3) | partial_derivation |
+| Omega_f = O_q q + O_j j | operational_tested |
+| Omega_star = 3 * 2^(3B + (3B)(1/2 - T3)) | structural_candidate |
+| G_f = {0} + Low_2(...) | operational_tested |
+| H_f = C[Z_|Omega|] | structural_candidate |
+| L_T = nabla^2 - B*nabla^4 | structural_candidate |
+| m_i = M_f [K_eff - K_crit]_+^p Z_i | open_proof_obligation |
+| K_obs = K_visible + K_collective | structural_candidate |
+| alpha_G = C_G/(6*pi^2) | structural_candidate |
+| I_ff' mixing kernel | open_proof_obligation |
+| raw heat-kernel spectral action mass screen | failed_or_limited_candidate |
