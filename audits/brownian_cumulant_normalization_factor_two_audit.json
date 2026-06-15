@@ -1,0 +1,219 @@
+{
+  "allowed_eta_forms": {
+    "double_factor": 0.004129456828038612,
+    "half_factor": 0.001032364207009653,
+    "no_extra_half": 0.002064728414019306
+  },
+  "alpha_over_pi_interpretation_status": "ALPHA_OVER_PI_INTERPRETATION_CONVENTION_DEPENDENT",
+  "attenuation_examples_muon": {
+    "N": 5,
+    "double_factor": 0.9795644115472195,
+    "heat_kernel": 0.9897294638168652,
+    "phase_cumulant": 0.9948514782704326
+  },
+  "blockers_closed": [
+    "repo_eta_as_exponent_coefficient_audited",
+    "heat_kernel_no_extra_half_convention_formalized",
+    "phase_cumulant_half_factor_hazard_formalized",
+    "all_three_eta_forms_reported_without_prediction_changes"
+  ],
+  "blockers_remaining": [
+    "derive from completed stochastic path integral whether alpha/pi is raw variance or generator coefficient",
+    "derive Brownian time/cycle normalization rather than setting tau=1 by convention",
+    "derive primitive cyclic monodromy and full stochastic generator before any full lepton promotion"
+  ],
+  "brownian_factor_two_status": "BROWNIAN_FACTOR_TWO_CONVENTION_DEPENDENT",
+  "candidate_components": [
+    "doubled_eta_sensitivity_form"
+  ],
+  "conditional_components": [
+    "half_factor_if_alpha_over_pi_is_raw_variance",
+    "no_extra_half_if_alpha_over_pi_is_generator_coefficient"
+  ],
+  "derived_components": [
+    "exact_eta_form_algebra",
+    "phase_cumulant_half_factor_formula",
+    "heat_kernel_attenuation_formula"
+  ],
+  "does_eta_l_8alpha_9pi_remain_supported": true,
+  "does_heat_kernel_convention_support_no_extra_half": true,
+  "does_phase_cumulant_convention_require_half": true,
+  "does_repo_define_eta_as_exponent_coefficient": true,
+  "does_this_change_official_predictions": false,
+  "does_this_promote_full_lepton_8_9": false,
+  "eta_exponent_convention_status": "ETA_EXPONENT_CONVENTION_REPO_SUPPORTED",
+  "factor_two_hazards": [
+    "Gaussian phase cumulant gives exp[-variance/2] if alpha/pi is raw variance",
+    "heat-kernel convention gives exp[-D lambda] if alpha/pi is generator coefficient",
+    "completed stochastic path-integral normalization is still absent"
+  ],
+  "forbidden_claims_absent": true,
+  "frozen_predictions_modified": false,
+  "frozen_sanity": {
+    "BHSM_BARE_V1_unchanged": true,
+    "BHSM_DRESSED_V1_CANDIDATE_unchanged": true,
+    "S_unchanged": true,
+    "a_unchanged": true,
+    "changed_rows": [
+      {
+        "bare": 0.008310500554068288,
+        "changed": true,
+        "dressed": 0.004155250277034144,
+        "quantity": "c/t"
+      }
+    ],
+    "ckm_sin_theta_13_unchanged": true,
+    "dressed_branch_changes_only_c_over_t": true,
+    "official_branch_comparison": {
+      "bare_score": {
+        "PASS": 22
+      },
+      "branches": [
+        "BHSM_BARE_V1",
+        "BHSM_DRESSED_V1_CANDIDATE"
+      ],
+      "dressed_score": {
+        "PASS": 21,
+        "SCHEME_SENSITIVE": 1
+      },
+      "no_retuning": true,
+      "rows": [
+        {
+          "bare": 0.008310500554068288,
+          "changed": true,
+          "dressed": 0.004155250277034144,
+          "quantity": "c/t"
+        },
+        {
+          "bare": 1.2690463017606151e-05,
+          "changed": false,
+          "dressed": 1.2690463017606151e-05,
+          "quantity": "u/t"
+        },
+        {
+          "bare": 0.021933971495439474,
+          "changed": false,
+          "dressed": 0.021933971495439474,
+          "quantity": "s/b"
+        },
+        {
+          "bare": 0.0011165200546001757,
+          "changed": false,
+          "dressed": 0.0011165200546001757,
+          "quantity": "d/b"
+        },
+        {
+          "bare": 0.0035623676140463315,
+          "changed": false,
+          "dressed": 0.0035623676140463315,
+          "quantity": "sin_theta_13"
+        }
+      ],
+      "tolerance_bands": {
+        "charged_lepton_ratios": 0.25,
+        "ckm_angles": 0.1,
+        "ckm_cp_jarlskog": 0.1,
+        "exact_status": "pass_fail",
+        "gauge_couplings": 0.01,
+        "higgs_electroweak_v": 0.01,
+        "higgs_mass_zeroth_order": 0.02,
+        "ht_gap": "binary_pass_fail",
+        "pmns_effective": 0.05,
+        "quark_ratios_otherwise": "SCHEME_SENSITIVE",
+        "quark_ratios_scheme_aware": 0.25,
+        "scalar_decoupling": "binary_scaffold_pass_fail"
+      }
+    },
+    "u_over_t_unchanged": true
+  },
+  "heat_kernel_normalization_status": "HEAT_KERNEL_NORMALIZATION_PARTIAL",
+  "is_alpha_over_pi_generator_coefficient": true,
+  "is_alpha_over_pi_raw_variance": true,
+  "is_factor_two_resolved": false,
+  "ito_generator_status": "ITO_GENERATOR_NORMALIZATION_CONVENTION_DEPENDENT",
+  "lepton_eta_normalization_status": "LEPTON_ETA_NORMALIZATION_CONVENTION_DEPENDENT",
+  "missing_assumptions": [
+    "derive from completed stochastic path integral whether alpha/pi is raw variance or generator coefficient",
+    "derive Brownian time/cycle normalization rather than setting tau=1 by convention",
+    "derive primitive cyclic monodromy and full stochastic generator before any full lepton promotion"
+  ],
+  "official_outputs_modified": false,
+  "partial_components": [
+    "repo_no_extra_half_eta_convention",
+    "heat_kernel_generator_interpretation"
+  ],
+  "phase_cumulant_status": "PHASE_CUMULANT_HALF_FACTOR_CONDITIONAL",
+  "preferred_eta_form": "no_extra_half_repo_exponent_convention",
+  "prs_opened": false,
+  "safe_to_merge_as_candidate_only": true,
+  "status_objects": {
+    "eta_exponent": {
+      "assumptions": [
+        "existing repo notes write lepton dressing as Z=exp[-eta N]",
+        "eta_l is repeatedly compared as 8alpha/(9pi)"
+      ],
+      "limitations": [
+        "repo convention is not a full stochastic path-integral derivation"
+      ],
+      "route": "repo_eta_exponent_convention",
+      "status": "ETA_EXPONENT_CONVENTION_REPO_SUPPORTED",
+      "supports_half_factor": false,
+      "supports_no_extra_half": true
+    },
+    "factor_two": {
+      "assumptions": [
+        "repo eta convention supports the no-extra-half exponent coefficient",
+        "Gaussian phase cumulant would require a half factor if alpha/pi were raw variance"
+      ],
+      "limitations": [
+        "the complete stochastic normalization has not selected variance versus generator coefficient",
+        "therefore the no-extra-half form is preferred by repo convention but not uniquely proven"
+      ],
+      "route": "brownian_factor_two_aggregate",
+      "status": "BROWNIAN_FACTOR_TWO_CONVENTION_DEPENDENT",
+      "supports_half_factor": true,
+      "supports_no_extra_half": true
+    },
+    "heat_kernel": {
+      "assumptions": [
+        "BHSM eta is the exponent/generator coefficient in Z=exp[-eta N]",
+        "boundary-cycle time is normalized to one"
+      ],
+      "limitations": [
+        "the completed stochastic path-integral generator is not derived",
+        "this supports the repo convention rather than proving uniqueness"
+      ],
+      "route": "heat_kernel_generator_convention",
+      "status": "HEAT_KERNEL_NORMALIZATION_PARTIAL",
+      "supports_half_factor": false,
+      "supports_no_extra_half": true
+    },
+    "ito": {
+      "assumptions": [
+        "dtheta=g dW gives variance g^2 t",
+        "the heat generator convention may absorb the 1/2 into D"
+      ],
+      "limitations": [
+        "the repo has not derived whether alpha/pi denotes g^2 or the generator coefficient"
+      ],
+      "route": "ito_generator_normalization",
+      "status": "ITO_GENERATOR_NORMALIZATION_CONVENTION_DEPENDENT",
+      "supports_half_factor": true,
+      "supports_no_extra_half": true
+    },
+    "phase_cumulant": {
+      "assumptions": [
+        "alpha/pi is interpreted as raw phase variance g_U1^2",
+        "Z=E[exp(i theta)] with Gaussian variance"
+      ],
+      "limitations": [
+        "this is not the convention used by existing eta-as-exponent BHSM notes",
+        "it would define a different candidate eta without changing official predictions"
+      ],
+      "route": "gaussian_phase_cumulant",
+      "status": "PHASE_CUMULANT_HALF_FACTOR_CONDITIONAL",
+      "supports_half_factor": true,
+      "supports_no_extra_half": false
+    }
+  }
+}
