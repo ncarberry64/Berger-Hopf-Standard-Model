@@ -1,0 +1,208 @@
+{
+  "alpha": 0.0072973525692838015,
+  "alpha_over_pi_strength_status": "ALPHA_OVER_PI_STOCHASTIC_STRENGTH_PARTIAL",
+  "blockers_closed": [
+    "exact_rationalized_U1_algebra_D_U1_equals_alpha_over_pi",
+    "Hopf_contact_2pi_normalization_compatibility",
+    "eta_l_equals_D_U1_times_8_over_9"
+  ],
+  "blockers_remaining": [
+    "derive Brownian/cumulant normalization from a completed stochastic path integral",
+    "derive the boundary U(1) fluctuation measure rather than only phase-cycle normalization",
+    "derive primitive cyclic monodromy and full stochastic generator before promoting full lepton 8/9"
+  ],
+  "brownian_factor_two_hazard_status": "BROWNIAN_FACTOR_TWO_HAZARD_RECORDED",
+  "candidate_components": [
+    "Brownian_cumulant_normalization_without_extra_factor"
+  ],
+  "conditional_components": [
+    "charged_lepton_active_fraction_8_over_9",
+    "Brownian_generator_channel_rule"
+  ],
+  "derived_components": [
+    "algebraic_identity_e_squared_over_4pi_squared_equals_alpha_over_pi",
+    "eta_l_algebra_given_D_U1_and_active_fraction"
+  ],
+  "does_alpha_over_pi_follow": true,
+  "does_eta_l_8alpha_9pi_follow": true,
+  "does_this_change_official_predictions": false,
+  "does_this_promote_full_lepton_8_9": false,
+  "e_squared": 0.09170123688926637,
+  "forbidden_claims_absent": true,
+  "frozen_predictions_modified": false,
+  "frozen_sanity": {
+    "BHSM_BARE_V1_unchanged": true,
+    "BHSM_DRESSED_V1_CANDIDATE_unchanged": true,
+    "S_unchanged": true,
+    "a_unchanged": true,
+    "changed_rows": [
+      {
+        "bare": 0.008310500554068288,
+        "changed": true,
+        "dressed": 0.004155250277034144,
+        "quantity": "c/t"
+      }
+    ],
+    "ckm_sin_theta_13_unchanged": true,
+    "dressed_branch_changes_only_c_over_t": true,
+    "official_branch_comparison": {
+      "bare_score": {
+        "PASS": 22
+      },
+      "branches": [
+        "BHSM_BARE_V1",
+        "BHSM_DRESSED_V1_CANDIDATE"
+      ],
+      "dressed_score": {
+        "PASS": 21,
+        "SCHEME_SENSITIVE": 1
+      },
+      "no_retuning": true,
+      "rows": [
+        {
+          "bare": 0.008310500554068288,
+          "changed": true,
+          "dressed": 0.004155250277034144,
+          "quantity": "c/t"
+        },
+        {
+          "bare": 1.2690463017606151e-05,
+          "changed": false,
+          "dressed": 1.2690463017606151e-05,
+          "quantity": "u/t"
+        },
+        {
+          "bare": 0.021933971495439474,
+          "changed": false,
+          "dressed": 0.021933971495439474,
+          "quantity": "s/b"
+        },
+        {
+          "bare": 0.0011165200546001757,
+          "changed": false,
+          "dressed": 0.0011165200546001757,
+          "quantity": "d/b"
+        },
+        {
+          "bare": 0.0035623676140463315,
+          "changed": false,
+          "dressed": 0.0035623676140463315,
+          "quantity": "sin_theta_13"
+        }
+      ],
+      "tolerance_bands": {
+        "charged_lepton_ratios": 0.25,
+        "ckm_angles": 0.1,
+        "ckm_cp_jarlskog": 0.1,
+        "exact_status": "pass_fail",
+        "gauge_couplings": 0.01,
+        "higgs_electroweak_v": 0.01,
+        "higgs_mass_zeroth_order": 0.02,
+        "ht_gap": "binary_pass_fail",
+        "pmns_effective": 0.05,
+        "quark_ratios_otherwise": "SCHEME_SENSITIVE",
+        "quark_ratios_scheme_aware": 0.25,
+        "scalar_decoupling": "binary_scaffold_pass_fail"
+      }
+    },
+    "u_over_t_unchanged": true
+  },
+  "hopf_contact_normalization_status": "HOPF_CONTACT_NORMALIZATION_COMPATIBLE",
+  "lepton_active_fraction": {
+    "denominator": 9,
+    "numerator": 8,
+    "value": 0.8888888888888888
+  },
+  "lepton_eta": 0.002064728414019306,
+  "lepton_eta_consequence_status": "LEPTON_8_9_CHANNEL_RULE_PARTIAL_DERIVATION_STRENGTHENED",
+  "missing_assumptions": [
+    "derive Brownian/cumulant normalization from a completed stochastic path integral",
+    "derive the boundary U(1) fluctuation measure rather than only phase-cycle normalization",
+    "derive primitive cyclic monodromy and full stochastic generator before promoting full lepton 8/9"
+  ],
+  "mode_norms": {
+    "electron": 18,
+    "muon": 5,
+    "tau_reference": 0
+  },
+  "normalized_u1_phase_coupling": 0.04819563741431084,
+  "official_outputs_modified": false,
+  "partial_components": [
+    "U1_phase_cycle_normalization",
+    "Hopf_contact_boundary_normalization_compatibility",
+    "alpha_over_pi_stochastic_strength"
+  ],
+  "prs_opened": false,
+  "safe_to_merge_as_candidate_only": true,
+  "sample_lepton_dressing_factors": {
+    "electron": 0.9635170345177995,
+    "muon": 0.9897294638168652,
+    "tau_reference": 1.0
+  },
+  "status_objects": {
+    "alpha_over_pi": {
+      "assumptions": [
+        "rationalized natural units use alpha=e^2/(4*pi)",
+        "the boundary U(1) phase cycle is normalized by 2*pi",
+        "diffusion strength is quadratic in e/(2*pi)"
+      ],
+      "follows": true,
+      "limitations": [
+        "the Brownian cumulant factor convention remains a recorded hazard",
+        "the normalized U(1) phase coupling is compatible with A_q=sigma_3/(2*pi) but not a full stochastic derivation"
+      ],
+      "name": "alpha_over_pi_stochastic_strength",
+      "status": "ALPHA_OVER_PI_STOCHASTIC_STRENGTH_PARTIAL"
+    },
+    "factor_two_hazard": {
+      "assumptions": [
+        "diffusion strength is quadratic in normalized U(1) phase coupling"
+      ],
+      "follows": false,
+      "limitations": [
+        "a full Brownian/cumulant normalization could introduce a factor of 1/2 or 2",
+        "the completed stochastic path-integral normalization is not implemented"
+      ],
+      "name": "brownian_factor_two_hazard",
+      "status": "BROWNIAN_FACTOR_TWO_HAZARD_RECORDED"
+    },
+    "hopf_contact": {
+      "assumptions": [
+        "A_q uses the normalized Hopf/contact form sigma_3/(2*pi)"
+      ],
+      "follows": true,
+      "limitations": [
+        "compatibility is not the same as a full stochastic path-integral proof"
+      ],
+      "name": "hopf_contact_normalization",
+      "status": "HOPF_CONTACT_NORMALIZATION_COMPATIBLE"
+    },
+    "lepton_eta": {
+      "assumptions": [
+        "D_U1=alpha/pi",
+        "charged-lepton active fraction is 8/9"
+      ],
+      "follows": true,
+      "limitations": [
+        "full lepton 8/9 derivation still depends on primitive monodromy and stochastic generator completion",
+        "no frozen lepton output is changed"
+      ],
+      "name": "lepton_eta_8alpha_over_9pi",
+      "status": "LEPTON_8_9_CHANNEL_RULE_PARTIAL_DERIVATION_STRENGTHENED"
+    },
+    "u1_phase": {
+      "assumptions": [
+        "boundary phase cycle has circumference 2*pi"
+      ],
+      "follows": true,
+      "limitations": [
+        "full boundary U(1) stochastic measure is not derived"
+      ],
+      "name": "u1_phase_normalization",
+      "status": "U1_PHASE_NORMALIZATION_PARTIAL"
+    }
+  },
+  "stochastic_strength_from_alpha": 0.002322819465771719,
+  "stochastic_strength_from_phase_coupling": 0.002322819465771719,
+  "u1_phase_normalization_status": "U1_PHASE_NORMALIZATION_PARTIAL"
+}
