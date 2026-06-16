@@ -12,3 +12,4 @@
 | CKM/PMNS interface kernels | structural candidates | candidate interface notes | precision closure | numerical interface-kernel tests |
 | Gauge matching | structural candidate | active-generator count screens | complete RG derivation | higher-loop and threshold matching |
 | SM low-energy input layer | preserved as input | derivation-gate audit | replacement already achieved | derive local gauge, charges, field content, anomaly cancellation, and Lagrangian |
+| Integer primitive anomaly closure | diagnostic candidate | one-generation anomaly sums and Witten parity check | anomaly cancellation derived from first-principles boundary geometry | derive integer primitives and global boundary closure |

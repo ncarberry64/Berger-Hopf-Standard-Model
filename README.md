@@ -67,6 +67,7 @@ Start with:
 - `theory/full_bhsm_completion_results.json`
 - `docs/current_bhsm_status.md`
 - `theory/sm_low_energy_limit_derivation_gate.md`
+- `theory/boundary_integer_anomaly_closure_gate.md`
 
 Candidate master equation:
 
