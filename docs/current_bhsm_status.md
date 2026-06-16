@@ -32,3 +32,5 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 - [SM input dependency audit](../theory/sm_input_dependency_audit.md)
 - [Boundary integer anomaly closure gate](../theory/boundary_integer_anomaly_closure_gate.md)
 - [Boundary-state primitive derivation gate](../theory/boundary_state_primitive_derivation_gate.md)
+- [Boundary projector algebra gate](../theory/boundary_projector_algebra_gate.md)
+- [Finite boundary algebra source gate](../theory/finite_boundary_algebra_source_gate.md)

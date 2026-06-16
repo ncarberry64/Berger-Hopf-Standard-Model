@@ -69,6 +69,8 @@ Start with:
 - `theory/sm_low_energy_limit_derivation_gate.md`
 - `theory/boundary_integer_anomaly_closure_gate.md`
 - `theory/boundary_state_primitive_derivation_gate.md`
+- `theory/boundary_projector_algebra_gate.md`
+- `theory/finite_boundary_algebra_source_gate.md`
 
 Candidate master equation:
 

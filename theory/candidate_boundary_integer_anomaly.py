@@ -294,6 +294,11 @@ Claim labels:
 - Derive anomaly cancellation as global boundary closure consistency.
 - Derive the local gauge group and field content rather than preserving them as infrared inputs.
 - Keep collective-curvature/dark-matter interpretation separate from this particle-sector proof.
+
+## Related Finite Algebra Gate
+
+- [Boundary projector algebra gate](boundary_projector_algebra_gate.md)
+- [Finite boundary algebra source gate](finite_boundary_algebra_source_gate.md)
 """
 
 

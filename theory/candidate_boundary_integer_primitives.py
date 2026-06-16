@@ -213,6 +213,11 @@ Q = sigma/2 + C/6 - ell/2
 - No full Standard Model derivation is claimed.
 - No BHSM replacement claim is made.
 - No full gauge-group derivation is claimed.
+
+## Related Finite Algebra Gate
+
+- [Boundary projector algebra gate](boundary_projector_algebra_gate.md)
+- [Finite boundary algebra source gate](finite_boundary_algebra_source_gate.md)
 """
 
 

@@ -17,3 +17,10 @@
 15. Recover CKM and PMNS as interface kernels.
 
 These obligations must be closed before BHSM can claim replacement by derivation.
+
+## Related Diagnostic Gates
+
+- [Boundary integer charge/hypercharge bridge](boundary_integer_charge_hypercharge_bridge.md)
+- [Boundary integer anomaly closure gate](boundary_integer_anomaly_closure_gate.md)
+- [Boundary projector algebra gate](boundary_projector_algebra_gate.md)
+- [Finite boundary algebra source gate](finite_boundary_algebra_source_gate.md)

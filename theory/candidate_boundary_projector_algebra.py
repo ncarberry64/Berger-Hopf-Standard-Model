@@ -311,6 +311,10 @@ It does not claim BHSM has replaced the Standard Model. It does not claim the fu
 - Derive `S_sigma` from interface orientation.
 - Derive `P_w` from weak-interface activity.
 - Derive local SU(3), SU(2), and U(1) algebras from projector/automorphism structure.
+
+## Related Finite Algebra Gate
+
+- [Finite boundary algebra source gate](finite_boundary_algebra_source_gate.md)
 """
 
 
@@ -343,6 +347,10 @@ e_R:  C=0, ell=1, sigma=-1, w=0
 u_R:  C=1, ell=0, sigma=+1, w=0
 d_R:  C=1, ell=0, sigma=-1, w=0
 ```
+
+## Related Finite Algebra Gate
+
+- [Finite boundary algebra source gate](finite_boundary_algebra_source_gate.md)
 """
 
 
@@ -371,6 +379,10 @@ Future proof obligations:
 - derive `S_sigma` from interface orientation;
 - derive `P_w` from weak-interface activity;
 - derive the local SU(3), SU(2), and U(1) algebras from projector/automorphism structure.
+
+## Related Finite Algebra Gate
+
+- [Finite boundary algebra source gate](finite_boundary_algebra_source_gate.md)
 """
 
 

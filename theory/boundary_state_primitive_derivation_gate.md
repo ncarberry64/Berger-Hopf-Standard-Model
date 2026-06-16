@@ -109,3 +109,8 @@ It does not claim BHSM has replaced the Standard Model. It does not claim the fu
 - Derive `orientation` from boundary orientation/asymmetry.
 - Derive `interface_activity` from boundary interface dynamics and explain its relation to SM chiral doublet/singlet structure.
 - Derive anomaly cancellation from global boundary closure.
+
+## Related Finite Algebra Gate
+
+- [Boundary projector algebra gate](boundary_projector_algebra_gate.md)
+- [Finite boundary algebra source gate](finite_boundary_algebra_source_gate.md)

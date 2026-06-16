@@ -26,3 +26,7 @@ e_R:  C=0, ell=1, sigma=-1, w=0
 u_R:  C=1, ell=0, sigma=+1, w=0
 d_R:  C=1, ell=0, sigma=-1, w=0
 ```
+
+## Related Finite Algebra Gate
+
+- [Finite boundary algebra source gate](finite_boundary_algebra_source_gate.md)

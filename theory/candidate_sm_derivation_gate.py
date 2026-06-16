@@ -227,6 +227,13 @@ BHSM must produce a local infrared effective theory with:
 ## Guardrail
 
 This derivation gate does not claim that BHSM has derived or replaced the Standard Model. The local SM gauge and representation layer remains a preserved infrared input until the obligations listed in `sm_representation_derivation_obligations.md` are closed.
+
+## Integer Primitive And Finite Algebra Gates
+
+- [Boundary integer charge/hypercharge bridge](boundary_integer_charge_hypercharge_bridge.md)
+- [Boundary integer anomaly closure gate](boundary_integer_anomaly_closure_gate.md)
+- [Boundary projector algebra gate](boundary_projector_algebra_gate.md)
+- [Finite boundary algebra source gate](finite_boundary_algebra_source_gate.md)
 """
 
 
@@ -272,6 +279,13 @@ def render_obligations_markdown() -> str:
     lines.extend(f"{i}. {obligation}" for i, obligation in enumerate(REPLACEMENT_OBLIGATIONS, start=1))
     lines.append("")
     lines.append("These obligations must be closed before BHSM can claim replacement by derivation.")
+    lines.append("")
+    lines.append("## Related Diagnostic Gates")
+    lines.append("")
+    lines.append("- [Boundary integer charge/hypercharge bridge](boundary_integer_charge_hypercharge_bridge.md)")
+    lines.append("- [Boundary integer anomaly closure gate](boundary_integer_anomaly_closure_gate.md)")
+    lines.append("- [Boundary projector algebra gate](boundary_projector_algebra_gate.md)")
+    lines.append("- [Finite boundary algebra source gate](finite_boundary_algebra_source_gate.md)")
     return "\n".join(lines) + "\n"
 
 
