@@ -37,3 +37,5 @@ b_scalar = (1/10,1/6,0)
 Guardrail: If the scalar doublet is still conditional in the theorem stack, this is a conditional scalar-sector input.
 
 Status: `BOUNDARY_SCALAR_TRACE_SUMS_DERIVED_CONDITIONAL`.
+
+Follow-up theorem layer: [Theorem discharge: Higgs scalar boundary mechanism](theorem_discharge_higgs_scalar_boundary_mechanism.md).

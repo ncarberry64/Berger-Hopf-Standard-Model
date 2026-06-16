@@ -107,6 +107,8 @@ This branch derives one-loop coefficients conditionally. It does not predict mea
 
 The scalar contribution uses the active scalar orientation doublet as a conditional scalar-sector input.
 
+Follow-up theorem layer: [Theorem discharge: Higgs scalar boundary mechanism](theorem_discharge_higgs_scalar_boundary_mechanism.md) conditionally derives that active scalar orientation doublet from cyclic neutrality, active-orientation breaking, and neutral-vacuum consistency.
+
 ## 17. Impact On Mass/Yukawa/Mixing Theorem
 
 No official mass, Yukawa, or mixing output changes.

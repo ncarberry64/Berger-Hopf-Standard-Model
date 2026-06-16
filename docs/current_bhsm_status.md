@@ -45,6 +45,7 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 - [Theorem discharge: finite algebra and charge operators](../theory/theorem_discharge_finite_algebra_charge.md)
 - [Theorem discharge: boundary trace normalization](../theory/theorem_discharge_boundary_trace_normalization.md)
 - [Theorem discharge: one-loop RG from boundary content](../theory/theorem_discharge_one_loop_rg_boundary_content.md)
+- [Theorem discharge: Higgs scalar boundary mechanism](../theory/theorem_discharge_higgs_scalar_boundary_mechanism.md)
 
 ## Boundary-Action Term Realization Status
 
@@ -61,3 +62,5 @@ The finite-algebra/charge theorem-discharge attempt conditionally derives the fi
 The boundary trace-normalization theorem-discharge attempt conditionally derives `K1=10/3`, `K2=2`, `K3=2`, and `eta_Y=3/5` from boundary rows, boundary multiplicities, conjugate inactive basis, and finite-algebra trace weights. RG running and measured coupling prediction remain open.
 
 The one-loop RG boundary-content theorem-discharge attempt conditionally derives `b1=41/10`, `b2=-19/6`, and `b3=-7` from boundary trace sums, gauge self-interactions, three boundary generations, and the active scalar boundary input. Measured gauge matching and two-loop/threshold running remain open.
+
+The Higgs/scalar boundary-mechanism theorem-discharge attempt conditionally derives the cyclic-neutral active-orientation scalar doublet with `Y=+1`, charges `(+1,0)`, the conjugate doublet, and the electroweak-breaking skeleton. The Higgs mass, VEV, quartic, and Yukawa/mass/mixing derivations remain open.

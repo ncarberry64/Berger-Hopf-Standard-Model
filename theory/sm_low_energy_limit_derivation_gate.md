@@ -50,3 +50,4 @@ This derivation gate does not claim that BHSM has derived or replaced the Standa
 - [Theorem discharge: finite algebra and charge operators](theorem_discharge_finite_algebra_charge.md)
 - [Theorem discharge: boundary trace normalization](theorem_discharge_boundary_trace_normalization.md)
 - [Theorem discharge: one-loop RG from boundary content](theorem_discharge_one_loop_rg_boundary_content.md)
+- [Theorem discharge: Higgs scalar boundary mechanism](theorem_discharge_higgs_scalar_boundary_mechanism.md)

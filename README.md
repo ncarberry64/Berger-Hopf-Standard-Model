@@ -79,6 +79,7 @@ Start with:
 - `theory/theorem_discharge_finite_algebra_charge.md`
 - `theory/theorem_discharge_boundary_trace_normalization.md`
 - `theory/theorem_discharge_one_loop_rg_boundary_content.md`
+- `theory/theorem_discharge_higgs_scalar_boundary_mechanism.md`
 
 Candidate master equation:
 
