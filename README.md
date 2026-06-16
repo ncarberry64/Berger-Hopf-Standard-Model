@@ -78,6 +78,7 @@ Start with:
 - `theory/theorem_discharge_phase_orientation_cyclic.md`
 - `theory/theorem_discharge_finite_algebra_charge.md`
 - `theory/theorem_discharge_boundary_trace_normalization.md`
+- `theory/theorem_discharge_one_loop_rg_boundary_content.md`
 
 Candidate master equation:
 

@@ -38,3 +38,5 @@ k[Tr(F_cyc^2)+Tr(F_orient^2)+eta_Y F_Y^2]
 Guardrail: This does not derive RG running or measured values.
 
 Status: `NORMALIZED_GAUGE_ACTION_SKELETON_DERIVED_CONDITIONAL`.
+
+Follow-up theorem layer: [Theorem discharge: one-loop RG from boundary content](theorem_discharge_one_loop_rg_boundary_content.md).

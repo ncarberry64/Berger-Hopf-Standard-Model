@@ -31,3 +31,4 @@ These obligations must be closed before BHSM can claim replacement by derivation
 - [Theorem discharge: phase, orientation, and cyclic closure](theorem_discharge_phase_orientation_cyclic.md)
 - [Theorem discharge: finite algebra and charge operators](theorem_discharge_finite_algebra_charge.md)
 - [Theorem discharge: boundary trace normalization](theorem_discharge_boundary_trace_normalization.md)
+- [Theorem discharge: one-loop RG from boundary content](theorem_discharge_one_loop_rg_boundary_content.md)

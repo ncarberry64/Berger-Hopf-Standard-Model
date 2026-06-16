@@ -43,3 +43,5 @@ alpha1 = (5/3) alphaY
 Guardrail: This is a normalization theorem, not a measured coupling prediction.
 
 Status: `BOUNDARY_HYPERCHARGE_NORMALIZATION_DERIVED_CONDITIONAL`.
+
+Follow-up theorem layer: [Theorem discharge: one-loop RG from boundary content](theorem_discharge_one_loop_rg_boundary_content.md).

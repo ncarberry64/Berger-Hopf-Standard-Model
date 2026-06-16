@@ -134,6 +134,8 @@ See [Trace Normalization Non-Tautology Audit](trace_normalization_non_tautology_
 
 This branch derives a boundary trace-normalization factor and a coupling-convention relation. It does not derive RG running or measured coupling values.
 
+Follow-up theorem layer: [Theorem discharge: one-loop RG from boundary content](theorem_discharge_one_loop_rg_boundary_content.md) conditionally derives `b1=41/10`, `b2=-19/6`, and `b3=-7` from boundary trace sums, gauge self-interactions, and the active scalar boundary input.
+
 ## 18. Impact On Higgs/Scalar Theorem
 
 No Higgs/scalar theorem is discharged here.
