@@ -122,6 +122,6 @@ It does not claim BHSM has replaced the Standard Model. It does not claim the fu
 - prove the projector decomposition and gap hierarchy;
 - prove or reject exclusion of higher closures from low-energy fundamental sectors.
 
-## Related Second-Variation Audit
+## Related Theorem Scaffold
 
-The [Boundary Action Second-Variation Audit](boundary_action_second_variation_audit.md) computes local candidate Hessian coefficients for the finite term realizations and connects them back to this projector scaffold diagnostically.
+See [Theorem-Level Boundary Action Derivation Scaffold](theorem_level_boundary_action_derivation.md) for the explicit axiom and proof-obligation ledger needed to upgrade this Hessian scaffold.

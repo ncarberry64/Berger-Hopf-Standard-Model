@@ -109,10 +109,6 @@ It also does not make a replacement claim for BHSM, does not make a full gauge-g
 - Derive the Hessian projector decomposition from the complete second variation.
 - Prove the topographic stability operator and excess gap from the full action rather than a diagnostic surrogate.
 
-## Related Second-Variation Audit
-
-The next diagnostic layer is [Boundary Action Second-Variation Audit](boundary_action_second_variation_audit.md), which computes local quadratic coefficients for these finite surrogate functionals while keeping the full Berger-Hopf Hessian proof open.
-
 ## Claim Labels
 
 - BOUNDARY_ACTION_TERM_REALIZATION_AUDIT_COMPLETE
@@ -126,3 +122,7 @@ The next diagnostic layer is [Boundary Action Second-Variation Audit](boundary_a
 - FULL_SM_DERIVATION_NOT_CLAIMED
 - FROZEN_PREDICTIONS_UNCHANGED
 - OFFICIAL_PREDICTIONS_UNCHANGED
+
+## Related Theorem Scaffold
+
+See [Theorem-Level Boundary Action Derivation Scaffold](theorem_level_boundary_action_derivation.md) for the axiom, theorem, lemma, proof-obligation, and non-tautology ledger that begins the theorem-level upgrade path.

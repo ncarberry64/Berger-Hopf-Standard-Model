@@ -140,6 +140,8 @@ Boundary-action status: the current development line includes a candidate bounda
 
 Second-variation status: the follow-on audit computes local Hessian coefficients for the finite boundary-action surrogates and supports the projector scaffold diagnostically. It does not complete the full Berger-Hopf Hessian proof.
 
+Theorem-level boundary status: the current scaffold separates Berger-Hopf boundary axioms, theorem statements, lemmas, proof obligations, and non-tautology risks. It does not claim the boundary action, full Hessian, closure spectrum, finite algebra, or charge/anomaly bridge are fully derived.
+
 ## Citation / DOI
 
 Use `CITATION.cff` for citation metadata. Zenodo metadata is recorded in `.zenodo.json`; do not create or edit external release metadata without explicit author instruction.
