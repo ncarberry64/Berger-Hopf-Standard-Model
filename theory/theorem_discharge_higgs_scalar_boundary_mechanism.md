@@ -106,6 +106,8 @@ No Yukawa, mass, or mixing theorem is completed here.
 
 Follow-up theorem layer: [Theorem discharge: Yukawa operator closure](theorem_discharge_yukawa_operator_closure.md) uses the derived scalar and conjugate scalar doublets to conditionally derive the renormalizable boundary Yukawa operator skeleton. Numerical Yukawa values, mass ratios, and CKM/PMNS mixing remain open.
 
+Further follow-up: [Theorem discharge: Yukawa overlap texture source](theorem_discharge_yukawa_overlap_texture_source.md) uses the same scalar insertions to define symbolic boundary-overlap matrix scaffolds without changing official predictions.
+
 ## 20. What This Achieves
 
 This branch conditionally discharges the Higgs/scalar boundary-mechanism theorem layer. Boundary cyclic preservation requires C=0, active-orientation breaking requires a fundamental orientation doublet, and neutral-vacuum consistency under Q=T3+Y/2 selects Y=+1 up to conjugation. The resulting scalar has component charges (+1,0), admits a neutral vacuum preserving U(1)_Q, and yields the electroweak-breaking skeleton SU(2)_orient x U(1)_Y -> U(1)_Q. The representation source for the scalar contribution used in the one-loop RG theorem is therefore derived conditionally from BHSM boundary constraints.

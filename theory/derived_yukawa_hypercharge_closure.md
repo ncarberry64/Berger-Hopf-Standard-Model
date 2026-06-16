@@ -15,3 +15,5 @@ A_ref + H + S_ref_neutral:
 ```
 
 Status: `YUKAWA_HYPERCHARGE_CLOSURE_DERIVED_CONDITIONAL`.
+
+Follow-up: [Theorem discharge: Yukawa overlap texture source](theorem_discharge_yukawa_overlap_texture_source.md) preserves these hypercharge-closed classes when building symbolic Yukawa matrix scaffolds. Numerical overlap values remain open.

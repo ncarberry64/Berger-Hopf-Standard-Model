@@ -81,6 +81,7 @@ Start with:
 - `theory/theorem_discharge_one_loop_rg_boundary_content.md`
 - `theory/theorem_discharge_higgs_scalar_boundary_mechanism.md`
 - `theory/theorem_discharge_yukawa_operator_closure.md`
+- `theory/theorem_discharge_yukawa_overlap_texture_source.md`
 
 Candidate master equation:
 
@@ -151,6 +152,8 @@ Theorem-level boundary status: the current scaffold separates Berger-Hopf bounda
 Primitive closure discharge status: the current theorem-discharge branch conditionally derives positive integer phase admissibility, the minimal orientation sector `d=2`, the minimal non-involutive cyclic sector `d=3`, and primitive closure selectors `{1,2,3}`. Downstream Standard Model derivation and replacement readiness remain open.
 
 Yukawa operator-closure status: the current theorem-discharge branch conditionally derives exactly four renormalizable boundary Yukawa closure classes from boundary hypercharge closure, active-orientation contraction, cyclic/reference contraction, and the derived scalar/conjugate scalar doublets. Numerical Yukawa values, fermion mass ratios, CKM/PMNS mixing, and replacement readiness remain open.
+
+Yukawa overlap texture-source status: the current theorem-discharge branch conditionally lifts those four operator classes to symbolic 3x3 boundary-overlap Yukawa matrix scaffolds with `M_f=vY_f/sqrt(2)`. Numerical overlap values, fermion mass ratios, CKM/PMNS mixing, and replacement readiness remain open.
 
 ## Citation / DOI
 

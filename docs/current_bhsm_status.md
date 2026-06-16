@@ -47,6 +47,7 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 - [Theorem discharge: one-loop RG from boundary content](../theory/theorem_discharge_one_loop_rg_boundary_content.md)
 - [Theorem discharge: Higgs scalar boundary mechanism](../theory/theorem_discharge_higgs_scalar_boundary_mechanism.md)
 - [Theorem discharge: Yukawa operator closure](../theory/theorem_discharge_yukawa_operator_closure.md)
+- [Theorem discharge: Yukawa overlap texture source](../theory/theorem_discharge_yukawa_overlap_texture_source.md)
 
 ## Boundary-Action Term Realization Status
 
@@ -67,3 +68,5 @@ The one-loop RG boundary-content theorem-discharge attempt conditionally derives
 The Higgs/scalar boundary-mechanism theorem-discharge attempt conditionally derives the cyclic-neutral active-orientation scalar doublet with `Y=+1`, charges `(+1,0)`, the conjugate doublet, and the electroweak-breaking skeleton. The Higgs mass, VEV, quartic, and Yukawa/mass/mixing derivations remain open.
 
 The Yukawa operator-closure theorem-discharge attempt conditionally derives exactly four renormalizable boundary Yukawa closure classes from boundary hypercharge closure, active-orientation contraction, cyclic/reference contraction, and the derived scalar/conjugate scalar doublets. Numerical Yukawa values, fermion mass ratios, CKM/PMNS mixing, and replacement readiness remain open.
+
+The Yukawa overlap texture-source theorem-discharge attempt conditionally lifts those four boundary operator classes to symbolic 3x3 boundary-overlap Yukawa matrix scaffolds and the symbolic relation `M_f=vY_f/sqrt(2)`. Numerical overlap values, fermion mass ratios, CKM/PMNS mixing, and replacement readiness remain open.

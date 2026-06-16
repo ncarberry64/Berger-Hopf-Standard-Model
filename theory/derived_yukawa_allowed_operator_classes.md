@@ -8,3 +8,5 @@
 | reference_neutral_closure | A_ref | H | S_ref_neutral | 0 | True | True | ALLOWED_BOUNDARY_YUKAWA_OPERATOR |
 
 Status: `YUKAWA_ALLOWED_OPERATOR_CLASSES_DERIVED_CONDITIONAL`.
+
+Follow-up: [Theorem discharge: Yukawa overlap texture source](theorem_discharge_yukawa_overlap_texture_source.md) uses these four allowed classes as parent operator classes for symbolic 3x3 boundary-overlap Yukawa matrix scaffolds. This does not derive numerical Yukawa values, mass ratios, or mixing matrices.
