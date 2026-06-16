@@ -136,6 +136,8 @@ Allowed public language includes:
 
 Forbidden public language includes claims that BHSM proves or has replaced the Standard Model, solves dark matter, disproves particle dark matter, closes the mass engine, or derives all Standard Model constants.
 
+Boundary-action status: the current development line includes a candidate boundary action term-realization audit for the Hessian scaffold. It supports the closure-spectrum route diagnostically, while the full Berger-Hopf boundary action and full Hessian proof remain open.
+
 ## Citation / DOI
 
 Use `CITATION.cff` for citation metadata. Zenodo metadata is recorded in `.zenodo.json`; do not create or edit external release metadata without explicit author instruction.

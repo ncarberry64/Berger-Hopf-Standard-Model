@@ -43,3 +43,7 @@ mu_excess >= gap
 | P_excess | >=4 | higher/composite/excess closure | false | 10 | gapped/excess | higher/composite |
 
 Required guardrail: this is a candidate Hessian decomposition, not the full Hessian proof.
+
+## Related Candidate Term Realization
+
+The companion [Boundary Action Term Realization Audit](boundary_action_term_realization_audit.md) realizes the action-term labels as finite diagnostics that support this projector decomposition while leaving the full Hessian proof open.

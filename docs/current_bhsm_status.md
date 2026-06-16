@@ -38,3 +38,8 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 - [Admissible boundary closure spectrum gate](../theory/admissible_boundary_closure_spectrum_gate.md)
 - [Closure spectrum selection rule audit](../theory/closure_spectrum_selection_rule_audit.md)
 - [Boundary action Hessian scaffold gate](../theory/boundary_action_hessian_scaffold_gate.md)
+- [Boundary action term realization audit](../theory/boundary_action_term_realization_audit.md)
+
+## Boundary-Action Term Realization Status
+
+The boundary action term-realization audit is a candidate diagnostic layer. It gives finite phase, orientation, cyclic-channel, topographic, and excess functionals for the Hessian scaffold, but the full Berger-Hopf boundary action and full Hessian proof remain open.
