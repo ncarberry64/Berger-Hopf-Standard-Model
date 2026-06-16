@@ -113,6 +113,8 @@ Follow-up theorem layer: [Theorem discharge: Higgs scalar boundary mechanism](th
 
 No official mass, Yukawa, or mixing output changes.
 
+Follow-up theorem layer: [Theorem discharge: Yukawa operator closure](theorem_discharge_yukawa_operator_closure.md) conditionally derives the renormalizable boundary Yukawa operator skeleton. Numerical Yukawa values, mass ratios, and CKM/PMNS mixing remain open.
+
 ## 18. What This Achieves
 
 This branch conditionally discharges the one-loop RG theorem layer. Given the previously derived boundary trace normalization, boundary gauge algebra, three-generation branch structure, and active scalar orientation doublet input, the exact one-loop beta coefficients are b1=41/10, b2=-19/6, and b3=-7 under the convention dg_i/dln(mu)=b_i g_i^3/(16 pi^2). The coefficients are derived from BHSM boundary trace sums and gauge self-interaction terms rather than imported from a Standard Model beta-coefficient table.
