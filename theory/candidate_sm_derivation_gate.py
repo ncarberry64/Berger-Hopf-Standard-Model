@@ -236,6 +236,7 @@ This derivation gate does not claim that BHSM has derived or replaced the Standa
 - [Finite boundary algebra source gate](finite_boundary_algebra_source_gate.md)
 - [Boundary automorphism closure origin gate](boundary_automorphism_closure_origin_gate.md)
 - [Admissible boundary closure spectrum gate](admissible_boundary_closure_spectrum_gate.md)
+- [Closure spectrum selection rule audit](closure_spectrum_selection_rule_audit.md)
 """
 
 
@@ -290,6 +291,7 @@ def render_obligations_markdown() -> str:
     lines.append("- [Finite boundary algebra source gate](finite_boundary_algebra_source_gate.md)")
     lines.append("- [Boundary automorphism closure origin gate](boundary_automorphism_closure_origin_gate.md)")
     lines.append("- [Admissible boundary closure spectrum gate](admissible_boundary_closure_spectrum_gate.md)")
+    lines.append("- [Closure spectrum selection rule audit](closure_spectrum_selection_rule_audit.md)")
     return "\n".join(lines) + "\n"
 
 

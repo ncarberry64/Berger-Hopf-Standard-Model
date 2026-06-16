@@ -23,3 +23,7 @@ Guardrails:
 - This is not a final derivation.
 - It is a diagnostic minimal admissibility filter for the present BHSM bridge.
 - Future work must derive it from the boundary action and global phase constraints.
+
+## Related Selection Rule Audit
+
+- [Closure spectrum selection rule audit](closure_spectrum_selection_rule_audit.md)

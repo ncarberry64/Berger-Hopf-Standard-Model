@@ -111,3 +111,7 @@ It does not claim BHSM has replaced the Standard Model. It does not claim the fu
 - Derive the topographic stability filter from the complete Berger-Hopf boundary Hessian.
 - Prove or reject uniqueness of the closure spectrum beyond the diagnostic `{1,2,3}` bridge.
 - Show whether nearby closure dimensions are excluded by the full action rather than by this diagnostic rule.
+
+## Related Selection Rule Audit
+
+- [Closure spectrum selection rule audit](closure_spectrum_selection_rule_audit.md)

@@ -25,3 +25,7 @@ Interpretation:
 - `d=3` corresponds to three-channel stable closure.
 
 Required guardrail: the full stability derivation requires the complete Berger-Hopf boundary Hessian and cannot be claimed closed here.
+
+## Related Selection Rule Audit
+
+- [Closure spectrum selection rule audit](closure_spectrum_selection_rule_audit.md)
