@@ -28,4 +28,4 @@ These obligations must be closed before BHSM can claim replacement by derivation
 - [Admissible boundary closure spectrum gate](admissible_boundary_closure_spectrum_gate.md)
 - [Closure spectrum selection rule audit](closure_spectrum_selection_rule_audit.md)
 - [Boundary action Hessian scaffold gate](boundary_action_hessian_scaffold_gate.md)
-- [Boundary action term realization audit](boundary_action_term_realization_audit.md)
+- [Boundary action second-variation audit](boundary_action_second_variation_audit.md)

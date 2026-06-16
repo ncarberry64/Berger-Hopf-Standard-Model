@@ -99,4 +99,4 @@ It does not claim BHSM has replaced the Standard Model. It does not claim the fu
 ## Related Action/Hessian Scaffold
 
 - [Boundary action Hessian scaffold gate](boundary_action_hessian_scaffold_gate.md)
-- [Boundary action term realization audit](boundary_action_term_realization_audit.md)
+- [Boundary action second-variation audit](boundary_action_second_variation_audit.md)

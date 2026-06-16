@@ -12,3 +12,5 @@ The 3-cycle permutation matrix passes `U^3=I`. The minimality diagnostic identif
 This is not a full `SU(3)` derivation.
 
 Status: `CYCLIC_CHANNEL_FUNCTIONAL_CANDIDATE`.
+
+Related: [Cyclic-channel second variation](cyclic_channel_second_variation.md).

@@ -122,6 +122,6 @@ It does not claim BHSM has replaced the Standard Model. It does not claim the fu
 - prove the projector decomposition and gap hierarchy;
 - prove or reject exclusion of higher closures from low-energy fundamental sectors.
 
-## Related Candidate Term Realization
+## Related Second-Variation Audit
 
-The next diagnostic layer is [Boundary Action Term Realization Audit](boundary_action_term_realization_audit.md), which gives finite candidate functionals for the action-term labels while keeping the boundary-action and Hessian proof obligations open.
+The [Boundary Action Second-Variation Audit](boundary_action_second_variation_audit.md) computes local candidate Hessian coefficients for the finite term realizations and connects them back to this projector scaffold diagnostically.

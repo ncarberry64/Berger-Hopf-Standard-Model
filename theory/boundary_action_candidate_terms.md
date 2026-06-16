@@ -20,7 +20,3 @@ S_phase
 | S_excess | gap penalty for higher/composite closures | gap penalty for sectors outside the low-energy branch budget | first-principles derivation from boundary action |
 
 Guardrail: these terms are not yet derived from first principles. They are a scaffold for the next proof.
-
-## Related Candidate Term Realization
-
-See [Boundary Action Term Realization Audit](boundary_action_term_realization_audit.md) for explicit diagnostic functionals realizing these catalog terms without upgrading them to a completed boundary-action derivation.

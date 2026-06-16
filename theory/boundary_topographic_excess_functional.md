@@ -28,3 +28,5 @@ S_excess(d) = gamma * max(d - 3, 0)^2
 Guardrail: higher `d` values are gapped/excess in the candidate low-energy scaffold, not impossible.
 
 Status: `TOPOGRAPHIC_EXCESS_GAP_FUNCTIONAL_CANDIDATE`.
+
+Related: [Topographic/excess Hessian bridge](topographic_excess_hessian_bridge.md).

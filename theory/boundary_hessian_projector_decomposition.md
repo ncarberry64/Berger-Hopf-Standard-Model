@@ -44,6 +44,6 @@ mu_excess >= gap
 
 Required guardrail: this is a candidate Hessian decomposition, not the full Hessian proof.
 
-## Related Candidate Term Realization
+## Related Second-Variation Audit
 
-The companion [Boundary Action Term Realization Audit](boundary_action_term_realization_audit.md) realizes the action-term labels as finite diagnostics that support this projector decomposition while leaving the full Hessian proof open.
+The [Boundary Action Second-Variation Audit](boundary_action_second_variation_audit.md) computes the local candidate Hessian coefficients for the finite action-term diagnostics supporting this decomposition.

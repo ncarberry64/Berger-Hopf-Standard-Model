@@ -138,6 +138,8 @@ Forbidden public language includes claims that BHSM proves or has replaced the S
 
 Boundary-action status: the current development line includes a candidate boundary action term-realization audit for the Hessian scaffold. It supports the closure-spectrum route diagnostically, while the full Berger-Hopf boundary action and full Hessian proof remain open.
 
+Second-variation status: the follow-on audit computes local Hessian coefficients for the finite boundary-action surrogates and supports the projector scaffold diagnostically. It does not complete the full Berger-Hopf Hessian proof.
+
 ## Citation / DOI
 
 Use `CITATION.cff` for citation metadata. Zenodo metadata is recorded in `.zenodo.json`; do not create or edit external release metadata without explicit author instruction.

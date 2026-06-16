@@ -22,3 +22,5 @@ Interpretation:
 - not a full `SU(2)` derivation.
 
 Status: `ORIENTATION_INVOLUTION_FUNCTIONAL_CANDIDATE`.
+
+Related: [Orientation involution second variation](orientation_involution_second_variation.md).

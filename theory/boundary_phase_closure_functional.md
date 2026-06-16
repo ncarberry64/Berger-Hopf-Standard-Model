@@ -13,3 +13,5 @@ Using `|exp(i x)-1|^2 = (cos x - 1)^2 + sin(x)^2`, the diagnostic is nonnegative
 - This enforces closure but does not alone select `d=1,2,3`.
 
 Status: `PHASE_CLOSURE_FUNCTIONAL_CANDIDATE`.
+
+Related: [Phase closure second variation](phase_closure_second_variation.md).
