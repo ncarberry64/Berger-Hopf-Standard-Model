@@ -31,3 +31,4 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 - [SM low-energy limit derivation gate](../theory/sm_low_energy_limit_derivation_gate.md)
 - [SM input dependency audit](../theory/sm_input_dependency_audit.md)
 - [Boundary integer anomaly closure gate](../theory/boundary_integer_anomaly_closure_gate.md)
+- [Boundary-state primitive derivation gate](../theory/boundary_state_primitive_derivation_gate.md)
