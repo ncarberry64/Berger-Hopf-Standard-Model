@@ -75,6 +75,8 @@ Start with:
 - `theory/admissible_boundary_closure_spectrum_gate.md`
 - `theory/closure_spectrum_selection_rule_audit.md`
 - `theory/boundary_action_hessian_scaffold_gate.md`
+- `theory/theorem_discharge_phase_orientation_cyclic.md`
+- `theory/theorem_discharge_finite_algebra_charge.md`
 
 Candidate master equation:
 
