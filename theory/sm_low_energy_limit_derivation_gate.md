@@ -45,3 +45,4 @@ This derivation gate does not claim that BHSM has derived or replaced the Standa
 - [Boundary automorphism closure origin gate](boundary_automorphism_closure_origin_gate.md)
 - [Admissible boundary closure spectrum gate](admissible_boundary_closure_spectrum_gate.md)
 - [Closure spectrum selection rule audit](closure_spectrum_selection_rule_audit.md)
+- [Boundary action Hessian scaffold gate](boundary_action_hessian_scaffold_gate.md)

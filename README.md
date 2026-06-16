@@ -74,6 +74,7 @@ Start with:
 - `theory/boundary_automorphism_closure_origin_gate.md`
 - `theory/admissible_boundary_closure_spectrum_gate.md`
 - `theory/closure_spectrum_selection_rule_audit.md`
+- `theory/boundary_action_hessian_scaffold_gate.md`
 
 Candidate master equation:
 

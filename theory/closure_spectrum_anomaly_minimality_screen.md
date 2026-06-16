@@ -14,3 +14,7 @@ The smallest closure dimensions supplying those are:
 ```
 
 This is not a proof of uniqueness, but it supports minimality.
+
+## Related Action/Hessian Scaffold
+
+- [Boundary action Hessian scaffold gate](boundary_action_hessian_scaffold_gate.md)

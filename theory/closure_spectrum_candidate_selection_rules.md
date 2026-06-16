@@ -37,3 +37,7 @@ The selected low-energy closure spectrum must support the integer primitive char
 ```
 
 Guardrail: none of these rules is yet a full derivation from the action. They are candidate screens.
+
+## Related Action/Hessian Scaffold
+
+- [Boundary action Hessian scaffold gate](boundary_action_hessian_scaffold_gate.md)

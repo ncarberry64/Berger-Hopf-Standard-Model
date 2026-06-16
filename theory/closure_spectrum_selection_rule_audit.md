@@ -95,3 +95,7 @@ It does not claim BHSM has replaced the Standard Model. It does not claim the fu
 - derive the reducibility screen from admissible closure composition;
 - derive the topographic branch screen from the full Hessian;
 - prove or reject whether higher prime closures are excluded, excited, or physically irrelevant.
+
+## Related Action/Hessian Scaffold
+
+- [Boundary action Hessian scaffold gate](boundary_action_hessian_scaffold_gate.md)

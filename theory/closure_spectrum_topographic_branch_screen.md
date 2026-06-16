@@ -22,3 +22,7 @@ d>=4 -> higher/composite unsupported by this branch screen
 ```
 
 Guardrail: this is not a full Hessian proof. The complete proof requires deriving the branch spectrum and closure dimensions from the actual Berger-Hopf Hessian and boundary conditions.
+
+## Related Action/Hessian Scaffold
+
+- [Boundary action Hessian scaffold gate](boundary_action_hessian_scaffold_gate.md)

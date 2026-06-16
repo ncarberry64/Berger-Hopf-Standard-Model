@@ -14,3 +14,7 @@ Diagnostic reducibility screen for `d=1..8`:
 | 8 | composite/product-like closure | composite/reducible under current primitive set | higher_or_composite_unsupported | composite_not_needed_for_minimal_charge_anomaly_bridge | false | screened as composite or higher excitation candidate |
 
 Careful status: `d=5` and `d=7` are unsupported by current low-energy minimality screens, not impossible.
+
+## Related Action/Hessian Scaffold
+
+- [Boundary action Hessian scaffold gate](boundary_action_hessian_scaffold_gate.md)

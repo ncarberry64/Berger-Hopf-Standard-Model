@@ -356,6 +356,10 @@ It does not claim BHSM has replaced the Standard Model. It does not claim the fu
 - derive the reducibility screen from admissible closure composition;
 - derive the topographic branch screen from the full Hessian;
 - prove or reject whether higher prime closures are excluded, excited, or physically irrelevant.
+
+## Related Action/Hessian Scaffold
+
+- [Boundary action Hessian scaffold gate](boundary_action_hessian_scaffold_gate.md)
 """
 
 
@@ -399,6 +403,10 @@ The selected low-energy closure spectrum must support the integer primitive char
 ```
 
 Guardrail: none of these rules is yet a full derivation from the action. They are candidate screens.
+
+## Related Action/Hessian Scaffold
+
+- [Boundary action Hessian scaffold gate](boundary_action_hessian_scaffold_gate.md)
 """
 
 
@@ -410,6 +418,10 @@ Diagnostic reducibility screen for `d=1..8`:
 {_audit_table()}
 
 Careful status: `d=5` and `d=7` are unsupported by current low-energy minimality screens, not impossible.
+
+## Related Action/Hessian Scaffold
+
+- [Boundary action Hessian scaffold gate](boundary_action_hessian_scaffold_gate.md)
 """
 
 
@@ -438,6 +450,10 @@ d>=4 -> higher/composite unsupported by this branch screen
 ```
 
 Guardrail: this is not a full Hessian proof. The complete proof requires deriving the branch spectrum and closure dimensions from the actual Berger-Hopf Hessian and boundary conditions.
+
+## Related Action/Hessian Scaffold
+
+- [Boundary action Hessian scaffold gate](boundary_action_hessian_scaffold_gate.md)
 """
 
 
@@ -458,6 +474,10 @@ The smallest closure dimensions supplying those are:
 ```
 
 This is not a proof of uniqueness, but it supports minimality.
+
+## Related Action/Hessian Scaffold
+
+- [Boundary action Hessian scaffold gate](boundary_action_hessian_scaffold_gate.md)
 """
 
 
