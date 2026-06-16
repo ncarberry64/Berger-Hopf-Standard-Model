@@ -82,6 +82,7 @@ Start with:
 - `theory/theorem_discharge_higgs_scalar_boundary_mechanism.md`
 - `theory/theorem_discharge_yukawa_operator_closure.md`
 - `theory/theorem_discharge_yukawa_overlap_texture_source.md`
+- `theory/theorem_discharge_yukawa_overlap_kernel_selection.md`
 
 Candidate master equation:
 
@@ -154,6 +155,8 @@ Primitive closure discharge status: the current theorem-discharge branch conditi
 Yukawa operator-closure status: the current theorem-discharge branch conditionally derives exactly four renormalizable boundary Yukawa closure classes from boundary hypercharge closure, active-orientation contraction, cyclic/reference contraction, and the derived scalar/conjugate scalar doublets. Numerical Yukawa values, fermion mass ratios, CKM/PMNS mixing, and replacement readiness remain open.
 
 Yukawa overlap texture-source status: the current theorem-discharge branch conditionally lifts those four operator classes to symbolic 3x3 boundary-overlap Yukawa matrix scaffolds with `M_f=vY_f/sqrt(2)`. Numerical overlap values, fermion mass ratios, CKM/PMNS mixing, and replacement readiness remain open.
+
+Yukawa overlap-kernel selection status: the current theorem-discharge branch conditionally classifies leading diagonal overlap sources and conditional off-diagonal overlap sources from mode alignment and diagnostic mode distances. Numerical overlap values, fermion mass ratios, CKM/PMNS mixing, and replacement readiness remain open.
 
 ## Citation / DOI
 

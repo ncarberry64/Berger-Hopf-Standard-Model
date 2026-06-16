@@ -136,6 +136,8 @@ See [Yukawa Overlap Non-Tautology Audit](yukawa_overlap_non_tautology_audit.md).
 
 The mass problem is narrowed to deriving symbolic overlap values and their hierarchy. No mass ratio is changed or predicted in this branch.
 
+Follow-up theorem layer: [Theorem discharge: Yukawa overlap-kernel selection](theorem_discharge_yukawa_overlap_kernel_selection.md) conditionally classifies diagonal entries as leading self-overlap sources and off-diagonal entries as conditional transport/mixing/dressing sources. Numerical overlap values remain open.
+
 ## 16. Impact On CKM/PMNS Theorem
 
 The branch defines diagonalization and mixing scaffolds only. No measured mixing value is derived.

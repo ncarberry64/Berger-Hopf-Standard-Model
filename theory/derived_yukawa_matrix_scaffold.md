@@ -61,3 +61,5 @@
 - numerical value status: `NUMERICAL_VALUE_NOT_DERIVED`
 
 Status: `YUKAWA_MATRIX_SCAFFOLD_DERIVED_CONDITIONAL`.
+
+Follow-up: [Theorem discharge: Yukawa overlap-kernel selection](theorem_discharge_yukawa_overlap_kernel_selection.md) classifies each symbolic matrix entry as leading diagonal or conditional off-diagonal without assigning numerical values.

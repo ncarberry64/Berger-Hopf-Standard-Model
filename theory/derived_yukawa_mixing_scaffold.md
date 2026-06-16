@@ -26,3 +26,5 @@ Guardrails:
 - this branch only defines the scaffold that future overlap values feed into.
 
 Status: `YUKAWA_MIXING_SCAFFOLD_DERIVED_CONDITIONAL`.
+
+Follow-up: [Theorem discharge: Yukawa overlap-kernel selection](theorem_discharge_yukawa_overlap_kernel_selection.md) records off-diagonal overlap entries as conditional symbolic mixing sources. It does not derive CKM or PMNS values.

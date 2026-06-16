@@ -72,6 +72,8 @@ The operator classes are narrowed; numerical couplings and hierarchy remain open
 
 Follow-up theorem layer: [Theorem discharge: Yukawa overlap texture source](theorem_discharge_yukawa_overlap_texture_source.md) conditionally lifts these four operator classes to symbolic 3x3 boundary-overlap matrix scaffolds. Numerical overlap values, mass ratios, and mixing remain open.
 
+Further follow-up: [Theorem discharge: Yukawa overlap-kernel selection](theorem_discharge_yukawa_overlap_kernel_selection.md) classifies leading diagonal and conditional off-diagonal overlap sources without changing official predictions.
+
 ## 16. Impact On CKM/PMNS Theorem
 
 Mixing matrices are not derived in this branch.

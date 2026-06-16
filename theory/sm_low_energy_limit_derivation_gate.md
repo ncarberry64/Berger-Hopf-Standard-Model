@@ -53,3 +53,4 @@ This derivation gate does not claim that BHSM has derived or replaced the Standa
 - [Theorem discharge: Higgs scalar boundary mechanism](theorem_discharge_higgs_scalar_boundary_mechanism.md)
 - [Theorem discharge: Yukawa operator closure](theorem_discharge_yukawa_operator_closure.md)
 - [Theorem discharge: Yukawa overlap texture source](theorem_discharge_yukawa_overlap_texture_source.md)
+- [Theorem discharge: Yukawa overlap-kernel selection](theorem_discharge_yukawa_overlap_kernel_selection.md)

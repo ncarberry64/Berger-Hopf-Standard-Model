@@ -35,3 +35,4 @@ These obligations must be closed before BHSM can claim replacement by derivation
 - [Theorem discharge: Higgs scalar boundary mechanism](theorem_discharge_higgs_scalar_boundary_mechanism.md)
 - [Theorem discharge: Yukawa operator closure](theorem_discharge_yukawa_operator_closure.md)
 - [Theorem discharge: Yukawa overlap texture source](theorem_discharge_yukawa_overlap_texture_source.md)
+- [Theorem discharge: Yukawa overlap-kernel selection](theorem_discharge_yukawa_overlap_kernel_selection.md)
