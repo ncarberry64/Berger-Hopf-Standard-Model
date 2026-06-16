@@ -34,3 +34,4 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 - [Boundary-state primitive derivation gate](../theory/boundary_state_primitive_derivation_gate.md)
 - [Boundary projector algebra gate](../theory/boundary_projector_algebra_gate.md)
 - [Finite boundary algebra source gate](../theory/finite_boundary_algebra_source_gate.md)
+- [Boundary automorphism closure origin gate](../theory/boundary_automorphism_closure_origin_gate.md)

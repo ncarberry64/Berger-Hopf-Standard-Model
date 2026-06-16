@@ -26,3 +26,4 @@ Future proof obligations:
 ## Related Finite Algebra Gate
 
 - [Finite boundary algebra source gate](finite_boundary_algebra_source_gate.md)
+- [Boundary automorphism closure origin gate](boundary_automorphism_closure_origin_gate.md)

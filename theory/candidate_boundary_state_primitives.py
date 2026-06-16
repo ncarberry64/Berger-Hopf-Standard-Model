@@ -349,6 +349,7 @@ It does not claim BHSM has replaced the Standard Model. It does not claim the fu
 
 - [Boundary projector algebra gate](boundary_projector_algebra_gate.md)
 - [Finite boundary algebra source gate](finite_boundary_algebra_source_gate.md)
+- [Boundary automorphism closure origin gate](boundary_automorphism_closure_origin_gate.md)
 """
 
 

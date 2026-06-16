@@ -71,6 +71,7 @@ Start with:
 - `theory/boundary_state_primitive_derivation_gate.md`
 - `theory/boundary_projector_algebra_gate.md`
 - `theory/finite_boundary_algebra_source_gate.md`
+- `theory/boundary_automorphism_closure_origin_gate.md`
 
 Candidate master equation:
 

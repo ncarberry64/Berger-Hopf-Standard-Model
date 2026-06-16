@@ -315,6 +315,7 @@ It does not claim BHSM has replaced the Standard Model. It does not claim the fu
 ## Related Finite Algebra Gate
 
 - [Finite boundary algebra source gate](finite_boundary_algebra_source_gate.md)
+- [Boundary automorphism closure origin gate](boundary_automorphism_closure_origin_gate.md)
 """
 
 
@@ -351,6 +352,7 @@ d_R:  C=1, ell=0, sigma=-1, w=0
 ## Related Finite Algebra Gate
 
 - [Finite boundary algebra source gate](finite_boundary_algebra_source_gate.md)
+- [Boundary automorphism closure origin gate](boundary_automorphism_closure_origin_gate.md)
 """
 
 
@@ -383,6 +385,7 @@ Future proof obligations:
 ## Related Finite Algebra Gate
 
 - [Finite boundary algebra source gate](finite_boundary_algebra_source_gate.md)
+- [Boundary automorphism closure origin gate](boundary_automorphism_closure_origin_gate.md)
 """
 
 

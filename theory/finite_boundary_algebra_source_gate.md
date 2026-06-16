@@ -141,3 +141,7 @@ It does not claim BHSM has replaced the Standard Model. It does not claim the fu
 - Derive `S_sigma` as a geometric orientation grading.
 - Derive the local gauge algebras from the finite boundary algebra and automorphism structure.
 - Prove topographic stability selects this finite algebra rather than nearby alternatives.
+
+## Related Automorphism Closure Gate
+
+- [Boundary automorphism closure origin gate](boundary_automorphism_closure_origin_gate.md)

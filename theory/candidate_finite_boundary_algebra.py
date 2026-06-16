@@ -412,6 +412,10 @@ It does not claim BHSM has replaced the Standard Model. It does not claim the fu
 - Derive `S_sigma` as a geometric orientation grading.
 - Derive the local gauge algebras from the finite boundary algebra and automorphism structure.
 - Prove topographic stability selects this finite algebra rather than nearby alternatives.
+
+## Related Automorphism Closure Gate
+
+- [Boundary automorphism closure origin gate](boundary_automorphism_closure_origin_gate.md)
 """
 
 
@@ -437,6 +441,10 @@ A_weak = M_2(C)_{w=1} direct_sum C_{sigma=+} direct_sum C_{sigma=-}
 | C_{sigma=-} | inactive lower orientation singlet | w=0, sigma=-1 | 1 | candidate, not derived |
 
 Guardrail: this block inventory is a candidate source layer for the projector algebra, not a full derivation from Berger-Hopf geometry.
+
+## Related Automorphism Closure Gate
+
+- [Boundary automorphism closure origin gate](boundary_automorphism_closure_origin_gate.md)
 """
 
 
@@ -474,6 +482,10 @@ Q_hat
 {_state_table()}
 
 Status: candidate diagnostic. The finite boundary algebra is not yet derived from Berger-Hopf boundary geometry.
+
+## Related Automorphism Closure Gate
+
+- [Boundary automorphism closure origin gate](boundary_automorphism_closure_origin_gate.md)
 """
 
 

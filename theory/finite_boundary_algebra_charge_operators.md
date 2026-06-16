@@ -40,3 +40,7 @@ Q_hat
 | nu_R | C_ell | C_sigma_plus |  | 0 | 1 | 0 | 1 | 0 | 0 | 0 |
 
 Status: candidate diagnostic. The finite boundary algebra is not yet derived from Berger-Hopf boundary geometry.
+
+## Related Automorphism Closure Gate
+
+- [Boundary automorphism closure origin gate](boundary_automorphism_closure_origin_gate.md)
