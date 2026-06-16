@@ -142,3 +142,7 @@ It does not claim BHSM has replaced the Standard Model. It does not claim the fu
 - Derive the `Z2` orientation grading from a boundary involution.
 - Prove topographic stability selects these blocks and excludes nearby alternatives.
 - Upgrade diagnostic minimality to a first-principles derivation if the action forces the block algebra.
+
+## Related Closure Spectrum Gate
+
+- [Admissible boundary closure spectrum gate](admissible_boundary_closure_spectrum_gate.md)

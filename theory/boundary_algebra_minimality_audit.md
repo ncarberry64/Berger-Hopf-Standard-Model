@@ -24,3 +24,7 @@ Diagnostic requirements:
 | inactive_lower_orientation | C | C_{sigma=-} | diagnostic | true |
 
 Conclusion: this finite algebra is minimal with respect to the current diagnostic bridge, but not yet uniquely derived from first-principles Berger-Hopf geometry.
+
+## Related Closure Spectrum Gate
+
+- [Admissible boundary closure spectrum gate](admissible_boundary_closure_spectrum_gate.md)

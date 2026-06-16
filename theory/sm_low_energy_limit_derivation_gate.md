@@ -43,3 +43,4 @@ This derivation gate does not claim that BHSM has derived or replaced the Standa
 - [Boundary projector algebra gate](boundary_projector_algebra_gate.md)
 - [Finite boundary algebra source gate](finite_boundary_algebra_source_gate.md)
 - [Boundary automorphism closure origin gate](boundary_automorphism_closure_origin_gate.md)
+- [Admissible boundary closure spectrum gate](admissible_boundary_closure_spectrum_gate.md)

@@ -145,3 +145,4 @@ It does not claim BHSM has replaced the Standard Model. It does not claim the fu
 ## Related Automorphism Closure Gate
 
 - [Boundary automorphism closure origin gate](boundary_automorphism_closure_origin_gate.md)
+- [Admissible boundary closure spectrum gate](admissible_boundary_closure_spectrum_gate.md)

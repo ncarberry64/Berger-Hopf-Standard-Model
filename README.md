@@ -72,6 +72,7 @@ Start with:
 - `theory/boundary_projector_algebra_gate.md`
 - `theory/finite_boundary_algebra_source_gate.md`
 - `theory/boundary_automorphism_closure_origin_gate.md`
+- `theory/admissible_boundary_closure_spectrum_gate.md`
 
 Candidate master equation:
 

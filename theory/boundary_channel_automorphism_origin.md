@@ -42,3 +42,7 @@ d_channel = 1 + 2C
 
 Guardrail:
 This is not yet a derivation of SU(3). It is a candidate origin of color triplicity/channel multiplicity.
+
+## Related Closure Spectrum Gate
+
+- [Admissible boundary closure spectrum gate](admissible_boundary_closure_spectrum_gate.md)

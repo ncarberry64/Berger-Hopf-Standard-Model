@@ -401,6 +401,10 @@ It does not claim BHSM has replaced the Standard Model. It does not claim the fu
 - Derive the `Z2` orientation grading from a boundary involution.
 - Prove topographic stability selects these blocks and excludes nearby alternatives.
 - Upgrade diagnostic minimality to a first-principles derivation if the action forces the block algebra.
+
+## Related Closure Spectrum Gate
+
+- [Admissible boundary closure spectrum gate](admissible_boundary_closure_spectrum_gate.md)
 """
 
 
@@ -446,6 +450,10 @@ d_channel = 1 + 2C
 
 Guardrail:
 This is not yet a derivation of SU(3). It is a candidate origin of color triplicity/channel multiplicity.
+
+## Related Closure Spectrum Gate
+
+- [Admissible boundary closure spectrum gate](admissible_boundary_closure_spectrum_gate.md)
 """
 
 
@@ -489,6 +497,10 @@ S_sigma^2 = I
 
 Guardrail:
 This is not yet a derivation of SU(2)_L. It is a candidate source of weak-interface activity and orientation.
+
+## Related Closure Spectrum Gate
+
+- [Admissible boundary closure spectrum gate](admissible_boundary_closure_spectrum_gate.md)
 """
 
 
@@ -513,6 +525,10 @@ Diagnostic requirements:
 {_minimality_table()}
 
 Conclusion: this finite algebra is minimal with respect to the current diagnostic bridge, but not yet uniquely derived from first-principles Berger-Hopf geometry.
+
+## Related Closure Spectrum Gate
+
+- [Admissible boundary closure spectrum gate](admissible_boundary_closure_spectrum_gate.md)
 """
 
 

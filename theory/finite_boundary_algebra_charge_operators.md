@@ -44,3 +44,4 @@ Status: candidate diagnostic. The finite boundary algebra is not yet derived fro
 ## Related Automorphism Closure Gate
 
 - [Boundary automorphism closure origin gate](boundary_automorphism_closure_origin_gate.md)
+- [Admissible boundary closure spectrum gate](admissible_boundary_closure_spectrum_gate.md)

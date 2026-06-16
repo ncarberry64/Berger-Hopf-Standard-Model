@@ -41,3 +41,7 @@ S_sigma^2 = I
 
 Guardrail:
 This is not yet a derivation of SU(2)_L. It is a candidate source of weak-interface activity and orientation.
+
+## Related Closure Spectrum Gate
+
+- [Admissible boundary closure spectrum gate](admissible_boundary_closure_spectrum_gate.md)
