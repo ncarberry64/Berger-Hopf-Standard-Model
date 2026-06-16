@@ -77,6 +77,7 @@ Start with:
 - `theory/boundary_action_hessian_scaffold_gate.md`
 - `theory/theorem_discharge_phase_orientation_cyclic.md`
 - `theory/theorem_discharge_finite_algebra_charge.md`
+- `theory/theorem_discharge_boundary_trace_normalization.md`
 
 Candidate master equation:
 

@@ -44,6 +44,8 @@ The resulting charge/hypercharge skeleton preserves the existing anomaly diagnos
 
 This branch derives algebraic skeleton operators conditionally. It does not derive local gauge dynamics.
 
+Follow-up theorem layer: [Theorem discharge: boundary trace normalization](theorem_discharge_boundary_trace_normalization.md) conditionally derives `K1=10/3`, `K2=2`, `K3=2`, and `eta_Y=3/5` from the boundary charge/hypercharge table, multiplicities, and finite-algebra trace weights.
+
 ## 11. Impact On Mass/Yukawa/Mixing Theorem
 
 No official mass, Yukawa, or mixing output changes. The frozen prediction branches remain untouched.

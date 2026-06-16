@@ -47,3 +47,5 @@ using `ell = 1-C`.
 Guardrail: this derives the charge/hypercharge skeleton, not gauge dynamics.
 
 Status: `PO_BH_10_CHARGE_HYPERCHARGE_OPERATORS_DERIVED_CONDITIONAL`.
+
+Follow-up theorem layer: [Theorem discharge: boundary trace normalization](theorem_discharge_boundary_trace_normalization.md).

@@ -29,3 +29,5 @@ These obligations must be closed before BHSM can claim replacement by derivation
 - [Closure spectrum selection rule audit](closure_spectrum_selection_rule_audit.md)
 - [Boundary action Hessian scaffold gate](boundary_action_hessian_scaffold_gate.md)
 - [Theorem discharge: phase, orientation, and cyclic closure](theorem_discharge_phase_orientation_cyclic.md)
+- [Theorem discharge: finite algebra and charge operators](theorem_discharge_finite_algebra_charge.md)
+- [Theorem discharge: boundary trace normalization](theorem_discharge_boundary_trace_normalization.md)
