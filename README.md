@@ -142,6 +142,8 @@ Second-variation status: the follow-on audit computes local Hessian coefficients
 
 Theorem-level boundary status: the current scaffold separates Berger-Hopf boundary axioms, theorem statements, lemmas, proof obligations, and non-tautology risks. It does not claim the boundary action, full Hessian, closure spectrum, finite algebra, or charge/anomaly bridge are fully derived.
 
+Primitive closure discharge status: the current theorem-discharge branch conditionally derives positive integer phase admissibility, the minimal orientation sector `d=2`, the minimal non-involutive cyclic sector `d=3`, and primitive closure selectors `{1,2,3}`. Downstream Standard Model derivation and replacement readiness remain open.
+
 ## Citation / DOI
 
 Use `CITATION.cff` for citation metadata. Zenodo metadata is recorded in `.zenodo.json`; do not create or edit external release metadata without explicit author instruction.

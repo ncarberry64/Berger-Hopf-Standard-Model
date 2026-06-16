@@ -123,6 +123,6 @@ It also does not make a replacement claim for BHSM, does not make a full gauge-g
 - FROZEN_PREDICTIONS_UNCHANGED
 - OFFICIAL_PREDICTIONS_UNCHANGED
 
-## Related Theorem Scaffold
+## Related Discharge Attempt
 
-See [Theorem-Level Boundary Action Derivation Scaffold](theorem_level_boundary_action_derivation.md) for the axiom, theorem, lemma, proof-obligation, and non-tautology ledger that begins the theorem-level upgrade path.
+See [Theorem Discharge: Phase, Orientation, And Cyclic Closure](theorem_discharge_phase_orientation_cyclic.md) for the first conditional closure-selection theorem discharge.

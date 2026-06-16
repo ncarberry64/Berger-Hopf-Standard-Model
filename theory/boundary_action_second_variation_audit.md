@@ -142,6 +142,6 @@ It also makes no replacement claim, no full gauge-group derivation claim, and no
 - `FROZEN_PREDICTIONS_UNCHANGED`
 - `OFFICIAL_PREDICTIONS_UNCHANGED`
 
-## Related Theorem Scaffold
+## Related Discharge Attempt
 
-The next theorem-level layer is [Theorem-Level Boundary Action Derivation Scaffold](theorem_level_boundary_action_derivation.md), which separates axioms, lemmas, theorem statements, proof obligations, and non-tautology checks.
+See [Theorem Discharge: Phase, Orientation, And Cyclic Closure](theorem_discharge_phase_orientation_cyclic.md) for the first conditional closure-selection theorem discharge.

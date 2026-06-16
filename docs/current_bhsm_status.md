@@ -41,6 +41,7 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 - [Boundary action term realization audit](../theory/boundary_action_term_realization_audit.md)
 - [Boundary action second-variation audit](../theory/boundary_action_second_variation_audit.md)
 - [Theorem-level boundary action derivation scaffold](../theory/theorem_level_boundary_action_derivation.md)
+- [Theorem discharge: phase, orientation, and cyclic closure](../theory/theorem_discharge_phase_orientation_cyclic.md)
 
 ## Boundary-Action Term Realization Status
 
@@ -49,3 +50,5 @@ The boundary action term-realization audit is a candidate diagnostic layer. It g
 The boundary action second-variation audit computes candidate local quadratic coefficients for those finite surrogates and supports the Hessian projector scaffold diagnostically. It still does not derive the actual Berger-Hopf Hessian.
 
 The theorem-level boundary action derivation scaffold records the axioms, theorem statements, lemmas, proof obligations, and circularity risks needed to upgrade these diagnostics into actual derivations.
+
+The first theorem-discharge attempt conditionally derives positive integer phase admissibility, the minimal orientation sector `d=2`, the minimal non-involutive cyclic sector `d=3`, and primitive closure selectors `{1,2,3}`. Downstream Standard Model derivation remains open.

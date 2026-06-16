@@ -148,4 +148,4 @@ It does not claim BHSM has replaced the Standard Model. It does not claim the fu
 - [Admissible boundary closure spectrum gate](admissible_boundary_closure_spectrum_gate.md)
 - [Closure spectrum selection rule audit](closure_spectrum_selection_rule_audit.md)
 - [Boundary action Hessian scaffold gate](boundary_action_hessian_scaffold_gate.md)
-- [Theorem-level boundary action derivation scaffold](theorem_level_boundary_action_derivation.md)
+- [Theorem discharge: phase, orientation, and cyclic closure](theorem_discharge_phase_orientation_cyclic.md)

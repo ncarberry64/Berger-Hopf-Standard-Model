@@ -49,3 +49,5 @@ Required guardrail: this is a candidate Hessian decomposition, not the full Hess
 The [Boundary Action Second-Variation Audit](boundary_action_second_variation_audit.md) computes the local candidate Hessian coefficients for the finite action-term diagnostics supporting this decomposition.
 
 Related theorem scaffold: [Theorem-Level Boundary Action Derivation Scaffold](theorem_level_boundary_action_derivation.md).
+
+Related discharge attempt: [Theorem Discharge: Phase, Orientation, And Cyclic Closure](theorem_discharge_phase_orientation_cyclic.md).
