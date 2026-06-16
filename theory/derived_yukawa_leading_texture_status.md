@@ -71,3 +71,5 @@ Compact matrices:
 
 
 Status: `YUKAWA_LEADING_TEXTURE_STATUS_DERIVED_CONDITIONAL`.
+
+Follow-up: [Theorem discharge: Yukawa distance-to-overlap law](theorem_discharge_yukawa_distance_overlap_law.md) preserves the leading/conditional texture status while leaving numerical overlap values open.

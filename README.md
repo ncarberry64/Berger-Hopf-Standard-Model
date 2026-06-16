@@ -83,6 +83,7 @@ Start with:
 - `theory/theorem_discharge_yukawa_operator_closure.md`
 - `theory/theorem_discharge_yukawa_overlap_texture_source.md`
 - `theory/theorem_discharge_yukawa_overlap_kernel_selection.md`
+- `theory/theorem_discharge_yukawa_distance_overlap_law.md`
 
 Candidate master equation:
 
@@ -157,6 +158,8 @@ Yukawa operator-closure status: the current theorem-discharge branch conditional
 Yukawa overlap texture-source status: the current theorem-discharge branch conditionally lifts those four operator classes to symbolic 3x3 boundary-overlap Yukawa matrix scaffolds with `M_f=vY_f/sqrt(2)`. Numerical overlap values, fermion mass ratios, CKM/PMNS mixing, and replacement readiness remain open.
 
 Yukawa overlap-kernel selection status: the current theorem-discharge branch conditionally classifies leading diagonal overlap sources and conditional off-diagonal overlap sources from mode alignment and diagnostic mode distances. Numerical overlap values, fermion mass ratios, CKM/PMNS mixing, and replacement readiness remain open.
+
+Yukawa distance-to-overlap law status: the current theorem-discharge branch audits exponential, Gaussian, power/dressing, boundary-action Hessian, and selection-only candidate laws. The selection-only scaffold remains conditionally derived, but no numerical distance-to-overlap law is promoted; numerical overlap values remain open.
 
 ## Citation / DOI
 

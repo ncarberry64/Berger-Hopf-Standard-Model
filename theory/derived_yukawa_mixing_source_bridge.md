@@ -13,3 +13,5 @@ Guardrails:
 - no PMNS values.
 
 Status: `YUKAWA_MIXING_SOURCE_BRIDGE_DERIVED_CONDITIONAL`.
+
+Follow-up: [Theorem discharge: Yukawa distance-to-overlap law](theorem_discharge_yukawa_distance_overlap_law.md) keeps off-diagonal numerical overlap values open, so CKM and PMNS values remain open.

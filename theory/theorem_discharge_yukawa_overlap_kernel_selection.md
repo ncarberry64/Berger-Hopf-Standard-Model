@@ -111,6 +111,8 @@ See [Yukawa Overlap Kernel Non-Tautology Audit](yukawa_overlap_kernel_non_tautol
 
 The mass hierarchy theorem is narrowed to deriving numerical diagonal kernel values and the sector normalizations.
 
+Follow-up theorem layer: [Theorem discharge: Yukawa distance-to-overlap law](theorem_discharge_yukawa_distance_overlap_law.md) audits candidate maps from mode distance to overlap values. It does not promote a numerical law without a boundary action, Hessian, dressing, or overlap derivation.
+
 ## 17. Impact On CKM/PMNS Theorem
 
 Off-diagonal symbolic entries identify where future mixing can enter. No mixing value is derived.

@@ -80,3 +80,5 @@ These are diagnostic distances, not numerical Yukawa values.
 
 
 Status: `YUKAWA_MODE_DISTANCE_SCAFFOLD_DERIVED_CONDITIONAL`.
+
+Follow-up: [Theorem discharge: Yukawa distance-to-overlap law](theorem_discharge_yukawa_distance_overlap_law.md) audits whether these distances can be promoted to numerical overlap values. No numerical distance-to-overlap law is promoted there.
