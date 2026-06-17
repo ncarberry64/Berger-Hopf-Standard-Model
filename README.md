@@ -92,6 +92,7 @@ Start with:
 - `theory/theorem_discharge_harmonic_highest_weight_normalization.md`
 - `theory/theorem_discharge_leading_axis_m_weight.md`
 - `theory/theorem_discharge_y0_axis_identification.md`
+- `theory/theorem_discharge_m_multiplet_harmonic_features.md`
 
 Candidate master equation:
 
@@ -184,6 +185,8 @@ Harmonic highest-weight status: the current theorem-discharge branch conditional
 Leading-axis m-weight status: the current theorem-discharge branch audits the candidate leading focused component `m=n=q/2`. The labels are admissible on the frozen ledgers, but the assignment is not promoted because the repo does not yet derive `y0` as a Berger/Hopf identity axis or equivalent focal point, nor the corresponding Wigner/Hopf axis-sampling rule. Finite-width rank-three, numerical Yukawa, CKM, PMNS, and replacement-level claims remain open.
 
 Y0 axis-identification status: the current theorem-discharge branch separates the supported statement that `y0` is the universal scalar/topographic profile peak from the stronger, still-open statement that `y0` is a group identity, Hopf pole, Berger axis, or canonical Wigner sampling point. Therefore `m=n=q/2` remains structurally motivated rather than derived.
+
+M-multiplet harmonic feature status: the current theorem-discharge branch derives a conditional scaffold that assigns the full admissible Wigner/Hopf `m`-multiplet to each `(k,q)` internal mode. It documents the axis-collapse case and the generic-`y0` case, but it does not force a single `m`, derive finite-width rank-three support, numerical Yukawa values, CKM, PMNS, or replacement readiness.
 
 ## Citation / DOI
 

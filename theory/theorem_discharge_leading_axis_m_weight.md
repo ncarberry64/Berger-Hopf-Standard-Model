@@ -121,6 +121,8 @@ The next blocker is to derive `y0` as a Berger/Hopf identity axis or equivalent 
 
 Follow-up audit: `theory/theorem_discharge_y0_axis_identification.md` separates the supported profile-peak role of `y0` from the still-open group-identity, Hopf-pole, Berger-axis, or canonical focal-point identification.
 
+M-multiplet follow-up: `theory/theorem_discharge_m_multiplet_harmonic_features.md` retains the full admissible `m`-multiplet when the axis-collapse theorem is not yet available.
+
 ## Conclusion
 
 This branch audits the candidate leading-axis m-weight assignment m=n=q/2. The assignment is admissible on the frozen ledgers, but it is not promoted because the repo does not yet support y0 as the Berger/Hopf identity axis or equivalent focal point and does not yet support the relevant Wigner/Hopf axis sampling rule. Explicit eigenfunctions, finite-width rank-three support, numerical Yukawa values, and replacement-level claims remain open.

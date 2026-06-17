@@ -81,6 +81,8 @@ Follow-up audit: `theory/theorem_discharge_leading_axis_m_weight.md` tests the c
 
 Y0 follow-up: `theory/theorem_discharge_y0_axis_identification.md` supports `y0` as a profile peak but keeps the stronger identity/Hopf-axis identification open.
 
+M-multiplet follow-up: `theory/theorem_discharge_m_multiplet_harmonic_features.md` uses this `ell,n` convention to build the full admissible `m`-multiplet feature scaffold.
+
 ## 12. Bridge To Candidate Eigenfunctions
 
 The candidate notation remains:

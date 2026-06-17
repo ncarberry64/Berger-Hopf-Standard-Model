@@ -58,6 +58,7 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 - [Theorem discharge: harmonic highest-weight normalization](../theory/theorem_discharge_harmonic_highest_weight_normalization.md)
 - [Theorem discharge: leading-axis m-weight assignment](../theory/theorem_discharge_leading_axis_m_weight.md)
 - [Theorem discharge: y0 axis identification](../theory/theorem_discharge_y0_axis_identification.md)
+- [Theorem discharge: m-multiplet harmonic features](../theory/theorem_discharge_m_multiplet_harmonic_features.md)
 
 ## Boundary-Action Term Realization Status
 
@@ -100,3 +101,5 @@ The harmonic highest-weight theorem-discharge attempt conditionally selects the 
 The leading-axis m-weight theorem-discharge attempt audits the candidate focused-component assignment `m=n=q/2`. The candidate labels pass admissibility on the frozen ledgers, but the assignment remains partial because `y0` is not yet derived as a Berger/Hopf identity axis or equivalent focal point and the Wigner/Hopf axis-sampling rule is not yet derived in BHSM notation.
 
 The y0 axis-identification theorem-discharge attempt supports `y0` as the universal scalar/topographic profile peak, but keeps group-identity, Hopf-pole, Berger-axis, and canonical focal-point identifications open. This preserves the guardrail that `m=n=q/2` cannot be promoted until the Wigner/Hopf axis-sampling bridge is derived.
+
+The m-multiplet harmonic feature theorem-discharge attempt conditionally assigns each `(k,q)` internal mode its full admissible Wigner/Hopf `m`-multiplet with `ell=k/2` and `n=q/2`. Axis-collapse to `m=n=q/2` is documented only as a future conditional case if `y0` is derived as the relevant identity/Hopf axis; generic `y0` keeps the full multiplet. Finite-width rank-three support, numerical Yukawa values, CKM, PMNS, and replacement readiness remain open.
