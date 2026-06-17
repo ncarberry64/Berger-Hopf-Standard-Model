@@ -78,6 +78,8 @@ See [Legacy Geometric Overlap Non-Tautology Audit](legacy_geometric_overlap_non_
 
 Compute internal eigenfunction amplitudes at `y0` and finite-width overlap moments over the BHSM internal space, without fitting measured masses.
 
+Follow-up theorem layer: [Theorem discharge: finite-width overlap rank](theorem_discharge_finite_width_overlap_rank.md) derives the symbolic finite-width moment scaffold and the rank-three condition, while leaving internal eigenfunction independence open.
+
 ## 16. What Remains Before Replacement Claim
 
 Replacement readiness remains false until numerical Yukawa couplings, mass hierarchy, CKM/PMNS mixing, neutral-sector scales, and the full low-energy Lagrangian theorem are complete.

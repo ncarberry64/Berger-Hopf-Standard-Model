@@ -17,3 +17,5 @@ Status: `YUKAWA_MASS_HIERARCHY_BRIDGE_DERIVED_CONDITIONAL`.
 Follow-up: [Theorem discharge: Yukawa distance-to-overlap law](theorem_discharge_yukawa_distance_overlap_law.md) identifies the numerical kernel `K_f(mode_i, mode_j, H_f)` as the remaining open bridge to mass hierarchy values.
 
 Follow-up: [Theorem discharge: legacy geometric-overlap bridge](theorem_discharge_legacy_geometric_overlap_bridge.md) reframes the open numerical kernel as internal mode amplitudes and finite-width moments of the geometric overlap integral. No mass hierarchy values are derived until those quantities are computed without fitted masses.
+
+Follow-up: [Theorem discharge: finite-width overlap rank](theorem_discharge_finite_width_overlap_rank.md) derives the symbolic finite-width rank condition, but does not derive mass hierarchy values or rank-three Yukawa matrices.
