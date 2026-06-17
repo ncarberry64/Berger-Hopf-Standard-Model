@@ -60,6 +60,7 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 - [Theorem discharge: y0 axis identification](../theory/theorem_discharge_y0_axis_identification.md)
 - [Theorem discharge: m-multiplet harmonic features](../theory/theorem_discharge_m_multiplet_harmonic_features.md)
 - [Theorem discharge: generic-y0 Wigner feature rank](../theory/theorem_discharge_generic_y0_wigner_feature_rank.md)
+- [Theorem discharge: y0 coordinate constraint](../theory/theorem_discharge_y0_coordinate_constraint.md)
 
 ## Boundary-Action Term Realization Status
 
@@ -106,3 +107,5 @@ The y0 axis-identification theorem-discharge attempt supports `y0` as the univer
 The m-multiplet harmonic feature theorem-discharge attempt conditionally assigns each `(k,q)` internal mode its full admissible Wigner/Hopf `m`-multiplet with `ell=k/2` and `n=q/2`. Axis-collapse to `m=n=q/2` is documented only as a future conditional case if `y0` is derived as the relevant identity/Hopf axis; generic `y0` keeps the full multiplet. Finite-width rank-three support, numerical Yukawa values, CKM, PMNS, and replacement readiness remain open.
 
 The generic-y0 Wigner feature-rank theorem-discharge attempt conditionally derives the symbolic evaluation formula for the retained m-multiplets at `y0=(alpha0,beta0,gamma0)`. The reduced Wigner factor `d^{k/2}_{m,q/2}(beta0)` is identified as the magnitude selector, while `alpha0` and `gamma0` supply phase structure. Numerical y0 coordinates, feature-rank independence, finite-width rank-three support, numerical Yukawa values, CKM, PMNS, and replacement readiness remain open.
+
+The y0 coordinate-constraint theorem-discharge attempt keeps the coordinate triple symbolic while conditionally deriving alpha/gamma phase structure and the beta0 reduced-Wigner magnitude-selector role. Alpha/gamma gauge fixing, beta0 geometry fixing, beta0 axis collapse, full y0 coordinates, feature-rank independence, numerical Yukawa values, CKM, PMNS, and replacement readiness remain open.

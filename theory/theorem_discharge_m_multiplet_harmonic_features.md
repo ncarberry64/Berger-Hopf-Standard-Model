@@ -75,3 +75,5 @@ The branch avoids promoting `m=n=q/2` as a single forced label. The full admissi
 This branch derives the m-multiplet harmonic feature scaffold for BHSM internal modes. Rather than forcing a single m-weight assignment, each mode with ell=k/2 and n=q/2 is assigned its full admissible Wigner/Hopf m-multiplet. If y0 is later derived as an identity/Hopf-axis point, the multiplet can collapse to the leading m=n=q/2 component. If y0 is generic, the full multiplet remains available for Wigner evaluation at the universal sampling point. This branch does not derive finite-width rank-three Yukawa matrices, numerical Yukawa values, CKM, PMNS, or replacement readiness.
 
 Follow-up: `theory/theorem_discharge_generic_y0_wigner_feature_rank.md` evaluates the retained multiplets symbolically at `y0=(alpha0,beta0,gamma0)` and connects the result to the feature-rank support problem.
+
+Follow-up: `theory/theorem_discharge_y0_coordinate_constraint.md` audits whether those symbolic coordinates are fixed, gauge-removable, axis-collapsed, or still open.

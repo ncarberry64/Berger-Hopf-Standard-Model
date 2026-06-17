@@ -1,0 +1,68 @@
+{
+  "status": "partial_theorem_scaffold",
+  "branch": "bhsm-theorem-discharge-y0-coordinate-constraint-v1",
+  "official_predictions_changed": false,
+  "frozen_predictions_changed": false,
+  "standard_model_fully_derived": false,
+  "bhsm_replacement_claim_ready": false,
+  "y0_coordinate_constraint_layer_completed": true,
+  "generic_y0_coordinates": [
+    "alpha0",
+    "beta0",
+    "gamma0"
+  ],
+  "alpha_gamma_phase_structure_derived": true,
+  "alpha_gamma_gauge_fixed_derived": false,
+  "beta0_magnitude_selector_derived": true,
+  "beta0_geometry_fixed_derived": false,
+  "beta0_axis_collapse_derived": false,
+  "y0_coordinates_fully_derived": false,
+  "feature_rank_independence_derived": false,
+  "finite_width_rank_three_derived": false,
+  "numerical_yukawa_values_derived": false,
+  "ckm_values_derived": false,
+  "pmns_values_derived": false,
+  "discharged_obligations": {
+    "PO-BH-32": "PARTIAL: alpha/gamma phase structure and beta0 magnitude-selector role derived; y0 coordinates remain open unless fixed elsewhere in the repo"
+  },
+  "core_formula": "D^{k/2}_{m,q/2}(y0)=exp(-i*m*alpha0)*d^{k/2}_{m,q/2}(beta0)*exp(-i*(q/2)*gamma0)",
+  "still_open_downstream": [
+    "derive or constrain beta0 from Berger/topographic geometry",
+    "derive whether alpha0/gamma0 are gauge-removable or physical phase inputs",
+    "evaluate reduced Wigner beta selector",
+    "evaluate local feature vectors at y0",
+    "finite-width moment contractions",
+    "rank-three Yukawa matrix theorem",
+    "numerical Yukawa coupling theorem",
+    "fermion mass hierarchy theorem",
+    "CKM mixing theorem",
+    "PMNS mixing theorem",
+    "full replacement-level SM derivation"
+  ],
+  "negative_results": [
+    "y0 coordinates not fully derived in this branch unless found in repo",
+    "beta0 not fitted to masses or mixing",
+    "feature-rank independence not derived in this branch",
+    "finite-width rank-three not derived in this branch",
+    "numerical Yukawa values not derived in this branch",
+    "CKM values not derived in this branch",
+    "PMNS values not derived in this branch",
+    "replacement claim is not ready"
+  ],
+  "verdict_labels": [
+    "PO_BH_32_Y0_COORDINATE_CONSTRAINT_THEOREM_PARTIAL",
+    "GENERIC_Y0_COORDINATE_SCAFFOLD_DERIVED_CONDITIONAL",
+    "ALPHA_GAMMA_PHASE_STRUCTURE_DERIVED_CONDITIONAL",
+    "BETA0_MAGNITUDE_SELECTOR_DERIVED_CONDITIONAL",
+    "BETA0_REMAINS_OPEN_GEOMETRIC_SELECTOR",
+    "Y0_COORDINATES_REMAIN_OPEN",
+    "FEATURE_RANK_INDEPENDENCE_REMAINS_OPEN",
+    "FINITE_WIDTH_RANK_THREE_REMAINS_OPEN",
+    "NUMERICAL_YUKAWA_VALUES_REMAIN_OPEN",
+    "CKM_VALUES_REMAIN_OPEN",
+    "PMNS_VALUES_REMAIN_OPEN",
+    "BHSM_REPLACEMENT_CLAIM_NOT_READY",
+    "FROZEN_PREDICTIONS_UNCHANGED",
+    "OFFICIAL_PREDICTIONS_UNCHANGED"
+  ]
+}

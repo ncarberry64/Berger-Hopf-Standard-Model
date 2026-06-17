@@ -110,3 +110,5 @@ The highest-value open step is to derive or constrain `alpha0,beta0,gamma0`, the
 ## Conclusion
 
 This branch derives the generic-y0 Wigner evaluation scaffold for the BHSM m-multiplet harmonic feature space. The internal sampling point y0 is represented symbolically by Hopf/Euler coordinates (alpha0,beta0,gamma0), and each mode evaluates through D^{k/2}_{m,q/2}(y0). The reduced Wigner factor d^{k/2}_{m,q/2}(beta0) is identified as the primary magnitude selector, while alpha0 and gamma0 provide phase structure. This branch does not derive numerical y0 coordinates, finite-width rank-three Yukawa matrices, numerical Yukawa values, CKM, PMNS, or replacement readiness.
+
+Follow-up: `theory/theorem_discharge_y0_coordinate_constraint.md` audits which pieces of `(alpha0,beta0,gamma0)` are constrained by current repo evidence and keeps full y0 coordinate derivation open.
