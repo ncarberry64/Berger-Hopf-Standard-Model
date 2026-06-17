@@ -84,6 +84,7 @@ Start with:
 - `theory/theorem_discharge_yukawa_overlap_texture_source.md`
 - `theory/theorem_discharge_yukawa_overlap_kernel_selection.md`
 - `theory/theorem_discharge_yukawa_distance_overlap_law.md`
+- `theory/theorem_discharge_legacy_geometric_overlap_bridge.md`
 
 Candidate master equation:
 
@@ -160,6 +161,8 @@ Yukawa overlap texture-source status: the current theorem-discharge branch condi
 Yukawa overlap-kernel selection status: the current theorem-discharge branch conditionally classifies leading diagonal overlap sources and conditional off-diagonal overlap sources from mode alignment and diagnostic mode distances. Numerical overlap values, fermion mass ratios, CKM/PMNS mixing, and replacement readiness remain open.
 
 Yukawa distance-to-overlap law status: the current theorem-discharge branch audits exponential, Gaussian, power/dressing, boundary-action Hessian, and selection-only candidate laws. The selection-only scaffold remains conditionally derived, but no numerical distance-to-overlap law is promoted; numerical overlap values remain open.
+
+Legacy geometric-overlap bridge status: the current theorem-discharge branch conditionally identifies the BHSM overlap kernel with the legacy scalar-topographic internal overlap integral. The sharp-peak term is guarded as a rank-limited leading focusing approximation (`rank <= 1`), so numerical eigenfunction amplitudes, finite-width overlap moments, fermion mass ratios, CKM values, and PMNS values remain open.
 
 ## Citation / DOI
 

@@ -68,6 +68,8 @@ This branch derives and audits candidate distance-to-overlap laws for the BHSM Y
 
 Replacement readiness remains false until numerical overlap kernels, mass hierarchy, CKM/PMNS mixing, neutral-sector scales, scalar potential numerics, and the full low-energy Lagrangian theorem are complete.
 
+Follow-up theorem layer: [Theorem discharge: legacy geometric-overlap bridge](theorem_discharge_legacy_geometric_overlap_bridge.md) conditionally identifies the BHSM overlap kernel with the legacy scalar-topographic internal overlap integral. This preserves the PO-BH-21 result: no direct numerical distance-to-overlap law is promoted.
+
 ## Verdict Labels
 
 - `PO_BH_21_YUKAWA_DISTANCE_OVERLAP_LAW_PARTIAL`

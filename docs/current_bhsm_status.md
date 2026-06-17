@@ -50,6 +50,7 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 - [Theorem discharge: Yukawa overlap texture source](../theory/theorem_discharge_yukawa_overlap_texture_source.md)
 - [Theorem discharge: Yukawa overlap-kernel selection](../theory/theorem_discharge_yukawa_overlap_kernel_selection.md)
 - [Theorem discharge: Yukawa distance-to-overlap law](../theory/theorem_discharge_yukawa_distance_overlap_law.md)
+- [Theorem discharge: legacy geometric-overlap bridge](../theory/theorem_discharge_legacy_geometric_overlap_bridge.md)
 
 ## Boundary-Action Term Realization Status
 
@@ -76,3 +77,5 @@ The Yukawa overlap texture-source theorem-discharge attempt conditionally lifts 
 The Yukawa overlap-kernel selection theorem-discharge attempt conditionally classifies diagonal entries as leading self-overlap sources and off-diagonal entries as conditional transport/mixing/dressing sources, with deterministic mode-distance diagnostics. Numerical overlap values, fermion mass ratios, CKM/PMNS mixing, and replacement readiness remain open.
 
 The Yukawa distance-to-overlap theorem-discharge attempt audits candidate laws for mapping mode distance to overlap values. Selection-only status remains conditionally derived, while exponential/Gaussian/power and boundary-action Hessian numerical laws remain structurally motivated or open until derived without fitted masses.
+
+The legacy geometric-overlap bridge theorem-discharge attempt conditionally identifies the current BHSM overlap kernel with the legacy scalar-topographic internal overlap integral over the Berger/internal space. The sharp-peak approximation is explicitly rank-limited (`rank <= 1`) and supplies only a leading focusing term; numerical eigenfunction amplitudes, finite-width overlap moments, fermion mass ratios, CKM values, PMNS values, and replacement readiness remain open.

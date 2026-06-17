@@ -73,3 +73,5 @@ Compact matrices:
 Status: `YUKAWA_LEADING_TEXTURE_STATUS_DERIVED_CONDITIONAL`.
 
 Follow-up: [Theorem discharge: Yukawa distance-to-overlap law](theorem_discharge_yukawa_distance_overlap_law.md) preserves the leading/conditional texture status while leaving numerical overlap values open.
+
+Follow-up: [Theorem discharge: legacy geometric-overlap bridge](theorem_discharge_legacy_geometric_overlap_bridge.md) interprets the leading/conditional entries as internal geometric overlap integrals. The strict sharp-peak contribution remains rank-limited, so full rank and numerical values require finite-width moments or additional derived structure.

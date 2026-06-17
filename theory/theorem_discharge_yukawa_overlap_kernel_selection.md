@@ -113,6 +113,8 @@ The mass hierarchy theorem is narrowed to deriving numerical diagonal kernel val
 
 Follow-up theorem layer: [Theorem discharge: Yukawa distance-to-overlap law](theorem_discharge_yukawa_distance_overlap_law.md) audits candidate maps from mode distance to overlap values. It does not promote a numerical law without a boundary action, Hessian, dressing, or overlap derivation.
 
+Follow-up theorem layer: [Theorem discharge: legacy geometric-overlap bridge](theorem_discharge_legacy_geometric_overlap_bridge.md) conditionally identifies the symbolic overlap kernel with the legacy scalar-topographic internal overlap integral and records the sharp-peak rank guardrail.
+
 ## 17. Impact On CKM/PMNS Theorem
 
 Off-diagonal symbolic entries identify where future mixing can enter. No mixing value is derived.

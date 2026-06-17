@@ -63,3 +63,5 @@
 Status: `YUKAWA_MATRIX_SCAFFOLD_DERIVED_CONDITIONAL`.
 
 Follow-up: [Theorem discharge: Yukawa overlap-kernel selection](theorem_discharge_yukawa_overlap_kernel_selection.md) classifies each symbolic matrix entry as leading diagonal or conditional off-diagonal without assigning numerical values.
+
+Follow-up: [Theorem discharge: legacy geometric-overlap bridge](theorem_discharge_legacy_geometric_overlap_bridge.md) identifies these symbolic entries with geometric internal overlap integrals, while preserving the guardrail that strict point-sampling alone is rank-limited and cannot supply a full rank-three matrix.

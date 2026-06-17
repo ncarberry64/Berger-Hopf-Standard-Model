@@ -82,3 +82,5 @@ These are diagnostic distances, not numerical Yukawa values.
 Status: `YUKAWA_MODE_DISTANCE_SCAFFOLD_DERIVED_CONDITIONAL`.
 
 Follow-up: [Theorem discharge: Yukawa distance-to-overlap law](theorem_discharge_yukawa_distance_overlap_law.md) audits whether these distances can be promoted to numerical overlap values. No numerical distance-to-overlap law is promoted there.
+
+Follow-up: [Theorem discharge: legacy geometric-overlap bridge](theorem_discharge_legacy_geometric_overlap_bridge.md) reconciles the distance scaffold by placing distance inside the universal profile `Phi(y)=Phi0 exp[-sigma d_I(y,y0)^2]` and internal eigenfunction shapes, without promoting a direct numerical distance-to-overlap map.
