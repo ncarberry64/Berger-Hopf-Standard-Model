@@ -112,6 +112,8 @@ See [Finite-Width Overlap Rank Non-Tautology Audit](finite_width_overlap_rank_no
 
 Replacement readiness remains false until numerical overlap values, mass hierarchy, CKM/PMNS mixing, neutral-sector scales, scalar potential numerics, and the full low-energy Lagrangian theorem are complete.
 
+Follow-up theorem layer: [Theorem discharge: QJ eigenfunction map](theorem_discharge_qj_eigenfunction_map.md) isolates the next blocker: deriving the explicit non-fitted map from generation labels `(q,j)` to internal Berger/BHSM eigenfunctions and their local features.
+
 ## Conclusion
 
 This branch derives the finite-width overlap-moment scaffold for the BHSM Yukawa kernel and identifies the condition under which the overlap matrix can exceed the strict point-sampling rank-one limit. The strict sharp-peak term remains rank-limited, while finite-width moments can in principle raise the rank if the relevant internal eigenfunction derivative and moment structures are linearly independent. This branch does not promote numerical Yukawa values, fermion mass ratios, CKM values, or PMNS values. Rank-three Yukawa structure remains open unless the required internal eigenfunction independence is derived from BHSM geometry.

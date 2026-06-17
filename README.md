@@ -86,6 +86,7 @@ Start with:
 - `theory/theorem_discharge_yukawa_distance_overlap_law.md`
 - `theory/theorem_discharge_legacy_geometric_overlap_bridge.md`
 - `theory/theorem_discharge_finite_width_overlap_rank.md`
+- `theory/theorem_discharge_qj_eigenfunction_map.md`
 
 Candidate master equation:
 
@@ -166,6 +167,8 @@ Yukawa distance-to-overlap law status: the current theorem-discharge branch audi
 Legacy geometric-overlap bridge status: the current theorem-discharge branch conditionally identifies the BHSM overlap kernel with the legacy scalar-topographic internal overlap integral. The sharp-peak term is guarded as a rank-limited leading focusing approximation (`rank <= 1`), so numerical eigenfunction amplitudes, finite-width overlap moments, fermion mass ratios, CKM values, and PMNS values remain open.
 
 Finite-width overlap-rank status: the current theorem-discharge branch derives the symbolic finite-width moment expansion and the condition under which moment terms can exceed the strict point-sampling rank-one limit. Rank-three Yukawa structure remains open until internal eigenfunction independence and finite-width moment contractions are derived from BHSM geometry without fitted masses.
+
+QJ eigenfunction-map status: the current theorem-discharge branch derives the symbolic scaffold `E:(q,j)->psi_qj(y)` and the local value/gradient/Hessian feature vectors needed to test diagonal hierarchy and rank-three support. The explicit Berger/BHSM eigenfunction map, feature independence, numerical Yukawa values, mass ratios, CKM values, and PMNS values remain open.
 
 ## Citation / DOI
 

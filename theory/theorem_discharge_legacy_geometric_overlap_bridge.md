@@ -80,6 +80,8 @@ Compute internal eigenfunction amplitudes at `y0` and finite-width overlap momen
 
 Follow-up theorem layer: [Theorem discharge: finite-width overlap rank](theorem_discharge_finite_width_overlap_rank.md) derives the symbolic finite-width moment scaffold and the rank-three condition, while leaving internal eigenfunction independence open.
 
+Follow-up theorem layer: [Theorem discharge: QJ eigenfunction map](theorem_discharge_qj_eigenfunction_map.md) refines that independence blocker into the missing explicit map from generation labels `(q,j)` to internal Berger/BHSM eigenfunctions.
+
 ## 16. What Remains Before Replacement Claim
 
 Replacement readiness remains false until numerical Yukawa couplings, mass hierarchy, CKM/PMNS mixing, neutral-sector scales, and the full low-energy Lagrangian theorem are complete.

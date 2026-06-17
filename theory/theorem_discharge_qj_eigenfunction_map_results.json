@@ -1,0 +1,348 @@
+{
+  "bhsm_replacement_claim_ready": false,
+  "branch": "bhsm-theorem-discharge-qj-eigenfunction-map-v1",
+  "ckm_values_derived": false,
+  "discharged_obligations": {
+    "PO-BH-24": "PARTIAL: symbolic (q,j)->psi_qj(y) eigenfunction map scaffold and feature-rank condition derived; explicit map and rank-three independence remain open unless found elsewhere in the repo"
+  },
+  "explicit_qj_eigenfunction_map_derived": false,
+  "fermion_mass_ratios_derived": false,
+  "finite_width_rank_three_derived": false,
+  "formulas": {
+    "diagonal_hierarchy_route": "diagonal hierarchy may arise from generation-dependent singlet/internal amplitudes or diagonal finite-width overlaps",
+    "finite_width_moment_feature_contraction": "I_ij=M0 A_i^* S_j + M_ab G_A_i^{a*} G_S_j^b + M_abcd H_A_i^{ab*} H_S_j^{cd} + ...",
+    "full_rank_three_route": "full rank-three matrix requires derived active-mode structure, delta_ij channel selection, finite-width moment independence, or boundary transport/dressing",
+    "qj_to_eigenfunction_map": "E:(q,j)->psi_qj(y)",
+    "rank_three_support_condition": "rank-three support requires three generation feature vectors to remain independent under universal finite-width moment contractions"
+  },
+  "frozen_predictions_changed": false,
+  "internal_feature_independence_derived": false,
+  "map_components": [
+    {
+      "guardrail": "symbolic scaffold only; explicit Berger eigenfunctions remain open",
+      "name": "qj_symbolic_map",
+      "statement": "E:(q,j)->psi_qj(y)",
+      "status": "QJ_EIGENFUNCTION_MAP_SCAFFOLD_DERIVED_CONDITIONAL"
+    },
+    {
+      "guardrail": "features are symbolic, not evaluated",
+      "name": "local_feature_vectors",
+      "statement": "F_n=(value, gradient, Hessian components at y0)",
+      "status": "INTERNAL_EIGENFUNCTION_FEATURE_SCAFFOLD_DERIVED_CONDITIONAL"
+    },
+    {
+      "guardrail": "hierarchy route is not a full rank-three matrix theorem",
+      "name": "diagonal_hierarchy_route",
+      "statement": "diagonal hierarchy may arise from generation-dependent singlet/internal amplitudes or diagonal finite-width overlaps",
+      "status": "DIAGONAL_HIERARCHY_ROUTE_IDENTIFIED_CONDITIONAL"
+    },
+    {
+      "guardrail": "condition is not asserted satisfied",
+      "name": "full_rank_three_route",
+      "statement": "full rank-three matrix requires derived active-mode structure, delta_ij channel selection, finite-width moment independence, or boundary transport/dressing",
+      "status": "FULL_RANK_THREE_ROUTE_CONDITION_DERIVED_CONDITIONAL"
+    },
+    {
+      "guardrail": "requires explicit eigenfunction independence proof",
+      "name": "rank_three_support_condition",
+      "statement": "rank-three support requires three generation feature vectors to remain independent under universal finite-width moment contractions",
+      "status": "INTERNAL_FEATURE_INDEPENDENCE_REMAINS_OPEN"
+    }
+  ],
+  "mode_ledgers": {
+    "cyclic_lower": [
+      {
+        "feature_vector": [
+          "psi_q0_j0(y)|_y0",
+          "d1 psi_q0_j0(y)|_y0",
+          "d2 psi_q0_j0(y)|_y0",
+          "d3 psi_q0_j0(y)|_y0",
+          "d11 psi_q0_j0(y)|_y0",
+          "d12 psi_q0_j0(y)|_y0",
+          "d13 psi_q0_j0(y)|_y0",
+          "d22 psi_q0_j0(y)|_y0",
+          "d23 psi_q0_j0(y)|_y0",
+          "d33 psi_q0_j0(y)|_y0"
+        ],
+        "index": 0,
+        "j": 0,
+        "q": 0,
+        "sector": "cyclic_lower",
+        "symbolic_eigenfunction": "psi_q0_j0(y)"
+      },
+      {
+        "feature_vector": [
+          "psi_q0_j3(y)|_y0",
+          "d1 psi_q0_j3(y)|_y0",
+          "d2 psi_q0_j3(y)|_y0",
+          "d3 psi_q0_j3(y)|_y0",
+          "d11 psi_q0_j3(y)|_y0",
+          "d12 psi_q0_j3(y)|_y0",
+          "d13 psi_q0_j3(y)|_y0",
+          "d22 psi_q0_j3(y)|_y0",
+          "d23 psi_q0_j3(y)|_y0",
+          "d33 psi_q0_j3(y)|_y0"
+        ],
+        "index": 1,
+        "j": 3,
+        "q": 0,
+        "sector": "cyclic_lower",
+        "symbolic_eigenfunction": "psi_q0_j3(y)"
+      },
+      {
+        "feature_vector": [
+          "psi_q4_j2(y)|_y0",
+          "d1 psi_q4_j2(y)|_y0",
+          "d2 psi_q4_j2(y)|_y0",
+          "d3 psi_q4_j2(y)|_y0",
+          "d11 psi_q4_j2(y)|_y0",
+          "d12 psi_q4_j2(y)|_y0",
+          "d13 psi_q4_j2(y)|_y0",
+          "d22 psi_q4_j2(y)|_y0",
+          "d23 psi_q4_j2(y)|_y0",
+          "d33 psi_q4_j2(y)|_y0"
+        ],
+        "index": 2,
+        "j": 2,
+        "q": 4,
+        "sector": "cyclic_lower",
+        "symbolic_eigenfunction": "psi_q4_j2(y)"
+      }
+    ],
+    "cyclic_upper": [
+      {
+        "feature_vector": [
+          "psi_q0_j0(y)|_y0",
+          "d1 psi_q0_j0(y)|_y0",
+          "d2 psi_q0_j0(y)|_y0",
+          "d3 psi_q0_j0(y)|_y0",
+          "d11 psi_q0_j0(y)|_y0",
+          "d12 psi_q0_j0(y)|_y0",
+          "d13 psi_q0_j0(y)|_y0",
+          "d22 psi_q0_j0(y)|_y0",
+          "d23 psi_q0_j0(y)|_y0",
+          "d33 psi_q0_j0(y)|_y0"
+        ],
+        "index": 0,
+        "j": 0,
+        "q": 0,
+        "sector": "cyclic_upper",
+        "symbolic_eigenfunction": "psi_q0_j0(y)"
+      },
+      {
+        "feature_vector": [
+          "psi_q6_j0(y)|_y0",
+          "d1 psi_q6_j0(y)|_y0",
+          "d2 psi_q6_j0(y)|_y0",
+          "d3 psi_q6_j0(y)|_y0",
+          "d11 psi_q6_j0(y)|_y0",
+          "d12 psi_q6_j0(y)|_y0",
+          "d13 psi_q6_j0(y)|_y0",
+          "d22 psi_q6_j0(y)|_y0",
+          "d23 psi_q6_j0(y)|_y0",
+          "d33 psi_q6_j0(y)|_y0"
+        ],
+        "index": 1,
+        "j": 0,
+        "q": 6,
+        "sector": "cyclic_upper",
+        "symbolic_eigenfunction": "psi_q6_j0(y)"
+      },
+      {
+        "feature_vector": [
+          "psi_q8_j1(y)|_y0",
+          "d1 psi_q8_j1(y)|_y0",
+          "d2 psi_q8_j1(y)|_y0",
+          "d3 psi_q8_j1(y)|_y0",
+          "d11 psi_q8_j1(y)|_y0",
+          "d12 psi_q8_j1(y)|_y0",
+          "d13 psi_q8_j1(y)|_y0",
+          "d22 psi_q8_j1(y)|_y0",
+          "d23 psi_q8_j1(y)|_y0",
+          "d33 psi_q8_j1(y)|_y0"
+        ],
+        "index": 2,
+        "j": 1,
+        "q": 8,
+        "sector": "cyclic_upper",
+        "symbolic_eigenfunction": "psi_q8_j1(y)"
+      }
+    ],
+    "reference_charged": [
+      {
+        "feature_vector": [
+          "psi_q0_j0(y)|_y0",
+          "d1 psi_q0_j0(y)|_y0",
+          "d2 psi_q0_j0(y)|_y0",
+          "d3 psi_q0_j0(y)|_y0",
+          "d11 psi_q0_j0(y)|_y0",
+          "d12 psi_q0_j0(y)|_y0",
+          "d13 psi_q0_j0(y)|_y0",
+          "d22 psi_q0_j0(y)|_y0",
+          "d23 psi_q0_j0(y)|_y0",
+          "d33 psi_q0_j0(y)|_y0"
+        ],
+        "index": 0,
+        "j": 0,
+        "q": 0,
+        "sector": "reference_charged",
+        "symbolic_eigenfunction": "psi_q0_j0(y)"
+      },
+      {
+        "feature_vector": [
+          "psi_q1_j2(y)|_y0",
+          "d1 psi_q1_j2(y)|_y0",
+          "d2 psi_q1_j2(y)|_y0",
+          "d3 psi_q1_j2(y)|_y0",
+          "d11 psi_q1_j2(y)|_y0",
+          "d12 psi_q1_j2(y)|_y0",
+          "d13 psi_q1_j2(y)|_y0",
+          "d22 psi_q1_j2(y)|_y0",
+          "d23 psi_q1_j2(y)|_y0",
+          "d33 psi_q1_j2(y)|_y0"
+        ],
+        "index": 1,
+        "j": 2,
+        "q": 1,
+        "sector": "reference_charged",
+        "symbolic_eigenfunction": "psi_q1_j2(y)"
+      },
+      {
+        "feature_vector": [
+          "psi_q3_j3(y)|_y0",
+          "d1 psi_q3_j3(y)|_y0",
+          "d2 psi_q3_j3(y)|_y0",
+          "d3 psi_q3_j3(y)|_y0",
+          "d11 psi_q3_j3(y)|_y0",
+          "d12 psi_q3_j3(y)|_y0",
+          "d13 psi_q3_j3(y)|_y0",
+          "d22 psi_q3_j3(y)|_y0",
+          "d23 psi_q3_j3(y)|_y0",
+          "d33 psi_q3_j3(y)|_y0"
+        ],
+        "index": 2,
+        "j": 3,
+        "q": 3,
+        "sector": "reference_charged",
+        "symbolic_eigenfunction": "psi_q3_j3(y)"
+      }
+    ],
+    "reference_neutral": [
+      {
+        "feature_vector": [
+          "psi_q0_j0(y)|_y0",
+          "d1 psi_q0_j0(y)|_y0",
+          "d2 psi_q0_j0(y)|_y0",
+          "d3 psi_q0_j0(y)|_y0",
+          "d11 psi_q0_j0(y)|_y0",
+          "d12 psi_q0_j0(y)|_y0",
+          "d13 psi_q0_j0(y)|_y0",
+          "d22 psi_q0_j0(y)|_y0",
+          "d23 psi_q0_j0(y)|_y0",
+          "d33 psi_q0_j0(y)|_y0"
+        ],
+        "index": 0,
+        "j": 0,
+        "q": 0,
+        "sector": "reference_neutral",
+        "symbolic_eigenfunction": "psi_q0_j0(y)"
+      },
+      {
+        "feature_vector": [
+          "psi_q3_j0(y)|_y0",
+          "d1 psi_q3_j0(y)|_y0",
+          "d2 psi_q3_j0(y)|_y0",
+          "d3 psi_q3_j0(y)|_y0",
+          "d11 psi_q3_j0(y)|_y0",
+          "d12 psi_q3_j0(y)|_y0",
+          "d13 psi_q3_j0(y)|_y0",
+          "d22 psi_q3_j0(y)|_y0",
+          "d23 psi_q3_j0(y)|_y0",
+          "d33 psi_q3_j0(y)|_y0"
+        ],
+        "index": 1,
+        "j": 0,
+        "q": 3,
+        "sector": "reference_neutral",
+        "symbolic_eigenfunction": "psi_q3_j0(y)"
+      },
+      {
+        "feature_vector": [
+          "psi_q1_j1(y)|_y0",
+          "d1 psi_q1_j1(y)|_y0",
+          "d2 psi_q1_j1(y)|_y0",
+          "d3 psi_q1_j1(y)|_y0",
+          "d11 psi_q1_j1(y)|_y0",
+          "d12 psi_q1_j1(y)|_y0",
+          "d13 psi_q1_j1(y)|_y0",
+          "d22 psi_q1_j1(y)|_y0",
+          "d23 psi_q1_j1(y)|_y0",
+          "d33 psi_q1_j1(y)|_y0"
+        ],
+        "index": 2,
+        "j": 1,
+        "q": 1,
+        "sector": "reference_neutral",
+        "symbolic_eigenfunction": "psi_q1_j1(y)"
+      }
+    ]
+  },
+  "negative_results": [
+    "explicit qj-to-eigenfunction map not derived in this branch",
+    "internal feature independence not promoted without explicit eigenfunction structure",
+    "finite-width rank-three not promoted without independence proof",
+    "numerical Yukawa values not derived in this branch",
+    "fermion mass ratios not derived in this branch",
+    "CKM values not derived in this branch",
+    "PMNS values not derived in this branch",
+    "replacement claim is not ready"
+  ],
+  "notes": [
+    "repo search found no completed theorem-derived Wigner/Hopf/Berger eigenfunction machinery",
+    "diagonal hierarchy route is separated from full rank-three route",
+    "no frozen predictions changed",
+    "no official predictions changed"
+  ],
+  "numerical_yukawa_values_derived": false,
+  "official_predictions_changed": false,
+  "pmns_values_derived": false,
+  "qj_eigenfunction_map_scaffold_completed": true,
+  "routes": {
+    "diagonal_hierarchy_route": "generation-dependent singlet/internal amplitudes or diagonal finite-width overlaps may support hierarchy scaffolding",
+    "full_rank_three_route": "requires derived active-mode structure, delta_ij channel selection, finite-width moment independence, or boundary transport/dressing"
+  },
+  "standard_model_fully_derived": false,
+  "status": "partial_theorem_scaffold",
+  "still_open_downstream": [
+    "explicit Berger/BHSM internal eigenfunction theorem",
+    "qj-to-eigenfunction map",
+    "eigenfunction amplitudes at y0",
+    "eigenfunction gradient and Hessian values near y0",
+    "finite-width moment contractions",
+    "rank-three Yukawa matrix theorem",
+    "numerical Yukawa coupling theorem",
+    "fermion mass hierarchy theorem",
+    "CKM mixing theorem",
+    "PMNS mixing theorem",
+    "neutral-sector mass scale theorem",
+    "full low-energy SM Lagrangian theorem",
+    "full replacement-level SM derivation"
+  ],
+  "verdict_labels": [
+    "PO_BH_24_QJ_TO_INTERNAL_EIGENFUNCTION_MAP_PARTIAL",
+    "QJ_EIGENFUNCTION_MAP_SCAFFOLD_DERIVED_CONDITIONAL",
+    "INTERNAL_EIGENFUNCTION_FEATURE_SCAFFOLD_DERIVED_CONDITIONAL",
+    "DIAGONAL_HIERARCHY_ROUTE_IDENTIFIED_CONDITIONAL",
+    "FULL_RANK_THREE_ROUTE_CONDITION_DERIVED_CONDITIONAL",
+    "QJ_TO_BERGER_EIGENFUNCTION_MAP_REMAINS_OPEN",
+    "INTERNAL_FEATURE_INDEPENDENCE_REMAINS_OPEN",
+    "RANK_THREE_YUKAWA_THEOREM_REMAINS_OPEN",
+    "NUMERICAL_YUKAWA_VALUES_REMAIN_OPEN",
+    "FERMION_MASS_RATIOS_REMAIN_OPEN",
+    "CKM_VALUES_REMAIN_OPEN",
+    "PMNS_VALUES_REMAIN_OPEN",
+    "BHSM_REPLACEMENT_CLAIM_NOT_READY",
+    "FROZEN_PREDICTIONS_UNCHANGED",
+    "OFFICIAL_PREDICTIONS_UNCHANGED"
+  ]
+}

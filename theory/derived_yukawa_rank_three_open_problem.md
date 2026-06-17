@@ -9,3 +9,5 @@ Open tasks:
 - compute finite-width profile moments from the internal metric;
 - prove the contracted matrix structures span rank three;
 - do all of the above without measured fermion masses or CKM/PMNS inputs.
+
+Follow-up: [Theorem discharge: QJ eigenfunction map](theorem_discharge_qj_eigenfunction_map.md) sharpens this open problem to deriving the explicit `(q,j)->psi_qj(y)` map and evaluating local feature independence.
