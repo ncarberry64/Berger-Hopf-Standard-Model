@@ -55,6 +55,7 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 - [Theorem discharge: QJ eigenfunction map](../theory/theorem_discharge_qj_eigenfunction_map.md)
 - [Theorem discharge: raw-mode Berger harmonic map](../theory/theorem_discharge_raw_mode_berger_harmonic_map.md)
 - [Theorem discharge: m-weight assignment](../theory/theorem_discharge_m_weight_assignment.md)
+- [Theorem discharge: harmonic highest-weight normalization](../theory/theorem_discharge_harmonic_highest_weight_normalization.md)
 
 ## Boundary-Action Term Realization Status
 
@@ -91,3 +92,5 @@ The QJ eigenfunction-map theorem-discharge attempt derives the symbolic map scaf
 The raw-mode Berger/Hopf harmonic theorem-discharge attempt derives `k=q+2j` and converts the canonical generation ledgers into raw `(k,j)` labels. It identifies candidate harmonic notation `psi_{k,j,m}` and records `j` as structurally compatible with a Hopf/fiber weight, but the `m` weight, explicit harmonic theorem, eigenfunction values, rank-three Yukawa theorem, and numerical Yukawa values remain open.
 
 The m-weight assignment theorem-discharge attempt audits candidate sources for the remaining Wigner/base/orientation label `m` and checks simple harmonic admissibility conventions. It reports the naive `ell=k/2, n=j` convention as a guardrail failure on several frozen modes. No harmonic convention, `m` assignment, explicit eigenfunction theorem, rank-three Yukawa theorem, or numerical Yukawa value is promoted.
+
+The harmonic highest-weight theorem-discharge attempt conditionally selects the `n` convention by rewriting `q=k-2j` as `q/2=k/2-j`. With `ell=k/2`, the Wigner/Hopf weight is `n=q/2` and `j=ell-n` is the lowering index. This does not derive the remaining `m` orientation/base-weight, explicit eigenfunctions, rank-three Yukawa theorem, numerical Yukawa values, or replacement readiness.

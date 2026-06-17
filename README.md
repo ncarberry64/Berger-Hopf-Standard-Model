@@ -89,6 +89,7 @@ Start with:
 - `theory/theorem_discharge_qj_eigenfunction_map.md`
 - `theory/theorem_discharge_raw_mode_berger_harmonic_map.md`
 - `theory/theorem_discharge_m_weight_assignment.md`
+- `theory/theorem_discharge_harmonic_highest_weight_normalization.md`
 
 Candidate master equation:
 
@@ -175,6 +176,8 @@ QJ eigenfunction-map status: the current theorem-discharge branch derives the sy
 Raw-mode Berger/Hopf harmonic status: the current theorem-discharge branch derives the raw-mode map `k=q+2j` from the existing `q=k-2j` relation and converts all generation ledgers to raw `(k,j)` labels. The candidate harmonic form and `j` fiber-weight interpretation remain structurally motivated; the `m` orientation/base-weight assignment, explicit eigenfunction values, rank-three Yukawa theorem, and numerical Yukawa values remain open.
 
 M-weight assignment status: the current theorem-discharge branch audits Wigner/Hopf admissibility and candidate boundary/orientation sources for the remaining `m` label. The naive convention `ell=k/2, n=j` fails admissibility on the frozen ledgers and is reported as a guardrail failure. No `m` assignment or harmonic convention is selected; explicit eigenfunctions, rank-three Yukawa support, numerical Yukawa values, and replacement readiness remain open.
+
+Harmonic highest-weight status: the current theorem-discharge branch conditionally derives the `n`-weight convention from `q=k-2j` by rewriting `q/2=k/2-j`. With `ell=k/2`, this gives `n=q/2` and `j=ell-n` as the lowering index across the frozen ledgers. The `m` orientation/base-weight assignment, explicit eigenfunctions, rank-three Yukawa theorem, numerical Yukawa values, and replacement readiness remain open.
 
 ## Citation / DOI
 

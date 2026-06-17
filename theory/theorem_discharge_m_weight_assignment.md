@@ -40,6 +40,8 @@ Convention A failures:
 | C: ell=k/2, n=j/2 | `ell=k/2` | `n=j/2` | `FAILED_GUARDRAIL` | requires derivation of fiber-weight normalization |
 | D: ell=k/2, n=q/2 | `ell=k/2` | `n=q/2` | `STRUCTURALLY_MOTIVATED_NOT_DERIVED` | requires derivation tying q to the Wigner fiber/base weight |
 
+Follow-up: `theory/theorem_discharge_harmonic_highest_weight_normalization.md` conditionally derives Convention D for the `n` label by rewriting `q=k-2j` as `q/2=k/2-j`. It does not derive `m`.
+
 ## 8. Candidate BHSM Sources For `m`
 
 - weak orientation sigma=2T3

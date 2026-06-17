@@ -60,6 +60,8 @@ psi_{k,j,m}(alpha,beta,gamma) ~ exp(i m alpha) d^{k/2}_{m,j}(beta) exp(i j gamma
 
 Follow-up audit: `theory/theorem_discharge_m_weight_assignment.md` tests candidate boundary/orientation sources and Wigner/Hopf admissibility conventions for this label. It does not derive or select `m`.
 
+Follow-up normalization: `theory/theorem_discharge_harmonic_highest_weight_normalization.md` conditionally derives the `n=q/2` Wigner/Hopf weight convention by reading `j=ell-n` as the lowering index.
+
 ## 10. Candidate Sources For `m`
 
 - active/singlet side

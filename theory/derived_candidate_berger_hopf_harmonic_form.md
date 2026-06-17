@@ -9,4 +9,6 @@ This is structurally motivated notation, not a completed harmonic theorem.
 
 Follow-up: `theory/theorem_discharge_m_weight_assignment.md` audits candidate conventions for the remaining `m` label and keeps the selected harmonic convention open.
 
+Follow-up normalization: `theory/theorem_discharge_harmonic_highest_weight_normalization.md` conditionally selects the `n=q/2` side of the Wigner label pair while keeping `m` open.
+
 Status: `BERGER_HARMONIC_FORM_STRUCTURALLY_MOTIVATED_NOT_DERIVED`.
