@@ -77,3 +77,5 @@ This branch derives the m-multiplet harmonic feature scaffold for BHSM internal 
 Follow-up: `theory/theorem_discharge_generic_y0_wigner_feature_rank.md` evaluates the retained multiplets symbolically at `y0=(alpha0,beta0,gamma0)` and connects the result to the feature-rank support problem.
 
 Follow-up: `theory/theorem_discharge_y0_coordinate_constraint.md` audits whether those symbolic coordinates are fixed, gauge-removable, axis-collapsed, or still open.
+
+Follow-up: `theory/theorem_discharge_generic_finite_width_feature_rank.md` tests the next symbolic rank-support scaffold without promoting a nonzero determinant.

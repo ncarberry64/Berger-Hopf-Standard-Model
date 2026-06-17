@@ -95,6 +95,7 @@ Start with:
 - `theory/theorem_discharge_m_multiplet_harmonic_features.md`
 - `theory/theorem_discharge_generic_y0_wigner_feature_rank.md`
 - `theory/theorem_discharge_y0_coordinate_constraint.md`
+- `theory/theorem_discharge_generic_finite_width_feature_rank.md`
 
 Candidate master equation:
 
@@ -193,6 +194,8 @@ M-multiplet harmonic feature status: the current theorem-discharge branch derive
 Generic-y0 Wigner feature-rank status: the current theorem-discharge branch derives the symbolic evaluation scaffold `D^{k/2}_{m,q/2}(y0)=exp(-i*m*alpha0)*d^{k/2}_{m,q/2}(beta0)*exp(-i*(q/2)*gamma0)`. It identifies `beta0` as the reduced-Wigner magnitude selector and `alpha0,gamma0` as phase structure, while leaving numerical y0 coordinates, feature-rank independence, finite-width rank-three, numerical Yukawa values, CKM, PMNS, and replacement readiness open.
 
 Y0 coordinate-constraint status: the current theorem-discharge branch records `alpha0,gamma0` as conditional phase-structure coordinates and `beta0` as the reduced-Wigner magnitude selector. It does not derive alpha/gamma gauge fixing, a geometry-fixed beta0, beta0 axis-collapse, full y0 coordinates, finite-width rank-three support, numerical Yukawa values, CKM, PMNS, or replacement readiness.
+
+Generic finite-width feature-rank status: the current theorem-discharge branch defines the symbolic finite-width feature-rank scaffold and Gram/minor rank condition for the retained y0 Wigner feature multiplets. It does not derive a nonzero symbolic determinant, feature-rank independence, finite-width rank-three Yukawa matrices, numerical Yukawa values, CKM, PMNS, or replacement readiness.
 
 ## Citation / DOI
 
