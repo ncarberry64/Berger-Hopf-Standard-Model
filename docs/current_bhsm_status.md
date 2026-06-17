@@ -59,6 +59,7 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 - [Theorem discharge: leading-axis m-weight assignment](../theory/theorem_discharge_leading_axis_m_weight.md)
 - [Theorem discharge: y0 axis identification](../theory/theorem_discharge_y0_axis_identification.md)
 - [Theorem discharge: m-multiplet harmonic features](../theory/theorem_discharge_m_multiplet_harmonic_features.md)
+- [Theorem discharge: generic-y0 Wigner feature rank](../theory/theorem_discharge_generic_y0_wigner_feature_rank.md)
 
 ## Boundary-Action Term Realization Status
 
@@ -103,3 +104,5 @@ The leading-axis m-weight theorem-discharge attempt audits the candidate focused
 The y0 axis-identification theorem-discharge attempt supports `y0` as the universal scalar/topographic profile peak, but keeps group-identity, Hopf-pole, Berger-axis, and canonical focal-point identifications open. This preserves the guardrail that `m=n=q/2` cannot be promoted until the Wigner/Hopf axis-sampling bridge is derived.
 
 The m-multiplet harmonic feature theorem-discharge attempt conditionally assigns each `(k,q)` internal mode its full admissible Wigner/Hopf `m`-multiplet with `ell=k/2` and `n=q/2`. Axis-collapse to `m=n=q/2` is documented only as a future conditional case if `y0` is derived as the relevant identity/Hopf axis; generic `y0` keeps the full multiplet. Finite-width rank-three support, numerical Yukawa values, CKM, PMNS, and replacement readiness remain open.
+
+The generic-y0 Wigner feature-rank theorem-discharge attempt conditionally derives the symbolic evaluation formula for the retained m-multiplets at `y0=(alpha0,beta0,gamma0)`. The reduced Wigner factor `d^{k/2}_{m,q/2}(beta0)` is identified as the magnitude selector, while `alpha0` and `gamma0` supply phase structure. Numerical y0 coordinates, feature-rank independence, finite-width rank-three support, numerical Yukawa values, CKM, PMNS, and replacement readiness remain open.

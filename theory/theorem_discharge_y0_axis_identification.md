@@ -73,3 +73,5 @@ The next proof obligation is to derive `y0` as a group identity, Hopf pole, Berg
 ## Conclusion
 
 This branch audits the geometric status of y0. The repo supports y0 as the distinguished peak of the universal scalar/topographic profile and may support alignment with the squashed/Berger axis, but does not yet derive y0 as the group identity, Hopf pole, or canonical axis point required to promote Wigner/Hopf axis sampling. Therefore the leading-axis assignment m=n=q/2 remains structurally motivated rather than derived, and explicit eigenfunction values, finite-width rank-three Yukawa support, numerical Yukawa values, CKM, PMNS, and replacement-level claims remain open.
+
+Follow-up: `theory/theorem_discharge_generic_y0_wigner_feature_rank.md` keeps `y0` symbolic as `(alpha0,beta0,gamma0)` and evaluates the retained multiplets without promoting axis sampling.

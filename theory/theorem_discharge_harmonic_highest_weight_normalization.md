@@ -83,6 +83,8 @@ Y0 follow-up: `theory/theorem_discharge_y0_axis_identification.md` supports `y0`
 
 M-multiplet follow-up: `theory/theorem_discharge_m_multiplet_harmonic_features.md` uses this `ell,n` convention to build the full admissible `m`-multiplet feature scaffold.
 
+Generic-y0 follow-up: `theory/theorem_discharge_generic_y0_wigner_feature_rank.md` evaluates those `ell,n,m` labels through the symbolic Wigner formula at `y0=(alpha0,beta0,gamma0)`.
+
 ## 12. Bridge To Candidate Eigenfunctions
 
 The candidate notation remains:

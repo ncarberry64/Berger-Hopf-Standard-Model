@@ -1,0 +1,208 @@
+{
+  "axis_collapse_recovery_statement": "beta0=0 recovers the identity-axis collapse D^ell_{m,n}=delta_mn",
+  "beta_selector_statement": "beta0 controls reduced-Wigner magnitude structure through d^ell_{m,n}(beta0)",
+  "bhsm_replacement_claim_ready": false,
+  "branch": "bhsm-theorem-discharge-generic-y0-wigner-feature-rank-v1",
+  "ckm_values_derived": false,
+  "core_formula": "D^{k/2}_{m,q/2}(y0)=exp(-i*m*alpha0)*d^{k/2}_{m,q/2}(beta0)*exp(-i*(q/2)*gamma0)",
+  "discharged_obligations": {
+    "PO-BH-31": "DERIVED_CONDITIONAL: generic-y0 Wigner evaluation scaffold derived symbolically; y0 coordinates, feature-rank independence, and numerical Yukawa values remain open"
+  },
+  "feature_label_counts": {
+    "cyclic_lower:0": 1,
+    "cyclic_lower:1": 7,
+    "cyclic_lower:2": 9,
+    "cyclic_upper:0": 1,
+    "cyclic_upper:1": 7,
+    "cyclic_upper:2": 11,
+    "reference_charged:0": 1,
+    "reference_charged:1": 6,
+    "reference_charged:2": 10,
+    "reference_neutral:0": 1,
+    "reference_neutral:1": 4,
+    "reference_neutral:2": 4
+  },
+  "feature_rank_condition": {
+    "condition": "Rank-three support requires the three generation-mode feature multiplets in a sector to remain independent under universal finite-width moment contractions.",
+    "feature_rank_independence_derived": false,
+    "guardrail": "This branch derives symbolic generic-y0 features, not feature-rank independence."
+  },
+  "feature_rank_independence_derived": false,
+  "feature_rows": [
+    {
+      "ell": "0",
+      "first_expression": "exp(-i*0*alpha0)*d^(0)_(0,0)(beta0)*exp(-i*0*gamma0)",
+      "index": 0,
+      "k": 0,
+      "m_count": 1,
+      "mode": "reference_charged:0",
+      "n": "0",
+      "sector": "reference_charged"
+    },
+    {
+      "ell": "5/2",
+      "first_expression": "exp(-i*-5/2*alpha0)*d^(5/2)_(-5/2,1/2)(beta0)*exp(-i*1/2*gamma0)",
+      "index": 1,
+      "k": 5,
+      "m_count": 6,
+      "mode": "reference_charged:1",
+      "n": "1/2",
+      "sector": "reference_charged"
+    },
+    {
+      "ell": "9/2",
+      "first_expression": "exp(-i*-9/2*alpha0)*d^(9/2)_(-9/2,3/2)(beta0)*exp(-i*3/2*gamma0)",
+      "index": 2,
+      "k": 9,
+      "m_count": 10,
+      "mode": "reference_charged:2",
+      "n": "3/2",
+      "sector": "reference_charged"
+    },
+    {
+      "ell": "0",
+      "first_expression": "exp(-i*0*alpha0)*d^(0)_(0,0)(beta0)*exp(-i*0*gamma0)",
+      "index": 0,
+      "k": 0,
+      "m_count": 1,
+      "mode": "reference_neutral:0",
+      "n": "0",
+      "sector": "reference_neutral"
+    },
+    {
+      "ell": "3/2",
+      "first_expression": "exp(-i*-3/2*alpha0)*d^(3/2)_(-3/2,3/2)(beta0)*exp(-i*3/2*gamma0)",
+      "index": 1,
+      "k": 3,
+      "m_count": 4,
+      "mode": "reference_neutral:1",
+      "n": "3/2",
+      "sector": "reference_neutral"
+    },
+    {
+      "ell": "3/2",
+      "first_expression": "exp(-i*-3/2*alpha0)*d^(3/2)_(-3/2,1/2)(beta0)*exp(-i*1/2*gamma0)",
+      "index": 2,
+      "k": 3,
+      "m_count": 4,
+      "mode": "reference_neutral:2",
+      "n": "1/2",
+      "sector": "reference_neutral"
+    },
+    {
+      "ell": "0",
+      "first_expression": "exp(-i*0*alpha0)*d^(0)_(0,0)(beta0)*exp(-i*0*gamma0)",
+      "index": 0,
+      "k": 0,
+      "m_count": 1,
+      "mode": "cyclic_upper:0",
+      "n": "0",
+      "sector": "cyclic_upper"
+    },
+    {
+      "ell": "3",
+      "first_expression": "exp(-i*-3*alpha0)*d^(3)_(-3,3)(beta0)*exp(-i*3*gamma0)",
+      "index": 1,
+      "k": 6,
+      "m_count": 7,
+      "mode": "cyclic_upper:1",
+      "n": "3",
+      "sector": "cyclic_upper"
+    },
+    {
+      "ell": "5",
+      "first_expression": "exp(-i*-5*alpha0)*d^(5)_(-5,4)(beta0)*exp(-i*4*gamma0)",
+      "index": 2,
+      "k": 10,
+      "m_count": 11,
+      "mode": "cyclic_upper:2",
+      "n": "4",
+      "sector": "cyclic_upper"
+    },
+    {
+      "ell": "0",
+      "first_expression": "exp(-i*0*alpha0)*d^(0)_(0,0)(beta0)*exp(-i*0*gamma0)",
+      "index": 0,
+      "k": 0,
+      "m_count": 1,
+      "mode": "cyclic_lower:0",
+      "n": "0",
+      "sector": "cyclic_lower"
+    },
+    {
+      "ell": "3",
+      "first_expression": "exp(-i*-3*alpha0)*d^(3)_(-3,0)(beta0)*exp(-i*0*gamma0)",
+      "index": 1,
+      "k": 6,
+      "m_count": 7,
+      "mode": "cyclic_lower:1",
+      "n": "0",
+      "sector": "cyclic_lower"
+    },
+    {
+      "ell": "4",
+      "first_expression": "exp(-i*-4*alpha0)*d^(4)_(-4,2)(beta0)*exp(-i*2*gamma0)",
+      "index": 2,
+      "k": 8,
+      "m_count": 9,
+      "mode": "cyclic_lower:2",
+      "n": "2",
+      "sector": "cyclic_lower"
+    }
+  ],
+  "finite_width_rank_three_derived": false,
+  "frozen_predictions_changed": false,
+  "generic_y0_wigner_scaffold_derived_conditionally": true,
+  "negative_results": [
+    "y0 coordinates not derived in this branch",
+    "feature-rank independence not derived in this branch",
+    "finite-width rank-three not derived in this branch",
+    "numerical Yukawa values not derived in this branch",
+    "CKM values not derived in this branch",
+    "PMNS values not derived in this branch",
+    "replacement claim is not ready"
+  ],
+  "numerical_yukawa_values_derived": false,
+  "official_predictions_changed": false,
+  "phase_structure_statement": "alpha0 and gamma0 enter as phase factors exp(-i m alpha0) and exp(-i n gamma0)",
+  "pmns_values_derived": false,
+  "standard_model_fully_derived": false,
+  "status": "theorem_discharge_candidate",
+  "still_open_downstream": [
+    "derive or constrain y0 coordinates alpha0,beta0,gamma0",
+    "evaluate reduced Wigner beta selector",
+    "evaluate local feature vectors at y0",
+    "finite-width moment contractions",
+    "rank-three Yukawa matrix theorem",
+    "numerical Yukawa coupling theorem",
+    "fermion mass hierarchy theorem",
+    "CKM mixing theorem",
+    "PMNS mixing theorem",
+    "full replacement-level SM derivation"
+  ],
+  "verdict_labels": [
+    "PO_BH_31_GENERIC_Y0_WIGNER_FEATURE_RANK_SCAFFOLD_DERIVED_CONDITIONAL",
+    "GENERIC_Y0_WIGNER_EVALUATION_SCAFFOLD_DERIVED_CONDITIONAL",
+    "REDUCED_WIGNER_BETA_SELECTOR_IDENTIFIED_CONDITIONAL",
+    "GENERIC_Y0_PHASE_STRUCTURE_IDENTIFIED_CONDITIONAL",
+    "AXIS_COLLAPSE_RECOVERY_CASE_DOCUMENTED",
+    "Y0_COORDINATES_REMAIN_OPEN",
+    "FEATURE_RANK_INDEPENDENCE_REMAINS_OPEN",
+    "FINITE_WIDTH_RANK_THREE_REMAINS_OPEN",
+    "NUMERICAL_YUKAWA_VALUES_REMAIN_OPEN",
+    "CKM_VALUES_REMAIN_OPEN",
+    "PMNS_VALUES_REMAIN_OPEN",
+    "BHSM_REPLACEMENT_CLAIM_NOT_READY",
+    "FROZEN_PREDICTIONS_UNCHANGED",
+    "OFFICIAL_PREDICTIONS_UNCHANGED"
+  ],
+  "y0_coordinates_derived": false,
+  "yukawa_bridge_status": {
+    "ckm_values_derived": false,
+    "finite_width_rank_three_derived": false,
+    "generic_y0_features_available": true,
+    "guardrail": "Wigner feature evaluation is not a numerical Yukawa, CKM, or PMNS derivation.",
+    "numerical_yukawa_values_derived": false,
+    "pmns_values_derived": false
+  }
+}
