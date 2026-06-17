@@ -8,3 +8,5 @@
 | generic internal point | `True` | `PARTIAL` | Current repo support treats y0 as a symbolic topographic sampling point. |
 
 Status: `Y0_AXIS_SAMPLING_REMAINS_OPEN`.
+
+See also: `theory/theorem_discharge_y0_axis_identification.md`.

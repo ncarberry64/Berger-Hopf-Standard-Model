@@ -91,6 +91,7 @@ Start with:
 - `theory/theorem_discharge_m_weight_assignment.md`
 - `theory/theorem_discharge_harmonic_highest_weight_normalization.md`
 - `theory/theorem_discharge_leading_axis_m_weight.md`
+- `theory/theorem_discharge_y0_axis_identification.md`
 
 Candidate master equation:
 
@@ -181,6 +182,8 @@ M-weight assignment status: the current theorem-discharge branch audits Wigner/H
 Harmonic highest-weight status: the current theorem-discharge branch conditionally derives the `n`-weight convention from `q=k-2j` by rewriting `q/2=k/2-j`. With `ell=k/2`, this gives `n=q/2` and `j=ell-n` as the lowering index across the frozen ledgers. The `m` orientation/base-weight assignment, explicit eigenfunctions, rank-three Yukawa theorem, numerical Yukawa values, and replacement readiness remain open.
 
 Leading-axis m-weight status: the current theorem-discharge branch audits the candidate leading focused component `m=n=q/2`. The labels are admissible on the frozen ledgers, but the assignment is not promoted because the repo does not yet derive `y0` as a Berger/Hopf identity axis or equivalent focal point, nor the corresponding Wigner/Hopf axis-sampling rule. Finite-width rank-three, numerical Yukawa, CKM, PMNS, and replacement-level claims remain open.
+
+Y0 axis-identification status: the current theorem-discharge branch separates the supported statement that `y0` is the universal scalar/topographic profile peak from the stronger, still-open statement that `y0` is a group identity, Hopf pole, Berger axis, or canonical Wigner sampling point. Therefore `m=n=q/2` remains structurally motivated rather than derived.
 
 ## Citation / DOI
 
