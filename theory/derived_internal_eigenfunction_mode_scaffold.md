@@ -21,3 +21,5 @@
 - generation `2`: `(q,j)=(4,2) -> psi_q4_j2(y)`
 
 Status: `INTERNAL_EIGENFUNCTION_FEATURE_SCAFFOLD_DERIVED_CONDITIONAL`.
+
+Follow-up: [Theorem discharge: raw-mode Berger harmonic map](theorem_discharge_raw_mode_berger_harmonic_map.md) converts the mode scaffold to raw `(k,j)` harmonic labels and keeps explicit eigenfunction values open.

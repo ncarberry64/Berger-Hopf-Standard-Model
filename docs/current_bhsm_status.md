@@ -53,6 +53,7 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 - [Theorem discharge: legacy geometric-overlap bridge](../theory/theorem_discharge_legacy_geometric_overlap_bridge.md)
 - [Theorem discharge: finite-width overlap rank](../theory/theorem_discharge_finite_width_overlap_rank.md)
 - [Theorem discharge: QJ eigenfunction map](../theory/theorem_discharge_qj_eigenfunction_map.md)
+- [Theorem discharge: raw-mode Berger harmonic map](../theory/theorem_discharge_raw_mode_berger_harmonic_map.md)
 
 ## Boundary-Action Term Realization Status
 
@@ -85,3 +86,5 @@ The legacy geometric-overlap bridge theorem-discharge attempt conditionally iden
 The finite-width overlap-rank theorem-discharge attempt derives the symbolic moment expansion and the rank-three condition for escaping the strict point-sampling outer-product limit. It does not prove that the condition is satisfied; internal eigenfunction independence, finite-width moment values, numerical Yukawa values, mass ratios, CKM values, PMNS values, and replacement readiness remain open.
 
 The QJ eigenfunction-map theorem-discharge attempt derives the symbolic map scaffold from generation labels `(q,j)` to internal mode labels `psi_qj(y)`, plus local value/gradient/Hessian feature vectors and the route split between diagonal hierarchy support and full rank-three support. The explicit Berger/BHSM eigenfunction map, local feature independence, numerical Yukawa values, mass ratios, CKM values, PMNS values, and replacement readiness remain open.
+
+The raw-mode Berger/Hopf harmonic theorem-discharge attempt derives `k=q+2j` and converts the canonical generation ledgers into raw `(k,j)` labels. It identifies candidate harmonic notation `psi_{k,j,m}` and records `j` as structurally compatible with a Hopf/fiber weight, but the `m` weight, explicit harmonic theorem, eigenfunction values, rank-three Yukawa theorem, and numerical Yukawa values remain open.

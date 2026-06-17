@@ -87,6 +87,7 @@ Start with:
 - `theory/theorem_discharge_legacy_geometric_overlap_bridge.md`
 - `theory/theorem_discharge_finite_width_overlap_rank.md`
 - `theory/theorem_discharge_qj_eigenfunction_map.md`
+- `theory/theorem_discharge_raw_mode_berger_harmonic_map.md`
 
 Candidate master equation:
 
@@ -169,6 +170,8 @@ Legacy geometric-overlap bridge status: the current theorem-discharge branch con
 Finite-width overlap-rank status: the current theorem-discharge branch derives the symbolic finite-width moment expansion and the condition under which moment terms can exceed the strict point-sampling rank-one limit. Rank-three Yukawa structure remains open until internal eigenfunction independence and finite-width moment contractions are derived from BHSM geometry without fitted masses.
 
 QJ eigenfunction-map status: the current theorem-discharge branch derives the symbolic scaffold `E:(q,j)->psi_qj(y)` and the local value/gradient/Hessian feature vectors needed to test diagonal hierarchy and rank-three support. The explicit Berger/BHSM eigenfunction map, feature independence, numerical Yukawa values, mass ratios, CKM values, and PMNS values remain open.
+
+Raw-mode Berger/Hopf harmonic status: the current theorem-discharge branch derives the raw-mode map `k=q+2j` from the existing `q=k-2j` relation and converts all generation ledgers to raw `(k,j)` labels. The candidate harmonic form and `j` fiber-weight interpretation remain structurally motivated; the `m` orientation/base-weight assignment, explicit eigenfunction values, rank-three Yukawa theorem, and numerical Yukawa values remain open.
 
 ## Citation / DOI
 

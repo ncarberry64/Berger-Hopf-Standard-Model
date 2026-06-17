@@ -114,6 +114,8 @@ Replacement readiness remains false until numerical overlap values, mass hierarc
 
 Follow-up theorem layer: [Theorem discharge: QJ eigenfunction map](theorem_discharge_qj_eigenfunction_map.md) isolates the next blocker: deriving the explicit non-fitted map from generation labels `(q,j)` to internal Berger/BHSM eigenfunctions and their local features.
 
+Follow-up theorem layer: [Theorem discharge: raw-mode Berger harmonic map](theorem_discharge_raw_mode_berger_harmonic_map.md) derives the raw `(k,j)` labels from `q=k-2j` and identifies the remaining `m` orientation/base-weight problem.
+
 ## Conclusion
 
 This branch derives the finite-width overlap-moment scaffold for the BHSM Yukawa kernel and identifies the condition under which the overlap matrix can exceed the strict point-sampling rank-one limit. The strict sharp-peak term remains rank-limited, while finite-width moments can in principle raise the rank if the relevant internal eigenfunction derivative and moment structures are linearly independent. This branch does not promote numerical Yukawa values, fermion mass ratios, CKM values, or PMNS values. Rank-three Yukawa structure remains open unless the required internal eigenfunction independence is derived from BHSM geometry.

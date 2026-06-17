@@ -1,0 +1,10 @@
+# Derived Candidate Berger Hopf Harmonic Form
+
+```text
+psi_{k,j,m}(alpha,beta,gamma) ~ D^{k/2}_{m,j}(alpha,beta,gamma)
+psi_{k,j,m}(alpha,beta,gamma) ~ exp(i m alpha) d^{k/2}_{m,j}(beta) exp(i j gamma)
+```
+
+This is structurally motivated notation, not a completed harmonic theorem.
+
+Status: `BERGER_HARMONIC_FORM_STRUCTURALLY_MOTIVATED_NOT_DERIVED`.

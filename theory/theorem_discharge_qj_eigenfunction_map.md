@@ -99,6 +99,8 @@ See [QJ Eigenfunction Map Non-Tautology Audit](qj_eigenfunction_map_non_tautolog
 
 Replacement readiness remains false until explicit internal eigenfunctions, finite-width moment contractions, numerical Yukawa values, mass hierarchy, CKM/PMNS mixing, neutral-sector scales, scalar potential numerics, and the full low-energy Lagrangian theorem are complete.
 
+Follow-up theorem layer: [Theorem discharge: raw-mode Berger harmonic map](theorem_discharge_raw_mode_berger_harmonic_map.md) sharpens the symbolic `psi_qj(y)` scaffold into raw `(k,j)` labels using `k=q+2j`, while keeping the remaining `m` weight and explicit harmonic values open.
+
 ## Conclusion
 
 This branch derives the symbolic scaffold for the missing BHSM map from generation labels (q,j) to internal Berger/BHSM eigenfunctions psi_qj(y). The branch identifies local values, gradients, Hessians, and finite-width moment contractions as the required data for proving diagonal hierarchy support and full rank-three Yukawa support. Because an explicit theorem-derived eigenfunction map and evaluated local feature independence are not derived in this branch, numerical Yukawa values, fermion mass ratios, CKM values, PMNS values, and replacement-level claims remain open.

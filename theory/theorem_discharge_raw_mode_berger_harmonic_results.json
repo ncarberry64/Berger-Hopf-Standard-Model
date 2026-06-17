@@ -1,0 +1,242 @@
+{
+  "berger_harmonic_form_status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+  "bhsm_replacement_claim_ready": false,
+  "branch": "bhsm-theorem-discharge-raw-mode-berger-harmonic-map-v1",
+  "candidate_harmonic_factorized_form": "psi_{k,j,m}(alpha,beta,gamma) ~ exp(i m alpha) d^{k/2}_{m,j}(beta) exp(i j gamma)",
+  "candidate_harmonic_form": "psi_{k,j,m}(alpha,beta,gamma) ~ D^{k/2}_{m,j}(alpha,beta,gamma)",
+  "discharged_obligations": {
+    "PO-BH-25": "PARTIAL: raw-mode map k=q+2j derived; candidate Berger/Hopf harmonic form identified; m-weight assignment and explicit eigenfunction values remain open"
+  },
+  "explicit_eigenfunctions_derived": false,
+  "finite_width_rank_three_derived": false,
+  "frozen_predictions_changed": false,
+  "j_fiber_weight_derived": false,
+  "j_fiber_weight_status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+  "m_weight_assignment_derived": false,
+  "m_weight_candidate_sources": [
+    "active/singlet side",
+    "weak orientation",
+    "T3",
+    "charge closure",
+    "sector label",
+    "boundary orientation algebra",
+    "scalar insertion H or H_tilde",
+    "cyclic/reference channel",
+    "left/right chirality"
+  ],
+  "negative_results": [
+    "m-weight assignment not derived in this branch",
+    "explicit eigenfunction values not derived in this branch",
+    "rank-three Yukawa theorem not derived in this branch",
+    "numerical Yukawa values not derived in this branch",
+    "replacement claim is not ready"
+  ],
+  "numerical_yukawa_values_derived": false,
+  "official_predictions_changed": false,
+  "qj_ledgers": {
+    "cyclic_lower": [
+      {
+        "index": 0,
+        "j": 0,
+        "q": 0,
+        "sector": "cyclic_lower"
+      },
+      {
+        "index": 1,
+        "j": 3,
+        "q": 0,
+        "sector": "cyclic_lower"
+      },
+      {
+        "index": 2,
+        "j": 2,
+        "q": 4,
+        "sector": "cyclic_lower"
+      }
+    ],
+    "cyclic_upper": [
+      {
+        "index": 0,
+        "j": 0,
+        "q": 0,
+        "sector": "cyclic_upper"
+      },
+      {
+        "index": 1,
+        "j": 0,
+        "q": 6,
+        "sector": "cyclic_upper"
+      },
+      {
+        "index": 2,
+        "j": 1,
+        "q": 8,
+        "sector": "cyclic_upper"
+      }
+    ],
+    "reference_charged": [
+      {
+        "index": 0,
+        "j": 0,
+        "q": 0,
+        "sector": "reference_charged"
+      },
+      {
+        "index": 1,
+        "j": 2,
+        "q": 1,
+        "sector": "reference_charged"
+      },
+      {
+        "index": 2,
+        "j": 3,
+        "q": 3,
+        "sector": "reference_charged"
+      }
+    ],
+    "reference_neutral": [
+      {
+        "index": 0,
+        "j": 0,
+        "q": 0,
+        "sector": "reference_neutral"
+      },
+      {
+        "index": 1,
+        "j": 0,
+        "q": 3,
+        "sector": "reference_neutral"
+      },
+      {
+        "index": 2,
+        "j": 1,
+        "q": 1,
+        "sector": "reference_neutral"
+      }
+    ]
+  },
+  "raw_mode_ledgers": {
+    "cyclic_lower": [
+      {
+        "candidate_harmonic": "psi_{0,0,m}(y)",
+        "index": 0,
+        "j": 0,
+        "k": 0,
+        "sector": "cyclic_lower"
+      },
+      {
+        "candidate_harmonic": "psi_{6,3,m}(y)",
+        "index": 1,
+        "j": 3,
+        "k": 6,
+        "sector": "cyclic_lower"
+      },
+      {
+        "candidate_harmonic": "psi_{8,2,m}(y)",
+        "index": 2,
+        "j": 2,
+        "k": 8,
+        "sector": "cyclic_lower"
+      }
+    ],
+    "cyclic_upper": [
+      {
+        "candidate_harmonic": "psi_{0,0,m}(y)",
+        "index": 0,
+        "j": 0,
+        "k": 0,
+        "sector": "cyclic_upper"
+      },
+      {
+        "candidate_harmonic": "psi_{6,0,m}(y)",
+        "index": 1,
+        "j": 0,
+        "k": 6,
+        "sector": "cyclic_upper"
+      },
+      {
+        "candidate_harmonic": "psi_{10,1,m}(y)",
+        "index": 2,
+        "j": 1,
+        "k": 10,
+        "sector": "cyclic_upper"
+      }
+    ],
+    "reference_charged": [
+      {
+        "candidate_harmonic": "psi_{0,0,m}(y)",
+        "index": 0,
+        "j": 0,
+        "k": 0,
+        "sector": "reference_charged"
+      },
+      {
+        "candidate_harmonic": "psi_{5,2,m}(y)",
+        "index": 1,
+        "j": 2,
+        "k": 5,
+        "sector": "reference_charged"
+      },
+      {
+        "candidate_harmonic": "psi_{9,3,m}(y)",
+        "index": 2,
+        "j": 3,
+        "k": 9,
+        "sector": "reference_charged"
+      }
+    ],
+    "reference_neutral": [
+      {
+        "candidate_harmonic": "psi_{0,0,m}(y)",
+        "index": 0,
+        "j": 0,
+        "k": 0,
+        "sector": "reference_neutral"
+      },
+      {
+        "candidate_harmonic": "psi_{3,0,m}(y)",
+        "index": 1,
+        "j": 0,
+        "k": 3,
+        "sector": "reference_neutral"
+      },
+      {
+        "candidate_harmonic": "psi_{3,1,m}(y)",
+        "index": 2,
+        "j": 1,
+        "k": 3,
+        "sector": "reference_neutral"
+      }
+    ]
+  },
+  "raw_mode_map_completed": true,
+  "raw_mode_map_formula": "k=q+2j",
+  "standard_model_fully_derived": false,
+  "status": "partial_theorem_scaffold",
+  "still_open_downstream": [
+    "derive j as Hopf/fiber weight from BHSM geometry",
+    "derive m-weight assignment",
+    "explicit Berger/BHSM harmonic theorem",
+    "eigenfunction amplitudes at y0",
+    "finite-width moment contractions",
+    "rank-three Yukawa matrix theorem",
+    "numerical Yukawa coupling theorem",
+    "fermion mass hierarchy theorem",
+    "CKM mixing theorem",
+    "PMNS mixing theorem",
+    "full replacement-level SM derivation"
+  ],
+  "verdict_labels": [
+    "PO_BH_25_RAW_MODE_BERGER_HARMONIC_MAP_PARTIAL",
+    "RAW_MODE_MAP_DERIVED_CONDITIONAL",
+    "J_AS_HOPF_FIBER_WEIGHT_STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+    "BERGER_HARMONIC_FORM_STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+    "M_WEIGHT_ASSIGNMENT_REMAINS_OPEN",
+    "EXPLICIT_EIGENFUNCTION_VALUES_REMAIN_OPEN",
+    "RANK_THREE_YUKAWA_THEOREM_REMAINS_OPEN",
+    "NUMERICAL_YUKAWA_VALUES_REMAIN_OPEN",
+    "BHSM_REPLACEMENT_CLAIM_NOT_READY",
+    "FROZEN_PREDICTIONS_UNCHANGED",
+    "OFFICIAL_PREDICTIONS_UNCHANGED"
+  ]
+}

@@ -24,3 +24,5 @@ Mode ledger:
 This branch defines the symbolic map needed by later theorem layers. It does not derive explicit Berger/BHSM eigenfunction formulas.
 
 Status: `QJ_EIGENFUNCTION_MAP_SCAFFOLD_DERIVED_CONDITIONAL`.
+
+Follow-up: [Theorem discharge: raw-mode Berger harmonic map](theorem_discharge_raw_mode_berger_harmonic_map.md) refines this symbolic map to `(q,j)->(k=q+2j,j)->psi_{k,j,m}` and records the open `m` assignment.
