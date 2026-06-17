@@ -42,6 +42,8 @@ Convention A failures:
 
 Follow-up: `theory/theorem_discharge_harmonic_highest_weight_normalization.md` conditionally derives Convention D for the `n` label by rewriting `q=k-2j` as `q/2=k/2-j`. It does not derive `m`.
 
+Further follow-up: `theory/theorem_discharge_leading_axis_m_weight.md` audits the candidate leading component `m=n=q/2`; it is not promoted without a derived `y0` axis-sampling theorem.
+
 ## 8. Candidate BHSM Sources For `m`
 
 - weak orientation sigma=2T3

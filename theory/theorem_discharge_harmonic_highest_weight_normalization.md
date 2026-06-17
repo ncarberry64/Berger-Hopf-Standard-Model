@@ -77,6 +77,8 @@ The remaining `m` orientation/base-weight assignment is not derived in this bran
 
 Status: `M_WEIGHT_ASSIGNMENT_REMAINS_OPEN`.
 
+Follow-up audit: `theory/theorem_discharge_leading_axis_m_weight.md` tests the candidate leading focused component `m=n=q/2`. It remains partial unless `y0` is derived as a Berger/Hopf identity axis or equivalent focal point.
+
 ## 12. Bridge To Candidate Eigenfunctions
 
 The candidate notation remains:
