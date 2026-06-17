@@ -62,6 +62,7 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 - [Theorem discharge: generic-y0 Wigner feature rank](../theory/theorem_discharge_generic_y0_wigner_feature_rank.md)
 - [Theorem discharge: y0 coordinate constraint](../theory/theorem_discharge_y0_coordinate_constraint.md)
 - [Theorem discharge: generic finite-width feature rank](../theory/theorem_discharge_generic_finite_width_feature_rank.md)
+- [Theorem discharge: explicit symbolic Gram/minor](../theory/theorem_discharge_explicit_symbolic_gram_minor.md)
 
 ## Boundary-Action Term Realization Status
 
@@ -112,3 +113,5 @@ The generic-y0 Wigner feature-rank theorem-discharge attempt conditionally deriv
 The y0 coordinate-constraint theorem-discharge attempt keeps the coordinate triple symbolic while conditionally deriving alpha/gamma phase structure and the beta0 reduced-Wigner magnitude-selector role. Alpha/gamma gauge fixing, beta0 geometry fixing, beta0 axis collapse, full y0 coordinates, feature-rank independence, numerical Yukawa values, CKM, PMNS, and replacement readiness remain open.
 
 The generic finite-width feature-rank theorem-discharge attempt defines the local feature multiplets, finite-width moment scaffold, and symbolic Gram/minor rank condition needed for rank-three support. It remains partial because no nonzero symbolic determinant or equivalent independence theorem is derived; numerical Yukawa values, CKM, PMNS, and replacement readiness remain open.
+
+The explicit symbolic Gram/minor theorem-discharge attempt constructs generation feature matrices and enumerates concrete symbolic 3x3 minor candidates from Wigner/Hopf local jet expressions. It remains partial because no candidate minor is proven nonzero and local Wigner/Hopf jet independence remains open; numerical Yukawa values, CKM, PMNS, and replacement readiness remain open.

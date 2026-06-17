@@ -201,3 +201,5 @@ Remaining downstream obligations include deriving or constraining \(\beta_0\) fr
 This branch derives the y0 coordinate-constraint scaffold. In the generic Wigner evaluation, alpha0 and gamma0 enter as phase coordinates while beta0 controls the reduced-Wigner magnitude selector. The branch does not fit these coordinates to fermion masses or mixing data. Unless repo geometry fixes beta0 or derives an axis-collapse case, beta0 remains an open universal geometric selector. Finite-width rank-three support, numerical Yukawa values, CKM, PMNS, and replacement readiness remain open.
 
 Follow-up: `theory/theorem_discharge_generic_finite_width_feature_rank.md` turns the symbolic y0 feature data into a finite-width Gram/minor rank-support problem while keeping nonzero determinant and rank-three claims open.
+
+Follow-up: `theory/theorem_discharge_explicit_symbolic_gram_minor.md` enumerates explicit symbolic minor candidates for that rank-support problem without promoting a nonzero determinant.

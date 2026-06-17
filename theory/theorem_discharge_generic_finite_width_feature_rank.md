@@ -127,3 +127,5 @@ If later branches prove a nonzero generic determinant, BHSM can proceed to finit
 ## Conclusion
 
 This branch defines the generic finite-width feature-rank scaffold. It turns the open symbolic \(y_0\) and \(m\)-multiplet data into a precise rank-support problem under universal finite-width moment contractions. It does not derive a nonzero determinant, numerical Yukawa values, CKM, PMNS, or replacement readiness unless separately proven by repo-supported theorem machinery.
+
+Follow-up: `theory/theorem_discharge_explicit_symbolic_gram_minor.md` constructs explicit generation feature matrices and symbolic 3x3 minor candidates. The nonzero symbolic minor and Wigner/Hopf local jet-independence theorem remain open.

@@ -197,6 +197,8 @@ Y0 coordinate-constraint status: the current theorem-discharge branch records `a
 
 Generic finite-width feature-rank status: the current theorem-discharge branch defines the symbolic finite-width feature-rank scaffold and Gram/minor rank condition for the retained y0 Wigner feature multiplets. It does not derive a nonzero symbolic determinant, feature-rank independence, finite-width rank-three Yukawa matrices, numerical Yukawa values, CKM, PMNS, or replacement readiness.
 
+Explicit symbolic Gram/minor status: the current theorem-discharge branch constructs explicit generation feature matrices and enumerates symbolic 3x3 minor candidates tied to Wigner/Hopf jet expressions. It does not derive a nonzero symbolic minor, local Wigner/Hopf jet independence, finite-width rank-three Yukawa matrices, numerical Yukawa values, CKM, PMNS, or replacement readiness.
+
 ## Citation / DOI
 
 Use `CITATION.cff` for citation metadata. Zenodo metadata is recorded in `.zenodo.json`; do not create or edit external release metadata without explicit author instruction.
