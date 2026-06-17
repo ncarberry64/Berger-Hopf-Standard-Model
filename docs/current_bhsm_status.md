@@ -54,6 +54,7 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 - [Theorem discharge: finite-width overlap rank](../theory/theorem_discharge_finite_width_overlap_rank.md)
 - [Theorem discharge: QJ eigenfunction map](../theory/theorem_discharge_qj_eigenfunction_map.md)
 - [Theorem discharge: raw-mode Berger harmonic map](../theory/theorem_discharge_raw_mode_berger_harmonic_map.md)
+- [Theorem discharge: m-weight assignment](../theory/theorem_discharge_m_weight_assignment.md)
 
 ## Boundary-Action Term Realization Status
 
@@ -88,3 +89,5 @@ The finite-width overlap-rank theorem-discharge attempt derives the symbolic mom
 The QJ eigenfunction-map theorem-discharge attempt derives the symbolic map scaffold from generation labels `(q,j)` to internal mode labels `psi_qj(y)`, plus local value/gradient/Hessian feature vectors and the route split between diagonal hierarchy support and full rank-three support. The explicit Berger/BHSM eigenfunction map, local feature independence, numerical Yukawa values, mass ratios, CKM values, PMNS values, and replacement readiness remain open.
 
 The raw-mode Berger/Hopf harmonic theorem-discharge attempt derives `k=q+2j` and converts the canonical generation ledgers into raw `(k,j)` labels. It identifies candidate harmonic notation `psi_{k,j,m}` and records `j` as structurally compatible with a Hopf/fiber weight, but the `m` weight, explicit harmonic theorem, eigenfunction values, rank-three Yukawa theorem, and numerical Yukawa values remain open.
+
+The m-weight assignment theorem-discharge attempt audits candidate sources for the remaining Wigner/base/orientation label `m` and checks simple harmonic admissibility conventions. It reports the naive `ell=k/2, n=j` convention as a guardrail failure on several frozen modes. No harmonic convention, `m` assignment, explicit eigenfunction theorem, rank-three Yukawa theorem, or numerical Yukawa value is promoted.

@@ -58,6 +58,8 @@ psi_{k,j,m}(alpha,beta,gamma) ~ exp(i m alpha) d^{k/2}_{m,j}(beta) exp(i j gamma
 
 `m` remains open and is not guessed.
 
+Follow-up audit: `theory/theorem_discharge_m_weight_assignment.md` tests candidate boundary/orientation sources and Wigner/Hopf admissibility conventions for this label. It does not derive or select `m`.
+
 ## 10. Candidate Sources For `m`
 
 - active/singlet side

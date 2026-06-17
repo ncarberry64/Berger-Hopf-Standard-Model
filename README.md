@@ -88,6 +88,7 @@ Start with:
 - `theory/theorem_discharge_finite_width_overlap_rank.md`
 - `theory/theorem_discharge_qj_eigenfunction_map.md`
 - `theory/theorem_discharge_raw_mode_berger_harmonic_map.md`
+- `theory/theorem_discharge_m_weight_assignment.md`
 
 Candidate master equation:
 
@@ -172,6 +173,8 @@ Finite-width overlap-rank status: the current theorem-discharge branch derives t
 QJ eigenfunction-map status: the current theorem-discharge branch derives the symbolic scaffold `E:(q,j)->psi_qj(y)` and the local value/gradient/Hessian feature vectors needed to test diagonal hierarchy and rank-three support. The explicit Berger/BHSM eigenfunction map, feature independence, numerical Yukawa values, mass ratios, CKM values, and PMNS values remain open.
 
 Raw-mode Berger/Hopf harmonic status: the current theorem-discharge branch derives the raw-mode map `k=q+2j` from the existing `q=k-2j` relation and converts all generation ledgers to raw `(k,j)` labels. The candidate harmonic form and `j` fiber-weight interpretation remain structurally motivated; the `m` orientation/base-weight assignment, explicit eigenfunction values, rank-three Yukawa theorem, and numerical Yukawa values remain open.
+
+M-weight assignment status: the current theorem-discharge branch audits Wigner/Hopf admissibility and candidate boundary/orientation sources for the remaining `m` label. The naive convention `ell=k/2, n=j` fails admissibility on the frozen ledgers and is reported as a guardrail failure. No `m` assignment or harmonic convention is selected; explicit eigenfunctions, rank-three Yukawa support, numerical Yukawa values, and replacement readiness remain open.
 
 ## Citation / DOI
 

@@ -73,6 +73,8 @@ rank-three support requires three generation feature vectors to remain independe
 
 Explicit eigenfunctions, local amplitudes, gradients, Hessians, and moment contractions are not computed in this branch.
 
+Later raw-mode and m-weight audits refine this blocker by deriving the raw map `k=q+2j` and then testing candidate sources for the unresolved Wigner/base/orientation label `m`; neither audit selects explicit eigenfunctions or numerical amplitudes.
+
 ## 13. Impact On Yukawa Values
 
 Numerical Yukawa values remain open.
