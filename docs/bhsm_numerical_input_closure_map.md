@@ -218,6 +218,36 @@ The neutral boundary tensors and boundary condition have been localized as requi
 
 The scalar/topographic boundary variation has been derived conditionally as a symbolic neutral boundary-condition form. The tensor values `chi_nu^{AB}` and `lambda_nu` remain open; no numerical neutrino prediction is claimed.
 
+PO-BH-54 localizes the normal-coupling/collar convention for the neutral
+boundary term:
+
+```text
+lambda_nu Phi n.grad Phi.
+```
+
+The fixed-normal restricted route gives:
+
+```text
+R_nu = lambda_nu n.grad Phi.
+```
+
+but the general collar/Robin convention remains open-localizable:
+
+```text
+S_collar = int_{partialB x [0,epsilon]}
+lambda_nu(rho,Y) Phi partial_rho Phi d rho dA
+```
+
+and
+
+```text
+R_nu -> A_nu Phi + B_nu n.grad Phi.
+```
+
+Status: `OPEN_LOCALIZABLE` for `R_nu_normal_coupling` and
+`normal_collar_convention`. The numerical value/function of `lambda_nu`
+remains open. No neutrino numerical prediction or local FTL claim is made.
+
 ## Claim Boundary
 
 This closure map does not claim full numerical Standard Model derivation, full replacement readiness, numerical mass ratios, numerical CKM prediction, numerical PMNS prediction, neutrino mass ordering, PMNS CP value, scalar/topographic decoupling proof, or higher-loop threshold completion.

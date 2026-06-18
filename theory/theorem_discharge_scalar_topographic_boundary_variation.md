@@ -126,9 +126,9 @@ The second term depends on a boundary collar or normal-derivative variation conv
 R_nu[lambda_nu, Phi, n.grad Phi].
 ```
 
-Status: `OPEN_LOCALIZABLE`.
+Status after PO-BH-54: `OPEN_LOCALIZABLE`.
 
-Reason: the term is localized and its first variation is written, but the exact Robin-like reduction is not derived until the normal/collar convention is fixed.
+Reason: the term is localized and its first variation is written. PO-BH-54 records fixed-normal, symmetrized, collar, and Robin candidates, but the exact Robin-like reduction is not derived until the normal/collar convention is fixed.
 
 ## Route D - Conservative Schematic Closure Route
 
@@ -196,7 +196,7 @@ n_mu partial^mu Phi
 = 0 on partialB.
 ```
 
-The tensor values `chi_nu^{AB}` and `lambda_nu`, the normal-coupling convention inside `R_nu`, the neutral profile `W_nu`, and the positivity/stability proof remain open. No numerical neutrino prediction is claimed. No claim of local causality violation is made. No claim of experimental FTL is made.
+The tensor values `chi_nu^{AB}` and `lambda_nu`, the general normal-coupling/collar convention inside `R_nu`, the neutral profile `W_nu`, and the positivity/stability proof remain open. PO-BH-54 localizes the fixed-normal, collar, and Robin candidate routes for `R_nu`; it does not derive a numerical value or fitted function. No numerical neutrino prediction is claimed. No claim of local causality violation is made. No claim of experimental FTL is made.
 
 Observed neutrino masses, observed neutrino mass splittings, PMNS angles, PMNS CP phase, fitted FTL/anomaly data, and post-comparison choices of `chi_nu`, `lambda_nu`, `S_eff_nu`, `Delta_y_nu`, `S_nu_topo`, or the neutral boundary condition are forbidden inputs.
 
