@@ -1,5 +1,7 @@
 # GitHub Claim Summary
 
+BHSM is currently an integrated conditional structural framework. It has repo-backed ledgers and theorem-discharge documentation for SM-like finite algebra, charges, fermion hierarchy mechanisms, CKM/PMNS structural sources, and CP phase-source routes. It has not achieved numerical Standard Model replacement. The next scientific work is to derive or reject specific numerical-closure objects without fitting.
+
 | Claim | Current status | Evidence | Not claimed | Next gate |
 | --- | --- | --- | --- | --- |
 | Full BHSM v1.0 Candidate architecture | repo-audited candidate architecture | synthesis docs and tests | completed proof of the Standard Model | derive all open obligations |

@@ -6,7 +6,10 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 
 | Item | Current status |
 | --- | --- |
-| Overall status | Full BHSM v1.0 Candidate |
+| Overall status | structural architecture integrated conditional; numerical closure open |
+| Latest theorem branch | `bhsm-theorem-discharge-numerical-input-closure-map-v1` |
+| Test result summary | `1287 passed`; focused PO-BH-47 tests `11 passed`; guardrail audits passed |
+| Current theorem/status label | `STRUCTURAL_ARCHITECTURE_INTEGRATED_CONDITIONAL_NUMERICAL_CLOSURE_OPEN` |
 | Candidate architecture complete | yes |
 | Full BHSM proven | no |
 | Standard Model fully derived | no |
@@ -18,6 +21,12 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 | Collective curvature layer | connected topographic-gravity extension candidate |
 | Frozen predictions changed | no |
 | Official predictions changed | no |
+
+## Current Cleanup Guidance
+
+The public status is: structural architecture integrated conditional; numerical closure open. PO-BH-47 exposes remaining symbolic inputs and forbidden fit routes. The exact next recommended sprint is to derive or reject one localized numerical-closure object before comparison, preferably `CKM_1_16_EXPONENT_NOT_DERIVED` or `S_NU_TOPO_DERIVATION_OPEN`.
+
+Open blockers include CKM `1/16`, `S_nu_topo`, scalar/topographic decoupling, higher-loop thresholds, numerical mass-ratio locking, CKM numerical locking, PMNS numerical locking, neutrino ordering, and stability/coupling bounds.
 
 ## Cross-Links
 

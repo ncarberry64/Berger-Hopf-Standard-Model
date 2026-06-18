@@ -13,14 +13,16 @@
 | Finite algebra | `DERIVED_CONDITIONAL` | `docs/bhsm_numerical_input_closure_map.md`, theorem-discharge files | Finite closure spectrum or algebra blocks fail guardrail tests |
 | SM-like charges | `DERIVED_CONDITIONAL` | `docs/bhsm_numerical_input_closure_map.md`, charge/anomaly bridge tests | Charge table or anomaly bridge fails |
 | Gauge normalization scaffold | `DERIVED_CONDITIONAL` | `docs/bhsm_numerical_input_closure_map.md`, trace-normalization files | Trace weights or normalization factors fail |
-| Charged hierarchy mechanism | `STRUCTURALLY_INTEGRATED` | `docs/bhsm_numerical_input_closure_map.md` | Required symbolic hierarchy inputs cannot be localized |
-| CKM source | `STRUCTURALLY_INTEGRATED` | `docs/bhsm_numerical_input_closure_map.md` | Up/down sector-relative source cannot be represented |
-| CKM CP source | `STRUCTURALLY_INTEGRATED` | `docs/bhsm_numerical_input_closure_map.md` | Phase loop cannot be represented sector-relatively |
-| Neutral topographic suppression route | `STRUCTURALLY_INTEGRATED` | `docs/bhsm_numerical_input_closure_map.md` | Neutral suppression operator cannot be represented |
-| PMNS source | `STRUCTURALLY_INTEGRATED` | `docs/bhsm_numerical_input_closure_map.md` | Neutral/charged-lepton diagonalization source fails |
-| PMNS CP source | `STRUCTURALLY_INTEGRATED` | `docs/bhsm_numerical_input_closure_map.md` | Neutral phase loop cannot be represented |
+| Charged hierarchy mechanism | `STRUCTURALLY_DERIVED_CONDITIONAL` | `docs/bhsm_numerical_input_closure_map.md` | Required symbolic hierarchy inputs cannot be localized |
+| CKM source | `STRUCTURALLY_DERIVED_CONDITIONAL` | `docs/bhsm_numerical_input_closure_map.md` | Up/down sector-relative source cannot be represented |
+| CKM CP source | `STRUCTURALLY_DERIVED_CONDITIONAL` | `docs/bhsm_numerical_input_closure_map.md` | Phase loop cannot be represented sector-relatively |
+| Neutral topographic suppression route | `STRUCTURALLY_DERIVED_CONDITIONAL` | `docs/bhsm_numerical_input_closure_map.md` | Neutral suppression operator cannot be represented |
+| PMNS source | `STRUCTURALLY_DERIVED_CONDITIONAL` | `docs/bhsm_numerical_input_closure_map.md` | Neutral/charged-lepton diagonalization source fails |
+| PMNS CP source | `STRUCTURALLY_DERIVED_CONDITIONAL` | `docs/bhsm_numerical_input_closure_map.md` | Neutral phase loop cannot be represented |
+| Full fermion-sector architecture | `INTEGRATED_CONDITIONAL` | `docs/bhsm_numerical_input_closure_map.md` | Numerical fermion masses or mixing values are not claimed |
+| Gauge-Higgs-fermion architecture | `INTEGRATED_CONDITIONAL` | `docs/bhsm_numerical_input_closure_map.md` | Full numerical SM prediction is not claimed |
 | Full numerical SM prediction | `OPEN` | `docs/bhsm_numerical_input_closure_map.md` | Must not be claimed until all open numerical inputs are locked before comparison |
-| Replacement readiness | `OPEN` | `docs/bhsm_numerical_input_closure_map.md` | Must not be claimed until numerical and theorem blockers close |
+| Replacement readiness | `NOT_ACHIEVED` | `docs/bhsm_numerical_input_closure_map.md` | Must not be claimed until numerical and theorem blockers close |
 | Full first-principles SM derivation | `FORBIDDEN` | `theory/forbidden_claims.md` | This claim is not made in this release |
 | QCD confinement proof | `FORBIDDEN` | `theory/forbidden_claims.md` | This claim is not made in this release |
 | Experimental confirmation/community acceptance | `FORBIDDEN` | this release package | This claim is not made in this release |
@@ -33,4 +35,7 @@ Status categories used in this release:
 - `PROXY_AUDIT`
 - `OPEN`
 - `STRUCTURALLY_INTEGRATED`
+- `STRUCTURALLY_DERIVED_CONDITIONAL`
+- `INTEGRATED_CONDITIONAL`
+- `NOT_ACHIEVED`
 - `FORBIDDEN`

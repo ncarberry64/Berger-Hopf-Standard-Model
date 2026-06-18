@@ -23,7 +23,10 @@ def test_github_facing_docs_exist() -> None:
 def test_readme_refreshed_for_full_bhsm_candidate() -> None:
     text = (ROOT / "README.md").read_text(encoding="utf-8")
     assert "# Berger-Hopf Standard Model (BHSM)" in text
-    assert "Status: Full BHSM v1.0 Candidate" in text
+    assert (
+        "Current status: structural architecture integrated conditional; numerical closure open."
+        in text
+    )
     assert "What BHSM Is" in text
     assert "What Is Test-Backed" in text
     assert "What Is Not Yet Proven" in text

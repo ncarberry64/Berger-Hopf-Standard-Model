@@ -1,6 +1,8 @@
 # Berger-Hopf Standard Model (BHSM)
 
-Status: Full BHSM v1.0 Candidate -- repo-audited candidate architecture, not yet a completed proof or replacement of the Standard Model.
+Current status: structural architecture integrated conditional; numerical closure open.
+
+BHSM has an integrated conditional structural architecture for finite boundary algebra, SM-like charges, Higgs/scalar mass generation, fermion hierarchy, CKM, PMNS, and CP sources. Numerical closure remains open, frozen predictions are unchanged, and PO-BH-47 exposes remaining symbolic inputs while forbidding hidden fitting. The next sprint should derive or reject one localized numerical-closure object before comparison.
 
 Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a completed replacement of the Standard Model. Its strategic objective is replacement by derivation: the Standard Model should ultimately emerge as the low-energy effective limit of BHSM. Until that derivation is achieved, local SM gauge structure remains a preserved infrared layer, while BHSM provides a candidate Berger-Hopf/topographic completion of the flavor, channel, generation, response, and collective-threshold architecture.
 
@@ -12,6 +14,7 @@ BHSM is not yet a completed replacement of the Standard Model. The long-term goa
 
 ## Current Status
 
+- Structural architecture integrated conditional; numerical closure open.
 - Full BHSM candidate architecture synthesis complete.
 - Full BHSM proven: no.
 - Standard Model fully derived: no.
