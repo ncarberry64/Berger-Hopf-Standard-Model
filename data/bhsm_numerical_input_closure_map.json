@@ -57,6 +57,8 @@
     "S_eff_nu_boundary": "S_eff^(nu) = S_bulk[Phi] + int_partialB [1/2 chi_nu^{AB} partial_A Phi partial_B Phi + lambda_nu(nhat) Phi nhat.grad Phi] dA",
     "S_partial_nu_boundary": "S_partial^(nu) = int_partialB [1/2 chi_nu^{AB} partial_A Phi partial_B Phi + lambda_nu(nhat) Phi nhat.grad Phi] dA",
     "neutral_boundary_condition": "n_mu partial^mu Phi + B_nu[chi_nu, lambda_nu, Phi] = 0 on partialB",
+    "explicit_scalar_topographic_boundary_variation": "delta(S_bulk + S_partial^(nu))|partialB = int_partialB [n_mu partial^mu Phi - D_A(chi_nu^{AB} D_B Phi) + R_nu[lambda_nu, Phi, n.grad Phi]] delta Phi dA plus convention-dependent boundary-of-boundary terms",
+    "neutral_boundary_condition_variational": "n_mu partial^mu Phi - D_A(chi_nu^{AB} D_B Phi) + R_nu[lambda_nu, Phi, n.grad Phi] = 0 on partialB",
     "chi_nu_metric_pullback": "chi_nu^{AB} ~ f_nu(y) g_sub^{AB}",
     "chi_nu_parallel_perp": "chi_nu^{AB} = chi_parallel P_parallel^{AB} + chi_perp P_perp^{AB}",
     "S_eff_nu_profile": "S_eff^(nu)[W_nu] = int_B W_nu(y) V_eff^(nu)(y) dV + regularization/width term",
@@ -162,9 +164,9 @@
       {
         "id": "route_A_variational_boundary_condition",
         "formula": "S_eff^(nu)=S_bulk[Phi]+S_partial^(nu)[Phi]+S_subsurface^(nu); S_partial^(nu)=int_partialB [1/2 chi_nu^{AB} partial_A Phi partial_B Phi + lambda_nu(nhat) Phi nhat.grad Phi] dA; n_mu partial^mu Phi + B_nu[chi_nu, lambda_nu, Phi]=0 on partialB",
-        "dependencies": ["S_bulk[Phi]", "S_partial^(nu)", "variation convention", "chi_nu_AB", "lambda_nu", "boundary integration-by-parts rule"],
-        "status": "OPEN_LOCALIZABLE",
-        "reason": "The variational form localizes the neutral boundary condition, but the explicit scalar/topographic boundary action and variation convention are not fully derived.",
+        "dependencies": ["S_bulk[Phi]", "S_partial^(nu)", "explicit_scalar_topographic_boundary_variation", "variation convention", "chi_nu_AB", "lambda_nu", "boundary integration-by-parts rule"],
+        "status": "DERIVED_CONDITIONAL",
+        "reason": "The symbolic variation of S_bulk + S_partial^(nu) yields a conditional neutral boundary-operator form under explicit assumptions; tensor values remain open.",
         "allowed_next_action": "derive the boundary variation and tensor values from the scalar/topographic action before comparison",
         "forbidden_shortcut": "choose chi_nu, lambda_nu, or a boundary condition from neutrino masses or PMNS residuals"
       },
@@ -214,6 +216,89 @@
     "tests": ["tests/test_neutral_boundary_tensors.py"],
     "next_action": "derive or reject chi_nu_AB, lambda_nu, and the neutral boundary condition from the explicit scalar/topographic boundary action, variation convention, subsurface metric/projection geometry, W_nu, and positivity/stability proof before comparison"
   },
+  "explicit_scalar_topographic_boundary_variation": {
+    "id": "PO-BH-53",
+    "name": "Explicit scalar/topographic boundary variation",
+    "symbol": "delta(S_bulk[Phi] + S_partial^(nu)[Phi])|partialB",
+    "sector": "neutrino_pmns",
+    "status": "DERIVED_CONDITIONAL",
+    "formula_candidate": "n_mu partial^mu Phi - D_A(chi_nu^{AB} D_B Phi) + R_nu[lambda_nu, Phi, n.grad Phi] = 0 on partialB",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "symbolic variation of scalar bulk action plus localized neutral boundary action under fixed-background boundary assumptions",
+    "depends_on": [
+      {"id": "S_bulk[Phi]", "status": "DERIVED_CONDITIONAL"},
+      {"id": "S_partial^(nu)[Phi]", "status": "OPEN_LOCALIZABLE"},
+      {"id": "boundary integration-by-parts convention", "status": "DERIVED_CONDITIONAL"},
+      {"id": "boundary has no boundary or boundary-of-boundary terms vanish", "status": "DERIVED_CONDITIONAL"},
+      {"id": "chi_nu_AB", "status": "OPEN_LOCALIZABLE"},
+      {"id": "lambda_nu", "status": "OPEN_LOCALIZABLE"},
+      {"id": "normal-derivative variation convention", "status": "OPEN_LOCALIZABLE"},
+      {"id": "fixed background boundary geometry", "status": "DERIVED_CONDITIONAL"}
+    ],
+    "candidate_routes": [
+      {
+        "id": "route_A_standard_variational_boundary",
+        "formula": "delta S_bulk|partialB = int_partialB n_mu partial^mu Phi delta Phi dA; delta S_partial^(nu) = int_partialB B_nu[chi_nu, lambda_nu, Phi] delta Phi dA plus convention-dependent derivative-of-deltaPhi terms",
+        "dependencies": ["S_bulk[Phi]", "S_partial^(nu)[Phi]", "boundary variation convention", "chi_nu_AB", "lambda_nu"],
+        "status": "DERIVED_CONDITIONAL",
+        "reason": "The symbolic variation localizes the neutral boundary operator under fixed-background and boundary-of-boundary assumptions.",
+        "allowed_next_action": "derive tensor values and the normal-coupling convention from the full scalar/topographic boundary action before comparison",
+        "forbidden_shortcut": "choose boundary terms from observed neutrino or PMNS residuals"
+      },
+      {
+        "id": "route_B_boundary_integration_by_parts",
+        "formula": "delta int_partialB 1/2 chi_nu^{AB} D_A Phi D_B Phi dA -> - int_partialB D_A(chi_nu^{AB} D_B Phi) delta Phi dA",
+        "dependencies": ["symmetric or symmetrized chi_nu_AB", "boundary covariant derivative D_A", "boundary has no boundary or edge terms vanish"],
+        "status": "DERIVED_CONDITIONAL",
+        "reason": "The tangential-gradient contribution follows by boundary integration by parts once the boundary convention is fixed.",
+        "allowed_next_action": "derive chi_nu_AB and boundary geometry from the neutral scalar/topographic action",
+        "forbidden_shortcut": "fit chi_nu_AB components to neutrino data"
+      },
+      {
+        "id": "route_C_normal_coupling",
+        "formula": "delta int_partialB lambda_nu Phi n.grad Phi dA -> int_partialB R_nu[lambda_nu, Phi, n.grad Phi] delta Phi dA plus convention-dependent normal derivative variation terms",
+        "dependencies": ["normal variation convention", "boundary extension/collar convention", "lambda_nu"],
+        "status": "OPEN_LOCALIZABLE",
+        "reason": "The lambda_nu term is localized but its exact Robin-like contribution depends on the normal-derivative variation convention.",
+        "allowed_next_action": "derive the normal-coupling convention from the complete boundary/collar action",
+        "forbidden_shortcut": "choose lambda_nu or its sign from neutrino residuals"
+      },
+      {
+        "id": "route_D_conservative_schematic_closure",
+        "formula": "B_nu[Phi] = -D_A(chi_nu^{AB}D_B Phi) + R_nu[lambda_nu, Phi, n.grad Phi]",
+        "dependencies": ["routes A-C", "unfixed tensor values", "unfixed normal-coupling convention"],
+        "status": "DERIVED_CONDITIONAL",
+        "reason": "This is the most conservative symbolic boundary operator supported by the localized action and variation assumptions.",
+        "allowed_next_action": "promote only after tensor values and normal-coupling convention are derived pre-comparison",
+        "forbidden_shortcut": "treat the schematic operator as a numerical neutrino prediction"
+      }
+    ],
+    "assumptions": [
+      "boundary has no boundary or boundary-of-boundary terms vanish",
+      "chi_nu_AB is symmetric or replaced by its symmetrized part",
+      "background boundary geometry and measure are fixed in this variation",
+      "chi_nu_AB and lambda_nu are varied only as background coefficients, not dynamical fields",
+      "normal-derivative variation is kept in R_nu until a collar/boundary convention is derived",
+      "local causality is not addressed here beyond existing guardrails"
+    ],
+    "forbidden_inputs": [
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "PMNS angles",
+      "PMNS CP phase",
+      "fitted FTL/anomaly data",
+      "post-comparison chi_nu fit",
+      "post-comparison lambda_nu fit",
+      "post-comparison neutral boundary condition fit",
+      "post-comparison S_eff_nu fit",
+      "post-comparison Delta_y_nu fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "The scalar/topographic boundary variation is derived only as a symbolic conditional boundary operator under explicit boundary assumptions. Tensor values, lambda_nu, the normal-coupling convention, the neutral profile, and numerical neutrino closure remain open.",
+    "tests": ["tests/test_scalar_topographic_boundary_variation.py"],
+    "next_action": "derive or reject the normal-coupling convention, chi_nu_AB, lambda_nu, W_nu, and positivity/stability conditions from the complete scalar/topographic boundary action before comparison"
+  },
   "subsurface_projection_geometry": {
     "id": "PO-BH-51",
     "name": "Subsurface neutral projection geometry",
@@ -231,7 +316,7 @@
       {"id": "positivity/causality proof", "status": "OPEN_LOCALIZABLE"},
       {"id": "chi_nu_AB", "status": "OPEN_LOCALIZABLE"},
       {"id": "lambda_nu", "status": "OPEN_LOCALIZABLE"},
-      {"id": "neutral_boundary_condition", "status": "OPEN_LOCALIZABLE"}
+      {"id": "neutral_boundary_condition", "status": "DERIVED_CONDITIONAL"}
     ],
     "candidate_routes": [
       {
@@ -305,7 +390,7 @@
       {"id": "S_partial^(nu)[Phi]", "status": "OPEN_LOCALIZABLE"},
       {"id": "chi_nu_AB", "status": "OPEN_LOCALIZABLE"},
       {"id": "lambda_nu", "status": "OPEN_LOCALIZABLE"},
-      {"id": "neutral_boundary_condition", "status": "OPEN_LOCALIZABLE"},
+      {"id": "neutral_boundary_condition", "status": "DERIVED_CONDITIONAL"},
       {"id": "W_nu", "status": "OPEN_LOCALIZABLE"},
       {"id": "V_eff^(nu)", "status": "OPEN_LOCALIZABLE"},
       {"id": "neutral profile regularization/width term", "status": "OPEN_LOCALIZABLE"},
@@ -325,8 +410,8 @@
         "id": "route_B_boundary_scalar_topographic_action",
         "formula": "S_eff^(nu) = S_bulk[Phi] + int_partialB [1/2 chi_nu^{AB} partial_A Phi partial_B Phi + lambda_nu(nhat) Phi nhat.grad Phi] dA",
         "dependencies": ["S_bulk[Phi]", "chi_nu_AB", "lambda_nu", "neutral_boundary_condition"],
-        "status": "OPEN_LOCALIZABLE",
-        "reason": "Scalar/topographic boundary terms give a plausible action source, but the neutral boundary tensor, normal coupling, and boundary condition remain open.",
+        "status": "DERIVED_CONDITIONAL",
+        "reason": "Scalar/topographic boundary terms now yield a conditional symbolic boundary condition, while tensor values and normal-coupling convention remain open.",
         "allowed_next_step": "derive chi_nu, lambda_nu, and the neutral boundary condition from the scalar/topographic boundary action",
         "forbidden_shortcut": "choose boundary tensors to reproduce observed neutrino masses, splittings, or PMNS angles"
       },
@@ -480,6 +565,21 @@
     {"id": "M_nu", "sector": "neutrino_pmns", "symbol": "M_nu = epsilon_nu_topo M_nu^(0)", "status": "STRUCTURALLY_INTEGRATED", "fit_policy": "FORBIDDEN_TO_FIT"},
     {"id": "epsilon_nu_topo", "sector": "neutrino_pmns", "symbol": "epsilon_nu_topo = exp(-S_nu_topo)", "status": "STRUCTURALLY_INTEGRATED", "fit_policy": "FORBIDDEN_TO_FIT"},
     {
+      "id": "explicit_scalar_topographic_boundary_variation",
+      "name": "Explicit scalar/topographic boundary variation",
+      "sector": "neutrino_pmns",
+      "symbol": "delta(S_bulk + S_partial^(nu))|partialB",
+      "status": "DERIVED_CONDITIONAL",
+      "formula_candidate": "n_mu partial^mu Phi - D_A(chi_nu^{AB} D_B Phi) + R_nu[lambda_nu, Phi, n.grad Phi] = 0 on partialB",
+      "derivation_source": "symbolic variation of S_bulk[Phi] + S_partial^(nu)[Phi] under fixed-background boundary assumptions",
+      "depends_on": ["S_bulk[Phi]", "S_partial^(nu)[Phi]", "boundary integration-by-parts convention", "boundary has no boundary or edge terms vanish", "chi_nu_AB", "lambda_nu", "normal-derivative variation convention"],
+      "forbidden_inputs": ["observed neutrino masses", "observed neutrino mass splittings", "PMNS angles", "PMNS CP phase", "fitted FTL/anomaly data", "post-comparison neutral boundary condition fit"],
+      "claim_boundary": "conditional symbolic boundary variation only; tensor values and numerical neutrino closure remain open",
+      "tests": ["tests/test_scalar_topographic_boundary_variation.py"],
+      "next_action": "derive tensor values and the normal-coupling convention from the complete scalar/topographic boundary action before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
       "id": "chi_nu_AB",
       "name": "Neutral anisotropic boundary response tensor",
       "sector": "neutrino_pmns",
@@ -513,15 +613,15 @@
       "id": "neutral_boundary_condition",
       "name": "Neutral boundary condition",
       "sector": "neutrino_pmns",
-      "symbol": "n_mu partial^mu Phi + B_nu[chi_nu, lambda_nu, Phi] = 0 on partialB",
-      "status": "OPEN_LOCALIZABLE",
-      "formula_candidate": "n_mu partial^mu Phi + B_nu[chi_nu, lambda_nu, Phi] = 0 on partialB",
-      "derivation_source": "candidate variation of S_bulk[Phi] + S_partial^(nu)[Phi]",
-      "depends_on": ["S_bulk[Phi]", "S_partial^(nu)[Phi]", "variation convention", "chi_nu_AB", "lambda_nu", "boundary integration-by-parts rule"],
+      "symbol": "n_mu partial^mu Phi - D_A(chi_nu^{AB} D_B Phi) + R_nu[lambda_nu, Phi, n.grad Phi] = 0 on partialB",
+      "status": "DERIVED_CONDITIONAL",
+      "formula_candidate": "n_mu partial^mu Phi - D_A(chi_nu^{AB} D_B Phi) + R_nu[lambda_nu, Phi, n.grad Phi] = 0 on partialB",
+      "derivation_source": "conditional symbolic variation of S_bulk[Phi] + S_partial^(nu)[Phi]",
+      "depends_on": ["explicit_scalar_topographic_boundary_variation", "S_bulk[Phi]", "S_partial^(nu)[Phi]", "variation convention", "chi_nu_AB", "lambda_nu", "boundary integration-by-parts rule", "normal-derivative variation convention"],
       "forbidden_inputs": ["observed neutrino masses", "observed neutrino mass splittings", "PMNS angles", "PMNS CP phase", "fitted FTL/anomaly data", "post-comparison neutral boundary condition fit"],
-      "claim_boundary": "localizable schematic boundary-condition candidate only; explicit condition remains open until the boundary variation is derived",
-      "tests": ["tests/test_neutral_boundary_tensors.py"],
-      "next_action": "derive or reject the explicit neutral boundary condition by varying S_bulk + S_partial^(nu) before comparison",
+      "claim_boundary": "conditional symbolic boundary-condition form only; tensor values, lambda_nu normal convention, and numerical neutrino closure remain open",
+      "tests": ["tests/test_neutral_boundary_tensors.py", "tests/test_scalar_topographic_boundary_variation.py"],
+      "next_action": "derive tensor values and the normal-coupling convention before comparison",
       "fit_policy": "FORBIDDEN_TO_FIT"
     },
     {
@@ -731,6 +831,8 @@
     "G_SUB_ELLAPSE_NU_PROJECTION_GEOMETRY_OPEN",
     "PO_BH_52_NEUTRAL_BOUNDARY_TENSORS_LOCALIZED",
     "NEUTRAL_BOUNDARY_TENSORS_CONDITION_OPEN",
+    "PO_BH_53_SCALAR_TOPOGRAPHIC_BOUNDARY_VARIATION_CONDITIONAL",
+    "EXPLICIT_SCALAR_TOPOGRAPHIC_BOUNDARY_VARIATION_DERIVED_CONDITIONAL",
     "FULL_NUMERICAL_SM_PREDICTION_OPEN",
     "REPLACEMENT_READINESS_NOT_ACHIEVED",
     "FROZEN_PREDICTIONS_UNCHANGED",

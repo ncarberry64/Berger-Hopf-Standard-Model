@@ -30,9 +30,14 @@ def test_neutral_boundary_objects_exist_in_closure_map():
     tensors = data["neutral_boundary_tensors"]
     assert tensors["id"] == "PO-BH-52"
     assert tensors["status"] == "OPEN_LOCALIZABLE"
-    for entry_id in ("chi_nu_AB", "lambda_nu", "neutral_boundary_condition"):
+    expected_statuses = {
+        "chi_nu_AB": "OPEN_LOCALIZABLE",
+        "lambda_nu": "OPEN_LOCALIZABLE",
+        "neutral_boundary_condition": "DERIVED_CONDITIONAL",
+    }
+    for entry_id, status in expected_statuses.items():
         entry = entry_by_id(data, entry_id)
-        assert entry["status"] == "OPEN_LOCALIZABLE"
+        assert entry["status"] == status
         assert entry["fit_policy"] == "FORBIDDEN_TO_FIT"
 
 
@@ -46,6 +51,7 @@ def test_neutral_boundary_objects_not_derived_with_open_dependencies():
     assert tensors["pre_comparison_locked"] is False
     for entry_id in ("chi_nu_AB", "lambda_nu", "neutral_boundary_condition"):
         assert entry_by_id(data, entry_id)["status"] != "DERIVED"
+    assert entry_by_id(data, "neutral_boundary_condition")["status"] == "DERIVED_CONDITIONAL"
 
 
 def test_theorem_includes_neutral_boundary_action_with_chi_and_lambda():

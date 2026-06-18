@@ -64,7 +64,8 @@ def test_all_four_candidate_routes_are_classified():
     routes = data["neutral_effective_action"]["candidate_routes"]
     by_id = {route["id"]: route for route in routes}
     assert by_id["route_A_subsurface_neutral_channel_action"]["status"] == "OPEN_LOCALIZABLE"
-    assert by_id["route_B_boundary_scalar_topographic_action"]["status"] == "OPEN_LOCALIZABLE"
+    assert by_id["route_B_boundary_scalar_topographic_action"]["status"] == "DERIVED_CONDITIONAL"
+    assert "tensor values" in by_id["route_B_boundary_scalar_topographic_action"]["reason"]
     assert (
         by_id["route_C_neutral_operator_source"]["status"]
         == "STRUCTURALLY_MOTIVATED_NOT_DERIVED"
