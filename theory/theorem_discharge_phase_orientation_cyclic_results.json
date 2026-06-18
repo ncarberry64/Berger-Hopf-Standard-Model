@@ -1,0 +1,108 @@
+{
+  "bhsm_replacement_claim_ready": false,
+  "branch": "bhsm-theorem-discharge-phase-orientation-cyclic-v1",
+  "bridges_preserved": {
+    "anomaly_closure_bridge": true,
+    "boundary_action_hessian_scaffold": true,
+    "boundary_action_second_variation": true,
+    "boundary_action_term_realization": true,
+    "charge_hypercharge_bridge": true,
+    "closure_spectrum_selection": true,
+    "finite_boundary_algebra_bridge": true,
+    "projector_eigenvalue_bridge": true
+  },
+  "closure_selection_layer_discharged_conditionally": true,
+  "discharged_obligations": {
+    "PO-BH-2": "DERIVED_CONDITIONAL: Hopf phase closure gives positive integer admissibility",
+    "PO-BH-3": "DERIVED_CONDITIONAL: boundary involution gives minimal balanced orientation sector d=2",
+    "PO-BH-4": "DERIVED_CONDITIONAL: minimal non-involutive cyclic sector gives d=3",
+    "PO-BH-8": "DERIVED_CONDITIONAL: primitive low-energy closure selectors give {1,2,3}"
+  },
+  "frozen_predictions_changed": false,
+  "ledger": {
+    "PO-BH-2": {
+      "code": "PO-BH-2",
+      "dependencies": [
+        "Hopf fiber phase",
+        "global single-valued admissible boundary section"
+      ],
+      "remaining_blocker": "This gives integer admissibility but not the full primitive spectrum by itself.",
+      "statement": "Hopf fiber identification psi~psi+2*pi and Phi_d=exp(i d psi)Phi_0 imply exp(i2*pi*d)=1, so positive closure dimensions are positive integers.",
+      "status": "DERIVED_CONDITIONAL",
+      "target": "derive Hopf phase closure from global single-valuedness"
+    },
+    "PO-BH-3": {
+      "code": "PO-BH-3",
+      "dependencies": [
+        "boundary orientation reversal",
+        "balanced nontrivial representation"
+      ],
+      "remaining_blocker": "This gives the minimal orientation pair but not the full weak gauge group.",
+      "statement": "A boundary involution Iota^2=id has eigenvalues lambda=+/-1; the minimal balanced nontrivial representation contains both signs and has dimension 2.",
+      "status": "DERIVED_CONDITIONAL",
+      "target": "derive Z2 orientation involution from boundary orientation reversal"
+    },
+    "PO-BH-4": {
+      "code": "PO-BH-4",
+      "dependencies": [
+        "integer phase admissibility",
+        "orientation involution order 2",
+        "cyclic closure hierarchy"
+      ],
+      "remaining_blocker": "This gives the minimal non-involutive cyclic order but not the full color gauge group.",
+      "statement": "A cyclic sector has g^n=id; order 1 is identity and order 2 is the involution, so the first non-involutive cyclic order is 3.",
+      "status": "DERIVED_CONDITIONAL",
+      "target": "derive minimal cyclic channel beyond identity and involution"
+    },
+    "PO-BH-8": {
+      "code": "PO-BH-8",
+      "dependencies": [
+        "PO-BH-2",
+        "PO-BH-3",
+        "PO-BH-4"
+      ],
+      "remaining_blocker": "Higher closures are not impossible; they remain higher/composite/excess candidates outside this primitive layer.",
+      "statement": "Identity/reference, minimal orientation pair, and minimal non-involutive cyclic channel give primitive selectors 1, 2, and 3.",
+      "status": "DERIVED_CONDITIONAL",
+      "target": "derive primitive low-energy closure selectors"
+    }
+  },
+  "negative_results": [
+    "replacement claim is not ready because downstream finite algebra, charge, anomaly, gauge, mass, and dynamics derivations remain open",
+    "higher closures are not impossible; they are outside the primitive identity/orientation/minimal-cyclic layer"
+  ],
+  "notes": [
+    "theorem discharge attempt completed for the first closure-selection layer",
+    "mission remains full Standard Model derivation from BHSM",
+    "no frozen predictions changed",
+    "no official predictions changed"
+  ],
+  "official_predictions_changed": false,
+  "primitive_low_energy_closure_spectrum": [
+    1,
+    2,
+    3
+  ],
+  "standard_model_fully_derived": false,
+  "status": "theorem_discharge_candidate",
+  "still_open_downstream": [
+    "finite algebra uniqueness theorem",
+    "charge/hypercharge operator derivation without SM label import",
+    "anomaly cancellation as boundary consistency theorem",
+    "gauge group dynamics derivation",
+    "mass/Yukawa/mixing theorem-level derivation",
+    "full replacement-level SM derivation"
+  ],
+  "verdict_labels": [
+    "THEOREM_DISCHARGE_PHASE_ORIENTATION_CYCLIC_COMPLETE",
+    "PO_BH_2_PHASE_CLOSURE_DERIVED_CONDITIONAL",
+    "PO_BH_3_ORIENTATION_INVOLUTION_DERIVED_CONDITIONAL",
+    "PO_BH_4_MINIMAL_CYCLIC_CHANNEL_DERIVED_CONDITIONAL",
+    "PO_BH_8_CLOSURE_SPECTRUM_123_DERIVED_CONDITIONAL",
+    "PRIMITIVE_LOW_ENERGY_CLOSURE_SPECTRUM_123_DERIVED_CONDITIONAL",
+    "DOWNSTREAM_SM_DERIVATION_REMAINS_OPEN",
+    "BHSM_REPLACEMENT_CLAIM_NOT_READY",
+    "FROZEN_PREDICTIONS_UNCHANGED",
+    "OFFICIAL_PREDICTIONS_UNCHANGED"
+  ]
+}

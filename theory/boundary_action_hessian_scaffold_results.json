@@ -1,0 +1,57 @@
+{
+  "bhsm_replacement_claim_allowed": false,
+  "boundary_action_derived": false,
+  "branch": "bhsm-boundary-action-hessian-scaffold-v1",
+  "bridges_preserved": {
+    "anomaly_closure_bridge": true,
+    "charge_hypercharge_bridge": true,
+    "closure_spectrum_selection": true,
+    "finite_boundary_algebra_bridge": true,
+    "projector_eigenvalue_bridge": true
+  },
+  "candidate_action_terms": [
+    "S_phase",
+    "S_orientation",
+    "S_cyclic_channel",
+    "S_topographic",
+    "S_excess"
+  ],
+  "candidate_stability_hierarchy": {
+    "mu_cyclic": "stable low-energy",
+    "mu_excess": "gapped/excess",
+    "mu_orient": "stable low-energy",
+    "mu_ref": "0 or reference-normalized"
+  },
+  "frozen_predictions_changed": false,
+  "full_hessian_proof_complete": false,
+  "hessian_projectors": {
+    "P_cyclic": "d=3 cyclic three-channel closure",
+    "P_excess": "d>=4 higher/composite closures",
+    "P_orient": "d=2 orientation-pair closure",
+    "P_ref": "d=1 reference/single closure"
+  },
+  "notes": [
+    "candidate-only",
+    "boundary action/Hessian scaffold documented",
+    "full Hessian proof remains open",
+    "boundary action derivation remains open",
+    "no frozen predictions changed",
+    "no official predictions changed"
+  ],
+  "official_predictions_changed": false,
+  "standard_model_fully_derived": false,
+  "status": "candidate_only",
+  "verdict_labels": [
+    "BOUNDARY_ACTION_HESSIAN_SCAFFOLD_GATE_COMPLETE",
+    "BOUNDARY_ACTION_TERMS_CATALOGED_CANDIDATE",
+    "HESSIAN_PROJECTOR_DECOMPOSITION_CANDIDATE",
+    "REFERENCE_ORIENTATION_CYCLIC_PROJECTORS_CANDIDATE",
+    "EXCESS_CLOSURE_GAP_CANDIDATE",
+    "CLOSURE_SPECTRUM_FROM_HESSIAN_SCAFFOLD_DIAGNOSTIC",
+    "BOUNDARY_ACTION_DERIVATION_REMAINS_OPEN",
+    "FULL_HESSIAN_PROOF_REMAINS_OPEN",
+    "FULL_SM_DERIVATION_NOT_CLAIMED",
+    "FROZEN_PREDICTIONS_UNCHANGED",
+    "OFFICIAL_PREDICTIONS_UNCHANGED"
+  ]
+}

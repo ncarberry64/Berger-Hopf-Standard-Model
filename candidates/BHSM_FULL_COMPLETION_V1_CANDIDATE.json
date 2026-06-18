@@ -1,0 +1,61 @@
+{
+  "status": "FULL_COMPLETION_CANDIDATE_NOT_OFFICIAL",
+  "official_frozen_branches_preserved": true,
+  "confirmation_status": "BHSM is not confirmed. This package is a completion candidate and falsification target.",
+  "candidate_scope": [
+    "bare Berger-Hopf geometry",
+    "released c/t virtual mass dressing",
+    "candidate CKM 2-3 mixing dressing",
+    "charged-lepton precision warning",
+    "non-official charged-lepton mode dressing candidate",
+    "gauge coupling comparison",
+    "quark RG audit",
+    "boundary operator derivation status"
+  ],
+  "officially_unchanged": [
+    "BHSM_BARE_V1",
+    "BHSM_DRESSED_V1_CANDIDATE",
+    "docs/frozen_predictions.md",
+    "docs/frozen_predictions.json",
+    "released c/t dressed branch",
+    "u/t",
+    "d/b",
+    "s/b",
+    "charged-lepton ratios unless a separate candidate is created",
+    "gauge couplings",
+    "s12",
+    "s13",
+    "delta_cp"
+  ],
+  "candidate_additions": [
+    "BHSM_MIXING_DRESSED_V1_CANDIDATE",
+    "BHSM_LEPTON_DRESSED_V1_CANDIDATE status file",
+    "charged-lepton formula-integrity and eta-derivation audits",
+    "derivation-attempt notes",
+    "completion audits",
+    "completion scorecard"
+  ],
+  "unresolved_derivations": [
+    "derive Z_virt^{u,2}=1/2",
+    "derive or reject CKM exponent 1/16",
+    "derive charged-lepton eta_l and scope independently",
+    "validated common-scale quark RG inputs",
+    "boundary operator full action derivation",
+    "full scalar/Higgs/gap spectral proof inputs"
+  ],
+  "frozen_branch_check": {
+    "BHSM_BARE_V1_unchanged": true,
+    "BHSM_DRESSED_V1_CANDIDATE_unchanged": true,
+    "dressed_branch_changes_only_c_over_t": true,
+    "u_over_t_unchanged": true,
+    "ckm_sin_theta_13_unchanged": true,
+    "changed_rows": [
+      {
+        "quantity": "c/t",
+        "bare": 0.008310500554068288,
+        "dressed": 0.004155250277034144,
+        "changed": true
+      }
+    ]
+  }
+}

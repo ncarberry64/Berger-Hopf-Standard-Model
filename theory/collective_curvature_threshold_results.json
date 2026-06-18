@@ -1,0 +1,71 @@
+{
+  "branch": "bhsm-collective-curvature-threshold-layer",
+  "candidate_equations": {
+    "effective_curvature": "K_i_eff = K_i_self + sum_j G_ij m_j + K_i_boundary + K_i_envelope",
+    "effective_dark_curvature": "K_DM_eff = K_obs - K_visible",
+    "scale_compressed_shape": "m_shape ~ (1+N)^(-a) * exp(b_fiber*I_fiber + b_base*I_base) * R_hidden",
+    "threshold_mass": "m_i = M_f * [K_i_eff - K_i_crit]_+^p * Z_i",
+    "topographic_operator": "L_T T = S_total, L_T = nabla^2 - B*nabla^4"
+  },
+  "candidate_layer": {
+    "dark_matter_interpretation": "effective_collective_curvature_residue",
+    "mass_interpretation": "collective_curvature_threshold",
+    "official": false
+  },
+  "claim_labels": [
+    "COLLECTIVE_CURVATURE_THRESHOLD_LAYER_CANDIDATE",
+    "MASS_AS_COLLECTIVE_THRESHOLD_RESPONSE_CANDIDATE",
+    "LOG_THRESHOLD_SCALE_COMPRESSED_RESPONSE_CANDIDATE",
+    "BRANCH_TYPE_CURVATURE_SPECIALNESS_CANDIDATE",
+    "COLLECTIVE_CURVATURE_DARK_MATTER_INTERPRETATION_CANDIDATE",
+    "EFFECTIVE_DARK_MATTER_AS_CURVATURE_RESIDUE_CANDIDATE",
+    "NO_DARK_MATTER_SOLUTION_CLAIM_GUARDRAIL",
+    "EMPIRICAL_GRAVITY_TESTS_REQUIRED_GUARDRAIL"
+  ],
+  "frozen_predictions_changed": false,
+  "guardrails": {
+    "does_not_change_official_predictions": true,
+    "does_not_claim_dark_matter_solved": true,
+    "does_not_disprove_particle_dark_matter": true,
+    "future_empirical_tests": [
+      "galaxy rotation curves",
+      "baryonic Tully-Fisher relation",
+      "weak/strong lensing",
+      "cluster lensing",
+      "colliding clusters",
+      "large-scale structure",
+      "CMB consistency",
+      "Solar System constraints"
+    ],
+    "requires_empirical_gravity_tests": true
+  },
+  "inputs": {
+    "previous_best_branch_threshold_law": "D_log_threshold_plus_type",
+    "previous_limitations": [
+      "hidden response remains",
+      "overfit risk",
+      "reference scheme limitation",
+      "no numerical closure"
+    ],
+    "previous_max_abs_log_error": 1.0380747597108453,
+    "previous_rms_to_existing_bare": 0.510697459271581
+  },
+  "notes": [
+    "candidate-only",
+    "no frozen predictions changed",
+    "no official predictions changed",
+    "mass numerical closure not achieved",
+    "empirical dark-matter tests required"
+  ],
+  "official_predictions_changed": false,
+  "status": "candidate_only",
+  "verdict_labels": [
+    "COLLECTIVE_CURVATURE_THRESHOLD_LAYER_DOCUMENTED",
+    "MASS_AS_COLLECTIVE_THRESHOLD_RESPONSE_CANDIDATE",
+    "LOG_THRESHOLD_BRIDGE_DOCUMENTED",
+    "COLLECTIVE_CURVATURE_DARK_MATTER_INTERPRETATION_CANDIDATE",
+    "NO_DARK_MATTER_SOLUTION_CLAIM_GUARDRAIL",
+    "EMPIRICAL_GRAVITY_TESTS_REQUIRED_GUARDRAIL",
+    "NO_NUMERICAL_CLOSURE"
+  ]
+}

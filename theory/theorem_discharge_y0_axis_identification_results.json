@@ -1,0 +1,83 @@
+{
+  "bhsm_replacement_claim_ready": false,
+  "branch": "bhsm-theorem-discharge-y0-axis-identification-v1",
+  "ckm_values_derived": false,
+  "claim_distinctions": [
+    {
+      "claim": "A: y0 is the peak of the universal scalar/topographic profile",
+      "guardrail": "This is a sampling/profile statement, not a Wigner axis theorem.",
+      "status": "Y0_PROFILE_PEAK_SUPPORTED",
+      "supported": true
+    },
+    {
+      "claim": "B: y0 is aligned with the squashed/Berger axis",
+      "guardrail": "Structural Berger-axis language does not identify y0 as the Wigner sampling axis.",
+      "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+      "supported": false
+    },
+    {
+      "claim": "C: y0 is the group identity, Hopf pole, or canonical Wigner axis",
+      "guardrail": "Required before promoting m=n=q/2.",
+      "status": "Y0_AXIS_IDENTIFICATION_REMAINS_OPEN",
+      "supported": false
+    }
+  ],
+  "discharged_obligations": {
+    "PO-BH-29": "PARTIAL: y0 profile peak is supported, but identity/Hopf-pole/axis identification remains open"
+  },
+  "finite_width_rank_three_derived": false,
+  "frozen_predictions_changed": false,
+  "m_equals_q_over_2_promotable": false,
+  "negative_results": [
+    "y0 identity/Hopf-pole/axis identification not derived unless found in repo",
+    "m=q/2 not promotable unless y0 axis sampling is derived",
+    "finite-width rank-three not derived in this branch",
+    "numerical Yukawa values not derived in this branch",
+    "CKM values not derived in this branch",
+    "PMNS values not derived in this branch",
+    "replacement claim is not ready"
+  ],
+  "numerical_yukawa_values_derived": false,
+  "official_predictions_changed": false,
+  "pmns_values_derived": false,
+  "standard_model_fully_derived": false,
+  "status": "partial_theorem_scaffold",
+  "still_open_downstream": [
+    "derive y0 as group identity, Hopf pole, Berger axis, or canonical focal point",
+    "derive Wigner/Hopf axis-sampling rule in BHSM notation",
+    "promote leading-axis m assignment if y0 axis sampling is derived",
+    "explicit Berger/BHSM harmonic representatives",
+    "eigenfunction amplitudes at y0",
+    "finite-width moment contractions",
+    "rank-three Yukawa matrix theorem",
+    "numerical Yukawa coupling theorem",
+    "fermion mass hierarchy theorem",
+    "CKM mixing theorem",
+    "PMNS mixing theorem",
+    "full replacement-level SM derivation"
+  ],
+  "verdict_labels": [
+    "PO_BH_29_Y0_AXIS_IDENTIFICATION_PARTIAL",
+    "Y0_PROFILE_PEAK_SUPPORTED",
+    "Y0_AXIS_IDENTIFICATION_REMAINS_OPEN",
+    "WIGNER_HOPF_AXIS_SAMPLING_REMAINS_OPEN",
+    "M_EQUALS_Q_OVER_2_REMAINS_STRUCTURALLY_MOTIVATED",
+    "EXPLICIT_EIGENFUNCTION_VALUES_REMAIN_OPEN",
+    "RANK_THREE_YUKAWA_THEOREM_REMAINS_OPEN",
+    "NUMERICAL_YUKAWA_VALUES_REMAIN_OPEN",
+    "CKM_VALUES_REMAIN_OPEN",
+    "PMNS_VALUES_REMAIN_OPEN",
+    "BHSM_REPLACEMENT_CLAIM_NOT_READY",
+    "FROZEN_PREDICTIONS_UNCHANGED",
+    "OFFICIAL_PREDICTIONS_UNCHANGED"
+  ],
+  "wigner_axis_sampling_rule": "D^ell_{m,n}(y0)=delta_mn only if y0 is derived as the relevant identity/axis/pole/focal point",
+  "y0_axis_identification_layer_completed": true,
+  "y0_axis_sampling_derived": false,
+  "y0_berger_axis_derived": false,
+  "y0_canonical_focal_point_derived": false,
+  "y0_group_identity_derived": false,
+  "y0_hopf_pole_derived": false,
+  "y0_profile_peak_supported": true,
+  "y0_squashed_axis_alignment_status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED"
+}

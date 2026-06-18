@@ -1,0 +1,179 @@
+{
+  "bhsm_replacement_claim_ready": false,
+  "branch": "bhsm-theorem-discharge-yukawa-overlap-texture-source-v1",
+  "ckm_values_derived": false,
+  "discharged_obligations": {
+    "PO-BH-19": "DERIVED_CONDITIONAL: Yukawa matrix scaffolds are sourced by BHSM boundary overlap functionals tied to allowed operator classes and generation mode ledgers"
+  },
+  "fermion_mass_ratios_derived": false,
+  "frozen_predictions_changed": false,
+  "mass_matrix_relation": "M_f=vY_f/sqrt(2)",
+  "mixing_scaffold": {
+    "cyclic": "V_cyclic=U_cyclic_upper_L^dagger U_cyclic_lower_L",
+    "numerical_values_derived": false,
+    "reference": "V_reference=U_reference_charged_L^dagger U_reference_neutral_L"
+  },
+  "negative_results": [
+    "numerical Yukawa values not derived in this branch",
+    "fermion mass ratios not derived in this branch",
+    "CKM values not derived in this branch",
+    "PMNS values not derived in this branch",
+    "replacement claim is not ready"
+  ],
+  "neutral_sector_mass_scaffold": {
+    "effective_operator": "M_eff=-M_D*M_N^{-1}*M_D^T",
+    "included": true,
+    "mass_scale_predicted": false,
+    "pmns_values_derived": false,
+    "symbolic_mass_matrix": "M_N[j,k]=N_N*I_N(S_ref_neutral[j],S_ref_neutral[k])"
+  },
+  "notes": [
+    "theorem discharge attempt completed for Yukawa overlap texture source",
+    "mission remains full Standard Model derivation from BHSM",
+    "no frozen predictions changed",
+    "no official predictions changed"
+  ],
+  "numerical_yukawa_values_derived": false,
+  "official_predictions_changed": false,
+  "pmns_values_derived": false,
+  "standard_model_fully_derived": false,
+  "status": "theorem_discharge_candidate",
+  "still_open_downstream": [
+    "numerical boundary overlap theorem",
+    "fermion mass hierarchy theorem",
+    "CKM mixing theorem",
+    "PMNS mixing theorem",
+    "neutral-sector mass scale theorem",
+    "full low-energy SM Lagrangian theorem",
+    "full replacement-level SM derivation"
+  ],
+  "summary": {
+    "ckm_values_derived": false,
+    "each_matrix_is_3x3": true,
+    "fermion_mass_ratios_derived": false,
+    "mass_matrix_relations": {
+      "cyclic_lower": "M_cyclic_lower=v/sqrt(2)*Y_cyclic_lower",
+      "cyclic_upper": "M_cyclic_upper=v/sqrt(2)*Y_cyclic_upper",
+      "reference_charged": "M_reference_charged=v/sqrt(2)*Y_reference_charged",
+      "reference_neutral": "M_reference_neutral=v/sqrt(2)*Y_reference_neutral"
+    },
+    "mixing_scaffold_defined": true,
+    "neutral_sector_mass_scaffold": {
+      "effective_operator": "M_eff=-M_D*M_N^{-1}*M_D^T",
+      "included": true,
+      "mass_scale_predicted": false,
+      "pmns_values_derived": false,
+      "symbolic_mass_matrix": "M_N[j,k]=N_N*I_N(S_ref_neutral[j],S_ref_neutral[k])"
+    },
+    "numerical_yukawa_values_derived": false,
+    "overlap_functional": "Y_f[i,j]=N_f*I_f(A_f[i],H_f,S_f[j])",
+    "pmns_values_derived": false,
+    "replacement_claim_ready": false,
+    "scalar_insertions": {
+      "cyclic_lower": "H_tilde",
+      "cyclic_upper": "H",
+      "reference_charged": "H_tilde",
+      "reference_neutral": "H"
+    },
+    "sectors": [
+      "cyclic_upper",
+      "cyclic_lower",
+      "reference_charged",
+      "reference_neutral"
+    ],
+    "yukawa_overlap_layer_discharged_conditionally": true
+  },
+  "verdict_labels": [
+    "THEOREM_DISCHARGE_YUKAWA_OVERLAP_TEXTURE_SOURCE_COMPLETE",
+    "PO_BH_19_YUKAWA_OVERLAP_TEXTURE_SOURCE_DERIVED_CONDITIONAL",
+    "YUKAWA_OVERLAP_FUNCTIONAL_DERIVED_CONDITIONAL",
+    "YUKAWA_GENERATION_MODE_LEDGERS_DERIVED_CONDITIONAL",
+    "YUKAWA_MATRIX_SCAFFOLD_DERIVED_CONDITIONAL",
+    "YUKAWA_MASS_MATRIX_RELATIONS_DERIVED_CONDITIONAL",
+    "YUKAWA_MIXING_SCAFFOLD_DERIVED_CONDITIONAL",
+    "NEUTRAL_SECTOR_MASS_SCAFFOLD_DERIVED_CONDITIONAL",
+    "NUMERICAL_YUKAWA_VALUES_REMAIN_OPEN",
+    "FERMION_MASS_RATIOS_REMAIN_OPEN",
+    "CKM_VALUES_REMAIN_OPEN",
+    "PMNS_VALUES_REMAIN_OPEN",
+    "DOWNSTREAM_SM_DERIVATION_REMAINS_OPEN",
+    "BHSM_REPLACEMENT_CLAIM_NOT_READY",
+    "FROZEN_PREDICTIONS_UNCHANGED",
+    "OFFICIAL_PREDICTIONS_UNCHANGED"
+  ],
+  "yukawa_matrices": {
+    "cyclic_lower": {
+      "entries": "symbolic boundary overlap entries",
+      "entry_symbols": [
+        "I_cyclic_lower_11",
+        "I_cyclic_lower_12",
+        "I_cyclic_lower_13",
+        "I_cyclic_lower_21",
+        "I_cyclic_lower_22",
+        "I_cyclic_lower_23",
+        "I_cyclic_lower_31",
+        "I_cyclic_lower_32",
+        "I_cyclic_lower_33"
+      ],
+      "neutral_vacuum_component": "H_tilde_zero",
+      "operator_class": "cyclic_lower_closure",
+      "scalar_insertion": "H_tilde",
+      "shape": "3x3"
+    },
+    "cyclic_upper": {
+      "entries": "symbolic boundary overlap entries",
+      "entry_symbols": [
+        "I_cyclic_upper_11",
+        "I_cyclic_upper_12",
+        "I_cyclic_upper_13",
+        "I_cyclic_upper_21",
+        "I_cyclic_upper_22",
+        "I_cyclic_upper_23",
+        "I_cyclic_upper_31",
+        "I_cyclic_upper_32",
+        "I_cyclic_upper_33"
+      ],
+      "neutral_vacuum_component": "H_zero",
+      "operator_class": "cyclic_upper_closure",
+      "scalar_insertion": "H",
+      "shape": "3x3"
+    },
+    "reference_charged": {
+      "entries": "symbolic boundary overlap entries",
+      "entry_symbols": [
+        "I_reference_charged_11",
+        "I_reference_charged_12",
+        "I_reference_charged_13",
+        "I_reference_charged_21",
+        "I_reference_charged_22",
+        "I_reference_charged_23",
+        "I_reference_charged_31",
+        "I_reference_charged_32",
+        "I_reference_charged_33"
+      ],
+      "neutral_vacuum_component": "H_tilde_zero",
+      "operator_class": "reference_charged_closure",
+      "scalar_insertion": "H_tilde",
+      "shape": "3x3"
+    },
+    "reference_neutral": {
+      "entries": "symbolic boundary overlap entries",
+      "entry_symbols": [
+        "I_reference_neutral_11",
+        "I_reference_neutral_12",
+        "I_reference_neutral_13",
+        "I_reference_neutral_21",
+        "I_reference_neutral_22",
+        "I_reference_neutral_23",
+        "I_reference_neutral_31",
+        "I_reference_neutral_32",
+        "I_reference_neutral_33"
+      ],
+      "neutral_vacuum_component": "H_zero",
+      "operator_class": "reference_neutral_closure",
+      "scalar_insertion": "H",
+      "shape": "3x3"
+    }
+  },
+  "yukawa_overlap_layer_discharged_conditionally": true
+}

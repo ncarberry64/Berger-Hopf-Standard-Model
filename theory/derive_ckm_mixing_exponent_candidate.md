@@ -1,0 +1,21 @@
+# Derive CKM Mixing Exponent Candidate
+
+```json
+{
+  "exponent": 0.0625,
+  "classification": "OPEN_DERIVATION_REQUIRED",
+  "candidate_label": "CANDIDATE_EXPONENT_NOT_DERIVED",
+  "selected_by_residual": true,
+  "routes_examined": [
+    "mass eigenvalue dressing versus mixing amplitude dressing",
+    "overlap amplitude as a fractional projection of mass dressing",
+    "2-to-3 family bridge order",
+    "Hopf projection depth",
+    "boundary operator ratio Omega_l:Omega_u:Omega_d",
+    "internal mode overlap order",
+    "16-fold phase or covering structure if independently found"
+  ],
+  "conclusion": "The 1/16 exponent is the best predeclared CKM 2-3 audit candidate, but this branch does not derive it independently of residual comparison.",
+  "next_action": "derive or reject the exponent before any promotion"
+}
+```

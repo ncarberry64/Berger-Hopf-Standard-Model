@@ -1,0 +1,1004 @@
+{
+  "best_candidate_law": {
+    "coefficients": {
+      "A0": 3.2243717587792684,
+      "a": 3.5005296274400397,
+      "b_base": 1.0161769447426865,
+      "b_fiber": 4.625517939903549
+    },
+    "law_id": "D_log_threshold_plus_type",
+    "max_abs_log_error_to_existing_bare": 1.0380747597108453,
+    "middle_vs_light_separation_pass": true,
+    "official": false,
+    "ordering_pass": true,
+    "overfit_risk": true,
+    "parameter_count": 4,
+    "rms_log_error_to_existing_bare": 0.510697459271581,
+    "sample_count": 6
+  },
+  "branch": "bhsm-minimal-branch-threshold-reconstruction",
+  "branch_feature_table": [
+    {
+      "N": 5,
+      "Omega_f": 3.0,
+      "Omega_star": 3,
+      "base_fraction": 0.8,
+      "branch_rank_by_N": 1,
+      "branch_role": "lower_nonzero_action, mixed",
+      "colored_lift_exponent": 0.0,
+      "cross_term": 2,
+      "fiber_fraction": 0.2,
+      "j": 2,
+      "k": 5,
+      "lower_doublet_projector": 0.0,
+      "mode_type": "mixed",
+      "orientation_product": -4.0,
+      "q": 1,
+      "ratio_name": "mu/tau",
+      "sector": "charged_lepton"
+    },
+    {
+      "N": 18,
+      "Omega_f": 3.0,
+      "Omega_star": 3,
+      "base_fraction": 0.5,
+      "branch_rank_by_N": 2,
+      "branch_role": "higher_nonzero_action, mixed",
+      "colored_lift_exponent": 0.0,
+      "cross_term": 9,
+      "fiber_fraction": 0.5,
+      "j": 3,
+      "k": 9,
+      "lower_doublet_projector": 0.0,
+      "mode_type": "mixed",
+      "orientation_product": -18.0,
+      "q": 3,
+      "ratio_name": "e/tau",
+      "sector": "charged_lepton"
+    },
+    {
+      "N": 36,
+      "Omega_f": 6.0,
+      "Omega_star": 6,
+      "base_fraction": 0.0,
+      "branch_rank_by_N": 1,
+      "branch_role": "lower_nonzero_action, pure_fiber",
+      "colored_lift_exponent": 1.0,
+      "cross_term": 0,
+      "fiber_fraction": 1.0,
+      "j": 0,
+      "k": 6,
+      "lower_doublet_projector": 0.0,
+      "mode_type": "pure_fiber",
+      "orientation_product": -0.0,
+      "q": 6,
+      "ratio_name": "c/t",
+      "sector": "up"
+    },
+    {
+      "N": 65,
+      "Omega_f": 6.0,
+      "Omega_star": 6,
+      "base_fraction": 0.015384615384615385,
+      "branch_rank_by_N": 2,
+      "branch_role": "higher_nonzero_action, mixed",
+      "colored_lift_exponent": 1.0,
+      "cross_term": 8,
+      "fiber_fraction": 0.9846153846153847,
+      "j": 1,
+      "k": 10,
+      "lower_doublet_projector": 0.0,
+      "mode_type": "mixed",
+      "orientation_product": -16.0,
+      "q": 8,
+      "ratio_name": "u/t",
+      "sector": "up"
+    },
+    {
+      "N": 9,
+      "Omega_f": 12.0,
+      "Omega_star": 12,
+      "base_fraction": 1.0,
+      "branch_rank_by_N": 1,
+      "branch_role": "lower_nonzero_action, pure_base",
+      "colored_lift_exponent": 2.0,
+      "cross_term": 0,
+      "fiber_fraction": 0.0,
+      "j": 3,
+      "k": 6,
+      "lower_doublet_projector": 1.0,
+      "mode_type": "pure_base",
+      "orientation_product": 0.0,
+      "q": 0,
+      "ratio_name": "s/b",
+      "sector": "down"
+    },
+    {
+      "N": 20,
+      "Omega_f": 12.0,
+      "Omega_star": 12,
+      "base_fraction": 0.2,
+      "branch_rank_by_N": 2,
+      "branch_role": "higher_nonzero_action, mixed",
+      "colored_lift_exponent": 2.0,
+      "cross_term": 8,
+      "fiber_fraction": 0.8,
+      "j": 2,
+      "k": 8,
+      "lower_doublet_projector": 1.0,
+      "mode_type": "mixed",
+      "orientation_product": 32.0,
+      "q": 4,
+      "ratio_name": "d/b",
+      "sector": "down"
+    }
+  ],
+  "candidate_law_results": [
+    {
+      "coefficients": {
+        "A0": 1.1162494827579033,
+        "a": 4.923624274480393
+      },
+      "formula": "log_pred=A0-a*branch_rank_by_N",
+      "law_id": "A_branch_rank_only",
+      "max_abs_log_error_to_existing_bare": 2.543660723891726,
+      "middle_vs_light_separation_pass": true,
+      "official": false,
+      "ordering_pass": true,
+      "overfit_risk": false,
+      "parameter_count": 2,
+      "parameter_policy": "single_universal_parameter_set",
+      "rms_log_error_to_existing_bare": 1.4455346874752366,
+      "row_log_residuals": {
+        "c/t": 0.9828606450597488,
+        "d/b": -1.933460541381847,
+        "e/tau": -0.6102001825098764,
+        "mu/tau": -0.995204487542745,
+        "s/b": 0.012343842482998024,
+        "u/t": 2.543660723891726
+      },
+      "row_predictions": [
+        {
+          "abs_log_residual": 0.995204487542745,
+          "branch_rank_by_N": 1,
+          "candidate_prediction": 0.022206398926103158,
+          "existing_bare_prediction": 0.06007447093260976,
+          "log_residual": -0.995204487542745,
+          "mode_type": "mixed",
+          "ratio_name": "mu/tau",
+          "sector": "charged_lepton"
+        },
+        {
+          "abs_log_residual": 0.6102001825098764,
+          "branch_rank_by_N": 2,
+          "candidate_prediction": 0.00016150102538269178,
+          "existing_bare_prediction": 0.00029729106456492414,
+          "log_residual": -0.6102001825098764,
+          "mode_type": "mixed",
+          "ratio_name": "e/tau",
+          "sector": "charged_lepton"
+        },
+        {
+          "abs_log_residual": 0.9828606450597488,
+          "branch_rank_by_N": 1,
+          "candidate_prediction": 0.022206398926103158,
+          "existing_bare_prediction": 0.008310500554068288,
+          "log_residual": 0.9828606450597488,
+          "mode_type": "pure_fiber",
+          "ratio_name": "c/t",
+          "sector": "up"
+        },
+        {
+          "abs_log_residual": 2.543660723891726,
+          "branch_rank_by_N": 2,
+          "candidate_prediction": 0.00016150102538269178,
+          "existing_bare_prediction": 1.2690463017606151e-05,
+          "log_residual": 2.543660723891726,
+          "mode_type": "mixed",
+          "ratio_name": "u/t",
+          "sector": "up"
+        },
+        {
+          "abs_log_residual": 0.012343842482998024,
+          "branch_rank_by_N": 1,
+          "candidate_prediction": 0.022206398926103158,
+          "existing_bare_prediction": 0.021933971495439474,
+          "log_residual": 0.012343842482998024,
+          "mode_type": "pure_base",
+          "ratio_name": "s/b",
+          "sector": "down"
+        },
+        {
+          "abs_log_residual": 1.933460541381847,
+          "branch_rank_by_N": 2,
+          "candidate_prediction": 0.00016150102538269178,
+          "existing_bare_prediction": 0.0011165200546001757,
+          "log_residual": -1.933460541381847,
+          "mode_type": "mixed",
+          "ratio_name": "d/b",
+          "sector": "down"
+        }
+      ],
+      "sample_count": 6,
+      "status": "BRANCH_RANK_THRESHOLD_DIAGNOSTIC"
+    },
+    {
+      "coefficients": {
+        "A0": 3.1066584578434036,
+        "a": 5.918828762023143,
+        "b_base": -1.0075483300257466,
+        "b_fiber": -1.9780651326024967
+      },
+      "formula": "log_pred=A0-a*branch_rank_by_N+b_fiber*pure_fiber+b_base*pure_base",
+      "law_id": "B_branch_rank_plus_type",
+      "max_abs_log_error_to_existing_bare": 2.543660723891728,
+      "middle_vs_light_separation_pass": true,
+      "official": false,
+      "ordering_pass": true,
+      "overfit_risk": true,
+      "parameter_count": 4,
+      "parameter_policy": "single_universal_parameter_set",
+      "rms_log_error_to_existing_bare": 1.327957316462961,
+      "row_log_residuals": {
+        "c/t": 2.6645352591003757e-15,
+        "d/b": -1.9334605413818453,
+        "e/tau": -0.6102001825098746,
+        "mu/tau": 5.773159728050814e-15,
+        "s/b": 1.7763568394002505e-15,
+        "u/t": 2.543660723891728
+      },
+      "row_predictions": [
+        {
+          "abs_log_residual": 5.773159728050814e-15,
+          "branch_rank_by_N": 1,
+          "candidate_prediction": 0.060074470932610105,
+          "existing_bare_prediction": 0.06007447093260976,
+          "log_residual": 5.773159728050814e-15,
+          "mode_type": "mixed",
+          "ratio_name": "mu/tau",
+          "sector": "charged_lepton"
+        },
+        {
+          "abs_log_residual": 0.6102001825098746,
+          "branch_rank_by_N": 2,
+          "candidate_prediction": 0.00016150102538269208,
+          "existing_bare_prediction": 0.00029729106456492414,
+          "log_residual": -0.6102001825098746,
+          "mode_type": "mixed",
+          "ratio_name": "e/tau",
+          "sector": "charged_lepton"
+        },
+        {
+          "abs_log_residual": 2.6645352591003757e-15,
+          "branch_rank_by_N": 1,
+          "candidate_prediction": 0.008310500554068309,
+          "existing_bare_prediction": 0.008310500554068288,
+          "log_residual": 2.6645352591003757e-15,
+          "mode_type": "pure_fiber",
+          "ratio_name": "c/t",
+          "sector": "up"
+        },
+        {
+          "abs_log_residual": 2.543660723891728,
+          "branch_rank_by_N": 2,
+          "candidate_prediction": 0.00016150102538269208,
+          "existing_bare_prediction": 1.2690463017606151e-05,
+          "log_residual": 2.543660723891728,
+          "mode_type": "mixed",
+          "ratio_name": "u/t",
+          "sector": "up"
+        },
+        {
+          "abs_log_residual": 1.7763568394002505e-15,
+          "branch_rank_by_N": 1,
+          "candidate_prediction": 0.021933971495439512,
+          "existing_bare_prediction": 0.021933971495439474,
+          "log_residual": 1.7763568394002505e-15,
+          "mode_type": "pure_base",
+          "ratio_name": "s/b",
+          "sector": "down"
+        },
+        {
+          "abs_log_residual": 1.9334605413818453,
+          "branch_rank_by_N": 2,
+          "candidate_prediction": 0.00016150102538269208,
+          "existing_bare_prediction": 0.0011165200546001757,
+          "log_residual": -1.9334605413818453,
+          "mode_type": "mixed",
+          "ratio_name": "d/b",
+          "sector": "down"
+        }
+      ],
+      "sample_count": 6,
+      "status": "BRANCH_TYPE_SPECIALNESS_DIAGNOSTIC"
+    },
+    {
+      "coefficients": {
+        "A0": 39.01244091220315,
+        "a": 49.77362990711955,
+        "b_base": 1.9641073699989477,
+        "b_fiber": 4.625720317401197
+      },
+      "formula": "log_pred=A0-a*N/(1+N)+b_fiber*pure_fiber+b_base*pure_base",
+      "law_id": "C_bounded_norm_plus_type",
+      "max_abs_log_error_to_existing_bare": 1.5934776173753837,
+      "middle_vs_light_separation_pass": true,
+      "official": false,
+      "ordering_pass": true,
+      "overfit_risk": true,
+      "parameter_count": 4,
+      "parameter_policy": "single_universal_parameter_set",
+      "rms_log_error_to_existing_bare": 0.8432649467827357,
+      "row_log_residuals": {
+        "c/t": -7.993605777301127e-15,
+        "d/b": -1.5934776173753837,
+        "e/tau": -0.020725379269732613,
+        "mu/tau": 0.34658629378326866,
+        "s/b": -1.2434497875801753e-14,
+        "u/t": 1.2676167028618366
+      },
+      "row_predictions": [
+        {
+          "abs_log_residual": 0.34658629378326866,
+          "branch_rank_by_N": 1,
+          "candidate_prediction": 0.08495921081804436,
+          "existing_bare_prediction": 0.06007447093260976,
+          "log_residual": 0.34658629378326866,
+          "mode_type": "mixed",
+          "ratio_name": "mu/tau",
+          "sector": "charged_lepton"
+        },
+        {
+          "abs_log_residual": 0.020725379269732613,
+          "branch_rank_by_N": 2,
+          "candidate_prediction": 0.00029119300507533975,
+          "existing_bare_prediction": 0.00029729106456492414,
+          "log_residual": -0.020725379269732613,
+          "mode_type": "mixed",
+          "ratio_name": "e/tau",
+          "sector": "charged_lepton"
+        },
+        {
+          "abs_log_residual": 7.993605777301127e-15,
+          "branch_rank_by_N": 1,
+          "candidate_prediction": 0.00831050055406822,
+          "existing_bare_prediction": 0.008310500554068288,
+          "log_residual": -7.993605777301127e-15,
+          "mode_type": "pure_fiber",
+          "ratio_name": "c/t",
+          "sector": "up"
+        },
+        {
+          "abs_log_residual": 1.2676167028618366,
+          "branch_rank_by_N": 2,
+          "candidate_prediction": 4.508129749139325e-05,
+          "existing_bare_prediction": 1.2690463017606151e-05,
+          "log_residual": 1.2676167028618366,
+          "mode_type": "mixed",
+          "ratio_name": "u/t",
+          "sector": "up"
+        },
+        {
+          "abs_log_residual": 1.2434497875801753e-14,
+          "branch_rank_by_N": 1,
+          "candidate_prediction": 0.0219339714954392,
+          "existing_bare_prediction": 0.021933971495439474,
+          "log_residual": -1.2434497875801753e-14,
+          "mode_type": "pure_base",
+          "ratio_name": "s/b",
+          "sector": "down"
+        },
+        {
+          "abs_log_residual": 1.5934776173753837,
+          "branch_rank_by_N": 2,
+          "candidate_prediction": 0.00022689660196697345,
+          "existing_bare_prediction": 0.0011165200546001757,
+          "log_residual": -1.5934776173753837,
+          "mode_type": "mixed",
+          "ratio_name": "d/b",
+          "sector": "down"
+        }
+      ],
+      "sample_count": 6,
+      "status": "NONLINEAR_THRESHOLD_CANDIDATE_DIAGNOSTIC"
+    },
+    {
+      "coefficients": {
+        "A0": 3.2243717587792684,
+        "a": 3.5005296274400397,
+        "b_base": 1.0161769447426865,
+        "b_fiber": 4.625517939903549
+      },
+      "formula": "log_pred=A0-a*log(1+N)+b_fiber*pure_fiber+b_base*pure_base",
+      "law_id": "D_log_threshold_plus_type",
+      "max_abs_log_error_to_existing_bare": 1.0380747597108453,
+      "middle_vs_light_separation_pass": true,
+      "official": false,
+      "ordering_pass": true,
+      "overfit_risk": true,
+      "parameter_count": 4,
+      "parameter_policy": "single_universal_parameter_set",
+      "rms_log_error_to_existing_bare": 0.510697459271581,
+      "row_log_residuals": {
+        "c/t": 4.440892098500626e-15,
+        "d/b": -0.6355307110565098,
+        "e/tau": 1.0380747597108453,
+        "mu/tau": -0.23556504432003278,
+        "s/b": 6.217248937900877e-15,
+        "u/t": -0.16697900433428003
+      },
+      "row_predictions": [
+        {
+          "abs_log_residual": 0.23556504432003278,
+          "branch_rank_by_N": 1,
+          "candidate_prediction": 0.047466297385628915,
+          "existing_bare_prediction": 0.06007447093260976,
+          "log_residual": -0.23556504432003278,
+          "mode_type": "mixed",
+          "ratio_name": "mu/tau",
+          "sector": "charged_lepton"
+        },
+        {
+          "abs_log_residual": 1.0380747597108453,
+          "branch_rank_by_N": 2,
+          "candidate_prediction": 0.0008394831744600754,
+          "existing_bare_prediction": 0.00029729106456492414,
+          "log_residual": 1.0380747597108453,
+          "mode_type": "mixed",
+          "ratio_name": "e/tau",
+          "sector": "charged_lepton"
+        },
+        {
+          "abs_log_residual": 4.440892098500626e-15,
+          "branch_rank_by_N": 1,
+          "candidate_prediction": 0.008310500554068324,
+          "existing_bare_prediction": 0.008310500554068288,
+          "log_residual": 4.440892098500626e-15,
+          "mode_type": "pure_fiber",
+          "ratio_name": "c/t",
+          "sector": "up"
+        },
+        {
+          "abs_log_residual": 0.16697900433428003,
+          "branch_rank_by_N": 2,
+          "candidate_prediction": 1.0738890340972157e-05,
+          "existing_bare_prediction": 1.2690463017606151e-05,
+          "log_residual": -0.16697900433428003,
+          "mode_type": "mixed",
+          "ratio_name": "u/t",
+          "sector": "up"
+        },
+        {
+          "abs_log_residual": 6.217248937900877e-15,
+          "branch_rank_by_N": 1,
+          "candidate_prediction": 0.02193397149543961,
+          "existing_bare_prediction": 0.021933971495439474,
+          "log_residual": 6.217248937900877e-15,
+          "mode_type": "pure_base",
+          "ratio_name": "s/b",
+          "sector": "down"
+        },
+        {
+          "abs_log_residual": 0.6355307110565098,
+          "branch_rank_by_N": 2,
+          "candidate_prediction": 0.0005913696706325951,
+          "existing_bare_prediction": 0.0011165200546001757,
+          "log_residual": -0.6355307110565098,
+          "mode_type": "mixed",
+          "ratio_name": "d/b",
+          "sector": "down"
+        }
+      ],
+      "sample_count": 6,
+      "status": "NONLINEAR_THRESHOLD_CANDIDATE_DIAGNOSTIC"
+    },
+    {
+      "coefficients": {
+        "A0": 1.583590477725491,
+        "a": 5.918828762023145,
+        "b_base": 0.5155196500921677,
+        "b_fiber": -0.4549971524845829,
+        "c_mixed": -1.5230679801179128
+      },
+      "formula": "log_pred=A0-a*branch_rank_by_N+b_fiber*pure_fiber+b_base*pure_base-c_mixed*mixed",
+      "law_id": "E_branch_rank_mixed_penalty",
+      "max_abs_log_error_to_existing_bare": 2.5436607238917244,
+      "middle_vs_light_separation_pass": true,
+      "official": false,
+      "ordering_pass": true,
+      "overfit_risk": true,
+      "parameter_count": 5,
+      "parameter_policy": "single_universal_parameter_set",
+      "rms_log_error_to_existing_bare": 1.327957316462961,
+      "row_log_residuals": {
+        "c/t": 2.6645352591003757e-15,
+        "d/b": -1.9334605413818489,
+        "e/tau": -0.6102001825098782,
+        "mu/tau": 4.440892098500626e-15,
+        "s/b": 2.6645352591003757e-15,
+        "u/t": 2.5436607238917244
+      },
+      "row_predictions": [
+        {
+          "abs_log_residual": 4.440892098500626e-15,
+          "branch_rank_by_N": 1,
+          "candidate_prediction": 0.06007447093261003,
+          "existing_bare_prediction": 0.06007447093260976,
+          "log_residual": 4.440892098500626e-15,
+          "mode_type": "mixed",
+          "ratio_name": "mu/tau",
+          "sector": "charged_lepton"
+        },
+        {
+          "abs_log_residual": 0.6102001825098782,
+          "branch_rank_by_N": 2,
+          "candidate_prediction": 0.0001615010253826915,
+          "existing_bare_prediction": 0.00029729106456492414,
+          "log_residual": -0.6102001825098782,
+          "mode_type": "mixed",
+          "ratio_name": "e/tau",
+          "sector": "charged_lepton"
+        },
+        {
+          "abs_log_residual": 2.6645352591003757e-15,
+          "branch_rank_by_N": 1,
+          "candidate_prediction": 0.008310500554068309,
+          "existing_bare_prediction": 0.008310500554068288,
+          "log_residual": 2.6645352591003757e-15,
+          "mode_type": "pure_fiber",
+          "ratio_name": "c/t",
+          "sector": "up"
+        },
+        {
+          "abs_log_residual": 2.5436607238917244,
+          "branch_rank_by_N": 2,
+          "candidate_prediction": 0.0001615010253826915,
+          "existing_bare_prediction": 1.2690463017606151e-05,
+          "log_residual": 2.5436607238917244,
+          "mode_type": "mixed",
+          "ratio_name": "u/t",
+          "sector": "up"
+        },
+        {
+          "abs_log_residual": 2.6645352591003757e-15,
+          "branch_rank_by_N": 1,
+          "candidate_prediction": 0.02193397149543953,
+          "existing_bare_prediction": 0.021933971495439474,
+          "log_residual": 2.6645352591003757e-15,
+          "mode_type": "pure_base",
+          "ratio_name": "s/b",
+          "sector": "down"
+        },
+        {
+          "abs_log_residual": 1.9334605413818489,
+          "branch_rank_by_N": 2,
+          "candidate_prediction": 0.0001615010253826915,
+          "existing_bare_prediction": 0.0011165200546001757,
+          "log_residual": -1.9334605413818489,
+          "mode_type": "mixed",
+          "ratio_name": "d/b",
+          "sector": "down"
+        }
+      ],
+      "sample_count": 6,
+      "status": "MIXED_BRANCH_PENALTY_DIAGNOSTIC"
+    },
+    {
+      "coefficients": {
+        "A0": 3.5257278263269045,
+        "a": 6.109314838606552,
+        "b_base": -1.236131621925841,
+        "b_fiber": -2.2066484245025912,
+        "gamma": 0.0571458229750291
+      },
+      "formula": "log_pred=A0-a*branch_rank_by_N+b_fiber*pure_fiber+b_base*pure_base+gamma*orientation_product",
+      "law_id": "F_orientation_cross",
+      "max_abs_log_error_to_existing_bare": 1.667424771607946,
+      "middle_vs_light_separation_pass": true,
+      "official": false,
+      "ordering_pass": true,
+      "overfit_risk": true,
+      "parameter_count": 5,
+      "parameter_policy": "single_universal_parameter_set",
+      "rms_log_error_to_existing_bare": 0.9440235948328525,
+      "row_log_residuals": {
+        "c/t": 8.881784197001252e-16,
+        "d/b": -0.06669699086423009,
+        "e/tau": -1.6007277807437141,
+        "mu/tau": -1.865174681370263e-14,
+        "s/b": 0.0,
+        "u/t": 1.667424771607946
+      },
+      "row_predictions": [
+        {
+          "abs_log_residual": 1.865174681370263e-14,
+          "branch_rank_by_N": 1,
+          "candidate_prediction": 0.06007447093260864,
+          "existing_bare_prediction": 0.06007447093260976,
+          "log_residual": -1.865174681370263e-14,
+          "mode_type": "mixed",
+          "ratio_name": "mu/tau",
+          "sector": "charged_lepton"
+        },
+        {
+          "abs_log_residual": 1.6007277807437141,
+          "branch_rank_by_N": 2,
+          "candidate_prediction": 5.9978363780315205e-05,
+          "existing_bare_prediction": 0.00029729106456492414,
+          "log_residual": -1.6007277807437141,
+          "mode_type": "mixed",
+          "ratio_name": "e/tau",
+          "sector": "charged_lepton"
+        },
+        {
+          "abs_log_residual": 8.881784197001252e-16,
+          "branch_rank_by_N": 1,
+          "candidate_prediction": 0.008310500554068295,
+          "existing_bare_prediction": 0.008310500554068288,
+          "log_residual": 8.881784197001252e-16,
+          "mode_type": "pure_fiber",
+          "ratio_name": "c/t",
+          "sector": "up"
+        },
+        {
+          "abs_log_residual": 1.667424771607946,
+          "branch_rank_by_N": 2,
+          "candidate_prediction": 6.724048620997488e-05,
+          "existing_bare_prediction": 1.2690463017606151e-05,
+          "log_residual": 1.667424771607946,
+          "mode_type": "mixed",
+          "ratio_name": "u/t",
+          "sector": "up"
+        },
+        {
+          "abs_log_residual": 0.0,
+          "branch_rank_by_N": 1,
+          "candidate_prediction": 0.021933971495439474,
+          "existing_bare_prediction": 0.021933971495439474,
+          "log_residual": 0.0,
+          "mode_type": "pure_base",
+          "ratio_name": "s/b",
+          "sector": "down"
+        },
+        {
+          "abs_log_residual": 0.06669699086423009,
+          "branch_rank_by_N": 2,
+          "candidate_prediction": 0.001044480636488941,
+          "existing_bare_prediction": 0.0011165200546001757,
+          "log_residual": -0.06669699086423009,
+          "mode_type": "mixed",
+          "ratio_name": "d/b",
+          "sector": "down"
+        }
+      ],
+      "sample_count": 6,
+      "status": "ORIENTATION_CROSS_TERM_SIGNAL_INDICATED"
+    }
+  ],
+  "claim_labels": [
+    "MINIMAL_BRANCH_THRESHOLD_RECONSTRUCTION_COMPLETE",
+    "BRANCH_RANK_THRESHOLD_DIAGNOSTIC",
+    "BRANCH_TYPE_SPECIALNESS_DIAGNOSTIC",
+    "NONLINEAR_THRESHOLD_CANDIDATE_DIAGNOSTIC",
+    "HIDDEN_RESPONSE_REMAINS_DIAGNOSTIC",
+    "NO_NEW_OFFICIAL_MASS_FORMULA_GUARDRAIL"
+  ],
+  "frozen_predictions_changed": false,
+  "hidden_response_decomposition": [
+    {
+      "R_hidden": 1.2656237002129882,
+      "diagnostic_only": true,
+      "log_R_hidden": 0.2355650443200327,
+      "lower_doublet_projector": 0.0,
+      "mixed": true,
+      "mode_type": "mixed",
+      "orientation_product": -4.0,
+      "pure_base": false,
+      "pure_fiber": false,
+      "ratio_name": "mu/tau",
+      "sector": "charged_lepton"
+    },
+    {
+      "R_hidden": 0.3541358226222113,
+      "diagnostic_only": true,
+      "log_R_hidden": -1.0380747597108453,
+      "lower_doublet_projector": 0.0,
+      "mixed": true,
+      "mode_type": "mixed",
+      "orientation_product": -18.0,
+      "pure_base": false,
+      "pure_fiber": false,
+      "ratio_name": "e/tau",
+      "sector": "charged_lepton"
+    },
+    {
+      "R_hidden": 0.9999999999999957,
+      "diagnostic_only": true,
+      "log_R_hidden": -4.32986979603812e-15,
+      "lower_doublet_projector": 0.0,
+      "mixed": false,
+      "mode_type": "pure_fiber",
+      "orientation_product": -0.0,
+      "pure_base": false,
+      "pure_fiber": true,
+      "ratio_name": "c/t",
+      "sector": "up"
+    },
+    {
+      "R_hidden": 1.1817294538513115,
+      "diagnostic_only": true,
+      "log_R_hidden": 0.16697900433428006,
+      "lower_doublet_projector": 0.0,
+      "mixed": true,
+      "mode_type": "mixed",
+      "orientation_product": -16.0,
+      "pure_base": false,
+      "pure_fiber": false,
+      "ratio_name": "u/t",
+      "sector": "up"
+    },
+    {
+      "R_hidden": 0.9999999999999938,
+      "diagnostic_only": true,
+      "log_R_hidden": -6.217248937900896e-15,
+      "lower_doublet_projector": 1.0,
+      "mixed": false,
+      "mode_type": "pure_base",
+      "orientation_product": 0.0,
+      "pure_base": true,
+      "pure_fiber": false,
+      "ratio_name": "s/b",
+      "sector": "down"
+    },
+    {
+      "R_hidden": 1.8880238707639858,
+      "diagnostic_only": true,
+      "log_R_hidden": 0.6355307110565097,
+      "lower_doublet_projector": 1.0,
+      "mixed": true,
+      "mode_type": "mixed",
+      "orientation_product": 32.0,
+      "pure_base": false,
+      "pure_fiber": false,
+      "ratio_name": "d/b",
+      "sector": "down"
+    }
+  ],
+  "inputs": {
+    "base_branch": "bhsm-existing-engine-branch-threshold-audit",
+    "existing_engine_sources": [
+      "docs/frozen_predictions.json",
+      "docs/frozen_predictions.md",
+      "theory/bhsm_prediction_ledger.json",
+      "existing tests/fixtures"
+    ],
+    "reference_ratio_source": "theory/bhsm_prediction_ledger.json"
+  },
+  "notes": [
+    "candidate-only",
+    "existing/frozen values are read-only",
+    "no frozen predictions changed",
+    "no official predictions changed",
+    "quark ratios are scheme-sensitive where applicable",
+    "no new official mass formula"
+  ],
+  "official_predictions_changed": false,
+  "read_only_existing_outputs": [
+    {
+      "N": 5,
+      "Omega_f": 3.0,
+      "Omega_star": 3,
+      "base_fraction": 0.8,
+      "branch_rank_by_N": 1,
+      "branch_role": "lower_nonzero_action, mixed",
+      "colored_lift_exponent": 0.0,
+      "cross_term": 2,
+      "fiber_fraction": 0.2,
+      "j": 2,
+      "k": 5,
+      "log_existing_bare": -2.812170304179745,
+      "lower_doublet_projector": 0.0,
+      "mode_kj": [
+        5,
+        2
+      ],
+      "mode_qj": [
+        1,
+        2
+      ],
+      "mode_type": "mixed",
+      "official_or_existing_bare_prediction": 0.06007447093260976,
+      "official_or_existing_dressed_candidate_prediction": 0.06007447093260976,
+      "orientation_product": -4.0,
+      "q": 1,
+      "ratio_name": "mu/tau",
+      "reference_ratio": 0.05946353426831603,
+      "reference_scheme_note": "scheme-stable for this audit",
+      "scheme_sensitive": false,
+      "sector": "charged_lepton"
+    },
+    {
+      "N": 18,
+      "Omega_f": 3.0,
+      "Omega_star": 3,
+      "base_fraction": 0.5,
+      "branch_rank_by_N": 2,
+      "branch_role": "higher_nonzero_action, mixed",
+      "colored_lift_exponent": 0.0,
+      "cross_term": 9,
+      "fiber_fraction": 0.5,
+      "j": 3,
+      "k": 9,
+      "log_existing_bare": -8.120798883693007,
+      "lower_doublet_projector": 0.0,
+      "mode_kj": [
+        9,
+        3
+      ],
+      "mode_qj": [
+        3,
+        3
+      ],
+      "mode_type": "mixed",
+      "official_or_existing_bare_prediction": 0.00029729106456492414,
+      "official_or_existing_dressed_candidate_prediction": 0.00029729106456492414,
+      "orientation_product": -18.0,
+      "q": 3,
+      "ratio_name": "e/tau",
+      "reference_ratio": 0.0002875853753250115,
+      "reference_scheme_note": "scheme-stable for this audit",
+      "scheme_sensitive": false,
+      "sector": "charged_lepton"
+    },
+    {
+      "N": 36,
+      "Omega_f": 6.0,
+      "Omega_star": 6,
+      "base_fraction": 0.0,
+      "branch_rank_by_N": 1,
+      "branch_role": "lower_nonzero_action, pure_fiber",
+      "colored_lift_exponent": 1.0,
+      "cross_term": 0,
+      "fiber_fraction": 1.0,
+      "j": 0,
+      "k": 6,
+      "log_existing_bare": -4.790235436782239,
+      "lower_doublet_projector": 0.0,
+      "mode_kj": [
+        6,
+        0
+      ],
+      "mode_qj": [
+        6,
+        0
+      ],
+      "mode_type": "pure_fiber",
+      "official_or_existing_bare_prediction": 0.008310500554068288,
+      "official_or_existing_dressed_candidate_prediction": 0.004155250277034144,
+      "orientation_product": -0.0,
+      "q": 6,
+      "ratio_name": "c/t",
+      "reference_ratio": 0.007354218541895883,
+      "reference_scheme_note": "quark ratios are scheme-sensitive",
+      "scheme_sensitive": true,
+      "sector": "up"
+    },
+    {
+      "N": 65,
+      "Omega_f": 6.0,
+      "Omega_star": 6,
+      "base_fraction": 0.015384615384615385,
+      "branch_rank_by_N": 2,
+      "branch_role": "higher_nonzero_action, mixed",
+      "colored_lift_exponent": 1.0,
+      "cross_term": 8,
+      "fiber_fraction": 0.9846153846153847,
+      "j": 1,
+      "k": 10,
+      "log_existing_bare": -11.27465979009461,
+      "lower_doublet_projector": 0.0,
+      "mode_kj": [
+        10,
+        1
+      ],
+      "mode_qj": [
+        8,
+        1
+      ],
+      "mode_type": "mixed",
+      "official_or_existing_bare_prediction": 1.2690463017606151e-05,
+      "official_or_existing_dressed_candidate_prediction": 1.2690463017606151e-05,
+      "orientation_product": -16.0,
+      "q": 8,
+      "ratio_name": "u/t",
+      "reference_ratio": 1.2507962244484336e-05,
+      "reference_scheme_note": "quark ratios are scheme-sensitive",
+      "scheme_sensitive": true,
+      "sector": "up"
+    },
+    {
+      "N": 9,
+      "Omega_f": 12.0,
+      "Omega_star": 12,
+      "base_fraction": 1.0,
+      "branch_rank_by_N": 1,
+      "branch_role": "lower_nonzero_action, pure_base",
+      "colored_lift_exponent": 2.0,
+      "cross_term": 0,
+      "fiber_fraction": 0.0,
+      "j": 3,
+      "k": 6,
+      "log_existing_bare": -3.819718634205488,
+      "lower_doublet_projector": 1.0,
+      "mode_kj": [
+        6,
+        3
+      ],
+      "mode_qj": [
+        0,
+        3
+      ],
+      "mode_type": "pure_base",
+      "official_or_existing_bare_prediction": 0.021933971495439474,
+      "official_or_existing_dressed_candidate_prediction": 0.021933971495439474,
+      "orientation_product": 0.0,
+      "q": 0,
+      "ratio_name": "s/b",
+      "reference_ratio": 0.022344497607655504,
+      "reference_scheme_note": "quark ratios are scheme-sensitive",
+      "scheme_sensitive": true,
+      "sector": "down"
+    },
+    {
+      "N": 20,
+      "Omega_f": 12.0,
+      "Omega_star": 12,
+      "base_fraction": 0.2,
+      "branch_rank_by_N": 2,
+      "branch_role": "higher_nonzero_action, mixed",
+      "colored_lift_exponent": 2.0,
+      "cross_term": 8,
+      "fiber_fraction": 0.8,
+      "j": 2,
+      "k": 8,
+      "log_existing_bare": -6.797538524821037,
+      "lower_doublet_projector": 1.0,
+      "mode_kj": [
+        8,
+        2
+      ],
+      "mode_qj": [
+        4,
+        2
+      ],
+      "mode_type": "mixed",
+      "official_or_existing_bare_prediction": 0.0011165200546001757,
+      "official_or_existing_dressed_candidate_prediction": 0.0011165200546001757,
+      "orientation_product": 32.0,
+      "q": 4,
+      "ratio_name": "d/b",
+      "reference_ratio": 0.0011172248803827751,
+      "reference_scheme_note": "quark ratios are scheme-sensitive",
+      "scheme_sensitive": true,
+      "sector": "down"
+    }
+  ],
+  "status": "candidate_only",
+  "summary": {
+    "best_supported_structure": [
+      "branch_threshold",
+      "branch_type_specialness",
+      "hidden_response_remaining",
+      "reference_scheme_harmonization"
+    ],
+    "recommended_next_target": "derive or reject the best branch-threshold law and its residual hidden-response terms from BHSM boundary dynamics"
+  },
+  "verdict_labels": [
+    "MINIMAL_BRANCH_THRESHOLD_RECONSTRUCTION_COMPLETE",
+    "HIDDEN_RESPONSE_REMAINS_INDICATED",
+    "REFERENCE_SCHEME_LIMITATION",
+    "NO_NUMERICAL_CLOSURE",
+    "LOG_THRESHOLD_SIGNAL_INDICATED",
+    "OVERFIT_RISK_WARNING"
+  ]
+}

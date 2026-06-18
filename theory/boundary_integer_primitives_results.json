@@ -1,0 +1,126 @@
+{
+  "branch": "bhsm-boundary-integer-primitives-bridge-v1",
+  "charge_hypercharge_bridge": {
+    "Q": "sigma/2 + C/6 - ell/2",
+    "T3": "w*sigma/2",
+    "Y": "C/3 - ell + (1-w)*sigma",
+    "full_sm_derivation_claimed": false,
+    "primitive_derivation_complete": false,
+    "sm_charge_table_reproduced": true,
+    "status": "candidate_diagnostic"
+  },
+  "claim_labels": [
+    "BOUNDARY_INTEGER_CHARGE_HYPERCHARGE_BRIDGE_CANDIDATE",
+    "SM_CHARGE_TABLE_REPRODUCED_DIAGNOSTIC",
+    "HYPERCHARGE_REWRITE_FROM_INTEGER_PRIMITIVES",
+    "WEAK_INTERFACE_ACTIVITY_DERIVATION_REMAINS_OPEN",
+    "CHIRAL_STRUCTURE_DERIVATION_REMAINS_OPEN",
+    "FULL_SM_DERIVATION_NOT_CLAIMED"
+  ],
+  "frozen_predictions_changed": false,
+  "integer_primitives": {
+    "C": "3B color-active boundary-sector indicator",
+    "ell": "L lepton-sector boundary indicator",
+    "sigma": "2T3_orientation upper/lower weak-interface orientation",
+    "w": "weak-interface activity indicator"
+  },
+  "notes": [
+    "candidate-only",
+    "diagnostic mapping only",
+    "weak-interface activity is not yet fully derived chirality",
+    "no official prediction changes",
+    "no frozen prediction changes",
+    "full Standard Model derivation is not claimed"
+  ],
+  "official_predictions_changed": false,
+  "open_proof_obligations": [
+    "Derive C as a color-active boundary sector from Berger-Hopf channel geometry.",
+    "Derive ell as a lepton-sector boundary indicator from boundary closure.",
+    "Derive sigma as upper/lower weak-interface orientation.",
+    "Derive w as weak-interface activity and explain why it corresponds to SM chiral doublet/singlet structure.",
+    "Derive anomaly cancellation from global boundary closure using the integer primitive charge table."
+  ],
+  "sm_charge_table": [
+    {
+      "C": 0,
+      "Q": "0",
+      "T3": "1/2",
+      "Y": "-1",
+      "ell": 1,
+      "field": "nu_L",
+      "sigma": 1,
+      "w": 1
+    },
+    {
+      "C": 0,
+      "Q": "-1",
+      "T3": "-1/2",
+      "Y": "-1",
+      "ell": 1,
+      "field": "e_L",
+      "sigma": -1,
+      "w": 1
+    },
+    {
+      "C": 1,
+      "Q": "2/3",
+      "T3": "1/2",
+      "Y": "1/3",
+      "ell": 0,
+      "field": "u_L",
+      "sigma": 1,
+      "w": 1
+    },
+    {
+      "C": 1,
+      "Q": "-1/3",
+      "T3": "-1/2",
+      "Y": "1/3",
+      "ell": 0,
+      "field": "d_L",
+      "sigma": -1,
+      "w": 1
+    },
+    {
+      "C": 0,
+      "Q": "0",
+      "T3": "0",
+      "Y": "0",
+      "ell": 1,
+      "field": "nu_R optional",
+      "sigma": 1,
+      "w": 0
+    },
+    {
+      "C": 0,
+      "Q": "-1",
+      "T3": "0",
+      "Y": "-2",
+      "ell": 1,
+      "field": "e_R",
+      "sigma": -1,
+      "w": 0
+    },
+    {
+      "C": 1,
+      "Q": "2/3",
+      "T3": "0",
+      "Y": "4/3",
+      "ell": 0,
+      "field": "u_R",
+      "sigma": 1,
+      "w": 0
+    },
+    {
+      "C": 1,
+      "Q": "-1/3",
+      "T3": "0",
+      "Y": "-2/3",
+      "ell": 0,
+      "field": "d_R",
+      "sigma": -1,
+      "w": 0
+    }
+  ],
+  "status": "candidate_only"
+}

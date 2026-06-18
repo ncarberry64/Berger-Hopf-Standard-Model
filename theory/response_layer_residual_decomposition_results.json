@@ -1,0 +1,898 @@
+{
+  "baseline": {
+    "max_abs_log_error": 4.721337722933362,
+    "parameters": {
+      "beta_eff": 0.0,
+      "epsilon": 0.05,
+      "tau0": 0.2,
+      "xi": 0.0
+    },
+    "rms_log_error": 2.650470675424182,
+    "source": "bare_yukawa_residual_autopsy",
+    "variant": "A_raw"
+  },
+  "best_evidence_scenario": {
+    "max_abs_log_error": 4.6841726114810145,
+    "net_rms_delta_vs_bare": -0.012210289558848952,
+    "num_residuals_improved": 2,
+    "num_residuals_worsened": 0,
+    "ordering_pass": true,
+    "rms_log_error": 2.638260385865333,
+    "scenario_id": "lepton_8_9_only"
+  },
+  "branch": "bhsm-response-layer-residual-decomposition",
+  "claim_labels": [
+    "RESPONSE_LAYER_RESIDUAL_DECOMPOSITION_COMPLETE",
+    "RESPONSE_SELECTOR_DIAGNOSTIC_CANDIDATE",
+    "RESPONSE_TOGGLE_AUDIT_CANDIDATE",
+    "CURRENT_RESPONSES_GLOBAL_EFFECT_RECORDED",
+    "MISSING_DOWN_RESPONSE_SIGN_DIAGNOSTIC",
+    "LEPTON_RESPONSE_DIRECTIONAL_DIAGNOSTIC",
+    "UP_RESPONSE_DIRECTIONAL_DIAGNOSTIC",
+    "NO_NEW_OFFICIAL_RESPONSE_GUARDRAIL"
+  ],
+  "control_scenarios": [
+    {
+      "control_status": "FORBIDDEN_DOWN_SECTOR_RESPONSE_CONTROL",
+      "main_evidence_allowed": false,
+      "scenario_id": "down_uniform_suppression_control",
+      "used_as_evidence": false
+    },
+    {
+      "control_status": "FORBIDDEN_LEPTON_EXTRA_RESPONSE_CONTROL",
+      "main_evidence_allowed": false,
+      "scenario_id": "lepton_extra_suppression_control",
+      "used_as_evidence": false
+    },
+    {
+      "control_status": "FORBIDDEN_PER_RATIO_ORACLE_CONTROL",
+      "main_evidence_allowed": false,
+      "scenario_id": "per_ratio_oracle_control",
+      "used_as_evidence": false
+    }
+  ],
+  "frozen_predictions_changed": false,
+  "notes": [
+    "candidate-only",
+    "no frozen predictions changed",
+    "no official predictions changed",
+    "quark ratios are scheme-sensitive where applicable",
+    "response factors are not interchangeable",
+    "CKM interface response is not a mass response"
+  ],
+  "official_predictions_changed": false,
+  "response_effect_summary": {
+    "current_candidate_responses": {
+      "net_rms_delta_vs_bare": 0.09907765261388546,
+      "num_residuals_improved": 2,
+      "num_residuals_worsened": 2
+    },
+    "down_missing_response_sign": "suppression_required",
+    "global_conclusion": "existing candidate responses are mixed and do not close the universal bare mass gate",
+    "lepton_8_9": {
+      "directionally_suppresses_overpredictions": true,
+      "e_tau": {
+        "bare_log_residual": 4.721337722933362,
+        "delta_abs_log_residual": -0.03716511145234769,
+        "improves": true,
+        "ratio_name": "e/tau",
+        "response_factor": 0.9635170345177995,
+        "scenario_log_residual": 4.6841726114810145
+      },
+      "mu_tau": {
+        "bare_log_residual": 1.8409861280602535,
+        "delta_abs_log_residual": -0.010323642070096506,
+        "improves": true,
+        "ratio_name": "mu/tau",
+        "response_factor": 0.9897294638168652,
+        "scenario_log_residual": 1.830662485990157
+      }
+    },
+    "up_half": {
+      "c_t": {
+        "bare_log_residual": -1.6181310657718806,
+        "delta_abs_log_residual": 0.6931471805599452,
+        "improves": false,
+        "ratio_name": "c/t",
+        "response_factor": 0.5,
+        "scenario_log_residual": -2.3112782463318258
+      },
+      "worsens_existing_underprediction": true
+    },
+    "up_light_amplitude": {
+      "u_t": {
+        "bare_log_residual": -0.5208321873803957,
+        "delta_abs_log_residual": 0.5493061443340547,
+        "improves": false,
+        "ratio_name": "u/t",
+        "response_factor": 0.5773502691896258,
+        "scenario_log_residual": -1.0701383317144504
+      },
+      "worsens_existing_underprediction": true
+    }
+  },
+  "scenario_results": [
+    {
+      "charged_lepton_ordering_pass": true,
+      "control_status": null,
+      "down_ordering_pass": true,
+      "down_rms_log_error": 2.605771927526443,
+      "lepton_rms_log_error": 3.5833127004005574,
+      "light_mode_rms_log_error": 3.273005175461335,
+      "main_evidence_allowed": true,
+      "max_abs_log_error": 4.721337722933362,
+      "middle_mode_rms_log_error": 1.8268625355976702,
+      "net_rms_delta_vs_bare": 0.0,
+      "num_residuals_improved": 0,
+      "num_residuals_worsened": 0,
+      "ordering_pass": true,
+      "rms_log_error": 2.650470675424182,
+      "rows": [
+        {
+          "bare_log_residual": 1.8409861280602535,
+          "bare_prediction": 0.3747838213299577,
+          "delta_abs_log_residual": 0.0,
+          "improves": false,
+          "mode_class": "middle",
+          "qj": [
+            1,
+            2
+          ],
+          "ratio_name": "mu/tau",
+          "reference_ratio": 0.05946353426831603,
+          "response_factor_applied": 1.0,
+          "scenario_log_residual": 1.8409861280602535,
+          "scenario_prediction": 0.3747838213299577,
+          "scheme_sensitive": false,
+          "sector": "charged_lepton"
+        },
+        {
+          "bare_log_residual": 4.721337722933362,
+          "bare_prediction": 0.03230113011695777,
+          "delta_abs_log_residual": 0.0,
+          "improves": false,
+          "mode_class": "light",
+          "qj": [
+            3,
+            3
+          ],
+          "ratio_name": "e/tau",
+          "reference_ratio": 0.0002875853753250115,
+          "response_factor_applied": 1.0,
+          "scenario_log_residual": 4.721337722933362,
+          "scenario_prediction": 0.03230113011695777,
+          "scheme_sensitive": false,
+          "sector": "charged_lepton"
+        },
+        {
+          "bare_log_residual": -1.6181310657718806,
+          "bare_prediction": 0.001458112854293096,
+          "delta_abs_log_residual": 0.0,
+          "improves": false,
+          "mode_class": "middle",
+          "qj": [
+            6,
+            0
+          ],
+          "ratio_name": "c/t",
+          "reference_ratio": 0.007354218541895883,
+          "response_factor_applied": 1.0,
+          "scenario_log_residual": -1.6181310657718806,
+          "scenario_prediction": 0.001458112854293096,
+          "scheme_sensitive": true,
+          "sector": "up"
+        },
+        {
+          "bare_log_residual": -0.5208321873803957,
+          "bare_prediction": 7.430054796240815e-06,
+          "delta_abs_log_residual": 0.0,
+          "improves": false,
+          "mode_class": "light",
+          "qj": [
+            8,
+            1
+          ],
+          "ratio_name": "u/t",
+          "reference_ratio": 1.2507962244484336e-05,
+          "response_factor_applied": 1.0,
+          "scenario_log_residual": -0.5208321873803957,
+          "scenario_prediction": 7.430054796240815e-06,
+          "scheme_sensitive": true,
+          "sector": "up"
+        },
+        {
+          "bare_log_residual": 2.001175180284005,
+          "bare_prediction": 0.16529888822158653,
+          "delta_abs_log_residual": 0.0,
+          "improves": false,
+          "mode_class": "middle",
+          "qj": [
+            0,
+            3
+          ],
+          "ratio_name": "s/b",
+          "reference_ratio": 0.022344497607655504,
+          "response_factor_applied": 1.0,
+          "scenario_log_residual": 2.001175180284005,
+          "scenario_prediction": 0.16529888822158653,
+          "scheme_sensitive": true,
+          "sector": "down"
+        },
+        {
+          "bare_log_residual": 3.0944131227722367,
+          "bare_prediction": 0.02466193465732934,
+          "delta_abs_log_residual": 0.0,
+          "improves": false,
+          "mode_class": "light",
+          "qj": [
+            4,
+            2
+          ],
+          "ratio_name": "d/b",
+          "reference_ratio": 0.0011172248803827751,
+          "response_factor_applied": 1.0,
+          "scenario_log_residual": 3.0944131227722367,
+          "scenario_prediction": 0.02466193465732934,
+          "scheme_sensitive": true,
+          "sector": "down"
+        }
+      ],
+      "scenario_id": "bare_only",
+      "up_ordering_pass": true,
+      "up_rms_log_error": 1.2020013131081617
+    },
+    {
+      "charged_lepton_ordering_pass": true,
+      "control_status": null,
+      "down_ordering_pass": true,
+      "down_rms_log_error": 2.605771927526443,
+      "lepton_rms_log_error": 3.556177596223263,
+      "light_mode_rms_log_error": 3.255156514206618,
+      "main_evidence_allowed": true,
+      "max_abs_log_error": 4.6841726114810145,
+      "middle_mode_rms_log_error": 1.823401161365981,
+      "net_rms_delta_vs_bare": -0.012210289558848952,
+      "num_residuals_improved": 2,
+      "num_residuals_worsened": 0,
+      "ordering_pass": true,
+      "rms_log_error": 2.638260385865333,
+      "rows": [
+        {
+          "bare_log_residual": 1.8409861280602535,
+          "bare_prediction": 0.3747838213299577,
+          "delta_abs_log_residual": -0.010323642070096506,
+          "improves": true,
+          "mode_class": "middle",
+          "qj": [
+            1,
+            2
+          ],
+          "ratio_name": "mu/tau",
+          "reference_ratio": 0.05946353426831603,
+          "response_factor_applied": 0.9897294638168652,
+          "scenario_log_residual": 1.830662485990157,
+          "scenario_prediction": 0.37093459053213484,
+          "scheme_sensitive": false,
+          "sector": "charged_lepton"
+        },
+        {
+          "bare_log_residual": 4.721337722933362,
+          "bare_prediction": 0.03230113011695777,
+          "delta_abs_log_residual": -0.03716511145234769,
+          "improves": true,
+          "mode_class": "light",
+          "qj": [
+            3,
+            3
+          ],
+          "ratio_name": "e/tau",
+          "reference_ratio": 0.0002875853753250115,
+          "response_factor_applied": 0.9635170345177995,
+          "scenario_log_residual": 4.6841726114810145,
+          "scenario_prediction": 0.03112268910186473,
+          "scheme_sensitive": false,
+          "sector": "charged_lepton"
+        },
+        {
+          "bare_log_residual": -1.6181310657718806,
+          "bare_prediction": 0.001458112854293096,
+          "delta_abs_log_residual": 0.0,
+          "improves": false,
+          "mode_class": "middle",
+          "qj": [
+            6,
+            0
+          ],
+          "ratio_name": "c/t",
+          "reference_ratio": 0.007354218541895883,
+          "response_factor_applied": 1.0,
+          "scenario_log_residual": -1.6181310657718806,
+          "scenario_prediction": 0.001458112854293096,
+          "scheme_sensitive": true,
+          "sector": "up"
+        },
+        {
+          "bare_log_residual": -0.5208321873803957,
+          "bare_prediction": 7.430054796240815e-06,
+          "delta_abs_log_residual": 0.0,
+          "improves": false,
+          "mode_class": "light",
+          "qj": [
+            8,
+            1
+          ],
+          "ratio_name": "u/t",
+          "reference_ratio": 1.2507962244484336e-05,
+          "response_factor_applied": 1.0,
+          "scenario_log_residual": -0.5208321873803957,
+          "scenario_prediction": 7.430054796240815e-06,
+          "scheme_sensitive": true,
+          "sector": "up"
+        },
+        {
+          "bare_log_residual": 2.001175180284005,
+          "bare_prediction": 0.16529888822158653,
+          "delta_abs_log_residual": 0.0,
+          "improves": false,
+          "mode_class": "middle",
+          "qj": [
+            0,
+            3
+          ],
+          "ratio_name": "s/b",
+          "reference_ratio": 0.022344497607655504,
+          "response_factor_applied": 1.0,
+          "scenario_log_residual": 2.001175180284005,
+          "scenario_prediction": 0.16529888822158653,
+          "scheme_sensitive": true,
+          "sector": "down"
+        },
+        {
+          "bare_log_residual": 3.0944131227722367,
+          "bare_prediction": 0.02466193465732934,
+          "delta_abs_log_residual": 0.0,
+          "improves": false,
+          "mode_class": "light",
+          "qj": [
+            4,
+            2
+          ],
+          "ratio_name": "d/b",
+          "reference_ratio": 0.0011172248803827751,
+          "response_factor_applied": 1.0,
+          "scenario_log_residual": 3.0944131227722367,
+          "scenario_prediction": 0.02466193465732934,
+          "scheme_sensitive": true,
+          "sector": "down"
+        }
+      ],
+      "scenario_id": "lepton_8_9_only",
+      "up_ordering_pass": true,
+      "up_rms_log_error": 1.2020013131081617
+    },
+    {
+      "charged_lepton_ordering_pass": true,
+      "control_status": null,
+      "down_ordering_pass": true,
+      "down_rms_log_error": 2.605771927526443,
+      "lepton_rms_log_error": 3.5833127004005574,
+      "light_mode_rms_log_error": 3.273005175461335,
+      "main_evidence_allowed": true,
+      "max_abs_log_error": 4.721337722933362,
+      "middle_mode_rms_log_error": 2.060415747518101,
+      "net_rms_delta_vs_bare": 0.0842940248029933,
+      "num_residuals_improved": 0,
+      "num_residuals_worsened": 1,
+      "ordering_pass": true,
+      "rms_log_error": 2.734764700227175,
+      "rows": [
+        {
+          "bare_log_residual": 1.8409861280602535,
+          "bare_prediction": 0.3747838213299577,
+          "delta_abs_log_residual": 0.0,
+          "improves": false,
+          "mode_class": "middle",
+          "qj": [
+            1,
+            2
+          ],
+          "ratio_name": "mu/tau",
+          "reference_ratio": 0.05946353426831603,
+          "response_factor_applied": 1.0,
+          "scenario_log_residual": 1.8409861280602535,
+          "scenario_prediction": 0.3747838213299577,
+          "scheme_sensitive": false,
+          "sector": "charged_lepton"
+        },
+        {
+          "bare_log_residual": 4.721337722933362,
+          "bare_prediction": 0.03230113011695777,
+          "delta_abs_log_residual": 0.0,
+          "improves": false,
+          "mode_class": "light",
+          "qj": [
+            3,
+            3
+          ],
+          "ratio_name": "e/tau",
+          "reference_ratio": 0.0002875853753250115,
+          "response_factor_applied": 1.0,
+          "scenario_log_residual": 4.721337722933362,
+          "scenario_prediction": 0.03230113011695777,
+          "scheme_sensitive": false,
+          "sector": "charged_lepton"
+        },
+        {
+          "bare_log_residual": -1.6181310657718806,
+          "bare_prediction": 0.001458112854293096,
+          "delta_abs_log_residual": 0.6931471805599452,
+          "improves": false,
+          "mode_class": "middle",
+          "qj": [
+            6,
+            0
+          ],
+          "ratio_name": "c/t",
+          "reference_ratio": 0.007354218541895883,
+          "response_factor_applied": 0.5,
+          "scenario_log_residual": -2.3112782463318258,
+          "scenario_prediction": 0.000729056427146548,
+          "scheme_sensitive": true,
+          "sector": "up"
+        },
+        {
+          "bare_log_residual": -0.5208321873803957,
+          "bare_prediction": 7.430054796240815e-06,
+          "delta_abs_log_residual": 0.0,
+          "improves": false,
+          "mode_class": "light",
+          "qj": [
+            8,
+            1
+          ],
+          "ratio_name": "u/t",
+          "reference_ratio": 1.2507962244484336e-05,
+          "response_factor_applied": 1.0,
+          "scenario_log_residual": -0.5208321873803957,
+          "scenario_prediction": 7.430054796240815e-06,
+          "scheme_sensitive": true,
+          "sector": "up"
+        },
+        {
+          "bare_log_residual": 2.001175180284005,
+          "bare_prediction": 0.16529888822158653,
+          "delta_abs_log_residual": 0.0,
+          "improves": false,
+          "mode_class": "middle",
+          "qj": [
+            0,
+            3
+          ],
+          "ratio_name": "s/b",
+          "reference_ratio": 0.022344497607655504,
+          "response_factor_applied": 1.0,
+          "scenario_log_residual": 2.001175180284005,
+          "scenario_prediction": 0.16529888822158653,
+          "scheme_sensitive": true,
+          "sector": "down"
+        },
+        {
+          "bare_log_residual": 3.0944131227722367,
+          "bare_prediction": 0.02466193465732934,
+          "delta_abs_log_residual": 0.0,
+          "improves": false,
+          "mode_class": "light",
+          "qj": [
+            4,
+            2
+          ],
+          "ratio_name": "d/b",
+          "reference_ratio": 0.0011172248803827751,
+          "response_factor_applied": 1.0,
+          "scenario_log_residual": 3.0944131227722367,
+          "scenario_prediction": 0.02466193465732934,
+          "scheme_sensitive": true,
+          "sector": "down"
+        }
+      ],
+      "scenario_id": "up_half_only",
+      "up_ordering_pass": true,
+      "up_rms_log_error": 1.675301957764356
+    },
+    {
+      "charged_lepton_ordering_pass": true,
+      "control_status": null,
+      "down_ordering_pass": true,
+      "down_rms_log_error": 2.605771927526443,
+      "lepton_rms_log_error": 3.5833127004005574,
+      "light_mode_rms_log_error": 3.317208591440661,
+      "main_evidence_allowed": true,
+      "max_abs_log_error": 4.721337722933362,
+      "middle_mode_rms_log_error": 1.8268625355976702,
+      "net_rms_delta_vs_bare": 0.027336222309305214,
+      "num_residuals_improved": 0,
+      "num_residuals_worsened": 1,
+      "ordering_pass": true,
+      "rms_log_error": 2.677806897733487,
+      "rows": [
+        {
+          "bare_log_residual": 1.8409861280602535,
+          "bare_prediction": 0.3747838213299577,
+          "delta_abs_log_residual": 0.0,
+          "improves": false,
+          "mode_class": "middle",
+          "qj": [
+            1,
+            2
+          ],
+          "ratio_name": "mu/tau",
+          "reference_ratio": 0.05946353426831603,
+          "response_factor_applied": 1.0,
+          "scenario_log_residual": 1.8409861280602535,
+          "scenario_prediction": 0.3747838213299577,
+          "scheme_sensitive": false,
+          "sector": "charged_lepton"
+        },
+        {
+          "bare_log_residual": 4.721337722933362,
+          "bare_prediction": 0.03230113011695777,
+          "delta_abs_log_residual": 0.0,
+          "improves": false,
+          "mode_class": "light",
+          "qj": [
+            3,
+            3
+          ],
+          "ratio_name": "e/tau",
+          "reference_ratio": 0.0002875853753250115,
+          "response_factor_applied": 1.0,
+          "scenario_log_residual": 4.721337722933362,
+          "scenario_prediction": 0.03230113011695777,
+          "scheme_sensitive": false,
+          "sector": "charged_lepton"
+        },
+        {
+          "bare_log_residual": -1.6181310657718806,
+          "bare_prediction": 0.001458112854293096,
+          "delta_abs_log_residual": 0.0,
+          "improves": false,
+          "mode_class": "middle",
+          "qj": [
+            6,
+            0
+          ],
+          "ratio_name": "c/t",
+          "reference_ratio": 0.007354218541895883,
+          "response_factor_applied": 1.0,
+          "scenario_log_residual": -1.6181310657718806,
+          "scenario_prediction": 0.001458112854293096,
+          "scheme_sensitive": true,
+          "sector": "up"
+        },
+        {
+          "bare_log_residual": -0.5208321873803957,
+          "bare_prediction": 7.430054796240815e-06,
+          "delta_abs_log_residual": 0.5493061443340547,
+          "improves": false,
+          "mode_class": "light",
+          "qj": [
+            8,
+            1
+          ],
+          "ratio_name": "u/t",
+          "reference_ratio": 1.2507962244484336e-05,
+          "response_factor_applied": 0.5773502691896258,
+          "scenario_log_residual": -1.0701383317144504,
+          "scenario_prediction": 4.289744136703305e-06,
+          "scheme_sensitive": true,
+          "sector": "up"
+        },
+        {
+          "bare_log_residual": 2.001175180284005,
+          "bare_prediction": 0.16529888822158653,
+          "delta_abs_log_residual": 0.0,
+          "improves": false,
+          "mode_class": "middle",
+          "qj": [
+            0,
+            3
+          ],
+          "ratio_name": "s/b",
+          "reference_ratio": 0.022344497607655504,
+          "response_factor_applied": 1.0,
+          "scenario_log_residual": 2.001175180284005,
+          "scenario_prediction": 0.16529888822158653,
+          "scheme_sensitive": true,
+          "sector": "down"
+        },
+        {
+          "bare_log_residual": 3.0944131227722367,
+          "bare_prediction": 0.02466193465732934,
+          "delta_abs_log_residual": 0.0,
+          "improves": false,
+          "mode_class": "light",
+          "qj": [
+            4,
+            2
+          ],
+          "ratio_name": "d/b",
+          "reference_ratio": 0.0011172248803827751,
+          "response_factor_applied": 1.0,
+          "scenario_log_residual": 3.0944131227722367,
+          "scenario_prediction": 0.02466193465732934,
+          "scheme_sensitive": true,
+          "sector": "down"
+        }
+      ],
+      "scenario_id": "up_light_amp_only",
+      "up_ordering_pass": true,
+      "up_rms_log_error": 1.371776985340662
+    },
+    {
+      "charged_lepton_ordering_pass": true,
+      "control_status": null,
+      "down_ordering_pass": true,
+      "down_rms_log_error": 2.605771927526443,
+      "lepton_rms_log_error": 3.5833127004005574,
+      "light_mode_rms_log_error": 3.317208591440661,
+      "main_evidence_allowed": true,
+      "max_abs_log_error": 4.721337722933362,
+      "middle_mode_rms_log_error": 2.060415747518101,
+      "net_rms_delta_vs_bare": 0.11079587199099894,
+      "num_residuals_improved": 0,
+      "num_residuals_worsened": 2,
+      "ordering_pass": true,
+      "rms_log_error": 2.7612665474151807,
+      "rows": [
+        {
+          "bare_log_residual": 1.8409861280602535,
+          "bare_prediction": 0.3747838213299577,
+          "delta_abs_log_residual": 0.0,
+          "improves": false,
+          "mode_class": "middle",
+          "qj": [
+            1,
+            2
+          ],
+          "ratio_name": "mu/tau",
+          "reference_ratio": 0.05946353426831603,
+          "response_factor_applied": 1.0,
+          "scenario_log_residual": 1.8409861280602535,
+          "scenario_prediction": 0.3747838213299577,
+          "scheme_sensitive": false,
+          "sector": "charged_lepton"
+        },
+        {
+          "bare_log_residual": 4.721337722933362,
+          "bare_prediction": 0.03230113011695777,
+          "delta_abs_log_residual": 0.0,
+          "improves": false,
+          "mode_class": "light",
+          "qj": [
+            3,
+            3
+          ],
+          "ratio_name": "e/tau",
+          "reference_ratio": 0.0002875853753250115,
+          "response_factor_applied": 1.0,
+          "scenario_log_residual": 4.721337722933362,
+          "scenario_prediction": 0.03230113011695777,
+          "scheme_sensitive": false,
+          "sector": "charged_lepton"
+        },
+        {
+          "bare_log_residual": -1.6181310657718806,
+          "bare_prediction": 0.001458112854293096,
+          "delta_abs_log_residual": 0.6931471805599452,
+          "improves": false,
+          "mode_class": "middle",
+          "qj": [
+            6,
+            0
+          ],
+          "ratio_name": "c/t",
+          "reference_ratio": 0.007354218541895883,
+          "response_factor_applied": 0.5,
+          "scenario_log_residual": -2.3112782463318258,
+          "scenario_prediction": 0.000729056427146548,
+          "scheme_sensitive": true,
+          "sector": "up"
+        },
+        {
+          "bare_log_residual": -0.5208321873803957,
+          "bare_prediction": 7.430054796240815e-06,
+          "delta_abs_log_residual": 0.5493061443340547,
+          "improves": false,
+          "mode_class": "light",
+          "qj": [
+            8,
+            1
+          ],
+          "ratio_name": "u/t",
+          "reference_ratio": 1.2507962244484336e-05,
+          "response_factor_applied": 0.5773502691896258,
+          "scenario_log_residual": -1.0701383317144504,
+          "scenario_prediction": 4.289744136703305e-06,
+          "scheme_sensitive": true,
+          "sector": "up"
+        },
+        {
+          "bare_log_residual": 2.001175180284005,
+          "bare_prediction": 0.16529888822158653,
+          "delta_abs_log_residual": 0.0,
+          "improves": false,
+          "mode_class": "middle",
+          "qj": [
+            0,
+            3
+          ],
+          "ratio_name": "s/b",
+          "reference_ratio": 0.022344497607655504,
+          "response_factor_applied": 1.0,
+          "scenario_log_residual": 2.001175180284005,
+          "scenario_prediction": 0.16529888822158653,
+          "scheme_sensitive": true,
+          "sector": "down"
+        },
+        {
+          "bare_log_residual": 3.0944131227722367,
+          "bare_prediction": 0.02466193465732934,
+          "delta_abs_log_residual": 0.0,
+          "improves": false,
+          "mode_class": "light",
+          "qj": [
+            4,
+            2
+          ],
+          "ratio_name": "d/b",
+          "reference_ratio": 0.0011172248803827751,
+          "response_factor_applied": 1.0,
+          "scenario_log_residual": 3.0944131227722367,
+          "scenario_prediction": 0.02466193465732934,
+          "scheme_sensitive": true,
+          "sector": "down"
+        }
+      ],
+      "scenario_id": "up_half_and_light_amp",
+      "up_ordering_pass": true,
+      "up_rms_log_error": 1.8010001639327116
+    },
+    {
+      "charged_lepton_ordering_pass": true,
+      "control_status": null,
+      "down_ordering_pass": true,
+      "down_rms_log_error": 2.605771927526443,
+      "lepton_rms_log_error": 3.556177596223263,
+      "light_mode_rms_log_error": 3.2995990502654755,
+      "main_evidence_allowed": true,
+      "max_abs_log_error": 4.6841726114810145,
+      "middle_mode_rms_log_error": 2.0573473513048386,
+      "net_rms_delta_vs_bare": 0.09907765261388546,
+      "num_residuals_improved": 2,
+      "num_residuals_worsened": 2,
+      "ordering_pass": true,
+      "rms_log_error": 2.7495483280380673,
+      "rows": [
+        {
+          "bare_log_residual": 1.8409861280602535,
+          "bare_prediction": 0.3747838213299577,
+          "delta_abs_log_residual": -0.010323642070096506,
+          "improves": true,
+          "mode_class": "middle",
+          "qj": [
+            1,
+            2
+          ],
+          "ratio_name": "mu/tau",
+          "reference_ratio": 0.05946353426831603,
+          "response_factor_applied": 0.9897294638168652,
+          "scenario_log_residual": 1.830662485990157,
+          "scenario_prediction": 0.37093459053213484,
+          "scheme_sensitive": false,
+          "sector": "charged_lepton"
+        },
+        {
+          "bare_log_residual": 4.721337722933362,
+          "bare_prediction": 0.03230113011695777,
+          "delta_abs_log_residual": -0.03716511145234769,
+          "improves": true,
+          "mode_class": "light",
+          "qj": [
+            3,
+            3
+          ],
+          "ratio_name": "e/tau",
+          "reference_ratio": 0.0002875853753250115,
+          "response_factor_applied": 0.9635170345177995,
+          "scenario_log_residual": 4.6841726114810145,
+          "scenario_prediction": 0.03112268910186473,
+          "scheme_sensitive": false,
+          "sector": "charged_lepton"
+        },
+        {
+          "bare_log_residual": -1.6181310657718806,
+          "bare_prediction": 0.001458112854293096,
+          "delta_abs_log_residual": 0.6931471805599452,
+          "improves": false,
+          "mode_class": "middle",
+          "qj": [
+            6,
+            0
+          ],
+          "ratio_name": "c/t",
+          "reference_ratio": 0.007354218541895883,
+          "response_factor_applied": 0.5,
+          "scenario_log_residual": -2.3112782463318258,
+          "scenario_prediction": 0.000729056427146548,
+          "scheme_sensitive": true,
+          "sector": "up"
+        },
+        {
+          "bare_log_residual": -0.5208321873803957,
+          "bare_prediction": 7.430054796240815e-06,
+          "delta_abs_log_residual": 0.5493061443340547,
+          "improves": false,
+          "mode_class": "light",
+          "qj": [
+            8,
+            1
+          ],
+          "ratio_name": "u/t",
+          "reference_ratio": 1.2507962244484336e-05,
+          "response_factor_applied": 0.5773502691896258,
+          "scenario_log_residual": -1.0701383317144504,
+          "scenario_prediction": 4.289744136703305e-06,
+          "scheme_sensitive": true,
+          "sector": "up"
+        },
+        {
+          "bare_log_residual": 2.001175180284005,
+          "bare_prediction": 0.16529888822158653,
+          "delta_abs_log_residual": 0.0,
+          "improves": false,
+          "mode_class": "middle",
+          "qj": [
+            0,
+            3
+          ],
+          "ratio_name": "s/b",
+          "reference_ratio": 0.022344497607655504,
+          "response_factor_applied": 1.0,
+          "scenario_log_residual": 2.001175180284005,
+          "scenario_prediction": 0.16529888822158653,
+          "scheme_sensitive": true,
+          "sector": "down"
+        },
+        {
+          "bare_log_residual": 3.0944131227722367,
+          "bare_prediction": 0.02466193465732934,
+          "delta_abs_log_residual": 0.0,
+          "improves": false,
+          "mode_class": "light",
+          "qj": [
+            4,
+            2
+          ],
+          "ratio_name": "d/b",
+          "reference_ratio": 0.0011172248803827751,
+          "response_factor_applied": 1.0,
+          "scenario_log_residual": 3.0944131227722367,
+          "scenario_prediction": 0.02466193465732934,
+          "scheme_sensitive": true,
+          "sector": "down"
+        }
+      ],
+      "scenario_id": "current_candidate_responses",
+      "up_ordering_pass": true,
+      "up_rms_log_error": 1.8010001639327116
+    }
+  ],
+  "status": "candidate_only",
+  "verdict_labels": [
+    "RESPONSE_LAYER_DECOMPOSITION_COMPLETE",
+    "RESPONSE_LAYER_EXISTING_RESPONSES_MIXED",
+    "RESPONSE_LAYER_MISSING_RESPONSE_INDICATED",
+    "RESPONSE_LAYER_NO_CLOSURE",
+    "RESPONSE_LAYER_EXISTING_RESPONSES_HURT_GLOBAL"
+  ]
+}

@@ -1,0 +1,816 @@
+{
+  "branch": "bhsm-bare-engine-triangulation-audit",
+  "candidate_invariant_families": [
+    {
+      "control": false,
+      "correlation_with_existing_bare": -0.0017541003202771167,
+      "family": "sector_operator_weighted_action",
+      "formula": "lambda_O=(O_q*q)^2+(O_j*j)^2",
+      "official": false,
+      "status": "SECTOR_OPERATOR_WEIGHTING_DIAGNOSTIC"
+    },
+    {
+      "control": false,
+      "correlation_with_existing_bare": 0.10470261497845296,
+      "family": "signed_boundary_action_magnitude",
+      "formula": "lambda_signed=abs(O_q*q+O_j*j)",
+      "limitation": "constant on fixed target-degree sectors, cannot split generations by itself",
+      "official": false,
+      "status": "DIAGNOSTIC_CONSTANT_ON_TARGET_SECTORS"
+    },
+    {
+      "control": false,
+      "correlation_with_existing_bare": -0.8830559119992455,
+      "family": "cross_coupled_berger_action",
+      "formula": "lambda_cross=q^2+j^2+rho*q*j",
+      "official": false,
+      "rho_policy": "universal_only_if_scanned",
+      "status": "ORIENTATION_CROSS_TERM_DIAGNOSTIC"
+    },
+    {
+      "control": true,
+      "correlation_with_existing_bare": -0.9722593540454771,
+      "family": "branch_gap_action",
+      "formula": "lambda_branch_gap=N-N_min_nonzero_sector",
+      "official": false,
+      "status": "BRANCH_ASSIGNMENT_DIAGNOSTIC"
+    },
+    {
+      "control": false,
+      "correlation_with_existing_bare": -0.6887205114247605,
+      "family": "sector_response_weighted_action",
+      "formula": "lambda_response=N/(Omega_star^2-1)",
+      "official": false,
+      "status": "CHANNEL_DIMENSION_NORMALIZATION_ALREADY_WEAK"
+    },
+    {
+      "control": false,
+      "correlation_proxy": 0.29430559870696604,
+      "family": "orientation_sensitive_action",
+      "formula": "lambda_orientation=N+gamma*(O_q*q)*(O_j*j)",
+      "gamma_policy": "universal_only_if_scanned",
+      "official": false,
+      "status": "ORIENTATION_CROSS_TERM_DIAGNOSTIC"
+    }
+  ],
+  "claim_labels": [
+    "BARE_ENGINE_TRIANGULATION_AUDIT_COMPLETE",
+    "SPECTRAL_ACTION_NOT_EXISTING_ENGINE",
+    "MISSING_INVARIANT_DIAGNOSTIC_CANDIDATE",
+    "SECTOR_OPERATOR_WEIGHTING_DIAGNOSTIC",
+    "ORIENTATION_CROSS_TERM_DIAGNOSTIC",
+    "BRANCH_ASSIGNMENT_DIAGNOSTIC",
+    "NONLINEAR_THRESHOLD_LAW_DIAGNOSTIC",
+    "NO_NEW_OFFICIAL_MASS_FORMULA_GUARDRAIL"
+  ],
+  "engine_comparison": [
+    {
+      "mode_qj": [
+        1,
+        2
+      ],
+      "new_spectral_action_prediction": 0.3747838213299577,
+      "official_bare_log_residual": 0.01022171957211839,
+      "official_dressed_log_residual": 0.01022171957211839,
+      "official_or_existing_bare_prediction": 0.06007447093260976,
+      "official_or_existing_dressed_candidate_prediction": 0.06007447093260976,
+      "ratio_name": "mu/tau",
+      "reference_ratio": 0.05946353426831603,
+      "scheme_sensitive": false,
+      "sector": "charged_lepton",
+      "spectral_action_log_residual": 1.8409861280602535,
+      "which_engine_is_closer": "existing_bare"
+    },
+    {
+      "mode_qj": [
+        3,
+        3
+      ],
+      "new_spectral_action_prediction": 0.03230113011695777,
+      "official_bare_log_residual": 0.03319190046484428,
+      "official_dressed_log_residual": 0.03319190046484428,
+      "official_or_existing_bare_prediction": 0.00029729106456492414,
+      "official_or_existing_dressed_candidate_prediction": 0.00029729106456492414,
+      "ratio_name": "e/tau",
+      "reference_ratio": 0.0002875853753250115,
+      "scheme_sensitive": false,
+      "sector": "charged_lepton",
+      "spectral_action_log_residual": 4.721337722933362,
+      "which_engine_is_closer": "existing_bare"
+    },
+    {
+      "mode_qj": [
+        6,
+        0
+      ],
+      "new_spectral_action_prediction": 0.001458112854293096,
+      "official_bare_log_residual": 0.12224574234383999,
+      "official_dressed_log_residual": -0.5709014382161053,
+      "official_or_existing_bare_prediction": 0.008310500554068288,
+      "official_or_existing_dressed_candidate_prediction": 0.004155250277034144,
+      "ratio_name": "c/t",
+      "reference_ratio": 0.007354218541895883,
+      "scheme_sensitive": true,
+      "sector": "up",
+      "spectral_action_log_residual": -1.6181310657718806,
+      "which_engine_is_closer": "existing_bare"
+    },
+    {
+      "mode_qj": [
+        8,
+        1
+      ],
+      "new_spectral_action_prediction": 7.430054796240815e-06,
+      "official_bare_log_residual": 0.014485346788032085,
+      "official_dressed_log_residual": 0.014485346788032085,
+      "official_or_existing_bare_prediction": 1.2690463017606151e-05,
+      "official_or_existing_dressed_candidate_prediction": 1.2690463017606151e-05,
+      "ratio_name": "u/t",
+      "reference_ratio": 1.2507962244484336e-05,
+      "scheme_sensitive": true,
+      "sector": "up",
+      "spectral_action_log_residual": -0.5208321873803957,
+      "which_engine_is_closer": "existing_bare"
+    },
+    {
+      "mode_qj": [
+        0,
+        3
+      ],
+      "new_spectral_action_prediction": 0.16529888822158653,
+      "official_bare_log_residual": -0.01854345392148303,
+      "official_dressed_log_residual": -0.01854345392148303,
+      "official_or_existing_bare_prediction": 0.021933971495439474,
+      "official_or_existing_dressed_candidate_prediction": 0.021933971495439474,
+      "ratio_name": "s/b",
+      "reference_ratio": 0.022344497607655504,
+      "scheme_sensitive": true,
+      "sector": "down",
+      "spectral_action_log_residual": 2.001175180284005,
+      "which_engine_is_closer": "existing_bare"
+    },
+    {
+      "mode_qj": [
+        4,
+        2
+      ],
+      "new_spectral_action_prediction": 0.02466193465732934,
+      "official_bare_log_residual": -0.0006310709830406542,
+      "official_dressed_log_residual": -0.0006310709830406542,
+      "official_or_existing_bare_prediction": 0.0011165200546001757,
+      "official_or_existing_dressed_candidate_prediction": 0.0011165200546001757,
+      "ratio_name": "d/b",
+      "reference_ratio": 0.0011172248803827751,
+      "scheme_sensitive": true,
+      "sector": "down",
+      "spectral_action_log_residual": 3.0944131227722367,
+      "which_engine_is_closer": "existing_bare"
+    }
+  ],
+  "frozen_predictions_changed": false,
+  "inputs": {
+    "frozen_predictions_source": "docs/frozen_predictions.json + theory/bhsm_prediction_ledger.json",
+    "reference_ratio_source": "theory/bhsm_prediction_ledger.json",
+    "spectral_action_source": "candidate_bare_yukawa_residual_autopsy:A_raw_bare_only"
+  },
+  "missing_invariant_diagnostics": {
+    "correlations": [
+      {
+        "diagnostic_only": true,
+        "invariant": "N",
+        "pearson": -0.7994310714053122,
+        "sample_size": 6,
+        "target": "log_existing_bare_prediction"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "N",
+        "pearson": -0.8048709221553388,
+        "sample_size": 6,
+        "target": "log_reference_ratio"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "N",
+        "pearson": -0.6245232439369128,
+        "sample_size": 6,
+        "target": "spectral_action_log_residual"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "abs_Omega",
+        "pearson": 0.10470261497845296,
+        "sample_size": 6,
+        "target": "log_existing_bare_prediction"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "abs_Omega",
+        "pearson": 0.1111115975307292,
+        "sample_size": 6,
+        "target": "log_reference_ratio"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "abs_Omega",
+        "pearson": 0.02869147911346436,
+        "sample_size": 6,
+        "target": "spectral_action_log_residual"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "q_over_Omega",
+        "pearson": -0.7517809420476672,
+        "sample_size": 6,
+        "target": "log_existing_bare_prediction"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "q_over_Omega",
+        "pearson": -0.7610094445615846,
+        "sample_size": 6,
+        "target": "log_reference_ratio"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "q_over_Omega",
+        "pearson": -0.3816707292966944,
+        "sample_size": 6,
+        "target": "spectral_action_log_residual"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "j_over_Omega",
+        "pearson": 0.024142445738269503,
+        "sample_size": 6,
+        "target": "log_existing_bare_prediction"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "j_over_Omega",
+        "pearson": 0.027986426259990926,
+        "sample_size": 6,
+        "target": "log_reference_ratio"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "j_over_Omega",
+        "pearson": 0.7503153565344527,
+        "sample_size": 6,
+        "target": "spectral_action_log_residual"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "fiber_fraction",
+        "pearson": -0.6275454853328238,
+        "sample_size": 6,
+        "target": "log_existing_bare_prediction"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "fiber_fraction",
+        "pearson": -0.637293805931685,
+        "sample_size": 6,
+        "target": "log_reference_ratio"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "fiber_fraction",
+        "pearson": -0.5044036543477598,
+        "sample_size": 6,
+        "target": "spectral_action_log_residual"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "base_fraction",
+        "pearson": 0.6275454853328238,
+        "sample_size": 6,
+        "target": "log_existing_bare_prediction"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "base_fraction",
+        "pearson": 0.637293805931685,
+        "sample_size": 6,
+        "target": "log_reference_ratio"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "base_fraction",
+        "pearson": 0.5044036543477598,
+        "sample_size": 6,
+        "target": "spectral_action_log_residual"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "sector_operator_norm",
+        "pearson": 0.23791814424692742,
+        "sample_size": 6,
+        "target": "log_existing_bare_prediction"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "sector_operator_norm",
+        "pearson": 0.2470939530464391,
+        "sample_size": 6,
+        "target": "log_reference_ratio"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "sector_operator_norm",
+        "pearson": 0.32014836624279125,
+        "sample_size": 6,
+        "target": "spectral_action_log_residual"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "orientation_product",
+        "pearson": 0.29430559870696604,
+        "sample_size": 6,
+        "target": "log_existing_bare_prediction"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "orientation_product",
+        "pearson": 0.2970893731068355,
+        "sample_size": 6,
+        "target": "log_reference_ratio"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "orientation_product",
+        "pearson": 0.11738048964221681,
+        "sample_size": 6,
+        "target": "spectral_action_log_residual"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "cross_term",
+        "pearson": -0.8075990882797329,
+        "sample_size": 6,
+        "target": "log_existing_bare_prediction"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "cross_term",
+        "pearson": -0.8037062750785258,
+        "sample_size": 6,
+        "target": "log_reference_ratio"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "cross_term",
+        "pearson": 0.480967002032011,
+        "sample_size": 6,
+        "target": "spectral_action_log_residual"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "mode_gap_between_nonzero_pair",
+        "pearson": -0.43677613804995236,
+        "sample_size": 6,
+        "target": "log_existing_bare_prediction"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "mode_gap_between_nonzero_pair",
+        "pearson": -0.44774788277992966,
+        "sample_size": 6,
+        "target": "log_reference_ratio"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "mode_gap_between_nonzero_pair",
+        "pearson": -0.8656860681125852,
+        "sample_size": 6,
+        "target": "spectral_action_log_residual"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "lower_doublet_projector",
+        "pearson": 0.23791814424692737,
+        "sample_size": 6,
+        "target": "log_existing_bare_prediction"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "lower_doublet_projector",
+        "pearson": 0.24709395304643908,
+        "sample_size": 6,
+        "target": "log_reference_ratio"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "lower_doublet_projector",
+        "pearson": 0.3201483662427912,
+        "sample_size": 6,
+        "target": "spectral_action_log_residual"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "colored_lift_exponent",
+        "pearson": 0.022573781573466213,
+        "sample_size": 6,
+        "target": "log_existing_bare_prediction"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "colored_lift_exponent",
+        "pearson": 0.02706600845085463,
+        "sample_size": 6,
+        "target": "log_reference_ratio"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "colored_lift_exponent",
+        "pearson": -0.14101078715166276,
+        "sample_size": 6,
+        "target": "spectral_action_log_residual"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "channel_dim",
+        "pearson": 0.16428607391552158,
+        "sample_size": 6,
+        "target": "log_existing_bare_prediction"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "channel_dim",
+        "pearson": 0.17199095299218647,
+        "sample_size": 6,
+        "target": "log_reference_ratio"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "channel_dim",
+        "pearson": 0.1562892352776106,
+        "sample_size": 6,
+        "target": "spectral_action_log_residual"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "active_dim",
+        "pearson": 0.16428607391552158,
+        "sample_size": 6,
+        "target": "log_existing_bare_prediction"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "active_dim",
+        "pearson": 0.17199095299218647,
+        "sample_size": 6,
+        "target": "log_reference_ratio"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "active_dim",
+        "pearson": 0.1562892352776106,
+        "sample_size": 6,
+        "target": "spectral_action_log_residual"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "lambda_O",
+        "pearson": -0.0017541003202771167,
+        "sample_size": 6,
+        "target": "log_existing_bare_prediction"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "lambda_O",
+        "pearson": 0.00700840475784784,
+        "sample_size": 6,
+        "target": "log_reference_ratio"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "lambda_O",
+        "pearson": 0.12884821004230593,
+        "sample_size": 6,
+        "target": "spectral_action_log_residual"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "lambda_signed",
+        "pearson": 0.10470261497845296,
+        "sample_size": 6,
+        "target": "log_existing_bare_prediction"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "lambda_signed",
+        "pearson": 0.1111115975307292,
+        "sample_size": 6,
+        "target": "log_reference_ratio"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "lambda_signed",
+        "pearson": 0.02869147911346436,
+        "sample_size": 6,
+        "target": "spectral_action_log_residual"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "lambda_cross_rho1",
+        "pearson": -0.8830559119992455,
+        "sample_size": 6,
+        "target": "log_existing_bare_prediction"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "lambda_cross_rho1",
+        "pearson": -0.8873879076960886,
+        "sample_size": 6,
+        "target": "log_reference_ratio"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "lambda_cross_rho1",
+        "pearson": -0.4912535105061911,
+        "sample_size": 6,
+        "target": "spectral_action_log_residual"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "lambda_branch_gap",
+        "pearson": -0.9722593540454771,
+        "sample_size": 6,
+        "target": "log_existing_bare_prediction"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "lambda_branch_gap",
+        "pearson": -0.9696655622978587,
+        "sample_size": 6,
+        "target": "log_reference_ratio"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "lambda_branch_gap",
+        "pearson": -0.02817270203845479,
+        "sample_size": 6,
+        "target": "spectral_action_log_residual"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "lambda_response",
+        "pearson": -0.6887205114247605,
+        "sample_size": 6,
+        "target": "log_existing_bare_prediction"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "lambda_response",
+        "pearson": -0.6943043113818776,
+        "sample_size": 6,
+        "target": "log_reference_ratio"
+      },
+      {
+        "diagnostic_only": true,
+        "invariant": "lambda_response",
+        "pearson": 0.02288167665002627,
+        "sample_size": 6,
+        "target": "spectral_action_log_residual"
+      }
+    ],
+    "mode_invariants": [
+      {
+        "N": 5,
+        "Omega_f": 3.0,
+        "Omega_star": 3,
+        "abs_Omega": 3.0,
+        "active_dim": 8,
+        "base_fraction": 0.8,
+        "channel_dim": 9,
+        "colored_lift_exponent": 0.0,
+        "cross_term": 2,
+        "fiber_fraction": 0.2,
+        "j": 2,
+        "j_over_Omega": 0.6666666666666666,
+        "k": 5,
+        "lambda_O": 17.0,
+        "lambda_branch_gap": 0,
+        "lambda_cross_rho1": 7,
+        "lambda_response": 0.625,
+        "lambda_signed": 3.0,
+        "lower_doublet_projector": 0.0,
+        "mode_gap_between_nonzero_pair": 13,
+        "mode_gap_to_reference": 5,
+        "orientation_product": -4.0,
+        "pure_base_flag": false,
+        "pure_fiber_flag": false,
+        "q": 1,
+        "q_over_Omega": 0.3333333333333333,
+        "ratio_name": "mu/tau",
+        "sector": "charged_lepton",
+        "sector_operator_norm": 5.0,
+        "signed_sector_action": 3.0
+      },
+      {
+        "N": 18,
+        "Omega_f": 3.0,
+        "Omega_star": 3,
+        "abs_Omega": 3.0,
+        "active_dim": 8,
+        "base_fraction": 0.5,
+        "channel_dim": 9,
+        "colored_lift_exponent": 0.0,
+        "cross_term": 9,
+        "fiber_fraction": 0.5,
+        "j": 3,
+        "j_over_Omega": 1.0,
+        "k": 9,
+        "lambda_O": 45.0,
+        "lambda_branch_gap": 13,
+        "lambda_cross_rho1": 27,
+        "lambda_response": 2.25,
+        "lambda_signed": 3.0,
+        "lower_doublet_projector": 0.0,
+        "mode_gap_between_nonzero_pair": 13,
+        "mode_gap_to_reference": 18,
+        "orientation_product": -18.0,
+        "pure_base_flag": false,
+        "pure_fiber_flag": false,
+        "q": 3,
+        "q_over_Omega": 1.0,
+        "ratio_name": "e/tau",
+        "sector": "charged_lepton",
+        "sector_operator_norm": 5.0,
+        "signed_sector_action": 3.0
+      },
+      {
+        "N": 36,
+        "Omega_f": 6.0,
+        "Omega_star": 6,
+        "abs_Omega": 6.0,
+        "active_dim": 35,
+        "base_fraction": 0.0,
+        "channel_dim": 36,
+        "colored_lift_exponent": 1.0,
+        "cross_term": 0,
+        "fiber_fraction": 1.0,
+        "j": 0,
+        "j_over_Omega": 0.0,
+        "k": 6,
+        "lambda_O": 36.0,
+        "lambda_branch_gap": 0,
+        "lambda_cross_rho1": 36,
+        "lambda_response": 1.0285714285714285,
+        "lambda_signed": 6.0,
+        "lower_doublet_projector": 0.0,
+        "mode_gap_between_nonzero_pair": 29,
+        "mode_gap_to_reference": 36,
+        "orientation_product": -0.0,
+        "pure_base_flag": false,
+        "pure_fiber_flag": true,
+        "q": 6,
+        "q_over_Omega": 1.0,
+        "ratio_name": "c/t",
+        "sector": "up",
+        "sector_operator_norm": 5.0,
+        "signed_sector_action": 6.0
+      },
+      {
+        "N": 65,
+        "Omega_f": 6.0,
+        "Omega_star": 6,
+        "abs_Omega": 6.0,
+        "active_dim": 35,
+        "base_fraction": 0.015384615384615385,
+        "channel_dim": 36,
+        "colored_lift_exponent": 1.0,
+        "cross_term": 8,
+        "fiber_fraction": 0.9846153846153847,
+        "j": 1,
+        "j_over_Omega": 0.16666666666666666,
+        "k": 10,
+        "lambda_O": 68.0,
+        "lambda_branch_gap": 29,
+        "lambda_cross_rho1": 73,
+        "lambda_response": 1.8571428571428572,
+        "lambda_signed": 6.0,
+        "lower_doublet_projector": 0.0,
+        "mode_gap_between_nonzero_pair": 29,
+        "mode_gap_to_reference": 65,
+        "orientation_product": -16.0,
+        "pure_base_flag": false,
+        "pure_fiber_flag": false,
+        "q": 8,
+        "q_over_Omega": 1.3333333333333333,
+        "ratio_name": "u/t",
+        "sector": "up",
+        "sector_operator_norm": 5.0,
+        "signed_sector_action": 6.0
+      },
+      {
+        "N": 9,
+        "Omega_f": 12.0,
+        "Omega_star": 12,
+        "abs_Omega": 12.0,
+        "active_dim": 143,
+        "base_fraction": 1.0,
+        "channel_dim": 144,
+        "colored_lift_exponent": 2.0,
+        "cross_term": 0,
+        "fiber_fraction": 0.0,
+        "j": 3,
+        "j_over_Omega": 0.25,
+        "k": 6,
+        "lambda_O": 144.0,
+        "lambda_branch_gap": 0,
+        "lambda_cross_rho1": 9,
+        "lambda_response": 0.06293706293706294,
+        "lambda_signed": 12.0,
+        "lower_doublet_projector": 1.0,
+        "mode_gap_between_nonzero_pair": 11,
+        "mode_gap_to_reference": 9,
+        "orientation_product": 0.0,
+        "pure_base_flag": true,
+        "pure_fiber_flag": false,
+        "q": 0,
+        "q_over_Omega": 0.0,
+        "ratio_name": "s/b",
+        "sector": "down",
+        "sector_operator_norm": 17.0,
+        "signed_sector_action": 12.0
+      },
+      {
+        "N": 20,
+        "Omega_f": 12.0,
+        "Omega_star": 12,
+        "abs_Omega": 12.0,
+        "active_dim": 143,
+        "base_fraction": 0.2,
+        "channel_dim": 144,
+        "colored_lift_exponent": 2.0,
+        "cross_term": 8,
+        "fiber_fraction": 0.8,
+        "j": 2,
+        "j_over_Omega": 0.16666666666666666,
+        "k": 8,
+        "lambda_O": 80.0,
+        "lambda_branch_gap": 11,
+        "lambda_cross_rho1": 28,
+        "lambda_response": 0.13986013986013987,
+        "lambda_signed": 12.0,
+        "lower_doublet_projector": 1.0,
+        "mode_gap_between_nonzero_pair": 11,
+        "mode_gap_to_reference": 20,
+        "orientation_product": 32.0,
+        "pure_base_flag": false,
+        "pure_fiber_flag": false,
+        "q": 4,
+        "q_over_Omega": 0.3333333333333333,
+        "ratio_name": "d/b",
+        "sector": "down",
+        "sector_operator_norm": 17.0,
+        "signed_sector_action": 12.0
+      }
+    ],
+    "summary": {
+      "closer_counts": {
+        "existing_bare": 6
+      },
+      "diagnostic_only": true,
+      "sample_size": 6,
+      "spectral_action_closer_count": 0,
+      "strongest_residual_correlation": {
+        "diagnostic_only": true,
+        "invariant": "mode_gap_between_nonzero_pair",
+        "pearson": -0.8656860681125852,
+        "sample_size": 6,
+        "target": "spectral_action_log_residual"
+      }
+    }
+  },
+  "notes": [
+    "candidate-only",
+    "official/frozen prediction values are read-only",
+    "no frozen predictions changed",
+    "no official predictions changed",
+    "quark ratios are scheme-sensitive where applicable",
+    "no new official mass formula"
+  ],
+  "official_predictions_changed": false,
+  "read_only_ckm_entries": {
+    "sin_theta_13": {
+      "bare": 0.0035623676140463315,
+      "changed": false,
+      "dressed_candidate": 0.0035623676140463315
+    },
+    "source": "docs/frozen_predictions.json",
+    "used_in_mass_engine_fit": false
+  },
+  "status": "candidate_only",
+  "verdict_labels": [
+    "BARE_ENGINE_TRIANGULATION_AUDIT_COMPLETE",
+    "SPECTRAL_ACTION_NOT_EXISTING_ENGINE",
+    "NO_NUMERICAL_CLOSURE",
+    "REFERENCE_SCHEME_LIMITATION",
+    "MISSING_INVARIANT_BRANCH_ASSIGNMENT_INDICATED",
+    "MISSING_RESPONSE_LAYER_INDICATED",
+    "NONLINEAR_THRESHOLD_LAW_INDICATED"
+  ]
+}

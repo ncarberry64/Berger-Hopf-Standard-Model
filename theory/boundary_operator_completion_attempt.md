@@ -1,0 +1,15 @@
+# Boundary Operator Completion Attempt
+
+```json
+{
+  "classification": "ACTION_LINKED",
+  "operators": {
+    "Omega_l": "-q + 2j = 3",
+    "Omega_u": "q - 2j = 6",
+    "Omega_d": "q + 4j = 12"
+  },
+  "status": "structural scaffold exists, full action derivation still required",
+  "overstated": false,
+  "next_action": "derive the sector boundary functional from the complete internal action"
+}
+```

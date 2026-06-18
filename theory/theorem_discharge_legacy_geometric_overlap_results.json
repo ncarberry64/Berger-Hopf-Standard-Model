@@ -1,0 +1,108 @@
+{
+  "bhsm_replacement_claim_ready": false,
+  "branch": "bhsm-theorem-discharge-legacy-geometric-overlap-bridge-v1",
+  "bridge_components": [
+    {
+      "guardrail": "prompt-provided legacy formula; source ingestion remains incomplete",
+      "name": "legacy_integral",
+      "statement": "Y_ij^f = g_f integral Psi_L_i^*(y) Phi(y) Psi_R_j(y) dV_int",
+      "status": "LEGACY_YUKAWA_OVERLAP_INTEGRAL_BRIDGED_CONDITIONAL"
+    },
+    {
+      "guardrail": "identifies symbolic kernel only",
+      "name": "bhsm_kernel",
+      "statement": "I_f(i,j)=integral_{B^3} Psi_A_f_i^*(y) Phi_H_f(y) Psi_S_f_j(y) dV_gamma",
+      "status": "BHSM_GEOMETRIC_OVERLAP_KERNEL_DERIVED_CONDITIONAL"
+    },
+    {
+      "guardrail": "universal profile, no flavor/generation fitted widths",
+      "name": "universal_profile",
+      "statement": "Phi(y)=Phi0 exp[-sigma d_I(y,y0)^2]",
+      "status": "UNIVERSAL_HIGGS_TOPOGRAPHIC_PROFILE_DERIVED_CONDITIONAL"
+    },
+    {
+      "guardrail": "leading focusing approximation only",
+      "name": "sharp_peak",
+      "statement": "I_f(i,j) approx Phi0 Psi_A_f_i^*(y0) Psi_S_f_j(y0)",
+      "status": "SHARP_PEAK_Y0_SAMPLING_APPROXIMATION_DERIVED_CONDITIONAL"
+    },
+    {
+      "guardrail": "strict point sampling cannot by itself produce rank three",
+      "name": "rank_guardrail",
+      "statement": "rank(I)<=1 for strict point-sampling outer-product approximation",
+      "status": "SHARP_PEAK_RANK_GUARDRAIL_DERIVED_CONDITIONAL"
+    }
+  ],
+  "ckm_values_derived": false,
+  "discharged_obligations": {
+    "PO-BH-22": "DERIVED_CONDITIONAL: BHSM Yukawa overlap kernel is bridged to the legacy scalar-topographic internal overlap integral; strict point sampling is rank-limited and numerical eigenfunction amplitudes remain open"
+  },
+  "fermion_mass_ratios_derived": false,
+  "frozen_predictions_changed": false,
+  "kernel": {
+    "bhsm_form": "I_f(i,j)=integral_{B^3} Psi_A_f_i^*(y) Phi_H_f(y) Psi_S_f_j(y) dV_gamma",
+    "legacy_integral": "Y_ij^f = g_f integral Psi_L_i^*(y) Phi(y) Psi_R_j(y) dV_int",
+    "rank_guardrail": "strict point sampling is an outer product and has rank <= 1",
+    "sharp_peak_limit": "I_f(i,j) approx Phi0 Psi_A_f_i^*(y0) Psi_S_f_j(y0)",
+    "universal_profile": "Phi(y)=Phi0 exp[-sigma d_I(y,y0)^2]"
+  },
+  "legacy_geometric_overlap_bridge_discharged_conditionally": true,
+  "negative_results": [
+    "strict point sampling alone does not derive full rank-three Yukawa matrices",
+    "legacy source ingestion remains incomplete until source docs are added to the repo",
+    "numerical eigenfunction amplitudes not computed in this branch",
+    "numerical Yukawa values not derived in this branch",
+    "fermion mass ratios not derived in this branch",
+    "CKM values not derived in this branch",
+    "PMNS values not derived in this branch",
+    "replacement claim is not ready"
+  ],
+  "notes": [
+    "legacy scalar-topographic Yukawa overlap integral bridged into BHSM notation",
+    "PO-BH-21 distance-law result remains valid: no direct numerical distance-to-overlap map is promoted",
+    "rank guardrail prevents overclaiming the sharp-peak approximation",
+    "mission remains full Standard Model derivation from BHSM",
+    "no frozen predictions changed",
+    "no official predictions changed"
+  ],
+  "numerical_eigenfunction_amplitudes_computed": false,
+  "numerical_yukawa_values_derived": false,
+  "official_predictions_changed": false,
+  "pmns_values_derived": false,
+  "source_ingestion_complete": false,
+  "standard_model_fully_derived": false,
+  "status": "theorem_discharge_candidate",
+  "still_open_downstream": [
+    "internal Berger/BHSM eigenfunction theorem",
+    "eigenfunction amplitudes at y0",
+    "finite-width overlap moment theorem",
+    "rank-three Yukawa matrix theorem",
+    "numerical Yukawa coupling theorem",
+    "fermion mass hierarchy theorem",
+    "CKM mixing theorem",
+    "PMNS mixing theorem",
+    "neutral-sector mass scale theorem",
+    "full low-energy SM Lagrangian theorem",
+    "full replacement-level SM derivation"
+  ],
+  "strict_point_sampling_rank_three_derived": false,
+  "verdict_labels": [
+    "THEOREM_DISCHARGE_LEGACY_GEOMETRIC_OVERLAP_BRIDGE_COMPLETE",
+    "PO_BH_22_LEGACY_GEOMETRIC_OVERLAP_KERNEL_BRIDGED_CONDITIONAL",
+    "LEGACY_YUKAWA_OVERLAP_INTEGRAL_BRIDGED_CONDITIONAL",
+    "BHSM_GEOMETRIC_OVERLAP_KERNEL_DERIVED_CONDITIONAL",
+    "UNIVERSAL_HIGGS_TOPOGRAPHIC_PROFILE_DERIVED_CONDITIONAL",
+    "SHARP_PEAK_Y0_SAMPLING_APPROXIMATION_DERIVED_CONDITIONAL",
+    "SHARP_PEAK_RANK_GUARDRAIL_DERIVED_CONDITIONAL",
+    "INTERNAL_MODE_AMPLITUDE_HIERARCHY_BRIDGE_DERIVED_CONDITIONAL",
+    "DISTANCE_OVERLAP_RECONCILIATION_DERIVED_CONDITIONAL",
+    "NUMERICAL_EIGENFUNCTION_AMPLITUDES_REMAIN_OPEN",
+    "NUMERICAL_YUKAWA_VALUES_REMAIN_OPEN",
+    "FERMION_MASS_RATIOS_REMAIN_OPEN",
+    "CKM_VALUES_REMAIN_OPEN",
+    "PMNS_VALUES_REMAIN_OPEN",
+    "BHSM_REPLACEMENT_CLAIM_NOT_READY",
+    "FROZEN_PREDICTIONS_UNCHANGED",
+    "OFFICIAL_PREDICTIONS_UNCHANGED"
+  ]
+}

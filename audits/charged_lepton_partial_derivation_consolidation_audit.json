@@ -1,0 +1,279 @@
+{
+  "End_H_stochastic_algebra_status": "END_H_STOCHASTIC_ALGEBRA_PARTIAL",
+  "allowed_eta_forms": {
+    "double_factor": 0.004129456828038612,
+    "half_factor": 0.001032364207009653,
+    "no_extra_half": 0.002064728414019306
+  },
+  "alpha_pi_status": "ALPHA_OVER_PI_STOCHASTIC_STRENGTH_PARTIAL",
+  "brownian_generator_status": "BROWNIAN_GENERATOR_TOPOGRAPHIC_PARTIAL",
+  "candidate_components": [
+    "charged_lepton_dressing_factor_Z_l",
+    "half_factor_eta_alternative",
+    "double_factor_eta_sensitivity"
+  ],
+  "channel_counts": {
+    "active_fraction": {
+      "denominator": 9,
+      "numerator": 8,
+      "value": 0.8888888888888888
+    },
+    "dim_End_H_l": 9,
+    "dim_H_l": 3,
+    "geometric_quantization_plus_one_hazard": true,
+    "identity_count": 1,
+    "preferred_dimension_route": "cyclic_boundary_monodromy",
+    "traceless_count": 8
+  },
+  "channel_dimension_status": "DIM_H_EQUALS_ABS_OMEGA_PARTIAL",
+  "claim_status_table": [
+    {
+      "evidence": "Implemented throughout the Berger/Hopf mode ledger.",
+      "limitation": "This is a supplied framework equation, not a new dynamical derivation.",
+      "link": "hopf_charge",
+      "statement": "q=k-2j",
+      "status": "DERIVED_LEDGER_FORMULA"
+    },
+    {
+      "evidence": "Boundary projector form A_rep=A_q tensor O_q + A_j tensor O_j.",
+      "limitation": "Global A_j normalization and full action-level uniqueness remain open.",
+      "link": "lepton_omega",
+      "statement": "For B=0, L=1, T3=-1/2, O_q=-1 and O_j=+2, so Omega_l=-q+2j.",
+      "status": "LEPTON_OMEGA_STRUCTURALLY_DERIVED_FROM_BOUNDARY_PROJECTOR"
+    },
+    {
+      "evidence": "Direct q,j arithmetic recovers the supplied charged-lepton mode pair.",
+      "limitation": "This does not update official frozen predictions.",
+      "link": "lepton_level",
+      "statement": "The nonzero charged-lepton modes (5,2) and (9,3) both satisfy Omega_l=3.",
+      "status": "BOUNDARY_LEVEL_LEDGER_RECOVERED"
+    },
+    {
+      "evidence": "Preferred route is finite cyclic boundary monodromy.",
+      "limitation": "Ordinary S2 geometric quantization is not used for channel dimension; plus-one hazard remains.",
+      "link": "cyclic_channel_dimension",
+      "statement": "H_l=C[Z_3] and dim(H_l)=3 under cyclic boundary monodromy.",
+      "status": "DIM_H_EQUALS_ABS_OMEGA_PARTIAL"
+    },
+    {
+      "evidence": "Density/covariance channel-space scaffold exists.",
+      "limitation": "Full stochastic dynamics from the completed action remains open.",
+      "link": "physical_channel_space",
+      "statement": "Orbit residues are interpreted as physical stochastic boundary channels.",
+      "status": "PHYSICAL_CHANNEL_SPACE_PARTIAL"
+    },
+    {
+      "evidence": "Finite channel algebra gives dim End(H_l)=3^2.",
+      "limitation": "Trace-preserving stochastic generator remains partial/conditional.",
+      "link": "endomorphism_algebra",
+      "statement": "End(H_l) has dimension 9, with one identity/common channel and eight traceless active channels.",
+      "status": "END_H_STOCHASTIC_ALGEBRA_PARTIAL"
+    },
+    {
+      "evidence": "Identity/common mode cancellation and traceless channel counting.",
+      "limitation": "Full Brownian/Lindblad rates on su(3) remain open.",
+      "link": "active_fraction",
+      "statement": "F_l=(3^2-1)/3^2=8/9.",
+      "status": "LEPTON_8_9_CHANNEL_RULE_PARTIAL_DERIVATION_STRENGTHENED"
+    },
+    {
+      "evidence": "Algebra from alpha=e^2/(4pi) and normalized boundary phase e/(2pi).",
+      "limitation": "The completed stochastic path-integral role of alpha/pi remains convention-dependent.",
+      "link": "alpha_over_pi",
+      "statement": "g_U1^2=e^2/(4pi^2)=alpha/pi in rationalized units.",
+      "status": "ALPHA_OVER_PI_STOCHASTIC_STRENGTH_PARTIAL"
+    },
+    {
+      "evidence": "Topographic/Brownian and stochastic path-integral audits support this scaffold.",
+      "limitation": "The full stochastic generator is not derived.",
+      "link": "brownian_exponential",
+      "statement": "Z_l(k,j)=exp[-eta_l N(k,j)] with N=q^2+j^2 is the repo-preferred candidate form.",
+      "status": "BROWNIAN_GENERATOR_TOPOGRAPHIC_PARTIAL"
+    },
+    {
+      "evidence": "Combines alpha/pi with active fraction 8/9.",
+      "limitation": "Half and doubled alternatives remain recorded; this is not official prediction adoption.",
+      "link": "eta_preferred",
+      "statement": "Under the repo exponent convention, eta_l=(alpha/pi)(8/9)=8alpha/(9pi).",
+      "status": "LEPTON_ETA_NORMALIZATION_CONVENTION_DEPENDENT_STRENGTHENED"
+    },
+    {
+      "evidence": "Heat-kernel, phase-cumulant, and Ito routes are explicitly separated.",
+      "limitation": "The completed stochastic measure has not selected D versus g^2.",
+      "link": "factor_two",
+      "statement": "The factor-of-two hazard remains convention-dependent.",
+      "status": "BROWNIAN_FACTOR_TWO_CONVENTION_DEPENDENT_STRENGTHENED"
+    }
+  ],
+  "conditional_components": [
+    "identity_traceless_stochastic_protection",
+    "trace_preserving_noise_on_End_H_l",
+    "eta_l_8alpha_over_9pi_under_repo_convention"
+  ],
+  "consolidation_status": "CHARGED_LEPTON_PARTIAL_DERIVATION_CONSOLIDATED",
+  "derived_components": [
+    "charged_lepton_boundary_projector_coefficients_Oq_minus_1_Oj_plus_2",
+    "Omega_l_mode_pair_arithmetic_equals_3",
+    "End_H_l_dimension_count_3_squared",
+    "common_mode_cancellation_for_identity_channel",
+    "alpha_over_pi_algebra_from_rationalized_U1_coupling"
+  ],
+  "does_eta_l_8alpha_9pi_remain_supported": true,
+  "does_factor_two_close": false,
+  "does_this_change_official_predictions": false,
+  "does_this_promote_full_lepton_8_9": false,
+  "dressing_status": "LEPTON_DRESSING_CANDIDATE_NOT_OFFICIAL",
+  "eta_exact_checks": {
+    "double_factor_matches_16alpha_over_9pi": true,
+    "half_factor_matches_4alpha_over_9pi": true,
+    "no_extra_half_matches_8alpha_over_9pi": true
+  },
+  "eta_status": "LEPTON_ETA_NORMALIZATION_CONVENTION_DEPENDENT_STRENGTHENED",
+  "factor_two": {
+    "allowed_eta_forms": {
+      "double_factor": 0.004129456828038612,
+      "half_factor": 0.001032364207009653,
+      "no_extra_half": 0.002064728414019306
+    },
+    "does_eta_l_8alpha_9pi_remain_supported": true,
+    "does_factor_two_close": false,
+    "limitations": [
+      "alpha/pi may be generator coefficient under repo convention",
+      "alpha/pi may be raw variance under phase-cumulant convention",
+      "completed stochastic path-integral normalization remains open"
+    ],
+    "preferred_eta_form": "no_extra_half_repo_exponent_convention",
+    "status": "BROWNIAN_FACTOR_TWO_CONVENTION_DEPENDENT_STRENGTHENED"
+  },
+  "factor_two_status": "BROWNIAN_FACTOR_TWO_CONVENTION_DEPENDENT_STRENGTHENED",
+  "forbidden_claims_absent": true,
+  "frozen_predictions_modified": false,
+  "frozen_sanity": {
+    "BHSM_BARE_V1_unchanged": true,
+    "BHSM_DRESSED_V1_CANDIDATE_unchanged": true,
+    "S_unchanged": true,
+    "a_unchanged": true,
+    "changed_rows": [
+      {
+        "bare": 0.008310500554068288,
+        "changed": true,
+        "dressed": 0.004155250277034144,
+        "quantity": "c/t"
+      }
+    ],
+    "ckm_sin_theta_13_unchanged": true,
+    "dressed_branch_changes_only_c_over_t": true,
+    "official_branch_comparison": {
+      "bare_score": {
+        "PASS": 22
+      },
+      "branches": [
+        "BHSM_BARE_V1",
+        "BHSM_DRESSED_V1_CANDIDATE"
+      ],
+      "dressed_score": {
+        "PASS": 21,
+        "SCHEME_SENSITIVE": 1
+      },
+      "no_retuning": true,
+      "rows": [
+        {
+          "bare": 0.008310500554068288,
+          "changed": true,
+          "dressed": 0.004155250277034144,
+          "quantity": "c/t"
+        },
+        {
+          "bare": 1.2690463017606151e-05,
+          "changed": false,
+          "dressed": 1.2690463017606151e-05,
+          "quantity": "u/t"
+        },
+        {
+          "bare": 0.021933971495439474,
+          "changed": false,
+          "dressed": 0.021933971495439474,
+          "quantity": "s/b"
+        },
+        {
+          "bare": 0.0011165200546001757,
+          "changed": false,
+          "dressed": 0.0011165200546001757,
+          "quantity": "d/b"
+        },
+        {
+          "bare": 0.0035623676140463315,
+          "changed": false,
+          "dressed": 0.0035623676140463315,
+          "quantity": "sin_theta_13"
+        }
+      ],
+      "tolerance_bands": {
+        "charged_lepton_ratios": 0.25,
+        "ckm_angles": 0.1,
+        "ckm_cp_jarlskog": 0.1,
+        "exact_status": "pass_fail",
+        "gauge_couplings": 0.01,
+        "higgs_electroweak_v": 0.01,
+        "higgs_mass_zeroth_order": 0.02,
+        "ht_gap": "binary_pass_fail",
+        "pmns_effective": 0.05,
+        "quark_ratios_otherwise": "SCHEME_SENSITIVE",
+        "quark_ratios_scheme_aware": 0.25,
+        "scalar_decoupling": "binary_scaffold_pass_fail"
+      }
+    },
+    "u_over_t_unchanged": true
+  },
+  "identity_traceless_status": "IDENTITY_TRACELESS_STOCHASTIC_CONDITIONAL",
+  "lepton_chain_overall_status": "LEPTON_DRESSING_PARTIAL_DERIVATION_CANDIDATE_ONLY",
+  "lepton_modes": {
+    "electron": {
+      "N": 18,
+      "Omega_l": 3,
+      "Z": 0.9635170345177995,
+      "j": 3,
+      "k": 9,
+      "q": 3
+    },
+    "muon": {
+      "N": 5,
+      "Omega_l": 3,
+      "Z": 0.9897294638168652,
+      "j": 2,
+      "k": 5,
+      "q": 1
+    },
+    "tau_reference": {
+      "N": 0,
+      "Z": 1.0,
+      "j": 0,
+      "k": 0,
+      "q": 0
+    }
+  },
+  "lepton_omega_status": "LEPTON_OMEGA_STRUCTURALLY_DERIVED_FROM_BOUNDARY_PROJECTOR",
+  "official_outputs_modified": false,
+  "open_blockers": [
+    "derive primitive finite cyclic quotient from the completed boundary action",
+    "prove C[Z_|Omega_f|] orbit states are physical boundary channel states from full dynamics",
+    "derive stochastic residue sampling from completed topographic/BHSM dynamics",
+    "derive full Brownian/Lindblad generator rates D_a on su(d_f)",
+    "derive from completed stochastic path integral whether alpha/pi is generator coefficient D or raw variance g^2",
+    "derive Brownian time/cycle normalization beyond repo convention tau=1",
+    "fix A_j normalization/global bundle coupling without convention dependence",
+    "decide later whether lepton dressing belongs in an official v2 prediction set"
+  ],
+  "partial_components": [
+    "cyclic_boundary_monodromy_channel_dimension",
+    "physical_boundary_channel_space_identification",
+    "Brownian_generator_topographic_scaffold",
+    "exponential_dressing_from_Brownian_scaffold",
+    "quadratic_norm_N_equals_q_squared_plus_j_squared",
+    "stochastic_path_integral_normalization"
+  ],
+  "physical_channel_space_status": "PHYSICAL_CHANNEL_SPACE_PARTIAL",
+  "preferred_eta_form": "no_extra_half_repo_exponent_convention",
+  "prs_opened": false,
+  "safe_to_merge_as_candidate_only": true
+}

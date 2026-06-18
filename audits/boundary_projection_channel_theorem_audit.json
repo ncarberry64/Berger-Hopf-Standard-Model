@@ -1,0 +1,360 @@
+{
+  "active_fraction_d3": 0.8888888888888888,
+  "blockers_closed": [],
+  "blockers_remaining": [
+    "lepton_8alpha_9pi",
+    "pure_fiber_one_half",
+    "ckm_one_sixteenth",
+    "boundary_action",
+    "neutrino_pmns"
+  ],
+  "boundary_action_status": "BOUNDARY_ACTION_STRUCTURAL_CANDIDATE",
+  "boundary_operator_values": {
+    "down_light": {
+      "mode": [
+        8,
+        2
+      ],
+      "omega": 12,
+      "q": 4,
+      "sector": "down"
+    },
+    "down_middle": {
+      "mode": [
+        6,
+        3
+      ],
+      "omega": 12,
+      "q": 0,
+      "sector": "down"
+    },
+    "lepton_light": {
+      "mode": [
+        9,
+        3
+      ],
+      "omega": 3,
+      "q": 3,
+      "sector": "lepton"
+    },
+    "lepton_middle": {
+      "mode": [
+        5,
+        2
+      ],
+      "omega": 3,
+      "q": 1,
+      "sector": "lepton"
+    },
+    "up_light": {
+      "mode": [
+        10,
+        1
+      ],
+      "omega": 6,
+      "q": 8,
+      "sector": "up"
+    },
+    "up_middle": {
+      "mode": [
+        6,
+        0
+      ],
+      "omega": 6,
+      "q": 6,
+      "sector": "up"
+    }
+  },
+  "candidate_components": [
+    "lepton_8alpha_9pi",
+    "pure_fiber_one_half",
+    "ckm_one_sixteenth",
+    "boundary_action",
+    "neutrino_pmns"
+  ],
+  "ckm_status": "CKM_1_16_CHANNEL_DILUTION_STRUCTURAL_CANDIDATE",
+  "ckm_z_one_sixteenth": 0.9576032806985737,
+  "components": [
+    {
+      "blocker_id": "lepton_8alpha_9pi",
+      "candidate_only": true,
+      "closed": false,
+      "computed_value": 0.002064728414019306,
+      "evidence": [
+        "active_channel_fraction(3)=8/9",
+        "preferred prior eta_l=0.0020647284140193063",
+        "mu/tau relative error under prior candidate=0.00010191730405677259",
+        "e/tau relative error under prior candidate=0.0039653282281388235"
+      ],
+      "missing_assumptions": [
+        "derive H_l with dimension Omega_l from the boundary action",
+        "derive End(H_l) as the stochastic covariance channel algebra",
+        "derive identity/coherent-channel protection",
+        "derive Brownian activity only on traceless channels"
+      ],
+      "status": "LEPTON_8_9_CHANNEL_RULE_STRUCTURAL_CANDIDATE",
+      "structural_rule": "eta_l=(alpha/pi)*((Omega_l^2-1)/Omega_l^2), Omega_l=3"
+    },
+    {
+      "blocker_id": "pure_fiber_one_half",
+      "candidate_only": true,
+      "closed": false,
+      "computed_value": 0.5,
+      "evidence": [
+        "middle-up mode (6,0) has j=0 and q=6",
+        "official dressed branch changes only c/t"
+      ],
+      "missing_assumptions": [
+        "derive a two-orientation virtual space for nonzero pure-fiber modes",
+        "derive rank-one physical mass projection",
+        "derive locality to middle-up (6,0) without touching u/t or CKM"
+      ],
+      "status": "PURE_FIBER_RANK_HALF_STRUCTURAL_CANDIDATE",
+      "structural_rule": "Z_virt^{u,2}=rank(P_phys)/dim(H_fiber)=1/2 for mode (6,0)"
+    },
+    {
+      "blocker_id": "ckm_one_sixteenth",
+      "candidate_only": true,
+      "closed": false,
+      "computed_value": 0.9576032806985737,
+      "evidence": [
+        "ckm_channel_dilution(1/2,4)=(1/2)^(1/16)",
+        "existing audit summary={'available': True, 'z_mix_23': 0.9576032806985737, 'improves_vcb': True, 'improves_vts': True, 'j_damage_flag': False, 'non_23_damage_flag': False}"
+      ],
+      "missing_assumptions": [
+        "derive dim(H_mix)=4 from internal left-handed overlap channels",
+        "derive End(H_mix) as the correct correlation algebra",
+        "derive that mass dressing dilutes across all 16 channels",
+        "derive Z_mass=1/2 independently before using it in CKM"
+      ],
+      "status": "CKM_1_16_CHANNEL_DILUTION_STRUCTURAL_CANDIDATE",
+      "structural_rule": "Z_mix=Z_mass^(1/dim(End(H_mix))), dim(H_mix)=4"
+    },
+    {
+      "blocker_id": "boundary_action",
+      "candidate_only": true,
+      "closed": false,
+      "computed_value": {
+        "down_light": {
+          "mode": [
+            8,
+            2
+          ],
+          "omega": 12,
+          "q": 4,
+          "sector": "down"
+        },
+        "down_middle": {
+          "mode": [
+            6,
+            3
+          ],
+          "omega": 12,
+          "q": 0,
+          "sector": "down"
+        },
+        "lepton_light": {
+          "mode": [
+            9,
+            3
+          ],
+          "omega": 3,
+          "q": 3,
+          "sector": "lepton"
+        },
+        "lepton_middle": {
+          "mode": [
+            5,
+            2
+          ],
+          "omega": 3,
+          "q": 1,
+          "sector": "lepton"
+        },
+        "up_light": {
+          "mode": [
+            10,
+            1
+          ],
+          "omega": 6,
+          "q": 8,
+          "sector": "up"
+        },
+        "up_middle": {
+          "mode": [
+            6,
+            0
+          ],
+          "omega": 6,
+          "q": 6,
+          "sector": "up"
+        }
+      },
+      "evidence": [
+        "current omega values recover lepton/up/down mode pairs",
+        "previous status=BOUNDARY_MODE_PAIR_INVARIANT_DERIVED_ACTION_OPEN"
+      ],
+      "missing_assumptions": [
+        "derive the boundary penalty term by variation of the complete action",
+        "derive sector signs and base/fiber coefficients rather than inserting them",
+        "derive primitive constant boundary levels as stationary non-heavy modes",
+        "link channel dimension d_f to Omega_f without circular use of selected modes"
+      ],
+      "status": "BOUNDARY_ACTION_STRUCTURAL_CANDIDATE",
+      "structural_rule": "S_boundary contains lambda_f (Omega_f-Omega_f0)^2 |psi|^2"
+    },
+    {
+      "blocker_id": "neutrino_pmns",
+      "candidate_only": true,
+      "closed": false,
+      "computed_value": {
+        "PMNS_status": "effective-extension screen only",
+        "boundary_channel_space": "candidate broad leakage channel space; dimension not derived",
+        "candidate_only": true,
+        "mass_hierarchy_status": "open",
+        "neutrino_interpretation": "neutral leakage modes, weakly field-attached and less boundary-pinned",
+        "ordinary_FTL_claim": false,
+        "required_future_inputs": [
+          "neutrino leakage operator",
+          "neutral mode spectrum",
+          "PMNS mixing derivation from channel overlap"
+        ]
+      },
+      "evidence": [
+        "Neutrinos are logged as possible topological leakage modes: weakly field-attached, ghost-like residual boundary modes.",
+        "ordinary_FTL_claim=False",
+        "PMNS rows remain effective-extension screens"
+      ],
+      "missing_assumptions": [
+        "derive neutral leakage channel space",
+        "derive PMNS angles or mass splittings from the leakage operator",
+        "derive mass hierarchy rather than using effective screens"
+      ],
+      "status": "NEUTRINO_LEAKAGE_CHANNEL_CANDIDATE",
+      "structural_rule": "neutral leakage channels may sample broader PMNS mixing spaces than CKM"
+    }
+  ],
+  "derived_components": [],
+  "forbidden_claims_absent": true,
+  "frozen_predictions_modified": false,
+  "frozen_sanity": {
+    "BHSM_BARE_V1_unchanged": true,
+    "BHSM_DRESSED_V1_CANDIDATE_unchanged": true,
+    "changed_rows": [
+      {
+        "bare": 0.008310500554068288,
+        "changed": true,
+        "dressed": 0.004155250277034144,
+        "quantity": "c/t"
+      }
+    ],
+    "ckm_sin_theta_13_unchanged": true,
+    "dressed_branch_changes_only_c_over_t": true,
+    "u_over_t_unchanged": true
+  },
+  "lepton_eta_8alpha_9pi": 0.002064728414019306,
+  "lepton_status": "LEPTON_8_9_CHANNEL_RULE_STRUCTURAL_CANDIDATE",
+  "missing_assumptions": [
+    "lepton_8alpha_9pi: derive H_l with dimension Omega_l from the boundary action",
+    "lepton_8alpha_9pi: derive End(H_l) as the stochastic covariance channel algebra",
+    "lepton_8alpha_9pi: derive identity/coherent-channel protection",
+    "lepton_8alpha_9pi: derive Brownian activity only on traceless channels",
+    "pure_fiber_one_half: derive a two-orientation virtual space for nonzero pure-fiber modes",
+    "pure_fiber_one_half: derive rank-one physical mass projection",
+    "pure_fiber_one_half: derive locality to middle-up (6,0) without touching u/t or CKM",
+    "ckm_one_sixteenth: derive dim(H_mix)=4 from internal left-handed overlap channels",
+    "ckm_one_sixteenth: derive End(H_mix) as the correct correlation algebra",
+    "ckm_one_sixteenth: derive that mass dressing dilutes across all 16 channels",
+    "ckm_one_sixteenth: derive Z_mass=1/2 independently before using it in CKM",
+    "boundary_action: derive the boundary penalty term by variation of the complete action",
+    "boundary_action: derive sector signs and base/fiber coefficients rather than inserting them",
+    "boundary_action: derive primitive constant boundary levels as stationary non-heavy modes",
+    "boundary_action: link channel dimension d_f to Omega_f without circular use of selected modes",
+    "neutrino_pmns: derive neutral leakage channel space",
+    "neutrino_pmns: derive PMNS angles or mass splittings from the leakage operator",
+    "neutrino_pmns: derive mass hierarchy rather than using effective screens"
+  ],
+  "neutrino_ledger": {
+    "PMNS_status": "effective-extension screen only",
+    "boundary_channel_space": "candidate broad leakage channel space; dimension not derived",
+    "candidate_only": true,
+    "mass_hierarchy_status": "open",
+    "neutrino_interpretation": "neutral leakage modes, weakly field-attached and less boundary-pinned",
+    "ordinary_FTL_claim": false,
+    "required_future_inputs": [
+      "neutrino leakage operator",
+      "neutral mode spectrum",
+      "PMNS mixing derivation from channel overlap"
+    ]
+  },
+  "neutrino_status": "NEUTRINO_LEAKAGE_CHANNEL_CANDIDATE",
+  "official_branch_comparison": {
+    "bare_score": {
+      "PASS": 22
+    },
+    "branches": [
+      "BHSM_BARE_V1",
+      "BHSM_DRESSED_V1_CANDIDATE"
+    ],
+    "dressed_score": {
+      "PASS": 21,
+      "SCHEME_SENSITIVE": 1
+    },
+    "no_retuning": true,
+    "rows": [
+      {
+        "bare": 0.008310500554068288,
+        "changed": true,
+        "dressed": 0.004155250277034144,
+        "quantity": "c/t"
+      },
+      {
+        "bare": 1.2690463017606151e-05,
+        "changed": false,
+        "dressed": 1.2690463017606151e-05,
+        "quantity": "u/t"
+      },
+      {
+        "bare": 0.021933971495439474,
+        "changed": false,
+        "dressed": 0.021933971495439474,
+        "quantity": "s/b"
+      },
+      {
+        "bare": 0.0011165200546001757,
+        "changed": false,
+        "dressed": 0.0011165200546001757,
+        "quantity": "d/b"
+      },
+      {
+        "bare": 0.0035623676140463315,
+        "changed": false,
+        "dressed": 0.0035623676140463315,
+        "quantity": "sin_theta_13"
+      }
+    ],
+    "tolerance_bands": {
+      "charged_lepton_ratios": 0.25,
+      "ckm_angles": 0.1,
+      "ckm_cp_jarlskog": 0.1,
+      "exact_status": "pass_fail",
+      "gauge_couplings": 0.01,
+      "higgs_electroweak_v": 0.01,
+      "higgs_mass_zeroth_order": 0.02,
+      "ht_gap": "binary_pass_fail",
+      "pmns_effective": 0.05,
+      "quark_ratios_otherwise": "SCHEME_SENSITIVE",
+      "quark_ratios_scheme_aware": 0.25,
+      "scalar_decoupling": "binary_scaffold_pass_fail"
+    }
+  },
+  "official_dressed_changes_only_c_over_t": true,
+  "official_outputs_modified": false,
+  "prs_opened": false,
+  "pure_fiber_half": 0.5,
+  "pure_fiber_status": "PURE_FIBER_RANK_HALF_STRUCTURAL_CANDIDATE",
+  "rejected_components": [],
+  "safe_to_merge_as_candidate_only": true,
+  "theorem_status": "BOUNDARY_PROJECTION_CHANNEL_STRUCTURAL_CANDIDATE",
+  "title": "BHSM boundary projection-channel theorem sprint"
+}

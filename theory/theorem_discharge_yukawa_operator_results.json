@@ -1,0 +1,138 @@
+{
+  "allowed_operator_classes": {
+    "cyclic_lower_closure": {
+      "fields": [
+        "A_cyc",
+        "H_tilde",
+        "S_cyc_lower"
+      ],
+      "hypercharge_sum": "0"
+    },
+    "cyclic_upper_closure": {
+      "fields": [
+        "A_cyc",
+        "H",
+        "S_cyc_upper"
+      ],
+      "hypercharge_sum": "0"
+    },
+    "reference_charged_closure": {
+      "fields": [
+        "A_ref",
+        "H_tilde",
+        "S_ref_charged"
+      ],
+      "hypercharge_sum": "0"
+    },
+    "reference_neutral_closure": {
+      "fields": [
+        "A_ref",
+        "H",
+        "S_ref_neutral"
+      ],
+      "hypercharge_sum": "0"
+    }
+  },
+  "bhsm_replacement_claim_ready": false,
+  "branch": "bhsm-theorem-discharge-yukawa-operator-closure-v1",
+  "bridges_preserved": {
+    "finite_boundary_algebra_charge_layer": true,
+    "higgs_scalar_boundary_mechanism_layer": true,
+    "one_loop_rg_layer": true,
+    "primitive_closure_spectrum": true
+  },
+  "ckm_pmns_derived": false,
+  "discharged_obligations": {
+    "PO-BH-18": "DERIVED_CONDITIONAL: renormalizable Yukawa operator classes follow from boundary charge closure, active-orientation contraction, cyclic/reference contraction, and the derived scalar/conjugate scalar doublets"
+  },
+  "frozen_predictions_changed": false,
+  "mass_ratios_derived": false,
+  "negative_results": [
+    "numerical Yukawa values not derived in this branch",
+    "fermion mass ratios not derived in this branch",
+    "CKM/PMNS mixing not derived in this branch",
+    "neutral singlet mass scale not predicted in this branch",
+    "replacement claim is not ready"
+  ],
+  "neutral_singlet_mass_operator": {
+    "allowed_conditionally": true,
+    "field": "S_ref_neutral",
+    "reason": "C=0, Y=0, orientation singlet"
+  },
+  "notes": [
+    "theorem discharge attempt completed for Yukawa operator closure",
+    "mission remains full Standard Model derivation from BHSM",
+    "no frozen predictions changed",
+    "no official predictions changed"
+  ],
+  "numerical_yukawa_values_derived": false,
+  "official_predictions_changed": false,
+  "standard_model_fully_derived": false,
+  "status": "theorem_discharge_candidate",
+  "still_open_downstream": [
+    "numerical Yukawa coupling theorem",
+    "fermion mass hierarchy theorem",
+    "CKM/PMNS mixing theorem",
+    "neutral-sector mass scale theorem",
+    "full low-energy SM Lagrangian theorem",
+    "full replacement-level SM derivation"
+  ],
+  "summary": {
+    "allowed_operator_classes": {
+      "cyclic_lower_closure": [
+        "A_cyc",
+        "H_tilde",
+        "S_cyc_lower"
+      ],
+      "cyclic_upper_closure": [
+        "A_cyc",
+        "H",
+        "S_cyc_upper"
+      ],
+      "reference_charged_closure": [
+        "A_ref",
+        "H_tilde",
+        "S_ref_charged"
+      ],
+      "reference_neutral_closure": [
+        "A_ref",
+        "H",
+        "S_ref_neutral"
+      ]
+    },
+    "ckm_pmns_derived": false,
+    "exactly_four_renormalizable_yukawa_classes": true,
+    "forbidden_operator_classes": {
+      "forbid_cyclic_active_reference_singlet": "4/3",
+      "forbid_cyclic_lower_wrong_scalar": "2",
+      "forbid_cyclic_upper_wrong_scalar": "-2",
+      "forbid_reference_active_cyclic_singlet": "2/3",
+      "forbid_reference_charged_wrong_scalar": "2",
+      "forbid_reference_neutral_wrong_scalar": "-2"
+    },
+    "mass_ratios_derived": false,
+    "neutral_singlet_mass_operator_allowed": true,
+    "numerical_yukawa_values_derived": false,
+    "replacement_claim_ready": false,
+    "yukawa_operator_layer_discharged_conditionally": true
+  },
+  "verdict_labels": [
+    "THEOREM_DISCHARGE_YUKAWA_OPERATOR_CLOSURE_COMPLETE",
+    "PO_BH_18_YUKAWA_OPERATOR_CLOSURE_DERIVED_CONDITIONAL",
+    "BOUNDARY_YUKAWA_FIELD_INVENTORY_DERIVED_CONDITIONAL",
+    "YUKAWA_HYPERCHARGE_CLOSURE_DERIVED_CONDITIONAL",
+    "YUKAWA_ORIENTATION_CONTRACTIONS_DERIVED_CONDITIONAL",
+    "YUKAWA_CYCLIC_REFERENCE_CONTRACTIONS_DERIVED_CONDITIONAL",
+    "YUKAWA_ALLOWED_OPERATOR_CLASSES_DERIVED_CONDITIONAL",
+    "YUKAWA_FORBIDDEN_OPERATOR_CLASSES_DERIVED_CONDITIONAL",
+    "BOUNDARY_NEUTRAL_SINGLET_MASS_OPERATOR_ALLOWED_CONDITIONALLY",
+    "NUMERICAL_YUKAWA_VALUES_REMAIN_OPEN",
+    "FERMION_MASS_RATIOS_REMAIN_OPEN",
+    "CKM_PMNS_MIXING_REMAINS_OPEN",
+    "DOWNSTREAM_SM_DERIVATION_REMAINS_OPEN",
+    "BHSM_REPLACEMENT_CLAIM_NOT_READY",
+    "FROZEN_PREDICTIONS_UNCHANGED",
+    "OFFICIAL_PREDICTIONS_UNCHANGED"
+  ],
+  "yukawa_operator_layer_discharged_conditionally": true
+}

@@ -1,0 +1,239 @@
+{
+  "ckm_four_projection": {
+    "candidate_only": true,
+    "layer_support": "interpretive only; all four projection layers are not independently derived",
+    "limitation": "Candidate remains non-official unless all four projection layers are independently supported.",
+    "official": false,
+    "projection_layers": [
+      "mass/probability dressing to amplitude",
+      "full internal mode to left-handed weak component",
+      "up-sector dressing to up/down rotation mismatch",
+      "diagonal mass dressing to off-diagonal 2-3 overlap correlation"
+    ],
+    "rule": "s23_candidate=s23_frozen*(1/2)^(1/16)",
+    "status": "CKM_FOUR_PROJECTION_CANDIDATE_NOT_DERIVED"
+  },
+  "claim_discipline": {
+    "candidate_only": true,
+    "no_official_prediction_change": true,
+    "no_retuning": true,
+    "no_sm_replacement_claim": true
+  },
+  "cp_hopf_holonomy": {
+    "candidate_only": true,
+    "existing_phase_screen": {
+      "S": 0.07957747154594767,
+      "delta": 1.1283791670955126,
+      "delta_q": 4,
+      "formula": "delta_CKM = (q_u - q_d) * sqrt(S)",
+      "geometry": "ALPHA_ANCHORED",
+      "q_d": 4,
+      "q_u": 8,
+      "status": "HOPF_PHASE_CP_SCREEN"
+    },
+    "holonomy_machinery_present": true,
+    "interpretation": "CKM CP phase may be residual Hopf holonomy after sector projection.",
+    "limitation": "Existing Hopf-phase screen is present, but residual-holonomy derivation is not proven here.",
+    "official": false,
+    "status": "CP_HOPF_HOLONOMY_CANDIDATE_NOT_DERIVED"
+  },
+  "frozen_sanity": {
+    "BHSM_BARE_V1_unchanged": true,
+    "BHSM_DRESSED_V1_CANDIDATE_unchanged": true,
+    "changed_rows": [
+      {
+        "bare": 0.008310500554068288,
+        "changed": true,
+        "dressed": 0.004155250277034144,
+        "quantity": "c/t"
+      }
+    ],
+    "ckm_sin_theta_13_unchanged": true,
+    "dressed_branch_changes_only_c_over_t": true,
+    "u_over_t_unchanged": true
+  },
+  "higgs_surface_mode": {
+    "candidate_only": true,
+    "connects_to": [
+      "scalar_decoupling.py",
+      "spectral_gap.py",
+      "scalar_higgs_gap_completion_audit.json"
+    ],
+    "full_spectral_proof": false,
+    "interpretation": "Higgs is framed as the lowest global topographic/white-hole-surface mode; Higgs sets electroweak scale while BHSM sets the internal hierarchy; higher scalar modes are gapped harmonics.",
+    "limitation": "Full scalar/topographic spectral proof remains open.",
+    "official": false,
+    "status": "HIGGS_LOWEST_SURFACE_MODE_CANDIDATE_GAP_PROOF_OPEN"
+  },
+  "lepton_eta": {
+    "best_numeric_candidate": {
+      "candidate": "sqrt3_alpha_over_2pi",
+      "candidate_only": true,
+      "derived": false,
+      "e_tau_prediction": 0.0002867189599253621,
+      "e_tau_relative_error": 0.003012724129904783,
+      "eta_l": 0.0020116206657633073,
+      "formula": "eta_l=sqrt(3)alpha/(2pi)",
+      "improves_e_tau": true,
+      "improves_mu_tau": true,
+      "mu_tau_prediction": 0.059473264264377455,
+      "mu_tau_relative_error": 0.00016362962916942203,
+      "source": "diagnostic geometric factor; weaker channel-count interpretation"
+    },
+    "candidate_only": true,
+    "closure": "does_not_close_lepton_blocker",
+    "interpretation": "alpha/pi is treated as an electromagnetic stochastic phase-averaged dressing; Omega_l^2=9 supplies a screened lepton boundary-channel count with one coherent/protected channel and eight stochastic channels.",
+    "limitation": "The 8/9 screening factor is not derived from an action or spectrum in this branch.",
+    "official": false,
+    "omega_l": 3,
+    "preferred_candidate": {
+      "candidate": "screened_8alpha_over_9pi",
+      "candidate_only": true,
+      "derived": false,
+      "e_tau_prediction": 0.00028644500491823533,
+      "e_tau_relative_error": 0.0039653282281388235,
+      "eta_l": 0.0020647284140193063,
+      "formula": "eta_l=(alpha/pi)*(1-1/Omega_l^2)=8alpha/(9pi), Omega_l=3",
+      "improves_e_tau": true,
+      "improves_mu_tau": true,
+      "mu_tau_prediction": 0.05945747390521371,
+      "mu_tau_relative_error": 0.00010191730405677259,
+      "source": "eight stochastic lepton boundary channels with one coherent/protected channel"
+    },
+    "rows": [
+      {
+        "candidate": "baseline_no_dressing",
+        "candidate_only": false,
+        "derived": false,
+        "e_tau_prediction": 0.00029729106456492414,
+        "e_tau_relative_error": 0.03374889710210006,
+        "eta_l": 0.0,
+        "formula": "eta_l=0",
+        "improves_e_tau": false,
+        "improves_mu_tau": false,
+        "mu_tau_prediction": 0.06007447093260976,
+        "mu_tau_relative_error": 0.010274139803682273,
+        "source": "official frozen BHSM lepton ratios"
+      },
+      {
+        "candidate": "fitted_eta_from_mu_tau",
+        "candidate_only": true,
+        "derived": false,
+        "e_tau_prediction": 0.0002865501268883495,
+        "e_tau_relative_error": 0.0035997951408065676,
+        "eta_l": 0.0020443439144236667,
+        "formula": "eta_l fitted from mu/tau",
+        "improves_e_tau": true,
+        "improves_mu_tau": true,
+        "mu_tau_prediction": 0.05946353426831603,
+        "mu_tau_relative_error": 0.0,
+        "source": "fit diagnostic only; not a derivation"
+      },
+      {
+        "candidate": "alpha_over_pi",
+        "candidate_only": true,
+        "derived": false,
+        "e_tau_prediction": 0.0002851173710930778,
+        "e_tau_relative_error": 0.008581814110486348,
+        "eta_l": 0.002322819465771719,
+        "formula": "eta_l=alpha/pi",
+        "improves_e_tau": true,
+        "improves_mu_tau": true,
+        "mu_tau_prediction": 0.05938079618056731,
+        "mu_tau_relative_error": 0.001391408848579023,
+        "source": "electromagnetic stochastic phase-averaged dressing candidate"
+      },
+      {
+        "candidate": "screened_8alpha_over_9pi",
+        "candidate_only": true,
+        "derived": false,
+        "e_tau_prediction": 0.00028644500491823533,
+        "e_tau_relative_error": 0.0039653282281388235,
+        "eta_l": 0.0020647284140193063,
+        "formula": "eta_l=(alpha/pi)*(1-1/Omega_l^2)=8alpha/(9pi), Omega_l=3",
+        "improves_e_tau": true,
+        "improves_mu_tau": true,
+        "mu_tau_prediction": 0.05945747390521371,
+        "mu_tau_relative_error": 0.00010191730405677259,
+        "source": "eight stochastic lepton boundary channels with one coherent/protected channel"
+      },
+      {
+        "candidate": "sqrt3_alpha_over_2pi",
+        "candidate_only": true,
+        "derived": false,
+        "e_tau_prediction": 0.0002867189599253621,
+        "e_tau_relative_error": 0.003012724129904783,
+        "eta_l": 0.0020116206657633073,
+        "formula": "eta_l=sqrt(3)alpha/(2pi)",
+        "improves_e_tau": true,
+        "improves_mu_tau": true,
+        "mu_tau_prediction": 0.059473264264377455,
+        "mu_tau_relative_error": 0.00016362962916942203,
+        "source": "diagnostic geometric factor; weaker channel-count interpretation"
+      }
+    ],
+    "status": "SCREENED_ALPHA_PI_LEPTON_CANDIDATE_NOT_DERIVED"
+  },
+  "light_up_three_coframe": {
+    "candidate_only": true,
+    "candidate_u_over_t": 7.326842239355902e-06,
+    "ckm_sin_theta_13_unchanged": true,
+    "interpretation": "The light-up mode may have base/coframe participation spread across three internal coframe directions; the observed mass channel receives one normalized projection.",
+    "limitation": "Candidate is not derived and is not applied to frozen outputs.",
+    "official": false,
+    "official_predictions_changed": false,
+    "official_u_over_t": {
+      "bare": 1.2690463017606151e-05,
+      "changed": false,
+      "dressed": 1.2690463017606151e-05,
+      "quantity": "u/t"
+    },
+    "rule": "Z_u_light=1/sqrt(3)",
+    "status": "LIGHT_UP_THREE_COFRAME_CANDIDATE_NOT_DERIVED"
+  },
+  "neutrino_leakage": {
+    "candidate_only": true,
+    "interpretation": "Neutrinos are logged as possible topological leakage modes: weakly field-attached, ghost-like residual boundary modes.",
+    "no_numerical_pmns_claim_added": true,
+    "ordinary_FTL_claim": false,
+    "safety": "No ordinary faster-than-light claim and no new PMNS numerical claim.",
+    "status": "NEUTRINO_LEAKAGE_LEDGER_CANDIDATE_ONLY"
+  },
+  "pure_fiber_doublet": {
+    "candidate_only": true,
+    "limitation": "The two-branch doublet does not yet follow from repo geometry/action/spectrum.",
+    "mode": [
+      6,
+      0
+    ],
+    "mode_property": "nonzero pure-fiber middle-up mode with j=0",
+    "official": false,
+    "official_c_over_t_branch_changed": false,
+    "rule": "two virtual fiber-orientation branches; physical projection selects one, giving rank ratio 1/2",
+    "status": "PURE_FIBER_DOUBLET_CANDIDATE_NOT_DERIVED"
+  },
+  "report": {
+    "best_numeric_lepton_eta_candidate": "sqrt3_alpha_over_2pi",
+    "blockers_closed": [],
+    "blockers_remaining": [
+      "derive eta_l screening factor from BHSM boundary geometry",
+      "derive light-up three-coframe projection",
+      "derive CKM four-projection chain",
+      "derive pure-fiber doublet from geometry/action/spectrum",
+      "derive neutrino leakage ledger from full operator",
+      "derive CKM CP residual holonomy",
+      "complete Higgs/scalar surface-mode spectral proof"
+    ],
+    "ckm_projection_status": "CKM_FOUR_PROJECTION_CANDIDATE_NOT_DERIVED",
+    "cp_holonomy_status": "CP_HOPF_HOLONOMY_CANDIDATE_NOT_DERIVED",
+    "frozen_files_changed": false,
+    "higgs_surface_mode_status": "HIGGS_LOWEST_SURFACE_MODE_CANDIDATE_GAP_PROOF_OPEN",
+    "lepton_eta_status": "SCREENED_ALPHA_PI_LEPTON_CANDIDATE_NOT_DERIVED",
+    "light_up_status": "LIGHT_UP_THREE_COFRAME_CANDIDATE_NOT_DERIVED",
+    "neutrino_ledger_status": "NEUTRINO_LEAKAGE_LEDGER_CANDIDATE_ONLY",
+    "official_outputs_changed": false,
+    "preferred_lepton_eta_candidate": "screened_8alpha_over_9pi",
+    "pure_fiber_doublet_status": "PURE_FIBER_DOUBLET_CANDIDATE_NOT_DERIVED",
+    "status": "BHSM_COMPLETION_MANUAL_THEORY_DELTA_CANDIDATE_ONLY"
+  }
+}

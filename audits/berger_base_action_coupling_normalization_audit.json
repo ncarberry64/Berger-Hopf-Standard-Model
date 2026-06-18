@@ -1,0 +1,244 @@
+{
+  "A_j_action_coupling_status": "A_J_ACTION_COUPLING_PARTIAL",
+  "A_j_geometric_object_status": "A_J_GEOMETRIC_OBJECT_SUPPORTED",
+  "A_q_action_coupling_status": "A_Q_ACTION_COUPLING_SUPPORTED",
+  "A_rep_true_connection_status": "A_REP_TRUE_CONNECTION_PARTIAL",
+  "base_curvature_flux": {
+    "convention": "chern_unit",
+    "flux_unit": {
+      "denominator": 1,
+      "numerator": 1,
+      "value": 1.0
+    },
+    "globally_fixed": false,
+    "limitation": "Base flux is normalized symbolically, but the full boundary action does not yet fix the A_j coupling convention.",
+    "status": "BASE_CURVATURE_NORMALIZATION_CONVENTION_DEPENDENT"
+  },
+  "base_curvature_normalization_status": "BASE_CURVATURE_NORMALIZATION_CONVENTION_DEPENDENT",
+  "berger_anisotropy_coupling_status": "BERGER_ANISOTROPY_COUPLING_STRUCTURAL_CANDIDATE",
+  "berger_base_action_coupling_status": "BERGER_BASE_ACTION_COUPLING_PARTIAL",
+  "berger_casimir_decomposition_status": "BERGER_CASIMIR_DECOMPOSITION_SUPPORTED",
+  "blockers_closed": [
+    "minimal_boundary_coupling_scaffold_for_A_j",
+    "Berger_horizontal_Casimir_support_for_j",
+    "horizontal_coframe_dimension_two_recorded"
+  ],
+  "blockers_remaining": [
+    "derive the minimal boundary coupling from the complete Berger-Hopf action variation",
+    "globally fix A_j normalization without convention choice",
+    "prove A_rep is a true connection on the completed boundary tensor bundle",
+    "derive dim(H)=|Omega| separately",
+    "derive identity/traceless stochastic protection before promoting lepton 8/9"
+  ],
+  "boundary_minimal_coupling_status": "BOUNDARY_MINIMAL_COUPLING_STRUCTURAL_CANDIDATE",
+  "candidate_components": [
+    "D_boundary_rep_minimal_coupling",
+    "A_j_base_spin_curvature_or_coframe_channel",
+    "Berger_anisotropy_variation_channel",
+    "A_rep_boundary_tensor_bundle_connection"
+  ],
+  "derived_components": [],
+  "does_A_j_have_action_coupling": true,
+  "does_A_j_normalization_become_global": false,
+  "does_Arep_act_on_boundary_tensor_bundle": true,
+  "does_Arep_reproduce_omega_l_u_d": true,
+  "does_this_close_boundary_connection": false,
+  "does_this_promote_lepton_8_9": false,
+  "forbidden_claims_absent": true,
+  "frozen_predictions_modified": false,
+  "frozen_sanity": {
+    "BHSM_BARE_V1_unchanged": true,
+    "BHSM_DRESSED_V1_CANDIDATE_unchanged": true,
+    "S_unchanged": true,
+    "a_unchanged": true,
+    "changed_rows": [
+      {
+        "bare": 0.008310500554068288,
+        "changed": true,
+        "dressed": 0.004155250277034144,
+        "quantity": "c/t"
+      }
+    ],
+    "ckm_sin_theta_13_unchanged": true,
+    "dressed_branch_changes_only_c_over_t": true,
+    "official_branch_comparison": {
+      "bare_score": {
+        "PASS": 22
+      },
+      "branches": [
+        "BHSM_BARE_V1",
+        "BHSM_DRESSED_V1_CANDIDATE"
+      ],
+      "dressed_score": {
+        "PASS": 21,
+        "SCHEME_SENSITIVE": 1
+      },
+      "no_retuning": true,
+      "rows": [
+        {
+          "bare": 0.008310500554068288,
+          "changed": true,
+          "dressed": 0.004155250277034144,
+          "quantity": "c/t"
+        },
+        {
+          "bare": 1.2690463017606151e-05,
+          "changed": false,
+          "dressed": 1.2690463017606151e-05,
+          "quantity": "u/t"
+        },
+        {
+          "bare": 0.021933971495439474,
+          "changed": false,
+          "dressed": 0.021933971495439474,
+          "quantity": "s/b"
+        },
+        {
+          "bare": 0.0011165200546001757,
+          "changed": false,
+          "dressed": 0.0011165200546001757,
+          "quantity": "d/b"
+        },
+        {
+          "bare": 0.0035623676140463315,
+          "changed": false,
+          "dressed": 0.0035623676140463315,
+          "quantity": "sin_theta_13"
+        }
+      ],
+      "tolerance_bands": {
+        "charged_lepton_ratios": 0.25,
+        "ckm_angles": 0.1,
+        "ckm_cp_jarlskog": 0.1,
+        "exact_status": "pass_fail",
+        "gauge_couplings": 0.01,
+        "higgs_electroweak_v": 0.01,
+        "higgs_mass_zeroth_order": 0.02,
+        "ht_gap": "binary_pass_fail",
+        "pmns_effective": 0.05,
+        "quark_ratios_otherwise": "SCHEME_SENSITIVE",
+        "quark_ratios_scheme_aware": 0.25,
+        "scalar_decoupling": "binary_scaffold_pass_fail"
+      }
+    },
+    "u_over_t_unchanged": true
+  },
+  "horizontal_coframe_coupling_status": "HORIZONTAL_COFRAME_COUPLING_PARTIAL",
+  "missing_assumptions": [
+    "derive the minimal boundary coupling from the complete Berger-Hopf action variation",
+    "globally fix A_j normalization without convention choice",
+    "prove A_rep is a true connection on the completed boundary tensor bundle",
+    "derive dim(H)=|Omega| separately",
+    "derive identity/traceless stochastic protection before promoting lepton 8/9"
+  ],
+  "mode_pair_omega_values": {
+    "charged_lepton": [
+      {
+        "denominator": 1,
+        "numerator": 3,
+        "value": 3.0
+      },
+      {
+        "denominator": 1,
+        "numerator": 3,
+        "value": 3.0
+      }
+    ],
+    "down": [
+      {
+        "denominator": 1,
+        "numerator": 12,
+        "value": 12.0
+      },
+      {
+        "denominator": 1,
+        "numerator": 12,
+        "value": 12.0
+      }
+    ],
+    "up": [
+      {
+        "denominator": 1,
+        "numerator": 6,
+        "value": 6.0
+      },
+      {
+        "denominator": 1,
+        "numerator": 6,
+        "value": 6.0
+      }
+    ]
+  },
+  "normalization_ambiguities": [
+    "Chern-unit and raw-sphere base flux conventions differ by a factor of 2.",
+    "The boundary action has not fixed whether A_j is a spin connection, curvature channel, coframe channel, or Casimir term.",
+    "The down-sector colored-lower bonus is supported by projectors but not yet derived from a full color/coframe boundary action."
+  ],
+  "official_outputs_modified": false,
+  "prs_opened": false,
+  "safe_to_merge_as_candidate_only": true,
+  "sector_terms": {
+    "charged_lepton": {
+      "O_j": {
+        "denominator": 1,
+        "numerator": 2,
+        "value": 2.0
+      },
+      "O_q": {
+        "denominator": 1,
+        "numerator": -1,
+        "value": -1.0
+      },
+      "term": "D_boundary_rep = d + i A_q tensor (-1) + i A_j tensor (2)"
+    },
+    "down": {
+      "O_j": {
+        "denominator": 1,
+        "numerator": 4,
+        "value": 4.0
+      },
+      "O_q": {
+        "denominator": 1,
+        "numerator": 1,
+        "value": 1.0
+      },
+      "term": "D_boundary_rep = d + i A_q tensor (1) + i A_j tensor (4)"
+    },
+    "neutrino": {
+      "O_j": {
+        "denominator": 1,
+        "numerator": -2,
+        "value": -2.0
+      },
+      "O_q": {
+        "denominator": 1,
+        "numerator": -1,
+        "value": -1.0
+      },
+      "term": "D_boundary_rep = d + i A_q tensor (-1) + i A_j tensor (-2)"
+    },
+    "up": {
+      "O_j": {
+        "denominator": 1,
+        "numerator": -2,
+        "value": -2.0
+      },
+      "O_q": {
+        "denominator": 1,
+        "numerator": 1,
+        "value": 1.0
+      },
+      "term": "D_boundary_rep = d + i A_q tensor (1) + i A_j tensor (-2)"
+    }
+  },
+  "symbolic_geometry": {
+    "A_Hopf": "A_Hopf = sigma_3",
+    "A_q": "A_q = sigma_3/(2*pi)",
+    "F_q": "F_Hopf = dA_Hopf = -sin(theta) dtheta wedge dphi",
+    "berger_metric": "g_Berger = r_base^2 (sigma_1^2 + sigma_2^2) + r_fiber^2 sigma_3^2",
+    "horizontal_coframe_dimension": 2,
+    "sigma_1": "sigma_1 = cos(psi) dtheta + sin(psi) sin(theta) dphi",
+    "sigma_2": "sigma_2 = -sin(psi) dtheta + cos(psi) sin(theta) dphi",
+    "sigma_3": "sigma_3 = dpsi + cos(theta) dphi"
+  }
+}

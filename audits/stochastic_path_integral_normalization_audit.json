@@ -1,0 +1,227 @@
+{
+  "D_from_g_squared_ito": 0.0011614097328858596,
+  "allowed_eta_forms": {
+    "double_factor": 0.004129456828038612,
+    "half_factor": 0.001032364207009653,
+    "no_extra_half": 0.002064728414019306
+  },
+  "alpha": 0.0072973525692838015,
+  "alpha_pi_role_status": "ALPHA_PI_ROLE_GENERATOR_BY_REPO_CONVENTION_RAW_VARIANCE_ALTERNATIVE",
+  "attenuation_examples_muon": {
+    "N": 5,
+    "heat_kernel": 0.9897294638168652,
+    "phase_cumulant": 0.9948514782704326
+  },
+  "blockers_closed": [
+    "Ito_sqrt_2D_notation_reconciles_half_factor_by_convention",
+    "alpha_pi_generator_vs_variance_roles_are_explicit",
+    "eta_l_8alpha_9pi_remains_supported_as_repo_exponent_convention"
+  ],
+  "blockers_remaining": [
+    "derive the boundary stochastic measure from the completed BHSM path integral",
+    "derive whether alpha/pi is generator coefficient D or raw variance g^2",
+    "derive tau=1 boundary-cycle time rather than fixing it by convention",
+    "derive full stochastic generator on the physical channel algebra before promoting lepton 8/9"
+  ],
+  "boundary_cycle_time_status": "BOUNDARY_CYCLE_TIME_NORMALIZATION_CONVENTION_FIXED",
+  "brownian_factor_two_status": "BROWNIAN_FACTOR_TWO_CONVENTION_DEPENDENT_STRENGTHENED",
+  "candidate_components": [
+    "double_factor_sensitivity_form",
+    "lepton_eta_8alpha_over_9pi_candidate_consequence"
+  ],
+  "conditional_components": [
+    "no_extra_half_if_alpha_pi_is_generator_coefficient",
+    "half_factor_if_alpha_pi_is_raw_variance"
+  ],
+  "derived_components": [
+    "g_squared_from_alpha_equals_alpha_over_pi",
+    "D_from_raw_variance_equals_g_squared_over_2",
+    "phase_cumulant_attenuation_formula",
+    "heat_kernel_attenuation_formula"
+  ],
+  "does_eta_l_8alpha_9pi_remain_supported": true,
+  "does_factor_two_close": false,
+  "does_sqrt_2D_convention_resolve_half_factor": true,
+  "does_this_change_official_predictions": false,
+  "does_this_promote_full_lepton_8_9": false,
+  "eta_from_sqrt_2D_generator_role": 0.002064728414019306,
+  "eta_from_sqrt_2D_raw_variance_role": 0.001032364207009653,
+  "forbidden_claims_absent": true,
+  "frozen_predictions_modified": false,
+  "frozen_sanity": {
+    "BHSM_BARE_V1_unchanged": true,
+    "BHSM_DRESSED_V1_CANDIDATE_unchanged": true,
+    "S_unchanged": true,
+    "a_unchanged": true,
+    "changed_rows": [
+      {
+        "bare": 0.008310500554068288,
+        "changed": true,
+        "dressed": 0.004155250277034144,
+        "quantity": "c/t"
+      }
+    ],
+    "ckm_sin_theta_13_unchanged": true,
+    "dressed_branch_changes_only_c_over_t": true,
+    "official_branch_comparison": {
+      "bare_score": {
+        "PASS": 22
+      },
+      "branches": [
+        "BHSM_BARE_V1",
+        "BHSM_DRESSED_V1_CANDIDATE"
+      ],
+      "dressed_score": {
+        "PASS": 21,
+        "SCHEME_SENSITIVE": 1
+      },
+      "no_retuning": true,
+      "rows": [
+        {
+          "bare": 0.008310500554068288,
+          "changed": true,
+          "dressed": 0.004155250277034144,
+          "quantity": "c/t"
+        },
+        {
+          "bare": 1.2690463017606151e-05,
+          "changed": false,
+          "dressed": 1.2690463017606151e-05,
+          "quantity": "u/t"
+        },
+        {
+          "bare": 0.021933971495439474,
+          "changed": false,
+          "dressed": 0.021933971495439474,
+          "quantity": "s/b"
+        },
+        {
+          "bare": 0.0011165200546001757,
+          "changed": false,
+          "dressed": 0.0011165200546001757,
+          "quantity": "d/b"
+        },
+        {
+          "bare": 0.0035623676140463315,
+          "changed": false,
+          "dressed": 0.0035623676140463315,
+          "quantity": "sin_theta_13"
+        }
+      ],
+      "tolerance_bands": {
+        "charged_lepton_ratios": 0.25,
+        "ckm_angles": 0.1,
+        "ckm_cp_jarlskog": 0.1,
+        "exact_status": "pass_fail",
+        "gauge_couplings": 0.01,
+        "higgs_electroweak_v": 0.01,
+        "higgs_mass_zeroth_order": 0.02,
+        "ht_gap": "binary_pass_fail",
+        "pmns_effective": 0.05,
+        "quark_ratios_otherwise": "SCHEME_SENSITIVE",
+        "quark_ratios_scheme_aware": 0.25,
+        "scalar_decoupling": "binary_scaffold_pass_fail"
+      }
+    },
+    "u_over_t_unchanged": true
+  },
+  "g_squared_alpha_over_pi": 0.002322819465771719,
+  "heat_kernel_generator_status": "STOCHASTIC_PATH_INTEGRAL_HEAT_KERNEL_PARTIAL",
+  "is_alpha_pi_generator_coefficient": true,
+  "is_alpha_pi_raw_variance": true,
+  "is_tau_boundary_cycle_fixed": true,
+  "ito_sqrt_2D_status": "ITO_SQRT_2D_NORMALIZATION_PARTIAL",
+  "lepton_active_fraction": {
+    "denominator": 9,
+    "numerator": 8,
+    "value": 0.8888888888888888
+  },
+  "lepton_eta_exact_checks": {
+    "double_factor_matches_16alpha_over_9pi": true,
+    "half_factor_matches_4alpha_over_9pi": true,
+    "no_extra_half_matches_8alpha_over_9pi": true
+  },
+  "lepton_eta_normalization_status": "LEPTON_ETA_NORMALIZATION_CONVENTION_DEPENDENT_STRENGTHENED",
+  "missing_assumptions": [
+    "derive the boundary stochastic measure from the completed BHSM path integral",
+    "derive whether alpha/pi is generator coefficient D or raw variance g^2",
+    "derive tau=1 boundary-cycle time rather than fixing it by convention",
+    "derive full stochastic generator on the physical channel algebra before promoting lepton 8/9"
+  ],
+  "mode_norms": {
+    "electron": 18,
+    "muon": 5,
+    "tau_reference": 0
+  },
+  "official_outputs_modified": false,
+  "partial_components": [
+    "heat_kernel_path_integral_route",
+    "Ito_sqrt_2D_boundary_noise_route",
+    "boundary_cycle_time_tau_equals_one"
+  ],
+  "phase_cumulant_status": "STOCHASTIC_PATH_INTEGRAL_PHASE_CUMULANT_CONDITIONAL",
+  "preferred_eta_form": "no_extra_half_repo_exponent_convention",
+  "prs_opened": false,
+  "route_status_objects": {
+    "boundary_cycle_time": {
+      "assumptions": [
+        "the finite boundary phase orbit is sampled once per normalized cycle"
+      ],
+      "expression": "tau=1 per normalized 2*pi boundary cycle",
+      "limitations": [
+        "tau=1 is not yet derived from a completed stochastic action"
+      ],
+      "name": "boundary_cycle_time",
+      "status": "BOUNDARY_CYCLE_TIME_NORMALIZATION_CONVENTION_FIXED",
+      "supports_half_factor": true,
+      "supports_no_extra_half": true
+    },
+    "heat_kernel": {
+      "assumptions": [
+        "BHSM eta is the exponent coefficient in Z=exp[-eta N]",
+        "alpha/pi is interpreted as the generator coefficient D",
+        "one normalized boundary cycle sets tau=1"
+      ],
+      "expression": "K_tau=exp[-tau D Delta_channel], eta=D*active_fraction",
+      "limitations": [
+        "the full stochastic measure is not derived",
+        "the boundary-cycle time normalization is a convention in this audit"
+      ],
+      "name": "heat_kernel_generator",
+      "status": "STOCHASTIC_PATH_INTEGRAL_HEAT_KERNEL_PARTIAL",
+      "supports_half_factor": false,
+      "supports_no_extra_half": true
+    },
+    "ito_sqrt_2D": {
+      "assumptions": [
+        "Ito notation is valid for a one-dimensional boundary phase process",
+        "the factor is fixed once alpha/pi is declared to be D or g^2"
+      ],
+      "expression": "dtheta=sqrt(2D)dW gives Var(theta)=2D tau and exp[-D tau]",
+      "limitations": [
+        "the repo still has not derived from the complete path integral which symbol alpha/pi denotes"
+      ],
+      "name": "ito_sqrt_2D",
+      "status": "ITO_SQRT_2D_NORMALIZATION_PARTIAL",
+      "supports_half_factor": true,
+      "supports_no_extra_half": true
+    },
+    "phase_cumulant": {
+      "assumptions": [
+        "alpha/pi is interpreted as raw phase variance g_U1^2",
+        "the stochastic factor is an averaged Wilson phase"
+      ],
+      "expression": "E[exp(i theta)]=exp[-Var(theta)/2]",
+      "limitations": [
+        "this is an alternative convention, not the current repo exponent convention",
+        "it would define a candidate eta only and changes no official output"
+      ],
+      "name": "gaussian_phase_cumulant",
+      "status": "STOCHASTIC_PATH_INTEGRAL_PHASE_CUMULANT_CONDITIONAL",
+      "supports_half_factor": true,
+      "supports_no_extra_half": false
+    }
+  },
+  "safe_to_merge_as_candidate_only": true,
+  "stochastic_path_integral_status": "STOCHASTIC_NORMALIZATION_PARTIAL"
+}

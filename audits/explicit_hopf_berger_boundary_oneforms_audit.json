@@ -1,0 +1,331 @@
+{
+  "A_j_status": "A_J_EXPLICIT_BERGER_BASE_COMPONENT_SUPPORTED",
+  "A_q_status": "A_Q_EXPLICIT_HOPF_FIBER_ONEFORM_SUPPORTED",
+  "A_rep_with_explicit_components_status": "A_REP_EXPLICIT_HOPF_PLUS_BASE_COMPONENT_PARTIAL",
+  "berger_base_connection_status": "BERGER_BASE_CURVATURE_OR_COFRAME_COMPONENT_SUPPORTED",
+  "berger_base_normalization_status": "BERGER_BASE_NORMALIZATION_CONVENTION_DEPENDENT",
+  "blockers_closed": [
+    "explicit_symbolic_Hopf_contact_oneform_A_q",
+    "symbolic_Berger_base_curvature_or_coframe_component_A_j",
+    "q_equals_k_minus_2j_representation_support"
+  ],
+  "blockers_remaining": [
+    "derive A_j coupling from the full Berger-Hopf boundary action",
+    "fix Berger/base normalization globally rather than by convention",
+    "prove A_rep is a true connection on the boundary tensor-product bundle",
+    "derive dim(H)=|Omega| separately",
+    "derive identity/traceless stochastic protection before promoting lepton 8/9"
+  ],
+  "candidate_components": [
+    "A_j_base_curvature_component",
+    "A_rep_with_explicit_Hopf_plus_Berger_components",
+    "neutrino_connection_consequence"
+  ],
+  "derived_components": [],
+  "does_A_j_have_explicit_oneform_or_curvature": true,
+  "does_A_q_have_explicit_oneform": true,
+  "does_explicit_connection_reproduce_omega_l_u_d": true,
+  "does_j_couple_to_berger_base": true,
+  "does_q_couple_to_hopf_fiber": true,
+  "does_this_close_boundary_connection": false,
+  "does_this_promote_lepton_8_9": false,
+  "explicit_hopf_berger_oneform_status": "EXPLICIT_HOPF_BERGER_ONEFORMS_PARTIAL",
+  "forbidden_claims_absent": true,
+  "frozen_predictions_modified": false,
+  "frozen_sanity": {
+    "BHSM_BARE_V1_unchanged": true,
+    "BHSM_DRESSED_V1_CANDIDATE_unchanged": true,
+    "S_unchanged": true,
+    "a_unchanged": true,
+    "changed_rows": [
+      {
+        "bare": 0.008310500554068288,
+        "changed": true,
+        "dressed": 0.004155250277034144,
+        "quantity": "c/t"
+      }
+    ],
+    "ckm_sin_theta_13_unchanged": true,
+    "dressed_branch_changes_only_c_over_t": true,
+    "official_branch_comparison": {
+      "bare_score": {
+        "PASS": 22
+      },
+      "branches": [
+        "BHSM_BARE_V1",
+        "BHSM_DRESSED_V1_CANDIDATE"
+      ],
+      "dressed_score": {
+        "PASS": 21,
+        "SCHEME_SENSITIVE": 1
+      },
+      "no_retuning": true,
+      "rows": [
+        {
+          "bare": 0.008310500554068288,
+          "changed": true,
+          "dressed": 0.004155250277034144,
+          "quantity": "c/t"
+        },
+        {
+          "bare": 1.2690463017606151e-05,
+          "changed": false,
+          "dressed": 1.2690463017606151e-05,
+          "quantity": "u/t"
+        },
+        {
+          "bare": 0.021933971495439474,
+          "changed": false,
+          "dressed": 0.021933971495439474,
+          "quantity": "s/b"
+        },
+        {
+          "bare": 0.0011165200546001757,
+          "changed": false,
+          "dressed": 0.0011165200546001757,
+          "quantity": "d/b"
+        },
+        {
+          "bare": 0.0035623676140463315,
+          "changed": false,
+          "dressed": 0.0035623676140463315,
+          "quantity": "sin_theta_13"
+        }
+      ],
+      "tolerance_bands": {
+        "charged_lepton_ratios": 0.25,
+        "ckm_angles": 0.1,
+        "ckm_cp_jarlskog": 0.1,
+        "exact_status": "pass_fail",
+        "gauge_couplings": 0.01,
+        "higgs_electroweak_v": 0.01,
+        "higgs_mass_zeroth_order": 0.02,
+        "ht_gap": "binary_pass_fail",
+        "pmns_effective": 0.05,
+        "quark_ratios_otherwise": "SCHEME_SENSITIVE",
+        "quark_ratios_scheme_aware": 0.25,
+        "scalar_decoupling": "binary_scaffold_pass_fail"
+      }
+    },
+    "u_over_t_unchanged": true
+  },
+  "hopf_connection": "A_Hopf = sigma_3",
+  "hopf_connection_status": "HOPF_CONTACT_ONEFORM_EXPLICIT",
+  "hopf_curvature": "F_Hopf = dA_Hopf = -sin(theta) dtheta wedge dphi",
+  "hopf_normalization_status": "HOPF_NORMALIZATION_RESOLVED",
+  "lepton_8_9_consequence_status": "LEPTON_8_9_NO_PROMOTION_CONNECTION_ONLY",
+  "missing_assumptions": [
+    "derive A_j coupling from the full Berger-Hopf boundary action",
+    "fix Berger/base normalization globally rather than by convention",
+    "prove A_rep is a true connection on the boundary tensor-product bundle",
+    "derive dim(H)=|Omega| separately",
+    "derive identity/traceless stochastic protection before promoting lepton 8/9"
+  ],
+  "mode_pair_checks": {
+    "charged_lepton": {
+      "constant": true,
+      "level": {
+        "denominator": 1,
+        "numerator": 3,
+        "value": 3.0
+      },
+      "rows": [
+        {
+          "j": 2,
+          "mode": [
+            5,
+            2
+          ],
+          "omega": {
+            "denominator": 1,
+            "numerator": 3,
+            "value": 3.0
+          },
+          "q": 1
+        },
+        {
+          "j": 3,
+          "mode": [
+            9,
+            3
+          ],
+          "omega": {
+            "denominator": 1,
+            "numerator": 3,
+            "value": 3.0
+          },
+          "q": 3
+        }
+      ],
+      "sector": "charged_lepton"
+    },
+    "down": {
+      "constant": true,
+      "level": {
+        "denominator": 1,
+        "numerator": 12,
+        "value": 12.0
+      },
+      "rows": [
+        {
+          "j": 3,
+          "mode": [
+            6,
+            3
+          ],
+          "omega": {
+            "denominator": 1,
+            "numerator": 12,
+            "value": 12.0
+          },
+          "q": 0
+        },
+        {
+          "j": 2,
+          "mode": [
+            8,
+            2
+          ],
+          "omega": {
+            "denominator": 1,
+            "numerator": 12,
+            "value": 12.0
+          },
+          "q": 4
+        }
+      ],
+      "sector": "down"
+    },
+    "up": {
+      "constant": true,
+      "level": {
+        "denominator": 1,
+        "numerator": 6,
+        "value": 6.0
+      },
+      "rows": [
+        {
+          "j": 0,
+          "mode": [
+            6,
+            0
+          ],
+          "omega": {
+            "denominator": 1,
+            "numerator": 6,
+            "value": 6.0
+          },
+          "q": 6
+        },
+        {
+          "j": 1,
+          "mode": [
+            10,
+            1
+          ],
+          "omega": {
+            "denominator": 1,
+            "numerator": 6,
+            "value": 6.0
+          },
+          "q": 8
+        }
+      ],
+      "sector": "up"
+    }
+  },
+  "neutrino_consequence_status": "NEUTRINO_PROJECTOR_CONSEQUENCE_CANDIDATE",
+  "normalization_ambiguities": [
+    "Euler-angle period and 2*pi normalization conventions must be fixed globally.",
+    "The Berger/base j-channel may be a curvature or coframe flux component rather than a line holonomy.",
+    "No full boundary-action coupling fixes the A_j normalization uniquely."
+  ],
+  "normalization_status": {
+    "ambiguities": [
+      "Euler-angle period and 2*pi normalization conventions must be fixed globally.",
+      "The Berger/base j-channel may be a curvature or coframe flux component rather than a line holonomy.",
+      "No full boundary-action coupling fixes the A_j normalization uniquely."
+    ],
+    "base_curvature_flux_unit": {
+      "denominator": 1,
+      "numerator": 1,
+      "value": 1.0
+    },
+    "berger_base_normalization_status": "BERGER_BASE_NORMALIZATION_CONVENTION_DEPENDENT",
+    "hopf_fiber_holonomy_unit": {
+      "denominator": 1,
+      "numerator": 1,
+      "value": 1.0
+    },
+    "hopf_normalization_status": "HOPF_NORMALIZATION_RESOLVED"
+  },
+  "normalized_hopf_connection": "A_Hopf_norm = sigma_3/(2*pi)",
+  "official_outputs_modified": false,
+  "prs_opened": false,
+  "q_equals_k_minus_2j_status": "Q_EQUALS_K_MINUS_2J_REPRESENTATION_SUPPORTED",
+  "representation_boundary_connection_consequence_status": "REPRESENTATION_BOUNDARY_CONNECTION_PARTIAL",
+  "safe_to_merge_as_candidate_only": true,
+  "sector_connection_eigenvalues": {
+    "charged_lepton": {
+      "O_j": {
+        "denominator": 1,
+        "numerator": 2,
+        "value": 2.0
+      },
+      "O_q": {
+        "denominator": 1,
+        "numerator": -1,
+        "value": -1.0
+      },
+      "candidate_only": false,
+      "sector": "charged_lepton"
+    },
+    "down": {
+      "O_j": {
+        "denominator": 1,
+        "numerator": 4,
+        "value": 4.0
+      },
+      "O_q": {
+        "denominator": 1,
+        "numerator": 1,
+        "value": 1.0
+      },
+      "candidate_only": false,
+      "sector": "down"
+    },
+    "neutrino": {
+      "O_j": {
+        "denominator": 1,
+        "numerator": -2,
+        "value": -2.0
+      },
+      "O_q": {
+        "denominator": 1,
+        "numerator": -1,
+        "value": -1.0
+      },
+      "candidate_only": true,
+      "sector": "neutrino"
+    },
+    "up": {
+      "O_j": {
+        "denominator": 1,
+        "numerator": -2,
+        "value": -2.0
+      },
+      "O_q": {
+        "denominator": 1,
+        "numerator": 1,
+        "value": 1.0
+      },
+      "candidate_only": false,
+      "sector": "up"
+    }
+  },
+  "sigma_forms": {
+    "sigma_1": "sigma_1 = cos(psi) dtheta + sin(psi) sin(theta) dphi",
+    "sigma_2": "sigma_2 = -sin(psi) dtheta + cos(psi) sin(theta) dphi",
+    "sigma_3": "sigma_3 = dpsi + cos(theta) dphi"
+  }
+}

@@ -1,0 +1,1572 @@
+{
+  "allowed_verdicts": [
+    "BARE_YUKAWA_INVARIANT_VARIANT_TIER_A_STRONG",
+    "BARE_YUKAWA_INVARIANT_VARIANT_TIER_B_PLAUSIBLE",
+    "BARE_YUKAWA_INVARIANT_VARIANT_TIER_C_ORDERING_ONLY",
+    "BARE_YUKAWA_INVARIANT_VARIANT_TIER_D_FAIL",
+    "BARE_YUKAWA_RESIDUAL_AUTOPSY_COMPLETE"
+  ],
+  "best_variant": {
+    "best_parameters": {
+      "beta_eff": 0.0,
+      "epsilon": 0.05,
+      "tau0": 0.2,
+      "xi": 0.0
+    },
+    "max_abs_log_error": 4.721337722933362,
+    "ordering_pass": true,
+    "parameter_policy": "single_universal_parameter_set",
+    "response_scenario": "bare_only",
+    "rms_log_error": 2.650470675424182,
+    "variant_id": "A_raw",
+    "verdict": "BARE_YUKAWA_INVARIANT_VARIANT_TIER_C_ORDERING_ONLY"
+  },
+  "branch": "bhsm-bare-yukawa-residual-autopsy",
+  "claim_labels": [
+    "BARE_YUKAWA_RESIDUAL_AUTOPSY_COMPLETE",
+    "BARE_YUKAWA_INVARIANT_ACTION_VARIANTS_CANDIDATE",
+    "RAW_BARE_ACTION_TIER_C_ORDERING_ONLY_CONFIRMED",
+    "DEGREE_NORMALIZED_ACTION_CANDIDATE",
+    "CHANNEL_DIMENSION_NORMALIZED_ACTION_CANDIDATE",
+    "BRANCH_RELATIVE_ACTION_STRUCTURAL_CANDIDATE_CONTROL",
+    "NO_SECTOR_SPECIFIC_TUNING_GUARDRAIL_REINFORCED"
+  ],
+  "frozen_predictions_changed": false,
+  "notes": [
+    "candidate-only",
+    "quark ratios are scheme-sensitive where applicable",
+    "no frozen predictions changed",
+    "no official predictions changed",
+    "previous Tier C ordering-only result remains valid"
+  ],
+  "official_predictions_changed": false,
+  "parameter_policy": {
+    "branch_relative_is_control_only": true,
+    "forbidden_sector_fit_control_implemented": false,
+    "main_variants_A_to_D": "single_universal_parameter_set",
+    "sector_specific_parameters_used": false
+  },
+  "previous_branch": "bhsm-bare-yukawa-numerical-closure-gate",
+  "previous_gate_verdict": "BARE_YUKAWA_NUMERICAL_GATE_TIER_C_ORDERING_ONLY",
+  "previous_raw_action_result": {
+    "best_parameters": {
+      "beta_eff": 0.0,
+      "epsilon": 0.05,
+      "tau0": 0.2,
+      "xi": 0.0
+    },
+    "max_abs_log_error": 4.6841726114810145,
+    "ordering_pass": true,
+    "response_scenario": "current_candidate_responses",
+    "rms_log_error": 2.7495483280380673,
+    "variant_id": "A_raw"
+  },
+  "residual_autopsy": {
+    "concentration": {
+      "down_sector_scheme_sensitive": true,
+      "largest_mode_class": "light",
+      "largest_sector": "charged_lepton",
+      "pure_fiber_rows": [
+        {
+          "abs_log_residual": 2.3112782463318258,
+          "action_variant": "A_raw",
+          "log_residual": -2.3112782463318258,
+          "mode_class": "middle",
+          "mode_qj": [
+            6,
+            0
+          ],
+          "multiplicative_error": 10.087310485252202,
+          "predicted_ratio": 0.000729056427146548,
+          "ratio_name": "c/t",
+          "reference_ratio": 0.007354218541895883,
+          "response_scenario": "current_candidate_responses",
+          "scheme_sensitive": true,
+          "sector": "up",
+          "sign": "underpredict"
+        }
+      ],
+      "quark_scheme_sensitive": true
+    },
+    "mode_rms": {
+      "light": 3.2995990502654755,
+      "middle": 2.0573473513048386
+    },
+    "sector_rms": {
+      "charged_lepton": 3.556177596223263,
+      "down": 2.605771927526443,
+      "up": 1.8010001639327116
+    },
+    "sign_pattern": {
+      "c/t": "underpredict",
+      "d/b": "overpredict",
+      "e/tau": "overpredict",
+      "mu/tau": "overpredict",
+      "s/b": "overpredict",
+      "u/t": "underpredict"
+    },
+    "worst_residuals": [
+      {
+        "abs_log_residual": 4.6841726114810145,
+        "action_variant": "A_raw",
+        "log_residual": 4.6841726114810145,
+        "mode_class": "light",
+        "mode_qj": [
+          3,
+          3
+        ],
+        "multiplicative_error": 108.22069469524226,
+        "predicted_ratio": 0.03112268910186473,
+        "ratio_name": "e/tau",
+        "reference_ratio": 0.0002875853753250115,
+        "response_scenario": "current_candidate_responses",
+        "scheme_sensitive": false,
+        "sector": "charged_lepton",
+        "sign": "overpredict"
+      },
+      {
+        "abs_log_residual": 3.0944131227722367,
+        "action_variant": "A_raw",
+        "log_residual": 3.0944131227722367,
+        "mode_class": "light",
+        "mode_qj": [
+          4,
+          2
+        ],
+        "multiplicative_error": 22.074279843177013,
+        "predicted_ratio": 0.02466193465732934,
+        "ratio_name": "d/b",
+        "reference_ratio": 0.0011172248803827751,
+        "response_scenario": "current_candidate_responses",
+        "scheme_sensitive": true,
+        "sector": "down",
+        "sign": "overpredict"
+      },
+      {
+        "abs_log_residual": 2.3112782463318258,
+        "action_variant": "A_raw",
+        "log_residual": -2.3112782463318258,
+        "mode_class": "middle",
+        "mode_qj": [
+          6,
+          0
+        ],
+        "multiplicative_error": 10.087310485252202,
+        "predicted_ratio": 0.000729056427146548,
+        "ratio_name": "c/t",
+        "reference_ratio": 0.007354218541895883,
+        "response_scenario": "current_candidate_responses",
+        "scheme_sensitive": true,
+        "sector": "up",
+        "sign": "underpredict"
+      },
+      {
+        "abs_log_residual": 2.001175180284005,
+        "action_variant": "A_raw",
+        "log_residual": 2.001175180284005,
+        "mode_class": "middle",
+        "mode_qj": [
+          0,
+          3
+        ],
+        "multiplicative_error": 7.397744676297983,
+        "predicted_ratio": 0.16529888822158653,
+        "ratio_name": "s/b",
+        "reference_ratio": 0.022344497607655504,
+        "response_scenario": "current_candidate_responses",
+        "scheme_sensitive": true,
+        "sector": "down",
+        "sign": "overpredict"
+      },
+      {
+        "abs_log_residual": 1.830662485990157,
+        "action_variant": "A_raw",
+        "log_residual": 1.830662485990157,
+        "mode_class": "middle",
+        "mode_qj": [
+          1,
+          2
+        ],
+        "multiplicative_error": 6.238017889390407,
+        "predicted_ratio": 0.37093459053213484,
+        "ratio_name": "mu/tau",
+        "reference_ratio": 0.05946353426831603,
+        "response_scenario": "current_candidate_responses",
+        "scheme_sensitive": false,
+        "sector": "charged_lepton",
+        "sign": "overpredict"
+      },
+      {
+        "abs_log_residual": 1.0701383317144504,
+        "action_variant": "A_raw",
+        "log_residual": -1.0701383317144504,
+        "mode_class": "light",
+        "mode_qj": [
+          8,
+          1
+        ],
+        "multiplicative_error": 2.9157828173166482,
+        "predicted_ratio": 4.289744136703305e-06,
+        "ratio_name": "u/t",
+        "reference_ratio": 1.2507962244484336e-05,
+        "response_scenario": "current_candidate_responses",
+        "scheme_sensitive": true,
+        "sector": "up",
+        "sign": "underpredict"
+      }
+    ]
+  },
+  "status": "candidate_only",
+  "variant_results": [
+    {
+      "best_parameters": {
+        "beta_eff": 0.0,
+        "epsilon": 0.05,
+        "tau0": 0.2,
+        "xi": 0.0
+      },
+      "control_only": false,
+      "down_rms_log_error": 2.605771927526443,
+      "lepton_rms_log_error": 3.5833127004005574,
+      "light_mode_rms_log_error": 3.273005175461335,
+      "max_abs_log_error": 4.721337722933362,
+      "middle_mode_rms_log_error": 1.8268625355976702,
+      "ordering_pass": true,
+      "parameter_policy": "single_universal_parameter_set",
+      "primary_evidence_allowed": true,
+      "response_improvement_delta": 0.0,
+      "response_scenario": "bare_only",
+      "rms_log_error": 2.650470675424182,
+      "rows": [
+        {
+          "abs_log_residual": 1.8409861280602535,
+          "action_variant": "A_raw",
+          "log_residual": 1.8409861280602535,
+          "mode_class": "middle",
+          "mode_qj": [
+            1,
+            2
+          ],
+          "multiplicative_error": 6.302750516624672,
+          "predicted_ratio": 0.3747838213299577,
+          "ratio_name": "mu/tau",
+          "reference_ratio": 0.05946353426831603,
+          "response_scenario": "bare_only",
+          "scheme_sensitive": false,
+          "sector": "charged_lepton",
+          "sign": "overpredict"
+        },
+        {
+          "abs_log_residual": 4.721337722933362,
+          "action_variant": "A_raw",
+          "log_residual": 4.721337722933362,
+          "mode_class": "light",
+          "mode_qj": [
+            3,
+            3
+          ],
+          "multiplicative_error": 112.31840311925805,
+          "predicted_ratio": 0.03230113011695777,
+          "ratio_name": "e/tau",
+          "reference_ratio": 0.0002875853753250115,
+          "response_scenario": "bare_only",
+          "scheme_sensitive": false,
+          "sector": "charged_lepton",
+          "sign": "overpredict"
+        },
+        {
+          "abs_log_residual": 1.6181310657718806,
+          "action_variant": "A_raw",
+          "log_residual": -1.6181310657718806,
+          "mode_class": "middle",
+          "mode_qj": [
+            6,
+            0
+          ],
+          "multiplicative_error": 5.043655242626102,
+          "predicted_ratio": 0.001458112854293096,
+          "ratio_name": "c/t",
+          "reference_ratio": 0.007354218541895883,
+          "response_scenario": "bare_only",
+          "scheme_sensitive": true,
+          "sector": "up",
+          "sign": "underpredict"
+        },
+        {
+          "abs_log_residual": 0.5208321873803957,
+          "action_variant": "A_raw",
+          "log_residual": -0.5208321873803957,
+          "mode_class": "light",
+          "mode_qj": [
+            8,
+            1
+          ],
+          "multiplicative_error": 1.6834279944762527,
+          "predicted_ratio": 7.430054796240815e-06,
+          "ratio_name": "u/t",
+          "reference_ratio": 1.2507962244484336e-05,
+          "response_scenario": "bare_only",
+          "scheme_sensitive": true,
+          "sector": "up",
+          "sign": "underpredict"
+        },
+        {
+          "abs_log_residual": 2.001175180284005,
+          "action_variant": "A_raw",
+          "log_residual": 2.001175180284005,
+          "mode_class": "middle",
+          "mode_qj": [
+            0,
+            3
+          ],
+          "multiplicative_error": 7.397744676297983,
+          "predicted_ratio": 0.16529888822158653,
+          "ratio_name": "s/b",
+          "reference_ratio": 0.022344497607655504,
+          "response_scenario": "bare_only",
+          "scheme_sensitive": true,
+          "sector": "down",
+          "sign": "overpredict"
+        },
+        {
+          "abs_log_residual": 3.0944131227722367,
+          "action_variant": "A_raw",
+          "log_residual": 3.0944131227722367,
+          "mode_class": "light",
+          "mode_qj": [
+            4,
+            2
+          ],
+          "multiplicative_error": 22.074279843177013,
+          "predicted_ratio": 0.02466193465732934,
+          "ratio_name": "d/b",
+          "reference_ratio": 0.0011172248803827751,
+          "response_scenario": "bare_only",
+          "scheme_sensitive": true,
+          "sector": "down",
+          "sign": "overpredict"
+        }
+      ],
+      "up_rms_log_error": 1.2020013131081617,
+      "variant_id": "A_raw",
+      "variant_improvement_delta": 0.09907765261388546,
+      "variant_status": "RAW_BARE_ACTION_TIER_C_ORDERING_ONLY_CONFIRMED",
+      "verdict": "BARE_YUKAWA_INVARIANT_VARIANT_TIER_C_ORDERING_ONLY"
+    },
+    {
+      "best_parameters": {
+        "beta_eff": 0.0,
+        "epsilon": 0.075,
+        "tau0": 0.2,
+        "xi": 0.0
+      },
+      "control_only": false,
+      "down_rms_log_error": 2.6854862824401415,
+      "lepton_rms_log_error": 3.607781118427106,
+      "light_mode_rms_log_error": 3.3345143149492262,
+      "max_abs_log_error": 4.759226970704423,
+      "middle_mode_rms_log_error": 1.952007131110677,
+      "ordering_pass": true,
+      "parameter_policy": "single_universal_parameter_set",
+      "primary_evidence_allowed": true,
+      "response_improvement_delta": -0.08168209816922056,
+      "response_scenario": "current_candidate_responses",
+      "rms_log_error": 2.7321527735934024,
+      "rows": [
+        {
+          "abs_log_residual": 1.8390018592372022,
+          "action_variant": "A_raw",
+          "log_residual": 1.8390018592372022,
+          "mode_class": "middle",
+          "mode_qj": [
+            1,
+            2
+          ],
+          "multiplicative_error": 6.2902565650537445,
+          "predicted_ratio": 0.3740408868125732,
+          "ratio_name": "mu/tau",
+          "reference_ratio": 0.05946353426831603,
+          "response_scenario": "current_candidate_responses",
+          "scheme_sensitive": false,
+          "sector": "charged_lepton",
+          "sign": "overpredict"
+        },
+        {
+          "abs_log_residual": 4.759226970704423,
+          "action_variant": "A_raw",
+          "log_residual": 4.759226970704423,
+          "mode_class": "light",
+          "mode_qj": [
+            3,
+            3
+          ],
+          "multiplicative_error": 116.6557127513261,
+          "predicted_ratio": 0.03354847693539685,
+          "ratio_name": "e/tau",
+          "reference_ratio": 0.0002875853753250115,
+          "response_scenario": "current_candidate_responses",
+          "scheme_sensitive": false,
+          "sector": "charged_lepton",
+          "sign": "overpredict"
+        },
+        {
+          "abs_log_residual": 2.0110608094381934,
+          "action_variant": "A_raw",
+          "log_residual": -2.0110608094381934,
+          "mode_class": "middle",
+          "mode_qj": [
+            6,
+            0
+          ],
+          "multiplicative_error": 7.471238705584432,
+          "predicted_ratio": 0.0009843372473695583,
+          "ratio_name": "c/t",
+          "reference_ratio": 0.007354218541895883,
+          "response_scenario": "current_candidate_responses",
+          "scheme_sensitive": true,
+          "sector": "up",
+          "sign": "underpredict"
+        },
+        {
+          "abs_log_residual": 0.5364184439035504,
+          "action_variant": "A_raw",
+          "log_residual": -0.5364184439035504,
+          "mode_class": "light",
+          "mode_qj": [
+            8,
+            1
+          ],
+          "multiplicative_error": 1.7098718802950068,
+          "predicted_ratio": 7.315145882348986e-06,
+          "ratio_name": "u/t",
+          "reference_ratio": 1.2507962244484336e-05,
+          "response_scenario": "current_candidate_responses",
+          "scheme_sensitive": true,
+          "sector": "up",
+          "sign": "underpredict"
+        },
+        {
+          "abs_log_residual": 2.001175180284005,
+          "action_variant": "A_raw",
+          "log_residual": 2.001175180284005,
+          "mode_class": "middle",
+          "mode_qj": [
+            0,
+            3
+          ],
+          "multiplicative_error": 7.397744676297983,
+          "predicted_ratio": 0.16529888822158653,
+          "ratio_name": "s/b",
+          "reference_ratio": 0.022344497607655504,
+          "response_scenario": "current_candidate_responses",
+          "scheme_sensitive": true,
+          "sector": "down",
+          "sign": "overpredict"
+        },
+        {
+          "abs_log_residual": 3.227843094724962,
+          "action_variant": "A_raw",
+          "log_residual": 3.227843094724962,
+          "mode_class": "light",
+          "mode_qj": [
+            4,
+            2
+          ],
+          "multiplicative_error": 25.22518990675628,
+          "predicted_ratio": 0.02818220977620857,
+          "ratio_name": "d/b",
+          "reference_ratio": 0.0011172248803827751,
+          "response_scenario": "current_candidate_responses",
+          "scheme_sensitive": true,
+          "sector": "down",
+          "sign": "overpredict"
+        }
+      ],
+      "up_rms_log_error": 1.4717524122993833,
+      "variant_id": "A_raw",
+      "variant_improvement_delta": 0.017395554444664896,
+      "variant_status": "RAW_BARE_ACTION_TIER_C_ORDERING_ONLY_CONFIRMED",
+      "verdict": "BARE_YUKAWA_INVARIANT_VARIANT_TIER_C_ORDERING_ONLY"
+    },
+    {
+      "best_parameters": {
+        "beta_eff": 0.0,
+        "epsilon": 0.0,
+        "tau0": 5.0,
+        "xi": 0.0
+      },
+      "control_only": false,
+      "down_rms_log_error": 4.970458192890582,
+      "lepton_rms_log_error": 1.30570679249171,
+      "light_mode_rms_log_error": 3.9056193336787466,
+      "max_abs_log_error": 6.102463009393552,
+      "middle_mode_rms_log_error": 2.0149858964337386,
+      "ordering_pass": true,
+      "parameter_policy": "single_universal_parameter_set",
+      "primary_evidence_allowed": true,
+      "response_improvement_delta": -0.4571031806918797,
+      "response_scenario": "bare_only",
+      "rms_log_error": 3.1075738561160615,
+      "rows": [
+        {
+          "abs_log_residual": 0.04461424597408576,
+          "action_variant": "B_target_degree_normalized",
+          "log_residual": 0.04461424597408576,
+          "mode_class": "middle",
+          "mode_qj": [
+            1,
+            2
+          ],
+          "multiplicative_error": 1.0456244282682312,
+          "predicted_ratio": 0.06217652402211632,
+          "ratio_name": "mu/tau",
+          "reference_ratio": 0.05946353426831603,
+          "response_scenario": "bare_only",
+          "scheme_sensitive": false,
+          "sector": "charged_lepton",
+          "sign": "overpredict"
+        },
+        {
+          "abs_log_residual": 1.8460092158421482,
+          "action_variant": "B_target_degree_normalized",
+          "log_residual": -1.8460092158421482,
+          "mode_class": "light",
+          "mode_qj": [
+            3,
+            3
+          ],
+          "multiplicative_error": 6.334489432683016,
+          "predicted_ratio": 4.5399929762484854e-05,
+          "ratio_name": "e/tau",
+          "reference_ratio": 0.0002875853753250115,
+          "response_scenario": "bare_only",
+          "scheme_sensitive": false,
+          "sector": "charged_lepton",
+          "sign": "underpredict"
+        },
+        {
+          "abs_log_residual": 0.08751882087392135,
+          "action_variant": "B_target_degree_normalized",
+          "log_residual": -0.08751882087392135,
+          "mode_class": "middle",
+          "mode_qj": [
+            6,
+            0
+          ],
+          "multiplicative_error": 1.0914628065335126,
+          "predicted_ratio": 0.006737946999085467,
+          "ratio_name": "c/t",
+          "reference_ratio": 0.007354218541895883,
+          "response_scenario": "bare_only",
+          "scheme_sensitive": true,
+          "sector": "up",
+          "sign": "underpredict"
+        },
+        {
+          "abs_log_residual": 2.2613673591048653,
+          "action_variant": "B_target_degree_normalized",
+          "log_residual": 2.2613673591048653,
+          "mode_class": "light",
+          "mode_qj": [
+            8,
+            1
+          ],
+          "multiplicative_error": 9.596201653685476,
+          "predicted_ratio": 0.00012002892797475608,
+          "ratio_name": "u/t",
+          "reference_ratio": 1.2507962244484336e-05,
+          "response_scenario": "bare_only",
+          "scheme_sensitive": true,
+          "sector": "up",
+          "sign": "overpredict"
+        },
+        {
+          "abs_log_residual": 3.488675180284005,
+          "action_variant": "B_target_degree_normalized",
+          "log_residual": 3.488675180284005,
+          "mode_class": "middle",
+          "mode_qj": [
+            0,
+            3
+          ],
+          "multiplicative_error": 32.74254099568482,
+          "predicted_ratio": 0.7316156289466418,
+          "ratio_name": "s/b",
+          "reference_ratio": 0.022344497607655504,
+          "response_scenario": "bare_only",
+          "scheme_sensitive": true,
+          "sector": "down",
+          "sign": "overpredict"
+        },
+        {
+          "abs_log_residual": 6.102463009393552,
+          "action_variant": "B_target_degree_normalized",
+          "log_residual": 6.102463009393552,
+          "mode_class": "light",
+          "mode_qj": [
+            4,
+            2
+          ],
+          "multiplicative_error": 446.9572754486028,
+          "predicted_ratio": 0.4993517885992762,
+          "ratio_name": "d/b",
+          "reference_ratio": 0.0011172248803827751,
+          "response_scenario": "bare_only",
+          "scheme_sensitive": true,
+          "sector": "down",
+          "sign": "overpredict"
+        }
+      ],
+      "up_rms_log_error": 1.6002252773956662,
+      "variant_id": "B_target_degree_normalized",
+      "variant_improvement_delta": -0.35802552807799426,
+      "variant_status": "DEGREE_NORMALIZED_ACTION_CANDIDATE",
+      "verdict": "BARE_YUKAWA_INVARIANT_VARIANT_TIER_C_ORDERING_ONLY"
+    },
+    {
+      "best_parameters": {
+        "beta_eff": 0.0,
+        "epsilon": 0.0,
+        "tau0": 5.0,
+        "xi": 0.0
+      },
+      "control_only": false,
+      "down_rms_log_error": 4.970458192890582,
+      "lepton_rms_log_error": 1.3318260758254392,
+      "light_mode_rms_log_error": 3.8173967539463414,
+      "max_abs_log_error": 6.102463009393552,
+      "middle_mode_rms_log_error": 2.0640954245415815,
+      "ordering_pass": true,
+      "parameter_policy": "single_universal_parameter_set",
+      "primary_evidence_allowed": true,
+      "response_improvement_delta": -0.4181615849365765,
+      "response_scenario": "current_candidate_responses",
+      "rms_log_error": 3.0686322603607583,
+      "rows": [
+        {
+          "abs_log_residual": 0.034290603903989275,
+          "action_variant": "B_target_degree_normalized",
+          "log_residual": 0.034290603903989275,
+          "mode_class": "middle",
+          "mode_qj": [
+            1,
+            2
+          ],
+          "multiplicative_error": 1.0348853047437327,
+          "predicted_ratio": 0.06153793778240563,
+          "ratio_name": "mu/tau",
+          "reference_ratio": 0.05946353426831603,
+          "response_scenario": "current_candidate_responses",
+          "scheme_sensitive": false,
+          "sector": "charged_lepton",
+          "sign": "overpredict"
+        },
+        {
+          "abs_log_residual": 1.8831743272944959,
+          "action_variant": "B_target_degree_normalized",
+          "log_residual": -1.8831743272944959,
+          "mode_class": "light",
+          "mode_qj": [
+            3,
+            3
+          ],
+          "multiplicative_error": 6.574340884230623,
+          "predicted_ratio": 4.374360569206579e-05,
+          "ratio_name": "e/tau",
+          "reference_ratio": 0.0002875853753250115,
+          "response_scenario": "current_candidate_responses",
+          "scheme_sensitive": false,
+          "sector": "charged_lepton",
+          "sign": "underpredict"
+        },
+        {
+          "abs_log_residual": 0.7806660014338667,
+          "action_variant": "B_target_degree_normalized",
+          "log_residual": -0.7806660014338667,
+          "mode_class": "middle",
+          "mode_qj": [
+            6,
+            0
+          ],
+          "multiplicative_error": 2.182925613067025,
+          "predicted_ratio": 0.0033689734995427335,
+          "ratio_name": "c/t",
+          "reference_ratio": 0.007354218541895883,
+          "response_scenario": "current_candidate_responses",
+          "scheme_sensitive": true,
+          "sector": "up",
+          "sign": "underpredict"
+        },
+        {
+          "abs_log_residual": 1.7120612147708107,
+          "action_variant": "B_target_degree_normalized",
+          "log_residual": 1.7120612147708107,
+          "mode_class": "light",
+          "mode_qj": [
+            8,
+            1
+          ],
+          "multiplicative_error": 5.540369607953243,
+          "predicted_ratio": 6.929873387676764e-05,
+          "ratio_name": "u/t",
+          "reference_ratio": 1.2507962244484336e-05,
+          "response_scenario": "current_candidate_responses",
+          "scheme_sensitive": true,
+          "sector": "up",
+          "sign": "overpredict"
+        },
+        {
+          "abs_log_residual": 3.488675180284005,
+          "action_variant": "B_target_degree_normalized",
+          "log_residual": 3.488675180284005,
+          "mode_class": "middle",
+          "mode_qj": [
+            0,
+            3
+          ],
+          "multiplicative_error": 32.74254099568482,
+          "predicted_ratio": 0.7316156289466418,
+          "ratio_name": "s/b",
+          "reference_ratio": 0.022344497607655504,
+          "response_scenario": "current_candidate_responses",
+          "scheme_sensitive": true,
+          "sector": "down",
+          "sign": "overpredict"
+        },
+        {
+          "abs_log_residual": 6.102463009393552,
+          "action_variant": "B_target_degree_normalized",
+          "log_residual": 6.102463009393552,
+          "mode_class": "light",
+          "mode_qj": [
+            4,
+            2
+          ],
+          "multiplicative_error": 446.9572754486028,
+          "predicted_ratio": 0.4993517885992762,
+          "ratio_name": "d/b",
+          "reference_ratio": 0.0011172248803827751,
+          "response_scenario": "current_candidate_responses",
+          "scheme_sensitive": true,
+          "sector": "down",
+          "sign": "overpredict"
+        }
+      ],
+      "up_rms_log_error": 1.3305248980979736,
+      "variant_id": "B_target_degree_normalized",
+      "variant_improvement_delta": -0.31908393232269106,
+      "variant_status": "DEGREE_NORMALIZED_ACTION_CANDIDATE",
+      "verdict": "BARE_YUKAWA_INVARIANT_VARIANT_TIER_C_ORDERING_ONLY"
+    },
+    {
+      "best_parameters": {
+        "beta_eff": 0.01,
+        "epsilon": 0.025,
+        "tau0": 1.0,
+        "xi": 0.0
+      },
+      "control_only": false,
+      "down_rms_log_error": 4.242168127483075,
+      "lepton_rms_log_error": 1.6022925070679233,
+      "light_mode_rms_log_error": 3.1911520556951674,
+      "max_abs_log_error": 5.168810786151742,
+      "middle_mode_rms_log_error": 1.9874573215634246,
+      "ordering_pass": true,
+      "parameter_policy": "single_universal_parameter_set",
+      "primary_evidence_allowed": true,
+      "response_improvement_delta": -0.007859443993227355,
+      "response_scenario": "bare_only",
+      "rms_log_error": 2.658330119417409,
+      "rows": [
+        {
+          "abs_log_residual": 1.1445422630050142,
+          "action_variant": "C_mixed_raw_degree",
+          "log_residual": 1.1445422630050142,
+          "mode_class": "middle",
+          "mode_qj": [
+            1,
+            2
+          ],
+          "multiplicative_error": 3.14100327433246,
+          "predicted_ratio": 0.18677515584016108,
+          "ratio_name": "mu/tau",
+          "reference_ratio": 0.05946353426831603,
+          "response_scenario": "bare_only",
+          "scheme_sensitive": false,
+          "sector": "charged_lepton",
+          "sign": "overpredict"
+        },
+        {
+          "abs_log_residual": 1.9556854462329525,
+          "action_variant": "C_mixed_raw_degree",
+          "log_residual": 1.9556854462329525,
+          "mode_class": "light",
+          "mode_qj": [
+            3,
+            3
+          ],
+          "multiplicative_error": 7.068762620208736,
+          "predicted_ratio": 0.002032872751216141,
+          "ratio_name": "e/tau",
+          "reference_ratio": 0.0002875853753250115,
+          "response_scenario": "bare_only",
+          "scheme_sensitive": false,
+          "sector": "charged_lepton",
+          "sign": "overpredict"
+        },
+        {
+          "abs_log_residual": 1.1245474301582885,
+          "action_variant": "C_mixed_raw_degree",
+          "log_residual": -1.1245474301582885,
+          "mode_class": "middle",
+          "mode_qj": [
+            6,
+            0
+          ],
+          "multiplicative_error": 3.0788231510628763,
+          "predicted_ratio": 0.002388645979668253,
+          "ratio_name": "c/t",
+          "reference_ratio": 0.007354218541895883,
+          "response_scenario": "bare_only",
+          "scheme_sensitive": true,
+          "sector": "up",
+          "sign": "underpredict"
+        },
+        {
+          "abs_log_residual": 0.09509900134340975,
+          "action_variant": "C_mixed_raw_degree",
+          "log_residual": -0.09509900134340975,
+          "mode_class": "light",
+          "mode_qj": [
+            8,
+            1
+          ],
+          "multiplicative_error": 1.099767728219255,
+          "predicted_ratio": 1.1373276305113298e-05,
+          "ratio_name": "u/t",
+          "reference_ratio": 1.2507962244484336e-05,
+          "response_scenario": "bare_only",
+          "scheme_sensitive": true,
+          "sector": "up",
+          "sign": "underpredict"
+        },
+        {
+          "abs_log_residual": 3.045550180284005,
+          "action_variant": "C_mixed_raw_degree",
+          "log_residual": 3.045550180284005,
+          "mode_class": "middle",
+          "mode_qj": [
+            0,
+            3
+          ],
+          "multiplicative_error": 21.021593688247744,
+          "predicted_ratio": 0.4697169498761578,
+          "ratio_name": "s/b",
+          "reference_ratio": 0.022344497607655504,
+          "response_scenario": "bare_only",
+          "scheme_sensitive": true,
+          "sector": "down",
+          "sign": "overpredict"
+        },
+        {
+          "abs_log_residual": 5.168810786151742,
+          "action_variant": "C_mixed_raw_degree",
+          "log_residual": 5.168810786151742,
+          "mode_class": "light",
+          "mode_qj": [
+            4,
+            2
+          ],
+          "multiplicative_error": 175.70576146590332,
+          "predicted_ratio": 0.1963028483363082,
+          "ratio_name": "d/b",
+          "reference_ratio": 0.0011172248803827751,
+          "response_scenario": "bare_only",
+          "scheme_sensitive": true,
+          "sector": "down",
+          "sign": "overpredict"
+        }
+      ],
+      "up_rms_log_error": 0.7980133904678933,
+      "variant_id": "C_mixed_raw_degree",
+      "variant_improvement_delta": 0.0912182086206581,
+      "variant_status": "MIXED_RAW_DEGREE_ACTION_CANDIDATE",
+      "verdict": "BARE_YUKAWA_INVARIANT_VARIANT_TIER_C_ORDERING_ONLY"
+    },
+    {
+      "best_parameters": {
+        "beta_eff": 0.01,
+        "epsilon": 0.05,
+        "tau0": 1.0,
+        "xi": 0.0
+      },
+      "control_only": false,
+      "down_rms_log_error": 4.279747753466514,
+      "lepton_rms_log_error": 1.6733295750216313,
+      "light_mode_rms_log_error": 3.247586678928316,
+      "max_abs_log_error": 5.230402065422447,
+      "middle_mode_rms_log_error": 2.0740018643856857,
+      "ordering_pass": true,
+      "parameter_policy": "single_universal_parameter_set",
+      "primary_evidence_allowed": true,
+      "response_improvement_delta": -0.07425894149452716,
+      "response_scenario": "current_candidate_responses",
+      "rms_log_error": 2.724729616918709,
+      "rows": [
+        {
+          "abs_log_residual": 1.149637512970799,
+          "action_variant": "C_mixed_raw_degree",
+          "log_residual": 1.149637512970799,
+          "mode_class": "middle",
+          "mode_qj": [
+            1,
+            2
+          ],
+          "multiplicative_error": 3.1570483131875164,
+          "predicted_ratio": 0.1877292505579552,
+          "ratio_name": "mu/tau",
+          "reference_ratio": 0.05946353426831603,
+          "response_scenario": "current_candidate_responses",
+          "scheme_sensitive": false,
+          "sector": "charged_lepton",
+          "sign": "overpredict"
+        },
+        {
+          "abs_log_residual": 2.0684287084776365,
+          "action_variant": "C_mixed_raw_degree",
+          "log_residual": 2.0684287084776365,
+          "mode_class": "light",
+          "mode_qj": [
+            3,
+            3
+          ],
+          "multiplicative_error": 7.912380688370145,
+          "predicted_ratio": 0.002275484969979301,
+          "ratio_name": "e/tau",
+          "reference_ratio": 0.0002875853753250115,
+          "response_scenario": "current_candidate_responses",
+          "scheme_sensitive": false,
+          "sector": "charged_lepton",
+          "sign": "overpredict"
+        },
+        {
+          "abs_log_residual": 1.519015763107243,
+          "action_variant": "C_mixed_raw_degree",
+          "log_residual": -1.519015763107243,
+          "mode_class": "middle",
+          "mode_qj": [
+            6,
+            0
+          ],
+          "multiplicative_error": 4.567727256304884,
+          "predicted_ratio": 0.0016100388944512338,
+          "ratio_name": "c/t",
+          "reference_ratio": 0.007354218541895883,
+          "response_scenario": "current_candidate_responses",
+          "scheme_sensitive": true,
+          "sector": "up",
+          "sign": "underpredict"
+        },
+        {
+          "abs_log_residual": 0.07038908600121613,
+          "action_variant": "C_mixed_raw_degree",
+          "log_residual": -0.07038908600121613,
+          "mode_class": "light",
+          "mode_qj": [
+            8,
+            1
+          ],
+          "multiplicative_error": 1.0729255603666517,
+          "predicted_ratio": 1.1657809923187943e-05,
+          "ratio_name": "u/t",
+          "reference_ratio": 1.2507962244484336e-05,
+          "response_scenario": "current_candidate_responses",
+          "scheme_sensitive": true,
+          "sector": "up",
+          "sign": "underpredict"
+        },
+        {
+          "abs_log_residual": 3.045550180284005,
+          "action_variant": "C_mixed_raw_degree",
+          "log_residual": 3.045550180284005,
+          "mode_class": "middle",
+          "mode_qj": [
+            0,
+            3
+          ],
+          "multiplicative_error": 21.021593688247744,
+          "predicted_ratio": 0.4697169498761578,
+          "ratio_name": "s/b",
+          "reference_ratio": 0.022344497607655504,
+          "response_scenario": "current_candidate_responses",
+          "scheme_sensitive": true,
+          "sector": "down",
+          "sign": "overpredict"
+        },
+        {
+          "abs_log_residual": 5.230402065422447,
+          "action_variant": "C_mixed_raw_degree",
+          "log_residual": 5.230402065422447,
+          "mode_class": "light",
+          "mode_qj": [
+            4,
+            2
+          ],
+          "multiplicative_error": 186.86792154779425,
+          "predicted_ratio": 0.20877349129861228,
+          "ratio_name": "d/b",
+          "reference_ratio": 0.0011172248803827751,
+          "response_scenario": "current_candidate_responses",
+          "scheme_sensitive": true,
+          "sector": "down",
+          "sign": "overpredict"
+        }
+      ],
+      "up_rms_log_error": 1.0752589250958036,
+      "variant_id": "C_mixed_raw_degree",
+      "variant_improvement_delta": 0.024818711119358294,
+      "variant_status": "MIXED_RAW_DEGREE_ACTION_CANDIDATE",
+      "verdict": "BARE_YUKAWA_INVARIANT_VARIANT_TIER_C_ORDERING_ONLY"
+    },
+    {
+      "best_parameters": {
+        "beta_eff": 0.0,
+        "epsilon": 0.0,
+        "tau0": 5.0,
+        "xi": 0.0
+      },
+      "control_only": false,
+      "down_rms_log_error": 4.966710164480168,
+      "lepton_rms_log_error": 2.1996414084878135,
+      "light_mode_rms_log_error": 4.114195602746323,
+      "max_abs_log_error": 6.0976067545372965,
+      "middle_mode_rms_log_error": 2.024866765565608,
+      "ordering_pass": true,
+      "parameter_policy": "single_universal_parameter_set",
+      "primary_evidence_allowed": true,
+      "response_improvement_delta": -0.5919582656591311,
+      "response_scenario": "bare_only",
+      "rms_log_error": 3.242428941083313,
+      "rows": [
+        {
+          "abs_log_residual": 0.3026079762481365,
+          "action_variant": "D_channel_dimension_normalized",
+          "log_residual": -0.3026079762481365,
+          "mode_class": "middle",
+          "mode_qj": [
+            1,
+            2
+          ],
+          "multiplicative_error": 1.3533838018372042,
+          "predicted_ratio": 0.04393693362340742,
+          "ratio_name": "mu/tau",
+          "reference_ratio": 0.05946353426831603,
+          "response_scenario": "bare_only",
+          "scheme_sensitive": false,
+          "sector": "charged_lepton",
+          "sign": "underpredict"
+        },
+        {
+          "abs_log_residual": 3.096009215842148,
+          "action_variant": "D_channel_dimension_normalized",
+          "log_residual": -3.096009215842148,
+          "mode_class": "light",
+          "mode_qj": [
+            3,
+            3
+          ],
+          "multiplicative_error": 22.10954058048162,
+          "predicted_ratio": 1.300729765406762e-05,
+          "ratio_name": "e/tau",
+          "reference_ratio": 0.0002875853753250115,
+          "response_scenario": "bare_only",
+          "scheme_sensitive": false,
+          "sector": "charged_lepton",
+          "sign": "underpredict"
+        },
+        {
+          "abs_log_residual": 0.2303759637310637,
+          "action_variant": "D_channel_dimension_normalized",
+          "log_residual": -0.2303759637310637,
+          "mode_class": "middle",
+          "mode_qj": [
+            6,
+            0
+          ],
+          "multiplicative_error": 1.259073286847031,
+          "predicted_ratio": 0.0058409773431952515,
+          "ratio_name": "c/t",
+          "reference_ratio": 0.007354218541895883,
+          "response_scenario": "bare_only",
+          "scheme_sensitive": true,
+          "sector": "up",
+          "sign": "underpredict"
+        },
+        {
+          "abs_log_residual": 2.0034308511683556,
+          "action_variant": "D_channel_dimension_normalized",
+          "log_residual": 2.0034308511683556,
+          "mode_class": "light",
+          "mode_qj": [
+            8,
+            1
+          ],
+          "multiplicative_error": 7.4144503877843775,
+          "predicted_ratio": 9.273966551400924e-05,
+          "ratio_name": "u/t",
+          "reference_ratio": 1.2507962244484336e-05,
+          "response_scenario": "bare_only",
+          "scheme_sensitive": true,
+          "sector": "up",
+          "sign": "overpredict"
+        },
+        {
+          "abs_log_residual": 3.4864898655986902,
+          "action_variant": "D_channel_dimension_normalized",
+          "log_residual": 3.4864898655986902,
+          "mode_class": "middle",
+          "mode_qj": [
+            0,
+            3
+          ],
+          "multiplicative_error": 32.67106636573618,
+          "predicted_ratio": 0.7300185642487463,
+          "ratio_name": "s/b",
+          "reference_ratio": 0.022344497607655504,
+          "response_scenario": "bare_only",
+          "scheme_sensitive": true,
+          "sector": "down",
+          "sign": "overpredict"
+        },
+        {
+          "abs_log_residual": 6.0976067545372965,
+          "action_variant": "D_channel_dimension_normalized",
+          "log_residual": 6.0976067545372965,
+          "mode_class": "light",
+          "mode_qj": [
+            4,
+            2
+          ],
+          "multiplicative_error": 444.79199883205524,
+          "predicted_ratio": 0.4969326876903585,
+          "ratio_name": "d/b",
+          "reference_ratio": 0.0011172248803827751,
+          "response_scenario": "bare_only",
+          "scheme_sensitive": true,
+          "sector": "down",
+          "sign": "overpredict"
+        }
+      ],
+      "up_rms_log_error": 1.4259747999312924,
+      "variant_id": "D_channel_dimension_normalized",
+      "variant_improvement_delta": -0.49288061304524566,
+      "variant_status": "CHANNEL_DIMENSION_NORMALIZED_ACTION_CANDIDATE",
+      "verdict": "BARE_YUKAWA_INVARIANT_VARIANT_TIER_C_ORDERING_ONLY"
+    },
+    {
+      "best_parameters": {
+        "beta_eff": 0.0,
+        "epsilon": 0.025,
+        "tau0": 5.0,
+        "xi": 0.0
+      },
+      "control_only": false,
+      "down_rms_log_error": 4.983266626191574,
+      "lepton_rms_log_error": 2.0336880980681302,
+      "light_mode_rms_log_error": 4.053470882708909,
+      "max_abs_log_error": 6.12456373568821,
+      "middle_mode_rms_log_error": 2.056873212989725,
+      "ordering_pass": true,
+      "parameter_policy": "single_universal_parameter_set",
+      "primary_evidence_allowed": true,
+      "response_improvement_delta": -0.5636663480460076,
+      "response_scenario": "current_candidate_responses",
+      "rms_log_error": 3.2141370234701894,
+      "rows": [
+        {
+          "abs_log_residual": 0.282815615938697,
+          "action_variant": "D_channel_dimension_normalized",
+          "log_residual": -0.282815615938697,
+          "mode_class": "middle",
+          "mode_qj": [
+            1,
+            2
+          ],
+          "multiplicative_error": 1.3268604873353755,
+          "predicted_ratio": 0.04481521217632438,
+          "ratio_name": "mu/tau",
+          "reference_ratio": 0.05946353426831603,
+          "response_scenario": "current_candidate_responses",
+          "scheme_sensitive": false,
+          "sector": "charged_lepton",
+          "sign": "underpredict"
+        },
+        {
+          "abs_log_residual": 2.862130305878674,
+          "action_variant": "D_channel_dimension_normalized",
+          "log_residual": -2.862130305878674,
+          "mode_class": "light",
+          "mode_qj": [
+            3,
+            3
+          ],
+          "multiplicative_error": 17.498764980192405,
+          "predicted_ratio": 1.643460985106901e-05,
+          "ratio_name": "e/tau",
+          "reference_ratio": 0.0002875853753250115,
+          "response_scenario": "current_candidate_responses",
+          "scheme_sensitive": false,
+          "sector": "charged_lepton",
+          "sign": "underpredict"
+        },
+        {
+          "abs_log_residual": 0.6757114675679717,
+          "action_variant": "D_channel_dimension_normalized",
+          "log_residual": -0.6757114675679717,
+          "mode_class": "middle",
+          "mode_qj": [
+            6,
+            0
+          ],
+          "multiplicative_error": 1.9654308189356804,
+          "predicted_ratio": 0.003741784483606672,
+          "ratio_name": "c/t",
+          "reference_ratio": 0.007354218541895883,
+          "response_scenario": "current_candidate_responses",
+          "scheme_sensitive": true,
+          "sector": "up",
+          "sign": "underpredict"
+        },
+        {
+          "abs_log_residual": 1.8946787987863705,
+          "action_variant": "D_channel_dimension_normalized",
+          "log_residual": 1.8946787987863705,
+          "mode_class": "light",
+          "mode_qj": [
+            8,
+            1
+          ],
+          "multiplicative_error": 6.650411941147275,
+          "predicted_ratio": 8.31831014701379e-05,
+          "ratio_name": "u/t",
+          "reference_ratio": 1.2507962244484336e-05,
+          "response_scenario": "current_candidate_responses",
+          "scheme_sensitive": true,
+          "sector": "up",
+          "sign": "overpredict"
+        },
+        {
+          "abs_log_residual": 3.4864898655986902,
+          "action_variant": "D_channel_dimension_normalized",
+          "log_residual": 3.4864898655986902,
+          "mode_class": "middle",
+          "mode_qj": [
+            0,
+            3
+          ],
+          "multiplicative_error": 32.67106636573618,
+          "predicted_ratio": 0.7300185642487463,
+          "ratio_name": "s/b",
+          "reference_ratio": 0.022344497607655504,
+          "response_scenario": "current_candidate_responses",
+          "scheme_sensitive": true,
+          "sector": "down",
+          "sign": "overpredict"
+        },
+        {
+          "abs_log_residual": 6.12456373568821,
+          "action_variant": "D_channel_dimension_normalized",
+          "log_residual": 6.12456373568821,
+          "mode_class": "light",
+          "mode_qj": [
+            4,
+            2
+          ],
+          "multiplicative_error": 456.94532084224863,
+          "predicted_ratio": 0.51051068141945,
+          "ratio_name": "d/b",
+          "reference_ratio": 0.0011172248803827751,
+          "response_scenario": "current_candidate_responses",
+          "scheme_sensitive": true,
+          "sector": "down",
+          "sign": "overpredict"
+        }
+      ],
+      "up_rms_log_error": 1.4223912503199367,
+      "variant_id": "D_channel_dimension_normalized",
+      "variant_improvement_delta": -0.4645886954321221,
+      "variant_status": "CHANNEL_DIMENSION_NORMALIZED_ACTION_CANDIDATE",
+      "verdict": "BARE_YUKAWA_INVARIANT_VARIANT_TIER_C_ORDERING_ONLY"
+    },
+    {
+      "best_parameters": {
+        "beta_eff": 0.0,
+        "epsilon": 0.05,
+        "tau0": 0.5,
+        "xi": 0.0
+      },
+      "control_only": true,
+      "down_rms_log_error": 3.050678075205342,
+      "lepton_rms_log_error": 2.4566295632898787,
+      "light_mode_rms_log_error": 1.9928040708260322,
+      "max_abs_log_error": 4.912481179126079,
+      "middle_mode_rms_log_error": 3.9390058315186263,
+      "ordering_pass": true,
+      "parameter_policy": "single_universal_parameter_set",
+      "primary_evidence_allowed": false,
+      "response_improvement_delta": -0.4709901208568277,
+      "response_scenario": "bare_only",
+      "rms_log_error": 3.1214607962810095,
+      "rows": [
+        {
+          "abs_log_residual": 2.8223920237518634,
+          "action_variant": "E_branch_relative",
+          "log_residual": 2.8223920237518634,
+          "mode_class": "middle",
+          "mode_qj": [
+            1,
+            2
+          ],
+          "multiplicative_error": 16.81702933242618,
+          "predicted_ratio": 1.0,
+          "ratio_name": "mu/tau",
+          "reference_ratio": 0.05946353426831603,
+          "response_scenario": "bare_only",
+          "scheme_sensitive": false,
+          "sector": "charged_lepton",
+          "sign": "overpredict"
+        },
+        {
+          "abs_log_residual": 2.025872870325653,
+          "action_variant": "E_branch_relative",
+          "log_residual": 2.025872870325653,
+          "mode_class": "light",
+          "mode_qj": [
+            3,
+            3
+          ],
+          "multiplicative_error": 7.58272679403353,
+          "predicted_ratio": 0.0021806813310491537,
+          "ratio_name": "e/tau",
+          "reference_ratio": 0.0002875853753250115,
+          "response_scenario": "bare_only",
+          "scheme_sensitive": false,
+          "sector": "charged_lepton",
+          "sign": "overpredict"
+        },
+        {
+          "abs_log_residual": 4.912481179126079,
+          "action_variant": "E_branch_relative",
+          "log_residual": 4.912481179126079,
+          "mode_class": "middle",
+          "mode_qj": [
+            6,
+            0
+          ],
+          "multiplicative_error": 135.97637795275594,
+          "predicted_ratio": 1.0,
+          "ratio_name": "c/t",
+          "reference_ratio": 0.007354218541895883,
+          "response_scenario": "bare_only",
+          "scheme_sensitive": true,
+          "sector": "up",
+          "sign": "overpredict"
+        },
+        {
+          "abs_log_residual": 1.9092675615300538,
+          "action_variant": "E_branch_relative",
+          "log_residual": -1.9092675615300538,
+          "mode_class": "light",
+          "mode_qj": [
+            8,
+            1
+          ],
+          "multiplicative_error": 6.7481443874637606,
+          "predicted_ratio": 1.853540992353508e-06,
+          "ratio_name": "u/t",
+          "reference_ratio": 1.2507962244484336e-05,
+          "response_scenario": "bare_only",
+          "scheme_sensitive": true,
+          "sector": "up",
+          "sign": "underpredict"
+        },
+        {
+          "abs_log_residual": 3.8011751802840053,
+          "action_variant": "E_branch_relative",
+          "log_residual": 3.8011751802840053,
+          "mode_class": "middle",
+          "mode_qj": [
+            0,
+            3
+          ],
+          "multiplicative_error": 44.75374732334048,
+          "predicted_ratio": 1.0,
+          "ratio_name": "s/b",
+          "reference_ratio": 0.022344497607655504,
+          "response_scenario": "bare_only",
+          "scheme_sensitive": true,
+          "sector": "down",
+          "sign": "overpredict"
+        },
+        {
+          "abs_log_residual": 2.0406716261735984,
+          "action_variant": "E_branch_relative",
+          "log_residual": 2.0406716261735984,
+          "mode_class": "light",
+          "mode_qj": [
+            4,
+            2
+          ],
+          "multiplicative_error": 7.695776148242871,
+          "predicted_ratio": 0.008597912586673254,
+          "ratio_name": "d/b",
+          "reference_ratio": 0.0011172248803827751,
+          "response_scenario": "bare_only",
+          "scheme_sensitive": true,
+          "sector": "down",
+          "sign": "overpredict"
+        }
+      ],
+      "up_rms_log_error": 3.726779706179242,
+      "variant_id": "E_branch_relative",
+      "variant_improvement_delta": -0.3719124682429422,
+      "variant_status": "BRANCH_RELATIVE_ACTION_STRUCTURAL_CANDIDATE_CONTROL",
+      "verdict": "BARE_YUKAWA_INVARIANT_VARIANT_TIER_D_FAIL"
+    },
+    {
+      "best_parameters": {
+        "beta_eff": 0.0,
+        "epsilon": 0.075,
+        "tau0": 0.5,
+        "xi": 0.0
+      },
+      "control_only": true,
+      "down_rms_log_error": 3.169067643657052,
+      "lepton_rms_log_error": 2.505383028913961,
+      "light_mode_rms_log_error": 2.1446170848386474,
+      "max_abs_log_error": 4.219333998566134,
+      "middle_mode_rms_log_error": 3.6587539192971845,
+      "ordering_pass": true,
+      "parameter_policy": "single_universal_parameter_set",
+      "primary_evidence_allowed": false,
+      "response_improvement_delta": -0.34835098337401416,
+      "response_scenario": "current_candidate_responses",
+      "rms_log_error": 2.998821658798196,
+      "rows": [
+        {
+          "abs_log_residual": 2.8120683816817666,
+          "action_variant": "E_branch_relative",
+          "log_residual": 2.8120683816817666,
+          "mode_class": "middle",
+          "mode_qj": [
+            1,
+            2
+          ],
+          "multiplicative_error": 16.644309424174654,
+          "predicted_ratio": 0.9897294638168652,
+          "ratio_name": "mu/tau",
+          "reference_ratio": 0.05946353426831603,
+          "response_scenario": "current_candidate_responses",
+          "scheme_sensitive": false,
+          "sector": "charged_lepton",
+          "sign": "overpredict"
+        },
+        {
+          "abs_log_residual": 2.1554952238142118,
+          "action_variant": "E_branch_relative",
+          "log_residual": 2.1554952238142118,
+          "mode_class": "light",
+          "mode_qj": [
+            3,
+            3
+          ],
+          "multiplicative_error": 8.632163973806927,
+          "predicted_ratio": 0.002482484116274308,
+          "ratio_name": "e/tau",
+          "reference_ratio": 0.0002875853753250115,
+          "response_scenario": "current_candidate_responses",
+          "scheme_sensitive": false,
+          "sector": "charged_lepton",
+          "sign": "overpredict"
+        },
+        {
+          "abs_log_residual": 4.219333998566134,
+          "action_variant": "E_branch_relative",
+          "log_residual": 4.219333998566134,
+          "mode_class": "middle",
+          "mode_qj": [
+            6,
+            0
+          ],
+          "multiplicative_error": 67.98818897637796,
+          "predicted_ratio": 0.5,
+          "ratio_name": "c/t",
+          "reference_ratio": 0.007354218541895883,
+          "response_scenario": "current_candidate_responses",
+          "scheme_sensitive": true,
+          "sector": "up",
+          "sign": "overpredict"
+        },
+        {
+          "abs_log_residual": 1.8748175785709376,
+          "action_variant": "E_branch_relative",
+          "log_residual": -1.8748175785709376,
+          "mode_class": "light",
+          "mode_qj": [
+            8,
+            1
+          ],
+          "multiplicative_error": 6.51962969167946,
+          "predicted_ratio": 1.9185080803664904e-06,
+          "ratio_name": "u/t",
+          "reference_ratio": 1.2507962244484336e-05,
+          "response_scenario": "current_candidate_responses",
+          "scheme_sensitive": true,
+          "sector": "up",
+          "sign": "underpredict"
+        },
+        {
+          "abs_log_residual": 3.8011751802840053,
+          "action_variant": "E_branch_relative",
+          "log_residual": 3.8011751802840053,
+          "mode_class": "middle",
+          "mode_qj": [
+            0,
+            3
+          ],
+          "multiplicative_error": 44.75374732334048,
+          "predicted_ratio": 1.0,
+          "ratio_name": "s/b",
+          "reference_ratio": 0.022344497607655504,
+          "response_scenario": "current_candidate_responses",
+          "scheme_sensitive": true,
+          "sector": "down",
+          "sign": "overpredict"
+        },
+        {
+          "abs_log_residual": 2.3742465560554114,
+          "action_variant": "E_branch_relative",
+          "log_residual": 2.3742465560554114,
+          "mode_class": "light",
+          "mode_qj": [
+            4,
+            2
+          ],
+          "multiplicative_error": 10.742915951082502,
+          "predicted_ratio": 0.012002252988410355,
+          "ratio_name": "d/b",
+          "reference_ratio": 0.0011172248803827751,
+          "response_scenario": "current_candidate_responses",
+          "scheme_sensitive": true,
+          "sector": "down",
+          "sign": "overpredict"
+        }
+      ],
+      "up_rms_log_error": 3.2647909844563303,
+      "variant_id": "E_branch_relative",
+      "variant_improvement_delta": -0.2492733307601287,
+      "variant_status": "BRANCH_RELATIVE_ACTION_STRUCTURAL_CANDIDATE_CONTROL",
+      "verdict": "BARE_YUKAWA_INVARIANT_VARIANT_TIER_D_FAIL"
+    }
+  ]
+}

@@ -1,0 +1,238 @@
+{
+  "allowed_verdicts": [
+    "BARE_YUKAWA_NUMERICAL_GATE_TIER_A_STRONG",
+    "BARE_YUKAWA_NUMERICAL_GATE_TIER_B_PLAUSIBLE",
+    "BARE_YUKAWA_NUMERICAL_GATE_TIER_C_ORDERING_ONLY",
+    "BARE_YUKAWA_NUMERICAL_GATE_TIER_D_FAIL"
+  ],
+  "branch": "bhsm-bare-yukawa-numerical-closure-gate",
+  "claim_labels": [
+    "BARE_YUKAWA_NUMERICAL_CLOSURE_GATE_CANDIDATE",
+    "UNIVERSAL_BARE_YUKAWA_PARAMETER_SCAN_CANDIDATE",
+    "BARE_YUKAWA_ORDERING_GATE",
+    "BARE_YUKAWA_LOG_SHAPE_GATE",
+    "NO_SECTOR_SPECIFIC_TUNING_GUARDRAIL",
+    "QUARK_RATIO_SCHEME_SENSITIVITY_GUARDRAIL"
+  ],
+  "forbidden_sector_fit_control": {
+    "implemented": false,
+    "status": "FORBIDDEN_SECTOR_FIT_CONTROL",
+    "used_as_evidence": false
+  },
+  "frozen_predictions_changed": false,
+  "main_scan": {
+    "all_charged_ordering_pass": true,
+    "best_parameters": {
+      "beta_eff": 0.0,
+      "epsilon": 0.05,
+      "tau0": 0.2,
+      "xi": 0.0
+    },
+    "charged_lepton_ordering_pass": true,
+    "down_ordering_pass": true,
+    "grid_size": 14994,
+    "max_abs_log_error": 4.6841726114810145,
+    "ordering_pass": true,
+    "parameter_policy": "single_universal_parameter_set",
+    "response_scenario": "current_candidate_responses",
+    "rms_log_error": 2.7495483280380673,
+    "up_ordering_pass": true
+  },
+  "notes": [
+    "candidate-only",
+    "quark ratios are scheme-sensitive where applicable",
+    "no frozen predictions changed",
+    "no official prediction values are updated",
+    "the official dressed candidate rule remains unchanged"
+  ],
+  "official_predictions_changed": false,
+  "parameter_guardrails": {
+    "uses_sector_specific_beta": false,
+    "uses_sector_specific_epsilon": false,
+    "uses_sector_specific_tau": false,
+    "uses_sector_specific_xi": false,
+    "uses_single_universal_parameter_set": true
+  },
+  "references": [
+    {
+      "j": 2,
+      "label": "middle",
+      "q": 1,
+      "reference": 0.05946353426831603,
+      "reference_label": "repo_prediction_ledger",
+      "scheme_sensitive": false,
+      "sector": "charged_lepton"
+    },
+    {
+      "j": 3,
+      "label": "light",
+      "q": 3,
+      "reference": 0.0002875853753250115,
+      "reference_label": "repo_prediction_ledger",
+      "scheme_sensitive": false,
+      "sector": "charged_lepton"
+    },
+    {
+      "j": 0,
+      "label": "middle",
+      "q": 6,
+      "reference": 0.007354218541895883,
+      "reference_label": "repo_prediction_ledger_scheme_sensitive",
+      "scheme_sensitive": true,
+      "sector": "up"
+    },
+    {
+      "j": 1,
+      "label": "light",
+      "q": 8,
+      "reference": 1.2507962244484336e-05,
+      "reference_label": "repo_prediction_ledger_scheme_sensitive",
+      "scheme_sensitive": true,
+      "sector": "up"
+    },
+    {
+      "j": 3,
+      "label": "middle",
+      "q": 0,
+      "reference": 0.022344497607655504,
+      "reference_label": "repo_prediction_ledger_scheme_sensitive",
+      "scheme_sensitive": true,
+      "sector": "down"
+    },
+    {
+      "j": 2,
+      "label": "light",
+      "q": 4,
+      "reference": 0.0011172248803827751,
+      "reference_label": "repo_prediction_ledger_scheme_sensitive",
+      "scheme_sensitive": true,
+      "sector": "down"
+    }
+  ],
+  "scenario_comparison": {
+    "bare_only": {
+      "best_parameters": {
+        "beta_eff": 0.0,
+        "epsilon": 0.05,
+        "tau0": 0.2,
+        "xi": 0.0
+      },
+      "max_abs_log_error": 4.721337722933362,
+      "ordering_pass": true,
+      "rms_log_error": 2.650470675424182,
+      "verdict": "BARE_YUKAWA_NUMERICAL_GATE_TIER_C_ORDERING_ONLY"
+    },
+    "current_candidate_responses": {
+      "best_parameters": {
+        "beta_eff": 0.0,
+        "epsilon": 0.05,
+        "tau0": 0.2,
+        "xi": 0.0
+      },
+      "max_abs_log_error": 4.6841726114810145,
+      "ordering_pass": true,
+      "rms_log_error": 2.7495483280380673,
+      "verdict": "BARE_YUKAWA_NUMERICAL_GATE_TIER_C_ORDERING_ONLY"
+    }
+  },
+  "sector_results": {
+    "charged_lepton": {
+      "max_abs_log_error": 4.6841726114810145,
+      "ordering_pass": true,
+      "rms_log_error": 3.556177596223263,
+      "rows": [
+        {
+          "absolute_log_error": 1.830662485990157,
+          "j": 2,
+          "label": "middle",
+          "log_error": 1.830662485990157,
+          "predicted": 0.37093459053213484,
+          "q": 1,
+          "reference": 0.05946353426831603,
+          "response_factor": 0.9897294638168652,
+          "scheme_sensitive": false,
+          "sector": "charged_lepton"
+        },
+        {
+          "absolute_log_error": 4.6841726114810145,
+          "j": 3,
+          "label": "light",
+          "log_error": 4.6841726114810145,
+          "predicted": 0.03112268910186473,
+          "q": 3,
+          "reference": 0.0002875853753250115,
+          "response_factor": 0.9635170345177995,
+          "scheme_sensitive": false,
+          "sector": "charged_lepton"
+        }
+      ],
+      "scheme_sensitive": false
+    },
+    "down": {
+      "max_abs_log_error": 3.0944131227722367,
+      "ordering_pass": true,
+      "rms_log_error": 2.605771927526443,
+      "rows": [
+        {
+          "absolute_log_error": 2.001175180284005,
+          "j": 3,
+          "label": "middle",
+          "log_error": 2.001175180284005,
+          "predicted": 0.16529888822158653,
+          "q": 0,
+          "reference": 0.022344497607655504,
+          "response_factor": 1.0,
+          "scheme_sensitive": true,
+          "sector": "down"
+        },
+        {
+          "absolute_log_error": 3.0944131227722367,
+          "j": 2,
+          "label": "light",
+          "log_error": 3.0944131227722367,
+          "predicted": 0.02466193465732934,
+          "q": 4,
+          "reference": 0.0011172248803827751,
+          "response_factor": 1.0,
+          "scheme_sensitive": true,
+          "sector": "down"
+        }
+      ],
+      "scheme_sensitive": true
+    },
+    "up": {
+      "max_abs_log_error": 2.3112782463318258,
+      "ordering_pass": true,
+      "rms_log_error": 1.8010001639327116,
+      "rows": [
+        {
+          "absolute_log_error": 2.3112782463318258,
+          "j": 0,
+          "label": "middle",
+          "log_error": -2.3112782463318258,
+          "predicted": 0.000729056427146548,
+          "q": 6,
+          "reference": 0.007354218541895883,
+          "response_factor": 0.5,
+          "scheme_sensitive": true,
+          "sector": "up"
+        },
+        {
+          "absolute_log_error": 1.0701383317144504,
+          "j": 1,
+          "label": "light",
+          "log_error": -1.0701383317144504,
+          "predicted": 4.289744136703305e-06,
+          "q": 8,
+          "reference": 1.2507962244484336e-05,
+          "response_factor": 0.5773502691896258,
+          "scheme_sensitive": true,
+          "sector": "up"
+        }
+      ],
+      "scheme_sensitive": true
+    }
+  },
+  "status": "candidate_only",
+  "verdict": "BARE_YUKAWA_NUMERICAL_GATE_TIER_C_ORDERING_ONLY"
+}

@@ -1,0 +1,12 @@
+# BHSM Boundary Theorem Statements
+
+| code | name | status | assumptions | conclusion | proof sketch | missing proof obligations |
+| --- | --- | --- | --- | --- | --- | --- |
+| THM-BH-1 | Phase closure functional | DERIVED_CONDITIONAL | AX-BH-2, LEM-BH-1 | A local finite surrogate for phase mismatch is S_phase(d,theta)=|exp(i d theta)-1|^2, with second variation H_phase(d)=2d^2. | Given global phase closure, use the finite mismatch norm and Lemma BH-1. | PO-BH-2 |
+| THM-BH-2 | Orientation involution block | DERIVED_CONDITIONAL | AX-BH-3, LEM-BH-2 | The minimal balanced nontrivial diagonal representation is diag(+1,-1), with candidate second variation H_orientation=8I+2 lambda_trace J. | Assume the involution and expand the finite diagonal surrogate. | PO-BH-3 |
+| THM-BH-3 | Cyclic channel block | DERIVED_CONDITIONAL | AX-BH-4, LEM-BH-3 | The minimal nontrivial cyclic channel beyond the orientation pair is represented by order 3, with H_cyclic(3)=18. | Assume order-3 closure and apply the cyclic phase lemma. | PO-BH-4 |
+| THM-BH-4 | Topographic/excess separation | DIAGNOSTIC_SUPPORTED | AX-BH-5, AX-BH-6 | The Hessian separates low-energy reference/orientation/cyclic branches from excess higher/composite branches. | Use the fourth-order stability scaffold and excess gap condition. | PO-BH-5, PO-BH-6 |
+| THM-BH-5 | Hessian projector decomposition | OPEN | THM-BH-1, THM-BH-2, THM-BH-3, THM-BH-4 | The candidate Hessian admits H = mu_ref P_ref + mu_orient P_orient + mu_cyclic P_cyclic + mu_excess P_excess if sectors are orthogonal. | Combine the candidate blocks and require orthogonal/completing projectors. | PO-BH-7 |
+| THM-BH-6 | Closure spectrum selection | OPEN | THM-BH-5 | The diagnostic low-energy closure dimensions are {1,2,3}. | Map selected projectors to reference, orientation, and cyclic closure sectors. | PO-BH-8 |
+| THM-BH-7 | Finite algebra bridge | DERIVED_CONDITIONAL | THM-BH-6, AX-BH-7, LEM-BH-4 | The selected low-energy endomorphism blocks are C, M2(C), and M3(C). | Apply the finite endomorphism block lemma to d=1,2,3. | PO-BH-9 |
+| THM-BH-8 | Charge/anomaly skeleton | DIAGNOSTIC_SUPPORTED | THM-BH-7, AX-BH-8, AX-BH-9, LEM-BH-5, LEM-BH-6, LEM-BH-7 | The BHSM boundary theorem chain diagnostically reproduces the Standard Model charge/hypercharge and one-generation anomaly skeleton. | Use the finite algebra bridge, primitive bridge, charge formulas, and anomaly diagnostic. | PO-BH-10, PO-BH-11 |

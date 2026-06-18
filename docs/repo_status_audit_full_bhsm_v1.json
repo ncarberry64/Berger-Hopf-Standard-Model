@@ -1,0 +1,84 @@
+{
+  "status": "repo_status_refresh_complete",
+  "branch": "bhsm-repo-status-refresh-full-audit-v1",
+  "official_predictions_changed": false,
+  "frozen_predictions_changed": false,
+  "release_published": false,
+  "zenodo_auth_material_handled": false,
+  "findings": [
+    {
+      "area": "README status",
+      "classification": "updated",
+      "finding": "README described an older final-paper/release posture and DOI-pending language.",
+      "action": "Rewritten as current GitHub landing page for Full BHSM v1.0 Candidate."
+    },
+    {
+      "area": "Candidate synthesis docs",
+      "classification": "clean",
+      "finding": "Full BHSM v1 candidate synthesis files state candidate-only status and open obligations.",
+      "action": "Cross-linked from current status docs."
+    },
+    {
+      "area": "Frozen predictions",
+      "classification": "clean",
+      "finding": "Frozen prediction hashes match expected values.",
+      "action": "No changes."
+    },
+    {
+      "area": "Official predictions",
+      "classification": "clean",
+      "finding": "No official prediction files or branches were modified.",
+      "action": "No changes."
+    },
+    {
+      "area": "Heat-kernel mass engine language",
+      "classification": "updated",
+      "finding": "Public-facing language now states Tier C ordering only and not existing BHSM engine.",
+      "action": "README and status docs updated."
+    },
+    {
+      "area": "Dark-matter interpretation",
+      "classification": "updated",
+      "finding": "Public-facing docs now describe effective collective curvature residue as candidate-only.",
+      "action": "Guardrails added."
+    },
+    {
+      "area": "Forbidden language examples",
+      "classification": "stale_but_historical",
+      "finding": "Forbidden phrases remain in docs/forbidden_claims.md as examples only.",
+      "action": "Allowed by audit."
+    },
+    {
+      "area": "Zenodo metadata",
+      "classification": "updated",
+      "finding": "Metadata description needed current candidate-synthesis claim boundary.",
+      "action": ".zenodo.json description refreshed."
+    },
+    {
+      "area": "User review",
+      "classification": "needs_user_review",
+      "finding": "Future release publication, Zenodo action, and DOI/release metadata decisions require explicit author instruction.",
+      "action": "No release published."
+    }
+  ],
+  "allowed_classifications": [
+    "clean",
+    "updated",
+    "stale_but_historical",
+    "needs_user_review",
+    "forbidden_overclaim_removed"
+  ],
+  "verdict_labels": [
+    "BHSM_REPO_STATUS_REFRESH_COMPLETE",
+    "GITHUB_README_REFRESHED",
+    "FULL_BHSM_STATUS_SYNCHRONIZED",
+    "FORBIDDEN_CLAIM_GUARDRAILS_ADDED",
+    "FROZEN_PREDICTIONS_UNCHANGED",
+    "OFFICIAL_PREDICTIONS_UNCHANGED",
+    "ZENODO_METADATA_CHECKED",
+    "NO_RELEASE_PUBLISHED",
+    "SM_DERIVATION_REMAINS_OPEN",
+    "MASS_NUMERICAL_CLOSURE_REMAINS_OPEN",
+    "COLLECTIVE_CURVATURE_EXTENSION_STATUS_GUARDED"
+  ]
+}

@@ -1,0 +1,201 @@
+{
+  "bhsm_replacement_claim_ready": false,
+  "boundary_charge_table": [
+    {
+      "C": 0,
+      "Q": "0",
+      "sigma": 1
+    },
+    {
+      "C": 0,
+      "Q": "-1",
+      "sigma": -1
+    },
+    {
+      "C": 1,
+      "Q": "2/3",
+      "sigma": 1
+    },
+    {
+      "C": 1,
+      "Q": "-1/3",
+      "sigma": -1
+    }
+  ],
+  "branch": "bhsm-theorem-discharge-finite-algebra-charge-v1",
+  "bridges_preserved": {
+    "anomaly_closure_bridge": true,
+    "boundary_action_hessian_scaffold": true,
+    "boundary_action_second_variation": true,
+    "charge_hypercharge_bridge": true,
+    "finite_boundary_algebra_bridge": true,
+    "primitive_closure_spectrum": true,
+    "projector_eigenvalue_bridge": true
+  },
+  "discharged_obligations": {
+    "PO-BH-10": "DERIVED_CONDITIONAL: boundary charge and hypercharge operators derived from P_C, S_sigma, and P_w without SM particle-label import",
+    "PO-BH-9": "DERIVED_CONDITIONAL: finite boundary algebra uniqueness follows from primitive closure spectrum and minimal semisimple endomorphism blocks"
+  },
+  "finite_algebra": {
+    "A_boundary": "A_channel tensor A_orientation, up to repo convention/isomorphism",
+    "A_channel": "C_ref direct_sum M3(C)_cyc",
+    "A_orientation": "M2(C)_active direct_sum C_+ direct_sum C_-"
+  },
+  "finite_algebra_charge_layer_discharged_conditionally": true,
+  "frozen_predictions_changed": false,
+  "negative_results": [
+    "replacement claim is not ready because anomaly-as-boundary-consistency, gauge dynamics, and mass/Yukawa/mixing derivations remain open",
+    "charge normalization still requires explicit boundary normalization statement if not already derived elsewhere"
+  ],
+  "notes": [
+    "theorem discharge attempt completed for finite algebra and charge/hypercharge layer",
+    "mission remains full Standard Model derivation from BHSM",
+    "no frozen predictions changed",
+    "no official predictions changed"
+  ],
+  "official_predictions_changed": false,
+  "operators": {
+    "Q_boundary": "1/2(S_sigma-I)+2/3 P_C",
+    "T3_boundary": "1/2 P_w S_sigma",
+    "Y_boundary": "2(Q_boundary-T3_boundary)"
+  },
+  "standard_model_fully_derived": false,
+  "status": "theorem_discharge_candidate",
+  "still_open_downstream": [
+    "anomaly cancellation as boundary consistency theorem",
+    "gauge group dynamics derivation",
+    "mass/Yukawa/mixing theorem-level derivation",
+    "full replacement-level SM derivation"
+  ],
+  "summary": {
+    "bhsm_replacement_claim_ready": false,
+    "boundary_charge_table": [
+      {
+        "C": 0,
+        "Q": "0",
+        "T3": "1/2",
+        "Y": "-1",
+        "sigma": 1,
+        "w": 1
+      },
+      {
+        "C": 0,
+        "Q": "-1",
+        "T3": "-1/2",
+        "Y": "-1",
+        "sigma": -1,
+        "w": 1
+      },
+      {
+        "C": 1,
+        "Q": "2/3",
+        "T3": "1/2",
+        "Y": "1/3",
+        "sigma": 1,
+        "w": 1
+      },
+      {
+        "C": 1,
+        "Q": "-1/3",
+        "T3": "-1/2",
+        "Y": "1/3",
+        "sigma": -1,
+        "w": 1
+      },
+      {
+        "C": 0,
+        "Q": "0",
+        "T3": "0",
+        "Y": "0",
+        "sigma": 1,
+        "w": 0
+      },
+      {
+        "C": 0,
+        "Q": "-1",
+        "T3": "0",
+        "Y": "-2",
+        "sigma": -1,
+        "w": 0
+      },
+      {
+        "C": 1,
+        "Q": "2/3",
+        "T3": "0",
+        "Y": "4/3",
+        "sigma": 1,
+        "w": 0
+      },
+      {
+        "C": 1,
+        "Q": "-1/3",
+        "T3": "0",
+        "Y": "-2/3",
+        "sigma": -1,
+        "w": 0
+      }
+    ],
+    "discharged_obligations": {
+      "PO-BH-10": "DERIVED_CONDITIONAL",
+      "PO-BH-9": "DERIVED_CONDITIONAL"
+    },
+    "finite_algebra": {
+      "A_boundary": "A_channel tensor A_orientation, up to repo convention/isomorphism",
+      "A_channel": "C_ref direct_sum M3(C)_cyc",
+      "A_orientation": "M2(C)_active direct_sum C_+ direct_sum C_-",
+      "channel_blocks": [
+        {
+          "algebra": "C",
+          "dimension": 1,
+          "name": "C_ref",
+          "role": "reference scalar block"
+        },
+        {
+          "algebra": "M3(C)",
+          "dimension": 3,
+          "name": "M3(C)_cyc",
+          "role": "minimal cyclic channel block"
+        }
+      ],
+      "orientation_blocks": [
+        {
+          "algebra": "M2(C)",
+          "dimension": 2,
+          "name": "M2(C)_active",
+          "role": "active orientation-pair block"
+        },
+        {
+          "algebra": "C",
+          "dimension": 1,
+          "name": "C_+",
+          "role": "inactive resolved positive orientation sign"
+        },
+        {
+          "algebra": "C",
+          "dimension": 1,
+          "name": "C_-",
+          "role": "inactive resolved negative orientation sign"
+        }
+      ],
+      "primitive_closure_spectrum": [
+        1,
+        2,
+        3
+      ]
+    },
+    "finite_algebra_charge_layer_discharged_conditionally": true,
+    "standard_model_fully_derived": false
+  },
+  "verdict_labels": [
+    "THEOREM_DISCHARGE_FINITE_ALGEBRA_CHARGE_COMPLETE",
+    "PO_BH_9_FINITE_ALGEBRA_UNIQUENESS_DERIVED_CONDITIONAL",
+    "PO_BH_10_CHARGE_HYPERCHARGE_OPERATORS_DERIVED_CONDITIONAL",
+    "BOUNDARY_CHARGE_OPERATOR_DERIVED_CONDITIONAL",
+    "BOUNDARY_HYPERCHARGE_OPERATOR_DERIVED_CONDITIONAL",
+    "FINITE_BOUNDARY_ALGEBRA_FROM_CLOSURE_SPECTRUM_DERIVED_CONDITIONAL",
+    "DOWNSTREAM_SM_DERIVATION_REMAINS_OPEN",
+    "BHSM_REPLACEMENT_CLAIM_NOT_READY",
+    "FROZEN_PREDICTIONS_UNCHANGED",
+    "OFFICIAL_PREDICTIONS_UNCHANGED"
+  ]
+}

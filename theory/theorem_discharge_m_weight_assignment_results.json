@@ -1,0 +1,248 @@
+{
+  "bhsm_replacement_claim_ready": false,
+  "branch": "bhsm-theorem-discharge-m-weight-assignment-v1",
+  "candidate_harmonic_conventions": [
+    {
+      "ell_formula": "ell=k/2",
+      "n_formula": "n=j",
+      "name": "A: ell=k/2, n=j",
+      "reason": "admissibility must hold for all modes; failures recorded",
+      "status": "FAILED_GUARDRAIL"
+    },
+    {
+      "ell_formula": "ell=k",
+      "n_formula": "n=j",
+      "name": "B: ell=k, n=j",
+      "reason": "may avoid parity issue but must be derived from BHSM harmonic normalization",
+      "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED"
+    },
+    {
+      "ell_formula": "ell=k/2",
+      "n_formula": "n=j/2",
+      "name": "C: ell=k/2, n=j/2",
+      "reason": "requires derivation of fiber-weight normalization",
+      "status": "FAILED_GUARDRAIL"
+    },
+    {
+      "ell_formula": "ell=k/2",
+      "n_formula": "n=q/2",
+      "name": "D: ell=k/2, n=q/2",
+      "reason": "requires derivation tying q to the Wigner fiber/base weight",
+      "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED"
+    }
+  ],
+  "candidate_m_assignments": [
+    {
+      "assignment": "m=sigma/2",
+      "reason": "requires deriving Wigner m from weak orientation",
+      "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED"
+    },
+    {
+      "assignment": "m=T3",
+      "reason": "same orientation source, not yet harmonic-derived",
+      "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED"
+    },
+    {
+      "assignment": "m=+/-j",
+      "reason": "admissibility cannot be the only selection rule",
+      "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED"
+    },
+    {
+      "assignment": "m=+/-q/2",
+      "reason": "requires boundary proof linking q to base weight",
+      "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED"
+    },
+    {
+      "assignment": "m=orientation eigenvalue",
+      "reason": "boundary orientation algebra is not yet mapped to Wigner m",
+      "status": "OPEN"
+    },
+    {
+      "assignment": "m=active/singlet orientation label",
+      "reason": "side labels are not yet harmonic weights",
+      "status": "OPEN"
+    },
+    {
+      "assignment": "m=scalar-insertion orientation label",
+      "reason": "H/H_tilde orientation is not yet a mode weight theorem",
+      "status": "OPEN"
+    },
+    {
+      "assignment": "m=sector channel label",
+      "reason": "channel labels are not yet base weights",
+      "status": "OPEN"
+    },
+    {
+      "assignment": "m=generation-index dependent label",
+      "reason": "would be post-hoc unless derived independently",
+      "status": "FAILED_GUARDRAIL"
+    }
+  ],
+  "candidate_m_sources": [
+    "weak orientation sigma=2T3",
+    "active interface w",
+    "active/singlet side",
+    "left/right chirality",
+    "scalar insertion H or H_tilde",
+    "cyclic/reference channel",
+    "boundary orientation algebra",
+    "charge closure Q,T3,Y",
+    "sector orientation",
+    "generation index"
+  ],
+  "convention_A_failures": [
+    {
+      "index": 1,
+      "j": 2,
+      "k": 5,
+      "sector": "reference_charged"
+    },
+    {
+      "index": 2,
+      "j": 3,
+      "k": 9,
+      "sector": "reference_charged"
+    },
+    {
+      "index": 1,
+      "j": 0,
+      "k": 3,
+      "sector": "reference_neutral"
+    },
+    {
+      "index": 2,
+      "j": 1,
+      "k": 3,
+      "sector": "reference_neutral"
+    }
+  ],
+  "discharged_obligations": {
+    "PO-BH-26": "PARTIAL: m-weight candidate sources and Wigner/Hopf admissibility audited; no theorem-derived m assignment promoted unless found in repo"
+  },
+  "explicit_eigenfunctions_derived": false,
+  "finite_width_rank_three_derived": false,
+  "frozen_predictions_changed": false,
+  "m_weight_assignment_derived": false,
+  "m_weight_assignment_layer_completed": true,
+  "negative_results": [
+    "m-weight assignment not derived in this branch unless found in repo",
+    "selected harmonic convention not derived in this branch unless found in repo",
+    "explicit eigenfunction values not derived in this branch",
+    "rank-three Yukawa theorem not derived in this branch",
+    "numerical Yukawa values not derived in this branch",
+    "replacement claim is not ready"
+  ],
+  "numerical_yukawa_values_derived": false,
+  "official_predictions_changed": false,
+  "raw_mode_ledgers": {
+    "cyclic_lower": [
+      {
+        "index": 0,
+        "j": 0,
+        "k": 0,
+        "sector": "cyclic_lower"
+      },
+      {
+        "index": 1,
+        "j": 3,
+        "k": 6,
+        "sector": "cyclic_lower"
+      },
+      {
+        "index": 2,
+        "j": 2,
+        "k": 8,
+        "sector": "cyclic_lower"
+      }
+    ],
+    "cyclic_upper": [
+      {
+        "index": 0,
+        "j": 0,
+        "k": 0,
+        "sector": "cyclic_upper"
+      },
+      {
+        "index": 1,
+        "j": 0,
+        "k": 6,
+        "sector": "cyclic_upper"
+      },
+      {
+        "index": 2,
+        "j": 1,
+        "k": 10,
+        "sector": "cyclic_upper"
+      }
+    ],
+    "reference_charged": [
+      {
+        "index": 0,
+        "j": 0,
+        "k": 0,
+        "sector": "reference_charged"
+      },
+      {
+        "index": 1,
+        "j": 2,
+        "k": 5,
+        "sector": "reference_charged"
+      },
+      {
+        "index": 2,
+        "j": 3,
+        "k": 9,
+        "sector": "reference_charged"
+      }
+    ],
+    "reference_neutral": [
+      {
+        "index": 0,
+        "j": 0,
+        "k": 0,
+        "sector": "reference_neutral"
+      },
+      {
+        "index": 1,
+        "j": 0,
+        "k": 3,
+        "sector": "reference_neutral"
+      },
+      {
+        "index": 2,
+        "j": 1,
+        "k": 3,
+        "sector": "reference_neutral"
+      }
+    ]
+  },
+  "selected_harmonic_convention_derived": false,
+  "standard_model_fully_derived": false,
+  "status": "partial_theorem_scaffold",
+  "still_open_downstream": [
+    "derive selected Wigner/Hopf harmonic convention",
+    "derive m-weight assignment from BHSM boundary/orientation structure",
+    "explicit Berger/BHSM harmonic theorem",
+    "eigenfunction amplitudes at y0",
+    "finite-width moment contractions",
+    "rank-three Yukawa matrix theorem",
+    "numerical Yukawa coupling theorem",
+    "fermion mass hierarchy theorem",
+    "CKM mixing theorem",
+    "PMNS mixing theorem",
+    "full replacement-level SM derivation"
+  ],
+  "verdict_labels": [
+    "PO_BH_26_M_WEIGHT_ASSIGNMENT_FROM_BOUNDARY_ORIENTATION_PARTIAL",
+    "M_WEIGHT_CANDIDATE_SOURCES_AUDITED",
+    "WIGNER_HOPF_ADMISSIBILITY_AUDITED",
+    "M_WEIGHT_ASSIGNMENT_REMAINS_OPEN",
+    "SELECTED_HARMONIC_CONVENTION_REMAINS_OPEN",
+    "EXPLICIT_EIGENFUNCTION_VALUES_REMAIN_OPEN",
+    "RANK_THREE_YUKAWA_THEOREM_REMAINS_OPEN",
+    "NUMERICAL_YUKAWA_VALUES_REMAIN_OPEN",
+    "BHSM_REPLACEMENT_CLAIM_NOT_READY",
+    "FROZEN_PREDICTIONS_UNCHANGED",
+    "OFFICIAL_PREDICTIONS_UNCHANGED"
+  ]
+}
