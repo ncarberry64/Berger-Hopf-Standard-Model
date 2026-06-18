@@ -43,13 +43,79 @@
     "neutral_mass_splitting": "Delta m_+-^2 = 2 epsilon_nu_topo^2 sqrt(((DeltaB-DeltaA)/2)^2 + |delta|^2)",
     "neutral_mixing_angle": "tan 2 theta_AB = 2 |delta|/(DeltaB-DeltaA)",
     "ckm_phase_loop": "arg(Theta_12 Theta_23 Theta_13*)",
-    "sector_displacement": "Delta y_ud = - H_topo^{-1} grad_y(delta S_partial^d - delta S_partial^u)|_{y0}"
+    "sector_displacement": "Delta y_ud = - H_topo^{-1} grad_y(delta S_partial^d - delta S_partial^u)|_{y0}",
+    "S_nu_topo_gaussian_hessian": "S_nu_topo = 1/2 Delta y_nu^T G_nu_topo Delta y_nu + S_barrier",
+    "G_nu_topo": "G_nu_topo = 1/2 E_nu^T H_topo^(nu) E_nu",
+    "S_nu_topo_stiffness_mismatch": "S_nu_topo = S_eff^(nu) - S_eff^(charged_ref)",
+    "S_nu_topo_omega_barrier": "Omega_nu = -q - 2j = -k"
   },
   "phase_admissibility": {
     "absolute_alpha0_physical": false,
     "absolute_gamma0_physical": false,
     "sector_relative_sampling_required": true,
     "status": "STRUCTURALLY_INTEGRATED"
+  },
+  "topographic_suppression_action": {
+    "id": "PO-BH-48",
+    "name": "Neutral topographic suppression action",
+    "symbol": "S_nu_topo",
+    "sector": "neutrino_pmns",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "S_nu_topo = 1/2 Delta y_nu^T G_nu_topo Delta y_nu + S_barrier",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "epsilon_relation": "epsilon_nu_topo = exp(-S_nu_topo)",
+    "mass_relation": "M_nu = epsilon_nu_topo M_nu^(0)",
+    "scope": "common_leading_order",
+    "mode_dependent_correction_theorem_exists": false,
+    "derivation_source": "candidate boundary Hessian/topographic action scaffold",
+    "depends_on": [
+      {"id": "H_topo", "status": "OPEN_LOCALIZABLE"},
+      {"id": "Delta_y_nu", "status": "OPEN_LOCALIZABLE"},
+      {"id": "G_nu_topo", "status": "OPEN_LOCALIZABLE"},
+      {"id": "S_barrier", "status": "OPEN_LOCALIZABLE"},
+      {"id": "neutral finite-width saddle/path", "status": "OPEN_LOCALIZABLE"},
+      {"id": "scalar/topographic profile solution", "status": "OPEN_UNRESOLVED"}
+    ],
+    "candidate_routes": [
+      {
+        "id": "route_A_gaussian_hessian_displacement",
+        "formula": "S_nu_topo = 1/2 Delta y_nu^T G_nu_topo Delta y_nu + S_barrier",
+        "dependencies": ["Delta y_nu", "G_nu_topo", "H_topo^(nu)", "E_nu", "S_barrier"],
+        "status": "OPEN_LOCALIZABLE",
+        "reason": "The repo has boundary Hessian/topographic scaffolds, but not a derived neutral displacement, neutral Hessian, embedding tensor, or barrier value.",
+        "allowed_next_step": "derive Delta y_nu, H_topo^(nu), E_nu, and S_barrier from the boundary/topographic action before comparison",
+        "forbidden_shortcut": "fit S_nu_topo or epsilon_nu_topo to observed neutrino masses"
+      },
+      {
+        "id": "route_B_stiffness_mismatch",
+        "formula": "S_nu_topo = S_eff^(nu) - S_eff^(charged_ref)",
+        "dependencies": ["neutral finite-width saddle/path", "charged reference saddle/path", "S_eff functional"],
+        "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+        "reason": "A stiffness/action mismatch is compatible with the topographic picture, but the neutral and charged effective saddles are not computed in the repo.",
+        "allowed_next_step": "construct S_eff and evaluate it on internally derived neutral and charged saddles",
+        "forbidden_shortcut": "fit or choose a stiffness mismatch from neutrino scale residuals"
+      },
+      {
+        "id": "route_C_omega_barrier",
+        "formula": "Omega_nu = -q - 2j = -k",
+        "dependencies": ["neutral ledger", "Omega_nu", "positive barrier/action functional"],
+        "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+        "reason": "Omega_nu localizes a neutral sector operator and k-barrier hint, but no positive action mapping from Omega_nu to S_nu_topo is derived.",
+        "allowed_next_step": "derive a positive neutral barrier functional from Omega_nu inside the boundary action",
+        "forbidden_shortcut": "turn k values into a fitted suppression exponent"
+      }
+    ],
+    "forbidden_inputs": [
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "PMNS data",
+      "measured PMNS CP phase",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "The neutral topographic suppression action is localized as the next numerical-closure object. A candidate Hessian/barrier formula is identified, but numerical neutrino closure remains open unless explicitly derived and locked before comparison.",
+    "tests": ["tests/test_neutral_topographic_suppression_action.py"],
+    "next_action": "derive or reject Delta y_nu, H_topo^(nu), E_nu, and S_barrier from the scalar/topographic boundary action before any neutrino-scale comparison"
   },
   "entries": [
     {"id": "A_channel", "sector": "finite_algebra_gauge", "symbol": "A_channel = C_l \u2295 M3(C)_C", "status": "DERIVED_CONDITIONAL", "fit_policy": "FORBIDDEN_TO_FIT", "notes": "finite boundary algebra scaffold"},
@@ -95,7 +161,21 @@
     {"id": "ckm_1_16_exponent", "sector": "ckm", "symbol": "CKM 1/16 exponent", "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED", "fit_policy": "FORBIDDEN_TO_FIT"},
     {"id": "M_nu", "sector": "neutrino_pmns", "symbol": "M_nu = epsilon_nu_topo M_nu^(0)", "status": "STRUCTURALLY_INTEGRATED", "fit_policy": "FORBIDDEN_TO_FIT"},
     {"id": "epsilon_nu_topo", "sector": "neutrino_pmns", "symbol": "epsilon_nu_topo = exp(-S_nu_topo)", "status": "STRUCTURALLY_INTEGRATED", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "S_nu_topo", "sector": "neutrino_pmns", "symbol": "S_nu_topo", "status": "OPEN_LOCALIZABLE", "fit_policy": "FORBIDDEN_TO_FIT"},
+    {
+      "id": "S_nu_topo",
+      "name": "Neutral topographic suppression action",
+      "sector": "neutrino_pmns",
+      "symbol": "S_nu_topo",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "S_nu_topo = 1/2 Delta y_nu^T G_nu_topo Delta y_nu + S_barrier",
+      "derivation_source": "candidate boundary Hessian/topographic action scaffold",
+      "depends_on": ["H_topo", "Delta_y_nu", "G_nu_topo", "S_barrier", "neutral finite-width saddle/path"],
+      "forbidden_inputs": ["observed neutrino masses", "observed neutrino mass splittings", "PMNS data", "post-comparison epsilon_nu_topo fit"],
+      "claim_boundary": "localizable candidate only; numerical neutrino closure remains open",
+      "tests": ["tests/test_neutral_topographic_suppression_action.py"],
+      "next_action": "derive or reject the neutral Hessian/barrier formula before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
     {"id": "H_nu", "sector": "neutrino_pmns", "symbol": "H_nu = epsilon_nu_topo^2 H_nu^(0)", "status": "STRUCTURALLY_INTEGRATED", "fit_policy": "FORBIDDEN_TO_FIT"},
     {"id": "H_nu_0", "sector": "neutrino_pmns", "symbol": "H_nu^(0) full 3x3 symbolic operator", "status": "STRUCTURALLY_INTEGRATED", "fit_policy": "FORBIDDEN_TO_FIT"},
     {"id": "lambda0", "sector": "neutrino_pmns", "symbol": "lambda0", "status": "OPEN_LOCALIZABLE", "fit_policy": "FORBIDDEN_TO_FIT"},
@@ -184,11 +264,13 @@
   ],
   "verdict_labels": [
     "PO_BH_47_NUMERICAL_INPUT_CLOSURE_MAP_THEOREM",
+    "PO_BH_48_NEUTRAL_TOPOGRAPHIC_SUPPRESSION_ACTION_LOCALIZED",
     "STRUCTURAL_ARCHITECTURE_INTEGRATED_CONDITIONAL",
     "NUMERICAL_CLOSURE_OPEN",
     "HIDDEN_KNOBS_EXPOSED",
     "PRE_COMPARISON_LOCK_REQUIRED",
     "CKM_1_16_EXPONENT_NOT_DERIVED",
+    "S_NU_TOPO_DERIVATION_OPEN",
     "FULL_NUMERICAL_SM_PREDICTION_OPEN",
     "REPLACEMENT_READINESS_NOT_ACHIEVED",
     "FROZEN_PREDICTIONS_UNCHANGED",

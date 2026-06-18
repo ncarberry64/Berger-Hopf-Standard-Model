@@ -56,6 +56,20 @@ The neutral topographic suppression route is:
 
 `H_nu = epsilon_nu_topo^2 H_nu^(0)`
 
+PO-BH-48 localizes `S_nu_topo` as the next neutral numerical-closure object.
+The current candidate formula is:
+
+`S_nu_topo = 1/2 Delta y_nu^T G_nu_topo Delta y_nu + S_barrier`
+
+with
+
+`G_nu_topo = 1/2 E_nu^T H_topo^(nu) E_nu`.
+
+Status: `OPEN_LOCALIZABLE`. The candidate formula depends on deriving
+`Delta y_nu`, `H_topo^(nu)`, `E_nu`, `S_barrier`, and the neutral finite-width
+saddle/path from the boundary/topographic action. Numerical neutrino closure
+remains open.
+
 with
 
 `H_nu^(0) = [[lambda0+Delta0, etaA exp(i phiA), etaB exp(i phiB)], [etaA exp(-i phiA), lambda3+DeltaA, delta exp(i varphi)], [etaB exp(-i phiB), delta exp(-i varphi), lambda3+DeltaB]]`.
@@ -101,7 +115,8 @@ Near-degenerate mixing scaffold:
 
 Open inputs include charged-sector metrics and prefactors, CKM mixing metrics and finite-width moments, sector-relative displacement coordinates, CKM `1/16` exponent, neutral suppression action, neutral operator parameters, scalar/topographic profile solution, scalar decoupling, stability proof, coupling bounds, and higher-loop thresholds.
 
+The neutral topographic suppression action has been localized as the next numerical-closure object. A candidate Hessian/barrier formula is identified, but numerical neutrino closure remains open unless explicitly derived and locked.
+
 ## Claim Boundary
 
 This closure map does not claim full numerical Standard Model derivation, full replacement readiness, numerical mass ratios, numerical CKM prediction, numerical PMNS prediction, neutrino mass ordering, PMNS CP value, scalar/topographic decoupling proof, or higher-loop threshold completion.
-

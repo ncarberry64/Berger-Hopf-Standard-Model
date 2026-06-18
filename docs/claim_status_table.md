@@ -17,6 +17,7 @@
 | CKM source | `STRUCTURALLY_DERIVED_CONDITIONAL` | `docs/bhsm_numerical_input_closure_map.md` | Up/down sector-relative source cannot be represented |
 | CKM CP source | `STRUCTURALLY_DERIVED_CONDITIONAL` | `docs/bhsm_numerical_input_closure_map.md` | Phase loop cannot be represented sector-relatively |
 | Neutral topographic suppression route | `STRUCTURALLY_DERIVED_CONDITIONAL` | `docs/bhsm_numerical_input_closure_map.md` | Neutral suppression operator cannot be represented |
+| Neutral topographic suppression action `S_nu_topo` | `OPEN_LOCALIZABLE` | `theory/theorem_discharge_neutral_topographic_suppression_action.md` | Must not be claimed until `Delta y_nu`, `H_topo^(nu)`, `E_nu`, and `S_barrier` are derived before comparison |
 | PMNS source | `STRUCTURALLY_DERIVED_CONDITIONAL` | `docs/bhsm_numerical_input_closure_map.md` | Neutral/charged-lepton diagonalization source fails |
 | PMNS CP source | `STRUCTURALLY_DERIVED_CONDITIONAL` | `docs/bhsm_numerical_input_closure_map.md` | Neutral phase loop cannot be represented |
 | Full fermion-sector architecture | `INTEGRATED_CONDITIONAL` | `docs/bhsm_numerical_input_closure_map.md` | Numerical fermion masses or mixing values are not claimed |
@@ -34,6 +35,7 @@ Status categories used in this release:
 - `STRONG_SCREEN`
 - `PROXY_AUDIT`
 - `OPEN`
+- `OPEN_LOCALIZABLE`
 - `STRUCTURALLY_INTEGRATED`
 - `STRUCTURALLY_DERIVED_CONDITIONAL`
 - `INTEGRATED_CONDITIONAL`
