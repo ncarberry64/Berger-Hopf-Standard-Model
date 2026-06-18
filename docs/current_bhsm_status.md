@@ -7,9 +7,9 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 | Item | Current status |
 | --- | --- |
 | Overall status | structural architecture integrated conditional; numerical closure open |
-| Latest theorem branch | `bhsm-neutral-boundary-tensors-v1` |
-| Latest completed theorem commits | PO-BH-47 `ae5dac5`; PO-BH-47 cleanup `1c11d2b`; PO-BH-48 `8ac577c`; PO-BH-49 `c2cfc70`; PO-BH-50 `7a4523a`; PO-BH-51 `225786f`; PO-BH-52 on this branch |
-| Test result summary | `1336 passed`; focused PO-BH-52 tests `11 passed`; focused PO-BH-51 tests `10 passed`; focused PO-BH-50 tests `10 passed`; focused PO-BH-49 tests `9 passed`; focused PO-BH-48 tests `9 passed`; focused PO-BH-47 tests `11 passed`; guardrail audits passed |
+| Latest theorem branch | `bhsm-boundary-variation-v1` |
+| Latest completed theorem commits | PO-BH-47 `ae5dac5`; PO-BH-47 cleanup `1c11d2b`; PO-BH-48 `8ac577c`; PO-BH-49 `c2cfc70`; PO-BH-50 `7a4523a`; PO-BH-51 `225786f`; PO-BH-52 `4de6d9c`; PO-BH-53 on this branch |
+| Test result summary | `1345 passed`; focused PO-BH-53 tests `9 passed`; focused PO-BH-52 tests `11 passed`; focused PO-BH-51 tests `10 passed`; focused PO-BH-50 tests `10 passed`; focused PO-BH-49 tests `9 passed`; focused PO-BH-48 tests `9 passed`; focused PO-BH-47 tests `11 passed`; guardrail audits passed |
 | Current theorem/status label | `STRUCTURAL_ARCHITECTURE_INTEGRATED_CONDITIONAL_NUMERICAL_CLOSURE_OPEN` |
 | Candidate architecture complete | yes |
 | Full BHSM proven | no |
@@ -38,6 +38,8 @@ PO-BH-50 localizes the neutral effective action `S_eff^(nu)` as the action-level
 PO-BH-51 localizes the subsurface neutral projection geometry required by `S_eff^(nu)`. Candidate internal metric `g_sub`, projection map `Pi_sub_to_ext`, and exterior-lapse `ellapse_nu` structures are documented. No local FTL or numerical neutrino prediction is claimed. Missing dependencies include the scalar/topographic profile, coordinate-invariant projection convention, internal metric derivation, positivity/causality proof, and relation to neutral boundary tensors.
 
 PO-BH-52 localizes the neutral boundary tensors and boundary condition as required dependencies for the neutral effective action and subsurface neutral channel. Candidate boundary-action and variational forms are documented. Tensor values and the explicit neutral boundary condition remain open; no numerical neutrino prediction or local FTL claim is made.
+
+PO-BH-53 derives the scalar/topographic boundary variation conditionally as a symbolic neutral boundary-condition form. The tensor values `chi_nu^{AB}` and `lambda_nu`, the normal-coupling convention, neutral profile, and positivity/stability proof remain open; no numerical neutrino prediction or local FTL claim is made.
 
 ## Cross-Links
 
@@ -89,6 +91,7 @@ PO-BH-52 localizes the neutral boundary tensors and boundary condition as requir
 - [Theorem discharge: neutral effective action](../theory/theorem_discharge_neutral_effective_action.md)
 - [Theorem discharge: subsurface neutral projection geometry](../theory/theorem_discharge_subsurface_projection_geometry.md)
 - [Theorem discharge: neutral boundary tensors](../theory/theorem_discharge_neutral_boundary_tensors.md)
+- [Theorem discharge: scalar/topographic boundary variation](../theory/theorem_discharge_scalar_topographic_boundary_variation.md)
 
 ## Boundary-Action Term Realization Status
 

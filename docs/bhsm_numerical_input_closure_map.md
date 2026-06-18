@@ -143,6 +143,21 @@ variational forms are documented. Tensor values and the explicit neutral
 boundary condition remain open; no numerical neutrino prediction or local FTL
 claim is made.
 
+PO-BH-53 derives the scalar/topographic boundary variation conditionally under
+fixed-background boundary assumptions. The symbolic variational form is:
+
+```text
+n_mu partial^mu Phi - D_A(chi_nu^{AB}D_B Phi)
++ R_nu[lambda_nu, Phi, n.grad Phi] = 0 on partialB.
+```
+
+Status: `DERIVED_CONDITIONAL` for
+`explicit_scalar_topographic_boundary_variation` and the symbolic
+`neutral_boundary_condition`. The tensor values `chi_nu^{AB}` and
+`lambda_nu`, the normal-coupling convention inside `R_nu`, the neutral profile
+`W_nu`, and positivity/stability proof remain open. No numerical neutrino
+prediction is claimed.
+
 with
 
 `H_nu^(0) = [[lambda0+Delta0, etaA exp(i phiA), etaB exp(i phiB)], [etaA exp(-i phiA), lambda3+DeltaA, delta exp(i varphi)], [etaB exp(-i phiB), delta exp(-i varphi), lambda3+DeltaB]]`.
@@ -200,6 +215,8 @@ The neutral effective action `S_eff^(nu)` has been localized as the action-level
 The subsurface neutral projection geometry has been localized as a required dependency for the neutral effective action. Candidate internal metric, projection map, and exterior-lapse structures are documented. No local FTL or numerical neutrino prediction is claimed.
 
 The neutral boundary tensors and boundary condition have been localized as required dependencies for the neutral effective action and subsurface neutral channel. Candidate boundary-action and variational forms are documented. Tensor values and the explicit neutral boundary condition remain open; no numerical neutrino prediction or local FTL claim is made.
+
+The scalar/topographic boundary variation has been derived conditionally as a symbolic neutral boundary-condition form. The tensor values `chi_nu^{AB}` and `lambda_nu` remain open; no numerical neutrino prediction is claimed.
 
 ## Claim Boundary
 

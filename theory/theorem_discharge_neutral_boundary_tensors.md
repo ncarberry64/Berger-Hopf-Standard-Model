@@ -59,9 +59,9 @@ n_mu partial^mu Phi + B_nu[chi_nu, lambda_nu, Phi] = 0 on partialB.
 
 Here `B_nu` denotes the boundary operator produced by the tangential tensor `chi_nu^{AB}`, the normal coupling `lambda_nu(nhat)`, and the chosen boundary integration-by-parts convention.
 
-Status: `OPEN_LOCALIZABLE`.
+Status after PO-BH-53: `DERIVED_CONDITIONAL` for the symbolic variational boundary condition; `OPEN_LOCALIZABLE` for tensor values.
 
-Reason: the variational structure localizes the boundary condition, but the repo does not yet derive the full scalar/topographic boundary action, the exact variation convention, or numerical tensor values.
+Reason: the variational structure localizes and conditionally derives the symbolic boundary-condition form, but the repo does not yet derive tensor values, the normal-coupling convention, or numerical neutral-sector inputs.
 
 ## Route B - Sector-Operator Source Route
 
@@ -126,7 +126,7 @@ The tensor and boundary-condition candidates do not turn apparent exterior-surfa
 
 | candidate route | formula | dependencies | status | reason | allowed next action | forbidden shortcut |
 | --- | --- | --- | --- | --- | --- | --- |
-| Variational boundary condition | `S_partial^(nu)=int_partialB [1/2 chi_nu^{AB} partial_A Phi partial_B Phi + lambda_nu(nhat) Phi nhat.grad Phi] dA`; `n_mu partial^mu Phi + B_nu[chi_nu,lambda_nu,Phi]=0 on partialB` | `S_bulk`, `S_partial^(nu)`, variation convention, `chi_nu_AB`, `lambda_nu`, integration-by-parts rule | `OPEN_LOCALIZABLE` | The variational form is localized, but the explicit action and variation convention are not fully derived. | Derive the boundary variation and tensor values from the scalar/topographic action. | Choose tensors or a boundary condition from neutrino masses or PMNS residuals. |
+| Variational boundary condition | `S_partial^(nu)=int_partialB [1/2 chi_nu^{AB} partial_A Phi partial_B Phi + lambda_nu(nhat) Phi nhat.grad Phi] dA`; `n_mu partial^mu Phi - D_A(chi_nu^{AB}D_B Phi) + R_nu[lambda_nu,Phi,n.grad Phi]=0 on partialB` | `S_bulk`, `S_partial^(nu)`, variation convention, `chi_nu_AB`, `lambda_nu`, integration-by-parts rule | `DERIVED_CONDITIONAL` | PO-BH-53 derives the symbolic variational form conditionally, but tensor values and the normal-coupling convention are not fully derived. | Derive tensor values and the `R_nu` normal-coupling convention from the scalar/topographic action. | Choose tensors or a boundary condition from neutrino masses or PMNS residuals. |
 | Sector-operator source | `Omega_nu=-q-2j=-k` | `Omega_nu`, operator-to-tensor theorem, neutral boundary functional | `STRUCTURALLY_MOTIVATED_NOT_DERIVED` | `Omega_nu` labels the sector but does not automatically derive tensor values. | Derive or reject an operator-to-tensor theorem. | Treat the sector label as a fitted tensor value or complete boundary condition. |
 | Subsurface-channel inheritance | `chi_nu^{AB} ~ f_nu(y) g_sub^{AB}` or `chi_parallel P_parallel^{AB}+chi_perp P_perp^{AB}` | `g_sub`, `ellapse_nu`, `Pi_sub_to_ext`, projection projectors, pullback/restriction rule | `OPEN_LOCALIZABLE` | Compatible with PO-BH-51, but the projection geometry remains open-localizable. | Derive the pullback/restriction rule from the subsurface projection geometry. | Choose anisotropic tensor components to tune the neutral sector. |
 | Finite-width profile | `grad_Y S_eff^(nu)(Y_nu)=0` with tensors supplying profile inputs for `W_nu` | `W_nu`, `V_eff^(nu)`, profile regularization, neutral saddle equation, boundary tensors | `OPEN_LOCALIZABLE` | Connects tensors to the neutral profile but does not derive the profile. | Derive `W_nu` and profile regularization from the boundary condition and topographic action. | Fit profile width or tensor values to the neutrino scale. |
@@ -138,21 +138,20 @@ Preferred status:
 ```text
 chi_nu_AB: OPEN_LOCALIZABLE
 lambda_nu: OPEN_LOCALIZABLE
-neutral_boundary_condition: OPEN_LOCALIZABLE
+neutral_boundary_condition: DERIVED_CONDITIONAL as a symbolic variational form
 ```
 
 Missing dependencies:
 
-- explicit scalar/topographic boundary action;
-- variation convention;
+- tensor values for `chi_nu_AB` and `lambda_nu`;
+- normal-coupling convention for `R_nu`;
 - internal/subsurface metric;
 - neutral profile `W_nu`;
-- explicit neutral boundary condition derivation;
 - positivity/stability proof.
 
 ## Claim Boundary
 
-The neutral boundary tensors and boundary condition have been localized as required dependencies for the neutral effective action and subsurface neutral channel. Candidate boundary-action and variational forms are documented. Tensor values and the explicit neutral boundary condition remain open; no numerical neutrino prediction or local FTL claim is made.
+The neutral boundary tensors and boundary condition have been localized as required dependencies for the neutral effective action and subsurface neutral channel. PO-BH-53 conditionally derives the symbolic variational boundary-condition form. Tensor values, the normal-coupling convention, and numerical neutral closure remain open; no numerical neutrino prediction or local FTL claim is made.
 
 Observed neutrino masses, observed neutrino mass splittings, PMNS angles, PMNS CP phase, fitted FTL/anomaly data, and post-comparison choices of `chi_nu`, `lambda_nu`, or the neutral boundary condition are forbidden inputs.
 
