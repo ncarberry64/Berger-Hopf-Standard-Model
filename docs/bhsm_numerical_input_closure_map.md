@@ -298,6 +298,8 @@ PO-BH-60 classifies the scalar/topographic profile inputs required after PO-BH-5
 
 PO-BH-61 audits the scalar/topographic profile equation-of-motion source routes. It finds partial EOM source structure in the existing schematic scalar bulk action and conditionally derived symbolic boundary variation, but no complete spacetime topographic EOM, internal Berger profile EOM, threshold-selection theorem, profile solution, neutral action evaluation, `S_nu_topo` value, or `epsilon_nu_topo` value. The audit is completed as a derivation-source audit; numerical closure remains open and no profile input may be fitted after comparison.
 
+PO-BH-62 converts the symbolic boundary variation source identified in PO-BH-61 into a conditional scalar/topographic boundary-condition normal form. It records Dirichlet, Neumann, Robin/mixed, and conditional source-coupled forms for the spacetime topographic scalar `T` and internal Berger/topographic profile `Phi`. Boundary-condition coefficients, thresholds `T_0` and `Phi_0`, profile solutions, `S_nu_topo` value, and `epsilon_nu_topo` remain open-localizable. No numerical neutrino prediction, PMNS prediction, CKM prediction, FTL claim, anomaly validation, or propulsion validation is introduced.
+
 PO-BH-54 localizes the normal-coupling/collar convention for the neutral
 boundary term:
 
