@@ -125,6 +125,24 @@ scalar/topographic profile, coordinate-invariant projection convention,
 internal metric derivation, positivity/causality proof, and relation to neutral
 boundary tensors.
 
+PO-BH-52 localizes the neutral boundary tensors and boundary condition required
+by `S_eff^(nu)` and the subsurface neutral channel. The current boundary-action
+candidate is:
+
+`S_partial^(nu) = int_partialB [1/2 chi_nu^{AB} partial_A Phi partial_B Phi + lambda_nu(nhat) Phi nhat.grad Phi] dA`
+
+with schematic variational boundary condition:
+
+`n_mu partial^mu Phi + B_nu[chi_nu, lambda_nu, Phi] = 0 on partialB`.
+
+Status: `OPEN_LOCALIZABLE` for `chi_nu_AB`, `lambda_nu`, and
+`neutral_boundary_condition`. The neutral boundary tensors and boundary
+condition have been localized as required dependencies for the neutral
+effective action and subsurface neutral channel. Candidate boundary-action and
+variational forms are documented. Tensor values and the explicit neutral
+boundary condition remain open; no numerical neutrino prediction or local FTL
+claim is made.
+
 with
 
 `H_nu^(0) = [[lambda0+Delta0, etaA exp(i phiA), etaB exp(i phiB)], [etaA exp(-i phiA), lambda3+DeltaA, delta exp(i varphi)], [etaB exp(-i phiB), delta exp(-i varphi), lambda3+DeltaB]]`.
@@ -162,6 +180,7 @@ Near-degenerate mixing scaffold:
 - fit `beta0` to masses;
 - fit `Delta alpha/gamma` to CKM;
 - fit the CKM `1/16` exponent after comparison;
+- fit `chi_nu`, `lambda_nu`, or the neutral boundary condition to neutrino masses, PMNS data, or FTL/anomaly data;
 - fit `S_eff_nu` to neutrino masses or PMNS data;
 - fit `g_sub`, `ellapse_nu`, or `Pi_sub_to_ext` to neutrino masses, PMNS data, or FTL/anomaly data;
 - fit `S_nu_topo` to neutrino scale;
@@ -179,6 +198,8 @@ The neutral saddle displacement `Delta y_nu` has been localized as a required in
 The neutral effective action `S_eff^(nu)` has been localized as the action-level source for the neutral saddle displacement. A subsurface neutral-channel candidate is documented, but the internal metric, projection/lapse map, neutral boundary tensors, and neutral profile remain open. Numerical neutrino closure remains open.
 
 The subsurface neutral projection geometry has been localized as a required dependency for the neutral effective action. Candidate internal metric, projection map, and exterior-lapse structures are documented. No local FTL or numerical neutrino prediction is claimed.
+
+The neutral boundary tensors and boundary condition have been localized as required dependencies for the neutral effective action and subsurface neutral channel. Candidate boundary-action and variational forms are documented. Tensor values and the explicit neutral boundary condition remain open; no numerical neutrino prediction or local FTL claim is made.
 
 ## Claim Boundary
 
