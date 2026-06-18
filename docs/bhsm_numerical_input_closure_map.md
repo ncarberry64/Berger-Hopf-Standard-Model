@@ -183,6 +183,25 @@ measure, orientation, edge condition, and admissible variation data are now
 explicit closure-map objects. Robin coefficients remain open unless a full
 collar convention is derived.
 
+PO-BH-56 audits the complete scalar/topographic collar action as the source
+needed to derive the PO-BH-55 collar package. The candidate complete action is:
+
+`S_collar = int_{partialB x [0,epsilon]} L_collar[Phi, partial_rho Phi, D_A Phi, J, lambda_nu, chi_nu] J(Y,rho) dA d rho`
+
+The audit also records the possible collar-measure expansion:
+
+`J(Y,rho) = 1 + rho K(Y) + O(rho^2)`
+
+Status: `OPEN_LOCALIZABLE` for `complete_scalar_topographic_collar_action`.
+The existing repo localizes boundary and subsurface scalar/topographic action
+scaffolds, but it does not yet derive a complete collar Lagrangian,
+extrinsic-curvature measure, normal orientation, inner-edge condition,
+admissible variation data, or symbolic Robin coefficients. The complete
+scalar/topographic collar action has been audited as the source needed to
+derive the collar measure, orientation, edge condition, admissible variations,
+and Robin coefficients. Any pieces not fixed by the existing action remain
+open and cannot be fitted post-comparison.
+
 with
 
 `H_nu^(0) = [[lambda0+Delta0, etaA exp(i phiA), etaB exp(i phiB)], [etaA exp(-i phiA), lambda3+DeltaA, delta exp(i varphi)], [etaB exp(-i phiB), delta exp(-i varphi), lambda3+DeltaB]]`.
@@ -223,6 +242,7 @@ Near-degenerate mixing scaffold:
 - fit `chi_nu`, `lambda_nu`, or the neutral boundary condition to neutrino masses, PMNS data, or FTL/anomaly data;
 - fit `R_nu`, collar convention, or Robin coefficients to neutrino masses, PMNS data, or FTL/anomaly data;
 - fit collar coordinate, measure, orientation, edge condition, variation data, or Robin coefficients to neutrino masses, PMNS data, or FTL/anomaly data;
+- fit the complete scalar/topographic collar action, `L_collar`, `J(Y,rho)`, `s_n`, edge data, `A_nu`, or `B_nu` to neutrino masses, PMNS data, or FTL/anomaly data;
 - fit `S_eff_nu` to neutrino masses or PMNS data;
 - fit `g_sub`, `ellapse_nu`, or `Pi_sub_to_ext` to neutrino masses, PMNS data, or FTL/anomaly data;
 - fit `S_nu_topo` to neutrino scale;
@@ -246,6 +266,8 @@ The neutral boundary tensors and boundary condition have been localized as requi
 The scalar/topographic boundary variation has been derived conditionally as a symbolic neutral boundary-condition form. The tensor values `chi_nu^{AB}` and `lambda_nu` remain open; no numerical neutrino prediction is claimed.
 
 The collar geometry package has been localized as the missing convention set for the neutral normal-coupling term. Collar coordinate, measure, orientation, edge condition, and admissible variation data are now explicit closure-map objects. Robin coefficients remain open unless a full collar convention is derived.
+
+The complete scalar/topographic collar action has been audited as the source needed to derive the collar measure, orientation, edge condition, admissible variations, and Robin coefficients. Any pieces not fixed by the existing action remain open and cannot be fitted post-comparison.
 
 PO-BH-54 localizes the normal-coupling/collar convention for the neutral
 boundary term:
