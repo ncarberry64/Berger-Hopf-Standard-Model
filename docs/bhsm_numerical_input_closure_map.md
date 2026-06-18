@@ -85,6 +85,28 @@ centroid route still requires explicit `W_nu`, `W_H`, a coordinate chart or
 coordinate-invariant centroid convention, and gauge/coordinate invariance.
 Numerical neutrino closure remains open.
 
+PO-BH-50 localizes the neutral effective action `S_eff^(nu)` as the
+action-level source for the neutral saddle displacement. The primary candidate
+is a subsurface neutral topographic channel:
+
+`S_eff^(nu) = S_bulk[Phi] + S_partial^(nu)[Phi] + S_subsurface^(nu)[Phi; ellapse_nu, g_sub]`
+
+with stationary condition:
+
+`grad_y S_eff^(nu)(y_nu) = 0`
+
+and comparison to the Higgs/charged reference through:
+
+`delta S_eff^(nu-H) = S_eff^(nu) - S_eff^(H)`.
+
+Status: `OPEN_LOCALIZABLE`. The candidate route still requires the internal
+subsurface metric `g_sub`, projection/lapse map `ellapse_nu`, neutral boundary
+tensors `chi_nu^{AB}` and `lambda_nu`, neutral boundary conditions, and the
+finite-width neutral profile. The subsurface-channel language allows only
+exterior-projected anomalous propagation or apparent FTL from exterior-surface
+viewpoint; it remains locally causal in the internal/topographic metric.
+Numerical neutrino closure remains open.
+
 with
 
 `H_nu^(0) = [[lambda0+Delta0, etaA exp(i phiA), etaB exp(i phiB)], [etaA exp(-i phiA), lambda3+DeltaA, delta exp(i varphi)], [etaB exp(-i phiB), delta exp(-i varphi), lambda3+DeltaB]]`.
@@ -122,6 +144,7 @@ Near-degenerate mixing scaffold:
 - fit `beta0` to masses;
 - fit `Delta alpha/gamma` to CKM;
 - fit the CKM `1/16` exponent after comparison;
+- fit `S_eff_nu` to neutrino masses or PMNS data;
 - fit `S_nu_topo` to neutrino scale;
 - fit the PMNS phase loop to measured CP value;
 - fit scalar/topographic profile parameters to hide extra light states.
@@ -133,6 +156,8 @@ Open inputs include charged-sector metrics and prefactors, CKM mixing metrics an
 The neutral topographic suppression action has been localized as the next numerical-closure object. A candidate Hessian/barrier formula is identified, but numerical neutrino closure remains open unless explicitly derived and locked.
 
 The neutral saddle displacement `Delta y_nu` has been localized as a required input for the `S_nu_topo` Hessian/barrier formula. Candidate stationary-point and finite-width centroid definitions are documented. Numerical neutrino closure remains open.
+
+The neutral effective action `S_eff^(nu)` has been localized as the action-level source for the neutral saddle displacement. A subsurface neutral-channel candidate is documented, but the internal metric, projection/lapse map, neutral boundary tensors, and neutral profile remain open. Numerical neutrino closure remains open.
 
 ## Claim Boundary
 

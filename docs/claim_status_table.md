@@ -23,6 +23,7 @@
 | Neutral topographic suppression route | `STRUCTURALLY_DERIVED_CONDITIONAL` | `docs/bhsm_numerical_input_closure_map.md` | Neutral suppression operator cannot be represented |
 | Neutral topographic suppression action `S_nu_topo` | `OPEN_LOCALIZABLE` | `theory/theorem_discharge_neutral_topographic_suppression_action.md` | Must not be claimed until `Delta y_nu`, `H_topo^(nu)`, `E_nu`, and `S_barrier` are derived before comparison |
 | Neutral saddle displacement `Delta_y_nu` | `OPEN_LOCALIZABLE` | `theory/theorem_discharge_neutral_saddle_displacement.md` | Must not be claimed until the stationary-point or centroid ingredients are derived before comparison |
+| Neutral effective action `S_eff_nu` | `OPEN_LOCALIZABLE` | `theory/theorem_discharge_neutral_effective_action.md` | Must not be claimed until the internal metric, projection/lapse map, neutral boundary tensors, neutral boundary condition, and neutral profile are derived before comparison |
 | Neutral topographic suppression action value | `OPEN` | `theory/theorem_discharge_neutral_topographic_suppression_action.md` | No numerical value is derived or fitted |
 | Neutrino mass prediction | `OPEN` | `docs/bhsm_numerical_input_closure_map.md` | Requires derived `S_nu_topo` and locked neutral matrix inputs before comparison |
 | PMNS source | `STRUCTURALLY_DERIVED_CONDITIONAL` | `docs/bhsm_numerical_input_closure_map.md` | Neutral/charged-lepton diagonalization source fails |
