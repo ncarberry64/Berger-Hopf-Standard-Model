@@ -38,8 +38,8 @@ def test_collar_measure_extrinsic_geometry_objects_exist_in_closure_map():
 
     assert data["collar_measure_extrinsic_geometry"]["status"] == "DERIVED_CONDITIONAL"
     assert data["collar_jacobian_J"]["status"] == "DERIVED_CONDITIONAL"
-    assert data["boundary_trace_K"]["status"] == "OPEN_LOCALIZABLE"
-    assert data["shape_operator_S"]["status"] == "OPEN_LOCALIZABLE"
+    assert data["boundary_trace_K"]["status"] == "DERIVED_CONDITIONAL"
+    assert data["shape_operator_S"]["status"] == "DERIVED_CONDITIONAL"
     assert entry_by_id(data, "collar_measure")["status"] == "OPEN_LOCALIZABLE"
 
 
@@ -144,7 +144,8 @@ def test_docs_preserve_public_status_and_po_bh_57_language():
     )
     assert "structural architecture integrated conditional; numerical closure open" in combined
     assert "The collar-measure expansion has been derived conditionally from standard collar/extrinsic geometry as a symbolic formula" in combined
-    assert "boundary trace/extrinsic curvature data needed to evaluate `K(Y)` remain open" in combined
+    assert "shape operator, and trace formulas have been localized or derived conditionally" in combined
+    assert "numerical/function values remain open unless a BHSM scalar/topographic boundary profile and embedding are derived" in combined
 
 
 def test_public_status_flags_and_verdict_labels_remain_guarded():
@@ -156,5 +157,5 @@ def test_public_status_flags_and_verdict_labels_remain_guarded():
     assert data["official_predictions_changed"] is False
     assert "PO_BH_57_COLLAR_MEASURE_EXTRINSIC_GEOMETRY_CONDITIONAL" in data["verdict_labels"]
     assert "COLLAR_JACOBIAN_DERIVED_CONDITIONAL" in data["verdict_labels"]
-    assert "BOUNDARY_TRACE_K_OPEN" in data["verdict_labels"]
-    assert "SHAPE_OPERATOR_S_OPEN" in data["verdict_labels"]
+    assert "BOUNDARY_TRACE_FORMULA_DERIVED_CONDITIONAL" in data["verdict_labels"]
+    assert "SHAPE_OPERATOR_FORMULA_DERIVED_CONDITIONAL" in data["verdict_labels"]
