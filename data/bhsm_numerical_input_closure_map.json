@@ -2,7 +2,7 @@
   "id": "PO-BH-47",
   "title": "Numerical Input Closure Map Theorem",
   "status": "STRUCTURAL_ARCHITECTURE_INTEGRATED_CONDITIONAL_NUMERICAL_CLOSURE_OPEN",
-  "branch": "bhsm-scalar-profile-threshold-ledger-v1",
+  "branch": "bhsm-scalar-profile-eom-source-audit-v1",
   "official_predictions_changed": false,
   "frozen_predictions_changed": false,
   "standard_model_fully_derived": false,
@@ -20,7 +20,9 @@
     "FORBIDDEN_TO_FIT",
     "LOCALIZED_NOT_NUMERIC",
     "DERIVED_CONDITIONAL_WITH_OPEN_LEVEL_SET_INPUTS",
-    "DO_NOT_CLAIM"
+    "DO_NOT_CLAIM",
+    "COMPLETED",
+    "PARTIAL_EOM_SOURCE_FOUND"
   ],
   "ledgers": {
     "charged_lepton": [
@@ -1691,55 +1693,44 @@
     },
     {
       "id": "epsilon_nu_topo",
-      "sector": "neutrino_pmns",
-      "symbol": "epsilon_nu_topo",
-      "status": "OPEN_LOCALIZABLE",
-      "fit_policy": "FORBIDDEN_TO_FIT",
       "name": "Neutral topographic suppression factor",
+      "symbol": "epsilon_nu_topo",
+      "sector": "neutrino_pmns",
+      "status": "OPEN_LOCALIZABLE",
       "formula_candidate": "epsilon_nu_topo=exp(-S_nu_topo)",
-      "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+      "derivation_source": "PO-BH-61 route 5 source audit keeps value open until S_nu_topo is derived",
       "depends_on": [
-        "neutral_topographic_action_S_nu_topo",
-        "S_nu_topo",
-        "scalar_topographic_profile_input_classification"
+        "S_nu_topo_value"
       ],
-      "claim_boundary": "Value remains open until S_nu_topo is derived. No post-comparison fitting is allowed.",
-      "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
       "forbidden_inputs": [
+        "observed masses",
         "observed neutrino masses",
         "observed neutrino mass splittings",
-        "PMNS angles",
-        "PMNS CP phase",
         "CKM values",
-        "fitted FTL/anomaly data",
-        "propulsion data",
-        "post-comparison T_0 fit",
-        "post-comparison Phi_0 fit",
-        "post-comparison topographic profile fit",
-        "post-comparison boundary embedding fit",
-        "post-comparison normal fit",
-        "post-comparison second fundamental form fit",
-        "post-comparison shape-operator fit",
-        "post-comparison K(Y) fit",
-        "post-comparison J(Y,rho) fit",
-        "post-comparison S_nu_topo fit",
-        "post-comparison epsilon_nu_topo fit",
-        "observed masses",
         "PMNS values",
         "neutrino data",
         "anomaly/FTL data",
         "propulsion/anomaly data",
         "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
         "post-comparison explicit T profile fit",
         "post-comparison explicit Phi profile fit",
         "post-comparison metric/profile fit",
         "post-comparison normal orientation fit",
-        "post-comparison S(Y) fit"
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
       ],
+      "claim_boundary": "Value remains open until S_nu_topo is derived. No post-comparison fitting is allowed.",
       "tests": [
-        "tests/test_scalar_topographic_level_set_boundary_embedding.py",
+        "tests/test_scalar_topographic_profile_eom_source_audit.py",
         "tests/test_scalar_topographic_profile_input_classification.py"
-      ]
+      ],
+      "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
     },
     {
       "id": "explicit_scalar_topographic_boundary_variation",
@@ -4187,8 +4178,9 @@
       "sector": "scalar_topographic",
       "status": "OPEN_LOCALIZABLE",
       "formula_candidate": "needed to solve profiles",
-      "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+      "derivation_source": "PO-BH-61 distinguishes symbolic variation source from evaluated boundary-condition values",
       "depends_on": [
+        "profile_boundary_conditions_from_variation",
         "scalar_topographic_profile_input_classification"
       ],
       "forbidden_inputs": [
@@ -4213,8 +4205,9 @@
         "post-comparison S_nu_topo fit",
         "post-comparison epsilon_nu_topo fit"
       ],
-      "claim_boundary": "Boundary conditions are not fully fixed numerically. No post-comparison fitting is allowed.",
+      "claim_boundary": "Symbolic boundary-condition form is conditionally derived, but evaluated boundary data remain OPEN_LOCALIZABLE.",
       "tests": [
+        "tests/test_scalar_topographic_profile_eom_source_audit.py",
         "tests/test_scalar_topographic_profile_input_classification.py"
       ],
       "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
@@ -4423,6 +4416,590 @@
         "formula": "DERIVED_CONDITIONAL",
         "value": "OPEN_LOCALIZABLE"
       }
+    },
+    {
+      "id": "profile_EOM_source_audit",
+      "name": "Scalar/topographic profile EOM source audit",
+      "symbol": "EOM-source audit routes",
+      "sector": "scalar_topographic",
+      "status": "COMPLETED",
+      "formula_candidate": "Six-route source audit finds partial bulk/boundary variational structure but no complete profile EOM, threshold, profile solution, or neutral action value.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-61 scalar/topographic profile EOM source audit",
+      "depends_on": [
+        "scalar_topographic_profile_input_classification",
+        "explicit_scalar_topographic_boundary_variation",
+        "complete_scalar_topographic_collar_action",
+        "scalar_topographic_level_set_boundary_embedding"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "Audit is completed, but numerical/profile closure remains open.",
+      "tests": [
+        "tests/test_scalar_topographic_profile_eom_source_audit.py"
+      ],
+      "next_action": "derive or reject the missing explicit EOM, threshold, profile solution, and neutral action evaluation before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT",
+      "audit_result": "PARTIAL_EOM_SOURCE_FOUND",
+      "routes_audited": [
+        "existing_scalar_topographic_action",
+        "collar_boundary_variation",
+        "level_set_threshold_selection",
+        "internal_Berger_profile_equation",
+        "neutral_topographic_action_functional",
+        "no_source_result"
+      ],
+      "evidence_summary": "schematic scalar bulk action plus symbolic boundary variation exist; full profile EOM/source data do not"
+    },
+    {
+      "id": "spacetime_topographic_EOM",
+      "name": "Spacetime topographic scalar equation of motion",
+      "symbol": "EOM[T]",
+      "sector": "scalar_topographic",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "No explicit spacetime scalar/topographic action, source, threshold, and profile solution are derived.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-61 route 1 source audit",
+      "depends_on": [
+        "topographic_scalar_T_explicit_profile",
+        "T_0",
+        "T_profile_solution"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "No numerical spacetime profile or threshold is derived.",
+      "tests": [
+        "tests/test_scalar_topographic_profile_eom_source_audit.py"
+      ],
+      "next_action": "derive the spacetime topographic EOM and boundary/initial data before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "internal_Berger_profile_EOM",
+      "name": "Internal Berger profile equation of motion",
+      "symbol": "EOM[Phi]",
+      "sector": "scalar_topographic",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "Schematic scalar bulk variation supports an EOM route, but the BHSM-specific internal metric, potential/source, and boundary data remain open.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-61 routes 1 and 4 source audit",
+      "depends_on": [
+        "internal_topographic_profile_Phi_explicit_profile",
+        "internal_Berger_metric_g_B",
+        "Phi_0",
+        "Phi_profile_solution"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "Partial symbolic EOM structure is not a derived internal Berger profile solution.",
+      "tests": [
+        "tests/test_scalar_topographic_profile_eom_source_audit.py"
+      ],
+      "next_action": "derive the internal Berger EOM, potential/source, metric values, and boundary data before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "profile_boundary_conditions_from_variation",
+      "name": "Profile boundary conditions from scalar/topographic variation",
+      "symbol": "n.grad Phi - D_A(chi D Phi) + R_nu = 0",
+      "sector": "scalar_topographic",
+      "status": "DERIVED_CONDITIONAL",
+      "formula_candidate": "Symbolic boundary-condition form follows from existing variation, with tensor/collar/profile values open.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-53 boundary variation, re-audited in PO-BH-61 route 2",
+      "depends_on": [
+        "explicit_scalar_topographic_boundary_variation",
+        "profile_boundary_conditions",
+        "neutral_boundary_tensors",
+        "normal_collar_convention"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "Only the symbolic boundary form is conditionally derived; evaluated values remain open.",
+      "tests": [
+        "tests/test_scalar_topographic_profile_eom_source_audit.py"
+      ],
+      "next_action": "derive tensor values, collar/Robin data, and profile data before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT",
+      "status_detail": {
+        "symbolic_form": "DERIVED_CONDITIONAL",
+        "evaluated_values": "OPEN_LOCALIZABLE"
+      }
+    },
+    {
+      "id": "threshold_selection_T_0",
+      "name": "Spacetime topographic threshold selection",
+      "symbol": "T_0",
+      "sector": "scalar_topographic",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "T=T_0 is localized as a level-set route, but no threshold-selection theorem is derived.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-61 route 3 source audit",
+      "depends_on": [
+        "T_0",
+        "scalar_topographic_level_set_F"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "T_0 is not derived and cannot be fitted.",
+      "tests": [
+        "tests/test_scalar_topographic_profile_eom_source_audit.py"
+      ],
+      "next_action": "derive threshold selection before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "threshold_selection_Phi_0",
+      "name": "Internal profile threshold selection",
+      "symbol": "Phi_0",
+      "sector": "scalar_topographic",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "Phi=Phi_0 is localized as a level-set route, but no internal threshold-selection theorem is derived.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-61 route 3 source audit",
+      "depends_on": [
+        "Phi_0",
+        "scalar_topographic_level_set_F"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "Phi_0 is not derived and cannot be fitted.",
+      "tests": [
+        "tests/test_scalar_topographic_profile_eom_source_audit.py"
+      ],
+      "next_action": "derive threshold selection before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "T_profile_solution",
+      "name": "Spacetime topographic profile solution",
+      "symbol": "T(x,t)",
+      "sector": "scalar_topographic",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "No explicit T profile solution follows until the spacetime EOM, source, threshold, and boundary/initial data are derived.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-61 source audit",
+      "depends_on": [
+        "spacetime_topographic_EOM",
+        "threshold_selection_T_0"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "No numerical T profile is derived.",
+      "tests": [
+        "tests/test_scalar_topographic_profile_eom_source_audit.py"
+      ],
+      "next_action": "derive and solve the spacetime profile system before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "Phi_profile_solution",
+      "name": "Internal Berger profile solution",
+      "symbol": "Phi(y)",
+      "sector": "scalar_topographic",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "No explicit Phi profile solution follows until the internal EOM, metric, threshold, and boundary data are derived.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-61 source audit",
+      "depends_on": [
+        "internal_Berger_profile_EOM",
+        "threshold_selection_Phi_0"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "No numerical Phi profile is derived.",
+      "tests": [
+        "tests/test_scalar_topographic_profile_eom_source_audit.py"
+      ],
+      "next_action": "derive and solve the internal profile system before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "S_nu_topo_functional",
+      "name": "Neutral topographic action functional source",
+      "symbol": "S_nu_topo functional",
+      "sector": "neutrino_pmns",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "Hessian/barrier route is localized, but complete functional dependencies are not derived.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-61 route 5 source audit",
+      "depends_on": [
+        "S_nu_topo",
+        "neutral_topographic_action_S_nu_topo",
+        "Phi_profile_solution",
+        "metric_profile_evaluation_gate"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "The functional source remains open-localizable and cannot be numerically evaluated.",
+      "tests": [
+        "tests/test_scalar_topographic_profile_eom_source_audit.py"
+      ],
+      "next_action": "derive the neutral functional dependencies before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "S_nu_topo_value",
+      "name": "Neutral topographic action value",
+      "symbol": "value(S_nu_topo)",
+      "sector": "neutrino_pmns",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "No action integral/profile evaluation produces a value.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-61 route 5 source audit",
+      "depends_on": [
+        "S_nu_topo_functional",
+        "neutral_action_evaluation_gate"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "S_nu_topo is not computed and cannot be fitted.",
+      "tests": [
+        "tests/test_scalar_topographic_profile_eom_source_audit.py"
+      ],
+      "next_action": "evaluate only after the functional, profile, metric, displacement, and barrier data are derived",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "neutral_action_evaluation_gate",
+      "name": "Neutral action evaluation gate",
+      "symbol": "Gate 4 neutral action evaluation",
+      "sector": "neutrino_pmns",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "Neutral action evaluation remains open until the profile, metric, displacement, Hessian, embedding, and barrier data are derived.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-61 source audit",
+      "depends_on": [
+        "S_nu_topo_functional",
+        "S_nu_topo_value"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "No neutral numerical suppression is claimed.",
+      "tests": [
+        "tests/test_scalar_topographic_profile_eom_source_audit.py"
+      ],
+      "next_action": "derive neutral action evaluation before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "metric_profile_evaluation_gate",
+      "name": "Metric/profile evaluation gate",
+      "symbol": "Gate 3 metric/profile evaluation",
+      "sector": "scalar_topographic",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "Metric values, profile values, gradient norms, and orientation remain open.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-61 source audit",
+      "depends_on": [
+        "internal_Berger_metric_g_B",
+        "gradient_norm_T",
+        "gradient_norm_Phi",
+        "normal_orientation"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "No metric/profile values are derived or fitted.",
+      "tests": [
+        "tests/test_scalar_topographic_profile_eom_source_audit.py"
+      ],
+      "next_action": "derive metric/profile data before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "threshold_selection_gate",
+      "name": "Threshold selection gate",
+      "symbol": "Gate 2 threshold selection",
+      "sector": "scalar_topographic",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "T_0 and Phi_0 remain open-localizable.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-61 source audit",
+      "depends_on": [
+        "threshold_selection_T_0",
+        "threshold_selection_Phi_0"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "No thresholds are derived or fitted.",
+      "tests": [
+        "tests/test_scalar_topographic_profile_eom_source_audit.py"
+      ],
+      "next_action": "derive threshold-selection theorem before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
     }
   ],
   "open_numerical_inputs": [
@@ -4539,7 +5116,8 @@
     "promote point or saddle data y_H, y_nu, or y_0 into a full boundary embedding without a scalar/topographic profile theorem",
     "fit S_nu_topo or epsilon_nu_topo using the level-set route after comparison",
     "fit scalar/topographic profile inputs T_0, Phi_0, T(x,t), Phi(y), metric values, gradient norms, orientation, K(Y), S(Y), J(Y,rho), S_nu_topo, or epsilon_nu_topo after comparison",
-    "use observed masses, CKM values, PMNS values, neutrino data, anomaly/FTL data, propulsion/anomaly data, or target values to choose scalar/topographic profile inputs"
+    "use observed masses, CKM values, PMNS values, neutrino data, anomaly/FTL data, propulsion/anomaly data, or target values to choose scalar/topographic profile inputs",
+    "fit profile EOM terms, thresholds, profile solutions, S_nu_topo, or epsilon_nu_topo to neutrino, PMNS, CKM, anomaly/FTL, propulsion/anomaly, or target values"
   ],
   "claim_status_table": [
     {
@@ -4662,7 +5240,18 @@
     "PHI_0_OPEN_LOCALIZABLE",
     "T_EXPLICIT_PROFILE_LOCALIZED_NOT_NUMERIC",
     "PHI_EXPLICIT_PROFILE_LOCALIZED_NOT_NUMERIC",
-    "S_NU_TOPO_REMAINS_OPEN_LOCALIZABLE"
+    "S_NU_TOPO_REMAINS_OPEN_LOCALIZABLE",
+    "PO_BH_61_PROFILE_EOM_SOURCE_AUDIT_COMPLETED",
+    "PROFILE_EOM_PARTIAL_SOURCE_FOUND",
+    "SPACETIME_TOPOGRAPHIC_EOM_OPEN_LOCALIZABLE",
+    "INTERNAL_BERGER_PROFILE_EOM_OPEN_LOCALIZABLE",
+    "PROFILE_BOUNDARY_CONDITIONS_FROM_VARIATION_DERIVED_CONDITIONAL",
+    "THRESHOLD_SELECTION_T_0_OPEN",
+    "THRESHOLD_SELECTION_PHI_0_OPEN",
+    "T_PROFILE_SOLUTION_OPEN_LOCALIZABLE",
+    "PHI_PROFILE_SOLUTION_OPEN_LOCALIZABLE",
+    "S_NU_TOPO_FUNCTIONAL_OPEN_LOCALIZABLE",
+    "S_NU_TOPO_VALUE_OPEN"
   ],
   "collar_measure_extrinsic_geometry": {
     "id": "PO-BH-57",
@@ -5726,9 +6315,9 @@
     "sector": "neutrino_pmns",
     "status": "OPEN_LOCALIZABLE",
     "formula_candidate": "epsilon_nu_topo=exp(-S_nu_topo)",
-    "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+    "derivation_source": "PO-BH-61 route 5 source audit keeps value open until S_nu_topo is derived",
     "depends_on": [
-      "scalar_topographic_profile_input_classification"
+      "S_nu_topo_value"
     ],
     "forbidden_inputs": [
       "observed masses",
@@ -5754,6 +6343,7 @@
     ],
     "claim_boundary": "Value remains open until S_nu_topo is derived. No post-comparison fitting is allowed.",
     "tests": [
+      "tests/test_scalar_topographic_profile_eom_source_audit.py",
       "tests/test_scalar_topographic_profile_input_classification.py"
     ],
     "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
@@ -5770,15 +6360,16 @@
     "pre_comparison_locked": false,
     "derivation_source": "PO-BH-60 input ledger built from PO-BH-59 level-set routes and prior scalar/topographic scaffolds",
     "depends_on": [
-      "scalar_topographic_level_set_F",
-      "spacetime_topographic_scalar_T",
-      "internal_topographic_profile_Phi",
-      "profile_equation_of_motion",
-      "profile_boundary_conditions",
-      "T_0",
       "Phi_0",
+      "T_0",
+      "gradient_norm_Phi",
       "gradient_norm_T",
-      "gradient_norm_Phi"
+      "internal_topographic_profile_Phi",
+      "profile_EOM_source_audit",
+      "profile_boundary_conditions",
+      "profile_equation_of_motion",
+      "scalar_topographic_level_set_F",
+      "spacetime_topographic_scalar_T"
     ],
     "profile_gates": [
       {
@@ -5826,6 +6417,7 @@
     ],
     "claim_boundary": "PO-BH-60 classifies open scalar/topographic profile inputs and thresholds; it does not compute S_nu_topo, epsilon_nu_topo, or numerical neutrino/PMNS/CKM predictions.",
     "tests": [
+      "tests/test_scalar_topographic_profile_eom_source_audit.py",
       "tests/test_scalar_topographic_profile_input_classification.py"
     ],
     "next_action": "derive or reject threshold selection, explicit profiles, metric/profile evaluation, and neutral action evaluation before comparison",
@@ -6318,8 +6910,9 @@
     "sector": "scalar_topographic",
     "status": "OPEN_LOCALIZABLE",
     "formula_candidate": "needed to solve profiles",
-    "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+    "derivation_source": "PO-BH-61 distinguishes symbolic variation source from evaluated boundary-condition values",
     "depends_on": [
+      "profile_boundary_conditions_from_variation",
       "scalar_topographic_profile_input_classification"
     ],
     "forbidden_inputs": [
@@ -6344,8 +6937,9 @@
       "post-comparison S_nu_topo fit",
       "post-comparison epsilon_nu_topo fit"
     ],
-    "claim_boundary": "Boundary conditions are not fully fixed numerically. No post-comparison fitting is allowed.",
+    "claim_boundary": "Symbolic boundary-condition form is conditionally derived, but evaluated boundary data remain OPEN_LOCALIZABLE.",
     "tests": [
+      "tests/test_scalar_topographic_profile_eom_source_audit.py",
       "tests/test_scalar_topographic_profile_input_classification.py"
     ],
     "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
@@ -6633,6 +7227,590 @@
       "tests/test_scalar_topographic_profile_input_classification.py"
     ],
     "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "profile_EOM_source_audit": {
+    "id": "profile_EOM_source_audit",
+    "name": "Scalar/topographic profile EOM source audit",
+    "symbol": "EOM-source audit routes",
+    "sector": "scalar_topographic",
+    "status": "COMPLETED",
+    "formula_candidate": "Six-route source audit finds partial bulk/boundary variational structure but no complete profile EOM, threshold, profile solution, or neutral action value.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-61 scalar/topographic profile EOM source audit",
+    "depends_on": [
+      "scalar_topographic_profile_input_classification",
+      "explicit_scalar_topographic_boundary_variation",
+      "complete_scalar_topographic_collar_action",
+      "scalar_topographic_level_set_boundary_embedding"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "Audit is completed, but numerical/profile closure remains open.",
+    "tests": [
+      "tests/test_scalar_topographic_profile_eom_source_audit.py"
+    ],
+    "next_action": "derive or reject the missing explicit EOM, threshold, profile solution, and neutral action evaluation before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT",
+    "audit_result": "PARTIAL_EOM_SOURCE_FOUND",
+    "routes_audited": [
+      "existing_scalar_topographic_action",
+      "collar_boundary_variation",
+      "level_set_threshold_selection",
+      "internal_Berger_profile_equation",
+      "neutral_topographic_action_functional",
+      "no_source_result"
+    ],
+    "evidence_summary": "schematic scalar bulk action plus symbolic boundary variation exist; full profile EOM/source data do not"
+  },
+  "spacetime_topographic_EOM": {
+    "id": "spacetime_topographic_EOM",
+    "name": "Spacetime topographic scalar equation of motion",
+    "symbol": "EOM[T]",
+    "sector": "scalar_topographic",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "No explicit spacetime scalar/topographic action, source, threshold, and profile solution are derived.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-61 route 1 source audit",
+    "depends_on": [
+      "topographic_scalar_T_explicit_profile",
+      "T_0",
+      "T_profile_solution"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "No numerical spacetime profile or threshold is derived.",
+    "tests": [
+      "tests/test_scalar_topographic_profile_eom_source_audit.py"
+    ],
+    "next_action": "derive the spacetime topographic EOM and boundary/initial data before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "internal_Berger_profile_EOM": {
+    "id": "internal_Berger_profile_EOM",
+    "name": "Internal Berger profile equation of motion",
+    "symbol": "EOM[Phi]",
+    "sector": "scalar_topographic",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "Schematic scalar bulk variation supports an EOM route, but the BHSM-specific internal metric, potential/source, and boundary data remain open.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-61 routes 1 and 4 source audit",
+    "depends_on": [
+      "internal_topographic_profile_Phi_explicit_profile",
+      "internal_Berger_metric_g_B",
+      "Phi_0",
+      "Phi_profile_solution"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "Partial symbolic EOM structure is not a derived internal Berger profile solution.",
+    "tests": [
+      "tests/test_scalar_topographic_profile_eom_source_audit.py"
+    ],
+    "next_action": "derive the internal Berger EOM, potential/source, metric values, and boundary data before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "profile_boundary_conditions_from_variation": {
+    "id": "profile_boundary_conditions_from_variation",
+    "name": "Profile boundary conditions from scalar/topographic variation",
+    "symbol": "n.grad Phi - D_A(chi D Phi) + R_nu = 0",
+    "sector": "scalar_topographic",
+    "status": "DERIVED_CONDITIONAL",
+    "formula_candidate": "Symbolic boundary-condition form follows from existing variation, with tensor/collar/profile values open.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-53 boundary variation, re-audited in PO-BH-61 route 2",
+    "depends_on": [
+      "explicit_scalar_topographic_boundary_variation",
+      "profile_boundary_conditions",
+      "neutral_boundary_tensors",
+      "normal_collar_convention"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "Only the symbolic boundary form is conditionally derived; evaluated values remain open.",
+    "tests": [
+      "tests/test_scalar_topographic_profile_eom_source_audit.py"
+    ],
+    "next_action": "derive tensor values, collar/Robin data, and profile data before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT",
+    "status_detail": {
+      "symbolic_form": "DERIVED_CONDITIONAL",
+      "evaluated_values": "OPEN_LOCALIZABLE"
+    }
+  },
+  "threshold_selection_T_0": {
+    "id": "threshold_selection_T_0",
+    "name": "Spacetime topographic threshold selection",
+    "symbol": "T_0",
+    "sector": "scalar_topographic",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "T=T_0 is localized as a level-set route, but no threshold-selection theorem is derived.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-61 route 3 source audit",
+    "depends_on": [
+      "T_0",
+      "scalar_topographic_level_set_F"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "T_0 is not derived and cannot be fitted.",
+    "tests": [
+      "tests/test_scalar_topographic_profile_eom_source_audit.py"
+    ],
+    "next_action": "derive threshold selection before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "threshold_selection_Phi_0": {
+    "id": "threshold_selection_Phi_0",
+    "name": "Internal profile threshold selection",
+    "symbol": "Phi_0",
+    "sector": "scalar_topographic",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "Phi=Phi_0 is localized as a level-set route, but no internal threshold-selection theorem is derived.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-61 route 3 source audit",
+    "depends_on": [
+      "Phi_0",
+      "scalar_topographic_level_set_F"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "Phi_0 is not derived and cannot be fitted.",
+    "tests": [
+      "tests/test_scalar_topographic_profile_eom_source_audit.py"
+    ],
+    "next_action": "derive threshold selection before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "T_profile_solution": {
+    "id": "T_profile_solution",
+    "name": "Spacetime topographic profile solution",
+    "symbol": "T(x,t)",
+    "sector": "scalar_topographic",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "No explicit T profile solution follows until the spacetime EOM, source, threshold, and boundary/initial data are derived.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-61 source audit",
+    "depends_on": [
+      "spacetime_topographic_EOM",
+      "threshold_selection_T_0"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "No numerical T profile is derived.",
+    "tests": [
+      "tests/test_scalar_topographic_profile_eom_source_audit.py"
+    ],
+    "next_action": "derive and solve the spacetime profile system before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "Phi_profile_solution": {
+    "id": "Phi_profile_solution",
+    "name": "Internal Berger profile solution",
+    "symbol": "Phi(y)",
+    "sector": "scalar_topographic",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "No explicit Phi profile solution follows until the internal EOM, metric, threshold, and boundary data are derived.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-61 source audit",
+    "depends_on": [
+      "internal_Berger_profile_EOM",
+      "threshold_selection_Phi_0"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "No numerical Phi profile is derived.",
+    "tests": [
+      "tests/test_scalar_topographic_profile_eom_source_audit.py"
+    ],
+    "next_action": "derive and solve the internal profile system before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "S_nu_topo_functional": {
+    "id": "S_nu_topo_functional",
+    "name": "Neutral topographic action functional source",
+    "symbol": "S_nu_topo functional",
+    "sector": "neutrino_pmns",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "Hessian/barrier route is localized, but complete functional dependencies are not derived.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-61 route 5 source audit",
+    "depends_on": [
+      "S_nu_topo",
+      "neutral_topographic_action_S_nu_topo",
+      "Phi_profile_solution",
+      "metric_profile_evaluation_gate"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "The functional source remains open-localizable and cannot be numerically evaluated.",
+    "tests": [
+      "tests/test_scalar_topographic_profile_eom_source_audit.py"
+    ],
+    "next_action": "derive the neutral functional dependencies before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "S_nu_topo_value": {
+    "id": "S_nu_topo_value",
+    "name": "Neutral topographic action value",
+    "symbol": "value(S_nu_topo)",
+    "sector": "neutrino_pmns",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "No action integral/profile evaluation produces a value.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-61 route 5 source audit",
+    "depends_on": [
+      "S_nu_topo_functional",
+      "neutral_action_evaluation_gate"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "S_nu_topo is not computed and cannot be fitted.",
+    "tests": [
+      "tests/test_scalar_topographic_profile_eom_source_audit.py"
+    ],
+    "next_action": "evaluate only after the functional, profile, metric, displacement, and barrier data are derived",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "neutral_action_evaluation_gate": {
+    "id": "neutral_action_evaluation_gate",
+    "name": "Neutral action evaluation gate",
+    "symbol": "Gate 4 neutral action evaluation",
+    "sector": "neutrino_pmns",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "Neutral action evaluation remains open until the profile, metric, displacement, Hessian, embedding, and barrier data are derived.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-61 source audit",
+    "depends_on": [
+      "S_nu_topo_functional",
+      "S_nu_topo_value"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "No neutral numerical suppression is claimed.",
+    "tests": [
+      "tests/test_scalar_topographic_profile_eom_source_audit.py"
+    ],
+    "next_action": "derive neutral action evaluation before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "metric_profile_evaluation_gate": {
+    "id": "metric_profile_evaluation_gate",
+    "name": "Metric/profile evaluation gate",
+    "symbol": "Gate 3 metric/profile evaluation",
+    "sector": "scalar_topographic",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "Metric values, profile values, gradient norms, and orientation remain open.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-61 source audit",
+    "depends_on": [
+      "internal_Berger_metric_g_B",
+      "gradient_norm_T",
+      "gradient_norm_Phi",
+      "normal_orientation"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "No metric/profile values are derived or fitted.",
+    "tests": [
+      "tests/test_scalar_topographic_profile_eom_source_audit.py"
+    ],
+    "next_action": "derive metric/profile data before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "threshold_selection_gate": {
+    "id": "threshold_selection_gate",
+    "name": "Threshold selection gate",
+    "symbol": "Gate 2 threshold selection",
+    "sector": "scalar_topographic",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "T_0 and Phi_0 remain open-localizable.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-61 source audit",
+    "depends_on": [
+      "threshold_selection_T_0",
+      "threshold_selection_Phi_0"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "No thresholds are derived or fitted.",
+    "tests": [
+      "tests/test_scalar_topographic_profile_eom_source_audit.py"
+    ],
+    "next_action": "derive threshold-selection theorem before comparison",
     "fit_policy": "FORBIDDEN_TO_FIT"
   }
 }
