@@ -7,9 +7,9 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 | Item | Current status |
 | --- | --- |
 | Overall status | structural architecture integrated conditional; numerical closure open |
-| Latest theorem branch | `bhsm-s-nu-topo-local-closure-v1` |
-| Latest completed theorem commits | PO-BH-47 `ae5dac5`; PO-BH-47 cleanup `1c11d2b`; PO-BH-48 `8ac577c` |
-| Test result summary | `1296 passed`; focused PO-BH-48 tests `9 passed`; focused PO-BH-47 tests `11 passed`; guardrail audits passed |
+| Latest theorem branch | `bhsm-delta-y-nu-localization-v1` |
+| Latest completed theorem commits | PO-BH-47 `ae5dac5`; PO-BH-47 cleanup `1c11d2b`; PO-BH-48 `8ac577c`; PO-BH-49 on this branch |
+| Test result summary | `1305 passed`; focused PO-BH-49 tests `9 passed`; focused PO-BH-48 tests `9 passed`; focused PO-BH-47 tests `11 passed`; guardrail audits passed |
 | Current theorem/status label | `STRUCTURAL_ARCHITECTURE_INTEGRATED_CONDITIONAL_NUMERICAL_CLOSURE_OPEN` |
 | Candidate architecture complete | yes |
 | Full BHSM proven | no |
@@ -30,6 +30,8 @@ The public status is: structural architecture integrated conditional; numerical 
 Open blockers include CKM `1/16`, `S_nu_topo`, scalar/topographic decoupling, higher-loop thresholds, numerical mass-ratio locking, CKM numerical locking, PMNS numerical locking, neutrino ordering, and stability/coupling bounds.
 
 PO-BH-48 localizes `S_nu_topo` as a neutral topographic suppression action candidate. The best current route is the Hessian/barrier formula `S_nu_topo = 1/2 Delta y_nu^T G_nu_topo Delta y_nu + S_barrier`, but the required neutral displacement, neutral Hessian, embedding tensor, barrier, and finite-width saddle/path remain open. Numerical neutrino closure remains open.
+
+PO-BH-49 localizes `Delta y_nu` as a required input for the `S_nu_topo` Hessian/barrier formula. Candidate stationary-point and finite-width centroid definitions are documented, but `S_eff^(nu)`, `S_eff^(H)`, `H_H`, the neutral-minus-Higgs gradient, `W_nu`, `W_H`, and an invariant centroid convention remain open. Numerical neutrino closure remains open.
 
 ## Cross-Links
 
@@ -77,6 +79,7 @@ PO-BH-48 localizes `S_nu_topo` as a neutral topographic suppression action candi
 - [Theorem discharge: explicit symbolic Gram/minor](../theory/theorem_discharge_explicit_symbolic_gram_minor.md)
 - [Numerical input closure map](bhsm_numerical_input_closure_map.md)
 - [Theorem discharge: neutral topographic suppression action](../theory/theorem_discharge_neutral_topographic_suppression_action.md)
+- [Theorem discharge: neutral saddle displacement](../theory/theorem_discharge_neutral_saddle_displacement.md)
 
 ## Boundary-Action Term Realization Status
 
