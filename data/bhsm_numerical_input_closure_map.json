@@ -52,7 +52,12 @@
     "Delta_y_nu_ledger": "Delta labels = (q_nu,j_nu) - (q_H,j_H)",
     "Delta_y_nu_omega": "Omega_nu = -q - 2j = -k",
     "S_nu_topo_stiffness_mismatch": "S_nu_topo = S_eff^(nu) - S_eff^(charged_ref)",
-    "S_nu_topo_omega_barrier": "Omega_nu = -q - 2j = -k"
+    "S_nu_topo_omega_barrier": "Omega_nu = -q - 2j = -k",
+    "S_eff_nu": "S_eff^(nu) = S_bulk[Phi] + S_partial^(nu)[Phi] + S_subsurface^(nu)[Phi; ellapse_nu, g_sub]",
+    "S_eff_nu_boundary": "S_eff^(nu) = S_bulk[Phi] + int_partialB [1/2 chi_nu^{AB} partial_A Phi partial_B Phi + lambda_nu(nhat) Phi nhat.grad Phi] dA",
+    "S_eff_nu_profile": "S_eff^(nu)[W_nu] = int_B W_nu(y) V_eff^(nu)(y) dV + regularization/width term",
+    "neutral_stationary_condition": "grad_y S_eff^(nu)(y_nu) = 0",
+    "delta_S_eff_nu_H": "delta S_eff^(nu-H) = S_eff^(nu) - S_eff^(H)"
   },
   "phase_admissibility": {
     "absolute_alpha0_physical": false,
@@ -122,6 +127,83 @@
     "tests": ["tests/test_neutral_topographic_suppression_action.py"],
     "next_action": "derive or reject Delta y_nu, H_topo^(nu), E_nu, and S_barrier from the scalar/topographic boundary action before any neutrino-scale comparison"
   },
+  "neutral_effective_action": {
+    "id": "PO-BH-50",
+    "name": "Neutral effective action",
+    "symbol": "S_eff_nu",
+    "sector": "neutrino_pmns",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "S_eff^(nu) = S_bulk[Phi] + S_partial^(nu)[Phi] + S_subsurface^(nu)[Phi; ellapse_nu, g_sub]",
+    "stationary_condition": "grad_y S_eff^(nu)(y_nu) = 0",
+    "delta_relation": "delta S_eff^(nu-H) = S_eff^(nu) - S_eff^(H)",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "candidate subsurface neutral topographic channel and boundary/profile action scaffolds",
+    "depends_on": [
+      {"id": "g_sub", "status": "OPEN_LOCALIZABLE"},
+      {"id": "ellapse_nu", "status": "OPEN_LOCALIZABLE"},
+      {"id": "S_bulk[Phi]", "status": "OPEN_LOCALIZABLE"},
+      {"id": "S_partial^(nu)[Phi]", "status": "OPEN_LOCALIZABLE"},
+      {"id": "chi_nu^{AB}", "status": "OPEN_LOCALIZABLE"},
+      {"id": "lambda_nu(nhat)", "status": "OPEN_LOCALIZABLE"},
+      {"id": "neutral boundary condition", "status": "OPEN_UNRESOLVED"},
+      {"id": "W_nu", "status": "OPEN_LOCALIZABLE"},
+      {"id": "V_eff^(nu)", "status": "OPEN_LOCALIZABLE"},
+      {"id": "neutral profile regularization/width term", "status": "OPEN_LOCALIZABLE"},
+      {"id": "subsurface-to-exterior projection map", "status": "OPEN_UNRESOLVED"}
+    ],
+    "candidate_routes": [
+      {
+        "id": "route_A_subsurface_neutral_channel_action",
+        "formula": "S_eff^(nu) = S_bulk[Phi] + S_partial^(nu)[Phi] + S_subsurface^(nu)[Phi; ellapse_nu, g_sub]",
+        "dependencies": ["S_bulk[Phi]", "S_partial^(nu)[Phi]", "S_subsurface^(nu)", "ellapse_nu", "g_sub", "subsurface-to-exterior projection map"],
+        "status": "OPEN_LOCALIZABLE",
+        "reason": "This route localizes the neutral effective action as a subsurface neutral topographic channel, but the internal/subsurface metric and projection/lapse map are not derived.",
+        "allowed_next_step": "derive g_sub, ellapse_nu, and the projection map from the internal topographic/boundary action before comparison",
+        "forbidden_shortcut": "fit a neutral effective action or apparent propagation parameter to neutrino data"
+      },
+      {
+        "id": "route_B_boundary_scalar_topographic_action",
+        "formula": "S_eff^(nu) = S_bulk[Phi] + int_partialB [1/2 chi_nu^{AB} partial_A Phi partial_B Phi + lambda_nu(nhat) Phi nhat.grad Phi] dA",
+        "dependencies": ["S_bulk[Phi]", "chi_nu^{AB}", "lambda_nu(nhat)", "neutral boundary condition"],
+        "status": "OPEN_LOCALIZABLE",
+        "reason": "Scalar/topographic boundary terms give a plausible action source, but the neutral boundary tensor, normal coupling, and boundary condition remain open.",
+        "allowed_next_step": "derive chi_nu, lambda_nu, and the neutral boundary condition from the scalar/topographic boundary action",
+        "forbidden_shortcut": "choose boundary tensors to reproduce observed neutrino masses, splittings, or PMNS angles"
+      },
+      {
+        "id": "route_C_neutral_operator_source",
+        "formula": "Omega_nu = -q - 2j = -k",
+        "dependencies": ["Omega_nu", "operator-to-action map", "neutral sector boundary functional"],
+        "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+        "reason": "Omega_nu is a sector label and boundary-operator hint, but the repo does not derive an action functional directly from Omega_nu.",
+        "allowed_next_step": "derive an operator-to-action map from the neutral boundary functional",
+        "forbidden_shortcut": "convert Omega_nu labels into a fitted neutral action scale"
+      },
+      {
+        "id": "route_D_finite_width_neutral_profile_action",
+        "formula": "S_eff^(nu)[W_nu] = int_B W_nu(y) V_eff^(nu)(y) dV + regularization/width term",
+        "dependencies": ["W_nu", "V_eff^(nu)", "neutral profile regularization/width term", "saddle/centroid prescription"],
+        "status": "OPEN_LOCALIZABLE",
+        "reason": "A finite-width neutral profile can define a saddle or centroid action, but the weight, potential, and regularization are not derived.",
+        "allowed_next_step": "derive W_nu, V_eff^(nu), and the regularization term before comparison",
+        "forbidden_shortcut": "select a neutral profile width to obtain a desired neutrino suppression"
+      }
+    ],
+    "forbidden_inputs": [
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "PMNS angles",
+      "PMNS CP phase",
+      "post-comparison S_eff_nu fit",
+      "post-comparison Delta_y_nu fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "The neutral effective action S_eff^(nu) is localized as the action-level source for the neutral saddle displacement. The subsurface neutral-channel candidate is documented, but the internal metric, projection/lapse map, neutral boundary tensors, and neutral profile remain open. Numerical neutrino closure remains open.",
+    "causality_boundary": "Subsurface neutral topographic channel language permits exterior-projected anomalous propagation or apparent FTL from the exterior-surface viewpoint only as an interpretive projection; the candidate remains locally causal in the internal/topographic metric and does not assert locally acausal propagation.",
+    "tests": ["tests/test_neutral_effective_action.py"],
+    "next_action": "derive or reject g_sub, ellapse_nu, chi_nu, lambda_nu, W_nu, V_eff^(nu), and the neutral projection map from the boundary/topographic action before any neutrino comparison"
+  },
   "neutral_saddle_displacement": {
     "id": "PO-BH-49",
     "name": "Neutral saddle displacement",
@@ -134,7 +216,7 @@
     "pre_comparison_locked": false,
     "derivation_source": "candidate scalar/topographic stationary-point and finite-width centroid scaffolds",
     "depends_on": [
-      {"id": "S_eff^(nu)", "status": "OPEN_LOCALIZABLE"},
+      {"id": "S_eff_nu", "status": "OPEN_LOCALIZABLE"},
       {"id": "S_eff^(H)", "status": "OPEN_LOCALIZABLE"},
       {"id": "H_H", "status": "OPEN_LOCALIZABLE"},
       {"id": "grad_y[delta S_eff^(nu-H)]", "status": "OPEN_LOCALIZABLE"},
@@ -238,6 +320,21 @@
     {"id": "M_nu", "sector": "neutrino_pmns", "symbol": "M_nu = epsilon_nu_topo M_nu^(0)", "status": "STRUCTURALLY_INTEGRATED", "fit_policy": "FORBIDDEN_TO_FIT"},
     {"id": "epsilon_nu_topo", "sector": "neutrino_pmns", "symbol": "epsilon_nu_topo = exp(-S_nu_topo)", "status": "STRUCTURALLY_INTEGRATED", "fit_policy": "FORBIDDEN_TO_FIT"},
     {
+      "id": "S_eff_nu",
+      "name": "Neutral effective action",
+      "sector": "neutrino_pmns",
+      "symbol": "S_eff^(nu)",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "S_eff^(nu) = S_bulk[Phi] + S_partial^(nu)[Phi] + S_subsurface^(nu)[Phi; ellapse_nu, g_sub]",
+      "derivation_source": "candidate subsurface neutral topographic channel and boundary/profile action scaffolds",
+      "depends_on": ["g_sub", "ellapse_nu", "S_bulk[Phi]", "S_partial^(nu)[Phi]", "chi_nu^{AB}", "lambda_nu(nhat)", "neutral boundary condition", "W_nu", "V_eff^(nu)", "subsurface-to-exterior projection map"],
+      "forbidden_inputs": ["observed neutrino masses", "observed neutrino mass splittings", "PMNS angles", "PMNS CP phase", "post-comparison S_eff_nu fit", "post-comparison Delta_y_nu fit", "post-comparison epsilon_nu_topo fit"],
+      "claim_boundary": "The neutral effective action S_eff^(nu) is localized as the action-level source for the neutral saddle displacement. The subsurface neutral-channel candidate is documented, but the internal metric, projection/lapse map, neutral boundary tensors, and neutral profile remain open. Numerical neutrino closure remains open.",
+      "tests": ["tests/test_neutral_effective_action.py"],
+      "next_action": "derive or reject g_sub, ellapse_nu, chi_nu, lambda_nu, W_nu, V_eff^(nu), and the neutral projection map from the boundary/topographic action before any neutrino comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
       "id": "Delta_y_nu",
       "name": "Neutral saddle displacement",
       "sector": "neutrino_pmns",
@@ -246,7 +343,7 @@
       "formula_candidate": "Delta y_nu = - H_H^{-1} grad_y[delta S_eff^(nu-H)]|_{y_H}",
       "alternate_formula_candidate": "Delta y_nu = <y>_nu - <y>_H",
       "derivation_source": "candidate scalar/topographic stationary-point and finite-width centroid scaffolds",
-      "depends_on": ["S_eff^(nu)", "S_eff^(H)", "H_H", "grad_y[delta S_eff^(nu-H)]", "W_nu", "W_H", "coordinate/invariant centroid convention"],
+      "depends_on": ["S_eff_nu", "S_eff^(H)", "H_H", "grad_y[delta S_eff^(nu-H)]", "W_nu", "W_H", "coordinate/invariant centroid convention"],
       "forbidden_inputs": ["observed neutrino masses", "observed neutrino mass splittings", "PMNS angles", "PMNS CP phase", "post-comparison Delta_y_nu fit"],
       "claim_boundary": "localizable displacement candidate only; numerical neutrino closure remains open",
       "tests": ["tests/test_neutral_saddle_displacement.py"],
@@ -261,7 +358,7 @@
       "status": "OPEN_LOCALIZABLE",
       "formula_candidate": "S_nu_topo = 1/2 Delta y_nu^T G_nu_topo Delta y_nu + S_barrier",
       "derivation_source": "candidate boundary Hessian/topographic action scaffold",
-      "depends_on": ["H_topo", "Delta_y_nu", "G_nu_topo", "S_barrier", "neutral finite-width saddle/path"],
+      "depends_on": ["S_eff_nu", "H_topo", "Delta_y_nu", "G_nu_topo", "S_barrier", "neutral finite-width saddle/path"],
       "forbidden_inputs": ["observed neutrino masses", "observed neutrino mass splittings", "PMNS data", "post-comparison epsilon_nu_topo fit"],
       "claim_boundary": "localizable candidate only; numerical neutrino closure remains open",
       "tests": ["tests/test_neutral_topographic_suppression_action.py"],
@@ -315,6 +412,7 @@
     "Delta alpha_ud",
     "Delta gamma_ud",
     "CKM 1/16 exponent",
+    "S_eff_nu",
     "Delta_y_nu",
     "S_nu_topo",
     "lambda0",
@@ -338,6 +436,8 @@
     "fit beta0 to masses",
     "fit Delta alpha/gamma to CKM",
     "fit CKM 1/16 exponent after comparison",
+    "fit S_eff_nu to neutrino masses or PMNS data",
+    "fit subsurface neutral projection or apparent propagation parameters to neutrino data",
     "fit Delta_y_nu to neutrino masses or PMNS data",
     "fit S_nu_topo to neutrino scale",
     "fit PMNS phase loop to measured CP value",
@@ -367,6 +467,8 @@
     "CKM_1_16_EXPONENT_NOT_DERIVED",
     "S_NU_TOPO_DERIVATION_OPEN",
     "DELTA_Y_NU_NEUTRAL_SADDLE_DISPLACEMENT_OPEN",
+    "PO_BH_50_NEUTRAL_EFFECTIVE_ACTION_LOCALIZED",
+    "S_EFF_NU_NEUTRAL_ACTION_OPEN",
     "FULL_NUMERICAL_SM_PREDICTION_OPEN",
     "REPLACEMENT_READINESS_NOT_ACHIEVED",
     "FROZEN_PREDICTIONS_UNCHANGED",
