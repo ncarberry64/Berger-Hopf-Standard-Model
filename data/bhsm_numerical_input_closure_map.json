@@ -2,7 +2,7 @@
   "id": "PO-BH-47",
   "title": "Numerical Input Closure Map Theorem",
   "status": "STRUCTURAL_ARCHITECTURE_INTEGRATED_CONDITIONAL_NUMERICAL_CLOSURE_OPEN",
-  "branch": "bhsm-scalar-topographic-level-set-boundary-v1",
+  "branch": "bhsm-scalar-profile-threshold-ledger-v1",
   "official_predictions_changed": false,
   "frozen_predictions_changed": false,
   "standard_model_fully_derived": false,
@@ -19,7 +19,8 @@
     "FROZEN_CANDIDATE",
     "FORBIDDEN_TO_FIT",
     "LOCALIZED_NOT_NUMERIC",
-    "DERIVED_CONDITIONAL_WITH_OPEN_LEVEL_SET_INPUTS"
+    "DERIVED_CONDITIONAL_WITH_OPEN_LEVEL_SET_INPUTS",
+    "DO_NOT_CLAIM"
   ],
   "ledgers": {
     "charged_lepton": [
@@ -160,7 +161,16 @@
     "internal_level_set_normal_Phi": "n_a = partial_a Phi / sqrt(|g_B^{bc} partial_b Phi partial_c Phi|)",
     "level_set_trace_curvature": "K = nabla_mu n^mu; internal analogue K_int = nabla_a n^a",
     "level_set_projected_hessian_curvature": "K_AB = P_A^mu P_B^nu nabla_mu nabla_nu F / |grad F|, conditional on projection/sign/normalization conventions",
-    "level_set_collar_jacobian": "J(Y,rho)=det(I + rho S(Y)); J(Y,rho)=1 + rho K(Y) + O(rho^2)"
+    "level_set_collar_jacobian": "J(Y,rho)=det(I + rho S(Y)); J(Y,rho)=1 + rho K(Y) + O(rho^2)",
+    "profile_input_gate_1": "profile existence/localization: T and Phi are framework objects only",
+    "profile_input_gate_2": "threshold selection: T_0 and Phi_0 remain open-localizable",
+    "profile_input_gate_3": "metric/profile evaluation: metric, gradient norm, orientation, K(Y), S(Y), and J value remain open-localizable",
+    "profile_input_gate_4": "neutral action evaluation: S_nu_topo and epsilon_nu_topo remain open-localizable",
+    "T_explicit_profile": "T(x,t) = T_bg(t) + A_T,dip(t)(ihat . uhat) + T_loc(x,t)",
+    "Phi_explicit_profile": "Phi(y), localized on internal Berger B^3 and peaked at y_0, explicit profile not derived",
+    "T_threshold": "F_STF(x,t)=T(x,t)-T_0",
+    "Phi_threshold": "F_int(y)=Phi(y)-Phi_0",
+    "J_of_Y_rho_formula_value_split": "J(Y,rho)=det(I+rho S(Y)) is formula-derived; value remains open until S(Y) is evaluated"
   },
   "phase_admissibility": {
     "absolute_alpha0_physical": false,
@@ -1682,18 +1692,19 @@
     {
       "id": "epsilon_nu_topo",
       "sector": "neutrino_pmns",
-      "symbol": "epsilon_nu_topo=exp(-S_nu_topo)",
+      "symbol": "epsilon_nu_topo",
       "status": "OPEN_LOCALIZABLE",
       "fit_policy": "FORBIDDEN_TO_FIT",
       "name": "Neutral topographic suppression factor",
       "formula_candidate": "epsilon_nu_topo=exp(-S_nu_topo)",
-      "derivation_source": "structural relation only; value depends on open S_nu_topo",
+      "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
       "depends_on": [
         "neutral_topographic_action_S_nu_topo",
-        "S_nu_topo"
+        "S_nu_topo",
+        "scalar_topographic_profile_input_classification"
       ],
-      "claim_boundary": "structural relation only; value remains open until S_nu_topo is derived and locked before comparison",
-      "next_action": "derive S_nu_topo before comparison",
+      "claim_boundary": "Value remains open until S_nu_topo is derived. No post-comparison fitting is allowed.",
+      "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
       "forbidden_inputs": [
         "observed neutrino masses",
         "observed neutrino mass splittings",
@@ -1712,10 +1723,22 @@
         "post-comparison K(Y) fit",
         "post-comparison J(Y,rho) fit",
         "post-comparison S_nu_topo fit",
-        "post-comparison epsilon_nu_topo fit"
+        "post-comparison epsilon_nu_topo fit",
+        "observed masses",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison S(Y) fit"
       ],
       "tests": [
-        "tests/test_scalar_topographic_level_set_boundary_embedding.py"
+        "tests/test_scalar_topographic_level_set_boundary_embedding.py",
+        "tests/test_scalar_topographic_profile_input_classification.py"
       ]
     },
     {
@@ -1885,16 +1908,17 @@
     },
     {
       "id": "normal_orientation",
-      "name": "Neutral collar normal orientation",
-      "sector": "neutrino_pmns",
-      "symbol": "n = s_n partial_rho",
+      "name": "Normal orientation sign",
+      "sector": "scalar_topographic",
+      "symbol": "s_n",
       "status": "OPEN_LOCALIZABLE",
-      "formula_candidate": "n = s_n partial_rho with s_n in {+1,-1}",
-      "derivation_source": "orientation sign bookkeeping for the collar normal derivative",
+      "formula_candidate": "needed for collar and trace convention",
+      "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
       "depends_on": [
         "collar_coordinate_rho",
         "subsurface_projection_geometry",
-        "boundary embedding"
+        "boundary embedding",
+        "scalar_topographic_profile_input_classification"
       ],
       "forbidden_inputs": [
         "observed neutrino masses",
@@ -1902,13 +1926,32 @@
         "PMNS angles",
         "PMNS CP phase",
         "fitted FTL/anomaly data",
-        "post-comparison orientation fit"
+        "post-comparison orientation fit",
+        "observed masses",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
       ],
-      "claim_boundary": "orientation sign is tracked but not chosen or fitted",
+      "claim_boundary": "Orientation is localized but not fixed by profile theorem. No post-comparison fitting is allowed.",
       "tests": [
-        "tests/test_collar_geometry_package.py"
+        "tests/test_collar_geometry_package.py",
+        "tests/test_scalar_topographic_profile_input_classification.py"
       ],
-      "next_action": "derive the inward/outward sign convention from the subsurface or internal boundary geometry",
+      "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
       "fit_policy": "FORBIDDEN_TO_FIT"
     },
     {
@@ -2305,8 +2348,8 @@
       "sector": "neutrino_pmns",
       "symbol": "S_nu_topo",
       "status": "OPEN_LOCALIZABLE",
-      "formula_candidate": "S_nu_topo = 1/2 Delta y_nu^T G_nu_topo Delta y_nu + S_barrier",
-      "derivation_source": "candidate boundary Hessian/topographic action scaffold",
+      "formula_candidate": "Hessian/barrier route localized",
+      "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
       "depends_on": [
         "S_eff_nu",
         "H_topo",
@@ -2316,7 +2359,8 @@
         "neutral finite-width saddle/path",
         "scalar_topographic_level_set_F",
         "internal_topographic_profile_Phi",
-        "spacetime_topographic_scalar_T"
+        "spacetime_topographic_scalar_T",
+        "scalar_topographic_profile_input_classification"
       ],
       "forbidden_inputs": [
         "observed neutrino masses",
@@ -2337,14 +2381,26 @@
         "post-comparison shape-operator fit",
         "post-comparison K(Y) fit",
         "post-comparison J(Y,rho) fit",
-        "post-comparison S_nu_topo fit"
+        "post-comparison S_nu_topo fit",
+        "observed masses",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison S(Y) fit"
       ],
-      "claim_boundary": "localizable candidate only; PO-BH-59 adds level-set geometry as a possible source, but numerical neutrino closure remains open",
+      "claim_boundary": "Neutral action value is not computed. No post-comparison fitting is allowed.",
       "tests": [
         "tests/test_neutral_topographic_suppression_action.py",
-        "tests/test_scalar_topographic_level_set_boundary_embedding.py"
+        "tests/test_scalar_topographic_level_set_boundary_embedding.py",
+        "tests/test_scalar_topographic_profile_input_classification.py"
       ],
-      "next_action": "derive or reject the neutral Hessian/barrier formula before comparison",
+      "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
       "fit_policy": "FORBIDDEN_TO_FIT"
     },
     {
@@ -3571,6 +3627,802 @@
         "tests/test_scalar_topographic_level_set_boundary_embedding.py"
       ],
       "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "PO-BH-60",
+      "name": "Scalar/topographic profile input classification and threshold ledger",
+      "symbol": "T_0, Phi_0, T(x,t), Phi(y), |grad T|, |grad Phi|, K(Y), S(Y), J(Y,rho), S_nu_topo, epsilon_nu_topo",
+      "sector": "neutrino_pmns",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "Input-classification ledger only: localized profile symbols are separated from thresholds, metric/profile evaluation, and neutral action evaluation.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-60 input ledger built from PO-BH-59 level-set routes and prior scalar/topographic scaffolds",
+      "depends_on": [
+        "scalar_topographic_level_set_F",
+        "spacetime_topographic_scalar_T",
+        "internal_topographic_profile_Phi",
+        "profile_equation_of_motion",
+        "profile_boundary_conditions",
+        "T_0",
+        "Phi_0",
+        "gradient_norm_T",
+        "gradient_norm_Phi"
+      ],
+      "profile_gates": [
+        {
+          "id": "gate_1_profile_existence_localization",
+          "status": "PARTIALLY_LOCALIZED",
+          "finding": "T(x,t) and Phi(y) are localized as framework objects, not numerical profiles."
+        },
+        {
+          "id": "gate_2_threshold_selection",
+          "status": "OPEN_LOCALIZABLE",
+          "finding": "T_0 and Phi_0 are not derived."
+        },
+        {
+          "id": "gate_3_metric_profile_evaluation",
+          "status": "OPEN_LOCALIZABLE",
+          "finding": "metric values, profiles, gradient norms, orientation, K(Y), S(Y), and J values remain open."
+        },
+        {
+          "id": "gate_4_neutral_action_evaluation",
+          "status": "OPEN_LOCALIZABLE",
+          "finding": "S_nu_topo and epsilon_nu_topo remain open-localizable."
+        }
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "PO-BH-60 classifies open scalar/topographic profile inputs and thresholds; it does not compute S_nu_topo, epsilon_nu_topo, or numerical neutrino/PMNS/CKM predictions.",
+      "tests": [
+        "tests/test_scalar_topographic_profile_input_classification.py"
+      ],
+      "next_action": "derive or reject threshold selection, explicit profiles, metric/profile evaluation, and neutral action evaluation before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "T_0",
+      "name": "Spacetime topographic threshold",
+      "symbol": "T_0",
+      "sector": "scalar_topographic",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "threshold in F_STF=T-T_0",
+      "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+      "depends_on": [
+        "scalar_topographic_profile_input_classification"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "No threshold-selection theorem is present. No post-comparison fitting is allowed.",
+      "tests": [
+        "tests/test_scalar_topographic_profile_input_classification.py"
+      ],
+      "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "Phi_0",
+      "name": "Internal topographic threshold",
+      "symbol": "Phi_0",
+      "sector": "scalar_topographic",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "threshold in F_int=Phi-Phi_0",
+      "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+      "depends_on": [
+        "scalar_topographic_profile_input_classification"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "No internal profile threshold-selection theorem is present. No post-comparison fitting is allowed.",
+      "tests": [
+        "tests/test_scalar_topographic_profile_input_classification.py"
+      ],
+      "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "topographic_scalar_T_explicit_profile",
+      "name": "Explicit spacetime topographic scalar profile",
+      "symbol": "T(x,t)",
+      "sector": "scalar_topographic",
+      "status": "LOCALIZED_NOT_NUMERIC",
+      "formula_candidate": "T=T_bg+A_T,dip(ihat.uhat)+T_loc",
+      "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+      "depends_on": [
+        "scalar_topographic_profile_input_classification"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "Framework decomposition is localized, but explicit functions are not derived. No post-comparison fitting is allowed.",
+      "tests": [
+        "tests/test_scalar_topographic_profile_input_classification.py"
+      ],
+      "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "internal_topographic_profile_Phi_explicit_profile",
+      "name": "Explicit internal topographic profile",
+      "symbol": "Phi(y)",
+      "sector": "scalar_topographic",
+      "status": "LOCALIZED_NOT_NUMERIC",
+      "formula_candidate": "Phi(y) peaked at y_0 on internal Berger B^3",
+      "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+      "depends_on": [
+        "scalar_topographic_profile_input_classification"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "Profile symbol is localized, but explicit profile is not derived. No post-comparison fitting is allowed.",
+      "tests": [
+        "tests/test_scalar_topographic_profile_input_classification.py"
+      ],
+      "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "T_bg",
+      "name": "Spacetime topographic background component",
+      "symbol": "T_bg(t)",
+      "sector": "scalar_topographic",
+      "status": "LOCALIZED_NOT_NUMERIC",
+      "formula_candidate": "component of T(x,t)",
+      "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+      "depends_on": [
+        "scalar_topographic_profile_input_classification"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "Named in decomposition, not evaluated. No post-comparison fitting is allowed.",
+      "tests": [
+        "tests/test_scalar_topographic_profile_input_classification.py"
+      ],
+      "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "A_T_dip",
+      "name": "Spacetime topographic dipole amplitude",
+      "symbol": "A_T,dip(t)",
+      "sector": "scalar_topographic",
+      "status": "LOCALIZED_NOT_NUMERIC",
+      "formula_candidate": "component of T(x,t)",
+      "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+      "depends_on": [
+        "scalar_topographic_profile_input_classification"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "Named in decomposition, not evaluated. No post-comparison fitting is allowed.",
+      "tests": [
+        "tests/test_scalar_topographic_profile_input_classification.py"
+      ],
+      "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "T_loc",
+      "name": "Spacetime local topographic component",
+      "symbol": "T_loc(x,t)",
+      "sector": "scalar_topographic",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "local component of T(x,t)",
+      "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+      "depends_on": [
+        "scalar_topographic_profile_input_classification"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "No local source/dynamics solution is derived. No post-comparison fitting is allowed.",
+      "tests": [
+        "tests/test_scalar_topographic_profile_input_classification.py"
+      ],
+      "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "internal_Berger_metric_g_B",
+      "name": "Internal Berger metric",
+      "symbol": "g_B",
+      "sector": "scalar_topographic",
+      "status": "LOCALIZED_NOT_NUMERIC",
+      "formula_candidate": "internal Berger geometry B^3",
+      "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+      "depends_on": [
+        "scalar_topographic_profile_input_classification"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "Geometry is localized but explicit metric values/conventions remain open. No post-comparison fitting is allowed.",
+      "tests": [
+        "tests/test_scalar_topographic_profile_input_classification.py"
+      ],
+      "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "Berger_radius_r",
+      "name": "Berger radius",
+      "symbol": "r",
+      "sector": "scalar_topographic",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "radius in internal Berger geometry",
+      "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+      "depends_on": [
+        "scalar_topographic_profile_input_classification"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "No radius value is derived here. No post-comparison fitting is allowed.",
+      "tests": [
+        "tests/test_scalar_topographic_profile_input_classification.py"
+      ],
+      "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "Berger_squash_parameter_epsilon",
+      "name": "Berger squash parameter",
+      "symbol": "epsilon",
+      "sector": "scalar_topographic",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "squash parameter in internal Berger geometry",
+      "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+      "depends_on": [
+        "scalar_topographic_profile_input_classification"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "No squash value is derived here. No post-comparison fitting is allowed.",
+      "tests": [
+        "tests/test_scalar_topographic_profile_input_classification.py"
+      ],
+      "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "distinguished_point_y_0",
+      "name": "Distinguished internal point",
+      "symbol": "y_0",
+      "sector": "scalar_topographic",
+      "status": "LOCALIZED_NOT_NUMERIC",
+      "formula_candidate": "Phi(y) peaked at y_0",
+      "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+      "depends_on": [
+        "scalar_topographic_profile_input_classification"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "Point is localized as notation, not derived from the action. No post-comparison fitting is allowed.",
+      "tests": [
+        "tests/test_scalar_topographic_profile_input_classification.py"
+      ],
+      "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "profile_equation_of_motion",
+      "name": "Scalar/topographic profile equation of motion",
+      "symbol": "EOM[T,Phi]",
+      "sector": "scalar_topographic",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "needed to solve profiles",
+      "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+      "depends_on": [
+        "scalar_topographic_profile_input_classification"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "No complete EOM plus solution is derived. No post-comparison fitting is allowed.",
+      "tests": [
+        "tests/test_scalar_topographic_profile_input_classification.py"
+      ],
+      "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "profile_boundary_conditions",
+      "name": "Scalar/topographic profile boundary conditions",
+      "symbol": "BC[T,Phi]",
+      "sector": "scalar_topographic",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "needed to solve profiles",
+      "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+      "depends_on": [
+        "scalar_topographic_profile_input_classification"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "Boundary conditions are not fully fixed numerically. No post-comparison fitting is allowed.",
+      "tests": [
+        "tests/test_scalar_topographic_profile_input_classification.py"
+      ],
+      "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "gradient_norm_T",
+      "name": "Spacetime scalar gradient norm",
+      "symbol": "|grad T|",
+      "sector": "scalar_topographic",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "needed for n=grad T/|grad T|",
+      "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+      "depends_on": [
+        "scalar_topographic_profile_input_classification"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "Metric/profile evaluation remains open. No post-comparison fitting is allowed.",
+      "tests": [
+        "tests/test_scalar_topographic_profile_input_classification.py"
+      ],
+      "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "gradient_norm_Phi",
+      "name": "Internal profile gradient norm",
+      "symbol": "|grad Phi|",
+      "sector": "scalar_topographic",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "needed for n=grad Phi/|grad Phi|",
+      "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+      "depends_on": [
+        "scalar_topographic_profile_input_classification"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "Internal metric/profile evaluation remains open. No post-comparison fitting is allowed.",
+      "tests": [
+        "tests/test_scalar_topographic_profile_input_classification.py"
+      ],
+      "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "K_of_Y",
+      "name": "Boundary trace function",
+      "symbol": "K(Y)",
+      "sector": "neutrino_pmns",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "trace formula is conditional",
+      "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+      "depends_on": [
+        "scalar_topographic_profile_input_classification"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "Function value is not evaluated. No post-comparison fitting is allowed.",
+      "tests": [
+        "tests/test_scalar_topographic_profile_input_classification.py"
+      ],
+      "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "S_of_Y",
+      "name": "Shape-operator function",
+      "symbol": "S(Y)",
+      "sector": "neutrino_pmns",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "shape-operator formula is conditional",
+      "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+      "depends_on": [
+        "scalar_topographic_profile_input_classification"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "Function value is not evaluated. No post-comparison fitting is allowed.",
+      "tests": [
+        "tests/test_scalar_topographic_profile_input_classification.py"
+      ],
+      "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "J_of_Y_rho",
+      "name": "Collar Jacobian function",
+      "symbol": "J(Y,rho)",
+      "sector": "neutrino_pmns",
+      "status": "DERIVED_CONDITIONAL",
+      "formula_candidate": "formula derived; value open",
+      "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+      "depends_on": [
+        "scalar_topographic_profile_input_classification"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "J(Y,rho) formula is conditionally derived, but numerical/function value remains open until S(Y) is evaluated. No post-comparison fitting is allowed.",
+      "tests": [
+        "tests/test_scalar_topographic_profile_input_classification.py"
+      ],
+      "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT",
+      "status_detail": {
+        "formula": "DERIVED_CONDITIONAL",
+        "value": "OPEN_LOCALIZABLE"
+      }
     }
   ],
   "open_numerical_inputs": [
@@ -3645,7 +4497,24 @@
     "internal Berger metric values",
     "normal orientation sign",
     "boundary embedding X",
-    "neutral topographic action S_nu_topo value"
+    "neutral topographic action S_nu_topo value",
+    "explicit T(x,t)",
+    "explicit Phi(y)",
+    "T_bg(t)",
+    "A_T,dip(t)",
+    "T_loc(x,t)",
+    "internal Berger metric g_B",
+    "Berger radius r",
+    "Berger squash parameter epsilon",
+    "distinguished point y_0",
+    "profile equation of motion",
+    "profile boundary conditions",
+    "gradient norm |grad T|",
+    "gradient norm |grad Phi|",
+    "K(Y)",
+    "S(Y)",
+    "J(Y,rho) value",
+    "epsilon_nu_topo"
   ],
   "forbidden_fit_routes": [
     "fit beta0 to masses",
@@ -3668,7 +4537,9 @@
     "fit scalar/topographic level-set profile to produce desired collar curvature or neutral suppression",
     "fit T_0, Phi_0, T(x,t), Phi(y), boundary embedding X, level-set normal, K_AB, S, K, or J to neutrino masses, PMNS data, CKM data, anomaly/FTL data, or propulsion data",
     "promote point or saddle data y_H, y_nu, or y_0 into a full boundary embedding without a scalar/topographic profile theorem",
-    "fit S_nu_topo or epsilon_nu_topo using the level-set route after comparison"
+    "fit S_nu_topo or epsilon_nu_topo using the level-set route after comparison",
+    "fit scalar/topographic profile inputs T_0, Phi_0, T(x,t), Phi(y), metric values, gradient norms, orientation, K(Y), S(Y), J(Y,rho), S_nu_topo, or epsilon_nu_topo after comparison",
+    "use observed masses, CKM values, PMNS values, neutrino data, anomaly/FTL data, propulsion/anomaly data, or target values to choose scalar/topographic profile inputs"
   ],
   "claim_status_table": [
     {
@@ -3726,6 +4597,10 @@
     {
       "claim": "scalar/topographic level-set boundary embedding",
       "status": "DERIVED_CONDITIONAL_WITH_OPEN_LEVEL_SET_INPUTS"
+    },
+    {
+      "claim": "scalar/topographic profile input classification",
+      "status": "OPEN_LOCALIZABLE"
     }
   ],
   "verdict_labels": [
@@ -3777,7 +4652,17 @@
     "LEVEL_SET_BOUNDARY_TRACE_DERIVED_CONDITIONAL",
     "LEVEL_SET_COLLAR_JACOBIAN_DERIVED_CONDITIONAL",
     "NEUTRAL_TOPOGRAPHIC_ACTION_REMAINS_OPEN_LOCALIZABLE",
-    "EPSILON_NU_TOPO_REMAINS_OPEN_LOCALIZABLE"
+    "EPSILON_NU_TOPO_REMAINS_OPEN_LOCALIZABLE",
+    "PO_BH_60_SCALAR_PROFILE_INPUT_CLASSIFICATION",
+    "PROFILE_GATE_1_PARTIALLY_LOCALIZED",
+    "PROFILE_GATE_2_THRESHOLD_SELECTION_OPEN",
+    "PROFILE_GATE_3_METRIC_PROFILE_EVALUATION_OPEN",
+    "PROFILE_GATE_4_NEUTRAL_ACTION_EVALUATION_OPEN",
+    "T_0_OPEN_LOCALIZABLE",
+    "PHI_0_OPEN_LOCALIZABLE",
+    "T_EXPLICIT_PROFILE_LOCALIZED_NOT_NUMERIC",
+    "PHI_EXPLICIT_PROFILE_LOCALIZED_NOT_NUMERIC",
+    "S_NU_TOPO_REMAINS_OPEN_LOCALIZABLE"
   ],
   "collar_measure_extrinsic_geometry": {
     "id": "PO-BH-57",
@@ -4829,47 +5714,925 @@
       "post-comparison epsilon_nu_topo fit"
     ],
     "tests": [
-      "tests/test_scalar_topographic_level_set_boundary_embedding.py"
+      "tests/test_scalar_topographic_level_set_boundary_embedding.py",
+      "tests/test_scalar_topographic_profile_input_classification.py"
     ],
     "fit_policy": "FORBIDDEN_TO_FIT"
   },
   "epsilon_nu_topo": {
     "id": "epsilon_nu_topo",
     "name": "Neutral topographic suppression factor",
-    "symbol": "epsilon_nu_topo=exp(-S_nu_topo)",
+    "symbol": "epsilon_nu_topo",
     "sector": "neutrino_pmns",
     "status": "OPEN_LOCALIZABLE",
     "formula_candidate": "epsilon_nu_topo=exp(-S_nu_topo)",
-    "derivation_source": "structural relation only; value depends on open S_nu_topo",
+    "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
     "depends_on": [
-      "neutral_topographic_action_S_nu_topo",
-      "S_nu_topo"
+      "scalar_topographic_profile_input_classification"
     ],
-    "claim_boundary": "epsilon relation is structural; its numerical value remains open and cannot be fitted",
-    "next_action": "derive S_nu_topo before comparison",
     "forbidden_inputs": [
+      "observed masses",
       "observed neutrino masses",
       "observed neutrino mass splittings",
-      "PMNS angles",
-      "PMNS CP phase",
       "CKM values",
-      "fitted FTL/anomaly data",
-      "propulsion data",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
       "post-comparison T_0 fit",
       "post-comparison Phi_0 fit",
-      "post-comparison topographic profile fit",
-      "post-comparison boundary embedding fit",
-      "post-comparison normal fit",
-      "post-comparison second fundamental form fit",
-      "post-comparison shape-operator fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
       "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
       "post-comparison J(Y,rho) fit",
       "post-comparison S_nu_topo fit",
       "post-comparison epsilon_nu_topo fit"
     ],
+    "claim_boundary": "Value remains open until S_nu_topo is derived. No post-comparison fitting is allowed.",
     "tests": [
-      "tests/test_scalar_topographic_level_set_boundary_embedding.py"
+      "tests/test_scalar_topographic_profile_input_classification.py"
     ],
+    "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "scalar_topographic_profile_input_classification": {
+    "id": "PO-BH-60",
+    "name": "Scalar/topographic profile input classification and threshold ledger",
+    "symbol": "T_0, Phi_0, T(x,t), Phi(y), |grad T|, |grad Phi|, K(Y), S(Y), J(Y,rho), S_nu_topo, epsilon_nu_topo",
+    "sector": "neutrino_pmns",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "Input-classification ledger only: localized profile symbols are separated from thresholds, metric/profile evaluation, and neutral action evaluation.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-60 input ledger built from PO-BH-59 level-set routes and prior scalar/topographic scaffolds",
+    "depends_on": [
+      "scalar_topographic_level_set_F",
+      "spacetime_topographic_scalar_T",
+      "internal_topographic_profile_Phi",
+      "profile_equation_of_motion",
+      "profile_boundary_conditions",
+      "T_0",
+      "Phi_0",
+      "gradient_norm_T",
+      "gradient_norm_Phi"
+    ],
+    "profile_gates": [
+      {
+        "id": "gate_1_profile_existence_localization",
+        "status": "PARTIALLY_LOCALIZED",
+        "finding": "T(x,t) and Phi(y) are localized as framework objects, not numerical profiles."
+      },
+      {
+        "id": "gate_2_threshold_selection",
+        "status": "OPEN_LOCALIZABLE",
+        "finding": "T_0 and Phi_0 are not derived."
+      },
+      {
+        "id": "gate_3_metric_profile_evaluation",
+        "status": "OPEN_LOCALIZABLE",
+        "finding": "metric values, profiles, gradient norms, orientation, K(Y), S(Y), and J values remain open."
+      },
+      {
+        "id": "gate_4_neutral_action_evaluation",
+        "status": "OPEN_LOCALIZABLE",
+        "finding": "S_nu_topo and epsilon_nu_topo remain open-localizable."
+      }
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "PO-BH-60 classifies open scalar/topographic profile inputs and thresholds; it does not compute S_nu_topo, epsilon_nu_topo, or numerical neutrino/PMNS/CKM predictions.",
+    "tests": [
+      "tests/test_scalar_topographic_profile_input_classification.py"
+    ],
+    "next_action": "derive or reject threshold selection, explicit profiles, metric/profile evaluation, and neutral action evaluation before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "T_0": {
+    "id": "T_0",
+    "name": "Spacetime topographic threshold",
+    "symbol": "T_0",
+    "sector": "scalar_topographic",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "threshold in F_STF=T-T_0",
+    "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+    "depends_on": [
+      "scalar_topographic_profile_input_classification"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "No threshold-selection theorem is present. No post-comparison fitting is allowed.",
+    "tests": [
+      "tests/test_scalar_topographic_profile_input_classification.py"
+    ],
+    "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "Phi_0": {
+    "id": "Phi_0",
+    "name": "Internal topographic threshold",
+    "symbol": "Phi_0",
+    "sector": "scalar_topographic",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "threshold in F_int=Phi-Phi_0",
+    "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+    "depends_on": [
+      "scalar_topographic_profile_input_classification"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "No internal profile threshold-selection theorem is present. No post-comparison fitting is allowed.",
+    "tests": [
+      "tests/test_scalar_topographic_profile_input_classification.py"
+    ],
+    "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "topographic_scalar_T_explicit_profile": {
+    "id": "topographic_scalar_T_explicit_profile",
+    "name": "Explicit spacetime topographic scalar profile",
+    "symbol": "T(x,t)",
+    "sector": "scalar_topographic",
+    "status": "LOCALIZED_NOT_NUMERIC",
+    "formula_candidate": "T=T_bg+A_T,dip(ihat.uhat)+T_loc",
+    "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+    "depends_on": [
+      "scalar_topographic_profile_input_classification"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "Framework decomposition is localized, but explicit functions are not derived. No post-comparison fitting is allowed.",
+    "tests": [
+      "tests/test_scalar_topographic_profile_input_classification.py"
+    ],
+    "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "internal_topographic_profile_Phi_explicit_profile": {
+    "id": "internal_topographic_profile_Phi_explicit_profile",
+    "name": "Explicit internal topographic profile",
+    "symbol": "Phi(y)",
+    "sector": "scalar_topographic",
+    "status": "LOCALIZED_NOT_NUMERIC",
+    "formula_candidate": "Phi(y) peaked at y_0 on internal Berger B^3",
+    "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+    "depends_on": [
+      "scalar_topographic_profile_input_classification"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "Profile symbol is localized, but explicit profile is not derived. No post-comparison fitting is allowed.",
+    "tests": [
+      "tests/test_scalar_topographic_profile_input_classification.py"
+    ],
+    "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "T_bg": {
+    "id": "T_bg",
+    "name": "Spacetime topographic background component",
+    "symbol": "T_bg(t)",
+    "sector": "scalar_topographic",
+    "status": "LOCALIZED_NOT_NUMERIC",
+    "formula_candidate": "component of T(x,t)",
+    "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+    "depends_on": [
+      "scalar_topographic_profile_input_classification"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "Named in decomposition, not evaluated. No post-comparison fitting is allowed.",
+    "tests": [
+      "tests/test_scalar_topographic_profile_input_classification.py"
+    ],
+    "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "A_T_dip": {
+    "id": "A_T_dip",
+    "name": "Spacetime topographic dipole amplitude",
+    "symbol": "A_T,dip(t)",
+    "sector": "scalar_topographic",
+    "status": "LOCALIZED_NOT_NUMERIC",
+    "formula_candidate": "component of T(x,t)",
+    "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+    "depends_on": [
+      "scalar_topographic_profile_input_classification"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "Named in decomposition, not evaluated. No post-comparison fitting is allowed.",
+    "tests": [
+      "tests/test_scalar_topographic_profile_input_classification.py"
+    ],
+    "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "T_loc": {
+    "id": "T_loc",
+    "name": "Spacetime local topographic component",
+    "symbol": "T_loc(x,t)",
+    "sector": "scalar_topographic",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "local component of T(x,t)",
+    "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+    "depends_on": [
+      "scalar_topographic_profile_input_classification"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "No local source/dynamics solution is derived. No post-comparison fitting is allowed.",
+    "tests": [
+      "tests/test_scalar_topographic_profile_input_classification.py"
+    ],
+    "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "internal_Berger_metric_g_B": {
+    "id": "internal_Berger_metric_g_B",
+    "name": "Internal Berger metric",
+    "symbol": "g_B",
+    "sector": "scalar_topographic",
+    "status": "LOCALIZED_NOT_NUMERIC",
+    "formula_candidate": "internal Berger geometry B^3",
+    "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+    "depends_on": [
+      "scalar_topographic_profile_input_classification"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "Geometry is localized but explicit metric values/conventions remain open. No post-comparison fitting is allowed.",
+    "tests": [
+      "tests/test_scalar_topographic_profile_input_classification.py"
+    ],
+    "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "Berger_radius_r": {
+    "id": "Berger_radius_r",
+    "name": "Berger radius",
+    "symbol": "r",
+    "sector": "scalar_topographic",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "radius in internal Berger geometry",
+    "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+    "depends_on": [
+      "scalar_topographic_profile_input_classification"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "No radius value is derived here. No post-comparison fitting is allowed.",
+    "tests": [
+      "tests/test_scalar_topographic_profile_input_classification.py"
+    ],
+    "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "Berger_squash_parameter_epsilon": {
+    "id": "Berger_squash_parameter_epsilon",
+    "name": "Berger squash parameter",
+    "symbol": "epsilon",
+    "sector": "scalar_topographic",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "squash parameter in internal Berger geometry",
+    "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+    "depends_on": [
+      "scalar_topographic_profile_input_classification"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "No squash value is derived here. No post-comparison fitting is allowed.",
+    "tests": [
+      "tests/test_scalar_topographic_profile_input_classification.py"
+    ],
+    "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "distinguished_point_y_0": {
+    "id": "distinguished_point_y_0",
+    "name": "Distinguished internal point",
+    "symbol": "y_0",
+    "sector": "scalar_topographic",
+    "status": "LOCALIZED_NOT_NUMERIC",
+    "formula_candidate": "Phi(y) peaked at y_0",
+    "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+    "depends_on": [
+      "scalar_topographic_profile_input_classification"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "Point is localized as notation, not derived from the action. No post-comparison fitting is allowed.",
+    "tests": [
+      "tests/test_scalar_topographic_profile_input_classification.py"
+    ],
+    "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "profile_equation_of_motion": {
+    "id": "profile_equation_of_motion",
+    "name": "Scalar/topographic profile equation of motion",
+    "symbol": "EOM[T,Phi]",
+    "sector": "scalar_topographic",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "needed to solve profiles",
+    "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+    "depends_on": [
+      "scalar_topographic_profile_input_classification"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "No complete EOM plus solution is derived. No post-comparison fitting is allowed.",
+    "tests": [
+      "tests/test_scalar_topographic_profile_input_classification.py"
+    ],
+    "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "profile_boundary_conditions": {
+    "id": "profile_boundary_conditions",
+    "name": "Scalar/topographic profile boundary conditions",
+    "symbol": "BC[T,Phi]",
+    "sector": "scalar_topographic",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "needed to solve profiles",
+    "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+    "depends_on": [
+      "scalar_topographic_profile_input_classification"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "Boundary conditions are not fully fixed numerically. No post-comparison fitting is allowed.",
+    "tests": [
+      "tests/test_scalar_topographic_profile_input_classification.py"
+    ],
+    "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "gradient_norm_T": {
+    "id": "gradient_norm_T",
+    "name": "Spacetime scalar gradient norm",
+    "symbol": "|grad T|",
+    "sector": "scalar_topographic",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "needed for n=grad T/|grad T|",
+    "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+    "depends_on": [
+      "scalar_topographic_profile_input_classification"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "Metric/profile evaluation remains open. No post-comparison fitting is allowed.",
+    "tests": [
+      "tests/test_scalar_topographic_profile_input_classification.py"
+    ],
+    "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "gradient_norm_Phi": {
+    "id": "gradient_norm_Phi",
+    "name": "Internal profile gradient norm",
+    "symbol": "|grad Phi|",
+    "sector": "scalar_topographic",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "needed for n=grad Phi/|grad Phi|",
+    "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+    "depends_on": [
+      "scalar_topographic_profile_input_classification"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "Internal metric/profile evaluation remains open. No post-comparison fitting is allowed.",
+    "tests": [
+      "tests/test_scalar_topographic_profile_input_classification.py"
+    ],
+    "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "normal_orientation": {
+    "id": "normal_orientation",
+    "name": "Normal orientation sign",
+    "symbol": "s_n",
+    "sector": "scalar_topographic",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "needed for collar and trace convention",
+    "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+    "depends_on": [
+      "scalar_topographic_profile_input_classification"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "Orientation is localized but not fixed by profile theorem. No post-comparison fitting is allowed.",
+    "tests": [
+      "tests/test_scalar_topographic_profile_input_classification.py"
+    ],
+    "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "K_of_Y": {
+    "id": "K_of_Y",
+    "name": "Boundary trace function",
+    "symbol": "K(Y)",
+    "sector": "neutrino_pmns",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "trace formula is conditional",
+    "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+    "depends_on": [
+      "scalar_topographic_profile_input_classification"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "Function value is not evaluated. No post-comparison fitting is allowed.",
+    "tests": [
+      "tests/test_scalar_topographic_profile_input_classification.py"
+    ],
+    "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "S_of_Y": {
+    "id": "S_of_Y",
+    "name": "Shape-operator function",
+    "symbol": "S(Y)",
+    "sector": "neutrino_pmns",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "shape-operator formula is conditional",
+    "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+    "depends_on": [
+      "scalar_topographic_profile_input_classification"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "Function value is not evaluated. No post-comparison fitting is allowed.",
+    "tests": [
+      "tests/test_scalar_topographic_profile_input_classification.py"
+    ],
+    "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "J_of_Y_rho": {
+    "id": "J_of_Y_rho",
+    "name": "Collar Jacobian function",
+    "symbol": "J(Y,rho)",
+    "sector": "neutrino_pmns",
+    "status": "DERIVED_CONDITIONAL",
+    "formula_candidate": "formula derived; value open",
+    "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+    "depends_on": [
+      "scalar_topographic_profile_input_classification"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "J(Y,rho) formula is conditionally derived, but numerical/function value remains open until S(Y) is evaluated. No post-comparison fitting is allowed.",
+    "tests": [
+      "tests/test_scalar_topographic_profile_input_classification.py"
+    ],
+    "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT",
+    "status_detail": {
+      "formula": "DERIVED_CONDITIONAL",
+      "value": "OPEN_LOCALIZABLE"
+    }
+  },
+  "S_nu_topo": {
+    "id": "S_nu_topo",
+    "name": "Neutral topographic suppression action",
+    "symbol": "S_nu_topo",
+    "sector": "neutrino_pmns",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "Hessian/barrier route localized",
+    "derivation_source": "PO-BH-60 scalar/topographic profile input classification ledger",
+    "depends_on": [
+      "scalar_topographic_profile_input_classification"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "Neutral action value is not computed. No post-comparison fitting is allowed.",
+    "tests": [
+      "tests/test_scalar_topographic_profile_input_classification.py"
+    ],
+    "next_action": "derive this input from BHSM scalar/topographic dynamics before comparison",
     "fit_policy": "FORBIDDEN_TO_FIT"
   }
 }

@@ -7,8 +7,8 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 | Item | Current status |
 | --- | --- |
 | Overall status | structural architecture integrated conditional; numerical closure open |
-| Latest theorem branch | `bhsm-scalar-topographic-level-set-boundary-v1` |
-| Latest completed theorem commits | PO-BH-47 `ae5dac5`; PO-BH-47 cleanup `1c11d2b`; PO-BH-48 `8ac577c`; PO-BH-49 `c2cfc70`; PO-BH-50 `7a4523a`; PO-BH-51 `225786f`; PO-BH-52 `4de6d9c`; PO-BH-53 `20c58b1`; PO-BH-54 `11d1c60`; PO-BH-55 `cf0e998`; PO-BH-56 `9f93330`; PO-BH-57/58 merged to main; PO-BH-59 on this branch |
+| Latest theorem branch | `bhsm-scalar-profile-threshold-ledger-v1` |
+| Latest completed theorem commits | PO-BH-47 `ae5dac5`; PO-BH-47 cleanup `1c11d2b`; PO-BH-48 `8ac577c`; PO-BH-49 `c2cfc70`; PO-BH-50 `7a4523a`; PO-BH-51 `225786f`; PO-BH-52 `4de6d9c`; PO-BH-53 `20c58b1`; PO-BH-54 `11d1c60`; PO-BH-55 `cf0e998`; PO-BH-56 `9f93330`; PO-BH-57/58/59 merged to main; PO-BH-60 on this branch |
 | Test result summary | `1376 passed`; focused PO-BH-56 tests `10 passed`; PO-BH-55 and neutral/collar regression tests `90 passed`; guardrail audits passed |
 | Current theorem/status label | `STRUCTURAL_ARCHITECTURE_INTEGRATED_CONDITIONAL_NUMERICAL_CLOSURE_OPEN` |
 | Candidate architecture complete | yes |
@@ -52,6 +52,8 @@ PO-BH-57 derives the collar-measure expansion conditionally from standard collar
 PO-BH-58 localizes the boundary embedding and conditionally derives the induced metric, unit normal, second fundamental form, shape operator, and trace formulas needed to evaluate the collar Jacobian. The formulas are standard differential geometry; their BHSM numerical/function values remain open unless a scalar/topographic boundary profile and embedding are derived. No numerical neutrino prediction or local FTL claim is made.
 
 PO-BH-59 localizes two scalar/topographic level-set boundary routes: a spacetime route `F_STF(x,t)=T(x,t)-T_0` and an internal Berger route `F_int(y)=Phi(y)-Phi_0`. The regular-level-set normal, second fundamental form, shape operator, trace, and collar-Jacobian formulas are conditionally derived. Their thresholds, explicit profiles, metric values, orientation, and numerical/function values remain open. `S_nu_topo` and `epsilon_nu_topo` remain open-localizable. No numerical neutrino prediction, PMNS numerical prediction, CKM numerical prediction, local FTL, experimental FTL, anomaly validation, or propulsion validation is claimed.
+
+PO-BH-60 classifies the scalar/topographic profile inputs required after PO-BH-59. It separates the remaining bottleneck into four gates: profile existence/localization, threshold selection, metric/profile evaluation, and neutral action evaluation. Gate 1 is partially localized; Gates 2, 3, and 4 remain open-localizable. `T_0`, `Phi_0`, explicit profile functions, gradient norms, metric/profile values, orientation, `S_nu_topo`, and `epsilon_nu_topo` remain open/localizable. No numerical neutrino prediction, PMNS prediction, CKM prediction, FTL claim, anomaly validation, or propulsion validation is introduced.
 
 ## Cross-Links
 
@@ -110,6 +112,7 @@ PO-BH-59 localizes two scalar/topographic level-set boundary routes: a spacetime
 - [Theorem discharge: collar measure / extrinsic geometry](../theory/theorem_discharge_collar_measure_extrinsic_geometry.md)
 - [Theorem discharge: boundary embedding / shape operator](../theory/theorem_discharge_boundary_embedding_shape_operator.md)
 - [Theorem discharge: scalar/topographic level-set boundary embedding](../theory/theorem_discharge_scalar_topographic_level_set_boundary_embedding.md)
+- [Theorem discharge: scalar/topographic profile input classification](../theory/theorem_discharge_scalar_topographic_profile_input_classification.md)
 
 ## Boundary-Action Term Realization Status
 

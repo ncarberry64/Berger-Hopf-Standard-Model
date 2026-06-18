@@ -294,6 +294,8 @@ The collar-measure expansion has been derived conditionally from standard collar
 
 PO-BH-59 localizes two scalar/topographic level-set boundary routes: a spacetime route `F_STF(x,t)=T(x,t)-T_0` and an internal Berger route `F_int(y)=Phi(y)-Phi_0`. The regular-level-set normal, second fundamental form, shape operator, trace, and collar-Jacobian formulas are conditionally derived. Their thresholds, explicit profiles, metric values, orientation, and numerical/function values remain open. `S_nu_topo` and `epsilon_nu_topo` remain open-localizable. No numerical neutrino prediction, PMNS numerical prediction, CKM numerical prediction, local FTL, experimental FTL, anomaly validation, or propulsion validation is claimed.
 
+PO-BH-60 classifies the scalar/topographic profile inputs required after PO-BH-59. It separates the remaining bottleneck into four gates: profile existence/localization, threshold selection, metric/profile evaluation, and neutral action evaluation. Gate 1 is partially localized; Gates 2, 3, and 4 remain open-localizable. `T_0`, `Phi_0`, explicit profile functions, gradient norms, metric/profile values, orientation, `S_nu_topo`, and `epsilon_nu_topo` remain open/localizable. No numerical neutrino prediction, PMNS prediction, CKM prediction, FTL claim, anomaly validation, or propulsion validation is introduced.
+
 PO-BH-54 localizes the normal-coupling/collar convention for the neutral
 boundary term:
 
