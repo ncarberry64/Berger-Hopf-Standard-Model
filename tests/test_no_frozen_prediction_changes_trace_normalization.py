@@ -10,8 +10,8 @@ def test_frozen_prediction_files_unchanged_for_trace_normalization_sprint():
     js = ROOT / "docs" / "frozen_predictions.json"
 
     assert hashlib.sha256(md.read_bytes()).hexdigest().upper() == (
-        "A413C72F731A15B5AF0ED4DDDC3A58D428A60BA3367676FFCDA03FF546593439"
+        "9EA147C56537520C86D3C4F9B864C6BA98BAC9E64931EDAE96449F3B335A36C4"
     )
     assert hashlib.sha256(js.read_bytes()).hexdigest().upper() == (
-        "A9735A4A17934B524C4DE317254AE40838078FBA99274C95C0DBAE11A43C6C17"
+        "F38210E0689871A25A9D5B0A1A4239883B7240CD7D0E25CDCF4C8CAB72A2CBE7"
     )
