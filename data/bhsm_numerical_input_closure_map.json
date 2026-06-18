@@ -57,7 +57,14 @@
     "S_eff_nu_boundary": "S_eff^(nu) = S_bulk[Phi] + int_partialB [1/2 chi_nu^{AB} partial_A Phi partial_B Phi + lambda_nu(nhat) Phi nhat.grad Phi] dA",
     "S_eff_nu_profile": "S_eff^(nu)[W_nu] = int_B W_nu(y) V_eff^(nu)(y) dV + regularization/width term",
     "neutral_stationary_condition": "grad_y S_eff^(nu)(y_nu) = 0",
-    "delta_S_eff_nu_H": "delta S_eff^(nu-H) = S_eff^(nu) - S_eff^(H)"
+    "delta_S_eff_nu_H": "delta S_eff^(nu-H) = S_eff^(nu) - S_eff^(H)",
+    "subsurface_metric_split": "ds_ext^2 = g_ext,ab dx^a dx^b; ds_sub^2 = g_sub,AB dY^A dY^B",
+    "Pi_sub_to_ext": "x^a = Pi_sub_to_ext^a(Y)",
+    "projected_interval": "ds_proj^2 = g_ext,ab dPi^a dPi^b",
+    "ellapse_nu_metric_ratio": "ellapse_nu^2 = ds_proj^2 / ds_sub^2",
+    "ellapse_nu_topographic": "0 < ellapse_nu(y) <= 1 with ellapse_nu(y) -> 0 near a zero-exterior-spacetime core",
+    "neutral_projection_saddle": "grad_Y S_eff^(nu)(Y_nu) = 0; y_nu = Pi_sub_to_ext(Y_nu); Delta y_nu = Pi_sub_to_ext(Y_nu) - y_H",
+    "exterior_projected_apparent_speed": "v_ext,proj = |d Pi_sub_to_ext(Y) / dt_ext| with dt_ext = ellapse_nu dt_sub"
   },
   "phase_admissibility": {
     "absolute_alpha0_physical": false,
@@ -127,6 +134,77 @@
     "tests": ["tests/test_neutral_topographic_suppression_action.py"],
     "next_action": "derive or reject Delta y_nu, H_topo^(nu), E_nu, and S_barrier from the scalar/topographic boundary action before any neutrino-scale comparison"
   },
+  "subsurface_projection_geometry": {
+    "id": "PO-BH-51",
+    "name": "Subsurface neutral projection geometry",
+    "symbol": "g_sub, ellapse_nu, Pi_sub_to_ext",
+    "sector": "neutrino_pmns",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "ds_sub^2 = g_sub,AB dY^A dY^B; x^a = Pi_sub_to_ext^a(Y); ellapse_nu^2 = ds_proj^2 / ds_sub^2",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "candidate internal/subsurface topographic metric split and exterior projection/lapse scaffold",
+    "depends_on": [
+      {"id": "scalar/topographic profile solution", "status": "OPEN_UNRESOLVED"},
+      {"id": "coordinate chart / invariant projection convention", "status": "OPEN_UNRESOLVED"},
+      {"id": "internal metric derivation", "status": "OPEN_LOCALIZABLE"},
+      {"id": "positivity/causality proof", "status": "OPEN_LOCALIZABLE"},
+      {"id": "neutral boundary tensors", "status": "OPEN_LOCALIZABLE"},
+      {"id": "neutral boundary condition", "status": "OPEN_UNRESOLVED"}
+    ],
+    "candidate_routes": [
+      {
+        "id": "route_A_metric_splitting",
+        "formula": "ds_ext^2 = g_ext,ab dx^a dx^b; ds_sub^2 = g_sub,AB dY^A dY^B; x^a = Pi_sub_to_ext^a(Y); ellapse_nu^2 = ds_proj^2 / ds_sub^2",
+        "dependencies": ["g_ext", "g_sub", "Pi_sub_to_ext", "positive interval-ratio convention", "coordinate chart"],
+        "status": "OPEN_LOCALIZABLE",
+        "reason": "The metric split localizes the projection geometry, but the subsurface metric and projection map are not derived from the boundary/topographic action.",
+        "allowed_next_action": "derive g_sub and Pi_sub_to_ext from the internal topographic metric and boundary profile before comparison",
+        "forbidden_shortcut": "choose a metric ratio or projection map from neutrino residuals or anomalous propagation claims"
+      },
+      {
+        "id": "route_B_topographic_lapse",
+        "formula": "0 < ellapse_nu(y) <= 1 with ellapse_nu(y) -> 0 near a zero-exterior-spacetime core",
+        "dependencies": ["scalar/topographic profile solution", "boundary conditions", "positivity of lapse", "core definition"],
+        "status": "OPEN_LOCALIZABLE",
+        "reason": "A topographic lapse is structurally compatible with the subsurface-channel picture, but the scalar profile and boundary conditions are still open.",
+        "allowed_next_action": "derive ellapse_nu(y) from the scalar/topographic profile and boundary conditions",
+        "forbidden_shortcut": "fit ellapse_nu to neutrino masses, PMNS residuals, or apparent speed claims"
+      },
+      {
+        "id": "route_C_stationary_channel",
+        "formula": "grad_Y S_eff^(nu)(Y_nu) = 0; y_nu = Pi_sub_to_ext(Y_nu); Delta y_nu = Pi_sub_to_ext(Y_nu) - y_H",
+        "dependencies": ["S_eff_nu", "Pi_sub_to_ext", "stationary channel coordinates", "Higgs/charged reference saddle y_H"],
+        "status": "OPEN_LOCALIZABLE",
+        "reason": "This route links projection geometry to the localized neutral saddle displacement, but S_eff_nu and Pi_sub_to_ext remain open.",
+        "allowed_next_action": "derive the neutral stationary channel and projection map before any neutrino comparison",
+        "forbidden_shortcut": "pick Y_nu or Pi_sub_to_ext to make Delta_y_nu numerically useful"
+      },
+      {
+        "id": "route_D_causality_preserving_apparent_ftl",
+        "formula": "v_sub <= c_sub; v_ext,proj = |d Pi_sub_to_ext(Y) / dt_ext|; dt_ext = ellapse_nu dt_sub",
+        "dependencies": ["g_sub causal cone", "ellapse_nu", "Pi_sub_to_ext", "projection theorem"],
+        "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+        "reason": "This explains how exterior-projected apparent FTL could be interpretive without local internal causality violation, but it is not derived until the metric, lapse, and projection map are derived.",
+        "allowed_next_action": "prove the projection statement from g_sub, ellapse_nu, and Pi_sub_to_ext",
+        "forbidden_shortcut": "claim literal local FTL, experimental FTL, or tune projection data to anomalies"
+      }
+    ],
+    "forbidden_inputs": [
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "PMNS angles",
+      "PMNS CP phase",
+      "fitted FTL/anomaly data",
+      "post-comparison ellapse_nu fit",
+      "post-comparison g_sub fit",
+      "post-comparison Pi_sub_to_ext fit"
+    ],
+    "claim_boundary": "The subsurface neutral projection geometry has been localized as a required dependency for the neutral effective action. Candidate internal metric, projection map, and exterior-lapse structures are documented. No local FTL or numerical neutrino prediction is claimed.",
+    "causality_boundary": "BHSM does not claim local causality violation. Any FTL-like behavior is exterior-projected apparent behavior arising from a subsurface/internal topographic channel and remains conditional until g_sub, ellapse_nu, and Pi_sub_to_ext are derived.",
+    "tests": ["tests/test_subsurface_projection_geometry.py"],
+    "next_action": "derive or reject g_sub, ellapse_nu, and Pi_sub_to_ext from the scalar/topographic profile, coordinate-invariant projection convention, positivity/causality proof, and neutral boundary tensors before comparison"
+  },
   "neutral_effective_action": {
     "id": "PO-BH-50",
     "name": "Neutral effective action",
@@ -150,13 +228,13 @@
       {"id": "W_nu", "status": "OPEN_LOCALIZABLE"},
       {"id": "V_eff^(nu)", "status": "OPEN_LOCALIZABLE"},
       {"id": "neutral profile regularization/width term", "status": "OPEN_LOCALIZABLE"},
-      {"id": "subsurface-to-exterior projection map", "status": "OPEN_UNRESOLVED"}
+      {"id": "Pi_sub_to_ext", "status": "OPEN_LOCALIZABLE"}
     ],
     "candidate_routes": [
       {
         "id": "route_A_subsurface_neutral_channel_action",
         "formula": "S_eff^(nu) = S_bulk[Phi] + S_partial^(nu)[Phi] + S_subsurface^(nu)[Phi; ellapse_nu, g_sub]",
-        "dependencies": ["S_bulk[Phi]", "S_partial^(nu)[Phi]", "S_subsurface^(nu)", "ellapse_nu", "g_sub", "subsurface-to-exterior projection map"],
+        "dependencies": ["S_bulk[Phi]", "S_partial^(nu)[Phi]", "S_subsurface^(nu)", "ellapse_nu", "g_sub", "Pi_sub_to_ext"],
         "status": "OPEN_LOCALIZABLE",
         "reason": "This route localizes the neutral effective action as a subsurface neutral topographic channel, but the internal/subsurface metric and projection/lapse map are not derived.",
         "allowed_next_step": "derive g_sub, ellapse_nu, and the projection map from the internal topographic/boundary action before comparison",
@@ -195,6 +273,7 @@
       "observed neutrino mass splittings",
       "PMNS angles",
       "PMNS CP phase",
+      "fitted FTL/anomaly data",
       "post-comparison S_eff_nu fit",
       "post-comparison Delta_y_nu fit",
       "post-comparison epsilon_nu_topo fit"
@@ -202,7 +281,7 @@
     "claim_boundary": "The neutral effective action S_eff^(nu) is localized as the action-level source for the neutral saddle displacement. The subsurface neutral-channel candidate is documented, but the internal metric, projection/lapse map, neutral boundary tensors, and neutral profile remain open. Numerical neutrino closure remains open.",
     "causality_boundary": "Subsurface neutral topographic channel language permits exterior-projected anomalous propagation or apparent FTL from the exterior-surface viewpoint only as an interpretive projection; the candidate remains locally causal in the internal/topographic metric and does not assert locally acausal propagation.",
     "tests": ["tests/test_neutral_effective_action.py"],
-    "next_action": "derive or reject g_sub, ellapse_nu, chi_nu, lambda_nu, W_nu, V_eff^(nu), and the neutral projection map from the boundary/topographic action before any neutrino comparison"
+    "next_action": "derive or reject g_sub, ellapse_nu, Pi_sub_to_ext, chi_nu, lambda_nu, W_nu, and V_eff^(nu) from the boundary/topographic action before any neutrino comparison"
   },
   "neutral_saddle_displacement": {
     "id": "PO-BH-49",
@@ -320,6 +399,51 @@
     {"id": "M_nu", "sector": "neutrino_pmns", "symbol": "M_nu = epsilon_nu_topo M_nu^(0)", "status": "STRUCTURALLY_INTEGRATED", "fit_policy": "FORBIDDEN_TO_FIT"},
     {"id": "epsilon_nu_topo", "sector": "neutrino_pmns", "symbol": "epsilon_nu_topo = exp(-S_nu_topo)", "status": "STRUCTURALLY_INTEGRATED", "fit_policy": "FORBIDDEN_TO_FIT"},
     {
+      "id": "g_sub",
+      "name": "Subsurface neutral topographic metric",
+      "sector": "neutrino_pmns",
+      "symbol": "g_sub",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "ds_sub^2 = g_sub,AB dY^A dY^B",
+      "derivation_source": "candidate internal/subsurface topographic metric split",
+      "depends_on": ["scalar/topographic profile solution", "internal metric derivation", "neutral boundary tensors", "positivity/causality proof"],
+      "forbidden_inputs": ["observed neutrino masses", "observed neutrino mass splittings", "PMNS angles", "PMNS CP phase", "fitted FTL/anomaly data", "post-comparison g_sub fit"],
+      "claim_boundary": "localizable internal metric candidate only; no local FTL or numerical neutrino prediction is claimed",
+      "tests": ["tests/test_subsurface_projection_geometry.py"],
+      "next_action": "derive or reject g_sub from the scalar/topographic profile and neutral boundary tensors before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "ellapse_nu",
+      "name": "Neutral exterior-projection lapse",
+      "sector": "neutrino_pmns",
+      "symbol": "ellapse_nu",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "ellapse_nu^2 = ds_proj^2 / ds_sub^2; 0 < ellapse_nu(y) <= 1",
+      "derivation_source": "candidate metric-ratio/topographic-lapse scaffold",
+      "depends_on": ["g_sub", "Pi_sub_to_ext", "projected interval", "scalar/topographic profile solution", "positivity/causality proof"],
+      "forbidden_inputs": ["observed neutrino masses", "observed neutrino mass splittings", "PMNS angles", "PMNS CP phase", "fitted FTL/anomaly data", "post-comparison ellapse_nu fit"],
+      "claim_boundary": "localizable projection/lapse candidate only; apparent FTL language remains exterior-projected and interpretive",
+      "tests": ["tests/test_subsurface_projection_geometry.py"],
+      "next_action": "derive or reject ellapse_nu from the projection geometry and scalar/topographic profile before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "Pi_sub_to_ext",
+      "name": "Subsurface-to-exterior projection map",
+      "sector": "neutrino_pmns",
+      "symbol": "Pi_sub_to_ext",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "x^a = Pi_sub_to_ext^a(Y)",
+      "derivation_source": "candidate coordinate-invariant projection map from subsurface neutral channel to exterior surface coordinates",
+      "depends_on": ["coordinate chart / invariant projection convention", "g_sub", "g_ext", "neutral stationary channel", "positivity/causality proof"],
+      "forbidden_inputs": ["observed neutrino masses", "observed neutrino mass splittings", "PMNS angles", "PMNS CP phase", "fitted FTL/anomaly data", "post-comparison Pi_sub_to_ext fit"],
+      "claim_boundary": "localizable projection-map candidate only; no experimental FTL or numerical neutrino prediction is claimed",
+      "tests": ["tests/test_subsurface_projection_geometry.py"],
+      "next_action": "derive or reject Pi_sub_to_ext from a coordinate-invariant projection convention and the internal metric before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
       "id": "S_eff_nu",
       "name": "Neutral effective action",
       "sector": "neutrino_pmns",
@@ -327,8 +451,8 @@
       "status": "OPEN_LOCALIZABLE",
       "formula_candidate": "S_eff^(nu) = S_bulk[Phi] + S_partial^(nu)[Phi] + S_subsurface^(nu)[Phi; ellapse_nu, g_sub]",
       "derivation_source": "candidate subsurface neutral topographic channel and boundary/profile action scaffolds",
-      "depends_on": ["g_sub", "ellapse_nu", "S_bulk[Phi]", "S_partial^(nu)[Phi]", "chi_nu^{AB}", "lambda_nu(nhat)", "neutral boundary condition", "W_nu", "V_eff^(nu)", "subsurface-to-exterior projection map"],
-      "forbidden_inputs": ["observed neutrino masses", "observed neutrino mass splittings", "PMNS angles", "PMNS CP phase", "post-comparison S_eff_nu fit", "post-comparison Delta_y_nu fit", "post-comparison epsilon_nu_topo fit"],
+      "depends_on": ["g_sub", "ellapse_nu", "Pi_sub_to_ext", "S_bulk[Phi]", "S_partial^(nu)[Phi]", "chi_nu^{AB}", "lambda_nu(nhat)", "neutral boundary condition", "W_nu", "V_eff^(nu)"],
+      "forbidden_inputs": ["observed neutrino masses", "observed neutrino mass splittings", "PMNS angles", "PMNS CP phase", "fitted FTL/anomaly data", "post-comparison S_eff_nu fit", "post-comparison Delta_y_nu fit", "post-comparison epsilon_nu_topo fit"],
       "claim_boundary": "The neutral effective action S_eff^(nu) is localized as the action-level source for the neutral saddle displacement. The subsurface neutral-channel candidate is documented, but the internal metric, projection/lapse map, neutral boundary tensors, and neutral profile remain open. Numerical neutrino closure remains open.",
       "tests": ["tests/test_neutral_effective_action.py"],
       "next_action": "derive or reject g_sub, ellapse_nu, chi_nu, lambda_nu, W_nu, V_eff^(nu), and the neutral projection map from the boundary/topographic action before any neutrino comparison",
@@ -412,6 +536,9 @@
     "Delta alpha_ud",
     "Delta gamma_ud",
     "CKM 1/16 exponent",
+    "g_sub",
+    "ellapse_nu",
+    "Pi_sub_to_ext",
     "S_eff_nu",
     "Delta_y_nu",
     "S_nu_topo",
@@ -437,6 +564,7 @@
     "fit Delta alpha/gamma to CKM",
     "fit CKM 1/16 exponent after comparison",
     "fit S_eff_nu to neutrino masses or PMNS data",
+    "fit g_sub, ellapse_nu, or Pi_sub_to_ext to neutrino masses, PMNS data, or FTL/anomaly data",
     "fit subsurface neutral projection or apparent propagation parameters to neutrino data",
     "fit Delta_y_nu to neutrino masses or PMNS data",
     "fit S_nu_topo to neutrino scale",
@@ -469,6 +597,8 @@
     "DELTA_Y_NU_NEUTRAL_SADDLE_DISPLACEMENT_OPEN",
     "PO_BH_50_NEUTRAL_EFFECTIVE_ACTION_LOCALIZED",
     "S_EFF_NU_NEUTRAL_ACTION_OPEN",
+    "PO_BH_51_SUBSURFACE_PROJECTION_GEOMETRY_LOCALIZED",
+    "G_SUB_ELLAPSE_NU_PROJECTION_GEOMETRY_OPEN",
     "FULL_NUMERICAL_SM_PREDICTION_OPEN",
     "REPLACEMENT_READINESS_NOT_ACHIEVED",
     "FROZEN_PREDICTIONS_UNCHANGED",

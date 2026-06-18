@@ -107,6 +107,24 @@ exterior-projected anomalous propagation or apparent FTL from exterior-surface
 viewpoint; it remains locally causal in the internal/topographic metric.
 Numerical neutrino closure remains open.
 
+PO-BH-51 localizes the subsurface neutral projection geometry required by
+`S_eff^(nu)`. The current candidate objects are:
+
+`ds_sub^2 = g_sub,AB dY^A dY^B`
+
+`x^a = Pi_sub_to_ext^a(Y)`
+
+`ellapse_nu^2 = ds_proj^2 / ds_sub^2`.
+
+Status: `OPEN_LOCALIZABLE` for `g_sub`, `ellapse_nu`, and `Pi_sub_to_ext`.
+The subsurface neutral projection geometry has been localized as a required
+dependency for the neutral effective action. Candidate internal metric,
+projection map, and exterior-lapse structures are documented. No local FTL or
+numerical neutrino prediction is claimed. Missing dependencies include the
+scalar/topographic profile, coordinate-invariant projection convention,
+internal metric derivation, positivity/causality proof, and relation to neutral
+boundary tensors.
+
 with
 
 `H_nu^(0) = [[lambda0+Delta0, etaA exp(i phiA), etaB exp(i phiB)], [etaA exp(-i phiA), lambda3+DeltaA, delta exp(i varphi)], [etaB exp(-i phiB), delta exp(-i varphi), lambda3+DeltaB]]`.
@@ -145,6 +163,7 @@ Near-degenerate mixing scaffold:
 - fit `Delta alpha/gamma` to CKM;
 - fit the CKM `1/16` exponent after comparison;
 - fit `S_eff_nu` to neutrino masses or PMNS data;
+- fit `g_sub`, `ellapse_nu`, or `Pi_sub_to_ext` to neutrino masses, PMNS data, or FTL/anomaly data;
 - fit `S_nu_topo` to neutrino scale;
 - fit the PMNS phase loop to measured CP value;
 - fit scalar/topographic profile parameters to hide extra light states.
@@ -158,6 +177,8 @@ The neutral topographic suppression action has been localized as the next numeri
 The neutral saddle displacement `Delta y_nu` has been localized as a required input for the `S_nu_topo` Hessian/barrier formula. Candidate stationary-point and finite-width centroid definitions are documented. Numerical neutrino closure remains open.
 
 The neutral effective action `S_eff^(nu)` has been localized as the action-level source for the neutral saddle displacement. A subsurface neutral-channel candidate is documented, but the internal metric, projection/lapse map, neutral boundary tensors, and neutral profile remain open. Numerical neutrino closure remains open.
+
+The subsurface neutral projection geometry has been localized as a required dependency for the neutral effective action. Candidate internal metric, projection map, and exterior-lapse structures are documented. No local FTL or numerical neutrino prediction is claimed.
 
 ## Claim Boundary
 
