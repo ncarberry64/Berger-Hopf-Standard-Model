@@ -1,0 +1,107 @@
+# BHSM Numerical Input Closure Map
+
+Status: `STRUCTURAL_ARCHITECTURE_INTEGRATED_CONDITIONAL_NUMERICAL_CLOSURE_OPEN`
+
+This closure map records the remaining symbolic inputs after the current BHSM theorem-discharge chain. It distinguishes structural closure from numerical closure and forbids fitting routes that would hide free knobs.
+
+Machine-readable companion: `data/bhsm_numerical_input_closure_map.json`.
+
+## Status Classes
+
+- `DERIVED`
+- `DERIVED_CONDITIONAL`
+- `STRUCTURALLY_INTEGRATED`
+- `STRUCTURALLY_MOTIVATED_NOT_DERIVED`
+- `OPEN_LOCALIZABLE`
+- `OPEN_UNRESOLVED`
+- `FROZEN_CANDIDATE`
+- `FORBIDDEN_TO_FIT`
+
+## Ledgers
+
+| sector | modes |
+| --- | --- |
+| charged lepton | `(0,0),(1,2),(3,3)` |
+| neutrino | `(0,0),(3,0),(1,1)` |
+| up | `(0,0),(6,0),(8,1)` |
+| down | `(0,0),(0,3),(4,2)` |
+
+The relation `k=q+2j` gives neutrino `k` values `[0,3,3]`.
+
+## Integrated Structural Chain
+
+BHSM now has an integrated conditional structural architecture for SM-like finite algebra, charges, Higgs/scalar mass generation, fermion hierarchy, CKM, PMNS, and CP sources. Numerical closure remains open.
+
+## Phase Admissibility
+
+PO-BH-41A is encoded as:
+
+`alpha0` and `gamma0` are not standalone single-sector observables. They become physical only through sector-relative sampling.
+
+The CKM phase source is:
+
+`arg(Theta_12 Theta_23 Theta_13*)`
+
+The sector displacement scaffold is:
+
+`Delta y_ud = - H_topo^{-1} grad_y(delta S_partial^d - delta S_partial^u)|_{y0}`
+
+## Neutral / PMNS Scaffold
+
+The neutral topographic suppression route is:
+
+`M_nu = epsilon_nu_topo M_nu^(0)`
+
+`epsilon_nu_topo = exp(-S_nu_topo)`
+
+`H_nu = epsilon_nu_topo^2 H_nu^(0)`
+
+with
+
+`H_nu^(0) = [[lambda0+Delta0, etaA exp(i phiA), etaB exp(i phiB)], [etaA exp(-i phiA), lambda3+DeltaA, delta exp(i varphi)], [etaB exp(-i phiB), delta exp(-i varphi), lambda3+DeltaB]]`.
+
+Neutral off-diagonal moment costs:
+
+| moment | cost |
+| --- | ---: |
+| `M_nu(1,1)` | 2 |
+| `M_nu(-2,1)` | 5 |
+| `M_nu(3,0)` | 9 |
+
+PMNS source:
+
+`U_PMNS = U_l,L^dagger U_nu,L`
+
+PMNS phase loop:
+
+`Phi_nu = phiA + varphi - phiB`
+
+Equivalently:
+
+`Phi_nu = arg[M_nu(3,0) M_nu(-2,1) M_nu(1,1)^*]`
+
+Mass-splitting scaffold:
+
+`Delta m_+-^2 = 2 epsilon_nu_topo^2 sqrt(((DeltaB-DeltaA)/2)^2 + |delta|^2)`
+
+Near-degenerate mixing scaffold:
+
+`tan 2 theta_AB = 2 |delta|/(DeltaB-DeltaA)`
+
+## Forbidden Fit Routes
+
+- fit `beta0` to masses;
+- fit `Delta alpha/gamma` to CKM;
+- fit the CKM `1/16` exponent after comparison;
+- fit `S_nu_topo` to neutrino scale;
+- fit the PMNS phase loop to measured CP value;
+- fit scalar/topographic profile parameters to hide extra light states.
+
+## Open Numerical Inputs
+
+Open inputs include charged-sector metrics and prefactors, CKM mixing metrics and finite-width moments, sector-relative displacement coordinates, CKM `1/16` exponent, neutral suppression action, neutral operator parameters, scalar/topographic profile solution, scalar decoupling, stability proof, coupling bounds, and higher-loop thresholds.
+
+## Claim Boundary
+
+This closure map does not claim full numerical Standard Model derivation, full replacement readiness, numerical mass ratios, numerical CKM prediction, numerical PMNS prediction, neutrino mass ordering, PMNS CP value, scalar/topographic decoupling proof, or higher-loop threshold completion.
+

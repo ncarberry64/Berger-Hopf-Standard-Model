@@ -199,6 +199,8 @@ Generic finite-width feature-rank status: the current theorem-discharge branch d
 
 Explicit symbolic Gram/minor status: the current theorem-discharge branch constructs explicit generation feature matrices and enumerates symbolic 3x3 minor candidates tied to Wigner/Hopf jet expressions. It does not derive a nonzero symbolic minor, local Wigner/Hopf jet independence, finite-width rank-three Yukawa matrices, numerical Yukawa values, CKM, PMNS, or replacement readiness.
 
+Numerical input closure-map status: BHSM now has an integrated conditional structural architecture for SM-like finite algebra, charges, Higgs/scalar mass generation, fermion hierarchy, CKM, PMNS, and CP sources. Numerical closure remains open. The closure map exposes remaining symbolic inputs, marks forbidden fit routes, and requires pre-comparison locking before any numerical prediction claim.
+
 ## Citation / DOI
 
 Use `CITATION.cff` for citation metadata. Zenodo metadata is recorded in `.zenodo.json`; do not create or edit external release metadata without explicit author instruction.

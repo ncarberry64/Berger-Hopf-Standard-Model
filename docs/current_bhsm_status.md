@@ -63,6 +63,7 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 - [Theorem discharge: y0 coordinate constraint](../theory/theorem_discharge_y0_coordinate_constraint.md)
 - [Theorem discharge: generic finite-width feature rank](../theory/theorem_discharge_generic_finite_width_feature_rank.md)
 - [Theorem discharge: explicit symbolic Gram/minor](../theory/theorem_discharge_explicit_symbolic_gram_minor.md)
+- [Numerical input closure map](bhsm_numerical_input_closure_map.md)
 
 ## Boundary-Action Term Realization Status
 
@@ -115,3 +116,5 @@ The y0 coordinate-constraint theorem-discharge attempt keeps the coordinate trip
 The generic finite-width feature-rank theorem-discharge attempt defines the local feature multiplets, finite-width moment scaffold, and symbolic Gram/minor rank condition needed for rank-three support. It remains partial because no nonzero symbolic determinant or equivalent independence theorem is derived; numerical Yukawa values, CKM, PMNS, and replacement readiness remain open.
 
 The explicit symbolic Gram/minor theorem-discharge attempt constructs generation feature matrices and enumerates concrete symbolic 3x3 minor candidates from Wigner/Hopf local jet expressions. It remains partial because no candidate minor is proven nonzero and local Wigner/Hopf jet independence remains open; numerical Yukawa values, CKM, PMNS, and replacement readiness remain open.
+
+The PO-BH-47 numerical input closure-map theorem records that BHSM has an integrated conditional structural architecture for SM-like finite algebra, charges, Higgs/scalar mass generation, fermion hierarchy, CKM, PMNS, and CP sources. It also exposes remaining symbolic inputs and forbidden fit routes. Numerical closure remains open.
