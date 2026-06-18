@@ -7,9 +7,9 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 | Item | Current status |
 | --- | --- |
 | Overall status | structural architecture integrated conditional; numerical closure open |
-| Latest theorem branch | `bhsm-normal-coupling-collar-v1` |
-| Latest completed theorem commits | PO-BH-47 `ae5dac5`; PO-BH-47 cleanup `1c11d2b`; PO-BH-48 `8ac577c`; PO-BH-49 `c2cfc70`; PO-BH-50 `7a4523a`; PO-BH-51 `225786f`; PO-BH-52 `4de6d9c`; PO-BH-53 `20c58b1`; PO-BH-54 on this branch |
-| Test result summary | `1355 passed`; focused PO-BH-54 tests `10 passed`; focused PO-BH-53 tests `9 passed`; focused PO-BH-52 tests `11 passed`; focused PO-BH-51 tests `10 passed`; focused PO-BH-50 tests `10 passed`; focused PO-BH-49 tests `9 passed`; focused PO-BH-48 tests `9 passed`; focused PO-BH-47 tests `11 passed`; guardrail audits passed |
+| Latest theorem branch | `bhsm-collar-geometry-package-v1` |
+| Latest completed theorem commits | PO-BH-47 `ae5dac5`; PO-BH-47 cleanup `1c11d2b`; PO-BH-48 `8ac577c`; PO-BH-49 `c2cfc70`; PO-BH-50 `7a4523a`; PO-BH-51 `225786f`; PO-BH-52 `4de6d9c`; PO-BH-53 `20c58b1`; PO-BH-54 `11d1c60`; PO-BH-55 on this branch |
+| Test result summary | `1366 passed`; focused PO-BH-55 tests `11 passed`; focused PO-BH-54 through PO-BH-47 regression tests passed; guardrail audits passed |
 | Current theorem/status label | `STRUCTURAL_ARCHITECTURE_INTEGRATED_CONDITIONAL_NUMERICAL_CLOSURE_OPEN` |
 | Candidate architecture complete | yes |
 | Full BHSM proven | no |
@@ -42,6 +42,8 @@ PO-BH-52 localizes the neutral boundary tensors and boundary condition as requir
 PO-BH-53 derives the scalar/topographic boundary variation conditionally as a symbolic neutral boundary-condition form. The tensor values `chi_nu^{AB}` and `lambda_nu`, the normal-coupling convention, neutral profile, and positivity/stability proof remain open; no numerical neutrino prediction or local FTL claim is made.
 
 PO-BH-54 localizes the normal-coupling/collar convention for the neutral boundary term. A fixed-normal restricted route gives `R_nu=lambda_nu n.grad Phi`, while collar and Robin reductions remain open-localizable. The numerical value/function of `lambda_nu` remains open; no numerical neutrino prediction or local FTL claim is made.
+
+PO-BH-55 localizes the collar geometry package as the missing convention set for the neutral normal-coupling term. Collar coordinate, measure, orientation, edge condition, and admissible variation data are now explicit closure-map objects. Robin coefficients remain open unless a full collar convention is derived.
 
 ## Cross-Links
 
@@ -95,6 +97,7 @@ PO-BH-54 localizes the normal-coupling/collar convention for the neutral boundar
 - [Theorem discharge: neutral boundary tensors](../theory/theorem_discharge_neutral_boundary_tensors.md)
 - [Theorem discharge: scalar/topographic boundary variation](../theory/theorem_discharge_scalar_topographic_boundary_variation.md)
 - [Theorem discharge: normal-coupling collar convention](../theory/theorem_discharge_normal_coupling_collar_convention.md)
+- [Theorem discharge: collar geometry package](../theory/theorem_discharge_collar_geometry_package.md)
 
 ## Boundary-Action Term Realization Status
 
