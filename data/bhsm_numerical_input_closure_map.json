@@ -66,6 +66,8 @@
     "collar_measure": "dV_collar = J(Y,rho) dA d rho with J(Y,0)=1 under normalized boundary measure",
     "collar_orientation": "n = s_n partial_rho with s_n in {+1,-1}",
     "collar_robin_coefficients": "R_nu -> A_nu Phi + B_nu n.grad Phi; A_nu,B_nu depend on lambda_nu, epsilon, J, orientation, and edge data",
+    "complete_scalar_topographic_collar_action": "S_collar = int_{partialB x [0,epsilon]} L_collar[Phi, partial_rho Phi, D_A Phi, J, lambda_nu, chi_nu] J(Y,rho) dA d rho",
+    "collar_measure_curvature_expansion": "J(Y,rho) = 1 + rho K(Y) + O(rho^2) if boundary extrinsic geometry is derived",
     "chi_nu_metric_pullback": "chi_nu^{AB} ~ f_nu(y) g_sub^{AB}",
     "chi_nu_parallel_perp": "chi_nu^{AB} = chi_parallel P_parallel^{AB} + chi_perp P_perp^{AB}",
     "S_eff_nu_profile": "S_eff^(nu)[W_nu] = int_B W_nu(y) V_eff^(nu)(y) dV + regularization/width term",
@@ -515,6 +517,96 @@
     "tests": ["tests/test_collar_geometry_package.py"],
     "next_action": "derive or reject the collar measure, orientation, edge condition, admissible variations, and Robin coefficients from the complete scalar/topographic boundary action before comparison"
   },
+  "complete_scalar_topographic_collar_action": {
+    "id": "PO-BH-56",
+    "name": "Complete scalar/topographic collar action audit",
+    "symbol": "S_collar, L_collar, J(Y,rho), s_n, edge data, A_nu, B_nu",
+    "sector": "neutrino_pmns",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "S_collar = int_{partialB x [0,epsilon]} L_collar[Phi, partial_rho Phi, D_A Phi, J, lambda_nu, chi_nu] J(Y,rho) dA d rho",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "audit of existing scalar/topographic boundary-action scaffolds as a possible source for the PO-BH-55 collar package",
+    "depends_on": [
+      {"id": "S_bulk[Phi]", "status": "DERIVED_CONDITIONAL"},
+      {"id": "S_partial^(nu)[Phi]", "status": "OPEN_LOCALIZABLE"},
+      {"id": "S_subsurface^(nu)", "status": "OPEN_LOCALIZABLE"},
+      {"id": "collar_coordinate_rho", "status": "DERIVED_CONDITIONAL"},
+      {"id": "collar_measure", "status": "OPEN_LOCALIZABLE"},
+      {"id": "normal_orientation", "status": "OPEN_LOCALIZABLE"},
+      {"id": "inner_collar_edge_condition", "status": "OPEN_LOCALIZABLE"},
+      {"id": "admissible_collar_variation_data", "status": "OPEN_LOCALIZABLE"},
+      {"id": "robin_coefficients_A_B", "status": "OPEN_LOCALIZABLE"},
+      {"id": "chi_nu_AB", "status": "OPEN_LOCALIZABLE"},
+      {"id": "lambda_nu", "status": "OPEN_LOCALIZABLE"},
+      {"id": "g_sub", "status": "OPEN_LOCALIZABLE"},
+      {"id": "W_nu", "status": "OPEN_LOCALIZABLE"}
+    ],
+    "candidate_routes": [
+      {
+        "id": "route_A_existing_scalar_topographic_action_extraction",
+        "formula": "S_collar = int_{partialB x [0,epsilon]} L_collar[Phi, partial_rho Phi, D_A Phi, J, lambda_nu, chi_nu] J(Y,rho) dA d rho",
+        "dependencies": ["S_bulk[Phi]", "S_partial^(nu)[Phi]", "S_subsurface^(nu)", "collar geometry package"],
+        "status": "OPEN_LOCALIZABLE",
+        "reason": "The repo contains localized boundary and subsurface action scaffolds, but not a complete collar Lagrangian that fixes measure, orientation, edge data, variations, or Robin coefficients.",
+        "allowed_next_action": "derive the full collar Lagrangian from the complete scalar/topographic boundary action",
+        "forbidden_shortcut": "write L_collar after comparing to neutrino, PMNS, or anomaly data"
+      },
+      {
+        "id": "route_B_measure_derivation",
+        "formula": "dV_collar = J(Y,rho) dA d rho; candidate expansion J(Y,rho) = 1 + rho K(Y) + O(rho^2)",
+        "dependencies": ["boundary metric", "extrinsic curvature K(Y)", "fixed boundary embedding"],
+        "status": "OPEN_LOCALIZABLE",
+        "reason": "The candidate expansion is standard collar geometry, but the repo has not derived the boundary extrinsic geometry or K(Y) from BHSM scalar/topographic data.",
+        "allowed_next_action": "derive the collar Jacobian from boundary/subsurface geometry or keep J symbolic",
+        "forbidden_shortcut": "fit J(Y,rho) or K(Y) to residuals"
+      },
+      {
+        "id": "route_C_orientation_derivation",
+        "formula": "n = s_n partial_rho with s_n in {+1,-1}",
+        "dependencies": ["exterior/surface convention", "subsurface-channel convention", "boundary orientation"],
+        "status": "OPEN_LOCALIZABLE",
+        "reason": "The existing action tracks the sign but does not select inward versus outward rho orientation.",
+        "allowed_next_action": "derive the sign from the boundary/subsurface orientation convention",
+        "forbidden_shortcut": "choose s_n from data or desired sign of lambda_nu"
+      },
+      {
+        "id": "route_D_inner_edge_condition",
+        "formula": "rho=epsilon edge: subsurface matching, decay/localization, Neumann, Dirichlet, or transparent matching",
+        "dependencies": ["subsurface neutral channel", "W_nu", "finite-width profile", "edge matching theorem"],
+        "status": "OPEN_LOCALIZABLE",
+        "reason": "Existing docs list edge options but do not derive which one follows from the scalar/topographic action.",
+        "allowed_next_action": "derive the inner-edge condition from neutral profile and subsurface matching",
+        "forbidden_shortcut": "select the edge condition to tune the neutral sector"
+      },
+      {
+        "id": "route_E_robin_coefficient_derivation",
+        "formula": "A_nu = A_nu[lambda_nu, J, epsilon, edge condition, orientation]; B_nu = B_nu[lambda_nu, J, epsilon, edge condition, orientation]",
+        "dependencies": ["lambda_nu", "collar_measure", "normal_orientation", "inner_collar_edge_condition", "admissible_collar_variation_data"],
+        "status": "OPEN_LOCALIZABLE",
+        "reason": "Symbolic dependencies are localized, but A_nu and B_nu are not extractable without the missing action/measure/orientation/edge/variation package.",
+        "allowed_next_action": "derive symbolic Robin coefficients after fixing the full collar convention",
+        "forbidden_shortcut": "fit A_nu or B_nu to neutrino, PMNS, or anomaly data"
+      }
+    ],
+    "forbidden_inputs": [
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "PMNS angles",
+      "PMNS CP phase",
+      "fitted FTL/anomaly data",
+      "post-comparison L_collar fit",
+      "post-comparison collar measure fit",
+      "post-comparison orientation fit",
+      "post-comparison edge-condition fit",
+      "post-comparison variation-data fit",
+      "post-comparison Robin coefficient fit",
+      "post-comparison lambda_nu fit"
+    ],
+    "claim_boundary": "The complete scalar/topographic collar action is audited as the missing source for collar measure, orientation, edge condition, admissible variation data, and Robin coefficients. Existing repo scaffolds localize the needed action but do not determine these pieces or close numerical neutrino inputs.",
+    "tests": ["tests/test_complete_scalar_topographic_collar_action.py"],
+    "next_action": "derive or reject the complete collar Lagrangian, collar Jacobian, orientation sign, inner-edge condition, admissible variation data, and symbolic Robin coefficients from the full scalar/topographic boundary action before comparison"
+  },
   "subsurface_projection_geometry": {
     "id": "PO-BH-51",
     "name": "Subsurface neutral projection geometry",
@@ -916,6 +1008,21 @@
       "fit_policy": "FORBIDDEN_TO_FIT"
     },
     {
+      "id": "complete_scalar_topographic_collar_action",
+      "name": "Complete scalar/topographic collar action audit",
+      "sector": "neutrino_pmns",
+      "symbol": "S_collar, L_collar, J(Y,rho), s_n, edge data, A_nu, B_nu",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "S_collar = int_{partialB x [0,epsilon]} L_collar[Phi, partial_rho Phi, D_A Phi, J, lambda_nu, chi_nu] J(Y,rho) dA d rho",
+      "derivation_source": "audit of existing scalar/topographic boundary-action scaffolds as a possible source for the PO-BH-55 collar package",
+      "depends_on": ["S_bulk[Phi]", "S_partial^(nu)[Phi]", "S_subsurface^(nu)", "collar_measure", "normal_orientation", "inner_collar_edge_condition", "admissible_collar_variation_data", "robin_coefficients_A_B", "chi_nu_AB", "lambda_nu", "g_sub", "W_nu"],
+      "forbidden_inputs": ["observed neutrino masses", "observed neutrino mass splittings", "PMNS angles", "PMNS CP phase", "fitted FTL/anomaly data", "post-comparison L_collar fit", "post-comparison collar measure fit", "post-comparison orientation fit", "post-comparison edge-condition fit", "post-comparison variation-data fit", "post-comparison Robin coefficient fit"],
+      "claim_boundary": "audits the missing complete collar action source only; no collar data, Robin coefficients, or numerical neutrino inputs are derived",
+      "tests": ["tests/test_complete_scalar_topographic_collar_action.py"],
+      "next_action": "derive or reject complete collar action data before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
       "id": "chi_nu_AB",
       "name": "Neutral anisotropic boundary response tensor",
       "sector": "neutrino_pmns",
@@ -1102,6 +1209,7 @@
     "lambda_nu",
     "R_nu_normal_coupling",
     "normal_collar_convention",
+    "complete_scalar_topographic_collar_action",
     "collar_measure",
     "normal_orientation",
     "inner_collar_edge_condition",
@@ -1138,6 +1246,7 @@
     "fit chi_nu, lambda_nu, or the neutral boundary condition to neutrino masses, PMNS data, or FTL/anomaly data",
     "fit R_nu, collar convention, or Robin coefficients to neutrino masses, PMNS data, or FTL/anomaly data",
     "fit collar coordinate, measure, orientation, edge condition, variation data, or Robin coefficients to neutrino masses, PMNS data, or FTL/anomaly data",
+    "fit the complete scalar/topographic collar action, L_collar, J(Y,rho), s_n, edge data, A_nu, or B_nu to neutrino masses, PMNS data, or FTL/anomaly data",
     "fit S_eff_nu to neutrino masses or PMNS data",
     "fit g_sub, ellapse_nu, or Pi_sub_to_ext to neutrino masses, PMNS data, or FTL/anomaly data",
     "fit subsurface neutral projection or apparent propagation parameters to neutrino data",
@@ -1183,6 +1292,8 @@
     "PO_BH_55_COLLAR_GEOMETRY_PACKAGE_LOCALIZED",
     "COLLAR_GEOMETRY_PACKAGE_OPEN",
     "ROBIN_COEFFICIENTS_A_B_OPEN",
+    "PO_BH_56_COMPLETE_SCALAR_TOPOGRAPHIC_COLLAR_ACTION_AUDITED",
+    "COMPLETE_SCALAR_TOPOGRAPHIC_COLLAR_ACTION_OPEN",
     "FULL_NUMERICAL_SM_PREDICTION_OPEN",
     "REPLACEMENT_READINESS_NOT_ACHIEVED",
     "FROZEN_PREDICTIONS_UNCHANGED",
