@@ -10,19 +10,28 @@
 | H_T gap / no-extra-light-state audit | `PROXY_AUDIT` | `src/ht_operator.py`, `src/spectral_gap.py`, prediction ledger | Full twisted Dirac spectrum produces extra light states |
 | Scalar/topographic decoupling | `PROXY_AUDIT` | `src/scalar_decoupling.py`, scalar tests | Unscreened light scalar/topographic mode survives |
 | Precision QCD/RG matching | `OPEN` | QCD/RG scaffold files | Scheme-consistent precision comparison fails fixed bands |
+| Full structural architecture | `INTEGRATED_CONDITIONAL` | `docs/bhsm_numerical_input_closure_map.md`, theorem-discharge chain | Does not imply numerical closure or Standard Model replacement |
+| Numerical closure | `OPEN` | `docs/bhsm_numerical_input_closure_map.md` | Must remain open until all symbolic numerical inputs are derived and locked before comparison |
 | Finite algebra | `DERIVED_CONDITIONAL` | `docs/bhsm_numerical_input_closure_map.md`, theorem-discharge files | Finite closure spectrum or algebra blocks fail guardrail tests |
 | SM-like charges | `DERIVED_CONDITIONAL` | `docs/bhsm_numerical_input_closure_map.md`, charge/anomaly bridge tests | Charge table or anomaly bridge fails |
 | Gauge normalization scaffold | `DERIVED_CONDITIONAL` | `docs/bhsm_numerical_input_closure_map.md`, trace-normalization files | Trace weights or normalization factors fail |
 | Charged hierarchy mechanism | `STRUCTURALLY_DERIVED_CONDITIONAL` | `docs/bhsm_numerical_input_closure_map.md` | Required symbolic hierarchy inputs cannot be localized |
 | CKM source | `STRUCTURALLY_DERIVED_CONDITIONAL` | `docs/bhsm_numerical_input_closure_map.md` | Up/down sector-relative source cannot be represented |
 | CKM CP source | `STRUCTURALLY_DERIVED_CONDITIONAL` | `docs/bhsm_numerical_input_closure_map.md` | Phase loop cannot be represented sector-relatively |
+| CKM numerical prediction | `OPEN` | `docs/bhsm_numerical_input_closure_map.md` | Requires pre-comparison lock of CKM finite-width, displacement, phase, and exponent inputs |
+| CKM `1/16` exponent | `STRUCTURALLY_MOTIVATED_NOT_DERIVED` | `docs/open_blockers_backlog.md` | Must not be fit to CKM residuals |
 | Neutral topographic suppression route | `STRUCTURALLY_DERIVED_CONDITIONAL` | `docs/bhsm_numerical_input_closure_map.md` | Neutral suppression operator cannot be represented |
 | Neutral topographic suppression action `S_nu_topo` | `OPEN_LOCALIZABLE` | `theory/theorem_discharge_neutral_topographic_suppression_action.md` | Must not be claimed until `Delta y_nu`, `H_topo^(nu)`, `E_nu`, and `S_barrier` are derived before comparison |
+| Neutral topographic suppression action value | `OPEN` | `theory/theorem_discharge_neutral_topographic_suppression_action.md` | No numerical value is derived or fitted |
+| Neutrino mass prediction | `OPEN` | `docs/bhsm_numerical_input_closure_map.md` | Requires derived `S_nu_topo` and locked neutral matrix inputs before comparison |
 | PMNS source | `STRUCTURALLY_DERIVED_CONDITIONAL` | `docs/bhsm_numerical_input_closure_map.md` | Neutral/charged-lepton diagonalization source fails |
 | PMNS CP source | `STRUCTURALLY_DERIVED_CONDITIONAL` | `docs/bhsm_numerical_input_closure_map.md` | Neutral phase loop cannot be represented |
+| PMNS numerical prediction | `OPEN` | `docs/bhsm_numerical_input_closure_map.md` | Requires pre-comparison lock of neutral operator parameters and phase loop |
 | Full fermion-sector architecture | `INTEGRATED_CONDITIONAL` | `docs/bhsm_numerical_input_closure_map.md` | Numerical fermion masses or mixing values are not claimed |
 | Gauge-Higgs-fermion architecture | `INTEGRATED_CONDITIONAL` | `docs/bhsm_numerical_input_closure_map.md` | Full numerical SM prediction is not claimed |
 | Full numerical SM prediction | `OPEN` | `docs/bhsm_numerical_input_closure_map.md` | Must not be claimed until all open numerical inputs are locked before comparison |
+| Stability/coupling bounds | `OPEN` | `docs/open_blockers_backlog.md` | Must not be asserted from finite diagnostics alone |
+| Higher-loop thresholds | `OPEN` | `docs/open_blockers_backlog.md` | Must not use mixed-scale masses as precision truth |
 | Replacement readiness | `NOT_ACHIEVED` | `docs/bhsm_numerical_input_closure_map.md` | Must not be claimed until numerical and theorem blockers close |
 | Full first-principles SM derivation | `FORBIDDEN` | `theory/forbidden_claims.md` | This claim is not made in this release |
 | QCD confinement proof | `FORBIDDEN` | `theory/forbidden_claims.md` | This claim is not made in this release |

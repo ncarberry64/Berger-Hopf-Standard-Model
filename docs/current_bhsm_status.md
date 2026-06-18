@@ -8,6 +8,7 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 | --- | --- |
 | Overall status | structural architecture integrated conditional; numerical closure open |
 | Latest theorem branch | `bhsm-s-nu-topo-local-closure-v1` |
+| Latest completed theorem commits | PO-BH-47 `ae5dac5`; PO-BH-47 cleanup `1c11d2b`; PO-BH-48 `8ac577c` |
 | Test result summary | `1296 passed`; focused PO-BH-48 tests `9 passed`; focused PO-BH-47 tests `11 passed`; guardrail audits passed |
 | Current theorem/status label | `STRUCTURAL_ARCHITECTURE_INTEGRATED_CONDITIONAL_NUMERICAL_CLOSURE_OPEN` |
 | Candidate architecture complete | yes |
