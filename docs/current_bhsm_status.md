@@ -7,8 +7,8 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 | Item | Current status |
 | --- | --- |
 | Overall status | structural architecture integrated conditional; numerical closure open |
-| Latest theorem branch | `bhsm-boundary-embedding-shape-operator-v1` |
-| Latest completed theorem commits | PO-BH-47 `ae5dac5`; PO-BH-47 cleanup `1c11d2b`; PO-BH-48 `8ac577c`; PO-BH-49 `c2cfc70`; PO-BH-50 `7a4523a`; PO-BH-51 `225786f`; PO-BH-52 `4de6d9c`; PO-BH-53 `20c58b1`; PO-BH-54 `11d1c60`; PO-BH-55 `cf0e998`; PO-BH-56 `9f93330`; PO-BH-57 on stacked base; PO-BH-58 on this branch |
+| Latest theorem branch | `bhsm-scalar-topographic-level-set-boundary-v1` |
+| Latest completed theorem commits | PO-BH-47 `ae5dac5`; PO-BH-47 cleanup `1c11d2b`; PO-BH-48 `8ac577c`; PO-BH-49 `c2cfc70`; PO-BH-50 `7a4523a`; PO-BH-51 `225786f`; PO-BH-52 `4de6d9c`; PO-BH-53 `20c58b1`; PO-BH-54 `11d1c60`; PO-BH-55 `cf0e998`; PO-BH-56 `9f93330`; PO-BH-57/58 merged to main; PO-BH-59 on this branch |
 | Test result summary | `1376 passed`; focused PO-BH-56 tests `10 passed`; PO-BH-55 and neutral/collar regression tests `90 passed`; guardrail audits passed |
 | Current theorem/status label | `STRUCTURAL_ARCHITECTURE_INTEGRATED_CONDITIONAL_NUMERICAL_CLOSURE_OPEN` |
 | Candidate architecture complete | yes |
@@ -50,6 +50,8 @@ PO-BH-56 audits the complete scalar/topographic collar action as the source need
 PO-BH-57 derives the collar-measure expansion conditionally from standard collar/extrinsic geometry as a symbolic formula. The collar Jacobian is `J(Y,rho)=det(I + rho S(Y))`, or the sign-equivalent form for the opposite normal convention, with first-order expansion `J(Y,rho)=1 + rho K(Y) + O(rho^2)`. The boundary trace/extrinsic curvature data needed to evaluate `K(Y)` and the shape operator `S` remain open unless derived elsewhere in BHSM. These quantities are geometric dependencies, not fitted parameters. No numerical neutrino prediction or local FTL claim is made.
 
 PO-BH-58 localizes the boundary embedding and conditionally derives the induced metric, unit normal, second fundamental form, shape operator, and trace formulas needed to evaluate the collar Jacobian. The formulas are standard differential geometry; their BHSM numerical/function values remain open unless a scalar/topographic boundary profile and embedding are derived. No numerical neutrino prediction or local FTL claim is made.
+
+PO-BH-59 localizes two scalar/topographic level-set boundary routes: a spacetime route `F_STF(x,t)=T(x,t)-T_0` and an internal Berger route `F_int(y)=Phi(y)-Phi_0`. The regular-level-set normal, second fundamental form, shape operator, trace, and collar-Jacobian formulas are conditionally derived. Their thresholds, explicit profiles, metric values, orientation, and numerical/function values remain open. `S_nu_topo` and `epsilon_nu_topo` remain open-localizable. No numerical neutrino prediction, PMNS numerical prediction, CKM numerical prediction, local FTL, experimental FTL, anomaly validation, or propulsion validation is claimed.
 
 ## Cross-Links
 
@@ -107,6 +109,7 @@ PO-BH-58 localizes the boundary embedding and conditionally derives the induced 
 - [Theorem discharge: complete scalar/topographic collar action](../theory/theorem_discharge_complete_scalar_topographic_collar_action.md)
 - [Theorem discharge: collar measure / extrinsic geometry](../theory/theorem_discharge_collar_measure_extrinsic_geometry.md)
 - [Theorem discharge: boundary embedding / shape operator](../theory/theorem_discharge_boundary_embedding_shape_operator.md)
+- [Theorem discharge: scalar/topographic level-set boundary embedding](../theory/theorem_discharge_scalar_topographic_level_set_boundary_embedding.md)
 
 ## Boundary-Action Term Realization Status
 
