@@ -20,12 +20,68 @@
     "FORBIDDEN_TO_FIT"
   ],
   "ledgers": {
-    "charged_lepton": [[0, 0], [1, 2], [3, 3]],
-    "neutrino": [[0, 0], [3, 0], [1, 1]],
-    "up": [[0, 0], [6, 0], [8, 1]],
-    "down": [[0, 0], [0, 3], [4, 2]]
+    "charged_lepton": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    "neutrino": [
+      [
+        0,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "up": [
+      [
+        0,
+        0
+      ],
+      [
+        6,
+        0
+      ],
+      [
+        8,
+        1
+      ]
+    ],
+    "down": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        4,
+        2
+      ]
+    ]
   },
-  "neutral_k_values": [0, 3, 3],
+  "neutral_k_values": [
+    0,
+    3,
+    3
+  ],
   "neutral_off_diagonal_moment_costs": {
     "M_nu(1,1)": 2,
     "M_nu(-2,1)": 5,
@@ -79,7 +135,12 @@
     "ellapse_nu_metric_ratio": "ellapse_nu^2 = ds_proj^2 / ds_sub^2",
     "ellapse_nu_topographic": "0 < ellapse_nu(y) <= 1 with ellapse_nu(y) -> 0 near a zero-exterior-spacetime core",
     "neutral_projection_saddle": "grad_Y S_eff^(nu)(Y_nu) = 0; y_nu = Pi_sub_to_ext(Y_nu); Delta y_nu = Pi_sub_to_ext(Y_nu) - y_H",
-    "exterior_projected_apparent_speed": "v_ext,proj = |d Pi_sub_to_ext(Y) / dt_ext| with dt_ext = ellapse_nu dt_sub"
+    "exterior_projected_apparent_speed": "v_ext,proj = |d Pi_sub_to_ext(Y) / dt_ext| with dt_ext = ellapse_nu dt_sub",
+    "collar_jacobian_shape_operator": "J(Y,rho)=det(I + rho S(Y)) or det(I - rho S(Y)) depending on normal orientation convention",
+    "collar_jacobian_metric_determinant": "J(Y,rho)=sqrt(det h(Y,rho)/det h(Y,0))",
+    "collar_measure_extrinsic_expansion": "J(Y,rho)=1+rho K(Y)+O(rho^2), with K(Y)=tr(S)(Y) up to orientation sign",
+    "boundary_trace_K": "K(Y)=tr(S)(Y)=h^{AB}K_AB(Y), or sign-equivalent projected divergence of the normal",
+    "topographic_level_set_normal": "n_mu=partial_mu Phi/sqrt(partial_alpha Phi partial^alpha Phi) when a regular scalar/topographic level-set profile is derived"
   },
   "phase_admissibility": {
     "absolute_alpha0_physical": false,
@@ -102,18 +163,42 @@
     "mode_dependent_correction_theorem_exists": false,
     "derivation_source": "candidate boundary Hessian/topographic action scaffold",
     "depends_on": [
-      {"id": "H_topo", "status": "OPEN_LOCALIZABLE"},
-      {"id": "Delta_y_nu", "status": "OPEN_LOCALIZABLE"},
-      {"id": "G_nu_topo", "status": "OPEN_LOCALIZABLE"},
-      {"id": "S_barrier", "status": "OPEN_LOCALIZABLE"},
-      {"id": "neutral finite-width saddle/path", "status": "OPEN_LOCALIZABLE"},
-      {"id": "scalar/topographic profile solution", "status": "OPEN_UNRESOLVED"}
+      {
+        "id": "H_topo",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "Delta_y_nu",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "G_nu_topo",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "S_barrier",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "neutral finite-width saddle/path",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "scalar/topographic profile solution",
+        "status": "OPEN_UNRESOLVED"
+      }
     ],
     "candidate_routes": [
       {
         "id": "route_A_gaussian_hessian_displacement",
         "formula": "S_nu_topo = 1/2 Delta y_nu^T G_nu_topo Delta y_nu + S_barrier",
-        "dependencies": ["Delta y_nu", "G_nu_topo", "H_topo^(nu)", "E_nu", "S_barrier"],
+        "dependencies": [
+          "Delta y_nu",
+          "G_nu_topo",
+          "H_topo^(nu)",
+          "E_nu",
+          "S_barrier"
+        ],
         "status": "OPEN_LOCALIZABLE",
         "reason": "The repo has boundary Hessian/topographic scaffolds, but not a derived neutral displacement, neutral Hessian, embedding tensor, or barrier value.",
         "allowed_next_step": "derive Delta y_nu, H_topo^(nu), E_nu, and S_barrier from the boundary/topographic action before comparison",
@@ -122,7 +207,11 @@
       {
         "id": "route_B_stiffness_mismatch",
         "formula": "S_nu_topo = S_eff^(nu) - S_eff^(charged_ref)",
-        "dependencies": ["neutral finite-width saddle/path", "charged reference saddle/path", "S_eff functional"],
+        "dependencies": [
+          "neutral finite-width saddle/path",
+          "charged reference saddle/path",
+          "S_eff functional"
+        ],
         "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
         "reason": "A stiffness/action mismatch is compatible with the topographic picture, but the neutral and charged effective saddles are not computed in the repo.",
         "allowed_next_step": "construct S_eff and evaluate it on internally derived neutral and charged saddles",
@@ -131,7 +220,11 @@
       {
         "id": "route_C_omega_barrier",
         "formula": "Omega_nu = -q - 2j = -k",
-        "dependencies": ["neutral ledger", "Omega_nu", "positive barrier/action functional"],
+        "dependencies": [
+          "neutral ledger",
+          "Omega_nu",
+          "positive barrier/action functional"
+        ],
         "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
         "reason": "Omega_nu localizes a neutral sector operator and k-barrier hint, but no positive action mapping from Omega_nu to S_nu_topo is derived.",
         "allowed_next_step": "derive a positive neutral barrier functional from Omega_nu inside the boundary action",
@@ -146,7 +239,9 @@
       "post-comparison epsilon_nu_topo fit"
     ],
     "claim_boundary": "The neutral topographic suppression action is localized as the next numerical-closure object. A candidate Hessian/barrier formula is identified, but numerical neutrino closure remains open unless explicitly derived and locked before comparison.",
-    "tests": ["tests/test_neutral_topographic_suppression_action.py"],
+    "tests": [
+      "tests/test_neutral_topographic_suppression_action.py"
+    ],
     "next_action": "derive or reject Delta y_nu, H_topo^(nu), E_nu, and S_barrier from the scalar/topographic boundary action before any neutrino-scale comparison"
   },
   "neutral_boundary_tensors": {
@@ -160,20 +255,52 @@
     "pre_comparison_locked": false,
     "derivation_source": "candidate variational neutral boundary action and subsurface-channel inheritance scaffold",
     "depends_on": [
-      {"id": "explicit scalar/topographic boundary action", "status": "OPEN_LOCALIZABLE"},
-      {"id": "variation convention", "status": "OPEN_LOCALIZABLE"},
-      {"id": "g_sub", "status": "OPEN_LOCALIZABLE"},
-      {"id": "ellapse_nu", "status": "OPEN_LOCALIZABLE"},
-      {"id": "Pi_sub_to_ext", "status": "OPEN_LOCALIZABLE"},
-      {"id": "W_nu", "status": "OPEN_LOCALIZABLE"},
-      {"id": "positivity/stability proof", "status": "OPEN_LOCALIZABLE"},
-      {"id": "Omega_nu operator-to-tensor theorem", "status": "OPEN_UNRESOLVED"}
+      {
+        "id": "explicit scalar/topographic boundary action",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "variation convention",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "g_sub",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "ellapse_nu",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "Pi_sub_to_ext",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "W_nu",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "positivity/stability proof",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "Omega_nu operator-to-tensor theorem",
+        "status": "OPEN_UNRESOLVED"
+      }
     ],
     "candidate_routes": [
       {
         "id": "route_A_variational_boundary_condition",
         "formula": "S_eff^(nu)=S_bulk[Phi]+S_partial^(nu)[Phi]+S_subsurface^(nu); S_partial^(nu)=int_partialB [1/2 chi_nu^{AB} partial_A Phi partial_B Phi + lambda_nu(nhat) Phi nhat.grad Phi] dA; n_mu partial^mu Phi + B_nu[chi_nu, lambda_nu, Phi]=0 on partialB",
-        "dependencies": ["S_bulk[Phi]", "S_partial^(nu)", "explicit_scalar_topographic_boundary_variation", "variation convention", "chi_nu_AB", "lambda_nu", "boundary integration-by-parts rule"],
+        "dependencies": [
+          "S_bulk[Phi]",
+          "S_partial^(nu)",
+          "explicit_scalar_topographic_boundary_variation",
+          "variation convention",
+          "chi_nu_AB",
+          "lambda_nu",
+          "boundary integration-by-parts rule"
+        ],
         "status": "DERIVED_CONDITIONAL",
         "reason": "The symbolic variation of S_bulk + S_partial^(nu) yields a conditional neutral boundary-operator form under explicit assumptions; tensor values remain open.",
         "allowed_next_action": "derive the boundary variation and tensor values from the scalar/topographic action before comparison",
@@ -182,7 +309,11 @@
       {
         "id": "route_B_sector_operator_source",
         "formula": "Omega_nu = -q - 2j = -k",
-        "dependencies": ["Omega_nu", "operator-to-tensor theorem", "neutral boundary functional"],
+        "dependencies": [
+          "Omega_nu",
+          "operator-to-tensor theorem",
+          "neutral boundary functional"
+        ],
         "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
         "reason": "Omega_nu labels the neutral sector, but it is not automatically enough to derive tensor values or boundary conditions without an operator-to-tensor proof.",
         "allowed_next_action": "derive or reject a theorem mapping Omega_nu to neutral boundary tensor structure",
@@ -191,7 +322,13 @@
       {
         "id": "route_C_subsurface_channel_inheritance",
         "formula": "chi_nu^{AB} ~ f_nu(y) g_sub^{AB}; or chi_nu^{AB}=chi_parallel P_parallel^{AB}+chi_perp P_perp^{AB}",
-        "dependencies": ["g_sub", "ellapse_nu", "Pi_sub_to_ext", "projection projectors", "neutral boundary pullback/restriction rule"],
+        "dependencies": [
+          "g_sub",
+          "ellapse_nu",
+          "Pi_sub_to_ext",
+          "projection projectors",
+          "neutral boundary pullback/restriction rule"
+        ],
         "status": "OPEN_LOCALIZABLE",
         "reason": "The tensors may be interpreted as pullbacks or restrictions of the subsurface metric/projection geometry, but those geometry objects are themselves open-localizable.",
         "allowed_next_action": "derive the pullback/restriction rule from the subsurface projection geometry",
@@ -200,7 +337,13 @@
       {
         "id": "route_D_finite_width_profile",
         "formula": "grad_Y S_eff^(nu)(Y_nu)=0 with chi_nu, lambda_nu, and boundary condition supplying the missing profile inputs for W_nu",
-        "dependencies": ["W_nu", "V_eff^(nu)", "profile regularization/width term", "neutral saddle equation", "boundary tensors"],
+        "dependencies": [
+          "W_nu",
+          "V_eff^(nu)",
+          "profile regularization/width term",
+          "neutral saddle equation",
+          "boundary tensors"
+        ],
         "status": "OPEN_LOCALIZABLE",
         "reason": "This connects boundary tensors to the neutral finite-width profile, but W_nu and the profile action remain open.",
         "allowed_next_action": "derive W_nu and profile regularization from the boundary condition and topographic action",
@@ -222,7 +365,9 @@
     ],
     "claim_boundary": "The neutral boundary tensors and boundary condition have been localized as required dependencies for the neutral effective action and subsurface neutral channel. Candidate boundary-action and variational forms are documented. Tensor values and the explicit neutral boundary condition remain open; no numerical neutrino prediction or local FTL claim is made.",
     "causality_boundary": "Neutral boundary tensors may define access to a subsurface topographic channel; exterior-projected anomalous propagation remains interpretive and conditional. No claim of local causality violation or experimental FTL is made.",
-    "tests": ["tests/test_neutral_boundary_tensors.py"],
+    "tests": [
+      "tests/test_neutral_boundary_tensors.py"
+    ],
     "next_action": "derive or reject chi_nu_AB, lambda_nu, and the neutral boundary condition from the explicit scalar/topographic boundary action, variation convention, subsurface metric/projection geometry, W_nu, and positivity/stability proof before comparison"
   },
   "explicit_scalar_topographic_boundary_variation": {
@@ -236,22 +381,58 @@
     "pre_comparison_locked": false,
     "derivation_source": "symbolic variation of scalar bulk action plus localized neutral boundary action under fixed-background boundary assumptions",
     "depends_on": [
-      {"id": "S_bulk[Phi]", "status": "DERIVED_CONDITIONAL"},
-      {"id": "S_partial^(nu)[Phi]", "status": "OPEN_LOCALIZABLE"},
-      {"id": "boundary integration-by-parts convention", "status": "DERIVED_CONDITIONAL"},
-      {"id": "boundary has no boundary or boundary-of-boundary terms vanish", "status": "DERIVED_CONDITIONAL"},
-      {"id": "chi_nu_AB", "status": "OPEN_LOCALIZABLE"},
-      {"id": "lambda_nu", "status": "OPEN_LOCALIZABLE"},
-      {"id": "normal-derivative variation convention", "status": "OPEN_LOCALIZABLE"},
-      {"id": "R_nu_normal_coupling", "status": "OPEN_LOCALIZABLE"},
-      {"id": "normal_collar_convention", "status": "OPEN_LOCALIZABLE"},
-      {"id": "fixed background boundary geometry", "status": "DERIVED_CONDITIONAL"}
+      {
+        "id": "S_bulk[Phi]",
+        "status": "DERIVED_CONDITIONAL"
+      },
+      {
+        "id": "S_partial^(nu)[Phi]",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "boundary integration-by-parts convention",
+        "status": "DERIVED_CONDITIONAL"
+      },
+      {
+        "id": "boundary has no boundary or boundary-of-boundary terms vanish",
+        "status": "DERIVED_CONDITIONAL"
+      },
+      {
+        "id": "chi_nu_AB",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "lambda_nu",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "normal-derivative variation convention",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "R_nu_normal_coupling",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "normal_collar_convention",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "fixed background boundary geometry",
+        "status": "DERIVED_CONDITIONAL"
+      }
     ],
     "candidate_routes": [
       {
         "id": "route_A_standard_variational_boundary",
         "formula": "delta S_bulk|partialB = int_partialB n_mu partial^mu Phi delta Phi dA; delta S_partial^(nu) = int_partialB B_nu[chi_nu, lambda_nu, Phi] delta Phi dA plus convention-dependent derivative-of-deltaPhi terms",
-        "dependencies": ["S_bulk[Phi]", "S_partial^(nu)[Phi]", "boundary variation convention", "chi_nu_AB", "lambda_nu"],
+        "dependencies": [
+          "S_bulk[Phi]",
+          "S_partial^(nu)[Phi]",
+          "boundary variation convention",
+          "chi_nu_AB",
+          "lambda_nu"
+        ],
         "status": "DERIVED_CONDITIONAL",
         "reason": "The symbolic variation localizes the neutral boundary operator under fixed-background and boundary-of-boundary assumptions.",
         "allowed_next_action": "derive tensor values and the normal-coupling convention from the full scalar/topographic boundary action before comparison",
@@ -260,7 +441,11 @@
       {
         "id": "route_B_boundary_integration_by_parts",
         "formula": "delta int_partialB 1/2 chi_nu^{AB} D_A Phi D_B Phi dA -> - int_partialB D_A(chi_nu^{AB} D_B Phi) delta Phi dA",
-        "dependencies": ["symmetric or symmetrized chi_nu_AB", "boundary covariant derivative D_A", "boundary has no boundary or edge terms vanish"],
+        "dependencies": [
+          "symmetric or symmetrized chi_nu_AB",
+          "boundary covariant derivative D_A",
+          "boundary has no boundary or edge terms vanish"
+        ],
         "status": "DERIVED_CONDITIONAL",
         "reason": "The tangential-gradient contribution follows by boundary integration by parts once the boundary convention is fixed.",
         "allowed_next_action": "derive chi_nu_AB and boundary geometry from the neutral scalar/topographic action",
@@ -269,7 +454,11 @@
       {
         "id": "route_C_normal_coupling",
         "formula": "delta int_partialB lambda_nu Phi n.grad Phi dA -> int_partialB R_nu[lambda_nu, Phi, n.grad Phi] delta Phi dA plus convention-dependent normal derivative variation terms",
-        "dependencies": ["normal variation convention", "boundary extension/collar convention", "lambda_nu"],
+        "dependencies": [
+          "normal variation convention",
+          "boundary extension/collar convention",
+          "lambda_nu"
+        ],
         "status": "OPEN_LOCALIZABLE",
         "reason": "The lambda_nu term is localized but its exact Robin-like contribution depends on the normal-derivative variation convention.",
         "allowed_next_action": "derive the normal-coupling convention from the complete boundary/collar action",
@@ -278,7 +467,11 @@
       {
         "id": "route_D_conservative_schematic_closure",
         "formula": "B_nu[Phi] = -D_A(chi_nu^{AB}D_B Phi) + R_nu[lambda_nu, Phi, n.grad Phi]",
-        "dependencies": ["routes A-C", "unfixed tensor values", "unfixed normal-coupling convention"],
+        "dependencies": [
+          "routes A-C",
+          "unfixed tensor values",
+          "unfixed normal-coupling convention"
+        ],
         "status": "DERIVED_CONDITIONAL",
         "reason": "This is the most conservative symbolic boundary operator supported by the localized action and variation assumptions.",
         "allowed_next_action": "promote only after tensor values and normal-coupling convention are derived pre-comparison",
@@ -307,7 +500,9 @@
       "post-comparison epsilon_nu_topo fit"
     ],
     "claim_boundary": "The scalar/topographic boundary variation is derived only as a symbolic conditional boundary operator under explicit boundary assumptions. Tensor values, lambda_nu, the normal-coupling convention, the neutral profile, and numerical neutrino closure remain open.",
-    "tests": ["tests/test_scalar_topographic_boundary_variation.py"],
+    "tests": [
+      "tests/test_scalar_topographic_boundary_variation.py"
+    ],
     "next_action": "derive or reject the normal-coupling convention, chi_nu_AB, lambda_nu, W_nu, and positivity/stability conditions from the complete scalar/topographic boundary action before comparison"
   },
   "R_nu_normal_coupling": {
@@ -321,19 +516,44 @@
     "pre_comparison_locked": false,
     "derivation_source": "variation of lambda_nu Phi n.grad Phi with unresolved normal-derivative/collar convention",
     "depends_on": [
-      {"id": "lambda_nu", "status": "OPEN_LOCALIZABLE"},
-      {"id": "normal_collar_convention", "status": "OPEN_LOCALIZABLE"},
-      {"id": "collar_measure", "status": "OPEN_LOCALIZABLE"},
-      {"id": "normal_orientation", "status": "OPEN_LOCALIZABLE"},
-      {"id": "inner_collar_edge_condition", "status": "OPEN_LOCALIZABLE"},
-      {"id": "admissible_collar_variation_data", "status": "OPEN_LOCALIZABLE"},
-      {"id": "robin_coefficients_A_B", "status": "OPEN_LOCALIZABLE"}
+      {
+        "id": "lambda_nu",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "normal_collar_convention",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "collar_measure",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "normal_orientation",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "inner_collar_edge_condition",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "admissible_collar_variation_data",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "robin_coefficients_A_B",
+        "status": "OPEN_LOCALIZABLE"
+      }
     ],
     "candidate_routes": [
       {
         "id": "route_A_fixed_normal_derivative",
         "formula": "delta(lambda_nu Phi n.grad Phi) = lambda_nu (n.grad Phi) delta Phi when n.grad Phi is held fixed",
-        "dependencies": ["fixed normal derivative datum", "fixed normal vector", "lambda_nu"],
+        "dependencies": [
+          "fixed normal derivative datum",
+          "fixed normal vector",
+          "lambda_nu"
+        ],
         "status": "DERIVED_CONDITIONAL",
         "reason": "A restricted boundary-variation convention gives R_nu=lambda_nu n.grad Phi, but this is a convention choice rather than a derived general collar theorem.",
         "allowed_next_action": "derive whether fixed n.grad Phi is the BHSM boundary convention",
@@ -342,7 +562,11 @@
       {
         "id": "route_B_symmetrized_normal_bilinear",
         "formula": "Phi n.grad Phi = 1/2 n.grad(Phi^2)",
-        "dependencies": ["normal total-derivative convention", "collar geometry", "edge behavior"],
+        "dependencies": [
+          "normal total-derivative convention",
+          "collar geometry",
+          "edge behavior"
+        ],
         "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
         "reason": "The identity is algebraic, but whether the term becomes a collar total derivative, Robin term, or edge term depends on missing collar data.",
         "allowed_next_action": "derive collar/edge behavior from the complete boundary action",
@@ -351,7 +575,13 @@
       {
         "id": "route_C_collar_extension",
         "formula": "S_collar = int_{partialB x [0,epsilon]} lambda_nu(rho,Y) Phi partial_rho Phi d rho dA",
-        "dependencies": ["collar measure", "normal orientation", "inner collar edge condition", "epsilon->0 limit", "delta Phi or delta partial_rho Phi boundary convention"],
+        "dependencies": [
+          "collar measure",
+          "normal orientation",
+          "inner collar edge condition",
+          "epsilon->0 limit",
+          "delta Phi or delta partial_rho Phi boundary convention"
+        ],
         "status": "OPEN_LOCALIZABLE",
         "reason": "The collar action localizes the missing convention but does not yet supply the limiting boundary term.",
         "allowed_next_action": "derive the thin-collar limit and edge conditions before comparison",
@@ -360,7 +590,11 @@
       {
         "id": "route_D_robin_boundary_condition",
         "formula": "A_nu Phi + B_nu n.grad Phi - D_A(chi_nu^{AB}D_B Phi) = 0",
-        "dependencies": ["A_nu(lambda_nu)", "B_nu(lambda_nu)", "normal collar convention"],
+        "dependencies": [
+          "A_nu(lambda_nu)",
+          "B_nu(lambda_nu)",
+          "normal collar convention"
+        ],
         "status": "OPEN_LOCALIZABLE",
         "reason": "A Robin form is a plausible reduction, but A_nu and B_nu are not derived without the collar convention.",
         "allowed_next_action": "derive A_nu and B_nu from the collar action",
@@ -369,7 +603,11 @@
       {
         "id": "route_E_conservative_remainder",
         "formula": "R_nu[lambda_nu, Phi, n.grad Phi] remains a symbolic remainder with allowed fixed-normal, Robin, or collar forms",
-        "dependencies": ["routes A-D", "unfixed lambda_nu", "unfixed normal/collar convention"],
+        "dependencies": [
+          "routes A-D",
+          "unfixed lambda_nu",
+          "unfixed normal/collar convention"
+        ],
         "status": "OPEN_LOCALIZABLE",
         "reason": "This is the honest repository status until the normal/collar convention is derived.",
         "allowed_next_action": "derive or reject the normal-coupling convention from the complete scalar/topographic boundary action",
@@ -400,7 +638,9 @@
       "post-comparison epsilon_nu_topo fit"
     ],
     "claim_boundary": "The normal-coupling contribution is localized with fixed-normal, symmetrized, collar, and Robin candidates. It is not generally derived until the normal/collar convention is fixed, and lambda_nu remains unfitted and numerically open.",
-    "tests": ["tests/test_normal_coupling_collar_convention.py"],
+    "tests": [
+      "tests/test_normal_coupling_collar_convention.py"
+    ],
     "next_action": "derive or reject the BHSM collar convention, normal orientation, edge condition, and Robin coefficients from the complete scalar/topographic boundary action before comparison"
   },
   "normal_collar_convention": {
@@ -414,12 +654,30 @@
     "pre_comparison_locked": false,
     "derivation_source": "thin-collar localization of the normal derivative boundary term",
     "depends_on": [
-      {"id": "collar_coordinate_rho", "status": "DERIVED_CONDITIONAL"},
-      {"id": "collar_measure", "status": "OPEN_LOCALIZABLE"},
-      {"id": "normal_orientation", "status": "OPEN_LOCALIZABLE"},
-      {"id": "inner_collar_edge_condition", "status": "OPEN_LOCALIZABLE"},
-      {"id": "admissible_collar_variation_data", "status": "OPEN_LOCALIZABLE"},
-      {"id": "lambda_nu", "status": "OPEN_LOCALIZABLE"}
+      {
+        "id": "collar_coordinate_rho",
+        "status": "DERIVED_CONDITIONAL"
+      },
+      {
+        "id": "collar_measure",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "normal_orientation",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "inner_collar_edge_condition",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "admissible_collar_variation_data",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "lambda_nu",
+        "status": "OPEN_LOCALIZABLE"
+      }
     ],
     "forbidden_inputs": [
       "observed neutrino masses",
@@ -432,7 +690,9 @@
       "post-comparison lambda_nu fit"
     ],
     "claim_boundary": "The collar convention is localized as the missing geometric convention for the normal-coupling term. It is not chosen or fitted, and it does not close numerical neutrino inputs.",
-    "tests": ["tests/test_normal_coupling_collar_convention.py"],
+    "tests": [
+      "tests/test_normal_coupling_collar_convention.py"
+    ],
     "next_action": "derive the collar measure, normal orientation, inner-edge condition, and admissible variation data from the complete scalar/topographic boundary action before comparison"
   },
   "collar_geometry_package": {
@@ -446,19 +706,44 @@
     "pre_comparison_locked": false,
     "derivation_source": "local collar-neighborhood scaffold for the neutral normal-coupling term",
     "depends_on": [
-      {"id": "collar_coordinate_rho", "status": "DERIVED_CONDITIONAL"},
-      {"id": "collar_measure", "status": "OPEN_LOCALIZABLE"},
-      {"id": "normal_orientation", "status": "OPEN_LOCALIZABLE"},
-      {"id": "inner_collar_edge_condition", "status": "OPEN_LOCALIZABLE"},
-      {"id": "admissible_collar_variation_data", "status": "OPEN_LOCALIZABLE"},
-      {"id": "robin_coefficients_A_B", "status": "OPEN_LOCALIZABLE"},
-      {"id": "lambda_nu", "status": "OPEN_LOCALIZABLE"}
+      {
+        "id": "collar_coordinate_rho",
+        "status": "DERIVED_CONDITIONAL"
+      },
+      {
+        "id": "collar_measure",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "normal_orientation",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "inner_collar_edge_condition",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "admissible_collar_variation_data",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "robin_coefficients_A_B",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "lambda_nu",
+        "status": "OPEN_LOCALIZABLE"
+      }
     ],
     "candidate_routes": [
       {
         "id": "route_A_thin_collar_coordinate",
         "formula": "C_epsilon(partialB)=partialB x [0,epsilon]; (Y^A,rho); n.grad Phi = partial_rho Phi up to orientation sign",
-        "dependencies": ["collar_coordinate_rho", "boundary embedding", "normal_orientation"],
+        "dependencies": [
+          "collar_coordinate_rho",
+          "boundary embedding",
+          "normal_orientation"
+        ],
         "status": "DERIVED_CONDITIONAL",
         "reason": "A local collar coordinate exists as a conditional local geometry scaffold, but its BHSM finite-width interpretation is not fully derived.",
         "allowed_next_action": "derive the collar from the scalar/topographic boundary geometry",
@@ -467,7 +752,11 @@
       {
         "id": "route_B_orientation_convention",
         "formula": "n = s_n partial_rho with s_n in {+1,-1}",
-        "dependencies": ["interior/subsurface orientation", "boundary embedding", "projection convention"],
+        "dependencies": [
+          "interior/subsurface orientation",
+          "boundary embedding",
+          "projection convention"
+        ],
         "status": "OPEN_LOCALIZABLE",
         "reason": "The sign is tracked but not derived from existing neutral geometry.",
         "allowed_next_action": "derive orientation from the internal/subsurface geometry",
@@ -476,7 +765,12 @@
       {
         "id": "route_C_inner_edge_condition",
         "formula": "rho=epsilon edge options: Dirichlet delta Phi=0, Neumann partial_rho Phi=0, subsurface matching, or decay/localization",
-        "dependencies": ["subsurface neutral channel", "W_nu", "finite-width profile", "edge matching theorem"],
+        "dependencies": [
+          "subsurface neutral channel",
+          "W_nu",
+          "finite-width profile",
+          "edge matching theorem"
+        ],
         "status": "OPEN_LOCALIZABLE",
         "reason": "Existing BHSM structure suggests possible edge conditions but does not select one.",
         "allowed_next_action": "derive the inner-edge condition from the neutral profile or subsurface channel",
@@ -485,7 +779,11 @@
       {
         "id": "route_D_admissible_variation_data",
         "formula": "classify free/fixed delta Phi and delta partial_rho Phi at rho=0 and rho=epsilon",
-        "dependencies": ["collar variational principle", "outer boundary data", "inner edge condition"],
+        "dependencies": [
+          "collar variational principle",
+          "outer boundary data",
+          "inner edge condition"
+        ],
         "status": "OPEN_LOCALIZABLE",
         "reason": "Mathematically consistent choices can be listed, but the BHSM-admissible choice remains open.",
         "allowed_next_action": "derive the admissible variation data from the complete boundary action",
@@ -494,7 +792,14 @@
       {
         "id": "route_E_robin_coefficient_extraction",
         "formula": "A_nu,B_nu = F(lambda_nu, epsilon, J, s_n, edge data) symbolically; no numerical values",
-        "dependencies": ["lambda_nu", "epsilon", "J", "normal_orientation", "inner_collar_edge_condition", "admissible_collar_variation_data"],
+        "dependencies": [
+          "lambda_nu",
+          "epsilon",
+          "J",
+          "normal_orientation",
+          "inner_collar_edge_condition",
+          "admissible_collar_variation_data"
+        ],
         "status": "OPEN_LOCALIZABLE",
         "reason": "Robin coefficients cannot be extracted until the collar package is derived.",
         "allowed_next_action": "derive symbolic A_nu,B_nu from a fixed collar convention",
@@ -514,7 +819,9 @@
       "post-comparison lambda_nu fit"
     ],
     "claim_boundary": "The collar geometry package is localized as the missing convention set for the neutral normal-coupling term. It does not derive collar measure, orientation, inner-edge condition, admissible variation data, Robin coefficients, or lambda_nu values.",
-    "tests": ["tests/test_collar_geometry_package.py"],
+    "tests": [
+      "tests/test_collar_geometry_package.py"
+    ],
     "next_action": "derive or reject the collar measure, orientation, edge condition, admissible variations, and Robin coefficients from the complete scalar/topographic boundary action before comparison"
   },
   "complete_scalar_topographic_collar_action": {
@@ -528,25 +835,85 @@
     "pre_comparison_locked": false,
     "derivation_source": "audit of existing scalar/topographic boundary-action scaffolds as a possible source for the PO-BH-55 collar package",
     "depends_on": [
-      {"id": "S_bulk[Phi]", "status": "DERIVED_CONDITIONAL"},
-      {"id": "S_partial^(nu)[Phi]", "status": "OPEN_LOCALIZABLE"},
-      {"id": "S_subsurface^(nu)", "status": "OPEN_LOCALIZABLE"},
-      {"id": "collar_coordinate_rho", "status": "DERIVED_CONDITIONAL"},
-      {"id": "collar_measure", "status": "OPEN_LOCALIZABLE"},
-      {"id": "normal_orientation", "status": "OPEN_LOCALIZABLE"},
-      {"id": "inner_collar_edge_condition", "status": "OPEN_LOCALIZABLE"},
-      {"id": "admissible_collar_variation_data", "status": "OPEN_LOCALIZABLE"},
-      {"id": "robin_coefficients_A_B", "status": "OPEN_LOCALIZABLE"},
-      {"id": "chi_nu_AB", "status": "OPEN_LOCALIZABLE"},
-      {"id": "lambda_nu", "status": "OPEN_LOCALIZABLE"},
-      {"id": "g_sub", "status": "OPEN_LOCALIZABLE"},
-      {"id": "W_nu", "status": "OPEN_LOCALIZABLE"}
+      {
+        "id": "S_bulk[Phi]",
+        "status": "DERIVED_CONDITIONAL"
+      },
+      {
+        "id": "S_partial^(nu)[Phi]",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "S_subsurface^(nu)",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "collar_coordinate_rho",
+        "status": "DERIVED_CONDITIONAL"
+      },
+      {
+        "id": "collar_measure",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "normal_orientation",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "inner_collar_edge_condition",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "admissible_collar_variation_data",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "robin_coefficients_A_B",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "chi_nu_AB",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "lambda_nu",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "g_sub",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "W_nu",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "collar_measure_extrinsic_geometry",
+        "status": "DERIVED_CONDITIONAL"
+      },
+      {
+        "id": "collar_jacobian_J",
+        "status": "DERIVED_CONDITIONAL"
+      },
+      {
+        "id": "boundary_trace_K",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "shape_operator_S",
+        "status": "OPEN_LOCALIZABLE"
+      }
     ],
     "candidate_routes": [
       {
         "id": "route_A_existing_scalar_topographic_action_extraction",
         "formula": "S_collar = int_{partialB x [0,epsilon]} L_collar[Phi, partial_rho Phi, D_A Phi, J, lambda_nu, chi_nu] J(Y,rho) dA d rho",
-        "dependencies": ["S_bulk[Phi]", "S_partial^(nu)[Phi]", "S_subsurface^(nu)", "collar geometry package"],
+        "dependencies": [
+          "S_bulk[Phi]",
+          "S_partial^(nu)[Phi]",
+          "S_subsurface^(nu)",
+          "collar geometry package"
+        ],
         "status": "OPEN_LOCALIZABLE",
         "reason": "The repo contains localized boundary and subsurface action scaffolds, but not a complete collar Lagrangian that fixes measure, orientation, edge data, variations, or Robin coefficients.",
         "allowed_next_action": "derive the full collar Lagrangian from the complete scalar/topographic boundary action",
@@ -555,7 +922,11 @@
       {
         "id": "route_B_measure_derivation",
         "formula": "dV_collar = J(Y,rho) dA d rho; candidate expansion J(Y,rho) = 1 + rho K(Y) + O(rho^2)",
-        "dependencies": ["boundary metric", "extrinsic curvature K(Y)", "fixed boundary embedding"],
+        "dependencies": [
+          "boundary metric",
+          "extrinsic curvature K(Y)",
+          "fixed boundary embedding"
+        ],
         "status": "OPEN_LOCALIZABLE",
         "reason": "The candidate expansion is standard collar geometry, but the repo has not derived the boundary extrinsic geometry or K(Y) from BHSM scalar/topographic data.",
         "allowed_next_action": "derive the collar Jacobian from boundary/subsurface geometry or keep J symbolic",
@@ -564,7 +935,11 @@
       {
         "id": "route_C_orientation_derivation",
         "formula": "n = s_n partial_rho with s_n in {+1,-1}",
-        "dependencies": ["exterior/surface convention", "subsurface-channel convention", "boundary orientation"],
+        "dependencies": [
+          "exterior/surface convention",
+          "subsurface-channel convention",
+          "boundary orientation"
+        ],
         "status": "OPEN_LOCALIZABLE",
         "reason": "The existing action tracks the sign but does not select inward versus outward rho orientation.",
         "allowed_next_action": "derive the sign from the boundary/subsurface orientation convention",
@@ -573,7 +948,12 @@
       {
         "id": "route_D_inner_edge_condition",
         "formula": "rho=epsilon edge: subsurface matching, decay/localization, Neumann, Dirichlet, or transparent matching",
-        "dependencies": ["subsurface neutral channel", "W_nu", "finite-width profile", "edge matching theorem"],
+        "dependencies": [
+          "subsurface neutral channel",
+          "W_nu",
+          "finite-width profile",
+          "edge matching theorem"
+        ],
         "status": "OPEN_LOCALIZABLE",
         "reason": "Existing docs list edge options but do not derive which one follows from the scalar/topographic action.",
         "allowed_next_action": "derive the inner-edge condition from neutral profile and subsurface matching",
@@ -582,7 +962,13 @@
       {
         "id": "route_E_robin_coefficient_derivation",
         "formula": "A_nu = A_nu[lambda_nu, J, epsilon, edge condition, orientation]; B_nu = B_nu[lambda_nu, J, epsilon, edge condition, orientation]",
-        "dependencies": ["lambda_nu", "collar_measure", "normal_orientation", "inner_collar_edge_condition", "admissible_collar_variation_data"],
+        "dependencies": [
+          "lambda_nu",
+          "collar_measure",
+          "normal_orientation",
+          "inner_collar_edge_condition",
+          "admissible_collar_variation_data"
+        ],
         "status": "OPEN_LOCALIZABLE",
         "reason": "Symbolic dependencies are localized, but A_nu and B_nu are not extractable without the missing action/measure/orientation/edge/variation package.",
         "allowed_next_action": "derive symbolic Robin coefficients after fixing the full collar convention",
@@ -604,7 +990,9 @@
       "post-comparison lambda_nu fit"
     ],
     "claim_boundary": "The complete scalar/topographic collar action is audited as the missing source for collar measure, orientation, edge condition, admissible variation data, and Robin coefficients. Existing repo scaffolds localize the needed action but do not determine these pieces or close numerical neutrino inputs.",
-    "tests": ["tests/test_complete_scalar_topographic_collar_action.py"],
+    "tests": [
+      "tests/test_complete_scalar_topographic_collar_action.py"
+    ],
     "next_action": "derive or reject the complete collar Lagrangian, collar Jacobian, orientation sign, inner-edge condition, admissible variation data, and symbolic Robin coefficients from the full scalar/topographic boundary action before comparison"
   },
   "subsurface_projection_geometry": {
@@ -618,19 +1006,46 @@
     "pre_comparison_locked": false,
     "derivation_source": "candidate internal/subsurface topographic metric split and exterior projection/lapse scaffold",
     "depends_on": [
-      {"id": "scalar/topographic profile solution", "status": "OPEN_UNRESOLVED"},
-      {"id": "coordinate chart / invariant projection convention", "status": "OPEN_UNRESOLVED"},
-      {"id": "internal metric derivation", "status": "OPEN_LOCALIZABLE"},
-      {"id": "positivity/causality proof", "status": "OPEN_LOCALIZABLE"},
-      {"id": "chi_nu_AB", "status": "OPEN_LOCALIZABLE"},
-      {"id": "lambda_nu", "status": "OPEN_LOCALIZABLE"},
-      {"id": "neutral_boundary_condition", "status": "DERIVED_CONDITIONAL"}
+      {
+        "id": "scalar/topographic profile solution",
+        "status": "OPEN_UNRESOLVED"
+      },
+      {
+        "id": "coordinate chart / invariant projection convention",
+        "status": "OPEN_UNRESOLVED"
+      },
+      {
+        "id": "internal metric derivation",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "positivity/causality proof",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "chi_nu_AB",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "lambda_nu",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "neutral_boundary_condition",
+        "status": "DERIVED_CONDITIONAL"
+      }
     ],
     "candidate_routes": [
       {
         "id": "route_A_metric_splitting",
         "formula": "ds_ext^2 = g_ext,ab dx^a dx^b; ds_sub^2 = g_sub,AB dY^A dY^B; x^a = Pi_sub_to_ext^a(Y); ellapse_nu^2 = ds_proj^2 / ds_sub^2",
-        "dependencies": ["g_ext", "g_sub", "Pi_sub_to_ext", "positive interval-ratio convention", "coordinate chart"],
+        "dependencies": [
+          "g_ext",
+          "g_sub",
+          "Pi_sub_to_ext",
+          "positive interval-ratio convention",
+          "coordinate chart"
+        ],
         "status": "OPEN_LOCALIZABLE",
         "reason": "The metric split localizes the projection geometry, but the subsurface metric and projection map are not derived from the boundary/topographic action.",
         "allowed_next_action": "derive g_sub and Pi_sub_to_ext from the internal topographic metric and boundary profile before comparison",
@@ -639,7 +1054,12 @@
       {
         "id": "route_B_topographic_lapse",
         "formula": "0 < ellapse_nu(y) <= 1 with ellapse_nu(y) -> 0 near a zero-exterior-spacetime core",
-        "dependencies": ["scalar/topographic profile solution", "boundary conditions", "positivity of lapse", "core definition"],
+        "dependencies": [
+          "scalar/topographic profile solution",
+          "boundary conditions",
+          "positivity of lapse",
+          "core definition"
+        ],
         "status": "OPEN_LOCALIZABLE",
         "reason": "A topographic lapse is structurally compatible with the subsurface-channel picture, but the scalar profile and boundary conditions are still open.",
         "allowed_next_action": "derive ellapse_nu(y) from the scalar/topographic profile and boundary conditions",
@@ -648,7 +1068,12 @@
       {
         "id": "route_C_stationary_channel",
         "formula": "grad_Y S_eff^(nu)(Y_nu) = 0; y_nu = Pi_sub_to_ext(Y_nu); Delta y_nu = Pi_sub_to_ext(Y_nu) - y_H",
-        "dependencies": ["S_eff_nu", "Pi_sub_to_ext", "stationary channel coordinates", "Higgs/charged reference saddle y_H"],
+        "dependencies": [
+          "S_eff_nu",
+          "Pi_sub_to_ext",
+          "stationary channel coordinates",
+          "Higgs/charged reference saddle y_H"
+        ],
         "status": "OPEN_LOCALIZABLE",
         "reason": "This route links projection geometry to the localized neutral saddle displacement, but S_eff_nu and Pi_sub_to_ext remain open.",
         "allowed_next_action": "derive the neutral stationary channel and projection map before any neutrino comparison",
@@ -657,7 +1082,12 @@
       {
         "id": "route_D_causality_preserving_apparent_ftl",
         "formula": "v_sub <= c_sub; v_ext,proj = |d Pi_sub_to_ext(Y) / dt_ext|; dt_ext = ellapse_nu dt_sub",
-        "dependencies": ["g_sub causal cone", "ellapse_nu", "Pi_sub_to_ext", "projection theorem"],
+        "dependencies": [
+          "g_sub causal cone",
+          "ellapse_nu",
+          "Pi_sub_to_ext",
+          "projection theorem"
+        ],
         "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
         "reason": "This explains how exterior-projected apparent FTL could be interpretive without local internal causality violation, but it is not derived until the metric, lapse, and projection map are derived.",
         "allowed_next_action": "prove the projection statement from g_sub, ellapse_nu, and Pi_sub_to_ext",
@@ -676,7 +1106,9 @@
     ],
     "claim_boundary": "The subsurface neutral projection geometry has been localized as a required dependency for the neutral effective action. Candidate internal metric, projection map, and exterior-lapse structures are documented. No local FTL or numerical neutrino prediction is claimed.",
     "causality_boundary": "BHSM does not claim local causality violation. Any FTL-like behavior is exterior-projected apparent behavior arising from a subsurface/internal topographic channel and remains conditional until g_sub, ellapse_nu, and Pi_sub_to_ext are derived.",
-    "tests": ["tests/test_subsurface_projection_geometry.py"],
+    "tests": [
+      "tests/test_subsurface_projection_geometry.py"
+    ],
     "next_action": "derive or reject g_sub, ellapse_nu, and Pi_sub_to_ext from the scalar/topographic profile, coordinate-invariant projection convention, positivity/causality proof, and neutral boundary tensors before comparison"
   },
   "neutral_effective_action": {
@@ -692,23 +1124,63 @@
     "pre_comparison_locked": false,
     "derivation_source": "candidate subsurface neutral topographic channel and boundary/profile action scaffolds",
     "depends_on": [
-      {"id": "g_sub", "status": "OPEN_LOCALIZABLE"},
-      {"id": "ellapse_nu", "status": "OPEN_LOCALIZABLE"},
-      {"id": "S_bulk[Phi]", "status": "OPEN_LOCALIZABLE"},
-      {"id": "S_partial^(nu)[Phi]", "status": "OPEN_LOCALIZABLE"},
-      {"id": "chi_nu_AB", "status": "OPEN_LOCALIZABLE"},
-      {"id": "lambda_nu", "status": "OPEN_LOCALIZABLE"},
-      {"id": "neutral_boundary_condition", "status": "DERIVED_CONDITIONAL"},
-      {"id": "W_nu", "status": "OPEN_LOCALIZABLE"},
-      {"id": "V_eff^(nu)", "status": "OPEN_LOCALIZABLE"},
-      {"id": "neutral profile regularization/width term", "status": "OPEN_LOCALIZABLE"},
-      {"id": "Pi_sub_to_ext", "status": "OPEN_LOCALIZABLE"}
+      {
+        "id": "g_sub",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "ellapse_nu",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "S_bulk[Phi]",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "S_partial^(nu)[Phi]",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "chi_nu_AB",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "lambda_nu",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "neutral_boundary_condition",
+        "status": "DERIVED_CONDITIONAL"
+      },
+      {
+        "id": "W_nu",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "V_eff^(nu)",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "neutral profile regularization/width term",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "Pi_sub_to_ext",
+        "status": "OPEN_LOCALIZABLE"
+      }
     ],
     "candidate_routes": [
       {
         "id": "route_A_subsurface_neutral_channel_action",
         "formula": "S_eff^(nu) = S_bulk[Phi] + S_partial^(nu)[Phi] + S_subsurface^(nu)[Phi; ellapse_nu, g_sub]",
-        "dependencies": ["S_bulk[Phi]", "S_partial^(nu)[Phi]", "S_subsurface^(nu)", "ellapse_nu", "g_sub", "Pi_sub_to_ext"],
+        "dependencies": [
+          "S_bulk[Phi]",
+          "S_partial^(nu)[Phi]",
+          "S_subsurface^(nu)",
+          "ellapse_nu",
+          "g_sub",
+          "Pi_sub_to_ext"
+        ],
         "status": "OPEN_LOCALIZABLE",
         "reason": "This route localizes the neutral effective action as a subsurface neutral topographic channel, but the internal/subsurface metric and projection/lapse map are not derived.",
         "allowed_next_step": "derive g_sub, ellapse_nu, and the projection map from the internal topographic/boundary action before comparison",
@@ -717,7 +1189,12 @@
       {
         "id": "route_B_boundary_scalar_topographic_action",
         "formula": "S_eff^(nu) = S_bulk[Phi] + int_partialB [1/2 chi_nu^{AB} partial_A Phi partial_B Phi + lambda_nu(nhat) Phi nhat.grad Phi] dA",
-        "dependencies": ["S_bulk[Phi]", "chi_nu_AB", "lambda_nu", "neutral_boundary_condition"],
+        "dependencies": [
+          "S_bulk[Phi]",
+          "chi_nu_AB",
+          "lambda_nu",
+          "neutral_boundary_condition"
+        ],
         "status": "DERIVED_CONDITIONAL",
         "reason": "Scalar/topographic boundary terms now yield a conditional symbolic boundary condition, while tensor values and normal-coupling convention remain open.",
         "allowed_next_step": "derive chi_nu, lambda_nu, and the neutral boundary condition from the scalar/topographic boundary action",
@@ -726,7 +1203,11 @@
       {
         "id": "route_C_neutral_operator_source",
         "formula": "Omega_nu = -q - 2j = -k",
-        "dependencies": ["Omega_nu", "operator-to-action map", "neutral sector boundary functional"],
+        "dependencies": [
+          "Omega_nu",
+          "operator-to-action map",
+          "neutral sector boundary functional"
+        ],
         "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
         "reason": "Omega_nu is a sector label and boundary-operator hint, but the repo does not derive an action functional directly from Omega_nu.",
         "allowed_next_step": "derive an operator-to-action map from the neutral boundary functional",
@@ -735,7 +1216,12 @@
       {
         "id": "route_D_finite_width_neutral_profile_action",
         "formula": "S_eff^(nu)[W_nu] = int_B W_nu(y) V_eff^(nu)(y) dV + regularization/width term",
-        "dependencies": ["W_nu", "V_eff^(nu)", "neutral profile regularization/width term", "saddle/centroid prescription"],
+        "dependencies": [
+          "W_nu",
+          "V_eff^(nu)",
+          "neutral profile regularization/width term",
+          "saddle/centroid prescription"
+        ],
         "status": "OPEN_LOCALIZABLE",
         "reason": "A finite-width neutral profile can define a saddle or centroid action, but the weight, potential, and regularization are not derived.",
         "allowed_next_step": "derive W_nu, V_eff^(nu), and the regularization term before comparison",
@@ -754,7 +1240,9 @@
     ],
     "claim_boundary": "The neutral effective action S_eff^(nu) is localized as the action-level source for the neutral saddle displacement. The subsurface neutral-channel candidate is documented, but the internal metric, projection/lapse map, neutral boundary tensors, and neutral profile remain open. Numerical neutrino closure remains open.",
     "causality_boundary": "Subsurface neutral topographic channel language permits exterior-projected anomalous propagation or apparent FTL from the exterior-surface viewpoint only as an interpretive projection; the candidate remains locally causal in the internal/topographic metric and does not assert locally acausal propagation.",
-    "tests": ["tests/test_neutral_effective_action.py"],
+    "tests": [
+      "tests/test_neutral_effective_action.py"
+    ],
     "next_action": "derive or reject g_sub, ellapse_nu, Pi_sub_to_ext, chi_nu, lambda_nu, W_nu, and V_eff^(nu) from the boundary/topographic action before any neutrino comparison"
   },
   "neutral_saddle_displacement": {
@@ -769,20 +1257,50 @@
     "pre_comparison_locked": false,
     "derivation_source": "candidate scalar/topographic stationary-point and finite-width centroid scaffolds",
     "depends_on": [
-      {"id": "S_eff_nu", "status": "OPEN_LOCALIZABLE"},
-      {"id": "S_eff^(H)", "status": "OPEN_LOCALIZABLE"},
-      {"id": "H_H", "status": "OPEN_LOCALIZABLE"},
-      {"id": "grad_y[delta S_eff^(nu-H)]", "status": "OPEN_LOCALIZABLE"},
-      {"id": "W_nu", "status": "OPEN_LOCALIZABLE"},
-      {"id": "W_H", "status": "OPEN_LOCALIZABLE"},
-      {"id": "coordinate chart / invariant centroid convention", "status": "OPEN_UNRESOLVED"},
-      {"id": "label-to-distance map E_nu", "status": "OPEN_LOCALIZABLE"}
+      {
+        "id": "S_eff_nu",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "S_eff^(H)",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "H_H",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "grad_y[delta S_eff^(nu-H)]",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "W_nu",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "W_H",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "coordinate chart / invariant centroid convention",
+        "status": "OPEN_UNRESOLVED"
+      },
+      {
+        "id": "label-to-distance map E_nu",
+        "status": "OPEN_LOCALIZABLE"
+      }
     ],
     "candidate_routes": [
       {
         "id": "route_A_stationary_point_displacement",
         "formula": "grad_y S_eff^(nu)(y_nu)=0; grad_y S_eff^(H)(y_H)=0; Delta y_nu = - H_H^{-1} grad_y[delta S_eff^(nu-H)]|_{y_H}",
-        "dependencies": ["S_eff^(nu)", "S_eff^(H)", "H_H", "delta S_eff^(nu-H)", "stationary-point equations"],
+        "dependencies": [
+          "S_eff^(nu)",
+          "S_eff^(H)",
+          "H_H",
+          "delta S_eff^(nu-H)",
+          "stationary-point equations"
+        ],
         "status": "OPEN_LOCALIZABLE",
         "reason": "The repo has scalar/topographic and Hessian scaffolds, but not explicit neutral/Higgs effective actions or a derived linearized gradient.",
         "allowed_next_step": "derive S_eff^(nu), S_eff^(H), H_H, and the neutral-minus-Higgs gradient from the boundary/topographic action before comparison",
@@ -791,7 +1309,11 @@
       {
         "id": "route_B_ledger_displacement",
         "formula": "Delta labels = (q_nu,j_nu) - (q_H,j_H)",
-        "dependencies": ["neutral ledger", "Higgs/charged reference label", "label-to-coordinate map"],
+        "dependencies": [
+          "neutral ledger",
+          "Higgs/charged reference label",
+          "label-to-coordinate map"
+        ],
         "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
         "reason": "The neutral ledger is present, but the Higgs/charged reference label and label-to-coordinate displacement map are not derived.",
         "allowed_next_step": "derive the Higgs/charged reference label and label-to-distance map from the boundary tensors",
@@ -800,7 +1322,11 @@
       {
         "id": "route_C_boundary_operator_displacement",
         "formula": "Omega_nu = -q - 2j = -k",
-        "dependencies": ["Omega_nu", "charged/Higgs boundary condition", "operator-to-displacement map"],
+        "dependencies": [
+          "Omega_nu",
+          "charged/Higgs boundary condition",
+          "operator-to-displacement map"
+        ],
         "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
         "reason": "Omega_nu identifies the neutral boundary operator, but no operator-to-displacement theorem is present.",
         "allowed_next_step": "derive a map from boundary-operator mismatch to topographic displacement",
@@ -809,7 +1335,13 @@
       {
         "id": "route_D_finite_width_centroid",
         "formula": "y_nu = integral y W_nu(y) dV / integral W_nu(y) dV; y_H = integral y W_H(y) dV / integral W_H(y) dV; Delta y_nu = y_nu - y_H",
-        "dependencies": ["W_nu", "W_H", "coordinate chart", "compact-manifold centroid convention", "gauge/coordinate invariance rule"],
+        "dependencies": [
+          "W_nu",
+          "W_H",
+          "coordinate chart",
+          "compact-manifold centroid convention",
+          "gauge/coordinate invariance rule"
+        ],
         "status": "OPEN_LOCALIZABLE",
         "reason": "The centroid definition is precise, but the neutral/Higgs weights and invariant centroid convention are not derived.",
         "allowed_next_step": "derive W_nu, W_H, a coordinate chart, and an invariant centroid prescription from the finite-width profile",
@@ -825,53 +1357,315 @@
       "post-comparison epsilon_nu_topo fit"
     ],
     "claim_boundary": "The neutral saddle displacement Delta y_nu has been localized as a required input for the S_nu_topo Hessian/barrier formula. Candidate stationary-point and finite-width centroid definitions are documented. Numerical neutrino closure remains open.",
-    "tests": ["tests/test_neutral_saddle_displacement.py"],
+    "tests": [
+      "tests/test_neutral_saddle_displacement.py"
+    ],
     "next_action": "derive or reject the stationary-point displacement ingredients or the finite-width centroid weights before any neutrino-scale comparison"
   },
   "entries": [
-    {"id": "A_channel", "sector": "finite_algebra_gauge", "symbol": "A_channel = C_l \u2295 M3(C)_C", "status": "DERIVED_CONDITIONAL", "fit_policy": "FORBIDDEN_TO_FIT", "notes": "finite boundary algebra scaffold"},
-    {"id": "A_weak", "sector": "finite_algebra_gauge", "symbol": "A_weak = M2(C)_{w=1} \u2295 C_{w=0}", "status": "DERIVED_CONDITIONAL", "fit_policy": "FORBIDDEN_TO_FIT", "notes": "weak interface algebra scaffold"},
-    {"id": "closure_spectrum", "sector": "finite_algebra_gauge", "symbol": "{1,2,3}", "status": "DERIVED_CONDITIONAL", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "T3", "sector": "finite_algebra_gauge", "symbol": "T3", "status": "DERIVED_CONDITIONAL", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "Y", "sector": "finite_algebra_gauge", "symbol": "Y", "status": "DERIVED_CONDITIONAL", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "Q", "sector": "finite_algebra_gauge", "symbol": "Q", "status": "DERIVED_CONDITIONAL", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "trace_K", "sector": "finite_algebra_gauge", "symbol": "K1=10/3, K2=2, K3=2", "status": "DERIVED_CONDITIONAL", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "eta_Y", "sector": "finite_algebra_gauge", "symbol": "eta_Y=3/5", "status": "DERIVED_CONDITIONAL", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "one_loop_coefficients", "sector": "finite_algebra_gauge", "symbol": "(b1,b2,b3)=(41/10,-19/6,-7)", "status": "DERIVED_CONDITIONAL", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "Omega_l", "sector": "sector_operators_ledgers", "symbol": "Omega_l = -q + 2j", "status": "STRUCTURALLY_INTEGRATED", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "Omega_nu", "sector": "sector_operators_ledgers", "symbol": "Omega_nu = -q - 2j = -k", "status": "STRUCTURALLY_INTEGRATED", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "Omega_u", "sector": "sector_operators_ledgers", "symbol": "Omega_u = q - 2j", "status": "STRUCTURALLY_INTEGRATED", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "Omega_d", "sector": "sector_operators_ledgers", "symbol": "Omega_d = q + 4j", "status": "STRUCTURALLY_INTEGRATED", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "charged_lepton_ledger", "sector": "sector_operators_ledgers", "symbol": "(0,0),(1,2),(3,3)", "status": "STRUCTURALLY_INTEGRATED", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "neutrino_ledger", "sector": "sector_operators_ledgers", "symbol": "(0,0),(3,0),(1,1)", "status": "STRUCTURALLY_INTEGRATED", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "up_ledger", "sector": "sector_operators_ledgers", "symbol": "(0,0),(6,0),(8,1)", "status": "STRUCTURALLY_INTEGRATED", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "down_ledger", "sector": "sector_operators_ledgers", "symbol": "(0,0),(0,3),(4,2)", "status": "STRUCTURALLY_INTEGRATED", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "k_relation", "sector": "sector_operators_ledgers", "symbol": "k=q+2j", "status": "DERIVED_CONDITIONAL", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "G_f", "sector": "charged_mass_hierarchy", "symbol": "G^(f)", "status": "OPEN_LOCALIZABLE", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "C_f", "sector": "charged_mass_hierarchy", "symbol": "C_f(q,j)=a_f q^2+2 b_f q j+c_f j^2", "status": "OPEN_LOCALIZABLE", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "P_f", "sector": "charged_mass_hierarchy", "symbol": "P_f(i)", "status": "OPEN_LOCALIZABLE", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "B_f", "sector": "charged_mass_hierarchy", "symbol": "B_f", "status": "OPEN_LOCALIZABLE", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "kappa_f", "sector": "charged_mass_hierarchy", "symbol": "kappa_f", "status": "OPEN_LOCALIZABLE", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "R_f", "sector": "charged_mass_hierarchy", "symbol": "R_f", "status": "OPEN_LOCALIZABLE", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "D_f", "sector": "charged_mass_hierarchy", "symbol": "D_f", "status": "OPEN_LOCALIZABLE", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "survival_condition", "sector": "charged_mass_hierarchy", "symbol": "Delta C_f > log(B_f kappa_f)", "status": "STRUCTURALLY_INTEGRATED", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "Y_u", "sector": "ckm", "symbol": "Y^u", "status": "OPEN_LOCALIZABLE", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "Y_d", "sector": "ckm", "symbol": "Y^d", "status": "OPEN_LOCALIZABLE", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "H_u_L", "sector": "ckm", "symbol": "H_u,L = Y^u Y^{u dagger}", "status": "STRUCTURALLY_INTEGRATED", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "H_d_L", "sector": "ckm", "symbol": "H_d,L = Y^d Y^{d dagger}", "status": "STRUCTURALLY_INTEGRATED", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "V_CKM", "sector": "ckm", "symbol": "V_CKM = U_u,L^dagger U_d,L", "status": "STRUCTURALLY_INTEGRATED", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "G_f_mix", "sector": "ckm", "symbol": "G_f^mix", "status": "OPEN_LOCALIZABLE", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "M_f_Delta", "sector": "ckm", "symbol": "M_f(Delta)", "status": "OPEN_LOCALIZABLE", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "Gamma_f_ij", "sector": "ckm", "symbol": "Gamma_f,ij", "status": "OPEN_LOCALIZABLE", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "Q_f_ij", "sector": "ckm", "symbol": "Q_f,ij", "status": "OPEN_LOCALIZABLE", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "eigenvalue_gaps", "sector": "ckm", "symbol": "eigenvalue gaps", "status": "OPEN_LOCALIZABLE", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "Delta_y_ud", "sector": "ckm", "symbol": "Delta y_ud", "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "Delta_alpha_ud", "sector": "ckm", "symbol": "Delta alpha_ud", "status": "OPEN_LOCALIZABLE", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "Delta_gamma_ud", "sector": "ckm", "symbol": "Delta gamma_ud", "status": "OPEN_LOCALIZABLE", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "ckm_phase_loop", "sector": "ckm", "symbol": "arg(Theta_12 Theta_23 Theta_13*)", "status": "STRUCTURALLY_INTEGRATED", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "ckm_1_16_exponent", "sector": "ckm", "symbol": "CKM 1/16 exponent", "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "M_nu", "sector": "neutrino_pmns", "symbol": "M_nu = epsilon_nu_topo M_nu^(0)", "status": "STRUCTURALLY_INTEGRATED", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "epsilon_nu_topo", "sector": "neutrino_pmns", "symbol": "epsilon_nu_topo = exp(-S_nu_topo)", "status": "STRUCTURALLY_INTEGRATED", "fit_policy": "FORBIDDEN_TO_FIT"},
+    {
+      "id": "A_channel",
+      "sector": "finite_algebra_gauge",
+      "symbol": "A_channel = C_l \u2295 M3(C)_C",
+      "status": "DERIVED_CONDITIONAL",
+      "fit_policy": "FORBIDDEN_TO_FIT",
+      "notes": "finite boundary algebra scaffold"
+    },
+    {
+      "id": "A_weak",
+      "sector": "finite_algebra_gauge",
+      "symbol": "A_weak = M2(C)_{w=1} \u2295 C_{w=0}",
+      "status": "DERIVED_CONDITIONAL",
+      "fit_policy": "FORBIDDEN_TO_FIT",
+      "notes": "weak interface algebra scaffold"
+    },
+    {
+      "id": "closure_spectrum",
+      "sector": "finite_algebra_gauge",
+      "symbol": "{1,2,3}",
+      "status": "DERIVED_CONDITIONAL",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "T3",
+      "sector": "finite_algebra_gauge",
+      "symbol": "T3",
+      "status": "DERIVED_CONDITIONAL",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "Y",
+      "sector": "finite_algebra_gauge",
+      "symbol": "Y",
+      "status": "DERIVED_CONDITIONAL",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "Q",
+      "sector": "finite_algebra_gauge",
+      "symbol": "Q",
+      "status": "DERIVED_CONDITIONAL",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "trace_K",
+      "sector": "finite_algebra_gauge",
+      "symbol": "K1=10/3, K2=2, K3=2",
+      "status": "DERIVED_CONDITIONAL",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "eta_Y",
+      "sector": "finite_algebra_gauge",
+      "symbol": "eta_Y=3/5",
+      "status": "DERIVED_CONDITIONAL",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "one_loop_coefficients",
+      "sector": "finite_algebra_gauge",
+      "symbol": "(b1,b2,b3)=(41/10,-19/6,-7)",
+      "status": "DERIVED_CONDITIONAL",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "Omega_l",
+      "sector": "sector_operators_ledgers",
+      "symbol": "Omega_l = -q + 2j",
+      "status": "STRUCTURALLY_INTEGRATED",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "Omega_nu",
+      "sector": "sector_operators_ledgers",
+      "symbol": "Omega_nu = -q - 2j = -k",
+      "status": "STRUCTURALLY_INTEGRATED",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "Omega_u",
+      "sector": "sector_operators_ledgers",
+      "symbol": "Omega_u = q - 2j",
+      "status": "STRUCTURALLY_INTEGRATED",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "Omega_d",
+      "sector": "sector_operators_ledgers",
+      "symbol": "Omega_d = q + 4j",
+      "status": "STRUCTURALLY_INTEGRATED",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "charged_lepton_ledger",
+      "sector": "sector_operators_ledgers",
+      "symbol": "(0,0),(1,2),(3,3)",
+      "status": "STRUCTURALLY_INTEGRATED",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "neutrino_ledger",
+      "sector": "sector_operators_ledgers",
+      "symbol": "(0,0),(3,0),(1,1)",
+      "status": "STRUCTURALLY_INTEGRATED",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "up_ledger",
+      "sector": "sector_operators_ledgers",
+      "symbol": "(0,0),(6,0),(8,1)",
+      "status": "STRUCTURALLY_INTEGRATED",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "down_ledger",
+      "sector": "sector_operators_ledgers",
+      "symbol": "(0,0),(0,3),(4,2)",
+      "status": "STRUCTURALLY_INTEGRATED",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "k_relation",
+      "sector": "sector_operators_ledgers",
+      "symbol": "k=q+2j",
+      "status": "DERIVED_CONDITIONAL",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "G_f",
+      "sector": "charged_mass_hierarchy",
+      "symbol": "G^(f)",
+      "status": "OPEN_LOCALIZABLE",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "C_f",
+      "sector": "charged_mass_hierarchy",
+      "symbol": "C_f(q,j)=a_f q^2+2 b_f q j+c_f j^2",
+      "status": "OPEN_LOCALIZABLE",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "P_f",
+      "sector": "charged_mass_hierarchy",
+      "symbol": "P_f(i)",
+      "status": "OPEN_LOCALIZABLE",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "B_f",
+      "sector": "charged_mass_hierarchy",
+      "symbol": "B_f",
+      "status": "OPEN_LOCALIZABLE",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "kappa_f",
+      "sector": "charged_mass_hierarchy",
+      "symbol": "kappa_f",
+      "status": "OPEN_LOCALIZABLE",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "R_f",
+      "sector": "charged_mass_hierarchy",
+      "symbol": "R_f",
+      "status": "OPEN_LOCALIZABLE",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "D_f",
+      "sector": "charged_mass_hierarchy",
+      "symbol": "D_f",
+      "status": "OPEN_LOCALIZABLE",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "survival_condition",
+      "sector": "charged_mass_hierarchy",
+      "symbol": "Delta C_f > log(B_f kappa_f)",
+      "status": "STRUCTURALLY_INTEGRATED",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "Y_u",
+      "sector": "ckm",
+      "symbol": "Y^u",
+      "status": "OPEN_LOCALIZABLE",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "Y_d",
+      "sector": "ckm",
+      "symbol": "Y^d",
+      "status": "OPEN_LOCALIZABLE",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "H_u_L",
+      "sector": "ckm",
+      "symbol": "H_u,L = Y^u Y^{u dagger}",
+      "status": "STRUCTURALLY_INTEGRATED",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "H_d_L",
+      "sector": "ckm",
+      "symbol": "H_d,L = Y^d Y^{d dagger}",
+      "status": "STRUCTURALLY_INTEGRATED",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "V_CKM",
+      "sector": "ckm",
+      "symbol": "V_CKM = U_u,L^dagger U_d,L",
+      "status": "STRUCTURALLY_INTEGRATED",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "G_f_mix",
+      "sector": "ckm",
+      "symbol": "G_f^mix",
+      "status": "OPEN_LOCALIZABLE",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "M_f_Delta",
+      "sector": "ckm",
+      "symbol": "M_f(Delta)",
+      "status": "OPEN_LOCALIZABLE",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "Gamma_f_ij",
+      "sector": "ckm",
+      "symbol": "Gamma_f,ij",
+      "status": "OPEN_LOCALIZABLE",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "Q_f_ij",
+      "sector": "ckm",
+      "symbol": "Q_f,ij",
+      "status": "OPEN_LOCALIZABLE",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "eigenvalue_gaps",
+      "sector": "ckm",
+      "symbol": "eigenvalue gaps",
+      "status": "OPEN_LOCALIZABLE",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "Delta_y_ud",
+      "sector": "ckm",
+      "symbol": "Delta y_ud",
+      "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "Delta_alpha_ud",
+      "sector": "ckm",
+      "symbol": "Delta alpha_ud",
+      "status": "OPEN_LOCALIZABLE",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "Delta_gamma_ud",
+      "sector": "ckm",
+      "symbol": "Delta gamma_ud",
+      "status": "OPEN_LOCALIZABLE",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "ckm_phase_loop",
+      "sector": "ckm",
+      "symbol": "arg(Theta_12 Theta_23 Theta_13*)",
+      "status": "STRUCTURALLY_INTEGRATED",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "ckm_1_16_exponent",
+      "sector": "ckm",
+      "symbol": "CKM 1/16 exponent",
+      "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "M_nu",
+      "sector": "neutrino_pmns",
+      "symbol": "M_nu = epsilon_nu_topo M_nu^(0)",
+      "status": "STRUCTURALLY_INTEGRATED",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "epsilon_nu_topo",
+      "sector": "neutrino_pmns",
+      "symbol": "epsilon_nu_topo = exp(-S_nu_topo)",
+      "status": "STRUCTURALLY_INTEGRATED",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
     {
       "id": "explicit_scalar_topographic_boundary_variation",
       "name": "Explicit scalar/topographic boundary variation",
@@ -880,10 +1674,29 @@
       "status": "DERIVED_CONDITIONAL",
       "formula_candidate": "n_mu partial^mu Phi - D_A(chi_nu^{AB} D_B Phi) + R_nu[lambda_nu, Phi, n.grad Phi] = 0 on partialB",
       "derivation_source": "symbolic variation of S_bulk[Phi] + S_partial^(nu)[Phi] under fixed-background boundary assumptions",
-      "depends_on": ["S_bulk[Phi]", "S_partial^(nu)[Phi]", "boundary integration-by-parts convention", "boundary has no boundary or edge terms vanish", "chi_nu_AB", "lambda_nu", "R_nu_normal_coupling", "normal_collar_convention", "normal-derivative variation convention"],
-      "forbidden_inputs": ["observed neutrino masses", "observed neutrino mass splittings", "PMNS angles", "PMNS CP phase", "fitted FTL/anomaly data", "post-comparison neutral boundary condition fit"],
+      "depends_on": [
+        "S_bulk[Phi]",
+        "S_partial^(nu)[Phi]",
+        "boundary integration-by-parts convention",
+        "boundary has no boundary or edge terms vanish",
+        "chi_nu_AB",
+        "lambda_nu",
+        "R_nu_normal_coupling",
+        "normal_collar_convention",
+        "normal-derivative variation convention"
+      ],
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "fitted FTL/anomaly data",
+        "post-comparison neutral boundary condition fit"
+      ],
       "claim_boundary": "conditional symbolic boundary variation only; tensor values and numerical neutrino closure remain open",
-      "tests": ["tests/test_scalar_topographic_boundary_variation.py"],
+      "tests": [
+        "tests/test_scalar_topographic_boundary_variation.py"
+      ],
       "next_action": "derive tensor values and the normal-coupling convention from the complete scalar/topographic boundary action before comparison",
       "fit_policy": "FORBIDDEN_TO_FIT"
     },
@@ -895,10 +1708,28 @@
       "status": "OPEN_LOCALIZABLE",
       "formula_candidate": "R_nu = lambda_nu n.grad Phi under fixed-normal convention; or R_nu -> A_nu Phi + B_nu n.grad Phi under derived collar/Robin convention",
       "derivation_source": "localized variation of lambda_nu Phi n.grad Phi with unresolved normal/collar convention",
-      "depends_on": ["lambda_nu", "normal_collar_convention", "collar_measure", "normal_orientation", "inner_collar_edge_condition", "admissible_collar_variation_data", "robin_coefficients_A_B"],
-      "forbidden_inputs": ["observed neutrino masses", "observed neutrino mass splittings", "PMNS angles", "PMNS CP phase", "fitted FTL/anomaly data", "post-comparison R_nu fit", "post-comparison lambda_nu fit"],
+      "depends_on": [
+        "lambda_nu",
+        "normal_collar_convention",
+        "collar_measure",
+        "normal_orientation",
+        "inner_collar_edge_condition",
+        "admissible_collar_variation_data",
+        "robin_coefficients_A_B"
+      ],
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "fitted FTL/anomaly data",
+        "post-comparison R_nu fit",
+        "post-comparison lambda_nu fit"
+      ],
       "claim_boundary": "localizable normal-coupling remainder only; not a numerical neutrino input and not fitted",
-      "tests": ["tests/test_normal_coupling_collar_convention.py"],
+      "tests": [
+        "tests/test_normal_coupling_collar_convention.py"
+      ],
       "next_action": "derive or reject the fixed-normal, collar, or Robin convention from the complete scalar/topographic boundary action before comparison",
       "fit_policy": "FORBIDDEN_TO_FIT"
     },
@@ -910,10 +1741,28 @@
       "status": "OPEN_LOCALIZABLE",
       "formula_candidate": "S_collar = int_{partialB x [0,epsilon]} lambda_nu(rho,Y) Phi partial_rho Phi d rho dA",
       "derivation_source": "thin-collar localization of the normal derivative boundary term",
-      "depends_on": ["collar_coordinate_rho", "collar_measure", "normal_orientation", "inner_collar_edge_condition", "admissible_collar_variation_data", "lambda_nu"],
-      "forbidden_inputs": ["observed neutrino masses", "observed neutrino mass splittings", "PMNS angles", "PMNS CP phase", "fitted FTL/anomaly data", "post-comparison collar fit", "post-comparison R_nu fit", "post-comparison lambda_nu fit"],
+      "depends_on": [
+        "collar_coordinate_rho",
+        "collar_measure",
+        "normal_orientation",
+        "inner_collar_edge_condition",
+        "admissible_collar_variation_data",
+        "lambda_nu"
+      ],
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "fitted FTL/anomaly data",
+        "post-comparison collar fit",
+        "post-comparison R_nu fit",
+        "post-comparison lambda_nu fit"
+      ],
       "claim_boundary": "localizable collar convention only; not fitted and not numerically closed",
-      "tests": ["tests/test_normal_coupling_collar_convention.py"],
+      "tests": [
+        "tests/test_normal_coupling_collar_convention.py"
+      ],
       "next_action": "derive or reject collar measure, normal orientation, inner-edge condition, and admissible variation data before comparison",
       "fit_policy": "FORBIDDEN_TO_FIT"
     },
@@ -925,10 +1774,23 @@
       "status": "DERIVED_CONDITIONAL",
       "formula_candidate": "C_epsilon(partialB)=partialB x [0,epsilon] with coordinates (Y^A,rho)",
       "derivation_source": "local collar-neighborhood theorem for a fixed boundary embedding",
-      "depends_on": ["boundary embedding", "fixed-background boundary geometry", "normal_collar_convention"],
-      "forbidden_inputs": ["observed neutrino masses", "observed neutrino mass splittings", "PMNS angles", "PMNS CP phase", "fitted FTL/anomaly data", "post-comparison collar coordinate fit"],
+      "depends_on": [
+        "boundary embedding",
+        "fixed-background boundary geometry",
+        "normal_collar_convention"
+      ],
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "fitted FTL/anomaly data",
+        "post-comparison collar coordinate fit"
+      ],
       "claim_boundary": "conditional local coordinate scaffold only; no collar width or numerical neutral prediction is derived",
-      "tests": ["tests/test_collar_geometry_package.py"],
+      "tests": [
+        "tests/test_collar_geometry_package.py"
+      ],
       "next_action": "derive the finite-width BHSM interpretation and compatibility with the scalar/topographic boundary action",
       "fit_policy": "FORBIDDEN_TO_FIT"
     },
@@ -938,13 +1800,32 @@
       "sector": "neutrino_pmns",
       "symbol": "dV_collar = J(Y,rho) dA d rho",
       "status": "OPEN_LOCALIZABLE",
-      "formula_candidate": "dV_collar = J(Y,rho) dA d rho with J(Y,0)=1 under normalized boundary measure",
-      "derivation_source": "thin-collar measure scaffold; Jacobian not derived from the BHSM scalar/topographic geometry",
-      "depends_on": ["collar_coordinate_rho", "boundary metric", "subsurface_projection_geometry"],
-      "forbidden_inputs": ["observed neutrino masses", "observed neutrino mass splittings", "PMNS angles", "PMNS CP phase", "fitted FTL/anomaly data", "post-comparison collar measure fit"],
-      "claim_boundary": "measure candidate only; the Jacobian J(Y,rho) remains open and unfitted",
-      "tests": ["tests/test_collar_geometry_package.py"],
-      "next_action": "derive J(Y,rho) from boundary/subsurface geometry or keep it symbolic",
+      "formula_candidate": "dV_collar = J(Y,rho) dA d rho with J(Y,0)=1; J(Y,rho)=det(I +/- rho S(Y)) conditionally, while K(Y) and S remain open",
+      "derivation_source": "thin-collar measure scaffold plus PO-BH-57 conditional standard collar/extrinsic-geometry Jacobian formula",
+      "depends_on": [
+        "collar_coordinate_rho",
+        "boundary metric",
+        "subsurface_projection_geometry",
+        "collar_measure_extrinsic_geometry",
+        "collar_jacobian_J",
+        "boundary_trace_K",
+        "shape_operator_S",
+        "normal_orientation"
+      ],
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "fitted FTL/anomaly data",
+        "post-comparison collar measure fit"
+      ],
+      "claim_boundary": "measure form and symbolic Jacobian expansion are conditionally derived; K(Y), S, and normal orientation remain open geometric dependencies and are not fitted",
+      "tests": [
+        "tests/test_collar_geometry_package.py",
+        "tests/test_collar_measure_extrinsic_geometry.py"
+      ],
+      "next_action": "derive K(Y), S(Y), and normal orientation from boundary/subsurface geometry or scalar/topographic level-set profile",
       "fit_policy": "FORBIDDEN_TO_FIT"
     },
     {
@@ -955,10 +1836,23 @@
       "status": "OPEN_LOCALIZABLE",
       "formula_candidate": "n = s_n partial_rho with s_n in {+1,-1}",
       "derivation_source": "orientation sign bookkeeping for the collar normal derivative",
-      "depends_on": ["collar_coordinate_rho", "subsurface_projection_geometry", "boundary embedding"],
-      "forbidden_inputs": ["observed neutrino masses", "observed neutrino mass splittings", "PMNS angles", "PMNS CP phase", "fitted FTL/anomaly data", "post-comparison orientation fit"],
+      "depends_on": [
+        "collar_coordinate_rho",
+        "subsurface_projection_geometry",
+        "boundary embedding"
+      ],
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "fitted FTL/anomaly data",
+        "post-comparison orientation fit"
+      ],
       "claim_boundary": "orientation sign is tracked but not chosen or fitted",
-      "tests": ["tests/test_collar_geometry_package.py"],
+      "tests": [
+        "tests/test_collar_geometry_package.py"
+      ],
       "next_action": "derive the inward/outward sign convention from the subsurface or internal boundary geometry",
       "fit_policy": "FORBIDDEN_TO_FIT"
     },
@@ -970,10 +1864,24 @@
       "status": "OPEN_LOCALIZABLE",
       "formula_candidate": "Dirichlet delta Phi|epsilon=0, Neumann partial_rho Phi|epsilon=0, subsurface matching, or decay/localization",
       "derivation_source": "candidate edge-condition list for the finite collar",
-      "depends_on": ["collar_coordinate_rho", "neutral finite-width profile", "subsurface_projection_geometry", "W_nu"],
-      "forbidden_inputs": ["observed neutrino masses", "observed neutrino mass splittings", "PMNS angles", "PMNS CP phase", "fitted FTL/anomaly data", "post-comparison edge-condition fit"],
+      "depends_on": [
+        "collar_coordinate_rho",
+        "neutral finite-width profile",
+        "subsurface_projection_geometry",
+        "W_nu"
+      ],
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "fitted FTL/anomaly data",
+        "post-comparison edge-condition fit"
+      ],
       "claim_boundary": "edge condition is localized but not selected",
-      "tests": ["tests/test_collar_geometry_package.py"],
+      "tests": [
+        "tests/test_collar_geometry_package.py"
+      ],
       "next_action": "derive which inner-edge condition is admissible from the neutral profile or subsurface matching theorem",
       "fit_policy": "FORBIDDEN_TO_FIT"
     },
@@ -985,10 +1893,23 @@
       "status": "OPEN_LOCALIZABLE",
       "formula_candidate": "classify fixed/free delta Phi and delta partial_rho Phi at the outer boundary and inner collar edge",
       "derivation_source": "variation-data scaffold compatible with PO-BH-53 and PO-BH-54",
-      "depends_on": ["explicit_scalar_topographic_boundary_variation", "normal_collar_convention", "inner_collar_edge_condition"],
-      "forbidden_inputs": ["observed neutrino masses", "observed neutrino mass splittings", "PMNS angles", "PMNS CP phase", "fitted FTL/anomaly data", "post-comparison variation-data fit"],
+      "depends_on": [
+        "explicit_scalar_topographic_boundary_variation",
+        "normal_collar_convention",
+        "inner_collar_edge_condition"
+      ],
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "fitted FTL/anomaly data",
+        "post-comparison variation-data fit"
+      ],
       "claim_boundary": "admissible variation choices are listed but the BHSM choice remains open",
-      "tests": ["tests/test_collar_geometry_package.py"],
+      "tests": [
+        "tests/test_collar_geometry_package.py"
+      ],
       "next_action": "derive fixed/free variation data from the complete scalar/topographic boundary action",
       "fit_policy": "FORBIDDEN_TO_FIT"
     },
@@ -1000,10 +1921,25 @@
       "status": "OPEN_LOCALIZABLE",
       "formula_candidate": "R_nu -> A_nu Phi + B_nu n.grad Phi with A_nu,B_nu = F(lambda_nu, epsilon, J, s_n, edge data)",
       "derivation_source": "symbolic Robin-reduction target for a derived collar convention",
-      "depends_on": ["lambda_nu", "collar_measure", "normal_orientation", "inner_collar_edge_condition", "admissible_collar_variation_data"],
-      "forbidden_inputs": ["observed neutrino masses", "observed neutrino mass splittings", "PMNS angles", "PMNS CP phase", "fitted FTL/anomaly data", "post-comparison Robin coefficient fit"],
+      "depends_on": [
+        "lambda_nu",
+        "collar_measure",
+        "normal_orientation",
+        "inner_collar_edge_condition",
+        "admissible_collar_variation_data"
+      ],
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "fitted FTL/anomaly data",
+        "post-comparison Robin coefficient fit"
+      ],
       "claim_boundary": "Robin coefficients are not numerically or symbolically fixed until the collar package is derived",
-      "tests": ["tests/test_collar_geometry_package.py"],
+      "tests": [
+        "tests/test_collar_geometry_package.py"
+      ],
       "next_action": "derive A_nu and B_nu from a fixed collar convention before comparison",
       "fit_policy": "FORBIDDEN_TO_FIT"
     },
@@ -1015,10 +1951,37 @@
       "status": "OPEN_LOCALIZABLE",
       "formula_candidate": "S_collar = int_{partialB x [0,epsilon]} L_collar[Phi, partial_rho Phi, D_A Phi, J, lambda_nu, chi_nu] J(Y,rho) dA d rho",
       "derivation_source": "audit of existing scalar/topographic boundary-action scaffolds as a possible source for the PO-BH-55 collar package",
-      "depends_on": ["S_bulk[Phi]", "S_partial^(nu)[Phi]", "S_subsurface^(nu)", "collar_measure", "normal_orientation", "inner_collar_edge_condition", "admissible_collar_variation_data", "robin_coefficients_A_B", "chi_nu_AB", "lambda_nu", "g_sub", "W_nu"],
-      "forbidden_inputs": ["observed neutrino masses", "observed neutrino mass splittings", "PMNS angles", "PMNS CP phase", "fitted FTL/anomaly data", "post-comparison L_collar fit", "post-comparison collar measure fit", "post-comparison orientation fit", "post-comparison edge-condition fit", "post-comparison variation-data fit", "post-comparison Robin coefficient fit"],
+      "depends_on": [
+        "S_bulk[Phi]",
+        "S_partial^(nu)[Phi]",
+        "S_subsurface^(nu)",
+        "collar_measure",
+        "normal_orientation",
+        "inner_collar_edge_condition",
+        "admissible_collar_variation_data",
+        "robin_coefficients_A_B",
+        "chi_nu_AB",
+        "lambda_nu",
+        "g_sub",
+        "W_nu"
+      ],
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "fitted FTL/anomaly data",
+        "post-comparison L_collar fit",
+        "post-comparison collar measure fit",
+        "post-comparison orientation fit",
+        "post-comparison edge-condition fit",
+        "post-comparison variation-data fit",
+        "post-comparison Robin coefficient fit"
+      ],
       "claim_boundary": "audits the missing complete collar action source only; no collar data, Robin coefficients, or numerical neutrino inputs are derived",
-      "tests": ["tests/test_complete_scalar_topographic_collar_action.py"],
+      "tests": [
+        "tests/test_complete_scalar_topographic_collar_action.py"
+      ],
       "next_action": "derive or reject complete collar action data before comparison",
       "fit_policy": "FORBIDDEN_TO_FIT"
     },
@@ -1030,10 +1993,26 @@
       "status": "OPEN_LOCALIZABLE",
       "formula_candidate": "chi_nu^{AB} ~ f_nu(y) g_sub^{AB}; or chi_nu^{AB} = chi_parallel P_parallel^{AB} + chi_perp P_perp^{AB}",
       "derivation_source": "candidate neutral boundary-action tensor and subsurface-channel pullback scaffold",
-      "depends_on": ["explicit scalar/topographic boundary action", "g_sub", "Pi_sub_to_ext", "projection projectors", "neutral boundary pullback/restriction rule", "positivity/stability proof"],
-      "forbidden_inputs": ["observed neutrino masses", "observed neutrino mass splittings", "PMNS angles", "PMNS CP phase", "fitted FTL/anomaly data", "post-comparison chi_nu fit"],
+      "depends_on": [
+        "explicit scalar/topographic boundary action",
+        "g_sub",
+        "Pi_sub_to_ext",
+        "projection projectors",
+        "neutral boundary pullback/restriction rule",
+        "positivity/stability proof"
+      ],
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "fitted FTL/anomaly data",
+        "post-comparison chi_nu fit"
+      ],
       "claim_boundary": "localizable neutral boundary tensor candidate only; tensor values remain open and are not fitted",
-      "tests": ["tests/test_neutral_boundary_tensors.py"],
+      "tests": [
+        "tests/test_neutral_boundary_tensors.py"
+      ],
       "next_action": "derive or reject chi_nu_AB from the scalar/topographic boundary action and subsurface projection geometry before comparison",
       "fit_policy": "FORBIDDEN_TO_FIT"
     },
@@ -1045,10 +2024,27 @@
       "status": "OPEN_LOCALIZABLE",
       "formula_candidate": "lambda_nu(nhat) Phi nhat.grad Phi",
       "derivation_source": "candidate neutral boundary normal-coupling term in S_partial^(nu)",
-      "depends_on": ["explicit scalar/topographic boundary action", "R_nu_normal_coupling", "normal_collar_convention", "normal convention nhat", "neutral boundary condition", "g_sub", "positivity/stability proof"],
-      "forbidden_inputs": ["observed neutrino masses", "observed neutrino mass splittings", "PMNS angles", "PMNS CP phase", "fitted FTL/anomaly data", "post-comparison lambda_nu fit"],
+      "depends_on": [
+        "explicit scalar/topographic boundary action",
+        "R_nu_normal_coupling",
+        "normal_collar_convention",
+        "normal convention nhat",
+        "neutral boundary condition",
+        "g_sub",
+        "positivity/stability proof"
+      ],
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "fitted FTL/anomaly data",
+        "post-comparison lambda_nu fit"
+      ],
       "claim_boundary": "localizable neutral scalar-normal coupling candidate only; coupling remains open and is not fitted",
-      "tests": ["tests/test_neutral_boundary_tensors.py"],
+      "tests": [
+        "tests/test_neutral_boundary_tensors.py"
+      ],
       "next_action": "derive or reject lambda_nu from the scalar/topographic boundary variation and normal convention before comparison",
       "fit_policy": "FORBIDDEN_TO_FIT"
     },
@@ -1060,10 +2056,31 @@
       "status": "DERIVED_CONDITIONAL",
       "formula_candidate": "n_mu partial^mu Phi - D_A(chi_nu^{AB} D_B Phi) + R_nu[lambda_nu, Phi, n.grad Phi] = 0 on partialB",
       "derivation_source": "conditional symbolic variation of S_bulk[Phi] + S_partial^(nu)[Phi]",
-      "depends_on": ["explicit_scalar_topographic_boundary_variation", "R_nu_normal_coupling", "normal_collar_convention", "S_bulk[Phi]", "S_partial^(nu)[Phi]", "variation convention", "chi_nu_AB", "lambda_nu", "boundary integration-by-parts rule", "normal-derivative variation convention"],
-      "forbidden_inputs": ["observed neutrino masses", "observed neutrino mass splittings", "PMNS angles", "PMNS CP phase", "fitted FTL/anomaly data", "post-comparison neutral boundary condition fit"],
+      "depends_on": [
+        "explicit_scalar_topographic_boundary_variation",
+        "R_nu_normal_coupling",
+        "normal_collar_convention",
+        "S_bulk[Phi]",
+        "S_partial^(nu)[Phi]",
+        "variation convention",
+        "chi_nu_AB",
+        "lambda_nu",
+        "boundary integration-by-parts rule",
+        "normal-derivative variation convention"
+      ],
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "fitted FTL/anomaly data",
+        "post-comparison neutral boundary condition fit"
+      ],
       "claim_boundary": "conditional symbolic boundary-condition form only; tensor values, lambda_nu normal convention, and numerical neutrino closure remain open",
-      "tests": ["tests/test_neutral_boundary_tensors.py", "tests/test_scalar_topographic_boundary_variation.py"],
+      "tests": [
+        "tests/test_neutral_boundary_tensors.py",
+        "tests/test_scalar_topographic_boundary_variation.py"
+      ],
       "next_action": "derive tensor values and the normal-coupling convention before comparison",
       "fit_policy": "FORBIDDEN_TO_FIT"
     },
@@ -1075,10 +2092,26 @@
       "status": "OPEN_LOCALIZABLE",
       "formula_candidate": "ds_sub^2 = g_sub,AB dY^A dY^B",
       "derivation_source": "candidate internal/subsurface topographic metric split",
-      "depends_on": ["scalar/topographic profile solution", "internal metric derivation", "chi_nu_AB", "lambda_nu", "neutral_boundary_condition", "positivity/causality proof"],
-      "forbidden_inputs": ["observed neutrino masses", "observed neutrino mass splittings", "PMNS angles", "PMNS CP phase", "fitted FTL/anomaly data", "post-comparison g_sub fit"],
+      "depends_on": [
+        "scalar/topographic profile solution",
+        "internal metric derivation",
+        "chi_nu_AB",
+        "lambda_nu",
+        "neutral_boundary_condition",
+        "positivity/causality proof"
+      ],
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "fitted FTL/anomaly data",
+        "post-comparison g_sub fit"
+      ],
       "claim_boundary": "localizable internal metric candidate only; no local FTL or numerical neutrino prediction is claimed",
-      "tests": ["tests/test_subsurface_projection_geometry.py"],
+      "tests": [
+        "tests/test_subsurface_projection_geometry.py"
+      ],
       "next_action": "derive or reject g_sub from the scalar/topographic profile and neutral boundary tensors before comparison",
       "fit_policy": "FORBIDDEN_TO_FIT"
     },
@@ -1090,10 +2123,25 @@
       "status": "OPEN_LOCALIZABLE",
       "formula_candidate": "ellapse_nu^2 = ds_proj^2 / ds_sub^2; 0 < ellapse_nu(y) <= 1",
       "derivation_source": "candidate metric-ratio/topographic-lapse scaffold",
-      "depends_on": ["g_sub", "Pi_sub_to_ext", "projected interval", "scalar/topographic profile solution", "positivity/causality proof"],
-      "forbidden_inputs": ["observed neutrino masses", "observed neutrino mass splittings", "PMNS angles", "PMNS CP phase", "fitted FTL/anomaly data", "post-comparison ellapse_nu fit"],
+      "depends_on": [
+        "g_sub",
+        "Pi_sub_to_ext",
+        "projected interval",
+        "scalar/topographic profile solution",
+        "positivity/causality proof"
+      ],
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "fitted FTL/anomaly data",
+        "post-comparison ellapse_nu fit"
+      ],
       "claim_boundary": "localizable projection/lapse candidate only; apparent FTL language remains exterior-projected and interpretive",
-      "tests": ["tests/test_subsurface_projection_geometry.py"],
+      "tests": [
+        "tests/test_subsurface_projection_geometry.py"
+      ],
       "next_action": "derive or reject ellapse_nu from the projection geometry and scalar/topographic profile before comparison",
       "fit_policy": "FORBIDDEN_TO_FIT"
     },
@@ -1105,10 +2153,25 @@
       "status": "OPEN_LOCALIZABLE",
       "formula_candidate": "x^a = Pi_sub_to_ext^a(Y)",
       "derivation_source": "candidate coordinate-invariant projection map from subsurface neutral channel to exterior surface coordinates",
-      "depends_on": ["coordinate chart / invariant projection convention", "g_sub", "g_ext", "neutral stationary channel", "positivity/causality proof"],
-      "forbidden_inputs": ["observed neutrino masses", "observed neutrino mass splittings", "PMNS angles", "PMNS CP phase", "fitted FTL/anomaly data", "post-comparison Pi_sub_to_ext fit"],
+      "depends_on": [
+        "coordinate chart / invariant projection convention",
+        "g_sub",
+        "g_ext",
+        "neutral stationary channel",
+        "positivity/causality proof"
+      ],
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "fitted FTL/anomaly data",
+        "post-comparison Pi_sub_to_ext fit"
+      ],
       "claim_boundary": "localizable projection-map candidate only; no experimental FTL or numerical neutrino prediction is claimed",
-      "tests": ["tests/test_subsurface_projection_geometry.py"],
+      "tests": [
+        "tests/test_subsurface_projection_geometry.py"
+      ],
       "next_action": "derive or reject Pi_sub_to_ext from a coordinate-invariant projection convention and the internal metric before comparison",
       "fit_policy": "FORBIDDEN_TO_FIT"
     },
@@ -1120,10 +2183,32 @@
       "status": "OPEN_LOCALIZABLE",
       "formula_candidate": "S_eff^(nu) = S_bulk[Phi] + S_partial^(nu)[Phi] + S_subsurface^(nu)[Phi; ellapse_nu, g_sub]",
       "derivation_source": "candidate subsurface neutral topographic channel and boundary/profile action scaffolds",
-      "depends_on": ["g_sub", "ellapse_nu", "Pi_sub_to_ext", "S_bulk[Phi]", "S_partial^(nu)[Phi]", "chi_nu_AB", "lambda_nu", "neutral_boundary_condition", "W_nu", "V_eff^(nu)"],
-      "forbidden_inputs": ["observed neutrino masses", "observed neutrino mass splittings", "PMNS angles", "PMNS CP phase", "fitted FTL/anomaly data", "post-comparison S_eff_nu fit", "post-comparison Delta_y_nu fit", "post-comparison epsilon_nu_topo fit"],
+      "depends_on": [
+        "g_sub",
+        "ellapse_nu",
+        "Pi_sub_to_ext",
+        "S_bulk[Phi]",
+        "S_partial^(nu)[Phi]",
+        "chi_nu_AB",
+        "lambda_nu",
+        "neutral_boundary_condition",
+        "W_nu",
+        "V_eff^(nu)"
+      ],
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "fitted FTL/anomaly data",
+        "post-comparison S_eff_nu fit",
+        "post-comparison Delta_y_nu fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
       "claim_boundary": "The neutral effective action S_eff^(nu) is localized as the action-level source for the neutral saddle displacement. The subsurface neutral-channel candidate is documented, but the internal metric, projection/lapse map, neutral boundary tensors, and neutral profile remain open. Numerical neutrino closure remains open.",
-      "tests": ["tests/test_neutral_effective_action.py"],
+      "tests": [
+        "tests/test_neutral_effective_action.py"
+      ],
       "next_action": "derive or reject g_sub, ellapse_nu, chi_nu, lambda_nu, W_nu, V_eff^(nu), and the neutral projection map from the boundary/topographic action before any neutrino comparison",
       "fit_policy": "FORBIDDEN_TO_FIT"
     },
@@ -1136,10 +2221,26 @@
       "formula_candidate": "Delta y_nu = - H_H^{-1} grad_y[delta S_eff^(nu-H)]|_{y_H}",
       "alternate_formula_candidate": "Delta y_nu = <y>_nu - <y>_H",
       "derivation_source": "candidate scalar/topographic stationary-point and finite-width centroid scaffolds",
-      "depends_on": ["S_eff_nu", "S_eff^(H)", "H_H", "grad_y[delta S_eff^(nu-H)]", "W_nu", "W_H", "coordinate/invariant centroid convention"],
-      "forbidden_inputs": ["observed neutrino masses", "observed neutrino mass splittings", "PMNS angles", "PMNS CP phase", "post-comparison Delta_y_nu fit"],
+      "depends_on": [
+        "S_eff_nu",
+        "S_eff^(H)",
+        "H_H",
+        "grad_y[delta S_eff^(nu-H)]",
+        "W_nu",
+        "W_H",
+        "coordinate/invariant centroid convention"
+      ],
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "post-comparison Delta_y_nu fit"
+      ],
       "claim_boundary": "localizable displacement candidate only; numerical neutrino closure remains open",
-      "tests": ["tests/test_neutral_saddle_displacement.py"],
+      "tests": [
+        "tests/test_neutral_saddle_displacement.py"
+      ],
       "next_action": "derive or reject stationary-point or finite-width centroid ingredients before comparison",
       "fit_policy": "FORBIDDEN_TO_FIT"
     },
@@ -1151,40 +2252,457 @@
       "status": "OPEN_LOCALIZABLE",
       "formula_candidate": "S_nu_topo = 1/2 Delta y_nu^T G_nu_topo Delta y_nu + S_barrier",
       "derivation_source": "candidate boundary Hessian/topographic action scaffold",
-      "depends_on": ["S_eff_nu", "H_topo", "Delta_y_nu", "G_nu_topo", "S_barrier", "neutral finite-width saddle/path"],
-      "forbidden_inputs": ["observed neutrino masses", "observed neutrino mass splittings", "PMNS data", "post-comparison epsilon_nu_topo fit"],
+      "depends_on": [
+        "S_eff_nu",
+        "H_topo",
+        "Delta_y_nu",
+        "G_nu_topo",
+        "S_barrier",
+        "neutral finite-width saddle/path"
+      ],
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS data",
+        "post-comparison epsilon_nu_topo fit"
+      ],
       "claim_boundary": "localizable candidate only; numerical neutrino closure remains open",
-      "tests": ["tests/test_neutral_topographic_suppression_action.py"],
+      "tests": [
+        "tests/test_neutral_topographic_suppression_action.py"
+      ],
       "next_action": "derive or reject the neutral Hessian/barrier formula before comparison",
       "fit_policy": "FORBIDDEN_TO_FIT"
     },
-    {"id": "H_nu", "sector": "neutrino_pmns", "symbol": "H_nu = epsilon_nu_topo^2 H_nu^(0)", "status": "STRUCTURALLY_INTEGRATED", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "H_nu_0", "sector": "neutrino_pmns", "symbol": "H_nu^(0) full 3x3 symbolic operator", "status": "STRUCTURALLY_INTEGRATED", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "lambda0", "sector": "neutrino_pmns", "symbol": "lambda0", "status": "OPEN_LOCALIZABLE", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "lambda3", "sector": "neutrino_pmns", "symbol": "lambda3", "status": "OPEN_LOCALIZABLE", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "Delta0", "sector": "neutrino_pmns", "symbol": "Delta0", "status": "OPEN_LOCALIZABLE", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "DeltaA", "sector": "neutrino_pmns", "symbol": "DeltaA", "status": "OPEN_LOCALIZABLE", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "DeltaB", "sector": "neutrino_pmns", "symbol": "DeltaB", "status": "OPEN_LOCALIZABLE", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "etaA", "sector": "neutrino_pmns", "symbol": "etaA <-> M_nu(3,0)", "status": "OPEN_LOCALIZABLE", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "etaB", "sector": "neutrino_pmns", "symbol": "etaB <-> M_nu(1,1)", "status": "OPEN_LOCALIZABLE", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "delta", "sector": "neutrino_pmns", "symbol": "delta <-> M_nu(-2,1)", "status": "OPEN_LOCALIZABLE", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "phiA", "sector": "neutrino_pmns", "symbol": "phiA", "status": "OPEN_LOCALIZABLE", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "phiB", "sector": "neutrino_pmns", "symbol": "phiB", "status": "OPEN_LOCALIZABLE", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "varphi", "sector": "neutrino_pmns", "symbol": "varphi", "status": "OPEN_LOCALIZABLE", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "neutral_moment_M31", "sector": "neutrino_pmns", "symbol": "M_nu(3,0)", "status": "OPEN_LOCALIZABLE", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "neutral_moment_M11", "sector": "neutrino_pmns", "symbol": "M_nu(1,1)", "status": "OPEN_LOCALIZABLE", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "neutral_moment_Mminus21", "sector": "neutrino_pmns", "symbol": "M_nu(-2,1)", "status": "OPEN_LOCALIZABLE", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "U_PMNS_source", "sector": "neutrino_pmns", "symbol": "U_PMNS = U_l,L^dagger U_nu,L", "status": "STRUCTURALLY_INTEGRATED", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "Phi_nu", "sector": "neutrino_pmns", "symbol": "Phi_nu = phiA + varphi - phiB", "status": "STRUCTURALLY_INTEGRATED", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "neutral_mass_splitting", "sector": "neutrino_pmns", "symbol": "Delta m_+-^2 = 2 epsilon_nu_topo^2 sqrt(((DeltaB-DeltaA)/2)^2 + |delta|^2)", "status": "STRUCTURALLY_INTEGRATED", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "tan_2theta_AB", "sector": "neutrino_pmns", "symbol": "tan 2 theta_AB = 2 |delta|/(DeltaB-DeltaA)", "status": "STRUCTURALLY_INTEGRATED", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "scalar_topographic_profile_solution", "sector": "scalar_topographic", "symbol": "scalar/topographic profile solution", "status": "OPEN_UNRESOLVED", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "H_topo", "sector": "scalar_topographic", "symbol": "boundary Hessian H_topo", "status": "OPEN_LOCALIZABLE", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "displacement_formula", "sector": "scalar_topographic", "symbol": "Delta y_ud = - H_topo^{-1} grad_y(delta S_partial^d - delta S_partial^u)|_{y0}", "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "neutral_suppression_action", "sector": "scalar_topographic", "symbol": "neutral suppression action", "status": "OPEN_LOCALIZABLE", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "scalar_topographic_decoupling_proof", "sector": "scalar_topographic", "symbol": "scalar/topographic decoupling proof", "status": "OPEN_UNRESOLVED", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "stability_proof", "sector": "scalar_topographic", "symbol": "stability proof", "status": "OPEN_UNRESOLVED", "fit_policy": "FORBIDDEN_TO_FIT"},
-    {"id": "coupling_bounds", "sector": "scalar_topographic", "symbol": "coupling bounds", "status": "OPEN_UNRESOLVED", "fit_policy": "FORBIDDEN_TO_FIT"}
+    {
+      "id": "H_nu",
+      "sector": "neutrino_pmns",
+      "symbol": "H_nu = epsilon_nu_topo^2 H_nu^(0)",
+      "status": "STRUCTURALLY_INTEGRATED",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "H_nu_0",
+      "sector": "neutrino_pmns",
+      "symbol": "H_nu^(0) full 3x3 symbolic operator",
+      "status": "STRUCTURALLY_INTEGRATED",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "lambda0",
+      "sector": "neutrino_pmns",
+      "symbol": "lambda0",
+      "status": "OPEN_LOCALIZABLE",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "lambda3",
+      "sector": "neutrino_pmns",
+      "symbol": "lambda3",
+      "status": "OPEN_LOCALIZABLE",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "Delta0",
+      "sector": "neutrino_pmns",
+      "symbol": "Delta0",
+      "status": "OPEN_LOCALIZABLE",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "DeltaA",
+      "sector": "neutrino_pmns",
+      "symbol": "DeltaA",
+      "status": "OPEN_LOCALIZABLE",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "DeltaB",
+      "sector": "neutrino_pmns",
+      "symbol": "DeltaB",
+      "status": "OPEN_LOCALIZABLE",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "etaA",
+      "sector": "neutrino_pmns",
+      "symbol": "etaA <-> M_nu(3,0)",
+      "status": "OPEN_LOCALIZABLE",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "etaB",
+      "sector": "neutrino_pmns",
+      "symbol": "etaB <-> M_nu(1,1)",
+      "status": "OPEN_LOCALIZABLE",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "delta",
+      "sector": "neutrino_pmns",
+      "symbol": "delta <-> M_nu(-2,1)",
+      "status": "OPEN_LOCALIZABLE",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "phiA",
+      "sector": "neutrino_pmns",
+      "symbol": "phiA",
+      "status": "OPEN_LOCALIZABLE",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "phiB",
+      "sector": "neutrino_pmns",
+      "symbol": "phiB",
+      "status": "OPEN_LOCALIZABLE",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "varphi",
+      "sector": "neutrino_pmns",
+      "symbol": "varphi",
+      "status": "OPEN_LOCALIZABLE",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "neutral_moment_M31",
+      "sector": "neutrino_pmns",
+      "symbol": "M_nu(3,0)",
+      "status": "OPEN_LOCALIZABLE",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "neutral_moment_M11",
+      "sector": "neutrino_pmns",
+      "symbol": "M_nu(1,1)",
+      "status": "OPEN_LOCALIZABLE",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "neutral_moment_Mminus21",
+      "sector": "neutrino_pmns",
+      "symbol": "M_nu(-2,1)",
+      "status": "OPEN_LOCALIZABLE",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "U_PMNS_source",
+      "sector": "neutrino_pmns",
+      "symbol": "U_PMNS = U_l,L^dagger U_nu,L",
+      "status": "STRUCTURALLY_INTEGRATED",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "Phi_nu",
+      "sector": "neutrino_pmns",
+      "symbol": "Phi_nu = phiA + varphi - phiB",
+      "status": "STRUCTURALLY_INTEGRATED",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "neutral_mass_splitting",
+      "sector": "neutrino_pmns",
+      "symbol": "Delta m_+-^2 = 2 epsilon_nu_topo^2 sqrt(((DeltaB-DeltaA)/2)^2 + |delta|^2)",
+      "status": "STRUCTURALLY_INTEGRATED",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "tan_2theta_AB",
+      "sector": "neutrino_pmns",
+      "symbol": "tan 2 theta_AB = 2 |delta|/(DeltaB-DeltaA)",
+      "status": "STRUCTURALLY_INTEGRATED",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "scalar_topographic_profile_solution",
+      "sector": "scalar_topographic",
+      "symbol": "scalar/topographic profile solution",
+      "status": "OPEN_UNRESOLVED",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "H_topo",
+      "sector": "scalar_topographic",
+      "symbol": "boundary Hessian H_topo",
+      "status": "OPEN_LOCALIZABLE",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "displacement_formula",
+      "sector": "scalar_topographic",
+      "symbol": "Delta y_ud = - H_topo^{-1} grad_y(delta S_partial^d - delta S_partial^u)|_{y0}",
+      "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "neutral_suppression_action",
+      "sector": "scalar_topographic",
+      "symbol": "neutral suppression action",
+      "status": "OPEN_LOCALIZABLE",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "scalar_topographic_decoupling_proof",
+      "sector": "scalar_topographic",
+      "symbol": "scalar/topographic decoupling proof",
+      "status": "OPEN_UNRESOLVED",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "stability_proof",
+      "sector": "scalar_topographic",
+      "symbol": "stability proof",
+      "status": "OPEN_UNRESOLVED",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "coupling_bounds",
+      "sector": "scalar_topographic",
+      "symbol": "coupling bounds",
+      "status": "OPEN_UNRESOLVED",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "collar_jacobian_J",
+      "name": "Collar Jacobian",
+      "symbol": "J(Y,rho)",
+      "sector": "neutrino_pmns",
+      "status": "DERIVED_CONDITIONAL",
+      "formula_candidate": "J(Y,rho)=det(I + rho S(Y)) or sign-equivalent; J(Y,rho)=sqrt(det h(Y,rho)/det h(Y,0))",
+      "derivation_source": "standard collar Jacobian and induced-metric determinant formula under smooth-boundary assumptions",
+      "depends_on": [
+        "collar_measure_extrinsic_geometry",
+        "collar_coordinate_rho",
+        "shape_operator_S",
+        "boundary_trace_K",
+        "normal_orientation"
+      ],
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "fitted FTL/anomaly data",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison K(Y) fit",
+        "post-comparison shape-operator fit",
+        "post-comparison normal-orientation fit"
+      ],
+      "claim_boundary": "symbolic collar Jacobian formula only; no numerical J or K value is derived or fitted",
+      "tests": [
+        "tests/test_collar_measure_extrinsic_geometry.py"
+      ],
+      "next_action": "derive shape operator and boundary trace from BHSM boundary/topographic geometry",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "boundary_trace_K",
+      "name": "Boundary trace / mean-curvature input",
+      "symbol": "K(Y)=tr(S)(Y)",
+      "sector": "neutrino_pmns",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "K(Y)=tr(S)(Y)=h^{AB}K_AB(Y), or sign-equivalent projected divergence of the normal",
+      "derivation_source": "standard extrinsic-geometry trace target; not yet derived from BHSM scalar/topographic boundary embedding",
+      "depends_on": [
+        "shape_operator_S",
+        "boundary induced metric h_AB",
+        "normal field n",
+        "scalar/topographic profile solution",
+        "normal_orientation"
+      ],
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "fitted FTL/anomaly data",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison K(Y) fit",
+        "post-comparison shape-operator fit",
+        "post-comparison normal-orientation fit"
+      ],
+      "claim_boundary": "K(Y) is a geometric dependency, not a fitted parameter; no numerical K value is claimed",
+      "tests": [
+        "tests/test_collar_measure_extrinsic_geometry.py"
+      ],
+      "next_action": "derive K(Y) from boundary embedding, normal divergence, or scalar/topographic level-set profile",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "shape_operator_S",
+      "name": "Boundary shape operator",
+      "symbol": "S^A_B(Y)",
+      "sector": "neutrino_pmns",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "S^A_B defines the first-order collar metric/Jacobian deformation; K(Y)=tr(S)(Y)",
+      "derivation_source": "standard extrinsic-geometry object required by the collar Jacobian; not yet derived from BHSM boundary profile",
+      "depends_on": [
+        "boundary embedding",
+        "induced metric h_AB",
+        "unit normal field n",
+        "ambient connection",
+        "scalar/topographic profile solution"
+      ],
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "fitted FTL/anomaly data",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison K(Y) fit",
+        "post-comparison shape-operator fit",
+        "post-comparison normal-orientation fit"
+      ],
+      "claim_boundary": "shape operator is exposed as an open geometric input and is not fitted",
+      "tests": [
+        "tests/test_collar_measure_extrinsic_geometry.py"
+      ],
+      "next_action": "derive S from the boundary embedding or scalar/topographic level-set geometry",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "collar_measure_extrinsic_geometry",
+      "name": "Collar measure / extrinsic geometry",
+      "symbol": "dV_collar = J(Y,rho) dA d rho; J(Y,rho)=det(I +/- rho S(Y))",
+      "sector": "neutrino_pmns",
+      "status": "DERIVED_CONDITIONAL",
+      "formula_candidate": "J(Y,rho)=det(I + rho S(Y)) or sign-equivalent; J(Y,rho)=1+rho K(Y)+O(rho^2)",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "standard smooth collar/tubular-neighborhood extrinsic geometry under fixed-boundary assumptions",
+      "depends_on": [
+        {
+          "id": "collar_coordinate_rho",
+          "status": "DERIVED_CONDITIONAL"
+        },
+        {
+          "id": "fixed smooth boundary",
+          "status": "DERIVED_CONDITIONAL"
+        },
+        {
+          "id": "boundary induced metric h_AB",
+          "status": "OPEN_LOCALIZABLE"
+        },
+        {
+          "id": "shape_operator_S",
+          "status": "OPEN_LOCALIZABLE"
+        },
+        {
+          "id": "boundary_trace_K",
+          "status": "OPEN_LOCALIZABLE"
+        },
+        {
+          "id": "normal_orientation",
+          "status": "OPEN_LOCALIZABLE"
+        },
+        {
+          "id": "scalar/topographic profile solution",
+          "status": "OPEN_UNRESOLVED"
+        }
+      ],
+      "candidate_routes": [
+        {
+          "id": "route_A_standard_collar_jacobian",
+          "formula": "J(Y,rho)=det(I + rho S(Y)) or det(I - rho S(Y)) depending on normal orientation",
+          "dependencies": [
+            "boundary embedding",
+            "induced metric h_AB",
+            "shape operator S",
+            "normal orientation"
+          ],
+          "status": "DERIVED_CONDITIONAL",
+          "reason": "Standard collar geometry gives the Jacobian formula once smooth boundary and shape-operator data are supplied.",
+          "allowed_next_action": "derive S and the orientation convention from BHSM boundary/topographic geometry",
+          "forbidden_shortcut": "fit J, K, or S to neutrino, PMNS, anomaly, or FTL data"
+        },
+        {
+          "id": "route_B_induced_metric_determinant",
+          "formula": "J(Y,rho)=sqrt(det h(Y,rho)/det h(Y,0)); h_AB(Y,rho)=h_AB(Y,0)+2 rho K_AB(Y)+O(rho^2)",
+          "dependencies": [
+            "collar metric h_AB(Y,rho)",
+            "second fundamental form K_AB",
+            "normal sign convention"
+          ],
+          "status": "DERIVED_CONDITIONAL",
+          "reason": "The determinant identity is geometric; BHSM-specific metric and K_AB data remain open.",
+          "allowed_next_action": "derive the collar metric and second fundamental form from the scalar/topographic boundary embedding",
+          "forbidden_shortcut": "choose h_AB or K_AB after comparison"
+        },
+        {
+          "id": "route_C_normal_divergence",
+          "formula": "K(Y)=div_boundary n or projected nabla_mu n^mu",
+          "dependencies": [
+            "unit normal field",
+            "ambient connection",
+            "boundary projection"
+          ],
+          "status": "OPEN_LOCALIZABLE",
+          "reason": "The repo tracks normal orientation but does not yet derive the full normal field or projected divergence.",
+          "allowed_next_action": "derive the normal field from boundary embedding or scalar level set",
+          "forbidden_shortcut": "pick the trace or sign from residuals"
+        },
+        {
+          "id": "route_D_topographic_level_set",
+          "formula": "n_mu=partial_mu Phi/sqrt(partial_alpha Phi partial^alpha Phi); K=nabla_mu n^mu",
+          "dependencies": [
+            "scalar/topographic profile solution",
+            "background metric",
+            "regular nonzero gradient",
+            "boundary embedding"
+          ],
+          "status": "OPEN_LOCALIZABLE",
+          "reason": "The scalar/topographic profile solution and embedding remain open.",
+          "allowed_next_action": "solve or bound the scalar/topographic profile and level-set geometry",
+          "forbidden_shortcut": "tune the profile from neutrino or FTL data"
+        },
+        {
+          "id": "route_E_hessian_second_variation",
+          "formula": "K ~ Tr_boundary(H_topo) as a possible projected Hessian trace",
+          "dependencies": [
+            "full topographic Hessian",
+            "projection theorem",
+            "Hessian-to-curvature identity"
+          ],
+          "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+          "reason": "Existing Hessian scaffolds do not prove that the Hessian trace equals the extrinsic curvature trace in the collar measure.",
+          "allowed_next_action": "prove or reject the Hessian-to-curvature relation from the action",
+          "forbidden_shortcut": "assert a Hessian trace as K without proof"
+        },
+        {
+          "id": "route_F_conservative_open_dependency",
+          "formula": "J(Y,rho)=1+rho K(Y)+O(rho^2), with K(Y) exposed as an open geometric dependency",
+          "dependencies": [
+            "standard collar formula",
+            "open K(Y)",
+            "open S(Y)"
+          ],
+          "status": "DERIVED_CONDITIONAL",
+          "reason": "The expansion is conditionally available, but evaluation data remain open and unfitted.",
+          "allowed_next_action": "keep K exposed until derived from BHSM boundary geometry",
+          "forbidden_shortcut": "treat K as a fitted damping or scale parameter"
+        }
+      ],
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "fitted FTL/anomaly data",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison K(Y) fit",
+        "post-comparison shape-operator fit",
+        "post-comparison normal-orientation fit",
+        "post-comparison lambda_nu fit",
+        "post-comparison A_nu/B_nu fit"
+      ],
+      "claim_boundary": "The collar-measure expansion is derived conditionally from standard collar/extrinsic geometry as a symbolic formula. Boundary trace/extrinsic curvature data needed to evaluate K(Y) remain open geometric dependencies, not fitted parameters.",
+      "tests": [
+        "tests/test_collar_measure_extrinsic_geometry.py"
+      ],
+      "next_action": "derive or reject boundary embedding, induced metric, shape operator, normal orientation, and scalar/topographic level-set profile before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    }
   ],
   "open_numerical_inputs": [
     "G^(f)",
@@ -1237,7 +2755,12 @@
     "H_topo",
     "scalar/topographic decoupling proof",
     "stability proof",
-    "higher-loop thresholds"
+    "higher-loop thresholds",
+    "boundary_trace_K",
+    "shape_operator_S",
+    "boundary induced metric h_AB",
+    "boundary embedding",
+    "normal orientation"
   ],
   "forbidden_fit_routes": [
     "fit beta0 to masses",
@@ -1253,20 +2776,59 @@
     "fit Delta_y_nu to neutrino masses or PMNS data",
     "fit S_nu_topo to neutrino scale",
     "fit PMNS phase loop to measured CP value",
-    "fit scalar/topographic profile parameters to hide extra light states"
+    "fit scalar/topographic profile parameters to hide extra light states",
+    "fit J(Y,rho), K(Y), shape operator S, boundary embedding, or collar-measure curvature data to neutrino masses, PMNS data, or FTL/anomaly data",
+    "fit boundary trace K(Y) or shape operator S to make Robin coefficients or neutral suppression work"
   ],
   "claim_status_table": [
-    {"claim": "finite algebra", "status": "DERIVED_CONDITIONAL"},
-    {"claim": "SM-like charges", "status": "DERIVED_CONDITIONAL"},
-    {"claim": "gauge normalization scaffold", "status": "DERIVED_CONDITIONAL"},
-    {"claim": "charged hierarchy mechanism", "status": "STRUCTURALLY_INTEGRATED"},
-    {"claim": "CKM source", "status": "STRUCTURALLY_INTEGRATED"},
-    {"claim": "CKM CP source", "status": "STRUCTURALLY_INTEGRATED"},
-    {"claim": "neutral topographic suppression route", "status": "STRUCTURALLY_INTEGRATED"},
-    {"claim": "PMNS source", "status": "STRUCTURALLY_INTEGRATED"},
-    {"claim": "PMNS CP source", "status": "STRUCTURALLY_INTEGRATED"},
-    {"claim": "full numerical SM prediction", "status": "OPEN_UNRESOLVED"},
-    {"claim": "replacement readiness", "status": "OPEN_UNRESOLVED"}
+    {
+      "claim": "finite algebra",
+      "status": "DERIVED_CONDITIONAL"
+    },
+    {
+      "claim": "SM-like charges",
+      "status": "DERIVED_CONDITIONAL"
+    },
+    {
+      "claim": "gauge normalization scaffold",
+      "status": "DERIVED_CONDITIONAL"
+    },
+    {
+      "claim": "charged hierarchy mechanism",
+      "status": "STRUCTURALLY_INTEGRATED"
+    },
+    {
+      "claim": "CKM source",
+      "status": "STRUCTURALLY_INTEGRATED"
+    },
+    {
+      "claim": "CKM CP source",
+      "status": "STRUCTURALLY_INTEGRATED"
+    },
+    {
+      "claim": "neutral topographic suppression route",
+      "status": "STRUCTURALLY_INTEGRATED"
+    },
+    {
+      "claim": "PMNS source",
+      "status": "STRUCTURALLY_INTEGRATED"
+    },
+    {
+      "claim": "PMNS CP source",
+      "status": "STRUCTURALLY_INTEGRATED"
+    },
+    {
+      "claim": "full numerical SM prediction",
+      "status": "OPEN_UNRESOLVED"
+    },
+    {
+      "claim": "replacement readiness",
+      "status": "OPEN_UNRESOLVED"
+    },
+    {
+      "claim": "collar measure / extrinsic geometry",
+      "status": "DERIVED_CONDITIONAL_WITH_OPEN_GEOMETRIC_INPUTS"
+    }
   ],
   "verdict_labels": [
     "PO_BH_47_NUMERICAL_INPUT_CLOSURE_MAP_THEOREM",
@@ -1297,6 +2859,251 @@
     "FULL_NUMERICAL_SM_PREDICTION_OPEN",
     "REPLACEMENT_READINESS_NOT_ACHIEVED",
     "FROZEN_PREDICTIONS_UNCHANGED",
-    "OFFICIAL_PREDICTIONS_UNCHANGED"
-  ]
+    "OFFICIAL_PREDICTIONS_UNCHANGED",
+    "PO_BH_57_COLLAR_MEASURE_EXTRINSIC_GEOMETRY_CONDITIONAL",
+    "COLLAR_JACOBIAN_DERIVED_CONDITIONAL",
+    "BOUNDARY_TRACE_K_OPEN",
+    "SHAPE_OPERATOR_S_OPEN"
+  ],
+  "collar_measure_extrinsic_geometry": {
+    "id": "PO-BH-57",
+    "name": "Collar measure / extrinsic geometry",
+    "symbol": "dV_collar = J(Y,rho) dA d rho; J(Y,rho)=det(I +/- rho S(Y))",
+    "sector": "neutrino_pmns",
+    "status": "DERIVED_CONDITIONAL",
+    "formula_candidate": "J(Y,rho)=det(I + rho S(Y)) or sign-equivalent; J(Y,rho)=1+rho K(Y)+O(rho^2)",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "standard smooth collar/tubular-neighborhood extrinsic geometry under fixed-boundary assumptions",
+    "depends_on": [
+      {
+        "id": "collar_coordinate_rho",
+        "status": "DERIVED_CONDITIONAL"
+      },
+      {
+        "id": "fixed smooth boundary",
+        "status": "DERIVED_CONDITIONAL"
+      },
+      {
+        "id": "boundary induced metric h_AB",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "shape_operator_S",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "boundary_trace_K",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "normal_orientation",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "scalar/topographic profile solution",
+        "status": "OPEN_UNRESOLVED"
+      }
+    ],
+    "candidate_routes": [
+      {
+        "id": "route_A_standard_collar_jacobian",
+        "formula": "J(Y,rho)=det(I + rho S(Y)) or det(I - rho S(Y)) depending on normal orientation",
+        "dependencies": [
+          "boundary embedding",
+          "induced metric h_AB",
+          "shape operator S",
+          "normal orientation"
+        ],
+        "status": "DERIVED_CONDITIONAL",
+        "reason": "Standard collar geometry gives the Jacobian formula once smooth boundary and shape-operator data are supplied.",
+        "allowed_next_action": "derive S and the orientation convention from BHSM boundary/topographic geometry",
+        "forbidden_shortcut": "fit J, K, or S to neutrino, PMNS, anomaly, or FTL data"
+      },
+      {
+        "id": "route_B_induced_metric_determinant",
+        "formula": "J(Y,rho)=sqrt(det h(Y,rho)/det h(Y,0)); h_AB(Y,rho)=h_AB(Y,0)+2 rho K_AB(Y)+O(rho^2)",
+        "dependencies": [
+          "collar metric h_AB(Y,rho)",
+          "second fundamental form K_AB",
+          "normal sign convention"
+        ],
+        "status": "DERIVED_CONDITIONAL",
+        "reason": "The determinant identity is geometric; BHSM-specific metric and K_AB data remain open.",
+        "allowed_next_action": "derive the collar metric and second fundamental form from the scalar/topographic boundary embedding",
+        "forbidden_shortcut": "choose h_AB or K_AB after comparison"
+      },
+      {
+        "id": "route_C_normal_divergence",
+        "formula": "K(Y)=div_boundary n or projected nabla_mu n^mu",
+        "dependencies": [
+          "unit normal field",
+          "ambient connection",
+          "boundary projection"
+        ],
+        "status": "OPEN_LOCALIZABLE",
+        "reason": "The repo tracks normal orientation but does not yet derive the full normal field or projected divergence.",
+        "allowed_next_action": "derive the normal field from boundary embedding or scalar level set",
+        "forbidden_shortcut": "pick the trace or sign from residuals"
+      },
+      {
+        "id": "route_D_topographic_level_set",
+        "formula": "n_mu=partial_mu Phi/sqrt(partial_alpha Phi partial^alpha Phi); K=nabla_mu n^mu",
+        "dependencies": [
+          "scalar/topographic profile solution",
+          "background metric",
+          "regular nonzero gradient",
+          "boundary embedding"
+        ],
+        "status": "OPEN_LOCALIZABLE",
+        "reason": "The scalar/topographic profile solution and embedding remain open.",
+        "allowed_next_action": "solve or bound the scalar/topographic profile and level-set geometry",
+        "forbidden_shortcut": "tune the profile from neutrino or FTL data"
+      },
+      {
+        "id": "route_E_hessian_second_variation",
+        "formula": "K ~ Tr_boundary(H_topo) as a possible projected Hessian trace",
+        "dependencies": [
+          "full topographic Hessian",
+          "projection theorem",
+          "Hessian-to-curvature identity"
+        ],
+        "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+        "reason": "Existing Hessian scaffolds do not prove that the Hessian trace equals the extrinsic curvature trace in the collar measure.",
+        "allowed_next_action": "prove or reject the Hessian-to-curvature relation from the action",
+        "forbidden_shortcut": "assert a Hessian trace as K without proof"
+      },
+      {
+        "id": "route_F_conservative_open_dependency",
+        "formula": "J(Y,rho)=1+rho K(Y)+O(rho^2), with K(Y) exposed as an open geometric dependency",
+        "dependencies": [
+          "standard collar formula",
+          "open K(Y)",
+          "open S(Y)"
+        ],
+        "status": "DERIVED_CONDITIONAL",
+        "reason": "The expansion is conditionally available, but evaluation data remain open and unfitted.",
+        "allowed_next_action": "keep K exposed until derived from BHSM boundary geometry",
+        "forbidden_shortcut": "treat K as a fitted damping or scale parameter"
+      }
+    ],
+    "forbidden_inputs": [
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "PMNS angles",
+      "PMNS CP phase",
+      "fitted FTL/anomaly data",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison K(Y) fit",
+      "post-comparison shape-operator fit",
+      "post-comparison normal-orientation fit",
+      "post-comparison lambda_nu fit",
+      "post-comparison A_nu/B_nu fit"
+    ],
+    "claim_boundary": "The collar-measure expansion is derived conditionally from standard collar/extrinsic geometry as a symbolic formula. Boundary trace/extrinsic curvature data needed to evaluate K(Y) remain open geometric dependencies, not fitted parameters.",
+    "tests": [
+      "tests/test_collar_measure_extrinsic_geometry.py"
+    ],
+    "next_action": "derive or reject boundary embedding, induced metric, shape operator, normal orientation, and scalar/topographic level-set profile before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "collar_jacobian_J": {
+    "id": "collar_jacobian_J",
+    "name": "Collar Jacobian",
+    "symbol": "J(Y,rho)",
+    "sector": "neutrino_pmns",
+    "status": "DERIVED_CONDITIONAL",
+    "formula_candidate": "J(Y,rho)=det(I + rho S(Y)) or sign-equivalent; J(Y,rho)=sqrt(det h(Y,rho)/det h(Y,0))",
+    "derivation_source": "standard collar Jacobian and induced-metric determinant formula under smooth-boundary assumptions",
+    "depends_on": [
+      "collar_measure_extrinsic_geometry",
+      "collar_coordinate_rho",
+      "shape_operator_S",
+      "boundary_trace_K",
+      "normal_orientation"
+    ],
+    "forbidden_inputs": [
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "PMNS angles",
+      "PMNS CP phase",
+      "fitted FTL/anomaly data",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison K(Y) fit",
+      "post-comparison shape-operator fit",
+      "post-comparison normal-orientation fit"
+    ],
+    "claim_boundary": "symbolic collar Jacobian formula only; no numerical J or K value is derived or fitted",
+    "tests": [
+      "tests/test_collar_measure_extrinsic_geometry.py"
+    ],
+    "next_action": "derive shape operator and boundary trace from BHSM boundary/topographic geometry",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "boundary_trace_K": {
+    "id": "boundary_trace_K",
+    "name": "Boundary trace / mean-curvature input",
+    "symbol": "K(Y)=tr(S)(Y)",
+    "sector": "neutrino_pmns",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "K(Y)=tr(S)(Y)=h^{AB}K_AB(Y), or sign-equivalent projected divergence of the normal",
+    "derivation_source": "standard extrinsic-geometry trace target; not yet derived from BHSM scalar/topographic boundary embedding",
+    "depends_on": [
+      "shape_operator_S",
+      "boundary induced metric h_AB",
+      "normal field n",
+      "scalar/topographic profile solution",
+      "normal_orientation"
+    ],
+    "forbidden_inputs": [
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "PMNS angles",
+      "PMNS CP phase",
+      "fitted FTL/anomaly data",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison K(Y) fit",
+      "post-comparison shape-operator fit",
+      "post-comparison normal-orientation fit"
+    ],
+    "claim_boundary": "K(Y) is a geometric dependency, not a fitted parameter; no numerical K value is claimed",
+    "tests": [
+      "tests/test_collar_measure_extrinsic_geometry.py"
+    ],
+    "next_action": "derive K(Y) from boundary embedding, normal divergence, or scalar/topographic level-set profile",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "shape_operator_S": {
+    "id": "shape_operator_S",
+    "name": "Boundary shape operator",
+    "symbol": "S^A_B(Y)",
+    "sector": "neutrino_pmns",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "S^A_B defines the first-order collar metric/Jacobian deformation; K(Y)=tr(S)(Y)",
+    "derivation_source": "standard extrinsic-geometry object required by the collar Jacobian; not yet derived from BHSM boundary profile",
+    "depends_on": [
+      "boundary embedding",
+      "induced metric h_AB",
+      "unit normal field n",
+      "ambient connection",
+      "scalar/topographic profile solution"
+    ],
+    "forbidden_inputs": [
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "PMNS angles",
+      "PMNS CP phase",
+      "fitted FTL/anomaly data",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison K(Y) fit",
+      "post-comparison shape-operator fit",
+      "post-comparison normal-orientation fit"
+    ],
+    "claim_boundary": "shape operator is exposed as an open geometric input and is not fitted",
+    "tests": [
+      "tests/test_collar_measure_extrinsic_geometry.py"
+    ],
+    "next_action": "derive S from the boundary embedding or scalar/topographic level-set geometry",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  }
 }

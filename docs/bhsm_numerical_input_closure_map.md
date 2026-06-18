@@ -202,6 +202,24 @@ derive the collar measure, orientation, edge condition, admissible variations,
 and Robin coefficients. Any pieces not fixed by the existing action remain
 open and cannot be fitted post-comparison.
 
+PO-BH-57 derives the collar-measure expansion conditionally from standard
+collar/extrinsic geometry. Under a smooth fixed boundary, induced metric, shape
+operator `S`, and explicit normal-orientation convention, the collar Jacobian
+has the symbolic form:
+
+`J(Y,rho)=det(I + rho S(Y))`
+
+or the sign-convention equivalent `det(I - rho S(Y))`. Therefore:
+
+`J(Y,rho)=1 + rho K(Y) + O(rho^2)`
+
+with `K(Y)=tr(S)(Y)` up to orientation sign. Status:
+`DERIVED_CONDITIONAL` for `collar_measure_extrinsic_geometry` and
+`collar_jacobian_J`; `OPEN_LOCALIZABLE` for `boundary_trace_K` and
+`shape_operator_S`. The boundary trace/extrinsic curvature data needed to
+evaluate `K(Y)` remain open unless derived elsewhere in BHSM. These quantities
+are geometric dependencies, not fitted parameters.
+
 with
 
 `H_nu^(0) = [[lambda0+Delta0, etaA exp(i phiA), etaB exp(i phiB)], [etaA exp(-i phiA), lambda3+DeltaA, delta exp(i varphi)], [etaB exp(-i phiB), delta exp(-i varphi), lambda3+DeltaB]]`.
@@ -243,6 +261,7 @@ Near-degenerate mixing scaffold:
 - fit `R_nu`, collar convention, or Robin coefficients to neutrino masses, PMNS data, or FTL/anomaly data;
 - fit collar coordinate, measure, orientation, edge condition, variation data, or Robin coefficients to neutrino masses, PMNS data, or FTL/anomaly data;
 - fit the complete scalar/topographic collar action, `L_collar`, `J(Y,rho)`, `s_n`, edge data, `A_nu`, or `B_nu` to neutrino masses, PMNS data, or FTL/anomaly data;
+- fit `J(Y,rho)`, `K(Y)`, the shape operator `S`, boundary embedding, or collar-measure curvature data to neutrino masses, PMNS data, or FTL/anomaly data;
 - fit `S_eff_nu` to neutrino masses or PMNS data;
 - fit `g_sub`, `ellapse_nu`, or `Pi_sub_to_ext` to neutrino masses, PMNS data, or FTL/anomaly data;
 - fit `S_nu_topo` to neutrino scale;
@@ -268,6 +287,8 @@ The scalar/topographic boundary variation has been derived conditionally as a sy
 The collar geometry package has been localized as the missing convention set for the neutral normal-coupling term. Collar coordinate, measure, orientation, edge condition, and admissible variation data are now explicit closure-map objects. Robin coefficients remain open unless a full collar convention is derived.
 
 The complete scalar/topographic collar action has been audited as the source needed to derive the collar measure, orientation, edge condition, admissible variations, and Robin coefficients. Any pieces not fixed by the existing action remain open and cannot be fitted post-comparison.
+
+The collar-measure expansion has been derived conditionally from standard collar/extrinsic geometry as a symbolic formula. The boundary trace/extrinsic curvature data needed to evaluate `K(Y)` remain open unless derived elsewhere in BHSM. These quantities are geometric dependencies, not fitted parameters.
 
 PO-BH-54 localizes the normal-coupling/collar convention for the neutral
 boundary term:
