@@ -2,7 +2,7 @@
   "id": "PO-BH-47",
   "title": "Numerical Input Closure Map Theorem",
   "status": "STRUCTURAL_ARCHITECTURE_INTEGRATED_CONDITIONAL_NUMERICAL_CLOSURE_OPEN",
-  "branch": "bhsm-theorem-discharge-numerical-input-closure-map-v1",
+  "branch": "bhsm-scalar-topographic-level-set-boundary-v1",
   "official_predictions_changed": false,
   "frozen_predictions_changed": false,
   "standard_model_fully_derived": false,
@@ -17,7 +17,9 @@
     "OPEN_LOCALIZABLE",
     "OPEN_UNRESOLVED",
     "FROZEN_CANDIDATE",
-    "FORBIDDEN_TO_FIT"
+    "FORBIDDEN_TO_FIT",
+    "LOCALIZED_NOT_NUMERIC",
+    "DERIVED_CONDITIONAL_WITH_OPEN_LEVEL_SET_INPUTS"
   ],
   "ledgers": {
     "charged_lepton": [
@@ -149,7 +151,16 @@
     "shape_operator_S": "S^A_B = h^{AC} K_CB",
     "boundary_trace_K_shape": "K = tr(S) = h^{AB} K_AB",
     "level_set_normal": "n_mu = partial_mu F/sqrt(g^{alpha beta}partial_alpha F partial_beta F), or n_mu = partial_mu Phi/|grad Phi|",
-    "projected_hessian_curvature_candidate": "K_AB ~ P_A^mu P_B^nu nabla_mu nabla_nu Phi/|grad Phi| when a level-set theorem is derived"
+    "projected_hessian_curvature_candidate": "K_AB ~ P_A^mu P_B^nu nabla_mu nabla_nu Phi/|grad Phi| when a level-set theorem is derived",
+    "spacetime_topographic_scalar_T": "T(x,t) = T_bg(t) + A_T,dip(t)(ihat . uhat) + T_loc(x,t)",
+    "scalar_topographic_level_set_F_STF": "F_STF(x,t) = T(x,t) - T_0",
+    "internal_level_set_F_int": "F_int(y) = Phi(y) - Phi_0",
+    "level_set_unit_normal": "n_mu = partial_mu F / sqrt(|g^{alpha beta} partial_alpha F partial_beta F|)",
+    "spacetime_level_set_normal_T": "n_mu = partial_mu T / sqrt(|g^{alpha beta} partial_alpha T partial_beta T|)",
+    "internal_level_set_normal_Phi": "n_a = partial_a Phi / sqrt(|g_B^{bc} partial_b Phi partial_c Phi|)",
+    "level_set_trace_curvature": "K = nabla_mu n^mu; internal analogue K_int = nabla_a n^a",
+    "level_set_projected_hessian_curvature": "K_AB = P_A^mu P_B^nu nabla_mu nabla_nu F / |grad F|, conditional on projection/sign/normalization conventions",
+    "level_set_collar_jacobian": "J(Y,rho)=det(I + rho S(Y)); J(Y,rho)=1 + rho K(Y) + O(rho^2)"
   },
   "phase_admissibility": {
     "absolute_alpha0_physical": false,
@@ -1671,9 +1682,41 @@
     {
       "id": "epsilon_nu_topo",
       "sector": "neutrino_pmns",
-      "symbol": "epsilon_nu_topo = exp(-S_nu_topo)",
-      "status": "STRUCTURALLY_INTEGRATED",
-      "fit_policy": "FORBIDDEN_TO_FIT"
+      "symbol": "epsilon_nu_topo=exp(-S_nu_topo)",
+      "status": "OPEN_LOCALIZABLE",
+      "fit_policy": "FORBIDDEN_TO_FIT",
+      "name": "Neutral topographic suppression factor",
+      "formula_candidate": "epsilon_nu_topo=exp(-S_nu_topo)",
+      "derivation_source": "structural relation only; value depends on open S_nu_topo",
+      "depends_on": [
+        "neutral_topographic_action_S_nu_topo",
+        "S_nu_topo"
+      ],
+      "claim_boundary": "structural relation only; value remains open until S_nu_topo is derived and locked before comparison",
+      "next_action": "derive S_nu_topo before comparison",
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "CKM values",
+        "fitted FTL/anomaly data",
+        "propulsion data",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison topographic profile fit",
+        "post-comparison boundary embedding fit",
+        "post-comparison normal fit",
+        "post-comparison second fundamental form fit",
+        "post-comparison shape-operator fit",
+        "post-comparison K(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "tests": [
+        "tests/test_scalar_topographic_level_set_boundary_embedding.py"
+      ]
     },
     {
       "id": "explicit_scalar_topographic_boundary_variation",
@@ -2270,17 +2313,36 @@
         "Delta_y_nu",
         "G_nu_topo",
         "S_barrier",
-        "neutral finite-width saddle/path"
+        "neutral finite-width saddle/path",
+        "scalar_topographic_level_set_F",
+        "internal_topographic_profile_Phi",
+        "spacetime_topographic_scalar_T"
       ],
       "forbidden_inputs": [
         "observed neutrino masses",
         "observed neutrino mass splittings",
         "PMNS data",
-        "post-comparison epsilon_nu_topo fit"
+        "post-comparison epsilon_nu_topo fit",
+        "PMNS angles",
+        "PMNS CP phase",
+        "CKM values",
+        "fitted FTL/anomaly data",
+        "propulsion data",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison topographic profile fit",
+        "post-comparison boundary embedding fit",
+        "post-comparison normal fit",
+        "post-comparison second fundamental form fit",
+        "post-comparison shape-operator fit",
+        "post-comparison K(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit"
       ],
-      "claim_boundary": "localizable candidate only; numerical neutrino closure remains open",
+      "claim_boundary": "localizable candidate only; PO-BH-59 adds level-set geometry as a possible source, but numerical neutrino closure remains open",
       "tests": [
-        "tests/test_neutral_topographic_suppression_action.py"
+        "tests/test_neutral_topographic_suppression_action.py",
+        "tests/test_scalar_topographic_level_set_boundary_embedding.py"
       ],
       "next_action": "derive or reject the neutral Hessian/barrier formula before comparison",
       "fit_policy": "FORBIDDEN_TO_FIT"
@@ -2879,7 +2941,10 @@
         "smooth boundary partialB",
         "background space B",
         "scalar/topographic boundary profile",
-        "coordinate chart or invariant embedding convention"
+        "coordinate chart or invariant embedding convention",
+        "scalar_topographic_level_set_F",
+        "spacetime_topographic_scalar_T",
+        "internal_topographic_profile_Phi"
       ],
       "forbidden_inputs": [
         "observed neutrino masses",
@@ -2893,13 +2958,21 @@
         "post-comparison second fundamental form fit",
         "post-comparison shape-operator fit",
         "post-comparison K(Y) fit",
-        "post-comparison J(Y,rho) fit"
+        "post-comparison J(Y,rho) fit",
+        "CKM values",
+        "propulsion data",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison topographic profile fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
       ],
-      "claim_boundary": "embedding is localized as the geometric input needed for h_AB, n, K_AB, S, and K; no embedding value is fitted or derived here",
+      "claim_boundary": "embedding is localized as the geometric input needed for h_AB, n, K_AB, S, and K; PO-BH-59 adds candidate level-set routes, but no embedding value is fitted or derived here",
       "tests": [
-        "tests/test_boundary_embedding_shape_operator.py"
+        "tests/test_boundary_embedding_shape_operator.py",
+        "tests/test_scalar_topographic_level_set_boundary_embedding.py"
       ],
-      "next_action": "derive X from the scalar/topographic boundary profile or an invariant BHSM boundary embedding theorem",
+      "next_action": "derive X from the scalar/topographic level-set profile or an invariant BHSM boundary embedding theorem",
       "fit_policy": "FORBIDDEN_TO_FIT"
     },
     {
@@ -3006,6 +3079,498 @@
       ],
       "next_action": "derive K_AB from X, n, and the BHSM background/topographic connection",
       "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "PO-BH-59",
+      "name": "Scalar/topographic level-set boundary embedding",
+      "symbol": "F_STF=T-T_0; F_int=Phi-Phi_0; n=grad F/|grad F|",
+      "sector": "neutrino_pmns",
+      "status": "DERIVED_CONDITIONAL_WITH_OPEN_LEVEL_SET_INPUTS",
+      "formula_candidate": "F_STF(x,t)=T(x,t)-T_0; F_int(y)=Phi(y)-Phi_0; n=grad F/|grad F|; K=nabla.n; S^A_B=h^{AC}K_CB; J=det(I+rho S)",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "standard regular-level-set and extrinsic geometry conditional on explicit BHSM scalar/topographic profiles, thresholds, metrics, and orientation",
+      "depends_on": [
+        {
+          "id": "spacetime_topographic_scalar_T",
+          "status": "LOCALIZED_NOT_NUMERIC"
+        },
+        {
+          "id": "internal_topographic_profile_Phi",
+          "status": "LOCALIZED_NOT_NUMERIC"
+        },
+        {
+          "id": "scalar_topographic_level_set_F",
+          "status": "OPEN_LOCALIZABLE"
+        },
+        {
+          "id": "boundary_embedding_X",
+          "status": "OPEN_LOCALIZABLE"
+        },
+        {
+          "id": "level_set_unit_normal_n",
+          "status": "DERIVED_CONDITIONAL"
+        },
+        {
+          "id": "level_set_shape_operator_S",
+          "status": "DERIVED_CONDITIONAL"
+        },
+        {
+          "id": "neutral_topographic_action_S_nu_topo",
+          "status": "OPEN_LOCALIZABLE"
+        }
+      ],
+      "candidate_routes": [
+        {
+          "id": "route_A_spacetime_topographic_scalar",
+          "formula": "F_STF(x,t)=T(x,t)-T_0",
+          "status": "OPEN_LOCALIZABLE",
+          "reason": "T is localized as framework notation, but T_0 and explicit functions are not derived."
+        },
+        {
+          "id": "route_B_internal_berger_profile",
+          "formula": "F_int(y)=Phi(y)-Phi_0",
+          "status": "OPEN_LOCALIZABLE",
+          "reason": "Phi is localized as a profile symbol, but Phi_0 and explicit profile/metric values are not derived."
+        },
+        {
+          "id": "route_C_direct_embedding",
+          "formula": "F(X(Y))=0",
+          "status": "OPEN_LOCALIZABLE",
+          "reason": "No explicit BHSM embedding theorem fixes X."
+        },
+        {
+          "id": "route_D_regular_level_set_normal",
+          "formula": "n=grad F/|grad F|",
+          "status": "DERIVED_CONDITIONAL",
+          "reason": "Standard formula under nonzero-gradient, metric, and orientation assumptions."
+        },
+        {
+          "id": "route_E_trace_and_shape_operator",
+          "formula": "K=nabla_mu n^mu; S^A_B=h^{AC}K_CB",
+          "status": "DERIVED_CONDITIONAL",
+          "reason": "Standard extrinsic formulas once regular level-set data are supplied."
+        },
+        {
+          "id": "route_F_hessian_projected_curvature",
+          "formula": "K_AB=P_A^mu P_B^nu nabla_mu nabla_nu F/|grad F|",
+          "status": "DERIVED_CONDITIONAL",
+          "reason": "Conditional on projection, sign, normalization, metric, and nonzero-gradient conventions."
+        },
+        {
+          "id": "route_G_collar_jacobian_consistency",
+          "formula": "J=det(I+rho S)",
+          "status": "DERIVED_CONDITIONAL",
+          "reason": "Follows from PO-BH-57 once S is supplied."
+        },
+        {
+          "id": "route_H_boundary_saddle_data",
+          "formula": "y_H, y_nu, y_0 as point/saddle data",
+          "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+          "reason": "Point or saddle data do not define a full boundary embedding without a profile theorem."
+        }
+      ],
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "CKM values",
+        "fitted FTL/anomaly data",
+        "propulsion data",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison topographic profile fit",
+        "post-comparison boundary embedding fit",
+        "post-comparison normal fit",
+        "post-comparison second fundamental form fit",
+        "post-comparison shape-operator fit",
+        "post-comparison K(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "PO-BH-59 localizes scalar/topographic level-set routes and derives regular-level-set geometry conditionally; it does not derive explicit profiles, thresholds, metric values, S_nu_topo, epsilon_nu_topo, or numerical neutrino/PMNS/CKM predictions.",
+      "tests": [
+        "tests/test_scalar_topographic_level_set_boundary_embedding.py"
+      ],
+      "next_action": "derive or reject explicit T and Phi profiles, thresholds T_0/Phi_0, nonzero-gradient conditions, metric values, and boundary embedding X before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "scalar_topographic_level_set_F",
+      "name": "Scalar/topographic level-set boundary equation",
+      "symbol": "F_STF=T-T_0; F_int=Phi-Phi_0",
+      "sector": "neutrino_pmns",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "F_STF(x,t)=T(x,t)-T_0 and F_int(y)=Phi(y)-Phi_0",
+      "derivation_source": "candidate regular-level-set route; thresholds and explicit profiles not derived",
+      "depends_on": [
+        "spacetime_topographic_scalar_T",
+        "internal_topographic_profile_Phi",
+        "T_0",
+        "Phi_0",
+        "nonzero-gradient proof",
+        "background metric"
+      ],
+      "claim_boundary": "level-set equations are localized as candidates; thresholds and explicit profile values remain open",
+      "next_action": "derive T_0, Phi_0, explicit profiles, and regularity before comparison",
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "CKM values",
+        "fitted FTL/anomaly data",
+        "propulsion data",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison topographic profile fit",
+        "post-comparison boundary embedding fit",
+        "post-comparison normal fit",
+        "post-comparison second fundamental form fit",
+        "post-comparison shape-operator fit",
+        "post-comparison K(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "tests": [
+        "tests/test_scalar_topographic_level_set_boundary_embedding.py"
+      ],
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "spacetime_topographic_scalar_T",
+      "name": "Spacetime topographic scalar",
+      "symbol": "T(x,t)",
+      "sector": "scalar_topographic",
+      "status": "LOCALIZED_NOT_NUMERIC",
+      "formula_candidate": "T(x,t)=T_bg(t)+A_T,dip(t)(ihat . uhat)+T_loc(x,t)",
+      "derivation_source": "uploaded framework notation used only as structural localization support",
+      "depends_on": [
+        "T_bg(t)",
+        "A_T,dip(t)",
+        "T_loc(x,t)",
+        "T_0",
+        "spacetime metric"
+      ],
+      "claim_boundary": "T is localized as framework notation; no numerical profile or threshold is derived",
+      "next_action": "derive explicit T profile and threshold from BHSM topographic dynamics",
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "CKM values",
+        "fitted FTL/anomaly data",
+        "propulsion data",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison topographic profile fit",
+        "post-comparison boundary embedding fit",
+        "post-comparison normal fit",
+        "post-comparison second fundamental form fit",
+        "post-comparison shape-operator fit",
+        "post-comparison K(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "tests": [
+        "tests/test_scalar_topographic_level_set_boundary_embedding.py"
+      ],
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "internal_topographic_profile_Phi",
+      "name": "Internal Berger/topographic profile",
+      "symbol": "Phi(y)",
+      "sector": "scalar_topographic",
+      "status": "LOCALIZED_NOT_NUMERIC",
+      "formula_candidate": "Phi(y) on internal Berger B^3 with radius r and squash epsilon, peaked at y_0",
+      "derivation_source": "uploaded framework notation used only as internal profile localization support",
+      "depends_on": [
+        "internal Berger metric g_B",
+        "radius r",
+        "squash epsilon",
+        "distinguished point y_0",
+        "Phi_0",
+        "explicit profile"
+      ],
+      "claim_boundary": "Phi is localized as an internal profile symbol; no explicit profile, threshold, or curvature value is derived",
+      "next_action": "derive explicit Phi profile and level-set threshold from the internal topographic action",
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "CKM values",
+        "fitted FTL/anomaly data",
+        "propulsion data",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison topographic profile fit",
+        "post-comparison boundary embedding fit",
+        "post-comparison normal fit",
+        "post-comparison second fundamental form fit",
+        "post-comparison shape-operator fit",
+        "post-comparison K(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "tests": [
+        "tests/test_scalar_topographic_level_set_boundary_embedding.py"
+      ],
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "level_set_unit_normal_n",
+      "name": "Level-set unit normal",
+      "symbol": "n=grad F/|grad F|",
+      "sector": "neutrino_pmns",
+      "status": "DERIVED_CONDITIONAL",
+      "formula_candidate": "n_mu=partial_mu F/sqrt(|g^{alpha beta}partial_alpha F partial_beta F|); n_a=partial_a Phi/sqrt(|g_B^{bc}partial_b Phi partial_c Phi|)",
+      "derivation_source": "standard regular-level-set geometry conditional on nonzero gradient, metric, and orientation",
+      "depends_on": [
+        "scalar_topographic_level_set_F",
+        "background metric",
+        "nonzero-gradient proof",
+        "normal orientation"
+      ],
+      "claim_boundary": "normal formula is conditional; no normal value or orientation is fitted or derived numerically",
+      "next_action": "derive regular profile, gradient norm, metric, and orientation",
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "CKM values",
+        "fitted FTL/anomaly data",
+        "propulsion data",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison topographic profile fit",
+        "post-comparison boundary embedding fit",
+        "post-comparison normal fit",
+        "post-comparison second fundamental form fit",
+        "post-comparison shape-operator fit",
+        "post-comparison K(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "tests": [
+        "tests/test_scalar_topographic_level_set_boundary_embedding.py"
+      ],
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "level_set_second_fundamental_form_K_AB",
+      "name": "Level-set second fundamental form",
+      "symbol": "K_AB",
+      "sector": "neutrino_pmns",
+      "status": "DERIVED_CONDITIONAL",
+      "formula_candidate": "K_AB=e_A^mu e_B^nu nabla_mu n_nu; equivalently projected Hessian route when conventions are fixed",
+      "derivation_source": "standard extrinsic geometry conditional on embedding, normal, metric, connection, and sign convention",
+      "depends_on": [
+        "boundary_embedding_X",
+        "level_set_unit_normal_n",
+        "background metric",
+        "connection",
+        "orientation"
+      ],
+      "claim_boundary": "formula is conditional; no K_AB function value is derived or fitted",
+      "next_action": "derive embedding/profile/metric data to evaluate K_AB",
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "CKM values",
+        "fitted FTL/anomaly data",
+        "propulsion data",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison topographic profile fit",
+        "post-comparison boundary embedding fit",
+        "post-comparison normal fit",
+        "post-comparison second fundamental form fit",
+        "post-comparison shape-operator fit",
+        "post-comparison K(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "tests": [
+        "tests/test_scalar_topographic_level_set_boundary_embedding.py"
+      ],
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "level_set_shape_operator_S",
+      "name": "Level-set shape operator",
+      "symbol": "S^A_B",
+      "sector": "neutrino_pmns",
+      "status": "DERIVED_CONDITIONAL",
+      "formula_candidate": "S^A_B=h^{AC}K_CB",
+      "derivation_source": "standard algebraic shape-operator formula conditional on h_AB and K_AB",
+      "depends_on": [
+        "induced_boundary_metric_h_AB",
+        "level_set_second_fundamental_form_K_AB"
+      ],
+      "claim_boundary": "shape-operator formula is conditional; no S(Y) value is derived or fitted",
+      "next_action": "derive h_AB and K_AB from BHSM level-set geometry",
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "CKM values",
+        "fitted FTL/anomaly data",
+        "propulsion data",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison topographic profile fit",
+        "post-comparison boundary embedding fit",
+        "post-comparison normal fit",
+        "post-comparison second fundamental form fit",
+        "post-comparison shape-operator fit",
+        "post-comparison K(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "tests": [
+        "tests/test_scalar_topographic_level_set_boundary_embedding.py"
+      ],
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "level_set_boundary_trace_K",
+      "name": "Level-set boundary trace",
+      "symbol": "K=tr(S)=nabla.n",
+      "sector": "neutrino_pmns",
+      "status": "DERIVED_CONDITIONAL",
+      "formula_candidate": "K=tr(S)=h^{AB}K_AB; K=nabla_mu n^mu; internal analogue K_int=nabla_a n^a",
+      "derivation_source": "standard trace/divergence formula conditional on regular level-set data",
+      "depends_on": [
+        "level_set_shape_operator_S",
+        "level_set_unit_normal_n",
+        "metric",
+        "connection",
+        "orientation"
+      ],
+      "claim_boundary": "trace formula is conditional; no K(Y) numerical/function value is derived or fitted",
+      "next_action": "derive profile, metric, and orientation to evaluate K(Y)",
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "CKM values",
+        "fitted FTL/anomaly data",
+        "propulsion data",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison topographic profile fit",
+        "post-comparison boundary embedding fit",
+        "post-comparison normal fit",
+        "post-comparison second fundamental form fit",
+        "post-comparison shape-operator fit",
+        "post-comparison K(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "tests": [
+        "tests/test_scalar_topographic_level_set_boundary_embedding.py"
+      ],
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "level_set_collar_jacobian_J",
+      "name": "Level-set collar Jacobian",
+      "symbol": "J(Y,rho)",
+      "sector": "neutrino_pmns",
+      "status": "DERIVED_CONDITIONAL",
+      "formula_candidate": "J(Y,rho)=det(I+rho S(Y)); J(Y,rho)=1+rho K(Y)+O(rho^2)",
+      "derivation_source": "PO-BH-57 collar formula conditional on level-set shape operator and trace",
+      "depends_on": [
+        "level_set_shape_operator_S",
+        "level_set_boundary_trace_K",
+        "orientation"
+      ],
+      "claim_boundary": "Jacobian formula is conditional; no J(Y,rho) function value is derived or fitted",
+      "next_action": "derive S(Y), K(Y), and orientation from BHSM level-set geometry",
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "CKM values",
+        "fitted FTL/anomaly data",
+        "propulsion data",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison topographic profile fit",
+        "post-comparison boundary embedding fit",
+        "post-comparison normal fit",
+        "post-comparison second fundamental form fit",
+        "post-comparison shape-operator fit",
+        "post-comparison K(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "tests": [
+        "tests/test_scalar_topographic_level_set_boundary_embedding.py"
+      ],
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "neutral_topographic_action_S_nu_topo",
+      "name": "Neutral topographic suppression action",
+      "symbol": "S_nu_topo",
+      "sector": "neutrino_pmns",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "S_nu_topo remains localized by the Hessian/barrier route; level-set geometry is a candidate source, not an evaluation",
+      "derivation_source": "PO-BH-48 and PO-BH-59 candidate topographic routes",
+      "depends_on": [
+        "Delta_y_nu",
+        "H_topo_nu",
+        "E_nu",
+        "S_barrier",
+        "scalar_topographic_level_set_F",
+        "positivity proof"
+      ],
+      "claim_boundary": "S_nu_topo remains open-localizable; no numerical neutrino suppression is derived",
+      "next_action": "derive neutral Hessian/barrier/profile and positivity before comparison",
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "CKM values",
+        "fitted FTL/anomaly data",
+        "propulsion data",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison topographic profile fit",
+        "post-comparison boundary embedding fit",
+        "post-comparison normal fit",
+        "post-comparison second fundamental form fit",
+        "post-comparison shape-operator fit",
+        "post-comparison K(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "tests": [
+        "tests/test_scalar_topographic_level_set_boundary_embedding.py"
+      ],
+      "fit_policy": "FORBIDDEN_TO_FIT"
     }
   ],
   "open_numerical_inputs": [
@@ -3070,7 +3635,17 @@
     "unit normal orientation sign",
     "scalar/topographic level-set profile",
     "K(Y) function value",
-    "S(Y) function value"
+    "S(Y) function value",
+    "T_0",
+    "Phi_0",
+    "explicit spacetime topographic scalar profile T(x,t)",
+    "explicit internal topographic profile Phi(y)",
+    "nonzero-gradient proof",
+    "background spacetime metric values",
+    "internal Berger metric values",
+    "normal orientation sign",
+    "boundary embedding X",
+    "neutral topographic action S_nu_topo value"
   ],
   "forbidden_fit_routes": [
     "fit beta0 to masses",
@@ -3090,7 +3665,10 @@
     "fit J(Y,rho), K(Y), shape operator S, boundary embedding, or collar-measure curvature data to neutrino masses, PMNS data, or FTL/anomaly data",
     "fit boundary trace K(Y) or shape operator S to make Robin coefficients or neutral suppression work",
     "fit boundary embedding X, induced metric h_AB, unit normal n, K_AB, shape operator S, or boundary trace K to neutrino masses, PMNS data, or FTL/anomaly data",
-    "fit scalar/topographic level-set profile to produce desired collar curvature or neutral suppression"
+    "fit scalar/topographic level-set profile to produce desired collar curvature or neutral suppression",
+    "fit T_0, Phi_0, T(x,t), Phi(y), boundary embedding X, level-set normal, K_AB, S, K, or J to neutrino masses, PMNS data, CKM data, anomaly/FTL data, or propulsion data",
+    "promote point or saddle data y_H, y_nu, or y_0 into a full boundary embedding without a scalar/topographic profile theorem",
+    "fit S_nu_topo or epsilon_nu_topo using the level-set route after comparison"
   ],
   "claim_status_table": [
     {
@@ -3144,6 +3722,10 @@
     {
       "claim": "boundary embedding / shape operator",
       "status": "DERIVED_CONDITIONAL_WITH_OPEN_EMBEDDING_INPUTS"
+    },
+    {
+      "claim": "scalar/topographic level-set boundary embedding",
+      "status": "DERIVED_CONDITIONAL_WITH_OPEN_LEVEL_SET_INPUTS"
     }
   ],
   "verdict_labels": [
@@ -3184,7 +3766,18 @@
     "UNIT_NORMAL_DERIVED_CONDITIONAL",
     "SECOND_FUNDAMENTAL_FORM_DERIVED_CONDITIONAL",
     "SHAPE_OPERATOR_FORMULA_DERIVED_CONDITIONAL",
-    "BOUNDARY_TRACE_FORMULA_DERIVED_CONDITIONAL"
+    "BOUNDARY_TRACE_FORMULA_DERIVED_CONDITIONAL",
+    "PO_BH_59_SCALAR_TOPOGRAPHIC_LEVEL_SET_BOUNDARY_CONDITIONAL",
+    "SCALAR_TOPOGRAPHIC_LEVEL_SET_F_OPEN",
+    "SPACETIME_TOPOGRAPHIC_SCALAR_T_LOCALIZED_NOT_NUMERIC",
+    "INTERNAL_TOPOGRAPHIC_PROFILE_PHI_LOCALIZED_NOT_NUMERIC",
+    "LEVEL_SET_UNIT_NORMAL_DERIVED_CONDITIONAL",
+    "LEVEL_SET_SECOND_FUNDAMENTAL_FORM_DERIVED_CONDITIONAL",
+    "LEVEL_SET_SHAPE_OPERATOR_DERIVED_CONDITIONAL",
+    "LEVEL_SET_BOUNDARY_TRACE_DERIVED_CONDITIONAL",
+    "LEVEL_SET_COLLAR_JACOBIAN_DERIVED_CONDITIONAL",
+    "NEUTRAL_TOPOGRAPHIC_ACTION_REMAINS_OPEN_LOCALIZABLE",
+    "EPSILON_NU_TOPO_REMAINS_OPEN_LOCALIZABLE"
   ],
   "collar_measure_extrinsic_geometry": {
     "id": "PO-BH-57",
@@ -3609,7 +4202,10 @@
       "smooth boundary partialB",
       "background space B",
       "scalar/topographic boundary profile",
-      "coordinate chart or invariant embedding convention"
+      "coordinate chart or invariant embedding convention",
+      "scalar_topographic_level_set_F",
+      "spacetime_topographic_scalar_T",
+      "internal_topographic_profile_Phi"
     ],
     "forbidden_inputs": [
       "observed neutrino masses",
@@ -3623,13 +4219,21 @@
       "post-comparison second fundamental form fit",
       "post-comparison shape-operator fit",
       "post-comparison K(Y) fit",
-      "post-comparison J(Y,rho) fit"
+      "post-comparison J(Y,rho) fit",
+      "CKM values",
+      "propulsion data",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison topographic profile fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
     ],
-    "claim_boundary": "embedding is localized as the geometric input needed for h_AB, n, K_AB, S, and K; no embedding value is fitted or derived here",
+    "claim_boundary": "embedding is localized as the geometric input needed for h_AB, n, K_AB, S, and K; PO-BH-59 adds candidate level-set routes, but no embedding value is fitted or derived here",
     "tests": [
-      "tests/test_boundary_embedding_shape_operator.py"
+      "tests/test_boundary_embedding_shape_operator.py",
+      "tests/test_scalar_topographic_level_set_boundary_embedding.py"
     ],
-    "next_action": "derive X from the scalar/topographic boundary profile or an invariant BHSM boundary embedding theorem",
+    "next_action": "derive X from the scalar/topographic level-set profile or an invariant BHSM boundary embedding theorem",
     "fit_policy": "FORBIDDEN_TO_FIT"
   },
   "induced_boundary_metric_h_AB": {
@@ -3735,6 +4339,537 @@
       "tests/test_boundary_embedding_shape_operator.py"
     ],
     "next_action": "derive K_AB from X, n, and the BHSM background/topographic connection",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "scalar_topographic_level_set_boundary_embedding": {
+    "id": "PO-BH-59",
+    "name": "Scalar/topographic level-set boundary embedding",
+    "symbol": "F_STF=T-T_0; F_int=Phi-Phi_0; n=grad F/|grad F|",
+    "sector": "neutrino_pmns",
+    "status": "DERIVED_CONDITIONAL_WITH_OPEN_LEVEL_SET_INPUTS",
+    "formula_candidate": "F_STF(x,t)=T(x,t)-T_0; F_int(y)=Phi(y)-Phi_0; n=grad F/|grad F|; K=nabla.n; S^A_B=h^{AC}K_CB; J=det(I+rho S)",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "standard regular-level-set and extrinsic geometry conditional on explicit BHSM scalar/topographic profiles, thresholds, metrics, and orientation",
+    "depends_on": [
+      {
+        "id": "spacetime_topographic_scalar_T",
+        "status": "LOCALIZED_NOT_NUMERIC"
+      },
+      {
+        "id": "internal_topographic_profile_Phi",
+        "status": "LOCALIZED_NOT_NUMERIC"
+      },
+      {
+        "id": "scalar_topographic_level_set_F",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "boundary_embedding_X",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "level_set_unit_normal_n",
+        "status": "DERIVED_CONDITIONAL"
+      },
+      {
+        "id": "level_set_shape_operator_S",
+        "status": "DERIVED_CONDITIONAL"
+      },
+      {
+        "id": "neutral_topographic_action_S_nu_topo",
+        "status": "OPEN_LOCALIZABLE"
+      }
+    ],
+    "candidate_routes": [
+      {
+        "id": "route_A_spacetime_topographic_scalar",
+        "formula": "F_STF(x,t)=T(x,t)-T_0",
+        "status": "OPEN_LOCALIZABLE",
+        "reason": "T is localized as framework notation, but T_0 and explicit functions are not derived."
+      },
+      {
+        "id": "route_B_internal_berger_profile",
+        "formula": "F_int(y)=Phi(y)-Phi_0",
+        "status": "OPEN_LOCALIZABLE",
+        "reason": "Phi is localized as a profile symbol, but Phi_0 and explicit profile/metric values are not derived."
+      },
+      {
+        "id": "route_C_direct_embedding",
+        "formula": "F(X(Y))=0",
+        "status": "OPEN_LOCALIZABLE",
+        "reason": "No explicit BHSM embedding theorem fixes X."
+      },
+      {
+        "id": "route_D_regular_level_set_normal",
+        "formula": "n=grad F/|grad F|",
+        "status": "DERIVED_CONDITIONAL",
+        "reason": "Standard formula under nonzero-gradient, metric, and orientation assumptions."
+      },
+      {
+        "id": "route_E_trace_and_shape_operator",
+        "formula": "K=nabla_mu n^mu; S^A_B=h^{AC}K_CB",
+        "status": "DERIVED_CONDITIONAL",
+        "reason": "Standard extrinsic formulas once regular level-set data are supplied."
+      },
+      {
+        "id": "route_F_hessian_projected_curvature",
+        "formula": "K_AB=P_A^mu P_B^nu nabla_mu nabla_nu F/|grad F|",
+        "status": "DERIVED_CONDITIONAL",
+        "reason": "Conditional on projection, sign, normalization, metric, and nonzero-gradient conventions."
+      },
+      {
+        "id": "route_G_collar_jacobian_consistency",
+        "formula": "J=det(I+rho S)",
+        "status": "DERIVED_CONDITIONAL",
+        "reason": "Follows from PO-BH-57 once S is supplied."
+      },
+      {
+        "id": "route_H_boundary_saddle_data",
+        "formula": "y_H, y_nu, y_0 as point/saddle data",
+        "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+        "reason": "Point or saddle data do not define a full boundary embedding without a profile theorem."
+      }
+    ],
+    "forbidden_inputs": [
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "PMNS angles",
+      "PMNS CP phase",
+      "CKM values",
+      "fitted FTL/anomaly data",
+      "propulsion data",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison topographic profile fit",
+      "post-comparison boundary embedding fit",
+      "post-comparison normal fit",
+      "post-comparison second fundamental form fit",
+      "post-comparison shape-operator fit",
+      "post-comparison K(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "PO-BH-59 localizes scalar/topographic level-set routes and derives regular-level-set geometry conditionally; it does not derive explicit profiles, thresholds, metric values, S_nu_topo, epsilon_nu_topo, or numerical neutrino/PMNS/CKM predictions.",
+    "tests": [
+      "tests/test_scalar_topographic_level_set_boundary_embedding.py"
+    ],
+    "next_action": "derive or reject explicit T and Phi profiles, thresholds T_0/Phi_0, nonzero-gradient conditions, metric values, and boundary embedding X before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "scalar_topographic_level_set_F": {
+    "id": "scalar_topographic_level_set_F",
+    "name": "Scalar/topographic level-set boundary equation",
+    "symbol": "F_STF=T-T_0; F_int=Phi-Phi_0",
+    "sector": "neutrino_pmns",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "F_STF(x,t)=T(x,t)-T_0 and F_int(y)=Phi(y)-Phi_0",
+    "derivation_source": "candidate regular-level-set route; thresholds and explicit profiles not derived",
+    "depends_on": [
+      "spacetime_topographic_scalar_T",
+      "internal_topographic_profile_Phi",
+      "T_0",
+      "Phi_0",
+      "nonzero-gradient proof",
+      "background metric"
+    ],
+    "claim_boundary": "level-set equations are localized as candidates; thresholds and explicit profile values remain open",
+    "next_action": "derive T_0, Phi_0, explicit profiles, and regularity before comparison",
+    "forbidden_inputs": [
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "PMNS angles",
+      "PMNS CP phase",
+      "CKM values",
+      "fitted FTL/anomaly data",
+      "propulsion data",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison topographic profile fit",
+      "post-comparison boundary embedding fit",
+      "post-comparison normal fit",
+      "post-comparison second fundamental form fit",
+      "post-comparison shape-operator fit",
+      "post-comparison K(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "tests": [
+      "tests/test_scalar_topographic_level_set_boundary_embedding.py"
+    ],
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "spacetime_topographic_scalar_T": {
+    "id": "spacetime_topographic_scalar_T",
+    "name": "Spacetime topographic scalar",
+    "symbol": "T(x,t)",
+    "sector": "scalar_topographic",
+    "status": "LOCALIZED_NOT_NUMERIC",
+    "formula_candidate": "T(x,t)=T_bg(t)+A_T,dip(t)(ihat . uhat)+T_loc(x,t)",
+    "derivation_source": "uploaded framework notation used only as structural localization support",
+    "depends_on": [
+      "T_bg(t)",
+      "A_T,dip(t)",
+      "T_loc(x,t)",
+      "T_0",
+      "spacetime metric"
+    ],
+    "claim_boundary": "T is localized as framework notation; no numerical profile or threshold is derived",
+    "next_action": "derive explicit T profile and threshold from BHSM topographic dynamics",
+    "forbidden_inputs": [
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "PMNS angles",
+      "PMNS CP phase",
+      "CKM values",
+      "fitted FTL/anomaly data",
+      "propulsion data",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison topographic profile fit",
+      "post-comparison boundary embedding fit",
+      "post-comparison normal fit",
+      "post-comparison second fundamental form fit",
+      "post-comparison shape-operator fit",
+      "post-comparison K(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "tests": [
+      "tests/test_scalar_topographic_level_set_boundary_embedding.py"
+    ],
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "internal_topographic_profile_Phi": {
+    "id": "internal_topographic_profile_Phi",
+    "name": "Internal Berger/topographic profile",
+    "symbol": "Phi(y)",
+    "sector": "scalar_topographic",
+    "status": "LOCALIZED_NOT_NUMERIC",
+    "formula_candidate": "Phi(y) on internal Berger B^3 with radius r and squash epsilon, peaked at y_0",
+    "derivation_source": "uploaded framework notation used only as internal profile localization support",
+    "depends_on": [
+      "internal Berger metric g_B",
+      "radius r",
+      "squash epsilon",
+      "distinguished point y_0",
+      "Phi_0",
+      "explicit profile"
+    ],
+    "claim_boundary": "Phi is localized as an internal profile symbol; no explicit profile, threshold, or curvature value is derived",
+    "next_action": "derive explicit Phi profile and level-set threshold from the internal topographic action",
+    "forbidden_inputs": [
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "PMNS angles",
+      "PMNS CP phase",
+      "CKM values",
+      "fitted FTL/anomaly data",
+      "propulsion data",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison topographic profile fit",
+      "post-comparison boundary embedding fit",
+      "post-comparison normal fit",
+      "post-comparison second fundamental form fit",
+      "post-comparison shape-operator fit",
+      "post-comparison K(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "tests": [
+      "tests/test_scalar_topographic_level_set_boundary_embedding.py"
+    ],
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "level_set_unit_normal_n": {
+    "id": "level_set_unit_normal_n",
+    "name": "Level-set unit normal",
+    "symbol": "n=grad F/|grad F|",
+    "sector": "neutrino_pmns",
+    "status": "DERIVED_CONDITIONAL",
+    "formula_candidate": "n_mu=partial_mu F/sqrt(|g^{alpha beta}partial_alpha F partial_beta F|); n_a=partial_a Phi/sqrt(|g_B^{bc}partial_b Phi partial_c Phi|)",
+    "derivation_source": "standard regular-level-set geometry conditional on nonzero gradient, metric, and orientation",
+    "depends_on": [
+      "scalar_topographic_level_set_F",
+      "background metric",
+      "nonzero-gradient proof",
+      "normal orientation"
+    ],
+    "claim_boundary": "normal formula is conditional; no normal value or orientation is fitted or derived numerically",
+    "next_action": "derive regular profile, gradient norm, metric, and orientation",
+    "forbidden_inputs": [
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "PMNS angles",
+      "PMNS CP phase",
+      "CKM values",
+      "fitted FTL/anomaly data",
+      "propulsion data",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison topographic profile fit",
+      "post-comparison boundary embedding fit",
+      "post-comparison normal fit",
+      "post-comparison second fundamental form fit",
+      "post-comparison shape-operator fit",
+      "post-comparison K(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "tests": [
+      "tests/test_scalar_topographic_level_set_boundary_embedding.py"
+    ],
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "level_set_second_fundamental_form_K_AB": {
+    "id": "level_set_second_fundamental_form_K_AB",
+    "name": "Level-set second fundamental form",
+    "symbol": "K_AB",
+    "sector": "neutrino_pmns",
+    "status": "DERIVED_CONDITIONAL",
+    "formula_candidate": "K_AB=e_A^mu e_B^nu nabla_mu n_nu; equivalently projected Hessian route when conventions are fixed",
+    "derivation_source": "standard extrinsic geometry conditional on embedding, normal, metric, connection, and sign convention",
+    "depends_on": [
+      "boundary_embedding_X",
+      "level_set_unit_normal_n",
+      "background metric",
+      "connection",
+      "orientation"
+    ],
+    "claim_boundary": "formula is conditional; no K_AB function value is derived or fitted",
+    "next_action": "derive embedding/profile/metric data to evaluate K_AB",
+    "forbidden_inputs": [
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "PMNS angles",
+      "PMNS CP phase",
+      "CKM values",
+      "fitted FTL/anomaly data",
+      "propulsion data",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison topographic profile fit",
+      "post-comparison boundary embedding fit",
+      "post-comparison normal fit",
+      "post-comparison second fundamental form fit",
+      "post-comparison shape-operator fit",
+      "post-comparison K(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "tests": [
+      "tests/test_scalar_topographic_level_set_boundary_embedding.py"
+    ],
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "level_set_shape_operator_S": {
+    "id": "level_set_shape_operator_S",
+    "name": "Level-set shape operator",
+    "symbol": "S^A_B",
+    "sector": "neutrino_pmns",
+    "status": "DERIVED_CONDITIONAL",
+    "formula_candidate": "S^A_B=h^{AC}K_CB",
+    "derivation_source": "standard algebraic shape-operator formula conditional on h_AB and K_AB",
+    "depends_on": [
+      "induced_boundary_metric_h_AB",
+      "level_set_second_fundamental_form_K_AB"
+    ],
+    "claim_boundary": "shape-operator formula is conditional; no S(Y) value is derived or fitted",
+    "next_action": "derive h_AB and K_AB from BHSM level-set geometry",
+    "forbidden_inputs": [
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "PMNS angles",
+      "PMNS CP phase",
+      "CKM values",
+      "fitted FTL/anomaly data",
+      "propulsion data",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison topographic profile fit",
+      "post-comparison boundary embedding fit",
+      "post-comparison normal fit",
+      "post-comparison second fundamental form fit",
+      "post-comparison shape-operator fit",
+      "post-comparison K(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "tests": [
+      "tests/test_scalar_topographic_level_set_boundary_embedding.py"
+    ],
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "level_set_boundary_trace_K": {
+    "id": "level_set_boundary_trace_K",
+    "name": "Level-set boundary trace",
+    "symbol": "K=tr(S)=nabla.n",
+    "sector": "neutrino_pmns",
+    "status": "DERIVED_CONDITIONAL",
+    "formula_candidate": "K=tr(S)=h^{AB}K_AB; K=nabla_mu n^mu; internal analogue K_int=nabla_a n^a",
+    "derivation_source": "standard trace/divergence formula conditional on regular level-set data",
+    "depends_on": [
+      "level_set_shape_operator_S",
+      "level_set_unit_normal_n",
+      "metric",
+      "connection",
+      "orientation"
+    ],
+    "claim_boundary": "trace formula is conditional; no K(Y) numerical/function value is derived or fitted",
+    "next_action": "derive profile, metric, and orientation to evaluate K(Y)",
+    "forbidden_inputs": [
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "PMNS angles",
+      "PMNS CP phase",
+      "CKM values",
+      "fitted FTL/anomaly data",
+      "propulsion data",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison topographic profile fit",
+      "post-comparison boundary embedding fit",
+      "post-comparison normal fit",
+      "post-comparison second fundamental form fit",
+      "post-comparison shape-operator fit",
+      "post-comparison K(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "tests": [
+      "tests/test_scalar_topographic_level_set_boundary_embedding.py"
+    ],
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "level_set_collar_jacobian_J": {
+    "id": "level_set_collar_jacobian_J",
+    "name": "Level-set collar Jacobian",
+    "symbol": "J(Y,rho)",
+    "sector": "neutrino_pmns",
+    "status": "DERIVED_CONDITIONAL",
+    "formula_candidate": "J(Y,rho)=det(I+rho S(Y)); J(Y,rho)=1+rho K(Y)+O(rho^2)",
+    "derivation_source": "PO-BH-57 collar formula conditional on level-set shape operator and trace",
+    "depends_on": [
+      "level_set_shape_operator_S",
+      "level_set_boundary_trace_K",
+      "orientation"
+    ],
+    "claim_boundary": "Jacobian formula is conditional; no J(Y,rho) function value is derived or fitted",
+    "next_action": "derive S(Y), K(Y), and orientation from BHSM level-set geometry",
+    "forbidden_inputs": [
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "PMNS angles",
+      "PMNS CP phase",
+      "CKM values",
+      "fitted FTL/anomaly data",
+      "propulsion data",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison topographic profile fit",
+      "post-comparison boundary embedding fit",
+      "post-comparison normal fit",
+      "post-comparison second fundamental form fit",
+      "post-comparison shape-operator fit",
+      "post-comparison K(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "tests": [
+      "tests/test_scalar_topographic_level_set_boundary_embedding.py"
+    ],
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "neutral_topographic_action_S_nu_topo": {
+    "id": "neutral_topographic_action_S_nu_topo",
+    "name": "Neutral topographic suppression action",
+    "symbol": "S_nu_topo",
+    "sector": "neutrino_pmns",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "S_nu_topo remains localized by the Hessian/barrier route; level-set geometry is a candidate source, not an evaluation",
+    "derivation_source": "PO-BH-48 and PO-BH-59 candidate topographic routes",
+    "depends_on": [
+      "Delta_y_nu",
+      "H_topo_nu",
+      "E_nu",
+      "S_barrier",
+      "scalar_topographic_level_set_F",
+      "positivity proof"
+    ],
+    "claim_boundary": "S_nu_topo remains open-localizable; no numerical neutrino suppression is derived",
+    "next_action": "derive neutral Hessian/barrier/profile and positivity before comparison",
+    "forbidden_inputs": [
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "PMNS angles",
+      "PMNS CP phase",
+      "CKM values",
+      "fitted FTL/anomaly data",
+      "propulsion data",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison topographic profile fit",
+      "post-comparison boundary embedding fit",
+      "post-comparison normal fit",
+      "post-comparison second fundamental form fit",
+      "post-comparison shape-operator fit",
+      "post-comparison K(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "tests": [
+      "tests/test_scalar_topographic_level_set_boundary_embedding.py"
+    ],
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "epsilon_nu_topo": {
+    "id": "epsilon_nu_topo",
+    "name": "Neutral topographic suppression factor",
+    "symbol": "epsilon_nu_topo=exp(-S_nu_topo)",
+    "sector": "neutrino_pmns",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "epsilon_nu_topo=exp(-S_nu_topo)",
+    "derivation_source": "structural relation only; value depends on open S_nu_topo",
+    "depends_on": [
+      "neutral_topographic_action_S_nu_topo",
+      "S_nu_topo"
+    ],
+    "claim_boundary": "epsilon relation is structural; its numerical value remains open and cannot be fitted",
+    "next_action": "derive S_nu_topo before comparison",
+    "forbidden_inputs": [
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "PMNS angles",
+      "PMNS CP phase",
+      "CKM values",
+      "fitted FTL/anomaly data",
+      "propulsion data",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison topographic profile fit",
+      "post-comparison boundary embedding fit",
+      "post-comparison normal fit",
+      "post-comparison second fundamental form fit",
+      "post-comparison shape-operator fit",
+      "post-comparison K(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "tests": [
+      "tests/test_scalar_topographic_level_set_boundary_embedding.py"
+    ],
     "fit_policy": "FORBIDDEN_TO_FIT"
   }
 }

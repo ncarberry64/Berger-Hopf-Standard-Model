@@ -292,6 +292,8 @@ The complete scalar/topographic collar action has been audited as the source nee
 
 The collar-measure expansion has been derived conditionally from standard collar/extrinsic geometry as a symbolic formula. The boundary embedding, induced metric, unit normal, second fundamental form, shape operator, and trace formulas have been localized or derived conditionally as geometric structures needed to evaluate the collar Jacobian. Their numerical/function values remain open unless a BHSM scalar/topographic boundary profile and embedding are derived. These quantities are geometric dependencies, not fitted parameters.
 
+PO-BH-59 localizes two scalar/topographic level-set boundary routes: a spacetime route `F_STF(x,t)=T(x,t)-T_0` and an internal Berger route `F_int(y)=Phi(y)-Phi_0`. The regular-level-set normal, second fundamental form, shape operator, trace, and collar-Jacobian formulas are conditionally derived. Their thresholds, explicit profiles, metric values, orientation, and numerical/function values remain open. `S_nu_topo` and `epsilon_nu_topo` remain open-localizable. No numerical neutrino prediction, PMNS numerical prediction, CKM numerical prediction, local FTL, experimental FTL, anomaly validation, or propulsion validation is claimed.
+
 PO-BH-54 localizes the normal-coupling/collar convention for the neutral
 boundary term:
 
