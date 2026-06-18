@@ -296,6 +296,8 @@ PO-BH-59 localizes two scalar/topographic level-set boundary routes: a spacetime
 
 PO-BH-60 classifies the scalar/topographic profile inputs required after PO-BH-59. It separates the remaining bottleneck into four gates: profile existence/localization, threshold selection, metric/profile evaluation, and neutral action evaluation. Gate 1 is partially localized; Gates 2, 3, and 4 remain open-localizable. `T_0`, `Phi_0`, explicit profile functions, gradient norms, metric/profile values, orientation, `S_nu_topo`, and `epsilon_nu_topo` remain open/localizable. No numerical neutrino prediction, PMNS prediction, CKM prediction, FTL claim, anomaly validation, or propulsion validation is introduced.
 
+PO-BH-61 audits the scalar/topographic profile equation-of-motion source routes. It finds partial EOM source structure in the existing schematic scalar bulk action and conditionally derived symbolic boundary variation, but no complete spacetime topographic EOM, internal Berger profile EOM, threshold-selection theorem, profile solution, neutral action evaluation, `S_nu_topo` value, or `epsilon_nu_topo` value. The audit is completed as a derivation-source audit; numerical closure remains open and no profile input may be fitted after comparison.
+
 PO-BH-54 localizes the normal-coupling/collar convention for the neutral
 boundary term:
 
