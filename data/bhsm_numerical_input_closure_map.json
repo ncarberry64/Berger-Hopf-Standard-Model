@@ -140,7 +140,16 @@
     "collar_jacobian_metric_determinant": "J(Y,rho)=sqrt(det h(Y,rho)/det h(Y,0))",
     "collar_measure_extrinsic_expansion": "J(Y,rho)=1+rho K(Y)+O(rho^2), with K(Y)=tr(S)(Y) up to orientation sign",
     "boundary_trace_K": "K(Y)=tr(S)(Y)=h^{AB}K_AB(Y), or sign-equivalent projected divergence of the normal",
-    "topographic_level_set_normal": "n_mu=partial_mu Phi/sqrt(partial_alpha Phi partial^alpha Phi) when a regular scalar/topographic level-set profile is derived"
+    "topographic_level_set_normal": "n_mu=partial_mu Phi/sqrt(partial_alpha Phi partial^alpha Phi) when a regular scalar/topographic level-set profile is derived",
+    "boundary_embedding_X": "X: partialB -> B, with local components X^mu(Y^A)",
+    "boundary_tangent_vectors": "e_A^mu = partial_A X^mu",
+    "induced_boundary_metric_h_AB": "h_AB = g_mu_nu e_A^mu e_B^nu",
+    "unit_normal_conditions": "n_mu e_A^mu = 0; g^{mu nu} n_mu n_nu = 1 or signature-equivalent",
+    "second_fundamental_form_K_AB": "K_AB = e_A^mu e_B^nu nabla_mu n_nu, up to sign convention",
+    "shape_operator_S": "S^A_B = h^{AC} K_CB",
+    "boundary_trace_K_shape": "K = tr(S) = h^{AB} K_AB",
+    "level_set_normal": "n_mu = partial_mu F/sqrt(g^{alpha beta}partial_alpha F partial_beta F), or n_mu = partial_mu Phi/|grad Phi|",
+    "projected_hessian_curvature_candidate": "K_AB ~ P_A^mu P_B^nu nabla_mu nabla_nu Phi/|grad Phi| when a level-set theorem is derived"
   },
   "phase_admissibility": {
     "absolute_alpha0_physical": false,
@@ -1810,7 +1819,9 @@
         "collar_jacobian_J",
         "boundary_trace_K",
         "shape_operator_S",
-        "normal_orientation"
+        "normal_orientation",
+        "boundary_embedding_shape_operator",
+        "induced_boundary_metric_h_AB"
       ],
       "forbidden_inputs": [
         "observed neutrino masses",
@@ -1820,10 +1831,11 @@
         "fitted FTL/anomaly data",
         "post-comparison collar measure fit"
       ],
-      "claim_boundary": "measure form and symbolic Jacobian expansion are conditionally derived; K(Y), S, and normal orientation remain open geometric dependencies and are not fitted",
+      "claim_boundary": "measure form and symbolic Jacobian expansion are conditionally derived; embedding/profile values, K(Y), S, and normal orientation remain open geometric dependencies and are not fitted",
       "tests": [
         "tests/test_collar_geometry_package.py",
-        "tests/test_collar_measure_extrinsic_geometry.py"
+        "tests/test_collar_measure_extrinsic_geometry.py",
+        "tests/test_boundary_embedding_shape_operator.py"
       ],
       "next_action": "derive K(Y), S(Y), and normal orientation from boundary/subsurface geometry or scalar/topographic level-set profile",
       "fit_policy": "FORBIDDEN_TO_FIT"
@@ -2498,16 +2510,16 @@
     {
       "id": "boundary_trace_K",
       "name": "Boundary trace / mean-curvature input",
-      "symbol": "K(Y)=tr(S)(Y)",
+      "symbol": "K(Y)=tr(S)(Y)=h^{AB}K_AB(Y)",
       "sector": "neutrino_pmns",
-      "status": "OPEN_LOCALIZABLE",
+      "status": "DERIVED_CONDITIONAL",
       "formula_candidate": "K(Y)=tr(S)(Y)=h^{AB}K_AB(Y), or sign-equivalent projected divergence of the normal",
-      "derivation_source": "standard extrinsic-geometry trace target; not yet derived from BHSM scalar/topographic boundary embedding",
+      "derivation_source": "standard trace of the shape operator conditional on h_AB and K_AB",
       "depends_on": [
         "shape_operator_S",
-        "boundary induced metric h_AB",
-        "normal field n",
-        "scalar/topographic profile solution",
+        "induced_boundary_metric_h_AB",
+        "second_fundamental_form_K_AB",
+        "unit_normal_n",
         "normal_orientation"
       ],
       "forbidden_inputs": [
@@ -2516,16 +2528,20 @@
         "PMNS angles",
         "PMNS CP phase",
         "fitted FTL/anomaly data",
-        "post-comparison J(Y,rho) fit",
-        "post-comparison K(Y) fit",
+        "post-comparison boundary embedding fit",
+        "post-comparison induced metric fit",
+        "post-comparison normal fit",
+        "post-comparison second fundamental form fit",
         "post-comparison shape-operator fit",
-        "post-comparison normal-orientation fit"
+        "post-comparison K(Y) fit",
+        "post-comparison J(Y,rho) fit"
       ],
-      "claim_boundary": "K(Y) is a geometric dependency, not a fitted parameter; no numerical K value is claimed",
+      "claim_boundary": "trace formula is conditionally derived; numerical/function value of K(Y) remains open and cannot be fitted",
       "tests": [
+        "tests/test_boundary_embedding_shape_operator.py",
         "tests/test_collar_measure_extrinsic_geometry.py"
       ],
-      "next_action": "derive K(Y) from boundary embedding, normal divergence, or scalar/topographic level-set profile",
+      "next_action": "derive K(Y) values from boundary embedding, metric, normal, and scalar/topographic profile",
       "fit_policy": "FORBIDDEN_TO_FIT"
     },
     {
@@ -2533,15 +2549,14 @@
       "name": "Boundary shape operator",
       "symbol": "S^A_B(Y)",
       "sector": "neutrino_pmns",
-      "status": "OPEN_LOCALIZABLE",
-      "formula_candidate": "S^A_B defines the first-order collar metric/Jacobian deformation; K(Y)=tr(S)(Y)",
-      "derivation_source": "standard extrinsic-geometry object required by the collar Jacobian; not yet derived from BHSM boundary profile",
+      "status": "DERIVED_CONDITIONAL",
+      "formula_candidate": "S^A_B = h^{AC} K_CB; K(Y)=tr(S)(Y)",
+      "derivation_source": "standard algebraic shape-operator formula conditional on induced metric and second fundamental form",
       "depends_on": [
-        "boundary embedding",
-        "induced metric h_AB",
-        "unit normal field n",
-        "ambient connection",
-        "scalar/topographic profile solution"
+        "induced_boundary_metric_h_AB",
+        "second_fundamental_form_K_AB",
+        "unit_normal_n",
+        "normal_orientation"
       ],
       "forbidden_inputs": [
         "observed neutrino masses",
@@ -2549,16 +2564,20 @@
         "PMNS angles",
         "PMNS CP phase",
         "fitted FTL/anomaly data",
-        "post-comparison J(Y,rho) fit",
-        "post-comparison K(Y) fit",
+        "post-comparison boundary embedding fit",
+        "post-comparison induced metric fit",
+        "post-comparison normal fit",
+        "post-comparison second fundamental form fit",
         "post-comparison shape-operator fit",
-        "post-comparison normal-orientation fit"
+        "post-comparison K(Y) fit",
+        "post-comparison J(Y,rho) fit"
       ],
-      "claim_boundary": "shape operator is exposed as an open geometric input and is not fitted",
+      "claim_boundary": "shape-operator formula is conditionally derived; function values remain open and cannot be fitted",
       "tests": [
+        "tests/test_boundary_embedding_shape_operator.py",
         "tests/test_collar_measure_extrinsic_geometry.py"
       ],
-      "next_action": "derive S from the boundary embedding or scalar/topographic level-set geometry",
+      "next_action": "derive h_AB and K_AB values from BHSM boundary/topographic geometry",
       "fit_policy": "FORBIDDEN_TO_FIT"
     },
     {
@@ -2702,6 +2721,291 @@
       ],
       "next_action": "derive or reject boundary embedding, induced metric, shape operator, normal orientation, and scalar/topographic level-set profile before comparison",
       "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "boundary_embedding_shape_operator",
+      "name": "Boundary embedding / induced metric / shape operator",
+      "symbol": "X, h_AB, n_mu, K_AB, S^A_B, K=tr(S)",
+      "sector": "neutrino_pmns",
+      "status": "DERIVED_CONDITIONAL_WITH_OPEN_EMBEDDING_INPUTS",
+      "formula_candidate": "h_AB=g_mu_nu partial_A X^mu partial_B X^nu; K_AB=e_A^mu e_B^nu nabla_mu n_nu; S^A_B=h^{AC}K_CB; K=tr(S)",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "standard boundary/extrinsic differential geometry conditional on a BHSM boundary embedding and scalar/topographic profile",
+      "depends_on": [
+        {
+          "id": "boundary_embedding_X",
+          "status": "OPEN_LOCALIZABLE"
+        },
+        {
+          "id": "induced_boundary_metric_h_AB",
+          "status": "DERIVED_CONDITIONAL"
+        },
+        {
+          "id": "unit_normal_n",
+          "status": "DERIVED_CONDITIONAL"
+        },
+        {
+          "id": "second_fundamental_form_K_AB",
+          "status": "DERIVED_CONDITIONAL"
+        },
+        {
+          "id": "shape_operator_S",
+          "status": "DERIVED_CONDITIONAL"
+        },
+        {
+          "id": "boundary_trace_K",
+          "status": "DERIVED_CONDITIONAL"
+        },
+        {
+          "id": "scalar/topographic profile solution",
+          "status": "OPEN_UNRESOLVED"
+        }
+      ],
+      "candidate_routes": [
+        {
+          "id": "route_A_embedding_pullback",
+          "formula": "e_A^mu=partial_A X^mu; h_AB=g_mu_nu e_A^mu e_B^nu",
+          "dependencies": [
+            "X",
+            "g_mu_nu"
+          ],
+          "status": "DERIVED_CONDITIONAL",
+          "reason": "Pullback metric formula follows from standard geometry once X and g are supplied.",
+          "allowed_next_action": "derive X from BHSM boundary/topographic profile",
+          "forbidden_shortcut": "choose embedding from neutrino residuals"
+        },
+        {
+          "id": "route_B_unit_normal",
+          "formula": "n_mu e_A^mu=0; g^{mu nu}n_mu n_nu=1 or signature-equivalent",
+          "dependencies": [
+            "X",
+            "g_mu_nu",
+            "orientation"
+          ],
+          "status": "DERIVED_CONDITIONAL",
+          "reason": "Normal constraints are standard; BHSM-specific normal values remain open.",
+          "allowed_next_action": "derive normal field and orientation from embedding/profile",
+          "forbidden_shortcut": "pick normal sign from anomaly or FTL data"
+        },
+        {
+          "id": "route_C_second_fundamental_form",
+          "formula": "K_AB=e_A^mu e_B^nu nabla_mu n_nu; S^A_B=h^{AC}K_CB; K=h^{AB}K_AB",
+          "dependencies": [
+            "e_A",
+            "n",
+            "nabla",
+            "h_AB"
+          ],
+          "status": "DERIVED_CONDITIONAL",
+          "reason": "Standard extrinsic curvature and shape-operator formulas.",
+          "allowed_next_action": "derive function values from BHSM geometry",
+          "forbidden_shortcut": "fit K_AB, S, or K"
+        },
+        {
+          "id": "route_D_topographic_level_set",
+          "formula": "n_mu=partial_mu Phi/|grad Phi|; K=nabla_mu n^mu",
+          "dependencies": [
+            "Phi profile",
+            "metric",
+            "nonzero gradient",
+            "embedding"
+          ],
+          "status": "OPEN_LOCALIZABLE",
+          "reason": "The scalar/topographic profile and regular level-set theorem remain open.",
+          "allowed_next_action": "derive profile and level-set embedding",
+          "forbidden_shortcut": "tune profile to neutrino or FTL data"
+        },
+        {
+          "id": "route_E_hessian_projected_curvature",
+          "formula": "K_AB ~ P_A^mu P_B^nu nabla_mu nabla_nu Phi/|grad Phi|",
+          "dependencies": [
+            "full Hessian",
+            "profile",
+            "projection theorem"
+          ],
+          "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+          "reason": "Existing Hessian diagnostics do not prove extrinsic curvature identity.",
+          "allowed_next_action": "derive Hessian-to-curvature theorem",
+          "forbidden_shortcut": "assert Hessian trace as curvature without proof"
+        },
+        {
+          "id": "route_F_collar_measure_consistency",
+          "formula": "J(Y,rho)=det(I+rho S(Y)); J=1+rho K+O(rho^2)",
+          "dependencies": [
+            "PO-BH-57",
+            "S",
+            "K",
+            "orientation"
+          ],
+          "status": "DERIVED_CONDITIONAL",
+          "reason": "Connects formula objects to the collar Jacobian while keeping values open.",
+          "allowed_next_action": "evaluate only after deriving geometry",
+          "forbidden_shortcut": "fit J or K"
+        }
+      ],
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "fitted FTL/anomaly data",
+        "post-comparison boundary embedding fit",
+        "post-comparison induced metric fit",
+        "post-comparison normal fit",
+        "post-comparison second fundamental form fit",
+        "post-comparison shape-operator fit",
+        "post-comparison K(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison lambda_nu fit",
+        "post-comparison A_nu/B_nu fit"
+      ],
+      "claim_boundary": "The boundary embedding, induced metric, unit normal, second fundamental form, shape operator, and trace formulas are localized or derived conditionally as geometric structures. Their numerical/function values remain open unless a BHSM scalar/topographic boundary profile and embedding are derived.",
+      "tests": [
+        "tests/test_boundary_embedding_shape_operator.py"
+      ],
+      "next_action": "derive or reject the scalar/topographic level-set profile and boundary embedding X before evaluating K(Y)",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "boundary_embedding_X",
+      "name": "Boundary embedding",
+      "symbol": "X: partialB -> B; X^mu(Y^A)",
+      "sector": "neutrino_pmns",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "X^mu(Y^A) with tangent vectors e_A^mu = partial_A X^mu",
+      "derivation_source": "standard boundary embedding target; not yet derived from BHSM scalar/topographic profile",
+      "depends_on": [
+        "smooth boundary partialB",
+        "background space B",
+        "scalar/topographic boundary profile",
+        "coordinate chart or invariant embedding convention"
+      ],
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "fitted FTL/anomaly data",
+        "post-comparison boundary embedding fit",
+        "post-comparison induced metric fit",
+        "post-comparison normal fit",
+        "post-comparison second fundamental form fit",
+        "post-comparison shape-operator fit",
+        "post-comparison K(Y) fit",
+        "post-comparison J(Y,rho) fit"
+      ],
+      "claim_boundary": "embedding is localized as the geometric input needed for h_AB, n, K_AB, S, and K; no embedding value is fitted or derived here",
+      "tests": [
+        "tests/test_boundary_embedding_shape_operator.py"
+      ],
+      "next_action": "derive X from the scalar/topographic boundary profile or an invariant BHSM boundary embedding theorem",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "induced_boundary_metric_h_AB",
+      "name": "Induced boundary metric",
+      "symbol": "h_AB = g_mu_nu e_A^mu e_B^nu",
+      "sector": "neutrino_pmns",
+      "status": "DERIVED_CONDITIONAL",
+      "formula_candidate": "e_A^mu = partial_A X^mu; h_AB = g_mu_nu e_A^mu e_B^nu",
+      "derivation_source": "standard pullback metric formula conditional on boundary embedding and background metric",
+      "depends_on": [
+        "boundary_embedding_X",
+        "background metric g_mu_nu",
+        "nondegenerate induced metric"
+      ],
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "fitted FTL/anomaly data",
+        "post-comparison boundary embedding fit",
+        "post-comparison induced metric fit",
+        "post-comparison normal fit",
+        "post-comparison second fundamental form fit",
+        "post-comparison shape-operator fit",
+        "post-comparison K(Y) fit",
+        "post-comparison J(Y,rho) fit"
+      ],
+      "claim_boundary": "pullback formula is conditionally derived; numerical/function metric values remain open until X and g_mu_nu are derived",
+      "tests": [
+        "tests/test_boundary_embedding_shape_operator.py"
+      ],
+      "next_action": "derive X and background metric data from BHSM scalar/topographic geometry",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "unit_normal_n",
+      "name": "Unit normal field",
+      "symbol": "n_mu",
+      "sector": "neutrino_pmns",
+      "status": "DERIVED_CONDITIONAL",
+      "formula_candidate": "n_mu e_A^mu = 0; g^{mu nu} n_mu n_nu = 1 or sign-equivalent",
+      "derivation_source": "standard normal orthogonality and normalization conditions conditional on embedding, metric, and orientation",
+      "depends_on": [
+        "boundary_embedding_X",
+        "induced_boundary_metric_h_AB",
+        "background metric g_mu_nu",
+        "normal_orientation"
+      ],
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "fitted FTL/anomaly data",
+        "post-comparison boundary embedding fit",
+        "post-comparison induced metric fit",
+        "post-comparison normal fit",
+        "post-comparison second fundamental form fit",
+        "post-comparison shape-operator fit",
+        "post-comparison K(Y) fit",
+        "post-comparison J(Y,rho) fit"
+      ],
+      "claim_boundary": "normal conditions are conditionally derived; the BHSM-specific normal field and orientation value remain open and unfitted",
+      "tests": [
+        "tests/test_boundary_embedding_shape_operator.py"
+      ],
+      "next_action": "derive normal field and orientation from boundary embedding or scalar/topographic level-set profile",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "second_fundamental_form_K_AB",
+      "name": "Second fundamental form",
+      "symbol": "K_AB = e_A^mu e_B^nu nabla_mu n_nu",
+      "sector": "neutrino_pmns",
+      "status": "DERIVED_CONDITIONAL",
+      "formula_candidate": "K_AB = e_A^mu e_B^nu nabla_mu n_nu, up to normal/sign convention",
+      "derivation_source": "standard extrinsic-curvature formula conditional on embedding, normal, and connection",
+      "depends_on": [
+        "boundary_embedding_X",
+        "induced_boundary_metric_h_AB",
+        "unit_normal_n",
+        "background connection nabla",
+        "normal_orientation"
+      ],
+      "forbidden_inputs": [
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "PMNS angles",
+        "PMNS CP phase",
+        "fitted FTL/anomaly data",
+        "post-comparison boundary embedding fit",
+        "post-comparison induced metric fit",
+        "post-comparison normal fit",
+        "post-comparison second fundamental form fit",
+        "post-comparison shape-operator fit",
+        "post-comparison K(Y) fit",
+        "post-comparison J(Y,rho) fit"
+      ],
+      "claim_boundary": "formula is conditionally derived; K_AB function values remain open until geometry is derived",
+      "tests": [
+        "tests/test_boundary_embedding_shape_operator.py"
+      ],
+      "next_action": "derive K_AB from X, n, and the BHSM background/topographic connection",
+      "fit_policy": "FORBIDDEN_TO_FIT"
     }
   ],
   "open_numerical_inputs": [
@@ -2760,7 +3064,13 @@
     "shape_operator_S",
     "boundary induced metric h_AB",
     "boundary embedding",
-    "normal orientation"
+    "normal orientation",
+    "boundary_embedding_X",
+    "background metric g_mu_nu",
+    "unit normal orientation sign",
+    "scalar/topographic level-set profile",
+    "K(Y) function value",
+    "S(Y) function value"
   ],
   "forbidden_fit_routes": [
     "fit beta0 to masses",
@@ -2778,7 +3088,9 @@
     "fit PMNS phase loop to measured CP value",
     "fit scalar/topographic profile parameters to hide extra light states",
     "fit J(Y,rho), K(Y), shape operator S, boundary embedding, or collar-measure curvature data to neutrino masses, PMNS data, or FTL/anomaly data",
-    "fit boundary trace K(Y) or shape operator S to make Robin coefficients or neutral suppression work"
+    "fit boundary trace K(Y) or shape operator S to make Robin coefficients or neutral suppression work",
+    "fit boundary embedding X, induced metric h_AB, unit normal n, K_AB, shape operator S, or boundary trace K to neutrino masses, PMNS data, or FTL/anomaly data",
+    "fit scalar/topographic level-set profile to produce desired collar curvature or neutral suppression"
   ],
   "claim_status_table": [
     {
@@ -2828,6 +3140,10 @@
     {
       "claim": "collar measure / extrinsic geometry",
       "status": "DERIVED_CONDITIONAL_WITH_OPEN_GEOMETRIC_INPUTS"
+    },
+    {
+      "claim": "boundary embedding / shape operator",
+      "status": "DERIVED_CONDITIONAL_WITH_OPEN_EMBEDDING_INPUTS"
     }
   ],
   "verdict_labels": [
@@ -2862,8 +3178,13 @@
     "OFFICIAL_PREDICTIONS_UNCHANGED",
     "PO_BH_57_COLLAR_MEASURE_EXTRINSIC_GEOMETRY_CONDITIONAL",
     "COLLAR_JACOBIAN_DERIVED_CONDITIONAL",
-    "BOUNDARY_TRACE_K_OPEN",
-    "SHAPE_OPERATOR_S_OPEN"
+    "PO_BH_58_BOUNDARY_EMBEDDING_SHAPE_OPERATOR_CONDITIONAL",
+    "BOUNDARY_EMBEDDING_X_OPEN",
+    "INDUCED_BOUNDARY_METRIC_DERIVED_CONDITIONAL",
+    "UNIT_NORMAL_DERIVED_CONDITIONAL",
+    "SECOND_FUNDAMENTAL_FORM_DERIVED_CONDITIONAL",
+    "SHAPE_OPERATOR_FORMULA_DERIVED_CONDITIONAL",
+    "BOUNDARY_TRACE_FORMULA_DERIVED_CONDITIONAL"
   ],
   "collar_measure_extrinsic_geometry": {
     "id": "PO-BH-57",
@@ -2903,6 +3224,22 @@
       {
         "id": "scalar/topographic profile solution",
         "status": "OPEN_UNRESOLVED"
+      },
+      {
+        "id": "boundary_embedding_X",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "induced_boundary_metric_h_AB",
+        "status": "DERIVED_CONDITIONAL"
+      },
+      {
+        "id": "unit_normal_n",
+        "status": "DERIVED_CONDITIONAL"
+      },
+      {
+        "id": "second_fundamental_form_K_AB",
+        "status": "DERIVED_CONDITIONAL"
       }
     ],
     "candidate_routes": [
@@ -3020,7 +3357,8 @@
       "collar_coordinate_rho",
       "shape_operator_S",
       "boundary_trace_K",
-      "normal_orientation"
+      "normal_orientation",
+      "boundary_embedding_shape_operator"
     ],
     "forbidden_inputs": [
       "observed neutrino masses",
@@ -3035,7 +3373,8 @@
     ],
     "claim_boundary": "symbolic collar Jacobian formula only; no numerical J or K value is derived or fitted",
     "tests": [
-      "tests/test_collar_measure_extrinsic_geometry.py"
+      "tests/test_collar_measure_extrinsic_geometry.py",
+      "tests/test_boundary_embedding_shape_operator.py"
     ],
     "next_action": "derive shape operator and boundary trace from BHSM boundary/topographic geometry",
     "fit_policy": "FORBIDDEN_TO_FIT"
@@ -3043,16 +3382,16 @@
   "boundary_trace_K": {
     "id": "boundary_trace_K",
     "name": "Boundary trace / mean-curvature input",
-    "symbol": "K(Y)=tr(S)(Y)",
+    "symbol": "K(Y)=tr(S)(Y)=h^{AB}K_AB(Y)",
     "sector": "neutrino_pmns",
-    "status": "OPEN_LOCALIZABLE",
+    "status": "DERIVED_CONDITIONAL",
     "formula_candidate": "K(Y)=tr(S)(Y)=h^{AB}K_AB(Y), or sign-equivalent projected divergence of the normal",
-    "derivation_source": "standard extrinsic-geometry trace target; not yet derived from BHSM scalar/topographic boundary embedding",
+    "derivation_source": "standard trace of the shape operator conditional on h_AB and K_AB",
     "depends_on": [
       "shape_operator_S",
-      "boundary induced metric h_AB",
-      "normal field n",
-      "scalar/topographic profile solution",
+      "induced_boundary_metric_h_AB",
+      "second_fundamental_form_K_AB",
+      "unit_normal_n",
       "normal_orientation"
     ],
     "forbidden_inputs": [
@@ -3061,16 +3400,20 @@
       "PMNS angles",
       "PMNS CP phase",
       "fitted FTL/anomaly data",
-      "post-comparison J(Y,rho) fit",
-      "post-comparison K(Y) fit",
+      "post-comparison boundary embedding fit",
+      "post-comparison induced metric fit",
+      "post-comparison normal fit",
+      "post-comparison second fundamental form fit",
       "post-comparison shape-operator fit",
-      "post-comparison normal-orientation fit"
+      "post-comparison K(Y) fit",
+      "post-comparison J(Y,rho) fit"
     ],
-    "claim_boundary": "K(Y) is a geometric dependency, not a fitted parameter; no numerical K value is claimed",
+    "claim_boundary": "trace formula is conditionally derived; numerical/function value of K(Y) remains open and cannot be fitted",
     "tests": [
+      "tests/test_boundary_embedding_shape_operator.py",
       "tests/test_collar_measure_extrinsic_geometry.py"
     ],
-    "next_action": "derive K(Y) from boundary embedding, normal divergence, or scalar/topographic level-set profile",
+    "next_action": "derive K(Y) values from boundary embedding, metric, normal, and scalar/topographic profile",
     "fit_policy": "FORBIDDEN_TO_FIT"
   },
   "shape_operator_S": {
@@ -3078,15 +3421,14 @@
     "name": "Boundary shape operator",
     "symbol": "S^A_B(Y)",
     "sector": "neutrino_pmns",
-    "status": "OPEN_LOCALIZABLE",
-    "formula_candidate": "S^A_B defines the first-order collar metric/Jacobian deformation; K(Y)=tr(S)(Y)",
-    "derivation_source": "standard extrinsic-geometry object required by the collar Jacobian; not yet derived from BHSM boundary profile",
+    "status": "DERIVED_CONDITIONAL",
+    "formula_candidate": "S^A_B = h^{AC} K_CB; K(Y)=tr(S)(Y)",
+    "derivation_source": "standard algebraic shape-operator formula conditional on induced metric and second fundamental form",
     "depends_on": [
-      "boundary embedding",
-      "induced metric h_AB",
-      "unit normal field n",
-      "ambient connection",
-      "scalar/topographic profile solution"
+      "induced_boundary_metric_h_AB",
+      "second_fundamental_form_K_AB",
+      "unit_normal_n",
+      "normal_orientation"
     ],
     "forbidden_inputs": [
       "observed neutrino masses",
@@ -3094,16 +3436,305 @@
       "PMNS angles",
       "PMNS CP phase",
       "fitted FTL/anomaly data",
-      "post-comparison J(Y,rho) fit",
-      "post-comparison K(Y) fit",
+      "post-comparison boundary embedding fit",
+      "post-comparison induced metric fit",
+      "post-comparison normal fit",
+      "post-comparison second fundamental form fit",
       "post-comparison shape-operator fit",
-      "post-comparison normal-orientation fit"
+      "post-comparison K(Y) fit",
+      "post-comparison J(Y,rho) fit"
     ],
-    "claim_boundary": "shape operator is exposed as an open geometric input and is not fitted",
+    "claim_boundary": "shape-operator formula is conditionally derived; function values remain open and cannot be fitted",
     "tests": [
+      "tests/test_boundary_embedding_shape_operator.py",
       "tests/test_collar_measure_extrinsic_geometry.py"
     ],
-    "next_action": "derive S from the boundary embedding or scalar/topographic level-set geometry",
+    "next_action": "derive h_AB and K_AB values from BHSM boundary/topographic geometry",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "boundary_embedding_shape_operator": {
+    "id": "PO-BH-58",
+    "name": "Boundary embedding / induced metric / shape operator",
+    "symbol": "X, h_AB, n_mu, K_AB, S^A_B, K=tr(S)",
+    "sector": "neutrino_pmns",
+    "status": "DERIVED_CONDITIONAL_WITH_OPEN_EMBEDDING_INPUTS",
+    "formula_candidate": "h_AB=g_mu_nu partial_A X^mu partial_B X^nu; K_AB=e_A^mu e_B^nu nabla_mu n_nu; S^A_B=h^{AC}K_CB; K=tr(S)",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "standard boundary/extrinsic differential geometry conditional on a BHSM boundary embedding and scalar/topographic profile",
+    "depends_on": [
+      {
+        "id": "boundary_embedding_X",
+        "status": "OPEN_LOCALIZABLE"
+      },
+      {
+        "id": "induced_boundary_metric_h_AB",
+        "status": "DERIVED_CONDITIONAL"
+      },
+      {
+        "id": "unit_normal_n",
+        "status": "DERIVED_CONDITIONAL"
+      },
+      {
+        "id": "second_fundamental_form_K_AB",
+        "status": "DERIVED_CONDITIONAL"
+      },
+      {
+        "id": "shape_operator_S",
+        "status": "DERIVED_CONDITIONAL"
+      },
+      {
+        "id": "boundary_trace_K",
+        "status": "DERIVED_CONDITIONAL"
+      },
+      {
+        "id": "scalar/topographic profile solution",
+        "status": "OPEN_UNRESOLVED"
+      }
+    ],
+    "candidate_routes": [
+      {
+        "id": "route_A_embedding_pullback",
+        "formula": "e_A^mu=partial_A X^mu; h_AB=g_mu_nu e_A^mu e_B^nu",
+        "dependencies": [
+          "X",
+          "g_mu_nu"
+        ],
+        "status": "DERIVED_CONDITIONAL",
+        "reason": "Pullback metric formula follows from standard geometry once X and g are supplied.",
+        "allowed_next_action": "derive X from BHSM boundary/topographic profile",
+        "forbidden_shortcut": "choose embedding from neutrino residuals"
+      },
+      {
+        "id": "route_B_unit_normal",
+        "formula": "n_mu e_A^mu=0; g^{mu nu}n_mu n_nu=1 or signature-equivalent",
+        "dependencies": [
+          "X",
+          "g_mu_nu",
+          "orientation"
+        ],
+        "status": "DERIVED_CONDITIONAL",
+        "reason": "Normal constraints are standard; BHSM-specific normal values remain open.",
+        "allowed_next_action": "derive normal field and orientation from embedding/profile",
+        "forbidden_shortcut": "pick normal sign from anomaly or FTL data"
+      },
+      {
+        "id": "route_C_second_fundamental_form",
+        "formula": "K_AB=e_A^mu e_B^nu nabla_mu n_nu; S^A_B=h^{AC}K_CB; K=h^{AB}K_AB",
+        "dependencies": [
+          "e_A",
+          "n",
+          "nabla",
+          "h_AB"
+        ],
+        "status": "DERIVED_CONDITIONAL",
+        "reason": "Standard extrinsic curvature and shape-operator formulas.",
+        "allowed_next_action": "derive function values from BHSM geometry",
+        "forbidden_shortcut": "fit K_AB, S, or K"
+      },
+      {
+        "id": "route_D_topographic_level_set",
+        "formula": "n_mu=partial_mu Phi/|grad Phi|; K=nabla_mu n^mu",
+        "dependencies": [
+          "Phi profile",
+          "metric",
+          "nonzero gradient",
+          "embedding"
+        ],
+        "status": "OPEN_LOCALIZABLE",
+        "reason": "The scalar/topographic profile and regular level-set theorem remain open.",
+        "allowed_next_action": "derive profile and level-set embedding",
+        "forbidden_shortcut": "tune profile to neutrino or FTL data"
+      },
+      {
+        "id": "route_E_hessian_projected_curvature",
+        "formula": "K_AB ~ P_A^mu P_B^nu nabla_mu nabla_nu Phi/|grad Phi|",
+        "dependencies": [
+          "full Hessian",
+          "profile",
+          "projection theorem"
+        ],
+        "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+        "reason": "Existing Hessian diagnostics do not prove extrinsic curvature identity.",
+        "allowed_next_action": "derive Hessian-to-curvature theorem",
+        "forbidden_shortcut": "assert Hessian trace as curvature without proof"
+      },
+      {
+        "id": "route_F_collar_measure_consistency",
+        "formula": "J(Y,rho)=det(I+rho S(Y)); J=1+rho K+O(rho^2)",
+        "dependencies": [
+          "PO-BH-57",
+          "S",
+          "K",
+          "orientation"
+        ],
+        "status": "DERIVED_CONDITIONAL",
+        "reason": "Connects formula objects to the collar Jacobian while keeping values open.",
+        "allowed_next_action": "evaluate only after deriving geometry",
+        "forbidden_shortcut": "fit J or K"
+      }
+    ],
+    "forbidden_inputs": [
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "PMNS angles",
+      "PMNS CP phase",
+      "fitted FTL/anomaly data",
+      "post-comparison boundary embedding fit",
+      "post-comparison induced metric fit",
+      "post-comparison normal fit",
+      "post-comparison second fundamental form fit",
+      "post-comparison shape-operator fit",
+      "post-comparison K(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison lambda_nu fit",
+      "post-comparison A_nu/B_nu fit"
+    ],
+    "claim_boundary": "The boundary embedding, induced metric, unit normal, second fundamental form, shape operator, and trace formulas are localized or derived conditionally as geometric structures. Their numerical/function values remain open unless a BHSM scalar/topographic boundary profile and embedding are derived.",
+    "tests": [
+      "tests/test_boundary_embedding_shape_operator.py"
+    ],
+    "next_action": "derive or reject the scalar/topographic level-set profile and boundary embedding X before evaluating K(Y)",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "boundary_embedding_X": {
+    "id": "boundary_embedding_X",
+    "name": "Boundary embedding",
+    "symbol": "X: partialB -> B; X^mu(Y^A)",
+    "sector": "neutrino_pmns",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "X^mu(Y^A) with tangent vectors e_A^mu = partial_A X^mu",
+    "derivation_source": "standard boundary embedding target; not yet derived from BHSM scalar/topographic profile",
+    "depends_on": [
+      "smooth boundary partialB",
+      "background space B",
+      "scalar/topographic boundary profile",
+      "coordinate chart or invariant embedding convention"
+    ],
+    "forbidden_inputs": [
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "PMNS angles",
+      "PMNS CP phase",
+      "fitted FTL/anomaly data",
+      "post-comparison boundary embedding fit",
+      "post-comparison induced metric fit",
+      "post-comparison normal fit",
+      "post-comparison second fundamental form fit",
+      "post-comparison shape-operator fit",
+      "post-comparison K(Y) fit",
+      "post-comparison J(Y,rho) fit"
+    ],
+    "claim_boundary": "embedding is localized as the geometric input needed for h_AB, n, K_AB, S, and K; no embedding value is fitted or derived here",
+    "tests": [
+      "tests/test_boundary_embedding_shape_operator.py"
+    ],
+    "next_action": "derive X from the scalar/topographic boundary profile or an invariant BHSM boundary embedding theorem",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "induced_boundary_metric_h_AB": {
+    "id": "induced_boundary_metric_h_AB",
+    "name": "Induced boundary metric",
+    "symbol": "h_AB = g_mu_nu e_A^mu e_B^nu",
+    "sector": "neutrino_pmns",
+    "status": "DERIVED_CONDITIONAL",
+    "formula_candidate": "e_A^mu = partial_A X^mu; h_AB = g_mu_nu e_A^mu e_B^nu",
+    "derivation_source": "standard pullback metric formula conditional on boundary embedding and background metric",
+    "depends_on": [
+      "boundary_embedding_X",
+      "background metric g_mu_nu",
+      "nondegenerate induced metric"
+    ],
+    "forbidden_inputs": [
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "PMNS angles",
+      "PMNS CP phase",
+      "fitted FTL/anomaly data",
+      "post-comparison boundary embedding fit",
+      "post-comparison induced metric fit",
+      "post-comparison normal fit",
+      "post-comparison second fundamental form fit",
+      "post-comparison shape-operator fit",
+      "post-comparison K(Y) fit",
+      "post-comparison J(Y,rho) fit"
+    ],
+    "claim_boundary": "pullback formula is conditionally derived; numerical/function metric values remain open until X and g_mu_nu are derived",
+    "tests": [
+      "tests/test_boundary_embedding_shape_operator.py"
+    ],
+    "next_action": "derive X and background metric data from BHSM scalar/topographic geometry",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "unit_normal_n": {
+    "id": "unit_normal_n",
+    "name": "Unit normal field",
+    "symbol": "n_mu",
+    "sector": "neutrino_pmns",
+    "status": "DERIVED_CONDITIONAL",
+    "formula_candidate": "n_mu e_A^mu = 0; g^{mu nu} n_mu n_nu = 1 or sign-equivalent",
+    "derivation_source": "standard normal orthogonality and normalization conditions conditional on embedding, metric, and orientation",
+    "depends_on": [
+      "boundary_embedding_X",
+      "induced_boundary_metric_h_AB",
+      "background metric g_mu_nu",
+      "normal_orientation"
+    ],
+    "forbidden_inputs": [
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "PMNS angles",
+      "PMNS CP phase",
+      "fitted FTL/anomaly data",
+      "post-comparison boundary embedding fit",
+      "post-comparison induced metric fit",
+      "post-comparison normal fit",
+      "post-comparison second fundamental form fit",
+      "post-comparison shape-operator fit",
+      "post-comparison K(Y) fit",
+      "post-comparison J(Y,rho) fit"
+    ],
+    "claim_boundary": "normal conditions are conditionally derived; the BHSM-specific normal field and orientation value remain open and unfitted",
+    "tests": [
+      "tests/test_boundary_embedding_shape_operator.py"
+    ],
+    "next_action": "derive normal field and orientation from boundary embedding or scalar/topographic level-set profile",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "second_fundamental_form_K_AB": {
+    "id": "second_fundamental_form_K_AB",
+    "name": "Second fundamental form",
+    "symbol": "K_AB = e_A^mu e_B^nu nabla_mu n_nu",
+    "sector": "neutrino_pmns",
+    "status": "DERIVED_CONDITIONAL",
+    "formula_candidate": "K_AB = e_A^mu e_B^nu nabla_mu n_nu, up to normal/sign convention",
+    "derivation_source": "standard extrinsic-curvature formula conditional on embedding, normal, and connection",
+    "depends_on": [
+      "boundary_embedding_X",
+      "induced_boundary_metric_h_AB",
+      "unit_normal_n",
+      "background connection nabla",
+      "normal_orientation"
+    ],
+    "forbidden_inputs": [
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "PMNS angles",
+      "PMNS CP phase",
+      "fitted FTL/anomaly data",
+      "post-comparison boundary embedding fit",
+      "post-comparison induced metric fit",
+      "post-comparison normal fit",
+      "post-comparison second fundamental form fit",
+      "post-comparison shape-operator fit",
+      "post-comparison K(Y) fit",
+      "post-comparison J(Y,rho) fit"
+    ],
+    "claim_boundary": "formula is conditionally derived; K_AB function values remain open until geometry is derived",
+    "tests": [
+      "tests/test_boundary_embedding_shape_operator.py"
+    ],
+    "next_action": "derive K_AB from X, n, and the BHSM background/topographic connection",
     "fit_policy": "FORBIDDEN_TO_FIT"
   }
 }

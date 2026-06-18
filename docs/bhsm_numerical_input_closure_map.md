@@ -215,10 +215,12 @@ or the sign-convention equivalent `det(I - rho S(Y))`. Therefore:
 
 with `K(Y)=tr(S)(Y)` up to orientation sign. Status:
 `DERIVED_CONDITIONAL` for `collar_measure_extrinsic_geometry` and
-`collar_jacobian_J`; `OPEN_LOCALIZABLE` for `boundary_trace_K` and
-`shape_operator_S`. The boundary trace/extrinsic curvature data needed to
-evaluate `K(Y)` remain open unless derived elsewhere in BHSM. These quantities
-are geometric dependencies, not fitted parameters.
+`collar_jacobian_J`. PO-BH-58 localizes the boundary embedding and
+conditionally derives the induced metric, unit normal, second fundamental form,
+shape operator, and trace formulas needed to evaluate the collar Jacobian.
+Their numerical/function values remain open unless a BHSM scalar/topographic
+boundary profile and embedding are derived. These quantities are geometric
+dependencies, not fitted parameters.
 
 with
 
@@ -288,7 +290,7 @@ The collar geometry package has been localized as the missing convention set for
 
 The complete scalar/topographic collar action has been audited as the source needed to derive the collar measure, orientation, edge condition, admissible variations, and Robin coefficients. Any pieces not fixed by the existing action remain open and cannot be fitted post-comparison.
 
-The collar-measure expansion has been derived conditionally from standard collar/extrinsic geometry as a symbolic formula. The boundary trace/extrinsic curvature data needed to evaluate `K(Y)` remain open unless derived elsewhere in BHSM. These quantities are geometric dependencies, not fitted parameters.
+The collar-measure expansion has been derived conditionally from standard collar/extrinsic geometry as a symbolic formula. The boundary embedding, induced metric, unit normal, second fundamental form, shape operator, and trace formulas have been localized or derived conditionally as geometric structures needed to evaluate the collar Jacobian. Their numerical/function values remain open unless a BHSM scalar/topographic boundary profile and embedding are derived. These quantities are geometric dependencies, not fitted parameters.
 
 PO-BH-54 localizes the normal-coupling/collar convention for the neutral
 boundary term:
