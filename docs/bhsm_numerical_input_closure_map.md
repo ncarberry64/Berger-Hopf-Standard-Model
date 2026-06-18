@@ -70,6 +70,21 @@ Status: `OPEN_LOCALIZABLE`. The candidate formula depends on deriving
 saddle/path from the boundary/topographic action. Numerical neutrino closure
 remains open.
 
+PO-BH-49 localizes `Delta y_nu` as a required input for the `S_nu_topo`
+Hessian/barrier formula. Candidate definitions are:
+
+`Delta y_nu = - H_H^{-1} grad_y[delta S_eff^(nu-H)]|_{y_H}`
+
+and
+
+`Delta y_nu = <y>_nu - <y>_H`.
+
+Status: `OPEN_LOCALIZABLE`. The stationary-point route still requires
+`S_eff^(nu)`, `S_eff^(H)`, `H_H`, and the neutral-minus-Higgs gradient. The
+centroid route still requires explicit `W_nu`, `W_H`, a coordinate chart or
+coordinate-invariant centroid convention, and gauge/coordinate invariance.
+Numerical neutrino closure remains open.
+
 with
 
 `H_nu^(0) = [[lambda0+Delta0, etaA exp(i phiA), etaB exp(i phiB)], [etaA exp(-i phiA), lambda3+DeltaA, delta exp(i varphi)], [etaB exp(-i phiB), delta exp(-i varphi), lambda3+DeltaB]]`.
@@ -116,6 +131,8 @@ Near-degenerate mixing scaffold:
 Open inputs include charged-sector metrics and prefactors, CKM mixing metrics and finite-width moments, sector-relative displacement coordinates, CKM `1/16` exponent, neutral suppression action, neutral operator parameters, scalar/topographic profile solution, scalar decoupling, stability proof, coupling bounds, and higher-loop thresholds.
 
 The neutral topographic suppression action has been localized as the next numerical-closure object. A candidate Hessian/barrier formula is identified, but numerical neutrino closure remains open unless explicitly derived and locked.
+
+The neutral saddle displacement `Delta y_nu` has been localized as a required input for the `S_nu_topo` Hessian/barrier formula. Candidate stationary-point and finite-width centroid definitions are documented. Numerical neutrino closure remains open.
 
 ## Claim Boundary
 
