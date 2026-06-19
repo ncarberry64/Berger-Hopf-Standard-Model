@@ -306,6 +306,8 @@ PO-BH-64 records a finite sector projector compression and charged Hessian fork 
 
 PO-BH-65 audits existing BHSM charged-Hessian sources for the localizable anisotropy `rho_ch`. The minimal diagonal route `rho_ch=1` remains a `MINIMAL_ACTION_CLOSURE_CANDIDATE`, while the cyclic-base route `rho_ch=3` remains `STRUCTURALLY_MOTIVATED_NOT_DERIVED`. No charged action/Hessian source currently decides `rho_ch`, so `rho_ch_action_value` and `charged_Hessian_anisotropy_rho_ch` remain `OPEN_LOCALIZABLE`. Charged `qj` cross-terms are forbidden unless action-derived; neutral/topographic `qj` mixing remains open but cannot leak into the charged Hessian without an explicit charged coupling. The exact `eta_l` value remains open because it depends on the unresolved `rho_ch`. No mass, CKM, PMNS, neutrino, measured-alpha, or target-value input is used to choose `rho_ch`.
 
+PO-BH-66 audits the up-sector virtual-door applicability proof for `Z_virt^{u,2}=1/2`. It formalizes a candidate colored weak virtual pair `V_pair^u=span{door_u,door_d}` with dimension 2 and a rank-one up-admissibility projector `A_virt^u`, giving the dimension ratio `1/2`. Existing sources support the dimension-ratio route but do not prove that the relevant up-sector virtual correction samples that pair. Therefore `Z_virt_u2_dimension_ratio` remains `STRONG_DERIVATION_CANDIDATE` and `Z_virt_u2_applicability` remains `OPEN_LOCALIZABLE`. No observed quark masses, charm/top ratio, up/top ratio, CKM, PMNS, neutrino data, measured alpha, or target ratios are used.
+
 PO-BH-54 localizes the normal-coupling/collar convention for the neutral
 boundary term:
 

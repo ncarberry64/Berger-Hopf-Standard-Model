@@ -2,7 +2,7 @@
   "id": "PO-BH-47",
   "title": "Numerical Input Closure Map Theorem",
   "status": "STRUCTURAL_ARCHITECTURE_INTEGRATED_CONDITIONAL_NUMERICAL_CLOSURE_OPEN",
-  "branch": "bhsm-charged-hessian-source-audit-v1",
+  "branch": "bhsm-up-sector-virtual-door-applicability-v1",
   "official_predictions_changed": false,
   "frozen_predictions_changed": false,
   "standard_model_fully_derived": false,
@@ -41,7 +41,9 @@
     "FORBIDDEN_CONDITIONAL_UNLESS_ACTION_DERIVED",
     "FORBIDDEN_UNLESS_EXPLICIT_COUPLING_DERIVED",
     "MINIMAL_ACTION_CLOSURE_CANDIDATE",
-    "TRUE"
+    "TRUE",
+    "FORMALIZED_DIMENSION_2",
+    "FORMALIZED_RANK_1"
   ],
   "ledgers": {
     "charged_lepton": [
@@ -7254,7 +7256,9 @@
     "use measured alpha or CODATA alpha as an eta_l derivation",
     "fit Pi_l or alpha_geom after comparison",
     "fit rho_ch from charged-lepton masses, quark masses, observed mass ratios, CKM, PMNS, neutrino data, measured alpha, or target values",
-    "finalize eta_l before rho_ch is derived"
+    "finalize eta_l before rho_ch is derived",
+    "fit Z_virt_u2 from charm/top, up/top, CKM, PMNS, neutrino data, measured alpha, or target ratios",
+    "claim Z_virt_u2 fully derived before proving the relevant up-sector virtual correction samples the two-door virtual pair"
   ],
   "claim_status_table": [
     {
@@ -7424,7 +7428,12 @@
     "RHO_1_MINIMAL_CLOSURE_CANDIDATE",
     "RHO_3_STRUCTURALLY_MOTIVATED_NOT_DERIVED",
     "ETA_L_DEPENDS_ON_RHO_CH",
-    "CHARGED_QJ_CROSS_TERM_FORBIDDEN_UNLESS_ACTION_DERIVED"
+    "CHARGED_QJ_CROSS_TERM_FORBIDDEN_UNLESS_ACTION_DERIVED",
+    "PO_BH_66_UP_SECTOR_VIRTUAL_DOOR_APPLICABILITY_AUDIT",
+    "Z_VIRT_U2_PAIR_DIMENSION_FORMALIZED",
+    "Z_VIRT_U2_ADMISSIBLE_RANK_FORMALIZED",
+    "Z_VIRT_U2_APPLICABILITY_REMAINS_OPEN_LOCALIZABLE",
+    "Z_VIRT_U2_NOT_DERIVED_FROM_MASSES"
   ],
   "collar_measure_extrinsic_geometry": {
     "id": "PO-BH-57",
@@ -11708,34 +11717,30 @@
     "id": "Z_virt_u2_dimension_ratio",
     "name": "Z virt u2 dimension ratio",
     "symbol": "Z_virt_u2_dimension_ratio",
-    "sector": "sector_projector_hessian_fork",
+    "sector": "up_sector_virtual_door_applicability",
     "status": "STRONG_DERIVATION_CANDIDATE",
-    "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+    "formula_candidate": "rank(A_virt^u)/dim(V_pair^u)=1/2 if the relevant up-sector correction samples V_pair^u",
     "derived_numerical_value": false,
     "pre_comparison_locked": false,
-    "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+    "derivation_source": "PO-BH-66 up-sector virtual door applicability audit",
     "depends_on": [
-      "bhsm_sector_projector_hessian_fork_audit"
+      "bhsm_up_sector_virtual_door_applicability"
     ],
     "forbidden_inputs": [
-      "observed masses",
-      "charged lepton masses",
-      "quark masses",
+      "observed quark masses",
+      "charm/top ratio",
+      "up/top ratio",
+      "target mass ratios",
       "CKM values",
       "PMNS values",
       "neutrino data",
-      "measured alpha",
-      "CODATA alpha",
-      "observed generation data",
-      "anomaly/FTL data",
-      "propulsion/anomaly data",
-      "target values"
+      "measured alpha"
     ],
-    "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+    "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
     "tests": [
-      "tests/test_sector_projector_hessian_fork_audit.py"
+      "tests/test_up_sector_virtual_door_applicability.py"
     ],
-    "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+    "next_action": "derive applicability before promoting to fully applicable correction",
     "fit_policy": "FORBIDDEN_TO_FIT"
   },
   "down_extra_boundary_incidence": {
@@ -12096,5 +12101,345 @@
       "tests/test_charged_hessian_source_audit.py"
     ],
     "claim_boundary": "No action source decides rho_ch; no numerical closure or prediction update."
+  },
+  "open_inputs": [
+    {
+      "id": "up_sector_virtual_door_applicability_audit",
+      "name": "up sector virtual door applicability audit",
+      "symbol": "up_sector_virtual_door_applicability_audit",
+      "sector": "up_sector_virtual_door_applicability",
+      "status": "COMPLETED",
+      "formula_candidate": "See docs/bhsm_up_sector_virtual_door_applicability.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-66 up-sector virtual door applicability audit",
+      "depends_on": [
+        "bhsm_up_sector_virtual_door_applicability"
+      ],
+      "forbidden_inputs": [
+        "observed quark masses",
+        "charm/top ratio",
+        "up/top ratio",
+        "target mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha"
+      ],
+      "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_up_sector_virtual_door_applicability.py"
+      ],
+      "next_action": "derive the up-sector virtual-correction sampling map before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "V_pair_u_dimension",
+      "name": "V pair u dimension",
+      "symbol": "V_pair_u_dimension",
+      "sector": "up_sector_virtual_door_applicability",
+      "status": "FORMALIZED_DIMENSION_2",
+      "formula_candidate": "V_pair^u = span{door_u, door_d}; dim(V_pair^u)=2",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-66 up-sector virtual door applicability audit",
+      "depends_on": [
+        "bhsm_up_sector_virtual_door_applicability"
+      ],
+      "forbidden_inputs": [
+        "observed quark masses",
+        "charm/top ratio",
+        "up/top ratio",
+        "target mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha"
+      ],
+      "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_up_sector_virtual_door_applicability.py"
+      ],
+      "next_action": "derive the pair from the full virtual/boundary channel action",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "A_virt_u_rank",
+      "name": "A virt u rank",
+      "symbol": "A_virt_u_rank",
+      "sector": "up_sector_virtual_door_applicability",
+      "status": "FORMALIZED_RANK_1",
+      "formula_candidate": "A_virt^u door_u=door_u, A_virt^u door_d=0; rank(A_virt^u)=1",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-66 up-sector virtual door applicability audit",
+      "depends_on": [
+        "bhsm_up_sector_virtual_door_applicability"
+      ],
+      "forbidden_inputs": [
+        "observed quark masses",
+        "charm/top ratio",
+        "up/top ratio",
+        "target mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha"
+      ],
+      "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_up_sector_virtual_door_applicability.py"
+      ],
+      "next_action": "derive the admissibility projector from the up-sector virtual channel structure",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "Z_virt_u2_applicability",
+      "name": "Z virt u2 applicability",
+      "symbol": "Z_virt_u2_applicability",
+      "sector": "up_sector_virtual_door_applicability",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "prove the relevant up-sector virtual correction samples V_pair^u",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-66 up-sector virtual door applicability audit",
+      "depends_on": [
+        "bhsm_up_sector_virtual_door_applicability"
+      ],
+      "forbidden_inputs": [
+        "observed quark masses",
+        "charm/top ratio",
+        "up/top ratio",
+        "target mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha"
+      ],
+      "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_up_sector_virtual_door_applicability.py"
+      ],
+      "next_action": "prove the sampling/applicability link from BHSM virtual channel structure",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "Z_virt_u2_mass_fit",
+      "name": "Z virt u2 mass fit",
+      "symbol": "Z_virt_u2_mass_fit",
+      "sector": "up_sector_virtual_door_applicability",
+      "status": "FORBIDDEN_AS_DERIVATION",
+      "formula_candidate": "Z_virt must not be selected by charm/top, up/top, CKM, PMNS, neutrino data, measured alpha, or target ratios",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-66 up-sector virtual door applicability audit",
+      "depends_on": [
+        "bhsm_up_sector_virtual_door_applicability"
+      ],
+      "forbidden_inputs": [
+        "observed quark masses",
+        "charm/top ratio",
+        "up/top ratio",
+        "target mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha"
+      ],
+      "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_up_sector_virtual_door_applicability.py"
+      ],
+      "next_action": "keep Z_virt derivation independent of observed residuals",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "Z_virt_u2_dimension_ratio",
+      "name": "Z virt u2 dimension ratio",
+      "symbol": "Z_virt_u2_dimension_ratio",
+      "sector": "up_sector_virtual_door_applicability",
+      "status": "STRONG_DERIVATION_CANDIDATE",
+      "formula_candidate": "rank(A_virt^u)/dim(V_pair^u)=1/2 if the relevant up-sector correction samples V_pair^u",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-66 up-sector virtual door applicability audit",
+      "depends_on": [
+        "bhsm_up_sector_virtual_door_applicability"
+      ],
+      "forbidden_inputs": [
+        "observed quark masses",
+        "charm/top ratio",
+        "up/top ratio",
+        "target mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha"
+      ],
+      "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_up_sector_virtual_door_applicability.py"
+      ],
+      "next_action": "derive applicability before promoting to fully applicable correction",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    }
+  ],
+  "summaries": {
+    "bhsm_up_sector_virtual_door_applicability": {
+      "id": "bhsm_up_sector_virtual_door_applicability",
+      "name": "PO-BH-66 up-sector virtual door applicability audit",
+      "status": "COMPLETED",
+      "claim_boundary": "Dimension-ratio route is formalized; applicability remains open-localizable; no prediction outputs are changed."
+    }
+  },
+  "up_sector_virtual_door_applicability_audit": {
+    "id": "up_sector_virtual_door_applicability_audit",
+    "name": "up sector virtual door applicability audit",
+    "symbol": "up_sector_virtual_door_applicability_audit",
+    "sector": "up_sector_virtual_door_applicability",
+    "status": "COMPLETED",
+    "formula_candidate": "See docs/bhsm_up_sector_virtual_door_applicability.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-66 up-sector virtual door applicability audit",
+    "depends_on": [
+      "bhsm_up_sector_virtual_door_applicability"
+    ],
+    "forbidden_inputs": [
+      "observed quark masses",
+      "charm/top ratio",
+      "up/top ratio",
+      "target mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha"
+    ],
+    "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_up_sector_virtual_door_applicability.py"
+    ],
+    "next_action": "derive the up-sector virtual-correction sampling map before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "V_pair_u_dimension": {
+    "id": "V_pair_u_dimension",
+    "name": "V pair u dimension",
+    "symbol": "V_pair_u_dimension",
+    "sector": "up_sector_virtual_door_applicability",
+    "status": "FORMALIZED_DIMENSION_2",
+    "formula_candidate": "V_pair^u = span{door_u, door_d}; dim(V_pair^u)=2",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-66 up-sector virtual door applicability audit",
+    "depends_on": [
+      "bhsm_up_sector_virtual_door_applicability"
+    ],
+    "forbidden_inputs": [
+      "observed quark masses",
+      "charm/top ratio",
+      "up/top ratio",
+      "target mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha"
+    ],
+    "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_up_sector_virtual_door_applicability.py"
+    ],
+    "next_action": "derive the pair from the full virtual/boundary channel action",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "A_virt_u_rank": {
+    "id": "A_virt_u_rank",
+    "name": "A virt u rank",
+    "symbol": "A_virt_u_rank",
+    "sector": "up_sector_virtual_door_applicability",
+    "status": "FORMALIZED_RANK_1",
+    "formula_candidate": "A_virt^u door_u=door_u, A_virt^u door_d=0; rank(A_virt^u)=1",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-66 up-sector virtual door applicability audit",
+    "depends_on": [
+      "bhsm_up_sector_virtual_door_applicability"
+    ],
+    "forbidden_inputs": [
+      "observed quark masses",
+      "charm/top ratio",
+      "up/top ratio",
+      "target mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha"
+    ],
+    "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_up_sector_virtual_door_applicability.py"
+    ],
+    "next_action": "derive the admissibility projector from the up-sector virtual channel structure",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "Z_virt_u2_applicability": {
+    "id": "Z_virt_u2_applicability",
+    "name": "Z virt u2 applicability",
+    "symbol": "Z_virt_u2_applicability",
+    "sector": "up_sector_virtual_door_applicability",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "prove the relevant up-sector virtual correction samples V_pair^u",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-66 up-sector virtual door applicability audit",
+    "depends_on": [
+      "bhsm_up_sector_virtual_door_applicability"
+    ],
+    "forbidden_inputs": [
+      "observed quark masses",
+      "charm/top ratio",
+      "up/top ratio",
+      "target mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha"
+    ],
+    "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_up_sector_virtual_door_applicability.py"
+    ],
+    "next_action": "prove the sampling/applicability link from BHSM virtual channel structure",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "Z_virt_u2_mass_fit": {
+    "id": "Z_virt_u2_mass_fit",
+    "name": "Z virt u2 mass fit",
+    "symbol": "Z_virt_u2_mass_fit",
+    "sector": "up_sector_virtual_door_applicability",
+    "status": "FORBIDDEN_AS_DERIVATION",
+    "formula_candidate": "Z_virt must not be selected by charm/top, up/top, CKM, PMNS, neutrino data, measured alpha, or target ratios",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-66 up-sector virtual door applicability audit",
+    "depends_on": [
+      "bhsm_up_sector_virtual_door_applicability"
+    ],
+    "forbidden_inputs": [
+      "observed quark masses",
+      "charm/top ratio",
+      "up/top ratio",
+      "target mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha"
+    ],
+    "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_up_sector_virtual_door_applicability.py"
+    ],
+    "next_action": "keep Z_virt derivation independent of observed residuals",
+    "fit_policy": "FORBIDDEN_TO_FIT"
   }
 }

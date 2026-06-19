@@ -57,3 +57,28 @@ Invalidated or downgraded:
 - claiming `rho=1` is derived merely because old costs used `q^2+j^2`;
 - finalizing `eta_l` before `rho_ch` is derived;
 - using neutral/topographic anisotropy as charged-sector anisotropy without explicit coupling.
+
+## PO-BH-66 Update
+
+Validated:
+
+- `Z_virt` has a clean dimension-ratio route if the two-door pair applies;
+- `dim(V_pair^u)=2`, `rank(A_virt^u)=1`, and `Z_virt^{u,2}=1/2` are formalized as a candidate virtual-door ratio;
+- the ratio is independent of observed masses;
+- the physical interpretation remains one allowed virtual door out of two possible doors.
+
+Invalidated or downgraded:
+
+- claiming `Z_virt` is fully derived without the applicability proof;
+- using charm/top or up/top to justify the factor;
+- treating the ratio as a fitted correction.
+
+Still open:
+
+- applicability of the two-door pair to the relevant up-sector virtual correction;
+- `rho_ch`;
+- `eta_l`;
+- numerical mass closure;
+- CKM numerical closure;
+- PMNS numerical closure;
+- neutral/topographic suppression values.
