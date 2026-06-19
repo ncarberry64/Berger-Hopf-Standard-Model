@@ -176,3 +176,71 @@ Still open:
 - full threshold operator;
 - RG transport;
 - numerical closure.
+
+## Boundary Action Source Audit for Charged K_f Update
+
+Validated or strengthened:
+
+- `D_C_colored_contact_defect`, `D_d_color_lower_overlap_contact_defect`, and
+  `Gamma_sigma_weak_orientation_grading` have conditional support from the
+  existing sector/projector scaffold;
+- `Z_virt_u1` remains `DERIVED_CONDITIONAL`;
+- tangent adjacency remains `DERIVED_CONDITIONAL_ON_SECTOR_ENGINE`;
+- the minimal charged `K_f` generator remains a strong candidate with explicit
+  source references and blocking notes;
+- the audit table is machine-readable in
+  `data/boundary_action_source_audit_kf_v1.json`.
+
+Invalidated or downgraded:
+
+- treating `B_supp` as action-derived without a direct boundary action source;
+- treating `g_ch=1/21` as derived without phase-response normalization;
+- treating `beta_f=g_ch Pi_f` or `kappa_f=g_ch/||v_f||^2` as derived without
+  their charged action source;
+- selecting exact `rho_ch` from down-sector near-degeneracy or any empirical
+  residual;
+- treating the single local threshold insertion as a full threshold operator.
+
+Still open:
+
+- action source for `Gamma_T`, `E_3`, `E_A`, and `Delta_IT`;
+- `B_supp`;
+- phase-response normalization for `g_ch`;
+- exact `rho_ch`;
+- action sources for `beta_f` and `kappa_f`;
+- full threshold operator;
+- RG transport;
+- numerical closure.
+
+## Boundary Graded Defect Action Kernel v1 Update
+
+Validated or strengthened:
+
+- an explicit symbolic action-kernel scaffold now contains `D_C`, `D_d`,
+  `Gamma_sigma`, `Gamma_T`, `E_3`, `E_A`, `Delta_IT`, and
+  `S_index_trace`;
+- the unified formula
+  `Omega(C,sigma;q,j)=(2P_C-1)q+2(-sigma)(1+P_d)j` reproduces the
+  neutrino, lepton, up, and down sector equations;
+- `A(C,sigma)=3(1+P_C)(1+P_d)`, `tau=C-(1-C)sigma`, and `T=tau A`
+  reproduce the sector targets;
+- the non-reference mode ledgers are zero-defect under `Delta_IT=Omega-T`;
+- the zero-defect tangent-adjacency pattern is recorded as conditional on the
+  sector engine.
+
+Invalidated or downgraded:
+
+- `charged_Hessian_from_S_index_trace=INVALIDATED_DO_NOT_CLAIM`;
+- `S_index_trace` is an admissibility constraint, not the charged Hessian;
+- no charged-mass, CKM, PMNS, or numerical closure claim follows from this
+  kernel.
+
+Still open:
+
+- action source for `B_supp`;
+- phase-response normalization for `g_ch`;
+- exact `rho_ch`;
+- action sources for `beta_f` and `kappa_f`;
+- full threshold operator;
+- RG transport;
+- numerical closure.
