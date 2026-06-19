@@ -1,0 +1,166 @@
+{
+  "id": "PO-BH-67",
+  "title": "Up-Sector Dressing Dependency Trace",
+  "public_status": "structural architecture integrated conditional; numerical closure open",
+  "frozen_predictions_changed": false,
+  "official_predictions_changed": false,
+  "up_sector_dressing_dependency_trace": "COMPLETED",
+  "applicability_status": "OPEN_LOCALIZABLE",
+  "dimension_ratio_status": "STRONG_DERIVATION_CANDIDATE",
+  "Z_virt_u2_applicability": "OPEN_LOCALIZABLE",
+  "Z_virt_u2_dimension_ratio": "STRONG_DERIVATION_CANDIDATE",
+  "legacy_Z_virt_u2_numerical_candidate": "LOCALIZED_NOT_DERIVED",
+  "Z_virt_u2_mass_fit_route": "FORBIDDEN_AS_DERIVATION",
+  "dependency_trace": [
+    {
+      "object": "frozen dressed branch builder",
+      "source_file": "src/bhsm_v1.py",
+      "source_line_or_key": "build_bhsm_dressed_v1_candidate",
+      "depends_on": "pure_fiber_middle_up_rule(); apply_virtual_dressing(model, (rule,))",
+      "feeds_into": "BHSM_DRESSED_V1_CANDIDATE frozen c/t dressing",
+      "uses_observed_data": false,
+      "links_to_two_door_pair": false,
+      "status": "FROZEN_PREDICTION_REFERENCE",
+      "reason": "the frozen branch applies the existing rule but is not a derivation source"
+    },
+    {
+      "object": "dressed branch freeze guard",
+      "source_file": "src/bhsm_v1.py",
+      "source_line_or_key": "BHSMVersion.__post_init__",
+      "depends_on": "sector=up_quarks; generation=middle; mode=(6,0); factor=0.5",
+      "feeds_into": "rejects non-frozen dressed-branch metadata",
+      "uses_observed_data": false,
+      "links_to_two_door_pair": false,
+      "status": "FROZEN_PREDICTION_REFERENCE",
+      "reason": "guards the released value and scope without deriving the virtual pair"
+    },
+    {
+      "object": "pure-fiber middle-up rule",
+      "source_file": "src/virtual_environment.py",
+      "source_line_or_key": "pure_fiber_middle_up_rule",
+      "depends_on": "j=0; q=6; Omega_u=6; WEAK_DOUBLE_PROJECTION; factor=0.5",
+      "feeds_into": "apply_virtual_dressing and BHSM_DRESSED_V1_CANDIDATE",
+      "uses_observed_data": false,
+      "links_to_two_door_pair": false,
+      "status": "STRUCTURAL_SOURCE",
+      "reason": "uses internal mode and boundary data, but not the explicit PO-BH-66 two-door pair"
+    },
+    {
+      "object": "virtual dressing application",
+      "source_file": "src/virtual_environment.py",
+      "source_line_or_key": "apply_virtual_dressing/_rule_applies",
+      "depends_on": "MODE_SPECIFIC scope and model generation mode (6,0)",
+      "feeds_into": "dressed ratio copy used by frozen branch and diagnostics",
+      "uses_observed_data": false,
+      "links_to_two_door_pair": false,
+      "status": "STRUCTURAL_SOURCE",
+      "reason": "applies the rule locally by sector/generation/mode, but does not prove two-door sampling"
+    },
+    {
+      "object": "virtual dressing adoption audit",
+      "source_file": "theory/virtual_dressing_adoption_audit.md",
+      "source_line_or_key": "C1-C6 criteria",
+      "depends_on": "sector=up_quarks; mode=(6,0); q=6; j=0; Omega_u=6; weak-doublet projection",
+      "feeds_into": "ADOPTION_CANDIDATE status language",
+      "uses_observed_data": false,
+      "links_to_two_door_pair": false,
+      "status": "LEGACY_NUMERICAL_CANDIDATE",
+      "reason": "records representation-data linkage and output preservation, but says full loop derivation remains open"
+    },
+    {
+      "object": "dimension-ratio route",
+      "source_file": "docs/bhsm_up_sector_virtual_door_applicability.md",
+      "source_line_or_key": "Candidate Virtual Pair",
+      "depends_on": "V_pair^u=span{door_u,door_d}; rank(A_virt^u)=1; dim(V_pair^u)=2",
+      "feeds_into": "Z_virt_u2_dimension_ratio",
+      "uses_observed_data": false,
+      "links_to_two_door_pair": true,
+      "status": "STRUCTURAL_SOURCE",
+      "reason": "formalizes the two-door ratio but keeps applicability open"
+    },
+    {
+      "object": "frozen prediction reference",
+      "source_file": "docs/frozen_predictions.md",
+      "source_line_or_key": "BHSM_DRESSED_V1_CANDIDATE row",
+      "depends_on": "released Z_virt^{u,2}=1/2 applied only to c/t",
+      "feeds_into": "public frozen prediction package",
+      "uses_observed_data": false,
+      "links_to_two_door_pair": false,
+      "status": "FROZEN_PREDICTION_REFERENCE",
+      "reason": "preserves the release; it cannot be used as a derivation"
+    },
+    {
+      "object": "bare vs dressed manuscript comparison",
+      "source_file": "manuscript/bare_vs_dressed_branches.md",
+      "source_line_or_key": "bare/dressed branch table",
+      "depends_on": "released bare and dressed values",
+      "feeds_into": "human-readable release comparison",
+      "uses_observed_data": false,
+      "links_to_two_door_pair": false,
+      "status": "FROZEN_PREDICTION_REFERENCE",
+      "reason": "documents branch difference without proving the source of the factor"
+    },
+    {
+      "object": "threshold/common-scale comparison rows",
+      "source_file": "src/virtual_environment.py",
+      "source_line_or_key": "_comparison_rows and adoption_report",
+      "depends_on": "compare_bhsm_to_threshold_common_scale after dressed ratios are computed",
+      "feeds_into": "diagnostic residual tables",
+      "uses_observed_data": true,
+      "links_to_two_door_pair": false,
+      "status": "COMPARISON_ONLY",
+      "reason": "comparison occurs after the rule is defined and cannot justify the factor"
+    },
+    {
+      "object": "CKM virtual mixing candidate",
+      "source_file": "src/bhsm_virtual_mixing_solution.py",
+      "source_line_or_key": "s23_candidate = s23_frozen * (Z_virt^{u,2})^(1/16)",
+      "depends_on": "released Z_virt factor and exploratory 1/16 exponent",
+      "feeds_into": "non-official CKM 2-3 mixing diagnostic",
+      "uses_observed_data": true,
+      "links_to_two_door_pair": false,
+      "status": "COMPARISON_ONLY",
+      "reason": "exploratory mixing candidate cannot derive the mass dressing factor"
+    }
+  ],
+  "uses_observed_data_flags": {
+    "frozen dressed branch builder": false,
+    "dressed branch freeze guard": false,
+    "pure-fiber middle-up rule": false,
+    "virtual dressing application": false,
+    "virtual dressing adoption audit": false,
+    "dimension-ratio route": false,
+    "frozen prediction reference": false,
+    "bare vs dressed manuscript comparison": false,
+    "threshold/common-scale comparison rows": true,
+    "CKM virtual mixing candidate": true
+  },
+  "two_door_pair_link_flags": {
+    "frozen dressed branch builder": false,
+    "dressed branch freeze guard": false,
+    "pure-fiber middle-up rule": false,
+    "virtual dressing application": false,
+    "virtual dressing adoption audit": false,
+    "dimension-ratio route": true,
+    "frozen prediction reference": false,
+    "bare vs dressed manuscript comparison": false,
+    "threshold/common-scale comparison rows": false,
+    "CKM virtual mixing candidate": false
+  },
+  "remaining_proof_obligations": [
+    "prove actual middle-up virtual correction samples V_pair^u",
+    "derive full virtual loop/threshold source",
+    "keep frozen prediction references out of derivations",
+    "keep comparison-only residual rows out of derivations"
+  ],
+  "forbidden_inputs": [
+    "observed quark masses",
+    "charm/top ratio",
+    "up/top ratio",
+    "target mass ratios",
+    "CKM values",
+    "PMNS values",
+    "neutrino data",
+    "measured alpha"
+  ]
+}

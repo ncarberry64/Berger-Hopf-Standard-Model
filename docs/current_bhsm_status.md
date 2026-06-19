@@ -7,8 +7,8 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 | Item | Current status |
 | --- | --- |
 | Overall status | structural architecture integrated conditional; numerical closure open |
-| Latest theorem branch | `bhsm-up-sector-virtual-door-applicability-v1` |
-| Latest completed theorem commits | PO-BH-47 `ae5dac5`; PO-BH-47 cleanup `1c11d2b`; PO-BH-48 `8ac577c`; PO-BH-49 `c2cfc70`; PO-BH-50 `7a4523a`; PO-BH-51 `225786f`; PO-BH-52 `4de6d9c`; PO-BH-53 `20c58b1`; PO-BH-54 `11d1c60`; PO-BH-55 `cf0e998`; PO-BH-56 `9f93330`; PO-BH-57/58/59 merged to main; PO-BH-60 merged to main; PO-BH-61 merged to main; PO-BH-62 merged to main; PO-BH-63 merged to main; PO-BH-64 merged to main; PO-BH-65 stacked in PR #21; PO-BH-66 on this branch |
+| Latest theorem branch | `bhsm-up-sector-dressing-dependency-trace-v1` |
+| Latest completed theorem commits | PO-BH-47 `ae5dac5`; PO-BH-47 cleanup `1c11d2b`; PO-BH-48 `8ac577c`; PO-BH-49 `c2cfc70`; PO-BH-50 `7a4523a`; PO-BH-51 `225786f`; PO-BH-52 `4de6d9c`; PO-BH-53 `20c58b1`; PO-BH-54 `11d1c60`; PO-BH-55 `cf0e998`; PO-BH-56 `9f93330`; PO-BH-57/58/59 merged to main; PO-BH-60 merged to main; PO-BH-61 merged to main; PO-BH-62 merged to main; PO-BH-63 merged to main; PO-BH-64 merged to main; PO-BH-65 stacked in PR #21; PO-BH-66 stacked in PR #22; PO-BH-67 on this branch |
 | Test result summary | `1376 passed`; focused PO-BH-56 tests `10 passed`; PO-BH-55 and neutral/collar regression tests `90 passed`; guardrail audits passed |
 | Current theorem/status label | `STRUCTURAL_ARCHITECTURE_INTEGRATED_CONDITIONAL_NUMERICAL_CLOSURE_OPEN` |
 | Candidate architecture complete | yes |
@@ -67,6 +67,8 @@ PO-BH-65 audits the source of the charged-Hessian anisotropy `rho_ch`. The minim
 
 PO-BH-66 audits the applicability proof for the up-sector virtual-door route to `Z_virt^{u,2}=1/2`. A candidate colored weak virtual pair with two doors and a rank-one up-admissibility projector is formalized, so the dimension ratio remains a strong derivation candidate. The existing repository sources do not yet prove that the relevant up-sector virtual correction samples that pair, so `Z_virt_u2_applicability` remains `OPEN_LOCALIZABLE`. No numerical closure, frozen prediction change, or official prediction change is introduced.
 
+PO-BH-67 traces the actual up-sector dressing dependency chain. The dressed branch path is localized through `build_bhsm_dressed_v1_candidate`, `pure_fiber_middle_up_rule`, and `apply_virtual_dressing`; the rule is local to mode `(6,0)` and internal mode data, but it is not explicitly linked to the PO-BH-66 two-door virtual pair. Therefore `Z_virt_u2_applicability` remains `OPEN_LOCALIZABLE`, the dimension ratio remains a `STRONG_DERIVATION_CANDIDATE`, and legacy numerical references are `LOCALIZED_NOT_DERIVED`. No numerical closure, frozen prediction change, or official prediction change is introduced.
+
 ## Cross-Links
 
 - [Full BHSM completion candidate](../theory/full_bhsm_completion_v1_candidate.md)
@@ -114,6 +116,7 @@ PO-BH-66 audits the applicability proof for the up-sector virtual-door route to 
 - [Numerical input closure map](bhsm_numerical_input_closure_map.md)
 - [Charged Hessian source audit](bhsm_charged_hessian_source_audit.md)
 - [Up-sector virtual door applicability audit](bhsm_up_sector_virtual_door_applicability.md)
+- [Up-sector dressing dependency trace](bhsm_up_sector_dressing_dependency_trace.md)
 - [Theorem discharge: neutral topographic suppression action](../theory/theorem_discharge_neutral_topographic_suppression_action.md)
 - [Theorem discharge: neutral saddle displacement](../theory/theorem_discharge_neutral_saddle_displacement.md)
 - [Theorem discharge: neutral effective action](../theory/theorem_discharge_neutral_effective_action.md)

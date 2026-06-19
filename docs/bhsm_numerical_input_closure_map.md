@@ -308,6 +308,8 @@ PO-BH-65 audits existing BHSM charged-Hessian sources for the localizable anisot
 
 PO-BH-66 audits the up-sector virtual-door applicability proof for `Z_virt^{u,2}=1/2`. It formalizes a candidate colored weak virtual pair `V_pair^u=span{door_u,door_d}` with dimension 2 and a rank-one up-admissibility projector `A_virt^u`, giving the dimension ratio `1/2`. Existing sources support the dimension-ratio route but do not prove that the relevant up-sector virtual correction samples that pair. Therefore `Z_virt_u2_dimension_ratio` remains `STRONG_DERIVATION_CANDIDATE` and `Z_virt_u2_applicability` remains `OPEN_LOCALIZABLE`. No observed quark masses, charm/top ratio, up/top ratio, CKM, PMNS, neutrino data, measured alpha, or target ratios are used.
 
+PO-BH-67 traces the actual up-sector dressing dependency chain. The frozen dressed branch calls `pure_fiber_middle_up_rule()` and `apply_virtual_dressing(model,(rule,))`; the rule is local to up-quark middle mode `(6,0)` and depends on `j=0`, `q=6`, `Omega_u=6`, `WEAK_DOUBLE_PROJECTION`, and factor `1/2`. This is a structural source, not an empirical fit, but it is not explicitly linked to the PO-BH-66 two-door pair. Therefore `Z_virt_u2_applicability` remains `OPEN_LOCALIZABLE`, `Z_virt_u2_dimension_ratio` remains `STRONG_DERIVATION_CANDIDATE`, and `legacy_Z_virt_u2_numerical_candidate` is `LOCALIZED_NOT_DERIVED`.
+
 PO-BH-54 localizes the normal-coupling/collar convention for the neutral
 boundary term:
 

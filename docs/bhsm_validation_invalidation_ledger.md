@@ -82,3 +82,30 @@ Still open:
 - CKM numerical closure;
 - PMNS numerical closure;
 - neutral/topographic suppression values.
+
+## PO-BH-67 Update
+
+Validated:
+
+- dimension-ratio mechanics from PO-BH-66 remain valid;
+- the actual frozen dressed-branch path is localized through `build_bhsm_dressed_v1_candidate`, `pure_fiber_middle_up_rule`, and `apply_virtual_dressing`;
+- the two-door virtual interpretation remains a strong candidate;
+- no mass input may justify `Z_virt`.
+
+Invalidated or downgraded:
+
+- any source that treats `Z_virt` as derived only because it appears in frozen predictions;
+- any source that treats charm/top agreement as derivation;
+- any source that uses observed ratios to choose the factor.
+
+Still open:
+
+- actual applicability link between the middle-up dressing source and `V_pair^u`;
+- `rho_ch`;
+- `eta_l`;
+- `Pi_l`;
+- `alpha_geom`;
+- numerical mass closure;
+- CKM numerical closure;
+- PMNS numerical closure;
+- neutral/topographic suppression values.

@@ -2,7 +2,7 @@
   "id": "PO-BH-47",
   "title": "Numerical Input Closure Map Theorem",
   "status": "STRUCTURAL_ARCHITECTURE_INTEGRATED_CONDITIONAL_NUMERICAL_CLOSURE_OPEN",
-  "branch": "bhsm-up-sector-virtual-door-applicability-v1",
+  "branch": "bhsm-up-sector-dressing-dependency-trace-v1",
   "official_predictions_changed": false,
   "frozen_predictions_changed": false,
   "standard_model_fully_derived": false,
@@ -43,7 +43,8 @@
     "MINIMAL_ACTION_CLOSURE_CANDIDATE",
     "TRUE",
     "FORMALIZED_DIMENSION_2",
-    "FORMALIZED_RANK_1"
+    "FORMALIZED_RANK_1",
+    "LOCALIZED_NOT_DERIVED"
   ],
   "ledgers": {
     "charged_lepton": [
@@ -7258,7 +7259,9 @@
     "fit rho_ch from charged-lepton masses, quark masses, observed mass ratios, CKM, PMNS, neutrino data, measured alpha, or target values",
     "finalize eta_l before rho_ch is derived",
     "fit Z_virt_u2 from charm/top, up/top, CKM, PMNS, neutrino data, measured alpha, or target ratios",
-    "claim Z_virt_u2 fully derived before proving the relevant up-sector virtual correction samples the two-door virtual pair"
+    "claim Z_virt_u2 fully derived before proving the relevant up-sector virtual correction samples the two-door virtual pair",
+    "treat frozen Z_virt appearance as derivation",
+    "treat charm/top agreement or comparison rows as Z_virt derivation"
   ],
   "claim_status_table": [
     {
@@ -7433,7 +7436,12 @@
     "Z_VIRT_U2_PAIR_DIMENSION_FORMALIZED",
     "Z_VIRT_U2_ADMISSIBLE_RANK_FORMALIZED",
     "Z_VIRT_U2_APPLICABILITY_REMAINS_OPEN_LOCALIZABLE",
-    "Z_VIRT_U2_NOT_DERIVED_FROM_MASSES"
+    "Z_VIRT_U2_NOT_DERIVED_FROM_MASSES",
+    "PO_BH_67_UP_SECTOR_DRESSING_DEPENDENCY_TRACE",
+    "ACTUAL_Z_VIRT_SOURCE_LOCALIZED",
+    "Z_VIRT_U2_APPLICABILITY_STILL_OPEN",
+    "LEGACY_Z_VIRT_NUMERICAL_CANDIDATE_LOCALIZED_NOT_DERIVED",
+    "COMPARISON_ROWS_NOT_DERIVATION_SOURCES"
   ],
   "collar_measure_extrinsic_geometry": {
     "id": "PO-BH-57",
@@ -11717,13 +11725,14 @@
     "id": "Z_virt_u2_dimension_ratio",
     "name": "Z virt u2 dimension ratio",
     "symbol": "Z_virt_u2_dimension_ratio",
-    "sector": "up_sector_virtual_door_applicability",
+    "sector": "up_sector_dressing_dependency_trace",
     "status": "STRONG_DERIVATION_CANDIDATE",
     "formula_candidate": "rank(A_virt^u)/dim(V_pair^u)=1/2 if the relevant up-sector correction samples V_pair^u",
     "derived_numerical_value": false,
     "pre_comparison_locked": false,
-    "derivation_source": "PO-BH-66 up-sector virtual door applicability audit",
+    "derivation_source": "PO-BH-66 virtual-door audit and PO-BH-67 dependency trace",
     "depends_on": [
+      "bhsm_up_sector_dressing_dependency_trace",
       "bhsm_up_sector_virtual_door_applicability"
     ],
     "forbidden_inputs": [
@@ -11738,9 +11747,10 @@
     ],
     "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
     "tests": [
+      "tests/test_up_sector_dressing_dependency_trace.py",
       "tests/test_up_sector_virtual_door_applicability.py"
     ],
-    "next_action": "derive applicability before promoting to fully applicable correction",
+    "next_action": "derive explicit link from actual middle-up virtual correction source to V_pair^u",
     "fit_policy": "FORBIDDEN_TO_FIT"
   },
   "down_extra_boundary_incidence": {
@@ -12197,13 +12207,14 @@
       "id": "Z_virt_u2_applicability",
       "name": "Z virt u2 applicability",
       "symbol": "Z_virt_u2_applicability",
-      "sector": "up_sector_virtual_door_applicability",
+      "sector": "up_sector_dressing_dependency_trace",
       "status": "OPEN_LOCALIZABLE",
       "formula_candidate": "prove the relevant up-sector virtual correction samples V_pair^u",
       "derived_numerical_value": false,
       "pre_comparison_locked": false,
-      "derivation_source": "PO-BH-66 up-sector virtual door applicability audit",
+      "derivation_source": "PO-BH-66 virtual-door audit and PO-BH-67 dependency trace",
       "depends_on": [
+        "bhsm_up_sector_dressing_dependency_trace",
         "bhsm_up_sector_virtual_door_applicability"
       ],
       "forbidden_inputs": [
@@ -12218,9 +12229,10 @@
       ],
       "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
       "tests": [
+        "tests/test_up_sector_dressing_dependency_trace.py",
         "tests/test_up_sector_virtual_door_applicability.py"
       ],
-      "next_action": "prove the sampling/applicability link from BHSM virtual channel structure",
+      "next_action": "derive explicit link from actual middle-up virtual correction source to V_pair^u",
       "fit_policy": "FORBIDDEN_TO_FIT"
     },
     {
@@ -12257,13 +12269,14 @@
       "id": "Z_virt_u2_dimension_ratio",
       "name": "Z virt u2 dimension ratio",
       "symbol": "Z_virt_u2_dimension_ratio",
-      "sector": "up_sector_virtual_door_applicability",
+      "sector": "up_sector_dressing_dependency_trace",
       "status": "STRONG_DERIVATION_CANDIDATE",
       "formula_candidate": "rank(A_virt^u)/dim(V_pair^u)=1/2 if the relevant up-sector correction samples V_pair^u",
       "derived_numerical_value": false,
       "pre_comparison_locked": false,
-      "derivation_source": "PO-BH-66 up-sector virtual door applicability audit",
+      "derivation_source": "PO-BH-66 virtual-door audit and PO-BH-67 dependency trace",
       "depends_on": [
+        "bhsm_up_sector_dressing_dependency_trace",
         "bhsm_up_sector_virtual_door_applicability"
       ],
       "forbidden_inputs": [
@@ -12278,9 +12291,100 @@
       ],
       "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
       "tests": [
+        "tests/test_up_sector_dressing_dependency_trace.py",
         "tests/test_up_sector_virtual_door_applicability.py"
       ],
-      "next_action": "derive applicability before promoting to fully applicable correction",
+      "next_action": "derive explicit link from actual middle-up virtual correction source to V_pair^u",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "up_sector_dressing_dependency_trace",
+      "name": "up sector dressing dependency trace",
+      "symbol": "up_sector_dressing_dependency_trace",
+      "sector": "up_sector_dressing_dependency_trace",
+      "status": "COMPLETED",
+      "formula_candidate": "Trace actual dressed branch dependency path through bhsm_v1 and virtual_environment modules.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-67 up-sector dressing dependency trace",
+      "depends_on": [
+        "bhsm_up_sector_dressing_dependency_trace"
+      ],
+      "forbidden_inputs": [
+        "observed quark masses",
+        "charm/top ratio",
+        "up/top ratio",
+        "target mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha"
+      ],
+      "claim_boundary": "Dependency trace only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_up_sector_dressing_dependency_trace.py"
+      ],
+      "next_action": "derive the explicit link from the actual dressing source to V_pair^u before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "legacy_Z_virt_u2_numerical_candidate",
+      "name": "legacy Z virt u2 numerical candidate",
+      "symbol": "legacy_Z_virt_u2_numerical_candidate",
+      "sector": "up_sector_dressing_dependency_trace",
+      "status": "LOCALIZED_NOT_DERIVED",
+      "formula_candidate": "Released factor is localized in frozen and diagnostic sources but not derived from the two-door pair.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-67 up-sector dressing dependency trace",
+      "depends_on": [
+        "bhsm_up_sector_dressing_dependency_trace"
+      ],
+      "forbidden_inputs": [
+        "observed quark masses",
+        "charm/top ratio",
+        "up/top ratio",
+        "target mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha"
+      ],
+      "claim_boundary": "Dependency trace only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_up_sector_dressing_dependency_trace.py"
+      ],
+      "next_action": "derive the full virtual source or keep the factor candidate-only",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "Z_virt_u2_mass_fit_route",
+      "name": "Z virt u2 mass fit route",
+      "symbol": "Z_virt_u2_mass_fit_route",
+      "sector": "up_sector_dressing_dependency_trace",
+      "status": "FORBIDDEN_AS_DERIVATION",
+      "formula_candidate": "Observed mass/comparison rows cannot justify Z_virt_u2.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-67 up-sector dressing dependency trace",
+      "depends_on": [
+        "bhsm_up_sector_dressing_dependency_trace"
+      ],
+      "forbidden_inputs": [
+        "observed quark masses",
+        "charm/top ratio",
+        "up/top ratio",
+        "target mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha"
+      ],
+      "claim_boundary": "Dependency trace only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_up_sector_dressing_dependency_trace.py"
+      ],
+      "next_action": "keep comparison-only rows quarantined from derivation logic",
       "fit_policy": "FORBIDDEN_TO_FIT"
     }
   ],
@@ -12290,6 +12394,12 @@
       "name": "PO-BH-66 up-sector virtual door applicability audit",
       "status": "COMPLETED",
       "claim_boundary": "Dimension-ratio route is formalized; applicability remains open-localizable; no prediction outputs are changed."
+    },
+    "bhsm_up_sector_dressing_dependency_trace": {
+      "id": "bhsm_up_sector_dressing_dependency_trace",
+      "name": "PO-BH-67 up-sector dressing dependency trace",
+      "status": "COMPLETED",
+      "claim_boundary": "Actual source path localized; no explicit two-door applicability link found; no prediction outputs are changed."
     }
   },
   "up_sector_virtual_door_applicability_audit": {
@@ -12386,13 +12496,14 @@
     "id": "Z_virt_u2_applicability",
     "name": "Z virt u2 applicability",
     "symbol": "Z_virt_u2_applicability",
-    "sector": "up_sector_virtual_door_applicability",
+    "sector": "up_sector_dressing_dependency_trace",
     "status": "OPEN_LOCALIZABLE",
     "formula_candidate": "prove the relevant up-sector virtual correction samples V_pair^u",
     "derived_numerical_value": false,
     "pre_comparison_locked": false,
-    "derivation_source": "PO-BH-66 up-sector virtual door applicability audit",
+    "derivation_source": "PO-BH-66 virtual-door audit and PO-BH-67 dependency trace",
     "depends_on": [
+      "bhsm_up_sector_dressing_dependency_trace",
       "bhsm_up_sector_virtual_door_applicability"
     ],
     "forbidden_inputs": [
@@ -12407,9 +12518,10 @@
     ],
     "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
     "tests": [
+      "tests/test_up_sector_dressing_dependency_trace.py",
       "tests/test_up_sector_virtual_door_applicability.py"
     ],
-    "next_action": "prove the sampling/applicability link from BHSM virtual channel structure",
+    "next_action": "derive explicit link from actual middle-up virtual correction source to V_pair^u",
     "fit_policy": "FORBIDDEN_TO_FIT"
   },
   "Z_virt_u2_mass_fit": {
@@ -12440,6 +12552,96 @@
       "tests/test_up_sector_virtual_door_applicability.py"
     ],
     "next_action": "keep Z_virt derivation independent of observed residuals",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "up_sector_dressing_dependency_trace": {
+    "id": "up_sector_dressing_dependency_trace",
+    "name": "up sector dressing dependency trace",
+    "symbol": "up_sector_dressing_dependency_trace",
+    "sector": "up_sector_dressing_dependency_trace",
+    "status": "COMPLETED",
+    "formula_candidate": "Trace actual dressed branch dependency path through bhsm_v1 and virtual_environment modules.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-67 up-sector dressing dependency trace",
+    "depends_on": [
+      "bhsm_up_sector_dressing_dependency_trace"
+    ],
+    "forbidden_inputs": [
+      "observed quark masses",
+      "charm/top ratio",
+      "up/top ratio",
+      "target mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha"
+    ],
+    "claim_boundary": "Dependency trace only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_up_sector_dressing_dependency_trace.py"
+    ],
+    "next_action": "derive the explicit link from the actual dressing source to V_pair^u before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "legacy_Z_virt_u2_numerical_candidate": {
+    "id": "legacy_Z_virt_u2_numerical_candidate",
+    "name": "legacy Z virt u2 numerical candidate",
+    "symbol": "legacy_Z_virt_u2_numerical_candidate",
+    "sector": "up_sector_dressing_dependency_trace",
+    "status": "LOCALIZED_NOT_DERIVED",
+    "formula_candidate": "Released factor is localized in frozen and diagnostic sources but not derived from the two-door pair.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-67 up-sector dressing dependency trace",
+    "depends_on": [
+      "bhsm_up_sector_dressing_dependency_trace"
+    ],
+    "forbidden_inputs": [
+      "observed quark masses",
+      "charm/top ratio",
+      "up/top ratio",
+      "target mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha"
+    ],
+    "claim_boundary": "Dependency trace only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_up_sector_dressing_dependency_trace.py"
+    ],
+    "next_action": "derive the full virtual source or keep the factor candidate-only",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "Z_virt_u2_mass_fit_route": {
+    "id": "Z_virt_u2_mass_fit_route",
+    "name": "Z virt u2 mass fit route",
+    "symbol": "Z_virt_u2_mass_fit_route",
+    "sector": "up_sector_dressing_dependency_trace",
+    "status": "FORBIDDEN_AS_DERIVATION",
+    "formula_candidate": "Observed mass/comparison rows cannot justify Z_virt_u2.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-67 up-sector dressing dependency trace",
+    "depends_on": [
+      "bhsm_up_sector_dressing_dependency_trace"
+    ],
+    "forbidden_inputs": [
+      "observed quark masses",
+      "charm/top ratio",
+      "up/top ratio",
+      "target mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha"
+    ],
+    "claim_boundary": "Dependency trace only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_up_sector_dressing_dependency_trace.py"
+    ],
+    "next_action": "keep comparison-only rows quarantined from derivation logic",
     "fit_policy": "FORBIDDEN_TO_FIT"
   }
 }
