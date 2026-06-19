@@ -2,7 +2,7 @@
   "id": "PO-BH-47",
   "title": "Numerical Input Closure Map Theorem",
   "status": "STRUCTURAL_ARCHITECTURE_INTEGRATED_CONDITIONAL_NUMERICAL_CLOSURE_OPEN",
-  "branch": "bhsm-boundary-condition-normal-form-v1",
+  "branch": "bhsm-boundary-coefficient-threshold-source-audit-v1",
   "official_predictions_changed": false,
   "frozen_predictions_changed": false,
   "standard_model_fully_derived": false,
@@ -1701,7 +1701,8 @@
       "derivation_source": "PO-BH-61 route 5 source audit keeps value open until S_nu_topo is derived",
       "depends_on": [
         "S_nu_topo_value",
-        "boundary_condition_normal_form"
+        "boundary_condition_normal_form",
+        "coefficient_threshold_source_audit"
       ],
       "forbidden_inputs": [
         "observed masses",
@@ -1727,6 +1728,7 @@
       ],
       "claim_boundary": "Value remains open until S_nu_topo is derived. No post-comparison fitting is allowed.",
       "tests": [
+        "tests/test_boundary_coefficient_threshold_source_audit.py",
         "tests/test_scalar_topographic_boundary_condition_normal_form.py",
         "tests/test_scalar_topographic_profile_eom_source_audit.py",
         "tests/test_scalar_topographic_profile_input_classification.py"
@@ -4625,6 +4627,7 @@
       "depends_on": [
         "T_0",
         "boundary_condition_normal_form",
+        "coefficient_threshold_source_audit",
         "scalar_topographic_level_set_F"
       ],
       "forbidden_inputs": [
@@ -4651,6 +4654,7 @@
       ],
       "claim_boundary": "T_0 is not derived and cannot be fitted.",
       "tests": [
+        "tests/test_boundary_coefficient_threshold_source_audit.py",
         "tests/test_scalar_topographic_boundary_condition_normal_form.py",
         "tests/test_scalar_topographic_profile_eom_source_audit.py"
       ],
@@ -4670,6 +4674,7 @@
       "depends_on": [
         "Phi_0",
         "boundary_condition_normal_form",
+        "coefficient_threshold_source_audit",
         "scalar_topographic_level_set_F"
       ],
       "forbidden_inputs": [
@@ -4696,6 +4701,7 @@
       ],
       "claim_boundary": "Phi_0 is not derived and cannot be fitted.",
       "tests": [
+        "tests/test_boundary_coefficient_threshold_source_audit.py",
         "tests/test_scalar_topographic_boundary_condition_normal_form.py",
         "tests/test_scalar_topographic_profile_eom_source_audit.py"
       ],
@@ -4714,6 +4720,7 @@
       "derivation_source": "PO-BH-61 source audit",
       "depends_on": [
         "boundary_condition_normal_form",
+        "coefficient_threshold_source_audit",
         "spacetime_topographic_EOM",
         "threshold_selection_T_0"
       ],
@@ -4741,6 +4748,7 @@
       ],
       "claim_boundary": "No numerical T profile is derived.",
       "tests": [
+        "tests/test_boundary_coefficient_threshold_source_audit.py",
         "tests/test_scalar_topographic_boundary_condition_normal_form.py",
         "tests/test_scalar_topographic_profile_eom_source_audit.py"
       ],
@@ -4759,6 +4767,7 @@
       "derivation_source": "PO-BH-61 source audit",
       "depends_on": [
         "boundary_condition_normal_form",
+        "coefficient_threshold_source_audit",
         "internal_Berger_profile_EOM",
         "threshold_selection_Phi_0"
       ],
@@ -4786,6 +4795,7 @@
       ],
       "claim_boundary": "No numerical Phi profile is derived.",
       "tests": [
+        "tests/test_boundary_coefficient_threshold_source_audit.py",
         "tests/test_scalar_topographic_boundary_condition_normal_form.py",
         "tests/test_scalar_topographic_profile_eom_source_audit.py"
       ],
@@ -4852,6 +4862,7 @@
       "depends_on": [
         "S_nu_topo_functional",
         "boundary_condition_normal_form",
+        "coefficient_threshold_source_audit",
         "neutral_action_evaluation_gate"
       ],
       "forbidden_inputs": [
@@ -4878,6 +4889,7 @@
       ],
       "claim_boundary": "S_nu_topo is not computed and cannot be fitted.",
       "tests": [
+        "tests/test_boundary_coefficient_threshold_source_audit.py",
         "tests/test_scalar_topographic_boundary_condition_normal_form.py",
         "tests/test_scalar_topographic_profile_eom_source_audit.py"
       ],
@@ -4897,7 +4909,8 @@
       "depends_on": [
         "S_nu_topo_functional",
         "S_nu_topo_value",
-        "boundary_condition_normal_form"
+        "boundary_condition_normal_form",
+        "coefficient_threshold_source_audit"
       ],
       "forbidden_inputs": [
         "observed masses",
@@ -4923,6 +4936,7 @@
       ],
       "claim_boundary": "No neutral numerical suppression is claimed.",
       "tests": [
+        "tests/test_boundary_coefficient_threshold_source_audit.py",
         "tests/test_scalar_topographic_boundary_condition_normal_form.py",
         "tests/test_scalar_topographic_profile_eom_source_audit.py"
       ],
@@ -4986,6 +5000,7 @@
       "derivation_source": "PO-BH-61 source audit",
       "depends_on": [
         "boundary_condition_normal_form",
+        "coefficient_threshold_source_audit",
         "threshold_selection_Phi_0",
         "threshold_selection_T_0"
       ],
@@ -5013,6 +5028,7 @@
       ],
       "claim_boundary": "No thresholds are derived or fitted.",
       "tests": [
+        "tests/test_boundary_coefficient_threshold_source_audit.py",
         "tests/test_scalar_topographic_boundary_condition_normal_form.py",
         "tests/test_scalar_topographic_profile_eom_source_audit.py"
       ],
@@ -5165,11 +5181,12 @@
       "symbol": "alpha_T, beta_T, gamma_T, J_T",
       "sector": "scalar_topographic",
       "status": "OPEN_LOCALIZABLE",
-      "formula_candidate": "Coefficient symbols are localized by the normal form but no values or source functions are derived.",
+      "formula_candidate": "alpha_T,beta_T,gamma_T,J_T symbols localized by boundary-condition families; no values derived.",
       "derived_numerical_value": false,
       "pre_comparison_locked": false,
-      "derivation_source": "PO-BH-62 scalar/topographic boundary-condition normal form",
+      "derivation_source": "PO-BH-63 boundary-coefficient and threshold selection source audit",
       "depends_on": [
+        "coefficient_threshold_source_audit",
         "spacetime_boundary_condition_form_T"
       ],
       "forbidden_inputs": [
@@ -5194,8 +5211,9 @@
         "post-comparison S_nu_topo fit",
         "post-comparison epsilon_nu_topo fit"
       ],
-      "claim_boundary": "No spacetime boundary-condition coefficients are derived or fitted.",
+      "claim_boundary": "Coefficient values are not derived and cannot be fitted after comparison.",
       "tests": [
+        "tests/test_boundary_coefficient_threshold_source_audit.py",
         "tests/test_scalar_topographic_boundary_condition_normal_form.py"
       ],
       "next_action": "derive coefficients from boundary action data before comparison",
@@ -5207,11 +5225,12 @@
       "symbol": "alpha_Phi, beta_Phi, gamma_Phi, J_Phi",
       "sector": "scalar_topographic",
       "status": "OPEN_LOCALIZABLE",
-      "formula_candidate": "Coefficient symbols are localized by the normal form but no values or source functions are derived.",
+      "formula_candidate": "alpha_Phi,beta_Phi,gamma_Phi,J_Phi symbols localized by boundary-condition families; no values derived.",
       "derived_numerical_value": false,
       "pre_comparison_locked": false,
-      "derivation_source": "PO-BH-62 scalar/topographic boundary-condition normal form",
+      "derivation_source": "PO-BH-63 boundary-coefficient and threshold selection source audit",
       "depends_on": [
+        "coefficient_threshold_source_audit",
         "internal_boundary_condition_form_Phi"
       ],
       "forbidden_inputs": [
@@ -5236,8 +5255,9 @@
         "post-comparison S_nu_topo fit",
         "post-comparison epsilon_nu_topo fit"
       ],
-      "claim_boundary": "No internal boundary-condition coefficients are derived or fitted.",
+      "claim_boundary": "Coefficient values are not derived and cannot be fitted after comparison.",
       "tests": [
+        "tests/test_boundary_coefficient_threshold_source_audit.py",
         "tests/test_scalar_topographic_boundary_condition_normal_form.py"
       ],
       "next_action": "derive coefficients from internal boundary action data before comparison",
@@ -5349,9 +5369,10 @@
       "pre_comparison_locked": false,
       "derivation_source": "PO-BH-62 scalar/topographic boundary-condition normal form",
       "depends_on": [
-        "T_profile_solution",
         "Phi_profile_solution",
-        "boundary_condition_normal_form"
+        "T_profile_solution",
+        "boundary_condition_normal_form",
+        "coefficient_threshold_source_audit"
       ],
       "forbidden_inputs": [
         "observed masses",
@@ -5377,9 +5398,603 @@
       ],
       "claim_boundary": "No scalar/topographic profile is solved.",
       "tests": [
+        "tests/test_boundary_coefficient_threshold_source_audit.py",
         "tests/test_scalar_topographic_boundary_condition_normal_form.py"
       ],
       "next_action": "derive and solve the profile systems before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "coefficient_threshold_source_audit",
+      "name": "Boundary coefficient and threshold source audit",
+      "symbol": "alpha,beta,gamma,J,T_0,Phi_0 source audit",
+      "sector": "scalar_topographic",
+      "status": "COMPLETED",
+      "formula_candidate": "Eight-route audit: boundary potential, natural boundary condition, Dirichlet level-set, Robin/mixed boundary action, threshold selection, scaling/equivalence, dimensional analysis, and no-source result.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-63 boundary-coefficient and threshold selection source audit",
+      "depends_on": [
+        "boundary_condition_normal_form",
+        "spacetime_boundary_condition_form_T",
+        "internal_boundary_condition_form_Phi"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "Audit completed; coefficient families and dimensions are conditional, but values, ratios, sources, thresholds, profile solutions, and neutral suppression values remain open.",
+      "tests": [
+        "tests/test_boundary_coefficient_threshold_source_audit.py"
+      ],
+      "next_action": "derive coefficient/threshold values from BHSM structure before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT",
+      "audit_result": "COEFFICIENT_FAMILY_PARTIAL_VALUES_OPEN"
+    },
+    {
+      "id": "boundary_condition_coefficient_family_T",
+      "name": "Boundary-condition coefficient family T",
+      "symbol": "alpha_T,beta_T,gamma_T,J_T family",
+      "sector": "scalar_topographic",
+      "status": "DERIVED_CONDITIONAL",
+      "formula_candidate": "Normal-form families localize Dirichlet, Neumann, Robin/mixed, and source-coupled coefficient structures without fixing values.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-63 boundary-coefficient and threshold selection source audit",
+      "depends_on": [
+        "spacetime_boundary_condition_form_T",
+        "coefficient_threshold_source_audit"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "Coefficient family is conditional; values and ratios remain open.",
+      "tests": [
+        "tests/test_boundary_coefficient_threshold_source_audit.py"
+      ],
+      "next_action": "derive coefficient values/ratios and normalization before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "boundary_condition_coefficient_family_Phi",
+      "name": "Boundary-condition coefficient family Phi",
+      "symbol": "alpha_Phi,beta_Phi,gamma_Phi,J_Phi family",
+      "sector": "scalar_topographic",
+      "status": "DERIVED_CONDITIONAL",
+      "formula_candidate": "Normal-form families localize Dirichlet, Neumann, Robin/mixed, and source-coupled coefficient structures without fixing values.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-63 boundary-coefficient and threshold selection source audit",
+      "depends_on": [
+        "internal_boundary_condition_form_Phi",
+        "coefficient_threshold_source_audit"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "Coefficient family is conditional; values and ratios remain open.",
+      "tests": [
+        "tests/test_boundary_coefficient_threshold_source_audit.py"
+      ],
+      "next_action": "derive coefficient values/ratios and normalization before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "coefficient_normalization_T",
+      "name": "Coefficient normalization T",
+      "symbol": "alpha_T,beta_T,gamma_T common rescaling",
+      "sector": "scalar_topographic",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "Robin data have common-rescaling degeneracy; no normalization convention is fixed.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-63 boundary-coefficient and threshold selection source audit",
+      "depends_on": [
+        "boundary_condition_coefficient_family_T"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "Normalization convention remains open and unfitted.",
+      "tests": [
+        "tests/test_boundary_coefficient_threshold_source_audit.py"
+      ],
+      "next_action": "derive normalization convention before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "coefficient_ratios_T",
+      "name": "Coefficient ratios T",
+      "symbol": "alpha/beta, gamma/beta",
+      "sector": "scalar_topographic",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "Physically meaningful ratios may exist after normalization, but no ratio values are derived.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-63 boundary-coefficient and threshold selection source audit",
+      "depends_on": [
+        "coefficient_normalization_T"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "Coefficient ratios remain open and unfitted.",
+      "tests": [
+        "tests/test_boundary_coefficient_threshold_source_audit.py"
+      ],
+      "next_action": "derive ratio values before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "coefficient_dimension_family_T",
+      "name": "Coefficient dimensional family T",
+      "symbol": "dim(alpha/beta), dim(gamma/beta)",
+      "sector": "scalar_topographic",
+      "status": "DERIVED_CONDITIONAL",
+      "formula_candidate": "Dimensional consistency constrains coefficient families because normal derivatives carry one inverse-length unit relative to fields.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-63 boundary-coefficient and threshold selection source audit",
+      "depends_on": [
+        "boundary_condition_coefficient_family_T"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "Dimensional family is conditional; numerical values are not derived.",
+      "tests": [
+        "tests/test_boundary_coefficient_threshold_source_audit.py"
+      ],
+      "next_action": "derive values and normalization before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "coefficient_normalization_Phi",
+      "name": "Coefficient normalization Phi",
+      "symbol": "alpha_Phi,beta_Phi,gamma_Phi common rescaling",
+      "sector": "scalar_topographic",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "Robin data have common-rescaling degeneracy; no normalization convention is fixed.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-63 boundary-coefficient and threshold selection source audit",
+      "depends_on": [
+        "boundary_condition_coefficient_family_Phi"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "Normalization convention remains open and unfitted.",
+      "tests": [
+        "tests/test_boundary_coefficient_threshold_source_audit.py"
+      ],
+      "next_action": "derive normalization convention before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "coefficient_ratios_Phi",
+      "name": "Coefficient ratios Phi",
+      "symbol": "alpha/beta, gamma/beta",
+      "sector": "scalar_topographic",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "Physically meaningful ratios may exist after normalization, but no ratio values are derived.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-63 boundary-coefficient and threshold selection source audit",
+      "depends_on": [
+        "coefficient_normalization_Phi"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "Coefficient ratios remain open and unfitted.",
+      "tests": [
+        "tests/test_boundary_coefficient_threshold_source_audit.py"
+      ],
+      "next_action": "derive ratio values before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "coefficient_dimension_family_Phi",
+      "name": "Coefficient dimensional family Phi",
+      "symbol": "dim(alpha/beta), dim(gamma/beta)",
+      "sector": "scalar_topographic",
+      "status": "DERIVED_CONDITIONAL",
+      "formula_candidate": "Dimensional consistency constrains coefficient families because normal derivatives carry one inverse-length unit relative to fields.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-63 boundary-coefficient and threshold selection source audit",
+      "depends_on": [
+        "boundary_condition_coefficient_family_Phi"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "Dimensional family is conditional; numerical values are not derived.",
+      "tests": [
+        "tests/test_boundary_coefficient_threshold_source_audit.py"
+      ],
+      "next_action": "derive values and normalization before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "T_0_value",
+      "name": "T 0 value",
+      "symbol": "T_0",
+      "sector": "scalar_topographic",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "No source/value selection theorem is found in PO-BH-63.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-63 boundary-coefficient and threshold selection source audit",
+      "depends_on": [
+        "coefficient_threshold_source_audit"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "Value/source selection remains open and unfitted.",
+      "tests": [
+        "tests/test_boundary_coefficient_threshold_source_audit.py"
+      ],
+      "next_action": "derive selection theorem before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "Phi_0_value",
+      "name": "Phi 0 value",
+      "symbol": "Phi_0",
+      "sector": "scalar_topographic",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "No source/value selection theorem is found in PO-BH-63.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-63 boundary-coefficient and threshold selection source audit",
+      "depends_on": [
+        "coefficient_threshold_source_audit"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "Value/source selection remains open and unfitted.",
+      "tests": [
+        "tests/test_boundary_coefficient_threshold_source_audit.py"
+      ],
+      "next_action": "derive selection theorem before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "source_terms_J_T",
+      "name": "source terms J T",
+      "symbol": "J_T",
+      "sector": "scalar_topographic",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "No source/value selection theorem is found in PO-BH-63.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-63 boundary-coefficient and threshold selection source audit",
+      "depends_on": [
+        "coefficient_threshold_source_audit"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "Value/source selection remains open and unfitted.",
+      "tests": [
+        "tests/test_boundary_coefficient_threshold_source_audit.py"
+      ],
+      "next_action": "derive selection theorem before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "source_terms_J_Phi",
+      "name": "source terms J Phi",
+      "symbol": "J_Phi",
+      "sector": "scalar_topographic",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "No source/value selection theorem is found in PO-BH-63.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-63 boundary-coefficient and threshold selection source audit",
+      "depends_on": [
+        "coefficient_threshold_source_audit"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "Value/source selection remains open and unfitted.",
+      "tests": [
+        "tests/test_boundary_coefficient_threshold_source_audit.py"
+      ],
+      "next_action": "derive selection theorem before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "coefficient_selection_gate",
+      "name": "coefficient selection gate",
+      "symbol": "coefficient selection gate",
+      "sector": "scalar_topographic",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "No source/value selection theorem is found in PO-BH-63.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-63 boundary-coefficient and threshold selection source audit",
+      "depends_on": [
+        "coefficient_threshold_source_audit"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "observed neutrino masses",
+        "observed neutrino mass splittings",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values",
+        "post-comparison T_0 fit",
+        "post-comparison Phi_0 fit",
+        "post-comparison explicit T profile fit",
+        "post-comparison explicit Phi profile fit",
+        "post-comparison metric/profile fit",
+        "post-comparison normal orientation fit",
+        "post-comparison K(Y) fit",
+        "post-comparison S(Y) fit",
+        "post-comparison J(Y,rho) fit",
+        "post-comparison S_nu_topo fit",
+        "post-comparison epsilon_nu_topo fit"
+      ],
+      "claim_boundary": "Value/source selection remains open and unfitted.",
+      "tests": [
+        "tests/test_boundary_coefficient_threshold_source_audit.py"
+      ],
+      "next_action": "derive selection theorem before comparison",
       "fit_policy": "FORBIDDEN_TO_FIT"
     }
   ],
@@ -5499,7 +6114,8 @@
     "fit scalar/topographic profile inputs T_0, Phi_0, T(x,t), Phi(y), metric values, gradient norms, orientation, K(Y), S(Y), J(Y,rho), S_nu_topo, or epsilon_nu_topo after comparison",
     "use observed masses, CKM values, PMNS values, neutrino data, anomaly/FTL data, propulsion/anomaly data, or target values to choose scalar/topographic profile inputs",
     "fit profile EOM terms, thresholds, profile solutions, S_nu_topo, or epsilon_nu_topo to neutrino, PMNS, CKM, anomaly/FTL, propulsion/anomaly, or target values",
-    "fit boundary-condition coefficients, thresholds, profile solutions, S_nu_topo, or epsilon_nu_topo after comparison"
+    "fit boundary-condition coefficients, thresholds, profile solutions, S_nu_topo, or epsilon_nu_topo after comparison",
+    "fit boundary-condition coefficient values, coefficient ratios, source terms, T_0, Phi_0, profile solutions, S_nu_topo, or epsilon_nu_topo after comparison"
   ],
   "claim_status_table": [
     {
@@ -5643,7 +6259,16 @@
     "NORMAL_DERIVATIVE_T_FORM_DERIVED_VALUE_OPEN",
     "NORMAL_DERIVATIVE_PHI_FORM_DERIVED_VALUE_OPEN",
     "PROFILE_SOLUTIONS_REMAIN_OPEN_LOCALIZABLE",
-    "NEUTRAL_SUPPRESSION_VALUES_REMAIN_OPEN_LOCALIZABLE"
+    "NEUTRAL_SUPPRESSION_VALUES_REMAIN_OPEN_LOCALIZABLE",
+    "PO_BH_63_COEFFICIENT_THRESHOLD_SOURCE_AUDIT",
+    "COEFFICIENT_THRESHOLD_SOURCE_AUDIT_COMPLETED",
+    "BOUNDARY_COEFFICIENT_FAMILY_T_DERIVED_CONDITIONAL",
+    "BOUNDARY_COEFFICIENT_FAMILY_PHI_DERIVED_CONDITIONAL",
+    "BOUNDARY_COEFFICIENT_VALUES_REMAIN_OPEN",
+    "COEFFICIENT_RATIOS_REMAIN_OPEN",
+    "COEFFICIENT_DIMENSION_FAMILY_DERIVED_CONDITIONAL",
+    "THRESHOLD_VALUES_REMAIN_OPEN",
+    "SOURCE_TERMS_REMAIN_OPEN"
   ],
   "collar_measure_extrinsic_geometry": {
     "id": "PO-BH-57",
@@ -6710,7 +7335,8 @@
     "derivation_source": "PO-BH-61 route 5 source audit keeps value open until S_nu_topo is derived",
     "depends_on": [
       "S_nu_topo_value",
-      "boundary_condition_normal_form"
+      "boundary_condition_normal_form",
+      "coefficient_threshold_source_audit"
     ],
     "forbidden_inputs": [
       "observed masses",
@@ -6736,6 +7362,7 @@
     ],
     "claim_boundary": "Value remains open until S_nu_topo is derived. No post-comparison fitting is allowed.",
     "tests": [
+      "tests/test_boundary_coefficient_threshold_source_audit.py",
       "tests/test_scalar_topographic_boundary_condition_normal_form.py",
       "tests/test_scalar_topographic_profile_eom_source_audit.py",
       "tests/test_scalar_topographic_profile_input_classification.py"
@@ -7829,6 +8456,7 @@
     "depends_on": [
       "T_0",
       "boundary_condition_normal_form",
+      "coefficient_threshold_source_audit",
       "scalar_topographic_level_set_F"
     ],
     "forbidden_inputs": [
@@ -7855,6 +8483,7 @@
     ],
     "claim_boundary": "T_0 is not derived and cannot be fitted.",
     "tests": [
+      "tests/test_boundary_coefficient_threshold_source_audit.py",
       "tests/test_scalar_topographic_boundary_condition_normal_form.py",
       "tests/test_scalar_topographic_profile_eom_source_audit.py"
     ],
@@ -7874,6 +8503,7 @@
     "depends_on": [
       "Phi_0",
       "boundary_condition_normal_form",
+      "coefficient_threshold_source_audit",
       "scalar_topographic_level_set_F"
     ],
     "forbidden_inputs": [
@@ -7900,6 +8530,7 @@
     ],
     "claim_boundary": "Phi_0 is not derived and cannot be fitted.",
     "tests": [
+      "tests/test_boundary_coefficient_threshold_source_audit.py",
       "tests/test_scalar_topographic_boundary_condition_normal_form.py",
       "tests/test_scalar_topographic_profile_eom_source_audit.py"
     ],
@@ -7918,6 +8549,7 @@
     "derivation_source": "PO-BH-61 source audit",
     "depends_on": [
       "boundary_condition_normal_form",
+      "coefficient_threshold_source_audit",
       "spacetime_topographic_EOM",
       "threshold_selection_T_0"
     ],
@@ -7945,6 +8577,7 @@
     ],
     "claim_boundary": "No numerical T profile is derived.",
     "tests": [
+      "tests/test_boundary_coefficient_threshold_source_audit.py",
       "tests/test_scalar_topographic_boundary_condition_normal_form.py",
       "tests/test_scalar_topographic_profile_eom_source_audit.py"
     ],
@@ -7963,6 +8596,7 @@
     "derivation_source": "PO-BH-61 source audit",
     "depends_on": [
       "boundary_condition_normal_form",
+      "coefficient_threshold_source_audit",
       "internal_Berger_profile_EOM",
       "threshold_selection_Phi_0"
     ],
@@ -7990,6 +8624,7 @@
     ],
     "claim_boundary": "No numerical Phi profile is derived.",
     "tests": [
+      "tests/test_boundary_coefficient_threshold_source_audit.py",
       "tests/test_scalar_topographic_boundary_condition_normal_form.py",
       "tests/test_scalar_topographic_profile_eom_source_audit.py"
     ],
@@ -8056,6 +8691,7 @@
     "depends_on": [
       "S_nu_topo_functional",
       "boundary_condition_normal_form",
+      "coefficient_threshold_source_audit",
       "neutral_action_evaluation_gate"
     ],
     "forbidden_inputs": [
@@ -8082,6 +8718,7 @@
     ],
     "claim_boundary": "S_nu_topo is not computed and cannot be fitted.",
     "tests": [
+      "tests/test_boundary_coefficient_threshold_source_audit.py",
       "tests/test_scalar_topographic_boundary_condition_normal_form.py",
       "tests/test_scalar_topographic_profile_eom_source_audit.py"
     ],
@@ -8101,7 +8738,8 @@
     "depends_on": [
       "S_nu_topo_functional",
       "S_nu_topo_value",
-      "boundary_condition_normal_form"
+      "boundary_condition_normal_form",
+      "coefficient_threshold_source_audit"
     ],
     "forbidden_inputs": [
       "observed masses",
@@ -8127,6 +8765,7 @@
     ],
     "claim_boundary": "No neutral numerical suppression is claimed.",
     "tests": [
+      "tests/test_boundary_coefficient_threshold_source_audit.py",
       "tests/test_scalar_topographic_boundary_condition_normal_form.py",
       "tests/test_scalar_topographic_profile_eom_source_audit.py"
     ],
@@ -8190,6 +8829,7 @@
     "derivation_source": "PO-BH-61 source audit",
     "depends_on": [
       "boundary_condition_normal_form",
+      "coefficient_threshold_source_audit",
       "threshold_selection_Phi_0",
       "threshold_selection_T_0"
     ],
@@ -8217,6 +8857,7 @@
     ],
     "claim_boundary": "No thresholds are derived or fitted.",
     "tests": [
+      "tests/test_boundary_coefficient_threshold_source_audit.py",
       "tests/test_scalar_topographic_boundary_condition_normal_form.py",
       "tests/test_scalar_topographic_profile_eom_source_audit.py"
     ],
@@ -8369,11 +9010,12 @@
     "symbol": "alpha_T, beta_T, gamma_T, J_T",
     "sector": "scalar_topographic",
     "status": "OPEN_LOCALIZABLE",
-    "formula_candidate": "Coefficient symbols are localized by the normal form but no values or source functions are derived.",
+    "formula_candidate": "alpha_T,beta_T,gamma_T,J_T symbols localized by boundary-condition families; no values derived.",
     "derived_numerical_value": false,
     "pre_comparison_locked": false,
-    "derivation_source": "PO-BH-62 scalar/topographic boundary-condition normal form",
+    "derivation_source": "PO-BH-63 boundary-coefficient and threshold selection source audit",
     "depends_on": [
+      "coefficient_threshold_source_audit",
       "spacetime_boundary_condition_form_T"
     ],
     "forbidden_inputs": [
@@ -8398,8 +9040,9 @@
       "post-comparison S_nu_topo fit",
       "post-comparison epsilon_nu_topo fit"
     ],
-    "claim_boundary": "No spacetime boundary-condition coefficients are derived or fitted.",
+    "claim_boundary": "Coefficient values are not derived and cannot be fitted after comparison.",
     "tests": [
+      "tests/test_boundary_coefficient_threshold_source_audit.py",
       "tests/test_scalar_topographic_boundary_condition_normal_form.py"
     ],
     "next_action": "derive coefficients from boundary action data before comparison",
@@ -8411,11 +9054,12 @@
     "symbol": "alpha_Phi, beta_Phi, gamma_Phi, J_Phi",
     "sector": "scalar_topographic",
     "status": "OPEN_LOCALIZABLE",
-    "formula_candidate": "Coefficient symbols are localized by the normal form but no values or source functions are derived.",
+    "formula_candidate": "alpha_Phi,beta_Phi,gamma_Phi,J_Phi symbols localized by boundary-condition families; no values derived.",
     "derived_numerical_value": false,
     "pre_comparison_locked": false,
-    "derivation_source": "PO-BH-62 scalar/topographic boundary-condition normal form",
+    "derivation_source": "PO-BH-63 boundary-coefficient and threshold selection source audit",
     "depends_on": [
+      "coefficient_threshold_source_audit",
       "internal_boundary_condition_form_Phi"
     ],
     "forbidden_inputs": [
@@ -8440,8 +9084,9 @@
       "post-comparison S_nu_topo fit",
       "post-comparison epsilon_nu_topo fit"
     ],
-    "claim_boundary": "No internal boundary-condition coefficients are derived or fitted.",
+    "claim_boundary": "Coefficient values are not derived and cannot be fitted after comparison.",
     "tests": [
+      "tests/test_boundary_coefficient_threshold_source_audit.py",
       "tests/test_scalar_topographic_boundary_condition_normal_form.py"
     ],
     "next_action": "derive coefficients from internal boundary action data before comparison",
@@ -8553,9 +9198,10 @@
     "pre_comparison_locked": false,
     "derivation_source": "PO-BH-62 scalar/topographic boundary-condition normal form",
     "depends_on": [
-      "T_profile_solution",
       "Phi_profile_solution",
-      "boundary_condition_normal_form"
+      "T_profile_solution",
+      "boundary_condition_normal_form",
+      "coefficient_threshold_source_audit"
     ],
     "forbidden_inputs": [
       "observed masses",
@@ -8581,9 +9227,603 @@
     ],
     "claim_boundary": "No scalar/topographic profile is solved.",
     "tests": [
+      "tests/test_boundary_coefficient_threshold_source_audit.py",
       "tests/test_scalar_topographic_boundary_condition_normal_form.py"
     ],
     "next_action": "derive and solve the profile systems before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "coefficient_threshold_source_audit": {
+    "id": "coefficient_threshold_source_audit",
+    "name": "Boundary coefficient and threshold source audit",
+    "symbol": "alpha,beta,gamma,J,T_0,Phi_0 source audit",
+    "sector": "scalar_topographic",
+    "status": "COMPLETED",
+    "formula_candidate": "Eight-route audit: boundary potential, natural boundary condition, Dirichlet level-set, Robin/mixed boundary action, threshold selection, scaling/equivalence, dimensional analysis, and no-source result.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-63 boundary-coefficient and threshold selection source audit",
+    "depends_on": [
+      "boundary_condition_normal_form",
+      "spacetime_boundary_condition_form_T",
+      "internal_boundary_condition_form_Phi"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "Audit completed; coefficient families and dimensions are conditional, but values, ratios, sources, thresholds, profile solutions, and neutral suppression values remain open.",
+    "tests": [
+      "tests/test_boundary_coefficient_threshold_source_audit.py"
+    ],
+    "next_action": "derive coefficient/threshold values from BHSM structure before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT",
+    "audit_result": "COEFFICIENT_FAMILY_PARTIAL_VALUES_OPEN"
+  },
+  "boundary_condition_coefficient_family_T": {
+    "id": "boundary_condition_coefficient_family_T",
+    "name": "Boundary-condition coefficient family T",
+    "symbol": "alpha_T,beta_T,gamma_T,J_T family",
+    "sector": "scalar_topographic",
+    "status": "DERIVED_CONDITIONAL",
+    "formula_candidate": "Normal-form families localize Dirichlet, Neumann, Robin/mixed, and source-coupled coefficient structures without fixing values.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-63 boundary-coefficient and threshold selection source audit",
+    "depends_on": [
+      "spacetime_boundary_condition_form_T",
+      "coefficient_threshold_source_audit"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "Coefficient family is conditional; values and ratios remain open.",
+    "tests": [
+      "tests/test_boundary_coefficient_threshold_source_audit.py"
+    ],
+    "next_action": "derive coefficient values/ratios and normalization before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "boundary_condition_coefficient_family_Phi": {
+    "id": "boundary_condition_coefficient_family_Phi",
+    "name": "Boundary-condition coefficient family Phi",
+    "symbol": "alpha_Phi,beta_Phi,gamma_Phi,J_Phi family",
+    "sector": "scalar_topographic",
+    "status": "DERIVED_CONDITIONAL",
+    "formula_candidate": "Normal-form families localize Dirichlet, Neumann, Robin/mixed, and source-coupled coefficient structures without fixing values.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-63 boundary-coefficient and threshold selection source audit",
+    "depends_on": [
+      "internal_boundary_condition_form_Phi",
+      "coefficient_threshold_source_audit"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "Coefficient family is conditional; values and ratios remain open.",
+    "tests": [
+      "tests/test_boundary_coefficient_threshold_source_audit.py"
+    ],
+    "next_action": "derive coefficient values/ratios and normalization before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "coefficient_normalization_T": {
+    "id": "coefficient_normalization_T",
+    "name": "Coefficient normalization T",
+    "symbol": "alpha_T,beta_T,gamma_T common rescaling",
+    "sector": "scalar_topographic",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "Robin data have common-rescaling degeneracy; no normalization convention is fixed.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-63 boundary-coefficient and threshold selection source audit",
+    "depends_on": [
+      "boundary_condition_coefficient_family_T"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "Normalization convention remains open and unfitted.",
+    "tests": [
+      "tests/test_boundary_coefficient_threshold_source_audit.py"
+    ],
+    "next_action": "derive normalization convention before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "coefficient_ratios_T": {
+    "id": "coefficient_ratios_T",
+    "name": "Coefficient ratios T",
+    "symbol": "alpha/beta, gamma/beta",
+    "sector": "scalar_topographic",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "Physically meaningful ratios may exist after normalization, but no ratio values are derived.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-63 boundary-coefficient and threshold selection source audit",
+    "depends_on": [
+      "coefficient_normalization_T"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "Coefficient ratios remain open and unfitted.",
+    "tests": [
+      "tests/test_boundary_coefficient_threshold_source_audit.py"
+    ],
+    "next_action": "derive ratio values before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "coefficient_dimension_family_T": {
+    "id": "coefficient_dimension_family_T",
+    "name": "Coefficient dimensional family T",
+    "symbol": "dim(alpha/beta), dim(gamma/beta)",
+    "sector": "scalar_topographic",
+    "status": "DERIVED_CONDITIONAL",
+    "formula_candidate": "Dimensional consistency constrains coefficient families because normal derivatives carry one inverse-length unit relative to fields.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-63 boundary-coefficient and threshold selection source audit",
+    "depends_on": [
+      "boundary_condition_coefficient_family_T"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "Dimensional family is conditional; numerical values are not derived.",
+    "tests": [
+      "tests/test_boundary_coefficient_threshold_source_audit.py"
+    ],
+    "next_action": "derive values and normalization before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "coefficient_normalization_Phi": {
+    "id": "coefficient_normalization_Phi",
+    "name": "Coefficient normalization Phi",
+    "symbol": "alpha_Phi,beta_Phi,gamma_Phi common rescaling",
+    "sector": "scalar_topographic",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "Robin data have common-rescaling degeneracy; no normalization convention is fixed.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-63 boundary-coefficient and threshold selection source audit",
+    "depends_on": [
+      "boundary_condition_coefficient_family_Phi"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "Normalization convention remains open and unfitted.",
+    "tests": [
+      "tests/test_boundary_coefficient_threshold_source_audit.py"
+    ],
+    "next_action": "derive normalization convention before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "coefficient_ratios_Phi": {
+    "id": "coefficient_ratios_Phi",
+    "name": "Coefficient ratios Phi",
+    "symbol": "alpha/beta, gamma/beta",
+    "sector": "scalar_topographic",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "Physically meaningful ratios may exist after normalization, but no ratio values are derived.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-63 boundary-coefficient and threshold selection source audit",
+    "depends_on": [
+      "coefficient_normalization_Phi"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "Coefficient ratios remain open and unfitted.",
+    "tests": [
+      "tests/test_boundary_coefficient_threshold_source_audit.py"
+    ],
+    "next_action": "derive ratio values before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "coefficient_dimension_family_Phi": {
+    "id": "coefficient_dimension_family_Phi",
+    "name": "Coefficient dimensional family Phi",
+    "symbol": "dim(alpha/beta), dim(gamma/beta)",
+    "sector": "scalar_topographic",
+    "status": "DERIVED_CONDITIONAL",
+    "formula_candidate": "Dimensional consistency constrains coefficient families because normal derivatives carry one inverse-length unit relative to fields.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-63 boundary-coefficient and threshold selection source audit",
+    "depends_on": [
+      "boundary_condition_coefficient_family_Phi"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "Dimensional family is conditional; numerical values are not derived.",
+    "tests": [
+      "tests/test_boundary_coefficient_threshold_source_audit.py"
+    ],
+    "next_action": "derive values and normalization before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "T_0_value": {
+    "id": "T_0_value",
+    "name": "T 0 value",
+    "symbol": "T_0",
+    "sector": "scalar_topographic",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "No source/value selection theorem is found in PO-BH-63.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-63 boundary-coefficient and threshold selection source audit",
+    "depends_on": [
+      "coefficient_threshold_source_audit"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "Value/source selection remains open and unfitted.",
+    "tests": [
+      "tests/test_boundary_coefficient_threshold_source_audit.py"
+    ],
+    "next_action": "derive selection theorem before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "Phi_0_value": {
+    "id": "Phi_0_value",
+    "name": "Phi 0 value",
+    "symbol": "Phi_0",
+    "sector": "scalar_topographic",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "No source/value selection theorem is found in PO-BH-63.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-63 boundary-coefficient and threshold selection source audit",
+    "depends_on": [
+      "coefficient_threshold_source_audit"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "Value/source selection remains open and unfitted.",
+    "tests": [
+      "tests/test_boundary_coefficient_threshold_source_audit.py"
+    ],
+    "next_action": "derive selection theorem before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "source_terms_J_T": {
+    "id": "source_terms_J_T",
+    "name": "source terms J T",
+    "symbol": "J_T",
+    "sector": "scalar_topographic",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "No source/value selection theorem is found in PO-BH-63.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-63 boundary-coefficient and threshold selection source audit",
+    "depends_on": [
+      "coefficient_threshold_source_audit"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "Value/source selection remains open and unfitted.",
+    "tests": [
+      "tests/test_boundary_coefficient_threshold_source_audit.py"
+    ],
+    "next_action": "derive selection theorem before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "source_terms_J_Phi": {
+    "id": "source_terms_J_Phi",
+    "name": "source terms J Phi",
+    "symbol": "J_Phi",
+    "sector": "scalar_topographic",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "No source/value selection theorem is found in PO-BH-63.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-63 boundary-coefficient and threshold selection source audit",
+    "depends_on": [
+      "coefficient_threshold_source_audit"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "Value/source selection remains open and unfitted.",
+    "tests": [
+      "tests/test_boundary_coefficient_threshold_source_audit.py"
+    ],
+    "next_action": "derive selection theorem before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "coefficient_selection_gate": {
+    "id": "coefficient_selection_gate",
+    "name": "coefficient selection gate",
+    "symbol": "coefficient selection gate",
+    "sector": "scalar_topographic",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "No source/value selection theorem is found in PO-BH-63.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-63 boundary-coefficient and threshold selection source audit",
+    "depends_on": [
+      "coefficient_threshold_source_audit"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "observed neutrino masses",
+      "observed neutrino mass splittings",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values",
+      "post-comparison T_0 fit",
+      "post-comparison Phi_0 fit",
+      "post-comparison explicit T profile fit",
+      "post-comparison explicit Phi profile fit",
+      "post-comparison metric/profile fit",
+      "post-comparison normal orientation fit",
+      "post-comparison K(Y) fit",
+      "post-comparison S(Y) fit",
+      "post-comparison J(Y,rho) fit",
+      "post-comparison S_nu_topo fit",
+      "post-comparison epsilon_nu_topo fit"
+    ],
+    "claim_boundary": "Value/source selection remains open and unfitted.",
+    "tests": [
+      "tests/test_boundary_coefficient_threshold_source_audit.py"
+    ],
+    "next_action": "derive selection theorem before comparison",
     "fit_policy": "FORBIDDEN_TO_FIT"
   }
 }
