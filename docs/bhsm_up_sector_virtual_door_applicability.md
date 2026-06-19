@@ -119,3 +119,42 @@ No frozen predictions are changed. No official predictions are changed. The
 released `BHSM_DRESSED_V1_CANDIDATE` scope is not modified. No observed quark
 masses, charm/top ratio, up/top ratio, CKM values, PMNS values, neutrino data,
 measured alpha, or empirical target values are used to select the factor.
+
+## PO-BH-67 Dependency Trace Update
+
+PO-BH-67 traces the actual dressed-branch dependency path:
+
+```text
+build_bhsm_dressed_v1_candidate
+  -> pure_fiber_middle_up_rule()
+  -> apply_virtual_dressing(model, (rule,))
+```
+
+The source rule is local to the pure-fiber middle-up mode `(6,0)` and uses
+internal mode/boundary data (`j=0`, `q=6`, `Omega_u=6`) plus the
+`WEAK_DOUBLE_PROJECTION` candidate source. The trace does not find an explicit
+dependency from that actual dressing source to the two-door pair
+`V_pair^u=span{door_u,door_d}`. Therefore `Z_virt_u2_applicability` remains
+`OPEN_LOCALIZABLE` and the dimension ratio remains a
+`STRONG_DERIVATION_CANDIDATE`.
+
+## PO-BH-68 Weak-Double Projection Bridge
+
+PO-BH-68 identifies the actual source `WEAK_DOUBLE_PROJECTION` with the
+rank-one up projector on the two-dimensional weak doublet door space:
+
+```text
+V_weak = span{door_upper, door_lower}
+P_u = diag(1,0)
+rank(P_u)/dim(V_weak)=1/2
+```
+
+Since the actual source path uses `WEAK_DOUBLE_PROJECTION` for middle-up mode
+`(q,j)=(6,0)` with `Omega_u=6`, the applicability and dimension-ratio statuses
+are upgraded conditionally:
+
+```text
+Z_virt_u2_applicability: DERIVED_CONDITIONAL
+Z_virt_u2_dimension_ratio: DERIVED_CONDITIONAL
+legacy_Z_virt_u2_numerical_candidate: SUPERSEDED_BY_WEAK_DOUBLE_PROJECTION_BRIDGE
+```

@@ -11,8 +11,8 @@
   "pair_dimension": 2,
   "A_virt_u_rank": 1,
   "Z_virt_u2_ratio": "1/2",
-  "Z_virt_u2_dimension_ratio": "STRONG_DERIVATION_CANDIDATE",
-  "Z_virt_u2_applicability": "OPEN_LOCALIZABLE",
+  "Z_virt_u2_dimension_ratio": "DERIVED_CONDITIONAL",
+  "Z_virt_u2_applicability": "DERIVED_CONDITIONAL",
   "Z_virt_u2_mass_fit": "FORBIDDEN_AS_DERIVATION",
   "uses_observed_masses": false,
   "uses_ckm": false,
@@ -106,5 +106,12 @@
     "CKM numerical closure",
     "PMNS numerical closure",
     "neutral/topographic suppression values"
-  ]
+  ],
+  "PO_BH_68_bridge": {
+    "status": "WEAK_DOUBLE_PROJECTION_BRIDGE_ADDED",
+    "weak_space": "V_weak = span{door_upper, door_lower}",
+    "projector": "P_u = diag(1,0)",
+    "rank_over_dimension": "1/2",
+    "actual_source_path": "build_bhsm_dressed_v1_candidate -> pure_fiber_middle_up_rule -> apply_virtual_dressing"
+  }
 }
