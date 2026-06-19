@@ -137,3 +137,42 @@ Still open:
 - CKM numerical closure;
 - PMNS numerical closure;
 - neutral/topographic suppression values.
+
+## Full Freeze Protocol / Charged K_f Update
+
+Validated or strengthened:
+
+- the derive -> freeze -> predict -> compare rule is recorded as the required
+  protocol before any external comparison;
+- the unified `Omega(C,sigma)` projector formula is implemented as a
+  `STRONGLY_SUPPORTED_CANDIDATE`;
+- the incidence target `A(C,sigma)` and oriented target `T(C,sigma)` are
+  implemented as `STRONGLY_SUPPORTED_CANDIDATE` objects;
+- the boundary graded defect equation `Delta_IT=Omega-T` reproduces the
+  non-reference ledger modes conditionally on the sector engine;
+- `rho_ch in {1,2,3}` is emitted as a branch set while
+  `rho_ch_exact_value` remains `OPEN_LOCALIZABLE`;
+- charged suppression fractions are exact structural candidates:
+  `g_ch=1/21`, `Pi_l=1/7`, `Pi_u=2/7`, `Pi_d=4/7`,
+  `eta_l=20/3087`, `eta_u=38/3087`, and `eta_d=68/3087`;
+- the minimal real tridiagonal charged `K_f` generator is implemented as
+  `minimal_charged_Kf_generator: STRONGLY_SUPPORTED_CANDIDATE`;
+- the only threshold insertion is operator-level `(ln 2)` on the up-sector
+  `(6,0)` construction-basis slot.
+
+Invalidated or downgraded:
+
+- choosing `rho_ch` by mass, CKM, PMNS, neutrino, measured-alpha, target-ratio,
+  or post-comparison residual data;
+- applying threshold factors after diagonalization without an operator theorem;
+- treating the candidate charged matrix spectra as numerical mass closure.
+
+Still open:
+
+- derivation of `D_C`, `D_d`, `Gamma_sigma`, `Gamma_T`, `E_3`, `E_A`, and the
+  zero-defect constraint from the action;
+- derivation of `B_supp` and phase response normalization;
+- exact `rho_ch`;
+- full threshold operator;
+- RG transport;
+- numerical closure.
