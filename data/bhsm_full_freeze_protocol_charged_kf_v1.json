@@ -1,0 +1,795 @@
+{
+  "id": "PO-BH-freeze-protocol-charged-Kf-v1",
+  "public_status": "structural architecture integrated conditional; numerical closure open",
+  "frozen_predictions_changed": false,
+  "official_predictions_changed": false,
+  "statuses": {
+    "Boundary_Graded_Defect_Theorem": "STRONGLY_SUPPORTED_CANDIDATE",
+    "sector_target_incidence_product_A": "STRONGLY_SUPPORTED_CANDIDATE",
+    "orientation_trace_Gamma_T": "STRONGLY_SUPPORTED_CANDIDATE",
+    "unified_Omega_projector_formula": "STRONGLY_SUPPORTED_CANDIDATE",
+    "zero_defect_tangent_adjacency": "DERIVED_CONDITIONAL_ON_SECTOR_ENGINE",
+    "charged_suppression_incidence_closure": "STRONGLY_SUPPORTED_CANDIDATE",
+    "minimal_charged_Kf_generator": "STRONGLY_SUPPORTED_CANDIDATE",
+    "operator_level_threshold_insertion": "STRONGLY_SUPPORTED_CANDIDATE",
+    "Mode_Identity_Threshold_Readout_Theorem": "STRONGLY_SUPPORTED_CANDIDATE",
+    "Z_virt_u1": "DERIVED_CONDITIONAL",
+    "charged_Kf_rule_A_suppression_propagation": "DERIVED_CONDITIONAL_ON_B_SUPP_TRACE_KERNEL",
+    "RULE_A_SINGLE_OPERATOR_TRACE": "DERIVED_CONDITIONAL_ON_B_SUPP_TRACE_KERNEL",
+    "RULE_B_DOUBLE_NORMALIZED_PHASE_CANDIDATE": "CANDIDATE_REQUIRES_INDEPENDENT_PHASE_RESPONSE",
+    "minimal_charged_Kf_generator_eta_rule_A": "DERIVED_CONDITIONAL_DIAGNOSTIC_BRANCH",
+    "minimal_charged_Kf_generator_eta_rule_B": "LEGACY_CANDIDATE_BRANCH",
+    "independent_phase_response_source": "OPEN_LOCALIZABLE",
+    "rho_ch_exact_value": "OPEN_LOCALIZABLE",
+    "full_threshold_operator": "OPEN",
+    "RG_transport": "OPEN",
+    "numerical_closure": "OPEN"
+  },
+  "sectors": [
+    {
+      "sector": "neutrino",
+      "C": 0,
+      "sigma": 1,
+      "P_C": "0",
+      "P_plus": "1",
+      "P_minus": "0",
+      "P_d": "0",
+      "omega_expression": "-q - 2j",
+      "A": "3",
+      "tau": "-1",
+      "T": "-3"
+    },
+    {
+      "sector": "lepton",
+      "C": 0,
+      "sigma": -1,
+      "P_C": "0",
+      "P_plus": "0",
+      "P_minus": "1",
+      "P_d": "0",
+      "omega_expression": "-q + 2j",
+      "A": "3",
+      "tau": "1",
+      "T": "3"
+    },
+    {
+      "sector": "up",
+      "C": 1,
+      "sigma": 1,
+      "P_C": "1",
+      "P_plus": "1",
+      "P_minus": "0",
+      "P_d": "0",
+      "omega_expression": "q - 2j",
+      "A": "6",
+      "tau": "1",
+      "T": "6"
+    },
+    {
+      "sector": "down",
+      "C": 1,
+      "sigma": -1,
+      "P_C": "1",
+      "P_plus": "0",
+      "P_minus": "1",
+      "P_d": "1",
+      "omega_expression": "q + 4j",
+      "A": "12",
+      "tau": "1",
+      "T": "12"
+    }
+  ],
+  "ledgers": {
+    "neutrino": [
+      [
+        0,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "lepton": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    "up": [
+      [
+        0,
+        0
+      ],
+      [
+        6,
+        0
+      ],
+      [
+        8,
+        1
+      ]
+    ],
+    "down": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        4,
+        2
+      ]
+    ]
+  },
+  "rho_ch_branches": [
+    1,
+    2,
+    3
+  ],
+  "charged_suppression": {
+    "g_ch": "1/21",
+    "Pi_l": "1/7",
+    "Pi_u": "2/7",
+    "Pi_d": "4/7",
+    "S_l": "20/21",
+    "S_u": "19/21",
+    "S_d": "17/21",
+    "eta_l": "20/3087",
+    "eta_u": "38/3087",
+    "eta_d": "68/3087"
+  },
+  "branch_reports": [
+    {
+      "rho_ch": 1,
+      "sector": "lepton",
+      "ledger": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "diagonal_costs": [
+        "0",
+        "5",
+        "18"
+      ],
+      "eta": "20/3087",
+      "beta": "1/147",
+      "kappa": "1/105",
+      "matrix": [
+        [
+          "0",
+          "1/147",
+          "0"
+        ],
+        [
+          "1/147",
+          "100/3087",
+          "1/105"
+        ],
+        [
+          "0",
+          "1/105",
+          "40/343"
+        ]
+      ],
+      "eigenvalues": [
+        -0.0014012054973298706,
+        0.03272675627214809,
+        0.1176864349718614
+      ],
+      "gaps_from_ground": [
+        0.0,
+        0.03412796176947796,
+        0.11908764046919128
+      ]
+    },
+    {
+      "rho_ch": 1,
+      "sector": "up",
+      "ledger": [
+        [
+          0,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          8,
+          1
+        ]
+      ],
+      "diagonal_costs": [
+        "0",
+        "36",
+        "65"
+      ],
+      "eta": "38/3087",
+      "beta": "2/147",
+      "kappa": "1/105",
+      "matrix": [
+        [
+          "0",
+          "2/147",
+          "0"
+        ],
+        [
+          "2/147",
+          "152/343",
+          "1/105"
+        ],
+        [
+          "0",
+          "1/105",
+          "2470/3087"
+        ]
+      ],
+      "eigenvalues": [
+        -0.0004174244747324843,
+        0.4433120452589084,
+        0.8003836429022512
+      ],
+      "gaps_from_ground": [
+        0.0,
+        0.44372946973364086,
+        0.8008010673769836
+      ]
+    },
+    {
+      "rho_ch": 1,
+      "sector": "down",
+      "ledger": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "diagonal_costs": [
+        "0",
+        "9",
+        "20"
+      ],
+      "eta": "68/3087",
+      "beta": "4/147",
+      "kappa": "1/357",
+      "matrix": [
+        [
+          "0",
+          "4/147",
+          "0"
+        ],
+        [
+          "4/147",
+          "68/343",
+          "1/357"
+        ],
+        [
+          "0",
+          "1/357",
+          "1360/3087"
+        ]
+      ],
+      "eigenvalues": [
+        -0.003667314667074659,
+        0.20188544017007998,
+        0.4405897786110213
+      ],
+      "gaps_from_ground": [
+        0.0,
+        0.20555275483715463,
+        0.4442570932780959
+      ]
+    },
+    {
+      "rho_ch": 2,
+      "sector": "lepton",
+      "ledger": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "diagonal_costs": [
+        "0",
+        "9",
+        "27"
+      ],
+      "eta": "20/3087",
+      "beta": "1/147",
+      "kappa": "1/126",
+      "matrix": [
+        [
+          "0",
+          "1/147",
+          "0"
+        ],
+        [
+          "1/147",
+          "20/343",
+          "1/126"
+        ],
+        [
+          "0",
+          "1/126",
+          "60/343"
+        ]
+      ],
+      "eigenvalues": [
+        -0.0007878491590236494,
+        0.058558034812717014,
+        0.17546596594980515
+      ],
+      "gaps_from_ground": [
+        0.0,
+        0.05934588397174066,
+        0.17625381510882882
+      ]
+    },
+    {
+      "rho_ch": 2,
+      "sector": "up",
+      "ledger": [
+        [
+          0,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          8,
+          1
+        ]
+      ],
+      "diagonal_costs": [
+        "0",
+        "36",
+        "66"
+      ],
+      "eta": "38/3087",
+      "beta": "2/147",
+      "kappa": "1/126",
+      "matrix": [
+        [
+          "0",
+          "2/147",
+          "0"
+        ],
+        [
+          "2/147",
+          "152/343",
+          "1/126"
+        ],
+        [
+          "0",
+          "1/126",
+          "836/1029"
+        ]
+      ],
+      "eigenvalues": [
+        -0.00041739079974166586,
+        0.44339548711974075,
+        0.8126098531455015
+      ],
+      "gaps_from_ground": [
+        0.0,
+        0.44381287791948243,
+        0.8130272439452432
+      ]
+    },
+    {
+      "rho_ch": 2,
+      "sector": "down",
+      "ledger": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "diagonal_costs": [
+        "0",
+        "18",
+        "24"
+      ],
+      "eta": "68/3087",
+      "beta": "4/147",
+      "kappa": "1/378",
+      "matrix": [
+        [
+          "0",
+          "4/147",
+          "0"
+        ],
+        [
+          "4/147",
+          "136/343",
+          "1/378"
+        ],
+        [
+          "0",
+          "1/378",
+          "544/1029"
+        ]
+      ],
+      "eigenvalues": [
+        -0.0018587617732358634,
+        0.39830672101419473,
+        0.5287221087862519
+      ],
+      "gaps_from_ground": [
+        0.0,
+        0.4001654827874306,
+        0.5305808705594878
+      ]
+    },
+    {
+      "rho_ch": 3,
+      "sector": "lepton",
+      "ledger": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "diagonal_costs": [
+        "0",
+        "13",
+        "36"
+      ],
+      "eta": "20/3087",
+      "beta": "1/147",
+      "kappa": "1/147",
+      "matrix": [
+        [
+          "0",
+          "1/147",
+          "0"
+        ],
+        [
+          "1/147",
+          "260/3087",
+          "1/147"
+        ],
+        [
+          "0",
+          "1/147",
+          "80/343"
+        ]
+      ],
+      "eigenvalues": [
+        -0.0005471816744929971,
+        0.08446102213829203,
+        0.23354647699651845
+      ],
+      "gaps_from_ground": [
+        0.0,
+        0.08500820381278502,
+        0.23409365867101145
+      ]
+    },
+    {
+      "rho_ch": 3,
+      "sector": "up",
+      "ledger": [
+        [
+          0,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          8,
+          1
+        ]
+      ],
+      "diagonal_costs": [
+        "0",
+        "36",
+        "67"
+      ],
+      "eta": "38/3087",
+      "beta": "2/147",
+      "kappa": "1/147",
+      "matrix": [
+        [
+          "0",
+          "2/147",
+          "0"
+        ],
+        [
+          "2/147",
+          "152/343",
+          "1/147"
+        ],
+        [
+          "0",
+          "1/147",
+          "2546/3087"
+        ]
+      ],
+      "eigenvalues": [
+        -0.0004173706716058021,
+        0.44344475502383857,
+        0.8248702508923413
+      ],
+      "gaps_from_ground": [
+        0.0,
+        0.44386212569544437,
+        0.8252876215639472
+      ]
+    },
+    {
+      "rho_ch": 3,
+      "sector": "down",
+      "ledger": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "diagonal_costs": [
+        "0",
+        "27",
+        "28"
+      ],
+      "eta": "68/3087",
+      "beta": "4/147",
+      "kappa": "1/399",
+      "matrix": [
+        [
+          "0",
+          "4/147",
+          "0"
+        ],
+        [
+          "4/147",
+          "204/343",
+          "1/399"
+        ],
+        [
+          "0",
+          "1/399",
+          "272/441"
+        ]
+      ],
+      "eigenvalues": [
+        -0.0012423684881209204,
+        0.5956972163951384,
+        0.6170773840333776
+      ],
+      "gaps_from_ground": [
+        0.0,
+        0.5969395848832593,
+        0.6183197525214985
+      ]
+    }
+  ],
+  "up_threshold_reports": [
+    {
+      "rho_ch": 1,
+      "sector": "up",
+      "threshold_insertions": [
+        {
+          "sector": "up",
+          "slot": 1,
+          "mode": [
+            6,
+            0
+          ],
+          "value": "ln 2",
+          "source": "Z_virt^{u,2}=1/2 weak-double projection bridge",
+          "operator_level": true
+        }
+      ],
+      "matrix": [
+        [
+          0.0,
+          0.013605442176870748,
+          0.0
+        ],
+        [
+          0.013605442176870748,
+          1.1362958686065925,
+          0.009523809523809525
+        ],
+        [
+          0.0,
+          0.009523809523809525,
+          0.8001295756397797
+        ]
+      ],
+      "eigenvalues": [
+        -0.00016289770002576732,
+        0.7998601613162382,
+        1.1367281806301595
+      ],
+      "gaps_from_ground": [
+        0.0,
+        0.8000230590162639,
+        1.1368910783301853
+      ]
+    },
+    {
+      "rho_ch": 2,
+      "sector": "up",
+      "threshold_insertions": [
+        {
+          "sector": "up",
+          "slot": 1,
+          "mode": [
+            6,
+            0
+          ],
+          "value": "ln 2",
+          "source": "Z_virt^{u,2}=1/2 weak-double projection bridge",
+          "operator_level": true
+        }
+      ],
+      "matrix": [
+        [
+          0.0,
+          0.013605442176870748,
+          0.0
+        ],
+        [
+          0.013605442176870748,
+          1.1362958686065925,
+          0.007936507936507936
+        ],
+        [
+          0.0,
+          0.007936507936507936,
+          0.8124392614188533
+        ]
+      ],
+      "eigenvalues": [
+        -0.0001628925655996413,
+        0.8122450206329931,
+        1.1366530019580523
+      ],
+      "gaps_from_ground": [
+        0.0,
+        0.8124079131985927,
+        1.136815894523652
+      ]
+    },
+    {
+      "rho_ch": 3,
+      "sector": "up",
+      "threshold_insertions": [
+        {
+          "sector": "up",
+          "slot": 1,
+          "mode": [
+            6,
+            0
+          ],
+          "value": "ln 2",
+          "source": "Z_virt^{u,2}=1/2 weak-double projection bridge",
+          "operator_level": true
+        }
+      ],
+      "matrix": [
+        [
+          0.0,
+          0.013605442176870748,
+          0.0
+        ],
+        [
+          0.013605442176870748,
+          1.1362958686065925,
+          0.006802721088435374
+        ],
+        [
+          0.0,
+          0.006802721088435374,
+          0.8247489471979268
+        ]
+      ],
+      "eigenvalues": [
+        -0.00016288949643128626,
+        0.8246005852813724,
+        1.136607120019578
+      ],
+      "gaps_from_ground": [
+        0.0,
+        0.8247634747778037,
+        1.1367700095160094
+      ]
+    }
+  ],
+  "threshold_insertions": [
+    {
+      "sector": "up",
+      "slot": 1,
+      "mode": [
+        6,
+        0
+      ],
+      "value": "ln 2",
+      "source": "Z_virt^{u,2}=1/2 weak-double projection bridge",
+      "operator_level": true
+    }
+  ],
+  "forbidden_derivation_inputs": [
+    "observed masses",
+    "quark mass ratios",
+    "charged lepton masses",
+    "CKM",
+    "PMNS",
+    "neutrino data",
+    "measured alpha",
+    "target ratios",
+    "post-comparison residuals"
+  ],
+  "claim_boundary": "Candidate freeze/readout machinery only; no empirical comparison input, frozen prediction change, official prediction change, or numerical closure."
+}

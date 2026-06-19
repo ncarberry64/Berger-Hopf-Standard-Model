@@ -1,0 +1,117 @@
+{
+  "id": "PO-BH-66",
+  "title": "Up-Sector Virtual Door Applicability Audit",
+  "public_status": "structural architecture integrated conditional; numerical closure open",
+  "frozen_predictions_changed": false,
+  "official_predictions_changed": false,
+  "up_sector_virtual_door_applicability_audit": "COMPLETED",
+  "V_pair_u": "span{door_u, door_d}",
+  "door_u": "colored upper/up-compatible virtual channel",
+  "door_d": "colored lower/down-compatible virtual channel",
+  "pair_dimension": 2,
+  "A_virt_u_rank": 1,
+  "Z_virt_u2_ratio": "1/2",
+  "Z_virt_u2_dimension_ratio": "DERIVED_CONDITIONAL",
+  "Z_virt_u2_applicability": "DERIVED_CONDITIONAL",
+  "Z_virt_u2_mass_fit": "FORBIDDEN_AS_DERIVATION",
+  "uses_observed_masses": false,
+  "uses_ckm": false,
+  "uses_pmns": false,
+  "uses_neutrino_data": false,
+  "uses_measured_alpha": false,
+  "source_audit_result": "DIMENSION_RATIO_ROUTE_SUPPORTED_APPLICABILITY_OPEN",
+  "source_audit_rows": [
+    {
+      "object": "Z_virt dimension ratio ledger",
+      "source_file": "docs/bhsm_eta_projection_no_overfit.md",
+      "evidence_found": "states one allowed virtual door out of two possible doors and records dim(admissible virtual channel)/dim(two-channel virtual pair)=1/2",
+      "supports_two_door_pair": true,
+      "supports_one_admissible_door": true,
+      "supports_up_sector_applicability": false,
+      "uses_observed_masses": false,
+      "status": "STRONG_DERIVATION_CANDIDATE",
+      "reason": "the dimension-ratio route is explicit, but applicability to the actual up-sector correction is named as a remaining proof obligation"
+    },
+    {
+      "object": "sector projector Hessian fork audit",
+      "source_file": "data/bhsm_sector_projector_hessian_fork_audit.json",
+      "evidence_found": "records Z_virt_u2_dimension_ratio as STRONG_DERIVATION_CANDIDATE and lists virtual-pair applicability proof as remaining open",
+      "supports_two_door_pair": true,
+      "supports_one_admissible_door": true,
+      "supports_up_sector_applicability": false,
+      "uses_observed_masses": false,
+      "status": "OPEN_LOCALIZABLE",
+      "reason": "machine-readable audit keeps applicability proof open"
+    },
+    {
+      "object": "pure-fiber rank-half rule",
+      "source_file": "theory/pure_fiber_rank_half_rule.md",
+      "evidence_found": "records Z_virt^{u,2}=rank(P_phys)/dim(H_fiber)=1/2 for mode (6,0) and asks to derive locality to middle-up mode",
+      "supports_two_door_pair": true,
+      "supports_one_admissible_door": true,
+      "supports_up_sector_applicability": false,
+      "uses_observed_masses": false,
+      "status": "STRUCTURAL_SUPPORT_WITH_OPEN_LOCALITY",
+      "reason": "rank-half structure is documented, but locality/applicability to the released correction remains open"
+    },
+    {
+      "object": "boundary projection channel theorem",
+      "source_file": "theory/boundary_projection_channel_theorem.md",
+      "evidence_found": "records pure_fiber_one_half as a structural candidate and keeps locality to middle-up (6,0) open",
+      "supports_two_door_pair": true,
+      "supports_one_admissible_door": true,
+      "supports_up_sector_applicability": false,
+      "uses_observed_masses": false,
+      "status": "STRUCTURAL_SUPPORT_WITH_OPEN_LOCALITY",
+      "reason": "supports the rank-half candidate while preserving the open applicability proof"
+    },
+    {
+      "object": "boundary flux quantization analogy",
+      "source_file": "theory/pure_fiber_double_branch_consequence.md",
+      "evidence_found": "says boundary-flux language is compatible by analogy with a two-branch pure-fiber orientation space for mode (6,0), but does not derive the double branch or rank-one projection",
+      "supports_two_door_pair": true,
+      "supports_one_admissible_door": false,
+      "supports_up_sector_applicability": false,
+      "uses_observed_masses": false,
+      "status": "ANALOGY_NOT_DERIVATION",
+      "reason": "explicitly limits the two-branch route to compatibility by analogy"
+    },
+    {
+      "object": "frozen dressed branch guardrail",
+      "source_file": "docs/frozen_predictions.md",
+      "evidence_found": "freezes Z_virt^{u,2}=1/2 only on c/t without changing u/t or CKM values",
+      "supports_two_door_pair": false,
+      "supports_one_admissible_door": false,
+      "supports_up_sector_applicability": true,
+      "uses_observed_masses": false,
+      "status": "FROZEN_RELEASE_SCOPE_ONLY",
+      "reason": "records released scope but is not a derivation source for the virtual pair"
+    }
+  ],
+  "forbidden_inputs": [
+    "observed quark masses",
+    "charm/top ratio",
+    "up/top ratio",
+    "target mass ratios",
+    "CKM values",
+    "PMNS values",
+    "neutrino data",
+    "measured alpha"
+  ],
+  "remaining_open": [
+    "Z_virt virtual-pair applicability proof",
+    "rho_ch",
+    "eta_l",
+    "numerical mass closure",
+    "CKM numerical closure",
+    "PMNS numerical closure",
+    "neutral/topographic suppression values"
+  ],
+  "PO_BH_68_bridge": {
+    "status": "WEAK_DOUBLE_PROJECTION_BRIDGE_ADDED",
+    "weak_space": "V_weak = span{door_upper, door_lower}",
+    "projector": "P_u = diag(1,0)",
+    "rank_over_dimension": "1/2",
+    "actual_source_path": "build_bhsm_dressed_v1_candidate -> pure_fiber_middle_up_rule -> apply_virtual_dressing"
+  }
+}
