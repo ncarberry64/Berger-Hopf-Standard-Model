@@ -2,7 +2,7 @@
   "id": "PO-BH-47",
   "title": "Numerical Input Closure Map Theorem",
   "status": "STRUCTURAL_ARCHITECTURE_INTEGRATED_CONDITIONAL_NUMERICAL_CLOSURE_OPEN",
-  "branch": "bhsm-boundary-coefficient-threshold-source-audit-v1",
+  "branch": "bhsm-sector-projector-hessian-fork-audit-v1",
   "official_predictions_changed": false,
   "frozen_predictions_changed": false,
   "standard_model_fully_derived": false,
@@ -22,7 +22,22 @@
     "DERIVED_CONDITIONAL_WITH_OPEN_LEVEL_SET_INPUTS",
     "DO_NOT_CLAIM",
     "COMPLETED",
-    "PARTIAL_EOM_SOURCE_FOUND"
+    "PARTIAL_EOM_SOURCE_FOUND",
+    "STRUCTURALLY_MOTIVATED_DERIVATION_CANDIDATE",
+    "STRUCTURALLY_MOTIVATED_CANDIDATE",
+    "STRONGLY_SUPPORTED_CANDIDATE",
+    "FORBIDDEN_CONDITIONAL",
+    "OPEN_ALLOWED",
+    "MINIMAL_ISOTROPIC_CANDIDATE",
+    "CYCLIC_ANISOTROPY_CANDIDATE",
+    "CONDITIONAL_ON_RHO_CH_EQUALS_1",
+    "CONDITIONAL_ON_RHO_CH_EQUALS_3",
+    "DOWNGRADED_NUMERICAL_COINCIDENCE",
+    "VALIDATED_CANDIDATE",
+    "STRUCTURALLY_SUPPORTED_CANDIDATE",
+    "OPEN",
+    "FORBIDDEN_AS_DERIVATION",
+    "STRONG_DERIVATION_CANDIDATE"
   ],
   "ledgers": {
     "charged_lepton": [
@@ -5996,6 +6011,819 @@
       ],
       "next_action": "derive selection theorem before comparison",
       "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "unified_Omega_projector_formula",
+      "name": "unified Omega projector formula",
+      "symbol": "unified_Omega_projector_formula",
+      "sector": "sector_projector_hessian_fork",
+      "status": "STRUCTURALLY_MOTIVATED_DERIVATION_CANDIDATE",
+      "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+      "depends_on": [
+        "bhsm_sector_projector_hessian_fork_audit"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "charged lepton masses",
+        "quark masses",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "CODATA alpha",
+        "observed generation data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values"
+      ],
+      "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_sector_projector_hessian_fork_audit.py"
+      ],
+      "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "base_cyclic_factor_3",
+      "name": "base cyclic factor 3",
+      "symbol": "base_cyclic_factor_3",
+      "sector": "sector_projector_hessian_fork",
+      "status": "STRUCTURALLY_MOTIVATED_DERIVATION_CANDIDATE",
+      "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+      "depends_on": [
+        "bhsm_sector_projector_hessian_fork_audit"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "charged lepton masses",
+        "quark masses",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "CODATA alpha",
+        "observed generation data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values"
+      ],
+      "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_sector_projector_hessian_fork_audit.py"
+      ],
+      "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "color_factor_2_power_C",
+      "name": "color factor 2 power C",
+      "symbol": "color_factor_2_power_C",
+      "sector": "sector_projector_hessian_fork",
+      "status": "STRUCTURALLY_MOTIVATED_CANDIDATE",
+      "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+      "depends_on": [
+        "bhsm_sector_projector_hessian_fork_audit"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "charged lepton masses",
+        "quark masses",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "CODATA alpha",
+        "observed generation data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values"
+      ],
+      "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_sector_projector_hessian_fork_audit.py"
+      ],
+      "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "down_multiplicity_M",
+      "name": "down multiplicity M",
+      "symbol": "down_multiplicity_M",
+      "sector": "sector_projector_hessian_fork",
+      "status": "STRUCTURALLY_MOTIVATED_DERIVATION_CANDIDATE",
+      "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+      "depends_on": [
+        "bhsm_sector_projector_hessian_fork_audit"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "charged lepton masses",
+        "quark masses",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "CODATA alpha",
+        "observed generation data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values"
+      ],
+      "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_sector_projector_hessian_fork_audit.py"
+      ],
+      "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "sector_target_amplitude_A",
+      "name": "sector target amplitude A",
+      "symbol": "sector_target_amplitude_A",
+      "sector": "sector_projector_hessian_fork",
+      "status": "STRUCTURALLY_MOTIVATED_CANDIDATE",
+      "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+      "depends_on": [
+        "bhsm_sector_projector_hessian_fork_audit"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "charged lepton masses",
+        "quark masses",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "CODATA alpha",
+        "observed generation data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values"
+      ],
+      "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_sector_projector_hessian_fork_audit.py"
+      ],
+      "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "three_state_ladder_structure",
+      "name": "three state ladder structure",
+      "symbol": "three_state_ladder_structure",
+      "sector": "sector_projector_hessian_fork",
+      "status": "STRONGLY_SUPPORTED_CANDIDATE",
+      "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+      "depends_on": [
+        "bhsm_sector_projector_hessian_fork_audit"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "charged lepton masses",
+        "quark masses",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "CODATA alpha",
+        "observed generation data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values"
+      ],
+      "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_sector_projector_hessian_fork_audit.py"
+      ],
+      "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "charged_cross_term_s_ch",
+      "name": "charged cross term s ch",
+      "symbol": "charged_cross_term_s_ch",
+      "sector": "sector_projector_hessian_fork",
+      "status": "FORBIDDEN_CONDITIONAL",
+      "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+      "depends_on": [
+        "bhsm_sector_projector_hessian_fork_audit"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "charged lepton masses",
+        "quark masses",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "CODATA alpha",
+        "observed generation data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values"
+      ],
+      "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_sector_projector_hessian_fork_audit.py"
+      ],
+      "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "neutral_cross_term_s_neutral",
+      "name": "neutral cross term s neutral",
+      "symbol": "neutral_cross_term_s_neutral",
+      "sector": "sector_projector_hessian_fork",
+      "status": "OPEN_ALLOWED",
+      "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+      "depends_on": [
+        "bhsm_sector_projector_hessian_fork_audit"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "charged lepton masses",
+        "quark masses",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "CODATA alpha",
+        "observed generation data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values"
+      ],
+      "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_sector_projector_hessian_fork_audit.py"
+      ],
+      "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "neutral_topographic_metric_mixing",
+      "name": "neutral topographic metric mixing",
+      "symbol": "neutral_topographic_metric_mixing",
+      "sector": "sector_projector_hessian_fork",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+      "depends_on": [
+        "bhsm_sector_projector_hessian_fork_audit"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "charged lepton masses",
+        "quark masses",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "CODATA alpha",
+        "observed generation data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values"
+      ],
+      "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_sector_projector_hessian_fork_audit.py"
+      ],
+      "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "charged_Hessian_anisotropy_rho_ch",
+      "name": "charged Hessian anisotropy rho ch",
+      "symbol": "charged_Hessian_anisotropy_rho_ch",
+      "sector": "sector_projector_hessian_fork",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+      "depends_on": [
+        "bhsm_sector_projector_hessian_fork_audit"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "charged lepton masses",
+        "quark masses",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "CODATA alpha",
+        "observed generation data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values"
+      ],
+      "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_sector_projector_hessian_fork_audit.py"
+      ],
+      "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "isotropic_metric_rho_1",
+      "name": "isotropic metric rho 1",
+      "symbol": "isotropic_metric_rho_1",
+      "sector": "sector_projector_hessian_fork",
+      "status": "MINIMAL_ISOTROPIC_CANDIDATE",
+      "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+      "depends_on": [
+        "bhsm_sector_projector_hessian_fork_audit"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "charged lepton masses",
+        "quark masses",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "CODATA alpha",
+        "observed generation data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values"
+      ],
+      "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_sector_projector_hessian_fork_audit.py"
+      ],
+      "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "cyclic_anisotropy_rho_3",
+      "name": "cyclic anisotropy rho 3",
+      "symbol": "cyclic_anisotropy_rho_3",
+      "sector": "sector_projector_hessian_fork",
+      "status": "CYCLIC_ANISOTROPY_CANDIDATE",
+      "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+      "depends_on": [
+        "bhsm_sector_projector_hessian_fork_audit"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "charged lepton masses",
+        "quark masses",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "CODATA alpha",
+        "observed generation data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values"
+      ],
+      "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_sector_projector_hessian_fork_audit.py"
+      ],
+      "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "exact_old_costs_0_5_18_etc",
+      "name": "exact old costs 0 5 18 etc",
+      "symbol": "exact_old_costs_0_5_18_etc",
+      "sector": "sector_projector_hessian_fork",
+      "status": "CONDITIONAL_ON_RHO_CH_EQUALS_1",
+      "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+      "depends_on": [
+        "bhsm_sector_projector_hessian_fork_audit"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "charged lepton masses",
+        "quark masses",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "CODATA alpha",
+        "observed generation data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values"
+      ],
+      "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_sector_projector_hessian_fork_audit.py"
+      ],
+      "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "cyclic_candidate_costs_0_13_36_etc",
+      "name": "cyclic candidate costs 0 13 36 etc",
+      "symbol": "cyclic_candidate_costs_0_13_36_etc",
+      "sector": "sector_projector_hessian_fork",
+      "status": "CONDITIONAL_ON_RHO_CH_EQUALS_3",
+      "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+      "depends_on": [
+        "bhsm_sector_projector_hessian_fork_audit"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "charged lepton masses",
+        "quark masses",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "CODATA alpha",
+        "observed generation data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values"
+      ],
+      "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_sector_projector_hessian_fork_audit.py"
+      ],
+      "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "eta_l_8_over_9_trace_route",
+      "name": "eta l 8 over 9 trace route",
+      "symbol": "eta_l_8_over_9_trace_route",
+      "sector": "sector_projector_hessian_fork",
+      "status": "DOWNGRADED_NUMERICAL_COINCIDENCE",
+      "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+      "depends_on": [
+        "bhsm_sector_projector_hessian_fork_audit"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "charged lepton masses",
+        "quark masses",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "CODATA alpha",
+        "observed generation data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values"
+      ],
+      "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_sector_projector_hessian_fork_audit.py"
+      ],
+      "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "eta_l_projection_structure",
+      "name": "eta l projection structure",
+      "symbol": "eta_l_projection_structure",
+      "sector": "sector_projector_hessian_fork",
+      "status": "VALIDATED_CANDIDATE",
+      "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+      "depends_on": [
+        "bhsm_sector_projector_hessian_fork_audit"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "charged lepton masses",
+        "quark masses",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "CODATA alpha",
+        "observed generation data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values"
+      ],
+      "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_sector_projector_hessian_fork_audit.py"
+      ],
+      "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "Pi_l_value",
+      "name": "Pi l value",
+      "symbol": "Pi_l_value",
+      "sector": "sector_projector_hessian_fork",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+      "depends_on": [
+        "bhsm_sector_projector_hessian_fork_audit"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "charged lepton masses",
+        "quark masses",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "CODATA alpha",
+        "observed generation data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values"
+      ],
+      "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_sector_projector_hessian_fork_audit.py"
+      ],
+      "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "alpha_geom_internal_derivation",
+      "name": "alpha geom internal derivation",
+      "symbol": "alpha_geom_internal_derivation",
+      "sector": "sector_projector_hessian_fork",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+      "depends_on": [
+        "bhsm_sector_projector_hessian_fork_audit"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "charged lepton masses",
+        "quark masses",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "CODATA alpha",
+        "observed generation data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values"
+      ],
+      "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_sector_projector_hessian_fork_audit.py"
+      ],
+      "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "eta_l_self_screening_factor",
+      "name": "eta l self screening factor",
+      "symbol": "eta_l_self_screening_factor",
+      "sector": "sector_projector_hessian_fork",
+      "status": "STRUCTURALLY_SUPPORTED_CANDIDATE",
+      "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+      "depends_on": [
+        "bhsm_sector_projector_hessian_fork_audit"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "charged lepton masses",
+        "quark masses",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "CODATA alpha",
+        "observed generation data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values"
+      ],
+      "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_sector_projector_hessian_fork_audit.py"
+      ],
+      "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "eta_l_exact_value",
+      "name": "eta l exact value",
+      "symbol": "eta_l_exact_value",
+      "sector": "sector_projector_hessian_fork",
+      "status": "OPEN",
+      "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+      "depends_on": [
+        "bhsm_sector_projector_hessian_fork_audit"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "charged lepton masses",
+        "quark masses",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "CODATA alpha",
+        "observed generation data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values"
+      ],
+      "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_sector_projector_hessian_fork_audit.py"
+      ],
+      "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "eta_l_fit",
+      "name": "eta l fit",
+      "symbol": "eta_l_fit",
+      "sector": "sector_projector_hessian_fork",
+      "status": "FORBIDDEN_AS_DERIVATION",
+      "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+      "depends_on": [
+        "bhsm_sector_projector_hessian_fork_audit"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "charged lepton masses",
+        "quark masses",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "CODATA alpha",
+        "observed generation data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values"
+      ],
+      "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_sector_projector_hessian_fork_audit.py"
+      ],
+      "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "Z_virt_u2_dimension_ratio",
+      "name": "Z virt u2 dimension ratio",
+      "symbol": "Z_virt_u2_dimension_ratio",
+      "sector": "sector_projector_hessian_fork",
+      "status": "STRONG_DERIVATION_CANDIDATE",
+      "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+      "depends_on": [
+        "bhsm_sector_projector_hessian_fork_audit"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "charged lepton masses",
+        "quark masses",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "CODATA alpha",
+        "observed generation data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values"
+      ],
+      "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_sector_projector_hessian_fork_audit.py"
+      ],
+      "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "down_extra_boundary_incidence",
+      "name": "down extra boundary incidence",
+      "symbol": "down_extra_boundary_incidence",
+      "sector": "sector_projector_hessian_fork",
+      "status": "STRONGLY_SUPPORTED_CANDIDATE",
+      "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+      "depends_on": [
+        "bhsm_sector_projector_hessian_fork_audit"
+      ],
+      "forbidden_inputs": [
+        "observed masses",
+        "charged lepton masses",
+        "quark masses",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "CODATA alpha",
+        "observed generation data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values"
+      ],
+      "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_sector_projector_hessian_fork_audit.py"
+      ],
+      "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "bhsm_sector_projector_hessian_fork_audit",
+      "name": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+      "sector": "sector_projector_hessian_fork",
+      "status": "STRUCTURALLY_MOTIVATED_DERIVATION_CANDIDATE",
+      "public_status": "structural architecture integrated conditional; numerical closure open",
+      "frozen_predictions_changed": false,
+      "official_predictions_changed": false,
+      "depends_on": [
+        "coefficient_threshold_source_audit"
+      ],
+      "tests": [
+        "tests/test_sector_projector_hessian_fork_audit.py"
+      ],
+      "claim_boundary": "PO-BH-64 refines sector projector, charged Hessian, eta_l, Z_virt, and validation/invalidation ledgers without numerical closure.",
+      "fit_policy": "FORBIDDEN_TO_FIT",
+      "forbidden_inputs": [
+        "observed masses",
+        "charged lepton masses",
+        "quark masses",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "CODATA alpha",
+        "observed generation data",
+        "anomaly/FTL data",
+        "propulsion/anomaly data",
+        "target values"
+      ]
     }
   ],
   "open_numerical_inputs": [
@@ -6115,7 +6943,10 @@
     "use observed masses, CKM values, PMNS values, neutrino data, anomaly/FTL data, propulsion/anomaly data, or target values to choose scalar/topographic profile inputs",
     "fit profile EOM terms, thresholds, profile solutions, S_nu_topo, or epsilon_nu_topo to neutrino, PMNS, CKM, anomaly/FTL, propulsion/anomaly, or target values",
     "fit boundary-condition coefficients, thresholds, profile solutions, S_nu_topo, or epsilon_nu_topo after comparison",
-    "fit boundary-condition coefficient values, coefficient ratios, source terms, T_0, Phi_0, profile solutions, S_nu_topo, or epsilon_nu_topo after comparison"
+    "fit boundary-condition coefficient values, coefficient ratios, source terms, T_0, Phi_0, profile solutions, S_nu_topo, or epsilon_nu_topo after comparison",
+    "fit rho_ch from charged lepton masses, quark masses, CKM, PMNS, neutrino data, measured alpha, observed generation data, or target values",
+    "use measured alpha or CODATA alpha as an eta_l derivation",
+    "fit Pi_l or alpha_geom after comparison"
   ],
   "claim_status_table": [
     {
@@ -6268,7 +7099,18 @@
     "COEFFICIENT_RATIOS_REMAIN_OPEN",
     "COEFFICIENT_DIMENSION_FAMILY_DERIVED_CONDITIONAL",
     "THRESHOLD_VALUES_REMAIN_OPEN",
-    "SOURCE_TERMS_REMAIN_OPEN"
+    "SOURCE_TERMS_REMAIN_OPEN",
+    "PO_BH_64_SECTOR_PROJECTOR_HESSIAN_FORK_AUDIT",
+    "UNIFIED_OMEGA_PROJECTOR_FORMULA_CANDIDATE",
+    "TARGET_AMPLITUDE_FORMULA_CANDIDATE_NOT_ACTION_DERIVED",
+    "THREE_STATE_LADDER_STRONGLY_SUPPORTED_CANDIDATE",
+    "CHARGED_HESSIAN_RHO_CH_OPEN_LOCALIZABLE",
+    "Q2_PLUS_J2_COSTS_CONDITIONAL_ON_RHO_1",
+    "CYCLIC_RHO_3_COSTS_CONDITIONAL",
+    "ETA_L_8_OVER_9_DOWNGRADED",
+    "ETA_L_PROJECTION_STRUCTURE_VALIDATED_CANDIDATE",
+    "Z_VIRT_U2_DIMENSION_RATIO_STRONG_CANDIDATE",
+    "DOWN_EXTRA_BOUNDARY_INCIDENCE_STRONG_CANDIDATE"
   ],
   "collar_measure_extrinsic_geometry": {
     "id": "PO-BH-57",
@@ -9825,5 +10667,818 @@
     ],
     "next_action": "derive selection theorem before comparison",
     "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "unified_Omega_projector_formula": {
+    "id": "unified_Omega_projector_formula",
+    "name": "unified Omega projector formula",
+    "symbol": "unified_Omega_projector_formula",
+    "sector": "sector_projector_hessian_fork",
+    "status": "STRUCTURALLY_MOTIVATED_DERIVATION_CANDIDATE",
+    "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+    "depends_on": [
+      "bhsm_sector_projector_hessian_fork_audit"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "charged lepton masses",
+      "quark masses",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "CODATA alpha",
+      "observed generation data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values"
+    ],
+    "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_sector_projector_hessian_fork_audit.py"
+    ],
+    "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "base_cyclic_factor_3": {
+    "id": "base_cyclic_factor_3",
+    "name": "base cyclic factor 3",
+    "symbol": "base_cyclic_factor_3",
+    "sector": "sector_projector_hessian_fork",
+    "status": "STRUCTURALLY_MOTIVATED_DERIVATION_CANDIDATE",
+    "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+    "depends_on": [
+      "bhsm_sector_projector_hessian_fork_audit"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "charged lepton masses",
+      "quark masses",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "CODATA alpha",
+      "observed generation data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values"
+    ],
+    "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_sector_projector_hessian_fork_audit.py"
+    ],
+    "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "color_factor_2_power_C": {
+    "id": "color_factor_2_power_C",
+    "name": "color factor 2 power C",
+    "symbol": "color_factor_2_power_C",
+    "sector": "sector_projector_hessian_fork",
+    "status": "STRUCTURALLY_MOTIVATED_CANDIDATE",
+    "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+    "depends_on": [
+      "bhsm_sector_projector_hessian_fork_audit"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "charged lepton masses",
+      "quark masses",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "CODATA alpha",
+      "observed generation data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values"
+    ],
+    "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_sector_projector_hessian_fork_audit.py"
+    ],
+    "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "down_multiplicity_M": {
+    "id": "down_multiplicity_M",
+    "name": "down multiplicity M",
+    "symbol": "down_multiplicity_M",
+    "sector": "sector_projector_hessian_fork",
+    "status": "STRUCTURALLY_MOTIVATED_DERIVATION_CANDIDATE",
+    "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+    "depends_on": [
+      "bhsm_sector_projector_hessian_fork_audit"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "charged lepton masses",
+      "quark masses",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "CODATA alpha",
+      "observed generation data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values"
+    ],
+    "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_sector_projector_hessian_fork_audit.py"
+    ],
+    "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "sector_target_amplitude_A": {
+    "id": "sector_target_amplitude_A",
+    "name": "sector target amplitude A",
+    "symbol": "sector_target_amplitude_A",
+    "sector": "sector_projector_hessian_fork",
+    "status": "STRUCTURALLY_MOTIVATED_CANDIDATE",
+    "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+    "depends_on": [
+      "bhsm_sector_projector_hessian_fork_audit"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "charged lepton masses",
+      "quark masses",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "CODATA alpha",
+      "observed generation data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values"
+    ],
+    "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_sector_projector_hessian_fork_audit.py"
+    ],
+    "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "three_state_ladder_structure": {
+    "id": "three_state_ladder_structure",
+    "name": "three state ladder structure",
+    "symbol": "three_state_ladder_structure",
+    "sector": "sector_projector_hessian_fork",
+    "status": "STRONGLY_SUPPORTED_CANDIDATE",
+    "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+    "depends_on": [
+      "bhsm_sector_projector_hessian_fork_audit"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "charged lepton masses",
+      "quark masses",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "CODATA alpha",
+      "observed generation data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values"
+    ],
+    "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_sector_projector_hessian_fork_audit.py"
+    ],
+    "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "charged_cross_term_s_ch": {
+    "id": "charged_cross_term_s_ch",
+    "name": "charged cross term s ch",
+    "symbol": "charged_cross_term_s_ch",
+    "sector": "sector_projector_hessian_fork",
+    "status": "FORBIDDEN_CONDITIONAL",
+    "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+    "depends_on": [
+      "bhsm_sector_projector_hessian_fork_audit"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "charged lepton masses",
+      "quark masses",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "CODATA alpha",
+      "observed generation data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values"
+    ],
+    "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_sector_projector_hessian_fork_audit.py"
+    ],
+    "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "neutral_cross_term_s_neutral": {
+    "id": "neutral_cross_term_s_neutral",
+    "name": "neutral cross term s neutral",
+    "symbol": "neutral_cross_term_s_neutral",
+    "sector": "sector_projector_hessian_fork",
+    "status": "OPEN_ALLOWED",
+    "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+    "depends_on": [
+      "bhsm_sector_projector_hessian_fork_audit"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "charged lepton masses",
+      "quark masses",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "CODATA alpha",
+      "observed generation data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values"
+    ],
+    "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_sector_projector_hessian_fork_audit.py"
+    ],
+    "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "neutral_topographic_metric_mixing": {
+    "id": "neutral_topographic_metric_mixing",
+    "name": "neutral topographic metric mixing",
+    "symbol": "neutral_topographic_metric_mixing",
+    "sector": "sector_projector_hessian_fork",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+    "depends_on": [
+      "bhsm_sector_projector_hessian_fork_audit"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "charged lepton masses",
+      "quark masses",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "CODATA alpha",
+      "observed generation data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values"
+    ],
+    "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_sector_projector_hessian_fork_audit.py"
+    ],
+    "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "charged_Hessian_anisotropy_rho_ch": {
+    "id": "charged_Hessian_anisotropy_rho_ch",
+    "name": "charged Hessian anisotropy rho ch",
+    "symbol": "charged_Hessian_anisotropy_rho_ch",
+    "sector": "sector_projector_hessian_fork",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+    "depends_on": [
+      "bhsm_sector_projector_hessian_fork_audit"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "charged lepton masses",
+      "quark masses",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "CODATA alpha",
+      "observed generation data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values"
+    ],
+    "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_sector_projector_hessian_fork_audit.py"
+    ],
+    "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "isotropic_metric_rho_1": {
+    "id": "isotropic_metric_rho_1",
+    "name": "isotropic metric rho 1",
+    "symbol": "isotropic_metric_rho_1",
+    "sector": "sector_projector_hessian_fork",
+    "status": "MINIMAL_ISOTROPIC_CANDIDATE",
+    "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+    "depends_on": [
+      "bhsm_sector_projector_hessian_fork_audit"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "charged lepton masses",
+      "quark masses",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "CODATA alpha",
+      "observed generation data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values"
+    ],
+    "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_sector_projector_hessian_fork_audit.py"
+    ],
+    "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "cyclic_anisotropy_rho_3": {
+    "id": "cyclic_anisotropy_rho_3",
+    "name": "cyclic anisotropy rho 3",
+    "symbol": "cyclic_anisotropy_rho_3",
+    "sector": "sector_projector_hessian_fork",
+    "status": "CYCLIC_ANISOTROPY_CANDIDATE",
+    "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+    "depends_on": [
+      "bhsm_sector_projector_hessian_fork_audit"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "charged lepton masses",
+      "quark masses",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "CODATA alpha",
+      "observed generation data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values"
+    ],
+    "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_sector_projector_hessian_fork_audit.py"
+    ],
+    "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "exact_old_costs_0_5_18_etc": {
+    "id": "exact_old_costs_0_5_18_etc",
+    "name": "exact old costs 0 5 18 etc",
+    "symbol": "exact_old_costs_0_5_18_etc",
+    "sector": "sector_projector_hessian_fork",
+    "status": "CONDITIONAL_ON_RHO_CH_EQUALS_1",
+    "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+    "depends_on": [
+      "bhsm_sector_projector_hessian_fork_audit"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "charged lepton masses",
+      "quark masses",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "CODATA alpha",
+      "observed generation data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values"
+    ],
+    "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_sector_projector_hessian_fork_audit.py"
+    ],
+    "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "cyclic_candidate_costs_0_13_36_etc": {
+    "id": "cyclic_candidate_costs_0_13_36_etc",
+    "name": "cyclic candidate costs 0 13 36 etc",
+    "symbol": "cyclic_candidate_costs_0_13_36_etc",
+    "sector": "sector_projector_hessian_fork",
+    "status": "CONDITIONAL_ON_RHO_CH_EQUALS_3",
+    "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+    "depends_on": [
+      "bhsm_sector_projector_hessian_fork_audit"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "charged lepton masses",
+      "quark masses",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "CODATA alpha",
+      "observed generation data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values"
+    ],
+    "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_sector_projector_hessian_fork_audit.py"
+    ],
+    "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "eta_l_8_over_9_trace_route": {
+    "id": "eta_l_8_over_9_trace_route",
+    "name": "eta l 8 over 9 trace route",
+    "symbol": "eta_l_8_over_9_trace_route",
+    "sector": "sector_projector_hessian_fork",
+    "status": "DOWNGRADED_NUMERICAL_COINCIDENCE",
+    "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+    "depends_on": [
+      "bhsm_sector_projector_hessian_fork_audit"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "charged lepton masses",
+      "quark masses",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "CODATA alpha",
+      "observed generation data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values"
+    ],
+    "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_sector_projector_hessian_fork_audit.py"
+    ],
+    "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "eta_l_projection_structure": {
+    "id": "eta_l_projection_structure",
+    "name": "eta l projection structure",
+    "symbol": "eta_l_projection_structure",
+    "sector": "sector_projector_hessian_fork",
+    "status": "VALIDATED_CANDIDATE",
+    "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+    "depends_on": [
+      "bhsm_sector_projector_hessian_fork_audit"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "charged lepton masses",
+      "quark masses",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "CODATA alpha",
+      "observed generation data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values"
+    ],
+    "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_sector_projector_hessian_fork_audit.py"
+    ],
+    "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "Pi_l_value": {
+    "id": "Pi_l_value",
+    "name": "Pi l value",
+    "symbol": "Pi_l_value",
+    "sector": "sector_projector_hessian_fork",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+    "depends_on": [
+      "bhsm_sector_projector_hessian_fork_audit"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "charged lepton masses",
+      "quark masses",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "CODATA alpha",
+      "observed generation data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values"
+    ],
+    "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_sector_projector_hessian_fork_audit.py"
+    ],
+    "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "alpha_geom_internal_derivation": {
+    "id": "alpha_geom_internal_derivation",
+    "name": "alpha geom internal derivation",
+    "symbol": "alpha_geom_internal_derivation",
+    "sector": "sector_projector_hessian_fork",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+    "depends_on": [
+      "bhsm_sector_projector_hessian_fork_audit"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "charged lepton masses",
+      "quark masses",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "CODATA alpha",
+      "observed generation data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values"
+    ],
+    "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_sector_projector_hessian_fork_audit.py"
+    ],
+    "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "eta_l_self_screening_factor": {
+    "id": "eta_l_self_screening_factor",
+    "name": "eta l self screening factor",
+    "symbol": "eta_l_self_screening_factor",
+    "sector": "sector_projector_hessian_fork",
+    "status": "STRUCTURALLY_SUPPORTED_CANDIDATE",
+    "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+    "depends_on": [
+      "bhsm_sector_projector_hessian_fork_audit"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "charged lepton masses",
+      "quark masses",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "CODATA alpha",
+      "observed generation data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values"
+    ],
+    "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_sector_projector_hessian_fork_audit.py"
+    ],
+    "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "eta_l_exact_value": {
+    "id": "eta_l_exact_value",
+    "name": "eta l exact value",
+    "symbol": "eta_l_exact_value",
+    "sector": "sector_projector_hessian_fork",
+    "status": "OPEN",
+    "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+    "depends_on": [
+      "bhsm_sector_projector_hessian_fork_audit"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "charged lepton masses",
+      "quark masses",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "CODATA alpha",
+      "observed generation data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values"
+    ],
+    "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_sector_projector_hessian_fork_audit.py"
+    ],
+    "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "eta_l_fit": {
+    "id": "eta_l_fit",
+    "name": "eta l fit",
+    "symbol": "eta_l_fit",
+    "sector": "sector_projector_hessian_fork",
+    "status": "FORBIDDEN_AS_DERIVATION",
+    "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+    "depends_on": [
+      "bhsm_sector_projector_hessian_fork_audit"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "charged lepton masses",
+      "quark masses",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "CODATA alpha",
+      "observed generation data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values"
+    ],
+    "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_sector_projector_hessian_fork_audit.py"
+    ],
+    "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "Z_virt_u2_dimension_ratio": {
+    "id": "Z_virt_u2_dimension_ratio",
+    "name": "Z virt u2 dimension ratio",
+    "symbol": "Z_virt_u2_dimension_ratio",
+    "sector": "sector_projector_hessian_fork",
+    "status": "STRONG_DERIVATION_CANDIDATE",
+    "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+    "depends_on": [
+      "bhsm_sector_projector_hessian_fork_audit"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "charged lepton masses",
+      "quark masses",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "CODATA alpha",
+      "observed generation data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values"
+    ],
+    "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_sector_projector_hessian_fork_audit.py"
+    ],
+    "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "down_extra_boundary_incidence": {
+    "id": "down_extra_boundary_incidence",
+    "name": "down extra boundary incidence",
+    "symbol": "down_extra_boundary_incidence",
+    "sector": "sector_projector_hessian_fork",
+    "status": "STRONGLY_SUPPORTED_CANDIDATE",
+    "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+    "depends_on": [
+      "bhsm_sector_projector_hessian_fork_audit"
+    ],
+    "forbidden_inputs": [
+      "observed masses",
+      "charged lepton masses",
+      "quark masses",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "CODATA alpha",
+      "observed generation data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values"
+    ],
+    "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_sector_projector_hessian_fork_audit.py"
+    ],
+    "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "bhsm_sector_projector_hessian_fork_audit": {
+    "id": "bhsm_sector_projector_hessian_fork_audit",
+    "name": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+    "sector": "sector_projector_hessian_fork",
+    "status": "STRUCTURALLY_MOTIVATED_DERIVATION_CANDIDATE",
+    "public_status": "structural architecture integrated conditional; numerical closure open",
+    "frozen_predictions_changed": false,
+    "official_predictions_changed": false,
+    "depends_on": [
+      "coefficient_threshold_source_audit"
+    ],
+    "tests": [
+      "tests/test_sector_projector_hessian_fork_audit.py"
+    ],
+    "claim_boundary": "PO-BH-64 refines sector projector, charged Hessian, eta_l, Z_virt, and validation/invalidation ledgers without numerical closure.",
+    "fit_policy": "FORBIDDEN_TO_FIT",
+    "forbidden_inputs": [
+      "observed masses",
+      "charged lepton masses",
+      "quark masses",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "CODATA alpha",
+      "observed generation data",
+      "anomaly/FTL data",
+      "propulsion/anomaly data",
+      "target values"
+    ]
   }
 }

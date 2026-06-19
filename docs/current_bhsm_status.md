@@ -7,8 +7,8 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 | Item | Current status |
 | --- | --- |
 | Overall status | structural architecture integrated conditional; numerical closure open |
-| Latest theorem branch | `bhsm-boundary-coefficient-threshold-source-audit-v1` |
-| Latest completed theorem commits | PO-BH-47 `ae5dac5`; PO-BH-47 cleanup `1c11d2b`; PO-BH-48 `8ac577c`; PO-BH-49 `c2cfc70`; PO-BH-50 `7a4523a`; PO-BH-51 `225786f`; PO-BH-52 `4de6d9c`; PO-BH-53 `20c58b1`; PO-BH-54 `11d1c60`; PO-BH-55 `cf0e998`; PO-BH-56 `9f93330`; PO-BH-57/58/59 merged to main; PO-BH-60 merged to main; PO-BH-61 merged to main; PO-BH-62 merged to main; PO-BH-63 on this branch |
+| Latest theorem branch | `bhsm-sector-projector-hessian-fork-audit-v1` |
+| Latest completed theorem commits | PO-BH-47 `ae5dac5`; PO-BH-47 cleanup `1c11d2b`; PO-BH-48 `8ac577c`; PO-BH-49 `c2cfc70`; PO-BH-50 `7a4523a`; PO-BH-51 `225786f`; PO-BH-52 `4de6d9c`; PO-BH-53 `20c58b1`; PO-BH-54 `11d1c60`; PO-BH-55 `cf0e998`; PO-BH-56 `9f93330`; PO-BH-57/58/59 merged to main; PO-BH-60 merged to main; PO-BH-61 merged to main; PO-BH-62 merged to main; PO-BH-63 merged to main; PO-BH-64 on this branch |
 | Test result summary | `1376 passed`; focused PO-BH-56 tests `10 passed`; PO-BH-55 and neutral/collar regression tests `90 passed`; guardrail audits passed |
 | Current theorem/status label | `STRUCTURAL_ARCHITECTURE_INTEGRATED_CONDITIONAL_NUMERICAL_CLOSURE_OPEN` |
 | Candidate architecture complete | yes |
@@ -60,6 +60,8 @@ PO-BH-61 completes a derivation-source audit for scalar/topographic profile EOM 
 PO-BH-62 converts the symbolic boundary variation source identified in PO-BH-61 into a conditional scalar/topographic boundary-condition normal form. Dirichlet, Neumann, Robin/mixed, and conditional source-coupled forms are recorded for `T` and `Phi`. Coefficients, thresholds `T_0` and `Phi_0`, profile solutions, `S_nu_topo` value, and `epsilon_nu_topo` remain open-localizable. No numerical neutrino prediction, PMNS prediction, CKM prediction, FTL claim, anomaly validation, propulsion validation, frozen prediction change, or official prediction change is introduced.
 
 PO-BH-63 audits sources for the scalar/topographic boundary-condition coefficients and threshold values introduced by PO-BH-62. Coefficient families, scaling/equivalence, and dimensional requirements are recorded conditionally. Coefficient values, coefficient ratios, source terms, thresholds `T_0` and `Phi_0`, profile solutions, `S_nu_topo` value, and `epsilon_nu_topo` remain open-localizable. No numerical neutrino prediction, PMNS prediction, CKM prediction, FTL claim, anomaly validation, propulsion validation, frozen prediction change, or official prediction change is introduced.
+
+PO-BH-64 records the finite sector projector ledger and charged Hessian fork audit. Sector projector compression, down-sector incidence, three-state ladder structure, and the `Z_virt^{u,2}=1/2` dimension-ratio route are strengthened as candidates. Exact `q^2+j^2` costs are downgraded to conditional on `rho_ch=1`; the cyclic candidate `rho_ch=3` is documented without choosing it. The `8/9` eta route is downgraded and the eta projection/self-screening route remains candidate-only. No numerical closure, frozen prediction change, or official prediction change is introduced.
 
 ## Cross-Links
 
@@ -122,6 +124,10 @@ PO-BH-63 audits sources for the scalar/topographic boundary-condition coefficien
 - [Theorem discharge: scalar/topographic profile EOM source audit](../theory/theorem_discharge_scalar_topographic_profile_eom_source_audit.md)
 - [Theorem discharge: scalar/topographic boundary-condition normal form](../theory/theorem_discharge_scalar_topographic_boundary_condition_normal_form.md)
 - [Theorem discharge: boundary coefficient / threshold source audit](../theory/theorem_discharge_boundary_coefficient_threshold_source_audit.md)
+- [PO-BH-64 sector projector ledger theorem](bhsm_sector_projector_ledger_theorem.md)
+- [PO-BH-64 charged Hessian fork audit](bhsm_charged_hessian_fork_audit.md)
+- [PO-BH-64 eta projection/no-overfit ledger](bhsm_eta_projection_no_overfit.md)
+- [PO-BH-64 validation/invalidation ledger](bhsm_validation_invalidation_ledger.md)
 
 ## Boundary-Action Term Realization Status
 

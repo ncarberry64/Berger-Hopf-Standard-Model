@@ -302,6 +302,8 @@ PO-BH-62 converts the symbolic boundary variation source identified in PO-BH-61 
 
 PO-BH-63 audits existing BHSM structures for sources of scalar/topographic boundary-condition coefficients and threshold values. It confirms that the coefficient families follow conditionally from the PO-BH-62 normal forms and that scaling/equivalence and dimensional-analysis constraints can be recorded, but no coefficient values, coefficient ratios, source terms, `T_0`, `Phi_0`, profile solutions, `S_nu_topo` value, or `epsilon_nu_topo` are derived. No numerical neutrino prediction, PMNS prediction, CKM prediction, FTL claim, anomaly validation, or propulsion validation is introduced.
 
+PO-BH-64 records a finite sector projector compression and charged Hessian fork audit. The unified `Omega(C,sigma)` projector formula and target-amplitude formula are documented as structural candidates, not fully action-derived claims. The charged Hessian cost is forked to `N_ch(q,j)=q^2+rho_ch j^2`, with old exact costs conditional on `rho_ch=1` and cyclic-anisotropy candidate costs conditional on `rho_ch=3`. The `8/9` eta route is downgraded, the eta projection/self-screening route is documented as candidate-only, and `Z_virt^{u,2}=1/2` is strengthened as a dimension-ratio candidate. No frozen or official prediction is changed.
+
 PO-BH-54 localizes the normal-coupling/collar convention for the neutral
 boundary term:
 
