@@ -1,0 +1,1164 @@
+{
+  "id": "PO-BH-charged-Kf-rule-A-suppression-v1",
+  "title": "Charged Kf Rule-A Suppression Propagation and Branch Spectral Sanity v1",
+  "public_status": "structural architecture integrated conditional; numerical closure open",
+  "frozen_predictions_changed": false,
+  "official_predictions_changed": false,
+  "uses_empirical_derivation_inputs": false,
+  "default_diagnostic_suppression_rule": "RULE_A_SINGLE_OPERATOR_TRACE",
+  "statuses": {
+    "charged_Kf_rule_A_suppression_propagation": "DERIVED_CONDITIONAL_ON_B_SUPP_TRACE_KERNEL",
+    "RULE_A_SINGLE_OPERATOR_TRACE": "DERIVED_CONDITIONAL_ON_B_SUPP_TRACE_KERNEL",
+    "RULE_B_DOUBLE_NORMALIZED_PHASE_CANDIDATE": "CANDIDATE_REQUIRES_INDEPENDENT_PHASE_RESPONSE",
+    "minimal_charged_Kf_generator_eta_rule_A": "DERIVED_CONDITIONAL_DIAGNOSTIC_BRANCH",
+    "minimal_charged_Kf_generator_eta_rule_B": "LEGACY_CANDIDATE_BRANCH",
+    "independent_phase_response_source": "OPEN_LOCALIZABLE",
+    "numerical_closure": "OPEN"
+  },
+  "eta_values": {
+    "RULE_A_SINGLE_OPERATOR_TRACE": {
+      "lepton": "20/147",
+      "up": "38/147",
+      "down": "68/147"
+    },
+    "RULE_B_DOUBLE_NORMALIZED_PHASE_CANDIDATE": {
+      "lepton": "20/3087",
+      "up": "38/3087",
+      "down": "68/3087"
+    }
+  },
+  "rule_a_branch_rows": [
+    {
+      "sector": "lepton",
+      "rho_ch": 1,
+      "suppression_rule": "RULE_A_SINGLE_OPERATOR_TRACE",
+      "rule_status": "DERIVED_CONDITIONAL_ON_B_SUPP_TRACE_KERNEL",
+      "eta": "20/147",
+      "diagonal_costs": [
+        "0",
+        "5",
+        "18"
+      ],
+      "diagonal_entries": [
+        "0",
+        "100/147",
+        "120/49"
+      ],
+      "beta_f": "1/147",
+      "kappa_f": "1/105",
+      "bridge_ansatz_status": "UNCHANGED_BRIDGE_ANSATZ_NOT_SUPPRESSION_DERIVED",
+      "matrix": [
+        [
+          "0",
+          "1/147",
+          "0"
+        ],
+        [
+          "1/147",
+          "100/147",
+          "1/105"
+        ],
+        [
+          "0",
+          "1/105",
+          "120/49"
+        ]
+      ],
+      "eigenvalues": [
+        -6.802411221511498e-05,
+        0.6802888518434282,
+        2.4490308729490593
+      ],
+      "gaps_from_ground": [
+        0.0,
+        0.6803568759556433,
+        2.4490988970612744
+      ],
+      "spectral_factors_exp_minus_gap": [
+        1.0,
+        0.50643622519994,
+        0.0863713809488978
+      ],
+      "branch_ordering_note": "Eigenvalues are sorted numerically; no empirical mass comparison is performed."
+    },
+    {
+      "sector": "up",
+      "rho_ch": 1,
+      "suppression_rule": "RULE_A_SINGLE_OPERATOR_TRACE",
+      "rule_status": "DERIVED_CONDITIONAL_ON_B_SUPP_TRACE_KERNEL",
+      "eta": "38/147",
+      "diagonal_costs": [
+        "0",
+        "36",
+        "65"
+      ],
+      "diagonal_entries": [
+        "0",
+        "456/49",
+        "2470/147"
+      ],
+      "beta_f": "2/147",
+      "kappa_f": "1/105",
+      "bridge_ansatz_status": "UNCHANGED_BRIDGE_ANSATZ_NOT_SUPPRESSION_DERIVED",
+      "matrix": [
+        [
+          "0",
+          "2/147",
+          "0"
+        ],
+        [
+          "2/147",
+          "456/49",
+          "1/105"
+        ],
+        [
+          "0",
+          "1/105",
+          "2470/147"
+        ]
+      ],
+      "eigenvalues": [
+        -1.9890966357469124e-05,
+        9.306130240734147,
+        16.802733187647174
+      ],
+      "gaps_from_ground": [
+        0.0,
+        9.306150131700504,
+        16.80275307861353
+      ],
+      "spectral_factors_exp_minus_gap": [
+        1.0,
+        9.086368589538854e-05,
+        5.0426294652909307e-08
+      ],
+      "branch_ordering_note": "Eigenvalues are sorted numerically; no empirical mass comparison is performed."
+    },
+    {
+      "sector": "down",
+      "rho_ch": 1,
+      "suppression_rule": "RULE_A_SINGLE_OPERATOR_TRACE",
+      "rule_status": "DERIVED_CONDITIONAL_ON_B_SUPP_TRACE_KERNEL",
+      "eta": "68/147",
+      "diagonal_costs": [
+        "0",
+        "9",
+        "20"
+      ],
+      "diagonal_entries": [
+        "0",
+        "204/49",
+        "1360/147"
+      ],
+      "beta_f": "4/147",
+      "kappa_f": "1/357",
+      "bridge_ansatz_status": "UNCHANGED_BRIDGE_ANSATZ_NOT_SUPPRESSION_DERIVED",
+      "matrix": [
+        [
+          "0",
+          "4/147",
+          "0"
+        ],
+        [
+          "4/147",
+          "204/49",
+          "1/357"
+        ],
+        [
+          "0",
+          "1/357",
+          "1360/147"
+        ]
+      ],
+      "eigenvalues": [
+        -0.00017784135675866976,
+        4.163441605473421,
+        9.251702222277896
+      ],
+      "gaps_from_ground": [
+        0.0,
+        4.16361944683018,
+        9.251880063634655
+      ],
+      "spectral_factors_exp_minus_gap": [
+        1.0,
+        0.015551169303301875,
+        9.593112579309813e-05
+      ],
+      "branch_ordering_note": "Eigenvalues are sorted numerically; no empirical mass comparison is performed."
+    },
+    {
+      "sector": "lepton",
+      "rho_ch": 2,
+      "suppression_rule": "RULE_A_SINGLE_OPERATOR_TRACE",
+      "rule_status": "DERIVED_CONDITIONAL_ON_B_SUPP_TRACE_KERNEL",
+      "eta": "20/147",
+      "diagonal_costs": [
+        "0",
+        "9",
+        "27"
+      ],
+      "diagonal_entries": [
+        "0",
+        "60/49",
+        "180/49"
+      ],
+      "beta_f": "1/147",
+      "kappa_f": "1/126",
+      "bridge_ansatz_status": "UNCHANGED_BRIDGE_ANSATZ_NOT_SUPPRESSION_DERIVED",
+      "matrix": [
+        [
+          "0",
+          "1/147",
+          "0"
+        ],
+        [
+          "1/147",
+          "60/49",
+          "1/126"
+        ],
+        [
+          "0",
+          "1/126",
+          "180/49"
+        ]
+      ],
+      "eigenvalues": [
+        -3.7792257734837304e-05,
+        1.22450186814931,
+        3.6734951077818945
+      ],
+      "gaps_from_ground": [
+        0.0,
+        1.2245396604070449,
+        3.6735329000396293
+      ],
+      "spectral_factors_exp_minus_gap": [
+        1.0,
+        0.29389295975397417,
+        0.02538662292871467
+      ],
+      "branch_ordering_note": "Eigenvalues are sorted numerically; no empirical mass comparison is performed."
+    },
+    {
+      "sector": "up",
+      "rho_ch": 2,
+      "suppression_rule": "RULE_A_SINGLE_OPERATOR_TRACE",
+      "rule_status": "DERIVED_CONDITIONAL_ON_B_SUPP_TRACE_KERNEL",
+      "eta": "38/147",
+      "diagonal_costs": [
+        "0",
+        "36",
+        "66"
+      ],
+      "diagonal_entries": [
+        "0",
+        "456/49",
+        "836/49"
+      ],
+      "beta_f": "2/147",
+      "kappa_f": "1/126",
+      "bridge_ansatz_status": "UNCHANGED_BRIDGE_ANSATZ_NOT_SUPPRESSION_DERIVED",
+      "matrix": [
+        [
+          "0",
+          "2/147",
+          "0"
+        ],
+        [
+          "2/147",
+          "456/49",
+          "1/126"
+        ],
+        [
+          "0",
+          "1/126",
+          "836/49"
+        ]
+      ],
+      "eigenvalues": [
+        -1.989096271059991e-05,
+        9.306134217782201,
+        17.061232611956026
+      ],
+      "gaps_from_ground": [
+        0.0,
+        9.306154108744911,
+        17.061252502918737
+      ],
+      "spectral_factors_exp_minus_gap": [
+        1.0,
+        9.08633245271933e-05,
+        3.893966255067832e-08
+      ],
+      "branch_ordering_note": "Eigenvalues are sorted numerically; no empirical mass comparison is performed."
+    },
+    {
+      "sector": "down",
+      "rho_ch": 2,
+      "suppression_rule": "RULE_A_SINGLE_OPERATOR_TRACE",
+      "rule_status": "DERIVED_CONDITIONAL_ON_B_SUPP_TRACE_KERNEL",
+      "eta": "68/147",
+      "diagonal_costs": [
+        "0",
+        "18",
+        "24"
+      ],
+      "diagonal_entries": [
+        "0",
+        "408/49",
+        "544/49"
+      ],
+      "beta_f": "4/147",
+      "kappa_f": "1/378",
+      "bridge_ansatz_status": "UNCHANGED_BRIDGE_ANSATZ_NOT_SUPPRESSION_DERIVED",
+      "matrix": [
+        [
+          "0",
+          "4/147",
+          "0"
+        ],
+        [
+          "4/147",
+          "408/49",
+          "1/378"
+        ],
+        [
+          "0",
+          "1/378",
+          "544/49"
+        ]
+      ],
+      "eigenvalues": [
+        -8.892351574241247e-05,
+        8.326617014117573,
+        11.102043337969597
+      ],
+      "gaps_from_ground": [
+        0.0,
+        8.326705937633315,
+        11.10213226148534
+      ],
+      "spectral_factors_exp_minus_gap": [
+        1.0,
+        0.00024196779053385522,
+        1.5080134723800605e-05
+      ],
+      "branch_ordering_note": "Eigenvalues are sorted numerically; no empirical mass comparison is performed."
+    },
+    {
+      "sector": "lepton",
+      "rho_ch": 3,
+      "suppression_rule": "RULE_A_SINGLE_OPERATOR_TRACE",
+      "rule_status": "DERIVED_CONDITIONAL_ON_B_SUPP_TRACE_KERNEL",
+      "eta": "20/147",
+      "diagonal_costs": [
+        "0",
+        "13",
+        "36"
+      ],
+      "diagonal_entries": [
+        "0",
+        "260/147",
+        "240/49"
+      ],
+      "beta_f": "1/147",
+      "kappa_f": "1/147",
+      "bridge_ansatz_status": "UNCHANGED_BRIDGE_ANSATZ_NOT_SUPPRESSION_DERIVED",
+      "matrix": [
+        [
+          "0",
+          "1/147",
+          "0"
+        ],
+        [
+          "1/147",
+          "260/147",
+          "1/147"
+        ],
+        [
+          "0",
+          "1/147",
+          "240/49"
+        ]
+      ],
+      "eigenvalues": [
+        -2.616406460443543e-05,
+        1.768718858558934,
+        4.897973972172338
+      ],
+      "gaps_from_ground": [
+        0.0,
+        1.7687450226235384,
+        4.898000136236942
+      ],
+      "spectral_factors_exp_minus_gap": [
+        1.0,
+        0.17054688706350166,
+        0.007461490123635406
+      ],
+      "branch_ordering_note": "Eigenvalues are sorted numerically; no empirical mass comparison is performed."
+    },
+    {
+      "sector": "up",
+      "rho_ch": 3,
+      "suppression_rule": "RULE_A_SINGLE_OPERATOR_TRACE",
+      "rule_status": "DERIVED_CONDITIONAL_ON_B_SUPP_TRACE_KERNEL",
+      "eta": "38/147",
+      "diagonal_costs": [
+        "0",
+        "36",
+        "67"
+      ],
+      "diagonal_entries": [
+        "0",
+        "456/49",
+        "2546/147"
+      ],
+      "beta_f": "2/147",
+      "kappa_f": "1/147",
+      "bridge_ansatz_status": "UNCHANGED_BRIDGE_ANSATZ_NOT_SUPPRESSION_DERIVED",
+      "matrix": [
+        [
+          "0",
+          "2/147",
+          "0"
+        ],
+        [
+          "2/147",
+          "456/49",
+          "1/147"
+        ],
+        [
+          "0",
+          "1/147",
+          "2546/147"
+        ]
+      ],
+      "eigenvalues": [
+        -1.989096053053262e-05,
+        9.306136565130906,
+        17.31973366596568
+      ],
+      "gaps_from_ground": [
+        0.0,
+        9.306156456091436,
+        17.31975355692621
+      ],
+      "spectral_factors_exp_minus_gap": [
+        1.0,
+        9.086311123973453e-05,
+        3.0069527394118305e-08
+      ],
+      "branch_ordering_note": "Eigenvalues are sorted numerically; no empirical mass comparison is performed."
+    },
+    {
+      "sector": "down",
+      "rho_ch": 3,
+      "suppression_rule": "RULE_A_SINGLE_OPERATOR_TRACE",
+      "rule_status": "DERIVED_CONDITIONAL_ON_B_SUPP_TRACE_KERNEL",
+      "eta": "68/147",
+      "diagonal_costs": [
+        "0",
+        "27",
+        "28"
+      ],
+      "diagonal_entries": [
+        "0",
+        "612/49",
+        "272/21"
+      ],
+      "beta_f": "4/147",
+      "kappa_f": "1/399",
+      "bridge_ansatz_status": "UNCHANGED_BRIDGE_ANSATZ_NOT_SUPPRESSION_DERIVED",
+      "matrix": [
+        [
+          "0",
+          "4/147",
+          "0"
+        ],
+        [
+          "4/147",
+          "612/49",
+          "1/399"
+        ],
+        [
+          "0",
+          "1/399",
+          "272/21"
+        ]
+      ],
+      "eigenvalues": [
+        -5.9282693365358475e-05,
+        12.489841620942435,
+        12.95239453249923
+      ],
+      "gaps_from_ground": [
+        0.0,
+        12.489900903635801,
+        12.952453815192596
+      ],
+      "spectral_factors_exp_minus_gap": [
+        1.0,
+        3.764479686889724e-06,
+        2.370395319636687e-06
+      ],
+      "branch_ordering_note": "Eigenvalues are sorted numerically; no empirical mass comparison is performed."
+    }
+  ],
+  "rule_b_comparison_rows": [
+    {
+      "sector": "lepton",
+      "rho_ch": 1,
+      "suppression_rule": "RULE_B_DOUBLE_NORMALIZED_PHASE_CANDIDATE",
+      "rule_status": "CANDIDATE_REQUIRES_INDEPENDENT_PHASE_RESPONSE",
+      "eta": "20/3087",
+      "diagonal_costs": [
+        "0",
+        "5",
+        "18"
+      ],
+      "diagonal_entries": [
+        "0",
+        "100/3087",
+        "40/343"
+      ],
+      "beta_f": "1/147",
+      "kappa_f": "1/105",
+      "bridge_ansatz_status": "UNCHANGED_BRIDGE_ANSATZ_NOT_SUPPRESSION_DERIVED",
+      "matrix": [
+        [
+          "0",
+          "1/147",
+          "0"
+        ],
+        [
+          "1/147",
+          "100/3087",
+          "1/105"
+        ],
+        [
+          "0",
+          "1/105",
+          "40/343"
+        ]
+      ],
+      "eigenvalues": [
+        -0.0014012054973298706,
+        0.03272675627214809,
+        0.1176864349718614
+      ],
+      "gaps_from_ground": [
+        0.0,
+        0.03412796176947796,
+        0.11908764046919128
+      ],
+      "spectral_factors_exp_minus_gap": [
+        1.0,
+        0.9664478283505333,
+        0.8877299962792001
+      ],
+      "branch_ordering_note": "Eigenvalues are sorted numerically; no empirical mass comparison is performed."
+    },
+    {
+      "sector": "up",
+      "rho_ch": 1,
+      "suppression_rule": "RULE_B_DOUBLE_NORMALIZED_PHASE_CANDIDATE",
+      "rule_status": "CANDIDATE_REQUIRES_INDEPENDENT_PHASE_RESPONSE",
+      "eta": "38/3087",
+      "diagonal_costs": [
+        "0",
+        "36",
+        "65"
+      ],
+      "diagonal_entries": [
+        "0",
+        "152/343",
+        "2470/3087"
+      ],
+      "beta_f": "2/147",
+      "kappa_f": "1/105",
+      "bridge_ansatz_status": "UNCHANGED_BRIDGE_ANSATZ_NOT_SUPPRESSION_DERIVED",
+      "matrix": [
+        [
+          "0",
+          "2/147",
+          "0"
+        ],
+        [
+          "2/147",
+          "152/343",
+          "1/105"
+        ],
+        [
+          "0",
+          "1/105",
+          "2470/3087"
+        ]
+      ],
+      "eigenvalues": [
+        -0.0004174244747324843,
+        0.4433120452589084,
+        0.8003836429022512
+      ],
+      "gaps_from_ground": [
+        0.0,
+        0.44372946973364086,
+        0.8008010673769836
+      ],
+      "spectral_factors_exp_minus_gap": [
+        1.0,
+        0.6416389801139379,
+        0.44896916547325194
+      ],
+      "branch_ordering_note": "Eigenvalues are sorted numerically; no empirical mass comparison is performed."
+    },
+    {
+      "sector": "down",
+      "rho_ch": 1,
+      "suppression_rule": "RULE_B_DOUBLE_NORMALIZED_PHASE_CANDIDATE",
+      "rule_status": "CANDIDATE_REQUIRES_INDEPENDENT_PHASE_RESPONSE",
+      "eta": "68/3087",
+      "diagonal_costs": [
+        "0",
+        "9",
+        "20"
+      ],
+      "diagonal_entries": [
+        "0",
+        "68/343",
+        "1360/3087"
+      ],
+      "beta_f": "4/147",
+      "kappa_f": "1/357",
+      "bridge_ansatz_status": "UNCHANGED_BRIDGE_ANSATZ_NOT_SUPPRESSION_DERIVED",
+      "matrix": [
+        [
+          "0",
+          "4/147",
+          "0"
+        ],
+        [
+          "4/147",
+          "68/343",
+          "1/357"
+        ],
+        [
+          "0",
+          "1/357",
+          "1360/3087"
+        ]
+      ],
+      "eigenvalues": [
+        -0.003667314667074659,
+        0.20188544017007998,
+        0.4405897786110213
+      ],
+      "gaps_from_ground": [
+        0.0,
+        0.20555275483715463,
+        0.4442570932780959
+      ],
+      "spectral_factors_exp_minus_gap": [
+        1.0,
+        0.8141971405965849,
+        0.6413005255771327
+      ],
+      "branch_ordering_note": "Eigenvalues are sorted numerically; no empirical mass comparison is performed."
+    },
+    {
+      "sector": "lepton",
+      "rho_ch": 2,
+      "suppression_rule": "RULE_B_DOUBLE_NORMALIZED_PHASE_CANDIDATE",
+      "rule_status": "CANDIDATE_REQUIRES_INDEPENDENT_PHASE_RESPONSE",
+      "eta": "20/3087",
+      "diagonal_costs": [
+        "0",
+        "9",
+        "27"
+      ],
+      "diagonal_entries": [
+        "0",
+        "20/343",
+        "60/343"
+      ],
+      "beta_f": "1/147",
+      "kappa_f": "1/126",
+      "bridge_ansatz_status": "UNCHANGED_BRIDGE_ANSATZ_NOT_SUPPRESSION_DERIVED",
+      "matrix": [
+        [
+          "0",
+          "1/147",
+          "0"
+        ],
+        [
+          "1/147",
+          "20/343",
+          "1/126"
+        ],
+        [
+          "0",
+          "1/126",
+          "60/343"
+        ]
+      ],
+      "eigenvalues": [
+        -0.0007878491590236494,
+        0.058558034812717014,
+        0.17546596594980515
+      ],
+      "gaps_from_ground": [
+        0.0,
+        0.05934588397174066,
+        0.17625381510882882
+      ],
+      "spectral_factors_exp_minus_gap": [
+        1.0,
+        0.9423807583797983,
+        0.838405156432852
+      ],
+      "branch_ordering_note": "Eigenvalues are sorted numerically; no empirical mass comparison is performed."
+    },
+    {
+      "sector": "up",
+      "rho_ch": 2,
+      "suppression_rule": "RULE_B_DOUBLE_NORMALIZED_PHASE_CANDIDATE",
+      "rule_status": "CANDIDATE_REQUIRES_INDEPENDENT_PHASE_RESPONSE",
+      "eta": "38/3087",
+      "diagonal_costs": [
+        "0",
+        "36",
+        "66"
+      ],
+      "diagonal_entries": [
+        "0",
+        "152/343",
+        "836/1029"
+      ],
+      "beta_f": "2/147",
+      "kappa_f": "1/126",
+      "bridge_ansatz_status": "UNCHANGED_BRIDGE_ANSATZ_NOT_SUPPRESSION_DERIVED",
+      "matrix": [
+        [
+          "0",
+          "2/147",
+          "0"
+        ],
+        [
+          "2/147",
+          "152/343",
+          "1/126"
+        ],
+        [
+          "0",
+          "1/126",
+          "836/1029"
+        ]
+      ],
+      "eigenvalues": [
+        -0.00041739079974166586,
+        0.44339548711974075,
+        0.8126098531455015
+      ],
+      "gaps_from_ground": [
+        0.0,
+        0.44381287791948243,
+        0.8130272439452432
+      ],
+      "spectral_factors_exp_minus_gap": [
+        1.0,
+        0.6415854644024966,
+        0.4435134086655927
+      ],
+      "branch_ordering_note": "Eigenvalues are sorted numerically; no empirical mass comparison is performed."
+    },
+    {
+      "sector": "down",
+      "rho_ch": 2,
+      "suppression_rule": "RULE_B_DOUBLE_NORMALIZED_PHASE_CANDIDATE",
+      "rule_status": "CANDIDATE_REQUIRES_INDEPENDENT_PHASE_RESPONSE",
+      "eta": "68/3087",
+      "diagonal_costs": [
+        "0",
+        "18",
+        "24"
+      ],
+      "diagonal_entries": [
+        "0",
+        "136/343",
+        "544/1029"
+      ],
+      "beta_f": "4/147",
+      "kappa_f": "1/378",
+      "bridge_ansatz_status": "UNCHANGED_BRIDGE_ANSATZ_NOT_SUPPRESSION_DERIVED",
+      "matrix": [
+        [
+          "0",
+          "4/147",
+          "0"
+        ],
+        [
+          "4/147",
+          "136/343",
+          "1/378"
+        ],
+        [
+          "0",
+          "1/378",
+          "544/1029"
+        ]
+      ],
+      "eigenvalues": [
+        -0.0018587617732358634,
+        0.39830672101419473,
+        0.5287221087862519
+      ],
+      "gaps_from_ground": [
+        0.0,
+        0.4001654827874306,
+        0.5305808705594878
+      ],
+      "spectral_factors_exp_minus_gap": [
+        1.0,
+        0.6702091287836519,
+        0.5882631656618567
+      ],
+      "branch_ordering_note": "Eigenvalues are sorted numerically; no empirical mass comparison is performed."
+    },
+    {
+      "sector": "lepton",
+      "rho_ch": 3,
+      "suppression_rule": "RULE_B_DOUBLE_NORMALIZED_PHASE_CANDIDATE",
+      "rule_status": "CANDIDATE_REQUIRES_INDEPENDENT_PHASE_RESPONSE",
+      "eta": "20/3087",
+      "diagonal_costs": [
+        "0",
+        "13",
+        "36"
+      ],
+      "diagonal_entries": [
+        "0",
+        "260/3087",
+        "80/343"
+      ],
+      "beta_f": "1/147",
+      "kappa_f": "1/147",
+      "bridge_ansatz_status": "UNCHANGED_BRIDGE_ANSATZ_NOT_SUPPRESSION_DERIVED",
+      "matrix": [
+        [
+          "0",
+          "1/147",
+          "0"
+        ],
+        [
+          "1/147",
+          "260/3087",
+          "1/147"
+        ],
+        [
+          "0",
+          "1/147",
+          "80/343"
+        ]
+      ],
+      "eigenvalues": [
+        -0.0005471816744929971,
+        0.08446102213829203,
+        0.23354647699651845
+      ],
+      "gaps_from_ground": [
+        0.0,
+        0.08500820381278502,
+        0.23409365867101145
+      ],
+      "spectral_factors_exp_minus_gap": [
+        1.0,
+        0.9185047491295444,
+        0.7912877014704013
+      ],
+      "branch_ordering_note": "Eigenvalues are sorted numerically; no empirical mass comparison is performed."
+    },
+    {
+      "sector": "up",
+      "rho_ch": 3,
+      "suppression_rule": "RULE_B_DOUBLE_NORMALIZED_PHASE_CANDIDATE",
+      "rule_status": "CANDIDATE_REQUIRES_INDEPENDENT_PHASE_RESPONSE",
+      "eta": "38/3087",
+      "diagonal_costs": [
+        "0",
+        "36",
+        "67"
+      ],
+      "diagonal_entries": [
+        "0",
+        "152/343",
+        "2546/3087"
+      ],
+      "beta_f": "2/147",
+      "kappa_f": "1/147",
+      "bridge_ansatz_status": "UNCHANGED_BRIDGE_ANSATZ_NOT_SUPPRESSION_DERIVED",
+      "matrix": [
+        [
+          "0",
+          "2/147",
+          "0"
+        ],
+        [
+          "2/147",
+          "152/343",
+          "1/147"
+        ],
+        [
+          "0",
+          "1/147",
+          "2546/3087"
+        ]
+      ],
+      "eigenvalues": [
+        -0.0004173706716058021,
+        0.44344475502383857,
+        0.8248702508923413
+      ],
+      "gaps_from_ground": [
+        0.0,
+        0.44386212569544437,
+        0.8252876215639472
+      ],
+      "spectral_factors_exp_minus_gap": [
+        1.0,
+        0.6415538685233051,
+        0.43810896475605227
+      ],
+      "branch_ordering_note": "Eigenvalues are sorted numerically; no empirical mass comparison is performed."
+    },
+    {
+      "sector": "down",
+      "rho_ch": 3,
+      "suppression_rule": "RULE_B_DOUBLE_NORMALIZED_PHASE_CANDIDATE",
+      "rule_status": "CANDIDATE_REQUIRES_INDEPENDENT_PHASE_RESPONSE",
+      "eta": "68/3087",
+      "diagonal_costs": [
+        "0",
+        "27",
+        "28"
+      ],
+      "diagonal_entries": [
+        "0",
+        "204/343",
+        "272/441"
+      ],
+      "beta_f": "4/147",
+      "kappa_f": "1/399",
+      "bridge_ansatz_status": "UNCHANGED_BRIDGE_ANSATZ_NOT_SUPPRESSION_DERIVED",
+      "matrix": [
+        [
+          "0",
+          "4/147",
+          "0"
+        ],
+        [
+          "4/147",
+          "204/343",
+          "1/399"
+        ],
+        [
+          "0",
+          "1/399",
+          "272/441"
+        ]
+      ],
+      "eigenvalues": [
+        -0.0012423684881209204,
+        0.5956972163951384,
+        0.6170773840333776
+      ],
+      "gaps_from_ground": [
+        0.0,
+        0.5969395848832593,
+        0.6183197525214985
+      ],
+      "spectral_factors_exp_minus_gap": [
+        1.0,
+        0.5504938002687577,
+        0.5388490771758706
+      ],
+      "branch_ordering_note": "Eigenvalues are sorted numerically; no empirical mass comparison is performed."
+    }
+  ],
+  "rule_a_up_threshold_rows": [
+    {
+      "sector": "up",
+      "rho_ch": 1,
+      "suppression_rule": "RULE_A_SINGLE_OPERATOR_TRACE",
+      "threshold_insertions": [
+        {
+          "sector": "up",
+          "slot": 1,
+          "mode": [
+            6,
+            0
+          ],
+          "value": "ln 2",
+          "source": "Z_virt^{u,2}=1/2 weak-double projection bridge",
+          "operator_level": true
+        }
+      ],
+      "only_threshold_is_up_middle_ln2": true,
+      "matrix": [
+        [
+          0.0,
+          0.013605442176870748,
+          0.0
+        ],
+        [
+          0.013605442176870748,
+          9.999269629539537,
+          0.009523809523809525
+        ],
+        [
+          0.0,
+          0.009523809523809525,
+          16.802721088435373
+        ]
+      ],
+      "eigenvalues": [
+        -1.8512133477497465e-05,
+        9.999274809775592,
+        16.80273442033279
+      ],
+      "gaps_from_ground": [
+        0.0,
+        9.99929332190907,
+        16.802752932466266
+      ],
+      "spectral_factors_exp_minus_gap": [
+        1.0,
+        4.543202423707314e-05,
+        5.042630202257489e-08
+      ],
+      "branch_ordering_note": "Operator-level ln2 insertion is applied only to the up-sector (6,0) slot."
+    },
+    {
+      "sector": "up",
+      "rho_ch": 2,
+      "suppression_rule": "RULE_A_SINGLE_OPERATOR_TRACE",
+      "threshold_insertions": [
+        {
+          "sector": "up",
+          "slot": 1,
+          "mode": [
+            6,
+            0
+          ],
+          "value": "ln 2",
+          "source": "Z_virt^{u,2}=1/2 weak-double projection bridge",
+          "operator_level": true
+        }
+      ],
+      "only_threshold_is_up_middle_ln2": true,
+      "matrix": [
+        [
+          0.0,
+          0.013605442176870748,
+          0.0
+        ],
+        [
+          0.013605442176870748,
+          9.999269629539537,
+          0.007936507936507936
+        ],
+        [
+          0.0,
+          0.007936507936507936,
+          17.06122448979592
+        ]
+      ],
+      "eigenvalues": [
+        -1.8512130318701785e-05,
+        9.99927922230168,
+        17.061233409164096
+      ],
+      "gaps_from_ground": [
+        0.0,
+        9.999297734432,
+        17.061251921294414
+      ],
+      "spectral_factors_exp_minus_gap": [
+        1.0,
+        4.5431823767666716e-05,
+        3.893968519893981e-08
+      ],
+      "branch_ordering_note": "Operator-level ln2 insertion is applied only to the up-sector (6,0) slot."
+    },
+    {
+      "sector": "up",
+      "rho_ch": 3,
+      "suppression_rule": "RULE_A_SINGLE_OPERATOR_TRACE",
+      "threshold_insertions": [
+        {
+          "sector": "up",
+          "slot": 1,
+          "mode": [
+            6,
+            0
+          ],
+          "value": "ln 2",
+          "source": "Z_virt^{u,2}=1/2 weak-double projection bridge",
+          "operator_level": true
+        }
+      ],
+      "only_threshold_is_up_middle_ln2": true,
+      "matrix": [
+        [
+          0.0,
+          0.013605442176870748,
+          0.0
+        ],
+        [
+          0.013605442176870748,
+          9.999269629539537,
+          0.006802721088435374
+        ],
+        [
+          0.0,
+          0.006802721088435374,
+          17.31972789115646
+        ]
+      ],
+      "eigenvalues": [
+        -1.851212843040064e-05,
+        9.999281820063477,
+        17.319734212760952
+      ],
+      "gaps_from_ground": [
+        0.0,
+        9.999300332191908,
+        17.319752724889383
+      ],
+      "spectral_factors_exp_minus_gap": [
+        1.0,
+        4.543170574684969e-05,
+        3.006955241308282e-08
+      ],
+      "branch_ordering_note": "Operator-level ln2 insertion is applied only to the up-sector (6,0) slot."
+    }
+  ],
+  "threshold_policy": {
+    "insertions": [
+      {
+        "sector": "up",
+        "slot": 1,
+        "mode": [
+          6,
+          0
+        ],
+        "value": "ln 2",
+        "source": "Z_virt^{u,2}=1/2 weak-double projection bridge",
+        "operator_level": true
+      }
+    ],
+    "no_other_threshold_dressings_added": true
+  },
+  "bridge_policy": "beta_f and kappa_f remain the existing bridge ansatz layer; Rule A changes suppression diagonals only.",
+  "claim_boundary": "Rule A propagation is a diagnostic charged K_f branch; no empirical comparison, official prediction update, frozen output change, or numerical closure is claimed."
+}

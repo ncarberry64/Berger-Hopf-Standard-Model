@@ -137,3 +137,24 @@ dependency from that actual dressing source to the two-door pair
 `V_pair^u=span{door_u,door_d}`. Therefore `Z_virt_u2_applicability` remains
 `OPEN_LOCALIZABLE` and the dimension ratio remains a
 `STRONG_DERIVATION_CANDIDATE`.
+
+## PO-BH-68 Weak-Double Projection Bridge
+
+PO-BH-68 identifies the actual source `WEAK_DOUBLE_PROJECTION` with the
+rank-one up projector on the two-dimensional weak doublet door space:
+
+```text
+V_weak = span{door_upper, door_lower}
+P_u = diag(1,0)
+rank(P_u)/dim(V_weak)=1/2
+```
+
+Since the actual source path uses `WEAK_DOUBLE_PROJECTION` for middle-up mode
+`(q,j)=(6,0)` with `Omega_u=6`, the applicability and dimension-ratio statuses
+are upgraded conditionally:
+
+```text
+Z_virt_u2_applicability: DERIVED_CONDITIONAL
+Z_virt_u2_dimension_ratio: DERIVED_CONDITIONAL
+legacy_Z_virt_u2_numerical_candidate: SUPERSEDED_BY_WEAK_DOUBLE_PROJECTION_BRIDGE
+```

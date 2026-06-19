@@ -98,22 +98,27 @@ def test_explicit_two_door_link_could_upgrade_conditionally():
     assert trace.dimension_ratio_status([row]) == "DERIVED_CONDITIONAL"
 
 
-def test_audit_json_and_closure_map_capture_dependency_trace_decision():
+def test_audit_json_and_closure_map_capture_bridge_superseded_decision():
     audit = load_json(AUDIT_JSON)
     closure = load_json(CLOSURE_MAP)
     assert audit["public_status"] == trace.PUBLIC_STATUS
     assert audit["up_sector_dressing_dependency_trace"] == "COMPLETED"
-    assert audit["Z_virt_u2_applicability"] == "OPEN_LOCALIZABLE"
-    assert audit["Z_virt_u2_dimension_ratio"] == "STRONG_DERIVATION_CANDIDATE"
-    assert audit["legacy_Z_virt_u2_numerical_candidate"] == "LOCALIZED_NOT_DERIVED"
+    assert audit["Z_virt_u2_applicability"] == "DERIVED_CONDITIONAL"
+    assert audit["Z_virt_u2_dimension_ratio"] == "DERIVED_CONDITIONAL"
+    assert audit["legacy_Z_virt_u2_numerical_candidate"] == (
+        "SUPERSEDED_BY_WEAK_DOUBLE_PROJECTION_BRIDGE"
+    )
+    assert audit["PO_BH_68_bridge"]["status"] == "WEAK_DOUBLE_PROJECTION_BRIDGE_ADDED"
     assert audit["Z_virt_u2_mass_fit_route"] == "FORBIDDEN_AS_DERIVATION"
     assert any(row["status"] == "COMPARISON_ONLY" for row in audit["dependency_trace"])
     assert any(row["status"] == "FROZEN_PREDICTION_REFERENCE" for row in audit["dependency_trace"])
 
     assert closure["up_sector_dressing_dependency_trace"]["status"] == "COMPLETED"
-    assert closure["Z_virt_u2_applicability"]["status"] == "OPEN_LOCALIZABLE"
-    assert closure["Z_virt_u2_dimension_ratio"]["status"] == "STRONG_DERIVATION_CANDIDATE"
-    assert closure["legacy_Z_virt_u2_numerical_candidate"]["status"] == "LOCALIZED_NOT_DERIVED"
+    assert closure["Z_virt_u2_applicability"]["status"] == "DERIVED_CONDITIONAL"
+    assert closure["Z_virt_u2_dimension_ratio"]["status"] == "DERIVED_CONDITIONAL"
+    assert closure["legacy_Z_virt_u2_numerical_candidate"]["status"] == (
+        "SUPERSEDED_BY_WEAK_DOUBLE_PROJECTION_BRIDGE"
+    )
     assert closure["Z_virt_u2_mass_fit_route"]["status"] == "FORBIDDEN_AS_DERIVATION"
 
 
@@ -140,6 +145,9 @@ def test_docs_preserve_public_status_and_claim_boundary():
     assert "Z_virt_u2_applicability: OPEN_LOCALIZABLE" in combined
     assert "Z_virt_u2_dimension_ratio: STRONG_DERIVATION_CANDIDATE" in combined
     assert "legacy_Z_virt_u2_numerical_candidate: LOCALIZED_NOT_DERIVED" in combined
+    assert "Z_virt_u2_applicability: DERIVED_CONDITIONAL" in combined
+    assert "Z_virt_u2_dimension_ratio: DERIVED_CONDITIONAL" in combined
+    assert "legacy_Z_virt_u2_numerical_candidate: SUPERSEDED_BY_WEAK_DOUBLE_PROJECTION_BRIDGE" in combined
     assert "No frozen predictions are changed" in combined
     forbidden = (
         "BHSM is proven",

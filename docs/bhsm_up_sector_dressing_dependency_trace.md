@@ -95,3 +95,34 @@ Still open:
 - CKM numerical closure;
 - PMNS numerical closure;
 - neutral/topographic suppression values.
+
+## PO-BH-68 Weak-Double Projection Bridge
+
+PO-BH-68 supplies the missing bridge for the actual source label:
+
+```text
+V_weak = span{door_upper, door_lower}
+P_u = diag(1,0)
+WEAK_DOUBLE_PROJECTION = rank(P_u)/dim(V_weak)=1/2
+```
+
+The actual source path found here uses `WEAK_DOUBLE_PROJECTION`:
+
+```text
+build_bhsm_dressed_v1_candidate
+  -> pure_fiber_middle_up_rule()
+  -> apply_virtual_dressing(model, (rule,))
+```
+
+For middle-up mode `(q,j)=(6,0)`, `Omega_u=6`, and the factor equals `1/2`.
+Therefore the prior legacy/source-localization status is superseded by the
+weak-double projection bridge:
+
+```text
+Z_virt_u2_applicability: DERIVED_CONDITIONAL
+Z_virt_u2_dimension_ratio: DERIVED_CONDITIONAL
+legacy_Z_virt_u2_numerical_candidate: SUPERSEDED_BY_WEAK_DOUBLE_PROJECTION_BRIDGE
+```
+
+This remains a conditional bridge, not numerical closure and not a frozen
+prediction change.
