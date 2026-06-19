@@ -211,3 +211,36 @@ Still open:
 - full threshold operator;
 - RG transport;
 - numerical closure.
+
+## Boundary Graded Defect Action Kernel v1 Update
+
+Validated or strengthened:
+
+- an explicit symbolic action-kernel scaffold now contains `D_C`, `D_d`,
+  `Gamma_sigma`, `Gamma_T`, `E_3`, `E_A`, `Delta_IT`, and
+  `S_index_trace`;
+- the unified formula
+  `Omega(C,sigma;q,j)=(2P_C-1)q+2(-sigma)(1+P_d)j` reproduces the
+  neutrino, lepton, up, and down sector equations;
+- `A(C,sigma)=3(1+P_C)(1+P_d)`, `tau=C-(1-C)sigma`, and `T=tau A`
+  reproduce the sector targets;
+- the non-reference mode ledgers are zero-defect under `Delta_IT=Omega-T`;
+- the zero-defect tangent-adjacency pattern is recorded as conditional on the
+  sector engine.
+
+Invalidated or downgraded:
+
+- `charged_Hessian_from_S_index_trace=INVALIDATED_DO_NOT_CLAIM`;
+- `S_index_trace` is an admissibility constraint, not the charged Hessian;
+- no charged-mass, CKM, PMNS, or numerical closure claim follows from this
+  kernel.
+
+Still open:
+
+- action source for `B_supp`;
+- phase-response normalization for `g_ch`;
+- exact `rho_ch`;
+- action sources for `beta_f` and `kappa_f`;
+- full threshold operator;
+- RG transport;
+- numerical closure.
