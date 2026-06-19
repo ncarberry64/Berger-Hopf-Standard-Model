@@ -2,7 +2,7 @@
   "id": "PO-BH-47",
   "title": "Numerical Input Closure Map Theorem",
   "status": "STRUCTURAL_ARCHITECTURE_INTEGRATED_CONDITIONAL_NUMERICAL_CLOSURE_OPEN",
-  "branch": "bhsm-up-sector-dressing-dependency-trace-v1",
+  "branch": "bhsm-weak-double-projection-zvirt-bridge-v1",
   "official_predictions_changed": false,
   "frozen_predictions_changed": false,
   "standard_model_fully_derived": false,
@@ -44,7 +44,8 @@
     "TRUE",
     "FORMALIZED_DIMENSION_2",
     "FORMALIZED_RANK_1",
-    "LOCALIZED_NOT_DERIVED"
+    "LOCALIZED_NOT_DERIVED",
+    "SUPERSEDED_BY_WEAK_DOUBLE_PROJECTION_BRIDGE"
   ],
   "ledgers": {
     "charged_lepton": [
@@ -7441,7 +7442,12 @@
     "ACTUAL_Z_VIRT_SOURCE_LOCALIZED",
     "Z_VIRT_U2_APPLICABILITY_STILL_OPEN",
     "LEGACY_Z_VIRT_NUMERICAL_CANDIDATE_LOCALIZED_NOT_DERIVED",
-    "COMPARISON_ROWS_NOT_DERIVATION_SOURCES"
+    "COMPARISON_ROWS_NOT_DERIVATION_SOURCES",
+    "PO_BH_68_WEAK_DOUBLE_PROJECTION_ZVIRT_BRIDGE",
+    "WEAK_DOUBLE_SPACE_DIMENSION_TWO",
+    "UP_WEAK_PROJECTOR_RANK_ONE",
+    "Z_VIRT_U2_APPLICABILITY_DERIVED_CONDITIONAL",
+    "Z_VIRT_U2_DIMENSION_RATIO_DERIVED_CONDITIONAL"
   ],
   "collar_measure_extrinsic_geometry": {
     "id": "PO-BH-57",
@@ -11725,15 +11731,16 @@
     "id": "Z_virt_u2_dimension_ratio",
     "name": "Z virt u2 dimension ratio",
     "symbol": "Z_virt_u2_dimension_ratio",
-    "sector": "up_sector_dressing_dependency_trace",
-    "status": "STRONG_DERIVATION_CANDIDATE",
-    "formula_candidate": "rank(A_virt^u)/dim(V_pair^u)=1/2 if the relevant up-sector correction samples V_pair^u",
+    "sector": "weak_double_projection_zvirt_bridge",
+    "status": "DERIVED_CONDITIONAL",
+    "formula_candidate": "Z_virt^{u,2}=rank(P_u)/dim(V_weak)=1/2",
     "derived_numerical_value": false,
     "pre_comparison_locked": false,
-    "derivation_source": "PO-BH-66 virtual-door audit and PO-BH-67 dependency trace",
+    "derivation_source": "PO-BH-68 weak double projection bridge for Z_virt",
     "depends_on": [
       "bhsm_up_sector_dressing_dependency_trace",
-      "bhsm_up_sector_virtual_door_applicability"
+      "bhsm_up_sector_virtual_door_applicability",
+      "bhsm_weak_double_projection_zvirt_bridge"
     ],
     "forbidden_inputs": [
       "observed quark masses",
@@ -11745,12 +11752,13 @@
       "neutrino data",
       "measured alpha"
     ],
-    "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+    "claim_boundary": "Conditional weak-double projection bridge only; no frozen or official predictions are changed.",
     "tests": [
       "tests/test_up_sector_dressing_dependency_trace.py",
-      "tests/test_up_sector_virtual_door_applicability.py"
+      "tests/test_up_sector_virtual_door_applicability.py",
+      "tests/test_weak_double_projection_zvirt_bridge.py"
     ],
-    "next_action": "derive explicit link from actual middle-up virtual correction source to V_pair^u",
+    "next_action": "derive the full virtual loop/threshold source",
     "fit_policy": "FORBIDDEN_TO_FIT"
   },
   "down_extra_boundary_incidence": {
@@ -12207,15 +12215,16 @@
       "id": "Z_virt_u2_applicability",
       "name": "Z virt u2 applicability",
       "symbol": "Z_virt_u2_applicability",
-      "sector": "up_sector_dressing_dependency_trace",
-      "status": "OPEN_LOCALIZABLE",
-      "formula_candidate": "prove the relevant up-sector virtual correction samples V_pair^u",
+      "sector": "weak_double_projection_zvirt_bridge",
+      "status": "DERIVED_CONDITIONAL",
+      "formula_candidate": "actual source WEAK_DOUBLE_PROJECTION equals rank(P_u)/dim(V_weak)=1/2 on middle-up mode (6,0)",
       "derived_numerical_value": false,
       "pre_comparison_locked": false,
-      "derivation_source": "PO-BH-66 virtual-door audit and PO-BH-67 dependency trace",
+      "derivation_source": "PO-BH-68 weak double projection bridge for Z_virt",
       "depends_on": [
         "bhsm_up_sector_dressing_dependency_trace",
-        "bhsm_up_sector_virtual_door_applicability"
+        "bhsm_up_sector_virtual_door_applicability",
+        "bhsm_weak_double_projection_zvirt_bridge"
       ],
       "forbidden_inputs": [
         "observed quark masses",
@@ -12227,12 +12236,13 @@
         "neutrino data",
         "measured alpha"
       ],
-      "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+      "claim_boundary": "Conditional weak-double projection bridge only; no frozen or official predictions are changed.",
       "tests": [
         "tests/test_up_sector_dressing_dependency_trace.py",
-        "tests/test_up_sector_virtual_door_applicability.py"
+        "tests/test_up_sector_virtual_door_applicability.py",
+        "tests/test_weak_double_projection_zvirt_bridge.py"
       ],
-      "next_action": "derive explicit link from actual middle-up virtual correction source to V_pair^u",
+      "next_action": "derive the full virtual loop/threshold source",
       "fit_policy": "FORBIDDEN_TO_FIT"
     },
     {
@@ -12269,15 +12279,16 @@
       "id": "Z_virt_u2_dimension_ratio",
       "name": "Z virt u2 dimension ratio",
       "symbol": "Z_virt_u2_dimension_ratio",
-      "sector": "up_sector_dressing_dependency_trace",
-      "status": "STRONG_DERIVATION_CANDIDATE",
-      "formula_candidate": "rank(A_virt^u)/dim(V_pair^u)=1/2 if the relevant up-sector correction samples V_pair^u",
+      "sector": "weak_double_projection_zvirt_bridge",
+      "status": "DERIVED_CONDITIONAL",
+      "formula_candidate": "Z_virt^{u,2}=rank(P_u)/dim(V_weak)=1/2",
       "derived_numerical_value": false,
       "pre_comparison_locked": false,
-      "derivation_source": "PO-BH-66 virtual-door audit and PO-BH-67 dependency trace",
+      "derivation_source": "PO-BH-68 weak double projection bridge for Z_virt",
       "depends_on": [
         "bhsm_up_sector_dressing_dependency_trace",
-        "bhsm_up_sector_virtual_door_applicability"
+        "bhsm_up_sector_virtual_door_applicability",
+        "bhsm_weak_double_projection_zvirt_bridge"
       ],
       "forbidden_inputs": [
         "observed quark masses",
@@ -12289,12 +12300,13 @@
         "neutrino data",
         "measured alpha"
       ],
-      "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+      "claim_boundary": "Conditional weak-double projection bridge only; no frozen or official predictions are changed.",
       "tests": [
         "tests/test_up_sector_dressing_dependency_trace.py",
-        "tests/test_up_sector_virtual_door_applicability.py"
+        "tests/test_up_sector_virtual_door_applicability.py",
+        "tests/test_weak_double_projection_zvirt_bridge.py"
       ],
-      "next_action": "derive explicit link from actual middle-up virtual correction source to V_pair^u",
+      "next_action": "derive the full virtual loop/threshold source",
       "fit_policy": "FORBIDDEN_TO_FIT"
     },
     {
@@ -12331,14 +12343,15 @@
       "id": "legacy_Z_virt_u2_numerical_candidate",
       "name": "legacy Z virt u2 numerical candidate",
       "symbol": "legacy_Z_virt_u2_numerical_candidate",
-      "sector": "up_sector_dressing_dependency_trace",
-      "status": "LOCALIZED_NOT_DERIVED",
-      "formula_candidate": "Released factor is localized in frozen and diagnostic sources but not derived from the two-door pair.",
+      "sector": "weak_double_projection_zvirt_bridge",
+      "status": "SUPERSEDED_BY_WEAK_DOUBLE_PROJECTION_BRIDGE",
+      "formula_candidate": "legacy numerical candidate status superseded by PO-BH-68 weak double projection bridge",
       "derived_numerical_value": false,
       "pre_comparison_locked": false,
-      "derivation_source": "PO-BH-67 up-sector dressing dependency trace",
+      "derivation_source": "PO-BH-68 weak double projection bridge for Z_virt",
       "depends_on": [
-        "bhsm_up_sector_dressing_dependency_trace"
+        "bhsm_up_sector_dressing_dependency_trace",
+        "bhsm_weak_double_projection_zvirt_bridge"
       ],
       "forbidden_inputs": [
         "observed quark masses",
@@ -12350,11 +12363,12 @@
         "neutrino data",
         "measured alpha"
       ],
-      "claim_boundary": "Dependency trace only; no frozen or official predictions are changed.",
+      "claim_boundary": "Conditional weak-double projection bridge only; no frozen or official predictions are changed.",
       "tests": [
-        "tests/test_up_sector_dressing_dependency_trace.py"
+        "tests/test_up_sector_dressing_dependency_trace.py",
+        "tests/test_weak_double_projection_zvirt_bridge.py"
       ],
-      "next_action": "derive the full virtual source or keep the factor candidate-only",
+      "next_action": "keep bridge conditional; do not use residuals as derivation",
       "fit_policy": "FORBIDDEN_TO_FIT"
     },
     {
@@ -12386,6 +12400,126 @@
       ],
       "next_action": "keep comparison-only rows quarantined from derivation logic",
       "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "weak_double_projection_zvirt_bridge",
+      "name": "weak double projection zvirt bridge",
+      "symbol": "weak_double_projection_zvirt_bridge",
+      "sector": "weak_double_projection_zvirt_bridge",
+      "status": "COMPLETED",
+      "formula_candidate": "V_weak=span{door_upper,door_lower}; P_u=diag(1,0); rank(P_u)/dim(V_weak)=1/2",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-68 weak double projection bridge for Z_virt",
+      "depends_on": [
+        "bhsm_weak_double_projection_zvirt_bridge"
+      ],
+      "forbidden_inputs": [
+        "observed quark masses",
+        "charm/top ratio",
+        "up/top ratio",
+        "target mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha"
+      ],
+      "claim_boundary": "Conditional weak-double projection bridge only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_weak_double_projection_zvirt_bridge.py"
+      ],
+      "next_action": "derive the full virtual loop/threshold source while preserving frozen outputs",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "V_weak_dimension",
+      "name": "V weak dimension",
+      "symbol": "V_weak_dimension",
+      "sector": "weak_double_projection_zvirt_bridge",
+      "status": "DERIVED_CONDITIONAL",
+      "formula_candidate": "dim(V_weak)=2 for span{door_upper,door_lower}",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-68 weak double projection bridge for Z_virt",
+      "depends_on": [
+        "bhsm_weak_double_projection_zvirt_bridge"
+      ],
+      "forbidden_inputs": [
+        "observed quark masses",
+        "charm/top ratio",
+        "up/top ratio",
+        "target mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha"
+      ],
+      "claim_boundary": "Conditional weak-double projection bridge only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_weak_double_projection_zvirt_bridge.py"
+      ],
+      "next_action": "derive the weak-interface activity origin in the wider theory line",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "P_u_weak_projector_rank",
+      "name": "P u weak projector rank",
+      "symbol": "P_u_weak_projector_rank",
+      "sector": "weak_double_projection_zvirt_bridge",
+      "status": "DERIVED_CONDITIONAL",
+      "formula_candidate": "P_u=diag(1,0); rank(P_u)=1",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-68 weak double projection bridge for Z_virt",
+      "depends_on": [
+        "bhsm_weak_double_projection_zvirt_bridge"
+      ],
+      "forbidden_inputs": [
+        "observed quark masses",
+        "charm/top ratio",
+        "up/top ratio",
+        "target mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha"
+      ],
+      "claim_boundary": "Conditional weak-double projection bridge only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_weak_double_projection_zvirt_bridge.py"
+      ],
+      "next_action": "derive the projector from full weak-interface boundary geometry",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "WEAK_DOUBLE_PROJECTION",
+      "name": "WEAK DOUBLE PROJECTION",
+      "symbol": "WEAK_DOUBLE_PROJECTION",
+      "sector": "weak_double_projection_zvirt_bridge",
+      "status": "DERIVED_CONDITIONAL",
+      "formula_candidate": "rank(P_u)/dim(V_weak)=1/2",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-68 weak double projection bridge for Z_virt",
+      "depends_on": [
+        "bhsm_weak_double_projection_zvirt_bridge"
+      ],
+      "forbidden_inputs": [
+        "observed quark masses",
+        "charm/top ratio",
+        "up/top ratio",
+        "target mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha"
+      ],
+      "claim_boundary": "Conditional weak-double projection bridge only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_weak_double_projection_zvirt_bridge.py"
+      ],
+      "next_action": "derive full virtual loop source using this conditional projector bridge",
+      "fit_policy": "FORBIDDEN_TO_FIT"
     }
   ],
   "summaries": {
@@ -12400,6 +12534,12 @@
       "name": "PO-BH-67 up-sector dressing dependency trace",
       "status": "COMPLETED",
       "claim_boundary": "Actual source path localized; no explicit two-door applicability link found; no prediction outputs are changed."
+    },
+    "bhsm_weak_double_projection_zvirt_bridge": {
+      "id": "bhsm_weak_double_projection_zvirt_bridge",
+      "name": "PO-BH-68 weak double projection bridge for Z_virt",
+      "status": "COMPLETED",
+      "claim_boundary": "Connects actual WEAK_DOUBLE_PROJECTION source to rank-one weak-doublet projection; no prediction outputs are changed."
     }
   },
   "up_sector_virtual_door_applicability_audit": {
@@ -12496,15 +12636,16 @@
     "id": "Z_virt_u2_applicability",
     "name": "Z virt u2 applicability",
     "symbol": "Z_virt_u2_applicability",
-    "sector": "up_sector_dressing_dependency_trace",
-    "status": "OPEN_LOCALIZABLE",
-    "formula_candidate": "prove the relevant up-sector virtual correction samples V_pair^u",
+    "sector": "weak_double_projection_zvirt_bridge",
+    "status": "DERIVED_CONDITIONAL",
+    "formula_candidate": "actual source WEAK_DOUBLE_PROJECTION equals rank(P_u)/dim(V_weak)=1/2 on middle-up mode (6,0)",
     "derived_numerical_value": false,
     "pre_comparison_locked": false,
-    "derivation_source": "PO-BH-66 virtual-door audit and PO-BH-67 dependency trace",
+    "derivation_source": "PO-BH-68 weak double projection bridge for Z_virt",
     "depends_on": [
       "bhsm_up_sector_dressing_dependency_trace",
-      "bhsm_up_sector_virtual_door_applicability"
+      "bhsm_up_sector_virtual_door_applicability",
+      "bhsm_weak_double_projection_zvirt_bridge"
     ],
     "forbidden_inputs": [
       "observed quark masses",
@@ -12516,12 +12657,13 @@
       "neutrino data",
       "measured alpha"
     ],
-    "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+    "claim_boundary": "Conditional weak-double projection bridge only; no frozen or official predictions are changed.",
     "tests": [
       "tests/test_up_sector_dressing_dependency_trace.py",
-      "tests/test_up_sector_virtual_door_applicability.py"
+      "tests/test_up_sector_virtual_door_applicability.py",
+      "tests/test_weak_double_projection_zvirt_bridge.py"
     ],
-    "next_action": "derive explicit link from actual middle-up virtual correction source to V_pair^u",
+    "next_action": "derive the full virtual loop/threshold source",
     "fit_policy": "FORBIDDEN_TO_FIT"
   },
   "Z_virt_u2_mass_fit": {
@@ -12588,14 +12730,15 @@
     "id": "legacy_Z_virt_u2_numerical_candidate",
     "name": "legacy Z virt u2 numerical candidate",
     "symbol": "legacy_Z_virt_u2_numerical_candidate",
-    "sector": "up_sector_dressing_dependency_trace",
-    "status": "LOCALIZED_NOT_DERIVED",
-    "formula_candidate": "Released factor is localized in frozen and diagnostic sources but not derived from the two-door pair.",
+    "sector": "weak_double_projection_zvirt_bridge",
+    "status": "SUPERSEDED_BY_WEAK_DOUBLE_PROJECTION_BRIDGE",
+    "formula_candidate": "legacy numerical candidate status superseded by PO-BH-68 weak double projection bridge",
     "derived_numerical_value": false,
     "pre_comparison_locked": false,
-    "derivation_source": "PO-BH-67 up-sector dressing dependency trace",
+    "derivation_source": "PO-BH-68 weak double projection bridge for Z_virt",
     "depends_on": [
-      "bhsm_up_sector_dressing_dependency_trace"
+      "bhsm_up_sector_dressing_dependency_trace",
+      "bhsm_weak_double_projection_zvirt_bridge"
     ],
     "forbidden_inputs": [
       "observed quark masses",
@@ -12607,11 +12750,12 @@
       "neutrino data",
       "measured alpha"
     ],
-    "claim_boundary": "Dependency trace only; no frozen or official predictions are changed.",
+    "claim_boundary": "Conditional weak-double projection bridge only; no frozen or official predictions are changed.",
     "tests": [
-      "tests/test_up_sector_dressing_dependency_trace.py"
+      "tests/test_up_sector_dressing_dependency_trace.py",
+      "tests/test_weak_double_projection_zvirt_bridge.py"
     ],
-    "next_action": "derive the full virtual source or keep the factor candidate-only",
+    "next_action": "keep bridge conditional; do not use residuals as derivation",
     "fit_policy": "FORBIDDEN_TO_FIT"
   },
   "Z_virt_u2_mass_fit_route": {
@@ -12642,6 +12786,126 @@
       "tests/test_up_sector_dressing_dependency_trace.py"
     ],
     "next_action": "keep comparison-only rows quarantined from derivation logic",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "weak_double_projection_zvirt_bridge": {
+    "id": "weak_double_projection_zvirt_bridge",
+    "name": "weak double projection zvirt bridge",
+    "symbol": "weak_double_projection_zvirt_bridge",
+    "sector": "weak_double_projection_zvirt_bridge",
+    "status": "COMPLETED",
+    "formula_candidate": "V_weak=span{door_upper,door_lower}; P_u=diag(1,0); rank(P_u)/dim(V_weak)=1/2",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-68 weak double projection bridge for Z_virt",
+    "depends_on": [
+      "bhsm_weak_double_projection_zvirt_bridge"
+    ],
+    "forbidden_inputs": [
+      "observed quark masses",
+      "charm/top ratio",
+      "up/top ratio",
+      "target mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha"
+    ],
+    "claim_boundary": "Conditional weak-double projection bridge only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_weak_double_projection_zvirt_bridge.py"
+    ],
+    "next_action": "derive the full virtual loop/threshold source while preserving frozen outputs",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "V_weak_dimension": {
+    "id": "V_weak_dimension",
+    "name": "V weak dimension",
+    "symbol": "V_weak_dimension",
+    "sector": "weak_double_projection_zvirt_bridge",
+    "status": "DERIVED_CONDITIONAL",
+    "formula_candidate": "dim(V_weak)=2 for span{door_upper,door_lower}",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-68 weak double projection bridge for Z_virt",
+    "depends_on": [
+      "bhsm_weak_double_projection_zvirt_bridge"
+    ],
+    "forbidden_inputs": [
+      "observed quark masses",
+      "charm/top ratio",
+      "up/top ratio",
+      "target mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha"
+    ],
+    "claim_boundary": "Conditional weak-double projection bridge only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_weak_double_projection_zvirt_bridge.py"
+    ],
+    "next_action": "derive the weak-interface activity origin in the wider theory line",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "P_u_weak_projector_rank": {
+    "id": "P_u_weak_projector_rank",
+    "name": "P u weak projector rank",
+    "symbol": "P_u_weak_projector_rank",
+    "sector": "weak_double_projection_zvirt_bridge",
+    "status": "DERIVED_CONDITIONAL",
+    "formula_candidate": "P_u=diag(1,0); rank(P_u)=1",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-68 weak double projection bridge for Z_virt",
+    "depends_on": [
+      "bhsm_weak_double_projection_zvirt_bridge"
+    ],
+    "forbidden_inputs": [
+      "observed quark masses",
+      "charm/top ratio",
+      "up/top ratio",
+      "target mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha"
+    ],
+    "claim_boundary": "Conditional weak-double projection bridge only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_weak_double_projection_zvirt_bridge.py"
+    ],
+    "next_action": "derive the projector from full weak-interface boundary geometry",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "WEAK_DOUBLE_PROJECTION": {
+    "id": "WEAK_DOUBLE_PROJECTION",
+    "name": "WEAK DOUBLE PROJECTION",
+    "symbol": "WEAK_DOUBLE_PROJECTION",
+    "sector": "weak_double_projection_zvirt_bridge",
+    "status": "DERIVED_CONDITIONAL",
+    "formula_candidate": "rank(P_u)/dim(V_weak)=1/2",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-68 weak double projection bridge for Z_virt",
+    "depends_on": [
+      "bhsm_weak_double_projection_zvirt_bridge"
+    ],
+    "forbidden_inputs": [
+      "observed quark masses",
+      "charm/top ratio",
+      "up/top ratio",
+      "target mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha"
+    ],
+    "claim_boundary": "Conditional weak-double projection bridge only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_weak_double_projection_zvirt_bridge.py"
+    ],
+    "next_action": "derive full virtual loop source using this conditional projector bridge",
     "fit_policy": "FORBIDDEN_TO_FIT"
   }
 }

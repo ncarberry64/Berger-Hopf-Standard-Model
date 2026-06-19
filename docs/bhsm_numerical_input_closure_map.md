@@ -310,6 +310,8 @@ PO-BH-66 audits the up-sector virtual-door applicability proof for `Z_virt^{u,2}
 
 PO-BH-67 traces the actual up-sector dressing dependency chain. The frozen dressed branch calls `pure_fiber_middle_up_rule()` and `apply_virtual_dressing(model,(rule,))`; the rule is local to up-quark middle mode `(6,0)` and depends on `j=0`, `q=6`, `Omega_u=6`, `WEAK_DOUBLE_PROJECTION`, and factor `1/2`. This is a structural source, not an empirical fit, but it is not explicitly linked to the PO-BH-66 two-door pair. Therefore `Z_virt_u2_applicability` remains `OPEN_LOCALIZABLE`, `Z_virt_u2_dimension_ratio` remains `STRONG_DERIVATION_CANDIDATE`, and `legacy_Z_virt_u2_numerical_candidate` is `LOCALIZED_NOT_DERIVED`.
 
+PO-BH-68 adds the weak-double projection bridge. It defines `V_weak=span{door_upper,door_lower}` with `dim(V_weak)=2`, defines the up weak projector `P_u=diag(1,0)` with `rank(P_u)=1`, and identifies the actual source `WEAK_DOUBLE_PROJECTION` with `rank(P_u)/dim(V_weak)=1/2`. Since the actual middle-up source path uses `WEAK_DOUBLE_PROJECTION` for `(q,j)=(6,0)` with `Omega_u=6`, `Z_virt_u2_applicability` and `Z_virt_u2_dimension_ratio` are upgraded to `DERIVED_CONDITIONAL`; `legacy_Z_virt_u2_numerical_candidate` is `SUPERSEDED_BY_WEAK_DOUBLE_PROJECTION_BRIDGE`. No observed data are used and no frozen or official prediction is changed.
+
 PO-BH-54 localizes the normal-coupling/collar convention for the neutral
 boundary term:
 

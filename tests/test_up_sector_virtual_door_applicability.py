@@ -71,23 +71,24 @@ def test_applicability_can_upgrade_only_with_explicit_derived_source_row():
     assert virt.dimension_ratio_status([derived_row]) == "DERIVED_CONDITIONAL"
 
 
-def test_audit_json_and_closure_map_record_open_applicability():
+def test_audit_json_and_closure_map_record_bridge_upgraded_applicability():
     audit = load_json(AUDIT_JSON)
     closure = load_json(CLOSURE_MAP)
     assert audit["public_status"] == virt.PUBLIC_STATUS
     assert audit["pair_dimension"] == 2
     assert audit["A_virt_u_rank"] == 1
     assert audit["Z_virt_u2_ratio"] == "1/2"
-    assert audit["Z_virt_u2_dimension_ratio"] == "STRONG_DERIVATION_CANDIDATE"
-    assert audit["Z_virt_u2_applicability"] == "OPEN_LOCALIZABLE"
+    assert audit["Z_virt_u2_dimension_ratio"] == "DERIVED_CONDITIONAL"
+    assert audit["Z_virt_u2_applicability"] == "DERIVED_CONDITIONAL"
+    assert audit["PO_BH_68_bridge"]["status"] == "WEAK_DOUBLE_PROJECTION_BRIDGE_ADDED"
     assert audit["Z_virt_u2_mass_fit"] == "FORBIDDEN_AS_DERIVATION"
     assert audit["uses_observed_masses"] is False
     assert audit["uses_ckm"] is False
     assert audit["uses_pmns"] is False
     assert audit["uses_neutrino_data"] is False
 
-    assert closure["Z_virt_u2_applicability"]["status"] == "OPEN_LOCALIZABLE"
-    assert closure["Z_virt_u2_dimension_ratio"]["status"] == "STRONG_DERIVATION_CANDIDATE"
+    assert closure["Z_virt_u2_applicability"]["status"] == "DERIVED_CONDITIONAL"
+    assert closure["Z_virt_u2_dimension_ratio"]["status"] == "DERIVED_CONDITIONAL"
     assert closure["V_pair_u_dimension"]["status"] == "FORMALIZED_DIMENSION_2"
     assert closure["A_virt_u_rank"]["status"] == "FORMALIZED_RANK_1"
 
@@ -118,6 +119,8 @@ def test_docs_preserve_public_status_and_claim_boundary():
     assert virt.PUBLIC_STATUS in combined
     assert "Z_virt_u2_dimension_ratio: STRONG_DERIVATION_CANDIDATE" in combined
     assert "Z_virt_u2_applicability: OPEN_LOCALIZABLE" in combined
+    assert "Z_virt_u2_dimension_ratio: DERIVED_CONDITIONAL" in combined
+    assert "Z_virt_u2_applicability: DERIVED_CONDITIONAL" in combined
     assert "dim(V_pair^u) = 2" in combined
     assert "rank(A_virt^u) = 1" in combined
     assert "No frozen predictions are changed" in combined

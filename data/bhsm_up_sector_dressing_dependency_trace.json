@@ -5,11 +5,11 @@
   "frozen_predictions_changed": false,
   "official_predictions_changed": false,
   "up_sector_dressing_dependency_trace": "COMPLETED",
-  "applicability_status": "OPEN_LOCALIZABLE",
-  "dimension_ratio_status": "STRONG_DERIVATION_CANDIDATE",
-  "Z_virt_u2_applicability": "OPEN_LOCALIZABLE",
-  "Z_virt_u2_dimension_ratio": "STRONG_DERIVATION_CANDIDATE",
-  "legacy_Z_virt_u2_numerical_candidate": "LOCALIZED_NOT_DERIVED",
+  "applicability_status": "DERIVED_CONDITIONAL",
+  "dimension_ratio_status": "DERIVED_CONDITIONAL",
+  "Z_virt_u2_applicability": "DERIVED_CONDITIONAL",
+  "Z_virt_u2_dimension_ratio": "DERIVED_CONDITIONAL",
+  "legacy_Z_virt_u2_numerical_candidate": "SUPERSEDED_BY_WEAK_DOUBLE_PROJECTION_BRIDGE",
   "Z_virt_u2_mass_fit_route": "FORBIDDEN_AS_DERIVATION",
   "dependency_trace": [
     {
@@ -162,5 +162,10 @@
     "PMNS values",
     "neutrino data",
     "measured alpha"
-  ]
+  ],
+  "PO_BH_68_bridge": {
+    "status": "WEAK_DOUBLE_PROJECTION_BRIDGE_ADDED",
+    "WEAK_DOUBLE_PROJECTION": "rank(P_u)/dim(V_weak)=1/2",
+    "actual_source_uses_weak_double_projection": true
+  }
 }

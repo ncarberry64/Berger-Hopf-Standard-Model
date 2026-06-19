@@ -109,3 +109,31 @@ Still open:
 - CKM numerical closure;
 - PMNS numerical closure;
 - neutral/topographic suppression values.
+
+## PO-BH-68 Update
+
+Validated:
+
+- `V_weak=span{door_upper,door_lower}` has dimension 2;
+- `P_u=diag(1,0)` has rank 1;
+- `WEAK_DOUBLE_PROJECTION=rank(P_u)/dim(V_weak)=1/2`;
+- the actual middle-up source path uses `WEAK_DOUBLE_PROJECTION`;
+- no observed data are used to set the factor.
+
+Invalidated or downgraded:
+
+- treating the old `Z_virt` entry as merely a legacy numerical candidate after
+  the weak-double projection bridge;
+- using observed ratios to justify the bridge.
+
+Still open:
+
+- full virtual loop/threshold source;
+- `rho_ch`;
+- `eta_l`;
+- `Pi_l`;
+- `alpha_geom`;
+- numerical mass closure;
+- CKM numerical closure;
+- PMNS numerical closure;
+- neutral/topographic suppression values.
