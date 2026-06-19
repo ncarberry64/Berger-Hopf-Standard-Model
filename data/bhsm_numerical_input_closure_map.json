@@ -2,7 +2,7 @@
   "id": "PO-BH-47",
   "title": "Numerical Input Closure Map Theorem",
   "status": "STRUCTURAL_ARCHITECTURE_INTEGRATED_CONDITIONAL_NUMERICAL_CLOSURE_OPEN",
-  "branch": "bhsm-sector-projector-hessian-fork-audit-v1",
+  "branch": "bhsm-weak-double-projection-zvirt-bridge-v1",
   "official_predictions_changed": false,
   "frozen_predictions_changed": false,
   "standard_model_fully_derived": false,
@@ -37,7 +37,15 @@
     "STRUCTURALLY_SUPPORTED_CANDIDATE",
     "OPEN",
     "FORBIDDEN_AS_DERIVATION",
-    "STRONG_DERIVATION_CANDIDATE"
+    "STRONG_DERIVATION_CANDIDATE",
+    "FORBIDDEN_CONDITIONAL_UNLESS_ACTION_DERIVED",
+    "FORBIDDEN_UNLESS_EXPLICIT_COUPLING_DERIVED",
+    "MINIMAL_ACTION_CLOSURE_CANDIDATE",
+    "TRUE",
+    "FORMALIZED_DIMENSION_2",
+    "FORMALIZED_RANK_1",
+    "LOCALIZED_NOT_DERIVED",
+    "SUPERSEDED_BY_WEAK_DOUBLE_PROJECTION_BRIDGE"
   ],
   "ledgers": {
     "charged_lepton": [
@@ -6322,34 +6330,30 @@
       "id": "charged_Hessian_anisotropy_rho_ch",
       "name": "charged Hessian anisotropy rho ch",
       "symbol": "charged_Hessian_anisotropy_rho_ch",
-      "sector": "sector_projector_hessian_fork",
+      "sector": "charged_hessian_source_audit",
       "status": "OPEN_LOCALIZABLE",
-      "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+      "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
       "derived_numerical_value": false,
       "pre_comparison_locked": false,
-      "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+      "derivation_source": "PO-BH-65 charged Hessian source audit",
       "depends_on": [
-        "bhsm_sector_projector_hessian_fork_audit"
+        "bhsm_charged_hessian_source_audit"
       ],
       "forbidden_inputs": [
-        "observed masses",
-        "charged lepton masses",
+        "charged-lepton masses",
         "quark masses",
+        "observed mass ratios",
         "CKM values",
         "PMNS values",
         "neutrino data",
         "measured alpha",
-        "CODATA alpha",
-        "observed generation data",
-        "anomaly/FTL data",
-        "propulsion/anomaly data",
-        "target values"
+        "empirical target values"
       ],
-      "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+      "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
       "tests": [
-        "tests/test_sector_projector_hessian_fork_audit.py"
+        "tests/test_charged_hessian_source_audit.py"
       ],
-      "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+      "next_action": "derive rho_ch and charged Hessian source from action before comparison",
       "fit_policy": "FORBIDDEN_TO_FIT"
     },
     {
@@ -6499,7 +6503,8 @@
       "pre_comparison_locked": false,
       "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
       "depends_on": [
-        "bhsm_sector_projector_hessian_fork_audit"
+        "bhsm_sector_projector_hessian_fork_audit",
+        "charged_Hessian_source_audit"
       ],
       "forbidden_inputs": [
         "observed masses",
@@ -6517,6 +6522,7 @@
       ],
       "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
       "tests": [
+        "tests/test_charged_hessian_source_audit.py",
         "tests/test_sector_projector_hessian_fork_audit.py"
       ],
       "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
@@ -6533,7 +6539,8 @@
       "pre_comparison_locked": false,
       "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
       "depends_on": [
-        "bhsm_sector_projector_hessian_fork_audit"
+        "bhsm_sector_projector_hessian_fork_audit",
+        "charged_Hessian_source_audit"
       ],
       "forbidden_inputs": [
         "observed masses",
@@ -6551,6 +6558,7 @@
       ],
       "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
       "tests": [
+        "tests/test_charged_hessian_source_audit.py",
         "tests/test_sector_projector_hessian_fork_audit.py"
       ],
       "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
@@ -6567,7 +6575,8 @@
       "pre_comparison_locked": false,
       "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
       "depends_on": [
-        "bhsm_sector_projector_hessian_fork_audit"
+        "bhsm_sector_projector_hessian_fork_audit",
+        "charged_Hessian_source_audit"
       ],
       "forbidden_inputs": [
         "observed masses",
@@ -6585,6 +6594,7 @@
       ],
       "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
       "tests": [
+        "tests/test_charged_hessian_source_audit.py",
         "tests/test_sector_projector_hessian_fork_audit.py"
       ],
       "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
@@ -6601,7 +6611,8 @@
       "pre_comparison_locked": false,
       "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
       "depends_on": [
-        "bhsm_sector_projector_hessian_fork_audit"
+        "bhsm_sector_projector_hessian_fork_audit",
+        "charged_Hessian_source_audit"
       ],
       "forbidden_inputs": [
         "observed masses",
@@ -6619,6 +6630,7 @@
       ],
       "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
       "tests": [
+        "tests/test_charged_hessian_source_audit.py",
         "tests/test_sector_projector_hessian_fork_audit.py"
       ],
       "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
@@ -6669,7 +6681,8 @@
       "pre_comparison_locked": false,
       "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
       "depends_on": [
-        "bhsm_sector_projector_hessian_fork_audit"
+        "bhsm_sector_projector_hessian_fork_audit",
+        "charged_Hessian_source_audit"
       ],
       "forbidden_inputs": [
         "observed masses",
@@ -6687,6 +6700,7 @@
       ],
       "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
       "tests": [
+        "tests/test_charged_hessian_source_audit.py",
         "tests/test_sector_projector_hessian_fork_audit.py"
       ],
       "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
@@ -6703,7 +6717,8 @@
       "pre_comparison_locked": false,
       "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
       "depends_on": [
-        "bhsm_sector_projector_hessian_fork_audit"
+        "bhsm_sector_projector_hessian_fork_audit",
+        "charged_Hessian_source_audit"
       ],
       "forbidden_inputs": [
         "observed masses",
@@ -6721,6 +6736,7 @@
       ],
       "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
       "tests": [
+        "tests/test_charged_hessian_source_audit.py",
         "tests/test_sector_projector_hessian_fork_audit.py"
       ],
       "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
@@ -6824,6 +6840,300 @@
         "propulsion/anomaly data",
         "target values"
       ]
+    },
+    {
+      "id": "charged_Hessian_source_audit",
+      "name": "charged Hessian source audit",
+      "symbol": "charged_Hessian_source_audit",
+      "sector": "charged_hessian_source_audit",
+      "status": "COMPLETED",
+      "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-65 charged Hessian source audit",
+      "depends_on": [
+        "bhsm_charged_hessian_source_audit"
+      ],
+      "forbidden_inputs": [
+        "charged-lepton masses",
+        "quark masses",
+        "observed mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "empirical target values"
+      ],
+      "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_charged_hessian_source_audit.py"
+      ],
+      "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "rho_ch_1_minimal_closure",
+      "name": "rho ch 1 minimal closure",
+      "symbol": "rho_ch_1_minimal_closure",
+      "sector": "charged_hessian_source_audit",
+      "status": "MINIMAL_ACTION_CLOSURE_CANDIDATE",
+      "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-65 charged Hessian source audit",
+      "depends_on": [
+        "bhsm_charged_hessian_source_audit"
+      ],
+      "forbidden_inputs": [
+        "charged-lepton masses",
+        "quark masses",
+        "observed mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "empirical target values"
+      ],
+      "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_charged_hessian_source_audit.py"
+      ],
+      "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "rho_ch_3_cyclic_weight",
+      "name": "rho ch 3 cyclic weight",
+      "symbol": "rho_ch_3_cyclic_weight",
+      "sector": "charged_hessian_source_audit",
+      "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+      "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-65 charged Hessian source audit",
+      "depends_on": [
+        "bhsm_charged_hessian_source_audit"
+      ],
+      "forbidden_inputs": [
+        "charged-lepton masses",
+        "quark masses",
+        "observed mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "empirical target values"
+      ],
+      "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_charged_hessian_source_audit.py"
+      ],
+      "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "rho_ch_action_value",
+      "name": "rho ch action value",
+      "symbol": "rho_ch_action_value",
+      "sector": "charged_hessian_source_audit",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-65 charged Hessian source audit",
+      "depends_on": [
+        "bhsm_charged_hessian_source_audit"
+      ],
+      "forbidden_inputs": [
+        "charged-lepton masses",
+        "quark masses",
+        "observed mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "empirical target values"
+      ],
+      "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_charged_hessian_source_audit.py"
+      ],
+      "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "charged_qj_cross_term",
+      "name": "charged qj cross term",
+      "symbol": "charged_qj_cross_term",
+      "sector": "charged_hessian_source_audit",
+      "status": "FORBIDDEN_CONDITIONAL_UNLESS_ACTION_DERIVED",
+      "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-65 charged Hessian source audit",
+      "depends_on": [
+        "bhsm_charged_hessian_source_audit"
+      ],
+      "forbidden_inputs": [
+        "charged-lepton masses",
+        "quark masses",
+        "observed mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "empirical target values"
+      ],
+      "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_charged_hessian_source_audit.py"
+      ],
+      "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "neutral_qj_mixing",
+      "name": "neutral qj mixing",
+      "symbol": "neutral_qj_mixing",
+      "sector": "charged_hessian_source_audit",
+      "status": "OPEN_ALLOWED",
+      "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-65 charged Hessian source audit",
+      "depends_on": [
+        "bhsm_charged_hessian_source_audit"
+      ],
+      "forbidden_inputs": [
+        "charged-lepton masses",
+        "quark masses",
+        "observed mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "empirical target values"
+      ],
+      "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_charged_hessian_source_audit.py"
+      ],
+      "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "topographic_Berger_anisotropy_to_charged_sector",
+      "name": "topographic Berger anisotropy to charged sector",
+      "symbol": "topographic_Berger_anisotropy_to_charged_sector",
+      "sector": "charged_hessian_source_audit",
+      "status": "FORBIDDEN_UNLESS_EXPLICIT_COUPLING_DERIVED",
+      "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-65 charged Hessian source audit",
+      "depends_on": [
+        "bhsm_charged_hessian_source_audit"
+      ],
+      "forbidden_inputs": [
+        "charged-lepton masses",
+        "quark masses",
+        "observed mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "empirical target values"
+      ],
+      "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_charged_hessian_source_audit.py"
+      ],
+      "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "eta_l_depends_on_rho_ch",
+      "name": "eta l depends on rho ch",
+      "symbol": "eta_l_depends_on_rho_ch",
+      "sector": "charged_hessian_source_audit",
+      "status": "TRUE",
+      "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-65 charged Hessian source audit",
+      "depends_on": [
+        "bhsm_charged_hessian_source_audit"
+      ],
+      "forbidden_inputs": [
+        "charged-lepton masses",
+        "quark masses",
+        "observed mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "empirical target values"
+      ],
+      "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_charged_hessian_source_audit.py"
+      ],
+      "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "self_screening_factor_1_minus_alpha_geom",
+      "name": "self screening factor 1 minus alpha geom",
+      "symbol": "self_screening_factor_1_minus_alpha_geom",
+      "sector": "charged_hessian_source_audit",
+      "status": "STRUCTURALLY_SUPPORTED_CANDIDATE",
+      "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-65 charged Hessian source audit",
+      "depends_on": [
+        "bhsm_charged_hessian_source_audit"
+      ],
+      "forbidden_inputs": [
+        "charged-lepton masses",
+        "quark masses",
+        "observed mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "empirical target values"
+      ],
+      "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_charged_hessian_source_audit.py"
+      ],
+      "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "bhsm_charged_hessian_source_audit",
+      "name": "PO-BH-65 charged Hessian source audit",
+      "sector": "charged_hessian_source_audit",
+      "status": "COMPLETED",
+      "public_status": "structural architecture integrated conditional; numerical closure open",
+      "frozen_predictions_changed": false,
+      "official_predictions_changed": false,
+      "fit_policy": "FORBIDDEN_TO_FIT",
+      "forbidden_inputs": [
+        "charged-lepton masses",
+        "quark masses",
+        "observed mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "empirical target values"
+      ],
+      "tests": [
+        "tests/test_charged_hessian_source_audit.py"
+      ],
+      "claim_boundary": "No action source decides rho_ch; no numerical closure or prediction update."
     }
   ],
   "open_numerical_inputs": [
@@ -6946,7 +7256,13 @@
     "fit boundary-condition coefficient values, coefficient ratios, source terms, T_0, Phi_0, profile solutions, S_nu_topo, or epsilon_nu_topo after comparison",
     "fit rho_ch from charged lepton masses, quark masses, CKM, PMNS, neutrino data, measured alpha, observed generation data, or target values",
     "use measured alpha or CODATA alpha as an eta_l derivation",
-    "fit Pi_l or alpha_geom after comparison"
+    "fit Pi_l or alpha_geom after comparison",
+    "fit rho_ch from charged-lepton masses, quark masses, observed mass ratios, CKM, PMNS, neutrino data, measured alpha, or target values",
+    "finalize eta_l before rho_ch is derived",
+    "fit Z_virt_u2 from charm/top, up/top, CKM, PMNS, neutrino data, measured alpha, or target ratios",
+    "claim Z_virt_u2 fully derived before proving the relevant up-sector virtual correction samples the two-door virtual pair",
+    "treat frozen Z_virt appearance as derivation",
+    "treat charm/top agreement or comparison rows as Z_virt derivation"
   ],
   "claim_status_table": [
     {
@@ -7110,7 +7426,28 @@
     "ETA_L_8_OVER_9_DOWNGRADED",
     "ETA_L_PROJECTION_STRUCTURE_VALIDATED_CANDIDATE",
     "Z_VIRT_U2_DIMENSION_RATIO_STRONG_CANDIDATE",
-    "DOWN_EXTRA_BOUNDARY_INCIDENCE_STRONG_CANDIDATE"
+    "DOWN_EXTRA_BOUNDARY_INCIDENCE_STRONG_CANDIDATE",
+    "PO_BH_65_CHARGED_HESSIAN_SOURCE_AUDIT",
+    "RHO_CH_REMAINS_OPEN_LOCALIZABLE",
+    "RHO_1_MINIMAL_CLOSURE_CANDIDATE",
+    "RHO_3_STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+    "ETA_L_DEPENDS_ON_RHO_CH",
+    "CHARGED_QJ_CROSS_TERM_FORBIDDEN_UNLESS_ACTION_DERIVED",
+    "PO_BH_66_UP_SECTOR_VIRTUAL_DOOR_APPLICABILITY_AUDIT",
+    "Z_VIRT_U2_PAIR_DIMENSION_FORMALIZED",
+    "Z_VIRT_U2_ADMISSIBLE_RANK_FORMALIZED",
+    "Z_VIRT_U2_APPLICABILITY_REMAINS_OPEN_LOCALIZABLE",
+    "Z_VIRT_U2_NOT_DERIVED_FROM_MASSES",
+    "PO_BH_67_UP_SECTOR_DRESSING_DEPENDENCY_TRACE",
+    "ACTUAL_Z_VIRT_SOURCE_LOCALIZED",
+    "Z_VIRT_U2_APPLICABILITY_STILL_OPEN",
+    "LEGACY_Z_VIRT_NUMERICAL_CANDIDATE_LOCALIZED_NOT_DERIVED",
+    "COMPARISON_ROWS_NOT_DERIVATION_SOURCES",
+    "PO_BH_68_WEAK_DOUBLE_PROJECTION_ZVIRT_BRIDGE",
+    "WEAK_DOUBLE_SPACE_DIMENSION_TWO",
+    "UP_WEAK_PROJECTOR_RANK_ONE",
+    "Z_VIRT_U2_APPLICABILITY_DERIVED_CONDITIONAL",
+    "Z_VIRT_U2_DIMENSION_RATIO_DERIVED_CONDITIONAL"
   ],
   "collar_measure_extrinsic_geometry": {
     "id": "PO-BH-57",
@@ -10978,34 +11315,30 @@
     "id": "charged_Hessian_anisotropy_rho_ch",
     "name": "charged Hessian anisotropy rho ch",
     "symbol": "charged_Hessian_anisotropy_rho_ch",
-    "sector": "sector_projector_hessian_fork",
+    "sector": "charged_hessian_source_audit",
     "status": "OPEN_LOCALIZABLE",
-    "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+    "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
     "derived_numerical_value": false,
     "pre_comparison_locked": false,
-    "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+    "derivation_source": "PO-BH-65 charged Hessian source audit",
     "depends_on": [
-      "bhsm_sector_projector_hessian_fork_audit"
+      "bhsm_charged_hessian_source_audit"
     ],
     "forbidden_inputs": [
-      "observed masses",
-      "charged lepton masses",
+      "charged-lepton masses",
       "quark masses",
+      "observed mass ratios",
       "CKM values",
       "PMNS values",
       "neutrino data",
       "measured alpha",
-      "CODATA alpha",
-      "observed generation data",
-      "anomaly/FTL data",
-      "propulsion/anomaly data",
-      "target values"
+      "empirical target values"
     ],
-    "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+    "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
     "tests": [
-      "tests/test_sector_projector_hessian_fork_audit.py"
+      "tests/test_charged_hessian_source_audit.py"
     ],
-    "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+    "next_action": "derive rho_ch and charged Hessian source from action before comparison",
     "fit_policy": "FORBIDDEN_TO_FIT"
   },
   "isotropic_metric_rho_1": {
@@ -11155,7 +11488,8 @@
     "pre_comparison_locked": false,
     "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
     "depends_on": [
-      "bhsm_sector_projector_hessian_fork_audit"
+      "bhsm_sector_projector_hessian_fork_audit",
+      "charged_Hessian_source_audit"
     ],
     "forbidden_inputs": [
       "observed masses",
@@ -11173,6 +11507,7 @@
     ],
     "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
     "tests": [
+      "tests/test_charged_hessian_source_audit.py",
       "tests/test_sector_projector_hessian_fork_audit.py"
     ],
     "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
@@ -11189,7 +11524,8 @@
     "pre_comparison_locked": false,
     "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
     "depends_on": [
-      "bhsm_sector_projector_hessian_fork_audit"
+      "bhsm_sector_projector_hessian_fork_audit",
+      "charged_Hessian_source_audit"
     ],
     "forbidden_inputs": [
       "observed masses",
@@ -11207,6 +11543,7 @@
     ],
     "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
     "tests": [
+      "tests/test_charged_hessian_source_audit.py",
       "tests/test_sector_projector_hessian_fork_audit.py"
     ],
     "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
@@ -11223,7 +11560,8 @@
     "pre_comparison_locked": false,
     "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
     "depends_on": [
-      "bhsm_sector_projector_hessian_fork_audit"
+      "bhsm_sector_projector_hessian_fork_audit",
+      "charged_Hessian_source_audit"
     ],
     "forbidden_inputs": [
       "observed masses",
@@ -11241,6 +11579,7 @@
     ],
     "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
     "tests": [
+      "tests/test_charged_hessian_source_audit.py",
       "tests/test_sector_projector_hessian_fork_audit.py"
     ],
     "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
@@ -11257,7 +11596,8 @@
     "pre_comparison_locked": false,
     "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
     "depends_on": [
-      "bhsm_sector_projector_hessian_fork_audit"
+      "bhsm_sector_projector_hessian_fork_audit",
+      "charged_Hessian_source_audit"
     ],
     "forbidden_inputs": [
       "observed masses",
@@ -11275,6 +11615,7 @@
     ],
     "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
     "tests": [
+      "tests/test_charged_hessian_source_audit.py",
       "tests/test_sector_projector_hessian_fork_audit.py"
     ],
     "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
@@ -11325,7 +11666,8 @@
     "pre_comparison_locked": false,
     "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
     "depends_on": [
-      "bhsm_sector_projector_hessian_fork_audit"
+      "bhsm_sector_projector_hessian_fork_audit",
+      "charged_Hessian_source_audit"
     ],
     "forbidden_inputs": [
       "observed masses",
@@ -11343,6 +11685,7 @@
     ],
     "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
     "tests": [
+      "tests/test_charged_hessian_source_audit.py",
       "tests/test_sector_projector_hessian_fork_audit.py"
     ],
     "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
@@ -11359,7 +11702,8 @@
     "pre_comparison_locked": false,
     "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
     "depends_on": [
-      "bhsm_sector_projector_hessian_fork_audit"
+      "bhsm_sector_projector_hessian_fork_audit",
+      "charged_Hessian_source_audit"
     ],
     "forbidden_inputs": [
       "observed masses",
@@ -11377,6 +11721,7 @@
     ],
     "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
     "tests": [
+      "tests/test_charged_hessian_source_audit.py",
       "tests/test_sector_projector_hessian_fork_audit.py"
     ],
     "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
@@ -11386,34 +11731,34 @@
     "id": "Z_virt_u2_dimension_ratio",
     "name": "Z virt u2 dimension ratio",
     "symbol": "Z_virt_u2_dimension_ratio",
-    "sector": "sector_projector_hessian_fork",
-    "status": "STRONG_DERIVATION_CANDIDATE",
-    "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+    "sector": "weak_double_projection_zvirt_bridge",
+    "status": "DERIVED_CONDITIONAL",
+    "formula_candidate": "Z_virt^{u,2}=rank(P_u)/dim(V_weak)=1/2",
     "derived_numerical_value": false,
     "pre_comparison_locked": false,
-    "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+    "derivation_source": "PO-BH-68 weak double projection bridge for Z_virt",
     "depends_on": [
-      "bhsm_sector_projector_hessian_fork_audit"
+      "bhsm_up_sector_dressing_dependency_trace",
+      "bhsm_up_sector_virtual_door_applicability",
+      "bhsm_weak_double_projection_zvirt_bridge"
     ],
     "forbidden_inputs": [
-      "observed masses",
-      "charged lepton masses",
-      "quark masses",
+      "observed quark masses",
+      "charm/top ratio",
+      "up/top ratio",
+      "target mass ratios",
       "CKM values",
       "PMNS values",
       "neutrino data",
-      "measured alpha",
-      "CODATA alpha",
-      "observed generation data",
-      "anomaly/FTL data",
-      "propulsion/anomaly data",
-      "target values"
+      "measured alpha"
     ],
-    "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+    "claim_boundary": "Conditional weak-double projection bridge only; no frozen or official predictions are changed.",
     "tests": [
-      "tests/test_sector_projector_hessian_fork_audit.py"
+      "tests/test_up_sector_dressing_dependency_trace.py",
+      "tests/test_up_sector_virtual_door_applicability.py",
+      "tests/test_weak_double_projection_zvirt_bridge.py"
     ],
-    "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+    "next_action": "derive the full virtual loop/threshold source",
     "fit_policy": "FORBIDDEN_TO_FIT"
   },
   "down_extra_boundary_incidence": {
@@ -11480,5 +11825,1087 @@
       "propulsion/anomaly data",
       "target values"
     ]
+  },
+  "charged_Hessian_source_audit": {
+    "id": "charged_Hessian_source_audit",
+    "name": "charged Hessian source audit",
+    "symbol": "charged_Hessian_source_audit",
+    "sector": "charged_hessian_source_audit",
+    "status": "COMPLETED",
+    "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-65 charged Hessian source audit",
+    "depends_on": [
+      "bhsm_charged_hessian_source_audit"
+    ],
+    "forbidden_inputs": [
+      "charged-lepton masses",
+      "quark masses",
+      "observed mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "empirical target values"
+    ],
+    "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_charged_hessian_source_audit.py"
+    ],
+    "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "rho_ch_1_minimal_closure": {
+    "id": "rho_ch_1_minimal_closure",
+    "name": "rho ch 1 minimal closure",
+    "symbol": "rho_ch_1_minimal_closure",
+    "sector": "charged_hessian_source_audit",
+    "status": "MINIMAL_ACTION_CLOSURE_CANDIDATE",
+    "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-65 charged Hessian source audit",
+    "depends_on": [
+      "bhsm_charged_hessian_source_audit"
+    ],
+    "forbidden_inputs": [
+      "charged-lepton masses",
+      "quark masses",
+      "observed mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "empirical target values"
+    ],
+    "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_charged_hessian_source_audit.py"
+    ],
+    "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "rho_ch_3_cyclic_weight": {
+    "id": "rho_ch_3_cyclic_weight",
+    "name": "rho ch 3 cyclic weight",
+    "symbol": "rho_ch_3_cyclic_weight",
+    "sector": "charged_hessian_source_audit",
+    "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+    "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-65 charged Hessian source audit",
+    "depends_on": [
+      "bhsm_charged_hessian_source_audit"
+    ],
+    "forbidden_inputs": [
+      "charged-lepton masses",
+      "quark masses",
+      "observed mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "empirical target values"
+    ],
+    "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_charged_hessian_source_audit.py"
+    ],
+    "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "rho_ch_action_value": {
+    "id": "rho_ch_action_value",
+    "name": "rho ch action value",
+    "symbol": "rho_ch_action_value",
+    "sector": "charged_hessian_source_audit",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-65 charged Hessian source audit",
+    "depends_on": [
+      "bhsm_charged_hessian_source_audit"
+    ],
+    "forbidden_inputs": [
+      "charged-lepton masses",
+      "quark masses",
+      "observed mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "empirical target values"
+    ],
+    "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_charged_hessian_source_audit.py"
+    ],
+    "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "charged_qj_cross_term": {
+    "id": "charged_qj_cross_term",
+    "name": "charged qj cross term",
+    "symbol": "charged_qj_cross_term",
+    "sector": "charged_hessian_source_audit",
+    "status": "FORBIDDEN_CONDITIONAL_UNLESS_ACTION_DERIVED",
+    "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-65 charged Hessian source audit",
+    "depends_on": [
+      "bhsm_charged_hessian_source_audit"
+    ],
+    "forbidden_inputs": [
+      "charged-lepton masses",
+      "quark masses",
+      "observed mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "empirical target values"
+    ],
+    "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_charged_hessian_source_audit.py"
+    ],
+    "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "neutral_qj_mixing": {
+    "id": "neutral_qj_mixing",
+    "name": "neutral qj mixing",
+    "symbol": "neutral_qj_mixing",
+    "sector": "charged_hessian_source_audit",
+    "status": "OPEN_ALLOWED",
+    "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-65 charged Hessian source audit",
+    "depends_on": [
+      "bhsm_charged_hessian_source_audit"
+    ],
+    "forbidden_inputs": [
+      "charged-lepton masses",
+      "quark masses",
+      "observed mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "empirical target values"
+    ],
+    "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_charged_hessian_source_audit.py"
+    ],
+    "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "topographic_Berger_anisotropy_to_charged_sector": {
+    "id": "topographic_Berger_anisotropy_to_charged_sector",
+    "name": "topographic Berger anisotropy to charged sector",
+    "symbol": "topographic_Berger_anisotropy_to_charged_sector",
+    "sector": "charged_hessian_source_audit",
+    "status": "FORBIDDEN_UNLESS_EXPLICIT_COUPLING_DERIVED",
+    "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-65 charged Hessian source audit",
+    "depends_on": [
+      "bhsm_charged_hessian_source_audit"
+    ],
+    "forbidden_inputs": [
+      "charged-lepton masses",
+      "quark masses",
+      "observed mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "empirical target values"
+    ],
+    "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_charged_hessian_source_audit.py"
+    ],
+    "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "eta_l_depends_on_rho_ch": {
+    "id": "eta_l_depends_on_rho_ch",
+    "name": "eta l depends on rho ch",
+    "symbol": "eta_l_depends_on_rho_ch",
+    "sector": "charged_hessian_source_audit",
+    "status": "TRUE",
+    "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-65 charged Hessian source audit",
+    "depends_on": [
+      "bhsm_charged_hessian_source_audit"
+    ],
+    "forbidden_inputs": [
+      "charged-lepton masses",
+      "quark masses",
+      "observed mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "empirical target values"
+    ],
+    "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_charged_hessian_source_audit.py"
+    ],
+    "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "self_screening_factor_1_minus_alpha_geom": {
+    "id": "self_screening_factor_1_minus_alpha_geom",
+    "name": "self screening factor 1 minus alpha geom",
+    "symbol": "self_screening_factor_1_minus_alpha_geom",
+    "sector": "charged_hessian_source_audit",
+    "status": "STRUCTURALLY_SUPPORTED_CANDIDATE",
+    "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-65 charged Hessian source audit",
+    "depends_on": [
+      "bhsm_charged_hessian_source_audit"
+    ],
+    "forbidden_inputs": [
+      "charged-lepton masses",
+      "quark masses",
+      "observed mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "empirical target values"
+    ],
+    "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_charged_hessian_source_audit.py"
+    ],
+    "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "bhsm_charged_hessian_source_audit": {
+    "id": "bhsm_charged_hessian_source_audit",
+    "name": "PO-BH-65 charged Hessian source audit",
+    "sector": "charged_hessian_source_audit",
+    "status": "COMPLETED",
+    "public_status": "structural architecture integrated conditional; numerical closure open",
+    "frozen_predictions_changed": false,
+    "official_predictions_changed": false,
+    "fit_policy": "FORBIDDEN_TO_FIT",
+    "forbidden_inputs": [
+      "charged-lepton masses",
+      "quark masses",
+      "observed mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "empirical target values"
+    ],
+    "tests": [
+      "tests/test_charged_hessian_source_audit.py"
+    ],
+    "claim_boundary": "No action source decides rho_ch; no numerical closure or prediction update."
+  },
+  "open_inputs": [
+    {
+      "id": "up_sector_virtual_door_applicability_audit",
+      "name": "up sector virtual door applicability audit",
+      "symbol": "up_sector_virtual_door_applicability_audit",
+      "sector": "up_sector_virtual_door_applicability",
+      "status": "COMPLETED",
+      "formula_candidate": "See docs/bhsm_up_sector_virtual_door_applicability.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-66 up-sector virtual door applicability audit",
+      "depends_on": [
+        "bhsm_up_sector_virtual_door_applicability"
+      ],
+      "forbidden_inputs": [
+        "observed quark masses",
+        "charm/top ratio",
+        "up/top ratio",
+        "target mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha"
+      ],
+      "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_up_sector_virtual_door_applicability.py"
+      ],
+      "next_action": "derive the up-sector virtual-correction sampling map before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "V_pair_u_dimension",
+      "name": "V pair u dimension",
+      "symbol": "V_pair_u_dimension",
+      "sector": "up_sector_virtual_door_applicability",
+      "status": "FORMALIZED_DIMENSION_2",
+      "formula_candidate": "V_pair^u = span{door_u, door_d}; dim(V_pair^u)=2",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-66 up-sector virtual door applicability audit",
+      "depends_on": [
+        "bhsm_up_sector_virtual_door_applicability"
+      ],
+      "forbidden_inputs": [
+        "observed quark masses",
+        "charm/top ratio",
+        "up/top ratio",
+        "target mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha"
+      ],
+      "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_up_sector_virtual_door_applicability.py"
+      ],
+      "next_action": "derive the pair from the full virtual/boundary channel action",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "A_virt_u_rank",
+      "name": "A virt u rank",
+      "symbol": "A_virt_u_rank",
+      "sector": "up_sector_virtual_door_applicability",
+      "status": "FORMALIZED_RANK_1",
+      "formula_candidate": "A_virt^u door_u=door_u, A_virt^u door_d=0; rank(A_virt^u)=1",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-66 up-sector virtual door applicability audit",
+      "depends_on": [
+        "bhsm_up_sector_virtual_door_applicability"
+      ],
+      "forbidden_inputs": [
+        "observed quark masses",
+        "charm/top ratio",
+        "up/top ratio",
+        "target mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha"
+      ],
+      "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_up_sector_virtual_door_applicability.py"
+      ],
+      "next_action": "derive the admissibility projector from the up-sector virtual channel structure",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "Z_virt_u2_applicability",
+      "name": "Z virt u2 applicability",
+      "symbol": "Z_virt_u2_applicability",
+      "sector": "weak_double_projection_zvirt_bridge",
+      "status": "DERIVED_CONDITIONAL",
+      "formula_candidate": "actual source WEAK_DOUBLE_PROJECTION equals rank(P_u)/dim(V_weak)=1/2 on middle-up mode (6,0)",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-68 weak double projection bridge for Z_virt",
+      "depends_on": [
+        "bhsm_up_sector_dressing_dependency_trace",
+        "bhsm_up_sector_virtual_door_applicability",
+        "bhsm_weak_double_projection_zvirt_bridge"
+      ],
+      "forbidden_inputs": [
+        "observed quark masses",
+        "charm/top ratio",
+        "up/top ratio",
+        "target mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha"
+      ],
+      "claim_boundary": "Conditional weak-double projection bridge only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_up_sector_dressing_dependency_trace.py",
+        "tests/test_up_sector_virtual_door_applicability.py",
+        "tests/test_weak_double_projection_zvirt_bridge.py"
+      ],
+      "next_action": "derive the full virtual loop/threshold source",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "Z_virt_u2_mass_fit",
+      "name": "Z virt u2 mass fit",
+      "symbol": "Z_virt_u2_mass_fit",
+      "sector": "up_sector_virtual_door_applicability",
+      "status": "FORBIDDEN_AS_DERIVATION",
+      "formula_candidate": "Z_virt must not be selected by charm/top, up/top, CKM, PMNS, neutrino data, measured alpha, or target ratios",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-66 up-sector virtual door applicability audit",
+      "depends_on": [
+        "bhsm_up_sector_virtual_door_applicability"
+      ],
+      "forbidden_inputs": [
+        "observed quark masses",
+        "charm/top ratio",
+        "up/top ratio",
+        "target mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha"
+      ],
+      "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_up_sector_virtual_door_applicability.py"
+      ],
+      "next_action": "keep Z_virt derivation independent of observed residuals",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "Z_virt_u2_dimension_ratio",
+      "name": "Z virt u2 dimension ratio",
+      "symbol": "Z_virt_u2_dimension_ratio",
+      "sector": "weak_double_projection_zvirt_bridge",
+      "status": "DERIVED_CONDITIONAL",
+      "formula_candidate": "Z_virt^{u,2}=rank(P_u)/dim(V_weak)=1/2",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-68 weak double projection bridge for Z_virt",
+      "depends_on": [
+        "bhsm_up_sector_dressing_dependency_trace",
+        "bhsm_up_sector_virtual_door_applicability",
+        "bhsm_weak_double_projection_zvirt_bridge"
+      ],
+      "forbidden_inputs": [
+        "observed quark masses",
+        "charm/top ratio",
+        "up/top ratio",
+        "target mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha"
+      ],
+      "claim_boundary": "Conditional weak-double projection bridge only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_up_sector_dressing_dependency_trace.py",
+        "tests/test_up_sector_virtual_door_applicability.py",
+        "tests/test_weak_double_projection_zvirt_bridge.py"
+      ],
+      "next_action": "derive the full virtual loop/threshold source",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "up_sector_dressing_dependency_trace",
+      "name": "up sector dressing dependency trace",
+      "symbol": "up_sector_dressing_dependency_trace",
+      "sector": "up_sector_dressing_dependency_trace",
+      "status": "COMPLETED",
+      "formula_candidate": "Trace actual dressed branch dependency path through bhsm_v1 and virtual_environment modules.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-67 up-sector dressing dependency trace",
+      "depends_on": [
+        "bhsm_up_sector_dressing_dependency_trace"
+      ],
+      "forbidden_inputs": [
+        "observed quark masses",
+        "charm/top ratio",
+        "up/top ratio",
+        "target mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha"
+      ],
+      "claim_boundary": "Dependency trace only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_up_sector_dressing_dependency_trace.py"
+      ],
+      "next_action": "derive the explicit link from the actual dressing source to V_pair^u before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "legacy_Z_virt_u2_numerical_candidate",
+      "name": "legacy Z virt u2 numerical candidate",
+      "symbol": "legacy_Z_virt_u2_numerical_candidate",
+      "sector": "weak_double_projection_zvirt_bridge",
+      "status": "SUPERSEDED_BY_WEAK_DOUBLE_PROJECTION_BRIDGE",
+      "formula_candidate": "legacy numerical candidate status superseded by PO-BH-68 weak double projection bridge",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-68 weak double projection bridge for Z_virt",
+      "depends_on": [
+        "bhsm_up_sector_dressing_dependency_trace",
+        "bhsm_weak_double_projection_zvirt_bridge"
+      ],
+      "forbidden_inputs": [
+        "observed quark masses",
+        "charm/top ratio",
+        "up/top ratio",
+        "target mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha"
+      ],
+      "claim_boundary": "Conditional weak-double projection bridge only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_up_sector_dressing_dependency_trace.py",
+        "tests/test_weak_double_projection_zvirt_bridge.py"
+      ],
+      "next_action": "keep bridge conditional; do not use residuals as derivation",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "Z_virt_u2_mass_fit_route",
+      "name": "Z virt u2 mass fit route",
+      "symbol": "Z_virt_u2_mass_fit_route",
+      "sector": "up_sector_dressing_dependency_trace",
+      "status": "FORBIDDEN_AS_DERIVATION",
+      "formula_candidate": "Observed mass/comparison rows cannot justify Z_virt_u2.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-67 up-sector dressing dependency trace",
+      "depends_on": [
+        "bhsm_up_sector_dressing_dependency_trace"
+      ],
+      "forbidden_inputs": [
+        "observed quark masses",
+        "charm/top ratio",
+        "up/top ratio",
+        "target mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha"
+      ],
+      "claim_boundary": "Dependency trace only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_up_sector_dressing_dependency_trace.py"
+      ],
+      "next_action": "keep comparison-only rows quarantined from derivation logic",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "weak_double_projection_zvirt_bridge",
+      "name": "weak double projection zvirt bridge",
+      "symbol": "weak_double_projection_zvirt_bridge",
+      "sector": "weak_double_projection_zvirt_bridge",
+      "status": "COMPLETED",
+      "formula_candidate": "V_weak=span{door_upper,door_lower}; P_u=diag(1,0); rank(P_u)/dim(V_weak)=1/2",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-68 weak double projection bridge for Z_virt",
+      "depends_on": [
+        "bhsm_weak_double_projection_zvirt_bridge"
+      ],
+      "forbidden_inputs": [
+        "observed quark masses",
+        "charm/top ratio",
+        "up/top ratio",
+        "target mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha"
+      ],
+      "claim_boundary": "Conditional weak-double projection bridge only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_weak_double_projection_zvirt_bridge.py"
+      ],
+      "next_action": "derive the full virtual loop/threshold source while preserving frozen outputs",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "V_weak_dimension",
+      "name": "V weak dimension",
+      "symbol": "V_weak_dimension",
+      "sector": "weak_double_projection_zvirt_bridge",
+      "status": "DERIVED_CONDITIONAL",
+      "formula_candidate": "dim(V_weak)=2 for span{door_upper,door_lower}",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-68 weak double projection bridge for Z_virt",
+      "depends_on": [
+        "bhsm_weak_double_projection_zvirt_bridge"
+      ],
+      "forbidden_inputs": [
+        "observed quark masses",
+        "charm/top ratio",
+        "up/top ratio",
+        "target mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha"
+      ],
+      "claim_boundary": "Conditional weak-double projection bridge only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_weak_double_projection_zvirt_bridge.py"
+      ],
+      "next_action": "derive the weak-interface activity origin in the wider theory line",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "P_u_weak_projector_rank",
+      "name": "P u weak projector rank",
+      "symbol": "P_u_weak_projector_rank",
+      "sector": "weak_double_projection_zvirt_bridge",
+      "status": "DERIVED_CONDITIONAL",
+      "formula_candidate": "P_u=diag(1,0); rank(P_u)=1",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-68 weak double projection bridge for Z_virt",
+      "depends_on": [
+        "bhsm_weak_double_projection_zvirt_bridge"
+      ],
+      "forbidden_inputs": [
+        "observed quark masses",
+        "charm/top ratio",
+        "up/top ratio",
+        "target mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha"
+      ],
+      "claim_boundary": "Conditional weak-double projection bridge only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_weak_double_projection_zvirt_bridge.py"
+      ],
+      "next_action": "derive the projector from full weak-interface boundary geometry",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "WEAK_DOUBLE_PROJECTION",
+      "name": "WEAK DOUBLE PROJECTION",
+      "symbol": "WEAK_DOUBLE_PROJECTION",
+      "sector": "weak_double_projection_zvirt_bridge",
+      "status": "DERIVED_CONDITIONAL",
+      "formula_candidate": "rank(P_u)/dim(V_weak)=1/2",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-68 weak double projection bridge for Z_virt",
+      "depends_on": [
+        "bhsm_weak_double_projection_zvirt_bridge"
+      ],
+      "forbidden_inputs": [
+        "observed quark masses",
+        "charm/top ratio",
+        "up/top ratio",
+        "target mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha"
+      ],
+      "claim_boundary": "Conditional weak-double projection bridge only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_weak_double_projection_zvirt_bridge.py"
+      ],
+      "next_action": "derive full virtual loop source using this conditional projector bridge",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    }
+  ],
+  "summaries": {
+    "bhsm_up_sector_virtual_door_applicability": {
+      "id": "bhsm_up_sector_virtual_door_applicability",
+      "name": "PO-BH-66 up-sector virtual door applicability audit",
+      "status": "COMPLETED",
+      "claim_boundary": "Dimension-ratio route is formalized; applicability remains open-localizable; no prediction outputs are changed."
+    },
+    "bhsm_up_sector_dressing_dependency_trace": {
+      "id": "bhsm_up_sector_dressing_dependency_trace",
+      "name": "PO-BH-67 up-sector dressing dependency trace",
+      "status": "COMPLETED",
+      "claim_boundary": "Actual source path localized; no explicit two-door applicability link found; no prediction outputs are changed."
+    },
+    "bhsm_weak_double_projection_zvirt_bridge": {
+      "id": "bhsm_weak_double_projection_zvirt_bridge",
+      "name": "PO-BH-68 weak double projection bridge for Z_virt",
+      "status": "COMPLETED",
+      "claim_boundary": "Connects actual WEAK_DOUBLE_PROJECTION source to rank-one weak-doublet projection; no prediction outputs are changed."
+    }
+  },
+  "up_sector_virtual_door_applicability_audit": {
+    "id": "up_sector_virtual_door_applicability_audit",
+    "name": "up sector virtual door applicability audit",
+    "symbol": "up_sector_virtual_door_applicability_audit",
+    "sector": "up_sector_virtual_door_applicability",
+    "status": "COMPLETED",
+    "formula_candidate": "See docs/bhsm_up_sector_virtual_door_applicability.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-66 up-sector virtual door applicability audit",
+    "depends_on": [
+      "bhsm_up_sector_virtual_door_applicability"
+    ],
+    "forbidden_inputs": [
+      "observed quark masses",
+      "charm/top ratio",
+      "up/top ratio",
+      "target mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha"
+    ],
+    "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_up_sector_virtual_door_applicability.py"
+    ],
+    "next_action": "derive the up-sector virtual-correction sampling map before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "V_pair_u_dimension": {
+    "id": "V_pair_u_dimension",
+    "name": "V pair u dimension",
+    "symbol": "V_pair_u_dimension",
+    "sector": "up_sector_virtual_door_applicability",
+    "status": "FORMALIZED_DIMENSION_2",
+    "formula_candidate": "V_pair^u = span{door_u, door_d}; dim(V_pair^u)=2",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-66 up-sector virtual door applicability audit",
+    "depends_on": [
+      "bhsm_up_sector_virtual_door_applicability"
+    ],
+    "forbidden_inputs": [
+      "observed quark masses",
+      "charm/top ratio",
+      "up/top ratio",
+      "target mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha"
+    ],
+    "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_up_sector_virtual_door_applicability.py"
+    ],
+    "next_action": "derive the pair from the full virtual/boundary channel action",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "A_virt_u_rank": {
+    "id": "A_virt_u_rank",
+    "name": "A virt u rank",
+    "symbol": "A_virt_u_rank",
+    "sector": "up_sector_virtual_door_applicability",
+    "status": "FORMALIZED_RANK_1",
+    "formula_candidate": "A_virt^u door_u=door_u, A_virt^u door_d=0; rank(A_virt^u)=1",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-66 up-sector virtual door applicability audit",
+    "depends_on": [
+      "bhsm_up_sector_virtual_door_applicability"
+    ],
+    "forbidden_inputs": [
+      "observed quark masses",
+      "charm/top ratio",
+      "up/top ratio",
+      "target mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha"
+    ],
+    "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_up_sector_virtual_door_applicability.py"
+    ],
+    "next_action": "derive the admissibility projector from the up-sector virtual channel structure",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "Z_virt_u2_applicability": {
+    "id": "Z_virt_u2_applicability",
+    "name": "Z virt u2 applicability",
+    "symbol": "Z_virt_u2_applicability",
+    "sector": "weak_double_projection_zvirt_bridge",
+    "status": "DERIVED_CONDITIONAL",
+    "formula_candidate": "actual source WEAK_DOUBLE_PROJECTION equals rank(P_u)/dim(V_weak)=1/2 on middle-up mode (6,0)",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-68 weak double projection bridge for Z_virt",
+    "depends_on": [
+      "bhsm_up_sector_dressing_dependency_trace",
+      "bhsm_up_sector_virtual_door_applicability",
+      "bhsm_weak_double_projection_zvirt_bridge"
+    ],
+    "forbidden_inputs": [
+      "observed quark masses",
+      "charm/top ratio",
+      "up/top ratio",
+      "target mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha"
+    ],
+    "claim_boundary": "Conditional weak-double projection bridge only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_up_sector_dressing_dependency_trace.py",
+      "tests/test_up_sector_virtual_door_applicability.py",
+      "tests/test_weak_double_projection_zvirt_bridge.py"
+    ],
+    "next_action": "derive the full virtual loop/threshold source",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "Z_virt_u2_mass_fit": {
+    "id": "Z_virt_u2_mass_fit",
+    "name": "Z virt u2 mass fit",
+    "symbol": "Z_virt_u2_mass_fit",
+    "sector": "up_sector_virtual_door_applicability",
+    "status": "FORBIDDEN_AS_DERIVATION",
+    "formula_candidate": "Z_virt must not be selected by charm/top, up/top, CKM, PMNS, neutrino data, measured alpha, or target ratios",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-66 up-sector virtual door applicability audit",
+    "depends_on": [
+      "bhsm_up_sector_virtual_door_applicability"
+    ],
+    "forbidden_inputs": [
+      "observed quark masses",
+      "charm/top ratio",
+      "up/top ratio",
+      "target mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha"
+    ],
+    "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_up_sector_virtual_door_applicability.py"
+    ],
+    "next_action": "keep Z_virt derivation independent of observed residuals",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "up_sector_dressing_dependency_trace": {
+    "id": "up_sector_dressing_dependency_trace",
+    "name": "up sector dressing dependency trace",
+    "symbol": "up_sector_dressing_dependency_trace",
+    "sector": "up_sector_dressing_dependency_trace",
+    "status": "COMPLETED",
+    "formula_candidate": "Trace actual dressed branch dependency path through bhsm_v1 and virtual_environment modules.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-67 up-sector dressing dependency trace",
+    "depends_on": [
+      "bhsm_up_sector_dressing_dependency_trace"
+    ],
+    "forbidden_inputs": [
+      "observed quark masses",
+      "charm/top ratio",
+      "up/top ratio",
+      "target mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha"
+    ],
+    "claim_boundary": "Dependency trace only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_up_sector_dressing_dependency_trace.py"
+    ],
+    "next_action": "derive the explicit link from the actual dressing source to V_pair^u before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "legacy_Z_virt_u2_numerical_candidate": {
+    "id": "legacy_Z_virt_u2_numerical_candidate",
+    "name": "legacy Z virt u2 numerical candidate",
+    "symbol": "legacy_Z_virt_u2_numerical_candidate",
+    "sector": "weak_double_projection_zvirt_bridge",
+    "status": "SUPERSEDED_BY_WEAK_DOUBLE_PROJECTION_BRIDGE",
+    "formula_candidate": "legacy numerical candidate status superseded by PO-BH-68 weak double projection bridge",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-68 weak double projection bridge for Z_virt",
+    "depends_on": [
+      "bhsm_up_sector_dressing_dependency_trace",
+      "bhsm_weak_double_projection_zvirt_bridge"
+    ],
+    "forbidden_inputs": [
+      "observed quark masses",
+      "charm/top ratio",
+      "up/top ratio",
+      "target mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha"
+    ],
+    "claim_boundary": "Conditional weak-double projection bridge only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_up_sector_dressing_dependency_trace.py",
+      "tests/test_weak_double_projection_zvirt_bridge.py"
+    ],
+    "next_action": "keep bridge conditional; do not use residuals as derivation",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "Z_virt_u2_mass_fit_route": {
+    "id": "Z_virt_u2_mass_fit_route",
+    "name": "Z virt u2 mass fit route",
+    "symbol": "Z_virt_u2_mass_fit_route",
+    "sector": "up_sector_dressing_dependency_trace",
+    "status": "FORBIDDEN_AS_DERIVATION",
+    "formula_candidate": "Observed mass/comparison rows cannot justify Z_virt_u2.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-67 up-sector dressing dependency trace",
+    "depends_on": [
+      "bhsm_up_sector_dressing_dependency_trace"
+    ],
+    "forbidden_inputs": [
+      "observed quark masses",
+      "charm/top ratio",
+      "up/top ratio",
+      "target mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha"
+    ],
+    "claim_boundary": "Dependency trace only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_up_sector_dressing_dependency_trace.py"
+    ],
+    "next_action": "keep comparison-only rows quarantined from derivation logic",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "weak_double_projection_zvirt_bridge": {
+    "id": "weak_double_projection_zvirt_bridge",
+    "name": "weak double projection zvirt bridge",
+    "symbol": "weak_double_projection_zvirt_bridge",
+    "sector": "weak_double_projection_zvirt_bridge",
+    "status": "COMPLETED",
+    "formula_candidate": "V_weak=span{door_upper,door_lower}; P_u=diag(1,0); rank(P_u)/dim(V_weak)=1/2",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-68 weak double projection bridge for Z_virt",
+    "depends_on": [
+      "bhsm_weak_double_projection_zvirt_bridge"
+    ],
+    "forbidden_inputs": [
+      "observed quark masses",
+      "charm/top ratio",
+      "up/top ratio",
+      "target mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha"
+    ],
+    "claim_boundary": "Conditional weak-double projection bridge only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_weak_double_projection_zvirt_bridge.py"
+    ],
+    "next_action": "derive the full virtual loop/threshold source while preserving frozen outputs",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "V_weak_dimension": {
+    "id": "V_weak_dimension",
+    "name": "V weak dimension",
+    "symbol": "V_weak_dimension",
+    "sector": "weak_double_projection_zvirt_bridge",
+    "status": "DERIVED_CONDITIONAL",
+    "formula_candidate": "dim(V_weak)=2 for span{door_upper,door_lower}",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-68 weak double projection bridge for Z_virt",
+    "depends_on": [
+      "bhsm_weak_double_projection_zvirt_bridge"
+    ],
+    "forbidden_inputs": [
+      "observed quark masses",
+      "charm/top ratio",
+      "up/top ratio",
+      "target mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha"
+    ],
+    "claim_boundary": "Conditional weak-double projection bridge only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_weak_double_projection_zvirt_bridge.py"
+    ],
+    "next_action": "derive the weak-interface activity origin in the wider theory line",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "P_u_weak_projector_rank": {
+    "id": "P_u_weak_projector_rank",
+    "name": "P u weak projector rank",
+    "symbol": "P_u_weak_projector_rank",
+    "sector": "weak_double_projection_zvirt_bridge",
+    "status": "DERIVED_CONDITIONAL",
+    "formula_candidate": "P_u=diag(1,0); rank(P_u)=1",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-68 weak double projection bridge for Z_virt",
+    "depends_on": [
+      "bhsm_weak_double_projection_zvirt_bridge"
+    ],
+    "forbidden_inputs": [
+      "observed quark masses",
+      "charm/top ratio",
+      "up/top ratio",
+      "target mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha"
+    ],
+    "claim_boundary": "Conditional weak-double projection bridge only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_weak_double_projection_zvirt_bridge.py"
+    ],
+    "next_action": "derive the projector from full weak-interface boundary geometry",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "WEAK_DOUBLE_PROJECTION": {
+    "id": "WEAK_DOUBLE_PROJECTION",
+    "name": "WEAK DOUBLE PROJECTION",
+    "symbol": "WEAK_DOUBLE_PROJECTION",
+    "sector": "weak_double_projection_zvirt_bridge",
+    "status": "DERIVED_CONDITIONAL",
+    "formula_candidate": "rank(P_u)/dim(V_weak)=1/2",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-68 weak double projection bridge for Z_virt",
+    "depends_on": [
+      "bhsm_weak_double_projection_zvirt_bridge"
+    ],
+    "forbidden_inputs": [
+      "observed quark masses",
+      "charm/top ratio",
+      "up/top ratio",
+      "target mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha"
+    ],
+    "claim_boundary": "Conditional weak-double projection bridge only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_weak_double_projection_zvirt_bridge.py"
+    ],
+    "next_action": "derive full virtual loop source using this conditional projector bridge",
+    "fit_policy": "FORBIDDEN_TO_FIT"
   }
 }

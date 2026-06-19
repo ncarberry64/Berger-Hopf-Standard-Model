@@ -41,6 +41,16 @@ Measured alpha may be used only as comparison/scaffold, not as a derivation.
 Do not use CODATA alpha to claim BHSM has derived `eta_l`. Do not fit `Pi_l`
 after looking at charged-lepton mass ratios.
 
+PO-BH-65 adds:
+
+```text
+eta_l_depends_on_rho_ch: TRUE
+self_screening_factor_1_minus_alpha_geom: STRUCTURALLY_SUPPORTED_CANDIDATE
+```
+
+Because the charged cost metric remains open, `eta_l_exact_value` remains
+`OPEN`.
+
 ## Z_virt Dimension-Ratio Path
 
 User-confirmed physical interpretation:
