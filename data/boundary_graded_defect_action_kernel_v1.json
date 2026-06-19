@@ -1,0 +1,634 @@
+{
+  "id": "PO-BH-boundary-graded-defect-action-kernel-v1",
+  "title": "Boundary Graded Defect Action Kernel v1",
+  "public_status": "structural architecture integrated conditional; numerical closure open",
+  "frozen_predictions_changed": false,
+  "official_predictions_changed": false,
+  "uses_empirical_derivation_inputs": false,
+  "forbidden_derivation_inputs": [
+    "observed charged-lepton masses",
+    "observed quark masses",
+    "observed CKM values",
+    "observed PMNS values",
+    "observed neutrino mass splittings",
+    "measured fine-structure alpha",
+    "empirical target ratios",
+    "post-comparison branch selection"
+  ],
+  "kernels": [
+    {
+      "sector": "neutrino",
+      "label": {
+        "sector": "neutrino",
+        "C": 0,
+        "sigma": 1
+      },
+      "projectors": {
+        "C": 0,
+        "sigma": 1,
+        "P_C": "0",
+        "P_plus": "1",
+        "P_minus": "0",
+        "P_d_overlap": "0",
+        "P_nu": "1",
+        "P_l": "0",
+        "P_u": "0",
+        "P_d_sector": "0"
+      },
+      "D_C": {
+        "name": "D_C",
+        "activator": "0",
+        "rank_readout": "1",
+        "orientation_readout": "-1",
+        "hopf_multiplier": null,
+        "role": "colored-channel contact defect: quark target doubling and q-orientation flip",
+        "status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL"
+      },
+      "D_d": {
+        "name": "D_d",
+        "activator": "0",
+        "rank_readout": "1",
+        "orientation_readout": null,
+        "hopf_multiplier": "1",
+        "role": "color-lower overlap contact defect: down-sector target and Hopf/base multiplier",
+        "status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL"
+      },
+      "Gamma_sigma": {
+        "name": "Gamma_sigma",
+        "activator": 1,
+        "rank_readout": "1",
+        "orientation_readout": "-1",
+        "hopf_multiplier": "-1",
+        "role": "weak-orientation grading: Hopf sign and leptonic target sign split",
+        "status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL"
+      },
+      "Gamma_T_tau": "-1",
+      "incidence_module": {
+        "sector": "neutrino",
+        "rank_E3": "3",
+        "rank_EC": "1",
+        "rank_Ed": "1",
+        "A": "3",
+        "factorization": "E_A(C,sigma)=E3 tensor E_C(C) tensor E_d(C,sigma)",
+        "status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL"
+      },
+      "omega_expression": "-q - 2j",
+      "sector_equation": "-q - 2j = -3, equivalently q + 2j = 3",
+      "T": "-3",
+      "ledger": [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "tangent": [
+        -2,
+        1
+      ],
+      "status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL"
+    },
+    {
+      "sector": "lepton",
+      "label": {
+        "sector": "lepton",
+        "C": 0,
+        "sigma": -1
+      },
+      "projectors": {
+        "C": 0,
+        "sigma": -1,
+        "P_C": "0",
+        "P_plus": "0",
+        "P_minus": "1",
+        "P_d_overlap": "0",
+        "P_nu": "0",
+        "P_l": "1",
+        "P_u": "0",
+        "P_d_sector": "0"
+      },
+      "D_C": {
+        "name": "D_C",
+        "activator": "0",
+        "rank_readout": "1",
+        "orientation_readout": "-1",
+        "hopf_multiplier": null,
+        "role": "colored-channel contact defect: quark target doubling and q-orientation flip",
+        "status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL"
+      },
+      "D_d": {
+        "name": "D_d",
+        "activator": "0",
+        "rank_readout": "1",
+        "orientation_readout": null,
+        "hopf_multiplier": "1",
+        "role": "color-lower overlap contact defect: down-sector target and Hopf/base multiplier",
+        "status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL"
+      },
+      "Gamma_sigma": {
+        "name": "Gamma_sigma",
+        "activator": -1,
+        "rank_readout": "1",
+        "orientation_readout": "1",
+        "hopf_multiplier": "1",
+        "role": "weak-orientation grading: Hopf sign and leptonic target sign split",
+        "status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL"
+      },
+      "Gamma_T_tau": "1",
+      "incidence_module": {
+        "sector": "lepton",
+        "rank_E3": "3",
+        "rank_EC": "1",
+        "rank_Ed": "1",
+        "A": "3",
+        "factorization": "E_A(C,sigma)=E3 tensor E_C(C) tensor E_d(C,sigma)",
+        "status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL"
+      },
+      "omega_expression": "-q + 2j",
+      "sector_equation": "-q + 2j = 3",
+      "T": "3",
+      "ledger": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "tangent": [
+        2,
+        1
+      ],
+      "status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL"
+    },
+    {
+      "sector": "up",
+      "label": {
+        "sector": "up",
+        "C": 1,
+        "sigma": 1
+      },
+      "projectors": {
+        "C": 1,
+        "sigma": 1,
+        "P_C": "1",
+        "P_plus": "1",
+        "P_minus": "0",
+        "P_d_overlap": "0",
+        "P_nu": "0",
+        "P_l": "0",
+        "P_u": "1",
+        "P_d_sector": "0"
+      },
+      "D_C": {
+        "name": "D_C",
+        "activator": "1",
+        "rank_readout": "2",
+        "orientation_readout": "1",
+        "hopf_multiplier": null,
+        "role": "colored-channel contact defect: quark target doubling and q-orientation flip",
+        "status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL"
+      },
+      "D_d": {
+        "name": "D_d",
+        "activator": "0",
+        "rank_readout": "1",
+        "orientation_readout": null,
+        "hopf_multiplier": "1",
+        "role": "color-lower overlap contact defect: down-sector target and Hopf/base multiplier",
+        "status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL"
+      },
+      "Gamma_sigma": {
+        "name": "Gamma_sigma",
+        "activator": 1,
+        "rank_readout": "1",
+        "orientation_readout": "-1",
+        "hopf_multiplier": "-1",
+        "role": "weak-orientation grading: Hopf sign and leptonic target sign split",
+        "status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL"
+      },
+      "Gamma_T_tau": "1",
+      "incidence_module": {
+        "sector": "up",
+        "rank_E3": "3",
+        "rank_EC": "2",
+        "rank_Ed": "1",
+        "A": "6",
+        "factorization": "E_A(C,sigma)=E3 tensor E_C(C) tensor E_d(C,sigma)",
+        "status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL"
+      },
+      "omega_expression": "q - 2j",
+      "sector_equation": "q - 2j = 6",
+      "T": "6",
+      "ledger": [
+        [
+          0,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          8,
+          1
+        ]
+      ],
+      "tangent": [
+        2,
+        1
+      ],
+      "status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL"
+    },
+    {
+      "sector": "down",
+      "label": {
+        "sector": "down",
+        "C": 1,
+        "sigma": -1
+      },
+      "projectors": {
+        "C": 1,
+        "sigma": -1,
+        "P_C": "1",
+        "P_plus": "0",
+        "P_minus": "1",
+        "P_d_overlap": "1",
+        "P_nu": "0",
+        "P_l": "0",
+        "P_u": "0",
+        "P_d_sector": "1"
+      },
+      "D_C": {
+        "name": "D_C",
+        "activator": "1",
+        "rank_readout": "2",
+        "orientation_readout": "1",
+        "hopf_multiplier": null,
+        "role": "colored-channel contact defect: quark target doubling and q-orientation flip",
+        "status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL"
+      },
+      "D_d": {
+        "name": "D_d",
+        "activator": "1",
+        "rank_readout": "2",
+        "orientation_readout": null,
+        "hopf_multiplier": "2",
+        "role": "color-lower overlap contact defect: down-sector target and Hopf/base multiplier",
+        "status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL"
+      },
+      "Gamma_sigma": {
+        "name": "Gamma_sigma",
+        "activator": -1,
+        "rank_readout": "1",
+        "orientation_readout": "1",
+        "hopf_multiplier": "1",
+        "role": "weak-orientation grading: Hopf sign and leptonic target sign split",
+        "status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL"
+      },
+      "Gamma_T_tau": "1",
+      "incidence_module": {
+        "sector": "down",
+        "rank_E3": "3",
+        "rank_EC": "2",
+        "rank_Ed": "2",
+        "A": "12",
+        "factorization": "E_A(C,sigma)=E3 tensor E_C(C) tensor E_d(C,sigma)",
+        "status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL"
+      },
+      "omega_expression": "q + 4j",
+      "sector_equation": "q + 4j = 12",
+      "T": "12",
+      "ledger": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "tangent": [
+        4,
+        -1
+      ],
+      "status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL"
+    }
+  ],
+  "ledgers": {
+    "neutrino": [
+      [
+        0,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "lepton": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    "up": [
+      [
+        0,
+        0
+      ],
+      [
+        6,
+        0
+      ],
+      [
+        8,
+        1
+      ]
+    ],
+    "down": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        4,
+        2
+      ]
+    ]
+  },
+  "tangents": {
+    "neutrino": [
+      -2,
+      1
+    ],
+    "lepton": [
+      2,
+      1
+    ],
+    "up": [
+      2,
+      1
+    ],
+    "down": [
+      4,
+      -1
+    ]
+  },
+  "statuses": {
+    "Boundary_Graded_Defect_Action_Kernel_v1": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL",
+    "Boundary_Graded_Defect_Theorem": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL",
+    "D_C_colored_contact_defect": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL",
+    "D_d_color_lower_overlap_contact_defect": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL",
+    "Gamma_sigma_weak_orientation_grading": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL",
+    "Gamma_T_target_orientation_trace": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL",
+    "E3_universal_rank_three_closure": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL",
+    "EA_incidence_module_factorization": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL",
+    "Delta_IT_index_trace_defect": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL",
+    "S_index_trace_constraint": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL",
+    "unified_Omega_projector_formula": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL",
+    "sector_target_incidence_product_A": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL",
+    "orientation_trace_Gamma_T": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL",
+    "zero_defect_tangent_adjacency": "DERIVED_CONDITIONAL_ON_SECTOR_ENGINE",
+    "charged_Hessian_from_S_index_trace": "INVALIDATED_DO_NOT_CLAIM",
+    "B_supp_universal_suppression_operator": "OPEN_LOCALIZABLE",
+    "g_ch_phase_normalized_coupling": "STRONGLY_SUPPORTED_CANDIDATE",
+    "rho_ch_exact_value": "OPEN_LOCALIZABLE",
+    "full_threshold_operator": "OPEN",
+    "RG_transport": "OPEN",
+    "numerical_closure": "OPEN"
+  },
+  "status_records": [
+    {
+      "claim_id": "Boundary_Graded_Defect_Action_Kernel_v1",
+      "status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL",
+      "evidence_summary": "Encoded in boundary_graded_defect_action_kernel.py",
+      "blocking_missing_source": "Full boundary action derivation remains required before stronger claims."
+    },
+    {
+      "claim_id": "Boundary_Graded_Defect_Theorem",
+      "status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL",
+      "evidence_summary": "Encoded in boundary_graded_defect_action_kernel.py",
+      "blocking_missing_source": "Full boundary action derivation remains required before stronger claims."
+    },
+    {
+      "claim_id": "D_C_colored_contact_defect",
+      "status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL",
+      "evidence_summary": "Encoded in boundary_graded_defect_action_kernel.py",
+      "blocking_missing_source": "Full boundary action derivation remains required before stronger claims."
+    },
+    {
+      "claim_id": "D_d_color_lower_overlap_contact_defect",
+      "status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL",
+      "evidence_summary": "Encoded in boundary_graded_defect_action_kernel.py",
+      "blocking_missing_source": "Full boundary action derivation remains required before stronger claims."
+    },
+    {
+      "claim_id": "Gamma_sigma_weak_orientation_grading",
+      "status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL",
+      "evidence_summary": "Encoded in boundary_graded_defect_action_kernel.py",
+      "blocking_missing_source": "Full boundary action derivation remains required before stronger claims."
+    },
+    {
+      "claim_id": "Gamma_T_target_orientation_trace",
+      "status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL",
+      "evidence_summary": "Encoded in boundary_graded_defect_action_kernel.py",
+      "blocking_missing_source": "Full boundary action derivation remains required before stronger claims."
+    },
+    {
+      "claim_id": "E3_universal_rank_three_closure",
+      "status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL",
+      "evidence_summary": "Encoded in boundary_graded_defect_action_kernel.py",
+      "blocking_missing_source": "Full boundary action derivation remains required before stronger claims."
+    },
+    {
+      "claim_id": "EA_incidence_module_factorization",
+      "status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL",
+      "evidence_summary": "Encoded in boundary_graded_defect_action_kernel.py",
+      "blocking_missing_source": "Full boundary action derivation remains required before stronger claims."
+    },
+    {
+      "claim_id": "Delta_IT_index_trace_defect",
+      "status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL",
+      "evidence_summary": "Encoded in boundary_graded_defect_action_kernel.py",
+      "blocking_missing_source": "Full boundary action derivation remains required before stronger claims."
+    },
+    {
+      "claim_id": "S_index_trace_constraint",
+      "status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL",
+      "evidence_summary": "Encoded in boundary_graded_defect_action_kernel.py",
+      "blocking_missing_source": "Full boundary action derivation remains required before stronger claims."
+    },
+    {
+      "claim_id": "unified_Omega_projector_formula",
+      "status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL",
+      "evidence_summary": "Encoded in boundary_graded_defect_action_kernel.py",
+      "blocking_missing_source": "Full boundary action derivation remains required before stronger claims."
+    },
+    {
+      "claim_id": "sector_target_incidence_product_A",
+      "status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL",
+      "evidence_summary": "Encoded in boundary_graded_defect_action_kernel.py",
+      "blocking_missing_source": "Full boundary action derivation remains required before stronger claims."
+    },
+    {
+      "claim_id": "orientation_trace_Gamma_T",
+      "status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL",
+      "evidence_summary": "Encoded in boundary_graded_defect_action_kernel.py",
+      "blocking_missing_source": "Full boundary action derivation remains required before stronger claims."
+    },
+    {
+      "claim_id": "zero_defect_tangent_adjacency",
+      "status": "DERIVED_CONDITIONAL_ON_SECTOR_ENGINE",
+      "evidence_summary": "Encoded in boundary_graded_defect_action_kernel.py",
+      "blocking_missing_source": "Full boundary action derivation remains required before stronger claims."
+    },
+    {
+      "claim_id": "charged_Hessian_from_S_index_trace",
+      "status": "INVALIDATED_DO_NOT_CLAIM",
+      "evidence_summary": "Guardrail/open status preserved by the kernel scaffold.",
+      "blocking_missing_source": "S_index_trace is rank-one and has cross terms; it is a constraint, not N_ch."
+    },
+    {
+      "claim_id": "B_supp_universal_suppression_operator",
+      "status": "OPEN_LOCALIZABLE",
+      "evidence_summary": "Guardrail/open status preserved by the kernel scaffold.",
+      "blocking_missing_source": "B_supp action source remains outside this kernel."
+    },
+    {
+      "claim_id": "g_ch_phase_normalized_coupling",
+      "status": "STRONGLY_SUPPORTED_CANDIDATE",
+      "evidence_summary": "Guardrail/open status preserved by the kernel scaffold.",
+      "blocking_missing_source": "Phase-response normalization remains outside this kernel."
+    },
+    {
+      "claim_id": "rho_ch_exact_value",
+      "status": "OPEN_LOCALIZABLE",
+      "evidence_summary": "Guardrail/open status preserved by the kernel scaffold.",
+      "blocking_missing_source": "rho_ch stiffness selection remains outside this kernel."
+    },
+    {
+      "claim_id": "full_threshold_operator",
+      "status": "OPEN",
+      "evidence_summary": "Guardrail/open status preserved by the kernel scaffold.",
+      "blocking_missing_source": "Full virtual loop/threshold operator remains outside this kernel."
+    },
+    {
+      "claim_id": "RG_transport",
+      "status": "OPEN",
+      "evidence_summary": "Guardrail/open status preserved by the kernel scaffold.",
+      "blocking_missing_source": "RG/scheme transport remains outside this kernel."
+    },
+    {
+      "claim_id": "numerical_closure",
+      "status": "OPEN",
+      "evidence_summary": "Guardrail/open status preserved by the kernel scaffold.",
+      "blocking_missing_source": "Numerical closure remains outside this kernel."
+    }
+  ],
+  "s_index_trace_hessian_diagnostics": {
+    "neutrino": {
+      "hessian": [
+        [
+          "2",
+          "4"
+        ],
+        [
+          "4",
+          "8"
+        ]
+      ],
+      "determinant": "0",
+      "rank": 1,
+      "has_cross_term": true,
+      "charged_Hessian_from_S_index_trace": "INVALIDATED_DO_NOT_CLAIM",
+      "reason": "The Hessian of (Omega-T)^2 is rank-one and generally has qj cross terms; it selects admissible modes but is not the charged hierarchy Hessian."
+    },
+    "lepton": {
+      "hessian": [
+        [
+          "2",
+          "-4"
+        ],
+        [
+          "-4",
+          "8"
+        ]
+      ],
+      "determinant": "0",
+      "rank": 1,
+      "has_cross_term": true,
+      "charged_Hessian_from_S_index_trace": "INVALIDATED_DO_NOT_CLAIM",
+      "reason": "The Hessian of (Omega-T)^2 is rank-one and generally has qj cross terms; it selects admissible modes but is not the charged hierarchy Hessian."
+    },
+    "up": {
+      "hessian": [
+        [
+          "2",
+          "-4"
+        ],
+        [
+          "-4",
+          "8"
+        ]
+      ],
+      "determinant": "0",
+      "rank": 1,
+      "has_cross_term": true,
+      "charged_Hessian_from_S_index_trace": "INVALIDATED_DO_NOT_CLAIM",
+      "reason": "The Hessian of (Omega-T)^2 is rank-one and generally has qj cross terms; it selects admissible modes but is not the charged hierarchy Hessian."
+    },
+    "down": {
+      "hessian": [
+        [
+          "2",
+          "8"
+        ],
+        [
+          "8",
+          "32"
+        ]
+      ],
+      "determinant": "0",
+      "rank": 1,
+      "has_cross_term": true,
+      "charged_Hessian_from_S_index_trace": "INVALIDATED_DO_NOT_CLAIM",
+      "reason": "The Hessian of (Omega-T)^2 is rank-one and generally has qj cross terms; it selects admissible modes but is not the charged hierarchy Hessian."
+    }
+  },
+  "claim_boundary": "The sector action kernel is now explicit as a conditional scaffold; S_index_trace selects admissible modes only, charged Hessian and numerical closure remain open."
+}
