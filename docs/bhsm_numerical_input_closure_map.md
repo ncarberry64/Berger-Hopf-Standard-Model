@@ -304,6 +304,8 @@ PO-BH-63 audits existing BHSM structures for sources of scalar/topographic bound
 
 PO-BH-64 records a finite sector projector compression and charged Hessian fork audit. The unified `Omega(C,sigma)` projector formula and target-amplitude formula are documented as structural candidates, not fully action-derived claims. The charged Hessian cost is forked to `N_ch(q,j)=q^2+rho_ch j^2`, with old exact costs conditional on `rho_ch=1` and cyclic-anisotropy candidate costs conditional on `rho_ch=3`. The `8/9` eta route is downgraded, the eta projection/self-screening route is documented as candidate-only, and `Z_virt^{u,2}=1/2` is strengthened as a dimension-ratio candidate. No frozen or official prediction is changed.
 
+PO-BH-65 audits existing BHSM charged-Hessian sources for the localizable anisotropy `rho_ch`. The minimal diagonal route `rho_ch=1` remains a `MINIMAL_ACTION_CLOSURE_CANDIDATE`, while the cyclic-base route `rho_ch=3` remains `STRUCTURALLY_MOTIVATED_NOT_DERIVED`. No charged action/Hessian source currently decides `rho_ch`, so `rho_ch_action_value` and `charged_Hessian_anisotropy_rho_ch` remain `OPEN_LOCALIZABLE`. Charged `qj` cross-terms are forbidden unless action-derived; neutral/topographic `qj` mixing remains open but cannot leak into the charged Hessian without an explicit charged coupling. The exact `eta_l` value remains open because it depends on the unresolved `rho_ch`. No mass, CKM, PMNS, neutrino, measured-alpha, or target-value input is used to choose `rho_ch`.
+
 PO-BH-54 localizes the normal-coupling/collar convention for the neutral
 boundary term:
 

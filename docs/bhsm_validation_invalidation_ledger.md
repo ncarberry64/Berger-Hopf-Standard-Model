@@ -23,8 +23,10 @@ Current public status: structural architecture integrated conditional; numerical
 ## Still Open
 
 - `rho_ch`;
+- action source for charged Hessian;
 - `Pi_l`;
 - `alpha_geom`;
+- `eta_l` exact value;
 - action derivation of target amplitude;
 - action derivation of rank-three ladder;
 - action derivation of down extra incidence;
@@ -39,3 +41,19 @@ Current public status: structural architecture integrated conditional; numerical
 PO-BH-64 strengthens the structural projector and Hessian-fork audit while
 keeping numerical closure open. It changes no frozen predictions and makes no
 official prediction update.
+
+## PO-BH-65 Update
+
+Validated:
+
+- charged qj cross-term remains absent;
+- charged/neutral Hessian split remains valid;
+- `rho=1` remains the minimal closure candidate;
+- `rho=3` remains possible only if a cyclic j-weight source is later derived.
+
+Invalidated or downgraded:
+
+- claiming `rho=3` is derived merely because 3 is the base cyclic factor;
+- claiming `rho=1` is derived merely because old costs used `q^2+j^2`;
+- finalizing `eta_l` before `rho_ch` is derived;
+- using neutral/topographic anisotropy as charged-sector anisotropy without explicit coupling.

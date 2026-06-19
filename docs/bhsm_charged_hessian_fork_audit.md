@@ -113,3 +113,23 @@ charged_Hessian_anisotropy_rho_ch: OPEN_LOCALIZABLE
 The action must decide whether `rho_ch=1`, `rho_ch=3`, or another value is
 derived. Do not choose `rho_ch` by fitting masses, CKM, PMNS, neutrino data,
 or observed generation data.
+
+## PO-BH-65 Source Audit Update
+
+PO-BH-65 audits existing charged Hessian sources and finds no charged-sector
+action/Hessian term that decides `rho_ch`. Therefore:
+
+```text
+rho_ch_1_minimal_closure: MINIMAL_ACTION_CLOSURE_CANDIDATE
+rho_ch_3_cyclic_weight: STRUCTURALLY_MOTIVATED_NOT_DERIVED
+rho_ch_action_value: OPEN_LOCALIZABLE
+charged_Hessian_anisotropy_rho_ch: OPEN_LOCALIZABLE
+```
+
+The charged qj cross-term remains forbidden unless action-derived:
+
+```text
+charged_qj_cross_term: FORBIDDEN_CONDITIONAL_UNLESS_ACTION_DERIVED
+neutral_qj_mixing: OPEN_ALLOWED
+topographic_Berger_anisotropy_to_charged_sector: FORBIDDEN_UNLESS_EXPLICIT_COUPLING_DERIVED
+```

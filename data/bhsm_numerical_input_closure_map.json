@@ -2,7 +2,7 @@
   "id": "PO-BH-47",
   "title": "Numerical Input Closure Map Theorem",
   "status": "STRUCTURAL_ARCHITECTURE_INTEGRATED_CONDITIONAL_NUMERICAL_CLOSURE_OPEN",
-  "branch": "bhsm-sector-projector-hessian-fork-audit-v1",
+  "branch": "bhsm-charged-hessian-source-audit-v1",
   "official_predictions_changed": false,
   "frozen_predictions_changed": false,
   "standard_model_fully_derived": false,
@@ -37,7 +37,11 @@
     "STRUCTURALLY_SUPPORTED_CANDIDATE",
     "OPEN",
     "FORBIDDEN_AS_DERIVATION",
-    "STRONG_DERIVATION_CANDIDATE"
+    "STRONG_DERIVATION_CANDIDATE",
+    "FORBIDDEN_CONDITIONAL_UNLESS_ACTION_DERIVED",
+    "FORBIDDEN_UNLESS_EXPLICIT_COUPLING_DERIVED",
+    "MINIMAL_ACTION_CLOSURE_CANDIDATE",
+    "TRUE"
   ],
   "ledgers": {
     "charged_lepton": [
@@ -6322,34 +6326,30 @@
       "id": "charged_Hessian_anisotropy_rho_ch",
       "name": "charged Hessian anisotropy rho ch",
       "symbol": "charged_Hessian_anisotropy_rho_ch",
-      "sector": "sector_projector_hessian_fork",
+      "sector": "charged_hessian_source_audit",
       "status": "OPEN_LOCALIZABLE",
-      "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+      "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
       "derived_numerical_value": false,
       "pre_comparison_locked": false,
-      "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+      "derivation_source": "PO-BH-65 charged Hessian source audit",
       "depends_on": [
-        "bhsm_sector_projector_hessian_fork_audit"
+        "bhsm_charged_hessian_source_audit"
       ],
       "forbidden_inputs": [
-        "observed masses",
-        "charged lepton masses",
+        "charged-lepton masses",
         "quark masses",
+        "observed mass ratios",
         "CKM values",
         "PMNS values",
         "neutrino data",
         "measured alpha",
-        "CODATA alpha",
-        "observed generation data",
-        "anomaly/FTL data",
-        "propulsion/anomaly data",
-        "target values"
+        "empirical target values"
       ],
-      "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+      "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
       "tests": [
-        "tests/test_sector_projector_hessian_fork_audit.py"
+        "tests/test_charged_hessian_source_audit.py"
       ],
-      "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+      "next_action": "derive rho_ch and charged Hessian source from action before comparison",
       "fit_policy": "FORBIDDEN_TO_FIT"
     },
     {
@@ -6499,7 +6499,8 @@
       "pre_comparison_locked": false,
       "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
       "depends_on": [
-        "bhsm_sector_projector_hessian_fork_audit"
+        "bhsm_sector_projector_hessian_fork_audit",
+        "charged_Hessian_source_audit"
       ],
       "forbidden_inputs": [
         "observed masses",
@@ -6517,6 +6518,7 @@
       ],
       "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
       "tests": [
+        "tests/test_charged_hessian_source_audit.py",
         "tests/test_sector_projector_hessian_fork_audit.py"
       ],
       "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
@@ -6533,7 +6535,8 @@
       "pre_comparison_locked": false,
       "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
       "depends_on": [
-        "bhsm_sector_projector_hessian_fork_audit"
+        "bhsm_sector_projector_hessian_fork_audit",
+        "charged_Hessian_source_audit"
       ],
       "forbidden_inputs": [
         "observed masses",
@@ -6551,6 +6554,7 @@
       ],
       "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
       "tests": [
+        "tests/test_charged_hessian_source_audit.py",
         "tests/test_sector_projector_hessian_fork_audit.py"
       ],
       "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
@@ -6567,7 +6571,8 @@
       "pre_comparison_locked": false,
       "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
       "depends_on": [
-        "bhsm_sector_projector_hessian_fork_audit"
+        "bhsm_sector_projector_hessian_fork_audit",
+        "charged_Hessian_source_audit"
       ],
       "forbidden_inputs": [
         "observed masses",
@@ -6585,6 +6590,7 @@
       ],
       "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
       "tests": [
+        "tests/test_charged_hessian_source_audit.py",
         "tests/test_sector_projector_hessian_fork_audit.py"
       ],
       "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
@@ -6601,7 +6607,8 @@
       "pre_comparison_locked": false,
       "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
       "depends_on": [
-        "bhsm_sector_projector_hessian_fork_audit"
+        "bhsm_sector_projector_hessian_fork_audit",
+        "charged_Hessian_source_audit"
       ],
       "forbidden_inputs": [
         "observed masses",
@@ -6619,6 +6626,7 @@
       ],
       "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
       "tests": [
+        "tests/test_charged_hessian_source_audit.py",
         "tests/test_sector_projector_hessian_fork_audit.py"
       ],
       "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
@@ -6669,7 +6677,8 @@
       "pre_comparison_locked": false,
       "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
       "depends_on": [
-        "bhsm_sector_projector_hessian_fork_audit"
+        "bhsm_sector_projector_hessian_fork_audit",
+        "charged_Hessian_source_audit"
       ],
       "forbidden_inputs": [
         "observed masses",
@@ -6687,6 +6696,7 @@
       ],
       "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
       "tests": [
+        "tests/test_charged_hessian_source_audit.py",
         "tests/test_sector_projector_hessian_fork_audit.py"
       ],
       "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
@@ -6703,7 +6713,8 @@
       "pre_comparison_locked": false,
       "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
       "depends_on": [
-        "bhsm_sector_projector_hessian_fork_audit"
+        "bhsm_sector_projector_hessian_fork_audit",
+        "charged_Hessian_source_audit"
       ],
       "forbidden_inputs": [
         "observed masses",
@@ -6721,6 +6732,7 @@
       ],
       "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
       "tests": [
+        "tests/test_charged_hessian_source_audit.py",
         "tests/test_sector_projector_hessian_fork_audit.py"
       ],
       "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
@@ -6824,6 +6836,300 @@
         "propulsion/anomaly data",
         "target values"
       ]
+    },
+    {
+      "id": "charged_Hessian_source_audit",
+      "name": "charged Hessian source audit",
+      "symbol": "charged_Hessian_source_audit",
+      "sector": "charged_hessian_source_audit",
+      "status": "COMPLETED",
+      "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-65 charged Hessian source audit",
+      "depends_on": [
+        "bhsm_charged_hessian_source_audit"
+      ],
+      "forbidden_inputs": [
+        "charged-lepton masses",
+        "quark masses",
+        "observed mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "empirical target values"
+      ],
+      "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_charged_hessian_source_audit.py"
+      ],
+      "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "rho_ch_1_minimal_closure",
+      "name": "rho ch 1 minimal closure",
+      "symbol": "rho_ch_1_minimal_closure",
+      "sector": "charged_hessian_source_audit",
+      "status": "MINIMAL_ACTION_CLOSURE_CANDIDATE",
+      "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-65 charged Hessian source audit",
+      "depends_on": [
+        "bhsm_charged_hessian_source_audit"
+      ],
+      "forbidden_inputs": [
+        "charged-lepton masses",
+        "quark masses",
+        "observed mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "empirical target values"
+      ],
+      "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_charged_hessian_source_audit.py"
+      ],
+      "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "rho_ch_3_cyclic_weight",
+      "name": "rho ch 3 cyclic weight",
+      "symbol": "rho_ch_3_cyclic_weight",
+      "sector": "charged_hessian_source_audit",
+      "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+      "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-65 charged Hessian source audit",
+      "depends_on": [
+        "bhsm_charged_hessian_source_audit"
+      ],
+      "forbidden_inputs": [
+        "charged-lepton masses",
+        "quark masses",
+        "observed mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "empirical target values"
+      ],
+      "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_charged_hessian_source_audit.py"
+      ],
+      "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "rho_ch_action_value",
+      "name": "rho ch action value",
+      "symbol": "rho_ch_action_value",
+      "sector": "charged_hessian_source_audit",
+      "status": "OPEN_LOCALIZABLE",
+      "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-65 charged Hessian source audit",
+      "depends_on": [
+        "bhsm_charged_hessian_source_audit"
+      ],
+      "forbidden_inputs": [
+        "charged-lepton masses",
+        "quark masses",
+        "observed mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "empirical target values"
+      ],
+      "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_charged_hessian_source_audit.py"
+      ],
+      "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "charged_qj_cross_term",
+      "name": "charged qj cross term",
+      "symbol": "charged_qj_cross_term",
+      "sector": "charged_hessian_source_audit",
+      "status": "FORBIDDEN_CONDITIONAL_UNLESS_ACTION_DERIVED",
+      "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-65 charged Hessian source audit",
+      "depends_on": [
+        "bhsm_charged_hessian_source_audit"
+      ],
+      "forbidden_inputs": [
+        "charged-lepton masses",
+        "quark masses",
+        "observed mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "empirical target values"
+      ],
+      "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_charged_hessian_source_audit.py"
+      ],
+      "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "neutral_qj_mixing",
+      "name": "neutral qj mixing",
+      "symbol": "neutral_qj_mixing",
+      "sector": "charged_hessian_source_audit",
+      "status": "OPEN_ALLOWED",
+      "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-65 charged Hessian source audit",
+      "depends_on": [
+        "bhsm_charged_hessian_source_audit"
+      ],
+      "forbidden_inputs": [
+        "charged-lepton masses",
+        "quark masses",
+        "observed mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "empirical target values"
+      ],
+      "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_charged_hessian_source_audit.py"
+      ],
+      "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "topographic_Berger_anisotropy_to_charged_sector",
+      "name": "topographic Berger anisotropy to charged sector",
+      "symbol": "topographic_Berger_anisotropy_to_charged_sector",
+      "sector": "charged_hessian_source_audit",
+      "status": "FORBIDDEN_UNLESS_EXPLICIT_COUPLING_DERIVED",
+      "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-65 charged Hessian source audit",
+      "depends_on": [
+        "bhsm_charged_hessian_source_audit"
+      ],
+      "forbidden_inputs": [
+        "charged-lepton masses",
+        "quark masses",
+        "observed mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "empirical target values"
+      ],
+      "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_charged_hessian_source_audit.py"
+      ],
+      "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "eta_l_depends_on_rho_ch",
+      "name": "eta l depends on rho ch",
+      "symbol": "eta_l_depends_on_rho_ch",
+      "sector": "charged_hessian_source_audit",
+      "status": "TRUE",
+      "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-65 charged Hessian source audit",
+      "depends_on": [
+        "bhsm_charged_hessian_source_audit"
+      ],
+      "forbidden_inputs": [
+        "charged-lepton masses",
+        "quark masses",
+        "observed mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "empirical target values"
+      ],
+      "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_charged_hessian_source_audit.py"
+      ],
+      "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "self_screening_factor_1_minus_alpha_geom",
+      "name": "self screening factor 1 minus alpha geom",
+      "symbol": "self_screening_factor_1_minus_alpha_geom",
+      "sector": "charged_hessian_source_audit",
+      "status": "STRUCTURALLY_SUPPORTED_CANDIDATE",
+      "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+      "derived_numerical_value": false,
+      "pre_comparison_locked": false,
+      "derivation_source": "PO-BH-65 charged Hessian source audit",
+      "depends_on": [
+        "bhsm_charged_hessian_source_audit"
+      ],
+      "forbidden_inputs": [
+        "charged-lepton masses",
+        "quark masses",
+        "observed mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "empirical target values"
+      ],
+      "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+      "tests": [
+        "tests/test_charged_hessian_source_audit.py"
+      ],
+      "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+      "fit_policy": "FORBIDDEN_TO_FIT"
+    },
+    {
+      "id": "bhsm_charged_hessian_source_audit",
+      "name": "PO-BH-65 charged Hessian source audit",
+      "sector": "charged_hessian_source_audit",
+      "status": "COMPLETED",
+      "public_status": "structural architecture integrated conditional; numerical closure open",
+      "frozen_predictions_changed": false,
+      "official_predictions_changed": false,
+      "fit_policy": "FORBIDDEN_TO_FIT",
+      "forbidden_inputs": [
+        "charged-lepton masses",
+        "quark masses",
+        "observed mass ratios",
+        "CKM values",
+        "PMNS values",
+        "neutrino data",
+        "measured alpha",
+        "empirical target values"
+      ],
+      "tests": [
+        "tests/test_charged_hessian_source_audit.py"
+      ],
+      "claim_boundary": "No action source decides rho_ch; no numerical closure or prediction update."
     }
   ],
   "open_numerical_inputs": [
@@ -6946,7 +7252,9 @@
     "fit boundary-condition coefficient values, coefficient ratios, source terms, T_0, Phi_0, profile solutions, S_nu_topo, or epsilon_nu_topo after comparison",
     "fit rho_ch from charged lepton masses, quark masses, CKM, PMNS, neutrino data, measured alpha, observed generation data, or target values",
     "use measured alpha or CODATA alpha as an eta_l derivation",
-    "fit Pi_l or alpha_geom after comparison"
+    "fit Pi_l or alpha_geom after comparison",
+    "fit rho_ch from charged-lepton masses, quark masses, observed mass ratios, CKM, PMNS, neutrino data, measured alpha, or target values",
+    "finalize eta_l before rho_ch is derived"
   ],
   "claim_status_table": [
     {
@@ -7110,7 +7418,13 @@
     "ETA_L_8_OVER_9_DOWNGRADED",
     "ETA_L_PROJECTION_STRUCTURE_VALIDATED_CANDIDATE",
     "Z_VIRT_U2_DIMENSION_RATIO_STRONG_CANDIDATE",
-    "DOWN_EXTRA_BOUNDARY_INCIDENCE_STRONG_CANDIDATE"
+    "DOWN_EXTRA_BOUNDARY_INCIDENCE_STRONG_CANDIDATE",
+    "PO_BH_65_CHARGED_HESSIAN_SOURCE_AUDIT",
+    "RHO_CH_REMAINS_OPEN_LOCALIZABLE",
+    "RHO_1_MINIMAL_CLOSURE_CANDIDATE",
+    "RHO_3_STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+    "ETA_L_DEPENDS_ON_RHO_CH",
+    "CHARGED_QJ_CROSS_TERM_FORBIDDEN_UNLESS_ACTION_DERIVED"
   ],
   "collar_measure_extrinsic_geometry": {
     "id": "PO-BH-57",
@@ -10978,34 +11292,30 @@
     "id": "charged_Hessian_anisotropy_rho_ch",
     "name": "charged Hessian anisotropy rho ch",
     "symbol": "charged_Hessian_anisotropy_rho_ch",
-    "sector": "sector_projector_hessian_fork",
+    "sector": "charged_hessian_source_audit",
     "status": "OPEN_LOCALIZABLE",
-    "formula_candidate": "See docs/bhsm_sector_projector_ledger_theorem.md, docs/bhsm_charged_hessian_fork_audit.md, and docs/bhsm_eta_projection_no_overfit.md.",
+    "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
     "derived_numerical_value": false,
     "pre_comparison_locked": false,
-    "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
+    "derivation_source": "PO-BH-65 charged Hessian source audit",
     "depends_on": [
-      "bhsm_sector_projector_hessian_fork_audit"
+      "bhsm_charged_hessian_source_audit"
     ],
     "forbidden_inputs": [
-      "observed masses",
-      "charged lepton masses",
+      "charged-lepton masses",
       "quark masses",
+      "observed mass ratios",
       "CKM values",
       "PMNS values",
       "neutrino data",
       "measured alpha",
-      "CODATA alpha",
-      "observed generation data",
-      "anomaly/FTL data",
-      "propulsion/anomaly data",
-      "target values"
+      "empirical target values"
     ],
-    "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
+    "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
     "tests": [
-      "tests/test_sector_projector_hessian_fork_audit.py"
+      "tests/test_charged_hessian_source_audit.py"
     ],
-    "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
+    "next_action": "derive rho_ch and charged Hessian source from action before comparison",
     "fit_policy": "FORBIDDEN_TO_FIT"
   },
   "isotropic_metric_rho_1": {
@@ -11155,7 +11465,8 @@
     "pre_comparison_locked": false,
     "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
     "depends_on": [
-      "bhsm_sector_projector_hessian_fork_audit"
+      "bhsm_sector_projector_hessian_fork_audit",
+      "charged_Hessian_source_audit"
     ],
     "forbidden_inputs": [
       "observed masses",
@@ -11173,6 +11484,7 @@
     ],
     "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
     "tests": [
+      "tests/test_charged_hessian_source_audit.py",
       "tests/test_sector_projector_hessian_fork_audit.py"
     ],
     "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
@@ -11189,7 +11501,8 @@
     "pre_comparison_locked": false,
     "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
     "depends_on": [
-      "bhsm_sector_projector_hessian_fork_audit"
+      "bhsm_sector_projector_hessian_fork_audit",
+      "charged_Hessian_source_audit"
     ],
     "forbidden_inputs": [
       "observed masses",
@@ -11207,6 +11520,7 @@
     ],
     "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
     "tests": [
+      "tests/test_charged_hessian_source_audit.py",
       "tests/test_sector_projector_hessian_fork_audit.py"
     ],
     "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
@@ -11223,7 +11537,8 @@
     "pre_comparison_locked": false,
     "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
     "depends_on": [
-      "bhsm_sector_projector_hessian_fork_audit"
+      "bhsm_sector_projector_hessian_fork_audit",
+      "charged_Hessian_source_audit"
     ],
     "forbidden_inputs": [
       "observed masses",
@@ -11241,6 +11556,7 @@
     ],
     "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
     "tests": [
+      "tests/test_charged_hessian_source_audit.py",
       "tests/test_sector_projector_hessian_fork_audit.py"
     ],
     "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
@@ -11257,7 +11573,8 @@
     "pre_comparison_locked": false,
     "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
     "depends_on": [
-      "bhsm_sector_projector_hessian_fork_audit"
+      "bhsm_sector_projector_hessian_fork_audit",
+      "charged_Hessian_source_audit"
     ],
     "forbidden_inputs": [
       "observed masses",
@@ -11275,6 +11592,7 @@
     ],
     "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
     "tests": [
+      "tests/test_charged_hessian_source_audit.py",
       "tests/test_sector_projector_hessian_fork_audit.py"
     ],
     "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
@@ -11325,7 +11643,8 @@
     "pre_comparison_locked": false,
     "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
     "depends_on": [
-      "bhsm_sector_projector_hessian_fork_audit"
+      "bhsm_sector_projector_hessian_fork_audit",
+      "charged_Hessian_source_audit"
     ],
     "forbidden_inputs": [
       "observed masses",
@@ -11343,6 +11662,7 @@
     ],
     "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
     "tests": [
+      "tests/test_charged_hessian_source_audit.py",
       "tests/test_sector_projector_hessian_fork_audit.py"
     ],
     "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
@@ -11359,7 +11679,8 @@
     "pre_comparison_locked": false,
     "derivation_source": "PO-BH-64 finite sector projector ledger and charged Hessian fork audit",
     "depends_on": [
-      "bhsm_sector_projector_hessian_fork_audit"
+      "bhsm_sector_projector_hessian_fork_audit",
+      "charged_Hessian_source_audit"
     ],
     "forbidden_inputs": [
       "observed masses",
@@ -11377,6 +11698,7 @@
     ],
     "claim_boundary": "Structural/audit status only; no frozen or official predictions are changed.",
     "tests": [
+      "tests/test_charged_hessian_source_audit.py",
       "tests/test_sector_projector_hessian_fork_audit.py"
     ],
     "next_action": "derive remaining open values from BHSM action/projector algebra before comparison",
@@ -11480,5 +11802,299 @@
       "propulsion/anomaly data",
       "target values"
     ]
+  },
+  "charged_Hessian_source_audit": {
+    "id": "charged_Hessian_source_audit",
+    "name": "charged Hessian source audit",
+    "symbol": "charged_Hessian_source_audit",
+    "sector": "charged_hessian_source_audit",
+    "status": "COMPLETED",
+    "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-65 charged Hessian source audit",
+    "depends_on": [
+      "bhsm_charged_hessian_source_audit"
+    ],
+    "forbidden_inputs": [
+      "charged-lepton masses",
+      "quark masses",
+      "observed mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "empirical target values"
+    ],
+    "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_charged_hessian_source_audit.py"
+    ],
+    "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "rho_ch_1_minimal_closure": {
+    "id": "rho_ch_1_minimal_closure",
+    "name": "rho ch 1 minimal closure",
+    "symbol": "rho_ch_1_minimal_closure",
+    "sector": "charged_hessian_source_audit",
+    "status": "MINIMAL_ACTION_CLOSURE_CANDIDATE",
+    "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-65 charged Hessian source audit",
+    "depends_on": [
+      "bhsm_charged_hessian_source_audit"
+    ],
+    "forbidden_inputs": [
+      "charged-lepton masses",
+      "quark masses",
+      "observed mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "empirical target values"
+    ],
+    "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_charged_hessian_source_audit.py"
+    ],
+    "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "rho_ch_3_cyclic_weight": {
+    "id": "rho_ch_3_cyclic_weight",
+    "name": "rho ch 3 cyclic weight",
+    "symbol": "rho_ch_3_cyclic_weight",
+    "sector": "charged_hessian_source_audit",
+    "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+    "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-65 charged Hessian source audit",
+    "depends_on": [
+      "bhsm_charged_hessian_source_audit"
+    ],
+    "forbidden_inputs": [
+      "charged-lepton masses",
+      "quark masses",
+      "observed mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "empirical target values"
+    ],
+    "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_charged_hessian_source_audit.py"
+    ],
+    "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "rho_ch_action_value": {
+    "id": "rho_ch_action_value",
+    "name": "rho ch action value",
+    "symbol": "rho_ch_action_value",
+    "sector": "charged_hessian_source_audit",
+    "status": "OPEN_LOCALIZABLE",
+    "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-65 charged Hessian source audit",
+    "depends_on": [
+      "bhsm_charged_hessian_source_audit"
+    ],
+    "forbidden_inputs": [
+      "charged-lepton masses",
+      "quark masses",
+      "observed mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "empirical target values"
+    ],
+    "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_charged_hessian_source_audit.py"
+    ],
+    "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "charged_qj_cross_term": {
+    "id": "charged_qj_cross_term",
+    "name": "charged qj cross term",
+    "symbol": "charged_qj_cross_term",
+    "sector": "charged_hessian_source_audit",
+    "status": "FORBIDDEN_CONDITIONAL_UNLESS_ACTION_DERIVED",
+    "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-65 charged Hessian source audit",
+    "depends_on": [
+      "bhsm_charged_hessian_source_audit"
+    ],
+    "forbidden_inputs": [
+      "charged-lepton masses",
+      "quark masses",
+      "observed mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "empirical target values"
+    ],
+    "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_charged_hessian_source_audit.py"
+    ],
+    "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "neutral_qj_mixing": {
+    "id": "neutral_qj_mixing",
+    "name": "neutral qj mixing",
+    "symbol": "neutral_qj_mixing",
+    "sector": "charged_hessian_source_audit",
+    "status": "OPEN_ALLOWED",
+    "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-65 charged Hessian source audit",
+    "depends_on": [
+      "bhsm_charged_hessian_source_audit"
+    ],
+    "forbidden_inputs": [
+      "charged-lepton masses",
+      "quark masses",
+      "observed mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "empirical target values"
+    ],
+    "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_charged_hessian_source_audit.py"
+    ],
+    "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "topographic_Berger_anisotropy_to_charged_sector": {
+    "id": "topographic_Berger_anisotropy_to_charged_sector",
+    "name": "topographic Berger anisotropy to charged sector",
+    "symbol": "topographic_Berger_anisotropy_to_charged_sector",
+    "sector": "charged_hessian_source_audit",
+    "status": "FORBIDDEN_UNLESS_EXPLICIT_COUPLING_DERIVED",
+    "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-65 charged Hessian source audit",
+    "depends_on": [
+      "bhsm_charged_hessian_source_audit"
+    ],
+    "forbidden_inputs": [
+      "charged-lepton masses",
+      "quark masses",
+      "observed mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "empirical target values"
+    ],
+    "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_charged_hessian_source_audit.py"
+    ],
+    "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "eta_l_depends_on_rho_ch": {
+    "id": "eta_l_depends_on_rho_ch",
+    "name": "eta l depends on rho ch",
+    "symbol": "eta_l_depends_on_rho_ch",
+    "sector": "charged_hessian_source_audit",
+    "status": "TRUE",
+    "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-65 charged Hessian source audit",
+    "depends_on": [
+      "bhsm_charged_hessian_source_audit"
+    ],
+    "forbidden_inputs": [
+      "charged-lepton masses",
+      "quark masses",
+      "observed mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "empirical target values"
+    ],
+    "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_charged_hessian_source_audit.py"
+    ],
+    "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "self_screening_factor_1_minus_alpha_geom": {
+    "id": "self_screening_factor_1_minus_alpha_geom",
+    "name": "self screening factor 1 minus alpha geom",
+    "symbol": "self_screening_factor_1_minus_alpha_geom",
+    "sector": "charged_hessian_source_audit",
+    "status": "STRUCTURALLY_SUPPORTED_CANDIDATE",
+    "formula_candidate": "See docs/bhsm_charged_hessian_source_audit.md.",
+    "derived_numerical_value": false,
+    "pre_comparison_locked": false,
+    "derivation_source": "PO-BH-65 charged Hessian source audit",
+    "depends_on": [
+      "bhsm_charged_hessian_source_audit"
+    ],
+    "forbidden_inputs": [
+      "charged-lepton masses",
+      "quark masses",
+      "observed mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "empirical target values"
+    ],
+    "claim_boundary": "Audit/status entry only; no frozen or official predictions are changed.",
+    "tests": [
+      "tests/test_charged_hessian_source_audit.py"
+    ],
+    "next_action": "derive rho_ch and charged Hessian source from action before comparison",
+    "fit_policy": "FORBIDDEN_TO_FIT"
+  },
+  "bhsm_charged_hessian_source_audit": {
+    "id": "bhsm_charged_hessian_source_audit",
+    "name": "PO-BH-65 charged Hessian source audit",
+    "sector": "charged_hessian_source_audit",
+    "status": "COMPLETED",
+    "public_status": "structural architecture integrated conditional; numerical closure open",
+    "frozen_predictions_changed": false,
+    "official_predictions_changed": false,
+    "fit_policy": "FORBIDDEN_TO_FIT",
+    "forbidden_inputs": [
+      "charged-lepton masses",
+      "quark masses",
+      "observed mass ratios",
+      "CKM values",
+      "PMNS values",
+      "neutrino data",
+      "measured alpha",
+      "empirical target values"
+    ],
+    "tests": [
+      "tests/test_charged_hessian_source_audit.py"
+    ],
+    "claim_boundary": "No action source decides rho_ch; no numerical closure or prediction update."
   }
 }

@@ -7,8 +7,8 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 | Item | Current status |
 | --- | --- |
 | Overall status | structural architecture integrated conditional; numerical closure open |
-| Latest theorem branch | `bhsm-sector-projector-hessian-fork-audit-v1` |
-| Latest completed theorem commits | PO-BH-47 `ae5dac5`; PO-BH-47 cleanup `1c11d2b`; PO-BH-48 `8ac577c`; PO-BH-49 `c2cfc70`; PO-BH-50 `7a4523a`; PO-BH-51 `225786f`; PO-BH-52 `4de6d9c`; PO-BH-53 `20c58b1`; PO-BH-54 `11d1c60`; PO-BH-55 `cf0e998`; PO-BH-56 `9f93330`; PO-BH-57/58/59 merged to main; PO-BH-60 merged to main; PO-BH-61 merged to main; PO-BH-62 merged to main; PO-BH-63 merged to main; PO-BH-64 on this branch |
+| Latest theorem branch | `bhsm-charged-hessian-source-audit-v1` |
+| Latest completed theorem commits | PO-BH-47 `ae5dac5`; PO-BH-47 cleanup `1c11d2b`; PO-BH-48 `8ac577c`; PO-BH-49 `c2cfc70`; PO-BH-50 `7a4523a`; PO-BH-51 `225786f`; PO-BH-52 `4de6d9c`; PO-BH-53 `20c58b1`; PO-BH-54 `11d1c60`; PO-BH-55 `cf0e998`; PO-BH-56 `9f93330`; PO-BH-57/58/59 merged to main; PO-BH-60 merged to main; PO-BH-61 merged to main; PO-BH-62 merged to main; PO-BH-63 merged to main; PO-BH-64 merged to main; PO-BH-65 on this branch |
 | Test result summary | `1376 passed`; focused PO-BH-56 tests `10 passed`; PO-BH-55 and neutral/collar regression tests `90 passed`; guardrail audits passed |
 | Current theorem/status label | `STRUCTURAL_ARCHITECTURE_INTEGRATED_CONDITIONAL_NUMERICAL_CLOSURE_OPEN` |
 | Candidate architecture complete | yes |
@@ -63,6 +63,8 @@ PO-BH-63 audits sources for the scalar/topographic boundary-condition coefficien
 
 PO-BH-64 records the finite sector projector ledger and charged Hessian fork audit. Sector projector compression, down-sector incidence, three-state ladder structure, and the `Z_virt^{u,2}=1/2` dimension-ratio route are strengthened as candidates. Exact `q^2+j^2` costs are downgraded to conditional on `rho_ch=1`; the cyclic candidate `rho_ch=3` is documented without choosing it. The `8/9` eta route is downgraded and the eta projection/self-screening route remains candidate-only. No numerical closure, frozen prediction change, or official prediction change is introduced.
 
+PO-BH-65 audits the source of the charged-Hessian anisotropy `rho_ch`. The minimal `rho_ch=1` route remains a minimal action-closure candidate, and the cyclic `rho_ch=3` route remains structurally motivated but not derived. No existing charged action/Hessian source decides `rho_ch`; charged `qj` cross-terms are forbidden unless action-derived; neutral/topographic mixing remains open but cannot leak into the charged sector without an explicit charged coupling. The exact `eta_l` value remains open because it depends on `rho_ch`. No numerical closure, frozen prediction change, or official prediction change is introduced.
+
 ## Cross-Links
 
 - [Full BHSM completion candidate](../theory/full_bhsm_completion_v1_candidate.md)
@@ -108,6 +110,7 @@ PO-BH-64 records the finite sector projector ledger and charged Hessian fork aud
 - [Theorem discharge: generic finite-width feature rank](../theory/theorem_discharge_generic_finite_width_feature_rank.md)
 - [Theorem discharge: explicit symbolic Gram/minor](../theory/theorem_discharge_explicit_symbolic_gram_minor.md)
 - [Numerical input closure map](bhsm_numerical_input_closure_map.md)
+- [Charged Hessian source audit](bhsm_charged_hessian_source_audit.md)
 - [Theorem discharge: neutral topographic suppression action](../theory/theorem_discharge_neutral_topographic_suppression_action.md)
 - [Theorem discharge: neutral saddle displacement](../theory/theorem_discharge_neutral_saddle_displacement.md)
 - [Theorem discharge: neutral effective action](../theory/theorem_discharge_neutral_effective_action.md)
