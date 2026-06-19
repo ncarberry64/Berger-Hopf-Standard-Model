@@ -7,11 +7,17 @@ from typing import Dict, Iterable, List, Tuple
 
 import numpy as np
 
+import charged_suppression_operator_kernel as suppression_kernel
+
 
 PUBLIC_STATUS = "structural architecture integrated conditional; numerical closure open"
 
 KAPPA_3 = 3
 RHO_CH_BRANCHES: Tuple[int, int, int] = (1, 2, 3)
+
+RULE_A_SINGLE_OPERATOR_TRACE = "RULE_A_SINGLE_OPERATOR_TRACE"
+RULE_B_DOUBLE_NORMALIZED_PHASE_CANDIDATE = "RULE_B_DOUBLE_NORMALIZED_PHASE_CANDIDATE"
+DEFAULT_DIAGNOSTIC_SUPPRESSION_RULE = RULE_A_SINGLE_OPERATOR_TRACE
 
 SECTORS: Dict[str, Tuple[int, int]] = {
     "neutrino": (0, +1),
@@ -66,6 +72,12 @@ STATUS_TABLE = {
     "operator_level_threshold_insertion": "STRONGLY_SUPPORTED_CANDIDATE",
     "Mode_Identity_Threshold_Readout_Theorem": "STRONGLY_SUPPORTED_CANDIDATE",
     "Z_virt_u1": "DERIVED_CONDITIONAL",
+    "charged_Kf_rule_A_suppression_propagation": "DERIVED_CONDITIONAL_ON_B_SUPP_TRACE_KERNEL",
+    "RULE_A_SINGLE_OPERATOR_TRACE": "DERIVED_CONDITIONAL_ON_B_SUPP_TRACE_KERNEL",
+    "RULE_B_DOUBLE_NORMALIZED_PHASE_CANDIDATE": "CANDIDATE_REQUIRES_INDEPENDENT_PHASE_RESPONSE",
+    "minimal_charged_Kf_generator_eta_rule_A": "DERIVED_CONDITIONAL_DIAGNOSTIC_BRANCH",
+    "minimal_charged_Kf_generator_eta_rule_B": "LEGACY_CANDIDATE_BRANCH",
+    "independent_phase_response_source": "OPEN_LOCALIZABLE",
     "rho_ch_exact_value": "OPEN_LOCALIZABLE",
     "full_threshold_operator": "OPEN",
     "RG_transport": "OPEN",
@@ -253,6 +265,22 @@ def eta(sector: str) -> Fraction:
     return projection_fraction(sector) * g_ch() * self_screening(sector)
 
 
+def eta_for_rule(sector: str, rule: str = DEFAULT_DIAGNOSTIC_SUPPRESSION_RULE) -> Fraction:
+    if rule == RULE_A_SINGLE_OPERATOR_TRACE:
+        return suppression_kernel.eta_single_trace(sector)
+    if rule == RULE_B_DOUBLE_NORMALIZED_PHASE_CANDIDATE:
+        return eta(sector)
+    raise ValueError(f"unknown suppression rule: {rule}")
+
+
+def suppression_rule_status(rule: str) -> str:
+    if rule == RULE_A_SINGLE_OPERATOR_TRACE:
+        return STATUS_TABLE["RULE_A_SINGLE_OPERATOR_TRACE"]
+    if rule == RULE_B_DOUBLE_NORMALIZED_PHASE_CANDIDATE:
+        return STATUS_TABLE["RULE_B_DOUBLE_NORMALIZED_PHASE_CANDIDATE"]
+    raise ValueError(f"unknown suppression rule: {rule}")
+
+
 def beta(sector: str) -> Fraction:
     return g_ch() * projection_fraction(sector)
 
@@ -278,6 +306,22 @@ def minimal_K_f(sector: str, rho_ch: int | Fraction) -> Tuple[Tuple[Fraction, Fr
     )
 
 
+def minimal_K_f_for_rule(
+    sector: str,
+    rho_ch: int | Fraction,
+    rule: str = DEFAULT_DIAGNOSTIC_SUPPRESSION_RULE,
+) -> Tuple[Tuple[Fraction, Fraction, Fraction], ...]:
+    costs = diagonal_costs(sector, rho_ch)
+    lam0, lam1, lam2 = tuple(eta_for_rule(sector, rule) * cost for cost in costs)
+    b = beta(sector)
+    k = kappa(sector, rho_ch)
+    return (
+        (lam0, b, Fraction(0)),
+        (b, lam1, k),
+        (Fraction(0), k, lam2),
+    )
+
+
 def threshold_insertions() -> List[Dict[str, object]]:
     return [
         {
@@ -293,6 +337,16 @@ def threshold_insertions() -> List[Dict[str, object]]:
 
 def dressed_K_u(rho_ch: int | Fraction) -> Tuple[Tuple[float, float, float], ...]:
     matrix = [[float(value) for value in row] for row in minimal_K_f("up", rho_ch)]
+    insertion = threshold_insertions()[0]
+    matrix[int(insertion["slot"])][int(insertion["slot"])] += log(2.0)
+    return tuple(tuple(row) for row in matrix)
+
+
+def dressed_K_u_for_rule(
+    rho_ch: int | Fraction,
+    rule: str = DEFAULT_DIAGNOSTIC_SUPPRESSION_RULE,
+) -> Tuple[Tuple[float, float, float], ...]:
+    matrix = [[float(value) for value in row] for row in minimal_K_f_for_rule("up", rho_ch, rule)]
     insertion = threshold_insertions()[0]
     matrix[int(insertion["slot"])][int(insertion["slot"])] += log(2.0)
     return tuple(tuple(row) for row in matrix)

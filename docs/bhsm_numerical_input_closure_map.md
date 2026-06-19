@@ -316,6 +316,16 @@ The full freeze protocol / charged `K_f` sprint records the derive -> freeze -> 
 
 The boundary action source audit for the full freeze / charged `K_f` generator classifies source support for the PR #25 objects. `D_C_colored_contact_defect`, `D_d_color_lower_overlap_contact_defect`, and `Gamma_sigma_weak_orientation_grading` are conditional on the existing projector scaffold. `Gamma_T`, `E3`, `EA`, `Delta_IT`, the charged suppression package, and the minimal charged `K_f` bridges remain candidate-level unless their boundary-action sources are derived. The audit keeps `B_supp_universal_suppression_operator: OPEN_LOCALIZABLE`, `g_ch_phase_normalized_coupling: STRONGLY_SUPPORTED_CANDIDATE`, `beta_f_reference_bridge: STRONGLY_SUPPORTED_CANDIDATE`, `kappa_f_tangent_bridge: STRONGLY_SUPPORTED_CANDIDATE`, `rho_ch_exact_value: OPEN_LOCALIZABLE`, `full_threshold_operator: OPEN`, `RG_transport: OPEN`, and `numerical_closure: OPEN`. No empirical comparison input, frozen prediction change, or official prediction change is introduced.
 
+The boundary graded defect action-kernel sprint implements an explicit
+symbolic kernel for `D_C`, `D_d`, `Gamma_sigma`, `Gamma_T`, `E_3`, `E_A`,
+`Delta_IT`, and `S_index_trace`. It conditionally derives the sector equations
+and zero-defect ledger selection from the kernel formulas, but
+`charged_Hessian_from_S_index_trace=INVALIDATED_DO_NOT_CLAIM`. The constraint
+`S_index_trace=lambda_IT Delta_IT^2` is an admissibility selector, not the
+charged hierarchy Hessian. `B_supp`, phase-response normalization for `g_ch`,
+exact `rho_ch`, the full threshold operator, RG transport, and numerical
+closure remain open.
+
 PO-BH-54 localizes the normal-coupling/collar convention for the neutral
 boundary term:
 

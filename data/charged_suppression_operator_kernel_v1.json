@@ -1,0 +1,137 @@
+{
+  "id": "PO-BH-charged-suppression-operator-kernel-v1",
+  "title": "Charged Suppression Operator and Phase-Response Kernel v1",
+  "public_status": "structural architecture integrated conditional; numerical closure open",
+  "frozen_predictions_changed": false,
+  "official_predictions_changed": false,
+  "uses_empirical_derivation_inputs": false,
+  "forbidden_derivation_inputs": [
+    "observed charged-lepton masses",
+    "observed quark masses",
+    "observed CKM values",
+    "observed PMNS values",
+    "observed neutrino mass splittings",
+    "measured fine-structure alpha",
+    "empirical target ratios",
+    "post-comparison branch selection"
+  ],
+  "incidence_ranks": {
+    "lepton": 3,
+    "up": 6,
+    "down": 12
+  },
+  "total_charged_rank": 21,
+  "B_supp": {
+    "definition": "I_ch / R_ch",
+    "R_ch": 21,
+    "diagonal_weight": "1/21",
+    "trace": "1",
+    "normalization_status": "DERIVED_CONDITIONAL_ON_TRACE_NORMALIZED_KERNEL"
+  },
+  "sector_rows": [
+    {
+      "sector": "lepton",
+      "rank": 3,
+      "projector_trace": "3",
+      "diagonal_weight": "1/21",
+      "sector_trace": "1/7",
+      "chi": 1,
+      "self_screening": "20/21",
+      "eta_single_trace": "20/147",
+      "eta_double_normalized": "20/3087",
+      "eta_local_normalized": "20/441"
+    },
+    {
+      "sector": "up",
+      "rank": 6,
+      "projector_trace": "6",
+      "diagonal_weight": "1/21",
+      "sector_trace": "2/7",
+      "chi": 2,
+      "self_screening": "19/21",
+      "eta_single_trace": "38/147",
+      "eta_double_normalized": "38/3087",
+      "eta_local_normalized": "19/441"
+    },
+    {
+      "sector": "down",
+      "rank": 12,
+      "projector_trace": "12",
+      "diagonal_weight": "1/21",
+      "sector_trace": "4/7",
+      "chi": 4,
+      "self_screening": "17/21",
+      "eta_single_trace": "68/147",
+      "eta_double_normalized": "68/3087",
+      "eta_local_normalized": "17/441"
+    }
+  ],
+  "contraction_rules": {
+    "RULE_A_SINGLE_OPERATOR_TRACE": {
+      "rule_id": "RULE_A_SINGLE_OPERATOR_TRACE",
+      "formula": "eta_f = Tr(P_f B_supp) * S_f",
+      "status": "DERIVED_CONDITIONAL_ON_B_SUPP_KERNEL",
+      "selected_by_kernel": true,
+      "requires_independent_phase_coupling": false,
+      "eta_values": {
+        "lepton": "20/147",
+        "up": "38/147",
+        "down": "68/147"
+      },
+      "notes": [
+        "Direct contraction of the trace-normalized B_supp=I_ch/R_ch kernel.",
+        "No separate primitive phase-response coupling is inserted."
+      ]
+    },
+    "RULE_B_DOUBLE_NORMALIZED": {
+      "rule_id": "RULE_B_DOUBLE_NORMALIZED",
+      "formula": "eta_f = Tr(P_f B_supp) * g_ch * S_f",
+      "status": "STRONGLY_SUPPORTED_CANDIDATE_REQUIRES_INDEPENDENT_PHASE_COUPLING",
+      "selected_by_kernel": false,
+      "requires_independent_phase_coupling": true,
+      "eta_values": {
+        "lepton": "20/3087",
+        "up": "38/3087",
+        "down": "68/3087"
+      },
+      "notes": [
+        "Retains the older eta package as a candidate only.",
+        "Promotion requires an independently derived phase-response operator."
+      ]
+    },
+    "RULE_C_LOCAL_SECTOR_NORMALIZATION": {
+      "rule_id": "RULE_C_LOCAL_SECTOR_NORMALIZATION",
+      "formula": "eta_f = g_ch * S_f with local Pi_f=1",
+      "status": "STRUCTURALLY_POSSIBLE_NOT_SELECTED",
+      "selected_by_kernel": false,
+      "requires_independent_phase_coupling": true,
+      "eta_values": {
+        "lepton": "20/441",
+        "up": "19/441",
+        "down": "17/441"
+      },
+      "notes": [
+        "Structurally possible local-sector normalization.",
+        "Not selected by the global trace-normalized E_ch kernel."
+      ]
+    }
+  },
+  "statuses": {
+    "B_supp_universal_suppression_operator": "DERIVED_CONDITIONAL_ON_TRACE_NORMALIZED_KERNEL",
+    "B_supp_trace_normalization": "DERIVED_CONDITIONAL_ON_TRACE_NORMALIZED_KERNEL",
+    "Pi_f_incidence_projection_fractions": "DERIVED_CONDITIONAL_FROM_B_SUPP_TRACE",
+    "chi_f_incidence_self_screening_counts": "DERIVED_CONDITIONAL_ON_INCIDENCE_KERNEL",
+    "charged_suppression_single_operator_trace_rule": "DERIVED_CONDITIONAL_ON_B_SUPP_KERNEL",
+    "charged_suppression_double_normalized_rule": "STRONGLY_SUPPORTED_CANDIDATE_REQUIRES_INDEPENDENT_PHASE_COUPLING",
+    "charged_suppression_local_sector_rule": "STRUCTURALLY_POSSIBLE_NOT_SELECTED",
+    "g_ch_independent_phase_response": "OPEN_LOCALIZABLE",
+    "charged_suppression_eta_values": "RULE_A_DERIVED_CONDITIONAL_RULE_B_CANDIDATE",
+    "minimal_charged_Kf_generator_eta_dependency": "NOT_OVERWRITTEN_REQUIRES_EXPLICIT_RULE_SELECTION",
+    "numerical_closure": "OPEN"
+  },
+  "selected_kernel_rule": "RULE_A_SINGLE_OPERATOR_TRACE",
+  "older_eta_package_status": "DOUBLE_NORMALIZED_CANDIDATE_REQUIRES_INDEPENDENT_PHASE_COUPLING",
+  "minimal_charged_Kf_generator_overwritten": false,
+  "final_scientific_interpretation": "The trace-normalized B_supp kernel directly derives the single-operator trace contraction. The older double-normalized eta package remains a candidate unless an independent phase-response coupling is derived.",
+  "claim_boundary": "B_supp trace normalization is a conditional structural kernel result; numerical closure and official predictions remain unchanged."
+}
