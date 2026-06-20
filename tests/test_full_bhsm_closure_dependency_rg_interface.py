@@ -12,6 +12,7 @@ import full_bhsm_closure_dependency_graph as graph
 import full_bhsm_freeze_boundary as freeze
 import full_bhsm_integrated_status as integrated
 import rg_transport_interface as rg
+import same_sector_rg_gauge_cancellation as same_sector
 
 
 DATA_GRAPH = ROOT / "data" / "full_bhsm_closure_dependency_graph_v1.json"
@@ -144,16 +145,19 @@ def test_rg_transport_stages_and_sector_readiness():
         "BRIDGE_DRESSED",
         "THRESHOLD_DRESSED",
         "RG_TRANSPORT_PENDING",
+        "RG_TRANSPORT_PARTIALLY_LOCALIZED",
         "SCHEME_ALIGNED",
         "COMPARISON_READY",
     )
-    assert rg.current_max_stage() == "RG_TRANSPORT_PENDING"
+    assert rg.current_max_stage() == "RG_TRANSPORT_PARTIALLY_LOCALIZED"
     readiness = {record.sector: record for record in rg.comparison_readiness_records()}
     assert readiness["up"].known_thresholds == ("up (6,0): ln 2",)
-    assert readiness["up"].current_readiness == "RG_TRANSPORT_PENDING"
+    assert readiness["up"].current_readiness == "RG_TRANSPORT_PARTIALLY_LOCALIZED"
+    assert readiness["up"].gauge_component == "CANCELED_BY_SAME_SECTOR_THEOREM"
     assert readiness["charged_lepton"].comparison_readiness == "NOT_READY"
     assert readiness["down"].known_thresholds == ()
     assert readiness["neutral"].source_operator == "symbolic K_nu"
+    assert readiness["neutral"].current_readiness == "RG_TRANSPORT_PENDING"
     assert readiness["neutral"].comparison_readiness == "NOT_READY"
     assert all(record.comparison_readiness != "COMPARISON_READY" for record in readiness.values())
     assert rg.STATUS_TABLE["scheme_alignment"] == "OPEN"
@@ -162,7 +166,15 @@ def test_rg_transport_stages_and_sector_readiness():
 def test_rg_interface_statuses_are_open_scaffold_only():
     report = rg.report_as_dict()
     assert report["statuses"]["RG_transport_interface_v1"] == "STRUCTURAL_SCAFFOLD"
+    assert report["statuses"]["same_sector_RG_gauge_cancellation"] == (
+        "DERIVED_CONDITIONAL_ON_SHARED_SECTOR_REPRESENTATION"
+    )
+    assert report["statuses"]["charged_same_sector_RG_gauge_transport"] == (
+        "PARTIALLY_LOCALIZED"
+    )
     assert report["statuses"]["charged_RG_transport"] == "OPEN_LOCALIZABLE"
+    assert report["statuses"]["charged_residual_RG_transport"] == "OPEN_LOCALIZABLE"
+    assert report["statuses"]["cross_sector_RG_transport"] == "OPEN"
     assert report["statuses"]["neutral_RG_transport"] == "OPEN_LOCALIZABLE"
     assert report["statuses"]["scheme_transport"] == "OPEN"
     assert report["statuses"]["common_scale_comparison"] == "OPEN"
@@ -183,11 +195,13 @@ def test_integrated_status_counts_and_recommendation():
     assert report["invalidated_count"] > 0
     assert report["next_recommended_mathematical_target"] in {
         "RG_TRANSPORT_RULE_DERIVATION",
+        "RESIDUAL_YUKAWA_TRANSPORT_RULE",
+        "SCHEME_ALIGNMENT_RULE",
         "BRIDGE_MAGNITUDE_ACTION_SOURCE",
         "NEUTRAL_HESSIAN_ACTION_SOURCE",
         "FULL_THRESHOLD_OPERATOR_SOURCE",
     }
-    assert report["next_recommended_mathematical_target"] == "RG_TRANSPORT_RULE_DERIVATION"
+    assert report["next_recommended_mathematical_target"] == "RESIDUAL_YUKAWA_TRANSPORT_RULE"
 
 
 def test_json_artifacts_parse_and_preserve_public_status():
@@ -208,7 +222,11 @@ def test_docs_preserve_expected_status_language():
         "full_bhsm_closure_dependency_graph_v1=STRUCTURAL_SCAFFOLD",
         "full_bhsm_freeze_boundary_v1=STRUCTURAL_SCAFFOLD",
         "rg_transport_interface_v1=STRUCTURAL_SCAFFOLD",
+        "same_sector_RG_gauge_cancellation=DERIVED_CONDITIONAL_ON_SHARED_SECTOR_REPRESENTATION",
+        "charged_same_sector_RG_gauge_transport=PARTIALLY_LOCALIZED",
         "charged_RG_transport=OPEN_LOCALIZABLE",
+        "charged_residual_RG_transport=OPEN_LOCALIZABLE",
+        "cross_sector_RG_transport=OPEN",
         "neutral_RG_transport=OPEN_LOCALIZABLE",
         "scheme_transport=OPEN",
         "common_scale_comparison=OPEN",
@@ -236,6 +254,7 @@ def test_no_empirical_imports_in_new_modules():
             Path(freeze.__file__),
             Path(rg.__file__),
             Path(integrated.__file__),
+            Path(same_sector.__file__),
         )
     )
     blocked = (
