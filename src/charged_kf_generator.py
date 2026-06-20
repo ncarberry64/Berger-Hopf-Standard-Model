@@ -19,6 +19,17 @@ RULE_A_SINGLE_OPERATOR_TRACE = "RULE_A_SINGLE_OPERATOR_TRACE"
 RULE_B_DOUBLE_NORMALIZED_PHASE_CANDIDATE = "RULE_B_DOUBLE_NORMALIZED_PHASE_CANDIDATE"
 DEFAULT_DIAGNOSTIC_SUPPRESSION_RULE = RULE_A_SINGLE_OPERATOR_TRACE
 
+BRIDGE_RULE_DIAGONAL_ONLY = "BRIDGE_RULE_DIAGONAL_ONLY"
+BRIDGE_RULE_MINIMAL_ANSATZ = "BRIDGE_RULE_MINIMAL_ANSATZ"
+BRIDGE_RULE_SYMBOLIC_OPEN = "BRIDGE_RULE_SYMBOLIC_OPEN"
+DEFAULT_DIAGNOSTIC_BRIDGE_RULE = BRIDGE_RULE_MINIMAL_ANSATZ
+
+BRIDGE_RULE_STATUS_TABLE = {
+    BRIDGE_RULE_DIAGONAL_ONLY: "BASELINE_DIAGNOSTIC",
+    BRIDGE_RULE_MINIMAL_ANSATZ: "STRONGLY_SUPPORTED_CANDIDATE",
+    BRIDGE_RULE_SYMBOLIC_OPEN: "TOPOLOGY_PRESENT_MAGNITUDES_OPEN",
+}
+
 SECTORS: Dict[str, Tuple[int, int]] = {
     "neutrino": (0, +1),
     "lepton": (0, -1),
@@ -281,6 +292,13 @@ def suppression_rule_status(rule: str) -> str:
     raise ValueError(f"unknown suppression rule: {rule}")
 
 
+def bridge_rule_status(rule: str) -> str:
+    try:
+        return BRIDGE_RULE_STATUS_TABLE[rule]
+    except KeyError:
+        raise ValueError(f"unknown bridge rule: {rule}") from None
+
+
 def beta(sector: str) -> Fraction:
     return g_ch() * projection_fraction(sector)
 
@@ -294,11 +312,24 @@ def kappa(sector: str, rho_ch: int | Fraction) -> Fraction:
     return g_ch() / tangent_norm_sq(sector, rho_ch)
 
 
+def bridge_values(
+    sector: str,
+    rho_ch: int | Fraction,
+    bridge_rule: str = DEFAULT_DIAGNOSTIC_BRIDGE_RULE,
+) -> Tuple[Fraction, Fraction]:
+    if bridge_rule == BRIDGE_RULE_DIAGONAL_ONLY:
+        return Fraction(0), Fraction(0)
+    if bridge_rule == BRIDGE_RULE_MINIMAL_ANSATZ:
+        return beta(sector), kappa(sector, rho_ch)
+    if bridge_rule == BRIDGE_RULE_SYMBOLIC_OPEN:
+        raise ValueError("symbolic-open bridge rule has topology but no numeric beta/kappa")
+    raise ValueError(f"unknown bridge rule: {bridge_rule}")
+
+
 def minimal_K_f(sector: str, rho_ch: int | Fraction) -> Tuple[Tuple[Fraction, Fraction, Fraction], ...]:
     costs = diagonal_costs(sector, rho_ch)
     lam0, lam1, lam2 = tuple(eta(sector) * cost for cost in costs)
-    b = beta(sector)
-    k = kappa(sector, rho_ch)
+    b, k = bridge_values(sector, rho_ch, DEFAULT_DIAGNOSTIC_BRIDGE_RULE)
     return (
         (lam0, b, Fraction(0)),
         (b, lam1, k),
@@ -310,11 +341,11 @@ def minimal_K_f_for_rule(
     sector: str,
     rho_ch: int | Fraction,
     rule: str = DEFAULT_DIAGNOSTIC_SUPPRESSION_RULE,
+    bridge_rule: str = DEFAULT_DIAGNOSTIC_BRIDGE_RULE,
 ) -> Tuple[Tuple[Fraction, Fraction, Fraction], ...]:
     costs = diagonal_costs(sector, rho_ch)
     lam0, lam1, lam2 = tuple(eta_for_rule(sector, rule) * cost for cost in costs)
-    b = beta(sector)
-    k = kappa(sector, rho_ch)
+    b, k = bridge_values(sector, rho_ch, bridge_rule)
     return (
         (lam0, b, Fraction(0)),
         (b, lam1, k),
