@@ -11,6 +11,7 @@ if str(SRC) not in sys.path:
 import full_bhsm_closure_dependency_graph as graph
 import full_bhsm_freeze_boundary as freeze
 import full_bhsm_integrated_status as integrated
+import residual_yukawa_transport_decomposition as residual
 import rg_transport_interface as rg
 import same_sector_rg_gauge_cancellation as same_sector
 
@@ -146,14 +147,19 @@ def test_rg_transport_stages_and_sector_readiness():
         "THRESHOLD_DRESSED",
         "RG_TRANSPORT_PENDING",
         "RG_TRANSPORT_PARTIALLY_LOCALIZED",
+        "RG_TRANSPORT_RESIDUAL_LOCALIZED",
         "SCHEME_ALIGNED",
         "COMPARISON_READY",
     )
-    assert rg.current_max_stage() == "RG_TRANSPORT_PARTIALLY_LOCALIZED"
+    assert rg.current_max_stage() == "RG_TRANSPORT_RESIDUAL_LOCALIZED"
     readiness = {record.sector: record for record in rg.comparison_readiness_records()}
     assert readiness["up"].known_thresholds == ("up (6,0): ln 2",)
-    assert readiness["up"].current_readiness == "RG_TRANSPORT_PARTIALLY_LOCALIZED"
+    assert readiness["up"].current_readiness == "RG_TRANSPORT_RESIDUAL_LOCALIZED"
     assert readiness["up"].gauge_component == "CANCELED_BY_SAME_SECTOR_THEOREM"
+    assert readiness["up"].sector_universal_residual_component == (
+        "CANCELED_BY_SAME_SECTOR_BRANCH_SPACE"
+    )
+    assert readiness["up"].branch_differential_residual_component == "OPEN_LOCALIZABLE"
     assert readiness["charged_lepton"].comparison_readiness == "NOT_READY"
     assert readiness["down"].known_thresholds == ()
     assert readiness["neutral"].source_operator == "symbolic K_nu"
@@ -172,6 +178,19 @@ def test_rg_interface_statuses_are_open_scaffold_only():
     assert report["statuses"]["charged_same_sector_RG_gauge_transport"] == (
         "PARTIALLY_LOCALIZED"
     )
+    assert report["statuses"]["same_sector_residual_identity_cancellation"] == (
+        "DERIVED_CONDITIONAL_ON_SHARED_SECTOR_BRANCH_SPACE"
+    )
+    assert report["statuses"]["residual_Yukawa_transport_decomposition"] == (
+        "PARTIALLY_LOCALIZED"
+    )
+    assert report["statuses"]["charged_branch_differential_residual_transport"] == (
+        "OPEN_LOCALIZABLE"
+    )
+    assert report["statuses"]["Kf_aligned_residual_transport_candidate"] == (
+        "STRUCTURALLY_MOTIVATED_CANDIDATE"
+    )
+    assert report["statuses"]["Kf_residual_transport_coefficient"] == "OPEN_LOCALIZABLE"
     assert report["statuses"]["charged_RG_transport"] == "OPEN_LOCALIZABLE"
     assert report["statuses"]["charged_residual_RG_transport"] == "OPEN_LOCALIZABLE"
     assert report["statuses"]["cross_sector_RG_transport"] == "OPEN"
@@ -196,12 +215,13 @@ def test_integrated_status_counts_and_recommendation():
     assert report["next_recommended_mathematical_target"] in {
         "RG_TRANSPORT_RULE_DERIVATION",
         "RESIDUAL_YUKAWA_TRANSPORT_RULE",
+        "K_F_ALIGNED_RESIDUAL_SOURCE",
         "SCHEME_ALIGNMENT_RULE",
         "BRIDGE_MAGNITUDE_ACTION_SOURCE",
         "NEUTRAL_HESSIAN_ACTION_SOURCE",
         "FULL_THRESHOLD_OPERATOR_SOURCE",
     }
-    assert report["next_recommended_mathematical_target"] == "RESIDUAL_YUKAWA_TRANSPORT_RULE"
+    assert report["next_recommended_mathematical_target"] == "K_F_ALIGNED_RESIDUAL_SOURCE"
 
 
 def test_json_artifacts_parse_and_preserve_public_status():
@@ -224,6 +244,11 @@ def test_docs_preserve_expected_status_language():
         "rg_transport_interface_v1=STRUCTURAL_SCAFFOLD",
         "same_sector_RG_gauge_cancellation=DERIVED_CONDITIONAL_ON_SHARED_SECTOR_REPRESENTATION",
         "charged_same_sector_RG_gauge_transport=PARTIALLY_LOCALIZED",
+        "same_sector_residual_identity_cancellation=DERIVED_CONDITIONAL_ON_SHARED_SECTOR_BRANCH_SPACE",
+        "residual_Yukawa_transport_decomposition=PARTIALLY_LOCALIZED",
+        "charged_branch_differential_residual_transport=OPEN_LOCALIZABLE",
+        "Kf_aligned_residual_transport_candidate=STRUCTURALLY_MOTIVATED_CANDIDATE",
+        "Kf_residual_transport_coefficient=OPEN_LOCALIZABLE",
         "charged_RG_transport=OPEN_LOCALIZABLE",
         "charged_residual_RG_transport=OPEN_LOCALIZABLE",
         "cross_sector_RG_transport=OPEN",
@@ -255,6 +280,7 @@ def test_no_empirical_imports_in_new_modules():
             Path(rg.__file__),
             Path(integrated.__file__),
             Path(same_sector.__file__),
+            Path(residual.__file__),
         )
     )
     blocked = (
