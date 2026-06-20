@@ -1,0 +1,203 @@
+{
+  "id": "PO-BH-rg-transport-interface-v1",
+  "title": "RG / Scheme Transport Interface v1",
+  "public_status": "structural architecture integrated conditional; numerical closure open",
+  "frozen_predictions_changed": false,
+  "official_predictions_changed": false,
+  "uses_empirical_derivation_inputs": false,
+  "forbidden_derivation_inputs": [
+    "observed charged masses",
+    "observed neutrino masses",
+    "neutrino mass splittings",
+    "CKM data",
+    "PMNS data",
+    "measured fine-structure alpha",
+    "empirical target ratios"
+  ],
+  "transport_stages": [
+    "BARE_MODE_LEDGER",
+    "ACTION_KERNEL_SELECTED",
+    "SUPPRESSION_DRESSED",
+    "BRIDGE_DRESSED",
+    "THRESHOLD_DRESSED",
+    "RG_TRANSPORT_PENDING",
+    "SCHEME_ALIGNED",
+    "COMPARISON_READY"
+  ],
+  "current_max_stage": "RG_TRANSPORT_PENDING",
+  "bare_spectral_outputs": [
+    {
+      "sector": "charged_lepton",
+      "source_operator": "charged K_l",
+      "stage": "BRIDGE_DRESSED",
+      "notes": "charged suppression and bridge topology available; RG pending"
+    },
+    {
+      "sector": "up",
+      "source_operator": "charged K_u",
+      "stage": "BRIDGE_DRESSED",
+      "notes": "charged suppression and bridge topology available before threshold insertion"
+    },
+    {
+      "sector": "down",
+      "source_operator": "charged K_d",
+      "stage": "BRIDGE_DRESSED",
+      "notes": "charged suppression and bridge topology available; RG pending"
+    },
+    {
+      "sector": "neutral",
+      "source_operator": "symbolic K_nu",
+      "stage": "ACTION_KERNEL_SELECTED",
+      "notes": "neutral operator is symbolic/candidate only"
+    }
+  ],
+  "threshold_dressed_outputs": [
+    {
+      "sector": "charged_lepton",
+      "source_operator": "charged K_l",
+      "stage": "RG_TRANSPORT_PENDING",
+      "threshold_insertions": [],
+      "notes": "no charged-lepton threshold is derived; transport pending"
+    },
+    {
+      "sector": "up",
+      "source_operator": "charged K_u",
+      "stage": "RG_TRANSPORT_PENDING",
+      "threshold_insertions": [
+        "up (6,0): ln 2"
+      ],
+      "notes": "up sector includes known threshold-dressed middle slot; transport pending"
+    },
+    {
+      "sector": "down",
+      "source_operator": "charged K_d",
+      "stage": "RG_TRANSPORT_PENDING",
+      "threshold_insertions": [],
+      "notes": "no down-sector threshold is derived; transport pending"
+    },
+    {
+      "sector": "neutral",
+      "source_operator": "symbolic K_nu",
+      "stage": "RG_TRANSPORT_PENDING",
+      "threshold_insertions": [],
+      "notes": "neutral sector remains symbolic/open before transport"
+    }
+  ],
+  "scheme_scale_points": [
+    {
+      "scheme": "BHSM_internal_operator_units",
+      "scale": "internal",
+      "status": "STRUCTURAL_SOURCE",
+      "notes": "Native BHSM operator-side output."
+    },
+    {
+      "scheme": "transport_target_scheme",
+      "scale": "OPEN",
+      "status": "OPEN",
+      "notes": "Target comparison scheme/scale not selected here."
+    }
+  ],
+  "rg_transport_rules": [
+    {
+      "rule_id": "charged_RG_transport",
+      "source_stage": "RG_TRANSPORT_PENDING",
+      "target_stage": "SCHEME_ALIGNED",
+      "status": "OPEN_LOCALIZABLE",
+      "formula": "OPEN_LOCALIZABLE",
+      "notes": "Charged-sector RG/scheme transport rule remains to be derived."
+    },
+    {
+      "rule_id": "neutral_RG_transport",
+      "source_stage": "RG_TRANSPORT_PENDING",
+      "target_stage": "SCHEME_ALIGNED",
+      "status": "OPEN_LOCALIZABLE",
+      "formula": "OPEN_LOCALIZABLE",
+      "notes": "Neutral-sector transport rule remains to be derived."
+    },
+    {
+      "rule_id": "scheme_transport",
+      "source_stage": "SCHEME_ALIGNED",
+      "target_stage": "COMPARISON_READY",
+      "status": "OPEN",
+      "formula": "OPEN",
+      "notes": "Scheme alignment and comparison map remain open."
+    }
+  ],
+  "transported_observables": [
+    {
+      "sector": "charged_lepton",
+      "observable_family": "charged_hierarchy",
+      "current_stage": "RG_TRANSPORT_PENDING",
+      "comparison_ready": false,
+      "blocker": "charged_RG_transport"
+    },
+    {
+      "sector": "up",
+      "observable_family": "charged_hierarchy",
+      "current_stage": "RG_TRANSPORT_PENDING",
+      "comparison_ready": false,
+      "blocker": "charged_RG_transport"
+    },
+    {
+      "sector": "down",
+      "observable_family": "charged_hierarchy",
+      "current_stage": "RG_TRANSPORT_PENDING",
+      "comparison_ready": false,
+      "blocker": "charged_RG_transport"
+    },
+    {
+      "sector": "neutral",
+      "observable_family": "neutral_mixing",
+      "current_stage": "RG_TRANSPORT_PENDING",
+      "comparison_ready": false,
+      "blocker": "neutral_RG_transport"
+    }
+  ],
+  "comparison_readiness": [
+    {
+      "sector": "charged_lepton",
+      "source_operator": "charged K_l",
+      "current_readiness": "RG_TRANSPORT_PENDING",
+      "comparison_readiness": "NOT_READY",
+      "known_thresholds": [],
+      "blocker": "charged_RG_transport"
+    },
+    {
+      "sector": "up",
+      "source_operator": "charged K_u",
+      "current_readiness": "RG_TRANSPORT_PENDING",
+      "comparison_readiness": "NOT_READY",
+      "known_thresholds": [
+        "up (6,0): ln 2"
+      ],
+      "blocker": "charged_RG_transport"
+    },
+    {
+      "sector": "down",
+      "source_operator": "charged K_d",
+      "current_readiness": "RG_TRANSPORT_PENDING",
+      "comparison_readiness": "NOT_READY",
+      "known_thresholds": [],
+      "blocker": "charged_RG_transport"
+    },
+    {
+      "sector": "neutral",
+      "source_operator": "symbolic K_nu",
+      "current_readiness": "RG_TRANSPORT_PENDING",
+      "comparison_readiness": "NOT_READY",
+      "known_thresholds": [],
+      "blocker": "neutral_RG_transport"
+    }
+  ],
+  "statuses": {
+    "RG_transport_interface_v1": "STRUCTURAL_SCAFFOLD",
+    "charged_RG_transport": "OPEN_LOCALIZABLE",
+    "neutral_RG_transport": "OPEN_LOCALIZABLE",
+    "scheme_transport": "OPEN",
+    "scheme_alignment": "OPEN",
+    "common_scale_comparison": "OPEN",
+    "comparison_ready_predictions": "OPEN",
+    "numerical_closure": "OPEN"
+  },
+  "claim_boundary": "RG interface is structural; no scheme-aligned or comparison-ready predictions are claimed."
+}
