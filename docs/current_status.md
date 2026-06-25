@@ -117,3 +117,27 @@ response audit. The identity K-collar route was `STACK_COLLAR_REJECTED_AS_PRIMAR
 Frozen predictions changed: no.
 
 Official predictions changed: no.
+
+## Boundary/Profile Scale Closure Assault
+
+This targeted follow-up attacks the first exact blocker from PR #46: `kappa_H`,
+`Z_H`, and the internal/profile radius `r`. It does not rerun the broader
+numerical gate closure assault and does not use observed masses, Higgs data,
+gauge values, target ratios, CKM, PMNS, neutrino data, cosmology residuals, or
+DESI residuals as derivation inputs.
+
+Result: `BLOCKED_BY_MISSING_OBJECTS`.
+
+- `r`: `BLOCKED_BY_MISSING_OBJECT`. The needed object is the
+  dimensionless internal/profile Berger radius; cosmological `R_H_Gpc`,
+  `Lambda_squared`, `S=1/(4*pi)`, collar `rho`, and matching scales are not
+  substitutes.
+- `Z_H`: `OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH`. The profile-normalization formula
+  is localized, but the explicit profile, threshold/normalization, measure, and
+  collar Jacobian values remain open.
+- `kappa_H`: `OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH`. The second-variation route
+  is localized, but the Higgs/profile action, saddle Hessian, and curvature
+  coefficients remain open.
+
+Therefore `sigma` and `tau` remain `OPEN_LOCALIZABLE`, no charged outputs at
+boundary tau are exported, and official/frozen predictions remain unchanged.

@@ -106,5 +106,23 @@
     "Z_H",
     "r"
   ],
-  "obstruction": "Cannot compute sigma=(1/2)sqrt(kappa_H/Z_H) and tau=1/(4 sigma r^2) until kappa_H, Z_H, and r are repo-derived."
+  "obstruction": "Boundary/profile scale closure remains blocked until kappa_H, Z_H, and r are repo-derived.",
+  "targeted_followup": {
+    "sprint": "Boundary/Profile Scale Closure Assault for kappa_H, Z_H, and r",
+    "source_artifact": "artifacts/boundary_profile_scale_closure_v1.json",
+    "targeted_first_blocker_from_PR_46": true,
+    "boundary_profile_scale_closure": "BLOCKED_BY_MISSING_OBJECTS",
+    "r_status": "BLOCKED_BY_MISSING_OBJECT",
+    "Z_H_status": "OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH",
+    "kappa_H_status": "OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH",
+    "missing_objects": [
+      "kappa_H",
+      "Z_H",
+      "r"
+    ]
+  },
+  "observed_Higgs_used": false,
+  "observed_gauge_values_used": false,
+  "tau_fit_to_masses": false,
+  "sigma_fit_to_masses": false
 }

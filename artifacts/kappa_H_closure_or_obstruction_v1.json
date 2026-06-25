@@ -1,0 +1,61 @@
+{
+  "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
+  "official_predictions_changed": false,
+  "empirical_derivation_inputs_used": false,
+  "observed_masses_used": false,
+  "observed_Higgs_used": false,
+  "observed_gauge_values_used": false,
+  "tau_fit_to_masses": false,
+  "sigma_fit_to_masses": false,
+  "artifact": "kappa_H_closure_or_obstruction_v1",
+  "kappa_H": {
+    "name": "kappa_H",
+    "status": "OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH",
+    "value": null,
+    "formula": "kappa_H = delta^2 S_eff^(H) / delta Phi^2 |_{Phi=Phi_H} = V_eff''(Phi_H)",
+    "source_trace": [
+      "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\docs\\open_blockers_backlog.md",
+      "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_profile_eom_source_audit.md",
+      "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_boundary_condition_normal_form.md",
+      "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\Higgs_EW_closure_or_obstruction_v1.json"
+    ],
+    "classification": "Higgs/profile second variation or curvature stiffness",
+    "missing_objects": [
+      "S_eff^(H) Higgs/profile action",
+      "profile saddle Phi_H",
+      "H_H Higgs saddle Hessian",
+      "V_eff'' value",
+      "boundary potential curvature coefficients"
+    ],
+    "notes": "The second-variation route is localized, but the complete Higgs/profile action and Hessian coefficients are not evaluated by the repo."
+  },
+  "result": {
+    "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
+    "official_predictions_changed": false,
+    "empirical_derivation_inputs_used": false,
+    "observed_masses_used": false,
+    "observed_Higgs_used": false,
+    "observed_gauge_values_used": false,
+    "tau_fit_to_masses": false,
+    "sigma_fit_to_masses": false,
+    "name": "kappa_H",
+    "status": "OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH",
+    "derived": false,
+    "value": null,
+    "formula": "kappa_H = delta^2 S_eff^(H) / delta Phi^2 |_{Phi=Phi_H} = V_eff''(Phi_H)",
+    "source_trace": [
+      "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\docs\\open_blockers_backlog.md",
+      "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_profile_eom_source_audit.md",
+      "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_boundary_condition_normal_form.md",
+      "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\Higgs_EW_closure_or_obstruction_v1.json"
+    ],
+    "missing_objects": [
+      "S_eff^(H) Higgs/profile action",
+      "profile saddle Phi_H",
+      "H_H Higgs saddle Hessian",
+      "V_eff'' value",
+      "boundary potential curvature coefficients"
+    ],
+    "obstruction": "kappa_H is localized as a profile second variation but cannot be evaluated without the listed source objects."
+  }
+}
