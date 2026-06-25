@@ -154,7 +154,19 @@ def test_previous_artifacts_record_pr47_followup_without_promotion():
     assert central["gates"]["tau_sigma"]["targeted_followup_from_PR47"]["r_internal_profile_status"] == (
         norm.BLOCKED_BY_MISSING_NORMALIZATION_THEOREM
     )
-    assert central["promoted_statuses"] == []
+    if (ROOT / "artifacts" / "internal_berger_radius_selection_theorem_v1.json").exists():
+        assert central["promoted_statuses"] == [
+            {
+                "gate": "internal_berger_radius_selection_theorem",
+                "status": "DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM",
+            },
+            {"gate": "r_internal_profile", "status": "DERIVED_CONDITIONAL"},
+        ]
+        followup = central["gates"]["tau_sigma"]["targeted_followup_from_author_radius_selection"]
+        assert followup["source_artifact"] == "artifacts/internal_berger_radius_selection_theorem_v1.json"
+        assert followup["remaining_blockers"] == ["Z_H", "kappa_H"]
+    else:
+        assert central["promoted_statuses"] == []
     assert package["sections"]["open_boundary_parameters"]["source_artifact"] == (
         "artifacts/profile_scale_tau_sigma_update_v1.json"
     )

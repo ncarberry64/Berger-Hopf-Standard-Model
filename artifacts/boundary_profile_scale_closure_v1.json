@@ -15,9 +15,9 @@
   "tau_from_boundary_geometry": "OPEN_LOCALIZABLE",
   "r": {
     "name": "r",
-    "status": "BLOCKED_BY_MISSING_OBJECT",
-    "value": null,
-    "formula": "tau = 1 / (4 sigma r^2)",
+    "status": "DERIVED_CONDITIONAL",
+    "value": 0.28209479177387814,
+    "formula": "r_internal_profile = 1/sqrt(4*pi)",
     "source_trace": [
       "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\tau_sigma_boundary_derivation_closure_or_obstruction_v1.json",
       "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_profile_input_classification.md"
@@ -259,5 +259,19 @@
     "r_internal_profile",
     "Z_H",
     "kappa_H"
-  ]
+  ],
+  "targeted_followup_from_author_radius_selection": {
+    "source_artifact": "artifacts/internal_berger_radius_selection_theorem_v1.json",
+    "r_internal_profile_status": "DERIVED_CONDITIONAL",
+    "radius_normalization_fork": "RESOLVED_BY_AUTHOR_AXIOM",
+    "remaining_blockers": [
+      "Z_H",
+      "kappa_H"
+    ]
+  },
+  "refined_missing_objects_after_radius_selection": [
+    "Z_H",
+    "kappa_H"
+  ],
+  "radius_selected_by": "AUTHOR_SUPPLIED_BHSM_OVERLAP_NORMALIZATION"
 }

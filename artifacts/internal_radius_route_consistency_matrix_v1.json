@@ -1,0 +1,72 @@
+{
+  "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
+  "official_predictions_changed": false,
+  "empirical_derivation_inputs_used": false,
+  "observed_masses_used": false,
+  "observed_Higgs_used": false,
+  "observed_gauge_values_used": false,
+  "tau_fit_to_masses": false,
+  "sigma_fit_to_masses": false,
+  "radius_selected_by": "AUTHOR_SUPPLIED_BHSM_OVERLAP_NORMALIZATION",
+  "artifact": "internal_radius_route_consistency_matrix_v1",
+  "route_verdicts": [
+    {
+      "route_id": "unit_internal_radius",
+      "route_name": "Unit internal Berger radius",
+      "verdict": "REJECTED_BY_AUTHOR_NORMALIZATION",
+      "selected": false,
+      "reason": "Author normalization fixes r_internal_profile^2=1/(4*pi), not r=1.",
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\internal_radius_normalization_forks_v1.json",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\berger_base_action_coupling_normalization.md",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_collar_measure_extrinsic_geometry.md"
+      ]
+    },
+    {
+      "route_id": "lambda_radius",
+      "route_name": "Lambda radius",
+      "verdict": "SELECTED_BY_AUTHOR_AXIOM",
+      "selected": true,
+      "reason": "Lambda_squared is semantically identified with the frozen overlap-scale normalization.",
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\frozen_constants_v2.json",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\src\\bhsm_v1.py"
+      ]
+    },
+    {
+      "route_id": "overlap_width_radius",
+      "route_name": "Overlap width radius",
+      "verdict": "SELECTED_BY_AUTHOR_AXIOM",
+      "selected": true,
+      "reason": "S is the frozen overlap width and is semantically identified with r_internal_profile^2.",
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\frozen_constants_v2.json",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\src\\bhsm_v1.py"
+      ]
+    },
+    {
+      "route_id": "berger_volume_normalization",
+      "route_name": "Berger volume normalization",
+      "verdict": "NOT_PRIMARY_ROUTE",
+      "selected": false,
+      "reason": "Volume normalization remains useful for measure work but does not select r in this author theorem.",
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\internal_radius_normalization_forks_v1.json",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\berger_base_action_coupling_normalization.md",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_collar_measure_extrinsic_geometry.md"
+      ]
+    },
+    {
+      "route_id": "collar_depth_matching",
+      "route_name": "Collar-depth matching",
+      "verdict": "NOT_PRIMARY_ROUTE",
+      "selected": false,
+      "reason": "Collar-depth matching remains a separate geometry problem and is not the primary radius selection route.",
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\internal_radius_normalization_forks_v1.json",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\berger_base_action_coupling_normalization.md",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_collar_measure_extrinsic_geometry.md"
+      ]
+    }
+  ]
+}

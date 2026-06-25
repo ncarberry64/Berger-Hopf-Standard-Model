@@ -1,0 +1,136 @@
+{
+  "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
+  "official_predictions_changed": false,
+  "empirical_derivation_inputs_used": false,
+  "observed_masses_used": false,
+  "observed_Higgs_used": false,
+  "observed_gauge_values_used": false,
+  "tau_fit_to_masses": false,
+  "sigma_fit_to_masses": false,
+  "radius_selected_by": "AUTHOR_SUPPLIED_BHSM_OVERLAP_NORMALIZATION",
+  "artifact": "internal_berger_radius_selection_theorem_v1",
+  "targeted_followup_to": "PR #49 internal radius fork",
+  "author_radius_axiom_encoded": true,
+  "internal_berger_radius_selection_theorem": "DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM",
+  "r_internal_profile_status": "DERIVED_CONDITIONAL",
+  "r_internal_profile_value": 0.28209479177387814,
+  "r_internal_profile_squared": 0.07957747154594767,
+  "radius_normalization_fork": "RESOLVED_BY_AUTHOR_AXIOM",
+  "selected_route": "Lambda/overlap radius equivalence",
+  "route_verdicts": [
+    {
+      "route_id": "unit_internal_radius",
+      "route_name": "Unit internal Berger radius",
+      "verdict": "REJECTED_BY_AUTHOR_NORMALIZATION",
+      "selected": false,
+      "reason": "Author normalization fixes r_internal_profile^2=1/(4*pi), not r=1.",
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\internal_radius_normalization_forks_v1.json",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\berger_base_action_coupling_normalization.md",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_collar_measure_extrinsic_geometry.md"
+      ]
+    },
+    {
+      "route_id": "lambda_radius",
+      "route_name": "Lambda radius",
+      "verdict": "SELECTED_BY_AUTHOR_AXIOM",
+      "selected": true,
+      "reason": "Lambda_squared is semantically identified with the frozen overlap-scale normalization.",
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\frozen_constants_v2.json",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\src\\bhsm_v1.py"
+      ]
+    },
+    {
+      "route_id": "overlap_width_radius",
+      "route_name": "Overlap width radius",
+      "verdict": "SELECTED_BY_AUTHOR_AXIOM",
+      "selected": true,
+      "reason": "S is the frozen overlap width and is semantically identified with r_internal_profile^2.",
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\frozen_constants_v2.json",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\src\\bhsm_v1.py"
+      ]
+    },
+    {
+      "route_id": "berger_volume_normalization",
+      "route_name": "Berger volume normalization",
+      "verdict": "NOT_PRIMARY_ROUTE",
+      "selected": false,
+      "reason": "Volume normalization remains useful for measure work but does not select r in this author theorem.",
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\internal_radius_normalization_forks_v1.json",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\berger_base_action_coupling_normalization.md",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_collar_measure_extrinsic_geometry.md"
+      ]
+    },
+    {
+      "route_id": "collar_depth_matching",
+      "route_name": "Collar-depth matching",
+      "verdict": "NOT_PRIMARY_ROUTE",
+      "selected": false,
+      "reason": "Collar-depth matching remains a separate geometry problem and is not the primary radius selection route.",
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\internal_radius_normalization_forks_v1.json",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\berger_base_action_coupling_normalization.md",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_collar_measure_extrinsic_geometry.md"
+      ]
+    }
+  ],
+  "lambda_overlap_equivalence": {
+    "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
+    "official_predictions_changed": false,
+    "empirical_derivation_inputs_used": false,
+    "observed_masses_used": false,
+    "observed_Higgs_used": false,
+    "observed_gauge_values_used": false,
+    "tau_fit_to_masses": false,
+    "sigma_fit_to_masses": false,
+    "radius_selected_by": "AUTHOR_SUPPLIED_BHSM_OVERLAP_NORMALIZATION",
+    "S_formula": "1/(4*pi)",
+    "Lambda_squared_formula": "1/(4*pi)",
+    "S_value": 0.07957747154594767,
+    "Lambda_squared_value": 0.07957747154594767,
+    "equal": true,
+    "source_trace": [
+      "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\frozen_constants_v2.json",
+      "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\src\\bhsm_v1.py"
+    ],
+    "semantic_equivalence": "The equality is treated as the author-supplied overlap-scale normalization used by BHSM, not as a post-hoc numerical coincidence."
+  },
+  "tau_sigma_obstruction_chain": {
+    "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
+    "official_predictions_changed": false,
+    "empirical_derivation_inputs_used": false,
+    "observed_masses_used": false,
+    "observed_Higgs_used": false,
+    "observed_gauge_values_used": false,
+    "tau_fit_to_masses": false,
+    "sigma_fit_to_masses": false,
+    "radius_selected_by": "AUTHOR_SUPPLIED_BHSM_OVERLAP_NORMALIZATION",
+    "r_internal_profile_status": "DERIVED_CONDITIONAL",
+    "r_internal_profile": 0.28209479177387814,
+    "r_internal_profile_squared": 0.07957747154594767,
+    "Z_H_status": "OPEN_LOCALIZABLE",
+    "kappa_H_status": "OPEN_LOCALIZABLE",
+    "sigma_from_boundary_geometry": "OPEN_LOCALIZABLE",
+    "tau_from_boundary_geometry": "OPEN_LOCALIZABLE",
+    "sigma_derived": false,
+    "tau_derived": false,
+    "sigma_formula": "sigma = (1/2) sqrt(kappa_H / Z_H)",
+    "tau_formula_before_substitution": "tau = sqrt(Z_H/kappa_H)/(2*r_internal_profile^2)",
+    "tau_symbolic_after_radius_substitution": "tau(Z_H,kappa_H) = 2*pi*sqrt(Z_H/kappa_H)",
+    "tau_numeric_computed": false,
+    "charged_outputs_at_tau_exported": false,
+    "remaining_blockers": [
+      "Z_H",
+      "kappa_H"
+    ]
+  },
+  "Z_H_status": "OPEN_LOCALIZABLE",
+  "kappa_H_status": "OPEN_LOCALIZABLE",
+  "sigma_derived": false,
+  "tau_derived": false,
+  "charged_outputs_at_tau_exported": false,
+  "public_status_after_gate": "structural architecture integrated conditional; numerical closure open"
+}

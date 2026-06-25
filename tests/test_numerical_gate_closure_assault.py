@@ -33,6 +33,13 @@ ALLOWED_STATUSES = {
     "BLOCKED_BY_MISSING_OBJECTS",
     "MOCK_OR_SCAFFOLD_ONLY",
 }
+EXPECTED_AUTHOR_RADIUS_PROMOTIONS = [
+    {
+        "gate": "internal_berger_radius_selection_theorem",
+        "status": "DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM",
+    },
+    {"gate": "r_internal_profile", "status": "DERIVED_CONDITIONAL"},
+]
 
 
 def load_artifact(name: str) -> dict:
@@ -120,7 +127,14 @@ def test_prediction_package_is_not_marked_comparison_ready():
 
 def test_promoted_statuses_require_source_artifacts():
     report = load_artifact("BHSM_numerical_gate_closure_assault_v1.json")
-    assert report["promoted_statuses"] == []
+    if (ROOT / "artifacts" / "internal_berger_radius_selection_theorem_v1.json").exists():
+        assert report["promoted_statuses"] == EXPECTED_AUTHOR_RADIUS_PROMOTIONS
+        followup = report["gates"]["tau_sigma"]["targeted_followup_from_author_radius_selection"]
+        assert followup["source_artifact"] == "artifacts/internal_berger_radius_selection_theorem_v1.json"
+        assert followup["r_internal_profile_status"] == "DERIVED_CONDITIONAL"
+        assert followup["remaining_blockers"] == ["Z_H", "kappa_H"]
+    else:
+        assert report["promoted_statuses"] == []
     for row in report["blocked_gates"]:
         assert row["status"] in ALLOWED_STATUSES
 

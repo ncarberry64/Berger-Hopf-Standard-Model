@@ -187,3 +187,21 @@ Berger-volume normalization theorem, or collar-depth matching theorem.
 `Z_H` is not set to one, `sigma` and `tau` remain `OPEN_LOCALIZABLE`, no charged
 outputs at boundary tau are exported, and official/frozen predictions remain
 unchanged.
+
+## Author-Supplied Internal Berger Radius Selection
+
+The radius fork from PR #49 is resolved by the author-supplied BHSM overlap
+normalization:
+
+`r_internal_profile^2 = Lambda_squared = S = 1/(4*pi)`.
+
+Therefore `r_internal_profile = 1/sqrt(4*pi)` and the local radius gate is
+`DERIVED_CONDITIONAL` with theorem status `DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM`.
+The Lambda-radius and overlap-radius routes are selected as the same semantic
+BHSM overlap-scale normalization, not merely as numerically equal constants.
+
+The global public status remains `structural architecture integrated conditional; numerical closure open`. `Z_H` and `kappa_H`
+remain open, so `sigma` and `tau` are not numerically computed. With the radius
+substituted, the symbolic dependency is
+`tau(Z_H,kappa_H) = 2*pi*sqrt(Z_H/kappa_H)`. No charged outputs at boundary tau
+are exported, and official/frozen predictions remain unchanged.

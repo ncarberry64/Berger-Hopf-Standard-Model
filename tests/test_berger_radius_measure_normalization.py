@@ -123,7 +123,7 @@ def test_radius_measure_closure_names_single_missing_theorem():
     assert artifact["empirical_derivation_inputs_used"] is False
 
 
-def test_generated_artifacts_have_guardrails_and_no_radius_value_file():
+def test_generated_artifacts_have_guardrails_and_author_followup_radius_value_file():
     for name in NEW_ARTIFACTS:
         payload = load_artifact(name)
         assert payload["public_status_before_gate"] == PUBLIC_STATUS
@@ -134,7 +134,14 @@ def test_generated_artifacts_have_guardrails_and_no_radius_value_file():
         assert payload["observed_gauge_values_used"] is False
         assert payload["tau_fit_to_masses"] is False
         assert payload["sigma_fit_to_masses"] is False
-    assert not (ROOT / "artifacts" / "internal_profile_radius_value_v1.json").exists()
+    value_path = ROOT / "artifacts" / "internal_profile_radius_value_v1.json"
+    if (ROOT / "artifacts" / "internal_berger_radius_selection_theorem_v1.json").exists():
+        value = load_artifact("internal_profile_radius_value_v1.json")
+        assert value_path.exists()
+        assert value["radius_selected_by"] == "AUTHOR_SUPPLIED_BHSM_OVERLAP_NORMALIZATION"
+        assert value["r_internal_profile_status"] == "DERIVED_CONDITIONAL"
+    else:
+        assert not value_path.exists()
 
 
 def test_previous_artifacts_record_pr48_followup_without_breaking_legacy_blockers():
@@ -147,7 +154,23 @@ def test_previous_artifacts_record_pr48_followup_without_breaking_legacy_blocker
     assert central["gates"]["tau_sigma"]["targeted_followup_from_PR48"]["missing_theorem"] == (
         radius.MISSING_SELECTION_THEOREM
     )
-    assert central["promoted_statuses"] == []
+    if (ROOT / "artifacts" / "internal_berger_radius_selection_theorem_v1.json").exists():
+        assert central["promoted_statuses"] == [
+            {
+                "gate": "internal_berger_radius_selection_theorem",
+                "status": "DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM",
+            },
+            {"gate": "r_internal_profile", "status": "DERIVED_CONDITIONAL"},
+        ]
+        assert central["gates"]["tau_sigma"]["targeted_followup_from_author_radius_selection"][
+            "remaining_blockers"
+        ] == ["Z_H", "kappa_H"]
+        assert package["sections"]["open_boundary_parameters"]["refined_open_blockers_after_radius_selection"] == [
+            "Z_H",
+            "kappa_H",
+        ]
+    else:
+        assert central["promoted_statuses"] == []
     assert package["sections"]["open_boundary_parameters"]["open_blockers"] == ["kappa_H", "Z_H", "r"]
     assert package["sections"]["open_boundary_parameters"]["comparison_ready"] is False
 
