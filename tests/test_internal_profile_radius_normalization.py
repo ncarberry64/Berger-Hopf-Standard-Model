@@ -155,16 +155,24 @@ def test_previous_artifacts_record_pr47_followup_without_promotion():
         norm.BLOCKED_BY_MISSING_NORMALIZATION_THEOREM
     )
     if (ROOT / "artifacts" / "internal_berger_radius_selection_theorem_v1.json").exists():
-        assert central["promoted_statuses"] == [
+        expected = [
             {
                 "gate": "internal_berger_radius_selection_theorem",
                 "status": "DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM",
             },
             {"gate": "r_internal_profile", "status": "DERIVED_CONDITIONAL"},
         ]
+        if (ROOT / "artifacts" / "profile_normalization_hessian_closure_v1.json").exists():
+            expected.append({"gate": "Z_H_profile_normalization", "status": "DERIVED_CONDITIONAL"})
+        assert central["promoted_statuses"] == expected
         followup = central["gates"]["tau_sigma"]["targeted_followup_from_author_radius_selection"]
         assert followup["source_artifact"] == "artifacts/internal_berger_radius_selection_theorem_v1.json"
         assert followup["remaining_blockers"] == ["Z_H", "kappa_H"]
+        if (ROOT / "artifacts" / "profile_normalization_hessian_closure_v1.json").exists():
+            profile_followup = central["gates"]["tau_sigma"][
+                "targeted_followup_from_profile_normalization_hessian_closure"
+            ]
+            assert profile_followup["remaining_blockers"] == ["kappa_H"]
     else:
         assert central["promoted_statuses"] == []
     assert package["sections"]["open_boundary_parameters"]["source_artifact"] == (

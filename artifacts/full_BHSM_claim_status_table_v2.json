@@ -100,8 +100,8 @@
     },
     {
       "claim": "Z_H profile normalization",
-      "status": "OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH",
-      "boundary": "Formula localized as a profile/collar normalization; explicit profile and measure values remain open."
+      "status": "DERIVED_CONDITIONAL",
+      "boundary": "Author/canonical BHSM profile normalization theorem sets Z_H = integral_B |Phi|^2 dmu_Berger = 1."
     },
     {
       "claim": "kappa_H profile curvature",
@@ -120,13 +120,13 @@
     },
     {
       "claim": "Z_H profile normalization closure",
-      "status": "BLOCKED_BY_MISSING_PROFILE_MEASURE",
-      "boundary": "Z_H is not set to one without a profile normalization theorem and evaluated measure."
+      "status": "DERIVED_CONDITIONAL",
+      "boundary": "Closed conditionally by CANONICAL_INTERNAL_PROFILE_NORMALIZATION_THEOREM."
     },
     {
       "claim": "kappa_H profile second variation closure",
-      "status": "BLOCKED_BY_MISSING_EFFECTIVE_ACTION",
-      "boundary": "Blocked until S_eff^(H), profile saddle, H_H, V_eff'', and boundary potential curvature coefficients are derived."
+      "status": "BLOCKED_BY_MISSING_PROFILE_HESSIAN_THEOREM",
+      "boundary": "Blocked until CANONICAL_PROFILE_HESSIAN_THEOREM evaluates delta^2 S_eff^(H) at Phi_H; mu_H is not identified with kappa_H."
     },
     {
       "claim": "Internal Berger radius selection theorem",
@@ -152,6 +152,19 @@
       "claim": "Internal radius normalization fork",
       "status": "RESOLVED_BY_AUTHOR_AXIOM",
       "boundary": "Lambda-radius and overlap-radius are selected as semantically equivalent under the author normalization."
+    },
+    {
+      "claim": "Profile normalization/Hessian closure sprint",
+      "status": "BLOCKED_BY_MISSING_PROFILE_HESSIAN_THEOREM",
+      "boundary": "Z_H closed; kappa_H remains the single local profile-scale blocker."
     }
-  ]
+  ],
+  "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
+  "empirical_derivation_inputs_used": false,
+  "observed_masses_used": false,
+  "observed_Higgs_used": false,
+  "observed_gauge_values_used": false,
+  "tau_fit_to_masses": false,
+  "sigma_fit_to_masses": false,
+  "radius_gate_status": "DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM"
 }

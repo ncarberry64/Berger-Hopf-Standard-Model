@@ -205,3 +205,22 @@ remain open, so `sigma` and `tau` are not numerically computed. With the radius
 substituted, the symbolic dependency is
 `tau(Z_H,kappa_H) = 2*pi*sqrt(Z_H/kappa_H)`. No charged outputs at boundary tau
 are exported, and official/frozen predictions remain unchanged.
+
+## Z_H Profile Normalization And kappa_H Hessian Closure
+
+The radius gate remains closed by `DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM` and is not
+reopened. The author/canonical BHSM profile normalization theorem is encoded as:
+
+`Z_H = integral_B |Phi(y)|^2 dmu_Berger = 1`.
+
+Therefore `Z_H` is locally `DERIVED_CONDITIONAL`. The Higgs/profile
+Hessian coefficient `kappa_H` remains blocked by
+`BLOCKED_BY_MISSING_PROFILE_HESSIAN_THEOREM` because no source-traced
+repo convention identifies `mu_H` or any existing stiffness object with
+`kappa_H`.
+
+With `r_internal_profile^2=1/(4*pi)` and `Z_H=1`, the symbolic dependency is
+`tau(kappa_H) = 2*pi/sqrt(kappa_H)`. Tau and sigma are not numerically computed,
+charged outputs at boundary tau are not exported, and official/frozen
+predictions remain unchanged. The global public status remains
+`structural architecture integrated conditional; numerical closure open`.

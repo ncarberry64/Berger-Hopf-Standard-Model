@@ -157,6 +157,19 @@
       "refined_missing_objects_after_radius_selection": [
         "Z_H",
         "kappa_H"
+      ],
+      "targeted_followup_from_profile_normalization_hessian_closure": {
+        "source_artifact": "artifacts/profile_normalization_hessian_closure_v1.json",
+        "Z_H_status": "DERIVED_CONDITIONAL",
+        "Z_H_value": 1.0,
+        "kappa_H_status": "BLOCKED_BY_MISSING_PROFILE_HESSIAN_THEOREM",
+        "remaining_blockers": [
+          "kappa_H"
+        ],
+        "tau_symbolic_after_Z_H_substitution": "tau(kappa_H) = 2*pi/sqrt(kappa_H)"
+      },
+      "refined_missing_objects_after_profile_normalization": [
+        "kappa_H"
       ]
     },
     "charged_outputs_at_tau": {
@@ -188,6 +201,9 @@
       ],
       "refined_missing_objects_after_radius_selection": [
         "Z_H",
+        "kappa_H"
+      ],
+      "refined_missing_objects_after_profile_normalization": [
         "kappa_H"
       ]
     },
@@ -400,6 +416,10 @@
     {
       "gate": "r_internal_profile",
       "status": "DERIVED_CONDITIONAL"
+    },
+    {
+      "gate": "Z_H_profile_normalization",
+      "status": "DERIVED_CONDITIONAL"
     }
   ],
   "blocked_gates": [
@@ -473,5 +493,12 @@
     "pre-registered comparison statistic",
     "r_internal_profile"
   ],
-  "empirical_derivation_inputs_used": false
+  "empirical_derivation_inputs_used": false,
+  "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
+  "observed_masses_used": false,
+  "observed_Higgs_used": false,
+  "observed_gauge_values_used": false,
+  "tau_fit_to_masses": false,
+  "sigma_fit_to_masses": false,
+  "radius_gate_status": "DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM"
 }

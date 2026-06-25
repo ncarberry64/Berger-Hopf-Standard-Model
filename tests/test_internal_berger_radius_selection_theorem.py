@@ -115,7 +115,13 @@ def test_profile_scale_update_moves_blocker_to_Z_H_and_kappa_H_only():
     payload = load_artifact("profile_scale_tau_sigma_update_v1.json")
     update = payload["profile_scale_tau_sigma_update"]
     assert update["r_internal_profile_status"] == theorem.RADIUS_STATUS
-    assert update["missing_objects"] == ["Z_H", "kappa_H"]
+    if (ROOT / "artifacts" / "profile_normalization_hessian_closure_v1.json").exists():
+        assert update["Z_H_status"] == "DERIVED_CONDITIONAL"
+        assert update["Z_H"] == 1.0
+        assert update["missing_objects"] == ["kappa_H"]
+        assert update["tau_formula_after_Z_H_substitution"] == "tau(kappa_H) = 2*pi/sqrt(kappa_H)"
+    else:
+        assert update["missing_objects"] == ["Z_H", "kappa_H"]
     assert update["tau_formula_after_radius_substitution"] == "tau(Z_H,kappa_H) = 2*pi*sqrt(Z_H/kappa_H)"
     assert update["tau_derived"] is False
     assert update["sigma_derived"] is False
@@ -138,9 +144,15 @@ def test_prior_artifacts_record_radius_gate_promotion_without_global_closure():
 def test_Z_H_is_not_set_to_one_and_kappa_H_not_invented():
     boundary = load_artifact("boundary_profile_scale_closure_v1.json")
     profile = load_artifact("profile_scale_tau_sigma_update_v1.json")
+    if (ROOT / "artifacts" / "profile_normalization_hessian_closure_v1.json").exists():
+        assert boundary["Z_H_result"]["value"] == 1.0
+        assert boundary["Z_H_result"]["Z_H_set_to_one_by_theorem"] is True
+        assert boundary["Z_H_result"]["Z_H_set_to_one_by_habit"] is False
+        assert profile["profile_scale_tau_sigma_update"]["missing_objects"] == ["kappa_H"]
+    else:
+        assert profile["profile_scale_tau_sigma_update"]["missing_objects"] == ["Z_H", "kappa_H"]
     assert boundary["Z_H"]["value"] is None
     assert boundary["kappa_H"]["value"] is None
-    assert profile["profile_scale_tau_sigma_update"]["missing_objects"] == ["Z_H", "kappa_H"]
 
 
 def test_public_status_section_has_no_forbidden_claims():

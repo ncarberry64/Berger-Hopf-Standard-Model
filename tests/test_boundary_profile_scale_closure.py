@@ -149,15 +149,23 @@ def test_pr46_artifacts_record_targeted_followup_without_promotion():
     assert tau["targeted_followup"]["targeted_first_blocker_from_PR_46"] is True
     assert central["gates"]["tau_sigma"]["targeted_followup"]["targeted_first_blocker_from_PR_46"] is True
     if (ROOT / "artifacts" / "internal_berger_radius_selection_theorem_v1.json").exists():
-        assert central["promoted_statuses"] == [
+        expected = [
             {
                 "gate": "internal_berger_radius_selection_theorem",
                 "status": "DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM",
             },
             {"gate": "r_internal_profile", "status": "DERIVED_CONDITIONAL"},
         ]
+        if (ROOT / "artifacts" / "profile_normalization_hessian_closure_v1.json").exists():
+            expected.append({"gate": "Z_H_profile_normalization", "status": "DERIVED_CONDITIONAL"})
+        assert central["promoted_statuses"] == expected
         followup = central["gates"]["tau_sigma"]["targeted_followup_from_author_radius_selection"]
         assert followup["remaining_blockers"] == ["Z_H", "kappa_H"]
+        if (ROOT / "artifacts" / "profile_normalization_hessian_closure_v1.json").exists():
+            profile_followup = central["gates"]["tau_sigma"][
+                "targeted_followup_from_profile_normalization_hessian_closure"
+            ]
+            assert profile_followup["remaining_blockers"] == ["kappa_H"]
     else:
         assert central["promoted_statuses"] == []
     assert package["sections"]["open_boundary_parameters"]["status"] == closure.BLOCKED_BY_MISSING_OBJECTS

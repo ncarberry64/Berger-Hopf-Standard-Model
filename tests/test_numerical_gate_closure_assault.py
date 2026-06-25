@@ -40,6 +40,10 @@ EXPECTED_AUTHOR_RADIUS_PROMOTIONS = [
     },
     {"gate": "r_internal_profile", "status": "DERIVED_CONDITIONAL"},
 ]
+EXPECTED_PROFILE_NORMALIZATION_PROMOTION = {
+    "gate": "Z_H_profile_normalization",
+    "status": "DERIVED_CONDITIONAL",
+}
 
 
 def load_artifact(name: str) -> dict:
@@ -128,11 +132,20 @@ def test_prediction_package_is_not_marked_comparison_ready():
 def test_promoted_statuses_require_source_artifacts():
     report = load_artifact("BHSM_numerical_gate_closure_assault_v1.json")
     if (ROOT / "artifacts" / "internal_berger_radius_selection_theorem_v1.json").exists():
-        assert report["promoted_statuses"] == EXPECTED_AUTHOR_RADIUS_PROMOTIONS
+        expected = list(EXPECTED_AUTHOR_RADIUS_PROMOTIONS)
+        if (ROOT / "artifacts" / "profile_normalization_hessian_closure_v1.json").exists():
+            expected.append(EXPECTED_PROFILE_NORMALIZATION_PROMOTION)
+        assert report["promoted_statuses"] == expected
         followup = report["gates"]["tau_sigma"]["targeted_followup_from_author_radius_selection"]
         assert followup["source_artifact"] == "artifacts/internal_berger_radius_selection_theorem_v1.json"
         assert followup["r_internal_profile_status"] == "DERIVED_CONDITIONAL"
         assert followup["remaining_blockers"] == ["Z_H", "kappa_H"]
+        if (ROOT / "artifacts" / "profile_normalization_hessian_closure_v1.json").exists():
+            profile_followup = report["gates"]["tau_sigma"][
+                "targeted_followup_from_profile_normalization_hessian_closure"
+            ]
+            assert profile_followup["Z_H_value"] == 1.0
+            assert profile_followup["remaining_blockers"] == ["kappa_H"]
     else:
         assert report["promoted_statuses"] == []
     for row in report["blocked_gates"]:

@@ -31,6 +31,9 @@
       "refined_open_blockers_after_radius_selection": [
         "Z_H",
         "kappa_H"
+      ],
+      "refined_open_blockers_after_profile_normalization": [
+        "kappa_H"
       ]
     },
     "charged_cross_sector_ratios": {
@@ -167,7 +170,14 @@
       "refined_open_blockers_after_radius_selection": [
         "Z_H",
         "kappa_H"
-      ]
+      ],
+      "source_artifact_from_profile_normalization_hessian_closure": "artifacts/profile_normalization_hessian_closure_v1.json",
+      "refined_open_blockers_after_profile_normalization": [
+        "kappa_H"
+      ],
+      "Z_H_status": "DERIVED_CONDITIONAL",
+      "Z_H_value": 1.0,
+      "kappa_H_status": "BLOCKED_BY_MISSING_PROFILE_HESSIAN_THEOREM"
     },
     "claim_status": {
       "status": "NUMERICAL_CLOSURE_OPEN",
@@ -186,5 +196,12 @@
       "open_blockers": []
     }
   },
-  "empirical_derivation_inputs_used": false
+  "empirical_derivation_inputs_used": false,
+  "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
+  "observed_masses_used": false,
+  "observed_Higgs_used": false,
+  "observed_gauge_values_used": false,
+  "tau_fit_to_masses": false,
+  "sigma_fit_to_masses": false,
+  "radius_gate_status": "DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM"
 }

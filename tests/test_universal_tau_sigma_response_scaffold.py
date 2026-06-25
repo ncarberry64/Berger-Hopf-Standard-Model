@@ -106,9 +106,13 @@ def test_open_gate_and_claim_status_are_updated_without_closure():
     assert statuses["universal_tau_sigma_scaffold"] == "IMPLEMENTED_CONDITIONAL"
     assert statuses["tau_response_curves"] == "EXPORTED_NO_FIT_DIAGNOSTIC"
     assert statuses["oriented_jet_heat_response"] == "STRUCTURALLY_SUPPORTED_CANDIDATE"
-    assert statuses["tau_from_boundary_geometry"] == "OPEN_LOCALIZABLE"
+    if (ROOT / "artifacts" / "profile_normalization_hessian_closure_v1.json").exists():
+        assert statuses["tau_from_boundary_geometry"] == "OPEN_LOCALIZABLE_BLOCKED_BY_KAPPA_H"
+        assert statuses["sigma_from_boundary_geometry"] == "OPEN_LOCALIZABLE_BLOCKED_BY_KAPPA_H"
+    else:
+        assert statuses["tau_from_boundary_geometry"] == "OPEN_LOCALIZABLE"
+        assert statuses["sigma_from_boundary_geometry"] == "OPEN_LOCALIZABLE"
     assert statuses["tau_from_mass_fit"] == "FORBIDDEN"
-    assert statuses["sigma_from_boundary_geometry"] == "OPEN_LOCALIZABLE"
     assert statuses["sigma_from_mass_fit"] == "FORBIDDEN"
     assert statuses["charged_precision_closure"] == "OPEN"
     assert statuses["minimal_diagonal_K_collar_route"] == "REJECTED_AS_PRIMARY_BY_RESPONSE_AUDIT"
