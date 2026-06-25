@@ -9,89 +9,123 @@
   "package_status": "EXPORTED_NOT_COMPARISON_READY",
   "sections": {
     "charged_same_sector_ratios": {
-      "status": "STRUCTURAL_RESPONSE_EXPORTED",
+      "status": "BLOCKED_BY_TAU_SIGMA_BOUNDARY_DERIVATION",
       "source_artifact": "artifacts/tau_response_curves_A_background_identity_v1.json",
       "uses_empirical_input": false,
       "comparison_ready": false,
       "open_blockers": [
-        "boundary-derived tau/sigma",
-        "common-scale target population"
+        "kappa_H",
+        "Z_H",
+        "r"
       ]
     },
     "charged_cross_sector_ratios": {
-      "status": "OPEN",
+      "status": "BLOCKED_BY_MISSING_TRANSPORT_OBJECTS",
       "source_artifact": null,
       "uses_empirical_input": false,
       "comparison_ready": false,
       "open_blockers": [
-        "cross-sector transported mass ratios",
-        "scheme/common-scale alignment"
+        "T_gauge,f",
+        "T_Yukawa,self,f_i",
+        "T_threshold,f_i",
+        "T_scheme,f",
+        "Lambda_BH",
+        "mu_ref"
       ]
     },
     "neutral_mass_splittings": {
-      "status": "OPEN",
-      "source_artifact": null,
+      "status": "STRONGLY_SUPPORTED_CANDIDATE",
+      "source_artifact": "artifacts/neutral_parameter_closure_or_obstruction_v1.json",
       "uses_empirical_input": false,
       "comparison_ready": false,
       "open_blockers": [
-        "neutral eta/beta/kappa final derivation",
-        "neutral threshold rules"
+        "action/source derivation of eta_nu",
+        "action/source derivation of beta_nu",
+        "action/source derivation of kappa_nu",
+        "neutral threshold operator"
       ]
     },
     "PMNS_angles_and_phase": {
-      "status": "STRUCTURAL_SOURCE_ONLY",
+      "status": "PMNS_BLOCKED_BY_NEUTRAL_OPERATOR_OPEN",
       "source_artifact": null,
       "uses_empirical_input": false,
       "comparison_ready": false,
       "open_blockers": [
-        "PMNS numerical closure"
+        "neutral operator final derivation",
+        "neutral threshold rules",
+        "charged lepton operator at boundary-derived tau"
       ]
     },
     "CKM_angles_and_phase": {
-      "status": "STRUCTURAL_SOURCE_ONLY",
+      "status": "CKM_BLOCKED_BY_UP_OPERATOR_OPEN",
       "source_artifact": null,
       "uses_empirical_input": false,
       "comparison_ready": false,
       "open_blockers": [
-        "CKM numerical closure",
-        "CP numerical closure"
+        "final up/down charged operators at boundary-derived tau",
+        "CKM numerical lock",
+        "common-scale transport population"
       ]
     },
     "CP_Jarlskog_invariants": {
-      "status": "STRUCTURAL_SOURCE_ONLY",
+      "status": "CP_NUMERICAL_CLOSURE_OPEN",
       "source_artifact": null,
       "uses_empirical_input": false,
       "comparison_ready": false,
       "open_blockers": [
-        "CP numerical closure"
+        "derived phase-to-CKM/PMNS operator map",
+        "closed CKM operator",
+        "closed PMNS operator"
       ]
     },
     "gauge_couplings": {
-      "status": "OPEN",
+      "status": "BLOCKED_BY_MISSING_TRANSPORT_OBJECTS",
       "source_artifact": null,
       "uses_empirical_input": false,
       "comparison_ready": false,
       "open_blockers": [
-        "residual RG coefficients",
-        "full scheme/common-scale alignment"
+        "T_gauge,f",
+        "T_Yukawa,self,f_i",
+        "T_threshold,f_i",
+        "T_scheme,f",
+        "Lambda_BH",
+        "mu_ref"
       ]
     },
     "sin2_theta_W": {
-      "status": "OPEN",
+      "status": "BLOCKED_BY_MISSING_OBJECTS",
       "source_artifact": null,
       "uses_empirical_input": false,
       "comparison_ready": false,
       "open_blockers": [
-        "Higgs/electroweak absolute scale"
+        "Z_H",
+        "v_BH",
+        "V_eff''",
+        "Lambda_BH",
+        "Xi_i",
+        "sin2_theta_W derivation",
+        "v_EW derivation",
+        "m_h derivation",
+        "kappa_H",
+        "r"
       ]
     },
     "W_Z_Higgs_scale": {
-      "status": "OPEN",
+      "status": "BLOCKED_BY_MISSING_OBJECTS",
       "source_artifact": null,
       "uses_empirical_input": false,
       "comparison_ready": false,
       "open_blockers": [
-        "Higgs/electroweak absolute scale"
+        "Z_H",
+        "v_BH",
+        "V_eff''",
+        "Lambda_BH",
+        "Xi_i",
+        "sin2_theta_W derivation",
+        "v_EW derivation",
+        "m_h derivation",
+        "kappa_H",
+        "r"
       ]
     },
     "open_boundary_parameters": {
@@ -100,8 +134,9 @@
       "uses_empirical_input": false,
       "comparison_ready": false,
       "open_blockers": [
-        "boundary-derived tau/sigma",
-        "boundary-derived chi"
+        "kappa_H",
+        "Z_H",
+        "r"
       ]
     },
     "claim_status": {
@@ -120,5 +155,6 @@
       "comparison_ready": false,
       "open_blockers": []
     }
-  }
+  },
+  "empirical_derivation_inputs_used": false
 }

@@ -62,6 +62,20 @@ comparison only. Empirical values are not derivation inputs. Mixed pole/running
 comparisons remain forbidden. Full comparison-ready numerical closure remains
 open.
 
+## Numerical Gate Closure Assault
+
+The numerical gate closure assault attempted tau/sigma boundary derivation,
+charged outputs at boundary tau, common-scale transport population, neutral
+parameter closure, PMNS, CKM, CP, Higgs/electroweak, and cosmology/DESI gates.
+No gate was promoted to closed. The exact blockers are now recorded in
+`artifacts/BHSM_numerical_gate_closure_assault_v1.json`. The first blocker is
+tau/sigma: `kappa_H`, `Z_H`, and the internal radius `r` are missing as
+repo-derived numerical objects. Common-scale transport remains blocked by
+missing `T_gauge,f`, `T_Yukawa,self,f_i`, `T_threshold,f_i`, `T_scheme,f`,
+`Lambda_BH`, and `mu_ref`. Neutral eta/beta/kappa remains a strongly supported
+candidate with final derivation open. Empirical derivation inputs were not
+used, and official predictions remain unchanged.
+
 ## What Remains Open
 
 - boundary-derived `tau/sigma`
