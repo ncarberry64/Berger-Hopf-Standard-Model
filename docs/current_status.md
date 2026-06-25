@@ -54,6 +54,14 @@ curves for fixed diagnostic `tau` values. `tau` and `sigma` remain
 open-localizable from boundary geometry and are not fitted to charged masses.
 Full charged numerical closure remains open.
 
+## Common-Scale Transport And Prediction-Package Scaffold
+
+BHSM now has a no-fit common-scale charged transport interface and
+comparison-package skeleton. The target schema is for future empirical
+comparison only. Empirical values are not derivation inputs. Mixed pole/running
+comparisons remain forbidden. Full comparison-ready numerical closure remains
+open.
+
 ## What Remains Open
 
 - boundary-derived `tau/sigma`
