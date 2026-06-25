@@ -1,0 +1,131 @@
+{
+  "artifact": "charged_branch_matrices_v2",
+  "public_status": "structural architecture integrated conditional; numerical closure open",
+  "official_predictions_changed": false,
+  "branch": "B-diagnostic",
+  "frozen_before_comparison": true,
+  "used_target_data": false,
+  "a": 1.157054135733433,
+  "c": [
+    1,
+    2,
+    4
+  ],
+  "generation_order": "by_y_ascending",
+  "matrix_status": "EXPORTED_FROM_REPO_GENERATOR",
+  "source": "charged_kf_generator with rho_ch=3, Rule-A suppression, up middle ln2 threshold",
+  "sectors": {
+    "lepton": {
+      "K": [
+        [
+          "0",
+          "1/147",
+          "0"
+        ],
+        [
+          "1/147",
+          "260/147",
+          "1/147"
+        ],
+        [
+          "0",
+          "1/147",
+          "240/49"
+        ]
+      ],
+      "mode_ledger": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "claim_status": "DERIVED_CONDITIONAL",
+      "matrix_status": "EXPORTED_FROM_REPO_GENERATOR",
+      "rho_ch": 3,
+      "suppression_rule": "RULE_A_SINGLE_OPERATOR_TRACE"
+    },
+    "up": {
+      "K": [
+        [
+          "0.0",
+          "0.013605442176870748",
+          "0.0"
+        ],
+        [
+          "0.013605442176870748",
+          "9.999269629539537",
+          "0.006802721088435374"
+        ],
+        [
+          "0.0",
+          "0.006802721088435374",
+          "17.31972789115646"
+        ]
+      ],
+      "mode_ledger": [
+        [
+          0,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          8,
+          1
+        ]
+      ],
+      "claim_status": "DERIVED_CONDITIONAL_WITH_LOCAL_THRESHOLD",
+      "matrix_status": "EXPORTED_FROM_REPO_GENERATOR",
+      "Z_virt_middle_up": "1/2 if dressed branch active",
+      "rho_ch": 3,
+      "suppression_rule": "RULE_A_SINGLE_OPERATOR_TRACE"
+    },
+    "down": {
+      "K": [
+        [
+          "0",
+          "4/147",
+          "0"
+        ],
+        [
+          "4/147",
+          "612/49",
+          "1/399"
+        ],
+        [
+          "0",
+          "1/399",
+          "272/21"
+        ]
+      ],
+      "mode_ledger": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "claim_status": "DERIVED_CONDITIONAL",
+      "matrix_status": "EXPORTED_FROM_REPO_GENERATOR",
+      "rho_ch": 3,
+      "suppression_rule": "RULE_A_SINGLE_OPERATOR_TRACE"
+    }
+  }
+}
