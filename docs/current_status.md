@@ -167,3 +167,23 @@ Result: `BLOCKED_BY_MISSING_OBJECTS`.
 
 Therefore `sigma` and `tau` remain `OPEN_LOCALIZABLE`, no charged outputs at
 boundary tau are exported, and official/frozen predictions remain unchanged.
+
+## Internal Berger Radius And Measure Normalization Assault
+
+This targeted follow-up attacks the first blocker from PR #48:
+`r_internal_profile` and the internal Berger measure/domain normalization. It
+tests unit-radius, Lambda-radius, overlap-radius, Berger-volume, and
+collar-depth matching routes without using observed masses, Higgs data, gauge
+values, CKM, PMNS, neutrino data, DESI residuals, or target ratios.
+
+Result: `NORMALIZATION_FORK_OPEN`.
+
+No route is uniquely selected by current repo axioms. The exact missing theorem
+is `INTERNAL_BERGER_RADIUS_SELECTION_THEOREM`. It must choose among a unit-radius
+convention, Lambda-to-radius convention, overlap-width-to-radius convention,
+Berger-volume normalization theorem, or collar-depth matching theorem.
+
+`dmu_Berger` and the internal profile domain remain `NORMALIZATION_FORK_OPEN`.
+`Z_H` is not set to one, `sigma` and `tau` remain `OPEN_LOCALIZABLE`, no charged
+outputs at boundary tau are exported, and official/frozen predictions remain
+unchanged.

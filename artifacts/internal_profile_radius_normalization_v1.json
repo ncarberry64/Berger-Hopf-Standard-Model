@@ -20,7 +20,7 @@
     "tau_fit_to_masses": false,
     "sigma_fit_to_masses": false,
     "name": "r_internal_profile",
-    "status": "BLOCKED_BY_MISSING_NORMALIZATION_THEOREM",
+    "status": "NORMALIZATION_FORK_OPEN",
     "derived": false,
     "value": null,
     "formula": "tau = 1/(4 sigma r_internal_profile^2)",
@@ -38,7 +38,9 @@
     ],
     "cosmological_R_H_used": false,
     "S_or_Lambda_silently_used_as_radius": false,
-    "obstruction": "No internal/profile Berger radius normalization theorem is present."
+    "obstruction": "No internal/profile Berger radius normalization theorem is present.",
+    "missing_theorem": "INTERNAL_BERGER_RADIUS_SELECTION_THEOREM",
+    "normalization_fork_status": "NORMALIZATION_FORK_OPEN"
   },
   "radius_disambiguation": [
     {
@@ -468,5 +470,93 @@
     "kappa_H"
   ],
   "charged_outputs_at_tau_exported": false,
-  "public_status_after_gate": "structural architecture integrated conditional; numerical closure open"
+  "public_status_after_gate": "structural architecture integrated conditional; numerical closure open",
+  "targeted_followup_from_PR48": {
+    "source_artifact": "artifacts/berger_radius_measure_normalization_v1.json",
+    "r_internal_profile_status": "NORMALIZATION_FORK_OPEN",
+    "selected_route": null,
+    "missing_theorem": "INTERNAL_BERGER_RADIUS_SELECTION_THEOREM",
+    "dmu_Berger_domain_status": "NORMALIZATION_FORK_OPEN"
+  },
+  "radius_normalization_forks_from_PR48_followup": [
+    {
+      "route_id": "unit_internal_radius",
+      "route_name": "Unit internal Berger radius",
+      "candidate_value": 1.0,
+      "candidate_formula": "r_internal_profile = 1",
+      "status": "STRUCTURALLY_SUPPORTED_CANDIDATE",
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\hopf_fiber_connection_Aq.md",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\explicit_hopf_berger_boundary_oneforms.md",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\berger_base_action_coupling_normalization.md"
+      ],
+      "repo_support": "The repo uses normalized Hopf/contact forms and symbolic dimensionless geometry, but it does not state a unit internal radius convention.",
+      "rejection_or_blocker": "INTERNAL_BERGER_RADIUS_SELECTION_THEOREM",
+      "selected": false,
+      "notes": "Supported as a candidate convention only; not promoted to DERIVED_CONDITIONAL."
+    },
+    {
+      "route_id": "lambda_radius",
+      "route_name": "Lambda radius",
+      "candidate_value": "sqrt(1/(4*pi))",
+      "candidate_formula": "r_internal_profile^2 = Lambda_squared = 1/(4*pi)",
+      "status": "STRUCTURALLY_SUPPORTED_CANDIDATE",
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\frozen_constants_v2.json"
+      ],
+      "repo_support": "Lambda_squared is frozen as 1/(4*pi), but appears as a heat/spectral cutoff.",
+      "rejection_or_blocker": "INTERNAL_BERGER_RADIUS_SELECTION_THEOREM",
+      "selected": false,
+      "notes": "Candidate only because no Laplacian/profile convention identifies Lambda_squared with radius squared."
+    },
+    {
+      "route_id": "overlap_width_radius",
+      "route_name": "Overlap width radius",
+      "candidate_value": "sqrt(1/(4*pi))",
+      "candidate_formula": "r_internal_profile^2 = S = 1/(4*pi)",
+      "status": "STRUCTURALLY_SUPPORTED_CANDIDATE",
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\src\\bhsm_v1.py",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\frozen_constants_v2.json"
+      ],
+      "repo_support": "S is frozen as 1/(4*pi) in the overlap/stochastic width convention.",
+      "rejection_or_blocker": "INTERNAL_BERGER_RADIUS_SELECTION_THEOREM",
+      "selected": false,
+      "notes": "Candidate only because no theorem identifies overlap width with profile area/radius squared."
+    },
+    {
+      "route_id": "berger_volume_normalization",
+      "route_name": "Berger volume normalization",
+      "candidate_value": null,
+      "candidate_formula": "For g_Berger = r_base^2(sigma_1^2+sigma_2^2)+r_fiber^2 sigma_3^2, dmu_Berger depends on the sigma_i/Maurer-Cartan convention and chosen total volume.",
+      "status": "NORMALIZATION_FORK_OPEN",
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\src\\bhsm_berger_base_action_coupling.py",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\berger_base_action_coupling_normalization.md",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\src\\bhsm_hopf_berger_oneforms.py",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\explicit_hopf_berger_boundary_oneforms.md"
+      ],
+      "repo_support": "Symbolic metric and one-forms exist, but no total internal volume or sigma_i volume convention is selected.",
+      "rejection_or_blocker": "INTERNAL_BERGER_RADIUS_SELECTION_THEOREM",
+      "selected": false,
+      "notes": "Does not assume SU(2), unit S^3, Hopf-coordinate, or normalized Maurer-Cartan volume coefficients."
+    },
+    {
+      "route_id": "collar_depth_matching",
+      "route_name": "Collar-depth matching",
+      "candidate_value": null,
+      "candidate_formula": "r_internal_profile = F(rho_*, J(Y,rho), S(Y), K_collar)",
+      "status": "NORMALIZATION_FORK_OPEN",
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_collar_measure_extrinsic_geometry.md",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_boundary_embedding_shape_operator.md",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_complete_scalar_topographic_collar_action.md",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\docs\\open_blockers_backlog.md"
+      ],
+      "repo_support": "Collar Jacobian formulas exist conditionally, but collar depth/domain and shape-operator values are open.",
+      "rejection_or_blocker": "INTERNAL_BERGER_RADIUS_SELECTION_THEOREM",
+      "selected": false,
+      "notes": "Candidate route only; no boundary matching condition equates collar depth to the internal profile radius."
+    }
+  ]
 }

@@ -79,6 +79,90 @@
       "notes": "Common-scale transport placeholders; not the tau profile radius."
     }
   ],
-  "r_status": "BLOCKED_BY_MISSING_OBJECT",
-  "r_classification": "dimensionless internal/profile Berger radius"
+  "r_status": "NORMALIZATION_FORK_OPEN",
+  "r_classification": "dimensionless internal/profile Berger radius",
+  "targeted_followup_from_PR48": {
+    "source_artifact": "artifacts/berger_radius_measure_normalization_v1.json",
+    "r_internal_profile_status": "NORMALIZATION_FORK_OPEN",
+    "missing_theorem": "INTERNAL_BERGER_RADIUS_SELECTION_THEOREM"
+  },
+  "radius_measure_symbols_from_PR48_followup": [
+    {
+      "object_id": "r_internal_profile",
+      "symbol": "r",
+      "classification": "dimensionless internal/profile Berger radius",
+      "status": "NORMALIZATION_FORK_OPEN",
+      "value": null,
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\internal_profile_radius_normalization_v1.json",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_profile_input_classification.md",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\berger_base_action_coupling_normalization.md"
+      ],
+      "used_as_internal_profile_r": true,
+      "notes": "The internal radius is the target of this fork audit; no single convention is selected by repo axioms."
+    },
+    {
+      "object_id": "R_H_cosmological",
+      "symbol": "R_H_Gpc",
+      "classification": "physical/cosmological hyperspherical radius",
+      "status": "REJECTED_BY_REPO_CONVENTIONS",
+      "value": 24.0,
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\hyperspherical_cosmology_desi_pipeline_v1.json"
+      ],
+      "used_as_internal_profile_r": false,
+      "notes": "Cosmological scale is not an internal/profile Berger radius."
+    },
+    {
+      "object_id": "rho_star_collar_depth",
+      "symbol": "rho_*",
+      "classification": "collar normal-depth coordinate",
+      "status": "STRUCTURALLY_SUPPORTED_CANDIDATE",
+      "value": null,
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_normal_coupling_collar_convention.md",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_collar_measure_extrinsic_geometry.md",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_boundary_embedding_shape_operator.md"
+      ],
+      "used_as_internal_profile_r": false,
+      "notes": "Collar depth has conditional geometric formulas but no matching theorem to r_internal_profile."
+    },
+    {
+      "object_id": "Lambda_BH_matching_scale",
+      "symbol": "Lambda_BH / mu_ref",
+      "classification": "common-scale transport matching scale",
+      "status": "REJECTED_BY_REPO_CONVENTIONS",
+      "value": null,
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\common_scale_charged_transport_interface_v1.json"
+      ],
+      "used_as_internal_profile_r": false,
+      "notes": "Common-scale transport object, not a profile-domain radius."
+    },
+    {
+      "object_id": "Lambda_squared_overlap",
+      "symbol": "Lambda_squared",
+      "classification": "heat/spectral cutoff",
+      "status": "STRUCTURALLY_SUPPORTED_CANDIDATE",
+      "value": "1/(4*pi)",
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\frozen_constants_v2.json"
+      ],
+      "used_as_internal_profile_r": false,
+      "notes": "Fixed cutoff value exists, but the repo lacks a Lambda-to-radius convention."
+    },
+    {
+      "object_id": "S_overlap_width",
+      "symbol": "S",
+      "classification": "overlap/stochastic width",
+      "status": "STRUCTURALLY_SUPPORTED_CANDIDATE",
+      "value": "1/(4*pi)",
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\src\\bhsm_v1.py",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\frozen_constants_v2.json"
+      ],
+      "used_as_internal_profile_r": false,
+      "notes": "Frozen width exists, but the repo lacks an overlap-width-to-radius convention."
+    }
+  ]
 }
