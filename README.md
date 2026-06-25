@@ -2,10 +2,12 @@
 
 Current status: structural architecture integrated conditional; numerical closure open.
 
-BHSM is a frozen no-retuning geometric reinterpretation framework for Standard
-Model flavor, couplings, generations, and electroweak-scale structure. The
-repository contains executable screens, ledgers, tests, and manuscript material
-for auditing the framework.
+BHSM is an integrated conditional geometric architecture for organizing the
+Standard Model ledger from Berger-Hopf finite-boundary data. The repository
+currently preserves frozen predictions and separates derived, candidate,
+diagnostic, rejected-as-primary, and open-localizable components. It is not a
+proven replacement for the Standard Model and does not yet claim full numerical
+closure.
 
 This is a careful research package. It is not a claim of experimental
 confirmation, community acceptance, or a final replacement of the Standard
