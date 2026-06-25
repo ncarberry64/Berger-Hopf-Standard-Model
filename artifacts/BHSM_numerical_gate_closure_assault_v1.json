@@ -121,7 +121,20 @@
         "Z_H_status": "OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH",
         "kappa_H_status": "OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH",
         "charged_outputs_at_tau_exported": false
-      }
+      },
+      "targeted_followup_from_PR47": {
+        "source_artifact": "artifacts/internal_profile_radius_normalization_v1.json",
+        "boundary_profile_scale_closure": "BLOCKED_BY_MISSING_OBJECTS",
+        "r_internal_profile_status": "BLOCKED_BY_MISSING_NORMALIZATION_THEOREM",
+        "Phi_profile_status": "DERIVED_CONDITIONAL",
+        "Z_H_status": "BLOCKED_BY_MISSING_PROFILE_MEASURE",
+        "kappa_H_status": "BLOCKED_BY_MISSING_EFFECTIVE_ACTION"
+      },
+      "refined_missing_objects_from_PR47_followup": [
+        "r_internal_profile",
+        "Z_H",
+        "kappa_H"
+      ]
     },
     "charged_outputs_at_tau": {
       "attempted": true,
@@ -139,7 +152,12 @@
       "sigma_fit_to_masses": false,
       "observed_masses_used": false,
       "target_ratios_used": false,
-      "obstruction": "Boundary-derived tau is unavailable, so no charged output can be frozen at boundary tau."
+      "obstruction": "Boundary-derived tau is unavailable, so no charged output can be frozen at boundary tau.",
+      "refined_missing_objects_from_PR47_followup": [
+        "r_internal_profile",
+        "Z_H",
+        "kappa_H"
+      ]
     },
     "common_scale_transport": {
       "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
@@ -411,7 +429,8 @@
     "v_EW derivation",
     "m_h derivation",
     "actual DESI directional anisotropy data",
-    "pre-registered comparison statistic"
+    "pre-registered comparison statistic",
+    "r_internal_profile"
   ],
   "empirical_derivation_inputs_used": false
 }

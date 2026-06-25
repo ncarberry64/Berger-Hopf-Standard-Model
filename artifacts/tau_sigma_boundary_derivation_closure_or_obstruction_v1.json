@@ -106,7 +106,7 @@
     "Z_H",
     "r"
   ],
-  "obstruction": "Boundary/profile scale closure remains blocked until kappa_H, Z_H, and r are repo-derived.",
+  "obstruction": "Cannot compute sigma=(1/2)sqrt(kappa_H/Z_H) and tau=1/(4 sigma r^2) until r_internal_profile, Z_H, and kappa_H are repo-derived.",
   "targeted_followup": {
     "sprint": "Boundary/Profile Scale Closure Assault for kappa_H, Z_H, and r",
     "source_artifact": "artifacts/boundary_profile_scale_closure_v1.json",
@@ -124,5 +124,21 @@
   "observed_Higgs_used": false,
   "observed_gauge_values_used": false,
   "tau_fit_to_masses": false,
-  "sigma_fit_to_masses": false
+  "sigma_fit_to_masses": false,
+  "targeted_followup_from_PR47": {
+    "source_artifact": "artifacts/profile_scale_tau_sigma_update_v1.json",
+    "r_internal_profile_status": "BLOCKED_BY_MISSING_NORMALIZATION_THEOREM",
+    "Z_H_status": "BLOCKED_BY_MISSING_PROFILE_MEASURE",
+    "kappa_H_status": "BLOCKED_BY_MISSING_EFFECTIVE_ACTION",
+    "missing_objects": [
+      "r_internal_profile",
+      "Z_H",
+      "kappa_H"
+    ]
+  },
+  "refined_missing_objects_from_PR47_followup": [
+    "r_internal_profile",
+    "Z_H",
+    "kappa_H"
+  ]
 }

@@ -1,0 +1,472 @@
+{
+  "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
+  "official_predictions_changed": false,
+  "empirical_derivation_inputs_used": false,
+  "observed_masses_used": false,
+  "observed_Higgs_used": false,
+  "observed_gauge_values_used": false,
+  "tau_fit_to_masses": false,
+  "sigma_fit_to_masses": false,
+  "artifact": "internal_profile_radius_normalization_v1",
+  "targeted_followup_to": "PR #47 boundary/profile scale closure",
+  "scope": "r_internal_profile, Phi normal form, Z_H, kappa_H",
+  "r_internal_profile": {
+    "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
+    "official_predictions_changed": false,
+    "empirical_derivation_inputs_used": false,
+    "observed_masses_used": false,
+    "observed_Higgs_used": false,
+    "observed_gauge_values_used": false,
+    "tau_fit_to_masses": false,
+    "sigma_fit_to_masses": false,
+    "name": "r_internal_profile",
+    "status": "BLOCKED_BY_MISSING_NORMALIZATION_THEOREM",
+    "derived": false,
+    "value": null,
+    "formula": "tau = 1/(4 sigma r_internal_profile^2)",
+    "source_trace": [
+      "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\boundary_profile_scale_closure_v1.json",
+      "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_profile_input_classification.md",
+      "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\frozen_constants_v2.json"
+    ],
+    "missing_objects": [
+      "Hopf fiber-radius normalization theorem",
+      "Berger volume normalization theorem",
+      "internal profile-domain measure theorem",
+      "collar-depth matching condition",
+      "Lambda-to-radius convention"
+    ],
+    "cosmological_R_H_used": false,
+    "S_or_Lambda_silently_used_as_radius": false,
+    "obstruction": "No internal/profile Berger radius normalization theorem is present."
+  },
+  "radius_disambiguation": [
+    {
+      "object_id": "r_internal_profile",
+      "symbol": "r",
+      "classification": "dimensionless internal/profile Berger radius",
+      "value": null,
+      "used_as_internal_profile_r": true,
+      "status": "BLOCKED_BY_MISSING_NORMALIZATION_THEOREM",
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\boundary_profile_scale_closure_v1.json",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_profile_input_classification.md",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\frozen_constants_v2.json"
+      ],
+      "notes": "Repo constants localize alpha-anchored anisotropy, S=1/(4*pi), and Lambda_squared=1/(4*pi), but no theorem identifies those constants with the internal/profile radius."
+    },
+    {
+      "object_id": "R_H_cosmological",
+      "symbol": "R_H_Gpc",
+      "classification": "physical/cosmological radius",
+      "value": 24.0,
+      "used_as_internal_profile_r": false,
+      "status": "REJECTED_AS_UNSUPPORTED",
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\hyperspherical_cosmology_desi_pipeline_v1.json"
+      ],
+      "notes": "Cosmological scaffold radius; explicitly not an internal/profile Berger radius."
+    },
+    {
+      "object_id": "rho_star_collar_depth",
+      "symbol": "rho_*",
+      "classification": "collar normal-depth coordinate",
+      "value": null,
+      "used_as_internal_profile_r": false,
+      "status": "OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH",
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_normal_coupling_collar_convention.md",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_collar_measure_extrinsic_geometry.md"
+      ],
+      "notes": "Collar depth is a normal-coordinate object; it is not tau's internal/profile radius."
+    },
+    {
+      "object_id": "Lambda_BH_matching_scale",
+      "symbol": "Lambda_BH / mu_ref",
+      "classification": "common-scale transport/matching scale",
+      "value": null,
+      "used_as_internal_profile_r": false,
+      "status": "BLOCKED_BY_MISSING_OBJECT",
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\common_scale_charged_transport_interface_v1.json"
+      ],
+      "notes": "Matching-scale placeholder, not a geometric radius."
+    },
+    {
+      "object_id": "Lambda_squared_overlap",
+      "symbol": "Lambda_squared",
+      "classification": "heat/spectral cutoff",
+      "value": "1/(4*pi)",
+      "used_as_internal_profile_r": false,
+      "status": "REJECTED_AS_UNSUPPORTED",
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\frozen_constants_v2.json"
+      ],
+      "notes": "Heat/spectral cutoff value is fixed but not identified with r_internal_profile."
+    },
+    {
+      "object_id": "S_overlap_width",
+      "symbol": "S",
+      "classification": "overlap/stochastic width",
+      "value": "1/(4*pi)",
+      "used_as_internal_profile_r": false,
+      "status": "REJECTED_AS_UNSUPPORTED",
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\src\\bhsm_v1.py",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\frozen_constants_v2.json"
+      ],
+      "notes": "Frozen overlap/stochastic width constant, not a profile-domain radius."
+    }
+  ],
+  "Phi_profile": {
+    "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
+    "official_predictions_changed": false,
+    "empirical_derivation_inputs_used": false,
+    "observed_masses_used": false,
+    "observed_Higgs_used": false,
+    "observed_gauge_values_used": false,
+    "tau_fit_to_masses": false,
+    "sigma_fit_to_masses": false,
+    "artifact": "Phi_profile_normal_form_v1",
+    "status": "DERIVED_CONDITIONAL",
+    "Phi_profile": {
+      "name": "Phi(y)",
+      "status": "DERIVED_CONDITIONAL",
+      "value": null,
+      "formula": "Phi(y)=Phi_0 exp[-sigma d_B(y,y_0)^2]",
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\derived_universal_higgs_topographic_profile.md",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_profile_input_classification.md",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_level_set_boundary_embedding.md"
+      ],
+      "missing_objects": [
+        "sigma value",
+        "Phi_0 normalization",
+        "d_B metric distance value"
+      ],
+      "notes": "Gaussian/topographic normal form is localized as a conditional profile ansatz, not numerically solved."
+    },
+    "objects": {
+      "Phi(y)": {
+        "name": "Phi(y)",
+        "status": "DERIVED_CONDITIONAL",
+        "value": null,
+        "formula": "Phi(y)=Phi_0 exp[-sigma d_B(y,y_0)^2]",
+        "source_trace": [
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\derived_universal_higgs_topographic_profile.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_profile_input_classification.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_level_set_boundary_embedding.md"
+        ],
+        "missing_objects": [
+          "sigma value",
+          "Phi_0 normalization",
+          "d_B metric distance value"
+        ],
+        "notes": "Gaussian/topographic normal form is localized as a conditional profile ansatz, not numerically solved."
+      },
+      "Phi_0": {
+        "name": "Phi_0",
+        "status": "OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH",
+        "value": "1/sqrt(integral exp[-2 sigma d_B(y,y_0)^2] dmu_Berger)",
+        "formula": "Phi_0 = 1 / sqrt(integral exp[-2 sigma d_B(y,y_0)^2] dmu_Berger)",
+        "source_trace": [
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\derived_universal_higgs_topographic_profile.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_profile_input_classification.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_level_set_boundary_embedding.md"
+        ],
+        "missing_objects": [
+          "sigma value",
+          "internal domain",
+          "dmu_Berger",
+          "normalization theorem"
+        ],
+        "notes": "Symbolic normalization is available if a normalized profile convention is assumed, but no numeric value is allowed."
+      },
+      "y_0": {
+        "name": "y_0",
+        "status": "OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH",
+        "value": null,
+        "formula": "grad_y S_eff^(H)(y_0)=0",
+        "source_trace": [
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\derived_universal_higgs_topographic_profile.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_profile_input_classification.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_level_set_boundary_embedding.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_neutral_saddle_displacement.md"
+        ],
+        "missing_objects": [
+          "Higgs/profile saddle-selection theorem"
+        ],
+        "notes": "The distinguished point is localized as the profile center/saddle but not selected by a completed action."
+      },
+      "d_B": {
+        "name": "d_B",
+        "status": "OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH",
+        "value": null,
+        "formula": "d_B(y,y_0) from internal Berger metric g_B",
+        "source_trace": [
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\derived_universal_higgs_topographic_profile.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_profile_input_classification.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_level_set_boundary_embedding.md"
+        ],
+        "missing_objects": [
+          "explicit internal Berger metric normalization",
+          "radius convention"
+        ],
+        "notes": "Metric-distance notation is localized, but radius/metric normalization remains open."
+      },
+      "internal_domain": {
+        "name": "internal_domain",
+        "status": "OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH",
+        "value": null,
+        "formula": "B or collar-neighborhood domain for profile integration",
+        "source_trace": [
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\derived_universal_higgs_topographic_profile.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_profile_input_classification.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_level_set_boundary_embedding.md"
+        ],
+        "missing_objects": [
+          "profile-domain selection theorem",
+          "boundary/collar domain limits"
+        ],
+        "notes": "The integration domain is named but not fixed for numerical normalization."
+      },
+      "dmu_Berger": {
+        "name": "dmu_Berger",
+        "status": "OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH",
+        "value": null,
+        "formula": "dmu_Berger = sqrt(det g_B) dy",
+        "source_trace": [
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\derived_universal_higgs_topographic_profile.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_profile_input_classification.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_level_set_boundary_embedding.md"
+        ],
+        "missing_objects": [
+          "metric determinant",
+          "Berger volume normalization",
+          "internal radius convention"
+        ],
+        "notes": "Measure form is localizable but not numerically evaluated."
+      },
+      "J(Y,rho)": {
+        "name": "J(Y,rho)",
+        "status": "DERIVED_CONDITIONAL",
+        "value": null,
+        "formula": "J(Y,rho)=det(I+rho S(Y))=1+rho K(Y)+O(rho^2)",
+        "source_trace": [
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_collar_measure_extrinsic_geometry.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_level_set_boundary_embedding.md"
+        ],
+        "missing_objects": [
+          "shape operator S(Y) value",
+          "normal orientation",
+          "collar depth/domain"
+        ],
+        "notes": "The collar Jacobian identity is conditionally derived, but its value remains open."
+      }
+    },
+    "normalization_condition": "1 = integral |Phi(y)|^2 dmu_Berger",
+    "symbolic_Phi_0": "1/sqrt(integral exp[-2 sigma d_B(y,y_0)^2] dmu_Berger)",
+    "Phi_0_numerical_assigned": false,
+    "missing_objects": [
+      "sigma value",
+      "internal profile-domain measure",
+      "dmu_Berger value",
+      "J(Y,rho) value if collar form is used"
+    ]
+  },
+  "Z_H": {
+    "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
+    "official_predictions_changed": false,
+    "empirical_derivation_inputs_used": false,
+    "observed_masses_used": false,
+    "observed_Higgs_used": false,
+    "observed_gauge_values_used": false,
+    "tau_fit_to_masses": false,
+    "sigma_fit_to_masses": false,
+    "name": "Z_H",
+    "status": "BLOCKED_BY_MISSING_PROFILE_MEASURE",
+    "derived": false,
+    "value": null,
+    "formula": "Z_H = integral_B |Phi(y)|^2 dmu_Berger = integral |Phi(Y,rho)|^2 J(Y,rho) dY drho",
+    "source_trace": [
+      "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\derived_universal_higgs_topographic_profile.md",
+      "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_profile_input_classification.md",
+      "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_level_set_boundary_embedding.md",
+      "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_collar_measure_extrinsic_geometry.md",
+      "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_level_set_boundary_embedding.md"
+    ],
+    "normalized_profile_would_imply_Z_H_equals_one": "CONDITIONAL_ONLY",
+    "Z_H_set_to_one": false,
+    "missing_objects": [
+      "profile normalization theorem identifying Z_H with unit norm",
+      "sigma value",
+      "internal domain",
+      "dmu_Berger value",
+      "J(Y,rho) value if collar form is used"
+    ],
+    "obstruction": "Z_H cannot be set to 1 or evaluated until the profile measure and normalization theorem are supplied."
+  },
+  "kappa_H": {
+    "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
+    "official_predictions_changed": false,
+    "empirical_derivation_inputs_used": false,
+    "observed_masses_used": false,
+    "observed_Higgs_used": false,
+    "observed_gauge_values_used": false,
+    "tau_fit_to_masses": false,
+    "sigma_fit_to_masses": false,
+    "name": "kappa_H",
+    "status": "BLOCKED_BY_MISSING_EFFECTIVE_ACTION",
+    "derived": false,
+    "value": null,
+    "formula": "kappa_H = delta^2 S_eff^(H)/delta Phi^2 |_{Phi=Phi_H} = V_eff''(Phi_H)",
+    "source_trace": [
+      "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\docs\\open_blockers_backlog.md",
+      "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_profile_eom_source_audit.md",
+      "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_boundary_condition_normal_form.md",
+      "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_neutral_saddle_displacement.md",
+      "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\Higgs_EW_closure_or_obstruction_v1.json"
+    ],
+    "objects": {
+      "S_eff^(H)": {
+        "name": "S_eff^(H)",
+        "status": "OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH",
+        "value": null,
+        "formula": "S_eff^(H)[Phi]",
+        "source_trace": [
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\docs\\open_blockers_backlog.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_profile_eom_source_audit.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_boundary_condition_normal_form.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_neutral_saddle_displacement.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\Higgs_EW_closure_or_obstruction_v1.json"
+        ],
+        "missing_objects": [
+          "Higgs/profile effective action",
+          "profile source term",
+          "regularization/boundary terms"
+        ],
+        "notes": "The Higgs effective action is named as a dependency but not constructed/evaluated."
+      },
+      "profile_saddle": {
+        "name": "profile_saddle",
+        "status": "OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH",
+        "value": null,
+        "formula": "delta S_eff^(H)/delta Phi |_{Phi_H}=0",
+        "source_trace": [
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\docs\\open_blockers_backlog.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_profile_eom_source_audit.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_boundary_condition_normal_form.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_neutral_saddle_displacement.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\Higgs_EW_closure_or_obstruction_v1.json"
+        ],
+        "missing_objects": [
+          "S_eff^(H)",
+          "saddle-selection theorem",
+          "boundary conditions"
+        ],
+        "notes": "A saddle condition can be stated, but the action and boundary conditions are open."
+      },
+      "H_H": {
+        "name": "H_H",
+        "status": "OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH",
+        "value": null,
+        "formula": "H_H = delta^2 S_eff^(H)|_{Phi_H}",
+        "source_trace": [
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\docs\\open_blockers_backlog.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_profile_eom_source_audit.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_boundary_condition_normal_form.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_neutral_saddle_displacement.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\Higgs_EW_closure_or_obstruction_v1.json"
+        ],
+        "missing_objects": [
+          "S_eff^(H)",
+          "profile saddle Phi_H",
+          "Hessian coefficients"
+        ],
+        "notes": "The Higgs/charged Hessian is explicitly listed as an open dependency."
+      },
+      "V_eff''": {
+        "name": "V_eff''",
+        "status": "OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH",
+        "value": null,
+        "formula": "V_eff''(Phi_H)",
+        "source_trace": [
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\docs\\open_blockers_backlog.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_profile_eom_source_audit.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_boundary_condition_normal_form.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_neutral_saddle_displacement.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\Higgs_EW_closure_or_obstruction_v1.json"
+        ],
+        "missing_objects": [
+          "effective potential V_eff",
+          "boundary potential coefficients",
+          "profile saddle Phi_H"
+        ],
+        "notes": "Potential-curvature notation is localized but not evaluated."
+      },
+      "boundary_potential_curvature_coefficients": {
+        "name": "boundary_potential_curvature_coefficients",
+        "status": "BLOCKED_BY_MISSING_BOUNDARY_POTENTIAL_COEFFICIENTS",
+        "value": null,
+        "formula": "partial^2 U_boundary / partial Phi^2",
+        "source_trace": [
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\docs\\open_blockers_backlog.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_profile_eom_source_audit.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_boundary_condition_normal_form.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_neutral_saddle_displacement.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\Higgs_EW_closure_or_obstruction_v1.json"
+        ],
+        "missing_objects": [
+          "U_boundary",
+          "lambda_Phi/Z_Phi convention",
+          "curvature coefficients"
+        ],
+        "notes": "No repo-fixed boundary potential coefficients are available."
+      }
+    },
+    "missing_objects": [
+      "S_eff^(H) Higgs/profile effective action",
+      "profile saddle Phi_H",
+      "H_H Higgs/profile Hessian",
+      "V_eff'' value",
+      "boundary potential curvature coefficients"
+    ],
+    "kappa_H_chosen_to_set_tau": false,
+    "obstruction": "kappa_H cannot be derived until the Higgs/profile effective action and Hessian data are supplied."
+  },
+  "profile_scale_tau_sigma_update": {
+    "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
+    "official_predictions_changed": false,
+    "empirical_derivation_inputs_used": false,
+    "observed_masses_used": false,
+    "observed_Higgs_used": false,
+    "observed_gauge_values_used": false,
+    "tau_fit_to_masses": false,
+    "sigma_fit_to_masses": false,
+    "boundary_profile_scale_closure": "BLOCKED_BY_MISSING_OBJECTS",
+    "sigma_from_boundary_geometry": "OPEN_LOCALIZABLE",
+    "tau_from_boundary_geometry": "OPEN_LOCALIZABLE",
+    "sigma_derived": false,
+    "tau_derived": false,
+    "sigma": null,
+    "tau": null,
+    "missing_objects": [
+      "r_internal_profile",
+      "Z_H",
+      "kappa_H"
+    ],
+    "charged_outputs_at_tau_exported": false,
+    "sigma_formula": "sigma = (1/2) sqrt(kappa_H / Z_H)",
+    "tau_formula": "tau = 1/(4 sigma r_internal_profile^2)"
+  },
+  "boundary_profile_scale_closure": "BLOCKED_BY_MISSING_OBJECTS",
+  "sigma_from_boundary_geometry": "OPEN_LOCALIZABLE",
+  "tau_from_boundary_geometry": "OPEN_LOCALIZABLE",
+  "missing_objects": [
+    "r_internal_profile",
+    "Z_H",
+    "kappa_H"
+  ],
+  "charged_outputs_at_tau_exported": false,
+  "public_status_after_gate": "structural architecture integrated conditional; numerical closure open"
+}

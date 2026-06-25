@@ -141,3 +141,29 @@ Result: `BLOCKED_BY_MISSING_OBJECTS`.
 
 Therefore `sigma` and `tau` remain `OPEN_LOCALIZABLE`, no charged outputs at
 boundary tau are exported, and official/frozen predictions remain unchanged.
+
+## Internal/Profile Radius And Higgs/Profile Normal Form Assault
+
+This targeted follow-up reduces the first blocker from PR #47. It attacks the
+internal/profile Berger radius, canonical profile normal form, profile
+normalization `Z_H`, and Higgs/profile second variation `kappa_H`. It does not
+use observed masses, Higgs data, gauge values, target ratios, CKM, PMNS,
+neutrino data, cosmology residuals, or DESI residuals as derivation inputs.
+
+Result: `BLOCKED_BY_MISSING_OBJECTS`.
+
+- `r_internal_profile`: `BLOCKED_BY_MISSING_NORMALIZATION_THEOREM`. Missing
+  theorem inputs are Hopf fiber-radius normalization, Berger volume
+  normalization, internal profile-domain measure, collar-depth matching, and
+  Lambda-to-radius convention.
+- `Phi(y)`: `DERIVED_CONDITIONAL`. The normal form
+  `Phi(y)=Phi_0 exp[-sigma d_B(y,y_0)^2]` is localized conditionally, but
+  `Phi_0` remains symbolic until sigma, domain, and measure are fixed.
+- `Z_H`: `BLOCKED_BY_MISSING_PROFILE_MEASURE`. It is not set to one without a profile
+  normalization theorem and evaluated profile/collar measure.
+- `kappa_H`: `BLOCKED_BY_MISSING_EFFECTIVE_ACTION`. The second-variation formula is
+  localized, but `S_eff^(H)`, the profile saddle, `H_H`, `V_eff''`, and boundary
+  curvature coefficients remain open.
+
+Therefore `sigma` and `tau` remain `OPEN_LOCALIZABLE`, no charged outputs at
+boundary tau are exported, and official/frozen predictions remain unchanged.
