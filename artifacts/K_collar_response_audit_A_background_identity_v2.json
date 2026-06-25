@@ -6,8 +6,69 @@
   "D": "3 diag(0,1,2)",
   "chi_source": "chi = lambda_A Tr(A^2)",
   "chi_fit_to_masses": false,
-  "stack_verdict": "STACK_COLLAR_OPEN",
+  "stack_verdict": "STACK_COLLAR_REJECTED_AS_PRIMARY",
+  "sector_responses": {
+    "lepton": {
+      "eigenvalues": [
+        2.999931975887785,
+        3.6802888518434282,
+        5.449030872949059
+      ],
+      "d_lambda_d_chi": [
+        0.00029995175020711774,
+        2.9997870261335513,
+        5.9999130221162424
+      ],
+      "q_chi": [
+        -0.00029995175020711774,
+        -2.9997870261335513,
+        -5.9999130221162424
+      ],
+      "hierarchy_help_condition_q1_lt_q2_lt_q3": false,
+      "sector_verdict": "COLLAR_COMPRESSES_HIERARCHY"
+    },
+    "up": {
+      "eigenvalues": [
+        2.9999814878665223,
+        12.999274809775592,
+        19.802734420332794
+      ],
+      "d_lambda_d_chi": [
+        5.554031696406147e-06,
+        3.000000324698089,
+        5.999994121270215
+      ],
+      "q_chi": [
+        -5.554031696406147e-06,
+        -3.000000324698089,
+        -5.999994121270215
+      ],
+      "hierarchy_help_condition_q1_lt_q2_lt_q3": false,
+      "sector_verdict": "COLLAR_COMPRESSES_HIERARCHY"
+    },
+    "down": {
+      "eigenvalues": [
+        2.999822158643241,
+        7.1634416054734205,
+        12.251702222277896
+      ],
+      "d_lambda_d_chi": [
+        0.00012813949160772029,
+        2.999872769661603,
+        5.999999090846793
+      ],
+      "q_chi": [
+        -0.00012813949160772029,
+        -2.999872769661603,
+        -5.999999090846793
+      ],
+      "hierarchy_help_condition_q1_lt_q2_lt_q3": false,
+      "sector_verdict": "COLLAR_COMPRESSES_HIERARCHY"
+    }
+  },
+  "hierarchy_help_condition": "q_1 < q_2 < q_3",
   "open_items": [
-    "A-background charged K matrices unavailable"
+    "chi remains boundary-derived/open; this response audit is structural only",
+    "charged precision closure remains open"
   ]
 }

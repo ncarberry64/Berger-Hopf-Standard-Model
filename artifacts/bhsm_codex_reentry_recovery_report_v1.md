@@ -9,7 +9,7 @@ predictions.
 ## Branch State
 
 - repo_branch_at_start: `bhsm-incidence-normalized-overlap-bridge-source-v1`
-- repo_branch_used: `bhsm-codex-reentry-branch-audit-kcollar-v1`
+- repo_branch_used: `bhsm-a-background-collar-dependency-order-v1`
 
 ## Continuity Files Found
 
