@@ -48,6 +48,12 @@ charged-lepton jet response satisfies `q_e < q_mu < q_tau`. No observed masses
 are used, no `tau` or `sigma` width is fitted to masses, and full charged
 numerical closure remains open.
 
+The oriented finite-width / jet-heat route is now structurally supported by
+response-sign audits. A universal `tau/sigma` scaffold exports no-fit response
+curves for fixed diagnostic `tau` values. `tau` and `sigma` remain
+open-localizable from boundary geometry and are not fitted to charged masses.
+Full charged numerical closure remains open.
+
 ## What Remains Open
 
 - boundary-derived `tau/sigma`
