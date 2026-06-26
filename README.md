@@ -127,6 +127,19 @@ nontrivial BHSM-derived field-strength predictions.
 This does not constitute production FeynRules, UFO, MadGraph, LHE/HepMC,
 Athena, or CMSSW readiness.
 
+### Phase Three-G production-vertex and Lagrangian-candidate status
+
+BHSM now includes a candidate production vertex table and symbolic 4D
+Lagrangian assembly ledger in the canonical production basis. CKM/PMNS
+charged-current target structures are identified using BHSM-derived mixing
+sources and standard target-current conventions.
+
+The table is not a production FeynRules model. Charged boundary response,
+neutral kernel, and CP holonomy attachment remain blocked by explicit missing
+interaction/basis attachments. Mass-width closure, renormalization closure,
+complete production vertex table, FeynRules export, UFO loadability, MadGraph
+validation, LHE/HepMC generation, and Athena/CMSSW integration remain open.
+
 ### Phase Three-F production-basis and runtime-parameter status
 
 BHSM now defines a canonical production basis for future FeynRules/UFO

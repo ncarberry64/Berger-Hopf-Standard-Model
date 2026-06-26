@@ -32,3 +32,7 @@ Lorentz structure conventions, while keeping `feynrules_ready = false` and
 Phase Three-E keeps these current targets as candidate target maps and adds
 scheme-conditional coupling ledgers. The vertex-source map remains
 non-production and does not export a complete vertex table.
+
+Phase Three-G exports a candidate production vertex table derived from these
+source maps. The table remains incomplete and no FeynRules/UFO model is
+exported.

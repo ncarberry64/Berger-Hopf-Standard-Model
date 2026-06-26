@@ -27,3 +27,8 @@ The map includes CKM and PMNS charged-current targets, charged boundary source
 matrix, neutral operator kernel, and CP holonomy phase attachment. Blocked
 targets remain `feynrules_ready = false` and `ufo_ready = false`.
 
+## Phase Three-G Follow-On
+
+Phase Three-G uses this map to assemble a candidate production vertex table.
+The map supplies source-traced coupling families, but blocked vertices remain
+blocked and no production FeynRules vertex is exported.

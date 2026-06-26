@@ -115,3 +115,11 @@ Phase Three-F also separates `BHSM_PURE_NOFIT` from
 `BHSM_COLLIDER_INTERFACE`. Runtime empirical masses, widths, and cards may be
 allowed only in collider-interface comparison mode and do not modify BHSM
 constants, boundary coefficients, mixing matrices, or frozen predictions.
+
+## Phase Three-G Vertex Table And Lagrangian Candidate
+
+Phase Three-G exports a candidate production vertex table, symbolic 4D
+Lagrangian assembly ledger, vertex readiness matrix, FeynRules blocker table,
+and runtime dependency table. CKM/PMNS charged-current target structures are
+identified using BHSM-derived mixing sources, but all production FeynRules/UFO
+readiness gates remain closed.

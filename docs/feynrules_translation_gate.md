@@ -46,3 +46,7 @@ canonical production-basis fields with `Z_A,prod = Z_psi,prod = 1`. The
 FeynRules gate remains closed because complete 4D Lagrangian export,
 mass-width closure, renormalization closure, and production vertex tables
 remain open.
+
+Phase Three-G exports the candidate vertex table and symbolic Lagrangian
+assembly ledger, but the FeynRules gate remains closed because the table is
+incomplete and multiple blocker rows remain open.

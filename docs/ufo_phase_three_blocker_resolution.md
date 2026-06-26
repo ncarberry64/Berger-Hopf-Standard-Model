@@ -49,3 +49,7 @@ Phase Three-F clears the interface normalization blocker by defining a
 canonical production basis. It does not resolve the complete 4D Lagrangian,
 production vertex table, mass-width, renormalization, loadable UFO, or event
 generation blockers.
+
+Phase Three-G exports candidate vertex and Lagrangian assembly ledgers. It
+does not resolve the complete production vertex table, FeynRules export,
+loadable UFO, MadGraph, LHE/HepMC, Athena, or CMSSW blockers.
