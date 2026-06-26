@@ -21,3 +21,6 @@ Missing external software does not fail the repository sprint. It keeps
 downstream readiness gates false until the tools are installed and the runners
 are executed successfully.
 
+Phase Three-M extends this into a live-attempt preflight. In the current
+environment Python is available, while Mathematica, WolframScript, FeynRules,
+MadGraph, optional HepMC, and optional ROOT are not detected.

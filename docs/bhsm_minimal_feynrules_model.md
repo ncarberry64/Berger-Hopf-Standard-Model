@@ -33,3 +33,9 @@ copy. The current repository state still keeps
 Static repository checks are syntax-contract checks only. They do not replace
 Mathematica/FeynRules loading, `FeynmanRules[...]` validation, `WriteUFO[...]`
 execution, or UFO loadability checks.
+
+## Phase Three-M Live Attempt
+
+Phase Three-M adds an enablement decision artifact for this draft. Since live
+FeynRules validation did not run in the current environment, the enabled
+production `.fr` file is still not committed.

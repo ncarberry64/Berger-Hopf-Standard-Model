@@ -217,6 +217,18 @@ Mathematica/FeynRules/UFO/MadGraph execution is actually performed and passes,
 BHSM remains not UFO-ready, not MadGraph-ready, and not
 event-generation-ready.
 
+### Phase Three-M live FeynRules validation status
+
+BHSM now includes a live FeynRules validation attempt layer for the bounded
+minimal collider-interface subset. This layer records whether Mathematica,
+FeynRules, UFO export, and MadGraph smoke-test tooling were actually detected
+and run.
+
+Static checks do not count as live FeynRules validation. Unless the repository
+records successful Mathematica/FeynRules execution, the minimal model remains
+disabled and BHSM remains not UFO-ready, not MadGraph-ready, and not
+event-generation-ready.
+
 ### Phase Three-F production-basis and runtime-parameter status
 
 BHSM now defines a canonical production basis for future FeynRules/UFO

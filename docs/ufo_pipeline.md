@@ -157,3 +157,11 @@ scripts, software environment preflight, UFO export runner contract, and
 MadGraph smoke-test runner contract. This hardens the execution path, but it
 does not execute Mathematica/FeynRules, does not export a UFO directory, does
 not test UFO loadability, and does not run MadGraph.
+
+## Phase Three-M Live FeynRules Validation Attempt
+
+Phase Three-M records a live validation attempt layer. In the current
+environment Mathematica/FeynRules/MadGraph are not detected, so the attempt is
+not run and the minimal FeynRules draft remains disabled. UFO readiness,
+MadGraph readiness, LHE/HepMC generation, Athena readiness, and CMSSW readiness
+remain false.

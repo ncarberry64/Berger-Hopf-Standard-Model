@@ -23,3 +23,6 @@ ufo_loadability_passed = false
 
 No UFO output directory is generated in Phase Three-L.
 
+Phase Three-M records the live UFO export gate in
+`artifacts/BHSM_ufo_export_live_attempt_v1_5.json`. The current gate remains
+closed because live FeynRules validation did not pass.

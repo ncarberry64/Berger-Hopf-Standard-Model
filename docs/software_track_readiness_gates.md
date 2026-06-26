@@ -31,3 +31,9 @@ Mathematica, FeynRules, MadGraph, and HepMC are not detected.
 
 The absence of those external tools keeps real FeynRules validation, UFO
 export, UFO loadability, MadGraph smoke testing, and event generation blocked.
+
+## Phase Three-M Live Attempt Gates
+
+Phase Three-M exports live-attempt artifacts for FeynRules, UFO, and MadGraph.
+The current result keeps every downstream readiness gate false because the
+required external tools were not detected and no live software run succeeded.

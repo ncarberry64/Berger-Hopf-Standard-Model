@@ -23,3 +23,8 @@ models/feynrules/BHSM_Minimal_Collider_Interface.fr
 
 The repository does not claim these commands were run in Phase Three-L.
 
+Phase Three-M adds Python wrappers under `scripts/feynrules/` that refuse to
+enable or export the minimal model unless live validation evidence exists. The
+wrappers write local logs under `runs/feynrules_validation/`; those logs are
+not committed as validation evidence unless a future sprint intentionally
+records a real run.
