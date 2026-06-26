@@ -19,3 +19,21 @@ artifacts/BHSM_vertex_source_ledger_v0_2.json
 
 Current status: symbolic source ledger only. Lorentz structures, gauge-fixed
 interaction terms, field normalization, and vertex normalization remain missing.
+
+## Phase Three-A Extension
+
+Phase Two-A exports vertex-source categories. Phase Three-A adds a vertex
+normalization ledger:
+
+```text
+artifacts/BHSM_vertex_normalization_ledger_v0_3.json
+```
+
+Current status:
+
+```text
+vertex_normalization_complete = false
+complete_vertex_table_present = false
+```
+
+No source category is upgraded to a production Feynman rule.

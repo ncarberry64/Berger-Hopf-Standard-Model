@@ -1,0 +1,34 @@
+# BHSM UFO Phase Three Blocker Resolution v0.3
+
+Machine-readable readiness artifact:
+
+```text
+artifacts/BHSM_ufo_phase_three_readiness_v0_3.json
+```
+
+Phase Three-A resolves no production UFO gate. It makes the blockers more
+specific.
+
+Resolved at documentation/ledger level:
+
+- candidate effective Lagrangian ledger exported;
+- field-normalization ledger exported;
+- vertex-normalization ledger exported;
+- mass/width scheme status exported;
+- renormalization scheme status exported;
+- FeynRules translation gate exported.
+
+Still blocked:
+
+- complete 4D collider-ready Lagrangian;
+- gauge fixing;
+- canonical field normalization;
+- vertex normalization;
+- mass/width scheme;
+- renormalization scheme;
+- complete production vertex table;
+- production parameter card;
+- loadable UFO model;
+- MadGraph validation;
+- LHE/HepMC generation;
+- Athena/CMSSW integration.

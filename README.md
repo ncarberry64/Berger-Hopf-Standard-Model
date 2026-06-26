@@ -77,6 +77,21 @@ layer are validated.
 
 No LHE or HepMC events are generated in this release.
 
+### 4D Lagrangian projection / FeynRules gate status
+
+Phase Three-A attempts an analytical projection from BHSM internal
+boundary/operator artifacts to a candidate effective 4D Lagrangian ledger,
+field-normalization ledger, vertex-normalization ledger, mass/width scheme
+status, renormalization scheme status, and FeynRules/UFO readiness gate.
+
+This is not production UFO readiness. The current result is a candidate ledger
+and blocker audit: the complete 4D collider-ready Lagrangian, gauge fixing,
+canonical field normalization, vertex normalization, mass/width scheme,
+renormalization scheme, complete vertex table, and production parameter-card
+conventions remain blocked.
+
+No MadGraph, LHE, HepMC, Athena, or CMSSW readiness is claimed.
+
 ## 1. What Is Complete In v1.0.0
 
 - `BHSM_internal_boundary_package = COMPLETE_EXPORTED`

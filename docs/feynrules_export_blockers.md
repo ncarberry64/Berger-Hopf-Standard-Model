@@ -35,3 +35,15 @@ artifacts/BHSM_feynrules_export_blockers_v0_2.json
 ```
 
 These blockers prevent a loadable UFO model and any LHE/HepMC event generation.
+
+## Phase Three-A Refinement
+
+Phase Three-A adds a dedicated FeynRules translation gate:
+
+```text
+artifacts/BHSM_feynrules_translation_gate_v0_3.json
+```
+
+The gate remains closed. The new candidate Lagrangian ledger is not a complete
+4D collider-ready Lagrangian and does not remove the historical Phase Two-A
+blockers.

@@ -1,0 +1,42 @@
+{
+  "artifact": "BHSM_renormalization_scheme_status_v0_3",
+  "release_basis": "v1.0.1",
+  "renormalization_scheme_complete": false,
+  "renormalization_scheme_name": null,
+  "reference_scale": "mu_BH_boundary (symbolic/internal only)",
+  "gauge_coupling_scheme": {
+    "provided": false,
+    "status": "BLOCKED_BY_MISSING_RENORMALIZATION_SCHEME"
+  },
+  "yukawa_scheme": {
+    "provided": false,
+    "status": "BLOCKED_BY_MISSING_4D_PROJECTION_THEOREM"
+  },
+  "threshold_scheme": {
+    "provided": false,
+    "status": "STRUCTURAL_CANDIDATE"
+  },
+  "counterterm_scheme": {
+    "provided": false,
+    "status": "SYMBOLIC_PLACEHOLDER"
+  },
+  "running_scheme": {
+    "provided": false,
+    "status": "SYMBOLIC_PLACEHOLDER"
+  },
+  "source_artifacts": [
+    "artifacts/common_scale_boundary_transport_v1.json"
+  ],
+  "missing_items": [
+    "production renormalization prescription",
+    "counterterm conventions",
+    "threshold matching scheme",
+    "gauge/Yukawa scheme map from BHSM boundary parameters to 4D couplings"
+  ],
+  "feynrules_ready": false,
+  "ufo_ready": false,
+  "empirical_derivation_inputs_used": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false,
+  "source_model_files_changed": false
+}

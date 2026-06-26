@@ -65,3 +65,12 @@ Phase Two-A adds source-derived analytical export ledgers for field content,
 parameter-card entries, and vertex-source categories. These ledgers use existing
 BHSM artifacts only. They remain blocked from UFO export until a complete 4D
 collider-ready Lagrangian and Feynman-rule layer are supplied.
+
+## Phase Three-A 4D Projection Gate
+
+Phase Three-A adds a candidate effective Lagrangian term ledger plus field,
+vertex, mass/width, and renormalization gate ledgers. This is still not a
+production UFO model. The FeynRules translation gate remains false until the
+boundary-to-4D projection theorem, gauge fixing, field normalization, vertex
+normalization, complete vertex table, mass/width scheme, renormalization
+scheme, and production parameter-card conventions are supplied.

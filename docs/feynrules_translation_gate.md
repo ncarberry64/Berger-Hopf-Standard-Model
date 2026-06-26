@@ -1,0 +1,28 @@
+# BHSM FeynRules Translation Gate v0.3
+
+Machine-readable gate:
+
+```text
+artifacts/BHSM_feynrules_translation_gate_v0_3.json
+```
+
+The gate checks:
+
+- complete 4D Lagrangian;
+- field normalization;
+- vertex normalization;
+- mass/width scheme;
+- renormalization scheme;
+- gauge fixing;
+- complete vertex table;
+- production parameter card.
+
+Current result:
+
+```text
+feynrules_ready = false
+ufo_ready = false
+```
+
+The gate is intentionally strict. Candidate ledgers do not count as production
+FeynRules readiness.
