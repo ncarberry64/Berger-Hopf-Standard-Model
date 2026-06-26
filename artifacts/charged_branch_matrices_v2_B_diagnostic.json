@@ -1,0 +1,132 @@
+{
+  "artifact": "charged_branch_matrices_v2",
+  "public_status": "structural architecture integrated conditional; numerical closure open",
+  "official_predictions_changed": false,
+  "branch": "B-diagnostic",
+  "frozen_before_comparison": true,
+  "used_target_data": false,
+  "a": 1.157054135733433,
+  "c": [
+    1,
+    2,
+    4
+  ],
+  "generation_order": "by_y_ascending",
+  "matrix_status": "EXPORTED_FROM_REPO_GENERATOR",
+  "source": "charged_kf_generator with rho_ch=3, Rule-A suppression, up middle ln2 threshold",
+  "rho_ch": 3,
+  "diagnostic_only": true,
+  "not_A_background": true,
+  "sectors": {
+    "lepton": {
+      "K": [
+        [
+          0.0,
+          0.006802721088435374,
+          0.0
+        ],
+        [
+          0.006802721088435374,
+          1.7687074829931972,
+          0.006802721088435374
+        ],
+        [
+          0.0,
+          0.006802721088435374,
+          4.8979591836734695
+        ]
+      ],
+      "mode_ledger": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          3
+        ]
+      ],
+      "claim_status": "DERIVED_CONDITIONAL",
+      "matrix_status": "EXPORTED_FROM_BRANCH_CONSTRUCTOR",
+      "notes": "No local Z_virt threshold in this sector."
+    },
+    "up": {
+      "K": [
+        [
+          0.0,
+          0.013605442176870748,
+          0.0
+        ],
+        [
+          0.013605442176870748,
+          9.999269629539537,
+          0.006802721088435374
+        ],
+        [
+          0.0,
+          0.006802721088435374,
+          17.31972789115646
+        ]
+      ],
+      "mode_ledger": [
+        [
+          0,
+          0
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          8,
+          1
+        ]
+      ],
+      "claim_status": "DERIVED_CONDITIONAL_WITH_LOCAL_THRESHOLD",
+      "matrix_status": "EXPORTED_FROM_BRANCH_CONSTRUCTOR",
+      "notes": "Up-sector threshold is restricted to middle mode (q,j)=(6,0).",
+      "Z_virt_middle_up": "1/2 if dressed branch active",
+      "Z_virt_scope": "up sector, middle mode (q,j)=(6,0) only"
+    },
+    "down": {
+      "K": [
+        [
+          0.0,
+          0.027210884353741496,
+          0.0
+        ],
+        [
+          0.027210884353741496,
+          12.489795918367347,
+          0.002506265664160401
+        ],
+        [
+          0.0,
+          0.002506265664160401,
+          12.952380952380953
+        ]
+      ],
+      "mode_ledger": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "claim_status": "DERIVED_CONDITIONAL",
+      "matrix_status": "EXPORTED_FROM_BRANCH_CONSTRUCTOR",
+      "notes": "No local Z_virt threshold in this sector."
+    }
+  }
+}

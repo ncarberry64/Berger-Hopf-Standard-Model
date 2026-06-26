@@ -1,0 +1,404 @@
+{
+  "id": "PO-BH-rho-ch-branch-pressure-test-v1",
+  "title": "rho_ch Branch Pressure Test and Charged Kf Rule-A Spectral Classification v1",
+  "public_status": "structural architecture integrated conditional; numerical closure open",
+  "frozen_predictions_changed": false,
+  "official_predictions_changed": false,
+  "uses_empirical_derivation_inputs": false,
+  "forbidden_derivation_inputs": [
+    "observed charged-lepton masses",
+    "observed quark masses",
+    "observed CKM values",
+    "observed PMNS values",
+    "observed neutrino mass splittings",
+    "measured fine-structure alpha",
+    "empirical target ratios",
+    "post-comparison branch selection"
+  ],
+  "suppression_rule": "RULE_A_SINGLE_OPERATOR_TRACE",
+  "rule_a_eta_values": {
+    "lepton": "20/147",
+    "up": "38/147",
+    "down": "68/147"
+  },
+  "rule_b_used_as_default": false,
+  "rho_ch_exact_value_status": "OPEN_LOCALIZABLE",
+  "branch_reports": [
+    {
+      "rho_ch": 1,
+      "branch_meaning": "isotropic stiffness",
+      "branch_status": "BRANCH_CANDIDATE",
+      "violates_internal_consistency": false,
+      "recommended_scientific_status": "REQUIRES_ACTION_SELECTION",
+      "lepton": {
+        "eigenvalues": [
+          -6.802411221511499e-05,
+          0.6802888518434282,
+          2.449030872949059
+        ],
+        "gaps_from_ground": [
+          0.0,
+          0.6803568759556433,
+          2.449098897061274
+        ],
+        "spectral_factors_exp_minus_gap": [
+          1.0,
+          0.50643622519994,
+          0.08637138094889785
+        ],
+        "gap_ratio": 3.599726825162484,
+        "pair_split": 1.7687420211056306,
+        "reference_gap_min": 0.6803568759556433,
+        "branch_order": [
+          "reference",
+          "middle",
+          "light"
+        ]
+      },
+      "up": {
+        "eigenvalues": [
+          -1.9890966357469127e-05,
+          9.306130240734145,
+          16.802733187647174
+        ],
+        "gaps_from_ground": [
+          0.0,
+          9.306150131700502,
+          16.80275307861353
+        ],
+        "spectral_factors_exp_minus_gap": [
+          1.0,
+          9.08636858953887e-05,
+          5.0426294652909307e-08
+        ],
+        "gap_ratio": 1.8055536221553719,
+        "pair_split": 7.496602946913029,
+        "reference_gap_min": 9.306150131700502,
+        "branch_order": [
+          "reference",
+          "middle",
+          "light"
+        ]
+      },
+      "up_threshold": {
+        "eigenvalues": [
+          -1.851213347749747e-05,
+          9.999274809775589,
+          16.802734420332797
+        ],
+        "gaps_from_ground": [
+          0.0,
+          9.999293321909066,
+          16.802752932466273
+        ],
+        "spectral_factors_exp_minus_gap": [
+          1.0,
+          4.5432024237073294e-05,
+          5.0426302022574534e-08
+        ],
+        "gap_ratio": 1.6803940430120605,
+        "pair_split": 6.803459610557207,
+        "reference_gap_min": 9.999293321909066,
+        "branch_order": [
+          "reference",
+          "middle",
+          "light"
+        ]
+      },
+      "down": {
+        "eigenvalues": [
+          -0.00017784135675866976,
+          4.163441605473421,
+          9.251702222277896
+        ],
+        "gaps_from_ground": [
+          0.0,
+          4.16361944683018,
+          9.251880063634655
+        ],
+        "spectral_factors_exp_minus_gap": [
+          1.0,
+          0.015551169303301875,
+          9.593112579309813e-05
+        ],
+        "gap_ratio": 2.2220762924618955,
+        "pair_split": 5.088260616804475,
+        "reference_gap_min": 4.16361944683018,
+        "branch_order": [
+          "reference",
+          "middle",
+          "light"
+        ]
+      },
+      "down_degeneracy_measure": 5.088260616804475,
+      "up_threshold_causes_reordering": false,
+      "notes": [
+        "No empirical comparison is performed.",
+        "All branches require action-level rho_ch selection before promotion."
+      ]
+    },
+    {
+      "rho_ch": 2,
+      "branch_meaning": "weak-involution stiffness",
+      "branch_status": "BRANCH_CANDIDATE",
+      "violates_internal_consistency": false,
+      "recommended_scientific_status": "REQUIRES_ACTION_SELECTION",
+      "lepton": {
+        "eigenvalues": [
+          -3.779225773483732e-05,
+          1.22450186814931,
+          3.6734951077818945
+        ],
+        "gaps_from_ground": [
+          0.0,
+          1.2245396604070449,
+          3.6735329000396293
+        ],
+        "spectral_factors_exp_minus_gap": [
+          1.0,
+          0.29389295975397417,
+          0.02538662292871467
+        ],
+        "gap_ratio": 2.999929703231109,
+        "pair_split": 2.4489932396325846,
+        "reference_gap_min": 1.2245396604070449,
+        "branch_order": [
+          "reference",
+          "middle",
+          "light"
+        ]
+      },
+      "up": {
+        "eigenvalues": [
+          -1.989096271059991e-05,
+          9.306134217782201,
+          17.061232611956022
+        ],
+        "gaps_from_ground": [
+          0.0,
+          9.306154108744911,
+          17.061252502918734
+        ],
+        "spectral_factors_exp_minus_gap": [
+          1.0,
+          9.08633245271933e-05,
+          3.893966255067846e-08
+        ],
+        "gap_ratio": 1.8333301064600278,
+        "pair_split": 7.755098394173823,
+        "reference_gap_min": 9.306154108744911,
+        "branch_order": [
+          "reference",
+          "middle",
+          "light"
+        ]
+      },
+      "up_threshold": {
+        "eigenvalues": [
+          -1.851213031870177e-05,
+          9.99927922230168,
+          17.061233409164096
+        ],
+        "gaps_from_ground": [
+          0.0,
+          9.999297734432,
+          17.061251921294414
+        ],
+        "spectral_factors_exp_minus_gap": [
+          1.0,
+          4.5431823767666716e-05,
+          3.893968519893981e-08
+        ],
+        "gap_ratio": 1.706245015841961,
+        "pair_split": 7.061954186862414,
+        "reference_gap_min": 9.999297734432,
+        "branch_order": [
+          "reference",
+          "middle",
+          "light"
+        ]
+      },
+      "down": {
+        "eigenvalues": [
+          -8.892351574241244e-05,
+          8.326617014117572,
+          11.1020433379696
+        ],
+        "gaps_from_ground": [
+          0.0,
+          8.326705937633314,
+          11.102132261485343
+        ],
+        "spectral_factors_exp_minus_gap": [
+          1.0,
+          0.00024196779053385566,
+          1.5080134723800553e-05
+        ],
+        "gap_ratio": 1.3333162410970028,
+        "pair_split": 2.775426323852029,
+        "reference_gap_min": 8.326705937633314,
+        "branch_order": [
+          "reference",
+          "middle",
+          "light"
+        ]
+      },
+      "down_degeneracy_measure": 2.775426323852029,
+      "up_threshold_causes_reordering": false,
+      "notes": [
+        "No empirical comparison is performed.",
+        "All branches require action-level rho_ch selection before promotion."
+      ]
+    },
+    {
+      "rho_ch": 3,
+      "branch_meaning": "rank-three closure stiffness",
+      "branch_status": "STRUCTURALLY_INTERESTING_BRANCH",
+      "violates_internal_consistency": false,
+      "recommended_scientific_status": "REQUIRES_ACTION_SELECTION",
+      "lepton": {
+        "eigenvalues": [
+          -2.6164064604435424e-05,
+          1.7687188585589337,
+          4.897973972172338
+        ],
+        "gaps_from_ground": [
+          0.0,
+          1.7687450226235382,
+          4.898000136236942
+        ],
+        "spectral_factors_exp_minus_gap": [
+          1.0,
+          0.1705468870635017,
+          0.007461490123635406
+        ],
+        "gap_ratio": 2.769195148869933,
+        "pair_split": 3.129255113613404,
+        "reference_gap_min": 1.7687450226235382,
+        "branch_order": [
+          "reference",
+          "middle",
+          "light"
+        ]
+      },
+      "up": {
+        "eigenvalues": [
+          -1.9890960530532626e-05,
+          9.306136565130904,
+          17.31973366596568
+        ],
+        "gaps_from_ground": [
+          0.0,
+          9.306156456091434,
+          17.31975355692621
+        ],
+        "spectral_factors_exp_minus_gap": [
+          1.0,
+          9.08631112397347e-05,
+          3.0069527394118305e-08
+        ],
+        "gap_ratio": 1.8611070680623898,
+        "pair_split": 8.013597100834774,
+        "reference_gap_min": 9.306156456091434,
+        "branch_order": [
+          "reference",
+          "middle",
+          "light"
+        ]
+      },
+      "up_threshold": {
+        "eigenvalues": [
+          -1.851212843040064e-05,
+          9.99928182006348,
+          17.31973421276095
+        ],
+        "gaps_from_ground": [
+          0.0,
+          9.999300332191911,
+          17.31975272488938
+        ],
+        "spectral_factors_exp_minus_gap": [
+          1.0,
+          4.543170574684953e-05,
+          3.006955241308293e-08
+        ],
+        "gap_ratio": 1.7320964617024137,
+        "pair_split": 7.320452392697469,
+        "reference_gap_min": 9.999300332191911,
+        "branch_order": [
+          "reference",
+          "middle",
+          "light"
+        ]
+      },
+      "down": {
+        "eigenvalues": [
+          -5.928269336535846e-05,
+          12.489841620942435,
+          12.95239453249923
+        ],
+        "gaps_from_ground": [
+          0.0,
+          12.489900903635801,
+          12.952453815192596
+        ],
+        "spectral_factors_exp_minus_gap": [
+          1.0,
+          3.764479686889724e-06,
+          2.370395319636687e-06
+        ],
+        "gap_ratio": 1.0370341538436183,
+        "pair_split": 0.462552911556795,
+        "reference_gap_min": 12.489900903635801,
+        "branch_order": [
+          "reference",
+          "middle",
+          "light"
+        ]
+      },
+      "down_degeneracy_measure": 0.462552911556795,
+      "up_threshold_causes_reordering": false,
+      "notes": [
+        "No empirical comparison is performed.",
+        "All branches require action-level rho_ch selection before promotion.",
+        "rho_ch=3 is structurally interesting because it minimizes the down pair split in this diagnostic."
+      ]
+    }
+  ],
+  "branch_classifications": {
+    "1": "BRANCH_CANDIDATE",
+    "2": "BRANCH_CANDIDATE",
+    "3": "STRUCTURALLY_INTERESTING_BRANCH"
+  },
+  "winning_branch_selected": false,
+  "all_branches_viable": true,
+  "statuses": {
+    "rho_ch_branch_pressure_test_v1": "COMPLETED_INTERNAL_PRESSURE_TEST",
+    "rho_ch_1_isotropic_branch": "BRANCH_CANDIDATE",
+    "rho_ch_2_weak_involution_branch": "BRANCH_CANDIDATE",
+    "rho_ch_3_rank_three_branch": "STRUCTURALLY_INTERESTING_BRANCH",
+    "rho_ch_exact_value": "OPEN_LOCALIZABLE",
+    "down_near_degeneracy_rho_ch_3": "STRUCTURALLY_INTERESTING_NOT_SELECTION_RULE",
+    "up_threshold_branch_reordering": "DIAGNOSTIC_REPORTED_NO_EMPIRICAL_SELECTION",
+    "charged_Kf_Rule_A_spectral_sanity": "INTERNALLY_STABLE_DIAGNOSTIC",
+    "numerical_closure": "OPEN"
+  },
+  "threshold_policy": {
+    "insertions": [
+      {
+        "sector": "up",
+        "slot": 1,
+        "mode": [
+          6,
+          0
+        ],
+        "value": "ln 2",
+        "source": "Z_virt^{u,2}=1/2 weak-double projection bridge",
+        "operator_level": true
+      }
+    ],
+    "only_up_middle_ln2": true,
+    "no_other_threshold_dressings_added": true
+  },
+  "conclusion": "All rho_ch branches remain internally viable under the Rule-A Kf diagnostic. rho_ch=3 is structurally interesting from the down-pair split but is not selected."
+}

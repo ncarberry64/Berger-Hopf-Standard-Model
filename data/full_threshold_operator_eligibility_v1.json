@@ -1,0 +1,286 @@
+{
+  "id": "PO-BH-full-threshold-operator-eligibility-v1",
+  "title": "Full Threshold Operator Eligibility Kernel v1",
+  "public_status": "structural architecture integrated conditional; numerical closure open",
+  "frozen_predictions_changed": false,
+  "official_predictions_changed": false,
+  "uses_empirical_derivation_inputs": false,
+  "forbidden_derivation_inputs": [
+    "observed masses",
+    "charged-lepton masses",
+    "quark masses",
+    "CKM",
+    "PMNS",
+    "neutrino data",
+    "measured alpha",
+    "empirical target ratios",
+    "post-comparison residuals"
+  ],
+  "threshold_principle": {
+    "factor": "D_fi=rank(P_fi|V_fi)/dim(V_fi)",
+    "operator_insertion": "K_f -> K_f + [-ln(D_fi)] |i_f><i_f|",
+    "status": "DERIVED_CONDITIONAL_ON_VIRTUAL_DOOR_PROJECTOR_DATA"
+  },
+  "charged_ledgers": {
+    "lepton": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        3,
+        3
+      ]
+    ],
+    "up": [
+      [
+        0,
+        0
+      ],
+      [
+        6,
+        0
+      ],
+      [
+        8,
+        1
+      ]
+    ],
+    "down": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        4,
+        2
+      ]
+    ]
+  },
+  "virtual_door_evidence": [
+    {
+      "sector": "up",
+      "slot": 1,
+      "mode": [
+        6,
+        0
+      ],
+      "virtual_door_subspace": "V_weak=span{door_upper,door_lower}",
+      "subspace_dimension": 2,
+      "projector": "P_u=diag(1,0)",
+      "projector_rank": 1,
+      "source": "weak-double projection bridge",
+      "status": "DERIVED_CONDITIONAL"
+    }
+  ],
+  "eligibility_records": [
+    {
+      "sector": "lepton",
+      "slot": 0,
+      "mode": [
+        0,
+        0
+      ],
+      "is_reference_slot": true,
+      "threshold_status": "REFERENCE_SLOT_NOT_THRESHOLD_TARGET",
+      "has_virtual_door_subspace": false,
+      "has_sector_projector": false,
+      "threshold_factor": null,
+      "operator_insertion": null,
+      "notes": "reference anchor, not an ordinary threshold target"
+    },
+    {
+      "sector": "lepton",
+      "slot": 1,
+      "mode": [
+        1,
+        2
+      ],
+      "is_reference_slot": false,
+      "threshold_status": "NO_THRESHOLD_SOURCE_FOUND",
+      "has_virtual_door_subspace": false,
+      "has_sector_projector": false,
+      "threshold_factor": null,
+      "operator_insertion": null,
+      "notes": "no virtual-door/projector source found"
+    },
+    {
+      "sector": "lepton",
+      "slot": 2,
+      "mode": [
+        3,
+        3
+      ],
+      "is_reference_slot": false,
+      "threshold_status": "NO_THRESHOLD_SOURCE_FOUND",
+      "has_virtual_door_subspace": false,
+      "has_sector_projector": false,
+      "threshold_factor": null,
+      "operator_insertion": null,
+      "notes": "no virtual-door/projector source found"
+    },
+    {
+      "sector": "up",
+      "slot": 0,
+      "mode": [
+        0,
+        0
+      ],
+      "is_reference_slot": true,
+      "threshold_status": "REFERENCE_SLOT_NOT_THRESHOLD_TARGET",
+      "has_virtual_door_subspace": false,
+      "has_sector_projector": false,
+      "threshold_factor": null,
+      "operator_insertion": null,
+      "notes": "reference anchor, not an ordinary threshold target"
+    },
+    {
+      "sector": "up",
+      "slot": 1,
+      "mode": [
+        6,
+        0
+      ],
+      "is_reference_slot": false,
+      "threshold_status": "DERIVED_CONDITIONAL",
+      "has_virtual_door_subspace": true,
+      "has_sector_projector": true,
+      "threshold_factor": "1/2",
+      "operator_insertion": "ln 2",
+      "notes": "weak-double projection gives D=1/2"
+    },
+    {
+      "sector": "up",
+      "slot": 2,
+      "mode": [
+        8,
+        1
+      ],
+      "is_reference_slot": false,
+      "threshold_status": "NO_THRESHOLD_SOURCE_FOUND",
+      "has_virtual_door_subspace": false,
+      "has_sector_projector": false,
+      "threshold_factor": null,
+      "operator_insertion": null,
+      "notes": "no virtual-door/projector source found"
+    },
+    {
+      "sector": "down",
+      "slot": 0,
+      "mode": [
+        0,
+        0
+      ],
+      "is_reference_slot": true,
+      "threshold_status": "REFERENCE_SLOT_NOT_THRESHOLD_TARGET",
+      "has_virtual_door_subspace": false,
+      "has_sector_projector": false,
+      "threshold_factor": null,
+      "operator_insertion": null,
+      "notes": "reference anchor, not an ordinary threshold target"
+    },
+    {
+      "sector": "down",
+      "slot": 1,
+      "mode": [
+        0,
+        3
+      ],
+      "is_reference_slot": false,
+      "threshold_status": "NO_THRESHOLD_SOURCE_FOUND",
+      "has_virtual_door_subspace": false,
+      "has_sector_projector": false,
+      "threshold_factor": null,
+      "operator_insertion": null,
+      "notes": "no virtual-door/projector source found"
+    },
+    {
+      "sector": "down",
+      "slot": 2,
+      "mode": [
+        4,
+        2
+      ],
+      "is_reference_slot": false,
+      "threshold_status": "NO_THRESHOLD_SOURCE_FOUND",
+      "has_virtual_door_subspace": false,
+      "has_sector_projector": false,
+      "threshold_factor": null,
+      "operator_insertion": null,
+      "notes": "no virtual-door/projector source found"
+    }
+  ],
+  "derived_operator_insertions": [
+    {
+      "sector": "up",
+      "slot": 1,
+      "mode": [
+        6,
+        0
+      ],
+      "insertion": "ln 2",
+      "formula": "K_f -> K_f + [-ln(D_fi)] |i_f><i_f|",
+      "status": "DERIVED_CONDITIONAL",
+      "operator_level": true
+    }
+  ],
+  "generator_threshold_rules": {
+    "none": {
+      "name": "THRESHOLD_RULE_NONE",
+      "status": "BASELINE_DIAGNOSTIC",
+      "insertions": []
+    },
+    "derived_only": {
+      "name": "THRESHOLD_RULE_DERIVED_ONLY",
+      "status": "DERIVED_CONDITIONAL_ONLY",
+      "insertions": [
+        {
+          "sector": "up",
+          "slot": 1,
+          "mode": [
+            6,
+            0
+          ],
+          "value": "ln 2",
+          "source": "Z_virt^{u,2}=1/2 weak-double projection bridge",
+          "operator_level": true
+        }
+      ]
+    },
+    "symbolic_open": {
+      "name": "THRESHOLD_RULE_SYMBOLIC_OPEN",
+      "status": "ELIGIBILITY_TABLE_PRESENT_OPEN_SLOTS_SYMBOLIC",
+      "insertions": "eligibility table only; no extra numeric insertions"
+    }
+  },
+  "statuses": {
+    "full_threshold_operator_eligibility_v1": "COMPLETED_ELIGIBILITY_AUDIT",
+    "threshold_rank_projection_rule": "DERIVED_CONDITIONAL_ON_VIRTUAL_DOOR_PROJECTOR_DATA",
+    "up_6_0_Zvirt_threshold": "DERIVED_CONDITIONAL",
+    "up_8_1_threshold_source": "NO_THRESHOLD_SOURCE_FOUND",
+    "lepton_1_2_threshold_source": "NO_THRESHOLD_SOURCE_FOUND",
+    "lepton_3_3_threshold_source": "NO_THRESHOLD_SOURCE_FOUND",
+    "down_0_3_threshold_source": "NO_THRESHOLD_SOURCE_FOUND",
+    "down_4_2_threshold_source": "NO_THRESHOLD_SOURCE_FOUND",
+    "reference_slot_threshold_source": "REFERENCE_SLOT_NOT_THRESHOLD_TARGET",
+    "full_threshold_operator": "OPEN",
+    "numerical_closure": "OPEN"
+  },
+  "verdict": {
+    "threshold_eligibility_verdict": "ONLY_UP_6_0_THRESHOLD_DERIVED_CONDITIONAL",
+    "full_threshold_operator_status": "OPEN",
+    "known_derived_insertions": 1,
+    "open_or_no_source_slots": 5,
+    "numerical_closure": "OPEN",
+    "theorem_complete": false
+  },
+  "claim_boundary": "The current eligibility kernel derives only the up (6,0) threshold conditionally; all other charged non-reference slots have no threshold source in this audit."
+}
