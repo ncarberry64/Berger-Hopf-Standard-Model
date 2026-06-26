@@ -22,3 +22,8 @@ Runtime empirical values may be allowed only as simulation/comparison inputs.
 They must never be used to derive or retune BHSM constants, internal boundary
 coefficients, or frozen predictions.
 
+## Phase Three-G Follow-On
+
+Phase Three-G records runtime dependencies per candidate vertex and symbolic
+Lagrangian term. Pure no-fit event generation remains blocked unless no-fit
+mass-width and renormalization closures exist.

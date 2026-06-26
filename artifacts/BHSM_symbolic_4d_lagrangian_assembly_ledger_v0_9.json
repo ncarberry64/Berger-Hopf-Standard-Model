@@ -1,0 +1,358 @@
+{
+  "artifact": "BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9",
+  "release_basis": "v1.0.1",
+  "phase": "PHASE_THREE_G_VERTEX_TABLE_LAGRANGIAN_CANDIDATE",
+  "symbolic_4d_lagrangian_assembly_ledger_exported": true,
+  "complete_4d_lagrangian_exported": false,
+  "ledger_statement": "This is a symbolic 4D Lagrangian assembly candidate, not a complete production 4D Lagrangian and not a loadable FeynRules model.",
+  "terms": [
+    {
+      "term_id": "L_kin_canonical_basis",
+      "symbolic_expression": "canonical kinetic terms in production basis",
+      "source_artifacts": [
+        "artifacts/BHSM_explicit_4d_field_dictionary_v0_5.json",
+        "artifacts/BHSM_gauge_field_target_dictionary_v0_5.json",
+        "artifacts/BHSM_candidate_parameter_card_v0_5.json",
+        "artifacts/BHSM_boundary_source_matrices_v0_5.json",
+        "artifacts/BHSM_vertex_source_target_map_v0_5.json",
+        "artifacts/BHSM_canonical_field_target_conventions_v0_6.json",
+        "artifacts/BHSM_chiral_current_attachment_map_v0_6.json",
+        "artifacts/BHSM_phase_three_d_gate_status_v0_6.json",
+        "artifacts/BHSM_vector_normalization_theorem_v0_7.json",
+        "artifacts/BHSM_fermion_normalization_theorem_v0_7.json",
+        "artifacts/BHSM_gauge_fixing_production_coupling_scheme_v0_7.json",
+        "artifacts/BHSM_mass_width_scheme_candidate_v0_7.json",
+        "artifacts/BHSM_renormalization_scheme_candidate_v0_7.json",
+        "artifacts/BHSM_phase_three_e_gate_status_v0_7.json",
+        "artifacts/BHSM_canonical_production_basis_theorem_v0_8.json",
+        "artifacts/BHSM_runtime_parameter_modes_v0_8.json",
+        "artifacts/BHSM_production_coupling_map_v0_8.json",
+        "artifacts/BHSM_mass_width_runtime_policy_v0_8.json",
+        "artifacts/BHSM_phase_three_f_gate_status_v0_8.json"
+      ],
+      "status": "CANONICAL_PRODUCTION_BASIS_DEFINED",
+      "is_complete_4d_term": false,
+      "is_production_feynrules_ready": false,
+      "is_ufo_ready": false,
+      "allowed_parameter_modes": [
+        "BHSM_PURE_NOFIT",
+        "BHSM_COLLIDER_INTERFACE"
+      ],
+      "missing_items": [
+        "particle table",
+        "mass-width scheme",
+        "renormalization scheme"
+      ],
+      "notes": "Canonical basis is defined, but the production particle table and schemes remain open."
+    },
+    {
+      "term_id": "L_gauge_target",
+      "symbolic_expression": "SU(3)c x SU(2)L x U(1)Y target gauge terms",
+      "source_artifacts": [
+        "artifacts/BHSM_explicit_4d_field_dictionary_v0_5.json",
+        "artifacts/BHSM_gauge_field_target_dictionary_v0_5.json",
+        "artifacts/BHSM_candidate_parameter_card_v0_5.json",
+        "artifacts/BHSM_boundary_source_matrices_v0_5.json",
+        "artifacts/BHSM_vertex_source_target_map_v0_5.json",
+        "artifacts/BHSM_canonical_field_target_conventions_v0_6.json",
+        "artifacts/BHSM_chiral_current_attachment_map_v0_6.json",
+        "artifacts/BHSM_phase_three_d_gate_status_v0_6.json",
+        "artifacts/BHSM_vector_normalization_theorem_v0_7.json",
+        "artifacts/BHSM_fermion_normalization_theorem_v0_7.json",
+        "artifacts/BHSM_gauge_fixing_production_coupling_scheme_v0_7.json",
+        "artifacts/BHSM_mass_width_scheme_candidate_v0_7.json",
+        "artifacts/BHSM_renormalization_scheme_candidate_v0_7.json",
+        "artifacts/BHSM_phase_three_e_gate_status_v0_7.json",
+        "artifacts/BHSM_canonical_production_basis_theorem_v0_8.json",
+        "artifacts/BHSM_runtime_parameter_modes_v0_8.json",
+        "artifacts/BHSM_production_coupling_map_v0_8.json",
+        "artifacts/BHSM_mass_width_runtime_policy_v0_8.json",
+        "artifacts/BHSM_phase_three_f_gate_status_v0_8.json"
+      ],
+      "status": "TARGET_CONVENTION_PARTIAL",
+      "is_complete_4d_term": false,
+      "is_production_feynrules_ready": false,
+      "is_ufo_ready": false,
+      "allowed_parameter_modes": [
+        "BHSM_COLLIDER_INTERFACE"
+      ],
+      "missing_items": [
+        "gauge fixing",
+        "production coupling scheme"
+      ],
+      "notes": "Gauge target convention is partial."
+    },
+    {
+      "term_id": "L_CKM_charged_current_candidate",
+      "symbolic_expression": "(g2_BH/sqrt(2))*ubar gamma P_L V_CKM_BH d W + h.c.",
+      "source_artifacts": [
+        "artifacts/BHSM_explicit_4d_field_dictionary_v0_5.json",
+        "artifacts/BHSM_gauge_field_target_dictionary_v0_5.json",
+        "artifacts/BHSM_candidate_parameter_card_v0_5.json",
+        "artifacts/BHSM_boundary_source_matrices_v0_5.json",
+        "artifacts/BHSM_vertex_source_target_map_v0_5.json",
+        "artifacts/BHSM_canonical_field_target_conventions_v0_6.json",
+        "artifacts/BHSM_chiral_current_attachment_map_v0_6.json",
+        "artifacts/BHSM_phase_three_d_gate_status_v0_6.json",
+        "artifacts/BHSM_vector_normalization_theorem_v0_7.json",
+        "artifacts/BHSM_fermion_normalization_theorem_v0_7.json",
+        "artifacts/BHSM_gauge_fixing_production_coupling_scheme_v0_7.json",
+        "artifacts/BHSM_mass_width_scheme_candidate_v0_7.json",
+        "artifacts/BHSM_renormalization_scheme_candidate_v0_7.json",
+        "artifacts/BHSM_phase_three_e_gate_status_v0_7.json",
+        "artifacts/BHSM_canonical_production_basis_theorem_v0_8.json",
+        "artifacts/BHSM_runtime_parameter_modes_v0_8.json",
+        "artifacts/BHSM_production_coupling_map_v0_8.json",
+        "artifacts/BHSM_mass_width_runtime_policy_v0_8.json",
+        "artifacts/BHSM_phase_three_f_gate_status_v0_8.json"
+      ],
+      "status": "STRUCTURAL_CANDIDATE_WITH_DERIVED_MIXING_MATRIX",
+      "is_complete_4d_term": false,
+      "is_production_feynrules_ready": false,
+      "is_ufo_ready": false,
+      "allowed_parameter_modes": [
+        "BHSM_COLLIDER_INTERFACE"
+      ],
+      "missing_items": [
+        "coupling scheme",
+        "mass-width",
+        "renormalization",
+        "runtime parameter card"
+      ],
+      "notes": "CKM target current is structurally identified but not production-ready."
+    },
+    {
+      "term_id": "L_PMNS_charged_current_candidate",
+      "symbolic_expression": "(g2_BH/sqrt(2))*ellbar gamma P_L U_PMNS_BH nu W + h.c.",
+      "source_artifacts": [
+        "artifacts/BHSM_explicit_4d_field_dictionary_v0_5.json",
+        "artifacts/BHSM_gauge_field_target_dictionary_v0_5.json",
+        "artifacts/BHSM_candidate_parameter_card_v0_5.json",
+        "artifacts/BHSM_boundary_source_matrices_v0_5.json",
+        "artifacts/BHSM_vertex_source_target_map_v0_5.json",
+        "artifacts/BHSM_canonical_field_target_conventions_v0_6.json",
+        "artifacts/BHSM_chiral_current_attachment_map_v0_6.json",
+        "artifacts/BHSM_phase_three_d_gate_status_v0_6.json",
+        "artifacts/BHSM_vector_normalization_theorem_v0_7.json",
+        "artifacts/BHSM_fermion_normalization_theorem_v0_7.json",
+        "artifacts/BHSM_gauge_fixing_production_coupling_scheme_v0_7.json",
+        "artifacts/BHSM_mass_width_scheme_candidate_v0_7.json",
+        "artifacts/BHSM_renormalization_scheme_candidate_v0_7.json",
+        "artifacts/BHSM_phase_three_e_gate_status_v0_7.json",
+        "artifacts/BHSM_canonical_production_basis_theorem_v0_8.json",
+        "artifacts/BHSM_runtime_parameter_modes_v0_8.json",
+        "artifacts/BHSM_production_coupling_map_v0_8.json",
+        "artifacts/BHSM_mass_width_runtime_policy_v0_8.json",
+        "artifacts/BHSM_phase_three_f_gate_status_v0_8.json"
+      ],
+      "status": "STRUCTURAL_CANDIDATE_WITH_DERIVED_MIXING_MATRIX",
+      "is_complete_4d_term": false,
+      "is_production_feynrules_ready": false,
+      "is_ufo_ready": false,
+      "allowed_parameter_modes": [
+        "BHSM_COLLIDER_INTERFACE"
+      ],
+      "missing_items": [
+        "neutrino convention",
+        "coupling scheme",
+        "mass-width",
+        "renormalization"
+      ],
+      "notes": "PMNS target current is structurally identified but not production-ready."
+    },
+    {
+      "term_id": "L_charged_boundary_response_candidate",
+      "symbolic_expression": "Psi_bar_ch C_ch_boundary Psi_ch X_ch",
+      "source_artifacts": [
+        "artifacts/BHSM_explicit_4d_field_dictionary_v0_5.json",
+        "artifacts/BHSM_gauge_field_target_dictionary_v0_5.json",
+        "artifacts/BHSM_candidate_parameter_card_v0_5.json",
+        "artifacts/BHSM_boundary_source_matrices_v0_5.json",
+        "artifacts/BHSM_vertex_source_target_map_v0_5.json",
+        "artifacts/BHSM_canonical_field_target_conventions_v0_6.json",
+        "artifacts/BHSM_chiral_current_attachment_map_v0_6.json",
+        "artifacts/BHSM_phase_three_d_gate_status_v0_6.json",
+        "artifacts/BHSM_vector_normalization_theorem_v0_7.json",
+        "artifacts/BHSM_fermion_normalization_theorem_v0_7.json",
+        "artifacts/BHSM_gauge_fixing_production_coupling_scheme_v0_7.json",
+        "artifacts/BHSM_mass_width_scheme_candidate_v0_7.json",
+        "artifacts/BHSM_renormalization_scheme_candidate_v0_7.json",
+        "artifacts/BHSM_phase_three_e_gate_status_v0_7.json",
+        "artifacts/BHSM_canonical_production_basis_theorem_v0_8.json",
+        "artifacts/BHSM_runtime_parameter_modes_v0_8.json",
+        "artifacts/BHSM_production_coupling_map_v0_8.json",
+        "artifacts/BHSM_mass_width_runtime_policy_v0_8.json",
+        "artifacts/BHSM_phase_three_f_gate_status_v0_8.json"
+      ],
+      "status": "BLOCKED_BY_MISSING_X_CH_OPERATOR",
+      "is_complete_4d_term": false,
+      "is_production_feynrules_ready": false,
+      "is_ufo_ready": false,
+      "allowed_parameter_modes": [
+        "BHSM_PURE_NOFIT",
+        "BHSM_COLLIDER_INTERFACE"
+      ],
+      "missing_items": [
+        "X_ch operator",
+        "Lorentz structure",
+        "gauge representation"
+      ],
+      "notes": "Charged boundary source remains blocked by X_ch."
+    },
+    {
+      "term_id": "L_neutral_operator_candidate",
+      "symbolic_expression": "Psi_bar_nu K_nu Psi_nu",
+      "source_artifacts": [
+        "artifacts/BHSM_explicit_4d_field_dictionary_v0_5.json",
+        "artifacts/BHSM_gauge_field_target_dictionary_v0_5.json",
+        "artifacts/BHSM_candidate_parameter_card_v0_5.json",
+        "artifacts/BHSM_boundary_source_matrices_v0_5.json",
+        "artifacts/BHSM_vertex_source_target_map_v0_5.json",
+        "artifacts/BHSM_canonical_field_target_conventions_v0_6.json",
+        "artifacts/BHSM_chiral_current_attachment_map_v0_6.json",
+        "artifacts/BHSM_phase_three_d_gate_status_v0_6.json",
+        "artifacts/BHSM_vector_normalization_theorem_v0_7.json",
+        "artifacts/BHSM_fermion_normalization_theorem_v0_7.json",
+        "artifacts/BHSM_gauge_fixing_production_coupling_scheme_v0_7.json",
+        "artifacts/BHSM_mass_width_scheme_candidate_v0_7.json",
+        "artifacts/BHSM_renormalization_scheme_candidate_v0_7.json",
+        "artifacts/BHSM_phase_three_e_gate_status_v0_7.json",
+        "artifacts/BHSM_canonical_production_basis_theorem_v0_8.json",
+        "artifacts/BHSM_runtime_parameter_modes_v0_8.json",
+        "artifacts/BHSM_production_coupling_map_v0_8.json",
+        "artifacts/BHSM_mass_width_runtime_policy_v0_8.json",
+        "artifacts/BHSM_phase_three_f_gate_status_v0_8.json"
+      ],
+      "status": "BLOCKED_BY_NEUTRINO_BASIS_SCALE_CONVENTION",
+      "is_complete_4d_term": false,
+      "is_production_feynrules_ready": false,
+      "is_ufo_ready": false,
+      "allowed_parameter_modes": [
+        "BHSM_PURE_NOFIT",
+        "BHSM_COLLIDER_INTERFACE"
+      ],
+      "missing_items": [
+        "neutrino basis",
+        "scale convention",
+        "Dirac/Majorana convention"
+      ],
+      "notes": "Neutral kernel remains blocked by neutrino basis and scale."
+    },
+    {
+      "term_id": "L_CP_holonomy_candidate",
+      "symbolic_expression": "G_raw exp(i delta_BH) O_int + h.c.",
+      "source_artifacts": [
+        "artifacts/BHSM_explicit_4d_field_dictionary_v0_5.json",
+        "artifacts/BHSM_gauge_field_target_dictionary_v0_5.json",
+        "artifacts/BHSM_candidate_parameter_card_v0_5.json",
+        "artifacts/BHSM_boundary_source_matrices_v0_5.json",
+        "artifacts/BHSM_vertex_source_target_map_v0_5.json",
+        "artifacts/BHSM_canonical_field_target_conventions_v0_6.json",
+        "artifacts/BHSM_chiral_current_attachment_map_v0_6.json",
+        "artifacts/BHSM_phase_three_d_gate_status_v0_6.json",
+        "artifacts/BHSM_vector_normalization_theorem_v0_7.json",
+        "artifacts/BHSM_fermion_normalization_theorem_v0_7.json",
+        "artifacts/BHSM_gauge_fixing_production_coupling_scheme_v0_7.json",
+        "artifacts/BHSM_mass_width_scheme_candidate_v0_7.json",
+        "artifacts/BHSM_renormalization_scheme_candidate_v0_7.json",
+        "artifacts/BHSM_phase_three_e_gate_status_v0_7.json",
+        "artifacts/BHSM_canonical_production_basis_theorem_v0_8.json",
+        "artifacts/BHSM_runtime_parameter_modes_v0_8.json",
+        "artifacts/BHSM_production_coupling_map_v0_8.json",
+        "artifacts/BHSM_mass_width_runtime_policy_v0_8.json",
+        "artifacts/BHSM_phase_three_f_gate_status_v0_8.json"
+      ],
+      "status": "BLOCKED_BY_MISSING_INTERACTION_ATTACHMENT",
+      "is_complete_4d_term": false,
+      "is_production_feynrules_ready": false,
+      "is_ufo_ready": false,
+      "allowed_parameter_modes": [
+        "BHSM_PURE_NOFIT",
+        "BHSM_COLLIDER_INTERFACE"
+      ],
+      "missing_items": [
+        "interaction attachment",
+        "O_int operator"
+      ],
+      "notes": "CP holonomy phase source remains blocked by missing interaction attachment."
+    },
+    {
+      "term_id": "L_mass_width_runtime_policy",
+      "symbolic_expression": "runtime mass-width policy",
+      "source_artifacts": [
+        "artifacts/BHSM_explicit_4d_field_dictionary_v0_5.json",
+        "artifacts/BHSM_gauge_field_target_dictionary_v0_5.json",
+        "artifacts/BHSM_candidate_parameter_card_v0_5.json",
+        "artifacts/BHSM_boundary_source_matrices_v0_5.json",
+        "artifacts/BHSM_vertex_source_target_map_v0_5.json",
+        "artifacts/BHSM_canonical_field_target_conventions_v0_6.json",
+        "artifacts/BHSM_chiral_current_attachment_map_v0_6.json",
+        "artifacts/BHSM_phase_three_d_gate_status_v0_6.json",
+        "artifacts/BHSM_vector_normalization_theorem_v0_7.json",
+        "artifacts/BHSM_fermion_normalization_theorem_v0_7.json",
+        "artifacts/BHSM_gauge_fixing_production_coupling_scheme_v0_7.json",
+        "artifacts/BHSM_mass_width_scheme_candidate_v0_7.json",
+        "artifacts/BHSM_renormalization_scheme_candidate_v0_7.json",
+        "artifacts/BHSM_phase_three_e_gate_status_v0_7.json",
+        "artifacts/BHSM_canonical_production_basis_theorem_v0_8.json",
+        "artifacts/BHSM_runtime_parameter_modes_v0_8.json",
+        "artifacts/BHSM_production_coupling_map_v0_8.json",
+        "artifacts/BHSM_mass_width_runtime_policy_v0_8.json",
+        "artifacts/BHSM_phase_three_f_gate_status_v0_8.json"
+      ],
+      "status": "RUNTIME_POLICY_DEFINED_NOT_PURE_NOFIT_CLOSURE",
+      "is_complete_4d_term": false,
+      "is_production_feynrules_ready": false,
+      "is_ufo_ready": false,
+      "allowed_parameter_modes": [
+        "BHSM_COLLIDER_INTERFACE"
+      ],
+      "missing_items": [
+        "pure no-fit mass-width closure"
+      ],
+      "notes": "Runtime policy is defined, but pure no-fit mass-width closure remains open."
+    },
+    {
+      "term_id": "L_renormalization_placeholder",
+      "symbolic_expression": "renormalization placeholder",
+      "source_artifacts": [
+        "artifacts/BHSM_explicit_4d_field_dictionary_v0_5.json",
+        "artifacts/BHSM_gauge_field_target_dictionary_v0_5.json",
+        "artifacts/BHSM_candidate_parameter_card_v0_5.json",
+        "artifacts/BHSM_boundary_source_matrices_v0_5.json",
+        "artifacts/BHSM_vertex_source_target_map_v0_5.json",
+        "artifacts/BHSM_canonical_field_target_conventions_v0_6.json",
+        "artifacts/BHSM_chiral_current_attachment_map_v0_6.json",
+        "artifacts/BHSM_phase_three_d_gate_status_v0_6.json",
+        "artifacts/BHSM_vector_normalization_theorem_v0_7.json",
+        "artifacts/BHSM_fermion_normalization_theorem_v0_7.json",
+        "artifacts/BHSM_gauge_fixing_production_coupling_scheme_v0_7.json",
+        "artifacts/BHSM_mass_width_scheme_candidate_v0_7.json",
+        "artifacts/BHSM_renormalization_scheme_candidate_v0_7.json",
+        "artifacts/BHSM_phase_three_e_gate_status_v0_7.json",
+        "artifacts/BHSM_canonical_production_basis_theorem_v0_8.json",
+        "artifacts/BHSM_runtime_parameter_modes_v0_8.json",
+        "artifacts/BHSM_production_coupling_map_v0_8.json",
+        "artifacts/BHSM_mass_width_runtime_policy_v0_8.json",
+        "artifacts/BHSM_phase_three_f_gate_status_v0_8.json"
+      ],
+      "status": "OPEN",
+      "is_complete_4d_term": false,
+      "is_production_feynrules_ready": false,
+      "is_ufo_ready": false,
+      "allowed_parameter_modes": [
+        "BHSM_COLLIDER_INTERFACE"
+      ],
+      "missing_items": [
+        "renormalization scheme",
+        "threshold/running convention"
+      ],
+      "notes": "Production renormalization remains open."
+    }
+  ],
+  "empirical_derivation_inputs_used": false,
+  "boundary_predictions_modified_by_runtime_inputs": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false,
+  "source_model_files_changed": false
+}

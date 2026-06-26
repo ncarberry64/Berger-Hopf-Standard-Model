@@ -1,0 +1,44 @@
+# Symbolic 4D Lagrangian Assembly Ledger
+
+Machine-readable artifact:
+
+```text
+artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json
+```
+
+This is a symbolic 4D Lagrangian assembly candidate, not a complete production
+4D Lagrangian and not a loadable FeynRules model.
+
+Terms include:
+
+- `L_kin_canonical_basis`
+- `L_gauge_target`
+- `L_CKM_charged_current_candidate`
+- `L_PMNS_charged_current_candidate`
+- `L_charged_boundary_response_candidate`
+- `L_neutral_operator_candidate`
+- `L_CP_holonomy_candidate`
+- `L_mass_width_runtime_policy`
+- `L_renormalization_placeholder`
+
+Every term remains `is_production_feynrules_ready = false` and
+`is_ufo_ready = false`.
+
+## Phase Three-H Follow-On
+
+Phase Three-H bounds three blockers but does not promote the symbolic ledger to
+a complete production 4D Lagrangian. Missing interaction/basis/scale theorems
+remain explicit.
+
+## Phase Three-I Follow-On
+
+Phase Three-I localizes the missing interaction theorems needed before this
+ledger can become a complete 4D Lagrangian export. `X_ch`, neutrino
+Dirac-Majorana basis/scale, and standalone CP `O_int` remain open exact
+missing theorems for their standalone vertex families.
+
+## Phase Three-J Follow-On
+
+Phase Three-J exports a minimal bounded collider-interface subset, not the
+complete symbolic 4D Lagrangian. The subset is limited to canonical kinetic,
+target gauge, CKM charged-current, and PMNS charged-current prep terms.

@@ -115,3 +115,68 @@ Phase Three-F also separates `BHSM_PURE_NOFIT` from
 `BHSM_COLLIDER_INTERFACE`. Runtime empirical masses, widths, and cards may be
 allowed only in collider-interface comparison mode and do not modify BHSM
 constants, boundary coefficients, mixing matrices, or frozen predictions.
+
+## Phase Three-G Vertex Table And Lagrangian Candidate
+
+Phase Three-G exports a candidate production vertex table, symbolic 4D
+Lagrangian assembly ledger, vertex readiness matrix, FeynRules blocker table,
+and runtime dependency table. CKM/PMNS charged-current target structures are
+identified using BHSM-derived mixing sources, but all production FeynRules/UFO
+readiness gates remain closed.
+
+## Phase Three-H Bounded Blocker Resolution
+
+Phase Three-H partially promotes CKM/PMNS charged-current targets as bounded
+collider-interface targets and leaves charged boundary, neutral, and
+standalone CP vertices blocked by exact missing theorems. Production
+FeynRules/UFO readiness remains false.
+
+## Phase Three-I Interaction Theorem Closure
+
+Phase Three-I is a theorem-closure audit, not a UFO export. It keeps UFO,
+MadGraph, LHE/HepMC, Athena, and CMSSW readiness false while identifying the
+smallest missing interaction objects for `X_ch`, neutrino neutral-kernel use,
+and standalone CP `O_int`.
+
+## Phase Three-J Minimal Collider-Interface Subset
+
+Phase Three-J exports a bounded FeynRules-prep subset for future translation.
+It is not a `.fr` file, UFO model, MadGraph-ready model, LHE/HepMC generation,
+or detector-software interface.
+
+## Phase Three-K FeynRules Export Attempt
+
+Phase Three-K exports a disabled bounded FeynRules syntax draft for the
+minimal CKM/PMNS collider-interface subset. UFO export and loadability remain
+untested, and no event-generation artifacts are produced.
+
+## Phase Three-L FeynRules Syntax Runner
+
+Phase Three-L adds a FeynRules syntax contract, local FeynRules/UFO runner
+scripts, software environment preflight, UFO export runner contract, and
+MadGraph smoke-test runner contract. This hardens the execution path, but it
+does not execute Mathematica/FeynRules, does not export a UFO directory, does
+not test UFO loadability, and does not run MadGraph.
+
+## Phase Three-M Live FeynRules Validation Attempt
+
+Phase Three-M records a live validation attempt layer. In the current
+environment Mathematica/FeynRules/MadGraph are not detected, so the attempt is
+not run and the minimal FeynRules draft remains disabled. UFO readiness,
+MadGraph readiness, LHE/HepMC generation, Athena readiness, and CMSSW readiness
+remain false.
+
+## Phase Three-N Runtime Execution Gate
+
+Phase Three-N attempts runtime provisioning for the live validation path. The
+current environment detects Python only. Wolfram/FeynRules/MadGraph execution
+does not run, the minimal model remains disabled, and the UFO/MadGraph/event
+pipeline remains blocked.
+
+## Phase Three-O Runtime Assets And Handoff
+
+Phase Three-O packages runtime asset mapping and a CERN-like institutional HEP
+handoff bundle. It improves reproducibility for external review, but it does
+not alter the validation state: the complete BHSM 4D Lagrangian remains
+outside the minimal subset and the UFO/MadGraph/event pipeline remains gated by
+live runtime evidence.

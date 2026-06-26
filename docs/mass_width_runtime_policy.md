@@ -24,3 +24,8 @@ generation, but those cards are not derivation inputs.
 
 No fake mass or width numbers are inserted.
 
+## Phase Three-G Follow-On
+
+Phase Three-G attaches this runtime policy to candidate vertices and symbolic
+Lagrangian terms. The policy does not close pure no-fit mass-width closure and
+does not create event-generation readiness.

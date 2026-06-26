@@ -1,0 +1,30 @@
+{
+  "artifact": "BHSM_madgraph_smoke_test_plan_v1_3",
+  "release_basis": "v1.0.1",
+  "phase": "PHASE_THREE_K_FEYNRULES_EXPORT_ATTEMPT",
+  "plan_name": "BHSM_MINIMAL_COLLIDER_INTERFACE_MADGRAPH_SMOKE_TEST_PLAN",
+  "requires_loadable_ufo": true,
+  "requires_madgraph": true,
+  "minimal_processes": [
+    "u d~ > w+",
+    "e+ ve > w+"
+  ],
+  "run_card_template_path": "runs/madgraph_smoke/run_card_template.dat",
+  "param_card_template_path": "runs/madgraph_smoke/param_card_template.dat",
+  "smoke_test_attempted": false,
+  "smoke_test_passed": false,
+  "lhe_generated": false,
+  "hepmc_generated": false,
+  "missing_for_smoke_test": [
+    "loadable UFO model",
+    "MadGraph runtime",
+    "validated particle naming",
+    "runtime parameter card"
+  ],
+  "notes": "This is a smoke-test plan only. No LHE or HepMC files are generated or committed.",
+  "empirical_derivation_inputs_used": false,
+  "boundary_predictions_modified_by_runtime_inputs": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false,
+  "source_model_files_changed": false
+}

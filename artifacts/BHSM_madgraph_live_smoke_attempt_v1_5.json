@@ -1,0 +1,32 @@
+{
+  "release_basis": "v1.0.1",
+  "phase": "PHASE_THREE_M_LIVE_FEYNRULES_VALIDATION",
+  "empirical_derivation_inputs_used": false,
+  "empirical_runtime_inputs_allowed_in_collider_mode": true,
+  "boundary_predictions_modified_by_runtime_inputs": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false,
+  "source_model_files_changed": false,
+  "madgraph_smoke_test_attempted": false,
+  "madgraph_detected": false,
+  "requires_loadable_ufo": true,
+  "ufo_loadability_passed": false,
+  "input_ufo_directory": "models/ufo/BHSM_Minimal_Collider_Interface",
+  "mg5_script_path": "scripts/madgraph/import_bhsm_minimal_ufo_smoke.mg5",
+  "planned_processes": [
+    "u d~ > w+",
+    "e+ ve > w+"
+  ],
+  "actual_processes_attempted": [],
+  "madgraph_command": "not_run",
+  "madgraph_log_path": "not_created",
+  "madgraph_import_passed": false,
+  "madgraph_process_generation_passed": false,
+  "lhe_generated": false,
+  "hepmc_generated": false,
+  "failure_reason_if_any": "UFO export/loadability and/or MadGraph detection gates did not pass",
+  "notes": [
+    "MadGraph smoke testing may be attempted only after UFO export and loadability pass.",
+    "No fake event outputs are generated."
+  ]
+}
