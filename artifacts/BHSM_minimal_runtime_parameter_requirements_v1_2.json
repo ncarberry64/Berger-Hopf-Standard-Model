@@ -1,0 +1,173 @@
+{
+  "artifact": "BHSM_minimal_runtime_parameter_requirements_v1_2",
+  "release_basis": "v1.0.1",
+  "phase": "PHASE_THREE_J_MINIMAL_COLLIDER_LAGRANGIAN",
+  "parameter_mode": "BHSM_COLLIDER_INTERFACE",
+  "numerical_values_inserted": false,
+  "source_artifacts": [
+    "artifacts/BHSM_explicit_4d_field_dictionary_v0_5.json",
+    "artifacts/BHSM_gauge_field_target_dictionary_v0_5.json",
+    "artifacts/BHSM_candidate_parameter_card_v0_5.json",
+    "artifacts/BHSM_chiral_current_attachment_map_v0_6.json",
+    "artifacts/BHSM_canonical_production_basis_theorem_v0_8.json",
+    "artifacts/BHSM_runtime_parameter_modes_v0_8.json",
+    "artifacts/BHSM_production_coupling_map_v0_8.json",
+    "artifacts/BHSM_production_vertex_table_candidate_v0_9.json",
+    "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json",
+    "artifacts/BHSM_vertex_readiness_matrix_v0_9.json",
+    "artifacts/BHSM_phase_three_g_gate_status_v0_9.json",
+    "artifacts/BHSM_bounded_vertex_promotion_audit_v1_0.json",
+    "artifacts/BHSM_phase_three_h_gate_status_v1_0.json",
+    "artifacts/BHSM_interaction_theorem_closure_audit_v1_1.json",
+    "artifacts/BHSM_phase_three_i_gate_status_v1_1.json"
+  ],
+  "requirements": [
+    {
+      "parameter_id": "g2_BH_runtime",
+      "required_for": [
+        "L_gauge",
+        "L_CC_q_BHSM_CKM",
+        "L_CC_l_BHSM_PMNS"
+      ],
+      "source_type": "scheme_runtime_input",
+      "is_BHSM_derived": false,
+      "is_runtime_input": true,
+      "allowed_in_BHSM_PURE_NOFIT": false,
+      "allowed_in_BHSM_COLLIDER_INTERFACE": true,
+      "empirical_derivation_inputs_used": false,
+      "boundary_predictions_modified_by_runtime_input": false,
+      "status": "REQUIRED_RUNTIME_SCHEME_PARAMETER",
+      "notes": "Runtime/scheme coupling input only; not used to derive or retune BHSM constants."
+    },
+    {
+      "parameter_id": "W_mass_runtime",
+      "required_for": [
+        "future particle table",
+        "future propagator setup"
+      ],
+      "source_type": "runtime_simulation_input",
+      "is_BHSM_derived": false,
+      "is_runtime_input": true,
+      "allowed_in_BHSM_PURE_NOFIT": false,
+      "allowed_in_BHSM_COLLIDER_INTERFACE": true,
+      "empirical_derivation_inputs_used": false,
+      "boundary_predictions_modified_by_runtime_input": false,
+      "status": "REQUIRED_RUNTIME_SIMULATION_INPUT",
+      "notes": "No numerical value is inserted in Phase Three-J."
+    },
+    {
+      "parameter_id": "W_width_runtime",
+      "required_for": [
+        "future particle table",
+        "future propagator setup"
+      ],
+      "source_type": "runtime_simulation_input",
+      "is_BHSM_derived": false,
+      "is_runtime_input": true,
+      "allowed_in_BHSM_PURE_NOFIT": false,
+      "allowed_in_BHSM_COLLIDER_INTERFACE": true,
+      "empirical_derivation_inputs_used": false,
+      "boundary_predictions_modified_by_runtime_input": false,
+      "status": "REQUIRED_RUNTIME_SIMULATION_INPUT",
+      "notes": "No numerical value is inserted in Phase Three-J."
+    },
+    {
+      "parameter_id": "fermion_masses_runtime",
+      "required_for": [
+        "future particle table",
+        "future propagator setup"
+      ],
+      "source_type": "runtime_simulation_input",
+      "is_BHSM_derived": false,
+      "is_runtime_input": true,
+      "allowed_in_BHSM_PURE_NOFIT": false,
+      "allowed_in_BHSM_COLLIDER_INTERFACE": true,
+      "empirical_derivation_inputs_used": false,
+      "boundary_predictions_modified_by_runtime_input": false,
+      "status": "REQUIRED_RUNTIME_SIMULATION_INPUT",
+      "notes": "Runtime masses do not modify BHSM boundary predictions."
+    },
+    {
+      "parameter_id": "fermion_widths_runtime",
+      "required_for": [
+        "future particle table",
+        "future propagator setup"
+      ],
+      "source_type": "runtime_simulation_input",
+      "is_BHSM_derived": false,
+      "is_runtime_input": true,
+      "allowed_in_BHSM_PURE_NOFIT": false,
+      "allowed_in_BHSM_COLLIDER_INTERFACE": true,
+      "empirical_derivation_inputs_used": false,
+      "boundary_predictions_modified_by_runtime_input": false,
+      "status": "REQUIRED_RUNTIME_SIMULATION_INPUT",
+      "notes": "Runtime widths do not modify BHSM boundary predictions."
+    },
+    {
+      "parameter_id": "neutrino_runtime_convention_for_PMNS_labels",
+      "required_for": [
+        "L_CC_l_BHSM_PMNS"
+      ],
+      "source_type": "runtime_label_convention",
+      "is_BHSM_derived": false,
+      "is_runtime_input": true,
+      "allowed_in_BHSM_PURE_NOFIT": false,
+      "allowed_in_BHSM_COLLIDER_INTERFACE": true,
+      "empirical_derivation_inputs_used": false,
+      "boundary_predictions_modified_by_runtime_input": false,
+      "status": "REQUIRED_LABEL_CONVENTION_FOR_PMNS_INTERFACE",
+      "notes": "This does not close the neutral K_nu basis/scale/Dirac-Majorana theorem."
+    },
+    {
+      "parameter_id": "renormalization_scale_runtime",
+      "required_for": [
+        "future parameter card",
+        "future coupling evaluation"
+      ],
+      "source_type": "runtime_scheme_input",
+      "is_BHSM_derived": false,
+      "is_runtime_input": true,
+      "allowed_in_BHSM_PURE_NOFIT": false,
+      "allowed_in_BHSM_COLLIDER_INTERFACE": true,
+      "empirical_derivation_inputs_used": false,
+      "boundary_predictions_modified_by_runtime_input": false,
+      "status": "REQUIRED_RUNTIME_SCHEME_PARAMETER",
+      "notes": "Renormalization closure remains open for production use."
+    },
+    {
+      "parameter_id": "CKM_BH_source_matrix",
+      "required_for": [
+        "L_CC_q_BHSM_CKM"
+      ],
+      "source_type": "BHSM_source_artifact",
+      "is_BHSM_derived": true,
+      "is_runtime_input": false,
+      "allowed_in_BHSM_PURE_NOFIT": true,
+      "allowed_in_BHSM_COLLIDER_INTERFACE": true,
+      "empirical_derivation_inputs_used": false,
+      "boundary_predictions_modified_by_runtime_input": false,
+      "status": "BHSM_DERIVED_SOURCE_MATRIX",
+      "notes": "BHSM CKM source matrix from repo artifacts."
+    },
+    {
+      "parameter_id": "PMNS_BH_source_matrix",
+      "required_for": [
+        "L_CC_l_BHSM_PMNS"
+      ],
+      "source_type": "BHSM_source_artifact",
+      "is_BHSM_derived": true,
+      "is_runtime_input": false,
+      "allowed_in_BHSM_PURE_NOFIT": true,
+      "allowed_in_BHSM_COLLIDER_INTERFACE": true,
+      "empirical_derivation_inputs_used": false,
+      "boundary_predictions_modified_by_runtime_input": false,
+      "status": "BHSM_DERIVED_SOURCE_MATRIX",
+      "notes": "BHSM PMNS source matrix from repo artifacts."
+    }
+  ],
+  "empirical_derivation_inputs_used": false,
+  "boundary_predictions_modified_by_runtime_inputs": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false,
+  "source_model_files_changed": false
+}

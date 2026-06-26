@@ -25,3 +25,10 @@ collider-interface targets but does not mark any new vertex FeynRules-ready.
 `charged_boundary_response_matrix`, `neutral_operator_kernel_BH`, and
 `cp_holonomy_phase_attachment` remain blocked by exact missing theorem
 objects.
+
+## Phase Three-J Follow-On
+
+Phase Three-J marks CKM/PMNS charged-current families as included in the
+minimal bounded subset and keeps production FeynRules/UFO readiness false.
+The charged boundary response, neutral kernel, and standalone CP families are
+excluded from the subset.

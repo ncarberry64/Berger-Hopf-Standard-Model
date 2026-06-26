@@ -1,0 +1,112 @@
+{
+  "artifact": "BHSM_software_track_readiness_gates_v1_3",
+  "release_basis": "v1.0.1",
+  "phase": "PHASE_THREE_K_FEYNRULES_EXPORT_ATTEMPT",
+  "gates": [
+    {
+      "gate_id": "bounded_feynrules_model_file",
+      "status": "DISABLED_DRAFT_EXPORTED",
+      "artifact_support": [
+        "models/feynrules/BHSM_Minimal_Collider_Interface.fr.disabled"
+      ],
+      "blocks_next_step": true,
+      "missing_item": "enabled validated .fr model file",
+      "notes": "A disabled bounded draft exists; it is not a production FeynRules file."
+    },
+    {
+      "gate_id": "feynrules_syntax_validation",
+      "status": "NOT_VALIDATED",
+      "artifact_support": [
+        "artifacts/BHSM_minimal_feynrules_model_export_attempt_v1_3.json"
+      ],
+      "blocks_next_step": true,
+      "missing_item": "Mathematica/FeynRules syntax validation",
+      "notes": "No FeynRules validation was run."
+    },
+    {
+      "gate_id": "ufo_export",
+      "status": "NOT_ATTEMPTED",
+      "artifact_support": [
+        "artifacts/BHSM_feynrules_to_ufo_export_contract_v1_3.json"
+      ],
+      "blocks_next_step": true,
+      "missing_item": "enabled validated .fr model and FeynRules runtime",
+      "notes": "UFO export is a future contract only."
+    },
+    {
+      "gate_id": "ufo_loadability",
+      "status": "NOT_TESTED",
+      "artifact_support": [
+        "artifacts/BHSM_feynrules_to_ufo_export_contract_v1_3.json"
+      ],
+      "blocks_next_step": true,
+      "missing_item": "generated UFO model",
+      "notes": "No UFO model exists to load."
+    },
+    {
+      "gate_id": "madgraph_import",
+      "status": "NOT_ATTEMPTED",
+      "artifact_support": [
+        "artifacts/BHSM_madgraph_smoke_test_plan_v1_3.json"
+      ],
+      "blocks_next_step": true,
+      "missing_item": "loadable UFO model and MadGraph runtime",
+      "notes": "MadGraph import is planned only."
+    },
+    {
+      "gate_id": "madgraph_smoke_process",
+      "status": "PLANNED_NOT_ATTEMPTED",
+      "artifact_support": [
+        "artifacts/BHSM_madgraph_smoke_test_plan_v1_3.json"
+      ],
+      "blocks_next_step": true,
+      "missing_item": "loadable UFO model, parameter card, and MadGraph runtime",
+      "notes": "Minimal processes are planned but not executed."
+    },
+    {
+      "gate_id": "lhe_generation",
+      "status": "NOT_READY",
+      "artifact_support": [
+        "artifacts/BHSM_madgraph_smoke_test_plan_v1_3.json"
+      ],
+      "blocks_next_step": true,
+      "missing_item": "passing MadGraph smoke test",
+      "notes": "No event files are generated."
+    },
+    {
+      "gate_id": "hepmc_generation",
+      "status": "NOT_READY",
+      "artifact_support": [
+        "artifacts/BHSM_madgraph_smoke_test_plan_v1_3.json"
+      ],
+      "blocks_next_step": true,
+      "missing_item": "passing event generation and shower/conversion path",
+      "notes": "No event files are generated."
+    },
+    {
+      "gate_id": "athena_boundary",
+      "status": "NOT_READY",
+      "artifact_support": [
+        "artifacts/BHSM_phase_three_k_gate_status_v1_3.json"
+      ],
+      "blocks_next_step": true,
+      "missing_item": "validated event generation and detector-interface package",
+      "notes": "No Athena readiness is claimed."
+    },
+    {
+      "gate_id": "cmssw_boundary",
+      "status": "NOT_READY",
+      "artifact_support": [
+        "artifacts/BHSM_phase_three_k_gate_status_v1_3.json"
+      ],
+      "blocks_next_step": true,
+      "missing_item": "validated event generation and detector-interface package",
+      "notes": "No CMSSW readiness is claimed."
+    }
+  ],
+  "empirical_derivation_inputs_used": false,
+  "boundary_predictions_modified_by_runtime_inputs": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false,
+  "source_model_files_changed": false
+}
