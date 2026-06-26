@@ -96,7 +96,14 @@ def test_transport_artifacts_preserve_guardrails():
         "BHSM_prediction_package_skeleton_v1.json",
     ):
         payload = load_artifact(name)
-        assert payload["public_status"] == PUBLIC_STATUS
+        if name == "BHSM_prediction_package_skeleton_v1.json" and (
+            ROOT / "artifacts" / "BHSM_COMPLETE_V1_RELEASE_CANDIDATE.json"
+        ).exists():
+            assert payload["public_status"] == (
+                "internal boundary no-fit package complete; external empirical comparison layer separate/open"
+            )
+        else:
+            assert payload["public_status"] == PUBLIC_STATUS
         assert payload["official_predictions_changed"] is False
         assert payload["empirical_targets_used"] is False
         assert payload["observed_masses_used_as_derivation_inputs"] is False

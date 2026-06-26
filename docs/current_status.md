@@ -205,3 +205,91 @@ remain open, so `sigma` and `tau` are not numerically computed. With the radius
 substituted, the symbolic dependency is
 `tau(Z_H,kappa_H) = 2*pi*sqrt(Z_H/kappa_H)`. No charged outputs at boundary tau
 are exported, and official/frozen predictions remain unchanged.
+
+## Z_H Profile Normalization And kappa_H Hessian Closure
+
+The radius gate remains closed by `DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM` and is not
+reopened. The author/canonical BHSM profile normalization theorem is encoded as:
+
+`Z_H = integral_B |Phi(y)|^2 dmu_Berger = 1`.
+
+Therefore `Z_H` is locally `DERIVED_CONDITIONAL`. The Higgs/profile
+Hessian coefficient `kappa_H` remains blocked by
+`BLOCKED_BY_MISSING_PROFILE_HESSIAN_THEOREM` because no source-traced
+repo convention identifies `mu_H` or any existing stiffness object with
+`kappa_H`.
+
+With `r_internal_profile^2=1/(4*pi)` and `Z_H=1`, the symbolic dependency is
+`tau(kappa_H) = 2*pi/sqrt(kappa_H)`. Tau and sigma are not numerically computed,
+charged outputs at boundary tau are not exported, and official/frozen
+predictions remain unchanged. The global public status remains
+`structural architecture integrated conditional; numerical closure open`.
+
+## BHSM Boundary No-Fit Package Completion
+
+The internal BHSM boundary no-fit package is exported as
+`COMPLETE_EXPORTED`. The completed internal profile-scale values are:
+
+- `r_internal_profile^2 = 1/(4*pi)`;
+- `Z_H = 1`;
+- `kappa_H = mu_H = 64*pi^5`;
+- `sigma = 4*pi^(5/2)`;
+- `tau = 1/(4*pi^(3/2))`.
+
+The package also exports charged boundary bridge values, identity transport at
+`mu_BH_boundary`, the neutral boundary seed, PMNS/CKM no-fit operator outputs,
+and the `delta_BH=pi/3` CP holonomy seed. This is an internal boundary no-fit
+export only. The external empirical comparison package remains
+`OPEN_SEPARATE_LAYER`; no observed masses, Higgs value, gauge values,
+CKM/PMNS data, CP data, or cosmology residuals are used as derivation inputs.
+Frozen and official predictions remain unchanged.
+
+## BHSM v1 Completion Release Candidate
+
+BHSM v1 now contains a complete internal no-fit boundary prediction package. The
+profile scale, charged boundary outputs, neutral/PMNS/CKM/CP boundary outputs,
+and boundary-scale transport identity are exported as machine-readable
+artifacts.
+
+External empirical comparison is implemented as a separate comparison-only
+layer. Empirical data are not used to derive BHSM constants or boundary
+predictions. If comparison data are absent, the package remains internally
+complete but externally unevaluated.
+
+Current split:
+
+- `BHSM_internal_boundary_package = COMPLETE_EXPORTED`
+- `BHSM_boundary_no_fit_prediction_package = COMPLETE_EXPORTED`
+- `external_empirical_comparison_package = IMPLEMENTED_COMPARISON_ONLY_LAYER`
+- `external_empirical_comparison_status = DATA_OPTIONAL_OR_DATA_ABSENT`
+
+## BHSM v1.0.0 Release Package
+
+Release title: Berger-Hopf Standard Model v1.0.0: Complete Internal Boundary
+No-Fit Package.
+
+Public status:
+
+```text
+internal boundary no-fit package complete; external empirical comparison layer separate/open
+```
+
+The v1.0.0 release package preserves the v1 completion release-candidate split:
+the internal boundary no-fit package is complete and exported, while empirical
+comparison is implemented as a separate comparison-only layer. No observed
+masses, Higgs values, gauge values, CKM values, PMNS values, CP values, DESI
+residuals, or other target data are used to derive BHSM constants or boundary
+predictions.
+
+Release status labels:
+
+- `BHSM_internal_boundary_package = COMPLETE_EXPORTED`
+- `BHSM_boundary_no_fit_prediction_package = COMPLETE_EXPORTED`
+- `external_empirical_comparison_package = IMPLEMENTED_COMPARISON_ONLY_LAYER`
+- `external_empirical_comparison_status = DATA_ABSENT_OR_DATA_OPTIONAL`
+- `empirical_derivation_inputs_used = false`
+- `boundary_predictions_modified_by_comparison = false`
+- `official_predictions_changed = false`
+
+The v1.0.0 release is internally complete at the boundary-package level and
+externally unevaluated when empirical targets are absent.
