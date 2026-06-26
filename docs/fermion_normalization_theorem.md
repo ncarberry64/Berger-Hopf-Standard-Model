@@ -27,6 +27,13 @@ ufo_ready = false
 `Z_psi,target = 1` is a canonical interface convention, not a BHSM-derived
 fermion field-strength prediction.
 
+## Phase Three-F Follow-On
+
+Phase Three-F defines `Z_psi,prod = 1` as a canonical production-basis
+definition for future FeynRules/UFO fermion fields. This clears the interface
+normalization gate, but it is still not a nontrivial BHSM dynamical
+field-strength prediction.
+
 ## Missing For BHSM Derivation
 
 - BHSM fermion field-strength normalization theorem.
@@ -34,4 +41,3 @@ fermion field-strength prediction.
 - Fermion kinetic residue derivation from internal boundary states.
 - Mass-width scheme.
 - Dirac/Majorana convention for the neutral sector.
-

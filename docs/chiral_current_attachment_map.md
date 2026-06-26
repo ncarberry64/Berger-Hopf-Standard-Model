@@ -46,3 +46,9 @@ Phase Three-E keeps the CKM/PMNS target currents as source-traced target maps
 while exporting gauge-fixing and production-coupling scheme candidates. The
 candidate couplings remain `SCHEME_CONDITIONAL`; no production vertex table is
 claimed.
+
+## Phase Three-G Follow-On
+
+Phase Three-G carries the CKM/PMNS current targets into a candidate production
+vertex table. They remain structurally identified targets, not production
+FeynRules-ready vertices.

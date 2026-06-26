@@ -1,0 +1,57 @@
+{
+  "artifact": "BHSM_neutrino_basis_scale_resolution_attempt_v1_0",
+  "release_basis": "v1.0.1",
+  "phase": "PHASE_THREE_H_BOUNDED_BLOCKER_RESOLUTION",
+  "blocker_id": "neutrino_basis_and_scale",
+  "blocker_name": "neutrino basis and scale convention",
+  "prior_status": "OPEN",
+  "candidate_basis_convention": "candidate runtime/collider-interface neutrino field labels for PMNS charged current",
+  "basis_resolution_status": "PARTIALLY_RESOLVED_FOR_PMNS_CHARGED_CURRENT_TARGET",
+  "scale_resolution_status": "OPEN",
+  "dirac_majorana_status": "OPEN",
+  "source_artifacts_checked": [
+    "artifacts/BHSM_explicit_4d_field_dictionary_v0_5.json",
+    "artifacts/BHSM_gauge_field_target_dictionary_v0_5.json",
+    "artifacts/BHSM_candidate_parameter_card_v0_5.json",
+    "artifacts/BHSM_boundary_source_matrices_v0_5.json",
+    "artifacts/BHSM_vertex_source_target_map_v0_5.json",
+    "artifacts/BHSM_chiral_current_attachment_map_v0_6.json",
+    "artifacts/BHSM_phase_three_d_gate_status_v0_6.json",
+    "artifacts/BHSM_gauge_fixing_production_coupling_scheme_v0_7.json",
+    "artifacts/BHSM_mass_width_scheme_candidate_v0_7.json",
+    "artifacts/BHSM_renormalization_scheme_candidate_v0_7.json",
+    "artifacts/BHSM_phase_three_e_gate_status_v0_7.json",
+    "artifacts/BHSM_canonical_production_basis_theorem_v0_8.json",
+    "artifacts/BHSM_runtime_parameter_modes_v0_8.json",
+    "artifacts/BHSM_production_coupling_map_v0_8.json",
+    "artifacts/BHSM_mass_width_runtime_policy_v0_8.json",
+    "artifacts/BHSM_phase_three_f_gate_status_v0_8.json",
+    "artifacts/BHSM_production_vertex_table_candidate_v0_9.json",
+    "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json",
+    "artifacts/BHSM_vertex_readiness_matrix_v0_9.json",
+    "artifacts/BHSM_feynrules_export_blocker_table_v0_9.json",
+    "artifacts/BHSM_runtime_parameter_dependency_table_v0_9.json",
+    "artifacts/BHSM_phase_three_g_gate_status_v0_9.json"
+  ],
+  "affected_vertex_families": [
+    "lepton_charged_current_PMNS_BH",
+    "neutral_operator_kernel_BH"
+  ],
+  "promoted_vertex_families": [
+    "lepton_charged_current_PMNS_BH"
+  ],
+  "still_blocked_vertex_families": [
+    "neutral_operator_kernel_BH"
+  ],
+  "missing_theorem_if_open": "derive the physical neutrino basis, dimensional scale, and Dirac/Majorana convention for K_nu from BHSM boundary/operator data",
+  "mass_width_dependency": "OPEN",
+  "renormalization_dependency": "OPEN",
+  "feynrules_ready": false,
+  "ufo_ready": false,
+  "notes": "K_nu is a boundary/operator source, not yet a collider neutrino mass matrix. PMNS charged-current labels can be used only as a candidate runtime interface basis.",
+  "empirical_derivation_inputs_used": false,
+  "boundary_predictions_modified_by_runtime_inputs": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false,
+  "source_model_files_changed": false
+}

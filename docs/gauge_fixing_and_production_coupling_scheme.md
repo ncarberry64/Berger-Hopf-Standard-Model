@@ -21,3 +21,10 @@ convention, and validated production parameter card before production use.
 
 No final UFO production coupling scheme is claimed.
 
+## Phase Three-F Follow-On
+
+Phase Three-F adds a production coupling map using
+`G_prod = G_raw / product_a sqrt(Z_a)`. In the canonical production basis
+`Z_a = 1`, so `G_prod = G_raw` only where Lorentz attachment, gauge
+representation, coupling scheme, mass-width requirements, and renormalization
+requirements are satisfied.

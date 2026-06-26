@@ -19,10 +19,16 @@ ufo_ready = false
 `Z_A,target = 1` is a canonical interface convention, not a BHSM-derived vector
 field-strength prediction.
 
+## Phase Three-F Follow-On
+
+Phase Three-F defines `Z_A,prod = 1` as a canonical production-basis definition
+for future FeynRules/UFO vector fields. This clears the interface
+normalization gate, but it is still not a nontrivial BHSM dynamical
+field-strength prediction.
+
 ## Missing For BHSM Derivation
 
 - BHSM vector field-strength normalization theorem.
 - Derivation of vector kinetic residue from the internal boundary action.
 - Gauge fixing compatible with the BHSM boundary-to-4D projection.
 - Renormalization convention for production vector fields.
-

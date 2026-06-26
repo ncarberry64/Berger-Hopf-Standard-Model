@@ -1,0 +1,138 @@
+{
+  "release_basis": "v1.0.1",
+  "phase": "PHASE_THREE_M_LIVE_FEYNRULES_VALIDATION",
+  "empirical_derivation_inputs_used": false,
+  "empirical_runtime_inputs_allowed_in_collider_mode": true,
+  "boundary_predictions_modified_by_runtime_inputs": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false,
+  "source_model_files_changed": false,
+  "environment_preflight": [
+    {
+      "component": "python",
+      "detected": true,
+      "version_if_available": "not_detected",
+      "path_if_available": "C:\\Python314\\Lib",
+      "detection_method": "current Python interpreter",
+      "required_for": [
+        "repository exporters",
+        "static checks",
+        "runner wrappers"
+      ],
+      "blocks_if_missing": true,
+      "notes": "Python is available for repository tooling."
+    },
+    {
+      "component": "mathematica_kernel",
+      "detected": false,
+      "version_if_available": "not_detected",
+      "path_if_available": "not_detected",
+      "detection_method": "PATH lookup for WolframKernel, MathKernel",
+      "required_for": [
+        "FeynRules syntax validation",
+        "model loading"
+      ],
+      "blocks_if_missing": true,
+      "notes": "Required for live FeynRules execution."
+    },
+    {
+      "component": "wolframscript",
+      "detected": false,
+      "version_if_available": "not_detected",
+      "path_if_available": "not_detected",
+      "detection_method": "PATH lookup for wolframscript",
+      "required_for": [
+        "scripted Mathematica/FeynRules execution"
+      ],
+      "blocks_if_missing": true,
+      "notes": "Required for the repository runner scripts."
+    },
+    {
+      "component": "feynrules",
+      "detected": false,
+      "version_if_available": "not_detected",
+      "path_if_available": "not_detected",
+      "detection_method": "manual/path heuristic",
+      "required_for": [
+        "FeynRules package loading",
+        "Feynman rule generation",
+        "UFO export"
+      ],
+      "blocks_if_missing": true,
+      "notes": "FeynRules is a Mathematica package; PATH detection alone is insufficient."
+    },
+    {
+      "component": "feynarts_optional",
+      "detected": false,
+      "version_if_available": "not_detected",
+      "path_if_available": "not_detected",
+      "detection_method": "manual/path heuristic",
+      "required_for": [
+        "optional diagram/form-factor workflows"
+      ],
+      "blocks_if_missing": false,
+      "notes": "Optional FeynArts package detection is not required for Phase Three-M."
+    },
+    {
+      "component": "madgraph",
+      "detected": false,
+      "version_if_available": "not_detected",
+      "path_if_available": "not_detected",
+      "detection_method": "PATH lookup for mg5_aMC, mg5, MadGraph5_aMCatNLO",
+      "required_for": [
+        "MadGraph UFO import",
+        "MadGraph smoke process"
+      ],
+      "blocks_if_missing": true,
+      "notes": "Required for actual MadGraph smoke tests."
+    },
+    {
+      "component": "hepmc_optional",
+      "detected": false,
+      "version_if_available": "not_detected",
+      "path_if_available": "not_detected",
+      "detection_method": "PATH lookup for hepmc3-config, HepMC3-config",
+      "required_for": [
+        "optional HepMC event-output validation"
+      ],
+      "blocks_if_missing": false,
+      "notes": "Optional until event generation exists."
+    },
+    {
+      "component": "root_optional",
+      "detected": false,
+      "version_if_available": "not_detected",
+      "path_if_available": "not_detected",
+      "detection_method": "PATH lookup for root-config",
+      "required_for": [
+        "optional analysis and plotting checks"
+      ],
+      "blocks_if_missing": false,
+      "notes": "ROOT is optional for this runner package."
+    }
+  ],
+  "model_file_tested": "models/feynrules/BHSM_Minimal_Collider_Interface.fr.disabled",
+  "model_scope": "BHSM_MINIMAL_COLLIDER_INTERFACE_ONLY",
+  "is_complete_bhsm_model": false,
+  "live_validation_attempted": false,
+  "mathematica_detected": false,
+  "wolframscript_detected": false,
+  "feynrules_detected": false,
+  "validation_command": "not_run",
+  "validation_log_path": "not_created",
+  "mathematica_syntax_checked": false,
+  "feynrules_package_loaded": false,
+  "feynrules_model_loaded": false,
+  "lagrangian_symbol_checked": false,
+  "feynman_rules_generation_attempted": false,
+  "feynman_rules_generation_passed": false,
+  "feynrules_syntax_validated": false,
+  "feynrules_model_load_validated": false,
+  "failure_reason_if_any": "Mathematica/FeynRules runtime unavailable",
+  "excluded_vertices_confirmed": true,
+  "forbidden_content_confirmed_absent": true,
+  "notes": [
+    "Static contract checks are not live FeynRules validation.",
+    "The disabled model is the committed source input."
+  ]
+}

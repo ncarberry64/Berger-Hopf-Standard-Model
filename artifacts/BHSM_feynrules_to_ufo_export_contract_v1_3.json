@@ -1,0 +1,29 @@
+{
+  "artifact": "BHSM_feynrules_to_ufo_export_contract_v1_3",
+  "release_basis": "v1.0.1",
+  "phase": "PHASE_THREE_K_FEYNRULES_EXPORT_ATTEMPT",
+  "contract_name": "BHSM_MINIMAL_COLLIDER_INTERFACE_FEYNRULES_TO_UFO_CONTRACT",
+  "input_model_file": "models/feynrules/BHSM_Minimal_Collider_Interface.fr.disabled",
+  "expected_output_directory": "models/ufo/BHSM_Minimal_Collider_Interface",
+  "requires_mathematica": true,
+  "requires_feynrules": true,
+  "requires_feynarts_optional": true,
+  "export_command_template": "Get[\"FeynRules`\"]; LoadModel[\"models/feynrules/BHSM_Minimal_Collider_Interface.fr\"]; WriteUFO[L_BHSM_Minimal, Output -> \"models/ufo/BHSM_Minimal_Collider_Interface\"]",
+  "ufo_export_attempted": false,
+  "ufo_export_passed": false,
+  "ufo_model_path": "models/ufo/BHSM_Minimal_Collider_Interface",
+  "ufo_loadability_tested": false,
+  "ufo_loadability_passed": false,
+  "missing_for_ufo": [
+    "enabled validated .fr model file",
+    "Mathematica/FeynRules runtime unavailable",
+    "FeynRules syntax validation",
+    "complete particle and parameter declarations"
+  ],
+  "notes": "UFO export is a future contract only. No UFO model is generated or validated in Phase Three-K.",
+  "empirical_derivation_inputs_used": false,
+  "boundary_predictions_modified_by_runtime_inputs": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false,
+  "source_model_files_changed": false
+}
