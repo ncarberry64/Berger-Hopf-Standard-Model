@@ -1,9 +1,16 @@
 # Berger-Hopf Standard Model (BHSM) v1.0.0
 
-Current status: structural architecture integrated conditional; numerical closure open.
+Current status: BHSM v1.0.0 internal boundary no-fit package complete/exported; external empirical comparison layer separate/open.
 
-v1.0.0 release status: internal boundary no-fit package complete; external
-empirical comparison layer separate/open.
+```text
+BHSM v1.0.0 internal boundary no-fit package: COMPLETE_EXPORTED.
+
+The profile scale, charged boundary outputs, neutral/PMNS/CKM/CP boundary outputs, and boundary-scale transport identity are exported as machine-readable artifacts.
+
+External empirical comparison layer: SEPARATE / OPEN.
+
+Empirical data are not used to derive BHSM constants or boundary predictions. External comparisons are one-way tests against the released internal package.
+```
 
 The Berger-Hopf Standard Model v1.0.0 repository contains a complete internal
 boundary no-fit prediction package. The profile scale, charged boundary
@@ -15,8 +22,8 @@ layer. Empirical data are not used to derive BHSM constants or boundary
 predictions. If external comparison data are absent, the internal BHSM package
 remains complete but externally unevaluated.
 
-Short status: internal boundary no-fit package complete; external empirical
-comparison layer separate/open.
+Short status: BHSM v1.0.0 internal boundary no-fit package complete/exported;
+external empirical comparison layer separate/open.
 
 Release phrase: complete internal boundary no-fit prediction package.
 
@@ -30,7 +37,7 @@ replacement of the Standard Model.
 
 BHSM is not a proven replacement for the Standard Model.
 
-BHSM does not yet claim full numerical closure.
+BHSM does not claim empirical validation.
 
 ## 1. What Is Complete In v1.0.0
 
@@ -176,9 +183,9 @@ internal boundary no-fit package complete; external empirical comparison layer s
 ## What BHSM Is
 
 BHSM is a test-backed Berger-Hopf boundary and topographic research
-architecture. This v1.0.0 package exports the internal boundary no-fit package
-while preserving the older global status line for repository-wide proof
-obligations:
+architecture. This v1.0.0 package exports the internal boundary no-fit package.
+
+Historical pre-v1.0.0 repository-wide status phrase, retained only as context:
 
 ```text
 structural architecture integrated conditional; numerical closure open

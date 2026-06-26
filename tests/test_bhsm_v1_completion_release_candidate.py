@@ -12,6 +12,10 @@ if str(SRC) not in sys.path:
 import bhsm_external_comparison_package as completion
 
 
+CURRENT_STATUS = (
+    "BHSM v1.0.0 internal boundary no-fit package complete/exported; "
+    "external empirical comparison layer separate/open"
+)
 FROZEN_HASHES = {
     ROOT / "docs" / "frozen_predictions.md": (
         "9EA147C56537520C86D3C4F9B864C6BA98BAC9E64931EDAE96449F3B335A36C4"
@@ -36,11 +40,11 @@ def test_completion_manifest_exists_and_references_core_artifacts():
     assert manifest["internal_boundary_package"] == completion.INTERNAL_COMPLETE
     assert manifest["boundary_no_fit_prediction_package"] == completion.INTERNAL_COMPLETE
     assert manifest["external_empirical_comparison_package"] == completion.COMPARISON_LAYER
-    assert manifest["external_empirical_comparison_status"] == "DATA_OPTIONAL_OR_DATA_ABSENT"
+    assert manifest["external_empirical_comparison_status"] == "OPEN_SEPARATE_LAYER"
     assert manifest["empirical_derivation_inputs_used"] is False
     assert manifest["boundary_predictions_modified_by_comparison"] is False
     assert manifest["official_predictions_changed"] is False
-    assert manifest["public_status"] == completion.PUBLIC_STATUS
+    assert manifest["public_status"] == CURRENT_STATUS
     assert set(completion.CORE_PR52_ARTIFACTS).issubset(set(manifest["core_artifacts"]))
     for name in completion.CORE_PR52_ARTIFACTS:
         assert (ROOT / "artifacts" / name).exists()

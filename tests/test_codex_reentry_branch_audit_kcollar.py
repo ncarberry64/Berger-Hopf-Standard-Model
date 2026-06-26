@@ -16,6 +16,10 @@ import bhsm_k_collar_response_audit as collar_audit
 
 
 PUBLIC_STATUS = "structural architecture integrated conditional; numerical closure open"
+V1_CURRENT_STATUS = (
+    "BHSM v1.0.0 internal boundary no-fit package complete/exported; "
+    "external empirical comparison layer separate/open"
+)
 FROZEN_HASHES = {
     ROOT / "docs" / "frozen_predictions.md": (
         "9EA147C56537520C86D3C4F9B864C6BA98BAC9E64931EDAE96449F3B335A36C4"
@@ -139,11 +143,16 @@ def test_frozen_constants_and_status_ledgers_are_guarded():
 
 
 def test_public_status_appears_in_all_new_artifacts():
+    current_status_artifacts = {
+        "full_BHSM_open_gate_ledger_v2.json",
+        "full_BHSM_claim_status_table_v2.json",
+    }
     paths = list((ROOT / "artifacts").glob("*_v2.json"))
     paths.append(ROOT / "artifacts" / "a_background_collar_dependency_order_v1.json")
     for path in paths:
         payload = json.loads(path.read_text(encoding="utf-8"))
-        assert payload["public_status"] == PUBLIC_STATUS
+        expected = V1_CURRENT_STATUS if path.name in current_status_artifacts else PUBLIC_STATUS
+        assert payload["public_status"] == expected
         assert payload["official_predictions_changed"] is False
     recovery = load_artifact("bhsm_codex_reentry_recovery_report_v1.json")
     assert recovery["public_status"] == PUBLIC_STATUS

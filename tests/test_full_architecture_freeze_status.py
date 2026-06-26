@@ -14,6 +14,10 @@ import full_architecture_freeze_status as freeze
 
 
 PUBLIC_STATUS = "structural architecture integrated conditional; numerical closure open"
+V1_CURRENT_STATUS = (
+    "BHSM v1.0.0 internal boundary no-fit package complete/exported; "
+    "external empirical comparison layer separate/open"
+)
 FROZEN_HASHES = {
     ROOT / "docs" / "frozen_predictions.md": (
         "9EA147C56537520C86D3C4F9B864C6BA98BAC9E64931EDAE96449F3B335A36C4"
@@ -56,11 +60,12 @@ def test_readme_and_status_docs_preserve_public_status_without_overclaiming():
     current = (ROOT / "docs" / "current_status.md").read_text(encoding="utf-8")
     boundaries = (ROOT / "docs" / "claim_boundaries.md").read_text(encoding="utf-8")
     for text in (readme, current, boundaries):
+        assert V1_CURRENT_STATUS in text
         assert PUBLIC_STATUS in text
     assert "not a\nproven replacement" in readme or "not a proven replacement" in readme
     assert (
-        "does not yet claim full numerical closure" in readme
-        or "does not yet claim full numerical\nclosure" in readme
+        "does not claim empirical validation" in readme
+        or "does not claim empirical\nvalidation" in readme
     )
     assert "What Is Integrated Conditionally" in current
     assert "What Has Been Downgraded Or Rejected As Primary" in current
@@ -132,6 +137,10 @@ def test_k_collar_downgrade_is_recorded_without_precision_closure():
 
 
 def test_new_artifacts_preserve_public_status_and_official_prediction_guardrail():
+    current_artifacts = {
+        "full_BHSM_open_gate_ledger_v2.json",
+        "full_BHSM_claim_status_table_v2.json",
+    }
     artifact_names = [
         "full_BHSM_architecture_freeze_v1.json",
         "full_BHSM_open_gate_ledger_v2.json",
@@ -143,7 +152,8 @@ def test_new_artifacts_preserve_public_status_and_official_prediction_guardrail(
     ]
     for name in artifact_names:
         payload = load_artifact(name)
-        assert payload["public_status"] == PUBLIC_STATUS
+        expected_status = V1_CURRENT_STATUS if name in current_artifacts else PUBLIC_STATUS
+        assert payload["public_status"] == expected_status
         assert payload["official_predictions_changed"] is False
 
 

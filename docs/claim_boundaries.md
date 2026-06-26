@@ -1,6 +1,17 @@
 # BHSM Claim Boundaries
 
-Current status: structural architecture integrated conditional; numerical closure open.
+Current status: BHSM v1.0.0 internal boundary no-fit package complete/exported; external empirical comparison layer separate/open.
+
+```text
+BHSM v1.0.0 internal boundary no-fit package: COMPLETE_EXPORTED.
+External empirical comparison layer: SEPARATE / OPEN.
+```
+
+Historical pre-v1.0.0 status phrase, retained only for context:
+
+```text
+structural architecture integrated conditional; numerical closure open
+```
 
 BHSM follows the rule: derive -> freeze -> compare -> claim.
 
@@ -24,7 +35,7 @@ geometric framework.
 ## Claim Boundary Notes
 
 - Frozen predictions are preserved and must not be retuned.
-- Numerical closure remains open.
+- External empirical comparison remains open/separate.
 - The minimal positive diagonal `K_collar` route is rejected as primary by
   response audit; this does not reject BHSM.
 - CKM, PMNS, CP, Higgs/electroweak, neutral-threshold, RG/scheme, and final

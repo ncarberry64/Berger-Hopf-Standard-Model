@@ -1,6 +1,22 @@
 # Current BHSM Status
 
-Current status: structural architecture integrated conditional; numerical closure open.
+Current status: BHSM v1.0.0 internal boundary no-fit package complete/exported; external empirical comparison layer separate/open.
+
+```text
+BHSM v1.0.0 internal boundary no-fit package: COMPLETE_EXPORTED.
+
+The profile scale, charged boundary outputs, neutral/PMNS/CKM/CP boundary outputs, and boundary-scale transport identity are exported as machine-readable artifacts.
+
+External empirical comparison layer: SEPARATE / OPEN.
+
+Empirical data are not used to derive BHSM constants or boundary predictions. External comparisons are one-way tests against the released internal package.
+```
+
+Historical pre-v1.0.0 status phrase, retained only for chronology:
+
+```text
+structural architecture integrated conditional; numerical closure open
+```
 
 BHSM follows the rule: derive -> freeze -> compare -> claim.
 
@@ -27,7 +43,10 @@ BHSM follows the rule: derive -> freeze -> compare -> claim.
 - boundary relative-holonomy CP source
 - comparison-ready prediction package
 
-These components organize the architecture. They do not close numerical prediction.
+These components organize the architecture. Before the v1.0.0 boundary-package
+export they did not close numerical prediction; the current internal boundary
+package status is now complete/exported, while external empirical comparison
+remains separate/open.
 
 ## What Has Been Downgraded Or Rejected As Primary
 
@@ -200,11 +219,11 @@ Therefore `r_internal_profile = 1/sqrt(4*pi)` and the local radius gate is
 The Lambda-radius and overlap-radius routes are selected as the same semantic
 BHSM overlap-scale normalization, not merely as numerically equal constants.
 
-The global public status remains `structural architecture integrated conditional; numerical closure open`. `Z_H` and `kappa_H`
-remain open, so `sigma` and `tau` are not numerically computed. With the radius
-substituted, the symbolic dependency is
-`tau(Z_H,kappa_H) = 2*pi*sqrt(Z_H/kappa_H)`. No charged outputs at boundary tau
-are exported, and official/frozen predictions remain unchanged.
+Historical checkpoint note: at the PR #49 radius-gate stage, the global public
+status remained `structural architecture integrated conditional; numerical
+closure open`. At the v1.0.0 release state, the internal boundary no-fit package
+is complete/exported, while the external empirical comparison layer remains
+separate/open.
 
 ## Z_H Profile Normalization And kappa_H Hessian Closure
 
@@ -219,11 +238,12 @@ Hessian coefficient `kappa_H` remains blocked by
 repo convention identifies `mu_H` or any existing stiffness object with
 `kappa_H`.
 
-With `r_internal_profile^2=1/(4*pi)` and `Z_H=1`, the symbolic dependency is
-`tau(kappa_H) = 2*pi/sqrt(kappa_H)`. Tau and sigma are not numerically computed,
-charged outputs at boundary tau are not exported, and official/frozen
-predictions remain unchanged. The global public status remains
-`structural architecture integrated conditional; numerical closure open`.
+Historical checkpoint note: before the v1.0.0 boundary package export, the
+remaining dependency was `tau(kappa_H) = 2*pi/sqrt(kappa_H)` and the global
+public status remained `structural architecture integrated conditional;
+numerical closure open`. The current v1.0.0 status is the split above: internal
+boundary no-fit package complete/exported; external empirical comparison
+separate/open.
 
 ## BHSM Boundary No-Fit Package Completion
 

@@ -24,7 +24,8 @@ def test_readme_refreshed_for_full_bhsm_candidate() -> None:
     text = (ROOT / "README.md").read_text(encoding="utf-8")
     assert "# Berger-Hopf Standard Model (BHSM)" in text
     assert (
-        "Current status: structural architecture integrated conditional; numerical closure open."
+        "Current status: BHSM v1.0.0 internal boundary no-fit package "
+        "complete/exported; external empirical comparison layer separate/open."
         in text
     )
     assert "What BHSM Is" in text
