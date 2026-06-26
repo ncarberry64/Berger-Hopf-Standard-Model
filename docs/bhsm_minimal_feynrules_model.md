@@ -22,3 +22,14 @@ charged-current interface subset. It contains no numerical masses or widths.
 It remains disabled until a real Mathematica/FeynRules syntax validation pass
 is performed.
 
+## Phase Three-L Runner Package
+
+The Phase Three-L runner package adds local scripts for checking and exporting
+the minimal draft after a user deliberately enables a validated production
+copy. The current repository state still keeps
+`BHSM_Minimal_Collider_Interface.fr.disabled` disabled, and no production
+`BHSM_Minimal_Collider_Interface.fr` file is exported.
+
+Static repository checks are syntax-contract checks only. They do not replace
+Mathematica/FeynRules loading, `FeynmanRules[...]` validation, `WriteUFO[...]`
+execution, or UFO loadability checks.

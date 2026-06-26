@@ -149,3 +149,11 @@ or detector-software interface.
 Phase Three-K exports a disabled bounded FeynRules syntax draft for the
 minimal CKM/PMNS collider-interface subset. UFO export and loadability remain
 untested, and no event-generation artifacts are produced.
+
+## Phase Three-L FeynRules Syntax Runner
+
+Phase Three-L adds a FeynRules syntax contract, local FeynRules/UFO runner
+scripts, software environment preflight, UFO export runner contract, and
+MadGraph smoke-test runner contract. This hardens the execution path, but it
+does not execute Mathematica/FeynRules, does not export a UFO directory, does
+not test UFO loadability, and does not run MadGraph.

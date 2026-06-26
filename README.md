@@ -202,6 +202,21 @@ charged-boundary response, neutral-kernel, and standalone CP-holonomy vertices.
 UFO export, UFO loadability, MadGraph validation, LHE/HepMC generation, and
 Athena/CMSSW integration remain gated unless separately validated.
 
+### Phase Three-L FeynRules syntax-runner package
+
+BHSM v1.0.1 status-reconciled release: internal boundary no-fit package
+complete/exported; external empirical comparison layer separate/open.
+
+BHSM now includes a FeynRules syntax contract and local export-runner package
+for the bounded minimal collider-interface subset. The package prepares local
+Mathematica/FeynRules checks, UFO export commands, software environment
+preflight, and a MadGraph smoke-test runner contract.
+
+Repository static checks do not equal FeynRules validation. Unless
+Mathematica/FeynRules/UFO/MadGraph execution is actually performed and passes,
+BHSM remains not UFO-ready, not MadGraph-ready, and not
+event-generation-ready.
+
 ### Phase Three-F production-basis and runtime-parameter status
 
 BHSM now defines a canonical production basis for future FeynRules/UFO
