@@ -1,0 +1,168 @@
+{
+  "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
+  "official_predictions_changed": false,
+  "empirical_derivation_inputs_used": false,
+  "observed_masses_used": false,
+  "target_ratios_used": false,
+  "gate": "tau_sigma",
+  "status": "OPEN_LOCALIZABLE",
+  "sigma_from_boundary_geometry": "OPEN_LOCALIZABLE",
+  "tau_from_boundary_geometry": "OPEN_LOCALIZABLE",
+  "sigma_result": {
+    "status": "OPEN_LOCALIZABLE",
+    "derived": false,
+    "value": null,
+    "missing_objects": [
+      "kappa_H",
+      "Z_H"
+    ],
+    "formula": "sigma = (1/2) sqrt(kappa_H / Z_H)"
+  },
+  "tau_result": {
+    "status": "OPEN_LOCALIZABLE",
+    "derived": false,
+    "value": null,
+    "missing_objects": [
+      "kappa_H",
+      "Z_H",
+      "r"
+    ],
+    "formula": "tau = 1 / (4 sigma r^2)"
+  },
+  "source_objects": {
+    "a": {
+      "status": "DERIVED_FIXED",
+      "source_trace": "constants: alpha^{-1}/(12*pi^2) / charged artifacts",
+      "notes": "Frozen alpha-anchored Berger anisotropy is available."
+    },
+    "r": {
+      "status": "MISSING",
+      "source_trace": null,
+      "notes": "No repo-derived numerical Berger/internal radius for tau=1/(4 sigma r^2)."
+    },
+    "sigma": {
+      "status": "OPEN_LOCALIZABLE",
+      "source_trace": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\derived_universal_profile_width_guardrail.md",
+      "notes": "Universal width is guarded against fitting, but its value is not derived."
+    },
+    "tau": {
+      "status": "OPEN_LOCALIZABLE",
+      "source_trace": "artifacts/universal_tau_sigma_response_scaffold_v1.json",
+      "notes": "Tau is defined as universal branch variable, not numerically derived."
+    },
+    "kappa_H": {
+      "status": "MISSING",
+      "source_trace": null,
+      "notes": "Required by sigma=(1/2)sqrt(kappa_H/Z_H), but no source object was found."
+    },
+    "Z_H": {
+      "status": "MISSING",
+      "source_trace": null,
+      "notes": "Required by sigma=(1/2)sqrt(kappa_H/Z_H), but no source object was found."
+    },
+    "Phi(y)": {
+      "status": "DERIVED_CONDITIONAL",
+      "source_trace": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\derived_universal_higgs_topographic_profile.md",
+      "notes": "Universal topographic profile form is recorded, but width value remains open."
+    },
+    "Phi_0": {
+      "status": "OPEN_LOCALIZABLE",
+      "source_trace": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\derived_universal_higgs_topographic_profile.md",
+      "notes": "Profile symbol appears in the universal profile, but normalization is not numeric."
+    },
+    "y_0": {
+      "status": "OPEN_LOCALIZABLE",
+      "source_trace": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\derived_universal_higgs_topographic_profile.md",
+      "notes": "Profile center appears in the universal profile, but coordinate value is not fixed."
+    },
+    "profile second variation": {
+      "status": "OPEN_LOCALIZABLE",
+      "source_trace": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\docs\\open_blockers_backlog.md",
+      "notes": "Profile EOM/source and Hessian data remain open-localizable."
+    },
+    "boundary embedding X": {
+      "status": "OPEN_LOCALIZABLE",
+      "source_trace": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\docs\\open_blockers_backlog.md",
+      "notes": "Boundary embedding is localized in backlog but not evaluable."
+    },
+    "shape operator S": {
+      "status": "OPEN_LOCALIZABLE",
+      "source_trace": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\docs\\open_blockers_backlog.md",
+      "notes": "Shape-operator formulas are conditional; values require embedding/profile data."
+    },
+    "collar Jacobian J": {
+      "status": "OPEN_LOCALIZABLE",
+      "source_trace": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\docs\\open_blockers_backlog.md",
+      "notes": "Collar Jacobian depends on open shape/operator inputs."
+    },
+    "Higgs/profile normalization": {
+      "status": "OPEN_LOCALIZABLE",
+      "source_trace": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\derived_universal_higgs_topographic_profile.md",
+      "notes": "Profile normalization is symbolic, not a derived numerical normalization."
+    }
+  },
+  "missing_objects": [
+    "kappa_H",
+    "Z_H",
+    "r"
+  ],
+  "obstruction": "Cannot compute sigma=(1/2)sqrt(kappa_H/Z_H) and tau=1/(4 sigma r^2) until r_internal_profile, Z_H, and kappa_H are repo-derived.",
+  "targeted_followup": {
+    "sprint": "Boundary/Profile Scale Closure Assault for kappa_H, Z_H, and r",
+    "source_artifact": "artifacts/boundary_profile_scale_closure_v1.json",
+    "targeted_first_blocker_from_PR_46": true,
+    "boundary_profile_scale_closure": "BLOCKED_BY_MISSING_OBJECTS",
+    "r_status": "BLOCKED_BY_MISSING_OBJECT",
+    "Z_H_status": "OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH",
+    "kappa_H_status": "OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH",
+    "missing_objects": [
+      "kappa_H",
+      "Z_H",
+      "r"
+    ]
+  },
+  "observed_Higgs_used": false,
+  "observed_gauge_values_used": false,
+  "tau_fit_to_masses": false,
+  "sigma_fit_to_masses": false,
+  "targeted_followup_from_PR47": {
+    "source_artifact": "artifacts/profile_scale_tau_sigma_update_v1.json",
+    "r_internal_profile_status": "BLOCKED_BY_MISSING_NORMALIZATION_THEOREM",
+    "Z_H_status": "BLOCKED_BY_MISSING_PROFILE_MEASURE",
+    "kappa_H_status": "BLOCKED_BY_MISSING_EFFECTIVE_ACTION",
+    "missing_objects": [
+      "r_internal_profile",
+      "Z_H",
+      "kappa_H"
+    ]
+  },
+  "refined_missing_objects_from_PR47_followup": [
+    "r_internal_profile",
+    "Z_H",
+    "kappa_H"
+  ],
+  "targeted_followup_from_PR48": {
+    "source_artifact": "artifacts/internal_profile_radius_closure_or_obstruction_v2.json",
+    "r_internal_profile_status": "NORMALIZATION_FORK_OPEN",
+    "missing_theorem": "INTERNAL_BERGER_RADIUS_SELECTION_THEOREM"
+  },
+  "refined_missing_objects_from_PR48_followup": [
+    "r_internal_profile",
+    "Z_H",
+    "kappa_H"
+  ],
+  "targeted_followup_from_author_radius_selection": {
+    "source_artifact": "artifacts/profile_scale_tau_sigma_update_v1.json",
+    "r_internal_profile_status": "DERIVED_CONDITIONAL",
+    "remaining_blockers": [
+      "Z_H",
+      "kappa_H"
+    ],
+    "tau_symbolic_after_radius_substitution": "tau(Z_H,kappa_H) = 2*pi*sqrt(Z_H/kappa_H)"
+  },
+  "refined_missing_objects_after_radius_selection": [
+    "Z_H",
+    "kappa_H"
+  ],
+  "radius_selected_by": "AUTHOR_SUPPLIED_BHSM_OVERLAP_NORMALIZATION"
+}

@@ -1,0 +1,123 @@
+{
+  "audit": "oriented_jet_heat_response_audit",
+  "public_status": "structural architecture integrated conditional; numerical closure open",
+  "official_predictions_changed": false,
+  "branch": "A-background-identity",
+  "source_branch_artifact": "charged_branch_matrices_v2",
+  "tau_fit_to_masses": false,
+  "sigma_fit_to_masses": false,
+  "observed_masses_used": false,
+  "CKM_PMNS_used": false,
+  "response_condition": "q_e < q_mu < q_tau",
+  "charged_precision_closure": "OPEN",
+  "frozen_before_comparison": true,
+  "used_target_data": false,
+  "a": 1.157054135733433,
+  "a_formula": "alpha^{-1}/(12*pi^2)",
+  "a_inverse_squared": 0.7469519097837289,
+  "jet_heat_operator": {
+    "convention": "positive_curvature_cost_L_Berger=-r^2 Delta_Berger",
+    "b20_orientation": "negative",
+    "Lambda_0": 0.0,
+    "Lambda_1": 1.746951909783729,
+    "Lambda_2": 4.987807639134916,
+    "b20_magnitude": 1.599355231188356,
+    "E_20": [
+      [
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "first_order_operator": [
+      [
+        0.0,
+        0.0,
+        -1.599355231188356
+      ],
+      [
+        0.0,
+        -1.746951909783729,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        -4.987807639134916
+      ]
+    ],
+    "symmetric_response_operator": [
+      [
+        0.0,
+        0.0,
+        -0.799677615594178
+      ],
+      [
+        0.0,
+        -1.746951909783729,
+        0.0
+      ],
+      [
+        -0.799677615594178,
+        0.0,
+        -4.987807639134916
+      ]
+    ]
+  },
+  "sector_responses": {
+    "lepton": {
+      "eigenvalues": [
+        2.999931975887785,
+        3.6802888518434282,
+        5.449030872949059
+      ],
+      "q_tau": -0.0002368557221455334,
+      "q_mu": -1.7467850943041852,
+      "q_e": -4.987737598892315,
+      "response_condition_q_e_lt_q_mu_lt_q_tau": true,
+      "sector_verdict": "JET_HEAT_STRENGTHENS_HIERARCHY"
+    },
+    "up": {
+      "eigenvalues": [
+        2.9999814878665223,
+        12.999274809775592,
+        19.802734420332794
+      ],
+      "q_tau": -4.46765112177116e-06,
+      "q_mu": -1.746951980001695,
+      "q_e": -4.987803101265829,
+      "response_condition_q_e_lt_q_mu_lt_q_tau": true,
+      "sector_verdict": "JET_HEAT_STRENGTHENS_HIERARCHY"
+    },
+    "down": {
+      "eigenvalues": [
+        2.999822158643241,
+        7.1634416054734205,
+        12.251702222277896
+      ],
+      "q_tau": -7.7782445614276e-05,
+      "q_mu": -1.7468725199544377,
+      "q_e": -4.987809246518595,
+      "response_condition_q_e_lt_q_mu_lt_q_tau": true,
+      "sector_verdict": "JET_HEAT_STRENGTHENS_HIERARCHY"
+    }
+  },
+  "lepton_response_verdict": "JET_HEAT_STRENGTHENS_HIERARCHY",
+  "stack_verdict": "STACK_JET_HEAT_SUPPORTED",
+  "oriented_jet_heat_response": "STRUCTURALLY_SUPPORTED_CANDIDATE",
+  "open_items": [
+    "tau remains boundary-derived/open; this response audit is structural only",
+    "sigma remains boundary-derived/open; no mass fit is allowed",
+    "charged precision closure remains open"
+  ]
+}

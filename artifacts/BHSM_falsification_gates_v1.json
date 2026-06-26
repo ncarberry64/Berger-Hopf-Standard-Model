@@ -1,0 +1,61 @@
+{
+  "public_status": "internal boundary no-fit package complete; external empirical comparison layer separate/open",
+  "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
+  "official_predictions_changed": false,
+  "empirical_derivation_inputs_used": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "comparison_data_required_for_internal_completion": false,
+  "observed_masses_used": false,
+  "observed_Higgs_used": false,
+  "observed_gauge_values_used": false,
+  "observed_CKM_used": false,
+  "observed_PMNS_used": false,
+  "observed_CP_used": false,
+  "tau_fit_to_masses": false,
+  "sigma_fit_to_masses": false,
+  "artifact": "BHSM_falsification_gates_v1",
+  "profile_scale_identity_gate": {
+    "sigma*tau = pi": true,
+    "kappa_H = 4*sigma^2": true,
+    "tau = pi/sigma": true,
+    "status": "PASSED_INTERNAL_IDENTITY"
+  },
+  "no_empirical_derivation_gate": {
+    "empirical_derivation_inputs_used": false,
+    "status": "PASSED"
+  },
+  "boundary_package_integrity_gate": {
+    "all_required_internal_artifacts_exist": true,
+    "status": "PASSED",
+    "core_artifacts": [
+      "canonical_profile_hessian_theorem_v1.json",
+      "tau_sigma_boundary_values_v1.json",
+      "profile_scale_closure_values_v1.json",
+      "charged_boundary_bridge_values_v1.json",
+      "charged_outputs_at_boundary_tau_A_local_v1.json",
+      "charged_outputs_at_boundary_tau_A_background_identity_v1.json",
+      "common_scale_boundary_transport_v1.json",
+      "neutral_operator_no_fit_output_v1.json",
+      "PMNS_no_fit_operator_output_v1.json",
+      "CKM_no_fit_operator_output_v1.json",
+      "CP_no_fit_holonomy_output_v1.json",
+      "BHSM_boundary_no_fit_prediction_package_v1.json"
+    ]
+  },
+  "comparison_layer_separation_gate": {
+    "external_comparison_can_modify_internal_constants": false,
+    "status": "PASSED"
+  },
+  "charged_sector_comparison_gate": {
+    "status": "NOT_EVALUATED_DATA_ABSENT",
+    "residuals": []
+  },
+  "CKM_PMNS_CP_comparison_gate": {
+    "status": "NOT_EVALUATED_DATA_ABSENT",
+    "residuals": []
+  },
+  "cosmology_DESI_gate": {
+    "status": "NOT_EVALUATED_DATA_ABSENT",
+    "actual_directional_anisotropy_data_present": false
+  }
+}

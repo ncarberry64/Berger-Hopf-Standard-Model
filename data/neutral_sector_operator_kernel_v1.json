@@ -1,0 +1,433 @@
+{
+  "id": "PO-BH-neutral-sector-operator-kernel-v1",
+  "title": "Neutral Sector Operator Kernel v1",
+  "public_status": "structural architecture integrated conditional; numerical closure open",
+  "frozen_predictions_changed": false,
+  "official_predictions_changed": false,
+  "uses_empirical_derivation_inputs": false,
+  "forbidden_derivation_inputs": [
+    "observed neutrino masses",
+    "neutrino mass splittings",
+    "PMNS data",
+    "observed charged masses",
+    "measured alpha",
+    "empirical target ratios",
+    "cosmological neutrino bounds",
+    "post-comparison residuals"
+  ],
+  "sector_equation": "q + 2j = 3",
+  "ledger": [
+    [
+      0,
+      0
+    ],
+    [
+      3,
+      0
+    ],
+    [
+      1,
+      1
+    ]
+  ],
+  "ledger_status": "DERIVED_CONDITIONAL_ON_SECTOR_ENGINE",
+  "tangent_generator": [
+    -2,
+    1
+  ],
+  "hessian_symbolic_form": {
+    "matrix": "[[a,b],[b,c]]",
+    "cost": "N_nu(q,j)=a q^2 + 2b qj + c j^2",
+    "PSD_conditions": "a>0, c>0, ac-b^2>=0"
+  },
+  "hessian_branches": [
+    {
+      "branch_id": "N0",
+      "name": "diagonal isotropic neutral Hessian",
+      "a": "1",
+      "b": "0",
+      "c": "1",
+      "status": "NEUTRAL_HESSIAN_BRANCH_CANDIDATE",
+      "notes": "No-fit isotropic diagnostic branch."
+    },
+    {
+      "branch_id": "N1_rho_1",
+      "name": "charged-like neutral Hessian rho_ch=1 placeholder",
+      "a": "1",
+      "b": "0",
+      "c": "1",
+      "status": "STRUCTURALLY_POSSIBLE_NOT_DERIVED",
+      "notes": "Charged-like reuse is not preferred unless an action source identifies neutral and charged stiffness."
+    },
+    {
+      "branch_id": "N1_rho_2",
+      "name": "charged-like neutral Hessian rho_ch=2 placeholder",
+      "a": "1",
+      "b": "0",
+      "c": "2",
+      "status": "STRUCTURALLY_POSSIBLE_NOT_DERIVED",
+      "notes": "Charged-like reuse is not preferred unless an action source identifies neutral and charged stiffness."
+    },
+    {
+      "branch_id": "N1_rho_3",
+      "name": "charged-like neutral Hessian rho_ch=3 placeholder",
+      "a": "1",
+      "b": "0",
+      "c": "3",
+      "status": "STRUCTURALLY_POSSIBLE_NOT_DERIVED",
+      "notes": "Charged-like reuse is not preferred unless an action source identifies neutral and charged stiffness."
+    },
+    {
+      "branch_id": "N2",
+      "name": "topographic mixed neutral Hessian",
+      "a": "1",
+      "b": "1",
+      "c": "2",
+      "status": "STRUCTURALLY_MOTIVATED_CANDIDATE",
+      "notes": "Neutral/topographic sector permits q-j mixing; this is a diagnostic candidate."
+    }
+  ],
+  "positivity_diagnostics": [
+    {
+      "branch_id": "N0",
+      "a_positive": true,
+      "c_positive": true,
+      "determinant": "1",
+      "positive_semidefinite": true,
+      "positive_definite": true
+    },
+    {
+      "branch_id": "N1_rho_1",
+      "a_positive": true,
+      "c_positive": true,
+      "determinant": "1",
+      "positive_semidefinite": true,
+      "positive_definite": true
+    },
+    {
+      "branch_id": "N1_rho_2",
+      "a_positive": true,
+      "c_positive": true,
+      "determinant": "2",
+      "positive_semidefinite": true,
+      "positive_definite": true
+    },
+    {
+      "branch_id": "N1_rho_3",
+      "a_positive": true,
+      "c_positive": true,
+      "determinant": "3",
+      "positive_semidefinite": true,
+      "positive_definite": true
+    },
+    {
+      "branch_id": "N2",
+      "a_positive": true,
+      "c_positive": true,
+      "determinant": "1",
+      "positive_semidefinite": true,
+      "positive_definite": true
+    }
+  ],
+  "cost_diagnostics": [
+    {
+      "branch_id": "N0",
+      "mode": [
+        3,
+        0
+      ],
+      "cost": "9"
+    },
+    {
+      "branch_id": "N0",
+      "mode": [
+        1,
+        1
+      ],
+      "cost": "2"
+    },
+    {
+      "branch_id": "N1_rho_1",
+      "mode": [
+        3,
+        0
+      ],
+      "cost": "9"
+    },
+    {
+      "branch_id": "N1_rho_1",
+      "mode": [
+        1,
+        1
+      ],
+      "cost": "2"
+    },
+    {
+      "branch_id": "N1_rho_2",
+      "mode": [
+        3,
+        0
+      ],
+      "cost": "9"
+    },
+    {
+      "branch_id": "N1_rho_2",
+      "mode": [
+        1,
+        1
+      ],
+      "cost": "3"
+    },
+    {
+      "branch_id": "N1_rho_3",
+      "mode": [
+        3,
+        0
+      ],
+      "cost": "9"
+    },
+    {
+      "branch_id": "N1_rho_3",
+      "mode": [
+        1,
+        1
+      ],
+      "cost": "4"
+    },
+    {
+      "branch_id": "N2",
+      "mode": [
+        3,
+        0
+      ],
+      "cost": "9"
+    },
+    {
+      "branch_id": "N2",
+      "mode": [
+        1,
+        1
+      ],
+      "cost": "5"
+    }
+  ],
+  "tangent_norm_diagnostics": [
+    {
+      "branch_id": "N0",
+      "tangent": [
+        -2,
+        1
+      ],
+      "norm_sq": "5"
+    },
+    {
+      "branch_id": "N1_rho_1",
+      "tangent": [
+        -2,
+        1
+      ],
+      "norm_sq": "5"
+    },
+    {
+      "branch_id": "N1_rho_2",
+      "tangent": [
+        -2,
+        1
+      ],
+      "norm_sq": "6"
+    },
+    {
+      "branch_id": "N1_rho_3",
+      "tangent": [
+        -2,
+        1
+      ],
+      "norm_sq": "7"
+    },
+    {
+      "branch_id": "N2",
+      "tangent": [
+        -2,
+        1
+      ],
+      "norm_sq": "2"
+    }
+  ],
+  "neutral_operator_templates": {
+    "NEUTRAL_OPERATOR_SYMBOLIC": {
+      "readout_mode": "NEUTRAL_OPERATOR_SYMBOLIC",
+      "topology_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "direct_0_2_bridge_enabled": false,
+      "eta_nu": "eta_nu_OPEN",
+      "beta_nu": "beta_nu_OPEN",
+      "kappa_nu": "kappa_nu_OPEN",
+      "matrix_template": [
+        [
+          "0",
+          "beta_nu_OPEN",
+          "0"
+        ],
+        [
+          "beta_nu_OPEN",
+          "eta_nu N_nu(3,0)",
+          "kappa_nu_OPEN"
+        ],
+        [
+          "0",
+          "kappa_nu_OPEN",
+          "eta_nu N_nu(1,1)"
+        ]
+      ],
+      "status": "SYMBOLIC_OPEN",
+      "physical_prediction": false
+    },
+    "NEUTRAL_OPERATOR_UNIT_DIAGNOSTIC": {
+      "readout_mode": "NEUTRAL_OPERATOR_UNIT_DIAGNOSTIC",
+      "topology_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "direct_0_2_bridge_enabled": false,
+      "eta_nu": "1_DIAGNOSTIC",
+      "beta_nu": "0_DIAGNOSTIC",
+      "kappa_nu": "0_DIAGNOSTIC",
+      "matrix_template": [
+        [
+          "0",
+          "0_DIAGNOSTIC",
+          "0"
+        ],
+        [
+          "0_DIAGNOSTIC",
+          "N_nu(3,0)",
+          "0_DIAGNOSTIC"
+        ],
+        [
+          "0",
+          "0_DIAGNOSTIC",
+          "N_nu(1,1)"
+        ]
+      ],
+      "status": "UNIT_DIAGNOSTIC_NOT_PHYSICAL_PREDICTION",
+      "physical_prediction": false
+    },
+    "NEUTRAL_OPERATOR_TOPOGRAPHIC_MIXED_DIAGNOSTIC": {
+      "readout_mode": "NEUTRAL_OPERATOR_TOPOGRAPHIC_MIXED_DIAGNOSTIC",
+      "topology_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "direct_0_2_bridge_enabled": false,
+      "eta_nu": "1_DIAGNOSTIC",
+      "beta_nu": "0_DIAGNOSTIC",
+      "kappa_nu": "0_DIAGNOSTIC",
+      "matrix_template": [
+        [
+          "0",
+          "0_DIAGNOSTIC",
+          "0"
+        ],
+        [
+          "0_DIAGNOSTIC",
+          "N2(3,0)=9",
+          "0_DIAGNOSTIC"
+        ],
+        [
+          "0",
+          "0_DIAGNOSTIC",
+          "N2(1,1)=5"
+        ]
+      ],
+      "status": "TOPOGRAPHIC_MIXED_DIAGNOSTIC_NOT_PHYSICAL_PREDICTION",
+      "physical_prediction": false
+    }
+  },
+  "threshold_records": [
+    {
+      "slot": 0,
+      "mode": [
+        0,
+        0
+      ],
+      "is_reference_slot": true,
+      "status": "REFERENCE_SLOT_NOT_THRESHOLD_TARGET",
+      "threshold_factor": null,
+      "insertion": null
+    },
+    {
+      "slot": 1,
+      "mode": [
+        3,
+        0
+      ],
+      "is_reference_slot": false,
+      "status": "NO_THRESHOLD_SOURCE_FOUND",
+      "threshold_factor": null,
+      "insertion": null
+    },
+    {
+      "slot": 2,
+      "mode": [
+        1,
+        1
+      ],
+      "is_reference_slot": false,
+      "status": "NO_THRESHOLD_SOURCE_FOUND",
+      "threshold_factor": null,
+      "insertion": null
+    }
+  ],
+  "PMNS_placeholder": {
+    "formula": "U_PMNS = U_l^dagger U_nu",
+    "charged_source": "charged-lepton K_l",
+    "neutral_source": "neutral K_nu",
+    "structural_status": "STRUCTURALLY_MOTIVATED_CANDIDATE",
+    "numerical_status": "OPEN"
+  },
+  "statuses": {
+    "neutral_sector_operator_kernel_v1": "STRUCTURALLY_MOTIVATED_CANDIDATE",
+    "neutrino_mode_ledger": "DERIVED_CONDITIONAL_ON_SECTOR_ENGINE",
+    "neutral_Hessian_symbolic_form": "OPEN_LOCALIZABLE",
+    "neutral_Hessian_branch_N0_isotropic": "NEUTRAL_HESSIAN_BRANCH_CANDIDATE",
+    "neutral_Hessian_branch_N1_charged_like": "STRUCTURALLY_POSSIBLE_NOT_DERIVED",
+    "neutral_Hessian_branch_N2_topographic_mixed": "STRUCTURALLY_MOTIVATED_CANDIDATE",
+    "neutral_Hessian_branch_N3_tangent_adapted": "OPEN_LOCALIZABLE",
+    "neutral_eta_source": "OPEN_LOCALIZABLE",
+    "neutral_beta_bridge_source": "OPEN_LOCALIZABLE",
+    "neutral_kappa_bridge_source": "OPEN_LOCALIZABLE",
+    "neutral_threshold_operator": "OPEN",
+    "PMNS_structural_source": "STRUCTURALLY_MOTIVATED_CANDIDATE",
+    "PMNS_numerical_closure": "OPEN",
+    "neutral_numerical_closure": "OPEN",
+    "numerical_closure": "OPEN"
+  },
+  "verdict": {
+    "neutral_sector_status": "STRUCTURALLY_MOTIVATED_CANDIDATE",
+    "selected_hessian_branch": null,
+    "neutral_numerical_closure": "OPEN",
+    "PMNS_numerical_closure": "OPEN",
+    "theorem_complete": false
+  },
+  "claim_boundary": "Neutral sector operator kernel is a symbolic/candidate scaffold; no neutrino mass or PMNS numerical closure is claimed."
+}
