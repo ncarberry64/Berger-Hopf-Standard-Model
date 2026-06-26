@@ -19,6 +19,28 @@ RULE_A_SINGLE_OPERATOR_TRACE = "RULE_A_SINGLE_OPERATOR_TRACE"
 RULE_B_DOUBLE_NORMALIZED_PHASE_CANDIDATE = "RULE_B_DOUBLE_NORMALIZED_PHASE_CANDIDATE"
 DEFAULT_DIAGNOSTIC_SUPPRESSION_RULE = RULE_A_SINGLE_OPERATOR_TRACE
 
+BRIDGE_RULE_DIAGONAL_ONLY = "BRIDGE_RULE_DIAGONAL_ONLY"
+BRIDGE_RULE_MINIMAL_ANSATZ = "BRIDGE_RULE_MINIMAL_ANSATZ"
+BRIDGE_RULE_SYMBOLIC_OPEN = "BRIDGE_RULE_SYMBOLIC_OPEN"
+DEFAULT_DIAGNOSTIC_BRIDGE_RULE = BRIDGE_RULE_MINIMAL_ANSATZ
+
+BRIDGE_RULE_STATUS_TABLE = {
+    BRIDGE_RULE_DIAGONAL_ONLY: "BASELINE_DIAGNOSTIC",
+    BRIDGE_RULE_MINIMAL_ANSATZ: "STRONGLY_SUPPORTED_CANDIDATE",
+    BRIDGE_RULE_SYMBOLIC_OPEN: "TOPOLOGY_PRESENT_MAGNITUDES_OPEN",
+}
+
+THRESHOLD_RULE_NONE = "THRESHOLD_RULE_NONE"
+THRESHOLD_RULE_DERIVED_ONLY = "THRESHOLD_RULE_DERIVED_ONLY"
+THRESHOLD_RULE_SYMBOLIC_OPEN = "THRESHOLD_RULE_SYMBOLIC_OPEN"
+DEFAULT_DIAGNOSTIC_THRESHOLD_RULE = THRESHOLD_RULE_DERIVED_ONLY
+
+THRESHOLD_RULE_STATUS_TABLE = {
+    THRESHOLD_RULE_NONE: "BASELINE_DIAGNOSTIC",
+    THRESHOLD_RULE_DERIVED_ONLY: "DERIVED_CONDITIONAL_ONLY",
+    THRESHOLD_RULE_SYMBOLIC_OPEN: "ELIGIBILITY_TABLE_PRESENT_OPEN_SLOTS_SYMBOLIC",
+}
+
 SECTORS: Dict[str, Tuple[int, int]] = {
     "neutrino": (0, +1),
     "lepton": (0, -1),
@@ -281,6 +303,20 @@ def suppression_rule_status(rule: str) -> str:
     raise ValueError(f"unknown suppression rule: {rule}")
 
 
+def bridge_rule_status(rule: str) -> str:
+    try:
+        return BRIDGE_RULE_STATUS_TABLE[rule]
+    except KeyError:
+        raise ValueError(f"unknown bridge rule: {rule}") from None
+
+
+def threshold_rule_status(rule: str) -> str:
+    try:
+        return THRESHOLD_RULE_STATUS_TABLE[rule]
+    except KeyError:
+        raise ValueError(f"unknown threshold rule: {rule}") from None
+
+
 def beta(sector: str) -> Fraction:
     return g_ch() * projection_fraction(sector)
 
@@ -294,11 +330,24 @@ def kappa(sector: str, rho_ch: int | Fraction) -> Fraction:
     return g_ch() / tangent_norm_sq(sector, rho_ch)
 
 
+def bridge_values(
+    sector: str,
+    rho_ch: int | Fraction,
+    bridge_rule: str = DEFAULT_DIAGNOSTIC_BRIDGE_RULE,
+) -> Tuple[Fraction, Fraction]:
+    if bridge_rule == BRIDGE_RULE_DIAGONAL_ONLY:
+        return Fraction(0), Fraction(0)
+    if bridge_rule == BRIDGE_RULE_MINIMAL_ANSATZ:
+        return beta(sector), kappa(sector, rho_ch)
+    if bridge_rule == BRIDGE_RULE_SYMBOLIC_OPEN:
+        raise ValueError("symbolic-open bridge rule has topology but no numeric beta/kappa")
+    raise ValueError(f"unknown bridge rule: {bridge_rule}")
+
+
 def minimal_K_f(sector: str, rho_ch: int | Fraction) -> Tuple[Tuple[Fraction, Fraction, Fraction], ...]:
     costs = diagonal_costs(sector, rho_ch)
     lam0, lam1, lam2 = tuple(eta(sector) * cost for cost in costs)
-    b = beta(sector)
-    k = kappa(sector, rho_ch)
+    b, k = bridge_values(sector, rho_ch, DEFAULT_DIAGNOSTIC_BRIDGE_RULE)
     return (
         (lam0, b, Fraction(0)),
         (b, lam1, k),
@@ -310,11 +359,11 @@ def minimal_K_f_for_rule(
     sector: str,
     rho_ch: int | Fraction,
     rule: str = DEFAULT_DIAGNOSTIC_SUPPRESSION_RULE,
+    bridge_rule: str = DEFAULT_DIAGNOSTIC_BRIDGE_RULE,
 ) -> Tuple[Tuple[Fraction, Fraction, Fraction], ...]:
     costs = diagonal_costs(sector, rho_ch)
     lam0, lam1, lam2 = tuple(eta_for_rule(sector, rule) * cost for cost in costs)
-    b = beta(sector)
-    k = kappa(sector, rho_ch)
+    b, k = bridge_values(sector, rho_ch, bridge_rule)
     return (
         (lam0, b, Fraction(0)),
         (b, lam1, k),
@@ -322,33 +371,49 @@ def minimal_K_f_for_rule(
     )
 
 
-def threshold_insertions() -> List[Dict[str, object]]:
-    return [
-        {
-            "sector": "up",
-            "slot": 1,
-            "mode": [6, 0],
-            "value": "ln 2",
-            "source": "Z_virt^{u,2}=1/2 weak-double projection bridge",
-            "operator_level": True,
-        }
-    ]
+def threshold_insertions(
+    threshold_rule: str = DEFAULT_DIAGNOSTIC_THRESHOLD_RULE,
+) -> List[Dict[str, object]]:
+    if threshold_rule == THRESHOLD_RULE_NONE:
+        return []
+    if threshold_rule == THRESHOLD_RULE_DERIVED_ONLY:
+        return [
+            {
+                "sector": "up",
+                "slot": 1,
+                "mode": [6, 0],
+                "value": "ln 2",
+                "source": "Z_virt^{u,2}=1/2 weak-double projection bridge",
+                "operator_level": True,
+            }
+        ]
+    if threshold_rule == THRESHOLD_RULE_SYMBOLIC_OPEN:
+        raise ValueError("symbolic-open threshold rule has eligibility data but no extra numeric insertions")
+    raise ValueError(f"unknown threshold rule: {threshold_rule}")
 
 
-def dressed_K_u(rho_ch: int | Fraction) -> Tuple[Tuple[float, float, float], ...]:
+def dressed_K_u(
+    rho_ch: int | Fraction,
+    threshold_rule: str = DEFAULT_DIAGNOSTIC_THRESHOLD_RULE,
+) -> Tuple[Tuple[float, float, float], ...]:
     matrix = [[float(value) for value in row] for row in minimal_K_f("up", rho_ch)]
-    insertion = threshold_insertions()[0]
-    matrix[int(insertion["slot"])][int(insertion["slot"])] += log(2.0)
+    for insertion in threshold_insertions(threshold_rule):
+        if insertion["sector"] != "up":
+            continue
+        matrix[int(insertion["slot"])][int(insertion["slot"])] += log(2.0)
     return tuple(tuple(row) for row in matrix)
 
 
 def dressed_K_u_for_rule(
     rho_ch: int | Fraction,
     rule: str = DEFAULT_DIAGNOSTIC_SUPPRESSION_RULE,
+    threshold_rule: str = DEFAULT_DIAGNOSTIC_THRESHOLD_RULE,
 ) -> Tuple[Tuple[float, float, float], ...]:
     matrix = [[float(value) for value in row] for row in minimal_K_f_for_rule("up", rho_ch, rule)]
-    insertion = threshold_insertions()[0]
-    matrix[int(insertion["slot"])][int(insertion["slot"])] += log(2.0)
+    for insertion in threshold_insertions(threshold_rule):
+        if insertion["sector"] != "up":
+            continue
+        matrix[int(insertion["slot"])][int(insertion["slot"])] += log(2.0)
     return tuple(tuple(row) for row in matrix)
 
 

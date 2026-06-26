@@ -1,0 +1,303 @@
+{
+  "id": "PO-BH-full-freeze-boundary-v1",
+  "title": "Full BHSM Freeze Boundary v1",
+  "public_status": "structural architecture integrated conditional; numerical closure open",
+  "frozen_predictions_changed": false,
+  "official_predictions_changed": false,
+  "statuses": {
+    "full_bhsm_freeze_boundary_v1": "STRUCTURAL_SCAFFOLD",
+    "numerical_closure": "OPEN"
+  },
+  "freeze_class_counts": {
+    "FROZEN_STRUCTURE_ALLOWED": 8,
+    "CANDIDATE_BRANCH_FREEZE_ALLOWED": 4,
+    "DIAGNOSTIC_ONLY": 3,
+    "BLOCKED_BY_OPEN_SELECTOR": 9,
+    "INVALIDATED_DO_NOT_FREEZE": 4
+  },
+  "records": [
+    {
+      "component_id": "sector_equations",
+      "freeze_class": "FROZEN_STRUCTURE_ALLOWED",
+      "current_status": "DERIVED_CONDITIONAL",
+      "reason": "Sector equations are structural outputs of the sector/projector engine.",
+      "allowed_to_freeze_now": true,
+      "artifact_refs": [
+        "src/charged_kf_generator.py"
+      ]
+    },
+    {
+      "component_id": "mode_ledgers",
+      "freeze_class": "FROZEN_STRUCTURE_ALLOWED",
+      "current_status": "DERIVED_CONDITIONAL",
+      "reason": "Mode ledgers are structural architecture, not numerical closure.",
+      "allowed_to_freeze_now": true,
+      "artifact_refs": [
+        "src/charged_kf_generator.py",
+        "src/neutral_sector_operator_kernel.py"
+      ]
+    },
+    {
+      "component_id": "boundary_graded_defect_action_kernel_v1",
+      "freeze_class": "FROZEN_STRUCTURE_ALLOWED",
+      "current_status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL",
+      "reason": "Boundary graded defect action kernel can be frozen as structure.",
+      "allowed_to_freeze_now": true,
+      "artifact_refs": [
+        "docs/boundary_graded_defect_action_kernel_v1.md"
+      ]
+    },
+    {
+      "component_id": "Rule_A_single_operator_trace",
+      "freeze_class": "FROZEN_STRUCTURE_ALLOWED",
+      "current_status": "DERIVED_CONDITIONAL_ON_B_SUPP_TRACE_KERNEL",
+      "reason": "Rule A is a direct charged suppression kernel rule.",
+      "allowed_to_freeze_now": true,
+      "artifact_refs": [
+        "docs/charged_kf_rule_a_spectral_sanity_v1.md"
+      ]
+    },
+    {
+      "component_id": "charged_Kf_tridiagonal_bridge_topology",
+      "freeze_class": "FROZEN_STRUCTURE_ALLOWED",
+      "current_status": "DERIVED_CONDITIONAL_ON_E3_LADDER_AND_TANGENT_ADJACENCY",
+      "reason": "Bridge topology is structurally freezeable; magnitudes are not.",
+      "allowed_to_freeze_now": true,
+      "artifact_refs": [
+        "docs/charged_kf_bridge_coupling_kernel_v1.md"
+      ]
+    },
+    {
+      "component_id": "up_6_0_Zvirt_threshold",
+      "freeze_class": "FROZEN_STRUCTURE_ALLOWED",
+      "current_status": "DERIVED_CONDITIONAL",
+      "reason": "The known up (6,0) eligibility and insertion are conditionally derived.",
+      "allowed_to_freeze_now": true,
+      "artifact_refs": [
+        "docs/full_threshold_operator_eligibility_v1.md"
+      ]
+    },
+    {
+      "component_id": "neutrino_mode_ledger",
+      "freeze_class": "FROZEN_STRUCTURE_ALLOWED",
+      "current_status": "DERIVED_CONDITIONAL_ON_SECTOR_ENGINE",
+      "reason": "Neutral ledger can be frozen as structural sector-engine output.",
+      "allowed_to_freeze_now": true,
+      "artifact_refs": [
+        "docs/neutral_sector_operator_kernel_v1.md"
+      ]
+    },
+    {
+      "component_id": "PMNS_structural_source",
+      "freeze_class": "FROZEN_STRUCTURE_ALLOWED",
+      "current_status": "STRUCTURALLY_MOTIVATED_CANDIDATE",
+      "reason": "Only the structural relation U_PMNS=U_l^dagger U_nu is freezeable.",
+      "allowed_to_freeze_now": true,
+      "artifact_refs": [
+        "docs/neutral_sector_operator_kernel_v1.md"
+      ]
+    },
+    {
+      "component_id": "rho_ch_branches_1_2_3",
+      "freeze_class": "CANDIDATE_BRANCH_FREEZE_ALLOWED",
+      "current_status": "BRANCH_CANDIDATE",
+      "reason": "rho_ch in {1,2,3} may be frozen as candidate branches only.",
+      "allowed_to_freeze_now": true,
+      "artifact_refs": [
+        "docs/rho_ch_branch_pressure_test_v1.md"
+      ]
+    },
+    {
+      "component_id": "minimal_1_over_21_bridge_seed",
+      "freeze_class": "CANDIDATE_BRANCH_FREEZE_ALLOWED",
+      "current_status": "STRONGLY_SUPPORTED_CANDIDATE",
+      "reason": "1/21 bridge seeds may be candidate-frozen, not claimed derived.",
+      "allowed_to_freeze_now": true,
+      "artifact_refs": [
+        "docs/charged_kf_bridge_coupling_kernel_v1.md"
+      ]
+    },
+    {
+      "component_id": "neutral_Hessian_branches_N0_N1_N2",
+      "freeze_class": "CANDIDATE_BRANCH_FREEZE_ALLOWED",
+      "current_status": "STRUCTURALLY_MOTIVATED_CANDIDATE",
+      "reason": "Neutral Hessian branches are diagnostic candidates; no winner selected.",
+      "allowed_to_freeze_now": true,
+      "artifact_refs": [
+        "docs/neutral_sector_operator_kernel_v1.md"
+      ]
+    },
+    {
+      "component_id": "Rule_B_double_normalized_phase_candidate",
+      "freeze_class": "CANDIDATE_BRANCH_FREEZE_ALLOWED",
+      "current_status": "CANDIDATE_REQUIRES_INDEPENDENT_PHASE_RESPONSE",
+      "reason": "Rule B may be candidate-frozen only with its caveat.",
+      "allowed_to_freeze_now": true,
+      "artifact_refs": [
+        "docs/charged_kf_rule_a_spectral_sanity_v1.md"
+      ]
+    },
+    {
+      "component_id": "Rule_A_spectral_sanity_tables",
+      "freeze_class": "DIAGNOSTIC_ONLY",
+      "current_status": "STRUCTURAL_SCAFFOLD",
+      "reason": "Spectral sanity tables are internal diagnostics, not empirical closure.",
+      "allowed_to_freeze_now": false,
+      "artifact_refs": [
+        "docs/charged_kf_rule_a_spectral_sanity_v1.md"
+      ]
+    },
+    {
+      "component_id": "rho_branch_pressure_tests",
+      "freeze_class": "DIAGNOSTIC_ONLY",
+      "current_status": "STRUCTURALLY_INTERESTING_BRANCH",
+      "reason": "rho branch pressure tests do not select a branch.",
+      "allowed_to_freeze_now": false,
+      "artifact_refs": [
+        "docs/rho_ch_branch_pressure_test_v1.md"
+      ]
+    },
+    {
+      "component_id": "neutral_unit_diagnostic_operator",
+      "freeze_class": "DIAGNOSTIC_ONLY",
+      "current_status": "STRUCTURALLY_MOTIVATED_CANDIDATE",
+      "reason": "Unit-normalized neutral readout is not a physical prediction.",
+      "allowed_to_freeze_now": false,
+      "artifact_refs": [
+        "docs/neutral_sector_operator_kernel_v1.md"
+      ]
+    },
+    {
+      "component_id": "exact_rho_ch",
+      "freeze_class": "BLOCKED_BY_OPEN_SELECTOR",
+      "current_status": "OPEN_LOCALIZABLE",
+      "reason": "Exact rho_ch needs a charged stiffness action source.",
+      "allowed_to_freeze_now": false,
+      "artifact_refs": [
+        "docs/charged_stiffness_action_selector_v1.md"
+      ]
+    },
+    {
+      "component_id": "beta_kappa_bridge_magnitudes",
+      "freeze_class": "BLOCKED_BY_OPEN_SELECTOR",
+      "current_status": "OPEN_LOCALIZABLE",
+      "reason": "Bridge magnitudes need beta_0/kappa_0 action source.",
+      "allowed_to_freeze_now": false,
+      "artifact_refs": [
+        "docs/charged_kf_bridge_coupling_kernel_v1.md"
+      ]
+    },
+    {
+      "component_id": "neutral_eta_beta_kappa",
+      "freeze_class": "BLOCKED_BY_OPEN_SELECTOR",
+      "current_status": "OPEN_LOCALIZABLE",
+      "reason": "Neutral eta and bridge sources remain open.",
+      "allowed_to_freeze_now": false,
+      "artifact_refs": [
+        "docs/neutral_sector_operator_kernel_v1.md"
+      ]
+    },
+    {
+      "component_id": "selected_neutral_Hessian",
+      "freeze_class": "BLOCKED_BY_OPEN_SELECTOR",
+      "current_status": "OPEN_LOCALIZABLE",
+      "reason": "Neutral Hessian branch selection has no action selector yet.",
+      "allowed_to_freeze_now": false,
+      "artifact_refs": [
+        "docs/neutral_sector_operator_kernel_v1.md"
+      ]
+    },
+    {
+      "component_id": "full_threshold_operator_beyond_up_6_0",
+      "freeze_class": "BLOCKED_BY_OPEN_SELECTOR",
+      "current_status": "OPEN",
+      "reason": "No additional virtual-door/projector threshold sources are derived.",
+      "allowed_to_freeze_now": false,
+      "artifact_refs": [
+        "docs/full_threshold_operator_eligibility_v1.md"
+      ]
+    },
+    {
+      "component_id": "RG_transport",
+      "freeze_class": "BLOCKED_BY_OPEN_SELECTOR",
+      "current_status": "OPEN_LOCALIZABLE",
+      "reason": "RG/scheme transport interface is scaffolded, rules not derived.",
+      "allowed_to_freeze_now": false,
+      "artifact_refs": [
+        "docs/rg_transport_interface_v1.md"
+      ]
+    },
+    {
+      "component_id": "mass_numerical_closure",
+      "freeze_class": "BLOCKED_BY_OPEN_SELECTOR",
+      "current_status": "OPEN",
+      "reason": "Mass numerical closure waits on selectors and transport.",
+      "allowed_to_freeze_now": false,
+      "artifact_refs": [
+        "docs/open_blockers_backlog.md"
+      ]
+    },
+    {
+      "component_id": "CKM_numerical_closure",
+      "freeze_class": "BLOCKED_BY_OPEN_SELECTOR",
+      "current_status": "OPEN",
+      "reason": "CKM closure waits on charged operator branch selection and transport.",
+      "allowed_to_freeze_now": false,
+      "artifact_refs": [
+        "docs/open_blockers_backlog.md"
+      ]
+    },
+    {
+      "component_id": "PMNS_numerical_closure",
+      "freeze_class": "BLOCKED_BY_OPEN_SELECTOR",
+      "current_status": "OPEN",
+      "reason": "PMNS closure waits on neutral operator derivation.",
+      "allowed_to_freeze_now": false,
+      "artifact_refs": [
+        "docs/neutral_sector_operator_kernel_v1.md"
+      ]
+    },
+    {
+      "component_id": "charged_Hessian_from_S_index_trace",
+      "freeze_class": "INVALIDATED_DO_NOT_FREEZE",
+      "current_status": "INVALIDATED_DO_NOT_CLAIM",
+      "reason": "S_index_trace is explicitly not the charged Hessian.",
+      "allowed_to_freeze_now": false,
+      "artifact_refs": [
+        "docs/charged_stiffness_action_selector_v1.md"
+      ]
+    },
+    {
+      "component_id": "invented_thresholds_beyond_up_6_0",
+      "freeze_class": "INVALIDATED_DO_NOT_FREEZE",
+      "current_status": "INVALIDATED_DO_NOT_CLAIM",
+      "reason": "Threshold factors cannot be invented without virtual-door/projector data.",
+      "allowed_to_freeze_now": false,
+      "artifact_refs": [
+        "docs/full_threshold_operator_eligibility_v1.md"
+      ]
+    },
+    {
+      "component_id": "empirical_input_derived_selector",
+      "freeze_class": "INVALIDATED_DO_NOT_FREEZE",
+      "current_status": "INVALIDATED_DO_NOT_CLAIM",
+      "reason": "Selectors must not be derived from post-comparison empirical residuals.",
+      "allowed_to_freeze_now": false,
+      "artifact_refs": [
+        "docs/forbidden_claims.md"
+      ]
+    },
+    {
+      "component_id": "direct_charged_numerical_closure_claim",
+      "freeze_class": "INVALIDATED_DO_NOT_FREEZE",
+      "current_status": "INVALIDATED_DO_NOT_CLAIM",
+      "reason": "Charged numerical closure remains open.",
+      "allowed_to_freeze_now": false,
+      "artifact_refs": [
+        "docs/open_blockers_backlog.md"
+      ]
+    }
+  ],
+  "summary": "BHSM may freeze structural architecture and candidate branches, but not final numerical predictions from this layer.",
+  "claim_boundary": "Freeze boundary does not promote numerical closure."
+}
