@@ -1,0 +1,33 @@
+{
+  "artifact": "BHSM_feynrules_export_runner_package_v1_4",
+  "release_basis": "v1.0.1",
+  "phase": "PHASE_THREE_L_FEYNRULES_SYNTAX_RUNNER",
+  "runner_package_created": true,
+  "mathematica_script_path": "scripts/feynrules/export_bhsm_minimal_to_ufo.m",
+  "model_check_script_path": "scripts/feynrules/check_bhsm_minimal_model.m",
+  "input_model_file": "models/feynrules/BHSM_Minimal_Collider_Interface.fr.disabled",
+  "expected_enabled_model_file": "models/feynrules/BHSM_Minimal_Collider_Interface.fr",
+  "expected_ufo_output_directory": "models/ufo/BHSM_Minimal_Collider_Interface",
+  "requires_mathematica": true,
+  "requires_feynrules": true,
+  "requires_feynarts_optional": true,
+  "local_command_examples": [
+    "wolframscript -file scripts/feynrules/check_bhsm_minimal_model.m",
+    "wolframscript -file scripts/feynrules/export_bhsm_minimal_to_ufo.m"
+  ],
+  "export_attempted": false,
+  "export_passed": false,
+  "feynrules_version_detected": "not_detected",
+  "mathematica_version_detected": "not_detected",
+  "missing_for_execution": [
+    "enabled validated .fr model file",
+    "Mathematica/FeynRules runtime unavailable",
+    "FeynRules load validation"
+  ],
+  "notes": "Runner scripts are local handoff scripts. They were not executed by Phase Three-L.",
+  "empirical_derivation_inputs_used": false,
+  "boundary_predictions_modified_by_runtime_inputs": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false,
+  "source_model_files_changed": false
+}

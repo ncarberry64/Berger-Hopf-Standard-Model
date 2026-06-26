@@ -103,6 +103,175 @@ This does not constitute production FeynRules/UFO readiness. Vector/fermion
 normalizations, full gauge/Lorentz structures, mass-width schemes, and
 renormalization conventions remain open.
 
+### Phase Three-D canonical current interface status
+
+BHSM now includes canonical field target conventions and chiral current
+attachment maps for CKM/PMNS sectors. The scalar/profile normalization source
+Z_H = 1 is preserved, while vector and fermion normalizations are treated as
+standard target conventions or open BHSM-specific normalization gates.
+
+This does not constitute production FeynRules, UFO, MadGraph, LHE/HepMC,
+Athena, or CMSSW readiness. Mass-width and renormalization schemes remain open.
+
+### Phase Three-E normalization and scheme status
+
+BHSM now includes Phase Three-E vector/fermion canonical normalization
+convention ledgers, gauge-fixing/coupling scheme candidates, and
+mass-width/renormalization open-gate artifacts.
+
+The scalar/profile normalization source Z_H = 1 remains BHSM-derived or
+conditionally derived. Vector and fermion target normalizations may be
+represented by standard canonical interface conventions, but they are not yet
+nontrivial BHSM-derived field-strength predictions.
+
+This does not constitute production FeynRules, UFO, MadGraph, LHE/HepMC,
+Athena, or CMSSW readiness.
+
+### Phase Three-G production-vertex and Lagrangian-candidate status
+
+BHSM now includes a candidate production vertex table and symbolic 4D
+Lagrangian assembly ledger in the canonical production basis. CKM/PMNS
+charged-current target structures are identified using BHSM-derived mixing
+sources and standard target-current conventions.
+
+The table is not a production FeynRules model. Charged boundary response,
+neutral kernel, and CP holonomy attachment remain blocked by explicit missing
+interaction/basis attachments. Mass-width closure, renormalization closure,
+complete production vertex table, FeynRules export, UFO loadability, MadGraph
+validation, LHE/HepMC generation, and Athena/CMSSW integration remain open.
+
+### Phase Three-H bounded blocker resolution status
+
+BHSM now includes bounded resolution audits for the remaining vertex-table
+blockers: X_ch, neutrino basis/scale, and CP holonomy attachment. CKM/PMNS
+charged-current target vertices are partially promoted as bounded
+collider-interface targets where the canonical production basis, standard
+target-current structures, and BHSM-derived mixing/holonomy sources align.
+
+The separate charged boundary response, neutral kernel, and standalone CP
+holonomy vertices remain blocked by explicit missing interaction, basis, or
+scale theorems. This does not constitute complete 4D Lagrangian export,
+production FeynRules readiness, UFO readiness, MadGraph readiness, event
+generation, or experiment software integration.
+
+### Phase Three-I interaction-theorem closure status
+
+BHSM v1.0.1 status-reconciled release: internal boundary no-fit package
+complete/exported; external empirical comparison layer separate/open.
+
+BHSM now includes direct theorem-closure audits for the final interaction
+blockers: X_ch, neutrino Dirac-Majorana basis/scale, and standalone CP O_int
+attachment. CKM/PMNS target-current attachments remain bounded
+collider-interface targets where standard current conventions, canonical
+production basis, and BHSM mixing/holonomy sources already align.
+
+The separate charged boundary response, neutral kernel, and standalone CP
+holonomy vertex remain blocked unless their missing interaction, basis/scale,
+or O_int theorems are derived. This does not constitute complete 4D Lagrangian
+export, production FeynRules readiness, UFO readiness, MadGraph readiness,
+event generation, or experiment software integration.
+
+### Phase Three-J minimal collider-interface Lagrangian subset
+
+BHSM v1.0.1 status-reconciled release: internal boundary no-fit package
+complete/exported; external empirical comparison layer separate/open.
+
+BHSM now includes a minimal bounded collider-interface Lagrangian subset in
+the canonical production basis. The subset includes CKM/PMNS charged-current
+target structures sourced by BHSM mixing artifacts and standard target-current
+conventions.
+
+The subset explicitly excludes the unresolved charged boundary response,
+neutral kernel, and standalone CP holonomy vertices. It is FeynRules-prep only
+and does not constitute the complete BHSM 4D Lagrangian, production FeynRules
+readiness, UFO readiness, MadGraph readiness, event generation, or experiment
+software integration.
+
+### Phase Three-K bounded FeynRules export attempt
+
+BHSM v1.0.1 status-reconciled release: internal boundary no-fit package
+complete/exported; external empirical comparison layer separate/open.
+
+BHSM now includes a software-track bounded FeynRules export attempt for the
+minimal collider-interface subset. The attempted model covers only
+canonical-basis CKM/PMNS charged-current target structures sourced by BHSM
+mixing artifacts.
+
+The file is not the complete BHSM 4D Lagrangian and excludes unresolved
+charged-boundary response, neutral-kernel, and standalone CP-holonomy vertices.
+UFO export, UFO loadability, MadGraph validation, LHE/HepMC generation, and
+Athena/CMSSW integration remain gated unless separately validated.
+
+### Phase Three-L FeynRules syntax-runner package
+
+BHSM v1.0.1 status-reconciled release: internal boundary no-fit package
+complete/exported; external empirical comparison layer separate/open.
+
+BHSM now includes a FeynRules syntax contract and local export-runner package
+for the bounded minimal collider-interface subset. The package prepares local
+Mathematica/FeynRules checks, UFO export commands, software environment
+preflight, and a MadGraph smoke-test runner contract.
+
+Repository static checks do not equal FeynRules validation. Unless
+Mathematica/FeynRules/UFO/MadGraph execution is actually performed and passes,
+BHSM remains not UFO-ready, not MadGraph-ready, and not
+event-generation-ready.
+
+### Phase Three-M live FeynRules validation status
+
+BHSM now includes a live FeynRules validation attempt layer for the bounded
+minimal collider-interface subset. This layer records whether Mathematica,
+FeynRules, UFO export, and MadGraph smoke-test tooling were actually detected
+and run.
+
+Static checks do not count as live FeynRules validation. Unless the repository
+records successful Mathematica/FeynRules execution, the minimal model remains
+disabled and BHSM remains not UFO-ready, not MadGraph-ready, and not
+event-generation-ready.
+
+### Phase Three-N runtime execution gate
+
+BHSM now includes a runtime execution gate for live Wolfram/FeynRules
+validation of the bounded minimal collider-interface subset. The gate records
+whether Mathematica/WolframScript, FeynRules, UFO export, and MadGraph smoke
+testing were actually detected and run.
+
+If live validation does not run, the minimal model remains disabled. If live
+validation passes, only the bounded CKM/PMNS collider-interface subset may be
+enabled. The complete BHSM 4D Lagrangian, unresolved charged-boundary
+response, neutral kernel, standalone CP holonomy, UFO/MadGraph/event
+readiness, and CERN integration remain separate gated items.
+
+### Phase Three-O runtime assets and institutional HEP handoff
+
+BHSM now includes a runtime asset provisioning layer and CERN-like
+institutional HEP handoff package for the bounded minimal collider-interface
+subset. The package documents how to map or install legal
+Wolfram/FeynRules/MadGraph dependencies, run environment preflight, attempt
+live FeynRules validation, attempt UFO export, and attempt MadGraph smoke
+testing.
+
+This is not experiment-approved integration. It is a reproducible handoff
+package for external HEP-style review. The complete BHSM 4D Lagrangian,
+charged-boundary response, neutral kernel, standalone CP holonomy, pure no-fit
+mass-width closure, and renormalization closure remain separate gated items.
+
+### Phase Three-F production-basis and runtime-parameter status
+
+BHSM now defines a canonical production basis for future FeynRules/UFO
+interfaces. In that production basis, vector and fermion fields are represented
+with canonical kinetic normalization, so Z_A,prod = 1 and Z_psi,prod = 1 are
+basis definitions, not empirical fits and not nontrivial BHSM
+wavefunction-renormalization predictions.
+
+BHSM also defines two parameter modes: BHSM_PURE_NOFIT for derivation-only
+internal use, and BHSM_COLLIDER_INTERFACE for future runtime detector/event
+comparison inputs. Runtime empirical masses, widths, or cards may not modify
+BHSM constants, boundary coefficients, mixing matrices, or frozen predictions.
+
+This does not constitute production FeynRules, UFO, MadGraph, LHE/HepMC,
+Athena, or CMSSW readiness.
+
 ## 1. What Is Complete In v1.0.0
 
 - `BHSM_internal_boundary_package = COMPLETE_EXPORTED`
