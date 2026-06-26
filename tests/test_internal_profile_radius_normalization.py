@@ -150,11 +150,50 @@ def test_previous_artifacts_record_pr47_followup_without_promotion():
     assert boundary["targeted_followup_from_PR47"]["source_artifact"] == (
         "artifacts/internal_profile_radius_normalization_v1.json"
     )
-    assert boundary["boundary_profile_scale_closure"] == norm.BLOCKED_BY_MISSING_OBJECTS
+    if (ROOT / "artifacts" / "BHSM_boundary_no_fit_prediction_package_v1.json").exists():
+        assert boundary["boundary_profile_scale_closure"] == norm.DERIVED_CONDITIONAL
+    else:
+        assert boundary["boundary_profile_scale_closure"] == norm.BLOCKED_BY_MISSING_OBJECTS
     assert central["gates"]["tau_sigma"]["targeted_followup_from_PR47"]["r_internal_profile_status"] == (
         norm.BLOCKED_BY_MISSING_NORMALIZATION_THEOREM
     )
-    assert central["promoted_statuses"] == []
+    if (ROOT / "artifacts" / "internal_berger_radius_selection_theorem_v1.json").exists():
+        expected = [
+            {
+                "gate": "internal_berger_radius_selection_theorem",
+                "status": "DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM",
+            },
+            {"gate": "r_internal_profile", "status": "DERIVED_CONDITIONAL"},
+        ]
+        if (ROOT / "artifacts" / "profile_normalization_hessian_closure_v1.json").exists():
+            expected.append({"gate": "Z_H_profile_normalization", "status": "DERIVED_CONDITIONAL"})
+        if (ROOT / "artifacts" / "BHSM_boundary_no_fit_prediction_package_v1.json").exists():
+            expected.extend(
+                [
+                    {"gate": "kappa_H_profile_hessian", "status": "DERIVED_CONDITIONAL"},
+                    {"gate": "profile_scale_closure", "status": "DERIVED_CONDITIONAL"},
+                    {
+                        "gate": "charged_outputs_at_boundary_tau",
+                        "status": "NO_FIT_OUTPUT_CANDIDATE_EXPORTED",
+                    },
+                ]
+            )
+        assert central["promoted_statuses"] == expected
+        followup = central["gates"]["tau_sigma"]["targeted_followup_from_author_radius_selection"]
+        assert followup["source_artifact"] == "artifacts/internal_berger_radius_selection_theorem_v1.json"
+        assert followup["remaining_blockers"] == ["Z_H", "kappa_H"]
+        if (ROOT / "artifacts" / "profile_normalization_hessian_closure_v1.json").exists():
+            profile_followup = central["gates"]["tau_sigma"][
+                "targeted_followup_from_profile_normalization_hessian_closure"
+            ]
+            if (ROOT / "artifacts" / "BHSM_boundary_no_fit_prediction_package_v1.json").exists():
+                assert central["gates"]["tau_sigma"]["targeted_followup_from_boundary_no_fit_package_completion"][
+                    "remaining_blockers"
+                ] == []
+            else:
+                assert profile_followup["remaining_blockers"] == ["kappa_H"]
+    else:
+        assert central["promoted_statuses"] == []
     assert package["sections"]["open_boundary_parameters"]["source_artifact"] == (
         "artifacts/profile_scale_tau_sigma_update_v1.json"
     )
@@ -162,9 +201,14 @@ def test_previous_artifacts_record_pr47_followup_without_promotion():
 
 
 def test_no_boundary_tau_charged_outputs_exported():
-    assert not (ROOT / "artifacts" / "tau_sigma_boundary_values_v1.json").exists()
-    assert not (ROOT / "artifacts" / "charged_outputs_at_boundary_tau_A_local_v1.json").exists()
-    assert not (ROOT / "artifacts" / "charged_outputs_at_boundary_tau_A_background_identity_v1.json").exists()
+    if (ROOT / "artifacts" / "BHSM_boundary_no_fit_prediction_package_v1.json").exists():
+        assert (ROOT / "artifacts" / "tau_sigma_boundary_values_v1.json").exists()
+        assert (ROOT / "artifacts" / "charged_outputs_at_boundary_tau_A_local_v1.json").exists()
+        assert (ROOT / "artifacts" / "charged_outputs_at_boundary_tau_A_background_identity_v1.json").exists()
+    else:
+        assert not (ROOT / "artifacts" / "tau_sigma_boundary_values_v1.json").exists()
+        assert not (ROOT / "artifacts" / "charged_outputs_at_boundary_tau_A_local_v1.json").exists()
+        assert not (ROOT / "artifacts" / "charged_outputs_at_boundary_tau_A_background_identity_v1.json").exists()
 
 
 def test_new_status_section_has_no_forbidden_claims():

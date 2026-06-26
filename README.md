@@ -1,174 +1,232 @@
-# Berger-Hopf Standard Model (BHSM)
+# Berger-Hopf Standard Model (BHSM) v1.0.0
 
 Current status: structural architecture integrated conditional; numerical closure open.
 
-BHSM is an integrated conditional geometric architecture for organizing the
-Standard Model ledger from Berger-Hopf finite-boundary data. The repository
-currently preserves frozen predictions and separates derived, candidate,
-diagnostic, rejected-as-primary, and open-localizable components. It is not a
-proven replacement for the Standard Model and does not yet claim full numerical
-closure.
+v1.0.0 release status: internal boundary no-fit package complete; external
+empirical comparison layer separate/open.
 
-This is a careful research package. It is not a claim of experimental
-confirmation, community acceptance, or a final replacement of the Standard
-Model.
+The Berger-Hopf Standard Model v1.0.0 repository contains a complete internal
+boundary no-fit prediction package. The profile scale, charged boundary
+outputs, neutral/PMNS/CKM/CP boundary outputs, and boundary-scale transport
+identity are exported as machine-readable artifacts.
 
-## What BHSM Is
+External empirical comparison is implemented as a separate comparison-only
+layer. Empirical data are not used to derive BHSM constants or boundary
+predictions. If external comparison data are absent, the internal BHSM package
+remains complete but externally unevaluated.
 
-BHSM is a test-backed research architecture for organizing Berger-Hopf boundary,
-topographic, and overlap constructions around a frozen prediction layer. The
-current branch integrates the structural architecture conditionally; numerical
-closure remains open until the remaining symbolic inputs are derived and locked
-before comparison.
+Short status: internal boundary no-fit package complete; external empirical
+comparison layer separate/open.
 
-## What Is Test-Backed
+Release phrase: complete internal boundary no-fit prediction package.
 
-The repository includes regression tests and audits for frozen predictions,
-claim boundaries, finite boundary algebra, SM-like charge tables, gauge and
-Higgs screens, flavor ledgers, topographic suppression scaffolds, and public
-release artifacts.
+Comparison phrase: External empirical comparison is implemented as a separate comparison-only layer.
 
-## What Is Not Yet Proven
+Derivation phrase: Empirical data are not used to derive BHSM constants or boundary predictions.
 
-BHSM does not yet prove a full first-principles derivation of the Standard
-Model, a replacement of the Standard Model, QCD confinement, or experimental
-confirmation. Open proof obligations remain tracked in
-`theory/full_bhsm_open_proof_obligations.md` and `docs/current_bhsm_status.md`.
+This is a public research release for inspection, audit, and reproducibility
+discussion. It is not a claim of empirical validation, peer review, or
+replacement of the Standard Model.
 
-## Frozen Prediction Layer
+BHSM is not a proven replacement for the Standard Model.
 
-The frozen prediction layer is the no-retuning baseline. Do not change
-`docs/frozen_predictions.md`, `docs/frozen_predictions.json`, the frozen model
-branches, canonical constants, modes, or tolerances to improve residuals.
+BHSM does not yet claim full numerical closure.
 
-## Candidate Synthesis Layer
+## 1. What Is Complete In v1.0.0
 
-The candidate synthesis layer is documented in
-`theory/full_bhsm_completion_v1_candidate.md` and supporting theory reports.
-It is conditional architecture, not numerical closure.
+- `BHSM_internal_boundary_package = COMPLETE_EXPORTED`
+- `BHSM_boundary_no_fit_prediction_package = COMPLETE_EXPORTED`
+- Profile-scale closure values are exported.
+- Charged boundary values are exported.
+- Neutral, PMNS, CKM, and CP boundary outputs are exported.
+- Boundary-scale transport identity is exported.
+- External empirical comparison is implemented as a one-way comparison layer.
+- Data-absent external comparison is represented as unevaluated, not as an
+  internal package failure.
 
-## Connected Topographic-Curvature Extension
+## 2. What Is Not Claimed
 
-The connected topographic-curvature extension collects neutral/topographic
-suppression and curvature-linked scaffolds as conditional theory components.
-These do not change the frozen public prediction layer.
+BHSM v1.0.0 does not claim:
 
-## How To Reproduce
+- empirical proof;
+- experimental replacement of the Standard Model;
+- validation by DESI or any external survey;
+- exact observed particle masses;
+- use of empirical data as derivation inputs;
+- post-hoc tuning of constants, modes, thresholds, or boundary predictions.
 
-Install the package in editable mode and run the tests:
+The release claim is narrower: the internal boundary no-fit package is complete
+and exported, while empirical comparison remains separate and open.
+
+## 3. Key Frozen Values
+
+| Quantity | Exact value | Numerical value |
+| --- | --- | --- |
+| `a` | `alpha^{-1}/(12*pi^2)` | canonical alpha-anchored geometry |
+| `S` | `1/(4*pi)` | `0.07957747154594767` |
+| `Lambda^2` | `1/(4*pi)` | `0.07957747154594767` |
+| `r_internal_profile^2` | `1/(4*pi)` | `0.07957747154594767` |
+| `r_internal_profile` | `1/sqrt(4*pi)` | `0.28209479177387814` |
+| `Z_H` | `1` | `1.0` |
+| `kappa_H = mu_H` | `64*pi^5` | `19585.25982625801` |
+| `sigma` | `4*pi^(5/2)` | `69.97367331049945` |
+| `tau` | `1/(4*pi^(3/2))` | `0.04489678053129164` |
+
+Identity checks:
+
+- `sigma*tau = pi`
+- `kappa_H = 4*sigma^2`
+- `tau = pi/sigma`
+
+Charged boundary values:
+
+```text
+beta_l*tau = kappa_l*tau = 4/(1323*pi^(3/2))
+beta_u*tau = 8/(1323*pi^(3/2))
+kappa_u*tau = 4/(1323*pi^(3/2))
+beta_d*tau = 16/(1323*pi^(3/2))
+kappa_d*tau = 4/(3591*pi^(3/2))
+```
+
+## 4. Core Artifacts
+
+The release is centered on these machine-readable artifacts:
+
+- `artifacts/BHSM_COMPLETE_V1_RELEASE_CANDIDATE.json`
+- `artifacts/BHSM_boundary_no_fit_prediction_package_v1.json`
+- `artifacts/canonical_profile_hessian_theorem_v1.json`
+- `artifacts/tau_sigma_boundary_values_v1.json`
+- `artifacts/profile_scale_closure_values_v1.json`
+- `artifacts/charged_boundary_bridge_values_v1.json`
+- `artifacts/charged_outputs_at_boundary_tau_A_local_v1.json`
+- `artifacts/charged_outputs_at_boundary_tau_A_background_identity_v1.json`
+- `artifacts/common_scale_boundary_transport_v1.json`
+- `artifacts/neutral_operator_no_fit_output_v1.json`
+- `artifacts/PMNS_no_fit_operator_output_v1.json`
+- `artifacts/CKM_no_fit_operator_output_v1.json`
+- `artifacts/CP_no_fit_holonomy_output_v1.json`
+- `artifacts/BHSM_external_comparison_target_schema_v1.json`
+- `artifacts/BHSM_external_transport_layer_v1.json`
+- `artifacts/BHSM_falsification_gates_v1.json`
+- `artifacts/BHSM_external_empirical_comparison_package_v1.json`
+- `artifacts/BHSM_v1_release_manifest.json`
+
+## 5. How To Reproduce
 
 ```powershell
 python -m pip install -e .
 python -m pytest -q
 ```
 
-## Claim Hygiene
-
-Use the claim tables and current-status files before making public statements.
-The safe public posture is structural architecture integrated conditional;
-numerical closure open.
-
-## Current Release Preparation
-
-```text
-Release branch: release/bhsm-final-paper-v1.2.0
-Version: v1.2.0
-Frozen outputs: unchanged
-Zenodo DOI: assigned after release archival
-```
-
-## What Is Frozen?
-
-| Item | Frozen value |
-| --- | --- |
-| Bare branch | `BHSM_BARE_V1` |
-| Dressed candidate branch | `BHSM_DRESSED_V1_CANDIDATE` |
-| Canonical geometry | `a = 1.157054135733433` |
-| Universal overlap width | `S = 0.07957747154594767` |
-| Virtual dressing rule | `Z_virt^{u,2}=1/2` applied only to `c/t` |
-
-The no-retuning rule forbids post-data changes to `a`, `S`, modes, tolerances,
-frozen outputs, or `Z_virt` in order to improve residuals.
-
-## What Should a Skeptical Reader Run First?
+Focused release-package tests:
 
 ```powershell
-python -m pip install -e .
-python -m pytest
+python -m pytest -q tests/test_bhsm_v1_release_package.py
 ```
 
-The tests audit frozen outputs, claim ledgers, prediction ledgers, manuscript
-guardrails, and release-file presence. If your test count differs from the
-release checklist, confirm that you are on the release branch or tag and that
-your checkout is clean.
+Audits:
 
-## Key Files
+```powershell
+python tools/audit_forbidden_claims.py
+python tools/audit_bhsm_status.py
+python tools/audit_frozen_prediction_integrity.py
+```
 
-| Path | Purpose |
-| --- | --- |
-| `src/` | executable model, screen, and audit code |
-| `tests/` | regression, guard, and release-integrity tests |
-| `theory/` | machine-readable and human-readable theory ledgers |
-| `manuscript/` | final paper source, generated PDF, and manuscript notes |
-| `docs/` | reader, reviewer, reproducibility, and Zenodo release guides |
+## 6. How To Cite
 
-## Start Here
+Use `CITATION.cff` for citation metadata. Until Zenodo assigns a DOI, cite the
+repository release and tag:
 
-- [Final paper PDF](manuscript/BHSM_final_paper.pdf)
-- [Final paper Markdown](manuscript/BHSM_final_paper.md)
-- [Manuscript generation notes](manuscript/README.md)
-- [Frozen predictions](docs/frozen_predictions.md)
-- [Claim status table](docs/claim_status_table.md)
-- [Current BHSM status](docs/current_bhsm_status.md)
-- [Candidate synthesis](theory/full_bhsm_completion_v1_candidate.md)
-- [Open proof obligations](theory/full_bhsm_open_proof_obligations.md)
-- [Falsification criteria](docs/falsification_criteria.md)
-- [Reproducibility](docs/reproducibility.md)
-- [Zenodo/GitHub release notes](docs/zenodo_release_notes.md)
-- [Release checklist](docs/release_checklist.md)
+```text
+Norman P. Carberry. Berger-Hopf Standard Model v1.0.0: Complete Internal
+Boundary No-Fit Package. GitHub repository release, 2026.
+```
 
-## Claim Boundary
+See `docs/how_to_cite.md`.
 
-Allowed claims:
+## 7. Release / DOI Status
 
-- BHSM is a frozen no-retuning geometric reinterpretation framework.
-- The repository contains executable prediction/screen ledgers.
-- Hypercharge, anomaly, mode-selection, coupling, flavor, H_T proxy, scalar,
-  and reproducibility audits are implemented with explicit statuses.
-- Some results are derived-conditional, verified by tests, strong screens, or
-  proxy audits as labeled.
+- Release version: `v1.0.0`
+- Release title: `Berger-Hopf Standard Model v1.0.0: Complete Internal Boundary No-Fit Package`
+- DOI status: `PENDING_ZENODO_RELEASE`
+- License: all rights reserved; see `LICENSE.md`
 
-Forbidden claims:
+After the GitHub release is published, Zenodo should archive the release if the
+repository is enabled in the Zenodo GitHub integration. Once Zenodo assigns a
+DOI, update `CITATION.cff`, `README.md`, and `docs/how_to_cite.md`.
 
-- a full derivation of the Standard Model from first principles;
-- a proof of confinement;
-- a proof of quantum gravity;
-- a final replacement of the Standard Model;
-- experimental confirmation by the particle-physics community;
-- post-data retuning.
+## 8. Falsification And Comparison Layer
 
-## Outputs and Ledgers
+The empirical comparison layer is intentionally one-way:
 
-The frozen prediction set is defined by:
+```text
+internal boundary package -> external comparison transport -> residual audit
+```
 
-- `theory/bhsm_v1_frozen_prediction_set.md`
-- `theory/bhsm_v1_frozen_prediction_set.json`
-- `theory/bhsm_prediction_ledger.md`
-- `theory/bhsm_prediction_ledger.json`
+It must not feed empirical values back into BHSM constants, modes, or boundary
+predictions. If target data are absent, comparison gates remain
+`NOT_EVALUATED_DATA_ABSENT`.
+
+The current public status remains:
+
+```text
+internal boundary no-fit package complete; external empirical comparison layer separate/open
+```
+
+## What BHSM Is
+
+BHSM is a test-backed Berger-Hopf boundary and topographic research
+architecture. This v1.0.0 package exports the internal boundary no-fit package
+while preserving the older global status line for repository-wide proof
+obligations:
+
+```text
+structural architecture integrated conditional; numerical closure open
+```
+
+## What Is Test-Backed
+
+The repository contains tests and audits for the frozen prediction layer,
+boundary package exports, comparison-layer guardrails, release metadata, and
+claim boundaries.
+
+## What Is Not Yet Proven
+
+Open proof obligations remain tracked in:
+
+- `docs/current_bhsm_status.md`
+- `theory/full_bhsm_open_proof_obligations.md`
+
+## Frozen Prediction Layer
+
+The frozen prediction layer is preserved:
+
+- `BHSM_BARE_V1`
+- `BHSM_DRESSED_V1_CANDIDATE`
 - `docs/frozen_predictions.md`
 - `docs/frozen_predictions.json`
 
-Claim status is summarized in:
+## Candidate Synthesis Layer
 
-- `docs/claim_status_table.md`
-- `theory/claims_ledger.json`
-- `manuscript/claims_ledger.md`
+The candidate synthesis context remains available at:
 
-## Citation and Archival
+- `theory/full_bhsm_completion_v1_candidate.md`
+- `theory/full_bhsm_master_equation_map.md`
+- `theory/full_bhsm_claim_status_matrix.md`
+- `theory/full_bhsm_empirical_gate_plan.md`
+- `theory/full_bhsm_candidate_release_notes.md`
 
-Use `CITATION.cff` for GitHub citation display. `.zenodo.json` is included for
-Zenodo metadata. Do not write a DOI manually before Zenodo assigns one.
+## Connected Topographic-Curvature Extension
 
-## License
+Connected topographic-curvature and boundary-package extensions remain
+documented as source-traced repository components. The v1.0.0 package does not
+use empirical target data to alter them.
 
-All rights reserved. See `LICENSE.md`.
+## Claim Hygiene
+
+Before public statements, inspect:
+
+- `docs/current_bhsm_status.md`
+- `docs/claim_boundaries.md`
+- `docs/forbidden_claims.md`
+- `docs/allowed_public_language.md`
