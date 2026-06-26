@@ -1,0 +1,59 @@
+{
+  "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
+  "official_predictions_changed": false,
+  "empirical_derivation_inputs_used": false,
+  "observed_neutrino_data_used": false,
+  "PMNS_data_used": false,
+  "gate": "neutral_parameters",
+  "status": "STRONGLY_SUPPORTED_CANDIDATE",
+  "neutral_parameter_final_derivation": "OPEN_LOCALIZABLE",
+  "neutral_eta_beta_kappa": "STRONGLY_SUPPORTED_CANDIDATE",
+  "candidate_values": {
+    "eta_nu": "1/3",
+    "g_nu": "1/3",
+    "beta_nu": "1/3",
+    "kappa_nu": "1/6",
+    "K_nu": [
+      [
+        "0",
+        "1/3",
+        "0"
+      ],
+      [
+        "1/3",
+        "3",
+        "1/6"
+      ],
+      [
+        "0",
+        "1/6",
+        "5/3"
+      ]
+    ],
+    "H_nu": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "det_H_nu": 1,
+    "N_nu_3_0": 9,
+    "N_nu_1_1": 5,
+    "v_nu_H_v_nu": 2
+  },
+  "source_trace": {
+    "neutral_minimal_hessian": "src/neutral_minimal_hessian.py",
+    "neutral_bridge_pmns_source": "src/neutral_bridge_pmns_source.py"
+  },
+  "missing_objects": [
+    "action/source derivation of eta_nu",
+    "action/source derivation of beta_nu",
+    "action/source derivation of kappa_nu",
+    "neutral threshold operator"
+  ],
+  "obstruction": "The repo contains a strong neutral Hessian/bridge candidate, but the final action/source derivation and neutral threshold rules remain open."
+}
