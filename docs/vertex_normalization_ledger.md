@@ -27,3 +27,6 @@ No fake vertices or Feynman rules are created.
 
 Phase Three-C adds vertex-source target families, but all remain
 `feynrules_ready = false` and `ufo_ready = false`.
+
+Phase Three-D adds CKM/PMNS chiral current attachment targets. They remain
+blocked by scheme, normalization, and production vertex export gates.

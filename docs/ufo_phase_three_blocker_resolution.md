@@ -35,3 +35,6 @@ Still blocked:
 
 Phase Three-C resolves field-dictionary and vertex-target identification at
 the candidate-ledger level only. It does not resolve production UFO export.
+
+Phase Three-D clarifies canonical target conventions and CKM/PMNS current
+attachments, but mass-width and renormalization gates remain open.

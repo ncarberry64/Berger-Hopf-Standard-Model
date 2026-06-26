@@ -83,3 +83,12 @@ dictionary, candidate BHSM parameter card, boundary-source matrices, and
 vertex-source target map. These exports identify collider targets with
 provenance, but they do not complete vector/fermion normalization, full
 gauge/Lorentz structures, mass-width schemes, or renormalization conventions.
+
+## Phase Three-D Canonical Current Interface
+
+Phase Three-D exports canonical field target conventions and chiral current
+attachment maps for CKM/PMNS sectors. It preserves `Z_H = 1` as a BHSM profile
+source and marks `Z_A,target = 1` and `Z_psi,target = 1` as standard target
+conventions rather than BHSM dynamical predictions. Production FeynRules/UFO
+readiness remains blocked by mass-width and renormalization schemes, complete
+4D Lagrangian export, and validation gates.

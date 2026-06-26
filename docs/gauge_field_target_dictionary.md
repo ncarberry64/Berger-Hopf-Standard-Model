@@ -16,3 +16,6 @@ The gauge dictionary includes target conventions:
 
 These are target conventions with BHSM coupling candidates. They are not a
 completed BHSM production gauge theorem and are not UFO-ready.
+
+Phase Three-D treats vector normalization as `Z_A,target = 1` only as a
+standard interface convention, not as a BHSM-derived dynamical prediction.

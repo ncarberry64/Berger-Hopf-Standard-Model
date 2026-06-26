@@ -24,3 +24,6 @@ kappa_H is a BHSM profile Hessian curvature, not automatically the observed Higg
 ```
 
 No PDG masses, widths, or production particle IDs are inserted.
+
+Phase Three-D adds canonical target normalization language. It does not turn
+these candidate fields into UFO particle rows.

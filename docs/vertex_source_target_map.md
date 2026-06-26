@@ -24,3 +24,7 @@ ufo_ready = false
 ```
 
 No production Feynman rules are exported.
+
+Phase Three-D identifies CKM/PMNS chiral charged-current targets with standard
+Lorentz structure conventions, while keeping `feynrules_ready = false` and
+`ufo_ready = false`.

@@ -30,3 +30,6 @@ FeynRules readiness.
 Phase Three-C does not open this gate. It adds explicit target maps and
 candidate parameter-card entries while leaving production FeynRules readiness
 blocked.
+
+Phase Three-D also leaves this gate closed. Canonical target conventions and
+current-attachment maps are not production FeynRules readiness.

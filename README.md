@@ -103,6 +103,16 @@ This does not constitute production FeynRules/UFO readiness. Vector/fermion
 normalizations, full gauge/Lorentz structures, mass-width schemes, and
 renormalization conventions remain open.
 
+### Phase Three-D canonical current interface status
+
+BHSM now includes canonical field target conventions and chiral current
+attachment maps for CKM/PMNS sectors. The scalar/profile normalization source
+Z_H = 1 is preserved, while vector and fermion normalizations are treated as
+standard target conventions or open BHSM-specific normalization gates.
+
+This does not constitute production FeynRules, UFO, MadGraph, LHE/HepMC,
+Athena, or CMSSW readiness. Mass-width and renormalization schemes remain open.
+
 ## 1. What Is Complete In v1.0.0
 
 - `BHSM_internal_boundary_package = COMPLETE_EXPORTED`
