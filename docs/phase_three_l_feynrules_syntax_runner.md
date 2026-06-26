@@ -23,3 +23,9 @@ models/feynrules/BHSM_Minimal_Collider_Interface.fr.disabled
 
 No UFO model, MadGraph smoke result, LHE file, or HepMC file is generated.
 
+## Phase Three-M Follow-On
+
+Phase Three-M attempts to move from runner contracts to live validation
+evidence. In the current local environment Mathematica/FeynRules/MadGraph are
+not available, so the live attempt artifacts record that validation was not
+run and all downstream readiness gates remain false.

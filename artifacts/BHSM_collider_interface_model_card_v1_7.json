@@ -1,0 +1,71 @@
+{
+  "release_basis": "v1.0.1",
+  "phase": "PHASE_THREE_O_RUNTIME_ASSETS_HEP_HANDOFF",
+  "model_name": "BHSM_Minimal_Collider_Interface",
+  "model_scope": "bounded minimal CKM/PMNS collider-interface subset",
+  "physics_status": "internal boundary no-fit package complete/exported; external comparison separate/open",
+  "software_status": "handoff package; runtime validation gated",
+  "included_vertices": [
+    "q_charged_current_CKM_BH",
+    "lepton_charged_current_PMNS_BH"
+  ],
+  "excluded_vertices": [
+    "charged_boundary_response_matrix",
+    "neutral_operator_kernel_BH",
+    "standalone cp_holonomy_phase_attachment"
+  ],
+  "parameters": [
+    "BHSM-derived CKM/PMNS sources",
+    "runtime/scheme placeholders for simulation only"
+  ],
+  "runtime_parameters": [
+    "g2_BH_runtime",
+    "W_mass_runtime",
+    "W_width_runtime",
+    "fermion_masses_runtime",
+    "fermion_widths_runtime"
+  ],
+  "derived_BHSM_sources": [
+    "CKM_BH_source_matrix",
+    "PMNS_BH_source_matrix"
+  ],
+  "not_derived_runtime_inputs": [
+    "masses",
+    "widths",
+    "renormalization scale",
+    "detector cards"
+  ],
+  "mass_width_policy": "runtime collider-interface inputs only; not BHSM derivation inputs",
+  "renormalization_policy": "open production scheme gate",
+  "validation_status": "not FeynRules/UFO/MadGraph ready unless live artifacts pass",
+  "known_limitations": [
+    "complete BHSM 4D Lagrangian excluded",
+    "unresolved vertex families excluded",
+    "Wolfram/FeynRules runtime external"
+  ],
+  "appropriate_uses": [
+    "reviewing BHSM collider-interface structure",
+    "checking reproducibility of minimal CKM/PMNS bounded subset",
+    "attempting FeynRules/UFO/MadGraph validation in licensed HEP software environment"
+  ],
+  "inappropriate_uses": [
+    "claiming complete BHSM collider model",
+    "claiming official CERN integration",
+    "claiming empirical validation",
+    "using runtime PDG values as BHSM derivation inputs",
+    "using excluded vertices as validated production vertices"
+  ],
+  "citation_files": [
+    "CITATION.cff"
+  ],
+  "contact_or_repository": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model",
+  "notes": [
+    "CERN-like institutional HEP handoff package; not production readiness."
+  ],
+  "empirical_derivation_inputs_used": false,
+  "empirical_runtime_inputs_allowed_in_collider_mode": true,
+  "boundary_predictions_modified_by_runtime_inputs": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false,
+  "source_model_files_changed": false
+}

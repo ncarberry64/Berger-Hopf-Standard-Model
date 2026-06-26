@@ -157,3 +157,26 @@ scripts, software environment preflight, UFO export runner contract, and
 MadGraph smoke-test runner contract. This hardens the execution path, but it
 does not execute Mathematica/FeynRules, does not export a UFO directory, does
 not test UFO loadability, and does not run MadGraph.
+
+## Phase Three-M Live FeynRules Validation Attempt
+
+Phase Three-M records a live validation attempt layer. In the current
+environment Mathematica/FeynRules/MadGraph are not detected, so the attempt is
+not run and the minimal FeynRules draft remains disabled. UFO readiness,
+MadGraph readiness, LHE/HepMC generation, Athena readiness, and CMSSW readiness
+remain false.
+
+## Phase Three-N Runtime Execution Gate
+
+Phase Three-N attempts runtime provisioning for the live validation path. The
+current environment detects Python only. Wolfram/FeynRules/MadGraph execution
+does not run, the minimal model remains disabled, and the UFO/MadGraph/event
+pipeline remains blocked.
+
+## Phase Three-O Runtime Assets And Handoff
+
+Phase Three-O packages runtime asset mapping and a CERN-like institutional HEP
+handoff bundle. It improves reproducibility for external review, but it does
+not alter the validation state: the complete BHSM 4D Lagrangian remains
+outside the minimal subset and the UFO/MadGraph/event pipeline remains gated by
+live runtime evidence.

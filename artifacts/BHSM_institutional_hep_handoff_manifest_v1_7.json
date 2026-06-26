@@ -1,0 +1,90 @@
+{
+  "release_basis": "v1.0.1",
+  "phase": "PHASE_THREE_O_RUNTIME_ASSETS_HEP_HANDOFF",
+  "package_name": "BHSM Phase Three-O CERN-like institutional HEP handoff package",
+  "package_scope": "bounded minimal collider-interface subset",
+  "is_official_cern_integration": false,
+  "is_complete_bhsm_4d_lagrangian": false,
+  "is_minimal_collider_interface_subset": true,
+  "included_physics": [
+    "CKM charged-current bounded collider-interface target",
+    "PMNS charged-current bounded collider-interface target",
+    "BHSM-derived CKM/PMNS source matrices",
+    "runtime/scheme parameters for simulation only"
+  ],
+  "excluded_physics": [
+    "charged_boundary_response_matrix",
+    "neutral_operator_kernel_BH",
+    "standalone cp_holonomy_phase_attachment",
+    "complete BHSM 4D Lagrangian",
+    "pure no-fit mass-width closure",
+    "renormalization closure"
+  ],
+  "runtime_dependencies": [
+    "Python",
+    "licensed Wolfram runtime",
+    "FeynRules",
+    "MadGraph for smoke tests"
+  ],
+  "validation_chain": [
+    "repo integrity",
+    "runtime preflight",
+    "FeynRules load validation",
+    "Feynman rule generation",
+    "UFO export",
+    "UFO loadability",
+    "MadGraph smoke test"
+  ],
+  "entrypoint_commands": [
+    "python scripts/setup/check_bhsm_hep_environment.py",
+    "python scripts/setup/run_full_bhsm_hep_validation_chain.py"
+  ],
+  "expected_outputs": [
+    "artifacts/*_v1_7.json",
+    "runs/phase_three_n/ logs if real runtime is executed"
+  ],
+  "gated_readiness_claims": [
+    "FeynRules validation",
+    "UFO export/loadability",
+    "MadGraph smoke",
+    "event generation"
+  ],
+  "forbidden_claims": [
+    "CERN-ready",
+    "CERN-approved",
+    "empirically validated",
+    "complete BHSM collider model"
+  ],
+  "reviewer_quickstart_docs": [
+    "docs/institutional_hep_quickstart.md",
+    "docs/institutional_validation_protocol.md",
+    "docs/bhsm_collider_interface_model_card.md"
+  ],
+  "model_files": [
+    "models/feynrules/BHSM_Minimal_Collider_Interface.fr.disabled"
+  ],
+  "artifacts": [
+    "artifacts/BHSM_runtime_asset_manifest_v1_7.json",
+    "artifacts/BHSM_phase_three_o_gate_status_v1_7.json"
+  ],
+  "known_blockers": [
+    "licensed Wolfram runtime",
+    "FeynRules package mapping",
+    "UFO export/loadability"
+  ],
+  "recommended_institutional_review_steps": [
+    "install/map legal runtime",
+    "run preflight",
+    "run validation chain",
+    "inspect logs"
+  ],
+  "notes": [
+    "This is a handoff package, not a production experiment integration."
+  ],
+  "empirical_derivation_inputs_used": false,
+  "empirical_runtime_inputs_allowed_in_collider_mode": true,
+  "boundary_predictions_modified_by_runtime_inputs": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false,
+  "source_model_files_changed": false
+}
