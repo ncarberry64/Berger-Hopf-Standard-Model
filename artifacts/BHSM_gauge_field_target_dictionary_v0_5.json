@@ -1,0 +1,66 @@
+{
+  "artifact": "BHSM_gauge_field_target_dictionary_v0_5",
+  "release_basis": "v1.0.1",
+  "phase": "PHASE_THREE_C",
+  "source_artifact": "artifacts/BHSM_phase_three_c_analytical_working_packet_v0_5.json",
+  "source_sha256": "8384772C492162326C215449201175792E663DFC7807A41CDDBC7E322126F4ED",
+  "gauge_field_target_dictionary_exported": true,
+  "completed_bhsm_gauge_theorem": false,
+  "production_ufo_ready": false,
+  "entries": [
+    {
+      "field_entry_id": "gauge_gluon_target",
+      "symbol": "G^a_mu",
+      "field_type": "vector gauge field",
+      "gauge_group": "SU(3)_c",
+      "canonical_kinetic_target": "-1/4 G^a_munu G^{a munu}",
+      "BHSM_source": "alpha3 candidate",
+      "status": "STANDARD_HEP_TARGET_WITH_BHSM_COUPLING_CANDIDATE",
+      "production_status": "BLOCKED",
+      "missing": [
+        "BHSM gauge-fixing theorem",
+        "exact reference scale",
+        "renormalization scheme",
+        "UFO gauge declaration"
+      ],
+      "ufo_ready": false
+    },
+    {
+      "field_entry_id": "gauge_weak_target",
+      "symbol": "W^I_mu",
+      "field_type": "vector gauge field",
+      "gauge_group": "SU(2)_L",
+      "canonical_kinetic_target": "-1/4 W^I_munu W^{I munu}",
+      "BHSM_source": "alpha2 candidate",
+      "status": "STANDARD_HEP_TARGET_WITH_BHSM_COUPLING_CANDIDATE",
+      "production_status": "BLOCKED",
+      "missing": [
+        "gauge-fixing convention",
+        "electroweak mixing convention",
+        "mass/width scheme"
+      ],
+      "ufo_ready": false
+    },
+    {
+      "field_entry_id": "gauge_hypercharge_target",
+      "symbol": "B_mu",
+      "field_type": "vector gauge field",
+      "gauge_group": "U(1)_Y",
+      "canonical_kinetic_target": "-1/4 B_munu B^{munu}",
+      "BHSM_source": "alpha1 candidate",
+      "status": "STANDARD_HEP_TARGET_WITH_BHSM_COUPLING_CANDIDATE",
+      "production_status": "BLOCKED",
+      "missing": [
+        "hypercharge normalization convention",
+        "electroweak mixing convention",
+        "reference scale"
+      ],
+      "ufo_ready": false
+    }
+  ],
+  "empirical_derivation_inputs_used": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false,
+  "source_model_files_changed": false,
+  "notes": "Gauge entries are target conventions with BHSM coupling candidates, not completed BHSM production gauge fields."
+}

@@ -1,0 +1,97 @@
+{
+  "artifact": "BHSM_boundary_source_matrices_v0_5",
+  "release_basis": "v1.0.1",
+  "phase": "PHASE_THREE_C",
+  "source_artifact": "artifacts/BHSM_phase_three_c_analytical_working_packet_v0_5.json",
+  "source_sha256": "8384772C492162326C215449201175792E663DFC7807A41CDDBC7E322126F4ED",
+  "boundary_source_vertex_matrices_exported": true,
+  "not_collider_vertices": true,
+  "ufo_ready": false,
+  "matrices": [
+    {
+      "matrix_id": "C_ch_boundary",
+      "definition": "diag(beta_l*tau, beta_u*tau, beta_d*tau)",
+      "exact": [
+        "4/(1323*pi^(3/2))",
+        "8/(1323*pi^(3/2))",
+        "16/(1323*pi^(3/2))"
+      ],
+      "approx_diagonal": [
+        0.00054296937906324,
+        0.00108593875812648,
+        0.00217187751625296
+      ],
+      "matrix": null,
+      "status": "DERIVED_FROM_REPO_ARTIFACT",
+      "ufo_ready": false,
+      "notes": "Boundary-source matrix only; not a collider vertex until field dictionary, Lorentz/gauge structure, and canonical normalizations are complete.",
+      "production_status": "BOUNDARY_SOURCE_MATRIX_ONLY"
+    },
+    {
+      "matrix_id": "K_ch_boundary",
+      "definition": "diag(kappa_l*tau, kappa_u*tau, kappa_d*tau)",
+      "exact": [
+        "4/(1323*pi^(3/2))",
+        "4/(1323*pi^(3/2))",
+        "4/(3591*pi^(3/2))"
+      ],
+      "approx_diagonal": [
+        0.00054296937906324,
+        0.00054296937906324,
+        0.000200041350181194
+      ],
+      "matrix": null,
+      "status": "DERIVED_FROM_REPO_ARTIFACT",
+      "ufo_ready": false,
+      "notes": "Boundary stiffness matrix only; not a collider mass/width matrix yet.",
+      "production_status": "BOUNDARY_SOURCE_MATRIX_ONLY"
+    },
+    {
+      "matrix_id": "K_nu_boundary",
+      "definition": null,
+      "exact": [
+        [
+          0,
+          "1/3",
+          0
+        ],
+        [
+          "1/3",
+          3,
+          "1/6"
+        ],
+        [
+          0,
+          "1/6",
+          "5/3"
+        ]
+      ],
+      "approx_diagonal": null,
+      "matrix": [
+        [
+          0,
+          "1/3",
+          0
+        ],
+        [
+          "1/3",
+          3,
+          "1/6"
+        ],
+        [
+          0,
+          "1/6",
+          "5/3"
+        ]
+      ],
+      "status": "DERIVED_FROM_REPO_ARTIFACT",
+      "ufo_ready": false,
+      "notes": "Neutral boundary/operator source, not yet a physical collider neutrino mass matrix.",
+      "production_status": "BOUNDARY_SOURCE_MATRIX_ONLY"
+    }
+  ],
+  "empirical_derivation_inputs_used": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false,
+  "source_model_files_changed": false
+}

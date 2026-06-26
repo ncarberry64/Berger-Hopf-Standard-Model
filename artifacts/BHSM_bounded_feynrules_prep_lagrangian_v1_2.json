@@ -1,0 +1,189 @@
+{
+  "artifact": "BHSM_bounded_feynrules_prep_lagrangian_v1_2",
+  "release_basis": "v1.0.1",
+  "phase": "PHASE_THREE_J_MINIMAL_COLLIDER_LAGRANGIAN",
+  "model_name": "BHSM_MINIMAL_COLLIDER_INTERFACE_PREP",
+  "parameter_mode": "BHSM_COLLIDER_INTERFACE",
+  "is_complete_bhsm_model": false,
+  "is_feynrules_file": false,
+  "is_ufo_model": false,
+  "required_statements": [
+    "g2_BH_runtime is a runtime/scheme parameter in BHSM_COLLIDER_INTERFACE mode.",
+    "Runtime values are simulation/comparison inputs only and do not derive or retune BHSM constants.",
+    "V_CKM_BH and U_PMNS_BH are BHSM source matrices from repo artifacts."
+  ],
+  "terms": [
+    {
+      "term_id": "L_kin",
+      "symbolic_expression": "canonical kinetic terms in the Phase Three-F production basis",
+      "field_requirements": [
+        "canonical production-basis fields"
+      ],
+      "parameter_requirements": [],
+      "source_artifacts": [
+        "artifacts/BHSM_explicit_4d_field_dictionary_v0_5.json",
+        "artifacts/BHSM_gauge_field_target_dictionary_v0_5.json",
+        "artifacts/BHSM_candidate_parameter_card_v0_5.json",
+        "artifacts/BHSM_chiral_current_attachment_map_v0_6.json",
+        "artifacts/BHSM_canonical_production_basis_theorem_v0_8.json",
+        "artifacts/BHSM_runtime_parameter_modes_v0_8.json",
+        "artifacts/BHSM_production_coupling_map_v0_8.json",
+        "artifacts/BHSM_production_vertex_table_candidate_v0_9.json",
+        "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json",
+        "artifacts/BHSM_vertex_readiness_matrix_v0_9.json",
+        "artifacts/BHSM_phase_three_g_gate_status_v0_9.json",
+        "artifacts/BHSM_bounded_vertex_promotion_audit_v1_0.json",
+        "artifacts/BHSM_phase_three_h_gate_status_v1_0.json",
+        "artifacts/BHSM_interaction_theorem_closure_audit_v1_1.json",
+        "artifacts/BHSM_phase_three_i_gate_status_v1_1.json"
+      ],
+      "runtime_inputs_allowed": true,
+      "empirical_derivation_inputs_used": false,
+      "boundary_predictions_modified_by_runtime_inputs": false,
+      "translation_status": "FEYNRULES_PREP_CANDIDATE_NOT_FR_FILE",
+      "missing_for_feynrules_file": [
+        "complete particle class declarations",
+        "parameter-card syntax",
+        "runtime mass and width assignments",
+        "renormalization scheme",
+        "FeynRules syntax export"
+      ],
+      "notes": "Prep-only kinetic structure in the canonical production basis."
+    },
+    {
+      "term_id": "L_gauge",
+      "symbolic_expression": "standard target gauge convention terms",
+      "field_requirements": [
+        "W_plus_mu",
+        "W_minus_mu",
+        "standard target gauge fields"
+      ],
+      "parameter_requirements": [
+        "g2_BH_runtime"
+      ],
+      "source_artifacts": [
+        "artifacts/BHSM_explicit_4d_field_dictionary_v0_5.json",
+        "artifacts/BHSM_gauge_field_target_dictionary_v0_5.json",
+        "artifacts/BHSM_candidate_parameter_card_v0_5.json",
+        "artifacts/BHSM_chiral_current_attachment_map_v0_6.json",
+        "artifacts/BHSM_canonical_production_basis_theorem_v0_8.json",
+        "artifacts/BHSM_runtime_parameter_modes_v0_8.json",
+        "artifacts/BHSM_production_coupling_map_v0_8.json",
+        "artifacts/BHSM_production_vertex_table_candidate_v0_9.json",
+        "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json",
+        "artifacts/BHSM_vertex_readiness_matrix_v0_9.json",
+        "artifacts/BHSM_phase_three_g_gate_status_v0_9.json",
+        "artifacts/BHSM_bounded_vertex_promotion_audit_v1_0.json",
+        "artifacts/BHSM_phase_three_h_gate_status_v1_0.json",
+        "artifacts/BHSM_interaction_theorem_closure_audit_v1_1.json",
+        "artifacts/BHSM_phase_three_i_gate_status_v1_1.json"
+      ],
+      "runtime_inputs_allowed": true,
+      "empirical_derivation_inputs_used": false,
+      "boundary_predictions_modified_by_runtime_inputs": false,
+      "translation_status": "FEYNRULES_PREP_CANDIDATE_NOT_FR_FILE",
+      "missing_for_feynrules_file": [
+        "complete particle class declarations",
+        "parameter-card syntax",
+        "runtime mass and width assignments",
+        "renormalization scheme",
+        "FeynRules syntax export"
+      ],
+      "notes": "Gauge terms use standard target conventions and scheme/runtime coupling inputs."
+    },
+    {
+      "term_id": "L_CC_q_BHSM_CKM",
+      "symbolic_expression": "(g2_BH_runtime / sqrt(2)) * ubar_i gamma^mu P_L V_CKM_BH[i,j] d_j W_plus_mu + h.c.",
+      "field_requirements": [
+        "ubar_i",
+        "d_j",
+        "W_plus_mu",
+        "P_L",
+        "gamma^mu"
+      ],
+      "parameter_requirements": [
+        "g2_BH_runtime",
+        "V_CKM_BH"
+      ],
+      "source_artifacts": [
+        "artifacts/BHSM_explicit_4d_field_dictionary_v0_5.json",
+        "artifacts/BHSM_gauge_field_target_dictionary_v0_5.json",
+        "artifacts/BHSM_candidate_parameter_card_v0_5.json",
+        "artifacts/BHSM_chiral_current_attachment_map_v0_6.json",
+        "artifacts/BHSM_canonical_production_basis_theorem_v0_8.json",
+        "artifacts/BHSM_runtime_parameter_modes_v0_8.json",
+        "artifacts/BHSM_production_coupling_map_v0_8.json",
+        "artifacts/BHSM_production_vertex_table_candidate_v0_9.json",
+        "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json",
+        "artifacts/BHSM_vertex_readiness_matrix_v0_9.json",
+        "artifacts/BHSM_phase_three_g_gate_status_v0_9.json",
+        "artifacts/BHSM_bounded_vertex_promotion_audit_v1_0.json",
+        "artifacts/BHSM_phase_three_h_gate_status_v1_0.json",
+        "artifacts/BHSM_interaction_theorem_closure_audit_v1_1.json",
+        "artifacts/BHSM_phase_three_i_gate_status_v1_1.json"
+      ],
+      "runtime_inputs_allowed": true,
+      "empirical_derivation_inputs_used": false,
+      "boundary_predictions_modified_by_runtime_inputs": false,
+      "translation_status": "FEYNRULES_PREP_CANDIDATE_NOT_FR_FILE",
+      "missing_for_feynrules_file": [
+        "complete particle class declarations",
+        "parameter-card syntax",
+        "runtime mass and width assignments",
+        "renormalization scheme",
+        "FeynRules syntax export"
+      ],
+      "notes": "V_CKM_BH is a BHSM source matrix; g2_BH_runtime is runtime/scheme input only."
+    },
+    {
+      "term_id": "L_CC_l_BHSM_PMNS",
+      "symbolic_expression": "(g2_BH_runtime / sqrt(2)) * ellbar_i gamma^mu P_L U_PMNS_BH[i,j] nu_j W_minus_mu + h.c.",
+      "field_requirements": [
+        "ellbar_i",
+        "nu_j",
+        "W_minus_mu",
+        "P_L",
+        "gamma^mu"
+      ],
+      "parameter_requirements": [
+        "g2_BH_runtime",
+        "U_PMNS_BH",
+        "neutrino_runtime_convention_for_PMNS_labels"
+      ],
+      "source_artifacts": [
+        "artifacts/BHSM_explicit_4d_field_dictionary_v0_5.json",
+        "artifacts/BHSM_gauge_field_target_dictionary_v0_5.json",
+        "artifacts/BHSM_candidate_parameter_card_v0_5.json",
+        "artifacts/BHSM_chiral_current_attachment_map_v0_6.json",
+        "artifacts/BHSM_canonical_production_basis_theorem_v0_8.json",
+        "artifacts/BHSM_runtime_parameter_modes_v0_8.json",
+        "artifacts/BHSM_production_coupling_map_v0_8.json",
+        "artifacts/BHSM_production_vertex_table_candidate_v0_9.json",
+        "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json",
+        "artifacts/BHSM_vertex_readiness_matrix_v0_9.json",
+        "artifacts/BHSM_phase_three_g_gate_status_v0_9.json",
+        "artifacts/BHSM_bounded_vertex_promotion_audit_v1_0.json",
+        "artifacts/BHSM_phase_three_h_gate_status_v1_0.json",
+        "artifacts/BHSM_interaction_theorem_closure_audit_v1_1.json",
+        "artifacts/BHSM_phase_three_i_gate_status_v1_1.json"
+      ],
+      "runtime_inputs_allowed": true,
+      "empirical_derivation_inputs_used": false,
+      "boundary_predictions_modified_by_runtime_inputs": false,
+      "translation_status": "FEYNRULES_PREP_CANDIDATE_NOT_FR_FILE",
+      "missing_for_feynrules_file": [
+        "complete particle class declarations",
+        "parameter-card syntax",
+        "runtime mass and width assignments",
+        "renormalization scheme",
+        "FeynRules syntax export"
+      ],
+      "notes": "U_PMNS_BH is a BHSM source matrix; neutrino labels are collider-interface labels only."
+    }
+  ],
+  "empirical_derivation_inputs_used": false,
+  "boundary_predictions_modified_by_runtime_inputs": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false,
+  "source_model_files_changed": false
+}
