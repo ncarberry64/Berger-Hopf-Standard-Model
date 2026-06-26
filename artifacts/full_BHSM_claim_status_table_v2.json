@@ -87,6 +87,120 @@
       "claim": "Tau/sigma numerical boundary derivation",
       "status": "OPEN_LOCALIZABLE",
       "boundary": "Blocked until kappa_H, Z_H, and r are repo-derived."
+    },
+    {
+      "claim": "Boundary/profile scale closure",
+      "status": "BLOCKED_BY_MISSING_OBJECTS",
+      "boundary": "Targeted PR #46 first blocker; blocked until kappa_H, Z_H, and r are repo-derived."
+    },
+    {
+      "claim": "Profile radius r",
+      "status": "BLOCKED_BY_MISSING_OBJECT",
+      "boundary": "Cosmological radius, heat cutoff, overlap width, collar coordinate, and matching scale are rejected as substitutes."
+    },
+    {
+      "claim": "Z_H profile normalization",
+      "status": "DERIVED_CONDITIONAL",
+      "boundary": "Author/canonical BHSM profile normalization theorem sets Z_H = integral_B |Phi|^2 dmu_Berger = 1."
+    },
+    {
+      "claim": "kappa_H profile curvature",
+      "status": "OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH",
+      "boundary": "Formula localized as a Higgs/profile second variation; full action Hessian values remain open."
+    },
+    {
+      "claim": "Internal/profile Berger radius normalization",
+      "status": "BLOCKED_BY_MISSING_NORMALIZATION_THEOREM",
+      "boundary": "Blocked by missing Hopf fiber-radius, Berger volume, profile-domain, collar-depth, and Lambda-to-radius conventions."
+    },
+    {
+      "claim": "Higgs/topographic profile normal form",
+      "status": "DERIVED_CONDITIONAL",
+      "boundary": "Gaussian/topographic normal form localized; Phi_0 is symbolic only until sigma, domain, and measure are derived."
+    },
+    {
+      "claim": "Z_H profile normalization closure",
+      "status": "DERIVED_CONDITIONAL",
+      "boundary": "Closed conditionally by CANONICAL_INTERNAL_PROFILE_NORMALIZATION_THEOREM."
+    },
+    {
+      "claim": "kappa_H profile second variation closure",
+      "status": "DERIVED_CONDITIONAL",
+      "boundary": "Closed conditionally by CANONICAL_PROFILE_HESSIAN_THEOREM; no observed Higgs value is used."
+    },
+    {
+      "claim": "Internal Berger radius selection theorem",
+      "status": "NORMALIZATION_FORK_OPEN",
+      "boundary": "Multiple repo-localized normalization routes remain candidates; missing theorem INTERNAL_BERGER_RADIUS_SELECTION_THEOREM."
+    },
+    {
+      "claim": "Berger measure/domain normalization",
+      "status": "NORMALIZATION_FORK_OPEN",
+      "boundary": "Metric and domain are localized, but volume/measure normalization depends on the unselected internal radius convention."
+    },
+    {
+      "claim": "Author-supplied internal Berger radius selection theorem",
+      "status": "DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM",
+      "boundary": "Author BHSM axiom identifies r_internal_profile^2 = Lambda_squared = S = 1/(4*pi); this closes only the radius gate."
+    },
+    {
+      "claim": "Internal profile radius value",
+      "status": "DERIVED_CONDITIONAL",
+      "boundary": "r_internal_profile = 1/sqrt(4*pi); tau remains blocked by Z_H and kappa_H."
+    },
+    {
+      "claim": "Internal radius normalization fork",
+      "status": "RESOLVED_BY_AUTHOR_AXIOM",
+      "boundary": "Lambda-radius and overlap-radius are selected as semantically equivalent under the author normalization."
+    },
+    {
+      "claim": "Profile normalization/Hessian closure sprint",
+      "status": "BLOCKED_BY_MISSING_PROFILE_HESSIAN_THEOREM",
+      "boundary": "Z_H closed; kappa_H remains the single local profile-scale blocker."
+    },
+    {
+      "claim": "Canonical profile Hessian theorem",
+      "status": "DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM",
+      "boundary": "Author BHSM theorem identifies kappa_H with mu_H = 64*pi^5."
+    },
+    {
+      "claim": "Tau/sigma profile scale closure",
+      "status": "DERIVED_CONDITIONAL",
+      "boundary": "sigma=4*pi^(5/2), tau=1/(4*pi^(3/2)) from author-normalized boundary package."
+    },
+    {
+      "claim": "BHSM boundary no-fit prediction package",
+      "status": "COMPLETE_EXPORTED",
+      "boundary": "Internal boundary no-fit package exported; external empirical comparison remains separate/open."
+    },
+    {
+      "claim": "BHSM complete v1 release candidate",
+      "status": "BHSM_COMPLETE_V1_RELEASE_CANDIDATE",
+      "boundary": "Internal boundary no-fit package complete/exported; external empirical comparison implemented as a separate comparison-only layer and data-optional."
+    },
+    {
+      "claim": "External empirical comparison package",
+      "status": "IMPLEMENTED_COMPARISON_ONLY_LAYER",
+      "boundary": "Comparison-only layer; cannot modify derivation constants or internal boundary predictions."
+    },
+    {
+      "claim": "External empirical validation",
+      "status": "DATA_ABSENT",
+      "boundary": "No empirical validation is claimed without external target data and comparison artifacts."
     }
-  ]
+  ],
+  "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
+  "empirical_derivation_inputs_used": false,
+  "observed_masses_used": false,
+  "observed_Higgs_used": false,
+  "observed_gauge_values_used": false,
+  "tau_fit_to_masses": false,
+  "sigma_fit_to_masses": false,
+  "radius_gate_status": "DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM",
+  "observed_CKM_used": false,
+  "observed_PMNS_used": false,
+  "observed_CP_used": false,
+  "external_empirical_comparison_layer": "OPEN_SEPARATE_LAYER",
+  "boundary_predictions_modified_by_comparison": false,
+  "comparison_data_required_for_internal_completion": false
 }

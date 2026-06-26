@@ -1,0 +1,167 @@
+{
+  "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
+  "official_predictions_changed": false,
+  "empirical_derivation_inputs_used": false,
+  "observed_masses_used": false,
+  "observed_Higgs_used": false,
+  "observed_gauge_values_used": false,
+  "tau_fit_to_masses": false,
+  "sigma_fit_to_masses": false,
+  "artifact": "Phi_profile_normal_form_v1",
+  "profile": {
+    "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
+    "official_predictions_changed": false,
+    "empirical_derivation_inputs_used": false,
+    "observed_masses_used": false,
+    "observed_Higgs_used": false,
+    "observed_gauge_values_used": false,
+    "tau_fit_to_masses": false,
+    "sigma_fit_to_masses": false,
+    "artifact": "Phi_profile_normal_form_v1",
+    "status": "DERIVED_CONDITIONAL",
+    "Phi_profile": {
+      "name": "Phi(y)",
+      "status": "DERIVED_CONDITIONAL",
+      "value": null,
+      "formula": "Phi(y)=Phi_0 exp[-sigma d_B(y,y_0)^2]",
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\derived_universal_higgs_topographic_profile.md",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_profile_input_classification.md",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_level_set_boundary_embedding.md"
+      ],
+      "missing_objects": [
+        "sigma value",
+        "Phi_0 normalization",
+        "d_B metric distance value"
+      ],
+      "notes": "Gaussian/topographic normal form is localized as a conditional profile ansatz, not numerically solved."
+    },
+    "objects": {
+      "Phi(y)": {
+        "name": "Phi(y)",
+        "status": "DERIVED_CONDITIONAL",
+        "value": null,
+        "formula": "Phi(y)=Phi_0 exp[-sigma d_B(y,y_0)^2]",
+        "source_trace": [
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\derived_universal_higgs_topographic_profile.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_profile_input_classification.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_level_set_boundary_embedding.md"
+        ],
+        "missing_objects": [
+          "sigma value",
+          "Phi_0 normalization",
+          "d_B metric distance value"
+        ],
+        "notes": "Gaussian/topographic normal form is localized as a conditional profile ansatz, not numerically solved."
+      },
+      "Phi_0": {
+        "name": "Phi_0",
+        "status": "OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH",
+        "value": "1/sqrt(integral exp[-2 sigma d_B(y,y_0)^2] dmu_Berger)",
+        "formula": "Phi_0 = 1 / sqrt(integral exp[-2 sigma d_B(y,y_0)^2] dmu_Berger)",
+        "source_trace": [
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\derived_universal_higgs_topographic_profile.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_profile_input_classification.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_level_set_boundary_embedding.md"
+        ],
+        "missing_objects": [
+          "sigma value",
+          "internal domain",
+          "dmu_Berger",
+          "normalization theorem"
+        ],
+        "notes": "Symbolic normalization is available if a normalized profile convention is assumed, but no numeric value is allowed."
+      },
+      "y_0": {
+        "name": "y_0",
+        "status": "OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH",
+        "value": null,
+        "formula": "grad_y S_eff^(H)(y_0)=0",
+        "source_trace": [
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\derived_universal_higgs_topographic_profile.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_profile_input_classification.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_level_set_boundary_embedding.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_neutral_saddle_displacement.md"
+        ],
+        "missing_objects": [
+          "Higgs/profile saddle-selection theorem"
+        ],
+        "notes": "The distinguished point is localized as the profile center/saddle but not selected by a completed action."
+      },
+      "d_B": {
+        "name": "d_B",
+        "status": "OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH",
+        "value": null,
+        "formula": "d_B(y,y_0) from internal Berger metric g_B",
+        "source_trace": [
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\derived_universal_higgs_topographic_profile.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_profile_input_classification.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_level_set_boundary_embedding.md"
+        ],
+        "missing_objects": [
+          "explicit internal Berger metric normalization",
+          "radius convention"
+        ],
+        "notes": "Metric-distance notation is localized, but radius/metric normalization remains open."
+      },
+      "internal_domain": {
+        "name": "internal_domain",
+        "status": "OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH",
+        "value": null,
+        "formula": "B or collar-neighborhood domain for profile integration",
+        "source_trace": [
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\derived_universal_higgs_topographic_profile.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_profile_input_classification.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_level_set_boundary_embedding.md"
+        ],
+        "missing_objects": [
+          "profile-domain selection theorem",
+          "boundary/collar domain limits"
+        ],
+        "notes": "The integration domain is named but not fixed for numerical normalization."
+      },
+      "dmu_Berger": {
+        "name": "dmu_Berger",
+        "status": "OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH",
+        "value": null,
+        "formula": "dmu_Berger = sqrt(det g_B) dy",
+        "source_trace": [
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\derived_universal_higgs_topographic_profile.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_profile_input_classification.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_level_set_boundary_embedding.md"
+        ],
+        "missing_objects": [
+          "metric determinant",
+          "Berger volume normalization",
+          "internal radius convention"
+        ],
+        "notes": "Measure form is localizable but not numerically evaluated."
+      },
+      "J(Y,rho)": {
+        "name": "J(Y,rho)",
+        "status": "DERIVED_CONDITIONAL",
+        "value": null,
+        "formula": "J(Y,rho)=det(I+rho S(Y))=1+rho K(Y)+O(rho^2)",
+        "source_trace": [
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_collar_measure_extrinsic_geometry.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_level_set_boundary_embedding.md"
+        ],
+        "missing_objects": [
+          "shape operator S(Y) value",
+          "normal orientation",
+          "collar depth/domain"
+        ],
+        "notes": "The collar Jacobian identity is conditionally derived, but its value remains open."
+      }
+    },
+    "normalization_condition": "1 = integral |Phi(y)|^2 dmu_Berger",
+    "symbolic_Phi_0": "1/sqrt(integral exp[-2 sigma d_B(y,y_0)^2] dmu_Berger)",
+    "Phi_0_numerical_assigned": false,
+    "missing_objects": [
+      "sigma value",
+      "internal profile-domain measure",
+      "dmu_Berger value",
+      "J(Y,rho) value if collar form is used"
+    ]
+  }
+}

@@ -117,3 +117,179 @@ response audit. The identity K-collar route was `STACK_COLLAR_REJECTED_AS_PRIMAR
 Frozen predictions changed: no.
 
 Official predictions changed: no.
+
+## Boundary/Profile Scale Closure Assault
+
+This targeted follow-up attacks the first exact blocker from PR #46: `kappa_H`,
+`Z_H`, and the internal/profile radius `r`. It does not rerun the broader
+numerical gate closure assault and does not use observed masses, Higgs data,
+gauge values, target ratios, CKM, PMNS, neutrino data, cosmology residuals, or
+DESI residuals as derivation inputs.
+
+Result: `BLOCKED_BY_MISSING_OBJECTS`.
+
+- `r`: `BLOCKED_BY_MISSING_OBJECT`. The needed object is the
+  dimensionless internal/profile Berger radius; cosmological `R_H_Gpc`,
+  `Lambda_squared`, `S=1/(4*pi)`, collar `rho`, and matching scales are not
+  substitutes.
+- `Z_H`: `OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH`. The profile-normalization formula
+  is localized, but the explicit profile, threshold/normalization, measure, and
+  collar Jacobian values remain open.
+- `kappa_H`: `OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH`. The second-variation route
+  is localized, but the Higgs/profile action, saddle Hessian, and curvature
+  coefficients remain open.
+
+Therefore `sigma` and `tau` remain `OPEN_LOCALIZABLE`, no charged outputs at
+boundary tau are exported, and official/frozen predictions remain unchanged.
+
+## Internal/Profile Radius And Higgs/Profile Normal Form Assault
+
+This targeted follow-up reduces the first blocker from PR #47. It attacks the
+internal/profile Berger radius, canonical profile normal form, profile
+normalization `Z_H`, and Higgs/profile second variation `kappa_H`. It does not
+use observed masses, Higgs data, gauge values, target ratios, CKM, PMNS,
+neutrino data, cosmology residuals, or DESI residuals as derivation inputs.
+
+Result: `BLOCKED_BY_MISSING_OBJECTS`.
+
+- `r_internal_profile`: `BLOCKED_BY_MISSING_NORMALIZATION_THEOREM`. Missing
+  theorem inputs are Hopf fiber-radius normalization, Berger volume
+  normalization, internal profile-domain measure, collar-depth matching, and
+  Lambda-to-radius convention.
+- `Phi(y)`: `DERIVED_CONDITIONAL`. The normal form
+  `Phi(y)=Phi_0 exp[-sigma d_B(y,y_0)^2]` is localized conditionally, but
+  `Phi_0` remains symbolic until sigma, domain, and measure are fixed.
+- `Z_H`: `BLOCKED_BY_MISSING_PROFILE_MEASURE`. It is not set to one without a profile
+  normalization theorem and evaluated profile/collar measure.
+- `kappa_H`: `BLOCKED_BY_MISSING_EFFECTIVE_ACTION`. The second-variation formula is
+  localized, but `S_eff^(H)`, the profile saddle, `H_H`, `V_eff''`, and boundary
+  curvature coefficients remain open.
+
+Therefore `sigma` and `tau` remain `OPEN_LOCALIZABLE`, no charged outputs at
+boundary tau are exported, and official/frozen predictions remain unchanged.
+
+## Internal Berger Radius And Measure Normalization Assault
+
+This targeted follow-up attacks the first blocker from PR #48:
+`r_internal_profile` and the internal Berger measure/domain normalization. It
+tests unit-radius, Lambda-radius, overlap-radius, Berger-volume, and
+collar-depth matching routes without using observed masses, Higgs data, gauge
+values, CKM, PMNS, neutrino data, DESI residuals, or target ratios.
+
+Result: `NORMALIZATION_FORK_OPEN`.
+
+No route is uniquely selected by current repo axioms. The exact missing theorem
+is `INTERNAL_BERGER_RADIUS_SELECTION_THEOREM`. It must choose among a unit-radius
+convention, Lambda-to-radius convention, overlap-width-to-radius convention,
+Berger-volume normalization theorem, or collar-depth matching theorem.
+
+`dmu_Berger` and the internal profile domain remain `NORMALIZATION_FORK_OPEN`.
+`Z_H` is not set to one, `sigma` and `tau` remain `OPEN_LOCALIZABLE`, no charged
+outputs at boundary tau are exported, and official/frozen predictions remain
+unchanged.
+
+## Author-Supplied Internal Berger Radius Selection
+
+The radius fork from PR #49 is resolved by the author-supplied BHSM overlap
+normalization:
+
+`r_internal_profile^2 = Lambda_squared = S = 1/(4*pi)`.
+
+Therefore `r_internal_profile = 1/sqrt(4*pi)` and the local radius gate is
+`DERIVED_CONDITIONAL` with theorem status `DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM`.
+The Lambda-radius and overlap-radius routes are selected as the same semantic
+BHSM overlap-scale normalization, not merely as numerically equal constants.
+
+The global public status remains `structural architecture integrated conditional; numerical closure open`. `Z_H` and `kappa_H`
+remain open, so `sigma` and `tau` are not numerically computed. With the radius
+substituted, the symbolic dependency is
+`tau(Z_H,kappa_H) = 2*pi*sqrt(Z_H/kappa_H)`. No charged outputs at boundary tau
+are exported, and official/frozen predictions remain unchanged.
+
+## Z_H Profile Normalization And kappa_H Hessian Closure
+
+The radius gate remains closed by `DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM` and is not
+reopened. The author/canonical BHSM profile normalization theorem is encoded as:
+
+`Z_H = integral_B |Phi(y)|^2 dmu_Berger = 1`.
+
+Therefore `Z_H` is locally `DERIVED_CONDITIONAL`. The Higgs/profile
+Hessian coefficient `kappa_H` remains blocked by
+`BLOCKED_BY_MISSING_PROFILE_HESSIAN_THEOREM` because no source-traced
+repo convention identifies `mu_H` or any existing stiffness object with
+`kappa_H`.
+
+With `r_internal_profile^2=1/(4*pi)` and `Z_H=1`, the symbolic dependency is
+`tau(kappa_H) = 2*pi/sqrt(kappa_H)`. Tau and sigma are not numerically computed,
+charged outputs at boundary tau are not exported, and official/frozen
+predictions remain unchanged. The global public status remains
+`structural architecture integrated conditional; numerical closure open`.
+
+## BHSM Boundary No-Fit Package Completion
+
+The internal BHSM boundary no-fit package is exported as
+`COMPLETE_EXPORTED`. The completed internal profile-scale values are:
+
+- `r_internal_profile^2 = 1/(4*pi)`;
+- `Z_H = 1`;
+- `kappa_H = mu_H = 64*pi^5`;
+- `sigma = 4*pi^(5/2)`;
+- `tau = 1/(4*pi^(3/2))`.
+
+The package also exports charged boundary bridge values, identity transport at
+`mu_BH_boundary`, the neutral boundary seed, PMNS/CKM no-fit operator outputs,
+and the `delta_BH=pi/3` CP holonomy seed. This is an internal boundary no-fit
+export only. The external empirical comparison package remains
+`OPEN_SEPARATE_LAYER`; no observed masses, Higgs value, gauge values,
+CKM/PMNS data, CP data, or cosmology residuals are used as derivation inputs.
+Frozen and official predictions remain unchanged.
+
+## BHSM v1 Completion Release Candidate
+
+BHSM v1 now contains a complete internal no-fit boundary prediction package. The
+profile scale, charged boundary outputs, neutral/PMNS/CKM/CP boundary outputs,
+and boundary-scale transport identity are exported as machine-readable
+artifacts.
+
+External empirical comparison is implemented as a separate comparison-only
+layer. Empirical data are not used to derive BHSM constants or boundary
+predictions. If comparison data are absent, the package remains internally
+complete but externally unevaluated.
+
+Current split:
+
+- `BHSM_internal_boundary_package = COMPLETE_EXPORTED`
+- `BHSM_boundary_no_fit_prediction_package = COMPLETE_EXPORTED`
+- `external_empirical_comparison_package = IMPLEMENTED_COMPARISON_ONLY_LAYER`
+- `external_empirical_comparison_status = DATA_OPTIONAL_OR_DATA_ABSENT`
+
+## BHSM v1.0.0 Release Package
+
+Release title: Berger-Hopf Standard Model v1.0.0: Complete Internal Boundary
+No-Fit Package.
+
+Public status:
+
+```text
+internal boundary no-fit package complete; external empirical comparison layer separate/open
+```
+
+The v1.0.0 release package preserves the v1 completion release-candidate split:
+the internal boundary no-fit package is complete and exported, while empirical
+comparison is implemented as a separate comparison-only layer. No observed
+masses, Higgs values, gauge values, CKM values, PMNS values, CP values, DESI
+residuals, or other target data are used to derive BHSM constants or boundary
+predictions.
+
+Release status labels:
+
+- `BHSM_internal_boundary_package = COMPLETE_EXPORTED`
+- `BHSM_boundary_no_fit_prediction_package = COMPLETE_EXPORTED`
+- `external_empirical_comparison_package = IMPLEMENTED_COMPARISON_ONLY_LAYER`
+- `external_empirical_comparison_status = DATA_ABSENT_OR_DATA_OPTIONAL`
+- `empirical_derivation_inputs_used = false`
+- `boundary_predictions_modified_by_comparison = false`
+- `official_predictions_changed = false`
+
+The v1.0.0 release is internally complete at the boundary-package level and
+externally unevaluated when empirical targets are absent.
