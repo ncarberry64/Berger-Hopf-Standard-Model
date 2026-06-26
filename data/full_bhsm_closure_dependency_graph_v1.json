@@ -1,0 +1,789 @@
+{
+  "id": "PO-BH-full-closure-dependency-graph-v1",
+  "title": "Full BHSM Closure Dependency Graph v1",
+  "public_status": "structural architecture integrated conditional; numerical closure open",
+  "frozen_predictions_changed": false,
+  "official_predictions_changed": false,
+  "nodes": [
+    {
+      "node_id": "finite_boundary_algebra",
+      "label": "Finite boundary algebra",
+      "status": "DERIVED_CONDITIONAL",
+      "dependencies": [],
+      "blocks": [
+        "sector_projectors"
+      ],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/claim_status_table.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "Finite boundary algebra: DERIVED_CONDITIONAL",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "sector_projectors",
+      "label": "Sector projectors",
+      "status": "DERIVED_CONDITIONAL",
+      "dependencies": [
+        "finite_boundary_algebra"
+      ],
+      "blocks": [
+        "sector_equations"
+      ],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "src/charged_kf_generator.py"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "Sector projectors: DERIVED_CONDITIONAL",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "sector_equations",
+      "label": "Sector equations",
+      "status": "DERIVED_CONDITIONAL",
+      "dependencies": [
+        "sector_projectors"
+      ],
+      "blocks": [
+        "mode_ledgers"
+      ],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "src/charged_kf_generator.py"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "Sector equations: DERIVED_CONDITIONAL",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "mode_ledgers",
+      "label": "Mode ledgers",
+      "status": "DERIVED_CONDITIONAL",
+      "dependencies": [
+        "sector_equations"
+      ],
+      "blocks": [
+        "charged_Kf_generator",
+        "neutral_sector_operator_kernel"
+      ],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "src/charged_kf_generator.py"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "Mode ledgers: DERIVED_CONDITIONAL",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "boundary_graded_defect_action_kernel",
+      "label": "Boundary graded defect action kernel",
+      "status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL",
+      "dependencies": [
+        "mode_ledgers"
+      ],
+      "blocks": [
+        "boundary_graded_defect_action_kernel_v1"
+      ],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/boundary_graded_defect_action_kernel_v1.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "Boundary graded defect action kernel: DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "boundary_graded_defect_action_kernel_v1",
+      "label": "Boundary graded defect action kernel v1",
+      "status": "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL",
+      "dependencies": [
+        "boundary_graded_defect_action_kernel"
+      ],
+      "blocks": [
+        "B_supp_trace_kernel",
+        "charged_Kf_generator"
+      ],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/boundary_graded_defect_action_kernel_v1.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "Boundary graded defect action kernel v1: DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "charged_Hessian_from_S_index_trace",
+      "label": "Charged Hessian from S_index_trace",
+      "status": "INVALIDATED_DO_NOT_CLAIM",
+      "dependencies": [
+        "boundary_graded_defect_action_kernel_v1"
+      ],
+      "blocks": [],
+      "evidence_source": "charged stiffness selector guardrail",
+      "repo_artifact_refs": [
+        "docs/charged_stiffness_action_selector_v1.md"
+      ],
+      "claim_allowed": false,
+      "claim_text_short": "S_index_trace is not the charged hierarchy Hessian.",
+      "do_not_claim_text": "Do not claim S_index_trace derives rho_ch or the charged Hessian."
+    },
+    {
+      "node_id": "charged_stiffness_action_source",
+      "label": "Charged stiffness action source",
+      "status": "OPEN_LOCALIZABLE",
+      "dependencies": [
+        "boundary_graded_defect_action_kernel_v1"
+      ],
+      "blocks": [
+        "rho_ch_exact_value"
+      ],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/charged_stiffness_action_selector_v1.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "Charged stiffness source is localized but open.",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "B_supp_trace_kernel",
+      "label": "B_supp trace kernel",
+      "status": "DERIVED_CONDITIONAL",
+      "dependencies": [
+        "boundary_graded_defect_action_kernel_v1"
+      ],
+      "blocks": [
+        "Rule_A_single_operator_trace"
+      ],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/charged_suppression_operator_kernel_v1.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "B_supp trace kernel: DERIVED_CONDITIONAL",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "Rule_A_single_operator_trace",
+      "label": "Rule A single-operator trace",
+      "status": "DERIVED_CONDITIONAL_ON_B_SUPP_TRACE_KERNEL",
+      "dependencies": [
+        "B_supp_trace_kernel"
+      ],
+      "blocks": [
+        "charged_Kf_generator"
+      ],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/charged_kf_rule_a_spectral_sanity_v1.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "Rule A single-operator trace: DERIVED_CONDITIONAL_ON_B_SUPP_TRACE_KERNEL",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "Rule_B_double_normalized_phase_candidate",
+      "label": "Rule B double-normalized phase candidate",
+      "status": "CANDIDATE_REQUIRES_INDEPENDENT_PHASE_RESPONSE",
+      "dependencies": [
+        "B_supp_trace_kernel"
+      ],
+      "blocks": [],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/charged_kf_rule_a_spectral_sanity_v1.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "Rule B remains a candidate requiring independent phase response.",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "charged_Kf_generator",
+      "label": "Charged Kf generator",
+      "status": "STRONGLY_SUPPORTED_CANDIDATE",
+      "dependencies": [
+        "mode_ledgers",
+        "Rule_A_single_operator_trace"
+      ],
+      "blocks": [
+        "charged_numerical_closure"
+      ],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "src/charged_kf_generator.py"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "Charged Kf generator: STRONGLY_SUPPORTED_CANDIDATE",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "rho_ch_branch_candidates",
+      "label": "rho_ch branch candidates",
+      "status": "BRANCH_CANDIDATE",
+      "dependencies": [
+        "charged_stiffness_action_source"
+      ],
+      "blocks": [
+        "rho_ch_exact_value"
+      ],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/rho_ch_branch_pressure_test_v1.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "rho_ch branch candidates: BRANCH_CANDIDATE",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "charged_stiffness_action_selector",
+      "label": "Charged stiffness action selector",
+      "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+      "dependencies": [
+        "rho_ch_branch_candidates"
+      ],
+      "blocks": [
+        "rho_ch_exact_value"
+      ],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/charged_stiffness_action_selector_v1.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "Selector audit found no unique action selector.",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "rho_ch_exact_value",
+      "label": "Exact rho_ch value",
+      "status": "OPEN_LOCALIZABLE",
+      "dependencies": [
+        "charged_stiffness_action_selector"
+      ],
+      "blocks": [
+        "charged_numerical_closure"
+      ],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/charged_stiffness_action_selector_v1.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "Exact rho_ch value: OPEN_LOCALIZABLE",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "charged_Kf_tridiagonal_bridge_topology",
+      "label": "Charged Kf tridiagonal bridge topology",
+      "status": "DERIVED_CONDITIONAL_ON_E3_LADDER_AND_TANGENT_ADJACENCY",
+      "dependencies": [
+        "charged_Kf_generator"
+      ],
+      "blocks": [
+        "charged_numerical_closure"
+      ],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/charged_kf_bridge_coupling_kernel_v1.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "Charged Kf tridiagonal bridge topology: DERIVED_CONDITIONAL_ON_E3_LADDER_AND_TANGENT_ADJACENCY",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "beta_f_reference_bridge_magnitude",
+      "label": "beta_f reference bridge magnitude",
+      "status": "OPEN_LOCALIZABLE",
+      "dependencies": [
+        "charged_Kf_tridiagonal_bridge_topology"
+      ],
+      "blocks": [
+        "charged_numerical_closure"
+      ],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/charged_kf_bridge_coupling_kernel_v1.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "beta_f reference bridge magnitude: OPEN_LOCALIZABLE",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "kappa_f_tangent_bridge_magnitude",
+      "label": "kappa_f tangent bridge magnitude",
+      "status": "OPEN_LOCALIZABLE",
+      "dependencies": [
+        "charged_Kf_tridiagonal_bridge_topology"
+      ],
+      "blocks": [
+        "charged_numerical_closure"
+      ],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/charged_kf_bridge_coupling_kernel_v1.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "kappa_f tangent bridge magnitude: OPEN_LOCALIZABLE",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "minimal_1_over_21_bridge_seed",
+      "label": "Minimal 1/21 bridge seed",
+      "status": "STRONGLY_SUPPORTED_CANDIDATE",
+      "dependencies": [
+        "charged_Kf_tridiagonal_bridge_topology"
+      ],
+      "blocks": [],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/charged_kf_bridge_coupling_kernel_v1.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "The 1/21 bridge seed is a named candidate, not a derived magnitude.",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "up_6_0_Zvirt_threshold",
+      "label": "up (6,0) Zvirt threshold",
+      "status": "DERIVED_CONDITIONAL",
+      "dependencies": [
+        "charged_Kf_generator"
+      ],
+      "blocks": [
+        "full_threshold_operator"
+      ],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/full_threshold_operator_eligibility_v1.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "up (6,0) Zvirt threshold: DERIVED_CONDITIONAL",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "full_threshold_operator",
+      "label": "Full threshold operator",
+      "status": "OPEN",
+      "dependencies": [
+        "up_6_0_Zvirt_threshold"
+      ],
+      "blocks": [
+        "charged_numerical_closure"
+      ],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/full_threshold_operator_eligibility_v1.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "Full threshold operator: OPEN",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "charged_numerical_closure",
+      "label": "Charged numerical closure",
+      "status": "OPEN",
+      "dependencies": [
+        "rho_ch_exact_value",
+        "beta_f_reference_bridge_magnitude",
+        "kappa_f_tangent_bridge_magnitude",
+        "full_threshold_operator",
+        "RG_transport_interface"
+      ],
+      "blocks": [
+        "numerical_closure"
+      ],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/open_blockers_backlog.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "Charged numerical closure: OPEN",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "neutral_sector_operator_kernel",
+      "label": "Neutral sector operator kernel",
+      "status": "STRUCTURALLY_MOTIVATED_CANDIDATE",
+      "dependencies": [
+        "mode_ledgers"
+      ],
+      "blocks": [
+        "neutral_Hessian_symbolic_form",
+        "neutral_numerical_closure"
+      ],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/neutral_sector_operator_kernel_v1.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "Neutral sector operator kernel: STRUCTURALLY_MOTIVATED_CANDIDATE",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "neutrino_mode_ledger",
+      "label": "Neutrino mode ledger",
+      "status": "DERIVED_CONDITIONAL_ON_SECTOR_ENGINE",
+      "dependencies": [
+        "neutral_sector_operator_kernel"
+      ],
+      "blocks": [
+        "neutral_Hessian_symbolic_form"
+      ],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/neutral_sector_operator_kernel_v1.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "Neutrino mode ledger: DERIVED_CONDITIONAL_ON_SECTOR_ENGINE",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "neutral_Hessian_symbolic_form",
+      "label": "Neutral Hessian symbolic form",
+      "status": "OPEN_LOCALIZABLE",
+      "dependencies": [
+        "neutrino_mode_ledger"
+      ],
+      "blocks": [
+        "neutral_Hessian_branch_N0",
+        "neutral_Hessian_branch_N1",
+        "neutral_Hessian_branch_N2"
+      ],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/neutral_sector_operator_kernel_v1.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "Neutral Hessian symbolic form: OPEN_LOCALIZABLE",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "neutral_Hessian_branch_N0",
+      "label": "Neutral Hessian branch N0",
+      "status": "STRUCTURALLY_MOTIVATED_CANDIDATE",
+      "dependencies": [
+        "neutral_Hessian_symbolic_form"
+      ],
+      "blocks": [],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/neutral_sector_operator_kernel_v1.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "Neutral Hessian branch N0: STRUCTURALLY_MOTIVATED_CANDIDATE",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "neutral_Hessian_branch_N1",
+      "label": "Neutral Hessian branch N1",
+      "status": "STRUCTURALLY_POSSIBLE_NOT_DERIVED",
+      "dependencies": [
+        "neutral_Hessian_symbolic_form"
+      ],
+      "blocks": [],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/neutral_sector_operator_kernel_v1.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "Neutral Hessian branch N1: STRUCTURALLY_POSSIBLE_NOT_DERIVED",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "neutral_Hessian_branch_N2",
+      "label": "Neutral Hessian branch N2",
+      "status": "STRUCTURALLY_MOTIVATED_CANDIDATE",
+      "dependencies": [
+        "neutral_Hessian_symbolic_form"
+      ],
+      "blocks": [],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/neutral_sector_operator_kernel_v1.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "Neutral Hessian branch N2: STRUCTURALLY_MOTIVATED_CANDIDATE",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "neutral_eta_source",
+      "label": "Neutral eta source",
+      "status": "OPEN_LOCALIZABLE",
+      "dependencies": [
+        "neutral_sector_operator_kernel"
+      ],
+      "blocks": [
+        "neutral_numerical_closure"
+      ],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/neutral_sector_operator_kernel_v1.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "Neutral eta source: OPEN_LOCALIZABLE",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "neutral_beta_bridge_source",
+      "label": "Neutral beta bridge source",
+      "status": "OPEN_LOCALIZABLE",
+      "dependencies": [
+        "neutral_sector_operator_kernel"
+      ],
+      "blocks": [
+        "neutral_numerical_closure"
+      ],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/neutral_sector_operator_kernel_v1.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "Neutral beta bridge source: OPEN_LOCALIZABLE",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "neutral_kappa_bridge_source",
+      "label": "Neutral kappa bridge source",
+      "status": "OPEN_LOCALIZABLE",
+      "dependencies": [
+        "neutral_sector_operator_kernel"
+      ],
+      "blocks": [
+        "neutral_numerical_closure"
+      ],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/neutral_sector_operator_kernel_v1.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "Neutral kappa bridge source: OPEN_LOCALIZABLE",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "neutral_threshold_operator",
+      "label": "Neutral threshold operator",
+      "status": "OPEN",
+      "dependencies": [
+        "neutral_sector_operator_kernel"
+      ],
+      "blocks": [
+        "neutral_numerical_closure"
+      ],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/neutral_sector_operator_kernel_v1.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "Neutral threshold operator: OPEN",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "PMNS_structural_source",
+      "label": "PMNS structural source",
+      "status": "STRUCTURALLY_MOTIVATED_CANDIDATE",
+      "dependencies": [
+        "charged_Kf_generator",
+        "neutral_sector_operator_kernel"
+      ],
+      "blocks": [
+        "PMNS_numerical_closure"
+      ],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/neutral_sector_operator_kernel_v1.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "PMNS structural source: STRUCTURALLY_MOTIVATED_CANDIDATE",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "PMNS_numerical_closure",
+      "label": "PMNS numerical closure",
+      "status": "OPEN",
+      "dependencies": [
+        "PMNS_structural_source",
+        "neutral_numerical_closure",
+        "charged_numerical_closure"
+      ],
+      "blocks": [
+        "numerical_closure"
+      ],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/neutral_sector_operator_kernel_v1.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "PMNS numerical closure: OPEN",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "neutral_numerical_closure",
+      "label": "Neutral numerical closure",
+      "status": "OPEN",
+      "dependencies": [
+        "neutral_eta_source",
+        "neutral_beta_bridge_source",
+        "neutral_kappa_bridge_source",
+        "neutral_threshold_operator",
+        "neutral_Hessian_symbolic_form"
+      ],
+      "blocks": [
+        "numerical_closure"
+      ],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/neutral_sector_operator_kernel_v1.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "Neutral numerical closure: OPEN",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "RG_transport_interface",
+      "label": "RG transport interface",
+      "status": "OPEN",
+      "dependencies": [
+        "charged_Kf_generator",
+        "neutral_sector_operator_kernel"
+      ],
+      "blocks": [
+        "scheme_transport",
+        "charged_numerical_closure"
+      ],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/rg_transport_interface_v1.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "RG transport interface: OPEN",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "scheme_transport",
+      "label": "Scheme transport",
+      "status": "OPEN",
+      "dependencies": [
+        "RG_transport_interface"
+      ],
+      "blocks": [
+        "scheme_alignment"
+      ],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/rg_transport_interface_v1.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "Scheme transport: OPEN",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "scheme_alignment",
+      "label": "Scheme alignment",
+      "status": "OPEN",
+      "dependencies": [
+        "scheme_transport"
+      ],
+      "blocks": [
+        "common_scale_comparison"
+      ],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/rg_transport_interface_v1.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "Scheme alignment: OPEN",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "common_scale_comparison",
+      "label": "Common-scale comparison",
+      "status": "OPEN",
+      "dependencies": [
+        "scheme_alignment"
+      ],
+      "blocks": [
+        "comparison_ready_predictions"
+      ],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/rg_transport_interface_v1.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "Common-scale comparison: OPEN",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "comparison_ready_predictions",
+      "label": "Comparison-ready predictions",
+      "status": "OPEN",
+      "dependencies": [
+        "common_scale_comparison"
+      ],
+      "blocks": [
+        "numerical_closure"
+      ],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/rg_transport_interface_v1.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "Comparison-ready predictions: OPEN",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "official_frozen_predictions",
+      "label": "Official frozen predictions",
+      "status": "DERIVED_CONDITIONAL",
+      "dependencies": [
+        "mode_ledgers"
+      ],
+      "blocks": [],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/frozen_predictions.md",
+        "docs/frozen_predictions.json"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "Frozen prediction files remain immutable.",
+      "do_not_claim_text": ""
+    },
+    {
+      "node_id": "numerical_closure",
+      "label": "Numerical closure",
+      "status": "OPEN",
+      "dependencies": [
+        "charged_numerical_closure",
+        "neutral_numerical_closure",
+        "PMNS_numerical_closure",
+        "comparison_ready_predictions"
+      ],
+      "blocks": [],
+      "evidence_source": "repo scaffold",
+      "repo_artifact_refs": [
+        "docs/open_blockers_backlog.md"
+      ],
+      "claim_allowed": true,
+      "claim_text_short": "Numerical closure remains open.",
+      "do_not_claim_text": ""
+    }
+  ],
+  "node_count": 42,
+  "status_counts": {
+    "DERIVED_CONDITIONAL": 7,
+    "DERIVED_CONDITIONAL_ON_EXPLICIT_BOUNDARY_ACTION_KERNEL": 2,
+    "INVALIDATED_DO_NOT_CLAIM": 1,
+    "OPEN_LOCALIZABLE": 8,
+    "DERIVED_CONDITIONAL_ON_B_SUPP_TRACE_KERNEL": 1,
+    "CANDIDATE_REQUIRES_INDEPENDENT_PHASE_RESPONSE": 1,
+    "STRONGLY_SUPPORTED_CANDIDATE": 2,
+    "BRANCH_CANDIDATE": 1,
+    "STRUCTURALLY_MOTIVATED_NOT_DERIVED": 1,
+    "DERIVED_CONDITIONAL_ON_E3_LADDER_AND_TANGENT_ADJACENCY": 1,
+    "OPEN": 11,
+    "STRUCTURALLY_MOTIVATED_CANDIDATE": 4,
+    "DERIVED_CONDITIONAL_ON_SECTOR_ENGINE": 1,
+    "STRUCTURALLY_POSSIBLE_NOT_DERIVED": 1
+  },
+  "missing_dependency_references": [],
+  "claim_boundary": "Dependency graph localizes open selectors; it does not claim numerical closure."
+}
