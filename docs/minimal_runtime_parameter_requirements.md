@@ -23,3 +23,9 @@ inputs. Couplings, masses, widths, neutrino label conventions, and
 renormalization scale are collider-interface runtime requirements only.
 
 No numerical PDG values or numerical mass/width constants are inserted.
+
+## Phase Three-K Follow-On
+
+Phase Three-K preserves these runtime requirements as placeholders in the
+disabled FeynRules draft. No numerical runtime masses, widths, or couplings are
+inserted.

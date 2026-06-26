@@ -30,3 +30,13 @@ simulation/comparison inputs only and do not derive or retune BHSM constants.
 
 `V_CKM_BH` and `U_PMNS_BH` are BHSM source matrices from repo artifacts.
 
+## Phase Three-K Follow-On
+
+The Phase Three-J prep expression set is flattened into a disabled
+FeynRules syntax draft at:
+
+```text
+models/feynrules/BHSM_Minimal_Collider_Interface.fr.disabled
+```
+
+It is not enabled as a production FeynRules file.
