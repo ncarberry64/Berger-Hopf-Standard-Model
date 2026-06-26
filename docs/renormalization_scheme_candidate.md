@@ -20,3 +20,8 @@ Common-scale transport exists as a BHSM interface artifact, but production
 renormalization remains open. No beta functions or thresholds are invented in
 this candidate ledger.
 
+## Phase Three-F Follow-On
+
+Phase Three-F keeps production renormalization open. Runtime collider-interface
+inputs may support future comparison workflows, but they are not derivation
+inputs and do not close the no-fit renormalization scheme.

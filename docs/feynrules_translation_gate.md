@@ -40,3 +40,9 @@ candidate ledgers. The FeynRules gate remains closed because target
 normalization conventions are not BHSM-derived field-strength theorems and the
 mass-width, renormalization, complete 4D Lagrangian, and production vertex
 tables remain open.
+
+Phase Three-F clears the interface normalization sub-gate by defining
+canonical production-basis fields with `Z_A,prod = Z_psi,prod = 1`. The
+FeynRules gate remains closed because complete 4D Lagrangian export,
+mass-width closure, renormalization closure, and production vertex tables
+remain open.

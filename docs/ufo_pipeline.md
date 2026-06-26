@@ -103,3 +103,15 @@ target conventions, not BHSM-derived dynamical field-strength predictions.
 The candidate gauge couplings are scheme-conditional and not production UFO
 couplings. No fake masses, fake widths, fake Feynman rules, fake LHE/HepMC
 files, MadGraph readiness, Athena readiness, or CMSSW readiness are claimed.
+
+## Phase Three-F Production Basis And Runtime Parameters
+
+Phase Three-F defines a canonical production basis for future FeynRules/UFO
+interfaces. In that basis `Z_A,prod = 1` and `Z_psi,prod = 1` are basis
+definitions rather than BHSM dynamical wavefunction-renormalization
+predictions. This clears the interface normalization gate only.
+
+Phase Three-F also separates `BHSM_PURE_NOFIT` from
+`BHSM_COLLIDER_INTERFACE`. Runtime empirical masses, widths, and cards may be
+allowed only in collider-interface comparison mode and do not modify BHSM
+constants, boundary coefficients, mixing matrices, or frozen predictions.

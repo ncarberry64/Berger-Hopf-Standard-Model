@@ -44,3 +44,8 @@ v0.7 artifacts. Vector and fermion target normalizations remain standard HEP
 interface conventions, while gauge fixing, production coupling, mass-width, and
 renormalization schemes remain candidate or open. No loadable UFO model is
 exported.
+
+Phase Three-F clears the interface normalization blocker by defining a
+canonical production basis. It does not resolve the complete 4D Lagrangian,
+production vertex table, mass-width, renormalization, loadable UFO, or event
+generation blockers.

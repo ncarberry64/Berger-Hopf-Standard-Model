@@ -127,6 +127,22 @@ nontrivial BHSM-derived field-strength predictions.
 This does not constitute production FeynRules, UFO, MadGraph, LHE/HepMC,
 Athena, or CMSSW readiness.
 
+### Phase Three-F production-basis and runtime-parameter status
+
+BHSM now defines a canonical production basis for future FeynRules/UFO
+interfaces. In that production basis, vector and fermion fields are represented
+with canonical kinetic normalization, so Z_A,prod = 1 and Z_psi,prod = 1 are
+basis definitions, not empirical fits and not nontrivial BHSM
+wavefunction-renormalization predictions.
+
+BHSM also defines two parameter modes: BHSM_PURE_NOFIT for derivation-only
+internal use, and BHSM_COLLIDER_INTERFACE for future runtime detector/event
+comparison inputs. Runtime empirical masses, widths, or cards may not modify
+BHSM constants, boundary coefficients, mixing matrices, or frozen predictions.
+
+This does not constitute production FeynRules, UFO, MadGraph, LHE/HepMC,
+Athena, or CMSSW readiness.
+
 ## 1. What Is Complete In v1.0.0
 
 - `BHSM_internal_boundary_package = COMPLETE_EXPORTED`
