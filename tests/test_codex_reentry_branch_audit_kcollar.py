@@ -10,7 +10,9 @@ if str(SRC) not in sys.path:
     sys.path.insert(0, str(SRC))
 
 import charged_kf_generator as kf
+import charged_branch_matrix_export as branch_export
 import codex_reentry_branch_audit_kcollar as reentry
+import bhsm_k_collar_response_audit as collar_audit
 
 
 PUBLIC_STATUS = "structural architecture integrated conditional; numerical closure open"
@@ -67,15 +69,39 @@ def test_branch_matrix_exports_do_not_guess_a_background():
     a_local = load_artifact("charged_branch_matrices_v2_A_local.json")
     a_bg = load_artifact("charged_branch_matrices_v2_A_background_identity.json")
     b_diag = load_artifact("charged_branch_matrices_v2_B_diagnostic.json")
-    assert a_local["matrix_status"] == "OPEN_EXPORT_REQUIRED"
-    assert a_bg["matrix_status"] == "OPEN_EXPORT_REQUIRED"
+    assert a_local["matrix_status"] == "EXPORTED"
+    assert a_bg["matrix_status"] == "EXPORTED"
+    assert a_bg["C_ch"] == 3
+    assert a_bg["C_ch_source"] == "Tr_sector(P_ch)"
+    assert a_bg["K_collar"] == "identity second-jet collar"
+    assert a_bg["dependency_order"] == branch_export.DEPENDENCY_ORDER
+    assert a_bg["chi_used"] is False
+    assert a_bg["chi_fit_to_masses"] is False
+    assert a_bg["direct_projected_Kf_multiplier_by_3"] is False
     assert b_diag["matrix_status"] == "EXPORTED_FROM_REPO_GENERATOR"
     assert b_diag["branch"] == "B-diagnostic"
+    assert b_diag["not_A_background"] is True
     assert b_diag["used_target_data"] is False
     assert b_diag["sectors"]["up"]["Z_virt_middle_up"] == "1/2 if dressed branch active"
 
 
-def test_k_collar_audit_is_open_when_matrices_are_template_only():
+def test_a_background_identity_is_added_before_projection_not_direct_multiplier():
+    a_local = load_artifact("charged_branch_matrices_v2_A_local.json")
+    a_bg = load_artifact("charged_branch_matrices_v2_A_background_identity.json")
+    for sector in ("lepton", "up", "down"):
+        local = a_local["sectors"][sector]["K"]
+        background = a_bg["sectors"][sector]["K"]
+        differs_from_direct_multiplier = False
+        for i in range(3):
+            for j in range(3):
+                expected = local[i][j] + (3.0 if i == j else 0.0)
+                assert abs(background[i][j] - expected) < 1e-12
+                if abs(background[i][j] - 3.0 * local[i][j]) > 1e-12:
+                    differs_from_direct_multiplier = True
+        assert differs_from_direct_multiplier
+
+
+def test_k_collar_audit_runs_on_valid_matrices_and_open_on_templates():
     a_local = load_artifact("K_collar_response_audit_A_local_v2.json")
     a_bg = load_artifact("K_collar_response_audit_A_background_identity_v2.json")
     for payload in (a_local, a_bg):
@@ -84,7 +110,13 @@ def test_k_collar_audit_is_open_when_matrices_are_template_only():
         assert payload["D"] == "3 diag(0,1,2)"
         assert payload["chi_source"] == "chi = lambda_A Tr(A^2)"
         assert payload["chi_fit_to_masses"] is False
-        assert payload["stack_verdict"] == "STACK_COLLAR_OPEN"
+        assert payload["stack_verdict"] == "STACK_COLLAR_REJECTED_AS_PRIMARY"
+        assert set(payload["sector_responses"]) == {"lepton", "up", "down"}
+    template_payload = collar_audit.audit_payload(
+        "template",
+        {"matrix_status": "OPEN_EXPORT_REQUIRED"},
+    )
+    assert template_payload["stack_verdict"] == "STACK_COLLAR_OPEN"
 
 
 def test_frozen_constants_and_status_ledgers_are_guarded():
@@ -97,13 +129,19 @@ def test_frozen_constants_and_status_ledgers_are_guarded():
     assert constants["Z_virt_scope"] == "up sector, middle mode (q,j)=(6,0) only"
     assert ledger["statuses"]["full_BHSM_numerical_closure"] == "OPEN"
     assert ledger["statuses"]["chi_from_mass_fit"] == "FORBIDDEN"
+    assert ledger["statuses"]["A_local_branch_matrix_export"] == "EXPORTED"
+    assert ledger["statuses"]["A_background_identity_branch"] == "IMPLEMENTED_CONDITIONAL"
+    assert ledger["statuses"]["A_background_dependency_order"] == "VERIFIED"
+    assert ledger["statuses"]["K_collar_response_audit"] == "RAN"
     assert ledger["statuses"]["B_diagnostic_branch"] == "ALLOWED_ONLY_AS_DIAGNOSTIC"
     assert claims["official_predictions_changed"] is False
     assert forbidden["forbidden_claims_absent"] is True
 
 
 def test_public_status_appears_in_all_new_artifacts():
-    for path in (ROOT / "artifacts").glob("*_v2.json"):
+    paths = list((ROOT / "artifacts").glob("*_v2.json"))
+    paths.append(ROOT / "artifacts" / "a_background_collar_dependency_order_v1.json")
+    for path in paths:
         payload = json.loads(path.read_text(encoding="utf-8"))
         assert payload["public_status"] == PUBLIC_STATUS
         assert payload["official_predictions_changed"] is False
