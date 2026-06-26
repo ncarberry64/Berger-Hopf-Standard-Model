@@ -1,0 +1,146 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{hyperref}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{enumitem}
+\sloppy
+\emergencystretch=3em
+
+\title{The Berger-Hopf Standard Model v1.0.0:\\A Complete Internal Boundary No-Fit Prediction Package}
+\author{Norman P. Carberry\\Independent Researcher, Oconomowoc, Wisconsin, USA}
+\date{2026-06-25}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+This work reports the v1.0.0 release of the Berger-Hopf Standard Model repository as a complete internal boundary no-fit prediction package. The release exports profile-scale constants, charged boundary outputs, neutral/PMNS/CKM/CP boundary outputs, and a boundary-scale transport identity as machine-readable artifacts. External empirical comparison is implemented as a separate comparison-only layer and is not used to derive the internal package.
+\end{abstract}
+
+\section{Introduction}
+The Berger-Hopf Standard Model (BHSM) repository is organized around a derive-freeze-compare discipline. Version v1.0.0 packages the current internal boundary no-fit output as a release artifact. The release does not report empirical validation. It reports that the internal boundary package is complete and exported, and that the external empirical comparison machinery is present but separate.
+
+\section{Motivation and Scope}
+The purpose of this release is to make the BHSM boundary package inspectable. The package includes profile-scale closure, charged boundary outputs, neutral operator output, PMNS/CKM/CP boundary outputs, and boundary-scale transport. Each item is exported so that subsequent empirical comparison can be performed without altering the internal derivation.
+
+\section{Frozen Constants and Author-Supplied Axioms}
+\begin{verbatim}
+a = alpha^{-1}/(12*pi^2)
+S = 1/(4*pi)
+Lambda^2 = 1/(4*pi)
+r^2 = S = Lambda^2 = 1/(4*pi)
+r = 1/sqrt(4*pi)
+Z_H = 1
+kappa_H = mu_H = 64*pi^5
+sigma = 4*pi^(5/2)
+tau = 1/(4*pi^(3/2))
+\end{verbatim}
+
+Numerically:
+\begin{verbatim}
+kappa_H = 19585.25982625801
+sigma = 69.97367331049945
+tau = 0.04489678053129164
+\end{verbatim}
+
+Identity checks:
+\begin{verbatim}
+sigma*tau = pi
+kappa_H = 4*sigma^2
+tau = pi/sigma
+\end{verbatim}
+
+\section{Internal Boundary Geometry}
+The internal boundary geometry is represented in the release by profile-scale and charged-boundary artifacts. The completion status is:
+\begin{verbatim}
+BHSM_internal_boundary_package = COMPLETE_EXPORTED
+BHSM_boundary_no_fit_prediction_package = COMPLETE_EXPORTED
+\end{verbatim}
+
+\section{Profile-Scale Closure}
+The profile-scale closure is represented by \path{canonical_profile_hessian_theorem_v1.json}, \path{tau_sigma_boundary_values_v1.json}, and \path{profile_scale_closure_values_v1.json}.
+
+\section{Charged Boundary Output Package}
+The exact charged boundary values are:
+\begin{verbatim}
+beta_l*tau = kappa_l*tau = 4/(1323*pi^(3/2))
+beta_u*tau = 8/(1323*pi^(3/2))
+kappa_u*tau = 4/(1323*pi^(3/2))
+beta_d*tau = 16/(1323*pi^(3/2))
+kappa_d*tau = 4/(3591*pi^(3/2))
+\end{verbatim}
+
+\section{Neutral, PMNS, CKM, and CP Boundary Outputs}
+The neutral and mixing/phase artifacts are \path{neutral_operator_no_fit_output_v1.json}, \path{PMNS_no_fit_operator_output_v1.json}, \path{CKM_no_fit_operator_output_v1.json}, and \path{CP_no_fit_holonomy_output_v1.json}. Their empirical evaluation belongs to the external comparison layer.
+
+\section{Boundary-Scale Transport Identity}
+At the BHSM boundary scale:
+\begin{verbatim}
+T_total(mu_BH_boundary -> mu_BH_boundary) = 1
+\end{verbatim}
+
+\section{External Empirical Comparison Layer}
+The release status is:
+\begin{verbatim}
+external_empirical_comparison_package = IMPLEMENTED_COMPARISON_ONLY_LAYER
+external_empirical_comparison_status = DATA_ABSENT_OR_DATA_OPTIONAL
+\end{verbatim}
+The layer is one-way:
+\begin{verbatim}
+internal boundary package -> external comparison transport -> residual audit
+\end{verbatim}
+
+\section{Reproducibility and Machine-Readable Artifacts}
+\begin{verbatim}
+python -m pip install -e .
+python -m pytest -q
+\end{verbatim}
+The completion manifest is \texttt{artifacts/BHSM\_COMPLETE\_V1\_RELEASE\_CANDIDATE.json}. The v1.0.0 release manifest is \texttt{artifacts/BHSM\_v1\_release\_manifest.json}.
+
+\section{Falsification Criteria}
+The release is falsifiable because it freezes internal outputs before external comparison. External gates require target data and are marked \texttt{NOT\_EVALUATED\_DATA\_ABSENT} when such data are not present.
+
+\section{Claim Boundaries}
+Allowed claim: internal boundary no-fit package complete; external empirical comparison layer separate/open.
+Not claimed: empirical validation, peer review, exact observed masses, external survey validation, replacement of the Standard Model, or feedback from empirical target data into the BHSM derivation.
+
+\section{Discussion}
+The v1.0.0 package is best read as a frozen internal mathematical and computational release. If empirical target data later disagree, the proper response is to report the disagreement rather than retune the internal constants.
+
+\section{Conclusion}
+BHSM v1.0.0 exports a complete internal boundary no-fit prediction package and a separate comparison-only empirical layer. It is ready for repository inspection, reproducibility testing, Zenodo archival, and future external comparison work. It does not claim empirical validation.
+
+\section*{References}
+See \texttt{manuscript/BHSM\_v1\_complete\_internal\_boundary\_no\_fit\_package.bib}.
+
+\appendix
+\section{Artifact Manifest}
+\begin{itemize}[leftmargin=*]
+\item \texttt{artifacts/BHSM\_COMPLETE\_V1\_RELEASE\_CANDIDATE.json}
+\item \texttt{artifacts/BHSM\_boundary\_no\_fit\_prediction\_package\_v1.json}
+\item \texttt{artifacts/canonical\_profile\_hessian\_theorem\_v1.json}
+\item \texttt{artifacts/tau\_sigma\_boundary\_values\_v1.json}
+\item \texttt{artifacts/profile\_scale\_closure\_values\_v1.json}
+\item \texttt{artifacts/charged\_boundary\_bridge\_values\_v1.json}
+\item \texttt{artifacts/common\_scale\_boundary\_transport\_v1.json}
+\item \texttt{artifacts/neutral\_operator\_no\_fit\_output\_v1.json}
+\item \texttt{artifacts/PMNS\_no\_fit\_operator\_output\_v1.json}
+\item \texttt{artifacts/CKM\_no\_fit\_operator\_output\_v1.json}
+\item \texttt{artifacts/CP\_no\_fit\_holonomy\_output\_v1.json}
+\item \texttt{artifacts/BHSM\_external\_comparison\_target\_schema\_v1.json}
+\item \texttt{artifacts/BHSM\_external\_transport\_layer\_v1.json}
+\item \texttt{artifacts/BHSM\_falsification\_gates\_v1.json}
+\item \texttt{artifacts/BHSM\_external\_empirical\_comparison\_package\_v1.json}
+\item \texttt{artifacts/BHSM\_v1\_release\_manifest.json}
+\end{itemize}
+
+\section{Test and Audit Summary}
+PR \#53 validation: focused completion tests 9 passed; adjacent stack tests 112 passed; full suite 1768 passed; forbidden-claims audit passed; BHSM status audit passed; frozen prediction integrity audit passed; safety scan clean with benign checklist/test wording and variable-name hits.
+
+\section{Release Checklist}
+See \texttt{docs/release\_checklist\_v1.0.0.md}.
+
+\end{document}

@@ -12,6 +12,8 @@
     "CKM data",
     "PMNS data",
     "measured fine-structure alpha",
+    "measured gauge couplings",
+    "measured Yukawa couplings",
     "empirical target ratios"
   ],
   "transport_stages": [
@@ -21,10 +23,12 @@
     "BRIDGE_DRESSED",
     "THRESHOLD_DRESSED",
     "RG_TRANSPORT_PENDING",
+    "RG_TRANSPORT_PARTIALLY_LOCALIZED",
+    "RG_TRANSPORT_RESIDUAL_LOCALIZED",
     "SCHEME_ALIGNED",
     "COMPARISON_READY"
   ],
-  "current_max_stage": "RG_TRANSPORT_PENDING",
+  "current_max_stage": "RG_TRANSPORT_RESIDUAL_LOCALIZED",
   "bare_spectral_outputs": [
     {
       "sector": "charged_lepton",
@@ -83,6 +87,603 @@
       "notes": "neutral sector remains symbolic/open before transport"
     }
   ],
+  "same_sector_gauge_cancellation": {
+    "id": "PO-BH-same-sector-rg-gauge-cancellation-v1",
+    "title": "Same-Sector RG Gauge-Cancellation Theorem v1",
+    "public_status": "structural architecture integrated conditional; numerical closure open",
+    "frozen_predictions_changed": false,
+    "official_predictions_changed": false,
+    "uses_empirical_derivation_inputs": false,
+    "forbidden_derivation_inputs": [
+      "observed charged masses",
+      "observed neutrino masses",
+      "neutrino mass splittings",
+      "CKM data",
+      "PMNS data",
+      "measured fine-structure alpha",
+      "measured gauge couplings",
+      "empirical target ratios"
+    ],
+    "theorem_statement": "For two branches in the same BHSM sector, gamma_gauge(sector_f) cancels in d ln(m_a/m_b)/d ln(mu).",
+    "assumptions": [
+      "Both branches are in the same BHSM sector.",
+      "Same-sector branches share the same gauge representation.",
+      "Only the gauge-universal anomalous-dimension component is being canceled."
+    ],
+    "anomalous_dimension_decompositions": [
+      {
+        "sector": "charged_lepton",
+        "gauge_component": "gamma_gauge(charged_lepton)",
+        "residual_component": "gamma_residual,charged_lepton",
+        "decomposition": "gamma_a = gamma_gauge(charged_lepton) + gamma_residual,a; gamma_b = gamma_gauge(charged_lepton) + gamma_residual,b"
+      },
+      {
+        "sector": "up",
+        "gauge_component": "gamma_gauge(up)",
+        "residual_component": "gamma_residual,up",
+        "decomposition": "gamma_a = gamma_gauge(up) + gamma_residual,a; gamma_b = gamma_gauge(up) + gamma_residual,b"
+      },
+      {
+        "sector": "down",
+        "gauge_component": "gamma_gauge(down)",
+        "residual_component": "gamma_residual,down",
+        "decomposition": "gamma_a = gamma_gauge(down) + gamma_residual,a; gamma_b = gamma_gauge(down) + gamma_residual,b"
+      }
+    ],
+    "charged_ratio_classifications": [
+      {
+        "ratio_id": "mu_over_tau",
+        "numerator": "mu",
+        "denominator": "tau",
+        "numerator_sector": "charged_lepton",
+        "denominator_sector": "charged_lepton",
+        "same_sector": true,
+        "shared_sector_representation": true,
+        "transport_equation": "d ln(R_ab) / d ln(mu) = gamma_a - gamma_b",
+        "gauge_transport_component": "CANCELED_BY_SAME_SECTOR_THEOREM",
+        "residual_transport": "OPEN_LOCALIZABLE",
+        "transport_stage": "RG_TRANSPORT_PARTIALLY_LOCALIZED",
+        "comparison_ready": false,
+        "status": "DERIVED_CONDITIONAL_ON_SHARED_SECTOR_REPRESENTATION",
+        "notes": "Gauge-universal anomalous-dimension contribution cancels because both branches share the same BHSM sector representation."
+      },
+      {
+        "ratio_id": "e_over_tau",
+        "numerator": "e",
+        "denominator": "tau",
+        "numerator_sector": "charged_lepton",
+        "denominator_sector": "charged_lepton",
+        "same_sector": true,
+        "shared_sector_representation": true,
+        "transport_equation": "d ln(R_ab) / d ln(mu) = gamma_a - gamma_b",
+        "gauge_transport_component": "CANCELED_BY_SAME_SECTOR_THEOREM",
+        "residual_transport": "OPEN_LOCALIZABLE",
+        "transport_stage": "RG_TRANSPORT_PARTIALLY_LOCALIZED",
+        "comparison_ready": false,
+        "status": "DERIVED_CONDITIONAL_ON_SHARED_SECTOR_REPRESENTATION",
+        "notes": "Gauge-universal anomalous-dimension contribution cancels because both branches share the same BHSM sector representation."
+      },
+      {
+        "ratio_id": "c_over_t",
+        "numerator": "c",
+        "denominator": "t",
+        "numerator_sector": "up",
+        "denominator_sector": "up",
+        "same_sector": true,
+        "shared_sector_representation": true,
+        "transport_equation": "d ln(R_ab) / d ln(mu) = gamma_a - gamma_b",
+        "gauge_transport_component": "CANCELED_BY_SAME_SECTOR_THEOREM",
+        "residual_transport": "OPEN_LOCALIZABLE",
+        "transport_stage": "RG_TRANSPORT_PARTIALLY_LOCALIZED",
+        "comparison_ready": false,
+        "status": "DERIVED_CONDITIONAL_ON_SHARED_SECTOR_REPRESENTATION",
+        "notes": "Gauge-universal anomalous-dimension contribution cancels because both branches share the same BHSM sector representation."
+      },
+      {
+        "ratio_id": "u_over_t",
+        "numerator": "u",
+        "denominator": "t",
+        "numerator_sector": "up",
+        "denominator_sector": "up",
+        "same_sector": true,
+        "shared_sector_representation": true,
+        "transport_equation": "d ln(R_ab) / d ln(mu) = gamma_a - gamma_b",
+        "gauge_transport_component": "CANCELED_BY_SAME_SECTOR_THEOREM",
+        "residual_transport": "OPEN_LOCALIZABLE",
+        "transport_stage": "RG_TRANSPORT_PARTIALLY_LOCALIZED",
+        "comparison_ready": false,
+        "status": "DERIVED_CONDITIONAL_ON_SHARED_SECTOR_REPRESENTATION",
+        "notes": "Gauge-universal anomalous-dimension contribution cancels because both branches share the same BHSM sector representation."
+      },
+      {
+        "ratio_id": "s_over_b",
+        "numerator": "s",
+        "denominator": "b",
+        "numerator_sector": "down",
+        "denominator_sector": "down",
+        "same_sector": true,
+        "shared_sector_representation": true,
+        "transport_equation": "d ln(R_ab) / d ln(mu) = gamma_a - gamma_b",
+        "gauge_transport_component": "CANCELED_BY_SAME_SECTOR_THEOREM",
+        "residual_transport": "OPEN_LOCALIZABLE",
+        "transport_stage": "RG_TRANSPORT_PARTIALLY_LOCALIZED",
+        "comparison_ready": false,
+        "status": "DERIVED_CONDITIONAL_ON_SHARED_SECTOR_REPRESENTATION",
+        "notes": "Gauge-universal anomalous-dimension contribution cancels because both branches share the same BHSM sector representation."
+      },
+      {
+        "ratio_id": "d_over_b",
+        "numerator": "d",
+        "denominator": "b",
+        "numerator_sector": "down",
+        "denominator_sector": "down",
+        "same_sector": true,
+        "shared_sector_representation": true,
+        "transport_equation": "d ln(R_ab) / d ln(mu) = gamma_a - gamma_b",
+        "gauge_transport_component": "CANCELED_BY_SAME_SECTOR_THEOREM",
+        "residual_transport": "OPEN_LOCALIZABLE",
+        "transport_stage": "RG_TRANSPORT_PARTIALLY_LOCALIZED",
+        "comparison_ready": false,
+        "status": "DERIVED_CONDITIONAL_ON_SHARED_SECTOR_REPRESENTATION",
+        "notes": "Gauge-universal anomalous-dimension contribution cancels because both branches share the same BHSM sector representation."
+      }
+    ],
+    "same_sector_transport_records": [
+      {
+        "ratio_id": "mu_over_tau",
+        "sector": "charged_lepton",
+        "branch_pair": [
+          "mu",
+          "tau"
+        ],
+        "gauge_transport_component": "CANCELED_BY_SAME_SECTOR_THEOREM",
+        "residual_transport": "OPEN_LOCALIZABLE",
+        "comparison_ready": false,
+        "status": "DERIVED_CONDITIONAL_ON_SHARED_SECTOR_REPRESENTATION"
+      },
+      {
+        "ratio_id": "e_over_tau",
+        "sector": "charged_lepton",
+        "branch_pair": [
+          "e",
+          "tau"
+        ],
+        "gauge_transport_component": "CANCELED_BY_SAME_SECTOR_THEOREM",
+        "residual_transport": "OPEN_LOCALIZABLE",
+        "comparison_ready": false,
+        "status": "DERIVED_CONDITIONAL_ON_SHARED_SECTOR_REPRESENTATION"
+      },
+      {
+        "ratio_id": "c_over_t",
+        "sector": "up",
+        "branch_pair": [
+          "c",
+          "t"
+        ],
+        "gauge_transport_component": "CANCELED_BY_SAME_SECTOR_THEOREM",
+        "residual_transport": "OPEN_LOCALIZABLE",
+        "comparison_ready": false,
+        "status": "DERIVED_CONDITIONAL_ON_SHARED_SECTOR_REPRESENTATION"
+      },
+      {
+        "ratio_id": "u_over_t",
+        "sector": "up",
+        "branch_pair": [
+          "u",
+          "t"
+        ],
+        "gauge_transport_component": "CANCELED_BY_SAME_SECTOR_THEOREM",
+        "residual_transport": "OPEN_LOCALIZABLE",
+        "comparison_ready": false,
+        "status": "DERIVED_CONDITIONAL_ON_SHARED_SECTOR_REPRESENTATION"
+      },
+      {
+        "ratio_id": "s_over_b",
+        "sector": "down",
+        "branch_pair": [
+          "s",
+          "b"
+        ],
+        "gauge_transport_component": "CANCELED_BY_SAME_SECTOR_THEOREM",
+        "residual_transport": "OPEN_LOCALIZABLE",
+        "comparison_ready": false,
+        "status": "DERIVED_CONDITIONAL_ON_SHARED_SECTOR_REPRESENTATION"
+      },
+      {
+        "ratio_id": "d_over_b",
+        "sector": "down",
+        "branch_pair": [
+          "d",
+          "b"
+        ],
+        "gauge_transport_component": "CANCELED_BY_SAME_SECTOR_THEOREM",
+        "residual_transport": "OPEN_LOCALIZABLE",
+        "comparison_ready": false,
+        "status": "DERIVED_CONDITIONAL_ON_SHARED_SECTOR_REPRESENTATION"
+      }
+    ],
+    "cross_sector_diagnostic_classifications": [
+      {
+        "ratio_id": "tau_over_t",
+        "numerator": "tau",
+        "denominator": "t",
+        "numerator_sector": "charged_lepton",
+        "denominator_sector": "up",
+        "same_sector": false,
+        "shared_sector_representation": false,
+        "transport_equation": "d ln(R_ab) / d ln(mu) = gamma_a - gamma_b",
+        "gauge_transport_component": "NOT_CANCELED_BY_SAME_SECTOR_THEOREM",
+        "residual_transport": "OPEN",
+        "transport_stage": "RG_TRANSPORT_PENDING",
+        "comparison_ready": false,
+        "status": "CROSS_SECTOR_OPEN",
+        "notes": "Cross-sector ratios are diagnostic only and are not covered by the same-sector theorem."
+      },
+      {
+        "ratio_id": "b_over_t",
+        "numerator": "b",
+        "denominator": "t",
+        "numerator_sector": "down",
+        "denominator_sector": "up",
+        "same_sector": false,
+        "shared_sector_representation": false,
+        "transport_equation": "d ln(R_ab) / d ln(mu) = gamma_a - gamma_b",
+        "gauge_transport_component": "NOT_CANCELED_BY_SAME_SECTOR_THEOREM",
+        "residual_transport": "OPEN",
+        "transport_stage": "RG_TRANSPORT_PENDING",
+        "comparison_ready": false,
+        "status": "CROSS_SECTOR_OPEN",
+        "notes": "Cross-sector ratios are diagnostic only and are not covered by the same-sector theorem."
+      },
+      {
+        "ratio_id": "nu_over_l",
+        "numerator": "nu",
+        "denominator": "ell",
+        "numerator_sector": "neutral",
+        "denominator_sector": "charged_lepton",
+        "same_sector": false,
+        "shared_sector_representation": false,
+        "transport_equation": "d ln(R_ab) / d ln(mu) = gamma_a - gamma_b",
+        "gauge_transport_component": "NOT_CANCELED_BY_SAME_SECTOR_THEOREM",
+        "residual_transport": "OPEN",
+        "transport_stage": "RG_TRANSPORT_PENDING",
+        "comparison_ready": false,
+        "status": "CROSS_SECTOR_OPEN",
+        "notes": "Cross-sector ratios are diagnostic only and are not covered by the same-sector theorem."
+      }
+    ],
+    "cross_sector_transport_records": [
+      {
+        "ratio_id": "tau_over_t",
+        "sectors": [
+          "charged_lepton",
+          "up"
+        ],
+        "gauge_transport_component": "NOT_CANCELED_BY_SAME_SECTOR_THEOREM",
+        "comparison_ready": false,
+        "status": "CROSS_SECTOR_OPEN"
+      },
+      {
+        "ratio_id": "b_over_t",
+        "sectors": [
+          "down",
+          "up"
+        ],
+        "gauge_transport_component": "NOT_CANCELED_BY_SAME_SECTOR_THEOREM",
+        "comparison_ready": false,
+        "status": "CROSS_SECTOR_OPEN"
+      },
+      {
+        "ratio_id": "nu_over_l",
+        "sectors": [
+          "neutral",
+          "charged_lepton"
+        ],
+        "gauge_transport_component": "NOT_CANCELED_BY_SAME_SECTOR_THEOREM",
+        "comparison_ready": false,
+        "status": "CROSS_SECTOR_OPEN"
+      }
+    ],
+    "residual_blockers": [
+      "Yukawa/self transport",
+      "threshold matching",
+      "scheme alignment",
+      "common-scale comparison"
+    ],
+    "status_verdict": {
+      "theorem_id": "same_sector_RG_gauge_cancellation",
+      "status": "DERIVED_CONDITIONAL_ON_SHARED_SECTOR_REPRESENTATION",
+      "applies_to": [
+        "mu_over_tau",
+        "e_over_tau",
+        "c_over_t",
+        "u_over_t",
+        "s_over_b",
+        "d_over_b"
+      ],
+      "does_not_apply_to": [
+        "tau_over_t",
+        "b_over_t",
+        "nu_over_l"
+      ],
+      "residual_blockers": [
+        "Yukawa/self transport",
+        "threshold matching",
+        "scheme alignment",
+        "common-scale comparison"
+      ],
+      "theorem_complete": false,
+      "public_status": "structural architecture integrated conditional; numerical closure open"
+    },
+    "claim_boundary": "Gauge-universal same-sector transport is conditionally derived; residual transport, scheme alignment, common-scale comparison, and numerical closure remain open."
+  },
+  "residual_yukawa_transport_decomposition": {
+    "id": "PO-BH-residual-yukawa-transport-decomposition-v1",
+    "title": "Residual Yukawa Transport Decomposition Theorem v1",
+    "public_status": "structural architecture integrated conditional; numerical closure open",
+    "frozen_predictions_changed": false,
+    "official_predictions_changed": false,
+    "uses_empirical_derivation_inputs": false,
+    "forbidden_derivation_inputs": [
+      "observed charged masses",
+      "observed neutrino masses",
+      "neutrino mass splittings",
+      "CKM data",
+      "PMNS data",
+      "measured fine-structure alpha",
+      "measured gauge couplings",
+      "measured Yukawa couplings",
+      "empirical target ratios"
+    ],
+    "theorem_statement": "For same-sector branches, gauge and sector-universal identity components cancel; the remaining transport is the traceless branch-differential residual operator.",
+    "assumptions": [
+      "Both branches are in the same BHSM sector.",
+      "Same-sector branches share a normalized branch space.",
+      "Only identity-sector residual components are canceled.",
+      "The traceless residual operator is not yet action-derived."
+    ],
+    "anomalous_dimension_decompositions": [
+      {
+        "sector": "charged_lepton",
+        "operator": "Gamma_charged_lepton",
+        "gauge_identity_component": "gamma_gauge,charged_lepton I_charged_lepton",
+        "sector_universal_residual_component": "gamma_universal,charged_lepton I_charged_lepton",
+        "traceless_branch_differential_component": "tilde_Gamma_charged_lepton",
+        "decomposition": "Gamma_charged_lepton = gamma_gauge,charged_lepton I_charged_lepton + gamma_universal,charged_lepton I_charged_lepton + tilde_Gamma_charged_lepton"
+      },
+      {
+        "sector": "up",
+        "operator": "Gamma_up",
+        "gauge_identity_component": "gamma_gauge,up I_up",
+        "sector_universal_residual_component": "gamma_universal,up I_up",
+        "traceless_branch_differential_component": "tilde_Gamma_up",
+        "decomposition": "Gamma_up = gamma_gauge,up I_up + gamma_universal,up I_up + tilde_Gamma_up"
+      },
+      {
+        "sector": "down",
+        "operator": "Gamma_down",
+        "gauge_identity_component": "gamma_gauge,down I_down",
+        "sector_universal_residual_component": "gamma_universal,down I_down",
+        "traceless_branch_differential_component": "tilde_Gamma_down",
+        "decomposition": "Gamma_down = gamma_gauge,down I_down + gamma_universal,down I_down + tilde_Gamma_down"
+      }
+    ],
+    "identity_cancellations": [
+      {
+        "sector": "charged_lepton",
+        "identity_operator": "I_charged_lepton",
+        "status": "DERIVED_CONDITIONAL_ON_SHARED_SECTOR_BRANCH_SPACE",
+        "cancellation_statement": "<a|I_charged_lepton|a> - <b|I_charged_lepton|b> = 0 for normalized branches in the shared same-sector branch space"
+      },
+      {
+        "sector": "up",
+        "identity_operator": "I_up",
+        "status": "DERIVED_CONDITIONAL_ON_SHARED_SECTOR_BRANCH_SPACE",
+        "cancellation_statement": "<a|I_up|a> - <b|I_up|b> = 0 for normalized branches in the shared same-sector branch space"
+      },
+      {
+        "sector": "down",
+        "identity_operator": "I_down",
+        "status": "DERIVED_CONDITIONAL_ON_SHARED_SECTOR_BRANCH_SPACE",
+        "cancellation_statement": "<a|I_down|a> - <b|I_down|b> = 0 for normalized branches in the shared same-sector branch space"
+      }
+    ],
+    "traceless_residual_operators": [
+      {
+        "sector": "charged_lepton",
+        "operator_id": "tilde_Gamma_charged_lepton",
+        "trace_condition": "Tr(tilde_Gamma_charged_lepton) = 0",
+        "status": "OPEN_LOCALIZABLE",
+        "remaining_obstruction": "branch-differential residual transport operator not action-derived"
+      },
+      {
+        "sector": "up",
+        "operator_id": "tilde_Gamma_up",
+        "trace_condition": "Tr(tilde_Gamma_up) = 0",
+        "status": "OPEN_LOCALIZABLE",
+        "remaining_obstruction": "branch-differential residual transport operator not action-derived"
+      },
+      {
+        "sector": "down",
+        "operator_id": "tilde_Gamma_down",
+        "trace_condition": "Tr(tilde_Gamma_down) = 0",
+        "status": "OPEN_LOCALIZABLE",
+        "remaining_obstruction": "branch-differential residual transport operator not action-derived"
+      }
+    ],
+    "same_sector_ratio_classifications": [
+      {
+        "ratio_id": "mu_over_tau",
+        "sector": "charged_lepton",
+        "branch_pair": [
+          "mu",
+          "tau"
+        ],
+        "same_sector": true,
+        "gauge_component": "CANCELED_BY_SAME_SECTOR_THEOREM",
+        "sector_universal_residual_component": "CANCELED_BY_SAME_SECTOR_BRANCH_SPACE",
+        "branch_differential_residual_component": "OPEN_LOCALIZABLE",
+        "transport_stage": "RG_TRANSPORT_RESIDUAL_LOCALIZED",
+        "comparison_ready": false,
+        "status": "DERIVED_CONDITIONAL_ON_SHARED_SECTOR_BRANCH_SPACE",
+        "notes": "Gauge and sector-universal identity components cancel; remaining transport is the traceless branch-differential residual operator."
+      },
+      {
+        "ratio_id": "e_over_tau",
+        "sector": "charged_lepton",
+        "branch_pair": [
+          "e",
+          "tau"
+        ],
+        "same_sector": true,
+        "gauge_component": "CANCELED_BY_SAME_SECTOR_THEOREM",
+        "sector_universal_residual_component": "CANCELED_BY_SAME_SECTOR_BRANCH_SPACE",
+        "branch_differential_residual_component": "OPEN_LOCALIZABLE",
+        "transport_stage": "RG_TRANSPORT_RESIDUAL_LOCALIZED",
+        "comparison_ready": false,
+        "status": "DERIVED_CONDITIONAL_ON_SHARED_SECTOR_BRANCH_SPACE",
+        "notes": "Gauge and sector-universal identity components cancel; remaining transport is the traceless branch-differential residual operator."
+      },
+      {
+        "ratio_id": "c_over_t",
+        "sector": "up",
+        "branch_pair": [
+          "c",
+          "t"
+        ],
+        "same_sector": true,
+        "gauge_component": "CANCELED_BY_SAME_SECTOR_THEOREM",
+        "sector_universal_residual_component": "CANCELED_BY_SAME_SECTOR_BRANCH_SPACE",
+        "branch_differential_residual_component": "OPEN_LOCALIZABLE",
+        "transport_stage": "RG_TRANSPORT_RESIDUAL_LOCALIZED",
+        "comparison_ready": false,
+        "status": "DERIVED_CONDITIONAL_ON_SHARED_SECTOR_BRANCH_SPACE",
+        "notes": "Gauge and sector-universal identity components cancel; remaining transport is the traceless branch-differential residual operator."
+      },
+      {
+        "ratio_id": "u_over_t",
+        "sector": "up",
+        "branch_pair": [
+          "u",
+          "t"
+        ],
+        "same_sector": true,
+        "gauge_component": "CANCELED_BY_SAME_SECTOR_THEOREM",
+        "sector_universal_residual_component": "CANCELED_BY_SAME_SECTOR_BRANCH_SPACE",
+        "branch_differential_residual_component": "OPEN_LOCALIZABLE",
+        "transport_stage": "RG_TRANSPORT_RESIDUAL_LOCALIZED",
+        "comparison_ready": false,
+        "status": "DERIVED_CONDITIONAL_ON_SHARED_SECTOR_BRANCH_SPACE",
+        "notes": "Gauge and sector-universal identity components cancel; remaining transport is the traceless branch-differential residual operator."
+      },
+      {
+        "ratio_id": "s_over_b",
+        "sector": "down",
+        "branch_pair": [
+          "s",
+          "b"
+        ],
+        "same_sector": true,
+        "gauge_component": "CANCELED_BY_SAME_SECTOR_THEOREM",
+        "sector_universal_residual_component": "CANCELED_BY_SAME_SECTOR_BRANCH_SPACE",
+        "branch_differential_residual_component": "OPEN_LOCALIZABLE",
+        "transport_stage": "RG_TRANSPORT_RESIDUAL_LOCALIZED",
+        "comparison_ready": false,
+        "status": "DERIVED_CONDITIONAL_ON_SHARED_SECTOR_BRANCH_SPACE",
+        "notes": "Gauge and sector-universal identity components cancel; remaining transport is the traceless branch-differential residual operator."
+      },
+      {
+        "ratio_id": "d_over_b",
+        "sector": "down",
+        "branch_pair": [
+          "d",
+          "b"
+        ],
+        "same_sector": true,
+        "gauge_component": "CANCELED_BY_SAME_SECTOR_THEOREM",
+        "sector_universal_residual_component": "CANCELED_BY_SAME_SECTOR_BRANCH_SPACE",
+        "branch_differential_residual_component": "OPEN_LOCALIZABLE",
+        "transport_stage": "RG_TRANSPORT_RESIDUAL_LOCALIZED",
+        "comparison_ready": false,
+        "status": "DERIVED_CONDITIONAL_ON_SHARED_SECTOR_BRANCH_SPACE",
+        "notes": "Gauge and sector-universal identity components cancel; remaining transport is the traceless branch-differential residual operator."
+      }
+    ],
+    "cross_sector_diagnostic_classifications": [
+      {
+        "ratio_id": "tau_over_t",
+        "sectors": [
+          "charged_lepton",
+          "up"
+        ],
+        "same_sector": false,
+        "same_sector_identity_cancellation": "NOT_APPLICABLE",
+        "comparison_ready": false,
+        "status": "CROSS_SECTOR_OPEN"
+      },
+      {
+        "ratio_id": "b_over_t",
+        "sectors": [
+          "down",
+          "up"
+        ],
+        "same_sector": false,
+        "same_sector_identity_cancellation": "NOT_APPLICABLE",
+        "comparison_ready": false,
+        "status": "CROSS_SECTOR_OPEN"
+      },
+      {
+        "ratio_id": "nu_over_l",
+        "sectors": [
+          "neutral",
+          "charged_lepton"
+        ],
+        "same_sector": false,
+        "same_sector_identity_cancellation": "NOT_APPLICABLE",
+        "comparison_ready": false,
+        "status": "CROSS_SECTOR_OPEN"
+      }
+    ],
+    "Kf_aligned_residual_candidate": {
+      "candidate_id": "Kf_aligned_residual_transport_candidate",
+      "formula": "tilde_Gamma_f proportional_to K_f - (Tr K_f / 3) I_f",
+      "status": "STRUCTURALLY_MOTIVATED_CANDIDATE",
+      "coefficient_status": "OPEN_LOCALIZABLE",
+      "uses_empirical_inputs": false,
+      "notes": "Structural candidate only: the proportionality/source coefficient is not derived and no numerical prediction is emitted."
+    },
+    "residual_blockers": [
+      "action source for tilde_Gamma_f",
+      "K_f residual transport coefficient",
+      "threshold matching",
+      "scheme alignment",
+      "common-scale comparison"
+    ],
+    "status_verdict": {
+      "theorem_id": "residual_Yukawa_transport_decomposition",
+      "same_sector_residual_identity_cancellation": "DERIVED_CONDITIONAL_ON_SHARED_SECTOR_BRANCH_SPACE",
+      "residual_Yukawa_transport_decomposition": "PARTIALLY_LOCALIZED",
+      "charged_branch_differential_residual_transport": "OPEN_LOCALIZABLE",
+      "Kf_aligned_residual_transport_candidate": "STRUCTURALLY_MOTIVATED_CANDIDATE",
+      "Kf_residual_transport_coefficient": "OPEN_LOCALIZABLE",
+      "applies_to": [
+        "mu_over_tau",
+        "e_over_tau",
+        "c_over_t",
+        "u_over_t",
+        "s_over_b",
+        "d_over_b"
+      ],
+      "does_not_apply_to": [
+        "tau_over_t",
+        "b_over_t",
+        "nu_over_l"
+      ],
+      "theorem_complete": false,
+      "public_status": "structural architecture integrated conditional; numerical closure open"
+    },
+    "claim_boundary": "Residual identity cancellation is conditional; the traceless branch-differential residual operator, scheme alignment, and numerical closure remain open."
+  },
   "scheme_scale_points": [
     {
       "scheme": "BHSM_internal_operator_units",
@@ -99,12 +700,44 @@
   ],
   "rg_transport_rules": [
     {
-      "rule_id": "charged_RG_transport",
+      "rule_id": "same_sector_RG_gauge_cancellation",
       "source_stage": "RG_TRANSPORT_PENDING",
+      "target_stage": "RG_TRANSPORT_PARTIALLY_LOCALIZED",
+      "status": "DERIVED_CONDITIONAL_ON_SHARED_SECTOR_REPRESENTATION",
+      "formula": "Delta gamma_gauge(i,j) = 0 for shared sector representation",
+      "notes": "Gauge-universal component cancels for charged same-sector ratios only."
+    },
+    {
+      "rule_id": "charged_residual_RG_transport",
+      "source_stage": "RG_TRANSPORT_PARTIALLY_LOCALIZED",
+      "target_stage": "RG_TRANSPORT_RESIDUAL_LOCALIZED",
+      "status": "PARTIALLY_LOCALIZED",
+      "formula": "identity residual cancels; tilde_Gamma_f remains",
+      "notes": "Sector-universal residual/Yukawa identity component cancels for charged same-sector ratios."
+    },
+    {
+      "rule_id": "charged_branch_differential_residual_transport",
+      "source_stage": "RG_TRANSPORT_RESIDUAL_LOCALIZED",
       "target_stage": "SCHEME_ALIGNED",
       "status": "OPEN_LOCALIZABLE",
-      "formula": "OPEN_LOCALIZABLE",
-      "notes": "Charged-sector RG/scheme transport rule remains to be derived."
+      "formula": "<a|tilde_Gamma_f|a> - <b|tilde_Gamma_f|b>",
+      "notes": "Traceless branch-differential residual operator remains open-localizable."
+    },
+    {
+      "rule_id": "Kf_aligned_residual_transport_candidate",
+      "source_stage": "RG_TRANSPORT_RESIDUAL_LOCALIZED",
+      "target_stage": "RG_TRANSPORT_RESIDUAL_LOCALIZED",
+      "status": "STRUCTURALLY_MOTIVATED_CANDIDATE",
+      "formula": "tilde_Gamma_f proportional_to K_f - (Tr K_f / 3) I_f",
+      "notes": "Structural candidate only; proportionality/source coefficient remains open."
+    },
+    {
+      "rule_id": "cross_sector_RG_transport",
+      "source_stage": "RG_TRANSPORT_PENDING",
+      "target_stage": "SCHEME_ALIGNED",
+      "status": "OPEN",
+      "formula": "OPEN",
+      "notes": "Cross-sector ratios are not canceled by the same-sector theorem."
     },
     {
       "rule_id": "neutral_RG_transport",
@@ -127,23 +760,23 @@
     {
       "sector": "charged_lepton",
       "observable_family": "charged_hierarchy",
-      "current_stage": "RG_TRANSPORT_PENDING",
+      "current_stage": "RG_TRANSPORT_RESIDUAL_LOCALIZED",
       "comparison_ready": false,
-      "blocker": "charged_RG_transport"
+      "blocker": "charged_branch_differential_residual_transport"
     },
     {
       "sector": "up",
       "observable_family": "charged_hierarchy",
-      "current_stage": "RG_TRANSPORT_PENDING",
+      "current_stage": "RG_TRANSPORT_RESIDUAL_LOCALIZED",
       "comparison_ready": false,
-      "blocker": "charged_RG_transport"
+      "blocker": "charged_branch_differential_residual_transport"
     },
     {
       "sector": "down",
       "observable_family": "charged_hierarchy",
-      "current_stage": "RG_TRANSPORT_PENDING",
+      "current_stage": "RG_TRANSPORT_RESIDUAL_LOCALIZED",
       "comparison_ready": false,
-      "blocker": "charged_RG_transport"
+      "blocker": "charged_branch_differential_residual_transport"
     },
     {
       "sector": "neutral",
@@ -157,28 +790,40 @@
     {
       "sector": "charged_lepton",
       "source_operator": "charged K_l",
-      "current_readiness": "RG_TRANSPORT_PENDING",
+      "current_readiness": "RG_TRANSPORT_RESIDUAL_LOCALIZED",
       "comparison_readiness": "NOT_READY",
       "known_thresholds": [],
-      "blocker": "charged_RG_transport"
+      "blocker": "charged_branch_differential_residual_transport",
+      "gauge_component": "CANCELED_BY_SAME_SECTOR_THEOREM",
+      "residual_component": "OPEN_LOCALIZABLE",
+      "sector_universal_residual_component": "CANCELED_BY_SAME_SECTOR_BRANCH_SPACE",
+      "branch_differential_residual_component": "OPEN_LOCALIZABLE"
     },
     {
       "sector": "up",
       "source_operator": "charged K_u",
-      "current_readiness": "RG_TRANSPORT_PENDING",
+      "current_readiness": "RG_TRANSPORT_RESIDUAL_LOCALIZED",
       "comparison_readiness": "NOT_READY",
       "known_thresholds": [
         "up (6,0): ln 2"
       ],
-      "blocker": "charged_RG_transport"
+      "blocker": "charged_branch_differential_residual_transport",
+      "gauge_component": "CANCELED_BY_SAME_SECTOR_THEOREM",
+      "residual_component": "OPEN_LOCALIZABLE",
+      "sector_universal_residual_component": "CANCELED_BY_SAME_SECTOR_BRANCH_SPACE",
+      "branch_differential_residual_component": "OPEN_LOCALIZABLE"
     },
     {
       "sector": "down",
       "source_operator": "charged K_d",
-      "current_readiness": "RG_TRANSPORT_PENDING",
+      "current_readiness": "RG_TRANSPORT_RESIDUAL_LOCALIZED",
       "comparison_readiness": "NOT_READY",
       "known_thresholds": [],
-      "blocker": "charged_RG_transport"
+      "blocker": "charged_branch_differential_residual_transport",
+      "gauge_component": "CANCELED_BY_SAME_SECTOR_THEOREM",
+      "residual_component": "OPEN_LOCALIZABLE",
+      "sector_universal_residual_component": "CANCELED_BY_SAME_SECTOR_BRANCH_SPACE",
+      "branch_differential_residual_component": "OPEN_LOCALIZABLE"
     },
     {
       "sector": "neutral",
@@ -186,12 +831,25 @@
       "current_readiness": "RG_TRANSPORT_PENDING",
       "comparison_readiness": "NOT_READY",
       "known_thresholds": [],
-      "blocker": "neutral_RG_transport"
+      "blocker": "neutral_RG_transport",
+      "gauge_component": "OPEN",
+      "residual_component": "OPEN",
+      "sector_universal_residual_component": "NOT_APPLICABLE",
+      "branch_differential_residual_component": "OPEN"
     }
   ],
   "statuses": {
     "RG_transport_interface_v1": "STRUCTURAL_SCAFFOLD",
+    "same_sector_RG_gauge_cancellation": "DERIVED_CONDITIONAL_ON_SHARED_SECTOR_REPRESENTATION",
+    "charged_same_sector_RG_gauge_transport": "PARTIALLY_LOCALIZED",
+    "same_sector_residual_identity_cancellation": "DERIVED_CONDITIONAL_ON_SHARED_SECTOR_BRANCH_SPACE",
+    "residual_Yukawa_transport_decomposition": "PARTIALLY_LOCALIZED",
+    "charged_branch_differential_residual_transport": "OPEN_LOCALIZABLE",
+    "Kf_aligned_residual_transport_candidate": "STRUCTURALLY_MOTIVATED_CANDIDATE",
+    "Kf_residual_transport_coefficient": "OPEN_LOCALIZABLE",
     "charged_RG_transport": "OPEN_LOCALIZABLE",
+    "charged_residual_RG_transport": "OPEN_LOCALIZABLE",
+    "cross_sector_RG_transport": "OPEN",
     "neutral_RG_transport": "OPEN_LOCALIZABLE",
     "scheme_transport": "OPEN",
     "scheme_alignment": "OPEN",

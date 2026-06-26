@@ -10,6 +10,9 @@ import rg_transport_interface as rg
 PUBLIC_STATUS = graph.PUBLIC_STATUS
 
 TARGET_RG = "RG_TRANSPORT_RULE_DERIVATION"
+TARGET_RESIDUAL_RG = "RESIDUAL_YUKAWA_TRANSPORT_RULE"
+TARGET_KF_RESIDUAL = "K_F_ALIGNED_RESIDUAL_SOURCE"
+TARGET_SCHEME = "SCHEME_ALIGNMENT_RULE"
 TARGET_BRIDGE = "BRIDGE_MAGNITUDE_ACTION_SOURCE"
 TARGET_NEUTRAL = "NEUTRAL_HESSIAN_ACTION_SOURCE"
 TARGET_THRESHOLD = "FULL_THRESHOLD_OPERATOR_SOURCE"
@@ -40,7 +43,13 @@ def _count_by_status_group() -> Dict[str, int]:
 
 def recommended_targets_ranked() -> Tuple[str, ...]:
     rg_status = rg.STATUS_TABLE["RG_transport_interface_v1"]
+    same_sector_status = rg.STATUS_TABLE["same_sector_RG_gauge_cancellation"]
+    residual_status = rg.STATUS_TABLE["residual_Yukawa_transport_decomposition"]
     graph_nodes = graph.node_map()
+    if residual_status == "PARTIALLY_LOCALIZED":
+        return (TARGET_KF_RESIDUAL, TARGET_SCHEME, TARGET_BRIDGE, TARGET_NEUTRAL)
+    if same_sector_status.startswith("DERIVED_CONDITIONAL"):
+        return (TARGET_RESIDUAL_RG, TARGET_SCHEME, TARGET_BRIDGE, TARGET_NEUTRAL)
     if rg_status == "STRUCTURAL_SCAFFOLD" and graph_nodes["RG_transport_interface"].status == "OPEN":
         return (TARGET_RG, TARGET_BRIDGE, TARGET_NEUTRAL, TARGET_THRESHOLD)
     if graph_nodes["beta_f_reference_bridge_magnitude"].status == "OPEN_LOCALIZABLE":
@@ -66,6 +75,12 @@ def report_as_dict() -> Dict[str, object]:
         **counts,
         "freeze_class_counts": freeze.freeze_class_counts(),
         "rg_interface_status": rg.STATUS_TABLE["RG_transport_interface_v1"],
+        "same_sector_RG_gauge_cancellation": rg.STATUS_TABLE[
+            "same_sector_RG_gauge_cancellation"
+        ],
+        "residual_Yukawa_transport_decomposition": rg.STATUS_TABLE[
+            "residual_Yukawa_transport_decomposition"
+        ],
         "numerical_closure": "OPEN",
         "next_recommended_mathematical_target": next_recommended_mathematical_target(),
         "ranked_recommended_targets": list(recommended_targets_ranked()),
