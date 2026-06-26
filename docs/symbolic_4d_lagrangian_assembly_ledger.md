@@ -36,3 +36,9 @@ Phase Three-I localizes the missing interaction theorems needed before this
 ledger can become a complete 4D Lagrangian export. `X_ch`, neutrino
 Dirac-Majorana basis/scale, and standalone CP `O_int` remain open exact
 missing theorems for their standalone vertex families.
+
+## Phase Three-J Follow-On
+
+Phase Three-J exports a minimal bounded collider-interface subset, not the
+complete symbolic 4D Lagrangian. The subset is limited to canonical kinetic,
+target gauge, CKM charged-current, and PMNS charged-current prep terms.

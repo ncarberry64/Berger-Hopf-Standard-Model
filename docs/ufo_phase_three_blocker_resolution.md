@@ -62,3 +62,7 @@ Phase Three-I performs direct theorem-closure attempts after the bounded
 Phase Three-H blocker audit. It does not promote the remaining standalone
 blockers; instead it records `X_ch`, neutrino basis/scale/Dirac-Majorana, and
 `O_int` as exact missing theorem objects.
+
+Phase Three-J exports a minimal bounded collider-interface Lagrangian subset
+for future translation. It does not export a production UFO model and does not
+resolve loadability, MadGraph, LHE/HepMC, Athena, or CMSSW blockers.

@@ -40,3 +40,9 @@ Dirac-Majorana basis/scale, and standalone CP `O_int`. No new production
 vertex is promoted to FeynRules-ready status. The production vertex table
 remains incomplete until the charged boundary response, neutral kernel, and
 standalone CP interaction theorems close.
+
+## Phase Three-J Follow-On
+
+Phase Three-J includes only `q_charged_current_CKM_BH` and
+`lepton_charged_current_PMNS_BH` in a bounded collider-interface Lagrangian
+subset. The other Phase Three-G vertex families remain excluded.

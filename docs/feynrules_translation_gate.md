@@ -60,3 +60,7 @@ Phase Three-I directly audits the remaining interaction theorems. The
 FeynRules gate remains closed because `X_ch`, neutrino
 basis/scale/Dirac-Majorana convention, and standalone CP `O_int` are still
 exact missing theorem objects.
+
+Phase Three-J exports a FeynRules-prep subset only. The translation gate
+remains closed for production use because no production FeynRules file is
+exported.

@@ -36,3 +36,9 @@ complete/exported; external empirical comparison layer separate/open.`
 This sprint changes no frozen predictions and uses no empirical derivation
 inputs.
 
+## Phase Three-J Follow-On
+
+Phase Three-J uses the supported CKM/PMNS target-current pieces from this
+audit to assemble a minimal bounded collider-interface Lagrangian subset. It
+continues to exclude the unresolved charged boundary response, neutral kernel,
+and standalone CP holonomy vertex.

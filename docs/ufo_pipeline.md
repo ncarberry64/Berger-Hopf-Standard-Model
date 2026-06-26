@@ -137,3 +137,9 @@ Phase Three-I is a theorem-closure audit, not a UFO export. It keeps UFO,
 MadGraph, LHE/HepMC, Athena, and CMSSW readiness false while identifying the
 smallest missing interaction objects for `X_ch`, neutrino neutral-kernel use,
 and standalone CP `O_int`.
+
+## Phase Three-J Minimal Collider-Interface Subset
+
+Phase Three-J exports a bounded FeynRules-prep subset for future translation.
+It is not a `.fr` file, UFO model, MadGraph-ready model, LHE/HepMC generation,
+or detector-software interface.

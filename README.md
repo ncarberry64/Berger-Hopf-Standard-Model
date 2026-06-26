@@ -171,6 +171,22 @@ or O_int theorems are derived. This does not constitute complete 4D Lagrangian
 export, production FeynRules readiness, UFO readiness, MadGraph readiness,
 event generation, or experiment software integration.
 
+### Phase Three-J minimal collider-interface Lagrangian subset
+
+BHSM v1.0.1 status-reconciled release: internal boundary no-fit package
+complete/exported; external empirical comparison layer separate/open.
+
+BHSM now includes a minimal bounded collider-interface Lagrangian subset in
+the canonical production basis. The subset includes CKM/PMNS charged-current
+target structures sourced by BHSM mixing artifacts and standard target-current
+conventions.
+
+The subset explicitly excludes the unresolved charged boundary response,
+neutral kernel, and standalone CP holonomy vertices. It is FeynRules-prep only
+and does not constitute the complete BHSM 4D Lagrangian, production FeynRules
+readiness, UFO readiness, MadGraph readiness, event generation, or experiment
+software integration.
+
 ### Phase Three-F production-basis and runtime-parameter status
 
 BHSM now defines a canonical production basis for future FeynRules/UFO
