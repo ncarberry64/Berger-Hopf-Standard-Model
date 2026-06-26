@@ -57,3 +57,8 @@ loadable UFO, MadGraph, LHE/HepMC, Athena, or CMSSW blockers.
 Phase Three-H partially resolves bounded CKM/PMNS target blockers and leaves
 the charged boundary response, neutral kernel, and standalone CP holonomy
 vertices blocked. No loadable UFO model is exported.
+
+Phase Three-I performs direct theorem-closure attempts after the bounded
+Phase Three-H blocker audit. It does not promote the remaining standalone
+blockers; instead it records `X_ch`, neutrino basis/scale/Dirac-Majorana, and
+`O_int` as exact missing theorem objects.

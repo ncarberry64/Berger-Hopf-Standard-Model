@@ -130,3 +130,10 @@ Phase Three-H partially promotes CKM/PMNS charged-current targets as bounded
 collider-interface targets and leaves charged boundary, neutral, and
 standalone CP vertices blocked by exact missing theorems. Production
 FeynRules/UFO readiness remains false.
+
+## Phase Three-I Interaction Theorem Closure
+
+Phase Three-I is a theorem-closure audit, not a UFO export. It keeps UFO,
+MadGraph, LHE/HepMC, Athena, and CMSSW readiness false while identifying the
+smallest missing interaction objects for `X_ch`, neutrino neutral-kernel use,
+and standalone CP `O_int`.

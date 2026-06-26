@@ -55,3 +55,8 @@ Phase Three-H performs bounded resolution attempts for `X_ch`, neutrino
 basis/scale, and CP holonomy attachment. The FeynRules gate remains closed
 because the resulting promotions are bounded collider-interface targets, not
 production FeynRules vertices.
+
+Phase Three-I directly audits the remaining interaction theorems. The
+FeynRules gate remains closed because `X_ch`, neutrino
+basis/scale/Dirac-Majorana convention, and standalone CP `O_int` are still
+exact missing theorem objects.

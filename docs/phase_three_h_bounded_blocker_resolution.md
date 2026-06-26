@@ -16,3 +16,11 @@ missing interaction/basis/scale theorems.
 
 This is not production FeynRules/UFO readiness.
 
+## Phase Three-I Follow-On
+
+Phase Three-I performs direct interaction-theorem closure attempts for the
+same blocker families. It does not overwrite this Phase Three-H bounded audit:
+CKM/PMNS charged-current target attachments remain bounded interface targets,
+while the separate charged boundary response, neutral kernel, and standalone
+CP holonomy vertex remain blocked by missing `X_ch`, neutrino basis/scale, and
+`O_int` theorems.

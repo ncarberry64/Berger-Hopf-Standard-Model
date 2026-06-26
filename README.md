@@ -154,6 +154,23 @@ scale theorems. This does not constitute complete 4D Lagrangian export,
 production FeynRules readiness, UFO readiness, MadGraph readiness, event
 generation, or experiment software integration.
 
+### Phase Three-I interaction-theorem closure status
+
+BHSM v1.0.1 status-reconciled release: internal boundary no-fit package
+complete/exported; external empirical comparison layer separate/open.
+
+BHSM now includes direct theorem-closure audits for the final interaction
+blockers: X_ch, neutrino Dirac-Majorana basis/scale, and standalone CP O_int
+attachment. CKM/PMNS target-current attachments remain bounded
+collider-interface targets where standard current conventions, canonical
+production basis, and BHSM mixing/holonomy sources already align.
+
+The separate charged boundary response, neutral kernel, and standalone CP
+holonomy vertex remain blocked unless their missing interaction, basis/scale,
+or O_int theorems are derived. This does not constitute complete 4D Lagrangian
+export, production FeynRules readiness, UFO readiness, MadGraph readiness,
+event generation, or experiment software integration.
+
 ### Phase Three-F production-basis and runtime-parameter status
 
 BHSM now defines a canonical production basis for future FeynRules/UFO

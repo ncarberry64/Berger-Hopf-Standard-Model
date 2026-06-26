@@ -29,3 +29,10 @@ Every term remains `is_production_feynrules_ready = false` and
 Phase Three-H bounds three blockers but does not promote the symbolic ledger to
 a complete production 4D Lagrangian. Missing interaction/basis/scale theorems
 remain explicit.
+
+## Phase Three-I Follow-On
+
+Phase Three-I localizes the missing interaction theorems needed before this
+ledger can become a complete 4D Lagrangian export. `X_ch`, neutrino
+Dirac-Majorana basis/scale, and standalone CP `O_int` remain open exact
+missing theorems for their standalone vertex families.
