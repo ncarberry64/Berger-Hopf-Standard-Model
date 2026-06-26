@@ -1,0 +1,120 @@
+{
+  "id": "PO-BH-charged-stiffness-action-selector-v1",
+  "title": "Charged Stiffness Action Selector v1",
+  "public_status": "structural architecture integrated conditional; numerical closure open",
+  "frozen_predictions_changed": false,
+  "official_predictions_changed": false,
+  "uses_empirical_derivation_inputs": false,
+  "forbidden_derivation_inputs": [
+    "observed charged-lepton masses",
+    "observed quark masses",
+    "observed CKM values",
+    "observed PMNS values",
+    "observed neutrino mass splittings",
+    "measured fine-structure alpha",
+    "empirical target ratios",
+    "post-comparison branch selection"
+  ],
+  "stiffness_action_form": "S_stiffness,ch = k_q q^2 + k_j j^2",
+  "rho_definition": "rho_ch = k_j/k_q",
+  "charged_stiffness_has_qj_cross_term": false,
+  "S_index_trace_hessian_source_status": "INVALIDATED_DO_NOT_CLAIM",
+  "selector_candidates": [
+    {
+      "selector_id": "A_ISOTROPIC_PRIMITIVE_STIFFNESS",
+      "rho_ch": "1",
+      "k_q": "1",
+      "k_j": "1",
+      "meaning": "channel winding and Hopf/fiber winding carry equal primitive charged stiffness",
+      "claimed_action_source": "primitive isotropic charged stiffness form",
+      "evidence_summary": "The diagonal form q^2+j^2 is structurally simple and compatible with the charged stiffness ansatz, but the current action does not force isotropy.",
+      "status": "STRUCTURALLY_SUPPORTED_CANDIDATE",
+      "selected": false,
+      "reason_not_selected": "No action theorem explicitly enforces k_q=k_j."
+    },
+    {
+      "selector_id": "B_WEAK_INVOLUTION_WEIGHTED_STIFFNESS",
+      "rho_ch": "2",
+      "k_q": "1",
+      "k_j": "2",
+      "meaning": "Hopf/fiber stiffness receives the weak-involution orientation dimension weight",
+      "claimed_action_source": "rank or dimension of weak orientation/involution layer equals 2",
+      "evidence_summary": "The weak orientation layer supplies a structural two-state motive, but the current action does not explicitly couple j-stiffness to that layer.",
+      "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+      "selected": false,
+      "reason_not_selected": "No charged action coupling maps weak two-state structure to k_j/k_q."
+    },
+    {
+      "selector_id": "C_RANK_THREE_CLOSURE_WEIGHTED_STIFFNESS",
+      "rho_ch": "3",
+      "k_q": "1",
+      "k_j": "3",
+      "meaning": "Hopf/fiber stiffness receives the universal rank-three closure weight E3",
+      "claimed_action_source": "rank(E3)=3",
+      "evidence_summary": "The rank-three closure module supplies a structural three-weight motive, and rho_ch=3 is interesting in the pressure test, but the current action does not explicitly couple E3 to j-stiffness.",
+      "status": "STRUCTURALLY_INTERESTING_BRANCH",
+      "selected": false,
+      "reason_not_selected": "Down near-degeneracy and rank(E3)=3 are not an action selection theorem."
+    }
+  ],
+  "action_evidence_records": [
+    {
+      "rho_ch": "1",
+      "pressure_test_status": "BRANCH_CANDIDATE",
+      "action_selector_status": "STRUCTURALLY_SUPPORTED_CANDIDATE",
+      "uses_empirical_input": false,
+      "direct_action_coupling_found": false,
+      "notes": [
+        "The diagonal form q^2+j^2 is structurally simple and compatible with the charged stiffness ansatz, but the current action does not force isotropy.",
+        "No action theorem explicitly enforces k_q=k_j."
+      ]
+    },
+    {
+      "rho_ch": "2",
+      "pressure_test_status": "BRANCH_CANDIDATE",
+      "action_selector_status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+      "uses_empirical_input": false,
+      "direct_action_coupling_found": false,
+      "notes": [
+        "The weak orientation layer supplies a structural two-state motive, but the current action does not explicitly couple j-stiffness to that layer.",
+        "No charged action coupling maps weak two-state structure to k_j/k_q."
+      ]
+    },
+    {
+      "rho_ch": "3",
+      "pressure_test_status": "STRUCTURALLY_INTERESTING_BRANCH",
+      "action_selector_status": "STRUCTURALLY_INTERESTING_BRANCH",
+      "uses_empirical_input": false,
+      "direct_action_coupling_found": false,
+      "notes": [
+        "The rank-three closure module supplies a structural three-weight motive, and rho_ch=3 is interesting in the pressure test, but the current action does not explicitly couple E3 to j-stiffness.",
+        "Down near-degeneracy and rank(E3)=3 are not an action selection theorem."
+      ]
+    }
+  ],
+  "verdict": {
+    "selected_rho_ch": null,
+    "rho_ch_exact_value_status": "OPEN_LOCALIZABLE",
+    "verdict": "NO_UNIQUE_ACTION_SELECTOR_FOUND",
+    "theorem_complete": false,
+    "explanation": "The current action layer supplies structural motives for rho_ch=1,2,3 but no explicit charged stiffness coupling that uniquely fixes k_j/k_q."
+  },
+  "rho_ch_exact_value_status": "OPEN_LOCALIZABLE",
+  "statuses": {
+    "charged_stiffness_action_selector_v1": "COMPLETED_SELECTOR_AUDIT",
+    "rho_ch_1_isotropic_action_selector": "STRUCTURALLY_SUPPORTED_CANDIDATE",
+    "rho_ch_2_weak_involution_action_selector": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+    "rho_ch_3_rank_three_action_selector": "STRUCTURALLY_INTERESTING_BRANCH",
+    "rho_ch_exact_value": "OPEN_LOCALIZABLE",
+    "charged_Hessian_from_S_index_trace": "INVALIDATED_DO_NOT_CLAIM",
+    "charged_stiffness_action_source": "OPEN_LOCALIZABLE",
+    "numerical_closure": "OPEN"
+  },
+  "pressure_test_classifications_preserved": {
+    "1": "BRANCH_CANDIDATE",
+    "2": "BRANCH_CANDIDATE",
+    "3": "STRUCTURALLY_INTERESTING_BRANCH"
+  },
+  "no_empirical_comparison_performed": true,
+  "claim_boundary": "The selector audit finds no unique action-level rho_ch selection; rho_ch_exact_value remains open-localizable."
+}

@@ -1,0 +1,353 @@
+{
+  "id": "PO-BH-full-shape-neutral-holonomy-continuation-v1",
+  "public_status": "structural architecture integrated conditional; numerical closure open",
+  "frozen_predictions_changed": false,
+  "official_predictions_changed": false,
+  "charged_effective_bridge_balance": {
+    "id": "PO-BH-charged-effective-bridge-balance-v1",
+    "public_status": "structural architecture integrated conditional; numerical closure open",
+    "frozen_predictions_changed": false,
+    "official_predictions_changed": false,
+    "rho_ch_candidate": "3",
+    "g_bridge": "16/189",
+    "g_bridge_factorization": "(1/21)(4/3)^2",
+    "g_bridge_factorization_value": "16/189",
+    "records": [
+      {
+        "sector": "lepton",
+        "Pi_f": "1/7",
+        "tangent": [
+          2,
+          1
+        ],
+        "tangent_norm_sq": "7",
+        "beta_f": "16/1323",
+        "kappa_f": "16/1323",
+        "beta_over_kappa": "1",
+        "threshold_projection": "1",
+        "effective_balance": "1",
+        "status": "DERIVED_CONDITIONAL_ON_COLORLESS_LEPTON_BALANCE_AND_UP_THRESHOLD_PROJECTION"
+      },
+      {
+        "sector": "up",
+        "Pi_f": "2/7",
+        "tangent": [
+          2,
+          1
+        ],
+        "tangent_norm_sq": "7",
+        "beta_f": "32/1323",
+        "kappa_f": "16/1323",
+        "beta_over_kappa": "2",
+        "threshold_projection": "1/2",
+        "effective_balance": "1",
+        "status": "DERIVED_CONDITIONAL_ON_COLORLESS_LEPTON_BALANCE_AND_UP_THRESHOLD_PROJECTION"
+      },
+      {
+        "sector": "down",
+        "Pi_f": "4/7",
+        "tangent": [
+          4,
+          -1
+        ],
+        "tangent_norm_sq": "19",
+        "beta_f": "64/1323",
+        "kappa_f": "16/3591",
+        "beta_over_kappa": "76/7",
+        "threshold_projection": "1",
+        "effective_balance": "76/7",
+        "status": "STRUCTURALLY_SUPPORTED_CANDIDATE"
+      }
+    ],
+    "statuses": {
+      "rho_ch_3_effective_bridge_balance": "DERIVED_CONDITIONAL_ON_COLORLESS_LEPTON_BALANCE_AND_UP_THRESHOLD_PROJECTION",
+      "down_bridge_bottleneck_76_over_7": "STRUCTURALLY_SUPPORTED_CANDIDATE",
+      "rho_ch_exact_value": "OPEN_LOCALIZABLE",
+      "charged_full_numerical_closure": "OPEN"
+    },
+    "claim_boundary": "Bridge balance is a structural candidate diagnostic; rho_ch exact value and full charged numerical closure remain open."
+  },
+  "charged_shape_freeze": {
+    "id": "PO-BH-charged-shape-freeze-candidate-v1",
+    "public_status": "structural architecture integrated conditional; numerical closure open",
+    "frozen_predictions_changed": false,
+    "official_predictions_changed": false,
+    "rho_ch_candidate": "3",
+    "g_bridge": "16/189",
+    "rule": "Rule-A suppression with derived-only up ln2 threshold",
+    "records": [
+      {
+        "sector": "lepton",
+        "matrix": [
+          [
+            0.0,
+            0.012093726379440665,
+            0.0
+          ],
+          [
+            0.012093726379440665,
+            1.7687074829931972,
+            0.012093726379440665
+          ],
+          [
+            0.0,
+            0.012093726379440665,
+            4.8979591836734695
+          ]
+        ],
+        "eigenvalues": [
+          -8.268967634478674e-05,
+          1.7687434338824861,
+          4.898005922460524
+        ],
+        "gaps_from_ground": [
+          0.0,
+          1.768826123558831,
+          4.898088612136869
+        ],
+        "shape_ratio": 2.7691182004266452,
+        "status": "STRONGLY_SUPPORTED_CANDIDATE"
+      },
+      {
+        "sector": "up",
+        "matrix": [
+          [
+            0.0,
+            0.02418745275888133,
+            0.0
+          ],
+          [
+            0.02418745275888133,
+            9.999269629539537,
+            0.012093726379440665
+          ],
+          [
+            0.0,
+            0.012093726379440665,
+            17.31972789115646
+          ]
+        ],
+        "eigenvalues": [
+          -5.850726739115519e-05,
+          9.999308157389219,
+          17.31974787057417
+        ],
+        "gaps_from_ground": [
+          0.0,
+          9.99936666465661,
+          17.31980637784156
+        ],
+        "shape_ratio": 1.7320903371870042,
+        "status": "STRONGLY_SUPPORTED_CANDIDATE"
+      },
+      {
+        "sector": "down",
+        "matrix": [
+          [
+            0.0,
+            0.04837490551776266,
+            0.0
+          ],
+          [
+            0.04837490551776266,
+            12.489795918367347,
+            0.004455583402951824
+          ],
+          [
+            0.0,
+            0.004455583402951824,
+            12.952380952380953
+          ]
+        ],
+        "eigenvalues": [
+          -0.0001873606808540047,
+          12.489940350429451,
+          12.952423880999703
+        ],
+        "gaps_from_ground": [
+          0.0,
+          12.490127711110306,
+          12.952611241680557
+        ],
+        "shape_ratio": 1.0370279264765931,
+        "status": "STRONGLY_SUPPORTED_CANDIDATE"
+      }
+    ],
+    "tri_sector_residual": -6.323695211918334e-08,
+    "symbolic_shape_targets": {
+      "down": 1.037037037037037,
+      "up": 1.7320508075688772,
+      "lepton": 2.769087844605914
+    },
+    "symbolic_shape_deltas": {
+      "down": -9.110560443836846e-06,
+      "up": 3.952961812703215e-05,
+      "lepton": 3.0355820731298166e-05
+    },
+    "statuses": {
+      "charged_shape_freeze_candidate": "STRONGLY_SUPPORTED_CANDIDATE",
+      "charged_symbolic_shape_vector": "STRONGLY_SUPPORTED_CANDIDATE",
+      "charged_full_numerical_closure": "OPEN"
+    },
+    "claim_boundary": "Shape ratios are internal eigen-gap diagnostics, not direct empirical mass predictions or final numerical closure."
+  },
+  "neutral_minimal_hessian": {
+    "id": "PO-BH-neutral-minimal-hessian-v1",
+    "public_status": "structural architecture integrated conditional; numerical closure open",
+    "frozen_predictions_changed": false,
+    "official_predictions_changed": false,
+    "ledger": [
+      [
+        0,
+        0
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "diagnostic": {
+      "matrix": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "determinant": 1,
+      "positive_definite": true,
+      "cost_3_0": 9,
+      "cost_1_1": 5,
+      "tangent": [
+        -2,
+        1
+      ],
+      "tangent_norm": 2,
+      "status": "STRONGLY_SUPPORTED_CANDIDATE_BY_MINIMAL_UNIMODULAR_MIXING"
+    },
+    "statuses": {
+      "neutral_Hessian_N2": "STRONGLY_SUPPORTED_CANDIDATE_BY_MINIMAL_UNIMODULAR_MIXING",
+      "neutral_numerical_closure": "OPEN"
+    },
+    "claim_boundary": "Neutral Hessian N2 is a structural candidate, not final neutral numerical closure."
+  },
+  "neutral_bridge_pmns_source": {
+    "id": "PO-BH-neutral-bridge-PMNS-source-v1",
+    "public_status": "structural architecture integrated conditional; numerical closure open",
+    "frozen_predictions_changed": false,
+    "official_predictions_changed": false,
+    "diagnostic": {
+      "eta_nu": "1/3",
+      "g_nu": "1/3",
+      "beta_nu": "1/3",
+      "kappa_nu": "1/6",
+      "K_nu": [
+        [
+          "0",
+          "1/3",
+          "0"
+        ],
+        [
+          "1/3",
+          "3",
+          "1/6"
+        ],
+        [
+          "0",
+          "1/6",
+          "5/3"
+        ]
+      ],
+      "cost_3_0": 9,
+      "cost_1_1": 5,
+      "excitation_inversion": true,
+      "tangent_norm": 2,
+      "theta_01": "1/9",
+      "theta_12": "1/8",
+      "theta_02": "1/90",
+      "theta_l_01": "4/585",
+      "theta_l_12": "4/1035"
+    },
+    "statuses": {
+      "neutral_bridge_seed_1_over_3": "STRONGLY_SUPPORTED_CANDIDATE",
+      "neutral_tangent_bridge_1_over_6": "STRONGLY_SUPPORTED_CANDIDATE",
+      "PMNS_structural_source": "STRONGLY_SUPPORTED_CANDIDATE",
+      "PMNS_numerical_closure": "OPEN"
+    },
+    "claim_boundary": "PMNS structural source is candidate only; PMNS numerical closure remains open."
+  },
+  "ckm_structural_source": {
+    "id": "PO-BH-CKM-structural-source-v1",
+    "public_status": "structural architecture integrated conditional; numerical closure open",
+    "frozen_predictions_changed": false,
+    "official_predictions_changed": false,
+    "diagnostic": {
+      "down_N_d1": 27,
+      "down_N_d2": 28,
+      "down_cost_difference": 1,
+      "down_rule_A_diagonal_gap": "68/147",
+      "up_N_u1": 36,
+      "up_N_u2": 67,
+      "up_lambda_u1_without_ln2": "456/49",
+      "up_lambda_u1_thresholded_label": "456/49 + ln2",
+      "up_lambda_u2": "2546/147",
+      "up_threshold_gap_label": "1178/147 - ln2",
+      "theta_12_u_label": "(16/1323)/(1178/147 - ln2)",
+      "theta_12_d": "28/2907",
+      "source_status": "DOWN_NEAR_DEGENERACY_VS_UP_THRESHOLD_GAP"
+    },
+    "theta_12_u_numeric_diagnostic": 0.001652044987791438,
+    "statuses": {
+      "CKM_structural_source": "STRONGLY_SUPPORTED_CANDIDATE",
+      "CKM_real_mixing_source": "DOWN_NEAR_DEGENERACY_VS_UP_THRESHOLD_GAP",
+      "CKM_numerical_closure": "OPEN"
+    },
+    "claim_boundary": "CKM structural source is candidate only; CKM numerical closure remains open."
+  },
+  "boundary_relative_holonomy_cp": {
+    "id": "PO-BH-boundary-relative-holonomy-CP-v1",
+    "public_status": "structural architecture integrated conditional; numerical closure open",
+    "frozen_predictions_changed": false,
+    "official_predictions_changed": false,
+    "single_sector_eigenvalues_preserved": true,
+    "diagnostic": {
+      "phi_a_01": 0.0,
+      "phi_a_12": 0.0,
+      "phi_b_01": 1.0471975511965976,
+      "phi_b_12": 0.0,
+      "relative_holonomy": 1.0471975511965976,
+      "nontrivial": true,
+      "primitive_phase": "exp(i*pi/3)",
+      "cp_smallness_note": "No direct 0<->2 bridge; CP-odd leakage is second order in beta*kappa."
+    },
+    "statuses": {
+      "single_sector_spectrum_phase_invariance": "DERIVED_CONDITIONAL_ON_TRIDIAGONAL_TREE_REPHASING",
+      "boundary_relative_holonomy_CP_source": "STRUCTURALLY_MOTIVATED_CANDIDATE",
+      "Z6_boundary_phase_holonomy": "STRUCTURALLY_MOTIVATED_CANDIDATE",
+      "CKM_CP_closure": "OPEN",
+      "PMNS_CP_closure": "OPEN"
+    },
+    "claim_boundary": "Boundary relative holonomy is a CP source candidate only; CP numerical closure remains open."
+  },
+  "remaining_open_blockers": [
+    "absolute same-sector mass ratios",
+    "cross-sector transported mass ratios",
+    "residual RG coefficients",
+    "full scheme/common-scale alignment",
+    "exact action derivation of g_bridge=16/189",
+    "exact action derivation of boundary phase source",
+    "neutral eta/beta/kappa final derivation",
+    "neutral threshold rules",
+    "PMNS numerical closure",
+    "CKM numerical closure",
+    "CP numerical closure",
+    "final comparison-ready prediction package"
+  ]
+}

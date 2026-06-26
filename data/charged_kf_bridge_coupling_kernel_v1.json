@@ -1,0 +1,398 @@
+{
+  "id": "PO-BH-charged-Kf-bridge-coupling-kernel-v1",
+  "title": "Charged Kf Bridge-Coupling Source Kernel v1",
+  "public_status": "structural architecture integrated conditional; numerical closure open",
+  "frozen_predictions_changed": false,
+  "official_predictions_changed": false,
+  "uses_empirical_derivation_inputs": false,
+  "forbidden_derivation_inputs": [
+    "observed masses",
+    "charged-lepton masses",
+    "quark masses",
+    "CKM",
+    "PMNS",
+    "neutrino data",
+    "measured alpha",
+    "empirical target ratios",
+    "post-comparison residuals"
+  ],
+  "bridge_rules": {
+    "diagonal_only": {
+      "name": "BRIDGE_RULE_DIAGONAL_ONLY",
+      "status": "BASELINE_DIAGNOSTIC",
+      "beta_f": "0",
+      "kappa_f": "0"
+    },
+    "minimal_ansatz": {
+      "name": "BRIDGE_RULE_MINIMAL_ANSATZ",
+      "status": "STRONGLY_SUPPORTED_CANDIDATE",
+      "beta_f": "beta_0 Pi_f with beta_0=1/21",
+      "kappa_f": "kappa_0/||v_f||^2_ch with kappa_0=1/21"
+    },
+    "symbolic_open": {
+      "name": "BRIDGE_RULE_SYMBOLIC_OPEN",
+      "status": "TOPOLOGY_PRESENT_MAGNITUDES_OPEN",
+      "beta_f": "OPEN_LOCALIZABLE",
+      "kappa_f": "OPEN_LOCALIZABLE"
+    }
+  },
+  "topology": [
+    {
+      "edge": [
+        0,
+        1
+      ],
+      "source": "E3_reference_ladder_bridge",
+      "status": "DERIVED_CONDITIONAL_ON_RANK_THREE_CLOSURE_LADDER",
+      "enabled": true,
+      "notes": "Reference state to first excitation is the E3 ladder bridge."
+    },
+    {
+      "edge": [
+        1,
+        2
+      ],
+      "source": "zero_defect_tangent_bridge",
+      "status": "DERIVED_CONDITIONAL_ON_ZERO_DEFECT_TANGENT_ADJACENCY",
+      "enabled": true,
+      "notes": "First-to-second excitation is the zero-defect tangent adjacency."
+    },
+    {
+      "edge": [
+        0,
+        2
+      ],
+      "source": "cyclic_E3_closure",
+      "status": "NOT_ASSUMED_REQUIRES_CYCLIC_E3_ACTION_SOURCE",
+      "enabled": false,
+      "notes": "Direct cyclic bridge is absent unless an explicit cyclic E3 action source is supplied."
+    }
+  ],
+  "enabled_topology_edges": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      2
+    ]
+  ],
+  "cyclic_0_2_enabled_by_default": false,
+  "reference_bridge_candidates": [
+    {
+      "sector": "lepton",
+      "Pi_f": "1/7",
+      "beta_0": "1/21",
+      "beta_f": "1/147",
+      "topology_status": "DERIVED_CONDITIONAL_ON_E3_LADDER",
+      "magnitude_status": "OPEN_LOCALIZABLE",
+      "ansatz_status": "STRONGLY_SUPPORTED_CANDIDATE"
+    },
+    {
+      "sector": "up",
+      "Pi_f": "2/7",
+      "beta_0": "1/21",
+      "beta_f": "2/147",
+      "topology_status": "DERIVED_CONDITIONAL_ON_E3_LADDER",
+      "magnitude_status": "OPEN_LOCALIZABLE",
+      "ansatz_status": "STRONGLY_SUPPORTED_CANDIDATE"
+    },
+    {
+      "sector": "down",
+      "Pi_f": "4/7",
+      "beta_0": "1/21",
+      "beta_f": "4/147",
+      "topology_status": "DERIVED_CONDITIONAL_ON_E3_LADDER",
+      "magnitude_status": "OPEN_LOCALIZABLE",
+      "ansatz_status": "STRONGLY_SUPPORTED_CANDIDATE"
+    }
+  ],
+  "tangent_bridge_candidates_by_rho": {
+    "1": [
+      {
+        "sector": "lepton",
+        "rho_ch": "1",
+        "tangent": [
+          2,
+          1
+        ],
+        "tangent_norm_sq": "5",
+        "kappa_0": "1/21",
+        "kappa_f": "1/105",
+        "topology_status": "DERIVED_CONDITIONAL_ON_ZERO_DEFECT_TANGENT_ADJACENCY",
+        "inverse_stiffness_status": "STRONGLY_SUPPORTED_CANDIDATE",
+        "magnitude_status": "OPEN_LOCALIZABLE",
+        "ansatz_status": "STRONGLY_SUPPORTED_CANDIDATE"
+      },
+      {
+        "sector": "up",
+        "rho_ch": "1",
+        "tangent": [
+          2,
+          1
+        ],
+        "tangent_norm_sq": "5",
+        "kappa_0": "1/21",
+        "kappa_f": "1/105",
+        "topology_status": "DERIVED_CONDITIONAL_ON_ZERO_DEFECT_TANGENT_ADJACENCY",
+        "inverse_stiffness_status": "STRONGLY_SUPPORTED_CANDIDATE",
+        "magnitude_status": "OPEN_LOCALIZABLE",
+        "ansatz_status": "STRONGLY_SUPPORTED_CANDIDATE"
+      },
+      {
+        "sector": "down",
+        "rho_ch": "1",
+        "tangent": [
+          4,
+          -1
+        ],
+        "tangent_norm_sq": "17",
+        "kappa_0": "1/21",
+        "kappa_f": "1/357",
+        "topology_status": "DERIVED_CONDITIONAL_ON_ZERO_DEFECT_TANGENT_ADJACENCY",
+        "inverse_stiffness_status": "STRONGLY_SUPPORTED_CANDIDATE",
+        "magnitude_status": "OPEN_LOCALIZABLE",
+        "ansatz_status": "STRONGLY_SUPPORTED_CANDIDATE"
+      }
+    ],
+    "2": [
+      {
+        "sector": "lepton",
+        "rho_ch": "2",
+        "tangent": [
+          2,
+          1
+        ],
+        "tangent_norm_sq": "6",
+        "kappa_0": "1/21",
+        "kappa_f": "1/126",
+        "topology_status": "DERIVED_CONDITIONAL_ON_ZERO_DEFECT_TANGENT_ADJACENCY",
+        "inverse_stiffness_status": "STRONGLY_SUPPORTED_CANDIDATE",
+        "magnitude_status": "OPEN_LOCALIZABLE",
+        "ansatz_status": "STRONGLY_SUPPORTED_CANDIDATE"
+      },
+      {
+        "sector": "up",
+        "rho_ch": "2",
+        "tangent": [
+          2,
+          1
+        ],
+        "tangent_norm_sq": "6",
+        "kappa_0": "1/21",
+        "kappa_f": "1/126",
+        "topology_status": "DERIVED_CONDITIONAL_ON_ZERO_DEFECT_TANGENT_ADJACENCY",
+        "inverse_stiffness_status": "STRONGLY_SUPPORTED_CANDIDATE",
+        "magnitude_status": "OPEN_LOCALIZABLE",
+        "ansatz_status": "STRONGLY_SUPPORTED_CANDIDATE"
+      },
+      {
+        "sector": "down",
+        "rho_ch": "2",
+        "tangent": [
+          4,
+          -1
+        ],
+        "tangent_norm_sq": "18",
+        "kappa_0": "1/21",
+        "kappa_f": "1/378",
+        "topology_status": "DERIVED_CONDITIONAL_ON_ZERO_DEFECT_TANGENT_ADJACENCY",
+        "inverse_stiffness_status": "STRONGLY_SUPPORTED_CANDIDATE",
+        "magnitude_status": "OPEN_LOCALIZABLE",
+        "ansatz_status": "STRONGLY_SUPPORTED_CANDIDATE"
+      }
+    ],
+    "3": [
+      {
+        "sector": "lepton",
+        "rho_ch": "3",
+        "tangent": [
+          2,
+          1
+        ],
+        "tangent_norm_sq": "7",
+        "kappa_0": "1/21",
+        "kappa_f": "1/147",
+        "topology_status": "DERIVED_CONDITIONAL_ON_ZERO_DEFECT_TANGENT_ADJACENCY",
+        "inverse_stiffness_status": "STRONGLY_SUPPORTED_CANDIDATE",
+        "magnitude_status": "OPEN_LOCALIZABLE",
+        "ansatz_status": "STRONGLY_SUPPORTED_CANDIDATE"
+      },
+      {
+        "sector": "up",
+        "rho_ch": "3",
+        "tangent": [
+          2,
+          1
+        ],
+        "tangent_norm_sq": "7",
+        "kappa_0": "1/21",
+        "kappa_f": "1/147",
+        "topology_status": "DERIVED_CONDITIONAL_ON_ZERO_DEFECT_TANGENT_ADJACENCY",
+        "inverse_stiffness_status": "STRONGLY_SUPPORTED_CANDIDATE",
+        "magnitude_status": "OPEN_LOCALIZABLE",
+        "ansatz_status": "STRONGLY_SUPPORTED_CANDIDATE"
+      },
+      {
+        "sector": "down",
+        "rho_ch": "3",
+        "tangent": [
+          4,
+          -1
+        ],
+        "tangent_norm_sq": "19",
+        "kappa_0": "1/21",
+        "kappa_f": "1/399",
+        "topology_status": "DERIVED_CONDITIONAL_ON_ZERO_DEFECT_TANGENT_ADJACENCY",
+        "inverse_stiffness_status": "STRONGLY_SUPPORTED_CANDIDATE",
+        "magnitude_status": "OPEN_LOCALIZABLE",
+        "ansatz_status": "STRONGLY_SUPPORTED_CANDIDATE"
+      }
+    ]
+  },
+  "bridge_magnitude_candidates": [
+    {
+      "name": "beta_0",
+      "formula": "beta_f = beta_0 Pi_f",
+      "value": "1/21",
+      "topology_status": "DERIVED_CONDITIONAL_ON_E3_LADDER",
+      "magnitude_status": "OPEN_LOCALIZABLE",
+      "candidate_status": "STRONGLY_SUPPORTED_CANDIDATE",
+      "notes": "The 1/21 seed is a minimal ansatz; no explicit bridge action source derives it."
+    },
+    {
+      "name": "kappa_0",
+      "formula": "kappa_f = kappa_0 / ||v_f||^2_ch",
+      "value": "1/21",
+      "topology_status": "DERIVED_CONDITIONAL_ON_ZERO_DEFECT_TANGENT_ADJACENCY",
+      "magnitude_status": "OPEN_LOCALIZABLE",
+      "candidate_status": "STRONGLY_SUPPORTED_CANDIDATE",
+      "notes": "The inverse tangent stiffness form is a strong candidate; the 1/21 seed remains open."
+    }
+  ],
+  "tangent_norms": {
+    "1": {
+      "lepton": "5",
+      "up": "5",
+      "down": "17"
+    },
+    "2": {
+      "lepton": "6",
+      "up": "6",
+      "down": "18"
+    },
+    "3": {
+      "lepton": "7",
+      "up": "7",
+      "down": "19"
+    }
+  },
+  "minimal_ansatz_bridge_values_by_rho": {
+    "1": {
+      "lepton": {
+        "beta_f": "1/147",
+        "kappa_f": "1/105",
+        "bridge_rule": "BRIDGE_RULE_MINIMAL_ANSATZ",
+        "bridge_rule_status": "STRONGLY_SUPPORTED_CANDIDATE"
+      },
+      "up": {
+        "beta_f": "2/147",
+        "kappa_f": "1/105",
+        "bridge_rule": "BRIDGE_RULE_MINIMAL_ANSATZ",
+        "bridge_rule_status": "STRONGLY_SUPPORTED_CANDIDATE"
+      },
+      "down": {
+        "beta_f": "4/147",
+        "kappa_f": "1/357",
+        "bridge_rule": "BRIDGE_RULE_MINIMAL_ANSATZ",
+        "bridge_rule_status": "STRONGLY_SUPPORTED_CANDIDATE"
+      }
+    },
+    "2": {
+      "lepton": {
+        "beta_f": "1/147",
+        "kappa_f": "1/126",
+        "bridge_rule": "BRIDGE_RULE_MINIMAL_ANSATZ",
+        "bridge_rule_status": "STRONGLY_SUPPORTED_CANDIDATE"
+      },
+      "up": {
+        "beta_f": "2/147",
+        "kappa_f": "1/126",
+        "bridge_rule": "BRIDGE_RULE_MINIMAL_ANSATZ",
+        "bridge_rule_status": "STRONGLY_SUPPORTED_CANDIDATE"
+      },
+      "down": {
+        "beta_f": "4/147",
+        "kappa_f": "1/378",
+        "bridge_rule": "BRIDGE_RULE_MINIMAL_ANSATZ",
+        "bridge_rule_status": "STRONGLY_SUPPORTED_CANDIDATE"
+      }
+    },
+    "3": {
+      "lepton": {
+        "beta_f": "1/147",
+        "kappa_f": "1/147",
+        "bridge_rule": "BRIDGE_RULE_MINIMAL_ANSATZ",
+        "bridge_rule_status": "STRONGLY_SUPPORTED_CANDIDATE"
+      },
+      "up": {
+        "beta_f": "2/147",
+        "kappa_f": "1/147",
+        "bridge_rule": "BRIDGE_RULE_MINIMAL_ANSATZ",
+        "bridge_rule_status": "STRONGLY_SUPPORTED_CANDIDATE"
+      },
+      "down": {
+        "beta_f": "4/147",
+        "kappa_f": "1/399",
+        "bridge_rule": "BRIDGE_RULE_MINIMAL_ANSATZ",
+        "bridge_rule_status": "STRONGLY_SUPPORTED_CANDIDATE"
+      }
+    }
+  },
+  "rho_ch_selector_dependency": {
+    "source": "charged_stiffness_action_selector_v1",
+    "verdict": "NO_UNIQUE_ACTION_SELECTOR_FOUND",
+    "rho_ch_exact_value_status": "OPEN_LOCALIZABLE"
+  },
+  "suppression_bridge_separation": {
+    "rule_A_suppression_source": "B_supp = I_ch / 21",
+    "rule_A_eta_values": {
+      "lepton": "20/147",
+      "up": "38/147",
+      "down": "68/147"
+    },
+    "bridge_magnitude_source": "OPEN_LOCALIZABLE",
+    "status": "OPEN_LOCALIZABLE",
+    "does_suppression_kernel_derive_beta0": false,
+    "does_suppression_kernel_derive_kappa0": false,
+    "notes": "Rule A derives diagonal suppression; it does not by itself derive beta_0 or kappa_0."
+  },
+  "statuses": {
+    "charged_Kf_bridge_coupling_kernel_v1": "COMPLETED_BRIDGE_COUPLING_AUDIT",
+    "charged_Kf_tridiagonal_bridge_topology": "DERIVED_CONDITIONAL_ON_E3_LADDER_AND_TANGENT_ADJACENCY",
+    "E3_reference_ladder_bridge": "DERIVED_CONDITIONAL_ON_RANK_THREE_CLOSURE_LADDER",
+    "zero_defect_tangent_bridge": "DERIVED_CONDITIONAL_ON_ZERO_DEFECT_TANGENT_ADJACENCY",
+    "beta_f_reference_bridge_topology": "DERIVED_CONDITIONAL_ON_E3_LADDER",
+    "beta_f_reference_bridge_magnitude": "OPEN_LOCALIZABLE",
+    "beta_f_minimal_1_over_21_ansatz": "STRONGLY_SUPPORTED_CANDIDATE",
+    "kappa_f_tangent_bridge_topology": "DERIVED_CONDITIONAL_ON_ZERO_DEFECT_TANGENT_ADJACENCY",
+    "kappa_f_inverse_tangent_stiffness_form": "STRONGLY_SUPPORTED_CANDIDATE",
+    "kappa_f_magnitude": "OPEN_LOCALIZABLE",
+    "kappa_f_minimal_1_over_21_ansatz": "STRONGLY_SUPPORTED_CANDIDATE",
+    "suppression_bridge_coupling_identification": "OPEN_LOCALIZABLE",
+    "cyclic_0_2_bridge": "NOT_ASSUMED_REQUIRES_CYCLIC_E3_ACTION_SOURCE",
+    "rho_ch_exact_value": "OPEN_LOCALIZABLE",
+    "numerical_closure": "OPEN"
+  },
+  "verdict": {
+    "bridge_topology_verdict": "DERIVED_CONDITIONAL_ON_E3_LADDER_AND_TANGENT_ADJACENCY",
+    "bridge_magnitude_verdict": "BRIDGE_MAGNITUDES_OPEN_LOCALIZABLE",
+    "beta_f_open_localizable": true,
+    "kappa_f_open_localizable": true,
+    "suppression_bridge_coupling_identification": "OPEN_LOCALIZABLE",
+    "numerical_closure": "OPEN",
+    "theorem_complete": false
+  },
+  "claim_boundary": "The tridiagonal bridge topology is conditionally sourced by E3 ladder and zero-defect tangent adjacency; beta_f and kappa_f magnitudes remain open-localizable."
+}
