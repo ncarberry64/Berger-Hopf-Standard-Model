@@ -1,0 +1,87 @@
+{
+  "artifact": "BHSM_feynrules_syntax_contract_v1_4",
+  "release_basis": "v1.0.1",
+  "phase": "PHASE_THREE_L_FEYNRULES_SYNTAX_RUNNER",
+  "model_file_checked": true,
+  "model_file_path": "models/feynrules/BHSM_Minimal_Collider_Interface.fr.disabled",
+  "model_file_enabled": false,
+  "model_scope": "BHSM_MINIMAL_COLLIDER_INTERFACE_ONLY",
+  "is_complete_bhsm_model": false,
+  "allowed_vertex_families": [
+    "q_charged_current_CKM_BH",
+    "lepton_charged_current_PMNS_BH"
+  ],
+  "excluded_vertex_families": [
+    "charged_boundary_response_matrix",
+    "neutral_operator_kernel_BH",
+    "cp_holonomy_phase_attachment"
+  ],
+  "allowed_runtime_parameters": [
+    "g2_BH_runtime",
+    "W_mass_runtime",
+    "W_width_runtime",
+    "fermion_masses_runtime",
+    "fermion_widths_runtime",
+    "renormalization_scale_runtime"
+  ],
+  "forbidden_content": [
+    "numerical PDG masses",
+    "fake widths",
+    "LHE/HepMC readiness claims",
+    "Athena/CMSSW readiness claims",
+    "standalone unresolved vertices as production vertices"
+  ],
+  "static_contract_checks": [
+    {
+      "check_id": "contains_minimal_label",
+      "passed": true,
+      "notes": "Model draft must identify the minimal collider-interface scope."
+    },
+    {
+      "check_id": "contains_not_complete_warning",
+      "passed": true,
+      "notes": "Model draft must not be presented as complete BHSM."
+    },
+    {
+      "check_id": "contains_unresolved_vertices_exclusion_warning",
+      "passed": true,
+      "notes": "Unresolved vertex families must remain excluded."
+    },
+    {
+      "check_id": "no_numerical_pdg_mass_markers",
+      "passed": true,
+      "notes": "No numerical mass constants are inserted."
+    },
+    {
+      "check_id": "no_fake_width_markers",
+      "passed": true,
+      "notes": "No fake width assignments are inserted."
+    },
+    {
+      "check_id": "no_lhe_hepmc_claims",
+      "passed": true,
+      "notes": "Model draft must not claim event generation."
+    },
+    {
+      "check_id": "no_athena_cmssw_readiness_claims",
+      "passed": true,
+      "notes": "Model draft must not claim detector-software readiness."
+    }
+  ],
+  "static_contract_passed": true,
+  "mathematica_syntax_checked": false,
+  "feynrules_load_checked": false,
+  "feynrules_lagrangian_checked": false,
+  "ufo_export_checked": false,
+  "known_limitations": [
+    "Static text checks are not FeynRules validation.",
+    "Model file remains disabled.",
+    "Mathematica/FeynRules has not loaded the model."
+  ],
+  "notes": "Static repository contract checks passed only if all textual checks pass; this is not FeynRules validation.",
+  "empirical_derivation_inputs_used": false,
+  "boundary_predictions_modified_by_runtime_inputs": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false,
+  "source_model_files_changed": false
+}

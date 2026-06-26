@@ -1,0 +1,105 @@
+{
+  "artifact": "BHSM_software_environment_preflight_v1_4",
+  "release_basis": "v1.0.1",
+  "phase": "PHASE_THREE_L_FEYNRULES_SYNTAX_RUNNER",
+  "entries": [
+    {
+      "component": "python",
+      "detected": true,
+      "version": "3.14.3",
+      "detection_method": "current Python interpreter",
+      "required_for": [
+        "repository exporters",
+        "static checks"
+      ],
+      "blocks_if_missing": true,
+      "notes": "Python is available for repository tooling."
+    },
+    {
+      "component": "mathematica_kernel",
+      "detected": false,
+      "version": "not_detected",
+      "detection_method": "manual/artifact lookup",
+      "required_for": [
+        "FeynRules syntax validation",
+        "UFO export"
+      ],
+      "blocks_if_missing": true,
+      "notes": "Required for real FeynRules execution."
+    },
+    {
+      "component": "wolframscript",
+      "detected": false,
+      "version": "not_detected",
+      "detection_method": "manual/artifact lookup",
+      "required_for": [
+        "scripted Mathematica/FeynRules execution"
+      ],
+      "blocks_if_missing": true,
+      "notes": "Convenient command-line path for local execution."
+    },
+    {
+      "component": "feynrules",
+      "detected": false,
+      "version": "not_detected",
+      "detection_method": "manual/path heuristic",
+      "required_for": [
+        "model loading",
+        "Feynman rule generation",
+        "UFO export"
+      ],
+      "blocks_if_missing": true,
+      "notes": "FeynRules is a Mathematica package; PATH detection is insufficient, so this remains not detected."
+    },
+    {
+      "component": "feynarts",
+      "detected": false,
+      "version": "not_detected",
+      "detection_method": "manual/path heuristic",
+      "required_for": [
+        "optional diagram/form-factor workflows"
+      ],
+      "blocks_if_missing": false,
+      "notes": "Optional FeynArts package not detected by repository preflight."
+    },
+    {
+      "component": "madgraph",
+      "detected": false,
+      "version": "not_detected",
+      "detection_method": "manual/artifact lookup",
+      "required_for": [
+        "MadGraph import",
+        "MadGraph smoke process"
+      ],
+      "blocks_if_missing": true,
+      "notes": "Required for actual MadGraph smoke tests."
+    },
+    {
+      "component": "hepmc",
+      "detected": false,
+      "version": "not_detected",
+      "detection_method": "manual/artifact lookup",
+      "required_for": [
+        "HepMC event-output validation"
+      ],
+      "blocks_if_missing": true,
+      "notes": "Required only after event generation path exists."
+    },
+    {
+      "component": "root_optional",
+      "detected": false,
+      "version": "not_detected",
+      "detection_method": "manual/artifact lookup",
+      "required_for": [
+        "optional analysis and plotting checks"
+      ],
+      "blocks_if_missing": false,
+      "notes": "ROOT is optional for this runner package."
+    }
+  ],
+  "empirical_derivation_inputs_used": false,
+  "boundary_predictions_modified_by_runtime_inputs": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false,
+  "source_model_files_changed": false
+}

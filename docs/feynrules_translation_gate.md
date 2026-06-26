@@ -68,3 +68,8 @@ exported.
 Phase Three-K creates a disabled FeynRules syntax draft. The translation gate
 remains closed for production use because syntax validation has not been run
 and no enabled production `.fr` file is exported.
+
+Phase Three-L supplies local checking/export runner scripts and runner
+contracts for the bounded minimal collider-interface subset. The translation
+gate remains closed because static repository checks are not
+Mathematica/FeynRules validation and no UFO export/loadability result exists.

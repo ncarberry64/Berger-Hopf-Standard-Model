@@ -25,3 +25,14 @@ hepmc_generated = false
 
 No event files are generated or committed.
 
+## Phase Three-L Smoke Runner Contract
+
+Phase Three-L adds a MadGraph smoke-runner script at:
+
+```text
+scripts/madgraph/import_bhsm_minimal_ufo_smoke.mg5
+```
+
+The script remains a runner contract. It is not evidence that MadGraph
+imported a UFO, generated amplitudes, or wrote LHE/HepMC output. The current
+status remains `smoke_test_attempted=false` and `smoke_test_passed=false`.

@@ -32,3 +32,14 @@ Excluded:
 UFO export, MadGraph validation, LHE/HepMC generation, and detector-software
 interfaces remain gated.
 
+## Phase Three-L Follow-On
+
+Phase Three-L adds a FeynRules syntax contract, local Mathematica/FeynRules
+runner scripts, software environment preflight, UFO export runner contract, and
+MadGraph smoke-test runner contract for this same bounded minimal subset.
+
+The follow-on package does not promote the disabled draft to a production
+`.fr` file. FeynRules syntax validation, model loading, UFO export/loadability,
+MadGraph smoke testing, LHE/HepMC generation, Athena readiness, and CMSSW
+readiness remain false unless actually executed and validated in the required
+external software environment.
