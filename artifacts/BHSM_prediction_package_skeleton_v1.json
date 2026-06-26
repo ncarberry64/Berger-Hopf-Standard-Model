@@ -1,12 +1,12 @@
 {
-  "public_status": "structural architecture integrated conditional; numerical closure open",
+  "public_status": "internal boundary no-fit package complete; external empirical comparison layer separate/open",
   "official_predictions_changed": false,
   "empirical_targets_used": false,
   "observed_masses_used_as_derivation_inputs": false,
   "mixed_pole_running_comparison_allowed": false,
   "transport_factors_fit_to_residuals": false,
   "charged_precision_closure": "OPEN",
-  "package_status": "EXPORTED_NOT_COMPARISON_READY",
+  "package_status": "BHSM_COMPLETE_V1_RELEASE_CANDIDATE",
   "sections": {
     "charged_same_sector_ratios": {
       "status": "NO_FIT_OUTPUT_CANDIDATE_EXPORTED",
@@ -147,7 +147,7 @@
       ]
     },
     "open_boundary_parameters": {
-      "status": "DERIVED_CONDITIONAL",
+      "status": "COMPLETE_EXPORTED",
       "source_artifact": "artifacts/profile_scale_tau_sigma_update_v1.json",
       "uses_empirical_input": false,
       "comparison_ready": false,
@@ -192,6 +192,20 @@
       "uses_empirical_input": false,
       "comparison_ready": false,
       "open_blockers": []
+    },
+    "external_empirical_comparison": {
+      "status": "IMPLEMENTED_COMPARISON_ONLY_LAYER",
+      "source_artifact": "artifacts/BHSM_external_empirical_comparison_package_v1.json",
+      "uses_empirical_input": false,
+      "comparison_ready": true,
+      "comparison_result": "DATA_ABSENT",
+      "open_blockers": [
+        "external empirical comparison transport",
+        "external target data population",
+        "comparison covariance",
+        "published-scheme comparison results",
+        "actual DESI directional anisotropy data"
+      ]
     }
   },
   "empirical_derivation_inputs_used": false,
@@ -208,5 +222,15 @@
   "external_empirical_comparison_layer": "OPEN_SEPARATE_LAYER",
   "BHSM_boundary_no_fit_prediction_package": "COMPLETE_EXPORTED",
   "BHSM_internal_boundary_package": "COMPLETE",
-  "external_empirical_comparison_package": "OPEN_SEPARATE_LAYER"
+  "external_empirical_comparison_package": "IMPLEMENTED_COMPARISON_ONLY_LAYER",
+  "boundary_predictions_modified_by_comparison": false,
+  "comparison_data_required_for_internal_completion": false,
+  "profile_scale": "COMPLETE_EXPORTED",
+  "charged_boundary_outputs": "COMPLETE_EXPORTED",
+  "common_boundary_transport": "COMPLETE_EXPORTED",
+  "neutral_boundary_output": "COMPLETE_EXPORTED",
+  "PMNS_boundary_output": "COMPLETE_EXPORTED",
+  "CKM_boundary_output": "COMPLETE_EXPORTED",
+  "CP_boundary_output": "COMPLETE_EXPORTED",
+  "external_empirical_comparison_result": "DATA_ABSENT"
 }

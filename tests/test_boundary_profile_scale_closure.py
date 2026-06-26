@@ -190,7 +190,10 @@ def test_pr46_artifacts_record_targeted_followup_without_promotion():
     else:
         assert central["promoted_statuses"] == []
     if (ROOT / "artifacts" / "BHSM_boundary_no_fit_prediction_package_v1.json").exists():
-        assert package["sections"]["open_boundary_parameters"]["status"] == closure.DERIVED_CONDITIONAL
+        if (ROOT / "artifacts" / "BHSM_COMPLETE_V1_RELEASE_CANDIDATE.json").exists():
+            assert package["sections"]["open_boundary_parameters"]["status"] == "COMPLETE_EXPORTED"
+        else:
+            assert package["sections"]["open_boundary_parameters"]["status"] == closure.DERIVED_CONDITIONAL
         assert package["sections"]["open_boundary_parameters"]["open_blockers"] == []
     else:
         assert package["sections"]["open_boundary_parameters"]["status"] == closure.BLOCKED_BY_MISSING_OBJECTS

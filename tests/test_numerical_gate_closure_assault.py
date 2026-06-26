@@ -129,10 +129,19 @@ def test_prediction_package_is_not_marked_comparison_ready():
     package = load_artifact("BHSM_prediction_package_skeleton_v1.json")
     assert package["official_predictions_changed"] is False
     assert package["empirical_derivation_inputs_used"] is False
-    for section in package["sections"].values():
+    for name, section in package["sections"].items():
         assert section["uses_empirical_input"] is False
-        assert section["comparison_ready"] is False
-    assert package["package_status"] == "EXPORTED_NOT_COMPARISON_READY"
+        if name == "external_empirical_comparison" and (
+            ROOT / "artifacts" / "BHSM_COMPLETE_V1_RELEASE_CANDIDATE.json"
+        ).exists():
+            assert section["comparison_ready"] is True
+            assert section["comparison_result"] == "DATA_ABSENT"
+        else:
+            assert section["comparison_ready"] is False
+    if (ROOT / "artifacts" / "BHSM_COMPLETE_V1_RELEASE_CANDIDATE.json").exists():
+        assert package["package_status"] == "BHSM_COMPLETE_V1_RELEASE_CANDIDATE"
+    else:
+        assert package["package_status"] == "EXPORTED_NOT_COMPARISON_READY"
 
 
 def test_promoted_statuses_require_source_artifacts():

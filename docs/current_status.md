@@ -243,3 +243,53 @@ export only. The external empirical comparison package remains
 `OPEN_SEPARATE_LAYER`; no observed masses, Higgs value, gauge values,
 CKM/PMNS data, CP data, or cosmology residuals are used as derivation inputs.
 Frozen and official predictions remain unchanged.
+
+## BHSM v1 Completion Release Candidate
+
+BHSM v1 now contains a complete internal no-fit boundary prediction package. The
+profile scale, charged boundary outputs, neutral/PMNS/CKM/CP boundary outputs,
+and boundary-scale transport identity are exported as machine-readable
+artifacts.
+
+External empirical comparison is implemented as a separate comparison-only
+layer. Empirical data are not used to derive BHSM constants or boundary
+predictions. If comparison data are absent, the package remains internally
+complete but externally unevaluated.
+
+Current split:
+
+- `BHSM_internal_boundary_package = COMPLETE_EXPORTED`
+- `BHSM_boundary_no_fit_prediction_package = COMPLETE_EXPORTED`
+- `external_empirical_comparison_package = IMPLEMENTED_COMPARISON_ONLY_LAYER`
+- `external_empirical_comparison_status = DATA_OPTIONAL_OR_DATA_ABSENT`
+
+## BHSM v1.0.0 Release Package
+
+Release title: Berger-Hopf Standard Model v1.0.0: Complete Internal Boundary
+No-Fit Package.
+
+Public status:
+
+```text
+internal boundary no-fit package complete; external empirical comparison layer separate/open
+```
+
+The v1.0.0 release package preserves the v1 completion release-candidate split:
+the internal boundary no-fit package is complete and exported, while empirical
+comparison is implemented as a separate comparison-only layer. No observed
+masses, Higgs values, gauge values, CKM values, PMNS values, CP values, DESI
+residuals, or other target data are used to derive BHSM constants or boundary
+predictions.
+
+Release status labels:
+
+- `BHSM_internal_boundary_package = COMPLETE_EXPORTED`
+- `BHSM_boundary_no_fit_prediction_package = COMPLETE_EXPORTED`
+- `external_empirical_comparison_package = IMPLEMENTED_COMPARISON_ONLY_LAYER`
+- `external_empirical_comparison_status = DATA_ABSENT_OR_DATA_OPTIONAL`
+- `empirical_derivation_inputs_used = false`
+- `boundary_predictions_modified_by_comparison = false`
+- `official_predictions_changed = false`
+
+The v1.0.0 release is internally complete at the boundary-package level and
+externally unevaluated when empirical targets are absent.
