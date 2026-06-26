@@ -1,0 +1,168 @@
+{
+  "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
+  "official_predictions_changed": false,
+  "empirical_derivation_inputs_used": false,
+  "observed_masses_used": false,
+  "observed_Higgs_used": false,
+  "observed_gauge_values_used": false,
+  "tau_fit_to_masses": false,
+  "sigma_fit_to_masses": false,
+  "artifact": "radius_symbol_disambiguation_v1",
+  "radius_disambiguation": [
+    {
+      "symbol": "r",
+      "classification": "dimensionless internal/profile Berger radius required by tau=1/(4 sigma r^2)",
+      "profile_radius_candidate": true,
+      "value": null,
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\tau_sigma_boundary_derivation_closure_or_obstruction_v1.json",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_profile_input_classification.md"
+      ],
+      "status": "BLOCKED_BY_MISSING_OBJECT",
+      "notes": "The symbol is required by the tau/sigma gate, but no repo-derived value or radius-normalization theorem fixes it."
+    },
+    {
+      "symbol": "R_H_Gpc",
+      "classification": "physical/cosmological hyperspherical scale",
+      "profile_radius_candidate": false,
+      "value": 24.0,
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\hyperspherical_cosmology_desi_pipeline_v1.json"
+      ],
+      "status": "REJECTED_AS_UNSUPPORTED",
+      "notes": "Cosmological scaffold radius; not the internal Berger/profile radius used by tau."
+    },
+    {
+      "symbol": "Lambda_squared",
+      "classification": "spectral heat cutoff scale",
+      "profile_radius_candidate": false,
+      "value": "1/(4*pi)",
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\frozen_constants_v2.json"
+      ],
+      "status": "REJECTED_AS_UNSUPPORTED",
+      "notes": "Heat/spectral cutoff notation, not a geometric radius for tau."
+    },
+    {
+      "symbol": "S",
+      "classification": "universal overlap/stochastic width constant",
+      "profile_radius_candidate": false,
+      "value": "1/(4*pi)",
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\src\\bhsm_v1.py",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\frozen_constants_v2.json"
+      ],
+      "status": "REJECTED_AS_UNSUPPORTED",
+      "notes": "Frozen overlap width constant; not the internal profile radius r."
+    },
+    {
+      "symbol": "rho / collar depth",
+      "classification": "collar normal coordinate",
+      "profile_radius_candidate": false,
+      "value": null,
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_level_set_boundary_embedding.md",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\docs\\open_blockers_backlog.md"
+      ],
+      "status": "OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH",
+      "notes": "Collar coordinate enters J(Y,rho); it is not an evaluated internal radius."
+    },
+    {
+      "symbol": "Lambda_BH / mu_ref",
+      "classification": "common-scale transport/matching scale",
+      "profile_radius_candidate": false,
+      "value": null,
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\common_scale_charged_transport_interface_v1.json"
+      ],
+      "status": "BLOCKED_BY_MISSING_OBJECT",
+      "notes": "Common-scale transport placeholders; not the tau profile radius."
+    }
+  ],
+  "r_status": "NORMALIZATION_FORK_OPEN",
+  "r_classification": "dimensionless internal/profile Berger radius",
+  "targeted_followup_from_PR48": {
+    "source_artifact": "artifacts/berger_radius_measure_normalization_v1.json",
+    "r_internal_profile_status": "NORMALIZATION_FORK_OPEN",
+    "missing_theorem": "INTERNAL_BERGER_RADIUS_SELECTION_THEOREM"
+  },
+  "radius_measure_symbols_from_PR48_followup": [
+    {
+      "object_id": "r_internal_profile",
+      "symbol": "r",
+      "classification": "dimensionless internal/profile Berger radius",
+      "status": "NORMALIZATION_FORK_OPEN",
+      "value": null,
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\internal_profile_radius_normalization_v1.json",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_profile_input_classification.md",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\berger_base_action_coupling_normalization.md"
+      ],
+      "used_as_internal_profile_r": true,
+      "notes": "The internal radius is the target of this fork audit; no single convention is selected by repo axioms."
+    },
+    {
+      "object_id": "R_H_cosmological",
+      "symbol": "R_H_Gpc",
+      "classification": "physical/cosmological hyperspherical radius",
+      "status": "REJECTED_BY_REPO_CONVENTIONS",
+      "value": 24.0,
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\hyperspherical_cosmology_desi_pipeline_v1.json"
+      ],
+      "used_as_internal_profile_r": false,
+      "notes": "Cosmological scale is not an internal/profile Berger radius."
+    },
+    {
+      "object_id": "rho_star_collar_depth",
+      "symbol": "rho_*",
+      "classification": "collar normal-depth coordinate",
+      "status": "STRUCTURALLY_SUPPORTED_CANDIDATE",
+      "value": null,
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_normal_coupling_collar_convention.md",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_collar_measure_extrinsic_geometry.md",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_boundary_embedding_shape_operator.md"
+      ],
+      "used_as_internal_profile_r": false,
+      "notes": "Collar depth has conditional geometric formulas but no matching theorem to r_internal_profile."
+    },
+    {
+      "object_id": "Lambda_BH_matching_scale",
+      "symbol": "Lambda_BH / mu_ref",
+      "classification": "common-scale transport matching scale",
+      "status": "REJECTED_BY_REPO_CONVENTIONS",
+      "value": null,
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\common_scale_charged_transport_interface_v1.json"
+      ],
+      "used_as_internal_profile_r": false,
+      "notes": "Common-scale transport object, not a profile-domain radius."
+    },
+    {
+      "object_id": "Lambda_squared_overlap",
+      "symbol": "Lambda_squared",
+      "classification": "heat/spectral cutoff",
+      "status": "STRUCTURALLY_SUPPORTED_CANDIDATE",
+      "value": "1/(4*pi)",
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\frozen_constants_v2.json"
+      ],
+      "used_as_internal_profile_r": false,
+      "notes": "Fixed cutoff value exists, but the repo lacks a Lambda-to-radius convention."
+    },
+    {
+      "object_id": "S_overlap_width",
+      "symbol": "S",
+      "classification": "overlap/stochastic width",
+      "status": "STRUCTURALLY_SUPPORTED_CANDIDATE",
+      "value": "1/(4*pi)",
+      "source_trace": [
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\src\\bhsm_v1.py",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\frozen_constants_v2.json"
+      ],
+      "used_as_internal_profile_r": false,
+      "notes": "Frozen width exists, but the repo lacks an overlap-width-to-radius convention."
+    }
+  ]
+}
