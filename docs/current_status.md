@@ -39,11 +39,20 @@ primary charged-precision mechanism and redirects charged precision work toward
 finite-width/jet-heat response, localized thresholds, common-scale transport,
 or independently action-derived non-diagonal collar structure.
 
+## Latest Charged Precision Route Audit: Oriented Finite-Width / Jet-Heat Response
+
+The minimal diagonal `K_collar` route was rejected as primary, so the charged
+precision route is now testing the oriented finite-width / Berger jet-heat
+response. This response-sign audit checks direction only: whether the
+charged-lepton jet response satisfies `q_e < q_mu < q_tau`. No observed masses
+are used, no `tau` or `sigma` width is fitted to masses, and full charged
+numerical closure remains open.
+
 ## What Remains Open
 
+- boundary-derived `tau/sigma`
 - boundary-derived `chi`
 - non-diagonal value-curvature `K_collar` only if action-derived
-- oriented finite-width / jet-heat response audit
 - absolute same-sector mass ratios
 - cross-sector transported mass ratios
 - residual RG coefficients
