@@ -148,7 +148,10 @@ def test_prior_artifacts_record_radius_gate_promotion_without_global_closure():
     assert {"gate": "r_internal_profile", "status": theorem.RADIUS_STATUS} in promoted
     assert statuses["internal_berger_radius_selection_theorem"] == theorem.THEOREM_STATUS
     assert statuses["internal_profile_radius_normalization"] == theorem.RADIUS_STATUS
-    assert statuses["boundary_profile_scale_closure"] == "BLOCKED_BY_MISSING_OBJECTS"
+    if (ROOT / "artifacts" / "BHSM_boundary_no_fit_prediction_package_v1.json").exists():
+        assert statuses["boundary_profile_scale_closure"] == "DERIVED_CONDITIONAL_EXPORTED"
+    else:
+        assert statuses["boundary_profile_scale_closure"] == "BLOCKED_BY_MISSING_OBJECTS"
     assert any(row["claim"] == "Internal profile radius value" for row in claims["claim_statuses"])
 
 

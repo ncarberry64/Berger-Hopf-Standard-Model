@@ -180,13 +180,20 @@ def test_open_gate_ledger_records_assault_statuses_without_official_change():
     statuses = open_gate["statuses"]
     assert open_gate["official_predictions_changed"] is False
     assert statuses["numerical_gate_closure_assault"] == "RAN"
-    assert statuses["tau_sigma_gate"] == "OPEN_LOCALIZABLE"
     if (ROOT / "artifacts" / "BHSM_boundary_no_fit_prediction_package_v1.json").exists():
-        assert statuses["charged_no_fit_outputs"] == "NO_FIT_OUTPUT_CANDIDATE_EXPORTED"
+        assert statuses["tau_sigma_gate"] == "DERIVED_CONDITIONAL_EXPORTED"
+        assert statuses["charged_no_fit_outputs"] == "COMPLETE_EXPORTED"
+        assert statuses["common_scale_transport_population"] == (
+            "BOUNDARY_TRANSPORT_IDENTITY_EXPORTED"
+        )
+        assert statuses["neutral_parameter_derivation"] == (
+            "BOUNDARY_SEED_EXPORTED_FOR_INTERNAL_PACKAGE"
+        )
     else:
+        assert statuses["tau_sigma_gate"] == "OPEN_LOCALIZABLE"
         assert statuses["charged_no_fit_outputs"] == "BLOCKED_BY_TAU_SIGMA_BOUNDARY_DERIVATION"
-    assert statuses["common_scale_transport_population"] == "BLOCKED_BY_MISSING_TRANSPORT_OBJECTS"
-    assert statuses["neutral_parameter_derivation"] == "OPEN_LOCALIZABLE"
+        assert statuses["common_scale_transport_population"] == "BLOCKED_BY_MISSING_TRANSPORT_OBJECTS"
+        assert statuses["neutral_parameter_derivation"] == "OPEN_LOCALIZABLE"
     assert statuses["empirical_derivation_inputs_used"] is False
     assert statuses["official_predictions"] == "UNCHANGED"
 

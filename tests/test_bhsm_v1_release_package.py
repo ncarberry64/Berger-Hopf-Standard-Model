@@ -4,6 +4,10 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+CURRENT_STATUS = (
+    "BHSM v1.0.0 internal boundary no-fit package complete/exported; "
+    "external empirical comparison layer separate/open"
+)
 
 
 def read_text(path: str) -> str:
@@ -68,7 +72,8 @@ def test_release_manifest_and_completion_artifact_are_consistent() -> None:
     assert manifest["internal_boundary_package"] == "COMPLETE_EXPORTED"
     assert manifest["boundary_no_fit_prediction_package"] == "COMPLETE_EXPORTED"
     assert manifest["external_empirical_comparison_package"] == "IMPLEMENTED_COMPARISON_ONLY_LAYER"
-    assert manifest["external_empirical_comparison_status"] == "DATA_ABSENT_OR_DATA_OPTIONAL"
+    assert manifest["external_empirical_comparison_status"] == "OPEN_SEPARATE_LAYER"
+    assert manifest["public_status"] == CURRENT_STATUS
     assert manifest["doi"] == "PENDING_ZENODO_RELEASE"
     assert manifest["empirical_derivation_inputs_used"] is False
     assert manifest["boundary_predictions_modified_by_comparison"] is False
