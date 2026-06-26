@@ -1,0 +1,26 @@
+# BHSM v1.1.0 Claim Status
+
+## Allowed Claims
+
+- BHSM v1.1.0 includes a status-reconciled internal boundary no-fit release.
+- BHSM v1.1.0 includes a bounded minimal collider-interface handoff package.
+- BHSM v1.1.0 includes CKM/PMNS charged-current target structures sourced by BHSM artifacts.
+- BHSM v1.1.0 includes FeynRules-prep and runtime-validation runner infrastructure.
+- BHSM v1.1.0 is ready for external HEP-style review and runtime validation attempts.
+
+## Forbidden Claims
+
+- BHSM is officially CERN integrated.
+- BHSM is CERN-ready.
+- BHSM is Athena-ready.
+- BHSM is CMSSW-ready.
+- BHSM has a validated UFO model.
+- BHSM has passed MadGraph validation.
+- BHSM has generated validated LHE/HepMC events.
+- BHSM has exported the complete 4D Lagrangian.
+- BHSM has empirically validated the Standard Model.
+- BHSM runtime parameters are derivation inputs.
+- BHSM excluded vertices are production-ready.
+
+These forbidden statements may be listed as claim boundaries, but they must not be asserted as true release claims.
+

@@ -92,3 +92,16 @@ doi = PENDING_ZENODO_RELEASE
 PDF status for the new Markdown manuscript is recorded in the final sprint
 report. If no environment-local build route is used, the manuscript Markdown is
 the release artifact and PDF generation is deferred.
+
+## BHSM v1.1.0 HEP Handoff Reproducibility
+
+For the v1.1.0 HEP handoff package, start with:
+
+```text
+docs/hep_review_quickstart.md
+docs/institutional_hep_handoff_index.md
+artifacts/BHSM_v1_1_0_phase_three_consolidated_gate_status.json
+```
+
+The runtime validation path remains gated by external licensed Wolfram/FeynRules
+tooling and legal MadGraph/UFO validation steps.

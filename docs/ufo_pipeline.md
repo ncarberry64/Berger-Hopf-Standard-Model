@@ -180,3 +180,15 @@ handoff bundle. It improves reproducibility for external review, but it does
 not alter the validation state: the complete BHSM 4D Lagrangian remains
 outside the minimal subset and the UFO/MadGraph/event pipeline remains gated by
 live runtime evidence.
+
+## BHSM v1.1.0 Consolidation
+
+The v1.1.0 release-facing entry points are:
+
+- `docs/hep_review_quickstart.md`
+- `docs/institutional_hep_handoff_index.md`
+- `docs/bhsm_v1_1_0_runtime_validation_status.md`
+- `artifacts/BHSM_v1_1_0_phase_three_consolidated_gate_status.json`
+
+These consolidate the Phase Three UFO/collider-interface chain without
+changing the runtime gate outcomes.

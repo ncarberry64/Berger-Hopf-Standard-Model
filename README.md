@@ -3,6 +3,10 @@
 Current status: BHSM v1.0.0 internal boundary no-fit package complete/exported; external empirical comparison layer separate/open.
 
 ```text
+BHSM v1.0.1 status-reconciled release:
+internal boundary no-fit package complete/exported;
+external empirical comparison layer separate/open.
+
 BHSM v1.0.0 internal boundary no-fit package: COMPLETE_EXPORTED.
 
 The profile scale, charged boundary outputs, neutral/PMNS/CKM/CP boundary outputs, and boundary-scale transport identity are exported as machine-readable artifacts.
@@ -38,6 +42,16 @@ replacement of the Standard Model.
 BHSM is not a proven replacement for the Standard Model.
 
 BHSM does not claim empirical validation.
+
+## BHSM v1.1.0 HEP handoff status
+
+BHSM v1.1.0 packages the internal boundary no-fit release with a bounded minimal collider-interface handoff layer for external HEP-style review.
+
+The handoff layer includes CKM/PMNS charged-current target structures sourced by BHSM artifacts, FeynRules-prep documentation, a disabled minimal FeynRules draft, runtime preflight scripts, Wolfram/FeynRules mapping guides, UFO export runners, MadGraph smoke-test runners, and an institutional validation protocol.
+
+This is not an officially integrated CERN software package. It is not the complete BHSM 4D Lagrangian. FeynRules syntax validation, UFO export/loadability, MadGraph validation, LHE/HepMC generation, Athena integration, and CMSSW integration remain gated until external licensed runtime tools are available and the corresponding scripts pass.
+
+Start here for external review: `docs/hep_review_quickstart.md`.
 
 ## Collider / CERN Software Readiness
 

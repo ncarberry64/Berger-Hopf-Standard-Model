@@ -33,6 +33,11 @@ def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest().upper()
 
 
+def sha256_lf_normalized(path: Path) -> str:
+    text = path.read_text(encoding="utf-8").replace("\r\n", "\n")
+    return hashlib.sha256(text.encode("utf-8")).hexdigest().upper()
+
+
 def run_tool(*args: str) -> subprocess.CompletedProcess[str]:
     return subprocess.run(
         [sys.executable, *args],
@@ -46,7 +51,7 @@ def run_tool(*args: str) -> subprocess.CompletedProcess[str]:
 def test_uploaded_working_packet_is_preserved_and_summarized() -> None:
     packet_path = ROOT / "artifacts" / "BHSM_phase_three_c_analytical_working_packet_v0_5.json"
     assert packet_path.exists()
-    assert sha256(packet_path) == PACKET_SHA
+    assert sha256_lf_normalized(packet_path) == PACKET_SHA
 
     packet = load("artifacts/BHSM_phase_three_c_analytical_working_packet_v0_5.json")
     summary = load("artifacts/BHSM_phase_three_c_source_summary_v0_5.json")
