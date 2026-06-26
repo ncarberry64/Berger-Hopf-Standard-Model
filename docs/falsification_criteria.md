@@ -17,3 +17,24 @@ ledger.
 
 This release is falsifiable because it freezes constants, modes, tolerances,
 and outputs before comparison.
+
+## BHSM v1 Comparison Gates
+
+The internal profile-scale identities and no-empirical-derivation gate are internal gates. Charged-sector, CKM/PMNS/CP, and DESI checks are comparison-only gates and are `NOT_EVALUATED_DATA_ABSENT` until target data are supplied.
+
+## BHSM v1.0.0 Falsification And Comparison Layer
+
+The v1.0.0 release keeps falsification outside the derivation pipeline. The
+machine-readable gate artifact is:
+
+```text
+artifacts/BHSM_falsification_gates_v1.json
+```
+
+Internal gates verify package integrity and no empirical derivation inputs.
+External gates require target data, scheme metadata, and comparison metadata.
+If target data are absent, those gates are reported as
+`NOT_EVALUATED_DATA_ABSENT`, not as internal failures.
+
+The release remains falsifiable because the internal constants and outputs are
+frozen before external comparison.
