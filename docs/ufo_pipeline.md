@@ -165,3 +165,10 @@ environment Mathematica/FeynRules/MadGraph are not detected, so the attempt is
 not run and the minimal FeynRules draft remains disabled. UFO readiness,
 MadGraph readiness, LHE/HepMC generation, Athena readiness, and CMSSW readiness
 remain false.
+
+## Phase Three-N Runtime Execution Gate
+
+Phase Three-N attempts runtime provisioning for the live validation path. The
+current environment detects Python only. Wolfram/FeynRules/MadGraph execution
+does not run, the minimal model remains disabled, and the UFO/MadGraph/event
+pipeline remains blocked.

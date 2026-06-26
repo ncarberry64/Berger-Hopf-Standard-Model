@@ -21,3 +21,10 @@ smoke test was attempted.
 This phase does not claim complete BHSM 4D Lagrangian export, UFO readiness,
 MadGraph readiness, event generation, Athena readiness, CMSSW readiness,
 CERN-software integration, or empirical validation.
+
+## Phase Three-N Follow-On
+
+Phase Three-N performs the runtime provisioning gate. The current environment
+detects Python but does not detect WolframScript, WolframKernel/Mathematica,
+FeynRules, or MadGraph. Live FeynRules validation therefore remains unattempted
+and all downstream readiness gates remain false.

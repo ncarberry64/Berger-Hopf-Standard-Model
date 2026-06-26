@@ -28,3 +28,8 @@ enable or export the minimal model unless live validation evidence exists. The
 wrappers write local logs under `runs/feynrules_validation/`; those logs are
 not committed as validation evidence unless a future sprint intentionally
 records a real run.
+
+Phase Three-N adds runtime discovery scripts under `scripts/runtime/` and a
+single execution-gate wrapper. In the current environment the Wolfram/FeynRules
+runtime is not detected, so the wrapper records skipped validation rather than
+creating a fake validation result.

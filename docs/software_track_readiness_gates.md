@@ -37,3 +37,10 @@ export, UFO loadability, MadGraph smoke testing, and event generation blocked.
 Phase Three-M exports live-attempt artifacts for FeynRules, UFO, and MadGraph.
 The current result keeps every downstream readiness gate false because the
 required external tools were not detected and no live software run succeeded.
+
+## Phase Three-N Runtime Execution Gate
+
+Phase Three-N records runtime provisioning and command-level execution gates.
+The current result keeps FeynRules validation, model enablement, UFO export,
+UFO loadability, MadGraph smoke testing, LHE/HepMC generation, Athena readiness,
+and CMSSW readiness false.

@@ -229,6 +229,19 @@ records successful Mathematica/FeynRules execution, the minimal model remains
 disabled and BHSM remains not UFO-ready, not MadGraph-ready, and not
 event-generation-ready.
 
+### Phase Three-N runtime execution gate
+
+BHSM now includes a runtime execution gate for live Wolfram/FeynRules
+validation of the bounded minimal collider-interface subset. The gate records
+whether Mathematica/WolframScript, FeynRules, UFO export, and MadGraph smoke
+testing were actually detected and run.
+
+If live validation does not run, the minimal model remains disabled. If live
+validation passes, only the bounded CKM/PMNS collider-interface subset may be
+enabled. The complete BHSM 4D Lagrangian, unresolved charged-boundary
+response, neutral kernel, standalone CP holonomy, UFO/MadGraph/event
+readiness, and CERN integration remain separate gated items.
+
 ### Phase Three-F production-basis and runtime-parameter status
 
 BHSM now defines a canonical production basis for future FeynRules/UFO
