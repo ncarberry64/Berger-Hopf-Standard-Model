@@ -1,0 +1,43 @@
+{
+  "public_status": "structural architecture integrated conditional; numerical closure open",
+  "official_predictions_changed": false,
+  "empirical_targets_used": false,
+  "observed_masses_used_as_derivation_inputs": false,
+  "mixed_pole_running_comparison_allowed": false,
+  "transport_factors_fit_to_residuals": false,
+  "charged_precision_closure": "OPEN",
+  "transport_decomposition": {
+    "T_f_i": [
+      "T_gauge,f",
+      "T_Yukawa,self,f_i",
+      "T_threshold,f_i",
+      "T_scheme,f"
+    ],
+    "formula": "T_f_i = T_gauge,f * T_Yukawa,self,f_i * T_threshold,f_i * T_scheme,f"
+  },
+  "same_sector_cancellation": {
+    "lepton": {
+      "sector": "lepton",
+      "ordinary_gauge_running_cancels_in_same_sector_ratios": true,
+      "reason": "All generations in a charged sector share the same gauge representation; ordinary gauge-running factors are common within the sector.",
+      "cancellation_is_structural_not_mass_fit": true
+    },
+    "up": {
+      "sector": "up",
+      "ordinary_gauge_running_cancels_in_same_sector_ratios": true,
+      "reason": "All generations in a charged sector share the same gauge representation; ordinary gauge-running factors are common within the sector.",
+      "cancellation_is_structural_not_mass_fit": true
+    },
+    "down": {
+      "sector": "down",
+      "ordinary_gauge_running_cancels_in_same_sector_ratios": true,
+      "reason": "All generations in a charged sector share the same gauge representation; ordinary gauge-running factors are common within the sector.",
+      "cancellation_is_structural_not_mass_fit": true
+    }
+  },
+  "open_items": [
+    "numerical residual RG coefficients",
+    "full scheme/common-scale target population",
+    "cross-sector transported mass ratios"
+  ]
+}

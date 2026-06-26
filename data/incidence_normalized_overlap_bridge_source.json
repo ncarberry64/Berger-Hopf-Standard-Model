@@ -1,0 +1,50 @@
+{
+  "id": "PO-BH-incidence-normalized-overlap-bridge-source-v1",
+  "public_status": "structural architecture integrated conditional; numerical closure open",
+  "frozen_predictions_changed": false,
+  "official_predictions_changed": false,
+  "unified_rule": "g_sector = overlap_amplitude^2 / incidence_trace",
+  "neutral": {
+    "sector": "neutral",
+    "incidence_trace": "3",
+    "overlap_amplitude": "1",
+    "bridge_seed": "1/3",
+    "status": "DERIVED_CONDITIONAL_ON_NEUTRAL_INCIDENT_TRACE_3_AND_UNIT_OVERLAP",
+    "notes": "Neutral primitive incidence rank 3 with unit overlap.",
+    "open_blockers": [
+      "neutral eta/beta/kappa final action derivation",
+      "neutral numerical closure"
+    ]
+  },
+  "charged": {
+    "sector": "charged",
+    "incidence_trace": "21",
+    "overlap_amplitude": "4/3",
+    "bridge_seed": "16/189",
+    "status": "DERIVED_CONDITIONAL_ON_INCIDENT_TRACE_21_AND_OVERLAP_4_OVER_3",
+    "notes": "Charged total incidence trace 21 with overlap-renormalization candidate 4/3.",
+    "open_blockers": [
+      "exact action derivation of charged overlap factor 4/3",
+      "final bridge action theorem",
+      "numerical closure"
+    ],
+    "overlap_action_source": "OPEN_LOCALIZABLE"
+  },
+  "charged_overlap_metadata": {
+    "charged_overlap_factor": "4/3",
+    "motivation": "down Hopf multiplier 4 divided by rank-three closure 3",
+    "action_source_status": "OPEN_LOCALIZABLE"
+  },
+  "bridge_ratio_charged_to_neutral": "16/63",
+  "g_ch_factorization": "(1/21)(4/3)^2",
+  "g_ch_factorization_value": "16/189",
+  "statuses": {
+    "incidence_normalized_overlap_bridge_rule": "PARTIALLY_LOCALIZED",
+    "charged_bridge_seed_16_over_189": "DERIVED_CONDITIONAL_ON_INCIDENT_TRACE_21_AND_OVERLAP_4_OVER_3",
+    "neutral_bridge_seed_1_over_3": "DERIVED_CONDITIONAL_ON_NEUTRAL_INCIDENT_TRACE_3_AND_UNIT_OVERLAP",
+    "charged_overlap_4_over_3_action_source": "OPEN_LOCALIZABLE",
+    "full_numerical_closure": "OPEN"
+  },
+  "numerical_closure": "OPEN",
+  "claim_boundary": "The incidence-normalized overlap rule localizes a shared bridge-seed pattern, but the charged overlap factor 4/3 and full numerical closure remain open."
+}

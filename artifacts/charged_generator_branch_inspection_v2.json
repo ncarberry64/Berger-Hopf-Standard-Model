@@ -1,0 +1,20 @@
+{
+  "artifact": "charged_generator_branch_inspection_v2",
+  "public_status": "structural architecture integrated conditional; numerical closure open",
+  "official_predictions_changed": false,
+  "charged_generator_classification": "B-diagnostic",
+  "A_background_implemented": false,
+  "Z_virt_leakage_found": false,
+  "forbidden_fit_found": false,
+  "pass_condition_for_A_background": "P_ch -> Tr_sector(P_ch) -> C_ch -> K_boundary[C_ch] -> K_f projection",
+  "diagnostic_condition_found": "K_f_local -> rho_ch inserted through q^2 + rho_ch*j^2",
+  "evidence": [
+    "charged_kf_generator computes diagonal costs through charged_norm_N(q,j,rho_ch), i.e. q^2 + rho_ch*j^2.",
+    "No P_ch -> Tr_sector(P_ch) -> C_ch -> K_boundary[C_ch] -> P_f projection order is implemented.",
+    "threshold_insertions emits only the up middle mode (q,j)=(6,0) ln2 slot."
+  ],
+  "open_items": [
+    "A-background dependency-order implementation remains open.",
+    "K_collar coefficient chi remains boundary-derived/open, not fitted."
+  ]
+}

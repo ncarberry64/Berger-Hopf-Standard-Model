@@ -1,0 +1,525 @@
+{
+  "public_status_before_sprint": "structural architecture integrated conditional; numerical closure open",
+  "public_status_after_sprint": "structural architecture integrated conditional; numerical closure open",
+  "official_predictions_changed": false,
+  "gates": {
+    "tau_sigma": {
+      "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
+      "official_predictions_changed": false,
+      "empirical_derivation_inputs_used": false,
+      "observed_masses_used": false,
+      "target_ratios_used": false,
+      "gate": "tau_sigma",
+      "status": "OPEN_LOCALIZABLE",
+      "sigma_from_boundary_geometry": "OPEN_LOCALIZABLE",
+      "tau_from_boundary_geometry": "OPEN_LOCALIZABLE",
+      "sigma_result": {
+        "status": "OPEN_LOCALIZABLE",
+        "derived": false,
+        "value": null,
+        "missing_objects": [
+          "kappa_H",
+          "Z_H"
+        ],
+        "formula": "sigma = (1/2) sqrt(kappa_H / Z_H)"
+      },
+      "tau_result": {
+        "status": "OPEN_LOCALIZABLE",
+        "derived": false,
+        "value": null,
+        "missing_objects": [
+          "kappa_H",
+          "Z_H",
+          "r"
+        ],
+        "formula": "tau = 1 / (4 sigma r^2)"
+      },
+      "source_objects": {
+        "a": {
+          "status": "DERIVED_FIXED",
+          "source_trace": "constants: alpha^{-1}/(12*pi^2) / charged artifacts",
+          "notes": "Frozen alpha-anchored Berger anisotropy is available."
+        },
+        "r": {
+          "status": "MISSING",
+          "source_trace": null,
+          "notes": "No repo-derived numerical Berger/internal radius for tau=1/(4 sigma r^2)."
+        },
+        "sigma": {
+          "status": "OPEN_LOCALIZABLE",
+          "source_trace": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\derived_universal_profile_width_guardrail.md",
+          "notes": "Universal width is guarded against fitting, but its value is not derived."
+        },
+        "tau": {
+          "status": "OPEN_LOCALIZABLE",
+          "source_trace": "artifacts/universal_tau_sigma_response_scaffold_v1.json",
+          "notes": "Tau is defined as universal branch variable, not numerically derived."
+        },
+        "kappa_H": {
+          "status": "MISSING",
+          "source_trace": null,
+          "notes": "Required by sigma=(1/2)sqrt(kappa_H/Z_H), but no source object was found."
+        },
+        "Z_H": {
+          "status": "MISSING",
+          "source_trace": null,
+          "notes": "Required by sigma=(1/2)sqrt(kappa_H/Z_H), but no source object was found."
+        },
+        "Phi(y)": {
+          "status": "DERIVED_CONDITIONAL",
+          "source_trace": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\derived_universal_higgs_topographic_profile.md",
+          "notes": "Universal topographic profile form is recorded, but width value remains open."
+        },
+        "Phi_0": {
+          "status": "OPEN_LOCALIZABLE",
+          "source_trace": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\derived_universal_higgs_topographic_profile.md",
+          "notes": "Profile symbol appears in the universal profile, but normalization is not numeric."
+        },
+        "y_0": {
+          "status": "OPEN_LOCALIZABLE",
+          "source_trace": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\derived_universal_higgs_topographic_profile.md",
+          "notes": "Profile center appears in the universal profile, but coordinate value is not fixed."
+        },
+        "profile second variation": {
+          "status": "OPEN_LOCALIZABLE",
+          "source_trace": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\docs\\open_blockers_backlog.md",
+          "notes": "Profile EOM/source and Hessian data remain open-localizable."
+        },
+        "boundary embedding X": {
+          "status": "OPEN_LOCALIZABLE",
+          "source_trace": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\docs\\open_blockers_backlog.md",
+          "notes": "Boundary embedding is localized in backlog but not evaluable."
+        },
+        "shape operator S": {
+          "status": "OPEN_LOCALIZABLE",
+          "source_trace": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\docs\\open_blockers_backlog.md",
+          "notes": "Shape-operator formulas are conditional; values require embedding/profile data."
+        },
+        "collar Jacobian J": {
+          "status": "OPEN_LOCALIZABLE",
+          "source_trace": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\docs\\open_blockers_backlog.md",
+          "notes": "Collar Jacobian depends on open shape/operator inputs."
+        },
+        "Higgs/profile normalization": {
+          "status": "OPEN_LOCALIZABLE",
+          "source_trace": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\derived_universal_higgs_topographic_profile.md",
+          "notes": "Profile normalization is symbolic, not a derived numerical normalization."
+        }
+      },
+      "missing_objects": [],
+      "obstruction": "Cannot compute sigma=(1/2)sqrt(kappa_H/Z_H) and tau=1/(4 sigma r^2) until kappa_H, Z_H, and r are repo-derived.",
+      "targeted_followup": {
+        "sprint": "Boundary/Profile Scale Closure Assault for kappa_H, Z_H, and r",
+        "source_artifact": "artifacts/boundary_profile_scale_closure_v1.json",
+        "targeted_first_blocker_from_PR_46": true,
+        "boundary_profile_scale_closure": "BLOCKED_BY_MISSING_OBJECTS",
+        "r_status": "BLOCKED_BY_MISSING_OBJECT",
+        "Z_H_status": "OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH",
+        "kappa_H_status": "OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH",
+        "charged_outputs_at_tau_exported": false
+      },
+      "targeted_followup_from_PR47": {
+        "source_artifact": "artifacts/internal_profile_radius_normalization_v1.json",
+        "boundary_profile_scale_closure": "BLOCKED_BY_MISSING_OBJECTS",
+        "r_internal_profile_status": "BLOCKED_BY_MISSING_NORMALIZATION_THEOREM",
+        "Phi_profile_status": "DERIVED_CONDITIONAL",
+        "Z_H_status": "BLOCKED_BY_MISSING_PROFILE_MEASURE",
+        "kappa_H_status": "BLOCKED_BY_MISSING_EFFECTIVE_ACTION"
+      },
+      "refined_missing_objects_from_PR47_followup": [
+        "r_internal_profile",
+        "Z_H",
+        "kappa_H"
+      ],
+      "targeted_followup_from_PR48": {
+        "source_artifact": "artifacts/berger_radius_measure_normalization_v1.json",
+        "r_internal_profile_status": "NORMALIZATION_FORK_OPEN",
+        "missing_theorem": "INTERNAL_BERGER_RADIUS_SELECTION_THEOREM"
+      },
+      "refined_missing_objects_from_PR48_followup": [
+        "r_internal_profile",
+        "Z_H",
+        "kappa_H"
+      ],
+      "targeted_followup_from_author_radius_selection": {
+        "source_artifact": "artifacts/internal_berger_radius_selection_theorem_v1.json",
+        "r_internal_profile_status": "DERIVED_CONDITIONAL",
+        "remaining_blockers": [
+          "Z_H",
+          "kappa_H"
+        ],
+        "tau_symbolic_after_radius_substitution": "tau(Z_H,kappa_H) = 2*pi*sqrt(Z_H/kappa_H)"
+      },
+      "refined_missing_objects_after_radius_selection": [
+        "Z_H",
+        "kappa_H"
+      ],
+      "targeted_followup_from_profile_normalization_hessian_closure": {
+        "source_artifact": "artifacts/profile_normalization_hessian_closure_v1.json",
+        "Z_H_status": "DERIVED_CONDITIONAL",
+        "Z_H_value": 1.0,
+        "kappa_H_status": "BLOCKED_BY_MISSING_PROFILE_HESSIAN_THEOREM",
+        "remaining_blockers": [
+          "kappa_H"
+        ],
+        "tau_symbolic_after_Z_H_substitution": "tau(kappa_H) = 2*pi/sqrt(kappa_H)"
+      },
+      "refined_missing_objects_after_profile_normalization": [
+        "kappa_H"
+      ],
+      "targeted_followup_from_boundary_no_fit_package_completion": {
+        "source_artifact": "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json",
+        "profile_scale_closure": "DERIVED_CONDITIONAL",
+        "sigma_from_boundary_geometry": "DERIVED_CONDITIONAL",
+        "tau_from_boundary_geometry": "DERIVED_CONDITIONAL",
+        "remaining_blockers": []
+      },
+      "refined_missing_objects_after_boundary_no_fit_package": []
+    },
+    "charged_outputs_at_tau": {
+      "attempted": true,
+      "closed": false,
+      "status": "NO_FIT_OUTPUT_CANDIDATE_EXPORTED",
+      "missing_objects": [],
+      "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
+      "official_predictions_changed": false,
+      "tau_source": null,
+      "tau_fit_to_masses": false,
+      "sigma_fit_to_masses": false,
+      "observed_masses_used": false,
+      "target_ratios_used": false,
+      "obstruction": "Boundary-derived tau is unavailable, so no charged output can be frozen at boundary tau.",
+      "refined_missing_objects_from_PR47_followup": [
+        "r_internal_profile",
+        "Z_H",
+        "kappa_H"
+      ],
+      "refined_missing_objects_from_PR48_followup": [
+        "r_internal_profile",
+        "Z_H",
+        "kappa_H"
+      ],
+      "refined_missing_objects_after_radius_selection": [
+        "Z_H",
+        "kappa_H"
+      ],
+      "refined_missing_objects_after_profile_normalization": [
+        "kappa_H"
+      ],
+      "refined_missing_objects_after_boundary_no_fit_package": []
+    },
+    "common_scale_transport": {
+      "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
+      "official_predictions_changed": false,
+      "empirical_derivation_inputs_used": false,
+      "observed_masses_used_as_derivation_inputs": false,
+      "mixed_pole_running_comparison_allowed": false,
+      "transport_factors_fit_to_residuals": false,
+      "gate": "common_scale_transport",
+      "status": "BLOCKED_BY_MISSING_TRANSPORT_OBJECTS",
+      "source_objects": {
+        "T_gauge,f": {
+          "status": "EXPORTED_TEMPLATE",
+          "source_trace": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\charged_transport_decomposition_template_v1.json",
+          "notes": "Template exists, but no derived numerical factor is populated."
+        },
+        "T_Yukawa,self,f_i": {
+          "status": "OPEN_LOCALIZABLE",
+          "source_trace": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\charged_transport_decomposition_template_v1.json",
+          "notes": "Self-Yukawa residual transport is named but not computed."
+        },
+        "T_threshold,f_i": {
+          "status": "OPEN_LOCALIZABLE",
+          "source_trace": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\charged_transport_decomposition_template_v1.json",
+          "notes": "Threshold transport is named but not computed for common-scale population."
+        },
+        "T_scheme,f": {
+          "status": "OPEN_LOCALIZABLE",
+          "source_trace": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\charged_transport_decomposition_template_v1.json",
+          "notes": "Scheme conversion is named but not computed."
+        },
+        "Lambda_BH": {
+          "status": "MISSING",
+          "source_trace": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\common_scale_charged_transport_interface_v1.json",
+          "notes": "Appears in the interface formula, but no derived numeric scale is present."
+        },
+        "mu_ref": {
+          "status": "MISSING",
+          "source_trace": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\common_scale_charged_transport_interface_v1.json",
+          "notes": "No pre-comparison common reference scale is fixed by repo derivation."
+        }
+      },
+      "missing_objects": [
+        "T_gauge,f",
+        "T_Yukawa,self,f_i",
+        "T_threshold,f_i",
+        "T_scheme,f",
+        "Lambda_BH",
+        "mu_ref"
+      ],
+      "obstruction": "Transport interface and templates exist, but numerical/common-scale population requires derived T_gauge, self-Yukawa, threshold, scheme factors, Lambda_BH, and mu_ref."
+    },
+    "neutral_parameters": {
+      "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
+      "official_predictions_changed": false,
+      "empirical_derivation_inputs_used": false,
+      "observed_neutrino_data_used": false,
+      "PMNS_data_used": false,
+      "gate": "neutral_parameters",
+      "status": "STRONGLY_SUPPORTED_CANDIDATE",
+      "neutral_parameter_final_derivation": "OPEN_LOCALIZABLE",
+      "neutral_eta_beta_kappa": "STRONGLY_SUPPORTED_CANDIDATE",
+      "candidate_values": {
+        "eta_nu": "1/3",
+        "g_nu": "1/3",
+        "beta_nu": "1/3",
+        "kappa_nu": "1/6",
+        "K_nu": [
+          [
+            "0",
+            "1/3",
+            "0"
+          ],
+          [
+            "1/3",
+            "3",
+            "1/6"
+          ],
+          [
+            "0",
+            "1/6",
+            "5/3"
+          ]
+        ],
+        "H_nu": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "det_H_nu": 1,
+        "N_nu_3_0": 9,
+        "N_nu_1_1": 5,
+        "v_nu_H_v_nu": 2
+      },
+      "source_trace": {
+        "neutral_minimal_hessian": "src/neutral_minimal_hessian.py",
+        "neutral_bridge_pmns_source": "src/neutral_bridge_pmns_source.py"
+      },
+      "missing_objects": [
+        "action/source derivation of eta_nu",
+        "action/source derivation of beta_nu",
+        "action/source derivation of kappa_nu",
+        "neutral threshold operator"
+      ],
+      "obstruction": "The repo contains a strong neutral Hessian/bridge candidate, but the final action/source derivation and neutral threshold rules remain open."
+    },
+    "PMNS": {
+      "attempted": true,
+      "closed": false,
+      "status": "PMNS_BLOCKED_BY_NEUTRAL_OPERATOR_OPEN",
+      "official_predictions_changed": false,
+      "empirical_derivation_inputs_used": false,
+      "missing_objects": [
+        "neutral operator final derivation",
+        "neutral threshold rules",
+        "charged lepton operator at boundary-derived tau"
+      ],
+      "source_trace": {
+        "neutral_minimal_hessian": "src/neutral_minimal_hessian.py",
+        "neutral_bridge_pmns_source": "src/neutral_bridge_pmns_source.py"
+      }
+    },
+    "CKM": {
+      "attempted": true,
+      "closed": false,
+      "status": "CKM_BLOCKED_BY_UP_OPERATOR_OPEN",
+      "official_predictions_changed": false,
+      "empirical_derivation_inputs_used": false,
+      "structural_source_status": "STRONGLY_SUPPORTED_CANDIDATE",
+      "diagnostic": {
+        "down_cost_difference": 1,
+        "up_threshold_gap_label": "1178/147 - ln2",
+        "theta_12_u_label": "(16/1323)/(1178/147 - ln2)"
+      },
+      "missing_objects": [
+        "final up/down charged operators at boundary-derived tau",
+        "CKM numerical lock",
+        "common-scale transport population"
+      ]
+    },
+    "CP": {
+      "attempted": true,
+      "closed": false,
+      "status": "CP_NUMERICAL_CLOSURE_OPEN",
+      "official_predictions_changed": false,
+      "empirical_derivation_inputs_used": false,
+      "CP_holonomy_source": "STRUCTURALLY_MOTIVATED_CANDIDATE",
+      "diagnostic": {
+        "relative_holonomy": 1.0471975511965976,
+        "primitive_phase": "exp(i*pi/3)",
+        "nontrivial": true
+      },
+      "missing_objects": [
+        "derived phase-to-CKM/PMNS operator map",
+        "closed CKM operator",
+        "closed PMNS operator"
+      ]
+    },
+    "Higgs_EW": {
+      "attempted": true,
+      "closed": false,
+      "status": "BLOCKED_BY_MISSING_OBJECTS",
+      "official_predictions_changed": false,
+      "empirical_derivation_inputs_used": false,
+      "missing_objects": [
+        "Z_H",
+        "v_BH",
+        "V_eff''",
+        "Lambda_BH",
+        "Xi_i",
+        "sin2_theta_W derivation",
+        "v_EW derivation",
+        "m_h derivation",
+        "kappa_H",
+        "r"
+      ]
+    },
+    "cosmology_DESI": {
+      "attempted": true,
+      "closed": false,
+      "status": "MOCK_OR_SCAFFOLD_ONLY",
+      "official_predictions_changed": false,
+      "actual_DESI_data_used": false,
+      "DESI_validation_claimed": false,
+      "empirical_derivation_inputs_used": false,
+      "constants": {
+        "alpha_inverse": 137.035999,
+        "a": "alpha_inverse/(12*pi^2)",
+        "S": "1/(4*pi)",
+        "R_H_Gpc": 24.0
+      },
+      "missing_objects": [
+        "actual DESI directional anisotropy data",
+        "pre-registered comparison statistic"
+      ]
+    }
+  },
+  "promoted_statuses": [
+    {
+      "gate": "internal_berger_radius_selection_theorem",
+      "status": "DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM"
+    },
+    {
+      "gate": "r_internal_profile",
+      "status": "DERIVED_CONDITIONAL"
+    },
+    {
+      "gate": "Z_H_profile_normalization",
+      "status": "DERIVED_CONDITIONAL"
+    },
+    {
+      "gate": "kappa_H_profile_hessian",
+      "status": "DERIVED_CONDITIONAL"
+    },
+    {
+      "gate": "profile_scale_closure",
+      "status": "DERIVED_CONDITIONAL"
+    },
+    {
+      "gate": "charged_outputs_at_boundary_tau",
+      "status": "NO_FIT_OUTPUT_CANDIDATE_EXPORTED"
+    }
+  ],
+  "blocked_gates": [
+    {
+      "gate": "tau_sigma",
+      "status": "OPEN_LOCALIZABLE"
+    },
+    {
+      "gate": "charged_outputs_at_tau",
+      "status": "BLOCKED_BY_TAU_SIGMA_BOUNDARY_DERIVATION"
+    },
+    {
+      "gate": "common_scale_transport",
+      "status": "BLOCKED_BY_MISSING_TRANSPORT_OBJECTS"
+    },
+    {
+      "gate": "neutral_parameters",
+      "status": "STRONGLY_SUPPORTED_CANDIDATE"
+    },
+    {
+      "gate": "PMNS",
+      "status": "PMNS_BLOCKED_BY_NEUTRAL_OPERATOR_OPEN"
+    },
+    {
+      "gate": "CKM",
+      "status": "CKM_BLOCKED_BY_UP_OPERATOR_OPEN"
+    },
+    {
+      "gate": "CP",
+      "status": "CP_NUMERICAL_CLOSURE_OPEN"
+    },
+    {
+      "gate": "Higgs_EW",
+      "status": "BLOCKED_BY_MISSING_OBJECTS"
+    },
+    {
+      "gate": "cosmology_DESI",
+      "status": "MOCK_OR_SCAFFOLD_ONLY"
+    }
+  ],
+  "missing_objects": [
+    "kappa_H",
+    "Z_H",
+    "r",
+    "T_gauge,f",
+    "T_Yukawa,self,f_i",
+    "T_threshold,f_i",
+    "T_scheme,f",
+    "Lambda_BH",
+    "mu_ref",
+    "action/source derivation of eta_nu",
+    "action/source derivation of beta_nu",
+    "action/source derivation of kappa_nu",
+    "neutral threshold operator",
+    "neutral operator final derivation",
+    "neutral threshold rules",
+    "charged lepton operator at boundary-derived tau",
+    "final up/down charged operators at boundary-derived tau",
+    "CKM numerical lock",
+    "common-scale transport population",
+    "derived phase-to-CKM/PMNS operator map",
+    "closed CKM operator",
+    "closed PMNS operator",
+    "v_BH",
+    "V_eff''",
+    "Xi_i",
+    "sin2_theta_W derivation",
+    "v_EW derivation",
+    "m_h derivation",
+    "actual DESI directional anisotropy data",
+    "pre-registered comparison statistic",
+    "r_internal_profile"
+  ],
+  "empirical_derivation_inputs_used": false,
+  "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
+  "observed_masses_used": false,
+  "observed_Higgs_used": false,
+  "observed_gauge_values_used": false,
+  "tau_fit_to_masses": false,
+  "sigma_fit_to_masses": false,
+  "radius_gate_status": "DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM",
+  "public_status": "structural architecture integrated conditional; numerical closure open",
+  "observed_CKM_used": false,
+  "observed_PMNS_used": false,
+  "observed_CP_used": false,
+  "external_empirical_comparison_layer": "OPEN_SEPARATE_LAYER",
+  "BHSM_boundary_no_fit_prediction_package": "COMPLETE_EXPORTED",
+  "BHSM_internal_boundary_package": "COMPLETE",
+  "external_empirical_comparison_package": "OPEN_SEPARATE_LAYER"
+}
