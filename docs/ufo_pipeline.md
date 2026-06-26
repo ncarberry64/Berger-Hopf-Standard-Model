@@ -74,3 +74,12 @@ production UFO model. The FeynRules translation gate remains false until the
 boundary-to-4D projection theorem, gauge fixing, field normalization, vertex
 normalization, complete vertex table, mass/width scheme, renormalization
 scheme, and production parameter-card conventions are supplied.
+
+## Phase Three-C Field Dictionary and Vertex Target Map
+
+Phase Three-C imports `artifacts/BHSM_phase_three_c_analytical_working_packet_v0_5.json`
+and exports an explicit candidate 4D field dictionary, gauge-field target
+dictionary, candidate BHSM parameter card, boundary-source matrices, and
+vertex-source target map. These exports identify collider targets with
+provenance, but they do not complete vector/fermion normalization, full
+gauge/Lorentz structures, mass-width schemes, or renormalization conventions.

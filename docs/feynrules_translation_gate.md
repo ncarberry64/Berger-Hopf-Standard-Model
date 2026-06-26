@@ -26,3 +26,7 @@ ufo_ready = false
 
 The gate is intentionally strict. Candidate ledgers do not count as production
 FeynRules readiness.
+
+Phase Three-C does not open this gate. It adds explicit target maps and
+candidate parameter-card entries while leaving production FeynRules readiness
+blocked.

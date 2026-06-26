@@ -24,3 +24,6 @@ Each vertex family remains blocked by:
 - missing vertex normalization convention.
 
 No fake vertices or Feynman rules are created.
+
+Phase Three-C adds vertex-source target families, but all remain
+`feynrules_ready = false` and `ufo_ready = false`.

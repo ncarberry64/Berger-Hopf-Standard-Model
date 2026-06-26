@@ -21,3 +21,7 @@ and width conventions, gauge representation rows from pinned source artifacts,
 and particle/antiparticle field-symbol conventions.
 
 No Standard Model particle masses, widths, or PDG IDs are inserted here.
+
+Phase Three-C adds explicit candidate field targets, but vector and fermion
+normalization constants remain open and the field-normalization ledger remains
+incomplete.

@@ -92,6 +92,17 @@ conventions remain blocked.
 
 No MadGraph, LHE, HepMC, Athena, or CMSSW readiness is claimed.
 
+### Phase Three-C field dictionary status
+
+BHSM now includes a candidate 4D field dictionary and vertex-source target map.
+Internal BHSM boundary coefficients, mixing matrices, neutral operators, and
+holonomy phases are mapped to candidate collider-field targets with explicit
+provenance.
+
+This does not constitute production FeynRules/UFO readiness. Vector/fermion
+normalizations, full gauge/Lorentz structures, mass-width schemes, and
+renormalization conventions remain open.
+
 ## 1. What Is Complete In v1.0.0
 
 - `BHSM_internal_boundary_package = COMPLETE_EXPORTED`

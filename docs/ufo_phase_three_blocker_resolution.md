@@ -32,3 +32,6 @@ Still blocked:
 - MadGraph validation;
 - LHE/HepMC generation;
 - Athena/CMSSW integration.
+
+Phase Three-C resolves field-dictionary and vertex-target identification at
+the candidate-ledger level only. It does not resolve production UFO export.

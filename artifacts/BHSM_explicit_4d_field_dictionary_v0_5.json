@@ -1,0 +1,207 @@
+{
+  "artifact": "BHSM_explicit_4d_field_dictionary_v0_5",
+  "release_basis": "v1.0.1",
+  "phase": "PHASE_THREE_C",
+  "source_artifact": "artifacts/BHSM_phase_three_c_analytical_working_packet_v0_5.json",
+  "source_sha256": "8384772C492162326C215449201175792E663DFC7807A41CDDBC7E322126F4ED",
+  "field_dictionary_target_exported": true,
+  "production_ufo_ready": false,
+  "entries": [
+    {
+      "field_entry_id": "bhsm_profile_scalar_H",
+      "candidate_symbol": "H_BH or Phi_H",
+      "field_type": "scalar/profile",
+      "spin": 0,
+      "color_representation": "singlet",
+      "weak_representation": "BLOCKED_OR_CANDIDATE_DOUBLET_IF_AUTHOR_ASSIGNS",
+      "hypercharge_target": "BLOCKED_OR_CANDIDATE_PLUS_ONE_HALF_IF_MAPPED_TO_SM_HIGGS_DOUBLET",
+      "hypercharge": "BLOCKED_OR_CANDIDATE_PLUS_ONE_HALF_IF_MAPPED_TO_SM_HIGGS_DOUBLET",
+      "source_artifacts": [
+        "profile_scale_closure_values_v1",
+        "tau_sigma_boundary_values_v1",
+        "canonical_profile_hessian_theorem_v1"
+      ],
+      "BHSM_coefficients": [],
+      "known_BHSM_values": [
+        "Z_H",
+        "kappa_H",
+        "sigma",
+        "tau"
+      ],
+      "status": "BOUNDARY_PROFILE_CANONICAL_NORMALIZATION_COMPLETE_CONDITIONALLY",
+      "production_status": "NOT_UFO_READY",
+      "missing": [
+        "explicit 4D representation",
+        "scalar doublet/singlet decision",
+        "mass/width scheme",
+        "potential V(H)",
+        "gauge-covariant derivative assignment"
+      ],
+      "notes": "kappa_H is a BHSM profile Hessian curvature, not automatically the observed Higgs mass.",
+      "warning": "kappa_H is a BHSM profile Hessian curvature, not automatically the observed Higgs mass.",
+      "ufo_ready": false
+    },
+    {
+      "field_entry_id": "bhsm_lepton_left_doublet",
+      "candidate_symbol": "L_i = (nu_i, ell_i)_L",
+      "field_type": "fermion doublet target",
+      "spin": 0.5,
+      "color_representation": "singlet",
+      "weak_representation": "doublet",
+      "hypercharge_target": "-1/2",
+      "hypercharge": null,
+      "source_artifacts": [
+        "charged_boundary_bridge_values_v1",
+        "PMNS_no_fit_operator_output_v1",
+        "neutral_operator_no_fit_output_v1"
+      ],
+      "BHSM_coefficients": [
+        "Pi_l",
+        "beta_l",
+        "kappa_l",
+        "beta_l_tau",
+        "kappa_l_tau"
+      ],
+      "known_BHSM_values": [],
+      "status": "CONDITIONAL_FIELD_TARGET",
+      "production_status": "NOT_UFO_READY",
+      "missing": [
+        "explicit BHSM chirality theorem",
+        "fermion kinetic Z_L",
+        "mass basis",
+        "neutrino convention",
+        "width convention"
+      ],
+      "notes": null,
+      "warning": null,
+      "ufo_ready": false
+    },
+    {
+      "field_entry_id": "bhsm_charged_lepton_right",
+      "candidate_symbol": "e_R_i",
+      "field_type": "fermion singlet target",
+      "spin": 0.5,
+      "color_representation": "singlet",
+      "weak_representation": "singlet",
+      "hypercharge_target": "-1",
+      "hypercharge": null,
+      "source_artifacts": [
+        "charged_boundary_bridge_values_v1"
+      ],
+      "BHSM_coefficients": [
+        "Pi_l",
+        "beta_l",
+        "kappa_l"
+      ],
+      "known_BHSM_values": [],
+      "status": "CONDITIONAL_FIELD_TARGET",
+      "production_status": "NOT_UFO_READY",
+      "missing": [
+        "right-handed sector projection",
+        "Yukawa/mass convention",
+        "canonical fermion normalization"
+      ],
+      "notes": null,
+      "warning": null,
+      "ufo_ready": false
+    },
+    {
+      "field_entry_id": "bhsm_quark_left_doublet",
+      "candidate_symbol": "Q_i = (u_i, d_i)_L",
+      "field_type": "fermion doublet target",
+      "spin": 0.5,
+      "color_representation": "triplet",
+      "weak_representation": "doublet",
+      "hypercharge_target": "+1/6",
+      "hypercharge": null,
+      "source_artifacts": [
+        "charged_boundary_bridge_values_v1",
+        "CKM_no_fit_operator_output_v1"
+      ],
+      "BHSM_coefficients": [
+        "Pi_u",
+        "Pi_d",
+        "beta_u",
+        "kappa_u",
+        "beta_d",
+        "kappa_d"
+      ],
+      "known_BHSM_values": [],
+      "status": "CONDITIONAL_FIELD_TARGET",
+      "production_status": "NOT_UFO_READY",
+      "missing": [
+        "explicit quark field basis",
+        "color representation theorem",
+        "left-handed projection theorem",
+        "mass basis",
+        "kinetic Z_Q"
+      ],
+      "notes": null,
+      "warning": null,
+      "ufo_ready": false
+    },
+    {
+      "field_entry_id": "bhsm_up_quark_right",
+      "candidate_symbol": "u_R_i",
+      "field_type": "fermion singlet target",
+      "spin": 0.5,
+      "color_representation": "triplet",
+      "weak_representation": "singlet",
+      "hypercharge_target": "+2/3",
+      "hypercharge": null,
+      "source_artifacts": [
+        "charged_boundary_bridge_values_v1"
+      ],
+      "BHSM_coefficients": [
+        "Pi_u",
+        "beta_u",
+        "kappa_u"
+      ],
+      "known_BHSM_values": [],
+      "status": "CONDITIONAL_FIELD_TARGET",
+      "production_status": "NOT_UFO_READY",
+      "missing": [
+        "right-handed projection",
+        "mass/Yukawa convention",
+        "kinetic normalization"
+      ],
+      "notes": null,
+      "warning": null,
+      "ufo_ready": false
+    },
+    {
+      "field_entry_id": "bhsm_down_quark_right",
+      "candidate_symbol": "d_R_i",
+      "field_type": "fermion singlet target",
+      "spin": 0.5,
+      "color_representation": "triplet",
+      "weak_representation": "singlet",
+      "hypercharge_target": "-1/3",
+      "hypercharge": null,
+      "source_artifacts": [
+        "charged_boundary_bridge_values_v1"
+      ],
+      "BHSM_coefficients": [
+        "Pi_d",
+        "beta_d",
+        "kappa_d"
+      ],
+      "known_BHSM_values": [],
+      "status": "CONDITIONAL_FIELD_TARGET",
+      "production_status": "NOT_UFO_READY",
+      "missing": [
+        "right-handed projection",
+        "mass/Yukawa convention",
+        "kinetic normalization"
+      ],
+      "notes": null,
+      "warning": null,
+      "ufo_ready": false
+    }
+  ],
+  "empirical_derivation_inputs_used": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false,
+  "source_model_files_changed": false,
+  "notes": "Candidate 4D field dictionary target only; not a production UFO particle table."
+}
