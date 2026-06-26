@@ -1,0 +1,69 @@
+{
+  "artifact": "BHSM_interaction_theorem_closure_audit_v1_1",
+  "release_basis": "v1.0.1",
+  "phase": "PHASE_THREE_I_INTERACTION_THEOREM_CLOSURE",
+  "entries": [
+    {
+      "theorem_id": "X_ch_charged_boundary_response",
+      "prior_status": "PARTIALLY_RESOLVED_FOR_SPECIFIC_VERTEX_FAMILY",
+      "post_phase_three_i_status": "OPEN_EXACT_MISSING_THEOREM",
+      "closure_result": "NOT_CLOSED_EXACT_MISSING_THEOREM_LOCALIZED",
+      "what_was_validated": "W_mu target convention resolves CKM/PMNS charged-current target mediator only.",
+      "what_was_invalidated_or_forbidden": "Promoting charged_boundary_response_matrix without an X_ch theorem is forbidden.",
+      "affected_vertices": [
+        "charged_boundary_response_matrix"
+      ],
+      "promoted_vertices": [],
+      "still_blocked_vertices": [
+        "charged_boundary_response_matrix"
+      ],
+      "smallest_missing_next_object": "theorem assigning X_ch spin, gauge representation, Lorentz index structure, field content, and coupling normalization for the separate charged boundary response",
+      "feynrules_ready": false,
+      "ufo_ready": false,
+      "notes": "The standard W_mu target convention remains valid only for CKM/PMNS charged-current target vertices already bounded in Phase Three-H. It does not close the separate charged boundary-response theorem."
+    },
+    {
+      "theorem_id": "neutrino_dirac_majorana_basis_scale",
+      "prior_status": "OPEN",
+      "post_phase_three_i_status": "OPEN_EXACT_MISSING_THEOREM",
+      "closure_result": "NOT_CLOSED_EXACT_MISSING_THEOREM_LOCALIZED",
+      "what_was_validated": "PMNS target labels remain valid for charged-current collider-interface mode.",
+      "what_was_invalidated_or_forbidden": "Promoting K_nu to a physical mass matrix without basis, scale, and Dirac/Majorana convention is forbidden.",
+      "affected_vertices": [
+        "neutral_operator_kernel_BH"
+      ],
+      "promoted_vertices": [],
+      "still_blocked_vertices": [
+        "neutral_operator_kernel_BH"
+      ],
+      "smallest_missing_next_object": "basis map U_nu, dimensional scale Lambda_nu, and Dirac/Majorana convention for turning K_nu into a production collider mass or interaction matrix",
+      "feynrules_ready": false,
+      "ufo_ready": false,
+      "notes": "K_nu remains a BHSM boundary/operator source. PMNS charged-current target labels are usable in collider-interface mode, but they do not promote neutral_operator_kernel_BH."
+    },
+    {
+      "theorem_id": "cp_holonomy_O_int_attachment",
+      "prior_status": "PARTIALLY_RESOLVED_FOR_CKM_PMNS_MIXING_VERTICES",
+      "post_phase_three_i_status": "OPEN_EXACT_MISSING_THEOREM",
+      "closure_result": "NOT_CLOSED_EXACT_MISSING_THEOREM_LOCALIZED",
+      "what_was_validated": "delta_BH attachment through CKM/PMNS mixing sources remains partial.",
+      "what_was_invalidated_or_forbidden": "Promoting a standalone CP holonomy vertex without O_int is forbidden.",
+      "affected_vertices": [
+        "cp_holonomy_phase_attachment"
+      ],
+      "promoted_vertices": [],
+      "still_blocked_vertices": [
+        "cp_holonomy_phase_attachment"
+      ],
+      "smallest_missing_next_object": "standalone interaction operator O_int with field content, Lorentz structure, gauge representation, and coupling placement",
+      "feynrules_ready": false,
+      "ufo_ready": false,
+      "notes": "delta_BH remains partially attached through CKM/PMNS mixing sources. That does not define a standalone CP interaction vertex."
+    }
+  ],
+  "empirical_derivation_inputs_used": false,
+  "boundary_predictions_modified_by_runtime_inputs": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false,
+  "source_model_files_changed": false
+}

@@ -25,3 +25,21 @@ Tracked blockers:
 Each blocker remains explicit. The blocker table is a readiness audit, not a
 production FeynRules export.
 
+## Phase Three-H Follow-On
+
+Phase Three-H reduces `X_ch`, neutrino basis/scale, and CP holonomy attachment
+to bounded partial resolutions or exact missing theorems. The FeynRules export
+blocker table remains active.
+
+## Phase Three-I Follow-On
+
+Phase Three-I preserves the FeynRules blocker table as active. It records
+`X_ch`, neutrino basis/scale/Dirac-Majorana convention, and standalone CP
+`O_int` as exact missing theorem objects for their standalone vertex families.
+
+## Phase Three-J Follow-On
+
+Phase Three-J creates FeynRules-prep JSON/docs for a minimal bounded subset.
+The production FeynRules file blocker remains open because no `.fr` file,
+complete particle table, mass-width closure, or renormalization closure is
+exported.

@@ -140,6 +140,122 @@ interaction/basis attachments. Mass-width closure, renormalization closure,
 complete production vertex table, FeynRules export, UFO loadability, MadGraph
 validation, LHE/HepMC generation, and Athena/CMSSW integration remain open.
 
+### Phase Three-H bounded blocker resolution status
+
+BHSM now includes bounded resolution audits for the remaining vertex-table
+blockers: X_ch, neutrino basis/scale, and CP holonomy attachment. CKM/PMNS
+charged-current target vertices are partially promoted as bounded
+collider-interface targets where the canonical production basis, standard
+target-current structures, and BHSM-derived mixing/holonomy sources align.
+
+The separate charged boundary response, neutral kernel, and standalone CP
+holonomy vertices remain blocked by explicit missing interaction, basis, or
+scale theorems. This does not constitute complete 4D Lagrangian export,
+production FeynRules readiness, UFO readiness, MadGraph readiness, event
+generation, or experiment software integration.
+
+### Phase Three-I interaction-theorem closure status
+
+BHSM v1.0.1 status-reconciled release: internal boundary no-fit package
+complete/exported; external empirical comparison layer separate/open.
+
+BHSM now includes direct theorem-closure audits for the final interaction
+blockers: X_ch, neutrino Dirac-Majorana basis/scale, and standalone CP O_int
+attachment. CKM/PMNS target-current attachments remain bounded
+collider-interface targets where standard current conventions, canonical
+production basis, and BHSM mixing/holonomy sources already align.
+
+The separate charged boundary response, neutral kernel, and standalone CP
+holonomy vertex remain blocked unless their missing interaction, basis/scale,
+or O_int theorems are derived. This does not constitute complete 4D Lagrangian
+export, production FeynRules readiness, UFO readiness, MadGraph readiness,
+event generation, or experiment software integration.
+
+### Phase Three-J minimal collider-interface Lagrangian subset
+
+BHSM v1.0.1 status-reconciled release: internal boundary no-fit package
+complete/exported; external empirical comparison layer separate/open.
+
+BHSM now includes a minimal bounded collider-interface Lagrangian subset in
+the canonical production basis. The subset includes CKM/PMNS charged-current
+target structures sourced by BHSM mixing artifacts and standard target-current
+conventions.
+
+The subset explicitly excludes the unresolved charged boundary response,
+neutral kernel, and standalone CP holonomy vertices. It is FeynRules-prep only
+and does not constitute the complete BHSM 4D Lagrangian, production FeynRules
+readiness, UFO readiness, MadGraph readiness, event generation, or experiment
+software integration.
+
+### Phase Three-K bounded FeynRules export attempt
+
+BHSM v1.0.1 status-reconciled release: internal boundary no-fit package
+complete/exported; external empirical comparison layer separate/open.
+
+BHSM now includes a software-track bounded FeynRules export attempt for the
+minimal collider-interface subset. The attempted model covers only
+canonical-basis CKM/PMNS charged-current target structures sourced by BHSM
+mixing artifacts.
+
+The file is not the complete BHSM 4D Lagrangian and excludes unresolved
+charged-boundary response, neutral-kernel, and standalone CP-holonomy vertices.
+UFO export, UFO loadability, MadGraph validation, LHE/HepMC generation, and
+Athena/CMSSW integration remain gated unless separately validated.
+
+### Phase Three-L FeynRules syntax-runner package
+
+BHSM v1.0.1 status-reconciled release: internal boundary no-fit package
+complete/exported; external empirical comparison layer separate/open.
+
+BHSM now includes a FeynRules syntax contract and local export-runner package
+for the bounded minimal collider-interface subset. The package prepares local
+Mathematica/FeynRules checks, UFO export commands, software environment
+preflight, and a MadGraph smoke-test runner contract.
+
+Repository static checks do not equal FeynRules validation. Unless
+Mathematica/FeynRules/UFO/MadGraph execution is actually performed and passes,
+BHSM remains not UFO-ready, not MadGraph-ready, and not
+event-generation-ready.
+
+### Phase Three-M live FeynRules validation status
+
+BHSM now includes a live FeynRules validation attempt layer for the bounded
+minimal collider-interface subset. This layer records whether Mathematica,
+FeynRules, UFO export, and MadGraph smoke-test tooling were actually detected
+and run.
+
+Static checks do not count as live FeynRules validation. Unless the repository
+records successful Mathematica/FeynRules execution, the minimal model remains
+disabled and BHSM remains not UFO-ready, not MadGraph-ready, and not
+event-generation-ready.
+
+### Phase Three-N runtime execution gate
+
+BHSM now includes a runtime execution gate for live Wolfram/FeynRules
+validation of the bounded minimal collider-interface subset. The gate records
+whether Mathematica/WolframScript, FeynRules, UFO export, and MadGraph smoke
+testing were actually detected and run.
+
+If live validation does not run, the minimal model remains disabled. If live
+validation passes, only the bounded CKM/PMNS collider-interface subset may be
+enabled. The complete BHSM 4D Lagrangian, unresolved charged-boundary
+response, neutral kernel, standalone CP holonomy, UFO/MadGraph/event
+readiness, and CERN integration remain separate gated items.
+
+### Phase Three-O runtime assets and institutional HEP handoff
+
+BHSM now includes a runtime asset provisioning layer and CERN-like
+institutional HEP handoff package for the bounded minimal collider-interface
+subset. The package documents how to map or install legal
+Wolfram/FeynRules/MadGraph dependencies, run environment preflight, attempt
+live FeynRules validation, attempt UFO export, and attempt MadGraph smoke
+testing.
+
+This is not experiment-approved integration. It is a reproducible handoff
+package for external HEP-style review. The complete BHSM 4D Lagrangian,
+charged-boundary response, neutral kernel, standalone CP holonomy, pure no-fit
+mass-width closure, and renormalization closure remain separate gated items.
+
 ### Phase Three-F production-basis and runtime-parameter status
 
 BHSM now defines a canonical production basis for future FeynRules/UFO
