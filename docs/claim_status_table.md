@@ -101,3 +101,11 @@ Status categories used in this release:
 - `INTEGRATED_CONDITIONAL`
 - `NOT_ACHIEVED`
 - `FORBIDDEN`
+
+## BHSM v1.1.0 HEP Handoff Claim Boundary
+
+The v1.1.0 handoff layer may be described as a bounded minimal
+collider-interface review package. It must not be described as official CERN
+integration, complete BHSM 4D Lagrangian export, validated UFO output,
+MadGraph validation, event generation, Athena integration, CMSSW integration,
+or empirical validation.

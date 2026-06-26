@@ -81,3 +81,11 @@ The repository now includes a phase-one UFO pipeline scaffold. See
 `docs/ufo_pipeline.md`. This scaffold adds schemas, structural templates,
 validators, manifest generation, and event-generation readiness checks. It does
 not export a production UFO model and does not generate collider events.
+
+## BHSM v1.1.0 HEP Handoff Status
+
+BHSM v1.1.0 consolidates the Phase Three-C through Phase Three-O
+collider-interface handoff chain. The institutional handoff package is ready
+for external HEP-style review and runtime validation attempts, but FeynRules
+syntax validation, UFO export/loadability, MadGraph smoke testing, LHE/HepMC
+generation, Athena integration, and CMSSW integration remain gated.

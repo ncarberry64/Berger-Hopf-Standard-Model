@@ -38,3 +38,11 @@ If target data are absent, those gates are reported as
 
 The release remains falsifiable because the internal constants and outputs are
 frozen before external comparison.
+
+## BHSM v1.1.0 HEP Handoff Falsification Boundary
+
+The v1.1.0 HEP handoff package does not change frozen BHSM outputs. It adds a
+runtime-validation path for the minimal bounded collider-interface subset.
+Failed FeynRules, UFO, MadGraph, LHE/HepMC, Athena, or CMSSW gates should be
+reported as software/interface validation failures unless they trace back to a
+frozen BHSM source artifact.
