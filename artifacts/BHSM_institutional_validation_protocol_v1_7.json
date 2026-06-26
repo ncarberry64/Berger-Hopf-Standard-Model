@@ -1,0 +1,232 @@
+{
+  "release_basis": "v1.0.1",
+  "phase": "PHASE_THREE_O_RUNTIME_ASSETS_HEP_HANDOFF",
+  "steps": [
+    {
+      "step_id": "step_0_repo_integrity",
+      "purpose": "Run repository tests and guardrail audits",
+      "required_inputs": [
+        "BHSM repository",
+        "prior gates passed as applicable"
+      ],
+      "command_or_script": "python -m pytest -q",
+      "success_criteria": "corresponding artifact gate records true with real logs",
+      "failure_criteria": "missing runtime, nonzero command exit, missing expected outputs, or forbidden claim boundary",
+      "outputs": [
+        "JSON artifact",
+        "local logs if command actually runs"
+      ],
+      "gates_unlocked_if_passed": [
+        "next validation step"
+      ],
+      "gates_remain_closed_if_failed": [
+        "all downstream readiness claims"
+      ],
+      "notes": "Do not promote readiness without live evidence."
+    },
+    {
+      "step_id": "step_1_runtime_preflight",
+      "purpose": "Detect legal runtime dependencies",
+      "required_inputs": [
+        "BHSM repository",
+        "prior gates passed as applicable"
+      ],
+      "command_or_script": "python tools/check_runtime_provisioning_v1_6.py",
+      "success_criteria": "corresponding artifact gate records true with real logs",
+      "failure_criteria": "missing runtime, nonzero command exit, missing expected outputs, or forbidden claim boundary",
+      "outputs": [
+        "JSON artifact",
+        "local logs if command actually runs"
+      ],
+      "gates_unlocked_if_passed": [
+        "next validation step"
+      ],
+      "gates_remain_closed_if_failed": [
+        "all downstream readiness claims"
+      ],
+      "notes": "Do not promote readiness without live evidence."
+    },
+    {
+      "step_id": "step_2_feynrules_load_validation",
+      "purpose": "Load minimal model in FeynRules",
+      "required_inputs": [
+        "BHSM repository",
+        "prior gates passed as applicable"
+      ],
+      "command_or_script": "python scripts/feynrules/run_live_feynrules_validation.py",
+      "success_criteria": "corresponding artifact gate records true with real logs",
+      "failure_criteria": "missing runtime, nonzero command exit, missing expected outputs, or forbidden claim boundary",
+      "outputs": [
+        "JSON artifact",
+        "local logs if command actually runs"
+      ],
+      "gates_unlocked_if_passed": [
+        "next validation step"
+      ],
+      "gates_remain_closed_if_failed": [
+        "all downstream readiness claims"
+      ],
+      "notes": "Do not promote readiness without live evidence."
+    },
+    {
+      "step_id": "step_3_feynman_rules_generation",
+      "purpose": "Generate Feynman rules for bounded subset",
+      "required_inputs": [
+        "BHSM repository",
+        "prior gates passed as applicable"
+      ],
+      "command_or_script": "same FeynRules validation wrapper",
+      "success_criteria": "corresponding artifact gate records true with real logs",
+      "failure_criteria": "missing runtime, nonzero command exit, missing expected outputs, or forbidden claim boundary",
+      "outputs": [
+        "JSON artifact",
+        "local logs if command actually runs"
+      ],
+      "gates_unlocked_if_passed": [
+        "next validation step"
+      ],
+      "gates_remain_closed_if_failed": [
+        "all downstream readiness claims"
+      ],
+      "notes": "Do not promote readiness without live evidence."
+    },
+    {
+      "step_id": "step_4_ufo_export",
+      "purpose": "Export UFO after FeynRules validation",
+      "required_inputs": [
+        "BHSM repository",
+        "prior gates passed as applicable"
+      ],
+      "command_or_script": "python scripts/feynrules/run_ufo_export_if_validated.py",
+      "success_criteria": "corresponding artifact gate records true with real logs",
+      "failure_criteria": "missing runtime, nonzero command exit, missing expected outputs, or forbidden claim boundary",
+      "outputs": [
+        "JSON artifact",
+        "local logs if command actually runs"
+      ],
+      "gates_unlocked_if_passed": [
+        "next validation step"
+      ],
+      "gates_remain_closed_if_failed": [
+        "all downstream readiness claims"
+      ],
+      "notes": "Do not promote readiness without live evidence."
+    },
+    {
+      "step_id": "step_5_ufo_loadability",
+      "purpose": "Check required UFO files/loadability",
+      "required_inputs": [
+        "BHSM repository",
+        "prior gates passed as applicable"
+      ],
+      "command_or_script": "file/loadability checks after export",
+      "success_criteria": "corresponding artifact gate records true with real logs",
+      "failure_criteria": "missing runtime, nonzero command exit, missing expected outputs, or forbidden claim boundary",
+      "outputs": [
+        "JSON artifact",
+        "local logs if command actually runs"
+      ],
+      "gates_unlocked_if_passed": [
+        "next validation step"
+      ],
+      "gates_remain_closed_if_failed": [
+        "all downstream readiness claims"
+      ],
+      "notes": "Do not promote readiness without live evidence."
+    },
+    {
+      "step_id": "step_6_madgraph_import",
+      "purpose": "Import UFO in MadGraph",
+      "required_inputs": [
+        "BHSM repository",
+        "prior gates passed as applicable"
+      ],
+      "command_or_script": "python scripts/madgraph/run_minimal_ufo_smoke_if_available.py",
+      "success_criteria": "corresponding artifact gate records true with real logs",
+      "failure_criteria": "missing runtime, nonzero command exit, missing expected outputs, or forbidden claim boundary",
+      "outputs": [
+        "JSON artifact",
+        "local logs if command actually runs"
+      ],
+      "gates_unlocked_if_passed": [
+        "next validation step"
+      ],
+      "gates_remain_closed_if_failed": [
+        "all downstream readiness claims"
+      ],
+      "notes": "Do not promote readiness without live evidence."
+    },
+    {
+      "step_id": "step_7_minimal_smoke_process",
+      "purpose": "Run minimal planned processes",
+      "required_inputs": [
+        "BHSM repository",
+        "prior gates passed as applicable"
+      ],
+      "command_or_script": "MadGraph smoke script",
+      "success_criteria": "corresponding artifact gate records true with real logs",
+      "failure_criteria": "missing runtime, nonzero command exit, missing expected outputs, or forbidden claim boundary",
+      "outputs": [
+        "JSON artifact",
+        "local logs if command actually runs"
+      ],
+      "gates_unlocked_if_passed": [
+        "next validation step"
+      ],
+      "gates_remain_closed_if_failed": [
+        "all downstream readiness claims"
+      ],
+      "notes": "Do not promote readiness without live evidence."
+    },
+    {
+      "step_id": "step_8_event_output_optional",
+      "purpose": "Optional event output after smoke pass",
+      "required_inputs": [
+        "BHSM repository",
+        "prior gates passed as applicable"
+      ],
+      "command_or_script": "institution-defined",
+      "success_criteria": "corresponding artifact gate records true with real logs",
+      "failure_criteria": "missing runtime, nonzero command exit, missing expected outputs, or forbidden claim boundary",
+      "outputs": [
+        "JSON artifact",
+        "local logs if command actually runs"
+      ],
+      "gates_unlocked_if_passed": [
+        "next validation step"
+      ],
+      "gates_remain_closed_if_failed": [
+        "all downstream readiness claims"
+      ],
+      "notes": "Do not promote readiness without live evidence."
+    },
+    {
+      "step_id": "step_9_detector_software_boundary_review",
+      "purpose": "External detector software boundary review",
+      "required_inputs": [
+        "BHSM repository",
+        "prior gates passed as applicable"
+      ],
+      "command_or_script": "institution-defined",
+      "success_criteria": "corresponding artifact gate records true with real logs",
+      "failure_criteria": "missing runtime, nonzero command exit, missing expected outputs, or forbidden claim boundary",
+      "outputs": [
+        "JSON artifact",
+        "local logs if command actually runs"
+      ],
+      "gates_unlocked_if_passed": [
+        "next validation step"
+      ],
+      "gates_remain_closed_if_failed": [
+        "all downstream readiness claims"
+      ],
+      "notes": "Do not promote readiness without live evidence."
+    }
+  ],
+  "empirical_derivation_inputs_used": false,
+  "empirical_runtime_inputs_allowed_in_collider_mode": true,
+  "boundary_predictions_modified_by_runtime_inputs": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false,
+  "source_model_files_changed": false
+}

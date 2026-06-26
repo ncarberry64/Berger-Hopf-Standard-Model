@@ -17,3 +17,18 @@ No vertex is marked FeynRules-ready, UFO-ready, or MadGraph-ready.
 CKM/PMNS charged-current targets receive bounded collider-interface promotion.
 Their FeynRules/UFO/MadGraph readiness remains false. Charged boundary,
 neutral, and standalone CP vertices remain blocked.
+
+## Phase Three-I Follow-On
+
+The Phase Three-I theorem audit preserves the bounded CKM/PMNS
+collider-interface targets but does not mark any new vertex FeynRules-ready.
+`charged_boundary_response_matrix`, `neutral_operator_kernel_BH`, and
+`cp_holonomy_phase_attachment` remain blocked by exact missing theorem
+objects.
+
+## Phase Three-J Follow-On
+
+Phase Three-J marks CKM/PMNS charged-current families as included in the
+minimal bounded subset and keeps production FeynRules/UFO readiness false.
+The charged boundary response, neutral kernel, and standalone CP families are
+excluded from the subset.

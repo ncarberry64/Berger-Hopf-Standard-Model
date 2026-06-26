@@ -1,0 +1,14 @@
+{
+  "name": "BHSM HEP Handoff",
+  "image": "mcr.microsoft.com/devcontainers/python:1-3.12-bullseye",
+  "postCreateCommand": "python -m pytest -q tests/test_phase_three_o_runtime_assets_hep_handoff.py",
+  "remoteEnv": {
+    "WOLFRAMSCRIPT_PATH": "${localEnv:WOLFRAMSCRIPT_PATH}",
+    "WOLFRAM_KERNEL_PATH": "${localEnv:WOLFRAM_KERNEL_PATH}",
+    "MATHEMATICA_PATH": "${localEnv:MATHEMATICA_PATH}",
+    "FEYNRULES_PATH": "${localEnv:FEYNRULES_PATH}",
+    "MADGRAPH_PATH": "${localEnv:MADGRAPH_PATH}",
+    "MG5AMC_PATH": "${localEnv:MG5AMC_PATH}"
+  }
+}
+
