@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BHSM Parameter Card Schema v0.1",
+  "type": "object",
+  "required": ["schema_version", "release_basis", "parameters"],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "release_basis": {
+      "type": "string"
+    },
+    "parameters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "parameter_name",
+          "symbol",
+          "value",
+          "unit",
+          "scheme",
+          "scale",
+          "source_artifact",
+          "source_status",
+          "is_fitted_to_empirical_data",
+          "notes"
+        ],
+        "properties": {
+          "parameter_name": {
+            "type": ["string", "null"]
+          },
+          "symbol": {
+            "type": ["string", "null"]
+          },
+          "value": {},
+          "unit": {
+            "type": ["string", "null"]
+          },
+          "scheme": {
+            "type": ["string", "null"]
+          },
+          "scale": {
+            "type": ["string", "null"]
+          },
+          "source_artifact": {
+            "type": ["string", "null"]
+          },
+          "source_status": {
+            "type": "string"
+          },
+          "is_fitted_to_empirical_data": {
+            "type": "boolean"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

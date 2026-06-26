@@ -74,3 +74,10 @@ compatibility with Athena, CMSSW, or experiment production workflows.
 | BHSM-HEP v1.0 | Validated event-generator model and documented event samples |
 
 None of these future layers are claimed by BHSM v1.0.1.
+
+## UFO Pipeline Phase One
+
+The repository now includes a phase-one UFO pipeline scaffold. See
+`docs/ufo_pipeline.md`. This scaffold adds schemas, structural templates,
+validators, manifest generation, and event-generation readiness checks. It does
+not export a production UFO model and does not generate collider events.

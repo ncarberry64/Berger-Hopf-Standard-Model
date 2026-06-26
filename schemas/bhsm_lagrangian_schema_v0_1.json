@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BHSM Lagrangian Schema v0.1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "model_name",
+    "release_basis",
+    "lagrangian_status",
+    "spacetime_dimension",
+    "gauge_groups",
+    "fields",
+    "parameters",
+    "terms",
+    "normalization_conventions",
+    "gauge_fixing_status",
+    "renormalization_status",
+    "source_artifacts",
+    "empirical_derivation_inputs_used",
+    "boundary_predictions_modified_by_comparison",
+    "official_predictions_changed"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "model_name": {
+      "type": "string"
+    },
+    "release_basis": {
+      "type": "string"
+    },
+    "lagrangian_status": {
+      "type": "string"
+    },
+    "spacetime_dimension": {
+      "type": ["integer", "null"]
+    },
+    "gauge_groups": {
+      "type": "array"
+    },
+    "fields": {
+      "type": "array"
+    },
+    "parameters": {
+      "type": "array"
+    },
+    "terms": {
+      "type": "array"
+    },
+    "normalization_conventions": {
+      "type": "object"
+    },
+    "gauge_fixing_status": {
+      "type": "string"
+    },
+    "renormalization_status": {
+      "type": "string"
+    },
+    "source_artifacts": {
+      "type": "array"
+    },
+    "empirical_derivation_inputs_used": {
+      "type": "boolean"
+    },
+    "boundary_predictions_modified_by_comparison": {
+      "type": "boolean"
+    },
+    "official_predictions_changed": {
+      "type": "boolean"
+    }
+  },
+  "additionalProperties": true
+}

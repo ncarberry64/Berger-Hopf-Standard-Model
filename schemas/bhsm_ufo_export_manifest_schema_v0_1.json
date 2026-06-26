@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BHSM UFO Export Manifest Schema v0.1",
+  "type": "object",
+  "required": [
+    "release_basis",
+    "ufo_export_ready",
+    "complete_4d_lagrangian_exported",
+    "feynman_rules_exported",
+    "field_content_validated",
+    "parameter_card_validated",
+    "vertex_table_validated",
+    "madgraph_ready",
+    "lhe_generation_ready",
+    "hepmc_generation_ready",
+    "athena_ready",
+    "cmssw_ready",
+    "empirical_derivation_inputs_used",
+    "boundary_predictions_modified_by_comparison",
+    "official_predictions_changed",
+    "blockers"
+  ],
+  "properties": {
+    "release_basis": {
+      "type": "string"
+    },
+    "ufo_export_ready": {
+      "type": "boolean"
+    },
+    "complete_4d_lagrangian_exported": {
+      "type": "boolean"
+    },
+    "feynman_rules_exported": {
+      "type": "boolean"
+    },
+    "field_content_validated": {
+      "type": "boolean"
+    },
+    "parameter_card_validated": {
+      "type": "boolean"
+    },
+    "vertex_table_validated": {
+      "type": "boolean"
+    },
+    "madgraph_ready": {
+      "type": "boolean"
+    },
+    "lhe_generation_ready": {
+      "type": "boolean"
+    },
+    "hepmc_generation_ready": {
+      "type": "boolean"
+    },
+    "athena_ready": {
+      "type": "boolean"
+    },
+    "cmssw_ready": {
+      "type": "boolean"
+    },
+    "empirical_derivation_inputs_used": {
+      "type": "boolean"
+    },
+    "boundary_predictions_modified_by_comparison": {
+      "type": "boolean"
+    },
+    "official_predictions_changed": {
+      "type": "boolean"
+    },
+    "blockers": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true
+}

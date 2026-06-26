@@ -32,3 +32,7 @@ compatibility, and institutional approval.
 - Pass collaboration-specific code and physics review.
 
 None of these steps are claimed as complete in BHSM v1.0.1.
+
+The phase-one UFO pipeline scaffold is still below the threshold for Athena or
+CMSSW integration because no production UFO model, validated event samples, or
+experiment-specific review exists.

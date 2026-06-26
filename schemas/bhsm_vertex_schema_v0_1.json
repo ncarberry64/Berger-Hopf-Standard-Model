@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BHSM Vertex Schema v0.1",
+  "type": "object",
+  "required": ["schema_version", "release_basis", "vertices"],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "release_basis": {
+      "type": "string"
+    },
+    "vertices": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "vertex_id",
+          "fields",
+          "lorentz_structure",
+          "coupling_symbol",
+          "coupling_value",
+          "source_artifact",
+          "source_status",
+          "ufo_ready",
+          "notes"
+        ],
+        "properties": {
+          "vertex_id": {
+            "type": ["string", "null"]
+          },
+          "fields": {
+            "type": "array"
+          },
+          "lorentz_structure": {
+            "type": ["string", "null"]
+          },
+          "coupling_symbol": {
+            "type": ["string", "null"]
+          },
+          "coupling_value": {},
+          "source_artifact": {
+            "type": ["string", "null"]
+          },
+          "source_status": {
+            "type": "string"
+          },
+          "ufo_ready": {
+            "type": "boolean"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}
