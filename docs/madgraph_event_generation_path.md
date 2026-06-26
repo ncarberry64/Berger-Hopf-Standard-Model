@@ -32,3 +32,6 @@ generator creates a structural placeholder warning only.
 MadGraph generation is blocked by the absence of a real UFO model directory and
 the absence of a collider-ready Lagrangian, Feynman rules, parameter card, and
 vertex table.
+
+Phase Two-A adds a gated candidate builder and readiness checker. They report
+these blockers instead of invoking MadGraph.

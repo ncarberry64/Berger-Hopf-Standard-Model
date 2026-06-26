@@ -60,6 +60,23 @@ detector-simulation interfaces.
 No collider events are generated unless a real validated Lagrangian,
 field-content table, parameter card, vertex table, and UFO export are supplied.
 
+### Analytical export / UFO candidate status
+
+Phase Two-A is attached to the BHSM v1.0.1 status-reconciled release:
+internal boundary no-fit package complete/exported; external empirical
+comparison layer separate/open.
+
+BHSM now includes a Phase Two-A analytical export layer that maps existing
+internal BHSM artifacts into field-content, parameter-card, and vertex-source
+ledgers where legitimate repository sources exist.
+
+This is not yet a production UFO model. The candidate UFO builder is gated and
+will not produce a loadable physics model unless a complete 4D collider-ready
+Lagrangian, field-content table, parameter card, vertex table, and Feynman-rule
+layer are validated.
+
+No LHE or HepMC events are generated in this release.
+
 ## 1. What Is Complete In v1.0.0
 
 - `BHSM_internal_boundary_package = COMPLETE_EXPORTED`

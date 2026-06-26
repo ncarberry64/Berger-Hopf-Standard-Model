@@ -58,3 +58,10 @@ This sprint adds:
 The UFO pipeline scaffold is an interface roadmap and validation harness. It is
 not a physical Lagrangian, not a Feynman-rule derivation, not a UFO model, and
 not a collider event generator.
+
+## Phase Two-A Analytical Export Layer
+
+Phase Two-A adds source-derived analytical export ledgers for field content,
+parameter-card entries, and vertex-source categories. These ledgers use existing
+BHSM artifacts only. They remain blocked from UFO export until a complete 4D
+collider-ready Lagrangian and Feynman-rule layer are supplied.

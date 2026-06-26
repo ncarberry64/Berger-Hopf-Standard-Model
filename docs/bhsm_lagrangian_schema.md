@@ -49,3 +49,6 @@ must report:
 complete_4d_lagrangian_exported = false
 event_generation_ready = false
 ```
+
+Phase Two-A does not change this status. It adds analytical source ledgers that
+remain blocked until a real collider-ready Lagrangian is supplied.

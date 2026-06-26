@@ -30,3 +30,6 @@ hepmc_generation_ready = false
 ```
 
 until real validated collider inputs and a UFO model are supplied.
+
+Phase Two-A still reports `lhe_generation_ready = false` and
+`hepmc_generation_ready = false`.
