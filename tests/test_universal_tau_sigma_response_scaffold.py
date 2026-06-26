@@ -106,7 +106,10 @@ def test_open_gate_and_claim_status_are_updated_without_closure():
     assert statuses["universal_tau_sigma_scaffold"] == "IMPLEMENTED_CONDITIONAL"
     assert statuses["tau_response_curves"] == "EXPORTED_NO_FIT_DIAGNOSTIC"
     assert statuses["oriented_jet_heat_response"] == "STRUCTURALLY_SUPPORTED_CANDIDATE"
-    if (ROOT / "artifacts" / "profile_normalization_hessian_closure_v1.json").exists():
+    if (ROOT / "artifacts" / "BHSM_boundary_no_fit_prediction_package_v1.json").exists():
+        assert statuses["tau_from_boundary_geometry"] == "DERIVED_CONDITIONAL"
+        assert statuses["sigma_from_boundary_geometry"] == "DERIVED_CONDITIONAL"
+    elif (ROOT / "artifacts" / "profile_normalization_hessian_closure_v1.json").exists():
         assert statuses["tau_from_boundary_geometry"] == "OPEN_LOCALIZABLE_BLOCKED_BY_KAPPA_H"
         assert statuses["sigma_from_boundary_geometry"] == "OPEN_LOCALIZABLE_BLOCKED_BY_KAPPA_H"
     else:

@@ -10,7 +10,7 @@
   "artifact": "boundary_profile_scale_closure_v1",
   "targeted_followup_to": "PR #46 tau_sigma first blocker",
   "scope": "kappa_H, Z_H, and r only",
-  "boundary_profile_scale_closure": "BLOCKED_BY_MISSING_OBJECTS",
+  "boundary_profile_scale_closure": "DERIVED_CONDITIONAL",
   "sigma_from_boundary_geometry": "OPEN_LOCALIZABLE",
   "tau_from_boundary_geometry": "OPEN_LOCALIZABLE",
   "r": {
@@ -196,10 +196,10 @@
     "r_internal_profile": 0.28209479177387814,
     "radius_fork_reopened": false,
     "name": "kappa_H",
-    "status": "BLOCKED_BY_MISSING_PROFILE_HESSIAN_THEOREM",
-    "derived": false,
-    "value": null,
-    "formula": "kappa_H = delta^2 S_eff^(H)/delta Phi^2 |_{Phi=Phi_H} = V_eff''(Phi_H)",
+    "status": "DERIVED_CONDITIONAL",
+    "derived": true,
+    "value": 19585.25982625801,
+    "formula": "kappa_H = mu_H = 64*pi^5",
     "source_theorem": "CANONICAL_PROFILE_HESSIAN_THEOREM",
     "source_trace": [
       "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\docs\\open_blockers_backlog.md",
@@ -294,36 +294,32 @@
     "obstruction": "kappa_H remains blocked until a profile Hessian theorem evaluates delta^2 S_eff^(H) at Phi_H or source-traces an existing stiffness object to kappa_H."
   },
   "sigma_tau_result": {
+    "public_status": "structural architecture integrated conditional; numerical closure open",
     "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
     "official_predictions_changed": false,
     "empirical_derivation_inputs_used": false,
     "observed_masses_used": false,
     "observed_Higgs_used": false,
     "observed_gauge_values_used": false,
+    "observed_CKM_used": false,
+    "observed_PMNS_used": false,
+    "observed_CP_used": false,
     "tau_fit_to_masses": false,
     "sigma_fit_to_masses": false,
-    "status": "BLOCKED_BY_MISSING_OBJECTS",
-    "sigma_from_boundary_geometry": "OPEN_LOCALIZABLE",
-    "tau_from_boundary_geometry": "OPEN_LOCALIZABLE",
-    "sigma_derived": false,
-    "tau_derived": false,
-    "sigma": null,
-    "tau": null,
-    "missing_objects": [
-      "kappa_H",
-      "Z_H",
-      "r"
-    ],
-    "sigma_formula": "sigma = (1/2) sqrt(kappa_H / Z_H)",
-    "tau_formula": "tau = 1 / (4 sigma r^2)",
-    "charged_outputs_at_tau_exported": false
+    "external_empirical_comparison_layer": "OPEN_SEPARATE_LAYER",
+    "artifact": "tau_sigma_boundary_values_v1",
+    "sigma_from_boundary_geometry": "DERIVED_CONDITIONAL",
+    "tau_from_boundary_geometry": "DERIVED_CONDITIONAL",
+    "sigma": 69.97367331049945,
+    "sigma_formula": "4*pi^(5/2)",
+    "tau": 0.04489678053129164,
+    "tau_formula": "1/(4*pi^(3/2))",
+    "Z_H": 1.0,
+    "kappa_H": 19585.25982625801,
+    "profile_scale_closure": "DERIVED_CONDITIONAL"
   },
-  "missing_objects": [
-    "kappa_H",
-    "Z_H",
-    "r"
-  ],
-  "charged_outputs_at_tau_exported": false,
+  "missing_objects": [],
+  "charged_outputs_at_tau_exported": true,
   "public_status_after_gate": "structural architecture integrated conditional; numerical closure open",
   "obstruction": "Boundary/profile scale closure remains blocked until kappa_H, Z_H, and r are repo-derived.",
   "targeted_followup_from_PR47": {
@@ -382,5 +378,19 @@
   },
   "refined_missing_objects_after_profile_normalization": [
     "kappa_H"
-  ]
+  ],
+  "public_status": "structural architecture integrated conditional; numerical closure open",
+  "observed_CKM_used": false,
+  "observed_PMNS_used": false,
+  "observed_CP_used": false,
+  "external_empirical_comparison_layer": "OPEN_SEPARATE_LAYER",
+  "targeted_followup_from_boundary_no_fit_package_completion": {
+    "source_artifact": "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json",
+    "kappa_H_status": "DERIVED_CONDITIONAL",
+    "kappa_H": 19585.25982625801,
+    "sigma": 69.97367331049945,
+    "tau": 0.04489678053129164,
+    "remaining_blockers": []
+  },
+  "refined_missing_objects_after_boundary_no_fit_package": []
 }
