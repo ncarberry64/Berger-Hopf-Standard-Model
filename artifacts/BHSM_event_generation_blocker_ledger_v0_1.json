@@ -1,0 +1,47 @@
+{
+  "artifact": "BHSM_event_generation_blocker_ledger_v0_1",
+  "bhsm_release_basis": "v1.0.1",
+  "event_generation_ready": false,
+  "lhe_generation_ready": false,
+  "hepmc_generation_ready": false,
+  "blockers": [
+    {
+      "id": "B1",
+      "item": "validated Lagrangian file",
+      "status": "MISSING_REAL_INPUT"
+    },
+    {
+      "id": "B2",
+      "item": "validated field-content file",
+      "status": "TEMPLATE_ONLY"
+    },
+    {
+      "id": "B3",
+      "item": "validated parameter card",
+      "status": "TEMPLATE_ONLY"
+    },
+    {
+      "id": "B4",
+      "item": "validated vertex table",
+      "status": "TEMPLATE_ONLY"
+    },
+    {
+      "id": "B5",
+      "item": "UFO model directory",
+      "status": "MISSING"
+    },
+    {
+      "id": "B6",
+      "item": "MadGraph availability",
+      "status": "NOT_REQUIRED_UNTIL_UFO_EXISTS"
+    },
+    {
+      "id": "B7",
+      "item": "PDG target table",
+      "status": "REQUIRED_FOR_VALIDATION_ONLY"
+    }
+  ],
+  "empirical_derivation_inputs_used": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false
+}

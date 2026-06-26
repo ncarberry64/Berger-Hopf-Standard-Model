@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BHSM Field Content Schema v0.1",
+  "type": "object",
+  "required": ["schema_version", "release_basis", "fields"],
+  "properties": {
+    "schema_version": {
+      "type": "string"
+    },
+    "release_basis": {
+      "type": "string"
+    },
+    "fields": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "field_name",
+          "symbol",
+          "spin",
+          "mass_parameter",
+          "width_parameter",
+          "charge",
+          "color_representation",
+          "weak_representation",
+          "generation",
+          "pdg_id",
+          "ghost_status",
+          "source_status",
+          "notes"
+        ],
+        "properties": {
+          "field_name": {
+            "type": ["string", "null"]
+          },
+          "symbol": {
+            "type": ["string", "null"]
+          },
+          "spin": {
+            "type": ["string", "number", "null"]
+          },
+          "mass_parameter": {
+            "type": ["string", "null"]
+          },
+          "width_parameter": {
+            "type": ["string", "null"]
+          },
+          "charge": {},
+          "color_representation": {
+            "type": ["string", "null"]
+          },
+          "weak_representation": {
+            "type": ["string", "null"]
+          },
+          "generation": {
+            "type": ["integer", "null"]
+          },
+          "pdg_id": {
+            "type": ["integer", "null"]
+          },
+          "ghost_status": {
+            "type": ["string", "null"]
+          },
+          "source_status": {
+            "type": "string"
+          },
+          "notes": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}

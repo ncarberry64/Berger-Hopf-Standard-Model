@@ -24,6 +24,9 @@ The current repository exports internal boundary/operator-level artifacts. Those
 artifacts are not event samples, generator cards, detector cards, or a validated
 collider model.
 
+The phase-one UFO pipeline scaffold adds schemas and validators for the missing
+collider interface. It does not remove the blockers above.
+
 ## Non-Physical Placeholder Policy
 
 No toy LHE or HepMC events are created in this sprint. If a future schema-only

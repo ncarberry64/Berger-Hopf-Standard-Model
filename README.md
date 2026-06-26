@@ -46,6 +46,20 @@ package. It is a released internal boundary no-fit prediction package. A
 separate collider-interface layer is required before event generation or
 detector simulation. See `docs/collider_readiness.md`.
 
+### UFO / event-generation pipeline status
+
+BHSM v1.0.1 does not yet export a production UFO model, Feynman rules, LHE
+files, HepMC files, Athena integration, or CMSSW integration.
+
+The repository now includes a phase-one UFO pipeline scaffold: schemas,
+validators, manifest generation, and event-generation readiness checks. These
+tools define the required path from an explicit BHSM 4D Lagrangian to Feynman
+rules, a UFO model, MadGraph-compatible event generation, and eventual
+detector-simulation interfaces.
+
+No collider events are generated unless a real validated Lagrangian,
+field-content table, parameter card, vertex table, and UFO export are supplied.
+
 ## 1. What Is Complete In v1.0.0
 
 - `BHSM_internal_boundary_package = COMPLETE_EXPORTED`
