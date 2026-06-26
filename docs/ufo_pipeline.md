@@ -172,3 +172,11 @@ Phase Three-N attempts runtime provisioning for the live validation path. The
 current environment detects Python only. Wolfram/FeynRules/MadGraph execution
 does not run, the minimal model remains disabled, and the UFO/MadGraph/event
 pipeline remains blocked.
+
+## Phase Three-O Runtime Assets And Handoff
+
+Phase Three-O packages runtime asset mapping and a CERN-like institutional HEP
+handoff bundle. It improves reproducibility for external review, but it does
+not alter the validation state: the complete BHSM 4D Lagrangian remains
+outside the minimal subset and the UFO/MadGraph/event pipeline remains gated by
+live runtime evidence.

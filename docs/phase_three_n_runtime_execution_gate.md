@@ -21,3 +21,9 @@ This sprint does not install proprietary software, bypass Wolfram licensing,
 fabricate validation logs, create fake LHE/HepMC outputs, or claim readiness
 without live evidence.
 
+## Phase Three-O Follow-On
+
+Phase Three-O packages the runtime asset manifest, legal download policy,
+setup scripts, model card, and CERN-like institutional HEP handoff protocol.
+It does not change the Phase Three-N runtime result: Wolfram/FeynRules/MadGraph
+execution remains gated by external runtime availability.
