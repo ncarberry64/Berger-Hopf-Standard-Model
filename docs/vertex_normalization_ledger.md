@@ -30,3 +30,7 @@ Phase Three-C adds vertex-source target families, but all remain
 
 Phase Three-D adds CKM/PMNS chiral current attachment targets. They remain
 blocked by scheme, normalization, and production vertex export gates.
+
+Phase Three-E exports gauge-fixing and production-coupling scheme candidates,
+but the vertex-normalization ledger remains incomplete. No production
+Feynman rules are exported.

@@ -1,0 +1,190 @@
+{
+  "artifact": "BHSM_production_coupling_map_v0_8",
+  "release_basis": "v1.0.1",
+  "phase": "PHASE_THREE_F_PRODUCTION_BASIS_RUNTIME_PARAMS",
+  "universal_canonical_basis_rule": "G_prod = G_raw / product_a sqrt(Z_a)",
+  "canonical_production_basis_reduction": "Z_a = 1 for production fields; therefore G_prod = G_raw",
+  "rule_applicability_conditions": [
+    "raw BHSM coefficient has a valid 4D Lorentz attachment",
+    "gauge representation is assigned",
+    "coupling scheme is defined",
+    "mass-width scheme requirements are satisfied if needed",
+    "renormalization scheme requirements are satisfied if needed"
+  ],
+  "entries": [
+    {
+      "coupling_family_id": "q_charged_current_CKM_BH",
+      "raw_BHSM_source": [
+        "CKM_no_fit_operator_output_v1",
+        "CP_no_fit_holonomy_output_v1"
+      ],
+      "raw_coefficient_or_matrix": "V_CKM_BH with g2_BH_candidate",
+      "canonical_basis_rule": "APPLICABLE",
+      "production_coupling_status": "SCHEME_CONDITIONAL",
+      "lorentz_attachment_status": "STANDARD_HEP_TARGET_CONVENTION",
+      "gauge_attachment_status": "STANDARD_HEP_TARGET_CONVENTION",
+      "scheme_status": "SCHEME_CONDITIONAL",
+      "mass_width_status": "OPEN",
+      "renormalization_status": "OPEN",
+      "feynrules_ready": false,
+      "ufo_ready": false,
+      "missing_for_production": [
+        "mass-width scheme",
+        "renormalization scheme",
+        "field normalizations",
+        "production coupling scheme",
+        "FeynRules validation",
+        "UFO vertex export",
+        "MadGraph load validation"
+      ],
+      "notes": "Canonical basis rule applies to the target current, but production schemes remain open."
+    },
+    {
+      "coupling_family_id": "lepton_charged_current_PMNS_BH",
+      "raw_BHSM_source": [
+        "PMNS_no_fit_operator_output_v1",
+        "CP_no_fit_holonomy_output_v1"
+      ],
+      "raw_coefficient_or_matrix": "U_PMNS_BH with g2_BH_candidate",
+      "canonical_basis_rule": "APPLICABLE",
+      "production_coupling_status": "SCHEME_CONDITIONAL",
+      "lorentz_attachment_status": "STANDARD_HEP_TARGET_CONVENTION",
+      "gauge_attachment_status": "STANDARD_HEP_TARGET_CONVENTION",
+      "scheme_status": "SCHEME_CONDITIONAL",
+      "mass_width_status": "OPEN",
+      "renormalization_status": "OPEN",
+      "feynrules_ready": false,
+      "ufo_ready": false,
+      "missing_for_production": [
+        "neutrino convention",
+        "mass-width scheme",
+        "renormalization scheme",
+        "production coupling scheme",
+        "FeynRules validation",
+        "UFO vertex export",
+        "MadGraph load validation"
+      ],
+      "notes": "Canonical basis rule applies to the target current, but production schemes remain open."
+    },
+    {
+      "coupling_family_id": "charged_boundary_response_matrix",
+      "raw_BHSM_source": [
+        "charged_outputs_at_boundary_tau_A_local_v1",
+        "charged_outputs_at_boundary_tau_A_background_identity_v1"
+      ],
+      "raw_coefficient_or_matrix": {
+        "C_ch_boundary_exact": [
+          "4/(1323*pi^(3/2))",
+          "8/(1323*pi^(3/2))",
+          "16/(1323*pi^(3/2))"
+        ]
+      },
+      "canonical_basis_rule": "FORMALLY_APPLICABLE",
+      "production_coupling_status": "BOUNDARY_SOURCE_MATRIX_ONLY",
+      "lorentz_attachment_status": "UNRESOLVED_BOUNDARY_SOURCE",
+      "gauge_attachment_status": "UNRESOLVED_BOUNDARY_SOURCE",
+      "scheme_status": "OPEN",
+      "mass_width_status": "OPEN",
+      "renormalization_status": "OPEN",
+      "feynrules_ready": false,
+      "ufo_ready": false,
+      "missing_for_production": [
+        "Psi_ch field basis",
+        "X_ch projected field/operator",
+        "Lorentz structure",
+        "gauge representation",
+        "canonical field normalizations"
+      ],
+      "notes": "Raw charged boundary matrix is exported; interaction operator X_ch is missing."
+    },
+    {
+      "coupling_family_id": "neutral_operator_kernel_BH",
+      "raw_BHSM_source": [
+        "neutral_operator_no_fit_output_v1"
+      ],
+      "raw_coefficient_or_matrix": {
+        "K_nu": [
+          [
+            0,
+            "1/3",
+            0
+          ],
+          [
+            "1/3",
+            3,
+            "1/6"
+          ],
+          [
+            0,
+            "1/6",
+            "5/3"
+          ]
+        ]
+      },
+      "canonical_basis_rule": "FORMALLY_APPLICABLE",
+      "production_coupling_status": "BOUNDARY_SOURCE_MATRIX_ONLY",
+      "lorentz_attachment_status": "UNRESOLVED_BOUNDARY_SOURCE",
+      "gauge_attachment_status": "UNRESOLVED_BOUNDARY_SOURCE",
+      "scheme_status": "OPEN",
+      "mass_width_status": "OPEN",
+      "renormalization_status": "OPEN",
+      "feynrules_ready": false,
+      "ufo_ready": false,
+      "missing_for_production": [
+        "neutral field basis",
+        "Dirac/Majorana convention",
+        "physical scale",
+        "chirality structure",
+        "mass/width scheme"
+      ],
+      "notes": "Raw neutral kernel is exported; neutrino basis and scale convention are missing."
+    },
+    {
+      "coupling_family_id": "cp_holonomy_phase_attachment",
+      "raw_BHSM_source": [
+        "CP_no_fit_holonomy_output_v1"
+      ],
+      "raw_coefficient_or_matrix": {
+        "delta_BH": "pi/3",
+        "exp_i_delta_BH": "1/2 + i*sqrt(3)/2"
+      },
+      "canonical_basis_rule": "FORMALLY_APPLICABLE",
+      "production_coupling_status": "DERIVED_PHASE_SOURCE",
+      "lorentz_attachment_status": "OPEN",
+      "gauge_attachment_status": "OPEN",
+      "scheme_status": "OPEN",
+      "mass_width_status": "OPEN",
+      "renormalization_status": "OPEN",
+      "feynrules_ready": false,
+      "ufo_ready": false,
+      "missing_for_production": [
+        "O_int interaction operator",
+        "field basis",
+        "gauge/Lorentz structure",
+        "canonical normalization"
+      ],
+      "notes": "CP holonomy phase is exported; interaction attachment is missing."
+    }
+  ],
+  "empirical_derivation_inputs_used": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "boundary_predictions_modified_by_runtime_inputs": false,
+  "official_predictions_changed": false,
+  "source_model_files_changed": false,
+  "source_artifacts": [
+    "artifacts/BHSM_explicit_4d_field_dictionary_v0_5.json",
+    "artifacts/BHSM_gauge_field_target_dictionary_v0_5.json",
+    "artifacts/BHSM_candidate_parameter_card_v0_5.json",
+    "artifacts/BHSM_boundary_source_matrices_v0_5.json",
+    "artifacts/BHSM_vertex_source_target_map_v0_5.json",
+    "artifacts/BHSM_canonical_field_target_conventions_v0_6.json",
+    "artifacts/BHSM_chiral_current_attachment_map_v0_6.json",
+    "artifacts/BHSM_phase_three_d_gate_status_v0_6.json",
+    "artifacts/BHSM_vector_normalization_theorem_v0_7.json",
+    "artifacts/BHSM_fermion_normalization_theorem_v0_7.json",
+    "artifacts/BHSM_gauge_fixing_production_coupling_scheme_v0_7.json",
+    "artifacts/BHSM_mass_width_scheme_candidate_v0_7.json",
+    "artifacts/BHSM_renormalization_scheme_candidate_v0_7.json",
+    "artifacts/BHSM_phase_three_e_gate_status_v0_7.json"
+  ]
+}

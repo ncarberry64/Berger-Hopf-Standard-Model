@@ -1,0 +1,48 @@
+{
+  "artifact": "BHSM_mass_width_scheme_candidate_v0_7",
+  "release_basis": "v1.0.1",
+  "phase": "PHASE_THREE_E_NORMALIZATION_GAUGE_SCHEME",
+  "mass_scheme_status": "STRUCTURAL_CANDIDATE",
+  "width_scheme_status": "BLOCKED_BY_MISSING_THEOREM",
+  "scalar_profile_mass_status": {
+    "status": "STRUCTURAL_CANDIDATE",
+    "kappa_H_parameter": "kappa_H_BH",
+    "value_exact": "64*pi^5",
+    "value_approx": 19585.259826258,
+    "source": "canonical_profile_hessian_theorem_v1",
+    "notes": "kappa_H is a BHSM profile Hessian curvature, not automatically a collider Higgs mass."
+  },
+  "fermion_mass_status": "BLOCKED_BY_MISSING_THEOREM",
+  "gauge_boson_mass_status": "BLOCKED_BY_MISSING_THEOREM",
+  "neutrino_mass_status": "BLOCKED_BY_MISSING_THEOREM",
+  "decay_width_status": "BLOCKED_BY_MISSING_THEOREM",
+  "source_artifacts": [
+    "artifacts/BHSM_explicit_4d_field_dictionary_v0_5.json",
+    "artifacts/BHSM_gauge_field_target_dictionary_v0_5.json",
+    "artifacts/BHSM_candidate_parameter_card_v0_5.json",
+    "artifacts/BHSM_boundary_source_matrices_v0_5.json",
+    "artifacts/BHSM_vertex_source_target_map_v0_5.json",
+    "artifacts/BHSM_canonical_field_target_conventions_v0_6.json",
+    "artifacts/BHSM_vector_fermion_normalization_status_v0_6.json",
+    "artifacts/BHSM_chiral_current_attachment_map_v0_6.json",
+    "artifacts/BHSM_mass_width_renormalization_open_gates_v0_6.json",
+    "artifacts/BHSM_phase_three_d_gate_status_v0_6.json"
+  ],
+  "missing_items": [
+    "pole mass convention",
+    "running mass convention",
+    "decay width convention",
+    "neutrino mass convention",
+    "reference scale",
+    "validated production parameter card"
+  ],
+  "contains_pdg_masses": false,
+  "contains_fake_widths": false,
+  "feynrules_ready": false,
+  "ufo_ready": false,
+  "notes": "No PDG masses, fake collider masses, or fake decay widths are inserted.",
+  "empirical_derivation_inputs_used": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false,
+  "source_model_files_changed": false
+}

@@ -1,0 +1,30 @@
+{
+  "artifact": "BHSM_madgraph_smoke_runner_contract_v1_4",
+  "release_basis": "v1.0.1",
+  "phase": "PHASE_THREE_L_FEYNRULES_SYNTAX_RUNNER",
+  "contract_name": "BHSM_MINIMAL_COLLIDER_INTERFACE_MADGRAPH_SMOKE_RUNNER_CONTRACT",
+  "requires_loadable_ufo": true,
+  "requires_madgraph": true,
+  "mg5_script_path": "scripts/madgraph/import_bhsm_minimal_ufo_smoke.mg5",
+  "ufo_model_path": "models/ufo/BHSM_Minimal_Collider_Interface",
+  "planned_processes": [
+    "u d~ > w+",
+    "e+ ve > w+"
+  ],
+  "smoke_test_attempted": false,
+  "smoke_test_passed": false,
+  "lhe_generated": false,
+  "hepmc_generated": false,
+  "missing_for_smoke_test": [
+    "loadable UFO model",
+    "MadGraph runtime",
+    "validated particle naming",
+    "runtime parameter card"
+  ],
+  "notes": "Planned processes are subject to actual particle naming in the exported UFO. No fake events are generated.",
+  "empirical_derivation_inputs_used": false,
+  "boundary_predictions_modified_by_runtime_inputs": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false,
+  "source_model_files_changed": false
+}
