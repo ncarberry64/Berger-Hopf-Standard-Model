@@ -26,3 +26,10 @@ No UFO output directory is generated in Phase Three-L.
 Phase Three-M records the live UFO export gate in
 `artifacts/BHSM_ufo_export_live_attempt_v1_5.json`. The current gate remains
 closed because live FeynRules validation did not pass.
+
+Phase Three-N records the runtime execution outcome in
+`artifacts/BHSM_ufo_export_outcome_v1_6.json`. UFO export remains unattempted
+because no validated enabled `.fr` file exists.
+
+Phase Three-O adds handoff documentation and setup commands, but UFO export
+still requires live FeynRules validation and controlled `.fr` enablement first.

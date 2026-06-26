@@ -1,0 +1,76 @@
+{
+  "release_basis": "v1.0.1",
+  "phase": "PHASE_THREE_N_RUNTIME_EXECUTION_GATE",
+  "commands": [
+    {
+      "step_id": "N1_RUNTIME_PROVISIONING",
+      "purpose": "Detect local Wolfram/FeynRules/MadGraph runtime",
+      "command": "python tools/check_runtime_provisioning_v1_6.py",
+      "working_directory": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion",
+      "attempted": true,
+      "exit_code": 0,
+      "stdout_log_path": "not_created",
+      "stderr_log_path": "not_created",
+      "result": "passed",
+      "notes": "Repository Python preflight executed; external proprietary runtimes are only detected, not installed."
+    },
+    {
+      "step_id": "N2_FEYNRULES_VALIDATION",
+      "purpose": "Run live FeynRules model load and syntax validation",
+      "command": "python scripts/feynrules/run_live_feynrules_validation.py",
+      "working_directory": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion",
+      "attempted": false,
+      "exit_code": null,
+      "stdout_log_path": "not_created",
+      "stderr_log_path": "not_created",
+      "result": "skipped",
+      "notes": "Wolfram/FeynRules runtime not ready"
+    },
+    {
+      "step_id": "N3_FEYNRULES_ENABLEMENT",
+      "purpose": "Enable bounded minimal .fr only after validation",
+      "command": "python scripts/feynrules/enable_minimal_model_if_validated.py",
+      "working_directory": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion",
+      "attempted": false,
+      "exit_code": null,
+      "stdout_log_path": "not_created",
+      "stderr_log_path": "not_created",
+      "result": "skipped",
+      "notes": "FeynRules validation did not pass"
+    },
+    {
+      "step_id": "N4_UFO_EXPORT",
+      "purpose": "Attempt UFO export after validated .fr enablement",
+      "command": "python scripts/feynrules/run_ufo_export_if_validated.py",
+      "working_directory": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion",
+      "attempted": false,
+      "exit_code": null,
+      "stdout_log_path": "not_created",
+      "stderr_log_path": "not_created",
+      "result": "skipped",
+      "notes": "Validated enabled .fr file is unavailable"
+    },
+    {
+      "step_id": "N5_MADGRAPH_SMOKE",
+      "purpose": "Attempt MadGraph import/process smoke test",
+      "command": "python scripts/madgraph/run_minimal_ufo_smoke_if_available.py",
+      "working_directory": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion",
+      "attempted": false,
+      "exit_code": null,
+      "stdout_log_path": "not_created",
+      "stderr_log_path": "not_created",
+      "result": "skipped",
+      "notes": "UFO export/loadability and/or MadGraph detection gates did not pass"
+    }
+  ],
+  "notes": [
+    "Unattempted commands are listed explicitly with attempted=false.",
+    "No fake validation logs are created."
+  ],
+  "empirical_derivation_inputs_used": false,
+  "empirical_runtime_inputs_allowed_in_collider_mode": true,
+  "boundary_predictions_modified_by_runtime_inputs": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false,
+  "source_model_files_changed": false
+}

@@ -23,3 +23,10 @@ No event files are generated or committed.
 Phase Three-M records the live MadGraph smoke gate in
 `artifacts/BHSM_madgraph_live_smoke_attempt_v1_5.json`. The current gate
 remains closed because no loadable UFO exists and MadGraph is not detected.
+
+Phase Three-N records the runtime smoke-test outcome in
+`artifacts/BHSM_madgraph_smoke_outcome_v1_6.json`. MadGraph remains
+unattempted because UFO export/loadability did not pass.
+
+Phase Three-O adds institutional handoff docs for mapping MadGraph, but the
+MadGraph smoke gate remains downstream of UFO export/loadability.
