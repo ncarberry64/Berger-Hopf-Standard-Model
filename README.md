@@ -39,6 +39,13 @@ BHSM is not a proven replacement for the Standard Model.
 
 BHSM does not claim empirical validation.
 
+## Collider / CERN Software Readiness
+
+BHSM v1.0.1 is not an Athena, CMSSW, or detector-simulation-ready software
+package. It is a released internal boundary no-fit prediction package. A
+separate collider-interface layer is required before event generation or
+detector simulation. See `docs/collider_readiness.md`.
+
 ## 1. What Is Complete In v1.0.0
 
 - `BHSM_internal_boundary_package = COMPLETE_EXPORTED`

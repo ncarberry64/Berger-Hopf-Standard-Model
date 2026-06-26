@@ -1,0 +1,38 @@
+{
+  "artifact": "BHSM_collider_readiness_audit_v0_1",
+  "bhsm_release_basis": "v1.0.1",
+  "internal_boundary_package_status": "COMPLETE_EXPORTED",
+  "external_empirical_comparison_layer": "IMPLEMENTED_COMPARISON_ONLY_LAYER",
+  "external_empirical_comparison_status": "OPEN_SEPARATE_LAYER",
+  "collider_ready": false,
+  "athena_ready": false,
+  "cmssw_ready": false,
+  "complete_4d_lagrangian_exported": false,
+  "feynman_rules_exported": false,
+  "ufo_model_exported": false,
+  "event_generator_ready": false,
+  "lhe_hepmc_output_supported": false,
+  "pdg_validation_plots_present": false,
+  "pdg_validation_requires_pinned_targets": true,
+  "empirical_derivation_inputs_used": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false,
+  "frozen_predictions_changed": false,
+  "notes": [
+    "BHSM v1.0.1 exports an internal boundary no-fit package, not a collider-ready event-generator model.",
+    "No complete collider-ready 4D physical Lagrangian is exported.",
+    "No Athena or CMSSW integration is claimed.",
+    "PDG validation plots require pinned external target data and are not generated from fake data."
+  ],
+  "required_future_items": [
+    "complete collider-ready 4D physical Lagrangian",
+    "gauge-fixed interaction vertices",
+    "Feynman rules",
+    "UFO/FeynRules or equivalent model",
+    "mass/width parameter card",
+    "event generator card",
+    "LHE or HepMC event samples",
+    "detector simulation bridge",
+    "collaboration-specific review"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "artifact": "BHSM_lagrangian_status_v0_1",
+  "bhsm_release_basis": "v1.0.1",
+  "complete_4d_lagrangian_exported": false,
+  "statement": "No complete collider-ready 4D physical Lagrangian is exported in BHSM v1.0.1.",
+  "boundary_operator_artifacts_exported": true,
+  "production_event_generator_model_exported": false,
+  "objects": [
+    {
+      "object": "Internal boundary no-fit package",
+      "current_bhsm_status": "COMPLETE_EXPORTED",
+      "exported_artifact_source": "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json",
+      "needed_for_collider_event_generation": "indirect input only",
+      "missing_item": "collider Lagrangian bridge"
+    },
+    {
+      "object": "Full 4D physical Lagrangian",
+      "current_bhsm_status": "not exported",
+      "exported_artifact_source": null,
+      "needed_for_collider_event_generation": true,
+      "missing_item": "complete collider-ready QFT Lagrangian"
+    },
+    {
+      "object": "Feynman rules",
+      "current_bhsm_status": "not exported",
+      "exported_artifact_source": null,
+      "needed_for_collider_event_generation": true,
+      "missing_item": "formal rule export and convention audit"
+    },
+    {
+      "object": "UFO/FeynRules model",
+      "current_bhsm_status": "not exported",
+      "exported_artifact_source": null,
+      "needed_for_collider_event_generation": true,
+      "missing_item": "generator-compatible model package"
+    }
+  ],
+  "empirical_derivation_inputs_used": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false
+}

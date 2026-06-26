@@ -1,0 +1,22 @@
+{
+  "artifact": "BHSM_event_generation_interface_v0_1",
+  "bhsm_release_basis": "v1.0.1",
+  "validated_event_generator_provided": false,
+  "lhe_output_supported": false,
+  "hepmc_output_supported": false,
+  "athena_integration_provided": false,
+  "cmssw_integration_provided": false,
+  "event_generation_chain_required": [
+    "BHSM collider-ready Lagrangian",
+    "Feynman rules",
+    "UFO/FeynRules or equivalent model export",
+    "MadGraph/Pythia/Herwig-compatible generation",
+    "LHE or HepMC event output",
+    "detector simulation bridge",
+    "Athena/CMSSW-specific integration after experiment collaboration standards are met"
+  ],
+  "placeholder_policy": "No toy events are created. Any future placeholder must be disabled by default and labeled NON-PHYSICAL STRUCTURAL PLACEHOLDER - NOT FOR ANALYSIS.",
+  "empirical_derivation_inputs_used": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false
+}
