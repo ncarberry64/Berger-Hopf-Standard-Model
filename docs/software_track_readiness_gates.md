@@ -44,3 +44,10 @@ Phase Three-N records runtime provisioning and command-level execution gates.
 The current result keeps FeynRules validation, model enablement, UFO export,
 UFO loadability, MadGraph smoke testing, LHE/HepMC generation, Athena readiness,
 and CMSSW readiness false.
+
+## Phase Three-O Handoff Gates
+
+Phase Three-O marks the institutional handoff package ready while keeping
+software readiness gates evidence-based. Handoff readiness means reviewers have
+docs, scripts, and artifacts for reproduction; it does not mean FeynRules,
+UFO, MadGraph, event, Athena, or CMSSW readiness.

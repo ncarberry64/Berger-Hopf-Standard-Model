@@ -33,3 +33,7 @@ Phase Three-N adds runtime discovery scripts under `scripts/runtime/` and a
 single execution-gate wrapper. In the current environment the Wolfram/FeynRules
 runtime is not detected, so the wrapper records skipped validation rather than
 creating a fake validation result.
+
+Phase Three-O adds `scripts/setup/` entrypoints and Makefile targets for
+external HEP-style reviewers. These helpers map legal runtimes and rerun the
+same gated validation chain.
