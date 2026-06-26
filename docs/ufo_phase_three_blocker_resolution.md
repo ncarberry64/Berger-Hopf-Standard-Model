@@ -53,3 +53,7 @@ generation blockers.
 Phase Three-G exports candidate vertex and Lagrangian assembly ledgers. It
 does not resolve the complete production vertex table, FeynRules export,
 loadable UFO, MadGraph, LHE/HepMC, Athena, or CMSSW blockers.
+
+Phase Three-H partially resolves bounded CKM/PMNS target blockers and leaves
+the charged boundary response, neutral kernel, and standalone CP holonomy
+vertices blocked. No loadable UFO model is exported.

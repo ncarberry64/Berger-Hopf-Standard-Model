@@ -25,3 +25,10 @@ the neutrino basis/scale convention. The CP holonomy term preserves
 `delta_BH = pi/3` as a phase source only and remains blocked by missing
 interaction attachment.
 
+## Phase Three-H Follow-On
+
+Phase Three-H partially promotes the CKM/PMNS charged-current target vertices
+as bounded collider-interface targets. The charged boundary response remains
+blocked by missing `X_ch`, the neutral kernel remains blocked by missing
+neutrino basis/scale, and standalone CP holonomy remains blocked by missing
+`O_int`.

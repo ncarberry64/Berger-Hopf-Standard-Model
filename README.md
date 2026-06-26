@@ -140,6 +140,20 @@ interaction/basis attachments. Mass-width closure, renormalization closure,
 complete production vertex table, FeynRules export, UFO loadability, MadGraph
 validation, LHE/HepMC generation, and Athena/CMSSW integration remain open.
 
+### Phase Three-H bounded blocker resolution status
+
+BHSM now includes bounded resolution audits for the remaining vertex-table
+blockers: X_ch, neutrino basis/scale, and CP holonomy attachment. CKM/PMNS
+charged-current target vertices are partially promoted as bounded
+collider-interface targets where the canonical production basis, standard
+target-current structures, and BHSM-derived mixing/holonomy sources align.
+
+The separate charged boundary response, neutral kernel, and standalone CP
+holonomy vertices remain blocked by explicit missing interaction, basis, or
+scale theorems. This does not constitute complete 4D Lagrangian export,
+production FeynRules readiness, UFO readiness, MadGraph readiness, event
+generation, or experiment software integration.
+
 ### Phase Three-F production-basis and runtime-parameter status
 
 BHSM now defines a canonical production basis for future FeynRules/UFO

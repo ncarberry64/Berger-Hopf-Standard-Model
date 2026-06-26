@@ -123,3 +123,10 @@ Lagrangian assembly ledger, vertex readiness matrix, FeynRules blocker table,
 and runtime dependency table. CKM/PMNS charged-current target structures are
 identified using BHSM-derived mixing sources, but all production FeynRules/UFO
 readiness gates remain closed.
+
+## Phase Three-H Bounded Blocker Resolution
+
+Phase Three-H partially promotes CKM/PMNS charged-current targets as bounded
+collider-interface targets and leaves charged boundary, neutral, and
+standalone CP vertices blocked by exact missing theorems. Production
+FeynRules/UFO readiness remains false.

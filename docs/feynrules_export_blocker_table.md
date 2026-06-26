@@ -25,3 +25,8 @@ Tracked blockers:
 Each blocker remains explicit. The blocker table is a readiness audit, not a
 production FeynRules export.
 
+## Phase Three-H Follow-On
+
+Phase Three-H reduces `X_ch`, neutrino basis/scale, and CP holonomy attachment
+to bounded partial resolutions or exact missing theorems. The FeynRules export
+blocker table remains active.

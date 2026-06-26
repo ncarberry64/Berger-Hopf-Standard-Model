@@ -24,3 +24,8 @@ Terms include:
 Every term remains `is_production_feynrules_ready = false` and
 `is_ufo_ready = false`.
 
+## Phase Three-H Follow-On
+
+Phase Three-H bounds three blockers but does not promote the symbolic ledger to
+a complete production 4D Lagrangian. Missing interaction/basis/scale theorems
+remain explicit.

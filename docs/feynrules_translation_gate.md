@@ -50,3 +50,8 @@ remain open.
 Phase Three-G exports the candidate vertex table and symbolic Lagrangian
 assembly ledger, but the FeynRules gate remains closed because the table is
 incomplete and multiple blocker rows remain open.
+
+Phase Three-H performs bounded resolution attempts for `X_ch`, neutrino
+basis/scale, and CP holonomy attachment. The FeynRules gate remains closed
+because the resulting promotions are bounded collider-interface targets, not
+production FeynRules vertices.

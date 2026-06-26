@@ -12,3 +12,8 @@ renormalization, and several interaction/basis attachments remain open.
 
 No vertex is marked FeynRules-ready, UFO-ready, or MadGraph-ready.
 
+## Phase Three-H Follow-On
+
+CKM/PMNS charged-current targets receive bounded collider-interface promotion.
+Their FeynRules/UFO/MadGraph readiness remains false. Charged boundary,
+neutral, and standalone CP vertices remain blocked.
