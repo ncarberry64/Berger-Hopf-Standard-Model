@@ -24,3 +24,8 @@ The subset explicitly excludes unresolved standalone pieces:
 This is FeynRules-prep only. It is not the complete BHSM 4D Lagrangian, not a
 production FeynRules file, not a UFO model, and not event-generation readiness.
 
+## Phase Three-K Follow-On
+
+Phase Three-K exports a disabled bounded FeynRules syntax draft for this
+minimal subset. The draft remains disabled until real Mathematica/FeynRules
+syntax validation is performed.

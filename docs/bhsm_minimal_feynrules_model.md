@@ -1,0 +1,24 @@
+# BHSM Minimal FeynRules Model Draft
+
+Model draft:
+
+```text
+models/feynrules/BHSM_Minimal_Collider_Interface.fr.disabled
+```
+
+The file header states:
+
+```text
+BHSM_MINIMAL_COLLIDER_INTERFACE
+Generated from Phase Three-J bounded FeynRules-prep subset.
+This is not the complete BHSM 4D Lagrangian.
+This excludes charged boundary response, neutral kernel, and standalone CP holonomy vertices.
+This is not a validated UFO model unless UFO export/loadability tests pass.
+```
+
+The draft contains only symbolic/runtime placeholders for the bounded CKM/PMNS
+charged-current interface subset. It contains no numerical masses or widths.
+
+It remains disabled until a real Mathematica/FeynRules syntax validation pass
+is performed.
+

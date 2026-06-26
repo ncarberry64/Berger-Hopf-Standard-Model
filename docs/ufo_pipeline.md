@@ -143,3 +143,9 @@ and standalone CP `O_int`.
 Phase Three-J exports a bounded FeynRules-prep subset for future translation.
 It is not a `.fr` file, UFO model, MadGraph-ready model, LHE/HepMC generation,
 or detector-software interface.
+
+## Phase Three-K FeynRules Export Attempt
+
+Phase Three-K exports a disabled bounded FeynRules syntax draft for the
+minimal CKM/PMNS collider-interface subset. UFO export and loadability remain
+untested, and no event-generation artifacts are produced.

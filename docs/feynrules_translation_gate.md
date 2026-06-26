@@ -64,3 +64,7 @@ exact missing theorem objects.
 Phase Three-J exports a FeynRules-prep subset only. The translation gate
 remains closed for production use because no production FeynRules file is
 exported.
+
+Phase Three-K creates a disabled FeynRules syntax draft. The translation gate
+remains closed for production use because syntax validation has not been run
+and no enabled production `.fr` file is exported.

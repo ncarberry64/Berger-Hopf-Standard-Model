@@ -187,6 +187,21 @@ and does not constitute the complete BHSM 4D Lagrangian, production FeynRules
 readiness, UFO readiness, MadGraph readiness, event generation, or experiment
 software integration.
 
+### Phase Three-K bounded FeynRules export attempt
+
+BHSM v1.0.1 status-reconciled release: internal boundary no-fit package
+complete/exported; external empirical comparison layer separate/open.
+
+BHSM now includes a software-track bounded FeynRules export attempt for the
+minimal collider-interface subset. The attempted model covers only
+canonical-basis CKM/PMNS charged-current target structures sourced by BHSM
+mixing artifacts.
+
+The file is not the complete BHSM 4D Lagrangian and excludes unresolved
+charged-boundary response, neutral-kernel, and standalone CP-holonomy vertices.
+UFO export, UFO loadability, MadGraph validation, LHE/HepMC generation, and
+Athena/CMSSW integration remain gated unless separately validated.
+
 ### Phase Three-F production-basis and runtime-parameter status
 
 BHSM now defines a canonical production basis for future FeynRules/UFO
