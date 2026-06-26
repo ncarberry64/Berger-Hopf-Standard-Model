@@ -1,0 +1,139 @@
+{
+  "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
+  "official_predictions_changed": false,
+  "empirical_derivation_inputs_used": false,
+  "observed_masses_used": false,
+  "observed_Higgs_used": false,
+  "observed_gauge_values_used": false,
+  "tau_fit_to_masses": false,
+  "sigma_fit_to_masses": false,
+  "artifact": "kappa_H_profile_second_variation_closure_or_obstruction_v1",
+  "kappa_H": {
+    "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
+    "official_predictions_changed": false,
+    "empirical_derivation_inputs_used": false,
+    "observed_masses_used": false,
+    "observed_Higgs_used": false,
+    "observed_gauge_values_used": false,
+    "tau_fit_to_masses": false,
+    "sigma_fit_to_masses": false,
+    "name": "kappa_H",
+    "status": "BLOCKED_BY_MISSING_EFFECTIVE_ACTION",
+    "derived": false,
+    "value": null,
+    "formula": "kappa_H = delta^2 S_eff^(H)/delta Phi^2 |_{Phi=Phi_H} = V_eff''(Phi_H)",
+    "source_trace": [
+      "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\docs\\open_blockers_backlog.md",
+      "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_profile_eom_source_audit.md",
+      "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_boundary_condition_normal_form.md",
+      "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_neutral_saddle_displacement.md",
+      "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\Higgs_EW_closure_or_obstruction_v1.json"
+    ],
+    "objects": {
+      "S_eff^(H)": {
+        "name": "S_eff^(H)",
+        "status": "OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH",
+        "value": null,
+        "formula": "S_eff^(H)[Phi]",
+        "source_trace": [
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\docs\\open_blockers_backlog.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_profile_eom_source_audit.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_boundary_condition_normal_form.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_neutral_saddle_displacement.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\Higgs_EW_closure_or_obstruction_v1.json"
+        ],
+        "missing_objects": [
+          "Higgs/profile effective action",
+          "profile source term",
+          "regularization/boundary terms"
+        ],
+        "notes": "The Higgs effective action is named as a dependency but not constructed/evaluated."
+      },
+      "profile_saddle": {
+        "name": "profile_saddle",
+        "status": "OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH",
+        "value": null,
+        "formula": "delta S_eff^(H)/delta Phi |_{Phi_H}=0",
+        "source_trace": [
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\docs\\open_blockers_backlog.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_profile_eom_source_audit.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_boundary_condition_normal_form.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_neutral_saddle_displacement.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\Higgs_EW_closure_or_obstruction_v1.json"
+        ],
+        "missing_objects": [
+          "S_eff^(H)",
+          "saddle-selection theorem",
+          "boundary conditions"
+        ],
+        "notes": "A saddle condition can be stated, but the action and boundary conditions are open."
+      },
+      "H_H": {
+        "name": "H_H",
+        "status": "OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH",
+        "value": null,
+        "formula": "H_H = delta^2 S_eff^(H)|_{Phi_H}",
+        "source_trace": [
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\docs\\open_blockers_backlog.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_profile_eom_source_audit.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_boundary_condition_normal_form.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_neutral_saddle_displacement.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\Higgs_EW_closure_or_obstruction_v1.json"
+        ],
+        "missing_objects": [
+          "S_eff^(H)",
+          "profile saddle Phi_H",
+          "Hessian coefficients"
+        ],
+        "notes": "The Higgs/charged Hessian is explicitly listed as an open dependency."
+      },
+      "V_eff''": {
+        "name": "V_eff''",
+        "status": "OPEN_LOCALIZABLE_WITH_EXACT_SOURCE_PATH",
+        "value": null,
+        "formula": "V_eff''(Phi_H)",
+        "source_trace": [
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\docs\\open_blockers_backlog.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_profile_eom_source_audit.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_boundary_condition_normal_form.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_neutral_saddle_displacement.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\Higgs_EW_closure_or_obstruction_v1.json"
+        ],
+        "missing_objects": [
+          "effective potential V_eff",
+          "boundary potential coefficients",
+          "profile saddle Phi_H"
+        ],
+        "notes": "Potential-curvature notation is localized but not evaluated."
+      },
+      "boundary_potential_curvature_coefficients": {
+        "name": "boundary_potential_curvature_coefficients",
+        "status": "BLOCKED_BY_MISSING_BOUNDARY_POTENTIAL_COEFFICIENTS",
+        "value": null,
+        "formula": "partial^2 U_boundary / partial Phi^2",
+        "source_trace": [
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\docs\\open_blockers_backlog.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_profile_eom_source_audit.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_scalar_topographic_boundary_condition_normal_form.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\theory\\theorem_discharge_neutral_saddle_displacement.md",
+          "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\artifacts\\Higgs_EW_closure_or_obstruction_v1.json"
+        ],
+        "missing_objects": [
+          "U_boundary",
+          "lambda_Phi/Z_Phi convention",
+          "curvature coefficients"
+        ],
+        "notes": "No repo-fixed boundary potential coefficients are available."
+      }
+    },
+    "missing_objects": [
+      "S_eff^(H) Higgs/profile effective action",
+      "profile saddle Phi_H",
+      "H_H Higgs/profile Hessian",
+      "V_eff'' value",
+      "boundary potential curvature coefficients"
+    ],
+    "kappa_H_chosen_to_set_tau": false,
+    "obstruction": "kappa_H cannot be derived until the Higgs/profile effective action and Hessian data are supplied."
+  }
+}
