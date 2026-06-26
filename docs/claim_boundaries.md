@@ -36,3 +36,32 @@ geometric framework.
 ## BHSM v1 Release-Candidate Boundary
 
 BHSM v1 now contains a complete internal no-fit boundary prediction package. The external empirical comparison layer is implemented as a separate comparison-only layer. Empirical data are not derivation inputs, and absent external data produce `DATA_ABSENT`, not an internal-package failure.
+
+## BHSM v1.0.0 Release Boundary
+
+Allowed release claim:
+
+```text
+internal boundary no-fit package complete; external empirical comparison layer separate/open
+```
+
+This means the profile scale, charged boundary outputs, neutral/PMNS/CKM/CP
+boundary outputs, and boundary-scale transport identity are exported as
+machine-readable artifacts. It does not mean empirical validation.
+
+Forbidden release-claim categories:
+
+- empirical proof or confirmation;
+- experimental replacement of the Standard Model;
+- external survey validation;
+- exact observed particle-mass prediction;
+- empirical data deriving the constants or boundary predictions.
+
+Required separation:
+
+```text
+internal boundary package -> external comparison layer
+```
+
+The arrow is one-way. External empirical target data may evaluate the package,
+but may not alter the internal derivation or official boundary predictions.
