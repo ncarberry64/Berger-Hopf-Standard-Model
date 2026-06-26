@@ -38,3 +38,9 @@ the candidate-ledger level only. It does not resolve production UFO export.
 
 Phase Three-D clarifies canonical target conventions and CKM/PMNS current
 attachments, but mass-width and renormalization gates remain open.
+
+Phase Three-E sharpens the normalization and scheme blockers into explicit
+v0.7 artifacts. Vector and fermion target normalizations remain standard HEP
+interface conventions, while gauge fixing, production coupling, mass-width, and
+renormalization schemes remain candidate or open. No loadable UFO model is
+exported.

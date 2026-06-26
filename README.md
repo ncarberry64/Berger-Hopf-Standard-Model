@@ -113,6 +113,20 @@ standard target conventions or open BHSM-specific normalization gates.
 This does not constitute production FeynRules, UFO, MadGraph, LHE/HepMC,
 Athena, or CMSSW readiness. Mass-width and renormalization schemes remain open.
 
+### Phase Three-E normalization and scheme status
+
+BHSM now includes Phase Three-E vector/fermion canonical normalization
+convention ledgers, gauge-fixing/coupling scheme candidates, and
+mass-width/renormalization open-gate artifacts.
+
+The scalar/profile normalization source Z_H = 1 remains BHSM-derived or
+conditionally derived. Vector and fermion target normalizations may be
+represented by standard canonical interface conventions, but they are not yet
+nontrivial BHSM-derived field-strength predictions.
+
+This does not constitute production FeynRules, UFO, MadGraph, LHE/HepMC,
+Athena, or CMSSW readiness.
+
 ## 1. What Is Complete In v1.0.0
 
 - `BHSM_internal_boundary_package = COMPLETE_EXPORTED`

@@ -33,3 +33,10 @@ blocked.
 
 Phase Three-D also leaves this gate closed. Canonical target conventions and
 current-attachment maps are not production FeynRules readiness.
+
+Phase Three-E exports vector/fermion normalization theorem-status artifacts,
+gauge-fixing/coupling scheme candidates, and mass-width/renormalization
+candidate ledgers. The FeynRules gate remains closed because target
+normalization conventions are not BHSM-derived field-strength theorems and the
+mass-width, renormalization, complete 4D Lagrangian, and production vertex
+tables remain open.

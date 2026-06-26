@@ -19,3 +19,8 @@ completed BHSM production gauge theorem and are not UFO-ready.
 
 Phase Three-D treats vector normalization as `Z_A,target = 1` only as a
 standard interface convention, not as a BHSM-derived dynamical prediction.
+
+Phase Three-E keeps the same target gauge group convention and exports
+scheme-conditional coupling candidates. These candidates require a reference
+scale, threshold/running scheme, renormalization scheme, and gauge fixing
+convention before production use.

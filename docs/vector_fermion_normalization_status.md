@@ -16,3 +16,13 @@ fermion fields: Z_psi,target = 1 as standard target convention, not BHSM-derived
 
 No nontrivial vector or fermion field-strength normalization is claimed as a
 BHSM dynamical prediction.
+
+## Phase Three-E Follow-On
+
+Phase Three-E sharpens this into separate theorem-status artifacts:
+
+- `artifacts/BHSM_vector_normalization_theorem_v0_7.json`
+- `artifacts/BHSM_fermion_normalization_theorem_v0_7.json`
+
+Both retain target normalization value `1` as a standard interface convention,
+not a BHSM-derived nontrivial field-strength prediction.

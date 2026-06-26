@@ -39,3 +39,10 @@ Psi_bar_nu K_nu Psi_nu
 ```
 
 Both remain `feynrules_ready = false` and `ufo_ready = false`.
+
+## Phase Three-E Follow-On
+
+Phase Three-E keeps the CKM/PMNS target currents as source-traced target maps
+while exporting gauge-fixing and production-coupling scheme candidates. The
+candidate couplings remain `SCHEME_CONDITIONAL`; no production vertex table is
+claimed.

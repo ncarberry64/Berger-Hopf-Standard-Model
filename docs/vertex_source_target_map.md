@@ -28,3 +28,7 @@ No production Feynman rules are exported.
 Phase Three-D identifies CKM/PMNS chiral charged-current targets with standard
 Lorentz structure conventions, while keeping `feynrules_ready = false` and
 `ufo_ready = false`.
+
+Phase Three-E keeps these current targets as candidate target maps and adds
+scheme-conditional coupling ledgers. The vertex-source map remains
+non-production and does not export a complete vertex table.

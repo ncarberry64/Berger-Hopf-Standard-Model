@@ -27,3 +27,14 @@ MadGraph_validation
 ```
 
 No fake masses, widths, PDG targets, or validation outputs are inserted.
+
+## Phase Three-E Follow-On
+
+Phase Three-E exports separate candidate ledgers:
+
+- `artifacts/BHSM_mass_width_scheme_candidate_v0_7.json`
+- `artifacts/BHSM_renormalization_scheme_candidate_v0_7.json`
+
+These preserve internal BHSM sources where available, such as
+`kappa_H = 64*pi^5`, but keep mass-width and production renormalization
+schemes open.

@@ -25,3 +25,11 @@ Current classifications:
 Setting `Z_A,target = 1` or `Z_psi,target = 1` is a canonical field convention
 for FeynRules-style interfaces, not a BHSM empirical fit and not a BHSM
 dynamical prediction.
+
+## Phase Three-E Follow-On
+
+Phase Three-E exports theorem-status ledgers for vector and fermion
+normalization. The follow-on status remains that `Z_A,target = 1` and
+`Z_psi,target = 1` are standard canonical interface conventions, while a
+nontrivial BHSM vector/fermion field-strength normalization theorem remains
+open.

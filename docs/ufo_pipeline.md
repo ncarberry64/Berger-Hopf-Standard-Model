@@ -92,3 +92,14 @@ source and marks `Z_A,target = 1` and `Z_psi,target = 1` as standard target
 conventions rather than BHSM dynamical predictions. Production FeynRules/UFO
 readiness remains blocked by mass-width and renormalization schemes, complete
 4D Lagrangian export, and validation gates.
+
+## Phase Three-E Normalization And Scheme Status
+
+Phase Three-E exports explicit vector/fermion normalization theorem-status
+ledgers plus gauge-fixing/coupling, mass-width, and renormalization candidate
+scheme ledgers. `Z_A,target = 1` and `Z_psi,target = 1` remain standard HEP
+target conventions, not BHSM-derived dynamical field-strength predictions.
+
+The candidate gauge couplings are scheme-conditional and not production UFO
+couplings. No fake masses, fake widths, fake Feynman rules, fake LHE/HepMC
+files, MadGraph readiness, Athena readiness, or CMSSW readiness are claimed.
