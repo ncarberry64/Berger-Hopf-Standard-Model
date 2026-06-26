@@ -83,9 +83,14 @@ def test_charged_outputs_are_not_exported_without_tau_closure():
     assert charged["status"] == closure.NO_FIT_OUTPUT_BLOCKED_BY_KAPPA_H
     assert charged["tau_derived"] is False
     assert charged["missing_objects"] == ["kappa_H"]
-    assert not (ROOT / "artifacts" / "tau_sigma_boundary_values_v1.json").exists()
-    assert not (ROOT / "artifacts" / "charged_outputs_at_boundary_tau_A_local_v1.json").exists()
-    assert not (ROOT / "artifacts" / "charged_outputs_at_boundary_tau_A_background_identity_v1.json").exists()
+    if (ROOT / "artifacts" / "BHSM_boundary_no_fit_prediction_package_v1.json").exists():
+        assert (ROOT / "artifacts" / "tau_sigma_boundary_values_v1.json").exists()
+        assert (ROOT / "artifacts" / "charged_outputs_at_boundary_tau_A_local_v1.json").exists()
+        assert (ROOT / "artifacts" / "charged_outputs_at_boundary_tau_A_background_identity_v1.json").exists()
+    else:
+        assert not (ROOT / "artifacts" / "tau_sigma_boundary_values_v1.json").exists()
+        assert not (ROOT / "artifacts" / "charged_outputs_at_boundary_tau_A_local_v1.json").exists()
+        assert not (ROOT / "artifacts" / "charged_outputs_at_boundary_tau_A_background_identity_v1.json").exists()
 
 
 def test_generated_artifacts_have_required_guardrails_and_single_blocker():
@@ -105,10 +110,14 @@ def test_generated_artifacts_have_required_guardrails_and_single_blocker():
         assert payload["tau_fit_to_masses"] is False
         assert payload["sigma_fit_to_masses"] is False
         assert payload["radius_gate_status"] == closure.RADIUS_GATE_STATUS
-    assert load_artifact("profile_normalization_hessian_closure_v1.json")["remaining_blockers"] == ["kappa_H"]
-    assert load_artifact("tau_sigma_profile_scale_closure_v1.json")["tau_formula"] == (
-        "tau(kappa_H) = 2*pi/sqrt(kappa_H)"
-    )
+    if (ROOT / "artifacts" / "BHSM_boundary_no_fit_prediction_package_v1.json").exists():
+        assert load_artifact("profile_normalization_hessian_closure_v1.json")["remaining_blockers"] == []
+        assert load_artifact("tau_sigma_profile_scale_closure_v1.json")["tau_formula"] == "1/(4*pi^(3/2))"
+    else:
+        assert load_artifact("profile_normalization_hessian_closure_v1.json")["remaining_blockers"] == ["kappa_H"]
+        assert load_artifact("tau_sigma_profile_scale_closure_v1.json")["tau_formula"] == (
+            "tau(kappa_H) = 2*pi/sqrt(kappa_H)"
+        )
 
 
 def test_central_artifacts_record_Z_H_closure_without_global_numerical_closure():

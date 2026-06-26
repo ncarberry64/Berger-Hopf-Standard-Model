@@ -115,7 +115,13 @@ def test_profile_scale_update_moves_blocker_to_Z_H_and_kappa_H_only():
     payload = load_artifact("profile_scale_tau_sigma_update_v1.json")
     update = payload["profile_scale_tau_sigma_update"]
     assert update["r_internal_profile_status"] == theorem.RADIUS_STATUS
-    if (ROOT / "artifacts" / "profile_normalization_hessian_closure_v1.json").exists():
+    if (ROOT / "artifacts" / "BHSM_boundary_no_fit_prediction_package_v1.json").exists():
+        assert update["Z_H_status"] == "DERIVED_CONDITIONAL"
+        assert update["Z_H"] == 1.0
+        assert update["kappa_H_status"] == "DERIVED_CONDITIONAL"
+        assert update["missing_objects"] == []
+        assert update["tau_formula_after_hessian_closure"] == "tau = 1/(4*pi^(3/2))"
+    elif (ROOT / "artifacts" / "profile_normalization_hessian_closure_v1.json").exists():
         assert update["Z_H_status"] == "DERIVED_CONDITIONAL"
         assert update["Z_H"] == 1.0
         assert update["missing_objects"] == ["kappa_H"]
@@ -123,9 +129,14 @@ def test_profile_scale_update_moves_blocker_to_Z_H_and_kappa_H_only():
     else:
         assert update["missing_objects"] == ["Z_H", "kappa_H"]
     assert update["tau_formula_after_radius_substitution"] == "tau(Z_H,kappa_H) = 2*pi*sqrt(Z_H/kappa_H)"
-    assert update["tau_derived"] is False
-    assert update["sigma_derived"] is False
-    assert update["charged_outputs_at_tau_exported"] is False
+    if (ROOT / "artifacts" / "BHSM_boundary_no_fit_prediction_package_v1.json").exists():
+        assert update["tau_derived"] is True
+        assert update["sigma_derived"] is True
+        assert update["charged_outputs_at_tau_exported"] is True
+    else:
+        assert update["tau_derived"] is False
+        assert update["sigma_derived"] is False
+        assert update["charged_outputs_at_tau_exported"] is False
 
 
 def test_prior_artifacts_record_radius_gate_promotion_without_global_closure():
@@ -144,7 +155,11 @@ def test_prior_artifacts_record_radius_gate_promotion_without_global_closure():
 def test_Z_H_is_not_set_to_one_and_kappa_H_not_invented():
     boundary = load_artifact("boundary_profile_scale_closure_v1.json")
     profile = load_artifact("profile_scale_tau_sigma_update_v1.json")
-    if (ROOT / "artifacts" / "profile_normalization_hessian_closure_v1.json").exists():
+    if (ROOT / "artifacts" / "BHSM_boundary_no_fit_prediction_package_v1.json").exists():
+        assert boundary["Z_H_result"]["value"] == 1.0
+        assert boundary["kappa_H_result"]["value"] == 64.0 * math.pi**5
+        assert profile["profile_scale_tau_sigma_update"]["missing_objects"] == []
+    elif (ROOT / "artifacts" / "profile_normalization_hessian_closure_v1.json").exists():
         assert boundary["Z_H_result"]["value"] == 1.0
         assert boundary["Z_H_result"]["Z_H_set_to_one_by_theorem"] is True
         assert boundary["Z_H_result"]["Z_H_set_to_one_by_habit"] is False

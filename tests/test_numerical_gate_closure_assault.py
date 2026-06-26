@@ -32,6 +32,7 @@ ALLOWED_STATUSES = {
     "CP_NUMERICAL_CLOSURE_OPEN",
     "BLOCKED_BY_MISSING_OBJECTS",
     "MOCK_OR_SCAFFOLD_ONLY",
+    "NO_FIT_OUTPUT_CANDIDATE_EXPORTED",
 }
 EXPECTED_AUTHOR_RADIUS_PROMOTIONS = [
     {
@@ -44,6 +45,11 @@ EXPECTED_PROFILE_NORMALIZATION_PROMOTION = {
     "gate": "Z_H_profile_normalization",
     "status": "DERIVED_CONDITIONAL",
 }
+EXPECTED_BOUNDARY_NO_FIT_PROMOTIONS = [
+    {"gate": "kappa_H_profile_hessian", "status": "DERIVED_CONDITIONAL"},
+    {"gate": "profile_scale_closure", "status": "DERIVED_CONDITIONAL"},
+    {"gate": "charged_outputs_at_boundary_tau", "status": "NO_FIT_OUTPUT_CANDIDATE_EXPORTED"},
+]
 
 
 def load_artifact(name: str) -> dict:
@@ -135,6 +141,8 @@ def test_promoted_statuses_require_source_artifacts():
         expected = list(EXPECTED_AUTHOR_RADIUS_PROMOTIONS)
         if (ROOT / "artifacts" / "profile_normalization_hessian_closure_v1.json").exists():
             expected.append(EXPECTED_PROFILE_NORMALIZATION_PROMOTION)
+        if (ROOT / "artifacts" / "BHSM_boundary_no_fit_prediction_package_v1.json").exists():
+            expected.extend(EXPECTED_BOUNDARY_NO_FIT_PROMOTIONS)
         assert report["promoted_statuses"] == expected
         followup = report["gates"]["tau_sigma"]["targeted_followup_from_author_radius_selection"]
         assert followup["source_artifact"] == "artifacts/internal_berger_radius_selection_theorem_v1.json"
@@ -145,7 +153,13 @@ def test_promoted_statuses_require_source_artifacts():
                 "targeted_followup_from_profile_normalization_hessian_closure"
             ]
             assert profile_followup["Z_H_value"] == 1.0
-            assert profile_followup["remaining_blockers"] == ["kappa_H"]
+            if (ROOT / "artifacts" / "BHSM_boundary_no_fit_prediction_package_v1.json").exists():
+                package_followup = report["gates"]["tau_sigma"][
+                    "targeted_followup_from_boundary_no_fit_package_completion"
+                ]
+                assert package_followup["remaining_blockers"] == []
+            else:
+                assert profile_followup["remaining_blockers"] == ["kappa_H"]
     else:
         assert report["promoted_statuses"] == []
     for row in report["blocked_gates"]:
@@ -158,7 +172,10 @@ def test_open_gate_ledger_records_assault_statuses_without_official_change():
     assert open_gate["official_predictions_changed"] is False
     assert statuses["numerical_gate_closure_assault"] == "RAN"
     assert statuses["tau_sigma_gate"] == "OPEN_LOCALIZABLE"
-    assert statuses["charged_no_fit_outputs"] == "BLOCKED_BY_TAU_SIGMA_BOUNDARY_DERIVATION"
+    if (ROOT / "artifacts" / "BHSM_boundary_no_fit_prediction_package_v1.json").exists():
+        assert statuses["charged_no_fit_outputs"] == "NO_FIT_OUTPUT_CANDIDATE_EXPORTED"
+    else:
+        assert statuses["charged_no_fit_outputs"] == "BLOCKED_BY_TAU_SIGMA_BOUNDARY_DERIVATION"
     assert statuses["common_scale_transport_population"] == "BLOCKED_BY_MISSING_TRANSPORT_OBJECTS"
     assert statuses["neutral_parameter_derivation"] == "OPEN_LOCALIZABLE"
     assert statuses["empirical_derivation_inputs_used"] is False

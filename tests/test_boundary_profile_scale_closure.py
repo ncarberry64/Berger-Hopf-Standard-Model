@@ -137,9 +137,14 @@ def test_generated_artifacts_have_required_guardrails():
 
 
 def test_no_charged_outputs_exported_without_boundary_tau():
-    assert not (ROOT / "artifacts" / "tau_sigma_boundary_values_v1.json").exists()
-    assert not (ROOT / "artifacts" / "charged_outputs_at_boundary_tau_A_local_v1.json").exists()
-    assert not (ROOT / "artifacts" / "charged_outputs_at_boundary_tau_A_background_identity_v1.json").exists()
+    if (ROOT / "artifacts" / "BHSM_boundary_no_fit_prediction_package_v1.json").exists():
+        assert (ROOT / "artifacts" / "tau_sigma_boundary_values_v1.json").exists()
+        assert (ROOT / "artifacts" / "charged_outputs_at_boundary_tau_A_local_v1.json").exists()
+        assert (ROOT / "artifacts" / "charged_outputs_at_boundary_tau_A_background_identity_v1.json").exists()
+    else:
+        assert not (ROOT / "artifacts" / "tau_sigma_boundary_values_v1.json").exists()
+        assert not (ROOT / "artifacts" / "charged_outputs_at_boundary_tau_A_local_v1.json").exists()
+        assert not (ROOT / "artifacts" / "charged_outputs_at_boundary_tau_A_background_identity_v1.json").exists()
 
 
 def test_pr46_artifacts_record_targeted_followup_without_promotion():
@@ -158,6 +163,17 @@ def test_pr46_artifacts_record_targeted_followup_without_promotion():
         ]
         if (ROOT / "artifacts" / "profile_normalization_hessian_closure_v1.json").exists():
             expected.append({"gate": "Z_H_profile_normalization", "status": "DERIVED_CONDITIONAL"})
+        if (ROOT / "artifacts" / "BHSM_boundary_no_fit_prediction_package_v1.json").exists():
+            expected.extend(
+                [
+                    {"gate": "kappa_H_profile_hessian", "status": "DERIVED_CONDITIONAL"},
+                    {"gate": "profile_scale_closure", "status": "DERIVED_CONDITIONAL"},
+                    {
+                        "gate": "charged_outputs_at_boundary_tau",
+                        "status": "NO_FIT_OUTPUT_CANDIDATE_EXPORTED",
+                    },
+                ]
+            )
         assert central["promoted_statuses"] == expected
         followup = central["gates"]["tau_sigma"]["targeted_followup_from_author_radius_selection"]
         assert followup["remaining_blockers"] == ["Z_H", "kappa_H"]
@@ -165,11 +181,20 @@ def test_pr46_artifacts_record_targeted_followup_without_promotion():
             profile_followup = central["gates"]["tau_sigma"][
                 "targeted_followup_from_profile_normalization_hessian_closure"
             ]
-            assert profile_followup["remaining_blockers"] == ["kappa_H"]
+            if (ROOT / "artifacts" / "BHSM_boundary_no_fit_prediction_package_v1.json").exists():
+                assert central["gates"]["tau_sigma"]["targeted_followup_from_boundary_no_fit_package_completion"][
+                    "remaining_blockers"
+                ] == []
+            else:
+                assert profile_followup["remaining_blockers"] == ["kappa_H"]
     else:
         assert central["promoted_statuses"] == []
-    assert package["sections"]["open_boundary_parameters"]["status"] == closure.BLOCKED_BY_MISSING_OBJECTS
-    assert package["sections"]["open_boundary_parameters"]["open_blockers"] == ["kappa_H", "Z_H", "r"]
+    if (ROOT / "artifacts" / "BHSM_boundary_no_fit_prediction_package_v1.json").exists():
+        assert package["sections"]["open_boundary_parameters"]["status"] == closure.DERIVED_CONDITIONAL
+        assert package["sections"]["open_boundary_parameters"]["open_blockers"] == []
+    else:
+        assert package["sections"]["open_boundary_parameters"]["status"] == closure.BLOCKED_BY_MISSING_OBJECTS
+        assert package["sections"]["open_boundary_parameters"]["open_blockers"] == ["kappa_H", "Z_H", "r"]
 
 
 def test_forbidden_claims_absent_from_new_docs_and_artifacts():

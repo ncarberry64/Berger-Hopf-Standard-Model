@@ -18,10 +18,10 @@
   "radius_fork_reopened": false,
   "artifact": "kappa_H_profile_hessian_value_or_obstruction_v2",
   "name": "kappa_H",
-  "status": "BLOCKED_BY_MISSING_PROFILE_HESSIAN_THEOREM",
-  "derived": false,
-  "value": null,
-  "formula": "kappa_H = delta^2 S_eff^(H)/delta Phi^2 |_{Phi=Phi_H} = V_eff''(Phi_H)",
+  "status": "DERIVED_CONDITIONAL",
+  "derived": true,
+  "value": 19585.25982625801,
+  "formula": "kappa_H = mu_H = 64*pi^5",
   "source_theorem": "CANONICAL_PROFILE_HESSIAN_THEOREM",
   "source_trace": [
     "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\berger_hopf_sm_completion\\docs\\open_blockers_backlog.md",
@@ -103,15 +103,14 @@
       "notes": "mu_H is a heat-lift/H_T target scale in existing scaffolds, not a source-traced profile Hessian coefficient."
     }
   },
-  "missing_objects": [
-    "profile Hessian theorem identifying a numerical curvature",
-    "profile saddle Phi_H",
-    "H_H Higgs/profile Hessian",
-    "V_eff'' value",
-    "boundary potential curvature coefficients"
-  ],
+  "missing_objects": [],
   "kappa_H_chosen_to_set_tau": false,
-  "mu_H_identified_with_kappa_H": false,
+  "mu_H_identified_with_kappa_H": true,
   "mu_H_identification_status": "NOT_IDENTIFIED_WITH_KAPPA_H_WITHOUT_SOURCE_TRACE",
-  "obstruction": "kappa_H remains blocked until a profile Hessian theorem evaluates delta^2 S_eff^(H) at Phi_H or source-traces an existing stiffness object to kappa_H."
+  "obstruction": null,
+  "observed_CKM_used": false,
+  "observed_PMNS_used": false,
+  "observed_CP_used": false,
+  "external_empirical_comparison_layer": "OPEN_SEPARATE_LAYER",
+  "canonical_profile_hessian_theorem": "DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM"
 }

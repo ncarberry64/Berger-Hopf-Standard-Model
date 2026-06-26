@@ -149,7 +149,10 @@ def test_previous_artifacts_record_pr48_followup_without_breaking_legacy_blocker
     central = load_artifact("BHSM_numerical_gate_closure_assault_v1.json")
     package = load_artifact("BHSM_prediction_package_skeleton_v1.json")
     assert boundary["targeted_followup_from_PR48"]["missing_theorem"] == radius.MISSING_SELECTION_THEOREM
-    assert boundary["missing_objects"] == ["kappa_H", "Z_H", "r"]
+    if (ROOT / "artifacts" / "BHSM_boundary_no_fit_prediction_package_v1.json").exists():
+        assert boundary["missing_objects"] == []
+    else:
+        assert boundary["missing_objects"] == ["kappa_H", "Z_H", "r"]
     assert boundary["refined_missing_objects_from_PR48_followup"] == ["r_internal_profile", "Z_H", "kappa_H"]
     assert central["gates"]["tau_sigma"]["targeted_followup_from_PR48"]["missing_theorem"] == (
         radius.MISSING_SELECTION_THEOREM
@@ -164,6 +167,17 @@ def test_previous_artifacts_record_pr48_followup_without_breaking_legacy_blocker
         ]
         if (ROOT / "artifacts" / "profile_normalization_hessian_closure_v1.json").exists():
             expected.append({"gate": "Z_H_profile_normalization", "status": "DERIVED_CONDITIONAL"})
+        if (ROOT / "artifacts" / "BHSM_boundary_no_fit_prediction_package_v1.json").exists():
+            expected.extend(
+                [
+                    {"gate": "kappa_H_profile_hessian", "status": "DERIVED_CONDITIONAL"},
+                    {"gate": "profile_scale_closure", "status": "DERIVED_CONDITIONAL"},
+                    {
+                        "gate": "charged_outputs_at_boundary_tau",
+                        "status": "NO_FIT_OUTPUT_CANDIDATE_EXPORTED",
+                    },
+                ]
+            )
         assert central["promoted_statuses"] == expected
         assert central["gates"]["tau_sigma"]["targeted_followup_from_author_radius_selection"][
             "remaining_blockers"
@@ -173,12 +187,20 @@ def test_previous_artifacts_record_pr48_followup_without_breaking_legacy_blocker
             "kappa_H",
         ]
         if (ROOT / "artifacts" / "profile_normalization_hessian_closure_v1.json").exists():
-            assert package["sections"]["open_boundary_parameters"][
-                "refined_open_blockers_after_profile_normalization"
-            ] == ["kappa_H"]
+            if (ROOT / "artifacts" / "BHSM_boundary_no_fit_prediction_package_v1.json").exists():
+                assert package["sections"]["open_boundary_parameters"][
+                    "refined_open_blockers_after_boundary_no_fit_package"
+                ] == []
+            else:
+                assert package["sections"]["open_boundary_parameters"][
+                    "refined_open_blockers_after_profile_normalization"
+                ] == ["kappa_H"]
     else:
         assert central["promoted_statuses"] == []
-    assert package["sections"]["open_boundary_parameters"]["open_blockers"] == ["kappa_H", "Z_H", "r"]
+    if (ROOT / "artifacts" / "BHSM_boundary_no_fit_prediction_package_v1.json").exists():
+        assert package["sections"]["open_boundary_parameters"]["open_blockers"] == []
+    else:
+        assert package["sections"]["open_boundary_parameters"]["open_blockers"] == ["kappa_H", "Z_H", "r"]
     assert package["sections"]["open_boundary_parameters"]["comparison_ready"] is False
 
 

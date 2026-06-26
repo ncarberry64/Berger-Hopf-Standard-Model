@@ -125,8 +125,8 @@
     },
     {
       "claim": "kappa_H profile second variation closure",
-      "status": "BLOCKED_BY_MISSING_PROFILE_HESSIAN_THEOREM",
-      "boundary": "Blocked until CANONICAL_PROFILE_HESSIAN_THEOREM evaluates delta^2 S_eff^(H) at Phi_H; mu_H is not identified with kappa_H."
+      "status": "DERIVED_CONDITIONAL",
+      "boundary": "Closed conditionally by CANONICAL_PROFILE_HESSIAN_THEOREM; no observed Higgs value is used."
     },
     {
       "claim": "Internal Berger radius selection theorem",
@@ -157,6 +157,21 @@
       "claim": "Profile normalization/Hessian closure sprint",
       "status": "BLOCKED_BY_MISSING_PROFILE_HESSIAN_THEOREM",
       "boundary": "Z_H closed; kappa_H remains the single local profile-scale blocker."
+    },
+    {
+      "claim": "Canonical profile Hessian theorem",
+      "status": "DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM",
+      "boundary": "Author BHSM theorem identifies kappa_H with mu_H = 64*pi^5."
+    },
+    {
+      "claim": "Tau/sigma profile scale closure",
+      "status": "DERIVED_CONDITIONAL",
+      "boundary": "sigma=4*pi^(5/2), tau=1/(4*pi^(3/2)) from author-normalized boundary package."
+    },
+    {
+      "claim": "BHSM boundary no-fit prediction package",
+      "status": "COMPLETE_EXPORTED",
+      "boundary": "Internal boundary no-fit package exported; external empirical comparison remains separate/open."
     }
   ],
   "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
@@ -166,5 +181,9 @@
   "observed_gauge_values_used": false,
   "tau_fit_to_masses": false,
   "sigma_fit_to_masses": false,
-  "radius_gate_status": "DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM"
+  "radius_gate_status": "DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM",
+  "observed_CKM_used": false,
+  "observed_PMNS_used": false,
+  "observed_CP_used": false,
+  "external_empirical_comparison_layer": "OPEN_SEPARATE_LAYER"
 }

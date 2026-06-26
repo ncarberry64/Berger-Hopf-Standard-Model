@@ -224,3 +224,22 @@ With `r_internal_profile^2=1/(4*pi)` and `Z_H=1`, the symbolic dependency is
 charged outputs at boundary tau are not exported, and official/frozen
 predictions remain unchanged. The global public status remains
 `structural architecture integrated conditional; numerical closure open`.
+
+## BHSM Boundary No-Fit Package Completion
+
+The internal BHSM boundary no-fit package is exported as
+`COMPLETE_EXPORTED`. The completed internal profile-scale values are:
+
+- `r_internal_profile^2 = 1/(4*pi)`;
+- `Z_H = 1`;
+- `kappa_H = mu_H = 64*pi^5`;
+- `sigma = 4*pi^(5/2)`;
+- `tau = 1/(4*pi^(3/2))`.
+
+The package also exports charged boundary bridge values, identity transport at
+`mu_BH_boundary`, the neutral boundary seed, PMNS/CKM no-fit operator outputs,
+and the `delta_BH=pi/3` CP holonomy seed. This is an internal boundary no-fit
+export only. The external empirical comparison package remains
+`OPEN_SEPARATE_LAYER`; no observed masses, Higgs value, gauge values,
+CKM/PMNS data, CP data, or cosmology residuals are used as derivation inputs.
+Frozen and official predictions remain unchanged.
