@@ -73,7 +73,7 @@ def test_rg_interface_represents_partial_localization_without_scheme_alignment()
     readiness = {record.sector: record for record in rg.comparison_readiness_records()}
     for sector in ("charged_lepton", "up", "down"):
         record = readiness[sector]
-        assert record.current_readiness == "RG_TRANSPORT_PARTIALLY_LOCALIZED"
+        assert record.current_readiness == "RG_TRANSPORT_RESIDUAL_LOCALIZED"
         assert record.gauge_component == "CANCELED_BY_SAME_SECTOR_THEOREM"
         assert record.residual_component == "OPEN_LOCALIZABLE"
         assert record.comparison_readiness == "NOT_READY"
