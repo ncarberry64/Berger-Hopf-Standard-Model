@@ -243,3 +243,22 @@ export only. The external empirical comparison package remains
 `OPEN_SEPARATE_LAYER`; no observed masses, Higgs value, gauge values,
 CKM/PMNS data, CP data, or cosmology residuals are used as derivation inputs.
 Frozen and official predictions remain unchanged.
+
+## BHSM v1 Completion Release Candidate
+
+BHSM v1 now contains a complete internal no-fit boundary prediction package. The
+profile scale, charged boundary outputs, neutral/PMNS/CKM/CP boundary outputs,
+and boundary-scale transport identity are exported as machine-readable
+artifacts.
+
+External empirical comparison is implemented as a separate comparison-only
+layer. Empirical data are not used to derive BHSM constants or boundary
+predictions. If comparison data are absent, the package remains internally
+complete but externally unevaluated.
+
+Current split:
+
+- `BHSM_internal_boundary_package = COMPLETE_EXPORTED`
+- `BHSM_boundary_no_fit_prediction_package = COMPLETE_EXPORTED`
+- `external_empirical_comparison_package = IMPLEMENTED_COMPARISON_ONLY_LAYER`
+- `external_empirical_comparison_status = DATA_OPTIONAL_OR_DATA_ABSENT`

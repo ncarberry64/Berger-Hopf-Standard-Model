@@ -172,3 +172,14 @@ Zenodo metadata. Do not write a DOI manually before Zenodo assigns one.
 ## License
 
 All rights reserved. See `LICENSE.md`.
+
+## BHSM v1 Completion Release Candidate
+
+BHSM v1 now contains a complete internal no-fit boundary prediction package. The
+profile scale, charged boundary outputs, neutral/PMNS/CKM/CP boundary outputs,
+and boundary-scale transport identity are exported as machine-readable artifacts.
+
+External empirical comparison is implemented as a separate comparison-only
+layer. Empirical data are not used to derive BHSM constants or boundary
+predictions. If comparison data are absent, the package remains internally
+complete but externally unevaluated.

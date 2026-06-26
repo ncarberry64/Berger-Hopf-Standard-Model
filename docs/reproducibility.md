@@ -50,3 +50,7 @@ The release integrity test checks required files and no invented DOI:
 ```powershell
 python -m pytest tests/test_final_paper_release_package.py
 ```
+
+## BHSM v1 Release Candidate
+
+Run `python -m pytest -q` to reproduce the internal boundary no-fit package and comparison-layer guardrails. The final manifest is `artifacts/BHSM_COMPLETE_V1_RELEASE_CANDIDATE.json`.

@@ -172,6 +172,21 @@
       "claim": "BHSM boundary no-fit prediction package",
       "status": "COMPLETE_EXPORTED",
       "boundary": "Internal boundary no-fit package exported; external empirical comparison remains separate/open."
+    },
+    {
+      "claim": "BHSM complete v1 release candidate",
+      "status": "BHSM_COMPLETE_V1_RELEASE_CANDIDATE",
+      "boundary": "Internal boundary no-fit package complete/exported; external empirical comparison implemented as a separate comparison-only layer and data-optional."
+    },
+    {
+      "claim": "External empirical comparison package",
+      "status": "IMPLEMENTED_COMPARISON_ONLY_LAYER",
+      "boundary": "Comparison-only layer; cannot modify derivation constants or internal boundary predictions."
+    },
+    {
+      "claim": "External empirical validation",
+      "status": "DATA_ABSENT",
+      "boundary": "No empirical validation is claimed without external target data and comparison artifacts."
     }
   ],
   "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
@@ -185,5 +200,7 @@
   "observed_CKM_used": false,
   "observed_PMNS_used": false,
   "observed_CP_used": false,
-  "external_empirical_comparison_layer": "OPEN_SEPARATE_LAYER"
+  "external_empirical_comparison_layer": "OPEN_SEPARATE_LAYER",
+  "boundary_predictions_modified_by_comparison": false,
+  "comparison_data_required_for_internal_completion": false
 }

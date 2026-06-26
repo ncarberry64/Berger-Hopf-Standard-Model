@@ -32,3 +32,7 @@ geometric framework.
 - Empirical masses, CKM, PMNS, neutrino data, Higgs data, gauge data,
   cosmology residuals, measured alpha, and target ratios may not be used as
   derivation inputs.
+
+## BHSM v1 Release-Candidate Boundary
+
+BHSM v1 now contains a complete internal no-fit boundary prediction package. The external empirical comparison layer is implemented as a separate comparison-only layer. Empirical data are not derivation inputs, and absent external data produce `DATA_ABSENT`, not an internal-package failure.

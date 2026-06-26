@@ -17,3 +17,7 @@ ledger.
 
 This release is falsifiable because it freezes constants, modes, tolerances,
 and outputs before comparison.
+
+## BHSM v1 Comparison Gates
+
+The internal profile-scale identities and no-empirical-derivation gate are internal gates. Charged-sector, CKM/PMNS/CP, and DESI checks are comparison-only gates and are `NOT_EVALUATED_DATA_ABSENT` until target data are supplied.

@@ -172,8 +172,14 @@ def test_status_ledgers_export_internal_package_without_external_validation_clai
     open_gate = load_artifact("full_BHSM_open_gate_ledger_v2.json")["statuses"]
     central = load_artifact("BHSM_numerical_gate_closure_assault_v1.json")
     assert open_gate["BHSM_boundary_no_fit_prediction_package"] == package.COMPLETE_EXPORTED
-    assert open_gate["BHSM_internal_boundary_package"] == package.COMPLETE
-    assert open_gate["external_empirical_comparison_package"] == package.EXTERNAL_LAYER
+    if (ROOT / "artifacts" / "BHSM_COMPLETE_V1_RELEASE_CANDIDATE.json").exists():
+        assert open_gate["BHSM_internal_boundary_package"] == package.COMPLETE_EXPORTED
+    else:
+        assert open_gate["BHSM_internal_boundary_package"] == package.COMPLETE
+    if (ROOT / "artifacts" / "BHSM_COMPLETE_V1_RELEASE_CANDIDATE.json").exists():
+        assert open_gate["external_empirical_comparison_package"] == "IMPLEMENTED_COMPARISON_ONLY_LAYER"
+    else:
+        assert open_gate["external_empirical_comparison_package"] == package.EXTERNAL_LAYER
     assert central["BHSM_boundary_no_fit_prediction_package"] == package.COMPLETE_EXPORTED
     assert central["external_empirical_comparison_package"] == package.EXTERNAL_LAYER
     assert central["official_predictions_changed"] is False
