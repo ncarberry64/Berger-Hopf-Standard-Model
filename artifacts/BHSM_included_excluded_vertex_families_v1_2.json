@@ -1,0 +1,177 @@
+{
+  "artifact": "BHSM_included_excluded_vertex_families_v1_2",
+  "release_basis": "v1.0.1",
+  "phase": "PHASE_THREE_J_MINIMAL_COLLIDER_LAGRANGIAN",
+  "entries": [
+    {
+      "vertex_family": "q_charged_current_CKM_BH",
+      "included_in_minimal_subset": true,
+      "inclusion_or_exclusion_status": "INCLUDED_BOUNDED_COLLIDER_INTERFACE_TARGET",
+      "reason": "BHSM CKM source matrix and standard charged-current target convention are available.",
+      "source_artifacts": [
+        "artifacts/BHSM_explicit_4d_field_dictionary_v0_5.json",
+        "artifacts/BHSM_gauge_field_target_dictionary_v0_5.json",
+        "artifacts/BHSM_candidate_parameter_card_v0_5.json",
+        "artifacts/BHSM_chiral_current_attachment_map_v0_6.json",
+        "artifacts/BHSM_canonical_production_basis_theorem_v0_8.json",
+        "artifacts/BHSM_runtime_parameter_modes_v0_8.json",
+        "artifacts/BHSM_production_coupling_map_v0_8.json",
+        "artifacts/BHSM_production_vertex_table_candidate_v0_9.json",
+        "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json",
+        "artifacts/BHSM_vertex_readiness_matrix_v0_9.json",
+        "artifacts/BHSM_phase_three_g_gate_status_v0_9.json",
+        "artifacts/BHSM_bounded_vertex_promotion_audit_v1_0.json",
+        "artifacts/BHSM_phase_three_h_gate_status_v1_0.json",
+        "artifacts/BHSM_interaction_theorem_closure_audit_v1_1.json",
+        "artifacts/BHSM_phase_three_i_gate_status_v1_1.json"
+      ],
+      "remaining_blockers": [
+        "coupling scheme",
+        "mass-width runtime values",
+        "renormalization",
+        "FeynRules syntax"
+      ],
+      "allowed_parameter_mode": "BHSM_COLLIDER_INTERFACE",
+      "feynrules_translation_candidate": true,
+      "production_feynrules_ready": false,
+      "ufo_ready": false,
+      "notes": "Included only in the bounded FeynRules-prep subset; this is not production readiness."
+    },
+    {
+      "vertex_family": "lepton_charged_current_PMNS_BH",
+      "included_in_minimal_subset": true,
+      "inclusion_or_exclusion_status": "INCLUDED_BOUNDED_COLLIDER_INTERFACE_TARGET",
+      "reason": "BHSM PMNS source matrix and standard charged-current target convention are available.",
+      "source_artifacts": [
+        "artifacts/BHSM_explicit_4d_field_dictionary_v0_5.json",
+        "artifacts/BHSM_gauge_field_target_dictionary_v0_5.json",
+        "artifacts/BHSM_candidate_parameter_card_v0_5.json",
+        "artifacts/BHSM_chiral_current_attachment_map_v0_6.json",
+        "artifacts/BHSM_canonical_production_basis_theorem_v0_8.json",
+        "artifacts/BHSM_runtime_parameter_modes_v0_8.json",
+        "artifacts/BHSM_production_coupling_map_v0_8.json",
+        "artifacts/BHSM_production_vertex_table_candidate_v0_9.json",
+        "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json",
+        "artifacts/BHSM_vertex_readiness_matrix_v0_9.json",
+        "artifacts/BHSM_phase_three_g_gate_status_v0_9.json",
+        "artifacts/BHSM_bounded_vertex_promotion_audit_v1_0.json",
+        "artifacts/BHSM_phase_three_h_gate_status_v1_0.json",
+        "artifacts/BHSM_interaction_theorem_closure_audit_v1_1.json",
+        "artifacts/BHSM_phase_three_i_gate_status_v1_1.json"
+      ],
+      "remaining_blockers": [
+        "neutrino runtime label convention",
+        "mass-width runtime values",
+        "renormalization",
+        "FeynRules syntax"
+      ],
+      "allowed_parameter_mode": "BHSM_COLLIDER_INTERFACE",
+      "feynrules_translation_candidate": true,
+      "production_feynrules_ready": false,
+      "ufo_ready": false,
+      "notes": "Included only in the bounded FeynRules-prep subset; this is not production readiness."
+    },
+    {
+      "vertex_family": "charged_boundary_response_matrix",
+      "included_in_minimal_subset": false,
+      "inclusion_or_exclusion_status": "EXCLUDED_OPEN_X_CH_THEOREM",
+      "reason": "X_ch theorem missing for separate boundary response.",
+      "source_artifacts": [
+        "artifacts/BHSM_explicit_4d_field_dictionary_v0_5.json",
+        "artifacts/BHSM_gauge_field_target_dictionary_v0_5.json",
+        "artifacts/BHSM_candidate_parameter_card_v0_5.json",
+        "artifacts/BHSM_chiral_current_attachment_map_v0_6.json",
+        "artifacts/BHSM_canonical_production_basis_theorem_v0_8.json",
+        "artifacts/BHSM_runtime_parameter_modes_v0_8.json",
+        "artifacts/BHSM_production_coupling_map_v0_8.json",
+        "artifacts/BHSM_production_vertex_table_candidate_v0_9.json",
+        "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json",
+        "artifacts/BHSM_vertex_readiness_matrix_v0_9.json",
+        "artifacts/BHSM_phase_three_g_gate_status_v0_9.json",
+        "artifacts/BHSM_bounded_vertex_promotion_audit_v1_0.json",
+        "artifacts/BHSM_phase_three_h_gate_status_v1_0.json",
+        "artifacts/BHSM_interaction_theorem_closure_audit_v1_1.json",
+        "artifacts/BHSM_phase_three_i_gate_status_v1_1.json"
+      ],
+      "remaining_blockers": [
+        "X_ch spin/gauge/Lorentz/coupling theorem"
+      ],
+      "allowed_parameter_mode": "NOT_ALLOWED_IN_MINIMAL_SUBSET",
+      "feynrules_translation_candidate": false,
+      "production_feynrules_ready": false,
+      "ufo_ready": false,
+      "notes": "Excluded until the named interaction theorem closes."
+    },
+    {
+      "vertex_family": "neutral_operator_kernel_BH",
+      "included_in_minimal_subset": false,
+      "inclusion_or_exclusion_status": "EXCLUDED_OPEN_NEUTRINO_BASIS_SCALE_DIRAC_MAJORANA_THEOREM",
+      "reason": "Neutrino physical basis, scale, and Dirac/Majorana theorem missing.",
+      "source_artifacts": [
+        "artifacts/BHSM_explicit_4d_field_dictionary_v0_5.json",
+        "artifacts/BHSM_gauge_field_target_dictionary_v0_5.json",
+        "artifacts/BHSM_candidate_parameter_card_v0_5.json",
+        "artifacts/BHSM_chiral_current_attachment_map_v0_6.json",
+        "artifacts/BHSM_canonical_production_basis_theorem_v0_8.json",
+        "artifacts/BHSM_runtime_parameter_modes_v0_8.json",
+        "artifacts/BHSM_production_coupling_map_v0_8.json",
+        "artifacts/BHSM_production_vertex_table_candidate_v0_9.json",
+        "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json",
+        "artifacts/BHSM_vertex_readiness_matrix_v0_9.json",
+        "artifacts/BHSM_phase_three_g_gate_status_v0_9.json",
+        "artifacts/BHSM_bounded_vertex_promotion_audit_v1_0.json",
+        "artifacts/BHSM_phase_three_h_gate_status_v1_0.json",
+        "artifacts/BHSM_interaction_theorem_closure_audit_v1_1.json",
+        "artifacts/BHSM_phase_three_i_gate_status_v1_1.json"
+      ],
+      "remaining_blockers": [
+        "U_nu basis map",
+        "Lambda_nu scale",
+        "Dirac/Majorana convention"
+      ],
+      "allowed_parameter_mode": "NOT_ALLOWED_IN_MINIMAL_SUBSET",
+      "feynrules_translation_candidate": false,
+      "production_feynrules_ready": false,
+      "ufo_ready": false,
+      "notes": "Excluded until the named interaction theorem closes."
+    },
+    {
+      "vertex_family": "cp_holonomy_phase_attachment",
+      "included_in_minimal_subset": false,
+      "inclusion_or_exclusion_status": "EXCLUDED_OPEN_O_INT_THEOREM",
+      "reason": "Standalone CP O_int theorem missing.",
+      "source_artifacts": [
+        "artifacts/BHSM_explicit_4d_field_dictionary_v0_5.json",
+        "artifacts/BHSM_gauge_field_target_dictionary_v0_5.json",
+        "artifacts/BHSM_candidate_parameter_card_v0_5.json",
+        "artifacts/BHSM_chiral_current_attachment_map_v0_6.json",
+        "artifacts/BHSM_canonical_production_basis_theorem_v0_8.json",
+        "artifacts/BHSM_runtime_parameter_modes_v0_8.json",
+        "artifacts/BHSM_production_coupling_map_v0_8.json",
+        "artifacts/BHSM_production_vertex_table_candidate_v0_9.json",
+        "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json",
+        "artifacts/BHSM_vertex_readiness_matrix_v0_9.json",
+        "artifacts/BHSM_phase_three_g_gate_status_v0_9.json",
+        "artifacts/BHSM_bounded_vertex_promotion_audit_v1_0.json",
+        "artifacts/BHSM_phase_three_h_gate_status_v1_0.json",
+        "artifacts/BHSM_interaction_theorem_closure_audit_v1_1.json",
+        "artifacts/BHSM_phase_three_i_gate_status_v1_1.json"
+      ],
+      "remaining_blockers": [
+        "O_int field content",
+        "O_int Lorentz/gauge structure",
+        "O_int coupling placement"
+      ],
+      "allowed_parameter_mode": "NOT_ALLOWED_IN_MINIMAL_SUBSET",
+      "feynrules_translation_candidate": false,
+      "production_feynrules_ready": false,
+      "ufo_ready": false,
+      "notes": "Excluded until the named interaction theorem closes."
+    }
+  ],
+  "empirical_derivation_inputs_used": false,
+  "boundary_predictions_modified_by_runtime_inputs": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false,
+  "source_model_files_changed": false
+}

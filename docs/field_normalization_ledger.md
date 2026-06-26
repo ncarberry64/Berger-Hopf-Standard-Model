@@ -21,3 +21,14 @@ and width conventions, gauge representation rows from pinned source artifacts,
 and particle/antiparticle field-symbol conventions.
 
 No Standard Model particle masses, widths, or PDG IDs are inserted here.
+
+Phase Three-C adds explicit candidate field targets, but vector and fermion
+normalization constants remain open and the field-normalization ledger remains
+incomplete.
+
+Phase Three-D records `Z_A,target = 1` and `Z_psi,target = 1` as standard target
+conventions only. They do not close the BHSM field-normalization proof gap.
+
+Phase Three-E exports separate vector and fermion normalization theorem-status
+artifacts. They classify `Z_A,target = 1` and `Z_psi,target = 1` as standard HEP
+target conventions, not BHSM-derived nontrivial field-strength predictions.

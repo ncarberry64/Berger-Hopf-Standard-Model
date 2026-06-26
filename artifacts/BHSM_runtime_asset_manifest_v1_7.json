@@ -1,0 +1,246 @@
+{
+  "release_basis": "v1.0.1",
+  "phase": "PHASE_THREE_O_RUNTIME_ASSETS_HEP_HANDOFF",
+  "environment_variables_supported": [
+    "WOLFRAMSCRIPT_PATH",
+    "WOLFRAM_KERNEL_PATH",
+    "MATHEMATICA_PATH",
+    "FEYNRULES_PATH",
+    "MADGRAPH_PATH",
+    "MG5AMC_PATH",
+    "BHSM_RUNTIME_DIR",
+    "BHSM_OUTPUT_DIR"
+  ],
+  "assets": [
+    {
+      "asset_id": "python",
+      "asset_name": "Python",
+      "required_for": [
+        "repository tests",
+        "artifact exporters",
+        "setup scripts"
+      ],
+      "required_or_optional": "required",
+      "legal_source_policy": "system/package-manager/user-managed",
+      "download_allowed": false,
+      "install_allowed": false,
+      "detected": true,
+      "version": "current interpreter",
+      "path": "C:\\Python314\\python.exe",
+      "source_url_if_known": "https://www.python.org/",
+      "checksum_if_available": "not_recorded",
+      "license_notes": "Open-source runtime already provided by environment.",
+      "status": "DETECTED",
+      "blocks_validation_if_missing": true,
+      "notes": [
+        "Basic repository tests require Python."
+      ]
+    },
+    {
+      "asset_id": "wolframscript",
+      "asset_name": "WolframScript",
+      "required_for": [
+        "scripted FeynRules execution"
+      ],
+      "required_or_optional": "required",
+      "legal_source_policy": "licensed/authorized Wolfram runtime only",
+      "download_allowed": false,
+      "install_allowed": false,
+      "detected": false,
+      "version": "not_detected",
+      "path": "not_detected",
+      "source_url_if_known": "https://www.wolfram.com/",
+      "checksum_if_available": "not_available",
+      "license_notes": "Requires licensed or otherwise authorized Wolfram runtime; no automatic download.",
+      "status": "MISSING_LICENSED_EXTERNAL_RUNTIME",
+      "blocks_validation_if_missing": true,
+      "notes": [
+        "May be supplied with WOLFRAMSCRIPT_PATH."
+      ]
+    },
+    {
+      "asset_id": "wolfram_kernel",
+      "asset_name": "WolframKernel",
+      "required_for": [
+        "Mathematica/FeynRules model loading"
+      ],
+      "required_or_optional": "required",
+      "legal_source_policy": "licensed/authorized Wolfram runtime only",
+      "download_allowed": false,
+      "install_allowed": false,
+      "detected": false,
+      "version": "not_detected",
+      "path": "not_detected",
+      "source_url_if_known": "https://www.wolfram.com/",
+      "checksum_if_available": "not_available",
+      "license_notes": "Requires licensed or otherwise authorized Wolfram runtime; no license bypass.",
+      "status": "MISSING_LICENSED_EXTERNAL_RUNTIME",
+      "blocks_validation_if_missing": true,
+      "notes": [
+        "May be supplied with WOLFRAM_KERNEL_PATH."
+      ]
+    },
+    {
+      "asset_id": "mathematica",
+      "asset_name": "Mathematica",
+      "required_for": [
+        "FeynRules notebook/package runtime"
+      ],
+      "required_or_optional": "required",
+      "legal_source_policy": "licensed/authorized Wolfram installation only",
+      "download_allowed": false,
+      "install_allowed": false,
+      "detected": false,
+      "version": "not_detected",
+      "path": "not_detected",
+      "source_url_if_known": "https://www.wolfram.com/mathematica/",
+      "checksum_if_available": "not_available",
+      "license_notes": "Restricted proprietary runtime; user/institution must provide legal install.",
+      "status": "MISSING_LICENSED_EXTERNAL_RUNTIME",
+      "blocks_validation_if_missing": true,
+      "notes": [
+        "May be supplied with MATHEMATICA_PATH."
+      ]
+    },
+    {
+      "asset_id": "feynrules",
+      "asset_name": "FeynRules",
+      "required_for": [
+        "FeynRules validation",
+        "UFO export"
+      ],
+      "required_or_optional": "required",
+      "legal_source_policy": "official/legal FeynRules source only",
+      "download_allowed": true,
+      "install_allowed": true,
+      "detected": false,
+      "version": "not_detected",
+      "path": "not_detected",
+      "source_url_if_known": "https://feynrules.irmp.ucl.ac.be/",
+      "checksum_if_available": "not_recorded",
+      "license_notes": "Use only official/legal FeynRules package; load test still requires Wolfram.",
+      "status": "MISSING",
+      "blocks_validation_if_missing": true,
+      "notes": [
+        "May be supplied with FEYNRULES_PATH."
+      ]
+    },
+    {
+      "asset_id": "feynarts_optional",
+      "asset_name": "FeynArts/FormCalc",
+      "required_for": [
+        "optional diagram checks"
+      ],
+      "required_or_optional": "optional",
+      "legal_source_policy": "official/legal source only",
+      "download_allowed": true,
+      "install_allowed": true,
+      "detected": false,
+      "version": "not_detected",
+      "path": "not_detected",
+      "source_url_if_known": "https://feynarts.de/",
+      "checksum_if_available": "not_recorded",
+      "license_notes": "Optional; not required for Phase Three-O validation gates.",
+      "status": "OPTIONAL_NOT_DETECTED",
+      "blocks_validation_if_missing": false,
+      "notes": [
+        "Not needed for the bounded minimal validation chain."
+      ]
+    },
+    {
+      "asset_id": "madgraph",
+      "asset_name": "MadGraph5_aMC",
+      "required_for": [
+        "UFO import",
+        "MadGraph smoke test"
+      ],
+      "required_or_optional": "required_for_smoke",
+      "legal_source_policy": "official public MadGraph source only",
+      "download_allowed": true,
+      "install_allowed": true,
+      "detected": false,
+      "version": "not_detected",
+      "path": "not_detected",
+      "source_url_if_known": "https://launchpad.net/mg5amcnlo",
+      "checksum_if_available": "not_recorded",
+      "license_notes": "Open public HEP software; use official distribution only.",
+      "status": "MISSING",
+      "blocks_validation_if_missing": true,
+      "notes": [
+        "May be supplied with MADGRAPH_PATH or MG5AMC_PATH."
+      ]
+    },
+    {
+      "asset_id": "hepmc_optional",
+      "asset_name": "HepMC",
+      "required_for": [
+        "optional event-output validation"
+      ],
+      "required_or_optional": "optional",
+      "legal_source_policy": "official/legal package source only",
+      "download_allowed": true,
+      "install_allowed": true,
+      "detected": false,
+      "version": "not_detected",
+      "path": "not_detected",
+      "source_url_if_known": "https://hepmc.web.cern.ch/",
+      "checksum_if_available": "not_recorded",
+      "license_notes": "Optional until event-generation evidence exists.",
+      "status": "OPTIONAL_NOT_DETECTED",
+      "blocks_validation_if_missing": false,
+      "notes": [
+        "No HepMC readiness is claimed."
+      ]
+    },
+    {
+      "asset_id": "root_optional",
+      "asset_name": "ROOT",
+      "required_for": [
+        "optional analysis checks"
+      ],
+      "required_or_optional": "optional",
+      "legal_source_policy": "official/legal package source only",
+      "download_allowed": true,
+      "install_allowed": true,
+      "detected": false,
+      "version": "not_detected",
+      "path": "not_detected",
+      "source_url_if_known": "https://root.cern/",
+      "checksum_if_available": "not_recorded",
+      "license_notes": "Optional analysis runtime.",
+      "status": "OPTIONAL_NOT_DETECTED",
+      "blocks_validation_if_missing": false,
+      "notes": [
+        "No ROOT dependency is required for repository tests."
+      ]
+    },
+    {
+      "asset_id": "lhapdf_optional",
+      "asset_name": "LHAPDF",
+      "required_for": [
+        "optional collider phenomenology extensions"
+      ],
+      "required_or_optional": "optional",
+      "legal_source_policy": "official/legal package source only",
+      "download_allowed": true,
+      "install_allowed": true,
+      "detected": false,
+      "version": "not_detected",
+      "path": "not_detected",
+      "source_url_if_known": "https://lhapdf.hepforge.org/",
+      "checksum_if_available": "not_recorded",
+      "license_notes": "Optional future phenomenology dependency.",
+      "status": "OPTIONAL_NOT_DETECTED",
+      "blocks_validation_if_missing": false,
+      "notes": [
+        "Not required for the bounded CKM/PMNS validation gate."
+      ]
+    }
+  ],
+  "empirical_derivation_inputs_used": false,
+  "empirical_runtime_inputs_allowed_in_collider_mode": true,
+  "boundary_predictions_modified_by_runtime_inputs": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false,
+  "source_model_files_changed": false
+}

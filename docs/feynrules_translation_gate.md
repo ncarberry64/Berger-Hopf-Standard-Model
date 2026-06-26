@@ -26,3 +26,50 @@ ufo_ready = false
 
 The gate is intentionally strict. Candidate ledgers do not count as production
 FeynRules readiness.
+
+Phase Three-C does not open this gate. It adds explicit target maps and
+candidate parameter-card entries while leaving production FeynRules readiness
+blocked.
+
+Phase Three-D also leaves this gate closed. Canonical target conventions and
+current-attachment maps are not production FeynRules readiness.
+
+Phase Three-E exports vector/fermion normalization theorem-status artifacts,
+gauge-fixing/coupling scheme candidates, and mass-width/renormalization
+candidate ledgers. The FeynRules gate remains closed because target
+normalization conventions are not BHSM-derived field-strength theorems and the
+mass-width, renormalization, complete 4D Lagrangian, and production vertex
+tables remain open.
+
+Phase Three-F clears the interface normalization sub-gate by defining
+canonical production-basis fields with `Z_A,prod = Z_psi,prod = 1`. The
+FeynRules gate remains closed because complete 4D Lagrangian export,
+mass-width closure, renormalization closure, and production vertex tables
+remain open.
+
+Phase Three-G exports the candidate vertex table and symbolic Lagrangian
+assembly ledger, but the FeynRules gate remains closed because the table is
+incomplete and multiple blocker rows remain open.
+
+Phase Three-H performs bounded resolution attempts for `X_ch`, neutrino
+basis/scale, and CP holonomy attachment. The FeynRules gate remains closed
+because the resulting promotions are bounded collider-interface targets, not
+production FeynRules vertices.
+
+Phase Three-I directly audits the remaining interaction theorems. The
+FeynRules gate remains closed because `X_ch`, neutrino
+basis/scale/Dirac-Majorana convention, and standalone CP `O_int` are still
+exact missing theorem objects.
+
+Phase Three-J exports a FeynRules-prep subset only. The translation gate
+remains closed for production use because no production FeynRules file is
+exported.
+
+Phase Three-K creates a disabled FeynRules syntax draft. The translation gate
+remains closed for production use because syntax validation has not been run
+and no enabled production `.fr` file is exported.
+
+Phase Three-L supplies local checking/export runner scripts and runner
+contracts for the bounded minimal collider-interface subset. The translation
+gate remains closed because static repository checks are not
+Mathematica/FeynRules validation and no UFO export/loadability result exists.

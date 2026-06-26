@@ -1,0 +1,45 @@
+{
+  "release_basis": "v1.0.1",
+  "phase": "PHASE_THREE_O_RUNTIME_ASSETS_HEP_HANDOFF",
+  "download_policy": "legal sources only; no Wolfram automatic download; large assets not committed by default",
+  "attempt_downloads_requested": false,
+  "downloaded_assets_committed_to_repo": false,
+  "attempts": [
+    {
+      "asset_id": "wolfram_runtime",
+      "source_url": "user_provided_only",
+      "download_attempted": false,
+      "download_succeeded": false,
+      "destination": "external/ or .cache/bhsm_runtime/ when explicitly requested",
+      "checksum_if_available": "not_recorded",
+      "license_note": "Restricted runtime; no automatic download.",
+      "failure_reason": "automatic downloads disabled by default to avoid large/unreviewed runtime artifacts"
+    },
+    {
+      "asset_id": "feynrules",
+      "source_url": "https://feynrules.irmp.ucl.ac.be/",
+      "download_attempted": false,
+      "download_succeeded": false,
+      "destination": "external/ or .cache/bhsm_runtime/ when explicitly requested",
+      "checksum_if_available": "not_recorded",
+      "license_note": "Official/legal source only; not downloaded by default.",
+      "failure_reason": "automatic downloads disabled by default to avoid large/unreviewed runtime artifacts"
+    },
+    {
+      "asset_id": "madgraph",
+      "source_url": "https://launchpad.net/mg5amcnlo",
+      "download_attempted": false,
+      "download_succeeded": false,
+      "destination": "external/ or .cache/bhsm_runtime/ when explicitly requested",
+      "checksum_if_available": "not_recorded",
+      "license_note": "Official public source only; not downloaded by default.",
+      "failure_reason": "automatic downloads disabled by default to avoid large/unreviewed runtime artifacts"
+    }
+  ],
+  "empirical_derivation_inputs_used": false,
+  "empirical_runtime_inputs_allowed_in_collider_mode": true,
+  "boundary_predictions_modified_by_runtime_inputs": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false,
+  "source_model_files_changed": false
+}

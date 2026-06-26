@@ -1,0 +1,35 @@
+{
+  "artifact": "BHSM_ufo_export_runner_contract_v1_4",
+  "release_basis": "v1.0.1",
+  "phase": "PHASE_THREE_L_FEYNRULES_SYNTAX_RUNNER",
+  "contract_name": "BHSM_MINIMAL_COLLIDER_INTERFACE_UFO_EXPORT_RUNNER_CONTRACT",
+  "input_feynrules_model": "models/feynrules/BHSM_Minimal_Collider_Interface.fr",
+  "output_ufo_directory": "models/ufo/BHSM_Minimal_Collider_Interface",
+  "mathematica_runner_script": "scripts/feynrules/export_bhsm_minimal_to_ufo.m",
+  "export_command_template": "wolframscript -file scripts/feynrules/export_bhsm_minimal_to_ufo.m",
+  "ufo_export_attempted": false,
+  "ufo_export_passed": false,
+  "ufo_directory_created": false,
+  "ufo_loadability_tested": false,
+  "ufo_loadability_passed": false,
+  "required_files_if_exported": [
+    "__init__.py",
+    "particles.py",
+    "parameters.py",
+    "couplings.py",
+    "lorentz.py",
+    "vertices.py"
+  ],
+  "missing_for_ufo": [
+    "enabled validated .fr model file",
+    "Mathematica/FeynRules execution",
+    "successful WriteUFO run",
+    "loadability test"
+  ],
+  "notes": "UFO export runner contract is present, but export was not attempted.",
+  "empirical_derivation_inputs_used": false,
+  "boundary_predictions_modified_by_runtime_inputs": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false,
+  "source_model_files_changed": false
+}

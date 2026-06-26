@@ -31,3 +31,7 @@ cmssw_ready = false
 The closest exportable object is a sourced candidate term ledger. It remains
 blocked by the missing boundary-to-4D projection theorem and by missing
 production normalization conventions.
+
+Phase Three-C adds a candidate field dictionary and vertex-source target map.
+This narrows the projection interface but does not export a complete 4D
+collider-ready Lagrangian.

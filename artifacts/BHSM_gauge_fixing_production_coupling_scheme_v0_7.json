@@ -1,0 +1,81 @@
+{
+  "artifact": "BHSM_gauge_fixing_production_coupling_scheme_v0_7",
+  "release_basis": "v1.0.1",
+  "phase": "PHASE_THREE_E_NORMALIZATION_GAUGE_SCHEME",
+  "target_gauge_group": "SU(3)c x SU(2)L x U(1)Y",
+  "canonical_vector_kinetic_terms": true,
+  "canonical_vector_kinetic_terms_status": "STANDARD_HEP_TARGET_CONVENTION",
+  "gauge_fixing_status": "OPEN_OR_TARGET_CONVENTION_ONLY",
+  "production_coupling_status": "SCHEME_CONDITIONAL",
+  "candidate_couplings": [
+    {
+      "parameter": "g1_BH_candidate",
+      "value_exact": "sqrt(4*pi*alpha1)",
+      "value_approx": 0.4607016385,
+      "source": "alpha1 candidate",
+      "status": "SCHEME_CONDITIONAL",
+      "production_ready": false,
+      "requires": [
+        "reference scale",
+        "normalization convention",
+        "threshold/running scheme",
+        "renormalization scheme"
+      ]
+    },
+    {
+      "parameter": "g2_BH_candidate",
+      "value_exact": "sqrt(4*pi*alpha2)",
+      "value_approx": 0.6514340609,
+      "source": "alpha2 candidate",
+      "status": "SCHEME_CONDITIONAL",
+      "production_ready": false,
+      "requires": [
+        "reference scale",
+        "normalization convention",
+        "threshold/running scheme",
+        "renormalization scheme"
+      ]
+    },
+    {
+      "parameter": "g3_BH_candidate",
+      "value_exact": "sqrt(4*pi*alpha3)",
+      "value_approx": 1.2187988638,
+      "source": "alpha3 candidate",
+      "status": "SCHEME_CONDITIONAL",
+      "production_ready": false,
+      "requires": [
+        "reference scale",
+        "normalization convention",
+        "threshold/running scheme",
+        "renormalization scheme"
+      ]
+    }
+  ],
+  "missing_for_production_couplings": [
+    "reference scale",
+    "normalization convention",
+    "threshold/running scheme",
+    "renormalization scheme",
+    "gauge fixing convention",
+    "validated production parameter card"
+  ],
+  "source_artifacts": [
+    "artifacts/BHSM_explicit_4d_field_dictionary_v0_5.json",
+    "artifacts/BHSM_gauge_field_target_dictionary_v0_5.json",
+    "artifacts/BHSM_candidate_parameter_card_v0_5.json",
+    "artifacts/BHSM_boundary_source_matrices_v0_5.json",
+    "artifacts/BHSM_vertex_source_target_map_v0_5.json",
+    "artifacts/BHSM_canonical_field_target_conventions_v0_6.json",
+    "artifacts/BHSM_vector_fermion_normalization_status_v0_6.json",
+    "artifacts/BHSM_chiral_current_attachment_map_v0_6.json",
+    "artifacts/BHSM_mass_width_renormalization_open_gates_v0_6.json",
+    "artifacts/BHSM_phase_three_d_gate_status_v0_6.json"
+  ],
+  "feynrules_ready": false,
+  "ufo_ready": false,
+  "notes": "Gauge coupling candidates are imported from existing BHSM artifacts as scheme-conditional interface candidates. They are not final UFO production couplings.",
+  "empirical_derivation_inputs_used": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false,
+  "source_model_files_changed": false
+}
