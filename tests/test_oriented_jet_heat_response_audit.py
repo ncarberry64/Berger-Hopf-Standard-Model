@@ -88,9 +88,16 @@ def test_open_gate_preserves_charged_precision_open_and_k_collar_rejection():
     statuses = payload["statuses"]
     assert statuses["oriented_jet_heat_response_audit"] == "RAN"
     assert statuses["charged_lepton_clean_geometry_gate"] == "RAN"
-    assert statuses["tau_from_boundary_geometry"] == "OPEN_LOCALIZABLE"
+    if (ROOT / "artifacts" / "BHSM_boundary_no_fit_prediction_package_v1.json").exists():
+        assert statuses["tau_from_boundary_geometry"] == "DERIVED_CONDITIONAL"
+        assert statuses["sigma_from_boundary_geometry"] == "DERIVED_CONDITIONAL"
+    elif (ROOT / "artifacts" / "profile_normalization_hessian_closure_v1.json").exists():
+        assert statuses["tau_from_boundary_geometry"] == "OPEN_LOCALIZABLE_BLOCKED_BY_KAPPA_H"
+        assert statuses["sigma_from_boundary_geometry"] == "OPEN_LOCALIZABLE_BLOCKED_BY_KAPPA_H"
+    else:
+        assert statuses["tau_from_boundary_geometry"] == "OPEN_LOCALIZABLE"
+        assert statuses["sigma_from_boundary_geometry"] == "OPEN_LOCALIZABLE"
     assert statuses["tau_from_mass_fit"] == "FORBIDDEN"
-    assert statuses["sigma_from_boundary_geometry"] == "OPEN_LOCALIZABLE"
     assert statuses["sigma_from_mass_fit"] == "FORBIDDEN"
     assert statuses["charged_precision_closure"] == "OPEN"
     assert statuses["minimal_diagonal_K_collar_route"] == "REJECTED_AS_PRIMARY_BY_RESPONSE_AUDIT"
