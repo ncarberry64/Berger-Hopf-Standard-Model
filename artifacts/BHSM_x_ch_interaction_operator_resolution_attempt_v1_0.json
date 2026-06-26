@@ -1,0 +1,58 @@
+{
+  "artifact": "BHSM_x_ch_interaction_operator_resolution_attempt_v1_0",
+  "release_basis": "v1.0.1",
+  "phase": "PHASE_THREE_H_BOUNDED_BLOCKER_RESOLUTION",
+  "blocker_id": "X_ch_interaction_operator",
+  "blocker_name": "X_ch interaction operator",
+  "prior_status": "OPEN",
+  "candidate_resolution": "standard W_mu charged-current mediator for CKM/PMNS target currents only",
+  "resolution_status": "PARTIALLY_RESOLVED_FOR_SPECIFIC_VERTEX_FAMILY",
+  "source_artifacts_checked": [
+    "artifacts/BHSM_explicit_4d_field_dictionary_v0_5.json",
+    "artifacts/BHSM_gauge_field_target_dictionary_v0_5.json",
+    "artifacts/BHSM_candidate_parameter_card_v0_5.json",
+    "artifacts/BHSM_boundary_source_matrices_v0_5.json",
+    "artifacts/BHSM_vertex_source_target_map_v0_5.json",
+    "artifacts/BHSM_chiral_current_attachment_map_v0_6.json",
+    "artifacts/BHSM_phase_three_d_gate_status_v0_6.json",
+    "artifacts/BHSM_gauge_fixing_production_coupling_scheme_v0_7.json",
+    "artifacts/BHSM_mass_width_scheme_candidate_v0_7.json",
+    "artifacts/BHSM_renormalization_scheme_candidate_v0_7.json",
+    "artifacts/BHSM_phase_three_e_gate_status_v0_7.json",
+    "artifacts/BHSM_canonical_production_basis_theorem_v0_8.json",
+    "artifacts/BHSM_runtime_parameter_modes_v0_8.json",
+    "artifacts/BHSM_production_coupling_map_v0_8.json",
+    "artifacts/BHSM_mass_width_runtime_policy_v0_8.json",
+    "artifacts/BHSM_phase_three_f_gate_status_v0_8.json",
+    "artifacts/BHSM_production_vertex_table_candidate_v0_9.json",
+    "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json",
+    "artifacts/BHSM_vertex_readiness_matrix_v0_9.json",
+    "artifacts/BHSM_feynrules_export_blocker_table_v0_9.json",
+    "artifacts/BHSM_runtime_parameter_dependency_table_v0_9.json",
+    "artifacts/BHSM_phase_three_g_gate_status_v0_9.json"
+  ],
+  "derived_from_repo_artifact": false,
+  "derived_conditional_from_author_axiom": false,
+  "standard_target_convention_used": true,
+  "affected_vertex_families": [
+    "q_charged_current_CKM_BH",
+    "lepton_charged_current_PMNS_BH",
+    "charged_boundary_response_matrix"
+  ],
+  "promoted_vertex_families": [
+    "q_charged_current_CKM_BH",
+    "lepton_charged_current_PMNS_BH"
+  ],
+  "still_blocked_vertex_families": [
+    "charged_boundary_response_matrix"
+  ],
+  "missing_theorem_if_open": "derive the separate charged boundary-response interaction operator X_ch from the BHSM boundary-to-4D projection",
+  "feynrules_ready": false,
+  "ufo_ready": false,
+  "notes": "CKM/PMNS target-current vertices may use the standard charged weak current mediator as an interface convention. The separate charged boundary response matrix is not collapsed into W exchange and remains open.",
+  "empirical_derivation_inputs_used": false,
+  "boundary_predictions_modified_by_runtime_inputs": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false,
+  "source_model_files_changed": false
+}

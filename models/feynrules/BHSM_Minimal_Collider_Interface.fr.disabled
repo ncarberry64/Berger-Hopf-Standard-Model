@@ -1,0 +1,51 @@
+(*
+BHSM_MINIMAL_COLLIDER_INTERFACE
+Generated from Phase Three-J bounded FeynRules-prep subset.
+This is not the complete BHSM 4D Lagrangian.
+This excludes charged boundary response, neutral kernel, and standalone CP holonomy vertices.
+This is not a validated UFO model unless UFO export/loadability tests pass.
+
+Disabled status:
+This file is a bounded FeynRules syntax draft only. It is disabled because
+Mathematica/FeynRules syntax validation has not been run in this sprint.
+*)
+
+M$ModelName = "BHSM_MINIMAL_COLLIDER_INTERFACE";
+M$Information = {
+  Authors -> {"Norman P. Carberry"},
+  Version -> "Phase Three-K bounded disabled draft",
+  Date -> "2026-06-26",
+  Institutions -> {"Independent research"}
+};
+
+(*
+Runtime/scheme placeholders:
+  g2_BH_runtime
+  W_mass_runtime
+  W_width_runtime
+  fermion_masses_runtime
+  fermion_widths_runtime
+  renormalization_scale_runtime
+
+BHSM source matrices:
+  V_CKM_BH
+  U_PMNS_BH
+
+No numerical PDG masses or widths are inserted.
+*)
+
+(*
+Included symbolic target-current terms only:
+
+L_CC_q_BHSM_CKM =
+(g2_BH_runtime / Sqrt[2]) * ubar_i . Ga[mu] . ProjM . V_CKM_BH[i,j] . d_j . Wplus[mu] + h.c.
+
+L_CC_l_BHSM_PMNS =
+(g2_BH_runtime / Sqrt[2]) * ellbar_i . Ga[mu] . ProjM . U_PMNS_BH[i,j] . nu_j . Wminus[mu] + h.c.
+
+Excluded:
+  charged_boundary_response_matrix
+  neutral_operator_kernel_BH
+  standalone cp_holonomy_phase_attachment
+*)
+

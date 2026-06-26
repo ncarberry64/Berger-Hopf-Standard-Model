@@ -58,3 +58,125 @@ This sprint adds:
 The UFO pipeline scaffold is an interface roadmap and validation harness. It is
 not a physical Lagrangian, not a Feynman-rule derivation, not a UFO model, and
 not a collider event generator.
+
+## Phase Two-A Analytical Export Layer
+
+Phase Two-A adds source-derived analytical export ledgers for field content,
+parameter-card entries, and vertex-source categories. These ledgers use existing
+BHSM artifacts only. They remain blocked from UFO export until a complete 4D
+collider-ready Lagrangian and Feynman-rule layer are supplied.
+
+## Phase Three-A 4D Projection Gate
+
+Phase Three-A adds a candidate effective Lagrangian term ledger plus field,
+vertex, mass/width, and renormalization gate ledgers. This is still not a
+production UFO model. The FeynRules translation gate remains false until the
+boundary-to-4D projection theorem, gauge fixing, field normalization, vertex
+normalization, complete vertex table, mass/width scheme, renormalization
+scheme, and production parameter-card conventions are supplied.
+
+## Phase Three-C Field Dictionary and Vertex Target Map
+
+Phase Three-C imports `artifacts/BHSM_phase_three_c_analytical_working_packet_v0_5.json`
+and exports an explicit candidate 4D field dictionary, gauge-field target
+dictionary, candidate BHSM parameter card, boundary-source matrices, and
+vertex-source target map. These exports identify collider targets with
+provenance, but they do not complete vector/fermion normalization, full
+gauge/Lorentz structures, mass-width schemes, or renormalization conventions.
+
+## Phase Three-D Canonical Current Interface
+
+Phase Three-D exports canonical field target conventions and chiral current
+attachment maps for CKM/PMNS sectors. It preserves `Z_H = 1` as a BHSM profile
+source and marks `Z_A,target = 1` and `Z_psi,target = 1` as standard target
+conventions rather than BHSM dynamical predictions. Production FeynRules/UFO
+readiness remains blocked by mass-width and renormalization schemes, complete
+4D Lagrangian export, and validation gates.
+
+## Phase Three-E Normalization And Scheme Status
+
+Phase Three-E exports explicit vector/fermion normalization theorem-status
+ledgers plus gauge-fixing/coupling, mass-width, and renormalization candidate
+scheme ledgers. `Z_A,target = 1` and `Z_psi,target = 1` remain standard HEP
+target conventions, not BHSM-derived dynamical field-strength predictions.
+
+The candidate gauge couplings are scheme-conditional and not production UFO
+couplings. No fake masses, fake widths, fake Feynman rules, fake LHE/HepMC
+files, MadGraph readiness, Athena readiness, or CMSSW readiness are claimed.
+
+## Phase Three-F Production Basis And Runtime Parameters
+
+Phase Three-F defines a canonical production basis for future FeynRules/UFO
+interfaces. In that basis `Z_A,prod = 1` and `Z_psi,prod = 1` are basis
+definitions rather than BHSM dynamical wavefunction-renormalization
+predictions. This clears the interface normalization gate only.
+
+Phase Three-F also separates `BHSM_PURE_NOFIT` from
+`BHSM_COLLIDER_INTERFACE`. Runtime empirical masses, widths, and cards may be
+allowed only in collider-interface comparison mode and do not modify BHSM
+constants, boundary coefficients, mixing matrices, or frozen predictions.
+
+## Phase Three-G Vertex Table And Lagrangian Candidate
+
+Phase Three-G exports a candidate production vertex table, symbolic 4D
+Lagrangian assembly ledger, vertex readiness matrix, FeynRules blocker table,
+and runtime dependency table. CKM/PMNS charged-current target structures are
+identified using BHSM-derived mixing sources, but all production FeynRules/UFO
+readiness gates remain closed.
+
+## Phase Three-H Bounded Blocker Resolution
+
+Phase Three-H partially promotes CKM/PMNS charged-current targets as bounded
+collider-interface targets and leaves charged boundary, neutral, and
+standalone CP vertices blocked by exact missing theorems. Production
+FeynRules/UFO readiness remains false.
+
+## Phase Three-I Interaction Theorem Closure
+
+Phase Three-I is a theorem-closure audit, not a UFO export. It keeps UFO,
+MadGraph, LHE/HepMC, Athena, and CMSSW readiness false while identifying the
+smallest missing interaction objects for `X_ch`, neutrino neutral-kernel use,
+and standalone CP `O_int`.
+
+## Phase Three-J Minimal Collider-Interface Subset
+
+Phase Three-J exports a bounded FeynRules-prep subset for future translation.
+It is not a `.fr` file, UFO model, MadGraph-ready model, LHE/HepMC generation,
+or detector-software interface.
+
+## Phase Three-K FeynRules Export Attempt
+
+Phase Three-K exports a disabled bounded FeynRules syntax draft for the
+minimal CKM/PMNS collider-interface subset. UFO export and loadability remain
+untested, and no event-generation artifacts are produced.
+
+## Phase Three-L FeynRules Syntax Runner
+
+Phase Three-L adds a FeynRules syntax contract, local FeynRules/UFO runner
+scripts, software environment preflight, UFO export runner contract, and
+MadGraph smoke-test runner contract. This hardens the execution path, but it
+does not execute Mathematica/FeynRules, does not export a UFO directory, does
+not test UFO loadability, and does not run MadGraph.
+
+## Phase Three-M Live FeynRules Validation Attempt
+
+Phase Three-M records a live validation attempt layer. In the current
+environment Mathematica/FeynRules/MadGraph are not detected, so the attempt is
+not run and the minimal FeynRules draft remains disabled. UFO readiness,
+MadGraph readiness, LHE/HepMC generation, Athena readiness, and CMSSW readiness
+remain false.
+
+## Phase Three-N Runtime Execution Gate
+
+Phase Three-N attempts runtime provisioning for the live validation path. The
+current environment detects Python only. Wolfram/FeynRules/MadGraph execution
+does not run, the minimal model remains disabled, and the UFO/MadGraph/event
+pipeline remains blocked.
+
+## Phase Three-O Runtime Assets And Handoff
+
+Phase Three-O packages runtime asset mapping and a CERN-like institutional HEP
+handoff bundle. It improves reproducibility for external review, but it does
+not alter the validation state: the complete BHSM 4D Lagrangian remains
+outside the minimal subset and the UFO/MadGraph/event pipeline remains gated by
+live runtime evidence.

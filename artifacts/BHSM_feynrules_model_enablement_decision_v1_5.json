@@ -1,0 +1,40 @@
+{
+  "release_basis": "v1.0.1",
+  "phase": "PHASE_THREE_M_LIVE_FEYNRULES_VALIDATION",
+  "empirical_derivation_inputs_used": false,
+  "empirical_runtime_inputs_allowed_in_collider_mode": true,
+  "boundary_predictions_modified_by_runtime_inputs": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false,
+  "source_model_files_changed": false,
+  "disabled_model_path": "models/feynrules/BHSM_Minimal_Collider_Interface.fr.disabled",
+  "candidate_enabled_model_path": "runs/feynrules_validation/BHSM_Minimal_Collider_Interface.candidate.unvalidated.fr",
+  "enabled_model_path": "models/feynrules/BHSM_Minimal_Collider_Interface.fr",
+  "enablement_attempted": true,
+  "enablement_allowed": false,
+  "enablement_performed": false,
+  "enablement_reason": "Live FeynRules validation did not pass; committed model remains disabled.",
+  "required_validation_gates": [
+    "feynrules_syntax_validated",
+    "feynrules_model_load_validated",
+    "lagrangian_symbol_checked",
+    "excluded_vertices_confirmed",
+    "forbidden_content_confirmed_absent"
+  ],
+  "validation_gates_passed": [
+    "excluded_vertices_confirmed",
+    "forbidden_content_confirmed_absent"
+  ],
+  "validation_gates_failed": [
+    "feynrules_syntax_validated",
+    "feynrules_model_load_validated",
+    "lagrangian_symbol_checked"
+  ],
+  "model_scope": "BHSM_MINIMAL_COLLIDER_INTERFACE_ONLY",
+  "is_complete_bhsm_model": false,
+  "unresolved_vertices_excluded": true,
+  "notes": [
+    "The enabled .fr file is not created by this exporter.",
+    "Static checks alone never authorize enablement."
+  ]
+}

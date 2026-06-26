@@ -1,0 +1,315 @@
+{
+  "artifact": "BHSM_effective_lagrangian_candidate_v0_3",
+  "release_basis": "v1.0.1",
+  "projection_stage": "PHASE_THREE_A_CANDIDATE_TERM_LEDGER",
+  "complete_4d_collider_ready_lagrangian_exported": false,
+  "production_feynrules_ready": false,
+  "production_ufo_ready": false,
+  "terms": [
+    {
+      "term_id": "profile_scale_term",
+      "term_symbol": "L_profile",
+      "sector": "profile_scale",
+      "candidate_density_expression": "candidate: -kappa_H * V_profile(Phi; Z_H, r_internal_profile)",
+      "source_artifacts": [
+        "artifacts/profile_scale_closure_values_v1.json"
+      ],
+      "coefficient_symbols": [
+        "kappa_H",
+        "Z_H",
+        "r_internal_profile"
+      ],
+      "coefficient_values": {
+        "kappa_H": 19585.25982625801,
+        "Z_H": 1.0,
+        "r_internal_profile": 0.28209479177387814
+      },
+      "field_symbols": [
+        "Phi"
+      ],
+      "derivation_status": "STRUCTURAL_CANDIDATE",
+      "ufo_export_status": "BLOCKED",
+      "missing_for_production_lagrangian": [
+        "boundary-to-4D projection theorem",
+        "4D Lorentz/gauge invariant density derivation",
+        "canonical field normalization",
+        "mass/width scheme"
+      ],
+      "missing_for_feynrules": [
+        "gauge-fixed 4D Lagrangian",
+        "complete Lorentz structures",
+        "complete vertex table",
+        "vertex normalization convention"
+      ],
+      "missing_for_ufo": [
+        "production FeynRules model",
+        "UFO particles.py/parameters.py/couplings.py/lorentz.py vertices.py",
+        "MadGraph load validation"
+      ],
+      "notes": "Profile-scale invariants are exported internally, but no 4D scalar potential density is derived here."
+    },
+    {
+      "term_id": "charged_boundary_response_term",
+      "term_symbol": "L_charged_boundary",
+      "sector": "charged",
+      "candidate_density_expression": "candidate: sum_f beta_f * B_f[psi_f, Phi] + kappa_f * K_f[psi_f, Phi]",
+      "source_artifacts": [
+        "artifacts/charged_boundary_bridge_values_v1.json"
+      ],
+      "coefficient_symbols": [
+        "beta_lepton",
+        "kappa_lepton",
+        "beta_up",
+        "kappa_up",
+        "beta_down",
+        "kappa_down"
+      ],
+      "coefficient_values": {
+        "beta_lepton": "16/1323",
+        "kappa_lepton": "16/1323",
+        "beta_up": "32/1323",
+        "kappa_up": "16/1323",
+        "beta_down": "64/1323",
+        "kappa_down": "16/3591"
+      },
+      "field_symbols": [
+        "psi_l",
+        "psi_u",
+        "psi_d",
+        "Phi"
+      ],
+      "derivation_status": "STRUCTURAL_CANDIDATE",
+      "ufo_export_status": "BLOCKED",
+      "missing_for_production_lagrangian": [
+        "boundary-to-4D projection theorem",
+        "4D Lorentz/gauge invariant density derivation",
+        "canonical field normalization",
+        "mass/width scheme"
+      ],
+      "missing_for_feynrules": [
+        "gauge-fixed 4D Lagrangian",
+        "complete Lorentz structures",
+        "complete vertex table",
+        "vertex normalization convention"
+      ],
+      "missing_for_ufo": [
+        "production FeynRules model",
+        "UFO particles.py/parameters.py/couplings.py/lorentz.py vertices.py",
+        "MadGraph load validation"
+      ],
+      "notes": "Charged boundary bridge coefficients are sourced, but a 4D Yukawa or boundary-response operator is not production-derived."
+    },
+    {
+      "term_id": "neutral_operator_term",
+      "term_symbol": "L_neutral",
+      "sector": "neutral",
+      "candidate_density_expression": "candidate: eta_nu * N_nu[nu] + g_nu * G_nu[nu, Phi]",
+      "source_artifacts": [
+        "artifacts/neutral_operator_no_fit_output_v1.json"
+      ],
+      "coefficient_symbols": [
+        "eta_nu",
+        "g_nu",
+        "beta_nu",
+        "kappa_nu"
+      ],
+      "coefficient_values": {
+        "eta_nu": 0.3333333333333333,
+        "g_nu": 0.3333333333333333,
+        "beta_nu": 0.3333333333333333,
+        "kappa_nu": 0.16666666666666666
+      },
+      "field_symbols": [
+        "nu",
+        "Phi"
+      ],
+      "derivation_status": "STRUCTURAL_CANDIDATE",
+      "ufo_export_status": "BLOCKED",
+      "missing_for_production_lagrangian": [
+        "boundary-to-4D projection theorem",
+        "4D Lorentz/gauge invariant density derivation",
+        "canonical field normalization",
+        "mass/width scheme"
+      ],
+      "missing_for_feynrules": [
+        "gauge-fixed 4D Lagrangian",
+        "complete Lorentz structures",
+        "complete vertex table",
+        "vertex normalization convention"
+      ],
+      "missing_for_ufo": [
+        "production FeynRules model",
+        "UFO particles.py/parameters.py/couplings.py/lorentz.py vertices.py",
+        "MadGraph load validation"
+      ],
+      "notes": "Neutral operator values are exported as BHSM internal outputs; no minimal-SM neutrino Lagrangian is claimed."
+    },
+    {
+      "term_id": "ckm_mixing_term",
+      "term_symbol": "L_CKM_mix",
+      "sector": "ckm",
+      "candidate_density_expression": "candidate: psi_u_bar * V_CKM_BH * psi_d + h.c.",
+      "source_artifacts": [
+        "artifacts/CKM_no_fit_operator_output_v1.json"
+      ],
+      "coefficient_symbols": [
+        "J_CKM_BH"
+      ],
+      "coefficient_values": {
+        "J_CKM_BH": 3.9824149023866114e-11
+      },
+      "field_symbols": [
+        "psi_u",
+        "psi_d"
+      ],
+      "derivation_status": "SYMBOLIC_PLACEHOLDER",
+      "ufo_export_status": "BLOCKED",
+      "missing_for_production_lagrangian": [
+        "boundary-to-4D projection theorem",
+        "4D Lorentz/gauge invariant density derivation",
+        "canonical field normalization",
+        "mass/width scheme"
+      ],
+      "missing_for_feynrules": [
+        "gauge-fixed 4D Lagrangian",
+        "complete Lorentz structures",
+        "complete vertex table",
+        "vertex normalization convention"
+      ],
+      "missing_for_ufo": [
+        "production FeynRules model",
+        "UFO particles.py/parameters.py/couplings.py/lorentz.py vertices.py",
+        "MadGraph load validation"
+      ],
+      "notes": "CKM boundary source is present, but no gauge-fixed charged-current vertex normalization is exported."
+    },
+    {
+      "term_id": "pmns_mixing_term",
+      "term_symbol": "L_PMNS_mix",
+      "sector": "pmns",
+      "candidate_density_expression": "candidate: ell_bar * U_PMNS_BH * nu + h.c.",
+      "source_artifacts": [
+        "artifacts/PMNS_no_fit_operator_output_v1.json"
+      ],
+      "coefficient_symbols": [
+        "theta12_nu",
+        "theta23_nu",
+        "theta13_nu",
+        "delta_BH",
+        "J_PMNS_BH"
+      ],
+      "coefficient_values": {
+        "theta12_nu": 0.1111111111111111,
+        "theta23_nu": 0.125,
+        "theta13_nu": 0.011111111111111112,
+        "delta_BH": 1.0471975511965976,
+        "J_PMNS_BH": 0.00013115334339350984
+      },
+      "field_symbols": [
+        "ell",
+        "nu"
+      ],
+      "derivation_status": "SYMBOLIC_PLACEHOLDER",
+      "ufo_export_status": "BLOCKED",
+      "missing_for_production_lagrangian": [
+        "boundary-to-4D projection theorem",
+        "4D Lorentz/gauge invariant density derivation",
+        "canonical field normalization",
+        "mass/width scheme"
+      ],
+      "missing_for_feynrules": [
+        "gauge-fixed 4D Lagrangian",
+        "complete Lorentz structures",
+        "complete vertex table",
+        "vertex normalization convention"
+      ],
+      "missing_for_ufo": [
+        "production FeynRules model",
+        "UFO particles.py/parameters.py/couplings.py/lorentz.py vertices.py",
+        "MadGraph load validation"
+      ],
+      "notes": "PMNS boundary source is present as an effective-extension screen, not a production neutrino interaction model."
+    },
+    {
+      "term_id": "cp_holonomy_term",
+      "term_symbol": "L_CP_holonomy",
+      "sector": "cp",
+      "candidate_density_expression": "candidate: delta_BH * H_CP[boundary holonomy]",
+      "source_artifacts": [
+        "artifacts/CP_no_fit_holonomy_output_v1.json"
+      ],
+      "coefficient_symbols": [
+        "delta_BH_CP"
+      ],
+      "coefficient_values": {
+        "delta_BH_CP": 1.0471975511965976
+      },
+      "field_symbols": [
+        "psi"
+      ],
+      "derivation_status": "SYMBOLIC_PLACEHOLDER",
+      "ufo_export_status": "BLOCKED",
+      "missing_for_production_lagrangian": [
+        "boundary-to-4D projection theorem",
+        "4D Lorentz/gauge invariant density derivation",
+        "canonical field normalization",
+        "mass/width scheme"
+      ],
+      "missing_for_feynrules": [
+        "gauge-fixed 4D Lagrangian",
+        "complete Lorentz structures",
+        "complete vertex table",
+        "vertex normalization convention"
+      ],
+      "missing_for_ufo": [
+        "production FeynRules model",
+        "UFO particles.py/parameters.py/couplings.py/lorentz.py vertices.py",
+        "MadGraph load validation"
+      ],
+      "notes": "CP holonomy output is source-traced, but not translated into a full 4D CP-violating vertex set."
+    },
+    {
+      "term_id": "boundary_transport_term",
+      "term_symbol": "L_transport_identity",
+      "sector": "transport",
+      "candidate_density_expression": "candidate: T_boundary_to_boundary * I_boundary",
+      "source_artifacts": [
+        "artifacts/common_scale_boundary_transport_v1.json"
+      ],
+      "coefficient_symbols": [
+        "boundary_transport_identity"
+      ],
+      "coefficient_values": {
+        "boundary_transport_identity": 1.0
+      },
+      "field_symbols": [
+        "I_boundary"
+      ],
+      "derivation_status": "DERIVED_FROM_REPO_ARTIFACT",
+      "ufo_export_status": "BLOCKED",
+      "missing_for_production_lagrangian": [
+        "boundary-to-4D projection theorem",
+        "4D Lorentz/gauge invariant density derivation",
+        "canonical field normalization",
+        "mass/width scheme"
+      ],
+      "missing_for_feynrules": [
+        "gauge-fixed 4D Lagrangian",
+        "complete Lorentz structures",
+        "complete vertex table",
+        "vertex normalization convention"
+      ],
+      "missing_for_ufo": [
+        "production FeynRules model",
+        "UFO particles.py/parameters.py/couplings.py/lorentz.py vertices.py",
+        "MadGraph load validation"
+      ],
+      "notes": "Boundary identity transport is exported, but it is not itself a collider interaction term."
+    }
+  ],
+  "empirical_derivation_inputs_used": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false,
+  "source_model_files_changed": false,
+  "notes": "Candidate ledger only; not a production 4D Lagrangian and not Feynman rules."
+}

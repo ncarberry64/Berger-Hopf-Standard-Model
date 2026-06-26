@@ -1,0 +1,768 @@
+{
+  "artifact_name": "BHSM Phase Three-C Analytical Working Packet",
+  "artifact_version": "v0.5-draft",
+  "created_utc": "2026-06-26T15:09:37.318635+00:00",
+  "intended_use": [
+    "Continuation context for another AI",
+    "Codex implementation context when message limits reset",
+    "BHSM UFO/FeynRules pipeline analytical bridge preparation"
+  ],
+  "public_status": "BHSM v1.0.1 status-reconciled release: internal boundary no-fit package complete/exported; external empirical comparison layer separate/open.",
+  "release_context": {
+    "current_release": "v1.0.1",
+    "corrected_release_commit": "4e72b4da82177061108238df49b0b71263dfdf34",
+    "main_claim_allowed": "BHSM is complete/exported as an internal boundary no-fit package.",
+    "external_empirical_comparison_status": "OPEN_SEPARATE_LAYER",
+    "empirical_derivation_inputs_used": false,
+    "boundary_predictions_modified_by_comparison": false,
+    "frozen_official_predictions_changed": false,
+    "zenodo_doi_status": "PENDING_OR_UNKNOWN_DO_NOT_INVENT"
+  },
+  "current_pipeline_status": {
+    "collider_readiness_roadmap": "MERGED_PR_56",
+    "ufo_pipeline_phase_one": "MERGED_PR_57",
+    "ufo_pipeline_phase_two_a": {
+      "branch": "bhsm-ufo-pipeline-phase-two-a",
+      "commit": "8a06ee6e1212b9aab8aca55cb1df29d077b48999",
+      "pr": "#58",
+      "status": "OPEN_OR_PENDING_MERGE_IN_PRIOR_CONTEXT",
+      "summary": "Analytical export ledger and gated UFO candidate builder; no production UFO."
+    },
+    "phase_three_a": {
+      "branch": "bhsm-4d-lagrangian-projection-phase-three-a",
+      "commit": "a926881fcafd5cf2004bbe0521a7944f5b878107",
+      "pr": "#59",
+      "base": "bhsm-ufo-pipeline-phase-two-a",
+      "summary": "Candidate effective Lagrangian ledger plus explicit blockers; no FeynRules/UFO readiness."
+    },
+    "production_ufo_model_exported": false,
+    "madgraph_ready": false,
+    "lhe_generation_ready": false,
+    "hepmc_generation_ready": false,
+    "athena_ready": false,
+    "cmssw_ready": false
+  },
+  "hard_blocker_summary": {
+    "broad_blocker": "Missing complete collider-ready 4D Lagrangian and production FeynRules/UFO layer.",
+    "reduced_blockers_after_latest_work": [
+      "Explicit sector-to-field dictionary",
+      "Gauge group representation assignment as BHSM theorem or target convention",
+      "Lorentz structure for each vertex family",
+      "Vector and fermion field normalization constants Z_A and Z_psi",
+      "Scalar/profile 4D representation and potential convention",
+      "Mass/width scheme",
+      "Renormalization scheme",
+      "Production UFO directory",
+      "MadGraph validation",
+      "PDG pinned target table"
+    ]
+  },
+  "proposed_author_axioms": {
+    "BHSM_P4_projection_axiom": {
+      "status_if_accepted": "DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM",
+      "text": "The physical 4D fields of BHSM are canonically normalized projections of internal Berger-Hopf boundary modes onto local 4D spacetime sections. The projection preserves the no-fit internal coefficients exported in BHSM v1.0.1. Empirical target values are not used to set the projection map, normalization, or vertex coefficients."
+    },
+    "BHSM_N_canonical_normalization_axiom": {
+      "status_if_accepted": "DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM",
+      "text": "For every projected 4D field, field rescaling is fixed solely by the requirement that the kinetic term take canonical 4D form. Scalar, vector, and fermion kinetic terms are normalized respectively to +1/2 ∂φ∂φ, -1/4 FF, and i ψbar γDψ. Interaction coefficients are rescaled by the inverse square root product of the participating field normalizations."
+    },
+    "BHSM_V_vertex_lift_axiom": {
+      "status_if_accepted": "DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM",
+      "text": "A BHSM boundary/operator coefficient becomes a 4D vertex coefficient only after the corresponding projected fields, Lorentz structure, gauge representation, and canonical normalization factors are specified. Until then, the coefficient is a boundary-source coefficient, not a production FeynRules coupling."
+    }
+  },
+  "projection_structure": {
+    "boundary_space": "B = internal BHSM Berger-Hopf boundary space",
+    "target_spacetime": "M = 4D spacetime",
+    "general_projection": "phi_s_raw(x) = integral_B K_s(x,Y) P_s Phi_s(Y) dmu_B(Y)",
+    "local_section_projection": "phi_s_raw(x) = P_s Phi_s(sigma(x))",
+    "canonical_field": "phi_s(x) = N_s phi_s_raw(x)",
+    "projection_kernel_status": "NOT_EXPLICIT",
+    "local_section_status": "NOT_EXPLICIT",
+    "sector_projectors_status": "STRUCTURALLY_PRESENT",
+    "boundary_operators_status": "EXPORTED",
+    "complete_projection_theorem_status": "BLOCKED_BY_MISSING_PROJECTION_AXIOM_UNLESS_BHSM_P4_ACCEPTED"
+  },
+  "canonical_normalization_rules": {
+    "scalar": {
+      "raw_kinetic": "L_kin_phi = (Z_phi/2) partial_mu phi_raw partial^mu phi_raw",
+      "field_rescaling": "phi = sqrt(Z_phi) phi_raw",
+      "canonical_target": "+1/2 partial_mu phi partial^mu phi"
+    },
+    "vector": {
+      "raw_kinetic": "L_kin_A = -(Z_A/4) F_raw_munu F_raw^munu",
+      "field_rescaling": "A_mu = sqrt(Z_A) A_raw_mu",
+      "canonical_target": "-1/4 F_munu F^munu"
+    },
+    "fermion": {
+      "raw_kinetic": "L_kin_psi = Z_psi i psibar_raw gamma^mu D_mu psi_raw",
+      "field_rescaling": "psi = sqrt(Z_psi) psi_raw",
+      "canonical_target": "i psibar gamma^mu D_mu psi"
+    },
+    "universal_vertex_rescaling": {
+      "n_field_rule": "G_canonical = G_raw / product_a sqrt(Z_a)",
+      "three_field_rule": "G_ijk_canonical = G_ijk_raw / sqrt(Z_i Z_j Z_k)",
+      "status": "STRUCTURAL_CANDIDATE_OR_DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM_IF_BHSM_N_ACCEPTED"
+    }
+  },
+  "core_bhsm_values": {
+    "profile_scale": {
+      "Z_H": {
+        "exact": "1",
+        "approx": 1.0,
+        "status": "DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM"
+      },
+      "kappa_H": {
+        "exact": "64*pi^5",
+        "approx": 19585.259826258,
+        "status": "DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM"
+      },
+      "sigma": {
+        "exact": "4*pi^(5/2)",
+        "approx": 69.9736733104994,
+        "status": "DERIVED_FROM_REPO_ARTIFACT"
+      },
+      "tau": {
+        "exact": "1/(4*pi^(3/2))",
+        "approx": 0.0448967805312916,
+        "status": "DERIVED_FROM_REPO_ARTIFACT"
+      },
+      "identity_sigma_tau": "sigma*tau = pi",
+      "identity_kappa_sigma": "kappa_H = 4*sigma^2"
+    },
+    "charged_bridge": {
+      "rho_ch": {
+        "exact": "3",
+        "approx": 3.0
+      },
+      "g_bridge": {
+        "exact": "16/189",
+        "approx": 0.0846560846560847
+      },
+      "Pi_l": {
+        "exact": "1/7",
+        "approx": 0.14285714285714285
+      },
+      "Pi_u": {
+        "exact": "2/7",
+        "approx": 0.2857142857142857
+      },
+      "Pi_d": {
+        "exact": "4/7",
+        "approx": 0.5714285714285714
+      },
+      "beta_l": {
+        "exact": "16/1323",
+        "approx": 0.0120937263794407
+      },
+      "kappa_l": {
+        "exact": "16/1323",
+        "approx": 0.0120937263794407
+      },
+      "beta_u": {
+        "exact": "32/1323",
+        "approx": 0.0241874527588813
+      },
+      "kappa_u": {
+        "exact": "16/1323",
+        "approx": 0.0120937263794407
+      },
+      "beta_d": {
+        "exact": "64/1323",
+        "approx": 0.0483749055177627
+      },
+      "kappa_d": {
+        "exact": "16/3591",
+        "approx": 0.00445558340295182
+      }
+    },
+    "charged_at_boundary_tau": {
+      "beta_l_tau": {
+        "exact": "4/(1323*pi^(3/2))",
+        "approx": 0.00054296937906324
+      },
+      "kappa_l_tau": {
+        "exact": "4/(1323*pi^(3/2))",
+        "approx": 0.00054296937906324
+      },
+      "beta_u_tau": {
+        "exact": "8/(1323*pi^(3/2))",
+        "approx": 0.00108593875812648
+      },
+      "kappa_u_tau": {
+        "exact": "4/(1323*pi^(3/2))",
+        "approx": 0.00054296937906324
+      },
+      "beta_d_tau": {
+        "exact": "16/(1323*pi^(3/2))",
+        "approx": 0.00217187751625296
+      },
+      "kappa_d_tau": {
+        "exact": "4/(3591*pi^(3/2))",
+        "approx": 0.000200041350181194
+      }
+    },
+    "neutral_sector": {
+      "H_nu": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "K_nu": [
+        [
+          0,
+          "1/3",
+          0
+        ],
+        [
+          "1/3",
+          3,
+          "1/6"
+        ],
+        [
+          0,
+          "1/6",
+          "5/3"
+        ]
+      ],
+      "status": "DERIVED_FROM_REPO_ARTIFACT_AS_BOUNDARY_OPERATOR_SOURCE"
+    },
+    "cp_holonomy": {
+      "delta_BH": {
+        "exact": "pi/3",
+        "approx": 1.0471975511965976
+      },
+      "Z6_phase": {
+        "exact": "exp(i*pi/3)",
+        "rectangular": "1/2 + i*sqrt(3)/2"
+      },
+      "status": "DERIVED_FROM_REPO_ARTIFACT_AS_PHASE_SOURCE"
+    },
+    "gauge_coupling_candidates": {
+      "alpha1": {
+        "approx": 0.01689,
+        "g_candidate": "sqrt(4*pi*alpha1)",
+        "g_approx": 0.4607016385,
+        "status": "SCHEME_CONDITIONAL"
+      },
+      "alpha2": {
+        "approx": 0.03377,
+        "g_candidate": "sqrt(4*pi*alpha2)",
+        "g_approx": 0.6514340609,
+        "status": "SCHEME_CONDITIONAL"
+      },
+      "alpha3": {
+        "approx": 0.11821,
+        "g_candidate": "sqrt(4*pi*alpha3)",
+        "g_approx": 1.2187988638,
+        "status": "SCHEME_CONDITIONAL"
+      }
+    }
+  },
+  "boundary_source_matrices": {
+    "C_ch_boundary": {
+      "definition": "diag(beta_l*tau, beta_u*tau, beta_d*tau)",
+      "exact": [
+        "4/(1323*pi^(3/2))",
+        "8/(1323*pi^(3/2))",
+        "16/(1323*pi^(3/2))"
+      ],
+      "approx_diagonal": [
+        0.00054296937906324,
+        0.00108593875812648,
+        0.00217187751625296
+      ],
+      "status": "DERIVED_FROM_REPO_ARTIFACT",
+      "ufo_ready": false,
+      "notes": "Boundary-source matrix only; not a collider vertex until field dictionary, Lorentz/gauge structure, and canonical normalizations are complete."
+    },
+    "K_ch_boundary": {
+      "definition": "diag(kappa_l*tau, kappa_u*tau, kappa_d*tau)",
+      "exact": [
+        "4/(1323*pi^(3/2))",
+        "4/(1323*pi^(3/2))",
+        "4/(3591*pi^(3/2))"
+      ],
+      "approx_diagonal": [
+        0.00054296937906324,
+        0.00054296937906324,
+        0.000200041350181194
+      ],
+      "status": "DERIVED_FROM_REPO_ARTIFACT",
+      "ufo_ready": false,
+      "notes": "Boundary stiffness matrix only; not a collider mass/width matrix yet."
+    },
+    "K_nu_boundary": {
+      "matrix": [
+        [
+          0,
+          "1/3",
+          0
+        ],
+        [
+          "1/3",
+          3,
+          "1/6"
+        ],
+        [
+          0,
+          "1/6",
+          "5/3"
+        ]
+      ],
+      "status": "DERIVED_FROM_REPO_ARTIFACT",
+      "ufo_ready": false,
+      "notes": "Neutral boundary/operator source, not yet a physical collider neutrino mass matrix."
+    }
+  },
+  "candidate_field_dictionary_v0_5": [
+    {
+      "field_entry_id": "bhsm_profile_scalar_H",
+      "candidate_symbol": "H_BH or Phi_H",
+      "field_type": "scalar/profile",
+      "target_collider_role": "Higgs/profile-sector candidate",
+      "spin": 0,
+      "color_representation": "singlet",
+      "weak_representation": "BLOCKED_OR_CANDIDATE_DOUBLET_IF_AUTHOR_ASSIGNS",
+      "hypercharge": "BLOCKED_OR_CANDIDATE_PLUS_ONE_HALF_IF_MAPPED_TO_SM_HIGGS_DOUBLET",
+      "source_artifacts": [
+        "profile_scale_closure_values_v1",
+        "tau_sigma_boundary_values_v1",
+        "canonical_profile_hessian_theorem_v1"
+      ],
+      "known_BHSM_values": [
+        "Z_H",
+        "kappa_H",
+        "sigma",
+        "tau"
+      ],
+      "field_normalization_status": "BOUNDARY_PROFILE_CANONICAL_NORMALIZATION_COMPLETE_CONDITIONALLY",
+      "production_status": "NOT_UFO_READY",
+      "missing": [
+        "explicit 4D representation",
+        "scalar doublet/singlet decision",
+        "mass/width scheme",
+        "potential V(H)",
+        "gauge-covariant derivative assignment"
+      ],
+      "warning": "kappa_H is a BHSM profile Hessian curvature, not automatically the observed Higgs mass."
+    },
+    {
+      "field_entry_id": "bhsm_lepton_left_doublet",
+      "candidate_symbol": "L_i = (nu_i, ell_i)_L",
+      "field_type": "fermion doublet target",
+      "spin": 0.5,
+      "color_representation": "singlet",
+      "weak_representation": "doublet",
+      "hypercharge_target": "-1/2",
+      "source_artifacts": [
+        "charged_boundary_bridge_values_v1",
+        "PMNS_no_fit_operator_output_v1",
+        "neutral_operator_no_fit_output_v1"
+      ],
+      "BHSM_coefficients": [
+        "Pi_l",
+        "beta_l",
+        "kappa_l",
+        "beta_l_tau",
+        "kappa_l_tau"
+      ],
+      "status": "CONDITIONAL_FIELD_TARGET",
+      "production_status": "NOT_UFO_READY",
+      "missing": [
+        "explicit BHSM chirality theorem",
+        "fermion kinetic Z_L",
+        "mass basis",
+        "neutrino convention",
+        "width convention"
+      ]
+    },
+    {
+      "field_entry_id": "bhsm_charged_lepton_right",
+      "candidate_symbol": "e_R_i",
+      "field_type": "fermion singlet target",
+      "spin": 0.5,
+      "color_representation": "singlet",
+      "weak_representation": "singlet",
+      "hypercharge_target": "-1",
+      "source_artifacts": [
+        "charged_boundary_bridge_values_v1"
+      ],
+      "BHSM_coefficients": [
+        "Pi_l",
+        "beta_l",
+        "kappa_l"
+      ],
+      "status": "CONDITIONAL_FIELD_TARGET",
+      "production_status": "NOT_UFO_READY",
+      "missing": [
+        "right-handed sector projection",
+        "Yukawa/mass convention",
+        "canonical fermion normalization"
+      ]
+    },
+    {
+      "field_entry_id": "bhsm_quark_left_doublet",
+      "candidate_symbol": "Q_i = (u_i, d_i)_L",
+      "field_type": "fermion doublet target",
+      "spin": 0.5,
+      "color_representation": "triplet",
+      "weak_representation": "doublet",
+      "hypercharge_target": "+1/6",
+      "source_artifacts": [
+        "charged_boundary_bridge_values_v1",
+        "CKM_no_fit_operator_output_v1"
+      ],
+      "BHSM_coefficients": [
+        "Pi_u",
+        "Pi_d",
+        "beta_u",
+        "kappa_u",
+        "beta_d",
+        "kappa_d"
+      ],
+      "status": "CONDITIONAL_FIELD_TARGET",
+      "production_status": "NOT_UFO_READY",
+      "missing": [
+        "explicit quark field basis",
+        "color representation theorem",
+        "left-handed projection theorem",
+        "mass basis",
+        "kinetic Z_Q"
+      ]
+    },
+    {
+      "field_entry_id": "bhsm_up_quark_right",
+      "candidate_symbol": "u_R_i",
+      "field_type": "fermion singlet target",
+      "spin": 0.5,
+      "color_representation": "triplet",
+      "weak_representation": "singlet",
+      "hypercharge_target": "+2/3",
+      "source_artifacts": [
+        "charged_boundary_bridge_values_v1"
+      ],
+      "BHSM_coefficients": [
+        "Pi_u",
+        "beta_u",
+        "kappa_u"
+      ],
+      "status": "CONDITIONAL_FIELD_TARGET",
+      "production_status": "NOT_UFO_READY",
+      "missing": [
+        "right-handed projection",
+        "mass/Yukawa convention",
+        "kinetic normalization"
+      ]
+    },
+    {
+      "field_entry_id": "bhsm_down_quark_right",
+      "candidate_symbol": "d_R_i",
+      "field_type": "fermion singlet target",
+      "spin": 0.5,
+      "color_representation": "triplet",
+      "weak_representation": "singlet",
+      "hypercharge_target": "-1/3",
+      "source_artifacts": [
+        "charged_boundary_bridge_values_v1"
+      ],
+      "BHSM_coefficients": [
+        "Pi_d",
+        "beta_d",
+        "kappa_d"
+      ],
+      "status": "CONDITIONAL_FIELD_TARGET",
+      "production_status": "NOT_UFO_READY",
+      "missing": [
+        "right-handed projection",
+        "mass/Yukawa convention",
+        "kinetic normalization"
+      ]
+    }
+  ],
+  "gauge_field_dictionary_v0_5": [
+    {
+      "field_entry_id": "gauge_gluon_target",
+      "symbol": "G^a_mu",
+      "field_type": "vector gauge field",
+      "gauge_group": "SU(3)_c",
+      "canonical_kinetic_target": "-1/4 G^a_munu G^{a munu}",
+      "BHSM_source": "alpha3 candidate",
+      "status": "STANDARD_HEP_TARGET_WITH_BHSM_COUPLING_CANDIDATE",
+      "production_status": "BLOCKED",
+      "missing": [
+        "BHSM gauge-fixing theorem",
+        "exact reference scale",
+        "renormalization scheme",
+        "UFO gauge declaration"
+      ]
+    },
+    {
+      "field_entry_id": "gauge_weak_target",
+      "symbol": "W^I_mu",
+      "field_type": "vector gauge field",
+      "gauge_group": "SU(2)_L",
+      "canonical_kinetic_target": "-1/4 W^I_munu W^{I munu}",
+      "BHSM_source": "alpha2 candidate",
+      "status": "STANDARD_HEP_TARGET_WITH_BHSM_COUPLING_CANDIDATE",
+      "production_status": "BLOCKED",
+      "missing": [
+        "gauge-fixing convention",
+        "electroweak mixing convention",
+        "mass/width scheme"
+      ]
+    },
+    {
+      "field_entry_id": "gauge_hypercharge_target",
+      "symbol": "B_mu",
+      "field_type": "vector gauge field",
+      "gauge_group": "U(1)_Y",
+      "canonical_kinetic_target": "-1/4 B_munu B^{munu}",
+      "BHSM_source": "alpha1 candidate",
+      "status": "STANDARD_HEP_TARGET_WITH_BHSM_COUPLING_CANDIDATE",
+      "production_status": "BLOCKED",
+      "missing": [
+        "hypercharge normalization convention",
+        "electroweak mixing convention",
+        "reference scale"
+      ]
+    }
+  ],
+  "candidate_vertex_source_targets": [
+    {
+      "vertex_family_id": "q_charged_current_CKM_BH",
+      "candidate_expression": "(g2_BH/sqrt(2)) * ubar_i gamma^mu P_L V_CKM_BH[i,j] d_j W_plus_mu + h.c.",
+      "BHSM_source": [
+        "CKM_no_fit_operator_output_v1",
+        "CP_no_fit_holonomy_output_v1"
+      ],
+      "BHSM_supplies": [
+        "V_CKM_BH",
+        "delta_BH",
+        "J_CKM_BH"
+      ],
+      "missing": [
+        "field dictionary complete",
+        "W field normalization",
+        "g2 scheme",
+        "mass/width scheme",
+        "renormalization convention"
+      ],
+      "status": "STRUCTURAL_CANDIDATE_WITH_DERIVED_MIXING_MATRIX",
+      "feynrules_ready": false
+    },
+    {
+      "vertex_family_id": "lepton_charged_current_PMNS_BH",
+      "candidate_expression": "(g2_BH/sqrt(2)) * ellbar_i gamma^mu P_L U_PMNS_BH[i,j] nu_j W_minus_mu + h.c.",
+      "BHSM_source": [
+        "PMNS_no_fit_operator_output_v1",
+        "CP_no_fit_holonomy_output_v1"
+      ],
+      "BHSM_supplies": [
+        "U_PMNS_BH",
+        "delta_BH",
+        "J_PMNS_BH"
+      ],
+      "missing": [
+        "neutrino convention",
+        "charged lepton field dictionary",
+        "W field normalization",
+        "g2 scheme",
+        "mass/width scheme"
+      ],
+      "status": "STRUCTURAL_CANDIDATE_WITH_DERIVED_MIXING_MATRIX",
+      "feynrules_ready": false
+    },
+    {
+      "vertex_family_id": "charged_boundary_response_matrix",
+      "candidate_expression": "Psi_bar_ch C_ch_boundary Psi_ch X_ch",
+      "BHSM_source": [
+        "charged_outputs_at_boundary_tau_A_local_v1",
+        "charged_outputs_at_boundary_tau_A_background_identity_v1"
+      ],
+      "BHSM_supplies": {
+        "C_ch_boundary_exact": [
+          "4/(1323*pi^(3/2))",
+          "8/(1323*pi^(3/2))",
+          "16/(1323*pi^(3/2))"
+        ]
+      },
+      "missing": [
+        "Psi_ch field basis",
+        "X_ch projected field/operator",
+        "Lorentz structure",
+        "gauge representation",
+        "canonical field normalizations"
+      ],
+      "status": "DERIVED_BOUNDARY_SOURCE_MATRIX",
+      "feynrules_ready": false
+    },
+    {
+      "vertex_family_id": "neutral_operator_kernel_BH",
+      "candidate_expression": "Psi_bar_nu K_nu Psi_nu",
+      "BHSM_source": [
+        "neutral_operator_no_fit_output_v1"
+      ],
+      "BHSM_supplies": {
+        "K_nu": [
+          [
+            0,
+            "1/3",
+            0
+          ],
+          [
+            "1/3",
+            3,
+            "1/6"
+          ],
+          [
+            0,
+            "1/6",
+            "5/3"
+          ]
+        ]
+      },
+      "missing": [
+        "neutral field basis",
+        "Dirac/Majorana convention",
+        "physical scale",
+        "chirality structure",
+        "mass/width scheme"
+      ],
+      "status": "DERIVED_BOUNDARY_SOURCE_MATRIX",
+      "feynrules_ready": false
+    },
+    {
+      "vertex_family_id": "cp_holonomy_phase_attachment",
+      "candidate_expression": "G_raw * exp(i*delta_BH) * O_int + h.c.",
+      "BHSM_source": [
+        "CP_no_fit_holonomy_output_v1"
+      ],
+      "BHSM_supplies": {
+        "delta_BH": "pi/3",
+        "exp_i_delta_BH": "1/2 + i*sqrt(3)/2"
+      },
+      "missing": [
+        "O_int interaction operator",
+        "field basis",
+        "gauge/Lorentz structure",
+        "canonical normalization"
+      ],
+      "status": "DERIVED_PHASE_SOURCE",
+      "feynrules_ready": false
+    }
+  ],
+  "candidate_parameter_card_entries": [
+    {
+      "parameter": "tau_BH",
+      "value_exact": "1/(4*pi^(3/2))",
+      "value_approx": 0.0448967805312916,
+      "source": "tau_sigma_boundary_values_v1",
+      "status": "DERIVED_FROM_REPO_ARTIFACT",
+      "ufo_ready": false
+    },
+    {
+      "parameter": "sigma_BH",
+      "value_exact": "4*pi^(5/2)",
+      "value_approx": 69.9736733104994,
+      "source": "tau_sigma_boundary_values_v1",
+      "status": "DERIVED_FROM_REPO_ARTIFACT",
+      "ufo_ready": false
+    },
+    {
+      "parameter": "kappa_H_BH",
+      "value_exact": "64*pi^5",
+      "value_approx": 19585.259826258,
+      "source": "canonical_profile_hessian_theorem_v1",
+      "status": "DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM",
+      "ufo_ready": false
+    },
+    {
+      "parameter": "rho_ch_BH",
+      "value_exact": "3",
+      "value_approx": 3.0,
+      "source": "charged_boundary_bridge_values_v1",
+      "status": "DERIVED_FROM_REPO_ARTIFACT",
+      "ufo_ready": false
+    },
+    {
+      "parameter": "g_bridge_BH",
+      "value_exact": "16/189",
+      "value_approx": 0.0846560846560847,
+      "source": "charged_boundary_bridge_values_v1",
+      "status": "DERIVED_FROM_REPO_ARTIFACT",
+      "ufo_ready": false
+    },
+    {
+      "parameter": "delta_BH",
+      "value_exact": "pi/3",
+      "value_approx": 1.0471975511965976,
+      "source": "CP_no_fit_holonomy_output_v1",
+      "status": "DERIVED_FROM_REPO_ARTIFACT",
+      "ufo_ready": false
+    },
+    {
+      "parameter": "g1_BH_candidate",
+      "value_exact": "sqrt(4*pi*alpha1)",
+      "value_approx": 0.4607016385,
+      "source": "alpha1 candidate",
+      "status": "SCHEME_CONDITIONAL",
+      "ufo_ready": false
+    },
+    {
+      "parameter": "g2_BH_candidate",
+      "value_exact": "sqrt(4*pi*alpha2)",
+      "value_approx": 0.6514340609,
+      "source": "alpha2 candidate",
+      "status": "SCHEME_CONDITIONAL",
+      "ufo_ready": false
+    },
+    {
+      "parameter": "g3_BH_candidate",
+      "value_exact": "sqrt(4*pi*alpha3)",
+      "value_approx": 1.2187988638,
+      "source": "alpha3 candidate",
+      "status": "SCHEME_CONDITIONAL",
+      "ufo_ready": false
+    }
+  ],
+  "gate_status_after_latest_work": {
+    "field_dictionary_target_exported": true,
+    "BHSM_internal_parameter_card_candidate_exported": true,
+    "boundary_source_vertex_matrices_exported": true,
+    "standard_collider_vertex_targets_identified": true,
+    "complete_4d_lagrangian_exported": false,
+    "feynrules_ready": false,
+    "ufo_ready": false,
+    "madgraph_ready": false,
+    "lhe_generation_ready": false,
+    "hepmc_generation_ready": false,
+    "athena_ready": false,
+    "cmssw_ready": false
+  },
+  "recommended_status_language": "BHSM now has a candidate 4D field dictionary and vertex-source map: internal BHSM boundary coefficients, mixing matrices, neutral operators, and holonomy phases can be mapped to candidate collider-field targets with explicit provenance. The map does not yet constitute production FeynRules/UFO readiness because vector/fermion normalizations, full gauge/Lorentz structures, mass-width schemes, and renormalization conventions remain open.",
+  "forbidden_claims": [
+    "BHSM is empirically proven.",
+    "BHSM has experimentally replaced the Standard Model.",
+    "BHSM is validated by CERN, DESI, or PDG.",
+    "BHSM is Athena or CMSSW ready.",
+    "BHSM has production UFO/MadGraph readiness.",
+    "BHSM generates valid LHE or HepMC events.",
+    "A Zenodo DOI has been assigned unless actually visible."
+  ],
+  "next_physics_tasks": [
+    "Decide whether to formally accept BHSM-P4, BHSM-N, and BHSM-V as author axioms.",
+    "Define explicit BHSM sector-to-4D field dictionary with spin, chirality, gauge representation, color representation, charge, generation, normalization Z, mass parameter, width parameter, and source status.",
+    "Resolve vector and fermion field normalization constants Z_A and Z_psi.",
+    "Define scalar/profile 4D representation and potential convention.",
+    "Attach boundary-source matrices to explicit Lorentz and gauge structures.",
+    "Define mass/width scheme.",
+    "Define renormalization scheme.",
+    "Only after those gates pass, attempt production FeynRules/UFO export."
+  ]
+}

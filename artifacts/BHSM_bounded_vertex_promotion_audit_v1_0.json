@@ -1,0 +1,107 @@
+{
+  "artifact": "BHSM_bounded_vertex_promotion_audit_v1_0",
+  "release_basis": "v1.0.1",
+  "phase": "PHASE_THREE_H_BOUNDED_BLOCKER_RESOLUTION",
+  "bounded_vertex_promotion_audit_exported": true,
+  "entries": [
+    {
+      "vertex_family": "q_charged_current_CKM_BH",
+      "previous_status": "STRUCTURAL_CANDIDATE_WITH_DERIVED_MIXING_MATRIX",
+      "post_phase_three_h_status": "BOUNDED_COLLIDER_INTERFACE_TARGET",
+      "promotion_result": "PARTIALLY_PROMOTED_TO_BOUNDED_COLLIDER_INTERFACE_TARGET",
+      "promotion_reason": "canonical basis, standard charged current, BHSM CKM source, and CP holonomy-in-mixing are identified",
+      "remaining_blockers": [
+        "coupling scheme",
+        "mass-width",
+        "renormalization",
+        "parameter-card",
+        "syntax-export"
+      ],
+      "pure_no_fit_ready": false,
+      "collider_interface_ready": true,
+      "feynrules_ready": false,
+      "ufo_ready": false,
+      "madgraph_ready": false,
+      "notes": "Bounded promotion is not production readiness."
+    },
+    {
+      "vertex_family": "lepton_charged_current_PMNS_BH",
+      "previous_status": "STRUCTURAL_CANDIDATE_WITH_DERIVED_MIXING_MATRIX",
+      "post_phase_three_h_status": "BOUNDED_COLLIDER_INTERFACE_TARGET",
+      "promotion_result": "PARTIALLY_PROMOTED_TO_BOUNDED_COLLIDER_INTERFACE_TARGET",
+      "promotion_reason": "canonical basis, standard charged current, BHSM PMNS source, candidate neutrino runtime basis, and CP holonomy-in-mixing are identified",
+      "remaining_blockers": [
+        "neutrino mass/scale",
+        "coupling scheme",
+        "mass-width",
+        "renormalization",
+        "parameter-card",
+        "syntax-export"
+      ],
+      "pure_no_fit_ready": false,
+      "collider_interface_ready": true,
+      "feynrules_ready": false,
+      "ufo_ready": false,
+      "madgraph_ready": false,
+      "notes": "Bounded promotion is not production readiness."
+    },
+    {
+      "vertex_family": "charged_boundary_response_matrix",
+      "previous_status": "BLOCKED_BY_MISSING_X_CH_OPERATOR",
+      "post_phase_three_h_status": "OPEN_EXACT_MISSING_THEOREM",
+      "promotion_result": "NOT_PROMOTED",
+      "promotion_reason": "X_ch interaction operator remains missing for the separate boundary-response vertex",
+      "remaining_blockers": [
+        "X_ch interaction operator",
+        "Lorentz structure",
+        "gauge representation"
+      ],
+      "pure_no_fit_ready": false,
+      "collider_interface_ready": false,
+      "feynrules_ready": false,
+      "ufo_ready": false,
+      "madgraph_ready": false,
+      "notes": "Bounded promotion is not production readiness."
+    },
+    {
+      "vertex_family": "neutral_operator_kernel_BH",
+      "previous_status": "BLOCKED_BY_NEUTRINO_BASIS_SCALE_CONVENTION",
+      "post_phase_three_h_status": "OPEN_EXACT_MISSING_THEOREM",
+      "promotion_result": "NOT_PROMOTED",
+      "promotion_reason": "physical neutrino basis, scale, and Dirac/Majorana convention remain missing",
+      "remaining_blockers": [
+        "neutrino physical basis",
+        "scale",
+        "Dirac/Majorana convention"
+      ],
+      "pure_no_fit_ready": false,
+      "collider_interface_ready": false,
+      "feynrules_ready": false,
+      "ufo_ready": false,
+      "madgraph_ready": false,
+      "notes": "Bounded promotion is not production readiness."
+    },
+    {
+      "vertex_family": "cp_holonomy_phase_attachment",
+      "previous_status": "BLOCKED_BY_MISSING_INTERACTION_ATTACHMENT",
+      "post_phase_three_h_status": "PARTIALLY_RESOLVED_FOR_CKM_PMNS_ONLY",
+      "promotion_result": "NOT_PROMOTED_AS_STANDALONE_VERTEX",
+      "promotion_reason": "delta_BH is attached through CKM/PMNS mixing sources, but standalone O_int is missing",
+      "remaining_blockers": [
+        "O_int interaction operator",
+        "gauge/Lorentz structure"
+      ],
+      "pure_no_fit_ready": false,
+      "collider_interface_ready": false,
+      "feynrules_ready": false,
+      "ufo_ready": false,
+      "madgraph_ready": false,
+      "notes": "Bounded promotion is not production readiness."
+    }
+  ],
+  "empirical_derivation_inputs_used": false,
+  "boundary_predictions_modified_by_runtime_inputs": false,
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false,
+  "source_model_files_changed": false
+}

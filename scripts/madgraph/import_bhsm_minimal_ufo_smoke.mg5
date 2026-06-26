@@ -1,0 +1,8 @@
+# Local execution script only.
+# Requires a validated UFO at models/ufo/BHSM_Minimal_Collider_Interface.
+# Do not treat this script as evidence of MadGraph readiness unless it runs.
+
+import model models/ufo/BHSM_Minimal_Collider_Interface
+generate u d~ > w+
+add process e+ ve > w+
+output runs/madgraph_smoke/BHSM_Minimal_Smoke

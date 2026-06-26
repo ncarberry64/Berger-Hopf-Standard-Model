@@ -29,3 +29,15 @@ table, gauge conventions, interaction vertices, parameter card, and UFO model.
 - Validate a UFO/FeynRules-compatible model.
 - Compare generated quantities against pinned external targets without feeding
   empirical values back into BHSM derivations.
+
+## Phase Two-A Update
+
+Phase Two-A adds `artifacts/BHSM_vertex_source_ledger_v0_2.json`, which is a
+source ledger only. It does not export Lorentz structures, gauge-fixed vertices,
+or Feynman rules.
+
+## Phase Three-A Update
+
+Phase Three-A adds `artifacts/BHSM_feynrules_translation_gate_v0_3.json`. The
+gate remains closed: `feynrules_ready = false` and `ufo_ready = false`.
+Candidate effective Lagrangian entries are not production Feynman rules.

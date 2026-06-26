@@ -1,0 +1,65 @@
+{
+  "artifact": "BHSM_minimal_feynrules_model_export_attempt_v1_3",
+  "release_basis": "v1.0.1",
+  "phase": "PHASE_THREE_K_FEYNRULES_EXPORT_ATTEMPT",
+  "model_name": "BHSM_MINIMAL_COLLIDER_INTERFACE",
+  "model_file_path": "models/feynrules/BHSM_Minimal_Collider_Interface.fr.disabled",
+  "model_file_created": true,
+  "model_file_enabled": false,
+  "is_complete_bhsm_model": false,
+  "is_minimal_collider_interface_subset": true,
+  "included_terms": [
+    "L_kin",
+    "L_gauge",
+    "L_CC_q_BHSM_CKM",
+    "L_CC_l_BHSM_PMNS"
+  ],
+  "excluded_terms": [
+    "charged_boundary_response_matrix",
+    "neutral_operator_kernel_BH",
+    "standalone cp_holonomy_phase_attachment",
+    "BHSM_PURE_NOFIT mass-width closure",
+    "full renormalization closure"
+  ],
+  "runtime_parameters": [
+    "g2_BH_runtime",
+    "W_mass_runtime",
+    "W_width_runtime",
+    "fermion_masses_runtime",
+    "fermion_widths_runtime",
+    "renormalization_scale_runtime"
+  ],
+  "bhsm_source_matrices": [
+    "V_CKM_BH",
+    "U_PMNS_BH"
+  ],
+  "empirical_derivation_inputs_used": false,
+  "boundary_predictions_modified_by_runtime_inputs": false,
+  "production_feynrules_file_exported": false,
+  "feynrules_syntax_status": "SYNTAX_CONTRACT_ONLY_DISABLED_DRAFT",
+  "known_syntax_limitations": [
+    "Mathematica/FeynRules validation not available in this sprint",
+    "particle class declarations are not complete",
+    "parameter-card syntax is not complete",
+    "index conventions are symbolic",
+    "mass-width runtime assignments are not complete"
+  ],
+  "missing_for_validated_feynrules": [
+    "Mathematica runtime",
+    "FeynRules package",
+    "complete particle class declarations",
+    "validated parameter declarations",
+    "FeynRules syntax validation"
+  ],
+  "notes": "A disabled bounded FeynRules draft is exported for review. It is not a production FeynRules file and cannot be used to claim UFO or MadGraph readiness.",
+  "source_artifacts": [
+    "artifacts/BHSM_minimal_bounded_lagrangian_subset_v1_2.json",
+    "artifacts/BHSM_included_excluded_vertex_families_v1_2.json",
+    "artifacts/BHSM_bounded_feynrules_prep_lagrangian_v1_2.json",
+    "artifacts/BHSM_minimal_runtime_parameter_requirements_v1_2.json",
+    "artifacts/BHSM_phase_three_j_gate_status_v1_2.json"
+  ],
+  "boundary_predictions_modified_by_comparison": false,
+  "official_predictions_changed": false,
+  "source_model_files_changed": false
+}
