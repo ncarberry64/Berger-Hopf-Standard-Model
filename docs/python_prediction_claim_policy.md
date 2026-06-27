@@ -18,3 +18,6 @@ FeynRules/UFO/MadGraph readiness.
 
 The consolidated release claim table is
 `docs/bhsm_v1_2_0_prediction_claim_status.md`.
+
+See `docs/prediction_gallery_claim_policy.md` for gallery, plotting, live-PDG,
+speculative, and theorem-attempt boundaries.

@@ -103,6 +103,19 @@ Calibration, prediction, and validation remain separate. If W is used as the geo
 Release deployment is currently blocked because the immutable `v1.2.0` tag is
 already assigned to an earlier package. It will not be moved or overwritten.
 
+## Prediction Gallery, notebooks, and theorem-blocker sandbox
+
+BHSM includes a prediction gallery, notebook pack, optional live PDG reference
+adapter, speculative candidate sandbox, and theorem-blocker closure-attempt
+layer. They separate calibration anchors, predictions given calibration,
+upper-limit comparisons, frozen artifacts, blockers, speculative templates,
+and runtime-disabled gates.
+
+Live PDG values are comparison references only and are never BHSM derivation
+inputs. Speculative candidates are disabled by default. Theorem attempts do not
+promote `X_ch`, the neutral kernel, or standalone CP holonomy without an
+explicit supporting theorem artifact.
+
 ## Collider / CERN Software Readiness
 
 BHSM v1.0.1 is not an Athena, CMSSW, or detector-simulation-ready software

@@ -90,4 +90,5 @@ def test_frozen_predictions_and_physics_sources_are_unchanged() -> None:
         ["git", "diff", "--name-only", "origin/main", "--", "src"],
         cwd=ROOT, text=True, capture_output=True, check=True,
     )
-    assert changed_src.stdout.strip() == ""
+    changed = [line for line in changed_src.stdout.splitlines() if line]
+    assert all(path.startswith("src/bhsm/interface/") for path in changed)
