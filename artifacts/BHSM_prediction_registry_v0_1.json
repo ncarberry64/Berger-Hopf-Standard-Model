@@ -1,0 +1,326 @@
+{
+  "allowed_claims": [
+    "BHSM provides a Python prediction registry interface.",
+    "The registry separates calibration, prediction, comparison, blocker, and runtime-gate statuses.",
+    "The W boson can be used as a calibration anchor.",
+    "Electron-neutrino comparison is upper-limit based by default.",
+    "CKM/PMNS source matrices can be exposed as existing BHSM internal prediction artifacts."
+  ],
+  "calibration_policy": "Calibration anchors are not independent predictions in the same run.",
+  "entries": [
+    {
+      "allowed_statuses": [
+        "FROZEN_INTERNAL_PREDICTION"
+      ],
+      "calibration_allowed": false,
+      "can_be_calibration_anchor": false,
+      "claim_boundary": "The BHSM CKM source matrix is an internal artifact; external comparison remains separate.",
+      "comparison_kind": "optional_matrix_reference",
+      "default_status": "FROZEN_INTERNAL_PREDICTION",
+      "display_name": "BHSM CKM matrix",
+      "excluded_reason": null,
+      "geometry_required": false,
+      "independent_prediction_allowed": false,
+      "notes": [],
+      "particle_key": "CKM_matrix_BHSM",
+      "quantity": "mixing_matrix",
+      "reference_key": null,
+      "runtime_required": false,
+      "sector": "charged_current_quark",
+      "source_artifacts": [
+        "artifacts/CKM_no_fit_operator_output_v1.json"
+      ],
+      "source_type": "BHSM artifact",
+      "theorem_status": "NOT_APPLICABLE",
+      "unit": "dimensionless"
+    },
+    {
+      "allowed_statuses": [
+        "FROZEN_INTERNAL_PREDICTION"
+      ],
+      "calibration_allowed": false,
+      "can_be_calibration_anchor": false,
+      "claim_boundary": "The BHSM PMNS source matrix is internal; the physical neutrino mass/basis theorem remains separate.",
+      "comparison_kind": "optional_matrix_reference",
+      "default_status": "FROZEN_INTERNAL_PREDICTION",
+      "display_name": "BHSM PMNS matrix",
+      "excluded_reason": null,
+      "geometry_required": false,
+      "independent_prediction_allowed": false,
+      "notes": [],
+      "particle_key": "PMNS_matrix_BHSM",
+      "quantity": "mixing_matrix",
+      "reference_key": null,
+      "runtime_required": false,
+      "sector": "charged_current_lepton",
+      "source_artifacts": [
+        "artifacts/PMNS_no_fit_operator_output_v1.json"
+      ],
+      "source_type": "BHSM artifact",
+      "theorem_status": "NOT_APPLICABLE",
+      "unit": "dimensionless"
+    },
+    {
+      "allowed_statuses": [
+        "CALIBRATION_ANCHOR",
+        "CALIBRATION_ANCHOR_NOT_INDEPENDENT_PREDICTION",
+        "REFERENCE_COMPARISON_ONLY"
+      ],
+      "calibration_allowed": true,
+      "can_be_calibration_anchor": true,
+      "claim_boundary": "W may calibrate the geometric-to-physical scale; when used as anchor it is not an independent prediction.",
+      "comparison_kind": "central_value",
+      "default_status": "CALIBRATION_ANCHOR",
+      "display_name": "W boson",
+      "excluded_reason": null,
+      "geometry_required": true,
+      "independent_prediction_allowed": false,
+      "notes": [],
+      "particle_key": "W_boson",
+      "quantity": "mass",
+      "reference_key": "W_boson",
+      "runtime_required": false,
+      "sector": "electroweak_vector",
+      "source_artifacts": [],
+      "source_type": "runtime/reference input",
+      "theorem_status": "NOT_APPLICABLE",
+      "unit": "GeV/c^2"
+    },
+    {
+      "allowed_statuses": [
+        "OPEN_THEOREM_REQUIRED"
+      ],
+      "calibration_allowed": false,
+      "can_be_calibration_anchor": false,
+      "claim_boundary": "Not promoted to a production vertex.",
+      "comparison_kind": null,
+      "default_status": "OPEN_THEOREM_REQUIRED",
+      "display_name": "Charged boundary response",
+      "excluded_reason": "X_ch interaction theorem is open",
+      "geometry_required": false,
+      "independent_prediction_allowed": false,
+      "notes": [],
+      "particle_key": "charged_boundary_response_matrix",
+      "quantity": "interaction_matrix",
+      "reference_key": null,
+      "runtime_required": false,
+      "sector": "charged_boundary",
+      "source_artifacts": [
+        "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json"
+      ],
+      "source_type": "BHSM artifact",
+      "theorem_status": "X_ch theorem missing for production boundary-response vertex",
+      "unit": "dimensionless"
+    },
+    {
+      "allowed_statuses": [
+        "OPEN_THEOREM_REQUIRED"
+      ],
+      "calibration_allowed": false,
+      "can_be_calibration_anchor": false,
+      "claim_boundary": "The phase source is not a standalone production CP vertex.",
+      "comparison_kind": null,
+      "default_status": "OPEN_THEOREM_REQUIRED",
+      "display_name": "CP holonomy phase attachment",
+      "excluded_reason": "O_int interaction theorem is open",
+      "geometry_required": false,
+      "independent_prediction_allowed": false,
+      "notes": [],
+      "particle_key": "cp_holonomy_phase_attachment",
+      "quantity": "interaction_attachment",
+      "reference_key": null,
+      "runtime_required": false,
+      "sector": "cp_holonomy",
+      "source_artifacts": [
+        "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json"
+      ],
+      "source_type": "BHSM artifact",
+      "theorem_status": "standalone O_int theorem missing",
+      "unit": "dimensionless"
+    },
+    {
+      "allowed_statuses": [
+        "MODEL_PREDICTION_GIVEN_CALIBRATION",
+        "UPPER_LIMIT_COMPARISON"
+      ],
+      "calibration_allowed": false,
+      "can_be_calibration_anchor": false,
+      "claim_boundary": "Electron-neutrino comparison is upper-limit based unless a vetted central reference is supplied.",
+      "comparison_kind": "upper_limit",
+      "default_status": "MODEL_PREDICTION_GIVEN_CALIBRATION",
+      "display_name": "Electron neutrino",
+      "excluded_reason": null,
+      "geometry_required": true,
+      "independent_prediction_allowed": false,
+      "notes": [],
+      "particle_key": "electron_neutrino",
+      "quantity": "mass",
+      "reference_key": "electron_neutrino",
+      "runtime_required": false,
+      "sector": "effective_neutrino_extension",
+      "source_artifacts": [],
+      "source_type": "interface model output",
+      "theorem_status": "NOT_APPLICABLE",
+      "unit": "GeV/c^2"
+    },
+    {
+      "allowed_statuses": [
+        "DISABLED_UNTIL_RUNTIME_VALIDATED"
+      ],
+      "calibration_allowed": false,
+      "can_be_calibration_anchor": false,
+      "claim_boundary": "The .fr model remains disabled until live Wolfram/FeynRules validation passes.",
+      "comparison_kind": null,
+      "default_status": "DISABLED_UNTIL_RUNTIME_VALIDATED",
+      "display_name": "Minimal FeynRules model",
+      "excluded_reason": null,
+      "geometry_required": false,
+      "independent_prediction_allowed": false,
+      "notes": [],
+      "particle_key": "feynrules_minimal_model",
+      "quantity": "software_readiness",
+      "reference_key": null,
+      "runtime_required": true,
+      "sector": "software_gate",
+      "source_artifacts": [
+        "artifacts/BHSM_phase_three_k_gate_status_v1_3.json"
+      ],
+      "source_type": "software gate artifact",
+      "theorem_status": "NOT_APPLICABLE",
+      "unit": "dimensionless"
+    },
+    {
+      "allowed_statuses": [
+        "DISABLED_UNTIL_RUNTIME_VALIDATED"
+      ],
+      "calibration_allowed": false,
+      "can_be_calibration_anchor": false,
+      "claim_boundary": "MadGraph readiness remains false until a real smoke test passes.",
+      "comparison_kind": null,
+      "default_status": "DISABLED_UNTIL_RUNTIME_VALIDATED",
+      "display_name": "MadGraph smoke test",
+      "excluded_reason": null,
+      "geometry_required": false,
+      "independent_prediction_allowed": false,
+      "notes": [],
+      "particle_key": "madgraph_smoke_test",
+      "quantity": "software_readiness",
+      "reference_key": null,
+      "runtime_required": true,
+      "sector": "software_gate",
+      "source_artifacts": [
+        "artifacts/BHSM_madgraph_smoke_outcome_v1_6.json"
+      ],
+      "source_type": "software gate artifact",
+      "theorem_status": "NOT_APPLICABLE",
+      "unit": "dimensionless"
+    },
+    {
+      "allowed_statuses": [
+        "MODEL_PREDICTION_GIVEN_CALIBRATION",
+        "REFERENCE_COMPARISON_ONLY"
+      ],
+      "calibration_allowed": false,
+      "can_be_calibration_anchor": false,
+      "claim_boundary": "Bounded CKM/PMNS collider-interface subset only; not the complete BHSM 4D Lagrangian.",
+      "comparison_kind": null,
+      "default_status": "REFERENCE_COMPARISON_ONLY",
+      "display_name": "Minimal collider-interface subset",
+      "excluded_reason": null,
+      "geometry_required": false,
+      "independent_prediction_allowed": false,
+      "notes": [],
+      "particle_key": "minimal_collider_interface_subset",
+      "quantity": "bounded_lagrangian_subset",
+      "reference_key": null,
+      "runtime_required": false,
+      "sector": "collider_interface",
+      "source_artifacts": [
+        "artifacts/BHSM_minimal_bounded_lagrangian_subset_v1_2.json"
+      ],
+      "source_type": "BHSM artifact",
+      "theorem_status": "NOT_APPLICABLE",
+      "unit": "dimensionless"
+    },
+    {
+      "allowed_statuses": [
+        "OPEN_THEOREM_REQUIRED"
+      ],
+      "calibration_allowed": false,
+      "can_be_calibration_anchor": false,
+      "claim_boundary": "This boundary/operator source is not a physical collider neutrino mass matrix.",
+      "comparison_kind": null,
+      "default_status": "OPEN_THEOREM_REQUIRED",
+      "display_name": "Neutral operator kernel",
+      "excluded_reason": "neutral basis and scale theorem is open",
+      "geometry_required": false,
+      "independent_prediction_allowed": false,
+      "notes": [],
+      "particle_key": "neutral_operator_kernel_BH",
+      "quantity": "operator_kernel",
+      "reference_key": null,
+      "runtime_required": false,
+      "sector": "neutral",
+      "source_artifacts": [
+        "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json"
+      ],
+      "source_type": "BHSM artifact",
+      "theorem_status": "neutrino basis/scale/Dirac-Majorana theorem missing",
+      "unit": "dimensionless"
+    },
+    {
+      "allowed_statuses": [
+        "DISABLED_UNTIL_RUNTIME_VALIDATED"
+      ],
+      "calibration_allowed": false,
+      "can_be_calibration_anchor": false,
+      "claim_boundary": "UFO readiness remains false until real export and loadability pass.",
+      "comparison_kind": null,
+      "default_status": "DISABLED_UNTIL_RUNTIME_VALIDATED",
+      "display_name": "UFO export",
+      "excluded_reason": null,
+      "geometry_required": false,
+      "independent_prediction_allowed": false,
+      "notes": [],
+      "particle_key": "ufo_export",
+      "quantity": "software_readiness",
+      "reference_key": null,
+      "runtime_required": true,
+      "sector": "software_gate",
+      "source_artifacts": [
+        "artifacts/BHSM_feynrules_to_ufo_export_contract_v1_3.json"
+      ],
+      "source_type": "software gate artifact",
+      "theorem_status": "NOT_APPLICABLE",
+      "unit": "dimensionless"
+    }
+  ],
+  "forbidden_claims": [
+    "W is independently predicted when W is the calibration anchor.",
+    "Electron-neutrino mass is centrally measured.",
+    "BHSM is empirically validated by the registry.",
+    "BHSM is officially CERN integrated.",
+    "BHSM has a validated UFO model.",
+    "BHSM has passed MadGraph validation.",
+    "BHSM has exported the complete 4D Lagrangian.",
+    "Open-theorem vertices are production-ready."
+  ],
+  "registry_name": "BHSM Prediction Registry",
+  "release_basis": "BHSM v1.1.0 plus Python interface v0.1",
+  "runtime_validation_policy": "Disabled software gates remain disabled until live external validation passes.",
+  "status_taxonomy": [
+    "CALIBRATION_ANCHOR",
+    "CALIBRATION_ANCHOR_NOT_INDEPENDENT_PREDICTION",
+    "MODEL_PREDICTION_GIVEN_CALIBRATION",
+    "FROZEN_INTERNAL_PREDICTION",
+    "REFERENCE_COMPARISON_ONLY",
+    "UPPER_LIMIT_COMPARISON",
+    "OPEN_THEOREM_REQUIRED",
+    "DISABLED_UNTIL_RUNTIME_VALIDATED",
+    "EXCLUDED_FROM_MINIMAL_COLLIDER_INTERFACE",
+    "RUNTIME_PARAMETER_ONLY",
+    "UNKNOWN_OR_UNREGISTERED"
+  ],
+  "upper_limit_policy": "Electron-neutrino comparison is upper-limit based by default.",
+  "version": "0.1"
+}

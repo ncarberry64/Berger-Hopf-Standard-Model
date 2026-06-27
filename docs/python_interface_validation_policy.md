@@ -43,3 +43,6 @@ model predictions, or external comparisons according to their metadata.
 
 It must not be described as empirical validation, official CERN integration,
 a completed 4D Lagrangian export, or validated FeynRules/UFO/MadGraph output.
+
+Registry statuses do not override these policies: open-theorem entries remain
+blockers and runtime-disabled entries remain gated until live validation.
