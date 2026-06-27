@@ -90,6 +90,19 @@ python -m bhsm.interface predict --particle electron_neutrino --anchor W_boson
 python -m bhsm.interface report --anchor W_boson --particles W_boson,electron_neutrino --format json
 ```
 
+## BHSM v1.2.0 Python computational interface
+
+The v1.2.0 release candidate consolidates the offline Python computational
+interface and prediction registry for computational review. It includes
+hyperspherical/Berger-Hopf geometry objects, geometric-to-physical unit mapping,
+root solving, reference comparison, registry statuses, CLI commands, and
+deterministic reports.
+
+Calibration, prediction, and validation remain separate. If W is used as the geometric-to-physical calibration anchor, W is not counted as an independent prediction in that run. Electron-neutrino comparison remains upper-limit based by default.
+
+Release deployment is currently blocked because the immutable `v1.2.0` tag is
+already assigned to an earlier package. It will not be moved or overwritten.
+
 ## Collider / CERN Software Readiness
 
 BHSM v1.0.1 is not an Athena, CMSSW, or detector-simulation-ready software

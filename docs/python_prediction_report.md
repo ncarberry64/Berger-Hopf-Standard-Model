@@ -21,3 +21,5 @@ python examples/bhsm_prediction_report.py
 
 The generated reference artifact is
 `artifacts/BHSM_prediction_report_example_v0_1.json`.
+
+The report remains a review artifact and does not establish empirical validation.

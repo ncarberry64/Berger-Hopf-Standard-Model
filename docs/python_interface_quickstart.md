@@ -55,6 +55,9 @@ python -m bhsm.interface registry
 python -m bhsm.interface report --anchor W_boson --particles W_boson,electron_neutrino --format json
 ```
 
+The v1.2.0 release-candidate quickstart is indexed at
+`docs/bhsm_v1_2_0_python_quickstart.md`.
+
 The electron-neutrino comparison is treated as an upper-limit comparison unless a vetted central experimental mass reference is explicitly supplied.
 
 Run focused tests:

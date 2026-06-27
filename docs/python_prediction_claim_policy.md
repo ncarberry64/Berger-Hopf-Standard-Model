@@ -15,3 +15,6 @@ output, frozen internal artifact, upper-limit comparison, open theorem blocker,
 and runtime-disabled gate. The registry does not establish empirical
 validation, official CERN integration, a complete 4D Lagrangian, or validated
 FeynRules/UFO/MadGraph readiness.
+
+The consolidated release claim table is
+`docs/bhsm_v1_2_0_prediction_claim_status.md`.

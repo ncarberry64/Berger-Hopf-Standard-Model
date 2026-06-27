@@ -25,3 +25,5 @@ statuses, warnings, and claim boundaries.
 
 The CLI requires neither network access nor optional PDG, Wolfram, FeynRules,
 UFO, or MadGraph tooling.
+
+See `docs/bhsm_v1_2_0_cli_command_table.md` for the release command matrix.

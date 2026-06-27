@@ -1,0 +1,13 @@
+{
+  "entrypoint": "python -m bhsm.interface",
+  "commands": [
+    "registry",
+    "status W_boson",
+    "status electron_neutrino",
+    "predict --particle W_boson --mode calibration",
+    "predict --particle electron_neutrino --anchor W_boson",
+    "report --anchor W_boson --particles W_boson,electron_neutrino --format json"
+  ],
+  "offline_safe": true,
+  "internet_required": false
+}
