@@ -610,3 +610,23 @@ python -m bhsm.interface cp-o-int-report --format markdown
 python -m bhsm.interface cp-o-int-stages --format json
 python -m bhsm.interface cp-o-int-proof-gates --format json
 ```
+
+## CP O_int field/action construction attempt
+
+BHSM includes a focused CP `O_int` field/action construction attempt that
+separates CP holonomy and CKM/PMNS phase attachment from standalone interaction
+structure.
+
+The construction evaluator checks field representation, Lorentz/index
+structure, gauge and sector admissibility, coupling normalization and mass
+dimension, action/source term, callable availability, production eligibility,
+runtime export eligibility, provenance, and proof gates.
+
+A symbolic field/action candidate is not action-level closure.
+Runtime-disabled software gates remain disabled until live external validation
+passes.
+
+```powershell
+python -m bhsm.interface cp-o-int-field-action --format markdown
+python -m bhsm.interface cp-o-int-production-eligibility --format json
+```

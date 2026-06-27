@@ -1,0 +1,92 @@
+{
+  "artifact_name": "BHSM CP O_int Sprint C Stages",
+  "candidate_key": "cp_o_int_symbolic_field_action_candidate",
+  "deepest_valid_stage_after": "Stage 8: Construct callable symbolic O_int candidate",
+  "deepest_valid_stage_before": "Stage 2: Phase attachment rule availability",
+  "first_failed_required_stage": "Stage 9: Evaluate production eligibility",
+  "stages": [
+    {
+      "claim_boundary": "An artifact-backed phase is not a standalone interaction.",
+      "evidence": "BHSM CP holonomy artifact",
+      "name": "Load artifact-backed CP phase",
+      "passes": true,
+      "stage": 1,
+      "status": "AVAILABLE_ARTIFACT_BACKED"
+    },
+    {
+      "claim_boundary": "Matrix attachment is not standalone interaction closure.",
+      "evidence": "matrix attachment artifact",
+      "name": "Load CKM/PMNS phase attachment",
+      "passes": true,
+      "stage": 2,
+      "status": "MATRIX_PHASE_ATTACHMENT_AVAILABLE_STANDALONE_OPEN"
+    },
+    {
+      "claim_boundary": "The generic psi symbol is a symbolic placeholder, not a production field definition.",
+      "evidence": "abstract boundary/interface field only; physical representation not derived",
+      "name": "Construct field representation candidate",
+      "passes": true,
+      "stage": 3,
+      "status": "AVAILABLE_SYMBOLIC_CANDIDATE"
+    },
+    {
+      "claim_boundary": "A scalar wrapper requirement is not a derived Lorentz operator.",
+      "evidence": "LorentzScalar[O_int] + h.c.",
+      "name": "Construct Lorentz/index candidate",
+      "passes": true,
+      "stage": 4,
+      "status": "AVAILABLE_SYMBOLIC_CANDIDATE"
+    },
+    {
+      "claim_boundary": "The symbolic projector does not close X_ch or the neutrino theorem.",
+      "evidence": "P_CP_admissible O_int P_CP_admissible",
+      "name": "Construct gauge/sector admissibility candidate",
+      "passes": true,
+      "stage": 5,
+      "status": "AVAILABLE_SYMBOLIC_CANDIDATE"
+    },
+    {
+      "claim_boundary": "No W anchor, PDG value, or calibration fixes the symbolic coefficient.",
+      "evidence": "G_raw",
+      "name": "Construct coupling/mass-dimension candidate",
+      "passes": true,
+      "stage": 6,
+      "status": "AVAILABLE_SYMBOLIC_CANDIDATE"
+    },
+    {
+      "claim_boundary": "The source-traced symbolic density is not an action-derived theorem.",
+      "evidence": "G_raw exp(i delta_BH) O_int + h.c.",
+      "name": "Construct boundary/action source candidate",
+      "passes": true,
+      "stage": 7,
+      "status": "AVAILABLE_SYMBOLIC_CANDIDATE"
+    },
+    {
+      "claim_boundary": "This callable assembles a symbolic candidate; it is not a production theorem callable.",
+      "evidence": "G_raw * exp(i*delta_BH) * (Psi_CP_interface_bar O_int Psi_CP_interface) * (H_CP) + h.c.",
+      "name": "Construct callable symbolic O_int candidate",
+      "passes": true,
+      "stage": 8,
+      "status": "AVAILABLE_SYMBOLIC_CANDIDATE"
+    },
+    {
+      "claim_boundary": "A symbolic candidate is not production-ready.",
+      "evidence": "action-level gates remain open",
+      "name": "Evaluate production eligibility",
+      "passes": false,
+      "stage": 9,
+      "status": "FORBIDDEN_UNSUPPORTED"
+    },
+    {
+      "claim_boundary": "Runtime readiness requires live external validation.",
+      "evidence": "runtime tools were not invoked",
+      "name": "Evaluate runtime export eligibility",
+      "passes": false,
+      "stage": 10,
+      "status": "DISABLED_UNTIL_RUNTIME_VALIDATED"
+    }
+  ],
+  "status_after": "OPEN_MISSING_ACTION_SOURCE",
+  "status_before": "OPEN_MISSING_INTERACTION_ATTACHMENT",
+  "version": "0.6"
+}

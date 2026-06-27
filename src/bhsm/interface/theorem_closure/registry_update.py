@@ -40,6 +40,36 @@ def build_cp_o_int_registry_update(repository: str | Path | None = None) -> dict
     }
 
 
+def build_cp_o_int_sprint_c_registry_update(repository: str | Path | None = None) -> dict[str, Any]:
+    """Annotate the symbolic candidate while preserving production statuses."""
+
+    from .cp_o_int_sprint_c_report import build_cp_o_int_field_action_report
+
+    report = build_cp_o_int_field_action_report(repository=repository)
+    registry = default_prediction_registry()
+    rows = []
+    for key in report.registry_entries_affected:
+        entry = registry.require(key)
+        rows.append({
+            "entry_key": key,
+            "status_before": entry.default_status.value,
+            "status_after": entry.default_status.value,
+            "candidate_annotation": report.candidate_status if key == "cp_holonomy_phase_attachment" else None,
+            "theorem_status": report.status_after if key == "cp_holonomy_phase_attachment" else entry.theorem_status,
+            "promotion_allowed": False,
+            "claim_boundary": entry.claim_boundary,
+        })
+    return {
+        "proposal_name": "BHSM CP O_int Sprint C Registry Update Proposal",
+        "version": "0.6",
+        "entries": rows,
+        "promotions_allowed": [],
+        "promotions_applied": [],
+        "runtime_gates_changed": False,
+        "production_registry_mutated": False,
+    }
+
+
 def build_theorem_registry_update(repository: str | Path | None = None) -> dict[str, Any]:
     report = build_theorem_closure_report(repository)
     registry = default_prediction_registry()

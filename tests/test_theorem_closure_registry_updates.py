@@ -23,4 +23,4 @@ def test_formula_registry_reflects_exact_open_outcomes():
     assert rows["x_ch_production_vertex"].status == "OPEN_THEOREM_REQUIRED"
     assert rows["neutrino_physical_basis_scale"].status == "OPEN_THEOREM_REQUIRED"
     assert rows["cp_o_int_standalone_attachment"].status == "OPEN_THEOREM_REQUIRED"
-    assert rows["cp_o_int_standalone_attachment"].theorem_status == "OPEN_MISSING_INTERACTION_ATTACHMENT"
+    assert rows["cp_o_int_standalone_attachment"].theorem_status == "OPEN_MISSING_ACTION_SOURCE"

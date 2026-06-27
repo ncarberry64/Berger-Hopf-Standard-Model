@@ -13,3 +13,6 @@ See `docs/theorem_closure_sprint_a.md` for the exact missing objects.
 
 The focused CP Sprint B artifact preserves `OPEN_MISSING_INTERACTION_ATTACHMENT`
 and identifies Stage 2 as the deepest valid stage.
+
+Sprint C reaches a callable symbolic candidate at Stage 8, but production
+eligibility remains false and the action-derived source theorem remains open.

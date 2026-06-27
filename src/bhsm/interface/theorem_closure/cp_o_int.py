@@ -114,3 +114,14 @@ def evaluate_cp_o_int_sprint_b(
     from .cp_o_int_report import build_cp_o_int_report
 
     return build_cp_o_int_report(candidate_path, repository)
+
+
+def evaluate_cp_o_int_sprint_c(
+    template_path: str | Path | None = None,
+    repository: str | Path | None = None,
+):
+    """Build the source-traced symbolic field/action candidate for Sprint C."""
+
+    from .cp_o_int_sprint_c_report import build_cp_o_int_field_action_report
+
+    return build_cp_o_int_field_action_report(template_path, repository)

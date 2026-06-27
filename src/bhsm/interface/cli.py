@@ -19,10 +19,11 @@ from .notebook_pack import check_notebook_pack, notebook_pack_manifest
 from .plotting import generate_gallery_plots, is_matplotlib_available
 from .speculative import build_speculative_report, default_speculative_registry
 from .theorem_blockers import attempt_theorem_closure, default_theorem_blockers
-from .theorem_closure import build_cp_o_int_report, build_theorem_closure_report, evaluate_theorem
+from .theorem_closure import build_cp_o_int_field_action_report, build_cp_o_int_report, build_theorem_closure_report, evaluate_theorem
 from .theorem_closure.closure_report import theorem_closure_report_to_markdown
 from .theorem_closure.cp_o_int_action import load_cp_o_int_candidate_template
 from .theorem_closure.cp_o_int_report import cp_o_int_report_to_markdown
+from .theorem_closure.cp_o_int_sprint_c_report import cp_o_int_sprint_c_to_markdown
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -138,6 +139,18 @@ def build_parser() -> argparse.ArgumentParser:
 
     cp_candidate = commands.add_parser("cp-o-int-candidate", help="Inspect the disabled CP O_int author template")
     cp_candidate.add_argument("--format", choices=("json",), default="json")
+
+    cp_field_action = commands.add_parser("cp-o-int-field-action", help="Build the source-traced symbolic CP O_int field/action candidate")
+    cp_field_action.add_argument("--format", choices=("json", "markdown"), default="json")
+
+    cp_field_stages = commands.add_parser("cp-o-int-field-action-stages", help="Show Sprint C construction stages")
+    cp_field_stages.add_argument("--format", choices=("json",), default="json")
+
+    cp_production = commands.add_parser("cp-o-int-production-eligibility", help="Show production and runtime eligibility")
+    cp_production.add_argument("--format", choices=("json",), default="json")
+
+    cp_action = commands.add_parser("cp-o-int-action-candidate", help="Show the symbolic action-density candidate")
+    cp_action.add_argument("--format", choices=("json",), default="json")
     return parser
 
 
@@ -277,6 +290,25 @@ def main(argv: Sequence[str] | None = None) -> int:
         template = load_cp_o_int_candidate_template()
         cp_report = build_cp_o_int_report()
         print(json.dumps({"template": template, "evaluation": {"status": cp_report.status_after, "promoted": cp_report.promoted, "conditional_author_axiom_used": cp_report.conditional_author_axiom_used}}, indent=2, sort_keys=True))
+        return 0
+    if args.command == "cp-o-int-field-action":
+        cp_report = build_cp_o_int_field_action_report()
+        if args.format == "markdown":
+            print(cp_o_int_sprint_c_to_markdown(cp_report), end="")
+        else:
+            print(json.dumps(cp_report.to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "cp-o-int-field-action-stages":
+        cp_report = build_cp_o_int_field_action_report()
+        print(json.dumps({"candidate_key": cp_report.candidate_key, "status": cp_report.status_after, "deepest_valid_stage_before": cp_report.deepest_valid_stage_before, "deepest_valid_stage_after": cp_report.deepest_valid_stage_after, "first_failed_required_stage": cp_report.first_failed_required_stage, "stages": [stage.__dict__ for stage in cp_report.stages]}, indent=2, sort_keys=True))
+        return 0
+    if args.command == "cp-o-int-production-eligibility":
+        cp_report = build_cp_o_int_field_action_report()
+        print(json.dumps({"candidate_key": cp_report.candidate_key, "production_eligible": cp_report.production_eligible, "runtime_export_eligible": cp_report.runtime_export_eligible, "production_eligibility": cp_report.production_eligibility, "runtime_gates_changed": cp_report.runtime_gate_changes}, indent=2, sort_keys=True))
+        return 0
+    if args.command == "cp-o-int-action-candidate":
+        cp_report = build_cp_o_int_field_action_report()
+        print(json.dumps({"candidate_key": cp_report.candidate_key, "candidate_status": cp_report.candidate_status, "theorem_status": cp_report.status_after, "action_density": cp_report.action_density, "symbolic_callable": cp_report.symbolic_callable, "production_eligible": cp_report.production_eligible}, indent=2, sort_keys=True))
         return 0
     particles = tuple(item.strip() for item in args.particles.split(",") if item.strip())
     report = build_prediction_report(
