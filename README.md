@@ -71,6 +71,25 @@ See:
 - `docs/python_interface_quickstart.md`
 - `examples/bhsm_solve_w_and_neutrino.py`
 
+## Python prediction registry and CLI
+
+BHSM includes a Python prediction registry and command-line interface for
+inspecting calibration anchors, model predictions, upper-limit comparisons,
+frozen internal prediction artifacts, open-theorem blockers, and
+runtime-disabled software gates.
+
+The registry is designed to prevent overclaiming. If W is used as the
+geometric-to-physical calibration anchor, W is not counted as an independent
+prediction in that run. Electron-neutrino comparisons are treated as
+upper-limit comparisons unless a vetted central mass reference is supplied.
+
+```powershell
+python -m bhsm.interface registry
+python -m bhsm.interface status W_boson
+python -m bhsm.interface predict --particle electron_neutrino --anchor W_boson
+python -m bhsm.interface report --anchor W_boson --particles W_boson,electron_neutrino --format json
+```
+
 ## Collider / CERN Software Readiness
 
 BHSM v1.0.1 is not an Athena, CMSSW, or detector-simulation-ready software

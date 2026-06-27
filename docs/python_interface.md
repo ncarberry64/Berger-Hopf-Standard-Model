@@ -70,3 +70,7 @@ demonstrations.
 
 See `docs/python_interface_quickstart.md` and
 `docs/python_interface_validation_policy.md`.
+
+The prediction registry and reviewer-report layer are documented in
+`docs/python_prediction_registry.md`, `docs/python_cli.md`, and
+`docs/python_prediction_report.md`.
