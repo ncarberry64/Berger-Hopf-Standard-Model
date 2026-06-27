@@ -569,3 +569,23 @@ python -m bhsm.interface artifact-report --anchor W_boson --format json
 
 See `docs/artifact_backed_prediction_adapters.md` and
 `docs/artifact_backed_claim_policy.md` for the provenance and claim boundaries.
+
+## Theorem closure attempts
+
+BHSM includes executable theorem-closure attempt machinery for `X_ch`, the
+neutrino physical basis/scale theorem, and standalone CP `O_int` attachment.
+
+The closure system requires formal statements, operator/action terms,
+callables, artifacts, provenance records, proof-gate checks, tests, and
+claim-safe registry updates before a blocker can be promoted. Narrative
+plausibility is not enough.
+
+Reference values, including PDG values, are comparison inputs only and are
+never theorem inputs. Runtime-disabled software gates remain disabled until
+live external validation passes.
+
+```powershell
+python -m bhsm.interface theorem-closure-report --format markdown
+python -m bhsm.interface close-theorem X_ch --format json
+python -m bhsm.interface theorem-proof-gates neutrino_basis_scale
+```

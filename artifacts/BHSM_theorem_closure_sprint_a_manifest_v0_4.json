@@ -1,0 +1,121 @@
+{
+  "artifacts_checked": [
+    "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json",
+    "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json",
+    "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
+    "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
+    "artifacts/CP_no_fit_holonomy_output_v1.json"
+  ],
+  "callables_added": [
+    "bhsm.interface.theorem_closure.x_ch.evaluate_x_ch_candidate",
+    "bhsm.interface.theorem_closure.neutrino_basis_scale.evaluate_neutrino_basis_scale_candidate",
+    "bhsm.interface.theorem_closure.cp_o_int.evaluate_cp_o_int_candidate"
+  ],
+  "claim_boundaries": [
+    "X_ch is not a production-ready interaction without an explicit action-backed theorem.",
+    "The neutral boundary kernel is not a physical neutrino mass matrix without basis, scale, and Dirac/Majorana theorem support.",
+    "The CP phase seed is not a standalone production interaction without an explicit O_int attachment theorem."
+  ],
+  "closure_statuses": {
+    "X_ch": "OPEN_EXACT_MISSING_THEOREM",
+    "cp_o_int": "OPEN_MISSING_INTERACTION_ATTACHMENT",
+    "neutrino_basis_scale": "OPEN_EXACT_MISSING_THEOREM"
+  },
+  "empirical_derivation_inputs_used": false,
+  "existing_physics_model_logic_changed": false,
+  "feynrules_required": false,
+  "frozen_predictions_changed": false,
+  "internet_required": false,
+  "madgraph_required": false,
+  "pdg_required": false,
+  "promotions_allowed": [],
+  "promotions_applied": [],
+  "proof_gates": [
+    {
+      "gate_id": "G01",
+      "name": "formal theorem statement exists"
+    },
+    {
+      "gate_id": "G02",
+      "name": "domain and codomain are defined"
+    },
+    {
+      "gate_id": "G03",
+      "name": "operator/action term is defined"
+    },
+    {
+      "gate_id": "G04",
+      "name": "callable implementation exists"
+    },
+    {
+      "gate_id": "G05",
+      "name": "input/output schema exists"
+    },
+    {
+      "gate_id": "G06",
+      "name": "artifact source exists"
+    },
+    {
+      "gate_id": "G07",
+      "name": "provenance chain exists"
+    },
+    {
+      "gate_id": "G08",
+      "name": "no empirical derivation inputs are used"
+    },
+    {
+      "gate_id": "G09",
+      "name": "no reference/PDG values are derivation inputs"
+    },
+    {
+      "gate_id": "G10",
+      "name": "consistency checks pass"
+    },
+    {
+      "gate_id": "G11",
+      "name": "registry status update is generated"
+    },
+    {
+      "gate_id": "G12",
+      "name": "claim policy is explicit"
+    },
+    {
+      "gate_id": "G13",
+      "name": "theorem blocker artifact records the attempt"
+    },
+    {
+      "gate_id": "G14",
+      "name": "gauge/sector admissibility checks pass"
+    },
+    {
+      "gate_id": "G15",
+      "name": "dimensional/unit policy is explicit"
+    },
+    {
+      "gate_id": "G16",
+      "name": "calibration policy is explicit"
+    },
+    {
+      "gate_id": "G17",
+      "name": "failure modes are documented"
+    }
+  ],
+  "reference_values_used_as_derivation_inputs": false,
+  "registry_entries_affected": [
+    "charged_boundary_response_matrix",
+    "cp_holonomy_phase_attachment",
+    "feynrules_minimal_model",
+    "madgraph_smoke_test",
+    "minimal_collider_interface_subset",
+    "neutral_operator_kernel_BH",
+    "ufo_export"
+  ],
+  "sprint_name": "BHSM Theorem Closure Sprint A",
+  "theorems_attempted": [
+    "X_ch",
+    "neutrino_basis_scale",
+    "cp_o_int"
+  ],
+  "version": "0.4",
+  "wolfram_required": false
+}

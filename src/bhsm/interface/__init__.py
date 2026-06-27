@@ -22,6 +22,7 @@ from .report import PredictionReport, build_prediction_report
 from .provenance import ProvenanceChain, ProvenanceRecord, ValueWithProvenance
 from .speculative import SpeculativeCandidate, SpeculativeCandidateRegistry
 from .theorem_blockers import TheoremBlocker, TheoremBlockerRegistry, attempt_theorem_closure
+from .theorem_closure import TheoremClosureReport, TheoremClosureResult, build_theorem_closure_report, evaluate_theorem
 from .solver import ParticleMassSolver, SolverResult
 from .units import GeometricUnitMapper
 from .validation import ExperimentalValue, ValidationComparison, curated_fallback_references
@@ -53,6 +54,8 @@ __all__ = [
     "SpeculativeCandidateRegistry",
     "TheoremBlocker",
     "TheoremBlockerRegistry",
+    "TheoremClosureReport",
+    "TheoremClosureResult",
     "SolverResult",
     "ValidationComparison",
     "ValueWithProvenance",
@@ -66,7 +69,9 @@ __all__ = [
     "compute_artifact",
     "discover_bhsm_artifacts",
     "evaluate_formula",
+    "evaluate_theorem",
     "attempt_theorem_closure",
+    "build_theorem_closure_report",
     "check_notebook_pack",
     "notebook_pack_manifest",
     "load_reference_with_fallback",

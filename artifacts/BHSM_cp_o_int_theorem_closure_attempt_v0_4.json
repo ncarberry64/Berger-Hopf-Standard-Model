@@ -1,0 +1,241 @@
+{
+  "action_term": {
+    "expression": "exp(i*pi/3) O_int + h.c.; O_int undefined",
+    "missing_objects": [
+      "standalone interaction operator O_int with field content, Lorentz structure, gauge representation, and coupling placement"
+    ],
+    "source_artifacts": [
+      "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json",
+      "artifacts/CP_no_fit_holonomy_output_v1.json"
+    ],
+    "source_status": "OPEN_MISSING_INTERACTION_ATTACHMENT",
+    "symbol": "L_CP_O_int"
+  },
+  "artifact_sources": [
+    "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json",
+    "artifacts/CP_no_fit_holonomy_output_v1.json"
+  ],
+  "calibration_inputs_used": false,
+  "callable_available": false,
+  "callable_key": "cp_o_int_standalone_attachment",
+  "claim_boundary": "The CP phase seed is not a standalone production interaction without an explicit O_int attachment theorem.",
+  "closure_status": "OPEN_MISSING_INTERACTION_ATTACHMENT",
+  "codomain": "unspecified CP-sensitive production amplitudes",
+  "display_name": "Standalone CP O_int attachment theorem",
+  "domain": "unspecified production fields",
+  "empirical_derivation_inputs_used": false,
+  "formal_statement": {
+    "assumptions": [
+      "delta_BH=pi/3 is a phase seed",
+      "matrix-phase attachment is not a standalone interaction"
+    ],
+    "statement": "The BHSM holonomy phase defines a standalone interaction only if an action-derived O_int fixes field content, Lorentz and gauge structure, coupling placement, and admissible sectors.",
+    "status": "FORMAL_CONDITIONAL_STATEMENT",
+    "theorem_key": "cp_o_int"
+  },
+  "missing_objects": [
+    "standalone interaction operator O_int with field content, Lorentz structure, gauge representation, and coupling placement"
+  ],
+  "notes": [
+    "delta_BH and Z6 phase are artifact-backed internal values."
+  ],
+  "operator_definition": {
+    "codomain": "unspecified CP-sensitive production amplitudes",
+    "domain": "unspecified production fields",
+    "expression": "exp(i*delta_BH) O_int + h.c.",
+    "name": "standalone O_int candidate",
+    "status": "PHASE_DEFINED_INTERACTION_OPERATOR_MISSING"
+  },
+  "promotion_allowed": false,
+  "promotion_reason": "O_int definition, action, callable, admissibility, and dimensional gates fail.",
+  "proof_gates": [
+    {
+      "evidence": "A formal standalone-interaction eligibility statement is encoded.",
+      "gate_id": "G01",
+      "limitations": "",
+      "name": "formal theorem statement exists",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "No supporting evidence supplied.",
+      "gate_id": "G02",
+      "limitations": "Standalone field domain and production-amplitude codomain are absent.",
+      "name": "domain and codomain are defined",
+      "passes": false,
+      "required": true
+    },
+    {
+      "evidence": "No supporting evidence supplied.",
+      "gate_id": "G03",
+      "limitations": "O_int has no field, Lorentz, gauge, or coupling definition.",
+      "name": "operator/action term is defined",
+      "passes": false,
+      "required": true
+    },
+    {
+      "evidence": "No supporting evidence supplied.",
+      "gate_id": "G04",
+      "limitations": "No standalone CP interaction callable exists.",
+      "name": "callable implementation exists",
+      "passes": false,
+      "required": true
+    },
+    {
+      "evidence": "The closure-attempt callable has explicit schemas.",
+      "gate_id": "G05",
+      "limitations": "",
+      "name": "input/output schema exists",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "The holonomy phase and v1.1 blocker are local machine-readable artifacts.",
+      "gate_id": "G06",
+      "limitations": "",
+      "name": "artifact source exists",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "The phase and blocker sources are recorded.",
+      "gate_id": "G07",
+      "limitations": "",
+      "name": "provenance chain exists",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "The artifacts record no empirical derivation inputs.",
+      "gate_id": "G08",
+      "limitations": "",
+      "name": "no empirical derivation inputs are used",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "No observed CP or PDG value is read.",
+      "gate_id": "G09",
+      "limitations": "",
+      "name": "no reference/PDG values are derivation inputs",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "delta_BH and Z6 phase consistency checks pass; standalone promotion remains false.",
+      "gate_id": "G10",
+      "limitations": "",
+      "name": "consistency checks pass",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "The sprint generates a separate registry update proposal.",
+      "gate_id": "G11",
+      "limitations": "",
+      "name": "registry status update is generated",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "The claim policy separates phase attachment from standalone interaction closure.",
+      "gate_id": "G12",
+      "limitations": "",
+      "name": "claim policy is explicit",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "The existing blocker artifact records the missing O_int theorem.",
+      "gate_id": "G13",
+      "limitations": "",
+      "name": "theorem blocker artifact records the attempt",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "No supporting evidence supplied.",
+      "gate_id": "G14",
+      "limitations": "Gauge and sector admissibility cannot be tested without O_int.",
+      "name": "gauge/sector admissibility checks pass",
+      "passes": false,
+      "required": true
+    },
+    {
+      "evidence": "No supporting evidence supplied.",
+      "gate_id": "G15",
+      "limitations": "Coupling dimension and normalization are absent.",
+      "name": "dimensional/unit policy is explicit",
+      "passes": false,
+      "required": true
+    },
+    {
+      "evidence": "No calibration input is accepted or used.",
+      "gate_id": "G16",
+      "limitations": "",
+      "name": "calibration policy is explicit",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "standalone interaction operator O_int with field content, Lorentz structure, gauge representation, and coupling placement",
+      "gate_id": "G17",
+      "limitations": "",
+      "name": "failure modes are documented",
+      "passes": true,
+      "required": true
+    }
+  ],
+  "provenance": [
+    {
+      "empirical_derivation_input": false,
+      "reference_comparison_input": false,
+      "source_path": "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json",
+      "source_status": "DISCOVERED"
+    },
+    {
+      "calibration_input": false,
+      "claim_status": "PHASE_ARTIFACT_AVAILABLE_STANDALONE_O_INT_REMAINS_OPEN",
+      "empirical_derivation_input": false,
+      "frozen_prediction": true,
+      "loaded_at_runtime": true,
+      "metadata": {
+        "CP_boundary_holonomy": "CLOSED"
+      },
+      "notes": [
+        "Artifact-backed phase seed; not a standalone production CP vertex."
+      ],
+      "reference_comparison_input": false,
+      "source_artifact_key": "CP_no_fit_holonomy_output_v1",
+      "source_field": "delta_BH,delta_BH_formula,Z6_boundary_phase",
+      "source_path": "artifacts/CP_no_fit_holonomy_output_v1.json",
+      "source_status": "DISCOVERED",
+      "unit": "radian and dimensionless phase",
+      "value": {
+        "Z6_boundary_phase": {
+          "imag": 0.8660254037844386,
+          "real": 0.5
+        },
+        "delta_BH": 1.0471975511965976,
+        "delta_BH_formula": "pi/3"
+      },
+      "value_key": "cp_holonomy_phase_attachment",
+      "value_kind": "complex_phase"
+    }
+  ],
+  "reference_values_used_as_derivation_inputs": false,
+  "registry_entries_affected": [
+    "cp_holonomy_phase_attachment",
+    "minimal_collider_interface_subset",
+    "feynrules_minimal_model",
+    "ufo_export",
+    "madgraph_smoke_test"
+  ],
+  "status_after": "OPEN_MISSING_INTERACTION_ATTACHMENT",
+  "status_before": "OPEN_EXACT_MISSING_THEOREM",
+  "theorem_key": "cp_o_int",
+  "warnings": [
+    "CKM/PMNS phase attachment does not define a standalone CP vertex.",
+    "Runtime software gates remain disabled."
+  ]
+}

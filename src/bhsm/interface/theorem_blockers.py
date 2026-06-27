@@ -71,15 +71,15 @@ def default_theorem_blockers() -> TheoremBlockerRegistry:
     rows = (
         TheoremBlocker("X_ch", "Charged boundary-response interaction", OPEN,
                        "explicit X_ch production interaction theorem", ("charged_boundary_response_matrix",),
-                       ("artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json", "artifacts/BHSM_interaction_theorem_closure_audit_v1_1.json"),
+                       ("artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json", "artifacts/BHSM_interaction_theorem_closure_audit_v1_1.json", "artifacts/BHSM_x_ch_theorem_closure_attempt_v0_4.json"),
                        "explicit X_ch production interaction theorem", "This is a theorem blocker, not a production prediction."),
         TheoremBlocker("neutrino_basis_scale_dirac_majorana", "Neutrino basis, scale, and Dirac/Majorana convention", OPEN,
                        "physical neutrino basis, dimensional scale, and Dirac/Majorana theorem", ("neutral_operator_kernel_BH",),
-                       ("artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json", "artifacts/BHSM_interaction_theorem_closure_audit_v1_1.json"),
+                       ("artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json", "artifacts/BHSM_interaction_theorem_closure_audit_v1_1.json", "artifacts/BHSM_neutrino_basis_scale_theorem_closure_attempt_v0_4.json"),
                        "physical neutrino basis + dimensional scale + Dirac/Majorana convention", "This is a theorem blocker, not a production prediction."),
         TheoremBlocker("cp_o_int", "Standalone CP O_int attachment", OPEN,
                        "standalone CP O_int interaction attachment", ("cp_holonomy_phase_attachment",),
-                       ("artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json", "artifacts/BHSM_interaction_theorem_closure_audit_v1_1.json"),
+                       ("artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json", "artifacts/BHSM_interaction_theorem_closure_audit_v1_1.json", "artifacts/BHSM_cp_o_int_theorem_closure_attempt_v0_4.json"),
                        "standalone CP O_int interaction attachment", "This is a theorem blocker, not a production prediction."),
     )
     return TheoremBlockerRegistry({row.blocker_key: row for row in rows})

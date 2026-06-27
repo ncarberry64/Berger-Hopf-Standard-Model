@@ -19,6 +19,8 @@ from .notebook_pack import check_notebook_pack, notebook_pack_manifest
 from .plotting import generate_gallery_plots, is_matplotlib_available
 from .speculative import build_speculative_report, default_speculative_registry
 from .theorem_blockers import attempt_theorem_closure, default_theorem_blockers
+from .theorem_closure import build_theorem_closure_report, evaluate_theorem
+from .theorem_closure.closure_report import theorem_closure_report_to_markdown
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -111,6 +113,17 @@ def build_parser() -> argparse.ArgumentParser:
     artifact_report = commands.add_parser("artifact-report", help="Build the provenance-aware artifact report")
     artifact_report.add_argument("--anchor", default="W_boson")
     artifact_report.add_argument("--format", choices=("json", "markdown"), default="json")
+
+    closure_report = commands.add_parser("theorem-closure-report", help="Run all strict theorem proof-gate attempts")
+    closure_report.add_argument("--format", choices=("json", "markdown"), default="json")
+
+    close_theorem = commands.add_parser("close-theorem", help="Attempt one theorem closure without inferring missing objects")
+    close_theorem.add_argument("theorem_key", choices=("X_ch", "neutrino_basis_scale", "cp_o_int"))
+    close_theorem.add_argument("--format", choices=("json", "text"), default="json")
+
+    proof_gates = commands.add_parser("theorem-proof-gates", help="Show proof gates for one theorem attempt")
+    proof_gates.add_argument("theorem_key", choices=("X_ch", "neutrino_basis_scale", "cp_o_int"))
+    proof_gates.add_argument("--format", choices=("json", "text"), default="json")
     return parser
 
 
@@ -209,6 +222,27 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(artifact_report_to_markdown(artifact_report), end="")
         else:
             print(json.dumps(artifact_report.to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "theorem-closure-report":
+        closure_report = build_theorem_closure_report()
+        if args.format == "markdown":
+            print(theorem_closure_report_to_markdown(closure_report), end="")
+        else:
+            print(json.dumps(closure_report.to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "close-theorem":
+        result = evaluate_theorem(args.theorem_key)
+        _emit(result.to_dict(), args.format)
+        return 0
+    if args.command == "theorem-proof-gates":
+        result = evaluate_theorem(args.theorem_key)
+        payload = {
+            "theorem_key": result.theorem_key,
+            "closure_status": result.closure_status,
+            "promotion_allowed": result.promotion_allowed,
+            "proof_gates": [gate.__dict__ for gate in result.proof_gates],
+        }
+        _emit(payload, args.format)
         return 0
     particles = tuple(item.strip() for item in args.particles.split(",") if item.strip())
     report = build_prediction_report(
