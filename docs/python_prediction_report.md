@@ -23,3 +23,5 @@ The generated reference artifact is
 `artifacts/BHSM_prediction_report_example_v0_1.json`.
 
 The report remains a review artifact and does not establish empirical validation.
+
+Gallery and speculative layers do not alter default report contents.

@@ -4,10 +4,17 @@ from __future__ import annotations
 
 import argparse
 import json
+from pathlib import Path
 from typing import Any, Sequence
 
 from .predictions import PredictionStatus, default_prediction_registry
 from .report import build_prediction_report
+from .gallery import build_prediction_gallery, gallery_to_markdown
+from .live_pdg import is_live_pdg_available, load_reference_with_live_then_fallback
+from .notebook_pack import check_notebook_pack, notebook_pack_manifest
+from .plotting import generate_gallery_plots, is_matplotlib_available
+from .speculative import build_speculative_report, default_speculative_registry
+from .theorem_blockers import attempt_theorem_closure, default_theorem_blockers
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -53,6 +60,36 @@ def build_parser() -> argparse.ArgumentParser:
     report.add_argument("--particles", default="W_boson,electron_neutrino")
     report.add_argument("--include-open-theorem", action="store_true")
     report.add_argument("--format", choices=("text", "json"), default="text")
+
+    gallery = commands.add_parser("gallery", help="Build the claim-safe prediction gallery")
+    gallery.add_argument("--format", choices=("json", "markdown"), default="json")
+    gallery.add_argument("--write", default=None)
+    gallery.add_argument("--include-speculative", action="store_true")
+
+    plots = commands.add_parser("plot-gallery", help="Generate deterministic registry/status plots")
+    plots.add_argument("--dry-run", action="store_true")
+    plots.add_argument("--output-dir", default="artifacts/plots")
+
+    notebooks = commands.add_parser("notebook-pack", help="Inspect the parse-only notebook pack")
+    notebooks.add_argument("--manifest", action="store_true")
+    notebooks.add_argument("--check", action="store_true")
+
+    commands.add_parser("pdg-status", help="Report optional live PDG adapter availability")
+    pdg_fetch = commands.add_parser("pdg-fetch", help="Fetch a comparison reference with fallback")
+    pdg_fetch.add_argument("--particle", required=True)
+    pdg_fetch.add_argument("--offline-ok", action="store_true")
+
+    speculative = commands.add_parser("speculative", help="Inspect disabled speculative templates")
+    spec_commands = speculative.add_subparsers(dest="speculative_command", required=True)
+    spec_commands.add_parser("list")
+    spec_report = spec_commands.add_parser("report")
+    spec_report.add_argument("--format", choices=("json", "text"), default="text")
+    spec_report.add_argument("--include-template", action="store_true")
+
+    commands.add_parser("theorem-blockers", help="List exact unresolved theorem objects")
+    attempt = commands.add_parser("theorem-attempt", help="Run an artifact-backed closure attempt")
+    attempt.add_argument("--blocker", required=True, choices=("X_ch", "neutrino_basis_scale", "neutrino_basis_scale_dirac_majorana", "cp_o_int"))
+    attempt.add_argument("--format", choices=("json", "text"), default="text")
     return parser
 
 
@@ -80,6 +117,45 @@ def main(argv: Sequence[str] | None = None) -> int:
             anchor = "W_boson"
         report = build_prediction_report(anchor_particle=anchor, particles=(args.particle,), registry=registry)
         _emit(report.to_dict(), args.format)
+        return 0
+    if args.command == "gallery":
+        gallery = build_prediction_gallery(include_speculative=args.include_speculative)
+        output = gallery_to_markdown(gallery) if args.format == "markdown" else json.dumps(gallery.to_dict(), indent=2, sort_keys=True)
+        if args.write:
+            Path(args.write).write_text(output, encoding="utf-8")
+        print(output, end="" if output.endswith("\n") else "\n")
+        return 0
+    if args.command == "plot-gallery":
+        print(json.dumps(generate_gallery_plots(args.output_dir, dry_run=args.dry_run), indent=2, sort_keys=True))
+        return 0
+    if args.command == "notebook-pack":
+        payload = check_notebook_pack() if args.check else notebook_pack_manifest()
+        print(json.dumps(payload, indent=2, sort_keys=True))
+        return 0 if not args.check or payload["passed"] else 1
+    if args.command == "pdg-status":
+        print(json.dumps({"live_pdg_available": is_live_pdg_available(), "fallback_available": True, "internet_required": False, "reference_only": True}, indent=2, sort_keys=True))
+        return 0
+    if args.command == "pdg-fetch":
+        try:
+            payload = load_reference_with_live_then_fallback(args.particle, offline_ok=args.offline_ok).to_dict()
+        except (KeyError, RuntimeError) as exc:
+            print(json.dumps({"particle_key": args.particle, "status": "unavailable", "error": str(exc)}, indent=2, sort_keys=True))
+            return 2
+        print(json.dumps(payload, indent=2, sort_keys=True))
+        return 0
+    if args.command == "speculative":
+        if args.speculative_command == "list":
+            payload = default_speculative_registry().to_dict()
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        else:
+            _emit(build_speculative_report(args.include_template).to_dict(), args.format)
+        return 0
+    if args.command == "theorem-blockers":
+        print(json.dumps(default_theorem_blockers().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "theorem-attempt":
+        key = "neutrino_basis_scale_dirac_majorana" if args.blocker == "neutrino_basis_scale" else args.blocker
+        _emit(attempt_theorem_closure(key).to_dict(), args.format)
         return 0
     particles = tuple(item.strip() for item in args.particles.split(",") if item.strip())
     report = build_prediction_report(

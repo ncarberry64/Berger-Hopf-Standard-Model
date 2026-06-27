@@ -1,0 +1,115 @@
+"""Artifact-traced closure attempts for unresolved collider-interface theorems."""
+
+from __future__ import annotations
+
+import json
+from dataclasses import asdict, dataclass
+from pathlib import Path
+from typing import Any, Mapping
+
+OPEN = "OPEN_EXACT_MISSING_THEOREM"
+ALLOWED_CLOSURE_STATUSES = (
+    OPEN,
+    "DERIVED_FROM_REPO_ARTIFACT",
+    "DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM",
+    "PARTIAL_INTERFACE_CONVENTION_ONLY",
+    "FORBIDDEN_TO_PROMOTE_WITHOUT_NEW_THEOREM",
+)
+
+
+@dataclass(frozen=True)
+class TheoremBlocker:
+    blocker_key: str
+    display_name: str
+    current_status: str
+    required_theorem: str
+    affected_registry_entries: tuple[str, ...]
+    source_artifacts_checked: tuple[str, ...]
+    missing_object: str
+    claim_boundary: str
+    notes: tuple[str, ...] = ()
+
+    def to_dict(self) -> dict[str, Any]:
+        payload = asdict(self)
+        for key in ("affected_registry_entries", "source_artifacts_checked", "notes"):
+            payload[key] = list(payload[key])
+        return payload
+
+
+@dataclass(frozen=True)
+class TheoremAttemptResult:
+    blocker_key: str
+    closure_attempted: bool
+    closure_status: str
+    closure_result: str
+    missing_object: str | None
+    source_artifacts_checked: tuple[str, ...]
+    theorem_input_used: bool
+    empirical_inputs_used: bool
+    claim_boundary: str
+
+    def to_dict(self) -> dict[str, Any]:
+        payload = asdict(self)
+        payload["source_artifacts_checked"] = list(self.source_artifacts_checked)
+        return payload
+
+
+@dataclass
+class TheoremBlockerRegistry:
+    blockers: dict[str, TheoremBlocker]
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "registry_name": "BHSM Theorem Blocker Registry",
+            "version": "0.2",
+            "allowed_closure_statuses": list(ALLOWED_CLOSURE_STATUSES),
+            "blockers": [self.blockers[key].to_dict() for key in sorted(self.blockers)],
+        }
+
+
+def default_theorem_blockers() -> TheoremBlockerRegistry:
+    rows = (
+        TheoremBlocker("X_ch", "Charged boundary-response interaction", OPEN,
+                       "explicit X_ch production interaction theorem", ("charged_boundary_response_matrix",),
+                       ("artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json", "artifacts/BHSM_interaction_theorem_closure_audit_v1_1.json"),
+                       "explicit X_ch production interaction theorem", "This is a theorem blocker, not a production prediction."),
+        TheoremBlocker("neutrino_basis_scale_dirac_majorana", "Neutrino basis, scale, and Dirac/Majorana convention", OPEN,
+                       "physical neutrino basis, dimensional scale, and Dirac/Majorana theorem", ("neutral_operator_kernel_BH",),
+                       ("artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json", "artifacts/BHSM_interaction_theorem_closure_audit_v1_1.json"),
+                       "physical neutrino basis + dimensional scale + Dirac/Majorana convention", "This is a theorem blocker, not a production prediction."),
+        TheoremBlocker("cp_o_int", "Standalone CP O_int attachment", OPEN,
+                       "standalone CP O_int interaction attachment", ("cp_holonomy_phase_attachment",),
+                       ("artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json", "artifacts/BHSM_interaction_theorem_closure_audit_v1_1.json"),
+                       "standalone CP O_int interaction attachment", "This is a theorem blocker, not a production prediction."),
+    )
+    return TheoremBlockerRegistry({row.blocker_key: row for row in rows})
+
+
+def attempt_theorem_closure(
+    blocker_key: str,
+    repository_root: Path | None = None,
+    theorem_input: Mapping[str, Any] | None = None,
+) -> TheoremAttemptResult:
+    registry = default_theorem_blockers()
+    blocker = registry.blockers.get(blocker_key)
+    if blocker is None:
+        raise KeyError(blocker_key)
+    root = repository_root or Path(__file__).resolve().parents[3]
+    checked = tuple(path for path in blocker.source_artifacts_checked if (root / path).is_file())
+    conditional = bool(
+        theorem_input
+        and theorem_input.get("author_supplied") is True
+        and blocker_key in theorem_input.get("affected_blockers", [])
+        and theorem_input.get("allowed_status_if_loaded") == "DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM"
+    )
+    if conditional:
+        return TheoremAttemptResult(blocker_key, True, "DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM",
+                                    "Author-supplied axiom loaded conditionally; production promotion remains unavailable.",
+                                    blocker.missing_object, checked, True, False, blocker.claim_boundary)
+    return TheoremAttemptResult(blocker_key, True, OPEN,
+                                "Repository artifacts record the attempted interface and exact missing theorem; no closure artifact is present.",
+                                blocker.missing_object, checked, False, False, blocker.claim_boundary)
+
+
+def attempt_all_theorem_closures(repository_root: Path | None = None) -> list[TheoremAttemptResult]:
+    return [attempt_theorem_closure(key, repository_root) for key in sorted(default_theorem_blockers().blockers)]
