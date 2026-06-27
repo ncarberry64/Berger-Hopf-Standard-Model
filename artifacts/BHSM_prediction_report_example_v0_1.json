@@ -1,0 +1,195 @@
+{
+  "anchor_particle": "W_boson",
+  "boundary_predictions_modified_by_runtime_inputs": false,
+  "calibration_metadata": {
+    "anchor_is_independent_prediction": false,
+    "anchor_mass_gev": 80.3692,
+    "anchor_particle": "W_boson",
+    "anchor_source": "Particle Data Group 2024 W-boson listing",
+    "calibration_mode": "EMPIRICAL_CALIBRATION_ANCHOR",
+    "natural_units": "c=1; masses reported in GeV/c^2 convention",
+    "scale_gev_per_tension": 80.3692
+  },
+  "claim_boundaries": [
+    "The BHSM CKM source matrix is an internal artifact; external comparison remains separate.",
+    "The BHSM PMNS source matrix is internal; the physical neutrino mass/basis theorem remains separate.",
+    "W may calibrate the geometric-to-physical scale; when used as anchor it is not an independent prediction.",
+    "Not promoted to a production vertex.",
+    "The phase source is not a standalone production CP vertex.",
+    "Electron-neutrino comparison is upper-limit based unless a vetted central reference is supplied.",
+    "The .fr model remains disabled until live Wolfram/FeynRules validation passes.",
+    "MadGraph readiness remains false until a real smoke test passes.",
+    "Bounded CKM/PMNS collider-interface subset only; not the complete BHSM 4D Lagrangian.",
+    "This boundary/operator source is not a physical collider neutrino mass matrix.",
+    "UFO readiness remains false until real export and loadability pass."
+  ],
+  "claims_of_empirical_validation": false,
+  "comparisons": [
+    {
+      "above_lower_limit": null,
+      "absolute_delta_gev": 0.0,
+      "below_upper_limit": null,
+      "comparison_status": "COMPARISON_ONLY_NOT_EMPIRICAL_VALIDATION",
+      "delta_gev": 0.0,
+      "distance_to_range": null,
+      "inside_range": null,
+      "lower_limit_margin_gev": null,
+      "particle_key": "W_boson",
+      "predicted_mass_gev": 80.3692,
+      "reference": {
+        "confidence_level": null,
+        "lower_gev": null,
+        "metadata": {
+          "pdg_package_available": false,
+          "pdg_query_status": "PACKAGE_UNAVAILABLE",
+          "reference_loader": "curated_offline_fallback",
+          "reference_role": "comparison_or_explicit_calibration_only"
+        },
+        "particle_key": "W_boson",
+        "reference_kind": "central_value",
+        "source_label": "Particle Data Group 2024 W-boson listing",
+        "source_url": "https://pdg.lbl.gov/2024/listings/rpp2024-list-w-boson.pdf",
+        "uncertainty_gev": 0.0133,
+        "upper_gev": null,
+        "value_gev": 80.3692
+      },
+      "reference_used_as_derivation_input": false,
+      "relative_delta": 0.0,
+      "sigma_delta": 0.0,
+      "upper_limit_margin_gev": null
+    },
+    {
+      "above_lower_limit": null,
+      "absolute_delta_gev": null,
+      "below_upper_limit": true,
+      "comparison_status": "COMPARISON_ONLY_NOT_EMPIRICAL_VALIDATION",
+      "delta_gev": null,
+      "distance_to_range": null,
+      "inside_range": null,
+      "lower_limit_margin_gev": null,
+      "particle_key": "electron_neutrino",
+      "predicted_mass_gev": 8.03692e-11,
+      "reference": {
+        "confidence_level": "90% CL",
+        "lower_gev": null,
+        "metadata": {
+          "not_a_measured_central_mass": true,
+          "pdg_package_available": false,
+          "pdg_query_status": "PACKAGE_UNAVAILABLE",
+          "reference_loader": "curated_offline_fallback",
+          "reference_role": "upper_limit_comparison_only"
+        },
+        "particle_key": "electron_neutrino",
+        "reference_kind": "upper_limit",
+        "source_label": "KATRIN latest-result kinematic upper limit",
+        "source_url": "https://www.katrin.kit.edu/1271.php",
+        "uncertainty_gev": null,
+        "upper_gev": 4.5e-10,
+        "value_gev": null
+      },
+      "reference_used_as_derivation_input": false,
+      "relative_delta": null,
+      "sigma_delta": null,
+      "upper_limit_margin_gev": 3.696308e-10
+    }
+  ],
+  "empirical_derivation_inputs_used": false,
+  "internet_required": false,
+  "pdg_dependency_required": false,
+  "predictions": [
+    {
+      "calibration_anchor": "W_boson",
+      "formula_status": "DEFAULT_INTERFACE_FORMULA; PLACEHOLDER_UNTIL_BHSM_THEOREM_SUPPLIED",
+      "initial_guess_gev": 80.3692,
+      "is_anchor_particle": true,
+      "mass_ev": 80369200000.0,
+      "mass_gev": 80.3692,
+      "metadata": {
+        "calibration_mode": "EMPIRICAL_CALIBRATION_ANCHOR",
+        "empirical_derivation_input_used": false,
+        "geometry_formula_status": "DEFAULT_INTERFACE_FORMULA; PLACEHOLDER_UNTIL_BHSM_THEOREM_SUPPLIED"
+      },
+      "particle_key": "W_boson",
+      "prediction_status": "CALIBRATION_ANCHOR_NOT_INDEPENDENT_PREDICTION",
+      "registry_default_status": "CALIBRATION_ANCHOR",
+      "residual": 0.0,
+      "solver_message": "The solution converged.",
+      "success": true
+    },
+    {
+      "calibration_anchor": "W_boson",
+      "formula_status": "DEFAULT_INTERFACE_FORMULA; PLACEHOLDER_UNTIL_BHSM_THEOREM_SUPPLIED",
+      "initial_guess_gev": 80.3692,
+      "is_anchor_particle": false,
+      "mass_ev": 0.0803692,
+      "mass_gev": 8.03692e-11,
+      "metadata": {
+        "calibration_mode": "EMPIRICAL_CALIBRATION_ANCHOR",
+        "empirical_derivation_input_used": false,
+        "geometry_formula_status": "DEFAULT_INTERFACE_FORMULA; PLACEHOLDER_UNTIL_BHSM_THEOREM_SUPPLIED"
+      },
+      "particle_key": "electron_neutrino",
+      "prediction_status": "MODEL_PREDICTION_GIVEN_CALIBRATION",
+      "registry_default_status": "MODEL_PREDICTION_GIVEN_CALIBRATION",
+      "residual": 0.0,
+      "solver_message": "The solution converged.",
+      "success": true
+    }
+  ],
+  "registry_statuses": [
+    {
+      "claim_boundary": "W may calibrate the geometric-to-physical scale; when used as anchor it is not an independent prediction.",
+      "particle_key": "W_boson",
+      "status": "CALIBRATION_ANCHOR_NOT_INDEPENDENT_PREDICTION"
+    },
+    {
+      "claim_boundary": "Electron-neutrino comparison is upper-limit based unless a vetted central reference is supplied.",
+      "particle_key": "electron_neutrino",
+      "status": "MODEL_PREDICTION_GIVEN_CALIBRATION"
+    },
+    {
+      "claim_boundary": "Not promoted to a production vertex.",
+      "particle_key": "charged_boundary_response_matrix",
+      "status": "OPEN_THEOREM_REQUIRED",
+      "theorem_status": "X_ch theorem missing for production boundary-response vertex"
+    },
+    {
+      "claim_boundary": "The phase source is not a standalone production CP vertex.",
+      "particle_key": "cp_holonomy_phase_attachment",
+      "status": "OPEN_THEOREM_REQUIRED",
+      "theorem_status": "standalone O_int theorem missing"
+    },
+    {
+      "claim_boundary": "The .fr model remains disabled until live Wolfram/FeynRules validation passes.",
+      "particle_key": "feynrules_minimal_model",
+      "status": "DISABLED_UNTIL_RUNTIME_VALIDATED",
+      "theorem_status": "NOT_APPLICABLE"
+    },
+    {
+      "claim_boundary": "MadGraph readiness remains false until a real smoke test passes.",
+      "particle_key": "madgraph_smoke_test",
+      "status": "DISABLED_UNTIL_RUNTIME_VALIDATED",
+      "theorem_status": "NOT_APPLICABLE"
+    },
+    {
+      "claim_boundary": "This boundary/operator source is not a physical collider neutrino mass matrix.",
+      "particle_key": "neutral_operator_kernel_BH",
+      "status": "OPEN_THEOREM_REQUIRED",
+      "theorem_status": "neutrino basis/scale/Dirac-Majorana theorem missing"
+    },
+    {
+      "claim_boundary": "UFO readiness remains false until real export and loadability pass.",
+      "particle_key": "ufo_export",
+      "status": "DISABLED_UNTIL_RUNTIME_VALIDATED",
+      "theorem_status": "NOT_APPLICABLE"
+    }
+  ],
+  "release_basis": "BHSM v1.1.0 plus Python interface v0.1",
+  "report_name": "BHSM Prediction Report",
+  "warnings": [
+    "If a particle mass is used to calibrate the geometric-to-physical unit scale, that same particle cannot be counted as an independent prediction in that run.",
+    "The electron-neutrino comparison is treated as an upper-limit comparison unless a vetted central experimental mass reference is explicitly supplied.",
+    "Open-theorem entries are registry blockers, not production-ready predictions.",
+    "Runtime-disabled software entries require live external validation before readiness can be claimed."
+  ]
+}

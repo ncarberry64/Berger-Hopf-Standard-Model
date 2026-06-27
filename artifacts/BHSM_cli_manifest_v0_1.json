@@ -1,0 +1,23 @@
+{
+  "entrypoint": "python -m bhsm.interface",
+  "commands": ["registry", "status", "predict", "report"],
+  "options": ["--format", "--particle", "--anchor", "--mode", "--particles", "--include-open-theorem"],
+  "offline_safe": true,
+  "requires_pdg": false,
+  "requires_internet": false,
+  "requires_wolfram": false,
+  "requires_feynrules": false,
+  "requires_madgraph": false,
+  "example_commands": [
+    "python -m bhsm.interface registry",
+    "python -m bhsm.interface status W_boson",
+    "python -m bhsm.interface predict --particle electron_neutrino --anchor W_boson",
+    "python -m bhsm.interface report --anchor W_boson --particles W_boson,electron_neutrino --format json"
+  ],
+  "claim_boundaries": [
+    "CLI demonstrations use placeholder geometry unless theorem callables are supplied.",
+    "Calibration anchors are not independent predictions.",
+    "Open theorem and runtime-disabled entries remain gated.",
+    "CLI output does not establish empirical validation."
+  ]
+}

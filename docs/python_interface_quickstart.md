@@ -48,6 +48,13 @@ python examples/bhsm_solve_w_and_neutrino.py
 python examples/bhsm_custom_geometry_scan.py
 ```
 
+Inspect the prediction registry and build an offline report:
+
+```powershell
+python -m bhsm.interface registry
+python -m bhsm.interface report --anchor W_boson --particles W_boson,electron_neutrino --format json
+```
+
 The electron-neutrino comparison is treated as an upper-limit comparison unless a vetted central experimental mass reference is explicitly supplied.
 
 Run focused tests:

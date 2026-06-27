@@ -1,0 +1,21 @@
+{
+  "calibration_anchor_policy": "A particle used to calibrate the unit scale is not an independent prediction in that run.",
+  "prediction_policy": "Predictions are conditional on declared geometry, equation, and calibration.",
+  "upper_limit_policy": "Electron-neutrino comparison is upper-limit based unless a vetted central reference is explicitly supplied.",
+  "open_theorem_policy": "Open-theorem entries are blockers and cannot be reported as production-ready predictions.",
+  "runtime_validation_policy": "Runtime-disabled software entries remain gated until live external tools pass their declared checks.",
+  "pdg_policy": "The pdg package is optional; offline provenance-tagged fallbacks are used without network access.",
+  "allowed_claims": [
+    "BHSM provides a Python prediction registry interface.",
+    "The registry separates calibration, prediction, comparison, blocker, and software-gate states.",
+    "CKM and PMNS source matrices are exposed as existing internal artifacts."
+  ],
+  "forbidden_claims": [
+    "A calibration anchor is an independent prediction in the same run.",
+    "The electron-neutrino fallback is a central measured mass.",
+    "The registry establishes empirical validation.",
+    "Runtime-disabled software is production-ready."
+  ],
+  "frozen_predictions_changed": false,
+  "empirical_derivation_inputs_used": false
+}
