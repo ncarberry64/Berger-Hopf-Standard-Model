@@ -33,6 +33,7 @@ validation remain outside the current package.
 | CP/Z6 holonomy | `ARTIFACT_BACKED` | The holonomy and CKM/PMNS phase attachment are local artifact-backed constraints; standalone `O_int` production is a retired target. |
 | `X_ch` | `CONDITIONAL_ACTION_THEOREM` | Author ontology defines a charged boundary-response operator; numerical and 4D production closure remain open. |
 | Neutrino BHSM mass | `CONDITIONAL_NUMERICAL_CLOSURE_CANDIDATE` | Local no-fit artifacts support a dimensionless propagation-threshold response; the eV/GeV scale remains open. |
+| Neutral dimensionful scale | `OPEN_MISSING_NEUTRAL_SCALE` | The local audit finds no physical unit anchor, normalized boundary measure, or threshold-to-energy map. |
 | FeynRules, UFO, MadGraph | `RUNTIME_GATED` | External validation is deferred until theorem and runtime gates pass. |
 
 [STATUS.md](STATUS.md) is the single source of truth for current area-level
@@ -88,6 +89,18 @@ The v0.9 neutrino module evaluates the conditional dimensionless law
 mass contribution is modeled as a propagation-locked curvature response, not
 as an ordinary static rest-mass primitive. No dimensional neutrino mass is
 claimed because an artifact-backed neutral eV/GeV scale is absent.
+
+BHSM currently distinguishes dimensionless neutrino propagation closure from physical eV/GeV mass closure.
+A physical eV/GeV neutrino mass requires an artifact-backed or explicitly conditional neutral dimensionful scale.
+The electron-neutrino upper limit is a comparison reference only and is never used to set the neutral scale.
+A dimensionless BHSM response is not, by itself, a physical eV/GeV mass.
+
+Run the offline scale audit with:
+
+```bash
+python -m bhsm.interface neutral-scale-candidates --format json
+python -m bhsm.interface neutrino-scale-report --format markdown
+```
 
 The exact evidence boundary is reported by:
 

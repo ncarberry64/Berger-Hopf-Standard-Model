@@ -16,6 +16,7 @@ from .neutral_kernel import build_neutral_boundary_field, load_neutral_kernel
 from .observable_map import build_neutrino_observable_map
 from .propagation_state import canonical_channel_states
 from .validation_policy import neutrino_validation_policy
+from ..neutrino_scale.unit_map import derive_neutral_scale_law
 
 
 AUTHOR_ONTOLOGY = "artifacts/BHSM_author_ontology_v0_8.json"
@@ -31,10 +32,11 @@ def build_numerical_closure(
     threshold = build_curvature_threshold(kernel)
     background = build_background_coupling(kernel)
     scale = load_neutral_scale_law(root)
+    neutral_scale_result = derive_neutral_scale_law(root)
     observable = build_neutrino_observable_map()
     results = tuple(
         compute_neutrino_propagation_mass(
-            kernel, state, threshold, scale, background, root
+            kernel, state, threshold, scale, background, root, neutral_scale_result
         )
         for state in states
     )

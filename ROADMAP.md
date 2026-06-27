@@ -13,6 +13,7 @@
 - Conditional `X_ch` boundary-response and neutrino propagation-mass theorems.
 - Dimensionless neutrino propagation-threshold numerical candidate using
   artifact-backed `K_nu`, `g_nu`, `kappa_nu`, and `tau`.
+- Offline neutral unit-source, boundary-measure, and threshold-to-energy audit.
 
 ## Candidate
 
@@ -25,6 +26,8 @@
 
 - Numerical `X_ch` response normalization and any separate 4D production map.
 - Artifact-backed dimensionful neutral scale mapping the response to eV/GeV.
+- Physical normalization of `dmu_boundary dt`, neutral background energy
+  density, and transport normalization without empirical calibration.
 - Physical map from neutral boundary channels to oscillation and cosmological
   observables.
 - Dirac/Majorana convention only where later comparison/export requires it.

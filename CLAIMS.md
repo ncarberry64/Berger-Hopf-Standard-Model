@@ -20,6 +20,8 @@
 - BHSM has a conditional, dimensionless neutrino propagation-mass numerical
   candidate built from local no-fit artifacts.
 - If neutral propagation response is zero, the BHSM mass contribution vanishes.
+- BHSM includes an offline neutral dimensionful-scale search that currently
+  reports `OPEN_MISSING_NEUTRAL_SCALE` and emits no eV/GeV mass.
 
 ## Not Supported
 
@@ -39,6 +41,8 @@ Do not claim that:
   validation.
 - Electron-neutrino limits, PDG references, or W calibration values are
   neutrino theorem inputs.
+- A named symbolic boundary measure or dimensionless action scale is, by
+  itself, a physical neutral unit anchor.
 - The conditional `X_ch` theorem establishes a standalone 4D production field.
 
 ## Policy

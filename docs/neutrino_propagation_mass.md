@@ -18,3 +18,10 @@ effective mass are author-ontology conditional. `K_nu`, `g_nu`, `kappa_nu`,
 and dimensionless `tau` are local no-fit artifacts.
 
 Status: `CONDITIONAL_NUMERICAL_CLOSURE_CANDIDATE`, dimensionless only.
+
+The v1.0 scale audit can be supplied to the evaluator as an optional typed
+scale result. It currently reports `OPEN_MISSING_NEUTRAL_SCALE`, so no eV/GeV
+fields are populated. A physical unit output is permitted only when that result
+contains a valid artifact-backed or explicitly conditional unit source.
+
+A dimensionless BHSM response is not, by itself, a physical eV/GeV mass.

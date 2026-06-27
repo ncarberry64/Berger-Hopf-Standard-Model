@@ -55,6 +55,7 @@ class PredictionGallery:
             "warnings": [
                 "Gallery entries are status summaries, not empirical validation claims.",
                 "Speculative candidates are disabled by default and are not production predictions.",
+                "A dimensionless BHSM response is not, by itself, a physical eV/GeV mass.",
             ],
         }
 

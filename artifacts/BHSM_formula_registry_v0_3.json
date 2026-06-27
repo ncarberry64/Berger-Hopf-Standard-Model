@@ -9,6 +9,7 @@
   ],
   "available_author_supplied_conditional": [
     "charged_response_from_artifact",
+    "neutral_dimensionful_scale_search",
     "neutrino_physical_basis_scale",
     "neutrino_propagation_mass_candidate"
   ],
@@ -175,6 +176,26 @@
       "source_type": "local BHSM artifact",
       "status": "AVAILABLE_ARTIFACT_BACKED",
       "theorem_status": "ARTIFACT_AVAILABLE_NOT_THEOREM_PROMOTION"
+    },
+    {
+      "callable_path": "bhsm.interface.neutrino_scale.unit_map.derive_neutral_scale_law",
+      "claim_boundary": "A dimensionless BHSM response is not, by itself, a physical eV/GeV mass.",
+      "description": "Classify local neutral scale candidates and fail closed when no physical unit anchor exists.",
+      "display_name": "Neutral dimensionful scale search",
+      "formula_key": "neutral_dimensionful_scale_search",
+      "input_schema": {},
+      "notes": [],
+      "output_schema": {
+        "type": "NeutralDimensionfulScaleResult"
+      },
+      "safe_for_default_report": true,
+      "source_artifacts": [
+        "artifacts/BHSM_neutral_scale_closure_report_v1_0.json",
+        "artifacts/BHSM_author_ontology_v0_8.json"
+      ],
+      "source_type": "local artifact inventory and author ontology",
+      "status": "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL",
+      "theorem_status": "OPEN_MISSING_NEUTRAL_SCALE"
     },
     {
       "callable_path": null,
