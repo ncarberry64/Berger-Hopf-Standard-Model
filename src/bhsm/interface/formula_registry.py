@@ -11,6 +11,7 @@ from .mass_ratio_adapters import load_mass_ratio_predictions_artifact
 from .matrix_adapters import load_ckm_matrix_artifact, load_cp_phase_artifact, load_pmns_matrix_artifact
 from .minimal_action.neutrino_basis_closure import propagation_conditioned_neutrino_mass
 from .minimal_action.x_ch_closure import apply_x_ch_boundary_response
+from .neutrino_propagation.numerical_closure import build_numerical_closure
 
 FORMULA_STATUSES = (
     "AVAILABLE_ARTIFACT_BACKED",
@@ -124,6 +125,7 @@ def default_formula_registry(repository: str | Path | None = None) -> FormulaReg
         FormulaCallableEntry("neutral_kernel_from_artifact", "Neutral boundary kernel", "Loadable neutral boundary seed; physical observable is propagation conditioned.", None, {}, {}, "AVAILABLE_ARTIFACT_BACKED", "local BHSM artifact", ("artifacts/neutral_operator_no_fit_output_v1.json",), "ARTIFACT_BACKED_BOUNDARY_SEED", "K_nu is a boundary seed, not a static physical mass matrix.", True),
         FormulaCallableEntry("x_ch_production_vertex", "X_ch production vertex", "Retired standalone production-field target.", None, {}, {}, "RETIRED_TARGET", "author ontology", ("artifacts/BHSM_author_ontology_v0_8.json",), "RETIRED_TARGET", "X_ch is modeled as a charged boundary-response operator, not a standalone production field.", False),
         FormulaCallableEntry("neutrino_physical_basis_scale", "Neutrino propagation-mass response", "Propagation-conditioned curvature-response callable.", "bhsm.interface.minimal_action.neutrino_basis_closure.propagation_conditioned_neutrino_mass", {"curvature_response": "value", "propagating": "bool", "threshold_met": "bool"}, {"type": "effective_mass_response"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "author ontology plus neutral boundary seed", ("artifacts/BHSM_neutrino_basis_scale_minimal_action_closure_v0_8.json", "artifacts/BHSM_author_ontology_v0_8.json"), "CONDITIONAL_PROPAGATION_THEOREM", "Structural propagation theorem only; numerical curvature scale remains open.", True),
+        FormulaCallableEntry("neutrino_propagation_mass_candidate", "Neutrino dimensionless propagation-mass candidate", "Build the ordering-free dimensionless threshold-response candidate.", "bhsm.interface.neutrino_propagation.numerical_closure.build_numerical_closure", {}, {"type": "NeutrinoNumericalClosureReport"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "author ontology plus local no-fit artifacts", ("artifacts/BHSM_neutrino_numerical_closure_report_v0_9.json", "artifacts/BHSM_author_ontology_v0_8.json"), "CONDITIONAL_NUMERICAL_CLOSURE_CANDIDATE", "Dimensionless-only conditional candidate; eV/GeV scale remains open.", True),
         FormulaCallableEntry("cp_o_int_standalone_attachment", "Standalone CP O_int attachment", "Retired standalone production target.", None, {}, {}, "RETIRED_TARGET", "author ontology", ("artifacts/CP_no_fit_holonomy_output_v1.json", "artifacts/BHSM_cp_o_int_minimal_action_closure_v0_8.json", "artifacts/BHSM_author_ontology_v0_8.json"), "RETIRED_TARGET", "CP is represented by the artifact-backed Z6 holonomy constraint; no standalone production vertex is required.", False),
     )
     for entry in entries:
@@ -142,6 +144,7 @@ _LOADERS: dict[str, Callable[..., Any]] = {
 _CONDITIONAL_CALLABLES: dict[str, Callable[..., Any]] = {
     "charged_response_from_artifact": apply_x_ch_boundary_response,
     "neutrino_physical_basis_scale": propagation_conditioned_neutrino_mass,
+    "neutrino_propagation_mass_candidate": build_numerical_closure,
 }
 
 
@@ -162,7 +165,8 @@ def evaluate_formula(formula_key: str, repository: str | Path | None = None, **i
             value = conditional(**inputs)
         except (TypeError, ValueError) as exc:
             return FormulaEvaluationResult(formula_key, entry.status, "INPUT_REQUIRED", None, entry.callable_path, f"{entry.claim_boundary} {exc}")
-        return FormulaEvaluationResult(formula_key, entry.status, "EVALUATED_CONDITIONAL", value, entry.callable_path, entry.claim_boundary)
+        serialized = value.to_dict() if hasattr(value, "to_dict") else value
+        return FormulaEvaluationResult(formula_key, entry.status, "EVALUATED_CONDITIONAL", serialized, entry.callable_path, entry.claim_boundary)
     # Geometry defaults require a caller-supplied geometry and remain defaults.
     if formula_key in {"hyperspherical_default_metric", "hyperspherical_default_tension"} and "geometry" in inputs:
         geometry = inputs["geometry"]

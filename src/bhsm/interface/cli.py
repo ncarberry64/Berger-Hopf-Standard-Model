@@ -25,6 +25,16 @@ from .theorem_closure.cp_o_int_action import load_cp_o_int_candidate_template
 from .theorem_closure.cp_o_int_report import cp_o_int_report_to_markdown
 from .theorem_closure.cp_o_int_sprint_c_report import cp_o_int_sprint_c_to_markdown
 from .minimal_action import build_minimal_action_report, close_minimal_action, minimal_action_report_to_markdown, minimal_action_status
+from .neutrino_propagation import (
+    build_neutrino_propagation_report,
+    build_numerical_closure,
+    neutrino_propagation_report_to_markdown,
+)
+from .neutrino_propagation.curvature_threshold import build_background_coupling, build_curvature_threshold, threshold_response
+from .neutrino_propagation.effective_mass import load_neutral_scale_law
+from .neutrino_propagation.neutral_kernel import load_neutral_kernel
+from .neutrino_propagation.observable_map import build_neutrino_observable_map
+from .neutrino_propagation.propagation_state import canonical_channel_states
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -161,6 +171,18 @@ def build_parser() -> argparse.ArgumentParser:
     close_minimal.add_argument("theorem_key", choices=("cp_o_int", "X_ch", "neutrino_basis_scale"))
     close_minimal.add_argument("--format", choices=("json",), default="json")
     commands.add_parser("minimal-action-status", help="Show concise minimal-action theorem statuses")
+    neutrino = commands.add_parser("neutrino-propagation", help="Build the conditional neutrino propagation-mass candidate")
+    neutrino.add_argument("--format", choices=("json",), default="json")
+    neutrino_report = commands.add_parser("neutrino-propagation-report", help="Render the neutrino propagation-mass report")
+    neutrino_report.add_argument("--format", choices=("markdown", "json"), default="markdown")
+    neutrino_mass = commands.add_parser("neutrino-effective-mass", help="Show dimensionless neutrino propagation-mass channel responses")
+    neutrino_mass.add_argument("--format", choices=("json",), default="json")
+    neutrino_map = commands.add_parser("neutrino-observable-map", help="Show the neutrino observable and comparison policy")
+    neutrino_map.add_argument("--format", choices=("json",), default="json")
+    neutrino_scale = commands.add_parser("neutrino-scale-law", help="Show the neutral scale law and dimensional blocker")
+    neutrino_scale.add_argument("--format", choices=("json",), default="json")
+    neutrino_threshold = commands.add_parser("neutrino-threshold-response", help="Show artifact-backed threshold response rows")
+    neutrino_threshold.add_argument("--format", choices=("json",), default="json")
     return parser
 
 
@@ -335,6 +357,36 @@ def main(argv: Sequence[str] | None = None) -> int:
         return 0
     if args.command == "minimal-action-status":
         print(json.dumps(minimal_action_status(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "neutrino-propagation":
+        print(json.dumps(build_neutrino_propagation_report().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "neutrino-propagation-report":
+        neutrino_report = build_neutrino_propagation_report()
+        if args.format == "markdown":
+            print(neutrino_propagation_report_to_markdown(neutrino_report), end="")
+        else:
+            print(json.dumps(neutrino_report.to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "neutrino-effective-mass":
+        report = build_numerical_closure()
+        print(json.dumps({"status": report.closure.status_after, "formula": report.closure.effective_mass_formula, "channel_results": [row.to_dict() for row in report.channel_results]}, indent=2, sort_keys=True))
+        return 0
+    if args.command == "neutrino-observable-map":
+        print(json.dumps(build_neutrino_observable_map().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "neutrino-scale-law":
+        print(json.dumps(load_neutral_scale_law().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "neutrino-threshold-response":
+        kernel = load_neutral_kernel()
+        threshold = build_curvature_threshold(kernel)
+        background = build_background_coupling(kernel)
+        rows = []
+        for state in canonical_channel_states(len(kernel.matrix)):
+            response_norm, coupled, excess = threshold_response(kernel, state, threshold, background)
+            rows.append({"state": state.label, "kernel_response_norm": response_norm, "coupled_response": coupled, "threshold_excess": excess})
+        print(json.dumps({"threshold": threshold.to_dict(), "background_coupling": background.to_dict(), "rows": rows}, indent=2, sort_keys=True))
         return 0
     particles = tuple(item.strip() for item in args.particles.split(",") if item.strip())
     report = build_prediction_report(

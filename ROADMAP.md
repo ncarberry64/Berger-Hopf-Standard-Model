@@ -11,6 +11,8 @@
 - Artifact-backed CP/Z6 holonomy target separated from the retired standalone
   production-vertex target.
 - Conditional `X_ch` boundary-response and neutrino propagation-mass theorems.
+- Dimensionless neutrino propagation-threshold numerical candidate using
+  artifact-backed `K_nu`, `g_nu`, `kappa_nu`, and `tau`.
 
 ## Candidate
 
@@ -22,7 +24,9 @@
 ## Open
 
 - Numerical `X_ch` response normalization and any separate 4D production map.
-- Numerical neutrino curvature-response normalization and comparison scale.
+- Artifact-backed dimensionful neutral scale mapping the response to eV/GeV.
+- Physical map from neutral boundary channels to oscillation and cosmological
+  observables.
 - Dirac/Majorana convention only where later comparison/export requires it.
 - Any downstream physics theorem explicitly listed by the blocker registry.
 

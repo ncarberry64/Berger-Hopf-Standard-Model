@@ -17,6 +17,9 @@
   author ontology.
 - Neutrino BHSM mass is a conditional propagation-locked curvature-response
   theorem; numerical scale closure remains open.
+- BHSM has a conditional, dimensionless neutrino propagation-mass numerical
+  candidate built from local no-fit artifacts.
+- If neutral propagation response is zero, the BHSM mass contribution vanishes.
 
 ## Not Supported
 
@@ -32,6 +35,10 @@ Do not claim that:
 - A symbolic CP `O_int` candidate is production-ready.
 - The conditional neutrino propagation theorem supplies a static rest-mass
   matrix or a numerical neutrino mass prediction.
+- The dimensionless neutrino response is an eV/GeV prediction or empirical
+  validation.
+- Electron-neutrino limits, PDG references, or W calibration values are
+  neutrino theorem inputs.
 - The conditional `X_ch` theorem establishes a standalone 4D production field.
 
 ## Policy

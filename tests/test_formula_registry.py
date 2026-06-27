@@ -24,6 +24,9 @@ def test_formula_registry_separates_artifacts_defaults_and_theorem_blockers():
         "neutrino_physical_basis_scale", ROOT,
         curvature_response=2.0, propagating=True, threshold_met=True,
     ).value == 2.0
+    candidate = evaluate_formula("neutrino_propagation_mass_candidate", ROOT)
+    assert candidate.evaluation_status == "EVALUATED_CONDITIONAL"
+    assert candidate.value["numerical_closure"] == "dimensionless-only"
 
 
 def test_formula_registry_artifact_exists_and_parses():

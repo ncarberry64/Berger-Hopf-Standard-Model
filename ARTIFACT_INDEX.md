@@ -22,6 +22,7 @@ the `BHSM_*_minimal_action_closure_v0_8.json` artifacts.
 | Mass ratios | Frozen charged-sector ratios | `theory/bhsm_v1_frozen_prediction_set.json` | `ARTIFACT_BACKED` | `python -m bhsm.interface compute-artifact mass_ratios` |
 | Formula registry | Callable and blocker index | `artifacts/BHSM_formula_registry_v0_3.json` | `ARTIFACT_BACKED` | `python -m bhsm.interface formula-registry` |
 | Author ontology | Controlling physical-boundary-field and response dictionary | `artifacts/BHSM_author_ontology_v0_8.json` | `AUTHOR_SUPPLIED` | `python -m bhsm.interface minimal-action-status` |
+| Neutrino propagation closure | Dimensionless threshold-response candidate | `artifacts/BHSM_neutrino_numerical_closure_report_v0_9.json` | `CONDITIONAL_NUMERICAL_CLOSURE_CANDIDATE` | `python -m bhsm.interface neutrino-propagation-report --format markdown` |
 | Theorem closure | Strict proof-gate report | `artifacts/BHSM_theorem_closure_report_v0_4.json` | `OPEN` | `python -m bhsm.interface theorem-closure-report` |
 | CP O_int Sprint B | Staged interaction-attachment audit | `artifacts/BHSM_cp_o_int_attachment_report_v0_5.json` | `OPEN` | `python -m bhsm.interface cp-o-int-report` |
 | CP O_int Sprint C | Callable symbolic field/action candidate | `artifacts/BHSM_cp_o_int_field_action_report_v0_6.json` | `CANDIDATE / OPEN` | `python -m bhsm.interface cp-o-int-field-action` |

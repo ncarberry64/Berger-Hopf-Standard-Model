@@ -9,7 +9,8 @@
   ],
   "available_author_supplied_conditional": [
     "charged_response_from_artifact",
-    "neutrino_physical_basis_scale"
+    "neutrino_physical_basis_scale",
+    "neutrino_propagation_mass_candidate"
   ],
   "available_interface_default": [
     "hyperspherical_default_metric",
@@ -215,6 +216,26 @@
       "source_type": "author ontology plus neutral boundary seed",
       "status": "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL",
       "theorem_status": "CONDITIONAL_PROPAGATION_THEOREM"
+    },
+    {
+      "callable_path": "bhsm.interface.neutrino_propagation.numerical_closure.build_numerical_closure",
+      "claim_boundary": "Dimensionless-only conditional candidate; eV/GeV scale remains open.",
+      "description": "Build the ordering-free dimensionless threshold-response candidate.",
+      "display_name": "Neutrino dimensionless propagation-mass candidate",
+      "formula_key": "neutrino_propagation_mass_candidate",
+      "input_schema": {},
+      "notes": [],
+      "output_schema": {
+        "type": "NeutrinoNumericalClosureReport"
+      },
+      "safe_for_default_report": true,
+      "source_artifacts": [
+        "artifacts/BHSM_neutrino_numerical_closure_report_v0_9.json",
+        "artifacts/BHSM_author_ontology_v0_8.json"
+      ],
+      "source_type": "author ontology plus local no-fit artifacts",
+      "status": "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL",
+      "theorem_status": "CONDITIONAL_NUMERICAL_CLOSURE_CANDIDATE"
     },
     {
       "callable_path": "bhsm.interface.matrix_adapters.load_pmns_matrix_artifact",
