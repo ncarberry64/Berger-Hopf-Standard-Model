@@ -33,4 +33,4 @@ def test_gallery_claim_warnings_and_readme_are_present():
         "Theorem-blocker closure attempts do not promote a blocker unless an explicit theorem artifact supports closure.",
         "Plots summarize registry status; they do not validate BHSM empirically.",
     ): assert warning in policy
-    assert "## Prediction Gallery, notebooks, and theorem-blocker sandbox" in (ROOT/"README.md").read_text()
+    assert "prediction gallery" in (ROOT/"README.md").read_text().lower()

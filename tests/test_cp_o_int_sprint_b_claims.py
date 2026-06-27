@@ -16,4 +16,4 @@ def test_docs_contain_exact_claim_warnings_and_readme_section():
         "Runtime-disabled software gates remain disabled until live external validation passes.",
     ):
         assert warning in docs
-    assert "## CP O_int standalone interaction attachment attempt" in (ROOT / "README.md").read_text(encoding="utf-8")
+    assert "[Sprint B overview]" in (ROOT / "docs/README.md").read_text(encoding="utf-8")

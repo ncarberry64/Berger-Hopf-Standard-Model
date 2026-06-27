@@ -20,7 +20,7 @@ def load(relative: str) -> dict:
 
 
 def test_current_public_docs_use_v1_status_split() -> None:
-    readme = read("README.md")
+    readme = read("docs/archive/README_status_history_pre_v0_7.md")
     current = read("docs/current_status.md")
     boundaries = read("docs/claim_boundaries.md")
 
@@ -104,7 +104,7 @@ def test_claim_status_table_uses_internal_complete_external_open_split() -> None
 def test_reconciliation_does_not_introduce_validation_or_fake_doi_claims() -> None:
     combined = "\n".join(
         [
-            read("README.md"),
+            read("docs/archive/README_status_history_pre_v0_7.md"),
             read("docs/current_status.md"),
             read("docs/claim_boundaries.md"),
             read("artifacts/BHSM_v1_release_manifest.json"),

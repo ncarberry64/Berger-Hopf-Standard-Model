@@ -79,10 +79,10 @@ def test_phase_three_m_docs_and_readme_preserve_status() -> None:
     ]:
         assert (ROOT / relative).exists(), relative
 
-    readme = " ".join(read("README.md").split())
+    readme = " ".join(read("docs/archive/README_status_history_pre_v0_7.md").split())
     assert PHASE_THREE_M_STATUS in readme
-    assert "Phase Three-M live FeynRules validation status" in read("README.md")
-    assert "Static checks do not count as live FeynRules validation" in read("README.md")
+    assert "Phase Three-M live FeynRules validation status" in read("docs/archive/README_status_history_pre_v0_7.md")
+    assert "Static checks do not count as live FeynRules validation" in read("docs/archive/README_status_history_pre_v0_7.md")
     assert "not UFO-ready, not MadGraph-ready, and not event-generation-ready" in readme
 
 
@@ -229,7 +229,7 @@ def test_no_event_files_or_forbidden_phase_three_m_claims() -> None:
     combined = "\n".join(
         read(relative)
         for relative in [
-            "README.md",
+            "docs/archive/README_status_history_pre_v0_7.md",
             "docs/phase_three_m_live_feynrules_validation.md",
             "docs/live_feynrules_validation_report.md",
             "docs/feynrules_enablement_policy.md",

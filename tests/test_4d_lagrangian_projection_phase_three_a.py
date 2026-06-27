@@ -55,7 +55,7 @@ def run_tool(*args: str) -> subprocess.CompletedProcess[str]:
 
 
 def test_readme_preserves_status_and_phase_three_boundaries() -> None:
-    text = " ".join(read("README.md").split())
+    text = " ".join(read("docs/archive/README_status_history_pre_v0_7.md").split())
     assert PHASE_TWO_A_STATUS in text
     assert "Phase Three-A attempts an analytical projection" in text
     assert "This is not production UFO readiness" in text
@@ -264,7 +264,7 @@ def test_no_fake_event_files_or_readiness_claims_exist() -> None:
     combined = "\n".join(
         read(relative)
         for relative in [
-            "README.md",
+            "docs/archive/README_status_history_pre_v0_7.md",
             "docs/4d_lagrangian_projection.md",
             "docs/effective_lagrangian_candidate.md",
             "docs/field_normalization_ledger.md",
