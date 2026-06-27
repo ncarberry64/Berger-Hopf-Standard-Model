@@ -1,0 +1,23 @@
+{
+  "calibration_anchor_policy": "A calibration anchor is never counted as an independent prediction in that run.",
+  "prediction_policy": "Non-anchor results are model predictions only given the declared calibration, geometry, and equilibrium equation.",
+  "pdg_reference_policy": "The pdg dependency is optional; curated provenance-tagged offline fallbacks are used when unavailable or unsupported.",
+  "electron_neutrino_policy": "Electron-neutrino comparison is an upper-limit comparison unless a vetted central reference is explicitly supplied.",
+  "forbidden_claims": [
+    "empirical validation",
+    "official CERN integration",
+    "complete BHSM 4D Lagrangian export",
+    "FeynRules/UFO/MadGraph readiness",
+    "calibration anchor counted as an independent prediction"
+  ],
+  "allowed_claims": [
+    "computational interface",
+    "dimensionless geometric output",
+    "explicit unit calibration",
+    "model prediction given calibration",
+    "one-way experimental comparison"
+  ],
+  "internet_required_for_tests": false,
+  "frozen_predictions_changed": false,
+  "official_predictions_changed": false
+}

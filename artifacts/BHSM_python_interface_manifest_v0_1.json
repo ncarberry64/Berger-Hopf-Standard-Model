@@ -1,0 +1,41 @@
+{
+  "interface_name": "BHSM Python computational interface",
+  "version": "0.1",
+  "modules": [
+    "bhsm.interface.geometry",
+    "bhsm.interface.units",
+    "bhsm.interface.solver",
+    "bhsm.interface.validation",
+    "bhsm.interface.pdg_interface",
+    "bhsm.interface.constants",
+    "bhsm.interface.types"
+  ],
+  "classes": [
+    "HypersphericalGeometry",
+    "GeometricUnitMapper",
+    "ParticleMassSolver",
+    "SolverResult",
+    "ExperimentalValue",
+    "ValidationComparison"
+  ],
+  "functions": [
+    "default_bhsm_constants",
+    "is_pdg_available",
+    "try_load_pdg_reference",
+    "load_reference_with_fallback"
+  ],
+  "example_scripts": [
+    "examples/bhsm_solve_w_and_neutrino.py",
+    "examples/bhsm_custom_geometry_scan.py"
+  ],
+  "dependencies": ["numpy", "scipy"],
+  "optional_dependencies": ["pdg", "pandas"],
+  "claim_boundaries": {
+    "interface_not_new_physics_claim_layer": true,
+    "default_formulas": "PLACEHOLDER_UNTIL_BHSM_THEOREM_SUPPLIED",
+    "empirical_validation_claimed": false,
+    "frozen_predictions_changed": false
+  },
+  "calibration_policy": "Anchors set units and are not independent predictions in the same run.",
+  "validation_policy": "External references are provenance-tagged, one-way comparisons only."
+}

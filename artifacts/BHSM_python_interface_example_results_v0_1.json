@@ -1,0 +1,58 @@
+{
+  "interface_status": "DEMONSTRATION_ONLY_NOT_EMPIRICAL_VALIDATION",
+  "w_boson_result": {
+    "particle_key": "W_boson",
+    "success": true,
+    "mass_gev": 80.3692,
+    "mass_ev": 80369200000.0,
+    "residual": 0.0,
+    "calibration_anchor": "W_boson",
+    "is_anchor_particle": true,
+    "prediction_status": "CALIBRATION_ANCHOR_NOT_INDEPENDENT_PREDICTION"
+  },
+  "electron_neutrino_result": {
+    "particle_key": "electron_neutrino",
+    "success": true,
+    "mass_gev": 8.03692e-11,
+    "mass_ev": 0.0803692,
+    "residual": 0.0,
+    "calibration_anchor": "W_boson",
+    "is_anchor_particle": false,
+    "prediction_status": "MODEL_PREDICTION_GIVEN_CALIBRATION"
+  },
+  "calibration_metadata": {
+    "scale_gev_per_tension": 80.3692,
+    "anchor_particle": "W_boson",
+    "anchor_mass_gev": 80.3692,
+    "anchor_source": "Particle Data Group 2024 W-boson listing",
+    "calibration_mode": "EMPIRICAL_CALIBRATION_ANCHOR",
+    "anchor_is_independent_prediction": false
+  },
+  "comparison_metadata": {
+    "W_boson": {
+      "reference_kind": "central_value",
+      "reference_gev": 80.3692,
+      "uncertainty_gev": 0.0133,
+      "absolute_delta_gev": 0.0,
+      "source": "https://pdg.lbl.gov/2024/listings/rpp2024-list-w-boson.pdf",
+      "comparison_only": true
+    },
+    "electron_neutrino": {
+      "reference_kind": "upper_limit",
+      "upper_limit_gev": 4.5e-10,
+      "below_upper_limit": true,
+      "upper_limit_margin_gev": 3.696308e-10,
+      "source": "https://www.katrin.kit.edu/1271.php",
+      "comparison_only": true
+    }
+  },
+  "warnings": [
+    "W is used as calibration anchor, not independent prediction.",
+    "Electron-neutrino comparison is against upper limit, not central measured mass.",
+    "Default geometry formulas are interface placeholders until a BHSM theorem is supplied.",
+    "This deterministic example does not claim empirical validation."
+  ],
+  "frozen_predictions_changed": false,
+  "official_predictions_changed": false,
+  "empirical_derivation_inputs_used": false
+}

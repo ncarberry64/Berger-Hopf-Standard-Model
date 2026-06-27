@@ -53,6 +53,24 @@ This is not an officially integrated CERN software package. It is not the comple
 
 Start here for external review: `docs/hep_review_quickstart.md`.
 
+## Python computational interface
+
+BHSM includes a Python interface for defining hyperspherical/Berger-Hopf
+geometry objects, mapping dimensionless geometric tension into physical units,
+solving mass-equilibrium equations, and comparing predictions to experimental
+references.
+
+The interface separates calibration, prediction, and validation. If a particle
+mass is used as the calibration anchor, it is not counted as an independent
+prediction in that run. Electron-neutrino comparisons are treated as
+upper-limit comparisons unless a vetted central mass reference is supplied.
+
+See:
+
+- `docs/python_interface.md`
+- `docs/python_interface_quickstart.md`
+- `examples/bhsm_solve_w_and_neutrino.py`
+
 ## Collider / CERN Software Readiness
 
 BHSM v1.0.1 is not an Athena, CMSSW, or detector-simulation-ready software
