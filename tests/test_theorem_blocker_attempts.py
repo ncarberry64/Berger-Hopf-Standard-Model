@@ -7,7 +7,7 @@ def test_theorem_dispositions_follow_the_author_ontology():
     statuses={r.blocker_key:r.closure_status for r in rows}
     assert statuses=={
         "X_ch":"CONDITIONAL_ACTION_THEOREM",
-        "neutrino_basis_scale_dirac_majorana":"CONDITIONAL_PROPAGATION_THEOREM",
+        "neutrino_basis_scale_dirac_majorana":"CONDITIONAL_NUMERICAL_CLOSURE_CANDIDATE",
         "cp_o_int":"ARTIFACT_BACKED",
     }
     assert all(not r.empirical_inputs_used for r in rows)

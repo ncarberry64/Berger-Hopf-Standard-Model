@@ -38,6 +38,12 @@ not required for the listed local behavior.
 | `minimal-action-report` | Render the ontology-aware decision table | Markdown or JSON | no | no |
 | `close-minimal-action KEY` | Evaluate one minimal-action theorem | JSON | no | no |
 | `minimal-action-status` | Show concise theorem statuses | JSON | no | no |
+| `neutrino-propagation` | Build the conditional neutrino propagation-mass package | JSON | no | no |
+| `neutrino-propagation-report` | Render the dimensionless closure report | Markdown or JSON | no | no |
+| `neutrino-effective-mass` | Show canonical channel response rows | JSON | no | no |
+| `neutrino-observable-map` | Show propagation/static/comparison distinctions | JSON | no | no |
+| `neutrino-scale-law` | Show dimensionless `tau` and the missing eV/GeV scale | JSON | no | no |
+| `neutrino-threshold-response` | Show `K_nu`, `g_nu`, and `kappa_nu` response rows | JSON | no | no |
 
 Without `--offline-ok`, `pdg-fetch` may try an optional live reference adapter.
 The offline fallback is reference-only and is never a derivation input.

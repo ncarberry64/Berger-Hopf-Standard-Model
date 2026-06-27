@@ -12,6 +12,11 @@ The current minimal-action theory dictionary is documented in
 
 - [Current BHSM status](current_bhsm_status.md)
 - [Author ontology v0.8](author_ontology_v0_8.md)
+- [Neutrino propagation mass](neutrino_propagation_mass.md)
+- [Neutrino curvature threshold](neutrino_curvature_threshold.md)
+- [Neutrino scale law](neutrino_scale_law.md)
+- [Neutrino observable map](neutrino_observable_map.md)
+- [Neutrino numerical closure](neutrino_numerical_closure.md)
 - [Frozen predictions](frozen_predictions.md)
 - [Model scope for HEP review](bhsm_model_scope_for_hep_review.md)
 - [Historical README status archive](archive/README_status_history_pre_v0_7.md)

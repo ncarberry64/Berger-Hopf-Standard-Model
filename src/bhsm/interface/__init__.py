@@ -24,6 +24,13 @@ from .speculative import SpeculativeCandidate, SpeculativeCandidateRegistry
 from .theorem_blockers import TheoremBlocker, TheoremBlockerRegistry, attempt_theorem_closure
 from .theorem_closure import TheoremClosureReport, TheoremClosureResult, build_theorem_closure_report, evaluate_theorem
 from .minimal_action import MinimalActionClosureReport, MinimalActionClosureResult, build_minimal_action_report, close_minimal_action
+from .neutrino_propagation import (
+    NeutrinoNumericalClosureReport,
+    NeutrinoPropagationClosureResult,
+    build_neutrino_propagation_report,
+    build_numerical_closure,
+    compute_neutrino_propagation_mass,
+)
 from .solver import ParticleMassSolver, SolverResult
 from .units import GeometricUnitMapper
 from .validation import ExperimentalValue, ValidationComparison, curated_fallback_references
@@ -59,6 +66,8 @@ __all__ = [
     "TheoremClosureResult",
     "MinimalActionClosureReport",
     "MinimalActionClosureResult",
+    "NeutrinoNumericalClosureReport",
+    "NeutrinoPropagationClosureResult",
     "SolverResult",
     "ValidationComparison",
     "ValueWithProvenance",
@@ -77,6 +86,9 @@ __all__ = [
     "build_theorem_closure_report",
     "build_minimal_action_report",
     "close_minimal_action",
+    "build_neutrino_propagation_report",
+    "build_numerical_closure",
+    "compute_neutrino_propagation_mass",
     "check_notebook_pack",
     "notebook_pack_manifest",
     "load_reference_with_fallback",

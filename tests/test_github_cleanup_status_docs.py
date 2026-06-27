@@ -61,7 +61,7 @@ def test_status_has_required_areas_and_clean_taxonomy() -> None:
     assert all(row in status for row in required_rows)
     assert "RETIRED_TARGET" in status
     assert "CONDITIONAL_ACTION_THEOREM" in status
-    assert "CONDITIONAL_PROPAGATION_THEOREM" in status
+    assert "CONDITIONAL_NUMERICAL_CLOSURE_CANDIDATE" in status
     assert "RUNTIME_GATED" in status
 
 

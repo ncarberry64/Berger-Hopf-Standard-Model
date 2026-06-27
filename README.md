@@ -32,7 +32,7 @@ validation remain outside the current package.
 | CKM, PMNS, CP phase, boundary constants, mass ratios | `ARTIFACT_BACKED` | Local artifacts load with provenance. |
 | CP/Z6 holonomy | `ARTIFACT_BACKED` | The holonomy and CKM/PMNS phase attachment are local artifact-backed constraints; standalone `O_int` production is a retired target. |
 | `X_ch` | `CONDITIONAL_ACTION_THEOREM` | Author ontology defines a charged boundary-response operator; numerical and 4D production closure remain open. |
-| Neutrino BHSM mass | `CONDITIONAL_PROPAGATION_THEOREM` | Author ontology defines propagation-locked curvature response; numerical scale closure remains open. |
+| Neutrino BHSM mass | `CONDITIONAL_NUMERICAL_CLOSURE_CANDIDATE` | Local no-fit artifacts support a dimensionless propagation-threshold response; the eV/GeV scale remains open. |
 | FeynRules, UFO, MadGraph | `RUNTIME_GATED` | External validation is deferred until theorem and runtime gates pass. |
 
 [STATUS.md](STATUS.md) is the single source of truth for current area-level
@@ -82,6 +82,12 @@ standalone `O_int` production target. It defines `X_ch` conditionally as a
 charged boundary-response operator and the neutrino BHSM mass conditionally as
 a propagation-locked curvature response. These are structural theorem statuses;
 numerical closure and external HEP runtime readiness remain open.
+
+The v0.9 neutrino module evaluates the conditional dimensionless law
+`tau max(0, p g_nu ||K_nu psi||/||psi|| - kappa_nu)`. In BHSM, the neutrino
+mass contribution is modeled as a propagation-locked curvature response, not
+as an ordinary static rest-mass primitive. No dimensional neutrino mass is
+claimed because an artifact-backed neutral eV/GeV scale is absent.
 
 The exact evidence boundary is reported by:
 

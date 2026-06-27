@@ -1,0 +1,286 @@
+{
+  "channel_results": [
+    {
+      "claim_boundary": "Dimensionless conditional response only; it is not an ordinary static rest mass or a numerical eV/GeV prediction.",
+      "coupled_response": 0.1111111111111111,
+      "effective_mass_GeV": null,
+      "effective_mass_dimensionless": 0.0,
+      "effective_mass_eV": null,
+      "kernel_response_norm": 0.3333333333333333,
+      "propagation_response": 1.0,
+      "provenance": [
+        {
+          "empirical_derivation_input": false,
+          "reference_theorem_input": false,
+          "source_path": "artifacts/neutral_operator_no_fit_output_v1.json",
+          "source_status": "DISCOVERED",
+          "w_calibration_theorem_input": false
+        },
+        {
+          "empirical_derivation_input": false,
+          "reference_theorem_input": false,
+          "source_path": "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json",
+          "source_status": "DISCOVERED",
+          "w_calibration_theorem_input": false
+        }
+      ],
+      "state_label": "neutral_channel_1",
+      "status": "OPEN_MISSING_NEUTRAL_SCALE",
+      "threshold_excess": 0.0
+    },
+    {
+      "claim_boundary": "Dimensionless conditional response only; it is not an ordinary static rest mass or a numerical eV/GeV prediction.",
+      "coupled_response": 1.0076865081787252,
+      "effective_mass_GeV": null,
+      "effective_mass_dimensionless": 0.03775908324682857,
+      "effective_mass_eV": null,
+      "kernel_response_norm": 3.0230595245361758,
+      "propagation_response": 1.0,
+      "provenance": [
+        {
+          "empirical_derivation_input": false,
+          "reference_theorem_input": false,
+          "source_path": "artifacts/neutral_operator_no_fit_output_v1.json",
+          "source_status": "DISCOVERED",
+          "w_calibration_theorem_input": false
+        },
+        {
+          "empirical_derivation_input": false,
+          "reference_theorem_input": false,
+          "source_path": "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json",
+          "source_status": "DISCOVERED",
+          "w_calibration_theorem_input": false
+        }
+      ],
+      "state_label": "neutral_channel_2",
+      "status": "OPEN_MISSING_NEUTRAL_SCALE",
+      "threshold_excess": 0.8410198415120586
+    },
+    {
+      "claim_boundary": "Dimensionless conditional response only; it is not an ordinary static rest mass or a numerical eV/GeV prediction.",
+      "coupled_response": 0.558326423395605,
+      "effective_mass_GeV": null,
+      "effective_mass_dimensionless": 0.01758426214079822,
+      "effective_mass_eV": null,
+      "kernel_response_norm": 1.6749792701868151,
+      "propagation_response": 1.0,
+      "provenance": [
+        {
+          "empirical_derivation_input": false,
+          "reference_theorem_input": false,
+          "source_path": "artifacts/neutral_operator_no_fit_output_v1.json",
+          "source_status": "DISCOVERED",
+          "w_calibration_theorem_input": false
+        },
+        {
+          "empirical_derivation_input": false,
+          "reference_theorem_input": false,
+          "source_path": "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json",
+          "source_status": "DISCOVERED",
+          "w_calibration_theorem_input": false
+        }
+      ],
+      "state_label": "neutral_channel_3",
+      "status": "OPEN_MISSING_NEUTRAL_SCALE",
+      "threshold_excess": 0.3916597567289384
+    }
+  ],
+  "closure": {
+    "artifact_sources_used": [
+      "artifacts/neutral_operator_no_fit_output_v1.json",
+      "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json",
+      "artifacts/BHSM_author_ontology_v0_8.json"
+    ],
+    "background_coupling": {
+      "source_artifact": "artifacts/neutral_operator_no_fit_output_v1.json",
+      "status": "ESTABLISHED_ARTIFACT_BACKED",
+      "symbol": "g_nu",
+      "value": 0.3333333333333333
+    },
+    "claim_boundary": "Conditional dimensionless numerical closure candidate only. A dimensionful neutral scale and physical flavor-observable map remain open.",
+    "curvature_threshold": {
+      "interpretation": "Push-back is the coupled neutral-kernel response exceeding the artifact-backed dimensionless curvature threshold.",
+      "response_law": "R_excess = max(0, p*g_nu*||K_nu psi||/||psi|| - kappa_nu)",
+      "source_artifacts": [
+        "artifacts/neutral_operator_no_fit_output_v1.json"
+      ],
+      "status": "ESTABLISHED_ARTIFACT_BACKED",
+      "symbol": "kappa_nu",
+      "value": 0.16666666666666666
+    },
+    "dirac_majorana_policy": "DIRAC_MAJORANA_SECONDARY",
+    "effective_mass_formula": "m_eff_dimless(psi,p) = tau*max(0, p*g_nu*||K_nu psi||/||psi|| - kappa_nu)",
+    "electron_neutrino_upper_limit_used_as_derivation_input": false,
+    "empirical_derivation_inputs_used": false,
+    "external_hep_tools_required": false,
+    "frozen_predictions_changed": false,
+    "internet_required": false,
+    "neutral_kernel": {
+      "beta_nu": 0.3333333333333333,
+      "empirical_derivation_inputs_used": false,
+      "eta_nu": 0.3333333333333333,
+      "g_nu": 0.3333333333333333,
+      "kappa_nu": 0.16666666666666666,
+      "matrix": [
+        [
+          0.0,
+          0.3333333333333333,
+          0.0
+        ],
+        [
+          0.3333333333333333,
+          3.0,
+          0.16666666666666666
+        ],
+        [
+          0.0,
+          0.16666666666666666,
+          1.6666666666666667
+        ]
+      ],
+      "mode_labels": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "source_artifact": "artifacts/neutral_operator_no_fit_output_v1.json",
+      "status": "ESTABLISHED_ARTIFACT_BACKED"
+    },
+    "observable_map": {
+      "claim_boundary": "The propagation response is not automatically an ordinary rest mass, oscillation spectrum, or cosmological mass sum.",
+      "cosmological_mass_sum_comparison": "OPEN_MISSING_OBSERVABLE_MAP",
+      "dirac_majorana_policy": "DIRAC_MAJORANA_SECONDARY",
+      "effective_propagation_mass": "CONDITIONAL_NUMERICAL_CLOSURE_CANDIDATE_DIMENSIONLESS",
+      "electron_neutrino_effective_mass_comparison": "UPPER_LIMIT_COMPARISON_ONLY",
+      "ordering_policy": "ordering-free",
+      "oscillation_sensitive_mass_differences": "OPEN_MISSING_OBSERVABLE_MAP",
+      "static_rest_mass_interpretation": "FORBIDDEN_STATIC_REST_MASS_FRAMING",
+      "status": "CONDITIONAL_NUMERICAL_CLOSURE_CANDIDATE"
+    },
+    "ordering_policy": "ordering-free",
+    "production_physics_model_logic_changed": false,
+    "promoted": true,
+    "promotion_reason": "Artifact-backed K_nu, g_nu, kappa_nu, and dimensionless tau support an ordering-free dimensionless threshold-response candidate under the author ontology.",
+    "propagation_state": [
+      {
+        "amplitudes": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "claim_boundary": "Propagation response is a dimensionless theorem variable, not an observed velocity or fitted mass input.",
+        "label": "neutral_channel_1",
+        "propagation_response": 1.0,
+        "status": "CONDITIONAL_PROPAGATION_THEOREM",
+        "stopped": false
+      },
+      {
+        "amplitudes": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "claim_boundary": "Propagation response is a dimensionless theorem variable, not an observed velocity or fitted mass input.",
+        "label": "neutral_channel_2",
+        "propagation_response": 1.0,
+        "status": "CONDITIONAL_PROPAGATION_THEOREM",
+        "stopped": false
+      },
+      {
+        "amplitudes": [
+          0.0,
+          0.0,
+          1.0
+        ],
+        "claim_boundary": "Propagation response is a dimensionless theorem variable, not an observed velocity or fitted mass input.",
+        "label": "neutral_channel_3",
+        "propagation_response": 1.0,
+        "status": "CONDITIONAL_PROPAGATION_THEOREM",
+        "stopped": false
+      }
+    ],
+    "provenance": [
+      {
+        "empirical_derivation_input": false,
+        "reference_theorem_input": false,
+        "source_path": "artifacts/neutral_operator_no_fit_output_v1.json",
+        "source_status": "DISCOVERED",
+        "w_calibration_theorem_input": false
+      },
+      {
+        "empirical_derivation_input": false,
+        "reference_theorem_input": false,
+        "source_path": "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json",
+        "source_status": "DISCOVERED",
+        "w_calibration_theorem_input": false
+      },
+      {
+        "empirical_derivation_input": false,
+        "reference_theorem_input": false,
+        "source_path": "artifacts/BHSM_author_ontology_v0_8.json",
+        "source_status": "DISCOVERED",
+        "w_calibration_theorem_input": false
+      }
+    ],
+    "reference_values_used_as_theorem_inputs": false,
+    "registry_updates": [
+      "formula:neutrino_propagation_mass_candidate",
+      "registry:neutral_operator_kernel_BH"
+    ],
+    "remaining_missing_object": "artifact-backed dimensionful neutral scale mapping BHSM boundary response to eV/GeV",
+    "scale_law": {
+      "claim_boundary": "Tau supplies an artifact-backed dimensionless response scale, not an eV/GeV conversion.",
+      "dimensionless_scale": 0.04489678053129164,
+      "effective_mass_GeV_per_unit": null,
+      "effective_mass_eV_per_unit": null,
+      "missing_object": "artifact-backed dimensionful neutral scale mapping BHSM boundary response to eV/GeV",
+      "scale_symbol": "tau",
+      "source_artifacts": [
+        "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json"
+      ],
+      "status": "OPEN_MISSING_NEUTRAL_SCALE"
+    },
+    "status_after": "CONDITIONAL_NUMERICAL_CLOSURE_CANDIDATE",
+    "status_before": "CONDITIONAL_PROPAGATION_THEOREM",
+    "tests_passed": true,
+    "theorem_key": "neutrino_propagation_mass",
+    "upper_limit_comparison_policy": "Electron-neutrino comparisons remain upper-limit comparisons unless a vetted central mass reference is explicitly supplied.",
+    "w_mass_used_as_theorem_input": false
+  },
+  "empirical_validation_claimed": false,
+  "field": {
+    "basis": [
+      "neutral_channel_1",
+      "neutral_channel_2",
+      "neutral_channel_3"
+    ],
+    "interpretation": "physical neutral boundary-local field under the BHSM author ontology",
+    "mode_labels": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "source_artifacts": [
+      "artifacts/neutral_operator_no_fit_output_v1.json",
+      "artifacts/BHSM_author_ontology_v0_8.json"
+    ],
+    "status": "CONDITIONAL_PROPAGATION_THEOREM",
+    "symbol": "Psi_nu_boundary"
+  },
+  "frozen_predictions_changed": false,
+  "numerical_closure": "dimensionless-only",
+  "official_predictions_changed": false,
+  "public_status": "structural architecture integrated conditional; numerical closure open",
+  "report_name": "BHSM Neutrino Propagation-Mass Numerical Closure",
+  "version": "0.9"
+}

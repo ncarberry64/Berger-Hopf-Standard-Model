@@ -15,10 +15,9 @@ def test_status_and_docs_use_the_author_ontology_classifications() -> None:
     assert "ARTIFACT_BACKED" in status
     assert "RETIRED_TARGET" in status
     assert "CONDITIONAL_ACTION_THEOREM" in status
-    assert "CONDITIONAL_PROPAGATION_THEOREM" in status
-    assert "Numerical `X_ch` response normalization" not in status
+    assert "CONDITIONAL_NUMERICAL_CLOSURE_CANDIDATE" in status
     assert "Numerical normalization" in status
-    assert "Numerical curvature response" in status
+    assert "Artifact-backed dimensionful neutral scale" in status
 
     for path in (
         "docs/minimal_action_closure.md",
