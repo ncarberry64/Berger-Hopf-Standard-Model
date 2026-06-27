@@ -74,6 +74,7 @@ class PredictionGallery:
 def _category(status: PredictionStatus, key: str) -> str:
     if key == "W_boson": return "calibration_anchor"
     if key == "electron_neutrino": return "upper_limit_comparison"
+    if key == "cp_holonomy_phase_attachment": return "candidate_open_theorem"
     return {
         PredictionStatus.FROZEN_INTERNAL_PREDICTION: "frozen_internal_prediction",
         PredictionStatus.OPEN_THEOREM_REQUIRED: "open_theorem_blocker",

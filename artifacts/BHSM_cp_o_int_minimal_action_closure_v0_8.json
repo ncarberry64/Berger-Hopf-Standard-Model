@@ -1,0 +1,163 @@
+{
+  "action_source_term": {
+    "action_derived": false,
+    "expression": "G_raw exp(i delta_BH) O_int + h.c.",
+    "hermitian": true,
+    "integration_measure": "undefined boundary/interface measure",
+    "locality": "boundary/interface candidate",
+    "missing_object": "action-derived measure, normalized source, and variation",
+    "source_artifacts": [
+      "artifacts/BHSM_cp_o_int_field_action_report_v0_6.json",
+      "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
+    ],
+    "status": "OPEN_MISSING_ACTION_SOURCE",
+    "symbol": "L_CP_O_int"
+  },
+  "action_term": {
+    "expression": "G_raw exp(i delta_BH) O_int + h.c.",
+    "key": "cp_o_int",
+    "missing_object": "action-derived CP O_int source with normalized coupling, measure, variation, and production rule",
+    "role": "standalone CP interaction",
+    "source_artifacts": [
+      "artifacts/BHSM_cp_o_int_field_action_report_v0_6.json",
+      "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
+    ],
+    "status": "OPEN_MISSING_ACTION_SOURCE",
+    "symbol": "S_phase"
+  },
+  "artifact_sources_used": [
+    "artifacts/BHSM_cp_o_int_field_action_report_v0_6.json",
+    "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
+  ],
+  "callable_key": "cp_o_int_production_theorem",
+  "claim_boundary": "The artifact-backed phase and symbolic candidate do not supply an action theorem by themselves.",
+  "coupling_normalization": {
+    "coupling_mass_dimension": "must complete a dimension-four density",
+    "missing_object": "normalized CP coupling and operator mass dimension",
+    "normalization": "symbol present; value not fixed",
+    "operator_mass_dimension": "not derived",
+    "source_artifacts": [
+      "artifacts/BHSM_cp_o_int_field_action_report_v0_6.json",
+      "artifacts/BHSM_effective_lagrangian_candidate_v0_3.json"
+    ],
+    "status": "OPEN_MISSING_COUPLING_NORMALIZATION",
+    "symbol": "G_raw",
+    "value_source": "symbolic 4D assembly ledger"
+  },
+  "empirical_derivation_inputs_used": false,
+  "field_representation": {
+    "chirality": "not action-derived",
+    "codomain": "CP boundary/interface channel",
+    "conjugation_rule": "Hermitian conjugate requested by symbolic ledger",
+    "domain": "CP boundary/interface channel",
+    "family_space": "not action-derived",
+    "gauge_representation": "gauge representation not action-derived",
+    "missing_object": "physical field representation and boundary-to-4D identification",
+    "source_artifacts": [
+      "artifacts/BHSM_cp_o_int_field_action_report_v0_6.json",
+      "artifacts/BHSM_effective_lagrangian_candidate_v0_3.json"
+    ],
+    "spin_lorentz_type": "abstract bilinear field candidate",
+    "status": "CANDIDATE",
+    "symbol": "Psi_CP_interface"
+  },
+  "gauge_admissibility": {
+    "admissible_sectors": [
+      "cp_boundary"
+    ],
+    "excluded_sectors": [
+      "charged_boundary",
+      "neutral_boundary"
+    ],
+    "gauge_invariant": null,
+    "missing_object": "action-derived gauge representation and forbidden-channel proof",
+    "passes": false,
+    "projector_key": "P_cp",
+    "source_artifacts": [
+      "artifacts/BHSM_cp_o_int_field_action_report_v0_6.json",
+      "artifacts/BHSM_effective_lagrangian_candidate_v0_3.json"
+    ],
+    "status": "CANDIDATE"
+  },
+  "lorentz_structure": {
+    "cp_rule": "exp(i delta_BH) O_int + exp(-i delta_BH) O_int^dagger",
+    "expression": "LorentzScalar[O_int] + h.c.",
+    "free_indices": [],
+    "hermitian": true,
+    "missing_object": "action-derived contraction and CP transformation law",
+    "scalar_density": true,
+    "source_artifacts": [
+      "artifacts/BHSM_cp_o_int_field_action_report_v0_6.json",
+      "artifacts/BHSM_effective_lagrangian_candidate_v0_3.json"
+    ],
+    "status": "CANDIDATE"
+  },
+  "pdg_values_used_as_theorem_inputs": false,
+  "production_rule": {
+    "callable_available": false,
+    "callable_key": "cp_o_int_production_theorem",
+    "expression": "not defined",
+    "missing_object": "action-derived CP O_int source with normalized coupling, measure, variation, and production rule",
+    "production_eligible": false,
+    "runtime_validation_required": false,
+    "status": "OPEN_MISSING_ACTION_SOURCE"
+  },
+  "promoted": false,
+  "promotion_reason": "Local artifacts stop at a symbolic density; no action-derived source or variation exists.",
+  "proof_gates": {
+    "action_source": false,
+    "artifact_output": true,
+    "callable_theorem": false,
+    "coupling_normalization": false,
+    "domain_codomain": true,
+    "field_representation_candidate": true,
+    "formal_theorem": true,
+    "lorentz_structure_candidate": true,
+    "no_empirical_inputs": true,
+    "provenance": true,
+    "registry_update": true,
+    "sector_admissibility_candidate": true,
+    "tests": true,
+    "variation_rule": false
+  },
+  "provenance": [
+    {
+      "calibration_theorem_input": false,
+      "empirical_derivation_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/BHSM_cp_o_int_field_action_report_v0_6.json",
+      "source_status": "DISCOVERED"
+    },
+    {
+      "calibration_theorem_input": false,
+      "empirical_derivation_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json",
+      "source_status": "DISCOVERED"
+    }
+  ],
+  "reference_values_used_as_theorem_inputs": false,
+  "registry_updates": [
+    "formula:cp_o_int_standalone_attachment",
+    "registry:cp_holonomy_phase_attachment"
+  ],
+  "remaining_missing_object": "action-derived CP O_int source with normalized coupling, measure, variation, and production rule",
+  "runtime_gates_changed": false,
+  "status_after": "OPEN_MISSING_ACTION_SOURCE",
+  "status_before": "OPEN_MISSING_ACTION_SOURCE",
+  "tests_passed": true,
+  "theorem_key": "cp_o_int",
+  "variation_or_source_rule": {
+    "defined": false,
+    "equation_or_current": "not defined",
+    "missing_object": "action-derived CP O_int source with normalized coupling, measure, variation, and production rule",
+    "source_artifacts": [
+      "artifacts/BHSM_cp_o_int_field_action_report_v0_6.json",
+      "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
+    ],
+    "source_expression": "not action-derived",
+    "status": "OPEN_MISSING_ACTION_SOURCE",
+    "varied_field": "O_int"
+  },
+  "w_calibration_used_as_theorem_input": false
+}

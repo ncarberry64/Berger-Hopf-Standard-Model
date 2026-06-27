@@ -92,11 +92,11 @@
       ],
       "calibration_allowed": false,
       "can_be_calibration_anchor": false,
-      "claim_boundary": "Not promoted to a production vertex.",
+      "claim_boundary": "Boundary source matrix with an open X_ch field theorem.",
       "comparison_kind": null,
       "default_status": "OPEN_THEOREM_REQUIRED",
       "display_name": "Charged boundary response",
-      "excluded_reason": "X_ch interaction theorem is open",
+      "excluded_reason": "X_ch field representation is open",
       "geometry_required": false,
       "independent_prediction_allowed": false,
       "notes": [],
@@ -106,10 +106,11 @@
       "runtime_required": false,
       "sector": "charged_boundary",
       "source_artifacts": [
-        "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json"
+        "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
+        "artifacts/BHSM_x_ch_minimal_action_closure_v0_8.json"
       ],
       "source_type": "BHSM artifact",
-      "theorem_status": "X_ch theorem missing for production boundary-response vertex",
+      "theorem_status": "OPEN_MISSING_FIELD_REPRESENTATION",
       "unit": "dimensionless"
     },
     {
@@ -118,11 +119,11 @@
       ],
       "calibration_allowed": false,
       "can_be_calibration_anchor": false,
-      "claim_boundary": "The phase source is not a standalone production CP vertex.",
+      "claim_boundary": "Artifact-backed phase plus symbolic O_int candidate; action source remains open.",
       "comparison_kind": null,
       "default_status": "OPEN_THEOREM_REQUIRED",
       "display_name": "CP holonomy phase attachment",
-      "excluded_reason": "O_int interaction theorem is open",
+      "excluded_reason": "O_int action source is open",
       "geometry_required": false,
       "independent_prediction_allowed": false,
       "notes": [],
@@ -132,10 +133,11 @@
       "runtime_required": false,
       "sector": "cp_holonomy",
       "source_artifacts": [
-        "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json"
+        "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json",
+        "artifacts/BHSM_cp_o_int_minimal_action_closure_v0_8.json"
       ],
       "source_type": "BHSM artifact",
-      "theorem_status": "standalone O_int theorem missing",
+      "theorem_status": "OPEN_MISSING_ACTION_SOURCE",
       "unit": "dimensionless"
     },
     {
@@ -248,11 +250,11 @@
       ],
       "calibration_allowed": false,
       "can_be_calibration_anchor": false,
-      "claim_boundary": "This boundary/operator source is not a physical collider neutrino mass matrix.",
+      "claim_boundary": "Boundary/operator seed with an open physical neutrino map.",
       "comparison_kind": null,
       "default_status": "OPEN_THEOREM_REQUIRED",
       "display_name": "Neutral operator kernel",
-      "excluded_reason": "neutral basis and scale theorem is open",
+      "excluded_reason": "physical neutrino basis map is open",
       "geometry_required": false,
       "independent_prediction_allowed": false,
       "notes": [],
@@ -262,10 +264,11 @@
       "runtime_required": false,
       "sector": "neutral",
       "source_artifacts": [
-        "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json"
+        "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
+        "artifacts/BHSM_neutrino_basis_scale_minimal_action_closure_v0_8.json"
       ],
       "source_type": "BHSM artifact",
-      "theorem_status": "neutrino basis/scale/Dirac-Majorana theorem missing",
+      "theorem_status": "OPEN_MISSING_PHYSICAL_BASIS",
       "unit": "dimensionless"
     },
     {

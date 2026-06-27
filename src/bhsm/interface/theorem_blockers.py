@@ -10,6 +10,9 @@ from typing import Any, Mapping
 OPEN = "OPEN_EXACT_MISSING_THEOREM"
 ALLOWED_CLOSURE_STATUSES = (
     OPEN,
+    "OPEN_MISSING_ACTION_SOURCE",
+    "OPEN_MISSING_FIELD_REPRESENTATION",
+    "OPEN_MISSING_PHYSICAL_BASIS",
     "DERIVED_FROM_REPO_ARTIFACT",
     "DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM",
     "PARTIAL_INTERFACE_CONVENTION_ONLY",
@@ -69,18 +72,18 @@ class TheoremBlockerRegistry:
 
 def default_theorem_blockers() -> TheoremBlockerRegistry:
     rows = (
-        TheoremBlocker("X_ch", "Charged boundary-response interaction", OPEN,
+        TheoremBlocker("X_ch", "Charged boundary-response interaction", "OPEN_MISSING_FIELD_REPRESENTATION",
                        "explicit X_ch production interaction theorem", ("charged_boundary_response_matrix",),
-                       ("artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json", "artifacts/BHSM_interaction_theorem_closure_audit_v1_1.json", "artifacts/BHSM_x_ch_theorem_closure_attempt_v0_4.json"),
-                       "explicit X_ch production interaction theorem", "This is a theorem blocker, not a production prediction."),
-        TheoremBlocker("neutrino_basis_scale_dirac_majorana", "Neutrino basis, scale, and Dirac/Majorana convention", OPEN,
+                       ("artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json", "artifacts/BHSM_interaction_theorem_closure_audit_v1_1.json", "artifacts/BHSM_x_ch_theorem_closure_attempt_v0_4.json", "artifacts/BHSM_x_ch_minimal_action_closure_v0_8.json"),
+                       "action-derived X_ch field representation", "The boundary source matrix does not define the X_ch field."),
+        TheoremBlocker("neutrino_basis_scale_dirac_majorana", "Neutrino basis, scale, and Dirac/Majorana convention", "OPEN_MISSING_PHYSICAL_BASIS",
                        "physical neutrino basis, dimensional scale, and Dirac/Majorana theorem", ("neutral_operator_kernel_BH",),
-                       ("artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json", "artifacts/BHSM_interaction_theorem_closure_audit_v1_1.json", "artifacts/BHSM_neutrino_basis_scale_theorem_closure_attempt_v0_4.json"),
-                       "physical neutrino basis + dimensional scale + Dirac/Majorana convention", "This is a theorem blocker, not a production prediction."),
-        TheoremBlocker("cp_o_int", "Standalone CP O_int attachment", OPEN,
+                       ("artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json", "artifacts/BHSM_interaction_theorem_closure_audit_v1_1.json", "artifacts/BHSM_neutrino_basis_scale_theorem_closure_attempt_v0_4.json", "artifacts/BHSM_neutrino_basis_scale_minimal_action_closure_v0_8.json"),
+                       "map from neutral boundary channels to physical neutrino states", "The boundary kernel does not define the physical basis."),
+        TheoremBlocker("cp_o_int", "Standalone CP O_int attachment", "OPEN_MISSING_ACTION_SOURCE",
                        "action-derived standalone CP O_int field/action theorem", ("cp_holonomy_phase_attachment",),
-                       ("artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json", "artifacts/BHSM_interaction_theorem_closure_audit_v1_1.json", "artifacts/BHSM_cp_o_int_theorem_closure_attempt_v0_4.json", "artifacts/BHSM_cp_o_int_attachment_report_v0_5.json", "artifacts/BHSM_cp_o_int_field_action_report_v0_6.json"),
-                       "action-derived CP O_int field representation, Lorentz/gauge structure, coupling normalization, measure/variation, and production callable", "This is a theorem blocker, not a production prediction."),
+                       ("artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json", "artifacts/BHSM_interaction_theorem_closure_audit_v1_1.json", "artifacts/BHSM_cp_o_int_theorem_closure_attempt_v0_4.json", "artifacts/BHSM_cp_o_int_attachment_report_v0_5.json", "artifacts/BHSM_cp_o_int_field_action_report_v0_6.json", "artifacts/BHSM_cp_o_int_minimal_action_closure_v0_8.json"),
+                       "action-derived CP O_int source with normalized coupling, measure, variation, and production rule", "The callable symbolic candidate does not supply an action source."),
     )
     return TheoremBlockerRegistry({row.blocker_key: row for row in rows})
 
@@ -106,7 +109,7 @@ def attempt_theorem_closure(
         return TheoremAttemptResult(blocker_key, True, "DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM",
                                     "Author-supplied axiom loaded conditionally; production promotion remains unavailable.",
                                     blocker.missing_object, checked, True, False, blocker.claim_boundary)
-    return TheoremAttemptResult(blocker_key, True, OPEN,
+    return TheoremAttemptResult(blocker_key, True, blocker.current_status,
                                 "Repository artifacts record the attempted interface and exact missing theorem; no closure artifact is present.",
                                 blocker.missing_object, checked, False, False, blocker.claim_boundary)
 

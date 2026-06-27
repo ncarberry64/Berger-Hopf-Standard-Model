@@ -63,6 +63,12 @@ python -m bhsm.interface theorem-blockers
 
 Lists each open theorem and its smallest missing object.
 
+```bash
+python -m bhsm.interface minimal-action-status
+python -m bhsm.interface minimal-action-report --format markdown
+```
+
+Runs the three-theorem minimal-action decision and prints its concise report.
+
 All commands above run offline. Live PDG lookup and external HEP tool execution
 are optional, separate workflows.
-

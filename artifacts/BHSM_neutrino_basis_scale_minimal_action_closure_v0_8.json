@@ -1,0 +1,163 @@
+{
+  "action_source_term": {
+    "action_derived": false,
+    "expression": "Psi_nu_bar K_nu Psi_nu",
+    "hermitian": true,
+    "integration_measure": "boundary/interface measure",
+    "locality": "neutral boundary seed",
+    "missing_object": "physical neutrino basis map",
+    "source_artifacts": [
+      "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
+      "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
+    ],
+    "status": "OPEN_MISSING_PHYSICAL_BASIS",
+    "symbol": "L_nu_boundary"
+  },
+  "action_term": {
+    "expression": "Psi_nu_bar K_nu Psi_nu",
+    "key": "neutrino_basis_scale",
+    "missing_object": "map from the neutral boundary channel basis to physical neutrino states",
+    "role": "neutral physical map",
+    "source_artifacts": [
+      "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
+      "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
+    ],
+    "status": "OPEN_MISSING_PHYSICAL_BASIS",
+    "symbol": "S_neutral"
+  },
+  "artifact_sources_used": [
+    "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
+    "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
+  ],
+  "callable_key": "neutrino_physical_basis_scale",
+  "claim_boundary": "K_nu and PMNS artifacts do not determine a physical neutrino mass basis or scale.",
+  "coupling_normalization": {
+    "coupling_mass_dimension": "physical scale dimension not supplied",
+    "missing_object": "action-derived dimensional neutrino scale",
+    "normalization": "not defined",
+    "operator_mass_dimension": "K_nu is dimensionless boundary data",
+    "source_artifacts": [
+      "artifacts/neutral_operator_no_fit_output_v1.json",
+      "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json"
+    ],
+    "status": "OPEN_MISSING_DIMENSIONAL_SCALE",
+    "symbol": "Lambda_nu",
+    "value_source": "no physical scale artifact"
+  },
+  "empirical_derivation_inputs_used": false,
+  "field_representation": {
+    "chirality": "not fixed physically",
+    "codomain": "three-dimensional neutral boundary channel basis",
+    "conjugation_rule": "Dirac/Majorana rule not fixed",
+    "domain": "three-dimensional neutral boundary channel basis",
+    "family_space": "three neutral boundary channels",
+    "gauge_representation": "neutral boundary channel representation",
+    "missing_object": "map from neutral boundary channels to physical neutrino states",
+    "source_artifacts": [
+      "artifacts/neutral_operator_no_fit_output_v1.json",
+      "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json"
+    ],
+    "spin_lorentz_type": "boundary-operator bilinear seed",
+    "status": "ARTIFACT_BACKED",
+    "symbol": "Psi_nu"
+  },
+  "gauge_admissibility": {
+    "admissible_sectors": [
+      "neutral_boundary"
+    ],
+    "excluded_sectors": [
+      "cp_boundary",
+      "charged_boundary"
+    ],
+    "gauge_invariant": null,
+    "missing_object": "physical neutral-state admissibility and ordering map",
+    "passes": false,
+    "projector_key": "P_nu",
+    "source_artifacts": [
+      "artifacts/neutral_operator_no_fit_output_v1.json",
+      "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json"
+    ],
+    "status": "CANDIDATE"
+  },
+  "lorentz_structure": {
+    "cp_rule": "not applicable to the real boundary seed",
+    "expression": "Psi_nu_bar K_nu Psi_nu",
+    "free_indices": [],
+    "hermitian": true,
+    "missing_object": "physical Dirac or Majorana bilinear convention",
+    "scalar_density": true,
+    "source_artifacts": [
+      "artifacts/neutral_operator_no_fit_output_v1.json",
+      "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json"
+    ],
+    "status": "CANDIDATE"
+  },
+  "pdg_values_used_as_theorem_inputs": false,
+  "production_rule": {
+    "callable_available": false,
+    "callable_key": "neutrino_physical_basis_scale",
+    "expression": "not defined",
+    "missing_object": "map from the neutral boundary channel basis to physical neutrino states",
+    "production_eligible": false,
+    "runtime_validation_required": false,
+    "status": "OPEN_MISSING_PHYSICAL_BASIS"
+  },
+  "promoted": false,
+  "promotion_reason": "K_nu defines a boundary basis operator but no physical state map.",
+  "proof_gates": {
+    "action_source": false,
+    "artifact_output": true,
+    "boundary_domain": true,
+    "callable_theorem": false,
+    "dimensional_scale": false,
+    "dirac_majorana_convention": false,
+    "formal_theorem": true,
+    "no_empirical_inputs": true,
+    "observable_map": false,
+    "ordering_policy": false,
+    "physical_basis": false,
+    "provenance": true,
+    "registry_update": true,
+    "tests": true
+  },
+  "provenance": [
+    {
+      "calibration_theorem_input": false,
+      "empirical_derivation_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
+      "source_status": "DISCOVERED"
+    },
+    {
+      "calibration_theorem_input": false,
+      "empirical_derivation_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json",
+      "source_status": "DISCOVERED"
+    }
+  ],
+  "reference_values_used_as_theorem_inputs": false,
+  "registry_updates": [
+    "formula:neutrino_physical_basis_scale",
+    "registry:neutral_operator_kernel_BH"
+  ],
+  "remaining_missing_object": "map from the neutral boundary channel basis to physical neutrino states",
+  "runtime_gates_changed": false,
+  "status_after": "OPEN_MISSING_PHYSICAL_BASIS",
+  "status_before": "OPEN_MISSING_PHYSICAL_BASIS_AND_SCALE",
+  "tests_passed": true,
+  "theorem_key": "neutrino_basis_scale",
+  "variation_or_source_rule": {
+    "defined": false,
+    "equation_or_current": "not defined",
+    "missing_object": "map from the neutral boundary channel basis to physical neutrino states",
+    "source_artifacts": [
+      "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
+      "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
+    ],
+    "source_expression": "not action-derived",
+    "status": "OPEN_MISSING_PHYSICAL_BASIS",
+    "varied_field": "Psi_nu"
+  },
+  "w_calibration_used_as_theorem_input": false
+}

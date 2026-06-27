@@ -59,8 +59,9 @@ def test_status_has_required_areas_and_clean_taxonomy() -> None:
         "MadGraph smoke test",
     )
     assert all(row in status for row in required_rows)
-    assert "CANDIDATE / OPEN" in status
-    assert "callable symbolic candidate exists" in status
+    assert "OPEN_MISSING_ACTION_SOURCE" in status
+    assert "OPEN_MISSING_FIELD_REPRESENTATION" in status
+    assert "OPEN_MISSING_PHYSICAL_BASIS" in status
     assert "RUNTIME_GATED" in status
 
 
@@ -114,4 +115,3 @@ def test_quickstart_and_docs_index_cover_reviewer_path() -> None:
 def test_frozen_prediction_hashes_are_unchanged() -> None:
     for path, expected in FROZEN_HASHES.items():
         assert hashlib.sha256((ROOT / path).read_bytes()).hexdigest() == expected
-

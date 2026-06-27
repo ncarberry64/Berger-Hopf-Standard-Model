@@ -79,7 +79,7 @@
     {
       "calibration_anchor": "W_boson",
       "category": "open_theorem_blocker",
-      "claim_boundary": "Not promoted to a production vertex. This is a theorem blocker, not a production prediction.",
+      "claim_boundary": "Boundary source matrix with an open X_ch field theorem. This is a theorem blocker, not a production prediction.",
       "comparison_kind": null,
       "comparison_value": null,
       "delta": null,
@@ -92,20 +92,21 @@
       "runtime_status": "not_applicable",
       "show_in_default_gallery": true,
       "source_artifacts": [
-        "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json"
+        "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
+        "artifacts/BHSM_x_ch_minimal_action_closure_v0_8.json"
       ],
       "source_type": "BHSM artifact",
       "speculative_status": "not_speculative",
       "status": "OPEN_THEOREM_REQUIRED",
-      "theorem_status": "X_ch theorem missing for production boundary-response vertex",
+      "theorem_status": "OPEN_MISSING_FIELD_REPRESENTATION",
       "unit": "dimensionless",
       "value": null,
       "value_kind": "status_only"
     },
     {
       "calibration_anchor": "W_boson",
-      "category": "open_theorem_blocker",
-      "claim_boundary": "The phase source is not a standalone production CP vertex. This is a theorem blocker, not a production prediction.",
+      "category": "candidate_open_theorem",
+      "claim_boundary": "Artifact-backed phase plus symbolic O_int candidate; action source remains open. This is a theorem blocker, not a production prediction.",
       "comparison_kind": null,
       "comparison_value": null,
       "delta": null,
@@ -118,12 +119,13 @@
       "runtime_status": "not_applicable",
       "show_in_default_gallery": true,
       "source_artifacts": [
-        "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json"
+        "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json",
+        "artifacts/BHSM_cp_o_int_minimal_action_closure_v0_8.json"
       ],
       "source_type": "BHSM artifact",
       "speculative_status": "not_speculative",
       "status": "OPEN_THEOREM_REQUIRED",
-      "theorem_status": "standalone O_int theorem missing",
+      "theorem_status": "OPEN_MISSING_ACTION_SOURCE",
       "unit": "dimensionless",
       "value": null,
       "value_kind": "status_only"
@@ -207,7 +209,7 @@
     {
       "calibration_anchor": "W_boson",
       "category": "open_theorem_blocker",
-      "claim_boundary": "This boundary/operator source is not a physical collider neutrino mass matrix. This is a theorem blocker, not a production prediction.",
+      "claim_boundary": "Boundary/operator seed with an open physical neutrino map. This is a theorem blocker, not a production prediction.",
       "comparison_kind": null,
       "comparison_value": null,
       "delta": null,
@@ -220,12 +222,13 @@
       "runtime_status": "not_applicable",
       "show_in_default_gallery": true,
       "source_artifacts": [
-        "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json"
+        "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
+        "artifacts/BHSM_neutrino_basis_scale_minimal_action_closure_v0_8.json"
       ],
       "source_type": "BHSM artifact",
       "speculative_status": "not_speculative",
       "status": "OPEN_THEOREM_REQUIRED",
-      "theorem_status": "neutrino basis/scale/Dirac-Majorana theorem missing",
+      "theorem_status": "OPEN_MISSING_PHYSICAL_BASIS",
       "unit": "dimensionless",
       "value": null,
       "value_kind": "status_only"

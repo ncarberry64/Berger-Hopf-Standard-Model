@@ -34,7 +34,10 @@ not required for the listed local behavior.
 | `cp-o-int-field-action-stages` | Show Sprint C construction stages | JSON | no | no |
 | `cp-o-int-production-eligibility` | Show production and runtime eligibility | JSON | no | no |
 | `cp-o-int-action-candidate` | Show the symbolic action-density candidate | JSON | no | no |
+| `minimal-action` | Build the complete minimal-action decision record | JSON | no | no |
+| `minimal-action-report` | Render the three-theorem decision table | Markdown or JSON | no | no |
+| `close-minimal-action KEY` | Evaluate one minimal-action theorem | JSON | no | no |
+| `minimal-action-status` | Show concise theorem statuses | JSON | no | no |
 
 Without `--offline-ok`, `pdg-fetch` may try an optional live reference adapter.
 The offline fallback is reference-only and is never a derivation input.
-

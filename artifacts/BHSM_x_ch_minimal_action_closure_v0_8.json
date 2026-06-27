@@ -1,0 +1,163 @@
+{
+  "action_source_term": {
+    "action_derived": false,
+    "expression": "Psi_ch_bar C_ch_boundary Psi_ch X_ch",
+    "hermitian": true,
+    "integration_measure": "undefined",
+    "locality": "boundary-to-4D candidate",
+    "missing_object": "action-derived X_ch field representation",
+    "source_artifacts": [
+      "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
+      "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
+    ],
+    "status": "OPEN_MISSING_FIELD_REPRESENTATION",
+    "symbol": "L_X_ch"
+  },
+  "action_term": {
+    "expression": "Psi_ch_bar C_ch_boundary Psi_ch X_ch",
+    "key": "x_ch",
+    "missing_object": "action-derived X_ch field representation",
+    "role": "charged response",
+    "source_artifacts": [
+      "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
+      "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
+    ],
+    "status": "OPEN_MISSING_FIELD_REPRESENTATION",
+    "symbol": "S_charged"
+  },
+  "artifact_sources_used": [
+    "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
+    "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
+  ],
+  "callable_key": "x_ch_production_vertex",
+  "claim_boundary": "C_ch_boundary is an artifact-backed source matrix, not an X_ch field theorem.",
+  "coupling_normalization": {
+    "coupling_mass_dimension": "not derived",
+    "missing_object": "normalized X_ch coupling and mass dimension",
+    "normalization": "not defined",
+    "operator_mass_dimension": "not derived",
+    "source_artifacts": [
+      "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
+      "artifacts/BHSM_vertex_source_target_map_v0_5.json"
+    ],
+    "status": "OPEN_MISSING_COUPLING_NORMALIZATION",
+    "symbol": "g_X",
+    "value_source": "no action source"
+  },
+  "empirical_derivation_inputs_used": false,
+  "field_representation": {
+    "chirality": "not applicable until field content is fixed",
+    "codomain": "four-dimensional production field space",
+    "conjugation_rule": "not derived",
+    "domain": "charged boundary-response channel",
+    "family_space": "charged-sector ledger only",
+    "gauge_representation": "not derived",
+    "missing_object": "action-derived X_ch field representation",
+    "source_artifacts": [
+      "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
+      "artifacts/BHSM_vertex_source_target_map_v0_5.json"
+    ],
+    "spin_lorentz_type": "vector index is suggested but spin representation is not derived",
+    "status": "OPEN_MISSING_FIELD_REPRESENTATION",
+    "symbol": "X_ch^mu"
+  },
+  "gauge_admissibility": {
+    "admissible_sectors": [
+      "charged_boundary"
+    ],
+    "excluded_sectors": [
+      "cp_boundary",
+      "neutral_boundary"
+    ],
+    "gauge_invariant": null,
+    "missing_object": "X_ch gauge representation and admissible current theorem",
+    "passes": false,
+    "projector_key": "P_ch",
+    "source_artifacts": [
+      "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
+      "artifacts/BHSM_vertex_source_target_map_v0_5.json"
+    ],
+    "status": "OPEN_MISSING_GAUGE_ADMISSIBILITY"
+  },
+  "lorentz_structure": {
+    "cp_rule": "not specified",
+    "expression": "X_ch^mu J_mu^boundary",
+    "free_indices": [],
+    "hermitian": true,
+    "missing_object": "Lorentz representation and current contraction following from the X_ch field theorem",
+    "scalar_density": true,
+    "source_artifacts": [
+      "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
+      "artifacts/BHSM_vertex_source_target_map_v0_5.json"
+    ],
+    "status": "OPEN_MISSING_LORENTZ_STRUCTURE"
+  },
+  "pdg_values_used_as_theorem_inputs": false,
+  "production_rule": {
+    "callable_available": false,
+    "callable_key": "x_ch_production_vertex",
+    "expression": "not defined",
+    "missing_object": "action-derived X_ch field representation",
+    "production_eligible": false,
+    "runtime_validation_required": false,
+    "status": "OPEN_MISSING_FIELD_REPRESENTATION"
+  },
+  "promoted": false,
+  "promotion_reason": "The source matrix does not determine a physical X_ch field.",
+  "proof_gates": {
+    "action_source": false,
+    "artifact_output": true,
+    "callable_theorem": false,
+    "coupling_normalization": false,
+    "domain_codomain": false,
+    "field_representation": false,
+    "formal_theorem": true,
+    "gauge_admissibility": false,
+    "lorentz_structure": false,
+    "no_empirical_inputs": true,
+    "provenance": true,
+    "registry_update": true,
+    "tests": true,
+    "variation_rule": false
+  },
+  "provenance": [
+    {
+      "calibration_theorem_input": false,
+      "empirical_derivation_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
+      "source_status": "DISCOVERED"
+    },
+    {
+      "calibration_theorem_input": false,
+      "empirical_derivation_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json",
+      "source_status": "DISCOVERED"
+    }
+  ],
+  "reference_values_used_as_theorem_inputs": false,
+  "registry_updates": [
+    "formula:x_ch_production_vertex",
+    "registry:charged_boundary_response_matrix"
+  ],
+  "remaining_missing_object": "action-derived X_ch field representation",
+  "runtime_gates_changed": false,
+  "status_after": "OPEN_MISSING_FIELD_REPRESENTATION",
+  "status_before": "OPEN_EXACT_MISSING_THEOREM",
+  "tests_passed": true,
+  "theorem_key": "X_ch",
+  "variation_or_source_rule": {
+    "defined": false,
+    "equation_or_current": "not defined",
+    "missing_object": "action-derived X_ch field representation",
+    "source_artifacts": [
+      "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
+      "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
+    ],
+    "source_expression": "not action-derived",
+    "status": "OPEN_MISSING_FIELD_REPRESENTATION",
+    "varied_field": "X_ch"
+  },
+  "w_calibration_used_as_theorem_input": false
+}

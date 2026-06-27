@@ -41,6 +41,10 @@ detail and historical evidence.
 - [Theorem closure Sprint A](theorem_closure_sprint_a.md)
 - [Interaction theorem audit](interaction_theorem_closure_audit.md)
 - [Open blocker backlog](open_blockers_backlog.md)
+- [Minimal action closure](minimal_action_closure.md)
+- [CP O_int minimal action decision](cp_o_int_minimal_action_closure.md)
+- [X_ch minimal action decision](x_ch_minimal_action_closure.md)
+- [Neutrino basis/scale minimal action decision](neutrino_basis_scale_minimal_action_closure.md)
 
 ## CP O_int Sprint Docs
 

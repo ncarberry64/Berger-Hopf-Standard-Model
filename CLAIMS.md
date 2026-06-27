@@ -10,6 +10,8 @@
 - BHSM has executable theorem-closure machinery.
 - BHSM has a CP `O_int` symbolic field/action candidate, but not an action-level
   production theorem.
+- BHSM has an executable minimal-action audit that identifies the first missing
+  object for CP `O_int`, `X_ch`, and the neutrino physical map.
 
 ## Not Supported
 
@@ -31,4 +33,3 @@ path exist. Candidate means an explicit construction exists with named proof
 gaps. Open means the missing object is identified. Runtime-gated means a live
 external validation step remains. These labels do not substitute for empirical
 comparison or theorem proof.
-

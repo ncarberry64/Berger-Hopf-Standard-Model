@@ -14,13 +14,13 @@
     "The BHSM CKM source matrix is an internal artifact; external comparison remains separate.",
     "The BHSM PMNS source matrix is internal; the physical neutrino mass/basis theorem remains separate.",
     "W may calibrate the geometric-to-physical scale; when used as anchor it is not an independent prediction.",
-    "Not promoted to a production vertex.",
-    "The phase source is not a standalone production CP vertex.",
+    "Boundary source matrix with an open X_ch field theorem.",
+    "Artifact-backed phase plus symbolic O_int candidate; action source remains open.",
     "Electron-neutrino comparison is upper-limit based unless a vetted central reference is supplied.",
     "The .fr model remains disabled until live Wolfram/FeynRules validation passes.",
     "MadGraph readiness remains false until a real smoke test passes.",
     "Bounded CKM/PMNS collider-interface subset only; not the complete BHSM 4D Lagrangian.",
-    "This boundary/operator source is not a physical collider neutrino mass matrix.",
+    "Boundary/operator seed with an open physical neutrino map.",
     "UFO readiness remains false until real export and loadability pass."
   ],
   "claims_of_empirical_validation": false,
@@ -148,16 +148,16 @@
       "status": "MODEL_PREDICTION_GIVEN_CALIBRATION"
     },
     {
-      "claim_boundary": "Not promoted to a production vertex.",
+      "claim_boundary": "Boundary source matrix with an open X_ch field theorem.",
       "particle_key": "charged_boundary_response_matrix",
       "status": "OPEN_THEOREM_REQUIRED",
-      "theorem_status": "X_ch theorem missing for production boundary-response vertex"
+      "theorem_status": "OPEN_MISSING_FIELD_REPRESENTATION"
     },
     {
-      "claim_boundary": "The phase source is not a standalone production CP vertex.",
+      "claim_boundary": "Artifact-backed phase plus symbolic O_int candidate; action source remains open.",
       "particle_key": "cp_holonomy_phase_attachment",
       "status": "OPEN_THEOREM_REQUIRED",
-      "theorem_status": "standalone O_int theorem missing"
+      "theorem_status": "OPEN_MISSING_ACTION_SOURCE"
     },
     {
       "claim_boundary": "The .fr model remains disabled until live Wolfram/FeynRules validation passes.",
@@ -172,10 +172,10 @@
       "theorem_status": "NOT_APPLICABLE"
     },
     {
-      "claim_boundary": "This boundary/operator source is not a physical collider neutrino mass matrix.",
+      "claim_boundary": "Boundary/operator seed with an open physical neutrino map.",
       "particle_key": "neutral_operator_kernel_BH",
       "status": "OPEN_THEOREM_REQUIRED",
-      "theorem_status": "neutrino basis/scale/Dirac-Majorana theorem missing"
+      "theorem_status": "OPEN_MISSING_PHYSICAL_BASIS"
     },
     {
       "claim_boundary": "UFO readiness remains false until real export and loadability pass.",

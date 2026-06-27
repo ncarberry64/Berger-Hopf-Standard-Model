@@ -35,7 +35,7 @@
     },
     {
       "callable_path": null,
-      "claim_boundary": "X_ch remains open without an explicit artifact-backed production theorem.",
+      "claim_boundary": "X_ch remains open at its action-derived field representation.",
       "description": "Production charged-response callable.",
       "display_name": "Charged response",
       "formula_key": "charged_response_from_artifact",
@@ -44,11 +44,12 @@
       "output_schema": {},
       "safe_for_default_report": false,
       "source_artifacts": [
-        "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json"
+        "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
+        "artifacts/BHSM_x_ch_minimal_action_closure_v0_8.json"
       ],
       "source_type": "theorem blocker",
       "status": "OPEN_THEOREM_REQUIRED",
-      "theorem_status": "OPEN_EXACT_MISSING_THEOREM"
+      "theorem_status": "OPEN_MISSING_FIELD_REPRESENTATION"
     },
     {
       "callable_path": "bhsm.interface.matrix_adapters.load_ckm_matrix_artifact",
@@ -71,7 +72,7 @@
     },
     {
       "callable_path": null,
-      "claim_boundary": "The phase artifact does not close standalone CP O_int.",
+      "claim_boundary": "The symbolic candidate remains open at its action-derived source and variation.",
       "description": "Standalone production CP attachment callable.",
       "display_name": "Standalone CP O_int attachment",
       "formula_key": "cp_o_int_standalone_attachment",
@@ -80,11 +81,15 @@
       "output_schema": {},
       "safe_for_default_report": false,
       "source_artifacts": [
-        "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json"
+        "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json",
+        "artifacts/BHSM_cp_o_int_theorem_closure_attempt_v0_4.json",
+        "artifacts/BHSM_cp_o_int_attachment_report_v0_5.json",
+        "artifacts/BHSM_cp_o_int_field_action_report_v0_6.json",
+        "artifacts/BHSM_cp_o_int_minimal_action_closure_v0_8.json"
       ],
       "source_type": "theorem blocker",
       "status": "OPEN_THEOREM_REQUIRED",
-      "theorem_status": "OPEN_EXACT_MISSING_THEOREM"
+      "theorem_status": "OPEN_MISSING_ACTION_SOURCE"
     },
     {
       "callable_path": "bhsm.interface.matrix_adapters.load_cp_phase_artifact",
@@ -181,7 +186,7 @@
     },
     {
       "callable_path": null,
-      "claim_boundary": "Physical neutrino basis and dimensional scale remain open.",
+      "claim_boundary": "The neutral seed remains open at the physical basis map.",
       "description": "Physical neutral-sector interpretation callable.",
       "display_name": "Neutrino physical basis/scale",
       "formula_key": "neutrino_physical_basis_scale",
@@ -189,10 +194,13 @@
       "notes": [],
       "output_schema": {},
       "safe_for_default_report": false,
-      "source_artifacts": [],
+      "source_artifacts": [
+        "artifacts/BHSM_neutrino_basis_scale_theorem_closure_attempt_v0_4.json",
+        "artifacts/BHSM_neutrino_basis_scale_minimal_action_closure_v0_8.json"
+      ],
       "source_type": "theorem blocker",
       "status": "OPEN_THEOREM_REQUIRED",
-      "theorem_status": "OPEN_EXACT_MISSING_THEOREM"
+      "theorem_status": "OPEN_MISSING_PHYSICAL_BASIS"
     },
     {
       "callable_path": "bhsm.interface.matrix_adapters.load_pmns_matrix_artifact",
@@ -215,7 +223,7 @@
     },
     {
       "callable_path": null,
-      "claim_boundary": "X_ch remains open without an explicit artifact-backed theorem.",
+      "claim_boundary": "X_ch remains open at its action-derived field representation.",
       "description": "Production vertex callable.",
       "display_name": "X_ch production vertex",
       "formula_key": "x_ch_production_vertex",
@@ -223,10 +231,13 @@
       "notes": [],
       "output_schema": {},
       "safe_for_default_report": false,
-      "source_artifacts": [],
+      "source_artifacts": [
+        "artifacts/BHSM_x_ch_theorem_closure_attempt_v0_4.json",
+        "artifacts/BHSM_x_ch_minimal_action_closure_v0_8.json"
+      ],
       "source_type": "theorem blocker",
       "status": "OPEN_THEOREM_REQUIRED",
-      "theorem_status": "OPEN_EXACT_MISSING_THEOREM"
+      "theorem_status": "OPEN_MISSING_FIELD_REPRESENTATION"
     }
   ],
   "open_theorem_required": [

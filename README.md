@@ -48,6 +48,7 @@ python -m bhsm.interface gallery --format markdown
 python -m bhsm.interface artifact-sources
 python -m bhsm.interface formula-registry
 python -m bhsm.interface theorem-blockers
+python -m bhsm.interface minimal-action-status
 ```
 
 See [QUICKSTART.md](QUICKSTART.md) for a runnable walkthrough and
@@ -76,16 +77,16 @@ python -m bhsm.interface artifact-report --anchor W_boson --format json
 ## Candidate And Open Theorem Areas
 
 CP phase attachment to CKM/PMNS structures is artifact-backed. Sprint C adds a
-source-traced, callable symbolic CP `O_int` field/action candidate. Its current
-theorem status is `OPEN_MISSING_ACTION_SOURCE`: production eligibility still
-requires the physical field representation, Lorentz and gauge closure,
-normalized coupling, action measure and variation, and a production callable.
+source-traced, callable symbolic CP `O_int` field/action candidate. The v0.8
+minimal-action audit identifies its first unresolved object as the
+action-derived source, normalized measure, variation, and production rule.
 
 `X_ch` and the physical neutrino basis/scale theorem remain open. Their exact
 missing objects are reported by:
 
 ```bash
 python -m bhsm.interface theorem-blockers
+python -m bhsm.interface minimal-action-report --format markdown
 ```
 
 Long-form mathematical status remains available in
