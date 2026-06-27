@@ -19,4 +19,4 @@ def test_sprint_c_docs_have_exact_warnings_and_readme_section():
         "Runtime-disabled software gates remain disabled until live external validation passes.",
     ):
         assert warning in docs
-    assert "## CP O_int field/action construction attempt" in (ROOT / "README.md").read_text(encoding="utf-8")
+    assert "[Sprint C field/action candidate]" in (ROOT / "docs/README.md").read_text(encoding="utf-8")

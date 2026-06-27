@@ -37,7 +37,7 @@ def test_docs_contain_warnings_and_readme_section():
         "The neutral operator kernel is not promoted to a physical neutrino mass matrix without a physical basis, dimensional scale, and Dirac/Majorana convention.",
     ):
         assert warning in docs
-    assert "## Theorem closure attempts" in (ROOT / "README.md").read_text(encoding="utf-8")
+    assert "## Candidate And Open Theorem Areas" in (ROOT / "README.md").read_text(encoding="utf-8")
 
 
 def test_frozen_predictions_unchanged():

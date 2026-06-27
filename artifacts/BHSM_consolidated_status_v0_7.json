@@ -1,0 +1,100 @@
+{
+  "artifact_name": "BHSM Consolidated Status",
+  "version": "0.7",
+  "status_taxonomy": [
+    "ESTABLISHED",
+    "ARTIFACT_BACKED",
+    "CANDIDATE",
+    "CONDITIONAL",
+    "OPEN",
+    "BLOCKED",
+    "RUNTIME_GATED",
+    "REFERENCE_ONLY",
+    "RETIRED"
+  ],
+  "areas": [
+    {
+      "area": "frozen_internal_predictions",
+      "status": "ESTABLISHED",
+      "established": "Versioned Markdown and JSON records with integrity tests.",
+      "open": "External comparison remains separate.",
+      "source": "docs/frozen_predictions.json"
+    },
+    {
+      "area": "python_interface_registry_cli",
+      "status": "ESTABLISHED",
+      "established": "Offline registry, reports, gallery, and reviewer commands.",
+      "open": "New physics formulas require independent evidence.",
+      "source": "src/bhsm/interface"
+    },
+    {
+      "area": "artifact_backed_outputs",
+      "status": "ARTIFACT_BACKED",
+      "established": "CKM, PMNS, CP phase, boundary constants, and mass ratios load with provenance.",
+      "open": "Artifact availability does not close downstream theorems.",
+      "source": "artifacts/BHSM_formula_registry_v0_3.json"
+    },
+    {
+      "area": "cp_o_int",
+      "status": "CANDIDATE",
+      "secondary_status": "OPEN",
+      "established": "CP phase and CKM/PMNS attachment are artifact-backed; a callable symbolic field/action candidate exists.",
+      "open": "Action-backed production theorem, production eligibility, and runtime export validation.",
+      "source": "artifacts/BHSM_cp_o_int_field_action_report_v0_6.json"
+    },
+    {
+      "area": "x_ch",
+      "status": "OPEN",
+      "established": "Boundary-response source artifacts and closure machinery exist.",
+      "open": "Action-backed production interaction theorem.",
+      "source": "artifacts/BHSM_x_ch_theorem_closure_attempt_v0_4.json"
+    },
+    {
+      "area": "neutrino_physical_basis_scale",
+      "status": "OPEN",
+      "established": "Neutral boundary/operator seeds and closure machinery exist.",
+      "open": "Physical basis, dimensional scale, and Dirac/Majorana theorem.",
+      "source": "artifacts/BHSM_neutrino_basis_scale_theorem_closure_attempt_v0_4.json"
+    },
+    {
+      "area": "external_hep_tools",
+      "status": "RUNTIME_GATED",
+      "established": "Disabled FeynRules, UFO, and MadGraph handoff scaffolds exist.",
+      "open": "Theorem eligibility and live external runtime validation.",
+      "source": "artifacts/BHSM_prediction_registry_v0_1.json"
+    }
+  ],
+  "artifact_backed_outputs": [
+    "CKM_matrix_BHSM",
+    "PMNS_matrix_BHSM",
+    "cp_holonomy_phase_attachment",
+    "boundary_constants",
+    "mass_ratios"
+  ],
+  "candidate_outputs": [
+    "cp_o_int_symbolic_field_action_candidate"
+  ],
+  "open_theorem_blockers": [
+    "cp_o_int_action_backed_production_theorem",
+    "x_ch_production_interaction_theorem",
+    "neutrino_physical_basis_scale_dirac_majorana_theorem"
+  ],
+  "runtime_gated_outputs": [
+    "feynrules_minimal_model",
+    "ufo_export",
+    "madgraph_smoke_test"
+  ],
+  "claim_boundaries": {
+    "source": "CLAIMS.md",
+    "empirical_validation_claimed": false,
+    "official_cern_integration_claimed": false,
+    "complete_4d_lagrangian_export_claimed": false,
+    "validated_hep_runtime_claimed": false,
+    "w_anchor_is_independent_prediction": false,
+    "electron_neutrino_central_measurement_claimed": false
+  },
+  "internet_required": false,
+  "external_hep_tools_required": false,
+  "frozen_predictions_changed": false,
+  "production_physics_model_logic_changed": false
+}

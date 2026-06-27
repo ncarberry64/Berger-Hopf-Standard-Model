@@ -31,4 +31,4 @@ def test_required_warning_language_and_readme_section():
     combined = "\n".join((ROOT / "docs" / name).read_text(encoding="utf-8") for name in ("artifact_backed_prediction_adapters.md", "artifact_backed_claim_policy.md"))
     for warning in WARNINGS:
         assert warning in combined
-    assert "## Artifact-backed prediction adapters" in (ROOT / "README.md").read_text(encoding="utf-8")
+    assert "## Artifact-Backed Adapters" in (ROOT / "docs/README.md").read_text(encoding="utf-8")

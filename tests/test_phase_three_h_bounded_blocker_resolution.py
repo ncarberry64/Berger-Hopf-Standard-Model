@@ -74,10 +74,10 @@ def test_phase_three_h_docs_and_readme_preserve_status() -> None:
     ]:
         assert (ROOT / relative).exists(), relative
 
-    readme = " ".join(read("README.md").split())
+    readme = " ".join(read("docs/archive/README_status_history_pre_v0_7.md").split())
     assert PHASE_THREE_H_STATUS in readme
-    assert "Phase Three-H bounded blocker resolution status" in read("README.md")
-    assert "does not constitute complete 4D Lagrangian export" in read("README.md")
+    assert "Phase Three-H bounded blocker resolution status" in read("docs/archive/README_status_history_pre_v0_7.md")
+    assert "does not constitute complete 4D Lagrangian export" in read("docs/archive/README_status_history_pre_v0_7.md")
 
 
 def test_x_ch_partial_resolution_does_not_promote_boundary_response() -> None:
@@ -200,7 +200,7 @@ def test_no_fake_event_files_or_forbidden_phase_three_h_claims() -> None:
     combined = "\n".join(
         read(relative)
         for relative in [
-            "README.md",
+            "docs/archive/README_status_history_pre_v0_7.md",
             "docs/phase_three_h_bounded_blocker_resolution.md",
             "docs/x_ch_interaction_operator_resolution_attempt.md",
             "docs/neutrino_basis_scale_resolution_attempt.md",

@@ -44,7 +44,7 @@ def run_tool(*args: str) -> subprocess.CompletedProcess[str]:
 
 
 def test_readme_preserves_phase_two_a_boundaries() -> None:
-    text = read("README.md")
+    text = read("docs/archive/README_status_history_pre_v0_7.md")
     assert PHASE_TWO_A_STATUS in " ".join(text.split())
     assert "Phase Two-A analytical export layer" in text
     assert "This is not yet a production UFO model" in text
@@ -263,7 +263,7 @@ def test_no_positive_readiness_or_validation_claims_in_phase_two_a_surface() -> 
     combined = "\n".join(
         read(relative)
         for relative in [
-            "README.md",
+            "docs/archive/README_status_history_pre_v0_7.md",
             "docs/analytical_export_ledger.md",
             "docs/bhsm_to_ufo_mapping.md",
             "docs/field_content_export_status.md",

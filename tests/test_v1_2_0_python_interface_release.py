@@ -64,7 +64,7 @@ def test_registry_release_status_and_policies() -> None:
 
 
 def test_readme_preserves_v11_and_adds_guarded_v12_section() -> None:
-    readme = (ROOT / "README.md").read_text()
+    readme = (ROOT / "docs/archive/README_status_history_pre_v0_7.md").read_text()
     assert "## BHSM v1.1.0 HEP handoff status" in readme
     assert "## BHSM v1.2.0 Python computational interface" in readme
     assert "not counted as an independent prediction" in readme

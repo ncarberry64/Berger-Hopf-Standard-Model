@@ -59,4 +59,4 @@ def test_required_warnings_are_documented() -> None:
     text = (ROOT / "docs/python_prediction_claim_policy.md").read_text()
     for warning in (CALIBRATION_WARNING, NEUTRINO_WARNING, OPEN_THEOREM_WARNING, RUNTIME_WARNING):
         assert warning in text
-    assert "## Python prediction registry and CLI" in (ROOT / "README.md").read_text()
+    assert "## Computational Quickstart" in (ROOT / "README.md").read_text()

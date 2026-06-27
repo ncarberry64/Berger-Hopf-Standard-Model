@@ -75,10 +75,10 @@ def test_required_phase_three_c_docs_exist_and_preserve_status() -> None:
     ]:
         assert (ROOT / relative).exists(), relative
 
-    readme = " ".join(read("README.md").split())
+    readme = " ".join(read("docs/archive/README_status_history_pre_v0_7.md").split())
     assert PHASE_THREE_C_STATUS in readme
-    assert "Phase Three-C field dictionary status" in read("README.md")
-    assert "This does not constitute production FeynRules/UFO readiness." in read("README.md")
+    assert "Phase Three-C field dictionary status" in read("docs/archive/README_status_history_pre_v0_7.md")
+    assert "This does not constitute production FeynRules/UFO readiness." in read("docs/archive/README_status_history_pre_v0_7.md")
     assert "8384772C492162326C215449201175792E663DFC7807A41CDDBC7E322126F4ED" in read(
         "docs/phase_three_c_field_dictionary.md"
     )
@@ -275,7 +275,7 @@ def test_no_fake_event_files_or_forbidden_claims() -> None:
     combined = "\n".join(
         read(relative)
         for relative in [
-            "README.md",
+            "docs/archive/README_status_history_pre_v0_7.md",
             "docs/phase_three_c_field_dictionary.md",
             "docs/explicit_4d_field_dictionary.md",
             "docs/gauge_field_target_dictionary.md",

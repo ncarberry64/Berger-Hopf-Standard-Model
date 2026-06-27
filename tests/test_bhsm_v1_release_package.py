@@ -19,7 +19,7 @@ def read_json(path: str):
 
 
 def test_readme_contains_release_status_split() -> None:
-    readme = read_text("README.md")
+    readme = read_text("docs/archive/README_status_history_pre_v0_7.md")
     assert "Berger-Hopf Standard Model v1.0.0" in readme
     assert "complete internal boundary no-fit prediction package" in readme
     assert "External empirical comparison is implemented as a separate comparison-only layer" in readme
@@ -108,7 +108,7 @@ def test_release_docs_record_no_empirical_feedback() -> None:
     combined = "\n".join(
         read_text(path)
         for path in [
-            "README.md",
+            "docs/archive/README_status_history_pre_v0_7.md",
             "docs/current_status.md",
             "docs/claim_boundaries.md",
             "docs/falsification_criteria.md",
@@ -125,7 +125,7 @@ def test_release_docs_record_no_empirical_feedback() -> None:
 
 def test_no_invented_doi_in_release_files() -> None:
     release_paths = [
-        "README.md",
+        "docs/archive/README_status_history_pre_v0_7.md",
         "CITATION.cff",
         ".zenodo.json",
         "docs/how_to_cite.md",

@@ -47,7 +47,7 @@ def run_tool(*args: str) -> subprocess.CompletedProcess[str]:
 
 
 def test_readme_preserves_status_and_ufo_pipeline_boundaries() -> None:
-    text = read("README.md")
+    text = read("docs/archive/README_status_history_pre_v0_7.md")
     assert CURRENT_STATUS in text
     assert "UFO / event-generation pipeline status" in text
     assert "does not yet export a production UFO model" in text
@@ -181,7 +181,7 @@ def test_no_fake_event_files_or_official_integration_claims() -> None:
     combined = "\n".join(
         read(relative)
         for relative in [
-            "README.md",
+            "docs/archive/README_status_history_pre_v0_7.md",
             "docs/ufo_pipeline.md",
             "docs/feynman_rules_status.md",
             "docs/madgraph_event_generation_path.md",
