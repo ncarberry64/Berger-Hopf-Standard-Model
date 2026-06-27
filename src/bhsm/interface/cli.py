@@ -35,6 +35,14 @@ from .neutrino_propagation.effective_mass import load_neutral_scale_law
 from .neutrino_propagation.neutral_kernel import load_neutral_kernel
 from .neutrino_propagation.observable_map import build_neutrino_observable_map
 from .neutrino_propagation.propagation_state import canonical_channel_states
+from .neutrino_scale import (
+    analyze_neutral_boundary_measure,
+    build_neutral_scale_candidates,
+    build_neutral_scale_report,
+    build_threshold_energy_map,
+    derive_neutral_scale_law,
+    neutral_scale_report_to_markdown,
+)
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -179,10 +187,20 @@ def build_parser() -> argparse.ArgumentParser:
     neutrino_mass.add_argument("--format", choices=("json",), default="json")
     neutrino_map = commands.add_parser("neutrino-observable-map", help="Show the neutrino observable and comparison policy")
     neutrino_map.add_argument("--format", choices=("json",), default="json")
-    neutrino_scale = commands.add_parser("neutrino-scale-law", help="Show the neutral scale law and dimensional blocker")
+    neutrino_scale = commands.add_parser("neutrino-scale-law", help="Show the audited neutral scale law and dimensional blocker")
     neutrino_scale.add_argument("--format", choices=("json",), default="json")
     neutrino_threshold = commands.add_parser("neutrino-threshold-response", help="Show artifact-backed threshold response rows")
     neutrino_threshold.add_argument("--format", choices=("json",), default="json")
+    scale_candidates = commands.add_parser("neutral-scale-candidates", help="Classify local neutral scale candidates")
+    scale_candidates.add_argument("--format", choices=("json",), default="json")
+    threshold_map = commands.add_parser("neutral-threshold-energy-map", help="Audit the neutral threshold-to-energy map")
+    threshold_map.add_argument("--format", choices=("json",), default="json")
+    boundary_measure = commands.add_parser("neutral-boundary-measure", help="Audit the neutral boundary measure")
+    boundary_measure.add_argument("--format", choices=("json",), default="json")
+    dimensionful_mass = commands.add_parser("neutrino-dimensionful-mass", help="Attempt a unit-safe neutrino mass output")
+    dimensionful_mass.add_argument("--format", choices=("json",), default="json")
+    scale_report = commands.add_parser("neutrino-scale-report", help="Render the neutral scale closure report")
+    scale_report.add_argument("--format", choices=("markdown", "json"), default="markdown")
     return parser
 
 
@@ -376,7 +394,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         print(json.dumps(build_neutrino_observable_map().to_dict(), indent=2, sort_keys=True))
         return 0
     if args.command == "neutrino-scale-law":
-        print(json.dumps(load_neutral_scale_law().to_dict(), indent=2, sort_keys=True))
+        print(json.dumps(derive_neutral_scale_law().to_dict(), indent=2, sort_keys=True))
         return 0
     if args.command == "neutrino-threshold-response":
         kernel = load_neutral_kernel()
@@ -387,6 +405,30 @@ def main(argv: Sequence[str] | None = None) -> int:
             response_norm, coupled, excess = threshold_response(kernel, state, threshold, background)
             rows.append({"state": state.label, "kernel_response_norm": response_norm, "coupled_response": coupled, "threshold_excess": excess})
         print(json.dumps({"threshold": threshold.to_dict(), "background_coupling": background.to_dict(), "rows": rows}, indent=2, sort_keys=True))
+        return 0
+    if args.command == "neutral-scale-candidates":
+        print(json.dumps({"candidates": [row.to_dict() for row in build_neutral_scale_candidates()]}, indent=2, sort_keys=True))
+        return 0
+    if args.command == "neutral-threshold-energy-map":
+        print(json.dumps(build_threshold_energy_map().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "neutral-boundary-measure":
+        print(json.dumps(analyze_neutral_boundary_measure().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "neutrino-dimensionful-mass":
+        scale_report = build_neutral_scale_report()
+        print(json.dumps({
+            "status": scale_report.scale_result.status_after,
+            "dimensionful_mass_output_produced": scale_report.dimensionful_mass_output_produced,
+            "channel_results": [row.to_dict() for row in scale_report.dimensionful_mass_attempt],
+        }, indent=2, sort_keys=True))
+        return 0
+    if args.command == "neutrino-scale-report":
+        scale_report = build_neutral_scale_report()
+        if args.format == "markdown":
+            print(neutral_scale_report_to_markdown(scale_report), end="")
+        else:
+            print(json.dumps(scale_report.to_dict(), indent=2, sort_keys=True))
         return 0
     particles = tuple(item.strip() for item in args.particles.split(",") if item.strip())
     report = build_prediction_report(

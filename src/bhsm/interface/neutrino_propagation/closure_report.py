@@ -51,6 +51,7 @@ def neutrino_propagation_report_to_markdown(
             f"Remaining object: {report.closure.remaining_missing_object}.",
             "",
             "The result is dimensionless and conditional. It is not a static rest-mass matrix or an eV/GeV neutrino prediction.",
+            "The separate v1.0 neutral-scale audit reports OPEN_MISSING_NEUTRAL_SCALE and emits no dimensional mass.",
             "",
         ]
     )
@@ -67,6 +68,7 @@ def _claim_policy() -> dict[str, Any]:
             "If propagation response is zero, the BHSM mass contribution vanishes.",
             "The sprint attempts numerical closure using BHSM artifacts only.",
             "Electron-neutrino comparisons remain upper-limit comparisons by default.",
+            "A physical eV/GeV mass is emitted only after an eligible neutral unit source passes the separate scale audit.",
         ],
         "forbidden": [
             "BHSM empirically validates neutrino mass.",

@@ -42,8 +42,13 @@ not required for the listed local behavior.
 | `neutrino-propagation-report` | Render the dimensionless closure report | Markdown or JSON | no | no |
 | `neutrino-effective-mass` | Show canonical channel response rows | JSON | no | no |
 | `neutrino-observable-map` | Show propagation/static/comparison distinctions | JSON | no | no |
-| `neutrino-scale-law` | Show dimensionless `tau` and the missing eV/GeV scale | JSON | no | no |
+| `neutrino-scale-law` | Show the audited neutral scale law and missing unit objects | JSON | no | no |
 | `neutrino-threshold-response` | Show `K_nu`, `g_nu`, and `kappa_nu` response rows | JSON | no | no |
+| `neutral-scale-candidates` | Classify local neutral scale candidates | JSON | no | no |
+| `neutral-threshold-energy-map` | Audit the threshold-to-energy map | JSON | no | no |
+| `neutral-boundary-measure` | Audit the neutral boundary measure normalization | JSON | no | no |
+| `neutrino-dimensionful-mass` | Attempt unit-safe eV/GeV output and fail closed without a unit source | JSON | no | no |
+| `neutrino-scale-report` | Render the neutral scale closure audit | Markdown or JSON | no | no |
 
 Without `--offline-ok`, `pdg-fetch` may try an optional live reference adapter.
 The offline fallback is reference-only and is never a derivation input.

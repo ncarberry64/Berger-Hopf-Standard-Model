@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from typing import TYPE_CHECKING
 
 from .common import (
     BackgroundCoupling,
@@ -16,6 +17,9 @@ from .common import (
     repository_path,
 )
 from .curvature_threshold import threshold_response
+
+if TYPE_CHECKING:
+    from ..neutrino_scale.common import NeutralScaleClosureResult
 
 
 BOUNDARY_PACKAGE = "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json"
@@ -49,6 +53,7 @@ def compute_neutrino_propagation_mass(
     scale_law: NeutralScaleLaw,
     background: BackgroundCoupling,
     repository: str | Path | None = None,
+    neutral_scale_result: NeutralScaleClosureResult | None = None,
 ) -> EffectivePropagationMass:
     """Compute the conditional dimensionless response without external inputs."""
 
@@ -56,16 +61,15 @@ def compute_neutrino_propagation_mass(
     dimensionless = scale_law.dimensionless_scale * excess
     if state.propagation_response == 0:
         dimensionless = 0.0
-    mass_ev = (
-        dimensionless * scale_law.effective_mass_eV_per_unit
-        if scale_law.effective_mass_eV_per_unit is not None
-        else None
-    )
-    mass_gev = (
-        dimensionless * scale_law.effective_mass_GeV_per_unit
-        if scale_law.effective_mass_GeV_per_unit is not None
-        else None
-    )
+    scale_ev = scale_law.effective_mass_eV_per_unit
+    scale_gev = scale_law.effective_mass_GeV_per_unit
+    status = scale_law.status
+    if neutral_scale_result is not None:
+        scale_ev = neutral_scale_result.scale_value_eV
+        scale_gev = neutral_scale_result.scale_value_GeV
+        status = neutral_scale_result.status_after
+    mass_ev = dimensionless * scale_ev if scale_ev is not None else None
+    mass_gev = dimensionless * scale_gev if scale_gev is not None else None
     sources = (kernel.source_artifact, *threshold.source_artifacts, *scale_law.source_artifacts)
     return EffectivePropagationMass(
         state_label=state.label,
@@ -76,7 +80,10 @@ def compute_neutrino_propagation_mass(
         effective_mass_dimensionless=dimensionless,
         effective_mass_eV=mass_ev,
         effective_mass_GeV=mass_gev,
-        status=scale_law.status,
+        status=status,
         provenance=provenance_rows(repository_path(repository), tuple(dict.fromkeys(sources))),
-        claim_boundary="Dimensionless conditional response only; it is not an ordinary static rest mass or a numerical eV/GeV prediction.",
+        claim_boundary=(
+            "A dimensionless BHSM response is not, by itself, a physical eV/GeV mass. "
+            "Physical units are emitted only when an accepted neutral scale result supplies a valid unit source."
+        ),
     )
