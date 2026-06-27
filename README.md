@@ -547,3 +547,25 @@ Before public statements, inspect:
 - `docs/claim_boundaries.md`
 - `docs/forbidden_claims.md`
 - `docs/allowed_public_language.md`
+
+## Artifact-backed prediction adapters
+
+BHSM includes artifact-backed prediction adapters that connect the Python
+interface to local BHSM artifacts where available. The adapters provide
+provenance records for matrices, constants, reports, and formula callables.
+
+The adapters distinguish artifact-backed BHSM outputs from interface defaults,
+reference comparison values, calibration inputs, missing artifacts, and
+theorem blockers. Missing artifacts are reported as missing, not inferred.
+Reference values, including PDG values, are comparison inputs only and are
+never BHSM derivation inputs.
+
+```powershell
+python -m bhsm.interface artifact-sources
+python -m bhsm.interface formula-registry
+python -m bhsm.interface compute-artifact CKM_matrix_BHSM
+python -m bhsm.interface artifact-report --anchor W_boson --format json
+```
+
+See `docs/artifact_backed_prediction_adapters.md` and
+`docs/artifact_backed_claim_policy.md` for the provenance and claim boundaries.

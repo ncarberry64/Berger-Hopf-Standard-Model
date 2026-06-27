@@ -7,6 +7,10 @@ import json
 from pathlib import Path
 from typing import Any, Sequence
 
+from .artifact_adapters import artifact_prediction_values, compute_artifact
+from .artifact_report import artifact_report_to_markdown, build_artifact_prediction_report
+from .artifact_sources import discover_bhsm_artifacts
+from .formula_registry import default_formula_registry
 from .predictions import PredictionStatus, default_prediction_registry
 from .report import build_prediction_report
 from .gallery import build_prediction_gallery, gallery_to_markdown
@@ -90,6 +94,23 @@ def build_parser() -> argparse.ArgumentParser:
     attempt = commands.add_parser("theorem-attempt", help="Run an artifact-backed closure attempt")
     attempt.add_argument("--blocker", required=True, choices=("X_ch", "neutrino_basis_scale", "neutrino_basis_scale_dirac_majorana", "cp_o_int"))
     attempt.add_argument("--format", choices=("json", "text"), default="text")
+
+    artifact_sources = commands.add_parser("artifact-sources", help="Discover local BHSM artifacts")
+    artifact_sources.add_argument("--format", choices=("text", "json"), default="text")
+
+    formula_registry = commands.add_parser("formula-registry", help="List artifact and interface formula callables")
+    formula_registry.add_argument("--format", choices=("text", "json"), default="text")
+
+    compute = commands.add_parser("compute-artifact", help="Load one registered local BHSM artifact")
+    compute.add_argument("artifact_key", choices=("CKM_matrix_BHSM", "PMNS_matrix_BHSM", "cp_holonomy_phase_attachment", "boundary_constants", "mass_ratios"))
+    compute.add_argument("--format", choices=("text", "json"), default="json")
+
+    artifact_predictions = commands.add_parser("artifact-predictions", help="List artifact-backed prediction values")
+    artifact_predictions.add_argument("--format", choices=("json",), default="json")
+
+    artifact_report = commands.add_parser("artifact-report", help="Build the provenance-aware artifact report")
+    artifact_report.add_argument("--anchor", default="W_boson")
+    artifact_report.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
 
@@ -156,6 +177,38 @@ def main(argv: Sequence[str] | None = None) -> int:
     if args.command == "theorem-attempt":
         key = "neutrino_basis_scale_dirac_majorana" if args.blocker == "neutrino_basis_scale" else args.blocker
         _emit(attempt_theorem_closure(key).to_dict(), args.format)
+        return 0
+    if args.command == "artifact-sources":
+        payload = discover_bhsm_artifacts().to_dict()
+        if args.format == "json":
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        else:
+            print(f"{payload['index_name']} ({payload['artifact_count']} local sources)")
+            for source in payload["sources"]:
+                print(f"{source['source_status']} | {source['path']} | {source['detected_schema']}")
+        return 0
+    if args.command == "formula-registry":
+        payload = default_formula_registry().to_dict()
+        if args.format == "json":
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        else:
+            print(payload["registry_name"])
+            for row in payload["formula_entries"]:
+                print(f"{row['formula_key']} | {row['status']} | {row['claim_boundary']}")
+        return 0
+    if args.command == "compute-artifact":
+        payload = compute_artifact(args.artifact_key).to_dict()
+        _emit(payload, args.format)
+        return 0
+    if args.command == "artifact-predictions":
+        print(json.dumps(artifact_prediction_values(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "artifact-report":
+        artifact_report = build_artifact_prediction_report(args.anchor)
+        if args.format == "markdown":
+            print(artifact_report_to_markdown(artifact_report), end="")
+        else:
+            print(json.dumps(artifact_report.to_dict(), indent=2, sort_keys=True))
         return 0
     particles = tuple(item.strip() for item in args.particles.split(",") if item.strip())
     report = build_prediction_report(
