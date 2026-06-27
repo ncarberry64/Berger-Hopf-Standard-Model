@@ -1,0 +1,91 @@
+{
+  "artifact_name": "BHSM CP O_int Stage Evaluation",
+  "deepest_valid_stage": "Stage 2: Phase attachment rule availability",
+  "missing_objects": [
+    "standalone O_int field content and representation",
+    "standalone O_int Lorentz/index structure",
+    "standalone O_int gauge representation and sector admissibility",
+    "standalone O_int coupling normalization and mass dimension",
+    "standalone O_int action/source term",
+    "standalone O_int theorem callable",
+    "action-derived support for production promotion"
+  ],
+  "promoted": false,
+  "stages": [
+    {
+      "evidence": "delta_BH and Z6 boundary phase loaded from local artifact",
+      "missing_object": null,
+      "name": "Internal CP phase availability",
+      "passes": true,
+      "stage": 1,
+      "status": "MATRIX_PHASE_ATTACHMENT_AVAILABLE_STANDALONE_OPEN"
+    },
+    {
+      "evidence": "CKM/PMNS matrix-phase attachment is recorded",
+      "missing_object": null,
+      "name": "Phase attachment rule availability",
+      "passes": true,
+      "stage": 2,
+      "status": "MATRIX_PHASE_ATTACHMENT_AVAILABLE_STANDALONE_OPEN"
+    },
+    {
+      "evidence": "not present in local theorem artifacts",
+      "missing_object": "standalone O_int field content and representation",
+      "name": "Field representation availability",
+      "passes": false,
+      "stage": 3,
+      "status": "OPEN_MISSING_FIELD_REPRESENTATION"
+    },
+    {
+      "evidence": "not present in local theorem artifacts",
+      "missing_object": "standalone O_int Lorentz/index structure",
+      "name": "Lorentz structure availability",
+      "passes": false,
+      "stage": 4,
+      "status": "OPEN_MISSING_LORENTZ_STRUCTURE"
+    },
+    {
+      "evidence": "not present in local theorem artifacts",
+      "missing_object": "standalone O_int gauge representation and sector admissibility",
+      "name": "Gauge/sector admissibility availability",
+      "passes": false,
+      "stage": 5,
+      "status": "OPEN_MISSING_GAUGE_ADMISSIBILITY"
+    },
+    {
+      "evidence": "not present in local theorem artifacts",
+      "missing_object": "standalone O_int coupling normalization and mass dimension",
+      "name": "Coupling normalization availability",
+      "passes": false,
+      "stage": 6,
+      "status": "OPEN_MISSING_COUPLING_NORMALIZATION"
+    },
+    {
+      "evidence": "not present in local action artifacts",
+      "missing_object": "standalone O_int action/source term",
+      "name": "Action/interacting operator availability",
+      "passes": false,
+      "stage": 7,
+      "status": "OPEN_MISSING_ACTION_SOURCE"
+    },
+    {
+      "evidence": "closure evaluator is not a production theorem callable",
+      "missing_object": "standalone O_int theorem callable",
+      "name": "Callable theorem availability",
+      "passes": false,
+      "stage": 8,
+      "status": "CALLABLE_NOT_AVAILABLE"
+    },
+    {
+      "evidence": "No action-derived theorem artifact is present",
+      "missing_object": "action-derived support for production promotion",
+      "name": "Registry promotion eligibility",
+      "passes": false,
+      "stage": 9,
+      "status": "FORBIDDEN_UNSUPPORTED"
+    }
+  ],
+  "status": "OPEN_MISSING_INTERACTION_ATTACHMENT",
+  "theorem_key": "cp_o_int",
+  "version": "0.5"
+}

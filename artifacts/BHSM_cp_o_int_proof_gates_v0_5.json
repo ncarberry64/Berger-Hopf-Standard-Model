@@ -1,0 +1,202 @@
+{
+  "artifact_name": "BHSM CP O_int Proof Gates",
+  "failed": [
+    "CP02",
+    "CP03",
+    "CP04",
+    "CP05",
+    "CP06",
+    "CP07",
+    "CP09",
+    "CP10"
+  ],
+  "passed": [
+    "CP01",
+    "CP08",
+    "CP11",
+    "CP12",
+    "CP13",
+    "CP14",
+    "CP15",
+    "CP16",
+    "CP17",
+    "CP18",
+    "CP19",
+    "CP20",
+    "CP21"
+  ],
+  "promotion_allowed": false,
+  "proof_gates": [
+    {
+      "evidence": "The focused formal conditional theorem statement is encoded.",
+      "gate_id": "CP01",
+      "limitations": "",
+      "name": "formal theorem statement exists",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "No supporting evidence supplied.",
+      "gate_id": "CP02",
+      "limitations": "Required CP O_int proof object is absent.",
+      "name": "CP O_int domain is defined",
+      "passes": false,
+      "required": true
+    },
+    {
+      "evidence": "No supporting evidence supplied.",
+      "gate_id": "CP03",
+      "limitations": "Required CP O_int proof object is absent.",
+      "name": "CP O_int codomain is defined",
+      "passes": false,
+      "required": true
+    },
+    {
+      "evidence": "No supporting evidence supplied.",
+      "gate_id": "CP04",
+      "limitations": "Required CP O_int proof object is absent.",
+      "name": "field representation is defined",
+      "passes": false,
+      "required": true
+    },
+    {
+      "evidence": "No supporting evidence supplied.",
+      "gate_id": "CP05",
+      "limitations": "Required CP O_int proof object is absent.",
+      "name": "Lorentz structure is defined",
+      "passes": false,
+      "required": true
+    },
+    {
+      "evidence": "No supporting evidence supplied.",
+      "gate_id": "CP06",
+      "limitations": "Required CP O_int proof object is absent.",
+      "name": "gauge/sector admissibility is defined",
+      "passes": false,
+      "required": true
+    },
+    {
+      "evidence": "No supporting evidence supplied.",
+      "gate_id": "CP07",
+      "limitations": "Required CP O_int proof object is absent.",
+      "name": "interaction/action term is defined",
+      "passes": false,
+      "required": true
+    },
+    {
+      "evidence": "The local blocker records CKM/PMNS phase attachment.",
+      "gate_id": "CP08",
+      "limitations": "",
+      "name": "phase attachment rule is defined",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "No supporting evidence supplied.",
+      "gate_id": "CP09",
+      "limitations": "Required CP O_int proof object is absent.",
+      "name": "coupling normalization is defined",
+      "passes": false,
+      "required": true
+    },
+    {
+      "evidence": "No supporting evidence supplied.",
+      "gate_id": "CP10",
+      "limitations": "Required CP O_int proof object is absent.",
+      "name": "callable implementation exists",
+      "passes": false,
+      "required": true
+    },
+    {
+      "evidence": "The focused evaluator has structured mapping input and CPOIntEvaluationResult output.",
+      "gate_id": "CP11",
+      "limitations": "",
+      "name": "input/output schema exists",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "The local CP phase artifact exists.",
+      "gate_id": "CP12",
+      "limitations": "",
+      "name": "artifact source exists",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "The phase and blocker source paths are explicit.",
+      "gate_id": "CP13",
+      "limitations": "",
+      "name": "provenance chain exists",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "No empirical data are accepted by the evaluator.",
+      "gate_id": "CP14",
+      "limitations": "",
+      "name": "no empirical derivation inputs are used",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "No reference or PDG modules are imported.",
+      "gate_id": "CP15",
+      "limitations": "",
+      "name": "no PDG/reference values are theorem inputs",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "No calibration value or W anchor is accepted.",
+      "gate_id": "CP16",
+      "limitations": "",
+      "name": "no calibration values are theorem inputs",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "Phase availability and non-promotion consistency checks pass.",
+      "gate_id": "CP17",
+      "limitations": "",
+      "name": "consistency tests pass",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "A separate CP registry update proposal is generated.",
+      "gate_id": "CP18",
+      "limitations": "",
+      "name": "registry update proposal is generated",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "A separate formula-registry update record is generated.",
+      "gate_id": "CP19",
+      "limitations": "",
+      "name": "formula registry update is generated",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "The CP Sprint B claim policy is explicit.",
+      "gate_id": "CP20",
+      "limitations": "",
+      "name": "claim policy is updated",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "The v1.1 blocker and Sprint A result record the open theorem.",
+      "gate_id": "CP21",
+      "limitations": "",
+      "name": "theorem blocker artifact records the result",
+      "passes": true,
+      "required": true
+    }
+  ],
+  "status": "OPEN_MISSING_INTERACTION_ATTACHMENT",
+  "theorem_key": "cp_o_int",
+  "version": "0.5"
+}

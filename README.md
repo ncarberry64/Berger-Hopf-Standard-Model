@@ -589,3 +589,24 @@ python -m bhsm.interface theorem-closure-report --format markdown
 python -m bhsm.interface close-theorem X_ch --format json
 python -m bhsm.interface theorem-proof-gates neutrino_basis_scale
 ```
+
+## CP O_int standalone interaction attachment attempt
+
+BHSM includes a focused CP `O_int` closure attempt that distinguishes internal
+CP holonomy and CKM/PMNS phase attachment from a standalone interaction
+operator.
+
+The staged evaluator checks phase availability, phase attachment, field
+representation, Lorentz structure, gauge admissibility, coupling normalization,
+action/operator definition, callable availability, provenance, and proof gates.
+CP `O_int` is not promoted unless the required executable, artifact-backed
+theorem support exists.
+
+Reference values, including PDG values, are comparison inputs only and are
+never theorem inputs.
+
+```powershell
+python -m bhsm.interface cp-o-int-report --format markdown
+python -m bhsm.interface cp-o-int-stages --format json
+python -m bhsm.interface cp-o-int-proof-gates --format json
+```

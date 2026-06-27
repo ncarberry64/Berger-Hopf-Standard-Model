@@ -10,3 +10,6 @@ Theorem blockers remain blockers unless explicit artifact-backed theorem support
 
 Sprint A adds seventeen executable proof gates and preserves the open statuses.
 See `docs/theorem_closure_sprint_a.md` for the exact missing objects.
+
+The focused CP Sprint B artifact preserves `OPEN_MISSING_INTERACTION_ATTACHMENT`
+and identifies Stage 2 as the deepest valid stage.

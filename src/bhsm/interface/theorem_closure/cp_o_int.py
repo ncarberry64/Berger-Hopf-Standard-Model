@@ -103,3 +103,14 @@ def evaluate_cp_o_int_candidate(
         warnings=("CKM/PMNS phase attachment does not define a standalone CP vertex.", "Runtime software gates remain disabled."),
         notes=("delta_BH and Z6 phase are artifact-backed internal values.",),
     )
+
+
+def evaluate_cp_o_int_sprint_b(
+    candidate_path: str | Path | None = None,
+    repository: str | Path | None = None,
+):
+    """Run the focused staged Sprint B evaluator without changing Sprint A."""
+
+    from .cp_o_int_report import build_cp_o_int_report
+
+    return build_cp_o_int_report(candidate_path, repository)

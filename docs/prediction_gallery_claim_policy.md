@@ -16,3 +16,5 @@ remain blockers, and runtime-disabled software remains disabled.
 Theorem closure requires executable artifact-backed support; narrative plausibility is not enough.
 
 A partial localization is not a production prediction.
+
+CP holonomy or CKM/PMNS phase attachment alone is not a standalone CP O_int interaction theorem.

@@ -19,8 +19,10 @@ from .notebook_pack import check_notebook_pack, notebook_pack_manifest
 from .plotting import generate_gallery_plots, is_matplotlib_available
 from .speculative import build_speculative_report, default_speculative_registry
 from .theorem_blockers import attempt_theorem_closure, default_theorem_blockers
-from .theorem_closure import build_theorem_closure_report, evaluate_theorem
+from .theorem_closure import build_cp_o_int_report, build_theorem_closure_report, evaluate_theorem
 from .theorem_closure.closure_report import theorem_closure_report_to_markdown
+from .theorem_closure.cp_o_int_action import load_cp_o_int_candidate_template
+from .theorem_closure.cp_o_int_report import cp_o_int_report_to_markdown
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -124,6 +126,18 @@ def build_parser() -> argparse.ArgumentParser:
     proof_gates = commands.add_parser("theorem-proof-gates", help="Show proof gates for one theorem attempt")
     proof_gates.add_argument("theorem_key", choices=("X_ch", "neutrino_basis_scale", "cp_o_int"))
     proof_gates.add_argument("--format", choices=("json", "text"), default="json")
+
+    cp_report = commands.add_parser("cp-o-int-report", help="Run the focused standalone CP O_int attachment audit")
+    cp_report.add_argument("--format", choices=("json", "markdown"), default="json")
+
+    cp_stages = commands.add_parser("cp-o-int-stages", help="Show staged CP O_int evaluation")
+    cp_stages.add_argument("--format", choices=("json",), default="json")
+
+    cp_gates = commands.add_parser("cp-o-int-proof-gates", help="Show focused CP O_int proof gates")
+    cp_gates.add_argument("--format", choices=("json",), default="json")
+
+    cp_candidate = commands.add_parser("cp-o-int-candidate", help="Inspect the disabled CP O_int author template")
+    cp_candidate.add_argument("--format", choices=("json",), default="json")
     return parser
 
 
@@ -243,6 +257,26 @@ def main(argv: Sequence[str] | None = None) -> int:
             "proof_gates": [gate.__dict__ for gate in result.proof_gates],
         }
         _emit(payload, args.format)
+        return 0
+    if args.command == "cp-o-int-report":
+        cp_report = build_cp_o_int_report()
+        if args.format == "markdown":
+            print(cp_o_int_report_to_markdown(cp_report), end="")
+        else:
+            print(json.dumps(cp_report.to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "cp-o-int-stages":
+        cp_report = build_cp_o_int_report()
+        print(json.dumps({"theorem_key": cp_report.theorem_key, "status": cp_report.status_after, "deepest_valid_stage": cp_report.deepest_valid_stage, "stages": [stage.__dict__ for stage in cp_report.stages]}, indent=2, sort_keys=True))
+        return 0
+    if args.command == "cp-o-int-proof-gates":
+        cp_report = build_cp_o_int_report()
+        print(json.dumps({"theorem_key": cp_report.theorem_key, "status": cp_report.status_after, "promotion_allowed": cp_report.promotion_allowed, "proof_gates": [gate.__dict__ for gate in cp_report.proof_gates]}, indent=2, sort_keys=True))
+        return 0
+    if args.command == "cp-o-int-candidate":
+        template = load_cp_o_int_candidate_template()
+        cp_report = build_cp_o_int_report()
+        print(json.dumps({"template": template, "evaluation": {"status": cp_report.status_after, "promoted": cp_report.promoted, "conditional_author_axiom_used": cp_report.conditional_author_axiom_used}}, indent=2, sort_keys=True))
         return 0
     particles = tuple(item.strip() for item in args.particles.split(",") if item.strip())
     report = build_prediction_report(
