@@ -20,6 +20,7 @@ EXPECTED_ARTIFACTS = (
     "artifacts/CKM_no_fit_operator_output_v1.json",
     "artifacts/PMNS_no_fit_operator_output_v1.json",
     "artifacts/CP_no_fit_holonomy_output_v1.json",
+    "artifacts/BHSM_author_ontology_v0_8.json",
     "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json",
     "docs/frozen_predictions.json",
     "theory/bhsm_v1_frozen_prediction_set.json",

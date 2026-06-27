@@ -51,16 +51,17 @@ def test_status_has_required_areas_and_clean_taxonomy() -> None:
         "Mass ratios",
         "W calibration policy",
         "Electron-neutrino comparison policy",
-        "CP O_int",
-        "X_ch",
-        "Neutrino physical basis/scale",
+        "Standalone CP O_int",
+        "X_ch boundary response",
+        "Neutrino propagation mass",
         "FeynRules minimal model",
         "UFO export",
         "MadGraph smoke test",
     )
     assert all(row in status for row in required_rows)
-    assert "CANDIDATE / OPEN" in status
-    assert "callable symbolic candidate exists" in status
+    assert "RETIRED_TARGET" in status
+    assert "CONDITIONAL_ACTION_THEOREM" in status
+    assert "CONDITIONAL_PROPAGATION_THEOREM" in status
     assert "RUNTIME_GATED" in status
 
 
@@ -114,4 +115,3 @@ def test_quickstart_and_docs_index_cover_reviewer_path() -> None:
 def test_frozen_prediction_hashes_are_unchanged() -> None:
     for path, expected in FROZEN_HASHES.items():
         assert hashlib.sha256((ROOT / path).read_bytes()).hexdigest() == expected
-

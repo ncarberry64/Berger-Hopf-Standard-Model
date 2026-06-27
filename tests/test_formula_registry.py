@@ -14,12 +14,20 @@ def test_formula_registry_separates_artifacts_defaults_and_theorem_blockers():
     for key in ("hyperspherical_default_metric", "hyperspherical_default_tension"):
         assert rows[key].status == "AVAILABLE_INTERFACE_DEFAULT"
         assert "default" in rows[key].claim_boundary.lower()
-    for key in ("x_ch_production_vertex", "neutrino_physical_basis_scale", "cp_o_int_standalone_attachment"):
-        assert rows[key].status == "OPEN_THEOREM_REQUIRED"
+    for key in ("x_ch_production_vertex", "cp_o_int_standalone_attachment"):
+        assert rows[key].status == "RETIRED_TARGET"
         assert evaluate_formula(key, ROOT).evaluation_status == "CALLABLE_NOT_AVAILABLE"
+    assert rows["charged_response_from_artifact"].status == "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL"
+    assert evaluate_formula("charged_response_from_artifact", ROOT, boundary_field="Psi").evaluation_status == "EVALUATED_CONDITIONAL"
+    assert rows["neutrino_physical_basis_scale"].status == "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL"
+    assert evaluate_formula(
+        "neutrino_physical_basis_scale", ROOT,
+        curvature_response=2.0, propagating=True, threshold_met=True,
+    ).value == 2.0
 
 
 def test_formula_registry_artifact_exists_and_parses():
     payload = json.loads((ROOT / "artifacts/BHSM_formula_registry_v0_3.json").read_text(encoding="utf-8"))
     assert payload["available_artifact_backed"]
-    assert payload["open_theorem_required"]
+    assert payload["available_author_supplied_conditional"]
+    assert payload["retired_targets"]

@@ -74,9 +74,12 @@ class PredictionGallery:
 def _category(status: PredictionStatus, key: str) -> str:
     if key == "W_boson": return "calibration_anchor"
     if key == "electron_neutrino": return "upper_limit_comparison"
+    if key == "cp_holonomy_phase_attachment": return "artifact_backed_constraint"
     return {
         PredictionStatus.FROZEN_INTERNAL_PREDICTION: "frozen_internal_prediction",
         PredictionStatus.OPEN_THEOREM_REQUIRED: "open_theorem_blocker",
+        PredictionStatus.ARTIFACT_BACKED_CONSTRAINT: "artifact_backed_constraint",
+        PredictionStatus.CONDITIONAL_THEOREM: "conditional_theorem",
         PredictionStatus.DISABLED_UNTIL_RUNTIME_VALIDATED: "runtime_disabled_gate",
         PredictionStatus.REFERENCE_COMPARISON_ONLY: "reference_only",
     }.get(status, "model_prediction_given_calibration")

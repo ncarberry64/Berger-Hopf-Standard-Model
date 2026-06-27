@@ -4,9 +4,14 @@ Use the top-level [STATUS.md](../STATUS.md) for current status and
 [CLAIMS.md](../CLAIMS.md) for claim boundaries. Files below provide supporting
 detail and historical evidence.
 
+The current minimal-action theory dictionary is documented in
+[author_ontology_v0_8.md](author_ontology_v0_8.md) and encoded in
+`artifacts/BHSM_author_ontology_v0_8.json`.
+
 ## Overview
 
 - [Current BHSM status](current_bhsm_status.md)
+- [Author ontology v0.8](author_ontology_v0_8.md)
 - [Frozen predictions](frozen_predictions.md)
 - [Model scope for HEP review](bhsm_model_scope_for_hep_review.md)
 - [Historical README status archive](archive/README_status_history_pre_v0_7.md)
@@ -41,6 +46,10 @@ detail and historical evidence.
 - [Theorem closure Sprint A](theorem_closure_sprint_a.md)
 - [Interaction theorem audit](interaction_theorem_closure_audit.md)
 - [Open blocker backlog](open_blockers_backlog.md)
+- [Minimal action closure](minimal_action_closure.md)
+- [CP O_int minimal action decision](cp_o_int_minimal_action_closure.md)
+- [X_ch minimal action decision](x_ch_minimal_action_closure.md)
+- [Neutrino basis/scale minimal action decision](neutrino_basis_scale_minimal_action_closure.md)
 
 ## CP O_int Sprint Docs
 

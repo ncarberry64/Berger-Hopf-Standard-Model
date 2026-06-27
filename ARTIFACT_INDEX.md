@@ -4,6 +4,10 @@ This index names the principal reviewer artifacts. Historical sprint artifacts
 remain available under `artifacts/` and are discoverable with
 `python -m bhsm.interface artifact-sources`.
 
+The controlling minimal-action ontology is
+`artifacts/BHSM_author_ontology_v0_8.json`; its bounded results are exported in
+the `BHSM_*_minimal_action_closure_v0_8.json` artifacts.
+
 | Artifact | Purpose | Source | Status | Related command |
 | --- | --- | --- | --- | --- |
 | Frozen predictions | Immutable internal prediction record | `docs/frozen_predictions.json` | `ESTABLISHED` | `python -m pytest -q` |
@@ -17,8 +21,10 @@ remain available under `artifacts/` and are discoverable with
 | Boundary constants | No-fit boundary package | `artifacts/BHSM_boundary_no_fit_prediction_package_v1.json` | `ARTIFACT_BACKED` | `python -m bhsm.interface compute-artifact boundary_constants` |
 | Mass ratios | Frozen charged-sector ratios | `theory/bhsm_v1_frozen_prediction_set.json` | `ARTIFACT_BACKED` | `python -m bhsm.interface compute-artifact mass_ratios` |
 | Formula registry | Callable and blocker index | `artifacts/BHSM_formula_registry_v0_3.json` | `ARTIFACT_BACKED` | `python -m bhsm.interface formula-registry` |
+| Author ontology | Controlling physical-boundary-field and response dictionary | `artifacts/BHSM_author_ontology_v0_8.json` | `AUTHOR_SUPPLIED` | `python -m bhsm.interface minimal-action-status` |
 | Theorem closure | Strict proof-gate report | `artifacts/BHSM_theorem_closure_report_v0_4.json` | `OPEN` | `python -m bhsm.interface theorem-closure-report` |
 | CP O_int Sprint B | Staged interaction-attachment audit | `artifacts/BHSM_cp_o_int_attachment_report_v0_5.json` | `OPEN` | `python -m bhsm.interface cp-o-int-report` |
 | CP O_int Sprint C | Callable symbolic field/action candidate | `artifacts/BHSM_cp_o_int_field_action_report_v0_6.json` | `CANDIDATE / OPEN` | `python -m bhsm.interface cp-o-int-field-action` |
+| Minimal action report | Three-theorem action audit | `artifacts/BHSM_minimal_action_report_v0_8.json` | `OPEN` | `python -m bhsm.interface minimal-action-report` |
+| Minimal action decisions | CP, `X_ch`, and neutrino first-missing-object records | `artifacts/BHSM_minimal_action_closure_manifest_v0_8.json` | `OPEN` | `python -m bhsm.interface minimal-action-status` |
 | Claim policy | Consolidated allowed and unsupported claims | `artifacts/BHSM_clean_claims_index_v0_7.json` | `ESTABLISHED` | See `CLAIMS.md` |
-

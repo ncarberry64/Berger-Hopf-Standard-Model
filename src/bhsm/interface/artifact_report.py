@@ -12,6 +12,7 @@ from .formula_registry import default_formula_registry
 from .predictions import default_prediction_registry
 from .theorem_blockers import default_theorem_blockers
 from .theorem_closure import build_cp_o_int_field_action_report, build_cp_o_int_report, build_theorem_closure_report
+from .minimal_action import build_minimal_action_report
 
 WARNINGS = (
     "Artifact-backed outputs are local BHSM outputs with provenance, not empirical validation claims.",
@@ -40,6 +41,7 @@ class ArtifactPredictionReport:
     theorem_closure_status: dict[str, Any]
     cp_o_int_sprint_b_status: dict[str, Any]
     cp_o_int_sprint_c_status: dict[str, Any]
+    minimal_action_status: dict[str, Any]
     calibration_policy: str
     reference_policy: str
     warnings: list[str]
@@ -82,6 +84,7 @@ def build_artifact_prediction_report(
         theorem_closure_status=build_theorem_closure_report(repository).to_dict(),
         cp_o_int_sprint_b_status=build_cp_o_int_report(repository=repository).to_dict(),
         cp_o_int_sprint_c_status=build_cp_o_int_field_action_report(repository=repository).to_dict(),
+        minimal_action_status=build_minimal_action_report(repository=repository).to_dict(),
         calibration_policy="A calibration anchor is not an independent prediction in the same run.",
         reference_policy="Reference values are comparison inputs only and never BHSM derivation inputs.",
         warnings=list(WARNINGS),

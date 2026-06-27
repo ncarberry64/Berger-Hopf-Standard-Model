@@ -14,13 +14,13 @@
     "The BHSM CKM source matrix is an internal artifact; external comparison remains separate.",
     "The BHSM PMNS source matrix is internal; the physical neutrino mass/basis theorem remains separate.",
     "W may calibrate the geometric-to-physical scale; when used as anchor it is not an independent prediction.",
-    "Not promoted to a production vertex.",
-    "The phase source is not a standalone production CP vertex.",
+    "X_ch is conditionally defined as a charged boundary-response operator under the author ontology; no 4D production field is claimed.",
+    "The CP/Z6 phase attachment is artifact-backed; the standalone O_int production target is retired.",
     "Electron-neutrino comparison is upper-limit based unless a vetted central reference is supplied.",
     "The .fr model remains disabled until live Wolfram/FeynRules validation passes.",
     "MadGraph readiness remains false until a real smoke test passes.",
     "Bounded CKM/PMNS collider-interface subset only; not the complete BHSM 4D Lagrangian.",
-    "This boundary/operator source is not a physical collider neutrino mass matrix.",
+    "The neutral boundary seed supports a conditional propagation-locked curvature-response theorem; numerical scale remains open.",
     "UFO readiness remains false until real export and loadability pass."
   ],
   "claims_of_empirical_validation": false,
@@ -148,16 +148,16 @@
       "status": "MODEL_PREDICTION_GIVEN_CALIBRATION"
     },
     {
-      "claim_boundary": "Not promoted to a production vertex.",
+      "claim_boundary": "X_ch is conditionally defined as a charged boundary-response operator under the author ontology; no 4D production field is claimed.",
       "particle_key": "charged_boundary_response_matrix",
-      "status": "OPEN_THEOREM_REQUIRED",
-      "theorem_status": "X_ch theorem missing for production boundary-response vertex"
+      "status": "CONDITIONAL_THEOREM",
+      "theorem_status": "CONDITIONAL_ACTION_THEOREM"
     },
     {
-      "claim_boundary": "The phase source is not a standalone production CP vertex.",
+      "claim_boundary": "The CP/Z6 phase attachment is artifact-backed; the standalone O_int production target is retired.",
       "particle_key": "cp_holonomy_phase_attachment",
-      "status": "OPEN_THEOREM_REQUIRED",
-      "theorem_status": "standalone O_int theorem missing"
+      "status": "ARTIFACT_BACKED_CONSTRAINT",
+      "theorem_status": "ARTIFACT_BACKED"
     },
     {
       "claim_boundary": "The .fr model remains disabled until live Wolfram/FeynRules validation passes.",
@@ -172,10 +172,10 @@
       "theorem_status": "NOT_APPLICABLE"
     },
     {
-      "claim_boundary": "This boundary/operator source is not a physical collider neutrino mass matrix.",
+      "claim_boundary": "The neutral boundary seed supports a conditional propagation-locked curvature-response theorem; numerical scale remains open.",
       "particle_key": "neutral_operator_kernel_BH",
-      "status": "OPEN_THEOREM_REQUIRED",
-      "theorem_status": "neutrino basis/scale/Dirac-Majorana theorem missing"
+      "status": "CONDITIONAL_THEOREM",
+      "theorem_status": "CONDITIONAL_PROPAGATION_THEOREM"
     },
     {
       "claim_boundary": "UFO readiness remains false until real export and loadability pass.",
@@ -189,7 +189,7 @@
   "warnings": [
     "If a particle mass is used to calibrate the geometric-to-physical unit scale, that same particle cannot be counted as an independent prediction in that run.",
     "The electron-neutrino comparison is treated as an upper-limit comparison unless a vetted central experimental mass reference is explicitly supplied.",
-    "Open-theorem entries are registry blockers, not production-ready predictions.",
-    "Runtime-disabled software entries require live external validation before readiness can be claimed."
+    "Runtime-disabled software entries require live external validation before readiness can be claimed.",
+    "Conditional theorem entries depend on the author ontology and are not production-ready predictions or numerical closure."
   ]
 }

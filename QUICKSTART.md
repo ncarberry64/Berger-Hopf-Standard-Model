@@ -61,8 +61,14 @@ Reports the callable symbolic CP `O_int` candidate and its exact action gap.
 python -m bhsm.interface theorem-blockers
 ```
 
-Lists each open theorem and its smallest missing object.
+Lists current theorem dispositions, including conditional and retired targets.
+
+```bash
+python -m bhsm.interface minimal-action-status
+python -m bhsm.interface minimal-action-report --format markdown
+```
+
+Runs the ontology-aware minimal-action decision and prints its concise report.
 
 All commands above run offline. Live PDG lookup and external HEP tool execution
 are optional, separate workflows.
-

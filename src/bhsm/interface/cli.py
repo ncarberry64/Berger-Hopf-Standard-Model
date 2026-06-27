@@ -24,6 +24,7 @@ from .theorem_closure.closure_report import theorem_closure_report_to_markdown
 from .theorem_closure.cp_o_int_action import load_cp_o_int_candidate_template
 from .theorem_closure.cp_o_int_report import cp_o_int_report_to_markdown
 from .theorem_closure.cp_o_int_sprint_c_report import cp_o_int_sprint_c_to_markdown
+from .minimal_action import build_minimal_action_report, close_minimal_action, minimal_action_report_to_markdown, minimal_action_status
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -151,6 +152,15 @@ def build_parser() -> argparse.ArgumentParser:
 
     cp_action = commands.add_parser("cp-o-int-action-candidate", help="Show the symbolic action-density candidate")
     cp_action.add_argument("--format", choices=("json",), default="json")
+
+    minimal = commands.add_parser("minimal-action", help="Build the minimal action-closure report")
+    minimal.add_argument("--format", choices=("json",), default="json")
+    minimal_report = commands.add_parser("minimal-action-report", help="Render the minimal action-closure report")
+    minimal_report.add_argument("--format", choices=("markdown", "json"), default="markdown")
+    close_minimal = commands.add_parser("close-minimal-action", help="Evaluate one minimal-action theorem")
+    close_minimal.add_argument("theorem_key", choices=("cp_o_int", "X_ch", "neutrino_basis_scale"))
+    close_minimal.add_argument("--format", choices=("json",), default="json")
+    commands.add_parser("minimal-action-status", help="Show concise minimal-action theorem statuses")
     return parser
 
 
@@ -309,6 +319,22 @@ def main(argv: Sequence[str] | None = None) -> int:
     if args.command == "cp-o-int-action-candidate":
         cp_report = build_cp_o_int_field_action_report()
         print(json.dumps({"candidate_key": cp_report.candidate_key, "candidate_status": cp_report.candidate_status, "theorem_status": cp_report.status_after, "action_density": cp_report.action_density, "symbolic_callable": cp_report.symbolic_callable, "production_eligible": cp_report.production_eligible}, indent=2, sort_keys=True))
+        return 0
+    if args.command == "minimal-action":
+        print(json.dumps(build_minimal_action_report().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "minimal-action-report":
+        minimal_report = build_minimal_action_report()
+        if args.format == "markdown":
+            print(minimal_action_report_to_markdown(minimal_report), end="")
+        else:
+            print(json.dumps(minimal_report.to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "close-minimal-action":
+        print(json.dumps(close_minimal_action(args.theorem_key).to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "minimal-action-status":
+        print(json.dumps(minimal_action_status(), indent=2, sort_keys=True))
         return 0
     particles = tuple(item.strip() for item in args.particles.split(",") if item.strip())
     report = build_prediction_report(

@@ -23,6 +23,7 @@ from .provenance import ProvenanceChain, ProvenanceRecord, ValueWithProvenance
 from .speculative import SpeculativeCandidate, SpeculativeCandidateRegistry
 from .theorem_blockers import TheoremBlocker, TheoremBlockerRegistry, attempt_theorem_closure
 from .theorem_closure import TheoremClosureReport, TheoremClosureResult, build_theorem_closure_report, evaluate_theorem
+from .minimal_action import MinimalActionClosureReport, MinimalActionClosureResult, build_minimal_action_report, close_minimal_action
 from .solver import ParticleMassSolver, SolverResult
 from .units import GeometricUnitMapper
 from .validation import ExperimentalValue, ValidationComparison, curated_fallback_references
@@ -56,6 +57,8 @@ __all__ = [
     "TheoremBlockerRegistry",
     "TheoremClosureReport",
     "TheoremClosureResult",
+    "MinimalActionClosureReport",
+    "MinimalActionClosureResult",
     "SolverResult",
     "ValidationComparison",
     "ValueWithProvenance",
@@ -72,6 +75,8 @@ __all__ = [
     "evaluate_theorem",
     "attempt_theorem_closure",
     "build_theorem_closure_report",
+    "build_minimal_action_report",
+    "close_minimal_action",
     "check_notebook_pack",
     "notebook_pack_manifest",
     "load_reference_with_fallback",
