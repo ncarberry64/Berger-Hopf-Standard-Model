@@ -9,6 +9,8 @@
   ],
   "available_author_supplied_conditional": [
     "charged_response_from_artifact",
+    "legacy_curvature_mass_functional",
+    "legacy_neutral_scale_candidate",
     "neutral_dimensionful_scale_search",
     "neutrino_physical_basis_scale",
     "neutrino_propagation_mass_candidate"
@@ -157,6 +159,44 @@
       "source_type": "interface default",
       "status": "AVAILABLE_INTERFACE_DEFAULT",
       "theorem_status": "PLACEHOLDER_UNTIL_BHSM_THEOREM_SUPPLIED"
+    },
+    {
+      "callable_path": "bhsm.interface.neutrino_scale.curvature_mass_functional.load_curvature_mass_functional_from_legacy_artifacts",
+      "claim_boundary": "The functional is artifact-backed, but it is not an action-derived neutrino mass and supplies no r_prop or physical k_neutral,eff.",
+      "description": "Load the author-supplied geometric matching functional with its explicit ansatz boundary.",
+      "display_name": "Legacy curvature mass functional",
+      "formula_key": "legacy_curvature_mass_functional",
+      "input_schema": {},
+      "notes": [],
+      "output_schema": {
+        "type": "CurvatureMassFunctional"
+      },
+      "safe_for_default_report": true,
+      "source_artifacts": [
+        "artifacts/BHSM_curvature_mass_functional_v1_1.json"
+      ],
+      "source_type": "bundled author-supplied legacy theory artifact",
+      "status": "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL",
+      "theorem_status": "ARTIFACT_BACKED_CURVATURE_MASS_FUNCTIONAL"
+    },
+    {
+      "callable_path": "bhsm.interface.neutrino_scale.legacy_scale_report.build_legacy_neutral_scale_candidate",
+      "claim_boundary": "No eV/GeV output is produced without both a physical propagation radius and neutral curvature map.",
+      "description": "Test the curvature functional against the independent neutral radius and curvature-unit gates.",
+      "display_name": "Legacy neutral scale candidate",
+      "formula_key": "legacy_neutral_scale_candidate",
+      "input_schema": {},
+      "notes": [],
+      "output_schema": {
+        "type": "LegacyNeutralScaleCandidate"
+      },
+      "safe_for_default_report": true,
+      "source_artifacts": [
+        "artifacts/BHSM_legacy_neutral_scale_report_v1_1.json"
+      ],
+      "source_type": "legacy theory artifacts plus current BHSM neutral audit",
+      "status": "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL",
+      "theorem_status": "OPEN_MISSING_PROPAGATION_LOCALIZATION_RADIUS"
     },
     {
       "callable_path": "bhsm.interface.mass_ratio_adapters.load_mass_ratio_predictions_artifact",

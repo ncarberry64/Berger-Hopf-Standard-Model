@@ -10,3 +10,7 @@ dimensionless channel responses from v0.9 remain unchanged and conditional.
 
 Status: `OPEN_MISSING_NEUTRAL_SCALE`.
 
+The legacy extension records
+`m_nu=(c^2/(2G))r_prop^2 k_neutral,eff` as a candidate bridge. The attempt still
+returns null eV/GeV fields because `r_prop` and physical `k_neutral,eff` are
+absent. Legacy particle tables are excluded from scale derivation.

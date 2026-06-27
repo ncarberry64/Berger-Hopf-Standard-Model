@@ -1,0 +1,15 @@
+{
+  "claim_boundary": "The neutral kernel supplies a dimensionless positive-threshold response. No artifact maps one response unit to k_neutral,eff in m^-2.",
+  "curvature_value_per_m2": null,
+  "dimensionless_curvature_response_available": true,
+  "mapping_formula": "R_nu_dimless(psi,p) = max(0, p*g_nu*||K_nu psi||/||psi|| - kappa_nu)",
+  "physical_curvature_units_available": false,
+  "remaining_missing_object": "artifact-backed conversion from the dimensionless neutral threshold response to physical curvature in m^-2",
+  "source_artifacts": [
+    "artifacts/neutral_operator_no_fit_output_v1.json",
+    "artifacts/BHSM_neutrino_curvature_threshold_v0_9.json",
+    "artifacts/BHSM_neutrino_numerical_closure_report_v0_9.json",
+    "artifacts/BHSM_author_ontology_v0_8.json"
+  ],
+  "status": "OPEN_MISSING_NEUTRAL_CURVATURE_MAPPING"
+}

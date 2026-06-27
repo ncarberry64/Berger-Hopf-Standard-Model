@@ -1,0 +1,77 @@
+{
+  "artifacts": [
+    {
+      "artifact_key": "local_curvature_threshold_eft",
+      "candidate_status": "AUTHOR_SUPPLIED_LEGACY_THEORY_ARTIFACT",
+      "notes": [
+        "The document explicitly describes the mass formula as a geometric matching ansatz rather than an action-derived result.",
+        "Its experimental examples are not BHSM theorem inputs."
+      ],
+      "recognized_formulas": [
+        "K[rho] = -nabla^2 ln rho",
+        "k_loc = K[rho](r_c)",
+        "N_K = integral sigma K[rho](r) dr; N_K = 1",
+        "m = (c^2/(2G)) r_c^2 k_loc",
+        "E = (c^4/(2G)) r_c^2 k_loc"
+      ],
+      "sha256": "8c491926b5a419064b515ab2f345edd4aee66563479882e3c73bfae9d0f23f36",
+      "source_document_title": "Mass from Local Curvature Thresholds in a Scalar Topographic Effective Field Theory",
+      "source_file": "theory/legacy_sources/v1_1/mass_from_local_curvature_thresholds_scalar_topographic_eft.pdf",
+      "use_allowed_for_empirical_calibration": false,
+      "use_allowed_for_theory": true
+    },
+    {
+      "artifact_key": "curvature_mass_gap_eft",
+      "candidate_status": "AUTHOR_SUPPLIED_LEGACY_THEORY_ARTIFACT",
+      "notes": [
+        "Used only as scalar-EFT action and spectral support.",
+        "No Yang-Mills proof or BHSM neutrino mass follows from this analogue."
+      ],
+      "recognized_formulas": [
+        "L = 1/2(dt phi)^2 - 1/2(grad phi)^2 - lambda/2(-nabla^2 phi - k_loc)^2",
+        "m_gap = sqrt(lambda) k_loc"
+      ],
+      "sha256": "f32e070dca892ed21715e06416415b1e0c091e9a29cebf69ae553698659e4a53",
+      "source_document_title": "A Curvature-Threshold Scalar Topographic EFT as a Mass-Gap Analogue of Yang-Mills Theory",
+      "source_file": "theory/legacy_sources/v1_1/mass_gap.pdf",
+      "use_allowed_for_empirical_calibration": false,
+      "use_allowed_for_theory": true
+    },
+    {
+      "artifact_key": "hyperspherical_mass_framework",
+      "candidate_status": "AUTHOR_SUPPLIED_LEGACY_THEORY_ARTIFACT",
+      "notes": [
+        "The representative particle table assumes r = 10^-15 m and is illustrative calibration material.",
+        "That table is forbidden as a no-fit BHSM derivation input."
+      ],
+      "recognized_formulas": [
+        "m = (c^2/(2G)) r^2 k",
+        "S = integral_{S^3} d^3x sqrt(g) [R/(16 pi G) - field kinetic and potential terms]",
+        "S^3 harmonic overlap integrals"
+      ],
+      "sha256": "35323d6e0a1e4112046eef2c616614d0cc821092314d4a0681b3723ad2c6b29c",
+      "source_document_title": "Mass Without Higgs: A Geometric Framework for Emergent Particle Mass and Hyperspherical Gravity",
+      "source_file": "theory/legacy_sources/v1_1/mass_without_higgs.pdf",
+      "use_allowed_for_empirical_calibration": false,
+      "use_allowed_for_theory": true
+    },
+    {
+      "artifact_key": "origin_of_mass_latex",
+      "candidate_status": "AUTHOR_SUPPLIED_LEGACY_THEORY_ARTIFACT",
+      "notes": [
+        "Provides an author-supplied EFT narrative and Newtonian matching argument.",
+        "It does not identify a BHSM neutral propagation radius or physical neutral curvature value."
+      ],
+      "recognized_formulas": [
+        "S_T = integral d^4x [1/2(d_mu T)(d^mu T) + B/2(Box T)^2 + S(x)T]",
+        "m = (c^2/(2G)) r^2 k_loc",
+        "E = (c^4/(2G)) r^2 k_loc"
+      ],
+      "sha256": "1ee81f48b982d4ece7e654c792aaaa057f8785ae08da9f259f3895eb4f95fcef",
+      "source_document_title": "The Origin of Mass",
+      "source_file": "theory/legacy_sources/v1_1/origin_of_mass_latex.docx",
+      "use_allowed_for_empirical_calibration": false,
+      "use_allowed_for_theory": true
+    }
+  ]
+}

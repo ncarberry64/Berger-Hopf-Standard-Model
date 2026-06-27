@@ -25,3 +25,7 @@ The next required object is an action-backed physical normalization of the
 neutral boundary measure or background stiffness, together with a derived
 threshold-to-energy map.
 
+The v1.1 legacy corpus now supplies an artifact-backed curvature mass
+functional. It narrows the missing bridge to a physical neutral propagation
+radius and a physical response-to-curvature map; it does not supply either
+quantity by itself.

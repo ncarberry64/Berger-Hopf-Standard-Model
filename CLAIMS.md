@@ -22,6 +22,8 @@
 - If neutral propagation response is zero, the BHSM mass contribution vanishes.
 - BHSM includes an offline neutral dimensionful-scale search that currently
   reports `OPEN_MISSING_NEUTRAL_SCALE` and emits no eV/GeV mass.
+- BHSM includes bundled author-supplied curvature-threshold papers and an
+  artifact-backed curvature mass functional, with its matching-ansatz caveat.
 
 ## Not Supported
 
@@ -43,6 +45,9 @@ Do not claim that:
   neutrino theorem inputs.
 - A named symbolic boundary measure or dimensionless action scale is, by
   itself, a physical neutral unit anchor.
+- Legacy particle threshold tables are no-fit BHSM predictions.
+- The legacy curvature functional alone closes the BHSM neutrino scale without
+  a propagation radius and physical neutral-curvature map.
 - The conditional `X_ch` theorem establishes a standalone 4D production field.
 
 ## Policy

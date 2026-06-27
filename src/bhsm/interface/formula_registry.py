@@ -13,6 +13,8 @@ from .minimal_action.neutrino_basis_closure import propagation_conditioned_neutr
 from .minimal_action.x_ch_closure import apply_x_ch_boundary_response
 from .neutrino_propagation.numerical_closure import build_numerical_closure
 from .neutrino_scale.unit_map import derive_neutral_scale_law
+from .neutrino_scale.curvature_mass_functional import load_curvature_mass_functional_from_legacy_artifacts
+from .neutrino_scale.legacy_scale_report import build_legacy_neutral_scale_candidate
 
 FORMULA_STATUSES = (
     "AVAILABLE_ARTIFACT_BACKED",
@@ -128,6 +130,8 @@ def default_formula_registry(repository: str | Path | None = None) -> FormulaReg
         FormulaCallableEntry("neutrino_physical_basis_scale", "Neutrino propagation-mass response", "Propagation-conditioned curvature-response callable.", "bhsm.interface.minimal_action.neutrino_basis_closure.propagation_conditioned_neutrino_mass", {"curvature_response": "value", "propagating": "bool", "threshold_met": "bool"}, {"type": "effective_mass_response"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "author ontology plus neutral boundary seed", ("artifacts/BHSM_neutrino_basis_scale_minimal_action_closure_v0_8.json", "artifacts/BHSM_author_ontology_v0_8.json"), "CONDITIONAL_PROPAGATION_THEOREM", "Structural propagation theorem only; numerical curvature scale remains open.", True),
         FormulaCallableEntry("neutrino_propagation_mass_candidate", "Neutrino dimensionless propagation-mass candidate", "Build the ordering-free dimensionless threshold-response candidate.", "bhsm.interface.neutrino_propagation.numerical_closure.build_numerical_closure", {}, {"type": "NeutrinoNumericalClosureReport"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "author ontology plus local no-fit artifacts", ("artifacts/BHSM_neutrino_numerical_closure_report_v0_9.json", "artifacts/BHSM_author_ontology_v0_8.json"), "CONDITIONAL_NUMERICAL_CLOSURE_CANDIDATE", "Dimensionless-only conditional candidate; eV/GeV scale remains open.", True),
         FormulaCallableEntry("neutral_dimensionful_scale_search", "Neutral dimensionful scale search", "Classify local neutral scale candidates and fail closed when no physical unit anchor exists.", "bhsm.interface.neutrino_scale.unit_map.derive_neutral_scale_law", {}, {"type": "NeutralDimensionfulScaleResult"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "local artifact inventory and author ontology", ("artifacts/BHSM_neutral_scale_closure_report_v1_0.json", "artifacts/BHSM_author_ontology_v0_8.json"), "OPEN_MISSING_NEUTRAL_SCALE", "A dimensionless BHSM response is not, by itself, a physical eV/GeV mass.", True),
+        FormulaCallableEntry("legacy_curvature_mass_functional", "Legacy curvature mass functional", "Load the author-supplied geometric matching functional with its explicit ansatz boundary.", "bhsm.interface.neutrino_scale.curvature_mass_functional.load_curvature_mass_functional_from_legacy_artifacts", {}, {"type": "CurvatureMassFunctional"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "bundled author-supplied legacy theory artifact", ("artifacts/BHSM_curvature_mass_functional_v1_1.json",), "ARTIFACT_BACKED_CURVATURE_MASS_FUNCTIONAL", "The functional is artifact-backed, but it is not an action-derived neutrino mass and supplies no r_prop or physical k_neutral,eff.", True),
+        FormulaCallableEntry("legacy_neutral_scale_candidate", "Legacy neutral scale candidate", "Test the curvature functional against the independent neutral radius and curvature-unit gates.", "bhsm.interface.neutrino_scale.legacy_scale_report.build_legacy_neutral_scale_candidate", {}, {"type": "LegacyNeutralScaleCandidate"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "legacy theory artifacts plus current BHSM neutral audit", ("artifacts/BHSM_legacy_neutral_scale_report_v1_1.json",), "OPEN_MISSING_PROPAGATION_LOCALIZATION_RADIUS", "No eV/GeV output is produced without both a physical propagation radius and neutral curvature map.", True),
         FormulaCallableEntry("cp_o_int_standalone_attachment", "Standalone CP O_int attachment", "Retired standalone production target.", None, {}, {}, "RETIRED_TARGET", "author ontology", ("artifacts/CP_no_fit_holonomy_output_v1.json", "artifacts/BHSM_cp_o_int_minimal_action_closure_v0_8.json", "artifacts/BHSM_author_ontology_v0_8.json"), "RETIRED_TARGET", "CP is represented by the artifact-backed Z6 holonomy constraint; no standalone production vertex is required.", False),
     )
     for entry in entries:
@@ -148,6 +152,8 @@ _CONDITIONAL_CALLABLES: dict[str, Callable[..., Any]] = {
     "neutrino_physical_basis_scale": propagation_conditioned_neutrino_mass,
     "neutrino_propagation_mass_candidate": build_numerical_closure,
     "neutral_dimensionful_scale_search": derive_neutral_scale_law,
+    "legacy_curvature_mass_functional": load_curvature_mass_functional_from_legacy_artifacts,
+    "legacy_neutral_scale_candidate": build_legacy_neutral_scale_candidate,
 }
 
 

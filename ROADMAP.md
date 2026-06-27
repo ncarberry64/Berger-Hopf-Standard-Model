@@ -14,6 +14,8 @@
 - Dimensionless neutrino propagation-threshold numerical candidate using
   artifact-backed `K_nu`, `g_nu`, `kappa_nu`, and `tau`.
 - Offline neutral unit-source, boundary-measure, and threshold-to-energy audit.
+- Bundled legacy curvature-threshold corpus and provenance-backed mass
+  functional adapter.
 
 ## Candidate
 
@@ -28,6 +30,8 @@
 - Artifact-backed dimensionful neutral scale mapping the response to eV/GeV.
 - Physical normalization of `dmu_boundary dt`, neutral background energy
   density, and transport normalization without empirical calibration.
+- Derive `r_prop` from the neutral boundary geometry and map the dimensionless
+  kernel response to `k_neutral,eff` in `m^-2`.
 - Physical map from neutral boundary channels to oscillation and cosmological
   observables.
 - Dirac/Majorana convention only where later comparison/export requires it.

@@ -92,6 +92,18 @@ def build_neutral_scale_candidates(
             neutral_kernel_link="required by a curvature-response energy map",
             claim_boundary="No artifact-backed neutral background stiffness or energy density was found.",
         ),
+        NeutralScaleCandidate(
+            candidate_key="legacy_curvature_mass_functional",
+            value="m = (c^2/(2G)) r_prop^2 k_neutral,eff",
+            unit=None,
+            dimension="mass if r_prop is in m and k_neutral,eff is in m^-2",
+            source="theory/legacy_sources/v1_1/mass_from_local_curvature_thresholds_scalar_topographic_eft.pdf",
+            status="ARTIFACT_BACKED_CURVATURE_MASS_FUNCTIONAL",
+            can_map_to_eV=False,
+            requires_external_calibration=False,
+            forbidden_reason=None,
+            neutral_kernel_link="conditional bridge; r_prop and physical curvature map remain missing",
+            claim_boundary="The functional supplies dimensional structure but not the missing neutral radius or physical curvature value.",
+        ),
     ]
     return tuple(rows)
-

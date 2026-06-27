@@ -84,6 +84,7 @@ def compute_neutrino_propagation_mass(
         provenance=provenance_rows(repository_path(repository), tuple(dict.fromkeys(sources))),
         claim_boundary=(
             "A dimensionless BHSM response is not, by itself, a physical eV/GeV mass. "
-            "Physical units are emitted only when an accepted neutral scale result supplies a valid unit source."
+            "Physical units are emitted only when an accepted neutral scale result supplies a valid unit source; "
+            "a legacy curvature functional without r_prop and physical k_neutral,eff is insufficient."
         ),
     )

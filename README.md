@@ -34,6 +34,7 @@ validation remain outside the current package.
 | `X_ch` | `CONDITIONAL_ACTION_THEOREM` | Author ontology defines a charged boundary-response operator; numerical and 4D production closure remain open. |
 | Neutrino BHSM mass | `CONDITIONAL_NUMERICAL_CLOSURE_CANDIDATE` | Local no-fit artifacts support a dimensionless propagation-threshold response; the eV/GeV scale remains open. |
 | Neutral dimensionful scale | `OPEN_MISSING_NEUTRAL_SCALE` | The local audit finds no physical unit anchor, normalized boundary measure, or threshold-to-energy map. |
+| Legacy curvature mass bridge | `ARTIFACT_BACKED_CURVATURE_MASS_FUNCTIONAL` | Author-supplied papers provide the geometric matching functional; physical `r_prop` and `k_neutral,eff` remain open. |
 | FeynRules, UFO, MadGraph | `RUNTIME_GATED` | External validation is deferred until theorem and runtime gates pass. |
 
 [STATUS.md](STATUS.md) is the single source of truth for current area-level
@@ -100,7 +101,10 @@ Run the offline scale audit with:
 ```bash
 python -m bhsm.interface neutral-scale-candidates --format json
 python -m bhsm.interface neutrino-scale-report --format markdown
+python -m bhsm.interface legacy-neutral-scale-report --format markdown
 ```
+
+The legacy curvature-threshold mass functional supplies a candidate mass bridge, not an empirical neutrino mass prediction by itself. A physical BHSM neutrino mass requires both a propagation/localization scale and a neutral curvature mapping with physical units.
 
 The exact evidence boundary is reported by:
 

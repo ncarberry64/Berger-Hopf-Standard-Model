@@ -37,10 +37,17 @@ from .neutrino_propagation.observable_map import build_neutrino_observable_map
 from .neutrino_propagation.propagation_state import canonical_channel_states
 from .neutrino_scale import (
     analyze_neutral_boundary_measure,
+    build_legacy_curvature_scale_report,
+    build_legacy_neutral_scale_candidate,
     build_neutral_scale_candidates,
     build_neutral_scale_report,
     build_threshold_energy_map,
     derive_neutral_scale_law,
+    derive_or_locate_neutral_curvature_mapping,
+    derive_or_locate_neutrino_propagation_radius,
+    index_legacy_curvature_artifacts,
+    legacy_curvature_scale_report_to_markdown,
+    load_curvature_mass_functional_from_legacy_artifacts,
     neutral_scale_report_to_markdown,
 )
 
@@ -201,6 +208,18 @@ def build_parser() -> argparse.ArgumentParser:
     dimensionful_mass.add_argument("--format", choices=("json",), default="json")
     scale_report = commands.add_parser("neutrino-scale-report", help="Render the neutral scale closure report")
     scale_report.add_argument("--format", choices=("markdown", "json"), default="markdown")
+    legacy_artifacts = commands.add_parser("legacy-curvature-artifacts", help="Index bundled legacy curvature-threshold theory artifacts")
+    legacy_artifacts.add_argument("--format", choices=("json",), default="json")
+    legacy_functional = commands.add_parser("curvature-mass-functional", help="Show the legacy curvature mass functional with provenance")
+    legacy_functional.add_argument("--format", choices=("json",), default="json")
+    propagation_radius = commands.add_parser("neutrino-propagation-radius", help="Search for a physical neutral propagation radius")
+    propagation_radius.add_argument("--format", choices=("json",), default="json")
+    curvature_mapping = commands.add_parser("neutral-curvature-mapping", help="Audit the neutral response-to-curvature map")
+    curvature_mapping.add_argument("--format", choices=("json",), default="json")
+    legacy_scale = commands.add_parser("legacy-neutral-scale", help="Build the legacy curvature neutral-scale candidate")
+    legacy_scale.add_argument("--format", choices=("json",), default="json")
+    legacy_report = commands.add_parser("legacy-neutral-scale-report", help="Render the legacy curvature neutral-scale audit")
+    legacy_report.add_argument("--format", choices=("markdown", "json"), default="markdown")
     return parser
 
 
@@ -417,9 +436,15 @@ def main(argv: Sequence[str] | None = None) -> int:
         return 0
     if args.command == "neutrino-dimensionful-mass":
         scale_report = build_neutral_scale_report()
+        legacy_scale_report = build_legacy_curvature_scale_report()
         print(json.dumps({
             "status": scale_report.scale_result.status_after,
             "dimensionful_mass_output_produced": scale_report.dimensionful_mass_output_produced,
+            "legacy_curvature_mass_functional_available": legacy_scale_report.result.mass_functional_available,
+            "propagation_radius_available": legacy_scale_report.result.propagation_radius_available,
+            "neutral_curvature_mapping_available": legacy_scale_report.result.neutral_curvature_mapping_available,
+            "physical_curvature_units_available": legacy_scale_report.neutral_curvature_mapping.physical_curvature_units_available,
+            "dimensionful_mass_possible": legacy_scale_report.result.dimensionful_mass_possible,
             "channel_results": [row.to_dict() for row in scale_report.dimensionful_mass_attempt],
         }, indent=2, sort_keys=True))
         return 0
@@ -429,6 +454,28 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(neutral_scale_report_to_markdown(scale_report), end="")
         else:
             print(json.dumps(scale_report.to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "legacy-curvature-artifacts":
+        print(json.dumps({"artifacts": [row.to_dict() for row in index_legacy_curvature_artifacts()]}, indent=2, sort_keys=True))
+        return 0
+    if args.command == "curvature-mass-functional":
+        print(json.dumps(load_curvature_mass_functional_from_legacy_artifacts().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "neutrino-propagation-radius":
+        print(json.dumps(derive_or_locate_neutrino_propagation_radius().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "neutral-curvature-mapping":
+        print(json.dumps(derive_or_locate_neutral_curvature_mapping().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "legacy-neutral-scale":
+        print(json.dumps(build_legacy_neutral_scale_candidate().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "legacy-neutral-scale-report":
+        legacy_report = build_legacy_curvature_scale_report()
+        if args.format == "markdown":
+            print(legacy_curvature_scale_report_to_markdown(legacy_report), end="")
+        else:
+            print(json.dumps(legacy_report.to_dict(), indent=2, sort_keys=True))
         return 0
     particles = tuple(item.strip() for item in args.particles.split(",") if item.strip())
     report = build_prediction_report(
