@@ -11,3 +11,6 @@ required gate fails.
 A standalone CP O_int theorem requires field, Lorentz, gauge, coupling, and action/operator definitions.
 
 Runtime-disabled software gates remain disabled until live external validation passes.
+
+Sprint C retains 13 passing and 8 failing action-level gates. Symbolic factor
+availability does not convert a failed derivation gate into a pass.

@@ -19,3 +19,7 @@ Reference values, including PDG values, are comparison inputs only and are never
 A conditional author axiom is not an action-level closure.
 
 Runtime-disabled software gates remain disabled until live external validation passes.
+
+Sprint C subsequently organizes existing blocked symbolic terms into a callable
+candidate. This sharpens the remaining theorem status to
+`OPEN_MISSING_ACTION_SOURCE` without changing production eligibility.

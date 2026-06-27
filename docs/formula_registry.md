@@ -29,3 +29,7 @@ neutrino map, and `OPEN_MISSING_INTERACTION_ATTACHMENT` for standalone CP
 
 The Sprint B focused report is now included in the standalone CP entry's source
 artifacts. This adds provenance but does not make its callable available.
+
+Sprint C adds a separate symbolic callable while keeping the production formula
+entry `OPEN_THEOREM_REQUIRED`. Its theorem status is
+`OPEN_MISSING_ACTION_SOURCE`.

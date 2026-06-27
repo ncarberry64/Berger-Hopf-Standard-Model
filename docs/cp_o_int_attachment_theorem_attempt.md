@@ -11,3 +11,7 @@ artifacts.
 CP holonomy or CKM/PMNS phase attachment alone is not a standalone CP O_int interaction theorem.
 
 A standalone CP O_int theorem requires field, Lorentz, gauge, coupling, and action/operator definitions.
+
+Sprint C provides symbolic placeholders for those factors, sourced where
+possible from existing blocked candidate artifacts. Placeholders do not satisfy
+the action-level gates.

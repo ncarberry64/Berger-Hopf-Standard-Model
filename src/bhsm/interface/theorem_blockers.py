@@ -78,9 +78,9 @@ def default_theorem_blockers() -> TheoremBlockerRegistry:
                        ("artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json", "artifacts/BHSM_interaction_theorem_closure_audit_v1_1.json", "artifacts/BHSM_neutrino_basis_scale_theorem_closure_attempt_v0_4.json"),
                        "physical neutrino basis + dimensional scale + Dirac/Majorana convention", "This is a theorem blocker, not a production prediction."),
         TheoremBlocker("cp_o_int", "Standalone CP O_int attachment", OPEN,
-                       "standalone CP O_int interaction attachment", ("cp_holonomy_phase_attachment",),
-                       ("artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json", "artifacts/BHSM_interaction_theorem_closure_audit_v1_1.json", "artifacts/BHSM_cp_o_int_theorem_closure_attempt_v0_4.json", "artifacts/BHSM_cp_o_int_attachment_report_v0_5.json"),
-                       "standalone CP O_int interaction attachment", "This is a theorem blocker, not a production prediction."),
+                       "action-derived standalone CP O_int field/action theorem", ("cp_holonomy_phase_attachment",),
+                       ("artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json", "artifacts/BHSM_interaction_theorem_closure_audit_v1_1.json", "artifacts/BHSM_cp_o_int_theorem_closure_attempt_v0_4.json", "artifacts/BHSM_cp_o_int_attachment_report_v0_5.json", "artifacts/BHSM_cp_o_int_field_action_report_v0_6.json"),
+                       "action-derived CP O_int field representation, Lorentz/gauge structure, coupling normalization, measure/variation, and production callable", "This is a theorem blocker, not a production prediction."),
     )
     return TheoremBlockerRegistry({row.blocker_key: row for row in rows})
 

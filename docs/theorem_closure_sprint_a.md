@@ -28,3 +28,6 @@ The neutral operator kernel is not promoted to a physical neutrino mass matrix w
 
 Sprint B now provides the focused CP `O_int` stage decomposition without
 changing Sprint A's non-promotion result. See `docs/cp_o_int_sprint_b.md`.
+
+Sprint C adds a symbolic field/action candidate and sharpens the remaining CP
+gap to `OPEN_MISSING_ACTION_SOURCE`; no theorem is promoted.
