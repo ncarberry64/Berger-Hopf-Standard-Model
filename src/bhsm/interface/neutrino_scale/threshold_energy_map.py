@@ -23,7 +23,7 @@ def build_threshold_energy_map(
         unit_anchor_available=False,
         transport_normalization_available=False,
         missing_object=(
-            "artifact-backed threshold-to-energy map requiring a neutral propagation radius, physical neutral-curvature conversion, and transport normalization; "
+            "artifact-backed threshold-to-energy map requiring a numeric neutral propagation radius, physical neutral-curvature conversion, transport normalization, and dimensionally consistent mass functional; "
             f"boundary measure also lacks {measure.missing_object}"
         ),
         claim_boundary="The legacy curvature functional supplies the symbolic bridge, but the dimensionless threshold is not promoted to an energy without r_prop and k_neutral,eff in physical units.",

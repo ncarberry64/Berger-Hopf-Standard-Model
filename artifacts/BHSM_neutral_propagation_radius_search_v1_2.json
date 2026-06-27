@@ -1,0 +1,228 @@
+{
+  "author_ontology_dependency": "NEUTRINO_MASS_IS_PROPAGATION_LOCKED_CURVATURE_RESPONSE",
+  "candidate_key": "neutral_propagation_radius_search",
+  "candidates": [
+    {
+      "author_ontology_dependency": "NEUTRINO_MASS_IS_PROPAGATION_LOCKED_CURVATURE_RESPONSE",
+      "candidate_key": "author_ontology_r_prop",
+      "claim_boundary": "The ontology defines the physical neutral boundary-field domain and propagation role; it does not fix a numerical radius.",
+      "dimension": "length",
+      "electron_neutrino_limit_used_as_derivation_input": false,
+      "empirical_derivation_inputs_used": false,
+      "legacy_particle_tables_used_as_derivation_inputs": false,
+      "neutrino_specific": true,
+      "numeric_metres_available": false,
+      "provenance": [
+        {
+          "empirical_derivation_input": false,
+          "legacy_particle_table_input": false,
+          "reference_theorem_input": false,
+          "source_path": "artifacts/BHSM_author_ontology_v0_8.json"
+        }
+      ],
+      "reference_values_used_as_theorem_inputs": false,
+      "remaining_missing_object": "action-derived numerical r_prop in metres",
+      "source_artifacts": [
+        "artifacts/BHSM_author_ontology_v0_8.json"
+      ],
+      "source_type": "local BHSM artifact or author ontology",
+      "status": "CONDITIONAL_PROPAGATION_RADIUS_CANDIDATE",
+      "symbolic_length_available": true,
+      "unit": "m (symbolic; no value supplied)",
+      "value": "r_prop: characteristic support scale of a propagating neutral boundary mode",
+      "w_mass_used_as_theorem_input": false,
+      "zero_propagation_consistent": true
+    },
+    {
+      "author_ontology_dependency": "NEUTRINO_MASS_IS_PROPAGATION_LOCKED_CURVATURE_RESPONSE",
+      "candidate_key": "legacy_core_radius_r_c",
+      "claim_boundary": "The legacy core radius is not identified with the BHSM neutral propagation radius.",
+      "dimension": "length",
+      "electron_neutrino_limit_used_as_derivation_input": false,
+      "empirical_derivation_inputs_used": false,
+      "legacy_particle_tables_used_as_derivation_inputs": false,
+      "neutrino_specific": false,
+      "numeric_metres_available": false,
+      "provenance": [
+        {
+          "empirical_derivation_input": false,
+          "legacy_particle_table_input": false,
+          "reference_theorem_input": false,
+          "source_path": "theory/legacy_sources/v1_1/mass_from_local_curvature_thresholds_scalar_topographic_eft.pdf"
+        }
+      ],
+      "reference_values_used_as_theorem_inputs": false,
+      "remaining_missing_object": "neutral-specific identification theorem and numerical value",
+      "source_artifacts": [
+        "theory/legacy_sources/v1_1/mass_from_local_curvature_thresholds_scalar_topographic_eft.pdf"
+      ],
+      "source_type": "local BHSM artifact or author ontology",
+      "status": "REFERENCE_ONLY",
+      "symbolic_length_available": true,
+      "unit": "length (general variable)",
+      "value": "r_c",
+      "w_mass_used_as_theorem_input": false,
+      "zero_propagation_consistent": false
+    },
+    {
+      "author_ontology_dependency": "NEUTRINO_MASS_IS_PROPAGATION_LOCKED_CURVATURE_RESPONSE",
+      "candidate_key": "boundary_profile_sigma",
+      "claim_boundary": "Dimensionless sigma cannot become metres without a unit map.",
+      "dimension": "dimensionless profile parameter",
+      "electron_neutrino_limit_used_as_derivation_input": false,
+      "empirical_derivation_inputs_used": false,
+      "legacy_particle_tables_used_as_derivation_inputs": false,
+      "neutrino_specific": false,
+      "numeric_metres_available": false,
+      "provenance": [
+        {
+          "empirical_derivation_input": false,
+          "legacy_particle_table_input": false,
+          "reference_theorem_input": false,
+          "source_path": "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json"
+        }
+      ],
+      "reference_values_used_as_theorem_inputs": false,
+      "remaining_missing_object": "physical boundary length normalization",
+      "source_artifacts": [
+        "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json"
+      ],
+      "source_type": "local BHSM artifact or author ontology",
+      "status": "DIMENSIONLESS_LENGTH_PROXY",
+      "symbolic_length_available": false,
+      "unit": null,
+      "value": 69.97367331049945,
+      "w_mass_used_as_theorem_input": false,
+      "zero_propagation_consistent": false
+    },
+    {
+      "author_ontology_dependency": "NEUTRINO_MASS_IS_PROPAGATION_LOCKED_CURVATURE_RESPONSE",
+      "candidate_key": "internal_profile_radius",
+      "claim_boundary": "An internal dimensionless profile radius is not a physical neutral propagation length.",
+      "dimension": "dimensionless internal radius",
+      "electron_neutrino_limit_used_as_derivation_input": false,
+      "empirical_derivation_inputs_used": false,
+      "legacy_particle_tables_used_as_derivation_inputs": false,
+      "neutrino_specific": false,
+      "numeric_metres_available": false,
+      "provenance": [
+        {
+          "empirical_derivation_input": false,
+          "legacy_particle_table_input": false,
+          "reference_theorem_input": false,
+          "source_path": "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json"
+        }
+      ],
+      "reference_values_used_as_theorem_inputs": false,
+      "remaining_missing_object": "theorem identifying the internal radius with r_prop plus a metre conversion",
+      "source_artifacts": [
+        "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json"
+      ],
+      "source_type": "local BHSM artifact or author ontology",
+      "status": "DIMENSIONLESS_LENGTH_PROXY",
+      "symbolic_length_available": false,
+      "unit": null,
+      "value": 0.28209479177387814,
+      "w_mass_used_as_theorem_input": false,
+      "zero_propagation_consistent": false
+    },
+    {
+      "author_ontology_dependency": "NEUTRINO_MASS_IS_PROPAGATION_LOCKED_CURVATURE_RESPONSE",
+      "candidate_key": "empirical_or_mass_derived_length",
+      "claim_boundary": "Neutrino-limit, de Broglie, W-scale, and legacy particle-table lengths are forbidden theorem inputs.",
+      "dimension": "length",
+      "electron_neutrino_limit_used_as_derivation_input": false,
+      "empirical_derivation_inputs_used": false,
+      "legacy_particle_tables_used_as_derivation_inputs": false,
+      "neutrino_specific": false,
+      "numeric_metres_available": false,
+      "provenance": [
+        {
+          "empirical_derivation_input": false,
+          "legacy_particle_table_input": false,
+          "reference_theorem_input": false,
+          "source_path": "comparison layer only"
+        }
+      ],
+      "reference_values_used_as_theorem_inputs": false,
+      "remaining_missing_object": "none; this route is rejected",
+      "source_artifacts": [
+        "comparison layer only"
+      ],
+      "source_type": "local BHSM artifact or author ontology",
+      "status": "FORBIDDEN_EMPIRICAL_RADIUS",
+      "symbolic_length_available": false,
+      "unit": "m",
+      "value": null,
+      "w_mass_used_as_theorem_input": false,
+      "zero_propagation_consistent": false
+    }
+  ],
+  "claim_boundary": "A symbolic radius domain is defined, but no physical metre value is derived.",
+  "dimension": "length",
+  "electron_neutrino_limit_used_as_derivation_input": false,
+  "empirical_derivation_inputs_used": false,
+  "legacy_particle_tables_used_as_derivation_inputs": false,
+  "numeric_metres_found": false,
+  "provenance": [
+    {
+      "empirical_derivation_input": false,
+      "legacy_particle_table_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/BHSM_author_ontology_v0_8.json"
+    },
+    {
+      "empirical_derivation_input": false,
+      "legacy_particle_table_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json"
+    },
+    {
+      "empirical_derivation_input": false,
+      "legacy_particle_table_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/neutral_operator_no_fit_output_v1.json"
+    },
+    {
+      "empirical_derivation_input": false,
+      "legacy_particle_table_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/internal_profile_radius_normalization_v1.json"
+    },
+    {
+      "empirical_derivation_input": false,
+      "legacy_particle_table_input": false,
+      "reference_theorem_input": false,
+      "source_path": "theory/theorem_discharge_neutral_effective_action.md"
+    },
+    {
+      "empirical_derivation_input": false,
+      "legacy_particle_table_input": false,
+      "reference_theorem_input": false,
+      "source_path": "theory/theorem_discharge_scalar_topographic_profile_input_classification.md"
+    },
+    {
+      "empirical_derivation_input": false,
+      "legacy_particle_table_input": false,
+      "reference_theorem_input": false,
+      "source_path": "theory/legacy_sources/v1_1/mass_from_local_curvature_thresholds_scalar_topographic_eft.pdf"
+    }
+  ],
+  "reference_values_used_as_theorem_inputs": false,
+  "remaining_missing_object": "action-derived numerical r_prop in metres and its neutral-mode support theorem",
+  "source_artifacts": [
+    "artifacts/BHSM_author_ontology_v0_8.json",
+    "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json",
+    "artifacts/neutral_operator_no_fit_output_v1.json",
+    "artifacts/internal_profile_radius_normalization_v1.json",
+    "theory/theorem_discharge_neutral_effective_action.md",
+    "theory/theorem_discharge_scalar_topographic_profile_input_classification.md",
+    "theory/legacy_sources/v1_1/mass_from_local_curvature_thresholds_scalar_topographic_eft.pdf"
+  ],
+  "source_type": "author ontology conditional candidate plus artifact search",
+  "status": "CONDITIONAL_PROPAGATION_RADIUS_CANDIDATE",
+  "symbolic_candidate_found": true,
+  "unit": "m (symbolic only)",
+  "value": "r_prop",
+  "w_mass_used_as_theorem_input": false
+}

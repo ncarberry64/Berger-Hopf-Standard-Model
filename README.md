@@ -35,6 +35,9 @@ validation remain outside the current package.
 | Neutrino BHSM mass | `CONDITIONAL_NUMERICAL_CLOSURE_CANDIDATE` | Local no-fit artifacts support a dimensionless propagation-threshold response; the eV/GeV scale remains open. |
 | Neutral dimensionful scale | `OPEN_MISSING_NEUTRAL_SCALE` | The local audit finds no physical unit anchor, normalized boundary measure, or threshold-to-energy map. |
 | Legacy curvature mass bridge | `ARTIFACT_BACKED_CURVATURE_MASS_FUNCTIONAL` | Author-supplied papers provide the geometric matching functional; physical `r_prop` and `k_neutral,eff` remain open. |
+| Neutral propagation radius | `CONDITIONAL_PROPAGATION_RADIUS_CANDIDATE` | A symbolic length-domain candidate is defined; no numerical value in metres is derived. |
+| Neutral physical curvature map | `CONDITIONAL_PHYSICAL_CURVATURE_MAP_CANDIDATE` | A symbolic `kappa_curv R_nu` map is defined; `kappa_curv` in `m^-2` remains open. |
+| Dimensionful neutrino mass | `DIMENSIONFUL_MASS_NOT_AVAILABLE` | Numeric unit inputs are absent, and the legacy `r^2 k` functional has dimension mass/length under `K=-nabla^2 ln rho`. |
 | FeynRules, UFO, MadGraph | `RUNTIME_GATED` | External validation is deferred until theorem and runtime gates pass. |
 
 [STATUS.md](STATUS.md) is the single source of truth for current area-level
@@ -102,9 +105,12 @@ Run the offline scale audit with:
 python -m bhsm.interface neutral-scale-candidates --format json
 python -m bhsm.interface neutrino-scale-report --format markdown
 python -m bhsm.interface legacy-neutral-scale-report --format markdown
+python -m bhsm.interface neutral-radius-curvature-report --format markdown
 ```
 
 The legacy curvature-threshold mass functional supplies a candidate mass bridge, not an empirical neutrino mass prediction by itself. A physical BHSM neutrino mass requires both a propagation/localization scale and a neutral curvature mapping with physical units.
+
+The v1.2 dimensional audit adds a further required gate: the mass functional itself must reduce to physical mass. The currently documented `r^2 k` expression does not pass that gate when `K` has dimension `length^-2`.
 
 The exact evidence boundary is reported by:
 

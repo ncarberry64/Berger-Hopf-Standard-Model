@@ -1,0 +1,33 @@
+{
+  "allowed": [
+    "BHSM includes an artifact-backed curvature mass bridge as a documented legacy functional.",
+    "BHSM searches separately for the neutral propagation radius and the physical neutral curvature map.",
+    "A dimensionful neutrino mass candidate requires r_prop in metres, k_neutral,eff in m^-2, and a dimensionally consistent mass functional.",
+    "Conditional symbolic candidates do not produce eV/GeV mass by themselves."
+  ],
+  "artifact_name": "BHSM Neutral Radius/Curvature Claim Policy",
+  "dimensional_audit": {
+    "K_dimension": "length^-2",
+    "formula_output_dimension": "mass_per_length",
+    "legacy_mass_formula": "(c^2/(2G)) r^2 k",
+    "physical_mass_dimension_passed": false
+  },
+  "forbidden": [
+    "BHSM empirically validates neutrino mass.",
+    "BHSM centrally measures electron-neutrino mass.",
+    "The electron-neutrino upper limit is used to set r_prop or k_neutral,eff.",
+    "PDG/reference values are theorem inputs.",
+    "W calibration is used as the neutral scale.",
+    "Legacy particle threshold tables are no-fit BHSM derivations.",
+    "Dimensionless radius or curvature proxies produce physical eV/GeV mass by themselves."
+  ],
+  "frozen_predictions_changed": false,
+  "official_predictions_changed": false,
+  "required_statements": [
+    "The curvature mass bridge requires both a propagation/localization radius and a physical neutral curvature map.",
+    "A symbolic propagation radius does not by itself produce a physical neutrino mass.",
+    "A dimensionless neutral kernel response is not by itself a curvature in m^-2.",
+    "BHSM does not use neutrino limits, PDG values, W calibration, or legacy particle threshold tables to set r_prop or k_neutral,eff."
+  ],
+  "version": "1.2"
+}

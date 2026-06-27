@@ -13,5 +13,9 @@ has a dimensionless neutral threshold response. The sprint found neither a
 physical `r_prop` nor a conversion to `k_neutral,eff` in `m^-2`, so no eV/GeV
 mass is emitted.
 
-The electron-neutrino upper limit, PDG values, and W mass are not used as theorem inputs.
+The v1.2 audit additionally finds that the documented functional has dimension
+mass/length when `K=-nabla^2 ln rho` has dimension `length^-2`. This historical
+candidate is therefore superseded for physical mass output by the explicit
+dimensional-consistency gate.
 
+The electron-neutrino upper limit, PDG values, and W mass are not used as theorem inputs.

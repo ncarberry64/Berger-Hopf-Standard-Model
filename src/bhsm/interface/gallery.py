@@ -57,6 +57,7 @@ class PredictionGallery:
                 "Speculative candidates are disabled by default and are not production predictions.",
                 "A dimensionless BHSM response is not, by itself, a physical eV/GeV mass.",
                 "A legacy curvature mass functional is a bridge candidate, not a physical neutrino mass without r_prop and k_neutral,eff.",
+                "The legacy r^2 k functional does not pass the physical mass-dimension gate when K has dimension length^-2.",
             ],
         }
 

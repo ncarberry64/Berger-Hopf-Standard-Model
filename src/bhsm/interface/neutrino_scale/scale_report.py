@@ -81,7 +81,7 @@ def neutral_scale_report_to_markdown(report: NeutralScaleClosureReport) -> str:
             "",
             f"Boundary measure: `{report.boundary_measure.status}`.",
             f"Threshold-to-energy map: `{report.threshold_energy_map.status}`.",
-            "Legacy curvature support is audited separately; the functional alone does not supply a neutral radius or physical curvature unit.",
+            "Legacy curvature support is audited separately; symbolic radius/curvature candidates do not supply numeric units, and the documented r^2 k functional requires dimensional correction.",
             f"Remaining object: {report.scale_result.remaining_missing_object}.",
             "",
         ]
