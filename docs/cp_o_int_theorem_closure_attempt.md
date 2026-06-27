@@ -11,3 +11,7 @@ production vertex is promoted.
 Theorem closure requires executable artifact-backed support; narrative plausibility is not enough.
 
 Runtime-disabled software gates remain disabled until live external validation passes.
+
+Sprint B further localizes the standalone gap into field, Lorentz, gauge,
+coupling, action, callable, and registry stages. The overall status remains
+`OPEN_MISSING_INTERACTION_ATTACHMENT`.

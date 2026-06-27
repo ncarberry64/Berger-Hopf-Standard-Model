@@ -1,0 +1,51 @@
+{
+  "cp_o_int_status": "OPEN_MISSING_INTERACTION_ATTACHMENT",
+  "entries": [
+    {
+      "claim_boundary": "The phase source is not a standalone production CP vertex.",
+      "entry_key": "cp_holonomy_phase_attachment",
+      "promotion_allowed": false,
+      "promotion_reason": "Phase attachment exists, but standalone production operator gates remain unsatisfied.",
+      "status_after": "OPEN_THEOREM_REQUIRED",
+      "status_before": "OPEN_THEOREM_REQUIRED"
+    },
+    {
+      "claim_boundary": "Bounded CKM/PMNS collider-interface subset only; not the complete BHSM 4D Lagrangian.",
+      "entry_key": "minimal_collider_interface_subset",
+      "promotion_allowed": false,
+      "promotion_reason": "Phase attachment exists, but standalone production operator gates remain unsatisfied.",
+      "status_after": "REFERENCE_COMPARISON_ONLY",
+      "status_before": "REFERENCE_COMPARISON_ONLY"
+    },
+    {
+      "claim_boundary": "The .fr model remains disabled until live Wolfram/FeynRules validation passes.",
+      "entry_key": "feynrules_minimal_model",
+      "promotion_allowed": false,
+      "promotion_reason": "Phase attachment exists, but standalone production operator gates remain unsatisfied.",
+      "status_after": "DISABLED_UNTIL_RUNTIME_VALIDATED",
+      "status_before": "DISABLED_UNTIL_RUNTIME_VALIDATED"
+    },
+    {
+      "claim_boundary": "UFO readiness remains false until real export and loadability pass.",
+      "entry_key": "ufo_export",
+      "promotion_allowed": false,
+      "promotion_reason": "Phase attachment exists, but standalone production operator gates remain unsatisfied.",
+      "status_after": "DISABLED_UNTIL_RUNTIME_VALIDATED",
+      "status_before": "DISABLED_UNTIL_RUNTIME_VALIDATED"
+    },
+    {
+      "claim_boundary": "MadGraph readiness remains false until a real smoke test passes.",
+      "entry_key": "madgraph_smoke_test",
+      "promotion_allowed": false,
+      "promotion_reason": "Phase attachment exists, but standalone production operator gates remain unsatisfied.",
+      "status_after": "DISABLED_UNTIL_RUNTIME_VALIDATED",
+      "status_before": "DISABLED_UNTIL_RUNTIME_VALIDATED"
+    }
+  ],
+  "production_registry_mutated": false,
+  "promotions_allowed": [],
+  "promotions_applied": [],
+  "proposal_name": "BHSM CP O_int Registry Update Proposal",
+  "runtime_gates_changed": false,
+  "version": "0.5"
+}

@@ -25,3 +25,6 @@ A partial localization is not a production prediction.
 Runtime-disabled software gates remain disabled until live external validation passes.
 
 The neutral operator kernel is not promoted to a physical neutrino mass matrix without a physical basis, dimensional scale, and Dirac/Majorana convention.
+
+Sprint B now provides the focused CP `O_int` stage decomposition without
+changing Sprint A's non-promotion result. See `docs/cp_o_int_sprint_b.md`.

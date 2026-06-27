@@ -26,3 +26,6 @@ Theorem blockers remain blockers unless explicit artifact-backed theorem support
 Sprint A records `OPEN_EXACT_MISSING_THEOREM` for `X_ch` and the physical
 neutrino map, and `OPEN_MISSING_INTERACTION_ATTACHMENT` for standalone CP
 `O_int`. Their formula statuses remain `OPEN_THEOREM_REQUIRED`.
+
+The Sprint B focused report is now included in the standalone CP entry's source
+artifacts. This adds provenance but does not make its callable available.

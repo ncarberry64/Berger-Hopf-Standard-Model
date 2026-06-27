@@ -26,6 +26,30 @@ PROOF_GATE_DEFINITIONS = (
     ("G17", "failure modes are documented"),
 )
 
+CP_O_INT_PROOF_GATE_DEFINITIONS = (
+    ("CP01", "formal theorem statement exists"),
+    ("CP02", "CP O_int domain is defined"),
+    ("CP03", "CP O_int codomain is defined"),
+    ("CP04", "field representation is defined"),
+    ("CP05", "Lorentz structure is defined"),
+    ("CP06", "gauge/sector admissibility is defined"),
+    ("CP07", "interaction/action term is defined"),
+    ("CP08", "phase attachment rule is defined"),
+    ("CP09", "coupling normalization is defined"),
+    ("CP10", "callable implementation exists"),
+    ("CP11", "input/output schema exists"),
+    ("CP12", "artifact source exists"),
+    ("CP13", "provenance chain exists"),
+    ("CP14", "no empirical derivation inputs are used"),
+    ("CP15", "no PDG/reference values are theorem inputs"),
+    ("CP16", "no calibration values are theorem inputs"),
+    ("CP17", "consistency tests pass"),
+    ("CP18", "registry update proposal is generated"),
+    ("CP19", "formula registry update is generated"),
+    ("CP20", "claim policy is updated"),
+    ("CP21", "theorem blocker artifact records the result"),
+)
+
 
 def build_proof_gates(
     evidence: Mapping[str, bool],
@@ -46,6 +70,28 @@ def build_proof_gates(
             limitations=limitations.get(gate_id, "" if evidence.get(gate_id, False) else "Required proof object is absent."),
         )
         for gate_id, name in PROOF_GATE_DEFINITIONS
+    )
+
+
+def build_cp_o_int_proof_gates(
+    evidence: Mapping[str, bool],
+    evidence_text: Mapping[str, str] | None = None,
+    limitations: Mapping[str, str] | None = None,
+) -> tuple[ProofGateResult, ...]:
+    """Build the 21 focused CP O_int gates with fail-closed defaults."""
+
+    evidence_text = evidence_text or {}
+    limitations = limitations or {}
+    return tuple(
+        ProofGateResult(
+            gate_id=gate_id,
+            name=name,
+            required=True,
+            passes=bool(evidence.get(gate_id, False)),
+            evidence=evidence_text.get(gate_id, "No supporting evidence supplied."),
+            limitations=limitations.get(gate_id, "" if evidence.get(gate_id, False) else "Required CP O_int proof object is absent."),
+        )
+        for gate_id, name in CP_O_INT_PROOF_GATE_DEFINITIONS
     )
 
 

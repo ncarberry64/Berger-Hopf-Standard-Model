@@ -10,6 +10,36 @@ from .closure_report import build_theorem_closure_report
 from .proof_gates import proof_gate_summary
 
 
+def build_cp_o_int_registry_update(repository: str | Path | None = None) -> dict[str, Any]:
+    """Propose CP-specific statuses without mutating the production registry."""
+
+    from .cp_o_int_report import build_cp_o_int_report
+
+    report = build_cp_o_int_report(repository=repository)
+    registry = default_prediction_registry()
+    rows = []
+    for key in report.registry_entries_affected:
+        entry = registry.require(key)
+        rows.append({
+            "entry_key": key,
+            "status_before": entry.default_status.value,
+            "status_after": entry.default_status.value,
+            "promotion_allowed": False,
+            "promotion_reason": report.promotion_reason,
+            "claim_boundary": entry.claim_boundary,
+        })
+    return {
+        "proposal_name": "BHSM CP O_int Registry Update Proposal",
+        "version": "0.5",
+        "cp_o_int_status": report.status_after,
+        "entries": rows,
+        "promotions_allowed": [],
+        "promotions_applied": [],
+        "runtime_gates_changed": False,
+        "production_registry_mutated": False,
+    }
+
+
 def build_theorem_registry_update(repository: str | Path | None = None) -> dict[str, Any]:
     report = build_theorem_closure_report(repository)
     registry = default_prediction_registry()
