@@ -39,6 +39,8 @@ from .neutrino_scale import (
     analyze_neutral_boundary_measure,
     build_legacy_curvature_scale_report,
     build_legacy_neutral_scale_candidate,
+    build_neutral_radius_curvature_closure,
+    build_neutral_radius_curvature_report,
     build_neutral_scale_candidates,
     build_neutral_scale_report,
     build_threshold_energy_map,
@@ -47,7 +49,11 @@ from .neutrino_scale import (
     derive_or_locate_neutrino_propagation_radius,
     index_legacy_curvature_artifacts,
     legacy_curvature_scale_report_to_markdown,
+    neutral_radius_curvature_report_to_markdown,
     load_curvature_mass_functional_from_legacy_artifacts,
+    compute_dimensionful_neutrino_mass_candidate,
+    search_neutral_physical_curvature_map,
+    search_neutral_propagation_radius,
     neutral_scale_report_to_markdown,
 )
 
@@ -220,6 +226,16 @@ def build_parser() -> argparse.ArgumentParser:
     legacy_scale.add_argument("--format", choices=("json",), default="json")
     legacy_report = commands.add_parser("legacy-neutral-scale-report", help="Render the legacy curvature neutral-scale audit")
     legacy_report.add_argument("--format", choices=("markdown", "json"), default="markdown")
+    radius_search = commands.add_parser("neutral-propagation-radius", help="Search for a neutral propagation radius without empirical calibration")
+    radius_search.add_argument("--format", choices=("json",), default="json")
+    physical_curvature = commands.add_parser("neutral-physical-curvature", help="Search for a physical neutral-curvature map")
+    physical_curvature.add_argument("--format", choices=("json",), default="json")
+    radius_curvature = commands.add_parser("neutral-radius-curvature-closure", help="Build the coupled radius/curvature closure")
+    radius_curvature.add_argument("--format", choices=("json",), default="json")
+    dimensionful_candidate = commands.add_parser("dimensionful-neutrino-mass-candidate", help="Build the dimensionally guarded neutral mass candidate")
+    dimensionful_candidate.add_argument("--format", choices=("json",), default="json")
+    radius_curvature_report = commands.add_parser("neutral-radius-curvature-report", help="Render the radius/curvature closure report")
+    radius_curvature_report.add_argument("--format", choices=("markdown", "json"), default="markdown")
     return parser
 
 
@@ -437,6 +453,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     if args.command == "neutrino-dimensionful-mass":
         scale_report = build_neutral_scale_report()
         legacy_scale_report = build_legacy_curvature_scale_report()
+        radius_curvature_closure = build_neutral_radius_curvature_closure()
         print(json.dumps({
             "status": scale_report.scale_result.status_after,
             "dimensionful_mass_output_produced": scale_report.dimensionful_mass_output_produced,
@@ -445,6 +462,10 @@ def main(argv: Sequence[str] | None = None) -> int:
             "neutral_curvature_mapping_available": legacy_scale_report.result.neutral_curvature_mapping_available,
             "physical_curvature_units_available": legacy_scale_report.neutral_curvature_mapping.physical_curvature_units_available,
             "dimensionful_mass_possible": legacy_scale_report.result.dimensionful_mass_possible,
+            "symbolic_propagation_radius_candidate": radius_curvature_closure.radius.symbolic_candidate_found,
+            "symbolic_physical_curvature_candidate": radius_curvature_closure.curvature_map.symbolic_candidate_found,
+            "mass_dimension_consistency_passed": radius_curvature_closure.dimensional_consistency_passed,
+            "v1_2_status": radius_curvature_closure.status,
             "channel_results": [row.to_dict() for row in scale_report.dimensionful_mass_attempt],
         }, indent=2, sort_keys=True))
         return 0
@@ -476,6 +497,26 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(legacy_curvature_scale_report_to_markdown(legacy_report), end="")
         else:
             print(json.dumps(legacy_report.to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "neutral-propagation-radius":
+        print(json.dumps(search_neutral_propagation_radius().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "neutral-physical-curvature":
+        print(json.dumps(search_neutral_physical_curvature_map().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "neutral-radius-curvature-closure":
+        print(json.dumps(build_neutral_radius_curvature_closure().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "dimensionful-neutrino-mass-candidate":
+        closure = build_neutral_radius_curvature_closure()
+        print(json.dumps(compute_dimensionful_neutrino_mass_candidate(closure).to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "neutral-radius-curvature-report":
+        report = build_neutral_radius_curvature_report()
+        if args.format == "markdown":
+            print(neutral_radius_curvature_report_to_markdown(report), end="")
+        else:
+            print(json.dumps(report, indent=2, sort_keys=True))
         return 0
     particles = tuple(item.strip() for item in args.particles.split(",") if item.strip())
     report = build_prediction_report(

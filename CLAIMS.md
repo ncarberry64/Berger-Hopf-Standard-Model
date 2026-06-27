@@ -24,6 +24,10 @@
   reports `OPEN_MISSING_NEUTRAL_SCALE` and emits no eV/GeV mass.
 - BHSM includes bundled author-supplied curvature-threshold papers and an
   artifact-backed curvature mass functional, with its matching-ansatz caveat.
+- BHSM defines conditional symbolic candidates for the neutral propagation
+  radius and physical-curvature map while withholding numerical mass output.
+- BHSM records that the legacy `r^2 k` functional has dimension mass/length
+  under the source definition `K=-nabla^2 ln rho`.
 
 ## Not Supported
 
@@ -48,6 +52,8 @@ Do not claim that:
 - Legacy particle threshold tables are no-fit BHSM predictions.
 - The legacy curvature functional alone closes the BHSM neutrino scale without
   a propagation radius and physical neutral-curvature map.
+- Symbolic radius or curvature candidates constitute a physical eV/GeV mass.
+- A dimensionally inconsistent matching formula is a completed mass theorem.
 - The conditional `X_ch` theorem establishes a standalone 4D production field.
 
 ## Policy

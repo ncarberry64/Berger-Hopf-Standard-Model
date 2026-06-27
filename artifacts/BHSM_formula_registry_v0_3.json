@@ -12,6 +12,9 @@
     "legacy_curvature_mass_functional",
     "legacy_neutral_scale_candidate",
     "neutral_dimensionful_scale_search",
+    "neutral_physical_curvature_map",
+    "neutral_propagation_radius_search",
+    "neutral_radius_curvature_closure",
     "neutrino_physical_basis_scale",
     "neutrino_propagation_mass_candidate"
   ],
@@ -180,7 +183,7 @@
       "theorem_status": "ARTIFACT_BACKED_CURVATURE_MASS_FUNCTIONAL"
     },
     {
-      "callable_path": "bhsm.interface.neutrino_scale.legacy_scale_report.build_legacy_neutral_scale_candidate",
+      "callable_path": "bhsm.interface.neutrino_scale.legacy_neutral_scale_candidate.build_legacy_neutral_scale_candidate",
       "claim_boundary": "No eV/GeV output is produced without both a physical propagation radius and neutral curvature map.",
       "description": "Test the curvature functional against the independent neutral radius and curvature-unit gates.",
       "display_name": "Legacy neutral scale candidate",
@@ -253,6 +256,63 @@
       "source_type": "local BHSM artifact",
       "status": "AVAILABLE_ARTIFACT_BACKED",
       "theorem_status": "ARTIFACT_BACKED_BOUNDARY_SEED"
+    },
+    {
+      "callable_path": "bhsm.interface.neutrino_scale.neutral_physical_curvature.search_neutral_physical_curvature_map",
+      "claim_boundary": "The symbolic map contains an unresolved kappa_curv normalization in m^-2.",
+      "description": "Separate the dimensionless kernel response from a physical m^-2 normalization.",
+      "display_name": "Neutral physical curvature map",
+      "formula_key": "neutral_physical_curvature_map",
+      "input_schema": {},
+      "notes": [],
+      "output_schema": {
+        "type": "NeutralPhysicalCurvatureMap"
+      },
+      "safe_for_default_report": true,
+      "source_artifacts": [
+        "artifacts/BHSM_neutral_physical_curvature_map_v1_2.json"
+      ],
+      "source_type": "author ontology, neutral kernel, and legacy curvature operator",
+      "status": "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL",
+      "theorem_status": "CONDITIONAL_PHYSICAL_CURVATURE_MAP_CANDIDATE"
+    },
+    {
+      "callable_path": "bhsm.interface.neutrino_scale.propagation_radius_search.search_neutral_propagation_radius",
+      "claim_boundary": "The candidate defines a length domain but no numeric metre value.",
+      "description": "Separate symbolic and numeric physical radius candidates.",
+      "display_name": "Neutral propagation radius search",
+      "formula_key": "neutral_propagation_radius_search",
+      "input_schema": {},
+      "notes": [],
+      "output_schema": {
+        "type": "PropagationRadiusSearchResult"
+      },
+      "safe_for_default_report": true,
+      "source_artifacts": [
+        "artifacts/BHSM_neutral_propagation_radius_search_v1_2.json"
+      ],
+      "source_type": "author ontology plus local radius inventory",
+      "status": "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL",
+      "theorem_status": "CONDITIONAL_PROPAGATION_RADIUS_CANDIDATE"
+    },
+    {
+      "callable_path": "bhsm.interface.neutrino_scale.neutral_radius_curvature_report.build_neutral_radius_curvature_closure",
+      "claim_boundary": "No eV/GeV result: numeric unit inputs are absent and the documented r^2 k functional has dimension mass/length under K=-nabla^2 ln rho.",
+      "description": "Apply radius, physical-curvature, transport, stiffness, and dimensional-consistency gates.",
+      "display_name": "Neutral radius/curvature closure",
+      "formula_key": "neutral_radius_curvature_closure",
+      "input_schema": {},
+      "notes": [],
+      "output_schema": {
+        "type": "NeutralRadiusCurvatureClosureResult"
+      },
+      "safe_for_default_report": true,
+      "source_artifacts": [
+        "artifacts/BHSM_neutral_radius_curvature_closure_v1_2.json"
+      ],
+      "source_type": "local theorem artifacts and author ontology",
+      "status": "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL",
+      "theorem_status": "DIMENSIONFUL_MASS_NOT_AVAILABLE"
     },
     {
       "callable_path": "bhsm.interface.minimal_action.neutrino_basis_closure.propagation_conditioned_neutrino_mass",

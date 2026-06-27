@@ -32,6 +32,8 @@
   density, and transport normalization without empirical calibration.
 - Derive `r_prop` from the neutral boundary geometry and map the dimensionless
   kernel response to `k_neutral,eff` in `m^-2`.
+- Derive the missing physical length normalization or replace the legacy
+  `r^2 k` ansatz with a dimensionally consistent result from the boundary action.
 - Physical map from neutral boundary channels to oscillation and cosmological
   observables.
 - Dirac/Majorana convention only where later comparison/export requires it.

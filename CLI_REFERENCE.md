@@ -55,6 +55,11 @@ not required for the listed local behavior.
 | `neutral-curvature-mapping` | Audit dimensionless response versus physical curvature units | JSON | no | no |
 | `legacy-neutral-scale` | Build the gated legacy neutral-scale candidate | JSON | no | no |
 | `legacy-neutral-scale-report` | Render the legacy curvature scale audit | Markdown or JSON | no | no |
+| `neutral-propagation-radius` | Separate symbolic, dimensionless, reference, and forbidden radius candidates | JSON | no | no |
+| `neutral-physical-curvature` | Separate dimensionless response from symbolic and physical curvature maps | JSON | no | no |
+| `neutral-radius-curvature-closure` | Apply coupled radius, curvature, transport, stiffness, and dimension gates | JSON | no | no |
+| `dimensionful-neutrino-mass-candidate` | Attempt mass output only after all physical-unit and dimensional gates pass | JSON | no | no |
+| `neutral-radius-curvature-report` | Render the v1.2 neutral closure report | Markdown or JSON | no | no |
 
 Without `--offline-ok`, `pdg-fetch` may try an optional live reference adapter.
 The offline fallback is reference-only and is never a derivation input.

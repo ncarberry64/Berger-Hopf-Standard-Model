@@ -85,6 +85,6 @@ def compute_neutrino_propagation_mass(
         claim_boundary=(
             "A dimensionless BHSM response is not, by itself, a physical eV/GeV mass. "
             "Physical units are emitted only when an accepted neutral scale result supplies a valid unit source; "
-            "a legacy curvature functional without r_prop and physical k_neutral,eff is insufficient."
+            "a legacy curvature functional without numeric r_prop, physical k_neutral,eff, and a passing mass-dimension audit is insufficient."
         ),
     )

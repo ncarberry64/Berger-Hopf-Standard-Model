@@ -29,3 +29,8 @@ The v1.1 legacy corpus now supplies an artifact-backed curvature mass
 functional. It narrows the missing bridge to a physical neutral propagation
 radius and a physical response-to-curvature map; it does not supply either
 quantity by itself.
+
+The v1.2 search defines symbolic radius and curvature-map candidates, but no
+numeric metre or `m^-2` normalization. It also identifies a separate dimensional
+obstruction in the legacy `r^2 k` functional. The neutral scale therefore
+remains unavailable.
