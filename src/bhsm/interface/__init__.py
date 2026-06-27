@@ -1,6 +1,10 @@
 """Review-oriented BHSM geometry, unit, solver, and validation interfaces."""
 
 from .constants import default_bhsm_constants
+from .artifact_adapters import artifact_prediction_values, compute_artifact
+from .artifact_report import ArtifactPredictionReport, build_artifact_prediction_report
+from .artifact_sources import ArtifactSource, ArtifactSourceIndex, discover_bhsm_artifacts
+from .formula_registry import FormulaCallableEntry, FormulaRegistry, evaluate_formula
 from .geometry import HypersphericalGeometry
 from .gallery import PredictionGallery, PredictionGalleryEntry, build_prediction_gallery
 from .live_pdg import LivePDGProvider, PDGCache, PDGFetchResult
@@ -15,6 +19,7 @@ from .predictions import (
     default_prediction_registry,
 )
 from .report import PredictionReport, build_prediction_report
+from .provenance import ProvenanceChain, ProvenanceRecord, ValueWithProvenance
 from .speculative import SpeculativeCandidate, SpeculativeCandidateRegistry
 from .theorem_blockers import TheoremBlocker, TheoremBlockerRegistry, attempt_theorem_closure
 from .solver import ParticleMassSolver, SolverResult
@@ -23,6 +28,11 @@ from .validation import ExperimentalValue, ValidationComparison, curated_fallbac
 
 __all__ = [
     "ExperimentalValue",
+    "ArtifactPredictionReport",
+    "ArtifactSource",
+    "ArtifactSourceIndex",
+    "FormulaCallableEntry",
+    "FormulaRegistry",
     "GeometricUnitMapper",
     "HypersphericalGeometry",
     "LivePDGProvider",
@@ -35,6 +45,8 @@ __all__ = [
     "PredictionRunConfig",
     "PredictionRunResult",
     "PredictionStatus",
+    "ProvenanceChain",
+    "ProvenanceRecord",
     "PredictionGallery",
     "PredictionGalleryEntry",
     "SpeculativeCandidate",
@@ -43,11 +55,17 @@ __all__ = [
     "TheoremBlockerRegistry",
     "SolverResult",
     "ValidationComparison",
+    "ValueWithProvenance",
+    "artifact_prediction_values",
     "curated_fallback_references",
     "default_prediction_registry",
     "default_bhsm_constants",
     "build_prediction_report",
     "build_prediction_gallery",
+    "build_artifact_prediction_report",
+    "compute_artifact",
+    "discover_bhsm_artifacts",
+    "evaluate_formula",
     "attempt_theorem_closure",
     "check_notebook_pack",
     "notebook_pack_manifest",

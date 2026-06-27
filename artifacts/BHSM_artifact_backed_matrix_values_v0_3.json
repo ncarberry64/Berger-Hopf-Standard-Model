@@ -1,0 +1,116 @@
+{
+  "artifact_name": "BHSM Artifact-Backed Matrix Values",
+  "claim_boundary": "Artifact-backed matrices and phase seeds are local BHSM outputs, not empirical validation or production-vertex closure.",
+  "empirical_derivation_inputs_used": false,
+  "frozen_predictions_changed": false,
+  "values": [
+    {
+      "calibration_input": false,
+      "claim_status": "ARTIFACT_BACKED_INTERNAL_OUTPUT_NOT_EMPIRICAL_VALIDATION",
+      "empirical_derivation_input": false,
+      "frozen_prediction": true,
+      "loaded_at_runtime": true,
+      "metadata": {
+        "official_predictions_changed": false,
+        "public_status": "structural architecture integrated conditional; numerical closure open"
+      },
+      "notes": [
+        "Loaded from an existing local BHSM machine-readable artifact."
+      ],
+      "reference_comparison_input": false,
+      "source_artifact_key": "CKM_no_fit_operator_output_v1",
+      "source_field": "magnitude_matrix",
+      "source_path": "artifacts/CKM_no_fit_operator_output_v1.json",
+      "source_status": "DISCOVERED",
+      "unit": "dimensionless",
+      "value": [
+        [
+          0.9999681608134899,
+          0.007979793265016152,
+          1.608520679288582e-05
+        ],
+        [
+          0.007979795635253325,
+          0.9999680967429101,
+          0.00035827082158322875
+        ],
+        [
+          1.4862902365056614e-05,
+          0.00035832361017490655,
+          0.9999999356916401
+        ]
+      ],
+      "value_key": "CKM_matrix_BHSM",
+      "value_kind": "matrix"
+    },
+    {
+      "calibration_input": false,
+      "claim_status": "ARTIFACT_BACKED_EFFECTIVE_EXTENSION_OUTPUT",
+      "empirical_derivation_input": false,
+      "frozen_prediction": true,
+      "loaded_at_runtime": true,
+      "metadata": {
+        "official_predictions_changed": false,
+        "public_status": "structural architecture integrated conditional; numerical closure open"
+      },
+      "notes": [
+        "Loaded from an existing local BHSM machine-readable artifact."
+      ],
+      "reference_comparison_input": false,
+      "source_artifact_key": "PMNS_no_fit_operator_output_v1",
+      "source_field": "magnitude_matrix",
+      "source_path": "artifacts/PMNS_no_fit_operator_output_v1.json",
+      "source_status": "DISCOVERED",
+      "unit": "dimensionless",
+      "value": [
+        [
+          0.9937721614225983,
+          0.1108757839736723,
+          0.011110882488836949
+        ],
+        [
+          0.11071225736228693,
+          0.9860024978834556,
+          0.1246670374932074
+        ],
+        [
+          0.012636742111950143,
+          0.12452162340657782,
+          0.9921364210898551
+        ]
+      ],
+      "value_key": "PMNS_matrix_BHSM",
+      "value_kind": "matrix"
+    },
+    {
+      "calibration_input": false,
+      "claim_status": "PHASE_ARTIFACT_AVAILABLE_STANDALONE_O_INT_REMAINS_OPEN",
+      "empirical_derivation_input": false,
+      "frozen_prediction": true,
+      "loaded_at_runtime": true,
+      "metadata": {
+        "CP_boundary_holonomy": "CLOSED"
+      },
+      "notes": [
+        "Artifact-backed phase seed; not a standalone production CP vertex."
+      ],
+      "reference_comparison_input": false,
+      "source_artifact_key": "CP_no_fit_holonomy_output_v1",
+      "source_field": "delta_BH,delta_BH_formula,Z6_boundary_phase",
+      "source_path": "artifacts/CP_no_fit_holonomy_output_v1.json",
+      "source_status": "DISCOVERED",
+      "unit": "radian and dimensionless phase",
+      "value": {
+        "Z6_boundary_phase": {
+          "imag": 0.8660254037844386,
+          "real": 0.5
+        },
+        "delta_BH": 1.0471975511965976,
+        "delta_BH_formula": "pi/3"
+      },
+      "value_key": "cp_holonomy_phase_attachment",
+      "value_kind": "complex_phase"
+    }
+  ],
+  "version": "0.3"
+}

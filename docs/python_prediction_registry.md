@@ -25,3 +25,7 @@ python -m bhsm.interface status W_boson --format json
 Release status summary: `artifacts/BHSM_v1_2_0_prediction_registry_status.json`.
 
 The gallery view is documented at `docs/prediction_gallery.md`.
+
+The separate formula registry is documented at `docs/formula_registry.md`.
+It reports artifact callables, interface defaults, and unavailable theorem
+callables without changing prediction-registry statuses.
