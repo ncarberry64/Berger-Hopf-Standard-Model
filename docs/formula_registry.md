@@ -22,3 +22,7 @@ python -m bhsm.interface formula-registry --format json
 Interface default formulas remain interface defaults unless a theorem-backed artifact or callable replaces them.
 
 Theorem blockers remain blockers unless explicit artifact-backed theorem support is present.
+
+Sprint A records `OPEN_EXACT_MISSING_THEOREM` for `X_ch` and the physical
+neutrino map, and `OPEN_MISSING_INTERACTION_ATTACHMENT` for standalone CP
+`O_int`. Their formula statuses remain `OPEN_THEOREM_REQUIRED`.

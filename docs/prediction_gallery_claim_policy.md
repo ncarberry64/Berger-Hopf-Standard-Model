@@ -12,3 +12,7 @@ Plots summarize registry status; they do not validate BHSM empirically.
 
 Calibration remains calibration, upper limits remain limits, open theorems
 remain blockers, and runtime-disabled software remains disabled.
+
+Theorem closure requires executable artifact-backed support; narrative plausibility is not enough.
+
+A partial localization is not a production prediction.

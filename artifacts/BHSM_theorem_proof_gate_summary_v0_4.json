@@ -1,0 +1,130 @@
+{
+  "all_promotions_blocked": true,
+  "gate_definitions": [
+    {
+      "gate_id": "G01",
+      "name": "formal theorem statement exists",
+      "required": true
+    },
+    {
+      "gate_id": "G02",
+      "name": "domain and codomain are defined",
+      "required": true
+    },
+    {
+      "gate_id": "G03",
+      "name": "operator/action term is defined",
+      "required": true
+    },
+    {
+      "gate_id": "G04",
+      "name": "callable implementation exists",
+      "required": true
+    },
+    {
+      "gate_id": "G05",
+      "name": "input/output schema exists",
+      "required": true
+    },
+    {
+      "gate_id": "G06",
+      "name": "artifact source exists",
+      "required": true
+    },
+    {
+      "gate_id": "G07",
+      "name": "provenance chain exists",
+      "required": true
+    },
+    {
+      "gate_id": "G08",
+      "name": "no empirical derivation inputs are used",
+      "required": true
+    },
+    {
+      "gate_id": "G09",
+      "name": "no reference/PDG values are derivation inputs",
+      "required": true
+    },
+    {
+      "gate_id": "G10",
+      "name": "consistency checks pass",
+      "required": true
+    },
+    {
+      "gate_id": "G11",
+      "name": "registry status update is generated",
+      "required": true
+    },
+    {
+      "gate_id": "G12",
+      "name": "claim policy is explicit",
+      "required": true
+    },
+    {
+      "gate_id": "G13",
+      "name": "theorem blocker artifact records the attempt",
+      "required": true
+    },
+    {
+      "gate_id": "G14",
+      "name": "gauge/sector admissibility checks pass",
+      "required": true
+    },
+    {
+      "gate_id": "G15",
+      "name": "dimensional/unit policy is explicit",
+      "required": true
+    },
+    {
+      "gate_id": "G16",
+      "name": "calibration policy is explicit",
+      "required": true
+    },
+    {
+      "gate_id": "G17",
+      "name": "failure modes are documented",
+      "required": true
+    }
+  ],
+  "summary_name": "BHSM Theorem Proof Gate Summary",
+  "theorems": {
+    "X_ch": {
+      "all_required_pass": false,
+      "failed": [
+        "G02",
+        "G03",
+        "G04",
+        "G14",
+        "G15"
+      ],
+      "passed": 12,
+      "required": 17
+    },
+    "cp_o_int": {
+      "all_required_pass": false,
+      "failed": [
+        "G02",
+        "G03",
+        "G04",
+        "G14",
+        "G15"
+      ],
+      "passed": 12,
+      "required": 17
+    },
+    "neutrino_basis_scale": {
+      "all_required_pass": false,
+      "failed": [
+        "G02",
+        "G03",
+        "G04",
+        "G14",
+        "G15"
+      ],
+      "passed": 12,
+      "required": 17
+    }
+  },
+  "version": "0.4"
+}

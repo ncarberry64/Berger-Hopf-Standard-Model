@@ -11,6 +11,7 @@ from .artifact_sources import discover_bhsm_artifacts
 from .formula_registry import default_formula_registry
 from .predictions import default_prediction_registry
 from .theorem_blockers import default_theorem_blockers
+from .theorem_closure import build_theorem_closure_report
 
 WARNINGS = (
     "Artifact-backed outputs are local BHSM outputs with provenance, not empirical validation claims.",
@@ -36,6 +37,7 @@ class ArtifactPredictionReport:
     callable_registry: dict[str, Any]
     prediction_registry_status: dict[str, Any]
     theorem_blocker_status: dict[str, Any]
+    theorem_closure_status: dict[str, Any]
     calibration_policy: str
     reference_policy: str
     warnings: list[str]
@@ -75,6 +77,7 @@ def build_artifact_prediction_report(
         callable_registry=formulas,
         prediction_registry_status={"registry_name": prediction_registry.registry_name, "entry_count": len(prediction_registry.entries)},
         theorem_blocker_status=default_theorem_blockers().to_dict(),
+        theorem_closure_status=build_theorem_closure_report(repository).to_dict(),
         calibration_policy="A calibration anchor is not an independent prediction in the same run.",
         reference_policy="Reference values are comparison inputs only and never BHSM derivation inputs.",
         warnings=list(WARNINGS),

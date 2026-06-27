@@ -23,3 +23,7 @@ Reference values, including PDG values, are comparison inputs only and are never
 Missing artifacts are reported as missing, not inferred.
 
 Theorem blockers remain blockers unless explicit artifact-backed theorem support is present.
+
+Artifact discovery feeds the Sprint A proof gates, but artifact presence alone
+does not satisfy the missing action, physical-map, or interaction-attachment
+gates.

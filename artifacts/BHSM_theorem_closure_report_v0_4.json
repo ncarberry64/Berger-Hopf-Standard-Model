@@ -1,0 +1,823 @@
+{
+  "calibration_inputs_used": false,
+  "empirical_derivation_inputs_used": false,
+  "internet_required": false,
+  "open_theorems": [
+    "X_ch",
+    "neutrino_basis_scale",
+    "cp_o_int"
+  ],
+  "promotions_allowed": [],
+  "public_status": "Executable closure attempts added; all unsupported theorem promotions remain blocked.",
+  "reference_values_used_as_derivation_inputs": false,
+  "report_name": "BHSM Theorem Closure Sprint A Report",
+  "results": [
+    {
+      "action_term": {
+        "expression": "undefined pending action-derived X_ch field content, current attachment, and coupling normalization",
+        "missing_objects": [
+          "theorem assigning X_ch spin, gauge representation, Lorentz index structure, field content, and coupling normalization for the separate charged boundary response"
+        ],
+        "source_artifacts": [
+          "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
+          "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json"
+        ],
+        "source_status": "OPEN_MISSING_ACTION_SOURCE",
+        "symbol": "L_X_ch"
+      },
+      "artifact_sources": [
+        "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
+        "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json"
+      ],
+      "calibration_inputs_used": false,
+      "callable_available": false,
+      "callable_key": "x_ch_production_vertex",
+      "claim_boundary": "X_ch is not a production-ready interaction without an explicit action-backed theorem.",
+      "closure_status": "OPEN_EXACT_MISSING_THEOREM",
+      "codomain": "production interaction amplitudes (candidate; codomain not established)",
+      "display_name": "X_ch charged boundary-response production theorem",
+      "domain": "charged boundary source channels (candidate; physical field domain not derived)",
+      "empirical_derivation_inputs_used": false,
+      "formal_statement": {
+        "assumptions": [
+          "charged boundary values are source data only",
+          "X_ch is not identified with W_mu without a theorem"
+        ],
+        "statement": "A charged boundary-response source defines a production interaction only if X_ch has an action-derived field representation, Lorentz structure, admissible current attachment, and normalized coupling.",
+        "status": "FORMAL_CONDITIONAL_STATEMENT",
+        "theorem_key": "X_ch"
+      },
+      "missing_objects": [
+        "theorem assigning X_ch spin, gauge representation, Lorentz index structure, field content, and coupling normalization for the separate charged boundary response"
+      ],
+      "notes": [
+        "The charged boundary constants are artifact-backed source data."
+      ],
+      "operator_definition": {
+        "codomain": "production interaction amplitudes (candidate; codomain not established)",
+        "domain": "charged boundary source channels (candidate; physical field domain not derived)",
+        "expression": "X_ch^mu J_mu^boundary",
+        "name": "X_ch charged boundary-response candidate",
+        "status": "INCOMPLETE_MISSING_FIELD_AND_CURRENT_THEOREM"
+      },
+      "promotion_allowed": false,
+      "promotion_reason": "Action, field representation, current attachment, admissibility, and coupling gates fail.",
+      "proof_gates": [
+        {
+          "evidence": "A formal conditional production-eligibility statement is encoded.",
+          "gate_id": "G01",
+          "limitations": "",
+          "name": "formal theorem statement exists",
+          "passes": true,
+          "required": true
+        },
+        {
+          "evidence": "No supporting evidence supplied.",
+          "gate_id": "G02",
+          "limitations": "Physical field domain and production-amplitude codomain are not derived.",
+          "name": "domain and codomain are defined",
+          "passes": false,
+          "required": true
+        },
+        {
+          "evidence": "No supporting evidence supplied.",
+          "gate_id": "G03",
+          "limitations": "No action-derived X_ch interaction term exists.",
+          "name": "operator/action term is defined",
+          "passes": false,
+          "required": true
+        },
+        {
+          "evidence": "No supporting evidence supplied.",
+          "gate_id": "G04",
+          "limitations": "Only the closure-attempt callable exists; no production X_ch callable exists.",
+          "name": "callable implementation exists",
+          "passes": false,
+          "required": true
+        },
+        {
+          "evidence": "The closure-attempt callable has mapping input and TheoremClosureResult output schemas.",
+          "gate_id": "G05",
+          "limitations": "",
+          "name": "input/output schema exists",
+          "passes": true,
+          "required": true
+        },
+        {
+          "evidence": "The v1.1 theorem blocker and charged boundary package are local machine-readable artifacts.",
+          "gate_id": "G06",
+          "limitations": "",
+          "name": "artifact source exists",
+          "passes": true,
+          "required": true
+        },
+        {
+          "evidence": "Every inspected local source is recorded in the result.",
+          "gate_id": "G07",
+          "limitations": "",
+          "name": "provenance chain exists",
+          "passes": true,
+          "required": true
+        },
+        {
+          "evidence": "The source artifact records empirical_derivation_inputs_used=false.",
+          "gate_id": "G08",
+          "limitations": "",
+          "name": "no empirical derivation inputs are used",
+          "passes": true,
+          "required": true
+        },
+        {
+          "evidence": "The attempt reads no reference or PDG values.",
+          "gate_id": "G09",
+          "limitations": "",
+          "name": "no reference/PDG values are derivation inputs",
+          "passes": true,
+          "required": true
+        },
+        {
+          "evidence": "Local source presence and non-promotion consistency checks pass.",
+          "gate_id": "G10",
+          "limitations": "",
+          "name": "consistency checks pass",
+          "passes": true,
+          "required": true
+        },
+        {
+          "evidence": "The sprint generates a separate registry update proposal.",
+          "gate_id": "G11",
+          "limitations": "",
+          "name": "registry status update is generated",
+          "passes": true,
+          "required": true
+        },
+        {
+          "evidence": "The closure claim policy forbids production promotion.",
+          "gate_id": "G12",
+          "limitations": "",
+          "name": "claim policy is explicit",
+          "passes": true,
+          "required": true
+        },
+        {
+          "evidence": "The existing blocker artifact records OPEN_EXACT_MISSING_THEOREM.",
+          "gate_id": "G13",
+          "limitations": "",
+          "name": "theorem blocker artifact records the attempt",
+          "passes": true,
+          "required": true
+        },
+        {
+          "evidence": "No supporting evidence supplied.",
+          "gate_id": "G14",
+          "limitations": "Spin, gauge representation, and allowed/forbidden production channels are not fixed by theorem.",
+          "name": "gauge/sector admissibility checks pass",
+          "passes": false,
+          "required": true
+        },
+        {
+          "evidence": "No supporting evidence supplied.",
+          "gate_id": "G15",
+          "limitations": "Coupling normalization and dimensional policy are missing.",
+          "name": "dimensional/unit policy is explicit",
+          "passes": false,
+          "required": true
+        },
+        {
+          "evidence": "No calibration input is accepted or used.",
+          "gate_id": "G16",
+          "limitations": "",
+          "name": "calibration policy is explicit",
+          "passes": true,
+          "required": true
+        },
+        {
+          "evidence": "theorem assigning X_ch spin, gauge representation, Lorentz index structure, field content, and coupling normalization for the separate charged boundary response",
+          "gate_id": "G17",
+          "limitations": "",
+          "name": "failure modes are documented",
+          "passes": true,
+          "required": true
+        }
+      ],
+      "provenance": [
+        {
+          "empirical_derivation_input": false,
+          "reference_comparison_input": false,
+          "source_path": "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
+          "source_status": "DISCOVERED"
+        },
+        {
+          "calibration_input": false,
+          "claim_status": "ARTIFACT_BACKED_CONDITIONAL_CHARGED_BOUNDARY_VALUES",
+          "empirical_derivation_input": false,
+          "frozen_prediction": true,
+          "loaded_at_runtime": true,
+          "metadata": {
+            "official_predictions_changed": false,
+            "public_status": "structural architecture integrated conditional; numerical closure open"
+          },
+          "notes": [
+            "Loaded from the existing internal no-fit boundary package."
+          ],
+          "reference_comparison_input": false,
+          "source_artifact_key": "BHSM_boundary_no_fit_prediction_package_v1",
+          "source_field": "charged_boundary_values",
+          "source_path": "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json",
+          "source_status": "DISCOVERED",
+          "unit": "dimensionless",
+          "value": {
+            "artifact": "charged_boundary_bridge_values_v1",
+            "charged_boundary_values": "DERIVED_CONDITIONAL",
+            "charged_outputs_at_boundary_tau": "NO_FIT_OUTPUT_CANDIDATE_EXPORTED",
+            "empirical_derivation_inputs_used": false,
+            "external_empirical_comparison_layer": "OPEN_SEPARATE_LAYER",
+            "observed_CKM_used": false,
+            "observed_CP_used": false,
+            "observed_Higgs_used": false,
+            "observed_PMNS_used": false,
+            "observed_gauge_values_used": false,
+            "observed_masses_used": false,
+            "official_predictions_changed": false,
+            "public_status": "structural architecture integrated conditional; numerical closure open",
+            "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
+            "sectors": {
+              "down": {
+                "beta": "64/1323",
+                "beta_over_kappa": "76/7",
+                "beta_tau": 0.0021718775162529592,
+                "beta_tau_formula": "16/(1323*pi^(3/2))",
+                "kappa": "16/3591",
+                "kappa_tau": 0.0002000413501811936,
+                "kappa_tau_formula": "4/(3591*pi^(3/2))"
+              },
+              "lepton": {
+                "beta": "16/1323",
+                "beta_over_kappa": "1/1",
+                "beta_tau": 0.0005429693790632398,
+                "beta_tau_formula": "4/(1323*pi^(3/2))",
+                "kappa": "16/1323",
+                "kappa_tau": 0.0005429693790632398,
+                "kappa_tau_formula": "4/(1323*pi^(3/2))"
+              },
+              "up": {
+                "beta": "32/1323",
+                "beta_over_kappa": "2/1",
+                "beta_tau": 0.0010859387581264796,
+                "beta_tau_formula": "8/(1323*pi^(3/2))",
+                "kappa": "16/1323",
+                "kappa_tau": 0.0005429693790632398,
+                "kappa_tau_formula": "4/(1323*pi^(3/2))"
+              }
+            },
+            "sigma_fit_to_masses": false,
+            "tau": 0.04489678053129164,
+            "tau_fit_to_masses": false
+          },
+          "value_key": "charged_bridge_constants",
+          "value_kind": "charged_boundary_bundle"
+        }
+      ],
+      "reference_values_used_as_derivation_inputs": false,
+      "registry_entries_affected": [
+        "charged_boundary_response_matrix",
+        "minimal_collider_interface_subset",
+        "feynrules_minimal_model",
+        "ufo_export",
+        "madgraph_smoke_test"
+      ],
+      "status_after": "OPEN_EXACT_MISSING_THEOREM",
+      "status_before": "OPEN_EXACT_MISSING_THEOREM",
+      "theorem_key": "X_ch",
+      "warnings": [
+        "A closure-attempt callable is not the missing production interaction callable.",
+        "Runtime software gates remain disabled."
+      ]
+    },
+    {
+      "action_term": {
+        "expression": "undefined pending U_nu, Lambda_nu, ordering, and Dirac/Majorana convention",
+        "missing_objects": [
+          "basis map U_nu, dimensional scale Lambda_nu, and Dirac/Majorana convention for turning K_nu into a production collider mass or interaction matrix"
+        ],
+        "source_artifacts": [
+          "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
+          "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json"
+        ],
+        "source_status": "OPEN_MISSING_PHYSICAL_BASIS_AND_SCALE",
+        "symbol": "L_nu_physical"
+      },
+      "artifact_sources": [
+        "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
+        "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json"
+      ],
+      "calibration_inputs_used": false,
+      "callable_available": false,
+      "callable_key": "neutrino_physical_basis_scale",
+      "claim_boundary": "The neutral boundary kernel is not a physical neutrino mass matrix without basis, scale, and Dirac/Majorana theorem support.",
+      "closure_status": "OPEN_EXACT_MISSING_THEOREM",
+      "codomain": "physical neutrino mass/effective-mass observables (not defined)",
+      "display_name": "Neutrino physical basis, scale, and Dirac/Majorana theorem",
+      "domain": "three-dimensional neutral boundary channel basis",
+      "empirical_derivation_inputs_used": false,
+      "formal_statement": {
+        "assumptions": [
+          "K_nu is a boundary seed",
+          "PMNS target labels do not determine a mass basis"
+        ],
+        "statement": "The neutral boundary kernel defines a physical neutrino mass or effective-mass operator only after a physical state-basis map, dimensional scale, ordering policy, and Dirac/Majorana convention are derived.",
+        "status": "FORMAL_CONDITIONAL_STATEMENT",
+        "theorem_key": "neutrino_basis_scale"
+      },
+      "missing_objects": [
+        "basis map U_nu, dimensional scale Lambda_nu, and Dirac/Majorana convention for turning K_nu into a production collider mass or interaction matrix"
+      ],
+      "notes": [
+        "K_nu remains an artifact-backed boundary seed."
+      ],
+      "operator_definition": {
+        "codomain": "three-dimensional neutral boundary channel basis",
+        "domain": "three-dimensional neutral boundary channel basis",
+        "expression": "K_nu=[[0,1/3,0],[1/3,3,1/6],[0,1/6,5/3]]",
+        "name": "K_nu boundary operator seed",
+        "status": "BOUNDARY_SEED_ONLY_PHYSICAL_MAP_OPEN"
+      },
+      "promotion_allowed": false,
+      "promotion_reason": "Physical basis, scale, convention, admissibility, and callable gates fail.",
+      "proof_gates": [
+        {
+          "evidence": "A formal conditional map-to-physics statement is encoded.",
+          "gate_id": "G01",
+          "limitations": "",
+          "name": "formal theorem statement exists",
+          "passes": true,
+          "required": true
+        },
+        {
+          "evidence": "No supporting evidence supplied.",
+          "gate_id": "G02",
+          "limitations": "The boundary channel basis is defined, but the physical neutrino basis and observable codomain are not.",
+          "name": "domain and codomain are defined",
+          "passes": false,
+          "required": true
+        },
+        {
+          "evidence": "No supporting evidence supplied.",
+          "gate_id": "G03",
+          "limitations": "No physical mass/effective-mass action term is defined.",
+          "name": "operator/action term is defined",
+          "passes": false,
+          "required": true
+        },
+        {
+          "evidence": "No supporting evidence supplied.",
+          "gate_id": "G04",
+          "limitations": "No callable maps K_nu to physical masses or observables.",
+          "name": "callable implementation exists",
+          "passes": false,
+          "required": true
+        },
+        {
+          "evidence": "The closure-attempt callable has explicit schemas.",
+          "gate_id": "G05",
+          "limitations": "",
+          "name": "input/output schema exists",
+          "passes": true,
+          "required": true
+        },
+        {
+          "evidence": "The boundary kernel and v1.1 theorem blocker are machine-readable local artifacts.",
+          "gate_id": "G06",
+          "limitations": "",
+          "name": "artifact source exists",
+          "passes": true,
+          "required": true
+        },
+        {
+          "evidence": "The local source chain is explicit.",
+          "gate_id": "G07",
+          "limitations": "",
+          "name": "provenance chain exists",
+          "passes": true,
+          "required": true
+        },
+        {
+          "evidence": "Both inspected artifacts record no empirical derivation inputs.",
+          "gate_id": "G08",
+          "limitations": "",
+          "name": "no empirical derivation inputs are used",
+          "passes": true,
+          "required": true
+        },
+        {
+          "evidence": "No electron-neutrino limit, PDG value, or reference value is read.",
+          "gate_id": "G09",
+          "limitations": "",
+          "name": "no reference/PDG values are derivation inputs",
+          "passes": true,
+          "required": true
+        },
+        {
+          "evidence": "Kernel shape and non-promotion checks pass.",
+          "gate_id": "G10",
+          "limitations": "",
+          "name": "consistency checks pass",
+          "passes": true,
+          "required": true
+        },
+        {
+          "evidence": "The sprint generates a separate registry update proposal.",
+          "gate_id": "G11",
+          "limitations": "",
+          "name": "registry status update is generated",
+          "passes": true,
+          "required": true
+        },
+        {
+          "evidence": "The claim policy forbids interpreting K_nu as a physical mass matrix.",
+          "gate_id": "G12",
+          "limitations": "",
+          "name": "claim policy is explicit",
+          "passes": true,
+          "required": true
+        },
+        {
+          "evidence": "The existing blocker artifact records the exact missing theorem.",
+          "gate_id": "G13",
+          "limitations": "",
+          "name": "theorem blocker artifact records the attempt",
+          "passes": true,
+          "required": true
+        },
+        {
+          "evidence": "No supporting evidence supplied.",
+          "gate_id": "G14",
+          "limitations": "Physical state admissibility and ordering are not fixed.",
+          "name": "gauge/sector admissibility checks pass",
+          "passes": false,
+          "required": true
+        },
+        {
+          "evidence": "No supporting evidence supplied.",
+          "gate_id": "G15",
+          "limitations": "Lambda_nu and the unit conversion are absent.",
+          "name": "dimensional/unit policy is explicit",
+          "passes": false,
+          "required": true
+        },
+        {
+          "evidence": "No calibration anchor is accepted or used.",
+          "gate_id": "G16",
+          "limitations": "",
+          "name": "calibration policy is explicit",
+          "passes": true,
+          "required": true
+        },
+        {
+          "evidence": "basis map U_nu, dimensional scale Lambda_nu, and Dirac/Majorana convention for turning K_nu into a production collider mass or interaction matrix",
+          "gate_id": "G17",
+          "limitations": "",
+          "name": "failure modes are documented",
+          "passes": true,
+          "required": true
+        }
+      ],
+      "provenance": [
+        {
+          "empirical_derivation_input": false,
+          "reference_comparison_input": false,
+          "source_path": "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
+          "source_status": "DISCOVERED"
+        },
+        {
+          "calibration_input": false,
+          "claim_status": "BOUNDARY_KERNEL_ARTIFACT_PHYSICAL_BASIS_SCALE_OPEN",
+          "empirical_derivation_input": false,
+          "frozen_prediction": true,
+          "loaded_at_runtime": true,
+          "metadata": {
+            "official_predictions_changed": false,
+            "public_status": "structural architecture integrated conditional; numerical closure open"
+          },
+          "notes": [
+            "Loaded from the existing internal no-fit boundary package."
+          ],
+          "reference_comparison_input": false,
+          "source_artifact_key": "BHSM_boundary_no_fit_prediction_package_v1",
+          "source_field": "neutral_operator",
+          "source_path": "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json",
+          "source_status": "DISCOVERED",
+          "unit": "dimensionless",
+          "value": {
+            "H_nu": [
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            "K_nu": [
+              [
+                0.0,
+                0.3333333333333333,
+                0.0
+              ],
+              [
+                0.3333333333333333,
+                3.0,
+                0.16666666666666666
+              ],
+              [
+                0.0,
+                0.16666666666666666,
+                1.6666666666666667
+              ]
+            ],
+            "N_nu_formula": "N_nu(q,j) = q^2 + 2*q*j + 2*j^2",
+            "artifact": "neutral_operator_no_fit_output_v1",
+            "beta_nu": 0.3333333333333333,
+            "empirical_derivation_inputs_used": false,
+            "eta_nu": 0.3333333333333333,
+            "external_empirical_comparison_layer": "OPEN_SEPARATE_LAYER",
+            "g_nu": 0.3333333333333333,
+            "kappa_nu": 0.16666666666666666,
+            "neutral_boundary_operator": "CLOSED_AS_BOUNDARY_SEED",
+            "observed_CKM_used": false,
+            "observed_CP_used": false,
+            "observed_Higgs_used": false,
+            "observed_PMNS_used": false,
+            "observed_gauge_values_used": false,
+            "observed_masses_used": false,
+            "official_predictions_changed": false,
+            "public_status": "structural architecture integrated conditional; numerical closure open",
+            "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
+            "sigma_fit_to_masses": false,
+            "tau_fit_to_masses": false
+          },
+          "value_key": "neutral_operator_kernel_BH",
+          "value_kind": "neutral_operator_seed"
+        }
+      ],
+      "reference_values_used_as_derivation_inputs": false,
+      "registry_entries_affected": [
+        "neutral_operator_kernel_BH",
+        "minimal_collider_interface_subset",
+        "feynrules_minimal_model",
+        "ufo_export",
+        "madgraph_smoke_test"
+      ],
+      "status_after": "OPEN_EXACT_MISSING_THEOREM",
+      "status_before": "OPEN_EXACT_MISSING_THEOREM",
+      "theorem_key": "neutrino_basis_scale",
+      "warnings": [
+        "PMNS mixing does not supply a physical neutrino mass basis.",
+        "Electron-neutrino reference limits are not theorem inputs."
+      ]
+    },
+    {
+      "action_term": {
+        "expression": "exp(i*pi/3) O_int + h.c.; O_int undefined",
+        "missing_objects": [
+          "standalone interaction operator O_int with field content, Lorentz structure, gauge representation, and coupling placement"
+        ],
+        "source_artifacts": [
+          "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json",
+          "artifacts/CP_no_fit_holonomy_output_v1.json"
+        ],
+        "source_status": "OPEN_MISSING_INTERACTION_ATTACHMENT",
+        "symbol": "L_CP_O_int"
+      },
+      "artifact_sources": [
+        "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json",
+        "artifacts/CP_no_fit_holonomy_output_v1.json"
+      ],
+      "calibration_inputs_used": false,
+      "callable_available": false,
+      "callable_key": "cp_o_int_standalone_attachment",
+      "claim_boundary": "The CP phase seed is not a standalone production interaction without an explicit O_int attachment theorem.",
+      "closure_status": "OPEN_MISSING_INTERACTION_ATTACHMENT",
+      "codomain": "unspecified CP-sensitive production amplitudes",
+      "display_name": "Standalone CP O_int attachment theorem",
+      "domain": "unspecified production fields",
+      "empirical_derivation_inputs_used": false,
+      "formal_statement": {
+        "assumptions": [
+          "delta_BH=pi/3 is a phase seed",
+          "matrix-phase attachment is not a standalone interaction"
+        ],
+        "statement": "The BHSM holonomy phase defines a standalone interaction only if an action-derived O_int fixes field content, Lorentz and gauge structure, coupling placement, and admissible sectors.",
+        "status": "FORMAL_CONDITIONAL_STATEMENT",
+        "theorem_key": "cp_o_int"
+      },
+      "missing_objects": [
+        "standalone interaction operator O_int with field content, Lorentz structure, gauge representation, and coupling placement"
+      ],
+      "notes": [
+        "delta_BH and Z6 phase are artifact-backed internal values."
+      ],
+      "operator_definition": {
+        "codomain": "unspecified CP-sensitive production amplitudes",
+        "domain": "unspecified production fields",
+        "expression": "exp(i*delta_BH) O_int + h.c.",
+        "name": "standalone O_int candidate",
+        "status": "PHASE_DEFINED_INTERACTION_OPERATOR_MISSING"
+      },
+      "promotion_allowed": false,
+      "promotion_reason": "O_int definition, action, callable, admissibility, and dimensional gates fail.",
+      "proof_gates": [
+        {
+          "evidence": "A formal standalone-interaction eligibility statement is encoded.",
+          "gate_id": "G01",
+          "limitations": "",
+          "name": "formal theorem statement exists",
+          "passes": true,
+          "required": true
+        },
+        {
+          "evidence": "No supporting evidence supplied.",
+          "gate_id": "G02",
+          "limitations": "Standalone field domain and production-amplitude codomain are absent.",
+          "name": "domain and codomain are defined",
+          "passes": false,
+          "required": true
+        },
+        {
+          "evidence": "No supporting evidence supplied.",
+          "gate_id": "G03",
+          "limitations": "O_int has no field, Lorentz, gauge, or coupling definition.",
+          "name": "operator/action term is defined",
+          "passes": false,
+          "required": true
+        },
+        {
+          "evidence": "No supporting evidence supplied.",
+          "gate_id": "G04",
+          "limitations": "No standalone CP interaction callable exists.",
+          "name": "callable implementation exists",
+          "passes": false,
+          "required": true
+        },
+        {
+          "evidence": "The closure-attempt callable has explicit schemas.",
+          "gate_id": "G05",
+          "limitations": "",
+          "name": "input/output schema exists",
+          "passes": true,
+          "required": true
+        },
+        {
+          "evidence": "The holonomy phase and v1.1 blocker are local machine-readable artifacts.",
+          "gate_id": "G06",
+          "limitations": "",
+          "name": "artifact source exists",
+          "passes": true,
+          "required": true
+        },
+        {
+          "evidence": "The phase and blocker sources are recorded.",
+          "gate_id": "G07",
+          "limitations": "",
+          "name": "provenance chain exists",
+          "passes": true,
+          "required": true
+        },
+        {
+          "evidence": "The artifacts record no empirical derivation inputs.",
+          "gate_id": "G08",
+          "limitations": "",
+          "name": "no empirical derivation inputs are used",
+          "passes": true,
+          "required": true
+        },
+        {
+          "evidence": "No observed CP or PDG value is read.",
+          "gate_id": "G09",
+          "limitations": "",
+          "name": "no reference/PDG values are derivation inputs",
+          "passes": true,
+          "required": true
+        },
+        {
+          "evidence": "delta_BH and Z6 phase consistency checks pass; standalone promotion remains false.",
+          "gate_id": "G10",
+          "limitations": "",
+          "name": "consistency checks pass",
+          "passes": true,
+          "required": true
+        },
+        {
+          "evidence": "The sprint generates a separate registry update proposal.",
+          "gate_id": "G11",
+          "limitations": "",
+          "name": "registry status update is generated",
+          "passes": true,
+          "required": true
+        },
+        {
+          "evidence": "The claim policy separates phase attachment from standalone interaction closure.",
+          "gate_id": "G12",
+          "limitations": "",
+          "name": "claim policy is explicit",
+          "passes": true,
+          "required": true
+        },
+        {
+          "evidence": "The existing blocker artifact records the missing O_int theorem.",
+          "gate_id": "G13",
+          "limitations": "",
+          "name": "theorem blocker artifact records the attempt",
+          "passes": true,
+          "required": true
+        },
+        {
+          "evidence": "No supporting evidence supplied.",
+          "gate_id": "G14",
+          "limitations": "Gauge and sector admissibility cannot be tested without O_int.",
+          "name": "gauge/sector admissibility checks pass",
+          "passes": false,
+          "required": true
+        },
+        {
+          "evidence": "No supporting evidence supplied.",
+          "gate_id": "G15",
+          "limitations": "Coupling dimension and normalization are absent.",
+          "name": "dimensional/unit policy is explicit",
+          "passes": false,
+          "required": true
+        },
+        {
+          "evidence": "No calibration input is accepted or used.",
+          "gate_id": "G16",
+          "limitations": "",
+          "name": "calibration policy is explicit",
+          "passes": true,
+          "required": true
+        },
+        {
+          "evidence": "standalone interaction operator O_int with field content, Lorentz structure, gauge representation, and coupling placement",
+          "gate_id": "G17",
+          "limitations": "",
+          "name": "failure modes are documented",
+          "passes": true,
+          "required": true
+        }
+      ],
+      "provenance": [
+        {
+          "empirical_derivation_input": false,
+          "reference_comparison_input": false,
+          "source_path": "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json",
+          "source_status": "DISCOVERED"
+        },
+        {
+          "calibration_input": false,
+          "claim_status": "PHASE_ARTIFACT_AVAILABLE_STANDALONE_O_INT_REMAINS_OPEN",
+          "empirical_derivation_input": false,
+          "frozen_prediction": true,
+          "loaded_at_runtime": true,
+          "metadata": {
+            "CP_boundary_holonomy": "CLOSED"
+          },
+          "notes": [
+            "Artifact-backed phase seed; not a standalone production CP vertex."
+          ],
+          "reference_comparison_input": false,
+          "source_artifact_key": "CP_no_fit_holonomy_output_v1",
+          "source_field": "delta_BH,delta_BH_formula,Z6_boundary_phase",
+          "source_path": "artifacts/CP_no_fit_holonomy_output_v1.json",
+          "source_status": "DISCOVERED",
+          "unit": "radian and dimensionless phase",
+          "value": {
+            "Z6_boundary_phase": {
+              "imag": 0.8660254037844386,
+              "real": 0.5
+            },
+            "delta_BH": 1.0471975511965976,
+            "delta_BH_formula": "pi/3"
+          },
+          "value_key": "cp_holonomy_phase_attachment",
+          "value_kind": "complex_phase"
+        }
+      ],
+      "reference_values_used_as_derivation_inputs": false,
+      "registry_entries_affected": [
+        "cp_holonomy_phase_attachment",
+        "minimal_collider_interface_subset",
+        "feynrules_minimal_model",
+        "ufo_export",
+        "madgraph_smoke_test"
+      ],
+      "status_after": "OPEN_MISSING_INTERACTION_ATTACHMENT",
+      "status_before": "OPEN_EXACT_MISSING_THEOREM",
+      "theorem_key": "cp_o_int",
+      "warnings": [
+        "CKM/PMNS phase attachment does not define a standalone CP vertex.",
+        "Runtime software gates remain disabled."
+      ]
+    }
+  ],
+  "version": "0.4"
+}
