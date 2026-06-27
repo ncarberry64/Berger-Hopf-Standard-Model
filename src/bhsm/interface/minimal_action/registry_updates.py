@@ -20,6 +20,9 @@ def minimal_action_registry_updates(results: tuple[MinimalActionClosureResult, .
                 "registry_entry": entries[row.theorem_key],
                 "status": row.status_after,
                 "promoted": row.promoted,
+                "core_blocker": row.core_blocker,
+                "target_disposition": row.target_disposition,
+                "numerical_closure_open": row.numerical_closure_open,
                 "remaining_missing_object": row.remaining_missing_object,
             }
             for row in results

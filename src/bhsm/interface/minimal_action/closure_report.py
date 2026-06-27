@@ -1,4 +1,4 @@
-"""Build and export the three-theorem minimal-action decision."""
+"""Build and export the ontology-aware minimal-action decision."""
 
 from __future__ import annotations
 
@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any, Mapping
 
 from .action_terms import build_minimal_action_terms, load_minimal_action_axioms
+from .author_ontology import AUTHOR_ONTOLOGY_PATH, load_author_ontology
 from .common import MinimalActionClosureReport, MinimalActionClosureResult, STATUS_TAXONOMY, repository_path
 from .cp_o_int_closure import close_cp_o_int
 from .neutrino_basis_closure import close_neutrino_basis_scale
@@ -70,7 +71,9 @@ def minimal_action_status(report: MinimalActionClosureReport | None = None) -> d
         "version": selected.version,
         "statuses": {row.theorem_key: row.status_after for row in selected.results},
         "promoted": [row.theorem_key for row in selected.results if row.promoted],
-        "open": [row.theorem_key for row in selected.results if not row.promoted],
+        "core_blockers": [row.theorem_key for row in selected.results if row.core_blocker],
+        "retired_targets": [row.theorem_key for row in selected.results if row.target_disposition == "RETIRED_TARGET"],
+        "numerical_closure_open": [row.theorem_key for row in selected.results if row.numerical_closure_open],
         "runtime_gates_changed": any(row.runtime_gates_changed for row in selected.results),
         "frozen_predictions_changed": selected.frozen_predictions_changed,
         "internet_required": selected.internet_required,
@@ -93,7 +96,7 @@ def minimal_action_report_to_markdown(report: MinimalActionClosureReport) -> str
     lines.extend(
         [
             "",
-            "The report uses local artifacts only. Runtime HEP gates and frozen predictions are unchanged.",
+            "The report uses the author ontology plus local artifacts. Runtime HEP gates and frozen predictions are unchanged.",
             "",
         ]
     )
@@ -108,9 +111,11 @@ def _manifest(report: MinimalActionClosureReport) -> dict[str, Any]:
         "status_taxonomy": list(STATUS_TAXONOMY),
         "results": {row.theorem_key: row.status_after for row in report.results},
         "promotions": [row.theorem_key for row in report.results if row.promoted],
-        "artifact_paths": list(ARTIFACT_PATHS.values()),
+        "artifact_paths": [*ARTIFACT_PATHS.values(), AUTHOR_ONTOLOGY_PATH],
         "axiom_template": "data/theorem_inputs/minimal_action_axioms_template.json",
         "axiom_template_enabled": any(row.get("enabled") is True for row in load_minimal_action_axioms().get("axioms", [])),
+        "author_ontology": AUTHOR_ONTOLOGY_PATH,
+        "author_ontology_status": load_author_ontology()["source_status"],
         "frozen_predictions_changed": False,
         "production_physics_model_logic_changed": False,
         "empirical_derivation_inputs_used": False,
@@ -128,18 +133,20 @@ def _claim_policy(report: MinimalActionClosureReport) -> dict[str, Any]:
         "version": "0.8",
         "allowed": [
             "A minimal action-closure evaluator exists.",
-            "The CP O_int symbolic candidate remains open at its action source.",
-            "X_ch remains open at field representation.",
-            "The neutrino theorem remains open at the physical basis map.",
+            "The CP/Z6 holonomy and phase attachment are artifact-backed; a standalone CP O_int production vertex is a retired target.",
+            "X_ch is a conditional charged boundary-response action theorem under the author ontology.",
+            "Neutrino BHSM mass is a conditional propagation-locked curvature-response theorem under the author ontology.",
         ],
         "unsupported": [
             "empirical validation",
             "complete 4D Lagrangian export",
             "validated FeynRules, UFO, or MadGraph readiness",
             "production promotion of any open minimal-action theorem",
+            "a static neutrino rest-mass matrix derived from the propagation theorem",
         ],
         "statuses": {row.theorem_key: row.status_after for row in report.results},
         "claim_boundaries_preserved": True,
+        "public_status": report.public_status,
     }
 
 

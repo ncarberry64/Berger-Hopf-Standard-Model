@@ -1,11 +1,23 @@
-# Neutrino Basis And Scale Minimal Action Decision
+# Neutrino Propagation-Mass Minimal Action Decision
 
-Status: `OPEN_MISSING_PHYSICAL_BASIS`.
+Status: `CONDITIONAL_PROPAGATION_THEOREM`.
 
-`K_nu` is an artifact-backed operator on a three-dimensional neutral boundary
-channel basis. PMNS mixing labels do not determine a physical mass basis.
+The primary ontology target is not an ordinary static Dirac/Majorana rest-mass
+matrix. It is the propagation-conditioned response
 
-The first required object is a map from boundary channels to physical neutrino
-states. A dimensional scale, ordering rule, Dirac/Majorana convention, and
-observable map follow after that basis is fixed. Electron-neutrino limits,
-reference values, and the W calibration anchor are not theorem inputs.
+```text
+neutral boundary field propagation
+  -> curvature-threshold response
+  -> effective neutrino mass observable
+
+m_nu_BHSM[Psi_nu]
+  = I_propagating R_curv[U_nu(t) Psi_nu; kappa_nu]
+```
+
+The BHSM contribution vanishes when `I_propagating = 0` or when the curvature
+threshold is not met. `K_nu` remains the artifact-backed neutral boundary seed.
+The propagation theorem follows conditionally from the author ontology;
+numerical curvature normalization and physical comparison scale remain open.
+Dirac/Majorana convention is secondary and may be needed later for comparison
+or export. No empirical neutrino input, W calibration theorem input, or static
+rest-mass claim is used.

@@ -30,9 +30,9 @@ validation remain outside the current package.
 | Frozen predictions | `ESTABLISHED` | Versioned internal artifacts remain unchanged. |
 | Python interface and CLI | `ESTABLISHED` | Deterministic offline registry, reports, and artifact commands are executable. |
 | CKM, PMNS, CP phase, boundary constants, mass ratios | `ARTIFACT_BACKED` | Local artifacts load with provenance. |
-| CP `O_int` | `CANDIDATE / OPEN` | A callable symbolic candidate exists; the action-backed production theorem remains open. |
-| `X_ch` | `OPEN` | The production interaction theorem is missing. |
-| Neutrino physical basis and scale | `OPEN` | The physical basis, dimensional scale, and Dirac/Majorana theorem are missing. |
+| CP/Z6 holonomy | `ARTIFACT_BACKED` | The holonomy and CKM/PMNS phase attachment are local artifact-backed constraints; standalone `O_int` production is a retired target. |
+| `X_ch` | `CONDITIONAL_ACTION_THEOREM` | Author ontology defines a charged boundary-response operator; numerical and 4D production closure remain open. |
+| Neutrino BHSM mass | `CONDITIONAL_PROPAGATION_THEOREM` | Author ontology defines propagation-locked curvature response; numerical scale closure remains open. |
 | FeynRules, UFO, MadGraph | `RUNTIME_GATED` | External validation is deferred until theorem and runtime gates pass. |
 
 [STATUS.md](STATUS.md) is the single source of truth for current area-level
@@ -76,13 +76,14 @@ python -m bhsm.interface artifact-report --anchor W_boson --format json
 
 ## Candidate And Open Theorem Areas
 
-CP phase attachment to CKM/PMNS structures is artifact-backed. Sprint C adds a
-source-traced, callable symbolic CP `O_int` field/action candidate. The v0.8
-minimal-action audit identifies its first unresolved object as the
-action-derived source, normalized measure, variation, and production rule.
+CP phase attachment to CKM/PMNS structures is artifact-backed. The v0.8 author
+ontology classifies CP as a Z6 boundary holonomy constraint and retires the
+standalone `O_int` production target. It defines `X_ch` conditionally as a
+charged boundary-response operator and the neutrino BHSM mass conditionally as
+a propagation-locked curvature response. These are structural theorem statuses;
+numerical closure and external HEP runtime readiness remain open.
 
-`X_ch` and the physical neutrino basis/scale theorem remain open. Their exact
-missing objects are reported by:
+The exact evidence boundary is reported by:
 
 ```bash
 python -m bhsm.interface theorem-blockers

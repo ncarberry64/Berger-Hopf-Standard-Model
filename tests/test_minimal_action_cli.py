@@ -38,5 +38,7 @@ def test_markdown_report_command_is_concise() -> None:
     result = run_cli("minimal-action-report", "--format", "markdown")
     assert result.returncode == 0
     assert "# BHSM Minimal Action Closure" in result.stdout
-    assert "OPEN_MISSING_ACTION_SOURCE" in result.stdout
+    assert "ARTIFACT_BACKED" in result.stdout
+    assert "CONDITIONAL_ACTION_THEOREM" in result.stdout
+    assert "CONDITIONAL_PROPAGATION_THEOREM" in result.stdout
     assert len(result.stdout.splitlines()) < 25

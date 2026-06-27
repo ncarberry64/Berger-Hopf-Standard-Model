@@ -1,12 +1,25 @@
 # X_ch Minimal Action Decision
 
-Status: `OPEN_MISSING_FIELD_REPRESENTATION`.
+Status: `CONDITIONAL_ACTION_THEOREM`.
 
-`C_ch_boundary` is an artifact-backed boundary source matrix, and
-`Psi_ch_bar C_ch_boundary Psi_ch X_ch` is a symbolic target expression. The
-source matrix does not determine the spin, gauge representation, chirality, or
-conjugation rule of `X_ch`.
+The controlling ontology defines BHSM modes as physical boundary fields and
+defines `X_ch` as a charged boundary-response operator:
 
-The first required object is an action-derived `X_ch` field representation.
-Lorentz attachment, coupling normalization, variation, and production
-eligibility remain downstream of that object.
+```text
+Psi_boundary -> P_ch Psi_boundary -> X_ch(P_ch Psi_boundary)
+             -> charged-current response
+```
+
+The conditional source and response rule are
+
+```text
+S_charged_response = integral_boundary
+  <J_ch, X_ch(P_ch Psi_boundary)> + h.c.
+
+delta S_charged_response / delta J_ch = X_ch(P_ch Psi_boundary)
+```
+
+`C_ch_boundary` remains the artifact-backed boundary source. The theorem is
+conditional because the operator interpretation is author supplied. It does
+not identify `X_ch` as a standalone four-dimensional production field, and it
+does not close numerical coupling normalization or external HEP runtime gates.

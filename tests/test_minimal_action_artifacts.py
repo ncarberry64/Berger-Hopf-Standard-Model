@@ -14,6 +14,7 @@ ARTIFACTS = (
     "artifacts/BHSM_neutrino_basis_scale_minimal_action_closure_v0_8.json",
     "artifacts/BHSM_minimal_action_registry_updates_v0_8.json",
     "artifacts/BHSM_minimal_action_claim_policy_v0_8.json",
+    "artifacts/BHSM_author_ontology_v0_8.json",
 )
 FROZEN = {
     "docs/frozen_predictions.md": "9ea147c56537520c86d3c4f9b864c6ba98bac9e64931edae96449f3b335a36c4",
@@ -29,11 +30,12 @@ def test_required_artifacts_parse_and_report_clean_statuses() -> None:
     assert all(load(path) for path in ARTIFACTS)
     manifest = load(ARTIFACTS[0])
     assert manifest["results"] == {
-        "X_ch": "OPEN_MISSING_FIELD_REPRESENTATION",
-        "cp_o_int": "OPEN_MISSING_ACTION_SOURCE",
-        "neutrino_basis_scale": "OPEN_MISSING_PHYSICAL_BASIS",
+        "X_ch": "CONDITIONAL_ACTION_THEOREM",
+        "cp_o_int": "ARTIFACT_BACKED",
+        "neutrino_basis_scale": "CONDITIONAL_PROPAGATION_THEOREM",
     }
-    assert manifest["promotions"] == []
+    assert manifest["promotions"] == ["X_ch", "neutrino_basis_scale"]
+    assert manifest["author_ontology_status"] == "DISCOVERED"
     assert manifest["empirical_derivation_inputs_used"] is False
     assert manifest["reference_values_used_as_theorem_inputs"] is False
     assert manifest["pdg_values_used_as_theorem_inputs"] is False

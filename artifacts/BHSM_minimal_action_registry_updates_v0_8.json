@@ -4,24 +4,33 @@
   "update_name": "BHSM Minimal Action Registry Updates",
   "updates": [
     {
+      "core_blocker": false,
+      "numerical_closure_open": false,
       "promoted": false,
       "registry_entry": "cp_holonomy_phase_attachment",
-      "remaining_missing_object": "action-derived CP O_int source with normalized coupling, measure, variation, and production rule",
-      "status": "OPEN_MISSING_ACTION_SOURCE",
+      "remaining_missing_object": null,
+      "status": "ARTIFACT_BACKED",
+      "target_disposition": "RETIRED_TARGET",
       "theorem_key": "cp_o_int"
     },
     {
-      "promoted": false,
+      "core_blocker": false,
+      "numerical_closure_open": true,
+      "promoted": true,
       "registry_entry": "charged_boundary_response_matrix",
-      "remaining_missing_object": "action-derived X_ch field representation",
-      "status": "OPEN_MISSING_FIELD_REPRESENTATION",
+      "remaining_missing_object": null,
+      "status": "CONDITIONAL_ACTION_THEOREM",
+      "target_disposition": "BOUNDARY_RESPONSE_OPERATOR",
       "theorem_key": "X_ch"
     },
     {
-      "promoted": false,
+      "core_blocker": false,
+      "numerical_closure_open": true,
+      "promoted": true,
       "registry_entry": "neutral_operator_kernel_BH",
-      "remaining_missing_object": "map from the neutral boundary channel basis to physical neutrino states",
-      "status": "OPEN_MISSING_PHYSICAL_BASIS",
+      "remaining_missing_object": null,
+      "status": "CONDITIONAL_PROPAGATION_THEOREM",
+      "target_disposition": "PROPAGATION_CONDITIONED_EFFECTIVE_MASS",
       "theorem_key": "neutrino_basis_scale"
     }
   ],

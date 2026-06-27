@@ -10,19 +10,22 @@ def read(path: str) -> str:
     return (ROOT / path).read_text(encoding="utf-8")
 
 
-def test_status_and_docs_name_each_first_missing_object() -> None:
+def test_status_and_docs_use_the_author_ontology_classifications() -> None:
     status = read("STATUS.md")
-    assert "OPEN_MISSING_ACTION_SOURCE" in status
-    assert "OPEN_MISSING_FIELD_REPRESENTATION" in status
-    assert "OPEN_MISSING_PHYSICAL_BASIS" in status
-    assert "Action-derived `X_ch` field representation" in status
-    assert "Map from neutral boundary channels to physical neutrino states" in status
+    assert "ARTIFACT_BACKED" in status
+    assert "RETIRED_TARGET" in status
+    assert "CONDITIONAL_ACTION_THEOREM" in status
+    assert "CONDITIONAL_PROPAGATION_THEOREM" in status
+    assert "Numerical `X_ch` response normalization" not in status
+    assert "Numerical normalization" in status
+    assert "Numerical curvature response" in status
 
     for path in (
         "docs/minimal_action_closure.md",
         "docs/cp_o_int_minimal_action_closure.md",
         "docs/x_ch_minimal_action_closure.md",
         "docs/neutrino_basis_scale_minimal_action_closure.md",
+        "docs/author_ontology_v0_8.md",
     ):
         assert (ROOT / path).is_file()
 
@@ -32,6 +35,7 @@ def test_claims_and_runtime_boundaries_remain_visible() -> None:
     assert "## Not Supported" in claims
     assert "validated FeynRules/UFO/MadGraph readiness" in claims
     assert "minimal-action audit" in claims
+    assert "static rest-mass" in claims
 
     combined = "\n".join(read(path) for path in (
         "docs/minimal_action_closure.md",

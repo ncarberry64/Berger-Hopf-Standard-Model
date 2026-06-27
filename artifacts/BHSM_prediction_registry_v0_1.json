@@ -88,56 +88,58 @@
     },
     {
       "allowed_statuses": [
-        "OPEN_THEOREM_REQUIRED"
+        "CONDITIONAL_THEOREM"
       ],
       "calibration_allowed": false,
       "can_be_calibration_anchor": false,
-      "claim_boundary": "Boundary source matrix with an open X_ch field theorem.",
+      "claim_boundary": "X_ch is conditionally defined as a charged boundary-response operator under the author ontology; no 4D production field is claimed.",
       "comparison_kind": null,
-      "default_status": "OPEN_THEOREM_REQUIRED",
+      "default_status": "CONDITIONAL_THEOREM",
       "display_name": "Charged boundary response",
-      "excluded_reason": "X_ch field representation is open",
+      "excluded_reason": "not eligible as a standalone production field",
       "geometry_required": false,
       "independent_prediction_allowed": false,
       "notes": [],
       "particle_key": "charged_boundary_response_matrix",
-      "quantity": "interaction_matrix",
+      "quantity": "boundary_response_operator",
       "reference_key": null,
       "runtime_required": false,
       "sector": "charged_boundary",
       "source_artifacts": [
         "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
-        "artifacts/BHSM_x_ch_minimal_action_closure_v0_8.json"
+        "artifacts/BHSM_x_ch_minimal_action_closure_v0_8.json",
+        "artifacts/BHSM_author_ontology_v0_8.json"
       ],
       "source_type": "BHSM artifact",
-      "theorem_status": "OPEN_MISSING_FIELD_REPRESENTATION",
+      "theorem_status": "CONDITIONAL_ACTION_THEOREM",
       "unit": "dimensionless"
     },
     {
       "allowed_statuses": [
-        "OPEN_THEOREM_REQUIRED"
+        "ARTIFACT_BACKED_CONSTRAINT"
       ],
       "calibration_allowed": false,
       "can_be_calibration_anchor": false,
-      "claim_boundary": "Artifact-backed phase plus symbolic O_int candidate; action source remains open.",
+      "claim_boundary": "The CP/Z6 phase attachment is artifact-backed; the standalone O_int production target is retired.",
       "comparison_kind": null,
-      "default_status": "OPEN_THEOREM_REQUIRED",
+      "default_status": "ARTIFACT_BACKED_CONSTRAINT",
       "display_name": "CP holonomy phase attachment",
-      "excluded_reason": "O_int action source is open",
+      "excluded_reason": "standalone CP production vertex is a retired target",
       "geometry_required": false,
       "independent_prediction_allowed": false,
       "notes": [],
       "particle_key": "cp_holonomy_phase_attachment",
-      "quantity": "interaction_attachment",
+      "quantity": "holonomy_constraint",
       "reference_key": null,
       "runtime_required": false,
       "sector": "cp_holonomy",
       "source_artifacts": [
-        "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json",
-        "artifacts/BHSM_cp_o_int_minimal_action_closure_v0_8.json"
+        "artifacts/CP_no_fit_holonomy_output_v1.json",
+        "artifacts/BHSM_cp_o_int_minimal_action_closure_v0_8.json",
+        "artifacts/BHSM_author_ontology_v0_8.json"
       ],
       "source_type": "BHSM artifact",
-      "theorem_status": "OPEN_MISSING_ACTION_SOURCE",
+      "theorem_status": "ARTIFACT_BACKED",
       "unit": "dimensionless"
     },
     {
@@ -246,29 +248,30 @@
     },
     {
       "allowed_statuses": [
-        "OPEN_THEOREM_REQUIRED"
+        "CONDITIONAL_THEOREM"
       ],
       "calibration_allowed": false,
       "can_be_calibration_anchor": false,
-      "claim_boundary": "Boundary/operator seed with an open physical neutrino map.",
+      "claim_boundary": "The neutral boundary seed supports a conditional propagation-locked curvature-response theorem; numerical scale remains open.",
       "comparison_kind": null,
-      "default_status": "OPEN_THEOREM_REQUIRED",
-      "display_name": "Neutral operator kernel",
-      "excluded_reason": "physical neutrino basis map is open",
+      "default_status": "CONDITIONAL_THEOREM",
+      "display_name": "Neutral propagation-response kernel",
+      "excluded_reason": "not a static rest-mass matrix or production vertex",
       "geometry_required": false,
       "independent_prediction_allowed": false,
       "notes": [],
       "particle_key": "neutral_operator_kernel_BH",
-      "quantity": "operator_kernel",
+      "quantity": "propagation_conditioned_effective_mass",
       "reference_key": null,
       "runtime_required": false,
       "sector": "neutral",
       "source_artifacts": [
         "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
-        "artifacts/BHSM_neutrino_basis_scale_minimal_action_closure_v0_8.json"
+        "artifacts/BHSM_neutrino_basis_scale_minimal_action_closure_v0_8.json",
+        "artifacts/BHSM_author_ontology_v0_8.json"
       ],
       "source_type": "BHSM artifact",
-      "theorem_status": "OPEN_MISSING_PHYSICAL_BASIS",
+      "theorem_status": "CONDITIONAL_PROPAGATION_THEOREM",
       "unit": "dimensionless"
     },
     {
@@ -319,6 +322,8 @@
     "REFERENCE_COMPARISON_ONLY",
     "UPPER_LIMIT_COMPARISON",
     "OPEN_THEOREM_REQUIRED",
+    "ARTIFACT_BACKED_CONSTRAINT",
+    "CONDITIONAL_THEOREM",
     "DISABLED_UNTIL_RUNTIME_VALIDATED",
     "EXCLUDED_FROM_MINIMAL_COLLIDER_INTERFACE",
     "RUNTIME_PARAMETER_ONLY",

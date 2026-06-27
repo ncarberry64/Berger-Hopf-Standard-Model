@@ -16,7 +16,7 @@ not required for the listed local behavior.
 | `pdg-fetch --particle KEY --offline-ok` | Load a comparison reference with local fallback | JSON | no | no |
 | `speculative list` | List disabled speculative templates | JSON | no | no |
 | `speculative report` | Report candidate-template status | text or JSON | no | no |
-| `theorem-blockers` | List exact unresolved theorem objects | JSON | no | no |
+| `theorem-blockers` | List current theorem dispositions and remaining numerical gaps | JSON | no | no |
 | `theorem-attempt --blocker KEY` | Run a fail-closed closure attempt | text or JSON | no | no |
 | `artifact-sources` | Discover local BHSM evidence | text or JSON | no | no |
 | `formula-registry` | List formula callables and theorem gates | text or JSON | no | no |
@@ -35,7 +35,7 @@ not required for the listed local behavior.
 | `cp-o-int-production-eligibility` | Show production and runtime eligibility | JSON | no | no |
 | `cp-o-int-action-candidate` | Show the symbolic action-density candidate | JSON | no | no |
 | `minimal-action` | Build the complete minimal-action decision record | JSON | no | no |
-| `minimal-action-report` | Render the three-theorem decision table | Markdown or JSON | no | no |
+| `minimal-action-report` | Render the ontology-aware decision table | Markdown or JSON | no | no |
 | `close-minimal-action KEY` | Evaluate one minimal-action theorem | JSON | no | no |
 | `minimal-action-status` | Show concise theorem statuses | JSON | no | no |
 

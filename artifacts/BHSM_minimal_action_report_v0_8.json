@@ -6,54 +6,64 @@
   "frozen_predictions_changed": false,
   "internet_required": false,
   "production_physics_model_logic_changed": false,
-  "public_status": "Minimal action audit implemented; three action-level theorem objects remain open.",
+  "public_status": "structural architecture integrated conditional; numerical closure open",
   "report_name": "BHSM Minimal Action Closure Report",
   "results": [
     {
       "action_source_term": {
         "action_derived": false,
-        "expression": "G_raw exp(i delta_BH) O_int + h.c.",
+        "expression": "exp(i*pi/3) as a CP/Z6 boundary holonomy constraint",
         "hermitian": true,
-        "integration_measure": "undefined boundary/interface measure",
-        "locality": "boundary/interface candidate",
-        "missing_object": "action-derived measure, normalized source, and variation",
+        "integration_measure": "not a standalone interaction integral",
+        "locality": "boundary holonomy",
+        "missing_object": null,
         "source_artifacts": [
+          "artifacts/CP_no_fit_holonomy_output_v1.json",
+          "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json",
           "artifacts/BHSM_cp_o_int_field_action_report_v0_6.json",
-          "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
+          "artifacts/BHSM_author_ontology_v0_8.json"
         ],
-        "status": "OPEN_MISSING_ACTION_SOURCE",
-        "symbol": "L_CP_O_int"
+        "status": "RETIRED_TARGET",
+        "symbol": "Hol_CP"
       },
       "action_term": {
-        "expression": "G_raw exp(i delta_BH) O_int + h.c.",
+        "expression": "exp(i*pi/3) attached to admissible boundary structures",
         "key": "cp_o_int",
-        "missing_object": "action-derived CP O_int source with normalized coupling, measure, variation, and production rule",
-        "role": "standalone CP interaction",
+        "missing_object": null,
+        "role": "CP/Z6 holonomy constraint; standalone interaction retired",
         "source_artifacts": [
+          "artifacts/CP_no_fit_holonomy_output_v1.json",
+          "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json",
           "artifacts/BHSM_cp_o_int_field_action_report_v0_6.json",
-          "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
+          "artifacts/BHSM_author_ontology_v0_8.json"
         ],
-        "status": "OPEN_MISSING_ACTION_SOURCE",
-        "symbol": "S_phase"
+        "status": "RETIRED_TARGET",
+        "symbol": "Hol_CP"
       },
       "artifact_sources_used": [
+        "artifacts/CP_no_fit_holonomy_output_v1.json",
+        "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json",
         "artifacts/BHSM_cp_o_int_field_action_report_v0_6.json",
-        "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
+        "artifacts/BHSM_author_ontology_v0_8.json"
       ],
-      "callable_key": "cp_o_int_production_theorem",
-      "claim_boundary": "The artifact-backed phase and symbolic candidate do not supply an action theorem by themselves.",
+      "author_ontology_used": true,
+      "callable_key": "cp_holonomy_phase_attachment",
+      "claim_boundary": "CP is established here only as an artifact-backed holonomy constraint. No standalone production vertex or HEP runtime readiness follows.",
+      "core_blocker": false,
       "coupling_normalization": {
-        "coupling_mass_dimension": "must complete a dimension-four density",
-        "missing_object": "normalized CP coupling and operator mass dimension",
-        "normalization": "symbol present; value not fixed",
-        "operator_mass_dimension": "not derived",
+        "coupling_mass_dimension": "not applicable",
+        "missing_object": null,
+        "normalization": "not applicable to the retired standalone interaction target",
+        "operator_mass_dimension": "not applicable",
         "source_artifacts": [
+          "artifacts/CP_no_fit_holonomy_output_v1.json",
+          "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json",
           "artifacts/BHSM_cp_o_int_field_action_report_v0_6.json",
-          "artifacts/BHSM_effective_lagrangian_candidate_v0_3.json"
+          "artifacts/BHSM_author_ontology_v0_8.json"
         ],
-        "status": "OPEN_MISSING_COUPLING_NORMALIZATION",
+        "status": "RETIRED_TARGET",
         "symbol": "G_raw",
-        "value_source": "symbolic 4D assembly ledger"
+        "value_source": "artifacts/CP_no_fit_holonomy_output_v1.json"
       },
       "empirical_derivation_inputs_used": false,
       "field_representation": {
@@ -62,14 +72,16 @@
         "conjugation_rule": "Hermitian conjugate requested by symbolic ledger",
         "domain": "CP boundary/interface channel",
         "family_space": "not action-derived",
-        "gauge_representation": "gauge representation not action-derived",
-        "missing_object": "physical field representation and boundary-to-4D identification",
+        "gauge_representation": "CP/Z6 boundary holonomy constraint",
+        "missing_object": null,
         "source_artifacts": [
+          "artifacts/CP_no_fit_holonomy_output_v1.json",
+          "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json",
           "artifacts/BHSM_cp_o_int_field_action_report_v0_6.json",
-          "artifacts/BHSM_effective_lagrangian_candidate_v0_3.json"
+          "artifacts/BHSM_author_ontology_v0_8.json"
         ],
-        "spin_lorentz_type": "abstract bilinear field candidate",
-        "status": "CANDIDATE",
+        "spin_lorentz_type": "boundary holonomy representation; no standalone production field required",
+        "status": "DERIVED_REPRESENTATION_ONLY",
         "symbol": "Psi_CP_interface"
       },
       "gauge_admissibility": {
@@ -81,57 +93,76 @@
           "neutral_boundary"
         ],
         "gauge_invariant": null,
-        "missing_object": "action-derived gauge representation and forbidden-channel proof",
-        "passes": false,
+        "missing_object": null,
+        "passes": true,
         "projector_key": "P_cp",
         "source_artifacts": [
+          "artifacts/CP_no_fit_holonomy_output_v1.json",
+          "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json",
           "artifacts/BHSM_cp_o_int_field_action_report_v0_6.json",
-          "artifacts/BHSM_effective_lagrangian_candidate_v0_3.json"
+          "artifacts/BHSM_author_ontology_v0_8.json"
         ],
-        "status": "CANDIDATE"
+        "status": "ARTIFACT_BACKED"
       },
+      "hep_runtime_readiness_claimed": false,
       "lorentz_structure": {
-        "cp_rule": "exp(i delta_BH) O_int + exp(-i delta_BH) O_int^dagger",
-        "expression": "LorentzScalar[O_int] + h.c.",
+        "cp_rule": "Z6 boundary phase attachment",
+        "expression": "Hol_CP = exp(i*pi/3) attached to admissible CKM/PMNS or sector structures",
         "free_indices": [],
         "hermitian": true,
-        "missing_object": "action-derived contraction and CP transformation law",
+        "missing_object": null,
         "scalar_density": true,
         "source_artifacts": [
+          "artifacts/CP_no_fit_holonomy_output_v1.json",
+          "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json",
           "artifacts/BHSM_cp_o_int_field_action_report_v0_6.json",
-          "artifacts/BHSM_effective_lagrangian_candidate_v0_3.json"
+          "artifacts/BHSM_author_ontology_v0_8.json"
         ],
-        "status": "CANDIDATE"
+        "status": "ARTIFACT_BACKED"
       },
+      "numerical_closure_open": false,
+      "ontology_source": "artifacts/BHSM_author_ontology_v0_8.json",
       "pdg_values_used_as_theorem_inputs": false,
       "production_rule": {
-        "callable_available": false,
-        "callable_key": "cp_o_int_production_theorem",
-        "expression": "not defined",
-        "missing_object": "action-derived CP O_int source with normalized coupling, measure, variation, and production rule",
+        "callable_available": true,
+        "callable_key": "cp_holonomy_phase_attachment",
+        "expression": "standalone production rule not required by the CP holonomy ontology",
+        "missing_object": null,
         "production_eligible": false,
         "runtime_validation_required": false,
-        "status": "OPEN_MISSING_ACTION_SOURCE"
+        "status": "RETIRED_TARGET"
       },
       "promoted": false,
-      "promotion_reason": "Local artifacts stop at a symbolic density; no action-derived source or variation exists.",
+      "promotion_reason": "The local no-fit artifact closes the CP/Z6 holonomy and phase attachment; the standalone O_int production target is retired.",
       "proof_gates": {
-        "action_source": false,
         "artifact_output": true,
-        "callable_theorem": false,
-        "coupling_normalization": false,
-        "domain_codomain": true,
-        "field_representation_candidate": true,
-        "formal_theorem": true,
-        "lorentz_structure_candidate": true,
+        "author_ontology": true,
+        "ckm_phase_attachment": true,
+        "holonomy_artifact": true,
         "no_empirical_inputs": true,
+        "no_runtime_readiness_claim": true,
+        "pmns_phase_attachment": true,
         "provenance": true,
         "registry_update": true,
-        "sector_admissibility_candidate": true,
+        "standalone_target_retired": true,
         "tests": true,
-        "variation_rule": false
+        "z6_phase": true
       },
       "provenance": [
+        {
+          "calibration_theorem_input": false,
+          "empirical_derivation_input": false,
+          "reference_theorem_input": false,
+          "source_path": "artifacts/CP_no_fit_holonomy_output_v1.json",
+          "source_status": "DISCOVERED"
+        },
+        {
+          "calibration_theorem_input": false,
+          "empirical_derivation_input": false,
+          "reference_theorem_input": false,
+          "source_path": "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json",
+          "source_status": "DISCOVERED"
+        },
         {
           "calibration_theorem_input": false,
           "empirical_derivation_input": false,
@@ -143,97 +174,112 @@
           "calibration_theorem_input": false,
           "empirical_derivation_input": false,
           "reference_theorem_input": false,
-          "source_path": "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json",
+          "source_path": "artifacts/BHSM_author_ontology_v0_8.json",
           "source_status": "DISCOVERED"
         }
       ],
       "reference_values_used_as_theorem_inputs": false,
       "registry_updates": [
-        "formula:cp_o_int_standalone_attachment",
+        "formula:cp_holonomy_phase_attachment",
         "registry:cp_holonomy_phase_attachment"
       ],
-      "remaining_missing_object": "action-derived CP O_int source with normalized coupling, measure, variation, and production rule",
+      "remaining_missing_object": null,
       "runtime_gates_changed": false,
-      "status_after": "OPEN_MISSING_ACTION_SOURCE",
+      "status_after": "ARTIFACT_BACKED",
       "status_before": "OPEN_MISSING_ACTION_SOURCE",
+      "target_disposition": "RETIRED_TARGET",
       "tests_passed": true,
       "theorem_key": "cp_o_int",
       "variation_or_source_rule": {
-        "defined": false,
-        "equation_or_current": "not defined",
-        "missing_object": "action-derived CP O_int source with normalized coupling, measure, variation, and production rule",
+        "defined": true,
+        "equation_or_current": "constraint on admissible CKM/PMNS or sector structures",
+        "missing_object": null,
         "source_artifacts": [
+          "artifacts/CP_no_fit_holonomy_output_v1.json",
+          "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json",
           "artifacts/BHSM_cp_o_int_field_action_report_v0_6.json",
-          "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
+          "artifacts/BHSM_author_ontology_v0_8.json"
         ],
-        "source_expression": "not action-derived",
-        "status": "OPEN_MISSING_ACTION_SOURCE",
-        "varied_field": "O_int"
+        "source_expression": "artifact-backed phase attachment",
+        "status": "ARTIFACT_BACKED",
+        "varied_field": "boundary holonomy"
       },
       "w_calibration_used_as_theorem_input": false
     },
     {
       "action_source_term": {
         "action_derived": false,
-        "expression": "Psi_ch_bar C_ch_boundary Psi_ch X_ch",
+        "expression": "S_charged_response = integral_boundary <J_ch, X_ch(P_ch Psi_boundary)> + h.c.",
         "hermitian": true,
-        "integration_measure": "undefined",
-        "locality": "boundary-to-4D candidate",
-        "missing_object": "action-derived X_ch field representation",
+        "integration_measure": "dmu_boundary",
+        "locality": "boundary-local",
+        "missing_object": null,
         "source_artifacts": [
+          "artifacts/BHSM_boundary_source_matrices_v0_5.json",
           "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
-          "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
+          "artifacts/BHSM_vertex_source_target_map_v0_5.json",
+          "artifacts/BHSM_author_ontology_v0_8.json"
         ],
-        "status": "OPEN_MISSING_FIELD_REPRESENTATION",
-        "symbol": "L_X_ch"
+        "status": "CONDITIONAL_ACTION_THEOREM",
+        "symbol": "S_charged_response"
       },
       "action_term": {
-        "expression": "Psi_ch_bar C_ch_boundary Psi_ch X_ch",
+        "expression": "S_charged_response = integral_boundary <J_ch, X_ch(P_ch Psi_boundary)> + h.c.",
         "key": "x_ch",
-        "missing_object": "action-derived X_ch field representation",
-        "role": "charged response",
+        "missing_object": null,
+        "role": "charged boundary-response action",
         "source_artifacts": [
+          "artifacts/BHSM_boundary_source_matrices_v0_5.json",
           "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
-          "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
+          "artifacts/BHSM_vertex_source_target_map_v0_5.json",
+          "artifacts/BHSM_author_ontology_v0_8.json"
         ],
-        "status": "OPEN_MISSING_FIELD_REPRESENTATION",
-        "symbol": "S_charged"
+        "status": "CONDITIONAL_ACTION_THEOREM",
+        "symbol": "S_charged_response"
       },
       "artifact_sources_used": [
+        "artifacts/BHSM_boundary_source_matrices_v0_5.json",
         "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
-        "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
+        "artifacts/BHSM_vertex_source_target_map_v0_5.json",
+        "artifacts/BHSM_author_ontology_v0_8.json"
       ],
-      "callable_key": "x_ch_production_vertex",
-      "claim_boundary": "C_ch_boundary is an artifact-backed source matrix, not an X_ch field theorem.",
+      "author_ontology_used": true,
+      "callable_key": "apply_x_ch_boundary_response",
+      "claim_boundary": "Conditional boundary-response theorem only. It does not identify X_ch with a standalone 4D production field or establish FeynRules/UFO/MadGraph readiness.",
+      "core_blocker": false,
       "coupling_normalization": {
-        "coupling_mass_dimension": "not derived",
-        "missing_object": "normalized X_ch coupling and mass dimension",
-        "normalization": "not defined",
-        "operator_mass_dimension": "not derived",
+        "coupling_mass_dimension": "no standalone 4D production coupling assigned",
+        "missing_object": null,
+        "normalization": "operator normalization inherited from C_ch_boundary; no 4D production coupling claimed",
+        "operator_mass_dimension": "boundary-response dimension fixed only within the boundary action",
         "source_artifacts": [
+          "artifacts/BHSM_boundary_source_matrices_v0_5.json",
           "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
-          "artifacts/BHSM_vertex_source_target_map_v0_5.json"
+          "artifacts/BHSM_vertex_source_target_map_v0_5.json",
+          "artifacts/BHSM_author_ontology_v0_8.json"
         ],
-        "status": "OPEN_MISSING_COUPLING_NORMALIZATION",
+        "status": "CONDITIONAL_ACTION_THEOREM",
         "symbol": "g_X",
-        "value_source": "no action source"
+        "value_source": "X_CH_IS_CHARGED_BOUNDARY_RESPONSE_OPERATOR"
       },
       "empirical_derivation_inputs_used": false,
       "field_representation": {
-        "chirality": "not applicable until field content is fixed",
-        "codomain": "four-dimensional production field space",
-        "conjugation_rule": "not derived",
-        "domain": "charged boundary-response channel",
-        "family_space": "charged-sector ledger only",
-        "gauge_representation": "not derived",
-        "missing_object": "action-derived X_ch field representation",
+        "chirality": "inherited from charged-sector projector admissibility",
+        "codomain": "charged boundary-current response J_ch_boundary",
+        "conjugation_rule": "Hermitian boundary-response pairing",
+        "domain": "projector-selected physical charged boundary fields P_ch H_boundary",
+        "family_space": "physical BHSM charged boundary fields",
+        "gauge_representation": "charged-sector projector-selected boundary response",
+        "missing_object": null,
         "source_artifacts": [
+          "artifacts/BHSM_boundary_source_matrices_v0_5.json",
           "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
-          "artifacts/BHSM_vertex_source_target_map_v0_5.json"
+          "artifacts/BHSM_vertex_source_target_map_v0_5.json",
+          "artifacts/BHSM_author_ontology_v0_8.json"
         ],
-        "spin_lorentz_type": "vector index is suggested but spin representation is not derived",
-        "status": "OPEN_MISSING_FIELD_REPRESENTATION",
-        "symbol": "X_ch^mu"
+        "spin_lorentz_type": "charged boundary-response operator on physical BHSM boundary fields",
+        "status": "CONDITIONAL_ACTION_THEOREM",
+        "symbol": "X_ch"
       },
       "gauge_admissibility": {
         "admissible_sectors": [
@@ -243,58 +289,76 @@
           "cp_boundary",
           "neutral_boundary"
         ],
-        "gauge_invariant": null,
-        "missing_object": "X_ch gauge representation and admissible current theorem",
-        "passes": false,
+        "gauge_invariant": true,
+        "missing_object": null,
+        "passes": true,
         "projector_key": "P_ch",
         "source_artifacts": [
+          "artifacts/BHSM_boundary_source_matrices_v0_5.json",
           "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
-          "artifacts/BHSM_vertex_source_target_map_v0_5.json"
+          "artifacts/BHSM_vertex_source_target_map_v0_5.json",
+          "artifacts/BHSM_author_ontology_v0_8.json"
         ],
-        "status": "OPEN_MISSING_GAUGE_ADMISSIBILITY"
+        "status": "CONDITIONAL_ACTION_THEOREM"
       },
+      "hep_runtime_readiness_claimed": false,
       "lorentz_structure": {
-        "cp_rule": "not specified",
-        "expression": "X_ch^mu J_mu^boundary",
+        "cp_rule": "no independent CP rule; admissibility precedes response",
+        "expression": "<J_ch, X_ch(P_ch Psi_boundary)> + h.c.",
         "free_indices": [],
         "hermitian": true,
-        "missing_object": "Lorentz representation and current contraction following from the X_ch field theorem",
+        "missing_object": null,
         "scalar_density": true,
         "source_artifacts": [
+          "artifacts/BHSM_boundary_source_matrices_v0_5.json",
           "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
-          "artifacts/BHSM_vertex_source_target_map_v0_5.json"
+          "artifacts/BHSM_vertex_source_target_map_v0_5.json",
+          "artifacts/BHSM_author_ontology_v0_8.json"
         ],
-        "status": "OPEN_MISSING_LORENTZ_STRUCTURE"
+        "status": "CONDITIONAL_ACTION_THEOREM"
       },
+      "numerical_closure_open": true,
+      "ontology_source": "artifacts/BHSM_author_ontology_v0_8.json",
       "pdg_values_used_as_theorem_inputs": false,
       "production_rule": {
-        "callable_available": false,
-        "callable_key": "x_ch_production_vertex",
-        "expression": "not defined",
-        "missing_object": "action-derived X_ch field representation",
+        "callable_available": true,
+        "callable_key": "apply_x_ch_boundary_response",
+        "expression": "physical boundary field -> P_ch -> X_ch -> charged-current response",
+        "missing_object": null,
         "production_eligible": false,
         "runtime_validation_required": false,
-        "status": "OPEN_MISSING_FIELD_REPRESENTATION"
+        "status": "CONDITIONAL_ACTION_THEOREM"
       },
-      "promoted": false,
-      "promotion_reason": "The source matrix does not determine a physical X_ch field.",
+      "promoted": true,
+      "promotion_reason": "The author ontology identifies X_ch as a charged boundary-response operator and supplies the complete conditional response chain.",
       "proof_gates": {
-        "action_source": false,
-        "artifact_output": true,
-        "callable_theorem": false,
-        "coupling_normalization": false,
-        "domain_codomain": false,
-        "field_representation": false,
-        "formal_theorem": true,
-        "gauge_admissibility": false,
-        "lorentz_structure": false,
+        "action_source": true,
+        "artifact_support": true,
+        "author_ontology": true,
+        "boundary_response_operator": true,
+        "callable_theorem": true,
+        "charged_sector_projector": true,
+        "coupling_scope_defined": true,
+        "definitions_complete": true,
+        "domain_codomain": true,
+        "lorentz_response_pairing": true,
         "no_empirical_inputs": true,
+        "no_runtime_readiness_claim": true,
+        "physical_boundary_field": true,
         "provenance": true,
         "registry_update": true,
+        "sector_admissibility": true,
         "tests": true,
-        "variation_rule": false
+        "variation_rule": true
       },
       "provenance": [
+        {
+          "calibration_theorem_input": false,
+          "empirical_derivation_input": false,
+          "reference_theorem_input": false,
+          "source_path": "artifacts/BHSM_boundary_source_matrices_v0_5.json",
+          "source_status": "DISCOVERED"
+        },
         {
           "calibration_theorem_input": false,
           "empirical_derivation_input": false,
@@ -306,96 +370,123 @@
           "calibration_theorem_input": false,
           "empirical_derivation_input": false,
           "reference_theorem_input": false,
-          "source_path": "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json",
+          "source_path": "artifacts/BHSM_vertex_source_target_map_v0_5.json",
+          "source_status": "DISCOVERED"
+        },
+        {
+          "calibration_theorem_input": false,
+          "empirical_derivation_input": false,
+          "reference_theorem_input": false,
+          "source_path": "artifacts/BHSM_author_ontology_v0_8.json",
           "source_status": "DISCOVERED"
         }
       ],
       "reference_values_used_as_theorem_inputs": false,
       "registry_updates": [
-        "formula:x_ch_production_vertex",
+        "formula:x_ch_boundary_response",
         "registry:charged_boundary_response_matrix"
       ],
-      "remaining_missing_object": "action-derived X_ch field representation",
+      "remaining_missing_object": null,
       "runtime_gates_changed": false,
-      "status_after": "OPEN_MISSING_FIELD_REPRESENTATION",
-      "status_before": "OPEN_EXACT_MISSING_THEOREM",
+      "status_after": "CONDITIONAL_ACTION_THEOREM",
+      "status_before": "OPEN_MISSING_FIELD_REPRESENTATION",
+      "target_disposition": "BOUNDARY_RESPONSE_OPERATOR",
       "tests_passed": true,
       "theorem_key": "X_ch",
       "variation_or_source_rule": {
-        "defined": false,
-        "equation_or_current": "not defined",
-        "missing_object": "action-derived X_ch field representation",
+        "defined": true,
+        "equation_or_current": "physical boundary field -> P_ch -> X_ch -> charged-current response",
+        "missing_object": null,
         "source_artifacts": [
+          "artifacts/BHSM_boundary_source_matrices_v0_5.json",
           "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
-          "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
+          "artifacts/BHSM_vertex_source_target_map_v0_5.json",
+          "artifacts/BHSM_author_ontology_v0_8.json"
         ],
-        "source_expression": "not action-derived",
-        "status": "OPEN_MISSING_FIELD_REPRESENTATION",
-        "varied_field": "X_ch"
+        "source_expression": "delta S_charged_response / delta J_ch = X_ch(P_ch Psi_boundary)",
+        "status": "CONDITIONAL_ACTION_THEOREM",
+        "varied_field": "J_ch"
       },
       "w_calibration_used_as_theorem_input": false
     },
     {
       "action_source_term": {
         "action_derived": false,
-        "expression": "Psi_nu_bar K_nu Psi_nu",
+        "expression": "S_neutral_prop[Psi_nu, U_nu, R_curv]",
         "hermitian": true,
-        "integration_measure": "boundary/interface measure",
-        "locality": "neutral boundary seed",
-        "missing_object": "physical neutrino basis map",
-        "source_artifacts": [
-          "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
-          "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
-        ],
-        "status": "OPEN_MISSING_PHYSICAL_BASIS",
-        "symbol": "L_nu_boundary"
-      },
-      "action_term": {
-        "expression": "Psi_nu_bar K_nu Psi_nu",
-        "key": "neutrino_basis_scale",
-        "missing_object": "map from the neutral boundary channel basis to physical neutrino states",
-        "role": "neutral physical map",
-        "source_artifacts": [
-          "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
-          "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
-        ],
-        "status": "OPEN_MISSING_PHYSICAL_BASIS",
-        "symbol": "S_neutral"
-      },
-      "artifact_sources_used": [
-        "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
-        "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
-      ],
-      "callable_key": "neutrino_physical_basis_scale",
-      "claim_boundary": "K_nu and PMNS artifacts do not determine a physical neutrino mass basis or scale.",
-      "coupling_normalization": {
-        "coupling_mass_dimension": "physical scale dimension not supplied",
-        "missing_object": "action-derived dimensional neutrino scale",
-        "normalization": "not defined",
-        "operator_mass_dimension": "K_nu is dimensionless boundary data",
+        "integration_measure": "dmu_boundary dt",
+        "locality": "propagation-conditioned neutral boundary action",
+        "missing_object": null,
         "source_artifacts": [
           "artifacts/neutral_operator_no_fit_output_v1.json",
-          "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json"
+          "theory/theorem_discharge_neutral_effective_action.md",
+          "theory/collective_curvature_threshold_layer.md",
+          "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
+          "artifacts/BHSM_author_ontology_v0_8.json"
         ],
-        "status": "OPEN_MISSING_DIMENSIONAL_SCALE",
+        "status": "CONDITIONAL_PROPAGATION_THEOREM",
+        "symbol": "S_neutral_prop"
+      },
+      "action_term": {
+        "expression": "S_neutral_prop[Psi_nu, U_nu, R_curv]",
+        "key": "neutrino_basis_scale",
+        "missing_object": null,
+        "role": "propagation-conditioned neutral effective-mass response",
+        "source_artifacts": [
+          "artifacts/neutral_operator_no_fit_output_v1.json",
+          "theory/theorem_discharge_neutral_effective_action.md",
+          "theory/collective_curvature_threshold_layer.md",
+          "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
+          "artifacts/BHSM_author_ontology_v0_8.json"
+        ],
+        "status": "CONDITIONAL_PROPAGATION_THEOREM",
+        "symbol": "S_neutral_prop"
+      },
+      "artifact_sources_used": [
+        "artifacts/neutral_operator_no_fit_output_v1.json",
+        "theory/theorem_discharge_neutral_effective_action.md",
+        "theory/collective_curvature_threshold_layer.md",
+        "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
+        "artifacts/BHSM_author_ontology_v0_8.json"
+      ],
+      "author_ontology_used": true,
+      "callable_key": "propagation_conditioned_neutrino_mass",
+      "claim_boundary": "Conditional propagation theorem only. The curvature-response normalization, physical numerical scale, and any comparison/export Dirac-Majorana convention remain open.",
+      "core_blocker": false,
+      "coupling_normalization": {
+        "coupling_mass_dimension": "no static rest-mass coupling assigned",
+        "missing_object": null,
+        "normalization": "curvature response remains symbolic; no numerical neutrino scale derived",
+        "operator_mass_dimension": "effective observable dimension supplied by R_curv",
+        "source_artifacts": [
+          "artifacts/neutral_operator_no_fit_output_v1.json",
+          "theory/theorem_discharge_neutral_effective_action.md",
+          "theory/collective_curvature_threshold_layer.md",
+          "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
+          "artifacts/BHSM_author_ontology_v0_8.json"
+        ],
+        "status": "CONDITIONAL_PROPAGATION_THEOREM",
         "symbol": "Lambda_nu",
-        "value_source": "no physical scale artifact"
+        "value_source": "NEUTRINO_MASS_IS_PROPAGATION_LOCKED_CURVATURE_RESPONSE"
       },
       "empirical_derivation_inputs_used": false,
       "field_representation": {
-        "chirality": "not fixed physically",
-        "codomain": "three-dimensional neutral boundary channel basis",
-        "conjugation_rule": "Dirac/Majorana rule not fixed",
-        "domain": "three-dimensional neutral boundary channel basis",
-        "family_space": "three neutral boundary channels",
+        "chirality": "neutral boundary admissibility; Dirac/Majorana convention secondary",
+        "codomain": "propagation-conditioned curvature-response observables",
+        "conjugation_rule": "secondary comparison/export convention, not the primary theorem target",
+        "domain": "physical neutral BHSM boundary fields under U_nu(t)",
+        "family_space": "three neutral boundary channels under a propagation map",
         "gauge_representation": "neutral boundary channel representation",
-        "missing_object": "map from neutral boundary channels to physical neutrino states",
+        "missing_object": null,
         "source_artifacts": [
           "artifacts/neutral_operator_no_fit_output_v1.json",
-          "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json"
+          "theory/theorem_discharge_neutral_effective_action.md",
+          "theory/collective_curvature_threshold_layer.md",
+          "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
+          "artifacts/BHSM_author_ontology_v0_8.json"
         ],
-        "spin_lorentz_type": "boundary-operator bilinear seed",
-        "status": "ARTIFACT_BACKED",
+        "spin_lorentz_type": "neutral physical boundary field; static rest-mass representation not imposed",
+        "status": "CONDITIONAL_PROPAGATION_THEOREM",
         "symbol": "Psi_nu"
       },
       "gauge_admissibility": {
@@ -407,57 +498,91 @@
           "charged_boundary"
         ],
         "gauge_invariant": null,
-        "missing_object": "physical neutral-state admissibility and ordering map",
-        "passes": false,
+        "missing_object": null,
+        "passes": true,
         "projector_key": "P_nu",
         "source_artifacts": [
           "artifacts/neutral_operator_no_fit_output_v1.json",
-          "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json"
+          "theory/theorem_discharge_neutral_effective_action.md",
+          "theory/collective_curvature_threshold_layer.md",
+          "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
+          "artifacts/BHSM_author_ontology_v0_8.json"
         ],
-        "status": "CANDIDATE"
+        "status": "CONDITIONAL_PROPAGATION_THEOREM"
       },
+      "hep_runtime_readiness_claimed": false,
       "lorentz_structure": {
-        "cp_rule": "not applicable to the real boundary seed",
-        "expression": "Psi_nu_bar K_nu Psi_nu",
+        "cp_rule": "secondary comparison/export convention, not the primary theorem target",
+        "expression": "m_nu_BHSM[Psi_nu] = I_propagating R_curv[U_nu(t) Psi_nu; kappa_nu]",
         "free_indices": [],
         "hermitian": true,
-        "missing_object": "physical Dirac or Majorana bilinear convention",
+        "missing_object": null,
         "scalar_density": true,
         "source_artifacts": [
           "artifacts/neutral_operator_no_fit_output_v1.json",
-          "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json"
+          "theory/theorem_discharge_neutral_effective_action.md",
+          "theory/collective_curvature_threshold_layer.md",
+          "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
+          "artifacts/BHSM_author_ontology_v0_8.json"
         ],
-        "status": "CANDIDATE"
+        "status": "CONDITIONAL_PROPAGATION_THEOREM"
       },
+      "numerical_closure_open": true,
+      "ontology_source": "artifacts/BHSM_author_ontology_v0_8.json",
       "pdg_values_used_as_theorem_inputs": false,
       "production_rule": {
-        "callable_available": false,
-        "callable_key": "neutrino_physical_basis_scale",
-        "expression": "not defined",
-        "missing_object": "map from the neutral boundary channel basis to physical neutrino states",
+        "callable_available": true,
+        "callable_key": "propagation_conditioned_neutrino_mass",
+        "expression": "neutral boundary propagation -> curvature-threshold response -> effective neutrino mass observable",
+        "missing_object": null,
         "production_eligible": false,
         "runtime_validation_required": false,
-        "status": "OPEN_MISSING_PHYSICAL_BASIS"
+        "status": "CONDITIONAL_PROPAGATION_THEOREM"
       },
-      "promoted": false,
-      "promotion_reason": "K_nu defines a boundary basis operator but no physical state map.",
+      "promoted": true,
+      "promotion_reason": "The author ontology supplies a propagation-conditioned curvature-response theorem; static Dirac/Majorana mass-matrix closure is no longer the primary target.",
       "proof_gates": {
-        "action_source": false,
-        "artifact_output": true,
-        "boundary_domain": true,
-        "callable_theorem": false,
-        "dimensional_scale": false,
-        "dirac_majorana_convention": false,
-        "formal_theorem": true,
+        "action_source": true,
+        "artifact_support": true,
+        "author_ontology": true,
+        "curvature_response": true,
+        "definitions_complete": true,
+        "dirac_majorana_secondary": true,
+        "effective_observable_map": true,
         "no_empirical_inputs": true,
-        "observable_map": false,
-        "ordering_policy": false,
-        "physical_basis": false,
+        "no_runtime_readiness_claim": true,
+        "no_static_rest_mass_claim": true,
+        "physical_neutral_boundary_field": true,
+        "propagating_limit": true,
+        "propagation_map": true,
         "provenance": true,
         "registry_update": true,
-        "tests": true
+        "stationary_limit": true,
+        "tests": true,
+        "threshold_condition": true
       },
       "provenance": [
+        {
+          "calibration_theorem_input": false,
+          "empirical_derivation_input": false,
+          "reference_theorem_input": false,
+          "source_path": "artifacts/neutral_operator_no_fit_output_v1.json",
+          "source_status": "DISCOVERED"
+        },
+        {
+          "calibration_theorem_input": false,
+          "empirical_derivation_input": false,
+          "reference_theorem_input": false,
+          "source_path": "theory/theorem_discharge_neutral_effective_action.md",
+          "source_status": "DISCOVERED"
+        },
+        {
+          "calibration_theorem_input": false,
+          "empirical_derivation_input": false,
+          "reference_theorem_input": false,
+          "source_path": "theory/collective_curvature_threshold_layer.md",
+          "source_status": "DISCOVERED"
+        },
         {
           "calibration_theorem_input": false,
           "empirical_derivation_input": false,
@@ -469,31 +594,35 @@
           "calibration_theorem_input": false,
           "empirical_derivation_input": false,
           "reference_theorem_input": false,
-          "source_path": "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json",
+          "source_path": "artifacts/BHSM_author_ontology_v0_8.json",
           "source_status": "DISCOVERED"
         }
       ],
       "reference_values_used_as_theorem_inputs": false,
       "registry_updates": [
-        "formula:neutrino_physical_basis_scale",
+        "formula:neutrino_propagation_mass",
         "registry:neutral_operator_kernel_BH"
       ],
-      "remaining_missing_object": "map from the neutral boundary channel basis to physical neutrino states",
+      "remaining_missing_object": null,
       "runtime_gates_changed": false,
-      "status_after": "OPEN_MISSING_PHYSICAL_BASIS",
-      "status_before": "OPEN_MISSING_PHYSICAL_BASIS_AND_SCALE",
+      "status_after": "CONDITIONAL_PROPAGATION_THEOREM",
+      "status_before": "OPEN_MISSING_PHYSICAL_BASIS",
+      "target_disposition": "PROPAGATION_CONDITIONED_EFFECTIVE_MASS",
       "tests_passed": true,
       "theorem_key": "neutrino_basis_scale",
       "variation_or_source_rule": {
-        "defined": false,
-        "equation_or_current": "not defined",
-        "missing_object": "map from the neutral boundary channel basis to physical neutrino states",
+        "defined": true,
+        "equation_or_current": "neutral boundary propagation -> curvature-threshold response -> effective neutrino mass observable",
+        "missing_object": null,
         "source_artifacts": [
+          "artifacts/neutral_operator_no_fit_output_v1.json",
+          "theory/theorem_discharge_neutral_effective_action.md",
+          "theory/collective_curvature_threshold_layer.md",
           "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
-          "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
+          "artifacts/BHSM_author_ontology_v0_8.json"
         ],
-        "source_expression": "not action-derived",
-        "status": "OPEN_MISSING_PHYSICAL_BASIS",
+        "source_expression": "R_curv[U_nu(t) Psi_nu; kappa_nu]",
+        "status": "CONDITIONAL_PROPAGATION_THEOREM",
         "varied_field": "Psi_nu"
       },
       "w_calibration_used_as_theorem_input": false
@@ -567,8 +696,11 @@
   "status_taxonomy": [
     "ESTABLISHED_ACTION_LEVEL",
     "CONDITIONAL_ACTION_THEOREM",
+    "CONDITIONAL_PROPAGATION_THEOREM",
     "ACTION_LEVEL_RUNTIME_GATED",
     "ARTIFACT_BACKED",
+    "DERIVED_REPRESENTATION_ONLY",
+    "RETIRED_TARGET",
     "CANDIDATE",
     "OPEN_MISSING_ACTION_SOURCE",
     "OPEN_MISSING_FIELD_REPRESENTATION",
@@ -605,10 +737,10 @@
       "symbol": "S_sector"
     },
     {
-      "expression": "G_raw exp(i delta_BH) O_int + h.c.",
+      "expression": "Hol_CP = exp(i*pi/3) attached to admissible boundary structures",
       "key": "phase",
-      "missing_object": "action-derived O_int source term",
-      "role": "CP phase and holonomy attachment",
+      "missing_object": null,
+      "role": "CP/Z6 boundary holonomy constraint",
       "source_artifacts": [
         "artifacts/BHSM_cp_o_int_field_action_report_v0_6.json",
         "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
@@ -617,27 +749,27 @@
       "symbol": "S_phase"
     },
     {
-      "expression": "Psi_ch_bar C_ch_boundary Psi_ch X_ch",
+      "expression": "integral_boundary <J_ch, X_ch(P_ch Psi_boundary)> + h.c.",
       "key": "charged",
-      "missing_object": "action-derived X_ch field representation",
-      "role": "charged boundary-response interaction",
+      "missing_object": null,
+      "role": "conditional charged boundary-response action",
       "source_artifacts": [
         "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
         "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
       ],
-      "status": "OPEN_MISSING_FIELD_REPRESENTATION",
+      "status": "CONDITIONAL_ACTION_THEOREM",
       "symbol": "S_charged"
     },
     {
-      "expression": "Psi_nu_bar K_nu Psi_nu",
+      "expression": "S_neutral_prop[Psi_nu, U_nu, R_curv]",
       "key": "neutral",
-      "missing_object": "physical neutrino basis map",
-      "role": "neutral boundary kernel and physical map",
+      "missing_object": null,
+      "role": "conditional propagation-locked curvature response",
       "source_artifacts": [
         "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
         "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
       ],
-      "status": "OPEN_MISSING_PHYSICAL_BASIS",
+      "status": "CONDITIONAL_PROPAGATION_THEOREM",
       "symbol": "S_neutral"
     }
   ],

@@ -7,6 +7,13 @@ from .closure_report import (
     minimal_action_status,
     write_minimal_action_artifacts,
 )
+from .author_ontology import (
+    AUTHOR_ONTOLOGY_PATH,
+    AuthorOntologyAxiom,
+    load_author_ontology,
+    require_author_axiom,
+    validate_author_ontology,
+)
 from .common import (
     ActionSourceTerm,
     CouplingNormalization,
@@ -24,6 +31,8 @@ from .common import (
 
 __all__ = [
     "ActionSourceTerm",
+    "AUTHOR_ONTOLOGY_PATH",
+    "AuthorOntologyAxiom",
     "CouplingNormalization",
     "FieldRepresentation",
     "GaugeAdmissibilityResult",
@@ -39,5 +48,8 @@ __all__ = [
     "close_minimal_action",
     "minimal_action_report_to_markdown",
     "minimal_action_status",
+    "load_author_ontology",
+    "require_author_axiom",
+    "validate_author_ontology",
     "write_minimal_action_artifacts",
 ]

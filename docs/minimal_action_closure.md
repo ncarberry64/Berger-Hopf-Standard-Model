@@ -1,23 +1,26 @@
 # BHSM Minimal Action Closure
 
-The v0.8 evaluator tests the local candidate
+The v0.8 evaluator uses
+`artifacts/BHSM_author_ontology_v0_8.json` as its controlling theory
+dictionary. BHSM modes are physical boundary-local fields; sector projectors
+act on those fields to select admissible couplings and responses.
 
 ```text
 S_BHSM,min = S_boundary + S_sector + S_phase + S_charged + S_neutral
 ```
 
-against the action-level proof gates for the three remaining interface
-theorems. It reads repository artifacts only.
-
-| Theorem | Result | First missing object |
+| Target | Result | Scope |
 | --- | --- | --- |
-| CP `O_int` | `OPEN_MISSING_ACTION_SOURCE` | Action-derived source with normalized coupling, measure, variation, and production rule |
-| `X_ch` | `OPEN_MISSING_FIELD_REPRESENTATION` | Action-derived `X_ch` field representation |
-| Neutrino basis/scale | `OPEN_MISSING_PHYSICAL_BASIS` | Map from neutral boundary channels to physical neutrino states |
+| CP/Z6 holonomy | `ARTIFACT_BACKED` | Holonomy and CKM/PMNS phase attachment are supported by local no-fit artifacts |
+| Standalone CP `O_int` vertex | `RETIRED_TARGET` | Not required by the controlling ontology and not production eligible |
+| `X_ch` | `CONDITIONAL_ACTION_THEOREM` | Physical boundary field -> `P_ch` -> `X_ch` -> charged-current response |
+| Neutrino BHSM mass | `CONDITIONAL_PROPAGATION_THEOREM` | Neutral propagation -> curvature-threshold response -> effective mass observable |
 
-No theorem is promoted. The disabled author-axiom template records the exact
-inputs that could produce a conditional theorem without silently assuming
-them. Runtime gates and frozen predictions are unchanged.
+The X_ch and neutrino results follow from the author ontology plus local
+boundary-source artifacts; they are not established by the older artifacts
+alone. Numerical X_ch normalization and numerical neutrino curvature response
+remain open. Dirac/Majorana convention is secondary to the propagation theorem.
+No FeynRules, UFO, MadGraph, or empirical-validation status changes.
 
 ```bash
 python -m bhsm.interface minimal-action-status

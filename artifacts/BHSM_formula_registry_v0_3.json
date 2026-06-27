@@ -4,7 +4,12 @@
     "ckm_matrix_from_artifact",
     "cp_phase_from_artifact",
     "mass_ratios_from_artifact",
+    "neutral_kernel_from_artifact",
     "pmns_matrix_from_artifact"
+  ],
+  "available_author_supplied_conditional": [
+    "charged_response_from_artifact",
+    "neutrino_physical_basis_scale"
   ],
   "available_interface_default": [
     "hyperspherical_default_metric",
@@ -34,22 +39,27 @@
       "theorem_status": "ARTIFACT_AVAILABLE_NOT_THEOREM_PROMOTION"
     },
     {
-      "callable_path": null,
-      "claim_boundary": "X_ch remains open at its action-derived field representation.",
-      "description": "Production charged-response callable.",
-      "display_name": "Charged response",
+      "callable_path": "bhsm.interface.minimal_action.x_ch_closure.apply_x_ch_boundary_response",
+      "claim_boundary": "Conditional boundary-response theorem only; no standalone production-field claim.",
+      "description": "Ontology-defined charged boundary-response callable.",
+      "display_name": "Charged boundary response",
       "formula_key": "charged_response_from_artifact",
-      "input_schema": {},
+      "input_schema": {
+        "boundary_field": "string"
+      },
       "notes": [],
-      "output_schema": {},
-      "safe_for_default_report": false,
+      "output_schema": {
+        "type": "boundary_response_chain"
+      },
+      "safe_for_default_report": true,
       "source_artifacts": [
         "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
-        "artifacts/BHSM_x_ch_minimal_action_closure_v0_8.json"
+        "artifacts/BHSM_x_ch_minimal_action_closure_v0_8.json",
+        "artifacts/BHSM_author_ontology_v0_8.json"
       ],
-      "source_type": "theorem blocker",
-      "status": "OPEN_THEOREM_REQUIRED",
-      "theorem_status": "OPEN_MISSING_FIELD_REPRESENTATION"
+      "source_type": "author ontology plus local boundary source",
+      "status": "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL",
+      "theorem_status": "CONDITIONAL_ACTION_THEOREM"
     },
     {
       "callable_path": "bhsm.interface.matrix_adapters.load_ckm_matrix_artifact",
@@ -72,8 +82,8 @@
     },
     {
       "callable_path": null,
-      "claim_boundary": "The symbolic candidate remains open at its action-derived source and variation.",
-      "description": "Standalone production CP attachment callable.",
+      "claim_boundary": "CP is represented by the artifact-backed Z6 holonomy constraint; no standalone production vertex is required.",
+      "description": "Retired standalone production target.",
       "display_name": "Standalone CP O_int attachment",
       "formula_key": "cp_o_int_standalone_attachment",
       "input_schema": {},
@@ -81,15 +91,13 @@
       "output_schema": {},
       "safe_for_default_report": false,
       "source_artifacts": [
-        "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json",
-        "artifacts/BHSM_cp_o_int_theorem_closure_attempt_v0_4.json",
-        "artifacts/BHSM_cp_o_int_attachment_report_v0_5.json",
-        "artifacts/BHSM_cp_o_int_field_action_report_v0_6.json",
-        "artifacts/BHSM_cp_o_int_minimal_action_closure_v0_8.json"
+        "artifacts/CP_no_fit_holonomy_output_v1.json",
+        "artifacts/BHSM_cp_o_int_minimal_action_closure_v0_8.json",
+        "artifacts/BHSM_author_ontology_v0_8.json"
       ],
-      "source_type": "theorem blocker",
-      "status": "OPEN_THEOREM_REQUIRED",
-      "theorem_status": "OPEN_MISSING_ACTION_SOURCE"
+      "source_type": "author ontology",
+      "status": "RETIRED_TARGET",
+      "theorem_status": "RETIRED_TARGET"
     },
     {
       "callable_path": "bhsm.interface.matrix_adapters.load_cp_phase_artifact",
@@ -169,38 +177,44 @@
     },
     {
       "callable_path": null,
-      "claim_boundary": "The boundary seed does not close the physical neutrino basis/scale theorem.",
-      "description": "Physical neutrino basis and scale callable.",
-      "display_name": "Physical neutral kernel",
+      "claim_boundary": "K_nu is a boundary seed, not a static physical mass matrix.",
+      "description": "Loadable neutral boundary seed; physical observable is propagation conditioned.",
+      "display_name": "Neutral boundary kernel",
       "formula_key": "neutral_kernel_from_artifact",
       "input_schema": {},
       "notes": [],
       "output_schema": {},
-      "safe_for_default_report": false,
+      "safe_for_default_report": true,
       "source_artifacts": [
-        "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json"
+        "artifacts/neutral_operator_no_fit_output_v1.json"
       ],
-      "source_type": "theorem blocker",
-      "status": "OPEN_THEOREM_REQUIRED",
-      "theorem_status": "OPEN_EXACT_MISSING_THEOREM"
+      "source_type": "local BHSM artifact",
+      "status": "AVAILABLE_ARTIFACT_BACKED",
+      "theorem_status": "ARTIFACT_BACKED_BOUNDARY_SEED"
     },
     {
-      "callable_path": null,
-      "claim_boundary": "The neutral seed remains open at the physical basis map.",
-      "description": "Physical neutral-sector interpretation callable.",
-      "display_name": "Neutrino physical basis/scale",
+      "callable_path": "bhsm.interface.minimal_action.neutrino_basis_closure.propagation_conditioned_neutrino_mass",
+      "claim_boundary": "Structural propagation theorem only; numerical curvature scale remains open.",
+      "description": "Propagation-conditioned curvature-response callable.",
+      "display_name": "Neutrino propagation-mass response",
       "formula_key": "neutrino_physical_basis_scale",
-      "input_schema": {},
+      "input_schema": {
+        "curvature_response": "value",
+        "propagating": "bool",
+        "threshold_met": "bool"
+      },
       "notes": [],
-      "output_schema": {},
-      "safe_for_default_report": false,
+      "output_schema": {
+        "type": "effective_mass_response"
+      },
+      "safe_for_default_report": true,
       "source_artifacts": [
-        "artifacts/BHSM_neutrino_basis_scale_theorem_closure_attempt_v0_4.json",
-        "artifacts/BHSM_neutrino_basis_scale_minimal_action_closure_v0_8.json"
+        "artifacts/BHSM_neutrino_basis_scale_minimal_action_closure_v0_8.json",
+        "artifacts/BHSM_author_ontology_v0_8.json"
       ],
-      "source_type": "theorem blocker",
-      "status": "OPEN_THEOREM_REQUIRED",
-      "theorem_status": "OPEN_MISSING_PHYSICAL_BASIS"
+      "source_type": "author ontology plus neutral boundary seed",
+      "status": "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL",
+      "theorem_status": "CONDITIONAL_PROPAGATION_THEOREM"
     },
     {
       "callable_path": "bhsm.interface.matrix_adapters.load_pmns_matrix_artifact",
@@ -223,8 +237,8 @@
     },
     {
       "callable_path": null,
-      "claim_boundary": "X_ch remains open at its action-derived field representation.",
-      "description": "Production vertex callable.",
+      "claim_boundary": "X_ch is modeled as a charged boundary-response operator, not a standalone production field.",
+      "description": "Retired standalone production-field target.",
       "display_name": "X_ch production vertex",
       "formula_key": "x_ch_production_vertex",
       "input_schema": {},
@@ -232,21 +246,18 @@
       "output_schema": {},
       "safe_for_default_report": false,
       "source_artifacts": [
-        "artifacts/BHSM_x_ch_theorem_closure_attempt_v0_4.json",
-        "artifacts/BHSM_x_ch_minimal_action_closure_v0_8.json"
+        "artifacts/BHSM_author_ontology_v0_8.json"
       ],
-      "source_type": "theorem blocker",
-      "status": "OPEN_THEOREM_REQUIRED",
-      "theorem_status": "OPEN_MISSING_FIELD_REPRESENTATION"
+      "source_type": "author ontology",
+      "status": "RETIRED_TARGET",
+      "theorem_status": "RETIRED_TARGET"
     }
   ],
-  "open_theorem_required": [
-    "charged_response_from_artifact",
+  "open_theorem_required": [],
+  "registry_name": "BHSM Formula Registry",
+  "retired_targets": [
     "cp_o_int_standalone_attachment",
-    "neutral_kernel_from_artifact",
-    "neutrino_physical_basis_scale",
     "x_ch_production_vertex"
   ],
-  "registry_name": "BHSM Formula Registry",
   "version": "0.3"
 }

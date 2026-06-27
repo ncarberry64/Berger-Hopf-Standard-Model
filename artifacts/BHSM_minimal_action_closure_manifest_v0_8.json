@@ -8,8 +8,11 @@
     "artifacts/BHSM_x_ch_minimal_action_closure_v0_8.json",
     "artifacts/BHSM_neutrino_basis_scale_minimal_action_closure_v0_8.json",
     "artifacts/BHSM_minimal_action_registry_updates_v0_8.json",
-    "artifacts/BHSM_minimal_action_claim_policy_v0_8.json"
+    "artifacts/BHSM_minimal_action_claim_policy_v0_8.json",
+    "artifacts/BHSM_author_ontology_v0_8.json"
   ],
+  "author_ontology": "artifacts/BHSM_author_ontology_v0_8.json",
+  "author_ontology_status": "DISCOVERED",
   "axiom_template": "data/theorem_inputs/minimal_action_axioms_template.json",
   "axiom_template_enabled": false,
   "empirical_derivation_inputs_used": false,
@@ -18,18 +21,24 @@
   "internet_required": false,
   "pdg_values_used_as_theorem_inputs": false,
   "production_physics_model_logic_changed": false,
-  "promotions": [],
+  "promotions": [
+    "X_ch",
+    "neutrino_basis_scale"
+  ],
   "reference_values_used_as_theorem_inputs": false,
   "results": {
-    "X_ch": "OPEN_MISSING_FIELD_REPRESENTATION",
-    "cp_o_int": "OPEN_MISSING_ACTION_SOURCE",
-    "neutrino_basis_scale": "OPEN_MISSING_PHYSICAL_BASIS"
+    "X_ch": "CONDITIONAL_ACTION_THEOREM",
+    "cp_o_int": "ARTIFACT_BACKED",
+    "neutrino_basis_scale": "CONDITIONAL_PROPAGATION_THEOREM"
   },
   "status_taxonomy": [
     "ESTABLISHED_ACTION_LEVEL",
     "CONDITIONAL_ACTION_THEOREM",
+    "CONDITIONAL_PROPAGATION_THEOREM",
     "ACTION_LEVEL_RUNTIME_GATED",
     "ARTIFACT_BACKED",
+    "DERIVED_REPRESENTATION_ONLY",
+    "RETIRED_TARGET",
     "CANDIDATE",
     "OPEN_MISSING_ACTION_SOURCE",
     "OPEN_MISSING_FIELD_REPRESENTATION",

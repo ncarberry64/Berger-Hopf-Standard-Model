@@ -20,11 +20,20 @@ def test_minimal_action_has_five_terms_and_three_orthogonal_projectors() -> None
     assert all(row.rank == 1 and sum(row.diagonal) == 1 for row in report.sector_projectors)
 
 
-def test_statuses_use_clean_taxonomy_and_one_missing_object() -> None:
+def test_statuses_use_clean_taxonomy_and_author_ontology_boundaries() -> None:
     report = build_minimal_action_report()
     assert all(row.status_after in STATUS_TAXONOMY for row in report.results)
-    assert all(not row.promoted for row in report.results)
-    assert all(row.remaining_missing_object for row in report.results)
+    assert {row.theorem_key: row.status_after for row in report.results} == {
+        "cp_o_int": "ARTIFACT_BACKED",
+        "X_ch": "CONDITIONAL_ACTION_THEOREM",
+        "neutrino_basis_scale": "CONDITIONAL_PROPAGATION_THEOREM",
+    }
+    assert {row.theorem_key for row in report.results if row.promoted} == {
+        "X_ch", "neutrino_basis_scale"
+    }
+    assert not any(row.core_blocker for row in report.results)
+    assert all(row.remaining_missing_object is None for row in report.results)
+    assert all(row.author_ontology_used for row in report.results)
     assert not report.empirical_derivation_inputs_used
     assert not report.internet_required
     assert not report.external_hep_tools_required
@@ -41,7 +50,7 @@ def test_author_axiom_template_is_disabled_and_bounded() -> None:
     assert parsed["author_supplied"] is True
 
 
-def test_incomplete_enabled_axiom_cannot_promote() -> None:
+def test_inline_legacy_axiom_cannot_override_controlling_ontology() -> None:
     payload = {
         "axioms": [{
             "axiom_key": "INCOMPLETE",
@@ -53,5 +62,6 @@ def test_incomplete_enabled_axiom_cannot_promote() -> None:
         }]
     }
     result = close_minimal_action("cp_o_int", axioms=payload)
-    assert result.status_after == "OPEN_MISSING_ACTION_SOURCE"
+    assert result.status_after == "ARTIFACT_BACKED"
     assert result.promoted is False
+    assert result.target_disposition == "RETIRED_TARGET"

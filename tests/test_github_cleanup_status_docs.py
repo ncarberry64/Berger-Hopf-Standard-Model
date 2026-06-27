@@ -51,17 +51,17 @@ def test_status_has_required_areas_and_clean_taxonomy() -> None:
         "Mass ratios",
         "W calibration policy",
         "Electron-neutrino comparison policy",
-        "CP O_int",
-        "X_ch",
-        "Neutrino physical basis/scale",
+        "Standalone CP O_int",
+        "X_ch boundary response",
+        "Neutrino propagation mass",
         "FeynRules minimal model",
         "UFO export",
         "MadGraph smoke test",
     )
     assert all(row in status for row in required_rows)
-    assert "OPEN_MISSING_ACTION_SOURCE" in status
-    assert "OPEN_MISSING_FIELD_REPRESENTATION" in status
-    assert "OPEN_MISSING_PHYSICAL_BASIS" in status
+    assert "RETIRED_TARGET" in status
+    assert "CONDITIONAL_ACTION_THEOREM" in status
+    assert "CONDITIONAL_PROPAGATION_THEOREM" in status
     assert "RUNTIME_GATED" in status
 
 

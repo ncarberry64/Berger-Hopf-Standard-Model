@@ -9,11 +9,14 @@ from typing import Any, Callable
 from .boundary_adapters import load_boundary_constants_artifact
 from .mass_ratio_adapters import load_mass_ratio_predictions_artifact
 from .matrix_adapters import load_ckm_matrix_artifact, load_cp_phase_artifact, load_pmns_matrix_artifact
+from .minimal_action.neutrino_basis_closure import propagation_conditioned_neutrino_mass
+from .minimal_action.x_ch_closure import apply_x_ch_boundary_response
 
 FORMULA_STATUSES = (
     "AVAILABLE_ARTIFACT_BACKED",
     "AVAILABLE_INTERFACE_DEFAULT",
     "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL",
+    "RETIRED_TARGET",
     "PLACEHOLDER_INTERFACE_ONLY",
     "CALLABLE_NOT_AVAILABLE",
     "OPEN_THEOREM_REQUIRED",
@@ -75,6 +78,8 @@ class FormulaRegistry:
             "formula_entries": rows,
             "available_artifact_backed": [row["formula_key"] for row in rows if row["status"] == "AVAILABLE_ARTIFACT_BACKED"],
             "available_interface_default": [row["formula_key"] for row in rows if row["status"] == "AVAILABLE_INTERFACE_DEFAULT"],
+            "available_author_supplied_conditional": [row["formula_key"] for row in rows if row["status"] == "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL"],
+            "retired_targets": [row["formula_key"] for row in rows if row["status"] == "RETIRED_TARGET"],
             "open_theorem_required": [row["formula_key"] for row in rows if row["status"] == "OPEN_THEOREM_REQUIRED"],
             "callable_not_available": [row["formula_key"] for row in rows if row["status"] == "CALLABLE_NOT_AVAILABLE"],
             "disabled_until_runtime_validated": [row["formula_key"] for row in rows if row["status"] == "DISABLED_UNTIL_RUNTIME_VALIDATED"],
@@ -115,11 +120,11 @@ def default_formula_registry(repository: str | Path | None = None) -> FormulaReg
         artifact_entry("mass_ratios_from_artifact", "Frozen mass ratios", "Load frozen BHSM charged-sector mass ratios.", load_mass_ratio_predictions_artifact, "theory/bhsm_v1_frozen_prediction_set.json"),
         FormulaCallableEntry("hyperspherical_default_metric", "Default interface metric", "Deterministic interface-default metric.", "bhsm.interface.geometry.HypersphericalGeometry.geometric_metric", {"geometry": "HypersphericalGeometry"}, {"type": "number"}, "AVAILABLE_INTERFACE_DEFAULT", "interface default", (), "PLACEHOLDER_UNTIL_BHSM_THEOREM_SUPPLIED", "Interface default formulas remain interface defaults unless a theorem-backed artifact or callable replaces them.", True),
         FormulaCallableEntry("hyperspherical_default_tension", "Default interface tension", "Deterministic interface-default tension.", "bhsm.interface.geometry.HypersphericalGeometry.geometric_tension", {"geometry": "HypersphericalGeometry"}, {"type": "number"}, "AVAILABLE_INTERFACE_DEFAULT", "interface default", (), "PLACEHOLDER_UNTIL_BHSM_THEOREM_SUPPLIED", "Interface default formulas remain interface defaults unless a theorem-backed artifact or callable replaces them.", True),
-        FormulaCallableEntry("charged_response_from_artifact", "Charged response", "Production charged-response callable.", None, {}, {}, "OPEN_THEOREM_REQUIRED", "theorem blocker", ("artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json", "artifacts/BHSM_x_ch_minimal_action_closure_v0_8.json"), "OPEN_MISSING_FIELD_REPRESENTATION", "X_ch remains open at its action-derived field representation.", False),
-        FormulaCallableEntry("neutral_kernel_from_artifact", "Physical neutral kernel", "Physical neutrino basis and scale callable.", None, {}, {}, "OPEN_THEOREM_REQUIRED", "theorem blocker", ("artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",), "OPEN_EXACT_MISSING_THEOREM", "The boundary seed does not close the physical neutrino basis/scale theorem.", False),
-        FormulaCallableEntry("x_ch_production_vertex", "X_ch production vertex", "Production vertex callable.", None, {}, {}, "OPEN_THEOREM_REQUIRED", "theorem blocker", ("artifacts/BHSM_x_ch_theorem_closure_attempt_v0_4.json", "artifacts/BHSM_x_ch_minimal_action_closure_v0_8.json"), "OPEN_MISSING_FIELD_REPRESENTATION", "X_ch remains open at its action-derived field representation.", False),
-        FormulaCallableEntry("neutrino_physical_basis_scale", "Neutrino physical basis/scale", "Physical neutral-sector interpretation callable.", None, {}, {}, "OPEN_THEOREM_REQUIRED", "theorem blocker", ("artifacts/BHSM_neutrino_basis_scale_theorem_closure_attempt_v0_4.json", "artifacts/BHSM_neutrino_basis_scale_minimal_action_closure_v0_8.json"), "OPEN_MISSING_PHYSICAL_BASIS", "The neutral seed remains open at the physical basis map.", False),
-        FormulaCallableEntry("cp_o_int_standalone_attachment", "Standalone CP O_int attachment", "Standalone production CP attachment callable.", None, {}, {}, "OPEN_THEOREM_REQUIRED", "theorem blocker", ("artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json", "artifacts/BHSM_cp_o_int_theorem_closure_attempt_v0_4.json", "artifacts/BHSM_cp_o_int_attachment_report_v0_5.json", "artifacts/BHSM_cp_o_int_field_action_report_v0_6.json", "artifacts/BHSM_cp_o_int_minimal_action_closure_v0_8.json"), "OPEN_MISSING_ACTION_SOURCE", "The symbolic candidate remains open at its action-derived source and variation.", False),
+        FormulaCallableEntry("charged_response_from_artifact", "Charged boundary response", "Ontology-defined charged boundary-response callable.", "bhsm.interface.minimal_action.x_ch_closure.apply_x_ch_boundary_response", {"boundary_field": "string"}, {"type": "boundary_response_chain"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "author ontology plus local boundary source", ("artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json", "artifacts/BHSM_x_ch_minimal_action_closure_v0_8.json", "artifacts/BHSM_author_ontology_v0_8.json"), "CONDITIONAL_ACTION_THEOREM", "Conditional boundary-response theorem only; no standalone production-field claim.", True),
+        FormulaCallableEntry("neutral_kernel_from_artifact", "Neutral boundary kernel", "Loadable neutral boundary seed; physical observable is propagation conditioned.", None, {}, {}, "AVAILABLE_ARTIFACT_BACKED", "local BHSM artifact", ("artifacts/neutral_operator_no_fit_output_v1.json",), "ARTIFACT_BACKED_BOUNDARY_SEED", "K_nu is a boundary seed, not a static physical mass matrix.", True),
+        FormulaCallableEntry("x_ch_production_vertex", "X_ch production vertex", "Retired standalone production-field target.", None, {}, {}, "RETIRED_TARGET", "author ontology", ("artifacts/BHSM_author_ontology_v0_8.json",), "RETIRED_TARGET", "X_ch is modeled as a charged boundary-response operator, not a standalone production field.", False),
+        FormulaCallableEntry("neutrino_physical_basis_scale", "Neutrino propagation-mass response", "Propagation-conditioned curvature-response callable.", "bhsm.interface.minimal_action.neutrino_basis_closure.propagation_conditioned_neutrino_mass", {"curvature_response": "value", "propagating": "bool", "threshold_met": "bool"}, {"type": "effective_mass_response"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "author ontology plus neutral boundary seed", ("artifacts/BHSM_neutrino_basis_scale_minimal_action_closure_v0_8.json", "artifacts/BHSM_author_ontology_v0_8.json"), "CONDITIONAL_PROPAGATION_THEOREM", "Structural propagation theorem only; numerical curvature scale remains open.", True),
+        FormulaCallableEntry("cp_o_int_standalone_attachment", "Standalone CP O_int attachment", "Retired standalone production target.", None, {}, {}, "RETIRED_TARGET", "author ontology", ("artifacts/CP_no_fit_holonomy_output_v1.json", "artifacts/BHSM_cp_o_int_minimal_action_closure_v0_8.json", "artifacts/BHSM_author_ontology_v0_8.json"), "RETIRED_TARGET", "CP is represented by the artifact-backed Z6 holonomy constraint; no standalone production vertex is required.", False),
     )
     for entry in entries:
         register_formula(registry, entry)
@@ -134,6 +139,11 @@ _LOADERS: dict[str, Callable[..., Any]] = {
     "mass_ratios_from_artifact": load_mass_ratio_predictions_artifact,
 }
 
+_CONDITIONAL_CALLABLES: dict[str, Callable[..., Any]] = {
+    "charged_response_from_artifact": apply_x_ch_boundary_response,
+    "neutrino_physical_basis_scale": propagation_conditioned_neutrino_mass,
+}
+
 
 def evaluate_formula(formula_key: str, repository: str | Path | None = None, **inputs: Any) -> FormulaEvaluationResult:
     """Evaluate available artifact callables; fail closed for missing callables."""
@@ -146,6 +156,13 @@ def evaluate_formula(formula_key: str, repository: str | Path | None = None, **i
     if loader is not None and entry.status == "AVAILABLE_ARTIFACT_BACKED":
         value = loader(repository)
         return FormulaEvaluationResult(formula_key, entry.status, "EVALUATED", value.to_dict(), entry.callable_path, entry.claim_boundary, value.provenance.empirical_derivation_input)
+    conditional = _CONDITIONAL_CALLABLES.get(formula_key)
+    if conditional is not None and entry.status == "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL":
+        try:
+            value = conditional(**inputs)
+        except (TypeError, ValueError) as exc:
+            return FormulaEvaluationResult(formula_key, entry.status, "INPUT_REQUIRED", None, entry.callable_path, f"{entry.claim_boundary} {exc}")
+        return FormulaEvaluationResult(formula_key, entry.status, "EVALUATED_CONDITIONAL", value, entry.callable_path, entry.claim_boundary)
     # Geometry defaults require a caller-supplied geometry and remain defaults.
     if formula_key in {"hyperspherical_default_metric", "hyperspherical_default_tension"} and "geometry" in inputs:
         geometry = inputs["geometry"]

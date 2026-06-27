@@ -10,7 +10,8 @@ def test_default_gallery_contents_and_boundaries():
         assert key in rows
     assert rows["W_boson"].independent_prediction is False
     assert rows["electron_neutrino"].comparison_kind=="upper_limit"
-    assert rows["charged_boundary_response_matrix"].category=="open_theorem_blocker"
+    assert rows["charged_boundary_response_matrix"].category=="conditional_theorem"
+    assert rows["cp_holonomy_phase_attachment"].category=="artifact_backed_constraint"
     assert rows["ufo_export"].category=="runtime_disabled_gate"
     assert "template_speculative_mode" not in rows
 

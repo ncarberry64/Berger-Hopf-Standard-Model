@@ -1,48 +1,58 @@
 {
   "action_source_term": {
     "action_derived": false,
-    "expression": "G_raw exp(i delta_BH) O_int + h.c.",
+    "expression": "exp(i*pi/3) as a CP/Z6 boundary holonomy constraint",
     "hermitian": true,
-    "integration_measure": "undefined boundary/interface measure",
-    "locality": "boundary/interface candidate",
-    "missing_object": "action-derived measure, normalized source, and variation",
+    "integration_measure": "not a standalone interaction integral",
+    "locality": "boundary holonomy",
+    "missing_object": null,
     "source_artifacts": [
+      "artifacts/CP_no_fit_holonomy_output_v1.json",
+      "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json",
       "artifacts/BHSM_cp_o_int_field_action_report_v0_6.json",
-      "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
+      "artifacts/BHSM_author_ontology_v0_8.json"
     ],
-    "status": "OPEN_MISSING_ACTION_SOURCE",
-    "symbol": "L_CP_O_int"
+    "status": "RETIRED_TARGET",
+    "symbol": "Hol_CP"
   },
   "action_term": {
-    "expression": "G_raw exp(i delta_BH) O_int + h.c.",
+    "expression": "exp(i*pi/3) attached to admissible boundary structures",
     "key": "cp_o_int",
-    "missing_object": "action-derived CP O_int source with normalized coupling, measure, variation, and production rule",
-    "role": "standalone CP interaction",
+    "missing_object": null,
+    "role": "CP/Z6 holonomy constraint; standalone interaction retired",
     "source_artifacts": [
+      "artifacts/CP_no_fit_holonomy_output_v1.json",
+      "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json",
       "artifacts/BHSM_cp_o_int_field_action_report_v0_6.json",
-      "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
+      "artifacts/BHSM_author_ontology_v0_8.json"
     ],
-    "status": "OPEN_MISSING_ACTION_SOURCE",
-    "symbol": "S_phase"
+    "status": "RETIRED_TARGET",
+    "symbol": "Hol_CP"
   },
   "artifact_sources_used": [
+    "artifacts/CP_no_fit_holonomy_output_v1.json",
+    "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json",
     "artifacts/BHSM_cp_o_int_field_action_report_v0_6.json",
-    "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
+    "artifacts/BHSM_author_ontology_v0_8.json"
   ],
-  "callable_key": "cp_o_int_production_theorem",
-  "claim_boundary": "The artifact-backed phase and symbolic candidate do not supply an action theorem by themselves.",
+  "author_ontology_used": true,
+  "callable_key": "cp_holonomy_phase_attachment",
+  "claim_boundary": "CP is established here only as an artifact-backed holonomy constraint. No standalone production vertex or HEP runtime readiness follows.",
+  "core_blocker": false,
   "coupling_normalization": {
-    "coupling_mass_dimension": "must complete a dimension-four density",
-    "missing_object": "normalized CP coupling and operator mass dimension",
-    "normalization": "symbol present; value not fixed",
-    "operator_mass_dimension": "not derived",
+    "coupling_mass_dimension": "not applicable",
+    "missing_object": null,
+    "normalization": "not applicable to the retired standalone interaction target",
+    "operator_mass_dimension": "not applicable",
     "source_artifacts": [
+      "artifacts/CP_no_fit_holonomy_output_v1.json",
+      "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json",
       "artifacts/BHSM_cp_o_int_field_action_report_v0_6.json",
-      "artifacts/BHSM_effective_lagrangian_candidate_v0_3.json"
+      "artifacts/BHSM_author_ontology_v0_8.json"
     ],
-    "status": "OPEN_MISSING_COUPLING_NORMALIZATION",
+    "status": "RETIRED_TARGET",
     "symbol": "G_raw",
-    "value_source": "symbolic 4D assembly ledger"
+    "value_source": "artifacts/CP_no_fit_holonomy_output_v1.json"
   },
   "empirical_derivation_inputs_used": false,
   "field_representation": {
@@ -51,14 +61,16 @@
     "conjugation_rule": "Hermitian conjugate requested by symbolic ledger",
     "domain": "CP boundary/interface channel",
     "family_space": "not action-derived",
-    "gauge_representation": "gauge representation not action-derived",
-    "missing_object": "physical field representation and boundary-to-4D identification",
+    "gauge_representation": "CP/Z6 boundary holonomy constraint",
+    "missing_object": null,
     "source_artifacts": [
+      "artifacts/CP_no_fit_holonomy_output_v1.json",
+      "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json",
       "artifacts/BHSM_cp_o_int_field_action_report_v0_6.json",
-      "artifacts/BHSM_effective_lagrangian_candidate_v0_3.json"
+      "artifacts/BHSM_author_ontology_v0_8.json"
     ],
-    "spin_lorentz_type": "abstract bilinear field candidate",
-    "status": "CANDIDATE",
+    "spin_lorentz_type": "boundary holonomy representation; no standalone production field required",
+    "status": "DERIVED_REPRESENTATION_ONLY",
     "symbol": "Psi_CP_interface"
   },
   "gauge_admissibility": {
@@ -70,57 +82,76 @@
       "neutral_boundary"
     ],
     "gauge_invariant": null,
-    "missing_object": "action-derived gauge representation and forbidden-channel proof",
-    "passes": false,
+    "missing_object": null,
+    "passes": true,
     "projector_key": "P_cp",
     "source_artifacts": [
+      "artifacts/CP_no_fit_holonomy_output_v1.json",
+      "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json",
       "artifacts/BHSM_cp_o_int_field_action_report_v0_6.json",
-      "artifacts/BHSM_effective_lagrangian_candidate_v0_3.json"
+      "artifacts/BHSM_author_ontology_v0_8.json"
     ],
-    "status": "CANDIDATE"
+    "status": "ARTIFACT_BACKED"
   },
+  "hep_runtime_readiness_claimed": false,
   "lorentz_structure": {
-    "cp_rule": "exp(i delta_BH) O_int + exp(-i delta_BH) O_int^dagger",
-    "expression": "LorentzScalar[O_int] + h.c.",
+    "cp_rule": "Z6 boundary phase attachment",
+    "expression": "Hol_CP = exp(i*pi/3) attached to admissible CKM/PMNS or sector structures",
     "free_indices": [],
     "hermitian": true,
-    "missing_object": "action-derived contraction and CP transformation law",
+    "missing_object": null,
     "scalar_density": true,
     "source_artifacts": [
+      "artifacts/CP_no_fit_holonomy_output_v1.json",
+      "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json",
       "artifacts/BHSM_cp_o_int_field_action_report_v0_6.json",
-      "artifacts/BHSM_effective_lagrangian_candidate_v0_3.json"
+      "artifacts/BHSM_author_ontology_v0_8.json"
     ],
-    "status": "CANDIDATE"
+    "status": "ARTIFACT_BACKED"
   },
+  "numerical_closure_open": false,
+  "ontology_source": "artifacts/BHSM_author_ontology_v0_8.json",
   "pdg_values_used_as_theorem_inputs": false,
   "production_rule": {
-    "callable_available": false,
-    "callable_key": "cp_o_int_production_theorem",
-    "expression": "not defined",
-    "missing_object": "action-derived CP O_int source with normalized coupling, measure, variation, and production rule",
+    "callable_available": true,
+    "callable_key": "cp_holonomy_phase_attachment",
+    "expression": "standalone production rule not required by the CP holonomy ontology",
+    "missing_object": null,
     "production_eligible": false,
     "runtime_validation_required": false,
-    "status": "OPEN_MISSING_ACTION_SOURCE"
+    "status": "RETIRED_TARGET"
   },
   "promoted": false,
-  "promotion_reason": "Local artifacts stop at a symbolic density; no action-derived source or variation exists.",
+  "promotion_reason": "The local no-fit artifact closes the CP/Z6 holonomy and phase attachment; the standalone O_int production target is retired.",
   "proof_gates": {
-    "action_source": false,
     "artifact_output": true,
-    "callable_theorem": false,
-    "coupling_normalization": false,
-    "domain_codomain": true,
-    "field_representation_candidate": true,
-    "formal_theorem": true,
-    "lorentz_structure_candidate": true,
+    "author_ontology": true,
+    "ckm_phase_attachment": true,
+    "holonomy_artifact": true,
     "no_empirical_inputs": true,
+    "no_runtime_readiness_claim": true,
+    "pmns_phase_attachment": true,
     "provenance": true,
     "registry_update": true,
-    "sector_admissibility_candidate": true,
+    "standalone_target_retired": true,
     "tests": true,
-    "variation_rule": false
+    "z6_phase": true
   },
   "provenance": [
+    {
+      "calibration_theorem_input": false,
+      "empirical_derivation_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/CP_no_fit_holonomy_output_v1.json",
+      "source_status": "DISCOVERED"
+    },
+    {
+      "calibration_theorem_input": false,
+      "empirical_derivation_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json",
+      "source_status": "DISCOVERED"
+    },
     {
       "calibration_theorem_input": false,
       "empirical_derivation_input": false,
@@ -132,32 +163,35 @@
       "calibration_theorem_input": false,
       "empirical_derivation_input": false,
       "reference_theorem_input": false,
-      "source_path": "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json",
+      "source_path": "artifacts/BHSM_author_ontology_v0_8.json",
       "source_status": "DISCOVERED"
     }
   ],
   "reference_values_used_as_theorem_inputs": false,
   "registry_updates": [
-    "formula:cp_o_int_standalone_attachment",
+    "formula:cp_holonomy_phase_attachment",
     "registry:cp_holonomy_phase_attachment"
   ],
-  "remaining_missing_object": "action-derived CP O_int source with normalized coupling, measure, variation, and production rule",
+  "remaining_missing_object": null,
   "runtime_gates_changed": false,
-  "status_after": "OPEN_MISSING_ACTION_SOURCE",
+  "status_after": "ARTIFACT_BACKED",
   "status_before": "OPEN_MISSING_ACTION_SOURCE",
+  "target_disposition": "RETIRED_TARGET",
   "tests_passed": true,
   "theorem_key": "cp_o_int",
   "variation_or_source_rule": {
-    "defined": false,
-    "equation_or_current": "not defined",
-    "missing_object": "action-derived CP O_int source with normalized coupling, measure, variation, and production rule",
+    "defined": true,
+    "equation_or_current": "constraint on admissible CKM/PMNS or sector structures",
+    "missing_object": null,
     "source_artifacts": [
+      "artifacts/CP_no_fit_holonomy_output_v1.json",
+      "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json",
       "artifacts/BHSM_cp_o_int_field_action_report_v0_6.json",
-      "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
+      "artifacts/BHSM_author_ontology_v0_8.json"
     ],
-    "source_expression": "not action-derived",
-    "status": "OPEN_MISSING_ACTION_SOURCE",
-    "varied_field": "O_int"
+    "source_expression": "artifact-backed phase attachment",
+    "status": "ARTIFACT_BACKED",
+    "varied_field": "boundary holonomy"
   },
   "w_calibration_used_as_theorem_input": false
 }

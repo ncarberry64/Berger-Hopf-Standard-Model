@@ -3,17 +3,19 @@ from __future__ import annotations
 from bhsm.interface.minimal_action import close_minimal_action
 
 
-def test_cp_o_int_stops_at_action_source() -> None:
+def test_cp_o_int_is_reclassified_as_artifact_backed_holonomy() -> None:
     result = close_minimal_action("cp_o_int")
     assert result.status_before == "OPEN_MISSING_ACTION_SOURCE"
-    assert result.status_after == "OPEN_MISSING_ACTION_SOURCE"
+    assert result.status_after == "ARTIFACT_BACKED"
     assert result.promoted is False
-    assert result.remaining_missing_object == (
-        "action-derived CP O_int source with normalized coupling, measure, variation, and production rule"
-    )
+    assert result.remaining_missing_object is None
     assert result.action_source_term.action_derived is False
     assert result.production_rule.production_eligible is False
-    assert result.production_rule.callable_available is False
+    assert result.production_rule.callable_available is True
+    assert result.production_rule.status == "RETIRED_TARGET"
+    assert result.target_disposition == "RETIRED_TARGET"
+    assert result.core_blocker is False
+    assert all(result.proof_gates.values())
 
 
 def test_cp_result_uses_phase_artifacts_not_reference_inputs() -> None:
@@ -26,7 +28,7 @@ def test_cp_result_uses_phase_artifacts_not_reference_inputs() -> None:
     assert result.runtime_gates_changed is False
 
 
-def test_complete_explicit_axiom_is_conditional_not_established() -> None:
+def test_inline_standalone_axiom_cannot_revive_retired_target() -> None:
     definitions = {
         "field_representation": "author CP field representation",
         "lorentz_structure": "author Lorentz scalar",
@@ -49,7 +51,8 @@ def test_complete_explicit_axiom_is_conditional_not_established() -> None:
         "definitions": definitions,
     }]}
     result = close_minimal_action("cp_o_int", axioms=payload)
-    assert result.status_after == "CONDITIONAL_ACTION_THEOREM"
-    assert result.promoted is True
+    assert result.status_after == "ARTIFACT_BACKED"
+    assert result.promoted is False
     assert all(result.proof_gates.values())
     assert result.remaining_missing_object is None
+    assert result.hep_runtime_readiness_claimed is False

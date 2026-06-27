@@ -8,6 +8,8 @@ The electron-neutrino comparison is treated as an upper-limit comparison unless 
 
 Open-theorem entries are registry blockers, not production-ready predictions.
 
+Conditional theorem entries depend on the author ontology and are not production-ready predictions or numerical closure.
+
 Runtime-disabled software entries require live external validation before readiness can be claimed.
 
 Allowed descriptions include computational registry, calibration-aware model

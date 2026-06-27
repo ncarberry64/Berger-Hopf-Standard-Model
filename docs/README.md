@@ -4,9 +4,14 @@ Use the top-level [STATUS.md](../STATUS.md) for current status and
 [CLAIMS.md](../CLAIMS.md) for claim boundaries. Files below provide supporting
 detail and historical evidence.
 
+The current minimal-action theory dictionary is documented in
+[author_ontology_v0_8.md](author_ontology_v0_8.md) and encoded in
+`artifacts/BHSM_author_ontology_v0_8.json`.
+
 ## Overview
 
 - [Current BHSM status](current_bhsm_status.md)
+- [Author ontology v0.8](author_ontology_v0_8.md)
 - [Frozen predictions](frozen_predictions.md)
 - [Model scope for HEP review](bhsm_model_scope_for_hep_review.md)
 - [Historical README status archive](archive/README_status_history_pre_v0_7.md)

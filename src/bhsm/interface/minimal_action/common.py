@@ -10,8 +10,11 @@ from typing import Any
 STATUS_TAXONOMY = (
     "ESTABLISHED_ACTION_LEVEL",
     "CONDITIONAL_ACTION_THEOREM",
+    "CONDITIONAL_PROPAGATION_THEOREM",
     "ACTION_LEVEL_RUNTIME_GATED",
     "ARTIFACT_BACKED",
+    "DERIVED_REPRESENTATION_ONLY",
+    "RETIRED_TARGET",
     "CANDIDATE",
     "OPEN_MISSING_ACTION_SOURCE",
     "OPEN_MISSING_FIELD_REPRESENTATION",
@@ -28,6 +31,7 @@ STATUS_TAXONOMY = (
 PROMOTED_STATUSES = {
     "ESTABLISHED_ACTION_LEVEL",
     "CONDITIONAL_ACTION_THEOREM",
+    "CONDITIONAL_PROPAGATION_THEOREM",
     "ACTION_LEVEL_RUNTIME_GATED",
 }
 
@@ -174,6 +178,12 @@ class MinimalActionClosureResult(Serializable):
     pdg_values_used_as_theorem_inputs: bool = False
     w_calibration_used_as_theorem_input: bool = False
     runtime_gates_changed: bool = False
+    author_ontology_used: bool = False
+    ontology_source: str | None = None
+    core_blocker: bool = True
+    target_disposition: str = "ACTIVE"
+    numerical_closure_open: bool = False
+    hep_runtime_readiness_claimed: bool = False
 
     def __post_init__(self) -> None:
         if self.status_after not in STATUS_TAXONOMY:
@@ -196,7 +206,7 @@ class MinimalActionClosureReport(Serializable):
     status_taxonomy: tuple[str, ...] = STATUS_TAXONOMY
     report_name: str = "BHSM Minimal Action Closure Report"
     version: str = "0.8"
-    public_status: str = "Minimal action audit implemented; three action-level theorem objects remain open."
+    public_status: str = "structural architecture integrated conditional; numerical closure open"
     internet_required: bool = False
     external_hep_tools_required: bool = False
     empirical_derivation_inputs_used: bool = False
