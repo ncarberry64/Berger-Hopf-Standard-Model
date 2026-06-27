@@ -20,3 +20,6 @@ measure normalization or threshold-to-energy map, so the numerical closure
 remains dimensionless-only and its status is not promoted.
 
 The electron-neutrino upper limit is a comparison reference only and is never used to set the neutral scale.
+
+The legacy curvature functional strengthens the dimensional architecture but
+does not change the v0.9 channel responses or their status. The electron-neutrino upper limit, PDG values, and W mass are not used as theorem inputs.

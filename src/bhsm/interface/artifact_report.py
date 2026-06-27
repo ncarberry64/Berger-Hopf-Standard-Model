@@ -88,7 +88,7 @@ def build_artifact_prediction_report(
         calibration_policy="A calibration anchor is not an independent prediction in the same run.",
         reference_policy="Reference values are comparison inputs only and never BHSM derivation inputs.",
         warnings=list(WARNINGS),
-        claim_boundaries=["Artifact presence does not close a theorem.", "The neutral-scale audit finds no valid eV/GeV unit anchor; the neutrino propagation candidate remains dimensionless.", "Boundary seeds are not physical production vertices without their missing theorems."],
+        claim_boundaries=["Artifact presence does not close a theorem.", "The legacy curvature functional is artifact-backed, but the neutrino scale still lacks r_prop and physical k_neutral,eff.", "Boundary seeds are not physical production vertices without their missing theorems."],
         empirical_derivation_inputs_used=any(row["empirical_derivation_input"] for row in backed),
         reference_values_used_as_derivation_inputs=False,
         frozen_predictions_changed=False,

@@ -81,6 +81,7 @@ def neutral_scale_report_to_markdown(report: NeutralScaleClosureReport) -> str:
             "",
             f"Boundary measure: `{report.boundary_measure.status}`.",
             f"Threshold-to-energy map: `{report.threshold_energy_map.status}`.",
+            "Legacy curvature support is audited separately; the functional alone does not supply a neutral radius or physical curvature unit.",
             f"Remaining object: {report.scale_result.remaining_missing_object}.",
             "",
         ]
@@ -145,4 +146,3 @@ def write_neutral_scale_artifacts(
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(json.dumps(payloads[key], indent=2, sort_keys=True) + "\n", encoding="utf-8")
     return report
-

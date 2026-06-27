@@ -49,6 +49,12 @@ not required for the listed local behavior.
 | `neutral-boundary-measure` | Audit the neutral boundary measure normalization | JSON | no | no |
 | `neutrino-dimensionful-mass` | Attempt unit-safe eV/GeV output and fail closed without a unit source | JSON | no | no |
 | `neutrino-scale-report` | Render the neutral scale closure audit | Markdown or JSON | no | no |
+| `legacy-curvature-artifacts` | Index bundled author-supplied curvature papers | JSON | no | no |
+| `curvature-mass-functional` | Show the legacy curvature mass functional and ansatz boundary | JSON | no | no |
+| `neutrino-propagation-radius` | Search for a physical neutral localization radius | JSON | no | no |
+| `neutral-curvature-mapping` | Audit dimensionless response versus physical curvature units | JSON | no | no |
+| `legacy-neutral-scale` | Build the gated legacy neutral-scale candidate | JSON | no | no |
+| `legacy-neutral-scale-report` | Render the legacy curvature scale audit | Markdown or JSON | no | no |
 
 Without `--offline-ok`, `pdg-fetch` may try an optional live reference adapter.
 The offline fallback is reference-only and is never a derivation input.
