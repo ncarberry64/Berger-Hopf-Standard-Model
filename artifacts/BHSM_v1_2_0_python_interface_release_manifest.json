@@ -1,0 +1,22 @@
+{
+  "release_version": "v1.2.0",
+  "release_basis": "BHSM v1.1.0 HEP handoff plus Python interface and prediction registry",
+  "included_modules": ["geometry", "units", "solver", "validation", "pdg_interface", "predictions", "report", "cli"],
+  "included_cli_commands": ["registry", "status", "predict", "report"],
+  "included_examples": ["bhsm_solve_w_and_neutrino.py", "bhsm_custom_geometry_scan.py", "bhsm_prediction_report.py"],
+  "included_artifacts": ["BHSM_python_interface_manifest_v0_1.json", "BHSM_prediction_registry_v0_1.json", "BHSM_prediction_report_example_v0_1.json"],
+  "dependencies": ["numpy", "scipy"],
+  "optional_dependencies": ["pdg", "pandas"],
+  "offline_safe": true,
+  "internet_required": false,
+  "pdg_required": false,
+  "wolfram_required": false,
+  "feynrules_required": false,
+  "madgraph_required": false,
+  "calibration_policy": "An anchor is not an independent prediction in the same run.",
+  "prediction_policy": "Predictions remain conditional on geometry, equation, and calibration.",
+  "upper_limit_policy": "Electron-neutrino comparison is upper-limit based by default.",
+  "claim_boundaries": ["No empirical validation", "No complete 4D Lagrangian claim", "Runtime software gates remain disabled"],
+  "tag_collision": true,
+  "tag_ready": false
+}

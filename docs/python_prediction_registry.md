@@ -21,3 +21,5 @@ tool actually passes. Inspect the registry with:
 python -m bhsm.interface registry
 python -m bhsm.interface status W_boson --format json
 ```
+
+Release status summary: `artifacts/BHSM_v1_2_0_prediction_registry_status.json`.

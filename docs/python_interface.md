@@ -74,3 +74,6 @@ See `docs/python_interface_quickstart.md` and
 The prediction registry and reviewer-report layer are documented in
 `docs/python_prediction_registry.md`, `docs/python_cli.md`, and
 `docs/python_prediction_report.md`.
+
+The consolidated release scope and deployment blocker are recorded in
+`docs/bhsm_v1_2_0_release_scope.md`.
