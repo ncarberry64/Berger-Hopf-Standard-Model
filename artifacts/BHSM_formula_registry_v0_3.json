@@ -12,10 +12,15 @@
     "legacy_curvature_mass_functional",
     "legacy_gravitational_dimensional_gate",
     "legacy_neutral_scale_candidate",
+    "neutral_admissible_domain",
+    "neutral_admissible_positivity",
     "neutral_dimensionful_scale_search",
+    "neutral_kernel_exact_audit",
     "neutral_kernel_positivity",
     "neutral_mass_gap_action",
     "neutral_physical_curvature_map",
+    "neutral_positivity_counterexample",
+    "neutral_positivity_report",
     "neutral_propagation_radius_search",
     "neutral_radius_curvature_closure",
     "neutral_spectral_gap",
@@ -245,6 +250,44 @@
       "theorem_status": "ARTIFACT_AVAILABLE_NOT_THEOREM_PROMOTION"
     },
     {
+      "callable_path": "bhsm.interface.neutrino_spectral.admissible_domain.derive_or_load_neutral_admissible_domain",
+      "claim_boundary": "The response cone is explicit but not derived from the complete neutral action.",
+      "description": "Load the ontology-conditional measurement-supported response domain.",
+      "display_name": "Neutral admissible response cone",
+      "formula_key": "neutral_admissible_domain",
+      "input_schema": {},
+      "notes": [],
+      "output_schema": {
+        "type": "NeutralAdmissibleDomain"
+      },
+      "safe_for_default_report": true,
+      "source_artifacts": [
+        "artifacts/BHSM_neutral_admissible_domain_v1_4.json"
+      ],
+      "source_type": "author ontology and propagation modules",
+      "status": "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL",
+      "theorem_status": "CONDITIONAL_MEASUREMENT_SUPPORTED_NEUTRAL_POSITIVITY_CANDIDATE"
+    },
+    {
+      "callable_path": "bhsm.interface.neutrino_spectral.positivity_proof.prove_neutral_positivity_on_domain",
+      "claim_boundary": "Exact on the stated cone; not raw PSD and not complete-action domain derivation.",
+      "description": "Prove the exact quadratic form nonnegative on the response cone without clipping.",
+      "display_name": "Admissible neutral copositivity",
+      "formula_key": "neutral_admissible_positivity",
+      "input_schema": {},
+      "notes": [],
+      "output_schema": {
+        "type": "AdmissiblePositivityProof"
+      },
+      "safe_for_default_report": true,
+      "source_artifacts": [
+        "artifacts/BHSM_neutral_positivity_proof_v1_4.json"
+      ],
+      "source_type": "exact rational kernel plus author-ontology response cone",
+      "status": "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL",
+      "theorem_status": "CONDITIONAL_MEASUREMENT_SUPPORTED_NEUTRAL_POSITIVITY_CANDIDATE"
+    },
+    {
       "callable_path": "bhsm.interface.neutrino_scale.unit_map.derive_neutral_scale_law",
       "claim_boundary": "A dimensionless BHSM response is not, by itself, a physical eV/GeV mass.",
       "description": "Classify local neutral scale candidates and fail closed when no physical unit anchor exists.",
@@ -263,6 +306,25 @@
       "source_type": "local artifact inventory and author ontology",
       "status": "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL",
       "theorem_status": "OPEN_MISSING_NEUTRAL_SCALE"
+    },
+    {
+      "callable_path": "bhsm.interface.neutrino_spectral.neutral_quadratic_form.audit_neutral_kernel_exact",
+      "claim_boundary": "The raw kernel is indefinite; this is not the admissible-cone verdict.",
+      "description": "Compute the exact rational quadratic form and raw eigenspectrum.",
+      "display_name": "Exact neutral-kernel audit",
+      "formula_key": "neutral_kernel_exact_audit",
+      "input_schema": {},
+      "notes": [],
+      "output_schema": {
+        "type": "NeutralKernelExactAudit"
+      },
+      "safe_for_default_report": true,
+      "source_artifacts": [
+        "artifacts/BHSM_neutral_kernel_exact_audit_v1_4.json"
+      ],
+      "source_type": "artifact-backed neutral kernel",
+      "status": "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL",
+      "theorem_status": "RAW_KERNEL_NOT_POSITIVE_SEMIDEFINITE"
     },
     {
       "callable_path": null,
@@ -337,6 +399,44 @@
       "source_type": "author ontology, neutral kernel, and legacy curvature operator",
       "status": "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL",
       "theorem_status": "CONDITIONAL_PHYSICAL_CURVATURE_MAP_CANDIDATE"
+    },
+    {
+      "callable_path": "bhsm.interface.neutrino_spectral.positivity_counterexample.search_admissible_positivity_counterexample",
+      "claim_boundary": "No admissible counterexample is reported only because an exact cone proof applies.",
+      "description": "Search the explicit response cone for q(x)<0.",
+      "display_name": "Neutral admissible counterexample search",
+      "formula_key": "neutral_positivity_counterexample",
+      "input_schema": {},
+      "notes": [],
+      "output_schema": {
+        "type": "NeutralPositivityCounterexample"
+      },
+      "safe_for_default_report": true,
+      "source_artifacts": [
+        "artifacts/BHSM_neutral_positivity_counterexample_v1_4.json"
+      ],
+      "source_type": "exact proof and bounded cone scan",
+      "status": "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL",
+      "theorem_status": "CONDITIONAL_MEASUREMENT_SUPPORTED_NEUTRAL_POSITIVITY_CANDIDATE"
+    },
+    {
+      "callable_path": "bhsm.interface.neutrino_spectral.positivity_report.build_neutral_positivity_report",
+      "claim_boundary": "Conditional response-cone positivity only; raw PSD remains false.",
+      "description": "Combine raw, domain, proof, and counterexample gates.",
+      "display_name": "Neutral positivity report",
+      "formula_key": "neutral_positivity_report",
+      "input_schema": {},
+      "notes": [],
+      "output_schema": {
+        "type": "NeutralPositivityReport"
+      },
+      "safe_for_default_report": true,
+      "source_artifacts": [
+        "artifacts/BHSM_neutral_positivity_report_v1_4.json"
+      ],
+      "source_type": "neutral positivity theorem package",
+      "status": "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL",
+      "theorem_status": "CONDITIONAL_MEASUREMENT_SUPPORTED_NEUTRAL_POSITIVITY_CANDIDATE"
     },
     {
       "callable_path": "bhsm.interface.neutrino_scale.propagation_radius_search.search_neutral_propagation_radius",

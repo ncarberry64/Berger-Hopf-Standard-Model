@@ -12,6 +12,11 @@ python -m bhsm.interface neutral-stiffness-ratio --format json
 python -m bhsm.interface neutral-spectral-gap --format json
 python -m bhsm.interface neutral-kernel-positivity --format json
 python -m bhsm.interface neutral-spectral-report --format markdown
+python -m bhsm.interface neutral-kernel-exact-audit --format json
+python -m bhsm.interface neutral-admissible-domain --format json
+python -m bhsm.interface neutral-positivity-proof --format json
+python -m bhsm.interface neutral-positivity-counterexample --format json
+python -m bhsm.interface neutral-positivity-report --format markdown
 ```
 
 These commands are offline and claim-safe. They do not use reference data as

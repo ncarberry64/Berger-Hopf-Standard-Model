@@ -64,6 +64,13 @@ from .neutrino_spectral import (
     load_neutral_mass_gap_action,
     neutral_spectral_report_to_markdown,
     search_neutral_stiffness_ratio,
+    audit_neutral_kernel_exact,
+    build_neutral_positivity_report,
+    build_projected_neutral_kernel,
+    derive_or_load_neutral_admissible_domain,
+    neutral_positivity_report_to_markdown,
+    prove_neutral_positivity_on_domain,
+    search_admissible_positivity_counterexample,
 )
 
 
@@ -257,6 +264,16 @@ def build_parser() -> argparse.ArgumentParser:
     kernel_positivity.add_argument("--format", choices=("json",), default="json")
     spectral_report = commands.add_parser("neutral-spectral-report", help="Render the neutral spectral-stiffness report")
     spectral_report.add_argument("--format", choices=("markdown", "json"), default="markdown")
+    exact_kernel = commands.add_parser("neutral-kernel-exact-audit", help="Audit the exact rational neutral kernel")
+    exact_kernel.add_argument("--format", choices=("json",), default="json")
+    admissible_domain = commands.add_parser("neutral-admissible-domain", help="Load the measurement-supported response cone")
+    admissible_domain.add_argument("--format", choices=("json",), default="json")
+    positivity_proof = commands.add_parser("neutral-positivity-proof", help="Prove copositivity on the admissible response cone")
+    positivity_proof.add_argument("--format", choices=("json",), default="json")
+    positivity_counterexample = commands.add_parser("neutral-positivity-counterexample", help="Search the admissible cone for a negative quadratic value")
+    positivity_counterexample.add_argument("--format", choices=("json",), default="json")
+    positivity_report = commands.add_parser("neutral-positivity-report", help="Render the admissible neutral positivity report")
+    positivity_report.add_argument("--format", choices=("markdown", "json"), default="markdown")
     return parser
 
 
@@ -560,6 +577,25 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(neutral_spectral_report_to_markdown(spectral_report), end="")
         else:
             print(json.dumps(spectral_report.to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "neutral-kernel-exact-audit":
+        print(json.dumps(audit_neutral_kernel_exact().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "neutral-admissible-domain":
+        print(json.dumps(derive_or_load_neutral_admissible_domain().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "neutral-positivity-proof":
+        print(json.dumps(prove_neutral_positivity_on_domain().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "neutral-positivity-counterexample":
+        print(json.dumps(search_admissible_positivity_counterexample().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "neutral-positivity-report":
+        report = build_neutral_positivity_report()
+        if args.format == "markdown":
+            print(neutral_positivity_report_to_markdown(report), end="")
+        else:
+            print(json.dumps(report.to_dict(), indent=2, sort_keys=True))
         return 0
     particles = tuple(item.strip() for item in args.particles.split(",") if item.strip())
     report = build_prediction_report(

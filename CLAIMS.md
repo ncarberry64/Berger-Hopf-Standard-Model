@@ -33,8 +33,13 @@
 - BHSM has an artifact-backed scalar topographic mass-gap action analogue and
   a conditional neutral spectral-gap theorem shape.
 - A physical neutral mass remains unavailable until a numeric neutral
-  stiffness length, physical curvature map, and admissible positivity proof
-  are supplied without empirical calibration.
+  stiffness length and physical curvature map are supplied without empirical
+  calibration; the admissible response-cone identification remains conditional.
+- The raw neutral kernel is indefinite. Exact nonnegative quadratic response is
+  established conditionally on the explicit measurement-supported response
+  cone, not on the full vector space and not by threshold clipping.
+- Measurement is modeled as a physical boundary/interaction support condition;
+  BHSM does not claim that neutrinos cease to exist without observation.
 
 ## Not Supported
 

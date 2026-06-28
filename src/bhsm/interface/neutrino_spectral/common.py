@@ -24,6 +24,12 @@ SPECTRAL_STATUSES = (
     "RAW_KERNEL_NOT_POSITIVE_SEMIDEFINITE",
     "RAW_KERNEL_POSITIVE_SEMIDEFINITE",
     "ARTIFACT_BACKED_ADMISSIBLE_NEUTRAL_POSITIVITY",
+    "ARTIFACT_BACKED_MEASUREMENT_SUPPORTED_NEUTRAL_POSITIVITY",
+    "CONDITIONAL_ADMISSIBLE_NEUTRAL_POSITIVITY_CANDIDATE",
+    "CONDITIONAL_MEASUREMENT_SUPPORTED_NEUTRAL_POSITIVITY_CANDIDATE",
+    "THRESHOLDED_RESPONSE_ONLY_NO_POSITIVITY_PROOF",
+    "ADMISSIBLE_POSITIVITY_COUNTEREXAMPLE_FOUND",
+    "OPEN_MISSING_ADMISSIBLE_NEUTRAL_DOMAIN",
 )
 
 
@@ -139,11 +145,115 @@ class NeutralSpectralMassReport(Serializable):
     stiffness_ratio: NeutralStiffnessRatio
     spectral_gap: NeutralSpectralGapCandidate
     kernel_positivity: NeutralKernelPositivityAudit
+    admissible_positivity_status: str
     dimensionful_mass_available: bool
     remaining_missing_object: str
     frozen_predictions_changed: bool
     production_physics_model_logic_changed: bool
     empirical_derivation_inputs_used: bool
+    internet_required: bool
+    external_hep_tools_required: bool
+    libreoffice_required: bool
+
+
+@dataclass(frozen=True)
+class NeutralPositivityRecord(Serializable):
+    candidate_key: str
+    status: str
+    kernel_matrix_exact: tuple[tuple[str, ...], ...]
+    kernel_matrix_numeric: tuple[tuple[float, ...], ...]
+    characteristic_polynomial: str
+    raw_eigenvalues_exact: tuple[str, ...]
+    raw_eigenvalues_numeric: tuple[float, ...]
+    raw_psd: bool
+    negative_eigendirection: tuple[float, ...] | None
+    admissible_domain_defined: bool
+    admissible_domain_constraints: tuple[str, ...]
+    projection_matrix: tuple[tuple[float, ...], ...] | None
+    projected_kernel: tuple[tuple[float, ...], ...] | None
+    projected_eigenvalues: tuple[float, ...]
+    projected_psd: bool | None
+    quadratic_form: str
+    minimum_on_admissible_domain: float | str | None
+    counterexample: dict[str, Any] | None
+    thresholding_used: bool
+    positivity_proven_without_thresholding: bool
+    counterexample_found: bool
+    empirical_derivation_inputs_used: bool
+    reference_values_used_as_theorem_inputs: bool
+    electron_neutrino_limit_used_as_derivation_input: bool
+    w_mass_used_as_theorem_input: bool
+    legacy_particle_tables_used_as_derivation_inputs: bool
+    legacy_gravitational_formula_used_as_mass_formula: bool
+    claim_boundary: str
+    remaining_missing_object: str
+
+    def __post_init__(self) -> None:
+        if self.status not in SPECTRAL_STATUSES:
+            raise ValueError(f"unsupported neutral positivity status: {self.status}")
+        if any(
+            (
+                self.empirical_derivation_inputs_used,
+                self.reference_values_used_as_theorem_inputs,
+                self.electron_neutrino_limit_used_as_derivation_input,
+                self.w_mass_used_as_theorem_input,
+                self.legacy_particle_tables_used_as_derivation_inputs,
+                self.legacy_gravitational_formula_used_as_mass_formula,
+            )
+        ):
+            raise ValueError("neutral positivity cannot use empirical theorem inputs")
+
+
+@dataclass(frozen=True)
+class NeutralKernelExactAudit(NeutralPositivityRecord):
+    source_artifact: str
+
+
+@dataclass(frozen=True)
+class NeutralAdmissibleDomain(NeutralPositivityRecord):
+    coordinate_interpretation: str
+    ontology_sources: tuple[str, ...]
+    action_derived: bool
+
+
+@dataclass(frozen=True)
+class NeutralQuadraticForm(NeutralPositivityRecord):
+    termwise_nonnegative_on_domain: bool
+
+
+@dataclass(frozen=True)
+class ProjectedNeutralKernel(NeutralPositivityRecord):
+    restriction_kind: str
+
+
+@dataclass(frozen=True)
+class AdmissiblePositivityProof(NeutralPositivityRecord):
+    proof_method: str
+    proof_steps: tuple[str, ...]
+
+
+@dataclass(frozen=True)
+class NeutralPositivityCounterexample(NeutralPositivityRecord):
+    search_method: str
+
+
+@dataclass(frozen=True)
+class NeutralPositivityVerdict(NeutralPositivityRecord):
+    domain_artifact_backed: bool
+    domain_ontology_conditional: bool
+
+
+@dataclass(frozen=True)
+class NeutralPositivityReport(NeutralPositivityRecord):
+    exact_audit: NeutralKernelExactAudit
+    domain: NeutralAdmissibleDomain
+    projected: ProjectedNeutralKernel
+    proof: AdmissiblePositivityProof
+    counterexample_search: NeutralPositivityCounterexample
+    verdict: NeutralPositivityVerdict
+    public_status: str
+    frozen_predictions_changed: bool
+    production_physics_model_logic_changed: bool
     internet_required: bool
     external_hep_tools_required: bool
     libreoffice_required: bool

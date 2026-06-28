@@ -24,6 +24,11 @@ from .neutrino_spectral import (
     build_neutral_spectral_gap_candidate,
     load_neutral_mass_gap_action,
     search_neutral_stiffness_ratio,
+    audit_neutral_kernel_exact,
+    build_neutral_positivity_report,
+    derive_or_load_neutral_admissible_domain,
+    prove_neutral_positivity_on_domain,
+    search_admissible_positivity_counterexample,
 )
 
 FORMULA_STATUSES = (
@@ -150,6 +155,11 @@ def default_formula_registry(repository: str | Path | None = None) -> FormulaReg
         FormulaCallableEntry("neutral_stiffness_ratio", "Neutral stiffness ratio", "Search for sqrt(A_nu/Z_nu) without empirical calibration.", "bhsm.interface.neutrino_spectral.stiffness_ratio.search_neutral_stiffness_ratio", {}, {"type": "NeutralStiffnessRatio"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "local symbolic action inventory", ("artifacts/BHSM_neutral_stiffness_ratio_v1_3.json",), "CONDITIONAL_NEUTRAL_STIFFNESS_RATIO_CANDIDATE", "The ratio is symbolic and has no numeric metre value.", True),
         FormulaCallableEntry("neutral_spectral_gap", "Neutral spectral-gap candidate", "Build the action-normalized conditional neutral inverse-length gap.", "bhsm.interface.neutrino_spectral.neutral_spectral_gap.build_neutral_spectral_gap_candidate", {}, {"type": "NeutralSpectralGapCandidate"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "neutral action normalization and curvature gates", ("artifacts/BHSM_neutral_spectral_gap_candidate_v1_3.json",), "CONDITIONAL_NEUTRAL_SPECTRAL_MASS_CANDIDATE", "Symbolic theorem shape only; no default kg/eV/GeV mass is produced.", True),
         FormulaCallableEntry("neutral_kernel_positivity", "Neutral kernel positivity audit", "Separate the raw eigenspectrum from thresholded/admissible positivity.", "bhsm.interface.neutrino_spectral.neutral_kernel_positivity.audit_neutral_kernel_positivity", {}, {"type": "NeutralKernelPositivityAudit"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "artifact-backed finite kernel", ("artifacts/BHSM_neutral_kernel_positivity_audit_v1_3.json",), "OPEN_MISSING_ADMISSIBLE_NEUTRAL_POSITIVITY_PROOF", "The raw kernel is not PSD; nonnegative thresholding is not a full admissible-subspace proof.", True),
+        FormulaCallableEntry("neutral_kernel_exact_audit", "Exact neutral-kernel audit", "Compute the exact rational quadratic form and raw eigenspectrum.", "bhsm.interface.neutrino_spectral.neutral_quadratic_form.audit_neutral_kernel_exact", {}, {"type": "NeutralKernelExactAudit"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "artifact-backed neutral kernel", ("artifacts/BHSM_neutral_kernel_exact_audit_v1_4.json",), "RAW_KERNEL_NOT_POSITIVE_SEMIDEFINITE", "The raw kernel is indefinite; this is not the admissible-cone verdict.", True),
+        FormulaCallableEntry("neutral_admissible_domain", "Neutral admissible response cone", "Load the ontology-conditional measurement-supported response domain.", "bhsm.interface.neutrino_spectral.admissible_domain.derive_or_load_neutral_admissible_domain", {}, {"type": "NeutralAdmissibleDomain"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "author ontology and propagation modules", ("artifacts/BHSM_neutral_admissible_domain_v1_4.json",), "CONDITIONAL_MEASUREMENT_SUPPORTED_NEUTRAL_POSITIVITY_CANDIDATE", "The response cone is explicit but not derived from the complete neutral action.", True),
+        FormulaCallableEntry("neutral_admissible_positivity", "Admissible neutral copositivity", "Prove the exact quadratic form nonnegative on the response cone without clipping.", "bhsm.interface.neutrino_spectral.positivity_proof.prove_neutral_positivity_on_domain", {}, {"type": "AdmissiblePositivityProof"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "exact rational kernel plus author-ontology response cone", ("artifacts/BHSM_neutral_positivity_proof_v1_4.json",), "CONDITIONAL_MEASUREMENT_SUPPORTED_NEUTRAL_POSITIVITY_CANDIDATE", "Exact on the stated cone; not raw PSD and not complete-action domain derivation.", True),
+        FormulaCallableEntry("neutral_positivity_counterexample", "Neutral admissible counterexample search", "Search the explicit response cone for q(x)<0.", "bhsm.interface.neutrino_spectral.positivity_counterexample.search_admissible_positivity_counterexample", {}, {"type": "NeutralPositivityCounterexample"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "exact proof and bounded cone scan", ("artifacts/BHSM_neutral_positivity_counterexample_v1_4.json",), "CONDITIONAL_MEASUREMENT_SUPPORTED_NEUTRAL_POSITIVITY_CANDIDATE", "No admissible counterexample is reported only because an exact cone proof applies.", True),
+        FormulaCallableEntry("neutral_positivity_report", "Neutral positivity report", "Combine raw, domain, proof, and counterexample gates.", "bhsm.interface.neutrino_spectral.positivity_report.build_neutral_positivity_report", {}, {"type": "NeutralPositivityReport"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "neutral positivity theorem package", ("artifacts/BHSM_neutral_positivity_report_v1_4.json",), "CONDITIONAL_MEASUREMENT_SUPPORTED_NEUTRAL_POSITIVITY_CANDIDATE", "Conditional response-cone positivity only; raw PSD remains false.", True),
         FormulaCallableEntry("cp_o_int_standalone_attachment", "Standalone CP O_int attachment", "Retired standalone production target.", None, {}, {}, "RETIRED_TARGET", "author ontology", ("artifacts/CP_no_fit_holonomy_output_v1.json", "artifacts/BHSM_cp_o_int_minimal_action_closure_v0_8.json", "artifacts/BHSM_author_ontology_v0_8.json"), "RETIRED_TARGET", "CP is represented by the artifact-backed Z6 holonomy constraint; no standalone production vertex is required.", False),
     )
     for entry in entries:
@@ -180,6 +190,11 @@ _CONDITIONAL_CALLABLES: dict[str, Callable[..., Any]] = {
     "neutral_stiffness_ratio": search_neutral_stiffness_ratio,
     "neutral_spectral_gap": build_neutral_spectral_gap_candidate,
     "neutral_kernel_positivity": audit_neutral_kernel_positivity,
+    "neutral_kernel_exact_audit": audit_neutral_kernel_exact,
+    "neutral_admissible_domain": derive_or_load_neutral_admissible_domain,
+    "neutral_admissible_positivity": prove_neutral_positivity_on_domain,
+    "neutral_positivity_counterexample": search_admissible_positivity_counterexample,
+    "neutral_positivity_report": build_neutral_positivity_report,
 }
 
 

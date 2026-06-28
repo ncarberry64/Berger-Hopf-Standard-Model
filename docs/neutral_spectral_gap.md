@@ -15,3 +15,5 @@ remain symbolic and produce no kg/eV/GeV value. Under the author ontology, the
 BHSM contribution vanishes when the propagation-conditioned response vanishes;
 it is not promoted to an ordinary static rest-mass primitive.
 
+The admissible positivity gate now has an exact conditional cone proof. Numeric
+neutral stiffness length and physical curvature normalization remain open.
