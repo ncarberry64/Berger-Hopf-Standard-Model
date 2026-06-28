@@ -1,0 +1,124 @@
+{
+  "rows": [
+    {
+      "artifact_locality": 5,
+      "cross_sector_leverage": 5,
+      "external_runtime_penalty": 0,
+      "feasibility_now": 4,
+      "linked_blockers": [
+        "FC-01",
+        "FC-03",
+        "FC-07",
+        "FC-09",
+        "FC-10",
+        "FC-11",
+        "FC-12"
+      ],
+      "necessity": 5,
+      "no_empirical_path": 5,
+      "rationale": "Existing action and collar artifacts prove shape/identity subblocks; the remaining normalization affects seven completion categories.",
+      "target_id": "boundary_measure_collar_transport",
+      "title": "Boundary measure and collar transport normalization",
+      "total_score": 24
+    },
+    {
+      "artifact_locality": 4,
+      "cross_sector_leverage": 4,
+      "external_runtime_penalty": 0,
+      "feasibility_now": 3,
+      "linked_blockers": [
+        "FC-03",
+        "FC-05",
+        "FC-06"
+      ],
+      "necessity": 5,
+      "no_empirical_path": 5,
+      "rationale": "Local artifacts expose candidate branches, but no unique Hessian selector is yet present.",
+      "target_id": "charged_stiffness_action",
+      "title": "Charged stiffness action normalization",
+      "total_score": 21
+    },
+    {
+      "artifact_locality": 4,
+      "cross_sector_leverage": 4,
+      "external_runtime_penalty": 0,
+      "feasibility_now": 2,
+      "linked_blockers": [
+        "FC-02",
+        "FC-07",
+        "FC-12"
+      ],
+      "necessity": 5,
+      "no_empirical_path": 5,
+      "rationale": "High mathematical leverage, but complete action and variation data are still absent.",
+      "target_id": "complete_action_response_cone",
+      "title": "Complete action-derived response cone",
+      "total_score": 20
+    },
+    {
+      "artifact_locality": 3,
+      "cross_sector_leverage": 4,
+      "external_runtime_penalty": 0,
+      "feasibility_now": 2,
+      "linked_blockers": [
+        "FC-01",
+        "FC-09",
+        "FC-11"
+      ],
+      "necessity": 4,
+      "no_empirical_path": 5,
+      "rationale": "Important cross-sector normalization with open boundary trace and measure inputs.",
+      "target_id": "gauge_action_normalization",
+      "title": "Gauge action normalization",
+      "total_score": 18
+    },
+    {
+      "artifact_locality": 3,
+      "cross_sector_leverage": 3,
+      "external_runtime_penalty": 0,
+      "feasibility_now": 2,
+      "linked_blockers": [
+        "FC-06"
+      ],
+      "necessity": 4,
+      "no_empirical_path": 5,
+      "rationale": "A focused theorem gap, but it removes fewer shared dependencies.",
+      "target_id": "ckm_exponent_source",
+      "title": "CKM 1/16 exponent source",
+      "total_score": 17
+    },
+    {
+      "artifact_locality": 3,
+      "cross_sector_leverage": 3,
+      "external_runtime_penalty": 0,
+      "feasibility_now": 2,
+      "linked_blockers": [
+        "FC-05",
+        "FC-11"
+      ],
+      "necessity": 4,
+      "no_empirical_path": 5,
+      "rationale": "The stochastic path is partially derived but still depends on shared normalization.",
+      "target_id": "lepton_eta_origin",
+      "title": "Charged-lepton eta_l origin",
+      "total_score": 17
+    },
+    {
+      "artifact_locality": 5,
+      "cross_sector_leverage": 2,
+      "external_runtime_penalty": 5,
+      "feasibility_now": 3,
+      "linked_blockers": [
+        "FC-14"
+      ],
+      "necessity": 3,
+      "no_empirical_path": 5,
+      "rationale": "Well localized but explicitly depends on external licensed/runtime components.",
+      "target_id": "external_hep_runtime",
+      "title": "FeynRules/UFO/MadGraph runtime validation",
+      "total_score": 13
+    }
+  ],
+  "scoring_formula": "necessity + artifact_locality + no_empirical_path + cross_sector_leverage + feasibility_now - external_runtime_penalty",
+  "selected_target": "boundary_measure_collar_transport"
+}

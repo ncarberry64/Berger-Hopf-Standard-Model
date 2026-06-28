@@ -85,6 +85,14 @@ from .neutrino_closure_status import (
     build_v1_5_status_stabilization_report,
     neutrino_closure_status_to_markdown,
 )
+from .full_completion import (
+    build_boundary_measure_closure,
+    build_full_completion_blocker_ledger,
+    build_full_completion_priority_map,
+    build_full_completion_status_report,
+    full_completion_status_to_markdown,
+    select_highest_leverage_target,
+)
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -301,6 +309,14 @@ def build_parser() -> argparse.ArgumentParser:
     action_report.add_argument("--format", choices=("markdown", "json"), default="markdown")
     closure_status = commands.add_parser("neutrino-closure-status", help="Show the canonical neutral closure status split")
     closure_status.add_argument("--format", choices=("markdown", "json"), default="json")
+    completion_ledger = commands.add_parser("full-completion-ledger", help="Show the sixteen-category BHSM completion blocker ledger")
+    completion_ledger.add_argument("--format", choices=("json",), default="json")
+    completion_priority = commands.add_parser("full-completion-priority-map", help="Show predeclared completion-target scores")
+    completion_priority.add_argument("--format", choices=("json",), default="json")
+    completion_status = commands.add_parser("full-completion-status", help="Render the conservative BHSM full-completion status")
+    completion_status.add_argument("--format", choices=("markdown", "json"), default="markdown")
+    completion_target = commands.add_parser("full-completion-selected-target", help="Show the selected closure target and result")
+    completion_target.add_argument("--format", choices=("json",), default="json")
     return parser
 
 
@@ -652,6 +668,26 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(neutrino_closure_status_to_markdown(report), end="")
         else:
             print(json.dumps(report.to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "full-completion-ledger":
+        blockers = build_full_completion_blocker_ledger()
+        print(json.dumps({"blocker_count": len(blockers), "blockers": [row.to_dict() for row in blockers]}, indent=2, sort_keys=True))
+        return 0
+    if args.command == "full-completion-priority-map":
+        rows = build_full_completion_priority_map()
+        print(json.dumps({"selected_target": rows[0].target_id, "rows": [row.to_dict() for row in rows]}, indent=2, sort_keys=True))
+        return 0
+    if args.command == "full-completion-status":
+        report = build_full_completion_status_report()
+        if args.format == "markdown":
+            print(full_completion_status_to_markdown(report), end="")
+        else:
+            print(json.dumps(report.to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "full-completion-selected-target":
+        selected = select_highest_leverage_target()
+        closure = build_boundary_measure_closure()
+        print(json.dumps({"selected_target": selected.to_dict(), "closure_attempt": closure.to_dict()}, indent=2, sort_keys=True))
         return 0
     particles = tuple(item.strip() for item in args.particles.split(",") if item.strip())
     report = build_prediction_report(

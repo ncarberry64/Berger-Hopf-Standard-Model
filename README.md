@@ -44,10 +44,10 @@ BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode
 | Neutral kernel positivity | `CONDITIONAL_MEASUREMENT_SUPPORTED_NEUTRAL_POSITIVITY_CANDIDATE` | Raw PSD is false; exact copositivity holds on the author-ontology response cone without thresholding. |
 | Neutral action normalization | `OPEN_MISSING_NEUTRAL_ACTION_NORMALIZATION` | Partial variational boundary/collar action exists; coefficient, measure, profile, and unit normalization remain open. |
 | Action-supported response cone | `CONDITIONAL_ACTION_DERIVED_RESPONSE_CONE_CANDIDATE` | Existing action terms partially support the cone; complete-action derivation remains open. |
+| Full-completion audit | `INTEGRATED_CONDITIONAL_ARCHITECTURE_WITH_OPEN_BLOCKERS` | Sixteen categories are inventoried; boundary-measure shape and identity transport have a partial closure. |
 | FeynRules, UFO, MadGraph | `RUNTIME_GATED` | External validation is deferred until theorem and runtime gates pass. |
 
-[STATUS.md](STATUS.md) is the single source of truth for current area-level
-status. Historical README material is preserved in
+[STATUS.md](STATUS.md) is the single source of truth. Historical README material is preserved in
 [docs/archive/README_status_history_pre_v0_7.md](docs/archive/README_status_history_pre_v0_7.md).
 
 ## Computational Quickstart
@@ -64,6 +64,7 @@ python -m bhsm.interface neutral-spectral-report --format markdown
 python -m bhsm.interface neutral-positivity-report --format markdown
 python -m bhsm.interface neutral-action-closure-report --format markdown
 python -m bhsm.interface neutrino-closure-status --format markdown
+python -m bhsm.interface full-completion-status --format markdown
 ```
 
 The legacy gravitational curvature expression is dimensionally gated because K has units L^-2 and (c^2/G) r^2 K has units M/L, not M.
@@ -76,8 +77,7 @@ and thresholded response nonnegativity.
 
 BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity. Physical eV/GeV neutrino mass closure remains open pending a numeric neutral stiffness length sqrt(A_nu/Z_nu), a physical K_neutral,eff map in m^-2, and complete-action derivation of the admissible response cone.
 
-See [QUICKSTART.md](QUICKSTART.md) for a runnable walkthrough and
-[CLI_REFERENCE.md](CLI_REFERENCE.md) for the complete command table.
+See [QUICKSTART.md](QUICKSTART.md) for a runnable walkthrough and [CLI_REFERENCE.md](CLI_REFERENCE.md) for the complete command table.
 
 ## Established Artifact-Backed Outputs
 
