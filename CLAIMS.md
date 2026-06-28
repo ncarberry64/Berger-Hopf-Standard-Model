@@ -28,6 +28,13 @@
   radius and physical-curvature map while withholding numerical mass output.
 - BHSM records that the legacy `r^2 k` functional has dimension mass/length
   under the source definition `K=-nabla^2 ln rho`.
+- The legacy gravitational curvature expression is dimensionally gated and is
+  not used as a direct particle mass formula.
+- BHSM has an artifact-backed scalar topographic mass-gap action analogue and
+  a conditional neutral spectral-gap theorem shape.
+- A physical neutral mass remains unavailable until a numeric neutral
+  stiffness length, physical curvature map, and admissible positivity proof
+  are supplied without empirical calibration.
 
 ## Not Supported
 

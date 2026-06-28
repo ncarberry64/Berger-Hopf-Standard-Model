@@ -1,0 +1,40 @@
+{
+  "admissible_positive_response_proven": false,
+  "author_ontology_dependency": "physical neutral boundary field with propagation-conditioned response",
+  "candidate_key": "neutral_kernel_positivity_audit",
+  "claim_boundary": "The raw kernel has a negative eigenvalue. The max-threshold response is nonnegative by construction, but a complete admissible-subspace positivity proof is still open.",
+  "dimension": "dimensionless boundary response",
+  "electron_neutrino_limit_used_as_derivation_input": false,
+  "empirical_derivation_inputs_used": false,
+  "legacy_gravitational_formula_used_as_mass_formula": false,
+  "legacy_particle_tables_used_as_derivation_inputs": false,
+  "projected_response_nonnegative_by_definition": true,
+  "provenance": [
+    {
+      "empirical_derivation_input": false,
+      "legacy_particle_table_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/neutral_operator_no_fit_output_v1.json"
+    }
+  ],
+  "raw_eigenvalues": [
+    -0.03678592197922493,
+    1.647109652211853,
+    3.0563429364340386
+  ],
+  "raw_positive_semidefinite": false,
+  "reference_values_used_as_theorem_inputs": false,
+  "remaining_missing_object": "admissible/projected neutral positivity proof",
+  "source_artifacts": [
+    "artifacts/neutral_operator_no_fit_output_v1.json"
+  ],
+  "source_equations": [
+    "K_nu",
+    "R_excess = max(0, coupled_response-kappa_nu)"
+  ],
+  "source_type": "artifact-backed neutral kernel eigenspectrum",
+  "status": "RAW_KERNEL_NOT_POSITIVE_SEMIDEFINITE",
+  "unit": null,
+  "value": "eigenvalues(K_nu)",
+  "w_mass_used_as_theorem_input": false
+}

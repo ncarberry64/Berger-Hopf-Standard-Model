@@ -1,4 +1,8 @@
-"""Dimensionally guarded BHSM neutral mass candidate."""
+"""Dimensionally guarded historical neutral mass candidate.
+
+The action-normalized spectral route in ``neutrino_spectral`` supersedes this
+legacy path for particle-mass construction.
+"""
 
 from __future__ import annotations
 
@@ -77,4 +81,3 @@ def compute_dimensionful_neutrino_mass_candidate(
         formula_output_dimension=legacy_mass_functional_output_dimension(),
         **common_guard_fields(),
     )
-

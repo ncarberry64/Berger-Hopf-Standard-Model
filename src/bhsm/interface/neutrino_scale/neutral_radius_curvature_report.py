@@ -92,6 +92,8 @@ def build_neutral_radius_curvature_report(
         "public_status": "structural architecture integrated conditional; numerical closure open",
         "closure": closure.to_dict(),
         "dimensionful_mass_candidate": mass.to_dict(),
+        "preferred_particle_mass_route": "conditional action-normalized neutral spectral gap",
+        "legacy_gravitational_formula_used_as_mass_formula": False,
         "frozen_predictions_changed": False,
         "production_physics_model_logic_changed": False,
         "internet_required": False,
@@ -182,4 +184,3 @@ def write_neutral_radius_curvature_artifacts(
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(json.dumps(payloads[key], indent=2, sort_keys=True) + "\n", encoding="utf-8")
     return report
-

@@ -26,7 +26,8 @@ def load_curvature_mass_functional_from_legacy_artifacts(
         matching_ansatz_disclosed=True,
         claim_boundary=(
             "Artifact-backed as an author-supplied geometric matching functional. "
-            "The source itself does not derive this formula from the scalar action, and it is not yet a BHSM neutrino scale theorem."
+            "The source itself does not derive this formula from the scalar action. With K of dimension L^-2, "
+            "the expression has dimension mass/length and is retained only as a dimensionally gated legacy stiffness ansatz."
         ),
     )
 
@@ -48,4 +49,3 @@ def load_curvature_activation_from_legacy_artifacts(
         source_file=source.source_file,
         candidate_status="ARTIFACT_BACKED_LEGACY_CURVATURE_STRUCTURE",
     )
-

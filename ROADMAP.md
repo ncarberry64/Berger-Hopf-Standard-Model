@@ -1,5 +1,15 @@
 # BHSM Roadmap
 
+## Neutral spectral stiffness v1.3
+
+- Derive `Z_nu` and `A_nu` from the neutral action rather than importing the
+  scalar analogue's coefficient.
+- Derive `sqrt(A_nu/Z_nu)` in metres.
+- Derive the physical `K_neutral,eff` map in `m^-2`.
+- Prove positivity on the admissible/projected neutral space.
+- Retain the legacy gravitational expression only as a dimensionally gated
+  stiffness functional.
+
 ## Done
 
 - Frozen internal prediction package and integrity guards.

@@ -1,5 +1,9 @@
 # BHSM Neutral Radius-Curvature Closure
 
+The v1.3 preferred particle-sector route is now the action-normalized neutral
+spectral gap. This v1.2 report remains the source for the symbolic physical
+curvature map and the dimensional obstruction in the historical expression.
+
 Overall status: `DIMENSIONFUL_MASS_NOT_AVAILABLE`.
 
 The curvature mass bridge requires both a propagation/localization radius and a physical neutral curvature map.
@@ -22,4 +26,3 @@ an action-derived normalization supplies the missing length dimension or a
 corrected functional is established.
 
 BHSM does not use neutrino limits, PDG values, W calibration, or legacy particle threshold tables to set r_prop or k_neutral,eff.
-

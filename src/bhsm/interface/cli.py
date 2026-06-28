@@ -56,6 +56,15 @@ from .neutrino_scale import (
     search_neutral_propagation_radius,
     neutral_scale_report_to_markdown,
 )
+from .neutrino_spectral import (
+    audit_legacy_gravitational_mass_formula_dimensions,
+    audit_neutral_kernel_positivity,
+    build_neutral_spectral_gap_candidate,
+    build_neutral_spectral_report,
+    load_neutral_mass_gap_action,
+    neutral_spectral_report_to_markdown,
+    search_neutral_stiffness_ratio,
+)
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -236,6 +245,18 @@ def build_parser() -> argparse.ArgumentParser:
     dimensionful_candidate.add_argument("--format", choices=("json",), default="json")
     radius_curvature_report = commands.add_parser("neutral-radius-curvature-report", help="Render the radius/curvature closure report")
     radius_curvature_report.add_argument("--format", choices=("markdown", "json"), default="markdown")
+    mass_gap_action = commands.add_parser("neutrino-mass-gap-action", help="Load the scalar mass-gap analogue and conditional neutral action")
+    mass_gap_action.add_argument("--format", choices=("json",), default="json")
+    dimensional_gate = commands.add_parser("legacy-dimensional-gate", help="Audit the legacy gravitational expression dimensions")
+    dimensional_gate.add_argument("--format", choices=("json",), default="json")
+    stiffness_ratio = commands.add_parser("neutral-stiffness-ratio", help="Search for the neutral action stiffness ratio")
+    stiffness_ratio.add_argument("--format", choices=("json",), default="json")
+    spectral_gap = commands.add_parser("neutral-spectral-gap", help="Build the conditional neutral spectral-gap candidate")
+    spectral_gap.add_argument("--format", choices=("json",), default="json")
+    kernel_positivity = commands.add_parser("neutral-kernel-positivity", help="Audit raw and admissible neutral-kernel positivity")
+    kernel_positivity.add_argument("--format", choices=("json",), default="json")
+    spectral_report = commands.add_parser("neutral-spectral-report", help="Render the neutral spectral-stiffness report")
+    spectral_report.add_argument("--format", choices=("markdown", "json"), default="markdown")
     return parser
 
 
@@ -517,6 +538,28 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(neutral_radius_curvature_report_to_markdown(report), end="")
         else:
             print(json.dumps(report, indent=2, sort_keys=True))
+        return 0
+    if args.command == "neutrino-mass-gap-action":
+        print(json.dumps(load_neutral_mass_gap_action().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "legacy-dimensional-gate":
+        print(json.dumps(audit_legacy_gravitational_mass_formula_dimensions().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "neutral-stiffness-ratio":
+        print(json.dumps(search_neutral_stiffness_ratio().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "neutral-spectral-gap":
+        print(json.dumps(build_neutral_spectral_gap_candidate().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "neutral-kernel-positivity":
+        print(json.dumps(audit_neutral_kernel_positivity().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "neutral-spectral-report":
+        spectral_report = build_neutral_spectral_report()
+        if args.format == "markdown":
+            print(neutral_spectral_report_to_markdown(spectral_report), end="")
+        else:
+            print(json.dumps(spectral_report.to_dict(), indent=2, sort_keys=True))
         return 0
     particles = tuple(item.strip() for item in args.particles.split(",") if item.strip())
     report = build_prediction_report(
