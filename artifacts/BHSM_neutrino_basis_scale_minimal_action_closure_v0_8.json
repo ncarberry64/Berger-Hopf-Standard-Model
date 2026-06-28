@@ -1,0 +1,218 @@
+{
+  "action_source_term": {
+    "action_derived": false,
+    "expression": "S_neutral_prop[Psi_nu, U_nu, R_curv]",
+    "hermitian": true,
+    "integration_measure": "dmu_boundary dt",
+    "locality": "propagation-conditioned neutral boundary action",
+    "missing_object": null,
+    "source_artifacts": [
+      "artifacts/neutral_operator_no_fit_output_v1.json",
+      "theory/theorem_discharge_neutral_effective_action.md",
+      "theory/collective_curvature_threshold_layer.md",
+      "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
+      "artifacts/BHSM_author_ontology_v0_8.json"
+    ],
+    "status": "CONDITIONAL_PROPAGATION_THEOREM",
+    "symbol": "S_neutral_prop"
+  },
+  "action_term": {
+    "expression": "S_neutral_prop[Psi_nu, U_nu, R_curv]",
+    "key": "neutrino_basis_scale",
+    "missing_object": null,
+    "role": "propagation-conditioned neutral effective-mass response",
+    "source_artifacts": [
+      "artifacts/neutral_operator_no_fit_output_v1.json",
+      "theory/theorem_discharge_neutral_effective_action.md",
+      "theory/collective_curvature_threshold_layer.md",
+      "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
+      "artifacts/BHSM_author_ontology_v0_8.json"
+    ],
+    "status": "CONDITIONAL_PROPAGATION_THEOREM",
+    "symbol": "S_neutral_prop"
+  },
+  "artifact_sources_used": [
+    "artifacts/neutral_operator_no_fit_output_v1.json",
+    "theory/theorem_discharge_neutral_effective_action.md",
+    "theory/collective_curvature_threshold_layer.md",
+    "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
+    "artifacts/BHSM_author_ontology_v0_8.json"
+  ],
+  "author_ontology_used": true,
+  "callable_key": "propagation_conditioned_neutrino_mass",
+  "claim_boundary": "Conditional propagation theorem only. The curvature-response normalization, physical numerical scale, and any comparison/export Dirac-Majorana convention remain open.",
+  "core_blocker": false,
+  "coupling_normalization": {
+    "coupling_mass_dimension": "no static rest-mass coupling assigned",
+    "missing_object": null,
+    "normalization": "curvature response remains symbolic; no numerical neutrino scale derived",
+    "operator_mass_dimension": "effective observable dimension supplied by R_curv",
+    "source_artifacts": [
+      "artifacts/neutral_operator_no_fit_output_v1.json",
+      "theory/theorem_discharge_neutral_effective_action.md",
+      "theory/collective_curvature_threshold_layer.md",
+      "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
+      "artifacts/BHSM_author_ontology_v0_8.json"
+    ],
+    "status": "CONDITIONAL_PROPAGATION_THEOREM",
+    "symbol": "Lambda_nu",
+    "value_source": "NEUTRINO_MASS_IS_PROPAGATION_LOCKED_CURVATURE_RESPONSE"
+  },
+  "empirical_derivation_inputs_used": false,
+  "field_representation": {
+    "chirality": "neutral boundary admissibility; Dirac/Majorana convention secondary",
+    "codomain": "propagation-conditioned curvature-response observables",
+    "conjugation_rule": "secondary comparison/export convention, not the primary theorem target",
+    "domain": "physical neutral BHSM boundary fields under U_nu(t)",
+    "family_space": "three neutral boundary channels under a propagation map",
+    "gauge_representation": "neutral boundary channel representation",
+    "missing_object": null,
+    "source_artifacts": [
+      "artifacts/neutral_operator_no_fit_output_v1.json",
+      "theory/theorem_discharge_neutral_effective_action.md",
+      "theory/collective_curvature_threshold_layer.md",
+      "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
+      "artifacts/BHSM_author_ontology_v0_8.json"
+    ],
+    "spin_lorentz_type": "neutral physical boundary field; static rest-mass representation not imposed",
+    "status": "CONDITIONAL_PROPAGATION_THEOREM",
+    "symbol": "Psi_nu"
+  },
+  "gauge_admissibility": {
+    "admissible_sectors": [
+      "neutral_boundary"
+    ],
+    "excluded_sectors": [
+      "cp_boundary",
+      "charged_boundary"
+    ],
+    "gauge_invariant": null,
+    "missing_object": null,
+    "passes": true,
+    "projector_key": "P_nu",
+    "source_artifacts": [
+      "artifacts/neutral_operator_no_fit_output_v1.json",
+      "theory/theorem_discharge_neutral_effective_action.md",
+      "theory/collective_curvature_threshold_layer.md",
+      "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
+      "artifacts/BHSM_author_ontology_v0_8.json"
+    ],
+    "status": "CONDITIONAL_PROPAGATION_THEOREM"
+  },
+  "hep_runtime_readiness_claimed": false,
+  "lorentz_structure": {
+    "cp_rule": "secondary comparison/export convention, not the primary theorem target",
+    "expression": "m_nu_BHSM[Psi_nu] = I_propagating R_curv[U_nu(t) Psi_nu; kappa_nu]",
+    "free_indices": [],
+    "hermitian": true,
+    "missing_object": null,
+    "scalar_density": true,
+    "source_artifacts": [
+      "artifacts/neutral_operator_no_fit_output_v1.json",
+      "theory/theorem_discharge_neutral_effective_action.md",
+      "theory/collective_curvature_threshold_layer.md",
+      "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
+      "artifacts/BHSM_author_ontology_v0_8.json"
+    ],
+    "status": "CONDITIONAL_PROPAGATION_THEOREM"
+  },
+  "numerical_closure_open": true,
+  "ontology_source": "artifacts/BHSM_author_ontology_v0_8.json",
+  "pdg_values_used_as_theorem_inputs": false,
+  "production_rule": {
+    "callable_available": true,
+    "callable_key": "propagation_conditioned_neutrino_mass",
+    "expression": "neutral boundary propagation -> curvature-threshold response -> effective neutrino mass observable",
+    "missing_object": null,
+    "production_eligible": false,
+    "runtime_validation_required": false,
+    "status": "CONDITIONAL_PROPAGATION_THEOREM"
+  },
+  "promoted": true,
+  "promotion_reason": "The author ontology supplies a propagation-conditioned curvature-response theorem; static Dirac/Majorana mass-matrix closure is no longer the primary target.",
+  "proof_gates": {
+    "action_source": true,
+    "artifact_support": true,
+    "author_ontology": true,
+    "curvature_response": true,
+    "definitions_complete": true,
+    "dirac_majorana_secondary": true,
+    "effective_observable_map": true,
+    "no_empirical_inputs": true,
+    "no_runtime_readiness_claim": true,
+    "no_static_rest_mass_claim": true,
+    "physical_neutral_boundary_field": true,
+    "propagating_limit": true,
+    "propagation_map": true,
+    "provenance": true,
+    "registry_update": true,
+    "stationary_limit": true,
+    "tests": true,
+    "threshold_condition": true
+  },
+  "provenance": [
+    {
+      "calibration_theorem_input": false,
+      "empirical_derivation_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/neutral_operator_no_fit_output_v1.json",
+      "source_status": "DISCOVERED"
+    },
+    {
+      "calibration_theorem_input": false,
+      "empirical_derivation_input": false,
+      "reference_theorem_input": false,
+      "source_path": "theory/theorem_discharge_neutral_effective_action.md",
+      "source_status": "DISCOVERED"
+    },
+    {
+      "calibration_theorem_input": false,
+      "empirical_derivation_input": false,
+      "reference_theorem_input": false,
+      "source_path": "theory/collective_curvature_threshold_layer.md",
+      "source_status": "DISCOVERED"
+    },
+    {
+      "calibration_theorem_input": false,
+      "empirical_derivation_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
+      "source_status": "DISCOVERED"
+    },
+    {
+      "calibration_theorem_input": false,
+      "empirical_derivation_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/BHSM_author_ontology_v0_8.json",
+      "source_status": "DISCOVERED"
+    }
+  ],
+  "reference_values_used_as_theorem_inputs": false,
+  "registry_updates": [
+    "formula:neutrino_propagation_mass",
+    "registry:neutral_operator_kernel_BH"
+  ],
+  "remaining_missing_object": null,
+  "runtime_gates_changed": false,
+  "status_after": "CONDITIONAL_PROPAGATION_THEOREM",
+  "status_before": "OPEN_MISSING_PHYSICAL_BASIS",
+  "target_disposition": "PROPAGATION_CONDITIONED_EFFECTIVE_MASS",
+  "tests_passed": true,
+  "theorem_key": "neutrino_basis_scale",
+  "variation_or_source_rule": {
+    "defined": true,
+    "equation_or_current": "neutral boundary propagation -> curvature-threshold response -> effective neutrino mass observable",
+    "missing_object": null,
+    "source_artifacts": [
+      "artifacts/neutral_operator_no_fit_output_v1.json",
+      "theory/theorem_discharge_neutral_effective_action.md",
+      "theory/collective_curvature_threshold_layer.md",
+      "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
+      "artifacts/BHSM_author_ontology_v0_8.json"
+    ],
+    "source_expression": "R_curv[U_nu(t) Psi_nu; kappa_nu]",
+    "status": "CONDITIONAL_PROPAGATION_THEOREM",
+    "varied_field": "Psi_nu"
+  },
+  "w_calibration_used_as_theorem_input": false
+}

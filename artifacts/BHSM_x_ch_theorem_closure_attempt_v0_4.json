@@ -1,0 +1,282 @@
+{
+  "action_term": {
+    "expression": "undefined pending action-derived X_ch field content, current attachment, and coupling normalization",
+    "missing_objects": [
+      "theorem assigning X_ch spin, gauge representation, Lorentz index structure, field content, and coupling normalization for the separate charged boundary response"
+    ],
+    "source_artifacts": [
+      "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
+      "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json"
+    ],
+    "source_status": "OPEN_MISSING_ACTION_SOURCE",
+    "symbol": "L_X_ch"
+  },
+  "artifact_sources": [
+    "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
+    "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json"
+  ],
+  "calibration_inputs_used": false,
+  "callable_available": false,
+  "callable_key": "x_ch_production_vertex",
+  "claim_boundary": "X_ch is not a production-ready interaction without an explicit action-backed theorem.",
+  "closure_status": "OPEN_EXACT_MISSING_THEOREM",
+  "codomain": "production interaction amplitudes (candidate; codomain not established)",
+  "display_name": "X_ch charged boundary-response production theorem",
+  "domain": "charged boundary source channels (candidate; physical field domain not derived)",
+  "empirical_derivation_inputs_used": false,
+  "formal_statement": {
+    "assumptions": [
+      "charged boundary values are source data only",
+      "X_ch is not identified with W_mu without a theorem"
+    ],
+    "statement": "A charged boundary-response source defines a production interaction only if X_ch has an action-derived field representation, Lorentz structure, admissible current attachment, and normalized coupling.",
+    "status": "FORMAL_CONDITIONAL_STATEMENT",
+    "theorem_key": "X_ch"
+  },
+  "missing_objects": [
+    "theorem assigning X_ch spin, gauge representation, Lorentz index structure, field content, and coupling normalization for the separate charged boundary response"
+  ],
+  "notes": [
+    "The charged boundary constants are artifact-backed source data."
+  ],
+  "operator_definition": {
+    "codomain": "production interaction amplitudes (candidate; codomain not established)",
+    "domain": "charged boundary source channels (candidate; physical field domain not derived)",
+    "expression": "X_ch^mu J_mu^boundary",
+    "name": "X_ch charged boundary-response candidate",
+    "status": "INCOMPLETE_MISSING_FIELD_AND_CURRENT_THEOREM"
+  },
+  "promotion_allowed": false,
+  "promotion_reason": "Action, field representation, current attachment, admissibility, and coupling gates fail.",
+  "proof_gates": [
+    {
+      "evidence": "A formal conditional production-eligibility statement is encoded.",
+      "gate_id": "G01",
+      "limitations": "",
+      "name": "formal theorem statement exists",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "No supporting evidence supplied.",
+      "gate_id": "G02",
+      "limitations": "Physical field domain and production-amplitude codomain are not derived.",
+      "name": "domain and codomain are defined",
+      "passes": false,
+      "required": true
+    },
+    {
+      "evidence": "No supporting evidence supplied.",
+      "gate_id": "G03",
+      "limitations": "No action-derived X_ch interaction term exists.",
+      "name": "operator/action term is defined",
+      "passes": false,
+      "required": true
+    },
+    {
+      "evidence": "No supporting evidence supplied.",
+      "gate_id": "G04",
+      "limitations": "Only the closure-attempt callable exists; no production X_ch callable exists.",
+      "name": "callable implementation exists",
+      "passes": false,
+      "required": true
+    },
+    {
+      "evidence": "The closure-attempt callable has mapping input and TheoremClosureResult output schemas.",
+      "gate_id": "G05",
+      "limitations": "",
+      "name": "input/output schema exists",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "The v1.1 theorem blocker and charged boundary package are local machine-readable artifacts.",
+      "gate_id": "G06",
+      "limitations": "",
+      "name": "artifact source exists",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "Every inspected local source is recorded in the result.",
+      "gate_id": "G07",
+      "limitations": "",
+      "name": "provenance chain exists",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "The source artifact records empirical_derivation_inputs_used=false.",
+      "gate_id": "G08",
+      "limitations": "",
+      "name": "no empirical derivation inputs are used",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "The attempt reads no reference or PDG values.",
+      "gate_id": "G09",
+      "limitations": "",
+      "name": "no reference/PDG values are derivation inputs",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "Local source presence and non-promotion consistency checks pass.",
+      "gate_id": "G10",
+      "limitations": "",
+      "name": "consistency checks pass",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "The sprint generates a separate registry update proposal.",
+      "gate_id": "G11",
+      "limitations": "",
+      "name": "registry status update is generated",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "The closure claim policy forbids production promotion.",
+      "gate_id": "G12",
+      "limitations": "",
+      "name": "claim policy is explicit",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "The existing blocker artifact records OPEN_EXACT_MISSING_THEOREM.",
+      "gate_id": "G13",
+      "limitations": "",
+      "name": "theorem blocker artifact records the attempt",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "No supporting evidence supplied.",
+      "gate_id": "G14",
+      "limitations": "Spin, gauge representation, and allowed/forbidden production channels are not fixed by theorem.",
+      "name": "gauge/sector admissibility checks pass",
+      "passes": false,
+      "required": true
+    },
+    {
+      "evidence": "No supporting evidence supplied.",
+      "gate_id": "G15",
+      "limitations": "Coupling normalization and dimensional policy are missing.",
+      "name": "dimensional/unit policy is explicit",
+      "passes": false,
+      "required": true
+    },
+    {
+      "evidence": "No calibration input is accepted or used.",
+      "gate_id": "G16",
+      "limitations": "",
+      "name": "calibration policy is explicit",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "theorem assigning X_ch spin, gauge representation, Lorentz index structure, field content, and coupling normalization for the separate charged boundary response",
+      "gate_id": "G17",
+      "limitations": "",
+      "name": "failure modes are documented",
+      "passes": true,
+      "required": true
+    }
+  ],
+  "provenance": [
+    {
+      "empirical_derivation_input": false,
+      "reference_comparison_input": false,
+      "source_path": "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
+      "source_status": "DISCOVERED"
+    },
+    {
+      "calibration_input": false,
+      "claim_status": "ARTIFACT_BACKED_CONDITIONAL_CHARGED_BOUNDARY_VALUES",
+      "empirical_derivation_input": false,
+      "frozen_prediction": true,
+      "loaded_at_runtime": true,
+      "metadata": {
+        "official_predictions_changed": false,
+        "public_status": "structural architecture integrated conditional; numerical closure open"
+      },
+      "notes": [
+        "Loaded from the existing internal no-fit boundary package."
+      ],
+      "reference_comparison_input": false,
+      "source_artifact_key": "BHSM_boundary_no_fit_prediction_package_v1",
+      "source_field": "charged_boundary_values",
+      "source_path": "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json",
+      "source_status": "DISCOVERED",
+      "unit": "dimensionless",
+      "value": {
+        "artifact": "charged_boundary_bridge_values_v1",
+        "charged_boundary_values": "DERIVED_CONDITIONAL",
+        "charged_outputs_at_boundary_tau": "NO_FIT_OUTPUT_CANDIDATE_EXPORTED",
+        "empirical_derivation_inputs_used": false,
+        "external_empirical_comparison_layer": "OPEN_SEPARATE_LAYER",
+        "observed_CKM_used": false,
+        "observed_CP_used": false,
+        "observed_Higgs_used": false,
+        "observed_PMNS_used": false,
+        "observed_gauge_values_used": false,
+        "observed_masses_used": false,
+        "official_predictions_changed": false,
+        "public_status": "structural architecture integrated conditional; numerical closure open",
+        "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
+        "sectors": {
+          "down": {
+            "beta": "64/1323",
+            "beta_over_kappa": "76/7",
+            "beta_tau": 0.0021718775162529592,
+            "beta_tau_formula": "16/(1323*pi^(3/2))",
+            "kappa": "16/3591",
+            "kappa_tau": 0.0002000413501811936,
+            "kappa_tau_formula": "4/(3591*pi^(3/2))"
+          },
+          "lepton": {
+            "beta": "16/1323",
+            "beta_over_kappa": "1/1",
+            "beta_tau": 0.0005429693790632398,
+            "beta_tau_formula": "4/(1323*pi^(3/2))",
+            "kappa": "16/1323",
+            "kappa_tau": 0.0005429693790632398,
+            "kappa_tau_formula": "4/(1323*pi^(3/2))"
+          },
+          "up": {
+            "beta": "32/1323",
+            "beta_over_kappa": "2/1",
+            "beta_tau": 0.0010859387581264796,
+            "beta_tau_formula": "8/(1323*pi^(3/2))",
+            "kappa": "16/1323",
+            "kappa_tau": 0.0005429693790632398,
+            "kappa_tau_formula": "4/(1323*pi^(3/2))"
+          }
+        },
+        "sigma_fit_to_masses": false,
+        "tau": 0.04489678053129164,
+        "tau_fit_to_masses": false
+      },
+      "value_key": "charged_bridge_constants",
+      "value_kind": "charged_boundary_bundle"
+    }
+  ],
+  "reference_values_used_as_derivation_inputs": false,
+  "registry_entries_affected": [
+    "charged_boundary_response_matrix",
+    "minimal_collider_interface_subset",
+    "feynrules_minimal_model",
+    "ufo_export",
+    "madgraph_smoke_test"
+  ],
+  "status_after": "OPEN_EXACT_MISSING_THEOREM",
+  "status_before": "OPEN_EXACT_MISSING_THEOREM",
+  "theorem_key": "X_ch",
+  "warnings": [
+    "A closure-attempt callable is not the missing production interaction callable.",
+    "Runtime software gates remain disabled."
+  ]
+}

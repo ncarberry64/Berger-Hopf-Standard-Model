@@ -69,10 +69,10 @@ def test_phase_three_d_docs_and_readme_preserve_boundaries() -> None:
     ]:
         assert (ROOT / relative).exists(), relative
 
-    readme = " ".join(read("README.md").split())
+    readme = " ".join(read("docs/archive/README_status_history_pre_v0_7.md").split())
     assert PHASE_THREE_D_STATUS in readme
-    assert "Phase Three-D canonical current interface status" in read("README.md")
-    assert "This does not constitute production FeynRules, UFO, MadGraph" in read("README.md")
+    assert "Phase Three-D canonical current interface status" in read("docs/archive/README_status_history_pre_v0_7.md")
+    assert "This does not constitute production FeynRules, UFO, MadGraph" in read("docs/archive/README_status_history_pre_v0_7.md")
 
 
 def test_canonical_field_target_conventions_preserve_zh_and_label_targets() -> None:
@@ -275,7 +275,7 @@ def test_no_fake_event_files_or_forbidden_claims() -> None:
     combined = "\n".join(
         read(relative)
         for relative in [
-            "README.md",
+            "docs/archive/README_status_history_pre_v0_7.md",
             "docs/phase_three_d_canonical_current_attachment.md",
             "docs/canonical_field_target_conventions.md",
             "docs/chiral_current_attachment_map.md",

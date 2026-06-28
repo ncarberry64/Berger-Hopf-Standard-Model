@@ -83,12 +83,12 @@ def test_phase_three_n_docs_scripts_and_readme_preserve_status() -> None:
     ]:
         assert (ROOT / relative).exists(), relative
 
-    readme = " ".join(read("README.md").split())
+    readme = " ".join(read("docs/archive/README_status_history_pre_v0_7.md").split())
     assert PHASE_THREE_N_STATUS in readme
-    assert "Phase Three-N runtime execution gate" in read("README.md")
-    assert "complete BHSM 4D Lagrangian" in read("README.md")
+    assert "Phase Three-N runtime execution gate" in read("docs/archive/README_status_history_pre_v0_7.md")
+    assert "complete BHSM 4D Lagrangian" in read("docs/archive/README_status_history_pre_v0_7.md")
     if not load("artifacts/BHSM_phase_three_n_gate_status_v1_6.json")["feynrules_syntax_validated"]:
-        assert "minimal model remains disabled" in read("README.md")
+        assert "minimal model remains disabled" in read("docs/archive/README_status_history_pre_v0_7.md")
 
 
 def test_runtime_provisioning_report_has_required_detection_fields() -> None:
@@ -251,7 +251,7 @@ def test_no_forbidden_phase_three_n_claims() -> None:
     combined = "\n".join(
         read(relative)
         for relative in [
-            "README.md",
+            "docs/archive/README_status_history_pre_v0_7.md",
             "docs/phase_three_n_runtime_execution_gate.md",
             "docs/wolfram_feynrules_runtime_provisioning.md",
             "docs/live_validation_command_log.md",

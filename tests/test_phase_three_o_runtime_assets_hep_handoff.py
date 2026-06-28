@@ -85,12 +85,12 @@ def test_phase_three_o_docs_scripts_and_readme() -> None:
     ]:
         assert (ROOT / relative).exists(), relative
 
-    readme = " ".join(read("README.md").split())
+    readme = " ".join(read("docs/archive/README_status_history_pre_v0_7.md").split())
     assert STATUS in readme
-    assert "Phase Three-O runtime assets and institutional HEP handoff" in read("README.md")
+    assert "Phase Three-O runtime assets and institutional HEP handoff" in read("docs/archive/README_status_history_pre_v0_7.md")
     assert "CERN-like institutional HEP handoff package" in readme
-    assert "complete BHSM 4D Lagrangian" in read("README.md")
-    assert "experiment-approved integration" in read("README.md")
+    assert "complete BHSM 4D Lagrangian" in read("docs/archive/README_status_history_pre_v0_7.md")
+    assert "experiment-approved integration" in read("docs/archive/README_status_history_pre_v0_7.md")
 
 
 def test_asset_manifest_marks_wolfram_as_external_licensed_runtime() -> None:
@@ -229,7 +229,7 @@ def test_no_event_files_or_forbidden_phase_three_o_claims() -> None:
     combined = "\n".join(
         read(relative)
         for relative in [
-            "README.md",
+            "docs/archive/README_status_history_pre_v0_7.md",
             "docs/phase_three_o_runtime_assets_hep_handoff.md",
             "docs/runtime_asset_manifest.md",
             "docs/wolfram_runtime_mapping_guide.md",

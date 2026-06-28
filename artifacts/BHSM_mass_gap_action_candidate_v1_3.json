@@ -1,0 +1,38 @@
+{
+  "action_density": "L_nu = 1/2 Z_nu(dt phi_nu)^2 - 1/2 Z_nu(grad phi_nu)^2 - 1/2 A_nu(-nabla^2 phi_nu - K_neutral,eff)^2",
+  "author_ontology_dependency": "neutrino mass is propagation-locked curvature response",
+  "candidate_key": "neutral_mass_gap_action",
+  "claim_boundary": "The scalar action and its gap structure are artifact-backed. The neutral-sector normalization is a conditional generalization until A_nu, Z_nu, and K_neutral,eff are derived.",
+  "dimension": "inverse_length",
+  "electron_neutrino_limit_used_as_derivation_input": false,
+  "empirical_derivation_inputs_used": false,
+  "legacy_gravitational_formula_used_as_mass_formula": false,
+  "legacy_particle_tables_used_as_derivation_inputs": false,
+  "neutral_action_generalization_conditional": true,
+  "provenance": [
+    {
+      "empirical_derivation_input": false,
+      "legacy_particle_table_input": false,
+      "reference_theorem_input": false,
+      "source_path": "theory/legacy_sources/v1_1/mass_gap.pdf"
+    }
+  ],
+  "reference_values_used_as_theorem_inputs": false,
+  "remaining_missing_object": "neutral A_nu, Z_nu, and physical K_neutral,eff",
+  "scalar_action_artifact_backed": true,
+  "source_artifacts": [
+    "theory/legacy_sources/v1_1/mass_gap.pdf"
+  ],
+  "source_equations": [
+    "L = 1/2(dt phi)^2 - 1/2(grad phi)^2 - lambda/2(-nabla^2 phi - k_loc)^2",
+    "m_gap = sqrt(lambda) k_loc",
+    "L_nu = 1/2 Z_nu(dt phi_nu)^2 - 1/2 Z_nu(grad phi_nu)^2 - 1/2 A_nu(-nabla^2 phi_nu - K_neutral,eff)^2",
+    "mu_nu = sqrt(A_nu/Z_nu) K_neutral,eff"
+  ],
+  "source_type": "bundled scalar topographic EFT analogue",
+  "spectral_gap_formula": "mu_nu = sqrt(A_nu/Z_nu) K_neutral,eff",
+  "status": "ARTIFACT_BACKED_MASS_GAP_ACTION",
+  "unit": "symbolic",
+  "value": "mu_nu = sqrt(A_nu/Z_nu) K_neutral,eff",
+  "w_mass_used_as_theorem_input": false
+}

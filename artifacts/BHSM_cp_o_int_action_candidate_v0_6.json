@@ -1,0 +1,160 @@
+{
+  "action_density": {
+    "claim_boundary": "The source-traced symbolic density is not an action-derived theorem.",
+    "expression": "G_raw exp(i delta_BH) O_int + h.c.",
+    "integration_measure": "undefined boundary/interface measure",
+    "is_artifact_backed": true,
+    "is_author_axiom": false,
+    "is_placeholder": true,
+    "locality": "boundary/interface-local symbolic candidate",
+    "missing_object": "action-derived measure, locality theorem, variation, and EOM effect",
+    "provenance": [
+      "artifacts/BHSM_effective_lagrangian_candidate_v0_3.json",
+      "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
+    ],
+    "source": "existing symbolic 4D Lagrangian assembly ledger",
+    "status": "AVAILABLE_SYMBOLIC_CANDIDATE",
+    "symbol": "L_CP_holonomy_candidate",
+    "variation_eom_defined": false
+  },
+  "action_level_closure": false,
+  "artifact_name": "BHSM CP O_int Symbolic Action Candidate",
+  "boundary_factor": {
+    "claim_boundary": "The boundary symbol is source-traced but not an action-derived operator.",
+    "expression": "candidate: delta_BH * H_CP[boundary holonomy]",
+    "is_artifact_backed": true,
+    "is_author_axiom": false,
+    "is_placeholder": true,
+    "locality": "boundary/interface-local symbolic candidate",
+    "missing_object": "boundary-to-action projection theorem and defined integration measure",
+    "provenance": [
+      "artifacts/BHSM_effective_lagrangian_candidate_v0_3.json",
+      "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
+    ],
+    "source": "existing effective-Lagrangian candidate artifact",
+    "status": "AVAILABLE_SYMBOLIC_CANDIDATE",
+    "symbol": "H_CP"
+  },
+  "candidate_key": "cp_o_int_symbolic_field_action_candidate",
+  "candidate_status": "AVAILABLE_SYMBOLIC_CANDIDATE",
+  "claim_boundary": "The symbolic field/action candidate localizes the gap but is not action-level closure.",
+  "coupling_factor": {
+    "claim_boundary": "No W anchor, PDG value, or calibration fixes the symbolic coefficient.",
+    "coupling_mass_dimension": "must make the action density dimension four; value not derived",
+    "is_artifact_backed": true,
+    "is_author_axiom": false,
+    "is_placeholder": true,
+    "missing_object": "normalized coupling and operator/coupling mass dimensions from the action",
+    "normalization": "unspecified symbolic coefficient",
+    "operator_mass_dimension": "not derived",
+    "provenance": [
+      "artifacts/BHSM_effective_lagrangian_candidate_v0_3.json",
+      "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
+    ],
+    "source": "existing symbolic 4D assembly ledger coefficient symbol",
+    "status": "AVAILABLE_SYMBOLIC_CANDIDATE",
+    "symbol": "G_raw"
+  },
+  "field_factor": {
+    "chirality_defined": false,
+    "claim_boundary": "The generic psi symbol is a symbolic placeholder, not a production field definition.",
+    "conjugation_defined": false,
+    "family_indices_defined": false,
+    "field_symbols": [
+      "psi"
+    ],
+    "is_artifact_backed": true,
+    "is_author_axiom": false,
+    "is_placeholder": true,
+    "missing_object": "action-derived physical field representation with chirality, family indices, and conjugation rules",
+    "provenance": [
+      "artifacts/BHSM_effective_lagrangian_candidate_v0_3.json",
+      "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
+    ],
+    "representation": "abstract boundary/interface field only; physical representation not derived",
+    "source": "existing symbolic CP holonomy term",
+    "status": "AVAILABLE_SYMBOLIC_CANDIDATE"
+  },
+  "gauge_factor": {
+    "allowed_sectors": [
+      "CP boundary/interface candidate only"
+    ],
+    "claim_boundary": "The symbolic projector does not close X_ch or the neutrino theorem.",
+    "expression": "P_CP_admissible O_int P_CP_admissible",
+    "forbidden_leakage": [
+      "X_ch closure",
+      "neutrino physical mass closure"
+    ],
+    "gauge_representation": "unspecified; gauge-neutral/admissible projection required",
+    "is_artifact_backed": false,
+    "is_author_axiom": false,
+    "is_placeholder": true,
+    "missing_object": "action-derived gauge representation, sector projectors, and forbidden-channel proof",
+    "provenance": [
+      "artifacts/BHSM_effective_lagrangian_candidate_v0_3.json",
+      "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
+    ],
+    "source": "Sprint C symbolic admissibility constraint",
+    "status": "AVAILABLE_SYMBOLIC_CANDIDATE"
+  },
+  "lorentz_factor": {
+    "claim_boundary": "A scalar wrapper requirement is not a derived Lorentz operator.",
+    "cp_sensitive_structure": "complex phase multiplies O_int and its conjugate",
+    "expression": "LorentzScalar[O_int] + h.c.",
+    "hermiticity_rule": "add Hermitian conjugate",
+    "index_structure": "unspecified symbolic contraction",
+    "is_artifact_backed": false,
+    "is_author_axiom": false,
+    "is_placeholder": true,
+    "lorentz_scalar_required": true,
+    "missing_object": "action-derived spinor/vector/tensor contraction and CP transformation law",
+    "provenance": [
+      "artifacts/BHSM_effective_lagrangian_candidate_v0_3.json",
+      "artifacts/BHSM_symbolic_4d_lagrangian_assembly_ledger_v0_9.json"
+    ],
+    "source": "Sprint C symbolic constraint informed by artifact missing-item ledger",
+    "status": "AVAILABLE_SYMBOLIC_CANDIDATE"
+  },
+  "phase_factor": {
+    "claim_boundary": "An artifact-backed phase is not a standalone interaction.",
+    "expression": "exp(i*delta_BH)",
+    "is_artifact_backed": true,
+    "is_author_axiom": false,
+    "is_placeholder": false,
+    "missing_object": null,
+    "provenance": [
+      "artifacts/CP_no_fit_holonomy_output_v1.json",
+      "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json"
+    ],
+    "source": "BHSM CP holonomy artifact",
+    "status": "AVAILABLE_ARTIFACT_BACKED",
+    "value": {
+      "Z6_boundary_phase": {
+        "imag": 0.8660254037844386,
+        "real": 0.5
+      },
+      "delta_BH": 1.0471975511965976
+    }
+  },
+  "production_eligible": false,
+  "symbolic_callable": {
+    "callable_available": true,
+    "callable_key": "cp_o_int_symbolic_candidate",
+    "claim_boundary": "This callable assembles a symbolic candidate; it is not a production theorem callable.",
+    "expression": "G_raw * exp(i*delta_BH) * (Psi_CP_interface_bar O_int Psi_CP_interface) * (H_CP) + h.c.",
+    "inputs_used": [
+      "coupling_symbol",
+      "phase_expression",
+      "field_expression",
+      "boundary_expression"
+    ],
+    "output_schema": {
+      "expression": "symbolic string",
+      "production_eligible": false
+    },
+    "production_callable": false,
+    "status": "AVAILABLE_SYMBOLIC_CANDIDATE"
+  },
+  "theorem_status": "OPEN_MISSING_ACTION_SOURCE",
+  "version": "0.6"
+}

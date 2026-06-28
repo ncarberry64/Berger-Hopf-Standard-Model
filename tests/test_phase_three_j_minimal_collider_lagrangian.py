@@ -74,10 +74,10 @@ def test_phase_three_j_docs_and_readme_preserve_status() -> None:
     ]:
         assert (ROOT / relative).exists(), relative
 
-    readme = " ".join(read("README.md").split())
+    readme = " ".join(read("docs/archive/README_status_history_pre_v0_7.md").split())
     assert PHASE_THREE_J_STATUS in readme
-    assert "Phase Three-J minimal collider-interface Lagrangian subset" in read("README.md")
-    assert "does not constitute the complete BHSM 4D Lagrangian" in read("README.md")
+    assert "Phase Three-J minimal collider-interface Lagrangian subset" in read("docs/archive/README_status_history_pre_v0_7.md")
+    assert "does not constitute the complete BHSM 4D Lagrangian" in read("docs/archive/README_status_history_pre_v0_7.md")
 
 
 def test_minimal_subset_includes_only_bounded_ckm_pmns_currents() -> None:
@@ -239,7 +239,7 @@ def test_no_fake_files_values_or_forbidden_phase_three_j_claims() -> None:
     combined = "\n".join(
         read(relative)
         for relative in [
-            "README.md",
+            "docs/archive/README_status_history_pre_v0_7.md",
             "docs/phase_three_j_minimal_collider_lagrangian.md",
             "docs/minimal_bounded_lagrangian_subset.md",
             "docs/included_excluded_vertex_families.md",

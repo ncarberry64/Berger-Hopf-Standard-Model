@@ -8,6 +8,8 @@ The electron-neutrino comparison is treated as an upper-limit comparison unless 
 
 Open-theorem entries are registry blockers, not production-ready predictions.
 
+Conditional theorem entries depend on the author ontology and are not production-ready predictions or numerical closure.
+
 Runtime-disabled software entries require live external validation before readiness can be claimed.
 
 Allowed descriptions include computational registry, calibration-aware model
@@ -18,3 +20,6 @@ FeynRules/UFO/MadGraph readiness.
 
 The consolidated release claim table is
 `docs/bhsm_v1_2_0_prediction_claim_status.md`.
+
+See `docs/prediction_gallery_claim_policy.md` for gallery, plotting, live-PDG,
+speculative, and theorem-attempt boundaries.

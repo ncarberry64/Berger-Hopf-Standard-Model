@@ -1,0 +1,411 @@
+{
+  "action_level_closure_achieved": false,
+  "action_term": {
+    "action_derived": false,
+    "author_supplied": false,
+    "expression": "",
+    "interaction_defined": false,
+    "source": "not present in local action artifacts",
+    "status": "OPEN_MISSING_ACTION_SOURCE",
+    "symbol": "O_int"
+  },
+  "artifact_sources_checked": [
+    "artifacts/CP_no_fit_holonomy_output_v1.json",
+    "artifacts/CKM_no_fit_operator_output_v1.json",
+    "artifacts/PMNS_no_fit_operator_output_v1.json",
+    "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json",
+    "artifacts/BHSM_cp_o_int_theorem_closure_attempt_v0_4.json",
+    "data/theorem_inputs/cp_o_int_attachment_candidate_template.json"
+  ],
+  "artifact_sources_used": [
+    "artifacts/CP_no_fit_holonomy_output_v1.json",
+    "artifacts/CKM_no_fit_operator_output_v1.json",
+    "artifacts/PMNS_no_fit_operator_output_v1.json",
+    "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json",
+    "artifacts/BHSM_cp_o_int_theorem_closure_attempt_v0_4.json",
+    "data/theorem_inputs/cp_o_int_attachment_candidate_template.json"
+  ],
+  "calibration_values_used_as_theorem_inputs": false,
+  "callable_available": false,
+  "callable_key": "cp_o_int_standalone_attachment",
+  "claim_boundary": "CP holonomy and CKM/PMNS phase attachment are not a standalone production interaction theorem.",
+  "codomain": {
+    "description": "",
+    "source": "not present in local theorem artifacts",
+    "status": "OPEN_MISSING_FIELD_REPRESENTATION"
+  },
+  "conditional_author_axiom_used": false,
+  "coupling_normalization": {
+    "coupling_symbol": "",
+    "mass_dimension": "",
+    "normalization": "",
+    "source": "not present in local theorem artifacts",
+    "status": "OPEN_MISSING_COUPLING_NORMALIZATION"
+  },
+  "deepest_valid_stage": "Stage 2: Phase attachment rule availability",
+  "display_name": "Standalone CP O_int interaction attachment theorem",
+  "domain": {
+    "description": "",
+    "source": "not present in local theorem artifacts",
+    "status": "OPEN_MISSING_FIELD_REPRESENTATION"
+  },
+  "empirical_derivation_inputs_used": false,
+  "field_representation": {
+    "field_content": "",
+    "representation": "",
+    "source": "not present in local theorem artifacts",
+    "status": "OPEN_MISSING_FIELD_REPRESENTATION"
+  },
+  "formal_statement": "A standalone CP O_int interaction exists only when the internal phase is attached to an action-derived field operator with Lorentz, gauge, coupling, callable, and provenance support.",
+  "formula_registry_updates": [
+    {
+      "formula_key": "cp_o_int_standalone_attachment",
+      "status_after": "OPEN_THEOREM_REQUIRED",
+      "status_before": "OPEN_THEOREM_REQUIRED",
+      "theorem_status": "OPEN_MISSING_INTERACTION_ATTACHMENT"
+    }
+  ],
+  "gauge_admissibility": {
+    "allowed_sectors": [],
+    "forbidden_sectors": [],
+    "gauge_representation": "",
+    "source": "not present in local theorem artifacts",
+    "status": "OPEN_MISSING_GAUGE_ADMISSIBILITY"
+  },
+  "lorentz_structure": {
+    "expression": "",
+    "index_structure": "",
+    "source": "not present in local theorem artifacts",
+    "status": "OPEN_MISSING_LORENTZ_STRUCTURE"
+  },
+  "missing_objects": [
+    "standalone O_int field content and representation",
+    "standalone O_int Lorentz/index structure",
+    "standalone O_int gauge representation and sector admissibility",
+    "standalone O_int coupling normalization and mass dimension",
+    "standalone O_int action/source term",
+    "standalone O_int theorem callable",
+    "action-derived support for production promotion"
+  ],
+  "notes": [
+    "The disabled template is inert by default."
+  ],
+  "phase_attachment_rule": {
+    "boundary_phase": {
+      "imag": 0.8660254037844386,
+      "real": 0.5
+    },
+    "ckm_attachment": true,
+    "delta_bh": 1.0471975511965976,
+    "delta_formula": "pi/3",
+    "pmns_attachment": true,
+    "source_artifacts": [
+      "artifacts/CP_no_fit_holonomy_output_v1.json",
+      "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json"
+    ],
+    "standalone_attachment": false,
+    "status": "MATRIX_PHASE_ATTACHMENT_AVAILABLE_STANDALONE_OPEN"
+  },
+  "promoted": false,
+  "promotion_allowed": false,
+  "promotion_reason": "Phase attachment exists, but standalone production operator gates remain unsatisfied.",
+  "proof_gates": [
+    {
+      "evidence": "The focused formal conditional theorem statement is encoded.",
+      "gate_id": "CP01",
+      "limitations": "",
+      "name": "formal theorem statement exists",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "No supporting evidence supplied.",
+      "gate_id": "CP02",
+      "limitations": "Required CP O_int proof object is absent.",
+      "name": "CP O_int domain is defined",
+      "passes": false,
+      "required": true
+    },
+    {
+      "evidence": "No supporting evidence supplied.",
+      "gate_id": "CP03",
+      "limitations": "Required CP O_int proof object is absent.",
+      "name": "CP O_int codomain is defined",
+      "passes": false,
+      "required": true
+    },
+    {
+      "evidence": "No supporting evidence supplied.",
+      "gate_id": "CP04",
+      "limitations": "Required CP O_int proof object is absent.",
+      "name": "field representation is defined",
+      "passes": false,
+      "required": true
+    },
+    {
+      "evidence": "No supporting evidence supplied.",
+      "gate_id": "CP05",
+      "limitations": "Required CP O_int proof object is absent.",
+      "name": "Lorentz structure is defined",
+      "passes": false,
+      "required": true
+    },
+    {
+      "evidence": "No supporting evidence supplied.",
+      "gate_id": "CP06",
+      "limitations": "Required CP O_int proof object is absent.",
+      "name": "gauge/sector admissibility is defined",
+      "passes": false,
+      "required": true
+    },
+    {
+      "evidence": "No supporting evidence supplied.",
+      "gate_id": "CP07",
+      "limitations": "Required CP O_int proof object is absent.",
+      "name": "interaction/action term is defined",
+      "passes": false,
+      "required": true
+    },
+    {
+      "evidence": "The local blocker records CKM/PMNS phase attachment.",
+      "gate_id": "CP08",
+      "limitations": "",
+      "name": "phase attachment rule is defined",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "No supporting evidence supplied.",
+      "gate_id": "CP09",
+      "limitations": "Required CP O_int proof object is absent.",
+      "name": "coupling normalization is defined",
+      "passes": false,
+      "required": true
+    },
+    {
+      "evidence": "No supporting evidence supplied.",
+      "gate_id": "CP10",
+      "limitations": "Required CP O_int proof object is absent.",
+      "name": "callable implementation exists",
+      "passes": false,
+      "required": true
+    },
+    {
+      "evidence": "The focused evaluator has structured mapping input and CPOIntEvaluationResult output.",
+      "gate_id": "CP11",
+      "limitations": "",
+      "name": "input/output schema exists",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "The local CP phase artifact exists.",
+      "gate_id": "CP12",
+      "limitations": "",
+      "name": "artifact source exists",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "The phase and blocker source paths are explicit.",
+      "gate_id": "CP13",
+      "limitations": "",
+      "name": "provenance chain exists",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "No empirical data are accepted by the evaluator.",
+      "gate_id": "CP14",
+      "limitations": "",
+      "name": "no empirical derivation inputs are used",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "No reference or PDG modules are imported.",
+      "gate_id": "CP15",
+      "limitations": "",
+      "name": "no PDG/reference values are theorem inputs",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "No calibration value or W anchor is accepted.",
+      "gate_id": "CP16",
+      "limitations": "",
+      "name": "no calibration values are theorem inputs",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "Phase availability and non-promotion consistency checks pass.",
+      "gate_id": "CP17",
+      "limitations": "",
+      "name": "consistency tests pass",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "A separate CP registry update proposal is generated.",
+      "gate_id": "CP18",
+      "limitations": "",
+      "name": "registry update proposal is generated",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "A separate formula-registry update record is generated.",
+      "gate_id": "CP19",
+      "limitations": "",
+      "name": "formula registry update is generated",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "The CP Sprint B claim policy is explicit.",
+      "gate_id": "CP20",
+      "limitations": "",
+      "name": "claim policy is updated",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "The v1.1 blocker and Sprint A result record the open theorem.",
+      "gate_id": "CP21",
+      "limitations": "",
+      "name": "theorem blocker artifact records the result",
+      "passes": true,
+      "required": true
+    }
+  ],
+  "provenance_chain": [
+    {
+      "empirical_derivation_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/CP_no_fit_holonomy_output_v1.json",
+      "source_status": "DISCOVERED"
+    },
+    {
+      "empirical_derivation_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/CKM_no_fit_operator_output_v1.json",
+      "source_status": "DISCOVERED"
+    },
+    {
+      "empirical_derivation_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/PMNS_no_fit_operator_output_v1.json",
+      "source_status": "DISCOVERED"
+    },
+    {
+      "empirical_derivation_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json",
+      "source_status": "DISCOVERED"
+    },
+    {
+      "empirical_derivation_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/BHSM_cp_o_int_theorem_closure_attempt_v0_4.json",
+      "source_status": "DISCOVERED"
+    },
+    {
+      "empirical_derivation_input": false,
+      "reference_theorem_input": false,
+      "source_path": "data/theorem_inputs/cp_o_int_attachment_candidate_template.json",
+      "source_status": "DISCOVERED"
+    }
+  ],
+  "reference_values_used_as_theorem_inputs": false,
+  "registry_entries_affected": [
+    "cp_holonomy_phase_attachment",
+    "minimal_collider_interface_subset",
+    "feynrules_minimal_model",
+    "ufo_export",
+    "madgraph_smoke_test"
+  ],
+  "runtime_gate_changes": false,
+  "stages": [
+    {
+      "evidence": "delta_BH and Z6 boundary phase loaded from local artifact",
+      "missing_object": null,
+      "name": "Internal CP phase availability",
+      "passes": true,
+      "stage": 1,
+      "status": "MATRIX_PHASE_ATTACHMENT_AVAILABLE_STANDALONE_OPEN"
+    },
+    {
+      "evidence": "CKM/PMNS matrix-phase attachment is recorded",
+      "missing_object": null,
+      "name": "Phase attachment rule availability",
+      "passes": true,
+      "stage": 2,
+      "status": "MATRIX_PHASE_ATTACHMENT_AVAILABLE_STANDALONE_OPEN"
+    },
+    {
+      "evidence": "not present in local theorem artifacts",
+      "missing_object": "standalone O_int field content and representation",
+      "name": "Field representation availability",
+      "passes": false,
+      "stage": 3,
+      "status": "OPEN_MISSING_FIELD_REPRESENTATION"
+    },
+    {
+      "evidence": "not present in local theorem artifacts",
+      "missing_object": "standalone O_int Lorentz/index structure",
+      "name": "Lorentz structure availability",
+      "passes": false,
+      "stage": 4,
+      "status": "OPEN_MISSING_LORENTZ_STRUCTURE"
+    },
+    {
+      "evidence": "not present in local theorem artifacts",
+      "missing_object": "standalone O_int gauge representation and sector admissibility",
+      "name": "Gauge/sector admissibility availability",
+      "passes": false,
+      "stage": 5,
+      "status": "OPEN_MISSING_GAUGE_ADMISSIBILITY"
+    },
+    {
+      "evidence": "not present in local theorem artifacts",
+      "missing_object": "standalone O_int coupling normalization and mass dimension",
+      "name": "Coupling normalization availability",
+      "passes": false,
+      "stage": 6,
+      "status": "OPEN_MISSING_COUPLING_NORMALIZATION"
+    },
+    {
+      "evidence": "not present in local action artifacts",
+      "missing_object": "standalone O_int action/source term",
+      "name": "Action/interacting operator availability",
+      "passes": false,
+      "stage": 7,
+      "status": "OPEN_MISSING_ACTION_SOURCE"
+    },
+    {
+      "evidence": "closure evaluator is not a production theorem callable",
+      "missing_object": "standalone O_int theorem callable",
+      "name": "Callable theorem availability",
+      "passes": false,
+      "stage": 8,
+      "status": "CALLABLE_NOT_AVAILABLE"
+    },
+    {
+      "evidence": "No action-derived theorem artifact is present",
+      "missing_object": "action-derived support for production promotion",
+      "name": "Registry promotion eligibility",
+      "passes": false,
+      "stage": 9,
+      "status": "FORBIDDEN_UNSUPPORTED"
+    }
+  ],
+  "status_after": "OPEN_MISSING_INTERACTION_ATTACHMENT",
+  "status_before": "OPEN_MISSING_INTERACTION_ATTACHMENT",
+  "theorem_key": "cp_o_int",
+  "version": "0.5",
+  "warnings": [
+    "A conditional author axiom is not an action-level closure.",
+    "Runtime-disabled software gates remain disabled."
+  ]
+}

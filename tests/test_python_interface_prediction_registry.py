@@ -27,8 +27,9 @@ def test_registry_contains_required_entries_and_statuses() -> None:
     assert registry.require("electron_neutrino").comparison_kind == "upper_limit"
     assert registry.require("CKM_matrix_BHSM").default_status is PredictionStatus.FROZEN_INTERNAL_PREDICTION
     assert registry.require("PMNS_matrix_BHSM").default_status is PredictionStatus.FROZEN_INTERNAL_PREDICTION
-    for key in ("charged_boundary_response_matrix", "neutral_operator_kernel_BH", "cp_holonomy_phase_attachment"):
-        assert registry.require(key).default_status is PredictionStatus.OPEN_THEOREM_REQUIRED
+    for key in ("charged_boundary_response_matrix", "neutral_operator_kernel_BH"):
+        assert registry.require(key).default_status is PredictionStatus.CONDITIONAL_THEOREM
+    assert registry.require("cp_holonomy_phase_attachment").default_status is PredictionStatus.ARTIFACT_BACKED_CONSTRAINT
     for key in ("feynrules_minimal_model", "ufo_export", "madgraph_smoke_test"):
         assert registry.require(key).default_status is PredictionStatus.DISABLED_UNTIL_RUNTIME_VALIDATED
 

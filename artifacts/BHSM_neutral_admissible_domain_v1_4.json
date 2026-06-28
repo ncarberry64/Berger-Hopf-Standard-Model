@@ -1,0 +1,98 @@
+{
+  "action_derived": false,
+  "admissible_domain_constraints": [
+    "x is a real three-channel response-magnitude vector, not a raw signed or complex wave-amplitude vector",
+    "x_i >= 0 for i=1,2,3",
+    "sum_i x_i^2 = 1",
+    "propagation_response > 0",
+    "at least one physical interaction, detector-boundary, or measurement-support coupling is active",
+    "zero support maps to the null BHSM mass contribution and is outside the normalized active cone"
+  ],
+  "admissible_domain_defined": true,
+  "candidate_key": "measurement_supported_neutral_response_cone",
+  "characteristic_polynomial": "lambda^3 - 14/3*lambda^2 + 175/36*lambda + 5/27",
+  "claim_boundary": "The cone is justified by the controlling author ontology and existing propagation modules, but the magnitude-coordinate map and support rule are not yet uniquely derived from the complete neutral action.",
+  "coordinate_interpretation": "response-magnitude coordinates x_i = nonnegative magnitude of the supported response in neutral channel i",
+  "counterexample": {
+    "domain": "raw_full_vector_space",
+    "quadratic_value": -0.036785921979224895,
+    "vector": [
+      0.993908406010279,
+      -0.1096855112339697,
+      0.01073168614192356
+    ]
+  },
+  "counterexample_found": true,
+  "electron_neutrino_limit_used_as_derivation_input": false,
+  "empirical_derivation_inputs_used": false,
+  "kernel_matrix_exact": [
+    [
+      "0",
+      "1/3",
+      "0"
+    ],
+    [
+      "1/3",
+      "3",
+      "1/6"
+    ],
+    [
+      "0",
+      "1/6",
+      "5/3"
+    ]
+  ],
+  "kernel_matrix_numeric": [
+    [
+      0.0,
+      0.3333333333333333,
+      0.0
+    ],
+    [
+      0.3333333333333333,
+      3.0,
+      0.16666666666666666
+    ],
+    [
+      0.0,
+      0.16666666666666666,
+      1.6666666666666667
+    ]
+  ],
+  "legacy_gravitational_formula_used_as_mass_formula": false,
+  "legacy_particle_tables_used_as_derivation_inputs": false,
+  "minimum_on_admissible_domain": null,
+  "negative_eigendirection": [
+    0.993908406010279,
+    -0.1096855112339697,
+    0.01073168614192356
+  ],
+  "ontology_sources": [
+    "artifacts/BHSM_author_ontology_v0_8.json",
+    "artifacts/BHSM_neutral_measurement_support_ontology_v1_4.json",
+    "src/bhsm/interface/neutrino_propagation/propagation_state.py",
+    "src/bhsm/interface/neutrino_propagation/curvature_threshold.py"
+  ],
+  "positivity_proven_without_thresholding": false,
+  "projected_eigenvalues": [],
+  "projected_kernel": null,
+  "projected_psd": null,
+  "projection_matrix": null,
+  "quadratic_form": "2/3*x1*x2 + 3*x2^2 + 1/3*x2*x3 + 5/3*x3^2",
+  "raw_eigenvalues_exact": [
+    "RootOf(lambda^3 - 14/3*lambda^2 + 175/36*lambda + 5/27, 0)",
+    "RootOf(lambda^3 - 14/3*lambda^2 + 175/36*lambda + 5/27, 1)",
+    "RootOf(lambda^3 - 14/3*lambda^2 + 175/36*lambda + 5/27, 2)"
+  ],
+  "raw_eigenvalues_numeric": [
+    -0.036785921979224895,
+    1.6471096522118527,
+    3.0563429364340395
+  ],
+  "raw_psd": false,
+  "reference_values_used_as_theorem_inputs": false,
+  "remaining_missing_object": "complete-action derivation of the measurement-supported response-coordinate map",
+  "status": "CONDITIONAL_MEASUREMENT_SUPPORTED_NEUTRAL_POSITIVITY_CANDIDATE",
+  "thresholding_used": false,
+  "w_mass_used_as_theorem_input": false
+}

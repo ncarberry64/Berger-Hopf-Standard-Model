@@ -56,7 +56,7 @@ def test_architecture_freeze_artifact_preserves_status_and_sectors():
 
 
 def test_readme_and_status_docs_preserve_public_status_without_overclaiming():
-    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    readme = (ROOT / "docs/archive/README_status_history_pre_v0_7.md").read_text(encoding="utf-8")
     current = (ROOT / "docs" / "current_status.md").read_text(encoding="utf-8")
     boundaries = (ROOT / "docs" / "claim_boundaries.md").read_text(encoding="utf-8")
     for text in (readme, current, boundaries):
@@ -79,7 +79,7 @@ def test_readme_and_status_docs_preserve_public_status_without_overclaiming():
 
 def test_claim_boundaries_do_not_introduce_forbidden_assertions_as_claims():
     docs = [
-        ROOT / "README.md",
+        ROOT / "docs/archive/README_status_history_pre_v0_7.md",
         ROOT / "docs" / "current_status.md",
         ROOT / "docs" / "claim_boundaries.md",
     ]

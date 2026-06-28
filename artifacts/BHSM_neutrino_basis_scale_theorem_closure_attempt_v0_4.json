@@ -1,0 +1,283 @@
+{
+  "action_term": {
+    "expression": "undefined pending U_nu, Lambda_nu, ordering, and Dirac/Majorana convention",
+    "missing_objects": [
+      "basis map U_nu, dimensional scale Lambda_nu, and Dirac/Majorana convention for turning K_nu into a production collider mass or interaction matrix"
+    ],
+    "source_artifacts": [
+      "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
+      "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json"
+    ],
+    "source_status": "OPEN_MISSING_PHYSICAL_BASIS_AND_SCALE",
+    "symbol": "L_nu_physical"
+  },
+  "artifact_sources": [
+    "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
+    "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json"
+  ],
+  "calibration_inputs_used": false,
+  "callable_available": false,
+  "callable_key": "neutrino_physical_basis_scale",
+  "claim_boundary": "The neutral boundary kernel is not a physical neutrino mass matrix without basis, scale, and Dirac/Majorana theorem support.",
+  "closure_status": "OPEN_EXACT_MISSING_THEOREM",
+  "codomain": "physical neutrino mass/effective-mass observables (not defined)",
+  "display_name": "Neutrino physical basis, scale, and Dirac/Majorana theorem",
+  "domain": "three-dimensional neutral boundary channel basis",
+  "empirical_derivation_inputs_used": false,
+  "formal_statement": {
+    "assumptions": [
+      "K_nu is a boundary seed",
+      "PMNS target labels do not determine a mass basis"
+    ],
+    "statement": "The neutral boundary kernel defines a physical neutrino mass or effective-mass operator only after a physical state-basis map, dimensional scale, ordering policy, and Dirac/Majorana convention are derived.",
+    "status": "FORMAL_CONDITIONAL_STATEMENT",
+    "theorem_key": "neutrino_basis_scale"
+  },
+  "missing_objects": [
+    "basis map U_nu, dimensional scale Lambda_nu, and Dirac/Majorana convention for turning K_nu into a production collider mass or interaction matrix"
+  ],
+  "notes": [
+    "K_nu remains an artifact-backed boundary seed."
+  ],
+  "operator_definition": {
+    "codomain": "three-dimensional neutral boundary channel basis",
+    "domain": "three-dimensional neutral boundary channel basis",
+    "expression": "K_nu=[[0,1/3,0],[1/3,3,1/6],[0,1/6,5/3]]",
+    "name": "K_nu boundary operator seed",
+    "status": "BOUNDARY_SEED_ONLY_PHYSICAL_MAP_OPEN"
+  },
+  "promotion_allowed": false,
+  "promotion_reason": "Physical basis, scale, convention, admissibility, and callable gates fail.",
+  "proof_gates": [
+    {
+      "evidence": "A formal conditional map-to-physics statement is encoded.",
+      "gate_id": "G01",
+      "limitations": "",
+      "name": "formal theorem statement exists",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "No supporting evidence supplied.",
+      "gate_id": "G02",
+      "limitations": "The boundary channel basis is defined, but the physical neutrino basis and observable codomain are not.",
+      "name": "domain and codomain are defined",
+      "passes": false,
+      "required": true
+    },
+    {
+      "evidence": "No supporting evidence supplied.",
+      "gate_id": "G03",
+      "limitations": "No physical mass/effective-mass action term is defined.",
+      "name": "operator/action term is defined",
+      "passes": false,
+      "required": true
+    },
+    {
+      "evidence": "No supporting evidence supplied.",
+      "gate_id": "G04",
+      "limitations": "No callable maps K_nu to physical masses or observables.",
+      "name": "callable implementation exists",
+      "passes": false,
+      "required": true
+    },
+    {
+      "evidence": "The closure-attempt callable has explicit schemas.",
+      "gate_id": "G05",
+      "limitations": "",
+      "name": "input/output schema exists",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "The boundary kernel and v1.1 theorem blocker are machine-readable local artifacts.",
+      "gate_id": "G06",
+      "limitations": "",
+      "name": "artifact source exists",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "The local source chain is explicit.",
+      "gate_id": "G07",
+      "limitations": "",
+      "name": "provenance chain exists",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "Both inspected artifacts record no empirical derivation inputs.",
+      "gate_id": "G08",
+      "limitations": "",
+      "name": "no empirical derivation inputs are used",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "No electron-neutrino limit, PDG value, or reference value is read.",
+      "gate_id": "G09",
+      "limitations": "",
+      "name": "no reference/PDG values are derivation inputs",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "Kernel shape and non-promotion checks pass.",
+      "gate_id": "G10",
+      "limitations": "",
+      "name": "consistency checks pass",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "The sprint generates a separate registry update proposal.",
+      "gate_id": "G11",
+      "limitations": "",
+      "name": "registry status update is generated",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "The claim policy forbids interpreting K_nu as a physical mass matrix.",
+      "gate_id": "G12",
+      "limitations": "",
+      "name": "claim policy is explicit",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "The existing blocker artifact records the exact missing theorem.",
+      "gate_id": "G13",
+      "limitations": "",
+      "name": "theorem blocker artifact records the attempt",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "No supporting evidence supplied.",
+      "gate_id": "G14",
+      "limitations": "Physical state admissibility and ordering are not fixed.",
+      "name": "gauge/sector admissibility checks pass",
+      "passes": false,
+      "required": true
+    },
+    {
+      "evidence": "No supporting evidence supplied.",
+      "gate_id": "G15",
+      "limitations": "Lambda_nu and the unit conversion are absent.",
+      "name": "dimensional/unit policy is explicit",
+      "passes": false,
+      "required": true
+    },
+    {
+      "evidence": "No calibration anchor is accepted or used.",
+      "gate_id": "G16",
+      "limitations": "",
+      "name": "calibration policy is explicit",
+      "passes": true,
+      "required": true
+    },
+    {
+      "evidence": "basis map U_nu, dimensional scale Lambda_nu, and Dirac/Majorana convention for turning K_nu into a production collider mass or interaction matrix",
+      "gate_id": "G17",
+      "limitations": "",
+      "name": "failure modes are documented",
+      "passes": true,
+      "required": true
+    }
+  ],
+  "provenance": [
+    {
+      "empirical_derivation_input": false,
+      "reference_comparison_input": false,
+      "source_path": "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
+      "source_status": "DISCOVERED"
+    },
+    {
+      "calibration_input": false,
+      "claim_status": "BOUNDARY_KERNEL_ARTIFACT_PHYSICAL_BASIS_SCALE_OPEN",
+      "empirical_derivation_input": false,
+      "frozen_prediction": true,
+      "loaded_at_runtime": true,
+      "metadata": {
+        "official_predictions_changed": false,
+        "public_status": "structural architecture integrated conditional; numerical closure open"
+      },
+      "notes": [
+        "Loaded from the existing internal no-fit boundary package."
+      ],
+      "reference_comparison_input": false,
+      "source_artifact_key": "BHSM_boundary_no_fit_prediction_package_v1",
+      "source_field": "neutral_operator",
+      "source_path": "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json",
+      "source_status": "DISCOVERED",
+      "unit": "dimensionless",
+      "value": {
+        "H_nu": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "K_nu": [
+          [
+            0.0,
+            0.3333333333333333,
+            0.0
+          ],
+          [
+            0.3333333333333333,
+            3.0,
+            0.16666666666666666
+          ],
+          [
+            0.0,
+            0.16666666666666666,
+            1.6666666666666667
+          ]
+        ],
+        "N_nu_formula": "N_nu(q,j) = q^2 + 2*q*j + 2*j^2",
+        "artifact": "neutral_operator_no_fit_output_v1",
+        "beta_nu": 0.3333333333333333,
+        "empirical_derivation_inputs_used": false,
+        "eta_nu": 0.3333333333333333,
+        "external_empirical_comparison_layer": "OPEN_SEPARATE_LAYER",
+        "g_nu": 0.3333333333333333,
+        "kappa_nu": 0.16666666666666666,
+        "neutral_boundary_operator": "CLOSED_AS_BOUNDARY_SEED",
+        "observed_CKM_used": false,
+        "observed_CP_used": false,
+        "observed_Higgs_used": false,
+        "observed_PMNS_used": false,
+        "observed_gauge_values_used": false,
+        "observed_masses_used": false,
+        "official_predictions_changed": false,
+        "public_status": "structural architecture integrated conditional; numerical closure open",
+        "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
+        "sigma_fit_to_masses": false,
+        "tau_fit_to_masses": false
+      },
+      "value_key": "neutral_operator_kernel_BH",
+      "value_kind": "neutral_operator_seed"
+    }
+  ],
+  "reference_values_used_as_derivation_inputs": false,
+  "registry_entries_affected": [
+    "neutral_operator_kernel_BH",
+    "minimal_collider_interface_subset",
+    "feynrules_minimal_model",
+    "ufo_export",
+    "madgraph_smoke_test"
+  ],
+  "status_after": "OPEN_EXACT_MISSING_THEOREM",
+  "status_before": "OPEN_EXACT_MISSING_THEOREM",
+  "theorem_key": "neutrino_basis_scale",
+  "warnings": [
+    "PMNS mixing does not supply a physical neutrino mass basis.",
+    "Electron-neutrino reference limits are not theorem inputs."
+  ]
+}

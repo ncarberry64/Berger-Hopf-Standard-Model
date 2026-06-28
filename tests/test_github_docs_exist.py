@@ -23,16 +23,12 @@ def test_github_facing_docs_exist() -> None:
 def test_readme_refreshed_for_full_bhsm_candidate() -> None:
     text = (ROOT / "README.md").read_text(encoding="utf-8")
     assert "# Berger-Hopf Standard Model (BHSM)" in text
-    assert (
-        "Current status: BHSM v1.0.0 internal boundary no-fit package "
-        "complete/exported; external empirical comparison layer separate/open."
-        in text
-    )
-    assert "What BHSM Is" in text
-    assert "What Is Test-Backed" in text
-    assert "What Is Not Yet Proven" in text
-    assert "Frozen Prediction Layer" in text
-    assert "Candidate Synthesis Layer" in text
-    assert "Connected Topographic-Curvature Extension" in text
-    assert "How To Reproduce" in text
-    assert "Claim Hygiene" in text
+    assert "artifact-backed computational framework" in text
+    assert "What This Repository Contains" in text
+    assert "Current Public Status" in text
+    assert "Computational Quickstart" in text
+    assert "Established Artifact-Backed Outputs" in text
+    assert "Candidate And Open Theorem Areas" in text
+    assert "Runtime-Gated External Tools" in text
+    assert "Claim Boundaries" in text
+    assert "Repository Map" in text

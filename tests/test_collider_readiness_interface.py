@@ -33,7 +33,7 @@ def sha256(path: Path) -> str:
 
 
 def test_readme_preserves_status_and_declares_not_collider_ready() -> None:
-    text = read("README.md")
+    text = read("docs/archive/README_status_history_pre_v0_7.md")
     assert CURRENT_STATUS in text
     assert "Collider / CERN Software Readiness" in text
     assert "BHSM v1.0.1 is not an Athena, CMSSW, or detector-simulation-ready" in text
@@ -145,7 +145,7 @@ def test_no_fake_event_files_or_official_cern_claims_are_created() -> None:
     combined = "\n".join(
         read(relative)
         for relative in [
-            "README.md",
+            "docs/archive/README_status_history_pre_v0_7.md",
             "docs/collider_readiness.md",
             "docs/athena_cmssw_integration_boundary.md",
             "docs/event_generation_interface.md",

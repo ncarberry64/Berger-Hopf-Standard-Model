@@ -77,3 +77,7 @@ The prediction registry and reviewer-report layer are documented in
 
 The consolidated release scope and deployment blocker are recorded in
 `docs/bhsm_v1_2_0_release_scope.md`.
+
+Local artifact-backed loaders and their provenance model are documented in
+`docs/artifact_backed_prediction_adapters.md`. Interface default formulas
+remain interface defaults unless a theorem-backed artifact or callable replaces them.

@@ -1,0 +1,10 @@
+{
+  "live_pdg_optional": true,
+  "internet_required_for_tests": false,
+  "pdg_package_required_for_tests": false,
+  "fallback_behavior": "Use curated provenance-tagged offline references and record fallback_used.",
+  "cache_policy": "Live results may be cached under .cache/bhsm_pdg and are not committed by default.",
+  "reference_vs_derivation_policy": "PDG values are comparison references only, never BHSM derivation inputs.",
+  "allowed_uses": ["external comparison", "explicit calibration anchor"],
+  "forbidden_uses": ["derive BHSM constants", "promote theorem blockers", "modify frozen predictions"]
+}

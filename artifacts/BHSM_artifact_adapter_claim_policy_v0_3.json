@@ -1,0 +1,26 @@
+{
+  "allowed_claims": [
+    "BHSM includes local artifact-backed prediction adapters.",
+    "Artifact-backed outputs include provenance records.",
+    "The interface distinguishes artifact-backed BHSM outputs from interface default/demo outputs.",
+    "Reference values are comparison inputs only, not BHSM derivation inputs.",
+    "Missing theorem callables remain blockers."
+  ],
+  "artifact_backed_policy": "Local machine-readable value plus explicit provenance; artifact presence alone does not close a theorem.",
+  "calibration_policy": "A calibration anchor is not an independent prediction in the same run.",
+  "forbidden_claims": [
+    "Artifact adapters empirically validate BHSM.",
+    "Artifact adapters independently predict W when W is used as anchor.",
+    "PDG/reference values are used as BHSM derivation inputs.",
+    "Missing artifacts are treated as predictions.",
+    "Interface placeholder formulas are treated as theorem-backed BHSM predictions.",
+    "X_ch is closed without an explicit artifact-backed theorem.",
+    "Neutrino physical basis/scale is closed without an explicit artifact-backed theorem.",
+    "Standalone CP O_int is closed without an explicit artifact-backed theorem."
+  ],
+  "interface_default_policy": "Interface defaults remain labeled defaults and are not theorem-backed.",
+  "policy_name": "BHSM Artifact Adapter Claim Policy",
+  "reference_value_policy": "Reference values are comparison inputs only and never derivation inputs.",
+  "theorem_blocker_policy": "X_ch, neutrino physical basis/scale, and standalone CP O_int remain blocked absent explicit theorem artifacts and callables.",
+  "version": "0.3"
+}

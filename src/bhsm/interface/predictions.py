@@ -17,6 +17,8 @@ class PredictionStatus(str, Enum):
     REFERENCE_COMPARISON_ONLY = "REFERENCE_COMPARISON_ONLY"
     UPPER_LIMIT_COMPARISON = "UPPER_LIMIT_COMPARISON"
     OPEN_THEOREM_REQUIRED = "OPEN_THEOREM_REQUIRED"
+    ARTIFACT_BACKED_CONSTRAINT = "ARTIFACT_BACKED_CONSTRAINT"
+    CONDITIONAL_THEOREM = "CONDITIONAL_THEOREM"
     DISABLED_UNTIL_RUNTIME_VALIDATED = "DISABLED_UNTIL_RUNTIME_VALIDATED"
     EXCLUDED_FROM_MINIMAL_COLLIDER_INTERFACE = "EXCLUDED_FROM_MINIMAL_COLLIDER_INTERFACE"
     RUNTIME_PARAMETER_ONLY = "RUNTIME_PARAMETER_ONLY"
@@ -185,15 +187,15 @@ def default_prediction_registry() -> PredictionRegistry:
         _entry("PMNS_matrix_BHSM", "BHSM PMNS matrix", "charged_current_lepton", "mixing_matrix", PredictionStatus.FROZEN_INTERNAL_PREDICTION,
                "The BHSM PMNS source matrix is internal; the physical neutrino mass/basis theorem remains separate.", comparison="optional_matrix_reference",
                artifacts=("artifacts/PMNS_no_fit_operator_output_v1.json",)),
-        _entry("charged_boundary_response_matrix", "Charged boundary response", "charged_boundary", "interaction_matrix", PredictionStatus.OPEN_THEOREM_REQUIRED,
-               "Not promoted to a production vertex.", theorem="X_ch theorem missing for production boundary-response vertex",
-               artifacts=("artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",), excluded="X_ch interaction theorem is open"),
-        _entry("neutral_operator_kernel_BH", "Neutral operator kernel", "neutral", "operator_kernel", PredictionStatus.OPEN_THEOREM_REQUIRED,
-               "This boundary/operator source is not a physical collider neutrino mass matrix.", theorem="neutrino basis/scale/Dirac-Majorana theorem missing",
-               artifacts=("artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",), excluded="neutral basis and scale theorem is open"),
-        _entry("cp_holonomy_phase_attachment", "CP holonomy phase attachment", "cp_holonomy", "interaction_attachment", PredictionStatus.OPEN_THEOREM_REQUIRED,
-               "The phase source is not a standalone production CP vertex.", theorem="standalone O_int theorem missing",
-               artifacts=("artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json",), excluded="O_int interaction theorem is open"),
+        _entry("charged_boundary_response_matrix", "Charged boundary response", "charged_boundary", "boundary_response_operator", PredictionStatus.CONDITIONAL_THEOREM,
+               "X_ch is conditionally defined as a charged boundary-response operator under the author ontology; no 4D production field is claimed.", theorem="CONDITIONAL_ACTION_THEOREM",
+               artifacts=("artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json", "artifacts/BHSM_x_ch_minimal_action_closure_v0_8.json", "artifacts/BHSM_author_ontology_v0_8.json"), excluded="not eligible as a standalone production field"),
+        _entry("neutral_operator_kernel_BH", "Neutral propagation-response kernel", "neutral", "propagation_conditioned_effective_mass", PredictionStatus.CONDITIONAL_THEOREM,
+               "The neutral boundary seed has conditional dimensionless propagation, spectral-gap shape, admissible cone positivity, and partial action support. Numeric stiffness length and physical K_neutral,eff remain absent, so no physical mass is produced.", theorem="CONDITIONAL_NEUTRAL_SPECTRAL_MASS_CANDIDATE",
+               artifacts=("artifacts/BHSM_neutrino_numerical_closure_report_v0_9.json", "artifacts/BHSM_neutral_spectral_report_v1_3.json", "artifacts/BHSM_neutral_positivity_report_v1_4.json", "artifacts/BHSM_neutral_action_closure_report_v1_5.json", "artifacts/BHSM_author_ontology_v0_8.json"), excluded="not a static rest-mass matrix, dimensional mass prediction, or production vertex"),
+        _entry("cp_holonomy_phase_attachment", "CP holonomy phase attachment", "cp_holonomy", "holonomy_constraint", PredictionStatus.ARTIFACT_BACKED_CONSTRAINT,
+               "The CP/Z6 phase attachment is artifact-backed; the standalone O_int production target is retired.", theorem="ARTIFACT_BACKED",
+               artifacts=("artifacts/CP_no_fit_holonomy_output_v1.json", "artifacts/BHSM_cp_o_int_minimal_action_closure_v0_8.json", "artifacts/BHSM_author_ontology_v0_8.json"), excluded="standalone CP production vertex is a retired target"),
         _entry("minimal_collider_interface_subset", "Minimal collider-interface subset", "collider_interface", "bounded_lagrangian_subset", PredictionStatus.REFERENCE_COMPARISON_ONLY,
                "Bounded CKM/PMNS collider-interface subset only; not the complete BHSM 4D Lagrangian.",
                artifacts=("artifacts/BHSM_minimal_bounded_lagrangian_subset_v1_2.json",),
