@@ -36,6 +36,13 @@ from .neutrino_closure_status import (
     build_v1_5_status_stabilization_report,
     neutrino_closure_status_to_markdown,
 )
+from .full_completion import (
+    FullCompletionStatusReport,
+    build_full_completion_blocker_ledger,
+    build_full_completion_priority_map,
+    build_full_completion_status_report,
+    select_highest_leverage_target,
+)
 from .solver import ParticleMassSolver, SolverResult
 from .units import GeometricUnitMapper
 from .validation import ExperimentalValue, ValidationComparison, curated_fallback_references
@@ -74,6 +81,7 @@ __all__ = [
     "NeutrinoNumericalClosureReport",
     "NeutrinoPropagationClosureResult",
     "V15StatusStabilizationReport",
+    "FullCompletionStatusReport",
     "SolverResult",
     "ValidationComparison",
     "ValueWithProvenance",
@@ -97,6 +105,10 @@ __all__ = [
     "compute_neutrino_propagation_mass",
     "build_v1_5_status_stabilization_report",
     "neutrino_closure_status_to_markdown",
+    "build_full_completion_blocker_ledger",
+    "build_full_completion_priority_map",
+    "build_full_completion_status_report",
+    "select_highest_leverage_target",
     "check_notebook_pack",
     "notebook_pack_manifest",
     "load_reference_with_fallback",

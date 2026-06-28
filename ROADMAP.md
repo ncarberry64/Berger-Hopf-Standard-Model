@@ -70,8 +70,7 @@ remains open pending numeric `sqrt(A_nu/Z_nu)` in metres, physical
 
 ## Next Recommended Work
 
-1. Merge stacked PRs cleanly.
-2. Consolidate docs and artifact indexes.
-3. Derive the conditional X_ch and neutrino ontology inputs from a deeper
-   boundary action, or keep their author-conditional labels explicit.
-4. Only after theorem closure, attempt runtime HEP export validation.
+1. Derive the physical dimension and absolute normalization of `dmu_boundary dt`.
+2. Derive the BHSM shape operator, collar orientation, edge condition, and admissible variations.
+3. Use that normalized action domain to revisit charged stiffness and the neutral response cone.
+4. Only after interaction eligibility closes, attempt external HEP runtime validation.
