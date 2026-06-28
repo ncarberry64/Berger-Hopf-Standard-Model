@@ -13,6 +13,7 @@ from .mass_gap_action import load_neutral_mass_gap_action
 from .neutral_kernel_positivity import audit_neutral_kernel_positivity
 from .neutral_spectral_gap import build_neutral_spectral_gap_candidate
 from .stiffness_ratio import search_neutral_stiffness_ratio
+from .positivity_report import build_neutral_positivity_report
 
 
 PUBLIC_STATUS = "structural architecture integrated conditional; numerical closure open"
@@ -45,6 +46,7 @@ def build_neutral_spectral_report(
     ratio = search_neutral_stiffness_ratio(root)
     gap = build_neutral_spectral_gap_candidate(root)
     positivity = audit_neutral_kernel_positivity(root)
+    admissible = build_neutral_positivity_report(root)
     return NeutralSpectralMassReport(
         report_name="BHSM Neutral Spectral Stiffness and Mass-Gap Theorem",
         version="1.3",
@@ -54,10 +56,10 @@ def build_neutral_spectral_report(
         stiffness_ratio=ratio,
         spectral_gap=gap,
         kernel_positivity=positivity,
+        admissible_positivity_status=admissible.status,
         dimensionful_mass_available=False,
         remaining_missing_object=(
-            "numeric action-derived sqrt(A_nu/Z_nu) in metres; physical K_neutral,eff in m^-2; "
-            "admissible neutral-kernel positivity proof"
+            "numeric action-derived sqrt(A_nu/Z_nu) in metres; physical K_neutral,eff in m^-2"
         ),
         frozen_predictions_changed=False,
         production_physics_model_logic_changed=False,
@@ -75,6 +77,7 @@ def neutral_spectral_report_to_markdown(report: NeutralSpectralMassReport) -> st
         ("Neutral stiffness ratio", report.stiffness_ratio.status),
         ("Neutral spectral gap", report.spectral_gap.status),
         ("Neutral kernel positivity", report.kernel_positivity.status),
+        ("Measurement-supported admissible positivity", report.admissible_positivity_status),
         ("Dimensionful mass", "DIMENSIONFUL_MASS_NOT_AVAILABLE"),
     )
     lines = [

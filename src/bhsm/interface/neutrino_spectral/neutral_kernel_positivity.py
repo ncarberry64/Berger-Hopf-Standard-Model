@@ -32,10 +32,10 @@ def audit_neutral_kernel_positivity(
         provenance=clean_provenance((kernel.source_artifact,)),
         author_ontology_dependency="physical neutral boundary field with propagation-conditioned response",
         claim_boundary=(
-            "The raw kernel has a negative eigenvalue. The max-threshold response is nonnegative by construction, "
-            "but a complete admissible-subspace positivity proof is still open."
+            "The raw kernel has a negative eigenvalue. This raw audit does not infer admissible-domain positivity "
+            "from threshold clipping; the separate v1.4 cone proof records that conditional result."
         ) if not raw_psd else "The raw finite kernel is positive semidefinite within the stated tolerance.",
-        remaining_missing_object="admissible/projected neutral positivity proof" if not raw_psd else "none for raw finite-kernel PSD",
+        remaining_missing_object="separate admissible-domain proof report" if not raw_psd else "none for raw finite-kernel PSD",
         raw_eigenvalues=eigenvalues,
         raw_positive_semidefinite=raw_psd,
         projected_response_nonnegative_by_definition=True,

@@ -4,6 +4,9 @@ The dimensionless threshold response remains useful, but the physical
 particle-sector path is the conditional v1.3 spectral gap. Numeric neutral
 stiffness length and physical curvature normalization remain open.
 
+Measurement support is represented as a physical interaction/boundary
+condition, not as a claim that neutrinos require a conscious observer to exist.
+
 Status: `CONDITIONAL_NUMERICAL_CLOSURE_CANDIDATE`.
 
 The v0.9 evaluator computes deterministic dimensionless threshold responses

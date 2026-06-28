@@ -1,0 +1,21 @@
+{
+  "artifact_name": "BHSM Neutral Measurement-Support Ontology",
+  "version": "1.4",
+  "author_supplied": true,
+  "status": "ACTIVE_CONTROLLING_NEUTRAL_DOMAIN_CLARIFICATION",
+  "statement": "BHSM treats the neutrino mass contribution as interaction-supported and propagation-locked. Measurement supplies a physical boundary/interaction condition that can prevent the neutral response from nulling out.",
+  "domain_candidate": {
+    "name": "measurement_supported_neutral_response_cone",
+    "coordinates": "nonnegative magnitudes of supported channel responses",
+    "constraints": [
+      "x_i >= 0",
+      "sum_i x_i^2 = 1",
+      "propagation_response > 0",
+      "interaction, detector-boundary, or measurement-support coupling active"
+    ],
+    "action_derived": false
+  },
+  "forbidden_interpretation": "The neutrino does not exist at all unless someone observes it.",
+  "empirical_derivation_inputs_used": false,
+  "frozen_predictions_changed": false
+}

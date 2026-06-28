@@ -7,6 +7,8 @@
 - Derive `sqrt(A_nu/Z_nu)` in metres.
 - Derive the physical `K_neutral,eff` map in `m^-2`.
 - Prove positivity on the admissible/projected neutral space.
+- Derive the measurement-supported response cone uniquely from the complete
+  neutral action; the current exact copositivity result is ontology conditional.
 - Retain the legacy gravitational expression only as a dimensionally gated
   stiffness functional.
 
