@@ -22,3 +22,7 @@ python -m bhsm.interface full-completion-priority-map --format json
 ```
 
 After the v1.7 charged cluster audit, the next upstream target is complete charged action normalization because it jointly controls `rho_ch`, physical stiffness, eta_l normalization, and higher-channel mixing provenance.
+
+The v1.8 predeclared score selects `common_16_ckm_transport` at `24`. Its exact
+fraction identities close conditionally, but the CKM exponent remains open
+because neither `rho_ch=3` nor reciprocal logarithmic transport is derived.

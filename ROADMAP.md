@@ -70,8 +70,8 @@ remains open pending numeric `sqrt(A_nu/Z_nu)` in metres, physical
 
 ## Next Recommended Work
 
-1. Derive the physical dimension and absolute normalization of `dmu_boundary dt`.
-2. Derive the complete charged action normalization selecting `rho_ch`, `Z_ch`, and `A_ch`.
-3. Use that action to derive or reject the eta_l normalization and tau-suppressed CKM channels.
+1. Derive the complete charged action selection of `Omega_f` and `rho_ch`; the v1.8 common-16 identities are conditional on them.
+2. Derive or reject the CKM reciprocal logarithmic transport theorem before promoting `1/16`.
+3. Derive the physical dimension and absolute normalization of `dmu_boundary dt`, `Z_ch`, and `A_ch`.
 4. Derive the BHSM shape operator, collar orientation, edge condition, and admissible variations.
 5. Only after interaction eligibility closes, attempt external HEP runtime validation.

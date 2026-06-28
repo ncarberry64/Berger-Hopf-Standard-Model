@@ -1,0 +1,309 @@
+{
+  "bridge_beta": {
+    "beta_identities_exact": true,
+    "beta_values": {
+      "down": "64/1323",
+      "lepton": "16/1323",
+      "up": "32/1323"
+    },
+    "bridge_identity_exact": true,
+    "bridge_source_status": "DERIVED_CONDITIONAL_ON_INCIDENT_TRACE_21_AND_OVERLAP_4_OVER_3",
+    "claim_boundary": "The two bridge formulas are exactly equal after assuming rho_ch=3 and Omega/rho weights (1,2,4). The existing artifact sources 16/189 through incidence 21 and overlap 4/3; it does not prove that N_16 is their common physical generator.",
+    "common_16_bridge_formula": "N_16/(S_ch*rho_ch^3)",
+    "common_16_bridge_value": "16/189",
+    "common_generator_artifact_backed": false,
+    "expected_beta_values": {
+      "down": "64/1323",
+      "lepton": "16/1323",
+      "up": "32/1323"
+    },
+    "incidence_overlap_bridge_formula": "(4/3)^2/21",
+    "incidence_overlap_bridge_value": "16/189",
+    "status": "CONDITIONAL_COMMON_16_GENERATOR_CANDIDATE"
+  },
+  "ckm_transport": {
+    "candidate_status": "CONDITIONAL_CKM_LOG_TRANSPORT_CANDIDATE",
+    "claim_boundary": "The identity 1/N_16=1/16 is exact, but no pre-comparison action or transport operator in the repository proves that CKM logarithmic mixing must average over N_16 channels.",
+    "cross_scale_transport_available": false,
+    "historical_candidate_selected_by_residual": true,
+    "n_16": 16,
+    "reciprocal_log_transport_theorem_available": false,
+    "reciprocal_weight": "1/16",
+    "remaining_missing_object": "OPEN_MISSING_CKM_LOG_TRANSPORT_AVERAGING_THEOREM",
+    "residual_used_as_theorem_input": false,
+    "same_scale_identity_transport_available": true,
+    "status": "OPEN_MISSING_CKM_EXPONENT_DERIVATION"
+  },
+  "closure_result": "CONDITIONAL_COMMON_16_GENERATOR_WITH_OPEN_CKM_TRANSPORT_THEOREM",
+  "completion_claimed": false,
+  "empirical_inputs_used": false,
+  "frozen_predictions_changed": false,
+  "incidence": {
+    "assumptions": [
+      "Omega_l=3, Omega_u=6, and Omega_d=12 are admitted as structural boundary ranks",
+      "rho_ch=3 is admitted as the cyclic-weight candidate"
+    ],
+    "charged_weight_sum": 7,
+    "claim_boundary": "The fraction identities are exact under the stated structural premises. They do not derive Omega_f or select rho_ch=3 from the charged action.",
+    "epsilon_ckm_candidate": "1/16",
+    "identities_exact": true,
+    "n_16": 16,
+    "omega_source_status": "STRUCTURALLY_INTEGRATED_NOT_ACTION_DERIVED",
+    "omega_values": {
+      "down": 12,
+      "lepton": 3,
+      "up": 6
+    },
+    "projector_fractions": {
+      "down": "4/7",
+      "lepton": "1/7",
+      "up": "2/7"
+    },
+    "rho_ch": 3,
+    "rho_ch_source_status": "OPEN_MISSING_RHO_CH_ACTION_DERIVATION",
+    "sector_weights": {
+      "down": 4,
+      "lepton": 1,
+      "up": 2
+    },
+    "status": "CONDITIONAL_COMMON_16_GENERATOR_CANDIDATE"
+  },
+  "official_prediction_logic_changed": false,
+  "provenance": {
+    "artifact_backed_closures": [
+      "exact rational identity N_16/(S_ch*rho_ch^3)=16/189 under declared premises",
+      "exact beta_f=(16/189)Pi_f table identity",
+      "exact reciprocal identity 1/N_16=1/16"
+    ],
+    "bridge_beta_source_status": "DERIVED_CONDITIONAL_ON_INCIDENT_TRACE_21_AND_OVERLAP_4_OVER_3",
+    "ckm_exponent_final_status": "OPEN_MISSING_CKM_EXPONENT_DERIVATION",
+    "ckm_reciprocal_transport_status": "OPEN_MISSING_CKM_LOG_TRANSPORT_AVERAGING_THEOREM",
+    "conditional_closures": [
+      "CONDITIONAL_COMMON_16_GENERATOR_CANDIDATE",
+      "CONDITIONAL_CKM_LOG_TRANSPORT_CANDIDATE"
+    ],
+    "fallback_result": "OPEN_MISSING_RHO_CH_ACTION_DERIVATION; OPEN_MISSING_OMEGA_F_ACTION_DERIVATION",
+    "fallback_target": "rho_ch=3 action provenance and Omega_f action provenance",
+    "n_16_source_status": "CONDITIONAL_ON_OMEGA_F_AND_RHO_CH_3",
+    "omega_f_source_status": "STRUCTURALLY_INTEGRATED_NOT_ACTION_DERIVED",
+    "open_blockers": [
+      "OPEN_MISSING_OMEGA_F_ACTION_DERIVATION",
+      "OPEN_MISSING_RHO_CH_ACTION_DERIVATION",
+      "OPEN_MISSING_CHARGED_OVERLAP_4_OVER_3_ACTION_SOURCE",
+      "OPEN_MISSING_CKM_LOG_TRANSPORT_AVERAGING_THEOREM",
+      "OPEN_MISSING_CROSS_SCALE_TRANSPORT_THEOREM"
+    ],
+    "retired_or_rejected_hypotheses": [
+      "CKM 1/16 is artifact-backed merely because the same integer appears in g_bridge",
+      "same-scale identity transport proves nontrivial CKM cross-scale transport",
+      "rho_ch=3 may be selected from residual quality or near-degeneracy"
+    ],
+    "rho_ch_source_status": "OPEN_MISSING_RHO_CH_ACTION_DERIVATION",
+    "status": "CONDITIONAL_COMMON_16_GENERATOR_CANDIDATE"
+  },
+  "public_status": "BHSM remains an integrated conditional architecture with open blockers. Full completion and physical eV/GeV neutrino mass are not claimed.",
+  "report_name": "BHSM v1.8 Common-16 and Final Completion Closure Report",
+  "required_statements": [
+    "BHSM full completion is not claimed unless all action, projector, transport, normalization, unit-map, and runtime gates are closed.",
+    "Frozen prediction values are unchanged by this sprint.",
+    "The CKM 1/16 exponent is not treated as artifact-backed unless the common generator and reciprocal transport theorem are both sourced.",
+    "A conditional common-16 generator candidate does not by itself prove the CKM exponent.",
+    "No empirical CKM fitting, charged-mass fitting, PDG values, W calibration, neutrino limits, or legacy threshold tables are used as theorem inputs."
+  ],
+  "source_search": {
+    "bridge_value": "16/189",
+    "ckm_candidate_exponent": "1/16",
+    "empirical_residual_used_as_theorem_input": false,
+    "frozen_predictions_changed": false,
+    "historical_candidate_selected_by_residual": true,
+    "official_prediction_logic_changed": false,
+    "omega_values": {
+      "down": 12,
+      "lepton": 3,
+      "up": 6
+    },
+    "rho_ch_candidate": 3,
+    "source_paths": [
+      "data/charged_suppression_operator_kernel_v1.json",
+      "data/incidence_normalized_overlap_bridge_source.json",
+      "data/charged_stiffness_action_selector_v1.json",
+      "data/bhsm_charged_hessian_source_audit.json",
+      "audits/ckm_mixing_exponent_derivation_audit.json",
+      "artifacts/common_scale_boundary_transport_v1.json",
+      "artifacts/charged_boundary_bridge_values_v1.json"
+    ],
+    "source_paths_found": [
+      "data/charged_suppression_operator_kernel_v1.json",
+      "data/incidence_normalized_overlap_bridge_source.json",
+      "data/charged_stiffness_action_selector_v1.json",
+      "data/bhsm_charged_hessian_source_audit.json",
+      "audits/ckm_mixing_exponent_derivation_audit.json",
+      "artifacts/common_scale_boundary_transport_v1.json",
+      "artifacts/charged_boundary_bridge_values_v1.json"
+    ],
+    "source_paths_missing": [],
+    "status": "COMMON_16_SOURCE_SET_LOCATED"
+  },
+  "status_after": "CONDITIONAL_COMMON_16_GENERATOR_CANDIDATE_CKM_EXPONENT_OPEN",
+  "status_before": "OPEN_MISSING_COMMON_16_GENERATOR_AND_CKM_EXPONENT_DERIVATION",
+  "target_selection": {
+    "candidate_targets": [
+      {
+        "closes_multiple_blockers": 4,
+        "deterministic_tests": 3,
+        "external_runtime_penalty": 0,
+        "frozen_change_risk_penalty": 0,
+        "local_artifacts": 5,
+        "missing_units_penalty": 0,
+        "no_empirical_inputs": 4,
+        "rationale": "Exact local identities connect charged incidence, bridge/beta values, and the CKM candidate while provenance gates remain testable.",
+        "required_for_completion": 5,
+        "reviewer_credibility": 3,
+        "target_id": "common_16_ckm_transport",
+        "total_score": 24
+      },
+      {
+        "closes_multiple_blockers": 3,
+        "deterministic_tests": 3,
+        "external_runtime_penalty": 0,
+        "frozen_change_risk_penalty": 0,
+        "local_artifacts": 4,
+        "missing_units_penalty": 0,
+        "no_empirical_inputs": 4,
+        "rationale": "Local branches exist, but no action Hessian selects rho_ch=3.",
+        "required_for_completion": 5,
+        "reviewer_credibility": 3,
+        "target_id": "rho_ch_3_action",
+        "total_score": 22
+      },
+      {
+        "closes_multiple_blockers": 3,
+        "deterministic_tests": 3,
+        "external_runtime_penalty": 0,
+        "frozen_change_risk_penalty": 0,
+        "local_artifacts": 3,
+        "missing_units_penalty": 0,
+        "no_empirical_inputs": 4,
+        "rationale": "Same-scale identity transport is exact; nontrivial transport lacks a generator.",
+        "required_for_completion": 5,
+        "reviewer_credibility": 3,
+        "target_id": "cross_scale_transport",
+        "total_score": 21
+      },
+      {
+        "closes_multiple_blockers": 2,
+        "deterministic_tests": 3,
+        "external_runtime_penalty": 0,
+        "frozen_change_risk_penalty": 0,
+        "local_artifacts": 4,
+        "missing_units_penalty": 0,
+        "no_empirical_inputs": 4,
+        "rationale": "The stochastic/channel route is conditional and still depends on normalization.",
+        "required_for_completion": 5,
+        "reviewer_credibility": 3,
+        "target_id": "eta_l_action_transport",
+        "total_score": 21
+      },
+      {
+        "closes_multiple_blockers": 3,
+        "deterministic_tests": 2,
+        "external_runtime_penalty": 0,
+        "frozen_change_risk_penalty": 0,
+        "local_artifacts": 4,
+        "missing_units_penalty": 0,
+        "no_empirical_inputs": 4,
+        "rationale": "Boundary operators are structurally integrated, while their complete-action origin remains open.",
+        "required_for_completion": 5,
+        "reviewer_credibility": 3,
+        "target_id": "omega_f_action",
+        "total_score": 21
+      },
+      {
+        "closes_multiple_blockers": 4,
+        "deterministic_tests": 2,
+        "external_runtime_penalty": 0,
+        "frozen_change_risk_penalty": 0,
+        "local_artifacts": 4,
+        "missing_units_penalty": 5,
+        "no_empirical_inputs": 4,
+        "rationale": "It has high leverage but physical normalization units are absent.",
+        "required_for_completion": 5,
+        "reviewer_credibility": 3,
+        "target_id": "charged_action_normalization",
+        "total_score": 17
+      },
+      {
+        "closes_multiple_blockers": 4,
+        "deterministic_tests": 2,
+        "external_runtime_penalty": 0,
+        "frozen_change_risk_penalty": 0,
+        "local_artifacts": 3,
+        "missing_units_penalty": 5,
+        "no_empirical_inputs": 4,
+        "rationale": "Shape and identity pieces exist; physical units remain absent.",
+        "required_for_completion": 5,
+        "reviewer_credibility": 3,
+        "target_id": "physical_boundary_measure",
+        "total_score": 16
+      },
+      {
+        "closes_multiple_blockers": 3,
+        "deterministic_tests": 2,
+        "external_runtime_penalty": 0,
+        "frozen_change_risk_penalty": 0,
+        "local_artifacts": 3,
+        "missing_units_penalty": 5,
+        "no_empirical_inputs": 4,
+        "rationale": "The normalized complete action and scalar profile remain unavailable.",
+        "required_for_completion": 5,
+        "reviewer_credibility": 3,
+        "target_id": "gauge_scalar_normalization",
+        "total_score": 15
+      },
+      {
+        "closes_multiple_blockers": 1,
+        "deterministic_tests": 2,
+        "external_runtime_penalty": 5,
+        "frozen_change_risk_penalty": 0,
+        "local_artifacts": 4,
+        "missing_units_penalty": 0,
+        "no_empirical_inputs": 4,
+        "rationale": "External licensed/runtime tools are unavailable and cannot close theory provenance.",
+        "required_for_completion": 3,
+        "reviewer_credibility": 2,
+        "target_id": "external_hep_runtime",
+        "total_score": 11
+      }
+    ],
+    "empirical_inputs_used": false,
+    "expected_closure_statuses": [
+      "CONDITIONAL_COMMON_16_GENERATOR_CANDIDATE",
+      "CONDITIONAL_CKM_LOG_TRANSPORT_CANDIDATE",
+      "OPEN_MISSING_CKM_EXPONENT_DERIVATION"
+    ],
+    "scores": {
+      "charged_action_normalization": 17,
+      "common_16_ckm_transport": 24,
+      "cross_scale_transport": 21,
+      "eta_l_action_transport": 21,
+      "external_hep_runtime": 11,
+      "gauge_scalar_normalization": 15,
+      "omega_f_action": 21,
+      "physical_boundary_measure": 16,
+      "rho_ch_3_action": 22
+    },
+    "selected_target": "common_16_ckm_transport",
+    "why_others_not_selected": {
+      "charged_action_normalization": "It has high leverage but physical normalization units are absent.",
+      "cross_scale_transport": "Same-scale identity transport is exact; nontrivial transport lacks a generator.",
+      "eta_l_action_transport": "The stochastic/channel route is conditional and still depends on normalization.",
+      "external_hep_runtime": "External licensed/runtime tools are unavailable and cannot close theory provenance.",
+      "gauge_scalar_normalization": "The normalized complete action and scalar profile remain unavailable.",
+      "omega_f_action": "Boundary operators are structurally integrated, while their complete-action origin remains open.",
+      "physical_boundary_measure": "Shape and identity pieces exist; physical units remain absent.",
+      "rho_ch_3_action": "Local branches exist, but no action Hessian selects rho_ch=3."
+    },
+    "why_selected": "Highest predeclared score, exact offline identities, and leverage across CKM, charged bridge, beta hierarchy, rho_ch, and Omega_f provenance."
+  },
+  "version": "1.8"
+}

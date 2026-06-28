@@ -36,6 +36,14 @@ python -m bhsm.interface ckm-exponent-source-audit --format json
 python -m bhsm.interface charged-mixing-law-audit --format json
 python -m bhsm.interface charged-dimensional-audit --format json
 python -m bhsm.interface charged-closure-report --format markdown
+python -m bhsm.interface common-16-source-search --format json
+python -m bhsm.interface common-16-incidence-audit --format json
+python -m bhsm.interface common-16-bridge-beta-audit --format json
+python -m bhsm.interface common-16-ckm-transport-audit --format json
+python -m bhsm.interface common-16-provenance-audit --format json
+python -m bhsm.interface common-16-closure-report --format markdown
+python -m bhsm.interface final-completion-status --format markdown
+python -m bhsm.interface final-completion-ledger --format json
 ```
 
 These commands are offline and claim-safe. They do not use reference data as
@@ -110,6 +118,14 @@ theorem inputs and do not emit a default physical neutrino mass.
 | `charged-mixing-law-audit` | Audit theta12/theta23/theta13 and CP-source provenance | JSON | no | no |
 | `charged-dimensional-audit` | Check dimensional consistency without adding physical units | JSON | no | no |
 | `charged-closure-report` | Render the complete charged closure audit | Markdown or JSON | no | no |
+| `common-16-source-search` | Locate common-16 source artifacts | JSON | no | no |
+| `common-16-incidence-audit` | Verify exact conditional incidence identities | JSON | no | no |
+| `common-16-bridge-beta-audit` | Compare bridge/beta common-16 factorizations | JSON | no | no |
+| `common-16-ckm-transport-audit` | Apply the CKM reciprocal transport gate | JSON | no | no |
+| `common-16-provenance-audit` | Report action and transport provenance blockers | JSON | no | no |
+| `common-16-closure-report` | Render the v1.8 focused closure report | Markdown or JSON | no | no |
+| `final-completion-status` | Render the conservative v1.8 completion status | Markdown or JSON | no | no |
+| `final-completion-ledger` | Render the v1.8 blocker ledger | JSON | no | no |
 
 Without `--offline-ok`, `pdg-fetch` may try an optional live reference adapter.
 The offline fallback is reference-only and is never a derivation input.
