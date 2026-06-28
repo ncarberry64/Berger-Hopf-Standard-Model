@@ -103,6 +103,15 @@ from .charged_closure import (
     derive_or_locate_eta_l_source,
     search_charged_closure_sources,
 )
+from .common_16 import (
+    audit_common_16_bridge_beta,
+    audit_common_16_ckm_transport,
+    audit_common_16_incidence,
+    audit_common_16_provenance,
+    build_final_completion_report,
+    final_completion_report_to_markdown,
+    search_common_16_sources,
+)
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -341,6 +350,22 @@ def build_parser() -> argparse.ArgumentParser:
     charged_dimensions.add_argument("--format", choices=("json",), default="json")
     charged_report = commands.add_parser("charged-closure-report", help="Render the charged closure report")
     charged_report.add_argument("--format", choices=("markdown", "json"), default="markdown")
+    common_source = commands.add_parser("common-16-source-search", help="Locate common-16 source artifacts")
+    common_source.add_argument("--format", choices=("json",), default="json")
+    common_incidence = commands.add_parser("common-16-incidence-audit", help="Audit exact common-16 incidence identities")
+    common_incidence.add_argument("--format", choices=("json",), default="json")
+    common_bridge = commands.add_parser("common-16-bridge-beta-audit", help="Audit common-16 bridge and beta identities")
+    common_bridge.add_argument("--format", choices=("json",), default="json")
+    common_transport = commands.add_parser("common-16-ckm-transport-audit", help="Audit the CKM reciprocal transport gate")
+    common_transport.add_argument("--format", choices=("json",), default="json")
+    common_provenance = commands.add_parser("common-16-provenance-audit", help="Apply common-16 provenance gates")
+    common_provenance.add_argument("--format", choices=("json",), default="json")
+    common_report = commands.add_parser("common-16-closure-report", help="Render the common-16 closure report")
+    common_report.add_argument("--format", choices=("markdown", "json"), default="markdown")
+    final_status = commands.add_parser("final-completion-status", help="Render the v1.8 conservative completion status")
+    final_status.add_argument("--format", choices=("markdown", "json"), default="markdown")
+    final_ledger = commands.add_parser("final-completion-ledger", help="Show the v1.8 completion blocker ledger")
+    final_ledger.add_argument("--format", choices=("json",), default="json")
     return parser
 
 
@@ -737,6 +762,38 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(charged_closure_report_to_markdown(report), end="")
         else:
             print(json.dumps(report.to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "common-16-source-search":
+        print(json.dumps(search_common_16_sources().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "common-16-incidence-audit":
+        print(json.dumps(audit_common_16_incidence().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "common-16-bridge-beta-audit":
+        print(json.dumps(audit_common_16_bridge_beta().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "common-16-ckm-transport-audit":
+        print(json.dumps(audit_common_16_ckm_transport().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "common-16-provenance-audit":
+        print(json.dumps(audit_common_16_provenance().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command in ("common-16-closure-report", "final-completion-status"):
+        report = build_final_completion_report()
+        if args.format == "markdown":
+            print(final_completion_report_to_markdown(report), end="")
+        else:
+            print(json.dumps(report.to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "final-completion-ledger":
+        report = build_final_completion_report()
+        print(json.dumps({
+            "version": report.version,
+            "full_completion_claimed": report.completion_claimed,
+            "selected_target": report.target_selection.selected_target,
+            "open_blockers": list(report.provenance.open_blockers),
+            "legacy_blockers": [row.to_dict() for row in build_full_completion_blocker_ledger()],
+        }, indent=2, sort_keys=True))
         return 0
     particles = tuple(item.strip() for item in args.particles.split(",") if item.strip())
     report = build_prediction_report(

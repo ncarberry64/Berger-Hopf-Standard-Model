@@ -1,0 +1,253 @@
+{
+  "empirical_inputs_used": false,
+  "legacy_priority_rows": [
+    {
+      "artifact_locality": 5,
+      "cross_sector_leverage": 5,
+      "external_runtime_penalty": 0,
+      "feasibility_now": 4,
+      "linked_blockers": [
+        "FC-01",
+        "FC-03",
+        "FC-07",
+        "FC-09",
+        "FC-10",
+        "FC-11",
+        "FC-12"
+      ],
+      "necessity": 5,
+      "no_empirical_path": 5,
+      "rationale": "Existing action and collar artifacts prove shape/identity subblocks; the remaining normalization affects seven completion categories.",
+      "target_id": "boundary_measure_collar_transport",
+      "title": "Boundary measure and collar transport normalization",
+      "total_score": 24
+    },
+    {
+      "artifact_locality": 4,
+      "cross_sector_leverage": 4,
+      "external_runtime_penalty": 0,
+      "feasibility_now": 3,
+      "linked_blockers": [
+        "FC-03",
+        "FC-05",
+        "FC-06"
+      ],
+      "necessity": 5,
+      "no_empirical_path": 5,
+      "rationale": "Local artifacts expose candidate branches, but no unique Hessian selector is yet present.",
+      "target_id": "charged_stiffness_action",
+      "title": "Charged stiffness action normalization",
+      "total_score": 21
+    },
+    {
+      "artifact_locality": 4,
+      "cross_sector_leverage": 4,
+      "external_runtime_penalty": 0,
+      "feasibility_now": 2,
+      "linked_blockers": [
+        "FC-02",
+        "FC-07",
+        "FC-12"
+      ],
+      "necessity": 5,
+      "no_empirical_path": 5,
+      "rationale": "High mathematical leverage, but complete action and variation data are still absent.",
+      "target_id": "complete_action_response_cone",
+      "title": "Complete action-derived response cone",
+      "total_score": 20
+    },
+    {
+      "artifact_locality": 3,
+      "cross_sector_leverage": 4,
+      "external_runtime_penalty": 0,
+      "feasibility_now": 2,
+      "linked_blockers": [
+        "FC-01",
+        "FC-09",
+        "FC-11"
+      ],
+      "necessity": 4,
+      "no_empirical_path": 5,
+      "rationale": "Important cross-sector normalization with open boundary trace and measure inputs.",
+      "target_id": "gauge_action_normalization",
+      "title": "Gauge action normalization",
+      "total_score": 18
+    },
+    {
+      "artifact_locality": 3,
+      "cross_sector_leverage": 3,
+      "external_runtime_penalty": 0,
+      "feasibility_now": 2,
+      "linked_blockers": [
+        "FC-06"
+      ],
+      "necessity": 4,
+      "no_empirical_path": 5,
+      "rationale": "A focused theorem gap, but it removes fewer shared dependencies.",
+      "target_id": "ckm_exponent_source",
+      "title": "CKM 1/16 exponent source",
+      "total_score": 17
+    },
+    {
+      "artifact_locality": 3,
+      "cross_sector_leverage": 3,
+      "external_runtime_penalty": 0,
+      "feasibility_now": 2,
+      "linked_blockers": [
+        "FC-05",
+        "FC-11"
+      ],
+      "necessity": 4,
+      "no_empirical_path": 5,
+      "rationale": "The stochastic path is partially derived but still depends on shared normalization.",
+      "target_id": "lepton_eta_origin",
+      "title": "Charged-lepton eta_l origin",
+      "total_score": 17
+    },
+    {
+      "artifact_locality": 5,
+      "cross_sector_leverage": 2,
+      "external_runtime_penalty": 5,
+      "feasibility_now": 3,
+      "linked_blockers": [
+        "FC-14"
+      ],
+      "necessity": 3,
+      "no_empirical_path": 5,
+      "rationale": "Well localized but explicitly depends on external licensed/runtime components.",
+      "target_id": "external_hep_runtime",
+      "title": "FeynRules/UFO/MadGraph runtime validation",
+      "total_score": 13
+    }
+  ],
+  "rows": [
+    {
+      "closes_multiple_blockers": 4,
+      "deterministic_tests": 3,
+      "external_runtime_penalty": 0,
+      "frozen_change_risk_penalty": 0,
+      "local_artifacts": 5,
+      "missing_units_penalty": 0,
+      "no_empirical_inputs": 4,
+      "rationale": "Exact local identities connect charged incidence, bridge/beta values, and the CKM candidate while provenance gates remain testable.",
+      "required_for_completion": 5,
+      "reviewer_credibility": 3,
+      "target_id": "common_16_ckm_transport",
+      "total_score": 24
+    },
+    {
+      "closes_multiple_blockers": 3,
+      "deterministic_tests": 3,
+      "external_runtime_penalty": 0,
+      "frozen_change_risk_penalty": 0,
+      "local_artifacts": 4,
+      "missing_units_penalty": 0,
+      "no_empirical_inputs": 4,
+      "rationale": "Local branches exist, but no action Hessian selects rho_ch=3.",
+      "required_for_completion": 5,
+      "reviewer_credibility": 3,
+      "target_id": "rho_ch_3_action",
+      "total_score": 22
+    },
+    {
+      "closes_multiple_blockers": 3,
+      "deterministic_tests": 3,
+      "external_runtime_penalty": 0,
+      "frozen_change_risk_penalty": 0,
+      "local_artifacts": 3,
+      "missing_units_penalty": 0,
+      "no_empirical_inputs": 4,
+      "rationale": "Same-scale identity transport is exact; nontrivial transport lacks a generator.",
+      "required_for_completion": 5,
+      "reviewer_credibility": 3,
+      "target_id": "cross_scale_transport",
+      "total_score": 21
+    },
+    {
+      "closes_multiple_blockers": 2,
+      "deterministic_tests": 3,
+      "external_runtime_penalty": 0,
+      "frozen_change_risk_penalty": 0,
+      "local_artifacts": 4,
+      "missing_units_penalty": 0,
+      "no_empirical_inputs": 4,
+      "rationale": "The stochastic/channel route is conditional and still depends on normalization.",
+      "required_for_completion": 5,
+      "reviewer_credibility": 3,
+      "target_id": "eta_l_action_transport",
+      "total_score": 21
+    },
+    {
+      "closes_multiple_blockers": 3,
+      "deterministic_tests": 2,
+      "external_runtime_penalty": 0,
+      "frozen_change_risk_penalty": 0,
+      "local_artifacts": 4,
+      "missing_units_penalty": 0,
+      "no_empirical_inputs": 4,
+      "rationale": "Boundary operators are structurally integrated, while their complete-action origin remains open.",
+      "required_for_completion": 5,
+      "reviewer_credibility": 3,
+      "target_id": "omega_f_action",
+      "total_score": 21
+    },
+    {
+      "closes_multiple_blockers": 4,
+      "deterministic_tests": 2,
+      "external_runtime_penalty": 0,
+      "frozen_change_risk_penalty": 0,
+      "local_artifacts": 4,
+      "missing_units_penalty": 5,
+      "no_empirical_inputs": 4,
+      "rationale": "It has high leverage but physical normalization units are absent.",
+      "required_for_completion": 5,
+      "reviewer_credibility": 3,
+      "target_id": "charged_action_normalization",
+      "total_score": 17
+    },
+    {
+      "closes_multiple_blockers": 4,
+      "deterministic_tests": 2,
+      "external_runtime_penalty": 0,
+      "frozen_change_risk_penalty": 0,
+      "local_artifacts": 3,
+      "missing_units_penalty": 5,
+      "no_empirical_inputs": 4,
+      "rationale": "Shape and identity pieces exist; physical units remain absent.",
+      "required_for_completion": 5,
+      "reviewer_credibility": 3,
+      "target_id": "physical_boundary_measure",
+      "total_score": 16
+    },
+    {
+      "closes_multiple_blockers": 3,
+      "deterministic_tests": 2,
+      "external_runtime_penalty": 0,
+      "frozen_change_risk_penalty": 0,
+      "local_artifacts": 3,
+      "missing_units_penalty": 5,
+      "no_empirical_inputs": 4,
+      "rationale": "The normalized complete action and scalar profile remain unavailable.",
+      "required_for_completion": 5,
+      "reviewer_credibility": 3,
+      "target_id": "gauge_scalar_normalization",
+      "total_score": 15
+    },
+    {
+      "closes_multiple_blockers": 1,
+      "deterministic_tests": 2,
+      "external_runtime_penalty": 5,
+      "frozen_change_risk_penalty": 0,
+      "local_artifacts": 4,
+      "missing_units_penalty": 0,
+      "no_empirical_inputs": 4,
+      "rationale": "External licensed/runtime tools are unavailable and cannot close theory provenance.",
+      "required_for_completion": 3,
+      "reviewer_credibility": 2,
+      "target_id": "external_hep_runtime",
+      "total_score": 11
+    }
+  ],
+  "selected_target": "common_16_ckm_transport",
+  "version": "1.8"
+}

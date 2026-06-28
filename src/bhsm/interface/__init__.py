@@ -53,6 +53,14 @@ from .charged_closure import (
     derive_or_locate_eta_l_source,
     search_charged_closure_sources,
 )
+from .common_16 import (
+    audit_common_16_bridge_beta,
+    audit_common_16_ckm_transport,
+    audit_common_16_incidence,
+    audit_common_16_provenance,
+    build_final_completion_report,
+    search_common_16_sources,
+)
 from .solver import ParticleMassSolver, SolverResult
 from .units import GeometricUnitMapper
 from .validation import ExperimentalValue, ValidationComparison, curated_fallback_references
@@ -127,6 +135,12 @@ __all__ = [
     "derive_or_locate_ckm_exponent_source",
     "derive_or_locate_eta_l_source",
     "search_charged_closure_sources",
+    "audit_common_16_bridge_beta",
+    "audit_common_16_ckm_transport",
+    "audit_common_16_incidence",
+    "audit_common_16_provenance",
+    "build_final_completion_report",
+    "search_common_16_sources",
     "check_notebook_pack",
     "notebook_pack_manifest",
     "load_reference_with_fallback",

@@ -96,6 +96,12 @@ The current minimal-action theory dictionary is documented in
 - [CP O_int minimal action decision](cp_o_int_minimal_action_closure.md)
 - [X_ch minimal action decision](x_ch_minimal_action_closure.md)
 - [Neutrino basis/scale minimal action decision](neutrino_basis_scale_minimal_action_closure.md)
+- [Common-16 source search](common_16_source_search.md)
+- [Common-16 incidence audit](common_16_incidence_audit.md)
+- [Common-16 bridge/beta audit](common_16_bridge_beta_audit.md)
+- [Common-16 CKM transport audit](common_16_ckm_transport_audit.md)
+- [Common-16 provenance audit](common_16_provenance_audit.md)
+- [Common-16 closure report](common_16_closure_report.md)
 
 ## CP O_int Sprint Docs
 
