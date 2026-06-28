@@ -74,8 +74,8 @@ def build_numerical_closure(
             "formula:neutrino_propagation_mass_candidate",
             "registry:neutral_operator_kernel_BH",
         ),
-        remaining_missing_object=scale.missing_object,
-        claim_boundary="Conditional dimensionless numerical closure candidate only. A dimensionful neutral scale and physical flavor-observable map remain open.",
+        remaining_missing_object="numeric neutral stiffness length, physical K_neutral,eff, and admissible positivity proof",
+        claim_boundary="Conditional dimensionless response only. The separate action-normalized spectral route remains symbolic and produces no eV/GeV mass.",
     )
     return NeutrinoNumericalClosureReport(
         closure=closure,

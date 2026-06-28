@@ -3,6 +3,20 @@
 All commands use `python -m bhsm.interface`. Internet and external HEP tools are
 not required for the listed local behavior.
 
+Neutral spectral-stiffness commands:
+
+```bash
+python -m bhsm.interface neutrino-mass-gap-action --format json
+python -m bhsm.interface legacy-dimensional-gate --format json
+python -m bhsm.interface neutral-stiffness-ratio --format json
+python -m bhsm.interface neutral-spectral-gap --format json
+python -m bhsm.interface neutral-kernel-positivity --format json
+python -m bhsm.interface neutral-spectral-report --format markdown
+```
+
+These commands are offline and claim-safe. They do not use reference data as
+theorem inputs and do not emit a default physical neutrino mass.
+
 | Command | Purpose | Output | Requires internet? | Requires external HEP tools? |
 | --- | --- | --- | --- | --- |
 | `registry` | List prediction-registry entries | text or JSON | no | no |

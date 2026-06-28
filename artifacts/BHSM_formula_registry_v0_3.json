@@ -10,11 +10,16 @@
   "available_author_supplied_conditional": [
     "charged_response_from_artifact",
     "legacy_curvature_mass_functional",
+    "legacy_gravitational_dimensional_gate",
     "legacy_neutral_scale_candidate",
     "neutral_dimensionful_scale_search",
+    "neutral_kernel_positivity",
+    "neutral_mass_gap_action",
     "neutral_physical_curvature_map",
     "neutral_propagation_radius_search",
     "neutral_radius_curvature_closure",
+    "neutral_spectral_gap",
+    "neutral_stiffness_ratio",
     "neutrino_physical_basis_scale",
     "neutrino_propagation_mass_candidate"
   ],
@@ -183,6 +188,25 @@
       "theorem_status": "ARTIFACT_BACKED_CURVATURE_MASS_FUNCTIONAL"
     },
     {
+      "callable_path": "bhsm.interface.neutrino_spectral.legacy_dimensional_gate.audit_legacy_gravitational_mass_formula_dimensions",
+      "claim_boundary": "The legacy expression is not used as a direct particle mass formula.",
+      "description": "Classify the historical r^2 K expression as mass per length for K=L^-2.",
+      "display_name": "Legacy gravitational dimensional gate",
+      "formula_key": "legacy_gravitational_dimensional_gate",
+      "input_schema": {},
+      "notes": [],
+      "output_schema": {
+        "type": "LegacyDimensionalGateResult"
+      },
+      "safe_for_default_report": true,
+      "source_artifacts": [
+        "artifacts/BHSM_legacy_dimensional_gate_v1_3.json"
+      ],
+      "source_type": "dimensional audit",
+      "status": "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL",
+      "theorem_status": "DIMENSIONALLY_GATED_LEGACY_FUNCTIONAL"
+    },
+    {
       "callable_path": "bhsm.interface.neutrino_scale.legacy_neutral_scale_candidate.build_legacy_neutral_scale_candidate",
       "claim_boundary": "No eV/GeV output is produced without both a physical propagation radius and neutral curvature map.",
       "description": "Test the curvature functional against the independent neutral radius and curvature-unit gates.",
@@ -258,6 +282,44 @@
       "theorem_status": "ARTIFACT_BACKED_BOUNDARY_SEED"
     },
     {
+      "callable_path": "bhsm.interface.neutrino_spectral.neutral_kernel_positivity.audit_neutral_kernel_positivity",
+      "claim_boundary": "The raw kernel is not PSD; nonnegative thresholding is not a full admissible-subspace proof.",
+      "description": "Separate the raw eigenspectrum from thresholded/admissible positivity.",
+      "display_name": "Neutral kernel positivity audit",
+      "formula_key": "neutral_kernel_positivity",
+      "input_schema": {},
+      "notes": [],
+      "output_schema": {
+        "type": "NeutralKernelPositivityAudit"
+      },
+      "safe_for_default_report": true,
+      "source_artifacts": [
+        "artifacts/BHSM_neutral_kernel_positivity_audit_v1_3.json"
+      ],
+      "source_type": "artifact-backed finite kernel",
+      "status": "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL",
+      "theorem_status": "OPEN_MISSING_ADMISSIBLE_NEUTRAL_POSITIVITY_PROOF"
+    },
+    {
+      "callable_path": "bhsm.interface.neutrino_spectral.mass_gap_action.load_neutral_mass_gap_action",
+      "claim_boundary": "The scalar action shape is artifact-backed; neutral A_nu, Z_nu, and physical curvature remain open.",
+      "description": "Load the artifact-backed scalar action and conditional neutral normalization.",
+      "display_name": "Neutral mass-gap action analogue",
+      "formula_key": "neutral_mass_gap_action",
+      "input_schema": {},
+      "notes": [],
+      "output_schema": {
+        "type": "MassGapActionCandidate"
+      },
+      "safe_for_default_report": true,
+      "source_artifacts": [
+        "artifacts/BHSM_mass_gap_action_candidate_v1_3.json"
+      ],
+      "source_type": "bundled scalar EFT analogue",
+      "status": "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL",
+      "theorem_status": "ARTIFACT_BACKED_MASS_GAP_ACTION"
+    },
+    {
       "callable_path": "bhsm.interface.neutrino_scale.neutral_physical_curvature.search_neutral_physical_curvature_map",
       "claim_boundary": "The symbolic map contains an unresolved kappa_curv normalization in m^-2.",
       "description": "Separate the dimensionless kernel response from a physical m^-2 normalization.",
@@ -313,6 +375,44 @@
       "source_type": "local theorem artifacts and author ontology",
       "status": "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL",
       "theorem_status": "DIMENSIONFUL_MASS_NOT_AVAILABLE"
+    },
+    {
+      "callable_path": "bhsm.interface.neutrino_spectral.neutral_spectral_gap.build_neutral_spectral_gap_candidate",
+      "claim_boundary": "Symbolic theorem shape only; no default kg/eV/GeV mass is produced.",
+      "description": "Build the action-normalized conditional neutral inverse-length gap.",
+      "display_name": "Neutral spectral-gap candidate",
+      "formula_key": "neutral_spectral_gap",
+      "input_schema": {},
+      "notes": [],
+      "output_schema": {
+        "type": "NeutralSpectralGapCandidate"
+      },
+      "safe_for_default_report": true,
+      "source_artifacts": [
+        "artifacts/BHSM_neutral_spectral_gap_candidate_v1_3.json"
+      ],
+      "source_type": "neutral action normalization and curvature gates",
+      "status": "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL",
+      "theorem_status": "CONDITIONAL_NEUTRAL_SPECTRAL_MASS_CANDIDATE"
+    },
+    {
+      "callable_path": "bhsm.interface.neutrino_spectral.stiffness_ratio.search_neutral_stiffness_ratio",
+      "claim_boundary": "The ratio is symbolic and has no numeric metre value.",
+      "description": "Search for sqrt(A_nu/Z_nu) without empirical calibration.",
+      "display_name": "Neutral stiffness ratio",
+      "formula_key": "neutral_stiffness_ratio",
+      "input_schema": {},
+      "notes": [],
+      "output_schema": {
+        "type": "NeutralStiffnessRatio"
+      },
+      "safe_for_default_report": true,
+      "source_artifacts": [
+        "artifacts/BHSM_neutral_stiffness_ratio_v1_3.json"
+      ],
+      "source_type": "local symbolic action inventory",
+      "status": "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL",
+      "theorem_status": "CONDITIONAL_NEUTRAL_STIFFNESS_RATIO_CANDIDATE"
     },
     {
       "callable_path": "bhsm.interface.minimal_action.neutrino_basis_closure.propagation_conditioned_neutrino_mass",

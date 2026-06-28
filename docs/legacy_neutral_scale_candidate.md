@@ -1,5 +1,9 @@
 # Legacy Neutral Scale Candidate
 
+This historical candidate is superseded for particle-mass construction by the
+v1.3 action-normalized spectral-gap route. Its artifacts remain unchanged for
+provenance.
+
 Overall status: `OPEN_MISSING_PROPAGATION_LOCALIZATION_RADIUS`.
 
 The candidate equation is

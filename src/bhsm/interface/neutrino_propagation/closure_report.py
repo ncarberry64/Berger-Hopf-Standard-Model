@@ -52,6 +52,7 @@ def neutrino_propagation_report_to_markdown(
             "",
             "The result is dimensionless and conditional. It is not a static rest-mass matrix or an eV/GeV neutrino prediction.",
             "The separate v1.0 neutral-scale audit reports OPEN_MISSING_NEUTRAL_SCALE and emits no dimensional mass.",
+            "The v1.3 preferred particle-sector route is an action-normalized spectral gap; its neutral stiffness length and physical curvature map remain open.",
             "",
         ]
     )

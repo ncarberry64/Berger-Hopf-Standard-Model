@@ -38,6 +38,9 @@ validation remain outside the current package.
 | Neutral propagation radius | `CONDITIONAL_PROPAGATION_RADIUS_CANDIDATE` | A symbolic length-domain candidate is defined; no numerical value in metres is derived. |
 | Neutral physical curvature map | `CONDITIONAL_PHYSICAL_CURVATURE_MAP_CANDIDATE` | A symbolic `kappa_curv R_nu` map is defined; `kappa_curv` in `m^-2` remains open. |
 | Dimensionful neutrino mass | `DIMENSIONFUL_MASS_NOT_AVAILABLE` | Numeric unit inputs are absent, and the legacy `r^2 k` functional has dimension mass/length under `K=-nabla^2 ln rho`. |
+| Neutral mass-gap action | `ARTIFACT_BACKED_MASS_GAP_ACTION` | The scalar topographic action analogue is artifact-backed; its neutral normalization is conditional. |
+| Neutral spectral gap | `CONDITIONAL_NEUTRAL_SPECTRAL_MASS_CANDIDATE` | `m_nu c^2 = hbar c sqrt(A_nu/Z_nu) K_neutral,eff`; numeric stiffness length and physical curvature remain open. |
+| Neutral kernel positivity | `OPEN_MISSING_ADMISSIBLE_NEUTRAL_POSITIVITY_PROOF` | The raw finite kernel has one negative eigenvalue; thresholded nonnegativity is not a full positivity theorem. |
 | FeynRules, UFO, MadGraph | `RUNTIME_GATED` | External validation is deferred until theorem and runtime gates pass. |
 
 [STATUS.md](STATUS.md) is the single source of truth for current area-level
@@ -54,7 +57,12 @@ python -m bhsm.interface artifact-sources
 python -m bhsm.interface formula-registry
 python -m bhsm.interface theorem-blockers
 python -m bhsm.interface minimal-action-status
+python -m bhsm.interface neutral-spectral-report --format markdown
 ```
+
+The legacy gravitational curvature expression is dimensionally gated because K has units L^-2 and (c^2/G) r^2 K has units M/L, not M.
+BHSM does not use the legacy gravitational curvature expression as a direct particle mass formula.
+The preferred particle-sector path is the conditional action-normalized neutral spectral gap. No physical neutrino mass is emitted by repository defaults.
 
 See [QUICKSTART.md](QUICKSTART.md) for a runnable walkthrough and
 [CLI_REFERENCE.md](CLI_REFERENCE.md) for the complete command table.
