@@ -1,5 +1,7 @@
 # BHSM Neutrino Numerical Closure
 
+BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity. Physical eV/GeV neutrino mass closure remains open pending a numeric neutral stiffness length sqrt(A_nu/Z_nu), a physical K_neutral,eff map in m^-2, and complete-action derivation of the admissible response cone.
+
 The dimensionless threshold response remains useful, but the physical
 particle-sector path is the conditional v1.3 spectral gap. Numeric neutral
 stiffness length and physical curvature normalization remain open.
@@ -17,8 +19,8 @@ for the three canonical neutral boundary channels. It uses only local
 artifact-backed `K_nu`, `g_nu`, `kappa_nu`, and `tau`, together with the author
 ontology's propagation interpretation.
 
-Numerical closure is `dimensionless-only`. The remaining object is an
-artifact-backed dimensionful neutral scale mapping the BHSM response to eV/GeV.
+Closure here is `dimensionless-only`. The remaining objects are the numeric
+stiffness length, physical curvature map, and complete-action response cone.
 No frozen prediction is changed, and no static rest-mass matrix, empirical
 validation, or external HEP runtime readiness is claimed.
 

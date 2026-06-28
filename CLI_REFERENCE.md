@@ -23,6 +23,8 @@ python -m bhsm.interface neutral-physical-curvature-map --format json
 python -m bhsm.interface neutral-action-response-cone --format json
 python -m bhsm.interface neutral-action-spectral-closure --format json
 python -m bhsm.interface neutral-action-closure-report --format markdown
+python -m bhsm.interface neutrino-closure-status --format json
+python -m bhsm.interface neutrino-closure-status --format markdown
 ```
 
 These commands are offline and claim-safe. They do not use reference data as
@@ -85,6 +87,7 @@ theorem inputs and do not emit a default physical neutrino mass.
 | `neutral-radius-curvature-closure` | Apply coupled radius, curvature, transport, stiffness, and dimension gates | JSON | no | no |
 | `dimensionful-neutrino-mass-candidate` | Attempt mass output only after all physical-unit and dimensional gates pass | JSON | no | no |
 | `neutral-radius-curvature-report` | Render the v1.2 neutral closure report | Markdown or JSON | no | no |
+| `neutrino-closure-status` | Render the canonical five-part neutral closure status without a mass value | Markdown or JSON | no | no |
 
 Without `--offline-ok`, `pdg-fetch` may try an optional live reference adapter.
 The offline fallback is reference-only and is never a derivation input.

@@ -1,5 +1,7 @@
 # Neutral Spectral Gap
 
+Status: `CONDITIONAL_NEUTRAL_SPECTRAL_MASS_CANDIDATE`. This is distinct from `DIMENSIONFUL_MASS_NOT_AVAILABLE` for physical eV/GeV closure.
+
 The neutral spectral-gap candidate has the symbolic form m_nu c^2 = hbar c sqrt(A_nu/Z_nu) K_neutral,eff.
 
 Equivalently,

@@ -8,6 +8,8 @@ the neutral stiffness length in metres and `K_neutral,eff` in `m^-2`.
 
 Status: `DIMENSIONFUL_MASS_NOT_AVAILABLE`.
 
+Physical eV/GeV neutrino mass closure remains open pending numeric `sqrt(A_nu/Z_nu)` in metres, physical `K_neutral,eff` in `m^-2`, and complete-action derivation of the admissible response cone.
+
 The evaluator requires all of the following before it can produce a mass:
 
 1. numerical `r_prop` in metres;

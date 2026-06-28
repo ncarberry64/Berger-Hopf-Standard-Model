@@ -1,8 +1,7 @@
 # Berger-Hopf Standard Model (BHSM)
 
-BHSM is a research framework for studying Berger-Hopf geometry, frozen internal
-prediction artifacts, and candidate links to flavor, boundary structure, and
-effective field descriptions.
+BHSM is a research framework for studying Berger-Hopf geometry, frozen internal prediction artifacts,
+and candidate links to flavor, boundary structure, and effective field descriptions.
 
 BHSM currently provides an artifact-backed computational framework with frozen
 internal predictions, Python interfaces, prediction registry, CLI reports,
@@ -24,6 +23,8 @@ validation remain outside the current package.
   runtime validation.
 
 ## Current Public Status
+
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: structural architecture integrated conditional; frozen predictions unchanged; physical eV/GeV neutrino mass closure remains open; external HEP runtime integration remains gated.
 
 | Area | Status | Summary |
 | --- | --- | --- |
@@ -62,6 +63,7 @@ python -m bhsm.interface minimal-action-status
 python -m bhsm.interface neutral-spectral-report --format markdown
 python -m bhsm.interface neutral-positivity-report --format markdown
 python -m bhsm.interface neutral-action-closure-report --format markdown
+python -m bhsm.interface neutrino-closure-status --format markdown
 ```
 
 The legacy gravitational curvature expression is dimensionally gated because K has units L^-2 and (c^2/G) r^2 K has units M/L, not M.
@@ -72,8 +74,7 @@ The raw neutral kernel is not assumed to be positive semidefinite. BHSM
 distinguishes raw kernel positivity, conditional admissible-cone positivity,
 and thresholded response nonnegativity.
 
-BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity.
-Physical eV/GeV neutrino mass closure requires a numeric neutral stiffness length sqrt(A_nu/Z_nu) and a physical K_neutral,eff map in m^-2.
+BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity. Physical eV/GeV neutrino mass closure remains open pending a numeric neutral stiffness length sqrt(A_nu/Z_nu), a physical K_neutral,eff map in m^-2, and complete-action derivation of the admissible response cone.
 
 See [QUICKSTART.md](QUICKSTART.md) for a runnable walkthrough and
 [CLI_REFERENCE.md](CLI_REFERENCE.md) for the complete command table.

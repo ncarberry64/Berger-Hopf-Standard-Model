@@ -14,9 +14,10 @@ from .neutral_kernel_positivity import audit_neutral_kernel_positivity
 from .neutral_spectral_gap import build_neutral_spectral_gap_candidate
 from .stiffness_ratio import search_neutral_stiffness_ratio
 from .positivity_report import build_neutral_positivity_report
+from ..neutrino_closure_status import PUBLIC_REPO_STATUS
 
 
-PUBLIC_STATUS = "structural architecture integrated conditional; numerical closure open"
+PUBLIC_STATUS = PUBLIC_REPO_STATUS
 ARTIFACT_PATHS = {
     "manifest": "artifacts/BHSM_neutral_spectral_manifest_v1_3.json",
     "action": "artifacts/BHSM_mass_gap_action_candidate_v1_3.json",

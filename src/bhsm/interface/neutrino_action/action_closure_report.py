@@ -13,15 +13,13 @@ from .common import NeutralActionClosureReport, NeutralActionSpectralClosureResu
 from .curvature_unit_map import derive_or_locate_physical_neutral_curvature_map
 from .response_cone_derivation import derive_response_cone_from_neutral_action
 from .stiffness_extraction import derive_neutral_stiffness_length
+from ..neutrino_closure_status import PUBLIC_REPO_STATUS
 
 
 HBAR_SI = 1.054_571_817e-34
 LIGHT_SPEED_SI = 299_792_458.0
 EV_PER_JOULE = 1.0 / 1.602_176_634e-19
-PUBLIC_STATUS = (
-    "structural architecture integrated conditional; physical eV/GeV neutrino mass closure remains open "
-    "unless numeric stiffness length and physical curvature map are derived"
-)
+PUBLIC_STATUS = PUBLIC_REPO_STATUS
 
 ARTIFACT_PATHS = {
     "manifest": "artifacts/BHSM_neutral_action_closure_manifest_v1_5.json",

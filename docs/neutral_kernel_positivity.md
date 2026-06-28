@@ -1,5 +1,7 @@
 # Neutral Kernel Positivity
 
+Status: `CONDITIONAL_MEASUREMENT_SUPPORTED_NEUTRAL_POSITIVITY_CANDIDATE`; raw neutral-kernel PSD is not claimed and complete-action derivation of the cone remains open.
+
 For the artifact-backed finite kernel, the raw eigenspectrum is approximately
 
 ```text

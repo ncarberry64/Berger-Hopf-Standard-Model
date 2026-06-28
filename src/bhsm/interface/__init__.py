@@ -31,6 +31,11 @@ from .neutrino_propagation import (
     build_numerical_closure,
     compute_neutrino_propagation_mass,
 )
+from .neutrino_closure_status import (
+    V15StatusStabilizationReport,
+    build_v1_5_status_stabilization_report,
+    neutrino_closure_status_to_markdown,
+)
 from .solver import ParticleMassSolver, SolverResult
 from .units import GeometricUnitMapper
 from .validation import ExperimentalValue, ValidationComparison, curated_fallback_references
@@ -68,6 +73,7 @@ __all__ = [
     "MinimalActionClosureResult",
     "NeutrinoNumericalClosureReport",
     "NeutrinoPropagationClosureResult",
+    "V15StatusStabilizationReport",
     "SolverResult",
     "ValidationComparison",
     "ValueWithProvenance",
@@ -89,6 +95,8 @@ __all__ = [
     "build_neutrino_propagation_report",
     "build_numerical_closure",
     "compute_neutrino_propagation_mass",
+    "build_v1_5_status_stabilization_report",
+    "neutrino_closure_status_to_markdown",
     "check_notebook_pack",
     "notebook_pack_manifest",
     "load_reference_with_fallback",

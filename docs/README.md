@@ -4,6 +4,8 @@ Use the top-level [STATUS.md](../STATUS.md) for current status and
 [CLAIMS.md](../CLAIMS.md) for claim boundaries. Files below provide supporting
 detail and historical evidence.
 
+BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity. Physical eV/GeV neutrino mass closure remains open pending a numeric neutral stiffness length sqrt(A_nu/Z_nu), a physical K_neutral,eff map in m^-2, and complete-action derivation of the admissible response cone.
+
 The current minimal-action theory dictionary is documented in
 [author_ontology_v0_8.md](author_ontology_v0_8.md) and encoded in
 `artifacts/BHSM_author_ontology_v0_8.json`.

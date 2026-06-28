@@ -81,6 +81,10 @@ from .neutrino_action import (
     neutral_action_closure_report_to_markdown,
     search_neutral_action_sources,
 )
+from .neutrino_closure_status import (
+    build_v1_5_status_stabilization_report,
+    neutrino_closure_status_to_markdown,
+)
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -295,6 +299,8 @@ def build_parser() -> argparse.ArgumentParser:
     action_closure.add_argument("--format", choices=("json",), default="json")
     action_report = commands.add_parser("neutral-action-closure-report", help="Render the neutral action closure report")
     action_report.add_argument("--format", choices=("markdown", "json"), default="markdown")
+    closure_status = commands.add_parser("neutrino-closure-status", help="Show the canonical neutral closure status split")
+    closure_status.add_argument("--format", choices=("markdown", "json"), default="json")
     return parser
 
 
@@ -637,6 +643,13 @@ def main(argv: Sequence[str] | None = None) -> int:
         report = build_neutral_action_closure_report()
         if args.format == "markdown":
             print(neutral_action_closure_report_to_markdown(report), end="")
+        else:
+            print(json.dumps(report.to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "neutrino-closure-status":
+        report = build_v1_5_status_stabilization_report()
+        if args.format == "markdown":
+            print(neutrino_closure_status_to_markdown(report), end="")
         else:
             print(json.dumps(report.to_dict(), indent=2, sort_keys=True))
         return 0

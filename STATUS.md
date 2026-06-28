@@ -3,6 +3,10 @@
 This file is the current area-level status source. Detailed sprint records are
 evidence, not competing public status pages.
 
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: structural architecture integrated conditional; frozen predictions unchanged; physical eV/GeV neutrino mass closure remains open; external HEP runtime integration remains gated.
+
+BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity. Physical eV/GeV neutrino mass closure remains open pending a numeric neutral stiffness length sqrt(A_nu/Z_nu), a physical K_neutral,eff map in m^-2, and complete-action derivation of the admissible response cone.
+
 Status taxonomy: `ESTABLISHED`, `ARTIFACT_BACKED`, `CANDIDATE`, `CONDITIONAL`,
 `OPEN`, `BLOCKED`, `RUNTIME_GATED`, `REFERENCE_ONLY`, `RETIRED`.
 
@@ -24,6 +28,7 @@ Status taxonomy: `ESTABLISHED`, `ARTIFACT_BACKED`, `CANDIDATE`, `CONDITIONAL`,
 | Standalone CP O_int | `RETIRED_TARGET` | CP is represented by the artifact-backed Z6 holonomy constraint | No standalone production vertex is required or claimed | `python -m bhsm.interface close-minimal-action cp_o_int` |
 | X_ch boundary response | `CONDITIONAL_ACTION_THEOREM` | Author ontology plus local boundary sources define field -> `P_ch` -> `X_ch` -> response | Numerical normalization and any 4D production identification remain open | `python -m bhsm.interface close-minimal-action X_ch` |
 | Neutrino propagation mass | `CONDITIONAL_NUMERICAL_CLOSURE_CANDIDATE` | `K_nu`, `g_nu`, `kappa_nu`, and dimensionless `tau` produce deterministic threshold-response rows | Artifact-backed dimensionful neutral scale and physical flavor-observable map | `python -m bhsm.interface neutrino-propagation-report --format markdown` |
+| Canonical neutrino closure status | `CONDITIONAL_DIMENSIONLESS_PROPAGATION_CLOSURE` | Dimensionless propagation, conditional spectral theorem, and conditional cone positivity are reported separately | Numeric stiffness length, physical curvature map, and complete-action cone derivation | `python -m bhsm.interface neutrino-closure-status --format markdown` |
 | Neutral dimensionful scale | `OPEN_MISSING_NEUTRAL_SCALE` | Offline candidate, measure, and threshold-map audits distinguish the dimensionless response from physical units | Physical boundary-measure normalization, neutral background energy density, transport normalization, and threshold-to-energy map | `python -m bhsm.interface neutrino-scale-report --format markdown` |
 | Legacy curvature mass bridge | `ARTIFACT_BACKED_CURVATURE_MASS_FUNCTIONAL` | Bundled author papers support `m=(c^2/(2G))r^2 k_loc` as a documented matching functional plus scalar-EFT and S3 action context | A BHSM neutral `r_prop`, physical `k_neutral,eff` map, and derivation of the matching functional from the BHSM action | `python -m bhsm.interface legacy-neutral-scale-report --format markdown` |
 | Neutral propagation radius | `CONDITIONAL_PROPAGATION_RADIUS_CANDIDATE` | The physical neutral-field domain defines symbolic `r_prop` with length dimension and no empirical input | Numerical metre value and neutral-mode support theorem | `python -m bhsm.interface neutral-propagation-radius --format json` |

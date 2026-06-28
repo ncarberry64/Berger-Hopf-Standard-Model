@@ -13,9 +13,10 @@ from .neutral_quadratic_form import _base_payload, audit_neutral_kernel_exact
 from .positivity_counterexample import search_admissible_positivity_counterexample
 from .positivity_proof import prove_neutral_positivity_on_domain
 from .projected_kernel import build_projected_neutral_kernel
+from ..neutrino_closure_status import PUBLIC_REPO_STATUS
 
 
-PUBLIC_STATUS = "structural architecture integrated conditional; numerical closure open"
+PUBLIC_STATUS = PUBLIC_REPO_STATUS
 FINAL_STATUS = "CONDITIONAL_MEASUREMENT_SUPPORTED_NEUTRAL_POSITIVITY_CANDIDATE"
 ARTIFACT_PATHS = {
     "manifest": "artifacts/BHSM_neutral_positivity_manifest_v1_4.json",

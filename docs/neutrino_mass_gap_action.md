@@ -1,5 +1,7 @@
 # Neutral Mass-Gap Action
 
+This action supports a conditional neutral spectral-mass theorem; physical eV/GeV mass closure remains open pending numeric `sqrt(A_nu/Z_nu)` in metres, physical `K_neutral,eff` in `m^-2`, and complete-action response-cone derivation.
+
 The bundled scalar topographic EFT supplies an artifact-backed analogue:
 
 ```text

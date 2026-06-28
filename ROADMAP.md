@@ -1,5 +1,11 @@
 # BHSM Roadmap
 
+Current neutral-sector boundary: conditional dimensionless propagation closure,
+a conditional neutral spectral-mass theorem, and conditional
+measurement-supported admissible positivity. Physical eV/GeV mass closure
+remains open pending numeric `sqrt(A_nu/Z_nu)` in metres, physical
+`K_neutral,eff` in `m^-2`, and complete-action derivation of the response cone.
+
 ## Neutral spectral stiffness v1.3
 
 - Derive `Z_nu` and `A_nu` from the neutral action rather than importing the

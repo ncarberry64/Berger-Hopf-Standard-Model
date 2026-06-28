@@ -1,5 +1,7 @@
 # Admissible Neutral Positivity Proof
 
+This is conditional measurement-supported admissible positivity, not raw-kernel PSD and not a complete-action-derived response cone.
+
 On the response cone,
 
 ```text
