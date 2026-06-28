@@ -45,6 +45,7 @@ BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode
 | Neutral action normalization | `OPEN_MISSING_NEUTRAL_ACTION_NORMALIZATION` | Partial variational boundary/collar action exists; coefficient, measure, profile, and unit normalization remain open. |
 | Action-supported response cone | `CONDITIONAL_ACTION_DERIVED_RESPONSE_CONE_CANDIDATE` | Existing action terms partially support the cone; complete-action derivation remains open. |
 | Full-completion audit | `INTEGRATED_CONDITIONAL_ARCHITECTURE_WITH_OPEN_BLOCKERS` | Sixteen categories are inventoried; boundary-measure shape and identity transport have a partial closure. |
+| Charged closure audit | `CONDITIONAL_CHARGED_SOURCES` | Charged coefficients are inventoried; action normalization and CKM exponent derivation remain open. |
 | FeynRules, UFO, MadGraph | `RUNTIME_GATED` | External validation is deferred until theorem and runtime gates pass. |
 
 [STATUS.md](STATUS.md) is the single source of truth. Historical README material is preserved in
@@ -65,15 +66,14 @@ python -m bhsm.interface neutral-positivity-report --format markdown
 python -m bhsm.interface neutral-action-closure-report --format markdown
 python -m bhsm.interface neutrino-closure-status --format markdown
 python -m bhsm.interface full-completion-status --format markdown
+python -m bhsm.interface charged-closure-report --format markdown
 ```
 
 The legacy gravitational curvature expression is dimensionally gated because K has units L^-2 and (c^2/G) r^2 K has units M/L, not M.
 BHSM does not use the legacy gravitational curvature expression as a direct particle mass formula.
 The preferred particle-sector path is the conditional action-normalized neutral spectral gap. No physical neutrino mass is emitted by repository defaults.
 
-The raw neutral kernel is not assumed to be positive semidefinite. BHSM
-distinguishes raw kernel positivity, conditional admissible-cone positivity,
-and thresholded response nonnegativity.
+The raw neutral kernel is not assumed positive semidefinite. BHSM distinguishes raw-kernel, conditional admissible-cone, and thresholded-response nonnegativity.
 
 BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity. Physical eV/GeV neutrino mass closure remains open pending a numeric neutral stiffness length sqrt(A_nu/Z_nu), a physical K_neutral,eff map in m^-2, and complete-action derivation of the admissible response cone.
 

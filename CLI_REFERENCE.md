@@ -29,6 +29,13 @@ python -m bhsm.interface full-completion-ledger --format json
 python -m bhsm.interface full-completion-priority-map --format json
 python -m bhsm.interface full-completion-selected-target --format json
 python -m bhsm.interface full-completion-status --format markdown
+python -m bhsm.interface charged-source-search --format json
+python -m bhsm.interface charged-action-stiffness --format json
+python -m bhsm.interface eta-l-source-audit --format json
+python -m bhsm.interface ckm-exponent-source-audit --format json
+python -m bhsm.interface charged-mixing-law-audit --format json
+python -m bhsm.interface charged-dimensional-audit --format json
+python -m bhsm.interface charged-closure-report --format markdown
 ```
 
 These commands are offline and claim-safe. They do not use reference data as
@@ -96,6 +103,13 @@ theorem inputs and do not emit a default physical neutrino mass.
 | `full-completion-priority-map` | Render predeclared closure-target scores | JSON | no | no |
 | `full-completion-selected-target` | Render the selected target and fail-closed result | JSON | no | no |
 | `full-completion-status` | Render the conservative integrated completion status | Markdown or JSON | no | no |
+| `charged-source-search` | Inventory local charged source artifacts | JSON | no | no |
+| `charged-action-stiffness` | Audit charged action and stiffness provenance | JSON | no | no |
+| `eta-l-source-audit` | Audit eta_l projection, stochastic, action, and transport sources | JSON | no | no |
+| `ckm-exponent-source-audit` | Audit the CKM 1/16 exponent source | JSON | no | no |
+| `charged-mixing-law-audit` | Audit theta12/theta23/theta13 and CP-source provenance | JSON | no | no |
+| `charged-dimensional-audit` | Check dimensional consistency without adding physical units | JSON | no | no |
+| `charged-closure-report` | Render the complete charged closure audit | Markdown or JSON | no | no |
 
 Without `--offline-ok`, `pdg-fetch` may try an optional live reference adapter.
 The offline fallback is reference-only and is never a derivation input.

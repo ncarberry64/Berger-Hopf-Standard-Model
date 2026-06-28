@@ -93,6 +93,16 @@ from .full_completion import (
     full_completion_status_to_markdown,
     select_highest_leverage_target,
 )
+from .charged_closure import (
+    audit_charged_closure_dimensions,
+    build_charged_closure_report,
+    charged_closure_report_to_markdown,
+    derive_or_locate_charged_action_stiffness,
+    derive_or_locate_charged_mixing_law_source,
+    derive_or_locate_ckm_exponent_source,
+    derive_or_locate_eta_l_source,
+    search_charged_closure_sources,
+)
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -317,6 +327,20 @@ def build_parser() -> argparse.ArgumentParser:
     completion_status.add_argument("--format", choices=("markdown", "json"), default="markdown")
     completion_target = commands.add_parser("full-completion-selected-target", help="Show the selected closure target and result")
     completion_target.add_argument("--format", choices=("json",), default="json")
+    charged_source = commands.add_parser("charged-source-search", help="Inventory local charged action and mixing sources")
+    charged_source.add_argument("--format", choices=("json",), default="json")
+    charged_stiffness = commands.add_parser("charged-action-stiffness", help="Audit charged action and stiffness provenance")
+    charged_stiffness.add_argument("--format", choices=("json",), default="json")
+    eta_source = commands.add_parser("eta-l-source-audit", help="Audit the charged-lepton eta_l source")
+    eta_source.add_argument("--format", choices=("json",), default="json")
+    ckm_exponent = commands.add_parser("ckm-exponent-source-audit", help="Audit the CKM 1/16 exponent source")
+    ckm_exponent.add_argument("--format", choices=("json",), default="json")
+    charged_mixing = commands.add_parser("charged-mixing-law-audit", help="Audit charged mixing-law provenance")
+    charged_mixing.add_argument("--format", choices=("json",), default="json")
+    charged_dimensions = commands.add_parser("charged-dimensional-audit", help="Audit dimensions of charged closure formulas")
+    charged_dimensions.add_argument("--format", choices=("json",), default="json")
+    charged_report = commands.add_parser("charged-closure-report", help="Render the charged closure report")
+    charged_report.add_argument("--format", choices=("markdown", "json"), default="markdown")
     return parser
 
 
@@ -688,6 +712,31 @@ def main(argv: Sequence[str] | None = None) -> int:
         selected = select_highest_leverage_target()
         closure = build_boundary_measure_closure()
         print(json.dumps({"selected_target": selected.to_dict(), "closure_attempt": closure.to_dict()}, indent=2, sort_keys=True))
+        return 0
+    if args.command == "charged-source-search":
+        print(json.dumps(search_charged_closure_sources().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "charged-action-stiffness":
+        print(json.dumps(derive_or_locate_charged_action_stiffness().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "eta-l-source-audit":
+        print(json.dumps(derive_or_locate_eta_l_source().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "ckm-exponent-source-audit":
+        print(json.dumps(derive_or_locate_ckm_exponent_source().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "charged-mixing-law-audit":
+        print(json.dumps(derive_or_locate_charged_mixing_law_source().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "charged-dimensional-audit":
+        print(json.dumps(audit_charged_closure_dimensions().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "charged-closure-report":
+        report = build_charged_closure_report()
+        if args.format == "markdown":
+            print(charged_closure_report_to_markdown(report), end="")
+        else:
+            print(json.dumps(report.to_dict(), indent=2, sort_keys=True))
         return 0
     particles = tuple(item.strip() for item in args.particles.split(",") if item.strip())
     report = build_prediction_report(

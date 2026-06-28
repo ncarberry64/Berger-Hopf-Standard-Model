@@ -1,0 +1,46 @@
+{
+  "action_form": "S_ch=int d_tau d_mu_support [1/2 Z_ch |D phi_ch|^2 - 1/2 A_ch R_ch(phi_ch)^2 + projector/source terms]",
+  "action_normalization_status": "OPEN_MISSING_CHARGED_ACTION_NORMALIZATION",
+  "charged_coefficients": {
+    "down": {
+      "beta": "64/1323",
+      "kappa": "16/3591"
+    },
+    "lepton": {
+      "beta": "16/1323",
+      "kappa": "16/1323"
+    },
+    "up": {
+      "beta": "32/1323",
+      "kappa": "16/1323"
+    }
+  },
+  "charged_hessian_source_status": "NO_ACTION_SOURCE_DECIDES_RHO_CH",
+  "claim_boundary": "Projector fractions and beta/kappa tables are artifact-backed conditional values. No unique rho_ch, complete charged kinetic coefficient, curvature penalty, or physical action normalization is derived.",
+  "curvature_penalty_status": "OPEN_MISSING_CHARGED_CURVATURE_PENALTY",
+  "dimensional_status": "DIMENSIONAL_AUDIT_PASSED",
+  "empirical_inputs_used": false,
+  "frozen_predictions_changed": false,
+  "g_bridge": "16/189",
+  "g_bridge_status": "DERIVED_CONDITIONAL_ON_INCIDENT_TRACE_21_AND_OVERLAP_4_OVER_3",
+  "kinetic_stiffness_status": "OPEN_MISSING_CHARGED_KINETIC_STIFFNESS",
+  "numeric_stiffness_status": "OPEN_MISSING_NUMERIC_CHARGED_STIFFNESS",
+  "official_prediction_logic_changed": false,
+  "projector_coefficients": {
+    "down": "4/7",
+    "lepton": "1/7",
+    "up": "2/7"
+  },
+  "rho_ch_1_status": "MINIMAL_ACTION_CLOSURE_CANDIDATE",
+  "rho_ch_3_status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+  "rho_ch_selected": null,
+  "rho_definition": "rho_ch = k_j/k_q",
+  "source_artifacts": [
+    "artifacts/charged_boundary_bridge_values_v1.json",
+    "data/charged_suppression_operator_kernel_v1.json",
+    "data/incidence_normalized_overlap_bridge_source.json",
+    "data/charged_stiffness_action_selector_v1.json",
+    "data/bhsm_charged_hessian_source_audit.json"
+  ],
+  "status": "CONDITIONAL_CHARGED_ACTION_STIFFNESS_CANDIDATE"
+}

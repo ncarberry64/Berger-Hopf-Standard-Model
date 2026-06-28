@@ -20,3 +20,5 @@ Run:
 ```bash
 python -m bhsm.interface full-completion-priority-map --format json
 ```
+
+After the v1.7 charged cluster audit, the next upstream target is complete charged action normalization because it jointly controls `rho_ch`, physical stiffness, eta_l normalization, and higher-channel mixing provenance.

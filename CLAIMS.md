@@ -4,6 +4,7 @@
 
 - BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity. Physical eV/GeV neutrino mass closure remains open pending a numeric neutral stiffness length `sqrt(A_nu/Z_nu)`, a physical `K_neutral,eff` map in `m^-2`, and complete-action derivation of the admissible response cone.
 - The v1.6 ledger inventories all sixteen completion categories and conditionally closes only the relative collar-measure shape and same-scale identity transport; it does not claim full BHSM completion.
+- The v1.7 charged audit distinguishes artifact-backed coefficients from conditional eta/mixing sources and open action-normalization and CKM-exponent theorems.
 
 - BHSM has frozen internal prediction artifacts.
 - BHSM has an offline Python computational interface.
