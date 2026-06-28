@@ -81,10 +81,10 @@ def test_phase_three_l_docs_scripts_and_readme_preserve_status() -> None:
     ]:
         assert (ROOT / relative).exists(), relative
 
-    readme = " ".join(read("README.md").split())
+    readme = " ".join(read("docs/archive/README_status_history_pre_v0_7.md").split())
     assert PHASE_THREE_L_STATUS in readme
-    assert "Phase Three-L FeynRules syntax-runner package" in read("README.md")
-    assert "Repository static checks do not equal FeynRules validation" in read("README.md")
+    assert "Phase Three-L FeynRules syntax-runner package" in read("docs/archive/README_status_history_pre_v0_7.md")
+    assert "Repository static checks do not equal FeynRules validation" in read("docs/archive/README_status_history_pre_v0_7.md")
 
 
 def test_feynrules_syntax_contract_is_static_only() -> None:
@@ -260,7 +260,7 @@ def test_no_event_files_or_forbidden_phase_three_l_claims() -> None:
     combined = "\n".join(
         read(relative)
         for relative in [
-            "README.md",
+            "docs/archive/README_status_history_pre_v0_7.md",
             "docs/phase_three_l_feynrules_syntax_runner.md",
             "docs/feynrules_syntax_contract.md",
             "docs/feynrules_local_execution_guide.md",

@@ -1,0 +1,610 @@
+{
+  "anchor_particle": "W_boson",
+  "artifact_backed_values": [
+    {
+      "calibration_input": false,
+      "claim_status": "ARTIFACT_BACKED_INTERNAL_OUTPUT_NOT_EMPIRICAL_VALIDATION",
+      "empirical_derivation_input": false,
+      "frozen_prediction": true,
+      "loaded_at_runtime": true,
+      "metadata": {
+        "official_predictions_changed": false,
+        "public_status": "structural architecture integrated conditional; numerical closure open"
+      },
+      "notes": [
+        "Loaded from an existing local BHSM machine-readable artifact."
+      ],
+      "reference_comparison_input": false,
+      "source_artifact_key": "CKM_no_fit_operator_output_v1",
+      "source_field": "magnitude_matrix",
+      "source_path": "artifacts/CKM_no_fit_operator_output_v1.json",
+      "source_status": "DISCOVERED",
+      "unit": "dimensionless",
+      "value": [
+        [
+          0.9999681608134899,
+          0.007979793265016152,
+          1.608520679288582e-05
+        ],
+        [
+          0.007979795635253325,
+          0.9999680967429101,
+          0.00035827082158322875
+        ],
+        [
+          1.4862902365056614e-05,
+          0.00035832361017490655,
+          0.9999999356916401
+        ]
+      ],
+      "value_key": "CKM_matrix_BHSM",
+      "value_kind": "matrix"
+    },
+    {
+      "calibration_input": false,
+      "claim_status": "ARTIFACT_BACKED_EFFECTIVE_EXTENSION_OUTPUT",
+      "empirical_derivation_input": false,
+      "frozen_prediction": true,
+      "loaded_at_runtime": true,
+      "metadata": {
+        "official_predictions_changed": false,
+        "public_status": "structural architecture integrated conditional; numerical closure open"
+      },
+      "notes": [
+        "Loaded from an existing local BHSM machine-readable artifact."
+      ],
+      "reference_comparison_input": false,
+      "source_artifact_key": "PMNS_no_fit_operator_output_v1",
+      "source_field": "magnitude_matrix",
+      "source_path": "artifacts/PMNS_no_fit_operator_output_v1.json",
+      "source_status": "DISCOVERED",
+      "unit": "dimensionless",
+      "value": [
+        [
+          0.9937721614225983,
+          0.1108757839736723,
+          0.011110882488836949
+        ],
+        [
+          0.11071225736228693,
+          0.9860024978834556,
+          0.1246670374932074
+        ],
+        [
+          0.012636742111950143,
+          0.12452162340657782,
+          0.9921364210898551
+        ]
+      ],
+      "value_key": "PMNS_matrix_BHSM",
+      "value_kind": "matrix"
+    },
+    {
+      "calibration_input": false,
+      "claim_status": "PHASE_ARTIFACT_AVAILABLE_STANDALONE_O_INT_REMAINS_OPEN",
+      "empirical_derivation_input": false,
+      "frozen_prediction": true,
+      "loaded_at_runtime": true,
+      "metadata": {
+        "CP_boundary_holonomy": "CLOSED"
+      },
+      "notes": [
+        "Artifact-backed phase seed; not a standalone production CP vertex."
+      ],
+      "reference_comparison_input": false,
+      "source_artifact_key": "CP_no_fit_holonomy_output_v1",
+      "source_field": "delta_BH,delta_BH_formula,Z6_boundary_phase",
+      "source_path": "artifacts/CP_no_fit_holonomy_output_v1.json",
+      "source_status": "DISCOVERED",
+      "unit": "radian and dimensionless phase",
+      "value": {
+        "Z6_boundary_phase": {
+          "imag": 0.8660254037844386,
+          "real": 0.5
+        },
+        "delta_BH": 1.0471975511965976,
+        "delta_BH_formula": "pi/3"
+      },
+      "value_key": "cp_holonomy_phase_attachment",
+      "value_kind": "complex_phase"
+    },
+    {
+      "calibration_input": false,
+      "claim_status": "ARTIFACT_BACKED_INTERNAL_BOUNDARY_CONSTANTS",
+      "empirical_derivation_input": false,
+      "frozen_prediction": true,
+      "loaded_at_runtime": true,
+      "metadata": {
+        "official_predictions_changed": false,
+        "public_status": "structural architecture integrated conditional; numerical closure open"
+      },
+      "notes": [
+        "Loaded from the existing internal no-fit boundary package."
+      ],
+      "reference_comparison_input": false,
+      "source_artifact_key": "BHSM_boundary_no_fit_prediction_package_v1",
+      "source_field": "profile_scale",
+      "source_path": "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json",
+      "source_status": "DISCOVERED",
+      "unit": "dimensionless",
+      "value": {
+        "Z_H": 1.0,
+        "Z_H_status": "DERIVED_CONDITIONAL",
+        "artifact": "profile_scale_closure_values_v1",
+        "canonical_profile_hessian_theorem": "DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM",
+        "empirical_derivation_inputs_used": false,
+        "external_empirical_comparison_layer": "OPEN_SEPARATE_LAYER",
+        "identity_checks": {
+          "kappa_H_minus_4_sigma_squared": 0.0,
+          "sigma_times_tau": 3.141592653589793,
+          "sigma_times_tau_expected": 3.141592653589793,
+          "tau_minus_pi_over_sigma": 0.0
+        },
+        "kappa_H": 19585.25982625801,
+        "kappa_H_formula": "64*pi^5",
+        "kappa_H_status": "DERIVED_CONDITIONAL",
+        "observed_CKM_used": false,
+        "observed_CP_used": false,
+        "observed_Higgs_used": false,
+        "observed_PMNS_used": false,
+        "observed_gauge_values_used": false,
+        "observed_masses_used": false,
+        "official_predictions_changed": false,
+        "profile_scale_closure": "DERIVED_CONDITIONAL",
+        "public_status": "structural architecture integrated conditional; numerical closure open",
+        "public_status_before_gate": "structural architecture integrated conditional; numerical closure open",
+        "r_internal_profile": 0.28209479177387814,
+        "r_internal_profile_formula": "1/sqrt(4*pi)",
+        "r_squared": 0.07957747154594767,
+        "r_squared_formula": "1/(4*pi)",
+        "sigma": 69.97367331049945,
+        "sigma_fit_to_masses": false,
+        "sigma_formula": "4*pi^(5/2)",
+        "sigma_status": "DERIVED_CONDITIONAL",
+        "tau": 0.04489678053129164,
+        "tau_fit_to_masses": false,
+        "tau_formula": "1/(4*pi^(3/2))",
+        "tau_status": "DERIVED_CONDITIONAL"
+      },
+      "value_key": "boundary_constants",
+      "value_kind": "constant_bundle"
+    },
+    {
+      "calibration_input": false,
+      "claim_status": "FROZEN_INTERNAL_PREDICTION",
+      "empirical_derivation_input": false,
+      "frozen_prediction": true,
+      "loaded_at_runtime": true,
+      "metadata": {},
+      "notes": [
+        "Read directly from the existing frozen prediction-set artifact."
+      ],
+      "reference_comparison_input": false,
+      "source_artifact_key": "bhsm_v1_frozen_prediction_set",
+      "source_field": "prediction_sets[].outputs.*_ratios",
+      "source_path": "theory/bhsm_v1_frozen_prediction_set.json",
+      "source_status": "DISCOVERED",
+      "unit": "dimensionless",
+      "value": {
+        "BHSM_BARE_V1": {
+          "charged_lepton_ratios": {
+            "heavy": 1.0,
+            "light": 0.00029729106456492414,
+            "middle": 0.06007447093260976
+          },
+          "down_quark_ratios": {
+            "heavy": 1.0,
+            "light": 0.0011165200546001757,
+            "middle": 0.021933971495439474
+          },
+          "up_quark_ratios": {
+            "heavy": 1.0,
+            "light": 1.2690463017606151e-05,
+            "middle": 0.008310500554068288
+          }
+        },
+        "BHSM_DRESSED_V1_CANDIDATE": {
+          "charged_lepton_ratios": {
+            "heavy": 1.0,
+            "light": 0.00029729106456492414,
+            "middle": 0.06007447093260976
+          },
+          "down_quark_ratios": {
+            "heavy": 1.0,
+            "light": 0.0011165200546001757,
+            "middle": 0.021933971495439474
+          },
+          "up_quark_ratios": {
+            "heavy": 1.0,
+            "light": 1.2690463017606151e-05,
+            "middle": 0.004155250277034144
+          }
+        }
+      },
+      "value_key": "mass_ratios",
+      "value_kind": "mass_ratio_bundle"
+    }
+  ],
+  "artifact_sources_checked": 998,
+  "calibration_inputs": [
+    {
+      "particle_key": "W_boson",
+      "role": "calibration_anchor",
+      "value": null
+    }
+  ],
+  "calibration_policy": "A calibration anchor is not an independent prediction in the same run.",
+  "callable_registry": {
+    "available_artifact_backed": [
+      "boundary_constants_from_artifact",
+      "ckm_matrix_from_artifact",
+      "cp_phase_from_artifact",
+      "mass_ratios_from_artifact",
+      "pmns_matrix_from_artifact"
+    ],
+    "available_interface_default": [
+      "hyperspherical_default_metric",
+      "hyperspherical_default_tension"
+    ],
+    "callable_not_available": [],
+    "claim_boundary": "Formula availability does not promote an open theorem or turn an interface default into a BHSM derivation.",
+    "disabled_until_runtime_validated": [],
+    "formula_entries": [
+      {
+        "callable_path": "bhsm.interface.boundary_adapters.load_boundary_constants_artifact",
+        "claim_boundary": "Artifact-backed output with provenance; not an empirical validation claim.",
+        "description": "Load no-fit boundary profile constants.",
+        "display_name": "Boundary constants artifact",
+        "formula_key": "boundary_constants_from_artifact",
+        "input_schema": {},
+        "notes": [],
+        "output_schema": {
+          "type": "ValueWithProvenance"
+        },
+        "safe_for_default_report": true,
+        "source_artifacts": [
+          "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json"
+        ],
+        "source_type": "local BHSM artifact",
+        "status": "AVAILABLE_ARTIFACT_BACKED",
+        "theorem_status": "ARTIFACT_AVAILABLE_NOT_THEOREM_PROMOTION"
+      },
+      {
+        "callable_path": null,
+        "claim_boundary": "X_ch remains open without an explicit artifact-backed production theorem.",
+        "description": "Production charged-response callable.",
+        "display_name": "Charged response",
+        "formula_key": "charged_response_from_artifact",
+        "input_schema": {},
+        "notes": [],
+        "output_schema": {},
+        "safe_for_default_report": false,
+        "source_artifacts": [
+          "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json"
+        ],
+        "source_type": "theorem blocker",
+        "status": "OPEN_THEOREM_REQUIRED",
+        "theorem_status": "OPEN_EXACT_MISSING_THEOREM"
+      },
+      {
+        "callable_path": "bhsm.interface.matrix_adapters.load_ckm_matrix_artifact",
+        "claim_boundary": "Artifact-backed output with provenance; not an empirical validation claim.",
+        "description": "Load BHSM CKM magnitudes.",
+        "display_name": "CKM matrix artifact",
+        "formula_key": "ckm_matrix_from_artifact",
+        "input_schema": {},
+        "notes": [],
+        "output_schema": {
+          "type": "ValueWithProvenance"
+        },
+        "safe_for_default_report": true,
+        "source_artifacts": [
+          "artifacts/CKM_no_fit_operator_output_v1.json"
+        ],
+        "source_type": "local BHSM artifact",
+        "status": "AVAILABLE_ARTIFACT_BACKED",
+        "theorem_status": "ARTIFACT_AVAILABLE_NOT_THEOREM_PROMOTION"
+      },
+      {
+        "callable_path": null,
+        "claim_boundary": "The phase artifact does not close standalone CP O_int.",
+        "description": "Standalone production CP attachment callable.",
+        "display_name": "Standalone CP O_int attachment",
+        "formula_key": "cp_o_int_standalone_attachment",
+        "input_schema": {},
+        "notes": [],
+        "output_schema": {},
+        "safe_for_default_report": false,
+        "source_artifacts": [
+          "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json"
+        ],
+        "source_type": "theorem blocker",
+        "status": "OPEN_THEOREM_REQUIRED",
+        "theorem_status": "OPEN_EXACT_MISSING_THEOREM"
+      },
+      {
+        "callable_path": "bhsm.interface.matrix_adapters.load_cp_phase_artifact",
+        "claim_boundary": "Artifact-backed output with provenance; not an empirical validation claim.",
+        "description": "Load the BHSM holonomy phase seed.",
+        "display_name": "CP phase artifact",
+        "formula_key": "cp_phase_from_artifact",
+        "input_schema": {},
+        "notes": [],
+        "output_schema": {
+          "type": "ValueWithProvenance"
+        },
+        "safe_for_default_report": true,
+        "source_artifacts": [
+          "artifacts/CP_no_fit_holonomy_output_v1.json"
+        ],
+        "source_type": "local BHSM artifact",
+        "status": "AVAILABLE_ARTIFACT_BACKED",
+        "theorem_status": "ARTIFACT_AVAILABLE_NOT_THEOREM_PROMOTION"
+      },
+      {
+        "callable_path": "bhsm.interface.geometry.HypersphericalGeometry.geometric_metric",
+        "claim_boundary": "Interface default formulas remain interface defaults unless a theorem-backed artifact or callable replaces them.",
+        "description": "Deterministic interface-default metric.",
+        "display_name": "Default interface metric",
+        "formula_key": "hyperspherical_default_metric",
+        "input_schema": {
+          "geometry": "HypersphericalGeometry"
+        },
+        "notes": [],
+        "output_schema": {
+          "type": "number"
+        },
+        "safe_for_default_report": true,
+        "source_artifacts": [],
+        "source_type": "interface default",
+        "status": "AVAILABLE_INTERFACE_DEFAULT",
+        "theorem_status": "PLACEHOLDER_UNTIL_BHSM_THEOREM_SUPPLIED"
+      },
+      {
+        "callable_path": "bhsm.interface.geometry.HypersphericalGeometry.geometric_tension",
+        "claim_boundary": "Interface default formulas remain interface defaults unless a theorem-backed artifact or callable replaces them.",
+        "description": "Deterministic interface-default tension.",
+        "display_name": "Default interface tension",
+        "formula_key": "hyperspherical_default_tension",
+        "input_schema": {
+          "geometry": "HypersphericalGeometry"
+        },
+        "notes": [],
+        "output_schema": {
+          "type": "number"
+        },
+        "safe_for_default_report": true,
+        "source_artifacts": [],
+        "source_type": "interface default",
+        "status": "AVAILABLE_INTERFACE_DEFAULT",
+        "theorem_status": "PLACEHOLDER_UNTIL_BHSM_THEOREM_SUPPLIED"
+      },
+      {
+        "callable_path": "bhsm.interface.mass_ratio_adapters.load_mass_ratio_predictions_artifact",
+        "claim_boundary": "Artifact-backed output with provenance; not an empirical validation claim.",
+        "description": "Load frozen BHSM charged-sector mass ratios.",
+        "display_name": "Frozen mass ratios",
+        "formula_key": "mass_ratios_from_artifact",
+        "input_schema": {},
+        "notes": [],
+        "output_schema": {
+          "type": "ValueWithProvenance"
+        },
+        "safe_for_default_report": true,
+        "source_artifacts": [
+          "theory/bhsm_v1_frozen_prediction_set.json"
+        ],
+        "source_type": "local BHSM artifact",
+        "status": "AVAILABLE_ARTIFACT_BACKED",
+        "theorem_status": "ARTIFACT_AVAILABLE_NOT_THEOREM_PROMOTION"
+      },
+      {
+        "callable_path": null,
+        "claim_boundary": "The boundary seed does not close the physical neutrino basis/scale theorem.",
+        "description": "Physical neutrino basis and scale callable.",
+        "display_name": "Physical neutral kernel",
+        "formula_key": "neutral_kernel_from_artifact",
+        "input_schema": {},
+        "notes": [],
+        "output_schema": {},
+        "safe_for_default_report": false,
+        "source_artifacts": [
+          "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json"
+        ],
+        "source_type": "theorem blocker",
+        "status": "OPEN_THEOREM_REQUIRED",
+        "theorem_status": "OPEN_EXACT_MISSING_THEOREM"
+      },
+      {
+        "callable_path": null,
+        "claim_boundary": "Physical neutrino basis and dimensional scale remain open.",
+        "description": "Physical neutral-sector interpretation callable.",
+        "display_name": "Neutrino physical basis/scale",
+        "formula_key": "neutrino_physical_basis_scale",
+        "input_schema": {},
+        "notes": [],
+        "output_schema": {},
+        "safe_for_default_report": false,
+        "source_artifacts": [],
+        "source_type": "theorem blocker",
+        "status": "OPEN_THEOREM_REQUIRED",
+        "theorem_status": "OPEN_EXACT_MISSING_THEOREM"
+      },
+      {
+        "callable_path": "bhsm.interface.matrix_adapters.load_pmns_matrix_artifact",
+        "claim_boundary": "Artifact-backed output with provenance; not an empirical validation claim.",
+        "description": "Load BHSM PMNS magnitudes.",
+        "display_name": "PMNS matrix artifact",
+        "formula_key": "pmns_matrix_from_artifact",
+        "input_schema": {},
+        "notes": [],
+        "output_schema": {
+          "type": "ValueWithProvenance"
+        },
+        "safe_for_default_report": true,
+        "source_artifacts": [
+          "artifacts/PMNS_no_fit_operator_output_v1.json"
+        ],
+        "source_type": "local BHSM artifact",
+        "status": "AVAILABLE_ARTIFACT_BACKED",
+        "theorem_status": "ARTIFACT_AVAILABLE_NOT_THEOREM_PROMOTION"
+      },
+      {
+        "callable_path": null,
+        "claim_boundary": "X_ch remains open without an explicit artifact-backed theorem.",
+        "description": "Production vertex callable.",
+        "display_name": "X_ch production vertex",
+        "formula_key": "x_ch_production_vertex",
+        "input_schema": {},
+        "notes": [],
+        "output_schema": {},
+        "safe_for_default_report": false,
+        "source_artifacts": [],
+        "source_type": "theorem blocker",
+        "status": "OPEN_THEOREM_REQUIRED",
+        "theorem_status": "OPEN_EXACT_MISSING_THEOREM"
+      }
+    ],
+    "open_theorem_required": [
+      "charged_response_from_artifact",
+      "cp_o_int_standalone_attachment",
+      "neutral_kernel_from_artifact",
+      "neutrino_physical_basis_scale",
+      "x_ch_production_vertex"
+    ],
+    "registry_name": "BHSM Formula Registry",
+    "version": "0.3"
+  },
+  "claim_boundaries": [
+    "Artifact presence does not close a theorem.",
+    "Boundary seeds are not physical production vertices without their missing theorems."
+  ],
+  "empirical_derivation_inputs_used": false,
+  "frozen_predictions_changed": false,
+  "interface_default_values": [
+    {
+      "callable_path": "bhsm.interface.geometry.HypersphericalGeometry.geometric_metric",
+      "claim_boundary": "Interface default formulas remain interface defaults unless a theorem-backed artifact or callable replaces them.",
+      "description": "Deterministic interface-default metric.",
+      "display_name": "Default interface metric",
+      "formula_key": "hyperspherical_default_metric",
+      "input_schema": {
+        "geometry": "HypersphericalGeometry"
+      },
+      "notes": [],
+      "output_schema": {
+        "type": "number"
+      },
+      "safe_for_default_report": true,
+      "source_artifacts": [],
+      "source_type": "interface default",
+      "status": "AVAILABLE_INTERFACE_DEFAULT",
+      "theorem_status": "PLACEHOLDER_UNTIL_BHSM_THEOREM_SUPPLIED"
+    },
+    {
+      "callable_path": "bhsm.interface.geometry.HypersphericalGeometry.geometric_tension",
+      "claim_boundary": "Interface default formulas remain interface defaults unless a theorem-backed artifact or callable replaces them.",
+      "description": "Deterministic interface-default tension.",
+      "display_name": "Default interface tension",
+      "formula_key": "hyperspherical_default_tension",
+      "input_schema": {
+        "geometry": "HypersphericalGeometry"
+      },
+      "notes": [],
+      "output_schema": {
+        "type": "number"
+      },
+      "safe_for_default_report": true,
+      "source_artifacts": [],
+      "source_type": "interface default",
+      "status": "AVAILABLE_INTERFACE_DEFAULT",
+      "theorem_status": "PLACEHOLDER_UNTIL_BHSM_THEOREM_SUPPLIED"
+    }
+  ],
+  "internet_required": false,
+  "missing_artifacts": [],
+  "missing_callables": [
+    "charged_response_from_artifact",
+    "cp_o_int_standalone_attachment",
+    "neutral_kernel_from_artifact",
+    "neutrino_physical_basis_scale",
+    "x_ch_production_vertex"
+  ],
+  "prediction_registry_status": {
+    "entry_count": 11,
+    "registry_name": "BHSM Prediction Registry"
+  },
+  "reference_comparison_values": [],
+  "reference_policy": "Reference values are comparison inputs only and never BHSM derivation inputs.",
+  "reference_values_used_as_derivation_inputs": false,
+  "release_basis": "BHSM v1.1.0 plus Python interface v0.1; artifact adapter v0.3",
+  "report_name": "BHSM Artifact-Backed Prediction Report",
+  "theorem_blocker_status": {
+    "allowed_closure_statuses": [
+      "OPEN_EXACT_MISSING_THEOREM",
+      "DERIVED_FROM_REPO_ARTIFACT",
+      "DERIVED_CONDITIONAL_FROM_AUTHOR_AXIOM",
+      "PARTIAL_INTERFACE_CONVENTION_ONLY",
+      "FORBIDDEN_TO_PROMOTE_WITHOUT_NEW_THEOREM"
+    ],
+    "blockers": [
+      {
+        "affected_registry_entries": [
+          "charged_boundary_response_matrix"
+        ],
+        "blocker_key": "X_ch",
+        "claim_boundary": "This is a theorem blocker, not a production prediction.",
+        "current_status": "OPEN_EXACT_MISSING_THEOREM",
+        "display_name": "Charged boundary-response interaction",
+        "missing_object": "explicit X_ch production interaction theorem",
+        "notes": [],
+        "required_theorem": "explicit X_ch production interaction theorem",
+        "source_artifacts_checked": [
+          "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
+          "artifacts/BHSM_interaction_theorem_closure_audit_v1_1.json"
+        ]
+      },
+      {
+        "affected_registry_entries": [
+          "cp_holonomy_phase_attachment"
+        ],
+        "blocker_key": "cp_o_int",
+        "claim_boundary": "This is a theorem blocker, not a production prediction.",
+        "current_status": "OPEN_EXACT_MISSING_THEOREM",
+        "display_name": "Standalone CP O_int attachment",
+        "missing_object": "standalone CP O_int interaction attachment",
+        "notes": [],
+        "required_theorem": "standalone CP O_int interaction attachment",
+        "source_artifacts_checked": [
+          "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json",
+          "artifacts/BHSM_interaction_theorem_closure_audit_v1_1.json"
+        ]
+      },
+      {
+        "affected_registry_entries": [
+          "neutral_operator_kernel_BH"
+        ],
+        "blocker_key": "neutrino_basis_scale_dirac_majorana",
+        "claim_boundary": "This is a theorem blocker, not a production prediction.",
+        "current_status": "OPEN_EXACT_MISSING_THEOREM",
+        "display_name": "Neutrino basis, scale, and Dirac/Majorana convention",
+        "missing_object": "physical neutrino basis + dimensional scale + Dirac/Majorana convention",
+        "notes": [],
+        "required_theorem": "physical neutrino basis, dimensional scale, and Dirac/Majorana theorem",
+        "source_artifacts_checked": [
+          "artifacts/BHSM_neutrino_dirac_majorana_basis_scale_theorem_v1_1.json",
+          "artifacts/BHSM_interaction_theorem_closure_audit_v1_1.json"
+        ]
+      }
+    ],
+    "registry_name": "BHSM Theorem Blocker Registry",
+    "version": "0.2"
+  },
+  "warnings": [
+    "Artifact-backed outputs are local BHSM outputs with provenance, not empirical validation claims.",
+    "Interface default formulas remain interface defaults unless a theorem-backed artifact or callable replaces them.",
+    "Reference values, including PDG values, are comparison inputs only and are never BHSM derivation inputs.",
+    "Missing artifacts are reported as missing, not inferred.",
+    "Theorem blockers remain blockers unless explicit artifact-backed theorem support is present."
+  ]
+}

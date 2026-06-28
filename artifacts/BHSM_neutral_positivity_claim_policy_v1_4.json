@@ -1,0 +1,31 @@
+{
+  "allowed": [
+    "BHSM has audited the raw neutral kernel exactly.",
+    "BHSM distinguishes raw kernel PSD, projected/admissible positivity, and thresholded nonnegative response.",
+    "BHSM does not claim raw neutral-kernel PSD if the raw kernel has a negative eigenvalue.",
+    "BHSM claims conditional admissible positivity only on the explicit measurement-supported response cone."
+  ],
+  "artifact_name": "BHSM Neutral Positivity Claim Policy",
+  "forbidden": [
+    "The raw neutral kernel is positive semidefinite if its smallest eigenvalue is negative.",
+    "Threshold clipping is a proof of kernel positivity.",
+    "Admissible positivity is proven without an admissible domain.",
+    "A projected positivity result applies to the full raw vector space.",
+    "The neutrino does not exist at all unless someone observes it.",
+    "BHSM empirically validates neutrino mass.",
+    "BHSM centrally measures electron-neutrino mass.",
+    "PDG/reference values are theorem inputs.",
+    "W calibration is used.",
+    "Legacy particle tables are derivation inputs."
+  ],
+  "frozen_predictions_changed": false,
+  "required_statements": [
+    "The raw neutral kernel is not assumed to be positive semidefinite.",
+    "BHSM distinguishes raw kernel positivity, projected/admissible positivity, and thresholded response nonnegativity.",
+    "Thresholding a response to be nonnegative is not a proof that the underlying kernel is positive.",
+    "Admissible neutral positivity requires both an explicit admissible domain and a proof that x^T K_nu x is nonnegative on that domain.",
+    "Admissible neutral positivity is proven only on the stated admissible domain and is not a raw-kernel PSD claim.",
+    "BHSM treats the neutrino mass contribution as interaction-supported and propagation-locked. Measurement supplies a physical boundary/interaction condition that can prevent the neutral response from nulling out."
+  ],
+  "version": "1.4"
+}

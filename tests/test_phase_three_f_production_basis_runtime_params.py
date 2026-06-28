@@ -74,10 +74,10 @@ def test_phase_three_f_docs_and_readme_preserve_status() -> None:
     ]:
         assert (ROOT / relative).exists(), relative
 
-    readme = " ".join(read("README.md").split())
+    readme = " ".join(read("docs/archive/README_status_history_pre_v0_7.md").split())
     assert PHASE_THREE_F_STATUS in readme
-    assert "Phase Three-F production-basis and runtime-parameter status" in read("README.md")
-    assert "This does not constitute production FeynRules, UFO, MadGraph" in read("README.md")
+    assert "Phase Three-F production-basis and runtime-parameter status" in read("docs/archive/README_status_history_pre_v0_7.md")
+    assert "This does not constitute production FeynRules, UFO, MadGraph" in read("docs/archive/README_status_history_pre_v0_7.md")
 
 
 def test_canonical_production_basis_clears_interface_normalization_only() -> None:
@@ -222,7 +222,7 @@ def test_no_fake_event_files_or_forbidden_phase_three_f_claims() -> None:
     combined = "\n".join(
         read(relative)
         for relative in [
-            "README.md",
+            "docs/archive/README_status_history_pre_v0_7.md",
             "docs/phase_three_f_production_basis_runtime_params.md",
             "docs/canonical_production_basis_theorem.md",
             "docs/runtime_parameter_modes.md",

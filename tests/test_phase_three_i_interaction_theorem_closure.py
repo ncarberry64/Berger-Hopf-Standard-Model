@@ -74,10 +74,10 @@ def test_phase_three_i_docs_and_readme_preserve_status() -> None:
     ]:
         assert (ROOT / relative).exists(), relative
 
-    readme = " ".join(read("README.md").split())
+    readme = " ".join(read("docs/archive/README_status_history_pre_v0_7.md").split())
     assert PHASE_THREE_I_STATUS in readme
-    assert "Phase Three-I interaction-theorem closure status" in read("README.md")
-    assert "does not constitute complete 4D Lagrangian" in read("README.md")
+    assert "Phase Three-I interaction-theorem closure status" in read("docs/archive/README_status_history_pre_v0_7.md")
+    assert "does not constitute complete 4D Lagrangian" in read("docs/archive/README_status_history_pre_v0_7.md")
 
 
 def test_x_ch_theorem_keeps_charged_boundary_response_blocked() -> None:
@@ -211,7 +211,7 @@ def test_no_fake_event_files_values_or_forbidden_phase_three_i_claims() -> None:
     combined = "\n".join(
         read(relative)
         for relative in [
-            "README.md",
+            "docs/archive/README_status_history_pre_v0_7.md",
             "docs/phase_three_i_interaction_theorem_closure.md",
             "docs/x_ch_charged_boundary_response_theorem.md",
             "docs/neutrino_dirac_majorana_basis_scale_theorem.md",

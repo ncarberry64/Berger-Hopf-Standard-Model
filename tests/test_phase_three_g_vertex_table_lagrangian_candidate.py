@@ -76,10 +76,10 @@ def test_phase_three_g_docs_and_readme_preserve_status() -> None:
     ]:
         assert (ROOT / relative).exists(), relative
 
-    readme = " ".join(read("README.md").split())
+    readme = " ".join(read("docs/archive/README_status_history_pre_v0_7.md").split())
     assert PHASE_THREE_G_STATUS in readme
-    assert "Phase Three-G production-vertex and Lagrangian-candidate status" in read("README.md")
-    assert "not a production FeynRules model" in read("README.md")
+    assert "Phase Three-G production-vertex and Lagrangian-candidate status" in read("docs/archive/README_status_history_pre_v0_7.md")
+    assert "not a production FeynRules model" in read("docs/archive/README_status_history_pre_v0_7.md")
 
 
 def test_candidate_vertex_table_contains_required_families_and_blocks_readiness() -> None:
@@ -280,7 +280,7 @@ def test_no_fake_event_files_or_forbidden_phase_three_g_claims() -> None:
     combined = "\n".join(
         read(relative)
         for relative in [
-            "README.md",
+            "docs/archive/README_status_history_pre_v0_7.md",
             "docs/phase_three_g_vertex_table_lagrangian_candidate.md",
             "docs/production_vertex_table_candidate.md",
             "docs/symbolic_4d_lagrangian_assembly_ledger.md",

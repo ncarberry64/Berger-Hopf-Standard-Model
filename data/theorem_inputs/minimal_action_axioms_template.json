@@ -1,0 +1,40 @@
+{
+  "template_name": "BHSM Minimal Action Axioms",
+  "version": "0.8",
+  "author_supplied": true,
+  "axioms": [
+    {
+      "axiom_key": "CP_O_INT_ACTION_SOURCE_AXIOM",
+      "enabled": false,
+      "complete_definition": false,
+      "formal_statement": "Supply the boundary-to-4D CP O_int field, gauge/Lorentz contraction, normalized coupling, measure, variation, and production rule.",
+      "dependencies": ["CP holonomy artifact", "sector projector", "boundary-to-4D projection"],
+      "affected_theorems": ["cp_o_int"],
+      "maximum_status": "CONDITIONAL_ACTION_THEOREM",
+      "definitions": {},
+      "claim_boundary": "An enabled author axiom is conditional and does not establish a repo-derived theorem."
+    },
+    {
+      "axiom_key": "X_CH_FIELD_ACTION_AXIOM",
+      "enabled": false,
+      "complete_definition": false,
+      "formal_statement": "Supply the X_ch field representation, gauge/Lorentz current, normalized coupling, action term, and variation rule.",
+      "dependencies": ["C_ch_boundary", "charged sector projector", "boundary-to-4D projection"],
+      "affected_theorems": ["X_ch"],
+      "maximum_status": "CONDITIONAL_ACTION_THEOREM",
+      "definitions": {},
+      "claim_boundary": "An enabled author axiom is conditional and does not establish a repo-derived theorem."
+    },
+    {
+      "axiom_key": "NEUTRINO_PHYSICAL_MAP_AXIOM",
+      "enabled": false,
+      "complete_definition": false,
+      "formal_statement": "Supply the neutral-channel physical basis map, dimensional scale, ordering, Dirac/Majorana convention, and observable map.",
+      "dependencies": ["K_nu", "PMNS artifact", "neutral sector projector"],
+      "affected_theorems": ["neutrino_basis_scale"],
+      "maximum_status": "CONDITIONAL_ACTION_THEOREM",
+      "definitions": {},
+      "claim_boundary": "Electron-neutrino limits and reference values cannot define this axiom."
+    }
+  ]
+}

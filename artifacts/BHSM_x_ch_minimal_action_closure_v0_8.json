@@ -1,0 +1,203 @@
+{
+  "action_source_term": {
+    "action_derived": false,
+    "expression": "S_charged_response = integral_boundary <J_ch, X_ch(P_ch Psi_boundary)> + h.c.",
+    "hermitian": true,
+    "integration_measure": "dmu_boundary",
+    "locality": "boundary-local",
+    "missing_object": null,
+    "source_artifacts": [
+      "artifacts/BHSM_boundary_source_matrices_v0_5.json",
+      "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
+      "artifacts/BHSM_vertex_source_target_map_v0_5.json",
+      "artifacts/BHSM_author_ontology_v0_8.json"
+    ],
+    "status": "CONDITIONAL_ACTION_THEOREM",
+    "symbol": "S_charged_response"
+  },
+  "action_term": {
+    "expression": "S_charged_response = integral_boundary <J_ch, X_ch(P_ch Psi_boundary)> + h.c.",
+    "key": "x_ch",
+    "missing_object": null,
+    "role": "charged boundary-response action",
+    "source_artifacts": [
+      "artifacts/BHSM_boundary_source_matrices_v0_5.json",
+      "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
+      "artifacts/BHSM_vertex_source_target_map_v0_5.json",
+      "artifacts/BHSM_author_ontology_v0_8.json"
+    ],
+    "status": "CONDITIONAL_ACTION_THEOREM",
+    "symbol": "S_charged_response"
+  },
+  "artifact_sources_used": [
+    "artifacts/BHSM_boundary_source_matrices_v0_5.json",
+    "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
+    "artifacts/BHSM_vertex_source_target_map_v0_5.json",
+    "artifacts/BHSM_author_ontology_v0_8.json"
+  ],
+  "author_ontology_used": true,
+  "callable_key": "apply_x_ch_boundary_response",
+  "claim_boundary": "Conditional boundary-response theorem only. It does not identify X_ch with a standalone 4D production field or establish FeynRules/UFO/MadGraph readiness.",
+  "core_blocker": false,
+  "coupling_normalization": {
+    "coupling_mass_dimension": "no standalone 4D production coupling assigned",
+    "missing_object": null,
+    "normalization": "operator normalization inherited from C_ch_boundary; no 4D production coupling claimed",
+    "operator_mass_dimension": "boundary-response dimension fixed only within the boundary action",
+    "source_artifacts": [
+      "artifacts/BHSM_boundary_source_matrices_v0_5.json",
+      "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
+      "artifacts/BHSM_vertex_source_target_map_v0_5.json",
+      "artifacts/BHSM_author_ontology_v0_8.json"
+    ],
+    "status": "CONDITIONAL_ACTION_THEOREM",
+    "symbol": "g_X",
+    "value_source": "X_CH_IS_CHARGED_BOUNDARY_RESPONSE_OPERATOR"
+  },
+  "empirical_derivation_inputs_used": false,
+  "field_representation": {
+    "chirality": "inherited from charged-sector projector admissibility",
+    "codomain": "charged boundary-current response J_ch_boundary",
+    "conjugation_rule": "Hermitian boundary-response pairing",
+    "domain": "projector-selected physical charged boundary fields P_ch H_boundary",
+    "family_space": "physical BHSM charged boundary fields",
+    "gauge_representation": "charged-sector projector-selected boundary response",
+    "missing_object": null,
+    "source_artifacts": [
+      "artifacts/BHSM_boundary_source_matrices_v0_5.json",
+      "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
+      "artifacts/BHSM_vertex_source_target_map_v0_5.json",
+      "artifacts/BHSM_author_ontology_v0_8.json"
+    ],
+    "spin_lorentz_type": "charged boundary-response operator on physical BHSM boundary fields",
+    "status": "CONDITIONAL_ACTION_THEOREM",
+    "symbol": "X_ch"
+  },
+  "gauge_admissibility": {
+    "admissible_sectors": [
+      "charged_boundary"
+    ],
+    "excluded_sectors": [
+      "cp_boundary",
+      "neutral_boundary"
+    ],
+    "gauge_invariant": true,
+    "missing_object": null,
+    "passes": true,
+    "projector_key": "P_ch",
+    "source_artifacts": [
+      "artifacts/BHSM_boundary_source_matrices_v0_5.json",
+      "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
+      "artifacts/BHSM_vertex_source_target_map_v0_5.json",
+      "artifacts/BHSM_author_ontology_v0_8.json"
+    ],
+    "status": "CONDITIONAL_ACTION_THEOREM"
+  },
+  "hep_runtime_readiness_claimed": false,
+  "lorentz_structure": {
+    "cp_rule": "no independent CP rule; admissibility precedes response",
+    "expression": "<J_ch, X_ch(P_ch Psi_boundary)> + h.c.",
+    "free_indices": [],
+    "hermitian": true,
+    "missing_object": null,
+    "scalar_density": true,
+    "source_artifacts": [
+      "artifacts/BHSM_boundary_source_matrices_v0_5.json",
+      "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
+      "artifacts/BHSM_vertex_source_target_map_v0_5.json",
+      "artifacts/BHSM_author_ontology_v0_8.json"
+    ],
+    "status": "CONDITIONAL_ACTION_THEOREM"
+  },
+  "numerical_closure_open": true,
+  "ontology_source": "artifacts/BHSM_author_ontology_v0_8.json",
+  "pdg_values_used_as_theorem_inputs": false,
+  "production_rule": {
+    "callable_available": true,
+    "callable_key": "apply_x_ch_boundary_response",
+    "expression": "physical boundary field -> P_ch -> X_ch -> charged-current response",
+    "missing_object": null,
+    "production_eligible": false,
+    "runtime_validation_required": false,
+    "status": "CONDITIONAL_ACTION_THEOREM"
+  },
+  "promoted": true,
+  "promotion_reason": "The author ontology identifies X_ch as a charged boundary-response operator and supplies the complete conditional response chain.",
+  "proof_gates": {
+    "action_source": true,
+    "artifact_support": true,
+    "author_ontology": true,
+    "boundary_response_operator": true,
+    "callable_theorem": true,
+    "charged_sector_projector": true,
+    "coupling_scope_defined": true,
+    "definitions_complete": true,
+    "domain_codomain": true,
+    "lorentz_response_pairing": true,
+    "no_empirical_inputs": true,
+    "no_runtime_readiness_claim": true,
+    "physical_boundary_field": true,
+    "provenance": true,
+    "registry_update": true,
+    "sector_admissibility": true,
+    "tests": true,
+    "variation_rule": true
+  },
+  "provenance": [
+    {
+      "calibration_theorem_input": false,
+      "empirical_derivation_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/BHSM_boundary_source_matrices_v0_5.json",
+      "source_status": "DISCOVERED"
+    },
+    {
+      "calibration_theorem_input": false,
+      "empirical_derivation_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
+      "source_status": "DISCOVERED"
+    },
+    {
+      "calibration_theorem_input": false,
+      "empirical_derivation_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/BHSM_vertex_source_target_map_v0_5.json",
+      "source_status": "DISCOVERED"
+    },
+    {
+      "calibration_theorem_input": false,
+      "empirical_derivation_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/BHSM_author_ontology_v0_8.json",
+      "source_status": "DISCOVERED"
+    }
+  ],
+  "reference_values_used_as_theorem_inputs": false,
+  "registry_updates": [
+    "formula:x_ch_boundary_response",
+    "registry:charged_boundary_response_matrix"
+  ],
+  "remaining_missing_object": null,
+  "runtime_gates_changed": false,
+  "status_after": "CONDITIONAL_ACTION_THEOREM",
+  "status_before": "OPEN_MISSING_FIELD_REPRESENTATION",
+  "target_disposition": "BOUNDARY_RESPONSE_OPERATOR",
+  "tests_passed": true,
+  "theorem_key": "X_ch",
+  "variation_or_source_rule": {
+    "defined": true,
+    "equation_or_current": "physical boundary field -> P_ch -> X_ch -> charged-current response",
+    "missing_object": null,
+    "source_artifacts": [
+      "artifacts/BHSM_boundary_source_matrices_v0_5.json",
+      "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
+      "artifacts/BHSM_vertex_source_target_map_v0_5.json",
+      "artifacts/BHSM_author_ontology_v0_8.json"
+    ],
+    "source_expression": "delta S_charged_response / delta J_ch = X_ch(P_ch Psi_boundary)",
+    "status": "CONDITIONAL_ACTION_THEOREM",
+    "varied_field": "J_ch"
+  },
+  "w_calibration_used_as_theorem_input": false
+}

@@ -1,0 +1,285 @@
+{
+  "artifact_backed_terms_found": true,
+  "author_ontology_dependency": "physical boundary modes with propagation-locked and interaction-supported neutral response",
+  "candidate_key": "neutral_action_source_search",
+  "claim_boundary": "The repository contains a real partial variational/action chain, but no complete normalized neutral action that fixes Z_nu, A_nu, the support measure, transport length, or physical curvature units.",
+  "complete_normalized_action_found": false,
+  "conditional_variational_structure_found": true,
+  "dimension": "action, physical normalization open",
+  "electron_neutrino_limit_used_as_derivation_input": false,
+  "empirical_derivation_inputs_used": false,
+  "legacy_particle_tables_used_as_derivation_inputs": false,
+  "numeric_value": null,
+  "provenance": [
+    {
+      "empirical_derivation_input": false,
+      "legacy_particle_table_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/BHSM_author_ontology_v0_8.json"
+    },
+    {
+      "empirical_derivation_input": false,
+      "legacy_particle_table_input": false,
+      "reference_theorem_input": false,
+      "source_path": "data/bhsm_numerical_input_closure_map.json"
+    },
+    {
+      "empirical_derivation_input": false,
+      "legacy_particle_table_input": false,
+      "reference_theorem_input": false,
+      "source_path": "theory/legacy_sources/v1_1/mass_gap.pdf"
+    },
+    {
+      "empirical_derivation_input": false,
+      "legacy_particle_table_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/BHSM_neutral_measurement_support_ontology_v1_4.json"
+    }
+  ],
+  "reference_values_used_as_theorem_inputs": false,
+  "remaining_missing_object": "complete normalized neutral action: chi_nu and lambda_nu values; normalized collar/support measure; orientation and edge data; profile/embedding; neutral curvature-penalty identification",
+  "source_artifacts": [
+    "artifacts/BHSM_author_ontology_v0_8.json",
+    "data/bhsm_numerical_input_closure_map.json",
+    "theory/legacy_sources/v1_1/mass_gap.pdf",
+    "artifacts/BHSM_neutral_measurement_support_ontology_v1_4.json"
+  ],
+  "source_equations": [
+    "S_neutral_prop[Psi_nu,U_nu,R_curv] integrated over dmu_boundary dt",
+    "1/2 chi_nu^{AB} D_A Phi D_B Phi",
+    "lambda_nu Phi n.grad Phi",
+    "1/2 lambda (-nabla^2 phi-k_loc)^2",
+    "dV_collar=J(Y,rho)dA d rho; J=det(I+rho S)",
+    "physical boundary interaction support selects non-null neutral response"
+  ],
+  "source_type": "offline local action and theorem-discharge inventory",
+  "status": "OPEN_MISSING_NEUTRAL_ACTION_NORMALIZATION",
+  "symbolic_value": "S_nu[Phi_nu; chi_nu,lambda_nu,J,U_nu,R_curv]",
+  "terms": [
+    {
+      "action_derived": false,
+      "author_ontology_dependency": "physical neutral boundary field and propagation/interaction support",
+      "candidate_key": "neutral_propagation_source",
+      "claim_boundary": "The ontology supplies an action source and measure symbol, not their physical normalization.",
+      "coefficient_numeric_available": false,
+      "coefficient_symbol": "open neutral normalization",
+      "dimension": "symbolic action term",
+      "electron_neutrino_limit_used_as_derivation_input": false,
+      "empirical_derivation_inputs_used": false,
+      "legacy_particle_tables_used_as_derivation_inputs": false,
+      "numeric_value": null,
+      "provenance": [
+        {
+          "empirical_derivation_input": false,
+          "legacy_particle_table_input": false,
+          "reference_theorem_input": false,
+          "source_path": "artifacts/BHSM_author_ontology_v0_8.json"
+        }
+      ],
+      "reference_values_used_as_theorem_inputs": false,
+      "remaining_missing_object": "normalized dmu_boundary dt and neutral action coefficients",
+      "role": "author-ontology propagation and curvature-response source",
+      "source_artifacts": [
+        "artifacts/BHSM_author_ontology_v0_8.json"
+      ],
+      "source_equations": [
+        "S_neutral_prop[Psi_nu,U_nu,R_curv] integrated over dmu_boundary dt"
+      ],
+      "source_type": "local BHSM action or theorem-discharge source",
+      "status": "CONDITIONAL_NEUTRAL_ACTION_STIFFNESS_CANDIDATE",
+      "symbolic_value": "S_neutral_prop[Psi_nu,U_nu,R_curv] integrated over dmu_boundary dt",
+      "term_key": "neutral_propagation_source",
+      "unit": null,
+      "value": "S_neutral_prop[Psi_nu,U_nu,R_curv] integrated over dmu_boundary dt",
+      "w_mass_used_as_theorem_input": false
+    },
+    {
+      "action_derived": true,
+      "author_ontology_dependency": "physical neutral boundary field and propagation/interaction support",
+      "candidate_key": "neutral_boundary_tangential_kinetic",
+      "claim_boundary": "The variational form is conditionally derived, but chi_nu values and physical normalization are open.",
+      "coefficient_numeric_available": false,
+      "coefficient_symbol": "chi_nu^{AB}",
+      "dimension": "symbolic action term",
+      "electron_neutrino_limit_used_as_derivation_input": false,
+      "empirical_derivation_inputs_used": false,
+      "legacy_particle_tables_used_as_derivation_inputs": false,
+      "numeric_value": null,
+      "provenance": [
+        {
+          "empirical_derivation_input": false,
+          "legacy_particle_table_input": false,
+          "reference_theorem_input": false,
+          "source_path": "data/bhsm_numerical_input_closure_map.json"
+        }
+      ],
+      "reference_values_used_as_theorem_inputs": false,
+      "remaining_missing_object": "neutral tensor chi_nu^{AB}, support metric, and normalization identifying Z_nu",
+      "role": "conditional neutral boundary kinetic response",
+      "source_artifacts": [
+        "data/bhsm_numerical_input_closure_map.json"
+      ],
+      "source_equations": [
+        "1/2 chi_nu^{AB} D_A Phi D_B Phi"
+      ],
+      "source_type": "local BHSM action or theorem-discharge source",
+      "status": "OPEN_MISSING_NEUTRAL_KINETIC_STIFFNESS",
+      "symbolic_value": "1/2 chi_nu^{AB} D_A Phi D_B Phi",
+      "term_key": "neutral_boundary_tangential_kinetic",
+      "unit": null,
+      "value": "1/2 chi_nu^{AB} D_A Phi D_B Phi",
+      "w_mass_used_as_theorem_input": false
+    },
+    {
+      "action_derived": false,
+      "author_ontology_dependency": "physical neutral boundary field and propagation/interaction support",
+      "candidate_key": "neutral_boundary_normal_coupling",
+      "claim_boundary": "The term and its variation are localized, but the collar reduction and lambda_nu remain open.",
+      "coefficient_numeric_available": false,
+      "coefficient_symbol": "lambda_nu",
+      "dimension": "symbolic action term",
+      "electron_neutrino_limit_used_as_derivation_input": false,
+      "empirical_derivation_inputs_used": false,
+      "legacy_particle_tables_used_as_derivation_inputs": false,
+      "numeric_value": null,
+      "provenance": [
+        {
+          "empirical_derivation_input": false,
+          "legacy_particle_table_input": false,
+          "reference_theorem_input": false,
+          "source_path": "data/bhsm_numerical_input_closure_map.json"
+        }
+      ],
+      "reference_values_used_as_theorem_inputs": false,
+      "remaining_missing_object": "lambda_nu, orientation, edge condition, and admissible collar variation data",
+      "role": "normal/collar coupling",
+      "source_artifacts": [
+        "data/bhsm_numerical_input_closure_map.json"
+      ],
+      "source_equations": [
+        "lambda_nu Phi n.grad Phi"
+      ],
+      "source_type": "local BHSM action or theorem-discharge source",
+      "status": "OPEN_MISSING_NEUTRAL_ACTION_NORMALIZATION",
+      "symbolic_value": "lambda_nu Phi n.grad Phi",
+      "term_key": "neutral_boundary_normal_coupling",
+      "unit": null,
+      "value": "lambda_nu Phi n.grad Phi",
+      "w_mass_used_as_theorem_input": false
+    },
+    {
+      "action_derived": true,
+      "author_ontology_dependency": "physical neutral boundary field and propagation/interaction support",
+      "candidate_key": "scalar_mass_gap_analogue",
+      "claim_boundary": "The scalar penalty supports the action shape but does not determine the neutral A_nu coefficient.",
+      "coefficient_numeric_available": false,
+      "coefficient_symbol": "lambda (scalar, not A_nu)",
+      "dimension": "symbolic action term",
+      "electron_neutrino_limit_used_as_derivation_input": false,
+      "empirical_derivation_inputs_used": false,
+      "legacy_particle_tables_used_as_derivation_inputs": false,
+      "numeric_value": null,
+      "provenance": [
+        {
+          "empirical_derivation_input": false,
+          "legacy_particle_table_input": false,
+          "reference_theorem_input": false,
+          "source_path": "theory/legacy_sources/v1_1/mass_gap.pdf"
+        }
+      ],
+      "reference_values_used_as_theorem_inputs": false,
+      "remaining_missing_object": "operator-to-neutral-action identification and neutral coefficient normalization",
+      "role": "general scalar curvature-penalty analogue",
+      "source_artifacts": [
+        "theory/legacy_sources/v1_1/mass_gap.pdf"
+      ],
+      "source_equations": [
+        "1/2 lambda (-nabla^2 phi-k_loc)^2"
+      ],
+      "source_type": "local BHSM action or theorem-discharge source",
+      "status": "CONDITIONAL_NEUTRAL_ACTION_STIFFNESS_CANDIDATE",
+      "symbolic_value": "1/2 lambda (-nabla^2 phi-k_loc)^2",
+      "term_key": "scalar_mass_gap_analogue",
+      "unit": null,
+      "value": "1/2 lambda (-nabla^2 phi-k_loc)^2",
+      "w_mass_used_as_theorem_input": false
+    },
+    {
+      "action_derived": true,
+      "author_ontology_dependency": "physical neutral boundary field and propagation/interaction support",
+      "candidate_key": "neutral_collar_measure",
+      "claim_boundary": "The Jacobian identity is conditionally derived, but BHSM embedding, shape operator, orientation, and units remain open.",
+      "coefficient_numeric_available": false,
+      "coefficient_symbol": "J(Y,rho)",
+      "dimension": "symbolic action term",
+      "electron_neutrino_limit_used_as_derivation_input": false,
+      "empirical_derivation_inputs_used": false,
+      "legacy_particle_tables_used_as_derivation_inputs": false,
+      "numeric_value": null,
+      "provenance": [
+        {
+          "empirical_derivation_input": false,
+          "legacy_particle_table_input": false,
+          "reference_theorem_input": false,
+          "source_path": "data/bhsm_numerical_input_closure_map.json"
+        }
+      ],
+      "reference_values_used_as_theorem_inputs": false,
+      "remaining_missing_object": "BHSM boundary embedding, S(Y), orientation, collar width, and physical normalization",
+      "role": "conditional geometric support measure",
+      "source_artifacts": [
+        "data/bhsm_numerical_input_closure_map.json"
+      ],
+      "source_equations": [
+        "dV_collar=J(Y,rho)dA d rho; J=det(I+rho S)"
+      ],
+      "source_type": "local BHSM action or theorem-discharge source",
+      "status": "OPEN_MISSING_BOUNDARY_MEASURE_NORMALIZATION",
+      "symbolic_value": "dV_collar=J(Y,rho)dA d rho; J=det(I+rho S)",
+      "term_key": "neutral_collar_measure",
+      "unit": null,
+      "value": "dV_collar=J(Y,rho)dA d rho; J=det(I+rho S)",
+      "w_mass_used_as_theorem_input": false
+    },
+    {
+      "action_derived": false,
+      "author_ontology_dependency": "physical neutral boundary field and propagation/interaction support",
+      "candidate_key": "measurement_interaction_support",
+      "claim_boundary": "The support condition is author-ontology backed and compatible with boundary action terms, not complete-action derived.",
+      "coefficient_numeric_available": false,
+      "coefficient_symbol": "support indicator",
+      "dimension": "symbolic action term",
+      "electron_neutrino_limit_used_as_derivation_input": false,
+      "empirical_derivation_inputs_used": false,
+      "legacy_particle_tables_used_as_derivation_inputs": false,
+      "numeric_value": null,
+      "provenance": [
+        {
+          "empirical_derivation_input": false,
+          "legacy_particle_table_input": false,
+          "reference_theorem_input": false,
+          "source_path": "artifacts/BHSM_neutral_measurement_support_ontology_v1_4.json"
+        }
+      ],
+      "reference_values_used_as_theorem_inputs": false,
+      "remaining_missing_object": "variation theorem deriving the response-magnitude map and active cone from the normalized neutral action",
+      "role": "response-cone support condition",
+      "source_artifacts": [
+        "artifacts/BHSM_neutral_measurement_support_ontology_v1_4.json"
+      ],
+      "source_equations": [
+        "physical boundary interaction support selects non-null neutral response"
+      ],
+      "source_type": "local BHSM action or theorem-discharge source",
+      "status": "CONDITIONAL_ACTION_DERIVED_RESPONSE_CONE_CANDIDATE",
+      "symbolic_value": "physical boundary interaction support selects non-null neutral response",
+      "term_key": "measurement_interaction_support",
+      "unit": null,
+      "value": "physical boundary interaction support selects non-null neutral response",
+      "w_mass_used_as_theorem_input": false
+    }
+  ],
+  "unit": null,
+  "value": "S_nu = S_bulk + S_boundary + S_support (partial source chain)",
+  "w_mass_used_as_theorem_input": false
+}

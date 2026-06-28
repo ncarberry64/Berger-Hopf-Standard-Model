@@ -74,10 +74,10 @@ def test_phase_three_k_docs_and_readme_preserve_status() -> None:
     ]:
         assert (ROOT / relative).exists(), relative
 
-    readme = " ".join(read("README.md").split())
+    readme = " ".join(read("docs/archive/README_status_history_pre_v0_7.md").split())
     assert PHASE_THREE_K_STATUS in readme
-    assert "Phase Three-K bounded FeynRules export attempt" in read("README.md")
-    assert "not the complete BHSM 4D Lagrangian" in read("README.md")
+    assert "Phase Three-K bounded FeynRules export attempt" in read("docs/archive/README_status_history_pre_v0_7.md")
+    assert "not the complete BHSM 4D Lagrangian" in read("docs/archive/README_status_history_pre_v0_7.md")
 
 
 def test_minimal_feynrules_export_attempt_is_disabled_and_bounded() -> None:
@@ -219,7 +219,7 @@ def test_no_fake_event_files_or_forbidden_phase_three_k_claims() -> None:
     combined = "\n".join(
         read(relative)
         for relative in [
-            "README.md",
+            "docs/archive/README_status_history_pre_v0_7.md",
             "docs/phase_three_k_feynrules_export_attempt.md",
             "docs/bhsm_minimal_feynrules_model.md",
             "docs/feynrules_to_ufo_export_contract.md",

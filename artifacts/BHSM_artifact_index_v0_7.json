@@ -1,0 +1,44 @@
+{
+  "artifact_name": "BHSM Major Artifact Index",
+  "version": "0.7",
+  "groups": [
+    {
+      "group": "frozen_predictions",
+      "status": "ESTABLISHED",
+      "artifacts": ["docs/frozen_predictions.md", "docs/frozen_predictions.json"]
+    },
+    {
+      "group": "python_interface",
+      "status": "ESTABLISHED",
+      "artifacts": ["artifacts/BHSM_prediction_registry_v0_1.json", "artifacts/BHSM_python_interface_example_results_v0_1.json"]
+    },
+    {
+      "group": "gallery_notebooks",
+      "status": "ARTIFACT_BACKED",
+      "artifacts": ["artifacts/BHSM_prediction_gallery_table_v0_2.json", "artifacts/BHSM_notebook_pack_manifest_v0_2.json"]
+    },
+    {
+      "group": "artifact_adapters",
+      "status": "ARTIFACT_BACKED",
+      "artifacts": ["artifacts/BHSM_formula_registry_v0_3.json", "artifacts/BHSM_artifact_backed_prediction_report_v0_3.json"]
+    },
+    {
+      "group": "theorem_closure",
+      "status": "OPEN",
+      "artifacts": ["artifacts/BHSM_theorem_closure_report_v0_4.json", "artifacts/BHSM_theorem_blocker_registry_v0_2.json"]
+    },
+    {
+      "group": "cp_o_int_sprint_b_c",
+      "status": "CANDIDATE",
+      "secondary_status": "OPEN",
+      "artifacts": ["artifacts/BHSM_cp_o_int_attachment_report_v0_5.json", "artifacts/BHSM_cp_o_int_field_action_report_v0_6.json"]
+    },
+    {
+      "group": "claim_policy",
+      "status": "ESTABLISHED",
+      "artifacts": ["CLAIMS.md", "artifacts/BHSM_clean_claims_index_v0_7.json"]
+    }
+  ],
+  "complete_inventory_command": "python -m bhsm.interface artifact-sources",
+  "historical_artifacts_retained": true
+}

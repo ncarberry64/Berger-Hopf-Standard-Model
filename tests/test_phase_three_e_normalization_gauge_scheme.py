@@ -75,10 +75,10 @@ def test_phase_three_e_docs_and_readme_preserve_status() -> None:
     ]:
         assert (ROOT / relative).exists(), relative
 
-    readme = " ".join(read("README.md").split())
+    readme = " ".join(read("docs/archive/README_status_history_pre_v0_7.md").split())
     assert PHASE_THREE_E_STATUS in readme
-    assert "Phase Three-E normalization and scheme status" in read("README.md")
-    assert "This does not constitute production FeynRules, UFO, MadGraph" in read("README.md")
+    assert "Phase Three-E normalization and scheme status" in read("docs/archive/README_status_history_pre_v0_7.md")
+    assert "This does not constitute production FeynRules, UFO, MadGraph" in read("docs/archive/README_status_history_pre_v0_7.md")
 
 
 def test_vector_normalization_is_target_convention_not_bhsm_prediction() -> None:
@@ -222,7 +222,7 @@ def test_no_fake_event_files_or_forbidden_phase_three_e_claims() -> None:
     combined = "\n".join(
         read(relative)
         for relative in [
-            "README.md",
+            "docs/archive/README_status_history_pre_v0_7.md",
             "docs/phase_three_e_normalization_gauge_scheme.md",
             "docs/vector_normalization_theorem.md",
             "docs/fermion_normalization_theorem.md",

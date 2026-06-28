@@ -1,0 +1,568 @@
+{
+  "author_ontology_dependency": "physical neutral boundary field and propagation-locked curvature response",
+  "boundary_stiffness": {
+    "author_ontology_dependency": "symbolic dmu_boundary dt and curvature-response action",
+    "candidate_key": "neutral_boundary_stiffness",
+    "claim_boundary": "The local action names a response measure but supplies no physical neutral background stiffness.",
+    "dimension": "energy density or curvature normalization",
+    "electron_neutrino_limit_used_as_derivation_input": false,
+    "empirical_derivation_inputs_used": false,
+    "legacy_particle_tables_used_as_derivation_inputs": false,
+    "neutral_kernel_coupling_available": false,
+    "numeric_energy_density_available": false,
+    "provenance": [
+      {
+        "empirical_derivation_input": false,
+        "legacy_particle_table_input": false,
+        "reference_theorem_input": false,
+        "source_path": "artifacts/BHSM_author_ontology_v0_8.json"
+      },
+      {
+        "empirical_derivation_input": false,
+        "legacy_particle_table_input": false,
+        "reference_theorem_input": false,
+        "source_path": "artifacts/BHSM_neutrino_basis_scale_minimal_action_closure_v0_8.json"
+      },
+      {
+        "empirical_derivation_input": false,
+        "legacy_particle_table_input": false,
+        "reference_theorem_input": false,
+        "source_path": "theory/collective_curvature_threshold_layer.md"
+      }
+    ],
+    "reference_values_used_as_theorem_inputs": false,
+    "remaining_missing_object": "neutral background stiffness or energy-density coefficient with physical units and kernel coupling",
+    "source_artifacts": [
+      "artifacts/BHSM_author_ontology_v0_8.json",
+      "artifacts/BHSM_neutrino_basis_scale_minimal_action_closure_v0_8.json",
+      "theory/collective_curvature_threshold_layer.md"
+    ],
+    "source_type": "local symbolic action search",
+    "status": "OPEN_MISSING_PHYSICAL_NEUTRAL_CURVATURE_MAP",
+    "unit": null,
+    "value": null,
+    "w_mass_used_as_theorem_input": false
+  },
+  "candidate_key": "neutral_radius_curvature_closure",
+  "claim_boundary": "Symbolic domains exist, but no numeric unit map exists. In addition, the legacy r^2 k functional has output dimension mass/length under its stated curvature definition.",
+  "curvature_map": {
+    "author_ontology_dependency": "propagation-conditioned neutral curvature response",
+    "candidate_key": "neutral_physical_curvature_map",
+    "candidates": [
+      {
+        "author_ontology_dependency": "NEUTRINO_MASS_IS_PROPAGATION_LOCKED_CURVATURE_RESPONSE",
+        "candidate_key": "neutral_dimensionless_threshold_response",
+        "claim_boundary": "The neutral kernel response is executable but is not curvature in m^-2.",
+        "dimension": "dimensionless response",
+        "electron_neutrino_limit_used_as_derivation_input": false,
+        "empirical_derivation_inputs_used": false,
+        "legacy_particle_tables_used_as_derivation_inputs": false,
+        "neutral_specific": true,
+        "numeric_per_m2_available": false,
+        "provenance": [
+          {
+            "empirical_derivation_input": false,
+            "legacy_particle_table_input": false,
+            "reference_theorem_input": false,
+            "source_path": "artifacts/neutral_operator_no_fit_output_v1.json"
+          }
+        ],
+        "reference_values_used_as_theorem_inputs": false,
+        "remaining_missing_object": "physical curvature normalization",
+        "source_artifacts": [
+          "artifacts/neutral_operator_no_fit_output_v1.json"
+        ],
+        "source_type": "local BHSM artifact or legacy theory source",
+        "status": "DIMENSIONLESS_CURVATURE_RESPONSE",
+        "symbolic_curvature_available": false,
+        "unit": null,
+        "value": "R_nu = max(0, p*g_nu*||K_nu psi||/||psi|| - kappa_nu)",
+        "w_mass_used_as_theorem_input": false
+      },
+      {
+        "author_ontology_dependency": "NEUTRINO_MASS_IS_PROPAGATION_LOCKED_CURVATURE_RESPONSE",
+        "candidate_key": "legacy_general_curvature_operator",
+        "claim_boundary": "The legacy operator has the right physical dimension but no explicit map from the BHSM neutral kernel.",
+        "dimension": "inverse length squared",
+        "electron_neutrino_limit_used_as_derivation_input": false,
+        "empirical_derivation_inputs_used": false,
+        "legacy_particle_tables_used_as_derivation_inputs": false,
+        "neutral_specific": false,
+        "numeric_per_m2_available": false,
+        "provenance": [
+          {
+            "empirical_derivation_input": false,
+            "legacy_particle_table_input": false,
+            "reference_theorem_input": false,
+            "source_path": "theory/legacy_sources/v1_1/mass_from_local_curvature_thresholds_scalar_topographic_eft.pdf"
+          }
+        ],
+        "reference_values_used_as_theorem_inputs": false,
+        "remaining_missing_object": "neutral profile rho_nu and projection from K_nu response to K[rho_nu]",
+        "source_artifacts": [
+          "theory/legacy_sources/v1_1/mass_from_local_curvature_thresholds_scalar_topographic_eft.pdf"
+        ],
+        "source_type": "local BHSM artifact or legacy theory source",
+        "status": "REFERENCE_ONLY",
+        "symbolic_curvature_available": true,
+        "unit": "m^-2 when rho is defined on a physical spatial metric",
+        "value": "K[rho] = -nabla^2 ln rho",
+        "w_mass_used_as_theorem_input": false
+      },
+      {
+        "author_ontology_dependency": "NEUTRINO_MASS_IS_PROPAGATION_LOCKED_CURVATURE_RESPONSE",
+        "candidate_key": "conditional_neutral_curvature_map",
+        "claim_boundary": "The form is explicit and neutral-specific, but kappa_curv is an unresolved physical normalization, not a fitted constant.",
+        "dimension": "inverse length squared",
+        "electron_neutrino_limit_used_as_derivation_input": false,
+        "empirical_derivation_inputs_used": false,
+        "legacy_particle_tables_used_as_derivation_inputs": false,
+        "neutral_specific": true,
+        "numeric_per_m2_available": false,
+        "provenance": [
+          {
+            "empirical_derivation_input": false,
+            "legacy_particle_table_input": false,
+            "reference_theorem_input": false,
+            "source_path": "artifacts/BHSM_author_ontology_v0_8.json"
+          }
+        ],
+        "reference_values_used_as_theorem_inputs": false,
+        "remaining_missing_object": "action-derived kappa_curv in m^-2 from boundary stiffness and transport normalization",
+        "source_artifacts": [
+          "artifacts/BHSM_author_ontology_v0_8.json"
+        ],
+        "source_type": "local BHSM artifact or legacy theory source",
+        "status": "CONDITIONAL_PHYSICAL_CURVATURE_MAP_CANDIDATE",
+        "symbolic_curvature_available": true,
+        "unit": "m^-2 (symbolic)",
+        "value": "k_neutral,eff = kappa_curv * R_nu_dimless",
+        "w_mass_used_as_theorem_input": false
+      },
+      {
+        "author_ontology_dependency": "NEUTRINO_MASS_IS_PROPAGATION_LOCKED_CURVATURE_RESPONSE",
+        "candidate_key": "empirical_curvature_scale",
+        "claim_boundary": "Neutrino limits, W calibration, and legacy particle tables cannot set kappa_curv.",
+        "dimension": "inverse length squared",
+        "electron_neutrino_limit_used_as_derivation_input": false,
+        "empirical_derivation_inputs_used": false,
+        "legacy_particle_tables_used_as_derivation_inputs": false,
+        "neutral_specific": false,
+        "numeric_per_m2_available": false,
+        "provenance": [
+          {
+            "empirical_derivation_input": false,
+            "legacy_particle_table_input": false,
+            "reference_theorem_input": false,
+            "source_path": "comparison layer only"
+          }
+        ],
+        "reference_values_used_as_theorem_inputs": false,
+        "remaining_missing_object": "none; this route is rejected",
+        "source_artifacts": [
+          "comparison layer only"
+        ],
+        "source_type": "local BHSM artifact or legacy theory source",
+        "status": "FORBIDDEN_EMPIRICAL_CURVATURE_SCALE",
+        "symbolic_curvature_available": false,
+        "unit": "m^-2",
+        "value": null,
+        "w_mass_used_as_theorem_input": false
+      }
+    ],
+    "claim_boundary": "A symbolic physical-curvature map is defined, but its m^-2 normalization is not derived.",
+    "dimension": "inverse length squared",
+    "dimensionless_response_available": true,
+    "electron_neutrino_limit_used_as_derivation_input": false,
+    "empirical_derivation_inputs_used": false,
+    "legacy_particle_tables_used_as_derivation_inputs": false,
+    "numeric_per_m2_found": false,
+    "physical_unit_normalization_available": false,
+    "provenance": [
+      {
+        "empirical_derivation_input": false,
+        "legacy_particle_table_input": false,
+        "reference_theorem_input": false,
+        "source_path": "artifacts/neutral_operator_no_fit_output_v1.json"
+      },
+      {
+        "empirical_derivation_input": false,
+        "legacy_particle_table_input": false,
+        "reference_theorem_input": false,
+        "source_path": "artifacts/BHSM_neutrino_curvature_threshold_v0_9.json"
+      },
+      {
+        "empirical_derivation_input": false,
+        "legacy_particle_table_input": false,
+        "reference_theorem_input": false,
+        "source_path": "artifacts/BHSM_author_ontology_v0_8.json"
+      },
+      {
+        "empirical_derivation_input": false,
+        "legacy_particle_table_input": false,
+        "reference_theorem_input": false,
+        "source_path": "theory/legacy_sources/v1_1/mass_from_local_curvature_thresholds_scalar_topographic_eft.pdf"
+      }
+    ],
+    "reference_values_used_as_theorem_inputs": false,
+    "remaining_missing_object": "neutral background stiffness or energy-density coefficient with physical units and kernel coupling; physical neutral transport normalization connecting one kernel-response unit to curvature",
+    "source_artifacts": [
+      "artifacts/neutral_operator_no_fit_output_v1.json",
+      "artifacts/BHSM_neutrino_curvature_threshold_v0_9.json",
+      "artifacts/BHSM_author_ontology_v0_8.json",
+      "theory/legacy_sources/v1_1/mass_from_local_curvature_thresholds_scalar_topographic_eft.pdf"
+    ],
+    "source_type": "author-ontology conditional map plus local artifact search",
+    "status": "CONDITIONAL_PHYSICAL_CURVATURE_MAP_CANDIDATE",
+    "symbolic_candidate_found": true,
+    "unit": "m^-2 (symbolic only)",
+    "value": "k_neutral,eff = kappa_curv * R_nu_dimless",
+    "w_mass_used_as_theorem_input": false
+  },
+  "dimension": "length x inverse_length_squared",
+  "dimensional_consistency_passed": false,
+  "electron_neutrino_limit_used_as_derivation_input": false,
+  "empirical_derivation_inputs_used": false,
+  "legacy_functional_output_dimension": "mass_per_length",
+  "legacy_particle_tables_used_as_derivation_inputs": false,
+  "numeric_bridge_available": false,
+  "provenance": [
+    {
+      "empirical_derivation_input": false,
+      "legacy_particle_table_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/BHSM_author_ontology_v0_8.json"
+    },
+    {
+      "empirical_derivation_input": false,
+      "legacy_particle_table_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json"
+    },
+    {
+      "empirical_derivation_input": false,
+      "legacy_particle_table_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/neutral_operator_no_fit_output_v1.json"
+    },
+    {
+      "empirical_derivation_input": false,
+      "legacy_particle_table_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/internal_profile_radius_normalization_v1.json"
+    },
+    {
+      "empirical_derivation_input": false,
+      "legacy_particle_table_input": false,
+      "reference_theorem_input": false,
+      "source_path": "theory/theorem_discharge_neutral_effective_action.md"
+    },
+    {
+      "empirical_derivation_input": false,
+      "legacy_particle_table_input": false,
+      "reference_theorem_input": false,
+      "source_path": "theory/theorem_discharge_scalar_topographic_profile_input_classification.md"
+    },
+    {
+      "empirical_derivation_input": false,
+      "legacy_particle_table_input": false,
+      "reference_theorem_input": false,
+      "source_path": "theory/legacy_sources/v1_1/mass_from_local_curvature_thresholds_scalar_topographic_eft.pdf"
+    },
+    {
+      "empirical_derivation_input": false,
+      "legacy_particle_table_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/BHSM_neutrino_curvature_threshold_v0_9.json"
+    }
+  ],
+  "radius": {
+    "author_ontology_dependency": "NEUTRINO_MASS_IS_PROPAGATION_LOCKED_CURVATURE_RESPONSE",
+    "candidate_key": "neutral_propagation_radius_search",
+    "candidates": [
+      {
+        "author_ontology_dependency": "NEUTRINO_MASS_IS_PROPAGATION_LOCKED_CURVATURE_RESPONSE",
+        "candidate_key": "author_ontology_r_prop",
+        "claim_boundary": "The ontology defines the physical neutral boundary-field domain and propagation role; it does not fix a numerical radius.",
+        "dimension": "length",
+        "electron_neutrino_limit_used_as_derivation_input": false,
+        "empirical_derivation_inputs_used": false,
+        "legacy_particle_tables_used_as_derivation_inputs": false,
+        "neutrino_specific": true,
+        "numeric_metres_available": false,
+        "provenance": [
+          {
+            "empirical_derivation_input": false,
+            "legacy_particle_table_input": false,
+            "reference_theorem_input": false,
+            "source_path": "artifacts/BHSM_author_ontology_v0_8.json"
+          }
+        ],
+        "reference_values_used_as_theorem_inputs": false,
+        "remaining_missing_object": "action-derived numerical r_prop in metres",
+        "source_artifacts": [
+          "artifacts/BHSM_author_ontology_v0_8.json"
+        ],
+        "source_type": "local BHSM artifact or author ontology",
+        "status": "CONDITIONAL_PROPAGATION_RADIUS_CANDIDATE",
+        "symbolic_length_available": true,
+        "unit": "m (symbolic; no value supplied)",
+        "value": "r_prop: characteristic support scale of a propagating neutral boundary mode",
+        "w_mass_used_as_theorem_input": false,
+        "zero_propagation_consistent": true
+      },
+      {
+        "author_ontology_dependency": "NEUTRINO_MASS_IS_PROPAGATION_LOCKED_CURVATURE_RESPONSE",
+        "candidate_key": "legacy_core_radius_r_c",
+        "claim_boundary": "The legacy core radius is not identified with the BHSM neutral propagation radius.",
+        "dimension": "length",
+        "electron_neutrino_limit_used_as_derivation_input": false,
+        "empirical_derivation_inputs_used": false,
+        "legacy_particle_tables_used_as_derivation_inputs": false,
+        "neutrino_specific": false,
+        "numeric_metres_available": false,
+        "provenance": [
+          {
+            "empirical_derivation_input": false,
+            "legacy_particle_table_input": false,
+            "reference_theorem_input": false,
+            "source_path": "theory/legacy_sources/v1_1/mass_from_local_curvature_thresholds_scalar_topographic_eft.pdf"
+          }
+        ],
+        "reference_values_used_as_theorem_inputs": false,
+        "remaining_missing_object": "neutral-specific identification theorem and numerical value",
+        "source_artifacts": [
+          "theory/legacy_sources/v1_1/mass_from_local_curvature_thresholds_scalar_topographic_eft.pdf"
+        ],
+        "source_type": "local BHSM artifact or author ontology",
+        "status": "REFERENCE_ONLY",
+        "symbolic_length_available": true,
+        "unit": "length (general variable)",
+        "value": "r_c",
+        "w_mass_used_as_theorem_input": false,
+        "zero_propagation_consistent": false
+      },
+      {
+        "author_ontology_dependency": "NEUTRINO_MASS_IS_PROPAGATION_LOCKED_CURVATURE_RESPONSE",
+        "candidate_key": "boundary_profile_sigma",
+        "claim_boundary": "Dimensionless sigma cannot become metres without a unit map.",
+        "dimension": "dimensionless profile parameter",
+        "electron_neutrino_limit_used_as_derivation_input": false,
+        "empirical_derivation_inputs_used": false,
+        "legacy_particle_tables_used_as_derivation_inputs": false,
+        "neutrino_specific": false,
+        "numeric_metres_available": false,
+        "provenance": [
+          {
+            "empirical_derivation_input": false,
+            "legacy_particle_table_input": false,
+            "reference_theorem_input": false,
+            "source_path": "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json"
+          }
+        ],
+        "reference_values_used_as_theorem_inputs": false,
+        "remaining_missing_object": "physical boundary length normalization",
+        "source_artifacts": [
+          "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json"
+        ],
+        "source_type": "local BHSM artifact or author ontology",
+        "status": "DIMENSIONLESS_LENGTH_PROXY",
+        "symbolic_length_available": false,
+        "unit": null,
+        "value": 69.97367331049945,
+        "w_mass_used_as_theorem_input": false,
+        "zero_propagation_consistent": false
+      },
+      {
+        "author_ontology_dependency": "NEUTRINO_MASS_IS_PROPAGATION_LOCKED_CURVATURE_RESPONSE",
+        "candidate_key": "internal_profile_radius",
+        "claim_boundary": "An internal dimensionless profile radius is not a physical neutral propagation length.",
+        "dimension": "dimensionless internal radius",
+        "electron_neutrino_limit_used_as_derivation_input": false,
+        "empirical_derivation_inputs_used": false,
+        "legacy_particle_tables_used_as_derivation_inputs": false,
+        "neutrino_specific": false,
+        "numeric_metres_available": false,
+        "provenance": [
+          {
+            "empirical_derivation_input": false,
+            "legacy_particle_table_input": false,
+            "reference_theorem_input": false,
+            "source_path": "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json"
+          }
+        ],
+        "reference_values_used_as_theorem_inputs": false,
+        "remaining_missing_object": "theorem identifying the internal radius with r_prop plus a metre conversion",
+        "source_artifacts": [
+          "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json"
+        ],
+        "source_type": "local BHSM artifact or author ontology",
+        "status": "DIMENSIONLESS_LENGTH_PROXY",
+        "symbolic_length_available": false,
+        "unit": null,
+        "value": 0.28209479177387814,
+        "w_mass_used_as_theorem_input": false,
+        "zero_propagation_consistent": false
+      },
+      {
+        "author_ontology_dependency": "NEUTRINO_MASS_IS_PROPAGATION_LOCKED_CURVATURE_RESPONSE",
+        "candidate_key": "empirical_or_mass_derived_length",
+        "claim_boundary": "Neutrino-limit, de Broglie, W-scale, and legacy particle-table lengths are forbidden theorem inputs.",
+        "dimension": "length",
+        "electron_neutrino_limit_used_as_derivation_input": false,
+        "empirical_derivation_inputs_used": false,
+        "legacy_particle_tables_used_as_derivation_inputs": false,
+        "neutrino_specific": false,
+        "numeric_metres_available": false,
+        "provenance": [
+          {
+            "empirical_derivation_input": false,
+            "legacy_particle_table_input": false,
+            "reference_theorem_input": false,
+            "source_path": "comparison layer only"
+          }
+        ],
+        "reference_values_used_as_theorem_inputs": false,
+        "remaining_missing_object": "none; this route is rejected",
+        "source_artifacts": [
+          "comparison layer only"
+        ],
+        "source_type": "local BHSM artifact or author ontology",
+        "status": "FORBIDDEN_EMPIRICAL_RADIUS",
+        "symbolic_length_available": false,
+        "unit": "m",
+        "value": null,
+        "w_mass_used_as_theorem_input": false,
+        "zero_propagation_consistent": false
+      }
+    ],
+    "claim_boundary": "A symbolic radius domain is defined, but no physical metre value is derived.",
+    "dimension": "length",
+    "electron_neutrino_limit_used_as_derivation_input": false,
+    "empirical_derivation_inputs_used": false,
+    "legacy_particle_tables_used_as_derivation_inputs": false,
+    "numeric_metres_found": false,
+    "provenance": [
+      {
+        "empirical_derivation_input": false,
+        "legacy_particle_table_input": false,
+        "reference_theorem_input": false,
+        "source_path": "artifacts/BHSM_author_ontology_v0_8.json"
+      },
+      {
+        "empirical_derivation_input": false,
+        "legacy_particle_table_input": false,
+        "reference_theorem_input": false,
+        "source_path": "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json"
+      },
+      {
+        "empirical_derivation_input": false,
+        "legacy_particle_table_input": false,
+        "reference_theorem_input": false,
+        "source_path": "artifacts/neutral_operator_no_fit_output_v1.json"
+      },
+      {
+        "empirical_derivation_input": false,
+        "legacy_particle_table_input": false,
+        "reference_theorem_input": false,
+        "source_path": "artifacts/internal_profile_radius_normalization_v1.json"
+      },
+      {
+        "empirical_derivation_input": false,
+        "legacy_particle_table_input": false,
+        "reference_theorem_input": false,
+        "source_path": "theory/theorem_discharge_neutral_effective_action.md"
+      },
+      {
+        "empirical_derivation_input": false,
+        "legacy_particle_table_input": false,
+        "reference_theorem_input": false,
+        "source_path": "theory/theorem_discharge_scalar_topographic_profile_input_classification.md"
+      },
+      {
+        "empirical_derivation_input": false,
+        "legacy_particle_table_input": false,
+        "reference_theorem_input": false,
+        "source_path": "theory/legacy_sources/v1_1/mass_from_local_curvature_thresholds_scalar_topographic_eft.pdf"
+      }
+    ],
+    "reference_values_used_as_theorem_inputs": false,
+    "remaining_missing_object": "action-derived numerical r_prop in metres and its neutral-mode support theorem",
+    "source_artifacts": [
+      "artifacts/BHSM_author_ontology_v0_8.json",
+      "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json",
+      "artifacts/neutral_operator_no_fit_output_v1.json",
+      "artifacts/internal_profile_radius_normalization_v1.json",
+      "theory/theorem_discharge_neutral_effective_action.md",
+      "theory/theorem_discharge_scalar_topographic_profile_input_classification.md",
+      "theory/legacy_sources/v1_1/mass_from_local_curvature_thresholds_scalar_topographic_eft.pdf"
+    ],
+    "source_type": "author ontology conditional candidate plus artifact search",
+    "status": "CONDITIONAL_PROPAGATION_RADIUS_CANDIDATE",
+    "symbolic_candidate_found": true,
+    "unit": "m (symbolic only)",
+    "value": "r_prop",
+    "w_mass_used_as_theorem_input": false
+  },
+  "reference_values_used_as_theorem_inputs": false,
+  "remaining_missing_object": "action-derived numerical r_prop in metres and its neutral-mode support theorem; neutral background stiffness or energy-density coefficient with physical units and kernel coupling; physical neutral transport normalization connecting one kernel-response unit to curvature; action-derived dimensionally consistent mass normalization or additional length factor",
+  "source_artifacts": [
+    "artifacts/BHSM_author_ontology_v0_8.json",
+    "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json",
+    "artifacts/neutral_operator_no_fit_output_v1.json",
+    "artifacts/internal_profile_radius_normalization_v1.json",
+    "theory/theorem_discharge_neutral_effective_action.md",
+    "theory/theorem_discharge_scalar_topographic_profile_input_classification.md",
+    "theory/legacy_sources/v1_1/mass_from_local_curvature_thresholds_scalar_topographic_eft.pdf",
+    "artifacts/BHSM_neutrino_curvature_threshold_v0_9.json"
+  ],
+  "source_type": "author-ontology conditional candidates plus artifact search",
+  "status": "DIMENSIONFUL_MASS_NOT_AVAILABLE",
+  "symbolic_bridge_available": true,
+  "transport_normalization": {
+    "author_ontology_dependency": "neutral propagation map U_nu(t)",
+    "candidate_key": "neutral_transport_normalization",
+    "claim_boundary": "The boundary identity transport is dimensionless and does not normalize curvature in m^-2.",
+    "dimension": "dimensionless transport identity",
+    "dimensionless_transport_available": true,
+    "electron_neutrino_limit_used_as_derivation_input": false,
+    "empirical_derivation_inputs_used": false,
+    "legacy_particle_tables_used_as_derivation_inputs": false,
+    "physical_transport_normalization_available": false,
+    "provenance": [
+      {
+        "empirical_derivation_input": false,
+        "legacy_particle_table_input": false,
+        "reference_theorem_input": false,
+        "source_path": "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json"
+      },
+      {
+        "empirical_derivation_input": false,
+        "legacy_particle_table_input": false,
+        "reference_theorem_input": false,
+        "source_path": "artifacts/BHSM_neutrino_numerical_closure_report_v0_9.json"
+      },
+      {
+        "empirical_derivation_input": false,
+        "legacy_particle_table_input": false,
+        "reference_theorem_input": false,
+        "source_path": "artifacts/BHSM_author_ontology_v0_8.json"
+      }
+    ],
+    "reference_values_used_as_theorem_inputs": false,
+    "remaining_missing_object": "physical neutral transport normalization connecting one kernel-response unit to curvature",
+    "source_artifacts": [
+      "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json",
+      "artifacts/BHSM_neutrino_numerical_closure_report_v0_9.json",
+      "artifacts/BHSM_author_ontology_v0_8.json"
+    ],
+    "source_type": "local boundary transport artifact",
+    "status": "OPEN_MISSING_PHYSICAL_NEUTRAL_CURVATURE_MAP",
+    "unit": null,
+    "value": "T(mu_BH_boundary -> mu_BH_boundary) = 1",
+    "w_mass_used_as_theorem_input": false
+  },
+  "unit": "(m, m^-2), symbolic only",
+  "value": "(r_prop, k_neutral,eff)",
+  "w_mass_used_as_theorem_input": false
+}

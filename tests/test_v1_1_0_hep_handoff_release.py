@@ -43,7 +43,7 @@ def test_v1_1_0_release_files_exist_and_parse() -> None:
 
 
 def test_readme_preserves_v1_0_1_and_adds_v1_1_0_status() -> None:
-    readme = read_text("README.md")
+    readme = read_text("docs/archive/README_status_history_pre_v0_7.md")
     assert "BHSM v1.0.1 status-reconciled release:" in readme
     assert "internal boundary no-fit package complete/exported;" in readme
     assert "external empirical comparison layer separate/open." in readme

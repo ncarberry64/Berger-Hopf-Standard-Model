@@ -15,6 +15,7 @@ from .validation import ExperimentalValue, ValidationComparison
 CALIBRATION_WARNING = "If a particle mass is used to calibrate the geometric-to-physical unit scale, that same particle cannot be counted as an independent prediction in that run."
 NEUTRINO_WARNING = "The electron-neutrino comparison is treated as an upper-limit comparison unless a vetted central experimental mass reference is explicitly supplied."
 OPEN_THEOREM_WARNING = "Open-theorem entries are registry blockers, not production-ready predictions."
+CONDITIONAL_THEOREM_WARNING = "Conditional theorem entries depend on the author ontology and are not production-ready predictions or numerical closure."
 RUNTIME_WARNING = "Runtime-disabled software entries require live external validation before readiness can be claimed."
 
 
@@ -96,6 +97,8 @@ def build_prediction_report(
     requested_entries = [registry.get(key) for key in requested]
     if any(entry and entry.default_status is PredictionStatus.OPEN_THEOREM_REQUIRED for entry in requested_entries):
         warnings.append(OPEN_THEOREM_WARNING)
+    if any(entry and entry.default_status is PredictionStatus.CONDITIONAL_THEOREM for entry in requested_entries):
+        warnings.append(CONDITIONAL_THEOREM_WARNING)
     if any(entry and entry.default_status is PredictionStatus.DISABLED_UNTIL_RUNTIME_VALIDATED for entry in requested_entries):
         warnings.append(RUNTIME_WARNING)
 
@@ -118,11 +121,22 @@ def build_prediction_report(
         statuses.append({"particle_key": key, "status": status.value, "claim_boundary": entry.claim_boundary})
 
     if include_open_theorem_entries:
-        blocker_statuses = (PredictionStatus.OPEN_THEOREM_REQUIRED, PredictionStatus.DISABLED_UNTIL_RUNTIME_VALIDATED)
-        for entry in registry.select_by_status(blocker_statuses):
+        status_only = (
+            PredictionStatus.OPEN_THEOREM_REQUIRED,
+            PredictionStatus.CONDITIONAL_THEOREM,
+            PredictionStatus.ARTIFACT_BACKED_CONSTRAINT,
+            PredictionStatus.DISABLED_UNTIL_RUNTIME_VALIDATED,
+        )
+        for entry in registry.select_by_status(status_only):
             if entry.particle_key not in requested:
                 statuses.append({"particle_key": entry.particle_key, "status": entry.default_status.value, "claim_boundary": entry.claim_boundary, "theorem_status": entry.theorem_status})
-        for warning in (OPEN_THEOREM_WARNING, RUNTIME_WARNING):
+        included_statuses = {entry.default_status for entry in registry.select_by_status(status_only)}
+        report_warnings = [RUNTIME_WARNING]
+        if PredictionStatus.OPEN_THEOREM_REQUIRED in included_statuses:
+            report_warnings.append(OPEN_THEOREM_WARNING)
+        if PredictionStatus.CONDITIONAL_THEOREM in included_statuses:
+            report_warnings.append(CONDITIONAL_THEOREM_WARNING)
+        for warning in report_warnings:
             if warning not in warnings:
                 warnings.append(warning)
 

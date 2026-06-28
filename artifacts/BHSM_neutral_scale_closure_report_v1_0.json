@@ -1,0 +1,325 @@
+{
+  "boundary_measure": {
+    "background_energy_density_available": false,
+    "claim_boundary": "The author ontology supplies a symbolic neutral-action measure, not its physical unit normalization.",
+    "couples_to_neutral_kernel": true,
+    "measure_symbol": "dmu_boundary dt",
+    "missing_object": "physical dimension and normalization of dmu_boundary dt, plus neutral background energy density",
+    "normalization_value": null,
+    "physical_dimension": null,
+    "physical_normalization_available": false,
+    "source": "artifacts/BHSM_author_ontology_v0_8.json",
+    "status": "OPEN_MISSING_BOUNDARY_MEASURE",
+    "unit": null
+  },
+  "candidates": [
+    {
+      "can_map_to_eV": false,
+      "candidate_key": "tau",
+      "claim_boundary": "tau cannot alone map a dimensionless neutral response to eV/GeV.",
+      "dimension": "dimensionless",
+      "forbidden_reason": null,
+      "neutral_kernel_link": "internal normalization only; no physical unit map",
+      "requires_external_calibration": true,
+      "source": "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json",
+      "status": "DIMENSIONLESS_ARTIFACT",
+      "unit": null,
+      "value": 0.04489678053129164
+    },
+    {
+      "can_map_to_eV": false,
+      "candidate_key": "sigma",
+      "claim_boundary": "sigma cannot alone map a dimensionless neutral response to eV/GeV.",
+      "dimension": "dimensionless",
+      "forbidden_reason": null,
+      "neutral_kernel_link": "internal normalization only; no physical unit map",
+      "requires_external_calibration": true,
+      "source": "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json",
+      "status": "DIMENSIONLESS_ARTIFACT",
+      "unit": null,
+      "value": 69.97367331049945
+    },
+    {
+      "can_map_to_eV": false,
+      "candidate_key": "kappa_H",
+      "claim_boundary": "kappa_H cannot alone map a dimensionless neutral response to eV/GeV.",
+      "dimension": "dimensionless",
+      "forbidden_reason": null,
+      "neutral_kernel_link": "internal normalization only; no physical unit map",
+      "requires_external_calibration": true,
+      "source": "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json",
+      "status": "DIMENSIONLESS_ARTIFACT",
+      "unit": null,
+      "value": 19585.25982625801
+    },
+    {
+      "can_map_to_eV": false,
+      "candidate_key": "mu_H",
+      "claim_boundary": "mu_H cannot alone map a dimensionless neutral response to eV/GeV.",
+      "dimension": "dimensionless",
+      "forbidden_reason": null,
+      "neutral_kernel_link": "internal normalization only; no physical unit map",
+      "requires_external_calibration": true,
+      "source": "artifacts/canonical_profile_hessian_theorem_v1.json",
+      "status": "DIMENSIONLESS_ARTIFACT",
+      "unit": null,
+      "value": 19585.25982625801
+    },
+    {
+      "can_map_to_eV": false,
+      "candidate_key": "universal_overlap_width_S",
+      "claim_boundary": "universal_overlap_width_S cannot alone map a dimensionless neutral response to eV/GeV.",
+      "dimension": "dimensionless",
+      "forbidden_reason": null,
+      "neutral_kernel_link": "internal normalization only; no physical unit map",
+      "requires_external_calibration": true,
+      "source": "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json",
+      "status": "DIMENSIONLESS_ARTIFACT",
+      "unit": null,
+      "value": 0.07957747154594767
+    },
+    {
+      "can_map_to_eV": false,
+      "candidate_key": "berger_anisotropy",
+      "claim_boundary": "berger_anisotropy cannot alone map a dimensionless neutral response to eV/GeV.",
+      "dimension": "dimensionless",
+      "forbidden_reason": null,
+      "neutral_kernel_link": "internal normalization only; no physical unit map",
+      "requires_external_calibration": true,
+      "source": "src/bhsm/interface/constants.py",
+      "status": "DIMENSIONLESS_ARTIFACT",
+      "unit": null,
+      "value": 1.157054135733433
+    },
+    {
+      "can_map_to_eV": false,
+      "candidate_key": "boundary_measure_dmu",
+      "claim_boundary": "A named measure is not a dimensionful normalization.",
+      "dimension": "unspecified",
+      "forbidden_reason": null,
+      "neutral_kernel_link": "symbolic neutral action measure",
+      "requires_external_calibration": true,
+      "source": "artifacts/BHSM_author_ontology_v0_8.json",
+      "status": "AUTHOR_ONTOLOGY_CONDITIONAL",
+      "unit": null,
+      "value": "dmu_boundary dt"
+    },
+    {
+      "can_map_to_eV": false,
+      "candidate_key": "w_mass_calibration",
+      "claim_boundary": "The W mass is comparison/calibration data, not a neutral theorem input.",
+      "dimension": "energy",
+      "forbidden_reason": "W calibration is forbidden as a neutral-scale theorem input.",
+      "neutral_kernel_link": "none",
+      "requires_external_calibration": true,
+      "source": "artifacts/BHSM_prediction_report_example_v0_1.json",
+      "status": "EMPIRICAL_FORBIDDEN",
+      "unit": "GeV",
+      "value": null
+    },
+    {
+      "can_map_to_eV": false,
+      "candidate_key": "electron_neutrino_upper_limit",
+      "claim_boundary": "The electron-neutrino upper limit is comparison-only.",
+      "dimension": "energy",
+      "forbidden_reason": "An upper limit cannot set the BHSM neutral scale.",
+      "neutral_kernel_link": "none",
+      "requires_external_calibration": true,
+      "source": "reference layer only",
+      "status": "EMPIRICAL_FORBIDDEN",
+      "unit": "eV",
+      "value": null
+    },
+    {
+      "can_map_to_eV": false,
+      "candidate_key": "background_energy_density",
+      "claim_boundary": "No artifact-backed neutral background stiffness or energy density was found.",
+      "dimension": "missing",
+      "forbidden_reason": null,
+      "neutral_kernel_link": "required by a curvature-response energy map",
+      "requires_external_calibration": false,
+      "source": "not found in local neutral artifacts",
+      "status": "MISSING",
+      "unit": null,
+      "value": null
+    }
+  ],
+  "dimensionful_mass_attempt": [
+    {
+      "claim_boundary": "Physical units are emitted only when the neutral scale result contains a valid unit source.",
+      "dimensionless_response": 0.0,
+      "effective_mass_GeV": null,
+      "effective_mass_eV": null,
+      "neutral_scale_GeV": null,
+      "neutral_scale_eV": null,
+      "status": "OPEN_MISSING_NEUTRAL_SCALE",
+      "unit_source": null
+    },
+    {
+      "claim_boundary": "Physical units are emitted only when the neutral scale result contains a valid unit source.",
+      "dimensionless_response": 0.03775908324682857,
+      "effective_mass_GeV": null,
+      "effective_mass_eV": null,
+      "neutral_scale_GeV": null,
+      "neutral_scale_eV": null,
+      "status": "OPEN_MISSING_NEUTRAL_SCALE",
+      "unit_source": null
+    },
+    {
+      "claim_boundary": "Physical units are emitted only when the neutral scale result contains a valid unit source.",
+      "dimensionless_response": 0.01758426214079822,
+      "effective_mass_GeV": null,
+      "effective_mass_eV": null,
+      "neutral_scale_GeV": null,
+      "neutral_scale_eV": null,
+      "status": "OPEN_MISSING_NEUTRAL_SCALE",
+      "unit_source": null
+    }
+  ],
+  "dimensionful_mass_output_produced": false,
+  "dimensionful_scale_achieved": false,
+  "external_hep_tools_required": false,
+  "frozen_predictions_changed": false,
+  "internet_required": false,
+  "neutrino_status_after": "CONDITIONAL_NUMERICAL_CLOSURE_CANDIDATE",
+  "neutrino_status_before": "CONDITIONAL_NUMERICAL_CLOSURE_CANDIDATE",
+  "production_physics_model_logic_changed": false,
+  "public_status": "structural architecture integrated conditional; numerical closure open",
+  "report_name": "BHSM Neutral Dimensionful Scale Closure",
+  "scale_result": {
+    "artifact_sources_checked": [
+      "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json",
+      "artifacts/neutral_operator_no_fit_output_v1.json",
+      "artifacts/BHSM_author_ontology_v0_8.json",
+      "artifacts/canonical_profile_hessian_theorem_v1.json",
+      "artifacts/frozen_constants_v2.json",
+      "artifacts/BHSM_prediction_report_example_v0_1.json",
+      "src/bhsm/interface/constants.py",
+      "src/bhsm/interface/units.py",
+      "theory/theorem_discharge_neutral_effective_action.md",
+      "theory/collective_curvature_threshold_layer.md"
+    ],
+    "artifact_sources_used": [
+      "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json",
+      "artifacts/neutral_operator_no_fit_output_v1.json",
+      "artifacts/BHSM_author_ontology_v0_8.json",
+      "artifacts/canonical_profile_hessian_theorem_v1.json",
+      "artifacts/frozen_constants_v2.json",
+      "src/bhsm/interface/constants.py",
+      "theory/theorem_discharge_neutral_effective_action.md",
+      "theory/collective_curvature_threshold_layer.md"
+    ],
+    "candidate_source": "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json",
+    "claim_boundary": "A dimensionless BHSM response is not, by itself, a physical eV/GeV mass. Threshold-map status: OPEN_MISSING_THRESHOLD_TO_ENERGY_MAP.",
+    "electron_neutrino_limit_used_as_derivation_input": false,
+    "empirical_derivation_inputs_used": false,
+    "provenance": [
+      {
+        "electron_neutrino_limit_derivation_input": false,
+        "empirical_derivation_input": false,
+        "reference_theorem_input": false,
+        "source_path": "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json",
+        "source_status": "DISCOVERED",
+        "w_calibration_theorem_input": false
+      },
+      {
+        "electron_neutrino_limit_derivation_input": false,
+        "empirical_derivation_input": false,
+        "reference_theorem_input": false,
+        "source_path": "artifacts/neutral_operator_no_fit_output_v1.json",
+        "source_status": "DISCOVERED",
+        "w_calibration_theorem_input": false
+      },
+      {
+        "electron_neutrino_limit_derivation_input": false,
+        "empirical_derivation_input": false,
+        "reference_theorem_input": false,
+        "source_path": "artifacts/BHSM_author_ontology_v0_8.json",
+        "source_status": "DISCOVERED",
+        "w_calibration_theorem_input": false
+      },
+      {
+        "electron_neutrino_limit_derivation_input": false,
+        "empirical_derivation_input": false,
+        "reference_theorem_input": false,
+        "source_path": "artifacts/canonical_profile_hessian_theorem_v1.json",
+        "source_status": "DISCOVERED",
+        "w_calibration_theorem_input": false
+      },
+      {
+        "electron_neutrino_limit_derivation_input": false,
+        "empirical_derivation_input": false,
+        "reference_theorem_input": false,
+        "source_path": "artifacts/frozen_constants_v2.json",
+        "source_status": "DISCOVERED",
+        "w_calibration_theorem_input": false
+      },
+      {
+        "electron_neutrino_limit_derivation_input": false,
+        "empirical_derivation_input": false,
+        "reference_theorem_input": false,
+        "source_path": "artifacts/BHSM_prediction_report_example_v0_1.json",
+        "source_status": "DISCOVERED",
+        "w_calibration_theorem_input": false
+      },
+      {
+        "electron_neutrino_limit_derivation_input": false,
+        "empirical_derivation_input": false,
+        "reference_theorem_input": false,
+        "source_path": "src/bhsm/interface/constants.py",
+        "source_status": "DISCOVERED",
+        "w_calibration_theorem_input": false
+      },
+      {
+        "electron_neutrino_limit_derivation_input": false,
+        "empirical_derivation_input": false,
+        "reference_theorem_input": false,
+        "source_path": "src/bhsm/interface/units.py",
+        "source_status": "DISCOVERED",
+        "w_calibration_theorem_input": false
+      },
+      {
+        "electron_neutrino_limit_derivation_input": false,
+        "empirical_derivation_input": false,
+        "reference_theorem_input": false,
+        "source_path": "theory/theorem_discharge_neutral_effective_action.md",
+        "source_status": "DISCOVERED",
+        "w_calibration_theorem_input": false
+      },
+      {
+        "electron_neutrino_limit_derivation_input": false,
+        "empirical_derivation_input": false,
+        "reference_theorem_input": false,
+        "source_path": "theory/collective_curvature_threshold_layer.md",
+        "source_status": "DISCOVERED",
+        "w_calibration_theorem_input": false
+      }
+    ],
+    "reference_values_used_as_theorem_inputs": false,
+    "remaining_missing_object": "artifact-backed dimensionful neutral unit anchor and threshold-to-energy map; the symbolic boundary measure also lacks physical normalization",
+    "scale_candidate_key": "tau",
+    "scale_value_GeV": null,
+    "scale_value_dimensionless": 0.04489678053129164,
+    "scale_value_eV": null,
+    "status_after": "OPEN_MISSING_NEUTRAL_SCALE",
+    "status_before": "DIMENSIONLESS_ONLY_CLOSURE",
+    "theorem_key": "neutral_dimensionful_scale",
+    "unit_available": false,
+    "unit_source": null,
+    "w_mass_used_as_theorem_input": false
+  },
+  "threshold_energy_map": {
+    "claim_boundary": "The dimensionless curvature threshold is not promoted to an energy without a sourced unit map.",
+    "energy_scale_source": null,
+    "formula": "m_eff[eV] = neutral_scale[eV] * dimensionless_response",
+    "map_key": "neutral_curvature_threshold_to_energy",
+    "missing_object": "artifact-backed threshold-to-energy map, neutral unit anchor, and transport normalization; boundary measure also lacks physical dimension and normalization of dmu_boundary dt, plus neutral background energy density",
+    "neutral_scale_GeV": null,
+    "neutral_scale_eV": null,
+    "status": "OPEN_MISSING_THRESHOLD_TO_ENERGY_MAP",
+    "threshold_source": "artifacts/neutral_operator_no_fit_output_v1.json:kappa_nu",
+    "transport_normalization_available": false,
+    "unit_anchor_available": false
+  },
+  "version": "1.0"
+}

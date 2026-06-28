@@ -1,0 +1,185 @@
+{
+  "artifacts": [
+    {
+      "artifact_key": "local_curvature_threshold_eft",
+      "candidate_status": "AUTHOR_SUPPLIED_LEGACY_THEORY_ARTIFACT",
+      "notes": [
+        "The document explicitly describes the mass formula as a geometric matching ansatz rather than an action-derived result.",
+        "Its experimental examples are not BHSM theorem inputs."
+      ],
+      "recognized_formulas": [
+        "K[rho] = -nabla^2 ln rho",
+        "k_loc = K[rho](r_c)",
+        "N_K = integral sigma K[rho](r) dr; N_K = 1",
+        "m = (c^2/(2G)) r_c^2 k_loc",
+        "E = (c^4/(2G)) r_c^2 k_loc"
+      ],
+      "sha256": "8c491926b5a419064b515ab2f345edd4aee66563479882e3c73bfae9d0f23f36",
+      "source_document_title": "Mass from Local Curvature Thresholds in a Scalar Topographic Effective Field Theory",
+      "source_file": "theory/legacy_sources/v1_1/mass_from_local_curvature_thresholds_scalar_topographic_eft.pdf",
+      "use_allowed_for_empirical_calibration": false,
+      "use_allowed_for_theory": true
+    },
+    {
+      "artifact_key": "curvature_mass_gap_eft",
+      "candidate_status": "AUTHOR_SUPPLIED_LEGACY_THEORY_ARTIFACT",
+      "notes": [
+        "Used only as scalar-EFT action and spectral support.",
+        "No Yang-Mills proof or BHSM neutrino mass follows from this analogue."
+      ],
+      "recognized_formulas": [
+        "L = 1/2(dt phi)^2 - 1/2(grad phi)^2 - lambda/2(-nabla^2 phi - k_loc)^2",
+        "m_gap = sqrt(lambda) k_loc"
+      ],
+      "sha256": "f32e070dca892ed21715e06416415b1e0c091e9a29cebf69ae553698659e4a53",
+      "source_document_title": "A Curvature-Threshold Scalar Topographic EFT as a Mass-Gap Analogue of Yang-Mills Theory",
+      "source_file": "theory/legacy_sources/v1_1/mass_gap.pdf",
+      "use_allowed_for_empirical_calibration": false,
+      "use_allowed_for_theory": true
+    },
+    {
+      "artifact_key": "hyperspherical_mass_framework",
+      "candidate_status": "AUTHOR_SUPPLIED_LEGACY_THEORY_ARTIFACT",
+      "notes": [
+        "The representative particle table assumes r = 10^-15 m and is illustrative calibration material.",
+        "That table is forbidden as a no-fit BHSM derivation input."
+      ],
+      "recognized_formulas": [
+        "m = (c^2/(2G)) r^2 k",
+        "S = integral_{S^3} d^3x sqrt(g) [R/(16 pi G) - field kinetic and potential terms]",
+        "S^3 harmonic overlap integrals"
+      ],
+      "sha256": "35323d6e0a1e4112046eef2c616614d0cc821092314d4a0681b3723ad2c6b29c",
+      "source_document_title": "Mass Without Higgs: A Geometric Framework for Emergent Particle Mass and Hyperspherical Gravity",
+      "source_file": "theory/legacy_sources/v1_1/mass_without_higgs.pdf",
+      "use_allowed_for_empirical_calibration": false,
+      "use_allowed_for_theory": true
+    },
+    {
+      "artifact_key": "origin_of_mass_latex",
+      "candidate_status": "AUTHOR_SUPPLIED_LEGACY_THEORY_ARTIFACT",
+      "notes": [
+        "Provides an author-supplied EFT narrative and Newtonian matching argument.",
+        "It does not identify a BHSM neutral propagation radius or physical neutral curvature value."
+      ],
+      "recognized_formulas": [
+        "S_T = integral d^4x [1/2(d_mu T)(d^mu T) + B/2(Box T)^2 + S(x)T]",
+        "m = (c^2/(2G)) r^2 k_loc",
+        "E = (c^4/(2G)) r^2 k_loc"
+      ],
+      "sha256": "1ee81f48b982d4ece7e654c792aaaa057f8785ae08da9f259f3895eb4f95fcef",
+      "source_document_title": "The Origin of Mass",
+      "source_file": "theory/legacy_sources/v1_1/origin_of_mass_latex.docx",
+      "use_allowed_for_empirical_calibration": false,
+      "use_allowed_for_theory": true
+    }
+  ],
+  "curvature_activation": {
+    "activation_number": "N_K = integral sigma K[rho](r) dr",
+    "candidate_status": "ARTIFACT_BACKED_LEGACY_CURVATURE_STRUCTURE",
+    "curvature_operator": "K[rho] = -nabla^2 ln rho",
+    "effective_local_curvature": "k_loc = K[rho](r_c)",
+    "single_activation_normalization": "N_K = 1",
+    "source_file": "theory/legacy_sources/v1_1/mass_from_local_curvature_thresholds_scalar_topographic_eft.pdf",
+    "stability_conditions": [
+      "k_loc > 0: stable localized mode",
+      "k_loc = 0: delocalized, massless, or marginal mode",
+      "k_loc < 0: unstable mode"
+    ]
+  },
+  "curvature_mass_functional": {
+    "action_derived": false,
+    "artifact_key": "legacy_curvature_mass_functional",
+    "candidate_status": "ARTIFACT_BACKED_CURVATURE_MASS_FUNCTIONAL",
+    "claim_boundary": "Artifact-backed as an author-supplied geometric matching functional. The source itself does not derive this formula from the scalar action, and it is not yet a BHSM neutrino scale theorem.",
+    "energy_formula": "E = (c^4/(2G)) r_c^2 k_loc",
+    "mass_formula": "m = (c^2/(2G)) r_c^2 k_loc",
+    "matching_ansatz_disclosed": true,
+    "physical_dimensions": [
+      "[r_c] = length",
+      "[k_loc] = length^-2",
+      "[c^2/G] = mass/length"
+    ],
+    "source_document_title": "Mass from Local Curvature Thresholds in a Scalar Topographic Effective Field Theory",
+    "source_equation": "Eq. (2), repeated as Eq. (60); energy form recorded in the legacy EFT corpus",
+    "source_file": "theory/legacy_sources/v1_1/mass_from_local_curvature_thresholds_scalar_topographic_eft.pdf"
+  },
+  "external_hep_tools_required": false,
+  "frozen_predictions_changed": false,
+  "hyperspherical_action_support": "ARTIFACT_BACKED_LEGACY_S3_ACTION_SUPPORT",
+  "internet_required": false,
+  "legacy_particle_tables_used_as_derivation_inputs": false,
+  "mass_gap_action_support": "ARTIFACT_BACKED_LEGACY_SCALAR_EFT_SUPPORT",
+  "neutral_curvature_mapping": {
+    "claim_boundary": "The neutral kernel supplies a dimensionless positive-threshold response. No artifact maps one response unit to k_neutral,eff in m^-2.",
+    "curvature_value_per_m2": null,
+    "dimensionless_curvature_response_available": true,
+    "mapping_formula": "R_nu_dimless(psi,p) = max(0, p*g_nu*||K_nu psi||/||psi|| - kappa_nu)",
+    "physical_curvature_units_available": false,
+    "remaining_missing_object": "artifact-backed conversion from the dimensionless neutral threshold response to physical curvature in m^-2",
+    "source_artifacts": [
+      "artifacts/neutral_operator_no_fit_output_v1.json",
+      "artifacts/BHSM_neutrino_curvature_threshold_v0_9.json",
+      "artifacts/BHSM_neutrino_numerical_closure_report_v0_9.json",
+      "artifacts/BHSM_author_ontology_v0_8.json"
+    ],
+    "status": "OPEN_MISSING_NEUTRAL_CURVATURE_MAPPING"
+  },
+  "production_physics_model_logic_changed": false,
+  "propagation_radius": {
+    "candidates_checked": [
+      "artifacts/BHSM_author_ontology_v0_8.json",
+      "artifacts/neutral_operator_no_fit_output_v1.json",
+      "artifacts/BHSM_neutrino_numerical_closure_report_v0_9.json",
+      "theory/theorem_discharge_neutral_effective_action.md",
+      "theory/theorem_discharge_scalar_topographic_profile_input_classification.md",
+      "artifacts/internal_profile_radius_normalization_v1.json"
+    ],
+    "claim_boundary": "BHSM names internal/profile radii, but no artifact identifies one as the physical neutral propagation or localization radius. The illustrative 10^-15 m legacy table radius and experimental de Broglie scales are not theorem inputs.",
+    "empirical_radius_rejected": true,
+    "remaining_missing_object": "artifact-backed neutral propagation/localization radius in metres and its coupling to the neutral boundary mode",
+    "source_file": null,
+    "status": "OPEN_MISSING_PROPAGATION_LOCALIZATION_RADIUS",
+    "symbol": "r_prop",
+    "value_m": null
+  },
+  "public_status": "structural architecture integrated conditional; numerical closure open",
+  "report_name": "BHSM Legacy Curvature-Threshold Neutral Scale Audit",
+  "result": {
+    "activation_number_available": true,
+    "artifact_key": "legacy_curvature_threshold_neutral_scale_result",
+    "candidate_status": "OPEN_MISSING_PROPAGATION_LOCALIZATION_RADIUS",
+    "claim_boundary": "Artifact-backed legacy mass functional plus dimensionless BHSM neutral response only. No eV/GeV mass follows until r_prop and k_neutral,eff have physical units.",
+    "curvature_operator_available": true,
+    "dimensionful_mass_GeV": null,
+    "dimensionful_mass_eV": null,
+    "dimensionful_mass_possible": false,
+    "electron_neutrino_limit_used_as_derivation_input": false,
+    "empirical_derivation_inputs_used": false,
+    "extracted_formula": "m = (c^2/(2G)) r_c^2 k_loc",
+    "mass_functional_available": true,
+    "mass_gap_action_available": true,
+    "neutral_curvature_mapping_available": true,
+    "propagation_radius_available": false,
+    "reference_values_used_as_theorem_inputs": false,
+    "remaining_missing_object": "artifact-backed neutral propagation/localization radius in metres and its coupling to the neutral boundary mode; artifact-backed conversion from the dimensionless neutral threshold response to physical curvature in m^-2",
+    "source_document_title": "Mass from Local Curvature Thresholds in a Scalar Topographic Effective Field Theory",
+    "source_equation": "Eq. (2), repeated as Eq. (60); energy form recorded in the legacy EFT corpus",
+    "source_file": "theory/legacy_sources/v1_1/mass_from_local_curvature_thresholds_scalar_topographic_eft.pdf",
+    "w_mass_used_as_theorem_input": false
+  },
+  "scale_candidate": {
+    "candidate_key": "legacy_curvature_threshold_neutral_scale",
+    "candidate_status": "OPEN_MISSING_PROPAGATION_LOCALIZATION_RADIUS",
+    "claim_boundary": "The legacy functional is a bridge candidate; radius and physical curvature units are independent required inputs.",
+    "dimensionful_mass_GeV": null,
+    "dimensionful_mass_eV": null,
+    "dimensionful_mass_possible": false,
+    "mass_functional_available": true,
+    "neutral_curvature_mapping_available": true,
+    "physical_curvature_units_available": false,
+    "propagation_radius_available": false,
+    "remaining_missing_object": "artifact-backed neutral propagation/localization radius in metres and its coupling to the neutral boundary mode; artifact-backed conversion from the dimensionless neutral threshold response to physical curvature in m^-2"
+  },
+  "version": "1.1"
+}

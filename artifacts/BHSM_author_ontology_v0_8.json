@@ -1,0 +1,95 @@
+{
+  "artifact_name": "BHSM Author Ontology",
+  "version": "0.8",
+  "author_supplied": true,
+  "ontology_status": "ACTIVE_CONTROLLING_THEORY_DICTIONARY",
+  "public_status": "structural architecture integrated conditional; numerical closure open",
+  "axioms": [
+    {
+      "axiom_key": "BHSM_MODES_ARE_PHYSICAL_BOUNDARY_FIELDS",
+      "enabled": true,
+      "statement": "BHSM modes are physical boundary-local fields on the boundary geometry; sector projectors act on those fields and determine admissible couplings and responses.",
+      "maximum_status": "CONDITIONAL_ACTION_THEOREM",
+      "artifact_support": [
+        "artifacts/BHSM_boundary_source_matrices_v0_5.json",
+        "artifacts/BHSM_vertex_source_target_map_v0_5.json"
+      ],
+      "evidence_class": "AUTHOR_ONTOLOGY_WITH_ARTIFACT_BACKED_BOUNDARY_SEEDS"
+    },
+    {
+      "axiom_key": "CP_IS_Z6_BOUNDARY_HOLONOMY_CONSTRAINT",
+      "enabled": true,
+      "statement": "CP O_int is represented by the CP/Z6 boundary holonomy and its phase attachment to admissible CKM, PMNS, or sector structures, not by a required standalone production vertex.",
+      "maximum_status": "ARTIFACT_BACKED",
+      "standalone_target_status": "RETIRED_TARGET",
+      "artifact_support": [
+        "artifacts/CP_no_fit_holonomy_output_v1.json",
+        "artifacts/BHSM_cp_holonomy_o_int_attachment_theorem_v1_1.json"
+      ],
+      "evidence_class": "ARTIFACT_BACKED_HOLONOMY_CONSTRAINT"
+    },
+    {
+      "axiom_key": "X_CH_IS_CHARGED_BOUNDARY_RESPONSE_OPERATOR",
+      "enabled": true,
+      "statement": "X_ch maps projector-selected physical charged boundary fields and currents to charged boundary-current response.",
+      "maximum_status": "CONDITIONAL_ACTION_THEOREM",
+      "artifact_support": [
+        "artifacts/BHSM_boundary_source_matrices_v0_5.json",
+        "artifacts/BHSM_x_ch_charged_boundary_response_theorem_v1_1.json",
+        "artifacts/BHSM_vertex_source_target_map_v0_5.json"
+      ],
+      "definitions": {
+        "physical_boundary_field": "Psi_boundary in H_boundary",
+        "sector_projector": "P_ch: H_boundary -> H_charged",
+        "response_operator": "X_ch: P_ch H_boundary -> J_ch_boundary",
+        "field_representation": "charged boundary-response operator on physical BHSM boundary fields",
+        "lorentz_structure": "<J_ch, X_ch(P_ch Psi_boundary)> + h.c.",
+        "gauge_representation": "charged-sector projector-selected boundary response",
+        "coupling_normalization": "operator normalization inherited from C_ch_boundary; no 4D production coupling claimed",
+        "operator_mass_dimension": "boundary-response dimension fixed only within the boundary action",
+        "coupling_mass_dimension": "no standalone 4D production coupling assigned",
+        "action_source": "S_charged_response = integral_boundary <J_ch, X_ch(P_ch Psi_boundary)> + h.c.",
+        "measure": "dmu_boundary",
+        "locality": "boundary-local",
+        "variation": "delta S_charged_response / delta J_ch = X_ch(P_ch Psi_boundary)",
+        "production_rule": "physical boundary field -> P_ch -> X_ch -> charged-current response"
+      },
+      "evidence_class": "AUTHOR_ONTOLOGY_CONDITIONAL_ACTION_THEOREM"
+    },
+    {
+      "axiom_key": "NEUTRINO_MASS_IS_PROPAGATION_LOCKED_CURVATURE_RESPONSE",
+      "enabled": true,
+      "statement": "The primary BHSM neutrino mass observable is a propagation-conditioned curvature response of the neutral boundary field; the BHSM contribution vanishes for a non-propagating state.",
+      "maximum_status": "CONDITIONAL_PROPAGATION_THEOREM",
+      "artifact_support": [
+        "artifacts/neutral_operator_no_fit_output_v1.json",
+        "theory/theorem_discharge_neutral_effective_action.md",
+        "theory/collective_curvature_threshold_layer.md"
+      ],
+      "definitions": {
+        "physical_boundary_field": "Psi_nu in H_neutral",
+        "propagation_map": "U_nu(t): H_neutral -> H_neutral",
+        "curvature_response": "R_curv[U_nu(t) Psi_nu; kappa_nu]",
+        "threshold_condition": "curvature response reaches the neutral propagation threshold",
+        "effective_mass_observable": "m_nu_BHSM[Psi_nu] = I_propagating R_curv[U_nu(t) Psi_nu; kappa_nu]",
+        "stationary_limit": "I_propagating = 0 implies m_nu_BHSM = 0",
+        "dirac_majorana_role": "secondary comparison/export convention, not the primary theorem target",
+        "action_source": "S_neutral_prop[Psi_nu, U_nu, R_curv]",
+        "measure": "dmu_boundary dt",
+        "observable_map": "neutral boundary propagation -> curvature-threshold response -> effective neutrino mass observable"
+      },
+      "evidence_class": "AUTHOR_ONTOLOGY_CONDITIONAL_PROPAGATION_THEOREM"
+    }
+  ],
+  "guardrails": {
+    "empirical_derivation_inputs_used": false,
+    "pdg_values_used_as_theorem_inputs": false,
+    "w_calibration_used_as_theorem_input": false,
+    "frozen_predictions_changed": false,
+    "official_predictions_changed": false,
+    "feynrules_ready_claimed": false,
+    "ufo_ready_claimed": false,
+    "madgraph_ready_claimed": false,
+    "empirical_validation_claimed": false
+  }
+}

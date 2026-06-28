@@ -1,0 +1,35 @@
+{
+  "allowed": [
+    "BHSM includes a conditional neutrino propagation-mass theorem.",
+    "BHSM treats the neutrino BHSM mass contribution as propagation-locked curvature response.",
+    "If propagation response is zero, the BHSM mass contribution vanishes.",
+    "The sprint attempts numerical closure using BHSM artifacts only.",
+    "Electron-neutrino comparisons remain upper-limit comparisons by default."
+  ],
+  "artifact_name": "BHSM Neutrino Propagation-Mass Claim Policy",
+  "forbidden": [
+    "BHSM empirically validates neutrino mass.",
+    "BHSM centrally measures electron-neutrino mass.",
+    "The electron-neutrino upper limit is used as a derivation input.",
+    "PDG/reference values are theorem inputs.",
+    "W calibration is used as neutrino theorem input.",
+    "BHSM neutrino propagation mass is automatically an ordinary static rest mass.",
+    "Dirac/Majorana closure is claimed without a dedicated theorem."
+  ],
+  "frozen_predictions_changed": false,
+  "official_predictions_changed": false,
+  "validation_policy": {
+    "dirac_majorana_closure_claimed": false,
+    "electron_neutrino_upper_limit_used_as_derivation_input": false,
+    "empirical_derivation_inputs_used": false,
+    "external_hep_tools_required": false,
+    "internet_required": false,
+    "ordering_inferred_from_data": false,
+    "pdg_required": false,
+    "reference_policy": "Reference values are comparison inputs only and are never theorem inputs.",
+    "reference_values_used_as_theorem_inputs": false,
+    "upper_limit_comparison_policy": "Electron-neutrino comparisons remain upper-limit comparisons unless a vetted central mass reference is explicitly supplied.",
+    "w_mass_used_as_theorem_input": false
+  },
+  "version": "0.9"
+}
