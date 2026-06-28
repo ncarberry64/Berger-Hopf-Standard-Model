@@ -15,3 +15,5 @@ python -m bhsm.interface full-completion-ledger --format json
 ```
 
 This ledger is an obstruction map. It is not a claim that BHSM, the Standard Model, or the external runtime package is complete.
+
+The v1.7 charged audit adds detailed statuses for FC-03, FC-05, and FC-06: conditional charged stiffness, conditional eta_l source, and open CKM exponent derivation.

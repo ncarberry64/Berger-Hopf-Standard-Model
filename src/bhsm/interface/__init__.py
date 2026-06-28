@@ -43,6 +43,16 @@ from .full_completion import (
     build_full_completion_status_report,
     select_highest_leverage_target,
 )
+from .charged_closure import (
+    ChargedClosureReport,
+    audit_charged_closure_dimensions,
+    build_charged_closure_report,
+    derive_or_locate_charged_action_stiffness,
+    derive_or_locate_charged_mixing_law_source,
+    derive_or_locate_ckm_exponent_source,
+    derive_or_locate_eta_l_source,
+    search_charged_closure_sources,
+)
 from .solver import ParticleMassSolver, SolverResult
 from .units import GeometricUnitMapper
 from .validation import ExperimentalValue, ValidationComparison, curated_fallback_references
@@ -82,6 +92,7 @@ __all__ = [
     "NeutrinoPropagationClosureResult",
     "V15StatusStabilizationReport",
     "FullCompletionStatusReport",
+    "ChargedClosureReport",
     "SolverResult",
     "ValidationComparison",
     "ValueWithProvenance",
@@ -109,6 +120,13 @@ __all__ = [
     "build_full_completion_priority_map",
     "build_full_completion_status_report",
     "select_highest_leverage_target",
+    "audit_charged_closure_dimensions",
+    "build_charged_closure_report",
+    "derive_or_locate_charged_action_stiffness",
+    "derive_or_locate_charged_mixing_law_source",
+    "derive_or_locate_ckm_exponent_source",
+    "derive_or_locate_eta_l_source",
+    "search_charged_closure_sources",
     "check_notebook_pack",
     "notebook_pack_manifest",
     "load_reference_with_fallback",

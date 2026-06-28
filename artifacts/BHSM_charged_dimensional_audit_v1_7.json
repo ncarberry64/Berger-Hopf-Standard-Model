@@ -1,0 +1,27 @@
+{
+  "claim_boundary": "The audited coefficients and mixing formulas are dimensionally consistent as dimensionless objects. No physical charged stiffness or mass normalization follows without the missing action measure and units.",
+  "coefficient_dimensions": {
+    "CKM_angles": "dimensionless",
+    "Pi_f": "dimensionless",
+    "beta_f": "dimensionless repository boundary coefficient",
+    "eta_l": "dimensionless exponent coefficient",
+    "g_bridge": "dimensionless",
+    "kappa_f": "dimensionless repository boundary coefficient",
+    "physical_charged_stiffness": "not available",
+    "rho_ch": "dimensionless ratio k_j/k_q",
+    "transport_factor": "dimensionless"
+  },
+  "empirical_inputs_used": false,
+  "formulas_checked": [
+    "S_stiffness,ch=k_q q^2+k_j j^2",
+    "rho_ch=k_j/k_q",
+    "Z_l=exp[-eta_l(q^2+j^2)]",
+    "theta23=tau theta12",
+    "theta13=tau^2 theta12",
+    "T(mu_BH_boundary->mu_BH_boundary)=1"
+  ],
+  "inconsistent_formulas": [],
+  "physical_mass_claim_allowed": false,
+  "physical_stiffness_claim_allowed": false,
+  "status": "DIMENSIONAL_AUDIT_PASSED"
+}

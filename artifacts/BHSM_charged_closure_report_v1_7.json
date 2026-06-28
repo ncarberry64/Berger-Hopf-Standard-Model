@@ -1,0 +1,226 @@
+{
+  "action_stiffness": {
+    "action_form": "S_ch=int d_tau d_mu_support [1/2 Z_ch |D phi_ch|^2 - 1/2 A_ch R_ch(phi_ch)^2 + projector/source terms]",
+    "action_normalization_status": "OPEN_MISSING_CHARGED_ACTION_NORMALIZATION",
+    "charged_coefficients": {
+      "down": {
+        "beta": "64/1323",
+        "kappa": "16/3591"
+      },
+      "lepton": {
+        "beta": "16/1323",
+        "kappa": "16/1323"
+      },
+      "up": {
+        "beta": "32/1323",
+        "kappa": "16/1323"
+      }
+    },
+    "charged_hessian_source_status": "NO_ACTION_SOURCE_DECIDES_RHO_CH",
+    "claim_boundary": "Projector fractions and beta/kappa tables are artifact-backed conditional values. No unique rho_ch, complete charged kinetic coefficient, curvature penalty, or physical action normalization is derived.",
+    "curvature_penalty_status": "OPEN_MISSING_CHARGED_CURVATURE_PENALTY",
+    "dimensional_status": "DIMENSIONAL_AUDIT_PASSED",
+    "empirical_inputs_used": false,
+    "frozen_predictions_changed": false,
+    "g_bridge": "16/189",
+    "g_bridge_status": "DERIVED_CONDITIONAL_ON_INCIDENT_TRACE_21_AND_OVERLAP_4_OVER_3",
+    "kinetic_stiffness_status": "OPEN_MISSING_CHARGED_KINETIC_STIFFNESS",
+    "numeric_stiffness_status": "OPEN_MISSING_NUMERIC_CHARGED_STIFFNESS",
+    "official_prediction_logic_changed": false,
+    "projector_coefficients": {
+      "down": "4/7",
+      "lepton": "1/7",
+      "up": "2/7"
+    },
+    "rho_ch_1_status": "MINIMAL_ACTION_CLOSURE_CANDIDATE",
+    "rho_ch_3_status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+    "rho_ch_selected": null,
+    "rho_definition": "rho_ch = k_j/k_q",
+    "source_artifacts": [
+      "artifacts/charged_boundary_bridge_values_v1.json",
+      "data/charged_suppression_operator_kernel_v1.json",
+      "data/incidence_normalized_overlap_bridge_source.json",
+      "data/charged_stiffness_action_selector_v1.json",
+      "data/bhsm_charged_hessian_source_audit.json"
+    ],
+    "status": "CONDITIONAL_CHARGED_ACTION_STIFFNESS_CANDIDATE"
+  },
+  "ckm_exponent": {
+    "action_source_found": false,
+    "candidate_label": "CANDIDATE_EXPONENT_NOT_DERIVED",
+    "claim_boundary": "The 1/16 exponent remains a historical exploratory candidate selected after residual comparison. The weak-double projector does not by itself derive that exponent.",
+    "cross_scale_transport_status": "OPEN_MISSING_CROSS_SCALE_TRANSPORT",
+    "empirical_inputs_used": false,
+    "exponent": "1/16",
+    "frozen_ckm_changed": false,
+    "historical_candidate_selected_by_residual": true,
+    "official_prediction_logic_changed": false,
+    "projector_source_found": true,
+    "remaining_missing_object": "pre-comparison action/projector/transport theorem forcing the 1/16 exponent",
+    "residual_used_as_theorem_input": false,
+    "source_artifacts": [
+      "audits/ckm_mixing_exponent_derivation_audit.json",
+      "theory/ckm_1_16_channel_dilution.md",
+      "artifacts/common_scale_boundary_transport_v1.json",
+      "data/bhsm_weak_double_projection_zvirt_bridge.json"
+    ],
+    "status": "OPEN_MISSING_CKM_EXPONENT_DERIVATION"
+  },
+  "closure_result": "CHARGED_SOURCE_CLUSTER_CONDITIONALLY_LOCALIZED_WITH_OPEN_ACTION_NORMALIZATION",
+  "completion_claimed": false,
+  "dimensional_audit": {
+    "claim_boundary": "The audited coefficients and mixing formulas are dimensionally consistent as dimensionless objects. No physical charged stiffness or mass normalization follows without the missing action measure and units.",
+    "coefficient_dimensions": {
+      "CKM_angles": "dimensionless",
+      "Pi_f": "dimensionless",
+      "beta_f": "dimensionless repository boundary coefficient",
+      "eta_l": "dimensionless exponent coefficient",
+      "g_bridge": "dimensionless",
+      "kappa_f": "dimensionless repository boundary coefficient",
+      "physical_charged_stiffness": "not available",
+      "rho_ch": "dimensionless ratio k_j/k_q",
+      "transport_factor": "dimensionless"
+    },
+    "empirical_inputs_used": false,
+    "formulas_checked": [
+      "S_stiffness,ch=k_q q^2+k_j j^2",
+      "rho_ch=k_j/k_q",
+      "Z_l=exp[-eta_l(q^2+j^2)]",
+      "theta23=tau theta12",
+      "theta13=tau^2 theta12",
+      "T(mu_BH_boundary->mu_BH_boundary)=1"
+    ],
+    "inconsistent_formulas": [],
+    "physical_mass_claim_allowed": false,
+    "physical_stiffness_claim_allowed": false,
+    "status": "DIMENSIONAL_AUDIT_PASSED"
+  },
+  "empirical_inputs_used": false,
+  "eta_l": {
+    "action_source_status": "OPEN_MISSING_ETA_L_ACTION_SOURCE",
+    "boundary_projection_status": "DERIVED_CONDITIONAL_FROM_B_SUPP_TRACE",
+    "claim_boundary": "The eta_l chain is a conditional source candidate. The historical fitted eta is not used, and no exact official eta_l value is promoted by this audit.",
+    "empirical_inputs_used": false,
+    "exact_value_derived": false,
+    "fitted_eta_present_in_history": true,
+    "fitted_eta_used_as_theorem_input": false,
+    "frozen_predictions_changed": false,
+    "official_prediction_logic_changed": false,
+    "preferred_conditional_formula": "eta_l=8*alpha/(9*pi) under the repository Brownian exponent convention",
+    "remaining_missing_objects": [
+      "complete charged stochastic/action generator",
+      "independent boundary cycle/time normalization",
+      "action-level lepton projection coupling",
+      "charged transport normalization"
+    ],
+    "source_artifacts": [
+      "audits/charged_lepton_eta_derivation_audit.json",
+      "audits/charged_lepton_partial_derivation_consolidation_audit.json",
+      "data/charged_suppression_operator_kernel_v1.json",
+      "theory/alpha_over_pi_stochastic_strength_derivation.md"
+    ],
+    "status": "CONDITIONAL_ETA_L_SOURCE_CANDIDATE",
+    "stochastic_strength_status": "ALPHA_OVER_PI_STOCHASTIC_STRENGTH_PARTIAL",
+    "transport_normalization_status": "OPEN_MISSING_ETA_L_TRANSPORT_NORMALIZATION"
+  },
+  "frozen_predictions_changed": false,
+  "mixing_law": {
+    "claim_boundary": "The frozen CKM formulas are artifact-backed outputs. Higher-channel tau scaling is conditional on an author axiom, not a complete charged action derivation.",
+    "delta_formula": "pi/3",
+    "delta_source_status": "ARTIFACT_BACKED",
+    "empirical_inputs_used": false,
+    "frozen_ckm_changed": false,
+    "mixing_law_source_status": "CONDITIONAL_CHARGED_MIXING_LAW_CANDIDATE",
+    "official_prediction_logic_changed": false,
+    "remaining_missing_object": "action/projection theorem for tau-suppressed higher channels and nontrivial charged transport",
+    "source_artifacts": [
+      "artifacts/CKM_no_fit_operator_output_v1.json",
+      "artifacts/CP_no_fit_holonomy_output_v1.json",
+      "src/ckm_structural_source.py",
+      "artifacts/common_scale_boundary_transport_v1.json"
+    ],
+    "status": "CONDITIONAL_CHARGED_MIXING_LAW_CANDIDATE",
+    "theta12_formula": "theta12_d - theta12_u",
+    "theta12_source_status": "ARTIFACT_BACKED",
+    "theta13_formula": "tau^2 * theta12_CKM",
+    "theta13_source_status": "CONDITIONAL_CHARGED_MIXING_LAW_CANDIDATE",
+    "theta23_formula": "tau * theta12_CKM",
+    "theta23_source_status": "CONDITIONAL_CHARGED_MIXING_LAW_CANDIDATE"
+  },
+  "official_prediction_logic_changed": false,
+  "public_status": "BHSM remains an integrated conditional architecture with open charged action-normalization and mixing-source blockers. Frozen predictions are unchanged and empirical validation is not claimed.",
+  "remaining_blockers": [
+    "OPEN_MISSING_CHARGED_ACTION_NORMALIZATION",
+    "OPEN_MISSING_CHARGED_KINETIC_STIFFNESS",
+    "OPEN_MISSING_CHARGED_CURVATURE_PENALTY",
+    "OPEN_MISSING_NUMERIC_CHARGED_STIFFNESS",
+    "OPEN_MISSING_ETA_L_ACTION_SOURCE",
+    "OPEN_MISSING_ETA_L_TRANSPORT_NORMALIZATION",
+    "OPEN_MISSING_CKM_EXPONENT_DERIVATION",
+    "OPEN_MISSING_CROSS_SCALE_TRANSPORT",
+    "OPEN_MISSING_BOUNDARY_MEASURE_PHYSICAL_NORMALIZATION"
+  ],
+  "report_name": "BHSM Charged Action, Stiffness, and Mixing Source Closure Audit",
+  "required_statements": [
+    "BHSM does not use charged-lepton masses, CKM reference values, PDG values, W calibration, or empirical fitting as theorem inputs.",
+    "Charged-sector closure requires an action/projection/transport source for charged stiffness, eta_l, and the CKM exponent/mixing law.",
+    "Frozen CKM and charged-sector prediction values are not changed by the charged closure audit.",
+    "Conditional charged-source candidates are not treated as artifact-backed derivations unless the source artifacts prove them."
+  ],
+  "source_search": {
+    "artifact_backed_values_found": [
+      "Pi_l=1/7, Pi_u=2/7, Pi_d=4/7",
+      "g_bridge=16/189 conditional factorization",
+      "charged beta/kappa coefficient table",
+      "frozen CKM angle and phase formulas"
+    ],
+    "claim_boundary": "Local artifacts expose charged values and conditional source chains, not a complete charged action theorem.",
+    "conditional_sources_found": [
+      "trace-normalized charged suppression kernel",
+      "alpha/pi stochastic-strength chain",
+      "tau-suppressed higher CKM channels from author axiom",
+      "weak-double projection bridge"
+    ],
+    "empirical_inputs_used": false,
+    "frozen_predictions_changed": false,
+    "official_prediction_logic_changed": false,
+    "open_sources": [
+      "complete charged action normalization",
+      "unique rho_ch selector",
+      "eta_l complete action source and transport normalization",
+      "CKM 1/16 action/projector/transport derivation",
+      "nontrivial cross-scale charged transport"
+    ],
+    "source_paths": [
+      "artifacts/charged_boundary_bridge_values_v1.json",
+      "artifacts/CKM_no_fit_operator_output_v1.json",
+      "artifacts/CP_no_fit_holonomy_output_v1.json",
+      "artifacts/common_scale_boundary_transport_v1.json",
+      "data/charged_stiffness_action_selector_v1.json",
+      "data/bhsm_charged_hessian_source_audit.json",
+      "data/charged_suppression_operator_kernel_v1.json",
+      "data/incidence_normalized_overlap_bridge_source.json",
+      "audits/charged_lepton_eta_derivation_audit.json",
+      "audits/charged_lepton_partial_derivation_consolidation_audit.json",
+      "audits/ckm_mixing_exponent_derivation_audit.json"
+    ],
+    "sources_found": [
+      "artifacts/charged_boundary_bridge_values_v1.json",
+      "artifacts/CKM_no_fit_operator_output_v1.json",
+      "artifacts/CP_no_fit_holonomy_output_v1.json",
+      "artifacts/common_scale_boundary_transport_v1.json",
+      "data/charged_stiffness_action_selector_v1.json",
+      "data/bhsm_charged_hessian_source_audit.json",
+      "data/charged_suppression_operator_kernel_v1.json",
+      "data/incidence_normalized_overlap_bridge_source.json",
+      "audits/charged_lepton_eta_derivation_audit.json",
+      "audits/charged_lepton_partial_derivation_consolidation_audit.json",
+      "audits/ckm_mixing_exponent_derivation_audit.json"
+    ],
+    "sources_missing": [],
+    "status": "CHARGED_SOURCE_INVENTORY_COMPLETE"
+  },
+  "status_after": "CONDITIONAL_CHARGED_SOURCES_WITH_OPEN_ACTION_NORMALIZATION_AND_CKM_EXPONENT_DERIVATION",
+  "status_before": "OPEN_CHARGED_ACTION_STIFFNESS_ETA_CKM_MIXING_CLUSTER",
+  "version": "1.7"
+}
