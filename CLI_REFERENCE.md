@@ -17,6 +17,12 @@ python -m bhsm.interface neutral-admissible-domain --format json
 python -m bhsm.interface neutral-positivity-proof --format json
 python -m bhsm.interface neutral-positivity-counterexample --format json
 python -m bhsm.interface neutral-positivity-report --format markdown
+python -m bhsm.interface neutral-action-source-search --format json
+python -m bhsm.interface neutral-action-stiffness --format json
+python -m bhsm.interface neutral-physical-curvature-map --format json
+python -m bhsm.interface neutral-action-response-cone --format json
+python -m bhsm.interface neutral-action-spectral-closure --format json
+python -m bhsm.interface neutral-action-closure-report --format markdown
 ```
 
 These commands are offline and claim-safe. They do not use reference data as

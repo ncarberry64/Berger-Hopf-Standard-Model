@@ -9,6 +9,10 @@
 - Prove positivity on the admissible/projected neutral space.
 - Derive the measurement-supported response cone uniquely from the complete
   neutral action; the current exact copositivity result is ontology conditional.
+- Derive `chi_nu`, `lambda_nu`, normalized `dmu_boundary dt`, support metric,
+  collar orientation/edge data, and the neutral profile/embedding.
+- Identify neutral `Z_nu` and `A_nu_gap` from that normalized action and derive
+  their ratio in physical units before any mass comparison.
 - Retain the legacy gravitational expression only as a dimensionally gated
   stiffness functional.
 

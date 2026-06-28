@@ -30,6 +30,14 @@ from .neutrino_spectral import (
     prove_neutral_positivity_on_domain,
     search_admissible_positivity_counterexample,
 )
+from .neutrino_action import (
+    build_neutral_action_closure_report,
+    build_neutral_action_spectral_closure,
+    derive_neutral_stiffness_length,
+    derive_or_locate_physical_neutral_curvature_map,
+    derive_response_cone_from_neutral_action,
+    search_neutral_action_sources,
+)
 
 FORMULA_STATUSES = (
     "AVAILABLE_ARTIFACT_BACKED",
@@ -160,6 +168,12 @@ def default_formula_registry(repository: str | Path | None = None) -> FormulaReg
         FormulaCallableEntry("neutral_admissible_positivity", "Admissible neutral copositivity", "Prove the exact quadratic form nonnegative on the response cone without clipping.", "bhsm.interface.neutrino_spectral.positivity_proof.prove_neutral_positivity_on_domain", {}, {"type": "AdmissiblePositivityProof"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "exact rational kernel plus author-ontology response cone", ("artifacts/BHSM_neutral_positivity_proof_v1_4.json",), "CONDITIONAL_MEASUREMENT_SUPPORTED_NEUTRAL_POSITIVITY_CANDIDATE", "Exact on the stated cone; not raw PSD and not complete-action domain derivation.", True),
         FormulaCallableEntry("neutral_positivity_counterexample", "Neutral admissible counterexample search", "Search the explicit response cone for q(x)<0.", "bhsm.interface.neutrino_spectral.positivity_counterexample.search_admissible_positivity_counterexample", {}, {"type": "NeutralPositivityCounterexample"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "exact proof and bounded cone scan", ("artifacts/BHSM_neutral_positivity_counterexample_v1_4.json",), "CONDITIONAL_MEASUREMENT_SUPPORTED_NEUTRAL_POSITIVITY_CANDIDATE", "No admissible counterexample is reported only because an exact cone proof applies.", True),
         FormulaCallableEntry("neutral_positivity_report", "Neutral positivity report", "Combine raw, domain, proof, and counterexample gates.", "bhsm.interface.neutrino_spectral.positivity_report.build_neutral_positivity_report", {}, {"type": "NeutralPositivityReport"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "neutral positivity theorem package", ("artifacts/BHSM_neutral_positivity_report_v1_4.json",), "CONDITIONAL_MEASUREMENT_SUPPORTED_NEUTRAL_POSITIVITY_CANDIDATE", "Conditional response-cone positivity only; raw PSD remains false.", True),
+        FormulaCallableEntry("neutral_action_source_search", "Neutral action source search", "Inventory the partial action chain and exact missing normalizations.", "bhsm.interface.neutrino_action.action_source_search.search_neutral_action_sources", {}, {"type": "NeutralActionSourceSearchResult"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "local action and theorem-discharge inventory", ("artifacts/BHSM_neutral_action_source_search_v1_5.json",), "OPEN_MISSING_NEUTRAL_ACTION_NORMALIZATION", "A partial variational chain exists, but no complete normalized neutral action is present.", True),
+        FormulaCallableEntry("neutral_action_stiffness", "Neutral action stiffness", "Extract Z_nu, A_nu_gap, and their stiffness-length ratio with unit gates.", "bhsm.interface.neutrino_action.stiffness_extraction.derive_neutral_stiffness_length", {}, {"type": "NeutralStiffnessLengthResult"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "partial neutral action", ("artifacts/BHSM_neutral_stiffness_length_v1_5.json",), "OPEN_MISSING_NUMERIC_STIFFNESS_LENGTH", "Both coefficients are symbolic and no metre value is derived.", True),
+        FormulaCallableEntry("physical_neutral_curvature_map", "Physical neutral curvature map", "Separate the dimensionless response from the missing m^-2 normalization.", "bhsm.interface.neutrino_action.curvature_unit_map.derive_or_locate_physical_neutral_curvature_map", {}, {"type": "PhysicalNeutralCurvatureMapResult"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "neutral response and collar geometry", ("artifacts/BHSM_physical_neutral_curvature_map_v1_5.json",), "CONDITIONAL_PHYSICAL_NEUTRAL_CURVATURE_MAP_CANDIDATE", "The symbolic map exists; boundary-measure normalization and transport length remain open.", True),
+        FormulaCallableEntry("neutral_action_response_cone", "Action-supported neutral response cone", "Audit action-level support for the measurement-supported cone.", "bhsm.interface.neutrino_action.response_cone_derivation.derive_response_cone_from_neutral_action", {}, {"type": "ActionDerivedResponseConeResult"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "ontology plus partial boundary/collar action", ("artifacts/BHSM_action_derived_response_cone_v1_5.json",), "CONDITIONAL_ACTION_DERIVED_RESPONSE_CONE_CANDIDATE", "Partial action support exists; complete-action derivation remains open.", True),
+        FormulaCallableEntry("neutral_action_spectral_closure", "Neutral action spectral closure", "Combine stiffness, curvature, cone, and positivity gates.", "bhsm.interface.neutrino_action.action_closure_report.build_neutral_action_spectral_closure", {}, {"type": "NeutralActionSpectralClosureResult"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "neutral action closure package", ("artifacts/BHSM_neutral_action_spectral_closure_v1_5.json",), "CONDITIONAL_NEUTRAL_SPECTRAL_MASS_CANDIDATE", "No default physical mass: numeric stiffness length and physical curvature remain absent.", True),
+        FormulaCallableEntry("neutral_action_closure_report", "Neutral action closure report", "Render the exact action, unit, cone, and mass blockers.", "bhsm.interface.neutrino_action.action_closure_report.build_neutral_action_closure_report", {}, {"type": "NeutralActionClosureReport"}, "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL", "neutral action closure package", ("artifacts/BHSM_neutral_action_closure_report_v1_5.json",), "DIMENSIONFUL_MASS_NOT_AVAILABLE", "Physical eV/GeV mass closure remains open without both numeric dimensional ingredients.", True),
         FormulaCallableEntry("cp_o_int_standalone_attachment", "Standalone CP O_int attachment", "Retired standalone production target.", None, {}, {}, "RETIRED_TARGET", "author ontology", ("artifacts/CP_no_fit_holonomy_output_v1.json", "artifacts/BHSM_cp_o_int_minimal_action_closure_v0_8.json", "artifacts/BHSM_author_ontology_v0_8.json"), "RETIRED_TARGET", "CP is represented by the artifact-backed Z6 holonomy constraint; no standalone production vertex is required.", False),
     )
     for entry in entries:
@@ -195,6 +209,12 @@ _CONDITIONAL_CALLABLES: dict[str, Callable[..., Any]] = {
     "neutral_admissible_positivity": prove_neutral_positivity_on_domain,
     "neutral_positivity_counterexample": search_admissible_positivity_counterexample,
     "neutral_positivity_report": build_neutral_positivity_report,
+    "neutral_action_source_search": search_neutral_action_sources,
+    "neutral_action_stiffness": derive_neutral_stiffness_length,
+    "physical_neutral_curvature_map": derive_or_locate_physical_neutral_curvature_map,
+    "neutral_action_response_cone": derive_response_cone_from_neutral_action,
+    "neutral_action_spectral_closure": build_neutral_action_spectral_closure,
+    "neutral_action_closure_report": build_neutral_action_closure_report,
 }
 
 

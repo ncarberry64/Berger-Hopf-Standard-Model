@@ -72,6 +72,15 @@ from .neutrino_spectral import (
     prove_neutral_positivity_on_domain,
     search_admissible_positivity_counterexample,
 )
+from .neutrino_action import (
+    build_neutral_action_closure_report,
+    build_neutral_action_spectral_closure,
+    derive_neutral_stiffness_length,
+    derive_or_locate_physical_neutral_curvature_map,
+    derive_response_cone_from_neutral_action,
+    neutral_action_closure_report_to_markdown,
+    search_neutral_action_sources,
+)
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -274,6 +283,18 @@ def build_parser() -> argparse.ArgumentParser:
     positivity_counterexample.add_argument("--format", choices=("json",), default="json")
     positivity_report = commands.add_parser("neutral-positivity-report", help="Render the admissible neutral positivity report")
     positivity_report.add_argument("--format", choices=("markdown", "json"), default="markdown")
+    action_search = commands.add_parser("neutral-action-source-search", help="Inventory neutral action sources and normalization gaps")
+    action_search.add_argument("--format", choices=("json",), default="json")
+    action_stiffness = commands.add_parser("neutral-action-stiffness", help="Extract neutral kinetic and curvature stiffness")
+    action_stiffness.add_argument("--format", choices=("json",), default="json")
+    action_curvature = commands.add_parser("neutral-physical-curvature-map", help="Audit the physical neutral curvature unit map")
+    action_curvature.add_argument("--format", choices=("json",), default="json")
+    action_cone = commands.add_parser("neutral-action-response-cone", help="Audit action support for the neutral response cone")
+    action_cone.add_argument("--format", choices=("json",), default="json")
+    action_closure = commands.add_parser("neutral-action-spectral-closure", help="Build the neutral action spectral closure")
+    action_closure.add_argument("--format", choices=("json",), default="json")
+    action_report = commands.add_parser("neutral-action-closure-report", help="Render the neutral action closure report")
+    action_report.add_argument("--format", choices=("markdown", "json"), default="markdown")
     return parser
 
 
@@ -594,6 +615,28 @@ def main(argv: Sequence[str] | None = None) -> int:
         report = build_neutral_positivity_report()
         if args.format == "markdown":
             print(neutral_positivity_report_to_markdown(report), end="")
+        else:
+            print(json.dumps(report.to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "neutral-action-source-search":
+        print(json.dumps(search_neutral_action_sources().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "neutral-action-stiffness":
+        print(json.dumps(derive_neutral_stiffness_length().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "neutral-physical-curvature-map":
+        print(json.dumps(derive_or_locate_physical_neutral_curvature_map().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "neutral-action-response-cone":
+        print(json.dumps(derive_response_cone_from_neutral_action().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "neutral-action-spectral-closure":
+        print(json.dumps(build_neutral_action_spectral_closure().to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "neutral-action-closure-report":
+        report = build_neutral_action_closure_report()
+        if args.format == "markdown":
+            print(neutral_action_closure_report_to_markdown(report), end="")
         else:
             print(json.dumps(report.to_dict(), indent=2, sort_keys=True))
         return 0

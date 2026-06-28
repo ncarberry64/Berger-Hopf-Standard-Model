@@ -88,7 +88,7 @@ def build_artifact_prediction_report(
         calibration_policy="A calibration anchor is not an independent prediction in the same run.",
         reference_policy="Reference values are comparison inputs only and never BHSM derivation inputs.",
         warnings=list(WARNINGS),
-        claim_boundaries=["Artifact presence does not close a theorem.", "Exact neutral copositivity holds only on the conditional measurement-supported response cone; raw PSD remains false.", "The neutral spectral-gap theorem still lacks numeric stiffness length and physical curvature.", "The legacy gravitational expression is dimensionally gated as mass per length and is not a particle-mass formula.", "Boundary seeds are not physical production vertices without their missing theorems."],
+        claim_boundaries=["Artifact presence does not close a theorem.", "The neutral action inventory finds partial variational support but no complete physical normalization.", "Exact neutral copositivity holds only on the conditional measurement-supported response cone; raw PSD remains false.", "Physical eV/GeV mass still lacks numeric stiffness length and physical curvature.", "The legacy gravitational expression is dimensionally gated as mass per length and is not a particle-mass formula.", "Boundary seeds are not physical production vertices without their missing theorems."],
         empirical_derivation_inputs_used=any(row["empirical_derivation_input"] for row in backed),
         reference_values_used_as_derivation_inputs=False,
         frozen_predictions_changed=False,

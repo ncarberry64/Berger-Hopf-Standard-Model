@@ -7,6 +7,9 @@ stiffness length and physical curvature normalization remain open.
 Measurement support is represented as a physical interaction/boundary
 condition, not as a claim that neutrinos require a conscious observer to exist.
 
+The v1.5 action audit separates this conditional dimensionless response from
+physical eV/GeV mass closure, which still lacks two numeric dimensional inputs.
+
 Status: `CONDITIONAL_NUMERICAL_CLOSURE_CANDIDATE`.
 
 The v0.9 evaluator computes deterministic dimensionless threshold responses
