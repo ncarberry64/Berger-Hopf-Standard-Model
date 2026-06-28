@@ -11,3 +11,6 @@ exact copositivity on the conditional measurement-supported response cone,
 without using the existing threshold clipping. The status is
 `CONDITIONAL_MEASUREMENT_SUPPORTED_NEUTRAL_POSITIVITY_CANDIDATE`; complete-action
 derivation of the cone remains open.
+
+The v1.5 action audit does not change the raw eigenspectrum or the exact cone
+proof.

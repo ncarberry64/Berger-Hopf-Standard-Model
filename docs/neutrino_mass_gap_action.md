@@ -19,5 +19,7 @@ The scalar action shape is `ARTIFACT_BACKED_MASS_GAP_ACTION`. Its use in the
 neutral sector is conditional: the repository does not derive numeric neutral
 coefficients `A_nu` or `Z_nu` from that scalar analogue.
 
-BHSM does not use neutrino limits, PDG values, W calibration, empirical fitting, or legacy particle threshold tables to set the neutral spectral scale.
+The v1.5 action inventory finds partial boundary/collar variational support but
+does not identify normalized numeric `Z_nu` or neutral `A_nu_gap`.
 
+BHSM does not use neutrino limits, PDG values, W calibration, empirical fitting, or legacy particle threshold tables to set the neutral spectral scale.

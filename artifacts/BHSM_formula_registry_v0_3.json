@@ -12,6 +12,11 @@
     "legacy_curvature_mass_functional",
     "legacy_gravitational_dimensional_gate",
     "legacy_neutral_scale_candidate",
+    "neutral_action_closure_report",
+    "neutral_action_response_cone",
+    "neutral_action_source_search",
+    "neutral_action_spectral_closure",
+    "neutral_action_stiffness",
     "neutral_admissible_domain",
     "neutral_admissible_positivity",
     "neutral_dimensionful_scale_search",
@@ -26,7 +31,8 @@
     "neutral_spectral_gap",
     "neutral_stiffness_ratio",
     "neutrino_physical_basis_scale",
-    "neutrino_propagation_mass_candidate"
+    "neutrino_propagation_mass_candidate",
+    "physical_neutral_curvature_map"
   ],
   "available_interface_default": [
     "hyperspherical_default_metric",
@@ -248,6 +254,101 @@
       "source_type": "local BHSM artifact",
       "status": "AVAILABLE_ARTIFACT_BACKED",
       "theorem_status": "ARTIFACT_AVAILABLE_NOT_THEOREM_PROMOTION"
+    },
+    {
+      "callable_path": "bhsm.interface.neutrino_action.action_closure_report.build_neutral_action_closure_report",
+      "claim_boundary": "Physical eV/GeV mass closure remains open without both numeric dimensional ingredients.",
+      "description": "Render the exact action, unit, cone, and mass blockers.",
+      "display_name": "Neutral action closure report",
+      "formula_key": "neutral_action_closure_report",
+      "input_schema": {},
+      "notes": [],
+      "output_schema": {
+        "type": "NeutralActionClosureReport"
+      },
+      "safe_for_default_report": true,
+      "source_artifacts": [
+        "artifacts/BHSM_neutral_action_closure_report_v1_5.json"
+      ],
+      "source_type": "neutral action closure package",
+      "status": "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL",
+      "theorem_status": "DIMENSIONFUL_MASS_NOT_AVAILABLE"
+    },
+    {
+      "callable_path": "bhsm.interface.neutrino_action.response_cone_derivation.derive_response_cone_from_neutral_action",
+      "claim_boundary": "Partial action support exists; complete-action derivation remains open.",
+      "description": "Audit action-level support for the measurement-supported cone.",
+      "display_name": "Action-supported neutral response cone",
+      "formula_key": "neutral_action_response_cone",
+      "input_schema": {},
+      "notes": [],
+      "output_schema": {
+        "type": "ActionDerivedResponseConeResult"
+      },
+      "safe_for_default_report": true,
+      "source_artifacts": [
+        "artifacts/BHSM_action_derived_response_cone_v1_5.json"
+      ],
+      "source_type": "ontology plus partial boundary/collar action",
+      "status": "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL",
+      "theorem_status": "CONDITIONAL_ACTION_DERIVED_RESPONSE_CONE_CANDIDATE"
+    },
+    {
+      "callable_path": "bhsm.interface.neutrino_action.action_source_search.search_neutral_action_sources",
+      "claim_boundary": "A partial variational chain exists, but no complete normalized neutral action is present.",
+      "description": "Inventory the partial action chain and exact missing normalizations.",
+      "display_name": "Neutral action source search",
+      "formula_key": "neutral_action_source_search",
+      "input_schema": {},
+      "notes": [],
+      "output_schema": {
+        "type": "NeutralActionSourceSearchResult"
+      },
+      "safe_for_default_report": true,
+      "source_artifacts": [
+        "artifacts/BHSM_neutral_action_source_search_v1_5.json"
+      ],
+      "source_type": "local action and theorem-discharge inventory",
+      "status": "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL",
+      "theorem_status": "OPEN_MISSING_NEUTRAL_ACTION_NORMALIZATION"
+    },
+    {
+      "callable_path": "bhsm.interface.neutrino_action.action_closure_report.build_neutral_action_spectral_closure",
+      "claim_boundary": "No default physical mass: numeric stiffness length and physical curvature remain absent.",
+      "description": "Combine stiffness, curvature, cone, and positivity gates.",
+      "display_name": "Neutral action spectral closure",
+      "formula_key": "neutral_action_spectral_closure",
+      "input_schema": {},
+      "notes": [],
+      "output_schema": {
+        "type": "NeutralActionSpectralClosureResult"
+      },
+      "safe_for_default_report": true,
+      "source_artifacts": [
+        "artifacts/BHSM_neutral_action_spectral_closure_v1_5.json"
+      ],
+      "source_type": "neutral action closure package",
+      "status": "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL",
+      "theorem_status": "CONDITIONAL_NEUTRAL_SPECTRAL_MASS_CANDIDATE"
+    },
+    {
+      "callable_path": "bhsm.interface.neutrino_action.stiffness_extraction.derive_neutral_stiffness_length",
+      "claim_boundary": "Both coefficients are symbolic and no metre value is derived.",
+      "description": "Extract Z_nu, A_nu_gap, and their stiffness-length ratio with unit gates.",
+      "display_name": "Neutral action stiffness",
+      "formula_key": "neutral_action_stiffness",
+      "input_schema": {},
+      "notes": [],
+      "output_schema": {
+        "type": "NeutralStiffnessLengthResult"
+      },
+      "safe_for_default_report": true,
+      "source_artifacts": [
+        "artifacts/BHSM_neutral_stiffness_length_v1_5.json"
+      ],
+      "source_type": "partial neutral action",
+      "status": "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL",
+      "theorem_status": "OPEN_MISSING_NUMERIC_STIFFNESS_LENGTH"
     },
     {
       "callable_path": "bhsm.interface.neutrino_spectral.admissible_domain.derive_or_load_neutral_admissible_domain",
@@ -557,6 +658,25 @@
       "source_type": "author ontology plus local no-fit artifacts",
       "status": "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL",
       "theorem_status": "CONDITIONAL_NUMERICAL_CLOSURE_CANDIDATE"
+    },
+    {
+      "callable_path": "bhsm.interface.neutrino_action.curvature_unit_map.derive_or_locate_physical_neutral_curvature_map",
+      "claim_boundary": "The symbolic map exists; boundary-measure normalization and transport length remain open.",
+      "description": "Separate the dimensionless response from the missing m^-2 normalization.",
+      "display_name": "Physical neutral curvature map",
+      "formula_key": "physical_neutral_curvature_map",
+      "input_schema": {},
+      "notes": [],
+      "output_schema": {
+        "type": "PhysicalNeutralCurvatureMapResult"
+      },
+      "safe_for_default_report": true,
+      "source_artifacts": [
+        "artifacts/BHSM_physical_neutral_curvature_map_v1_5.json"
+      ],
+      "source_type": "neutral response and collar geometry",
+      "status": "AVAILABLE_AUTHOR_SUPPLIED_CONDITIONAL",
+      "theorem_status": "CONDITIONAL_PHYSICAL_NEUTRAL_CURVATURE_MAP_CANDIDATE"
     },
     {
       "callable_path": "bhsm.interface.matrix_adapters.load_pmns_matrix_artifact",

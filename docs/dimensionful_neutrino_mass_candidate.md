@@ -3,6 +3,9 @@
 The preferred route is `m_nu=(hbar/c)sqrt(A_nu/Z_nu)K_neutral,eff`. The
 historical gravitational expression is not used as a particle-mass formula.
 
+The v1.5 action audit names the two remaining dimensional inputs explicitly:
+the neutral stiffness length in metres and `K_neutral,eff` in `m^-2`.
+
 Status: `DIMENSIONFUL_MASS_NOT_AVAILABLE`.
 
 The evaluator requires all of the following before it can produce a mass:

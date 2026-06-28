@@ -40,6 +40,10 @@
   cone, not on the full vector space and not by threshold clipping.
 - Measurement is modeled as a physical boundary/interaction support condition;
   BHSM does not claim that neutrinos cease to exist without observation.
+- The neutral action inventory contains partial variational boundary/collar
+  support, not a complete physically normalized neutral action.
+- The response cone has partial action support but remains conditional; no
+  numeric stiffness length, physical curvature map, or eV/GeV mass is claimed.
 
 ## Not Supported
 
@@ -66,6 +70,9 @@ Do not claim that:
   a propagation radius and physical neutral-curvature map.
 - Symbolic radius or curvature candidates constitute a physical eV/GeV mass.
 - A dimensionally inconsistent matching formula is a completed mass theorem.
+- An ontology-supported response cone is a complete-action-derived response
+  cone.
+- A dimensionless neutral response is a physical curvature in `m^-2`.
 - The conditional `X_ch` theorem establishes a standalone 4D production field.
 
 ## Policy

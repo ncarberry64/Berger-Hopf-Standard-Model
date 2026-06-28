@@ -17,3 +17,6 @@ it is not promoted to an ordinary static rest-mass primitive.
 
 The admissible positivity gate now has an exact conditional cone proof. Numeric
 neutral stiffness length and physical curvature normalization remain open.
+
+The response cone has partial action support, but complete-action derivation of
+its response coordinates and normalization remains open.

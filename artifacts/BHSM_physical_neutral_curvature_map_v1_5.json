@@ -1,0 +1,82 @@
+{
+  "author_ontology_dependency": "interaction-supported propagation response",
+  "boundary_measure_normalized": false,
+  "candidate_key": "physical_neutral_curvature_map",
+  "claim_boundary": "The response and symbolic map exist, but kappa_curv is not supplied in m^-2. The dimensionless response is never treated as physical curvature.",
+  "curvature_per_m2": null,
+  "dimension": "inverse_length_squared",
+  "dimensionless_response_available": true,
+  "electron_neutrino_limit_used_as_derivation_input": false,
+  "empirical_derivation_inputs_used": false,
+  "legacy_particle_tables_used_as_derivation_inputs": false,
+  "numeric_per_m2_available": false,
+  "numeric_value": null,
+  "provenance": [
+    {
+      "empirical_derivation_input": false,
+      "legacy_particle_table_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/neutral_operator_no_fit_output_v1.json"
+    },
+    {
+      "empirical_derivation_input": false,
+      "legacy_particle_table_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/BHSM_neutrino_curvature_threshold_v0_9.json"
+    },
+    {
+      "empirical_derivation_input": false,
+      "legacy_particle_table_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/BHSM_author_ontology_v0_8.json"
+    },
+    {
+      "empirical_derivation_input": false,
+      "legacy_particle_table_input": false,
+      "reference_theorem_input": false,
+      "source_path": "theory/legacy_sources/v1_1/mass_from_local_curvature_thresholds_scalar_topographic_eft.pdf"
+    },
+    {
+      "empirical_derivation_input": false,
+      "legacy_particle_table_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json"
+    },
+    {
+      "empirical_derivation_input": false,
+      "legacy_particle_table_input": false,
+      "reference_theorem_input": false,
+      "source_path": "artifacts/BHSM_neutrino_numerical_closure_report_v0_9.json"
+    },
+    {
+      "empirical_derivation_input": false,
+      "legacy_particle_table_input": false,
+      "reference_theorem_input": false,
+      "source_path": "theory/theorem_discharge_collar_measure_extrinsic_geometry.md"
+    }
+  ],
+  "reference_values_used_as_theorem_inputs": false,
+  "remaining_missing_object": "physical curvature unit map kappa_curv in m^-2; normalized dmu_boundary dt; transport/support length; BHSM profile/embedding and shape-operator values",
+  "source_artifacts": [
+    "artifacts/neutral_operator_no_fit_output_v1.json",
+    "artifacts/BHSM_neutrino_curvature_threshold_v0_9.json",
+    "artifacts/BHSM_author_ontology_v0_8.json",
+    "theory/legacy_sources/v1_1/mass_from_local_curvature_thresholds_scalar_topographic_eft.pdf",
+    "artifacts/BHSM_boundary_no_fit_prediction_package_v1.json",
+    "artifacts/BHSM_neutrino_numerical_closure_report_v0_9.json",
+    "theory/theorem_discharge_collar_measure_extrinsic_geometry.md"
+  ],
+  "source_equations": [
+    "R_nu=max(0,p*g_nu*||K_nu psi||/||psi||-kappa_nu)",
+    "K_neutral,eff=kappa_curv R_nu_dimless",
+    "J(Y,rho)=det(I+rho S(Y))"
+  ],
+  "source_type": "dimensionless neutral response plus conditional collar/curvature geometry",
+  "status": "CONDITIONAL_PHYSICAL_NEUTRAL_CURVATURE_MAP_CANDIDATE",
+  "symbolic_physical_map_available": true,
+  "symbolic_value": "K_neutral,eff=kappa_curv R_nu_dimless",
+  "transport_length_available": false,
+  "unit": "m^-2 required; symbolic only",
+  "value": "K_neutral,eff=kappa_curv R_nu_dimless",
+  "w_mass_used_as_theorem_input": false
+}
