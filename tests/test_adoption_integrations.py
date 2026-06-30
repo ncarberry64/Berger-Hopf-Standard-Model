@@ -125,3 +125,9 @@ def test_ci_and_visual_assets_are_discoverable_and_claim_bounded() -> None:
     assert "bhsm_boundary_mapping_explainer.gif" in readme
     assert "not a detector failure" in readme
     assert gif[:6] in (b"GIF87a", b"GIF89a")
+
+
+def test_frozen_hash_inputs_have_cross_platform_line_ending_contract() -> None:
+    attributes = (ROOT / ".gitattributes").read_text(encoding="utf-8")
+    assert "docs/frozen_predictions.md text eol=crlf" in attributes
+    assert "docs/frozen_predictions.json text eol=crlf" in attributes
