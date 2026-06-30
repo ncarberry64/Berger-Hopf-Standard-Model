@@ -126,6 +126,15 @@ theorem inputs and do not emit a default physical neutrino mass.
 | `common-16-closure-report` | Render the v1.8 focused closure report | Markdown or JSON | no | no |
 | `final-completion-status` | Render the conservative v1.8 completion status | Markdown or JSON | no | no |
 | `final-completion-ledger` | Render the v1.8 blocker ledger | JSON | no | no |
+| `engine-status` | Show validated and excluded BHSM Engine capabilities | Markdown or JSON | no | no |
+| `physics-status` | Show conditional BHSM Physics status and blockers | Markdown or JSON | no | no |
+| `reviewer-reproduction` | Show deterministic reviewer commands and prerequisites | Markdown or JSON | no | no |
+| `engine-invariants` | Run Lorentz, round-trip, near-null, and backward-error checks | Markdown or JSON | no | no |
+| `minimal-theorem-core` | Render the evidence-gated theorem core | Markdown or JSON | no | no |
+| `omega-f-action-audit` | Audit charged boundary-operator action provenance | Markdown or JSON | no | no |
+| `rho-ch-action-audit` | Audit charged Hessian anisotropy provenance | Markdown or JSON | no | no |
+| `falsification-table` | Render explicit engine and physics falsifiers | Markdown or JSON | no | no |
+| `external-reproduction-packet` | Render the unsent narrow reproduction packet | Markdown or JSON | no | no |
 
 Without `--offline-ok`, `pdg-fetch` may try an optional live reference adapter.
 The offline fallback is reference-only and is never a derivation input.

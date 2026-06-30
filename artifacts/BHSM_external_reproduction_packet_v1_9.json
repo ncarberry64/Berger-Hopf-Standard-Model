@@ -1,0 +1,46 @@
+{
+  "claim_boundaries": [
+    "BHSM Engine validation does not constitute empirical validation of BHSM as new particle physics.",
+    "No detector reconstruction is included."
+  ],
+  "commands_to_run": {
+    "reviewer-cern-open-data": "python -m bhsm.interface.benchmarks.cern_open_data_benchmark --download --summary",
+    "reviewer-claims-audit": "python tools/audit_forbidden_claims.py",
+    "reviewer-engine-report": "python -m bhsm.interface engine-status --format markdown",
+    "reviewer-full": "python -m pytest -q",
+    "reviewer-invariants": "python -m bhsm.interface engine-invariants --format json",
+    "reviewer-physics-status": "python -m bhsm.interface physics-status --format markdown",
+    "reviewer-smoke": "python -m pytest -q tests/test_engine_invariant_preservation.py tests/test_engine_physics_status_separation.py"
+  },
+  "contact_performed": false,
+  "data_requirements": {
+    "all_other_commands": "offline",
+    "reviewer-cern-open-data": "requires_network_or_cached_data"
+  },
+  "draft_message": "Can you reproduce the BHSM Engine CERN open-data four-vector validation and confirm the precision/performance claims?",
+  "expected_outputs": {
+    "reviewer-cern-open-data": "exit code 0 or an explicit documented runtime/data gate",
+    "reviewer-claims-audit": "exit code 0 or an explicit documented runtime/data gate",
+    "reviewer-engine-report": "exit code 0 or an explicit documented runtime/data gate",
+    "reviewer-full": "exit code 0 or an explicit documented runtime/data gate",
+    "reviewer-invariants": "exit code 0 or an explicit documented runtime/data gate",
+    "reviewer-physics-status": "exit code 0 or an explicit documented runtime/data gate",
+    "reviewer-smoke": "exit code 0 or an explicit documented runtime/data gate"
+  },
+  "hardware_notes": "Report CPU, compiler, SIMD flags, thread count, and PMU permissions; unfavorable results are valid results.",
+  "how_to_report_results": "Attach command output, generated JSON, hardware metadata, and deviations from the protocol.",
+  "not_in_scope": [
+    "detector reconstruction",
+    "validation of BHSM Physics",
+    "institutional endorsement"
+  ],
+  "recommended_reproducer_profile": [
+    "computational HEP user",
+    "ROOT/CMS open-data user",
+    "numerical methods person",
+    "scientific software engineer",
+    "mathematical physicist comfortable with code"
+  ],
+  "scope": "reproduce BHSM Engine CERN open-data four-vector precision and throughput",
+  "version": "1.9"
+}

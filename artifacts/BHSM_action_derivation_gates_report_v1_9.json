@@ -1,0 +1,166 @@
+{
+  "charged_overlap": {
+    "audit": "charged_overlap_4_over_3_source",
+    "bridge_identity": "O_ch^2/I_ch=(4/3)^2/21=16/189",
+    "claim_boundary": "The incidence bridge is exact conditional on 4/3; the action source of 4/3 remains open.",
+    "evidence": {
+      "all_paths_present": true,
+      "all_tokens_present": true,
+      "present_paths": [
+        "docs/incidence_normalized_overlap_bridge_source.md",
+        "data/incidence_normalized_overlap_bridge_source.json",
+        "src/incidence_normalized_overlap_bridge.py"
+      ],
+      "source_paths": [
+        "docs/incidence_normalized_overlap_bridge_source.md",
+        "data/incidence_normalized_overlap_bridge_source.json",
+        "src/incidence_normalized_overlap_bridge.py"
+      ],
+      "token_hits": {
+        "4/3": [
+          "docs/incidence_normalized_overlap_bridge_source.md",
+          "data/incidence_normalized_overlap_bridge_source.json",
+          "src/incidence_normalized_overlap_bridge.py"
+        ],
+        "OPEN_LOCALIZABLE": [
+          "docs/incidence_normalized_overlap_bridge_source.md",
+          "data/incidence_normalized_overlap_bridge_source.json",
+          "src/incidence_normalized_overlap_bridge.py"
+        ],
+        "g_sector": [
+          "docs/incidence_normalized_overlap_bridge_source.md",
+          "data/incidence_normalized_overlap_bridge_source.json",
+          "src/incidence_normalized_overlap_bridge.py"
+        ]
+      }
+    },
+    "forbidden_inputs": [
+      "PDG/reference values",
+      "W-mass calibration",
+      "charged-mass fitting",
+      "CKM reference fitting",
+      "neutrino limits",
+      "legacy threshold tables"
+    ],
+    "forbidden_inputs_used": [],
+    "remaining_blockers": [
+      "derive O_ch=4/3 from the normalized charged boundary action",
+      "prove the overlap is not an inserted bridge amplitude"
+    ],
+    "status": "OPEN_MISSING_CHARGED_OVERLAP_4_OVER_3_ACTION_SOURCE",
+    "target": "O_ch=4/3"
+  },
+  "claim_boundary": "Focused provenance audit only; no charged prediction or theorem status is promoted beyond its evidence.",
+  "frozen_predictions_modified": false,
+  "no_empirical_theorem_inputs": true,
+  "omega_f": {
+    "audit": "omega_f_action_derivation",
+    "claim_boundary": "The repository integrates Omega_f with projector and boundary-kernel scaffolds; a complete action derivation is not present.",
+    "complete_action_derivation": false,
+    "evidence": {
+      "all_paths_present": true,
+      "all_tokens_present": true,
+      "present_paths": [
+        "docs/bhsm_sector_projector_ledger_theorem.md",
+        "docs/boundary_graded_defect_action_kernel_v1.md",
+        "src/boundary_graded_defect_action_kernel.py"
+      ],
+      "source_paths": [
+        "docs/bhsm_sector_projector_ledger_theorem.md",
+        "docs/boundary_graded_defect_action_kernel_v1.md",
+        "src/boundary_graded_defect_action_kernel.py"
+      ],
+      "token_hits": {
+        "OPEN": [
+          "docs/boundary_graded_defect_action_kernel_v1.md",
+          "src/boundary_graded_defect_action_kernel.py"
+        ],
+        "Omega_d": [
+          "docs/bhsm_sector_projector_ledger_theorem.md"
+        ],
+        "Omega_l": [
+          "docs/bhsm_sector_projector_ledger_theorem.md"
+        ],
+        "Omega_u": [
+          "docs/bhsm_sector_projector_ledger_theorem.md"
+        ]
+      }
+    },
+    "forbidden_inputs": [
+      "PDG/reference values",
+      "W-mass calibration",
+      "charged-mass fitting",
+      "CKM reference fitting",
+      "neutrino limits",
+      "legacy threshold tables"
+    ],
+    "forbidden_inputs_used": [],
+    "operators": {
+      "down": "Omega_d=q+4j=12",
+      "lepton": "Omega_l=-q+2j=3",
+      "up": "Omega_u=q-2j=6"
+    },
+    "remaining_blockers": [
+      "derive the symbolic parent scaffold uniquely from the complete Berger-Hopf twisted Dirac/bundle action",
+      "prove the sector boundary functional without inserting sector coefficients as scaffold data"
+    ],
+    "status": "STRUCTURALLY_INTEGRATED_NOT_ACTION_DERIVED"
+  },
+  "rho_ch": {
+    "audit": "rho_ch_action_derivation",
+    "branch_candidates": [
+      1,
+      2,
+      3
+    ],
+    "claim_boundary": "Rank-three and cyclic arguments motivate rho_ch=3 but do not select it from the action.",
+    "evidence": {
+      "all_paths_present": true,
+      "all_tokens_present": true,
+      "present_paths": [
+        "docs/bhsm_charged_hessian_source_audit.md",
+        "docs/charged_stiffness_action_selector_v1.md",
+        "src/charged_stiffness_action_selector.py"
+      ],
+      "source_paths": [
+        "docs/bhsm_charged_hessian_source_audit.md",
+        "docs/charged_stiffness_action_selector_v1.md",
+        "src/charged_stiffness_action_selector.py"
+      ],
+      "token_hits": {
+        "OPEN_LOCALIZABLE": [
+          "docs/bhsm_charged_hessian_source_audit.md",
+          "docs/charged_stiffness_action_selector_v1.md",
+          "src/charged_stiffness_action_selector.py"
+        ],
+        "rho_ch=3": [
+          "docs/bhsm_charged_hessian_source_audit.md",
+          "docs/charged_stiffness_action_selector_v1.md",
+          "src/charged_stiffness_action_selector.py"
+        ],
+        "rho_ch_exact_value": [
+          "docs/charged_stiffness_action_selector_v1.md",
+          "src/charged_stiffness_action_selector.py"
+        ]
+      }
+    },
+    "forbidden_inputs": [
+      "PDG/reference values",
+      "W-mass calibration",
+      "charged-mass fitting",
+      "CKM reference fitting",
+      "neutrino limits",
+      "legacy threshold tables"
+    ],
+    "forbidden_inputs_used": [],
+    "remaining_blockers": [
+      "derive charged q and j stiffness coefficients from one normalized boundary action",
+      "show k_j/k_q=3 independently of mass, mixing, or target-ratio comparisons"
+    ],
+    "selected_value": null,
+    "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+    "target": "rho_ch=k_j/k_q=3"
+  },
+  "status": "ACTION_DERIVATION_GATES_OPEN",
+  "version": "1.9"
+}

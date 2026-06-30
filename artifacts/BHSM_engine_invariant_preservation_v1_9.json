@@ -1,0 +1,25 @@
+{
+  "checks": {
+    "boost_inverse_composition_consistent": true,
+    "inverse_transform_consistent": true,
+    "large_magnitude_finite": true,
+    "minkowski_norm_preserved": true,
+    "near_null_finite": true,
+    "roundtrip_preserved": true,
+    "zero_momentum_chart_defined": true
+  },
+  "claim_boundaries": [
+    "engine validation does not validate BHSM particle physics",
+    "no detector tracking or reconstruction is tested",
+    "ROOT LorentzVector comparison remains an external-runtime check"
+  ],
+  "metrics": {
+    "max_boost_inverse_composition_error": 2.384185788631439e-16,
+    "max_lorentz_relative_backward_error": 1.1102230246251565e-16,
+    "max_roundtrip_scale_aware_error": 0.0,
+    "tolerance": 5.684341886080802e-14
+  },
+  "sample_count": 5,
+  "scope": "four-vector coordinate transformations; not detector reconstruction",
+  "status": "ENGINE_INVARIANTS_DETERMINISTIC_OFFLINE_PASS"
+}

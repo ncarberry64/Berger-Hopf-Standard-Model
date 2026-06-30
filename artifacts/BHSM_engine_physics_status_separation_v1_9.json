@@ -1,0 +1,43 @@
+{
+  "claim_boundaries": [
+    "BHSM Engine validation does not constitute empirical validation of BHSM as new particle physics.",
+    "BHSM does not claim full Standard Model derivation or physical eV/GeV neutrino mass closure."
+  ],
+  "engine_excluded_capabilities": [
+    "detector track reconstruction",
+    "magnetic-field or material propagation",
+    "track fitting",
+    "empirical validation of BHSM particle physics",
+    "CMS, CERN, or ATLAS endorsement"
+  ],
+  "engine_validated_capabilities": [
+    "high-throughput precision-gated four-vector coordinate transformations",
+    "synthetic boundary-stress validation",
+    "published CMS dimuon four-vector kinematics validation",
+    "CERN ROOT 6.30.06 compile and runtime smoke gate",
+    "deterministic invariant-preservation tests"
+  ],
+  "physics_current_status": "integrated conditional Berger-Hopf boundary-mode framework",
+  "physics_open_blockers": [
+    "complete action derivations",
+    "transport theorems",
+    "physical normalization and unit maps",
+    "gauge/scalar normalization",
+    "physical neutrino mass closure",
+    "external runtime/export gates"
+  ],
+  "runtime_gates": {
+    "feynrules_ufo_madgraph": "RUNTIME_GATED",
+    "native_pmu": "PERF_COUNTERS_UNAVAILABLE_OR_PERMISSION_DENIED_ON_HOSTED_RUNNER",
+    "root": "CI_COMPILED_RUNTIME_GATED"
+  },
+  "validated_data_sources": [
+    {
+      "doi": "10.7483/OPENDATA.CMS.4M97.3SQ9",
+      "name": "CMS 2010 dimuon derived education dataset",
+      "record": 303,
+      "scope": "four-vector coordinate transformations only"
+    }
+  ],
+  "version": "1.9"
+}

@@ -1,6 +1,6 @@
 # Berger-Hopf Standard Model (BHSM)
 
-[![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml) [![Tests: 2277 passed](https://img.shields.io/badge/tests-2277%20passed-brightgreen)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
+[![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml) [![Tests: 2295 passed](https://img.shields.io/badge/tests-2295%20passed-brightgreen)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
 BHSM is a research framework for studying Berger-Hopf geometry, frozen internal prediction artifacts, and candidate links to flavor, boundary structure, and effective field descriptions.
 
@@ -157,6 +157,23 @@ The concise allowed and forbidden claim list is maintained in
 [CLAIMS.md](CLAIMS.md). In particular, a W-boson calibration run does not count
 W as an independent prediction, and the electron-neutrino comparison is
 upper-limit based unless a vetted central reference is explicitly supplied.
+
+## Engine and Physics Status
+
+The BHSM Engine validates high-throughput, precision-gated geometric coordinate transformations on synthetic and real HEP kinematic data.
+
+BHSM Engine validation does not constitute empirical validation of BHSM as new particle physics.
+
+BHSM Physics remains an integrated conditional Berger-Hopf boundary-mode framework with open action, transport, normalization, unit-map, gauge/scalar, and runtime gates.
+
+BHSM does not claim full Standard Model derivation or physical eV/GeV neutrino mass closure.
+
+Reviewers can start with `make reviewer-smoke`, inspect deterministic invariants
+with `make reviewer-invariants`, and follow the staged protocol in
+[docs/reviewer_reproduction_guide.md](docs/reviewer_reproduction_guide.md).
+The CERN Open Data benchmark covers published muon four-vector transformations,
+not detector track reconstruction. The hosted ROOT two-thread result is a
+reported regression (`0.940x`), not a concurrency-scaling claim.
 
 ## Repository Map
 
