@@ -157,7 +157,7 @@ BHSM Physics remains an integrated conditional Berger-Hopf boundary-mode framewo
 BHSM does not claim full Standard Model derivation or physical eV/GeV neutrino mass closure.
 
 Start with `make reviewer-smoke` and the [reproduction guide](docs/reviewer_reproduction_guide.md).
-The benchmark covers four-vector transforms, not tracking; hosted ROOT two-thread throughput regressed to `0.940x`.
+The benchmark covers four-vector transforms, not tracking; hosted ROOT two-thread throughput regressed to `0.940x`. Runtime-Gated External Tools remain separate.
 
 ## Repository Map
 
