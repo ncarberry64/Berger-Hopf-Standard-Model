@@ -1,7 +1,8 @@
 # Berger-Hopf Standard Model (BHSM)
 
-BHSM is a research framework for studying Berger-Hopf geometry, frozen internal prediction artifacts,
-and candidate links to flavor, boundary structure, and effective field descriptions.
+[![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml) [![Tests: 2266 passed](https://img.shields.io/badge/tests-2266%20passed-brightgreen)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
+
+BHSM is a research framework for studying Berger-Hopf geometry, frozen internal prediction artifacts, and candidate links to flavor, boundary structure, and effective field descriptions.
 
 BHSM currently provides an artifact-backed computational framework with frozen
 internal predictions, Python interfaces, prediction registry, CLI reports,
@@ -9,6 +10,19 @@ gallery/notebook review tools, provenance-tracked adapters, and theorem-closure
 machinery. Its evidence status is computational and artifact-backed;
 institutional integration, complete 4D export, and external HEP runtime
 validation remain outside the current package.
+
+![Near-pole coordinate comparison](docs/assets/bhsm_boundary_mapping_explainer.gif)
+
+The animation shows a coordinate-chart seam, not a detector failure. The measured benchmark compares equivalent synthetic kernels and does not claim production HEP superiority. CI gates committed and fresh-run numerical deltas at `1e-13`.
+
+## Computational Quickstart (30 Seconds)
+
+```bash
+git clone https://github.com/ncarberry64/Berger-Hopf-Standard-Model.git
+cd Berger-Hopf-Standard-Model && ./run_benchmark.sh
+```
+
+Windows PowerShell: `./run_benchmark.ps1`. Docker instructions and the optional [CERN ROOT adapter](integrations/cern-root/README.md) include generic-safe CMake installation plus opt-in AVX2/AVX-512 flags for homogeneous nodes.
 
 ## What This Repository Contains
 
@@ -51,23 +65,9 @@ BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode
 [STATUS.md](STATUS.md) is the single source of truth. Historical README material is preserved in
 [docs/archive/README_status_history_pre_v0_7.md](docs/archive/README_status_history_pre_v0_7.md).
 
-## Computational Quickstart
+## Reviewer Quickstart
 
-```bash
-python -m pytest -q
-python -m bhsm.interface registry
-python -m bhsm.interface gallery --format markdown
-python -m bhsm.interface artifact-sources
-python -m bhsm.interface formula-registry
-python -m bhsm.interface theorem-blockers
-python -m bhsm.interface minimal-action-status
-python -m bhsm.interface neutral-spectral-report --format markdown
-python -m bhsm.interface neutral-positivity-report --format markdown
-python -m bhsm.interface neutral-action-closure-report --format markdown
-python -m bhsm.interface neutrino-closure-status --format markdown
-python -m bhsm.interface final-completion-status --format markdown
-python -m bhsm.interface charged-closure-report --format markdown
-```
+Run `python -m pytest -q`, then see [QUICKSTART.md](QUICKSTART.md) and [CLI_REFERENCE.md](CLI_REFERENCE.md) for the complete offline review surface.
 
 The legacy gravitational curvature expression is dimensionally gated because K has units L^-2 and (c^2/G) r^2 K has units M/L, not M.
 BHSM does not use the legacy gravitational curvature expression as a direct particle mass formula.

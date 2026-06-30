@@ -1,3 +1,4 @@
+import shutil
 import subprocess
 from pathlib import Path
 
@@ -242,7 +243,7 @@ def test_submission_checklist_tracks_remaining_publication_blockers():
 def test_typesetting_pass_does_not_modify_source_model_files():
     result = subprocess.run(
         [
-            r"C:\Program Files\Git\cmd\git.exe",
+            shutil.which("git") or "git",
             "diff",
             "--name-only",
             "HEAD",

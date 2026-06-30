@@ -31,6 +31,7 @@ def _parser() -> argparse.ArgumentParser:
     parser.add_argument("--output", default="artifacts/coordinate_benchmark/coordinate_benchmark_results.json")
     parser.add_argument("--markdown", default="docs/coordinate_benchmark_results.md")
     parser.add_argument("--plot", default="artifacts/coordinate_benchmark/coordinate_benchmark_latency.png")
+    parser.add_argument("--summary", action="store_true", help="Print a concise terminal summary")
     parser.add_argument("--worker", choices=tuple(KERNELS), default=None, help=argparse.SUPPRESS)
     return parser
 
@@ -208,12 +209,35 @@ def run(args: argparse.Namespace) -> dict[str, object]:
     return payload
 
 
+def _terminal_summary(payload: dict[str, object]) -> str:
+    results = payload["results"]
+    comparisons = payload["comparisons"]
+    correctness = payload["correctness"]
+    return "\n".join(
+        (
+            "BHSM synthetic coordinate microbenchmark",
+            f"events={payload['dataset']['event_count']:,} boundary_cases={payload['dataset']['boundary_event_count']:,}",
+            f"scalar_cylindrical={results['branchy_cylindrical_scalar']['median_seconds']:.6f}s",
+            f"vectorized_cylindrical={results['cylindrical_vectorized_control']['median_seconds']:.6f}s",
+            f"bhsm_inspired_direct={results['bhsm_boundary_vectorized']['median_seconds']:.6f}s",
+            f"speedup_vs_scalar={comparisons['scalar_baseline_speedup']:.3f}x",
+            f"speedup_vs_vectorized_control={comparisons['vectorized_control_speedup']:.3f}x",
+            f"max_numerical_delta={correctness['maximum_absolute_difference']:.3e}",
+            f"branch_counters={payload['hardware_counters']['status']}",
+            "status=SYNTHETIC_MICROBENCHMARK_NOT_PRODUCTION_HEP_VALIDATION",
+        )
+    )
+
+
 def main() -> int:
     args = _parser().parse_args()
     if args.worker:
         return _worker(args)
     payload = run(args)
-    print(json.dumps(payload, indent=2, sort_keys=True))
+    if args.summary:
+        print(_terminal_summary(payload))
+    else:
+        print(json.dumps(payload, indent=2, sort_keys=True))
     return 0
 
 

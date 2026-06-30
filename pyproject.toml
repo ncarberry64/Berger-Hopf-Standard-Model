@@ -9,8 +9,13 @@ dependencies = [
   "pytest",
 ]
 
+[project.optional-dependencies]
+benchmark = [
+  "matplotlib",
+  "pillow",
+]
+
 [tool.pytest.ini_options]
 pythonpath = ["src"]
 testpaths = ["tests"]
 addopts = "-ra"
-

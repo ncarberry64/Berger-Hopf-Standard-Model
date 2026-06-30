@@ -1,0 +1,74 @@
+name: test-suite
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install
+        run: python -m pip install -e ".[benchmark]"
+      - name: Test suite
+        run: python -m pytest -q --junitxml=artifacts/pytest-results.xml
+      - name: Coordinate benchmark precision gate
+        run: |
+          python tools/verify_precision.py
+          python -m bhsm.interface.benchmarks.coordinate_benchmark \
+            --events 100000 \
+            --boundary-fraction 0.35 \
+            --repeats 1 \
+            --output tmp/ci-coordinate-benchmark/results.json \
+            --markdown tmp/ci-coordinate-benchmark/results.md \
+            --plot tmp/ci-coordinate-benchmark/latency.png \
+            --summary
+          python tools/verify_precision.py \
+            --results tmp/ci-coordinate-benchmark/results.json
+      - name: Claim and frozen-integrity audits
+        run: |
+          python tools/audit_forbidden_claims.py
+          python tools/audit_bhsm_status.py
+          python tools/audit_frozen_prediction_integrity.py
+      - name: Upload test report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pytest-results
+          path: artifacts/pytest-results.xml
+
+  root-integration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    container:
+      image: rootproject/root@sha256:9d2a9dd6991dc3571eeb8a33b0eb313cfd785eb3303b14ce0170b09a44c2ecb7
+    steps:
+      - uses: actions/checkout@v4
+      - name: Report ROOT toolchain
+        run: |
+          root-config --version
+          cmake --version
+      - name: Configure generic-safe ROOT integration
+        run: >-
+          cmake -S . -B build
+          -DBUILD_ROOT_INTEGRATION=ON
+          -DENABLE_AVX2=OFF
+          -DENABLE_AVX512=OFF
+          -DCMAKE_BUILD_TYPE=Release
+      - name: Compile ROOT integration
+        run: cmake --build build --config Release --parallel 2
+      - name: Run live ROOT integration smoke test
+        run: ctest --test-dir build --build-config Release --output-on-failure
