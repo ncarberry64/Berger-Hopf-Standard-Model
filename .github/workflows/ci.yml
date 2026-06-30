@@ -1,0 +1,36 @@
+name: test-suite
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install
+        run: python -m pip install -e ".[benchmark]"
+      - name: Test suite
+        run: python -m pytest -q --junitxml=artifacts/pytest-results.xml
+      - name: Claim and frozen-integrity audits
+        run: |
+          python tools/audit_forbidden_claims.py
+          python tools/audit_bhsm_status.py
+          python tools/audit_frozen_prediction_integrity.py
+      - name: Upload test report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pytest-results
+          path: artifacts/pytest-results.xml
