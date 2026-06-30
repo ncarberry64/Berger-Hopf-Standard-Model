@@ -131,3 +131,5 @@ def test_frozen_hash_inputs_have_cross_platform_line_ending_contract() -> None:
     attributes = (ROOT / ".gitattributes").read_text(encoding="utf-8")
     assert "docs/frozen_predictions.md text eol=crlf" in attributes
     assert "docs/frozen_predictions.json text eol=crlf" in attributes
+    assert "artifacts/CKM_no_fit_operator_output_v1.json text eol=crlf" in attributes
+    assert "src/bhsm/interface/predictions.py text eol=crlf" in attributes
