@@ -16,6 +16,8 @@ The current minimal-action theory dictionary is documented in
   CMS dimuon four-vector throughput validation; not track reconstruction.
 - [Native microarchitecture profiling](native_microarchitecture_profiling.md):
   compiled-kernel Linux perf protocol with explicit PMU availability status.
+- [ROOT implicit-multithreading scaling](root_imt_scaling.md): process-isolated
+  concurrency scan with deterministic checksums and bounded scaling claims.
 
 - [Current BHSM status](current_bhsm_status.md)
 - [Author ontology v0.8](author_ontology_v0_8.md)

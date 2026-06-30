@@ -72,6 +72,21 @@ jobs:
         run: cmake --build build --config Release --parallel 2
       - name: Run live ROOT integration smoke test
         run: ctest --test-dir build --build-config Release --output-on-failure
+      - name: Measure ROOT implicit-multithreading scaling
+        run: >-
+          python tools/run_root_imt_scaling.py
+          --executable build/bhsm_root_imt_scaling
+          --threads 1,2
+          --entries 500000
+          --repeats 3
+          --output artifacts/runtime/root_imt_scaling.json
+      - name: Report ROOT scaling rows
+        run: cat artifacts/runtime/root_imt_scaling.json
+      - name: Upload ROOT scaling report
+        uses: actions/upload-artifact@v4
+        with:
+          name: root-imt-scaling
+          path: artifacts/runtime/root_imt_scaling.json
 
   native-profile:
     runs-on: ubuntu-latest
