@@ -1,6 +1,6 @@
 # ROOT Implicit-Multithreading Scaling
 
-Status: `ROOT_IMT_HARNESS_READY_CI_SCAN_PENDING`.
+Status: `ROOT_IMT_SCALING_MEASURED_ENVIRONMENT_SPECIFIC`.
 
 The harness calls `ROOT::EnableImplicitMT(N)` before constructing each
 `RDataFrame`. Every thread count runs in a separate process, preventing ROOT
@@ -19,3 +19,14 @@ Reported metrics are throughput, speedup versus one thread, parallel
 efficiency, latency, and checksum status. A two-core hosted result is not a
 claim of linear cluster scaling, absence of all races, or production detector
 readiness.
+
+## Hosted-runner result
+
+| Threads | Median seconds | Entries/s | Speedup | Efficiency | Checksum |
+| ---: | ---: | ---: | ---: | ---: | --- |
+| 1 | 0.021603 | 23,145,121 | 1.000x | 100.0% | pass |
+| 2 | 0.022977 | 21,761,003 | 0.940x | 47.0% | pass |
+
+Two threads did not improve this 500,000-entry pure-map workload on the shared
+Azure runner. The result indicates that scheduling overhead dominates at this
+scale; it is not evidence for favorable scaling on larger nodes.

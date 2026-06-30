@@ -32,13 +32,15 @@ def test_scaling_metrics_use_one_thread_baseline() -> None:
     assert rows[2]["parallel_efficiency"] == 0.8
 
 
-def test_status_does_not_preclaim_cluster_scaling() -> None:
+def test_status_reports_unfavorable_ci_scaling_without_preclaim() -> None:
     payload = json.loads(
         (ROOT / "artifacts/root_imt_scaling/scaling_status.json").read_text(encoding="utf-8")
     )
-    assert payload["status"] == "ROOT_IMT_HARNESS_READY_CI_SCAN_PENDING"
+    assert payload["status"] == "ROOT_IMT_SCALING_MEASURED_ENVIRONMENT_SPECIFIC"
     assert payload["linear_scaling_claimed"] is False
-    assert payload["measured_rows"] is None
+    assert payload["two_thread_improvement_observed"] is False
+    assert payload["rows"][1]["speedup_vs_one_thread"] < 1.0
+    assert payload["all_checksums_pass"] is True
     assert payload["frozen_predictions_changed"] is False
 
 

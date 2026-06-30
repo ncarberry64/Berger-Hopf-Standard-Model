@@ -1,9 +1,32 @@
 {
-  "status": "ROOT_IMT_HARNESS_READY_CI_SCAN_PENDING",
-  "thread_counts_targeted": [1, 2, 4, 8, 16, 32, 64],
-  "ci_thread_counts": [1, 2],
-  "measured_rows": null,
+  "status": "ROOT_IMT_SCALING_MEASURED_ENVIRONMENT_SPECIFIC",
+  "source_run": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/runs/28467078878",
+  "platform": "Linux-6.17.0-1018-azure-x86_64-with-glibc2.35",
+  "logical_cpu_count": 4,
+  "entries": 500000,
+  "repeats": 3,
+  "rows": [
+    {
+      "threads": 1,
+      "median_seconds": 0.021602825,
+      "entries_per_second": 23145121.06634202,
+      "speedup_vs_one_thread": 1.0,
+      "parallel_efficiency": 1.0,
+      "checksum_ok": true
+    },
+    {
+      "threads": 2,
+      "median_seconds": 0.022976882,
+      "entries_per_second": 21761003.081270993,
+      "speedup_vs_one_thread": 0.9401982827783161,
+      "parallel_efficiency": 0.47009914138915804,
+      "checksum_ok": true
+    }
+  ],
+  "all_checksums_pass": true,
+  "two_thread_improvement_observed": false,
   "linear_scaling_claimed": false,
   "race_free_claimed_beyond_checksum_scope": false,
+  "larger_node_scan_required": true,
   "frozen_predictions_changed": false
 }
