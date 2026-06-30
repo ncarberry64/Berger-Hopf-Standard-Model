@@ -12,6 +12,9 @@ The current minimal-action theory dictionary is documented in
 
 ## Overview
 
+- [CERN Open Data coordinate benchmark](cern_open_data_benchmark.md): checksum-gated
+  CMS dimuon four-vector throughput validation; not track reconstruction.
+
 - [Current BHSM status](current_bhsm_status.md)
 - [Author ontology v0.8](author_ontology_v0_8.md)
 - [Neutrino propagation mass](neutrino_propagation_mass.md)
