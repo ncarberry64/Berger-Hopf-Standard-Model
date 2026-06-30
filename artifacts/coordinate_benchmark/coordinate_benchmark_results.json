@@ -1,0 +1,120 @@
+{
+  "benchmark_status": "SYNTHETIC_MICROBENCHMARK_NOT_PRODUCTION_HEP_VALIDATION",
+  "bhsm_kernel_status": "BHSM_INSPIRED_BOUNDARY_MAP_NOT_OFFICIAL_TRACKING_ENGINE",
+  "claim_boundaries": [
+    "synthetic coordinate-mapping microbenchmark only",
+    "not production HEP tracking validation",
+    "BHSM-inspired kernel is not the official BHSM prediction engine",
+    "no frozen or official prediction changes"
+  ],
+  "comparisons": {
+    "memory_reduction_vs_scalar_percent": -39.51493581123211,
+    "memory_reduction_vs_vectorized_control_percent": 16.284774747809767,
+    "scalar_baseline_speedup": 39.20509955823036,
+    "vectorized_control_speedup": 3.1794200083943345
+  },
+  "configuration": {
+    "boundary_fraction": 0.35,
+    "cpu_count": 16,
+    "events": 10000000,
+    "numpy": "2.4.6",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "processor": "AMD64 Family 26 Model 68 Stepping 0, AuthenticAMD",
+    "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+    "repeats": 3,
+    "seed": 1729
+  },
+  "correctness": {
+    "all_kernels_equivalent": true,
+    "maximum_absolute_difference": 1.0658141036401503e-14,
+    "rows": {
+      "bhsm_boundary_vectorized": {
+        "allclose_rtol_1e_12_atol_1e_12": true,
+        "max_absolute_difference": 1.0658141036401503e-14,
+        "mean_absolute_difference": 5.684189377392808e-17
+      },
+      "cylindrical_vectorized_control": {
+        "allclose_rtol_1e_12_atol_1e_12": true,
+        "max_absolute_difference": 1.0658141036401503e-14,
+        "mean_absolute_difference": 2.8753213460360437e-17
+      }
+    }
+  },
+  "dataset": {
+    "azimuth_seam_count": 1166666,
+    "boundary_event_count": 3500000,
+    "boundary_fraction_requested": 0.35,
+    "bytes": 330000000,
+    "event_count": 10000000,
+    "near_origin_count": 583334,
+    "pole_count": 1750000,
+    "sha256": "80ae72e923c92b1f97a2d0e5e69fec33a227edecf3b4ac7ed9a73395cca9b95c"
+  },
+  "hardware_counters": {
+    "branch_mispredictions_collected": false,
+    "note": "Use Linux perf stat around an isolated worker for hardware counters.",
+    "status": "HARDWARE_COUNTERS_UNAVAILABLE_ON_WINDOWS"
+  },
+  "results": {
+    "bhsm_boundary_vectorized": {
+      "branch_counter_status": "HARDWARE_COUNTERS_UNAVAILABLE_ON_WINDOWS",
+      "branch_miss_rate": null,
+      "events_per_second": 35569214.13378293,
+      "hardware_branch_count": null,
+      "hardware_branch_misses": null,
+      "implementation_status": "BHSM_INSPIRED_BOUNDARY_MAP_NOT_OFFICIAL_TRACKING_ENGINE",
+      "kernel": "bhsm_boundary_vectorized",
+      "maximum_seconds": 0.2904974,
+      "median_seconds": 0.281142,
+      "minimum_seconds": 0.2795651,
+      "output_checksum": 19517901.141272955,
+      "output_sha256": "6a1ed6791062056c077561a54dedc7c0ed9a6f3290e9fbf445dea4e685480bbf",
+      "peak_rss_bytes": 1695518720,
+      "timings_seconds": [
+        0.2795651,
+        0.281142,
+        0.2904974
+      ]
+    },
+    "branchy_cylindrical_scalar": {
+      "branch_counter_status": "HARDWARE_COUNTERS_UNAVAILABLE_ON_WINDOWS",
+      "branch_miss_rate": null,
+      "events_per_second": 907259.8854379355,
+      "hardware_branch_count": null,
+      "hardware_branch_misses": null,
+      "implementation_status": "SYNTHETIC_MICROBENCHMARK_NOT_PRODUCTION_HEP_VALIDATION",
+      "kernel": "branchy_cylindrical_scalar",
+      "maximum_seconds": 11.6698236,
+      "median_seconds": 11.0222001,
+      "minimum_seconds": 10.9808143,
+      "output_checksum": 19517901.141272955,
+      "output_sha256": "002e6027644760f6cf1b0abe842d9d1b2b21bc31d859dbd88c2877934dfef2d1",
+      "peak_rss_bytes": 1215295488,
+      "timings_seconds": [
+        11.6698236,
+        11.0222001,
+        10.9808143
+      ]
+    },
+    "cylindrical_vectorized_control": {
+      "branch_counter_status": "HARDWARE_COUNTERS_UNAVAILABLE_ON_WINDOWS",
+      "branch_miss_rate": null,
+      "events_per_second": 11187327.889952494,
+      "hardware_branch_count": null,
+      "hardware_branch_misses": null,
+      "implementation_status": "SYNTHETIC_MICROBENCHMARK_NOT_PRODUCTION_HEP_VALIDATION",
+      "kernel": "cylindrical_vectorized_control",
+      "maximum_seconds": 0.9048122,
+      "median_seconds": 0.8938685,
+      "minimum_seconds": 0.8932901,
+      "output_checksum": 19517901.141272955,
+      "output_sha256": "d93dfe5cff2e1c5062af4894924cd88d3c98d6bd10889cea6fa2648cd3370554",
+      "peak_rss_bytes": 2025340928,
+      "timings_seconds": [
+        0.8938685,
+        0.8932901,
+        0.9048122
+      ]
+    }
+  }
+}
