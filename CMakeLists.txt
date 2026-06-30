@@ -6,6 +6,7 @@ include(CheckCXXCompilerFlag)
 include(CTest)
 
 option(BUILD_ROOT_INTEGRATION "Build the optional CERN ROOT integration smoke test" OFF)
+option(BUILD_NATIVE_BENCHMARK "Build the native coordinate profiling harness" ON)
 option(ENABLE_AVX2 "Enable AVX2/FMA for BHSM C++ coordinate targets" OFF)
 option(ENABLE_AVX512 "Enable AVX-512F/CD for BHSM C++ coordinate targets" OFF)
 
@@ -45,6 +46,18 @@ elseif(ENABLE_AVX2)
     bhsm_require_compile_flag("-mfma" BHSM_HAS_FMA)
     target_compile_options(bhsm_coordinate INTERFACE -mavx2 -mfma)
   endif()
+endif()
+
+if(BUILD_NATIVE_BENCHMARK)
+  add_executable(
+    bhsm_native_coordinate_benchmark
+    integrations/native-benchmark/native_coordinate_benchmark.cxx
+  )
+  target_link_libraries(bhsm_native_coordinate_benchmark PRIVATE bhsm_coordinate)
+  add_test(
+    NAME bhsm_native_coordinate_self_test
+    COMMAND bhsm_native_coordinate_benchmark --self-test
+  )
 endif()
 
 if(BUILD_ROOT_INTEGRATION)
