@@ -26,7 +26,7 @@ int main() {
                         },
                         {"bhsm_state"});
 
-  const auto radii = mapped.Take<double>("bhsm_radius");
+  auto radii = mapped.Take<double>("bhsm_radius");
   if (radii->size() != 3) {
     std::cerr << "unexpected RDataFrame result size\n";
     return 1;
