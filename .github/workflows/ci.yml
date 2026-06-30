@@ -72,3 +72,46 @@ jobs:
         run: cmake --build build --config Release --parallel 2
       - name: Run live ROOT integration smoke test
         run: ctest --test-dir build --build-config Release --output-on-failure
+
+  native-profile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install benchmark runtime
+        run: python -m pip install -e .
+      - name: Download and verify CERN Open Data sample
+        run: >-
+          python -m bhsm.interface.benchmarks.cern_open_data_benchmark
+          --download --repeats 1 --replication-factor 1
+          --output tmp/native-profile/source-check.json
+          --markdown tmp/native-profile/source-check.md
+      - name: Build native profiling harness
+        run: |
+          cmake -S . -B build/native-profile \
+            -DBUILD_NATIVE_BENCHMARK=ON \
+            -DBUILD_ROOT_INTEGRATION=OFF \
+            -DENABLE_AVX2=OFF \
+            -DENABLE_AVX512=OFF \
+            -DCMAKE_BUILD_TYPE=Release
+          cmake --build build/native-profile --config Release --parallel 2
+          ctest --test-dir build/native-profile --output-on-failure
+      - name: Attempt hardware-counter collection
+        run: >-
+          python tools/run_linux_perf_profile.py
+          --executable build/native-profile/bhsm_native_coordinate_benchmark
+          --data data/external/cern_open_data/dimuon.csv
+          --repetitions 3
+          --replication-factor 10
+          --output artifacts/runtime/native_microarchitecture_profile.json
+      - name: Report counter availability
+        run: cat artifacts/runtime/native_microarchitecture_profile.json
+      - name: Upload profiling report
+        uses: actions/upload-artifact@v4
+        with:
+          name: native-microarchitecture-profile
+          path: artifacts/runtime/native_microarchitecture_profile.json
