@@ -67,8 +67,16 @@ if(BUILD_ROOT_INTEGRATION)
     bhsm_root_integration_smoke
     integrations/cern-root/tests/root_integration_smoke.cxx
   )
+  add_executable(
+    bhsm_root_imt_scaling
+    integrations/cern-root/tests/root_imt_scaling.cxx
+  )
   target_link_libraries(
     bhsm_root_integration_smoke
+    PRIVATE bhsm_coordinate ROOT::ROOTDataFrame
+  )
+  target_link_libraries(
+    bhsm_root_imt_scaling
     PRIVATE bhsm_coordinate ROOT::ROOTDataFrame
   )
   if(ROOT_CXX_STANDARD)
@@ -79,4 +87,8 @@ if(BUILD_ROOT_INTEGRATION)
   endif()
 
   add_test(NAME bhsm_root_integration_smoke COMMAND bhsm_root_integration_smoke)
+  add_test(
+    NAME bhsm_root_imt_scaling_smoke
+    COMMAND bhsm_root_imt_scaling --threads 2 --entries 10000 --repeats 1
+  )
 endif()
