@@ -1,6 +1,6 @@
 # Berger-Hopf Standard Model (BHSM)
 
-[![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml) [![Tests: 2262 passed](https://img.shields.io/badge/tests-2262%20passed-brightgreen)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
+[![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml) [![Tests: 2266 passed](https://img.shields.io/badge/tests-2266%20passed-brightgreen)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
 BHSM is a research framework for studying Berger-Hopf geometry, frozen internal prediction artifacts, and candidate links to flavor, boundary structure, and effective field descriptions.
 
@@ -13,7 +13,7 @@ validation remain outside the current package.
 
 ![Near-pole coordinate comparison](docs/assets/bhsm_boundary_mapping_explainer.gif)
 
-The animation shows a coordinate-chart seam, not a detector failure. The measured benchmark compares equivalent synthetic kernels and does not claim production HEP superiority.
+The animation shows a coordinate-chart seam, not a detector failure. The measured benchmark compares equivalent synthetic kernels and does not claim production HEP superiority. CI gates committed and fresh-run numerical deltas at `1e-13`.
 
 ## Computational Quickstart (30 Seconds)
 
@@ -22,7 +22,7 @@ git clone https://github.com/ncarberry64/Berger-Hopf-Standard-Model.git
 cd Berger-Hopf-Standard-Model && ./run_benchmark.sh
 ```
 
-Windows PowerShell: `./run_benchmark.ps1`. Docker instructions and the optional [CERN ROOT adapter](integrations/cern-root/README.md) are included.
+Windows PowerShell: `./run_benchmark.ps1`. Docker instructions and the optional [CERN ROOT adapter](integrations/cern-root/README.md) include generic-safe CMake installation plus opt-in AVX2/AVX-512 flags for homogeneous nodes.
 
 ## What This Repository Contains
 

@@ -47,6 +47,7 @@ class FakeFrame:
 
 def test_root_adapter_declares_header_and_builds_rdataframe_columns() -> None:
     adapter = _load_root_adapter()
+    assert adapter.INTEGRATION_STATUS == "ROOT_ADAPTER_LIVE_COMPILED_IN_CI_NOT_PRODUCTION_VALIDATED"
     root = FakeROOT()
     adapter.install(root)
     assert "BHSMCoordinate.hxx" in root.gInterpreter.declarations[0]
@@ -64,10 +65,11 @@ def test_root_adapter_declares_header_and_builds_rdataframe_columns() -> None:
     ]
 
 
-def test_root_integration_fails_closed_without_runtime_validation() -> None:
+def test_root_integration_reports_ci_compile_without_production_promotion() -> None:
     status = json.loads((ROOT_INTEGRATION / "integration_status.json").read_text(encoding="utf-8"))
-    assert status["status"] == "OPTIONAL_ROOT_ADAPTER_NOT_RUNTIME_VALIDATED_IN_REPOSITORY_CI"
+    assert status["status"] == "ROOT_ADAPTER_LIVE_COMPILED_IN_CI_NOT_PRODUCTION_VALIDATED"
     assert status["root_runtime_available_during_development"] is False
+    assert status["root_runtime_validation_configured_in_ci"] is True
     assert status["production_hep_tracking_claimed"] is False
     assert status["frozen_predictions_changed"] is False
 
@@ -120,11 +122,29 @@ def test_ci_and_visual_assets_are_discoverable_and_claim_bounded() -> None:
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
     gif = (ROOT / "docs/assets/bhsm_boundary_mapping_explainer.gif").read_bytes()
     assert "python -m pytest -q" in workflow
+    assert "python tools/verify_precision.py" in workflow
+    assert "--events 100000" in workflow
+    assert "tmp/ci-coordinate-benchmark/results.json" in workflow
     assert "audit_frozen_prediction_integrity.py" in workflow
+    assert "rootproject/root@sha256:" in workflow
+    assert "-DBUILD_ROOT_INTEGRATION=ON" in workflow
+    assert "-DENABLE_AVX2=OFF" in workflow
+    assert "-DENABLE_AVX512=OFF" in workflow
     assert "actions/workflows/ci.yml/badge.svg" in readme
     assert "bhsm_boundary_mapping_explainer.gif" in readme
     assert "not a detector failure" in readme
     assert gif[:6] in (b"GIF87a", b"GIF89a")
+
+
+def test_cmake_simd_defaults_are_generic_safe_and_target_scoped() -> None:
+    cmake = (ROOT / "CMakeLists.txt").read_text(encoding="utf-8")
+    header = (ROOT_INTEGRATION / "include/BHSMCoordinate.hxx").read_text(encoding="utf-8")
+    assert 'option(ENABLE_AVX2 "Enable AVX2/FMA for BHSM C++ coordinate targets" OFF)' in cmake
+    assert 'option(ENABLE_AVX512 "Enable AVX-512F/CD for BHSM C++ coordinate targets" OFF)' in cmake
+    assert "target_compile_options(bhsm_coordinate INTERFACE" in cmake
+    assert "CMAKE_CXX_FLAGS" not in cmake
+    assert "docs/coordinate_method_benchmark.md" in header
+    assert "not a detector-propagation or track fit" in header
 
 
 def test_frozen_hash_inputs_have_cross_platform_line_ending_contract() -> None:

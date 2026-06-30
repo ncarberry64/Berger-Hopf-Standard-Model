@@ -2,7 +2,7 @@
 
 | Integration | Purpose | Status |
 | --- | --- | --- |
-| [CERN ROOT](cern-root/README.md) | Header-only coordinate utility and PyROOT `RDataFrame` wrapper | `OPTIONAL_ROOT_ADAPTER_NOT_RUNTIME_VALIDATED_IN_REPOSITORY_CI` |
+| [CERN ROOT](cern-root/README.md) | Header-only utility, PyROOT wrapper, and pinned-container C++ smoke test | `ROOT_ADAPTER_LIVE_COMPILED_IN_CI_NOT_PRODUCTION_VALIDATED` |
 | [Benchmark container](benchmark/README.md) | Reproducible containerized synthetic coordinate microbenchmark | `AVAILABLE` |
 
 These adapters do not change frozen predictions or official BHSM model logic.

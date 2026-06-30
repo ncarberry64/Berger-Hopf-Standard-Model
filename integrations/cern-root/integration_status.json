@@ -1,13 +1,15 @@
 {
   "adapter": "BHSMCoordinate.hxx + PyROOT RDataFrame wrapper",
-  "status": "OPTIONAL_ROOT_ADAPTER_NOT_RUNTIME_VALIDATED_IN_REPOSITORY_CI",
+  "status": "ROOT_ADAPTER_LIVE_COMPILED_IN_CI_NOT_PRODUCTION_VALIDATED",
   "root_runtime_available_during_development": false,
   "cxx_compile_validation_available_during_development": false,
+  "root_runtime_validation_configured_in_ci": true,
+  "root_ci_image": "rootproject/root:6.30.06-ubuntu22.04",
+  "root_ci_image_digest": "sha256:9d2a9dd6991dc3571eeb8a33b0eb313cfd785eb3303b14ce0170b09a44c2ecb7",
   "frozen_predictions_changed": false,
   "official_prediction_logic_changed": false,
   "production_hep_tracking_claimed": false,
   "required_external_validation": [
-    "compile BHSMCoordinate.hxx with a supported ROOT toolchain",
     "run the RDataFrame example against a documented ROOT file schema",
     "compare outputs and performance in an institutional HEP environment"
   ]

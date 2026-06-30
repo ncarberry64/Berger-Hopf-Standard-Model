@@ -33,8 +33,22 @@ auto state = bhsm::root::MapBoundaryState(t, x, y, z);
 
 ## Runtime status
 
-`OPTIONAL_ROOT_ADAPTER_NOT_RUNTIME_VALIDATED_IN_REPOSITORY_CI`
+`ROOT_ADAPTER_LIVE_COMPILED_IN_CI_NOT_PRODUCTION_VALIDATED`
 
-ROOT and a C++ compiler were unavailable in the development environment. The
-API contract and generated `RDataFrame.Define` expressions are tested offline,
-but live ROOT compilation and experiment-specific validation remain required.
+CI configures CMake against the pinned official ROOT 6.30.06 container,
+compiles an `RDataFrame` target, and executes it through CTest. ROOT and a C++
+compiler remain unavailable in the local development environment. Documented
+ROOT-file schema validation, detector-software integration, and institutional
+performance validation remain required.
+
+## Portable compilation
+
+```bash
+cmake -S . -B build -DBUILD_ROOT_INTEGRATION=ON
+cmake --build build --config Release
+ctest --test-dir build --output-on-failure
+```
+
+Generic-safe code is the default. `-DENABLE_AVX2=ON` and
+`-DENABLE_AVX512=ON` are opt-in, mutually exclusive target options; use them
+only for homogeneous nodes that advertise the selected ISA.
