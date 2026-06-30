@@ -80,6 +80,8 @@ The current minimal-action theory dictionary is documented in
 - [Prediction gallery](prediction_gallery.md)
 - [Notebook pack](notebook_pack.md)
 - [Live PDG reference adapter](live_pdg_fetching.md)
+- [Synthetic coordinate benchmark methodology](coordinate_method_benchmark.md)
+- [Synthetic coordinate benchmark results](coordinate_benchmark_results.md)
 
 ## Artifact-Backed Adapters
 
