@@ -70,8 +70,14 @@ remains open pending numeric `sqrt(A_nu/Z_nu)` in metres, physical
 
 ## Next Recommended Work
 
+The v1.9 reviewer hardening layer separates the computational engine from the
+conditional physics program, adds deterministic invariants and reproduction
+commands, and records falsifiers. It does not close the following items.
+
 1. Derive the complete charged action selection of `Omega_f` and `rho_ch`; the v1.8 common-16 identities are conditional on them.
 2. Derive or reject the CKM reciprocal logarithmic transport theorem before promoting `1/16`.
 3. Derive the physical dimension and absolute normalization of `dmu_boundary dt`, `Z_ch`, and `A_ch`.
 4. Derive the BHSM shape operator, collar orientation, edge condition, and admissible variations.
 5. Only after interaction eligibility closes, attempt external HEP runtime validation.
+6. Obtain an independent matched-engine reproduction on a PMU-enabled host;
+   preserve regressions and null results rather than selecting favorable hosts.

@@ -1,0 +1,214 @@
+{
+  "rows": [
+    {
+      "claim": "CERN open-data four-vector accuracy",
+      "claim_boundary": "BHSM Engine validation does not constitute empirical validation of BHSM as new particle physics.",
+      "claim_id": "ENG-01",
+      "current_status": "ARTIFACT_BACKED",
+      "current_test_or_artifact": "see ARTIFACT_INDEX.md and reviewer reproduction manifest",
+      "dataset_or_calculation_required": "independent matched reproduction or named complete-action calculation",
+      "prediction_or_requirement": "CERN open-data four-vector accuracy",
+      "track": "ENGINE",
+      "what_would_falsify_it": "scale-aware error exceeds declared bound"
+    },
+    {
+      "claim": "SIMD/control speedup",
+      "claim_boundary": "BHSM Engine validation does not constitute empirical validation of BHSM as new particle physics.",
+      "claim_id": "ENG-02",
+      "current_status": "ENVIRONMENT_SPECIFIC",
+      "current_test_or_artifact": "see ARTIFACT_INDEX.md and reviewer reproduction manifest",
+      "dataset_or_calculation_required": "independent matched reproduction or named complete-action calculation",
+      "prediction_or_requirement": "SIMD/control speedup",
+      "track": "ENGINE",
+      "what_would_falsify_it": "independent matched implementation is not faster"
+    },
+    {
+      "claim": "ROOT implicit multithreading scaling",
+      "claim_boundary": "BHSM Engine validation does not constitute empirical validation of BHSM as new particle physics.",
+      "claim_id": "ENG-03",
+      "current_status": "NEGATIVE_HOSTED_RESULT",
+      "current_test_or_artifact": "see ARTIFACT_INDEX.md and reviewer reproduction manifest",
+      "dataset_or_calculation_required": "independent matched reproduction or named complete-action calculation",
+      "prediction_or_requirement": "ROOT implicit multithreading scaling",
+      "track": "ENGINE",
+      "what_would_falsify_it": "no scaling or regression; current 2-thread run is 0.940x"
+    },
+    {
+      "claim": "Native PMU explanation",
+      "claim_boundary": "BHSM Engine validation does not constitute empirical validation of BHSM as new particle physics.",
+      "claim_id": "ENG-04",
+      "current_status": "RUNTIME_GATED",
+      "current_test_or_artifact": "see ARTIFACT_INDEX.md and reviewer reproduction manifest",
+      "dataset_or_calculation_required": "independent matched reproduction or named complete-action calculation",
+      "prediction_or_requirement": "Native PMU explanation",
+      "track": "ENGINE",
+      "what_would_falsify_it": "PMU counters contradict proposed mechanism"
+    },
+    {
+      "claim": "Lorentz invariant preservation",
+      "claim_boundary": "BHSM Engine validation does not constitute empirical validation of BHSM as new particle physics.",
+      "claim_id": "ENG-05",
+      "current_status": "ARTIFACT_BACKED",
+      "current_test_or_artifact": "see ARTIFACT_INDEX.md and reviewer reproduction manifest",
+      "dataset_or_calculation_required": "independent matched reproduction or named complete-action calculation",
+      "prediction_or_requirement": "Lorentz invariant preservation",
+      "track": "ENGINE",
+      "what_would_falsify_it": "declared backward-error gate fails"
+    },
+    {
+      "claim": "Round-trip coordinate transformation",
+      "claim_boundary": "BHSM Engine validation does not constitute empirical validation of BHSM as new particle physics.",
+      "claim_id": "ENG-06",
+      "current_status": "ARTIFACT_BACKED",
+      "current_test_or_artifact": "see ARTIFACT_INDEX.md and reviewer reproduction manifest",
+      "dataset_or_calculation_required": "independent matched reproduction or named complete-action calculation",
+      "prediction_or_requirement": "Round-trip coordinate transformation",
+      "track": "ENGINE",
+      "what_would_falsify_it": "inverse fails scale-aware tolerance"
+    },
+    {
+      "claim": "Frozen prediction integrity",
+      "claim_boundary": "Internal theorem status is not empirical confirmation.",
+      "claim_id": "PHY-01",
+      "current_status": "ESTABLISHED",
+      "current_test_or_artifact": "see ARTIFACT_INDEX.md and reviewer reproduction manifest",
+      "dataset_or_calculation_required": "independent matched reproduction or named complete-action calculation",
+      "prediction_or_requirement": "Frozen prediction integrity",
+      "track": "PHYSICS",
+      "what_would_falsify_it": "frozen artifact hash changes unexpectedly"
+    },
+    {
+      "claim": "Charged projectors",
+      "claim_boundary": "Internal theorem status is not empirical confirmation.",
+      "claim_id": "PHY-02",
+      "current_status": "ARTIFACT_BACKED",
+      "current_test_or_artifact": "see ARTIFACT_INDEX.md and reviewer reproduction manifest",
+      "dataset_or_calculation_required": "independent matched reproduction or named complete-action calculation",
+      "prediction_or_requirement": "Charged projectors",
+      "track": "PHYSICS",
+      "what_would_falsify_it": "projector identities or ledger mapping fail"
+    },
+    {
+      "claim": "Common-16 generator",
+      "claim_boundary": "Internal theorem status is not empirical confirmation.",
+      "claim_id": "PHY-03",
+      "current_status": "CONDITIONAL",
+      "current_test_or_artifact": "see ARTIFACT_INDEX.md and reviewer reproduction manifest",
+      "dataset_or_calculation_required": "independent matched reproduction or named complete-action calculation",
+      "prediction_or_requirement": "Common-16 generator",
+      "track": "PHYSICS",
+      "what_would_falsify_it": "no shared action generator exists"
+    },
+    {
+      "claim": "CKM exponent",
+      "claim_boundary": "Internal theorem status is not empirical confirmation.",
+      "claim_id": "PHY-04",
+      "current_status": "OPEN",
+      "current_test_or_artifact": "see ARTIFACT_INDEX.md and reviewer reproduction manifest",
+      "dataset_or_calculation_required": "independent matched reproduction or named complete-action calculation",
+      "prediction_or_requirement": "CKM exponent",
+      "track": "PHYSICS",
+      "what_would_falsify_it": "action-derived transport yields a different exponent"
+    },
+    {
+      "claim": "PMNS structure",
+      "claim_boundary": "Internal theorem status is not empirical confirmation.",
+      "claim_id": "PHY-05",
+      "current_status": "CONDITIONAL",
+      "current_test_or_artifact": "see ARTIFACT_INDEX.md and reviewer reproduction manifest",
+      "dataset_or_calculation_required": "independent matched reproduction or named complete-action calculation",
+      "prediction_or_requirement": "PMNS structure",
+      "track": "PHYSICS",
+      "what_would_falsify_it": "derived basis map conflicts with frozen structure"
+    },
+    {
+      "claim": "Neutral propagation",
+      "claim_boundary": "Internal theorem status is not empirical confirmation.",
+      "claim_id": "PHY-06",
+      "current_status": "CONDITIONAL",
+      "current_test_or_artifact": "see ARTIFACT_INDEX.md and reviewer reproduction manifest",
+      "dataset_or_calculation_required": "independent matched reproduction or named complete-action calculation",
+      "prediction_or_requirement": "Neutral propagation",
+      "track": "PHYSICS",
+      "what_would_falsify_it": "complete action lacks propagation response"
+    },
+    {
+      "claim": "Neutral positivity",
+      "claim_boundary": "Internal theorem status is not empirical confirmation.",
+      "claim_id": "PHY-07",
+      "current_status": "CONDITIONAL",
+      "current_test_or_artifact": "see ARTIFACT_INDEX.md and reviewer reproduction manifest",
+      "dataset_or_calculation_required": "independent matched reproduction or named complete-action calculation",
+      "prediction_or_requirement": "Neutral positivity",
+      "track": "PHYSICS",
+      "what_would_falsify_it": "admissible cone contains a negative direction"
+    },
+    {
+      "claim": "Physical neutrino mass",
+      "claim_boundary": "Internal theorem status is not empirical confirmation.",
+      "claim_id": "PHY-08",
+      "current_status": "OPEN",
+      "current_test_or_artifact": "see ARTIFACT_INDEX.md and reviewer reproduction manifest",
+      "dataset_or_calculation_required": "independent matched reproduction or named complete-action calculation",
+      "prediction_or_requirement": "Physical neutrino mass",
+      "track": "PHYSICS",
+      "what_would_falsify_it": "no unit-safe physical map or external bounds conflict after one is derived"
+    },
+    {
+      "claim": "Omega_f action derivation",
+      "claim_boundary": "Internal theorem status is not empirical confirmation.",
+      "claim_id": "PHY-09",
+      "current_status": "CONDITIONAL",
+      "current_test_or_artifact": "see ARTIFACT_INDEX.md and reviewer reproduction manifest",
+      "dataset_or_calculation_required": "independent matched reproduction or named complete-action calculation",
+      "prediction_or_requirement": "Omega_f action derivation",
+      "track": "PHYSICS",
+      "what_would_falsify_it": "complete action does not generate sector functional"
+    },
+    {
+      "claim": "rho_ch action derivation",
+      "claim_boundary": "Internal theorem status is not empirical confirmation.",
+      "claim_id": "PHY-10",
+      "current_status": "OPEN",
+      "current_test_or_artifact": "see ARTIFACT_INDEX.md and reviewer reproduction manifest",
+      "dataset_or_calculation_required": "independent matched reproduction or named complete-action calculation",
+      "prediction_or_requirement": "rho_ch action derivation",
+      "track": "PHYSICS",
+      "what_would_falsify_it": "action selects a value other than 3"
+    },
+    {
+      "claim": "Boundary-measure normalization",
+      "claim_boundary": "Internal theorem status is not empirical confirmation.",
+      "claim_id": "PHY-11",
+      "current_status": "OPEN",
+      "current_test_or_artifact": "see ARTIFACT_INDEX.md and reviewer reproduction manifest",
+      "dataset_or_calculation_required": "independent matched reproduction or named complete-action calculation",
+      "prediction_or_requirement": "Boundary-measure normalization",
+      "track": "PHYSICS",
+      "what_would_falsify_it": "normalized measure cannot be constructed"
+    },
+    {
+      "claim": "Gauge/scalar normalization",
+      "claim_boundary": "Internal theorem status is not empirical confirmation.",
+      "claim_id": "PHY-12",
+      "current_status": "OPEN",
+      "current_test_or_artifact": "see ARTIFACT_INDEX.md and reviewer reproduction manifest",
+      "dataset_or_calculation_required": "independent matched reproduction or named complete-action calculation",
+      "prediction_or_requirement": "Gauge/scalar normalization",
+      "track": "PHYSICS",
+      "what_would_falsify_it": "complete action gives incompatible normalization"
+    },
+    {
+      "claim": "External HEP runtime readiness",
+      "claim_boundary": "Internal theorem status is not empirical confirmation.",
+      "claim_id": "PHY-13",
+      "current_status": "RUNTIME_GATED",
+      "current_test_or_artifact": "see ARTIFACT_INDEX.md and reviewer reproduction manifest",
+      "dataset_or_calculation_required": "independent matched reproduction or named complete-action calculation",
+      "prediction_or_requirement": "External HEP runtime readiness",
+      "track": "PHYSICS",
+      "what_would_falsify_it": "live toolchain validation fails"
+    }
+  ],
+  "version": "1.9"
+}

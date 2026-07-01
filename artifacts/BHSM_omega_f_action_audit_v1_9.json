@@ -1,0 +1,53 @@
+{
+  "audit": "omega_f_action_derivation",
+  "claim_boundary": "The repository integrates Omega_f with projector and boundary-kernel scaffolds; a complete action derivation is not present.",
+  "complete_action_derivation": false,
+  "evidence": {
+    "all_paths_present": true,
+    "all_tokens_present": true,
+    "present_paths": [
+      "docs/bhsm_sector_projector_ledger_theorem.md",
+      "docs/boundary_graded_defect_action_kernel_v1.md",
+      "src/boundary_graded_defect_action_kernel.py"
+    ],
+    "source_paths": [
+      "docs/bhsm_sector_projector_ledger_theorem.md",
+      "docs/boundary_graded_defect_action_kernel_v1.md",
+      "src/boundary_graded_defect_action_kernel.py"
+    ],
+    "token_hits": {
+      "OPEN": [
+        "docs/boundary_graded_defect_action_kernel_v1.md",
+        "src/boundary_graded_defect_action_kernel.py"
+      ],
+      "Omega_d": [
+        "docs/bhsm_sector_projector_ledger_theorem.md"
+      ],
+      "Omega_l": [
+        "docs/bhsm_sector_projector_ledger_theorem.md"
+      ],
+      "Omega_u": [
+        "docs/bhsm_sector_projector_ledger_theorem.md"
+      ]
+    }
+  },
+  "forbidden_inputs": [
+    "PDG/reference values",
+    "W-mass calibration",
+    "charged-mass fitting",
+    "CKM reference fitting",
+    "neutrino limits",
+    "legacy threshold tables"
+  ],
+  "forbidden_inputs_used": [],
+  "operators": {
+    "down": "Omega_d=q+4j=12",
+    "lepton": "Omega_l=-q+2j=3",
+    "up": "Omega_u=q-2j=6"
+  },
+  "remaining_blockers": [
+    "derive the symbolic parent scaffold uniquely from the complete Berger-Hopf twisted Dirac/bundle action",
+    "prove the sector boundary functional without inserting sector coefficients as scaffold data"
+  ],
+  "status": "STRUCTURALLY_INTEGRATED_NOT_ACTION_DERIVED"
+}

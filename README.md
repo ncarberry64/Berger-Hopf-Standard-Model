@@ -1,6 +1,6 @@
 # Berger-Hopf Standard Model (BHSM)
 
-[![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml) [![Tests: 2277 passed](https://img.shields.io/badge/tests-2277%20passed-brightgreen)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
+[![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml) [![Tests: 2295 passed](https://img.shields.io/badge/tests-2295%20passed-brightgreen)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
 BHSM is a research framework for studying Berger-Hopf geometry, frozen internal prediction artifacts, and candidate links to flavor, boundary structure, and effective field descriptions.
 
@@ -144,19 +144,20 @@ Long-form mathematical status remains available in
 [theory/full_bhsm_completion_v1_candidate.md](theory/full_bhsm_completion_v1_candidate.md),
 and [theory/full_bhsm_open_proof_obligations.md](theory/full_bhsm_open_proof_obligations.md).
 
-## Runtime-Gated External Tools
-
-The repository contains review and handoff scaffolds for FeynRules, UFO, and
-MadGraph. Current Python review commands run offline and require none of these
-tools. External HEP export is a separate future validation workflow after the
-relevant theorem objects are established.
-
 ## Claim Boundaries
 
-The concise allowed and forbidden claim list is maintained in
-[CLAIMS.md](CLAIMS.md). In particular, a W-boson calibration run does not count
-W as an independent prediction, and the electron-neutrino comparison is
-upper-limit based unless a vetted central reference is explicitly supplied.
+See [CLAIMS.md](CLAIMS.md). W calibration is not an independent prediction, and
+the electron-neutrino comparison remains upper-limit based.
+
+## Engine and Physics Status
+
+The BHSM Engine validates high-throughput, precision-gated geometric coordinate transformations on synthetic and real HEP kinematic data.
+BHSM Engine validation does not constitute empirical validation of BHSM as new particle physics.
+BHSM Physics remains an integrated conditional Berger-Hopf boundary-mode framework with open action, transport, normalization, unit-map, gauge/scalar, and runtime gates.
+BHSM does not claim full Standard Model derivation or physical eV/GeV neutrino mass closure.
+
+Start with `make reviewer-smoke` and the [reproduction guide](docs/reviewer_reproduction_guide.md).
+The benchmark covers four-vector transforms, not tracking; hosted ROOT two-thread throughput regressed to `0.940x`. Runtime-Gated External Tools remain separate.
 
 ## Repository Map
 
@@ -173,7 +174,4 @@ Start with [docs/README.md](docs/README.md) for the documentation map and
 [ROADMAP.md](ROADMAP.md) for the next work sequence.
 
 ## Citation
-
-Use [CITATION.cff](CITATION.cff) for the repository's current citation
-metadata. Release and DOI administration remain separate from this cleanup
-branch.
+Use [CITATION.cff](CITATION.cff) for current citation metadata.

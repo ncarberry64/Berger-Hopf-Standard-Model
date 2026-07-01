@@ -1,0 +1,51 @@
+{
+  "audit": "charged_overlap_4_over_3_source",
+  "bridge_identity": "O_ch^2/I_ch=(4/3)^2/21=16/189",
+  "claim_boundary": "The incidence bridge is exact conditional on 4/3; the action source of 4/3 remains open.",
+  "evidence": {
+    "all_paths_present": true,
+    "all_tokens_present": true,
+    "present_paths": [
+      "docs/incidence_normalized_overlap_bridge_source.md",
+      "data/incidence_normalized_overlap_bridge_source.json",
+      "src/incidence_normalized_overlap_bridge.py"
+    ],
+    "source_paths": [
+      "docs/incidence_normalized_overlap_bridge_source.md",
+      "data/incidence_normalized_overlap_bridge_source.json",
+      "src/incidence_normalized_overlap_bridge.py"
+    ],
+    "token_hits": {
+      "4/3": [
+        "docs/incidence_normalized_overlap_bridge_source.md",
+        "data/incidence_normalized_overlap_bridge_source.json",
+        "src/incidence_normalized_overlap_bridge.py"
+      ],
+      "OPEN_LOCALIZABLE": [
+        "docs/incidence_normalized_overlap_bridge_source.md",
+        "data/incidence_normalized_overlap_bridge_source.json",
+        "src/incidence_normalized_overlap_bridge.py"
+      ],
+      "g_sector": [
+        "docs/incidence_normalized_overlap_bridge_source.md",
+        "data/incidence_normalized_overlap_bridge_source.json",
+        "src/incidence_normalized_overlap_bridge.py"
+      ]
+    }
+  },
+  "forbidden_inputs": [
+    "PDG/reference values",
+    "W-mass calibration",
+    "charged-mass fitting",
+    "CKM reference fitting",
+    "neutrino limits",
+    "legacy threshold tables"
+  ],
+  "forbidden_inputs_used": [],
+  "remaining_blockers": [
+    "derive O_ch=4/3 from the normalized charged boundary action",
+    "prove the overlap is not an inserted bridge amplitude"
+  ],
+  "status": "OPEN_MISSING_CHARGED_OVERLAP_4_OVER_3_ACTION_SOURCE",
+  "target": "O_ch=4/3"
+}

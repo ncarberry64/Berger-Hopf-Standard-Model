@@ -80,6 +80,12 @@ Do not claim that:
 - A dimensionless neutral response is a physical curvature in `m^-2`.
 - The conditional `X_ch` theorem establishes a standalone 4D production field.
 - The repeated integer `16` alone proves an action-derived common generator or CKM reciprocal transport theorem.
+- CERN Open Data four-vector throughput validates BHSM as new particle physics.
+- The repository performs detector track reconstruction.
+- The hosted ROOT two-thread result demonstrates positive multicore scaling.
+- The current projector/boundary scaffold is a complete action derivation of `Omega_f`.
+- Structural rank-three motivation selects `rho_ch=3` from the action.
+- The exact charged bridge proves the action source of the `4/3` overlap.
 
 ## Policy
 

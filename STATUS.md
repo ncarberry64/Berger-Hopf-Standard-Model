@@ -51,3 +51,16 @@ Status taxonomy: `ESTABLISHED`, `ARTIFACT_BACKED`, `CANDIDATE`, `CONDITIONAL`,
 | MadGraph smoke test | `RUNTIME_GATED` | Smoke-test plan and runner scaffolds exist | Validated UFO plus live MadGraph execution | `python -m bhsm.interface status madgraph_smoke_test` |
 
 The detailed claim boundary is centralized in [CLAIMS.md](CLAIMS.md).
+
+## v1.9 Engine/Physics Separation
+
+- Engine: deterministic coordinate transforms, synthetic and CMS-derived
+  four-vector validation, precision gates, ROOT compile/runtime smoke, and
+  environment-specific performance diagnostics.
+- Physics: integrated conditional architecture with open action, transport,
+  normalization, unit-map, gauge/scalar, and runtime gates.
+- `Omega_f`: `STRUCTURALLY_INTEGRATED_NOT_ACTION_DERIVED`.
+- `rho_ch=3`: `STRUCTURALLY_MOTIVATED_NOT_DERIVED`.
+- charged overlap `4/3`: `OPEN_MISSING_CHARGED_OVERLAP_4_OVER_3_ACTION_SOURCE`.
+- Engine results are not empirical validation of BHSM Physics and do not cover
+  detector reconstruction.

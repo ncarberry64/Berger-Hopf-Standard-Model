@@ -112,6 +112,7 @@ from .common_16 import (
     final_completion_report_to_markdown,
     search_common_16_sources,
 )
+from .science_hardening import emit_hardening_payload
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -366,6 +367,20 @@ def build_parser() -> argparse.ArgumentParser:
     final_status.add_argument("--format", choices=("markdown", "json"), default="markdown")
     final_ledger = commands.add_parser("final-completion-ledger", help="Show the v1.8 completion blocker ledger")
     final_ledger.add_argument("--format", choices=("json",), default="json")
+    hardening_commands = (
+        "engine-status",
+        "physics-status",
+        "reviewer-reproduction",
+        "engine-invariants",
+        "minimal-theorem-core",
+        "omega-f-action-audit",
+        "rho-ch-action-audit",
+        "falsification-table",
+        "external-reproduction-packet",
+    )
+    for command in hardening_commands:
+        hardening = commands.add_parser(command, help=f"Render the BHSM v1.9 {command} report")
+        hardening.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
 
@@ -794,6 +809,19 @@ def main(argv: Sequence[str] | None = None) -> int:
             "open_blockers": list(report.provenance.open_blockers),
             "legacy_blockers": [row.to_dict() for row in build_full_completion_blocker_ledger()],
         }, indent=2, sort_keys=True))
+        return 0
+    if args.command in {
+        "engine-status",
+        "physics-status",
+        "reviewer-reproduction",
+        "engine-invariants",
+        "minimal-theorem-core",
+        "omega-f-action-audit",
+        "rho-ch-action-audit",
+        "falsification-table",
+        "external-reproduction-packet",
+    }:
+        emit_hardening_payload(args.command, args.format)
         return 0
     particles = tuple(item.strip() for item in args.particles.split(",") if item.strip())
     report = build_prediction_report(

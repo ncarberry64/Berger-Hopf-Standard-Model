@@ -1,0 +1,55 @@
+{
+  "audit": "rho_ch_action_derivation",
+  "branch_candidates": [
+    1,
+    2,
+    3
+  ],
+  "claim_boundary": "Rank-three and cyclic arguments motivate rho_ch=3 but do not select it from the action.",
+  "evidence": {
+    "all_paths_present": true,
+    "all_tokens_present": true,
+    "present_paths": [
+      "docs/bhsm_charged_hessian_source_audit.md",
+      "docs/charged_stiffness_action_selector_v1.md",
+      "src/charged_stiffness_action_selector.py"
+    ],
+    "source_paths": [
+      "docs/bhsm_charged_hessian_source_audit.md",
+      "docs/charged_stiffness_action_selector_v1.md",
+      "src/charged_stiffness_action_selector.py"
+    ],
+    "token_hits": {
+      "OPEN_LOCALIZABLE": [
+        "docs/bhsm_charged_hessian_source_audit.md",
+        "docs/charged_stiffness_action_selector_v1.md",
+        "src/charged_stiffness_action_selector.py"
+      ],
+      "rho_ch=3": [
+        "docs/bhsm_charged_hessian_source_audit.md",
+        "docs/charged_stiffness_action_selector_v1.md",
+        "src/charged_stiffness_action_selector.py"
+      ],
+      "rho_ch_exact_value": [
+        "docs/charged_stiffness_action_selector_v1.md",
+        "src/charged_stiffness_action_selector.py"
+      ]
+    }
+  },
+  "forbidden_inputs": [
+    "PDG/reference values",
+    "W-mass calibration",
+    "charged-mass fitting",
+    "CKM reference fitting",
+    "neutrino limits",
+    "legacy threshold tables"
+  ],
+  "forbidden_inputs_used": [],
+  "remaining_blockers": [
+    "derive charged q and j stiffness coefficients from one normalized boundary action",
+    "show k_j/k_q=3 independently of mass, mixing, or target-ratio comparisons"
+  ],
+  "selected_value": null,
+  "status": "STRUCTURALLY_MOTIVATED_NOT_DERIVED",
+  "target": "rho_ch=k_j/k_q=3"
+}

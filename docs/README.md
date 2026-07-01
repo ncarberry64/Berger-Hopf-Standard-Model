@@ -12,6 +12,16 @@ The current minimal-action theory dictionary is documented in
 
 ## Overview
 
+- [Engine vs Physics claim boundary](engine_vs_physics_claim_boundary.md)
+- [BHSM Engine status](bhsm_engine_status.md)
+- [BHSM Physics status](bhsm_physics_status.md)
+- [Reviewer reproduction guide](reviewer_reproduction_guide.md)
+- [Engine invariant tests](engine_invariant_tests.md)
+- [Minimal theorem core](minimal_theorem_core.md)
+- [Action derivation gates](action_derivation_gates_report.md)
+- [Brutal falsification table](falsification_table.md)
+- [External reproduction request](external_reproduction_request.md)
+
 - [CERN Open Data coordinate benchmark](cern_open_data_benchmark.md): checksum-gated
   CMS dimuon four-vector throughput validation; not track reconstruction.
 - [Native microarchitecture profiling](native_microarchitecture_profiling.md):
