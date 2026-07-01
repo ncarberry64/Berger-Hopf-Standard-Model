@@ -94,3 +94,7 @@ commands, and records falsifiers. It does not close the following items.
     maximal primitive self response (16); do not select 16 numerically.
 12. Derive the Hermitian off-diagonal charged-current block and its adjoint
     closure from the normalized BHSM action; target-level `+ h.c.` is not enough.
+13. Prove or reject the normalized-action CKM transport-space theorem selecting
+    `Hom(V_u,V_d) direct_sum Hom(V_d,V_u)` over the one-way 8, maximal
+    self-response 16, sector self-response 21, and total endomorphism 49
+    alternatives. The CKM exponent remains open until this gate passes.

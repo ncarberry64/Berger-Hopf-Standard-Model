@@ -1,0 +1,79 @@
+{
+  "alternatives": [
+    {
+      "current_status": "UNSELECTED_COMPETING_CHANNEL_ASSIGNMENT",
+      "dimension": 8,
+      "id": "one_way_up_down",
+      "interpretation": "Hom(V_u,V_d)",
+      "what_would_falsify_it": "A normalized-action theorem requiring Hermitian adjoint-pair transport.",
+      "what_would_select_it": "An action theorem proving CKM transport is oriented one-way before Hermitian completion.",
+      "why_it_might_apply": "The CKM target is an up/down charged-current cross-sector map.",
+      "why_it_might_not_apply": "A real/Hermitian charged-current action would normally include the adjoint direction."
+    },
+    {
+      "current_status": "CONDITIONAL_NORMALIZED_ACTION_ADJOINT_PAIR_SELECTION",
+      "dimension": 16,
+      "id": "bidirectional_adjoint_pair",
+      "interpretation": "Hom(V_u,V_d) direct_sum Hom(V_d,V_u)",
+      "what_would_falsify_it": "An action theorem selecting a different CKM transport space or proving the h.c. term is not CKM-counting input.",
+      "what_would_select_it": "A normalized BHSM action derivation selecting the off-diagonal Hermitian charged-current adjoint pair.",
+      "why_it_might_apply": "The charged-current target is off-diagonal and contains an explicit Hermitian-conjugate term.",
+      "why_it_might_not_apply": "The located evidence is target-level; normalized action selection remains missing."
+    },
+    {
+      "current_status": "RETIRED_MAXIMAL_SELF_RESPONSE_AS_PRIMARY_CKM_SOURCE",
+      "dimension": 16,
+      "id": "maximal_self_response",
+      "interpretation": "End(V_d)",
+      "what_would_falsify_it": "A normalized-action theorem selecting the adjoint-pair or another non-self-response space.",
+      "what_would_select_it": "New action evidence reviving maximal self-response as the CKM transport source.",
+      "why_it_might_apply": "It has the same numerical dimension, 16.",
+      "why_it_might_not_apply": "Same numerical dimension does not prove same physical source; End(V_d) is a self-response, not the off-diagonal CKM target."
+    },
+    {
+      "current_status": "UNSELECTED_COMPETING_CHANNEL_ASSIGNMENT",
+      "dimension": 21,
+      "id": "sector_self_response_sum",
+      "interpretation": "End(V_l) direct_sum End(V_u) direct_sum End(V_d)",
+      "what_would_falsify_it": "A theorem restricting CKM transport to cross-sector charged-current blocks.",
+      "what_would_select_it": "An action theorem showing CKM transport averages over all sector self-responses.",
+      "why_it_might_apply": "It captures all sectorwise charged self-responses.",
+      "why_it_might_not_apply": "It includes diagonal self blocks rather than the off-diagonal CKM charged-current pair."
+    },
+    {
+      "current_status": "UNSELECTED_COMPETING_CHANNEL_ASSIGNMENT",
+      "dimension": 49,
+      "id": "total_charged_endomorphism",
+      "interpretation": "End(V_l direct_sum V_u direct_sum V_d)",
+      "what_would_falsify_it": "A theorem selecting the smaller charged-current adjoint pair or one-way block.",
+      "what_would_select_it": "An action theorem proving CKM transport acts on the full charged endomorphism algebra.",
+      "why_it_might_apply": "It is the complete charged endomorphism algebra.",
+      "why_it_might_not_apply": "It includes non-CKM diagonal and cross-sector blocks and has no current action selection."
+    }
+  ],
+  "audit": "ckm_alternative_channel_blockers",
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "The maximal self-response channel also has dimension 16, but it is retired as the primary CKM source unless action evidence revives it.",
+  "cms_cern_endorsement_claimed": false,
+  "detector_reconstruction_claimed": false,
+  "empirical_inputs_used": false,
+  "forbidden_theorem_inputs": [
+    "empirical CKM fitting",
+    "PDG/reference values",
+    "W calibration",
+    "charged-mass fitting",
+    "neutrino limits",
+    "legacy threshold tables"
+  ],
+  "forbidden_theorem_inputs_used": [],
+  "frozen_predictions_modified": false,
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "official_prediction_logic_modified": false,
+  "pdg_reference_values_used": false,
+  "physics_validation_claimed": false,
+  "same_dimension_warning": "Same numerical dimension does not prove same physical source.",
+  "status": "MULTIPLE_COMPETING_CHANNEL_ASSIGNMENTS",
+  "w_calibration_used": false
+}

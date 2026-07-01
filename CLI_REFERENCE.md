@@ -44,6 +44,12 @@ python -m bhsm.interface common-16-provenance-audit --format json
 python -m bhsm.interface common-16-closure-report --format markdown
 python -m bhsm.interface final-completion-status --format markdown
 python -m bhsm.interface final-completion-ledger --format json
+python -m bhsm.interface normalized-action-adjoint-pair-search --format json
+python -m bhsm.interface normalized-action-adjoint-pair-selection --format json
+python -m bhsm.interface hermitian-charged-current-rule --format json
+python -m bhsm.interface ckm-transport-space-gate --format json
+python -m bhsm.interface ckm-alternative-channel-blockers --format json
+python -m bhsm.interface normalized-action-adjoint-pair-report --format markdown
 ```
 
 These commands are offline and claim-safe. They do not use reference data as
@@ -159,6 +165,12 @@ theorem inputs and do not emit a default physical neutrino mass.
 | `ckm-channel-alternative-resolution` | Compare one-way, bidirectional, self, and total spaces | Markdown or JSON | no | no |
 | `ckm-bidirectional-log-transport-application` | Gate the abstract lemma's bidirectional CKM application | Markdown or JSON | no | no |
 | `ckm-bidirectional-channel-report` | Render combined v2.3 bidirectional-channel status | Markdown or JSON | no | no |
+| `normalized-action-adjoint-pair-search` | Search action and charged-current sources for normalized adjoint-pair provenance | Markdown or JSON | no | no |
+| `normalized-action-adjoint-pair-selection` | Gate normalized-action selection of the Hermitian charged-current adjoint-pair space | Markdown or JSON | no | no |
+| `hermitian-charged-current-rule` | Separate the general Hermitian action rule from CKM exponent derivation | Markdown or JSON | no | no |
+| `ckm-transport-space-gate` | Fail closed unless the normalized action selects the CKM adjoint-pair transport space | Markdown or JSON | no | no |
+| `ckm-alternative-channel-blockers` | Record one-way, adjoint-pair, maximal-self, sector-self, and total-endomorphism blockers | Markdown or JSON | no | no |
+| `normalized-action-adjoint-pair-report` | Render combined v2.5 normalized-action adjoint-pair status | Markdown or JSON | no | no |
 
 Without `--offline-ok`, `pdg-fetch` may try an optional live reference adapter.
 The offline fallback is reference-only and is never a derivation input.

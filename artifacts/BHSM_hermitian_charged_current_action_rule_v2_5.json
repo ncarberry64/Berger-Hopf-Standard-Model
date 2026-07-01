@@ -1,0 +1,44 @@
+{
+  "audit": "hermitian_charged_current_action_rule",
+  "bhsm_charged_current_rule": "OPEN: located BHSM artifacts identify a CKM charged-current target with + h.c., but do not derive it from the normalized BHSM action.",
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "ckm_transport_application": "OPEN: the CKM exponent is not derived from the existence of the Hermitian-conjugate term.",
+  "claim_boundary": "The existence of a Hermitian-conjugate charged-current term does not by itself derive the CKM exponent.",
+  "cms_cern_endorsement_claimed": false,
+  "detector_reconstruction_claimed": false,
+  "empirical_inputs_used": false,
+  "evidence_against": [
+    "the CKM target convention is not the same thing as normalized-action derivation",
+    "Hermitian conjugation alone does not identify the CKM log-transport averaging space"
+  ],
+  "evidence_for": [
+    "artifacts/BHSM_chiral_current_attachment_map_v0_6.json records a CKM charged-current target with + h.c.",
+    "artifacts/BHSM_ckm_bidirectional_channel_count_v2_3.json records Hom(V_u,V_d) plus Hom(V_d,V_u) as a 16-dimensional candidate.",
+    "artifacts/BHSM_ckm_adjoint_pair_selection_v2_3.json records the target-level adjoint-pair candidate while leaving action selection open."
+  ],
+  "forbidden_theorem_inputs": [
+    "empirical CKM fitting",
+    "PDG/reference values",
+    "W calibration",
+    "charged-mass fitting",
+    "neutrino limits",
+    "legacy threshold tables"
+  ],
+  "forbidden_theorem_inputs_used": [],
+  "frozen_predictions_modified": false,
+  "general_hermitian_rule": "CONDITIONAL: real-action Hermiticity supports term plus Hermitian conjugate at the rule level.",
+  "hermiticity_sources": [
+    "artifacts/BHSM_chiral_current_attachment_map_v0_6.json",
+    "artifacts/BHSM_ckm_adjoint_pair_selection_v2_3.json",
+    "docs/ckm_bidirectional_channel.md"
+  ],
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "official_prediction_logic_modified": false,
+  "pdg_reference_values_used": false,
+  "physics_validation_claimed": false,
+  "statement": "A real/Hermitian charged-current action term must include the adjoint of an off-diagonal charged-current transport term.",
+  "status": "CONDITIONAL_HERMITIAN_CHARGED_CURRENT_ACTION_RULE",
+  "w_calibration_used": false
+}
