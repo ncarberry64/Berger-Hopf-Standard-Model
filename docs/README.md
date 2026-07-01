@@ -32,6 +32,7 @@ The current minimal-action theory dictionary is documented in
 - [CKM log-transport application gate](ckm_log_transport_application_gate.md)
 
 - [CERN Open Data coordinate benchmark](cern_open_data_benchmark.md): checksum-gated
+- [PR #98 CMS Open Data animation](pr98_cms_open_data_animation.md): compact offline real-data visualization with explicit claim boundaries
   CMS dimuon four-vector throughput validation; not track reconstruction.
 - [Native microarchitecture profiling](native_microarchitecture_profiling.md):
   compiled-kernel Linux perf protocol with explicit PMU availability status.
