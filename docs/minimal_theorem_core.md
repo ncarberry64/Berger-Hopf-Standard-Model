@@ -10,6 +10,10 @@ The v2.1 sum-of-squares proof establishes abstract equal logarithmic sharing.
 Its CKM application remains open because physical equivalence of the sixteen
 bilinear incidence channels is not derived.
 
+The v2.2 audit computes the competing channel dimensions `8`, `49`, `21`, and
+`16`. It does not select `16`: the action rule choosing maximal primitive
+self-response over the other representations remains open.
+
 | core_id | name | status | remaining_blockers |
 | --- | --- | --- | --- |
 | CORE-01 | Unified boundary/action principle | CONDITIONAL | ['complete normalized action'] |
@@ -18,7 +22,7 @@ bilinear incidence channels is not derived.
 | CORE-04 | rho_ch threshold structure | STRUCTURALLY_MOTIVATED_NOT_DERIVED | ['action selection of rho_ch'] |
 | CORE-05 | Charged bridge and beta hierarchy | CONDITIONAL | ['4/3 overlap action source'] |
 | CORE-06 | Common-16 generator candidate | CONDITIONAL | ['shared action generator'] |
-| CORE-07 | CKM exponent | OPEN_MISSING_ACTION_DERIVATION | ['reciprocal transport theorem'] |
+| CORE-07 | CKM exponent | OPEN_MISSING_ACTION_DERIVATION | ['CKM channel-equivalence theorem', 'reciprocal transport theorem'] |
 | CORE-08 | PMNS/neutrino structure | CONDITIONAL | ['physical basis and unit map'] |
 | CORE-09 | Neutral propagation | CONDITIONAL | ['dimensionful transport normalization'] |
 | CORE-10 | Neutral positivity | CONDITIONAL | ['complete-action admissible cone'] |

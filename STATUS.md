@@ -83,3 +83,11 @@ The detailed claim boundary is centralized in [CLAIMS.md](CLAIMS.md).
 - Maximal-overlap action rule: `OPEN_MISSING_ACTION_RULE_THAT_BRIDGE_USES_MAX_PRIMITIVE_OVERLAP`.
 - CKM application: `OPEN_MISSING_CKM_LOG_TRANSPORT_AVERAGING_THEOREM`.
 - The mathematical lemma proves equal log sharing, not the physical identity or equivalence of sixteen CKM channels.
+
+## v2.2 CKM Channel Equivalence
+
+- Exact candidate dimensions: `N_ud=8`, `N_total_end=49`, `N_sum_self=21`, and `N_max_self=16`.
+- Channel-count status: `MULTIPLE_COMPETING_CHANNEL_ASSIGNMENTS`.
+- Maximal-sector selection: `OPEN_MISSING_MAXIMAL_SECTOR_CKM_SELECTION_RULE`.
+- CKM application: `OPEN_MISSING_CKM_LOG_TRANSPORT_AVERAGING_THEOREM`.
+- The abstract lemma is reused; no action-backed rule currently selects `End(V_d)` over the three competing spaces.

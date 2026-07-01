@@ -149,6 +149,10 @@ theorem inputs and do not emit a default physical neutrino mass.
 | `log-transport-averaging` | Prove the abstract quadratic log-energy lemma | Markdown or JSON | no | no |
 | `ckm-log-transport-application` | Gate the abstract lemma's CKM application | Markdown or JSON | no | no |
 | `action-lemma-closure-report` | Render combined v2.1 action-lemma status | Markdown or JSON | no | no |
+| `ckm-channel-source-search` | Locate CKM channel evidence without treating occurrences as proof | Markdown or JSON | no | no |
+| `ckm-channel-count-audit` | Compute all four predeclared channel dimensions | Markdown or JSON | no | no |
+| `ckm-maximal-sector-selection` | Gate maximal primitive self-response selection | Markdown or JSON | no | no |
+| `ckm-channel-equivalence-report` | Render combined v2.2 CKM channel-equivalence status | Markdown or JSON | no | no |
 
 Without `--offline-ok`, `pdg-fetch` may try an optional live reference adapter.
 The offline fallback is reference-only and is never a derivation input.

@@ -18,6 +18,10 @@ The abstract log-transport averaging lemma is now proved as mathematics. No
 BHSM physics status is promoted because the action quotient, bridge selection,
 and CKM equivalent-channel identification remain open.
 
+The v2.2 audit finds four unexcluded CKM channel assignments with dimensions
+8, 49, 21, and 16. `N_CKM=16` remains a conditional candidate because no
+action-backed maximal-sector selection rule has been identified.
+
 - complete action derivations
 - transport theorems
 - physical normalization and unit maps

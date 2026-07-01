@@ -89,3 +89,6 @@ commands, and records falsifiers. It does not close the following items.
    incidence coverings.
 10. Construct the CKM transport functional and prove that its physical channel
     decomposition contains sixteen equivalent bilinear contributions.
+11. Derive the CKM transport representation from the action and decide among
+    `Hom(V_u,V_d)` (8), `End(V_ch)` (49), sectorwise self response (21), and
+    maximal primitive self response (16); do not select 16 numerically.

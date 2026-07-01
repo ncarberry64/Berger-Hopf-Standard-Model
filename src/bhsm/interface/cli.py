@@ -123,12 +123,18 @@ from .primitive_charged_incidence import (
     build_primitive_charged_incidence_report,
 )
 from .action_lemmas import (
-    audit_ckm_log_transport_application,
     audit_maximal_overlap_bridge_rule,
     audit_primitive_lattice_rule,
     build_action_lemma_closure_report,
     prove_log_transport_averaging,
     search_action_lemma_sources,
+)
+from .ckm_channel_equivalence import (
+    audit_ckm_channel_application,
+    audit_ckm_channel_counts,
+    audit_maximal_sector_selection,
+    build_ckm_channel_equivalence_report,
+    search_ckm_channel_sources,
 )
 
 
@@ -422,6 +428,15 @@ def build_parser() -> argparse.ArgumentParser:
     for command in action_lemma_commands:
         lemma = commands.add_parser(command, help=f"Render the BHSM v2.1 {command} audit")
         lemma.add_argument("--format", choices=("json", "markdown"), default="json")
+    ckm_channel_commands = (
+        "ckm-channel-source-search",
+        "ckm-channel-count-audit",
+        "ckm-maximal-sector-selection",
+        "ckm-channel-equivalence-report",
+    )
+    for command in ckm_channel_commands:
+        channel = commands.add_parser(command, help=f"Render the BHSM v2.2 {command} audit")
+        channel.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
 
@@ -877,8 +892,26 @@ def main(argv: Sequence[str] | None = None) -> int:
             "primitive-lattice-rule": audit_primitive_lattice_rule,
             "maximal-overlap-bridge-rule": audit_maximal_overlap_bridge_rule,
             "log-transport-averaging": lambda: prove_log_transport_averaging(16),
-            "ckm-log-transport-application": audit_ckm_log_transport_application,
+            "ckm-log-transport-application": audit_ckm_channel_application,
             "action-lemma-closure-report": build_action_lemma_closure_report,
+        }
+        payload = builders[args.command]()
+        if args.format == "json":
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        else:
+            print(f"# {args.command.replace('-', ' ').title()}\n\n```json\n{json.dumps(payload, indent=2, sort_keys=True)}\n```")
+        return 0
+    if args.command in {
+        "ckm-channel-source-search",
+        "ckm-channel-count-audit",
+        "ckm-maximal-sector-selection",
+        "ckm-channel-equivalence-report",
+    }:
+        builders = {
+            "ckm-channel-source-search": search_ckm_channel_sources,
+            "ckm-channel-count-audit": audit_ckm_channel_counts,
+            "ckm-maximal-sector-selection": audit_maximal_sector_selection,
+            "ckm-channel-equivalence-report": build_ckm_channel_equivalence_report,
         }
         payload = builders[args.command]()
         if args.format == "json":
