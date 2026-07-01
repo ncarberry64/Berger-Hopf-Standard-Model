@@ -75,3 +75,11 @@ The detailed claim boundary is centralized in [CLAIMS.md](CLAIMS.md).
 - CKM transport: `CONDITIONAL_CKM_LOG_TRANSPORT_CANDIDATE`; the averaging
   theorem remains open.
 - Physical normalization is open; external reproduction is prepared but not completed.
+
+## v2.1 Action Lemmas
+
+- Abstract quadratic log averaging: `ARTIFACT_BACKED_MATHEMATICAL_LEMMA`.
+- Primitive lattice action rule: `OPEN_MISSING_ACTION_PRIMITIVE_LATTICE_NORMALIZATION_RULE`.
+- Maximal-overlap action rule: `OPEN_MISSING_ACTION_RULE_THAT_BRIDGE_USES_MAX_PRIMITIVE_OVERLAP`.
+- CKM application: `OPEN_MISSING_CKM_LOG_TRANSPORT_AVERAGING_THEOREM`.
+- The mathematical lemma proves equal log sharing, not the physical identity or equivalence of sixteen CKM channels.

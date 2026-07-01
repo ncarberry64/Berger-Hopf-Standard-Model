@@ -14,6 +14,10 @@ The v2.0 primitive charged incidence identities are exact conditional algebra.
 Their action normalization, overlap-selection, CKM transport, and physical unit
 maps remain open.
 
+The abstract log-transport averaging lemma is now proved as mathematics. No
+BHSM physics status is promoted because the action quotient, bridge selection,
+and CKM equivalent-channel identification remain open.
+
 - complete action derivations
 - transport theorems
 - physical normalization and unit maps

@@ -1,6 +1,6 @@
 # Berger-Hopf Standard Model (BHSM)
 
-[![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml) [![Tests: 2306 passed](https://img.shields.io/badge/tests-2306%20passed-brightgreen)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
+[![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml) [![Tests: 2315 passed](https://img.shields.io/badge/tests-2315%20passed-brightgreen)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
 BHSM is a research framework for studying Berger-Hopf geometry, frozen internal prediction artifacts, and candidate links to flavor, boundary structure, and effective field descriptions.
 
@@ -157,11 +157,11 @@ BHSM Physics remains an integrated conditional Berger-Hopf boundary-mode framewo
 BHSM does not claim full Standard Model derivation or physical eV/GeV neutrino mass closure.
 
 Start with `make reviewer-smoke` and the [reproduction guide](docs/reviewer_reproduction_guide.md).
-The primitive charged incidence audit establishes exact conditional algebraic identities, not full action derivations.
-`rho_ch = 3` is conditionally identified as the primitive common divisor of `Omega_ch = (3,6,12)`, but the action rule requiring primitive charged-lattice normalization remains open.
-The charged overlap `4/3` is conditionally identified as `s_d/rho_ch`, but the action rule requiring the bridge to use maximal primitive overlap remains open.
-The CKM `1/16` exponent remains open because the CKM logarithmic transport averaging theorem is not yet derived.
-Physical normalization and external reproduction remain open gates. Runtime-Gated External Tools remain separate.
+The primitive lattice normalization rule is not action-derived unless the BHSM action is shown to quotient common incidence rescalings.
+The maximal-overlap bridge rule is not action-derived unless the BHSM charged bridge/Hessian action selects the maximal primitive overlap channel.
+The abstract log-transport averaging lemma does not by itself derive the CKM exponent.
+The CKM exponent remains open unless BHSM proves CKM transport acts over `N_16` equivalent bilinear charged-incidence channels.
+No empirical CKM fitting, charged-mass fitting, PDG values, W calibration, neutrino limits, or legacy threshold tables are used as theorem inputs. Runtime-Gated External Tools remain separate.
 ## Repository Map
 | Path | Purpose |
 | --- | --- |
