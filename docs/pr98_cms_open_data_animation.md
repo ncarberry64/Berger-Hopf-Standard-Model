@@ -2,11 +2,11 @@
 
 ## Data shown
 
-The animation displays 128 real muon four-vectors from 64 deterministically
-selected rows of the published CMS dimuon education dataset, CERN Open Data
-Record 303, DOI `10.7483/OPENDATA.CMS.4M97.3SQ9` (CC0 Public Domain). Both
-muons from each selected event are retained. This is a display sample, not the
-full dataset and not a new benchmark run.
+The animation continuously morphs 128 real muon four-vectors from 64
+deterministically selected rows of the published CMS dimuon education dataset,
+CERN Open Data Record 303, DOI `10.7483/OPENDATA.CMS.4M97.3SQ9` (CC0 Public
+Domain). Both muons from each selected event are retained. This is a display
+sample, not the full dataset and not a new benchmark run.
 
 ## PR #98 validation
 
@@ -21,17 +21,21 @@ The authoritative metrics and source checksums are in
 
 ## Generation
 
-The checked-in generator verifies the source SHA-256, selects 64 evenly spaced
-source-event row indices, writes the compact JSON sample, and renders the GIF
-and static SVG deterministically. The raw 15 MB CSV remains ignored.
+The checked-in generator verifies the source SHA-256 when the raw CSV is
+available, selects 64 evenly spaced source-event row indices, writes the compact
+JSON sample, and renders the GIF and static SVG deterministically. If the raw
+CSV is absent, it regenerates the visual assets from the checked-in compact
+sample so ordinary repository work stays offline. The raw 15 MB CSV remains
+ignored.
 
 ```bash
 python docs/assets/pr98_cms_open_data_animation/generate_pr98_cms_animation.py
 ```
 
-Generation requires the pinned source in `data/external/cern_open_data/` or an
-explicit `--input` path. Viewing the README and running ordinary tests require
-no source file and no network access.
+Source extraction requires the pinned source in `data/external/cern_open_data/`
+or an explicit `--input` path. Regenerating the display GIF from the committed
+compact sample, viewing the README, and running ordinary tests require no source
+file and no network access.
 
 ## Claim boundary
 

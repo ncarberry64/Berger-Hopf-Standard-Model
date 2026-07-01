@@ -7,7 +7,7 @@ BHSM is a research framework for Berger-Hopf geometry, frozen internal predictio
 It provides an artifact-backed computational framework with Python interfaces, provenance-tracked adapters, review tools, and theorem-closure machinery. Institutional integration, complete 4D export, and external HEP runtime validation remain outside the package.
 
 ## BHSM Engine on real CMS Open Data
-![BHSM Engine CMS Open Data validation](docs/assets/pr98_cms_open_data_animation/pr98_cms_engine_validation.gif)
+![BHSM Engine CMS Open Data validation](docs/assets/pr98_cms_open_data_animation/pr98_cms_engine_validation_continuous.gif)
 
 This offline animation uses a compact deterministic sample from the PR #98 CMS Open Data validation path: CERN Open Data Record 303, DOI `10.7483/OPENDATA.CMS.4M97.3SQ9`. PR #98 validated coordinate transformations on 200,000 unique CMS dimuon muon four-vectors, with a 2,000,000-vector timed workload, 3.225x speedup versus the vectorized control, and backward error below 2.4 machine-epsilon. [Static SVG and provenance](docs/pr98_cms_open_data_animation.md).
 
