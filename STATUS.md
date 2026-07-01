@@ -133,6 +133,13 @@ The detailed claim boundary is centralized in [CLAIMS.md](CLAIMS.md).
 - Normalized CKM action candidate: `OPEN_MISSING_NORMALIZED_CKM_ACTION_CANDIDATE`.
 - Transport selection remains open and the CKM exponent is `not_derived`.
 
+## v2.9 CKM Coefficient Form/Value Split
+
+- Coefficient form: `ARTIFACT_BACKED_CKM_COEFFICIENT_FORM`.
+- `g2_BH`: `ARTIFACT_BACKED_G2_BH_RUNTIME_INPUT`, not action-derived.
+- `alpha2_BH`: `ARTIFACT_BACKED_ALPHA2_BH_REGISTERED_COUPLING`, not action-derived.
+- Coefficient value and measure attachment remain open; CKM exponent remains `not_derived`.
+
 ## v2.6 Charged-Current Action Transport-Space Audit
 
 - Normalized charged-current action term: `OPEN_MISSING_NORMALIZED_CHARGED_CURRENT_ACTION_TERM`.

@@ -125,3 +125,5 @@ Not established: normalized projector-sandwiched action provenance, projector-se
 A normalized projector-sandwiched action term requires boundary/action measure, coefficient normalization, sector projectors, and action provenance.
 
 The symbolic BHSM boundary measure is a conditional source, not proof that the bounded CKM interface term is normalized. A boundary measure alone does not select the CKM transport space, and a coefficient normalization alone does not derive the CKM exponent.
+
+The coefficient form is distinct from the coefficient value. Runtime and registered coupling sources are not action derivations.

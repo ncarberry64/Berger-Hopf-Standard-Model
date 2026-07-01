@@ -175,5 +175,5 @@ Start with [docs/README.md](docs/README.md) for the documentation map and
 [ROADMAP.md](ROADMAP.md) for the next work sequence.
 ## Citation
 Use [CITATION.cff](CITATION.cff) for current citation metadata.
-## v2.8 CKM Boundary-Measure Normalization
-`L_CKM_charged_current_bounded` remains a bounded interface term. BHSM conditionally supplies a symbolic boundary-measure source, but no normalized same-term measure, fixed CKM coefficient, projector sandwich, paired normalization, or variational provenance; CKM transport selection and its exponent remain open.
+## v2.9 CKM Coefficient Form/Value Split
+The interface coefficient form `C_CKM=g2_BH/sqrt(2)` is artifact-backed, while `g2_BH` remains a runtime input rather than an action-derived value. Measure attachment, CKM transport selection, and the CKM exponent remain open.

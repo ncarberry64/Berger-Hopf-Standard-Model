@@ -1,0 +1,3 @@
+from .common import FORM,input_guard
+def audit_weak_charged_current_form():
+ return {"candidate_form":"C_CKM = g2_BH / sqrt(2)","su2_or_weak_doublet_sources":["artifacts/BHSM_chiral_current_attachment_map_v0_6.json"],"charged_current_sources":["artifacts/BHSM_production_vertex_table_candidate_v0_9.json"],"W_plus_minus_sources":["artifacts/BHSM_bounded_feynrules_prep_lagrangian_v1_2.json"],"sqrt2_source":"repeated STANDARD_HEP_TARGET_CONVENTION","generator_normalization_sources":[],"evidence_for":["multiple artifacts use g2_BH/sqrt(2)"],"evidence_against":["no BHSM generator-level derivation of sqrt(2)"],"status":FORM,"claim_boundary":"Artifact-backed coefficient form does not derive the coupling value.",**input_guard()}

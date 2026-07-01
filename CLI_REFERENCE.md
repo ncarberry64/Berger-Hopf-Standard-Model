@@ -194,6 +194,15 @@ theorem inputs and do not emit a default physical neutrino mass.
 | `ckm-paired-normalization-rule` | Audit shared forward/adjoint normalization | Markdown or JSON | no | no |
 | `ckm-transport-space-blocker` | Preserve downstream CKM blockers | Markdown or JSON | no | no |
 | `ckm-boundary-measure-normalization-report` | Render combined v2.8 status | Markdown or JSON | no | no |
+| `ckm-coefficient-form-source-search` | Search coefficient form/value sources | Markdown or JSON | no | no |
+| `weak-charged-current-coefficient-form` | Audit the weak coefficient form | Markdown or JSON | no | no |
+| `g2-bh-source` | Audit runtime versus action provenance | Markdown or JSON | no | no |
+| `alpha2-bh-source` | Audit registered alpha2 provenance | Markdown or JSON | no | no |
+| `weak-coupling-convention` | Audit the g2/alpha2 convention | Markdown or JSON | no | no |
+| `ckm-coefficient-form` | Audit the CKM coefficient form | Markdown or JSON | no | no |
+| `ckm-coefficient-value-source` | Audit the coefficient value source | Markdown or JSON | no | no |
+| `ckm-measure-coefficient-attachment-v2-9` | Audit same-term attachment | Markdown or JSON | no | no |
+| `ckm-coefficient-form-report` | Render combined v2.9 status | Markdown or JSON | no | no |
 
 Without `--offline-ok`, `pdg-fetch` may try an optional live reference adapter.
 The offline fallback is reference-only and is never a derivation input.

@@ -185,6 +185,13 @@ from .ckm_boundary_measure_normalization import (
     build_boundary_measure_normalization_report,
     search_boundary_measure_normalization_sources,
 )
+from .ckm_coefficient_form_source import (
+    search_coefficient_form_sources, audit_weak_charged_current_form,
+    audit_g2_source, audit_alpha2_source, audit_weak_coupling_convention,
+    audit_ckm_coefficient_form, audit_ckm_coefficient_value_source,
+    audit_measure_coefficient_attachment, build_coefficient_form_report,
+    coefficient_form_report_to_markdown,
+)
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -542,6 +549,9 @@ def build_parser() -> argparse.ArgumentParser:
     for command in measure_commands:
         channel = commands.add_parser(command, help=f"Render the BHSM v2.8 {command} audit")
         channel.add_argument("--format", choices=("json", "markdown"), default="json")
+    coefficient_commands = ("ckm-coefficient-form-source-search","weak-charged-current-coefficient-form","g2-bh-source","alpha2-bh-source","weak-coupling-convention","ckm-coefficient-form","ckm-coefficient-value-source","ckm-measure-coefficient-attachment-v2-9","ckm-coefficient-form-report")
+    for command in coefficient_commands:
+        channel=commands.add_parser(command,help=f"Render the BHSM v2.9 {command} audit"); channel.add_argument("--format",choices=("json","markdown"),default="json")
     return parser
 
 
@@ -1144,6 +1154,13 @@ def main(argv: Sequence[str] | None = None) -> int:
         if args.format == "json": print(json.dumps(payload, indent=2, sort_keys=True))
         elif args.command == "ckm-boundary-measure-normalization-report": print(boundary_measure_normalization_report_to_markdown(payload))
         else: print(f"# {args.command.replace('-', ' ').title()}\n\n```json\n{json.dumps(payload, indent=2, sort_keys=True)}\n```")
+        return 0
+    if args.command in {"ckm-coefficient-form-source-search","weak-charged-current-coefficient-form","g2-bh-source","alpha2-bh-source","weak-coupling-convention","ckm-coefficient-form","ckm-coefficient-value-source","ckm-measure-coefficient-attachment-v2-9","ckm-coefficient-form-report"}:
+        builders={"ckm-coefficient-form-source-search":search_coefficient_form_sources,"weak-charged-current-coefficient-form":audit_weak_charged_current_form,"g2-bh-source":audit_g2_source,"alpha2-bh-source":audit_alpha2_source,"weak-coupling-convention":audit_weak_coupling_convention,"ckm-coefficient-form":audit_ckm_coefficient_form,"ckm-coefficient-value-source":audit_ckm_coefficient_value_source,"ckm-measure-coefficient-attachment-v2-9":audit_measure_coefficient_attachment,"ckm-coefficient-form-report":build_coefficient_form_report}
+        payload=builders[args.command]()
+        if args.format=="json": print(json.dumps(payload,indent=2,sort_keys=True))
+        elif args.command=="ckm-coefficient-form-report": print(coefficient_form_report_to_markdown(payload))
+        else: print(f"# {args.command.replace('-', ' ').title()}\n\n```json\n{json.dumps(payload,indent=2,sort_keys=True)}\n```")
         return 0
     if args.command in {
         "primitive-charged-incidence",
