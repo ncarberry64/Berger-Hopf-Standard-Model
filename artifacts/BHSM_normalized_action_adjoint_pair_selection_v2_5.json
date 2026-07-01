@@ -1,0 +1,71 @@
+{
+  "action_sources": [
+    "artifacts/BHSM_ckm_adjoint_pair_selection_v2_3.json",
+    "artifacts/BHSM_chiral_current_attachment_map_v0_6.json",
+    "artifacts/BHSM_action_lemma_closure_report_v2_1.json"
+  ],
+  "audit": "normalized_action_adjoint_pair_selection",
+  "candidate_channel_space": "Hom(V_u,V_d) direct_sum Hom(V_d,V_u)",
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "The bidirectional adjoint-pair channel count is 16, but this is a conditional channel assignment until selected by the normalized action.",
+  "cms_cern_endorsement_claimed": false,
+  "competing_assignments": [
+    "one-way up/down N=8",
+    "bidirectional adjoint-pair N=16",
+    "maximal self-response N=16",
+    "sector self-response sum N=21",
+    "total charged endomorphism N=49"
+  ],
+  "detector_reconstruction_claimed": false,
+  "dimension_count": {
+    "N_CKM_candidate": 16,
+    "dim_Hom_Vd_Vu": 8,
+    "dim_Hom_Vu_Vd": 8,
+    "dim_V_d": 4,
+    "dim_V_u": 2
+  },
+  "empirical_inputs_used": false,
+  "evidence_against": [
+    "the located CKM charged-current target is labeled STANDARD_HEP_TARGET_CONVENTION in the chiral-current attachment artifact",
+    "the v2.3 adjoint-pair audit explicitly records no complete BHSM action selecting the adjoint-pair subspace",
+    "no located normalized-action artifact proves CKM transport space equals Hom(V_u,V_d) direct_sum Hom(V_d,V_u)"
+  ],
+  "evidence_for": [
+    "artifacts/BHSM_chiral_current_attachment_map_v0_6.json records a CKM charged-current target with + h.c.",
+    "artifacts/BHSM_ckm_bidirectional_channel_count_v2_3.json records Hom(V_u,V_d) plus Hom(V_d,V_u) as a 16-dimensional candidate.",
+    "artifacts/BHSM_ckm_adjoint_pair_selection_v2_3.json records the target-level adjoint-pair candidate while leaving action selection open."
+  ],
+  "forbidden_theorem_inputs": [
+    "empirical CKM fitting",
+    "PDG/reference values",
+    "W calibration",
+    "charged-mass fitting",
+    "neutrino limits",
+    "legacy threshold tables"
+  ],
+  "forbidden_theorem_inputs_used": [],
+  "frozen_predictions_modified": false,
+  "hermiticity_sources": [
+    "artifacts/BHSM_chiral_current_attachment_map_v0_6.json",
+    "artifacts/BHSM_ckm_adjoint_pair_selection_v2_3.json",
+    "docs/ckm_bidirectional_channel.md"
+  ],
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "normalized_action_sources": [
+    "artifacts/BHSM_minimal_action_report_v0_8.json",
+    "artifacts/BHSM_action_lemma_closure_report_v2_1.json",
+    "artifacts/BHSM_physical_normalization_gate_v2_0.json"
+  ],
+  "official_prediction_logic_modified": false,
+  "pdg_reference_values_used": false,
+  "physics_validation_claimed": false,
+  "proof_gap": "No artifact-backed normalized BHSM action theorem selects the off-diagonal Hermitian charged-current adjoint-pair space as the CKM transport target.",
+  "selected_dimension": null,
+  "selected_space": null,
+  "selection_rule_proven": false,
+  "statement": "Test whether the normalized BHSM charged-current action requires CKM transport on Hom(V_u,V_d) direct_sum Hom(V_d,V_u).",
+  "status": "OPEN_MISSING_NORMALIZED_ACTION_ADJOINT_PAIR_SELECTION",
+  "w_calibration_used": false
+}

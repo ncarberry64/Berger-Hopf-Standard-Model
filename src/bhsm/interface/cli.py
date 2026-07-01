@@ -144,6 +144,15 @@ from .ckm_bidirectional_channel import (
     build_ckm_bidirectional_channel_report,
     search_ckm_bidirectional_sources,
 )
+from .normalized_action_adjoint_pair import (
+    audit_ckm_alternative_channel_blockers,
+    audit_ckm_transport_space_gate,
+    audit_hermitian_charged_current_action_rule,
+    audit_normalized_action_adjoint_pair_selection,
+    build_normalized_action_adjoint_pair_report,
+    normalized_action_adjoint_pair_report_to_markdown,
+    search_normalized_action_adjoint_pair_sources,
+)
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -455,6 +464,17 @@ def build_parser() -> argparse.ArgumentParser:
     )
     for command in bidirectional_commands:
         channel = commands.add_parser(command, help=f"Render the BHSM v2.3 {command} audit")
+        channel.add_argument("--format", choices=("json", "markdown"), default="json")
+    normalized_action_adjoint_pair_commands = (
+        "normalized-action-adjoint-pair-search",
+        "normalized-action-adjoint-pair-selection",
+        "hermitian-charged-current-rule",
+        "ckm-transport-space-gate",
+        "ckm-alternative-channel-blockers",
+        "normalized-action-adjoint-pair-report",
+    )
+    for command in normalized_action_adjoint_pair_commands:
+        channel = commands.add_parser(command, help=f"Render the BHSM v2.5 {command} audit")
         channel.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
@@ -957,6 +977,30 @@ def main(argv: Sequence[str] | None = None) -> int:
         payload = builders[args.command]()
         if args.format == "json":
             print(json.dumps(payload, indent=2, sort_keys=True))
+        else:
+            print(f"# {args.command.replace('-', ' ').title()}\n\n```json\n{json.dumps(payload, indent=2, sort_keys=True)}\n```")
+        return 0
+    if args.command in {
+        "normalized-action-adjoint-pair-search",
+        "normalized-action-adjoint-pair-selection",
+        "hermitian-charged-current-rule",
+        "ckm-transport-space-gate",
+        "ckm-alternative-channel-blockers",
+        "normalized-action-adjoint-pair-report",
+    }:
+        builders = {
+            "normalized-action-adjoint-pair-search": search_normalized_action_adjoint_pair_sources,
+            "normalized-action-adjoint-pair-selection": audit_normalized_action_adjoint_pair_selection,
+            "hermitian-charged-current-rule": audit_hermitian_charged_current_action_rule,
+            "ckm-transport-space-gate": audit_ckm_transport_space_gate,
+            "ckm-alternative-channel-blockers": audit_ckm_alternative_channel_blockers,
+            "normalized-action-adjoint-pair-report": build_normalized_action_adjoint_pair_report,
+        }
+        payload = builders[args.command]()
+        if args.format == "json":
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        elif args.command == "normalized-action-adjoint-pair-report":
+            print(normalized_action_adjoint_pair_report_to_markdown(payload))
         else:
             print(f"# {args.command.replace('-', ' ').title()}\n\n```json\n{json.dumps(payload, indent=2, sort_keys=True)}\n```")
         return 0

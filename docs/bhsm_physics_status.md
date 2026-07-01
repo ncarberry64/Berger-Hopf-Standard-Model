@@ -27,6 +27,14 @@ with Hermitian bidirectional charged-current transport: `8+8=16`. This is a
 conditional reinterpretation because the repository's `+ h.c.` evidence is a
 standard target convention, not a complete-action derivation.
 
+The v2.5 normalized-action audit leaves CKM exponent closure open. The
+existence of a Hermitian-conjugate charged-current term does not by itself
+derive the CKM exponent. The CKM exponent remains open unless BHSM proves that
+CKM transport acts on the normalized Hermitian adjoint-pair charged-current
+space. No empirical CKM fitting, charged-mass fitting, PDG values, W
+calibration, neutrino limits, or legacy threshold tables are used as theorem
+inputs.
+
 - complete action derivations
 - transport theorems
 - physical normalization and unit maps

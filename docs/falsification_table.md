@@ -15,6 +15,12 @@ The v2.3 bidirectional candidate fails if the complete action lacks an
 off-diagonal up/down block, is not adjoint closed, or assigns unequal physical
 transport roles to the two directions.
 
+The v2.5 normalized-action selection fails if the normalized action selects
+one-way up/down (8), maximal self-response (16), sector self-response (21),
+total charged endomorphism (49), or any other CKM transport space. The
+bidirectional adjoint-pair channel count is 16, but this is a conditional
+channel assignment until selected by the normalized action.
+
 | claim_id | track | claim | current_status | what_would_falsify_it |
 | --- | --- | --- | --- | --- |
 | ENG-01 | ENGINE | CERN open-data four-vector accuracy | ARTIFACT_BACKED | scale-aware error exceeds declared bound |

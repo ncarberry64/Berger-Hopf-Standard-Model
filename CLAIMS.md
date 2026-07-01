@@ -6,6 +6,7 @@
 - The v1.6 ledger inventories all sixteen completion categories and conditionally closes only the relative collar-measure shape and same-scale identity transport; it does not claim full BHSM completion.
 - The v1.7 charged audit distinguishes artifact-backed coefficients from conditional eta/mixing sources and open action-normalization and CKM-exponent theorems.
 - The v1.8 common-16 audit proves exact fraction identities conditional on structural `Omega_f` and candidate `rho_ch=3`; it does not prove the CKM exponent or a shared action generator.
+- The v2.5 normalized-action adjoint-pair audit records `OPEN_MISSING_NORMALIZED_ACTION_ADJOINT_PAIR_SELECTION`; the Hermitian bidirectional count is conditional until selected by the normalized action.
 
 - BHSM has frozen internal prediction artifacts.
 - BHSM has an offline Python computational interface.
@@ -97,6 +98,9 @@ Do not claim that:
 - The abstract log-transport lemma excludes the competing dimensions `8`, `21`, and `49`.
 - A charged-current target containing `+ h.c.` proves that the complete BHSM action selects the Hermitian adjoint-pair transport space.
 - The numerical equality between bidirectional transport dimension 16 and maximal self-response dimension 16 identifies their physical source.
+- The existence of a Hermitian-conjugate charged-current term by itself derives the CKM exponent.
+- The CKM exponent is derived before BHSM proves that CKM transport acts on the normalized Hermitian adjoint-pair charged-current space.
+- Empirical CKM fitting, charged-mass fitting, PDG values, W calibration, neutrino limits, or legacy threshold tables are theorem inputs for the normalized-action adjoint-pair audit.
 
 ## Policy
 

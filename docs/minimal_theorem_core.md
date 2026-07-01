@@ -19,6 +19,12 @@ sum of the 8-dimensional up/down charged-current channel and its 8-dimensional
 adjoint. The existing `+ h.c.` target convention motivates this interpretation
 but does not derive the transport subspace from the BHSM action.
 
+The v2.5 normalized-action audit keeps that gate explicit:
+`OPEN_MISSING_NORMALIZED_ACTION_ADJOINT_PAIR_SELECTION`. The existence of a
+Hermitian-conjugate charged-current term does not by itself derive the CKM
+exponent. The CKM exponent remains open unless BHSM proves that CKM transport
+acts on the normalized Hermitian adjoint-pair charged-current space.
+
 | core_id | name | status | remaining_blockers |
 | --- | --- | --- | --- |
 | CORE-01 | Unified boundary/action principle | CONDITIONAL | ['complete normalized action'] |

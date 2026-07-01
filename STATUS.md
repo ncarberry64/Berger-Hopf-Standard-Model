@@ -46,6 +46,7 @@ Status taxonomy: `ESTABLISHED`, `ARTIFACT_BACKED`, `CANDIDATE`, `CONDITIONAL`,
 | Full-completion ledger | `INTEGRATED_CONDITIONAL_ARCHITECTURE_WITH_OPEN_BLOCKERS` | Sixteen categories, explicit priorities, and a partial boundary-measure/identity-transport closure | Physical measure normalization, action theorems, unit maps, and runtime gates remain open | `python -m bhsm.interface full-completion-status --format markdown` |
 | Charged action/stiffness/mixing | `CONDITIONAL_CHARGED_SOURCES_WITH_OPEN_ACTION_NORMALIZATION_AND_CKM_EXPONENT_DERIVATION` | Projectors, charged coefficients, frozen CKM formulas, and conditional eta/mixing sources are inventoried | Charged action normalization, unique rho_ch, eta_l action source, CKM 1/16 theorem, and cross-scale transport | `python -m bhsm.interface charged-closure-report --format markdown` |
 | Common-16 closure | `CONDITIONAL_COMMON_16_GENERATOR_CANDIDATE` | Exact incidence, bridge/beta, and reciprocal fraction identities | Action-derived `Omega_f`, selected `rho_ch=3`, charged overlap source, and CKM reciprocal transport theorem | `python -m bhsm.interface final-completion-status --format markdown` |
+| Normalized action CKM adjoint-pair audit | `OPEN_MISSING_NORMALIZED_ACTION_ADJOINT_PAIR_SELECTION` | The target-level Hermitian bidirectional channel count is exact and conditional | Normalized-action proof that CKM transport acts on `Hom(V_u,V_d) direct_sum Hom(V_d,V_u)` | `python -m bhsm.interface normalized-action-adjoint-pair-report --format markdown` |
 | FeynRules minimal model | `RUNTIME_GATED` | Disabled handoff assets and validation contracts exist | Complete eligible interaction set and live FeynRules validation | `python -m bhsm.interface status feynrules_minimal_model` |
 | UFO export | `RUNTIME_GATED` | Export contract and runner scaffolds exist | Real export and loadability validation | `python -m bhsm.interface status ufo_export` |
 | MadGraph smoke test | `RUNTIME_GATED` | Smoke-test plan and runner scaffolds exist | Validated UFO plus live MadGraph execution | `python -m bhsm.interface status madgraph_smoke_test` |
@@ -100,3 +101,15 @@ The detailed claim boundary is centralized in [CLAIMS.md](CLAIMS.md).
 - Adjoint-pair selection: `OPEN_MISSING_CKM_ADJOINT_PAIR_SELECTION_RULE`.
 - The CKM target contains `+ h.c.`, but that structure remains a standard target convention rather than an action-derived transport theorem.
 - Maximal self-response is retired as the primary CKM source; its equal dimension is not physical source selection.
+
+## v2.5 Normalized Action Adjoint-Pair Audit
+
+- Hermitian charged-current action rule: `CONDITIONAL_HERMITIAN_CHARGED_CURRENT_ACTION_RULE`.
+- Normalized action adjoint-pair selection: `OPEN_MISSING_NORMALIZED_ACTION_ADJOINT_PAIR_SELECTION`.
+- CKM transport-space theorem: `OPEN_MISSING_CKM_TRANSPORT_SPACE_THEOREM`.
+- CKM log-transport application: `OPEN_MISSING_CKM_LOG_TRANSPORT_AVERAGING_THEOREM`.
+- The existence of a Hermitian-conjugate charged-current term does not by itself derive the CKM exponent.
+- The CKM exponent remains open unless BHSM proves that CKM transport acts on the normalized Hermitian adjoint-pair charged-current space.
+- The bidirectional adjoint-pair channel count is 16, but this is a conditional channel assignment until selected by the normalized action.
+- The maximal self-response channel also has dimension 16, but it is retired as the primary CKM source unless action evidence revives it.
+- No empirical CKM fitting, charged-mass fitting, PDG values, W calibration, neutrino limits, or legacy threshold tables are used as theorem inputs.

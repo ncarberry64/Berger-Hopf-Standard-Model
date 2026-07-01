@@ -60,6 +60,7 @@ BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode
 | Action-supported response cone | `CONDITIONAL_ACTION_DERIVED_RESPONSE_CONE_CANDIDATE` | Existing action terms partially support the cone; complete-action derivation remains open. |
 | Full-completion audit | `CONDITIONAL_COMMON_16_GENERATOR_CANDIDATE` | Exact common-16 identities are verified; Omega/rho action provenance and CKM reciprocal transport remain open. |
 | Charged closure audit | `CONDITIONAL_CHARGED_SOURCES` | Charged coefficients are inventoried; action normalization and CKM exponent derivation remain open. |
+| Normalized action CKM adjoint-pair audit | `OPEN_MISSING_NORMALIZED_ACTION_ADJOINT_PAIR_SELECTION` | Hermitian bidirectional count is conditional; normalized-action CKM transport-space selection remains open. |
 | FeynRules, UFO, MadGraph | `RUNTIME_GATED` | External validation is deferred until theorem and runtime gates pass. |
 
 [STATUS.md](STATUS.md) is the single source of truth. Historical README material is preserved in
@@ -159,8 +160,8 @@ BHSM does not claim full Standard Model derivation or physical eV/GeV neutrino m
 Start with `make reviewer-smoke` and the [reproduction guide](docs/reviewer_reproduction_guide.md).
 The primitive lattice normalization rule is not action-derived unless the BHSM action is shown to quotient common incidence rescalings.
 The maximal-overlap bridge rule is not action-derived unless the BHSM charged bridge/Hessian action selects the maximal primitive overlap channel.
-The abstract log-transport averaging lemma does not by itself derive the CKM exponent. The one-way up/down channel count is 8. The Hermitian bidirectional up/down adjoint-pair channel count is 16.
-The bidirectional channel count does not derive the CKM exponent unless BHSM proves that CKM transport is governed by the Hermitian charged-current adjoint pair. The maximal self-response channel also has dimension 16, so the repo must distinguish same-number coincidence from physical source selection.
+The abstract log-transport averaging lemma does not by itself derive the CKM exponent. The one-way up/down channel count is 8. The Hermitian bidirectional up/down adjoint-pair channel count is 16. The existence of a Hermitian-conjugate charged-current term does not by itself derive the CKM exponent.
+The bidirectional channel count does not derive the CKM exponent unless BHSM proves that CKM transport is governed by the Hermitian charged-current adjoint pair. The CKM exponent remains open unless BHSM proves that CKM transport acts on the normalized Hermitian adjoint-pair charged-current space. The bidirectional adjoint-pair channel count is 16, but this is a conditional channel assignment until selected by the normalized action. The maximal self-response channel also has dimension 16, but it is retired as the primary CKM source unless action evidence revives it.
 No empirical CKM fitting, charged-mass fitting, PDG values, W calibration, neutrino limits, or legacy threshold tables are used as theorem inputs. Runtime-Gated External Tools remain separate.
 ## Repository Map
 | Path | Purpose |
@@ -174,6 +175,5 @@ No empirical CKM fitting, charged-mass fitting, PDG values, W calibration, neutr
 
 Start with [docs/README.md](docs/README.md) for the documentation map and
 [ROADMAP.md](ROADMAP.md) for the next work sequence.
-
 ## Citation
 Use [CITATION.cff](CITATION.cff) for current citation metadata.
