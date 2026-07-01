@@ -272,7 +272,7 @@ def main() -> int:
     (HERE / "pr98_cms_four_vector_sample.json").write_text(json.dumps(sample, indent=2) + "\n", encoding="utf-8")
     frames = render_frames(sample)
     frames[0].save(
-        HERE / "pr98_cms_engine_validation.gif",
+        HERE / "pr98_cms_engine_validation_continuous.gif",
         save_all=True,
         append_images=frames[1:],
         duration=GIF_DURATION_MS,
