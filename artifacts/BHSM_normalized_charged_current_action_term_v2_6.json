@@ -1,0 +1,62 @@
+{
+  "action_reality_or_hermiticity_source": "target expression contains + h.c.; no normalized BHSM action source requires the conjugate term",
+  "adjoint_required": "unresolved_by_normalized_action",
+  "artifact_sources": [
+    "artifacts/BHSM_chiral_current_attachment_map_v0_6.json",
+    "artifacts/BHSM_minimal_bounded_lagrangian_subset_v1_2.json",
+    "artifacts/BHSM_production_vertex_table_candidate_v0_9.json"
+  ],
+  "audit": "normalized_charged_current_action_term",
+  "candidate_term": "L_CKM_charged_current_bounded",
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "A bounded charged-current target term is located, but the normalized BHSM charged-current action term and its operator domain/codomain remain missing.",
+  "cms_cern_endorsement_claimed": false,
+  "codomain": "unresolved by normalized action; target convention suggests V_d output sector plus h.c.",
+  "detector_reconstruction_claimed": false,
+  "domain": "unresolved by normalized action; target convention suggests V_u input sector",
+  "empirical_inputs_used": false,
+  "evidence_against": [
+    "minimal bounded subset states it is not the complete BHSM 4D Lagrangian",
+    "Lorentz and gauge structures are STANDARD_HEP_TARGET_CONVENTION or target partial",
+    "canonical normalization is TARGET_CONVENTION_PARTIAL or translation/runtime scoped",
+    "no artifact states a normalized BHSM charged-current action term with operator domain/codomain"
+  ],
+  "evidence_for": [
+    "bounded CKM charged-current target term is present",
+    "candidate and bounded expressions include + h.c.",
+    "CKM source matrix is local and artifact-backed"
+  ],
+  "forbidden_theorem_inputs": [
+    "empirical CKM fitting",
+    "PDG/reference values",
+    "W calibration",
+    "charged-mass fitting",
+    "neutrino limits",
+    "legacy threshold tables"
+  ],
+  "forbidden_theorem_inputs_used": [],
+  "frozen_predictions_modified": false,
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "normalization_sources": [
+    "artifacts/BHSM_minimal_bounded_lagrangian_subset_v1_2.json",
+    "artifacts/BHSM_chiral_current_attachment_map_v0_6.json",
+    "artifacts/BHSM_canonical_production_basis_theorem_v0_8.json"
+  ],
+  "official_prediction_logic_modified": false,
+  "pdg_reference_values_used": false,
+  "physics_validation_claimed": false,
+  "projector_sources": [
+    "artifacts/BHSM_primitive_charged_incidence_closure_report_v2_0.json",
+    "artifacts/BHSM_projector_reduction_audit_v2_0.json"
+  ],
+  "status": "OPEN_MISSING_NORMALIZED_CHARGED_CURRENT_ACTION_TERM",
+  "symbolic_form": "(g2_BH_runtime / sqrt(2)) * ubar_i gamma^mu P_L V_CKM_BH[i,j] d_j W_plus_mu + h.c.",
+  "test_sources": [
+    "tests/test_phase_three_d_canonical_current_attachment.py",
+    "tests/test_phase_three_j_minimal_collider_lagrangian.py",
+    "tests/test_normalized_action_adjoint_pair_selection.py"
+  ],
+  "w_calibration_used": false
+}

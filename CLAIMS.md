@@ -101,6 +101,10 @@ Do not claim that:
 - The existence of a Hermitian-conjugate charged-current term by itself derives the CKM exponent.
 - The CKM exponent is derived before BHSM proves that CKM transport acts on the normalized Hermitian adjoint-pair charged-current space.
 - Empirical CKM fitting, charged-mass fitting, PDG values, W calibration, neutrino limits, or legacy threshold tables are theorem inputs for the normalized-action adjoint-pair audit.
+- A bounded charged-current target term is the normalized BHSM charged-current action term.
+- Arithmetic channel-count coincidence selects the CKM transport space.
+- A Hermitian-conjugate term by itself derives CKM transport-space selection.
+- Same numerical dimension establishes the physical source of CKM transport.
 
 ## Policy
 
