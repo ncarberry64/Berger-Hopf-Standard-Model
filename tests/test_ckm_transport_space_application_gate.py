@@ -16,4 +16,3 @@ def test_ckm_transport_space_application_gate_requires_selected_space():
     blockers = " ".join(payload["blocking_conditions"])
     assert "charged-current transport space is not action-selected" in blockers
     assert "CKM is not proven" in blockers
-

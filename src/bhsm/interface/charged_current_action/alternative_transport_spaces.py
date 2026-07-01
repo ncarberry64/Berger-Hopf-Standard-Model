@@ -16,4 +16,3 @@ def audit_alternative_transport_spaces() -> dict[str, object]:
         "claim_boundary": "Alternative assignments remain recorded until the normalized charged-current action selects one.",
         **input_guard(),
     }
-

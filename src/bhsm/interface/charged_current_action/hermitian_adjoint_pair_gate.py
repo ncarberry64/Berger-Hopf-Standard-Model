@@ -28,4 +28,3 @@ def audit_hermitian_adjoint_pair_transport_gate() -> dict[str, object]:
         "claim_boundary": "The existence of a Hermitian-conjugate term supports action reality but does not by itself derive CKM transport-space selection.",
         **input_guard(),
     }
-

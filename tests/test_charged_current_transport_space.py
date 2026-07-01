@@ -19,4 +19,3 @@ def test_charged_current_transport_space_selection_depends_on_action_evidence():
     assert payload["selected_space"] is None
     assert payload["selected_dimension"] is None
     assert "not arithmetic channel-count coincidence" in payload["claim_boundary"]
-

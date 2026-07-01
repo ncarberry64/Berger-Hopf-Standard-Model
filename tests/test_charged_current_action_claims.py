@@ -70,4 +70,3 @@ def test_charged_current_action_does_not_touch_frozen_or_official_logic():
         check=True,
     )
     assert result.stdout.strip() == ""
-

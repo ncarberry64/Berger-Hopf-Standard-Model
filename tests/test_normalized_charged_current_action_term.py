@@ -15,4 +15,3 @@ def test_normalized_charged_current_action_term_does_not_promote_target_conventi
     assert "not the complete BHSM 4D Lagrangian" in " ".join(payload["evidence_against"])
     assert "operator domain/codomain" in payload["claim_boundary"]
     assert payload["ckm_fitting_used"] is False
-

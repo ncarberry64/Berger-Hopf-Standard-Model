@@ -19,4 +19,3 @@ def test_charged_current_action_search_records_all_candidate_counts():
     assert dims["sector_self_response_sum"] == 21
     assert dims["total_charged_endomorphism"] == 49
     assert dims["maximal_self_response"] == 16
-

@@ -63,7 +63,6 @@ def channel_dimensions() -> dict[str, int]:
         "maximal_self_response": S_DOWN**2,
     }
 
-
 def input_guard() -> dict[str, object]:
     return {
         "empirical_inputs_used": False,
@@ -81,4 +80,3 @@ def input_guard() -> dict[str, object]:
         "detector_reconstruction_claimed": False,
         "cms_cern_endorsement_claimed": False,
     }
-

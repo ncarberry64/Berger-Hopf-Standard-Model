@@ -46,4 +46,3 @@ def test_charged_current_action_report_markdown_cli():
     )
     assert "# Charged-Current Action Transport-Space Audit" in result.stdout
     assert "OPEN_MISSING_NORMALIZED_CHARGED_CURRENT_ACTION_TERM" in result.stdout
-

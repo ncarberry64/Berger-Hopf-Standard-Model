@@ -217,4 +217,3 @@ def search_charged_current_action_sources(max_hits: int = 180) -> dict[str, obje
         "claim_boundary": "Located charged-current terms are target/interface candidates; they do not yet constitute a normalized BHSM charged-current action term selecting transport space.",
         **input_guard(),
     }
-

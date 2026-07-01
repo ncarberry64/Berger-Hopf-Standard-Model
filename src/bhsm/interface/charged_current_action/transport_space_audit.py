@@ -77,4 +77,3 @@ def audit_charged_current_transport_space() -> dict[str, object]:
         "claim_boundary": "The normalized charged-current action term, not arithmetic channel-count coincidence, must select the CKM transport space.",
         **input_guard(),
     }
-

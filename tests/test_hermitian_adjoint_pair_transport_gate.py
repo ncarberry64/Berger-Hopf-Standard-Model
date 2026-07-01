@@ -10,4 +10,3 @@ def test_hermitian_adjoint_pair_gate_separates_hc_from_selection():
     assert payload["status"] == "OPEN_MISSING_HERMITIAN_ADJOINT_PAIR_TRANSPORT_SPACE"
     assert payload["selected_space"] is None
     assert "does not by itself derive CKM transport-space selection" in payload["claim_boundary"]
-

@@ -30,4 +30,3 @@ def audit_ckm_transport_space_application_gate() -> dict[str, object]:
         "claim_boundary": "The Hermitian adjoint-pair channel count is 16, but the CKM exponent remains not derived unless BHSM proves CKM acts on that selected transport space.",
         **input_guard(),
     }
-

@@ -56,4 +56,3 @@ def charged_current_action_report_to_markdown(payload: dict[str, object] | None 
     lines.extend(f"- {statement}" for statement in report["required_boundary_statements"])
     lines.extend(["", "## Machine Payload", "```json", json.dumps(report, indent=2, sort_keys=True), "```"])
     return "\n".join(lines)
-
