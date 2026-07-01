@@ -81,3 +81,7 @@ commands, and records falsifiers. It does not close the following items.
 5. Only after interaction eligibility closes, attempt external HEP runtime validation.
 6. Obtain an independent matched-engine reproduction on a PMU-enabled host;
    preserve regressions and null results rather than selecting favorable hosts.
+7. Derive or reject the primitive charged-lattice normalization rule from the
+   complete action; gcd arithmetic alone is insufficient.
+8. Derive the bridge overlap-selection rule and CKM logarithmic averaging
+   theorem before promoting `4/3` or `1/16` beyond conditional candidates.

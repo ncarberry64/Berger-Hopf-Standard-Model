@@ -113,6 +113,15 @@ from .common_16 import (
     search_common_16_sources,
 )
 from .science_hardening import emit_hardening_payload
+from .primitive_charged_incidence import (
+    audit_bridge_beta_identity,
+    audit_ckm_log_transport,
+    audit_external_reproduction_status,
+    audit_overlap_4_over_3,
+    audit_physical_normalization,
+    audit_rho_gcd_selection,
+    build_primitive_charged_incidence_report,
+)
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -381,6 +390,19 @@ def build_parser() -> argparse.ArgumentParser:
     for command in hardening_commands:
         hardening = commands.add_parser(command, help=f"Render the BHSM v1.9 {command} report")
         hardening.add_argument("--format", choices=("json", "markdown"), default="json")
+    primitive_commands = (
+        "primitive-charged-incidence",
+        "rho-ch-gcd-selection",
+        "overlap-4-over-3-source",
+        "bridge-beta-identity",
+        "ckm-log-transport-gate",
+        "physical-normalization-gate",
+        "external-reproduction-status",
+        "primitive-charged-incidence-report",
+    )
+    for command in primitive_commands:
+        primitive = commands.add_parser(command, help=f"Render the BHSM v2.0 {command} audit")
+        primitive.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
 
@@ -822,6 +844,32 @@ def main(argv: Sequence[str] | None = None) -> int:
         "external-reproduction-packet",
     }:
         emit_hardening_payload(args.command, args.format)
+        return 0
+    if args.command in {
+        "primitive-charged-incidence",
+        "rho-ch-gcd-selection",
+        "overlap-4-over-3-source",
+        "bridge-beta-identity",
+        "ckm-log-transport-gate",
+        "physical-normalization-gate",
+        "external-reproduction-status",
+        "primitive-charged-incidence-report",
+    }:
+        builders = {
+            "primitive-charged-incidence": build_primitive_charged_incidence_report,
+            "rho-ch-gcd-selection": audit_rho_gcd_selection,
+            "overlap-4-over-3-source": audit_overlap_4_over_3,
+            "bridge-beta-identity": audit_bridge_beta_identity,
+            "ckm-log-transport-gate": audit_ckm_log_transport,
+            "physical-normalization-gate": audit_physical_normalization,
+            "external-reproduction-status": audit_external_reproduction_status,
+            "primitive-charged-incidence-report": build_primitive_charged_incidence_report,
+        }
+        payload = builders[args.command]()
+        if args.format == "json":
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        else:
+            print(f"# {args.command.replace('-', ' ').title()}\n\n```json\n{json.dumps(payload, indent=2, sort_keys=True)}\n```")
         return 0
     particles = tuple(item.strip() for item in args.particles.split(",") if item.strip())
     report = build_prediction_report(

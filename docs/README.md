@@ -21,6 +21,10 @@ The current minimal-action theory dictionary is documented in
 - [Action derivation gates](action_derivation_gates_report.md)
 - [Brutal falsification table](falsification_table.md)
 - [External reproduction request](external_reproduction_request.md)
+- [Primitive charged incidence v2.0](primitive_charged_incidence.md)
+- [rho_ch GCD selection](rho_ch_gcd_selection.md)
+- [Charged overlap 4/3 source](charged_overlap_4_over_3_source.md)
+- [CKM log-transport gate](ckm_log_transport_gate.md)
 
 - [CERN Open Data coordinate benchmark](cern_open_data_benchmark.md): checksum-gated
   CMS dimuon four-vector throughput validation; not track reconstruction.

@@ -1,5 +1,9 @@
 # Brutal Falsification Table
 
+Primitive-incidence candidates fail if the complete action does not select the
+gcd normalization, maximal primitive overlap, or reciprocal log-transport
+averaging rule. Arithmetic agreement alone is not protection from falsification.
+
 | claim_id | track | claim | current_status | what_would_falsify_it |
 | --- | --- | --- | --- | --- |
 | ENG-01 | ENGINE | CERN open-data four-vector accuracy | ARTIFACT_BACKED | scale-aware error exceeds declared bound |

@@ -64,3 +64,14 @@ The detailed claim boundary is centralized in [CLAIMS.md](CLAIMS.md).
 - charged overlap `4/3`: `OPEN_MISSING_CHARGED_OVERLAP_4_OVER_3_ACTION_SOURCE`.
 - Engine results are not empirical validation of BHSM Physics and do not cover
   detector reconstruction.
+
+## v2.0 Primitive Charged Incidence
+
+- Exact conditional algebra: `Omega_ch=(3,6,12)`, `T_ch=21`, `rho_ch=3`,
+  `s_ch=(1,2,4)`, `Pi_ch=(1,2,4)/7`, `O_ch=4/3`, `N_16=16`,
+  `g_bridge=16/189`, and `beta_ch=(16,32,64)/1323`.
+- `rho_ch`: `CONDITIONAL_RHO_CH_PRIMITIVE_LATTICE_CANDIDATE`; its action
+  normalization rule remains open.
+- CKM transport: `CONDITIONAL_CKM_LOG_TRANSPORT_CANDIDATE`; the averaging
+  theorem remains open.
+- Physical normalization is open; external reproduction is prepared but not completed.

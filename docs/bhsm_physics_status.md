@@ -10,6 +10,10 @@ BHSM does not claim full Standard Model derivation or physical eV/GeV neutrino m
 
 ## Open blockers
 
+The v2.0 primitive charged incidence identities are exact conditional algebra.
+Their action normalization, overlap-selection, CKM transport, and physical unit
+maps remain open.
+
 - complete action derivations
 - transport theorems
 - physical normalization and unit maps
