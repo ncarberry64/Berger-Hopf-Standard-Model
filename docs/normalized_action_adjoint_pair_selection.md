@@ -14,5 +14,9 @@ The existence of a Hermitian-conjugate charged-current term does not by itself d
 
 The CKM exponent remains open unless BHSM proves that CKM transport acts on the normalized Hermitian adjoint-pair charged-current space.
 
+The normalized charged-current action term, not arithmetic channel-count coincidence, must select the CKM transport space.
+
+Same numerical dimension does not establish the physical source.
+
 No empirical CKM fitting, charged-mass fitting, PDG values, W calibration, neutrino limits, or legacy threshold tables are used as theorem inputs.
 

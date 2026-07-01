@@ -113,3 +113,15 @@ The detailed claim boundary is centralized in [CLAIMS.md](CLAIMS.md).
 - The bidirectional adjoint-pair channel count is 16, but this is a conditional channel assignment until selected by the normalized action.
 - The maximal self-response channel also has dimension 16, but it is retired as the primary CKM source unless action evidence revives it.
 - No empirical CKM fitting, charged-mass fitting, PDG values, W calibration, neutrino limits, or legacy threshold tables are used as theorem inputs.
+
+## v2.6 Charged-Current Action Transport-Space Audit
+
+- Normalized charged-current action term: `OPEN_MISSING_NORMALIZED_CHARGED_CURRENT_ACTION_TERM`.
+- Charged-current transport-space status: `OPEN_MISSING_CHARGED_CURRENT_TRANSPORT_SPACE` with `MULTIPLE_COMPETING_TRANSPORT_SPACES`.
+- Hermitian adjoint-pair transport gate: `OPEN_MISSING_HERMITIAN_ADJOINT_PAIR_TRANSPORT_SPACE`.
+- CKM transport-space application: `OPEN_MISSING_CKM_TRANSPORT_SPACE_THEOREM`; CKM exponent remains `not_derived`.
+- The normalized charged-current action term, not arithmetic channel-count coincidence, must select the CKM transport space.
+- The Hermitian adjoint-pair channel count is 16, but the CKM exponent remains not derived unless BHSM proves CKM acts on that selected transport space.
+- The existence of a Hermitian-conjugate term supports action reality but does not by itself derive CKM transport-space selection.
+- Same numerical dimension does not establish the physical source.
+- No empirical CKM fitting, charged-mass fitting, PDG values, W calibration, neutrino limits, or legacy threshold tables are used as theorem inputs.

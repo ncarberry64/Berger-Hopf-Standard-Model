@@ -1,0 +1,107 @@
+{
+  "action_term_status": "OPEN_MISSING_NORMALIZED_CHARGED_CURRENT_ACTION_TERM",
+  "audit": "charged_current_transport_space",
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "The normalized charged-current action term, not arithmetic channel-count coincidence, must select the CKM transport space.",
+  "cms_cern_endorsement_claimed": false,
+  "detector_reconstruction_claimed": false,
+  "empirical_inputs_used": false,
+  "forbidden_theorem_inputs": [
+    "empirical CKM fitting",
+    "PDG/reference values",
+    "W calibration",
+    "charged-mass fitting",
+    "neutrino limits",
+    "legacy threshold tables"
+  ],
+  "forbidden_theorem_inputs_used": [],
+  "frozen_predictions_modified": false,
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "official_prediction_logic_modified": false,
+  "pdg_reference_values_used": false,
+  "physics_validation_claimed": false,
+  "selected_dimension": null,
+  "selected_space": null,
+  "spaces": [
+    {
+      "action_evidence_against": [
+        "candidate terms also contain + h.c.; normalized action does not select one-way-only transport"
+      ],
+      "action_evidence_for": [
+        "target bilinear contains ubar_i ... d_j"
+      ],
+      "current_status": "OPEN_MISSING_CHARGED_CURRENT_TRANSPORT_SPACE",
+      "dimension": 8,
+      "interpretation": "one-way up/down charged-current map",
+      "space_id": "one_way_up_down",
+      "symbolic_space": "Hom(V_u,V_d)",
+      "what_would_falsify_it": "an action theorem requiring Hermitian adjoint-pair closure or a different transport algebra",
+      "what_would_select_it": "a normalized action term declaring J_ud as the transport operator without adjoint-pair channel counting"
+    },
+    {
+      "action_evidence_against": [
+        "+ h.c. is not yet tied to normalized BHSM action selection"
+      ],
+      "action_evidence_for": [
+        "target/interface expressions include + h.c."
+      ],
+      "current_status": "OPEN_MISSING_HERMITIAN_ADJOINT_PAIR_TRANSPORT_SPACE",
+      "dimension": 16,
+      "interpretation": "off-diagonal charged-current map plus Hermitian adjoint",
+      "space_id": "hermitian_adjoint_pair",
+      "symbolic_space": "Hom(V_u,V_d) direct_sum Hom(V_d,V_u)",
+      "what_would_falsify_it": "an action theorem selecting one-way, sector-self, total-endomorphism, or maximal-self transport instead",
+      "what_would_select_it": "a normalized action theorem proving the off-diagonal map and conjugate term are jointly required"
+    },
+    {
+      "action_evidence_against": [
+        "not the located charged-current target form"
+      ],
+      "action_evidence_for": [
+        "charged incidence audits track sector dimensions 1, 2, 4"
+      ],
+      "current_status": "OPEN_MISSING_CHARGED_CURRENT_TRANSPORT_SPACE",
+      "dimension": 21,
+      "interpretation": "sectorwise charged self-response sum",
+      "space_id": "sector_self_response_sum",
+      "symbolic_space": "End(V_l) direct_sum End(V_u) direct_sum End(V_d)",
+      "what_would_falsify_it": "an action theorem restricting transport to off-diagonal charged-current maps",
+      "what_would_select_it": "a normalized charged action showing CKM transport averages sector self-responses"
+    },
+    {
+      "action_evidence_against": [
+        "no located charged-current action acts on all charged endomorphisms"
+      ],
+      "action_evidence_for": [
+        "recorded as a competing algebraic assignment"
+      ],
+      "current_status": "OPEN_MISSING_CHARGED_CURRENT_TRANSPORT_SPACE",
+      "dimension": 49,
+      "interpretation": "full charged endomorphism algebra",
+      "space_id": "total_charged_endomorphism",
+      "symbolic_space": "End(V_ch)",
+      "what_would_falsify_it": "a theorem selecting the smaller one-way or adjoint-pair charged-current block",
+      "what_would_select_it": "a normalized action term with domain/codomain V_ch and full End(V_ch) transport"
+    },
+    {
+      "action_evidence_against": [
+        "same numerical dimension does not establish physical source"
+      ],
+      "action_evidence_for": [
+        "same numerical dimension as the adjoint-pair candidate"
+      ],
+      "current_status": "RETIRED_MAXIMAL_SELF_RESPONSE_AS_PRIMARY_CKM_SOURCE",
+      "dimension": 16,
+      "interpretation": "maximal down-sector self-response",
+      "space_id": "maximal_self_response",
+      "symbolic_space": "End(V_d)",
+      "what_would_falsify_it": "an action theorem selecting off-diagonal charged-current transport or another space",
+      "what_would_select_it": "explicit action evidence reviving End(V_d) as charged-current transport"
+    }
+  ],
+  "status": "MULTIPLE_COMPETING_TRANSPORT_SPACES",
+  "transport_space_status": "OPEN_MISSING_CHARGED_CURRENT_TRANSPORT_SPACE",
+  "w_calibration_used": false
+}

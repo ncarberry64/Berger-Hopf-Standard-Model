@@ -25,6 +25,12 @@ Hermitian-conjugate charged-current term does not by itself derive the CKM
 exponent. The CKM exponent remains open unless BHSM proves that CKM transport
 acts on the normalized Hermitian adjoint-pair charged-current space.
 
+The v2.6 charged-current action audit moves the upstream blocker one step
+earlier: `OPEN_MISSING_NORMALIZED_CHARGED_CURRENT_ACTION_TERM`. The normalized
+charged-current action term, not arithmetic channel-count coincidence, must
+select the CKM transport space. Same numerical dimension does not establish the
+physical source.
+
 | core_id | name | status | remaining_blockers |
 | --- | --- | --- | --- |
 | CORE-01 | Unified boundary/action principle | CONDITIONAL | ['complete normalized action'] |
@@ -33,7 +39,7 @@ acts on the normalized Hermitian adjoint-pair charged-current space.
 | CORE-04 | rho_ch threshold structure | STRUCTURALLY_MOTIVATED_NOT_DERIVED | ['action selection of rho_ch'] |
 | CORE-05 | Charged bridge and beta hierarchy | CONDITIONAL | ['4/3 overlap action source'] |
 | CORE-06 | Common-16 generator candidate | CONDITIONAL | ['shared action generator'] |
-| CORE-07 | CKM exponent | OPEN_MISSING_ACTION_DERIVATION | ['Hermitian adjoint-pair action selection', 'reciprocal transport theorem'] |
+| CORE-07 | CKM exponent | OPEN_MISSING_ACTION_DERIVATION | ['normalized charged-current action term', 'charged-current transport-space selection', 'reciprocal transport theorem'] |
 | CORE-08 | PMNS/neutrino structure | CONDITIONAL | ['physical basis and unit map'] |
 | CORE-09 | Neutral propagation | CONDITIONAL | ['dimensionful transport normalization'] |
 | CORE-10 | Neutral positivity | CONDITIONAL | ['complete-action admissible cone'] |

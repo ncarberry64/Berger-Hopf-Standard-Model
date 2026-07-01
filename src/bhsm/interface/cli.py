@@ -153,6 +153,15 @@ from .normalized_action_adjoint_pair import (
     normalized_action_adjoint_pair_report_to_markdown,
     search_normalized_action_adjoint_pair_sources,
 )
+from .charged_current_action import (
+    audit_ckm_transport_space_application_gate,
+    audit_charged_current_transport_space,
+    audit_hermitian_adjoint_pair_transport_gate,
+    audit_normalized_charged_current_action_term,
+    build_charged_current_action_report,
+    charged_current_action_report_to_markdown,
+    search_charged_current_action_sources,
+)
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -475,6 +484,17 @@ def build_parser() -> argparse.ArgumentParser:
     )
     for command in normalized_action_adjoint_pair_commands:
         channel = commands.add_parser(command, help=f"Render the BHSM v2.5 {command} audit")
+        channel.add_argument("--format", choices=("json", "markdown"), default="json")
+    charged_current_action_commands = (
+        "charged-current-action-search",
+        "normalized-charged-current-action-term",
+        "charged-current-transport-space",
+        "hermitian-adjoint-pair-transport-gate",
+        "ckm-transport-space-application-gate",
+        "charged-current-action-report",
+    )
+    for command in charged_current_action_commands:
+        channel = commands.add_parser(command, help=f"Render the BHSM v2.6 {command} audit")
         channel.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
@@ -1001,6 +1021,30 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(json.dumps(payload, indent=2, sort_keys=True))
         elif args.command == "normalized-action-adjoint-pair-report":
             print(normalized_action_adjoint_pair_report_to_markdown(payload))
+        else:
+            print(f"# {args.command.replace('-', ' ').title()}\n\n```json\n{json.dumps(payload, indent=2, sort_keys=True)}\n```")
+        return 0
+    if args.command in {
+        "charged-current-action-search",
+        "normalized-charged-current-action-term",
+        "charged-current-transport-space",
+        "hermitian-adjoint-pair-transport-gate",
+        "ckm-transport-space-application-gate",
+        "charged-current-action-report",
+    }:
+        builders = {
+            "charged-current-action-search": search_charged_current_action_sources,
+            "normalized-charged-current-action-term": audit_normalized_charged_current_action_term,
+            "charged-current-transport-space": audit_charged_current_transport_space,
+            "hermitian-adjoint-pair-transport-gate": audit_hermitian_adjoint_pair_transport_gate,
+            "ckm-transport-space-application-gate": audit_ckm_transport_space_application_gate,
+            "charged-current-action-report": build_charged_current_action_report,
+        }
+        payload = builders[args.command]()
+        if args.format == "json":
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        elif args.command == "charged-current-action-report":
+            print(charged_current_action_report_to_markdown(payload))
         else:
             print(f"# {args.command.replace('-', ' ').title()}\n\n```json\n{json.dumps(payload, indent=2, sort_keys=True)}\n```")
         return 0

@@ -171,6 +171,12 @@ theorem inputs and do not emit a default physical neutrino mass.
 | `ckm-transport-space-gate` | Fail closed unless the normalized action selects the CKM adjoint-pair transport space | Markdown or JSON | no | no |
 | `ckm-alternative-channel-blockers` | Record one-way, adjoint-pair, maximal-self, sector-self, and total-endomorphism blockers | Markdown or JSON | no | no |
 | `normalized-action-adjoint-pair-report` | Render combined v2.5 normalized-action adjoint-pair status | Markdown or JSON | no | no |
+| `charged-current-action-search` | Search local sources for normalized charged-current action evidence | Markdown or JSON | no | no |
+| `normalized-charged-current-action-term` | Audit the candidate normalized charged-current action term | Markdown or JSON | no | no |
+| `charged-current-transport-space` | Compare action evidence for charged-current transport spaces | Markdown or JSON | no | no |
+| `hermitian-adjoint-pair-transport-gate` | Gate adjoint-pair transport selection on normalized action evidence | Markdown or JSON | no | no |
+| `ckm-transport-space-application-gate` | Fail closed unless CKM acts on an action-selected space | Markdown or JSON | no | no |
+| `charged-current-action-report` | Render combined v2.6 charged-current action transport-space status | Markdown or JSON | no | no |
 
 Without `--offline-ok`, `pdg-fetch` may try an optional live reference adapter.
 The offline fallback is reference-only and is never a derivation input.

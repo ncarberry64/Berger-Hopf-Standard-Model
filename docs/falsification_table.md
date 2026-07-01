@@ -21,6 +21,12 @@ total charged endomorphism (49), or any other CKM transport space. The
 bidirectional adjoint-pair channel count is 16, but this is a conditional
 channel assignment until selected by the normalized action.
 
+The v2.6 charged-current action audit fails closed unless BHSM locates a
+normalized charged-current action term with operator domain/codomain and uses
+that term to select the transport space. The existence of a Hermitian-conjugate
+term supports action reality but does not by itself derive CKM transport-space
+selection.
+
 | claim_id | track | claim | current_status | what_would_falsify_it |
 | --- | --- | --- | --- | --- |
 | ENG-01 | ENGINE | CERN open-data four-vector accuracy | ARTIFACT_BACKED | scale-aware error exceeds declared bound |

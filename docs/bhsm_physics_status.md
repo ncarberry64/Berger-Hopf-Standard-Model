@@ -35,6 +35,15 @@ space. No empirical CKM fitting, charged-mass fitting, PDG values, W
 calibration, neutrino limits, or legacy threshold tables are used as theorem
 inputs.
 
+The v2.6 charged-current action audit records
+`OPEN_MISSING_NORMALIZED_CHARGED_CURRENT_ACTION_TERM` and
+`OPEN_MISSING_CHARGED_CURRENT_TRANSPORT_SPACE`. The normalized charged-current
+action term, not arithmetic channel-count coincidence, must select the CKM
+transport space. The Hermitian adjoint-pair channel count is 16, but the CKM
+exponent remains not derived unless BHSM proves CKM acts on that selected
+transport space. Same numerical dimension does not establish the physical
+source.
+
 - complete action derivations
 - transport theorems
 - physical normalization and unit maps

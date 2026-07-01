@@ -98,3 +98,6 @@ commands, and records falsifiers. It does not close the following items.
     `Hom(V_u,V_d) direct_sum Hom(V_d,V_u)` over the one-way 8, maximal
     self-response 16, sector self-response 21, and total endomorphism 49
     alternatives. The CKM exponent remains open until this gate passes.
+14. Locate a normalized charged-current action term with explicit operator
+    domain/codomain before promoting any CKM transport-space assignment; same
+    numerical dimension does not establish the physical source.
