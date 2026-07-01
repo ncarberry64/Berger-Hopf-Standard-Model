@@ -1,0 +1,50 @@
+{
+  "audit": "ckm_maximal_sector_selection",
+  "candidate_status": "CONDITIONAL_MAXIMAL_SECTOR_CKM_SELECTION",
+  "claim_boundary": "The N_16 channel assignment remains conditional unless the action selects maximal primitive charged self-response over competing channel assignments.",
+  "competing_assignments": [
+    {
+      "dimension": 8,
+      "excluded": false,
+      "id": "V_u_tensor_V_d_dual",
+      "structural_motive": "cross-sector up/down mixing"
+    },
+    {
+      "dimension": 49,
+      "excluded": false,
+      "id": "End_V_ch",
+      "structural_motive": "full charged response algebra"
+    },
+    {
+      "dimension": 21,
+      "excluded": false,
+      "id": "direct_sum_End_V_f",
+      "structural_motive": "sector-preserving self responses"
+    },
+    {
+      "dimension": 16,
+      "excluded": false,
+      "id": "End_V_d",
+      "structural_motive": "maximal primitive self response"
+    }
+  ],
+  "empirical_inputs_used": false,
+  "evidence_against_alternatives": [],
+  "evidence_for_maximal_self_response": [
+    "s_d=4 is maximal",
+    "N_16=s_d^2 occurs in common-16 artifacts"
+  ],
+  "forbidden_theorem_inputs": [
+    "empirical CKM fitting",
+    "PDG/reference values",
+    "W calibration",
+    "charged-mass fitting",
+    "neutrino limits",
+    "legacy threshold tables"
+  ],
+  "forbidden_theorem_inputs_used": [],
+  "missing_action_rule": "CKM transport functional must select End(V_d) over Hom(V_u,V_d), End(V_ch), and direct-sum self responses",
+  "selected_N_CKM": null,
+  "selection_rule_proven": false,
+  "status": "OPEN_MISSING_MAXIMAL_SECTOR_CKM_SELECTION_RULE"
+}

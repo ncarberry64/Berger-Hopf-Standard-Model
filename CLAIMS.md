@@ -93,6 +93,8 @@ Do not claim that:
 - The abstract quadratic log-averaging lemma proves that BHSM CKM transport has sixteen equivalent physical channels.
 - A cyclic quotient scaffold proves invariance of the complete action under common charged-incidence rescaling.
 - Branch-tracking maximal overlap proves that the charged bridge action selects the down-sector primitive channel.
+- Exact arithmetic selecting `N_max_self=16` proves that CKM transport acts on `End(V_d)`.
+- The abstract log-transport lemma excludes the competing dimensions `8`, `21`, and `49`.
 
 ## Policy
 

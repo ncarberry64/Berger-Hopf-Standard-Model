@@ -130,6 +130,10 @@ The current minimal-action theory dictionary is documented in
 - [Common-16 CKM transport audit](common_16_ckm_transport_audit.md)
 - [Common-16 provenance audit](common_16_provenance_audit.md)
 - [Common-16 closure report](common_16_closure_report.md)
+- [CKM channel equivalence](ckm_channel_equivalence.md)
+- [CKM channel count audit](ckm_channel_count_audit.md)
+- [CKM maximal-sector selection](ckm_maximal_sector_selection.md)
+- [CKM log-transport application](ckm_log_transport_application.md)
 
 ## CP O_int Sprint Docs
 

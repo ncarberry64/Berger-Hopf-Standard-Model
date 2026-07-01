@@ -1,0 +1,191 @@
+{
+  "alternatives": {
+    "audit": "ckm_alternative_channel_assignments",
+    "claim_boundary": "No candidate is rejected without an action or representation-selection theorem.",
+    "empirical_inputs_used": false,
+    "forbidden_theorem_inputs": [
+      "empirical CKM fitting",
+      "PDG/reference values",
+      "W calibration",
+      "charged-mass fitting",
+      "neutrino limits",
+      "legacy threshold tables"
+    ],
+    "forbidden_theorem_inputs_used": [],
+    "rows": [
+      {
+        "dimension": 8,
+        "excluded": false,
+        "id": "V_u_tensor_V_d_dual",
+        "structural_motive": "cross-sector up/down mixing"
+      },
+      {
+        "dimension": 49,
+        "excluded": false,
+        "id": "End_V_ch",
+        "structural_motive": "full charged response algebra"
+      },
+      {
+        "dimension": 21,
+        "excluded": false,
+        "id": "direct_sum_End_V_f",
+        "structural_motive": "sector-preserving self responses"
+      },
+      {
+        "dimension": 16,
+        "excluded": false,
+        "id": "End_V_d",
+        "structural_motive": "maximal primitive self response"
+      }
+    ],
+    "status": "MULTIPLE_COMPETING_CHANNEL_ASSIGNMENTS",
+    "unique_surviving_assignment": null
+  },
+  "application": {
+    "abstract_log_lemma_status": "ARTIFACT_BACKED_MATHEMATICAL_LEMMA",
+    "audit": "ckm_log_transport_application_v2_2",
+    "candidate_exponent": "1/16",
+    "candidate_status": "CONDITIONAL_CKM_LOG_TRANSPORT_APPLICATION",
+    "channel_equivalence_status": "CONDITIONAL_CKM_CHANNEL_EQUIVALENCE_CANDIDATE",
+    "ckm_exponent_derived": false,
+    "claim_boundary": "The CKM 1/16 exponent is not derived unless BHSM proves that CKM transport acts over the N_16 charged bilinear channel space.",
+    "empirical_inputs_used": false,
+    "forbidden_theorem_inputs": [
+      "empirical CKM fitting",
+      "PDG/reference values",
+      "W calibration",
+      "charged-mass fitting",
+      "neutrino limits",
+      "legacy threshold tables"
+    ],
+    "forbidden_theorem_inputs_used": [],
+    "maximal_sector_selection_status": "OPEN_MISSING_MAXIMAL_SECTOR_CKM_SELECTION_RULE",
+    "selected_N_CKM": null,
+    "status": "OPEN_MISSING_CKM_LOG_TRANSPORT_AVERAGING_THEOREM"
+  },
+  "channel_counts": {
+    "N_max_self": 16,
+    "N_sum_self": 21,
+    "N_total_end": 49,
+    "N_ud": 8,
+    "audit": "ckm_channel_count",
+    "candidate_assignments": {
+      "maximal_sector_self_response": 16,
+      "sum_sector_self_responses": 21,
+      "total_charged_End": 49,
+      "up_down_cross_Hom": 8
+    },
+    "claim_boundary": "All four dimensions are exact; arithmetic alone does not choose the CKM transport space.",
+    "empirical_inputs_used": false,
+    "forbidden_theorem_inputs": [
+      "empirical CKM fitting",
+      "PDG/reference values",
+      "W calibration",
+      "charged-mass fitting",
+      "neutrino limits",
+      "legacy threshold tables"
+    ],
+    "forbidden_theorem_inputs_used": [],
+    "max_self_reciprocal": "1/16",
+    "max_self_reciprocal_exact": true,
+    "s_ch": [
+      1,
+      2,
+      4
+    ],
+    "selected_N_CKM": null,
+    "selected_N_CKM_status": "OPEN_NO_ACTION_SELECTION_RULE",
+    "status": "MULTIPLE_COMPETING_CHANNEL_ASSIGNMENTS"
+  },
+  "ckm_numerical_values_modified": false,
+  "claim_boundary": "The four channel dimensions are exact; BHSM has not selected N_CKM=16 over the competing assignments.",
+  "frozen_predictions_modified": false,
+  "full_completion_claimed": false,
+  "maximal_selection": {
+    "audit": "ckm_maximal_sector_selection",
+    "candidate_status": "CONDITIONAL_MAXIMAL_SECTOR_CKM_SELECTION",
+    "claim_boundary": "The N_16 channel assignment remains conditional unless the action selects maximal primitive charged self-response over competing channel assignments.",
+    "competing_assignments": [
+      {
+        "dimension": 8,
+        "excluded": false,
+        "id": "V_u_tensor_V_d_dual",
+        "structural_motive": "cross-sector up/down mixing"
+      },
+      {
+        "dimension": 49,
+        "excluded": false,
+        "id": "End_V_ch",
+        "structural_motive": "full charged response algebra"
+      },
+      {
+        "dimension": 21,
+        "excluded": false,
+        "id": "direct_sum_End_V_f",
+        "structural_motive": "sector-preserving self responses"
+      },
+      {
+        "dimension": 16,
+        "excluded": false,
+        "id": "End_V_d",
+        "structural_motive": "maximal primitive self response"
+      }
+    ],
+    "empirical_inputs_used": false,
+    "evidence_against_alternatives": [],
+    "evidence_for_maximal_self_response": [
+      "s_d=4 is maximal",
+      "N_16=s_d^2 occurs in common-16 artifacts"
+    ],
+    "forbidden_theorem_inputs": [
+      "empirical CKM fitting",
+      "PDG/reference values",
+      "W calibration",
+      "charged-mass fitting",
+      "neutrino limits",
+      "legacy threshold tables"
+    ],
+    "forbidden_theorem_inputs_used": [],
+    "missing_action_rule": "CKM transport functional must select End(V_d) over Hom(V_u,V_d), End(V_ch), and direct-sum self responses",
+    "selected_N_CKM": null,
+    "selection_rule_proven": false,
+    "status": "OPEN_MISSING_MAXIMAL_SECTOR_CKM_SELECTION_RULE"
+  },
+  "official_predictions_modified": false,
+  "source_search": {
+    "N_16_occurs_in_artifacts": true,
+    "all_sources_present": true,
+    "alternative_channel_spaces_excluded": false,
+    "audit": "ckm_channel_source_search",
+    "bilinear_Vd_tensor_dual_identified": false,
+    "claim_boundary": "Occurrences of N_16 and 1/16 do not identify the physical CKM channel space.",
+    "empirical_inputs_used": false,
+    "forbidden_theorem_inputs": [
+      "empirical CKM fitting",
+      "PDG/reference values",
+      "W calibration",
+      "charged-mass fitting",
+      "neutrino limits",
+      "legacy threshold tables"
+    ],
+    "forbidden_theorem_inputs_used": [],
+    "maximal_sector_selection_rule_found": false,
+    "present_sources": [
+      "artifacts/BHSM_common_16_ckm_transport_audit_v1_8.json",
+      "artifacts/BHSM_ckm_log_transport_application_gate_v2_1.json",
+      "artifacts/BHSM_primitive_charged_incidence_closure_report_v2_0.json",
+      "src/bhsm/interface/common_16/ckm_transport_audit.py",
+      "src/ckm_structural_source.py"
+    ],
+    "sources": [
+      "artifacts/BHSM_common_16_ckm_transport_audit_v1_8.json",
+      "artifacts/BHSM_ckm_log_transport_application_gate_v2_1.json",
+      "artifacts/BHSM_primitive_charged_incidence_closure_report_v2_0.json",
+      "src/bhsm/interface/common_16/ckm_transport_audit.py",
+      "src/ckm_structural_source.py"
+    ],
+    "status": "CKM_CHANNEL_SOURCES_LOCATED_SELECTION_THEOREM_OPEN"
+  },
+  "status": "OPEN_MISSING_CKM_CHANNEL_EQUIVALENCE_THEOREM",
+  "version": "2.2"
+}
