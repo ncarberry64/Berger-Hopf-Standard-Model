@@ -105,3 +105,5 @@ commands, and records falsifiers. It does not close the following items.
     `Pi_u`/`Pi_d` sandwich for `L_CKM_charged_current_bounded`.
 16. Prove whether the forward and adjoint terms share one normalized action
     object, then separately prove CKM identification before selecting a space.
+17. Attach a physically normalized boundary measure and fixed geometric
+    coefficient to the same CKM action term, or preserve the blocker.

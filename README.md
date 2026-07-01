@@ -175,5 +175,5 @@ Start with [docs/README.md](docs/README.md) for the documentation map and
 [ROADMAP.md](ROADMAP.md) for the next work sequence.
 ## Citation
 Use [CITATION.cff](CITATION.cff) for current citation metadata.
-## v2.7 CKM Bounded-Interface Normalization
-`L_CKM_charged_current_bounded` is artifact-backed as a bounded collider-interface term; measure, normalization, projector sandwich, action provenance, paired normalization, CKM identification, and transport selection remain open. L_CKM_charged_current_bounded is a bounded interface term, not automatically a normalized action-selected transport operator.
+## v2.8 CKM Boundary-Measure Normalization
+`L_CKM_charged_current_bounded` remains a bounded interface term. BHSM conditionally supplies a symbolic boundary-measure source, but no normalized same-term measure, fixed CKM coefficient, projector sandwich, paired normalization, or variational provenance; CKM transport selection and its exponent remain open.

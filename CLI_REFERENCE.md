@@ -185,6 +185,15 @@ theorem inputs and do not emit a default physical neutrino mass.
 | `ckm-identification-gate` | Gate identification with CKM transport | Markdown or JSON | no | no |
 | `ckm-transport-space-selection` | Combine all CKM transport-selection gates | Markdown or JSON | no | no |
 | `ckm-bounded-interface-report` | Render combined v2.7 status | Markdown or JSON | no | no |
+| `ckm-boundary-measure-search` | Search measure and normalization sources | Markdown or JSON | no | no |
+| `ckm-boundary-measure-source` | Audit symbolic boundary-measure provenance | Markdown or JSON | no | no |
+| `ckm-coefficient-normalization` | Audit the CKM coefficient source | Markdown or JSON | no | no |
+| `ckm-action-measure-coefficient-pair` | Gate same-term measure/coefficient support | Markdown or JSON | no | no |
+| `normalized-ckm-action-candidate` | Combine normalization promotion gates | Markdown or JSON | no | no |
+| `ckm-projector-sandwich-requirement` | Audit projector attachment | Markdown or JSON | no | no |
+| `ckm-paired-normalization-rule` | Audit shared forward/adjoint normalization | Markdown or JSON | no | no |
+| `ckm-transport-space-blocker` | Preserve downstream CKM blockers | Markdown or JSON | no | no |
+| `ckm-boundary-measure-normalization-report` | Render combined v2.8 status | Markdown or JSON | no | no |
 
 Without `--offline-ok`, `pdg-fetch` may try an optional live reference adapter.
 The offline fallback is reference-only and is never a derivation input.

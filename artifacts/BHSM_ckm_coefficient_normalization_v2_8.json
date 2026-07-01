@@ -1,0 +1,44 @@
+{
+  "audit": "ckm_coefficient_normalization",
+  "candidate_coefficient": "C_CKM candidate = g2_BH_runtime / sqrt(2)",
+  "candidate_source": "artifacts/BHSM_minimal_bounded_lagrangian_subset_v1_2.json",
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "A coefficient normalization alone does not derive the CKM exponent.",
+  "cms_cern_endorsement_claimed": false,
+  "depends_on_frozen_predictions": false,
+  "depends_on_reference_values": false,
+  "detector_reconstruction_claimed": false,
+  "empirical_inputs_used": false,
+  "evidence_against": [
+    "g2_BH_runtime is explicitly collider-interface runtime input",
+    "no action theorem fixes C_CKM"
+  ],
+  "evidence_for": [
+    "the interface target declares an explicit symbolic coefficient"
+  ],
+  "forbidden_theorem_inputs": [
+    "empirical CKM fitting",
+    "PDG/reference values",
+    "W calibration",
+    "charged-mass fitting",
+    "neutrino limits",
+    "legacy threshold tables"
+  ],
+  "forbidden_theorem_inputs_used": [],
+  "frozen_predictions_modified": false,
+  "is_geometric_or_fitted": "runtime/scheme parameter; neither geometric derivation nor empirical fit used here",
+  "legacy_threshold_tables_used": false,
+  "missing_requirements": [
+    "fixed geometric coefficient",
+    "action normalization rule",
+    "scheme-independent provenance"
+  ],
+  "neutrino_limits_used": false,
+  "normalization_rule": null,
+  "official_prediction_logic_modified": false,
+  "pdg_reference_values_used": false,
+  "physics_validation_claimed": false,
+  "status": "OPEN_MISSING_CKM_COEFFICIENT_NORMALIZATION",
+  "w_calibration_used": false
+}

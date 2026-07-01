@@ -123,3 +123,5 @@ Allowed: `L_CKM_charged_current_bounded` is an artifact-backed bounded collider-
 Not established: normalized projector-sandwiched action provenance, projector-selected domain/codomain, paired-term normalization, CKM transport identification, CKM transport-space selection, or the CKM exponent.
 
 A normalized projector-sandwiched action term requires boundary/action measure, coefficient normalization, sector projectors, and action provenance.
+
+The symbolic BHSM boundary measure is a conditional source, not proof that the bounded CKM interface term is normalized. A boundary measure alone does not select the CKM transport space, and a coefficient normalization alone does not derive the CKM exponent.
