@@ -1,0 +1,211 @@
+{
+  "bridge_beta": {
+    "N_16": 16,
+    "action_derived": false,
+    "all_exact_identities_pass": true,
+    "audit": "bridge_beta_identity",
+    "betas": {
+      "down": "64/1323",
+      "lepton": "16/1323",
+      "up": "32/1323"
+    },
+    "claim_boundary": "Bridge and beta arithmetic is exact conditional on the primitive-lattice and maximal-overlap candidates.",
+    "empirical_inputs_used": false,
+    "forbidden_theorem_inputs": [
+      "PDG/reference values",
+      "W calibration",
+      "charged-mass fitting",
+      "CKM reference fitting",
+      "neutrino limits",
+      "legacy threshold tables"
+    ],
+    "forbidden_theorem_inputs_used": [],
+    "g_bridge": "16/189",
+    "incidence_trace": 21,
+    "overlap": "4/3",
+    "projectors": {
+      "down": "4/7",
+      "lepton": "1/7",
+      "up": "2/7"
+    },
+    "status": "EXACT_CONDITIONAL_BRIDGE_BETA_IDENTITIES"
+  },
+  "ckm_transport": {
+    "N_16": 16,
+    "audit": "ckm_log_transport_gate",
+    "candidate_exponent": "1/16",
+    "ckm_exponent_derived": false,
+    "claim_boundary": "The reciprocal 1/16 is exact arithmetic; the CKM logarithmic transport averaging theorem remains open.",
+    "empirical_inputs_used": false,
+    "forbidden_theorem_inputs": [
+      "PDG/reference values",
+      "W calibration",
+      "charged-mass fitting",
+      "CKM reference fitting",
+      "neutrino limits",
+      "legacy threshold tables"
+    ],
+    "forbidden_theorem_inputs_used": [],
+    "log_transport_averaging_theorem_available": false,
+    "open_status": "OPEN_MISSING_CKM_LOG_TRANSPORT_AVERAGING_THEOREM",
+    "reciprocal_identity_exact": true,
+    "status": "CONDITIONAL_CKM_LOG_TRANSPORT_CANDIDATE"
+  },
+  "claim_boundary": "The primitive charged incidence audit establishes exact conditional algebraic identities, not full action derivations.",
+  "external_reproduction": {
+    "audit": "external_reproduction_status",
+    "claim_boundary": "Prepared materials are not an independent reproduction and do not validate BHSM Physics.",
+    "empirical_inputs_used": false,
+    "external_contact_performed": false,
+    "forbidden_theorem_inputs": [
+      "PDG/reference values",
+      "W calibration",
+      "charged-mass fitting",
+      "CKM reference fitting",
+      "neutrino limits",
+      "legacy threshold tables"
+    ],
+    "forbidden_theorem_inputs_used": [],
+    "independent_result_received": false,
+    "packet": "artifacts/BHSM_external_reproduction_packet_v1_9.json",
+    "scope": "BHSM Engine four-vector precision/performance only",
+    "status": "PREPARED_NOT_YET_REPRODUCED_EXTERNALLY"
+  },
+  "frozen_predictions_modified": false,
+  "full_completion_claimed": false,
+  "official_predictions_modified": false,
+  "omega_trace": {
+    "action_covector_derived": false,
+    "all_sources_present": true,
+    "audit": "omega_trace",
+    "claim_boundary": "The charged Omega tuple is structurally integrated; its complete action covector origin remains open.",
+    "empirical_inputs_used": false,
+    "forbidden_theorem_inputs": [
+      "PDG/reference values",
+      "W calibration",
+      "charged-mass fitting",
+      "CKM reference fitting",
+      "neutrino limits",
+      "legacy threshold tables"
+    ],
+    "forbidden_theorem_inputs_used": [],
+    "omega_ch": [
+      3,
+      6,
+      12
+    ],
+    "open_status": "OPEN_MISSING_OMEGA_F_ACTION_COVECTOR_DERIVATION",
+    "sources": [
+      "docs/bhsm_sector_projector_ledger_theorem.md",
+      "src/bhsm_boundary_connection_holonomy.py",
+      "artifacts/BHSM_omega_f_action_audit_v1_9.json"
+    ],
+    "status": "STRUCTURALLY_INTEGRATED_NOT_ACTION_DERIVED",
+    "total_incidence_trace": 21
+  },
+  "overlap": {
+    "action_derived": false,
+    "audit": "charged_overlap_4_over_3_source",
+    "claim_boundary": "The value 4/3 equals s_d/rho_ch conditionally; no action rule yet requires the bridge to use it.",
+    "empirical_inputs_used": false,
+    "exact_conditional_identity": true,
+    "forbidden_theorem_inputs": [
+      "PDG/reference values",
+      "W calibration",
+      "charged-mass fitting",
+      "CKM reference fitting",
+      "neutrino limits",
+      "legacy threshold tables"
+    ],
+    "forbidden_theorem_inputs_used": [],
+    "max_primitive_incidence": 4,
+    "maximal_overlap_action_rule_available": false,
+    "open_status": "OPEN_MISSING_ACTION_RULE_THAT_BRIDGE_USES_MAX_PRIMITIVE_OVERLAP",
+    "overlap": "4/3",
+    "rho_ch": 3,
+    "status": "CONDITIONAL_CHARGED_OVERLAP_4_OVER_3_SOURCE_CANDIDATE"
+  },
+  "physical_normalization": {
+    "audit": "physical_normalization_gate",
+    "claim_boundary": "Exact dimensionless incidence identities do not supply a physical unit map.",
+    "dimensionful_prediction_produced": false,
+    "empirical_inputs_used": false,
+    "forbidden_theorem_inputs": [
+      "PDG/reference values",
+      "W calibration",
+      "charged-mass fitting",
+      "CKM reference fitting",
+      "neutrino limits",
+      "legacy threshold tables"
+    ],
+    "forbidden_theorem_inputs_used": [],
+    "physical_unit_map_available": false,
+    "required_objects": [
+      "normalized boundary measure",
+      "charged and neutral stiffness unit maps",
+      "cross-scale transport normalization",
+      "gauge/scalar action normalization"
+    ],
+    "status": "OPEN_MISSING_PHYSICAL_NORMALIZATION"
+  },
+  "projector_reduction": {
+    "action_derived": false,
+    "audit": "projector_reduction",
+    "claim_boundary": "The projector fractions follow exactly from normalized primitive incidence conditional on Omega_ch.",
+    "empirical_inputs_used": false,
+    "forbidden_theorem_inputs": [
+      "PDG/reference values",
+      "W calibration",
+      "charged-mass fitting",
+      "CKM reference fitting",
+      "neutrino limits",
+      "legacy threshold tables"
+    ],
+    "forbidden_theorem_inputs_used": [],
+    "primitive_incidence": [
+      1,
+      2,
+      4
+    ],
+    "primitive_trace": 7,
+    "projector_sum": "1",
+    "projectors": {
+      "down": "4/7",
+      "lepton": "1/7",
+      "up": "2/7"
+    },
+    "status": "EXACT_CONDITIONAL_PROJECTOR_REDUCTION"
+  },
+  "rho_gcd": {
+    "action_derived": false,
+    "action_normalization_rule_available": false,
+    "audit": "rho_ch_gcd_selection",
+    "claim_boundary": "rho_ch=3 is the exact gcd conditional on Omega_ch=(3,6,12), not an action-selected Hessian coefficient.",
+    "empirical_inputs_used": false,
+    "exact_conditional_identity": true,
+    "forbidden_theorem_inputs": [
+      "PDG/reference values",
+      "W calibration",
+      "charged-mass fitting",
+      "CKM reference fitting",
+      "neutrino limits",
+      "legacy threshold tables"
+    ],
+    "forbidden_theorem_inputs_used": [],
+    "omega_ch": [
+      3,
+      6,
+      12
+    ],
+    "open_status": "OPEN_MISSING_ACTION_PRIMITIVE_LATTICE_NORMALIZATION_RULE",
+    "primitive_incidence": [
+      1,
+      2,
+      4
+    ],
+    "rho_ch": 3,
+    "status": "CONDITIONAL_RHO_CH_PRIMITIVE_LATTICE_CANDIDATE"
+  },
+  "status": "EXACT_CONDITIONAL_ALGEBRA_WITH_OPEN_ACTION_GATES",
+  "version": "2.0"
+}

@@ -2,6 +2,10 @@
 
 This is an evidence-gated map, not a claim of full completion.
 
+The v2.0 primitive-incidence audit adds exact conditional gcd, projector,
+overlap, bridge/beta, and reciprocal identities. It does not upgrade their
+missing action or transport theorems.
+
 | core_id | name | status | remaining_blockers |
 | --- | --- | --- | --- |
 | CORE-01 | Unified boundary/action principle | CONDITIONAL | ['complete normalized action'] |

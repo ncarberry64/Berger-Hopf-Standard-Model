@@ -86,6 +86,10 @@ Do not claim that:
 - The current projector/boundary scaffold is a complete action derivation of `Omega_f`.
 - Structural rank-three motivation selects `rho_ch=3` from the action.
 - The exact charged bridge proves the action source of the `4/3` overlap.
+- The gcd identity alone proves that the charged action selects `rho_ch=3`.
+- The maximal primitive incidence alone proves that the bridge action uses `4/3`.
+- The arithmetic identity `1/16` proves the CKM logarithmic transport theorem.
+- Prepared reproduction materials constitute an independent external reproduction.
 
 ## Policy
 

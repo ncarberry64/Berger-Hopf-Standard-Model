@@ -135,6 +135,14 @@ theorem inputs and do not emit a default physical neutrino mass.
 | `rho-ch-action-audit` | Audit charged Hessian anisotropy provenance | Markdown or JSON | no | no |
 | `falsification-table` | Render explicit engine and physics falsifiers | Markdown or JSON | no | no |
 | `external-reproduction-packet` | Render the unsent narrow reproduction packet | Markdown or JSON | no | no |
+| `primitive-charged-incidence` | Compute the exact conditional charged-incidence spine | Markdown or JSON | no | no |
+| `rho-ch-gcd-selection` | Audit gcd normalization and its missing action rule | Markdown or JSON | no | no |
+| `overlap-4-over-3-source` | Audit the maximal primitive overlap candidate | Markdown or JSON | no | no |
+| `bridge-beta-identity` | Verify exact bridge and beta fractions | Markdown or JSON | no | no |
+| `ckm-log-transport-gate` | Gate the reciprocal `1/16` transport candidate | Markdown or JSON | no | no |
+| `physical-normalization-gate` | Report missing physical unit-map objects | Markdown or JSON | no | no |
+| `external-reproduction-status` | Report prepared versus completed reproduction | Markdown or JSON | no | no |
+| `primitive-charged-incidence-report` | Render the combined v2.0 report | Markdown or JSON | no | no |
 
 Without `--offline-ok`, `pdg-fetch` may try an optional live reference adapter.
 The offline fallback is reference-only and is never a derivation input.
