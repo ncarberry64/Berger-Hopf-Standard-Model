@@ -48,3 +48,5 @@ physical source.
 | CORE-13 | Runtime/export gates | RUNTIME_GATED | ['live external tool validation'] |
 
 The v2.7 audit closes only the existence of the bounded CKM interface term. It keeps the normalized projector sandwich, projector domain/codomain, paired normalization, CKM identification, and transport-space selection open. Projector arithmetic alone does not derive the CKM exponent.
+
+The v2.8 audit conditionally locates a symbolic boundary measure but finds no same-term normalized measure/coefficient pair for the bounded CKM current.

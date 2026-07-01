@@ -125,6 +125,14 @@ The detailed claim boundary is centralized in [CLAIMS.md](CLAIMS.md).
 - Projector arithmetic alone does not derive the CKM exponent.
 - The CKM exponent remains not derived unless the normalized action selects a CKM transport space and the CKM identification theorem closes.
 
+## v2.8 CKM Boundary-Measure Normalization
+
+- Boundary measure source: `CONDITIONAL_BOUNDARY_MEASURE_SOURCE`.
+- Coefficient normalization: `OPEN_MISSING_CKM_COEFFICIENT_NORMALIZATION`.
+- Same-term measure/coefficient pair: `OPEN_MISSING_CKM_ACTION_MEASURE_COEFFICIENT_PAIR`.
+- Normalized CKM action candidate: `OPEN_MISSING_NORMALIZED_CKM_ACTION_CANDIDATE`.
+- Transport selection remains open and the CKM exponent is `not_derived`.
+
 ## v2.6 Charged-Current Action Transport-Space Audit
 
 - Normalized charged-current action term: `OPEN_MISSING_NORMALIZED_CHARGED_CURRENT_ACTION_TERM`.

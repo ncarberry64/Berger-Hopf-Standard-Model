@@ -173,6 +173,18 @@ from .ckm_bounded_interface_normalization import (
     ckm_bounded_interface_report_to_markdown,
     search_ckm_bounded_interface_sources,
 )
+from .ckm_boundary_measure_normalization import (
+    audit_boundary_measure_source,
+    audit_coefficient_normalization,
+    audit_measure_coefficient_pair,
+    audit_normalized_ckm_action_candidate,
+    audit_paired_normalization_rule,
+    audit_projector_sandwich_requirement,
+    audit_transport_space_blocker,
+    boundary_measure_normalization_report_to_markdown,
+    build_boundary_measure_normalization_report,
+    search_boundary_measure_normalization_sources,
+)
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -519,6 +531,16 @@ def build_parser() -> argparse.ArgumentParser:
     )
     for command in bounded_interface_commands:
         channel = commands.add_parser(command, help=f"Render the BHSM v2.7 {command} audit")
+        channel.add_argument("--format", choices=("json", "markdown"), default="json")
+    measure_commands = (
+        "ckm-boundary-measure-search", "ckm-boundary-measure-source",
+        "ckm-coefficient-normalization", "ckm-action-measure-coefficient-pair",
+        "normalized-ckm-action-candidate", "ckm-projector-sandwich-requirement",
+        "ckm-paired-normalization-rule", "ckm-transport-space-blocker",
+        "ckm-boundary-measure-normalization-report",
+    )
+    for command in measure_commands:
+        channel = commands.add_parser(command, help=f"Render the BHSM v2.8 {command} audit")
         channel.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
@@ -1099,6 +1121,29 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(ckm_bounded_interface_report_to_markdown(payload))
         else:
             print(f"# {args.command.replace('-', ' ').title()}\n\n```json\n{json.dumps(payload, indent=2, sort_keys=True)}\n```")
+        return 0
+    if args.command in {
+        "ckm-boundary-measure-search", "ckm-boundary-measure-source",
+        "ckm-coefficient-normalization", "ckm-action-measure-coefficient-pair",
+        "normalized-ckm-action-candidate", "ckm-projector-sandwich-requirement",
+        "ckm-paired-normalization-rule", "ckm-transport-space-blocker",
+        "ckm-boundary-measure-normalization-report",
+    }:
+        builders = {
+            "ckm-boundary-measure-search": search_boundary_measure_normalization_sources,
+            "ckm-boundary-measure-source": audit_boundary_measure_source,
+            "ckm-coefficient-normalization": audit_coefficient_normalization,
+            "ckm-action-measure-coefficient-pair": audit_measure_coefficient_pair,
+            "normalized-ckm-action-candidate": audit_normalized_ckm_action_candidate,
+            "ckm-projector-sandwich-requirement": audit_projector_sandwich_requirement,
+            "ckm-paired-normalization-rule": audit_paired_normalization_rule,
+            "ckm-transport-space-blocker": audit_transport_space_blocker,
+            "ckm-boundary-measure-normalization-report": build_boundary_measure_normalization_report,
+        }
+        payload = builders[args.command]()
+        if args.format == "json": print(json.dumps(payload, indent=2, sort_keys=True))
+        elif args.command == "ckm-boundary-measure-normalization-report": print(boundary_measure_normalization_report_to_markdown(payload))
+        else: print(f"# {args.command.replace('-', ' ').title()}\n\n```json\n{json.dumps(payload, indent=2, sort_keys=True)}\n```")
         return 0
     if args.command in {
         "primitive-charged-incidence",
