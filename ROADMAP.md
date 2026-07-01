@@ -92,3 +92,5 @@ commands, and records falsifiers. It does not close the following items.
 11. Derive the CKM transport representation from the action and decide among
     `Hom(V_u,V_d)` (8), `End(V_ch)` (49), sectorwise self response (21), and
     maximal primitive self response (16); do not select 16 numerically.
+12. Derive the Hermitian off-diagonal charged-current block and its adjoint
+    closure from the normalized BHSM action; target-level `+ h.c.` is not enough.

@@ -153,6 +153,12 @@ theorem inputs and do not emit a default physical neutrino mass.
 | `ckm-channel-count-audit` | Compute all four predeclared channel dimensions | Markdown or JSON | no | no |
 | `ckm-maximal-sector-selection` | Gate maximal primitive self-response selection | Markdown or JSON | no | no |
 | `ckm-channel-equivalence-report` | Render combined v2.2 CKM channel-equivalence status | Markdown or JSON | no | no |
+| `ckm-bidirectional-source-search` | Locate charged-current and Hermitian-conjugate evidence | Markdown or JSON | no | no |
+| `ckm-bidirectional-channel-count` | Compute exact one-way and bidirectional channel dimensions | Markdown or JSON | no | no |
+| `ckm-adjoint-pair-selection` | Gate action-level adjoint-pair selection | Markdown or JSON | no | no |
+| `ckm-channel-alternative-resolution` | Compare one-way, bidirectional, self, and total spaces | Markdown or JSON | no | no |
+| `ckm-bidirectional-log-transport-application` | Gate the abstract lemma's bidirectional CKM application | Markdown or JSON | no | no |
+| `ckm-bidirectional-channel-report` | Render combined v2.3 bidirectional-channel status | Markdown or JSON | no | no |
 
 Without `--offline-ok`, `pdg-fetch` may try an optional live reference adapter.
 The offline fallback is reference-only and is never a derivation input.

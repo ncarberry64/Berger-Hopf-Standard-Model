@@ -95,6 +95,8 @@ Do not claim that:
 - Branch-tracking maximal overlap proves that the charged bridge action selects the down-sector primitive channel.
 - Exact arithmetic selecting `N_max_self=16` proves that CKM transport acts on `End(V_d)`.
 - The abstract log-transport lemma excludes the competing dimensions `8`, `21`, and `49`.
+- A charged-current target containing `+ h.c.` proves that the complete BHSM action selects the Hermitian adjoint-pair transport space.
+- The numerical equality between bidirectional transport dimension 16 and maximal self-response dimension 16 identifies their physical source.
 
 ## Policy
 

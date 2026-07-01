@@ -1,0 +1,82 @@
+{
+  "audit": "ckm_channel_alternative_resolution",
+  "claim_boundary": "The target convention prefers the bidirectional interpretation, but only the BHSM action can exclude competing transport spaces theoremically.",
+  "empirical_inputs_used": false,
+  "forbidden_theorem_inputs": [
+    "empirical CKM fitting",
+    "PDG/reference values",
+    "W calibration",
+    "charged-mass fitting",
+    "neutrino limits",
+    "legacy threshold tables"
+  ],
+  "forbidden_theorem_inputs_used": [],
+  "frozen_predictions_modified": false,
+  "official_prediction_logic_modified": false,
+  "preferred_candidate": "bidirectional_adjoint_pair",
+  "rows": [
+    {
+      "dimension": 8,
+      "evidence_against": [
+        "omits the conjugate direction under Hermitian closure"
+      ],
+      "evidence_for": [
+        "cross-sector CKM target"
+      ],
+      "id": "one_way_up_down",
+      "interpretation": "Hom(V_u,V_d)",
+      "status": "CONDITIONAL_ONE_WAY_CHANNEL_DISFAVORED"
+    },
+    {
+      "dimension": 16,
+      "evidence_against": [
+        "adjoint-pair selection is not action-derived"
+      ],
+      "evidence_for": [
+        "off-diagonal CKM charged-current target",
+        "explicit + h.c."
+      ],
+      "id": "bidirectional_adjoint_pair",
+      "interpretation": "Hom(V_u,V_d) direct_sum Hom(V_d,V_u)",
+      "status": "CONDITIONAL_HERMITIAN_BIDIRECTIONAL_CKM_CHANNEL_CANDIDATE"
+    },
+    {
+      "dimension": 16,
+      "evidence_against": [
+        "self-response does not match the cross-sector CKM target"
+      ],
+      "evidence_for": [
+        "same exact dimension 16"
+      ],
+      "id": "maximal_self_response",
+      "interpretation": "End(V_d)",
+      "status": "RETIRED_MAXIMAL_SELF_RESPONSE_AS_PRIMARY_CKM_SOURCE"
+    },
+    {
+      "dimension": 21,
+      "evidence_against": [
+        "diagonal self blocks are not the off-diagonal CKM target"
+      ],
+      "evidence_for": [
+        "complete sectorwise self response"
+      ],
+      "id": "sector_self_response_sum",
+      "interpretation": "direct sum of End(V_f)",
+      "status": "UNSELECTED_COMPETING_ASSIGNMENT"
+    },
+    {
+      "dimension": 49,
+      "evidence_against": [
+        "includes diagonal and non-CKM blocks"
+      ],
+      "evidence_for": [
+        "complete charged response algebra"
+      ],
+      "id": "total_charged_endomorphism",
+      "interpretation": "End(V_ch)",
+      "status": "UNSELECTED_COMPETING_ASSIGNMENT"
+    }
+  ],
+  "status": "MULTIPLE_COMPETING_CHANNEL_ASSIGNMENTS",
+  "theorem_level_unique_assignment": null
+}
