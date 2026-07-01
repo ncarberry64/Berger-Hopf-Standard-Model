@@ -107,3 +107,5 @@ commands, and records falsifiers. It does not close the following items.
     object, then separately prove CKM identification before selecting a space.
 17. Attach a physically normalized boundary measure and fixed geometric
     coefficient to the same CKM action term, or preserve the blocker.
+18. Derive `g2_BH` from the normalized weak gauge action before promoting the
+    artifact-backed charged-current coefficient form to a value prediction.

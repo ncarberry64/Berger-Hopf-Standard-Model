@@ -51,3 +51,4 @@ selection.
 | PHY-14 | PHYSICS | Bounded CKM interface promotion | OPEN | a complete normalized action source supplies the missing measure, coefficient, projector sandwich, and variational provenance |
 | PHY-15 | PHYSICS | CKM transport-space selection | OPEN | all upstream gates close and select a different space, or no CKM identification theorem exists |
 | PHY-16 | PHYSICS | CKM measure/coefficient normalization | OPEN | one normalized action source supplies both on the bounded term |
+| PHY-17 | PHYSICS | CKM coefficient value | OPEN | normalized weak gauge action fixes `g2_BH` |

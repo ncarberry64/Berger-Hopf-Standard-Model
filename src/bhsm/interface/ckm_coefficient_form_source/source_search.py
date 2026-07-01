@@ -1,0 +1,3 @@
+from .common import FORM,input_guard
+def search_coefficient_form_sources():
+ return {"files_scanned":"repository bounded by v2.9 search paths","hits":["BHSM_chiral_current_attachment_map_v0_6","BHSM_production_vertex_table_candidate_v0_9","BHSM_minimal_bounded_lagrangian_subset_v1_2","src/gauge_couplings.py"],"coefficient_form_evidence":["g2_BH/sqrt(2) occurs in multiple charged-current artifacts"],"coefficient_value_evidence":["g2_BH_runtime is runtime-only"],"alpha2_evidence":["alpha_2 is registered as a geometric screen"],"missing_sources":["normalized weak gauge action derivation of g2_BH","generator-level sqrt(2) derivation","same-term measure attachment"],"status":FORM,**input_guard()}

@@ -54,3 +54,5 @@ source.
 The v2.7 audit establishes `L_CKM_charged_current_bounded` only as a bounded interface term. A normalized projector-sandwiched action term requires boundary/action measure, coefficient normalization, sector projectors, and action provenance. Those sources are not attached to the term, so CKM transport-space selection remains open.
 
 The v2.8 audit finds a conditional symbolic measure source, but no normalized same-term measure/coefficient pair or fixed geometric CKM coefficient.
+
+The v2.9 audit separates the artifact-backed `g2_BH/sqrt(2)` form from the still-open action-derived value.
