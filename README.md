@@ -1,19 +1,19 @@
 # Berger-Hopf Standard Model (BHSM)
 
-[![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml) [![Tests: 2331 passed](https://img.shields.io/badge/tests-2331%20passed-brightgreen)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
+[![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml) [![Tests: 2335 passed](https://img.shields.io/badge/tests-2335%20passed-brightgreen)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
-BHSM is a research framework for studying Berger-Hopf geometry, frozen internal prediction artifacts, and candidate links to flavor, boundary structure, and effective field descriptions.
+BHSM is a research framework for Berger-Hopf geometry, frozen internal prediction artifacts, and candidate links to flavor, boundary structure, and effective field descriptions.
 
-BHSM currently provides an artifact-backed computational framework with frozen
-internal predictions, Python interfaces, prediction registry, CLI reports,
-gallery/notebook review tools, provenance-tracked adapters, and theorem-closure
-machinery. Its evidence status is computational and artifact-backed;
-institutional integration, complete 4D export, and external HEP runtime
-validation remain outside the current package.
+It provides an artifact-backed computational framework with Python interfaces, provenance-tracked adapters, review tools, and theorem-closure machinery. Institutional integration, complete 4D export, and external HEP runtime validation remain outside the package.
 
-![Near-pole coordinate comparison](docs/assets/bhsm_boundary_mapping_explainer.gif)
+## BHSM Engine on real CMS Open Data
+![BHSM Engine CMS Open Data validation](docs/assets/pr98_cms_open_data_animation/pr98_cms_engine_validation.gif)
 
-The animation shows a coordinate-chart seam, not a detector failure. The measured benchmark compares equivalent synthetic kernels and does not claim production HEP superiority. CI gates committed and fresh-run numerical deltas at `1e-13`.
+This offline animation uses a compact deterministic sample from the PR #98 CMS Open Data validation path: CERN Open Data Record 303, DOI `10.7483/OPENDATA.CMS.4M97.3SQ9`. PR #98 validated coordinate transformations on 200,000 unique CMS dimuon muon four-vectors, with a 2,000,000-vector timed workload, 3.225x speedup versus the vectorized control, and backward error below 2.4 machine-epsilon. [Static SVG and provenance](docs/pr98_cms_open_data_animation.md).
+
+Scope boundary: Engine coordinate-transformation validation only. This is not detector reconstruction, empirical validation of BHSM Physics, or CMS/CERN endorsement.
+
+The earlier [near-pole animation](docs/assets/bhsm_boundary_mapping_explainer.gif) remains a synthetic coordinate-stability demonstration, not a detector failure.
 
 ## Computational Quickstart (30 Seconds)
 
