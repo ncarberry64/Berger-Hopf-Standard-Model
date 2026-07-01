@@ -136,6 +136,14 @@ from .ckm_channel_equivalence import (
     build_ckm_channel_equivalence_report,
     search_ckm_channel_sources,
 )
+from .ckm_bidirectional_channel import (
+    audit_bidirectional_channel_count,
+    audit_bidirectional_log_transport_application,
+    audit_ckm_adjoint_pair_selection,
+    audit_ckm_channel_alternative_resolution,
+    build_ckm_bidirectional_channel_report,
+    search_ckm_bidirectional_sources,
+)
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -436,6 +444,17 @@ def build_parser() -> argparse.ArgumentParser:
     )
     for command in ckm_channel_commands:
         channel = commands.add_parser(command, help=f"Render the BHSM v2.2 {command} audit")
+        channel.add_argument("--format", choices=("json", "markdown"), default="json")
+    bidirectional_commands = (
+        "ckm-bidirectional-source-search",
+        "ckm-bidirectional-channel-count",
+        "ckm-adjoint-pair-selection",
+        "ckm-channel-alternative-resolution",
+        "ckm-bidirectional-log-transport-application",
+        "ckm-bidirectional-channel-report",
+    )
+    for command in bidirectional_commands:
+        channel = commands.add_parser(command, help=f"Render the BHSM v2.3 {command} audit")
         channel.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
@@ -912,6 +931,28 @@ def main(argv: Sequence[str] | None = None) -> int:
             "ckm-channel-count-audit": audit_ckm_channel_counts,
             "ckm-maximal-sector-selection": audit_maximal_sector_selection,
             "ckm-channel-equivalence-report": build_ckm_channel_equivalence_report,
+        }
+        payload = builders[args.command]()
+        if args.format == "json":
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        else:
+            print(f"# {args.command.replace('-', ' ').title()}\n\n```json\n{json.dumps(payload, indent=2, sort_keys=True)}\n```")
+        return 0
+    if args.command in {
+        "ckm-bidirectional-source-search",
+        "ckm-bidirectional-channel-count",
+        "ckm-adjoint-pair-selection",
+        "ckm-channel-alternative-resolution",
+        "ckm-bidirectional-log-transport-application",
+        "ckm-bidirectional-channel-report",
+    }:
+        builders = {
+            "ckm-bidirectional-source-search": search_ckm_bidirectional_sources,
+            "ckm-bidirectional-channel-count": audit_bidirectional_channel_count,
+            "ckm-adjoint-pair-selection": audit_ckm_adjoint_pair_selection,
+            "ckm-channel-alternative-resolution": audit_ckm_channel_alternative_resolution,
+            "ckm-bidirectional-log-transport-application": audit_bidirectional_log_transport_application,
+            "ckm-bidirectional-channel-report": build_ckm_bidirectional_channel_report,
         }
         payload = builders[args.command]()
         if args.format == "json":

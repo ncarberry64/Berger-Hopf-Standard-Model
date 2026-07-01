@@ -22,6 +22,11 @@ The v2.2 audit finds four unexcluded CKM channel assignments with dimensions
 8, 49, 21, and 16. `N_CKM=16` remains a conditional candidate because no
 action-backed maximal-sector selection rule has been identified.
 
+The v2.3 audit replaces maximal self-response as the preferred source candidate
+with Hermitian bidirectional charged-current transport: `8+8=16`. This is a
+conditional reinterpretation because the repository's `+ h.c.` evidence is a
+standard target convention, not a complete-action derivation.
+
 - complete action derivations
 - transport theorems
 - physical normalization and unit maps

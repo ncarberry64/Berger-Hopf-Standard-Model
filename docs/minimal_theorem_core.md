@@ -14,6 +14,11 @@ The v2.2 audit computes the competing channel dimensions `8`, `49`, `21`, and
 `16`. It does not select `16`: the action rule choosing maximal primitive
 self-response over the other representations remains open.
 
+The v2.3 audit identifies a preferred conditional source for 16: the direct
+sum of the 8-dimensional up/down charged-current channel and its 8-dimensional
+adjoint. The existing `+ h.c.` target convention motivates this interpretation
+but does not derive the transport subspace from the BHSM action.
+
 | core_id | name | status | remaining_blockers |
 | --- | --- | --- | --- |
 | CORE-01 | Unified boundary/action principle | CONDITIONAL | ['complete normalized action'] |
@@ -22,7 +27,7 @@ self-response over the other representations remains open.
 | CORE-04 | rho_ch threshold structure | STRUCTURALLY_MOTIVATED_NOT_DERIVED | ['action selection of rho_ch'] |
 | CORE-05 | Charged bridge and beta hierarchy | CONDITIONAL | ['4/3 overlap action source'] |
 | CORE-06 | Common-16 generator candidate | CONDITIONAL | ['shared action generator'] |
-| CORE-07 | CKM exponent | OPEN_MISSING_ACTION_DERIVATION | ['CKM channel-equivalence theorem', 'reciprocal transport theorem'] |
+| CORE-07 | CKM exponent | OPEN_MISSING_ACTION_DERIVATION | ['Hermitian adjoint-pair action selection', 'reciprocal transport theorem'] |
 | CORE-08 | PMNS/neutrino structure | CONDITIONAL | ['physical basis and unit map'] |
 | CORE-09 | Neutral propagation | CONDITIONAL | ['dimensionful transport normalization'] |
 | CORE-10 | Neutral positivity | CONDITIONAL | ['complete-action admissible cone'] |

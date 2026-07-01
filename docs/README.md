@@ -134,6 +134,10 @@ The current minimal-action theory dictionary is documented in
 - [CKM channel count audit](ckm_channel_count_audit.md)
 - [CKM maximal-sector selection](ckm_maximal_sector_selection.md)
 - [CKM log-transport application](ckm_log_transport_application.md)
+- [CKM Hermitian bidirectional channel](ckm_bidirectional_channel.md)
+- [CKM adjoint-pair selection](ckm_adjoint_pair_selection.md)
+- [CKM channel alternative resolution](ckm_channel_alternative_resolution.md)
+- [CKM bidirectional log-transport application](ckm_bidirectional_log_transport_application.md)
 
 ## CP O_int Sprint Docs
 

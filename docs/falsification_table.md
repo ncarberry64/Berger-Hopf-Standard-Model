@@ -11,6 +11,10 @@ lemma is mathematically correct.
 The v2.2 channel audit also falsifies maximal-self-response selection if the
 complete transport action selects dimension 8, 21, 49, or another space.
 
+The v2.3 bidirectional candidate fails if the complete action lacks an
+off-diagonal up/down block, is not adjoint closed, or assigns unequal physical
+transport roles to the two directions.
+
 | claim_id | track | claim | current_status | what_would_falsify_it |
 | --- | --- | --- | --- | --- |
 | ENG-01 | ENGINE | CERN open-data four-vector accuracy | ARTIFACT_BACKED | scale-aware error exceeds declared bound |

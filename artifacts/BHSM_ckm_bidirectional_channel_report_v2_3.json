@@ -1,0 +1,216 @@
+{
+  "adjoint_pair_selection": {
+    "artifact_limitations": [
+      "charged-current Lorentz and gauge structures are STANDARD_HEP_TARGET_CONVENTION",
+      "no complete BHSM action selects the adjoint-pair subspace"
+    ],
+    "audit": "ckm_adjoint_pair_selection",
+    "candidate_status": "CONDITIONAL_CKM_ADJOINT_PAIR_SELECTION",
+    "claim_boundary": "Target-level Hermitian conjugation motivates the pair but does not prove action-level CKM channel selection.",
+    "empirical_inputs_used": false,
+    "evidence_against_maximal_self_response_as_primary_source": [
+      "CKM target is cross-sector charged-current transport, not a sector self-response"
+    ],
+    "evidence_against_one_way_only": [
+      "a Hermitian target convention includes the conjugate direction"
+    ],
+    "evidence_for_adjoint_pair": [
+      "CKM charged-current target is off-diagonal in up/down fields",
+      "target expression explicitly includes its Hermitian conjugate"
+    ],
+    "forbidden_theorem_inputs": [
+      "empirical CKM fitting",
+      "PDG/reference values",
+      "W calibration",
+      "charged-mass fitting",
+      "neutrino limits",
+      "legacy threshold tables"
+    ],
+    "forbidden_theorem_inputs_used": [],
+    "frozen_predictions_modified": false,
+    "missing_action_rule": "derive the off-diagonal charged-current block and its adjoint closure from the normalized BHSM action",
+    "official_prediction_logic_modified": false,
+    "selected_N_CKM": null,
+    "selection_rule_proven": false,
+    "status": "OPEN_MISSING_CKM_ADJOINT_PAIR_SELECTION_RULE"
+  },
+  "alternative_resolution": {
+    "audit": "ckm_channel_alternative_resolution",
+    "claim_boundary": "The target convention prefers the bidirectional interpretation, but only the BHSM action can exclude competing transport spaces theoremically.",
+    "empirical_inputs_used": false,
+    "forbidden_theorem_inputs": [
+      "empirical CKM fitting",
+      "PDG/reference values",
+      "W calibration",
+      "charged-mass fitting",
+      "neutrino limits",
+      "legacy threshold tables"
+    ],
+    "forbidden_theorem_inputs_used": [],
+    "frozen_predictions_modified": false,
+    "official_prediction_logic_modified": false,
+    "preferred_candidate": "bidirectional_adjoint_pair",
+    "rows": [
+      {
+        "dimension": 8,
+        "evidence_against": [
+          "omits the conjugate direction under Hermitian closure"
+        ],
+        "evidence_for": [
+          "cross-sector CKM target"
+        ],
+        "id": "one_way_up_down",
+        "interpretation": "Hom(V_u,V_d)",
+        "status": "CONDITIONAL_ONE_WAY_CHANNEL_DISFAVORED"
+      },
+      {
+        "dimension": 16,
+        "evidence_against": [
+          "adjoint-pair selection is not action-derived"
+        ],
+        "evidence_for": [
+          "off-diagonal CKM charged-current target",
+          "explicit + h.c."
+        ],
+        "id": "bidirectional_adjoint_pair",
+        "interpretation": "Hom(V_u,V_d) direct_sum Hom(V_d,V_u)",
+        "status": "CONDITIONAL_HERMITIAN_BIDIRECTIONAL_CKM_CHANNEL_CANDIDATE"
+      },
+      {
+        "dimension": 16,
+        "evidence_against": [
+          "self-response does not match the cross-sector CKM target"
+        ],
+        "evidence_for": [
+          "same exact dimension 16"
+        ],
+        "id": "maximal_self_response",
+        "interpretation": "End(V_d)",
+        "status": "RETIRED_MAXIMAL_SELF_RESPONSE_AS_PRIMARY_CKM_SOURCE"
+      },
+      {
+        "dimension": 21,
+        "evidence_against": [
+          "diagonal self blocks are not the off-diagonal CKM target"
+        ],
+        "evidence_for": [
+          "complete sectorwise self response"
+        ],
+        "id": "sector_self_response_sum",
+        "interpretation": "direct sum of End(V_f)",
+        "status": "UNSELECTED_COMPETING_ASSIGNMENT"
+      },
+      {
+        "dimension": 49,
+        "evidence_against": [
+          "includes diagonal and non-CKM blocks"
+        ],
+        "evidence_for": [
+          "complete charged response algebra"
+        ],
+        "id": "total_charged_endomorphism",
+        "interpretation": "End(V_ch)",
+        "status": "UNSELECTED_COMPETING_ASSIGNMENT"
+      }
+    ],
+    "status": "MULTIPLE_COMPETING_CHANNEL_ASSIGNMENTS",
+    "theorem_level_unique_assignment": null
+  },
+  "application": {
+    "abstract_log_lemma_status": "ARTIFACT_BACKED_MATHEMATICAL_LEMMA",
+    "adjoint_pair_selection_status": "OPEN_MISSING_CKM_ADJOINT_PAIR_SELECTION_RULE",
+    "audit": "ckm_bidirectional_log_transport_application",
+    "candidate_exponent": "1/16",
+    "candidate_status": "CONDITIONAL_CKM_LOG_TRANSPORT_APPLICATION",
+    "ckm_exponent_derived": false,
+    "claim_boundary": "The bidirectional count does not derive the CKM exponent unless BHSM proves that transport is governed by the Hermitian charged-current adjoint pair.",
+    "empirical_inputs_used": false,
+    "forbidden_theorem_inputs": [
+      "empirical CKM fitting",
+      "PDG/reference values",
+      "W calibration",
+      "charged-mass fitting",
+      "neutrino limits",
+      "legacy threshold tables"
+    ],
+    "forbidden_theorem_inputs_used": [],
+    "frozen_predictions_modified": false,
+    "official_prediction_logic_modified": false,
+    "selected_N_CKM": null,
+    "status": "OPEN_MISSING_CKM_LOG_TRANSPORT_AVERAGING_THEOREM"
+  },
+  "channel_count": {
+    "N_bidirectional_ud_du": 16,
+    "N_max_self": 16,
+    "N_one_way_du": 8,
+    "N_one_way_ud": 8,
+    "N_sum_self": 21,
+    "N_total_end": 49,
+    "audit": "ckm_bidirectional_channel_count",
+    "bidirectional_reciprocal": "1/16",
+    "bidirectional_reciprocal_exact": true,
+    "bidirectional_space": "Hom(V_u,V_d) direct_sum Hom(V_d,V_u)",
+    "claim_boundary": "The dimensions are exact; counting both directions does not prove that the BHSM action selects this transport space.",
+    "empirical_inputs_used": false,
+    "forbidden_theorem_inputs": [
+      "empirical CKM fitting",
+      "PDG/reference values",
+      "W calibration",
+      "charged-mass fitting",
+      "neutrino limits",
+      "legacy threshold tables"
+    ],
+    "forbidden_theorem_inputs_used": [],
+    "frozen_predictions_modified": false,
+    "official_prediction_logic_modified": false,
+    "s_d": 4,
+    "s_u": 2,
+    "same_number_distinct_sources": true,
+    "status": "CONDITIONAL_HERMITIAN_BIDIRECTIONAL_CKM_CHANNEL_CANDIDATE"
+  },
+  "claim_boundary": "The Hermitian bidirectional channel is the preferred conditional source of 16; action-level adjoint-pair selection and CKM application remain open.",
+  "frozen_predictions_modified": false,
+  "full_completion_claimed": false,
+  "official_prediction_logic_modified": false,
+  "physics_validation_claimed": false,
+  "source_search": {
+    "all_sources_present": true,
+    "audit": "ckm_bidirectional_source_search",
+    "bhsm_action_selects_adjoint_pair": false,
+    "ckm_charged_current_target_identified": true,
+    "claim_boundary": "The charged-current target contains its Hermitian conjugate, but its Lorentz/gauge structure is explicitly a target convention rather than a BHSM action derivation.",
+    "empirical_inputs_used": false,
+    "forbidden_theorem_inputs": [
+      "empirical CKM fitting",
+      "PDG/reference values",
+      "W calibration",
+      "charged-mass fitting",
+      "neutrino limits",
+      "legacy threshold tables"
+    ],
+    "forbidden_theorem_inputs_used": [],
+    "frozen_predictions_modified": false,
+    "hermitian_conjugate_present": true,
+    "official_prediction_logic_modified": false,
+    "present_sources": [
+      "artifacts/BHSM_chiral_current_attachment_map_v0_6.json",
+      "artifacts/BHSM_bounded_vertex_promotion_audit_v1_0.json",
+      "artifacts/BHSM_ckm_channel_equivalence_report_v2_2.json",
+      "src/bhsm/interface/action_lemmas/log_transport_averaging.py",
+      "src/claims.py"
+    ],
+    "sources": [
+      "artifacts/BHSM_chiral_current_attachment_map_v0_6.json",
+      "artifacts/BHSM_bounded_vertex_promotion_audit_v1_0.json",
+      "artifacts/BHSM_ckm_channel_equivalence_report_v2_2.json",
+      "src/bhsm/interface/action_lemmas/log_transport_averaging.py",
+      "src/claims.py"
+    ],
+    "status": "CKM_BIDIRECTIONAL_SOURCES_LOCATED_ACTION_SELECTION_OPEN",
+    "target_convention_only": true,
+    "target_expression": "(g_2 / sqrt(2)) * ubar_i gamma^mu P_L V_CKM_BH[i,j] d_j W_plus_mu + h.c.",
+    "up_down_off_diagonal_interpretation_present": true
+  },
+  "status": "CONDITIONAL_HERMITIAN_BIDIRECTIONAL_CKM_CHANNEL_CANDIDATE",
+  "version": "2.3"
+}

@@ -1,6 +1,6 @@
 # Berger-Hopf Standard Model (BHSM)
 
-[![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml) [![Tests: 2323 passed](https://img.shields.io/badge/tests-2323%20passed-brightgreen)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
+[![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml) [![Tests: 2331 passed](https://img.shields.io/badge/tests-2331%20passed-brightgreen)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
 BHSM is a research framework for studying Berger-Hopf geometry, frozen internal prediction artifacts, and candidate links to flavor, boundary structure, and effective field descriptions.
 
@@ -159,8 +159,8 @@ BHSM does not claim full Standard Model derivation or physical eV/GeV neutrino m
 Start with `make reviewer-smoke` and the [reproduction guide](docs/reviewer_reproduction_guide.md).
 The primitive lattice normalization rule is not action-derived unless the BHSM action is shown to quotient common incidence rescalings.
 The maximal-overlap bridge rule is not action-derived unless the BHSM charged bridge/Hessian action selects the maximal primitive overlap channel.
-The abstract log-transport averaging lemma does not by itself derive the CKM exponent.
-The CKM 1/16 exponent is not derived unless BHSM proves that CKM transport acts over the `N_16` charged bilinear channel space. The `N_16` channel assignment remains conditional unless the action selects maximal primitive charged self-response over competing channel assignments.
+The abstract log-transport averaging lemma does not by itself derive the CKM exponent. The one-way up/down channel count is 8. The Hermitian bidirectional up/down adjoint-pair channel count is 16.
+The bidirectional channel count does not derive the CKM exponent unless BHSM proves that CKM transport is governed by the Hermitian charged-current adjoint pair. The maximal self-response channel also has dimension 16, so the repo must distinguish same-number coincidence from physical source selection.
 No empirical CKM fitting, charged-mass fitting, PDG values, W calibration, neutrino limits, or legacy threshold tables are used as theorem inputs. Runtime-Gated External Tools remain separate.
 ## Repository Map
 | Path | Purpose |

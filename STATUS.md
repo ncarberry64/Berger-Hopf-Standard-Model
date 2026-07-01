@@ -91,3 +91,12 @@ The detailed claim boundary is centralized in [CLAIMS.md](CLAIMS.md).
 - Maximal-sector selection: `OPEN_MISSING_MAXIMAL_SECTOR_CKM_SELECTION_RULE`.
 - CKM application: `OPEN_MISSING_CKM_LOG_TRANSPORT_AVERAGING_THEOREM`.
 - The abstract lemma is reused; no action-backed rule currently selects `End(V_d)` over the three competing spaces.
+
+## v2.3 Hermitian Bidirectional CKM Channel
+
+- One-way dimensions: `dim Hom(V_u,V_d)=8` and `dim Hom(V_d,V_u)=8`.
+- Bidirectional candidate: `N_CKM=16` from the direct sum of the two directions.
+- Source status: `CONDITIONAL_HERMITIAN_BIDIRECTIONAL_CKM_CHANNEL_CANDIDATE`.
+- Adjoint-pair selection: `OPEN_MISSING_CKM_ADJOINT_PAIR_SELECTION_RULE`.
+- The CKM target contains `+ h.c.`, but that structure remains a standard target convention rather than an action-derived transport theorem.
+- Maximal self-response is retired as the primary CKM source; its equal dimension is not physical source selection.

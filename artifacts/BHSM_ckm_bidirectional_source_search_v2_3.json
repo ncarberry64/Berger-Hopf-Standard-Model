@@ -1,0 +1,38 @@
+{
+  "all_sources_present": true,
+  "audit": "ckm_bidirectional_source_search",
+  "bhsm_action_selects_adjoint_pair": false,
+  "ckm_charged_current_target_identified": true,
+  "claim_boundary": "The charged-current target contains its Hermitian conjugate, but its Lorentz/gauge structure is explicitly a target convention rather than a BHSM action derivation.",
+  "empirical_inputs_used": false,
+  "forbidden_theorem_inputs": [
+    "empirical CKM fitting",
+    "PDG/reference values",
+    "W calibration",
+    "charged-mass fitting",
+    "neutrino limits",
+    "legacy threshold tables"
+  ],
+  "forbidden_theorem_inputs_used": [],
+  "frozen_predictions_modified": false,
+  "hermitian_conjugate_present": true,
+  "official_prediction_logic_modified": false,
+  "present_sources": [
+    "artifacts/BHSM_chiral_current_attachment_map_v0_6.json",
+    "artifacts/BHSM_bounded_vertex_promotion_audit_v1_0.json",
+    "artifacts/BHSM_ckm_channel_equivalence_report_v2_2.json",
+    "src/bhsm/interface/action_lemmas/log_transport_averaging.py",
+    "src/claims.py"
+  ],
+  "sources": [
+    "artifacts/BHSM_chiral_current_attachment_map_v0_6.json",
+    "artifacts/BHSM_bounded_vertex_promotion_audit_v1_0.json",
+    "artifacts/BHSM_ckm_channel_equivalence_report_v2_2.json",
+    "src/bhsm/interface/action_lemmas/log_transport_averaging.py",
+    "src/claims.py"
+  ],
+  "status": "CKM_BIDIRECTIONAL_SOURCES_LOCATED_ACTION_SELECTION_OPEN",
+  "target_convention_only": true,
+  "target_expression": "(g_2 / sqrt(2)) * ubar_i gamma^mu P_L V_CKM_BH[i,j] d_j W_plus_mu + h.c.",
+  "up_down_off_diagonal_interpretation_present": true
+}
