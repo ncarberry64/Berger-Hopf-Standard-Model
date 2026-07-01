@@ -90,6 +90,9 @@ Do not claim that:
 - The maximal primitive incidence alone proves that the bridge action uses `4/3`.
 - The arithmetic identity `1/16` proves the CKM logarithmic transport theorem.
 - Prepared reproduction materials constitute an independent external reproduction.
+- The abstract quadratic log-averaging lemma proves that BHSM CKM transport has sixteen equivalent physical channels.
+- A cyclic quotient scaffold proves invariance of the complete action under common charged-incidence rescaling.
+- Branch-tracking maximal overlap proves that the charged bridge action selects the down-sector primitive channel.
 
 ## Policy
 

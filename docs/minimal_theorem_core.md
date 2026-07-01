@@ -6,6 +6,10 @@ The v2.0 primitive-incidence audit adds exact conditional gcd, projector,
 overlap, bridge/beta, and reciprocal identities. It does not upgrade their
 missing action or transport theorems.
 
+The v2.1 sum-of-squares proof establishes abstract equal logarithmic sharing.
+Its CKM application remains open because physical equivalence of the sixteen
+bilinear incidence channels is not derived.
+
 | core_id | name | status | remaining_blockers |
 | --- | --- | --- | --- |
 | CORE-01 | Unified boundary/action principle | CONDITIONAL | ['complete normalized action'] |

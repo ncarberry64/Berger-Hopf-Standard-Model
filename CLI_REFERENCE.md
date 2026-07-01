@@ -143,6 +143,12 @@ theorem inputs and do not emit a default physical neutrino mass.
 | `physical-normalization-gate` | Report missing physical unit-map objects | Markdown or JSON | no | no |
 | `external-reproduction-status` | Report prepared versus completed reproduction | Markdown or JSON | no | no |
 | `primitive-charged-incidence-report` | Render the combined v2.0 report | Markdown or JSON | no | no |
+| `action-lemma-source-search` | Locate evidence and missing action-rule sources | Markdown or JSON | no | no |
+| `primitive-lattice-rule` | Gate common-rescaling quotient provenance | Markdown or JSON | no | no |
+| `maximal-overlap-bridge-rule` | Gate maximal primitive overlap action selection | Markdown or JSON | no | no |
+| `log-transport-averaging` | Prove the abstract quadratic log-energy lemma | Markdown or JSON | no | no |
+| `ckm-log-transport-application` | Gate the abstract lemma's CKM application | Markdown or JSON | no | no |
+| `action-lemma-closure-report` | Render combined v2.1 action-lemma status | Markdown or JSON | no | no |
 
 Without `--offline-ok`, `pdg-fetch` may try an optional live reference adapter.
 The offline fallback is reference-only and is never a derivation input.

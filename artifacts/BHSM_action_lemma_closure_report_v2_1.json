@@ -1,0 +1,165 @@
+{
+  "abstract_log_transport": {
+    "channel_count": 16,
+    "claim_boundary": "The abstract log-transport averaging lemma does not by itself derive the CKM exponent.",
+    "empirical_inputs_used": false,
+    "forbidden_theorem_inputs": [
+      "empirical CKM fitting",
+      "charged-mass fitting",
+      "PDG/reference values",
+      "W calibration",
+      "neutrino limits",
+      "legacy threshold tables"
+    ],
+    "forbidden_theorem_inputs_used": [],
+    "lemma": "quadratic_log_transport_averaging",
+    "minimizer_per_channel": "1/16",
+    "minimum_energy": "1/16",
+    "physics_application_claimed": false,
+    "proof_identity": "sum(x_i^2)-L^2/N = sum((x_i-L/N)^2) >= 0",
+    "sample_exact_identity_verified": true,
+    "status": "ARTIFACT_BACKED_MATHEMATICAL_LEMMA",
+    "total_log_normalization": "1",
+    "unique_minimizer": true
+  },
+  "ckm_application": {
+    "N_16_equivalent_bilinear_channels_proven": false,
+    "abstract_lemma_status": "ARTIFACT_BACKED_MATHEMATICAL_LEMMA",
+    "application": "BHSM_CKM_log_transport",
+    "application_gate_passes": false,
+    "candidate_exponent": "1/16",
+    "candidate_status": "CONDITIONAL_CKM_LOG_TRANSPORT_AVERAGING_THEOREM",
+    "ckm_exponent_derived": false,
+    "claim_boundary": "The CKM exponent remains open unless BHSM proves CKM transport acts over N_16 equivalent bilinear charged-incidence channels.",
+    "empirical_inputs_used": false,
+    "forbidden_theorem_inputs": [
+      "empirical CKM fitting",
+      "charged-mass fitting",
+      "PDG/reference values",
+      "W calibration",
+      "neutrino limits",
+      "legacy threshold tables"
+    ],
+    "forbidden_theorem_inputs_used": [],
+    "status": "OPEN_MISSING_CKM_LOG_TRANSPORT_AVERAGING_THEOREM"
+  },
+  "claim_boundary": "An exact abstract variational lemma is proved; BHSM action and CKM applications remain evidence-gated.",
+  "frozen_predictions_modified": false,
+  "full_completion_claimed": false,
+  "maximal_overlap": {
+    "action_derived": false,
+    "bridge_action_selects_maximal_channel": false,
+    "candidate_status": "CONDITIONAL_MAXIMAL_OVERLAP_BRIDGE_RULE",
+    "charged_trace": 21,
+    "claim_boundary": "The maximal-overlap bridge rule is not action-derived unless the BHSM charged bridge/Hessian action selects the maximal primitive overlap channel.",
+    "empirical_inputs_used": false,
+    "exact_conditional_identity": true,
+    "forbidden_theorem_inputs": [
+      "empirical CKM fitting",
+      "charged-mass fitting",
+      "PDG/reference values",
+      "W calibration",
+      "neutrino limits",
+      "legacy threshold tables"
+    ],
+    "forbidden_theorem_inputs_used": [],
+    "g_bridge": "16/189",
+    "lemma": "maximal_overlap_bridge_rule",
+    "max_primitive_channel": 4,
+    "overlap": "4/3",
+    "rho_ch": 3,
+    "status": "OPEN_MISSING_ACTION_RULE_THAT_BRIDGE_USES_MAX_PRIMITIVE_OVERLAP"
+  },
+  "official_predictions_modified": false,
+  "primitive_lattice": {
+    "action_derived": false,
+    "action_invariant_under_common_rescaling": false,
+    "candidate_status": "CONDITIONAL_PRIMITIVE_LATTICE_NORMALIZATION_RULE",
+    "claim_boundary": "The primitive lattice normalization rule is not action-derived unless the BHSM action is shown to quotient common incidence rescalings.",
+    "empirical_inputs_used": false,
+    "exact_gcd_identity": true,
+    "forbidden_theorem_inputs": [
+      "empirical CKM fitting",
+      "charged-mass fitting",
+      "PDG/reference values",
+      "W calibration",
+      "neutrino limits",
+      "legacy threshold tables"
+    ],
+    "forbidden_theorem_inputs_used": [],
+    "lemma": "primitive_lattice_normalization",
+    "omega_ch": [
+      3,
+      6,
+      12
+    ],
+    "primitive_representative": [
+      1,
+      2,
+      4
+    ],
+    "rho_ch": 3,
+    "status": "OPEN_MISSING_ACTION_PRIMITIVE_LATTICE_NORMALIZATION_RULE"
+  },
+  "source_search": {
+    "action_quotient_evidence_found": false,
+    "audit": "action_lemma_source_search",
+    "ckm_equivalent_channel_evidence_found": false,
+    "claim_boundary": "Source presence is provenance, not proof of the proposed action rules.",
+    "empirical_inputs_used": false,
+    "forbidden_theorem_inputs": [
+      "empirical CKM fitting",
+      "charged-mass fitting",
+      "PDG/reference values",
+      "W calibration",
+      "neutrino limits",
+      "legacy threshold tables"
+    ],
+    "forbidden_theorem_inputs_used": [],
+    "maximal_bridge_selection_evidence_found": false,
+    "rows": {
+      "ckm_transport": {
+        "all_present": true,
+        "paths": [
+          "src/bhsm/interface/common_16/ckm_transport_audit.py",
+          "artifacts/BHSM_common_16_ckm_transport_audit_v1_8.json",
+          "artifacts/BHSM_ckm_log_transport_gate_v2_0.json"
+        ],
+        "present": [
+          "src/bhsm/interface/common_16/ckm_transport_audit.py",
+          "artifacts/BHSM_common_16_ckm_transport_audit_v1_8.json",
+          "artifacts/BHSM_ckm_log_transport_gate_v2_0.json"
+        ]
+      },
+      "maximal_overlap": {
+        "all_present": true,
+        "paths": [
+          "docs/bhsm_freeze_protocol.md",
+          "docs/incidence_normalized_overlap_bridge_source.md",
+          "artifacts/BHSM_overlap_4_over_3_source_audit_v2_0.json"
+        ],
+        "present": [
+          "docs/bhsm_freeze_protocol.md",
+          "docs/incidence_normalized_overlap_bridge_source.md",
+          "artifacts/BHSM_overlap_4_over_3_source_audit_v2_0.json"
+        ]
+      },
+      "primitive_lattice": {
+        "all_present": true,
+        "paths": [
+          "theory/primitive_cyclic_monodromy_from_boundary_action.md",
+          "theory/action_monodromy_remaining_assumptions.md",
+          "artifacts/BHSM_rho_ch_gcd_selection_audit_v2_0.json"
+        ],
+        "present": [
+          "theory/primitive_cyclic_monodromy_from_boundary_action.md",
+          "theory/action_monodromy_remaining_assumptions.md",
+          "artifacts/BHSM_rho_ch_gcd_selection_audit_v2_0.json"
+        ]
+      }
+    },
+    "status": "SOURCES_LOCATED_ACTION_LEMMAS_REMAIN_OPEN"
+  },
+  "status": "ABSTRACT_LOG_LEMMA_PROVEN_ACTION_APPLICATIONS_OPEN",
+  "version": "2.1"
+}

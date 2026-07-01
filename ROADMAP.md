@@ -85,3 +85,7 @@ commands, and records falsifiers. It does not close the following items.
    complete action; gcd arithmetic alone is insufficient.
 8. Derive the bridge overlap-selection rule and CKM logarithmic averaging
    theorem before promoting `4/3` or `1/16` beyond conditional candidates.
+9. Identify the explicit action symmetry or quotient that removes common
+   incidence coverings.
+10. Construct the CKM transport functional and prove that its physical channel
+    decomposition contains sixteen equivalent bilinear contributions.

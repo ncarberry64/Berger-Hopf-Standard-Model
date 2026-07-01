@@ -4,6 +4,10 @@ Primitive-incidence candidates fail if the complete action does not select the
 gcd normalization, maximal primitive overlap, or reciprocal log-transport
 averaging rule. Arithmetic agreement alone is not protection from falsification.
 
+The CKM application fails if the complete transport functional does not act on
+sixteen equivalent bilinear channels, even though the abstract minimization
+lemma is mathematically correct.
+
 | claim_id | track | claim | current_status | what_would_falsify_it |
 | --- | --- | --- | --- | --- |
 | ENG-01 | ENGINE | CERN open-data four-vector accuracy | ARTIFACT_BACKED | scale-aware error exceeds declared bound |

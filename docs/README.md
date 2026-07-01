@@ -25,6 +25,11 @@ The current minimal-action theory dictionary is documented in
 - [rho_ch GCD selection](rho_ch_gcd_selection.md)
 - [Charged overlap 4/3 source](charged_overlap_4_over_3_source.md)
 - [CKM log-transport gate](ckm_log_transport_gate.md)
+- [Action lemma closure report](action_lemma_closure_report.md)
+- [Primitive lattice normalization rule](primitive_lattice_normalization_rule.md)
+- [Maximal-overlap bridge rule](maximal_overlap_bridge_rule.md)
+- [Abstract log-transport averaging lemma](log_transport_averaging_lemma.md)
+- [CKM log-transport application gate](ckm_log_transport_application_gate.md)
 
 - [CERN Open Data coordinate benchmark](cern_open_data_benchmark.md): checksum-gated
   CMS dimuon four-vector throughput validation; not track reconstruction.

@@ -122,6 +122,14 @@ from .primitive_charged_incidence import (
     audit_rho_gcd_selection,
     build_primitive_charged_incidence_report,
 )
+from .action_lemmas import (
+    audit_ckm_log_transport_application,
+    audit_maximal_overlap_bridge_rule,
+    audit_primitive_lattice_rule,
+    build_action_lemma_closure_report,
+    prove_log_transport_averaging,
+    search_action_lemma_sources,
+)
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -403,6 +411,17 @@ def build_parser() -> argparse.ArgumentParser:
     for command in primitive_commands:
         primitive = commands.add_parser(command, help=f"Render the BHSM v2.0 {command} audit")
         primitive.add_argument("--format", choices=("json", "markdown"), default="json")
+    action_lemma_commands = (
+        "action-lemma-source-search",
+        "primitive-lattice-rule",
+        "maximal-overlap-bridge-rule",
+        "log-transport-averaging",
+        "ckm-log-transport-application",
+        "action-lemma-closure-report",
+    )
+    for command in action_lemma_commands:
+        lemma = commands.add_parser(command, help=f"Render the BHSM v2.1 {command} audit")
+        lemma.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
 
@@ -844,6 +863,28 @@ def main(argv: Sequence[str] | None = None) -> int:
         "external-reproduction-packet",
     }:
         emit_hardening_payload(args.command, args.format)
+        return 0
+    if args.command in {
+        "action-lemma-source-search",
+        "primitive-lattice-rule",
+        "maximal-overlap-bridge-rule",
+        "log-transport-averaging",
+        "ckm-log-transport-application",
+        "action-lemma-closure-report",
+    }:
+        builders = {
+            "action-lemma-source-search": search_action_lemma_sources,
+            "primitive-lattice-rule": audit_primitive_lattice_rule,
+            "maximal-overlap-bridge-rule": audit_maximal_overlap_bridge_rule,
+            "log-transport-averaging": lambda: prove_log_transport_averaging(16),
+            "ckm-log-transport-application": audit_ckm_log_transport_application,
+            "action-lemma-closure-report": build_action_lemma_closure_report,
+        }
+        payload = builders[args.command]()
+        if args.format == "json":
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        else:
+            print(f"# {args.command.replace('-', ' ').title()}\n\n```json\n{json.dumps(payload, indent=2, sort_keys=True)}\n```")
         return 0
     if args.command in {
         "primitive-charged-incidence",
