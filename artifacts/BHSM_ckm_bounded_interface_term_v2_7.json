@@ -1,0 +1,44 @@
+{
+  "audit": "ckm_bounded_interface_term",
+  "boundedness_source": "included in the minimal bounded collider-interface subset",
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "L_CKM_charged_current_bounded is a bounded interface term, not automatically a normalized action-selected transport operator.",
+  "cms_cern_endorsement_claimed": false,
+  "detector_reconstruction_claimed": false,
+  "empirical_inputs_used": false,
+  "forbidden_theorem_inputs": [
+    "empirical CKM fitting",
+    "PDG/reference values",
+    "W calibration",
+    "charged-mass fitting",
+    "neutrino limits",
+    "legacy threshold tables"
+  ],
+  "forbidden_theorem_inputs_used": [],
+  "frozen_predictions_modified": false,
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "official_prediction_logic_modified": false,
+  "pdg_reference_values_used": false,
+  "physics_validation_claimed": false,
+  "status": "ARTIFACT_BACKED_BOUNDED_CKM_INTERFACE_TERM",
+  "symbolic_form_if_available": "(g2_BH_runtime / sqrt(2)) * ubar_i gamma^mu P_L V_CKM_BH[i,j] d_j W_plus_mu + h.c.",
+  "term_location": "artifacts/BHSM_minimal_bounded_lagrangian_subset_v1_2.json",
+  "term_name": "L_CKM_charged_current_bounded",
+  "w_calibration_used": false,
+  "what_is_artifact_backed": [
+    "term presence and symbolic target form",
+    "inclusion in the bounded collider-interface subset",
+    "BHSM collider-interface runtime parameter mode",
+    "local CKM source-matrix attachment"
+  ],
+  "what_is_not_proven": [
+    "complete BHSM 4D action term",
+    "action-derived coefficient normalization",
+    "boundary/action measure",
+    "sector projector sandwich",
+    "operator domain and codomain",
+    "CKM transport-space selection"
+  ]
+}

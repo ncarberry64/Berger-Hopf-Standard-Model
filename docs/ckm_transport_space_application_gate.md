@@ -15,3 +15,5 @@ Gate:
 Current result: the abstract lemma remains available, but the upstream normalized action and CKM transport-space identification gates are open.
 
 The Hermitian adjoint-pair channel count is 16, but the CKM exponent remains not derived unless BHSM proves CKM acts on that selected transport space.
+
+The CKM exponent remains not derived unless the normalized action selects a CKM transport space and the CKM identification theorem closes.

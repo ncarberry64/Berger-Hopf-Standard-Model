@@ -15,3 +15,5 @@ The repository contains charged-current target/interface terms, including a boun
 The normalized charged-current action term, not arithmetic channel-count coincidence, must select the CKM transport space.
 
 No empirical CKM fitting, charged-mass fitting, PDG values, W calibration, neutrino limits, or legacy threshold tables are used as theorem inputs.
+
+The v2.7 audit promotes the candidate only to `ARTIFACT_BACKED_BOUNDED_CKM_INTERFACE_TERM`. L_CKM_charged_current_bounded is a bounded interface term, not automatically a normalized action-selected transport operator.

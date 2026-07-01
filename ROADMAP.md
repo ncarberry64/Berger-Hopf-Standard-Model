@@ -101,3 +101,7 @@ commands, and records falsifiers. It does not close the following items.
 14. Locate a normalized charged-current action term with explicit operator
     domain/codomain before promoting any CKM transport-space assignment; same
     numerical dimension does not establish the physical source.
+15. Supply or rule out a boundary measure, action-derived coefficient, and
+    `Pi_u`/`Pi_d` sandwich for `L_CKM_charged_current_bounded`.
+16. Prove whether the forward and adjoint terms share one normalized action
+    object, then separately prove CKM identification before selecting a space.

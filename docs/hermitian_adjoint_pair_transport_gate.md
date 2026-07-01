@@ -12,3 +12,5 @@ Gate:
 Current result: located target/interface terms contain an off-diagonal charged-current factor and `+ h.c.`, but no normalized BHSM action source requires the conjugate term or selects the adjoint-pair transport space.
 
 The existence of a Hermitian-conjugate term supports action reality but does not by itself derive CKM transport-space selection.
+
+The v2.7 paired-term audit additionally finds no shared action measure, coefficient normalization, or projector source tying the two directions together.

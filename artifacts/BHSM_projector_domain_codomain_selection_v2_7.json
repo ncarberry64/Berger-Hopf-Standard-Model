@@ -1,0 +1,74 @@
+{
+  "audit": "projector_domain_codomain_selection",
+  "blocking_conditions": [
+    "no projector sandwich in the bounded term",
+    "no action-declared operator domain/codomain",
+    "target-level + h.c. does not select adjoint-pair channel counting"
+  ],
+  "candidate_spaces": [
+    {
+      "dimension": 8,
+      "space": "Hom(V_u,V_d)"
+    },
+    {
+      "dimension": 8,
+      "space": "Hom(V_d,V_u)"
+    },
+    {
+      "dimension": 16,
+      "space": "Hom(V_u,V_d) direct_sum Hom(V_d,V_u)"
+    },
+    {
+      "dimension": 16,
+      "space": "End(V_d)",
+      "status": "RETIRED_MAXIMAL_SELF_RESPONSE_AS_PRIMARY_CKM_SOURCE"
+    },
+    {
+      "dimension": 21,
+      "space": "End(V_l) direct_sum End(V_u) direct_sum End(V_d)"
+    },
+    {
+      "dimension": 49,
+      "space": "End(V_ch)"
+    }
+  ],
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "cms_cern_endorsement_claimed": false,
+  "competing_spaces": [
+    "Hom(V_u,V_d)",
+    "Hom(V_d,V_u)",
+    "Hom(V_u,V_d) direct_sum Hom(V_d,V_u)",
+    "End(V_d)",
+    "End(V_l) direct_sum End(V_u) direct_sum End(V_d)",
+    "End(V_ch)"
+  ],
+  "detector_reconstruction_claimed": false,
+  "domain_codomain_evidence": [
+    "target bilinear suggests up/down directions; no action artifact declares them"
+  ],
+  "empirical_inputs_used": false,
+  "forbidden_theorem_inputs": [
+    "empirical CKM fitting",
+    "PDG/reference values",
+    "W calibration",
+    "charged-mass fitting",
+    "neutrino limits",
+    "legacy threshold tables"
+  ],
+  "forbidden_theorem_inputs_used": [],
+  "frozen_predictions_modified": false,
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "official_prediction_logic_modified": false,
+  "overall_status": "MULTIPLE_COMPETING_TRANSPORT_SPACES",
+  "pdg_reference_values_used": false,
+  "physics_validation_claimed": false,
+  "projector_evidence": [
+    "charged-sector projector identities exist, but are not attached to the bounded CKM term"
+  ],
+  "selected_dimension": null,
+  "selected_space": null,
+  "selection_status": "OPEN_MISSING_PROJECTOR_DOMAIN_CODOMAIN_SELECTION",
+  "w_calibration_used": false
+}

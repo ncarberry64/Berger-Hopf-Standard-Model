@@ -1,0 +1,53 @@
+{
+  "audit": "normalized_projector_sandwich_action_term",
+  "boundary_measure_source": null,
+  "candidate_action_form": "S_CKM ~ integral dmu_B [psi_d^dagger Pi_d J_du Pi_u psi_u + psi_u^dagger Pi_u J_ud Pi_d psi_d]",
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "A normalized projector-sandwiched action term requires boundary/action measure, coefficient normalization, sector projectors, and action provenance.",
+  "cms_cern_endorsement_claimed": false,
+  "coefficient_normalization_source": null,
+  "detector_reconstruction_claimed": false,
+  "empirical_inputs_used": false,
+  "evidence_against": [
+    "no boundary/action measure is attached to L_CKM_charged_current_bounded",
+    "g2_BH_runtime is a collider-interface parameter, not action-derived normalization",
+    "the term does not contain Pi_u and Pi_d or an equivalent projector sandwich",
+    "the bounded subset explicitly marks the term incomplete",
+    "no variational action source generates the term"
+  ],
+  "evidence_for": [
+    "bounded interface target has an off-diagonal up/down bilinear",
+    "independent BHSM artifacts contain charged-sector projectors",
+    "target expression contains + h.c."
+  ],
+  "forbidden_theorem_inputs": [
+    "empirical CKM fitting",
+    "PDG/reference values",
+    "W calibration",
+    "charged-mass fitting",
+    "neutrino limits",
+    "legacy threshold tables"
+  ],
+  "forbidden_theorem_inputs_used": [],
+  "frozen_predictions_modified": false,
+  "legacy_threshold_tables_used": false,
+  "missing_requirements": [
+    "boundary/action measure",
+    "coefficient normalization",
+    "sector projector sandwich",
+    "action/variational provenance"
+  ],
+  "neutrino_limits_used": false,
+  "official_prediction_logic_modified": false,
+  "pdg_reference_values_used": false,
+  "physics_validation_claimed": false,
+  "projector_sources": [
+    "artifacts/BHSM_primitive_charged_incidence_closure_report_v2_0.json",
+    "artifacts/BHSM_projector_reduction_audit_v2_0.json"
+  ],
+  "sector_domain_sources": [],
+  "status": "OPEN_MISSING_NORMALIZED_PROJECTOR_SANDWICH_ACTION_TERM",
+  "variational_action_source": null,
+  "w_calibration_used": false
+}

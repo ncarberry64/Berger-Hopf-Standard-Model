@@ -57,3 +57,4 @@ the `BHSM_*_minimal_action_closure_v0_8.json` artifacts.
 | Minimal action report | Three-theorem action audit | `artifacts/BHSM_minimal_action_report_v0_8.json` | `OPEN` | `python -m bhsm.interface minimal-action-report` |
 | Minimal action decisions | CP, `X_ch`, and neutrino first-missing-object records | `artifacts/BHSM_minimal_action_closure_manifest_v0_8.json` | `OPEN` | `python -m bhsm.interface minimal-action-status` |
 | Claim policy | Consolidated allowed and unsupported claims | `artifacts/BHSM_clean_claims_index_v0_7.json` | `ESTABLISHED` | See `CLAIMS.md` |
+| CKM bounded-interface normalization v2.7 | Bounded term, projector sandwich, paired normalization, CKM identification, and transport selection gates | `artifacts/BHSM_ckm_transport_space_selection_v2_7.json` | `OPEN_MISSING_CKM_TRANSPORT_SPACE_SELECTION` | `python -m bhsm.interface ckm-bounded-interface-report --format markdown` |

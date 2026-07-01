@@ -114,6 +114,17 @@ The detailed claim boundary is centralized in [CLAIMS.md](CLAIMS.md).
 - The maximal self-response channel also has dimension 16, but it is retired as the primary CKM source unless action evidence revives it.
 - No empirical CKM fitting, charged-mass fitting, PDG values, W calibration, neutrino limits, or legacy threshold tables are used as theorem inputs.
 
+## v2.7 CKM Bounded-Interface Normalization
+
+- Bounded interface term: `ARTIFACT_BACKED_BOUNDED_CKM_INTERFACE_TERM`.
+- Normalized projector sandwich: `OPEN_MISSING_NORMALIZED_PROJECTOR_SANDWICH_ACTION_TERM`.
+- Projector domain/codomain: `OPEN_MISSING_PROJECTOR_DOMAIN_CODOMAIN_SELECTION`.
+- Paired normalization: `OPEN_MISSING_PAIRED_TERM_NORMALIZATION`.
+- CKM identification: `OPEN_MISSING_CKM_IDENTIFICATION_THEOREM`.
+- CKM transport selection: `OPEN_MISSING_CKM_TRANSPORT_SPACE_SELECTION`; selected space and dimension remain none.
+- Projector arithmetic alone does not derive the CKM exponent.
+- The CKM exponent remains not derived unless the normalized action selects a CKM transport space and the CKM identification theorem closes.
+
 ## v2.6 Charged-Current Action Transport-Space Audit
 
 - Normalized charged-current action term: `OPEN_MISSING_NORMALIZED_CHARGED_CURRENT_ACTION_TERM`.
