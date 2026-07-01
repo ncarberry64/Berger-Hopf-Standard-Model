@@ -27,8 +27,13 @@ def test_pr98_animation_manifest_and_sample_are_pinned_and_compact():
     assert (ASSETS / "pr98_cms_four_vector_sample.json").stat().st_size < 100_000
     assert (ASSETS / "pr98_cms_engine_validation.gif").stat().st_size < 2_000_000
     with Image.open(ASSETS / "pr98_cms_engine_validation.gif") as animation:
-        assert animation.n_frames == 5
+        assert animation.n_frames >= 28
         assert animation.size == (900, 500)
+        durations = []
+        for index in range(animation.n_frames):
+            animation.seek(index)
+            durations.append(animation.info["duration"])
+        assert max(durations) <= 120
     assert ET.parse(ASSETS / "pr98_cms_engine_validation.svg").getroot().tag.endswith("svg")
 
 
