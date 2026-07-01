@@ -19,6 +19,8 @@ SAMPLE_EVENTS = 64
 EVENT_COUNT = 100_000
 WIDTH, HEIGHT = 900, 500
 COLORS = {"ink": "#17212b", "blue": "#2878b5", "teal": "#21867a", "gold": "#d39b2a", "red": "#b84a4a", "light": "#f4f7f8", "grid": "#d9e0e3"}
+GIF_FRAMES = 32
+GIF_DURATION_MS = 90
 
 
 def font(size: int, bold: bool = False) -> ImageFont.ImageFont:
@@ -138,45 +140,99 @@ def draw_cloud(draw: ImageDraw.ImageDraw, points: list[tuple[float, float, int]]
         draw.ellipse((px - 3, py - 3, px + 3, py + 3), fill=color)
 
 
+def ease_in_out(t: float) -> float:
+    return 0.5 - 0.5 * math.cos(math.tau * t)
+
+
+def interpolate_points(
+    incoming: list[tuple[float, float, int]],
+    mapped: list[tuple[float, float, int]],
+    t: float,
+) -> list[tuple[float, float, int]]:
+    eased = ease_in_out(t)
+    return [
+        (x0 + (x1 - x0) * eased, y0 + (y1 - y0) * eased, charge)
+        for (x0, y0, charge), (x1, y1, _) in zip(incoming, mapped)
+    ]
+
+
+def draw_point_layer(
+    draw: ImageDraw.ImageDraw,
+    points: list[tuple[float, float, int]],
+    box: tuple[int, int, int, int],
+    radius: int,
+    alpha_style: str = "active",
+) -> None:
+    x0, y0, x1, y1 = box
+    for x, y, charge in points:
+        px = x0 + 20 + x * (x1 - x0 - 40)
+        py = y1 - 20 - y * (y1 - y0 - 62)
+        if alpha_style == "faint":
+            color = "#b8cdd8" if charge < 0 else "#e4cf9f"
+        else:
+            color = COLORS["blue"] if charge < 0 else COLORS["gold"]
+        draw.ellipse((px - radius, py - radius, px + radius, py + radius), fill=color)
+
+
+def draw_continuous_scene(
+    points: list[tuple[float, float, int]],
+    incoming: list[tuple[float, float, int]],
+    mapped: list[tuple[float, float, int]],
+    frame_index: int,
+) -> Image.Image:
+    image, draw = base_frame(
+        "BHSM Engine on real CMS Open Data",
+        "Continuous morph of 128 collision-derived muon four-vectors from input projection to boundary-safe angular chart",
+    )
+    box = (70, 116, 610, 404)
+    draw.rounded_rectangle(box, radius=8, fill="white", outline=COLORS["grid"], width=2)
+    draw.text((92, 131), "real PR #98 display sample: px/pz projection -> (phi, eta) chart", fill=COLORS["ink"], font=font(15, True))
+    for fraction in (0.25, 0.5, 0.75):
+        x = box[0] + 20 + fraction * (box[2] - box[0] - 40)
+        y = box[1] + 42 + fraction * (box[3] - box[1] - 62)
+        draw.line((x, box[1] + 42, x, box[3] - 20), fill=COLORS["grid"], width=1)
+        draw.line((box[0] + 20, y, box[2] - 20, y), fill=COLORS["grid"], width=1)
+    draw_point_layer(draw, incoming, box, 2, "faint")
+    draw_point_layer(draw, mapped, box, 2, "faint")
+    for offset in (3, 2, 1):
+        t = ((frame_index - offset) % GIF_FRAMES) / GIF_FRAMES
+        trail = interpolate_points(incoming, mapped, t)
+        draw_point_layer(draw, trail, box, max(1, 4 - offset), "faint")
+    draw_point_layer(draw, points, box, 4)
+
+    progress = frame_index / GIF_FRAMES
+    bar_x0, bar_y0, bar_x1, bar_y1 = 90, 430, 590, 442
+    draw.rounded_rectangle((bar_x0, bar_y0, bar_x1, bar_y1), radius=6, fill="#e8eef0")
+    draw.rounded_rectangle((bar_x0, bar_y0, bar_x0 + (bar_x1 - bar_x0) * progress, bar_y1), radius=6, fill=COLORS["teal"])
+    draw.text((90, 452), "looping transform path; points are real sampled CMS dimuon muon four-vectors", fill=COLORS["ink"], font=font(13))
+
+    panel = (650, 116, 840, 404)
+    draw.rounded_rectangle(panel, radius=8, fill="white", outline=COLORS["grid"], width=2)
+    rows = [
+        ("source", "CMS Record 303"),
+        ("vectors", "128 displayed"),
+        ("validated", "200,000"),
+        ("workload", "2,000,000"),
+        ("speedup", "3.225x"),
+        ("error", "<2.4 eps"),
+    ]
+    for index, (label, value) in enumerate(rows):
+        y = 142 + index * 38
+        draw.text((668, y), label, fill=COLORS["ink"], font=font(13))
+        draw.text((820, y), value, fill=COLORS["teal"], font=font(13, True), anchor="ra")
+    draw.line((668, 372, 822, 372), fill=COLORS["grid"], width=1)
+    draw.text((745, 392), "Engine validation only", fill=COLORS["red"], font=font(14, True), anchor="mm")
+    return image
+
+
 def render_frames(sample: dict[str, object]) -> list[Image.Image]:
     vectors = sample["vectors"]
     incoming = normalized_points(vectors, False)
     mapped = normalized_points(vectors, True)
-    frames: list[Image.Image] = []
-
-    image, draw = base_frame("CMS Open Data Record 303", "Deterministic 128-vector display sample from the PR #98 validation path")
-    draw_cloud(draw, incoming, (110, 120, 790, 420), "Incoming CMS dimuon muon four-vectors")
-    frames.append(image)
-
-    image, draw = base_frame("BHSM Engine coordinate transform", "Same sampled four-vectors mapped to the boundary-safe angular chart")
-    draw_cloud(draw, incoming, (40, 135, 395, 410), "Input projection")
-    draw.line((420, 270, 480, 270), fill=COLORS["teal"], width=6)
-    draw.polygon(((480, 270), (462, 258), (462, 282)), fill=COLORS["teal"])
-    draw_cloud(draw, mapped, (505, 135, 860, 410), "(phi, eta) boundary chart")
-    frames.append(image)
-
-    image, draw = base_frame("Round-trip and invariant check", "Scale-aware backward error remains below 2.4 machine-epsilon")
-    draw_cloud(draw, mapped, (110, 120, 790, 420), "Forward and round-trip points overlap at display scale")
-    draw.text((236, 442), "CI compliance gate: <128 machine-epsilon", fill=COLORS["teal"], font=font(17, True))
-    frames.append(image)
-
-    image, draw = base_frame("PR #98 measured result", "Exact metrics are read from artifacts/cern_open_data_benchmark/results.json")
-    rows = [("Unique muon four-vectors", "200,000"), ("Timed workload", "2,000,000"), ("Speedup vs vectorized control", "3.225x"), ("Backward error", "<2.4 machine-epsilon"), ("CI gate", "<128 machine-epsilon")]
-    for index, (label, value) in enumerate(rows):
-        y = 125 + index * 62
-        draw.text((130, y), label, fill=COLORS["ink"], font=font(20))
-        draw.text((650, y), value, fill=COLORS["teal"], font=font(20, True), anchor="ra")
-        draw.line((130, y + 34, 770, y + 34), fill=COLORS["grid"], width=1)
-    frames.append(image)
-
-    image, draw = base_frame("Scope boundary", "Published CMS collision-derived kinematics; coordinate transformation only")
-    draw.rounded_rectangle((95, 145, 805, 340), radius=10, fill="white", outline=COLORS["red"], width=3)
-    draw.text((450, 205), "Engine validation only", fill=COLORS["ink"], font=font(30, True), anchor="mm")
-    draw.text((450, 260), "Not detector reconstruction", fill=COLORS["red"], font=font(22, True), anchor="mm")
-    draw.text((450, 302), "Not empirical validation of BHSM Physics", fill=COLORS["red"], font=font(22, True), anchor="mm")
-    draw.text((450, 395), "CMS Open Data DOI 10.7483/OPENDATA.CMS.4M97.3SQ9 | no CMS/CERN endorsement", fill=COLORS["ink"], font=font(15), anchor="mm")
-    frames.append(image)
-    return frames
+    return [
+        draw_continuous_scene(interpolate_points(incoming, mapped, index / GIF_FRAMES), incoming, mapped, index)
+        for index in range(GIF_FRAMES)
+    ]
 
 
 def write_svg(sample: dict[str, object], path: Path) -> None:
@@ -208,7 +264,10 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", type=Path, default=ROOT / "data/external/cern_open_data/dimuon.csv")
     args = parser.parse_args()
-    sample = extract_sample(args.input)
+    if args.input.exists():
+        sample = extract_sample(args.input)
+    else:
+        sample = json.loads((HERE / "pr98_cms_four_vector_sample.json").read_text(encoding="utf-8"))
     (HERE / "pr98_cms_sample_manifest.json").write_text(json.dumps(manifest(), indent=2) + "\n", encoding="utf-8")
     (HERE / "pr98_cms_four_vector_sample.json").write_text(json.dumps(sample, indent=2) + "\n", encoding="utf-8")
     frames = render_frames(sample)
@@ -216,7 +275,7 @@ def main() -> int:
         HERE / "pr98_cms_engine_validation.gif",
         save_all=True,
         append_images=frames[1:],
-        duration=1900,
+        duration=GIF_DURATION_MS,
         loop=0,
         disposal=2,
         optimize=False,
