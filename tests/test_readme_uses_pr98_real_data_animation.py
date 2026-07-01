@@ -6,7 +6,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def test_readme_leads_with_pr98_real_data_animation_and_retains_synthetic_demo():
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
-    real_asset = "docs/assets/pr98_cms_open_data_animation/pr98_cms_engine_validation.gif"
+    real_asset = "docs/assets/pr98_cms_open_data_animation/pr98_cms_engine_validation_continuous.gif"
     synthetic_asset = "docs/assets/bhsm_boundary_mapping_explainer.gif"
     assert real_asset in readme
     assert synthetic_asset in readme
