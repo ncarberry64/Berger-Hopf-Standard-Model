@@ -162,6 +162,17 @@ from .charged_current_action import (
     charged_current_action_report_to_markdown,
     search_charged_current_action_sources,
 )
+from .ckm_bounded_interface_normalization import (
+    audit_ckm_bounded_interface_term,
+    audit_ckm_identification_gate,
+    audit_ckm_transport_space_selection,
+    audit_normalized_projector_sandwich,
+    audit_paired_term_normalization,
+    audit_projector_domain_codomain,
+    build_ckm_bounded_interface_report,
+    ckm_bounded_interface_report_to_markdown,
+    search_ckm_bounded_interface_sources,
+)
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -495,6 +506,19 @@ def build_parser() -> argparse.ArgumentParser:
     )
     for command in charged_current_action_commands:
         channel = commands.add_parser(command, help=f"Render the BHSM v2.6 {command} audit")
+        channel.add_argument("--format", choices=("json", "markdown"), default="json")
+    bounded_interface_commands = (
+        "ckm-bounded-interface-search",
+        "ckm-bounded-interface-term",
+        "normalized-projector-sandwich",
+        "projector-domain-codomain",
+        "paired-term-normalization",
+        "ckm-identification-gate",
+        "ckm-transport-space-selection",
+        "ckm-bounded-interface-report",
+    )
+    for command in bounded_interface_commands:
+        channel = commands.add_parser(command, help=f"Render the BHSM v2.7 {command} audit")
         channel.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
@@ -1045,6 +1069,34 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(json.dumps(payload, indent=2, sort_keys=True))
         elif args.command == "charged-current-action-report":
             print(charged_current_action_report_to_markdown(payload))
+        else:
+            print(f"# {args.command.replace('-', ' ').title()}\n\n```json\n{json.dumps(payload, indent=2, sort_keys=True)}\n```")
+        return 0
+    if args.command in {
+        "ckm-bounded-interface-search",
+        "ckm-bounded-interface-term",
+        "normalized-projector-sandwich",
+        "projector-domain-codomain",
+        "paired-term-normalization",
+        "ckm-identification-gate",
+        "ckm-transport-space-selection",
+        "ckm-bounded-interface-report",
+    }:
+        builders = {
+            "ckm-bounded-interface-search": search_ckm_bounded_interface_sources,
+            "ckm-bounded-interface-term": audit_ckm_bounded_interface_term,
+            "normalized-projector-sandwich": audit_normalized_projector_sandwich,
+            "projector-domain-codomain": audit_projector_domain_codomain,
+            "paired-term-normalization": audit_paired_term_normalization,
+            "ckm-identification-gate": audit_ckm_identification_gate,
+            "ckm-transport-space-selection": audit_ckm_transport_space_selection,
+            "ckm-bounded-interface-report": build_ckm_bounded_interface_report,
+        }
+        payload = builders[args.command]()
+        if args.format == "json":
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        elif args.command == "ckm-bounded-interface-report":
+            print(ckm_bounded_interface_report_to_markdown(payload))
         else:
             print(f"# {args.command.replace('-', ' ').title()}\n\n```json\n{json.dumps(payload, indent=2, sort_keys=True)}\n```")
         return 0

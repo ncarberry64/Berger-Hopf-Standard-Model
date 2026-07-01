@@ -175,3 +175,5 @@ Start with [docs/README.md](docs/README.md) for the documentation map and
 [ROADMAP.md](ROADMAP.md) for the next work sequence.
 ## Citation
 Use [CITATION.cff](CITATION.cff) for current citation metadata.
+## v2.7 CKM Bounded-Interface Normalization
+`L_CKM_charged_current_bounded` is artifact-backed as a bounded collider-interface term; measure, normalization, projector sandwich, action provenance, paired normalization, CKM identification, and transport selection remain open. L_CKM_charged_current_bounded is a bounded interface term, not automatically a normalized action-selected transport operator.

@@ -177,6 +177,14 @@ theorem inputs and do not emit a default physical neutrino mass.
 | `hermitian-adjoint-pair-transport-gate` | Gate adjoint-pair transport selection on normalized action evidence | Markdown or JSON | no | no |
 | `ckm-transport-space-application-gate` | Fail closed unless CKM acts on an action-selected space | Markdown or JSON | no | no |
 | `charged-current-action-report` | Render combined v2.6 charged-current action transport-space status | Markdown or JSON | no | no |
+| `ckm-bounded-interface-search` | Search bounded-term promotion evidence | Markdown or JSON | no | no |
+| `ckm-bounded-interface-term` | Audit the located bounded CKM interface term | Markdown or JSON | no | no |
+| `normalized-projector-sandwich` | Gate normalized projector-sandwiched action provenance | Markdown or JSON | no | no |
+| `projector-domain-codomain` | Gate projector-selected operator directions | Markdown or JSON | no | no |
+| `paired-term-normalization` | Audit shared forward/adjoint normalization | Markdown or JSON | no | no |
+| `ckm-identification-gate` | Gate identification with CKM transport | Markdown or JSON | no | no |
+| `ckm-transport-space-selection` | Combine all CKM transport-selection gates | Markdown or JSON | no | no |
+| `ckm-bounded-interface-report` | Render combined v2.7 status | Markdown or JSON | no | no |
 
 Without `--offline-ok`, `pdg-fetch` may try an optional live reference adapter.
 The offline fallback is reference-only and is never a derivation input.

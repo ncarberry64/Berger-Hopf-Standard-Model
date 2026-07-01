@@ -50,3 +50,5 @@ source.
 - gauge/scalar normalization
 - physical neutrino mass closure
 - external runtime/export gates
+
+The v2.7 audit establishes `L_CKM_charged_current_bounded` only as a bounded interface term. A normalized projector-sandwiched action term requires boundary/action measure, coefficient normalization, sector projectors, and action provenance. Those sources are not attached to the term, so CKM transport-space selection remains open.

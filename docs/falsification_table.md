@@ -48,3 +48,5 @@ selection.
 | PHY-11 | PHYSICS | Boundary-measure normalization | OPEN | normalized measure cannot be constructed |
 | PHY-12 | PHYSICS | Gauge/scalar normalization | OPEN | complete action gives incompatible normalization |
 | PHY-13 | PHYSICS | External HEP runtime readiness | RUNTIME_GATED | live toolchain validation fails |
+| PHY-14 | PHYSICS | Bounded CKM interface promotion | OPEN | a complete normalized action source supplies the missing measure, coefficient, projector sandwich, and variational provenance |
+| PHY-15 | PHYSICS | CKM transport-space selection | OPEN | all upstream gates close and select a different space, or no CKM identification theorem exists |

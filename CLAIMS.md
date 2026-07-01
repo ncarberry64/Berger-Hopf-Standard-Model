@@ -115,3 +115,11 @@ external validation step remains. These labels do not substitute for empirical
 comparison or theorem proof. `CONDITIONAL_ACTION_THEOREM` and
 `CONDITIONAL_PROPAGATION_THEOREM` explicitly identify conclusions that depend
 on the author ontology rather than on prior artifacts alone.
+
+## v2.7 CKM Bounded-Interface Claim Boundary
+
+Allowed: `L_CKM_charged_current_bounded` is an artifact-backed bounded collider-interface term.
+
+Not established: normalized projector-sandwiched action provenance, projector-selected domain/codomain, paired-term normalization, CKM transport identification, CKM transport-space selection, or the CKM exponent.
+
+A normalized projector-sandwiched action term requires boundary/action measure, coefficient normalization, sector projectors, and action provenance.
