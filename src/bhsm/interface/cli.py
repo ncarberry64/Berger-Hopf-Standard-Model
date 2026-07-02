@@ -224,6 +224,10 @@ from .full_action_closure import (
     COMMAND_BUILDERS as FULL_ACTION_COMMAND_BUILDERS,
     full_action_closure_report_to_markdown,
 )
+from .boundary_collar_measure import (
+    COMMAND_BUILDERS as BOUNDARY_MEASURE_COMMAND_BUILDERS,
+    boundary_collar_measure_report_to_markdown,
+)
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -625,6 +629,9 @@ def build_parser() -> argparse.ArgumentParser:
         channel.add_argument("--format", choices=("json", "markdown"), default="json")
     for command in FULL_ACTION_COMMAND_BUILDERS:
         channel = commands.add_parser(command, help=f"Render the BHSM v4.0 {command} audit")
+        channel.add_argument("--format", choices=("json", "markdown"), default="json")
+    for command in BOUNDARY_MEASURE_COMMAND_BUILDERS:
+        channel = commands.add_parser(command, help=f"Render the BHSM v4.1 {command} audit")
         channel.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
@@ -1312,6 +1319,16 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False))
         elif args.command == "full-action-closure-report":
             _print_unicode(full_action_closure_report_to_markdown(payload))
+        else:
+            body = json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False)
+            _print_unicode(f"# {args.command.replace('-', ' ').title()}\n\n```json\n{body}\n```")
+        return 0
+    if args.command in BOUNDARY_MEASURE_COMMAND_BUILDERS:
+        payload = BOUNDARY_MEASURE_COMMAND_BUILDERS[args.command]()
+        if args.format == "json":
+            print(json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False))
+        elif args.command == "boundary-collar-measure-report":
+            _print_unicode(boundary_collar_measure_report_to_markdown(payload))
         else:
             body = json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False)
             _print_unicode(f"# {args.command.replace('-', ' ').title()}\n\n```json\n{body}\n```")

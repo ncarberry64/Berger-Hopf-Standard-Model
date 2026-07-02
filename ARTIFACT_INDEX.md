@@ -89,3 +89,27 @@ The deterministic blocker DAG is in [docs/full_theorem_blocker_dag.md](docs/full
 - Dimensionless neutral/PMNS structure does not imply physical neutrino masses.
 - Physical Delta m², matter effects, radiative corrections, stiffness length, curvature, and unit normalization remain open unless separately derived.
 - Full BHSM completion is not claimed by this repository unless every completion gate passes.
+
+<!-- BHSM_BOUNDARY_COLLAR_MEASURE_V4_1 -->
+### v4.1 artifact package
+
+The twelve canonical artifacts are named `artifacts/BHSM_*_v4_1.json` and are generated
+deterministically by `scripts/materialize_boundary_collar_measure_v4_1.py` from
+`bhsm.interface.boundary_collar_measure`.
+
+## Boundary/collar measure v4.1
+
+Measure status: `CONDITIONAL_BOUNDARY_COLLAR_MEASURE_SOURCE`. Three coframe directions:
+`ARTIFACT_BACKED_THREE_BOUNDARY_FRAME_DIRECTIONS`. Unit-S3 normalization, frame averaging,
+gauge trace attachment, and the gauge denominator remain open.
+
+- The mathematical identity Vol(S³_unit)=2π² is not by itself a gauge-coupling derivation.
+- The candidate denominator 6π² = 3 Vol(S³_unit) is not action-derived unless BHSM supplies an action-selected three-frame boundary average.
+- A three-frame decomposition does not by itself imply a frame average.
+- A frame average does not derive gauge couplings unless attached to gauge trace densities in the normalized action.
+- The gauge coupling quantum λ_gauge = 1/(6π²) remains open unless the denominator is action-attached.
+- The α_i values remain open unless the gauge quantum, sector weights, and action coefficient are attached by the normalized action.
+- g2_BH remains open unless α2_BH is action-derived and the weak convention applies.
+- The CKM coefficient value remains open unless g2_BH is action-derived.
+- The CKM exponent remains not derived.
+- Full BHSM remains not complete unless all action-normalization and scale gates close.
