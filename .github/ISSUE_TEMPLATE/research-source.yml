@@ -1,0 +1,51 @@
+name: Research source or claim review
+description: Propose, challenge, or clarify an artifact source, theorem boundary, or scientific status.
+title: "[Research]: "
+labels:
+  - research-review
+body:
+  - type: markdown
+    attributes:
+      value: BHSM separates artifact-backed, conditional, open, and rejected claims. Please preserve that distinction.
+  - type: textarea
+    id: object
+    attributes:
+      label: Object or claim
+      description: Identify the equation, artifact, theorem, status, or source under review.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Source and evidence
+      description: Cite repository paths, equations, commits, or external primary sources.
+    validations:
+      required: true
+  - type: dropdown
+    id: proposed-status
+    attributes:
+      label: Proposed status
+      options:
+        - No status change
+        - Artifact-backed
+        - Conditional
+        - Open or missing
+        - Retired or rejected
+    validations:
+      required: true
+  - type: textarea
+    id: blockers
+    attributes:
+      label: Remaining blockers
+      description: State what is still missing even if the proposal is accepted.
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Claim boundaries
+      options:
+        - label: I have not treated empirical comparison values as derivation inputs.
+          required: true
+        - label: I have identified any effect on frozen predictions and official prediction logic.
+          required: true

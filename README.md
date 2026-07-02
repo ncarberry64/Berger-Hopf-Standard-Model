@@ -1,8 +1,8 @@
 # Berger-Hopf Standard Model (BHSM)
 
-[![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml) [![Tests: 2335 passed](https://img.shields.io/badge/tests-2335%20passed-brightgreen)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
+[![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml) [![Latest release](https://img.shields.io/github/v/release/ncarberry64/Berger-Hopf-Standard-Model)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/releases/latest) [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/) [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
-BHSM is a research framework for Berger-Hopf geometry, frozen internal prediction artifacts, and candidate links to flavor, boundary structure, and effective field descriptions.
+The Berger-Hopf Standard Model (BHSM) is an artifact-backed Python research framework for mathematical and high-energy physics. It studies candidate connections among Berger spheres, Hopf fibrations, differential geometry, Standard Model flavor structure, gauge actions, CKM/PMNS matrices, and reproducible CERN ROOT/Open Data workflows.
 
 It provides an artifact-backed computational framework with Python interfaces, provenance-tracked adapters, review tools, and theorem-closure machinery. Institutional integration, complete 4D export, and external HEP runtime validation remain outside the package.
 
