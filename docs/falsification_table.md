@@ -52,3 +52,4 @@ selection.
 | PHY-15 | PHYSICS | CKM transport-space selection | OPEN | all upstream gates close and select a different space, or no CKM identification theorem exists |
 | PHY-16 | PHYSICS | CKM measure/coefficient normalization | OPEN | one normalized action source supplies both on the bounded term |
 | PHY-17 | PHYSICS | CKM coefficient value | OPEN | normalized weak gauge action fixes `g2_BH` |
+| PHY-18 | PHYSICS | Universal gauge-coupling quantum | OPEN | normalized boundary measure and gauge action fail to produce `1/(6*pi^2)` with action-selected sector weights |

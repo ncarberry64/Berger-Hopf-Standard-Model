@@ -176,4 +176,4 @@ Start with [docs/README.md](docs/README.md) for the documentation map and
 ## Citation
 Use [CITATION.cff](CITATION.cff) for current citation metadata.
 ## v2.9 CKM Coefficient Form/Value Split
-The interface coefficient form `C_CKM=g2_BH/sqrt(2)` is artifact-backed, while `g2_BH` remains a runtime input rather than an action-derived value. In v3.0 the weak algebra, normalized action skeleton, trace normalization, and coupling convention are conditional; the overall kinetic coefficient, CKM coefficient value, and CKM exponent remain open, while `alpha2_BH` remains a registered rather than action-derived coupling.
+The interface coefficient form `C_CKM=g2_BH/sqrt(2)` is artifact-backed, while `g2_BH` remains a runtime input rather than an action-derived value. The v3.1 audit finds the `alpha_i=w_i/(6*pi^2)` registry pattern artifact-backed and the `1:2:7` sector-weight source conditional, but the volume denominator, universal quantum, action attachment, coupling values, CKM coefficient value, and CKM exponent remain open.

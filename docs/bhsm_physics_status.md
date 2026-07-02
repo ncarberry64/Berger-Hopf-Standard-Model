@@ -56,3 +56,5 @@ The v2.7 audit establishes `L_CKM_charged_current_bounded` only as a bounded int
 The v2.8 audit finds a conditional symbolic measure source, but no normalized same-term measure/coefficient pair or fixed geometric CKM coefficient.
 
 The v2.9 audit separates the artifact-backed `g2_BH/sqrt(2)` form from the still-open action-derived value.
+
+The v3.1 audit separates the artifact-backed `alpha_i=w_i/(6*pi^2)` registry identity from its missing geometric denominator and normalized-action attachment. The `1:2:7` active-generator count remains conditional, not a coupling derivation.

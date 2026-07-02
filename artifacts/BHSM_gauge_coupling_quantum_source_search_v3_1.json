@@ -1,0 +1,75 @@
+{
+  "action_attachment_evidence": [],
+  "alpha_i_action_evidence": [],
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "ckm_value_evidence": [],
+  "cms_cern_endorsement_claimed": false,
+  "detector_reconstruction_claimed": false,
+  "empirical_inputs_used": false,
+  "evidence_against_action_derivation": [
+    "coupling_screens() labels the values supplied matching screens",
+    "overall gauge-action coefficient k remains open",
+    "Berger measure audit does not assume unit-S^3 volume coefficients",
+    "no action identifies weights 1,2,7 as physical coupling coefficients"
+  ],
+  "files_scanned": [
+    "artifacts/",
+    "docs/",
+    "src/",
+    "tests/",
+    "manuscript/",
+    "theory/",
+    "README.md",
+    "STATUS.md",
+    "CLAIMS.md",
+    "ROADMAP.md",
+    "CLI_REFERENCE.md"
+  ],
+  "forbidden_theorem_inputs": [
+    "empirical CKM fitting",
+    "PDG/reference values",
+    "W calibration",
+    "charged-mass fitting",
+    "neutrino limits",
+    "legacy threshold tables"
+  ],
+  "forbidden_theorem_inputs_used": [],
+  "frozen_predictions_modified": false,
+  "g2_action_evidence": [],
+  "hits": [
+    "src/gauge_couplings.py",
+    "src/charged_lepton_eta_derivation.py",
+    "theory/full_bhsm_candidate_theory_line_v0_1.md",
+    "theory/full_bhsm_completion_v1_candidate.md",
+    "theory/sm_low_energy_limit_derivation_gate.md",
+    "theory/derived_normalized_gauge_action_skeleton.md",
+    "theory/theorem_discharge_boundary_trace_normalization.md",
+    "artifacts/berger_measure_domain_v1.json"
+  ],
+  "legacy_threshold_tables_used": false,
+  "missing_sources": [
+    "derivation of 6*pi^2 from the normalized boundary measure",
+    "action-selected gauge-sector weights",
+    "same-action attachment of the denominator and weights",
+    "action-derived alpha_i and g2_BH values"
+  ],
+  "neutrino_limits_used": false,
+  "official_prediction_logic_modified": false,
+  "pdg_reference_values_used": false,
+  "physics_validation_claimed": false,
+  "registry_pattern_evidence": [
+    "alpha_1=1/(6*pi^2), alpha_2=2/(6*pi^2), alpha_3=7/(6*pi^2) are supplied screens"
+  ],
+  "sector_weight_evidence": [
+    "candidate C_U1=1, C_SU2=dim(SU2)-1=2, C_SU3=dim(SU3)-1=7"
+  ],
+  "status": "ARTIFACT_BACKED_GAUGE_COUPLING_REGISTRY_PATTERN",
+  "universal_quantum_evidence": [
+    "alpha_G=C_G/(6*pi^2) is a structural candidate"
+  ],
+  "volume_denominator_evidence": [
+    "candidate 6*pi^2 denominator occurs, but no source derives it as 3 Vol(S^3_unit)"
+  ],
+  "w_calibration_used": false
+}

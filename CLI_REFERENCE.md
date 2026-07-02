@@ -212,6 +212,16 @@ theorem inputs and do not emit a default physical neutrino mass.
 | `normalized-weak-gauge-action-coefficient` | Gate the unfixed overall weak kinetic coefficient | Markdown or JSON | no | no |
 | `ckm-value-source-blocker` | Propagate the weak-action blocker to the CKM value | Markdown or JSON | no | no |
 | `weak-gauge-action-source-report` | Render combined v3.0 status | Markdown or JSON | no | no |
+| `gauge-coupling-quantum-search` | Search registry, volume, weight, action, and downstream value sources | Markdown or JSON | no | no |
+| `gauge-coupling-registry-pattern` | Audit the registered `1:2:7` pattern | Markdown or JSON | no | no |
+| `gauge-coupling-volume-denominator` | Audit the proposed `3 Vol(S^3)` denominator | Markdown or JSON | no | no |
+| `gauge-sector-weight-source` | Audit candidate sector-weight provenance | Markdown or JSON | no | no |
+| `universal-gauge-coupling-quantum` | Gate the proposed universal quantum | Markdown or JSON | no | no |
+| `gauge-coupling-action-attachment` | Gate normalized-action attachment | Markdown or JSON | no | no |
+| `alpha-i-action-derivation` | Audit all three coupling action sources | Markdown or JSON | no | no |
+| `g2-action-source-update` | Propagate the alpha2 result to `g2_BH` | Markdown or JSON | no | no |
+| `ckm-value-source-update` | Propagate the `g2_BH` blocker to CKM | Markdown or JSON | no | no |
+| `gauge-coupling-quantum-report` | Render combined v3.1 status | Markdown or JSON | no | no |
 
 Without `--offline-ok`, `pdg-fetch` may try an optional live reference adapter.
 The offline fallback is reference-only and is never a derivation input.

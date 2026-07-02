@@ -140,6 +140,15 @@ The detailed claim boundary is centralized in [CLAIMS.md](CLAIMS.md).
 - `alpha2_BH`: `ARTIFACT_BACKED_ALPHA2_BH_REGISTERED_COUPLING`, not action-derived.
 - Coefficient value and measure attachment remain open; CKM exponent remains `not_derived`.
 
+## v3.1 Gauge-Coupling Quantum Audit
+
+- Registry pattern: `ARTIFACT_BACKED_GAUGE_COUPLING_REGISTRY_PATTERN`.
+- Sector weights `1:2:7`: `CONDITIONAL_GAUGE_SECTOR_WEIGHT_SOURCE`.
+- Volume denominator: `OPEN_MISSING_GAUGE_COUPLING_VOLUME_DENOMINATOR`.
+- Universal quantum: `OPEN_MISSING_UNIVERSAL_GAUGE_COUPLING_QUANTUM`.
+- Action attachment: `OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT`.
+- `alpha_i`, `g2_BH`, and the CKM coefficient value remain action-open; the CKM exponent is `not_derived`.
+
 ## v2.6 Charged-Current Action Transport-Space Audit
 
 - Normalized charged-current action term: `OPEN_MISSING_NORMALIZED_CHARGED_CURRENT_ACTION_TERM`.
