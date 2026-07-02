@@ -70,5 +70,11 @@ python -m bhsm.interface minimal-action-report --format markdown
 
 Runs the ontology-aware minimal-action decision and prints its concise report.
 
+```bash
+python -m bhsm.interface weak-gauge-action-source-report --format markdown
+```
+
+Reports the conditional weak algebra/action/trace sources while keeping `g2_BH`, `alpha2_BH`, the normalized action coefficient, and the CKM value provenance distinct.
+
 All commands above run offline. Live PDG lookup and external HEP tool execution
 are optional, separate workflows.

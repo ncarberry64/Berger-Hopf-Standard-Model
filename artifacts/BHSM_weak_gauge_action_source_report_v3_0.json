@@ -1,0 +1,419 @@
+{
+  "algebra": {
+    "candidate_algebra": "A_weak = M2(C)_{w=1} direct_sum C_+ direct_sum C_-",
+    "charged_mass_fitting_used": false,
+    "ckm_fitting_used": false,
+    "claim_boundary": "A weak gauge algebra source does not derive the coupling value.",
+    "cms_cern_endorsement_claimed": false,
+    "detector_reconstruction_claimed": false,
+    "empirical_inputs_used": false,
+    "finite_algebra_sources": [
+      "theory/theorem_discharge_finite_algebra_charge.md"
+    ],
+    "forbidden_theorem_inputs": [
+      "empirical CKM fitting",
+      "PDG/reference values",
+      "W calibration",
+      "charged-mass fitting",
+      "neutrino limits",
+      "legacy threshold tables"
+    ],
+    "forbidden_theorem_inputs_used": [],
+    "frozen_predictions_modified": false,
+    "legacy_threshold_tables_used": false,
+    "neutrino_limits_used": false,
+    "official_prediction_logic_modified": false,
+    "pdg_reference_values_used": false,
+    "physics_validation_claimed": false,
+    "source_locations": [
+      "theory/finite_boundary_algebra_source_gate.md",
+      "theory/derived_finite_algebra_uniqueness.md"
+    ],
+    "status": "CONDITIONAL_WEAK_GAUGE_ALGEBRA_SOURCE",
+    "w_calibration_used": false,
+    "weak_doublet_sources": [
+      "theory/derived_electroweak_breaking_generator.md"
+    ]
+  },
+  "alpha2": {
+    "action_derivation_status": "OPEN_MISSING_ALPHA2_BH_ACTION_SOURCE",
+    "action_source": null,
+    "charged_mass_fitting_used": false,
+    "ckm_fitting_used": false,
+    "claim_boundary": "alpha2_BH remains registered unless the action fixes it.",
+    "cms_cern_endorsement_claimed": false,
+    "detector_reconstruction_claimed": false,
+    "empirical_inputs_used": false,
+    "evidence_against": [
+      "no weak gauge action derives the registered value"
+    ],
+    "evidence_for": [
+      "alpha_2 is registered as a geometric gauge screen"
+    ],
+    "forbidden_theorem_inputs": [
+      "empirical CKM fitting",
+      "PDG/reference values",
+      "W calibration",
+      "charged-mass fitting",
+      "neutrino limits",
+      "legacy threshold tables"
+    ],
+    "forbidden_theorem_inputs_used": [],
+    "frozen_predictions_modified": false,
+    "is_action_derived": false,
+    "is_reference_or_fitted": false,
+    "is_registered": true,
+    "legacy_threshold_tables_used": false,
+    "neutrino_limits_used": false,
+    "official_prediction_logic_modified": false,
+    "pdg_reference_values_used": false,
+    "physics_validation_claimed": false,
+    "registered_value_if_present": "2/(6*pi^2)",
+    "registry_source": "src/gauge_couplings.py",
+    "relation_to_g2": "conditional convention alpha2_BH=g2_BH^2/(4*pi)",
+    "status": "ARTIFACT_BACKED_ALPHA2_BH_REGISTERED_COUPLING",
+    "symbol": "alpha2_BH",
+    "w_calibration_used": false
+  },
+  "artifact_backed_closures": [
+    "ARTIFACT_BACKED_G2_BH_RUNTIME_INPUT",
+    "ARTIFACT_BACKED_ALPHA2_BH_REGISTERED_COUPLING"
+  ],
+  "charged_mass_fitting_used": false,
+  "ckm_blocker": {
+    "alpha2_action_status": "OPEN_MISSING_ALPHA2_BH_ACTION_SOURCE",
+    "blocking_conditions": [
+      "weak action does not fix g2_BH or alpha2_BH",
+      "measure/projector/paired/identification gates remain open"
+    ],
+    "charged_mass_fitting_used": false,
+    "ckm_coefficient_form_status": "ARTIFACT_BACKED_CKM_COEFFICIENT_FORM",
+    "ckm_coefficient_value_status": "OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE",
+    "ckm_exponent_status": "not_derived",
+    "ckm_fitting_used": false,
+    "cms_cern_endorsement_claimed": false,
+    "detector_reconstruction_claimed": false,
+    "empirical_inputs_used": false,
+    "forbidden_theorem_inputs": [
+      "empirical CKM fitting",
+      "PDG/reference values",
+      "W calibration",
+      "charged-mass fitting",
+      "neutrino limits",
+      "legacy threshold tables"
+    ],
+    "forbidden_theorem_inputs_used": [],
+    "frozen_predictions_modified": false,
+    "g2_action_status": "OPEN_MISSING_G2_BH_ACTION_SOURCE",
+    "legacy_threshold_tables_used": false,
+    "neutrino_limits_used": false,
+    "official_prediction_logic_modified": false,
+    "pdg_reference_values_used": false,
+    "physics_validation_claimed": false,
+    "w_calibration_used": false,
+    "weak_gauge_action_coefficient_status": "OPEN_MISSING_NORMALIZED_WEAK_GAUGE_ACTION_COEFFICIENT"
+  },
+  "ckm_fitting_used": false,
+  "cms_cern_endorsement_claimed": false,
+  "coefficient": {
+    "action_skeleton_status": "CONDITIONAL_NORMALIZED_WEAK_GAUGE_ACTION_SKELETON",
+    "alpha2_action_derivation_status": "OPEN_MISSING_ALPHA2_BH_ACTION_SOURCE",
+    "alpha2_action_status": "ARTIFACT_BACKED_ALPHA2_BH_REGISTERED_COUPLING",
+    "blocking_conditions": [
+      "overall k not fixed",
+      "k not identified with a derived g2_BH",
+      "physical measure normalization open"
+    ],
+    "charged_mass_fitting_used": false,
+    "ckm_fitting_used": false,
+    "claim_boundary": "Relative trace normalization does not fix the overall physical weak coupling.",
+    "cms_cern_endorsement_claimed": false,
+    "coefficient_formula": "k candidate proportional to 1/g2_BH^2",
+    "coefficient_value_status": "open",
+    "detector_reconstruction_claimed": false,
+    "empirical_inputs_used": false,
+    "forbidden_theorem_inputs": [
+      "empirical CKM fitting",
+      "PDG/reference values",
+      "W calibration",
+      "charged-mass fitting",
+      "neutrino limits",
+      "legacy threshold tables"
+    ],
+    "forbidden_theorem_inputs_used": [],
+    "frozen_predictions_modified": false,
+    "g2_action_derivation_status": "OPEN_MISSING_G2_BH_ACTION_SOURCE",
+    "g2_action_status": "ARTIFACT_BACKED_G2_BH_RUNTIME_INPUT",
+    "legacy_threshold_tables_used": false,
+    "neutrino_limits_used": false,
+    "official_prediction_logic_modified": false,
+    "pdg_reference_values_used": false,
+    "physics_validation_claimed": false,
+    "status": "OPEN_MISSING_NORMALIZED_WEAK_GAUGE_ACTION_COEFFICIENT",
+    "trace_normalization_status": "CONDITIONAL_WEAK_GAUGE_TRACE_NORMALIZATION",
+    "w_calibration_used": false,
+    "weak_algebra_status": "CONDITIONAL_WEAK_GAUGE_ALGEBRA_SOURCE"
+  },
+  "conditional_closures": [
+    "CONDITIONAL_WEAK_GAUGE_ALGEBRA_SOURCE",
+    "CONDITIONAL_NORMALIZED_WEAK_GAUGE_ACTION_SKELETON",
+    "CONDITIONAL_WEAK_GAUGE_TRACE_NORMALIZATION",
+    "CONDITIONAL_WEAK_COUPLING_CONVENTION"
+  ],
+  "convention": {
+    "candidate_relation": "g2_BH^2/(4*pi)=alpha2_BH",
+    "charged_mass_fitting_used": false,
+    "ckm_fitting_used": false,
+    "claim_boundary": "A coupling convention relates symbols but derives neither value.",
+    "cms_cern_endorsement_claimed": false,
+    "detector_reconstruction_claimed": false,
+    "empirical_inputs_used": false,
+    "forbidden_theorem_inputs": [
+      "empirical CKM fitting",
+      "PDG/reference values",
+      "W calibration",
+      "charged-mass fitting",
+      "neutrino limits",
+      "legacy threshold tables"
+    ],
+    "forbidden_theorem_inputs_used": [],
+    "frozen_predictions_modified": false,
+    "is_action_derivation": false,
+    "legacy_threshold_tables_used": false,
+    "neutrino_limits_used": false,
+    "official_prediction_logic_modified": false,
+    "pdg_reference_values_used": false,
+    "physics_validation_claimed": false,
+    "status": "CONDITIONAL_WEAK_COUPLING_CONVENTION",
+    "w_calibration_used": false
+  },
+  "detector_reconstruction_claimed": false,
+  "empirical_inputs_used": false,
+  "forbidden_theorem_inputs": [
+    "empirical CKM fitting",
+    "PDG/reference values",
+    "W calibration",
+    "charged-mass fitting",
+    "neutrino limits",
+    "legacy threshold tables"
+  ],
+  "forbidden_theorem_inputs_used": [],
+  "frozen_predictions_modified": false,
+  "g2": {
+    "action_derivation_status": "OPEN_MISSING_G2_BH_ACTION_SOURCE",
+    "action_source": null,
+    "charged_mass_fitting_used": false,
+    "ckm_fitting_used": false,
+    "claim_boundary": "g2_BH remains runtime/input unless the action fixes it.",
+    "cms_cern_endorsement_claimed": false,
+    "detector_reconstruction_claimed": false,
+    "empirical_inputs_used": false,
+    "evidence_against": [
+      "no normalized weak action fixes the value"
+    ],
+    "evidence_for": [
+      "g2_BH_runtime is explicitly required by collider-interface artifacts"
+    ],
+    "forbidden_theorem_inputs": [
+      "empirical CKM fitting",
+      "PDG/reference values",
+      "W calibration",
+      "charged-mass fitting",
+      "neutrino limits",
+      "legacy threshold tables"
+    ],
+    "forbidden_theorem_inputs_used": [],
+    "frozen_predictions_modified": false,
+    "is_action_derived": false,
+    "is_runtime_input": true,
+    "legacy_threshold_tables_used": false,
+    "neutrino_limits_used": false,
+    "normalized_gauge_action_source": "conditional skeleton with unfixed k",
+    "official_prediction_logic_modified": false,
+    "pdg_reference_values_used": false,
+    "physics_validation_claimed": false,
+    "registry_source": "artifacts/BHSM_candidate_parameter_card_v0_5.json",
+    "runtime_source": "artifacts/BHSM_minimal_runtime_parameter_requirements_v1_2.json",
+    "status": "ARTIFACT_BACKED_G2_BH_RUNTIME_INPUT",
+    "symbol": "g2_BH",
+    "trace_or_measure_source": "conditional relative trace and symbolic measure only",
+    "w_calibration_used": false
+  },
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "official_prediction_logic_modified": false,
+  "pdg_reference_values_used": false,
+  "physics_validation_claimed": false,
+  "required_statements": [
+    "A weak gauge algebra source does not derive the coupling value.",
+    "A gauge action skeleton does not derive g2_BH unless it fixes the coefficient.",
+    "Trace/generator normalization may fix conventions without fixing the physical coupling.",
+    "g2_BH remains runtime/input unless the action fixes it.",
+    "alpha2_BH remains registered unless the action fixes it.",
+    "The CKM coefficient form is artifact-backed, but the coefficient value remains open.",
+    "The CKM exponent remains not derived."
+  ],
+  "retired_or_rejected_claims": [
+    "REJECTED_RUNTIME_INPUT_AS_ACTION_DERIVATION",
+    "REJECTED_ALPHA2_REGISTRY_AS_ACTION_DERIVATION",
+    "REJECTED_CONVENTION_AS_COUPLING_DERIVATION",
+    "REJECTED_BRIDGE_ARITHMETIC_AS_GAUGE_COUPLING"
+  ],
+  "skeleton": {
+    "boundary_measure_sources": [
+      "artifacts/BHSM_author_ontology_v0_8.json"
+    ],
+    "candidate_action_form": "S_gauge = k[Tr(F_cyc^2)+Tr(F_orient^2)+eta_Y F_Y^2]",
+    "charged_mass_fitting_used": false,
+    "ckm_fitting_used": false,
+    "claim_boundary": "A gauge action skeleton does not derive g2_BH unless it fixes the coefficient.",
+    "cms_cern_endorsement_claimed": false,
+    "detector_reconstruction_claimed": false,
+    "empirical_inputs_used": false,
+    "evidence_against": [
+      "overall coefficient k is not fixed",
+      "no source identifies and fixes k=1/g2_BH^2"
+    ],
+    "evidence_for": [
+      "relative gauge kinetic normalization is explicitly recorded"
+    ],
+    "field_strength_sources": [
+      "theory/derived_normalized_gauge_action_skeleton.md"
+    ],
+    "forbidden_theorem_inputs": [
+      "empirical CKM fitting",
+      "PDG/reference values",
+      "W calibration",
+      "charged-mass fitting",
+      "neutrino limits",
+      "legacy threshold tables"
+    ],
+    "forbidden_theorem_inputs_used": [],
+    "frozen_predictions_modified": false,
+    "legacy_threshold_tables_used": false,
+    "missing_requirements": [
+      "overall kinetic coefficient",
+      "normalized measure attachment",
+      "action-derived g2_BH value"
+    ],
+    "neutrino_limits_used": false,
+    "normalization_sources": [
+      "K1=10/3",
+      "K2=2",
+      "K3=2",
+      "eta_Y=3/5"
+    ],
+    "official_prediction_logic_modified": false,
+    "pdg_reference_values_used": false,
+    "physics_validation_claimed": false,
+    "status": "CONDITIONAL_NORMALIZED_WEAK_GAUGE_ACTION_SKELETON",
+    "trace_sources": [
+      "theory/theorem_discharge_boundary_trace_normalization.md"
+    ],
+    "variational_sources": [],
+    "w_calibration_used": false
+  },
+  "source_search": {
+    "alpha2_action_evidence": [],
+    "alpha2_registered_evidence": [
+      "alpha_2 registered geometric screen"
+    ],
+    "bridge_arithmetic_evidence": [
+      "no action identification; rejected as coupling source"
+    ],
+    "charged_mass_fitting_used": false,
+    "ckm_fitting_used": false,
+    "cms_cern_endorsement_claimed": false,
+    "detector_reconstruction_claimed": false,
+    "empirical_inputs_used": false,
+    "evidence_against_action_derivation": [
+      "overall k unfixed",
+      "measured coupling theorem explicitly open"
+    ],
+    "files_scanned": "v3.0 bounded repository search paths",
+    "forbidden_theorem_inputs": [
+      "empirical CKM fitting",
+      "PDG/reference values",
+      "W calibration",
+      "charged-mass fitting",
+      "neutrino limits",
+      "legacy threshold tables"
+    ],
+    "forbidden_theorem_inputs_used": [],
+    "frozen_predictions_modified": false,
+    "g2_action_evidence": [],
+    "g2_runtime_evidence": [
+      "g2_BH_runtime explicitly required"
+    ],
+    "gauge_action_skeleton_evidence": [
+      "conditional normalized relative kinetic skeleton"
+    ],
+    "hits": [
+      "theory/finite_boundary_algebra_source_gate.md",
+      "theory/derived_normalized_gauge_action_skeleton.md",
+      "theory/theorem_discharge_boundary_trace_normalization.md",
+      "artifacts/BHSM_minimal_runtime_parameter_requirements_v1_2.json",
+      "src/gauge_couplings.py"
+    ],
+    "legacy_threshold_tables_used": false,
+    "missing_sources": [
+      "overall weak kinetic coefficient",
+      "action-derived g2_BH or alpha2_BH",
+      "physical measure normalization"
+    ],
+    "neutrino_limits_used": false,
+    "official_prediction_logic_modified": false,
+    "pdg_reference_values_used": false,
+    "physics_validation_claimed": false,
+    "status": "CONDITIONAL_NORMALIZED_WEAK_GAUGE_ACTION_SKELETON",
+    "trace_normalization_evidence": [
+      "K1=10/3, K2=K3=2, eta_Y=3/5"
+    ],
+    "w_calibration_used": false,
+    "weak_algebra_evidence": [
+      "conditional M2(C) active weak block"
+    ],
+    "weak_convention_evidence": [
+      "g2^2/(4*pi)=alpha2 convention only"
+    ]
+  },
+  "trace": {
+    "Hilbert_Schmidt_trace": null,
+    "boundary_trace": "K1=10/3, K2=K3=2",
+    "charged_mass_fitting_used": false,
+    "ckm_fitting_used": false,
+    "claim_boundary": "Trace/generator normalization may fix conventions without fixing the physical coupling.",
+    "cms_cern_endorsement_claimed": false,
+    "detector_reconstruction_claimed": false,
+    "does_trace_fix_coupling_value": false,
+    "empirical_inputs_used": false,
+    "evidence_against": [
+      "global trace normalization and physical kinetic coefficient remain open"
+    ],
+    "evidence_for": [
+      "relative trace weights and eta_Y=3/5 are conditionally derived"
+    ],
+    "finite_algebra_trace": "K2_orientation=2",
+    "forbidden_theorem_inputs": [
+      "empirical CKM fitting",
+      "PDG/reference values",
+      "W calibration",
+      "charged-mass fitting",
+      "neutrino limits",
+      "legacy threshold tables"
+    ],
+    "forbidden_theorem_inputs_used": [],
+    "frozen_predictions_modified": false,
+    "generator_normalization": "fundamental active-orientation index 1/2; conditional convention",
+    "legacy_threshold_tables_used": false,
+    "neutrino_limits_used": false,
+    "official_prediction_logic_modified": false,
+    "pdg_reference_values_used": false,
+    "physics_validation_claimed": false,
+    "status": "CONDITIONAL_WEAK_GAUGE_TRACE_NORMALIZATION",
+    "trace_source": "theory/theorem_discharge_boundary_trace_normalization.md",
+    "trace_type": "finite boundary representation trace",
+    "w_calibration_used": false
+  },
+  "w_calibration_used": false
+}
