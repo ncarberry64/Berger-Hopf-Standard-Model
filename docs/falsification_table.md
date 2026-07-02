@@ -53,3 +53,10 @@ selection.
 | PHY-16 | PHYSICS | CKM measure/coefficient normalization | OPEN | one normalized action source supplies both on the bounded term |
 | PHY-17 | PHYSICS | CKM coefficient value | OPEN | normalized weak gauge action fixes `g2_BH` |
 | PHY-18 | PHYSICS | Universal gauge-coupling quantum | OPEN | normalized boundary measure and gauge action fail to produce `1/(6*pi^2)` with action-selected sector weights |
+
+<!-- BHSM_FULL_ACTION_CLOSURE_V4_0 -->
+## v4.0 action-normalization status
+
+This surface is incorporated into the [../full-action blocker DAG](../docs/full_theorem_blocker_dag.md).
+Its existing artifact-backed or conditional result is preserved; it is not promoted across a missing action,
+normalization, transport, or dimensionful-scale gate. Overall status: `FULL_BHSM_NOT_COMPLETE`.

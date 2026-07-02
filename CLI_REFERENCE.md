@@ -226,3 +226,42 @@ theorem inputs and do not emit a default physical neutrino mass.
 
 Without `--offline-ok`, `pdg-fetch` may try an optional live reference adapter.
 The offline fallback is reference-only and is never a derivation input.
+
+<!-- BHSM_FULL_ACTION_CLOSURE_V4_0 -->
+### v4.0 full-action closure commands
+
+```bash
+python -m bhsm.interface full-action-status-snapshot --format json
+python -m bhsm.interface full-theorem-blocker-dag --format json
+python -m bhsm.interface unified-action-skeleton --format json
+python -m bhsm.interface boundary-frame-averaging --format json
+python -m bhsm.interface gauge-denominator-source --format json
+python -m bhsm.interface sector-weight-action-attachment --format json
+python -m bhsm.interface gauge-action-coefficient-k --format json
+python -m bhsm.interface alpha-i-action-gate --format json
+python -m bhsm.interface g2-action-gate --format json
+python -m bhsm.interface ckm-completion-gate --format json
+python -m bhsm.interface neutral-scale-gate --format json
+python -m bhsm.interface scalar-topographic-gate --format json
+python -m bhsm.interface dimensionful-scale-bridge --format json
+python -m bhsm.interface full-bhsm-completion-gate --format json
+python -m bhsm.interface full-action-closure-report --format markdown
+```
+
+## Full action closure v4.0
+
+Status: `FULL_BHSM_NOT_COMPLETE`.
+
+The deterministic blocker DAG is in [docs/full_theorem_blocker_dag.md](docs/full_theorem_blocker_dag.md) and
+`artifacts/BHSM_full_theorem_blocker_dag_v4_0.json`.
+
+- BHSM is not complete until the full action-normalization and scale gates close.
+- The 1:2:7 gauge-coupling registry pattern is artifact-backed but not action-derived.
+- The candidate denominator 6π² = 3 Vol(S³) is not a coupling derivation unless attached to the normalized gauge action.
+- Sector weights do not derive gauge couplings without action attachment.
+- The overall gauge-action coefficient k remains open unless fixed by the action.
+- The CKM coefficient form is artifact-backed, but the CKM coefficient value remains open unless g2_BH is action-derived.
+- The CKM exponent remains not derived unless all CKM action, transport, identification, and log-averaging gates close.
+- Dimensionless neutral/PMNS structure does not imply physical neutrino masses.
+- Physical Delta m², matter effects, radiative corrections, stiffness length, curvature, and unit normalization remain open unless separately derived.
+- Full BHSM completion is not claimed by this repository unless every completion gate passes.

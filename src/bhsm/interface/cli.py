@@ -220,6 +220,10 @@ from .gauge_coupling_quantum import (
     gauge_coupling_quantum_report_to_markdown,
     search_gauge_coupling_quantum_sources,
 )
+from .full_action_closure import (
+    COMMAND_BUILDERS as FULL_ACTION_COMMAND_BUILDERS,
+    full_action_closure_report_to_markdown,
+)
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -618,6 +622,9 @@ def build_parser() -> argparse.ArgumentParser:
     )
     for command in gauge_quantum_commands:
         channel = commands.add_parser(command, help=f"Render the BHSM v3.1 {command} audit")
+        channel.add_argument("--format", choices=("json", "markdown"), default="json")
+    for command in FULL_ACTION_COMMAND_BUILDERS:
+        channel = commands.add_parser(command, help=f"Render the BHSM v4.0 {command} audit")
         channel.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
@@ -1298,6 +1305,16 @@ def main(argv: Sequence[str] | None = None) -> int:
         else:
             body = json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False)
             print(f"# {args.command.replace('-', ' ').title()}\n\n```json\n{body}\n```")
+        return 0
+    if args.command in FULL_ACTION_COMMAND_BUILDERS:
+        payload = FULL_ACTION_COMMAND_BUILDERS[args.command]()
+        if args.format == "json":
+            print(json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False))
+        elif args.command == "full-action-closure-report":
+            _print_unicode(full_action_closure_report_to_markdown(payload))
+        else:
+            body = json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False)
+            _print_unicode(f"# {args.command.replace('-', ' ').title()}\n\n```json\n{body}\n```")
         return 0
     if args.command in {
         "primitive-charged-incidence",

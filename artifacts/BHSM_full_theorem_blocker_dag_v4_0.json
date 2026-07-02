@@ -1,0 +1,327 @@
+{
+  "artifact_id": "BHSM_FULL_THEOREM_BLOCKER_DAG_V4_0",
+  "blocking_conditions": [
+    "boundary_measure",
+    "boundary_frame_averaging",
+    "s3_volume_denominator",
+    "sector_weights",
+    "gauge_action_coefficient_k",
+    "alpha_i_derivation",
+    "g_i_derivation",
+    "ckm_coefficient_value",
+    "ckm_measure_attachment",
+    "ckm_transport_selection",
+    "ckm_exponent",
+    "neutral_action_normalization",
+    "neutral_scale",
+    "dimensionful_mass_bridge",
+    "scalar_topographic_action",
+    "scalar_topographic_decoupling",
+    "rg_threshold_transport",
+    "full_bhsm_completion"
+  ],
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "The DAG records dependencies; it does not promote conditional or open nodes.",
+  "dependencies": [
+    "unified_action_skeleton",
+    "boundary_measure",
+    "boundary_frame_averaging",
+    "s3_volume_denominator",
+    "sector_weights",
+    "gauge_action_coefficient_k",
+    "alpha_i_derivation",
+    "g_i_derivation",
+    "ckm_coefficient_form",
+    "ckm_coefficient_value",
+    "ckm_measure_attachment",
+    "ckm_projector_sandwich",
+    "ckm_transport_selection",
+    "ckm_exponent",
+    "neutral_dimensionless_structure",
+    "neutral_action_normalization",
+    "neutral_scale",
+    "dimensionful_mass_bridge",
+    "scalar_topographic_action",
+    "scalar_topographic_decoupling",
+    "rg_threshold_transport"
+  ],
+  "edges": [
+    {
+      "from": "boundary_measure",
+      "to": "boundary_frame_averaging"
+    },
+    {
+      "from": "unified_action_skeleton",
+      "to": "boundary_frame_averaging"
+    },
+    {
+      "from": "boundary_frame_averaging",
+      "to": "s3_volume_denominator"
+    },
+    {
+      "from": "unified_action_skeleton",
+      "to": "sector_weights"
+    },
+    {
+      "from": "boundary_measure",
+      "to": "gauge_action_coefficient_k"
+    },
+    {
+      "from": "s3_volume_denominator",
+      "to": "alpha_i_derivation"
+    },
+    {
+      "from": "sector_weights",
+      "to": "alpha_i_derivation"
+    },
+    {
+      "from": "gauge_action_coefficient_k",
+      "to": "alpha_i_derivation"
+    },
+    {
+      "from": "alpha_i_derivation",
+      "to": "g_i_derivation"
+    },
+    {
+      "from": "g_i_derivation",
+      "to": "ckm_coefficient_value"
+    },
+    {
+      "from": "ckm_coefficient_form",
+      "to": "ckm_coefficient_value"
+    },
+    {
+      "from": "ckm_measure_attachment",
+      "to": "ckm_exponent"
+    },
+    {
+      "from": "ckm_projector_sandwich",
+      "to": "ckm_exponent"
+    },
+    {
+      "from": "ckm_transport_selection",
+      "to": "ckm_exponent"
+    },
+    {
+      "from": "ckm_coefficient_value",
+      "to": "ckm_exponent"
+    },
+    {
+      "from": "neutral_dimensionless_structure",
+      "to": "neutral_action_normalization"
+    },
+    {
+      "from": "neutral_action_normalization",
+      "to": "neutral_scale"
+    },
+    {
+      "from": "neutral_scale",
+      "to": "dimensionful_mass_bridge"
+    },
+    {
+      "from": "scalar_topographic_action",
+      "to": "scalar_topographic_decoupling"
+    },
+    {
+      "from": "scalar_topographic_action",
+      "to": "dimensionful_mass_bridge"
+    },
+    {
+      "from": "rg_threshold_transport",
+      "to": "dimensionful_mass_bridge"
+    },
+    {
+      "from": "unified_action_skeleton",
+      "to": "full_bhsm_completion"
+    },
+    {
+      "from": "boundary_measure",
+      "to": "full_bhsm_completion"
+    },
+    {
+      "from": "boundary_frame_averaging",
+      "to": "full_bhsm_completion"
+    },
+    {
+      "from": "s3_volume_denominator",
+      "to": "full_bhsm_completion"
+    },
+    {
+      "from": "sector_weights",
+      "to": "full_bhsm_completion"
+    },
+    {
+      "from": "gauge_action_coefficient_k",
+      "to": "full_bhsm_completion"
+    },
+    {
+      "from": "alpha_i_derivation",
+      "to": "full_bhsm_completion"
+    },
+    {
+      "from": "g_i_derivation",
+      "to": "full_bhsm_completion"
+    },
+    {
+      "from": "ckm_coefficient_form",
+      "to": "full_bhsm_completion"
+    },
+    {
+      "from": "ckm_coefficient_value",
+      "to": "full_bhsm_completion"
+    },
+    {
+      "from": "ckm_measure_attachment",
+      "to": "full_bhsm_completion"
+    },
+    {
+      "from": "ckm_projector_sandwich",
+      "to": "full_bhsm_completion"
+    },
+    {
+      "from": "ckm_transport_selection",
+      "to": "full_bhsm_completion"
+    },
+    {
+      "from": "ckm_exponent",
+      "to": "full_bhsm_completion"
+    },
+    {
+      "from": "neutral_dimensionless_structure",
+      "to": "full_bhsm_completion"
+    },
+    {
+      "from": "neutral_action_normalization",
+      "to": "full_bhsm_completion"
+    },
+    {
+      "from": "neutral_scale",
+      "to": "full_bhsm_completion"
+    },
+    {
+      "from": "dimensionful_mass_bridge",
+      "to": "full_bhsm_completion"
+    },
+    {
+      "from": "scalar_topographic_action",
+      "to": "full_bhsm_completion"
+    },
+    {
+      "from": "scalar_topographic_decoupling",
+      "to": "full_bhsm_completion"
+    },
+    {
+      "from": "rg_threshold_transport",
+      "to": "full_bhsm_completion"
+    }
+  ],
+  "empirical_inputs_used": false,
+  "evidence_against": [
+    "the conjunction required for full completion is false"
+  ],
+  "evidence_for": [
+    "repository-traced v3.1, neutrino, CKM, scalar, and completion ledgers"
+  ],
+  "frozen_predictions_changed": false,
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "nodes": [
+    {
+      "id": "unified_action_skeleton",
+      "status": "CONDITIONAL_UNIFIED_ACTION_SKELETON"
+    },
+    {
+      "id": "boundary_measure",
+      "status": "OPEN_MISSING_PHYSICAL_BOUNDARY_MEASURE_NORMALIZATION"
+    },
+    {
+      "id": "boundary_frame_averaging",
+      "status": "OPEN_MISSING_BOUNDARY_FRAME_AVERAGING"
+    },
+    {
+      "id": "s3_volume_denominator",
+      "status": "OPEN_MISSING_GAUGE_COUPLING_VOLUME_DENOMINATOR"
+    },
+    {
+      "id": "sector_weights",
+      "status": "OPEN_MISSING_GAUGE_SECTOR_WEIGHT_ACTION_SOURCE"
+    },
+    {
+      "id": "gauge_action_coefficient_k",
+      "status": "OPEN_MISSING_GAUGE_ACTION_COEFFICIENT_K"
+    },
+    {
+      "id": "alpha_i_derivation",
+      "status": "OPEN_MISSING_ALPHA_I_ACTION_DERIVATION"
+    },
+    {
+      "id": "g_i_derivation",
+      "status": "OPEN_MISSING_G2_BH_ACTION_SOURCE"
+    },
+    {
+      "id": "ckm_coefficient_form",
+      "status": "ARTIFACT_BACKED_CKM_COEFFICIENT_FORM"
+    },
+    {
+      "id": "ckm_coefficient_value",
+      "status": "OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE"
+    },
+    {
+      "id": "ckm_measure_attachment",
+      "status": "OPEN_MISSING_CKM_MEASURE_COEFFICIENT_ATTACHMENT"
+    },
+    {
+      "id": "ckm_projector_sandwich",
+      "status": "CONDITIONAL_NORMALIZED_PROJECTOR_SANDWICH"
+    },
+    {
+      "id": "ckm_transport_selection",
+      "status": "OPEN_MISSING_CKM_TRANSPORT_SELECTION"
+    },
+    {
+      "id": "ckm_exponent",
+      "status": "not_derived"
+    },
+    {
+      "id": "neutral_dimensionless_structure",
+      "status": "CONDITIONAL_NEUTRAL_DIMENSIONLESS_STRUCTURE"
+    },
+    {
+      "id": "neutral_action_normalization",
+      "status": "OPEN_MISSING_NEUTRAL_ACTION_NORMALIZATION"
+    },
+    {
+      "id": "neutral_scale",
+      "status": "OPEN_MISSING_NEUTRAL_SCALE"
+    },
+    {
+      "id": "dimensionful_mass_bridge",
+      "status": "DIMENSIONFUL_MASS_NOT_AVAILABLE"
+    },
+    {
+      "id": "scalar_topographic_action",
+      "status": "OPEN_MISSING_SCALAR_TOPOGRAPHIC_ACTION_SOURCE"
+    },
+    {
+      "id": "scalar_topographic_decoupling",
+      "status": "OPEN_MISSING_SCALAR_TOPOGRAPHIC_DECOUPLING"
+    },
+    {
+      "id": "rg_threshold_transport",
+      "status": "OPEN_MISSING_RG_THRESHOLD_TRANSPORT"
+    },
+    {
+      "id": "full_bhsm_completion",
+      "status": "FULL_BHSM_NOT_COMPLETE"
+    }
+  ],
+  "not_promoted_because": [
+    "terminal action-normalization and scale nodes remain open"
+  ],
+  "official_prediction_logic_changed": false,
+  "pdg_reference_values_used": false,
+  "promoted_from": "existing sector-specific blocker ledgers",
+  "status": "FULL_BHSM_NOT_COMPLETE",
+  "w_calibration_used": false
+}

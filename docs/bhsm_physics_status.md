@@ -58,3 +58,10 @@ The v2.8 audit finds a conditional symbolic measure source, but no normalized sa
 The v2.9 audit separates the artifact-backed `g2_BH/sqrt(2)` form from the still-open action-derived value.
 
 The v3.1 audit separates the artifact-backed `alpha_i=w_i/(6*pi^2)` registry identity from its missing geometric denominator and normalized-action attachment. The `1:2:7` active-generator count remains conditional, not a coupling derivation.
+
+<!-- BHSM_FULL_ACTION_CLOSURE_V4_0 -->
+## v4.0 action-normalization status
+
+This surface is incorporated into the [../full-action blocker DAG](../docs/full_theorem_blocker_dag.md).
+Its existing artifact-backed or conditional result is preserved; it is not promoted across a missing action,
+normalization, transport, or dimensionful-scale gate. Overall status: `FULL_BHSM_NOT_COMPLETE`.

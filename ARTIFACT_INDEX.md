@@ -63,3 +63,29 @@ the `BHSM_*_minimal_action_closure_v0_8.json` artifacts.
 | CKM coefficient form/value v2.9 | Weak coefficient form, runtime/registered sources, convention, and attachment blocker | `artifacts/BHSM_ckm_coefficient_form_v2_9.json` | `ARTIFACT_BACKED_CKM_COEFFICIENT_FORM` | `python -m bhsm.interface ckm-coefficient-form-report --format markdown` |
 | Normalized weak gauge action source v3.0 | Conditional algebra, action skeleton, trace normalization, runtime/registered coupling provenance, and open overall coefficient | `artifacts/BHSM_weak_gauge_action_source_report_v3_0.json` | `OPEN_MISSING_NORMALIZED_WEAK_GAUGE_ACTION_COEFFICIENT` | `python -m bhsm.interface weak-gauge-action-source-report --format markdown` |
 | Gauge-coupling quantum v3.1 | Registered `1:2:7` pattern, candidate weight source, volume denominator, action attachment, and downstream value gates | `artifacts/BHSM_gauge_coupling_quantum_report_v3_1.json` | `OPEN_MISSING_UNIVERSAL_GAUGE_COUPLING_QUANTUM` | `python -m bhsm.interface gauge-coupling-quantum-report --format markdown` |
+
+<!-- BHSM_FULL_ACTION_CLOSURE_V4_0 -->
+### v4.0 artifact package
+
+The canonical package consists of `artifacts/BHSM_full_action_status_snapshot_v4_0.json`,
+`artifacts/BHSM_full_theorem_blocker_dag_v4_0.json`, and the twelve sector gate artifacts
+named `artifacts/BHSM_*_v4_0.json`. The materializer is
+`scripts/materialize_full_action_closure_v4_0.py`.
+
+## Full action closure v4.0
+
+Status: `FULL_BHSM_NOT_COMPLETE`.
+
+The deterministic blocker DAG is in [docs/full_theorem_blocker_dag.md](docs/full_theorem_blocker_dag.md) and
+`artifacts/BHSM_full_theorem_blocker_dag_v4_0.json`.
+
+- BHSM is not complete until the full action-normalization and scale gates close.
+- The 1:2:7 gauge-coupling registry pattern is artifact-backed but not action-derived.
+- The candidate denominator 6π² = 3 Vol(S³) is not a coupling derivation unless attached to the normalized gauge action.
+- Sector weights do not derive gauge couplings without action attachment.
+- The overall gauge-action coefficient k remains open unless fixed by the action.
+- The CKM coefficient form is artifact-backed, but the CKM coefficient value remains open unless g2_BH is action-derived.
+- The CKM exponent remains not derived unless all CKM action, transport, identification, and log-averaging gates close.
+- Dimensionless neutral/PMNS structure does not imply physical neutrino masses.
+- Physical Delta m², matter effects, radiative corrections, stiffness length, curvature, and unit normalization remain open unless separately derived.
+- Full BHSM completion is not claimed by this repository unless every completion gate passes.

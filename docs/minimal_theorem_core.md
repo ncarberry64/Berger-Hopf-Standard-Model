@@ -54,3 +54,10 @@ The v2.8 audit conditionally locates a symbolic boundary measure but finds no sa
 The v2.9 audit closes the interface coefficient form but keeps its value and weak-action source open.
 
 The v3.1 audit records the exact coupling registry pattern and a conditional active-generator-count source, but keeps the geometric denominator, universal quantum, action attachment, `alpha_i`, and `g2_BH` action derivations open.
+
+<!-- BHSM_FULL_ACTION_CLOSURE_V4_0 -->
+## v4.0 action-normalization status
+
+This surface is incorporated into the [../full-action blocker DAG](../docs/full_theorem_blocker_dag.md).
+Its existing artifact-backed or conditional result is preserved; it is not promoted across a missing action,
+normalization, transport, or dimensionful-scale gate. Overall status: `FULL_BHSM_NOT_COMPLETE`.
