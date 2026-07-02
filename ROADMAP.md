@@ -109,3 +109,4 @@ commands, and records falsifiers. It does not close the following items.
     coefficient to the same CKM action term, or preserve the blocker.
 18. Derive `g2_BH` from the normalized weak gauge action before promoting the
     artifact-backed charged-current coefficient form to a value prediction.
+19. Derive or reject `6*pi^2=3 Vol(S^3_unit)`, the `1:2:7` action-selected sector weights, and their same-action attachment before promoting a universal gauge-coupling quantum.

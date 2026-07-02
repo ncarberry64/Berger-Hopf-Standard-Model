@@ -127,3 +127,11 @@ A normalized projector-sandwiched action term requires boundary/action measure, 
 The symbolic BHSM boundary measure is a conditional source, not proof that the bounded CKM interface term is normalized. A boundary measure alone does not select the CKM transport space, and a coefficient normalization alone does not derive the CKM exponent.
 
 The coefficient form is distinct from the coefficient value. Runtime and registered coupling sources are not action derivations.
+
+## v3.1 Gauge-Coupling Quantum Claim Boundary
+
+The pattern α_i = w_i/(6π²) is not an action derivation unless attached to the normalized gauge action.
+
+The identity 6π² = 3 Vol(S³) does not by itself derive the gauge couplings. Sector weights do not by themselves derive the gauge couplings. Registered coupling expressions are not action derivations.
+
+The overall gauge-action coefficient k remains open unless the action fixes it. The CKM coefficient value remains open unless g2_BH is action-derived. The CKM exponent remains not derived.

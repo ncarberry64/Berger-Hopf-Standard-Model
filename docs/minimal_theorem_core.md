@@ -52,3 +52,5 @@ The v2.7 audit closes only the existence of the bounded CKM interface term. It k
 The v2.8 audit conditionally locates a symbolic boundary measure but finds no same-term normalized measure/coefficient pair for the bounded CKM current.
 
 The v2.9 audit closes the interface coefficient form but keeps its value and weak-action source open.
+
+The v3.1 audit records the exact coupling registry pattern and a conditional active-generator-count source, but keeps the geometric denominator, universal quantum, action attachment, `alpha_i`, and `g2_BH` action derivations open.

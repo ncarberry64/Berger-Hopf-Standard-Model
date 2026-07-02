@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from pathlib import Path
 from typing import Any, Sequence
 
@@ -205,6 +206,19 @@ from .weak_gauge_action_source import (
     search_weak_gauge_action_sources,
     weak_gauge_action_source_report_to_markdown,
 )
+from .gauge_coupling_quantum import (
+    audit_alpha_i_action_derivation,
+    audit_ckm_value_source_update,
+    audit_g2_action_source_update,
+    audit_gauge_coupling_action_attachment,
+    audit_gauge_coupling_registry_pattern,
+    audit_gauge_coupling_volume_denominator,
+    audit_gauge_sector_weight_source,
+    audit_universal_gauge_coupling_quantum,
+    build_gauge_coupling_quantum_report,
+    gauge_coupling_quantum_report_to_markdown,
+    search_gauge_coupling_quantum_sources,
+)
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -226,6 +240,14 @@ def _emit(payload: dict[str, Any], output_format: str) -> None:
         return
     for key, value in payload.items():
         print(f"{key}: {value}")
+
+
+def _print_unicode(text: str) -> None:
+    """Print UTF-8 reports on Windows consoles with legacy encodings."""
+    try:
+        print(text)
+    except UnicodeEncodeError:
+        sys.stdout.buffer.write((text + "\n").encode("utf-8"))
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -578,6 +600,21 @@ def build_parser() -> argparse.ArgumentParser:
     )
     for command in weak_gauge_commands:
         channel = commands.add_parser(command, help=f"Render the BHSM v3.0 {command} audit")
+        channel.add_argument("--format", choices=("json", "markdown"), default="json")
+    gauge_quantum_commands = (
+        "gauge-coupling-quantum-search",
+        "gauge-coupling-registry-pattern",
+        "gauge-coupling-volume-denominator",
+        "gauge-sector-weight-source",
+        "universal-gauge-coupling-quantum",
+        "gauge-coupling-action-attachment",
+        "alpha-i-action-derivation",
+        "g2-action-source-update",
+        "ckm-value-source-update",
+        "gauge-coupling-quantum-report",
+    )
+    for command in gauge_quantum_commands:
+        channel = commands.add_parser(command, help=f"Render the BHSM v3.1 {command} audit")
         channel.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
@@ -1218,6 +1255,39 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(weak_gauge_action_source_report_to_markdown(payload))
         else:
             print(f"# {args.command.replace('-', ' ').title()}\n\n```json\n{json.dumps(payload, indent=2, sort_keys=True)}\n```")
+        return 0
+    if args.command in {
+        "gauge-coupling-quantum-search",
+        "gauge-coupling-registry-pattern",
+        "gauge-coupling-volume-denominator",
+        "gauge-sector-weight-source",
+        "universal-gauge-coupling-quantum",
+        "gauge-coupling-action-attachment",
+        "alpha-i-action-derivation",
+        "g2-action-source-update",
+        "ckm-value-source-update",
+        "gauge-coupling-quantum-report",
+    }:
+        builders = {
+            "gauge-coupling-quantum-search": search_gauge_coupling_quantum_sources,
+            "gauge-coupling-registry-pattern": audit_gauge_coupling_registry_pattern,
+            "gauge-coupling-volume-denominator": audit_gauge_coupling_volume_denominator,
+            "gauge-sector-weight-source": audit_gauge_sector_weight_source,
+            "universal-gauge-coupling-quantum": audit_universal_gauge_coupling_quantum,
+            "gauge-coupling-action-attachment": audit_gauge_coupling_action_attachment,
+            "alpha-i-action-derivation": audit_alpha_i_action_derivation,
+            "g2-action-source-update": audit_g2_action_source_update,
+            "ckm-value-source-update": audit_ckm_value_source_update,
+            "gauge-coupling-quantum-report": build_gauge_coupling_quantum_report,
+        }
+        payload = builders[args.command]()
+        if args.format == "json":
+            print(json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False))
+        elif args.command == "gauge-coupling-quantum-report":
+            _print_unicode(gauge_coupling_quantum_report_to_markdown(payload))
+        else:
+            body = json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False)
+            print(f"# {args.command.replace('-', ' ').title()}\n\n```json\n{body}\n```")
         return 0
     if args.command in {
         "primitive-charged-incidence",
