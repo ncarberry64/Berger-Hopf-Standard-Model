@@ -43,6 +43,7 @@ Status taxonomy: `ESTABLISHED`, `ARTIFACT_BACKED`, `CANDIDATE`, `CONDITIONAL`,
 | Neutral stiffness length | `OPEN_MISSING_NUMERIC_STIFFNESS_LENGTH` | `sqrt(A_nu_gap/Z_nu)` is dimensionally specified | Numeric action-derived ratio with dimension `L^2` | `python -m bhsm.interface neutral-action-stiffness --format json` |
 | Action-supported response cone | `CONDITIONAL_ACTION_DERIVED_RESPONSE_CONE_CANDIDATE` | Partial variational and interaction-support sources identified | Complete normalized action derivation of response coordinates and constraints | `python -m bhsm.interface neutral-action-response-cone --format json` |
 | Physical neutral mass closure | `DIMENSIONFUL_MASS_NOT_AVAILABLE` | Unit-safe closure command fails closed | Numeric stiffness length in metres and physical curvature in `m^-2` | `python -m bhsm.interface neutral-action-closure-report --format markdown` |
+| Neutrino bedrock/dynamic doctrine | `STRUCTURAL_DOCTRINE_LOCKED` | Dimensionless PMNS geometry and neutral propagation are separated from physical local dynamics and units | Bedrock theorem provenance plus all deferred physical-scale blockers below | `python -m bhsm.interface neutrino-bedrock-status --format markdown` |
 | Full-completion ledger | `INTEGRATED_CONDITIONAL_ARCHITECTURE_WITH_OPEN_BLOCKERS` | Sixteen categories, explicit priorities, and a partial boundary-measure/identity-transport closure | Physical measure normalization, action theorems, unit maps, and runtime gates remain open | `python -m bhsm.interface full-completion-status --format markdown` |
 | Charged action/stiffness/mixing | `CONDITIONAL_CHARGED_SOURCES_WITH_OPEN_ACTION_NORMALIZATION_AND_CKM_EXPONENT_DERIVATION` | Projectors, charged coefficients, frozen CKM formulas, and conditional eta/mixing sources are inventoried | Charged action normalization, unique rho_ch, eta_l action source, CKM 1/16 theorem, and cross-scale transport | `python -m bhsm.interface charged-closure-report --format markdown` |
 | Common-16 closure | `CONDITIONAL_COMMON_16_GENERATOR_CANDIDATE` | Exact incidence, bridge/beta, and reciprocal fraction identities | Action-derived `Omega_f`, selected `rho_ch=3`, charged overlap source, and CKM reciprocal transport theorem | `python -m bhsm.interface final-completion-status --format markdown` |
@@ -52,6 +53,29 @@ Status taxonomy: `ESTABLISHED`, `ARTIFACT_BACKED`, `CANDIDATE`, `CONDITIONAL`,
 | MadGraph smoke test | `RUNTIME_GATED` | Smoke-test plan and runner scaffolds exist | Validated UFO plus live MadGraph execution | `python -m bhsm.interface status madgraph_smoke_test` |
 
 The detailed claim boundary is centralized in [CLAIMS.md](CLAIMS.md).
+
+## Neutrino Bedrock and Dynamic Layers
+
+`BEDROCK_LAYER_BHSM` covers dimensionless, geometric, global/topological, and artifact-backed structures. `DIMENSIONLESS_PMNS_PROPAGATION_CLOSURE` allows claim-safe dimensionless PMNS and boundary-propagation constraints without a physical mass claim. `NEUTRAL_RESPONSE_CONE_CONDITIONAL` preserves the existing conditional cone status.
+
+`DYNAMIC_LAYER_QFT_SM` supplies local action densities, radiative corrections, oscillation `L/E` dynamics, physical `Delta m^2`, matter effects, and unit normalization. `OSCILLATION_MAPPING_DYNAMIC_LAYER` and `DIMENSIONFUL_NEUTRINO_MASS_DEFERRED` keep those objects outside the bedrock closure.
+
+BHSM may constrain dimensionless PMNS geometry. BHSM does not emit physical eV/GeV neutrino masses by default.
+
+Missing local action principle is not a blocker for bedrock-layer CKM/PMNS geometry. Missing dimensionful neutral mass scale remains open in the dynamic-layer realization ledger.
+
+## Bedrock Blockers
+
+- Complete theorem provenance for dimensionless PMNS geometry remains conditional.
+- Complete-action derivation of the neutral response cone remains open.
+- Artifact-backed PMNS structure is not experimental validation or physical mass closure.
+
+## Dynamic-Layer Deferred Blockers
+
+- `OPEN_MISSING_NEUTRAL_SCALE` remains open and blocks physical unit and absolute-mass claims.
+- `OPEN_MISSING_NEUTRAL_ACTION_NORMALIZATION` remains open and blocks complete local action-density claims.
+- `DIMENSIONFUL_MASS_NOT_AVAILABLE` remains open and blocks eV/GeV mass and physical `Delta m^2` claims.
+- Numeric stiffness length, physical curvature, matter effects, and radiative corrections remain deferred.
 
 ## v1.9 Engine/Physics Separation
 

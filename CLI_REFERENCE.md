@@ -113,6 +113,7 @@ theorem inputs and do not emit a default physical neutrino mass.
 | `dimensionful-neutrino-mass-candidate` | Attempt mass output only after all physical-unit and dimensional gates pass | JSON | no | no |
 | `neutral-radius-curvature-report` | Render the v1.2 neutral closure report | Markdown or JSON | no | no |
 | `neutrino-closure-status` | Render the canonical five-part neutral closure status without a mass value | Markdown or JSON | no | no |
+| `neutrino-bedrock-status` | Report allowed bedrock claims, deferred dynamic claims, forbidden claims, and remaining blockers | Markdown or JSON | no | no |
 | `full-completion-ledger` | Render the sixteen-category completion blocker ledger | JSON | no | no |
 | `full-completion-priority-map` | Render predeclared closure-target scores | JSON | no | no |
 | `full-completion-selected-target` | Render the selected target and fail-closed result | JSON | no | no |

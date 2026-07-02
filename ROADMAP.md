@@ -110,3 +110,4 @@ commands, and records falsifiers. It does not close the following items.
 18. Derive `g2_BH` from the normalized weak gauge action before promoting the
     artifact-backed charged-current coefficient form to a value prediction.
 19. Derive or reject `6*pi^2=3 Vol(S^3_unit)`, the `1:2:7` action-selected sector weights, and their same-action attachment before promoting a universal gauge-coupling quantum.
+20. Preserve the neutrino bedrock/dynamic split: sharpen dimensionless PMNS and response-cone theorem provenance while deferring physical `Delta m^2`, matter effects, radiative corrections, and unit normalization to the QFT/SM realization ledger.
