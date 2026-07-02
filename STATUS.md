@@ -184,3 +184,41 @@ Missing local action principle is not a blocker for bedrock-layer CKM/PMNS geome
 - The existence of a Hermitian-conjugate term supports action reality but does not by itself derive CKM transport-space selection.
 - Same numerical dimension does not establish the physical source.
 - No empirical CKM fitting, charged-mass fitting, PDG values, W calibration, neutrino limits, or legacy threshold tables are used as theorem inputs.
+
+<!-- BHSM_FULL_ACTION_CLOSURE_V4_0 -->
+### v4.0 gate ledger
+
+| Gate | Status |
+| --- | --- |
+| Unified action skeleton | `CONDITIONAL_UNIFIED_ACTION_SKELETON` |
+| Boundary-frame averaging | `OPEN_MISSING_BOUNDARY_FRAME_AVERAGING` |
+| Gauge denominator | `OPEN_MISSING_GAUGE_COUPLING_VOLUME_DENOMINATOR` |
+| Sector-weight action source | `OPEN_MISSING_GAUGE_SECTOR_WEIGHT_ACTION_SOURCE` |
+| Gauge coefficient k | `OPEN_MISSING_GAUGE_ACTION_COEFFICIENT_K` |
+| alpha_i action derivation | `OPEN_MISSING_ALPHA_I_ACTION_DERIVATION` |
+| g2_BH action source | `OPEN_MISSING_G2_BH_ACTION_SOURCE` |
+| CKM normalized action | `OPEN_MISSING_NORMALIZED_CKM_ACTION` |
+| CKM coefficient value | `OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE` |
+| CKM exponent | `not_derived` |
+| Neutral scale | `OPEN_MISSING_NEUTRAL_SCALE` |
+| Dimensionful bridge | `DIMENSIONFUL_MASS_NOT_AVAILABLE` |
+| Scalar/topographic action | `OPEN_MISSING_SCALAR_TOPOGRAPHIC_ACTION_SOURCE` |
+| Full completion | `FULL_BHSM_NOT_COMPLETE` |
+
+## Full action closure v4.0
+
+Status: `FULL_BHSM_NOT_COMPLETE`.
+
+The deterministic blocker DAG is in [docs/full_theorem_blocker_dag.md](docs/full_theorem_blocker_dag.md) and
+`artifacts/BHSM_full_theorem_blocker_dag_v4_0.json`.
+
+- BHSM is not complete until the full action-normalization and scale gates close.
+- The 1:2:7 gauge-coupling registry pattern is artifact-backed but not action-derived.
+- The candidate denominator 6π² = 3 Vol(S³) is not a coupling derivation unless attached to the normalized gauge action.
+- Sector weights do not derive gauge couplings without action attachment.
+- The overall gauge-action coefficient k remains open unless fixed by the action.
+- The CKM coefficient form is artifact-backed, but the CKM coefficient value remains open unless g2_BH is action-derived.
+- The CKM exponent remains not derived unless all CKM action, transport, identification, and log-averaging gates close.
+- Dimensionless neutral/PMNS structure does not imply physical neutrino masses.
+- Physical Delta m², matter effects, radiative corrections, stiffness length, curvature, and unit normalization remain open unless separately derived.
+- Full BHSM completion is not claimed by this repository unless every completion gate passes.

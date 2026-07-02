@@ -111,3 +111,22 @@ commands, and records falsifiers. It does not close the following items.
     artifact-backed charged-current coefficient form to a value prediction.
 19. Derive or reject `6*pi^2=3 Vol(S^3_unit)`, the `1:2:7` action-selected sector weights, and their same-action attachment before promoting a universal gauge-coupling quantum.
 20. Preserve the neutrino bedrock/dynamic split: sharpen dimensionless PMNS and response-cone theorem provenance while deferring physical `Delta m^2`, matter effects, radiative corrections, and unit normalization to the QFT/SM realization ledger.
+
+<!-- BHSM_FULL_ACTION_CLOSURE_V4_0 -->
+## Full action closure v4.0
+
+Status: `FULL_BHSM_NOT_COMPLETE`.
+
+The deterministic blocker DAG is in [docs/full_theorem_blocker_dag.md](docs/full_theorem_blocker_dag.md) and
+`artifacts/BHSM_full_theorem_blocker_dag_v4_0.json`.
+
+- BHSM is not complete until the full action-normalization and scale gates close.
+- The 1:2:7 gauge-coupling registry pattern is artifact-backed but not action-derived.
+- The candidate denominator 6π² = 3 Vol(S³) is not a coupling derivation unless attached to the normalized gauge action.
+- Sector weights do not derive gauge couplings without action attachment.
+- The overall gauge-action coefficient k remains open unless fixed by the action.
+- The CKM coefficient form is artifact-backed, but the CKM coefficient value remains open unless g2_BH is action-derived.
+- The CKM exponent remains not derived unless all CKM action, transport, identification, and log-averaging gates close.
+- Dimensionless neutral/PMNS structure does not imply physical neutrino masses.
+- Physical Delta m², matter effects, radiative corrections, stiffness length, curvature, and unit normalization remain open unless separately derived.
+- Full BHSM completion is not claimed by this repository unless every completion gate passes.
