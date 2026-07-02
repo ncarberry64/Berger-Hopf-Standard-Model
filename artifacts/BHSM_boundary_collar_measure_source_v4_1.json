@@ -1,0 +1,36 @@
+{
+  "blocking_conditions": [
+    "BHSM-specific boundary geometry",
+    "complete normalized collar action"
+  ],
+  "candidate_formula": "dV_collar = J(Y,rho) dA d rho; J=det(I +/- rho S)=sqrt(det h(Y,rho)/det h(Y,0))",
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "Standard smooth-collar geometry supplies the symbolic measure formula, but BHSM-specific metric, shape, and orientation data remain open.",
+  "dependencies": [
+    "smooth boundary embedding",
+    "induced metric",
+    "shape operator",
+    "normal orientation"
+  ],
+  "empirical_inputs_used": false,
+  "evidence_against": [
+    "the complete BHSM collar action, evaluated h_AB, S(Y), and orientation are not derived"
+  ],
+  "evidence_for": [
+    "the collar Jacobian identity is DERIVED_CONDITIONAL",
+    "induced-metric and first-order curvature forms are localized"
+  ],
+  "frozen_predictions_changed": false,
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "not_promoted_because": [
+    "BHSM-specific boundary geometry",
+    "complete normalized collar action"
+  ],
+  "official_prediction_logic_changed": false,
+  "pdg_reference_values_used": false,
+  "promoted_from": "CONDITIONAL_BOUNDARY_MEASURE_SOURCE",
+  "status": "CONDITIONAL_BOUNDARY_COLLAR_MEASURE_SOURCE",
+  "w_calibration_used": false
+}

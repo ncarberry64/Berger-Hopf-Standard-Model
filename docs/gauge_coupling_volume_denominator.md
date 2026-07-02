@@ -12,3 +12,11 @@ The identity 6π² = 3 Vol(S³) does not by itself derive the gauge couplings.
 This surface is incorporated into the [../full-action blocker DAG](../docs/full_theorem_blocker_dag.md).
 Its existing artifact-backed or conditional result is preserved; it is not promoted across a missing action,
 normalization, transport, or dimensionful-scale gate. Overall status: `FULL_BHSM_NOT_COMPLETE`.
+
+<!-- BHSM_BOUNDARY_COLLAR_MEASURE_V4_1 -->
+## v4.1 measure/frame update
+
+The collar measure formula is conditional and three Berger coframe directions are artifact-backed.
+Unit-S3 normalization, action-selected averaging, and gauge trace-density attachment remain open;
+this result does not promote the gauge denominator, couplings, CKM value, or completion status.
+See [boundary/collar measure source](boundary_collar_measure_source.md).
