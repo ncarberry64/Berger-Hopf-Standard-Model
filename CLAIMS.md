@@ -51,11 +51,23 @@
 - The response cone has partial action support but remains conditional; no
   numeric stiffness length, physical curvature map, or eV/GeV mass is claimed.
 
+## Neutrino Bedrock/Dynamic Doctrine
+
+- BHSM may constrain dimensionless PMNS geometry.
+- BHSM does not emit physical eV/GeV neutrino masses by default.
+- Missing local action principle is not a blocker for bedrock-layer CKM/PMNS geometry.
+- Missing dimensionful neutral mass scale remains open in the dynamic-layer realization ledger.
+- The existing `OPEN_MISSING_NEUTRAL_SCALE`, `OPEN_MISSING_NEUTRAL_ACTION_NORMALIZATION`, and `DIMENSIONFUL_MASS_NOT_AVAILABLE` statuses block physical mass, unit, and local-dynamics claims; they do not erase claim-safe dimensionless PMNS or boundary-propagation geometry.
+- QFT/Standard Model dynamics supply oscillation `L/E`, physical `Delta m^2`, matter effects, radiative corrections, and local action densities.
+
 ## Not Supported
 
 Do not claim that:
 
 - BHSM is empirically validated.
+- BHSM derives physical neutrino masses in eV.
+- BHSM replaces QFT local dynamics.
+- BHSM emits dimensionful mass by default.
 - BHSM is officially CERN integrated.
 - BHSM has complete 4D Lagrangian export.
 - BHSM has validated FeynRules/UFO/MadGraph readiness.

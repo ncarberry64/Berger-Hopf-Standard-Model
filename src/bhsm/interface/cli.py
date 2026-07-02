@@ -86,6 +86,7 @@ from .neutrino_closure_status import (
     build_v1_5_status_stabilization_report,
     neutrino_closure_status_to_markdown,
 )
+from .neutrino_bedrock import load_neutrino_bedrock_status, neutrino_bedrock_status_to_markdown
 from .full_completion import (
     build_boundary_measure_closure,
     build_full_completion_blocker_ledger,
@@ -443,6 +444,8 @@ def build_parser() -> argparse.ArgumentParser:
     action_report.add_argument("--format", choices=("markdown", "json"), default="markdown")
     closure_status = commands.add_parser("neutrino-closure-status", help="Show the canonical neutral closure status split")
     closure_status.add_argument("--format", choices=("markdown", "json"), default="json")
+    bedrock_status = commands.add_parser("neutrino-bedrock-status", help="Show the neutrino bedrock/dynamic-layer doctrine")
+    bedrock_status.add_argument("--format", choices=("markdown", "json"), default="json")
     completion_ledger = commands.add_parser("full-completion-ledger", help="Show the sixteen-category BHSM completion blocker ledger")
     completion_ledger.add_argument("--format", choices=("json",), default="json")
     completion_priority = commands.add_parser("full-completion-priority-map", help="Show predeclared completion-target scores")
@@ -967,6 +970,13 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(neutrino_closure_status_to_markdown(report), end="")
         else:
             print(json.dumps(report.to_dict(), indent=2, sort_keys=True))
+        return 0
+    if args.command == "neutrino-bedrock-status":
+        report = load_neutrino_bedrock_status()
+        if args.format == "markdown":
+            print(neutrino_bedrock_status_to_markdown(report), end="")
+        else:
+            print(json.dumps(report, indent=2, sort_keys=True))
         return 0
     if args.command == "full-completion-ledger":
         blockers = build_full_completion_blocker_ledger()
