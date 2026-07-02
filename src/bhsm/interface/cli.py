@@ -192,6 +192,19 @@ from .ckm_coefficient_form_source import (
     audit_measure_coefficient_attachment, build_coefficient_form_report,
     coefficient_form_report_to_markdown,
 )
+from .weak_gauge_action_source import (
+    audit_alpha2_bh_action_source,
+    audit_ckm_value_source_blocker,
+    audit_g2_bh_action_source,
+    audit_normalized_weak_gauge_action_coefficient,
+    audit_normalized_weak_gauge_action_skeleton,
+    audit_weak_gauge_algebra_source,
+    audit_weak_gauge_coupling_convention,
+    audit_weak_gauge_trace_normalization,
+    build_weak_gauge_action_source_report,
+    search_weak_gauge_action_sources,
+    weak_gauge_action_source_report_to_markdown,
+)
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -552,6 +565,20 @@ def build_parser() -> argparse.ArgumentParser:
     coefficient_commands = ("ckm-coefficient-form-source-search","weak-charged-current-coefficient-form","g2-bh-source","alpha2-bh-source","weak-coupling-convention","ckm-coefficient-form","ckm-coefficient-value-source","ckm-measure-coefficient-attachment-v2-9","ckm-coefficient-form-report")
     for command in coefficient_commands:
         channel=commands.add_parser(command,help=f"Render the BHSM v2.9 {command} audit"); channel.add_argument("--format",choices=("json","markdown"),default="json")
+    weak_gauge_commands = (
+        "weak-gauge-action-source-search",
+        "weak-gauge-algebra-source",
+        "normalized-weak-gauge-action-skeleton",
+        "weak-gauge-trace-normalization",
+        "g2-bh-action-source",
+        "alpha2-bh-action-source",
+        "normalized-weak-gauge-action-coefficient",
+        "ckm-value-source-blocker",
+        "weak-gauge-action-source-report",
+    )
+    for command in weak_gauge_commands:
+        channel = commands.add_parser(command, help=f"Render the BHSM v3.0 {command} audit")
+        channel.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
 
@@ -1161,6 +1188,36 @@ def main(argv: Sequence[str] | None = None) -> int:
         if args.format=="json": print(json.dumps(payload,indent=2,sort_keys=True))
         elif args.command=="ckm-coefficient-form-report": print(coefficient_form_report_to_markdown(payload))
         else: print(f"# {args.command.replace('-', ' ').title()}\n\n```json\n{json.dumps(payload,indent=2,sort_keys=True)}\n```")
+        return 0
+    if args.command in {
+        "weak-gauge-action-source-search",
+        "weak-gauge-algebra-source",
+        "normalized-weak-gauge-action-skeleton",
+        "weak-gauge-trace-normalization",
+        "g2-bh-action-source",
+        "alpha2-bh-action-source",
+        "normalized-weak-gauge-action-coefficient",
+        "ckm-value-source-blocker",
+        "weak-gauge-action-source-report",
+    }:
+        builders = {
+            "weak-gauge-action-source-search": search_weak_gauge_action_sources,
+            "weak-gauge-algebra-source": audit_weak_gauge_algebra_source,
+            "normalized-weak-gauge-action-skeleton": audit_normalized_weak_gauge_action_skeleton,
+            "weak-gauge-trace-normalization": audit_weak_gauge_trace_normalization,
+            "g2-bh-action-source": audit_g2_bh_action_source,
+            "alpha2-bh-action-source": audit_alpha2_bh_action_source,
+            "normalized-weak-gauge-action-coefficient": audit_normalized_weak_gauge_action_coefficient,
+            "ckm-value-source-blocker": audit_ckm_value_source_blocker,
+            "weak-gauge-action-source-report": build_weak_gauge_action_source_report,
+        }
+        payload = builders[args.command]()
+        if args.format == "json":
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        elif args.command == "weak-gauge-action-source-report":
+            print(weak_gauge_action_source_report_to_markdown(payload))
+        else:
+            print(f"# {args.command.replace('-', ' ').title()}\n\n```json\n{json.dumps(payload, indent=2, sort_keys=True)}\n```")
         return 0
     if args.command in {
         "primitive-charged-incidence",

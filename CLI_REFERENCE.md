@@ -203,6 +203,15 @@ theorem inputs and do not emit a default physical neutrino mass.
 | `ckm-coefficient-value-source` | Audit the coefficient value source | Markdown or JSON | no | no |
 | `ckm-measure-coefficient-attachment-v2-9` | Audit same-term attachment | Markdown or JSON | no | no |
 | `ckm-coefficient-form-report` | Render combined v2.9 status | Markdown or JSON | no | no |
+| `weak-gauge-action-source-search` | Inventory weak algebra, action, trace, runtime, and registry sources | Markdown or JSON | no | no |
+| `weak-gauge-algebra-source` | Audit the conditional weak algebra source | Markdown or JSON | no | no |
+| `normalized-weak-gauge-action-skeleton` | Audit the normalized weak gauge action skeleton | Markdown or JSON | no | no |
+| `weak-gauge-trace-normalization` | Separate relative trace normalization from coupling derivation | Markdown or JSON | no | no |
+| `g2-bh-action-source` | Separate artifact-backed runtime provenance from action derivation | Markdown or JSON | no | no |
+| `alpha2-bh-action-source` | Separate registered coupling provenance from action derivation | Markdown or JSON | no | no |
+| `normalized-weak-gauge-action-coefficient` | Gate the unfixed overall weak kinetic coefficient | Markdown or JSON | no | no |
+| `ckm-value-source-blocker` | Propagate the weak-action blocker to the CKM value | Markdown or JSON | no | no |
+| `weak-gauge-action-source-report` | Render combined v3.0 status | Markdown or JSON | no | no |
 
 Without `--offline-ok`, `pdg-fetch` may try an optional live reference adapter.
 The offline fallback is reference-only and is never a derivation input.
