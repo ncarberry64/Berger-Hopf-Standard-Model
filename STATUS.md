@@ -426,3 +426,14 @@ The v4.5/v4.6 route conditionally supplies `lambda_i=w_i/(6*pi^2)` and a whitene
 Artifact: `artifacts/BHSM_gauge_coupling_action_attachment_killscreen_v4_7.json`.
 
 Preserved: `OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT`, `OPEN_MISSING_ALPHA_I_ACTION_DERIVATION`, `OPEN_MISSING_G2_BH_ACTION_SOURCE`, `OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE`, `CKM_EXPONENT_NOT_DERIVED`, and `FULL_BHSM_NOT_COMPLETE`.
+
+<!-- BHSM_CKM_RELATIVE_CURRENT_NORMALIZATION_KILLSCREEN_V4_8 -->
+## CKM-relative current normalization kill screen v4.8
+
+Verdict: `CKM_RELATIVE_CURRENT_NORMALIZATION_BLOCKED` / `WEAK_LAMBDA_TO_ALPHA2_BRIDGE_BLOCKED`.
+
+CKM is conditionally localized as a cross-sector charged-current transport target, but no artifact derives an `S²/CP¹` transition space, a `4*pi` current measure, or `c_rel^2=4*pi`. Therefore `alpha_2=lambda_2` is not derived and v4.7 `ACTION_ATTACHMENT_BLOCKED` remains in force.
+
+Artifact: `artifacts/BHSM_ckm_relative_current_normalization_killscreen_v4_8.json`.
+
+Open: `OPEN_MISSING_CKM_RELATIVE_CURRENT_NORMALIZATION`, `OPEN_MISSING_ALPHA2_ACTION_DERIVATION`, `OPEN_MISSING_G2_BH_ACTION_SOURCE`, `OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE`, `CKM_EXPONENT_NOT_DERIVED`, and `FULL_BHSM_NOT_COMPLETE`.

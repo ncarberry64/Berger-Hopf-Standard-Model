@@ -327,3 +327,12 @@ Verdict: `ACTION_ATTACHMENT_BLOCKED` / `SPECTRAL_GAUGE_COUPLING_ATTACHMENT_BLOCK
 The conditional spectral covariance `lambda_i=w_i/(6*pi^2)` is not the physical coupling `alpha_i`. No existing action excludes an unknown matching constant in `alpha_i=C lambda_i`; the registry, Gaussian identity, Yang-Mills convention, and leading Weyl density do not supply that proof.
 
 The spectral-gauge route must stop at this kill screen until a normalized gauge action fixes `alpha_i=lambda_i`. `g2_BH`, the CKM coefficient value and exponent, and full BHSM completion remain open.
+
+<!-- BHSM_CKM_RELATIVE_CURRENT_NORMALIZATION_KILLSCREEN_V4_8 -->
+## CKM-relative current normalization kill screen v4.8
+
+Verdict: `CKM_RELATIVE_CURRENT_NORMALIZATION_BLOCKED`.
+
+The bounded CKM charged-current target and unitary overlap structure do not provide an absolute current normalization. No CKM artifact derives `c_rel^2=4*pi` or attaches a `4*pi` relative angular measure to the charged-current inner product. The conditional identity `alpha_2=[c_rel^2/(4*pi)]lambda_2` does not close `alpha_2=lambda_2`.
+
+The independent `g2_BH/sqrt(2)` charged-current convention is preserved without absorbing or double-counting its factor in `c_rel`. Weak coupling, CKM value/exponent, running, and full completion remain open.
