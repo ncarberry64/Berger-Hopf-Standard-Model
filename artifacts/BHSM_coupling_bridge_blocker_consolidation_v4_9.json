@@ -1,0 +1,102 @@
+{
+  "artifact": "BHSM_coupling_bridge_blocker_consolidation_v4_9",
+  "version": "v4.9",
+  "verdict": "COUPLING_BRIDGE_BLOCKED_PENDING_ACTION_PRINCIPLE",
+  "depends_on": {
+    "v4_5": "lambda_i = w_i/(6*pi^2) conditional spectral covariance candidate",
+    "v4_6": "whitened boundary operator candidate",
+    "v4_7": "ACTION_ATTACHMENT_BLOCKED",
+    "v4_8": "CKM_RELATIVE_CURRENT_NORMALIZATION_BLOCKED"
+  },
+  "validated": [
+    "lambda_i=w_i/(6*pi^2) is a coherent conditional spectral covariance candidate",
+    "w=(1,2,7) has a candidate active Casimir-shell residue interpretation and is not a gauge-boson count",
+    "L_i(rho) and whitened boundary fluctuations are coherent conditional operator structures",
+    "the conditional bridge identity alpha_2=[c_rel^2/(4*pi)]lambda_2 is localized",
+    "CKM remains useful as conditional cross-sector relative transport and mixing geometry",
+    "the 1/sqrt(2) weak charged-current convention remains separate and protected"
+  ],
+  "invalidated_or_downgraded": [
+    "lambda_i=alpha_i is not derived",
+    "alpha_2=lambda_2 is not derived",
+    "c_rel^2=4*pi is not derived",
+    "CP^1/S^2/4*pi CKM-relative normalization is not artifact-backed",
+    "gauge registry arithmetic is not a proof",
+    "g2_BH cannot be derived by arithmetic from candidate lambda_2",
+    "CKM coefficient value cannot be derived from non-derived g2_BH",
+    "CKM exponent remains not derived",
+    "leading Weyl density alone does not produce physical running"
+  ],
+  "still_open": [
+    "normalized gauge action principle",
+    "action-backed current normalization",
+    "alpha_i action derivation",
+    "alpha_2 action derivation",
+    "g2_BH action source",
+    "CKM coefficient value source",
+    "CKM exponent source",
+    "Z_i(mu,rho)",
+    "rho_i(mu)",
+    "physical running",
+    "full BHSM completion"
+  ],
+  "blocked_bridges": {
+    "direct_spectral_action_attachment": "ACTION_ATTACHMENT_BLOCKED",
+    "ckm_relative_current_normalization": "CKM_RELATIVE_CURRENT_NORMALIZATION_BLOCKED",
+    "weak_lambda_to_alpha2": "WEAK_LAMBDA_TO_ALPHA2_BRIDGE_BLOCKED"
+  },
+  "do_not_reopen_without_new_principle": [
+    "lambda_i=alpha_i",
+    "alpha_2=lambda_2",
+    "c_rel^2=4*pi",
+    "g2_BH action derivation",
+    "CKM coefficient value derivation",
+    "CKM exponent derivation",
+    "physical running from leading Weyl density"
+  ],
+  "required_new_evidence_to_reopen": [
+    "artifact-backed normalized gauge action principle",
+    "artifact-backed charged-current normalization principle",
+    "proof fixing all proportionality constants and measures in the same action term"
+  ],
+  "open_gates": [
+    "COUPLING_BRIDGE_BLOCKED_PENDING_ACTION_PRINCIPLE",
+    "ACTION_ATTACHMENT_BLOCKED",
+    "CKM_RELATIVE_CURRENT_NORMALIZATION_BLOCKED",
+    "OPEN_MISSING_NORMALIZED_GAUGE_ACTION_PRINCIPLE",
+    "OPEN_MISSING_ACTION_BACKED_CURRENT_NORMALIZATION",
+    "OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT",
+    "OPEN_MISSING_ALPHA_I_ACTION_DERIVATION",
+    "OPEN_MISSING_ALPHA2_ACTION_DERIVATION",
+    "OPEN_MISSING_G2_BH_ACTION_SOURCE",
+    "OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE",
+    "CKM_EXPONENT_NOT_DERIVED",
+    "OPEN_MISSING_SPECTRAL_CORRECTION_Z_i",
+    "OPEN_MISSING_ACTION_SELECTED_RHO_i_OF_MU",
+    "FULL_BHSM_NOT_COMPLETE"
+  ],
+  "gate_mappings": {
+    "OPEN_MISSING_NORMALIZED_GAUGE_ACTION_PRINCIPLE": "Consolidates existing coefficient, measure, and inverse-covariance action-attachment gates.",
+    "OPEN_MISSING_ACTION_BACKED_CURRENT_NORMALIZATION": "Consolidates existing CKM measure/coefficient and relative-current normalization gates.",
+    "OPEN_MISSING_ALPHA2_ACTION_DERIVATION": "Maps to existing OPEN_MISSING_ALPHA2_BH_ACTION_SOURCE and OPEN_MISSING_ALPHA_I_ACTION_DERIVATION."
+  },
+  "recommended_pivot": "CKM relative transport / mixing geometry transcription, not gauge coupling normalization",
+  "next_work": [
+    "transcribe existing locked CKM matrix, angle, overlap, and transport geometry artifacts",
+    "keep weak coupling coefficients separate from CKM transport",
+    "maintain separate CKM geometry and charged-current normalization ledgers",
+    "reconnect the ledgers only if a new action/current normalization principle is derived"
+  ],
+  "operational_phase": "CKM_RELATIVE_TRANSPORT_TRANSCRIPTION",
+  "claim_boundary": "Candidate spectral densities and CKM transport are useful conditional structures, not physical coupling derivations. The coupling bridge remains blocked pending a new normalized action/current principle.",
+  "empirical_inputs_used": false,
+  "pdg_reference_values_used": false,
+  "w_calibration_used": false,
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "neutrino_limits_used": false,
+  "legacy_threshold_tables_used": false,
+  "frozen_predictions_changed": false,
+  "official_prediction_logic_changed": false,
+  "physics_validation_claimed": false
+}

@@ -437,3 +437,14 @@ CKM is conditionally localized as a cross-sector charged-current transport targe
 Artifact: `artifacts/BHSM_ckm_relative_current_normalization_killscreen_v4_8.json`.
 
 Open: `OPEN_MISSING_CKM_RELATIVE_CURRENT_NORMALIZATION`, `OPEN_MISSING_ALPHA2_ACTION_DERIVATION`, `OPEN_MISSING_G2_BH_ACTION_SOURCE`, `OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE`, `CKM_EXPONENT_NOT_DERIVED`, and `FULL_BHSM_NOT_COMPLETE`.
+
+<!-- BHSM_COUPLING_BRIDGE_BLOCKER_CONSOLIDATION_V4_9 -->
+## Coupling-bridge blocker consolidation v4.9
+
+Verdict: `COUPLING_BRIDGE_BLOCKED_PENDING_ACTION_PRINCIPLE`.
+
+The v4.5–v4.8 spectral covariance, whitened operator, and CKM transport structures remain conditional and useful, but neither direct action attachment nor CKM-relative current normalization derives physical gauge couplings. Do not reopen these bridges without a genuinely new normalized action/current principle.
+
+Operational pivot: `CKM_RELATIVE_TRANSPORT_TRANSCRIPTION`, with CKM geometry kept separate from charged-current normalization.
+
+Artifact: `artifacts/BHSM_coupling_bridge_blocker_consolidation_v4_9.json`.

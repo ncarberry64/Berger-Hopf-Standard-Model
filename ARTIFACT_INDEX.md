@@ -268,3 +268,12 @@ Doctrine: `docs/bhsm_gauge_coupling_action_attachment_killscreen_v4_7.md`.
 | `artifacts/BHSM_ckm_relative_current_normalization_killscreen_v4_8.json` | `CKM_RELATIVE_CURRENT_NORMALIZATION_BLOCKED` | Audits whether CKM-relative geometry derives `c_rel^2=4*pi` and preserves the v4.7 block when it does not. |
 
 Doctrine: `docs/bhsm_ckm_relative_current_normalization_killscreen_v4_8.md`.
+
+<!-- BHSM_COUPLING_BRIDGE_BLOCKER_CONSOLIDATION_V4_9 -->
+## Coupling-bridge blocker consolidation v4.9
+
+| Artifact | Verdict | Purpose |
+|---|---|---|
+| `artifacts/BHSM_coupling_bridge_blocker_consolidation_v4_9.json` | `COUPLING_BRIDGE_BLOCKED_PENDING_ACTION_PRINCIPLE` | Consolidates v4.5–v4.8, freezes both blocked bridges, and records the CKM transport pivot. |
+
+Doctrine: `docs/bhsm_coupling_bridge_blocker_consolidation_v4_9.md`.
