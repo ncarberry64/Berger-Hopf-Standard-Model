@@ -1,0 +1,129 @@
+{
+  "artifact": "BHSM_gauge_coupling_action_attachment_killscreen_v4_7",
+  "version": "v4.7",
+  "question": "Does the BHSM action derive alpha_i = lambda_i?",
+  "verdict": "ACTION_ATTACHMENT_BLOCKED",
+  "status": "SPECTRAL_GAUGE_COUPLING_ATTACHMENT_BLOCKED",
+  "lambda_source": "v4.5 active Casimir-shell spectral residue",
+  "operator_source": "v4.6 whitened boundary operator candidate",
+  "required_chain": [
+    "lambda_i = w_i/(6*pi^2)",
+    "lambda_i is whitened covariance amplitude",
+    "quadratic action uses inverse covariance",
+    "physical alpha_i equals lambda_i",
+    "g_i satisfies alpha_i = g_i^2/(4*pi)"
+  ],
+  "proposition_a": {
+    "statement": "lambda_i = w_i/(6*pi^2)",
+    "status": "CONDITIONAL_SPECTRAL_DENSITY_COVARIANCE_CANDIDATE",
+    "sufficient_for_physical_alpha": false
+  },
+  "proposition_b": {
+    "statement": "B_i = L_i(rho)^(1/2) A_i",
+    "status": "CONDITIONAL_WHITENED_BOUNDARY_FLUCTUATION_CANDIDATE",
+    "sufficient_for_physical_alpha": false
+  },
+  "proposition_c": {
+    "statement": "S_i = [1/(2 lambda_i)] <B_i,B_i>",
+    "status": "CONDITIONAL_CANDIDATE_NOT_DERIVED_FROM_EXISTING_ACTION"
+  },
+  "proposition_d": {
+    "statement": "alpha_i = lambda_i",
+    "status": "BLOCKED_MISSING_ACTION_ATTACHMENT",
+    "derived": false,
+    "unknown_proportionality_constant_excluded": false
+  },
+  "proposition_e": {
+    "statement": "g_i^2 = 4*pi*lambda_i",
+    "status": "OPEN_CONVENTION_DOES_NOT_FIX_ALPHA_EQUALS_LAMBDA",
+    "derived": false
+  },
+  "proposition_f": {
+    "statement": "g2_BH action source is derived",
+    "status": "OPEN_MISSING_G2_BH_ACTION_SOURCE",
+    "derived": false
+  },
+  "proposition_g": {
+    "statement": "CKM coefficient value follows from action-derived g2_BH",
+    "status": "OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE",
+    "derived": false
+  },
+  "escape_routes": [
+    {
+      "route": "existing_action_normalization",
+      "result": "BLOCKED",
+      "reason": "The normalized gauge-action skeleton has unfixed coefficient k, physical measure, denominator, and sector attachment."
+    },
+    {
+      "route": "gaussian_covariance",
+      "result": "REQUIRES_NEW_AXIOM_NOT_PRESENT_IN_BHSM_ACTION",
+      "reason": "The Gaussian inverse-covariance identity is coherent only after assuming C_i=lambda_i I as the BHSM gauge covariance."
+    },
+    {
+      "route": "canonical_yang_mills_normalization",
+      "result": "BLOCKED_UNKNOWN_MATCHING_FACTOR",
+      "reason": "No artifact fixes the conversion between the whitened quadratic coefficient and the conventional 1/(4 g_i^2) normalization."
+    },
+    {
+      "route": "spectral_action",
+      "result": "BLOCKED_NO_GAUGE_SPECTRAL_ACTION_COEFFICIENT",
+      "reason": "No artifact-backed gauge spectral-action expansion fixes lambda_i as the physical coupling coefficient."
+    },
+    {
+      "route": "boundary_fluctuation_principle",
+      "result": "MINIMAL_ESCAPE_PRINCIPLE_IDENTIFIED_BUT_NOT_ADOPTED_OR_DERIVED",
+      "reason": "Assuming normalized whitened covariance and alpha_i=lambda_i would close the route only axiomatically."
+    },
+    {
+      "route": "kill_screen",
+      "result": "ACTION_ATTACHMENT_BLOCKED",
+      "reason": "Stop expanding the spectral-gauge route until a normalized action principle fixes the attachment."
+    }
+  ],
+  "minimal_escape_principle": {
+    "name": "Normalized Whitened Boundary Fluctuation Principle",
+    "statement": "The BHSM gauge action uses the inverse covariance of whitened active boundary modes with covariance amplitude exactly lambda_i, and the physical convention identifies alpha_i=lambda_i.",
+    "status": "NOT_PRESENT_NOT_ADOPTED_NOT_DERIVED"
+  },
+  "validated": [
+    "v4.5 supplies lambda_i=w_i/(6*pi^2) as a conditional spectral covariance candidate",
+    "v4.6 supplies B_i=L_i(rho)^(1/2)A_i as a conditional whitened fluctuation candidate",
+    "alpha_i=g_i^2/(4*pi) is a coupling convention"
+  ],
+  "failed_or_missing": [
+    "action-derived inverse-covariance placement",
+    "proof that covariance amplitude is exactly lambda_i",
+    "proof that alpha_i=lambda_i rather than alpha_i=C lambda_i",
+    "normalized physical gauge-action measure and overall coefficient",
+    "action-derived g2_BH source",
+    "action-derived CKM coefficient value"
+  ],
+  "open_gates": [
+    "OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT",
+    "OPEN_MISSING_ALPHA_I_ACTION_DERIVATION",
+    "OPEN_MISSING_NORMALIZED_WEAK_GAUGE_ACTION_COEFFICIENT",
+    "OPEN_MISSING_PHYSICAL_GAUGE_ACTION_MEASURE_NORMALIZATION",
+    "OPEN_MISSING_INVERSE_COVARIANCE_ACTION_ATTACHMENT",
+    "OPEN_MISSING_SECTOR_BOUNDARY_OPERATOR_ACTION_SOURCE",
+    "OPEN_MISSING_G2_BH_ACTION_SOURCE",
+    "OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE",
+    "CKM_EXPONENT_NOT_DERIVED",
+    "FULL_BHSM_NOT_COMPLETE"
+  ],
+  "reference_values_status": "CONDITIONAL_REGISTRY_VALUES_NOT_ACTION_DERIVED",
+  "g2_BH_status": "OPEN_MISSING_G2_BH_ACTION_SOURCE",
+  "ckm_value_status": "OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE",
+  "ckm_exponent_status": "CKM_EXPONENT_NOT_DERIVED",
+  "full_completion_status": "FULL_BHSM_NOT_COMPLETE",
+  "claim_boundary": "The v4.5/v4.6 spectral architecture motivates lambda_i=w_i/(6*pi^2), but does not derive physical alpha_i. The route is blocked until a normalized gauge action fixes alpha_i=lambda_i.",
+  "empirical_inputs_used": false,
+  "pdg_reference_values_used": false,
+  "w_calibration_used": false,
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "neutrino_limits_used": false,
+  "legacy_threshold_tables_used": false,
+  "frozen_predictions_changed": false,
+  "official_prediction_logic_changed": false,
+  "physics_validation_claimed": false
+}

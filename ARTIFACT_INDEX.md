@@ -190,6 +190,7 @@ Statuses: `CASIMIR_SHELL_RESIDUE_STRONG_CANDIDATE`, `SPECTRAL_DENSITY_GAUGE_QUAN
 
 - `OPEN_MISSING_CASIMIR_SHELL_ACTION_ATTACHMENT`
 - `OPEN_MISSING_SECTOR_BOUNDARY_OPERATOR_L_i`
+
 - `OPEN_MISSING_WHITENED_BOUNDARY_OPERATOR_ACTION_SOURCE`
 - `OPEN_MISSING_SPECTRAL_COVARIANCE_SOURCE`
 - `OPEN_MISSING_INVERSE_COVARIANCE_ACTION_ATTACHMENT`
@@ -249,3 +250,12 @@ Statuses: `SECTOR_BOUNDARY_OPERATOR_CONDITIONAL_CANDIDATE`, `LAPLACE_TYPE_PRINCI
 - `FULL_BHSM_NOT_COMPLETE`
 - `OPEN_MISSING_CASIMIR_SHELL_ACTION_ATTACHMENT`
 - `OPEN_MISSING_SECTOR_BOUNDARY_OPERATOR_L_i`
+
+<!-- BHSM_GAUGE_COUPLING_ACTION_ATTACHMENT_KILLSCREEN_V4_7 -->
+## Gauge-coupling action-attachment kill screen v4.7
+
+| Artifact | Verdict | Purpose |
+|---|---|---|
+| `artifacts/BHSM_gauge_coupling_action_attachment_killscreen_v4_7.json` | `ACTION_ATTACHMENT_BLOCKED` | Tests all action-attachment escape routes and stops the spectral candidate from being promoted to physical `alpha_i`. |
+
+Doctrine: `docs/bhsm_gauge_coupling_action_attachment_killscreen_v4_7.md`.

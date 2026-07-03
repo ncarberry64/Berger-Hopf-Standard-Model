@@ -176,4 +176,4 @@ Start with [docs/README.md](docs/README.md) for the documentation map and
 ## Citation
 Use [CITATION.cff](CITATION.cff) for current citation metadata.
 ## v2.9 CKM Coefficient Form/Value Split
-The interface coefficient form `C_CKM=g2_BH/sqrt(2)` is artifact-backed, while `g2_BH` remains a runtime input rather than an action-derived value. The stacked v4.6 audit extends the v4.5 Casimir-shell residue candidate with a conditional Laplace-type sector boundary operator, principal symbol, frame-normalized residue, and whitened quadratic action; gauge domain, lower-order terms, running, action attachment, coupling values, CKM coefficient/exponent, and full completion remain open.
+The interface coefficient form `C_CKM=g2_BH/sqrt(2)` is artifact-backed, while `g2_BH` remains a runtime input rather than an action-derived value. The stacked v4.7 kill screen finds `ACTION_ATTACHMENT_BLOCKED`: the conditional spectral covariance `lambda_i=w_i/(6*pi^2)` and whitened action candidate do not derive `alpha_i=lambda_i`. The spectral-gauge route stops here until a normalized action fixes the attachment; `g2_BH`, CKM, running, and full completion remain open.

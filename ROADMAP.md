@@ -215,6 +215,7 @@ Statuses: `CASIMIR_SHELL_RESIDUE_STRONG_CANDIDATE`, `SPECTRAL_DENSITY_GAUGE_QUAN
 
 - `OPEN_MISSING_CASIMIR_SHELL_ACTION_ATTACHMENT`
 - `OPEN_MISSING_SECTOR_BOUNDARY_OPERATOR_L_i`
+
 - `OPEN_MISSING_WHITENED_BOUNDARY_OPERATOR_ACTION_SOURCE`
 - `OPEN_MISSING_SPECTRAL_COVARIANCE_SOURCE`
 - `OPEN_MISSING_INVERSE_COVARIANCE_ACTION_ATTACHMENT`
@@ -274,3 +275,10 @@ Statuses: `SECTOR_BOUNDARY_OPERATOR_CONDITIONAL_CANDIDATE`, `LAPLACE_TYPE_PRINCI
 - `FULL_BHSM_NOT_COMPLETE`
 - `OPEN_MISSING_CASIMIR_SHELL_ACTION_ATTACHMENT`
 - `OPEN_MISSING_SECTOR_BOUNDARY_OPERATOR_L_i`
+
+<!-- BHSM_GAUGE_COUPLING_ACTION_ATTACHMENT_KILLSCREEN_V4_7 -->
+## Gauge-coupling action-attachment kill screen v4.7
+
+`ACTION_ATTACHMENT_BLOCKED`: do not expand the spectral-gauge route further as a coupling derivation. Resume only if an artifact-backed normalized gauge action fixes the inverse-covariance coefficient exactly, excludes `alpha_i=C lambda_i`, and establishes `alpha_i=lambda_i` without registry lookup or fitting.
+
+Downstream `alpha_i`, `g2_BH`, CKM, running, and full-completion gates remain open.
