@@ -1,0 +1,77 @@
+{
+  "artifact": "BHSM_whitened_gauge_action_v4_6",
+  "candidate_actions": {
+    "SU2": {
+      "is_action_derived": false,
+      "lambda_reference": 0.03377372788077926,
+      "physical_alpha_status": "OPEN_MISSING_ALPHA_I_ACTION_DERIVATION",
+      "quadratic_action": "S_i=[1/(2 lambda_i)] <A_i,L_i(rho)A_i>=[1/(2 lambda_i)] <B_i,B_i>",
+      "reference_condition": "Z_i(mu0,rho0)=1",
+      "sector": "SU2",
+      "spectral_covariance": "lambda_i(mu,rho)=[w_i/(6*pi^2)] Z_i(mu,rho_i(mu))",
+      "whitened_variable": "B_i=L_i(rho)^(1/2) A_i"
+    },
+    "SU3": {
+      "is_action_derived": false,
+      "lambda_reference": 0.1182080475827274,
+      "physical_alpha_status": "OPEN_MISSING_ALPHA_I_ACTION_DERIVATION",
+      "quadratic_action": "S_i=[1/(2 lambda_i)] <A_i,L_i(rho)A_i>=[1/(2 lambda_i)] <B_i,B_i>",
+      "reference_condition": "Z_i(mu0,rho0)=1",
+      "sector": "SU3",
+      "spectral_covariance": "lambda_i(mu,rho)=[w_i/(6*pi^2)] Z_i(mu,rho_i(mu))",
+      "whitened_variable": "B_i=L_i(rho)^(1/2) A_i"
+    },
+    "U1": {
+      "is_action_derived": false,
+      "lambda_reference": 0.01688686394038963,
+      "physical_alpha_status": "OPEN_MISSING_ALPHA_I_ACTION_DERIVATION",
+      "quadratic_action": "S_i=[1/(2 lambda_i)] <A_i,L_i(rho)A_i>=[1/(2 lambda_i)] <B_i,B_i>",
+      "reference_condition": "Z_i(mu0,rho0)=1",
+      "sector": "U1",
+      "spectral_covariance": "lambda_i(mu,rho)=[w_i/(6*pi^2)] Z_i(mu,rho_i(mu))",
+      "whitened_variable": "B_i=L_i(rho)^(1/2) A_i"
+    }
+  },
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "The coherent quadratic form is not an action-derived physical coupling identification.",
+  "empirical_inputs_used": false,
+  "frozen_predictions_changed": false,
+  "frozen_predictions_modified": false,
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "no_go_notes": [
+    "A raw unrestricted one-form Weyl count introduces a factor of three; the conditional primitive frame state tau_frame=1/3 prevents this overcount.",
+    "A Laplace-type principal symbol does not determine the full physical boundary operator; lower-order terms and the action source remain open.",
+    "L_i(rho) is not final on unrestricted gauge potentials without a gauge-fixed, transverse/coexact, quotient, or admissible boundary domain.",
+    "Whitened boundary-action coherence does not prove lambda_i=alpha_i; physical coupling identification remains action-gated.",
+    "Leading Weyl density plus candidate L_i does not produce running without Z_i, lower heat-kernel/collar corrections, and action-selected rho_i(mu).",
+    "This sprint does not derive gauge couplings, CKM values or exponent, or full BHSM completion."
+  ],
+  "official_prediction_logic_changed": false,
+  "official_prediction_logic_modified": false,
+  "open_gates": [
+    "OPEN_MISSING_SECTOR_BOUNDARY_OPERATOR_ACTION_SOURCE",
+    "OPEN_MISSING_GAUGE_FIXED_BOUNDARY_DOMAIN",
+    "OPEN_MISSING_LOWER_ORDER_BOUNDARY_OPERATOR_TERMS",
+    "OPEN_MISSING_WHITENED_BOUNDARY_OPERATOR_ACTION_SOURCE",
+    "OPEN_MISSING_SPECTRAL_COVARIANCE_SOURCE",
+    "OPEN_MISSING_INVERSE_COVARIANCE_ACTION_ATTACHMENT",
+    "OPEN_MISSING_SPECTRAL_CORRECTION_Z_i",
+    "OPEN_MISSING_ACTION_SELECTED_RHO_i_OF_MU",
+    "OPEN_MISSING_FRAME_AVERAGE_NORMALIZATION",
+    "OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT",
+    "OPEN_MISSING_ALPHA_I_ACTION_DERIVATION",
+    "OPEN_MISSING_G2_BH_ACTION_SOURCE",
+    "OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE",
+    "CKM_EXPONENT_NOT_DERIVED",
+    "FULL_BHSM_NOT_COMPLETE",
+    "OPEN_MISSING_CASIMIR_SHELL_ACTION_ATTACHMENT",
+    "OPEN_MISSING_SECTOR_BOUNDARY_OPERATOR_L_i"
+  ],
+  "pdg_reference_values_used": false,
+  "physics_validation_claimed": false,
+  "status": "WHITENED_GAUGE_ACTION_CONDITIONAL",
+  "version": "v4.6",
+  "w_calibration_used": false
+}

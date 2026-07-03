@@ -1,0 +1,82 @@
+{
+  "artifact": "BHSM_frame_normalized_principal_residue_v4_6",
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "The primitive frame state prevents candidate overcounting but does not close action-selected frame averaging.",
+  "empirical_inputs_used": false,
+  "frame_normalization": {
+    "effective_frame_factor": 1,
+    "raw_frame_count": 3,
+    "tau_frame": "1/3"
+  },
+  "frozen_predictions_changed": false,
+  "frozen_predictions_modified": false,
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "no_go_notes": [
+    "A raw unrestricted one-form Weyl count introduces a factor of three; the conditional primitive frame state tau_frame=1/3 prevents this overcount.",
+    "A Laplace-type principal symbol does not determine the full physical boundary operator; lower-order terms and the action source remain open.",
+    "L_i(rho) is not final on unrestricted gauge potentials without a gauge-fixed, transverse/coexact, quotient, or admissible boundary domain.",
+    "Whitened boundary-action coherence does not prove lambda_i=alpha_i; physical coupling identification remains action-gated.",
+    "Leading Weyl density plus candidate L_i does not produce running without Z_i, lower heat-kernel/collar corrections, and action-selected rho_i(mu).",
+    "This sprint does not derive gauge couplings, CKM values or exponent, or full BHSM completion."
+  ],
+  "official_prediction_logic_changed": false,
+  "official_prediction_logic_modified": false,
+  "open_gates": [
+    "OPEN_MISSING_SECTOR_BOUNDARY_OPERATOR_ACTION_SOURCE",
+    "OPEN_MISSING_GAUGE_FIXED_BOUNDARY_DOMAIN",
+    "OPEN_MISSING_LOWER_ORDER_BOUNDARY_OPERATOR_TERMS",
+    "OPEN_MISSING_WHITENED_BOUNDARY_OPERATOR_ACTION_SOURCE",
+    "OPEN_MISSING_SPECTRAL_COVARIANCE_SOURCE",
+    "OPEN_MISSING_INVERSE_COVARIANCE_ACTION_ATTACHMENT",
+    "OPEN_MISSING_SPECTRAL_CORRECTION_Z_i",
+    "OPEN_MISSING_ACTION_SELECTED_RHO_i_OF_MU",
+    "OPEN_MISSING_FRAME_AVERAGE_NORMALIZATION",
+    "OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT",
+    "OPEN_MISSING_ALPHA_I_ACTION_DERIVATION",
+    "OPEN_MISSING_G2_BH_ACTION_SOURCE",
+    "OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE",
+    "CKM_EXPONENT_NOT_DERIVED",
+    "FULL_BHSM_NOT_COMPLETE",
+    "OPEN_MISSING_CASIMIR_SHELL_ACTION_ATTACHMENT",
+    "OPEN_MISSING_SECTOR_BOUNDARY_OPERATOR_L_i"
+  ],
+  "pdg_reference_values_used": false,
+  "physics_validation_claimed": false,
+  "residue_table": {
+    "SU2": {
+      "active_residue": 2,
+      "effective_frame_factor": 1.0,
+      "effective_residue": 2.0,
+      "gauge_algebra_dimension": 3,
+      "is_gauge_boson_count": false,
+      "lambda_reference": 0.03377372788077926,
+      "raw_frame_count": 3,
+      "tau_frame": 0.3333333333333333
+    },
+    "SU3": {
+      "active_residue": 7,
+      "effective_frame_factor": 1.0,
+      "effective_residue": 7.0,
+      "gauge_algebra_dimension": 8,
+      "is_gauge_boson_count": false,
+      "lambda_reference": 0.1182080475827274,
+      "raw_frame_count": 3,
+      "tau_frame": 0.3333333333333333
+    },
+    "U1": {
+      "active_residue": 1,
+      "effective_frame_factor": 1.0,
+      "effective_residue": 1.0,
+      "gauge_algebra_dimension": 1,
+      "is_gauge_boson_count": false,
+      "lambda_reference": 0.01688686394038963,
+      "raw_frame_count": 3,
+      "tau_frame": 0.3333333333333333
+    }
+  },
+  "status": "FRAME_NORMALIZED_PRINCIPAL_RESIDUE_CONDITIONAL",
+  "version": "v4.6",
+  "w_calibration_used": false
+}
