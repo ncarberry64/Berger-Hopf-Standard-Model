@@ -1,0 +1,3 @@
+from .common import GUARD
+def search_gauge_coframe_hodge_sources():
+    return {"status":"SOURCE_SEARCH_COMPLETE_GAUGE_BASIS_OPEN_HODGE_CONDITIONAL","candidate_formula":"raw sigma_a versus orthonormal e^a=lambda_a sigma_a","claim_boundary":"F wedge *F establishes metric dependence but not an evaluated Berger gauge-frame normalization.","evidence_for":["theory/derived_normalized_gauge_action_skeleton.md","artifacts/berger_measure_domain_v1.json"],"evidence_against":["no gauge coframe basis is named","no explicit Berger Hodge component map exists"],"dependencies":["gauge action","Berger metric"],"blocking_conditions":["basis selection","explicit Hodge factors"],**GUARD}

@@ -22,3 +22,8 @@ Three coframe directions do not imply c1=c2=c3, especially when the Berger metri
 - Full BHSM remains not complete.
 
 Run `python -m bhsm.interface equal-frame-weighting --format json`.
+
+<!-- BHSM_GAUGE_COFRAME_HODGE_V4_3 -->
+## v4.3 coframe/Hodge update
+
+The gauge basis is unspecified and Berger Hodge factors are not evaluated. No downstream status is promoted.

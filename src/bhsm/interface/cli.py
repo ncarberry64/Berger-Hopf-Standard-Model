@@ -232,6 +232,7 @@ from .berger_frame_weighting import (
     COMMAND_BUILDERS as BERGER_FRAME_COMMAND_BUILDERS,
     berger_frame_weighting_report_to_markdown,
 )
+from .gauge_coframe_hodge import COMMAND_BUILDERS as GAUGE_COFRAME_COMMAND_BUILDERS, gauge_coframe_hodge_report_to_markdown
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -639,6 +640,9 @@ def build_parser() -> argparse.ArgumentParser:
         channel.add_argument("--format", choices=("json", "markdown"), default="json")
     for command in BERGER_FRAME_COMMAND_BUILDERS:
         channel = commands.add_parser(command, help=f"Render the BHSM v4.2 {command} audit")
+        channel.add_argument("--format", choices=("json", "markdown"), default="json")
+    for command in GAUGE_COFRAME_COMMAND_BUILDERS:
+        channel = commands.add_parser(command, help=f"Render the BHSM v4.3 {command} audit")
         channel.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
@@ -1349,6 +1353,12 @@ def main(argv: Sequence[str] | None = None) -> int:
         else:
             body = json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False)
             _print_unicode(f"# {args.command.replace('-', ' ').title()}\n\n```json\n{body}\n```")
+        return 0
+    if args.command in GAUGE_COFRAME_COMMAND_BUILDERS:
+        payload = GAUGE_COFRAME_COMMAND_BUILDERS[args.command]()
+        if args.format == "json": print(json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False))
+        elif args.command == "gauge-coframe-hodge-report": _print_unicode(gauge_coframe_hodge_report_to_markdown(payload))
+        else: _print_unicode(f"# {args.command.replace('-', ' ').title()}\n\n```json\n{json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False)}\n```")
         return 0
     if args.command in {
         "primitive-charged-incidence",

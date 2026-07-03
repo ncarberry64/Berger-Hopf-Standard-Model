@@ -164,3 +164,14 @@ coupling gates remain open.
 - The gauge coupling quantum remains open unless the denominator is action-attached.
 - α_i, g2_BH, CKM coefficient value, and CKM exponent remain open unless downstream action gates close.
 - Full BHSM remains not complete.
+
+<!-- BHSM_GAUGE_COFRAME_HODGE_V4_3 -->
+## Gauge coframe/Hodge v4.3
+
+Gauge coframe basis remains open; Hodge-star metric dependence is conditional. Equal coefficients, frame averaging, gauge attachment, denominator, and downstream couplings remain open.
+
+- Equal frame coefficients in an orthonormal coframe are distinct from equal coefficients in the raw Berger coframe.
+- Hodge-star metric factors may absorb Berger anisotropy, but this does not by itself imply frame averaging by 1/3.
+- Equal orthonormal coefficients do not imply average normalization.
+- Average normalization does not imply gauge trace attachment.
+- Gauge couplings, CKM coefficient value, and full BHSM completion remain open unless downstream gates close.

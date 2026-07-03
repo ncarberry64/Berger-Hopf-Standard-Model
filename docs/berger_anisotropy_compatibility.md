@@ -22,3 +22,8 @@ Equal gauge-frame coefficients are compatible with Berger anisotropy only if fie
 - Full BHSM remains not complete.
 
 Run `python -m bhsm.interface berger-anisotropy-compatibility --format json`.
+
+<!-- BHSM_GAUGE_COFRAME_HODGE_V4_3 -->
+## v4.3 coframe/Hodge update
+
+The gauge basis is unspecified and Berger Hodge factors are not evaluated. No downstream status is promoted.

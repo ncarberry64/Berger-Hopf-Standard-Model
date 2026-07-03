@@ -1,0 +1,2 @@
+from bhsm.interface.gauge_coframe_hodge.hodge_star_metric_factors import audit_hodge_star_metric_factors
+def test_hodge_is_conditional_not_average(): assert audit_hodge_star_metric_factors()["status"]=="CONDITIONAL_HODGE_STAR_METRIC_FACTORS"

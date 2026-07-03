@@ -336,3 +336,30 @@ coupling gates remain open.
 - The gauge coupling quantum remains open unless the denominator is action-attached.
 - α_i, g2_BH, CKM coefficient value, and CKM exponent remain open unless downstream action gates close.
 - Full BHSM remains not complete.
+
+<!-- BHSM_GAUGE_COFRAME_HODGE_V4_3 -->
+### v4.3 gauge coframe/Hodge commands
+
+```bash
+python -m bhsm.interface gauge-coframe-hodge-search --format json
+python -m bhsm.interface gauge-coframe-basis --format json
+python -m bhsm.interface hodge-star-metric-factors --format json
+python -m bhsm.interface anisotropy-compatibility-update-v4-3 --format json
+python -m bhsm.interface equal-orthonormal-gauge-frame-coefficients --format json
+python -m bhsm.interface frame-average-update-v4-3 --format json
+python -m bhsm.interface gauge-trace-attachment-update-v4-3 --format json
+python -m bhsm.interface denominator-update-v4-3 --format json
+python -m bhsm.interface downstream-coupling-update-v4-3 --format json
+python -m bhsm.interface full-completion-update-v4-3 --format json
+python -m bhsm.interface gauge-coframe-hodge-report --format markdown
+```
+
+## Gauge coframe/Hodge v4.3
+
+Gauge coframe basis remains open; Hodge-star metric dependence is conditional. Equal coefficients, frame averaging, gauge attachment, denominator, and downstream couplings remain open.
+
+- Equal frame coefficients in an orthonormal coframe are distinct from equal coefficients in the raw Berger coframe.
+- Hodge-star metric factors may absorb Berger anisotropy, but this does not by itself imply frame averaging by 1/3.
+- Equal orthonormal coefficients do not imply average normalization.
+- Average normalization does not imply gauge trace attachment.
+- Gauge couplings, CKM coefficient value, and full BHSM completion remain open unless downstream gates close.
