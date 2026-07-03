@@ -1,0 +1,4 @@
+from bhsm.interface.berger_frame_weighting.gauge_trace_frame_average_attachment import audit_gauge_trace_frame_average_attachment
+
+def test_average_does_not_imply_gauge_trace_attachment():
+    assert audit_gauge_trace_frame_average_attachment()["status"] == "OPEN_MISSING_GAUGE_TRACE_FRAME_AVERAGE_ATTACHMENT"

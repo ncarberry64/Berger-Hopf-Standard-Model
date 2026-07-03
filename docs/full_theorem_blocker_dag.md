@@ -30,3 +30,10 @@ The collar measure formula is conditional and three Berger coframe directions ar
 Unit-S3 normalization, action-selected averaging, and gauge trace-density attachment remain open;
 this result does not promote the gauge denominator, couplings, CKM value, or completion status.
 See [boundary/collar measure source](boundary_collar_measure_source.md).
+
+<!-- BHSM_BERGER_FRAME_WEIGHTING_V4_2 -->
+## v4.2 frame-weighting update
+
+The orthonormal-coframe compatibility route is conditional. No action-selected equal weights,
+factor `1/3`, or gauge trace-density attachment was located, so the denominator and couplings remain open.
+See [Berger anisotropy compatibility](berger_anisotropy_compatibility.md).
