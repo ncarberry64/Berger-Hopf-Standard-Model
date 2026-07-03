@@ -1,0 +1,2 @@
+from bhsm.interface.gauge_coframe_hodge.gauge_trace_attachment_update import audit_gauge_trace_attachment_update
+def test_attachment_open(): assert audit_gauge_trace_attachment_update()["status"]=="OPEN_MISSING_GAUGE_TRACE_FRAME_AVERAGE_ATTACHMENT"

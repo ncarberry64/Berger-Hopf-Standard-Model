@@ -37,3 +37,8 @@ See [boundary/collar measure source](boundary_collar_measure_source.md).
 The orthonormal-coframe compatibility route is conditional. No action-selected equal weights,
 factor `1/3`, or gauge trace-density attachment was located, so the denominator and couplings remain open.
 See [Berger anisotropy compatibility](berger_anisotropy_compatibility.md).
+
+<!-- BHSM_GAUGE_COFRAME_HODGE_V4_3 -->
+## v4.3 coframe/Hodge update
+
+The gauge basis is unspecified and Berger Hodge factors are not evaluated. No downstream status is promoted.

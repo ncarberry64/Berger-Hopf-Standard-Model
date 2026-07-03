@@ -58,7 +58,7 @@ BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode
 | Neutral kernel positivity | `CONDITIONAL_MEASUREMENT_SUPPORTED_NEUTRAL_POSITIVITY_CANDIDATE` | Raw PSD is false; exact copositivity holds on the author-ontology response cone without thresholding. |
 | Neutral action normalization | `OPEN_MISSING_NEUTRAL_ACTION_NORMALIZATION` | Partial variational boundary/collar action exists; coefficient, measure, profile, and unit normalization remain open. |
 | Action-supported response cone | `CONDITIONAL_ACTION_DERIVED_RESPONSE_CONE_CANDIDATE` | Existing action terms partially support the cone; complete-action derivation remains open. |
-| Full-completion audit | `FULL_BHSM_NOT_COMPLETE` | v4.2 finds only conditional orthonormal-coframe compatibility; equal weighting, `1/3` normalization, gauge attachment, CKM, scale, and transport remain open. |
+| Full-completion audit | `FULL_BHSM_NOT_COMPLETE` | v4.3 finds the gauge coframe basis open and Hodge metric dependence conditional; averaging, attachment, couplings, CKM, scale, and transport remain open. |
 | Charged closure audit | `CONDITIONAL_CHARGED_SOURCES` | Charged coefficients are inventoried; action normalization and CKM exponent derivation remain open. |
 | Normalized action CKM adjoint-pair audit | `OPEN_MISSING_NORMALIZED_ACTION_ADJOINT_PAIR_SELECTION` | Hermitian bidirectional count is conditional; normalized-action CKM transport-space selection remains open. |
 | FeynRules, UFO, MadGraph | `RUNTIME_GATED` | External validation is deferred until theorem and runtime gates pass. |

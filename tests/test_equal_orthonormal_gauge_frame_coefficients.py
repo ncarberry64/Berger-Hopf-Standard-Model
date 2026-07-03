@@ -1,0 +1,2 @@
+from bhsm.interface.gauge_coframe_hodge.equal_orthonormal_coefficients import audit_equal_orthonormal_coefficients
+def test_equal_coefficients_open(): assert audit_equal_orthonormal_coefficients()["status"]=="OPEN_MISSING_EQUAL_ORTHONORMAL_GAUGE_FRAME_COEFFICIENTS"

@@ -22,3 +22,8 @@ No located normalized action applies an equal 1/3 frame average to Tr(F_a^2).
 - Full BHSM remains not complete.
 
 Run `python -m bhsm.interface gauge-trace-frame-average-attachment-v4-2 --format json`.
+
+<!-- BHSM_GAUGE_COFRAME_HODGE_V4_3 -->
+## v4.3 coframe/Hodge update
+
+The gauge basis is unspecified and Berger Hodge factors are not evaluated. No downstream status is promoted.

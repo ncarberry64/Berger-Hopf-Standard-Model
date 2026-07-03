@@ -1,0 +1,12 @@
+from .gauge_coframe_basis import audit_gauge_coframe_basis
+from .hodge_star_metric_factors import audit_hodge_star_metric_factors
+from .anisotropy_compatibility_update import audit_anisotropy_compatibility_update
+from .equal_orthonormal_coefficients import audit_equal_orthonormal_coefficients
+from .frame_average_update import audit_frame_average_update
+from .gauge_trace_attachment_update import audit_gauge_trace_attachment_update
+from .denominator_update import audit_denominator_update
+from .downstream_update import audit_downstream_update
+from .full_completion_update import audit_full_completion_update
+from .source_search import search_gauge_coframe_hodge_sources
+from .closure_report import build_gauge_coframe_hodge_report, gauge_coframe_hodge_report_to_markdown
+COMMAND_BUILDERS={"gauge-coframe-hodge-search":search_gauge_coframe_hodge_sources,"gauge-coframe-basis":audit_gauge_coframe_basis,"hodge-star-metric-factors":audit_hodge_star_metric_factors,"anisotropy-compatibility-update-v4-3":audit_anisotropy_compatibility_update,"equal-orthonormal-gauge-frame-coefficients":audit_equal_orthonormal_coefficients,"frame-average-update-v4-3":audit_frame_average_update,"gauge-trace-attachment-update-v4-3":audit_gauge_trace_attachment_update,"denominator-update-v4-3":audit_denominator_update,"downstream-coupling-update-v4-3":audit_downstream_update,"full-completion-update-v4-3":audit_full_completion_update,"gauge-coframe-hodge-report":build_gauge_coframe_hodge_report}

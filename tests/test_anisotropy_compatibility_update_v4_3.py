@@ -1,0 +1,2 @@
+from bhsm.interface.gauge_coframe_hodge.anisotropy_compatibility_update import audit_anisotropy_compatibility_update
+def test_compatibility_conditional(): assert audit_anisotropy_compatibility_update()["status"]=="CONDITIONAL_BERGER_ANISOTROPY_COMPATIBILITY"

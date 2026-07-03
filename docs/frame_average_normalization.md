@@ -22,3 +22,8 @@ Equal coefficients would still define a sum unless the action supplies the separ
 - Full BHSM remains not complete.
 
 Run `python -m bhsm.interface frame-average-normalization --format json`.
+
+<!-- BHSM_GAUGE_COFRAME_HODGE_V4_3 -->
+## v4.3 coframe/Hodge update
+
+The gauge basis is unspecified and Berger Hodge factors are not evaluated. No downstream status is promoted.
