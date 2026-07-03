@@ -1,0 +1,76 @@
+{
+  "action_attachment_status": "OPEN_MISSING_CASIMIR_SHELL_ACTION_ATTACHMENT",
+  "artifact_id": "BHSM_CASIMIR_SHELL_RESIDUE_V4_5",
+  "candidate_active_residues": {
+    "SU2": 2,
+    "SU3": 7,
+    "U1": 1
+  },
+  "candidate_derivation": {
+    "SU2": "dim(su(2))-1=2",
+    "SU3": "dim(su(3))-1=7",
+    "U1": "retain sole abelian amplitude channel"
+  },
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "The residues are coupling-normalization candidates, not gauge-boson counts or gauge-algebra dimensions, and remain action-gated.",
+  "empirical_inputs_used": false,
+  "frozen_predictions_changed": false,
+  "frozen_predictions_modified": false,
+  "gauge_algebra_dimensions": {
+    "SU2": 3,
+    "SU3": 8,
+    "U1": 1
+  },
+  "invalidations": [
+    "Direct classical Yang-Mills density alone does not derive w=(1,2,7); it sees the radial norm R_i^2, not the angular dimension dim(g_i)-1.",
+    "Raw Green covariance of A_i does not scale as Weyl mode counting; the density belongs to whitened modes B_i=L_i^(1/2)A_i.",
+    "A fixed rank-7 SU(3) subalgebra or projector is not the primitive object; the candidate is the field-dependent tangent residue of the adjoint Casimir shell.",
+    "Leading Weyl density alone does not produce physical running; Z_i, lower spectral corrections, and an action-selected rho_i(mu) remain open."
+  ],
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "official_prediction_logic_changed": false,
+  "official_prediction_logic_modified": false,
+  "open_gates": [
+    "OPEN_MISSING_CASIMIR_SHELL_ACTION_ATTACHMENT",
+    "OPEN_MISSING_SECTOR_BOUNDARY_OPERATOR_L_i",
+    "OPEN_MISSING_WHITENED_BOUNDARY_OPERATOR_ACTION_SOURCE",
+    "OPEN_MISSING_SPECTRAL_COVARIANCE_SOURCE",
+    "OPEN_MISSING_INVERSE_COVARIANCE_ACTION_ATTACHMENT",
+    "OPEN_MISSING_SPECTRAL_CORRECTION_Z_i",
+    "OPEN_MISSING_ACTION_SELECTED_RHO_i_OF_MU",
+    "OPEN_MISSING_FRAME_AVERAGE_NORMALIZATION",
+    "OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT",
+    "OPEN_MISSING_ALPHA_I_ACTION_DERIVATION",
+    "OPEN_MISSING_G2_BH_ACTION_SOURCE",
+    "OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE",
+    "CKM_EXPONENT_NOT_DERIVED",
+    "FULL_BHSM_NOT_COMPLETE"
+  ],
+  "pdg_reference_values_used": false,
+  "physics_validation_claimed": false,
+  "radial_angular_split_status": "RADIAL_ANGULAR_ADJOINT_SPLIT_CONDITIONAL",
+  "residue_table": {
+    "SU2": {
+      "candidate_active_residue": 2,
+      "candidate_lambda_reference": 0.03377372788077926,
+      "gauge_algebra_dimension": 3,
+      "is_gauge_boson_count": false
+    },
+    "SU3": {
+      "candidate_active_residue": 7,
+      "candidate_lambda_reference": 0.1182080475827274,
+      "gauge_algebra_dimension": 8,
+      "is_gauge_boson_count": false
+    },
+    "U1": {
+      "candidate_active_residue": 1,
+      "candidate_lambda_reference": 0.01688686394038963,
+      "gauge_algebra_dimension": 1,
+      "is_gauge_boson_count": false
+    }
+  },
+  "status": "CASIMIR_SHELL_RESIDUE_STRONG_CANDIDATE",
+  "w_calibration_used": false
+}
