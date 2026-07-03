@@ -258,3 +258,36 @@ gauge trace attachment, and the gauge denominator remain open.
 - The CKM coefficient value remains open unless g2_BH is action-derived.
 - The CKM exponent remains not derived.
 - Full BHSM remains not complete unless all action-normalization and scale gates close.
+
+<!-- BHSM_BERGER_FRAME_WEIGHTING_V4_2 -->
+### v4.2 theorem ladder
+
+| Gate | Status |
+| --- | --- |
+| Equal frame weighting | `OPEN_MISSING_EQUAL_FRAME_WEIGHTING` |
+| Frame-average normalization | `OPEN_MISSING_FRAME_AVERAGE_NORMALIZATION` |
+| Berger anisotropy compatibility | `CONDITIONAL_BERGER_ANISOTROPY_COMPATIBILITY` |
+| Gauge trace frame-average attachment | `OPEN_MISSING_GAUGE_TRACE_FRAME_AVERAGE_ATTACHMENT` |
+| Gauge denominator | `OPEN_MISSING_GAUGE_COUPLING_VOLUME_DENOMINATOR` |
+| Universal gauge quantum | `OPEN_MISSING_UNIVERSAL_GAUGE_COUPLING_QUANTUM` |
+| Gauge action attachment | `OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT` |
+| alpha_i | `OPEN_MISSING_ALPHA_I_ACTION_DERIVATION` |
+| g2_BH | `OPEN_MISSING_G2_BH_ACTION_SOURCE` |
+| CKM value | `OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE` |
+| CKM exponent | `not_derived` |
+| Full completion | `FULL_BHSM_NOT_COMPLETE` |
+
+## Berger frame weighting v4.2
+
+Equal weighting and frame-average normalization remain open. Berger anisotropy compatibility is
+conditional on an action-selected orthonormal gauge coframe. Gauge attachment and all downstream
+coupling gates remain open.
+
+- Three artifact-backed Berger frame directions do not by themselves imply equal weighting.
+- Equal weighting does not by itself imply average normalization by 1/3.
+- Average normalization does not by itself attach to gauge trace densities.
+- Berger anisotropy must be checked before equal frame averaging can be promoted.
+- The denominator 1/[3 Vol(S³)] remains open unless equal frame averaging, unit-volume normalization, and gauge-trace attachment are supported.
+- The gauge coupling quantum remains open unless the denominator is action-attached.
+- α_i, g2_BH, CKM coefficient value, and CKM exponent remain open unless downstream action gates close.
+- Full BHSM remains not complete.

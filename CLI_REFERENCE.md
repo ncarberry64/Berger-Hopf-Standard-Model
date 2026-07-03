@@ -302,3 +302,37 @@ gauge trace attachment, and the gauge denominator remain open.
 - The CKM coefficient value remains open unless g2_BH is action-derived.
 - The CKM exponent remains not derived.
 - Full BHSM remains not complete unless all action-normalization and scale gates close.
+
+<!-- BHSM_BERGER_FRAME_WEIGHTING_V4_2 -->
+### v4.2 Berger frame-weighting commands
+
+```bash
+python -m bhsm.interface berger-frame-weighting-search --format json
+python -m bhsm.interface equal-frame-weighting --format json
+python -m bhsm.interface frame-average-normalization --format json
+python -m bhsm.interface berger-anisotropy-compatibility --format json
+python -m bhsm.interface gauge-trace-frame-average-attachment-v4-2 --format json
+python -m bhsm.interface gauge-denominator-update-v4-2 --format json
+python -m bhsm.interface universal-quantum-update-v4-2 --format json
+python -m bhsm.interface gauge-action-attachment-update-v4-2 --format json
+python -m bhsm.interface alpha-i-update-v4-2 --format json
+python -m bhsm.interface g2-update-v4-2 --format json
+python -m bhsm.interface ckm-value-update-v4-2 --format json
+python -m bhsm.interface full-completion-update-v4-2 --format json
+python -m bhsm.interface berger-frame-weighting-report --format markdown
+```
+
+## Berger frame weighting v4.2
+
+Equal weighting and frame-average normalization remain open. Berger anisotropy compatibility is
+conditional on an action-selected orthonormal gauge coframe. Gauge attachment and all downstream
+coupling gates remain open.
+
+- Three artifact-backed Berger frame directions do not by themselves imply equal weighting.
+- Equal weighting does not by itself imply average normalization by 1/3.
+- Average normalization does not by itself attach to gauge trace densities.
+- Berger anisotropy must be checked before equal frame averaging can be promoted.
+- The denominator 1/[3 Vol(S³)] remains open unless equal frame averaging, unit-volume normalization, and gauge-trace attachment are supported.
+- The gauge coupling quantum remains open unless the denominator is action-attached.
+- α_i, g2_BH, CKM coefficient value, and CKM exponent remain open unless downstream action gates close.
+- Full BHSM remains not complete.

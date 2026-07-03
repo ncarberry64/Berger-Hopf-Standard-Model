@@ -24,3 +24,10 @@ Even a geometric frame average would not normalize gauge couplings unless the ga
 - Full BHSM remains not complete unless all action-normalization and scale gates close.
 
 Run `python -m bhsm.interface gauge-trace-frame-average-attachment --format json`.
+
+<!-- BHSM_BERGER_FRAME_WEIGHTING_V4_2 -->
+## v4.2 frame-weighting update
+
+The orthonormal-coframe compatibility route is conditional. No action-selected equal weights,
+factor `1/3`, or gauge trace-density attachment was located, so the denominator and couplings remain open.
+See [Berger anisotropy compatibility](berger_anisotropy_compatibility.md).
