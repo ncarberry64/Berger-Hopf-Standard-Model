@@ -42,3 +42,8 @@ See [Berger anisotropy compatibility](berger_anisotropy_compatibility.md).
 ## v4.3 coframe/Hodge update
 
 The gauge basis is unspecified and Berger Hodge factors are not evaluated. No downstream status is promoted.
+
+<!-- BHSM_BERGER_HODGE_COMPONENT_V4_4 -->
+## v4.4 Berger Hodge update
+
+Raw Berger and orthonormal Hodge components are now explicit conditionally. This does not select the gauge-action basis or promote any normalization or coupling status.

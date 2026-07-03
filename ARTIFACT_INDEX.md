@@ -150,3 +150,16 @@ Gauge coframe basis remains open; Hodge-star metric dependence is conditional. E
 - Equal orthonormal coefficients do not imply average normalization.
 - Average normalization does not imply gauge trace attachment.
 - Gauge couplings, CKM coefficient value, and full BHSM completion remain open unless downstream gates close.
+
+<!-- BHSM_BERGER_HODGE_COMPONENT_V4_4 -->
+## Berger Hodge component map v4.4
+
+The explicit component map is conditionally derived from the Berger metric and chosen orientation. Gauge-action coframe selection, equal action coefficients, frame averaging, attachment, denominator, and downstream couplings remain open.
+
+- An explicit Berger Hodge-star component map is distinct from selecting the gauge-action coframe basis.
+- The orthonormal coframe e^a absorbs Berger metric scale factors, while raw sigma_a components retain anisotropic Hodge factors.
+- A component Hodge map does not by itself imply equal gauge-frame coefficients.
+- Equal coefficients do not by themselves imply average normalization by 1/3.
+- Gauge trace Hodge expansion does not by itself derive gauge couplings.
+- The denominator 1/[3 Vol(S^3)] remains open unless frame averaging, unit volume normalization, and gauge-action attachment are all supported.
+- alpha_i, g2_BH, CKM coefficient value, CKM exponent, and full BHSM completion remain open unless downstream gates close.

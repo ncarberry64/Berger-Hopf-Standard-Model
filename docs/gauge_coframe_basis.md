@@ -15,3 +15,8 @@ The repository does not state whether gauge-field components use the raw Berger 
 - Gauge couplings, CKM coefficient value, and full BHSM completion remain open unless downstream gates close.
 
 Run `python -m bhsm.interface gauge-coframe-basis --format json`.
+
+<!-- BHSM_BERGER_HODGE_COMPONENT_V4_4 -->
+## v4.4 Berger Hodge update
+
+Raw Berger and orthonormal Hodge components are now explicit conditionally. This does not select the gauge-action basis or promote any normalization or coupling status.

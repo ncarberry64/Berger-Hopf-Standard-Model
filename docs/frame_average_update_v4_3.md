@@ -15,3 +15,8 @@ Equal orthonormal coefficients would define a sum, not division by three.
 - Gauge couplings, CKM coefficient value, and full BHSM completion remain open unless downstream gates close.
 
 Run `python -m bhsm.interface frame-average-update-v4-3 --format json`.
+
+<!-- BHSM_BERGER_HODGE_COMPONENT_V4_4 -->
+## v4.4 Berger Hodge update
+
+Raw Berger and orthonormal Hodge components are now explicit conditionally. This does not select the gauge-action basis or promote any normalization or coupling status.

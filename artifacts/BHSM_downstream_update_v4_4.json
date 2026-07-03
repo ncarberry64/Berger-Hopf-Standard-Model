@@ -1,0 +1,41 @@
+{
+  "alpha_i_status": "OPEN_MISSING_ALPHA_I_ACTION_DERIVATION",
+  "blocking_conditions": [
+    "all downstream action gates"
+  ],
+  "candidate_formula": "alpha_i=w_i/(6*pi^2); g2_BH and C_CKM conditional only",
+  "charged_mass_fitting_used": false,
+  "ckm_exponent_status": "not_derived",
+  "ckm_fitting_used": false,
+  "ckm_value_status": "OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE",
+  "claim_boundary": "No downstream coupling promotes from a component Hodge map.",
+  "dependencies": [
+    "gauge normalization chain"
+  ],
+  "empirical_inputs_used": false,
+  "evidence_against": [
+    "denominator, weights, k, and attachment remain open"
+  ],
+  "evidence_for": [
+    "registry forms remain artifact-backed"
+  ],
+  "frozen_predictions_changed": false,
+  "g2_status": "OPEN_MISSING_G2_BH_ACTION_SOURCE",
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "official_prediction_logic_changed": false,
+  "orientation_convention": "positive e1 wedge e2 wedge e3; reversing orientation flips all Hodge signs",
+  "orthonormal_formula": "*(e1 wedge e2)=e3; *(e2 wedge e3)=e1; *(e3 wedge e1)=e2",
+  "orthonormal_map": "*(e1 wedge e2)=e3; *(e2 wedge e3)=e1; *(e3 wedge e1)=e2",
+  "pdg_reference_values_used": false,
+  "raw_berger_formula": "*(sigma1 wedge sigma2)=(r_fiber/r_base^2)sigma3; *(sigma2 wedge sigma3)=(1/r_fiber)sigma1; *(sigma3 wedge sigma1)=(1/r_fiber)sigma2",
+  "raw_berger_map": "*(sigma1 wedge sigma2)=(r_fiber/r_base^2)sigma3; *(sigma2 wedge sigma3)=(1/r_fiber)sigma1; *(sigma3 wedge sigma1)=(1/r_fiber)sigma2",
+  "scale_factors": {
+    "e1": "r_base sigma1",
+    "e2": "r_base sigma2",
+    "e3": "r_fiber sigma3"
+  },
+  "sign_convention": "epsilon_123=+1 in the selected orientation",
+  "status": "OPEN_DOWNSTREAM_GAUGE_AND_CKM_COUPLING_GATES",
+  "w_calibration_used": false
+}
