@@ -1,6 +1,8 @@
 *.pdf -text -diff
 *.png -text -diff
 *.gif -text -diff
+# Deterministic line endings for hash-audited source files.
+src/bhsm_model.py text eol=lf
 docs/frozen_predictions.md text eol=crlf
 docs/frozen_predictions.json text eol=crlf
 artifacts/CKM_no_fit_operator_output_v1.json text eol=crlf
