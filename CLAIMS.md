@@ -258,6 +258,7 @@ Statuses: `CASIMIR_SHELL_RESIDUE_STRONG_CANDIDATE`, `SPECTRAL_DENSITY_GAUGE_QUAN
 
 - `OPEN_MISSING_CASIMIR_SHELL_ACTION_ATTACHMENT`
 - `OPEN_MISSING_SECTOR_BOUNDARY_OPERATOR_L_i`
+
 - `OPEN_MISSING_WHITENED_BOUNDARY_OPERATOR_ACTION_SOURCE`
 - `OPEN_MISSING_SPECTRAL_COVARIANCE_SOURCE`
 - `OPEN_MISSING_INVERSE_COVARIANCE_ACTION_ATTACHMENT`
@@ -317,3 +318,12 @@ Statuses: `SECTOR_BOUNDARY_OPERATOR_CONDITIONAL_CANDIDATE`, `LAPLACE_TYPE_PRINCI
 - `FULL_BHSM_NOT_COMPLETE`
 - `OPEN_MISSING_CASIMIR_SHELL_ACTION_ATTACHMENT`
 - `OPEN_MISSING_SECTOR_BOUNDARY_OPERATOR_L_i`
+
+<!-- BHSM_GAUGE_COUPLING_ACTION_ATTACHMENT_KILLSCREEN_V4_7 -->
+## Gauge-coupling action-attachment kill screen v4.7
+
+Verdict: `ACTION_ATTACHMENT_BLOCKED` / `SPECTRAL_GAUGE_COUPLING_ATTACHMENT_BLOCKED`.
+
+The conditional spectral covariance `lambda_i=w_i/(6*pi^2)` is not the physical coupling `alpha_i`. No existing action excludes an unknown matching constant in `alpha_i=C lambda_i`; the registry, Gaussian identity, Yang-Mills convention, and leading Weyl density do not supply that proof.
+
+The spectral-gauge route must stop at this kill screen until a normalized gauge action fixes `alpha_i=lambda_i`. `g2_BH`, the CKM coefficient value and exponent, and full BHSM completion remain open.
