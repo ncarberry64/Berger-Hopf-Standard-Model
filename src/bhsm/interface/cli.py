@@ -234,6 +234,7 @@ from .berger_frame_weighting import (
 )
 from .gauge_coframe_hodge import COMMAND_BUILDERS as GAUGE_COFRAME_COMMAND_BUILDERS, gauge_coframe_hodge_report_to_markdown
 from .berger_hodge_component_map import COMMAND_BUILDERS as BERGER_HODGE_COMMAND_BUILDERS, berger_hodge_component_report_to_markdown
+from .rare_b_observable_map import rare_b_status_report, rare_b_status_to_markdown
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -648,6 +649,8 @@ def build_parser() -> argparse.ArgumentParser:
     for command in BERGER_HODGE_COMMAND_BUILDERS:
         channel = commands.add_parser(command, help=f"Render the BHSM v4.4 {command} audit")
         channel.add_argument("--format", choices=("json", "markdown"), default="json")
+    rare_b = commands.add_parser("rare-b-observable-map-status", help="Render the BHSM v5.1 rare-B observable-map scaffold")
+    rare_b.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
 
@@ -1369,6 +1372,13 @@ def main(argv: Sequence[str] | None = None) -> int:
         if args.format == "json": print(json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False))
         elif args.command == "berger-hodge-component-report": _print_unicode(berger_hodge_component_report_to_markdown(payload))
         else: _print_unicode(f"# {args.command.replace('-', ' ').title()}\n\n```json\n{json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False)}\n```")
+        return 0
+    if args.command == "rare-b-observable-map-status":
+        payload = rare_b_status_report()
+        if args.format == "json":
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        else:
+            _print_unicode(rare_b_status_to_markdown(payload))
         return 0
     if args.command in {
         "primitive-charged-incidence",
