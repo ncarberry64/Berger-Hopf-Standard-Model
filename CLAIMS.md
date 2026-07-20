@@ -345,3 +345,16 @@ The independent `g2_BH/sqrt(2)` charged-current convention is preserved without 
 No registry arithmetic, sphere analogy, normalized overlap, or leading Weyl coefficient derives `alpha_i`, `alpha_2`, `g2_BH`, the CKM coefficient value or exponent, physical running, or full BHSM completion.
 
 The next claim-limited phase is CKM relative transport transcription, kept separate from absolute charged-current normalization.
+
+<!-- BHSM_RARE_B_AFB_ZERO_FORWARD_PREDICTION_V5_0 -->
+## Rare-B A_FB zero forward-prediction kill screen v5.0
+
+Allowed: BHSM v5.0 identifies `B0 -> K*0 mu+ mu-` and `A_FB(q^2)` zero-crossing as a high-value forward-prediction target, defines the observable interface, and records a no-fit/pre-registration kill screen.
+
+Verdicts: `RARE_B_AFB_ZERO_PREDICTION_BLOCKED` and `RARE_B_MICROPLATEAU_NODE_PREDICTION_BLOCKED`.
+
+BHSM currently lacks an artifact-backed rare-B observable map from its geometric mode/transport structure to the `A_FB(q^2)` zero-crossing. No forward `q0^2` prediction is claimed.
+
+Not supported: a BHSM `A_FB` zero prediction, exact micro-plateau node coordinates, fitting existing rare-B measurements, solved gauge-coupling normalization, `alpha_i=lambda_i`, `alpha_2=lambda_2`, action-derived `g2_BH`, derived CKM coefficient value or exponent, institutional endorsement, QFT falsification, or full BHSM completion.
+
+Open: `OPEN_MISSING_RARE_B_OBSERVABLE_MAP`, `OPEN_MISSING_B_TO_S_MUMU_TRANSITION_OPERATOR`, `OPEN_MISSING_AFB_NULL_BALANCE_EQUATION`, `OPEN_MISSING_RARE_B_Q2_PHYSICAL_BRIDGE`, `OPEN_MISSING_WILSON_COEFFICIENT_INTERFACE`, `OPEN_MISSING_HADRONIC_FORM_FACTOR_INTERFACE`, and `OPEN_MISSING_EXACT_MICROPLATEAU_NODE_MAP`.

@@ -277,3 +277,12 @@ Doctrine: `docs/bhsm_ckm_relative_current_normalization_killscreen_v4_8.md`.
 | `artifacts/BHSM_coupling_bridge_blocker_consolidation_v4_9.json` | `COUPLING_BRIDGE_BLOCKED_PENDING_ACTION_PRINCIPLE` | Consolidates v4.5–v4.8, freezes both blocked bridges, and records the CKM transport pivot. |
 
 Doctrine: `docs/bhsm_coupling_bridge_blocker_consolidation_v4_9.md`.
+
+<!-- BHSM_RARE_B_AFB_ZERO_FORWARD_PREDICTION_V5_0 -->
+## Rare-B A_FB zero forward-prediction kill screen v5.0
+
+| Artifact | Verdict | Purpose |
+|---|---|---|
+| `artifacts/BHSM_rare_b_afb_zero_forward_prediction_v5_0.json` | `RARE_B_AFB_ZERO_PREDICTION_BLOCKED` / `RARE_B_MICROPLATEAU_NODE_PREDICTION_BLOCKED` | Tests whether existing BHSM artifacts produce a no-fit rare-B `A_FB(q^2)` zero prediction or exact micro-plateau node coordinates; records the missing observable map when they do not. |
+
+Doctrine: `docs/bhsm_rare_b_afb_zero_forward_prediction_v5_0.md`.

@@ -448,3 +448,18 @@ The v4.5–v4.8 spectral covariance, whitened operator, and CKM transport struct
 Operational pivot: `CKM_RELATIVE_TRANSPORT_TRANSCRIPTION`, with CKM geometry kept separate from charged-current normalization.
 
 Artifact: `artifacts/BHSM_coupling_bridge_blocker_consolidation_v4_9.json`.
+
+<!-- BHSM_RARE_B_AFB_ZERO_FORWARD_PREDICTION_V5_0 -->
+## Rare-B A_FB zero forward-prediction kill screen v5.0
+
+Primary verdict: `RARE_B_AFB_ZERO_PREDICTION_BLOCKED`.
+
+Secondary verdict: `RARE_B_MICROPLATEAU_NODE_PREDICTION_BLOCKED`.
+
+BHSM currently lacks an artifact-backed rare-B observable map from its geometric mode/transport structure to the `A_FB(q^2)` zero-crossing in `B0 -> K*0 mu+ mu-`. No forward `q0^2` prediction is claimed.
+
+Open: `OPEN_MISSING_RARE_B_OBSERVABLE_MAP`, `OPEN_MISSING_B_TO_S_MUMU_TRANSITION_OPERATOR`, `OPEN_MISSING_AFB_NULL_BALANCE_EQUATION`, `OPEN_MISSING_RARE_B_Q2_PHYSICAL_BRIDGE`, `OPEN_MISSING_WILSON_COEFFICIENT_INTERFACE`, `OPEN_MISSING_HADRONIC_FORM_FACTOR_INTERFACE`, `OPEN_MISSING_EXACT_MICROPLATEAU_NODE_MAP`, and `OPEN_MISSING_EXPERIMENTAL_BINNING_FALSIFICATION_PROTOCOL`.
+
+Preserved: `COUPLING_BRIDGE_BLOCKED_PENDING_ACTION_PRINCIPLE`, `ACTION_ATTACHMENT_BLOCKED`, `CKM_RELATIVE_CURRENT_NORMALIZATION_BLOCKED`, `OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT`, `OPEN_MISSING_ALPHA_I_ACTION_DERIVATION`, `OPEN_MISSING_ALPHA2_ACTION_DERIVATION`, `OPEN_MISSING_G2_BH_ACTION_SOURCE`, `OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE`, `CKM_EXPONENT_NOT_DERIVED`, and `FULL_BHSM_NOT_COMPLETE`.
+
+Artifact: `artifacts/BHSM_rare_b_afb_zero_forward_prediction_v5_0.json`.
