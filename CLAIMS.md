@@ -369,3 +369,16 @@ Verdict: `RARE_B_OBSERVABLE_MAP_INTERFACE_COMPLETE`.
 This verdict means observable conventions, transition-operator slots, Wilson-coefficient slots, hadronic/form-factor slots, a convention-aware `A_FB` numerator/denominator/null-balance interface, and the BHSM matching dependency graph are machine-readable. It is not a physical prediction and not a full derivation.
 
 Still not supported: BHSM-derived Wilson coefficients, BHSM-derived form factors, a BHSM physical `q^2` bridge in `GeV^2`, a numerical `q0^2`, exact rare-B node coordinates, solved gauge-coupling normalization, `alpha_i=lambda_i`, `alpha_2=lambda_2`, action-derived `g2_BH`, derived CKM coefficient value or exponent, institutional endorsement, QFT falsification, or full BHSM completion.
+
+<!-- BHSM_B_TO_S_MUMU_OPERATOR_MATCHING_KILLSCREEN_V5_2 -->
+## b -> s mu+ mu- operator-matching kill screen v5.2
+
+Allowed: BHSM v5.2 audits whether existing BHSM artifacts produce a normalized, basis-explicit `b -> s mu+ mu-` transition-operator matching map and records the first missing physical matching edge.
+
+Verdict: `B_TO_S_MUMU_OPERATOR_MATCHING_BLOCKED`.
+
+Claim-safe conclusion: BHSM v5.2 does not derive a physical `b -> s mu+ mu-` transition operator. The kill screen identifies the earliest missing matching dependency while preserving the v5.1 observable-map interface. Numerical Wilson coefficients, `q0^2`, and exact node positions remain absent, and prediction claimed remains no.
+
+Still not supported: automatic FCNC generation, a tree-level `b-s` neutral current without a theorem, BHSM-derived `C7`, `C9`, or `C10`, Wilson coefficients from CKM alone, a loop factor from geometric resemblance, a physical `q^2` bridge, numerical `q0^2`, exact micro-plateau nodes, solved gauge-coupling normalization, derived `g2_BH`, derived `alpha_i`, derived CKM coefficient value or exponent, LHCb-anomaly explanation, QFT falsification, or full BHSM completion.
+
+Preserved: `ACTION_ATTACHMENT_BLOCKED`, `CKM_RELATIVE_CURRENT_NORMALIZATION_BLOCKED`, `COUPLING_BRIDGE_BLOCKED_PENDING_ACTION_PRINCIPLE`, `RARE_B_AFB_ZERO_PREDICTION_BLOCKED`, `RARE_B_MICROPLATEAU_NODE_PREDICTION_BLOCKED`, and `RARE_B_OBSERVABLE_MAP_INTERFACE_COMPLETE`.
