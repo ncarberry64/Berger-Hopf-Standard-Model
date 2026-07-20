@@ -301,3 +301,16 @@ Doctrine: `docs/bhsm_rare_b_afb_zero_forward_prediction_v5_0.md`.
 | `artifacts/BHSM_rare_b_observable_map_scaffold_verdict_v5_1.json` | `RARE_B_OBSERVABLE_MAP_INTERFACE_COMPLETE` | Final interface verdict with prediction kill screen and preserved blocked statuses. |
 
 Doctrine: `docs/bhsm_rare_b_observable_map_scaffold_v5_1.md`.
+
+<!-- BHSM_B_TO_S_MUMU_OPERATOR_MATCHING_KILLSCREEN_V5_2 -->
+## b -> s mu+ mu- operator-matching kill screen v5.2
+
+| Artifact | Status | Purpose |
+|---|---|---|
+| `artifacts/BHSM_rare_b_bhsm_operator_source_inventory_v5_2.json` | `RARE_B_OPERATOR_SOURCE_INVENTORY_ARTIFACTED` | Inventories candidate BHSM charged-current, neutral-response, CKM, action, current, and rare-B interface sources and records why none closes the physical transition operator. |
+| `artifacts/BHSM_b_to_s_mumu_transition_dependency_graph_v5_2.json` | `B_TO_S_MUMU_TRANSITION_DEPENDENCY_GRAPH_ARTIFACTED` | Encodes the operator-matching chain and marks the first open edge at the FCNC generation mechanism. |
+| `artifacts/BHSM_b_to_s_mumu_operator_matching_candidate_v5_2.json` | `B_TO_S_MUMU_OPERATOR_MATCHING_CANDIDATE_EMPTY_BLOCKED` | Records that no coherent BHSM-derived candidate survives the kill screen while preserving external `O7/O9/O10` convention slots. |
+| `artifacts/BHSM_b_to_s_mumu_operator_matching_audit_v5_2.json` | `B_TO_S_MUMU_OPERATOR_MATCHING_AUDIT_ARTIFACTED` | Answers the FCNC, current, chirality, action, loop, dimension, scale, Wilson, and prediction kill-screen questions independently. |
+| `artifacts/BHSM_b_to_s_mumu_operator_matching_verdict_v5_2.json` | `B_TO_S_MUMU_OPERATOR_MATCHING_BLOCKED` | Final v5.2 verdict, preserved statuses, new blockers, null Wilson outputs, and prediction kill screen. |
+
+Doctrine: `docs/bhsm_b_to_s_mumu_operator_matching_killscreen_v5_2.md`.

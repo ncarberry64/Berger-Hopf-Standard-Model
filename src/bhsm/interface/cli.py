@@ -235,6 +235,7 @@ from .berger_frame_weighting import (
 from .gauge_coframe_hodge import COMMAND_BUILDERS as GAUGE_COFRAME_COMMAND_BUILDERS, gauge_coframe_hodge_report_to_markdown
 from .berger_hodge_component_map import COMMAND_BUILDERS as BERGER_HODGE_COMMAND_BUILDERS, berger_hodge_component_report_to_markdown
 from .rare_b_observable_map import rare_b_status_report, rare_b_status_to_markdown
+from .b_to_s_mumu_operator_matching import b_to_s_mumu_status_report, b_to_s_mumu_status_to_markdown
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -651,6 +652,8 @@ def build_parser() -> argparse.ArgumentParser:
         channel.add_argument("--format", choices=("json", "markdown"), default="json")
     rare_b = commands.add_parser("rare-b-observable-map-status", help="Render the BHSM v5.1 rare-B observable-map scaffold")
     rare_b.add_argument("--format", choices=("json", "markdown"), default="json")
+    b_to_s = commands.add_parser("b-to-s-mumu-operator-matching-status", help="Render the BHSM v5.2 b -> s mu+ mu- operator-matching kill screen")
+    b_to_s.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
 
@@ -1379,6 +1382,13 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(json.dumps(payload, indent=2, sort_keys=True))
         else:
             _print_unicode(rare_b_status_to_markdown(payload))
+        return 0
+    if args.command == "b-to-s-mumu-operator-matching-status":
+        payload = b_to_s_mumu_status_report()
+        if args.format == "json":
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        else:
+            _print_unicode(b_to_s_mumu_status_to_markdown(payload))
         return 0
     if args.command in {
         "primitive-charged-incidence",

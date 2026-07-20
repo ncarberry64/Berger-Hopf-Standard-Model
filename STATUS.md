@@ -478,3 +478,22 @@ Open physical gates: `OPEN_MISSING_BHSM_TO_RARE_B_OPERATOR_MATCHING`, `OPEN_MISS
 Prediction remains blocked: `RARE_B_AFB_ZERO_PREDICTION_BLOCKED`; `RARE_B_MICROPLATEAU_NODE_PREDICTION_BLOCKED`; `prediction_claimed=false`.
 
 Command: `python -m bhsm.interface rare-b-observable-map-status --format markdown`.
+
+<!-- BHSM_B_TO_S_MUMU_OPERATOR_MATCHING_KILLSCREEN_V5_2 -->
+## b -> s mu+ mu- operator-matching kill screen v5.2
+
+Primary verdict: `B_TO_S_MUMU_OPERATOR_MATCHING_BLOCKED`.
+
+Earliest blocking dependency: `OPEN_MISSING_RARE_B_FCNC_GENERATION_MECHANISM`.
+
+BHSM v5.2 does not derive a physical `b -> s mu+ mu-` transition operator. The v5.1 observable-map interface remains complete and useful, but interface slots are not a BHSM transition-operator derivation.
+
+Validated: CKM geometry remains an artifact-backed relative flavor input; external `O7`, `O9`, and `O10` slots remain convention interfaces; the operator dependency graph is machine-readable.
+
+Invalidated/downgraded: CKM geometry alone is not a rare-B operator; generic neutral response is not an FCNC theorem; external EFT-basis compatibility is not a BHSM derivation; no tree-level `b-s` neutral current is allowed without an artifact-backed theorem.
+
+Open physical gates: `OPEN_MISSING_RARE_B_FCNC_GENERATION_MECHANISM`, `OPEN_MISSING_NORMALIZED_B_TO_S_QUARK_CURRENT`, `OPEN_MISSING_NORMALIZED_MUON_CURRENT_ATTACHMENT`, `OPEN_MISSING_RARE_B_OPERATOR_CHIRALITY_MAP`, `OPEN_MISSING_RARE_B_LOOP_MATCHING_PRINCIPLE`, `OPEN_MISSING_RARE_B_OPERATOR_ACTION_NORMALIZATION`, `OPEN_MISSING_RARE_B_OPERATOR_DIMENSIONFUL_BRIDGE`, and `OPEN_MISSING_RARE_B_RENORMALIZATION_SCALE_MAP`.
+
+Prediction remains blocked: `C7_BHSM=null`, `C9_BHSM=null`, `C10_BHSM=null`, `q0_squared_value=null`, `microplateau_node_coordinates=[]`, and `prediction_claimed=false`.
+
+Command: `python -m bhsm.interface b-to-s-mumu-operator-matching-status --format markdown`.

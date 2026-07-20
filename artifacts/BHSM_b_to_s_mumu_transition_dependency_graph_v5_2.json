@@ -1,0 +1,183 @@
+{
+  "artifact": "BHSM_b_to_s_mumu_transition_dependency_graph_v5_2",
+  "channel": "b -> s mu+ mu-",
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "Operator-matching kill screen only. BHSM v5.2 does not derive a physical b -> s mu+ mu- transition operator, Wilson coefficients, q0^2, or exact rare-B node coordinates.",
+  "edges": [
+    {
+      "blocking_dependency": "OPEN_MISSING_NORMALIZED_B_TO_S_QUARK_CURRENT",
+      "map_name": "load artifact-backed CKM geometry",
+      "normalization_transformation": "none; relative geometry only",
+      "provenance": "artifacts/CKM_no_fit_operator_output_v1.json",
+      "source": "BHSM flavor geometry",
+      "status": "ARTIFACT_BACKED_INPUT_ONLY",
+      "target": "CKM/relative transport",
+      "units_transformation": "dimensionless -> dimensionless"
+    },
+    {
+      "blocking_dependency": "OPEN_MISSING_NORMALIZED_B_TO_S_QUARK_CURRENT",
+      "map_name": "select rare-B flavor transition",
+      "normalization_transformation": "absolute current normalization absent",
+      "provenance": "v5.1 dependency graph; v5.2 audit",
+      "source": "CKM/relative transport",
+      "status": "OPEN",
+      "target": "b -> s flavor selector",
+      "units_transformation": "dimensionless -> dimensionless"
+    },
+    {
+      "blocking_dependency": "OPEN_MISSING_RARE_B_FCNC_GENERATION_MECHANISM",
+      "map_name": "generate neutral semileptonic flavor change",
+      "normalization_transformation": "none closed",
+      "provenance": "v5.2 kill screen",
+      "source": "b -> s flavor selector",
+      "status": "BLOCKED",
+      "target": "FCNC generation mechanism",
+      "units_transformation": "none closed"
+    },
+    {
+      "blocking_dependency": "OPEN_MISSING_NORMALIZED_B_TO_S_QUARK_CURRENT",
+      "map_name": "construct b-to-s quark bilinear",
+      "normalization_transformation": "not available",
+      "provenance": "v5.2 kill screen",
+      "source": "FCNC generation mechanism",
+      "status": "BLOCKED",
+      "target": "quark current",
+      "units_transformation": "not available"
+    },
+    {
+      "blocking_dependency": "OPEN_MISSING_NORMALIZED_MUON_CURRENT_ATTACHMENT",
+      "map_name": "attach semileptonic lepton current",
+      "normalization_transformation": "not available",
+      "provenance": "v5.2 kill screen",
+      "source": "quark current",
+      "status": "BLOCKED",
+      "target": "muon current",
+      "units_transformation": "not available"
+    },
+    {
+      "blocking_dependency": "OPEN_MISSING_RARE_B_OPERATOR_CHIRALITY_MAP",
+      "map_name": "select vector/axial/dipole/chiral tensor type",
+      "normalization_transformation": "not BHSM-normalized",
+      "provenance": "external EFT slots exist in v5.1; BHSM derivation absent",
+      "source": "muon current",
+      "status": "BLOCKED",
+      "target": "Lorentz/chirality structure",
+      "units_transformation": "external convention only"
+    },
+    {
+      "blocking_dependency": "OPEN_MISSING_RARE_B_OPERATOR_ACTION_NORMALIZATION",
+      "map_name": "attach operator coefficient to normalized action",
+      "normalization_transformation": "not available",
+      "provenance": "v4.7-v4.9 blockers",
+      "source": "Lorentz/chirality structure",
+      "status": "BLOCKED",
+      "target": "action normalization",
+      "units_transformation": "not available"
+    },
+    {
+      "blocking_dependency": "OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT",
+      "map_name": "derive coefficient provenance",
+      "normalization_transformation": "lambda_i, alpha_i, g2_BH not derived",
+      "provenance": "v4.7 action attachment and v4.8 current normalization blockers",
+      "source": "action normalization",
+      "status": "BLOCKED",
+      "target": "gauge/current coefficient",
+      "units_transformation": "not available"
+    },
+    {
+      "blocking_dependency": "OPEN_MISSING_RARE_B_LOOP_MATCHING_PRINCIPLE",
+      "map_name": "derive tree/loop matching order and factors",
+      "normalization_transformation": "not available",
+      "provenance": "v5.2 kill screen",
+      "source": "gauge/current coefficient",
+      "status": "BLOCKED",
+      "target": "loop/order matching",
+      "units_transformation": "not available"
+    },
+    {
+      "blocking_dependency": "OPEN_MISSING_RARE_B_OPERATOR_DIMENSIONFUL_BRIDGE",
+      "map_name": "map geometric quantities to effective-Hamiltonian dimensions",
+      "normalization_transformation": "not available",
+      "provenance": "v5.1 q^2 bridge and neutral/unit blockers",
+      "source": "loop/order matching",
+      "status": "BLOCKED",
+      "target": "dimensionful scale",
+      "units_transformation": "dimensionless -> physical units not closed"
+    },
+    {
+      "blocking_dependency": "OPEN_MISSING_RARE_B_RENORMALIZATION_SCALE_MAP",
+      "map_name": "define mu-dependent matching",
+      "normalization_transformation": "not available",
+      "provenance": "v5.2 kill screen",
+      "source": "dimensionful scale",
+      "status": "BLOCKED",
+      "target": "renormalization scale",
+      "units_transformation": "not available"
+    },
+    {
+      "blocking_dependency": "OPEN_MISSING_BHSM_TO_RARE_B_OPERATOR_MATCHING",
+      "map_name": "project into O7/O9/O10 or equivalent",
+      "normalization_transformation": "not BHSM-normalized",
+      "provenance": "v5.1 external interface only",
+      "source": "renormalization scale",
+      "status": "BLOCKED",
+      "target": "operator-basis projection",
+      "units_transformation": "external convention only"
+    },
+    {
+      "blocking_dependency": "OPEN_MISSING_BHSM_WILSON_COEFFICIENT_DERIVATION",
+      "map_name": "populate C7/C9/C10 slots",
+      "normalization_transformation": "not available",
+      "provenance": "v5.1 Wilson slots",
+      "source": "operator-basis projection",
+      "status": "BLOCKED",
+      "target": "Wilson-coefficient slot",
+      "units_transformation": "not available"
+    },
+    {
+      "blocking_dependency": "RARE_B_AFB_ZERO_PREDICTION_BLOCKED",
+      "map_name": "feed observable interface",
+      "normalization_transformation": "hadronic and q^2 gates open",
+      "provenance": "artifacts/BHSM_rare_b_observable_map_scaffold_verdict_v5_1.json",
+      "source": "Wilson-coefficient slot",
+      "status": "BLOCKED_DOWNSTREAM",
+      "target": "v5.1 observable map",
+      "units_transformation": "external observable units remain open"
+    }
+  ],
+  "empirical_inputs_used": false,
+  "first_open_edge": {
+    "blocking_dependency": "OPEN_MISSING_RARE_B_FCNC_GENERATION_MECHANISM",
+    "source": "b -> s flavor selector",
+    "target": "FCNC generation mechanism"
+  },
+  "frozen_predictions_changed": false,
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "nodes": [
+    "BHSM flavor geometry",
+    "CKM/relative transport",
+    "b -> s flavor selector",
+    "FCNC generation mechanism",
+    "quark current",
+    "muon current",
+    "Lorentz/chirality structure",
+    "action normalization",
+    "gauge/current coefficient",
+    "loop/order matching",
+    "dimensionful scale",
+    "renormalization scale",
+    "operator-basis projection",
+    "Wilson-coefficient slot",
+    "v5.1 observable map"
+  ],
+  "official_prediction_logic_changed": false,
+  "pdg_reference_values_used": false,
+  "physics_model_logic_changed": false,
+  "primary_verdict": "B_TO_S_MUMU_OPERATOR_MATCHING_BLOCKED",
+  "rare_b_data_fitting_used": false,
+  "status": "B_TO_S_MUMU_TRANSITION_DEPENDENCY_GRAPH_ARTIFACTED",
+  "version": "v5.2",
+  "w_calibration_used": false
+}
