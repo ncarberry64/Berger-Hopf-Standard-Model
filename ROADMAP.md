@@ -289,3 +289,10 @@ Downstream `alpha_i`, `g2_BH`, CKM, running, and full-completion gates remain op
 `CKM_RELATIVE_CURRENT_NORMALIZATION_BLOCKED`: do not reopen the weak spectral bridge through a formal `S²` analogy. Resume only if an artifact-backed charged-current geometry and inner product derive both the relevant relative measure and `c_rel^2=4*pi`, while preserving the separate `1/sqrt(2)` convention.
 
 The v4.7 action-attachment block and all downstream coupling, CKM, running, and completion gates remain open.
+
+<!-- BHSM_COUPLING_BRIDGE_BLOCKER_CONSOLIDATION_V4_9 -->
+## Coupling-bridge blocker consolidation v4.9
+
+The coupling bridge is blocked pending a new action/current principle. Stop spectral-gauge normalization work unless new artifact-backed action evidence appears.
+
+Recommended pivot: transcribe existing CKM relative transport and flavor geometry while maintaining separate CKM-geometry and charged-current-normalization ledgers. Reconnect them only after a real normalization theorem.

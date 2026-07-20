@@ -336,3 +336,12 @@ Verdict: `CKM_RELATIVE_CURRENT_NORMALIZATION_BLOCKED`.
 The bounded CKM charged-current target and unitary overlap structure do not provide an absolute current normalization. No CKM artifact derives `c_rel^2=4*pi` or attaches a `4*pi` relative angular measure to the charged-current inner product. The conditional identity `alpha_2=[c_rel^2/(4*pi)]lambda_2` does not close `alpha_2=lambda_2`.
 
 The independent `g2_BH/sqrt(2)` charged-current convention is preserved without absorbing or double-counting its factor in `c_rel`. Weak coupling, CKM value/exponent, running, and full completion remain open.
+
+<!-- BHSM_COUPLING_BRIDGE_BLOCKER_CONSOLIDATION_V4_9 -->
+## Coupling-bridge blocker consolidation v4.9
+
+`COUPLING_BRIDGE_BLOCKED_PENDING_ACTION_PRINCIPLE`: candidate spectral densities and CKM transport are not physical coupling derivations. `ACTION_ATTACHMENT_BLOCKED` and `CKM_RELATIVE_CURRENT_NORMALIZATION_BLOCKED` remain in force.
+
+No registry arithmetic, sphere analogy, normalized overlap, or leading Weyl coefficient derives `alpha_i`, `alpha_2`, `g2_BH`, the CKM coefficient value or exponent, physical running, or full BHSM completion.
+
+The next claim-limited phase is CKM relative transport transcription, kept separate from absolute charged-current normalization.

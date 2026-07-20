@@ -176,4 +176,4 @@ Start with [docs/README.md](docs/README.md) for the documentation map and
 ## Citation
 Use [CITATION.cff](CITATION.cff) for current citation metadata.
 ## v2.9 CKM Coefficient Form/Value Split
-The interface coefficient form `C_CKM=g2_BH/sqrt(2)` is artifact-backed, while `g2_BH` remains a runtime input rather than an action-derived value. The stacked v4.8 kill screen finds `CKM_RELATIVE_CURRENT_NORMALIZATION_BLOCKED`: CKM transport candidates do not derive an `S^2/CP^1` current space, `c_rel^2=4*pi`, or the weak bridge `alpha_2=lambda_2`. The v4.7 action-attachment block remains in force; CKM value/exponent, running, and full completion remain open.
+The interface coefficient form `C_CKM=g2_BH/sqrt(2)` is artifact-backed, while `g2_BH` remains a runtime input rather than an action-derived value. The stacked v4.9 consolidation declares `COUPLING_BRIDGE_BLOCKED_PENDING_ACTION_PRINCIPLE`: both direct spectral action attachment and CKM-relative current normalization remain blocked. Work pivots to CKM relative transport transcription, kept separate from weak-coupling normalization; CKM value/exponent, running, and full completion remain open.
