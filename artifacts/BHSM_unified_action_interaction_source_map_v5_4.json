@@ -1,0 +1,65 @@
+{
+  "artifact": "BHSM_unified_action_interaction_source_map_v5_4",
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "Unified symbolic construction only. Coefficients and the physical scale remain symbolic/provisional where not derived; no frozen prediction, gauge coupling, Wilson coefficient, rare-B prediction, or full BHSM completion is promoted.",
+  "empirical_inputs_used": false,
+  "fcnc_status_preserved": "RARE_B_FCNC_GENERATION_MECHANISM_BLOCKED",
+  "frozen_predictions_changed": false,
+  "interactions": [
+    {
+      "generated_by_variation": "Psi and A_SU2 variations",
+      "interaction": "charged-current transitions",
+      "missing_for_physical_closure": "charged-current normalization, orientation, and action coefficient",
+      "source_term": "g_ch Re <J_ch(P_gen Psi,A_SU2), X_ch(P_ch Psi)>",
+      "status": "SUPPORTED_STRUCTURALLY_OPEN_NORMALIZATION"
+    },
+    {
+      "generated_by_variation": "N, Phi, and h variations",
+      "interaction": "neutral-current response",
+      "missing_for_physical_closure": "neutral response normalization and physical scale",
+      "source_term": "g_neu <N, R_neu(Phi,h,rho)> + 1/2 <N,K_neu N>",
+      "status": "SUPPORTED_STRUCTURALLY_OPEN_NORMALIZATION"
+    },
+    {
+      "generated_by_variation": "fermion/gauge variations",
+      "interaction": "sector mixing",
+      "missing_for_physical_closure": "action-selected sector projector coupling coefficients",
+      "source_term": "projector-constrained D_BH(h,A,P) and interaction source terms",
+      "status": "CONDITIONAL_PROJECTOR_STRUCTURE"
+    },
+    {
+      "generated_by_variation": "fermion charged-current variation",
+      "interaction": "generation mixing",
+      "missing_for_physical_closure": "absolute current normalization and CKM coefficient value/exponent",
+      "source_term": "P_gen and CKM/transport-labeled charged current source",
+      "status": "CONDITIONAL_RELATIVE_INPUT_ONLY"
+    },
+    {
+      "generated_by_variation": "requires inverse Hessian/response kernel",
+      "interaction": "current-current composition",
+      "missing_for_physical_closure": "intermediate response kernel and induced-effective-action theorem",
+      "source_term": "second variation or integration-out of charged/neutral sources",
+      "status": "NOT_CLOSED"
+    },
+    {
+      "generated_by_variation": "requires invertible controlled block",
+      "interaction": "mode-mediated effective interactions",
+      "missing_for_physical_closure": "domain, zero-mode projection, and scale normalization",
+      "source_term": "Schur complement of quadratic block Hessian",
+      "status": "CONDITIONAL_TEMPLATE_ONLY"
+    }
+  ],
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "official_prediction_logic_changed": false,
+  "pdg_reference_values_used": false,
+  "physics_model_logic_changed": false,
+  "primary_result": "UNIFIED_BHSM_ACTION_CONSTRUCTED_CONDITIONALLY",
+  "rare_b_data_fitting_used": false,
+  "rare_b_phenomenology_pursued": false,
+  "sprint": "bhsm-unified-dynamical-action-construction-v5-4",
+  "status": "UNIFIED_ACTION_INTERACTION_SOURCE_MAP_CONSTRUCTED_CONDITIONALLY",
+  "version": "v5.4",
+  "w_calibration_used": false
+}
