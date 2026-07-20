@@ -139,6 +139,7 @@ The current minimal-action theory dictionary is documented in
 - [CKM adjoint-pair selection](ckm_adjoint_pair_selection.md)
 - [CKM channel alternative resolution](ckm_channel_alternative_resolution.md)
 - [CKM bidirectional log-transport application](ckm_bidirectional_log_transport_application.md)
+- [Rare-B A_FB zero forward-prediction kill screen v5.0](bhsm_rare_b_afb_zero_forward_prediction_v5_0.md)
 
 ## CP O_int Sprint Docs
 
