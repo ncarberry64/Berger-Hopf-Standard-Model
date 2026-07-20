@@ -142,6 +142,7 @@ The current minimal-action theory dictionary is documented in
 - [Rare-B A_FB zero forward-prediction kill screen v5.0](bhsm_rare_b_afb_zero_forward_prediction_v5_0.md)
 - [Rare-B observable map scaffold v5.1](bhsm_rare_b_observable_map_scaffold_v5_1.md)
 - [b -> s mu+ mu- operator-matching kill screen v5.2](bhsm_b_to_s_mumu_operator_matching_killscreen_v5_2.md)
+- [Rare-B FCNC generation-mechanism kill screen v5.3](bhsm_rare_b_fcnc_generation_mechanism_v5_3.md)
 
 ## CP O_int Sprint Docs
 

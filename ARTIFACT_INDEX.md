@@ -314,3 +314,18 @@ Doctrine: `docs/bhsm_rare_b_observable_map_scaffold_v5_1.md`.
 | `artifacts/BHSM_b_to_s_mumu_operator_matching_verdict_v5_2.json` | `B_TO_S_MUMU_OPERATOR_MATCHING_BLOCKED` | Final v5.2 verdict, preserved statuses, new blockers, null Wilson outputs, and prediction kill screen. |
 
 Doctrine: `docs/bhsm_b_to_s_mumu_operator_matching_killscreen_v5_2.md`.
+
+<!-- BHSM_RARE_B_FCNC_GENERATION_MECHANISM_V5_3 -->
+## Rare-B FCNC generation-mechanism kill screen v5.3
+
+| Artifact | Status | Purpose |
+|---|---|---|
+| `artifacts/BHSM_rare_b_neutral_current_flavor_structure_audit_v5_3.json` | `RARE_B_NEUTRAL_CURRENT_FLAVOR_STRUCTURE_AUDIT_ARTIFACTED` | Audits neutral-current flavor structure and records that no tree-level action-backed `b-s` neutral current is derived. |
+| `artifacts/BHSM_rare_b_charged_current_pair_composition_v5_3.json` | `RARE_B_CHARGED_CURRENT_PAIR_COMPOSITION_BLOCKED` | Records the missing two-insertion charged-current composition needed upstream of an induced FCNC kernel. |
+| `artifacts/BHSM_rare_b_intermediate_response_inventory_v5_3.json` | `RARE_B_INTERMEDIATE_RESPONSE_KERNEL_ABSENT` | Inventories possible response/kernel objects and records why none supplies rare-B intermediate propagation. |
+| `artifacts/BHSM_rare_b_fcnc_generation_candidate_v5_3.json` | `RARE_B_FCNC_GENERATION_CANDIDATE_EMPTY_BLOCKED` | Records the empty FCNC-generation candidate with explicit open gates and null prediction state. |
+| `artifacts/BHSM_rare_b_gim_like_cancellation_audit_v5_3.json` | `RARE_B_GIM_LIKE_CANCELLATION_THEOREM_ABSENT` | Audits degeneracy-cancellation requirements and rejects CKM unitarity alone as a full weighted-response theorem. |
+| `artifacts/BHSM_rare_b_fcnc_generation_dependency_graph_v5_3.json` | `RARE_B_FCNC_GENERATION_DEPENDENCY_GRAPH_ARTIFACTED` | Extends the v5.2 graph upstream with explicit FCNC-generation mechanism nodes and the first open edge. |
+| `artifacts/BHSM_rare_b_fcnc_generation_mechanism_verdict_v5_3.json` | `RARE_B_FCNC_GENERATION_MECHANISM_BLOCKED` | Final v5.3 verdict, preserved statuses, refined blockers, null Wilson outputs, and prediction kill screen. |
+
+Doctrine: `docs/bhsm_rare_b_fcnc_generation_mechanism_v5_3.md`.
