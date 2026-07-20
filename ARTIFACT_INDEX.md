@@ -259,3 +259,12 @@ Statuses: `SECTOR_BOUNDARY_OPERATOR_CONDITIONAL_CANDIDATE`, `LAPLACE_TYPE_PRINCI
 | `artifacts/BHSM_gauge_coupling_action_attachment_killscreen_v4_7.json` | `ACTION_ATTACHMENT_BLOCKED` | Tests all action-attachment escape routes and stops the spectral candidate from being promoted to physical `alpha_i`. |
 
 Doctrine: `docs/bhsm_gauge_coupling_action_attachment_killscreen_v4_7.md`.
+
+<!-- BHSM_CKM_RELATIVE_CURRENT_NORMALIZATION_KILLSCREEN_V4_8 -->
+## CKM-relative current normalization kill screen v4.8
+
+| Artifact | Verdict | Purpose |
+|---|---|---|
+| `artifacts/BHSM_ckm_relative_current_normalization_killscreen_v4_8.json` | `CKM_RELATIVE_CURRENT_NORMALIZATION_BLOCKED` | Audits whether CKM-relative geometry derives `c_rel^2=4*pi` and preserves the v4.7 block when it does not. |
+
+Doctrine: `docs/bhsm_ckm_relative_current_normalization_killscreen_v4_8.md`.

@@ -282,3 +282,10 @@ Statuses: `SECTOR_BOUNDARY_OPERATOR_CONDITIONAL_CANDIDATE`, `LAPLACE_TYPE_PRINCI
 `ACTION_ATTACHMENT_BLOCKED`: do not expand the spectral-gauge route further as a coupling derivation. Resume only if an artifact-backed normalized gauge action fixes the inverse-covariance coefficient exactly, excludes `alpha_i=C lambda_i`, and establishes `alpha_i=lambda_i` without registry lookup or fitting.
 
 Downstream `alpha_i`, `g2_BH`, CKM, running, and full-completion gates remain open.
+
+<!-- BHSM_CKM_RELATIVE_CURRENT_NORMALIZATION_KILLSCREEN_V4_8 -->
+## CKM-relative current normalization kill screen v4.8
+
+`CKM_RELATIVE_CURRENT_NORMALIZATION_BLOCKED`: do not reopen the weak spectral bridge through a formal `S²` analogy. Resume only if an artifact-backed charged-current geometry and inner product derive both the relevant relative measure and `c_rel^2=4*pi`, while preserving the separate `1/sqrt(2)` convention.
+
+The v4.7 action-attachment block and all downstream coupling, CKM, running, and completion gates remain open.
