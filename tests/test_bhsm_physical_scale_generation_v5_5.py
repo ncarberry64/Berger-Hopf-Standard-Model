@@ -93,7 +93,7 @@ def test_selected_scale_equation_follows_from_action_and_has_nonzero_solution():
     assert payload["status"] == "PHYSICAL_SCALE_EQUATION_DERIVED_CONDITIONALLY"
     assert payload["follows_from_stored_action"] is True
     assert payload["not_defined_by_declaration"] is True
-    assert payload["scale_equation"] == "dU_scale/dsigma = beta_scale sigma^3 - alpha_scale sigma = 0"
+    assert payload["scale_equation"] == "dU_scale/dsigma_scale = beta_scale sigma_scale^3 - alpha_scale sigma_scale = 0"
     assert payload["selected_nonzero_solution"] == "sqrt(alpha_scale/beta_scale)"
     assert "M_BH = M_* sqrt(alpha_scale/beta_scale)" in payload["absolute_scale_formula"]
 
@@ -185,7 +185,7 @@ def test_public_ledgers_include_v5_5_claim_boundary_and_open_gates():
     text = focused_text()
     assert "BHSM_PHYSICAL_SCALE_GENERATED_CONDITIONALLY" in text
     assert "OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR" in text
-    assert "OPEN_MISSING_SCALE_POTENTIAL_ACTION_SOURCE" in text
+    assert "OPEN_MISSING_SCALE_FUNCTIONAL_NUMERIC_INPUTS" in text
     assert "OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT" in text
     assert "python -m bhsm.interface physical-scale-generation-status --format markdown" in text
 

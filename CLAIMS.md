@@ -420,4 +420,15 @@ This means the action-supported reduced scale sector has an explicit stationary 
 
 Still not supported: treating a free radius as generated scale, relabeling dimensionless mode numbers/eigenvalue ratios/sector weights/normalized volume as a physical mass, using W calibration or measured masses to fix the scale, deriving `alpha_i`, deriving `g2_BH`, deriving the CKM coefficient value or exponent, emitting neutrino eV/GeV masses, predicting rare-B observables, or claiming full BHSM completion.
 
-Preserved: `OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR`, `OPEN_MISSING_SCALE_POTENTIAL_ACTION_SOURCE`, `OPEN_MISSING_PHYSICAL_SCALE_GENERATION_FOR_NUMERIC_UNITS`, `OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT`, `OPEN_MISSING_ALPHA_I_ACTION_DERIVATION`, `OPEN_MISSING_G2_BH_ACTION_SOURCE`, `OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE`, `CKM_EXPONENT_NOT_DERIVED`, `OPEN_MISSING_NEUTRAL_SCALE`, `OPEN_MISSING_NEUTRAL_ACTION_NORMALIZATION`, and `FULL_BHSM_NOT_COMPLETE`.
+Preserved: `OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR`, `OPEN_MISSING_SCALE_FUNCTIONAL_NUMERIC_INPUTS`, `OPEN_MISSING_PHYSICAL_SCALE_GENERATION_FOR_NUMERIC_UNITS`, `OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT`, `OPEN_MISSING_ALPHA_I_ACTION_DERIVATION`, `OPEN_MISSING_G2_BH_ACTION_SOURCE`, `OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE`, `CKM_EXPONENT_NOT_DERIVED`, `OPEN_MISSING_NEUTRAL_SCALE`, `OPEN_MISSING_NEUTRAL_ACTION_NORMALIZATION`, and `FULL_BHSM_NOT_COMPLETE`.
+
+<!-- BHSM_SCALAR_TOPOGRAPHIC_VACUUM_ACTION_DERIVATION_V5_6 -->
+## Scalar/topographic vacuum action derivation v5.6
+
+Allowed: BHSM v5.6 conditionally derives the scalar/topographic vacuum functional by projecting the scalar/topographic action `S_ST` onto a normalized scale mode `sigma_scale`. It updates v5.5 so `alpha_scale` and `beta_scale` are conditional action functionals, not free quartic placeholders.
+
+Result: `SCALAR_TOPOGRAPHIC_VACUUM_ACTION_DERIVED_CONDITIONALLY`.
+
+This means the order-parameter map, action decomposition, reduced vacuum functional, branch equation, Hessian/stability classification, v5.5 propagation update, and old curvature-threshold invalidation are artifacted. It does not mean the explicit `T` or `Phi` profile, thresholds `T_0` and `Phi_0`, boundary coefficient values, collar measure values, absolute unit anchor, physical masses, gauge couplings, CKM values, or full BHSM completion are derived.
+
+Still not supported: treating `sigma_scale` as the profile width, importing the Standard Model Higgs potential, keeping the old curvature-threshold mass gap after background substitution, using measured VEVs or masses to select coefficients, deriving `M_star`, deriving `alpha_i`, deriving `g2_BH`, deriving CKM coefficient value or exponent, emitting eV/GeV neutrino masses, or predicting rare-B observables.

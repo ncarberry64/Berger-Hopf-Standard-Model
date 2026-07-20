@@ -1,0 +1,38 @@
+{
+  "V_eff": "V_eff(sigma_scale)=V_0 + 1/2 A_ST[f] sigma_scale^2 + 1/4 G_ST[f] sigma_scale^4 + O(sigma_scale^6)",
+  "alpha_scale": "-A_ST[f] = - second_variation(S_ST)[(f_T,f_Phi),(f_T,f_Phi)]",
+  "artifact": "BHSM_scalar_topographic_reduced_vacuum_functional_v5_6",
+  "beta_scale": "G_ST[f] = fourth_variation(S_ST)[(f_T,f_Phi)^4] plus boundary/collar quartic kernels",
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "The scalar/topographic scale vacuum is derived conditionally from the BHSM scalar/topographic action family and a declared normalized mode reduction. The coefficients are action functionals over unresolved profiles, boundary tensors, and collar data; no numeric eV/GeV scale, particle mass, measured VEV, gauge coupling, CKM value, rare-B result, or full BHSM completion is claimed.",
+  "derivation_source": "projection of S_ST onto the normalized scale mode, not a generic quartic ansatz",
+  "empirical_inputs_used": false,
+  "frozen_predictions_changed": false,
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "numerical_particle_masses_emitted": false,
+  "observed_mass_or_vev_used": false,
+  "official_prediction_logic_changed": false,
+  "open_inputs": [
+    "explicit T/Phi profiles",
+    "boundary coefficient values",
+    "collar measure value",
+    "threshold values T_0 and Phi_0",
+    "higher-order remainder control"
+  ],
+  "pdg_reference_values_used": false,
+  "physical_couplings_promoted": false,
+  "physics_model_logic_changed": false,
+  "primary_result": "SCALAR_TOPOGRAPHIC_VACUUM_ACTION_DERIVED_CONDITIONALLY",
+  "quartic_branch": "If A_ST[f]<0 and G_ST[f]>0, rewrite V_eff=V_0 - 1/2 alpha_scale sigma_scale^2 + 1/4 beta_scale sigma_scale^4 + O(sigma_scale^6).",
+  "reduction": [
+    "T = T_bar + sigma_scale f_T + higher modes",
+    "Phi = Phi_bar + sigma_scale f_Phi + higher modes",
+    "Q_ST[f_T,f_Phi]=1"
+  ],
+  "sprint": "bhsm-scalar-topographic-vacuum-action-derivation-v5-6",
+  "status": "REDUCED_VACUUM_FUNCTIONAL_DERIVED_CONDITIONALLY",
+  "version": "v5.6",
+  "w_calibration_used": false
+}

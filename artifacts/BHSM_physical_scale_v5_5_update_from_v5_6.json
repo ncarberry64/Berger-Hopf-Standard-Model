@@ -1,0 +1,33 @@
+{
+  "M_BH": "M_star sqrt(alpha_scale/beta_scale)",
+  "alpha_scale": "- second_variation(S_ST)[f,f] when the scale-mode Hessian is negative",
+  "artifact": "BHSM_physical_scale_v5_5_update_from_v5_6",
+  "beta_scale": "fourth_variation(S_ST)[f,f,f,f] plus boundary/collar quartic stabilizers",
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "The scalar/topographic scale vacuum is derived conditionally from the BHSM scalar/topographic action family and a declared normalized mode reduction. The coefficients are action functionals over unresolved profiles, boundary tensors, and collar data; no numeric eV/GeV scale, particle mass, measured VEV, gauge coupling, CKM value, rare-B result, or full BHSM completion is claimed.",
+  "empirical_inputs_used": false,
+  "frozen_predictions_changed": false,
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "new_status": "alpha_scale and beta_scale are conditional action functionals",
+  "numerical_particle_masses_emitted": false,
+  "observed_mass_or_vev_used": false,
+  "official_prediction_logic_changed": false,
+  "old_status": "alpha_scale and beta_scale symbolic placeholders",
+  "pdg_reference_values_used": false,
+  "physical_couplings_promoted": false,
+  "physics_model_logic_changed": false,
+  "primary_result": "SCALAR_TOPOGRAPHIC_VACUUM_ACTION_DERIVED_CONDITIONALLY",
+  "propagation": {
+    "fermion_operator": "D_phys=M_BH D_hat; mass operator still separate",
+    "gauge_operator": "L_i,phys=M_BH^2 L_i,hat; alpha_i still action-gated",
+    "hessian_response": "G_phys=M_BH^-2 H_hat^-1 after zero-mode/domain gates close",
+    "scalar_spectrum": "m_ST,n^2=M_BH^2 omega_ST,n^2 after profile/domain closure"
+  },
+  "scale_equation": "-alpha_scale sigma_scale + beta_scale sigma_scale^3 = 0",
+  "sprint": "bhsm-scalar-topographic-vacuum-action-derivation-v5-6",
+  "status": "V5_5_SCALE_BRANCH_UPDATED_BY_V5_6",
+  "version": "v5.6",
+  "w_calibration_used": false
+}

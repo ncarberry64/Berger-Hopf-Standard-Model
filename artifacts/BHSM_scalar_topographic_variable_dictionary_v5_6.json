@@ -1,0 +1,173 @@
+{
+  "artifact": "BHSM_scalar_topographic_variable_dictionary_v5_6",
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "The scalar/topographic scale vacuum is derived conditionally from the BHSM scalar/topographic action family and a declared normalized mode reduction. The coefficients are action functionals over unresolved profiles, boundary tensors, and collar data; no numeric eV/GeV scale, particle mass, measured VEV, gauge coupling, CKM value, rare-B result, or full BHSM completion is claimed.",
+  "empirical_inputs_used": false,
+  "frozen_predictions_changed": false,
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "numerical_particle_masses_emitted": false,
+  "observed_mass_or_vev_used": false,
+  "official_prediction_logic_changed": false,
+  "pdg_reference_values_used": false,
+  "physical_couplings_promoted": false,
+  "physics_model_logic_changed": false,
+  "primary_result": "SCALAR_TOPOGRAPHIC_VACUUM_ACTION_DERIVED_CONDITIONALLY",
+  "sprint": "bhsm-scalar-topographic-vacuum-action-derivation-v5-6",
+  "status": "SCALAR_TOPOGRAPHIC_VARIABLE_DICTIONARY_COMPLETE",
+  "variables": [
+    {
+      "action_source": "S_T_bulk, S_threshold, S_boundary, S_collar",
+      "definition": "spacetime topographic scalar",
+      "dimension": "dimensionless before ell_*",
+      "domain": "spacetime/collar support",
+      "dynamical_or_fixed": "dynamical/localized",
+      "relationship": "contributes to sigma_scale through f_T projection",
+      "symbol": "T(x)",
+      "variation_equation": "delta S_ST/delta T=0"
+    },
+    {
+      "action_source": "threshold term and Dirichlet normal form",
+      "definition": "spacetime level-set threshold",
+      "dimension": "same as T",
+      "domain": "boundary level set T=T_0",
+      "dynamical_or_fixed": "fixed/open",
+      "relationship": "OPEN_MISSING_THRESHOLD_SELECTION_T_0",
+      "symbol": "T_0",
+      "variation_equation": "not varied unless threshold theorem promotes it"
+    },
+    {
+      "action_source": "S_Phi_internal, S_threshold, S_boundary, S_collar",
+      "definition": "internal Berger/topographic profile",
+      "dimension": "dimensionless before ell_*",
+      "domain": "internal Berger/topographic space",
+      "dynamical_or_fixed": "dynamical/localized",
+      "relationship": "contributes to sigma_scale through f_Phi projection",
+      "symbol": "Phi(y)",
+      "variation_equation": "delta S_ST/delta Phi=0"
+    },
+    {
+      "action_source": "threshold term and Dirichlet normal form",
+      "definition": "internal level-set threshold",
+      "dimension": "same as Phi",
+      "domain": "internal boundary Phi=Phi_0",
+      "dynamical_or_fixed": "fixed/open",
+      "relationship": "OPEN_MISSING_THRESHOLD_SELECTION_PHI_0",
+      "symbol": "Phi_0",
+      "variation_equation": "not varied unless threshold theorem promotes it"
+    },
+    {
+      "action_source": "profile localization docs",
+      "definition": "distinguished profile peak/sampling point",
+      "dimension": "coordinate/location",
+      "domain": "internal profile domain",
+      "dynamical_or_fixed": "fixed/localized",
+      "relationship": "does not define sigma_scale without the mode profile",
+      "symbol": "y_0",
+      "variation_equation": "not a field equation by itself"
+    },
+    {
+      "action_source": "profile input classification",
+      "definition": "profile width or shape parameter",
+      "dimension": "dimensionless or length depending convention",
+      "domain": "profile ansatz/shape family",
+      "dynamical_or_fixed": "open profile parameter",
+      "relationship": "distinct from sigma_scale",
+      "symbol": "sigma_profile",
+      "variation_equation": "profile EOM needed"
+    },
+    {
+      "action_source": "projection of S_ST onto normalized mode",
+      "definition": "normalized scale-mode amplitude",
+      "dimension": "dimensionless",
+      "domain": "reduced scalar/topographic mode space",
+      "dynamical_or_fixed": "dynamical reduced coordinate",
+      "relationship": "sets M_BH/M_* after unit anchor",
+      "symbol": "sigma_scale",
+      "variation_equation": "dV_eff/dsigma_scale=0"
+    },
+    {
+      "action_source": "S_collar",
+      "definition": "collar depth endpoint",
+      "dimension": "dimensionless before ell_*",
+      "domain": "boundary collar",
+      "dynamical_or_fixed": "fixed/open",
+      "relationship": "does not fix absolute scale alone",
+      "symbol": "rho_star",
+      "variation_equation": "edge variation if promoted"
+    },
+    {
+      "action_source": "legacy curvature-threshold candidate",
+      "definition": "local curvature threshold source",
+      "dimension": "inverse length squared after ell_*",
+      "domain": "curvature-threshold audit",
+      "dynamical_or_fixed": "background/open",
+      "relationship": "does not produce a mass gap after background substitution",
+      "symbol": "k_loc",
+      "variation_equation": "appears in old audit only"
+    },
+    {
+      "action_source": "S_ST kernels",
+      "definition": "T-sector action coefficient/tensor",
+      "dimension": "dimensionless in normalized action",
+      "domain": "bulk/boundary/collar support",
+      "dynamical_or_fixed": "symbolic/open",
+      "relationship": "part of alpha_scale/beta_scale functionals",
+      "symbol": "lambda_T",
+      "variation_equation": "enters H_ST and G_ST"
+    },
+    {
+      "action_source": "S_ST kernels",
+      "definition": "Phi-sector action coefficient/tensor",
+      "dimension": "dimensionless in normalized action",
+      "domain": "internal/boundary/collar support",
+      "dynamical_or_fixed": "symbolic/open",
+      "relationship": "part of alpha_scale/beta_scale functionals",
+      "symbol": "lambda_Phi",
+      "variation_equation": "enters H_ST and G_ST"
+    },
+    {
+      "action_source": "alpha_scale=-<f,H_ST f> when negative",
+      "definition": "negative reduced quadratic Hessian functional",
+      "dimension": "dimensionless",
+      "domain": "reduced mode",
+      "dynamical_or_fixed": "derived conditional functional",
+      "relationship": "not a free placeholder in v5.6",
+      "symbol": "alpha_scale",
+      "variation_equation": "dV_eff/dsigma_scale contains -alpha_scale sigma_scale"
+    },
+    {
+      "action_source": "beta_scale=G_ST[f,f,f,f]",
+      "definition": "reduced quartic stabilizing functional",
+      "dimension": "dimensionless",
+      "domain": "reduced mode",
+      "dynamical_or_fixed": "derived conditional functional",
+      "relationship": "not a free placeholder in v5.6",
+      "symbol": "beta_scale",
+      "variation_equation": "dV_eff/dsigma_scale contains beta_scale sigma_scale^3"
+    },
+    {
+      "action_source": "v5.5/v5.6 unit map",
+      "definition": "unresolved absolute energy anchor",
+      "dimension": "energy",
+      "domain": "unit map",
+      "dynamical_or_fixed": "open",
+      "relationship": "M_BH=M_star |sigma_scale,0|",
+      "symbol": "M_star",
+      "variation_equation": "not fixed by S_ST"
+    },
+    {
+      "action_source": "v5.5/v5.6 unit map",
+      "definition": "unresolved absolute length anchor",
+      "dimension": "length",
+      "domain": "unit map",
+      "dynamical_or_fixed": "open",
+      "relationship": "M_star=hbar c/ell_star",
+      "symbol": "ell_star",
+      "variation_equation": "not fixed by S_ST"
+    }
+  ],
+  "version": "v5.6",
+  "w_calibration_used": false
+}

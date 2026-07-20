@@ -1,0 +1,216 @@
+{
+  "artifact": "BHSM_scalar_topographic_vacuum_action_derivation_report_v5_6",
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "The scalar/topographic scale vacuum is derived conditionally from the BHSM scalar/topographic action family and a declared normalized mode reduction. The coefficients are action functionals over unresolved profiles, boundary tensors, and collar data; no numeric eV/GeV scale, particle mass, measured VEV, gauge coupling, CKM value, rare-B result, or full BHSM completion is claimed.",
+  "claim_safe_conclusion": "BHSM v5.6 conditionally derives the scalar/topographic scale vacuum from the action-reduced mode functional. It updates v5.5 by making alpha_scale and beta_scale action functionals, invalidates the old curvature-threshold mass-gap shortcut, and preserves the open absolute unit anchor and all downstream coupling/mass gates.",
+  "conditional": [
+    "explicit profiles and thresholds remain unresolved",
+    "boundary and collar coefficients remain symbolic",
+    "nonzero branch requires alpha_scale>0 and beta_scale>0",
+    "absolute scale requires M_star or ell_star"
+  ],
+  "curvature_threshold_audit": {
+    "background": "-laplacian phi_0 = k_loc",
+    "claimed_prior_mass_gap_survives": false,
+    "correction_required": "A gap requires an action-derived nonlinear/potential term; it is not produced by this curvature-square constraint alone.",
+    "deterministic_check": {
+      "lambda_curv": 0.75,
+      "mass_term": 0.0,
+      "mode_k": 2.0,
+      "omega_squared": 16.0
+    },
+    "expanded_quadratic_lagrangian": "L_quad=1/2 etadot^2 - 1/2 |grad eta|^2 - lambda/2 (laplacian eta)^2",
+    "fluctuation_operator": "eta_tt - laplacian eta + lambda laplacian^2 eta = 0",
+    "fourier_dispersion": "omega^2 = |k|^2 + lambda |k|^4",
+    "mass_term_coefficient": 0.0,
+    "starting_lagrangian": "L=1/2 phidot^2 - 1/2 |grad phi|^2 - lambda/2 (-laplacian phi - k_loc)^2",
+    "status": "CURVATURE_THRESHOLD_MASS_GAP_INVALIDATED_FOR_THIS_ACTION",
+    "substitution": "phi=phi_0+eta"
+  },
+  "derived": [
+    "sigma_scale order-parameter map",
+    "S_ST scalar/topographic action decomposition",
+    "alpha_scale and beta_scale as action functionals",
+    "quartic vacuum branch from reduced action projection",
+    "old curvature-threshold mass-gap invalidation",
+    "v5.5 update from placeholders to functionals"
+  ],
+  "empirical_inputs_used": false,
+  "frozen_predictions_changed": false,
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "numerical_particle_masses_emitted": false,
+  "observed_mass_or_vev_used": false,
+  "official_prediction_logic_changed": false,
+  "pdg_reference_values_used": false,
+  "physical_couplings_promoted": false,
+  "physics_model_logic_changed": false,
+  "primary_result": "SCALAR_TOPOGRAPHIC_VACUUM_ACTION_DERIVED_CONDITIONALLY",
+  "recommended_next_construction_sprint": "BHSM scalar/topographic profile and boundary-coefficient closure",
+  "reduced_model": {
+    "A_ST": -2.0,
+    "G_ST": 8.0,
+    "alpha_scale": 2.0,
+    "beta_scale": 8.0,
+    "branches": [
+      0.0,
+      0.5,
+      -0.5
+    ],
+    "declared_geometry": "unit normalized boundary/collar cell with Q_ST[f_T,f_Phi]=1",
+    "declared_mode_profile": {
+      "f_Phi": 0.8,
+      "f_T": 0.6,
+      "normalization": "f_T^2+f_Phi^2=1"
+    },
+    "derived_V_eff": "V_eff=1/2 A_ST sigma_scale^2 + 1/4 G_ST sigma_scale^4",
+    "deterministic": true,
+    "hessian": 4.0,
+    "physical_fit": false,
+    "scale_ratio_M_BH_over_M_star": 0.5,
+    "selected_branch": 0.5,
+    "stable": true,
+    "stationary_residual": 0.0,
+    "truncated_field_equation_residuals": {
+      "Phi_mode": 0.0,
+      "T_mode": 0.0
+    },
+    "vacuum_energy": -0.125,
+    "zero_branch_hessian": -2.0
+  },
+  "reduced_vacuum": {
+    "V_eff": "V_eff(sigma_scale)=V_0 + 1/2 A_ST[f] sigma_scale^2 + 1/4 G_ST[f] sigma_scale^4 + O(sigma_scale^6)",
+    "alpha_scale": "-A_ST[f] = - second_variation(S_ST)[(f_T,f_Phi),(f_T,f_Phi)]",
+    "beta_scale": "G_ST[f] = fourth_variation(S_ST)[(f_T,f_Phi)^4] plus boundary/collar quartic kernels",
+    "derivation_source": "projection of S_ST onto the normalized scale mode, not a generic quartic ansatz",
+    "open_inputs": [
+      "explicit T/Phi profiles",
+      "boundary coefficient values",
+      "collar measure value",
+      "threshold values T_0 and Phi_0",
+      "higher-order remainder control"
+    ],
+    "quartic_branch": "If A_ST[f]<0 and G_ST[f]>0, rewrite V_eff=V_0 - 1/2 alpha_scale sigma_scale^2 + 1/4 beta_scale sigma_scale^4 + O(sigma_scale^6).",
+    "reduction": [
+      "T = T_bar + sigma_scale f_T + higher modes",
+      "Phi = Phi_bar + sigma_scale f_Phi + higher modes",
+      "Q_ST[f_T,f_Phi]=1"
+    ],
+    "status": "REDUCED_VACUUM_FUNCTIONAL_DERIVED_CONDITIONALLY"
+  },
+  "scalar_topographic_action": {
+    "S_ST": "S_T_bulk + S_Phi_internal + S_threshold + S_boundary + S_collar",
+    "boundary_term": "S_boundary = integral_boundary [U_boundary(T,Phi) + c_K K + c_K2 K^2 + c_S Tr(S^2) + c_J log J] dA",
+    "bulk_T_term": "S_T_bulk = integral_B [1/2 z_T |grad T|^2 + U_T(T; geometry)] dV",
+    "collar_term": "S_collar = integral_boundary integral_0^rho_star B_threshold[T,Phi,K,S,J;Y,rho] J(Y,rho) drho dA",
+    "internal_Phi_term": "S_Phi_internal = integral_Bint [1/2 z_Phi |D_B Phi|^2 + U_Phi(Phi; g_B)] dmu_B",
+    "minimal_allowed_forms": {
+      "odd_terms": "absent in the reduced scale mode when the orientation-pair/Z2 scale-mode symmetry is imposed; otherwise they remain an open branch-breaking source",
+      "quadratic_kernel": "H_ST from second variation of S_ST around (T_bar,Phi_bar)",
+      "quartic_kernel": "G_ST from the lowest even bounded local scalar/topographic self-interaction and boundary/collar response"
+    },
+    "source_chain": [
+      "PO-BH-53 symbolic scalar/topographic boundary variation",
+      "PO-BH-56 complete collar action source audit",
+      "PO-BH-59 level-set geometry",
+      "PO-BH-60 profile input classification",
+      "PO-BH-61 partial EOM source",
+      "PO-BH-62 boundary-condition normal form",
+      "PO-BH-63 coefficient/threshold source audit",
+      "v5.4 unified action scalar_topographic and scale_bridge terms",
+      "v5.5 conditional scale branch"
+    ],
+    "status": "SCALAR_TOPOGRAPHIC_ACTION_SOURCE_ASSEMBLED_CONDITIONALLY",
+    "threshold_term": "S_threshold = integral [1/2 m_TT(T-T_0)^2 + 1/2 m_PP(Phi-Phi_0)^2 + m_TP(T-T_0)(Phi-Phi_0)] on the allowed threshold support"
+  },
+  "scale_order_parameter": {
+    "definition": "dimensionless coefficient of the normalized scalar/topographic scale mode (f_T,f_Phi) in T=T_bar+sigma_scale f_T+... and Phi=Phi_bar+sigma_scale f_Phi+...",
+    "map": {
+      "Q_ST": "integral_B z_T f_T^2 dV + integral_Bint z_Phi f_Phi^2 dmu_B + integral_boundary q_boundary(f_T,f_Phi) dA + integral_collar q_collar(f_T,f_Phi) J dA drho",
+      "mode_projection": "sigma_scale = <(delta T,delta Phi),(f_T,f_Phi)>_Q_ST",
+      "normalization": "Q_ST[f_T,f_Phi]=1"
+    },
+    "not_profile_width": {
+      "profile_width_symbol": "sigma_profile",
+      "reason": "sigma_profile labels a localized profile width/shape parameter; sigma_scale is a dynamical amplitude coefficient."
+    },
+    "selected_interpretation": "collar-integrated scalar/topographic scale-mode coefficient",
+    "source_fields": [
+      "T(x)",
+      "Phi(y)",
+      "boundary/collar geometry"
+    ],
+    "status": "SCALE_ORDER_PARAMETER_DEFINED_CONDITIONALLY",
+    "symbol": "sigma_scale"
+  },
+  "sprint": "bhsm-scalar-topographic-vacuum-action-derivation-v5-6",
+  "status": "SCALAR_TOPOGRAPHIC_VACUUM_ACTION_DERIVED_CONDITIONALLY",
+  "still_requiring_new_mathematics": [
+    "OPEN_MISSING_EXPLICIT_T_PROFILE_SOLUTION",
+    "OPEN_MISSING_EXPLICIT_PHI_PROFILE_SOLUTION",
+    "OPEN_MISSING_THRESHOLD_SELECTION_T_0",
+    "OPEN_MISSING_THRESHOLD_SELECTION_PHI_0",
+    "OPEN_MISSING_BOUNDARY_COEFFICIENT_VALUES",
+    "OPEN_MISSING_COLLAR_MEASURE_VALUE",
+    "OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR",
+    "OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT",
+    "OPEN_MISSING_ALPHA_I_ACTION_DERIVATION",
+    "OPEN_MISSING_G2_BH_ACTION_SOURCE",
+    "OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE",
+    "CKM_EXPONENT_NOT_DERIVED",
+    "OPEN_MISSING_NEUTRAL_SCALE",
+    "OPEN_MISSING_NEUTRAL_ACTION_NORMALIZATION",
+    "FULL_BHSM_NOT_COMPLETE"
+  ],
+  "unit_anchor": {
+    "M_BH_result": "M_BH/M_star = sqrt(alpha_scale/beta_scale)",
+    "absolute_scale_fixed": false,
+    "absolute_unit_anchor_status": "OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR",
+    "reason": "S_ST fixes a dimensionless vacuum branch under symbolic action-function conditions but supplies no absolute length or energy unit.",
+    "remaining_anchor": "M_star or ell_star",
+    "scale_potential_source_status": "SCALE_POTENTIAL_ACTION_SOURCE_DERIVED_CONDITIONALLY",
+    "status": "UNIT_ANCHOR_REMAINS_OPEN"
+  },
+  "v5_5_update": {
+    "M_BH": "M_star sqrt(alpha_scale/beta_scale)",
+    "alpha_scale": "- second_variation(S_ST)[f,f] when the scale-mode Hessian is negative",
+    "beta_scale": "fourth_variation(S_ST)[f,f,f,f] plus boundary/collar quartic stabilizers",
+    "new_status": "alpha_scale and beta_scale are conditional action functionals",
+    "old_status": "alpha_scale and beta_scale symbolic placeholders",
+    "propagation": {
+      "fermion_operator": "D_phys=M_BH D_hat; mass operator still separate",
+      "gauge_operator": "L_i,phys=M_BH^2 L_i,hat; alpha_i still action-gated",
+      "hessian_response": "G_phys=M_BH^-2 H_hat^-1 after zero-mode/domain gates close",
+      "scalar_spectrum": "m_ST,n^2=M_BH^2 omega_ST,n^2 after profile/domain closure"
+    },
+    "scale_equation": "-alpha_scale sigma_scale + beta_scale sigma_scale^3 = 0",
+    "status": "V5_5_SCALE_BRANCH_UPDATED_BY_V5_6"
+  },
+  "vacuum_solution": {
+    "boundedness": "requires beta_scale>0 for the quartic truncation",
+    "existence_conditions": [
+      "alpha_scale>0",
+      "beta_scale>0",
+      "higher-order remainder controlled near branch"
+    ],
+    "field_equations": {
+      "Phi": "delta S_ST/delta Phi=0 with internal/Robin/level-set boundary data from PO-BH-62",
+      "T": "delta S_ST/delta T=0 with boundary normal form from PO-BH-62"
+    },
+    "hessian": "V_eff''(sigma_scale,0)=2 alpha_scale at the nonzero branch; V_eff''(0)=-alpha_scale",
+    "selected_branch": "|sigma_scale,0|=sqrt(alpha_scale/beta_scale)",
+    "stable": true,
+    "stationary_equation": "dV_eff/dsigma_scale = -alpha_scale sigma_scale + beta_scale sigma_scale^3 + O(sigma_scale^5)=0",
+    "status": "NONZERO_VACUUM_BRANCH_DERIVED_CONDITIONALLY",
+    "truncated_branches": [
+      "sigma_scale=0",
+      "sigma_scale=+sqrt(alpha_scale/beta_scale)",
+      "sigma_scale=-sqrt(alpha_scale/beta_scale)"
+    ],
+    "unique": "unique magnitude with sign degeneracy unless an action-derived branch-breaking term is supplied",
+    "vacuum_energy": "V_min=V_0 - alpha_scale^2/(4 beta_scale) in the quartic truncation"
+  },
+  "version": "v5.6",
+  "w_calibration_used": false
+}
