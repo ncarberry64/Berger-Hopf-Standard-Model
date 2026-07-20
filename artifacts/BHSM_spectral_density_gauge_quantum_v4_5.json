@@ -1,0 +1,51 @@
+{
+  "artifact_id": "BHSM_SPECTRAL_DENSITY_GAUGE_QUANTUM_V4_5",
+  "candidate_lambda_reference": {
+    "SU2": 0.03377372788077926,
+    "SU3": 0.1182080475827274,
+    "U1": 0.01688686394038963
+  },
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "Leading Weyl density is conditional and does not derive physical running or gauge couplings.",
+  "counting_law": "N_i(mu,rho) approximately w_i Vol(Sigma_rho) mu^3/(6*pi^2)",
+  "effective_frame_factor": 1.0,
+  "empirical_inputs_used": false,
+  "frame_claim_boundary": "The primitive 1/3 trace prevents candidate channel overcounting but does not close action-selected frame averaging.",
+  "frozen_predictions_changed": false,
+  "frozen_predictions_modified": false,
+  "invalidations": [
+    "Direct classical Yang-Mills density alone does not derive w=(1,2,7); it sees the radial norm R_i^2, not the angular dimension dim(g_i)-1.",
+    "Raw Green covariance of A_i does not scale as Weyl mode counting; the density belongs to whitened modes B_i=L_i^(1/2)A_i.",
+    "A fixed rank-7 SU(3) subalgebra or projector is not the primitive object; the candidate is the field-dependent tangent residue of the adjoint Casimir shell.",
+    "Leading Weyl density alone does not produce physical running; Z_i, lower spectral corrections, and an action-selected rho_i(mu) remain open."
+  ],
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "normalized_density": "lambda_i=N_i/[Vol(Sigma_rho) mu^3] approximately w_i/(6*pi^2)",
+  "official_prediction_logic_changed": false,
+  "official_prediction_logic_modified": false,
+  "open_gates": [
+    "OPEN_MISSING_CASIMIR_SHELL_ACTION_ATTACHMENT",
+    "OPEN_MISSING_SECTOR_BOUNDARY_OPERATOR_L_i",
+    "OPEN_MISSING_WHITENED_BOUNDARY_OPERATOR_ACTION_SOURCE",
+    "OPEN_MISSING_SPECTRAL_COVARIANCE_SOURCE",
+    "OPEN_MISSING_INVERSE_COVARIANCE_ACTION_ATTACHMENT",
+    "OPEN_MISSING_SPECTRAL_CORRECTION_Z_i",
+    "OPEN_MISSING_ACTION_SELECTED_RHO_i_OF_MU",
+    "OPEN_MISSING_FRAME_AVERAGE_NORMALIZATION",
+    "OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT",
+    "OPEN_MISSING_ALPHA_I_ACTION_DERIVATION",
+    "OPEN_MISSING_G2_BH_ACTION_SOURCE",
+    "OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE",
+    "CKM_EXPONENT_NOT_DERIVED",
+    "FULL_BHSM_NOT_COMPLETE"
+  ],
+  "pdg_reference_values_used": false,
+  "physics_validation_claimed": false,
+  "status": "SPECTRAL_DENSITY_GAUGE_QUANTUM_CONDITIONAL",
+  "tau_frame_candidate": 0.3333333333333333,
+  "universal_weyl_3d_formula": "1/(6*pi^2)",
+  "universal_weyl_3d_value": 0.01688686394038963,
+  "w_calibration_used": false
+}

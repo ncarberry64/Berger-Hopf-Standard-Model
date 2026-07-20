@@ -1,0 +1,51 @@
+{
+  "artifact_id": "BHSM_OPEN_GATES_V4_5",
+  "charged_mass_fitting_used": false,
+  "ckm_exponent_status": "CKM_EXPONENT_NOT_DERIVED",
+  "ckm_fitting_used": false,
+  "claim_boundary": "No coupling, CKM coefficient, CKM exponent, or full-BHSM result is promoted by this candidate chain.",
+  "empirical_inputs_used": false,
+  "frozen_predictions_changed": false,
+  "frozen_predictions_modified": false,
+  "invalidations": [
+    "Direct classical Yang-Mills density alone does not derive w=(1,2,7); it sees the radial norm R_i^2, not the angular dimension dim(g_i)-1.",
+    "Raw Green covariance of A_i does not scale as Weyl mode counting; the density belongs to whitened modes B_i=L_i^(1/2)A_i.",
+    "A fixed rank-7 SU(3) subalgebra or projector is not the primitive object; the candidate is the field-dependent tangent residue of the adjoint Casimir shell.",
+    "Leading Weyl density alone does not produce physical running; Z_i, lower spectral corrections, and an action-selected rho_i(mu) remain open."
+  ],
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "official_prediction_logic_changed": false,
+  "official_prediction_logic_modified": false,
+  "open_gates": [
+    "OPEN_MISSING_CASIMIR_SHELL_ACTION_ATTACHMENT",
+    "OPEN_MISSING_SECTOR_BOUNDARY_OPERATOR_L_i",
+    "OPEN_MISSING_WHITENED_BOUNDARY_OPERATOR_ACTION_SOURCE",
+    "OPEN_MISSING_SPECTRAL_COVARIANCE_SOURCE",
+    "OPEN_MISSING_INVERSE_COVARIANCE_ACTION_ATTACHMENT",
+    "OPEN_MISSING_SPECTRAL_CORRECTION_Z_i",
+    "OPEN_MISSING_ACTION_SELECTED_RHO_i_OF_MU",
+    "OPEN_MISSING_FRAME_AVERAGE_NORMALIZATION",
+    "OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT",
+    "OPEN_MISSING_ALPHA_I_ACTION_DERIVATION",
+    "OPEN_MISSING_G2_BH_ACTION_SOURCE",
+    "OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE",
+    "CKM_EXPONENT_NOT_DERIVED",
+    "FULL_BHSM_NOT_COMPLETE"
+  ],
+  "pdg_reference_values_used": false,
+  "physics_validation_claimed": false,
+  "status": "FULL_BHSM_NOT_COMPLETE",
+  "statuses": {
+    "action_frame_average": "OPEN_MISSING_FRAME_AVERAGE_NORMALIZATION",
+    "casimir_shell_residue": "CASIMIR_SHELL_RESIDUE_STRONG_CANDIDATE",
+    "full_completion": "FULL_BHSM_NOT_COMPLETE",
+    "gauge_coupling_action_attachment": "OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT",
+    "inverse_covariance_placement": "INVERSE_COVARIANCE_PLACEMENT_CONDITIONAL",
+    "primitive_frame_trace": "CONDITIONAL_PRIMITIVE_FRAME_TRACE_NORMALIZATION",
+    "radial_angular_adjoint_split": "RADIAL_ANGULAR_ADJOINT_SPLIT_CONDITIONAL",
+    "spectral_density_gauge_quantum": "SPECTRAL_DENSITY_GAUGE_QUANTUM_CONDITIONAL",
+    "whitened_boundary_fluctuation": "WHITENED_BOUNDARY_FLUCTUATION_CONDITIONAL"
+  },
+  "w_calibration_used": false
+}
