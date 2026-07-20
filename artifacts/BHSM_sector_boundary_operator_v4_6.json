@@ -1,0 +1,109 @@
+{
+  "artifact": "BHSM_sector_boundary_operator_v4_6",
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "conditional_candidate_not_action_derived",
+  "empirical_inputs_used": false,
+  "frozen_predictions_changed": false,
+  "frozen_predictions_modified": false,
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "no_go_notes": [
+    "A raw unrestricted one-form Weyl count introduces a factor of three; the conditional primitive frame state tau_frame=1/3 prevents this overcount.",
+    "A Laplace-type principal symbol does not determine the full physical boundary operator; lower-order terms and the action source remain open.",
+    "L_i(rho) is not final on unrestricted gauge potentials without a gauge-fixed, transverse/coexact, quotient, or admissible boundary domain.",
+    "Whitened boundary-action coherence does not prove lambda_i=alpha_i; physical coupling identification remains action-gated.",
+    "Leading Weyl density plus candidate L_i does not produce running without Z_i, lower heat-kernel/collar corrections, and action-selected rho_i(mu).",
+    "This sprint does not derive gauge couplings, CKM values or exponent, or full BHSM completion."
+  ],
+  "official_prediction_logic_changed": false,
+  "official_prediction_logic_modified": false,
+  "open_gates": [
+    "OPEN_MISSING_SECTOR_BOUNDARY_OPERATOR_ACTION_SOURCE",
+    "OPEN_MISSING_GAUGE_FIXED_BOUNDARY_DOMAIN",
+    "OPEN_MISSING_LOWER_ORDER_BOUNDARY_OPERATOR_TERMS",
+    "OPEN_MISSING_WHITENED_BOUNDARY_OPERATOR_ACTION_SOURCE",
+    "OPEN_MISSING_SPECTRAL_COVARIANCE_SOURCE",
+    "OPEN_MISSING_INVERSE_COVARIANCE_ACTION_ATTACHMENT",
+    "OPEN_MISSING_SPECTRAL_CORRECTION_Z_i",
+    "OPEN_MISSING_ACTION_SELECTED_RHO_i_OF_MU",
+    "OPEN_MISSING_FRAME_AVERAGE_NORMALIZATION",
+    "OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT",
+    "OPEN_MISSING_ALPHA_I_ACTION_DERIVATION",
+    "OPEN_MISSING_G2_BH_ACTION_SOURCE",
+    "OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE",
+    "CKM_EXPONENT_NOT_DERIVED",
+    "FULL_BHSM_NOT_COMPLETE",
+    "OPEN_MISSING_CASIMIR_SHELL_ACTION_ATTACHMENT",
+    "OPEN_MISSING_SECTOR_BOUNDARY_OPERATOR_L_i"
+  ],
+  "operator_candidate": {
+    "action_source_status": "OPEN_MISSING_SECTOR_BOUNDARY_OPERATOR_ACTION_SOURCE",
+    "acts_on": "active adjoint-valued boundary one-forms A_i in Omega^1(Sigma_rho, ad_i)",
+    "berger_hodge_relation": "d_i,rho^dagger is defined using the Berger boundary metric h_rho and Hodge star *_{h_rho}",
+    "candidate_full_operator": "Delta_1,rho^ad_i=d_i,rho^dagger d_i,rho+d_i,rho d_i,rho^dagger",
+    "gauge_domain_status": "OPEN_MISSING_GAUGE_FIXED_BOUNDARY_DOMAIN",
+    "gauge_fixed_candidate": "L_i^gf(rho)=d_i,rho^dagger d_i,rho on a controlled transverse/coexact domain",
+    "lower_order_terms_status": "OPEN_MISSING_LOWER_ORDER_BOUNDARY_OPERATOR_TERMS",
+    "operator_family": "Laplace-type / Hodge-de Rham-type boundary kinetic operator",
+    "physical_coupling_status": "OPEN_MISSING_ALPHA_I_ACTION_DERIVATION",
+    "principal_symbol": "|xi|^2_{h_rho} I_{T*Sigma_rho} tensor I_{ad_i}",
+    "sector": "SU2"
+  },
+  "pdg_reference_values_used": false,
+  "physics_validation_claimed": false,
+  "residue_source": {
+    "active_residues": {
+      "SU2": 2,
+      "SU3": 7,
+      "U1": 1
+    },
+    "depends_on_v4_5": true,
+    "lambda_reference": "w_i/(6*pi^2)",
+    "physical_alpha_status": "OPEN_MISSING_ALPHA_I_ACTION_DERIVATION"
+  },
+  "sector_operator_table": {
+    "SU2": {
+      "action_source_status": "OPEN_MISSING_SECTOR_BOUNDARY_OPERATOR_ACTION_SOURCE",
+      "acts_on": "active adjoint-valued boundary one-forms A_i in Omega^1(Sigma_rho, ad_i)",
+      "berger_hodge_relation": "d_i,rho^dagger is defined using the Berger boundary metric h_rho and Hodge star *_{h_rho}",
+      "candidate_full_operator": "Delta_1,rho^ad_i=d_i,rho^dagger d_i,rho+d_i,rho d_i,rho^dagger",
+      "gauge_domain_status": "OPEN_MISSING_GAUGE_FIXED_BOUNDARY_DOMAIN",
+      "gauge_fixed_candidate": "L_i^gf(rho)=d_i,rho^dagger d_i,rho on a controlled transverse/coexact domain",
+      "lower_order_terms_status": "OPEN_MISSING_LOWER_ORDER_BOUNDARY_OPERATOR_TERMS",
+      "operator_family": "Laplace-type / Hodge-de Rham-type boundary kinetic operator",
+      "physical_coupling_status": "OPEN_MISSING_ALPHA_I_ACTION_DERIVATION",
+      "principal_symbol": "|xi|^2_{h_rho} I_{T*Sigma_rho} tensor I_{ad_i}",
+      "sector": "SU2"
+    },
+    "SU3": {
+      "action_source_status": "OPEN_MISSING_SECTOR_BOUNDARY_OPERATOR_ACTION_SOURCE",
+      "acts_on": "active adjoint-valued boundary one-forms A_i in Omega^1(Sigma_rho, ad_i)",
+      "berger_hodge_relation": "d_i,rho^dagger is defined using the Berger boundary metric h_rho and Hodge star *_{h_rho}",
+      "candidate_full_operator": "Delta_1,rho^ad_i=d_i,rho^dagger d_i,rho+d_i,rho d_i,rho^dagger",
+      "gauge_domain_status": "OPEN_MISSING_GAUGE_FIXED_BOUNDARY_DOMAIN",
+      "gauge_fixed_candidate": "L_i^gf(rho)=d_i,rho^dagger d_i,rho on a controlled transverse/coexact domain",
+      "lower_order_terms_status": "OPEN_MISSING_LOWER_ORDER_BOUNDARY_OPERATOR_TERMS",
+      "operator_family": "Laplace-type / Hodge-de Rham-type boundary kinetic operator",
+      "physical_coupling_status": "OPEN_MISSING_ALPHA_I_ACTION_DERIVATION",
+      "principal_symbol": "|xi|^2_{h_rho} I_{T*Sigma_rho} tensor I_{ad_i}",
+      "sector": "SU3"
+    },
+    "U1": {
+      "action_source_status": "OPEN_MISSING_SECTOR_BOUNDARY_OPERATOR_ACTION_SOURCE",
+      "acts_on": "active adjoint-valued boundary one-forms A_i in Omega^1(Sigma_rho, ad_i)",
+      "berger_hodge_relation": "d_i,rho^dagger is defined using the Berger boundary metric h_rho and Hodge star *_{h_rho}",
+      "candidate_full_operator": "Delta_1,rho^ad_i=d_i,rho^dagger d_i,rho+d_i,rho d_i,rho^dagger",
+      "gauge_domain_status": "OPEN_MISSING_GAUGE_FIXED_BOUNDARY_DOMAIN",
+      "gauge_fixed_candidate": "L_i^gf(rho)=d_i,rho^dagger d_i,rho on a controlled transverse/coexact domain",
+      "lower_order_terms_status": "OPEN_MISSING_LOWER_ORDER_BOUNDARY_OPERATOR_TERMS",
+      "operator_family": "Laplace-type / Hodge-de Rham-type boundary kinetic operator",
+      "physical_coupling_status": "OPEN_MISSING_ALPHA_I_ACTION_DERIVATION",
+      "principal_symbol": "|xi|^2_{h_rho} I_{T*Sigma_rho} tensor I_{ad_i}",
+      "sector": "U1"
+    }
+  },
+  "status": "SECTOR_BOUNDARY_OPERATOR_CONDITIONAL_CANDIDATE",
+  "version": "v4.6",
+  "w_calibration_used": false
+}
