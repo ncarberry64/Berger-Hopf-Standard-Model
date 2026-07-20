@@ -358,3 +358,14 @@ BHSM currently lacks an artifact-backed rare-B observable map from its geometric
 Not supported: a BHSM `A_FB` zero prediction, exact micro-plateau node coordinates, fitting existing rare-B measurements, solved gauge-coupling normalization, `alpha_i=lambda_i`, `alpha_2=lambda_2`, action-derived `g2_BH`, derived CKM coefficient value or exponent, institutional endorsement, QFT falsification, or full BHSM completion.
 
 Open: `OPEN_MISSING_RARE_B_OBSERVABLE_MAP`, `OPEN_MISSING_B_TO_S_MUMU_TRANSITION_OPERATOR`, `OPEN_MISSING_AFB_NULL_BALANCE_EQUATION`, `OPEN_MISSING_RARE_B_Q2_PHYSICAL_BRIDGE`, `OPEN_MISSING_WILSON_COEFFICIENT_INTERFACE`, `OPEN_MISSING_HADRONIC_FORM_FACTOR_INTERFACE`, and `OPEN_MISSING_EXACT_MICROPLATEAU_NODE_MAP`.
+
+<!-- BHSM_RARE_B_OBSERVABLE_MAP_SCAFFOLD_V5_1 -->
+## Rare-B observable map scaffold v5.1
+
+Allowed: BHSM v5.1 has artifacted the minimal rare-B observable-map interface needed to state the remaining matching problem precisely. BHSM does not yet predict q0^2 or exact micro-plateau node positions.
+
+Verdict: `RARE_B_OBSERVABLE_MAP_INTERFACE_COMPLETE`.
+
+This verdict means observable conventions, transition-operator slots, Wilson-coefficient slots, hadronic/form-factor slots, a convention-aware `A_FB` numerator/denominator/null-balance interface, and the BHSM matching dependency graph are machine-readable. It is not a physical prediction and not a full derivation.
+
+Still not supported: BHSM-derived Wilson coefficients, BHSM-derived form factors, a BHSM physical `q^2` bridge in `GeV^2`, a numerical `q0^2`, exact rare-B node coordinates, solved gauge-coupling normalization, `alpha_i=lambda_i`, `alpha_2=lambda_2`, action-derived `g2_BH`, derived CKM coefficient value or exponent, institutional endorsement, QFT falsification, or full BHSM completion.

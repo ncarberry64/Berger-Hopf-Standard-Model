@@ -286,3 +286,18 @@ Doctrine: `docs/bhsm_coupling_bridge_blocker_consolidation_v4_9.md`.
 | `artifacts/BHSM_rare_b_afb_zero_forward_prediction_v5_0.json` | `RARE_B_AFB_ZERO_PREDICTION_BLOCKED` / `RARE_B_MICROPLATEAU_NODE_PREDICTION_BLOCKED` | Tests whether existing BHSM artifacts produce a no-fit rare-B `A_FB(q^2)` zero prediction or exact micro-plateau node coordinates; records the missing observable map when they do not. |
 
 Doctrine: `docs/bhsm_rare_b_afb_zero_forward_prediction_v5_0.md`.
+
+<!-- BHSM_RARE_B_OBSERVABLE_MAP_SCAFFOLD_V5_1 -->
+## Rare-B observable map scaffold v5.1
+
+| Artifact | Status | Purpose |
+|---|---|---|
+| `artifacts/BHSM_rare_b_observable_convention_v5_1.json` | `RARE_B_OBSERVABLE_INTERFACE_ARTIFACTED` | Defines `q^2`, `A_FB`, numerator/denominator semantics, `dGamma/dq^2`, and optional optimized-observable placeholders. |
+| `artifacts/BHSM_rare_b_transition_operator_interface_v5_1.json` | `RARE_B_TRANSITION_OPERATOR_INTERFACE_ARTIFACTED` | Defines `b -> s mu+ mu-` operator-basis and Wilson-coefficient slots without deriving them. |
+| `artifacts/BHSM_rare_b_hadronic_interface_v5_1.json` | `RARE_B_HADRONIC_FORM_FACTOR_INTERFACE_ARTIFACTED` | Defines exclusive-channel form-factor inputs and preserves open BHSM hadronic derivation. |
+| `artifacts/BHSM_rare_b_afb_null_balance_v5_1.json` | `RARE_B_AFB_NULL_BALANCE_INTERFACE_ARTIFACTED` | Separates `A_FB=N_FB/D_FB` from the numerator zero condition and nonzero-denominator domain gate. |
+| `artifacts/BHSM_rare_b_bhsm_matching_map_v5_1.json` | `RARE_B_BHSM_MATCHING_MAP_OPEN_DEPENDENCY_GRAPH_ARTIFACTED` | Lists required BHSM-to-effective-rare-B matching dependencies and blockers. |
+| `artifacts/BHSM_rare_b_observable_map_audit_v5_1.json` | `RARE_B_OBSERVABLE_MAP_AUDIT_ARTIFACTED` | Records the repository audit and independent yes/no closure answers. |
+| `artifacts/BHSM_rare_b_observable_map_scaffold_verdict_v5_1.json` | `RARE_B_OBSERVABLE_MAP_INTERFACE_COMPLETE` | Final interface verdict with prediction kill screen and preserved blocked statuses. |
+
+Doctrine: `docs/bhsm_rare_b_observable_map_scaffold_v5_1.md`.
