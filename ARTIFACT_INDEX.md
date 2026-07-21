@@ -1,5 +1,13 @@
 # BHSM Artifact Index
 
+## S7 fiber integration and physical localization v6.0
+
+| Package | Contents | Primary artifact | Status | CLI |
+| --- | --- | --- | --- | --- |
+| S7 source inventory, exact fibration/nested diagram, metric-measure ledger, pushforward theorem, physical-domain fork, and action/collar localization | Eight deterministic v6.0 artifacts | `artifacts/BHSM_s7_fiber_integration_physical_localization_report_v6_0.json` | `BHSM_S7_ARCHITECTURE_AMBIGUOUS` | `python -m bhsm.interface s7-fiber-integration-status --format markdown` |
+
+The topology and conditional pushforward theorem are derived; the physical S7/B8 action domain, metric, signature, orientation, fiber scale, and collar attachment remain open.
+
 This index names the principal reviewer artifacts. Historical sprint artifacts
 remain available under `artifacts/` and are discoverable with
 `python -m bhsm.interface artifact-sources`.

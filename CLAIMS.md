@@ -2,6 +2,9 @@
 
 ## Allowed
 
+- v6.0 derives the canonical nested Hopf–twistor bundle diagram and a fiber-integration theorem conditional on explicit orientation, compactness, integrability, metric/action measure, and boundary hypotheses.
+- v6.0 reports `BHSM_S7_ARCHITECTURE_AMBIGUOUS`: the repository's explicit Berger source is S3-type and does not select an S7 physical action domain, B8 bulk, signature, time assignment, S7 metric, fiber scale, or collar matching map.
+- Fiber pushforward uses the actual integral. A normalized probability average is not substituted unless independently selected by the action.
 - BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity. Physical eV/GeV neutrino mass closure remains open pending a numeric neutral stiffness length `sqrt(A_nu/Z_nu)`, a physical `K_neutral,eff` map in `m^-2`, and complete-action derivation of the admissible response cone.
 - The v1.6 ledger inventories all sixteen completion categories and conditionally closes only the relative collar-measure shape and same-scale identity transport; it does not claim full BHSM completion.
 - The v1.7 charged audit distinguishes artifact-backed coefficients from conditional eta/mixing sources and open action-normalization and CKM-exponent theorems.
@@ -64,6 +67,9 @@
 
 Do not claim that:
 
+- The exact mathematical S7 Hopf fibrations are thereby the action-selected physical BHSM architecture.
+- The Riemannian S4 base is thereby observed Lorentzian spacetime.
+- A unit-radius fiber volume or normalized collar coordinate supplies an absolute physical scale.
 - BHSM is empirically validated.
 - BHSM derives physical neutrino masses in eV.
 - BHSM replaces QFT local dynamics.
