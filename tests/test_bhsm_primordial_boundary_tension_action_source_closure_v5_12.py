@@ -32,7 +32,7 @@ def focused_text():
 
 
 def test_artifacts_parse_with_source_not_closed_and_all_guards():
-    assert len(bt.ARTIFACT_FILES)==14
+    assert len(bt.ARTIFACT_FILES)==21
     for key,name in bt.ARTIFACT_FILES.items():
         payload=load(key)
         assert payload["version"]=="v5.12",key

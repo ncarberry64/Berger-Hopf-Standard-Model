@@ -186,4 +186,82 @@ Principal blockers are `OPEN_MISSING_PHYSICAL_BOUNDARY_DOMAIN_SIGNATURE`, `OPEN_
 
 No measured input, physical Casimir energy, absolute unit, primordial rupture history, hot plasma production, particle mass, gauge coupling, fine-structure constant, CKM result, rare-B prediction, or full BHSM completion is claimed.
 
+## Black-hole spacetime recycling candidate
+
+Recycling result: `BHSM_SPACETIME_RECYCLING_CONSTRAINT_ARCHITECTURE_IDENTIFIED`.
+
+This continuation tests, but does not adopt as established, the constrained bulk candidate
+
+```text
+C_[d_B-1], F_[d_B]=dC_[d_B-1],
+S_rec=-Z_F/(2 d_B!) integral_B sqrt|G| F_[d_B]^2
+      +S_source+S_boundary,rec.
+```
+
+The physical `d_B`, Lorentzian signature, `Z_F`, source, and boundary term are absent from the stored BHSM action. `C_3,F_4` is only the conditional `d_B=4` specialization. With `[C]` explicit, `[F]=[C]L^-1`, `[Z_F]=[A]L^(2-d_B)[C]^-2`, `[rho_rec]=[A]L^-d_B`, and `[Q]=[C]L^(d_B-1)`.
+
+The candidate equation is `d(Z_F star F)=J_core`. In a smooth source-free connected component, `F=f vol_B` and `d(Z_F f)=0`, so `Z_F f` is constant. A top form has zero local propagating polarizations and may retain one global flux variable per connected compact component. This is a Gauss-law constraint, not a faster-than-causal signaling channel.
+
+An electric coupling `q_rec integral_W C_[d_B-1]` requires a `(d_B-1)`-dimensional worldvolume. In four dimensions this is a two-brane with a three-dimensional worldvolume, not automatically a point-core worldline. No BHSM core worldvolume, charged horizon action, conserved higher-form current, membrane charge, or charge lattice was found. Only conditionally,
+
+```text
+Z_F(f_plus-f_minus)=orientation q_rec,
+```
+
+and gauge invariance requires `dJ_core=0`. Neither relation is sourced for a BHSM black-hole/core sector.
+
+### Stress, pressure, and boundary ensemble
+
+Metric variation gives
+
+```text
+T_AB=Z_F/(d_B-1)! F_A...F_B^...
+    -Z_F/(2 d_B!)G_AB F^2.
+```
+
+For one timelike direction and `F=f vol_B`, `T_AB=-(Z_F f^2/2)G_AB`, `rho_rec=Z_F f^2/2`, `p_rec=-rho_rec`, and `n^A n^B T_AB=-epsilon_n rho_rec`. This does not prove an outward force. The contribution enters the existing normal equation as `-Delta p_rec`, derived through the pressure convention rather than inserted by hand.
+
+The missing `S_boundary,rec` selects the variational ensemble. For `V(L,a)=v(a)L^nu`:
+
+```text
+fixed f: E_rec=(Z_F f^2/2)V,       -dE/dV=-rho_rec,
+fixed Q: E_rec=Z_F Q^2/(2V),       -dE/dV=+Z_F Q^2/(2V^2).
+```
+
+Fixed `f` has no direct `delta p_rec`; it shifts the background equilibrium. Fixed `Q` gives `delta p_rec=(dp/dV) integral xi_perp dA`, a rank-one Hessian response. It couples directly only to volume-changing modes, not equally to every normal harmonic. Zero-mean higher modes have zero direct projection; localized core-adjacent modes require a source and matching solution.
+
+The radial energy stiffness scales as `L^(nu-2)` at fixed `f` and `L^(-nu-2)` at fixed `Q`. Converting these energy-coordinate laws to `lambda_rec` requires the physical volume exponent, normal-mode inner product, on-shell background, and ensemble. No `L_c` follows.
+
+### Causality, information, zero point, and energy
+
+The spatial top component is the canonical coordinate and its electric density is the momentum. Time-index components impose primary constraints and a Gauss law. There is no ordinary local top-form wave, but sources and other fields remain within the causal initial-value problem. A local observer cannot controllably change the global flux without the conserved source/boundary operation.
+
+“Deconstruction” means only loss of externally accessible bound-state and local-history labels from the reduced description. Energy-momentum, angular momentum, gauge charges, protected topology, and complete-state correlations must remain represented. Unitarity and coarse-grained entropy evolution remain open; neither information nor entropy is declared destroyed.
+
+For positive `Z_F` and continuous unshifted flux, the minimum is `f=0`. A nonzero `f^2` sector is structureless but excited, not the pristine zero-point floor. Flux quantization or a shifted minimum would require an unproved compact higher-form gauge group, charge lattice, boundary term, and branch data. A ZPV reset is not established.
+
+The admissible closed-system ledger is
+
+```text
+d/dt(E_matter+E_BH+E_rec+E_boundary+E_ST+E_radiation)
+  = declared external flux,
+
+dot E_infall=dot E_BH,stored+dot E_rec+dot E_radiation+dot E_other.
+```
+
+No transfer fraction `epsilon_rec` is derived or fitted. At most, coarse-grained entropy obeys the conditional ledger `Delta S_accessible+Delta S_BH+Delta S_rec>=0`.
+
+A trial collective action yields
+
+```text
+M_L ddot L+(1/2)M_L'(dot L)^2
+  +V_boundary'(L)+E_rec'(L)=0,
+```
+
+but BHSM does not derive the time split, `M_L`, total potential, core transfer, or top-form ensemble. Static branches, expansion, acceleration, monotonicity, runaway behavior, and total boundedness remain unevaluated. No Hubble law or cosmological parameter is inserted.
+
+Primordial initial flux and late-time black-hole accumulation are separate candidate regimes. Neither is derived or identified with the other. The candidate does not prove black-hole-driven expansion, replace dark energy or inflation, solve horizon/homogeneity problems, or produce a hot plasma.
+
+The combined eigenvalue architecture now includes symbolic `lambda_rec`, but that term, the core jump, and its sign remain source- and ensemble-open. Arbitrary `f`, `Q`, `q_rec`, or `Z_F` cannot become an absolute unit. The primary result remains `BHSM_PRIMORDIAL_BOUNDARY_SOURCE_NOT_CLOSED`; scalar/topographic physical localization remains the principal next blocker.
+
 Command: `python -m bhsm.interface primordial-boundary-tension-status --format markdown`.

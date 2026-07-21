@@ -492,5 +492,12 @@ Primary result: `BHSM_PRIMORDIAL_BOUNDARY_SOURCE_NOT_CLOSED`.
 | `artifacts/BHSM_primordial_release_energy_conversion_v5_12.json` | Pilot-wave and primordial conversion ledger. |
 | `artifacts/BHSM_primordial_reduced_threshold_model_v5_12.json` | Exact reduced roots, crossing classes, and scale covariance. |
 | `artifacts/BHSM_primordial_boundary_tension_action_source_closure_report_v5_12.json` | Final derived, conditional, invalidated, and open result. |
+| `artifacts/BHSM_spacetime_recycling_candidate_action_v5_12.json` | Candidate top-form action, field equation, normalization, boundary ensemble, and source search. |
+| `artifacts/BHSM_spacetime_recycling_top_form_dimension_degree_v5_12.json` | Symbolic bulk dimension, form degree, source-worldvolume, and physical-dimension audit. |
+| `artifacts/BHSM_spacetime_recycling_core_source_flux_jump_v5_12.json` | Core-source support, current conservation, conditional flux jump, and information doctrine. |
+| `artifacts/BHSM_spacetime_recycling_stress_energy_pressure_v5_12.json` | Candidate metric stress, normal projection, and fixed-flux versus fixed-charge pressure. |
+| `artifacts/BHSM_spacetime_recycling_causal_constraint_audit_v5_12.json` | Canonical constraints, local/global degrees of freedom, and no-signal boundary. |
+| `artifacts/BHSM_spacetime_recycling_zero_point_flux_energy_v5_12.json` | Vacuum-floor, excited flux-sector, and local-interference separation. |
+| `artifacts/BHSM_spacetime_recycling_primordial_late_time_map_v5_12.json` | Primordial and late-time source regimes with prohibited cosmological promotions. |
 
 Doctrine: `docs/bhsm_primordial_boundary_tension_action_source_closure_v5_12.md`.

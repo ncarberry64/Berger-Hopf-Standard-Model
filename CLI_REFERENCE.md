@@ -398,3 +398,5 @@ python scripts/materialize_primordial_boundary_tension_action_source_closure_v5_
 ```
 
 The command reports source, localization, dimension, stress, pressure, surface-Hessian, crossing, one-scale, and energy-conversion status without emitting a physical `L_c`.
+
+It also reports `BHSM_SPACETIME_RECYCLING_CONSTRAINT_ARCHITECTURE_IDENTIFIED`: the general candidate top-form action, core-source and causal audits, ensemble-dependent recycling pressure, rank-one surface-mode response, and open absolute-scale gates. It does not assert black-hole-driven expansion.

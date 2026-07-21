@@ -661,3 +661,9 @@ Preserved: `sigma_scale=1/2`, `M_BH/M_star=1/2`, `R_BH/ell_star=2`, `BHSM_QUANTU
 No physical tension, local Casimir pressure, absolute unit, rupture history, plasma production, mass, coupling, CKM result, rare-B prediction, or BHSM completion is claimed.
 
 Command: `python -m bhsm.interface primordial-boundary-tension-status --format markdown`.
+
+### Spacetime-recycling continuation
+
+Result: `BHSM_SPACETIME_RECYCLING_CONSTRAINT_ARCHITECTURE_IDENTIFIED`.
+
+The general candidate `C_[d_B-1]`, `F_[d_B]=dC` has no local propagating polarizations and admits constant flux on each connected source-free component. Its candidate Lorentzian stress is `T_AB=-(Z_F f^2/2)G_AB`. BHSM supplies neither `d_B`, `Z_F`, the required boundary ensemble, a conserved codimension-one black-hole/core source, a charge lattice, nor an energy-transfer law. Fixed local flux and fixed integrated flux have different pressure and Hessian responses, so neither outward expansion nor a finite `L_c` follows. The v5.12 primary result and scalar/topographic localization recommendation remain unchanged.

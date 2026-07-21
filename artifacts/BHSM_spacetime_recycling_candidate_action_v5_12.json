@@ -1,36 +1,42 @@
 {
   "absolute_unit_claimed": false,
-  "actual_BHSM_orientation_fixed": false,
+  "action": "S_rec=-Z_F/(2 d_B!) integral_B sqrt|G| F_[d_B]^2+S_source+S_boundary,rec",
   "arbitrary_flux_promoted_to_absolute_unit": false,
-  "artifact": "BHSM_primordial_normal_displacement_variations_v5_12",
+  "artifact": "BHSM_spacetime_recycling_candidate_action_v5_12",
   "black_hole_observation_used": false,
+  "boundary_term": {
+    "formula": null,
+    "required_role": "select fixed-f versus fixed-integrated-flux variational ensemble",
+    "stored_in_BHSM": false
+  },
+  "candidate_not_adopted_as_established_action": true,
   "ckm_completion_claimed": false,
   "claim_boundary": "v5.12 derives the strongest source-qualified boundary normal-stress and stability architecture. Physical localization, dimensions, coefficients, pressure, embedding, and domain remain insufficient to evaluate L_c or derive an absolute unit.",
+  "connected_region_result": "Z_F f is locally constant and globally constant on each connected smooth source-free component",
   "dark_energy_replacement_claimed": false,
-  "displacement": "delta X=xi_perp n",
   "empirical_inputs_used": false,
   "existing_numerical_predictions_changed": false,
+  "field_equation": "d(Z_F star F_[d_B])=J_core with source normalization/sign fixed by the source convention",
+  "fields": {
+    "field_strength": "F_[d_B]=dC_[d_B-1]",
+    "potential": "C_[d_B-1]"
+  },
+  "four_dimensional_specialization": "C_3 and F_4=dC_3 only if d_B=4",
   "frozen_predictions_changed": false,
   "full_bhsm_completion_claimed": false,
   "gauge_couplings_derived": false,
   "hot_plasma_production_claimed_derived": false,
-  "identities": {
-    "delta_J": "J Tr[(I+rho S)^(-1)rho delta S] for the plus collar convention",
-    "delta_K": "-Delta_Sigma xi_perp-(Tr(S^2)+Ric(n,n))xi_perp",
-    "delta_K_AB": "-nabla_A nabla_B xi_perp+xi_perp(K_A^C K_CB-R_nAnB) under the declared curvature convention",
-    "delta_K_squared": "2K delta K",
-    "delta_TrS2": "2 Tr(S delta S) plus the inverse-metric variation; equivalently D_Q xi_perp",
-    "delta_collar_measure": "delta(J dmu_h d rho)=J[K xi_perp+delta log J]dmu_h d rho plus endpoint variation if rho_star moves",
-    "delta_dmu_h": "K xi_perp dmu_h",
-    "delta_h_AB": "2 xi_perp K_AB",
-    "delta_log_J": "Tr[(I+rho S)^(-1)rho delta S]",
-    "delta_sqrt_abs_h": "K xi_perp sqrt|h|"
-  },
   "inflation_or_horizon_problem_claimed_solved": false,
   "information_erasure_claimed": false,
   "measured_scale_used": false,
   "minus_one_eighth_promoted_to_physical_tension": false,
   "natural_units_hide_missing_dimension": false,
+  "normalization": {
+    "Z_F": null,
+    "assumed_one": false,
+    "classification": "UNRESOLVED_SYMBOLIC_NORMALIZATION",
+    "existing_BHSM_source": null
+  },
   "official_prediction_logic_changed": false,
   "particle_masses_derived": false,
   "planck_electroweak_higgs_or_cosmology_scale_used": false,
@@ -39,16 +45,31 @@
   "primitive_recycling_coefficient_claimed_derived": false,
   "primitive_tension_claimed_derived": false,
   "rare_b_predictions_claimed": false,
-  "reason": "v4.1 stores J=det(I +/- rho S); v5.7 selects outward language but does not evaluate the embedding/sign map",
   "recycling_result": "BHSM_SPACETIME_RECYCLING_CONSTRAINT_ARCHITECTURE_IDENTIFIED",
-  "reference_convention": "K_AB=(1/2)L_n h_AB and outward n; epsilon_n=+1. Opposite normal flips orientation-odd quantities consistently.",
   "renormalization_scale_promoted_to_L_c": false,
   "rho_star_promoted_to_physical_length": false,
+  "source_free_solution": "F_[d_B]=f vol_B and d(Z_F f)=0",
+  "source_search": [
+    {
+      "location": "v5.4-v5.12 unified/boundary/collar action",
+      "top_form_term": false
+    },
+    {
+      "charged codimension_one_worldvolume": false,
+      "location": "BHSM topology ledgers"
+    },
+    {
+      "collapse_or_horizon_source": false,
+      "location": "black-hole/core action"
+    },
+    {
+      "location": "quantum v5.10",
+      "top_form_induction": false
+    }
+  ],
   "sprint": "bhsm-primordial-boundary-tension-action-source-closure-v5-12",
-  "status": "STANDARD_NORMAL_VARIATION_IDENTITIES_CONDITIONAL_ON_BHSM_EMBEDDING",
+  "status": "CANDIDATE_LOCAL_TOP_FORM_ACTION_CONSISTENT_BHSM_SOURCE_ABSENT",
   "superluminal_signaling_claimed": false,
-  "tangential_gauge_distinct": true,
   "v5_10_global_determinant_used_as_local_casimir_pressure": false,
-  "version": "v5.12",
-  "xi_perp_physical_candidate": true
+  "version": "v5.12"
 }

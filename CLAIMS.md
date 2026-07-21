@@ -510,3 +510,9 @@ Result: `BHSM_PRIMORDIAL_BOUNDARY_SOURCE_NOT_CLOSED`.
 This does not mean `-1/8` is a local tension, the v5.7 curvature coefficients vanish geometrically, `rho_star=1` is a length, `kappa_geom` supplies a GHY coefficient, the exterior pressure is zero, the v5.10 global response is a local Casimir pressure, or a finite `L_c` has been found. The available data do not yet establish a minimal one-scale theorem.
 
 Still not supported: defining `ell_star=L_c`, propagating physical masses, asserting a primordial rupture or hot plasma, importing a gravitational/electroweak/cosmological scale, deriving couplings or CKM values, predicting rare-B observables, or claiming full BHSM completion.
+
+Recycling continuation allowed: v5.12 may identify a general top-form/global-flux constraint architecture, derive its candidate stress and ensemble-dependent pressure, count zero local polarizations, state the conditional codimension-one flux jump, and show that fixed-`Q` pressure produces a rank-one volume-mode response.
+
+Recycling continuation result: `BHSM_SPACETIME_RECYCLING_CONSTRAINT_ARCHITECTURE_IDENTIFIED`.
+
+Recycling continuation still not supported: an existing BHSM recycling action or core charge; destruction of exact charges, information, or entropy; controllable superluminal signaling; black-hole-driven cosmic expansion; replacement of dark energy or inflation; a solved horizon/homogeneity problem; a ZPV reset; a physical release radius; or an absolute unit from arbitrary flux data.
