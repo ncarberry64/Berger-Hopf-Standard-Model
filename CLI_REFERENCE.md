@@ -376,3 +376,14 @@ The explicit component map is conditionally derived from the Berger metric and c
 - Gauge trace Hodge expansion does not by itself derive gauge couplings.
 - The denominator 1/[3 Vol(S^3)] remains open unless frame averaging, unit volume normalization, and gauge-action attachment are all supported.
 - alpha_i, g2_BH, CKM coefficient value, CKM exponent, and full BHSM completion remain open unless downstream gates close.
+
+<!-- BHSM_FULL_GEOMETRIC_GAUGE_FIXED_HESSIAN_V5_11 -->
+## Full geometric and gauge-fixed Hessian v5.11
+
+```bash
+python -m bhsm.interface full-geometric-gauge-fixed-hessian-status --format json
+python -m bhsm.interface full-geometric-gauge-fixed-hessian-status --format markdown
+python scripts/materialize_full_geometric_gauge_fixed_hessian_v5_11.py
+```
+
+The command reports `BHSM_QUADRATIC_OPERATOR_COMPLEX_PARTIAL`, including field and 36-block ledgers, gauge/ghost candidates, fermion/domain/eta status, scalar recovery, mode audits, and the finite consistency model. It does not emit a one-loop action or physical Casimir energy.

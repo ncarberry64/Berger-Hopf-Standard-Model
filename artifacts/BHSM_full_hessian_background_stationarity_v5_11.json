@@ -1,0 +1,108 @@
+{
+  "absolute_unit_anchor_claimed": false,
+  "artifact": "BHSM_full_hessian_background_stationarity_v5_11",
+  "background_symbol": "B0=(g0,a0,collar,T0,Phi0,sigma=1/2,A0=0,psi0=0,Jch0=0,N0=0)",
+  "boundary_condition_selected_from_phenomenology": false,
+  "ckm_completion_claimed": false,
+  "claim_boundary": "v5.11 constructs the strongest source-qualified operator architecture and a finite gauge-bookkeeping diagnostic. Missing action sources, gauges, domains, boundary conditions, and eta data prevent a determinant-ready full complex.",
+  "empirical_inputs_used": false,
+  "existing_numerical_predictions_changed": false,
+  "frozen_predictions_changed": false,
+  "full_background_on_shell": false,
+  "full_bhsm_completion_claimed": false,
+  "gauge_couplings_derived": false,
+  "measured_masses_or_couplings_used": false,
+  "official_prediction_logic_changed": false,
+  "particle_masses_derived": false,
+  "physical_casimir_energy_claimed": false,
+  "planck_hubble_cmb_or_cosmology_used": false,
+  "primary_result": "BHSM_QUADRATIC_OPERATOR_COMPLEX_PARTIAL",
+  "rare_b_predictions_claimed": false,
+  "rows": [
+    {
+      "boundary_data": "outward collar convention; detailed geometric data open",
+      "component": "geometry",
+      "domain": "compact Berger-Hopf boundary plus normalized collar",
+      "equation": "delta S/delta g=0",
+      "source": "v5.4 symbolic geometric slot",
+      "stationarity": "UNRESOLVED_OFF_SHELL",
+      "value": "g0=L^2 ghat(a0)"
+    },
+    {
+      "boundary_data": "open",
+      "component": "Berger squashing",
+      "domain": "positive Berger metrics",
+      "equation": "partial S/partial a=0",
+      "source": "retained v5.8-v5.10 modulus",
+      "stationarity": "UNRESOLVED_OFF_SHELL",
+      "value": "a0 retained symbolic"
+    },
+    {
+      "boundary_data": "v5.7 reduced Robin rule only",
+      "component": "collar",
+      "domain": "collar interval",
+      "equation": "partial S/partial rho_star=0",
+      "source": "v5.7-v5.10",
+      "stationarity": "ZERO_ONLY_IN_REDUCED_TRUNCATION",
+      "value": "rho_star normalized and retained"
+    },
+    {
+      "boundary_data": "Robin zero-flux",
+      "component": "T,Phi,sigma",
+      "domain": "v5.7 homogeneous reduced space",
+      "equation": "reduced scalar EOM",
+      "source": "v5.7",
+      "stationarity": "ZERO_EXACTLY_IN_DECLARED_REDUCED_MODEL",
+      "value": "T0=Phi0=1/(2 sqrt(2)); sigma=1/2"
+    },
+    {
+      "boundary_data": "open",
+      "component": "gauge",
+      "domain": "trivial-connection candidate",
+      "equation": "delta S/delta A_i=0",
+      "source": "v5.4 gauge slot",
+      "stationarity": "ZERO_CONDITIONALLY_IF_ALL_CURRENTS_VANISH",
+      "value": "A_i0=0"
+    },
+    {
+      "boundary_data": "open",
+      "component": "fermion",
+      "domain": "spinor domain open",
+      "equation": "D_BHSM psi=0",
+      "source": "conditional v5.4 fermion slot",
+      "stationarity": "ZERO_CONDITIONALLY_FOR_BILINEAR_ACTION",
+      "value": "psi0=0"
+    },
+    {
+      "boundary_data": "inherited",
+      "component": "charged",
+      "domain": "composite of psi0",
+      "equation": "no independent Euler-Lagrange equation",
+      "source": "charged bilinear",
+      "stationarity": "NOT_AN_INDEPENDENT_FIELD",
+      "value": "J_ch0=0"
+    },
+    {
+      "boundary_data": "open",
+      "component": "neutral",
+      "domain": "conditional response cone",
+      "equation": "K_neu N+source=0",
+      "source": "symbolic neutral slot",
+      "stationarity": "ZERO_CONDITIONALLY_IF_SOURCE_VANISHES_AND_K_NEU_DEFINED",
+      "value": "N0=0 candidate"
+    },
+    {
+      "boundary_data": "primordial selection open",
+      "component": "global scale",
+      "domain": "positive half-line",
+      "equation": "partial S/partial L=0",
+      "source": "v5.8",
+      "stationarity": "FLAT_CLASSICALLY_NOT_FIXED",
+      "value": "L>0 arbitrary"
+    }
+  ],
+  "sprint": "bhsm-full-geometric-gauge-fixed-hessian-v5-11",
+  "status": "CONTROLLED_REDUCED_ON_SHELL_FULL_BACKGROUND_OFF_SHELL",
+  "tadpole_rule": "Retain unresolved first variations explicitly; do not interpret off-shell quadratic eigenvalues as physical masses or stability data.",
+  "version": "v5.11"
+}

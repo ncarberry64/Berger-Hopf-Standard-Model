@@ -244,6 +244,7 @@ from .scalar_topographic_profile_boundary_closure import profile_boundary_status
 from .absolute_unit_anchor_generation import absolute_unit_status_report, absolute_unit_status_to_markdown
 from .pilot_wave_scale_modulus_dynamics import pilot_wave_status_report, pilot_wave_status_to_markdown
 from .quantum_effective_action_casimir_backreaction import quantum_effective_action_status_report, quantum_effective_action_status_to_markdown
+from .full_geometric_gauge_fixed_hessian import full_hessian_status_report, full_hessian_status_to_markdown
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -678,6 +679,8 @@ def build_parser() -> argparse.ArgumentParser:
     pilot_wave.add_argument("--format", choices=("json", "markdown"), default="json")
     quantum_effective = commands.add_parser("quantum-effective-action-status", help="Render the BHSM v5.10 quantum-effective-action and Casimir-backreaction audit")
     quantum_effective.add_argument("--format", choices=("json", "markdown"), default="json")
+    full_hessian = commands.add_parser("full-geometric-gauge-fixed-hessian-status", help="Render the BHSM v5.11 full quadratic-operator audit")
+    full_hessian.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
 
@@ -1469,6 +1472,13 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(json.dumps(payload, indent=2, sort_keys=True))
         else:
             _print_unicode(quantum_effective_action_status_to_markdown(payload))
+        return 0
+    if args.command == "full-geometric-gauge-fixed-hessian-status":
+        payload = full_hessian_status_report()
+        if args.format == "json":
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        else:
+            _print_unicode(full_hessian_status_to_markdown(payload))
         return 0
     if args.command in {
         "primitive-charged-incidence",

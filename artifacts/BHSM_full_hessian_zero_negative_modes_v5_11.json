@@ -1,0 +1,104 @@
+{
+  "absolute_unit_anchor_claimed": false,
+  "artifact": "BHSM_full_hessian_zero_negative_modes_v5_11",
+  "boundary_condition_selected_from_phenomenology": false,
+  "ckm_completion_claimed": false,
+  "claim_boundary": "v5.11 constructs the strongest source-qualified operator architecture and a finite gauge-bookkeeping diagnostic. Missing action sources, gauges, domains, boundary conditions, and eta data prevent a determinant-ready full complex.",
+  "collective_metric": {
+    "L": "dL^2/L^2",
+    "a_Berger": null,
+    "rho_star": null,
+    "sigma_scale": "d sigma^2"
+  },
+  "determinant_prime_prescription": "remove only proven gauge kernels; retain physical collective coordinates and include their Jacobians",
+  "empirical_inputs_used": false,
+  "existing_numerical_predictions_changed": false,
+  "frozen_predictions_changed": false,
+  "full_bhsm_completion_claimed": false,
+  "gauge_couplings_derived": false,
+  "jacobian": {
+    "L_sigma": "dL/L d sigma_scale",
+    "a_Berger": null,
+    "rho_star": null
+  },
+  "measured_masses_or_couplings_used": false,
+  "negative_modes": [
+    {
+      "count": null,
+      "discarded": false,
+      "interpretation": "Euclidean conformal issue versus off-shell instability unresolved",
+      "sector": "geometry conformal"
+    },
+    {
+      "count": null,
+      "discarded": false,
+      "interpretation": "off-shell background and boundary data unresolved",
+      "sector": "Berger squashing/collar"
+    },
+    {
+      "count": 0,
+      "discarded": false,
+      "interpretation": "eigenvalues 4,6 positive in reduced domain",
+      "sector": "scalar homogeneous"
+    },
+    {
+      "count": null,
+      "discarded": false,
+      "interpretation": "domain/spectrum open",
+      "sector": "scalar nonhomogeneous"
+    },
+    {
+      "count": null,
+      "discarded": false,
+      "interpretation": "operator sources open",
+      "sector": "charged/neutral"
+    }
+  ],
+  "negative_modes_silently_removed": false,
+  "official_prediction_logic_changed": false,
+  "particle_masses_derived": false,
+  "physical_casimir_energy_claimed": false,
+  "planck_hubble_cmb_or_cosmology_used": false,
+  "primary_result": "BHSM_QUADRATIC_OPERATOR_COMPLEX_PARTIAL",
+  "rare_b_predictions_claimed": false,
+  "sprint": "bhsm-full-geometric-gauge-fixed-hessian-v5-11",
+  "status": "ZERO_NEGATIVE_LEDGER_EXPLICIT_TREATMENT_PARTIAL",
+  "version": "v5.11",
+  "zero_modes": [
+    {
+      "mode": "diffeomorphism directions",
+      "treatment": "candidate FP quotient; boundary-compatible projection open",
+      "type": "pure gauge"
+    },
+    {
+      "mode": "internal D_i epsilon_i",
+      "treatment": "candidate FP quotient; residual global kernel prime needed",
+      "type": "pure gauge"
+    },
+    {
+      "mode": "Killing/Berger isometry stabilizer",
+      "treatment": "group-volume/Jacobian open",
+      "type": "residual gauge/isometry"
+    },
+    {
+      "mode": "global L",
+      "treatment": "retain; v5.9 measure dL/L",
+      "type": "physical classical modulus/collective coordinate"
+    },
+    {
+      "mode": "a_Berger,rho_star",
+      "treatment": "retain; metrics/Jacobians open",
+      "type": "candidate collective moduli"
+    },
+    {
+      "mode": "sigma_scale",
+      "treatment": "not determinant-owned in v5.10 hierarchy",
+      "type": "retained collective coordinate but not zero of v5.7 Hessian"
+    },
+    {
+      "mode": "fermion/index/topological",
+      "treatment": "index and eta ledger required",
+      "type": "unresolved"
+    }
+  ]
+}
