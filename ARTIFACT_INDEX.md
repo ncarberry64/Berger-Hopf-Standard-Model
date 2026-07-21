@@ -601,3 +601,27 @@ Doctrine: `docs/bhsm_minimal_parent_theory_kill_test_v6_0_5.md`.
 The v6.0.5 trigger failure is scoped to the frozen autonomous coherent
 nonzero-sigma transition. General action-supported energy--geometry
 envelopment and transient free-scalar localization remain open.
+
+<!-- BHSM_CORRESPONDENCE_NOVELTY_FIREWALL_V6_0_6 -->
+## Correspondence, ontology, and novelty firewall v6.0.6
+
+| Artifact | Purpose |
+|---|---|
+| `artifacts/BHSM_physicality_ontology_v6_0_6.json` | Freezes the minimal interpretive physicality/envelopment dictionary. |
+| `artifacts/BHSM_established_physics_correspondence_registry_v6_0_6.json` | Separates standard correspondence from BHSM novelty. |
+| `artifacts/BHSM_geometric_reinterpretation_registry_v6_0_6.json` | Records ontology as reinterpretation rather than theorem. |
+| `artifacts/BHSM_native_derivation_registry_v6_0_6.json` | Inventories BHSM-specific exact and conditional results. |
+| `artifacts/BHSM_novelty_prediction_firewall_v6_0_6.json` | Classifies all major claims and defines the frozen-prediction gate. |
+| `artifacts/BHSM_harmonic_role_reclassification_v6_0_6.json` | Retains the exact octave without a universal trigger claim. |
+| `artifacts/BHSM_sigma_role_reclassification_v6_0_6.json` | Reclassifies sigma as a candidate reduced/persistent variable. |
+| `artifacts/BHSM_b8_s7_berger_s3_candidate_role_matrix_v6_0_6.json` | Audits nine possible roles for legacy Berger S3. |
+| `artifacts/BHSM_b8_s7_berger_s3_required_maps_v6_0_6.json` | Separates exact Hopf maps from missing reduction maps. |
+| `artifacts/BHSM_b8_s7_berger_s3_metric_measure_compatibility_v6_0_6.json` | Separates the round fiber from a generic Berger metric. |
+| `artifacts/BHSM_parent_to_v5_action_sector_map_v6_0_6.json` | Audits eight v5 action sectors without reverse engineering. |
+| `artifacts/BHSM_s7_to_berger_s3_mode_branching_readiness_v6_0_6.json` | Defines representation, measure, domain, and operator gates. |
+| `artifacts/BHSM_b8_s7_berger_s3_reduction_blockers_v6_0_6.json` | Lists the exact blockers for the reduction theorem. |
+| `artifacts/BHSM_full_bhsm_roadmap_v6_0_6.json` | Redirects the full program through the parent-to-v5 bridge. |
+| `artifacts/BHSM_correspondence_hidden_input_claim_audit_v6_0_6.json` | Confirms no measured input or observable rewrite. |
+| `artifacts/BHSM_correspondence_novelty_firewall_report_v6_0_6.json` | Final result, stop condition, and next-branch routing. |
+
+Doctrine: `docs/bhsm_correspondence_novelty_firewall_v6_0_6.md`.

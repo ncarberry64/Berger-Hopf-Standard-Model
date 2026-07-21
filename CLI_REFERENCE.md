@@ -487,3 +487,19 @@ harmonically selected stable nonzero-sigma transition. It also reports
 `BHSM_GENERAL_ENERGY_GEOMETRY_ENVELOPMENT_REMAINS_OPEN`: transient localized
 energy differentials are not falsified. The sprint does not search for or
 promote a replacement candidate.
+
+<!-- BHSM_CORRESPONDENCE_NOVELTY_FIREWALL_V6_0_6 -->
+## Correspondence, ontology, and novelty firewall v6.0.6
+
+```bash
+python -m bhsm.interface correspondence-novelty-firewall-status --format json
+python -m bhsm.interface correspondence-novelty-firewall-status --format markdown
+python scripts/materialize_correspondence_novelty_firewall_v6_0_6.py
+```
+
+The command reports `BHSM_CORRESPONDENCE_NOVELTY_FIREWALL_DERIVED` and
+`BHSM_B8_S7_TO_BERGER_S3_REDUCTION_READINESS_IDENTIFIED`, with the reduction
+still `BHSM_B8_S7_TO_BERGER_S3_REDUCTION_BLOCKED`. It classifies established
+physics as correspondence, preserves conditional legacy results, and exposes
+the exact map, metric, representation, operator, action, and coefficient gates
+without changing any prediction.

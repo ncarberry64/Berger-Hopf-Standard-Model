@@ -1,0 +1,491 @@
+{
+  "absolute_unit_generated": false,
+  "artifact": "BHSM_novelty_prediction_firewall_v6_0_6",
+  "categories": [
+    "ESTABLISHED_PHYSICS_CORRESPONDENCE",
+    "BHSM_GEOMETRIC_REINTERPRETATION",
+    "BHSM_DERIVED",
+    "BHSM_DERIVED_CONDITIONALLY",
+    "BHSM_CANDIDATE",
+    "BHSM_NOVEL_PREDICTION_FROZEN",
+    "INVALIDATED",
+    "OPEN"
+  ],
+  "claim_boundary": "v6.0.6 freezes an interpretive ontology and a provenance firewall. It does not claim established physics as a BHSM derivation, close the B8/S7-to-Berger-S3 reduction, or change any observable prediction.",
+  "current_v6_0_6_predictions": [],
+  "established_physics_claimed_novel": false,
+  "existing_numerical_predictions_changed": false,
+  "frozen_predictions_changed": false,
+  "full_bhsm_completion_claimed": false,
+  "measured_mass_coupling_or_scale_used": false,
+  "new_interaction_added": false,
+  "new_parent_field_added": false,
+  "official_prediction_logic_changed": false,
+  "particle_objecthood_derived": false,
+  "prediction_gate": {
+    "required_category": "BHSM_NOVEL_PREDICTION_FROZEN",
+    "requirements": [
+      "BHSM-specific derivation",
+      "defined action and domain",
+      "no target fitting",
+      "numerical or structural preregistration",
+      "frozen output before experimental comparison",
+      "independent testability"
+    ]
+  },
+  "primary_result": "BHSM_CORRESPONDENCE_NOVELTY_FIREWALL_DERIVED",
+  "reduction_readiness_result": "BHSM_B8_S7_TO_BERGER_S3_REDUCTION_READINESS_IDENTIFIED",
+  "reduction_status": "BHSM_B8_S7_TO_BERGER_S3_REDUCTION_BLOCKED",
+  "rows": [
+    {
+      "bhsm_specific": false,
+      "category": "ESTABLISHED_PHYSICS_CORRESPONDENCE",
+      "changes_observable_calculation": false,
+      "claim_boundary": "used as a correspondence requirement; not a novel BHSM achievement",
+      "concept": "stress-energy conservation",
+      "independently_testable": false,
+      "mathematical_dependencies": [
+        "action",
+        "field equations",
+        "Bianchi identity"
+      ],
+      "physical_dependencies": [
+        "stress tensor"
+      ],
+      "precise_statement": "On-shell covariant stress conservation is required where the action has diffeomorphism invariance.",
+      "source_artifact": "artifacts/BHSM_minimal_parent_action_equations_stress_v6_0_5.json"
+    },
+    {
+      "bhsm_specific": false,
+      "category": "ESTABLISHED_PHYSICS_CORRESPONDENCE",
+      "changes_observable_calculation": false,
+      "claim_boundary": "used as a correspondence requirement; not a novel BHSM achievement",
+      "concept": "compression",
+      "independently_testable": false,
+      "mathematical_dependencies": [
+        "continuum or field equations"
+      ],
+      "physical_dependencies": [
+        "matter or field stress"
+      ],
+      "precise_statement": "Compression and converging flow can produce stress and density gradients.",
+      "source_artifact": "docs/bhsm_correspondence_novelty_firewall_v6_0_6.md"
+    },
+    {
+      "bhsm_specific": false,
+      "category": "ESTABLISHED_PHYSICS_CORRESPONDENCE",
+      "changes_observable_calculation": false,
+      "claim_boundary": "used as a correspondence requirement; not a novel BHSM achievement",
+      "concept": "collisions",
+      "independently_testable": false,
+      "mathematical_dependencies": [
+        "interaction dynamics"
+      ],
+      "physical_dependencies": [
+        "colliding physical system"
+      ],
+      "precise_statement": "Collisions can create localized energy-spacetime differentials.",
+      "source_artifact": "docs/bhsm_correspondence_novelty_firewall_v6_0_6.md"
+    },
+    {
+      "bhsm_specific": false,
+      "category": "ESTABLISHED_PHYSICS_CORRESPONDENCE",
+      "changes_observable_calculation": false,
+      "claim_boundary": "not a shock without nonlinear weak-solution and jump conditions",
+      "concept": "outgoing waves and explosion-like shells",
+      "independently_testable": false,
+      "mathematical_dependencies": [
+        "hyperbolic evolution"
+      ],
+      "physical_dependencies": [
+        "initial data",
+        "stress and flux"
+      ],
+      "precise_statement": "Ordinary outgoing wavefronts and shells are established propagation phenomena.",
+      "source_artifact": "docs/bhsm_correspondence_novelty_firewall_v6_0_6.md"
+    },
+    {
+      "bhsm_specific": false,
+      "category": "ESTABLISHED_PHYSICS_CORRESPONDENCE",
+      "changes_observable_calculation": false,
+      "claim_boundary": "ordinary interference is not a derived BHSM interaction",
+      "concept": "constructive and destructive interference",
+      "independently_testable": false,
+      "mathematical_dependencies": [
+        "linear superposition"
+      ],
+      "physical_dependencies": [
+        "coherent initial data"
+      ],
+      "precise_statement": "Linear waves exhibit phase-dependent local interference.",
+      "source_artifact": "artifacts/BHSM_harmonic_linear_no_selection_theorem_v6_0_4.json"
+    },
+    {
+      "bhsm_specific": false,
+      "category": "ESTABLISHED_PHYSICS_CORRESPONDENCE",
+      "changes_observable_calculation": false,
+      "claim_boundary": "BHSM has not solved a new self-gravitating envelope",
+      "concept": "curvature sourced by stress-energy",
+      "independently_testable": false,
+      "mathematical_dependencies": [
+        "selected metric action"
+      ],
+      "physical_dependencies": [
+        "conserved stress"
+      ],
+      "precise_statement": "Metric theories use stress as a curvature source according to their field equations.",
+      "source_artifact": "artifacts/BHSM_minimal_parent_action_equations_stress_v6_0_5.json"
+    },
+    {
+      "bhsm_specific": false,
+      "category": "ESTABLISHED_PHYSICS_CORRESPONDENCE",
+      "changes_observable_calculation": false,
+      "claim_boundary": "a BHSM normalization and action source remain required",
+      "concept": "gauge connections",
+      "independently_testable": false,
+      "mathematical_dependencies": [
+        "bundle",
+        "connection"
+      ],
+      "physical_dependencies": [
+        "gauge representation"
+      ],
+      "precise_statement": "Connections and curvature are accepted gauge-theory language.",
+      "source_artifact": "theory/explicit_hopf_berger_boundary_oneforms.md"
+    },
+    {
+      "bhsm_specific": false,
+      "category": "ESTABLISHED_PHYSICS_CORRESPONDENCE",
+      "changes_observable_calculation": false,
+      "claim_boundary": "no BHSM soliton is derived",
+      "concept": "topological solitons",
+      "independently_testable": false,
+      "mathematical_dependencies": [
+        "nontrivial homotopy",
+        "nonlinear action"
+      ],
+      "physical_dependencies": [
+        "finite-energy boundary conditions"
+      ],
+      "precise_statement": "Topological solitons are an established class of persistent field configurations.",
+      "source_artifact": "CLAIMS.md"
+    },
+    {
+      "bhsm_specific": true,
+      "category": "BHSM_DERIVED_CONDITIONALLY",
+      "changes_observable_calculation": false,
+      "claim_boundary": "the round-S7 scalar diagnostic is exact; the physical parent operator remains unselected",
+      "concept": "compact-space spectra",
+      "independently_testable": false,
+      "mathematical_dependencies": [
+        "metric",
+        "operator",
+        "domain"
+      ],
+      "physical_dependencies": [],
+      "precise_statement": "Spectra follow exactly after the compact metric, operator, and domain are fixed.",
+      "source_artifact": "artifacts/BHSM_harmonic_exact_mode_representation_spectrum_v6_0_4.json"
+    },
+    {
+      "bhsm_specific": true,
+      "category": "OPEN",
+      "changes_observable_calculation": false,
+      "claim_boundary": "not parent-derived and not a BHSM prediction",
+      "concept": "particle localization",
+      "independently_testable": false,
+      "mathematical_dependencies": [
+        "reduction",
+        "operator",
+        "localized solution"
+      ],
+      "physical_dependencies": [
+        "stability"
+      ],
+      "precise_statement": "No parent-derived localized particle sector is established.",
+      "source_artifact": "STATUS.md"
+    },
+    {
+      "bhsm_specific": true,
+      "category": "OPEN",
+      "changes_observable_calculation": false,
+      "claim_boundary": "not parent-derived and not a BHSM prediction",
+      "concept": "stable objecthood",
+      "independently_testable": false,
+      "mathematical_dependencies": [
+        "nonlinear solution",
+        "constrained Hessian"
+      ],
+      "physical_dependencies": [
+        "finite energy",
+        "controlled leakage"
+      ],
+      "precise_statement": "Self-supported persistent localization has not been derived.",
+      "source_artifact": "docs/bhsm_minimal_parent_theory_kill_test_v6_0_5.md"
+    },
+    {
+      "bhsm_specific": true,
+      "category": "OPEN",
+      "changes_observable_calculation": false,
+      "claim_boundary": "not parent-derived and not a BHSM prediction",
+      "concept": "charge quantization",
+      "independently_testable": false,
+      "mathematical_dependencies": [
+        "bundle",
+        "representation",
+        "normalization"
+      ],
+      "physical_dependencies": [
+        "gauge action"
+      ],
+      "precise_statement": "No parent-to-reduced charge quantization theorem is complete.",
+      "source_artifact": "STATUS.md"
+    },
+    {
+      "bhsm_specific": true,
+      "category": "OPEN",
+      "changes_observable_calculation": false,
+      "claim_boundary": "not parent-derived and not a BHSM prediction",
+      "concept": "three generations",
+      "independently_testable": false,
+      "mathematical_dependencies": [
+        "S7-to-S3 branching",
+        "fermion operator"
+      ],
+      "physical_dependencies": [
+        "particle identification"
+      ],
+      "precise_statement": "Existing mode ledgers do not derive three physical generations.",
+      "source_artifact": "artifacts/BHSM_harmonic_parent_to_v5_compatibility_v6_0_4.json"
+    },
+    {
+      "bhsm_specific": true,
+      "category": "OPEN",
+      "changes_observable_calculation": false,
+      "claim_boundary": "not parent-derived and not a BHSM prediction",
+      "concept": "particle masses",
+      "independently_testable": false,
+      "mathematical_dependencies": [
+        "reduced action",
+        "absolute unit"
+      ],
+      "physical_dependencies": [
+        "particle sectors"
+      ],
+      "precise_statement": "Particle masses are not parent-derived.",
+      "source_artifact": "CLAIMS.md"
+    },
+    {
+      "bhsm_specific": true,
+      "category": "OPEN",
+      "changes_observable_calculation": false,
+      "claim_boundary": "not parent-derived and not a BHSM prediction",
+      "concept": "gauge couplings",
+      "independently_testable": false,
+      "mathematical_dependencies": [
+        "fiber trace",
+        "action coefficient map"
+      ],
+      "physical_dependencies": [
+        "gauge sector"
+      ],
+      "precise_statement": "Gauge normalizations and couplings are not parent-derived.",
+      "source_artifact": "artifacts/BHSM_unified_dynamical_action_candidate_v5_4.json"
+    },
+    {
+      "bhsm_specific": true,
+      "category": "OPEN",
+      "changes_observable_calculation": false,
+      "claim_boundary": "not parent-derived and not a BHSM prediction",
+      "concept": "fine-structure constant",
+      "independently_testable": false,
+      "mathematical_dependencies": [
+        "gauge normalization",
+        "quantum running"
+      ],
+      "physical_dependencies": [
+        "absolute unit convention"
+      ],
+      "precise_statement": "The fine-structure constant is not derived.",
+      "source_artifact": "CLAIMS.md"
+    },
+    {
+      "bhsm_specific": true,
+      "category": "OPEN",
+      "changes_observable_calculation": false,
+      "claim_boundary": "not parent-derived and not a BHSM prediction",
+      "concept": "CKM",
+      "independently_testable": false,
+      "mathematical_dependencies": [
+        "charged-current action",
+        "generation basis"
+      ],
+      "physical_dependencies": [
+        "quark sectors"
+      ],
+      "precise_statement": "CKM completion is not derived from the parent action.",
+      "source_artifact": "CLAIMS.md"
+    },
+    {
+      "bhsm_specific": true,
+      "category": "OPEN",
+      "changes_observable_calculation": false,
+      "claim_boundary": "not parent-derived and not a BHSM prediction",
+      "concept": "PMNS",
+      "independently_testable": false,
+      "mathematical_dependencies": [
+        "neutral and charged lepton actions"
+      ],
+      "physical_dependencies": [
+        "lepton sectors"
+      ],
+      "precise_statement": "PMNS completion is not derived from the parent action.",
+      "source_artifact": "CLAIMS.md"
+    },
+    {
+      "bhsm_specific": true,
+      "category": "OPEN",
+      "changes_observable_calculation": false,
+      "claim_boundary": "not parent-derived and not a BHSM prediction",
+      "concept": "neutrino scale",
+      "independently_testable": false,
+      "mathematical_dependencies": [
+        "neutral operator",
+        "absolute unit"
+      ],
+      "physical_dependencies": [
+        "neutrino sector"
+      ],
+      "precise_statement": "The neutrino absolute scale remains unanchored.",
+      "source_artifact": "STATUS.md"
+    },
+    {
+      "bhsm_specific": true,
+      "category": "BHSM_CANDIDATE",
+      "changes_observable_calculation": false,
+      "claim_boundary": "no black-hole de-envelopment result is claimed",
+      "concept": "black-hole de-envelopment",
+      "independently_testable": false,
+      "mathematical_dependencies": [
+        "Lorentzian solution",
+        "horizon/interface dynamics"
+      ],
+      "physical_dependencies": [
+        "conservation",
+        "regular continuation"
+      ],
+      "precise_statement": "De-envelopment is an interpretive candidate requiring a causal, dynamical theorem.",
+      "source_artifact": "CLAIMS.md"
+    },
+    {
+      "bhsm_specific": true,
+      "category": "BHSM_CANDIDATE",
+      "changes_observable_calculation": false,
+      "claim_boundary": "no shared core or singularity resolution is claimed",
+      "concept": "shared-core hypothesis",
+      "independently_testable": false,
+      "mathematical_dependencies": [
+        "global parent geometry",
+        "causal continuation"
+      ],
+      "physical_dependencies": [
+        "black-hole solutions"
+      ],
+      "precise_statement": "A shared core is an unproved hypothesis.",
+      "source_artifact": "CLAIMS.md"
+    },
+    {
+      "bhsm_specific": true,
+      "category": "OPEN",
+      "changes_observable_calculation": false,
+      "claim_boundary": "not parent-derived and not a BHSM prediction",
+      "concept": "primordial release",
+      "independently_testable": false,
+      "mathematical_dependencies": [
+        "surface Hessian",
+        "sourced tension",
+        "absolute unit"
+      ],
+      "physical_dependencies": [
+        "stable compact state"
+      ],
+      "precise_statement": "No action-derived absolute release threshold is complete.",
+      "source_artifact": "artifacts/BHSM_primordial_boundary_tension_action_source_closure_report_v5_12.json"
+    },
+    {
+      "bhsm_specific": true,
+      "category": "OPEN",
+      "changes_observable_calculation": false,
+      "claim_boundary": "not parent-derived and not a BHSM prediction",
+      "concept": "absolute unit",
+      "independently_testable": false,
+      "mathematical_dependencies": [
+        "dimensionful parent primitive or anomaly"
+      ],
+      "physical_dependencies": [],
+      "precise_statement": "The global scale modulus has not been lifted by an internally sourced anchor.",
+      "source_artifact": "artifacts/BHSM_absolute_unit_anchor_generation_report_v5_8.json"
+    },
+    {
+      "bhsm_specific": true,
+      "category": "BHSM_DERIVED_CONDITIONALLY",
+      "changes_observable_calculation": false,
+      "claim_boundary": "reduced conditional result; parent source and universal meaning are open",
+      "concept": "v5 scalar/topographic vacuum",
+      "independently_testable": false,
+      "mathematical_dependencies": [
+        "reduced v5 action"
+      ],
+      "physical_dependencies": [],
+      "precise_statement": "The reduced potential V=-sigma^2+2sigma^4 has A_ST=-2, G_ST=8, and |sigma|=1/2 in its declared normalized model.",
+      "source_artifact": "artifacts/BHSM_scalar_topographic_evaluated_vacuum_functional_v5_7.json"
+    },
+    {
+      "bhsm_specific": true,
+      "category": "BHSM_DERIVED",
+      "changes_observable_calculation": false,
+      "claim_boundary": "dimensionless diagnostic relation only",
+      "concept": "exact S7 octave pair",
+      "independently_testable": true,
+      "mathematical_dependencies": [
+        "round S7",
+        "scalar Laplacian"
+      ],
+      "physical_dependencies": [],
+      "precise_statement": "For a massless scalar on round S7, l=4 and l=10 obey omega_10=2 omega_4.",
+      "source_artifact": "artifacts/BHSM_harmonic_exact_mode_representation_spectrum_v6_0_4.json"
+    },
+    {
+      "bhsm_specific": true,
+      "category": "BHSM_DERIVED_CONDITIONALLY",
+      "changes_observable_calculation": false,
+      "claim_boundary": "not yet identified with branched S7 parent modes",
+      "concept": "Berger S3 mode ledger",
+      "independently_testable": false,
+      "mathematical_dependencies": [
+        "Berger metric",
+        "declared operators and domains"
+      ],
+      "physical_dependencies": [],
+      "precise_statement": "Stored Berger-S3 mode calculations retain their stated lower-dimensional domains.",
+      "source_artifact": "artifacts/BHSM_s7_berger_s3_reclassification_v6_0_1.json"
+    },
+    {
+      "bhsm_specific": true,
+      "category": "BHSM_GEOMETRIC_REINTERPRETATION",
+      "changes_observable_calculation": false,
+      "claim_boundary": "ontology, not a dynamical theorem",
+      "concept": "physicality as envelopment",
+      "independently_testable": false,
+      "mathematical_dependencies": [],
+      "physical_dependencies": [
+        "observable differential"
+      ],
+      "precise_statement": "Known differentials admit a common energy-spacetime envelopment interpretation.",
+      "source_artifact": "artifacts/BHSM_physicality_ontology_v6_0_6.json"
+    }
+  ],
+  "sprint": "bhsm-general-energy-geometry-envelopment-v6-0-6",
+  "status": "BHSM_NOVELTY_CLAIM_FIREWALL_DERIVED",
+  "target_fitting_used": false,
+  "version": "v6.0.6"
+}
