@@ -413,3 +413,17 @@ python scripts/materialize_s7_fiber_integration_physical_localization_v6_0.py
 The command reports `BHSM_S7_ARCHITECTURE_AMBIGUOUS`. It derives the exact
 nested Hopf–twistor diagram and conditional fiber-pushforward theorem but does
 not select an S7 physical action domain, absolute scale, mass, or coupling.
+
+<!-- BHSM_B8_S7_PHYSICAL_DOMAIN_ACTION_SOURCE_CLOSURE_V6_0_1 -->
+## B8/S7 physical domain and action-source closure v6.0.1
+
+```bash
+python -m bhsm.interface b8-s7-physical-domain-status --format json
+python -m bhsm.interface b8-s7-physical-domain-status --format markdown
+python scripts/materialize_b8_s7_physical_domain_action_source_closure_v6_0_1.py
+```
+
+The command reports `BHSM_B8_S7_PARENT_ACTION_SOURCE_MISSING`. It preserves
+the v6.0 nested topology, separates all viable physical-domain branches, and
+audits the energy–geometry enclosure criterion without promoting it to a
+derived action or physical normalization.

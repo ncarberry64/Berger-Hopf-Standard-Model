@@ -2,6 +2,10 @@
 
 ## Allowed
 
+- v6.0.1 reports `BHSM_B8_S7_PARENT_ACTION_SOURCE_MISSING`: the stored v5.4-v6.0 terms do not constitute a foundational B8 action or select an S7 physical boundary, signature, time coordinate, metric, collar scale, or observed 3+1 map.
+- Euclidean, Lorentzian, canonical, and independent-product domains remain distinct conditional candidates; none is selected by aesthetics or legacy wording.
+- Energy-driven enclosure of spacetime is a conditional physicality criterion requiring a conserved bulk stress source, metric constraint, boundary/junction equation, and energy-transfer law. It is not yet a derived BHSM equation.
+- Standard S7 metrics, volume factorizations, and collar identities may be used as convention-controlled mathematical checks without being called physically action-selected.
 - v6.0 derives the canonical nested Hopf–twistor bundle diagram and a fiber-integration theorem conditional on explicit orientation, compactness, integrability, metric/action measure, and boundary hypotheses.
 - v6.0 reports `BHSM_S7_ARCHITECTURE_AMBIGUOUS`: the repository's explicit Berger source is S3-type and does not select an S7 physical action domain, B8 bulk, signature, time assignment, S7 metric, fiber scale, or collar matching map.
 - Fiber pushforward uses the actual integral. A normalized probability average is not substituted unless independently selected by the action.
@@ -67,6 +71,10 @@
 
 Do not claim that:
 
+- BHSM currently contains a foundational B8 geometry–stress action.
+- Energy enclosure language alone derives physicality, a boundary source, or an equation of motion.
+- A topologically permitted S7 metric is a stationary BHSM solution without a parent action.
+- Full v6.1 scalar localization may proceed before the parent-domain action gate closes.
 - The exact mathematical S7 Hopf fibrations are thereby the action-selected physical BHSM architecture.
 - The Riemannian S4 base is thereby observed Lorentzian spacetime.
 - A unit-radius fiber volume or normalized collar coordinate supplies an absolute physical scale.
