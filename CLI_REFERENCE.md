@@ -540,3 +540,17 @@ eigenspace bundles, covariant scalar operator, general round-S7 branching, and
 linear closure. It routes generic nonlinear products to a tower-aware
 effective reduction and keeps parent normalization, gauge interpretation,
 v5 coefficient recovery, physical units, and particle claims separate.
+
+<!-- BHSM_TWISTOR_BERGER_ACTION_NORMALIZATION_V6_0_9 -->
+## Twistor--Berger action normalization v6.0.9
+
+```bash
+python -m bhsm.interface twistor-berger-action-normalization-status --format json
+python -m bhsm.interface twistor-berger-action-normalization-status --format markdown
+python scripts/materialize_twistor_berger_action_normalization_v6_0_9.py
+```
+
+The command reports the P1 measure, connection and scalar-multiplet
+normalizations, overlap rules, vertical gap, conditional tower-control bounds,
+and fixed-lapse modulus result. It also preserves the open Lorentzian
+lapse/stress background and absolute-unit blocker.

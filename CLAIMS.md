@@ -698,3 +698,23 @@ Not supported: treating local components as global scalars; assuming a section
 of `CP3->S4`; identifying the geometric `Sp(1)` or `U(1)` connections with the
 Standard Model gauge group; deriving physical couplings, particles,
 generations, v5 target coefficients, an absolute scale, or full BHSM.
+
+<!-- BHSM_TWISTOR_BERGER_ACTION_NORMALIZATION_V6_0_9 -->
+## v6.0.9 twistor--Berger action-normalization claims
+
+Allowed: in the frozen P1/coframe conventions, the physical volumes,
+constant-modulus curvature, connection kinetic matrix, canonical scalar
+multiplet factors, overlap rules, and minimal-scalar vertical gap are derived.
+
+Allowed conditionally: tree-level tower integration and error bounds hold
+below the gap in the declared elliptic low-energy regime. The declared bulk
+sigma singlet is a parent candidate, not a derived v5 identification.
+
+Allowed only with downgrade: the round and Jensen-squashed ratios are
+fixed-lapse spatial extrema. They are not full Lorentzian P1 vacua until the
+lapse constraint and declared-field stress equations close; their scale
+depends on the primitive ratio `kappa1/kappa0`.
+
+Not supported: a physical or Standard Model gauge coupling, unconditional
+finite nonlinear closure, v5 coefficients, fermion spectrum, particles,
+generations, an absolute unit, physical validation, or full BHSM completion.

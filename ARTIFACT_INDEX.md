@@ -682,3 +682,15 @@ Doctrine: `docs/bhsm_b8_s7_to_berger_s3_reduction_theorem_v6_0_7.md`.
 | `artifacts/BHSM_twistor_berger_associated_bundle_report_v6_0_8.json` | Final constructive result, exact constraints, and next action-normalization dependency. |
 
 Doctrine: `docs/bhsm_twistor_berger_associated_bundle_v6_0_8.md`.
+
+<!-- BHSM_TWISTOR_BERGER_ACTION_NORMALIZATION_V6_0_9 -->
+## Twistor--Berger action normalization v6.0.9
+
+The 23 deterministic JSON artifacts are enumerated by
+`src/bhsm/interface/twistor_berger_action_normalization.py`. They cover the
+convention and measure; P1 curvature, connection, moduli, and canonical
+multiplets; cubic/quartic overlaps and selection rules; the spectral gap and
+tower bounds; the normalized action and separate P2/P3 ledger; parent-to-v5,
+sigma/gauge/fermion readiness; scale, stability, hidden inputs, and report.
+
+Doctrine: `docs/bhsm_twistor_berger_action_normalization_v6_0_9.md`.
