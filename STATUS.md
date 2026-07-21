@@ -533,3 +533,18 @@ Still conditional/open: `OPEN_MISSING_UNIFIED_ACTION_COEFFICIENT_DERIVATION`, `O
 Preserved: `ACTION_ATTACHMENT_BLOCKED`, `CKM_RELATIVE_CURRENT_NORMALIZATION_BLOCKED`, `COUPLING_BRIDGE_BLOCKED_PENDING_ACTION_PRINCIPLE`, `OPEN_MISSING_G2_BH_ACTION_SOURCE`, `OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE`, `CKM_EXPONENT_NOT_DERIVED`, `RARE_B_FCNC_GENERATION_MECHANISM_BLOCKED`, `B_TO_S_MUMU_OPERATOR_MATCHING_BLOCKED`, `RARE_B_AFB_ZERO_PREDICTION_BLOCKED`, and `FULL_BHSM_NOT_COMPLETE`.
 
 Command: `python -m bhsm.interface unified-dynamical-action-status --format markdown`.
+
+<!-- BHSM_PHYSICAL_SCALE_GENERATION_V5_5 -->
+## Physical-scale generation v5.5
+
+Primary result: `BHSM_PHYSICAL_SCALE_GENERATED_CONDITIONALLY`.
+
+BHSM v5.5 inventories all current scale-bearing objects and selects a scalar/topographic scale-vacuum mechanism as the strongest construction supported by the v5.4 action. The conditional scale equation is `beta_scale sigma^3 - alpha_scale sigma = 0`, with nonzero branch magnitude `sqrt(alpha_scale/beta_scale)` when `alpha_scale>0` and `beta_scale>0`.
+
+Validated: a free geometric radius is not promoted to scale generation; dimensionless mode numbers, eigenvalue ratios, curvature, volume, and sector weights are not relabeled as physical mass scales; the nonzero branch is locally stable in the deterministic reduced model; the generated scale propagates into operators as `M_BH = M_* sqrt(alpha_scale/beta_scale)`.
+
+Still conditional/open: `OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR`, `OPEN_MISSING_SCALE_POTENTIAL_ACTION_SOURCE`, `OPEN_MISSING_PHYSICAL_SCALE_GENERATION_FOR_NUMERIC_UNITS`, `OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT`, `OPEN_MISSING_ALPHA_I_ACTION_DERIVATION`, `OPEN_MISSING_G2_BH_ACTION_SOURCE`, `OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE`, `CKM_EXPONENT_NOT_DERIVED`, `OPEN_MISSING_NEUTRAL_SCALE`, `OPEN_MISSING_NEUTRAL_ACTION_NORMALIZATION`, `OPEN_MISSING_CHARGED_CURRENT_NORMALIZATION`, `OPEN_MISSING_NEUTRAL_RESPONSE_NORMALIZATION`, `OPEN_MISSING_NONLINEAR_UNIFIED_SOLUTION`, and `FULL_BHSM_NOT_COMPLETE`.
+
+No numeric eV/GeV scale, particle mass, gauge coupling, CKM value, rare-B Wilson coefficient, or full BHSM completion is claimed.
+
+Command: `python -m bhsm.interface physical-scale-generation-status --format markdown`.

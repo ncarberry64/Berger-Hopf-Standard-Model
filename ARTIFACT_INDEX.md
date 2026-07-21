@@ -346,3 +346,20 @@ Doctrine: `docs/bhsm_rare_b_fcnc_generation_mechanism_v5_3.md`.
 | `artifacts/BHSM_unified_dynamical_action_construction_report_v5_4.json` | `UNIFIED_BHSM_ACTION_CONSTRUCTED_CONDITIONALLY` | Final construction report with derived, symbolic, open, and preserved-claim statuses. |
 
 Doctrine: `docs/bhsm_unified_dynamical_action_construction_v5_4.md`.
+
+<!-- BHSM_PHYSICAL_SCALE_GENERATION_V5_5 -->
+## Physical-scale generation v5.5
+
+| Artifact | Status | Purpose |
+|---|---|---|
+| `artifacts/BHSM_physical_scale_object_inventory_v5_5.json` | `SCALE_OBJECT_INVENTORY_COMPLETE` | Inventories boundary radius, collar, metric, curvature, volume, scalar/topographic amplitude, potential coefficients, spectra, Hessians, and running objects with dimension and absolute-scale status. |
+| `artifacts/BHSM_physical_scale_candidate_comparison_v5_5.json` | `PHYSICAL_SCALE_CANDIDATES_COMPARED` | Compares geometric-radius, scalar/topographic vacuum, spectral, and transmutation candidates under action support, dimensional consistency, stability, uniqueness, inputs, and computability. |
+| `artifacts/BHSM_selected_physical_scale_mechanism_v5_5.json` | `SCALAR_TOPOGRAPHIC_SCALE_VACUUM_SELECTED_CONDITIONALLY` | Selects the nonzero scalar/topographic scale-vacuum branch as the strongest conditional mechanism. |
+| `artifacts/BHSM_physical_scale_equation_v5_5.json` | `PHYSICAL_SCALE_EQUATION_DERIVED_CONDITIONALLY` | Stores the scale equation `beta_scale sigma^3 - alpha_scale sigma = 0` and the nonzero branch `sqrt(alpha_scale/beta_scale)`. |
+| `artifacts/BHSM_physical_scale_stability_analysis_v5_5.json` | `NONZERO_SCALE_BRANCH_STABLE_CONDITIONALLY` | Records the zero branch, nonzero Hessian `2 alpha_scale`, runaway condition, and sign degeneracy. |
+| `artifacts/BHSM_physical_scale_dimension_unit_map_v5_5.json` | `DIMENSION_AND_UNIT_MAP_CONDITIONAL` | Maps dimensionless scale, length, inverse length, and mass/energy conversion while preserving the open unit anchor. |
+| `artifacts/BHSM_physical_scale_operator_propagation_v5_5.json` | `PHYSICAL_SCALE_PROPAGATION_MAP_CONDITIONAL` | Shows how `M_BH` would enter fermion, gauge, scalar, boundary-mode, charged-current, neutral-response, and propagator structures. |
+| `artifacts/BHSM_physical_scale_reduced_model_v5_5.json` | `REDUCED_SCALE_SETTING_MODEL_DETERMINISTIC_STABLE` | Provides a deterministic symbolic-unit reduced solution and stability check. |
+| `artifacts/BHSM_physical_scale_generation_report_v5_5.json` | `BHSM_PHYSICAL_SCALE_GENERATED_CONDITIONALLY` | Final v5.5 report with derived, conditional, open, and preserved-claim statuses. |
+
+Doctrine: `docs/bhsm_physical_scale_generation_v5_5.md`.

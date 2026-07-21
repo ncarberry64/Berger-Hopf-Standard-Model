@@ -238,6 +238,7 @@ from .rare_b_observable_map import rare_b_status_report, rare_b_status_to_markdo
 from .b_to_s_mumu_operator_matching import b_to_s_mumu_status_report, b_to_s_mumu_status_to_markdown
 from .rare_b_fcnc_generation_mechanism import rare_b_fcnc_generation_status_report, rare_b_fcnc_generation_status_to_markdown
 from .unified_dynamical_action import unified_action_status_report, unified_action_status_to_markdown
+from .physical_scale_generation import physical_scale_status_report, physical_scale_status_to_markdown
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -660,6 +661,8 @@ def build_parser() -> argparse.ArgumentParser:
     fcnc.add_argument("--format", choices=("json", "markdown"), default="json")
     unified = commands.add_parser("unified-dynamical-action-status", help="Render the BHSM v5.4 unified dynamical action construction")
     unified.add_argument("--format", choices=("json", "markdown"), default="json")
+    scale = commands.add_parser("physical-scale-generation-status", help="Render the BHSM v5.5 physical-scale generation construction")
+    scale.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
 
@@ -1409,6 +1412,13 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(json.dumps(payload, indent=2, sort_keys=True))
         else:
             _print_unicode(unified_action_status_to_markdown(payload))
+        return 0
+    if args.command == "physical-scale-generation-status":
+        payload = physical_scale_status_report()
+        if args.format == "json":
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        else:
+            _print_unicode(physical_scale_status_to_markdown(payload))
         return 0
     if args.command in {
         "primitive-charged-incidence",

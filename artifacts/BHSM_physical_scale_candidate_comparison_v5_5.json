@@ -1,0 +1,94 @@
+{
+  "artifact": "BHSM_physical_scale_candidate_comparison_v5_5",
+  "candidates": [
+    {
+      "action_support": "v5.4 contains rho and a scale bridge, but rho_* is symbolic unless derived",
+      "arbitrary_inputs": [
+        "rho_*",
+        "ell_*"
+      ],
+      "dimensional_closure": "R_BH gives M_BH proportional to 1/R_BH only after ell_* or R_BH is fixed",
+      "name": "geometric radius",
+      "scale_equation": "delta S / delta R = 0 can be written only after selecting a radius potential",
+      "stability": "depends on the missing rho Hessian/source",
+      "status": "PARTIAL_REJECT_FREE_RADIUS",
+      "uniqueness": "continuous modulus if no potential fixes R_BH",
+      "verdict": "not selected as primary because a free radius is not scale generation"
+    },
+    {
+      "action_support": "extends v5.4 L_topographic and L_scale with a minimal internal scale potential",
+      "arbitrary_inputs": [
+        "alpha_scale",
+        "beta_scale",
+        "M_* or ell_*"
+      ],
+      "dimensional_closure": "sigma_0 = +/-sqrt(alpha_scale/beta_scale) gives M_BH = M_* |sigma_0|",
+      "name": "scalar/topographic vacuum",
+      "scale_equation": "dU/dsigma = beta_scale sigma^3 - alpha_scale sigma = 0",
+      "stability": "stable nonzero branch when alpha_scale>0 and beta_scale>0",
+      "status": "SELECTED_CONDITIONAL",
+      "uniqueness": "unique magnitude, two sign branches identified by a Z2 orientation unless the action breaks it",
+      "verdict": "strongest surviving mechanism; conditional because M_* and coefficient provenance remain open"
+    },
+    {
+      "action_support": "v5.4 has kinetic and Hessian spectra",
+      "arbitrary_inputs": [
+        "M_*",
+        "operator domain",
+        "lower-order terms"
+      ],
+      "dimensional_closure": "M_n^2 = M_*^2 lambda_n_hat requires M_*",
+      "name": "spectral mechanism",
+      "scale_equation": "L_hat psi_n = lambda_n_hat psi_n",
+      "stability": "operator positivity can be tested after domain closure",
+      "status": "PARTIAL_SCALE_PROPAGATION_ONLY",
+      "uniqueness": "depends on spectrum and boundary domain",
+      "verdict": "useful propagation map, not a primary scale source"
+    },
+    {
+      "action_support": "no artifact-backed beta function, determinant anomaly, or stationary effective action exists",
+      "arbitrary_inputs": [
+        "beta function",
+        "reference condition",
+        "effective action"
+      ],
+      "dimensional_closure": "no dimensional transmutation scale can be emitted",
+      "name": "dynamical or transmutation mechanism",
+      "scale_equation": "no closed beta(g) or dGamma_eff/dmu equation",
+      "stability": "not testable from current action",
+      "status": "NOT_AVAILABLE",
+      "uniqueness": "not established",
+      "verdict": "rejected for this sprint"
+    }
+  ],
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "BHSM v5.5 constructs a conditional scale-setting mechanism from the v5.4 action. It fixes a nonzero dimensionless scale branch in terms of symbolic action coefficients, but the absolute unit anchor M_* or ell_* remains open. No measured mass, coupling, W calibration, CKM fit, neutrino limit, cosmological input, rare-B result, or full BHSM completion is claimed.",
+  "empirical_inputs_used": false,
+  "frozen_predictions_changed": false,
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "numerical_particle_masses_emitted": false,
+  "official_prediction_logic_changed": false,
+  "pdg_reference_values_used": false,
+  "physical_couplings_promoted": false,
+  "physics_model_logic_changed": false,
+  "primary_result": "BHSM_PHYSICAL_SCALE_GENERATED_CONDITIONALLY",
+  "rare_b_phenomenology_pursued": false,
+  "selected": "SCALAR_TOPOGRAPHIC_SCALE_VACUUM_WITH_UNRESOLVED_UNIT_ANCHOR",
+  "selected_mechanism": "SCALAR_TOPOGRAPHIC_SCALE_VACUUM_WITH_UNRESOLVED_UNIT_ANCHOR",
+  "selection_rule": [
+    "action support",
+    "variational closure",
+    "dimensional consistency",
+    "stability",
+    "uniqueness",
+    "dependence on arbitrary inputs",
+    "compatibility with all sectors",
+    "computability"
+  ],
+  "sprint": "bhsm-physical-scale-generation-v5-5",
+  "status": "PHYSICAL_SCALE_CANDIDATES_COMPARED",
+  "version": "v5.5",
+  "w_calibration_used": false
+}

@@ -408,3 +408,16 @@ This means the symbolic action is structurally operational enough to vary, extra
 Still not supported: derived `alpha_i`, derived `g2_BH`, derived CKM coefficient value or exponent, physical mass-scale generation, full gauge-fixed domain closure, complete lower-order boundary operator terms, rare-B FCNC closure, Wilson coefficients, numerical `q0^2`, exact node coordinates, LHCb-anomaly explanation, QFT falsification, or full BHSM completion.
 
 Preserved: `ACTION_ATTACHMENT_BLOCKED`, `CKM_RELATIVE_CURRENT_NORMALIZATION_BLOCKED`, `COUPLING_BRIDGE_BLOCKED_PENDING_ACTION_PRINCIPLE`, `OPEN_MISSING_G2_BH_ACTION_SOURCE`, `OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE`, `CKM_EXPONENT_NOT_DERIVED`, `RARE_B_FCNC_GENERATION_MECHANISM_BLOCKED`, `B_TO_S_MUMU_OPERATOR_MATCHING_BLOCKED`, and `FULL_BHSM_NOT_COMPLETE`.
+
+<!-- BHSM_PHYSICAL_SCALE_GENERATION_V5_5 -->
+## Physical-scale generation v5.5
+
+Allowed: BHSM v5.5 conditionally generates a nonzero dimensionless scale branch from the v5.4 scalar/topographic scale sector, with `M_BH/M_* = sqrt(alpha_scale/beta_scale)` under symbolic conditions `alpha_scale>0` and `beta_scale>0`.
+
+Result: `BHSM_PHYSICAL_SCALE_GENERATED_CONDITIONALLY`.
+
+This means the action-supported reduced scale sector has an explicit stationary equation, nonzero stable branch, unit map, and operator-propagation map. It does not mean that the absolute unit anchor `M_*` or `ell_*`, physical eV/GeV masses, gauge couplings, current normalizations, CKM values, rare-B Wilson coefficients, or full BHSM completion are derived.
+
+Still not supported: treating a free radius as generated scale, relabeling dimensionless mode numbers/eigenvalue ratios/sector weights/normalized volume as a physical mass, using W calibration or measured masses to fix the scale, deriving `alpha_i`, deriving `g2_BH`, deriving the CKM coefficient value or exponent, emitting neutrino eV/GeV masses, predicting rare-B observables, or claiming full BHSM completion.
+
+Preserved: `OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR`, `OPEN_MISSING_SCALE_POTENTIAL_ACTION_SOURCE`, `OPEN_MISSING_PHYSICAL_SCALE_GENERATION_FOR_NUMERIC_UNITS`, `OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT`, `OPEN_MISSING_ALPHA_I_ACTION_DERIVATION`, `OPEN_MISSING_G2_BH_ACTION_SOURCE`, `OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE`, `CKM_EXPONENT_NOT_DERIVED`, `OPEN_MISSING_NEUTRAL_SCALE`, `OPEN_MISSING_NEUTRAL_ACTION_NORMALIZATION`, and `FULL_BHSM_NOT_COMPLETE`.

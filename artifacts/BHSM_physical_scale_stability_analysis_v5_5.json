@@ -1,0 +1,38 @@
+{
+  "artifact": "BHSM_physical_scale_stability_analysis_v5_5",
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "BHSM v5.5 constructs a conditional scale-setting mechanism from the v5.4 action. It fixes a nonzero dimensionless scale branch in terms of symbolic action coefficients, but the absolute unit anchor M_* or ell_* remains open. No measured mass, coupling, W calibration, CKM fit, neutrino limit, cosmological input, rare-B result, or full BHSM completion is claimed.",
+  "continuous_modulus": false,
+  "empirical_inputs_used": false,
+  "frozen_predictions_changed": false,
+  "hessian": "d2U/dsigma2 = 3 beta_scale sigma^2 - alpha_scale",
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "nonzero_branch": {
+    "hessian": "2 alpha_scale",
+    "sigma_abs": "sqrt(alpha_scale/beta_scale)",
+    "stable_if": "alpha_scale>0 and beta_scale>0",
+    "unique": "unique magnitude with sign degeneracy"
+  },
+  "numerical_particle_masses_emitted": false,
+  "official_prediction_logic_changed": false,
+  "pdg_reference_values_used": false,
+  "physical_couplings_promoted": false,
+  "physics_model_logic_changed": false,
+  "primary_result": "BHSM_PHYSICAL_SCALE_GENERATED_CONDITIONALLY",
+  "rare_b_phenomenology_pursued": false,
+  "rescaling_symmetry": "broken in the dimensionless reduced sector by the scale potential; absolute units remain anchored by M_*",
+  "runaway_behavior": "avoided when beta_scale>0",
+  "selected_mechanism": "SCALAR_TOPOGRAPHIC_SCALE_VACUUM_WITH_UNRESOLVED_UNIT_ANCHOR",
+  "sprint": "bhsm-physical-scale-generation-v5-5",
+  "status": "NONZERO_SCALE_BRANCH_STABLE_CONDITIONALLY",
+  "version": "v5.5",
+  "w_calibration_used": false,
+  "zero_branch": {
+    "hessian": "-alpha_scale",
+    "sigma": 0,
+    "stable_if": "alpha_scale < 0",
+    "status_for_selected_conditions": "unstable when alpha_scale>0"
+  }
+}

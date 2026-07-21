@@ -259,6 +259,16 @@ def action_candidate_artifact() -> dict[str, Any]:
             "terms": [term.to_dict() for term in action_terms()],
             "coefficient_table": [coef.to_dict() for coef in coefficient_definitions()],
             "measure": configuration_space_artifact()["metric_and_measure"],
+            "v5_5_scale_generation_extension": {
+                "status": "BHSM_PHYSICAL_SCALE_GENERATED_CONDITIONALLY",
+                "attached_to_terms": ["scalar_topographic", "scale_bridge"],
+                "scale_order_parameter": "sigma",
+                "scale_potential": "U_scale(sigma)=1/4 beta_scale sigma^4 - 1/2 alpha_scale sigma^2",
+                "scale_equation": "beta_scale sigma^3 - alpha_scale sigma = 0",
+                "nonzero_branch": "M_BH/M_* = sqrt(alpha_scale/beta_scale)",
+                "open_unit_anchor": "OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR",
+                "artifact": "artifacts/BHSM_physical_scale_generation_report_v5_5.json",
+            },
             "not_a_standard_model_lagrangian_import": True,
             "conditional_because": list(OPEN_MATHEMATICS),
         }
