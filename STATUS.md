@@ -802,3 +802,32 @@ Completion gate:
 `V6_0_6_STOP_FIREWALL_DERIVED_REDUCTION_READY_BUT_BLOCKED`.
 
 Command: `python -m bhsm.interface correspondence-novelty-firewall-status --format markdown`.
+
+<!-- BHSM_B8_S7_BERGER_S3_REDUCTION_THEOREM_V6_0_7 -->
+## B8/S7-to-Berger-S3 reduction theorem v6.0.7
+
+Primary result: `BHSM_B8_S7_TO_BERGER_S3_REDUCTION_OBSTRUCTED`.
+
+Subsidiary results:
+`BHSM_SP1_TO_U1_REDUCTION_TOPOLOGICALLY_OBSTRUCTED`,
+`BHSM_BERGER_MODE_ASSOCIATED_BUNDLE_MAP_DERIVED`, and
+`BHSM_BERGER_CONSISTENT_TRUNCATION_FAILED` for the existing standalone
+scalar-mode interpretation.
+
+The local quaternionic Hopf fiber carries the stored Berger metric coefficient
+form, with exact volume, Ricci, scalar-curvature, round-limit, measure, and
+pointwise Hodge formulas in the declared coframe convention. This local result
+does not globalize to a preferred Berger axis over `S4`: a global
+`Sp(1)->U(1)` reduction would split the charge-one associated rank-two bundle,
+but `H2(S4)=0` would then force `c2=0`, contradicting `c2=1`.
+
+Nontrivial fiber modes therefore globalize as associated-bundle sections, not
+as automatic scalar coefficients. Connection mixing, discarded-mode sources,
+general representation branching, parent action reduction, physical measure,
+and every parent-to-v5 coefficient source remain open. The Hopf fiber is also
+kept distinct from a B8 or physical-spacetime boundary.
+
+Completion gate:
+`V6_0_7_STOP_GLOBAL_U1_OBSTRUCTION_ASSOCIATED_BUNDLE_REQUIRED`.
+
+Command: `python -m bhsm.interface b8-s7-berger-s3-reduction-status --format markdown`.

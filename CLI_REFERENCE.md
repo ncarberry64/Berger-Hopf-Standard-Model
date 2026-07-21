@@ -503,3 +503,19 @@ still `BHSM_B8_S7_TO_BERGER_S3_REDUCTION_BLOCKED`. It classifies established
 physics as correspondence, preserves conditional legacy results, and exposes
 the exact map, metric, representation, operator, action, and coefficient gates
 without changing any prediction.
+
+<!-- BHSM_B8_S7_BERGER_S3_REDUCTION_THEOREM_V6_0_7 -->
+## B8/S7-to-Berger-S3 reduction theorem v6.0.7
+
+```bash
+python -m bhsm.interface b8-s7-berger-s3-reduction-status --format json
+python -m bhsm.interface b8-s7-berger-s3-reduction-status --format markdown
+python scripts/materialize_b8_s7_berger_s3_reduction_v6_0_7.py
+```
+
+The command reports `BHSM_B8_S7_TO_BERGER_S3_REDUCTION_OBSTRUCTED`, the
+nonzero-Chern-class `BHSM_SP1_TO_U1_REDUCTION_TOPOLOGICALLY_OBSTRUCTED`
+theorem, and `BHSM_BERGER_MODE_ASSOCIATED_BUNDLE_MAP_DERIVED`. It preserves
+the local intrinsic Berger formulas while refusing to promote them to a
+global consistent truncation, parent action, coefficient map, physical
+boundary, particle sector, or absolute scale.

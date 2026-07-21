@@ -625,3 +625,31 @@ envelopment and transient free-scalar localization remain open.
 | `artifacts/BHSM_correspondence_novelty_firewall_report_v6_0_6.json` | Final result, stop condition, and next-branch routing. |
 
 Doctrine: `docs/bhsm_correspondence_novelty_firewall_v6_0_6.md`.
+
+<!-- BHSM_B8_S7_BERGER_S3_REDUCTION_THEOREM_V6_0_7 -->
+## B8/S7-to-Berger-S3 reduction theorem v6.0.7
+
+| Artifact | Purpose |
+|---|---|
+| `artifacts/BHSM_quaternionic_hopf_bundle_convention_ledger_v6_0_7.json` | Fixes bundle, connection, curvature, transition, and orientation conventions. |
+| `artifacts/BHSM_global_4_2_1_metric_audit_v6_0_7.json` | Separates a total-space anisotropic tensor from an Sp(1)-natural reduction. |
+| `artifacts/BHSM_sp1_to_u1_reduction_theorem_v6_0_7.json` | Proves the nonzero-c2 U(1)-reduction obstruction. |
+| `artifacts/BHSM_fiber_restriction_berger_metric_v6_0_7.json` | Derives the intrinsic Berger metric, curvature, volume, and round limit. |
+| `artifacts/BHSM_local_global_berger_fiber_classification_v6_0_7.json` | Classifies nonround fibers as an associated/gauge-fixed family. |
+| `artifacts/BHSM_berger_measure_orientation_reduction_v6_0_7.json` | Separates physical integration, averaging, restriction, and pushforward. |
+| `artifacts/BHSM_berger_hodge_star_decomposition_v6_0_7.json` | Gives exact pointwise sign and scale factors. |
+| `artifacts/BHSM_berger_differential_operator_decomposition_v6_0_7.json` | Records connection and O'Neill mixing omitted by a naive sum. |
+| `artifacts/BHSM_berger_fiber_mode_globalization_theorem_v6_0_7.json` | Derives the associated-bundle transformation law. |
+| `artifacts/BHSM_berger_consistent_truncation_test_v6_0_7.json` | Applies all twelve exact reduction kill tests. |
+| `artifacts/BHSM_so8_hopf_berger_representation_branching_v6_0_7.json` | Closes low-level branching checks and leaves the general intertwiner open. |
+| `artifacts/BHSM_existing_berger_mode_ledger_parent_map_v6_0_7.json` | Audits frozen sector labels without parent promotion. |
+| `artifacts/BHSM_berger_scalar_action_reduction_v6_0_7.json` | Derives the associated scalar structure while blocking v5 coefficient recovery. |
+| `artifacts/BHSM_berger_gauge_reduction_readiness_v6_0_7.json` | Identifies connection architecture without gauge-coupling claims. |
+| `artifacts/BHSM_berger_dirac_reduction_readiness_v6_0_7.json` | Identifies twisted Dirac architecture without a fermion spectrum. |
+| `artifacts/BHSM_berger_boundary_collar_role_firewall_v6_0_7.json` | Separates fiber, B8-boundary, spacetime-normal, and collar objects. |
+| `artifacts/BHSM_lovelock_berger_action_reduction_map_v6_0_7.json` | Audits P1, P2, and P3 structures without family selection. |
+| `artifacts/BHSM_parent_to_v5_coefficient_map_v6_0_7.json` | Keeps every reduced coefficient and missing source explicit. |
+| `artifacts/BHSM_berger_reduction_scale_hidden_input_audit_v6_0_7.json` | Separates ratios from the open common scale modulus. |
+| `artifacts/BHSM_b8_s7_to_berger_s3_reduction_report_v6_0_7.json` | Final obstruction verdict, stop condition, and next branch. |
+
+Doctrine: `docs/bhsm_b8_s7_to_berger_s3_reduction_theorem_v6_0_7.md`.
