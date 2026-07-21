@@ -1,0 +1,42 @@
+{
+  "artifact": "BHSM_scalar_topographic_vacuum_solution_v5_6",
+  "boundedness": "requires beta_scale>0 for the quartic truncation",
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "The scalar/topographic scale vacuum is derived conditionally from the BHSM scalar/topographic action family and a declared normalized mode reduction. The coefficients are action functionals over unresolved profiles, boundary tensors, and collar data; no numeric eV/GeV scale, particle mass, measured VEV, gauge coupling, CKM value, rare-B result, or full BHSM completion is claimed.",
+  "empirical_inputs_used": false,
+  "existence_conditions": [
+    "alpha_scale>0",
+    "beta_scale>0",
+    "higher-order remainder controlled near branch"
+  ],
+  "field_equations": {
+    "Phi": "delta S_ST/delta Phi=0 with internal/Robin/level-set boundary data from PO-BH-62",
+    "T": "delta S_ST/delta T=0 with boundary normal form from PO-BH-62"
+  },
+  "frozen_predictions_changed": false,
+  "hessian": "V_eff''(sigma_scale,0)=2 alpha_scale at the nonzero branch; V_eff''(0)=-alpha_scale",
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "numerical_particle_masses_emitted": false,
+  "observed_mass_or_vev_used": false,
+  "official_prediction_logic_changed": false,
+  "pdg_reference_values_used": false,
+  "physical_couplings_promoted": false,
+  "physics_model_logic_changed": false,
+  "primary_result": "SCALAR_TOPOGRAPHIC_VACUUM_ACTION_DERIVED_CONDITIONALLY",
+  "selected_branch": "|sigma_scale,0|=sqrt(alpha_scale/beta_scale)",
+  "sprint": "bhsm-scalar-topographic-vacuum-action-derivation-v5-6",
+  "stable": true,
+  "stationary_equation": "dV_eff/dsigma_scale = -alpha_scale sigma_scale + beta_scale sigma_scale^3 + O(sigma_scale^5)=0",
+  "status": "NONZERO_VACUUM_BRANCH_DERIVED_CONDITIONALLY",
+  "truncated_branches": [
+    "sigma_scale=0",
+    "sigma_scale=+sqrt(alpha_scale/beta_scale)",
+    "sigma_scale=-sqrt(alpha_scale/beta_scale)"
+  ],
+  "unique": "unique magnitude with sign degeneracy unless an action-derived branch-breaking term is supplied",
+  "vacuum_energy": "V_min=V_0 - alpha_scale^2/(4 beta_scale) in the quartic truncation",
+  "version": "v5.6",
+  "w_calibration_used": false
+}

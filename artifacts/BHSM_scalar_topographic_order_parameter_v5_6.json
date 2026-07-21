@@ -1,0 +1,38 @@
+{
+  "artifact": "BHSM_scalar_topographic_order_parameter_v5_6",
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "The scalar/topographic scale vacuum is derived conditionally from the BHSM scalar/topographic action family and a declared normalized mode reduction. The coefficients are action functionals over unresolved profiles, boundary tensors, and collar data; no numeric eV/GeV scale, particle mass, measured VEV, gauge coupling, CKM value, rare-B result, or full BHSM completion is claimed.",
+  "definition": "dimensionless coefficient of the normalized scalar/topographic scale mode (f_T,f_Phi) in T=T_bar+sigma_scale f_T+... and Phi=Phi_bar+sigma_scale f_Phi+...",
+  "empirical_inputs_used": false,
+  "frozen_predictions_changed": false,
+  "legacy_threshold_tables_used": false,
+  "map": {
+    "Q_ST": "integral_B z_T f_T^2 dV + integral_Bint z_Phi f_Phi^2 dmu_B + integral_boundary q_boundary(f_T,f_Phi) dA + integral_collar q_collar(f_T,f_Phi) J dA drho",
+    "mode_projection": "sigma_scale = <(delta T,delta Phi),(f_T,f_Phi)>_Q_ST",
+    "normalization": "Q_ST[f_T,f_Phi]=1"
+  },
+  "neutrino_limits_used": false,
+  "not_profile_width": {
+    "profile_width_symbol": "sigma_profile",
+    "reason": "sigma_profile labels a localized profile width/shape parameter; sigma_scale is a dynamical amplitude coefficient."
+  },
+  "numerical_particle_masses_emitted": false,
+  "observed_mass_or_vev_used": false,
+  "official_prediction_logic_changed": false,
+  "pdg_reference_values_used": false,
+  "physical_couplings_promoted": false,
+  "physics_model_logic_changed": false,
+  "primary_result": "SCALAR_TOPOGRAPHIC_VACUUM_ACTION_DERIVED_CONDITIONALLY",
+  "selected_interpretation": "collar-integrated scalar/topographic scale-mode coefficient",
+  "source_fields": [
+    "T(x)",
+    "Phi(y)",
+    "boundary/collar geometry"
+  ],
+  "sprint": "bhsm-scalar-topographic-vacuum-action-derivation-v5-6",
+  "status": "SCALE_ORDER_PARAMETER_DEFINED_CONDITIONALLY",
+  "symbol": "sigma_scale",
+  "version": "v5.6",
+  "w_calibration_used": false
+}

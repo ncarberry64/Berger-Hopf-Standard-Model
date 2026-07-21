@@ -145,6 +145,7 @@ The current minimal-action theory dictionary is documented in
 - [Rare-B FCNC generation-mechanism kill screen v5.3](bhsm_rare_b_fcnc_generation_mechanism_v5_3.md)
 - [Unified dynamical action construction v5.4](bhsm_unified_dynamical_action_construction_v5_4.md)
 - [Physical-scale generation v5.5](bhsm_physical_scale_generation_v5_5.md)
+- [Scalar/topographic vacuum action derivation v5.6](bhsm_scalar_topographic_vacuum_action_derivation_v5_6.md)
 
 ## CP O_int Sprint Docs
 

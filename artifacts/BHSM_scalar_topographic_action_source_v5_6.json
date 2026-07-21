@@ -1,0 +1,43 @@
+{
+  "S_ST": "S_T_bulk + S_Phi_internal + S_threshold + S_boundary + S_collar",
+  "artifact": "BHSM_scalar_topographic_action_source_v5_6",
+  "boundary_term": "S_boundary = integral_boundary [U_boundary(T,Phi) + c_K K + c_K2 K^2 + c_S Tr(S^2) + c_J log J] dA",
+  "bulk_T_term": "S_T_bulk = integral_B [1/2 z_T |grad T|^2 + U_T(T; geometry)] dV",
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "The scalar/topographic scale vacuum is derived conditionally from the BHSM scalar/topographic action family and a declared normalized mode reduction. The coefficients are action functionals over unresolved profiles, boundary tensors, and collar data; no numeric eV/GeV scale, particle mass, measured VEV, gauge coupling, CKM value, rare-B result, or full BHSM completion is claimed.",
+  "collar_term": "S_collar = integral_boundary integral_0^rho_star B_threshold[T,Phi,K,S,J;Y,rho] J(Y,rho) drho dA",
+  "empirical_inputs_used": false,
+  "frozen_predictions_changed": false,
+  "internal_Phi_term": "S_Phi_internal = integral_Bint [1/2 z_Phi |D_B Phi|^2 + U_Phi(Phi; g_B)] dmu_B",
+  "legacy_threshold_tables_used": false,
+  "minimal_allowed_forms": {
+    "odd_terms": "absent in the reduced scale mode when the orientation-pair/Z2 scale-mode symmetry is imposed; otherwise they remain an open branch-breaking source",
+    "quadratic_kernel": "H_ST from second variation of S_ST around (T_bar,Phi_bar)",
+    "quartic_kernel": "G_ST from the lowest even bounded local scalar/topographic self-interaction and boundary/collar response"
+  },
+  "neutrino_limits_used": false,
+  "numerical_particle_masses_emitted": false,
+  "observed_mass_or_vev_used": false,
+  "official_prediction_logic_changed": false,
+  "pdg_reference_values_used": false,
+  "physical_couplings_promoted": false,
+  "physics_model_logic_changed": false,
+  "primary_result": "SCALAR_TOPOGRAPHIC_VACUUM_ACTION_DERIVED_CONDITIONALLY",
+  "source_chain": [
+    "PO-BH-53 symbolic scalar/topographic boundary variation",
+    "PO-BH-56 complete collar action source audit",
+    "PO-BH-59 level-set geometry",
+    "PO-BH-60 profile input classification",
+    "PO-BH-61 partial EOM source",
+    "PO-BH-62 boundary-condition normal form",
+    "PO-BH-63 coefficient/threshold source audit",
+    "v5.4 unified action scalar_topographic and scale_bridge terms",
+    "v5.5 conditional scale branch"
+  ],
+  "sprint": "bhsm-scalar-topographic-vacuum-action-derivation-v5-6",
+  "status": "SCALAR_TOPOGRAPHIC_ACTION_SOURCE_ASSEMBLED_CONDITIONALLY",
+  "threshold_term": "S_threshold = integral [1/2 m_TT(T-T_0)^2 + 1/2 m_PP(Phi-Phi_0)^2 + m_TP(T-T_0)(Phi-Phi_0)] on the allowed threshold support",
+  "version": "v5.6",
+  "w_calibration_used": false
+}

@@ -11,7 +11,7 @@
   "claim_boundary": "BHSM v5.5 constructs a conditional scale-setting mechanism from the v5.4 action. It fixes a nonzero dimensionless scale branch in terms of symbolic action coefficients, but the absolute unit anchor M_* or ell_* remains open. No measured mass, coupling, W calibration, CKM fit, neutrino limit, cosmological input, rare-B result, or full BHSM completion is claimed.",
   "claim_safe_conclusion": "BHSM v5.5 conditionally generates a nonzero scale branch from the symbolic v5.4 scalar/topographic scale sector. It does not emit a numeric eV/GeV scale or particle masses because the absolute unit anchor and coefficient provenance remain open.",
   "conditionally_established": [
-    "M_BH/M_* = sqrt(alpha_scale/beta_scale)",
+    "M_BH/M_* = sqrt(alpha_scale/beta_scale) with alpha_scale and beta_scale updated to v5.6 action functionals",
     "nonzero stable branch for alpha_scale>0 and beta_scale>0",
     "physical operator scaling once M_* or ell_* is supplied by action"
   ],
@@ -143,15 +143,15 @@
     "zero_branch_hessian": -2.0,
     "zero_branch_unstable": true
   },
-  "scale_equation": "beta_scale sigma^3 - alpha_scale sigma = 0",
+  "scale_equation": "beta_scale sigma_scale^3 - alpha_scale sigma_scale = 0",
   "scale_solution": {
     "absolute_or_relative": "conditional absolute in terms of M_*; internally generated relative scale",
     "nonzero": true,
     "stable": true,
     "unique": "unique magnitude with sign degeneracy",
     "unresolved_constants": [
-      "alpha_scale",
-      "beta_scale",
+      "alpha_scale functional inputs",
+      "beta_scale functional inputs",
       "M_* or ell_*"
     ]
   },
@@ -161,7 +161,7 @@
   "status": "BHSM_PHYSICAL_SCALE_GENERATED_CONDITIONALLY",
   "still_requiring_new_mathematics": [
     "OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR",
-    "OPEN_MISSING_SCALE_POTENTIAL_ACTION_SOURCE",
+    "OPEN_MISSING_SCALE_FUNCTIONAL_NUMERIC_INPUTS",
     "OPEN_MISSING_PHYSICAL_SCALE_GENERATION_FOR_NUMERIC_UNITS",
     "OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT",
     "OPEN_MISSING_ALPHA_I_ACTION_DERIVATION",
@@ -177,6 +177,13 @@
     "B_TO_S_MUMU_OPERATOR_MATCHING_BLOCKED",
     "FULL_BHSM_NOT_COMPLETE"
   ],
+  "v5_6_update": {
+    "alpha_scale": "- second_variation(S_ST)[f,f] when the scale-mode Hessian is negative",
+    "beta_scale": "fourth_variation(S_ST)[f,f,f,f] plus boundary/collar quartic stabilizers",
+    "generic_quartic_ansatz_retired": true,
+    "sigma_symbol": "sigma_scale",
+    "status": "V5_5_SCALE_BRANCH_UPDATED_BY_V5_6"
+  },
   "version": "v5.5",
   "w_calibration_used": false
 }

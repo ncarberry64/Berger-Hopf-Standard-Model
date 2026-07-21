@@ -539,12 +539,27 @@ Command: `python -m bhsm.interface unified-dynamical-action-status --format mark
 
 Primary result: `BHSM_PHYSICAL_SCALE_GENERATED_CONDITIONALLY`.
 
-BHSM v5.5 inventories all current scale-bearing objects and selects a scalar/topographic scale-vacuum mechanism as the strongest construction supported by the v5.4 action. The conditional scale equation is `beta_scale sigma^3 - alpha_scale sigma = 0`, with nonzero branch magnitude `sqrt(alpha_scale/beta_scale)` when `alpha_scale>0` and `beta_scale>0`.
+BHSM v5.5 inventories all current scale-bearing objects and selects a scalar/topographic scale-vacuum mechanism as the strongest construction supported by the v5.4 action. After the v5.6 update, the conditional scale equation is `beta_scale sigma_scale^3 - alpha_scale sigma_scale = 0`, with nonzero branch magnitude `sqrt(alpha_scale/beta_scale)` when `alpha_scale>0` and `beta_scale>0`.
 
 Validated: a free geometric radius is not promoted to scale generation; dimensionless mode numbers, eigenvalue ratios, curvature, volume, and sector weights are not relabeled as physical mass scales; the nonzero branch is locally stable in the deterministic reduced model; the generated scale propagates into operators as `M_BH = M_* sqrt(alpha_scale/beta_scale)`.
 
-Still conditional/open: `OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR`, `OPEN_MISSING_SCALE_POTENTIAL_ACTION_SOURCE`, `OPEN_MISSING_PHYSICAL_SCALE_GENERATION_FOR_NUMERIC_UNITS`, `OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT`, `OPEN_MISSING_ALPHA_I_ACTION_DERIVATION`, `OPEN_MISSING_G2_BH_ACTION_SOURCE`, `OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE`, `CKM_EXPONENT_NOT_DERIVED`, `OPEN_MISSING_NEUTRAL_SCALE`, `OPEN_MISSING_NEUTRAL_ACTION_NORMALIZATION`, `OPEN_MISSING_CHARGED_CURRENT_NORMALIZATION`, `OPEN_MISSING_NEUTRAL_RESPONSE_NORMALIZATION`, `OPEN_MISSING_NONLINEAR_UNIFIED_SOLUTION`, and `FULL_BHSM_NOT_COMPLETE`.
+Still conditional/open: `OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR`, `OPEN_MISSING_SCALE_FUNCTIONAL_NUMERIC_INPUTS`, `OPEN_MISSING_PHYSICAL_SCALE_GENERATION_FOR_NUMERIC_UNITS`, `OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT`, `OPEN_MISSING_ALPHA_I_ACTION_DERIVATION`, `OPEN_MISSING_G2_BH_ACTION_SOURCE`, `OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE`, `CKM_EXPONENT_NOT_DERIVED`, `OPEN_MISSING_NEUTRAL_SCALE`, `OPEN_MISSING_NEUTRAL_ACTION_NORMALIZATION`, `OPEN_MISSING_CHARGED_CURRENT_NORMALIZATION`, `OPEN_MISSING_NEUTRAL_RESPONSE_NORMALIZATION`, `OPEN_MISSING_NONLINEAR_UNIFIED_SOLUTION`, and `FULL_BHSM_NOT_COMPLETE`.
 
 No numeric eV/GeV scale, particle mass, gauge coupling, CKM value, rare-B Wilson coefficient, or full BHSM completion is claimed.
 
 Command: `python -m bhsm.interface physical-scale-generation-status --format markdown`.
+
+<!-- BHSM_SCALAR_TOPOGRAPHIC_VACUUM_ACTION_DERIVATION_V5_6 -->
+## Scalar/topographic vacuum action derivation v5.6
+
+Primary result: `SCALAR_TOPOGRAPHIC_VACUUM_ACTION_DERIVED_CONDITIONALLY`.
+
+BHSM v5.6 identifies v5.5's scale order parameter as `sigma_scale`, the normalized scalar/topographic scale-mode coefficient in `T=T_bar+sigma_scale f_T+...` and `Phi=Phi_bar+sigma_scale f_Phi+...`. This is distinct from the profile-width parameter `sigma_profile`.
+
+The v5.5 quartic ansatz is replaced by a reduced action functional: `alpha_scale=-second_variation(S_ST)[f,f]` when the scale-mode Hessian is negative, and `beta_scale=fourth_variation(S_ST)[f,f,f,f]` plus boundary/collar quartic stabilizers. The nonzero branch remains conditional on `alpha_scale>0`, `beta_scale>0`, and unresolved profile/boundary/collar inputs.
+
+Validated: the old curvature-threshold action `1/2 phidot^2 - 1/2 |grad phi|^2 - lambda/2(-laplacian phi-k_loc)^2` expands about `-laplacian phi_0=k_loc` to a massless higher-derivative fluctuation operator. The previously implied mass-gap shortcut is invalid for that action alone.
+
+Still open: `OPEN_MISSING_EXPLICIT_T_PROFILE_SOLUTION`, `OPEN_MISSING_EXPLICIT_PHI_PROFILE_SOLUTION`, `OPEN_MISSING_THRESHOLD_SELECTION_T_0`, `OPEN_MISSING_THRESHOLD_SELECTION_PHI_0`, `OPEN_MISSING_BOUNDARY_COEFFICIENT_VALUES`, `OPEN_MISSING_COLLAR_MEASURE_VALUE`, `OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR`, and all downstream gauge, CKM, neutral-scale, and full-BHSM gates.
+
+Command: `python -m bhsm.interface scalar-topographic-vacuum-status --format markdown`.

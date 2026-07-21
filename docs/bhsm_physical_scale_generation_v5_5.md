@@ -42,20 +42,20 @@ The strongest current mechanism is a scale order parameter in the v5.4
 scalar/topographic and scale sector:
 
 ```text
-U_scale(sigma) = 1/4 beta_scale sigma^4 - 1/2 alpha_scale sigma^2
+U_scale(sigma_scale) = 1/4 beta_scale sigma_scale^4 - 1/2 alpha_scale sigma_scale^2
 ```
 
 The stationary equation is:
 
 ```text
-dU_scale/dsigma = beta_scale sigma^3 - alpha_scale sigma = 0
+dU_scale/dsigma_scale = beta_scale sigma_scale^3 - alpha_scale sigma_scale = 0
 ```
 
 For symbolic conditions `alpha_scale>0` and `beta_scale>0`, the branches are:
 
 ```text
-sigma = 0
-sigma = +/- sqrt(alpha_scale / beta_scale)
+sigma_scale = 0
+sigma_scale = +/- sqrt(alpha_scale / beta_scale)
 ```
 
 The zero branch is unstable and the nonzero branch has Hessian
@@ -124,7 +124,7 @@ eV/GeV masses, rare-B Wilson coefficients, CKM values, or full BHSM completion.
 ## Open Gates
 
 - `OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR`
-- `OPEN_MISSING_SCALE_POTENTIAL_ACTION_SOURCE`
+- `OPEN_MISSING_SCALE_FUNCTIONAL_NUMERIC_INPUTS`
 - `OPEN_MISSING_PHYSICAL_SCALE_GENERATION_FOR_NUMERIC_UNITS`
 - `OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT`
 - `OPEN_MISSING_ALPHA_I_ACTION_DERIVATION`

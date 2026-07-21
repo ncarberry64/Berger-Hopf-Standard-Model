@@ -1,0 +1,55 @@
+{
+  "artifact": "BHSM_scalar_topographic_vacuum_reduced_model_v5_6",
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "The scalar/topographic scale vacuum is derived conditionally from the BHSM scalar/topographic action family and a declared normalized mode reduction. The coefficients are action functionals over unresolved profiles, boundary tensors, and collar data; no numeric eV/GeV scale, particle mass, measured VEV, gauge coupling, CKM value, rare-B result, or full BHSM completion is claimed.",
+  "empirical_inputs_used": false,
+  "frozen_predictions_changed": false,
+  "hessian_matches_stability": true,
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "numerical_particle_masses_emitted": false,
+  "observed_mass_or_vev_used": false,
+  "official_prediction_logic_changed": false,
+  "pdg_reference_values_used": false,
+  "physical_couplings_promoted": false,
+  "physics_model_logic_changed": false,
+  "primary_result": "SCALAR_TOPOGRAPHIC_VACUUM_ACTION_DERIVED_CONDITIONALLY",
+  "reduced_model": {
+    "A_ST": -2.0,
+    "G_ST": 8.0,
+    "alpha_scale": 2.0,
+    "beta_scale": 8.0,
+    "branches": [
+      0.0,
+      0.5,
+      -0.5
+    ],
+    "declared_geometry": "unit normalized boundary/collar cell with Q_ST[f_T,f_Phi]=1",
+    "declared_mode_profile": {
+      "f_Phi": 0.8,
+      "f_T": 0.6,
+      "normalization": "f_T^2+f_Phi^2=1"
+    },
+    "derived_V_eff": "V_eff=1/2 A_ST sigma_scale^2 + 1/4 G_ST sigma_scale^4",
+    "deterministic": true,
+    "hessian": 4.0,
+    "physical_fit": false,
+    "scale_ratio_M_BH_over_M_star": 0.5,
+    "selected_branch": 0.5,
+    "stable": true,
+    "stationary_residual": 0.0,
+    "truncated_field_equation_residuals": {
+      "Phi_mode": 0.0,
+      "T_mode": 0.0
+    },
+    "vacuum_energy": -0.125,
+    "zero_branch_hessian": -2.0
+  },
+  "sprint": "bhsm-scalar-topographic-vacuum-action-derivation-v5-6",
+  "stationary_solution_verified": true,
+  "status": "SCALAR_TOPOGRAPHIC_REDUCED_MODEL_STABLE",
+  "truncated_field_equations_verified": true,
+  "version": "v5.6",
+  "w_calibration_used": false
+}

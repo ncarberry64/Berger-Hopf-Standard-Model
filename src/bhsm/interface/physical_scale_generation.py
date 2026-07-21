@@ -50,7 +50,7 @@ GUARDS = {
 
 PRESERVED_BLOCKERS = (
     "OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR",
-    "OPEN_MISSING_SCALE_POTENTIAL_ACTION_SOURCE",
+    "OPEN_MISSING_SCALE_FUNCTIONAL_NUMERIC_INPUTS",
     "OPEN_MISSING_PHYSICAL_SCALE_GENERATION_FOR_NUMERIC_UNITS",
     "OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT",
     "OPEN_MISSING_ALPHA_I_ACTION_DERIVATION",
@@ -296,18 +296,19 @@ def candidate_comparison() -> tuple[ScaleCandidate, ...]:
 
 def selected_scale_potential() -> dict[str, Any]:
     return {
-        "dimensionless_order_parameter": "sigma",
-        "potential": "U_scale(sigma)=1/4 beta_scale sigma^4 - 1/2 alpha_scale sigma^2",
+        "dimensionless_order_parameter": "sigma_scale",
+        "potential": "U_scale(sigma_scale)=1/4 beta_scale sigma_scale^4 - 1/2 alpha_scale sigma_scale^2",
         "coefficient_conditions": {
-            "alpha_scale": "positive symbolic dimensionless coefficient",
-            "beta_scale": "positive symbolic dimensionless coefficient",
+            "alpha_scale": "positive conditional action functional from v5.6: - second_variation(S_ST)[f,f]",
+            "beta_scale": "positive conditional action functional from v5.6: fourth_variation(S_ST)[f,f,f,f] plus boundary/collar quartic kernels",
         },
-        "stationary_equation": "dU_scale/dsigma = beta_scale sigma^3 - alpha_scale sigma = 0",
-        "branches": ["sigma=0", "sigma=+sqrt(alpha_scale/beta_scale)", "sigma=-sqrt(alpha_scale/beta_scale)"],
+        "stationary_equation": "dU_scale/dsigma_scale = beta_scale sigma_scale^3 - alpha_scale sigma_scale = 0",
+        "branches": ["sigma_scale=0", "sigma_scale=+sqrt(alpha_scale/beta_scale)", "sigma_scale=-sqrt(alpha_scale/beta_scale)"],
         "selected_nonzero_magnitude": "sqrt(alpha_scale/beta_scale)",
         "physical_scale_map": "M_BH = M_* sqrt(alpha_scale/beta_scale) = hbar c / (ell_* / sqrt(alpha_scale/beta_scale))",
         "absolute_unit_anchor_status": "OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR",
-        "coefficient_source_status": "OPEN_MISSING_SCALE_POTENTIAL_ACTION_SOURCE",
+        "coefficient_source_status": "SCALE_POTENTIAL_ACTION_SOURCE_DERIVED_CONDITIONALLY_BY_V5_6",
+        "v5_6_source": "artifacts/BHSM_scalar_topographic_vacuum_action_derivation_report_v5_6.json",
     }
 
 
@@ -527,13 +528,13 @@ def construction_report_artifact() -> dict[str, Any]:
         {
             "status": PRIMARY_RESULT,
             "selected_scale_mechanism_status": "SCALAR_TOPOGRAPHIC_SCALE_VACUUM_SELECTED_CONDITIONALLY",
-            "scale_equation": "beta_scale sigma^3 - alpha_scale sigma = 0",
+            "scale_equation": "beta_scale sigma_scale^3 - alpha_scale sigma_scale = 0",
             "scale_solution": {
                 "nonzero": True,
                 "unique": "unique magnitude with sign degeneracy",
                 "stable": model["stable"],
                 "absolute_or_relative": "conditional absolute in terms of M_*; internally generated relative scale",
-                "unresolved_constants": ["alpha_scale", "beta_scale", "M_* or ell_*"],
+                "unresolved_constants": ["alpha_scale functional inputs", "beta_scale functional inputs", "M_* or ell_*"],
             },
             "candidate_assessment": {
                 "geometric_radius": "not selected; free radius is not scale generation",
@@ -555,10 +556,17 @@ def construction_report_artifact() -> dict[str, Any]:
                 "deterministic reduced scale-setting solution",
             ],
             "conditionally_established": [
-                "M_BH/M_* = sqrt(alpha_scale/beta_scale)",
+                "M_BH/M_* = sqrt(alpha_scale/beta_scale) with alpha_scale and beta_scale updated to v5.6 action functionals",
                 "nonzero stable branch for alpha_scale>0 and beta_scale>0",
                 "physical operator scaling once M_* or ell_* is supplied by action",
             ],
+            "v5_6_update": {
+                "status": "V5_5_SCALE_BRANCH_UPDATED_BY_V5_6",
+                "alpha_scale": "- second_variation(S_ST)[f,f] when the scale-mode Hessian is negative",
+                "beta_scale": "fourth_variation(S_ST)[f,f,f,f] plus boundary/collar quartic stabilizers",
+                "sigma_symbol": "sigma_scale",
+                "generic_quartic_ansatz_retired": True,
+            },
             "still_requiring_new_mathematics": list(PRESERVED_BLOCKERS),
             "claim_safe_conclusion": (
                 "BHSM v5.5 conditionally generates a nonzero scale branch from the "

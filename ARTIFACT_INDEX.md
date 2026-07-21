@@ -363,3 +363,21 @@ Doctrine: `docs/bhsm_unified_dynamical_action_construction_v5_4.md`.
 | `artifacts/BHSM_physical_scale_generation_report_v5_5.json` | `BHSM_PHYSICAL_SCALE_GENERATED_CONDITIONALLY` | Final v5.5 report with derived, conditional, open, and preserved-claim statuses. |
 
 Doctrine: `docs/bhsm_physical_scale_generation_v5_5.md`.
+
+<!-- BHSM_SCALAR_TOPOGRAPHIC_VACUUM_ACTION_DERIVATION_V5_6 -->
+## Scalar/topographic vacuum action derivation v5.6
+
+| Artifact | Status | Purpose |
+|---|---|---|
+| `artifacts/BHSM_scalar_topographic_order_parameter_v5_6.json` | `SCALE_ORDER_PARAMETER_DEFINED_CONDITIONALLY` | Defines `sigma_scale` as a normalized scalar/topographic mode coefficient and separates it from `sigma_profile`. |
+| `artifacts/BHSM_scalar_topographic_action_source_v5_6.json` | `SCALAR_TOPOGRAPHIC_ACTION_SOURCE_ASSEMBLED_CONDITIONALLY` | Assembles `S_ST=S_T_bulk+S_Phi_internal+S_threshold+S_boundary+S_collar` from existing source conventions. |
+| `artifacts/BHSM_scalar_topographic_variable_dictionary_v5_6.json` | `SCALAR_TOPOGRAPHIC_VARIABLE_DICTIONARY_COMPLETE` | Reconciles `T`, `Phi`, thresholds, profile width, `sigma_scale`, collar, curvature, coefficients, and unit anchors. |
+| `artifacts/BHSM_scalar_topographic_reduced_vacuum_functional_v5_6.json` | `REDUCED_VACUUM_FUNCTIONAL_DERIVED_CONDITIONALLY` | Derives `V_eff` and expresses `alpha_scale`/`beta_scale` as reduced action functionals. |
+| `artifacts/BHSM_scalar_topographic_vacuum_solution_v5_6.json` | `NONZERO_VACUUM_BRANCH_DERIVED_CONDITIONALLY` | Stores the branch equation, Hessian, stability, boundedness, and vacuum-energy result. |
+| `artifacts/BHSM_curvature_threshold_expansion_audit_v5_6.json` | `CURVATURE_THRESHOLD_MASS_GAP_INVALIDATED_FOR_THIS_ACTION` | Expands the old curvature-threshold candidate and records that no mass term survives. |
+| `artifacts/BHSM_scalar_topographic_unit_anchor_v5_6.json` | `UNIT_ANCHOR_REMAINS_OPEN` | Records that the vacuum fixes `M_BH/M_star` but not `M_star` or `ell_star`. |
+| `artifacts/BHSM_physical_scale_v5_5_update_from_v5_6.json` | `V5_5_SCALE_BRANCH_UPDATED_BY_V5_6` | Updates v5.5 by replacing free scale coefficients with conditional action functionals. |
+| `artifacts/BHSM_scalar_topographic_vacuum_reduced_model_v5_6.json` | `SCALAR_TOPOGRAPHIC_REDUCED_MODEL_STABLE` | Provides a deterministic reduced action solution and field-equation residual check. |
+| `artifacts/BHSM_scalar_topographic_vacuum_action_derivation_report_v5_6.json` | `SCALAR_TOPOGRAPHIC_VACUUM_ACTION_DERIVED_CONDITIONALLY` | Final v5.6 construction report. |
+
+Doctrine: `docs/bhsm_scalar_topographic_vacuum_action_derivation_v5_6.md`.

@@ -17,20 +17,21 @@
   "selected_mechanism": {
     "absolute_unit_anchor_status": "OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR",
     "branches": [
-      "sigma=0",
-      "sigma=+sqrt(alpha_scale/beta_scale)",
-      "sigma=-sqrt(alpha_scale/beta_scale)"
+      "sigma_scale=0",
+      "sigma_scale=+sqrt(alpha_scale/beta_scale)",
+      "sigma_scale=-sqrt(alpha_scale/beta_scale)"
     ],
     "coefficient_conditions": {
-      "alpha_scale": "positive symbolic dimensionless coefficient",
-      "beta_scale": "positive symbolic dimensionless coefficient"
+      "alpha_scale": "positive conditional action functional from v5.6: - second_variation(S_ST)[f,f]",
+      "beta_scale": "positive conditional action functional from v5.6: fourth_variation(S_ST)[f,f,f,f] plus boundary/collar quartic kernels"
     },
-    "coefficient_source_status": "OPEN_MISSING_SCALE_POTENTIAL_ACTION_SOURCE",
-    "dimensionless_order_parameter": "sigma",
+    "coefficient_source_status": "SCALE_POTENTIAL_ACTION_SOURCE_DERIVED_CONDITIONALLY_BY_V5_6",
+    "dimensionless_order_parameter": "sigma_scale",
     "physical_scale_map": "M_BH = M_* sqrt(alpha_scale/beta_scale) = hbar c / (ell_* / sqrt(alpha_scale/beta_scale))",
-    "potential": "U_scale(sigma)=1/4 beta_scale sigma^4 - 1/2 alpha_scale sigma^2",
+    "potential": "U_scale(sigma_scale)=1/4 beta_scale sigma_scale^4 - 1/2 alpha_scale sigma_scale^2",
     "selected_nonzero_magnitude": "sqrt(alpha_scale/beta_scale)",
-    "stationary_equation": "dU_scale/dsigma = beta_scale sigma^3 - alpha_scale sigma = 0"
+    "stationary_equation": "dU_scale/dsigma_scale = beta_scale sigma_scale^3 - alpha_scale sigma_scale = 0",
+    "v5_6_source": "artifacts/BHSM_scalar_topographic_vacuum_action_derivation_report_v5_6.json"
   },
   "sprint": "bhsm-physical-scale-generation-v5-5",
   "status": "SCALAR_TOPOGRAPHIC_SCALE_VACUUM_SELECTED_CONDITIONALLY",
