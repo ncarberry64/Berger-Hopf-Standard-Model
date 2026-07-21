@@ -240,6 +240,7 @@ from .rare_b_fcnc_generation_mechanism import rare_b_fcnc_generation_status_repo
 from .unified_dynamical_action import unified_action_status_report, unified_action_status_to_markdown
 from .physical_scale_generation import physical_scale_status_report, physical_scale_status_to_markdown
 from .scalar_topographic_vacuum_action import scalar_topographic_vacuum_status_report, scalar_topographic_vacuum_status_to_markdown
+from .scalar_topographic_profile_boundary_closure import profile_boundary_status_report, profile_boundary_status_to_markdown
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -666,6 +667,8 @@ def build_parser() -> argparse.ArgumentParser:
     scale.add_argument("--format", choices=("json", "markdown"), default="json")
     scalar_vacuum = commands.add_parser("scalar-topographic-vacuum-status", help="Render the BHSM v5.6 scalar/topographic vacuum action derivation")
     scalar_vacuum.add_argument("--format", choices=("json", "markdown"), default="json")
+    scalar_profile = commands.add_parser("scalar-topographic-profile-boundary-status", help="Render the BHSM v5.7 scalar/topographic profile and boundary closure")
+    scalar_profile.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
 
@@ -1429,6 +1432,13 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(json.dumps(payload, indent=2, sort_keys=True))
         else:
             _print_unicode(scalar_topographic_vacuum_status_to_markdown(payload))
+        return 0
+    if args.command == "scalar-topographic-profile-boundary-status":
+        payload = profile_boundary_status_report()
+        if args.format == "json":
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        else:
+            _print_unicode(profile_boundary_status_to_markdown(payload))
         return 0
     if args.command in {
         "primitive-charged-incidence",

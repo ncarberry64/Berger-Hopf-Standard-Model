@@ -381,3 +381,15 @@ Doctrine: `docs/bhsm_physical_scale_generation_v5_5.md`.
 | `artifacts/BHSM_scalar_topographic_vacuum_action_derivation_report_v5_6.json` | `SCALAR_TOPOGRAPHIC_VACUUM_ACTION_DERIVED_CONDITIONALLY` | Final v5.6 construction report. |
 
 Doctrine: `docs/bhsm_scalar_topographic_vacuum_action_derivation_v5_6.md`.
+
+<!-- BHSM_SCALAR_TOPOGRAPHIC_PROFILE_BOUNDARY_CLOSURE_V5_7 -->
+## Scalar/topographic profile boundary closure v5.7
+
+| Artifact | Status | Purpose |
+|---|---|---|
+| `artifacts/BHSM_scalar_topographic_solved_profile_v5_7.json` | `SCALAR_TOPOGRAPHIC_PROFILE_BOUNDARY_CLOSED_CONDITIONALLY` | Stores the normalized homogeneous Berger-boundary profile solution, variable dictionary, boundary data, mode normalization, and reduced residuals. |
+| `artifacts/BHSM_scalar_topographic_evaluated_vacuum_functional_v5_7.json` | `VACUUM_FUNCTIONAL_EVALUATED_CONDITIONALLY` | Evaluates `A_ST=-2`, `C_ST=0`, `G_ST=8`, `alpha_scale=2`, `beta_scale=8`, branch data, finite-difference checks, and component contributions. |
+| `artifacts/BHSM_scalar_topographic_hessian_response_v5_7.json` | `HESSIAN_RESPONSE_CONSTRUCTED_ON_REDUCED_DOMAIN` | Records the reduced Hessian, eigenvalues, Green/response eigenvalues, zero/negative-mode status, and old mass-gap invalidation guard. |
+| `artifacts/BHSM_scalar_topographic_profile_boundary_closure_report_v5_7.json` | `SCALAR_TOPOGRAPHIC_PROFILE_BOUNDARY_CLOSED_CONDITIONALLY` | Final v5.7 report, including v5.5/v5.6 updates and preserved open gates. |
+
+Doctrine: `docs/bhsm_scalar_topographic_profile_boundary_closure_v5_7.md`.

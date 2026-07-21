@@ -348,12 +348,38 @@ def variable_dictionary_artifact() -> dict[str, Any]:
 def reduced_vacuum_functional_artifact() -> dict[str, Any]:
     payload = _common_payload("BHSM_scalar_topographic_reduced_vacuum_functional_v5_6")
     payload.update(reduced_vacuum_functional())
+    payload.update(
+        {
+            "v5_7_evaluated_update": {
+                "status": "SCALAR_TOPOGRAPHIC_PROFILE_BOUNDARY_CLOSED_CONDITIONALLY",
+                "A_ST": -2.0,
+                "C_ST": 0.0,
+                "G_ST": 8.0,
+                "alpha_scale": 2.0,
+                "beta_scale": 8.0,
+                "source": "artifacts/BHSM_scalar_topographic_profile_boundary_closure_report_v5_7.json",
+            }
+        }
+    )
     return payload
 
 
 def vacuum_solution_artifact() -> dict[str, Any]:
     payload = _common_payload("BHSM_scalar_topographic_vacuum_solution_v5_6")
     payload.update(vacuum_solution())
+    payload.update(
+        {
+            "v5_7_evaluated_update": {
+                "status": "SCALAR_TOPOGRAPHIC_PROFILE_BOUNDARY_CLOSED_CONDITIONALLY",
+                "sigma_scale_vacuum": 0.5,
+                "vacuum_energy": -0.125,
+                "hessian": 4.0,
+                "M_BH_over_M_star": 0.5,
+                "R_BH_over_ell_star": 2.0,
+                "source": "artifacts/BHSM_scalar_topographic_profile_boundary_closure_report_v5_7.json",
+            }
+        }
+    )
     return payload
 
 
@@ -366,6 +392,18 @@ def curvature_threshold_audit_artifact() -> dict[str, Any]:
 def unit_anchor_artifact() -> dict[str, Any]:
     payload = _common_payload("BHSM_scalar_topographic_unit_anchor_v5_6")
     payload.update(unit_anchor_relationship())
+    payload.update(
+        {
+            "v5_7_evaluated_update": {
+                "status": "SCALAR_TOPOGRAPHIC_PROFILE_BOUNDARY_CLOSED_CONDITIONALLY",
+                "absolute_scale_fixed": False,
+                "M_BH_over_M_star": 0.5,
+                "R_BH_over_ell_star": 2.0,
+                "remaining_unit_input": "M_star or ell_star",
+                "source": "artifacts/BHSM_scalar_topographic_profile_boundary_closure_report_v5_7.json",
+            }
+        }
+    )
     return payload
 
 
@@ -403,6 +441,19 @@ def construction_report_artifact() -> dict[str, Any]:
             "curvature_threshold_audit": curvature_threshold_expansion(),
             "unit_anchor": unit_anchor_relationship(),
             "v5_5_update": v5_5_update_payload(),
+            "v5_7_update": {
+                "status": "SCALAR_TOPOGRAPHIC_PROFILE_BOUNDARY_CLOSED_CONDITIONALLY",
+                "A_ST": -2.0,
+                "C_ST": 0.0,
+                "G_ST": 8.0,
+                "alpha_scale": 2.0,
+                "beta_scale": 8.0,
+                "sigma_scale_vacuum": 0.5,
+                "M_BH_over_M_star": 0.5,
+                "R_BH_over_ell_star": 2.0,
+                "scale_potential_action_source_status": "CLOSED_CONDITIONALLY_FOR_REDUCED_PROFILE_BVP",
+                "source": "artifacts/BHSM_scalar_topographic_profile_boundary_closure_report_v5_7.json",
+            },
             "reduced_model": model,
             "derived": [
                 "sigma_scale order-parameter map",
@@ -413,8 +464,8 @@ def construction_report_artifact() -> dict[str, Any]:
                 "v5.5 update from placeholders to functionals",
             ],
             "conditional": [
-                "explicit profiles and thresholds remain unresolved",
-                "boundary and collar coefficients remain symbolic",
+                "v5.7 conditionally closes explicit homogeneous profiles and thresholds in the normalized reduced BVP",
+                "nonhomogeneous Berger profiles and full backreaction remain unresolved",
                 "nonzero branch requires alpha_scale>0 and beta_scale>0",
                 "absolute scale requires M_star or ell_star",
             ],

@@ -563,3 +563,20 @@ Validated: the old curvature-threshold action `1/2 phidot^2 - 1/2 |grad phi|^2 -
 Still open: `OPEN_MISSING_EXPLICIT_T_PROFILE_SOLUTION`, `OPEN_MISSING_EXPLICIT_PHI_PROFILE_SOLUTION`, `OPEN_MISSING_THRESHOLD_SELECTION_T_0`, `OPEN_MISSING_THRESHOLD_SELECTION_PHI_0`, `OPEN_MISSING_BOUNDARY_COEFFICIENT_VALUES`, `OPEN_MISSING_COLLAR_MEASURE_VALUE`, `OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR`, and all downstream gauge, CKM, neutral-scale, and full-BHSM gates.
 
 Command: `python -m bhsm.interface scalar-topographic-vacuum-status --format markdown`.
+
+<!-- BHSM_SCALAR_TOPOGRAPHIC_PROFILE_BOUNDARY_CLOSURE_V5_7 -->
+## Scalar/topographic profile boundary closure v5.7
+
+Primary result: `SCALAR_TOPOGRAPHIC_PROFILE_BOUNDARY_CLOSED_CONDITIONALLY`.
+
+BHSM v5.7 solves a normalized homogeneous Berger-boundary scalar/topographic boundary-value problem sufficient to evaluate the v5.6 vacuum functionals conditionally. The selected mode is the lowest admissible self-adjoint homogeneous mode with Robin zero-flux boundary data, finite action, and normalized components `f_T=f_Phi=1/sqrt(2)`.
+
+Evaluated reduced coefficients: `A_ST=-2`, `C_ST=0`, `G_ST=8`, `alpha_scale=2`, and `beta_scale=8`. The selected positive orientation branch has `sigma_scale=1/2`, `M_BH/M_star=1/2`, `R_BH/ell_star=2`, vacuum energy `-1/8`, and reduced Hessian `4`.
+
+Validated: `sigma_scale` remains distinct from `sigma_profile`; the homogeneous profile has zero normalization, EOM, boundary, level-set, Robin, and critical-point residuals; `c_J=0` prevents double-counting the collar Jacobian; the old curvature-threshold mass-gap shortcut remains invalidated.
+
+Still open: `OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR`, `OPEN_MISSING_NONLINEAR_FULL_GEOMETRIC_BACKREACTION`, `OPEN_MISSING_NONHOMOGENEOUS_BERGER_PROFILE_SOLUTION`, `OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT`, `OPEN_MISSING_ALPHA_I_ACTION_DERIVATION`, `OPEN_MISSING_G2_BH_ACTION_SOURCE`, `OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE`, `CKM_EXPONENT_NOT_DERIVED`, `OPEN_MISSING_NEUTRAL_SCALE`, `OPEN_MISSING_NEUTRAL_ACTION_NORMALIZATION`, and `FULL_BHSM_NOT_COMPLETE`.
+
+No numeric eV/GeV scale, particle mass, gauge coupling, CKM value, rare-B observable, or full BHSM completion is claimed.
+
+Command: `python -m bhsm.interface scalar-topographic-profile-boundary-status --format markdown`.

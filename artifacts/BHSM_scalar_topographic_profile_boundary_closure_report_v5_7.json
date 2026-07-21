@@ -1,0 +1,357 @@
+{
+  "artifact": "BHSM_scalar_topographic_profile_boundary_closure_report_v5_7",
+  "boundary_coefficients": {
+    "Z_Phi": {
+      "physical": false,
+      "status": "CONVENTIONAL_CANONICAL_KINETIC_NORMALIZATION",
+      "value": 1.0
+    },
+    "Z_T": {
+      "physical": false,
+      "status": "CONVENTIONAL_CANONICAL_KINETIC_NORMALIZATION",
+      "value": 1.0
+    },
+    "c_J": {
+      "physical": false,
+      "status": "NOT_INDEPENDENT_NO_DOUBLE_COUNT_WITH_COLLAR_JACOBIAN",
+      "value": 0.0
+    },
+    "c_K": {
+      "physical": false,
+      "status": "FIXED_GEOMETRY_BACKGROUND_INVARIANT_NO_SCALAR_VARIATION",
+      "value": 0.0
+    },
+    "c_K2": {
+      "physical": false,
+      "status": "FIXED_GEOMETRY_BACKGROUND_INVARIANT_NO_SCALAR_VARIATION",
+      "value": 0.0
+    },
+    "c_S": {
+      "physical": false,
+      "status": "FIXED_GEOMETRY_BACKGROUND_INVARIANT_NO_SCALAR_VARIATION",
+      "value": 0.0
+    },
+    "lambda_ST": {
+      "physical": true,
+      "status": "CONDITIONAL_BOUNDING_QUARTIC_ACTION_COEFFICIENT",
+      "value": 8.0
+    },
+    "m_diag": {
+      "physical": false,
+      "status": "NORMALIZED_THRESHOLD_DIAGONAL_COEFFICIENT",
+      "value": 1.0
+    },
+    "m_mix": {
+      "physical": true,
+      "status": "CONDITIONAL_ACTION_COEFFICIENT_RETAINED_EXPLICITLY",
+      "value": 3.0
+    },
+    "rho_star": {
+      "physical": false,
+      "status": "CONVENTIONAL_NORMALIZED_COLLAR_COORDINATE",
+      "value": 1.0
+    }
+  },
+  "boundary_problem": {
+    "Robin_residuals": {
+      "Phi": 0.0,
+      "T": 0.0
+    },
+    "boundary_variation_cancellation_source": "Robin zero-flux conditions with canonical kinetic normalization and fixed homogeneous boundary geometry",
+    "boundary_variation_cancelled": true,
+    "critical_point_residual_at_y0": 0.0,
+    "finite_action": true,
+    "level_set_residuals": {
+      "Phi_minus_Phi0": 0.0,
+      "T_minus_T0": 0.0
+    },
+    "regularity": "homogeneous active cell uses finite-action amplitude mode; no singular level-set gradient is used as a physical prediction",
+    "well_posed": true
+  },
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "BHSM v5.7 conditionally closes a minimal scalar/topographic profile and boundary-value problem in normalized dimensionless units. It evaluates alpha_scale, beta_scale, and M_BH/M_star for the declared reduced action coefficients, but it does not derive an absolute eV/GeV unit, particle masses, gauge couplings, CKM values, rare-B observables, or full BHSM completion.",
+  "claim_safe_conclusion": "BHSM v5.7 constructs explicit scalar/topographic background profiles and a well-posed reduced boundary problem sufficient to evaluate the vacuum functional conditionally. No experimental calibration is used, and the absolute unit anchor remains open.",
+  "conditionally_established": [
+    "profile closure depends on declared normalized reduced geometry and retained action coefficients m_mix and lambda_ST",
+    "M_BH/M_star=1/2",
+    "R_BH/ell_star=2"
+  ],
+  "derived": [
+    "deterministic scalar/topographic reduced BVP",
+    "normalized lowest homogeneous mode",
+    "level-set values T_0 and Phi_0 from the stationary profile",
+    "alpha_scale=2 and beta_scale=8 in normalized reduced units",
+    "self-adjoint Hessian and Green operator on the reduced physical subspace"
+  ],
+  "empirical_inputs_used": false,
+  "field_definitions": [
+    {
+      "action_source": "S_T_bulk + S_threshold + S_boundary + S_collar",
+      "definition": "homogeneous spacetime/topographic collar profile",
+      "dimension": "dimensionless before ell_star",
+      "domain": "Sigma_B x [0,rho_star]",
+      "normalization": "canonical L2/collar normalization",
+      "role": "dynamical reduced field",
+      "symbol": "T(Y,rho)"
+    },
+    {
+      "action_source": "S_Phi_internal + S_threshold + S_boundary + S_collar",
+      "definition": "homogeneous internal Berger/topographic profile",
+      "dimension": "dimensionless before ell_star",
+      "domain": "internal normalized Berger cell",
+      "normalization": "canonical L2/internal normalization",
+      "role": "dynamical reduced field",
+      "symbol": "Phi(y)"
+    },
+    {
+      "action_source": "level-set boundary condition",
+      "definition": "level-set value of stationary T profile",
+      "dimension": "same as T",
+      "domain": "active boundary",
+      "normalization": "T_0=T_vac on homogeneous level set",
+      "role": "derived conditional threshold",
+      "symbol": "T_0"
+    },
+    {
+      "action_source": "level-set boundary condition",
+      "definition": "level-set value of stationary Phi profile",
+      "dimension": "same as Phi",
+      "domain": "internal boundary",
+      "normalization": "Phi_0=Phi_vac on homogeneous level set",
+      "role": "derived conditional threshold",
+      "symbol": "Phi_0"
+    },
+    {
+      "action_source": "critical-point condition grad Phi(y_0)=0",
+      "definition": "canonical internal critical point",
+      "dimension": "coordinate",
+      "domain": "internal normalized Berger cell",
+      "normalization": "y_0=0 by centered profile convention",
+      "role": "background/symmetry point",
+      "symbol": "y_0"
+    },
+    {
+      "action_source": "not sigma_scale",
+      "definition": "profile width/curvature label",
+      "dimension": "dimensionless",
+      "domain": "profile-shape family",
+      "normalization": "homogeneous lowest mode has sigma_profile=infinity",
+      "role": "background shape parameter",
+      "symbol": "sigma_profile"
+    },
+    {
+      "action_source": "S_ST projected onto f=(f_T,f_Phi)",
+      "definition": "normalized vacuum-mode coefficient",
+      "dimension": "dimensionless",
+      "domain": "one-dimensional scale-mode subspace",
+      "normalization": "integral(f_T^2+f_Phi^2)dmu=1",
+      "role": "dynamical reduced coordinate",
+      "symbol": "sigma_scale"
+    },
+    {
+      "action_source": "lowest admissible eigenmode",
+      "definition": "T component of normalized lowest mode",
+      "dimension": "dimensionless",
+      "domain": "collar homogeneous mode",
+      "normalization": "f_T=1/sqrt(2)",
+      "role": "mode profile",
+      "symbol": "f_T"
+    },
+    {
+      "action_source": "lowest admissible eigenmode",
+      "definition": "Phi component of normalized lowest mode",
+      "dimension": "dimensionless",
+      "domain": "internal homogeneous mode",
+      "normalization": "f_Phi=1/sqrt(2)",
+      "role": "mode profile",
+      "symbol": "f_Phi"
+    },
+    {
+      "action_source": "collar action",
+      "definition": "normalized collar coordinate",
+      "dimension": "dimensionless",
+      "domain": "[0,1]",
+      "normalization": "rho_star=1",
+      "role": "background coordinate",
+      "symbol": "rho"
+    },
+    {
+      "action_source": "measure and boundary terms",
+      "definition": "fixed homogeneous boundary curvature, shape, and collar Jacobian data",
+      "dimension": "dimensionless normalized geometry",
+      "domain": "boundary/collar",
+      "normalization": "J=1 in homogeneous normalized cell",
+      "role": "background",
+      "symbol": "K,S,J"
+    },
+    {
+      "action_source": "second variation",
+      "definition": "-A_ST for the selected normalized mode",
+      "dimension": "dimensionless",
+      "domain": "reduced vacuum",
+      "normalization": "alpha_scale=m_mix-m_diag=2",
+      "role": "evaluated conditional coefficient",
+      "symbol": "alpha_scale"
+    },
+    {
+      "action_source": "fourth variation plus boundary/collar quartic kernel",
+      "definition": "quartic coefficient for selected normalized mode",
+      "dimension": "dimensionless",
+      "domain": "reduced vacuum",
+      "normalization": "beta_scale=lambda_ST=8",
+      "role": "evaluated conditional coefficient",
+      "symbol": "beta_scale"
+    },
+    {
+      "action_source": "M_BH/M_star only",
+      "definition": "absolute unit anchors",
+      "dimension": "energy/length",
+      "domain": "unit map",
+      "normalization": "not fixed by v5.7",
+      "role": "open",
+      "symbol": "M_star, ell_star"
+    }
+  ],
+  "field_equations": {
+    "E_Phi": "-Z_Phi Delta_B Phi + m_diag Phi - m_mix T + lambda_ST (T^2+Phi^2) Phi = 0",
+    "E_T": "-Z_T partial_rho^2 T + m_diag T - m_mix Phi + lambda_ST (T^2+Phi^2) T = 0",
+    "coupling_terms": [
+      "-m_mix Phi in E_T",
+      "-m_mix T in E_Phi",
+      "lambda_ST radial quartic terms"
+    ]
+  },
+  "frozen_predictions_changed": false,
+  "geometry_and_reduction": {
+    "collar": "rho in [0,1], J=1 in the homogeneous normalized reference cell",
+    "manifold": "normalized homogeneous Berger boundary Sigma_B with collar [0,rho_star]",
+    "selected_mode_rule": "lowest admissible self-adjoint mode satisfying finite action, Robin zero-flux, and sector compatibility",
+    "symmetry_reduction": "lowest homogeneous Berger-boundary scalar mode with constant collar profile"
+  },
+  "hessian_response": {
+    "adjoint": "symmetric matrix under normalized Q_ST inner product",
+    "domain": "two-component homogeneous scalar/topographic reduced subspace with Robin zero-flux boundary data",
+    "eigenvalues": [
+      4.0,
+      6.0
+    ],
+    "green_operator_eigenvalues": [
+      0.25,
+      0.16666666666666666
+    ],
+    "hessian_matrix": [
+      [
+        4.999999999999999,
+        -1.0000000000000004
+      ],
+      [
+        -1.0000000000000004,
+        4.999999999999999
+      ]
+    ],
+    "invertible_on_physical_subspace": true,
+    "lowest_positive_mode": 4.0,
+    "negative_modes": [],
+    "old_curvature_threshold_mass_gap_preserved_invalid": true,
+    "self_adjoint": true,
+    "status": "HESSIAN_RESPONSE_CONSTRUCTED_ON_REDUCED_DOMAIN",
+    "zero_modes": []
+  },
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "numerical_particle_masses_emitted": false,
+  "observed_mass_or_vev_used": false,
+  "official_prediction_logic_changed": false,
+  "pdg_reference_values_used": false,
+  "physical_couplings_promoted": false,
+  "physics_model_logic_changed": false,
+  "primary_result": "SCALAR_TOPOGRAPHIC_PROFILE_BOUNDARY_CLOSED_CONDITIONALLY",
+  "profile_solution": {
+    "Phi_0": 0.35355339059327373,
+    "Phi_background": 0.0,
+    "Phi_solution": "Phi_vac(y)=sigma_scale,0/sqrt(2)",
+    "T_0": 0.35355339059327373,
+    "T_background": 0.0,
+    "T_solution": "T_vac(Y,rho)=sigma_scale,0/sqrt(2)",
+    "f_Phi": 0.7071067811865475,
+    "f_T": 0.7071067811865475,
+    "method": "closed-form symmetry-reduced BVP",
+    "sigma_profile": "infinity for homogeneous lowest mode; no localized width is used",
+    "sigma_scale": 0.5,
+    "y_0": 0.0
+  },
+  "recommended_next_construction_sprint": "bhsm-absolute-unit-anchor-generation-v5-8",
+  "sprint": "bhsm-scalar-topographic-profile-boundary-closure-v5-7",
+  "status": "SCALAR_TOPOGRAPHIC_PROFILE_BOUNDARY_CLOSED_CONDITIONALLY",
+  "still_requiring_new_mathematics": [
+    "OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR",
+    "OPEN_MISSING_NONLINEAR_FULL_GEOMETRIC_BACKREACTION",
+    "OPEN_MISSING_NONHOMOGENEOUS_BERGER_PROFILE_SOLUTION",
+    "OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT",
+    "OPEN_MISSING_ALPHA_I_ACTION_DERIVATION",
+    "OPEN_MISSING_G2_BH_ACTION_SOURCE",
+    "OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE",
+    "CKM_EXPONENT_NOT_DERIVED",
+    "OPEN_MISSING_NEUTRAL_SCALE",
+    "OPEN_MISSING_NEUTRAL_ACTION_NORMALIZATION",
+    "FULL_BHSM_NOT_COMPLETE"
+  ],
+  "unit_anchor": {
+    "M_BH_over_M_star": 0.5,
+    "R_BH_over_ell_star": 2.0,
+    "absolute_scale_fixed": false,
+    "absolute_unit_anchor_status": "OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR",
+    "remaining_unit_input": "M_star or ell_star",
+    "rho_star_over_ell_star": 1.0,
+    "scale_potential_action_source_status": "CLOSED_CONDITIONALLY_FOR_REDUCED_PROFILE_BVP"
+  },
+  "v5_5_v5_6_updates": [
+    "v5.5 sigma symbol remains sigma_scale after v5.6 rename",
+    "v5.6 alpha_scale and beta_scale action functionals are evaluated in the reduced profile BVP",
+    "old curvature-threshold mass-gap claim remains invalidated"
+  ],
+  "vacuum_functional": {
+    "A_ST": -2.0,
+    "C_ST": 0.0,
+    "G_ST": 8.0,
+    "alpha_scale": 2.0,
+    "beta_scale": 8.0,
+    "branches": [
+      0.0,
+      0.5,
+      -0.5
+    ],
+    "component_contributions": {
+      "T_Phi_mixing": -3.0,
+      "boundary": 0.0,
+      "bulk_T_kinetic": 0.0,
+      "collar": 0.0,
+      "geometry_measure": 0.0,
+      "internal_Phi_kinetic": 0.0,
+      "quartic_boundary_collar_kernel": 8.0,
+      "threshold_quadratic": -2.0
+    },
+    "finite_difference_check": {
+      "A_ST_error": 8.881784197001252e-16,
+      "A_ST_finite_difference": -1.9999999999999991,
+      "G_ST_error": 8.801848139228241e-13,
+      "G_ST_finite_difference": 7.99999999999912,
+      "passes": true,
+      "step": 0.01,
+      "tolerance": 1e-06
+    },
+    "global_or_local": "global in quartic reduced model when lambda_ST>0",
+    "hessian": 4.0,
+    "higher_order_terms": "none in the declared quartic reduced model",
+    "mode_action": "V_eff(sigma_scale)=1/2 A_ST sigma_scale^2 + 1/4 G_ST sigma_scale^4",
+    "reduced_action": "S_red(T,Phi)=1/2 m_diag(T^2+Phi^2)-m_mix T Phi + 1/4 lambda_ST(T^2+Phi^2)^2",
+    "selected_branch": 0.5,
+    "stable": true,
+    "status": "VACUUM_FUNCTIONAL_EVALUATED_CONDITIONALLY",
+    "vacuum_energy": -0.12500000000000003,
+    "vacuum_equation": "A_ST sigma_scale + G_ST sigma_scale^3 = 0"
+  },
+  "version": "v5.7",
+  "w_calibration_used": false
+}
