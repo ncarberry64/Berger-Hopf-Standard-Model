@@ -703,3 +703,37 @@ Still open: `OPEN_MISSING_SIGMA_COUPLING_SELECTION_PRINCIPLE`,
 `OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR`, and `FULL_BHSM_NOT_COMPLETE`.
 
 Command: `python -m bhsm.interface energy-geometry-confinement-status --format markdown`.
+
+<!-- BHSM_HARMONIC_PHYSICALITY_COUPLING_SELECTION_V6_0_4 -->
+## Harmonic physicality coupling selection v6.0.4
+
+Primary result: `BHSM_HARMONIC_SELECTION_SOURCE_NOT_DERIVED`.
+
+Coupling-selection result: `BHSM_PHYSICALITY_COUPLING_SELECTION_BLOCKED`.
+
+The free self-adjoint quadratic theory has no invariant relative-phase
+selection energy. The exact massless round-`S7` scalar diagnostic contains the
+unique nonzero octave pair `l=4,10`, with `lambda_10=4 lambda_4` and
+`omega_10=2 omega_4`. Sigma parity makes the required cubic `10-4-4` tensor
+zero at `sigma=0`; commensurability therefore does not supply a three-wave
+physicality trigger.
+
+No accepted parent branch supplies a selected noncircular interfering field,
+sourced nonlinear coefficient, complete B8/S7 spectrum and overlap tensors,
+stable phase-locked solution, or invariant negative sigma-Hessian shift. The
+octave result fixes a dimensionless ratio only, not a base frequency, radius,
+particle generation, or absolute unit.
+
+Still open: `OPEN_MISSING_ACTION_SELECTED_INTERFERING_PARENT_FIELD`,
+`OPEN_MISSING_EXACT_SELECTED_B8_S7_OPERATOR_DOMAIN`,
+`OPEN_MISSING_PARENT_NONLINEAR_COEFFICIENT_SOURCES`,
+`OPEN_MISSING_NESTED_HOPF_BRANCHING_AND_OVERLAP_TENSORS`,
+`OPEN_MISSING_NONTRIVIAL_RESONANT_NORMAL_FORM`,
+`OPEN_MISSING_STABLE_PHASE_LOCKED_COHERENT_SOLUTION`,
+`OPEN_MISSING_INVARIANT_NEGATIVE_SIGMA_HESSIAN_SHIFT`,
+`OPEN_MISSING_COUPLED_COHERENT_SIGMA_STABLE_PHASE`,
+`OPEN_MISSING_DYNAMIC_ENCLOSURE_AND_JUNCTION`,
+`OPEN_MISSING_PARENT_TO_V5_REDUCTION_THEOREM`,
+`OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR`, and `FULL_BHSM_NOT_COMPLETE`.
+
+Command: `python -m bhsm.interface harmonic-physicality-selection-status --format markdown`.

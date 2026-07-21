@@ -456,3 +456,18 @@ and `BHSM_PHYSICALITY_THRESHOLD_ARCHITECTURE_IDENTIFIED`. It exposes the
 complete conditional sigma Hessian, spectral threshold, finite-size and
 nonlinear formulas, and the harmonic-coherence selection hypothesis without
 selecting a physical coupling or claiming a formed physical phase.
+
+<!-- BHSM_HARMONIC_PHYSICALITY_COUPLING_SELECTION_V6_0_4 -->
+## Harmonic physicality coupling selection v6.0.4
+
+```bash
+python -m bhsm.interface harmonic-physicality-selection-status --format json
+python -m bhsm.interface harmonic-physicality-selection-status --format markdown
+python scripts/materialize_harmonic_physicality_coupling_selection_v6_0_4.py
+```
+
+The command reports `BHSM_HARMONIC_SELECTION_SOURCE_NOT_DERIVED` and
+`BHSM_PHYSICALITY_COUPLING_SELECTION_BLOCKED`. It includes the linear
+no-selection theorem, exact round-S7 `l=4,10` octave ratio, nonlinear
+interaction gates, coherence projector, sigma-shift audit, and scale firewall
+without promoting commensurability to a physical coupling.

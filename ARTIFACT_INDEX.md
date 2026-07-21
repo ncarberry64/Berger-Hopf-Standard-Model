@@ -551,3 +551,31 @@ Doctrine: `docs/bhsm_primordial_boundary_tension_action_source_closure_v5_12.md`
 | `artifacts/BHSM_energy_geometry_confinement_invariant_report_v6_0_3.json` | Final claim-safe result and next-branch routing. |
 
 Doctrine: `docs/bhsm_energy_geometry_confinement_invariant_v6_0_3.md`.
+
+<!-- BHSM_HARMONIC_PHYSICALITY_COUPLING_SELECTION_V6_0_4 -->
+## Harmonic physicality coupling selection v6.0.4
+
+| Artifact | Purpose |
+|---|---|
+| `artifacts/BHSM_harmonic_linear_no_selection_theorem_v6_0_4.json` | Proves free orthogonal modes have no invariant relative-phase energy. |
+| `artifacts/BHSM_harmonic_interfering_parent_field_ledger_v6_0_4.json` | Audits sigma, matter, gauge, geometry, connection, flux, and spinor candidates. |
+| `artifacts/BHSM_harmonic_exact_mode_representation_spectrum_v6_0_4.json` | Records the exact round-S7 scalar subspectrum and open parent spectrum. |
+| `artifacts/BHSM_harmonic_cubic_quartic_interaction_tensors_v6_0_4.json` | Separates the parity-zero cubic tensor from the conditional quartic tensor. |
+| `artifacts/BHSM_harmonic_geometric_selection_rule_matrix_v6_0_4.json` | Applies representation, charge, parity, topology, collar, and boundary gates. |
+| `artifacts/BHSM_harmonic_octave_discrete_scale_audit_v6_0_4.json` | Derives the unique round-S7 octave pair and rejects scale promotion. |
+| `artifacts/BHSM_harmonic_resonance_condition_registry_v6_0_4.json` | Separates frequency commensurability from nonzero interaction. |
+| `artifacts/BHSM_harmonic_resonant_normal_form_v6_0_4.json` | Records conservative normal-form requirements and missing channel. |
+| `artifacts/BHSM_harmonic_phase_locked_solution_v6_0_4.json` | Prevents prescribed phases without amplitude equations and stability. |
+| `artifacts/BHSM_harmonic_basis_invariant_coherence_v6_0_4.json` | Defines spectral-projector coherence and its phase-blind limit. |
+| `artifacts/BHSM_harmonic_constrained_variational_selection_v6_0_4.json` | Requires actual conserved constraints and a second constrained variation. |
+| `artifacts/BHSM_harmonic_coherent_incoherent_stress_v6_0_4.json` | Defines the equal-invariant comparison and records unavailable shifts. |
+| `artifacts/BHSM_harmonic_sigma_hessian_shift_v6_0_4.json` | Audits independent-field and sigma-self shifts without assuming a sign. |
+| `artifacts/BHSM_harmonic_physicality_threshold_v6_0_4.json` | Leaves control, critical value, and crossing open. |
+| `artifacts/BHSM_harmonic_coupled_coherent_sigma_hessian_v6_0_4.json` | Defines the complete coupled sector ledger. |
+| `artifacts/BHSM_harmonic_geometric_modulus_selection_v6_0_4.json` | Prevents resonance-only metric selection. |
+| `artifacts/BHSM_harmonic_emergent_enclosure_test_v6_0_4.json` | Keeps an imposed round container distinct from emergence. |
+| `artifacts/BHSM_harmonic_parent_to_v5_compatibility_v6_0_4.json` | Preserves the v5 and generation firewall. |
+| `artifacts/BHSM_harmonic_absolute_scale_hidden_input_audit_v6_0_4.json` | Exposes all unsourced coefficients, geometry, and base-scale inputs. |
+| `artifacts/BHSM_harmonic_physicality_coupling_selection_report_v6_0_4.json` | Final negative/blocked result and next-branch routing. |
+
+Doctrine: `docs/bhsm_harmonic_physicality_coupling_selection_v6_0_4.md`.
