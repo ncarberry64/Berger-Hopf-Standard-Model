@@ -499,3 +499,20 @@ This does not mean a full second variation, determinant-ready geometry/gauge/fer
 Still not supported: identifying the total normalized `-1/8` with an absolute physical tension; interpreting the v5.7 fixed-geometry zeros of `c_K,c_K2,c_S` as geometric theorems; claiming that `lambda_surface=0` currently fixes `L_c`; deleting unresolved negative modes; treating collective `L` or physical `xi_perp` as gauge without proof; assigning an independent determinant to the charged composite; inserting a neutral eV scale; upgrading v5.10; restoring the old curvature-threshold mass gap; deriving an absolute unit, particle masses, gauge couplings, CKM results, rare-B observables, physical validation, or full BHSM completion.
 
 Preserved: `sigma_scale=1/2`, `M_BH/M_star=1/2`, `R_BH/ell_star=2`, `OPEN_MISSING_ACTION_DERIVED_GEOMETRIC_HESSIAN`, `OPEN_MISSING_FULL_GAUGE_FIXED_DOMAIN`, `OPEN_MISSING_FERMION_DIRAC_OPERATOR_ACTION_SOURCE`, `OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR`, and `FULL_BHSM_NOT_COMPLETE`.
+
+<!-- BHSM_PRIMORDIAL_BOUNDARY_TENSION_ACTION_SOURCE_CLOSURE_V5_12 -->
+## Primordial boundary-tension action source closure v5.12
+
+Allowed: v5.12 may claim symbolic physical-dimension rules, a source-qualified boundary stress and normal shape architecture, the collar-Jacobian variation, the surface-Hessian eigenproblem, and the theorem that a single homogeneous `A L^-p` term cannot create an isolated positive release radius.
+
+Result: `BHSM_PRIMORDIAL_BOUNDARY_SOURCE_NOT_CLOSED`.
+
+This does not mean `-1/8` is a local tension, the v5.7 curvature coefficients vanish geometrically, `rho_star=1` is a length, `kappa_geom` supplies a GHY coefficient, the exterior pressure is zero, the v5.10 global response is a local Casimir pressure, or a finite `L_c` has been found. The available data do not yet establish a minimal one-scale theorem.
+
+Still not supported: defining `ell_star=L_c`, propagating physical masses, asserting a primordial rupture or hot plasma, importing a gravitational/electroweak/cosmological scale, deriving couplings or CKM values, predicting rare-B observables, or claiming full BHSM completion.
+
+Recycling continuation allowed: v5.12 may identify a general top-form/global-flux constraint architecture, derive its candidate stress and ensemble-dependent pressure, count zero local polarizations, state the conditional codimension-one flux jump, and show that fixed-`Q` pressure produces a rank-one volume-mode response.
+
+Recycling continuation result: `BHSM_SPACETIME_RECYCLING_CONSTRAINT_ARCHITECTURE_IDENTIFIED`.
+
+Recycling continuation still not supported: an existing BHSM recycling action or core charge; destruction of exact charges, information, or entropy; controllable superluminal signaling; black-hole-driven cosmic expansion; replacement of dark energy or inflation; a solved horizon/homogeneity problem; a ZPV reset; a physical release radius; or an absolute unit from arbitrary flux data.

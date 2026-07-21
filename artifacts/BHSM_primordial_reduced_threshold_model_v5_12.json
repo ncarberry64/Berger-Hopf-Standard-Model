@@ -1,0 +1,135 @@
+{
+  "absolute_unit_claimed": false,
+  "arbitrary_flux_promoted_to_absolute_unit": false,
+  "artifact": "BHSM_primordial_reduced_threshold_model_v5_12",
+  "black_hole_observation_used": false,
+  "ckm_completion_claimed": false,
+  "claim_boundary": "v5.12 derives the strongest source-qualified boundary normal-stress and stability architecture. Physical localization, dimensions, coefficients, pressure, embedding, and domain remain insufficient to evaluate L_c or derive an absolute unit.",
+  "coefficient_map": {
+    "A2": "localized tension/scalar/collar second-order combination",
+    "A3": "c_K shape combination",
+    "A4": "c_K2 and c_S bending combination"
+  },
+  "dark_energy_replacement_claimed": false,
+  "empirical_inputs_used": false,
+  "existing_numerical_predictions_changed": false,
+  "expansion_equation": {
+    "Hubble_law_postulated": false,
+    "M_L_action_derived": false,
+    "acceleration": null,
+    "actual_BHSM_evolution_equation_derived": false,
+    "boundedness": "E_rec is nonnegative for Z_F>0, but total boundedness requires V_boundary and the ensemble",
+    "candidate_reduced_action": "S_L=integral dt[(1/2)M_L(L)dot L^2-V_boundary(L)-E_rec(L)]",
+    "euler_lagrange": "M_L ddot L+(1/2)M_L'(dot L)^2+V_boundary'(L)+E_rec'(L)=0",
+    "expanding_branch": null,
+    "monotonic": null,
+    "runaway": null,
+    "static_branch": null
+  },
+  "frozen_predictions_changed": false,
+  "full_bhsm_completion_claimed": false,
+  "gauge_couplings_derived": false,
+  "hot_plasma_production_claimed_derived": false,
+  "illustrative_coefficients_promoted": false,
+  "inflation_or_horizon_problem_claimed_solved": false,
+  "information_erasure_claimed": false,
+  "local_model": "lambda_red=A2/L^2+A3/L^3+A4/L^4",
+  "measured_scale_used": false,
+  "minus_one_eighth_promoted_to_physical_tension": false,
+  "natural_units_hide_missing_dimension": false,
+  "official_prediction_logic_changed": false,
+  "particle_masses_derived": false,
+  "planck_electroweak_higgs_or_cosmology_scale_used": false,
+  "present_hubble_rate_used": false,
+  "primary_result": "BHSM_PRIMORDIAL_BOUNDARY_SOURCE_NOT_CLOSED",
+  "primitive_recycling_coefficient_claimed_derived": false,
+  "primitive_scale_dependence": "f or Q is arbitrary initial data unless a normalized charge lattice and source law are derived; it cannot anchor L",
+  "primitive_tension_claimed_derived": false,
+  "rare_b_predictions_claimed": false,
+  "recycling_model": {
+    "boundary_tension_scalar_pressure_and_collar": "remain symbolic additive sectors",
+    "fixed_Q_energy": "Z_F Q^2/[2v(a)L^nu]",
+    "fixed_Q_pressure": "+Z_F Q^2/(2V^2)",
+    "fixed_f_energy": "Z_F f^2 v(a)L^nu/2",
+    "fixed_f_pressure": "-Z_F f^2/2",
+    "flux_jump": "f_plus=f_minus+orientation*q_rec/Z_F",
+    "surface_correction": "zero direct delta-p at fixed f; rank-one mean-mode response at fixed Q",
+    "volume": "V=v(a)L^nu"
+  },
+  "recycling_result": "BHSM_SPACETIME_RECYCLING_CONSTRAINT_ARCHITECTURE_IDENTIFIED",
+  "renormalization_scale_promoted_to_L_c": false,
+  "representative_cases": [
+    {
+      "A2": -1.0,
+      "A3": 0.0,
+      "A4": 1.0,
+      "crossings": [
+        "STABLE_TO_UNSTABLE_FOR_INCREASING_L"
+      ],
+      "label": "stable_to_unstable",
+      "roots": [
+        1.0
+      ]
+    },
+    {
+      "A2": 1.0,
+      "A3": -2.0,
+      "A4": 1.0,
+      "crossings": [
+        "TANGENTIAL_TOUCH"
+      ],
+      "label": "tangent",
+      "roots": [
+        1.0
+      ]
+    },
+    {
+      "A2": 1.0,
+      "A3": -3.0,
+      "A4": 2.0,
+      "crossings": [
+        "STABLE_TO_UNSTABLE_FOR_INCREASING_L",
+        "UNSTABLE_TO_STABLE_FOR_INCREASING_L"
+      ],
+      "label": "multiple",
+      "roots": [
+        1.0,
+        2.0
+      ]
+    },
+    {
+      "A2": 1.0,
+      "A3": 0.0,
+      "A4": 0.0,
+      "crossings": [],
+      "label": "single",
+      "roots": []
+    }
+  ],
+  "rho_star_promoted_to_physical_length": false,
+  "root_polynomial": "A2 L^2+A3 L+A4=0",
+  "scale_covariance": "boundary roots and recycling scales remain covariant when every dimensionful coefficient and flux transforms with its physical dimension",
+  "single_term_has_positive_root": false,
+  "sprint": "bhsm-primordial-boundary-tension-action-source-closure-v5-12",
+  "status": "DETERMINISTIC_BOUNDARY_AND_RECYCLING_MODELS_EXACT_COEFFICIENTS_ILLUSTRATIVE",
+  "superluminal_signaling_claimed": false,
+  "v5_10_global_determinant_used_as_local_casimir_pressure": false,
+  "valid_global_quantum_diagnostic": {
+    "added_to_local_A2": false,
+    "formula": "d2 Gamma_perp/dL2=1/L^2",
+    "reason": "no xi_perp localization map",
+    "stored_separately": true
+  },
+  "variables": [
+    "L",
+    "a_Berger",
+    "sigma_scale=1/2",
+    "rho_star",
+    "uniform xi_perp",
+    "tau",
+    "f_or_Q",
+    "Z_F",
+    "q_rec"
+  ],
+  "version": "v5.12"
+}
