@@ -309,6 +309,16 @@ def selected_scale_potential() -> dict[str, Any]:
         "absolute_unit_anchor_status": "OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR",
         "coefficient_source_status": "SCALE_POTENTIAL_ACTION_SOURCE_DERIVED_CONDITIONALLY_BY_V5_6",
         "v5_6_source": "artifacts/BHSM_scalar_topographic_vacuum_action_derivation_report_v5_6.json",
+        "v5_7_update": {
+            "status": "SCALAR_TOPOGRAPHIC_PROFILE_BOUNDARY_CLOSED_CONDITIONALLY",
+            "alpha_scale": 2.0,
+            "beta_scale": 8.0,
+            "sigma_scale_vacuum": 0.5,
+            "M_BH_over_M_star": 0.5,
+            "R_BH_over_ell_star": 2.0,
+            "source": "artifacts/BHSM_scalar_topographic_profile_boundary_closure_report_v5_7.json",
+            "absolute_unit_anchor_status": "OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR",
+        },
     }
 
 
@@ -566,6 +576,16 @@ def construction_report_artifact() -> dict[str, Any]:
                 "beta_scale": "fourth_variation(S_ST)[f,f,f,f] plus boundary/collar quartic stabilizers",
                 "sigma_symbol": "sigma_scale",
                 "generic_quartic_ansatz_retired": True,
+            },
+            "v5_7_update": {
+                "status": "SCALAR_TOPOGRAPHIC_PROFILE_BOUNDARY_CLOSED_CONDITIONALLY",
+                "alpha_scale": 2.0,
+                "beta_scale": 8.0,
+                "sigma_scale_vacuum": 0.5,
+                "M_BH_over_M_star": 0.5,
+                "R_BH_over_ell_star": 2.0,
+                "scale_potential_action_source_status": "CLOSED_CONDITIONALLY_FOR_REDUCED_PROFILE_BVP",
+                "source": "artifacts/BHSM_scalar_topographic_profile_boundary_closure_report_v5_7.json",
             },
             "still_requiring_new_mathematics": list(PRESERVED_BLOCKERS),
             "claim_safe_conclusion": (

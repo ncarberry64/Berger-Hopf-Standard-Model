@@ -432,3 +432,16 @@ Result: `SCALAR_TOPOGRAPHIC_VACUUM_ACTION_DERIVED_CONDITIONALLY`.
 This means the order-parameter map, action decomposition, reduced vacuum functional, branch equation, Hessian/stability classification, v5.5 propagation update, and old curvature-threshold invalidation are artifacted. It does not mean the explicit `T` or `Phi` profile, thresholds `T_0` and `Phi_0`, boundary coefficient values, collar measure values, absolute unit anchor, physical masses, gauge couplings, CKM values, or full BHSM completion are derived.
 
 Still not supported: treating `sigma_scale` as the profile width, importing the Standard Model Higgs potential, keeping the old curvature-threshold mass gap after background substitution, using measured VEVs or masses to select coefficients, deriving `M_star`, deriving `alpha_i`, deriving `g2_BH`, deriving CKM coefficient value or exponent, emitting eV/GeV neutrino masses, or predicting rare-B observables.
+
+<!-- BHSM_SCALAR_TOPOGRAPHIC_PROFILE_BOUNDARY_CLOSURE_V5_7 -->
+## Scalar/topographic profile boundary closure v5.7
+
+Allowed: BHSM v5.7 conditionally closes a normalized homogeneous scalar/topographic profile and boundary-value problem, evaluates `alpha_scale=2` and `beta_scale=8` in normalized reduced units, verifies the branch `sigma_scale=1/2`, and updates the v5.5/v5.6 scale ledgers with `M_BH/M_star=1/2` and `R_BH/ell_star=2`.
+
+Result: `SCALAR_TOPOGRAPHIC_PROFILE_BOUNDARY_CLOSED_CONDITIONALLY`.
+
+This means the declared reduced BVP has explicit profiles, level-set values, Robin zero-flux boundary data, normalized mode components, vanishing reduced EOM residuals, and a positive reduced Hessian on its self-adjoint domain. It does not mean nonhomogeneous Berger profiles, full geometric backreaction, absolute units, particle masses, gauge couplings, CKM values, rare-B observables, or full BHSM completion are derived.
+
+Still not supported: using measured VEVs or masses to choose coefficients, treating `sigma_profile` and `sigma_scale` as interchangeable, double-counting `c_J` outside the collar measure, reviving the old curvature-threshold mass-gap claim, deriving `M_star` or `ell_star`, deriving `alpha_i`, deriving `g2_BH`, deriving CKM coefficient value or exponent, emitting eV/GeV neutrino masses, predicting rare-B observables, or claiming full BHSM completion.
+
+Preserved: `OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR`, `OPEN_MISSING_NONLINEAR_FULL_GEOMETRIC_BACKREACTION`, `OPEN_MISSING_NONHOMOGENEOUS_BERGER_PROFILE_SOLUTION`, `OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT`, `OPEN_MISSING_ALPHA_I_ACTION_DERIVATION`, `OPEN_MISSING_G2_BH_ACTION_SOURCE`, `OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE`, `CKM_EXPONENT_NOT_DERIVED`, `OPEN_MISSING_NEUTRAL_SCALE`, `OPEN_MISSING_NEUTRAL_ACTION_NORMALIZATION`, and `FULL_BHSM_NOT_COMPLETE`.

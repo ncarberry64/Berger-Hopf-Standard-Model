@@ -5,8 +5,8 @@
   "claim_boundary": "The scalar/topographic scale vacuum is derived conditionally from the BHSM scalar/topographic action family and a declared normalized mode reduction. The coefficients are action functionals over unresolved profiles, boundary tensors, and collar data; no numeric eV/GeV scale, particle mass, measured VEV, gauge coupling, CKM value, rare-B result, or full BHSM completion is claimed.",
   "claim_safe_conclusion": "BHSM v5.6 conditionally derives the scalar/topographic scale vacuum from the action-reduced mode functional. It updates v5.5 by making alpha_scale and beta_scale action functionals, invalidates the old curvature-threshold mass-gap shortcut, and preserves the open absolute unit anchor and all downstream coupling/mass gates.",
   "conditional": [
-    "explicit profiles and thresholds remain unresolved",
-    "boundary and collar coefficients remain symbolic",
+    "v5.7 conditionally closes explicit homogeneous profiles and thresholds in the normalized reduced BVP",
+    "nonhomogeneous Berger profiles and full backreaction remain unresolved",
     "nonzero branch requires alpha_scale>0 and beta_scale>0",
     "absolute scale requires M_star or ell_star"
   ],
@@ -186,6 +186,19 @@
     },
     "scale_equation": "-alpha_scale sigma_scale + beta_scale sigma_scale^3 = 0",
     "status": "V5_5_SCALE_BRANCH_UPDATED_BY_V5_6"
+  },
+  "v5_7_update": {
+    "A_ST": -2.0,
+    "C_ST": 0.0,
+    "G_ST": 8.0,
+    "M_BH_over_M_star": 0.5,
+    "R_BH_over_ell_star": 2.0,
+    "alpha_scale": 2.0,
+    "beta_scale": 8.0,
+    "scale_potential_action_source_status": "CLOSED_CONDITIONALLY_FOR_REDUCED_PROFILE_BVP",
+    "sigma_scale_vacuum": 0.5,
+    "source": "artifacts/BHSM_scalar_topographic_profile_boundary_closure_report_v5_7.json",
+    "status": "SCALAR_TOPOGRAPHIC_PROFILE_BOUNDARY_CLOSED_CONDITIONALLY"
   },
   "vacuum_solution": {
     "boundedness": "requires beta_scale>0 for the quartic truncation",
