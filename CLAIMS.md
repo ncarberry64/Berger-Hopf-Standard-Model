@@ -395,3 +395,16 @@ Claim-safe conclusion: BHSM v5.3 does not derive an FCNC-generation mechanism fo
 Still not supported: automatic FCNC generation, a tree-level `b-s` neutral current without a theorem, Standard Model penguin or box results relabeled as BHSM, loop factors from numerical resemblance, CKM-only Wilson coefficients, a physical `b -> s` induced neutral kernel, BHSM-derived `C7`, `C9`, or `C10`, numerical `q0^2`, exact micro-plateau nodes, LHCb-anomaly explanation, QFT falsification, or full BHSM completion.
 
 Preserved: `ACTION_ATTACHMENT_BLOCKED`, `CKM_RELATIVE_CURRENT_NORMALIZATION_BLOCKED`, `COUPLING_BRIDGE_BLOCKED_PENDING_ACTION_PRINCIPLE`, `RARE_B_AFB_ZERO_PREDICTION_BLOCKED`, `RARE_B_MICROPLATEAU_NODE_PREDICTION_BLOCKED`, `RARE_B_OBSERVABLE_MAP_INTERFACE_COMPLETE`, and `B_TO_S_MUMU_OPERATOR_MATCHING_BLOCKED`.
+
+<!-- BHSM_UNIFIED_DYNAMICAL_ACTION_CONSTRUCTION_V5_4 -->
+## Unified dynamical action construction v5.4
+
+Allowed: BHSM v5.4 constructs an explicit unified symbolic action candidate with configuration space, measure, coefficient/dimension table, variational equations, boundary conditions, quadratic operator extraction, interaction-source map, dimensionful-scale ledger, and deterministic reduced coupled-mode model.
+
+Result: `UNIFIED_BHSM_ACTION_CONSTRUCTED_CONDITIONALLY`.
+
+This means the symbolic action is structurally operational enough to vary, extract quadratic dynamics, and evaluate one reduced stability model. It does not mean that physical coefficients, the physical scale, gauge couplings, current normalizations, nonlinear solutions, or Standard Model phenomenology are derived.
+
+Still not supported: derived `alpha_i`, derived `g2_BH`, derived CKM coefficient value or exponent, physical mass-scale generation, full gauge-fixed domain closure, complete lower-order boundary operator terms, rare-B FCNC closure, Wilson coefficients, numerical `q0^2`, exact node coordinates, LHCb-anomaly explanation, QFT falsification, or full BHSM completion.
+
+Preserved: `ACTION_ATTACHMENT_BLOCKED`, `CKM_RELATIVE_CURRENT_NORMALIZATION_BLOCKED`, `COUPLING_BRIDGE_BLOCKED_PENDING_ACTION_PRINCIPLE`, `OPEN_MISSING_G2_BH_ACTION_SOURCE`, `OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE`, `CKM_EXPONENT_NOT_DERIVED`, `RARE_B_FCNC_GENERATION_MECHANISM_BLOCKED`, `B_TO_S_MUMU_OPERATOR_MATCHING_BLOCKED`, and `FULL_BHSM_NOT_COMPLETE`.

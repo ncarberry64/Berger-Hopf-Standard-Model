@@ -1,0 +1,84 @@
+{
+  "artifact": "BHSM_unified_action_quadratic_operators_v5_4",
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "Unified symbolic construction only. Coefficients and the physical scale remain symbolic/provisional where not derived; no frozen prediction, gauge coupling, Wilson coefficient, rare-B prediction, or full BHSM completion is promoted.",
+  "empirical_inputs_used": false,
+  "frozen_predictions_changed": false,
+  "hessian": "block Hessian diag/coupled by interaction second variations around a stationary background",
+  "inverse_response_status": "CONDITIONAL_AFTER_DOMAIN_ZERO_MODE_AND_SCALE_GATES",
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "no_invented_inverse": true,
+  "official_prediction_logic_changed": false,
+  "operators": [
+    {
+      "adjoint": "self-adjoint under geometric pairing when boundary flux vanishes",
+      "domain": "metric perturbations modulo fixed boundary/collar conditions",
+      "gauge_redundancy": "geometric gauge redundancy open",
+      "invertibility_conditions": "gauge/shape fixing plus positive Hessian sector",
+      "kernel_or_zero_modes": "diffeomorphism/shape zero modes unresolved",
+      "operator": "kappa_geom L_geom",
+      "response_status": "symbolic Hessian only",
+      "sector": "geometry"
+    },
+    {
+      "adjoint": "Hermitian using h_rho, Hodge star, and adjoint trace",
+      "domain": "gauge-fixed/coexact adjoint-valued one-forms",
+      "gauge_redundancy": "OPEN_MISSING_FULL_GAUGE_FIXED_DOMAIN",
+      "invertibility_conditions": "invertible only after gauge-fixed domain and zero-mode projection",
+      "kernel_or_zero_modes": "exact gauge modes before quotient",
+      "operator": "(1/lambda_i) L_i(rho)",
+      "response_status": "Green operator conditional",
+      "sector": "gauge"
+    },
+    {
+      "adjoint": "formally self-adjoint or skew-adjoint according to spin convention",
+      "domain": "spinor/generation module with Hermitian boundary condition",
+      "gauge_redundancy": "none beyond spin-frame convention",
+      "invertibility_conditions": "inverse requires spectral gap and boundary condition",
+      "kernel_or_zero_modes": "Dirac zero modes possible",
+      "operator": "zeta_psi D_BH",
+      "response_status": "resolvent symbolic",
+      "sector": "fermion"
+    },
+    {
+      "adjoint": "self-adjoint under real scalar inner product",
+      "domain": "real scalar/topographic domain",
+      "gauge_redundancy": "none",
+      "invertibility_conditions": "positive Hessian after profile selection",
+      "kernel_or_zero_modes": "constant/topographic flat directions possible",
+      "operator": "kappa_phi L_phi + Hess(V_topo)",
+      "response_status": "Green operator conditional",
+      "sector": "scalar/topographic"
+    },
+    {
+      "adjoint": "self-adjoint under neutral response pairing",
+      "domain": "admissible neutral response cone/domain",
+      "gauge_redundancy": "cone constraints",
+      "invertibility_conditions": "invertible only after neutral scale/action normalization",
+      "kernel_or_zero_modes": "neutral kernel zero modes/open scale modes",
+      "operator": "K_neu",
+      "response_status": "response kernel conditional",
+      "sector": "neutral response"
+    },
+    {
+      "adjoint": "real symmetric one-dimensional Hessian in reduced sector",
+      "domain": "collar-scale variations",
+      "gauge_redundancy": "scale normalization open",
+      "invertibility_conditions": "requires kappa_scale>0 and scale source",
+      "kernel_or_zero_modes": "zero mode if physical scale is not selected",
+      "operator": "kappa_scale + Hess_rho(C_Lambda)",
+      "response_status": "inverse symbolic",
+      "sector": "scale"
+    }
+  ],
+  "pdg_reference_values_used": false,
+  "physics_model_logic_changed": false,
+  "primary_result": "UNIFIED_BHSM_ACTION_CONSTRUCTED_CONDITIONALLY",
+  "rare_b_data_fitting_used": false,
+  "sprint": "bhsm-unified-dynamical-action-construction-v5-4",
+  "status": "UNIFIED_ACTION_QUADRATIC_OPERATORS_EXTRACTED_CONDITIONALLY",
+  "version": "v5.4",
+  "w_calibration_used": false
+}

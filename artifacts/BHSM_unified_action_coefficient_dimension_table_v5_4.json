@@ -1,0 +1,177 @@
+{
+  "all_terms_dimensionless": true,
+  "artifact": "BHSM_unified_action_coefficient_dimension_table_v5_4",
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "Unified symbolic construction only. Coefficients and the physical scale remain symbolic/provisional where not derived; no frozen prediction, gauge coupling, Wilson coefficient, rare-B prediction, or full BHSM completion is promoted.",
+  "coefficients": [
+    {
+      "dependencies": [
+        "boundary measure",
+        "Berger metric",
+        "collar variation"
+      ],
+      "derivation_status": "OPEN_MISSING_UNIFIED_ACTION_COEFFICIENT_DERIVATION",
+      "dimension_power": -1,
+      "name": "kappa_geom",
+      "normalization_status": "PROVISIONAL_SYMBOLIC",
+      "provisional": true,
+      "sign_convention": "positive stiffness for stable quadratic geometry",
+      "term": "geometric/boundary term"
+    },
+    {
+      "dependencies": [
+        "sector boundary operator L_i(rho)",
+        "lambda_i covariance candidate",
+        "gauge-fixed domain"
+      ],
+      "derivation_status": "OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT",
+      "dimension_power": -1,
+      "name": "kappa_g_i",
+      "normalization_status": "CONDITIONAL_SYMBOLIC_FROM_V4_5_V4_6",
+      "provisional": true,
+      "sign_convention": "positive inverse-covariance stiffness",
+      "term": "gauge kinetic term"
+    },
+    {
+      "dependencies": [
+        "spin/Hermitian convention",
+        "fermion normalization"
+      ],
+      "derivation_status": "OPEN_MISSING_FERMION_DIRAC_OPERATOR_ACTION_SOURCE",
+      "dimension_power": 0,
+      "name": "zeta_psi",
+      "normalization_status": "PROVISIONAL_SYMBOLIC",
+      "provisional": true,
+      "sign_convention": "Hermitian Dirac pairing coefficient",
+      "term": "fermion kinetic term"
+    },
+    {
+      "dependencies": [
+        "scalar boundary variation",
+        "profile Hessian ledgers"
+      ],
+      "derivation_status": "OPEN_MISSING_SCALAR_TOPOGRAPHIC_POTENTIAL_SOURCE",
+      "dimension_power": -1,
+      "name": "kappa_phi",
+      "normalization_status": "PROVISIONAL_SYMBOLIC",
+      "provisional": true,
+      "sign_convention": "positive topographic stiffness",
+      "term": "scalar/topographic term"
+    },
+    {
+      "dependencies": [
+        "charged current action audits",
+        "CKM/projector orientation",
+        "current normalization"
+      ],
+      "derivation_status": "OPEN_MISSING_CHARGED_CURRENT_NORMALIZATION",
+      "dimension_power": 0,
+      "name": "g_ch",
+      "normalization_status": "PROVISIONAL_SYMBOLIC",
+      "provisional": true,
+      "sign_convention": "Hermitian plus adjoint pair convention",
+      "term": "charged-current interaction"
+    },
+    {
+      "dependencies": [
+        "neutral action reports",
+        "neutral response cone",
+        "neutral scale"
+      ],
+      "derivation_status": "OPEN_MISSING_NEUTRAL_RESPONSE_NORMALIZATION",
+      "dimension_power": 0,
+      "name": "g_neu",
+      "normalization_status": "PROVISIONAL_SYMBOLIC",
+      "provisional": true,
+      "sign_convention": "real neutral response pairing",
+      "term": "neutral-response interaction"
+    },
+    {
+      "dependencies": [
+        "collar scale rho",
+        "dimensionful bridge Lambda_BH"
+      ],
+      "derivation_status": "OPEN_MISSING_PHYSICAL_SCALE_GENERATION",
+      "dimension_power": -1,
+      "name": "kappa_scale",
+      "normalization_status": "PROVISIONAL_SYMBOLIC",
+      "provisional": true,
+      "sign_convention": "positive scale penalty",
+      "term": "scale/RG bridge term"
+    }
+  ],
+  "dimension_convention": "powers of a geometric length unit ell_BH; each action term sums to dimension power 0",
+  "empirical_inputs_used": false,
+  "frozen_predictions_changed": false,
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "official_prediction_logic_changed": false,
+  "pdg_reference_values_used": false,
+  "physical_scale_status": "OPEN_MISSING_PHYSICAL_SCALE_GENERATION",
+  "physics_model_logic_changed": false,
+  "primary_result": "UNIFIED_BHSM_ACTION_CONSTRUCTED_CONDITIONALLY",
+  "rare_b_data_fitting_used": false,
+  "sprint": "bhsm-unified-dynamical-action-construction-v5-4",
+  "status": "UNIFIED_ACTION_COEFFICIENT_DIMENSION_TABLE_COMPLETE_SYMBOLIC",
+  "term_dimension_checks": [
+    {
+      "coefficient_dimension_power": -1,
+      "dimensionless_action_term": true,
+      "integrand_dimension_power": -2,
+      "measure_dimension_power": 3,
+      "term": "geometric_boundary",
+      "total_dimension_power": 0
+    },
+    {
+      "coefficient_dimension_power": -1,
+      "dimensionless_action_term": true,
+      "integrand_dimension_power": -2,
+      "measure_dimension_power": 3,
+      "term": "gauge_kinetic",
+      "total_dimension_power": 0
+    },
+    {
+      "coefficient_dimension_power": 0,
+      "dimensionless_action_term": true,
+      "integrand_dimension_power": -3,
+      "measure_dimension_power": 3,
+      "term": "fermion_kinetic",
+      "total_dimension_power": 0
+    },
+    {
+      "coefficient_dimension_power": -1,
+      "dimensionless_action_term": true,
+      "integrand_dimension_power": -2,
+      "measure_dimension_power": 3,
+      "term": "scalar_topographic",
+      "total_dimension_power": 0
+    },
+    {
+      "coefficient_dimension_power": 0,
+      "dimensionless_action_term": true,
+      "integrand_dimension_power": -3,
+      "measure_dimension_power": 3,
+      "term": "charged_current",
+      "total_dimension_power": 0
+    },
+    {
+      "coefficient_dimension_power": 0,
+      "dimensionless_action_term": true,
+      "integrand_dimension_power": -3,
+      "measure_dimension_power": 3,
+      "term": "neutral_response",
+      "total_dimension_power": 0
+    },
+    {
+      "coefficient_dimension_power": -1,
+      "dimensionless_action_term": true,
+      "integrand_dimension_power": -2,
+      "measure_dimension_power": 3,
+      "term": "scale_bridge",
+      "total_dimension_power": 0
+    }
+  ],
+  "version": "v5.4",
+  "w_calibration_used": false
+}

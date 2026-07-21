@@ -1,0 +1,73 @@
+{
+  "artifact": "BHSM_unified_action_variational_equations_v5_4",
+  "boundary_conditions": [
+    "fix induced Berger boundary metric h_rho or impose natural geometric flux cancellation",
+    "restrict A_i to a gauge-fixed/coexact/quotient domain with admissible boundary flux",
+    "use Hermitian spinor boundary pairing so Dirac boundary terms cancel",
+    "fix Phi or impose natural topographic Neumann/collar boundary condition",
+    "restrict N to the neutral admissible cone/domain and fix neutral response flux",
+    "fix rho at collar endpoints or solve the symbolic natural scale equation"
+  ],
+  "boundary_terms_vanish_under_declared_conditions": true,
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "Unified symbolic construction only. Coefficients and the physical scale remain symbolic/provisional where not derived; no frozen prediction, gauge coupling, Wilson coefficient, rare-B prediction, or full BHSM completion is promoted.",
+  "empirical_inputs_used": false,
+  "equations": [
+    {
+      "boundary_condition": "fix induced boundary metric or impose natural geometric flux cancellation",
+      "boundary_term": "<delta h, Pi_geom n.grad(delta h)>_partialSigma",
+      "equation": "kappa_geom L_geom delta h + T_gauge + T_psi + T_phi + T_neu + T_scale = 0",
+      "operational_status": "CONDITIONAL_OPERATOR_EQUATION",
+      "variable": "delta h"
+    },
+    {
+      "boundary_condition": "relative/absolute gauge boundary data fixed, or transverse coexact natural flux vanishes",
+      "boundary_term": "<delta A_i, *F_i>_partialSigma + gauge-fixing boundary term",
+      "equation": "(1/lambda_i) L_i(rho) A_i + J_i^matter + J_i^charged = 0 on controlled gauge domain",
+      "operational_status": "CONDITIONAL_OPERATOR_EQUATION",
+      "variable": "A_i"
+    },
+    {
+      "boundary_condition": "Hermitian spinor boundary condition or adjoint-pair cancellation",
+      "boundary_term": "<delta Psi, gamma_n Psi>_partialSigma",
+      "equation": "zeta_psi D_BH Psi + g_ch delta J_ch/delta Psibar + neutral/scalar source terms = 0",
+      "operational_status": "CONDITIONAL_OPERATOR_EQUATION",
+      "variable": "Psi"
+    },
+    {
+      "boundary_condition": "Dirichlet Phi, Neumann topographic flux, or collar natural condition",
+      "boundary_term": "<delta Phi, n.grad Phi>_partialSigma",
+      "equation": "kappa_phi L_phi Phi + dV_topo/dPhi + g_neu delta R_neu/delta Phi + delta C_Lambda/delta Phi = 0",
+      "operational_status": "CONDITIONAL_OPERATOR_EQUATION",
+      "variable": "Phi"
+    },
+    {
+      "boundary_condition": "neutral response domain fixes boundary flux or admissible cone variation",
+      "boundary_term": "<delta N, Pi_neu n.grad N>_partialSigma",
+      "equation": "K_neu N + g_neu R_neu(Phi,h,rho) = 0",
+      "operational_status": "CONDITIONAL_OPERATOR_EQUATION",
+      "variable": "N"
+    },
+    {
+      "boundary_condition": "fix rho at collar endpoints or solve natural scale stationarity",
+      "boundary_term": "collar endpoint variation",
+      "equation": "kappa_scale (rho-rho_*) + delta_rho S_geom + delta_rho S_gauge + delta_rho S_phi + delta_rho C_Lambda = 0",
+      "operational_status": "CONDITIONAL_SCALE_EQUATION",
+      "variable": "rho"
+    }
+  ],
+  "frozen_predictions_changed": false,
+  "has_nontrivial_euler_lagrange_equation": true,
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "official_prediction_logic_changed": false,
+  "pdg_reference_values_used": false,
+  "physics_model_logic_changed": false,
+  "primary_result": "UNIFIED_BHSM_ACTION_CONSTRUCTED_CONDITIONALLY",
+  "rare_b_data_fitting_used": false,
+  "sprint": "bhsm-unified-dynamical-action-construction-v5-4",
+  "status": "UNIFIED_ACTION_VARIATIONAL_EQUATIONS_DERIVED_SYMBOLICALLY",
+  "version": "v5.4",
+  "w_calibration_used": false
+}

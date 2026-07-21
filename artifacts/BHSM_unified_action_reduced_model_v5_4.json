@@ -1,0 +1,66 @@
+{
+  "artifact": "BHSM_unified_action_reduced_model_v5_4",
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "Unified symbolic construction only. Coefficients and the physical scale remain symbolic/provisional where not derived; no frozen prediction, gauge coupling, Wilson coefficient, rare-B prediction, or full BHSM completion is promoted.",
+  "demonstrates": [
+    "coupled equations",
+    "mode spectrum",
+    "stability condition"
+  ],
+  "empirical_inputs_used": false,
+  "frozen_predictions_changed": false,
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "official_prediction_logic_changed": false,
+  "pdg_reference_values_used": false,
+  "physics_model_logic_changed": false,
+  "primary_result": "UNIFIED_BHSM_ACTION_CONSTRUCTED_CONDITIONALLY",
+  "rare_b_data_fitting_used": false,
+  "reduced_model": {
+    "action": "S_red=1/2 kappa_g a^2 + 1/2 kappa_phi phi^2 + epsilon a phi",
+    "determinant": 5.75,
+    "deterministic": true,
+    "eigenvalues": [
+      1.7928932188134525,
+      3.2071067811865475
+    ],
+    "equation_residual": {
+      "dS_da": 0.0,
+      "dS_dphi": 0.0
+    },
+    "equations": [
+      "kappa_g a + epsilon phi = 0",
+      "epsilon a + kappa_phi phi = 0"
+    ],
+    "hessian": [
+      [
+        2.0,
+        0.5
+      ],
+      [
+        0.5,
+        3.0
+      ]
+    ],
+    "max_abs_residual": 0.0,
+    "parameters": {
+      "epsilon_coupling": 0.5,
+      "kappa_g": 2.0,
+      "kappa_phi": 3.0
+    },
+    "physical_fit": false,
+    "stability_condition": "kappa_g>0, kappa_phi>0, kappa_g*kappa_phi-epsilon^2>0",
+    "stable": true,
+    "stationary_solution": {
+      "a": 0.0,
+      "phi": 0.0
+    },
+    "truncation": "two coupled real boundary amplitudes: gauge a and topographic phi"
+  },
+  "solution_satisfies_equations": true,
+  "sprint": "bhsm-unified-dynamical-action-construction-v5-4",
+  "status": "UNIFIED_ACTION_REDUCED_MODEL_DETERMINISTIC_STABLE",
+  "version": "v5.4",
+  "w_calibration_used": false
+}

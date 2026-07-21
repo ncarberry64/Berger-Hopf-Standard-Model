@@ -1,0 +1,142 @@
+{
+  "admissible_function_spaces": [
+    "gauge fields in a gauge-fixed/coexact or quotient one-form domain",
+    "fermions in a Hermitian spinor domain with boundary adjoint pairing",
+    "scalar/topographic fields in a real Sobolev-type boundary domain",
+    "neutral response fields in the admissible neutral response cone/domain"
+  ],
+  "artifact": "BHSM_unified_dynamical_action_configuration_space_v5_4",
+  "boundary_conditions": [
+    "fix induced Berger boundary metric h_rho or impose natural geometric flux cancellation",
+    "restrict A_i to a gauge-fixed/coexact/quotient domain with admissible boundary flux",
+    "use Hermitian spinor boundary pairing so Dirac boundary terms cancel",
+    "fix Phi or impose natural topographic Neumann/collar boundary condition",
+    "restrict N to the neutral admissible cone/domain and fix neutral response flux",
+    "fix rho at collar endpoints or solve the symbolic natural scale equation"
+  ],
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "Unified symbolic construction only. Coefficients and the physical scale remain symbolic/provisional where not derived; no frozen prediction, gauge coupling, Wilson coefficient, rare-B prediction, or full BHSM completion is promoted.",
+  "dynamical_variables": [
+    "rho",
+    "A_i",
+    "Psi",
+    "Phi",
+    "J_ch",
+    "N"
+  ],
+  "empirical_inputs_used": false,
+  "field_content": [
+    {
+      "dimension_power": 0,
+      "dynamical": false,
+      "fixed_background": true,
+      "name": "boundary geometry",
+      "role": "fixed geometric datum for v5.4 variation except optional geometry equation",
+      "space": "metrics on relative Berger boundary Sigma_rho",
+      "symbol": "h_rho"
+    },
+    {
+      "dimension_power": 1,
+      "dynamical": true,
+      "fixed_background": false,
+      "name": "collar scale",
+      "role": "scale-setting variable candidate",
+      "space": "positive boundary/collar scale labels",
+      "symbol": "rho"
+    },
+    {
+      "dimension_power": -1,
+      "dynamical": true,
+      "fixed_background": false,
+      "name": "gauge field",
+      "role": "adjoint-valued boundary one-form",
+      "space": "Omega^1(Sigma_rho, ad_i), i in {U1,SU2,SU3}",
+      "symbol": "A_i"
+    },
+    {
+      "dimension_power": -1,
+      "dynamical": true,
+      "fixed_background": false,
+      "name": "fermion boundary field",
+      "role": "fermionic matter mode",
+      "space": "boundary spinor/generation module S_Sigma tensor F_gen",
+      "symbol": "Psi"
+    },
+    {
+      "dimension_power": -1,
+      "dynamical": true,
+      "fixed_background": false,
+      "name": "scalar/topographic field",
+      "role": "profile/topographic response",
+      "space": "real boundary scalar/topographic response space",
+      "symbol": "Phi"
+    },
+    {
+      "dimension_power": -2,
+      "dynamical": true,
+      "fixed_background": false,
+      "name": "charged-current source",
+      "role": "interaction current generated from fermion/projector data",
+      "space": "charged current bilinear/interface space",
+      "symbol": "J_ch"
+    },
+    {
+      "dimension_power": -2,
+      "dynamical": true,
+      "fixed_background": false,
+      "name": "neutral-response field",
+      "role": "neutral response coordinate",
+      "space": "neutral response cone/channel space",
+      "symbol": "N"
+    },
+    {
+      "dimension_power": 0,
+      "dynamical": false,
+      "fixed_background": true,
+      "name": "sector projectors",
+      "role": "fixed algebraic projectors",
+      "space": "orthogonal/idempotent sector maps on internal representation",
+      "symbol": "P_i"
+    },
+    {
+      "dimension_power": 0,
+      "dynamical": false,
+      "fixed_background": true,
+      "name": "generation projector",
+      "role": "fixed mode bookkeeping for v5.4",
+      "space": "generation/mode projector ledger",
+      "symbol": "P_gen"
+    }
+  ],
+  "fixed_data": [
+    "h_rho",
+    "P_i",
+    "P_gen"
+  ],
+  "frozen_predictions_changed": false,
+  "generation_mode_spaces": "P_gen-labeled generation/mode ledger; physical normalization open",
+  "internal_algebra_representation": "sector-projector representation with fixed P_i and P_gen labels",
+  "legacy_threshold_tables_used": false,
+  "manifold": "relative Berger/collar boundary Sigma_rho with optional bulk-collar support",
+  "metric_and_measure": {
+    "measure": "dmu_Sigma,rho = sqrt(det h_rho) d^3x",
+    "measure_status": "CONDITIONAL_BOUNDARY_COLLAR_MEASURE_SOURCE",
+    "metric": "h_rho induced Berger boundary metric"
+  },
+  "neutrino_limits_used": false,
+  "official_prediction_logic_changed": false,
+  "pdg_reference_values_used": false,
+  "physics_model_logic_changed": false,
+  "primary_result": "UNIFIED_BHSM_ACTION_CONSTRUCTED_CONDITIONALLY",
+  "rare_b_data_fitting_used": false,
+  "sector_spaces": {
+    "SU2": "ad_SU2 rank 3",
+    "SU3": "ad_SU3 rank 8",
+    "U1": "ad_U1 rank 1"
+  },
+  "sprint": "bhsm-unified-dynamical-action-construction-v5-4",
+  "status": "UNIFIED_BHSM_CONFIGURATION_SPACE_DEFINED",
+  "version": "v5.4",
+  "w_calibration_used": false
+}

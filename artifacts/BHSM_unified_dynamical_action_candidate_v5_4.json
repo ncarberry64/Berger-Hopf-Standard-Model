@@ -1,0 +1,236 @@
+{
+  "action_symbol": "S_BHSM^cand",
+  "artifact": "BHSM_unified_dynamical_action_candidate_v5_4",
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "Unified symbolic construction only. Coefficients and the physical scale remain symbolic/provisional where not derived; no frozen prediction, gauge coupling, Wilson coefficient, rare-B prediction, or full BHSM completion is promoted.",
+  "coefficient_table": [
+    {
+      "dependencies": [
+        "boundary measure",
+        "Berger metric",
+        "collar variation"
+      ],
+      "derivation_status": "OPEN_MISSING_UNIFIED_ACTION_COEFFICIENT_DERIVATION",
+      "dimension_power": -1,
+      "name": "kappa_geom",
+      "normalization_status": "PROVISIONAL_SYMBOLIC",
+      "provisional": true,
+      "sign_convention": "positive stiffness for stable quadratic geometry",
+      "term": "geometric/boundary term"
+    },
+    {
+      "dependencies": [
+        "sector boundary operator L_i(rho)",
+        "lambda_i covariance candidate",
+        "gauge-fixed domain"
+      ],
+      "derivation_status": "OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT",
+      "dimension_power": -1,
+      "name": "kappa_g_i",
+      "normalization_status": "CONDITIONAL_SYMBOLIC_FROM_V4_5_V4_6",
+      "provisional": true,
+      "sign_convention": "positive inverse-covariance stiffness",
+      "term": "gauge kinetic term"
+    },
+    {
+      "dependencies": [
+        "spin/Hermitian convention",
+        "fermion normalization"
+      ],
+      "derivation_status": "OPEN_MISSING_FERMION_DIRAC_OPERATOR_ACTION_SOURCE",
+      "dimension_power": 0,
+      "name": "zeta_psi",
+      "normalization_status": "PROVISIONAL_SYMBOLIC",
+      "provisional": true,
+      "sign_convention": "Hermitian Dirac pairing coefficient",
+      "term": "fermion kinetic term"
+    },
+    {
+      "dependencies": [
+        "scalar boundary variation",
+        "profile Hessian ledgers"
+      ],
+      "derivation_status": "OPEN_MISSING_SCALAR_TOPOGRAPHIC_POTENTIAL_SOURCE",
+      "dimension_power": -1,
+      "name": "kappa_phi",
+      "normalization_status": "PROVISIONAL_SYMBOLIC",
+      "provisional": true,
+      "sign_convention": "positive topographic stiffness",
+      "term": "scalar/topographic term"
+    },
+    {
+      "dependencies": [
+        "charged current action audits",
+        "CKM/projector orientation",
+        "current normalization"
+      ],
+      "derivation_status": "OPEN_MISSING_CHARGED_CURRENT_NORMALIZATION",
+      "dimension_power": 0,
+      "name": "g_ch",
+      "normalization_status": "PROVISIONAL_SYMBOLIC",
+      "provisional": true,
+      "sign_convention": "Hermitian plus adjoint pair convention",
+      "term": "charged-current interaction"
+    },
+    {
+      "dependencies": [
+        "neutral action reports",
+        "neutral response cone",
+        "neutral scale"
+      ],
+      "derivation_status": "OPEN_MISSING_NEUTRAL_RESPONSE_NORMALIZATION",
+      "dimension_power": 0,
+      "name": "g_neu",
+      "normalization_status": "PROVISIONAL_SYMBOLIC",
+      "provisional": true,
+      "sign_convention": "real neutral response pairing",
+      "term": "neutral-response interaction"
+    },
+    {
+      "dependencies": [
+        "collar scale rho",
+        "dimensionful bridge Lambda_BH"
+      ],
+      "derivation_status": "OPEN_MISSING_PHYSICAL_SCALE_GENERATION",
+      "dimension_power": -1,
+      "name": "kappa_scale",
+      "normalization_status": "PROVISIONAL_SYMBOLIC",
+      "provisional": true,
+      "sign_convention": "positive scale penalty",
+      "term": "scale/RG bridge term"
+    }
+  ],
+  "conditional_because": [
+    "OPEN_MISSING_UNIFIED_ACTION_COEFFICIENT_DERIVATION",
+    "OPEN_MISSING_PHYSICAL_SCALE_GENERATION",
+    "OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT",
+    "OPEN_MISSING_FULL_GAUGE_FIXED_DOMAIN",
+    "OPEN_MISSING_FULL_LOWER_ORDER_OPERATOR_TERMS",
+    "OPEN_MISSING_FERMION_DIRAC_OPERATOR_ACTION_SOURCE",
+    "OPEN_MISSING_SCALAR_TOPOGRAPHIC_POTENTIAL_SOURCE",
+    "OPEN_MISSING_CHARGED_CURRENT_NORMALIZATION",
+    "OPEN_MISSING_NEUTRAL_RESPONSE_NORMALIZATION",
+    "OPEN_MISSING_NONLINEAR_UNIFIED_SOLUTION"
+  ],
+  "empirical_inputs_used": false,
+  "explicit_action": "S_BHSM^cand = integral_Sigma [ L_geom + sum_i L_gauge,i + L_fermion + L_topographic + L_charged + L_neutral + L_scale ] dmu_Sigma,rho",
+  "frozen_predictions_changed": false,
+  "legacy_threshold_tables_used": false,
+  "measure": {
+    "measure": "dmu_Sigma,rho = sqrt(det h_rho) d^3x",
+    "measure_status": "CONDITIONAL_BOUNDARY_COLLAR_MEASURE_SOURCE",
+    "metric": "h_rho induced Berger boundary metric"
+  },
+  "neutrino_limits_used": false,
+  "not_a_standard_model_lagrangian_import": true,
+  "official_prediction_logic_changed": false,
+  "pdg_reference_values_used": false,
+  "physics_model_logic_changed": false,
+  "primary_result": "UNIFIED_BHSM_ACTION_CONSTRUCTED_CONDITIONALLY",
+  "rare_b_data_fitting_used": false,
+  "sprint": "bhsm-unified-dynamical-action-construction-v5-4",
+  "status": "UNIFIED_BHSM_ACTION_CONSTRUCTED_CONDITIONALLY",
+  "terms": [
+    {
+      "boundary_term": "<delta h, Pi_geom n.grad(delta h)>_partialSigma",
+      "coefficient": "kappa_geom",
+      "coefficient_dimension_power": -1,
+      "expression": "1/2 kappa_geom <delta h, L_geom(rho) delta h>_Sigma",
+      "hermitian_or_real_status": "real symmetric Hessian pairing",
+      "integrand_dimension_power": -2,
+      "measure_dimension_power": 3,
+      "name": "geometric_boundary",
+      "source": "v4.0 boundary geometry skeleton plus boundary Hessian ledgers",
+      "status": "CONDITIONAL_SYMBOLIC",
+      "total_dimension_power": 0,
+      "variation": "kappa_geom L_geom delta h = source terms"
+    },
+    {
+      "boundary_term": "<delta A_i, * F_i>_partialSigma plus gauge-fixing boundary term",
+      "coefficient": "kappa_g_i=1/lambda_i",
+      "coefficient_dimension_power": -1,
+      "expression": "sum_i 1/(2 lambda_i) <A_i, L_i(rho) A_i>_Sigma",
+      "hermitian_or_real_status": "Hermitian after gauge-fixed/coexact domain selection",
+      "integrand_dimension_power": -2,
+      "measure_dimension_power": 3,
+      "name": "gauge_kinetic",
+      "source": "v4.5/v4.6 whitened boundary gauge action",
+      "status": "CONDITIONAL_SYMBOLIC",
+      "total_dimension_power": 0,
+      "variation": "(1/lambda_i) L_i A_i + current_i = 0"
+    },
+    {
+      "boundary_term": "<delta Psi, gamma_n Psi>_partialSigma",
+      "coefficient": "zeta_psi",
+      "coefficient_dimension_power": 0,
+      "expression": "zeta_psi Re <Psi, D_BH(h,A,P) Psi>_Sigma",
+      "hermitian_or_real_status": "Hermitian Dirac pairing convention",
+      "integrand_dimension_power": -3,
+      "measure_dimension_power": 3,
+      "name": "fermion_kinetic",
+      "source": "minimal action field representation and collider-interface ledgers",
+      "status": "CONDITIONAL_SYMBOLIC",
+      "total_dimension_power": 0,
+      "variation": "zeta_psi D_BH Psi + interaction sources = 0"
+    },
+    {
+      "boundary_term": "<delta Phi, n.grad Phi>_partialSigma",
+      "coefficient": "kappa_phi",
+      "coefficient_dimension_power": -1,
+      "expression": "1/2 kappa_phi <Phi, L_phi(rho) Phi>_Sigma + V_topo(Phi; rho)",
+      "hermitian_or_real_status": "real scalar quadratic form plus real potential",
+      "integrand_dimension_power": -2,
+      "measure_dimension_power": 3,
+      "name": "scalar_topographic",
+      "source": "scalar/topographic boundary variation and profile Hessian ledgers",
+      "status": "CONDITIONAL_SYMBOLIC",
+      "total_dimension_power": 0,
+      "variation": "kappa_phi L_phi Phi + dV_topo/dPhi + response sources = 0"
+    },
+    {
+      "boundary_term": "charged-current boundary flux fixed or adjoint-paired",
+      "coefficient": "g_ch",
+      "coefficient_dimension_power": 0,
+      "expression": "g_ch Re <J_ch(P_gen Psi,A_SU2), X_ch(P_ch Psi)>_Sigma",
+      "hermitian_or_real_status": "Hermitian adjoint-pair convention required",
+      "integrand_dimension_power": -3,
+      "measure_dimension_power": 3,
+      "name": "charged_current",
+      "source": "charged-current action audits and CKM transport gates",
+      "status": "CONDITIONAL_OPEN_NORMALIZATION",
+      "total_dimension_power": 0,
+      "variation": "variation gives charged-current source terms in Psi and A_SU2 equations"
+    },
+    {
+      "boundary_term": "<delta N, Pi_neu n.grad N>_partialSigma",
+      "coefficient": "g_neu",
+      "coefficient_dimension_power": 0,
+      "expression": "g_neu <N, R_neu(Phi,h,rho)>_Sigma + 1/2 <N, K_neu N>_Sigma",
+      "hermitian_or_real_status": "real neutral response pairing",
+      "integrand_dimension_power": -3,
+      "measure_dimension_power": 3,
+      "name": "neutral_response",
+      "source": "neutral action/source/cone reports",
+      "status": "CONDITIONAL_OPEN_NORMALIZATION",
+      "total_dimension_power": 0,
+      "variation": "K_neu N + g_neu R_neu = 0"
+    },
+    {
+      "boundary_term": "collar endpoint variation fixed or transversality condition",
+      "coefficient": "kappa_scale",
+      "coefficient_dimension_power": -1,
+      "expression": "1/2 kappa_scale (rho-rho_*)^2 + C_Lambda(Phi,h,rho; Lambda_BH)",
+      "hermitian_or_real_status": "real positive scale penalty",
+      "integrand_dimension_power": -2,
+      "measure_dimension_power": 3,
+      "name": "scale_bridge",
+      "source": "dimensionful scale and boundary collar measure ledgers",
+      "status": "CONDITIONAL_SCALE_OPEN",
+      "total_dimension_power": 0,
+      "variation": "kappa_scale (rho-rho_*) + delta C_Lambda/delta rho = 0"
+    }
+  ],
+  "version": "v5.4",
+  "w_calibration_used": false
+}

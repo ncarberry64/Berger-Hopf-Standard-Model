@@ -516,3 +516,20 @@ Open physical gates: `OPEN_MISSING_RARE_B_FCNC_GENERATION_MECHANISM`, `OPEN_MISS
 Prediction remains blocked: `C7_BHSM=null`, `C9_BHSM=null`, `C10_BHSM=null`, `q0_squared_value=null`, `microplateau_node_coordinates=[]`, and `prediction_claimed=false`.
 
 Command: `python -m bhsm.interface rare-b-fcnc-generation-status --format markdown`.
+
+<!-- BHSM_UNIFIED_DYNAMICAL_ACTION_CONSTRUCTION_V5_4 -->
+## Unified dynamical action construction v5.4
+
+Primary result: `UNIFIED_BHSM_ACTION_CONSTRUCTED_CONDITIONALLY`.
+
+BHSM v5.4 upgrades the prior sector-sum skeleton into an explicit symbolic unified action with configuration space, measure, term-level coefficients, dimension checks, variational equations, boundary conditions, quadratic operators, interaction-source map, dimensionful-scale analysis, and a deterministic reduced coupled-mode model.
+
+Unified action: `S_BHSM^cand = integral_Sigma [L_geom + sum_i L_gauge,i + L_fermion + L_topographic + L_charged + L_neutral + L_scale] dmu_Sigma,rho`.
+
+Validated: all constructed terms are dimension-compatible in `ell_BH` powers; symbolic Euler-Lagrange/operator equations are recorded for `delta h`, `A_i`, `Psi`, `Phi`, `N`, and `rho`; the reduced model has coupled equations, positive Hessian spectrum, and zero residual at its deterministic stationary solution.
+
+Still conditional/open: `OPEN_MISSING_UNIFIED_ACTION_COEFFICIENT_DERIVATION`, `OPEN_MISSING_PHYSICAL_SCALE_GENERATION`, `OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT`, `OPEN_MISSING_FULL_GAUGE_FIXED_DOMAIN`, `OPEN_MISSING_FULL_LOWER_ORDER_OPERATOR_TERMS`, `OPEN_MISSING_FERMION_DIRAC_OPERATOR_ACTION_SOURCE`, `OPEN_MISSING_SCALAR_TOPOGRAPHIC_POTENTIAL_SOURCE`, `OPEN_MISSING_CHARGED_CURRENT_NORMALIZATION`, `OPEN_MISSING_NEUTRAL_RESPONSE_NORMALIZATION`, and `OPEN_MISSING_NONLINEAR_UNIFIED_SOLUTION`.
+
+Preserved: `ACTION_ATTACHMENT_BLOCKED`, `CKM_RELATIVE_CURRENT_NORMALIZATION_BLOCKED`, `COUPLING_BRIDGE_BLOCKED_PENDING_ACTION_PRINCIPLE`, `OPEN_MISSING_G2_BH_ACTION_SOURCE`, `OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE`, `CKM_EXPONENT_NOT_DERIVED`, `RARE_B_FCNC_GENERATION_MECHANISM_BLOCKED`, `B_TO_S_MUMU_OPERATOR_MATCHING_BLOCKED`, `RARE_B_AFB_ZERO_PREDICTION_BLOCKED`, and `FULL_BHSM_NOT_COMPLETE`.
+
+Command: `python -m bhsm.interface unified-dynamical-action-status --format markdown`.

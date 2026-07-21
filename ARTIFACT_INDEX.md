@@ -329,3 +329,20 @@ Doctrine: `docs/bhsm_b_to_s_mumu_operator_matching_killscreen_v5_2.md`.
 | `artifacts/BHSM_rare_b_fcnc_generation_mechanism_verdict_v5_3.json` | `RARE_B_FCNC_GENERATION_MECHANISM_BLOCKED` | Final v5.3 verdict, preserved statuses, refined blockers, null Wilson outputs, and prediction kill screen. |
 
 Doctrine: `docs/bhsm_rare_b_fcnc_generation_mechanism_v5_3.md`.
+
+<!-- BHSM_UNIFIED_DYNAMICAL_ACTION_CONSTRUCTION_V5_4 -->
+## Unified dynamical action construction v5.4
+
+| Artifact | Status | Purpose |
+|---|---|---|
+| `artifacts/BHSM_unified_dynamical_action_configuration_space_v5_4.json` | `UNIFIED_BHSM_CONFIGURATION_SPACE_DEFINED` | Defines the boundary/collar domain, measure, fields, sector/projector spaces, dynamical variables, fixed data, and admissible boundary conditions. |
+| `artifacts/BHSM_unified_dynamical_action_candidate_v5_4.json` | `UNIFIED_BHSM_ACTION_CONSTRUCTED_CONDITIONALLY` | Gives the explicit symbolic unified action candidate and term inventory. |
+| `artifacts/BHSM_unified_action_coefficient_dimension_table_v5_4.json` | `UNIFIED_ACTION_COEFFICIENT_DIMENSION_TABLE_COMPLETE_SYMBOLIC` | Records every coefficient, sign convention, dependency, derivation status, and dimension check. |
+| `artifacts/BHSM_unified_action_variational_equations_v5_4.json` | `UNIFIED_ACTION_VARIATIONAL_EQUATIONS_DERIVED_SYMBOLICALLY` | Stores symbolic operator equations and boundary terms for each active variable. |
+| `artifacts/BHSM_unified_action_quadratic_operators_v5_4.json` | `UNIFIED_ACTION_QUADRATIC_OPERATORS_EXTRACTED_CONDITIONALLY` | Extracts the Hessian/quadratic operator blocks and their domain, adjoint, zero-mode, and response caveats. |
+| `artifacts/BHSM_unified_action_interaction_source_map_v5_4.json` | `UNIFIED_ACTION_INTERACTION_SOURCE_MAP_CONSTRUCTED_CONDITIONALLY` | Maps interactions to source terms and variations while preserving open normalization and rare-B blockers. |
+| `artifacts/BHSM_unified_action_dimensionful_scale_analysis_v5_4.json` | `UNIFIED_ACTION_DIMENSIONFUL_SCALE_ANALYSIS_SYMBOLIC_OPEN` | Separates dimensionless geometric normalization from the explicit open physical scale `Lambda_BH`. |
+| `artifacts/BHSM_unified_action_reduced_model_v5_4.json` | `UNIFIED_ACTION_REDUCED_MODEL_DETERMINISTIC_STABLE` | Provides a deterministic coupled two-mode reduced model with equations, spectrum, stability check, and zero residual. |
+| `artifacts/BHSM_unified_dynamical_action_construction_report_v5_4.json` | `UNIFIED_BHSM_ACTION_CONSTRUCTED_CONDITIONALLY` | Final construction report with derived, symbolic, open, and preserved-claim statuses. |
+
+Doctrine: `docs/bhsm_unified_dynamical_action_construction_v5_4.md`.
