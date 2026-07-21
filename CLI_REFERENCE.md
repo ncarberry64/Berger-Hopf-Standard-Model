@@ -427,3 +427,17 @@ The command reports `BHSM_B8_S7_PARENT_ACTION_SOURCE_MISSING`. It preserves
 the v6.0 nested topology, separates all viable physical-domain branches, and
 audits the energy–geometry enclosure criterion without promoting it to a
 derived action or physical normalization.
+
+<!-- BHSM_B8_GEOMETRY_ENERGY_PARENT_ACTION_V6_0_2 -->
+## B8 geometry–energy parent action v6.0.2
+
+```bash
+python -m bhsm.interface b8-parent-action-status --format json
+python -m bhsm.interface b8-parent-action-status --format markdown
+python scripts/materialize_b8_geometry_energy_parent_action_v6_0_2.py
+```
+
+The command reports `BHSM_B8_MINIMAL_ACTION_FAMILY_IDENTIFIED` and
+`BHSM_ENERGY_GEOMETRY_PHYSICALITY_SOURCE_NOT_DERIVED`. It does not select a
+signature, physical action coefficient, confinement invariant, stable phase,
+surface tension, or absolute scale.

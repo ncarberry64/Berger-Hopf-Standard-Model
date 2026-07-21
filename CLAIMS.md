@@ -2,6 +2,10 @@
 
 ## Allowed
 
+- v6.0.2 identifies the finite eight-dimensional Lovelock geometry family under explicit locality, covariance, metric-only, and second-order-equation assumptions. This is a mathematical action-family classification, not a derived physical gravitational law.
+- The smallest propagating Dirichlet test family P1 contains volume and scalar-curvature terms, a conditional sigma/matter sector, and the coefficient-locked GHY completion. Its coefficients, domain, signature, and matter source remain open.
+- The formal physicality threshold `A(C_EG)=0` and branch `sigma^2=-A/G` for `A<0,G>0` are conditional action architecture. No confinement invariant or negative quadratic parent source is derived.
+- Physicality formation, primordial surface release, and black-hole de-enveloping are distinct Hessian problems unless a future action proves equivalence.
 - v6.0.1 reports `BHSM_B8_S7_PARENT_ACTION_SOURCE_MISSING`: the stored v5.4-v6.0 terms do not constitute a foundational B8 action or select an S7 physical boundary, signature, time coordinate, metric, collar scale, or observed 3+1 map.
 - Euclidean, Lorentzian, canonical, and independent-product domains remain distinct conditional candidates; none is selected by aesthetics or legacy wording.
 - Energy-driven enclosure of spacetime is a conditional physicality criterion requiring a conserved bulk stress source, metric constraint, boundary/junction equation, and energy-transfer law. It is not yet a derived BHSM equation.
@@ -71,6 +75,11 @@
 
 Do not claim that:
 
+- The finite Lovelock classification selects Einstein–Hilbert gravity or any physical BHSM parent action.
+- The eight-dimensional Euler density supplies bulk metric dynamics or a physicality threshold.
+- The stored normalized `A_ST=-2` and `G_ST=8` are parent-action coefficients.
+- A nonzero energy current creates Lorentzian signature.
+- A required GHY, Myers, or transgression boundary completion is physical surface tension.
 - BHSM currently contains a foundational B8 geometry–stress action.
 - Energy enclosure language alone derives physicality, a boundary source, or an equation of motion.
 - A topologically permitted S7 metric is a stationary BHSM solution without a parent action.

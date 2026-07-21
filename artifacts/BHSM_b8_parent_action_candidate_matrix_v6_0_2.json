@@ -1,0 +1,241 @@
+{
+  "P1_term_ledger": [
+    {
+      "boundary_term": "none",
+      "coefficient": "kappa_0",
+      "coefficient_dimension": "[A]L^-8",
+      "domain": "8D parent M",
+      "fields": [
+        "G_AB"
+      ],
+      "formula": "(1/2)kappa_0 integral_M dmu_G",
+      "measure": "sqrt|G|d8x",
+      "signature": "Riemannian or Lorentzian absolute determinant",
+      "source_status": "COVARIANT_OPTION_UNSOURCED",
+      "term": "S_geom,volume",
+      "variation": "-(kappa_0/2)G_AB contribution to the geometry equation after the common convention"
+    },
+    {
+      "boundary_term": "kappa_1 integral_boundary epsilon_n K dmu_h",
+      "coefficient": "kappa_1",
+      "coefficient_dimension": "[A]L^-6",
+      "domain": "8D parent M",
+      "fields": [
+        "G_AB"
+      ],
+      "formula": "(1/2)kappa_1 integral_M dmu_G R",
+      "measure": "sqrt|G|d8x",
+      "signature": "Riemannian or Lorentzian",
+      "source_status": "LOWEST_ORDER_TEST_TERM_NOT_BHSM_SELECTED",
+      "term": "S_geom,curvature",
+      "variation": "kappa_1 EinsteinTensor_AB plus normal derivative boundary variation"
+    },
+    {
+      "boundary_term": "sigma normal flux; Dirichlet or natural Neumann data required",
+      "coefficient": "Z_sigma",
+      "coefficient_dimension": "[A]L^-6 for dimensionless sigma",
+      "domain": "8D parent M",
+      "fields": [
+        "G_AB",
+        "sigma"
+      ],
+      "formula": "integral_M dmu_G s_signature(1/2)Z_sigma G^AB partial_A sigma partial_B sigma",
+      "measure": "sqrt|G|d8x",
+      "signature": "s_signature=+1 Euclidean action; conventional Lorentzian action has -1/2 kinetic density",
+      "source_status": "CONDITIONAL_UNSOURCED",
+      "term": "S_sigma,kinetic",
+      "variation": "signed covariant sigma wave/Laplace operator and T_AB^(sigma)"
+    },
+    {
+      "boundary_term": "inherits boundary terms of C_EG if it contains derivatives or interface data",
+      "coefficient": "A(C_EG),G(C_EG)",
+      "coefficient_dimension": "[A]L^-8",
+      "domain": "8D parent M",
+      "fields": [
+        "G_AB",
+        "sigma",
+        "fields entering C_EG"
+      ],
+      "formula": "integral_M dmu_G[1/2 A(C_EG)sigma^2+1/4 G(C_EG)sigma^4+...] with Lorentzian sign carried by the action convention",
+      "measure": "sqrt|G|d8x",
+      "signature": "potential contribution to stress depends on Euclidean/Lorentzian action convention",
+      "source_status": "ARCHITECTURE_IDENTIFIED_SOURCE_NOT_DERIVED",
+      "term": "S_sigma,potential",
+      "variation": "A sigma+G sigma^3 plus C_EG variations"
+    },
+    {
+      "boundary_term": "this is the boundary completion",
+      "coefficient": "kappa_1 fixed by bulk",
+      "coefficient_dimension": "[A]L^-6",
+      "domain": "7D boundary S7 only in applicable branches",
+      "fields": [
+        "h_ab",
+        "embedding normal"
+      ],
+      "formula": "kappa_1 integral_partialM epsilon_n K dmu_h",
+      "measure": "sqrt|h|d7y",
+      "signature": "epsilon_n and induced signature explicit",
+      "source_status": "REQUIRED_IF_P1_IS_CHOSEN_NOT_PHYSICAL_TENSION",
+      "term": "S_boundary,completion",
+      "variation": "cancels normal derivatives of delta h for Dirichlet h_ab"
+    },
+    {
+      "boundary_term": "already counted once",
+      "coefficient": null,
+      "coefficient_dimension": null,
+      "domain": "S7x[0,1] coordinate neighborhood",
+      "fields": [
+        "h_ab(rho)",
+        "sigma/matter traces"
+      ],
+      "formula": "no independent term in minimal P1; Gaussian-normal rewrite of bulk plus one boundary completion",
+      "measure": "ell_c J d rho dmu_h when rewritten",
+      "signature": "epsilon_n explicit",
+      "source_status": "NO_INDEPENDENT_COLLAR_SOURCE",
+      "term": "S_collar",
+      "variation": "same bulk equations and endpoint terms; no duplicate Euler-Lagrange source"
+    },
+    {
+      "boundary_term": "ensemble dependent",
+      "coefficient": null,
+      "coefficient_dimension": null,
+      "domain": "bulk/canonical split if performed",
+      "fields": [
+        "metric and momenta after split"
+      ],
+      "formula": "zero as an independent covariant P1 term; diffeomorphism constraints arise from gauge symmetry",
+      "measure": null,
+      "signature": "canonical constraints only after time split",
+      "source_status": "NO_EXTRA_MULTIPLIER_RETAINED",
+      "term": "S_constraint",
+      "variation": "normal projections of the metric equation"
+    },
+    {
+      "boundary_term": "field-specific flux completion",
+      "coefficient": "parent kinetic/interaction coefficients",
+      "coefficient_dimension": "term dependent",
+      "domain": "8D parent M",
+      "fields": [
+        "T/Phi",
+        "gauge",
+        "fermion",
+        "optional top form"
+      ],
+      "formula": "integral_M dmu_G L_matter only after a parent lift is supplied",
+      "measure": "sqrt|G|d8x",
+      "signature": "must be declared",
+      "source_status": "MISSING_NOT_FILLED_BY_V5_DOMAIN_REASSIGNMENT",
+      "term": "S_matter,candidate",
+      "variation": "parent matter equations and conserved stress"
+    }
+  ],
+  "absolute_unit_generated": false,
+  "alpha_derived": false,
+  "artifact": "BHSM_b8_parent_action_candidate_matrix_v6_0_2",
+  "candidate_domains": [
+    "A",
+    "B_s",
+    "B_t"
+  ],
+  "claim_boundary": "v6.0.2 identifies the smallest finite parent-action families permitted by explicit covariance and differential-order assumptions. BHSM does not select their coefficients, signature, confinement invariant, or a stable physical phase.",
+  "domain_not_covered_without_reformulation": [
+    "D is 9D canonical",
+    "E has product-dimension variants"
+  ],
+  "einstein_hilbert_imported_as_bhsm_fact": false,
+  "empirical_inputs_used": false,
+  "existing_numerical_predictions_changed": false,
+  "expansion_mechanism_derived": false,
+  "families": [
+    {
+      "action": "volume plus physicality/matter only",
+      "boundary_completion": "none for metric derivatives",
+      "differential_order": 0,
+      "geometry": "(1/2)kappa_0 integral dmu_G",
+      "id": "P0",
+      "physicality_support": "potential coupling possible but no propagating geometry",
+      "status": "INSUFFICIENT_GEOMETRIC_DYNAMICS"
+    },
+    {
+      "action": "minimal two-derivative metric-sigma family",
+      "boundary_completion": "kappa_1 integral_boundary epsilon_n K dmu_h",
+      "differential_order": 2,
+      "geometry": "(1/2) integral dmu_G[kappa_0+kappa_1 R]",
+      "id": "P1",
+      "physicality_support": "sigma kinetic plus U_sigma(sigma,C_EG)",
+      "status": "SMALLEST_COHERENT_VARIATIONAL_FAMILY_COEFFICIENTS_UNSOURCED"
+    },
+    {
+      "action": "P1 plus Gauss-Bonnet L2",
+      "boundary_completion": "P1 plus Lovelock-Myers B2",
+      "differential_order": 2,
+      "geometry": "P1+(1/2)kappa_2 integral dmu_G L2",
+      "id": "P2",
+      "physicality_support": "same unsourced C_EG sector",
+      "status": "FINITE_SECOND_ORDER_EXTENSION_NOT_REQUIRED"
+    },
+    {
+      "action": "full dynamical 8D Lovelock through L3",
+      "boundary_completion": "sum_{k=1}^3(kappa_k/2)B_k",
+      "differential_order": 2,
+      "geometry": "(1/2)sum_{k=0}^3 kappa_k integral dmu_G L_k",
+      "id": "P3",
+      "physicality_support": "same unsourced C_EG sector",
+      "status": "MAXIMAL_SECOND_ORDER_LOCAL_METRIC_FAMILY"
+    },
+    {
+      "action": "8D Euler L4 alone or appended",
+      "boundary_completion": "Euler transgression B4",
+      "differential_order": "bulk variation zero in D=8",
+      "geometry": "(1/2)kappa_4 integral dmu_G L4",
+      "id": "P4",
+      "physicality_support": "none by itself",
+      "status": "TOPOLOGICAL_NOT_GEOMETRIC_DYNAMICS"
+    },
+    {
+      "action": "generic independent R2,R_AB2,R_ABCD2",
+      "boundary_completion": "higher-derivative boundary data required",
+      "differential_order": 4,
+      "geometry": "arbitrary quadratic curvature",
+      "id": "PX",
+      "physicality_support": "not mission-essential",
+      "status": "REJECTED_FROM_MINIMAL_SET_GHOST_OR_EXTRA_MODE_RISK"
+    }
+  ],
+  "frozen_predictions_changed": false,
+  "full_bhsm_completion_claimed": false,
+  "information_paradox_solved": false,
+  "measured_mass_coupling_or_cosmology_scale_used": false,
+  "minimal_action_architecture": {
+    "S_boundary": "coefficient-locked GHY completion",
+    "S_collar": "Gaussian-normal rewrite only",
+    "S_constraint": "no independent term; diffeomorphism constraints",
+    "S_geom": "P1 volume plus scalar curvature",
+    "S_matter_candidate": "missing parent lift; may be zero in the pure metric-sigma test family",
+    "S_phys": "sigma kinetic and U_sigma(sigma,C_EG)"
+  },
+  "minimal_retained_family": "P1 as the lowest-order test family",
+  "official_prediction_logic_changed": false,
+  "optional_second_order_extensions": [
+    "P2",
+    "P3"
+  ],
+  "particle_masses_derived": false,
+  "physicality_result": "BHSM_ENERGY_GEOMETRY_PHYSICALITY_SOURCE_NOT_DERIVED",
+  "preserved_results": [
+    "BHSM_S7_ARCHITECTURE_AMBIGUOUS",
+    "BHSM_B8_S7_PARENT_ACTION_SOURCE_MISSING"
+  ],
+  "primary_result": "BHSM_B8_MINIMAL_ACTION_FAMILY_IDENTIFIED",
+  "scalar_vacuum_physically_localized": false,
+  "selected_physical_family": null,
+  "shared_black_hole_core_claimed": false,
+  "signature_emergence_claimed": false,
+  "singularity_resolution_claimed": false,
+  "sprint": "bhsm-b8-geometric-action-construction-v6-0-2",
+  "status": "FINITE_MINIMAL_ACTION_FAMILY_IDENTIFIED",
+  "surface_tension_derived": false,
+  "topological_appendix": "P4",
+  "unspecified_wick_rotation_used": false,
+  "version": "v6.0.2"
+}
