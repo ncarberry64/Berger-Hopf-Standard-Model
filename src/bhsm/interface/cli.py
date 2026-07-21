@@ -248,6 +248,7 @@ from .full_geometric_gauge_fixed_hessian import full_hessian_status_report, full
 from .primordial_boundary_tension_action_source_closure import boundary_tension_status_report, boundary_tension_status_to_markdown
 from .s7_fiber_integration_physical_localization import s7_fiber_integration_status_report, s7_fiber_integration_status_to_markdown
 from .b8_s7_physical_domain_action_source_closure import b8_s7_status_report, b8_s7_status_to_markdown
+from .b8_geometry_energy_parent_action import b8_parent_action_status_report, b8_parent_action_status_to_markdown
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -690,6 +691,8 @@ def build_parser() -> argparse.ArgumentParser:
     s7_fiber.add_argument("--format", choices=("json", "markdown"), default="json")
     b8_s7 = commands.add_parser("b8-s7-physical-domain-status", help="Render the BHSM v6.0.1 B8/S7 physical-domain and action-source audit")
     b8_s7.add_argument("--format", choices=("json", "markdown"), default="json")
+    b8_parent = commands.add_parser("b8-parent-action-status", help="Render the BHSM v6.0.2 B8 geometry-energy parent-action audit")
+    b8_parent.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
 
@@ -1509,6 +1512,13 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(json.dumps(payload, indent=2, sort_keys=True))
         else:
             _print_unicode(b8_s7_status_to_markdown(payload))
+        return 0
+    if args.command == "b8-parent-action-status":
+        payload = b8_parent_action_status_report()
+        if args.format == "json":
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        else:
+            _print_unicode(b8_parent_action_status_to_markdown(payload))
         return 0
     if args.command in {
         "primitive-charged-incidence",

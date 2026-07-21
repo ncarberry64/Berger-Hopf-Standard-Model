@@ -1,5 +1,14 @@
 # BHSM Artifact Index
 
+## B8 geometry–energy parent action v6.0.2
+
+| Package | Contents | Primary artifact | Status | CLI |
+| --- | --- | --- | --- | --- |
+| Parent-action matrix, Lovelock/minimality audit, confinement and sigma sectors, bulk/boundary/collar equations, Hopf reduction, stationarity/Hessian, thresholds, reduction, and hidden inputs | Sixteen deterministic v6.0.2 artifacts | `artifacts/BHSM_b8_geometry_energy_parent_action_report_v6_0_2.json` | `BHSM_B8_MINIMAL_ACTION_FAMILY_IDENTIFIED` / `BHSM_ENERGY_GEOMETRY_PHYSICALITY_SOURCE_NOT_DERIVED` | `python -m bhsm.interface b8-parent-action-status --format markdown` |
+
+The package classifies a finite action family but does not select a physical
+domain, coefficient normalization, confinement invariant, or stable phase.
+
 ## B8/S7 physical domain and action-source closure v6.0.1
 
 | Package | Contents | Primary artifact | Status | CLI |
