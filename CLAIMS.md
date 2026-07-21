@@ -609,3 +609,30 @@ can carry a transient localized energy differential; importing v5
 coefficients; claiming persistent objecthood,
 absolute scale, particle properties, release, de-enveloping, or full BHSM
 completion.
+
+<!-- BHSM_CORRESPONDENCE_NOVELTY_FIREWALL_V6_0_6 -->
+## v6.0.6 correspondence and novelty claims
+
+Allowed: BHSM uses compression, collisions, ordinary waves and shells,
+interference, stress conservation, curvature response, and gauge/quantum
+formalism as established-physics correspondence. It proposes
+energy--spacetime differentiation or envelopment as an interpretive geometric
+ontology. This ontology is not a new dynamical theorem.
+
+Allowed: the exact massless round-S7 relation `omega_10=2 omega_4` remains a
+BHSM-specific dimensionless diagnostic result. The quaternionic Hopf fiber is
+an exact topological candidate for the S3 role. The current generic Berger
+metric, action, measure, Hodge structure, modes, and coefficients have not
+been derived from that fiber.
+
+Allowed conditionally: legacy Berger-S3 and v5 scalar/topographic results
+retain their declared reduced domains. Sigma may be a localization,
+persistence, boundary-response, vacuum, stability, or scale-response
+variable, but it is not the universal definition of physicality.
+
+Not supported: claiming established mechanisms as BHSM discoveries;
+identifying an arbitrary Berger S3 with S7; conflating pullback, vertical
+restriction, and pushforward metrics; identifying modes by numerical
+eigenvalue matching alone; reverse-engineering parent coefficients from
+`A_ST=-2`, `G_ST=8`, or `|sigma|=1/2`; claiming particle objecthood, masses,
+couplings, mixing, absolute scale, novel predictions, or full completion.

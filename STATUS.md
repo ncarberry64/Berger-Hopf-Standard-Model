@@ -773,3 +773,32 @@ conventions to five invariant combinations; none is internally sourced.
 Completion gate: `V6_0_5_STOP_FROZEN_MINIMAL_PARENT_FAILS_TRIGGER`.
 
 Command: `python -m bhsm.interface minimal-parent-kill-status --format markdown`.
+
+<!-- BHSM_CORRESPONDENCE_NOVELTY_FIREWALL_V6_0_6 -->
+## Correspondence, ontology, and novelty firewall v6.0.6
+
+Primary result: `BHSM_CORRESPONDENCE_NOVELTY_FIREWALL_DERIVED`.
+
+Reduction readiness:
+`BHSM_B8_S7_TO_BERGER_S3_REDUCTION_READINESS_IDENTIFIED`.
+
+Reduction status: `BHSM_B8_S7_TO_BERGER_S3_REDUCTION_BLOCKED`.
+
+Physicality-as-envelopment is frozen as an interpretive BHSM ontology.
+Compression, collisions, waves, explosion-like shells, ordinary interference,
+stress conservation, curvature response, and gauge/quantum language are
+established-physics correspondence rather than BHSM discoveries. The exact
+round-S7 `l=4,10` octave remains a dimensionless BHSM diagnostic result, while
+sigma is reclassified as a candidate persistent/localization variable.
+
+The exact quaternionic Hopf fiber topology is available, but the repository
+does not yet derive a generic Berger metric from the parent S7 metric, select
+an action-consistent invariant truncation, branch S7 representations to the
+legacy Berger-S3 labels, or reduce parent coefficients to v5. The next theorem
+is the complete B8/S7-to-Berger-S3 metric, measure, Hodge, operator, spectrum,
+action, and coefficient bridge.
+
+Completion gate:
+`V6_0_6_STOP_FIREWALL_DERIVED_REDUCTION_READY_BUT_BLOCKED`.
+
+Command: `python -m bhsm.interface correspondence-novelty-firewall-status --format markdown`.

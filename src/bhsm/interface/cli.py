@@ -252,6 +252,7 @@ from .b8_geometry_energy_parent_action import b8_parent_action_status_report, b8
 from .energy_geometry_confinement_invariant import confinement_status_report, confinement_status_to_markdown
 from .harmonic_physicality_coupling_selection import harmonic_selection_status_report, harmonic_selection_status_to_markdown
 from .minimal_parent_theory_kill_test import minimal_parent_kill_status_report, minimal_parent_kill_status_to_markdown
+from .correspondence_novelty_firewall import correspondence_firewall_status_report, correspondence_firewall_status_to_markdown
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -702,6 +703,8 @@ def build_parser() -> argparse.ArgumentParser:
     harmonic_selection.add_argument("--format", choices=("json", "markdown"), default="json")
     minimal_parent_kill = commands.add_parser("minimal-parent-kill-status", help="Render the BHSM v6.0.5 frozen minimal-parent kill test")
     minimal_parent_kill.add_argument("--format", choices=("json", "markdown"), default="json")
+    correspondence_firewall = commands.add_parser("correspondence-novelty-firewall-status", help="Render the BHSM v6.0.6 ontology, correspondence, novelty, and reduction-readiness audit")
+    correspondence_firewall.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
 
@@ -1549,6 +1552,13 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(json.dumps(payload, indent=2, sort_keys=True))
         else:
             _print_unicode(minimal_parent_kill_status_to_markdown(payload))
+        return 0
+    if args.command == "correspondence-novelty-firewall-status":
+        payload = correspondence_firewall_status_report()
+        if args.format == "json":
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        else:
+            _print_unicode(correspondence_firewall_status_to_markdown(payload))
         return 0
     if args.command in {
         "primitive-charged-incidence",
