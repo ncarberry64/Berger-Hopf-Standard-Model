@@ -629,3 +629,20 @@ Still open: `OPEN_MISSING_FULL_GAUGE_FIXED_DOMAIN`, `OPEN_MISSING_FADDEEV_POPOV_
 No physical validation, absolute unit, particle mass, gauge coupling, CKM value, rare-B observable, white-hole observation, Yang-Mills mass gap, or full BHSM completion is claimed.
 
 Command: `python -m bhsm.interface quantum-effective-action-status --format markdown`.
+
+<!-- BHSM_FULL_GEOMETRIC_GAUGE_FIXED_HESSIAN_V5_11 -->
+## Full geometric and gauge-fixed Hessian v5.11
+
+Primary result: `BHSM_QUADRATIC_OPERATOR_COMPLEX_PARTIAL`.
+
+BHSM v5.11 classifies every declared field and all 36 `(g,A,psi,ST,ch,nu)` Hessian blocks. It provides explicitly conventional gauge/FP candidates, fermion/domain/eta and boundary/symbol ledgers, charged/neutral determinant ownership, zero/negative-mode accounting, and an exact finite gauge-bookkeeping model.
+
+Priority boundary-tension update: the normalized vacuum value `-1/8` is retained as a candidate contribution rather than automatically subtracted, and the physical normal displacement `xi_perp` is added to the geometric variation. The variational boundary stress, normal shape equation, pressure balance, surface Hessian, and `lambda_surface(L_c)=0` release condition are source-separated. Because the local density normalization, `c_K,c_K2,c_S`, embedding, and normal-mode domain remain open, `L_c` is still scale covariant. The v5.7 coefficient zeros were fixed-geometry scalar-reduction choices, not proofs of geometric vanishing.
+
+Only the inherited homogeneous scalar block is action/domain closed, recovering `6/L^2`. Geometric and fermion action sources, gauge/ghost boundary complexes, mixed scalar domains, neutral normalization, full strong ellipticity, and heat-kernel readiness remain open. The full background is off shell outside the reduced scalar truncation. v5.10 remains `BHSM_QUANTUM_EFFECTIVE_ACTION_PARTIAL`; no full one-loop action or Casimir energy is permitted.
+
+Preserved: `sigma_scale=1/2`, `M_BH/M_star=1/2`, `R_BH/ell_star=2`, the old mass-gap invalidation, `OPEN_MISSING_ACTION_DERIVED_GEOMETRIC_HESSIAN`, `OPEN_MISSING_ABSOLUTE_BOUNDARY_TENSION_DENSITY_SOURCE`, `OPEN_MISSING_BOUNDARY_SHAPE_COEFFICIENT_VALUES`, `OPEN_MISSING_NORMAL_DISPLACEMENT_DOMAIN_AND_SPECTRUM`, `OPEN_MISSING_FULL_GAUGE_FIXED_DOMAIN`, `OPEN_MISSING_FERMION_DIRAC_OPERATOR_ACTION_SOURCE`, `OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR`, and `FULL_BHSM_NOT_COMPLETE`.
+
+No physical validation, absolute unit, particle mass, gauge coupling, CKM result, rare-B prediction, or full BHSM completion is claimed.
+
+Command: `python -m bhsm.interface full-geometric-gauge-fixed-hessian-status --format markdown`.

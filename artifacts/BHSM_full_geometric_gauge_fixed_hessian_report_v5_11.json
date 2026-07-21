@@ -1,0 +1,1901 @@
+{
+  "absolute_unit_anchor_claimed": false,
+  "artifact": "BHSM_full_geometric_gauge_fixed_hessian_report_v5_11",
+  "background": {
+    "absolute_unit_anchor_claimed": false,
+    "artifact": "BHSM_full_hessian_background_stationarity_v5_11",
+    "background_symbol": "B0=(g0,a0,collar,T0,Phi0,sigma=1/2,A0=0,psi0=0,Jch0=0,N0=0)",
+    "boundary_condition_selected_from_phenomenology": false,
+    "ckm_completion_claimed": false,
+    "claim_boundary": "v5.11 constructs the strongest source-qualified operator architecture and a finite gauge-bookkeeping diagnostic. Missing action sources, gauges, domains, boundary conditions, and eta data prevent a determinant-ready full complex.",
+    "empirical_inputs_used": false,
+    "existing_numerical_predictions_changed": false,
+    "frozen_predictions_changed": false,
+    "full_background_on_shell": false,
+    "full_bhsm_completion_claimed": false,
+    "gauge_couplings_derived": false,
+    "measured_masses_or_couplings_used": false,
+    "official_prediction_logic_changed": false,
+    "particle_masses_derived": false,
+    "physical_casimir_energy_claimed": false,
+    "planck_hubble_cmb_or_cosmology_used": false,
+    "primary_result": "BHSM_QUADRATIC_OPERATOR_COMPLEX_PARTIAL",
+    "rare_b_predictions_claimed": false,
+    "rows": [
+      {
+        "boundary_data": "outward collar convention; detailed geometric data open",
+        "component": "geometry",
+        "domain": "compact Berger-Hopf boundary plus normalized collar and its normal bundle",
+        "equation": "delta S/delta g=0 and normal shape equation E_perp=0",
+        "source": "v5.4 symbolic geometric slot plus v5.6 boundary/collar action",
+        "stationarity": "UNRESOLVED_OFF_SHELL",
+        "value": "g0=L^2 ghat(a0), xi_perp=0"
+      },
+      {
+        "boundary_data": "open",
+        "component": "Berger squashing",
+        "domain": "positive Berger metrics",
+        "equation": "partial S/partial a=0",
+        "source": "retained v5.8-v5.10 modulus",
+        "stationarity": "UNRESOLVED_OFF_SHELL",
+        "value": "a0 retained symbolic"
+      },
+      {
+        "boundary_data": "v5.7 reduced Robin rule only",
+        "component": "collar",
+        "domain": "collar interval",
+        "equation": "partial S/partial rho_star=0",
+        "source": "v5.7-v5.10",
+        "stationarity": "ZERO_ONLY_IN_REDUCED_TRUNCATION",
+        "value": "rho_star normalized and retained"
+      },
+      {
+        "boundary_data": "Robin zero-flux",
+        "component": "T,Phi,sigma",
+        "domain": "v5.7 homogeneous reduced space",
+        "equation": "reduced scalar EOM",
+        "source": "v5.7",
+        "stationarity": "ZERO_EXACTLY_IN_DECLARED_REDUCED_MODEL",
+        "value": "T0=Phi0=1/(2 sqrt(2)); sigma=1/2"
+      },
+      {
+        "boundary_data": "open",
+        "component": "gauge",
+        "domain": "trivial-connection candidate",
+        "equation": "delta S/delta A_i=0",
+        "source": "v5.4 gauge slot",
+        "stationarity": "ZERO_CONDITIONALLY_IF_ALL_CURRENTS_VANISH",
+        "value": "A_i0=0"
+      },
+      {
+        "boundary_data": "open",
+        "component": "fermion",
+        "domain": "spinor domain open",
+        "equation": "D_BHSM psi=0",
+        "source": "conditional v5.4 fermion slot",
+        "stationarity": "ZERO_CONDITIONALLY_FOR_BILINEAR_ACTION",
+        "value": "psi0=0"
+      },
+      {
+        "boundary_data": "inherited",
+        "component": "charged",
+        "domain": "composite of psi0",
+        "equation": "no independent Euler-Lagrange equation",
+        "source": "charged bilinear",
+        "stationarity": "NOT_AN_INDEPENDENT_FIELD",
+        "value": "J_ch0=0"
+      },
+      {
+        "boundary_data": "open",
+        "component": "neutral",
+        "domain": "conditional response cone",
+        "equation": "K_neu N+source=0",
+        "source": "symbolic neutral slot",
+        "stationarity": "ZERO_CONDITIONALLY_IF_SOURCE_VANISHES_AND_K_NEU_DEFINED",
+        "value": "N0=0 candidate"
+      },
+      {
+        "boundary_data": "primordial selection open",
+        "component": "global scale",
+        "domain": "positive half-line",
+        "equation": "partial S/partial L=0",
+        "source": "v5.8",
+        "stationarity": "FLAT_CLASSICALLY_NOT_FIXED",
+        "value": "L>0 arbitrary"
+      }
+    ],
+    "sprint": "bhsm-full-geometric-gauge-fixed-hessian-v5-11",
+    "status": "CONTROLLED_REDUCED_ON_SHELL_FULL_BACKGROUND_OFF_SHELL",
+    "tadpole_rule": "Retain unresolved first variations explicitly; do not interpret off-shell quadratic eigenvalues as physical masses or stability data.",
+    "version": "v5.11"
+  },
+  "boundary_adjoint": {
+    "absolute_unit_anchor_claimed": false,
+    "artifact": "BHSM_full_hessian_boundary_self_adjointness_v5_11",
+    "boundary_condition_selected_from_phenomenology": false,
+    "ckm_completion_claimed": false,
+    "claim_boundary": "v5.11 constructs the strongest source-qualified operator architecture and a finite gauge-bookkeeping diagnostic. Missing action sources, gauges, domains, boundary conditions, and eta data prevent a determinant-ready full complex.",
+    "empirical_inputs_used": false,
+    "existing_numerical_predictions_changed": false,
+    "extension_ambiguity": "multiple standard candidate families; none selected using phenomenology",
+    "frozen_predictions_changed": false,
+    "full_bhsm_completion_claimed": false,
+    "full_self_adjoint_operator_complex": false,
+    "gauge_couplings_derived": false,
+    "measured_masses_or_couplings_used": false,
+    "minimal_maximal_domains_computed_for_full_system": false,
+    "official_prediction_logic_changed": false,
+    "particle_masses_derived": false,
+    "physical_casimir_energy_claimed": false,
+    "planck_hubble_cmb_or_cosmology_used": false,
+    "primary_result": "BHSM_QUADRATIC_OPERATOR_COMPLEX_PARTIAL",
+    "rare_b_predictions_claimed": false,
+    "rows": [
+      {
+        "adjoint_domain_matches": false,
+        "boundary_form": "Green form from L_geom plus F boundary terms",
+        "candidate": "mixed normal/tangential projector",
+        "dense_domain": "unproved",
+        "gauge_preserved": false,
+        "ghost_compatible": false,
+        "sector": "geometry+geometric ghost",
+        "selected": null,
+        "variation_vanishes": false
+      },
+      {
+        "adjoint_domain_matches": false,
+        "boundary_form": "Green form of H_surface; fourth-order pieces require two edge/collar conditions",
+        "candidate": "physical normal-mode domain with collar matching",
+        "dense_domain": "unproved",
+        "gauge_preserved": "normal/tangential decomposition not closed",
+        "ghost_compatible": "xi_perp must not be paired with a ghost unless proven pure gauge",
+        "sector": "normal displacement xi_perp",
+        "selected": null,
+        "variation_vanishes": false
+      },
+      {
+        "adjoint_domain_matches": false,
+        "boundary_form": "<a,D_n b>-<D_n a,b> plus ghost scalar form",
+        "candidate": "absolute or relative paired conditions",
+        "dense_domain": "standard candidate only, BHSM selection open",
+        "gauge_preserved": "candidate-dependent",
+        "ghost_compatible": "candidate-dependent",
+        "sector": "internal gauge+ghost",
+        "selected": null,
+        "variation_vanishes": "candidate-dependent"
+      },
+      {
+        "adjoint_domain_matches": false,
+        "boundary_form": "integral_boundary chi_bar gamma(n) psi",
+        "candidate": "bag/chiral/APS/collar",
+        "dense_domain": "candidate-dependent",
+        "gauge_preserved": "candidate-dependent",
+        "ghost_compatible": "n/a",
+        "sector": "fermion",
+        "selected": null,
+        "variation_vanishes": "candidate-dependent"
+      },
+      {
+        "adjoint_domain_matches": true,
+        "boundary_form": "delta T partial_n delta T-delta T' partial_n delta T plus Phi analogue",
+        "candidate": "v5.7 Robin zero-flux",
+        "dense_domain": true,
+        "gauge_preserved": "no scalar gauge symmetry",
+        "ghost_compatible": "n/a",
+        "sector": "scalar homogeneous",
+        "selected": "only on declared homogeneous reduced domain",
+        "variation_vanishes": true
+      },
+      {
+        "adjoint_domain_matches": false,
+        "boundary_form": "depends on K_neu",
+        "candidate": "neutral flux",
+        "dense_domain": "unproved",
+        "gauge_preserved": "unresolved",
+        "ghost_compatible": "n/a",
+        "sector": "neutral",
+        "selected": null,
+        "variation_vanishes": false
+      }
+    ],
+    "sprint": "bhsm-full-geometric-gauge-fixed-hessian-v5-11",
+    "status": "REDUCED_SCALAR_SELF_ADJOINT_FULL_BOUNDARY_COMPLEX_OPEN",
+    "version": "v5.11"
+  },
+  "boundary_condition_selected_from_phenomenology": false,
+  "boundary_tension_surface_mode": {
+    "absolute_unit_anchor_claimed": false,
+    "artifact": "BHSM_full_hessian_primordial_boundary_tension_surface_mode_v5_11",
+    "boundary_condition_selected_from_phenomenology": false,
+    "boundary_stress_tensor": {
+      "K2_and_shape_pieces": "functional metric/embedding variations of c_K2 K^2 and c_S Tr(S^2), including derivative stresses generated by delta K and delta S_ab",
+      "K_piece": "c_K times the orientation-dependent Brown-York combination (K^ab-K gamma^ab), plus embedding terms when the hypersurface moves",
+      "collar_piece": "functional variation of B_threshold J with respect to gamma_ab and S_ab",
+      "definition": "T_Sigma^ab=-(2/sqrt(gamma)) delta(S_boundary+S_collar)/delta gamma_ab",
+      "fully_evaluated": false,
+      "pure_tension_piece": "-T_boundary gamma^ab under the declared stress convention",
+      "quantum_piece": "not a local stress tensor from v5.10; only a controlled uniform-mode diagnostic exists",
+      "scalar_topographic_piece": "on-shell boundary stress/pressure from U_boundary and collar threshold terms"
+    },
+    "boundary_tension_candidate": {
+      "U_boundary_identified_with_entire_reduced_value": false,
+      "absolute_density_value": null,
+      "collar_contribution": "C_collar,vac=integral_0^rho_star B_threshold[T_vac,Phi_vac,K,S,J;rho] J drho",
+      "definition": "T_boundary=U_boundary(T_vac,Phi_vac)+C_collar,vac",
+      "dimension": "energy per boundary area (or action per boundary volume) only after the action measure and units are fixed",
+      "normalized_total_reduced_vacuum_value": -0.125,
+      "normalized_value_automatically_subtracted": false,
+      "normalized_value_formula": "V_red(1/2)=-(1/2)^2+2(1/2)^4=-1/8",
+      "physical_sign": "unresolved; the normalized -1/8 is not by itself a signed physical tension",
+      "reason": "v5.7 evaluates the total normalized reduced action, not the local U_boundary density or its area normalization"
+    },
+    "ckm_completion_claimed": false,
+    "claim_boundary": "v5.11 constructs the strongest source-qualified operator architecture and a finite gauge-bookkeeping diagnostic. Missing action sources, gauges, domains, boundary conditions, and eta data prevent a determinant-ready full complex.",
+    "coefficient_provenance": {
+      "c_J": "no separate log J term in v5.7 to avoid double counting; the action-derived collar Jacobian inside S_collar remains active",
+      "c_K": "symbolic v5.6 boundary-action coefficient; v5.7 zero meant no scalar variation on fixed normalized geometry, not a geometric zero",
+      "c_K2": "symbolic v5.6 boundary-action coefficient; not set to zero in normal shape variation",
+      "c_S": "symbolic v5.6 boundary-action coefficient; not set to zero in normal shape variation",
+      "coefficients_used_in_surface_equation": "c_K,c_K2,c_S retained symbolically"
+    },
+    "critical_scale_classification": {
+      "absolute_scale_claimed": false,
+      "current_result": "STILL_SCALE_COVARIANT",
+      "fixed_completely_by_current_action": false,
+      "fixed_in_terms_of_one_primitive_tension_or_breaking_energy": "possible only conditionally after an absolute density and remaining relative coefficients/mode functions are sourced",
+      "reason": "-1/8 and the v5.7 coefficient zeros are normalized scalar-reduction data; they do not provide dimensionful surface density or geometric shape coefficients"
+    },
+    "empirical_inputs_used": false,
+    "existing_numerical_predictions_changed": false,
+    "frozen_predictions_changed": false,
+    "full_bhsm_completion_claimed": false,
+    "gauge_couplings_derived": false,
+    "lowest_mode": {
+      "L_c": null,
+      "definition": "lambda_surface(L,a,sigma,rho_star)=inf spec'(H_surface) after proven tangential-gauge and Killing kernels are removed",
+      "mode_functions": "q_tau,q_K,q_K2,q_S require the Berger/collar embedding and normal-mode domain",
+      "release_condition": "lambda_surface(L_c,a,sigma,rho_star)=0",
+      "scaling_architecture": "tau q_tau(a,sigma,rho)/L^2+c_K q_K/L^3+(c_K2 q_K2+c_S q_S)/L^4+lambda_collar+lambda_ST+lambda_quantum",
+      "value": null
+    },
+    "measured_masses_or_couplings_used": false,
+    "normal_displacement": {
+      "background": "xi_perp=0",
+      "domain": "normal bundle over the Berger-Hopf boundary; self-adjoint domain open",
+      "embedding_variation": "delta X^A=xi_perp n^A",
+      "field": "xi_perp(Y)",
+      "gauge_separation": "boundary-preserving tangential diffeomorphisms are gauge; physical normal motion requires a declared embedding/boundary rule",
+      "reality": "real"
+    },
+    "normal_shape_equation": {
+      "K": "c_K K^2+D_K^dagger c_K",
+      "K2": "c_K2 K^3+D_K^dagger(2 c_K2 K)",
+      "TrS2": "c_S K Tr(S^2)+D_Q^dagger c_S",
+      "boundary_density": "F_boundary=T_boundary+c_K K+c_K2 K^2+c_S Tr(S^2)",
+      "collar_jacobian": "E_J from delta J in the collar measure, not discarded with c_J=0",
+      "external_pressure_jump": "Delta p retained symbolically; no cosmological input",
+      "formula": "E_perp=K F_boundary+D_K^dagger(c_K+2 c_K2 K)+D_Q^dagger(c_S)+E_J+E_collar+p_ST+E_quantum-Delta p=0",
+      "generalized_balance": "Delta p=K F_boundary+D_K^dagger(c_K+2 c_K2 K)+D_Q^dagger(c_S)+E_J+E_collar+p_ST+E_quantum",
+      "scalar_topographic_pressure": "p_ST from normal variation of on-shell U_boundary and threshold support",
+      "stationarity": "OPEN_OFF_SHELL_UNTIL_ALL_TERMS_AND_BOUNDARY_DATA_CLOSE",
+      "tension": "K T_boundary"
+    },
+    "official_prediction_logic_changed": false,
+    "particle_masses_derived": false,
+    "physical_casimir_energy_claimed": false,
+    "planck_hubble_cmb_or_cosmology_used": false,
+    "preserved_primordial_interpretation": [
+      {
+        "stage": "stable compact state",
+        "status": "candidate; positive lowest physical surface eigenvalue required"
+      },
+      {
+        "stage": "lambda_surface reaches zero",
+        "status": "candidate release threshold; not yet solved"
+      },
+      {
+        "stage": "outward instability",
+        "status": "conditional on a negative crossing and correct negative-mode treatment"
+      },
+      {
+        "stage": "guided compact-to-expanding trajectory",
+        "status": "v5.9 conditional guidance architecture"
+      },
+      {
+        "stage": "primordial hot plasma",
+        "status": "interpretive downstream state, not derived or observationally validated here"
+      }
+    ],
+    "primary_result": "BHSM_QUADRATIC_OPERATOR_COMPLEX_PARTIAL",
+    "quadratic_operator": {
+      "boundary_form": "requires the xi_perp domain and edge/collar matching; not closed",
+      "decomposition": "H_tension+c_K H_K+c_K2 H_K2+c_S H_S+H_J+H_collar+H_ST+H_quantum",
+      "definition": "H_surface=delta E_perp/delta xi_perp at B0",
+      "principal_order": "second order for pure tension/K architecture; K^2 and Tr(S^2) variations can produce fourth-order boundary terms",
+      "self_adjoint": false,
+      "strongly_elliptic": false,
+      "tension_piece_on_stationary_fixed_pressure_background": "T_boundary[-Delta_Sigma-Tr(S^2)-Ric(n,n)] plus balance-dependent lower terms"
+    },
+    "quantum_term": {
+      "included_in_official_surface_operator": false,
+      "local_shape_stress_available": false,
+      "normal_projection": "H_quantum=J_L^dagger L^-2 J_L plus connection/tadpole terms only if a uniform xi_perp-to-delta L map is derived",
+      "reason": "v5.10 is a renormalization-scale-dependent partial diagnostic, not a local quantum stress tensor",
+      "uniform_scale_derivatives": {
+        "d2Gamma_dL2": "1/L^2",
+        "dGamma_dL": "-1/L"
+      },
+      "valid_v5_10_scope": "Gamma_perp=1/2 log[6/(mu^2 L^2)] for one homogeneous scalar mode"
+    },
+    "rare_b_predictions_claimed": false,
+    "sprint": "bhsm-full-geometric-gauge-fixed-hessian-v5-11",
+    "status": "PRIMORDIAL_SURFACE_RELEASE_THRESHOLD_SCALE_COVARIANT_SOURCE_OPEN",
+    "variation_convention": {
+      "area": "delta(dA)=K xi_perp dA",
+      "collar_jacobian": "delta log J=Tr[(I+rho S)^(-1) rho delta S] for J=det(I+rho S), with sign-equivalent opposite-normal convention",
+      "mean_curvature": "D_K xi_perp=-Delta_Sigma xi_perp-(Tr(S^2)+Ric(n,n))xi_perp",
+      "shape_norm": "D_Q xi_perp=delta_xi Tr(S^2), computed from delta S_ab and delta gamma_ab in the selected collar orientation"
+    },
+    "version": "v5.11"
+  },
+  "charged_neutral": {
+    "absolute_unit_anchor_claimed": false,
+    "artifact": "BHSM_full_hessian_charged_neutral_classification_v5_11",
+    "boundary_condition_selected_from_phenomenology": false,
+    "charged": {
+      "classification": "current-current/projected fermion bilinear; not an independent propagating field",
+      "determinant_ownership": "NO_INDEPENDENT_ZERO_POINT_DETERMINANT",
+      "independent_field_space": null,
+      "mediator_invented": false,
+      "mixing": [
+        "A-ch",
+        "psi-ch"
+      ],
+      "normalization": "open",
+      "physical_degrees_of_freedom": "inherited from constituent fields",
+      "quadratic_operator": null
+    },
+    "ckm_completion_claimed": false,
+    "claim_boundary": "v5.11 constructs the strongest source-qualified operator architecture and a finite gauge-bookkeeping diagnostic. Missing action sources, gauges, domains, boundary conditions, and eta data prevent a determinant-ready full complex.",
+    "empirical_inputs_used": false,
+    "existing_numerical_predictions_changed": false,
+    "frozen_predictions_changed": false,
+    "full_bhsm_completion_claimed": false,
+    "gauge_couplings_derived": false,
+    "measured_masses_or_couplings_used": false,
+    "neutral": {
+      "auxiliary_elimination": "conditional on an invertible normalized K_neu and a closed domain",
+      "classification": "symbolic response/auxiliary candidate; action does not decide independent versus effective",
+      "determinant_ownership": "UNRESOLVED",
+      "dimensionless_structure_separated_from_physical_neutrino_scale": true,
+      "ev_values_inserted": false,
+      "mixing": [
+        "g-nu",
+        "psi-nu",
+        "ST-nu"
+      ],
+      "normalization": "open",
+      "quadratic_operator": "K_neu symbolic"
+    },
+    "official_prediction_logic_changed": false,
+    "particle_masses_derived": false,
+    "physical_casimir_energy_claimed": false,
+    "planck_hubble_cmb_or_cosmology_used": false,
+    "primary_result": "BHSM_QUADRATIC_OPERATOR_COMPLEX_PARTIAL",
+    "rare_b_predictions_claimed": false,
+    "sprint": "bhsm-full-geometric-gauge-fixed-hessian-v5-11",
+    "status": "CHARGED_COMPOSITE_NEUTRAL_RESPONSE_SOURCE_OPEN",
+    "version": "v5.11"
+  },
+  "ckm_completion_claimed": false,
+  "claim_boundary": "v5.11 constructs the strongest source-qualified operator architecture and a finite gauge-bookkeeping diagnostic. Missing action sources, gauges, domains, boundary conditions, and eta data prevent a determinant-ready full complex.",
+  "claim_safe_conclusion": "BHSM v5.11 retains the vacuum boundary/collar value as a candidate tension source and derives a formal normal release equation, but the absolute density, shape coefficients, embedding, and spectrum remain open. The threshold is still scale covariant. No full one-loop action, Casimir energy, absolute unit, mass, coupling, CKM result, rare-B prediction, physical validation, or BHSM completion follows.",
+  "conditionally_established": [
+    "the normalized -1/8 vacuum value is retained as a candidate boundary/collar contribution but is not identified with an absolute surface density",
+    "a finite L_c can arise from ratios of independently sourced dimensionful tension/shape coefficients and mode functions",
+    "formal principal symbols become elliptic under conventional gauges before boundary completion",
+    "D_BHSM and D^dagger D have Dirac/Laplace principal symbols if the missing source and domain close",
+    "neutral auxiliary elimination requires an invertible normalized K_neu"
+  ],
+  "derived": [
+    "canonical full field/symmetry and all-36-block source-status maps",
+    "conditional geometric/internal FP formulas from explicitly conventional gauges",
+    "normal shape equation and surface-Hessian decomposition with tension, K, K^2, Tr(S^2), collar, scalar pressure, and controlled quantum slots",
+    "exact homogeneous T/Phi Hessian eigenvalues 4/L^2 and 6/L^2",
+    "charged current has no independent determinant in the stored composite classification",
+    "finite gauge/ghost consistency model with gauge-parameter-independent physical Hessian and normalized quotient"
+  ],
+  "empirical_inputs_used": false,
+  "existing_numerical_predictions_changed": false,
+  "fermion_sector": {
+    "absolute_unit_anchor_claimed": false,
+    "action_coefficient": "zeta_psi symbolic",
+    "artifact": "BHSM_full_hessian_fermion_dirac_domain_eta_v5_11",
+    "bare_dirac_kinetic": "conditional v5.4 slot",
+    "boundary_candidates": [
+      "local bag-type",
+      "chirality-compatible projector",
+      "APS spectral",
+      "collar matching"
+    ],
+    "boundary_condition_selected_from_phenomenology": false,
+    "boundary_dirac_term": null,
+    "boundary_form": "integral_boundary chi_bar gamma(n) psi",
+    "charged_coupling": "projected bilinear interaction; normalization open",
+    "chiral_projectors": "sector architecture conditional",
+    "ckm_completion_claimed": false,
+    "claim_boundary": "v5.11 constructs the strongest source-qualified operator architecture and a finite gauge-bookkeeping diagnostic. Missing action sources, gauges, domains, boundary conditions, and eta data prevent a determinant-ready full complex.",
+    "determinant_phase_controlled": false,
+    "determinant_ready": false,
+    "empirical_inputs_used": false,
+    "essential_self_adjoint": false,
+    "eta_invariant": null,
+    "existing_numerical_predictions_changed": false,
+    "formal_adjoint": "D_BHSM^dagger after Hermitian connection and boundary pairing",
+    "fredholm": false,
+    "frozen_predictions_changed": false,
+    "full_bhsm_completion_claimed": false,
+    "gauge_couplings_derived": false,
+    "measured_masses_or_couplings_used": false,
+    "neutral_coupling": "projected bilinear/response interaction; normalization open",
+    "normal_current_controlled": false,
+    "official_prediction_logic_changed": false,
+    "particle_masses_derived": false,
+    "physical_casimir_energy_claimed": false,
+    "planck_hubble_cmb_or_cosmology_used": false,
+    "primary_result": "BHSM_QUADRATIC_OPERATOR_COMPLEX_PARTIAL",
+    "principal_symbol": "i gamma^A k_A",
+    "rare_b_predictions_claimed": false,
+    "selected_boundary_condition": null,
+    "spectral_asymmetry": "possible",
+    "spin_connection": "Levi-Civita spin lift candidate",
+    "spin_structure": "required but not selected for complete Berger/collar geometry",
+    "sprint": "bhsm-full-geometric-gauge-fixed-hessian-v5-11",
+    "square": "D^dagger D Laplace type conditionally; E and connection curvature incomplete",
+    "status": "FERMION_OPERATOR_ARCHITECTURE_SOURCE_AND_DOMAIN_OPEN",
+    "strongest_formula": "D_BHSM=gamma^A(nabla_A^spin+sum_i A_A^(i) P_i)",
+    "topographic_mass_coupling": null,
+    "version": "v5.11",
+    "yukawa_like_coupling": null,
+    "zero_modes_and_index": "unresolved"
+  },
+  "field_content": {
+    "absolute_unit_anchor_claimed": false,
+    "artifact": "BHSM_full_hessian_field_gauge_symmetry_ledger_v5_11",
+    "boundary_condition_selected_from_phenomenology": false,
+    "ckm_completion_claimed": false,
+    "claim_boundary": "v5.11 constructs the strongest source-qualified operator architecture and a finite gauge-bookkeeping diagnostic. Missing action sources, gauges, domains, boundary conditions, and eta data prevent a determinant-ready full complex.",
+    "empirical_inputs_used": false,
+    "existing_numerical_predictions_changed": false,
+    "fields": [
+      {
+        "background": "g0=L^2 ghat(a0), collar normalized",
+        "boundary": "not derived",
+        "dimension": "0 metric convention; xi_perp has length before normalization",
+        "domain": "metric/embedding perturbations modulo boundary-preserving diffeomorphisms",
+        "fluctuation": "h_AB and xi_perp n^A",
+        "gauge": "diffeomorphism pullback; normal embedding variation must be separated from pure gauge",
+        "inner": "DeWitt-type pairing plus surface L2 normalization unresolved",
+        "name": "metric/collar geometry",
+        "ownership": "retained collective L,a,rho; local xi_perp determinant ownership open",
+        "projector": "geometric",
+        "reality": "real symmetric plus real normal displacement",
+        "space": "Berger-Hopf boundary metrics plus collar embeddings",
+        "statistics": "bosonic"
+      },
+      {
+        "background": "A_i0=0 conditionally",
+        "boundary": "absolute/relative candidates not selected",
+        "dimension": "1",
+        "domain": "gauge-fixed/coexact domain open",
+        "fluctuation": "a_i",
+        "gauge": "delta a_i=D_i epsilon_i",
+        "inner": "symbolic lambda_i-weighted L2",
+        "name": "internal gauge connections",
+        "ownership": "local determinant candidate",
+        "projector": "P_i",
+        "reality": "anti-Hermitian connection convention",
+        "space": "Omega^1(ad U(1) oplus ad SU(2) oplus ad SU(3))",
+        "statistics": "bosonic"
+      },
+      {
+        "background": "psi0=0 conditionally",
+        "boundary": "bag/APS/collar candidates not selected",
+        "dimension": "3/2 in 4D convention",
+        "domain": "Dirac domain open",
+        "fluctuation": "chi",
+        "gauge": "internal representation and spin lift",
+        "inner": "Hermitian spinor pairing",
+        "name": "fermions",
+        "ownership": "local determinant source open",
+        "projector": "P_i,P_gen,chiral candidates",
+        "reality": "complex with Hermitian adjoint",
+        "space": "spinor-generation-sector module",
+        "statistics": "Grassmann"
+      },
+      {
+        "background": "1/(2 sqrt(2))",
+        "boundary": "v5.7 Robin zero-flux only in reduced domain",
+        "dimension": "symbolic",
+        "domain": "H1/H2 realization open beyond homogeneous mode",
+        "fluctuation": "delta T(Y,rho)",
+        "gauge": "none",
+        "inner": "collar L2",
+        "name": "T",
+        "ownership": "parallel collective plus local modes",
+        "projector": "scalar/topographic",
+        "reality": "real",
+        "space": "real collar scalar",
+        "statistics": "bosonic"
+      },
+      {
+        "background": "1/(2 sqrt(2))",
+        "boundary": "v5.7 reduced Robin rule",
+        "dimension": "symbolic",
+        "domain": "H1/H2 realization open beyond homogeneous mode",
+        "fluctuation": "delta Phi(Y)",
+        "gauge": "none",
+        "inner": "Berger L2",
+        "name": "Phi",
+        "ownership": "parallel collective plus local modes",
+        "projector": "scalar/topographic",
+        "reality": "real",
+        "space": "real Berger-boundary scalar",
+        "statistics": "bosonic"
+      },
+      {
+        "background": "J_ch0=0 when psi0=0",
+        "boundary": "not independently defined",
+        "dimension": "3 current convention",
+        "domain": "no independent field space derived",
+        "fluctuation": "delta J_ch induced by chi",
+        "gauge": "covariant composite transformation",
+        "inner": "inherited bilinear pairing",
+        "name": "charged current",
+        "ownership": "no independent determinant",
+        "projector": "P_ch,P_gen",
+        "reality": "Hermitian paired current",
+        "space": "fermion bilinear/projected interaction",
+        "statistics": "composite"
+      },
+      {
+        "background": "N0=0 only conditionally",
+        "boundary": "neutral flux conditional",
+        "dimension": "symbolic",
+        "domain": "response cone/domain conditional",
+        "fluctuation": "delta N",
+        "gauge": "no independent gauge law established",
+        "inner": "K_neu pairing",
+        "name": "neutral response",
+        "ownership": "determinant ownership unresolved",
+        "projector": "P_neu",
+        "reality": "real candidate",
+        "space": "symbolic neutral-response space",
+        "statistics": "bosonic/auxiliary unresolved"
+      },
+      {
+        "background": "(L,a0,sigma=1/2,rho_star)",
+        "boundary": "primordial condition open",
+        "dimension": "mixed",
+        "domain": "collective-coordinate manifold",
+        "fluctuation": "(delta L,delta a,delta sigma,delta rho)",
+        "gauge": "not gauge unless proven",
+        "inner": "v5.9 dL/L and d sigma; other entries open",
+        "name": "collective moduli",
+        "ownership": "excluded from local determinant",
+        "projector": "none",
+        "reality": "real",
+        "space": "R_+ x A_Berger x R x R_+",
+        "statistics": "bosonic collective"
+      },
+      {
+        "background": "0",
+        "boundary": "must match h boundary rule",
+        "dimension": "symbolic",
+        "domain": "undefined until gauge/domain selected",
+        "fluctuation": "(c^A,cbar_A)",
+        "gauge": "FP representation",
+        "inner": "vector L2",
+        "name": "geometric ghosts",
+        "ownership": "ghost determinant candidate",
+        "projector": "diffeomorphism",
+        "reality": "cbar independent Euclidean",
+        "space": "vector gauge-parameter bundle",
+        "statistics": "Grassmann"
+      },
+      {
+        "background": "0",
+        "boundary": "must match a_i boundary rule",
+        "dimension": "symbolic",
+        "domain": "undefined until gauge/domain selected",
+        "fluctuation": "(c_i,cbar_i)",
+        "gauge": "adjoint",
+        "inner": "adjoint L2",
+        "name": "internal ghosts",
+        "ownership": "ghost determinant candidate",
+        "projector": "P_i",
+        "reality": "cbar independent Euclidean",
+        "space": "ad(U1 oplus SU2 oplus SU3) scalars",
+        "statistics": "Grassmann"
+      },
+      {
+        "background": "0",
+        "boundary": "not applicable",
+        "dimension": "symbolic",
+        "domain": "not introduced in v5.4 action",
+        "fluctuation": "B_geom,B_i",
+        "gauge": "BRST candidate not action-derived",
+        "inner": "algebraic",
+        "name": "gauge-fixing auxiliaries",
+        "ownership": "not part of current action",
+        "projector": "gauge sectors",
+        "reality": "real/adjoint",
+        "space": "Nakanishi-Lautrup candidate",
+        "statistics": "bosonic auxiliary"
+      }
+    ],
+    "frozen_predictions_changed": false,
+    "full_bhsm_completion_claimed": false,
+    "gauge_couplings_derived": false,
+    "gauge_symmetries": [
+      {
+        "law": "delta_xi g=L_xi g; induced Lie derivatives on fields",
+        "name": "diffeomorphisms",
+        "source": "covariant action architecture",
+        "status": "PRESENT_BUT_GAUGE_FIXING_NOT_DERIVED"
+      },
+      {
+        "law": "delta_epsilon A_i=D_i epsilon_i with covariant matter transformation",
+        "name": "local internal gauge",
+        "source": "U(1),SU(2),SU(3) connection sectors",
+        "status": "PRESENT_BUT_GAUGE_FIXING_NOT_DERIVED"
+      },
+      {
+        "law": null,
+        "name": "scalar shift",
+        "source": "v5.6/v5.7 potential breaks a constant shift",
+        "status": "ABSENT"
+      },
+      {
+        "law": null,
+        "name": "collar/embedding redundancy",
+        "source": "not separately specified by stored action",
+        "status": "NOT_ESTABLISHED_NO_NEW_GAUGE_INTRODUCED"
+      },
+      {
+        "law": "kernel transformations preserving B0",
+        "name": "residual global/internal and Berger isometries",
+        "source": "candidate background stabilizer",
+        "status": "ZERO_MODE_PROJECTION_OPEN"
+      }
+    ],
+    "measured_masses_or_couplings_used": false,
+    "official_prediction_logic_changed": false,
+    "particle_masses_derived": false,
+    "physical_casimir_energy_claimed": false,
+    "planck_hubble_cmb_or_cosmology_used": false,
+    "primary_result": "BHSM_QUADRATIC_OPERATOR_COMPLEX_PARTIAL",
+    "rare_b_predictions_claimed": false,
+    "sprint": "bhsm-full-geometric-gauge-fixed-hessian-v5-11",
+    "status": "COMPLETE_FIELD_INVENTORY_OPERATOR_SOURCES_PARTIAL",
+    "version": "v5.11"
+  },
+  "frozen_predictions_changed": false,
+  "full_bhsm_completion_claimed": false,
+  "gauge_couplings_derived": false,
+  "gauge_sectors": {
+    "absolute_unit_anchor_claimed": false,
+    "artifact": "BHSM_full_hessian_internal_gauge_ghost_v5_11",
+    "background": "A_i0=0 conditionally source-free",
+    "boundary_candidates": [
+      "absolute",
+      "relative",
+      "mixed normal/tangential"
+    ],
+    "boundary_condition_selected_from_phenomenology": false,
+    "ckm_completion_claimed": false,
+    "claim_boundary": "v5.11 constructs the strongest source-qualified operator architecture and a finite gauge-bookkeeping diagnostic. Missing action sources, gauges, domains, boundary conditions, and eta data prevent a determinant-ready full complex.",
+    "determinant_ready": false,
+    "empirical_inputs_used": false,
+    "existing_numerical_predictions_changed": false,
+    "frozen_predictions_changed": false,
+    "full_bhsm_completion_claimed": false,
+    "gauge_action": "<G_i,G_i>/(2 xi_i)",
+    "gauge_condition": "G_i(a)=D_i^dagger a_i conventional background-covariant candidate",
+    "gauge_couplings_derived": false,
+    "gauge_parameter_independence_full": false,
+    "ghost_multiplicity": "1,3,8 raw adjoint ranks",
+    "ghost_operator": "M_i=D_i^dagger D_i from delta a_i=D_i epsilon_i once the candidate gauge is selected",
+    "measured_masses_or_couplings_used": false,
+    "numerical_gauge_couplings": null,
+    "official_prediction_logic_changed": false,
+    "particle_masses_derived": false,
+    "physical_casimir_energy_claimed": false,
+    "planck_hubble_cmb_or_cosmology_used": false,
+    "primary_result": "BHSM_QUADRATIC_OPERATOR_COMPLEX_PARTIAL",
+    "rare_b_predictions_claimed": false,
+    "residual_modes": "covariantly constant/global gauge parameters",
+    "sectors": [
+      {
+        "group": "U(1)",
+        "raw_adjoint_rank": 1
+      },
+      {
+        "group": "SU(2)",
+        "raw_adjoint_rank": 3
+      },
+      {
+        "group": "SU(3)",
+        "raw_adjoint_rank": 8
+      }
+    ],
+    "selected_boundary_condition": null,
+    "sprint": "bhsm-full-geometric-gauge-fixed-hessian-v5-11",
+    "status": "INTERNAL_GAUGE_GHOST_ARCHITECTURE_SYMBOLIC_DOMAIN_OPEN",
+    "unfixed_operator": "(1/lambda_i)L_i(rho), lower-order terms open",
+    "version": "v5.11",
+    "zero_mode_projection": "required, not constructed in full geometry"
+  },
+  "geometric_sector": {
+    "absolute_unit_anchor_claimed": false,
+    "artifact": "BHSM_full_hessian_geometric_gauge_ghost_v5_11",
+    "boundary_condition": null,
+    "boundary_condition_selected_from_phenomenology": false,
+    "boundary_form": "geometry, surface-shape, and gauge-fixing boundary form not closed",
+    "ckm_completion_claimed": false,
+    "claim_boundary": "v5.11 constructs the strongest source-qualified operator architecture and a finite gauge-bookkeeping diagnostic. Missing action sources, gauges, domains, boundary conditions, and eta data prevent a determinant-ready full complex.",
+    "conformal_mode": "unresolved; not hidden or discarded",
+    "decomposition": [
+      "TT candidate",
+      "longitudinal vector",
+      "trace/conformal",
+      "boundary-tangential embedding variation",
+      "boundary-normal xi_perp physical/candidate shape mode",
+      "Berger squashing",
+      "global scale",
+      "collar modes"
+    ],
+    "decomposition_compatible_with_full_boundary_proved": false,
+    "determinant_ready": false,
+    "empirical_inputs_used": false,
+    "existing_numerical_predictions_changed": false,
+    "field_space": "vector ghosts",
+    "frozen_predictions_changed": false,
+    "full_bhsm_completion_claimed": false,
+    "gamma": "1/2 conventional de Donder candidate; not BHSM-derived",
+    "gauge_action": "<F,F>/(2 xi_g)",
+    "gauge_condition": "F_A(h)=nabla^B h_AB-gamma nabla_A h",
+    "gauge_couplings_derived": false,
+    "gauge_parameter_independence_full": false,
+    "ghost_derivation": "delta_xi h_AB=nabla_A xi_B+nabla_B xi_A inserted into delta F",
+    "ghost_operator": "M_A^B=-nabla^2 delta_A^B-R_A^B for gamma=1/2 up to declared curvature/sign convention",
+    "measured_masses_or_couplings_used": false,
+    "normal_displacement_artifact": "BHSM_full_hessian_primordial_boundary_tension_surface_mode_v5_11.json",
+    "normal_mode": "xi_perp retained; not removed as gauge without a boundary-preserving diffeomorphism/embedding proof",
+    "official_prediction_logic_changed": false,
+    "particle_masses_derived": false,
+    "physical_casimir_energy_claimed": false,
+    "planck_hubble_cmb_or_cosmology_used": false,
+    "primary_result": "BHSM_QUADRATIC_OPERATOR_COMPLEX_PARTIAL",
+    "rare_b_predictions_claimed": false,
+    "residual_modes": "Killing-vector kernel requires determinant-prime projection",
+    "sprint": "bhsm-full-geometric-gauge-fixed-hessian-v5-11",
+    "status": "GEOMETRIC_GAUGE_GHOST_CANDIDATE_NOT_ACTION_DERIVED",
+    "version": "v5.11",
+    "xi_g": "positive symbolic gauge parameter"
+  },
+  "heat_kernel": {
+    "absolute_unit_anchor_claimed": false,
+    "artifact": "BHSM_full_hessian_heat_kernel_readiness_v5_11",
+    "boundary_condition_selected_from_phenomenology": false,
+    "ckm_completion_claimed": false,
+    "claim_boundary": "v5.11 constructs the strongest source-qualified operator architecture and a finite gauge-bookkeeping diagnostic. Missing action sources, gauges, domains, boundary conditions, and eta data prevent a determinant-ready full complex.",
+    "empirical_inputs_used": false,
+    "existing_numerical_predictions_changed": false,
+    "frozen_predictions_changed": false,
+    "full_bhsm_completion_claimed": false,
+    "gauge_couplings_derived": false,
+    "measured_masses_or_couplings_used": false,
+    "official_prediction_logic_changed": false,
+    "particle_masses_derived": false,
+    "physical_casimir_energy_claimed": false,
+    "planck_hubble_cmb_or_cosmology_used": false,
+    "primary_result": "BHSM_QUADRATIC_OPERATOR_COMPLEX_PARTIAL",
+    "rare_b_predictions_claimed": false,
+    "reason": "No complete closed differential operator and compatible boundary complex exists.",
+    "requested_coefficients": [
+      "a_0",
+      "a_1/2",
+      "a_1",
+      "a_3/2",
+      "a_2"
+    ],
+    "rows": [
+      {
+        "E": null,
+        "Robin_endomorphism": null,
+        "boundary_projector": null,
+        "bundle_rank": null,
+        "connection_curvature": null,
+        "laplace_form": "candidate",
+        "multiplicity": null,
+        "readiness": "OPERATOR_SOURCE_OPEN",
+        "sector": "geometry",
+        "sign": 1
+      },
+      {
+        "E": null,
+        "Robin_endomorphism": null,
+        "boundary_projector": null,
+        "bundle_rank": "adjoint one-form ranks 1,3,8 times geometry",
+        "connection_curvature": "background F_i candidate",
+        "laplace_form": "candidate -(nabla^2+E_i)",
+        "multiplicity": "symbolic",
+        "readiness": "OPERATOR_SOURCE_OPEN",
+        "sector": "internal gauge",
+        "sign": 1
+      },
+      {
+        "E": null,
+        "Robin_endomorphism": null,
+        "boundary_projector": null,
+        "bundle_rank": "vector plus 1+3+8",
+        "connection_curvature": "candidate",
+        "laplace_form": "candidate -(nabla^2+E_FP)",
+        "multiplicity": "complex Grassmann convention open",
+        "readiness": "OPERATOR_SOURCE_OPEN",
+        "sector": "ghosts",
+        "sign": -1
+      },
+      {
+        "E": null,
+        "Robin_endomorphism": null,
+        "boundary_projector": null,
+        "bundle_rank": null,
+        "connection_curvature": null,
+        "laplace_form": "conditional D^dagger D=-(nabla^2+E_D)",
+        "multiplicity": null,
+        "readiness": "OPERATOR_SOURCE_OPEN",
+        "sector": "fermion square",
+        "sign": -1
+      },
+      {
+        "E": [
+          [
+            5,
+            -1
+          ],
+          [
+            -1,
+            5
+          ]
+        ],
+        "Robin_endomorphism": "reduced zero-flux",
+        "boundary_projector": "v5.7 reduced Robin",
+        "bundle_rank": 2,
+        "connection_curvature": "n/a",
+        "laplace_form": "finite 2x2 matrix; not a field heat-kernel operator",
+        "multiplicity": 1,
+        "readiness": "EXACT_FINITE_MATRIX_NOT_HEAT_KERNEL_READY",
+        "sector": "scalar/topographic homogeneous",
+        "sign": 1
+      },
+      {
+        "E": "tension, curvature, pressure, collar, scalar, and valid quantum lower terms open",
+        "Robin_endomorphism": null,
+        "boundary_projector": null,
+        "bundle_rank": 1,
+        "connection_curvature": "normal-bundle/induced connection open",
+        "laplace_form": "not generically Laplace type when K^2/Tr(S^2) generate fourth-order shape terms",
+        "multiplicity": 1,
+        "readiness": "OPERATOR_SOURCE_OPEN",
+        "sector": "normal displacement xi_perp",
+        "sign": 1
+      }
+    ],
+    "sprint": "bhsm-full-geometric-gauge-fixed-hessian-v5-11",
+    "status": "HEAT_KERNEL_INPUT_LEDGER_PARTIAL_NO_TOTAL_COEFFICIENTS",
+    "total_coefficients_calculated": false,
+    "version": "v5.11"
+  },
+  "invalidated_or_ruled_out": [
+    "v5.7 c_K=c_K2=c_S=0 in a fixed scalar reduction does not prove the geometric coefficients vanish",
+    "the normalized vacuum value -1/8 cannot by itself be promoted to a physical boundary tension",
+    "the current surface release condition does not fix an absolute L_c",
+    "the present repository does not support a full determinant-ready operator complex",
+    "standard gauge or boundary candidates cannot be relabeled BHSM-derived",
+    "the v5.10 one-mode determinant is not the official or full one-loop action",
+    "the earlier curvature-threshold mass-gap theorem remains invalidated",
+    "unresolved negative and zero modes cannot be silently removed"
+  ],
+  "measured_masses_or_couplings_used": false,
+  "next_sprint_priority": "derive the absolute boundary-tension density and c_K,c_K2,c_S sources before solving lambda_surface(L_c)=0",
+  "official_prediction_logic_changed": false,
+  "particle_masses_derived": false,
+  "physical_casimir_energy_claimed": false,
+  "planck_hubble_cmb_or_cosmology_used": false,
+  "preserved_relative_results": {
+    "M_BH_over_M_star": "1/2",
+    "R_BH_over_ell_star": "2",
+    "sigma_scale": "1/2"
+  },
+  "primary_result": "BHSM_QUADRATIC_OPERATOR_COMPLEX_PARTIAL",
+  "principal_symbol": {
+    "absolute_unit_anchor_claimed": false,
+    "artifact": "BHSM_full_hessian_principal_symbol_ellipticity_v5_11",
+    "boundary_condition_selected_from_phenomenology": false,
+    "ckm_completion_claimed": false,
+    "claim_boundary": "v5.11 constructs the strongest source-qualified operator architecture and a finite gauge-bookkeeping diagnostic. Missing action sources, gauges, domains, boundary conditions, and eta data prevent a determinant-ready full complex.",
+    "closed_bosonic_differential_operators": [],
+    "determinant_ready": false,
+    "empirical_inputs_used": false,
+    "existing_numerical_predictions_changed": false,
+    "frozen_predictions_changed": false,
+    "full_bhsm_completion_claimed": false,
+    "full_block_invertibility": false,
+    "gauge_couplings_derived": false,
+    "measured_masses_or_couplings_used": false,
+    "official_prediction_logic_changed": false,
+    "particle_masses_derived": false,
+    "physical_casimir_energy_claimed": false,
+    "planck_hubble_cmb_or_cosmology_used": false,
+    "primary_result": "BHSM_QUADRATIC_OPERATOR_COMPLEX_PARTIAL",
+    "rare_b_predictions_claimed": false,
+    "rows": [
+      {
+        "elliptic": "formal candidate",
+        "order": 2,
+        "principal_symbol": "|k|^2 times tensor identity only after candidate de Donder fixing",
+        "sector": "geometry",
+        "status": "SOURCE_AND_BOUNDARY_OPEN",
+        "strong_ellipticity_with_boundary": false
+      },
+      {
+        "elliptic": "undecidable until coefficient signs and the shape domain close",
+        "order": "2 with tension/K; potentially 4 with K^2/Tr(S^2)",
+        "principal_symbol": "T_boundary |k_parallel|^2 plus symbolic c_K2/c_S fourth-order shape symbol",
+        "sector": "normal displacement xi_perp",
+        "status": "BOUNDARY_TENSION_AND_SHAPE_COEFFICIENTS_OPEN",
+        "strong_ellipticity_with_boundary": false
+      },
+      {
+        "elliptic": "formal candidate",
+        "order": 2,
+        "principal_symbol": "|k|^2 times adjoint one-form identity after candidate D^dagger a gauge",
+        "sector": "internal gauge",
+        "status": "LOWER_TERMS_AND_BOUNDARY_OPEN",
+        "strong_ellipticity_with_boundary": false
+      },
+      {
+        "elliptic": "formal candidate",
+        "order": 2,
+        "principal_symbol": "|k|^2 identity",
+        "sector": "geometric/internal ghosts",
+        "status": "BOUNDARY_OPEN",
+        "strong_ellipticity_with_boundary": false
+      },
+      {
+        "elliptic": "symbolically invertible for k!=0 in Euclidean signature",
+        "order": 1,
+        "principal_symbol": "i gamma^A k_A",
+        "sector": "fermion D",
+        "status": "DOMAIN_OPEN",
+        "strong_ellipticity_with_boundary": false
+      },
+      {
+        "elliptic": "formal",
+        "order": 2,
+        "principal_symbol": "|k|^2 identity",
+        "sector": "fermion D^dagger D",
+        "status": "SOURCE_DOMAIN_ETA_OPEN",
+        "strong_ellipticity_with_boundary": false
+      },
+      {
+        "elliptic": "separately formal; coupled operator class unresolved",
+        "order": 2,
+        "principal_symbol": "diag(k_rho^2,|k_B|^2)",
+        "sector": "scalar/topographic",
+        "status": "MIXED_DOMAIN_OPEN",
+        "strong_ellipticity_with_boundary": false
+      },
+      {
+        "elliptic": false,
+        "order": null,
+        "principal_symbol": null,
+        "sector": "charged",
+        "status": "NO_INDEPENDENT_OPERATOR",
+        "strong_ellipticity_with_boundary": false
+      },
+      {
+        "elliptic": false,
+        "order": null,
+        "principal_symbol": null,
+        "sector": "neutral",
+        "status": "SOURCE_OPEN",
+        "strong_ellipticity_with_boundary": false
+      }
+    ],
+    "sprint": "bhsm-full-geometric-gauge-fixed-hessian-v5-11",
+    "status": "FORMAL_SYMBOLS_CLASSIFIED_NO_FULL_STRONG_ELLIPTICITY",
+    "version": "v5.11"
+  },
+  "rare_b_predictions_claimed": false,
+  "recommended_next_construction_sprint": "bhsm-unified-action-coefficient-source-closure-v5-12",
+  "reduced_model": {
+    "absolute_unit_anchor_claimed": false,
+    "artifact": "BHSM_full_hessian_reduced_operator_complex_v5_11",
+    "boundary_condition_selected_from_phenomenology": false,
+    "ckm_completion_claimed": false,
+    "claim_boundary": "v5.11 constructs the strongest source-qualified operator architecture and a finite gauge-bookkeeping diagnostic. Missing action sources, gauges, domains, boundary conditions, and eta data prevent a determinant-ready full complex.",
+    "determinant_ready_eigenvalues": [
+      2.0,
+      3.0,
+      4.0,
+      6.0
+    ],
+    "empirical_inputs_used": false,
+    "excluded_fermion_reason": "D_BHSM action source/domain not closed",
+    "existing_numerical_predictions_changed": false,
+    "field_order": [
+      "h_phys",
+      "h_gauge",
+      "A_phys",
+      "A_gauge",
+      "T",
+      "Phi"
+    ],
+    "frozen_predictions_changed": false,
+    "full_bhsm_completion_claimed": false,
+    "gauge_couplings_derived": false,
+    "gauge_fixed_hessian": [
+      [
+        2.0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0.5,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        3.0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0.3333333333333333,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        5,
+        -1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        -1,
+        5
+      ]
+    ],
+    "gauge_parameter_independence": "exact in this finite diagnostic",
+    "gauge_parameters": {
+      "xi_geom": 2.0,
+      "xi_internal": 3.0
+    },
+    "ghost_derivation": "finite F=x_gauge with delta x_gauge/d epsilon=1",
+    "ghost_matrices": {
+      "geometric": [
+        [
+          1.0
+        ]
+      ],
+      "internal": [
+        [
+          1.0
+        ]
+      ]
+    },
+    "included_fields": [
+      "one diagnostic physical geometric coordinate",
+      "one geometric gauge coordinate",
+      "one diagnostic physical internal-gauge coordinate",
+      "one internal gauge coordinate",
+      "full homogeneous T/Phi block",
+      "matching unit FP ghosts"
+    ],
+    "measured_masses_or_couplings_used": false,
+    "negative_modes": [],
+    "normalized_gauge_ghost_quotient": 144.0,
+    "official_prediction_logic_changed": false,
+    "particle_masses_derived": false,
+    "physical_casimir_assigned": false,
+    "physical_casimir_energy_claimed": false,
+    "physical_determinant": 144.0,
+    "physical_eigenvalues": [
+      2.0,
+      3.0,
+      4.0,
+      6.0
+    ],
+    "physical_hessian": [
+      [
+        2.0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        3.0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        5,
+        -1
+      ],
+      [
+        0,
+        0,
+        -1,
+        5
+      ]
+    ],
+    "physical_projector_indices": [
+      0,
+      2,
+      4,
+      5
+    ],
+    "planck_hubble_cmb_or_cosmology_used": false,
+    "primary_result": "BHSM_QUADRATIC_OPERATOR_COMPLEX_PARTIAL",
+    "rare_b_predictions_claimed": false,
+    "raw_hessian": [
+      [
+        2.0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        3.0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        5,
+        -1
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        -1,
+        5
+      ]
+    ],
+    "raw_zero_modes": [
+      "h_gauge",
+      "A_gauge"
+    ],
+    "sample_coefficients": {
+      "k_gauge": 3.0,
+      "k_geom": 2.0,
+      "meaning": "positive algebraic diagnostic conventions, not action-derived spectra or physical values"
+    },
+    "sprint": "bhsm-full-geometric-gauge-fixed-hessian-v5-11",
+    "status": "FINITE_GAUGE_GHOST_CONSISTENCY_MODEL_EXACT_NOT_PHYSICAL_DETERMINANT",
+    "version": "v5.11",
+    "zero_modes_after_projection": []
+  },
+  "scalar_topographic_sector": {
+    "absolute_unit_anchor_claimed": false,
+    "artifact": "BHSM_full_hessian_scalar_topographic_v5_11",
+    "background": "T0=Phi0=1/(2 sqrt(2)), sigma=1/2",
+    "boundary_condition_selected_from_phenomenology": false,
+    "ckm_completion_claimed": false,
+    "claim_boundary": "v5.11 constructs the strongest source-qualified operator architecture and a finite gauge-bookkeeping diagnostic. Missing action sources, gauges, domains, boundary conditions, and eta data prevent a determinant-ready full complex.",
+    "collar_radial_modes": "operator architecture only",
+    "complete_zero_negative_mode_structure": false,
+    "empirical_inputs_used": false,
+    "existing_numerical_predictions_changed": false,
+    "formal_full_hessian": [
+      [
+        "-partial_rho^2+5",
+        "-I_mix"
+      ],
+      [
+        "-I_mix^dagger",
+        "-Delta_B+5"
+      ]
+    ],
+    "frozen_predictions_changed": false,
+    "full_bhsm_completion_claimed": false,
+    "full_determinant_ready": false,
+    "full_self_adjoint_domain": null,
+    "gauge_couplings_derived": false,
+    "homogeneous_hessian": [
+      [
+        5,
+        -1
+      ],
+      [
+        -1,
+        5
+      ]
+    ],
+    "homogeneous_negative_modes": [],
+    "homogeneous_zero_modes": [],
+    "measured_masses_or_couplings_used": false,
+    "metric_stress_mixing": "nonzero formula open",
+    "mixed_berger_collar_modes": "trace/extension domain open",
+    "mixing_issue": "T lives on collar while Phi lives on Berger boundary; I_mix and its adjoint require a trace/extension map not derived",
+    "nonhomogeneous_berger_modes": "operator architecture only",
+    "official_prediction_logic_changed": false,
+    "orthogonal_mode": {
+      "eigenvalue": "6/L^2",
+      "ownership": "v5.10 finite reduced determinant",
+      "vector": "(1,-1)/sqrt(2)"
+    },
+    "parallel_mode": {
+      "eigenvalue": "4/L^2",
+      "ownership": "retained sigma_scale collective coordinate",
+      "vector": "(1,1)/sqrt(2)"
+    },
+    "particle_masses_derived": false,
+    "physical_casimir_energy_claimed": false,
+    "planck_hubble_cmb_or_cosmology_used": false,
+    "primary_result": "BHSM_QUADRATIC_OPERATOR_COMPLEX_PARTIAL",
+    "rare_b_predictions_claimed": false,
+    "sprint": "bhsm-full-geometric-gauge-fixed-hessian-v5-11",
+    "status": "HOMOGENEOUS_HESSIAN_EXACT_FULL_NONHOMOGENEOUS_DOMAIN_OPEN",
+    "v5_10_eigenvalue_recovered": true,
+    "version": "v5.11"
+  },
+  "second_variation": {
+    "absolute_unit_anchor_claimed": false,
+    "artifact": "BHSM_full_hessian_second_variation_block_map_v5_11",
+    "blocks": [
+      {
+        "adjoint_relation": "H_g,g=H_g,g^dagger where a common domain exists",
+        "coefficient_source": "v5.4 symbolic slot and v5.6 boundary/collar action",
+        "column": "g",
+        "differential_order": "2 or higher candidate",
+        "domain_codomain": "delta g -> dual(delta g)",
+        "formula": "kappa_geom L_geom plus H_surface[xi_perp] plus matter stress variations",
+        "leading_symbol": "tensor and normal-shape symbols; c_K2/c_S can increase boundary order",
+        "row": "g",
+        "status": "SOURCE_OPEN_SURFACE_MODE_EXPLICIT"
+      },
+      {
+        "adjoint_relation": "H_g,A=H_A,g^dagger where a common domain exists",
+        "coefficient_source": "background argument",
+        "column": "A",
+        "differential_order": "<=1",
+        "domain_codomain": "delta A -> dual(delta g)",
+        "formula": "0 at A0=0 if source-free",
+        "leading_symbol": "conditional zero",
+        "row": "g",
+        "status": "CONDITIONAL_ZERO"
+      },
+      {
+        "adjoint_relation": "H_g,psi=H_psi,g^dagger where a common domain exists",
+        "coefficient_source": "background argument",
+        "column": "psi",
+        "differential_order": "<=1",
+        "domain_codomain": "delta psi -> dual(delta g)",
+        "formula": "0 at psi0=0 for bilinear action",
+        "leading_symbol": "conditional zero",
+        "row": "g",
+        "status": "CONDITIONAL_ZERO"
+      },
+      {
+        "adjoint_relation": "H_g,ST=H_ST,g^dagger where a common domain exists",
+        "coefficient_source": "v5.4 scalar/topographic action",
+        "column": "ST",
+        "differential_order": "<=2",
+        "domain_codomain": "delta ST -> dual(delta g)",
+        "formula": "delta_g delta_ST S_ST (stress mixing)",
+        "leading_symbol": "mixed",
+        "row": "g",
+        "status": "NONZERO_FORMULA_OPEN"
+      },
+      {
+        "adjoint_relation": "H_g,ch=H_ch,g^dagger where a common domain exists",
+        "coefficient_source": "composite-background argument",
+        "column": "ch",
+        "differential_order": "0",
+        "domain_codomain": "delta ch -> dual(delta g)",
+        "formula": "0 at psi0=Jch0=0 conditionally",
+        "leading_symbol": "conditional zero",
+        "row": "g",
+        "status": "CONDITIONAL_ZERO"
+      },
+      {
+        "adjoint_relation": "H_g,nu=H_nu,g^dagger where a common domain exists",
+        "coefficient_source": "symbolic neutral response",
+        "column": "nu",
+        "differential_order": "open",
+        "domain_codomain": "delta nu -> dual(delta g)",
+        "formula": "delta_g delta_N S_neu",
+        "leading_symbol": "open",
+        "row": "g",
+        "status": "UNRESOLVED"
+      },
+      {
+        "adjoint_relation": "H_A,g=H_g,A^dagger where a common domain exists",
+        "coefficient_source": "background argument",
+        "column": "g",
+        "differential_order": "<=1",
+        "domain_codomain": "delta g -> dual(delta A)",
+        "formula": "(0 at A0=0 if source-free)^dagger",
+        "leading_symbol": "conditional zero",
+        "row": "A",
+        "status": "CONDITIONAL_ZERO"
+      },
+      {
+        "adjoint_relation": "H_A,A=H_A,A^dagger where a common domain exists",
+        "coefficient_source": "v5.4/v4.6 conditional gauge slot",
+        "column": "A",
+        "differential_order": "2",
+        "domain_codomain": "delta A -> dual(delta A)",
+        "formula": "(1/lambda_i)L_i(rho) before gauge fixing",
+        "leading_symbol": "adjoint one-form Laplace-type candidate",
+        "row": "A",
+        "status": "SYMBOLIC_SOURCE_SUPPORTED_DOMAIN_OPEN"
+      },
+      {
+        "adjoint_relation": "H_A,psi=H_psi,A^dagger where a common domain exists",
+        "coefficient_source": "background argument",
+        "column": "psi",
+        "differential_order": "0",
+        "domain_codomain": "delta psi -> dual(delta A)",
+        "formula": "0 at psi0=0",
+        "leading_symbol": "conditional zero",
+        "row": "A",
+        "status": "CONDITIONAL_ZERO"
+      },
+      {
+        "adjoint_relation": "H_A,ST=H_ST,A^dagger where a common domain exists",
+        "coefficient_source": "v5.4 term inventory",
+        "column": "ST",
+        "differential_order": "0",
+        "domain_codomain": "delta ST -> dual(delta A)",
+        "formula": "0 only for absence of explicit direct term in stored candidate",
+        "leading_symbol": "zero",
+        "row": "A",
+        "status": "SOURCE_LEDGER_ZERO"
+      },
+      {
+        "adjoint_relation": "H_A,ch=H_ch,A^dagger where a common domain exists",
+        "coefficient_source": "charged interaction",
+        "column": "ch",
+        "differential_order": "<=1",
+        "domain_codomain": "delta ch -> dual(delta A)",
+        "formula": "delta_A delta_ch S_ch",
+        "leading_symbol": "projected mixed",
+        "row": "A",
+        "status": "NONZERO_SOURCE_NORMALIZATION_OPEN"
+      },
+      {
+        "adjoint_relation": "H_A,nu=H_nu,A^dagger where a common domain exists",
+        "coefficient_source": "v5.4 term inventory",
+        "column": "nu",
+        "differential_order": "0",
+        "domain_codomain": "delta nu -> dual(delta A)",
+        "formula": "0 for no explicit direct term in stored candidate",
+        "leading_symbol": "zero",
+        "row": "A",
+        "status": "SOURCE_LEDGER_ZERO"
+      },
+      {
+        "adjoint_relation": "H_psi,g=H_g,psi^dagger where a common domain exists",
+        "coefficient_source": "background argument",
+        "column": "g",
+        "differential_order": "<=1",
+        "domain_codomain": "delta g -> dual(delta psi)",
+        "formula": "(0 at psi0=0 for bilinear action)^dagger",
+        "leading_symbol": "conditional zero",
+        "row": "psi",
+        "status": "CONDITIONAL_ZERO"
+      },
+      {
+        "adjoint_relation": "H_psi,A=H_A,psi^dagger where a common domain exists",
+        "coefficient_source": "background argument",
+        "column": "A",
+        "differential_order": "0",
+        "domain_codomain": "delta A -> dual(delta psi)",
+        "formula": "(0 at psi0=0)^dagger",
+        "leading_symbol": "conditional zero",
+        "row": "psi",
+        "status": "CONDITIONAL_ZERO"
+      },
+      {
+        "adjoint_relation": "H_psi,psi=H_psi,psi^dagger where a common domain exists",
+        "coefficient_source": "conditional v5.4 fermion slot",
+        "column": "psi",
+        "differential_order": "1",
+        "domain_codomain": "delta psi -> dual(delta psi)",
+        "formula": "zeta_psi D_BHSM",
+        "leading_symbol": "i gamma^A k_A",
+        "row": "psi",
+        "status": "ACTION_SOURCE_AND_DOMAIN_OPEN"
+      },
+      {
+        "adjoint_relation": "H_psi,ST=H_ST,psi^dagger where a common domain exists",
+        "coefficient_source": "source audit",
+        "column": "ST",
+        "differential_order": "open",
+        "domain_codomain": "delta ST -> dual(delta psi)",
+        "formula": "no closed Yukawa/topographic mass block",
+        "leading_symbol": "open",
+        "row": "psi",
+        "status": "UNRESOLVED_NOT_SET_ZERO"
+      },
+      {
+        "adjoint_relation": "H_psi,ch=H_ch,psi^dagger where a common domain exists",
+        "coefficient_source": "charged interaction",
+        "column": "ch",
+        "differential_order": "0",
+        "domain_codomain": "delta ch -> dual(delta psi)",
+        "formula": "charged projected bilinear variation",
+        "leading_symbol": "algebraic",
+        "row": "psi",
+        "status": "NONZERO_SOURCE_NORMALIZATION_OPEN"
+      },
+      {
+        "adjoint_relation": "H_psi,nu=H_nu,psi^dagger where a common domain exists",
+        "coefficient_source": "neutral interaction",
+        "column": "nu",
+        "differential_order": "0",
+        "domain_codomain": "delta nu -> dual(delta psi)",
+        "formula": "neutral projected bilinear variation",
+        "leading_symbol": "algebraic",
+        "row": "psi",
+        "status": "NONZERO_SOURCE_NORMALIZATION_OPEN"
+      },
+      {
+        "adjoint_relation": "H_ST,g=H_g,ST^dagger where a common domain exists",
+        "coefficient_source": "v5.4 scalar/topographic action",
+        "column": "g",
+        "differential_order": "<=2",
+        "domain_codomain": "delta g -> dual(delta ST)",
+        "formula": "(delta_g delta_ST S_ST (stress mixing))^dagger",
+        "leading_symbol": "mixed",
+        "row": "ST",
+        "status": "NONZERO_FORMULA_OPEN"
+      },
+      {
+        "adjoint_relation": "H_ST,A=H_A,ST^dagger where a common domain exists",
+        "coefficient_source": "v5.4 term inventory",
+        "column": "A",
+        "differential_order": "0",
+        "domain_codomain": "delta A -> dual(delta ST)",
+        "formula": "(0 only for absence of explicit direct term in stored candidate)^dagger",
+        "leading_symbol": "zero",
+        "row": "ST",
+        "status": "SOURCE_LEDGER_ZERO"
+      },
+      {
+        "adjoint_relation": "H_ST,psi=H_psi,ST^dagger where a common domain exists",
+        "coefficient_source": "source audit",
+        "column": "psi",
+        "differential_order": "open",
+        "domain_codomain": "delta psi -> dual(delta ST)",
+        "formula": "(no closed Yukawa/topographic mass block)^dagger",
+        "leading_symbol": "open",
+        "row": "ST",
+        "status": "UNRESOLVED_NOT_SET_ZERO"
+      },
+      {
+        "adjoint_relation": "H_ST,ST=H_ST,ST^dagger where a common domain exists",
+        "coefficient_source": "v5.7 homogeneous potential plus formal kinetic slots",
+        "column": "ST",
+        "differential_order": "2",
+        "domain_codomain": "delta ST -> dual(delta ST)",
+        "formula": "diag(-partial_rho^2+5,-Delta_B+5)+offdiag(-1)",
+        "leading_symbol": "diag(k_rho^2,|k_B|^2)",
+        "row": "ST",
+        "status": "HOMOGENEOUS_CLOSED_FULL_DOMAIN_OPEN"
+      },
+      {
+        "adjoint_relation": "H_ST,ch=H_ch,ST^dagger where a common domain exists",
+        "coefficient_source": "classification",
+        "column": "ch",
+        "differential_order": "open",
+        "domain_codomain": "delta ch -> dual(delta ST)",
+        "formula": "no independent ch field; induced composite variation",
+        "leading_symbol": "open",
+        "row": "ST",
+        "status": "NOT_INDEPENDENT_BLOCK"
+      },
+      {
+        "adjoint_relation": "H_ST,nu=H_nu,ST^dagger where a common domain exists",
+        "coefficient_source": "neutral response slot",
+        "column": "nu",
+        "differential_order": "open",
+        "domain_codomain": "delta nu -> dual(delta ST)",
+        "formula": "delta_ST delta_N S_neu",
+        "leading_symbol": "open",
+        "row": "ST",
+        "status": "NONZERO_FORMULA_OPEN"
+      },
+      {
+        "adjoint_relation": "H_ch,g=H_g,ch^dagger where a common domain exists",
+        "coefficient_source": "composite-background argument",
+        "column": "g",
+        "differential_order": "0",
+        "domain_codomain": "delta g -> dual(delta ch)",
+        "formula": "(0 at psi0=Jch0=0 conditionally)^dagger",
+        "leading_symbol": "conditional zero",
+        "row": "ch",
+        "status": "CONDITIONAL_ZERO"
+      },
+      {
+        "adjoint_relation": "H_ch,A=H_A,ch^dagger where a common domain exists",
+        "coefficient_source": "charged interaction",
+        "column": "A",
+        "differential_order": "<=1",
+        "domain_codomain": "delta A -> dual(delta ch)",
+        "formula": "(delta_A delta_ch S_ch)^dagger",
+        "leading_symbol": "projected mixed",
+        "row": "ch",
+        "status": "NONZERO_SOURCE_NORMALIZATION_OPEN"
+      },
+      {
+        "adjoint_relation": "H_ch,psi=H_psi,ch^dagger where a common domain exists",
+        "coefficient_source": "charged interaction",
+        "column": "psi",
+        "differential_order": "0",
+        "domain_codomain": "delta psi -> dual(delta ch)",
+        "formula": "(charged projected bilinear variation)^dagger",
+        "leading_symbol": "algebraic",
+        "row": "ch",
+        "status": "NONZERO_SOURCE_NORMALIZATION_OPEN"
+      },
+      {
+        "adjoint_relation": "H_ch,ST=H_ST,ch^dagger where a common domain exists",
+        "coefficient_source": "classification",
+        "column": "ST",
+        "differential_order": "open",
+        "domain_codomain": "delta ST -> dual(delta ch)",
+        "formula": "(no independent ch field; induced composite variation)^dagger",
+        "leading_symbol": "open",
+        "row": "ch",
+        "status": "NOT_INDEPENDENT_BLOCK"
+      },
+      {
+        "adjoint_relation": "H_ch,ch=H_ch,ch^dagger where a common domain exists",
+        "coefficient_source": "composite classification",
+        "column": "ch",
+        "differential_order": "n/a",
+        "domain_codomain": "delta ch -> dual(delta ch)",
+        "formula": "none as independent operator",
+        "leading_symbol": "n/a",
+        "row": "ch",
+        "status": "NO_INDEPENDENT_DETERMINANT"
+      },
+      {
+        "adjoint_relation": "H_ch,nu=H_nu,ch^dagger where a common domain exists",
+        "coefficient_source": "source audit",
+        "column": "nu",
+        "differential_order": "open",
+        "domain_codomain": "delta nu -> dual(delta ch)",
+        "formula": "not fixed by stored action",
+        "leading_symbol": "open",
+        "row": "ch",
+        "status": "UNRESOLVED"
+      },
+      {
+        "adjoint_relation": "H_nu,g=H_g,nu^dagger where a common domain exists",
+        "coefficient_source": "symbolic neutral response",
+        "column": "g",
+        "differential_order": "open",
+        "domain_codomain": "delta g -> dual(delta nu)",
+        "formula": "(delta_g delta_N S_neu)^dagger",
+        "leading_symbol": "open",
+        "row": "nu",
+        "status": "UNRESOLVED"
+      },
+      {
+        "adjoint_relation": "H_nu,A=H_A,nu^dagger where a common domain exists",
+        "coefficient_source": "v5.4 term inventory",
+        "column": "A",
+        "differential_order": "0",
+        "domain_codomain": "delta A -> dual(delta nu)",
+        "formula": "(0 for no explicit direct term in stored candidate)^dagger",
+        "leading_symbol": "zero",
+        "row": "nu",
+        "status": "SOURCE_LEDGER_ZERO"
+      },
+      {
+        "adjoint_relation": "H_nu,psi=H_psi,nu^dagger where a common domain exists",
+        "coefficient_source": "neutral interaction",
+        "column": "psi",
+        "differential_order": "0",
+        "domain_codomain": "delta psi -> dual(delta nu)",
+        "formula": "(neutral projected bilinear variation)^dagger",
+        "leading_symbol": "algebraic",
+        "row": "nu",
+        "status": "NONZERO_SOURCE_NORMALIZATION_OPEN"
+      },
+      {
+        "adjoint_relation": "H_nu,ST=H_ST,nu^dagger where a common domain exists",
+        "coefficient_source": "neutral response slot",
+        "column": "ST",
+        "differential_order": "open",
+        "domain_codomain": "delta ST -> dual(delta nu)",
+        "formula": "(delta_ST delta_N S_neu)^dagger",
+        "leading_symbol": "open",
+        "row": "nu",
+        "status": "NONZERO_FORMULA_OPEN"
+      },
+      {
+        "adjoint_relation": "H_nu,ch=H_ch,nu^dagger where a common domain exists",
+        "coefficient_source": "source audit",
+        "column": "ch",
+        "differential_order": "open",
+        "domain_codomain": "delta ch -> dual(delta nu)",
+        "formula": "(not fixed by stored action)^dagger",
+        "leading_symbol": "open",
+        "row": "nu",
+        "status": "UNRESOLVED"
+      },
+      {
+        "adjoint_relation": "H_nu,nu=H_nu,nu^dagger where a common domain exists",
+        "coefficient_source": "neutral response slot",
+        "column": "nu",
+        "differential_order": "open",
+        "domain_codomain": "delta nu -> dual(delta nu)",
+        "formula": "K_neu symbolic",
+        "leading_symbol": "open",
+        "row": "nu",
+        "status": "NORMALIZATION_DOMAIN_OPEN"
+      }
+    ],
+    "boundary_condition_selected_from_phenomenology": false,
+    "ckm_completion_claimed": false,
+    "claim_boundary": "v5.11 constructs the strongest source-qualified operator architecture and a finite gauge-bookkeeping diagnostic. Missing action sources, gauges, domains, boundary conditions, and eta data prevent a determinant-ready full complex.",
+    "empirical_inputs_used": false,
+    "existing_numerical_predictions_changed": false,
+    "field_order": [
+      "g",
+      "A",
+      "psi",
+      "ST",
+      "ch",
+      "nu"
+    ],
+    "frozen_predictions_changed": false,
+    "full_bhsm_completion_claimed": false,
+    "full_second_variation_derived": false,
+    "gauge_couplings_derived": false,
+    "hessian_equals_second_variation": "EXACT only for v5.7 homogeneous ST block; symbolic/source-qualified elsewhere",
+    "measured_masses_or_couplings_used": false,
+    "official_prediction_logic_changed": false,
+    "particle_masses_derived": false,
+    "physical_casimir_energy_claimed": false,
+    "planck_hubble_cmb_or_cosmology_used": false,
+    "primary_result": "BHSM_QUADRATIC_OPERATOR_COMPLEX_PARTIAL",
+    "rare_b_predictions_claimed": false,
+    "shape": [
+      6,
+      6
+    ],
+    "sprint": "bhsm-full-geometric-gauge-fixed-hessian-v5-11",
+    "status": "ALL_36_BLOCKS_CLASSIFIED_COMPLETE_FORMULAS_PARTIAL",
+    "version": "v5.11"
+  },
+  "sprint": "bhsm-full-geometric-gauge-fixed-hessian-v5-11",
+  "status": "BHSM_QUADRATIC_OPERATOR_COMPLEX_PARTIAL",
+  "still_requiring_new_mathematics": [
+    "OPEN_MISSING_ACTION_DERIVED_GEOMETRIC_HESSIAN",
+    "OPEN_MISSING_GEOMETRIC_FLUCTUATION_GAUGE_AND_DOMAIN",
+    "OPEN_MISSING_FULL_GAUGE_FIXED_DOMAIN",
+    "OPEN_MISSING_ACTION_DERIVED_GEOMETRIC_GAUGE_FUNCTIONAL",
+    "OPEN_MISSING_ABSOLUTE_BOUNDARY_TENSION_DENSITY_SOURCE",
+    "OPEN_MISSING_BOUNDARY_SHAPE_COEFFICIENT_VALUES",
+    "OPEN_MISSING_NORMAL_DISPLACEMENT_DOMAIN_AND_SPECTRUM",
+    "OPEN_MISSING_COMPATIBLE_GEOMETRIC_GHOST_BOUNDARY_CONDITIONS",
+    "OPEN_MISSING_ACTION_DERIVED_INTERNAL_GAUGE_FIXING",
+    "OPEN_MISSING_FADDEEV_POPOV_GHOST_OPERATOR",
+    "OPEN_MISSING_FULL_LOWER_ORDER_OPERATOR_TERMS",
+    "OPEN_MISSING_FERMION_DIRAC_OPERATOR_ACTION_SOURCE",
+    "OPEN_MISSING_FERMION_SELF_ADJOINT_DOMAIN",
+    "OPEN_MISSING_FERMION_DETERMINANT_PHASE_ETA_INVARIANT",
+    "OPEN_MISSING_NONHOMOGENEOUS_BERGER_PROFILE_SOLUTION",
+    "OPEN_MISSING_COUPLED_SCALAR_COLLAR_DOMAIN",
+    "OPEN_MISSING_CHARGED_CURRENT_QUADRATIC_OPERATOR",
+    "OPEN_MISSING_NEUTRAL_RESPONSE_NORMALIZATION",
+    "OPEN_MISSING_STRONG_ELLIPTICITY_WITH_BOUNDARY",
+    "OPEN_MISSING_COMPLETE_ZERO_MODE_JACOBIANS",
+    "OPEN_MISSING_GEOMETRIC_NEGATIVE_MODE_CLASSIFICATION",
+    "OPEN_MISSING_FIELD_THEORETIC_HEAT_KERNEL_COEFFICIENTS",
+    "OPEN_MISSING_COMPLETE_BERGER_HOPF_SPECTRAL_LEDGER",
+    "OPEN_MISSING_GLOBAL_SCALE_MODULUS_ACTION_SOURCE",
+    "OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR",
+    "OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT",
+    "OPEN_MISSING_ALPHA_I_ACTION_DERIVATION",
+    "OPEN_MISSING_G2_BH_ACTION_SOURCE",
+    "OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE",
+    "CKM_EXPONENT_NOT_DERIVED",
+    "OPEN_MISSING_NEUTRAL_SCALE",
+    "FULL_BHSM_NOT_COMPLETE"
+  ],
+  "v5_10_update": {
+    "determinant_ready_sectors": [
+      "finite homogeneous scalar/topographic diagnostic only"
+    ],
+    "full_one_loop_permitted": false,
+    "gauge_plus_ghost_one_loop_permitted": false,
+    "historical_one_mode_determinant_preserved": true,
+    "historical_result": "BHSM_QUANTUM_EFFECTIVE_ACTION_PARTIAL",
+    "matter_only_one_loop_permitted": false,
+    "promoted_to_official_effective_action": false,
+    "scalar_gauge_fermion_one_loop_permitted": false
+  },
+  "version": "v5.11",
+  "zero_negative": {
+    "absolute_unit_anchor_claimed": false,
+    "artifact": "BHSM_full_hessian_zero_negative_modes_v5_11",
+    "boundary_condition_selected_from_phenomenology": false,
+    "ckm_completion_claimed": false,
+    "claim_boundary": "v5.11 constructs the strongest source-qualified operator architecture and a finite gauge-bookkeeping diagnostic. Missing action sources, gauges, domains, boundary conditions, and eta data prevent a determinant-ready full complex.",
+    "collective_metric": {
+      "L": "dL^2/L^2",
+      "a_Berger": null,
+      "rho_star": null,
+      "sigma_scale": "d sigma^2"
+    },
+    "determinant_prime_prescription": "remove only proven gauge kernels; retain physical collective coordinates and include their Jacobians",
+    "empirical_inputs_used": false,
+    "existing_numerical_predictions_changed": false,
+    "frozen_predictions_changed": false,
+    "full_bhsm_completion_claimed": false,
+    "gauge_couplings_derived": false,
+    "jacobian": {
+      "L_sigma": "dL/L d sigma_scale",
+      "a_Berger": null,
+      "rho_star": null
+    },
+    "measured_masses_or_couplings_used": false,
+    "negative_modes": [
+      {
+        "count": null,
+        "discarded": false,
+        "interpretation": "Euclidean conformal issue versus off-shell instability unresolved",
+        "sector": "geometry conformal"
+      },
+      {
+        "count": null,
+        "discarded": false,
+        "interpretation": "stable/zero/negative classification requires T_boundary, shape coefficients, embedding, and domain",
+        "sector": "normal displacement xi_perp"
+      },
+      {
+        "count": null,
+        "discarded": false,
+        "interpretation": "off-shell background and boundary data unresolved",
+        "sector": "Berger squashing/collar"
+      },
+      {
+        "count": 0,
+        "discarded": false,
+        "interpretation": "eigenvalues 4,6 positive in reduced domain",
+        "sector": "scalar homogeneous"
+      },
+      {
+        "count": null,
+        "discarded": false,
+        "interpretation": "domain/spectrum open",
+        "sector": "scalar nonhomogeneous"
+      },
+      {
+        "count": null,
+        "discarded": false,
+        "interpretation": "operator sources open",
+        "sector": "charged/neutral"
+      }
+    ],
+    "negative_modes_silently_removed": false,
+    "official_prediction_logic_changed": false,
+    "particle_masses_derived": false,
+    "physical_casimir_energy_claimed": false,
+    "planck_hubble_cmb_or_cosmology_used": false,
+    "primary_result": "BHSM_QUADRATIC_OPERATOR_COMPLEX_PARTIAL",
+    "rare_b_predictions_claimed": false,
+    "sprint": "bhsm-full-geometric-gauge-fixed-hessian-v5-11",
+    "status": "ZERO_NEGATIVE_LEDGER_EXPLICIT_TREATMENT_PARTIAL",
+    "version": "v5.11",
+    "zero_modes": [
+      {
+        "mode": "diffeomorphism directions",
+        "treatment": "candidate FP quotient; boundary-compatible projection open",
+        "type": "pure gauge"
+      },
+      {
+        "mode": "internal D_i epsilon_i",
+        "treatment": "candidate FP quotient; residual global kernel prime needed",
+        "type": "pure gauge"
+      },
+      {
+        "mode": "Killing/Berger isometry stabilizer",
+        "treatment": "group-volume/Jacobian open",
+        "type": "residual gauge/isometry"
+      },
+      {
+        "mode": "global L",
+        "treatment": "retain; v5.9 measure dL/L",
+        "type": "physical classical modulus/collective coordinate"
+      },
+      {
+        "mode": "a_Berger,rho_star",
+        "treatment": "retain; metrics/Jacobians open",
+        "type": "candidate collective moduli"
+      },
+      {
+        "mode": "sigma_scale",
+        "treatment": "not determinant-owned in v5.10 hierarchy",
+        "type": "retained collective coordinate but not zero of v5.7 Hessian"
+      },
+      {
+        "mode": "fermion/index/topological",
+        "treatment": "index and eta ledger required",
+        "type": "unresolved"
+      },
+      {
+        "mode": "lowest xi_perp surface mode",
+        "treatment": "retain; lambda_surface crossing is a candidate release threshold, not a gauge deletion",
+        "type": "physical boundary-shape candidate"
+      }
+    ]
+  }
+}

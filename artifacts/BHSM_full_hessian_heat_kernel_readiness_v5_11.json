@@ -1,0 +1,114 @@
+{
+  "absolute_unit_anchor_claimed": false,
+  "artifact": "BHSM_full_hessian_heat_kernel_readiness_v5_11",
+  "boundary_condition_selected_from_phenomenology": false,
+  "ckm_completion_claimed": false,
+  "claim_boundary": "v5.11 constructs the strongest source-qualified operator architecture and a finite gauge-bookkeeping diagnostic. Missing action sources, gauges, domains, boundary conditions, and eta data prevent a determinant-ready full complex.",
+  "empirical_inputs_used": false,
+  "existing_numerical_predictions_changed": false,
+  "frozen_predictions_changed": false,
+  "full_bhsm_completion_claimed": false,
+  "gauge_couplings_derived": false,
+  "measured_masses_or_couplings_used": false,
+  "official_prediction_logic_changed": false,
+  "particle_masses_derived": false,
+  "physical_casimir_energy_claimed": false,
+  "planck_hubble_cmb_or_cosmology_used": false,
+  "primary_result": "BHSM_QUADRATIC_OPERATOR_COMPLEX_PARTIAL",
+  "rare_b_predictions_claimed": false,
+  "reason": "No complete closed differential operator and compatible boundary complex exists.",
+  "requested_coefficients": [
+    "a_0",
+    "a_1/2",
+    "a_1",
+    "a_3/2",
+    "a_2"
+  ],
+  "rows": [
+    {
+      "E": null,
+      "Robin_endomorphism": null,
+      "boundary_projector": null,
+      "bundle_rank": null,
+      "connection_curvature": null,
+      "laplace_form": "candidate",
+      "multiplicity": null,
+      "readiness": "OPERATOR_SOURCE_OPEN",
+      "sector": "geometry",
+      "sign": 1
+    },
+    {
+      "E": null,
+      "Robin_endomorphism": null,
+      "boundary_projector": null,
+      "bundle_rank": "adjoint one-form ranks 1,3,8 times geometry",
+      "connection_curvature": "background F_i candidate",
+      "laplace_form": "candidate -(nabla^2+E_i)",
+      "multiplicity": "symbolic",
+      "readiness": "OPERATOR_SOURCE_OPEN",
+      "sector": "internal gauge",
+      "sign": 1
+    },
+    {
+      "E": null,
+      "Robin_endomorphism": null,
+      "boundary_projector": null,
+      "bundle_rank": "vector plus 1+3+8",
+      "connection_curvature": "candidate",
+      "laplace_form": "candidate -(nabla^2+E_FP)",
+      "multiplicity": "complex Grassmann convention open",
+      "readiness": "OPERATOR_SOURCE_OPEN",
+      "sector": "ghosts",
+      "sign": -1
+    },
+    {
+      "E": null,
+      "Robin_endomorphism": null,
+      "boundary_projector": null,
+      "bundle_rank": null,
+      "connection_curvature": null,
+      "laplace_form": "conditional D^dagger D=-(nabla^2+E_D)",
+      "multiplicity": null,
+      "readiness": "OPERATOR_SOURCE_OPEN",
+      "sector": "fermion square",
+      "sign": -1
+    },
+    {
+      "E": [
+        [
+          5,
+          -1
+        ],
+        [
+          -1,
+          5
+        ]
+      ],
+      "Robin_endomorphism": "reduced zero-flux",
+      "boundary_projector": "v5.7 reduced Robin",
+      "bundle_rank": 2,
+      "connection_curvature": "n/a",
+      "laplace_form": "finite 2x2 matrix; not a field heat-kernel operator",
+      "multiplicity": 1,
+      "readiness": "EXACT_FINITE_MATRIX_NOT_HEAT_KERNEL_READY",
+      "sector": "scalar/topographic homogeneous",
+      "sign": 1
+    },
+    {
+      "E": "tension, curvature, pressure, collar, scalar, and valid quantum lower terms open",
+      "Robin_endomorphism": null,
+      "boundary_projector": null,
+      "bundle_rank": 1,
+      "connection_curvature": "normal-bundle/induced connection open",
+      "laplace_form": "not generically Laplace type when K^2/Tr(S^2) generate fourth-order shape terms",
+      "multiplicity": 1,
+      "readiness": "OPERATOR_SOURCE_OPEN",
+      "sector": "normal displacement xi_perp",
+      "sign": 1
+    }
+  ],
+  "sprint": "bhsm-full-geometric-gauge-fixed-hessian-v5-11",
+  "status": "HEAT_KERNEL_INPUT_LEDGER_PARTIAL_NO_TOTAL_COEFFICIENTS",
+  "total_coefficients_calculated": false,
+  "version": "v5.11"
+}

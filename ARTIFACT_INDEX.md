@@ -445,3 +445,28 @@ Primary result: `BHSM_QUANTUM_EFFECTIVE_ACTION_PARTIAL`.
 | `artifacts/BHSM_quantum_effective_action_casimir_backreaction_report_v5_10.json` | `BHSM_QUANTUM_EFFECTIVE_ACTION_PARTIAL` | Final report with derived, conditional, invalidated, open, and claim-boundary statuses. |
 
 Doctrine: `docs/bhsm_quantum_effective_action_casimir_backreaction_v5_10.md`.
+
+<!-- BHSM_FULL_GEOMETRIC_GAUGE_FIXED_HESSIAN_V5_11 -->
+## Full geometric and gauge-fixed Hessian v5.11
+
+Primary result: `BHSM_QUADRATIC_OPERATOR_COMPLEX_PARTIAL`.
+
+| Artifact | Purpose |
+|---|---|
+| `artifacts/BHSM_full_hessian_field_gauge_symmetry_ledger_v5_11.json` | Complete field and symmetry inventory. |
+| `artifacts/BHSM_full_hessian_background_stationarity_v5_11.json` | Background, tadpole, and stationarity ledger. |
+| `artifacts/BHSM_full_hessian_second_variation_block_map_v5_11.json` | Source-qualified map of all 36 Hessian blocks. |
+| `artifacts/BHSM_full_hessian_geometric_gauge_ghost_v5_11.json` | Geometric gauge/ghost and conformal-mode audit. |
+| `artifacts/BHSM_full_hessian_primordial_boundary_tension_surface_mode_v5_11.json` | Candidate vacuum boundary tension, stress, normal shape equation, surface Hessian, release threshold, and scale classification. |
+| `artifacts/BHSM_full_hessian_internal_gauge_ghost_v5_11.json` | Internal gauge/ghost architecture. |
+| `artifacts/BHSM_full_hessian_fermion_dirac_domain_eta_v5_11.json` | Dirac, domain, current, index, and eta ledger. |
+| `artifacts/BHSM_full_hessian_scalar_topographic_v5_11.json` | Formal full scalar matrix and exact homogeneous reduction. |
+| `artifacts/BHSM_full_hessian_charged_neutral_classification_v5_11.json` | Charged/neutral determinant ownership. |
+| `artifacts/BHSM_full_hessian_boundary_self_adjointness_v5_11.json` | Boundary forms and adjoint-domain audit. |
+| `artifacts/BHSM_full_hessian_principal_symbol_ellipticity_v5_11.json` | Principal symbols and strong ellipticity status. |
+| `artifacts/BHSM_full_hessian_zero_negative_modes_v5_11.json` | Zero, collective, and negative-mode accounting. |
+| `artifacts/BHSM_full_hessian_heat_kernel_readiness_v5_11.json` | Laplace-form input readiness. |
+| `artifacts/BHSM_full_hessian_reduced_operator_complex_v5_11.json` | Finite gauge/ghost consistency model. |
+| `artifacts/BHSM_full_geometric_gauge_fixed_hessian_report_v5_11.json` | Focused construction report and next sprint. |
+
+Doctrine: `docs/bhsm_full_geometric_gauge_fixed_hessian_v5_11.md`.
