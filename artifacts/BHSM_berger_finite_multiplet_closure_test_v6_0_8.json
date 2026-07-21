@@ -1,0 +1,79 @@
+{
+  "absolute_scale_derived": false,
+  "action_result": "BHSM_TWISTOR_MEDIATED_REDUCTION_REQUIRES_ACTION_NORMALIZATION",
+  "artifact": "BHSM_berger_finite_multiplet_closure_test_v6_0_8",
+  "claim_boundary": "The nested geometry, associated eigenspace bundles, scalar linear operator, and harmonic branching are mathematical constructions. Parent-action normalization, nonlinear effective closure, physical gauge interpretation, particle identification, and absolute units remain separate dependencies.",
+  "connection_transport": "closes exactly in rho_J and preserves m",
+  "constructive_routes": [
+    "linear covariant multiplet theory",
+    "action-selected vanishing overlap tensors",
+    "spectral-gap controlled effective truncation",
+    "adiabatic tower integration",
+    "symmetry-protected finite sector"
+  ],
+  "exact_reason": "a retained highest spin J>0 produces a higher highest-spin Clebsch-Gordan channel under generic products",
+  "examples": {
+    "doublet_linear": {
+      "generated_maximum_two_j": 1,
+      "generic_exact_closure": true,
+      "polynomial_degree": 1,
+      "reason": "constants or a linear operator close exactly",
+      "retained_two_j": [
+        1
+      ]
+    },
+    "doublet_quadratic": {
+      "generated_maximum_two_j": 2,
+      "generic_exact_closure": false,
+      "polynomial_degree": 2,
+      "reason": "the highest Clebsch-Gordan channel exceeds the retained maximum",
+      "retained_two_j": [
+        0,
+        1
+      ]
+    },
+    "singlet_quartic_eom": {
+      "generated_maximum_two_j": 0,
+      "generic_exact_closure": true,
+      "polynomial_degree": 3,
+      "reason": "constants or a linear operator close exactly",
+      "retained_two_j": [
+        0
+      ]
+    },
+    "spin_one_cubic": {
+      "generated_maximum_two_j": 6,
+      "generic_exact_closure": false,
+      "polynomial_degree": 3,
+      "reason": "the highest Clebsch-Gordan channel exceeds the retained maximum",
+      "retained_two_j": [
+        0,
+        2
+      ]
+    }
+  },
+  "frozen_predictions_changed": false,
+  "full_bhsm_completion_claimed": false,
+  "generic_finite_nontrivial_polynomial_closure": false,
+  "generic_requirement": "infinite harmonic tower",
+  "linear_multiplet_result": "BHSM_BERGER_COVARIANT_LINEAR_MULTIPLET_REDUCTION_DERIVED",
+  "linear_operator": "each fixed (J,m) associated multiplet closes exactly",
+  "measured_input_used": false,
+  "metric_result": "BHSM_TWISTOR_MEDIATED_BERGER_METRIC_DERIVED",
+  "nonlinear_closure_result": "BHSM_GENERIC_NONLINEAR_FINITE_MULTIPLET_REQUIRES_TOWER",
+  "nonlinear_rule": "V_J1 tensor V_J2 contains spins |J1-J2| through J1+J2 and right weights add",
+  "official_prediction_logic_changed": false,
+  "particle_or_generation_identification_made": false,
+  "physical_gauge_coupling_derived": false,
+  "primary_result": "BHSM_BERGER_COVARIANT_MULTIPLET_ARCHITECTURE_DERIVED",
+  "s4_identified_as_physical_spacetime": false,
+  "section_of_cp3_to_s4_assumed": false,
+  "sprint": "bhsm-twistor-mediated-berger-associated-bundle-v6-0-8",
+  "standalone_scalar_failure_generalized_to_multiplets": false,
+  "standard_model_gauge_group_derived": false,
+  "status": "BHSM_BERGER_COVARIANT_MULTIPLET_REDUCTION_DERIVED_CONDITIONALLY",
+  "u1_bundle_over_cp3_confused_with_reduction_over_s4": false,
+  "v5_number_used_as_parent_input": false,
+  "v6_0_7_topology_theorem_preserved": true,
+  "version": "v6.0.8"
+}

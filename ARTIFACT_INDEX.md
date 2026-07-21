@@ -659,3 +659,26 @@ direct scalar reduction over `S4`; they do not exclude the nested
 | `artifacts/BHSM_b8_s7_to_berger_s3_reduction_report_v6_0_7.json` | Final obstruction verdict, stop condition, and next branch. |
 
 Doctrine: `docs/bhsm_b8_s7_to_berger_s3_reduction_theorem_v6_0_7.md`.
+
+<!-- BHSM_TWISTOR_BERGER_ASSOCIATED_BUNDLE_V6_0_8 -->
+## Twistor-mediated Berger associated-bundle construction v6.0.8
+
+| Artifact | Purpose |
+|---|---|
+| `artifacts/BHSM_nested_global_distribution_theorem_v6_0_8.json` | Derives the global orthogonal `4+2+1` splitting, transitions, integrability, curvature, and orientation. |
+| `artifacts/BHSM_twistor_mediated_s3_reconstruction_v6_0_8.json` | Proves the nested preimage identity and reconstructs the complete `S1->S3->S2` fiber. |
+| `artifacts/BHSM_global_nested_twistor_berger_metric_v6_0_8.json` | Constructs the global nested metric and classifies its generic and enhanced symmetries. |
+| `artifacts/BHSM_twistor_berger_fiber_metric_recovery_v6_0_8.json` | Recovers the repository Berger metric and exact scalar spectral splitting. |
+| `artifacts/BHSM_berger_fiberwise_hilbert_bundle_v6_0_8.json` | Constructs finite-rank fiberwise eigenspace bundles and reality pairing. |
+| `artifacts/BHSM_associated_bundle_transition_connection_ledger_v6_0_8.json` | Fixes transition, connection, curvature, inner-product, and weight-transport laws. |
+| `artifacts/BHSM_berger_covariant_reduced_operator_v6_0_8.json` | Derives the minimally coupled scalar multiplet operator and scopes other endomorphisms. |
+| `artifacts/BHSM_berger_finite_multiplet_closure_test_v6_0_8.json` | Separates exact linear closure from generic nonlinear tower generation. |
+| `artifacts/BHSM_so8_sp2_sp1_u1_branching_extension_v6_0_8.json` | Gives the general round-S7 scalar branching formula and U(1) weights. |
+| `artifacts/BHSM_twistor_berger_multiplet_action_reduction_v6_0_8.json` | Reduces the provisional P1 scalar/action structure in covariant multiplet language. |
+| `artifacts/BHSM_v5_berger_engine_global_reinterpretation_v6_0_8.json` | Reinterprets exact fiberwise calculations globally without promoting effective ledgers. |
+| `artifacts/BHSM_twistor_berger_gauge_forward_link_v6_0_8.json` | Records the geometric connection precursor and its open normalization. |
+| `artifacts/BHSM_twistor_berger_scalar_topographic_forward_link_v6_0_8.json` | Separates the singlet, moduli, boundary, and topographic possibilities. |
+| `artifacts/BHSM_twistor_berger_coefficient_scale_ledger_v6_0_8.json` | Tracks coefficient sources, convention bridges, ratios, and the open common scale. |
+| `artifacts/BHSM_twistor_berger_associated_bundle_report_v6_0_8.json` | Final constructive result, exact constraints, and next action-normalization dependency. |
+
+Doctrine: `docs/bhsm_twistor_berger_associated_bundle_v6_0_8.md`.
