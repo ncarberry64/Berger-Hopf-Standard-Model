@@ -1,6 +1,6 @@
 # BHSM v6.0.7 B8/S7-to-Berger-S3 Reduction Theorem
 
-## Verdict
+## Mathematical theorem and constructive architecture
 
 Primary result:
 
@@ -13,9 +13,21 @@ Subsidiary results:
 - `BHSM_BERGER_CONSISTENT_TRUNCATION_FAILED` for the existing standalone
   scalar-mode interpretation.
 
-The nested topology and intrinsic Berger-fiber formulas close. The full
-global reduction does not. The obstruction is not a numerical mismatch: it is
-the nonzero second Chern class of the quaternionic Hopf bundle.
+Program architecture results:
+
+- `BHSM_TWISTOR_MEDIATED_BERGER_ROUTE_SELECTED`;
+- `BHSM_BERGER_ASSOCIATED_BUNDLE_FORMULATION_REQUIRED`;
+- `BHSM_DIRECT_FIXED_AXIS_REDUCTION_EXCLUDED`.
+
+The exact obstruction concerns a direct global fixed-axis scalar reduction
+over `S4`. It does not obstruct Berger geometry, the nested Hopf structure,
+the use of each `S3` fiber, or the twistor-mediated route.
+
+The complete family of `U(1)` directions is encoded globally by
+`S2 -> CP3 -> S4`, while `S1 -> S7 -> CP3` supplies the global circle bundle.
+Together they retain the full `S1`-over-`S2` structure of every quaternionic
+`S3` fiber without choosing a section of `CP3 -> S4`. This selects the nested
+twistor architecture and associated-bundle fields as the constructive route.
 
 ## Topological conventions
 
@@ -291,15 +303,15 @@ by a stationarity theorem. Under a common rescaling all ratios remain fixed,
 while curvatures and eigenvalues scale as `lambda^-2` and volumes with their
 dimensions. The common modulus and absolute unit remain open.
 
-## Stop condition
+## Route condition
 
 Completion gate:
 
-`V6_0_7_STOP_GLOBAL_U1_OBSTRUCTION_ASSOCIATED_BUNDLE_REQUIRED`
+`V6_0_7_DIRECT_FIXED_AXIS_ROUTE_STOPS_ASSOCIATED_BUNDLE_ROUTE_CONTINUES`
 
 Recommended next branch:
 
-`bhsm-berger-associated-bundle-mode-theorem-v6-0-8`
+`bhsm-twistor-mediated-berger-associated-bundle-v6-0-8`
 
 No measured input, frozen-output change, particle derivation, gauge-coupling
 derivation, absolute-scale generation, or full-BHSM claim is made.

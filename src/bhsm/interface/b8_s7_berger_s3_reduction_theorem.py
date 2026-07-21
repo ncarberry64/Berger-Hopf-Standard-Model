@@ -14,6 +14,9 @@ PRIMARY_RESULT = "BHSM_B8_S7_TO_BERGER_S3_REDUCTION_OBSTRUCTED"
 U1_RESULT = "BHSM_SP1_TO_U1_REDUCTION_TOPOLOGICALLY_OBSTRUCTED"
 GLOBALIZATION_RESULT = "BHSM_BERGER_MODE_ASSOCIATED_BUNDLE_MAP_DERIVED"
 TRUNCATION_RESULT = "BHSM_BERGER_CONSISTENT_TRUNCATION_FAILED"
+ARCHITECTURE_RESULT = "BHSM_TWISTOR_MEDIATED_BERGER_ROUTE_SELECTED"
+FORMULATION_RESULT = "BHSM_BERGER_ASSOCIATED_BUNDLE_FORMULATION_REQUIRED"
+DIRECT_ROUTE_RESULT = "BHSM_DIRECT_FIXED_AXIS_REDUCTION_EXCLUDED"
 
 ARTIFACT_FILES = {
     "bundle": "BHSM_quaternionic_hopf_bundle_convention_ledger_v6_0_7.json",
@@ -70,10 +73,14 @@ def _common(artifact: str) -> dict[str, Any]:
         "sp1_to_u1_result": U1_RESULT,
         "mode_globalization_result": GLOBALIZATION_RESULT,
         "consistent_truncation_result": TRUNCATION_RESULT,
+        "program_architecture_result": ARCHITECTURE_RESULT,
+        "required_formulation_result": FORMULATION_RESULT,
+        "direct_route_result": DIRECT_ROUTE_RESULT,
         "claim_boundary": (
-            "v6.0.7 proves the global U(1)-reduction obstruction and the "
-            "associated-bundle globalization rule. A local Berger fiber metric "
-            "does not close the operator, action, coefficient, or physical-boundary reduction."
+            "v6.0.7 excludes only a direct global fixed-axis scalar reduction over S4. "
+            "It selects the nested S7-to-CP3-to-S4 twistor route and requires "
+            "associated-bundle modes. It does not by itself close the operator, "
+            "action, coefficient, or physical-boundary reduction."
         ),
         **GUARDS,
     }
@@ -501,14 +508,15 @@ def report_payload() -> dict[str, Any]:
     return {
         **_common("BHSM_b8_s7_to_berger_s3_reduction_report_v6_0_7"),
         "status": PRIMARY_RESULT,
-        "central_answer": "The nested topology and local Berger fiber restriction are exact, and nontrivial fiber modes globalize as associated-bundle sections. However the charge-one Sp(1) Hopf bundle over S4 admits no global U(1) reduction: such a reduction would split E as L plus L^-1, but H2(S4)=0 would force c2(E)=0, contradicting c2(E)=1. Consequently a distinguished Berger axis is not a gauge-independent global field over S4. The legacy scalar-only Berger mode engine also fails the exact consistent-truncation gate because connection, base, stress, nonlinear, representation, action, normalization, and coefficient maps remain open. The full B8/S7-to-Berger-S3 reduction is therefore obstructed.",
+        "central_answer": "The exact obstruction applies to a direct global fixed-axis scalar reduction over S4: the charge-one Sp(1) Hopf bundle admits no global U(1) reduction because a splitting E=L plus L^-1 would force c2(E)=0, contradicting c2(E)=1. The obstruction does not remove Berger geometry or the nested Hopf sequence. Instead it selects the global twistor-mediated architecture S1->S7->CP3 and S2->CP3->S4, which retains the complete S1-over-S2 Hopf geometry inside every S3 fiber without assuming a section of CP3->S4. Nontrivial modes must be associated-bundle sections. The legacy standalone-scalar truncation remains excluded, while the covariant nested program continues.",
         "derived": ["4+2+1 rank split without double counting", "Sp(1)-to-U(1) characteristic-class obstruction", "repository-coframe Berger fiber metric, volume, Ricci, scalar-curvature, and round-limit formulas", "pointwise scaled Hodge product formula", "fiber-mode associated-bundle globalization theorem", "exact low-level ell=0,1,2 branching dimension checks", "boundary/fiber/normal firewall"],
         "derived_conditionally": ["global total-space anisotropic metric after a fixed U1 subgroup choice", "measure pushforward and Hodge decomposition after orientation/normalization", "scalar, gauge, Dirac, and Lovelock reduction structures"],
-        "reclassified": ["legacy Berger-S3 engine as an independent homogeneous effective model or future associated-bundle sector", "nontrivial fiber labels as local representation data rather than global scalar labels", "nested CP3 twistor space as P/U1, not a U1 reduction section"],
+        "architecture_selected": ["S1->S7->CP3 followed by S2->CP3->S4", "fiberwise reconstruction F_x=p_C^-1(tau^-1(x))=p_H^-1(x)", "Berger modes as associated-bundle sections", "covariant multiplet rather than standalone-scalar reduction"],
+        "reclassified": ["legacy Berger-S3 engine as an exact intrinsic fiber operator and candidate associated-bundle sector", "nontrivial fiber labels as local representation data rather than global scalar labels", "nested CP3 twistor space as P/U1, not a U1 reduction section"],
         "invalidated": ["eta_3 as a globally preferred adjoint direction by coordinate choice", "local fiber restriction as proof of a lower-dimensional theory", "Delta_S7=Delta_S4+Delta_S3 without correction terms", "numeric eigenvalue matching as representation branching", "Hopf fiber as physical B8 boundary", "v5 coefficient recovery by target matching", "absolute-scale generation from unit radius"],
         "still_requiring_new_mathematics": ["associated-bundle field/mode theorem with normalized intertwiners", "general SO8-to-Hopf branching", "controlled effective rather than exact truncation", "selected parent Lovelock action and stationary metric", "parent scalar/gauge/fermion sources", "physical measure and coefficient normalization", "parent-to-v5 action/domain map"],
-        "completion_gate_status": "V6_0_7_STOP_GLOBAL_U1_OBSTRUCTION_ASSOCIATED_BUNDLE_REQUIRED",
-        "recommended_next_branch": "bhsm-berger-associated-bundle-mode-theorem-v6-0-8",
+        "completion_gate_status": "V6_0_7_DIRECT_FIXED_AXIS_ROUTE_STOPS_ASSOCIATED_BUNDLE_ROUTE_CONTINUES",
+        "recommended_next_branch": "bhsm-twistor-mediated-berger-associated-bundle-v6-0-8",
     }
 
 
@@ -551,6 +559,8 @@ def reduction_status_to_markdown(report: dict[str, Any]) -> str:
         f"Structure-group result: `{report['sp1_to_u1_result']}`.",
         f"Mode result: `{report['mode_globalization_result']}`.",
         f"Truncation result: `{report['consistent_truncation_result']}`.",
+        f"Program architecture: `{report['program_architecture_result']}`.",
+        f"Required formulation: `{report['required_formulation_result']}`.",
         "",
         report["central_answer"],
         "",

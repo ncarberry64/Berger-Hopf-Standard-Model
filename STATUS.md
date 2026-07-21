@@ -808,6 +808,12 @@ Command: `python -m bhsm.interface correspondence-novelty-firewall-status --form
 
 Primary result: `BHSM_B8_S7_TO_BERGER_S3_REDUCTION_OBSTRUCTED`.
 
+This exact theorem result is scoped to the direct global fixed-axis scalar
+reduction over `S4`. Program architecture results are
+`BHSM_TWISTOR_MEDIATED_BERGER_ROUTE_SELECTED`,
+`BHSM_BERGER_ASSOCIATED_BUNDLE_FORMULATION_REQUIRED`, and
+`BHSM_DIRECT_FIXED_AXIS_REDUCTION_EXCLUDED`.
+
 Subsidiary results:
 `BHSM_SP1_TO_U1_REDUCTION_TOPOLOGICALLY_OBSTRUCTED`,
 `BHSM_BERGER_MODE_ASSOCIATED_BUNDLE_MAP_DERIVED`, and
@@ -827,7 +833,12 @@ general representation branching, parent action reduction, physical measure,
 and every parent-to-v5 coefficient source remain open. The Hopf fiber is also
 kept distinct from a B8 or physical-spacetime boundary.
 
+The obstruction does not remove the nested program: `S1 -> S7 -> CP3` and
+`S2 -> CP3 -> S4` retain the complete circle-over-two-sphere geometry of each
+`S3` fiber without assuming a section of `CP3 -> S4`. The constructive program
+therefore continues through twistor-mediated associated-bundle modes.
+
 Completion gate:
-`V6_0_7_STOP_GLOBAL_U1_OBSTRUCTION_ASSOCIATED_BUNDLE_REQUIRED`.
+`V6_0_7_DIRECT_FIXED_AXIS_ROUTE_STOPS_ASSOCIATED_BUNDLE_ROUTE_CONTINUES`.
 
 Command: `python -m bhsm.interface b8-s7-berger-s3-reduction-status --format markdown`.

@@ -629,6 +629,12 @@ Doctrine: `docs/bhsm_correspondence_novelty_firewall_v6_0_6.md`.
 <!-- BHSM_B8_S7_BERGER_S3_REDUCTION_THEOREM_V6_0_7 -->
 ## B8/S7-to-Berger-S3 reduction theorem v6.0.7
 
+Constructive interpretation: the exact fixed-axis obstruction selects
+`BHSM_TWISTOR_MEDIATED_BERGER_ROUTE_SELECTED` and
+`BHSM_BERGER_ASSOCIATED_BUNDLE_FORMULATION_REQUIRED`. The artifacts exclude a
+direct scalar reduction over `S4`; they do not exclude the nested
+`S1 -> S7 -> CP3`, `S2 -> CP3 -> S4` program.
+
 | Artifact | Purpose |
 |---|---|
 | `artifacts/BHSM_quaternionic_hopf_bundle_convention_ledger_v6_0_7.json` | Fixes bundle, connection, curvature, transition, and orientation conventions. |

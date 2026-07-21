@@ -519,3 +519,8 @@ theorem, and `BHSM_BERGER_MODE_ASSOCIATED_BUNDLE_MAP_DERIVED`. It preserves
 the local intrinsic Berger formulas while refusing to promote them to a
 global consistent truncation, parent action, coefficient map, physical
 boundary, particle sector, or absolute scale.
+
+The obstruction is specifically the direct fixed-axis scalar route over
+`S4`. The command also reports `BHSM_TWISTOR_MEDIATED_BERGER_ROUTE_SELECTED`
+and `BHSM_BERGER_ASSOCIATED_BUNDLE_FORMULATION_REQUIRED`: the nested
+`S7 -> CP3 -> S4` route continues without assuming a twistor section.

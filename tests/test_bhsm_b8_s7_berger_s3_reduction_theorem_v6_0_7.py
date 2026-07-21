@@ -40,6 +40,9 @@ def test_package_has_twenty_mission_essential_artifacts_and_guards():
         assert payload["sp1_to_u1_result"] == "BHSM_SP1_TO_U1_REDUCTION_TOPOLOGICALLY_OBSTRUCTED", key
         assert payload["mode_globalization_result"] == "BHSM_BERGER_MODE_ASSOCIATED_BUNDLE_MAP_DERIVED", key
         assert payload["consistent_truncation_result"] == "BHSM_BERGER_CONSISTENT_TRUNCATION_FAILED", key
+        assert payload["program_architecture_result"] == "BHSM_TWISTOR_MEDIATED_BERGER_ROUTE_SELECTED", key
+        assert payload["required_formulation_result"] == "BHSM_BERGER_ASSOCIATED_BUNDLE_FORMULATION_REQUIRED", key
+        assert payload["direct_route_result"] == "BHSM_DIRECT_FIXED_AXIS_REDUCTION_EXCLUDED", key
         assert payload["v6_0_6_firewall_preserved"] is True
         assert payload["measured_mass_coupling_or_scale_used"] is False
         assert payload["v5_values_used_as_parent_inputs"] is False
@@ -298,12 +301,23 @@ def test_v606_correspondence_firewall_remains_present_and_unchanged_in_role():
     assert load("report")["v6_0_6_firewall_preserved"] is True
 
 
-def test_report_stops_at_obstruction_and_routes_to_associated_bundle_theorem():
+def test_report_scopes_obstruction_and_selects_twistor_associated_bundle_route():
     payload = load("report")
     assert payload["status"] == "BHSM_B8_S7_TO_BERGER_S3_REDUCTION_OBSTRUCTED"
     assert "c2(E)=1" in payload["central_answer"]
-    assert payload["completion_gate_status"] == "V6_0_7_STOP_GLOBAL_U1_OBSTRUCTION_ASSOCIATED_BUNDLE_REQUIRED"
-    assert payload["recommended_next_branch"] == "bhsm-berger-associated-bundle-mode-theorem-v6-0-8"
+    assert "direct global fixed-axis scalar reduction" in payload["central_answer"]
+    assert "does not remove Berger geometry" in payload["central_answer"]
+    assert payload["completion_gate_status"] == "V6_0_7_DIRECT_FIXED_AXIS_ROUTE_STOPS_ASSOCIATED_BUNDLE_ROUTE_CONTINUES"
+    assert payload["recommended_next_branch"] == "bhsm-twistor-mediated-berger-associated-bundle-v6-0-8"
+
+
+def test_fixed_axis_obstruction_is_not_generalized_to_nested_program_failure():
+    payload = load("report")
+    normalized_public = " ".join(public_text().split()).lower()
+    assert payload["program_architecture_result"] == "BHSM_TWISTOR_MEDIATED_BERGER_ROUTE_SELECTED"
+    assert payload["architecture_selected"][0] == "S1->S7->CP3 followed by S2->CP3->S4"
+    assert "full nested reduction program failed" not in normalized_public
+    assert "twistor-mediated program is not obstructed" in normalized_public
 
 
 def test_cli_json_and_markdown():
@@ -317,7 +331,7 @@ def test_cli_json_and_markdown():
 
 def test_public_ledgers_preserve_claim_boundaries():
     text = public_text()
-    for required in ["BHSM_B8_S7_TO_BERGER_S3_REDUCTION_OBSTRUCTED", "BHSM_SP1_TO_U1_REDUCTION_TOPOLOGICALLY_OBSTRUCTED", "BHSM_BERGER_MODE_ASSOCIATED_BUNDLE_MAP_DERIVED", "FULL_BHSM_NOT_COMPLETE", "b8-s7-berger-s3-reduction-status"]:
+    for required in ["BHSM_B8_S7_TO_BERGER_S3_REDUCTION_OBSTRUCTED", "BHSM_SP1_TO_U1_REDUCTION_TOPOLOGICALLY_OBSTRUCTED", "BHSM_BERGER_MODE_ASSOCIATED_BUNDLE_MAP_DERIVED", "BHSM_TWISTOR_MEDIATED_BERGER_ROUTE_SELECTED", "BHSM_BERGER_ASSOCIATED_BUNDLE_FORMULATION_REQUIRED", "FULL_BHSM_NOT_COMPLETE", "b8-s7-berger-s3-reduction-status"]:
         assert required in text
     forbidden = ["Standard Model gauge fields are derived", "particle generations are derived", "absolute scale is generated", "full BHSM completion is achieved"]
     assert not any(phrase in text for phrase in forbidden)

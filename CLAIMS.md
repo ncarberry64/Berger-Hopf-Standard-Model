@@ -646,6 +646,13 @@ twistor `S2` bundle `CP3=P/U(1)` is not a section selecting one axis. A fixed
 subgroup can define a nonround metric on total `S7`, but that metric is not a
 full-`Sp(1)`-natural adjoint-bundle metric.
 
+Allowed: this excludes the direct fixed-axis scalar route, while selecting the
+nested `S1 -> S7 -> CP3`, `S2 -> CP3 -> S4` architecture. The global circle
+bundle over `CP3` and the complete twistor `S2` fiber reconstruct each `S3`
+fiber without choosing a section over `S4`. Associated-bundle modes are the
+required constructive formulation; the twistor-mediated program is not
+obstructed by the fixed-axis theorem.
+
 Allowed: in the stored Maurer--Cartan convention, local fiber restriction gives
 the Berger coefficient form and exact intrinsic curvature/volume formulas.
 Nontrivial fiber harmonics globalize through associated-bundle sections.
