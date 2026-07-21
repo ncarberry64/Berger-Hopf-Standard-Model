@@ -597,3 +597,7 @@ Doctrine: `docs/bhsm_harmonic_physicality_coupling_selection_v6_0_4.md`.
 | `artifacts/BHSM_minimal_parent_theory_kill_test_report_v6_0_5.json` | Ten-test verdict and foundational-axiom stop. |
 
 Doctrine: `docs/bhsm_minimal_parent_theory_kill_test_v6_0_5.md`.
+
+The v6.0.5 trigger failure is scoped to the frozen autonomous coherent
+nonzero-sigma transition. General action-supported energy--geometry
+envelopment and transient free-scalar localization remain open.

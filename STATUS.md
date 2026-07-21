@@ -743,6 +743,10 @@ Command: `python -m bhsm.interface harmonic-physicality-selection-status --forma
 
 Primary result: `BHSM_MINIMAL_PARENT_THEORY_FAILS_PHYSICALITY_TRIGGER`.
 
+Scoped statuses: `BHSM_MINIMAL_FREE_SCALAR_COHERENT_TRIGGER_FAILED`,
+`BHSM_HARMONIC_ENVELOPMENT_SELECTION_NOT_DERIVED`, and
+`BHSM_GENERAL_ENERGY_GEOMETRY_ENVELOPMENT_REMAINS_OPEN`.
+
 One provisional Lorentzian P1 theory on `R_t x S7_L` was frozen with a free
 real scalar `chi`, bulk-even `sigma`, and the sole coupling
 `-Zchi g sigma^2 (nabla chi)^2/2`. No term or alternative carrier was added
@@ -753,6 +757,15 @@ the action is not derived from the current geometric reduction. At `sigma=0`
 the carrier is exactly free, so it has no nonlinear phase-locking tensor and
 the exact `l=4,10` octave cannot become a resonant parent channel. No invariant
 negative sigma shift, coupled stable phase, or v5 recovery follows.
+
+The trigger result is scoped to an autonomous, harmonically selected, stable
+`sigma != 0` transition in this frozen theory. Physicality means an
+action-supported localized or propagating energy--geometry differential or
+envelope at any scale. Harmonic coherence is one possible contributor, sigma
+is a candidate persistent-envelopment response field, and neither is required
+for every transient physical differential. Compression, outgoing propagation,
+curvature confinement, topological stabilization, and general envelopment
+remain open.
 
 Primitive count: seven raw coefficients, reducible by field-normalization
 conventions to five invariant combinations; none is internally sourced.

@@ -12,6 +12,9 @@ from typing import Any
 VERSION = "v6.0.5"
 SPRINT = "bhsm-minimal-parent-theory-freeze-kill-test-v6-0-5"
 PRIMARY_RESULT = "BHSM_MINIMAL_PARENT_THEORY_FAILS_PHYSICALITY_TRIGGER"
+COHERENT_TRIGGER_RESULT = "BHSM_MINIMAL_FREE_SCALAR_COHERENT_TRIGGER_FAILED"
+HARMONIC_ENVELOPMENT_RESULT = "BHSM_HARMONIC_ENVELOPMENT_SELECTION_NOT_DERIVED"
+GENERAL_ENVELOPMENT_RESULT = "BHSM_GENERAL_ENERGY_GEOMETRY_ENVELOPMENT_REMAINS_OPEN"
 
 FREEZE_SPEC = {
     "parent_domain": "M8=R_t x S7_L with round closed spatial S7",
@@ -64,7 +67,21 @@ GUARDS = {
 
 
 def _common(artifact: str) -> dict[str, Any]:
-    return {"artifact":artifact,"version":VERSION,"sprint":SPRINT,"primary_result":PRIMARY_RESULT,"claim_boundary":"v6.0.5 tests one immutable provisional P1+chi+sigma theory. Failure applies to that frozen theory and does not prove every possible parent theory impossible.",**GUARDS}
+    return {
+        "artifact": artifact,
+        "version": VERSION,
+        "sprint": SPRINT,
+        "primary_result": PRIMARY_RESULT,
+        "coherent_trigger_result": COHERENT_TRIGGER_RESULT,
+        "harmonic_envelopment_result": HARMONIC_ENVELOPMENT_RESULT,
+        "general_envelopment_result": GENERAL_ENVELOPMENT_RESULT,
+        "physicality_doctrine": "physicality is an action-supported localized or propagating energy-geometry differential or envelope at any scale",
+        "harmonic_role": "constructive interference is one possible envelope-forming or envelope-reinforcing mechanism, not a universal definition or necessary trigger",
+        "sigma_role": "sigma is a candidate persistent-envelopment response or order parameter, not a necessary condition for every physical differential",
+        "objecthood_boundary": "persistent physical objecthood additionally requires localization, conservation, self-support, and stability",
+        "claim_boundary": "v6.0.5 tests only an autonomous, harmonically selected, stable sigma!=0 transition in one immutable provisional P1+free-chi+sigma theory. Its failure does not falsify transient localized energy differentials or general energy-geometry envelopment.",
+        **GUARDS,
+    }
 
 
 def s7_eigenvalue(level: int, radius: float) -> float:
@@ -140,7 +157,27 @@ def report_payload() -> dict[str, Any]:
         {"id":9,"question":"v5 structure recovered without reverse engineering","result":"FAIL"},
         {"id":10,"question":"primitive count explicit","result":"PASS_7_RAW_5_NORMALIZED_ALL_UNSOURCED"},
     ]
-    return {**_common("BHSM_minimal_parent_theory_kill_test_report_v6_0_5"),"status":PRIMARY_RESULT,"frozen_theory":FREEZE_SPEC,"kill_tests":tests,"first_decisive_trigger_failure":"the chi sector is free at sigma=0, so it has no action-derived nonlinear phase-locking interaction","central_answer":"The immutable provisional P1+free-chi+sigma theory fails to generate BHSM physicality. Its scalar exists and has conserved stress within the stipulated action, but that action is not derived by the current geometric reduction, the free carrier cannot select coherence, no invariant negative sigma shift follows, and the coupled stable phase and v5 reduction do not close.","foundational_axiom_that_must_change":"The axiom that current P1 geometric reduction plus a free canonical energy carrier and one quadratic kinetic sigma coupling is sufficient must be abandoned. Progress requires an independently justified parent matter/action axiom or a derivation of nonlinear matter dynamics from geometry; adding such structure is outside this frozen sprint.","alternative_candidate_proposed":False,"completion_gate_status":"V6_0_5_STOP_FROZEN_MINIMAL_PARENT_FAILS_TRIGGER","recommended_next_branch":None}
+    return {
+        **_common("BHSM_minimal_parent_theory_kill_test_report_v6_0_5"),
+        "status": PRIMARY_RESULT,
+        "frozen_theory": FREEZE_SPEC,
+        "kill_tests": tests,
+        "first_decisive_trigger_failure": "the chi sector is free at sigma=0, so it has no action-derived nonlinear phase-locking interaction",
+        "central_answer": "The immutable provisional P1+free-chi+sigma theory fails to generate an autonomous, harmonically selected, stable sigma!=0 transition. Its scalar nevertheless exists at sigma=0, has conserved stress within the stipulated action, and can carry transient localized energy differentials. The action is not derived by the current geometric reduction, the free carrier cannot select coherence, no invariant negative sigma shift follows, and the coupled stable phase and v5 reduction do not close. General energy-geometry envelopment remains open.",
+        "failure_scope": "frozen free-scalar coherent sigma-transition trigger only",
+        "not_falsified": [
+            "compression or converging-flow envelopment",
+            "explosion-like or outgoing propagation",
+            "curvature confinement",
+            "topological stabilization",
+            "transient free-scalar localized energy differentials",
+            "general energy-geometry envelopment",
+        ],
+        "foundational_axiom_that_must_change": "The axiom that current P1 geometric reduction plus a free canonical energy carrier and one quadratic kinetic sigma coupling is sufficient for an autonomous harmonically selected stable sigma transition must be abandoned. Progress on that trigger requires an independently justified parent matter/action axiom or a derivation of nonlinear matter dynamics from geometry; adding such structure is outside this frozen sprint.",
+        "alternative_candidate_proposed": False,
+        "completion_gate_status": "V6_0_5_STOP_FROZEN_MINIMAL_PARENT_FAILS_TRIGGER",
+        "recommended_next_branch": None,
+    }
 
 
 def build_artifact_payloads(repo_root: Path | None = None) -> dict[str, dict[str, Any]]:

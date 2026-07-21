@@ -482,5 +482,8 @@ python scripts/materialize_minimal_parent_theory_kill_test_v6_0_5.py
 ```
 
 The command reports `BHSM_MINIMAL_PARENT_THEORY_FAILS_PHYSICALITY_TRIGGER`
-for one immutable provisional P1+free-scalar theory. It does not search for or
+for one immutable provisional P1+free-scalar theory, scoped to an autonomous
+harmonically selected stable nonzero-sigma transition. It also reports
+`BHSM_GENERAL_ENERGY_GEOMETRY_ENVELOPMENT_REMAINS_OPEN`: transient localized
+energy differentials are not falsified. The sprint does not search for or
 promote a replacement candidate.

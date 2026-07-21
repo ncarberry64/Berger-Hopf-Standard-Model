@@ -31,6 +31,9 @@ def test_package_has_one_immutable_freeze_and_claim_guards():
         payload=load(key)
         assert payload["version"]=="v6.0.5",key
         assert payload["primary_result"]=="BHSM_MINIMAL_PARENT_THEORY_FAILS_PHYSICALITY_TRIGGER"
+        assert payload["coherent_trigger_result"]=="BHSM_MINIMAL_FREE_SCALAR_COHERENT_TRIGGER_FAILED"
+        assert payload["harmonic_envelopment_result"]=="BHSM_HARMONIC_ENVELOPMENT_SELECTION_NOT_DERIVED"
+        assert payload["general_envelopment_result"]=="BHSM_GENERAL_ENERGY_GEOMETRY_ENVELOPMENT_REMAINS_OPEN"
         assert payload["freeze_id"]==mp.FREEZE_ID
         assert payload["post_freeze_terms_added"] is False
         assert payload["alternative_parent_fields_searched"] is False
@@ -173,6 +176,30 @@ def test_foundational_axiom_change_is_reported_explicitly():
     assert "free canonical energy carrier" in text
     assert "must be abandoned" in text
     assert "outside this frozen sprint" in text
+
+def test_trigger_failure_is_scoped_and_general_envelopment_remains_open():
+    report=load("report")
+    assert report["failure_scope"]=="frozen free-scalar coherent sigma-transition trigger only"
+    assert "transient free-scalar localized energy differentials" in report["not_falsified"]
+    assert "General energy-geometry envelopment remains open" in report["central_answer"]
+
+def test_project_ledgers_reject_overrestricted_physicality_doctrine():
+    text=focused_text().lower()
+    required=[
+        "bhsm_minimal_free_scalar_coherent_trigger_failed",
+        "bhsm_harmonic_envelopment_selection_not_derived",
+        "bhsm_general_energy_geometry_envelopment_remains_open",
+        "physicality is an action-supported localized or propagating",
+        "transient localized energy differential",
+    ]
+    assert all(phrase in text for phrase in required)
+    forbidden=[
+        "general physicality failed",
+        "envelopment requires harmonic coherence",
+        "sigma != 0 is necessary for all physicality",
+        "a free scalar cannot produce transient localized energy differentials",
+    ]
+    assert not any(phrase in text for phrase in forbidden)
 
 def test_prior_v604_artifacts_are_not_rewritten():
     paths=list(ARTIFACTS.glob("*v6_0_4.json")); before={p:hashlib.sha256(p.read_bytes()).hexdigest() for p in paths}
