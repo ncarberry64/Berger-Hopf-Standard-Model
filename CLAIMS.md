@@ -582,3 +582,18 @@ tower; base-ten scaling as geometry; a base frequency or absolute radius;
 identification of resonant channels with particles or generations; importing
 v5 coefficients; primordial release; black-hole de-enveloping; gauge, mass,
 CKM/PMNS, or full-BHSM claims.
+
+<!-- BHSM_MINIMAL_PARENT_THEORY_KILL_TEST_V6_0_5 -->
+## v6.0.5 frozen minimal-parent claims
+
+Allowed: the explicitly frozen provisional P1+free-chi+sigma theory fails its
+physicality-trigger kill tests. Its carrier exists and has conserved stress
+inside the stipulated action, but it has no nonlinear self-interaction at
+sigma zero, no selected coherent phase, no derived negative sigma shift, no
+acceptable coupled spectrum, and no parent-to-v5 recovery.
+
+Not supported: extending this failure to every possible parent theory;
+silently adding another field or interaction; treating the conditional sigma
+branch as generated; importing v5 coefficients; claiming physicality,
+absolute scale, particle properties, release, de-enveloping, or full BHSM
+completion.
