@@ -1,0 +1,79 @@
+{
+  "artifact": "BHSM_pilot_wave_canonical_hamiltonian_v5_9",
+  "claim_boundary": "BHSM v5.9 derives a minimal pilot-wave dynamics for the global scale modulus and scalar/topographic vacuum mode. The guidance law can generate an expanding actual configuration, but the quantum potential remains scale-covariant and does not derive ell_star, M_star, particle masses, gauge couplings, CKM values, rare-B observables, or full BHSM completion.",
+  "classical_static_limit": {
+    "dU_dL": 0.0,
+    "sigma_force_at_vacuum": 0.0,
+    "sigma_hessian": 4.0,
+    "sigma_vacuum": 0.5,
+    "v5_8_flat_L_preserved": true
+  },
+  "configuration_variables": [
+    "L",
+    "sigma_scale"
+  ],
+  "constraint": "H_red/N = 0 in the lapse-parametrized reduced model",
+  "cosmological_parameter_used": false,
+  "empirical_inputs_used": false,
+  "factor_ordering_selected_to_force_scale": false,
+  "frozen_predictions_changed": false,
+  "hamilton_equations": {
+    "Ldot_over_N": "L^2 p_L",
+    "pdot_L_over_N": "-L p_L^2",
+    "pdot_sigma_over_N": "alpha_scale sigma - beta_scale sigma^3",
+    "sigmadot_over_N": "p_sigma"
+  },
+  "hamiltonian": "H_red = N [1/2 L^2 p_L^2 + 1/2 p_sigma^2 + U_BHSM(sigma)]",
+  "hubble_or_cmb_calibration_used": false,
+  "kinetic_metric": {
+    "G_AB": {
+      "LL": 1.0,
+      "Lsigma": 0.0,
+      "sigmasigma": 1.0
+    },
+    "G_inverse_AB": {
+      "LL": 1.0,
+      "Lsigma": 0.0,
+      "sigmasigma": 1.0
+    },
+    "coordinate_singularities": [
+      "L=0 is excluded as degenerate geometry"
+    ],
+    "determinant": 1.0,
+    "domain": {
+      "L": "positive real half-line",
+      "sigma_scale": "real reduced scalar/topographic mode"
+    },
+    "line_element": "ds_Q^2 = d(ln L)^2 + d sigma_scale^2",
+    "measure": "dmu_Q = dL d sigma_scale / L = d(ln L) d sigma_scale",
+    "scale_transformation": "L -> lambda L is translation ln L -> ln L + ln lambda",
+    "signature": "positive definite reduced configuration metric",
+    "sqrt_abs_G": 1.0,
+    "variables": [
+      "L",
+      "sigma_scale"
+    ]
+  },
+  "lapse": "N is retained as reparametrization multiplier in the reduced model",
+  "momenta": {
+    "p_L": "(1/N) L^-2 Ldot",
+    "p_sigma": "(1/N) sigmadot"
+  },
+  "numerical_particle_masses_emitted": false,
+  "observed_mass_or_vev_used": false,
+  "official_prediction_logic_changed": false,
+  "pdg_reference_values_used": false,
+  "physical_couplings_promoted": false,
+  "physics_model_logic_changed": false,
+  "planck_length_inserted": false,
+  "potential": "U_BHSM(L,sigma)= -1/2 alpha_scale sigma^2 + 1/4 beta_scale sigma^4; no L dependence",
+  "primary_result": "BHSM_PILOT_WAVE_DOES_NOT_LIFT_SCALE_MODULUS",
+  "rare_b_phenomenology_pursued": false,
+  "reduced_action": "S_red = integral d tau [(1/2N) G_AB qdot^A qdot^B - N U_BHSM(q)]",
+  "regulator_promoted_to_physical_scale": false,
+  "sprint": "bhsm-pilot-wave-scale-modulus-dynamics-v5-9",
+  "status": "REDUCED_CANONICAL_DYNAMICS_DERIVED_CONDITIONALLY",
+  "version": "v5.9",
+  "w_calibration_used": false,
+  "wavepacket_width_promoted_to_physical_scale": false
+}

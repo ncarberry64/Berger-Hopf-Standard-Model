@@ -458,3 +458,16 @@ This means the current action and primordial compact-state candidate do not sele
 Still not supported: deriving `ell_star`, deriving `M_star`, inserting a Planck length, using a Hubble/CMB/temperature scale, deriving particle masses by multiplying dimensionless numbers by `M_BH`, deriving gauge couplings, deriving CKM values or exponent, predicting rare-B observables, treating CMB/relic matter as virtual, or claiming full BHSM completion.
 
 Preserved: `OPEN_MISSING_GLOBAL_SCALE_MODULUS_ACTION_SOURCE`, `OPEN_MISSING_NONLINEAR_GEOMETRIC_BACKREACTION`, `OPEN_MISSING_ABSOLUTE_ACTION_QUANTUM_OR_BOUNDARY_TENSION`, `OPEN_MISSING_ABSOLUTE_SPECTRAL_EIGENVALUE_SOURCE`, `OPEN_MISSING_PRIMORDIAL_REGULARITY_SCALE_CONDITION`, `OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR`, and all downstream mass, gauge, CKM, neutral-scale, rare-B, and full-BHSM gates.
+
+<!-- BHSM_PILOT_WAVE_SCALE_MODULUS_DYNAMICS_V5_9 -->
+## Pilot-wave scale-modulus dynamics v5.9
+
+Allowed: BHSM v5.9 derives a minimal pilot-wave scale-modulus dynamics for `Psi[Q]` and `Q_actual` over the reduced variables `(L, sigma_scale)`. It may state the scale-covariant configuration metric, the reduced Hamiltonian, the timeless wave equation, the Bohmian quantum potential, and the guidance law.
+
+Result: `BHSM_PILOT_WAVE_DOES_NOT_LIFT_SCALE_MODULUS`.
+
+This means the pilot-wave layer can conditionally describe an outward compact-to-expanding actual configuration with `L(tau)=L_initial exp(k tau)` and the v5.7 relative branch `sigma_scale=1/2`, `M_BH/M_star=1/2`, and `R_BH/ell_star=2`. It does not mean a finite absolute `L0`, `ell_star`, `M_star`, `M_BH`, or `R_BH` is derived.
+
+Still not supported: deriving physical eV/GeV scales, deriving particle masses, inserting a Planck length, using Hubble/CMB/temperature calibration, promoting a wavepacket width or regulator to a physical unit, deriving gauge couplings, deriving `g2_BH`, deriving CKM coefficient value or exponent, predicting rare-B observables, treating physical relic matter as virtual, or claiming full BHSM completion.
+
+Preserved: `OPEN_MISSING_PRIMORDIAL_QUANTUM_BOUNDARY_STATE_CLOSURE`, `OPEN_MISSING_NONLINEAR_GEOMETRIC_BACKREACTION`, `OPEN_MISSING_GLOBAL_SCALE_MODULUS_ACTION_SOURCE`, `OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR`, `OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT`, `OPEN_MISSING_ALPHA_I_ACTION_DERIVATION`, `OPEN_MISSING_G2_BH_ACTION_SOURCE`, `OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE`, `CKM_EXPONENT_NOT_DERIVED`, `OPEN_MISSING_NEUTRAL_SCALE`, `OPEN_MISSING_NEUTRAL_ACTION_NORMALIZATION`, and `FULL_BHSM_NOT_COMPLETE`.

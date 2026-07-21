@@ -242,6 +242,7 @@ from .physical_scale_generation import physical_scale_status_report, physical_sc
 from .scalar_topographic_vacuum_action import scalar_topographic_vacuum_status_report, scalar_topographic_vacuum_status_to_markdown
 from .scalar_topographic_profile_boundary_closure import profile_boundary_status_report, profile_boundary_status_to_markdown
 from .absolute_unit_anchor_generation import absolute_unit_status_report, absolute_unit_status_to_markdown
+from .pilot_wave_scale_modulus_dynamics import pilot_wave_status_report, pilot_wave_status_to_markdown
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -672,6 +673,8 @@ def build_parser() -> argparse.ArgumentParser:
     scalar_profile.add_argument("--format", choices=("json", "markdown"), default="json")
     absolute_unit = commands.add_parser("absolute-unit-anchor-status", help="Render the BHSM v5.8 absolute unit-anchor generation audit")
     absolute_unit.add_argument("--format", choices=("json", "markdown"), default="json")
+    pilot_wave = commands.add_parser("pilot-wave-scale-modulus-status", help="Render the BHSM v5.9 pilot-wave scale-modulus dynamics")
+    pilot_wave.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
 
@@ -1449,6 +1452,13 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(json.dumps(payload, indent=2, sort_keys=True))
         else:
             _print_unicode(absolute_unit_status_to_markdown(payload))
+        return 0
+    if args.command == "pilot-wave-scale-modulus-status":
+        payload = pilot_wave_status_report()
+        if args.format == "json":
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        else:
+            _print_unicode(pilot_wave_status_to_markdown(payload))
         return 0
     if args.command in {
         "primitive-charged-incidence",

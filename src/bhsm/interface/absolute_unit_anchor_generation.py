@@ -212,6 +212,18 @@ def spectral_topological_assessment() -> dict[str, Any]:
     }
 
 
+def v5_9_pilot_wave_update() -> dict[str, Any]:
+    return {
+        "status": "BHSM_PILOT_WAVE_DOES_NOT_LIFT_SCALE_MODULUS",
+        "source": "artifacts/BHSM_pilot_wave_scale_modulus_dynamics_report_v5_9.json",
+        "scale_modulus_result": "pilot-wave dynamics is scale-covariant; finite L0 is not selected",
+        "guided_trajectory_status": "GUIDED_COMPACT_TO_EXPANDING_TRAJECTORY_CONSTRUCTED_CONDITIONALLY",
+        "boundary_state_status": "OPEN_MISSING_PRIMORDIAL_QUANTUM_BOUNDARY_STATE_CLOSURE",
+        "nonlinear_backreaction_status": "OPEN_MISSING_NONLINEAR_GEOMETRIC_BACKREACTION",
+        "claim_boundary": "pilot-wave guidance may describe expansion but does not generate ell_star, M_star, M_BH, or R_BH",
+    }
+
+
 def unit_anchor_payload() -> dict[str, Any]:
     return {
         "status": PRIMARY_RESULT,
@@ -278,6 +290,7 @@ def scale_modulus_artifact() -> dict[str, Any]:
             "effective_scale_action": effective_scale_action(),
             "scaling_terms": [term.to_dict() for term in scaling_terms()],
             "spectral_topological_assessment": spectral_topological_assessment(),
+            "v5_9_pilot_wave_update": v5_9_pilot_wave_update(),
         }
     )
     return payload
@@ -305,6 +318,7 @@ def construction_report_payload() -> dict[str, Any]:
         "action_scaling_terms": [term.to_dict() for term in scaling_terms()],
         "unit_anchor": unit_anchor_payload(),
         "spectral_topological_assessment": spectral_topological_assessment(),
+        "v5_9_pilot_wave_update": v5_9_pilot_wave_update(),
         "primordial_to_late_time_map": primordial_to_late_time_map(),
         "propagation": propagation_payload(),
         "derived": [

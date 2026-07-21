@@ -1,0 +1,47 @@
+{
+  "artifact": "BHSM_pilot_wave_wave_equation_v5_9",
+  "boundary_conditions": [
+    "no flux through L=0 degenerate boundary",
+    "outgoing current branch may be selected only as boundary-state input",
+    "normalizable sigma fluctuation sector around sigma_scale=1/2"
+  ],
+  "claim_boundary": "BHSM v5.9 derives a minimal pilot-wave dynamics for the global scale modulus and scalar/topographic vacuum mode. The guidance law can generate an expanding actual configuration, but the quantum potential remains scale-covariant and does not derive ell_star, M_star, particle masses, gauge couplings, CKM values, rare-B observables, or full BHSM completion.",
+  "cosmological_parameter_used": false,
+  "domain": "L>0 with square-integrability/current conditions in dL/L; sigma on reduced real line or local harmonic domain",
+  "empirical_inputs_used": false,
+  "factor_ordering_selected_to_force_scale": false,
+  "frozen_predictions_changed": false,
+  "hubble_or_cmb_calibration_used": false,
+  "internal_time_or_timeless": "timeless Hamiltonian constraint in the minimal lapse-parametrized model",
+  "laplace_beltrami": "Delta_G = L^2 partial_L^2 + L partial_L + partial_sigma^2",
+  "measure": "dmu_Q = dL d sigma_scale / L = d(ln L) d sigma_scale",
+  "numerical_particle_masses_emitted": false,
+  "observed_mass_or_vev_used": false,
+  "official_prediction_logic_changed": false,
+  "ontology_separation": {
+    "Psi": "universal wavefunctional on configuration space",
+    "Q_actual": "actual configuration guided by Psi",
+    "R_and_S": "amplitude and phase in Psi=R exp(iS/hbar)",
+    "T_and_Phi": "scalar/topographic fields inside Q_actual, not identical to Psi"
+  },
+  "operator": "H_hat Psi = [-hbar^2/2 Delta_G + U_BHSM(sigma)] Psi = 0",
+  "ordering": "Laplace-Beltrami ordering; no factor ordering selected to force a scale",
+  "ordering_ambiguity": {
+    "status": "dimensionless_open_but_not_used_to_select_L",
+    "symbol": "xi_order"
+  },
+  "pdg_reference_values_used": false,
+  "physical_couplings_promoted": false,
+  "physics_model_logic_changed": false,
+  "planck_length_inserted": false,
+  "primary_result": "BHSM_PILOT_WAVE_DOES_NOT_LIFT_SCALE_MODULUS",
+  "rare_b_phenomenology_pursued": false,
+  "regulator_promoted_to_physical_scale": false,
+  "self_adjoint_status": "symmetric on declared reduced domain; full self-adjoint extension remains boundary-state dependent",
+  "sprint": "bhsm-pilot-wave-scale-modulus-dynamics-v5-9",
+  "status": "BHSM_REDUCED_WAVE_EQUATION_DERIVED_CONDITIONALLY",
+  "version": "v5.9",
+  "w_calibration_used": false,
+  "wavefunctional": "Psi[L,sigma_scale] on reduced BHSM configuration space",
+  "wavepacket_width_promoted_to_physical_scale": false
+}

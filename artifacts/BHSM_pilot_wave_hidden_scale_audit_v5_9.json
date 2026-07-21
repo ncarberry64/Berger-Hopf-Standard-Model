@@ -1,0 +1,105 @@
+{
+  "arbitrary_gaussian_width_promoted_to_physical_constant": false,
+  "artifact": "BHSM_pilot_wave_hidden_scale_audit_v5_9",
+  "claim_boundary": "BHSM v5.9 derives a minimal pilot-wave dynamics for the global scale modulus and scalar/topographic vacuum mode. The guidance law can generate an expanding actual configuration, but the quantum potential remains scale-covariant and does not derive ell_star, M_star, particle masses, gauge couplings, CKM values, rare-B observables, or full BHSM completion.",
+  "coordinate_rescaling_check": {
+    "L_initial": 1.0,
+    "L_rescaled_initial": 3.0,
+    "lambda": 3.0,
+    "physical_L0_claimed": false,
+    "trajectory_ratio_preserved": true
+  },
+  "cosmological_parameter_used": false,
+  "empirical_inputs_used": false,
+  "factor_ordering_selected_to_force_scale": false,
+  "frozen_predictions_changed": false,
+  "hubble_or_cmb_calibration_used": false,
+  "node_divergence_promoted_to_scale": false,
+  "numerical_particle_masses_emitted": false,
+  "observed_mass_or_vev_used": false,
+  "official_prediction_logic_changed": false,
+  "pdg_reference_values_used": false,
+  "physical_couplings_promoted": false,
+  "physics_model_logic_changed": false,
+  "planck_length_inserted": false,
+  "primary_result": "BHSM_PILOT_WAVE_DOES_NOT_LIFT_SCALE_MODULUS",
+  "rare_b_phenomenology_pursued": false,
+  "regulator_promoted_to_physical_scale": false,
+  "rows": [
+    {
+      "classification": "dimensionless local sigma-sector convention",
+      "item": "wavefunction width",
+      "promoted_to_physical_scale": false,
+      "reason": "derived from dimensionless local Hessian only; not a length",
+      "value": "0.5"
+    },
+    {
+      "classification": "not used",
+      "item": "grid limits",
+      "promoted_to_physical_scale": false,
+      "reason": "no numerical box is used",
+      "value": "none"
+    },
+    {
+      "classification": "not used",
+      "item": "box size",
+      "promoted_to_physical_scale": false,
+      "reason": "no finite L box is imposed",
+      "value": "none"
+    },
+    {
+      "classification": "dimensionless chart convention",
+      "item": "reference coordinate",
+      "promoted_to_physical_scale": false,
+      "reason": "translation in chi is scale covariance, not an anchor",
+      "value": "chi=ln L"
+    },
+    {
+      "classification": "formal/current-normalization convention",
+      "item": "normalization volume",
+      "promoted_to_physical_scale": false,
+      "reason": "not used to select L0",
+      "value": "dL/L"
+    },
+    {
+      "classification": "physical-domain endpoint",
+      "item": "boundary location",
+      "promoted_to_physical_scale": false,
+      "reason": "degenerate boundary is not a stable finite scale",
+      "value": "L=0 excluded"
+    },
+    {
+      "classification": "not used",
+      "item": "regulator",
+      "promoted_to_physical_scale": false,
+      "reason": "no cutoff enters L0",
+      "value": "none"
+    },
+    {
+      "classification": "dimensionless unresolved input",
+      "item": "factor-ordering parameter",
+      "promoted_to_physical_scale": false,
+      "reason": "not selected to force scale generation",
+      "value": "xi_order"
+    },
+    {
+      "classification": "trajectory initial coordinate",
+      "item": "initial L",
+      "promoted_to_physical_scale": false,
+      "reason": "rescales covariantly and is not claimed physical",
+      "value": "L_initial"
+    },
+    {
+      "classification": "gauge/lapse parameter",
+      "item": "time parameter",
+      "promoted_to_physical_scale": false,
+      "reason": "does not define length",
+      "value": "tau"
+    }
+  ],
+  "sprint": "bhsm-pilot-wave-scale-modulus-dynamics-v5-9",
+  "status": "NO_HIDDEN_SCALE_PROMOTED",
+  "version": "v5.9",
+  "w_calibration_used": false,
+  "wavepacket_width_promoted_to_physical_scale": false
+}

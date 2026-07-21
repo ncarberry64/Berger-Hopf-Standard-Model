@@ -595,3 +595,20 @@ Still open: `OPEN_MISSING_GLOBAL_SCALE_MODULUS_ACTION_SOURCE`, `OPEN_MISSING_NON
 No Planck length, Hubble rate, CMB temperature, particle mass, gauge coupling, CKM value, rare-B observable, or full BHSM completion is claimed.
 
 Command: `python -m bhsm.interface absolute-unit-anchor-status --format markdown`.
+
+<!-- BHSM_PILOT_WAVE_SCALE_MODULUS_DYNAMICS_V5_9 -->
+## Pilot-wave scale-modulus dynamics v5.9
+
+Primary result: `BHSM_PILOT_WAVE_DOES_NOT_LIFT_SCALE_MODULUS`.
+
+BHSM v5.9 derives a minimal pilot-wave bookkeeping layer for the reduced configuration `q^A=(L, sigma_scale)`, with `Psi[Q]` as wavefunctional, `Q_actual` as guided configuration, `T` and `Phi` as scalar/topographic fields inside `Q_actual`, and `R,S` as the amplitude and phase of `Psi=R exp(iS/hbar)`.
+
+Validated: the scale-covariant metric `ds_Q^2=d(ln L)^2+d sigma_scale^2`, reduced Hamiltonian, timeless wave equation, Bohmian quantum Hamilton-Jacobi equation, continuity equation, quantum potential, and guidance law are artifacted. The branch `Psi=R_sigma exp(i k ln L/hbar)` gives `L(tau)=L_initial exp(k tau)` and `sigma_scale=1/2`, so it can describe an outward compact-to-expanding actual configuration.
+
+Invalidated/downgraded: the pilot-wave quantum potential is independent of `L` on the scale-covariant branch and supplies no finite stable `L0`; a Gaussian width, endpoint singularity, chart coordinate, initial `L`, regulator, or factor-ordering convention is not a BHSM unit anchor.
+
+Still open: `OPEN_MISSING_PRIMORDIAL_QUANTUM_BOUNDARY_STATE_CLOSURE`, `OPEN_MISSING_NONLINEAR_GEOMETRIC_BACKREACTION`, `OPEN_MISSING_GLOBAL_SCALE_MODULUS_ACTION_SOURCE`, `OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR`, `OPEN_MISSING_ABSOLUTE_ACTION_QUANTUM_OR_BOUNDARY_TENSION`, `OPEN_MISSING_ABSOLUTE_SPECTRAL_EIGENVALUE_SOURCE`, `OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT`, `OPEN_MISSING_ALPHA_I_ACTION_DERIVATION`, `OPEN_MISSING_G2_BH_ACTION_SOURCE`, `OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE`, `CKM_EXPONENT_NOT_DERIVED`, `OPEN_MISSING_NEUTRAL_SCALE`, `OPEN_MISSING_NEUTRAL_ACTION_NORMALIZATION`, and `FULL_BHSM_NOT_COMPLETE`.
+
+No absolute eV/GeV scale, particle mass, gauge coupling, CKM value, rare-B observable, cosmology calibration, Planck-length insertion, or full BHSM completion is claimed.
+
+Command: `python -m bhsm.interface pilot-wave-scale-modulus-status --format markdown`.
