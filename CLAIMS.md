@@ -561,3 +561,24 @@ stress square as positive; using base-10 magnitude bands as an action law;
 importing `A_ST=-2`, `G_ST=8`, or `sigma=1/2`; primordial release; black-hole
 de-enveloping; a shared core; signature emergence; an absolute unit; particle
 properties, gauge couplings, or full BHSM completion.
+
+<!-- BHSM_HARMONIC_PHYSICALITY_COUPLING_SELECTION_V6_0_4 -->
+## v6.0.4 harmonic-selection claims
+
+Allowed: BHSM v6.0.4 proves linear phase no-selection for orthogonal
+self-adjoint modes and derives the exact massless round-`S7` scalar octave pair
+`l=4,10`. It derives that the parity-even sigma cubic tensor vanishes at the
+undifferentiated branch and therefore prevents that octave from acting as the
+required sigma three-wave trigger.
+
+Allowed conditionally: a sourced parent field may admit nonlinear resonant
+overlaps, a conservative normal form, phase-locked solutions, and a sigma
+Hessian shift after its action, spectrum, representation rules, coefficients,
+constraints, and stability are closed.
+
+Not supported: linear cross terms as binding interference; a selected harmonic
+coupling; a stable coherent physical phase; an emergent enclosure; a dyadic
+tower; base-ten scaling as geometry; a base frequency or absolute radius;
+identification of resonant channels with particles or generations; importing
+v5 coefficients; primordial release; black-hole de-enveloping; gauge, mass,
+CKM/PMNS, or full-BHSM claims.
