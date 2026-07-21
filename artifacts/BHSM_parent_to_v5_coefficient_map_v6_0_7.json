@@ -1,0 +1,152 @@
+{
+  "absolute_unit_generated": false,
+  "artifact": "BHSM_parent_to_v5_coefficient_map_v6_0_7",
+  "claim_boundary": "v6.0.7 excludes only a direct global fixed-axis scalar reduction over S4. It selects the nested S7-to-CP3-to-S4 twistor route and requires associated-bundle modes. It does not by itself close the operator, action, coefficient, or physical-boundary reduction.",
+  "coefficients_omitted": false,
+  "consistent_truncation_result": "BHSM_BERGER_CONSISTENT_TRUNCATION_FAILED",
+  "direct_route_result": "BHSM_DIRECT_FIXED_AXIS_REDUCTION_EXCLUDED",
+  "established_physics_claimed_novel": false,
+  "existing_numerical_predictions_changed": false,
+  "frozen_mode_ledgers_changed": false,
+  "frozen_predictions_changed": false,
+  "full_bhsm_completion_claimed": false,
+  "inputs": [
+    "kappa_k",
+    "L4",
+    "L2",
+    "L1",
+    "fiber volume",
+    "connection normalization",
+    "representation traces",
+    "mode normalizations",
+    "overlap tensors"
+  ],
+  "measured_mass_coupling_or_scale_used": false,
+  "mode_globalization_result": "BHSM_BERGER_MODE_ASSOCIATED_BUNDLE_MAP_DERIVED",
+  "new_interaction_added": false,
+  "new_parent_field_added": false,
+  "numerical_v5_values_on_parent_side": false,
+  "official_prediction_logic_changed": false,
+  "particle_generations_derived": false,
+  "primary_result": "BHSM_B8_S7_TO_BERGER_S3_REDUCTION_OBSTRUCTED",
+  "program_architecture_result": "BHSM_TWISTOR_MEDIATED_BERGER_ROUTE_SELECTED",
+  "required_formulation_result": "BHSM_BERGER_ASSOCIATED_BUNDLE_FORMULATION_REQUIRED",
+  "reverse_engineering_used": false,
+  "rows": [
+    {
+      "classification": "OPEN",
+      "dimension_status": "symbolic",
+      "independently_adjustable": null,
+      "missing": [
+        "selected k",
+        "curvature normalization",
+        "boundary role"
+      ],
+      "parent_formula": "sum_k kappa_k C_geom^(k)(L4,L2,L1,Omega) Vol_F",
+      "v5_coefficient": "kappa_geom"
+    },
+    {
+      "classification": "OPEN",
+      "dimension_status": "symbolic",
+      "independently_adjustable": null,
+      "missing": [
+        "selected connection sector",
+        "trace",
+        "mode normalization"
+      ],
+      "parent_formula": "sum_k kappa_k C_conn^(k) Vol_F Tr_R(T_i T_i)",
+      "v5_coefficient": "kappa_g_i=1/lambda_i"
+    },
+    {
+      "classification": "OPEN",
+      "dimension_status": "symbolic",
+      "independently_adjustable": null,
+      "missing": [
+        "parent fermion action",
+        "spinor mode",
+        "normalization"
+      ],
+      "parent_formula": "Z_Psi integral_F conjugate(chi_alpha)chi_alpha dmu_F",
+      "v5_coefficient": "zeta_psi"
+    },
+    {
+      "classification": "OPEN",
+      "dimension_status": "symbolic",
+      "independently_adjustable": null,
+      "missing": [
+        "parent scalar normalization",
+        "selected mode"
+      ],
+      "parent_formula": "Z_Phi N_alpha_alpha",
+      "v5_coefficient": "kappa_phi"
+    },
+    {
+      "classification": "OPEN_NOT_MINUS_2",
+      "dimension_status": "symbolic",
+      "independently_adjustable": null,
+      "missing": [
+        "parent potential",
+        "operator map",
+        "mode normalization"
+      ],
+      "parent_formula": "parent mass/curvature projection plus Z_Phi lambda_alpha and mixing terms",
+      "v5_coefficient": "A_ST"
+    },
+    {
+      "classification": "OPEN_NOT_8",
+      "dimension_status": "symbolic",
+      "independently_adjustable": null,
+      "missing": [
+        "parent quartic",
+        "overlap tensor",
+        "normalization"
+      ],
+      "parent_formula": "G_parent C_alpha_alpha_alpha_alpha after canonical normalization",
+      "v5_coefficient": "G_ST"
+    },
+    {
+      "classification": "OPEN",
+      "dimension_status": "symbolic",
+      "independently_adjustable": null,
+      "missing": [
+        "parent gauge-spinor coupling",
+        "representations",
+        "intertwiner"
+      ],
+      "parent_formula": "g_parent integral_F conjugate(chi_a)rho(T)chi_b Y_c dmu_F",
+      "v5_coefficient": "g_ch"
+    },
+    {
+      "classification": "OPEN",
+      "dimension_status": "symbolic",
+      "independently_adjustable": null,
+      "missing": [
+        "parent neutral field",
+        "operator",
+        "normalization"
+      ],
+      "parent_formula": "g_parent times normalized neutral overlap/trace",
+      "v5_coefficient": "g_neu"
+    },
+    {
+      "classification": "OPEN",
+      "dimension_status": "symbolic",
+      "independently_adjustable": null,
+      "missing": [
+        "selected parent coefficients",
+        "stationary modulus",
+        "quantum completion"
+      ],
+      "parent_formula": "Hessian of reduced Lovelock/modulus effective action",
+      "v5_coefficient": "kappa_scale"
+    }
+  ],
+  "sp1_to_u1_result": "BHSM_SP1_TO_U1_REDUCTION_TOPOLOGICALLY_OBSTRUCTED",
+  "sprint": "bhsm-b8-s7-to-berger-s3-reduction-theorem-v6-0-7",
+  "standard_model_gauge_fields_derived": false,
+  "status": "ALL_REDUCED_COEFFICIENT_SOURCES_EXPLICITLY_OPEN",
+  "target_fitting_used": false,
+  "v5_values_used_as_parent_inputs": false,
+  "v6_0_6_firewall_preserved": true,
+  "version": "v6.0.7"
+}

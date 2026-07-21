@@ -636,3 +636,36 @@ restriction, and pushforward metrics; identifying modes by numerical
 eigenvalue matching alone; reverse-engineering parent coefficients from
 `A_ST=-2`, `G_ST=8`, or `|sigma|=1/2`; claiming particle objecthood, masses,
 couplings, mixing, absolute scale, novel predictions, or full completion.
+
+<!-- BHSM_B8_S7_BERGER_S3_REDUCTION_THEOREM_V6_0_7 -->
+## v6.0.7 parent-to-Berger reduction claims
+
+Allowed: the quaternionic Hopf bundle has nonzero `c2`, and a global
+`Sp(1)->U(1)` reduction over `S4` is topologically obstructed. The associated
+twistor `S2` bundle `CP3=P/U(1)` is not a section selecting one axis. A fixed
+subgroup can define a nonround metric on total `S7`, but that metric is not a
+full-`Sp(1)`-natural adjoint-bundle metric.
+
+Allowed: this excludes the direct fixed-axis scalar route, while selecting the
+nested `S1 -> S7 -> CP3`, `S2 -> CP3 -> S4` architecture. The global circle
+bundle over `CP3` and the complete twistor `S2` fiber reconstruct each `S3`
+fiber without choosing a section over `S4`. Associated-bundle modes are the
+required constructive formulation; the twistor-mediated program is not
+obstructed by the fixed-axis theorem.
+
+Allowed: in the stored Maurer--Cartan convention, local fiber restriction gives
+the Berger coefficient form and exact intrinsic curvature/volume formulas.
+Nontrivial fiber harmonics globalize through associated-bundle sections.
+Exact low-level round-S7 branching checks close for `ell=0,1,2`.
+
+Allowed conditionally: pointwise measure/Hodge, scalar, gauge, Dirac, and
+Lovelock reduction structures follow after metric, orientation, action,
+representation, and normalization choices. These structures do not recover
+the full v5 action or coefficients.
+
+Not supported: a coordinate-selected `eta_3` as a global adjoint direction;
+local fiber restriction as a consistent truncation; nontrivial fiber modes as
+automatic global scalars; naive additive S7/S4/S3 Laplacians; numerical
+eigenvalue matching as representation branching; a Hopf fiber as a physical
+B8 boundary; parent derivation of `A_ST=-2`, `G_ST=8`, gauge couplings,
+fermion spectra, generations, masses, mixing, an absolute unit, or full BHSM.
