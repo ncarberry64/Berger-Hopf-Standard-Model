@@ -1,0 +1,129 @@
+{
+  "artifact": "BHSM_rare_b_fcnc_generation_dependency_graph_v5_3",
+  "channel": "b -> s neutral transition",
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "FCNC generation-mechanism kill screen only. BHSM v5.3 does not derive a physical b -> s neutral transition, Wilson coefficients, q0^2, or exact rare-B node coordinates.",
+  "edges": [
+    {
+      "blocking_dependency": "OPEN_MISSING_RARE_B_CHARGED_CURRENT_PAIR_COMPOSITION",
+      "map_name": "select b -> intermediate charged-current transition",
+      "normalization_transformation": "current normalization absent",
+      "provenance": "v2.6 charged-current transport/action audits; v5.3 audit",
+      "source": "charged-current flavor transport",
+      "status": "BLOCKED",
+      "target": "first charged-current insertion",
+      "units_transformation": "dimensionless -> not closed"
+    },
+    {
+      "blocking_dependency": "OPEN_MISSING_RARE_B_INTERMEDIATE_RESPONSE_KERNEL",
+      "map_name": "propagate or resolve internal mode",
+      "normalization_transformation": "not available",
+      "provenance": "v5.3 intermediate-response inventory",
+      "source": "first charged-current insertion",
+      "status": "BLOCKED",
+      "target": "intermediate-state response",
+      "units_transformation": "not available"
+    },
+    {
+      "blocking_dependency": "OPEN_MISSING_RARE_B_CHARGED_CURRENT_PAIR_COMPOSITION",
+      "map_name": "complete intermediate -> s transition",
+      "normalization_transformation": "not available",
+      "provenance": "v5.3 charged-current pair-composition audit",
+      "source": "intermediate-state response",
+      "status": "BLOCKED",
+      "target": "second charged-current insertion",
+      "units_transformation": "not available"
+    },
+    {
+      "blocking_dependency": "OPEN_MISSING_RARE_B_GENERATION_MODE_SUM",
+      "map_name": "sum over intermediate modes with orientation and conjugation",
+      "normalization_transformation": "not available",
+      "provenance": "v5.3 generation-sum audit",
+      "source": "second charged-current insertion",
+      "status": "BLOCKED",
+      "target": "generation-mode sum",
+      "units_transformation": "not available"
+    },
+    {
+      "blocking_dependency": "OPEN_MISSING_RARE_B_DEGENERACY_CANCELLATION_LAW",
+      "map_name": "prove degeneracy cancellation and mode-splitting residue",
+      "normalization_transformation": "not available",
+      "provenance": "v5.3 GIM-like cancellation audit",
+      "source": "generation-mode sum",
+      "status": "BLOCKED",
+      "target": "cancellation/non-cancellation law",
+      "units_transformation": "not available"
+    },
+    {
+      "blocking_dependency": "OPEN_MISSING_RARE_B_INDUCED_NEUTRAL_KERNEL",
+      "map_name": "construct off-diagonal neutral effective kernel",
+      "normalization_transformation": "not available",
+      "provenance": "v5.3 FCNC candidate artifact",
+      "source": "cancellation/non-cancellation law",
+      "status": "BLOCKED",
+      "target": "induced b -> s neutral kernel",
+      "units_transformation": "not available"
+    },
+    {
+      "blocking_dependency": "OPEN_MISSING_RARE_B_FCNC_GENERATION_MECHANISM",
+      "map_name": "feed normalized rare-B transition operator graph",
+      "normalization_transformation": "not available",
+      "provenance": "artifacts/BHSM_b_to_s_mumu_transition_dependency_graph_v5_2.json",
+      "source": "induced b -> s neutral kernel",
+      "status": "BLOCKED_DOWNSTREAM",
+      "target": "v5.2 operator matching",
+      "units_transformation": "not available"
+    },
+    {
+      "blocking_dependency": "OPEN_MISSING_BHSM_WILSON_COEFFICIENT_DERIVATION",
+      "map_name": "populate O7/O9/O10 coefficient slots",
+      "normalization_transformation": "not available",
+      "provenance": "artifacts/BHSM_b_to_s_mumu_operator_matching_verdict_v5_2.json",
+      "source": "v5.2 operator matching",
+      "status": "BLOCKED_DOWNSTREAM",
+      "target": "Wilson coefficients",
+      "units_transformation": "not available"
+    },
+    {
+      "blocking_dependency": "RARE_B_AFB_ZERO_PREDICTION_BLOCKED",
+      "map_name": "feed A_FB and node interfaces",
+      "normalization_transformation": "hadronic and q^2 gates open",
+      "provenance": "artifacts/BHSM_rare_b_observable_map_scaffold_verdict_v5_1.json",
+      "source": "Wilson coefficients",
+      "status": "BLOCKED_DOWNSTREAM",
+      "target": "rare-B observables",
+      "units_transformation": "external observable units remain open"
+    }
+  ],
+  "empirical_inputs_used": false,
+  "first_open_edge": {
+    "blocking_dependency": "OPEN_MISSING_RARE_B_CHARGED_CURRENT_PAIR_COMPOSITION",
+    "source": "charged-current flavor transport",
+    "target": "first charged-current insertion"
+  },
+  "frozen_predictions_changed": false,
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "nodes": [
+    "charged-current flavor transport",
+    "first charged-current insertion",
+    "intermediate-state response",
+    "second charged-current insertion",
+    "generation-mode sum",
+    "cancellation/non-cancellation law",
+    "induced b -> s neutral kernel",
+    "v5.2 operator matching",
+    "Wilson coefficients",
+    "rare-B observables"
+  ],
+  "official_prediction_logic_changed": false,
+  "pdg_reference_values_used": false,
+  "physics_model_logic_changed": false,
+  "primary_verdict": "RARE_B_FCNC_GENERATION_MECHANISM_BLOCKED",
+  "rare_b_data_fitting_used": false,
+  "sprint": "bhsm-rare-b-fcnc-generation-mechanism-v5-3",
+  "status": "RARE_B_FCNC_GENERATION_DEPENDENCY_GRAPH_ARTIFACTED",
+  "version": "v5.3",
+  "w_calibration_used": false
+}

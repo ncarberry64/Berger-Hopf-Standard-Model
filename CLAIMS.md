@@ -382,3 +382,16 @@ Claim-safe conclusion: BHSM v5.2 does not derive a physical `b -> s mu+ mu-` tra
 Still not supported: automatic FCNC generation, a tree-level `b-s` neutral current without a theorem, BHSM-derived `C7`, `C9`, or `C10`, Wilson coefficients from CKM alone, a loop factor from geometric resemblance, a physical `q^2` bridge, numerical `q0^2`, exact micro-plateau nodes, solved gauge-coupling normalization, derived `g2_BH`, derived `alpha_i`, derived CKM coefficient value or exponent, LHCb-anomaly explanation, QFT falsification, or full BHSM completion.
 
 Preserved: `ACTION_ATTACHMENT_BLOCKED`, `CKM_RELATIVE_CURRENT_NORMALIZATION_BLOCKED`, `COUPLING_BRIDGE_BLOCKED_PENDING_ACTION_PRINCIPLE`, `RARE_B_AFB_ZERO_PREDICTION_BLOCKED`, `RARE_B_MICROPLATEAU_NODE_PREDICTION_BLOCKED`, and `RARE_B_OBSERVABLE_MAP_INTERFACE_COMPLETE`.
+
+<!-- BHSM_RARE_B_FCNC_GENERATION_MECHANISM_V5_3 -->
+## Rare-B FCNC generation-mechanism kill screen v5.3
+
+Allowed: BHSM v5.3 audits the earliest FCNC-generation layer needed before any `b -> s mu+ mu-` operator matching. It records that the existing repo does not yet derive a charged-current pair composition, intermediate-response kernel, generation-mode sum, cancellation law, induced neutral kernel, action source, normalization, phase convention, or perturbative order for a physical `b -> s` neutral transition.
+
+Verdict: `RARE_B_FCNC_GENERATION_MECHANISM_BLOCKED`.
+
+Claim-safe conclusion: BHSM v5.3 does not derive an FCNC-generation mechanism for `b -> s`. Wilson coefficients, `q0^2`, and exact node positions remain absent, and prediction claimed remains no.
+
+Still not supported: automatic FCNC generation, a tree-level `b-s` neutral current without a theorem, Standard Model penguin or box results relabeled as BHSM, loop factors from numerical resemblance, CKM-only Wilson coefficients, a physical `b -> s` induced neutral kernel, BHSM-derived `C7`, `C9`, or `C10`, numerical `q0^2`, exact micro-plateau nodes, LHCb-anomaly explanation, QFT falsification, or full BHSM completion.
+
+Preserved: `ACTION_ATTACHMENT_BLOCKED`, `CKM_RELATIVE_CURRENT_NORMALIZATION_BLOCKED`, `COUPLING_BRIDGE_BLOCKED_PENDING_ACTION_PRINCIPLE`, `RARE_B_AFB_ZERO_PREDICTION_BLOCKED`, `RARE_B_MICROPLATEAU_NODE_PREDICTION_BLOCKED`, `RARE_B_OBSERVABLE_MAP_INTERFACE_COMPLETE`, and `B_TO_S_MUMU_OPERATOR_MATCHING_BLOCKED`.

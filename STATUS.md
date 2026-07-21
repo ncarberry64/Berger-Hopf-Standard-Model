@@ -497,3 +497,22 @@ Open physical gates: `OPEN_MISSING_RARE_B_FCNC_GENERATION_MECHANISM`, `OPEN_MISS
 Prediction remains blocked: `C7_BHSM=null`, `C9_BHSM=null`, `C10_BHSM=null`, `q0_squared_value=null`, `microplateau_node_coordinates=[]`, and `prediction_claimed=false`.
 
 Command: `python -m bhsm.interface b-to-s-mumu-operator-matching-status --format markdown`.
+
+<!-- BHSM_RARE_B_FCNC_GENERATION_MECHANISM_V5_3 -->
+## Rare-B FCNC generation-mechanism kill screen v5.3
+
+Primary verdict: `RARE_B_FCNC_GENERATION_MECHANISM_BLOCKED`.
+
+Earliest blocking dependency: `OPEN_MISSING_RARE_B_CHARGED_CURRENT_PAIR_COMPOSITION`.
+
+BHSM v5.3 audits whether existing charged-current transport, neutral-response, sector-projector, generation-mode, boundary-operator, and action artifacts induce a nonzero `b -> s` neutral transition. They do not. The v5.2 open FCNC edge is refined without changing the v5.1 observable-map interface or the v5.2 operator-matching blocked verdict.
+
+Validated: neutral-current artifacts do not permit a tree-level `b-s` theorem; charged-current/CKM structures remain upstream relative inputs; the missing FCNC mechanism is decomposed into pair-composition, intermediate-response, generation-sum, cancellation, action, normalization, phase, and perturbative-order gates.
+
+Invalidated/downgraded: CKM geometry alone is not an FCNC mechanism; generic neutral response is not an FCNC theorem; a symbolic current-pair template is not a loop theorem; CKM unitarity alone is not a weighted-response cancellation theorem.
+
+Open physical gates: `OPEN_MISSING_RARE_B_FCNC_GENERATION_MECHANISM`, `OPEN_MISSING_RARE_B_CHARGED_CURRENT_PAIR_COMPOSITION`, `OPEN_MISSING_RARE_B_INTERMEDIATE_RESPONSE_KERNEL`, `OPEN_MISSING_RARE_B_GENERATION_MODE_SUM`, `OPEN_MISSING_RARE_B_DEGENERACY_CANCELLATION_LAW`, `OPEN_MISSING_RARE_B_INDUCED_NEUTRAL_KERNEL`, `OPEN_MISSING_RARE_B_FCNC_ACTION_SOURCE`, `OPEN_MISSING_RARE_B_FCNC_CURRENT_NORMALIZATION`, `OPEN_MISSING_RARE_B_FCNC_PERTURBATIVE_ORDER`, and `OPEN_MISSING_RARE_B_FCNC_PHASE_CONVENTION`.
+
+Prediction remains blocked: `C7_BHSM=null`, `C9_BHSM=null`, `C10_BHSM=null`, `q0_squared_value=null`, `microplateau_node_coordinates=[]`, and `prediction_claimed=false`.
+
+Command: `python -m bhsm.interface rare-b-fcnc-generation-status --format markdown`.
