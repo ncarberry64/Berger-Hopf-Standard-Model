@@ -12,6 +12,7 @@ Status taxonomy: `ESTABLISHED`, `ARTIFACT_BACKED`, `CANDIDATE`, `CONDITIONAL`,
 
 | Area | Status | What is established | What remains open | Command/artifact |
 | --- | --- | --- | --- | --- |
+| Twistor-mediated Berger associated bundles v6.0.8 | `BHSM_BERGER_COVARIANT_MULTIPLET_ARCHITECTURE_DERIVED` | Global nested `4+2+1` metric, exact S3 reconstruction, Berger eigenspace bundles/operator, general round-S7 branching, and exact linear multiplet closure | Parent/action normalization, nonlinear tower integration, physical gauge/scalar maps, coefficient sources, and absolute scale | `python -m bhsm.interface twistor-berger-associated-bundle-status --format markdown` |
 | B8 geometry–energy parent action v6.0.2 | `BHSM_B8_MINIMAL_ACTION_FAMILY_IDENTIFIED` | Finite D8 Lovelock classification, smallest P1 Dirichlet metric–sigma family, conditional bulk/boundary equations, scale and threshold architecture | Confinement invariant, coefficient sources, domain/signature, physical matter source, stable stationary phase, and parent-to-v5 reduction | `python -m bhsm.interface b8-parent-action-status --format markdown` |
 | B8/S7 physical domain and action source v6.0.1 | `BHSM_B8_S7_PARENT_ACTION_SOURCE_MISSING` | Complete Euclidean/Lorentzian/canonical/product candidate matrix, action-domain trace, conditional metric/measure/collar geometry, and objectwise pushforward rules | Foundational B8 geometry–stress action, time/signature selection, S7 metric stationarity, physical collar, 3+1 map, and S7-to-Berger-S3 reduction | `python -m bhsm.interface b8-s7-physical-domain-status --format markdown` |
 | S7 fiber integration and physical localization v6.0 | `BHSM_S7_ARCHITECTURE_AMBIGUOUS` | Exact nested `S1 -> S7 -> CP3`, `S3 -> S7 -> S4`, and `S2 -> CP3 -> S4` diagram; conditional orientation-sensitive fiber-pushforward theorem | Action-selected S7/B8 domain, signature, time, metric, orientation, physical fiber scale, bundle-valued transport, and collar matching | `python -m bhsm.interface s7-fiber-integration-status --format markdown` |
@@ -842,3 +843,33 @@ Completion gate:
 `V6_0_7_DIRECT_FIXED_AXIS_ROUTE_STOPS_ASSOCIATED_BUNDLE_ROUTE_CONTINUES`.
 
 Command: `python -m bhsm.interface b8-s7-berger-s3-reduction-status --format markdown`.
+
+<!-- BHSM_TWISTOR_BERGER_ASSOCIATED_BUNDLE_V6_0_8 -->
+## Twistor-mediated Berger associated-bundle construction v6.0.8
+
+Primary constructive result:
+`BHSM_BERGER_COVARIANT_MULTIPLET_ARCHITECTURE_DERIVED`.
+
+The global nested fibrations construct orthogonal distributions
+`TS7=H4 direct-sum V2 direct-sum V1` and a generic
+`Sp(2)xU(1)_R` metric without selecting a section of `CP3->S4`. For every
+`x in S4`, `p_C^-1(tau^-1(x))=p_H^-1(x)=S3`, with the complete
+`S1->S3->S2` Hopf structure retained. The fiber restriction exactly recovers
+the repository Berger coefficient form with `r_base=L2` and `r_fiber=L1`.
+
+Fixed `(J,m)` Berger eigenspaces form finite-rank `Sp(1)`-associated bundles
+over `S4`. The minimally coupled scalar operator is the associated connection
+Laplacian plus the exact Berger eigenvalue. Round-S7 scalar harmonics now have
+a general `Sp(2)xSp(1)` branching formula, with dimension checks through
+`ell=8`.
+
+Linear covariant multiplets close exactly. Generic polynomial products of a
+nontrivial finite set generate higher Clebsch--Gordan channels, selecting an
+infinite tower or an action-controlled spectral/adiabatic effective
+truncation. The provisional P1 reduction remains symbolic pending physical
+measure, trace, overlap, connection, and modulus normalization.
+
+Completion gate:
+`V6_0_8_CONTINUE_TO_TWISTOR_BERGER_ACTION_NORMALIZATION`.
+
+Command: `python -m bhsm.interface twistor-berger-associated-bundle-status --format markdown`.

@@ -669,3 +669,32 @@ automatic global scalars; naive additive S7/S4/S3 Laplacians; numerical
 eigenvalue matching as representation branching; a Hopf fiber as a physical
 B8 boundary; parent derivation of `A_ST=-2`, `G_ST=8`, gauge couplings,
 fermion spectra, generations, masses, mixing, an absolute unit, or full BHSM.
+
+<!-- BHSM_TWISTOR_BERGER_ASSOCIATED_BUNDLE_V6_0_8 -->
+## v6.0.8 twistor-Berger associated-bundle claims
+
+Allowed: the nested global distributions split `TS7` as `4+2+1`; the complete
+preimage of each twistor `S2` is the quaternionic Hopf `S3`; and the generic
+nested metric is globally `Sp(2)xU(1)_R` invariant. The `U(1)_R` action is the
+circle bundle over `CP3`, not a forbidden reduction over `S4`.
+
+Allowed: fixed `(J,m)` Berger eigenspaces form rank-`2J+1` associated bundles.
+For a minimally coupled scalar with constant nested scales, the reduced linear
+operator is the base `Sp(1)` connection Laplacian plus the exact intrinsic
+Berger eigenvalue. The general round-S7 scalar branching formula under
+`Sp(2)xSp(1)`, followed by integral `U(1)` weights, is derived.
+
+Allowed: exact linear multiplet closure and the generic Clebsch--Gordan theorem
+that nontrivial finite polynomial mode sets source higher representations.
+This selects an infinite tower or a controlled action/spectral effective
+reduction; it is not a failure of the multiplet architecture.
+
+Allowed conditionally: provisional P1 scalar and geometric action reduction,
+connection kinetic normalization, nonlinear tower integration, and mapping to
+v5 coefficients follow only after the declared parent action, physical
+measure, trace, overlap, modulus, and normalization dependencies close.
+
+Not supported: treating local components as global scalars; assuming a section
+of `CP3->S4`; identifying the geometric `Sp(1)` or `U(1)` connections with the
+Standard Model gauge group; deriving physical couplings, particles,
+generations, v5 target coefficients, an absolute scale, or full BHSM.

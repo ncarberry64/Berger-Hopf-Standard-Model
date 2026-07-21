@@ -524,3 +524,19 @@ The obstruction is specifically the direct fixed-axis scalar route over
 `S4`. The command also reports `BHSM_TWISTOR_MEDIATED_BERGER_ROUTE_SELECTED`
 and `BHSM_BERGER_ASSOCIATED_BUNDLE_FORMULATION_REQUIRED`: the nested
 `S7 -> CP3 -> S4` route continues without assuming a twistor section.
+
+<!-- BHSM_TWISTOR_BERGER_ASSOCIATED_BUNDLE_V6_0_8 -->
+## Twistor-mediated Berger associated-bundle construction v6.0.8
+
+```bash
+python -m bhsm.interface twistor-berger-associated-bundle-status --format json
+python -m bhsm.interface twistor-berger-associated-bundle-status --format markdown
+python scripts/materialize_twistor_berger_associated_bundle_v6_0_8.py
+```
+
+The command reports `BHSM_BERGER_COVARIANT_MULTIPLET_ARCHITECTURE_DERIVED`.
+It records the global nested metric, exact S3 reconstruction, fiberwise Berger
+eigenspace bundles, covariant scalar operator, general round-S7 branching, and
+linear closure. It routes generic nonlinear products to a tower-aware
+effective reduction and keeps parent normalization, gauge interpretation,
+v5 coefficient recovery, physical units, and particle claims separate.

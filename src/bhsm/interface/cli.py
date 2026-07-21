@@ -254,6 +254,7 @@ from .harmonic_physicality_coupling_selection import harmonic_selection_status_r
 from .minimal_parent_theory_kill_test import minimal_parent_kill_status_report, minimal_parent_kill_status_to_markdown
 from .correspondence_novelty_firewall import correspondence_firewall_status_report, correspondence_firewall_status_to_markdown
 from .b8_s7_berger_s3_reduction_theorem import reduction_status_report, reduction_status_to_markdown
+from .twistor_berger_associated_bundle import twistor_berger_status_report, twistor_berger_status_to_markdown
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -708,6 +709,8 @@ def build_parser() -> argparse.ArgumentParser:
     correspondence_firewall.add_argument("--format", choices=("json", "markdown"), default="json")
     reduction_theorem = commands.add_parser("b8-s7-berger-s3-reduction-status", help="Render the BHSM v6.0.7 B8/S7-to-Berger-S3 reduction theorem")
     reduction_theorem.add_argument("--format", choices=("json", "markdown"), default="json")
+    twistor_berger = commands.add_parser("twistor-berger-associated-bundle-status", help="Render the BHSM v6.0.8 twistor-mediated Berger associated-bundle construction")
+    twistor_berger.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
 
@@ -1569,6 +1572,13 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(json.dumps(payload, indent=2, sort_keys=True))
         else:
             _print_unicode(reduction_status_to_markdown(payload))
+        return 0
+    if args.command == "twistor-berger-associated-bundle-status":
+        payload = twistor_berger_status_report()
+        if args.format == "json":
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        else:
+            _print_unicode(twistor_berger_status_to_markdown(payload))
         return 0
     if args.command in {
         "primitive-charged-incidence",
