@@ -670,3 +670,36 @@ Command: `python -m bhsm.interface primordial-boundary-tension-status --format m
 Result: `BHSM_SPACETIME_RECYCLING_CONSTRAINT_ARCHITECTURE_IDENTIFIED`.
 
 The general candidate `C_[d_B-1]`, `F_[d_B]=dC` has no local propagating polarizations and admits constant flux on each connected source-free component. Its candidate Lorentzian stress is `T_AB=-(Z_F f^2/2)G_AB`. BHSM supplies neither `d_B`, `Z_F`, the required boundary ensemble, a conserved codimension-one black-hole/core source, a charge lattice, nor an energy-transfer law. Fixed local flux and fixed integrated flux have different pressure and Hessian responses, so neither outward expansion nor a finite `L_c` follows. The v5.12 primary result and scalar/topographic localization recommendation remain unchanged.
+
+<!-- BHSM_ENERGY_GEOMETRY_CONFINEMENT_INVARIANT_V6_0_3 -->
+## Energy--geometry confinement invariant v6.0.3
+
+Primary result: `BHSM_ENERGY_GEOMETRY_FINITE_INVARIANT_FAMILY_IDENTIFIED`.
+
+Threshold result: `BHSM_PHYSICALITY_THRESHOLD_ARCHITECTURE_IDENTIFIED`.
+
+The full parity-even bulk-sigma Hessian architecture is now explicit. A finite
+branch-organized vector of curvature, trace, composite-stress, interface,
+collar, flux, and harmonic-coherence candidates survives conditionally. No
+parent-action theorem selects one coupling, coefficient sign, signature,
+self-adjoint physical domain, or nonlinear stable phase, so no unique `C_EG`
+or physicality transition is derived.
+
+The strongest audit domain is bulk `M8`; a boundary-only sigma cannot generate
+the boundary it presupposes. The physical threshold is the lowest non-gauge,
+normalizable eigenvalue crossing, not a pointwise coefficient zero. Harmonic or
+octave constructive interference is retained as a candidate selection theorem
+through the action-derived mode-overlap matrix; decimal magnitude grouping
+alone is not an action law.
+
+Still open: `OPEN_MISSING_SIGMA_COUPLING_SELECTION_PRINCIPLE`,
+`OPEN_MISSING_PARENT_MATTER_ACTION`,
+`OPEN_MISSING_PHYSICALITY_COEFFICIENT_SOURCES`,
+`OPEN_MISSING_SIGNATURE_AND_PHYSICAL_DOMAIN_SELECTION`,
+`OPEN_MISSING_SELF_ADJOINT_PHYSICAL_OPERATOR_DOMAIN`,
+`OPEN_MISSING_NONLINEAR_COUPLED_STABLE_PHASE`,
+`OPEN_MISSING_DYNAMIC_INTERFACE_AND_JUNCTION_SOURCE`,
+`OPEN_MISSING_PARENT_TO_V5_REDUCTION_THEOREM`,
+`OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR`, and `FULL_BHSM_NOT_COMPLETE`.
+
+Command: `python -m bhsm.interface energy-geometry-confinement-status --format markdown`.
