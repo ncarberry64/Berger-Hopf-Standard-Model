@@ -422,3 +422,26 @@ Doctrine: `docs/bhsm_absolute_unit_anchor_generation_v5_8.md`.
 | `artifacts/BHSM_pilot_wave_scale_modulus_dynamics_report_v5_9.json` | `BHSM_PILOT_WAVE_DOES_NOT_LIFT_SCALE_MODULUS` | Final v5.9 report with derived, conditional, open, invalidated, and preserved-claim statuses. |
 
 Doctrine: `docs/bhsm_pilot_wave_scale_modulus_dynamics_v5_9.md`.
+
+<!-- BHSM_QUANTUM_EFFECTIVE_ACTION_CASIMIR_BACKREACTION_V5_10 -->
+## Quantum effective action and Casimir backreaction v5.10
+
+Primary result: `BHSM_QUANTUM_EFFECTIVE_ACTION_PARTIAL`.
+
+| Artifact | Status | Purpose |
+|---|---|---|
+| `artifacts/BHSM_quantum_mode_ownership_v5_10.json` | `QUANTUM_MODE_OWNERSHIP_LEDGER_PARTIAL_EXPLICIT` | Separates retained collective variables from integrated and excluded fluctuations to prevent one-loop/pilot-wave double counting. |
+| `artifacts/BHSM_quantum_euclidean_operator_domain_ledger_v5_10.json` | `EUCLIDEAN_OPERATOR_LEDGER_PARTIAL_FULL_DETERMINANT_BLOCKED` | Audits Euclidean continuation, domains, adjoints, ellipticity, zero modes, negative modes, and determinant eligibility. |
+| `artifacts/BHSM_quantum_gauge_fixing_ghost_audit_v5_10.json` | `GAUGE_AND_GHOST_DETERMINANT_BLOCKED` | Records that no final gauge-fixing functional, ghost operator, boundary condition, or zero-mode quotient is derived. |
+| `artifacts/BHSM_quantum_berger_hopf_spectral_ledger_v5_10.json` | `BERGER_HOPF_SPECTRAL_LEDGER_CONTROLLED_REDUCED_SUBSET` | Gives the exact two-mode homogeneous v5.7 ledger while integrating only the mode orthogonal to retained `sigma_scale`. |
+| `artifacts/BHSM_quantum_heat_kernel_divergence_v5_10.json` | `FINITE_REDUCED_HEAT_TRACE_EXACT_FIELD_THEORY_DIVERGENCES_OPEN` | Separates the exact finite heat trace from unavailable full Seeley-DeWitt and ultraviolet data. |
+| `artifacts/BHSM_quantum_renormalization_counterterm_v5_10.json` | `RENORMALIZATION_NOT_CLOSED_MU_EXPLICIT` | Keeps `mu` explicit and records missing counterterms, running coefficients, scheme closure, and RG invariance. |
+| `artifacts/BHSM_quantum_zeta_determinant_v5_10.json` | `EXACT_FINITE_REDUCED_ZETA_DETERMINANT_COMPUTED` | Computes the one included bosonic determinant and direct/zeta equality without a cutoff. |
+| `artifacts/BHSM_quantum_casimir_trace_anomaly_v5_10.json` | `CASIMIR_AND_TOTAL_ANOMALY_NOT_DERIVED_REDUCED_SCALE_RESPONSE_ONLY` | Leaves physical Casimir/anomaly outputs null and records only the reduced one-mode scale response. |
+| `artifacts/BHSM_quantum_backreaction_equations_v5_10.json` | `REDUCED_PARTIAL_BACKREACTION_EQUATIONS_DERIVED` | Derives the partial `(L,a_Berger,sigma_scale,rho_star)` force equations and unresolved stress components. |
+| `artifacts/BHSM_quantum_effective_modulus_solution_v5_10.json` | `NO_FINITE_STABLE_EFFECTIVE_MODULUS_SOLUTION_IN_PARTIAL_SYSTEM` | Shows the partial `-1/L` force has no finite positive stationary point and no positive coupled Hessian. |
+| `artifacts/BHSM_quantum_pilot_wave_no_double_counting_update_v5_10.json` | `PILOT_WAVE_UPDATE_DEFERRED_PARTIAL_EFFECTIVE_ACTION_NO_DOUBLE_COUNTING_EXPLICIT` | Preserves v5.9 while defining the future effective-action-to-pilot-wave hierarchy. |
+| `artifacts/BHSM_quantum_uploaded_source_audit_v5_10.json` | `UPLOADED_SOURCE_CANDIDATES_AUDITED_NOT_USED_AS_SCALE_INPUTS` | Prevents manuscript descriptions, legacy mass ansatzes, or cosmology coefficients from becoming hidden inputs. |
+| `artifacts/BHSM_quantum_effective_action_casimir_backreaction_report_v5_10.json` | `BHSM_QUANTUM_EFFECTIVE_ACTION_PARTIAL` | Final report with derived, conditional, invalidated, open, and claim-boundary statuses. |
+
+Doctrine: `docs/bhsm_quantum_effective_action_casimir_backreaction_v5_10.md`.

@@ -612,3 +612,20 @@ Still open: `OPEN_MISSING_PRIMORDIAL_QUANTUM_BOUNDARY_STATE_CLOSURE`, `OPEN_MISS
 No absolute eV/GeV scale, particle mass, gauge coupling, CKM value, rare-B observable, cosmology calibration, Planck-length insertion, or full BHSM completion is claimed.
 
 Command: `python -m bhsm.interface pilot-wave-scale-modulus-status --format markdown`.
+
+<!-- BHSM_QUANTUM_EFFECTIVE_ACTION_CASIMIR_BACKREACTION_V5_10 -->
+## Quantum effective action and Casimir backreaction v5.10
+
+Primary result: `BHSM_QUANTUM_EFFECTIVE_ACTION_PARTIAL`.
+
+The full BHSM one-loop action is blocked by the still-open gauge-fixed domain and ghost operator, fermion action/domain and eta invariant, gauge-fixed geometric Hessian, charged and neutral quadratic operators, complete spectra, field-theoretic heat-kernel coefficients, counterterms, and renormalized coefficient running.
+
+The strongest exact included subset is the v5.7 homogeneous scalar/topographic fluctuation `delta_perp=(delta T-delta Phi)/sqrt(2)` orthogonal to the retained `sigma_scale` mode. Its symbolic scale-family operator is `H_perp=L^-2(4+8 sigma_scale^2)`. The direct finite determinant and zeta result agree: `log det(H_perp/mu^2)=log(4+8 sigma_scale^2)-2 log(mu L)`. No cutoff, box, measured input, or assumed Casimir coefficient is used.
+
+This determinant is not a field-theoretic Casimir energy. Its `log(mu L)` term has unresolved renormalization-scale dependence and does not establish a total trace anomaly or dimensional transmutation. The reduced partial action gives `partial_L Gamma=-1/L`, so it has no finite positive `L` stationary point. The official v5.7 `sigma_scale=1/2` and v5.9 pilot-wave dynamics are not changed by an incomplete one-mode diagnostic.
+
+Still open: `OPEN_MISSING_FULL_GAUGE_FIXED_DOMAIN`, `OPEN_MISSING_FADDEEV_POPOV_GHOST_OPERATOR`, `OPEN_MISSING_FULL_LOWER_ORDER_OPERATOR_TERMS`, `OPEN_MISSING_FERMION_DIRAC_OPERATOR_ACTION_SOURCE`, `OPEN_MISSING_FERMION_DETERMINANT_PHASE_ETA_INVARIANT`, `OPEN_MISSING_GEOMETRIC_FLUCTUATION_GAUGE_AND_DOMAIN`, `OPEN_MISSING_COMPLETE_BERGER_HOPF_SPECTRAL_LEDGER`, `OPEN_MISSING_FIELD_THEORETIC_HEAT_KERNEL_COEFFICIENTS`, `OPEN_MISSING_RENORMALIZED_ACTION_COEFFICIENT_RUNNING`, `OPEN_MISSING_FINITE_CASIMIR_SPECTRAL_REMAINDER`, `OPEN_MISSING_TOTAL_TRACE_ANOMALY`, `OPEN_MISSING_NONLINEAR_GEOMETRIC_BACKREACTION`, `OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR`, and all downstream gauge, CKM, neutral-scale, mass-operator, rare-B, and full-BHSM gates.
+
+No physical validation, absolute unit, particle mass, gauge coupling, CKM value, rare-B observable, white-hole observation, Yang-Mills mass gap, or full BHSM completion is claimed.
+
+Command: `python -m bhsm.interface quantum-effective-action-status --format markdown`.
