@@ -1,5 +1,14 @@
 # BHSM Artifact Index
 
+## B8/S7 physical domain and action-source closure v6.0.1
+
+| Package | Contents | Primary artifact | Status | CLI |
+| --- | --- | --- | --- | --- |
+| Domain/time/action matrix, B8/S7 embedding, metric/stationarity, measures, bundle pushforward, collar, physical-boundary map, S3 reclassification, scalar readiness, and hidden-input audit | Fourteen deterministic v6.0.1 artifacts | `artifacts/BHSM_b8_s7_physical_domain_action_source_closure_report_v6_0_1.json` | `BHSM_B8_S7_PARENT_ACTION_SOURCE_MISSING` | `python -m bhsm.interface b8-s7-physical-domain-status --format markdown` |
+
+The package preserves the exact v6.0 topology while proving that no stored
+v5.4-v6.0 action selects it as the physical dynamical domain.
+
 ## S7 fiber integration and physical localization v6.0
 
 | Package | Contents | Primary artifact | Status | CLI |
