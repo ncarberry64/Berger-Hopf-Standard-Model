@@ -1,0 +1,65 @@
+{
+  "artifact": "BHSM_absolute_unit_propagation_v5_8",
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "BHSM v5.8 audits the primordial compact-state and global size modulus as possible absolute unit anchors. The current action selects dimensionless ratios M_BH/M_star=1/2 and R_BH/ell_star=2 but does not generate ell_star, M_star, particle masses, gauge couplings, CKM values, rare-B observables, or full BHSM completion.",
+  "cosmological_parameter_used": false,
+  "empirical_inputs_used": false,
+  "frozen_predictions_changed": false,
+  "hubble_or_cmb_calibration_used": false,
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "numerical_particle_masses_emitted": false,
+  "observed_mass_or_vev_used": false,
+  "official_prediction_logic_changed": false,
+  "pdg_reference_values_used": false,
+  "physical_couplings_promoted": false,
+  "physics_model_logic_changed": false,
+  "planck_length_inserted": false,
+  "primary_result": "BHSM_ABSOLUTE_UNIT_ANCHOR_NOT_GENERATED",
+  "primordial_to_late_time_map": {
+    "cmb_and_relic_matter_are_virtual": false,
+    "cosmological_fit_attempted": false,
+    "initial_release": "candidate compact geometric release from normalized primordial boundary data",
+    "redshift_generates_unit": false,
+    "redshifted_relics": "physical on-shell relic matter/radiation may be redshifted from an already-defined initial scale",
+    "scale_transport": "redshift can transport a scale after ell_star exists; it cannot create ell_star",
+    "virtual_or_effective_memory": "late boundary/topographic response memory can be effective or virtual"
+  },
+  "propagation": {
+    "charged_current": "dimensionful current normalization remains open",
+    "collar_thickness": "rho_star L is physical only after L=ell_star is fixed",
+    "fermion_operator": "D_phys = M_BH D_hat only after M_BH exists; no fermion masses are derived",
+    "gauge_operator": "L_gauge,phys = M_BH^2 L_gauge,hat only after M_BH exists; alpha_i remains action-gated",
+    "hessian_green_operator": "G_phys = M_BH^-2 H_hat^-1 only after M_BH exists",
+    "neutral_response": "neutral physical eV/GeV scale remains open",
+    "particle_masses_derived_by_multiplication": false,
+    "scalar_spectrum": "H_ST,phys = M_BH^2 H_ST,hat only after M_BH exists",
+    "status": "UNIT_PROPAGATION_BLOCKED_PENDING_ABSOLUTE_ANCHOR"
+  },
+  "rare_b_phenomenology_pursued": false,
+  "sprint": "bhsm-absolute-unit-anchor-generation-v5-8",
+  "status": "UNIT_PROPAGATION_BLOCKED_PENDING_ABSOLUTE_ANCHOR",
+  "unit_anchor": {
+    "M_BH": null,
+    "M_BH_equals_M_star_over_2_only_after_M_star_exists": true,
+    "M_star": null,
+    "R_BH": null,
+    "absolute_or_relative": "relative only",
+    "ell_star": null,
+    "hbar_c_status": "conversion convention only; hbar=c=1 may be used as natural-unit convention",
+    "preserved_relative_ratios": {
+      "M_BH_over_M_star": 0.5,
+      "R_BH_over_ell_star": 2.0,
+      "sigma_scale": 0.5
+    },
+    "status": "BHSM_ABSOLUTE_UNIT_ANCHOR_NOT_GENERATED",
+    "unresolved_constants": [
+      "ell_star",
+      "M_star",
+      "absolute action coefficient or scale-modulus source"
+    ]
+  },
+  "version": "v5.8",
+  "w_calibration_used": false
+}

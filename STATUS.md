@@ -580,3 +580,18 @@ Still open: `OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR`, `OPEN_MISSING_NONLINEAR_FULL_GE
 No numeric eV/GeV scale, particle mass, gauge coupling, CKM value, rare-B observable, or full BHSM completion is claimed.
 
 Command: `python -m bhsm.interface scalar-topographic-profile-boundary-status --format markdown`.
+
+<!-- BHSM_ABSOLUTE_UNIT_ANCHOR_GENERATION_V5_8 -->
+## Absolute unit-anchor generation v5.8
+
+Primary result: `BHSM_ABSOLUTE_UNIT_ANCHOR_NOT_GENERATED`.
+
+BHSM v5.8 defines a candidate primordial compact Berger-Hopf boundary state with metric `g(L)=L^2 g_hat`, outward turning surface, normalized collar, and the v5.7 scalar/topographic branch `sigma_scale=1/2`. It audits curvature radius, volume, area, collar width, spectral eigenvalues, topology, action stationarity, and transition regularity as possible unit anchors.
+
+Result: the current normalized action preserves a continuous global size modulus. Dimensionless topology and mode numbers do not supply a length; spectral relations such as `lambda_n=lambda_hat_n/L^2` do not fix `L`; redshift can transport an already-defined scale but cannot create it. The ratios `M_BH/M_star=1/2` and `R_BH/ell_star=2` remain valid, but `ell_star`, `M_star`, `M_BH`, and `R_BH` are not absolute physical-unit outputs.
+
+Still open: `OPEN_MISSING_GLOBAL_SCALE_MODULUS_ACTION_SOURCE`, `OPEN_MISSING_NONLINEAR_GEOMETRIC_BACKREACTION`, `OPEN_MISSING_ABSOLUTE_ACTION_QUANTUM_OR_BOUNDARY_TENSION`, `OPEN_MISSING_ABSOLUTE_SPECTRAL_EIGENVALUE_SOURCE`, `OPEN_MISSING_PRIMORDIAL_REGULARITY_SCALE_CONDITION`, `OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR`, and all downstream gauge, CKM, neutral-scale, mass-operator, rare-B, and full-BHSM gates.
+
+No Planck length, Hubble rate, CMB temperature, particle mass, gauge coupling, CKM value, rare-B observable, or full BHSM completion is claimed.
+
+Command: `python -m bhsm.interface absolute-unit-anchor-status --format markdown`.

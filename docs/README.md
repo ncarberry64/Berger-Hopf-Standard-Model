@@ -147,6 +147,7 @@ The current minimal-action theory dictionary is documented in
 - [Physical-scale generation v5.5](bhsm_physical_scale_generation_v5_5.md)
 - [Scalar/topographic vacuum action derivation v5.6](bhsm_scalar_topographic_vacuum_action_derivation_v5_6.md)
 - [Scalar/topographic profile boundary closure v5.7](bhsm_scalar_topographic_profile_boundary_closure_v5_7.md)
+- [Absolute unit-anchor generation v5.8](bhsm_absolute_unit_anchor_generation_v5_8.md)
 
 ## CP O_int Sprint Docs
 
