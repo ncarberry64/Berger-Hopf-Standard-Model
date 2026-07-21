@@ -12,6 +12,7 @@ Status taxonomy: `ESTABLISHED`, `ARTIFACT_BACKED`, `CANDIDATE`, `CONDITIONAL`,
 
 | Area | Status | What is established | What remains open | Command/artifact |
 | --- | --- | --- | --- | --- |
+| S7 fiber integration and physical localization v6.0 | `BHSM_S7_ARCHITECTURE_AMBIGUOUS` | Exact nested `S1 -> S7 -> CP3`, `S3 -> S7 -> S4`, and `S2 -> CP3 -> S4` diagram; conditional orientation-sensitive fiber-pushforward theorem | Action-selected S7/B8 domain, signature, time, metric, orientation, physical fiber scale, bundle-valued transport, and collar matching | `python -m bhsm.interface s7-fiber-integration-status --format markdown` |
 | Frozen internal predictions | `ESTABLISHED` | Frozen Markdown and JSON prediction records with integrity tests | External comparison is separate | `docs/frozen_predictions.md` |
 | Python computational interface | `ESTABLISHED` | Offline geometry, prediction, comparison, and report interfaces | New physics formulas require their own evidence | `python -m bhsm.interface --help` |
 | CERN ROOT adapter | `CI_COMPILED_RUNTIME_GATED` | Header-only utility, PyROOT expression wrapper, and pinned ROOT-container C++ smoke test | Documented file-schema, detector-stack, and institutional HEP validation | `integrations/cern-root/README.md` |
