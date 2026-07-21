@@ -1,0 +1,132 @@
+{
+  "artifact": "BHSM_absolute_unit_scale_modulus_audit_v5_8",
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "BHSM v5.8 audits the primordial compact-state and global size modulus as possible absolute unit anchors. The current action selects dimensionless ratios M_BH/M_star=1/2 and R_BH/ell_star=2 but does not generate ell_star, M_star, particle masses, gauge couplings, CKM values, rare-B observables, or full BHSM completion.",
+  "cosmological_parameter_used": false,
+  "effective_scale_action": {
+    "S_eff_current": "S_eff(L)=S_hat[sigma_scale=1/2] after factoring the arbitrary unit ell_star",
+    "coordinates": "x = L x_hat",
+    "d2S_eff_dL2": 0.0,
+    "dS_eff_dL": 0.0,
+    "dimensionful_inputs": [],
+    "infinite_size_runaway": "flat direction rather than bounded finite minimum",
+    "metric_decomposition": "g = L^2 g_hat",
+    "positive_finite_unique_solution": false,
+    "rescaling_transformation": {
+      "L": "L -> lambda L",
+      "M_star": "M_star -> M_star/lambda",
+      "dimensionless_fields_and_topology": "unchanged",
+      "ell_star": "ell_star -> lambda ell_star",
+      "g": "g -> lambda^2 g"
+    },
+    "selected_branch": null,
+    "size_modulus": "L",
+    "stationary_points": "all positive L are stationary in the normalized reduced model",
+    "status": "GLOBAL_SCALE_MODULUS_FLAT_OR_UNDERDETERMINED",
+    "why_no_anchor": "Every serious candidate either rescales with L, is dimensionless topological data, or requires an unproved absolute action coefficient, boundary tension, action quantum, or spectral eigenvalue.",
+    "zero_size_branch_handled": "L=0 is excluded as degenerate geometry, not selected"
+  },
+  "empirical_inputs_used": false,
+  "frozen_predictions_changed": false,
+  "hubble_or_cmb_calibration_used": false,
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "numerical_particle_masses_emitted": false,
+  "observed_mass_or_vev_used": false,
+  "official_prediction_logic_changed": false,
+  "pdg_reference_values_used": false,
+  "physical_couplings_promoted": false,
+  "physics_model_logic_changed": false,
+  "planck_length_inserted": false,
+  "primary_result": "BHSM_ABSOLUTE_UNIT_ANCHOR_NOT_GENERATED",
+  "rare_b_phenomenology_pursued": false,
+  "scaling_terms": [
+    {
+      "coefficient_requirement": "absolute gravitational/curvature coefficient or constraint normalization",
+      "normalized_source": "v5.4 symbolic geometry action",
+      "raw_L_power": 2,
+      "reason_no_absolute_anchor": "a coefficient with absolute dimensions is required to compare this term to dimensionless sectors",
+      "status": "SCALE_WEIGHT_RECORDED_SOURCE_OPEN",
+      "term": "geometric curvature term"
+    },
+    {
+      "coefficient_requirement": "gauge coupling/action attachment",
+      "normalized_source": "v4.6/v5.4 normalized gauge skeleton",
+      "raw_L_power": 0,
+      "reason_no_absolute_anchor": "classical four-dimensional gauge scaling is L-neutral after field normalization",
+      "status": "CONFORMAL_WEIGHT_DOES_NOT_FIX_L",
+      "term": "gauge Yang-Mills term"
+    },
+    {
+      "coefficient_requirement": "Dirac operator action source and mass operator theorem",
+      "normalized_source": "v5.4 fermion operator slot",
+      "raw_L_power": 0,
+      "reason_no_absolute_anchor": "massless kinetic normalization does not select L",
+      "status": "NORMALIZED_NO_MASS_ANCHOR",
+      "term": "fermion kinetic term"
+    },
+    {
+      "coefficient_requirement": "absolute kinetic coefficient if physical units are demanded",
+      "normalized_source": "v5.6/v5.7 normalized profile sector",
+      "raw_L_power": 2,
+      "reason_no_absolute_anchor": "v5.7 fixes sigma_scale but not the physical length multiplying the normalized cell",
+      "status": "RELATIVE_SCALE_ONLY",
+      "term": "scalar/topographic kinetic term"
+    },
+    {
+      "coefficient_requirement": "absolute vacuum-density coefficient",
+      "normalized_source": "v5.7 evaluated A_ST/G_ST",
+      "raw_L_power": 4,
+      "reason_no_absolute_anchor": "alpha_scale=2 and beta_scale=8 fix M_BH/M_star, not M_star",
+      "status": "DIMENSIONLESS_BRANCH_FIXED_ONLY",
+      "term": "scalar/topographic vacuum term"
+    },
+    {
+      "coefficient_requirement": "boundary tension or absolute boundary action coefficient",
+      "normalized_source": "boundary normal forms",
+      "raw_L_power": 2,
+      "reason_no_absolute_anchor": "a boundary area term can fix L only if its absolute coefficient is action-derived",
+      "status": "BOUNDARY_TENSION_OPEN",
+      "term": "boundary term"
+    },
+    {
+      "coefficient_requirement": "collar density or transition-layer action source",
+      "normalized_source": "collar measure normal form",
+      "raw_L_power": 3,
+      "reason_no_absolute_anchor": "rho_star is normalized; physical collar width remains L times rho_star",
+      "status": "COLLAR_SCALE_SOURCE_OPEN",
+      "term": "collar term"
+    },
+    {
+      "coefficient_requirement": "absolute eigenvalue/action quantum",
+      "normalized_source": "Laplace/Weyl spectral candidate",
+      "raw_L_power": "depends on heat-kernel coefficient",
+      "reason_no_absolute_anchor": "lambda_hat_n/L^2 is not an absolute energy without a fixed physical eigenvalue",
+      "status": "SPECTRAL_ANCHOR_OPEN",
+      "term": "spectral term"
+    },
+    {
+      "coefficient_requirement": "chosen integration dimension and coefficient units",
+      "normalized_source": "g=L^2 g_hat",
+      "raw_L_power": "d-volume power",
+      "reason_no_absolute_anchor": "the measure tracks L but does not by itself create a stationary equation",
+      "status": "MEASURE_SCALING_ONLY",
+      "term": "measure"
+    }
+  ],
+  "spectral_topological_assessment": {
+    "action_stationarity_fixes_scale": false,
+    "action_stationarity_reason": "dS_eff/dL=0 is identically flat or depends on missing dimensionful coefficients",
+    "regularity_fixes_scale": false,
+    "regularity_reason": "finite action, smooth turning surface, and zero canonical momentum are homogeneous constraints in the current normalized model",
+    "spectrum_fixes_scale": false,
+    "spectrum_reason": "lambda_n=lambda_hat_n/L^2 leaves L arbitrary without an absolute eigenvalue theorem",
+    "topology_fixes_scale": false,
+    "topology_reason": "topological charges and Hopf data are dimensionless"
+  },
+  "sprint": "bhsm-absolute-unit-anchor-generation-v5-8",
+  "status": "ABSOLUTE_UNIT_SCALE_MODULUS_NOT_FIXED",
+  "version": "v5.8",
+  "w_calibration_used": false
+}

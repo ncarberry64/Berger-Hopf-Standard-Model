@@ -1,0 +1,345 @@
+{
+  "action_scaling_terms": [
+    {
+      "coefficient_requirement": "absolute gravitational/curvature coefficient or constraint normalization",
+      "normalized_source": "v5.4 symbolic geometry action",
+      "raw_L_power": 2,
+      "reason_no_absolute_anchor": "a coefficient with absolute dimensions is required to compare this term to dimensionless sectors",
+      "status": "SCALE_WEIGHT_RECORDED_SOURCE_OPEN",
+      "term": "geometric curvature term"
+    },
+    {
+      "coefficient_requirement": "gauge coupling/action attachment",
+      "normalized_source": "v4.6/v5.4 normalized gauge skeleton",
+      "raw_L_power": 0,
+      "reason_no_absolute_anchor": "classical four-dimensional gauge scaling is L-neutral after field normalization",
+      "status": "CONFORMAL_WEIGHT_DOES_NOT_FIX_L",
+      "term": "gauge Yang-Mills term"
+    },
+    {
+      "coefficient_requirement": "Dirac operator action source and mass operator theorem",
+      "normalized_source": "v5.4 fermion operator slot",
+      "raw_L_power": 0,
+      "reason_no_absolute_anchor": "massless kinetic normalization does not select L",
+      "status": "NORMALIZED_NO_MASS_ANCHOR",
+      "term": "fermion kinetic term"
+    },
+    {
+      "coefficient_requirement": "absolute kinetic coefficient if physical units are demanded",
+      "normalized_source": "v5.6/v5.7 normalized profile sector",
+      "raw_L_power": 2,
+      "reason_no_absolute_anchor": "v5.7 fixes sigma_scale but not the physical length multiplying the normalized cell",
+      "status": "RELATIVE_SCALE_ONLY",
+      "term": "scalar/topographic kinetic term"
+    },
+    {
+      "coefficient_requirement": "absolute vacuum-density coefficient",
+      "normalized_source": "v5.7 evaluated A_ST/G_ST",
+      "raw_L_power": 4,
+      "reason_no_absolute_anchor": "alpha_scale=2 and beta_scale=8 fix M_BH/M_star, not M_star",
+      "status": "DIMENSIONLESS_BRANCH_FIXED_ONLY",
+      "term": "scalar/topographic vacuum term"
+    },
+    {
+      "coefficient_requirement": "boundary tension or absolute boundary action coefficient",
+      "normalized_source": "boundary normal forms",
+      "raw_L_power": 2,
+      "reason_no_absolute_anchor": "a boundary area term can fix L only if its absolute coefficient is action-derived",
+      "status": "BOUNDARY_TENSION_OPEN",
+      "term": "boundary term"
+    },
+    {
+      "coefficient_requirement": "collar density or transition-layer action source",
+      "normalized_source": "collar measure normal form",
+      "raw_L_power": 3,
+      "reason_no_absolute_anchor": "rho_star is normalized; physical collar width remains L times rho_star",
+      "status": "COLLAR_SCALE_SOURCE_OPEN",
+      "term": "collar term"
+    },
+    {
+      "coefficient_requirement": "absolute eigenvalue/action quantum",
+      "normalized_source": "Laplace/Weyl spectral candidate",
+      "raw_L_power": "depends on heat-kernel coefficient",
+      "reason_no_absolute_anchor": "lambda_hat_n/L^2 is not an absolute energy without a fixed physical eigenvalue",
+      "status": "SPECTRAL_ANCHOR_OPEN",
+      "term": "spectral term"
+    },
+    {
+      "coefficient_requirement": "chosen integration dimension and coefficient units",
+      "normalized_source": "g=L^2 g_hat",
+      "raw_L_power": "d-volume power",
+      "reason_no_absolute_anchor": "the measure tracks L but does not by itself create a stationary equation",
+      "status": "MEASURE_SCALING_ONLY",
+      "term": "measure"
+    }
+  ],
+  "artifact": "BHSM_absolute_unit_anchor_generation_report_v5_8",
+  "candidate_invariants": [
+    {
+      "action_source": "normalized Berger/collar geometry",
+      "can_define_ell_star": false,
+      "dimension": "length",
+      "dynamical": true,
+      "fixed_by_equation": false,
+      "name": "primordial curvature radius",
+      "reason": "R_hat is dimensionless and L is the unfixed modulus",
+      "rescaling_behavior": "R_0 -> lambda R_0",
+      "symbol": "R_0=L R_hat"
+    },
+    {
+      "action_source": "boundary/collar measure",
+      "can_define_ell_star": false,
+      "dimension": "length^3",
+      "dynamical": true,
+      "fixed_by_equation": false,
+      "name": "compact volume",
+      "reason": "volume scales with L and no equation fixes V_0",
+      "rescaling_behavior": "V_0 -> lambda^3 V_0",
+      "symbol": "V_0=L^3 V_hat"
+    },
+    {
+      "action_source": "boundary measure",
+      "can_define_ell_star": false,
+      "dimension": "length^2",
+      "dynamical": true,
+      "fixed_by_equation": false,
+      "name": "boundary area",
+      "reason": "area is proportional to the unfixed modulus",
+      "rescaling_behavior": "A_0 -> lambda^2 A_0",
+      "symbol": "A_0=L^2 A_hat"
+    },
+    {
+      "action_source": "geometric action skeleton",
+      "can_define_ell_star": false,
+      "dimension": "length or dimensionless depending support",
+      "dynamical": true,
+      "fixed_by_equation": false,
+      "name": "integrated scalar curvature",
+      "reason": "no absolute curvature normalization or action quantum is derived",
+      "rescaling_behavior": "rescales with the chosen support dimension",
+      "symbol": "int R dmu"
+    },
+    {
+      "action_source": "boundary action normal form",
+      "can_define_ell_star": false,
+      "dimension": "length or dimensionless depending normalization",
+      "dynamical": true,
+      "fixed_by_equation": false,
+      "name": "extrinsic curvature invariant",
+      "reason": "boundary coefficient/tension with absolute units is not derived",
+      "rescaling_behavior": "tracks L through K~1/L and dA~L^2",
+      "symbol": "int K dA"
+    },
+    {
+      "action_source": "v5.7 collar coordinate",
+      "can_define_ell_star": false,
+      "dimension": "length",
+      "dynamical": true,
+      "fixed_by_equation": false,
+      "name": "collar width",
+      "reason": "rho_star=1 is a coordinate convention, not a physical length",
+      "rescaling_behavior": "rho_star L -> lambda rho_star L",
+      "symbol": "rho_star L"
+    },
+    {
+      "action_source": "Laplace-type spectral structures",
+      "can_define_ell_star": false,
+      "dimension": "length^-2",
+      "dynamical": true,
+      "fixed_by_equation": false,
+      "name": "lowest nonzero spectral eigenvalue",
+      "reason": "lambda_hat_n is dimensionless; no absolute eigenvalue theorem exists",
+      "rescaling_behavior": "lambda_n -> lambda_n/lambda^2",
+      "symbol": "lambda_n=lambda_hat_n/L^2"
+    },
+    {
+      "action_source": "Hopf/topological data",
+      "can_define_ell_star": false,
+      "dimension": "dimensionless",
+      "dynamical": false,
+      "fixed_by_equation": true,
+      "name": "topological quantization number",
+      "reason": "integer topology can label sectors but cannot supply a length",
+      "rescaling_behavior": "invariant",
+      "symbol": "n"
+    },
+    {
+      "action_source": "global scale-modulus action",
+      "can_define_ell_star": false,
+      "dimension": "length",
+      "dynamical": true,
+      "fixed_by_equation": false,
+      "name": "action stationary scale",
+      "reason": "current S_eff is flat or depends on free dimensionful coefficients",
+      "rescaling_behavior": "undetermined",
+      "symbol": "L_0"
+    },
+    {
+      "action_source": "primordial transition regularity",
+      "can_define_ell_star": false,
+      "dimension": "constraint",
+      "dynamical": true,
+      "fixed_by_equation": false,
+      "name": "regular turning surface",
+      "reason": "regularity removes singular branches but does not select a magnitude for L",
+      "rescaling_behavior": "homogeneous under L rescaling",
+      "symbol": "K_or_pi=0"
+    }
+  ],
+  "charged_mass_fitting_used": false,
+  "ckm_fitting_used": false,
+  "claim_boundary": "BHSM v5.8 audits the primordial compact-state and global size modulus as possible absolute unit anchors. The current action selects dimensionless ratios M_BH/M_star=1/2 and R_BH/ell_star=2 but does not generate ell_star, M_star, particle masses, gauge couplings, CKM values, rare-B observables, or full BHSM completion.",
+  "claim_safe_conclusion": "BHSM v5.8 does not generate an absolute unit anchor. The present primordial compact-state candidate and normalized action preserve a continuous global size modulus unless a new BHSM-native scale-modulus action source, absolute action quantum, boundary tension, spectral eigenvalue, or nonlinear backreaction theorem fixes L.",
+  "conditionally_established": [
+    "redshift can transport a BHSM-native scale after it exists",
+    "CMB/relic matter are physical relics, while boundary/topographic memory may be effective or virtual",
+    "M_BH/M_star=1/2 and R_BH/ell_star=2 remain valid relative ratios"
+  ],
+  "cosmological_parameter_used": false,
+  "derived": [
+    "primordial compact-state candidate in normalized Berger-Hopf variables",
+    "global size-modulus transformation g=L^2 g_hat",
+    "action scaling audit for current v5.4-v5.7 terms",
+    "proof that v5.7 sigma_scale=1/2 remains a relative scale only"
+  ],
+  "empirical_inputs_used": false,
+  "frozen_predictions_changed": false,
+  "hubble_or_cmb_calibration_used": false,
+  "legacy_threshold_tables_used": false,
+  "neutrino_limits_used": false,
+  "numerical_particle_masses_emitted": false,
+  "observed_mass_or_vev_used": false,
+  "official_prediction_logic_changed": false,
+  "pdg_reference_values_used": false,
+  "physical_couplings_promoted": false,
+  "physics_model_logic_changed": false,
+  "planck_length_inserted": false,
+  "primary_result": "BHSM_ABSOLUTE_UNIT_ANCHOR_NOT_GENERATED",
+  "primordial_state": {
+    "boundary_or_turning_surface": "regular compact-to-expanding transition hypersurface in normalized variables",
+    "collar_or_transition_layer": "rho in [0,1] in normalized coordinates; physical width is L times dimensionless width",
+    "dynamical_variables": [
+      "global size modulus L",
+      "normalized metric variations",
+      "scalar/topographic fields",
+      "sector fields"
+    ],
+    "fixed_variables": [
+      "dimensionless topology",
+      "orientation",
+      "normalized reference coordinates"
+    ],
+    "geometry": "compact normalized Berger-Hopf boundary cell Sigma_B with collar/turning layer [0,rho_star]",
+    "late_universe_doctrine": {
+      "early_release_still_occurring": false,
+      "effective_or_virtual_memory": "present boundary/topographic response memory, not on-shell relic matter",
+      "redshifted_relics_are_physical": true
+    },
+    "metric": "g(L)=L^2 g_hat with dimensionless Berger metric g_hat",
+    "orientation": "outward oriented initial boundary/turning surface",
+    "scalar_topographic_state": {
+      "M_BH_over_M_star": 0.5,
+      "R_BH_over_ell_star": 2.0,
+      "sigma_scale": 0.5,
+      "source": "v5.7 reduced scalar/topographic profile-boundary closure"
+    },
+    "status": "PRIMORDIAL_COMPACT_STATE_DEFINED_AS_CANDIDATE",
+    "topology": "Hopf-fibered compact boundary topology retained as dimensionless topological data",
+    "white_hole_like_interpretation": "The primordial hot plasma is treated as the outward high-energy phase of an initial compact geometric release. This is an interpretation of the candidate initial data, not an additional equation that fixes L."
+  },
+  "primordial_to_late_time_map": {
+    "cmb_and_relic_matter_are_virtual": false,
+    "cosmological_fit_attempted": false,
+    "initial_release": "candidate compact geometric release from normalized primordial boundary data",
+    "redshift_generates_unit": false,
+    "redshifted_relics": "physical on-shell relic matter/radiation may be redshifted from an already-defined initial scale",
+    "scale_transport": "redshift can transport a scale after ell_star exists; it cannot create ell_star",
+    "virtual_or_effective_memory": "late boundary/topographic response memory can be effective or virtual"
+  },
+  "propagation": {
+    "charged_current": "dimensionful current normalization remains open",
+    "collar_thickness": "rho_star L is physical only after L=ell_star is fixed",
+    "fermion_operator": "D_phys = M_BH D_hat only after M_BH exists; no fermion masses are derived",
+    "gauge_operator": "L_gauge,phys = M_BH^2 L_gauge,hat only after M_BH exists; alpha_i remains action-gated",
+    "hessian_green_operator": "G_phys = M_BH^-2 H_hat^-1 only after M_BH exists",
+    "neutral_response": "neutral physical eV/GeV scale remains open",
+    "particle_masses_derived_by_multiplication": false,
+    "scalar_spectrum": "H_ST,phys = M_BH^2 H_ST,hat only after M_BH exists",
+    "status": "UNIT_PROPAGATION_BLOCKED_PENDING_ABSOLUTE_ANCHOR"
+  },
+  "rare_b_phenomenology_pursued": false,
+  "recommended_next_construction_sprint": "bhsm-global-scale-modulus-action-source-v5-9",
+  "scale_modulus": {
+    "S_eff_current": "S_eff(L)=S_hat[sigma_scale=1/2] after factoring the arbitrary unit ell_star",
+    "coordinates": "x = L x_hat",
+    "d2S_eff_dL2": 0.0,
+    "dS_eff_dL": 0.0,
+    "dimensionful_inputs": [],
+    "infinite_size_runaway": "flat direction rather than bounded finite minimum",
+    "metric_decomposition": "g = L^2 g_hat",
+    "positive_finite_unique_solution": false,
+    "rescaling_transformation": {
+      "L": "L -> lambda L",
+      "M_star": "M_star -> M_star/lambda",
+      "dimensionless_fields_and_topology": "unchanged",
+      "ell_star": "ell_star -> lambda ell_star",
+      "g": "g -> lambda^2 g"
+    },
+    "selected_branch": null,
+    "size_modulus": "L",
+    "stationary_points": "all positive L are stationary in the normalized reduced model",
+    "status": "GLOBAL_SCALE_MODULUS_FLAT_OR_UNDERDETERMINED",
+    "why_no_anchor": "Every serious candidate either rescales with L, is dimensionless topological data, or requires an unproved absolute action coefficient, boundary tension, action quantum, or spectral eigenvalue.",
+    "zero_size_branch_handled": "L=0 is excluded as degenerate geometry, not selected"
+  },
+  "spectral_topological_assessment": {
+    "action_stationarity_fixes_scale": false,
+    "action_stationarity_reason": "dS_eff/dL=0 is identically flat or depends on missing dimensionful coefficients",
+    "regularity_fixes_scale": false,
+    "regularity_reason": "finite action, smooth turning surface, and zero canonical momentum are homogeneous constraints in the current normalized model",
+    "spectrum_fixes_scale": false,
+    "spectrum_reason": "lambda_n=lambda_hat_n/L^2 leaves L arbitrary without an absolute eigenvalue theorem",
+    "topology_fixes_scale": false,
+    "topology_reason": "topological charges and Hopf data are dimensionless"
+  },
+  "sprint": "bhsm-absolute-unit-anchor-generation-v5-8",
+  "status": "BHSM_ABSOLUTE_UNIT_ANCHOR_NOT_GENERATED",
+  "still_requiring_new_mathematics": [
+    "OPEN_MISSING_GLOBAL_SCALE_MODULUS_ACTION_SOURCE",
+    "OPEN_MISSING_NONLINEAR_GEOMETRIC_BACKREACTION",
+    "OPEN_MISSING_ABSOLUTE_ACTION_QUANTUM_OR_BOUNDARY_TENSION",
+    "OPEN_MISSING_ABSOLUTE_SPECTRAL_EIGENVALUE_SOURCE",
+    "OPEN_MISSING_PRIMORDIAL_REGULARITY_SCALE_CONDITION",
+    "OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR",
+    "OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT",
+    "OPEN_MISSING_ALPHA_I_ACTION_DERIVATION",
+    "OPEN_MISSING_G2_BH_ACTION_SOURCE",
+    "OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE",
+    "CKM_EXPONENT_NOT_DERIVED",
+    "OPEN_MISSING_NEUTRAL_SCALE",
+    "OPEN_MISSING_NEUTRAL_ACTION_NORMALIZATION",
+    "FULL_BHSM_NOT_COMPLETE"
+  ],
+  "unit_anchor": {
+    "M_BH": null,
+    "M_BH_equals_M_star_over_2_only_after_M_star_exists": true,
+    "M_star": null,
+    "R_BH": null,
+    "absolute_or_relative": "relative only",
+    "ell_star": null,
+    "hbar_c_status": "conversion convention only; hbar=c=1 may be used as natural-unit convention",
+    "preserved_relative_ratios": {
+      "M_BH_over_M_star": 0.5,
+      "R_BH_over_ell_star": 2.0,
+      "sigma_scale": 0.5
+    },
+    "status": "BHSM_ABSOLUTE_UNIT_ANCHOR_NOT_GENERATED",
+    "unresolved_constants": [
+      "ell_star",
+      "M_star",
+      "absolute action coefficient or scale-modulus source"
+    ]
+  },
+  "version": "v5.8",
+  "w_calibration_used": false
+}

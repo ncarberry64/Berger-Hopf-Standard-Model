@@ -445,3 +445,16 @@ This means the declared reduced BVP has explicit profiles, level-set values, Rob
 Still not supported: using measured VEVs or masses to choose coefficients, treating `sigma_profile` and `sigma_scale` as interchangeable, double-counting `c_J` outside the collar measure, reviving the old curvature-threshold mass-gap claim, deriving `M_star` or `ell_star`, deriving `alpha_i`, deriving `g2_BH`, deriving CKM coefficient value or exponent, emitting eV/GeV neutrino masses, predicting rare-B observables, or claiming full BHSM completion.
 
 Preserved: `OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR`, `OPEN_MISSING_NONLINEAR_FULL_GEOMETRIC_BACKREACTION`, `OPEN_MISSING_NONHOMOGENEOUS_BERGER_PROFILE_SOLUTION`, `OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT`, `OPEN_MISSING_ALPHA_I_ACTION_DERIVATION`, `OPEN_MISSING_G2_BH_ACTION_SOURCE`, `OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE`, `CKM_EXPONENT_NOT_DERIVED`, `OPEN_MISSING_NEUTRAL_SCALE`, `OPEN_MISSING_NEUTRAL_ACTION_NORMALIZATION`, and `FULL_BHSM_NOT_COMPLETE`.
+
+<!-- BHSM_ABSOLUTE_UNIT_ANCHOR_GENERATION_V5_8 -->
+## Absolute unit-anchor generation v5.8
+
+Allowed: BHSM v5.8 audits the primordial compact-state and global scale-modulus route to an absolute unit anchor. It shows that the current normalized v5.4-v5.7 action keeps `M_BH/M_star=1/2` and `R_BH/ell_star=2` as relative ratios while leaving `ell_star` and `M_star` unfixed.
+
+Result: `BHSM_ABSOLUTE_UNIT_ANCHOR_NOT_GENERATED`.
+
+This means the current action and primordial compact-state candidate do not select a unique finite nonzero global size `L`. Topological numbers are dimensionless, normalized coordinates do not hide an absolute length, spectral eigenvalues scale as `lambda_hat/L^2`, and redshift transports but does not generate a unit.
+
+Still not supported: deriving `ell_star`, deriving `M_star`, inserting a Planck length, using a Hubble/CMB/temperature scale, deriving particle masses by multiplying dimensionless numbers by `M_BH`, deriving gauge couplings, deriving CKM values or exponent, predicting rare-B observables, treating CMB/relic matter as virtual, or claiming full BHSM completion.
+
+Preserved: `OPEN_MISSING_GLOBAL_SCALE_MODULUS_ACTION_SOURCE`, `OPEN_MISSING_NONLINEAR_GEOMETRIC_BACKREACTION`, `OPEN_MISSING_ABSOLUTE_ACTION_QUANTUM_OR_BOUNDARY_TENSION`, `OPEN_MISSING_ABSOLUTE_SPECTRAL_EIGENVALUE_SOURCE`, `OPEN_MISSING_PRIMORDIAL_REGULARITY_SCALE_CONDITION`, `OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR`, and all downstream mass, gauge, CKM, neutral-scale, rare-B, and full-BHSM gates.

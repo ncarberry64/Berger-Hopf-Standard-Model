@@ -393,3 +393,15 @@ Doctrine: `docs/bhsm_scalar_topographic_vacuum_action_derivation_v5_6.md`.
 | `artifacts/BHSM_scalar_topographic_profile_boundary_closure_report_v5_7.json` | `SCALAR_TOPOGRAPHIC_PROFILE_BOUNDARY_CLOSED_CONDITIONALLY` | Final v5.7 report, including v5.5/v5.6 updates and preserved open gates. |
 
 Doctrine: `docs/bhsm_scalar_topographic_profile_boundary_closure_v5_7.md`.
+
+<!-- BHSM_ABSOLUTE_UNIT_ANCHOR_GENERATION_V5_8 -->
+## Absolute unit-anchor generation v5.8
+
+| Artifact | Status | Purpose |
+|---|---|---|
+| `artifacts/BHSM_primordial_compact_state_v5_8.json` | `PRIMORDIAL_COMPACT_STATE_DEFINED_AS_CANDIDATE` | Defines the normalized primordial compact Berger-Hopf state, candidate invariants, and primordial-to-late-time doctrine. |
+| `artifacts/BHSM_absolute_unit_scale_modulus_audit_v5_8.json` | `ABSOLUTE_UNIT_SCALE_MODULUS_NOT_FIXED` | Audits `g=L^2 g_hat`, action scaling terms, spectral/topological candidates, and the flat global size modulus. |
+| `artifacts/BHSM_absolute_unit_propagation_v5_8.json` | `UNIT_PROPAGATION_BLOCKED_PENDING_ABSOLUTE_ANCHOR` | Records which physical-unit operator maps remain blocked until `ell_star` or `M_star` exists. |
+| `artifacts/BHSM_absolute_unit_anchor_generation_report_v5_8.json` | `BHSM_ABSOLUTE_UNIT_ANCHOR_NOT_GENERATED` | Final v5.8 report with derived, conditional, open, and claim-boundary statuses. |
+
+Doctrine: `docs/bhsm_absolute_unit_anchor_generation_v5_8.md`.
