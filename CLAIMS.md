@@ -582,3 +582,30 @@ tower; base-ten scaling as geometry; a base frequency or absolute radius;
 identification of resonant channels with particles or generations; importing
 v5 coefficients; primordial release; black-hole de-enveloping; gauge, mass,
 CKM/PMNS, or full-BHSM claims.
+
+<!-- BHSM_MINIMAL_PARENT_THEORY_KILL_TEST_V6_0_5 -->
+## v6.0.5 frozen minimal-parent claims
+
+Allowed: the explicitly frozen provisional P1+free-chi+sigma theory fails its
+autonomous coherent sigma-transition trigger kill tests. Its carrier exists
+and has conserved stress
+inside the stipulated action, but it has no nonlinear self-interaction at
+sigma zero, no selected coherent phase, no derived negative sigma shift, no
+acceptable coupled spectrum, and no parent-to-v5 recovery.
+
+Allowed doctrine: physicality is an action-supported localized or propagating
+energy--geometry differential or envelope at any scale. Harmonic constructive
+interference is one possible contributor rather than a necessary condition;
+sigma is a candidate persistent-envelopment response or order parameter rather
+than the universal definition of physicality. Persistent objecthood requires
+additional localization, conservation, self-support, and stability gates.
+
+Not supported: extending this failure to every possible parent theory;
+silently adding another field or interaction; treating the conditional sigma
+branch as generated; extending the scoped trigger failure to physicality in
+general; making harmonic coherence necessary for envelopment; making nonzero
+sigma necessary for every physical differential; denying that a free scalar
+can carry a transient localized energy differential; importing v5
+coefficients; claiming persistent objecthood,
+absolute scale, particle properties, release, de-enveloping, or full BHSM
+completion.

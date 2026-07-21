@@ -471,3 +471,19 @@ The command reports `BHSM_HARMONIC_SELECTION_SOURCE_NOT_DERIVED` and
 no-selection theorem, exact round-S7 `l=4,10` octave ratio, nonlinear
 interaction gates, coherence projector, sigma-shift audit, and scale firewall
 without promoting commensurability to a physical coupling.
+
+<!-- BHSM_MINIMAL_PARENT_THEORY_KILL_TEST_V6_0_5 -->
+## Minimal parent theory freeze and kill test v6.0.5
+
+```bash
+python -m bhsm.interface minimal-parent-kill-status --format json
+python -m bhsm.interface minimal-parent-kill-status --format markdown
+python scripts/materialize_minimal_parent_theory_kill_test_v6_0_5.py
+```
+
+The command reports `BHSM_MINIMAL_PARENT_THEORY_FAILS_PHYSICALITY_TRIGGER`
+for one immutable provisional P1+free-scalar theory, scoped to an autonomous
+harmonically selected stable nonzero-sigma transition. It also reports
+`BHSM_GENERAL_ENERGY_GEOMETRY_ENVELOPMENT_REMAINS_OPEN`: transient localized
+energy differentials are not falsified. The sprint does not search for or
+promote a replacement candidate.

@@ -579,3 +579,25 @@ Doctrine: `docs/bhsm_energy_geometry_confinement_invariant_v6_0_3.md`.
 | `artifacts/BHSM_harmonic_physicality_coupling_selection_report_v6_0_4.json` | Final negative/blocked result and next-branch routing. |
 
 Doctrine: `docs/bhsm_harmonic_physicality_coupling_selection_v6_0_4.md`.
+
+<!-- BHSM_MINIMAL_PARENT_THEORY_KILL_TEST_V6_0_5 -->
+## Minimal parent theory freeze and kill test v6.0.5
+
+| Artifact | Purpose |
+|---|---|
+| `artifacts/BHSM_minimal_parent_theory_freeze_v6_0_5.json` | Immutable domain, signature, action, field, coupling, boundary, and primitive freeze. |
+| `artifacts/BHSM_minimal_parent_action_equations_stress_v6_0_5.json` | Equations, stress, conservation, and geometric-source test. |
+| `artifacts/BHSM_minimal_parent_linear_spectrum_v6_0_5.json` | Exact free carrier spectrum at sigma zero. |
+| `artifacts/BHSM_minimal_parent_nonlinear_resonance_kill_v6_0_5.json` | Shows the carrier has no nonlinear resonant self-channel. |
+| `artifacts/BHSM_minimal_parent_coherent_sigma_shift_kill_v6_0_5.json` | Audits the Lorentzian-sign-indefinite unsourced sigma shift. |
+| `artifacts/BHSM_minimal_parent_nonlinear_sigma_branch_v6_0_5.json` | Records the conditional branch and failed trigger. |
+| `artifacts/BHSM_minimal_parent_coupled_hessian_kill_v6_0_5.json` | Records missing gauge quotient, Floquet problem, and spectrum. |
+| `artifacts/BHSM_minimal_parent_to_v5_kill_v6_0_5.json` | Blocks reverse-engineered v5 recovery. |
+| `artifacts/BHSM_minimal_parent_primitive_count_v6_0_5.json` | Counts seven raw and five normalized unsourced primitives. |
+| `artifacts/BHSM_minimal_parent_theory_kill_test_report_v6_0_5.json` | Ten-test verdict and foundational-axiom stop. |
+
+Doctrine: `docs/bhsm_minimal_parent_theory_kill_test_v6_0_5.md`.
+
+The v6.0.5 trigger failure is scoped to the frozen autonomous coherent
+nonzero-sigma transition. General action-supported energy--geometry
+envelopment and transient free-scalar localization remain open.

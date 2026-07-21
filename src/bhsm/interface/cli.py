@@ -251,6 +251,7 @@ from .b8_s7_physical_domain_action_source_closure import b8_s7_status_report, b8
 from .b8_geometry_energy_parent_action import b8_parent_action_status_report, b8_parent_action_status_to_markdown
 from .energy_geometry_confinement_invariant import confinement_status_report, confinement_status_to_markdown
 from .harmonic_physicality_coupling_selection import harmonic_selection_status_report, harmonic_selection_status_to_markdown
+from .minimal_parent_theory_kill_test import minimal_parent_kill_status_report, minimal_parent_kill_status_to_markdown
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -699,6 +700,8 @@ def build_parser() -> argparse.ArgumentParser:
     confinement.add_argument("--format", choices=("json", "markdown"), default="json")
     harmonic_selection = commands.add_parser("harmonic-physicality-selection-status", help="Render the BHSM v6.0.4 harmonic coupling-selection audit")
     harmonic_selection.add_argument("--format", choices=("json", "markdown"), default="json")
+    minimal_parent_kill = commands.add_parser("minimal-parent-kill-status", help="Render the BHSM v6.0.5 frozen minimal-parent kill test")
+    minimal_parent_kill.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
 
@@ -1539,6 +1542,13 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(json.dumps(payload, indent=2, sort_keys=True))
         else:
             _print_unicode(harmonic_selection_status_to_markdown(payload))
+        return 0
+    if args.command == "minimal-parent-kill-status":
+        payload = minimal_parent_kill_status_report()
+        if args.format == "json":
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        else:
+            _print_unicode(minimal_parent_kill_status_to_markdown(payload))
         return 0
     if args.command in {
         "primitive-charged-incidence",
