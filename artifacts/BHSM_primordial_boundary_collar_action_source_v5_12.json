@@ -1,0 +1,167 @@
+{
+  "absolute_unit_claimed": false,
+  "artifact": "BHSM_primordial_boundary_collar_action_source_v5_12",
+  "canonical_boundary_action": "S_boundary=integral_Sigma dmu_h[U_boundary+c_K K+c_K2 K^2+c_S Tr(S^2)+c_J log J+L_boundary,other]",
+  "canonical_collar_action": "S_collar=integral_Sigma integral_0^rho_star d rho dmu_h J B_collar[T,Phi,g,K,S,rho]",
+  "ckm_completion_claimed": false,
+  "claim_boundary": "v5.12 derives the strongest source-qualified boundary normal-stress and stability architecture. Physical localization, dimensions, coefficients, pressure, embedding, and domain remain insufficient to evaluate L_c or derive an absolute unit.",
+  "empirical_inputs_used": false,
+  "exact_complete_physical_action": false,
+  "existing_numerical_predictions_changed": false,
+  "frozen_predictions_changed": false,
+  "full_bhsm_completion_claimed": false,
+  "gauge_couplings_derived": false,
+  "hot_plasma_production_claimed_derived": false,
+  "measured_scale_used": false,
+  "minus_one_eighth_promoted_to_physical_tension": false,
+  "natural_units_hide_missing_dimension": false,
+  "official_prediction_logic_changed": false,
+  "other_terms": "none physically normalized in the stored boundary source",
+  "particle_masses_derived": false,
+  "planck_electroweak_higgs_or_cosmology_scale_used": false,
+  "primary_result": "BHSM_PRIMORDIAL_BOUNDARY_SOURCE_NOT_CLOSED",
+  "primitive_tension_claimed_derived": false,
+  "rare_b_predictions_claimed": false,
+  "renormalization_scale_promoted_to_L_c": false,
+  "rho_star_promoted_to_physical_length": false,
+  "sprint": "bhsm-primordial-boundary-tension-action-source-closure-v5-12",
+  "status": "BOUNDARY_COLLAR_ARCHITECTURE_EXACT_SOURCES_PHYSICAL_COEFFICIENTS_OPEN",
+  "terms": [
+    {
+      "coefficient": "implicit",
+      "coefficient_status": "OPEN_NO_LOCAL_DENSITY",
+      "coordinates": "normalized in v5.7",
+      "dimension": "[action] L^(-d_Sigma)",
+      "domain": "Sigma",
+      "earlier_variation": "scalar variation only in reduced projection; metric/normal variation not evaluated",
+      "fields": [
+        "T",
+        "Phi",
+        "h through measure"
+      ],
+      "localization": "boundary candidate, unevaluated",
+      "measure": "dA=dmu_h",
+      "orientation": "measure independent; normal stress sign convention open",
+      "source": "v5.6 S_boundary candidate",
+      "stored_formula": "U_boundary(T,Phi)",
+      "term": "U_boundary"
+    },
+    {
+      "coefficient": "c_K",
+      "coefficient_status": "SYMBOLIC_UNSOURCED",
+      "coordinates": "normalized geometry in v5.7",
+      "dimension": "[action] L^(1-d_Sigma)",
+      "domain": "Sigma",
+      "earlier_variation": "set to zero only for fixed-geometry scalar reduction",
+      "fields": [
+        "h",
+        "embedding",
+        "normal"
+      ],
+      "localization": "boundary",
+      "measure": "dmu_h",
+      "orientation": "K changes under normal reversal",
+      "source": "v5.6 S_boundary candidate",
+      "stored_formula": "c_K K",
+      "term": "K"
+    },
+    {
+      "coefficient": "c_K2",
+      "coefficient_status": "SYMBOLIC_UNSOURCED",
+      "coordinates": "normalized geometry in v5.7",
+      "dimension": "[action] L^(2-d_Sigma)",
+      "domain": "Sigma",
+      "earlier_variation": "set to zero only for fixed-geometry scalar reduction",
+      "fields": [
+        "h",
+        "embedding",
+        "normal"
+      ],
+      "localization": "boundary",
+      "measure": "dmu_h",
+      "orientation": "orientation even",
+      "source": "v5.6 S_boundary candidate",
+      "stored_formula": "c_K2 K^2",
+      "term": "K_squared"
+    },
+    {
+      "coefficient": "c_S",
+      "coefficient_status": "SYMBOLIC_UNSOURCED",
+      "coordinates": "normalized geometry in v5.7",
+      "dimension": "[action] L^(2-d_Sigma)",
+      "domain": "Sigma",
+      "earlier_variation": "set to zero only for fixed-geometry scalar reduction",
+      "fields": [
+        "h",
+        "embedding",
+        "normal"
+      ],
+      "localization": "boundary",
+      "measure": "dmu_h",
+      "orientation": "orientation even",
+      "source": "v5.6 S_boundary candidate",
+      "stored_formula": "c_S Tr(S^2)",
+      "term": "shape_norm"
+    },
+    {
+      "coefficient": "c_J=0",
+      "coefficient_status": "ZERO_TO_PREVENT_DUPLICATION",
+      "coordinates": "normalized",
+      "dimension": "would require [action] L^(-d_Sigma)",
+      "domain": "boundary/collar trace",
+      "earlier_variation": "not varied independently",
+      "fields": [
+        "shape operator",
+        "rho"
+      ],
+      "localization": "candidate duplicate of collar measure",
+      "measure": "dmu_h",
+      "orientation": "inherits J convention",
+      "source": "v5.6 S_boundary candidate",
+      "stored_formula": "c_J log J",
+      "term": "standalone_J"
+    },
+    {
+      "coefficient": "B_threshold symbolic",
+      "coefficient_status": "OPEN_LOCALIZABLE_NOT_COMPLETE",
+      "coordinates": "rho_star=1 is normalized coordinate",
+      "dimension": "[action] L^(-(d_Sigma+1)) if rho physical",
+      "domain": "Sigma x [0,rho_star]",
+      "earlier_variation": "zero contribution in v5.7 homogeneous normalized evaluation",
+      "fields": [
+        "T",
+        "Phi",
+        "h",
+        "K",
+        "S",
+        "J",
+        "rho"
+      ],
+      "localization": "collar integrand open",
+      "measure": "J dmu_h d rho",
+      "orientation": "J=det(I +/- rho S), sign unresolved",
+      "source": "v5.6 S_collar candidate and v4.1 conditional measure",
+      "stored_formula": "integral_0^rho_star B_threshold[T,Phi,K,S,J;Y,rho] J(Y,rho) d rho",
+      "term": "collar"
+    },
+    {
+      "coefficient": "kappa_geom",
+      "coefficient_status": "PROVISIONAL_SYMBOLIC",
+      "coordinates": "ell_BH-normalized",
+      "dimension": "ell_BH power -1 in v5.4 normalized table",
+      "domain": "relative Berger boundary",
+      "earlier_variation": "symbolic geometry equation",
+      "fields": [
+        "delta h"
+      ],
+      "localization": "already quadratic fluctuation slot, not foundational bulk gravity action",
+      "measure": "sqrt(det h_rho) d^3x",
+      "orientation": "boundary flux convention open",
+      "source": "v5.4 unified action candidate",
+      "stored_formula": "1/2 kappa_geom <delta h,L_geom(rho)delta h>_Sigma",
+      "term": "v5.4_geometry"
+    }
+  ],
+  "v5_10_global_determinant_used_as_local_casimir_pressure": false,
+  "version": "v5.12"
+}

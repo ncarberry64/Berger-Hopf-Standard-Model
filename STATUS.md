@@ -646,3 +646,18 @@ Preserved: `sigma_scale=1/2`, `M_BH/M_star=1/2`, `R_BH/ell_star=2`, the old mass
 No physical validation, absolute unit, particle mass, gauge coupling, CKM result, rare-B prediction, or full BHSM completion is claimed.
 
 Command: `python -m bhsm.interface full-geometric-gauge-fixed-hessian-status --format markdown`.
+
+<!-- BHSM_PRIMORDIAL_BOUNDARY_TENSION_ACTION_SOURCE_CLOSURE_V5_12 -->
+## Primordial boundary-tension action source closure v5.12
+
+Primary result: `BHSM_PRIMORDIAL_BOUNDARY_SOURCE_NOT_CLOSED`.
+
+BHSM v5.12 derives the strongest source-qualified boundary normal-stress, pressure, shape-equation, surface-Hessian, and crossing architecture. The v5.4 candidate fixes a normalized `d^3x` boundary coordinate count but not the physical time/signature or bulk dimension. The v5.6 boundary and collar densities and `c_K,c_K2,c_S` remain symbolic. The v5.7 value `-1/8` is a mixed normalized mode-space functional value and has no inverse localization map to `U_boundary` or `B_collar`.
+
+The competing-scaling theorem proves that a single `A L^-p` term cannot produce an isolated positive threshold. Multiple sourced terms of different scaling and opposing signs could do so, but the physical coefficients, pressure, embedding, self-adjoint domain, and mode functions remain open. Therefore `L_c`, `ell_star`, `M_star`, `M_BH`, and `R_BH` remain null; even the minimal-one-scale theorem is not yet established.
+
+Preserved: `sigma_scale=1/2`, `M_BH/M_star=1/2`, `R_BH/ell_star=2`, `BHSM_QUANTUM_EFFECTIVE_ACTION_PARTIAL`, `BHSM_QUADRATIC_OPERATOR_COMPLEX_PARTIAL`, the v5.9 no-unit result, and the old curvature-threshold mass-gap invalidation.
+
+No physical tension, local Casimir pressure, absolute unit, rupture history, plasma production, mass, coupling, CKM result, rare-B prediction, or BHSM completion is claimed.
+
+Command: `python -m bhsm.interface primordial-boundary-tension-status --format markdown`.

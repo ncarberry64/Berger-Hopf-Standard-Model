@@ -470,3 +470,27 @@ Primary result: `BHSM_QUADRATIC_OPERATOR_COMPLEX_PARTIAL`.
 | `artifacts/BHSM_full_geometric_gauge_fixed_hessian_report_v5_11.json` | Focused construction report and next sprint. |
 
 Doctrine: `docs/bhsm_full_geometric_gauge_fixed_hessian_v5_11.md`.
+
+<!-- BHSM_PRIMORDIAL_BOUNDARY_TENSION_ACTION_SOURCE_CLOSURE_V5_12 -->
+## Primordial boundary-tension action source closure v5.12
+
+Primary result: `BHSM_PRIMORDIAL_BOUNDARY_SOURCE_NOT_CLOSED`.
+
+| Artifact | Purpose |
+|---|---|
+| `artifacts/BHSM_primordial_boundary_collar_action_source_v5_12.json` | Exact stored term/source and coefficient ledger. |
+| `artifacts/BHSM_primordial_boundary_dimension_localization_v5_12.json` | Physical-domain, coefficient-dimension, and `V_red` localization audit. |
+| `artifacts/BHSM_primordial_boundary_stress_tensor_v5_12.json` | Variational stress definition and source-separated contributions. |
+| `artifacts/BHSM_primordial_normal_displacement_variations_v5_12.json` | Convention-controlled normal geometry identities. |
+| `artifacts/BHSM_primordial_inside_outside_pressure_v5_12.json` | Static, threshold, and post-release pressure separation. |
+| `artifacts/BHSM_primordial_curvature_bending_coefficients_v5_12.json` | `c_K`, `c_K2`, `c_S`, GHY, counterterm, and source audit. |
+| `artifacts/BHSM_primordial_collar_jacobian_stress_v5_12.json` | Active Jacobian, collar stress, and normalized `rho_star` status. |
+| `artifacts/BHSM_primordial_normal_shape_equation_v5_12.json` | Fully source-statused normal shape architecture. |
+| `artifacts/BHSM_primordial_surface_hessian_eigenproblem_v5_12.json` | Surface operator, spectrum, domain, and scaling architecture. |
+| `artifacts/BHSM_primordial_release_threshold_crossing_v5_12.json` | Release requirements and competing-scaling theorem. |
+| `artifacts/BHSM_primordial_absolute_unit_one_scale_v5_12.json` | Absolute-unit and minimal-one-scale classification. |
+| `artifacts/BHSM_primordial_release_energy_conversion_v5_12.json` | Pilot-wave and primordial conversion ledger. |
+| `artifacts/BHSM_primordial_reduced_threshold_model_v5_12.json` | Exact reduced roots, crossing classes, and scale covariance. |
+| `artifacts/BHSM_primordial_boundary_tension_action_source_closure_report_v5_12.json` | Final derived, conditional, invalidated, and open result. |
+
+Doctrine: `docs/bhsm_primordial_boundary_tension_action_source_closure_v5_12.md`.

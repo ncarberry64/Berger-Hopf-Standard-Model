@@ -1,0 +1,94 @@
+{
+  "absolute_unit_claimed": false,
+  "action_derived": false,
+  "artifact": "BHSM_primordial_release_threshold_crossing_v5_12",
+  "ckm_completion_claimed": false,
+  "claim_boundary": "v5.12 derives the strongest source-qualified boundary normal-stress and stability architecture. Physical localization, dimensions, coefficients, pressure, embedding, and domain remain insufficient to evaluate L_c or derive an absolute unit.",
+  "competing_scaling_theorem": {
+    "classification_current": "IMPOSSIBLE_TO_CLASSIFY_PHYSICALLY_SOURCE_OPEN",
+    "necessary_conditions": [
+      "at least two nonzero contributions",
+      "different scale powers or non-polynomial dependence unless coefficients themselves vary",
+      "opposing signs somewhere on the physical branch",
+      "valid coefficient sources",
+      "valid physical mode/domain"
+    ],
+    "proof": "L^-p is nonzero for finite positive L, so A L^-p=0 implies A=0; A=0 is an identically flat direction, not an isolated threshold.",
+    "statement": "A single nonzero homogeneous term A L^-p has no isolated positive finite zero."
+  },
+  "condition": "lambda_surface(L_c)=0",
+  "crossing_direction": null,
+  "definition": "lambda_surface(L,a,sigma,rho_star;c)=min spec'(H_surface)",
+  "empirical_inputs_used": false,
+  "energy_threshold": {
+    "E_break": null,
+    "barrier_interpretation": "open",
+    "relation_to_L_c": null,
+    "relation_to_tension": "could be integral of localized surface density or a normal-mode barrier, not yet distinguishable"
+  },
+  "existing_numerical_predictions_changed": false,
+  "finite_L_c": null,
+  "frozen_predictions_changed": false,
+  "full_bhsm_completion_claimed": false,
+  "gauge_couplings_derived": false,
+  "hot_plasma_production_claimed_derived": false,
+  "illustrative_cases": [
+    {
+      "A2": -1.0,
+      "A3": 0.0,
+      "A4": 1.0,
+      "classification": "STABLE_TO_UNSTABLE_FOR_INCREASING_L",
+      "roots": [
+        1.0
+      ]
+    },
+    {
+      "A2": 1.0,
+      "A3": -2.0,
+      "A4": 1.0,
+      "classification": "TANGENTIAL_TOUCH",
+      "roots": [
+        1.0
+      ]
+    },
+    {
+      "A2": 1.0,
+      "A3": -3.0,
+      "A4": 2.0,
+      "classification": "MULTIPLE_CROSSINGS",
+      "roots": [
+        1.0,
+        2.0
+      ]
+    }
+  ],
+  "illustrative_values_are_BHSM_coefficients": false,
+  "measured_scale_used": false,
+  "minus_one_eighth_promoted_to_physical_tension": false,
+  "natural_units_hide_missing_dimension": false,
+  "number_of_roots": null,
+  "official_prediction_logic_changed": false,
+  "particle_masses_derived": false,
+  "physical": false,
+  "planck_electroweak_higgs_or_cosmology_scale_used": false,
+  "primary_result": "BHSM_PRIMORDIAL_BOUNDARY_SOURCE_NOT_CLOSED",
+  "primitive_tension_claimed_derived": false,
+  "rare_b_predictions_claimed": false,
+  "renormalization_scale_promoted_to_L_c": false,
+  "requirements": [
+    "L_c>0",
+    "real physical mode",
+    "self-adjoint operator",
+    "finite sourced coefficients",
+    "on-shell background",
+    "no gauge contamination"
+  ],
+  "rho_star_promoted_to_physical_length": false,
+  "sprint": "bhsm-primordial-boundary-tension-action-source-closure-v5-12",
+  "stable_before": null,
+  "status": "RELEASE_CONDITION_DEFINED_NO_PHYSICAL_ROOT_EVALUABLE",
+  "unique": null,
+  "unstable_after": null,
+  "v5_10_global_determinant_used_as_local_casimir_pressure": false,
+  "version": "v5.12"
+}

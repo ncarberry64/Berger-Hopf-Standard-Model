@@ -387,3 +387,14 @@ python scripts/materialize_full_geometric_gauge_fixed_hessian_v5_11.py
 ```
 
 The command reports `BHSM_QUADRATIC_OPERATOR_COMPLEX_PARTIAL`, including field and 36-block ledgers, gauge/ghost candidates, fermion/domain/eta status, scalar recovery, mode audits, and the finite consistency model. It does not emit a one-loop action or physical Casimir energy.
+
+<!-- BHSM_PRIMORDIAL_BOUNDARY_TENSION_ACTION_SOURCE_CLOSURE_V5_12 -->
+## Primordial boundary-tension action source closure v5.12
+
+```bash
+python -m bhsm.interface primordial-boundary-tension-status --format json
+python -m bhsm.interface primordial-boundary-tension-status --format markdown
+python scripts/materialize_primordial_boundary_tension_action_source_closure_v5_12.py
+```
+
+The command reports source, localization, dimension, stress, pressure, surface-Hessian, crossing, one-scale, and energy-conversion status without emitting a physical `L_c`.
