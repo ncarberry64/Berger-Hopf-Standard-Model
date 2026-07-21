@@ -441,3 +441,18 @@ The command reports `BHSM_B8_MINIMAL_ACTION_FAMILY_IDENTIFIED` and
 `BHSM_ENERGY_GEOMETRY_PHYSICALITY_SOURCE_NOT_DERIVED`. It does not select a
 signature, physical action coefficient, confinement invariant, stable phase,
 surface tension, or absolute scale.
+
+<!-- BHSM_ENERGY_GEOMETRY_CONFINEMENT_INVARIANT_V6_0_3 -->
+## Energy--geometry confinement invariant v6.0.3
+
+```bash
+python -m bhsm.interface energy-geometry-confinement-status --format json
+python -m bhsm.interface energy-geometry-confinement-status --format markdown
+python scripts/materialize_energy_geometry_confinement_invariant_v6_0_3.py
+```
+
+The command reports `BHSM_ENERGY_GEOMETRY_FINITE_INVARIANT_FAMILY_IDENTIFIED`
+and `BHSM_PHYSICALITY_THRESHOLD_ARCHITECTURE_IDENTIFIED`. It exposes the
+complete conditional sigma Hessian, spectral threshold, finite-size and
+nonlinear formulas, and the harmonic-coherence selection hypothesis without
+selecting a physical coupling or claiming a formed physical phase.

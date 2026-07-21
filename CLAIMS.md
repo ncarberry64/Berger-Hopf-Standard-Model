@@ -539,3 +539,25 @@ Recycling continuation allowed: v5.12 may identify a general top-form/global-flu
 Recycling continuation result: `BHSM_SPACETIME_RECYCLING_CONSTRAINT_ARCHITECTURE_IDENTIFIED`.
 
 Recycling continuation still not supported: an existing BHSM recycling action or core charge; destruction of exact charges, information, or entropy; controllable superluminal signaling; black-hole-driven cosmic expansion; replacement of dark energy or inflation; a solved horizon/homogeneity problem; a ZPV reset; a physical release radius; or an absolute unit from arbitrary flux data.
+
+<!-- BHSM_ENERGY_GEOMETRY_CONFINEMENT_INVARIANT_V6_0_3 -->
+## v6.0.3 confinement and physicality claims
+
+Allowed: BHSM v6.0.3 derives the complete conditional sigma quadratic-operator
+architecture, its principal symbol and self-adjoint boundary form, the
+lowest-eigenvalue threshold problem, finite-size correction, and conditional
+quartic-mode and planar-wall formulas. It identifies a finite vector of local,
+interface, quasilocal, global, and mode-coherence candidates.
+
+Allowed conditionally: a curvature, trace, flux, interface, or harmonic
+coherence contribution may trigger a sigma instability when its parent action,
+coefficient, background, signature, operator domain, and crossing direction
+are supplied. An octave ratio may participate only when derived from the
+dimensionless spectrum and an action-derived overlap matrix.
+
+Not supported: a unique `C_EG`; physical spacetime formation; an emergent
+boundary; treating enclosed energy as a local scalar; treating a Lorentzian
+stress square as positive; using base-10 magnitude bands as an action law;
+importing `A_ST=-2`, `G_ST=8`, or `sigma=1/2`; primordial release; black-hole
+de-enveloping; a shared core; signature emergence; an absolute unit; particle
+properties, gauge couplings, or full BHSM completion.

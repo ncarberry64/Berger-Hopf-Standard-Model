@@ -1,0 +1,137 @@
+{
+  "A_ST_minus_2_imported": false,
+  "G_ST_8_imported": false,
+  "absolute_unit_generated": false,
+  "artifact": "BHSM_action_native_sigma_coupling_ledger_v6_0_3",
+  "black_hole_de_enveloping_claimed": false,
+  "claim_boundary": "v6.0.3 derives the sigma quadratic-operator architecture and a finite family of admissible conditional sources. The parent action does not select their couplings, coefficients, physical signature, or a stable phase.",
+  "empirical_inputs_used": false,
+  "existing_numerical_predictions_changed": false,
+  "frozen_predictions_changed": false,
+  "full_bhsm_completion_claimed": false,
+  "measured_scale_mass_coupling_or_cosmology_used": false,
+  "minimal_threshold_capable_families": [
+    "curvature scalarization",
+    "universal conformal trace",
+    "top-form in a declared ensemble"
+  ],
+  "official_prediction_logic_changed": false,
+  "physical_spacetime_formation_claimed": false,
+  "preserved_results": [
+    "BHSM_B8_MINIMAL_ACTION_FAMILY_IDENTIFIED",
+    "BHSM_ENERGY_GEOMETRY_PHYSICALITY_SOURCE_NOT_DERIVED"
+  ],
+  "primary_result": "BHSM_ENERGY_GEOMETRY_FINITE_INVARIANT_FAMILY_IDENTIFIED",
+  "primordial_release_claimed": false,
+  "rows": [
+    {
+      "action_term": "(1/2)sigma^2[xi_1 R+xi_2 L_2+xi_3 L_3]",
+      "classification": "conditional geometric scalarization, not enclosed energy",
+      "coefficient_dimension": "xi_k has [A]L^(2k-8) for dimensionless sigma",
+      "domain": "bulk M8",
+      "family": "curvature",
+      "hessian": "xi_1 R+xi_2 L_2+xi_3 L_3",
+      "parity": "even",
+      "scalar_status": "R and Lovelock densities are diffeomorphism scalars",
+      "source_status": "P1 permits xi_1; P2/P3 permit higher Lovelock couplings but do not require them"
+    },
+    {
+      "action_term": "S_m[A(sigma)^2 G,Psi]",
+      "classification": "local trace source",
+      "coefficient_dimension": "alpha_2 dimensionless for dimensionless sigma",
+      "domain": "bulk M8",
+      "family": "universal_conformal_metric",
+      "hessian": "alpha_2 T when A(0)=1 and A'(0)=0",
+      "parity": "even metric function",
+      "scalar_status": "T=G^AB T_AB is a scalar after parent matter variation",
+      "source_status": "action-native if a parent matter action and A(sigma) are supplied"
+    },
+    {
+      "action_term": "f(sigma)L_m",
+      "classification": "representation dependent",
+      "coefficient_dimension": "f dimensionless in the direct multiplicative convention",
+      "domain": "bulk M8",
+      "family": "matter_lagrangian",
+      "hessian": "f''(0)L_m",
+      "parity": "f'(0)=0",
+      "scalar_status": "L_m is a scalar density representative but is not representation invariant",
+      "source_status": "rejected unless additive/redefinition invariance is closed"
+    },
+    {
+      "action_term": "sigma^2 J_AJ^A or matter[A^2G+B^2 u u]",
+      "classification": "branch dependent",
+      "coefficient_dimension": "current and normalization dependent",
+      "domain": "bulk M8 after current/time-field declaration",
+      "family": "current_or_disformal",
+      "hessian": "coefficient times current invariant",
+      "parity": "can be even",
+      "scalar_status": "J_AJ^A and T_AB u^A u^B are scalars only after their fields are supplied",
+      "source_status": "requires action-derived current/timelike field and normalization"
+    },
+    {
+      "action_term": "interface functional whose variation yields Delta p_n",
+      "classification": "interface/quasilocal",
+      "coefficient_dimension": "interface action normalization required",
+      "domain": "dynamic codimension-one interface",
+      "family": "interface_pressure",
+      "hessian": "junction and normal-stress response",
+      "parity": "model dependent",
+      "scalar_status": "Delta p_n is an interface scalar after normal and two sides are defined",
+      "source_status": "blocked before a dynamic interface and normal exist"
+    },
+    {
+      "action_term": "sigma^2 times T, T_ABT^AB, or trace-free square",
+      "classification": "finite effective-operator family",
+      "coefficient_dimension": "T^2 coupling needs [A]^-1 L^8 for dimensionless sigma",
+      "domain": "bulk M8",
+      "family": "stress_invariants",
+      "hessian": "corresponding invariant times explicit coefficient",
+      "parity": "even",
+      "scalar_status": "complete contractions/eigenvalue polynomials are scalars",
+      "source_status": "higher matter operators need new scales and a parent variational definition"
+    },
+    {
+      "action_term": "Z_F(sigma)F_d^2/(2 d!)",
+      "classification": "local F^2 or global Q source",
+      "coefficient_dimension": "depends on declared form normalization",
+      "domain": "bulk M8 locally or global charge sector",
+      "family": "top_form",
+      "hessian": "opposite ensemble response for fixed f and fixed Q",
+      "parity": "Z_F'(0)=0",
+      "scalar_status": "F_d^2 is local scalar; Q is an integrated global invariant",
+      "source_status": "conditional; no BHSM top-form source selected"
+    },
+    {
+      "action_term": "boundary/collar sigma^2 K, K^2, Tr(S^2), strain, or J terms",
+      "classification": "interface source only when independent action term exists",
+      "coefficient_dimension": "term dependent boundary density coefficient",
+      "domain": "declared boundary/interface/collar",
+      "family": "extrinsic_collar",
+      "hessian": "Robin/endomorphism terms on declared interface",
+      "parity": "even",
+      "scalar_status": "complete contractions are boundary scalars after embedding and foliation declaration",
+      "source_status": "variational completions are coefficient locked, not free tension"
+    },
+    {
+      "action_term": "mode projection C_mn=<f_m,Xi_total f_n> derived from the same local parent action",
+      "classification": "candidate spectral selection theorem, not an additional guessed local scalar",
+      "coefficient_dimension": "same operator dimension as diagonal Hessian eigenvalues",
+      "domain": "mode space of the declared self-adjoint bulk/interface problem",
+      "family": "harmonic_coherence",
+      "hessian": "eigenvalues of diag(Z k_n^2+A_0)+C_mn",
+      "parity": "inherits the parent sigma parity",
+      "scalar_status": "C_mn is basis-covariant matrix data derived by invariant inner products",
+      "source_status": "requires derived spectrum, nonzero off-diagonal overlaps, phases/coherence, and a control variable"
+    }
+  ],
+  "selected_family": null,
+  "selection_by_desired_threshold": false,
+  "selection_hypothesis": "constructive harmonic coherence may select an eigenchannel only if C_mn and its phase-sensitive off-diagonal entries follow from the parent action",
+  "shared_core_claimed": false,
+  "sigma_half_reverse_engineered": false,
+  "signature_emergence_claimed": false,
+  "sprint": "bhsm-energy-geometry-confinement-invariant-v6-0-3",
+  "status": "FINITE_CONDITIONAL_COUPLING_FAMILY",
+  "threshold_result": "BHSM_PHYSICALITY_THRESHOLD_ARCHITECTURE_IDENTIFIED",
+  "version": "v6.0.3"
+}

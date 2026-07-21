@@ -1,0 +1,134 @@
+{
+  "A_ST_minus_2_imported": false,
+  "G_ST_8_imported": false,
+  "absolute_unit_generated": false,
+  "artifact": "BHSM_confinement_invariant_admissibility_matrix_v6_0_3",
+  "axioms": [
+    "scalar on declared domain",
+    "action-native",
+    "dimensionally closed",
+    "coordinate independent",
+    "not an EOM residual",
+    "conservation compatible",
+    "signature audited",
+    "no arbitrary matter-Lagrangian shift",
+    "derived Hessian sign"
+  ],
+  "black_hole_de_enveloping_claimed": false,
+  "claim_boundary": "v6.0.3 derives the sigma quadratic-operator architecture and a finite family of admissible conditional sources. The parent action does not select their couplings, coefficients, physical signature, or a stable phase.",
+  "empirical_inputs_used": false,
+  "existing_numerical_predictions_changed": false,
+  "finite_vector_C_EG": "(R,L2,L3,T,composite stress terms,interface data,F2/Q) with branch-specific domains",
+  "frozen_predictions_changed": false,
+  "full_bhsm_completion_claimed": false,
+  "measured_scale_mass_coupling_or_cosmology_used": false,
+  "official_prediction_logic_changed": false,
+  "physical_spacetime_formation_claimed": false,
+  "preserved_results": [
+    "BHSM_B8_MINIMAL_ACTION_FAMILY_IDENTIFIED",
+    "BHSM_ENERGY_GEOMETRY_PHYSICALITY_SOURCE_NOT_DERIVED"
+  ],
+  "primary_result": "BHSM_ENERGY_GEOMETRY_FINITE_INVARIANT_FAMILY_IDENTIFIED",
+  "primordial_release_claimed": false,
+  "rows": [
+    {
+      "action_native": "optional explicit sigma^2 coupling",
+      "candidate": "R and Lovelock densities",
+      "conservation": "yes for full varied action",
+      "dimension_closed": "with xi_k",
+      "domain": "bulk",
+      "radiation_sensitive": "curvature only indirectly",
+      "verdict": "ADMISSIBLE_CONDITIONAL_GEOMETRIC_NOT_ENCLOSED_ENERGY"
+    },
+    {
+      "action_native": "from conformal physical metric",
+      "candidate": "T",
+      "conservation": "frame exchange must be included",
+      "dimension_closed": "alpha_2 dimensionless for dimensionless sigma",
+      "domain": "bulk with parent matter",
+      "radiation_sensitive": "no when T=0",
+      "verdict": "ADMISSIBLE_CONDITIONAL_TRACE_SOURCE"
+    },
+    {
+      "action_native": "explicit f(sigma)L_m",
+      "candidate": "L_m",
+      "conservation": "modified",
+      "dimension_closed": "yes",
+      "domain": "bulk",
+      "radiation_sensitive": "representation dependent",
+      "verdict": "REJECTED_WITHOUT_SHIFT_REDEFINITION_THEOREM"
+    },
+    {
+      "action_native": "requires composite operator coupling",
+      "candidate": "T_AB T^AB and trace-free square",
+      "conservation": "full variation required",
+      "dimension_closed": "new inverse-density scale required",
+      "domain": "bulk",
+      "radiation_sensitive": "yes but Lorentzian sign indefinite",
+      "verdict": "CONDITIONAL_HIGHER_OPERATOR_UNSOURCED"
+    },
+    {
+      "action_native": "only with current/u action",
+      "candidate": "J_AJ^A or T_AB u^A u^B",
+      "conservation": "current equation required",
+      "dimension_closed": "normalization required",
+      "domain": "bulk",
+      "radiation_sensitive": "branch dependent",
+      "verdict": "BLOCKED_UNDECLARED_TIMELIKE_STRUCTURE"
+    },
+    {
+      "action_native": "junction variation required",
+      "candidate": "Delta p_n",
+      "conservation": "junction conservation required",
+      "dimension_closed": "stress dimension",
+      "domain": "dynamic interface",
+      "radiation_sensitive": "yes",
+      "verdict": "BLOCKED_INTERFACE_NOT_DERIVED"
+    },
+    {
+      "action_native": "only independent interface action terms",
+      "candidate": "K, K^2, Tr(S^2), collar strain",
+      "conservation": "shape equation required",
+      "dimension_closed": "new boundary coefficients",
+      "domain": "boundary/collar",
+      "radiation_sensitive": "not intrinsically energy sensitive",
+      "verdict": "CONDITIONAL_GEOMETRIC_INTERFACE_FAMILY"
+    },
+    {
+      "action_native": "top-form action required",
+      "candidate": "F_d^2 or Q",
+      "conservation": "form equation",
+      "dimension_closed": "Z_F normalization required",
+      "domain": "bulk/global",
+      "radiation_sensitive": "not a generic matter response",
+      "verdict": "CONDITIONAL_ENSEMBLE_DEPENDENT_FLUX_SOURCE"
+    },
+    {
+      "action_native": "boundary Hamiltonian or quasilocal definition required",
+      "candidate": "enclosed energy",
+      "conservation": "flux law required",
+      "dimension_closed": "normalization definition dependent",
+      "domain": "region plus surface/normal/time flow",
+      "radiation_sensitive": "possibly",
+      "verdict": "NOT_A_LOCAL_SCALAR_BLOCKED_QUASILOCAL_DEFINITION"
+    },
+    {
+      "action_native": "only when C_mn=<f_m,Xi f_n> is derived from the parent action",
+      "candidate": "harmonic/octave constructive interference",
+      "conservation": "inherits the full action if projection is complete",
+      "dimension_closed": "frequency/eigenvalue ratios are dimensionless; crossing magnitude still needs sourced operator coefficients",
+      "domain": "mode space of a declared self-adjoint operator",
+      "radiation_sensitive": "source-overlap dependent",
+      "verdict": "ADMISSIBLE_SELECTION_HYPOTHESIS_SPECTRUM_AND_COHERENCE_NOT_DERIVED"
+    }
+  ],
+  "selected_C_EG": null,
+  "shared_core_claimed": false,
+  "sigma_half_reverse_engineered": false,
+  "signature_emergence_claimed": false,
+  "single_scalar_reduction_proved": false,
+  "sprint": "bhsm-energy-geometry-confinement-invariant-v6-0-3",
+  "status": "MULTIPLE_INDEPENDENT_INVARIANTS_SURVIVE_CONDITIONALLY",
+  "threshold_result": "BHSM_PHYSICALITY_THRESHOLD_ARCHITECTURE_IDENTIFIED",
+  "version": "v6.0.3"
+}

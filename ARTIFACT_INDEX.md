@@ -527,3 +527,27 @@ Primary result: `BHSM_PRIMORDIAL_BOUNDARY_SOURCE_NOT_CLOSED`.
 | `artifacts/BHSM_spacetime_recycling_primordial_late_time_map_v5_12.json` | Primordial and late-time source regimes with prohibited cosmological promotions. |
 
 Doctrine: `docs/bhsm_primordial_boundary_tension_action_source_closure_v5_12.md`.
+
+<!-- BHSM_ENERGY_GEOMETRY_CONFINEMENT_INVARIANT_V6_0_3 -->
+## Energy--geometry confinement invariant v6.0.3
+
+| Artifact | Purpose |
+|---|---|
+| `artifacts/BHSM_sigma_domain_candidate_audit_v6_0_3.json` | Separates bulk, boundary, collar, localized-mode, and bundle sigma domains. |
+| `artifacts/BHSM_action_native_sigma_coupling_ledger_v6_0_3.json` | Records every audited action term, Hessian source, parity, and source status. |
+| `artifacts/BHSM_confinement_invariant_admissibility_matrix_v6_0_3.json` | Applies covariance, dimension, conservation, signature, and representation gates. |
+| `artifacts/BHSM_confinement_local_quasilocal_global_classification_v6_0_3.json` | Prevents local, interface, quasilocal, and global source mixing. |
+| `artifacts/BHSM_complete_sigma_quadratic_operator_v6_0_3.json` | Gives the complete conditional Hessian, symbol, domain, and boundary form. |
+| `artifacts/BHSM_physicality_spectral_threshold_problem_v6_0_3.json` | Defines the lowest physical mode and harmonic-coherence selection test. |
+| `artifacts/BHSM_physicality_finite_enclosure_correction_v6_0_3.json` | Separates gradient, bulk, boundary, and collar finite-size terms. |
+| `artifacts/BHSM_physicality_nonlinear_formed_phase_v6_0_3.json` | Gives the conditional stabilized one-mode branch. |
+| `artifacts/BHSM_physicality_domain_wall_envelope_v6_0_3.json` | Records the planar wall formula and why the full envelope remains open. |
+| `artifacts/BHSM_physicality_emergent_boundary_test_v6_0_3.json` | Lists regular-level-set, geometry, stress, and junction gates. |
+| `artifacts/BHSM_coupled_geometry_sigma_hessian_v6_0_3.json` | Defines the full coupled collective-coordinate Hessian architecture. |
+| `artifacts/BHSM_parent_matter_dependency_audit_v6_0_3.json` | Identifies the exact parent matter data needed by each candidate. |
+| `artifacts/BHSM_parent_to_v5_sigma_reduction_map_v6_0_3.json` | Blocks reverse engineering of the v5 normalized coefficients. |
+| `artifacts/BHSM_three_threshold_dependency_ledger_v6_0_3.json` | Separates formation, release, and black-hole de-enveloping. |
+| `artifacts/BHSM_physicality_scale_hidden_input_audit_v6_0_3.json` | Exposes every primitive normalization and scale. |
+| `artifacts/BHSM_energy_geometry_confinement_invariant_report_v6_0_3.json` | Final claim-safe result and next-branch routing. |
+
+Doctrine: `docs/bhsm_energy_geometry_confinement_invariant_v6_0_3.md`.
