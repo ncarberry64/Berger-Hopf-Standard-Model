@@ -490,10 +490,12 @@ Preserved: `OPEN_MISSING_FULL_GAUGE_FIXED_DOMAIN`, `OPEN_MISSING_FADDEEV_POPOV_G
 
 Allowed: v5.11 may claim a complete source-status architecture for the declared fields and 36 Hessian blocks, formal FP operators from explicitly conventional candidate gauges, the exact homogeneous scalar Hessian, and a finite gauge/ghost model with an `xi`-independent physical projection.
 
+Allowed boundary-tension update: v5.11 may retain the normalized vacuum value `-1/8` as a candidate boundary/collar contribution, define the variational boundary stress and `xi_perp` shape equation, and use `lambda_surface(L_c)=0` as a candidate release condition. It must state that the local density, coefficient dimensions, `c_K,c_K2,c_S`, collar contribution, embedding, and normal spectrum remain open, so no absolute `L_c` is derived.
+
 Result: `BHSM_QUADRATIC_OPERATOR_COMPLEX_PARTIAL`.
 
 This does not mean a full second variation, determinant-ready geometry/gauge/fermion complex, strong boundary ellipticity, total heat-kernel coefficients, one-loop action, or physical Casimir energy is derived. Standard gauge and boundary candidates do not become BHSM-derived by being listed.
 
-Still not supported: deleting unresolved negative modes; treating collective `L` as gauge; assigning an independent determinant to the charged composite; inserting a neutral eV scale; upgrading v5.10; restoring the old curvature-threshold mass gap; deriving an absolute unit, particle masses, gauge couplings, CKM results, rare-B observables, physical validation, or full BHSM completion.
+Still not supported: identifying the total normalized `-1/8` with an absolute physical tension; interpreting the v5.7 fixed-geometry zeros of `c_K,c_K2,c_S` as geometric theorems; claiming that `lambda_surface=0` currently fixes `L_c`; deleting unresolved negative modes; treating collective `L` or physical `xi_perp` as gauge without proof; assigning an independent determinant to the charged composite; inserting a neutral eV scale; upgrading v5.10; restoring the old curvature-threshold mass gap; deriving an absolute unit, particle masses, gauge couplings, CKM results, rare-B observables, physical validation, or full BHSM completion.
 
 Preserved: `sigma_scale=1/2`, `M_BH/M_star=1/2`, `R_BH/ell_star=2`, `OPEN_MISSING_ACTION_DERIVED_GEOMETRIC_HESSIAN`, `OPEN_MISSING_FULL_GAUGE_FIXED_DOMAIN`, `OPEN_MISSING_FERMION_DIRAC_OPERATOR_ACTION_SOURCE`, `OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR`, and `FULL_BHSM_NOT_COMPLETE`.

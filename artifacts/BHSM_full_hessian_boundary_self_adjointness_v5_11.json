@@ -33,6 +33,17 @@
     },
     {
       "adjoint_domain_matches": false,
+      "boundary_form": "Green form of H_surface; fourth-order pieces require two edge/collar conditions",
+      "candidate": "physical normal-mode domain with collar matching",
+      "dense_domain": "unproved",
+      "gauge_preserved": "normal/tangential decomposition not closed",
+      "ghost_compatible": "xi_perp must not be paired with a ghost unless proven pure gauge",
+      "sector": "normal displacement xi_perp",
+      "selected": null,
+      "variation_vanishes": false
+    },
+    {
+      "adjoint_domain_matches": false,
       "boundary_form": "<a,D_n b>-<D_n a,b> plus ghost scalar form",
       "candidate": "absolute or relative paired conditions",
       "dense_domain": "standard candidate only, BHSM selection open",

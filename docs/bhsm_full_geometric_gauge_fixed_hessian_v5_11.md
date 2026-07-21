@@ -12,6 +12,54 @@ This is not a complete gauge-fixed Hessian. The geometric Hessian remains a symb
 
 The declared background is `B0=(g0=L^2 ghat(a0),a0,collar,T0=Phi0=1/(2 sqrt(2)),sigma_scale=1/2,A0=0,psi0=0,Jch0=0,N0=0)`. The scalar/topographic background is exactly stationary only in the v5.7 homogeneous reduced model. Other zero fields are conditional on source-free equations and closed domains. Geometry, squashing, and full collar equations remain unresolved, so the complete background is off shell. Unresolved first variations remain tadpoles; they are not masses or stability data. The classical global scale remains flat.
 
+## Primordial boundary-tension and normal surface mode
+
+The boundary/collar vacuum value is retained rather than automatically subtracted. The candidate density is
+
+`T_boundary=U_boundary(T_vac,Phi_vac)+integral_0^rho_star B_threshold[T_vac,Phi_vac,K,S,J;rho]J drho`.
+
+The v5.7 total normalized reduced value is `V_red(1/2)=-1/8`. This is not yet an absolute boundary tension: v5.7 does not identify the entire reduced action with the local `U_boundary` density, supply the boundary-area normalization, determine the collar contribution, or attach physical dimensions. Its sign therefore cannot be promoted to a physical tension sign.
+
+The geometric variation now includes `delta X^A=xi_perp n^A`. With the declared outward-normal convention,
+
+```text
+delta dA = K xi_perp dA
+D_K xi_perp = -Delta_Sigma xi_perp
+                -(Tr(S^2)+Ric(n,n)) xi_perp
+delta log J = Tr[(I+rho S)^(-1) rho delta S]
+```
+
+The boundary stress is defined variationally by `T_Sigma^ab=-(2/sqrt(gamma))delta(S_boundary+S_collar)/delta gamma_ab`. Its pure-tension contribution is `-T_boundary gamma^ab`. The `K` contribution is the orientation-dependent Brown-York combination, while the `K^2`, shape-norm, and collar terms include their metric and embedding variations.
+
+The normal shape equation is retained in source-separated form:
+
+```text
+F_boundary = T_boundary+c_K K+c_K2 K^2+c_S Tr(S^2)
+
+E_perp = K F_boundary
+       + D_K^dagger(c_K+2 c_K2 K)
+       + D_Q^dagger(c_S)
+       + E_J + E_collar + p_ST + E_quantum
+       - Delta p
+       = 0.
+```
+
+Thus the generalized balance is `Delta p` equal to the tension, curvature, collar, scalar-pressure, and valid quantum terms on the right. The surface Hessian is `H_surface=delta E_perp/delta xi_perp`. Tension and `K` terms have a second-order shape architecture, while `K^2` and `Tr(S^2)` can generate fourth-order boundary terms. Its self-adjoint domain and strong ellipticity remain open.
+
+The lowest physical normal eigenvalue is defined by
+
+`lambda_surface(L,a,sigma,rho_star)=inf spec'(H_surface)`.
+
+Its scaling architecture is
+
+`tau q_tau/L^2+c_K q_K/L^3+(c_K2 q_K2+c_S q_S)/L^4+lambda_collar+lambda_ST+lambda_quantum`.
+
+The release condition `lambda_surface(L_c)=0` can select a finite `L_c` only after dimensionful tension/shape coefficients and the mode functions are action-derived. With current normalized inputs it remains scale covariant. In particular, the v5.7 declarations `c_K=c_K2=c_S=0` meant those terms supplied no scalar variation on a fixed homogeneous geometry; they did not prove the geometric coefficients vanish. Likewise, `c_J=0` avoids a separate `log J` double count but does not delete the collar Jacobian inside `S_collar`.
+
+The v5.10 quantum diagnostic supplies only `d Gamma_perp/dL=-1/L` and `d^2 Gamma_perp/dL^2=1/L^2` for a uniform scale projection. It is not a local quantum surface stress and is not inserted into the official shape operator.
+
+The preserved interpretation is conditional: stable compact state, surface eigenvalue crossing zero, outward instability, v5.9 guided expansion, and a primordial hot-plasma state. The release threshold and hot-plasma production are not yet derived or observationally validated.
+
 ## Operator architecture
 
 The ledger includes metric/collar geometry, `U(1)`, `SU(2)`, and `SU(3)` connections, fermions, `T`, `Phi`, the charged-current composite, neutral response, collective variables `(L,a_Berger,sigma_scale,rho_star)`, ghosts, and candidate auxiliaries. Diffeomorphisms and local internal transformations are present. No scalar shift or independent collar gauge symmetry is introduced.
@@ -40,7 +88,7 @@ The finite model uses `(h_phys,h_gauge,A_phys,A_gauge,T,Phi)`. Its positive phys
 
 The v5.10 result remains `BHSM_QUANTUM_EFFECTIVE_ACTION_PARTIAL` and its `6/L^2` determinant is not promoted to the official effective action. No matter-only, gauge-plus-ghost, fermionic, or full one-loop calculation is permitted. `sigma_scale=1/2`, `M_BH/M_star=1/2`, and `R_BH/ell_star=2` remain relative. The old curvature-threshold mass-gap theorem remains invalidated.
 
-Open gates include `OPEN_MISSING_ACTION_DERIVED_GEOMETRIC_HESSIAN`, `OPEN_MISSING_FULL_GAUGE_FIXED_DOMAIN`, `OPEN_MISSING_FADDEEV_POPOV_GHOST_OPERATOR`, `OPEN_MISSING_FERMION_DIRAC_OPERATOR_ACTION_SOURCE`, `OPEN_MISSING_FERMION_DETERMINANT_PHASE_ETA_INVARIANT`, `OPEN_MISSING_STRONG_ELLIPTICITY_WITH_BOUNDARY`, `OPEN_MISSING_FIELD_THEORETIC_HEAT_KERNEL_COEFFICIENTS`, `OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR`, and `FULL_BHSM_NOT_COMPLETE`.
+Open gates include `OPEN_MISSING_ACTION_DERIVED_GEOMETRIC_HESSIAN`, `OPEN_MISSING_ABSOLUTE_BOUNDARY_TENSION_DENSITY_SOURCE`, `OPEN_MISSING_BOUNDARY_SHAPE_COEFFICIENT_VALUES`, `OPEN_MISSING_NORMAL_DISPLACEMENT_DOMAIN_AND_SPECTRUM`, `OPEN_MISSING_FULL_GAUGE_FIXED_DOMAIN`, `OPEN_MISSING_FADDEEV_POPOV_GHOST_OPERATOR`, `OPEN_MISSING_FERMION_DIRAC_OPERATOR_ACTION_SOURCE`, `OPEN_MISSING_FERMION_DETERMINANT_PHASE_ETA_INVARIANT`, `OPEN_MISSING_STRONG_ELLIPTICITY_WITH_BOUNDARY`, `OPEN_MISSING_FIELD_THEORETIC_HEAT_KERNEL_COEFFICIENTS`, `OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR`, and `FULL_BHSM_NOT_COMPLETE`.
 
 No physical validation, Casimir energy, absolute unit, particle mass, gauge coupling, CKM completion, rare-B prediction, Yang-Mills mass gap, full Standard Model derivation, or full BHSM completion is claimed.
 

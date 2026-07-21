@@ -4,14 +4,14 @@
   "blocks": [
     {
       "adjoint_relation": "H_g,g=H_g,g^dagger where a common domain exists",
-      "coefficient_source": "v5.4 symbolic slot",
+      "coefficient_source": "v5.4 symbolic slot and v5.6 boundary/collar action",
       "column": "g",
-      "differential_order": "2 candidate",
+      "differential_order": "2 or higher candidate",
       "domain_codomain": "delta g -> dual(delta g)",
-      "formula": "kappa_geom L_geom plus matter stress variations",
-      "leading_symbol": "tensor Laplace-type candidate",
+      "formula": "kappa_geom L_geom plus H_surface[xi_perp] plus matter stress variations",
+      "leading_symbol": "tensor and normal-shape symbols; c_K2/c_S can increase boundary order",
       "row": "g",
-      "status": "SOURCE_OPEN"
+      "status": "SOURCE_OPEN_SURFACE_MODE_EXPLICIT"
     },
     {
       "adjoint_relation": "H_g,A=H_A,g^dagger where a common domain exists",

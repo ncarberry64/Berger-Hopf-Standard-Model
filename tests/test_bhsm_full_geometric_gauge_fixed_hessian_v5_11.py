@@ -89,6 +89,82 @@ def test_geometric_fp_operator_follows_declared_candidate_variation_but_domain_s
     assert payload["determinant_ready"] is False
 
 
+def test_boundary_vacuum_value_is_retained_without_becoming_physical_tension():
+    payload = load("boundary_tension_surface")
+    tension = payload["boundary_tension_candidate"]
+    assert fh.reduced_vacuum_value() == pytest.approx(-0.125)
+    assert tension["normalized_total_reduced_vacuum_value"] == pytest.approx(-0.125)
+    assert tension["normalized_value_automatically_subtracted"] is False
+    assert tension["U_boundary_identified_with_entire_reduced_value"] is False
+    assert tension["absolute_density_value"] is None
+    assert tension["physical_sign"].startswith("unresolved")
+
+
+def test_shape_equation_contains_every_requested_surface_contribution():
+    payload = load("boundary_tension_surface")
+    equation = payload["normal_shape_equation"]
+    for key in ("tension", "K", "K2", "TrS2", "collar_jacobian", "scalar_topographic_pressure", "external_pressure_jump"):
+        assert equation[key], key
+    assert "E_quantum" in equation["formula"]
+    assert equation["stationarity"].startswith("OPEN_OFF_SHELL")
+    stress = payload["boundary_stress_tensor"]
+    assert stress["definition"].startswith("T_Sigma^ab=")
+    assert stress["fully_evaluated"] is False
+
+
+def test_v5_7_shape_coefficient_zeros_are_not_promoted_to_geometric_zeros():
+    provenance = load("boundary_tension_surface")["coefficient_provenance"]
+    assert "not a geometric zero" in provenance["c_K"]
+    assert "not set to zero" in provenance["c_K2"]
+    assert "not set to zero" in provenance["c_S"]
+    assert "remains active" in provenance["c_J"]
+
+
+def test_surface_scaling_model_can_have_a_conditional_root_but_current_Lc_is_open():
+    assert fh.surface_scaling_eigenvalue(1.0, 1.0, 0.0, -1.0, 0.0) == pytest.approx(0.0)
+    assert fh.surface_scaling_critical_lengths(1.0, 0.0, -1.0, 0.0) == pytest.approx([1.0])
+    assert fh.surface_scaling_critical_lengths(1.0, 0.0, 1.0, 0.0) == []
+    with pytest.raises(ValueError):
+        fh.surface_scaling_eigenvalue(0.0, 1.0, 0.0, 0.0, 0.0)
+    payload = load("boundary_tension_surface")
+    assert payload["lowest_mode"]["L_c"] is None
+    classification = payload["critical_scale_classification"]
+    assert classification["fixed_completely_by_current_action"] is False
+    assert classification["current_result"] == "STILL_SCALE_COVARIANT"
+    assert classification["absolute_scale_claimed"] is False
+
+
+def test_xi_perp_is_a_physical_candidate_not_silently_gauge_removed():
+    geometry = load("geometric_gauge_ghost")
+    assert "xi_perp" in geometry["normal_mode"]
+    principal = {row["sector"]: row for row in load("principal_ellipticity")["rows"]}
+    assert "normal displacement xi_perp" in principal
+    assert principal["normal displacement xi_perp"]["strong_ellipticity_with_boundary"] is False
+    modes = {row["mode"]: row for row in load("zero_negative")["zero_modes"]}
+    assert modes["lowest xi_perp surface mode"]["type"] == "physical boundary-shape candidate"
+    negatives = {row["sector"]: row for row in load("zero_negative")["negative_modes"]}
+    assert negatives["normal displacement xi_perp"]["discarded"] is False
+
+
+def test_v5_10_quantum_term_is_only_a_uniform_partial_diagnostic():
+    quantum = load("boundary_tension_surface")["quantum_term"]
+    assert quantum["uniform_scale_derivatives"] == {"dGamma_dL": "-1/L", "d2Gamma_dL2": "1/L^2"}
+    assert quantum["local_shape_stress_available"] is False
+    assert quantum["included_in_official_surface_operator"] is False
+
+
+def test_primordial_release_sequence_is_preserved_with_explicit_statuses():
+    stages = load("boundary_tension_surface")["preserved_primordial_interpretation"]
+    assert [row["stage"] for row in stages] == [
+        "stable compact state",
+        "lambda_surface reaches zero",
+        "outward instability",
+        "guided compact-to-expanding trajectory",
+        "primordial hot plasma",
+    ]
+    assert "not derived" in stages[-1]["status"]
+
+
 def test_internal_ghosts_follow_gauge_variation_and_no_couplings_inserted():
     payload = load("internal_gauge_ghost")
     assert [row["raw_adjoint_rank"] for row in payload["sectors"]] == [1, 3, 8]

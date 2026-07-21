@@ -457,6 +457,7 @@ Primary result: `BHSM_QUADRATIC_OPERATOR_COMPLEX_PARTIAL`.
 | `artifacts/BHSM_full_hessian_background_stationarity_v5_11.json` | Background, tadpole, and stationarity ledger. |
 | `artifacts/BHSM_full_hessian_second_variation_block_map_v5_11.json` | Source-qualified map of all 36 Hessian blocks. |
 | `artifacts/BHSM_full_hessian_geometric_gauge_ghost_v5_11.json` | Geometric gauge/ghost and conformal-mode audit. |
+| `artifacts/BHSM_full_hessian_primordial_boundary_tension_surface_mode_v5_11.json` | Candidate vacuum boundary tension, stress, normal shape equation, surface Hessian, release threshold, and scale classification. |
 | `artifacts/BHSM_full_hessian_internal_gauge_ghost_v5_11.json` | Internal gauge/ghost architecture. |
 | `artifacts/BHSM_full_hessian_fermion_dirac_domain_eta_v5_11.json` | Dirac, domain, current, index, and eta ledger. |
 | `artifacts/BHSM_full_hessian_scalar_topographic_v5_11.json` | Formal full scalar matrix and exact homogeneous reduction. |
