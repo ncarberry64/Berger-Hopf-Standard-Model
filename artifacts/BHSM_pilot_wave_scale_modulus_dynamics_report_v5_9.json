@@ -1,0 +1,403 @@
+{
+  "artifact": "BHSM_pilot_wave_scale_modulus_dynamics_report_v5_9",
+  "bohmian_decomposition": {
+    "R_sample": 1.0,
+    "S_sample": 0.0,
+    "continuity_equation": "partial_A[sqrt(|G|) R^2 G^AB partial_B S]=0",
+    "current": {
+      "J_L": "sqrt(|G|) R^2 L^2 partial_L S = R^2 k",
+      "J_sigma": "0 for the local stationary sigma branch",
+      "current_residual": 0.0,
+      "outgoing_current": true
+    },
+    "decomposition": "Psi=R exp(iS/hbar)",
+    "guidance_law": "qdot^A/N = G^AB partial_B S",
+    "guidance_vector_sample": {
+      "Ldot": 1.0,
+      "sigmadot": 0.0
+    },
+    "nodes_or_singularities": "no node selected as physical scale; L=0 excluded boundary",
+    "quantum_hamilton_jacobi": "1/2 G^AB partial_A S partial_B S + U_BHSM + Q_BHSM = 0",
+    "quantum_potential": "Q_BHSM=-(hbar^2/2R) Delta_G R",
+    "quantum_potential_sample": 2.0,
+    "status": "BOHMIAN_DECOMPOSITION_AND_GUIDANCE_DERIVED_CONDITIONALLY",
+    "wave_equation_residual": 0.0
+  },
+  "canonical_dynamics": {
+    "classical_static_limit": {
+      "dU_dL": 0.0,
+      "sigma_force_at_vacuum": 0.0,
+      "sigma_hessian": 4.0,
+      "sigma_vacuum": 0.5,
+      "v5_8_flat_L_preserved": true
+    },
+    "configuration_variables": [
+      "L",
+      "sigma_scale"
+    ],
+    "constraint": "H_red/N = 0 in the lapse-parametrized reduced model",
+    "hamilton_equations": {
+      "Ldot_over_N": "L^2 p_L",
+      "pdot_L_over_N": "-L p_L^2",
+      "pdot_sigma_over_N": "alpha_scale sigma - beta_scale sigma^3",
+      "sigmadot_over_N": "p_sigma"
+    },
+    "hamiltonian": "H_red = N [1/2 L^2 p_L^2 + 1/2 p_sigma^2 + U_BHSM(sigma)]",
+    "kinetic_metric": {
+      "G_AB": {
+        "LL": 1.0,
+        "Lsigma": 0.0,
+        "sigmasigma": 1.0
+      },
+      "G_inverse_AB": {
+        "LL": 1.0,
+        "Lsigma": 0.0,
+        "sigmasigma": 1.0
+      },
+      "coordinate_singularities": [
+        "L=0 is excluded as degenerate geometry"
+      ],
+      "determinant": 1.0,
+      "domain": {
+        "L": "positive real half-line",
+        "sigma_scale": "real reduced scalar/topographic mode"
+      },
+      "line_element": "ds_Q^2 = d(ln L)^2 + d sigma_scale^2",
+      "measure": "dmu_Q = dL d sigma_scale / L = d(ln L) d sigma_scale",
+      "scale_transformation": "L -> lambda L is translation ln L -> ln L + ln lambda",
+      "signature": "positive definite reduced configuration metric",
+      "sqrt_abs_G": 1.0,
+      "variables": [
+        "L",
+        "sigma_scale"
+      ]
+    },
+    "lapse": "N is retained as reparametrization multiplier in the reduced model",
+    "momenta": {
+      "p_L": "(1/N) L^-2 Ldot",
+      "p_sigma": "(1/N) sigmadot"
+    },
+    "potential": "U_BHSM(L,sigma)= -1/2 alpha_scale sigma^2 + 1/4 beta_scale sigma^4; no L dependence",
+    "reduced_action": "S_red = integral d tau [(1/2N) G_AB qdot^A qdot^B - N U_BHSM(q)]",
+    "status": "REDUCED_CANONICAL_DYNAMICS_DERIVED_CONDITIONALLY"
+  },
+  "claim_boundary": "BHSM v5.9 derives a minimal pilot-wave dynamics for the global scale modulus and scalar/topographic vacuum mode. The guidance law can generate an expanding actual configuration, but the quantum potential remains scale-covariant and does not derive ell_star, M_star, particle masses, gauge couplings, CKM values, rare-B observables, or full BHSM completion.",
+  "claim_safe_conclusion": "BHSM v5.9 derives a minimal pilot-wave scale-modulus dynamics, including a quantum potential and expanding guidance trajectory. The construction remains globally scale covariant, so it does not lift the v5.8 absolute unit modulus or generate ell_star without a new BHSM-derived primordial boundary state or nonlinear geometric backreaction.",
+  "conditionally_established": [
+    "pilot-wave dynamics can describe an outward compact-to-expanding actual configuration",
+    "sigma_scale=1/2 remains stationary in the local reduced branch",
+    "redshifted relics remain physical while boundary/topographic memory may be effective or virtual"
+  ],
+  "configuration_space": {
+    "G_AB": {
+      "LL": 1.0,
+      "Lsigma": 0.0,
+      "sigmasigma": 1.0
+    },
+    "G_inverse_AB": {
+      "LL": 1.0,
+      "Lsigma": 0.0,
+      "sigmasigma": 1.0
+    },
+    "coordinate_singularities": [
+      "L=0 is excluded as degenerate geometry"
+    ],
+    "determinant": 1.0,
+    "domain": {
+      "L": "positive real half-line",
+      "sigma_scale": "real reduced scalar/topographic mode"
+    },
+    "line_element": "ds_Q^2 = d(ln L)^2 + d sigma_scale^2",
+    "measure": "dmu_Q = dL d sigma_scale / L = d(ln L) d sigma_scale",
+    "scale_transformation": "L -> lambda L is translation ln L -> ln L + ln lambda",
+    "signature": "positive definite reduced configuration metric",
+    "sqrt_abs_G": 1.0,
+    "variables": [
+      "L",
+      "sigma_scale"
+    ]
+  },
+  "cosmological_parameter_used": false,
+  "derived": [
+    "minimal pilot-wave ontology for Psi[Q] and Q_actual",
+    "scale-covariant configuration metric ds_Q^2=d(ln L)^2+d sigma_scale^2",
+    "reduced Hamiltonian and timeless wave equation",
+    "Bohmian quantum Hamilton-Jacobi, continuity, quantum potential, and guidance laws",
+    "analytic expanding guidance trajectory L(tau)=L_initial exp(k tau)"
+  ],
+  "empirical_inputs_used": false,
+  "factor_ordering_selected_to_force_scale": false,
+  "frozen_predictions_changed": false,
+  "guided_trajectory": {
+    "Psi": "Psi(L,sigma)=R_sigma(sigma) exp(i k ln L / hbar)",
+    "Q_BHSM": "independent of L for this branch",
+    "R": "R_sigma=exp[-(sigma-sigma0)^2/(2 w_sigma^2)]",
+    "S": "S=k ln L",
+    "guidance_vector_field": "Ldot=kL, sigmadot=0",
+    "late_time_behavior": "monotone expansion in configuration-space scale coordinate for k>0",
+    "method": "analytic guidance integration on scale-covariant WKB branch",
+    "no_singular_configuration_crossing": true,
+    "probability_current_density": "J_L=R^2 k, J_sigma=0",
+    "sample": {
+      "L_initial": 1.0,
+      "L_tau": 2.718281828459045,
+      "Ldot_tau": 2.718281828459045,
+      "expanding_branch": true,
+      "guidance_residual_L": 0.0,
+      "guidance_residual_sigma": 0.0,
+      "sigma_tau": 0.5,
+      "sigmadot_tau": 0.0,
+      "tau": 1.0
+    },
+    "status": "GUIDED_COMPACT_TO_EXPANDING_TRAJECTORY_CONSTRUCTED_CONDITIONALLY",
+    "trajectory": "L(tau)=L_initial exp(k tau), sigma(tau)=1/2",
+    "trajectory_stability": "sigma remains at stable v5.7 branch; L has no finite attractor",
+    "turning_release_surface": "outgoing current boundary condition; absolute turning L not derived"
+  },
+  "hidden_scale_audit": {
+    "arbitrary_gaussian_width_promoted_to_physical_constant": false,
+    "coordinate_rescaling_check": {
+      "L_initial": 1.0,
+      "L_rescaled_initial": 3.0,
+      "lambda": 3.0,
+      "physical_L0_claimed": false,
+      "trajectory_ratio_preserved": true
+    },
+    "node_divergence_promoted_to_scale": false,
+    "rows": [
+      {
+        "classification": "dimensionless local sigma-sector convention",
+        "item": "wavefunction width",
+        "promoted_to_physical_scale": false,
+        "reason": "derived from dimensionless local Hessian only; not a length",
+        "value": "0.5"
+      },
+      {
+        "classification": "not used",
+        "item": "grid limits",
+        "promoted_to_physical_scale": false,
+        "reason": "no numerical box is used",
+        "value": "none"
+      },
+      {
+        "classification": "not used",
+        "item": "box size",
+        "promoted_to_physical_scale": false,
+        "reason": "no finite L box is imposed",
+        "value": "none"
+      },
+      {
+        "classification": "dimensionless chart convention",
+        "item": "reference coordinate",
+        "promoted_to_physical_scale": false,
+        "reason": "translation in chi is scale covariance, not an anchor",
+        "value": "chi=ln L"
+      },
+      {
+        "classification": "formal/current-normalization convention",
+        "item": "normalization volume",
+        "promoted_to_physical_scale": false,
+        "reason": "not used to select L0",
+        "value": "dL/L"
+      },
+      {
+        "classification": "physical-domain endpoint",
+        "item": "boundary location",
+        "promoted_to_physical_scale": false,
+        "reason": "degenerate boundary is not a stable finite scale",
+        "value": "L=0 excluded"
+      },
+      {
+        "classification": "not used",
+        "item": "regulator",
+        "promoted_to_physical_scale": false,
+        "reason": "no cutoff enters L0",
+        "value": "none"
+      },
+      {
+        "classification": "dimensionless unresolved input",
+        "item": "factor-ordering parameter",
+        "promoted_to_physical_scale": false,
+        "reason": "not selected to force scale generation",
+        "value": "xi_order"
+      },
+      {
+        "classification": "trajectory initial coordinate",
+        "item": "initial L",
+        "promoted_to_physical_scale": false,
+        "reason": "rescales covariantly and is not claimed physical",
+        "value": "L_initial"
+      },
+      {
+        "classification": "gauge/lapse parameter",
+        "item": "time parameter",
+        "promoted_to_physical_scale": false,
+        "reason": "does not define length",
+        "value": "tau"
+      }
+    ],
+    "status": "NO_HIDDEN_SCALE_PROMOTED"
+  },
+  "hubble_or_cmb_calibration_used": false,
+  "invalidated_or_ruled_out": [
+    "pilot-wave dynamics alone does not derive ell_star",
+    "a Gaussian wavepacket width is not a BHSM unit anchor",
+    "a node or L=0 singularity is not a stable physical scale",
+    "factor ordering is not allowed to force scale generation"
+  ],
+  "numerical_particle_masses_emitted": false,
+  "observed_mass_or_vev_used": false,
+  "official_prediction_logic_changed": false,
+  "pdg_reference_values_used": false,
+  "physical_couplings_promoted": false,
+  "physics_model_logic_changed": false,
+  "pilot_wave_ontology": {
+    "Psi": "universal wavefunctional on configuration space",
+    "Q_actual": "actual configuration guided by Psi",
+    "R_and_S": "amplitude and phase in Psi=R exp(iS/hbar)",
+    "T_and_Phi": "scalar/topographic fields inside Q_actual, not identical to Psi"
+  },
+  "planck_length_inserted": false,
+  "primary_result": "BHSM_PILOT_WAVE_DOES_NOT_LIFT_SCALE_MODULUS",
+  "primordial_boundary_state": {
+    "absolute_L_derived": false,
+    "boundary_state_does_not_fix": [
+      "wavefunction width as physical length",
+      "absolute L",
+      "ell_star",
+      "M_star"
+    ],
+    "boundary_state_fixes": [
+      "orientation of current if imposed",
+      "dimensionless sigma stability sector"
+    ],
+    "expanding_branch_condition": "sign(k)>0",
+    "flux_condition": "outgoing branch k>0 can describe compact-to-expanding release",
+    "imported_quantum_cosmology_proposals": [],
+    "regularity_condition": "finite current and no flux into L=0 degenerate geometry",
+    "status": "PRIMORDIAL_QUANTUM_BOUNDARY_STATE_NOT_UNIQUELY_DERIVED",
+    "turning_point_derived": false,
+    "wavefunction_width_derived": false
+  },
+  "primordial_to_late_time_map": {
+    "actual_geometry": "Q_actual follows the guidance law on the compact-to-expanding branch",
+    "effective_or_virtual_memory": "boundary/topographic or quantum-potential response memory only",
+    "observational_confirmation_claimed": false,
+    "pilot_wave": "universal wavefunctional continues on configuration space",
+    "redshift_generates_scale": false,
+    "redshifted_relics": "physical on-shell relic matter/radiation, not virtual"
+  },
+  "quantum_solution": {
+    "Psi": "Psi(L,sigma)=R_sigma(sigma) exp(i k ln L / hbar)",
+    "Q_BHSM": "independent of L for this branch",
+    "R": "R_sigma=exp[-(sigma-sigma0)^2/(2 w_sigma^2)]",
+    "S": "S=k ln L",
+    "guidance_vector_field": "Ldot=kL, sigmadot=0",
+    "late_time_behavior": "monotone expansion in configuration-space scale coordinate for k>0",
+    "method": "analytic guidance integration on scale-covariant WKB branch",
+    "no_singular_configuration_crossing": true,
+    "probability_current_density": "J_L=R^2 k, J_sigma=0",
+    "sample": {
+      "L_initial": 1.0,
+      "L_tau": 2.718281828459045,
+      "Ldot_tau": 2.718281828459045,
+      "expanding_branch": true,
+      "guidance_residual_L": 0.0,
+      "guidance_residual_sigma": 0.0,
+      "sigma_tau": 0.5,
+      "sigmadot_tau": 0.0,
+      "tau": 1.0
+    },
+    "status": "GUIDED_COMPACT_TO_EXPANDING_TRAJECTORY_CONSTRUCTED_CONDITIONALLY",
+    "trajectory": "L(tau)=L_initial exp(k tau), sigma(tau)=1/2",
+    "trajectory_stability": "sigma remains at stable v5.7 branch; L has no finite attractor",
+    "turning_release_surface": "outgoing current boundary condition; absolute turning L not derived"
+  },
+  "rare_b_phenomenology_pursued": false,
+  "recommended_next_construction_sprint": "bhsm-nonlinear-geometric-backreaction-v5-10",
+  "regulator_promoted_to_physical_scale": false,
+  "scalar_topographic_effect": {
+    "classical_action_and_quantum_potential_kept_distinct": true,
+    "classical_force_at_sigma0": 0.0,
+    "classical_vacuum_retained": true,
+    "combined_force_at_sigma0": 0.0,
+    "hessian_stability": 4.0,
+    "quantum_correction_status": "local sigma quantum potential recorded, but no L-lifting force appears",
+    "quantum_force_at_sigma0": 0.0,
+    "sigma_scale": 0.5
+  },
+  "scale_modulus_result": {
+    "M_BH": null,
+    "M_star": null,
+    "R_BH": null,
+    "absolute_or_relative": "relative only",
+    "effective_quantum_force_L": 0.0,
+    "ell_star": null,
+    "finite_L0": null,
+    "regulator_independent": true,
+    "stable": false,
+    "unique": false
+  },
+  "scaling_audit": {
+    "Delta_G_transformation": "Delta_G is invariant in chi=ln L",
+    "G_AB_transformation": "G_LL -> G_LL/lambda^2, G^LL -> lambda^2 G^LL",
+    "L_transformation": "L -> lambda L; chi=ln L shifts by ln lambda",
+    "Q_BHSM_transformation": "Q_BHSM independent of L for the scale-covariant branch",
+    "R_transformation": "R(sigma) has no derived L-localizing scale",
+    "S_transformation": "S=k ln L shifts by additive constant k ln lambda",
+    "U_BHSM_transformation": "no L dependence in current reduced action",
+    "classification": "quantum dynamics preserves the flat scale modulus",
+    "does_not_confuse_wave_packet_with_derived_scale": true,
+    "global_scale_symmetry_preserved": true,
+    "guidance_velocity_transformation": "Ldot=kL rescales covariantly",
+    "sqrt_abs_G_transformation": "sqrt(|G|) -> sqrt(|G|)/lambda",
+    "status": "PILOT_WAVE_QUANTUM_DYNAMICS_SCALE_COVARIANT"
+  },
+  "sprint": "bhsm-pilot-wave-scale-modulus-dynamics-v5-9",
+  "status": "BHSM_PILOT_WAVE_DOES_NOT_LIFT_SCALE_MODULUS",
+  "still_requiring_new_mathematics": [
+    "OPEN_MISSING_PRIMORDIAL_QUANTUM_BOUNDARY_STATE_CLOSURE",
+    "OPEN_MISSING_NONLINEAR_GEOMETRIC_BACKREACTION",
+    "OPEN_MISSING_GLOBAL_SCALE_MODULUS_ACTION_SOURCE",
+    "OPEN_MISSING_ABSOLUTE_UNIT_ANCHOR",
+    "OPEN_MISSING_ABSOLUTE_ACTION_QUANTUM_OR_BOUNDARY_TENSION",
+    "OPEN_MISSING_ABSOLUTE_SPECTRAL_EIGENVALUE_SOURCE",
+    "OPEN_MISSING_GAUGE_COUPLING_ACTION_ATTACHMENT",
+    "OPEN_MISSING_ALPHA_I_ACTION_DERIVATION",
+    "OPEN_MISSING_G2_BH_ACTION_SOURCE",
+    "OPEN_MISSING_CKM_COEFFICIENT_VALUE_SOURCE",
+    "CKM_EXPONENT_NOT_DERIVED",
+    "OPEN_MISSING_NEUTRAL_SCALE",
+    "OPEN_MISSING_NEUTRAL_ACTION_NORMALIZATION",
+    "FULL_BHSM_NOT_COMPLETE"
+  ],
+  "version": "v5.9",
+  "w_calibration_used": false,
+  "wave_equation": {
+    "boundary_conditions": [
+      "no flux through L=0 degenerate boundary",
+      "outgoing current branch may be selected only as boundary-state input",
+      "normalizable sigma fluctuation sector around sigma_scale=1/2"
+    ],
+    "domain": "L>0 with square-integrability/current conditions in dL/L; sigma on reduced real line or local harmonic domain",
+    "internal_time_or_timeless": "timeless Hamiltonian constraint in the minimal lapse-parametrized model",
+    "laplace_beltrami": "Delta_G = L^2 partial_L^2 + L partial_L + partial_sigma^2",
+    "measure": "dmu_Q = dL d sigma_scale / L = d(ln L) d sigma_scale",
+    "ontology_separation": {
+      "Psi": "universal wavefunctional on configuration space",
+      "Q_actual": "actual configuration guided by Psi",
+      "R_and_S": "amplitude and phase in Psi=R exp(iS/hbar)",
+      "T_and_Phi": "scalar/topographic fields inside Q_actual, not identical to Psi"
+    },
+    "operator": "H_hat Psi = [-hbar^2/2 Delta_G + U_BHSM(sigma)] Psi = 0",
+    "ordering": "Laplace-Beltrami ordering; no factor ordering selected to force a scale",
+    "ordering_ambiguity": {
+      "status": "dimensionless_open_but_not_used_to_select_L",
+      "symbol": "xi_order"
+    },
+    "self_adjoint_status": "symmetric on declared reduced domain; full self-adjoint extension remains boundary-state dependent",
+    "status": "BHSM_REDUCED_WAVE_EQUATION_DERIVED_CONDITIONALLY",
+    "wavefunctional": "Psi[L,sigma_scale] on reduced BHSM configuration space"
+  },
+  "wavepacket_width_promoted_to_physical_scale": false
+}

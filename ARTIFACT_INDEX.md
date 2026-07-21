@@ -405,3 +405,20 @@ Doctrine: `docs/bhsm_scalar_topographic_profile_boundary_closure_v5_7.md`.
 | `artifacts/BHSM_absolute_unit_anchor_generation_report_v5_8.json` | `BHSM_ABSOLUTE_UNIT_ANCHOR_NOT_GENERATED` | Final v5.8 report with derived, conditional, open, and claim-boundary statuses. |
 
 Doctrine: `docs/bhsm_absolute_unit_anchor_generation_v5_8.md`.
+
+<!-- BHSM_PILOT_WAVE_SCALE_MODULUS_DYNAMICS_V5_9 -->
+## Pilot-wave scale-modulus dynamics v5.9
+
+| Artifact | Status | Purpose |
+|---|---|---|
+| `artifacts/BHSM_pilot_wave_canonical_hamiltonian_v5_9.json` | `REDUCED_CANONICAL_DYNAMICS_DERIVED_CONDITIONALLY` | Stores the reduced action, Hamiltonian, constraint, Hamilton equations, and v5.8 flat-L preservation check. |
+| `artifacts/BHSM_pilot_wave_configuration_metric_v5_9.json` | `CONFIGURATION_SPACE_METRIC_AND_MEASURE_DEFINED` | Defines the reduced scale-covariant configuration metric, measure, and rescaling behavior. |
+| `artifacts/BHSM_pilot_wave_wave_equation_v5_9.json` | `BHSM_REDUCED_WAVE_EQUATION_DERIVED_CONDITIONALLY` | Records the timeless pilot-wave equation, Laplace-Beltrami operator, ontology separation, and boundary-state caveat. |
+| `artifacts/BHSM_pilot_wave_bohmian_guidance_v5_9.json` | `BOHMIAN_DECOMPOSITION_AND_GUIDANCE_DERIVED_CONDITIONALLY` | Stores the quantum Hamilton-Jacobi equation, continuity equation, quantum potential, guidance law, and current residual. |
+| `artifacts/BHSM_pilot_wave_quantum_potential_scaling_audit_v5_9.json` | `PILOT_WAVE_QUANTUM_DYNAMICS_SCALE_COVARIANT` | Audits global scale covariance and records that the quantum force does not select finite `L0`. |
+| `artifacts/BHSM_pilot_wave_primordial_boundary_state_v5_9.json` | `PRIMORDIAL_QUANTUM_BOUNDARY_STATE_NOT_UNIQUELY_DERIVED` | Records the outgoing-branch option and the open boundary-state source for width, turning point, and absolute `L`. |
+| `artifacts/BHSM_pilot_wave_deterministic_trajectory_v5_9.json` | `GUIDED_COMPACT_TO_EXPANDING_TRAJECTORY_CONSTRUCTED_CONDITIONALLY` | Gives the analytic guidance trajectory `L(tau)=L_initial exp(k tau)` with `sigma_scale=1/2`. |
+| `artifacts/BHSM_pilot_wave_hidden_scale_audit_v5_9.json` | `NO_HIDDEN_SCALE_PROMOTED` | Audits hidden scale sources such as width, box, regulator, chart, endpoint, factor ordering, and initial coordinate. |
+| `artifacts/BHSM_pilot_wave_scale_modulus_dynamics_report_v5_9.json` | `BHSM_PILOT_WAVE_DOES_NOT_LIFT_SCALE_MODULUS` | Final v5.9 report with derived, conditional, open, invalidated, and preserved-claim statuses. |
+
+Doctrine: `docs/bhsm_pilot_wave_scale_modulus_dynamics_v5_9.md`.
