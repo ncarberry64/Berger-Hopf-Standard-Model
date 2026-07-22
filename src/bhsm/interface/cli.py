@@ -257,6 +257,7 @@ from .b8_s7_berger_s3_reduction_theorem import reduction_status_report, reductio
 from .twistor_berger_associated_bundle import twistor_berger_status_report, twistor_berger_status_to_markdown
 from .twistor_berger_action_normalization import action_normalization_status_report, action_normalization_status_to_markdown
 from .p1_lorentzian_background_constraint import lorentzian_background_status_report, lorentzian_background_status_to_markdown
+from .round_background_gauge_scalar_sector import round_bosonic_status_report, round_bosonic_status_to_markdown
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -717,6 +718,8 @@ def build_parser() -> argparse.ArgumentParser:
     action_normalization.add_argument("--format", choices=("json", "markdown"), default="json")
     lorentzian_background = commands.add_parser("p1-lorentzian-background-status", help="Render the BHSM v6.0.10 P1 Lorentzian background-constraint closure")
     lorentzian_background.add_argument("--format", choices=("json", "markdown"), default="json")
+    round_bosonic = commands.add_parser("round-background-gauge-scalar-status", help="Render the BHSM v6.1 round-background gauge/scalar construction")
+    round_bosonic.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
 
@@ -1599,6 +1602,13 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(json.dumps(payload, indent=2, sort_keys=True))
         else:
             _print_unicode(lorentzian_background_status_to_markdown(payload))
+        return 0
+    if args.command == "round-background-gauge-scalar-status":
+        payload = round_bosonic_status_report()
+        if args.format == "json":
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        else:
+            _print_unicode(round_bosonic_status_to_markdown(payload))
         return 0
     if args.command in {
         "primitive-charged-incidence",

@@ -707,3 +707,17 @@ tower control; background connection/multiplet operators; scale,
 parent-to-v5, P2/P3, hidden-input, and final-report ledgers.
 
 Doctrine: `docs/bhsm_p1_lorentzian_background_constraint_v6_0_10.md`.
+
+<!-- BHSM_ROUND_BACKGROUND_GAUGE_SCALAR_V6_1 -->
+## Round-background gauge and scalar sector v6.1
+
+The 22 deterministic artifacts enumerated by
+`src/bhsm/interface/round_background_gauge_scalar_sector.py` cover the exact
+control-window test and its one-third floor; the M8/M5/M4 firewall; Sp1 and
+nested U1 normalizations and their convention ratio; charge operators and
+gauge vertices; scalar candidates, sigma selection, kinetic normalization,
+potential sources, tower terms, and constraint-reduced Hessian; gauge-scalar
+couplings; aperture readiness; M5/M4 dimensions; the parent-to-v5 map;
+spectrum and Dirac forward link; scale, hidden inputs, and the final report.
+
+Doctrine: `docs/bhsm_round_background_gauge_scalar_v6_1.md`.

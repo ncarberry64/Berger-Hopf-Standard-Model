@@ -567,3 +567,19 @@ python scripts/materialize_p1_lorentzian_background_constraint_v6_0_10.py
 The command reports the lapse-preserving ADM action, full constraint system,
 static-source theorem, exact round/Jensen dynamic branches, reduced shape
 stability, background operators, and the local dynamic tower-control regime.
+
+<!-- BHSM_ROUND_BACKGROUND_GAUGE_SCALAR_V6_1 -->
+## Round-background gauge and scalar sector v6.1
+
+```bash
+python -m bhsm.interface round-background-gauge-scalar-status --format json
+python -m bhsm.interface round-background-gauge-scalar-status --format markdown
+python scripts/materialize_round_background_gauge_scalar_v6_1.py
+```
+
+The command reports the conditional effective-M5 bosonic normalization on the
+exact round P1 trajectory.  It includes the isotropic Sp1 coefficient, nested
+U1 convention ledger, canonical multiplet weights, gauge vertices, selected
+parent sigma representative, scalar Hessian, tower and aperture firewalls,
+and the still-required physical M4 reduction.  It also exposes the exact
+one-third floor that prevents a parametrically small control interval.
