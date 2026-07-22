@@ -694,3 +694,16 @@ tower bounds; the normalized action and separate P2/P3 ledger; parent-to-v5,
 sigma/gauge/fermion readiness; scale, stability, hidden inputs, and report.
 
 Doctrine: `docs/bhsm_twistor_berger_action_normalization_v6_0_9.md`.
+
+<!-- BHSM_P1_LORENTZIAN_BACKGROUND_CONSTRAINT_V6_0_10 -->
+## P1 Lorentzian background constraint closure v6.0.10
+
+The 22 deterministic artifacts enumerated by
+`src/bhsm/interface/p1_lorentzian_background_constraint.py` cover the ADM
+ledger and action; Hamiltonian/momentum constraints; scale/shape equations;
+static round/Jensen tests; required support; exact dynamic branches; the
+anisotropic system and reduced stability; sigma/connection audits; dynamic
+tower control; background connection/multiplet operators; scale,
+parent-to-v5, P2/P3, hidden-input, and final-report ledgers.
+
+Doctrine: `docs/bhsm_p1_lorentzian_background_constraint_v6_0_10.md`.

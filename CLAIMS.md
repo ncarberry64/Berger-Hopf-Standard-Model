@@ -718,3 +718,27 @@ depends on the primitive ratio `kappa1/kappa0`.
 Not supported: a physical or Standard Model gauge coupling, unconditional
 finite nonlinear closure, v5 coefficients, fermion spectrum, particles,
 generations, an absolute unit, physical validation, or full BHSM completion.
+
+<!-- BHSM_P1_LORENTZIAN_BACKGROUND_CONSTRAINT_V6_0_10 -->
+## v6.0.10 P1 Lorentzian background claims
+
+Allowed: the lapse-preserving homogeneous P1 action, Hamiltonian and momentum
+constraints, constraint propagation, scale/shape equations, and exact round
+and Jensen fixed-shape parent trajectories are derived.
+
+Allowed: positive-curvature vacuum static products are excluded for the round
+and Jensen fixed-lapse extrema. Their required source is a diagnostic positive
+dust-like stress; no fluid or replacement field is introduced.
+
+Allowed: after lapse/time-gauge and volume-constraint reduction, the round
+trajectory has two positive homogeneous shape masses. Jensen has one positive
+and one negative shape mass and is therefore shape-unstable.
+
+Allowed conditionally: the existing sigma singlet can contribute isotropic
+dynamic stress, and associated multiplets admit a local adiabatic description
+only where the instantaneous-gap conditions hold.
+
+Not supported: identifying the parent trajectory with the observed universe;
+identifying `S4` with observed spacetime; calling connection normalization RG
+running or a Standard Model coupling; deriving particles, masses, generations,
+an absolute unit, physical validation, or full BHSM completion.

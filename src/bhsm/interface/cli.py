@@ -256,6 +256,7 @@ from .correspondence_novelty_firewall import correspondence_firewall_status_repo
 from .b8_s7_berger_s3_reduction_theorem import reduction_status_report, reduction_status_to_markdown
 from .twistor_berger_associated_bundle import twistor_berger_status_report, twistor_berger_status_to_markdown
 from .twistor_berger_action_normalization import action_normalization_status_report, action_normalization_status_to_markdown
+from .p1_lorentzian_background_constraint import lorentzian_background_status_report, lorentzian_background_status_to_markdown
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -714,6 +715,8 @@ def build_parser() -> argparse.ArgumentParser:
     twistor_berger.add_argument("--format", choices=("json", "markdown"), default="json")
     action_normalization = commands.add_parser("twistor-berger-action-normalization-status", help="Render the BHSM v6.0.9 P1 action-normalization audit")
     action_normalization.add_argument("--format", choices=("json", "markdown"), default="json")
+    lorentzian_background = commands.add_parser("p1-lorentzian-background-status", help="Render the BHSM v6.0.10 P1 Lorentzian background-constraint closure")
+    lorentzian_background.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
 
@@ -1589,6 +1592,13 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(json.dumps(payload, indent=2, sort_keys=True))
         else:
             _print_unicode(action_normalization_status_to_markdown(payload))
+        return 0
+    if args.command == "p1-lorentzian-background-status":
+        payload = lorentzian_background_status_report()
+        if args.format == "json":
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        else:
+            _print_unicode(lorentzian_background_status_to_markdown(payload))
         return 0
     if args.command in {
         "primitive-charged-incidence",

@@ -894,3 +894,25 @@ Completion gate:
 `V6_0_9_CONTINUE_TO_P1_LORENTZIAN_BACKGROUND_CONSTRAINT_CLOSURE`.
 
 Command: `python -m bhsm.interface twistor-berger-action-normalization-status --format markdown`.
+
+<!-- BHSM_P1_LORENTZIAN_BACKGROUND_CONSTRAINT_V6_0_10 -->
+## P1 Lorentzian background constraint closure v6.0.10
+
+Primary result: `BHSM_P1_FIXED_SHAPE_DYNAMIC_BACKGROUND_DERIVED`.
+
+Lapse-preserving ADM reduction now derives the Hamiltonian and momentum
+constraints, their propagation, the full scale/shape system, and exact round
+and Jensen fixed-shape Lorentzian parent trajectories. Both fixed-lapse
+spatial extrema are excluded as vacuum static products and require positive
+dust-like diagnostic support.
+
+For `kappa0/kappa1>0`, the round trajectory has no homogeneous shape tachyon
+and its expanding half is friction-damped. The Jensen trajectory exists but
+has one tachyonic homogeneous shape direction.
+The instantaneous tower gap remains positive at finite scales but tends to
+zero asymptotically, so the controlled tower reduction is local rather than
+global along the trajectory.
+
+Completion gate: `V6_0_10_ROUND_FIXED_SHAPE_P1_BACKGROUND_SELECTED`.
+
+Command: `python -m bhsm.interface p1-lorentzian-background-status --format markdown`.

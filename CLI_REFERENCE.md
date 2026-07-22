@@ -554,3 +554,16 @@ The command reports the P1 measure, connection and scalar-multiplet
 normalizations, overlap rules, vertical gap, conditional tower-control bounds,
 and fixed-lapse modulus result. It also preserves the open Lorentzian
 lapse/stress background and absolute-unit blocker.
+
+<!-- BHSM_P1_LORENTZIAN_BACKGROUND_CONSTRAINT_V6_0_10 -->
+## P1 Lorentzian background constraint closure v6.0.10
+
+```bash
+python -m bhsm.interface p1-lorentzian-background-status --format json
+python -m bhsm.interface p1-lorentzian-background-status --format markdown
+python scripts/materialize_p1_lorentzian_background_constraint_v6_0_10.py
+```
+
+The command reports the lapse-preserving ADM action, full constraint system,
+static-source theorem, exact round/Jensen dynamic branches, reduced shape
+stability, background operators, and the local dynamic tower-control regime.
