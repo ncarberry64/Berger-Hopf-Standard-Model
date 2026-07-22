@@ -952,6 +952,46 @@ Completion gate:
 
 Command: `python -m bhsm.interface round-background-gauge-scalar-status --format markdown`.
 
+<!-- BHSM_PARENT_M5_M4_BOUNDARY_REDUCTION_V6_1_1 -->
+## Parent M5 to equatorial-M4 boundary reduction v6.1.1
+
+Primary result:
+`BHSM_ROUND_EQUATORIAL_M4_ZERO_MODE_ARCHITECTURE_DERIVED`.
+
+Boundary-action status: `BHSM_M5_TO_M4_BOUNDARY_ACTION_PARTIAL`.
+
+The round M5 metric has an exact totally geodesic Lorentzian equator
+`I_t x S3`. Gauss--Codazzi, GHY variation, the warped normal
+Sturm--Liouville operator, self-adjoint domains, the even scalar zero mode,
+formal M4 coefficient integrals, induced Einstein tensor, and
+fermionic/Clifford boundary geometry are derived.
+
+The equator is not automatically a physical boundary, and all great-S3
+equators are SO(5)-equivalent. The polar S4 is not a product with M4: smooth
+bulk temporal and S3-gradient weights differ by a factor `3/2` for the
+constant scalar profile, while regular massless tangential-vector and
+product-graviton zero modes do not exist. GHY completes the boundary
+variation but supplies no independent boundary kinetic action.
+
+The physical Lorentzian M4 action therefore requires an action-derived
+intrinsic boundary or collar-localization sector. No `L_eff`, physical group,
+observed charge, alpha, physical fermion equation, magnetic-monopole sector,
+or absolute unit is introduced.
+
+Subsidiary results:
+`BHSM_ROUND_EQUATORIAL_M4_GEOMETRY_DERIVED`,
+`BHSM_M4_GAUSS_CODAZZI_REDUCTION_DERIVED`,
+`BHSM_ROUND_EQUATORIAL_M4_ZERO_MODE_ARCHITECTURE_DERIVED`,
+`BHSM_SIGMA_BULK_ZERO_MODE_SELECTED`,
+`BHSM_NO_MONOPOLE_FIREWALL_DERIVED`, and
+`BHSM_FERMIONIC_CLIFFORD_BOUNDARY_READINESS_DERIVED`.
+
+Completion gate:
+`V6_1_1_EQUATORIAL_GEOMETRY_AND_ZERO_MODE_ARCHITECTURE_DERIVED_LOCALIZATION_ACTION_REQUIRED`.
+`FULL_BHSM_NOT_COMPLETE`.
+
+Command: `python -m bhsm.interface m5-m4-boundary-reduction-status --format markdown`.
+
 Permanent descendant firewall:
 `BHSM_FERMIONIC_CLIFFORD_AND_NO_MONOPOLE_FIREWALL_FROZEN`.
 BHSM assumes no foundational physical fermion equation and no physical
