@@ -916,3 +916,47 @@ global along the trajectory.
 Completion gate: `V6_0_10_ROUND_FIXED_SHAPE_P1_BACKGROUND_SELECTED`.
 
 Command: `python -m bhsm.interface p1-lorentzian-background-status --format markdown`.
+
+<!-- BHSM_ROUND_BACKGROUND_GAUGE_SCALAR_V6_1 -->
+## Round-background gauge and scalar sector v6.1
+
+Primary result:
+`BHSM_ROUND_BACKGROUND_GAUGE_SCALAR_ACTION_DERIVED_CONDITIONALLY`.
+
+On the exact stable-shape round P1 trajectory, the complete S3 pushforward
+gives the isotropic effective-M5 connection coefficient
+`K_R=8 pi^2 kappa_1 a^5`, canonical geometric interaction coefficient
+`g5_geom=K_R^(-1/2)`, and the matched cubic/quartic connection algebra.  The
+nested complex-Hopf U1 component and associated multiplet weight operators are
+normalized without double counting.  The five-dimensional geometric groups,
+weights, and dimensionful coefficient are not identified with physical
+Standard Model quantities.
+
+The declared neutral Z2 singlet has an exact M5 kinetic normalization and is
+selected as the parent sigma representative, but its coefficient signs,
+vacuum, boundary/topographic map, and v5 potential remain open.  The physical
+shape Hessian is positive; singlet stability is conditional.
+
+The requested strict tower-control interval fails: the exact trajectory has
+`|dot H|/Delta=1/3`, so no `epsilon_star << 1` window exists.  The minimum
+slice is an exact instantaneous normalization surface, not a static universe.
+
+Results: `BHSM_ROUND_SP1_CONNECTION_NORMALIZATION_DERIVED`,
+`BHSM_EFFECTIVE_BASE_DIMENSION_5D_CONFIRMED`,
+`BHSM_SIGMA_PARENT_FIELD_SELECTED_POTENTIAL_OPEN`, and
+`BHSM_PHYSICAL_3P1_REDUCTION_REMAINS_REQUIRED`.
+
+Completion gate:
+`V6_1_M5_BOSONIC_NORMALIZATION_DERIVED_M4_REDUCTION_REQUIRED`.
+`FULL_BHSM_NOT_COMPLETE`.
+
+Command: `python -m bhsm.interface round-background-gauge-scalar-status --format markdown`.
+
+Permanent descendant firewall:
+`BHSM_FERMIONIC_CLIFFORD_AND_NO_MONOPOLE_FIREWALL_FROZEN`.
+BHSM assumes no foundational physical fermion equation and no physical
+magnetic-monopole sector. Clifford and spinorial operators remain mathematical
+candidates until their BHSM action, domain, and physical interpretation are
+derived. Hopf curvature and Chern data are geometric bundle information, not
+magnetic charge. Monopole harmonic sectors, magnetic-charge quantization, and
+monopole-generated chirality or generations are excluded.

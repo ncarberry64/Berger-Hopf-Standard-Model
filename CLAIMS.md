@@ -742,3 +742,49 @@ Not supported: identifying the parent trajectory with the observed universe;
 identifying `S4` with observed spacetime; calling connection normalization RG
 running or a Standard Model coupling; deriving particles, masses, generations,
 an absolute unit, physical validation, or full BHSM completion.
+
+<!-- BHSM_ROUND_BACKGROUND_GAUGE_SCALAR_V6_1 -->
+## v6.1 round-background gauge and scalar claims
+
+Allowed: on the exact round P1 trajectory, the S3 pushforward derives an
+isotropic M5 `Sp(1)` connection coefficient
+`K_R=8 pi^2 kappa_1 a^5`, its canonical field and dimensionful geometric
+interaction coefficient, matched cubic/quartic vertices, nested complex-Hopf
+U1 normalization, and canonical associated-bundle weight operators.
+
+Allowed with explicit convention dependence: the inherited-subgroup
+connection ratio is one, while the two-periodic unit-charge convention gives
+`K_U1/K_Sp1=4` and `g_U1/g_Sp1=1/2`.  This scale-independent ratio is not a
+physical mixing angle or hypercharge normalization.
+
+Allowed conditionally: the declared neutral Z2 singlet is the selected parent
+sigma representative and has an exact M5 kinetic normalization.  Its
+potential signs, vacuum, v5 boundary/topographic role, stability, and physical
+M4 normalization remain open.  General heavy-mode corrections retain their
+spectral denominators and are valid only under separately stated EFT bounds.
+
+Required downgrade: the requested strict adiabatic interval does not exist,
+because `|dot H|/Delta=1/3` exactly.  The t0 slice is an instantaneous
+normalization surface, not a static universe.  The immediate effective base is
+M5, so `BHSM_EFFECTIVE_BASE_DIMENSION_5D_CONFIRMED` and
+`BHSM_PHYSICAL_3P1_REDUCTION_REMAINS_REQUIRED` both hold.
+
+Not supported: identifying the geometric groups with physical Standard Model
+groups; identifying geometric weights with observed charges; deriving alpha,
+a dimensionless physical gauge coupling, Higgs or electroweak breaking,
+particles, generations, fermion chirality, masses, mixing, a v5 potential, an
+absolute unit, physical validation, or full BHSM completion.
+
+Primary result:
+`BHSM_ROUND_BACKGROUND_GAUGE_SCALAR_ACTION_DERIVED_CONDITIONALLY`.
+`FULL_BHSM_NOT_COMPLETE`.
+
+Permanent firewall:
+`BHSM_FERMIONIC_CLIFFORD_AND_NO_MONOPOLE_FIREWALL_FROZEN`.
+Allowed mathematical language includes Clifford bundles, spin structures,
+spin connections, first-order geometric operator candidates, U1 bundle
+curvature, Hopf winding, and Chern classes with explicit domains and sources.
+These are not automatically a physical fermion equation, magnetic field, or
+magnetic charge. Physical magnetic monopoles, Dirac strings, monopole harmonic
+mode sectors, magnetic-charge quantization, monopole-induced chirality, and
+monopole-generated generations are not part of BHSM.
