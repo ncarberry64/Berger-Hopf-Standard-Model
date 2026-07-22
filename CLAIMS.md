@@ -778,3 +778,13 @@ absolute unit, physical validation, or full BHSM completion.
 Primary result:
 `BHSM_ROUND_BACKGROUND_GAUGE_SCALAR_ACTION_DERIVED_CONDITIONALLY`.
 `FULL_BHSM_NOT_COMPLETE`.
+
+Permanent firewall:
+`BHSM_FERMIONIC_CLIFFORD_AND_NO_MONOPOLE_FIREWALL_FROZEN`.
+Allowed mathematical language includes Clifford bundles, spin structures,
+spin connections, first-order geometric operator candidates, U1 bundle
+curvature, Hopf winding, and Chern classes with explicit domains and sources.
+These are not automatically a physical fermion equation, magnetic field, or
+magnetic charge. Physical magnetic monopoles, Dirac strings, monopole harmonic
+mode sectors, magnetic-charge quantization, monopole-induced chirality, and
+monopole-generated generations are not part of BHSM.

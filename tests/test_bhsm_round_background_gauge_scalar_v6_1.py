@@ -236,12 +236,34 @@ def test_round_spectrum_at_t0_has_exact_gap_weights_and_degeneracies():
     assert load("spectrum")["particle_map"] is None
 
 
-def test_dirac_package_is_normalized_but_not_ready_without_m4_and_chirality():
+def test_spinorial_boundary_inputs_do_not_assume_a_physical_fermion_law():
     payload = load("dirac")
     assert "effective dimension M5" in payload["available"]
     assert "chirality mechanism" in payload["missing"]
     assert "physical M4 boundary/domain reduction" in payload["missing"]
+    assert "BHSM-native fermionic action source" in payload["missing"]
+    assert payload["physical_fermion_equation"] is None
+    assert payload["next_fermionic_action_sprint_ready"] is False
     assert payload["next_Dirac_sprint_ready"] is False
+
+
+def test_permanent_clifford_and_no_monopole_firewall_is_machine_guarded():
+    for payload in (load("dirac"), load("report"), load("hidden")):
+        assert payload["physical_fermion_equation_assumed"] is False
+        assert payload["magnetic_monopole_sector_used"] is False
+        assert payload["monopole_harmonics_used"] is False
+        assert payload["chern_data_called_magnetic_charge"] is False
+        assert payload["magnetic_charge_quantization_imported"] is False
+    assert load("dirac")["monopole_dependency"] is None
+
+
+def test_public_doctrine_separates_bundle_and_clifford_geometry_from_physics():
+    text = public_text()
+    assert "BHSM_FERMIONIC_CLIFFORD_AND_NO_MONOPOLE_FIREWALL_FROZEN" in text
+    assert "promoted automatically to the physical Dirac equation" in text
+    assert "Hopf curvature and Chern data are geometric bundle information" in text
+    assert "Monopole harmonic sectors" in text
+    assert "magnetic-charge quantization" in text
 
 
 def test_scale_relations_do_not_reduce_primitive_values_or_generate_units():

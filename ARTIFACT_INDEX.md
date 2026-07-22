@@ -718,6 +718,9 @@ nested U1 normalizations and their convention ratio; charge operators and
 gauge vertices; scalar candidates, sigma selection, kinetic normalization,
 potential sources, tower terms, and constraint-reduced Hessian; gauge-scalar
 couplings; aperture readiness; M5/M4 dimensions; the parent-to-v5 map;
-spectrum and Dirac forward link; scale, hidden inputs, and the final report.
+spectrum and spinorial boundary-operator forward link (with the historical
+artifact filename retained); scale, hidden inputs, and the final report. The
+payloads also freeze the permanent fermionic/Clifford and no-monopole
+firewall.
 
 Doctrine: `docs/bhsm_round_background_gauge_scalar_v6_1.md`.

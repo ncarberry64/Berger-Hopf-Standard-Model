@@ -583,3 +583,8 @@ U1 convention ledger, canonical multiplet weights, gauge vertices, selected
 parent sigma representative, scalar Hessian, tower and aperture firewalls,
 and the still-required physical M4 reduction.  It also exposes the exact
 one-third floor that prevents a parametrically small control interval.
+
+The report applies the permanent fermionic/Clifford and no-monopole firewall:
+spinorial first-order operators remain mathematical candidates pending a
+BHSM-native action and domain, while Hopf/Chern connection data are not
+physical magnetic charge and no monopole-based mode sector is admitted.

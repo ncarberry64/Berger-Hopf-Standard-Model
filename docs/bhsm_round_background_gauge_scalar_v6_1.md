@@ -194,7 +194,7 @@ sigma-`F^2` term.  A neutral sigma background neither reduces `Sp(1)` to
 `U(1)` nor gives the connection a mass, so no electroweak-breaking statement
 is available.
 
-## Aperture, M4, spectrum, and forward link
+## Aperture, M4, spectrum, and spinorial boundary-operator forward link
 
 The connection and matter normalizations needed for an aperture calculation
 are explicit, but the physical domain `C`, measure, projector, mode profile,
@@ -217,9 +217,29 @@ At t0 the round S3 scalar spectrum is
 
 with weights \(q=-2J,-2J+2,\ldots,2J\), associated rank \(2J+1\), and total
 round degeneracy \((2J+1)^2\).  The first gap is \(\lambda/14\).  No mode is
-assigned to a particle.  A Dirac sprint still requires a physical M4 domain,
-boundary conditions, chirality mechanism, parent spinor representation,
-fermion normalization, Yukawa or geometric-mass source, and particle map.
+assigned to a particle.  A later BHSM-native fermionic action sprint still
+requires a physical M4 domain, boundary conditions, chirality mechanism,
+parent spinor representation, fermion normalization, Yukawa or
+geometric-mass source, and particle map.
+
+## Permanent fermionic/Clifford and no-monopole firewall
+
+BHSM does not assume a physical fermion equation as a foundational parent
+law.  Clifford algebras, spin structures, spin connections, and first-order
+geometric operators are mathematical constructions.  They may be used only
+with a specified domain and an identified BHSM action source, and they are not
+promoted automatically to the physical Dirac equation.
+
+BHSM contains no physical magnetic-monopole sector.  Dirac strings, monopole
+harmonic mode bases, magnetic-charge sectors, magnetic-charge quantization,
+monopole-induced chirality, and monopole-generated generations are excluded.
+Hopf winding, principal U1 bundles, first Chern classes, transition functions,
+and connection curvature remain geometric bundle data.  They carry no
+physical magnetic interpretation without a separately derived magnetic field,
+asymptotic charge definition, and physical source theorem.
+
+This permanent doctrine is
+`BHSM_FERMIONIC_CLIFFORD_AND_NO_MONOPOLE_FIREWALL_FROZEN`.
 
 ## Scale, primitives, and stop condition
 

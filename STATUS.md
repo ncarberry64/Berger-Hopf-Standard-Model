@@ -951,3 +951,12 @@ Completion gate:
 `FULL_BHSM_NOT_COMPLETE`.
 
 Command: `python -m bhsm.interface round-background-gauge-scalar-status --format markdown`.
+
+Permanent descendant firewall:
+`BHSM_FERMIONIC_CLIFFORD_AND_NO_MONOPOLE_FIREWALL_FROZEN`.
+BHSM assumes no foundational physical fermion equation and no physical
+magnetic-monopole sector. Clifford and spinorial operators remain mathematical
+candidates until their BHSM action, domain, and physical interpretation are
+derived. Hopf curvature and Chern data are geometric bundle information, not
+magnetic charge. Monopole harmonic sectors, magnetic-charge quantization, and
+monopole-generated chirality or generations are excluded.
