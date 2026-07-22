@@ -73,7 +73,8 @@ def test_contribution_ledger_records_merged_frontier_without_preclaiming_active_
     assert "obstruction or kill test" in text
     assert "[#153]" in text
     assert "[#154]" in text
-    assert "latest result on `main` is PR #154" in text
+    assert "[#156]" in text
+    assert "latest result on `main` is PR #156" in text
     assert "not listed as an achievement before review" in text
     assert "does not assert" in text
 

@@ -895,3 +895,36 @@ Primary result:
 Completion gate:
 `V6_1_3_INTRINSIC_ACTION_FROZEN_COEFFICIENT_LOCK_UNDERDETERMINED_SHIFTED_BACKGROUND_OPEN`.
 `FULL_BHSM_NOT_COMPLETE`.
+
+<!-- BHSM_INTRINSIC_M4_JUNCTION_BACKGROUND_V6_1_4 -->
+## v6.1.4 intrinsic M4 junction-background claims
+
+Allowed: variation of the frozen P1, GHY, intrinsic B1, and exact matching
+actions gives the bulk Einstein equation and the one-cap/Z2 junction factors.
+Z2 reflection reverses one-sided extrinsic curvature and does not require it
+to vanish.
+
+Allowed conditionally: on the positive-curvature P1 branch, an offset
+de Sitter-4 hyperplane and Z2 double of one regular de Sitter-5 cap solve the
+vacuum junction equation. The two allowed boundary curvatures satisfy
+`(C_partial/kappa_1)^2X^2-X+kappa_0/(12kappa_1)=0` and generate shifted
+closed-de-Sitter bounce trajectories. At the critical coefficient, a separate
+static `R x S3` embedding with regular doubled caps also solves the equations.
+
+Required downgrade: the resulting `C_partial` relation is branch dependent
+and does not source or universally derive that coefficient. Vacuum connection
+and scalar backgrounds do not constrain `tau_A` or `Z_partial`. Principal
+kinetic signs are healthy, but the fully reduced mixed bending and tensor
+spectrum remains open; no ghost-free or negative-mode theorem is claimed.
+
+Not supported: a parent derivation of B1; a preferred equator; observed
+spacetime or cosmology; a Standard Model gauge interpretation; observed
+charges, alpha, masses, CKM, or PMNS; a sourced scalar potential; a physical
+fermion equation; magnetic monopoles; an absolute unit; physical validation;
+or full BHSM completion.
+
+Primary result:
+`BHSM_INTRINSIC_M4_JUNCTION_BACKGROUND_DERIVED_CONDITIONALLY`.
+Completion gate:
+`V6_1_4_Z2_TWO_CAP_BACKGROUND_DERIVED_MIXED_STABILITY_AND_COEFFICIENT_SOURCE_OPEN`.
+`FULL_BHSM_NOT_COMPLETE`.

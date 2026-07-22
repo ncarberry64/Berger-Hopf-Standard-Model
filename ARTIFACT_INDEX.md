@@ -768,3 +768,18 @@ aperture readiness; parent and fermionic maps; scale and hidden-input audits;
 and the final report.
 
 Doctrine: `docs/bhsm_minimal_equatorial_boundary_action_v6_1_3.md`.
+
+<!-- BHSM_INTRINSIC_M4_JUNCTION_BACKGROUND_V6_1_4 -->
+## Intrinsic M4 junction-supported background closure v6.1.4
+
+The 25 deterministic artifacts enumerated by
+`src/bhsm/interface/intrinsic_m4_junction_background.py` cover the frozen
+total action; exact variation and matching elimination; smooth-equator
+residual; Gaussian-normal equations; one-sided junction factors;
+constant-curvature roots and regular Z2 double caps; boundary FRW and branch
+classification; coefficient and primitive ledgers; connection and sigma
+vacua; the missing-term gate; conservation; reduced-stability and tensor
+audits; Lorentz structure; coefficient-source, parent-map, fermionic, scale,
+hidden-input, and final-report records.
+
+Doctrine: `docs/bhsm_intrinsic_m4_junction_background_v6_1_4.md`.
