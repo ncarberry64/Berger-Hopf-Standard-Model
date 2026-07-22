@@ -259,6 +259,7 @@ from .twistor_berger_action_normalization import action_normalization_status_rep
 from .p1_lorentzian_background_constraint import lorentzian_background_status_report, lorentzian_background_status_to_markdown
 from .round_background_gauge_scalar_sector import round_bosonic_status_report, round_bosonic_status_to_markdown
 from .m5_m4_boundary_reduction import m5_m4_status_report, m5_m4_status_to_markdown
+from .m4_lorentz_localization import localization_status_report, localization_status_to_markdown
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -723,6 +724,8 @@ def build_parser() -> argparse.ArgumentParser:
     round_bosonic.add_argument("--format", choices=("json", "markdown"), default="json")
     m5_m4 = commands.add_parser("m5-m4-boundary-reduction-status", help="Render the BHSM v6.1.1 parent-M5 to equatorial-M4 boundary reduction")
     m5_m4.add_argument("--format", choices=("json", "markdown"), default="json")
+    m4_localization = commands.add_parser("m4-lorentz-localization-status", help="Render the BHSM v6.1.2 Lorentz-selected equatorial-localization audit")
+    m4_localization.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
 
@@ -1619,6 +1622,13 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(json.dumps(payload, indent=2, sort_keys=True))
         else:
             _print_unicode(m5_m4_status_to_markdown(payload))
+        return 0
+    if args.command == "m4-lorentz-localization-status":
+        payload = localization_status_report()
+        if args.format == "json":
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        else:
+            _print_unicode(localization_status_to_markdown(payload))
         return 0
     if args.command in {
         "primitive-charged-incidence",

@@ -823,3 +823,39 @@ Primary result:
 `BHSM_ROUND_EQUATORIAL_M4_ZERO_MODE_ARCHITECTURE_DERIVED`.
 Boundary-action status: `BHSM_M5_TO_M4_BOUNDARY_ACTION_PARTIAL`.
 `FULL_BHSM_NOT_COMPLETE`.
+
+<!-- BHSM_M4_LORENTZ_SELECTED_LOCALIZATION_V6_1_2 -->
+## v6.1.2 M4 Lorentz-selected localization claims
+
+Allowed: for nonnegative admissible scalar profile density,
+`N_s-N_t=a integral sin(chi)cos^2(chi)w dchi>=0`. For finite connection
+norms, `N_B-N_E=a integral cos^2(chi)|u_A|^2/sin(chi)dchi>=0`. The principal
+tangential tensor symbol has the scalar weights. Finite nonzero equality
+excludes the collapsed poles and selects equatorial great-S3 support, up to
+the full `SO(5)` orbit.
+
+Allowed: the power-collar diagnostic has exact mismatches
+`1/(p+2)` for scalar/principal tensor and `1/p` for connection. Every finite
+width is strictly mismatched. A finite boundary kinetic coefficient dilutes
+but cannot cancel the positive bulk difference.
+
+Allowed: P1/GHY and smooth Z2 junctions do not generate independent
+intrinsic boundary fields. The exact collar geometry does not trap the
+constant scalar zero mode. Standard P2/P3 variational completions and
+tree-level integration of the constant sigma mode do not supply a local
+boundary kinetic primitive.
+
+Allowed conditionally: a sigma kink needs `A0<0`, `G0>0`, compatible
+parity/boundary data, and a stable round-S4 solution. An inverse-designed
+trap and the intrinsic `C_partial`, `tau_A`, `Z_partial` action family are
+diagnostics or missing action statements, not frozen theory terms.
+
+Not supported: a uniquely preferred equator; automatic brane ontology;
+action-derived localized gauge/tensor modes; a coefficient lock or one hidden
+primitive; physical currents, aperture, `alpha`, or Standard Model mapping;
+a physical Dirac equation; any magnetic-monopole sector; an absolute unit;
+physical validation; or full BHSM completion.
+
+Primary result: `BHSM_M4_LORENTZ_SELECTED_LOCALIZATION_DERIVED`.
+Action status: `BHSM_M4_EQUATORIAL_LOCALIZATION_SOURCE_SELECTED_ACTION_OPEN`.
+`FULL_BHSM_NOT_COMPLETE`.
