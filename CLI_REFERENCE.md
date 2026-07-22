@@ -619,3 +619,20 @@ finite-width mismatch formulas; and the P1/GHY, Z2, collar, sigma, Lovelock,
 and tree-induction source audit. It identifies, but does not add, the minimum
 unsourced intrinsic boundary-action family and preserves the physical-Dirac,
 no-monopole, observed-input, absolute-unit, and full-completion firewalls.
+
+<!-- BHSM_MINIMAL_EQUATORIAL_BOUNDARY_ACTION_V6_1_3 -->
+## Minimal equatorial boundary action freeze v6.1.3
+
+```bash
+python -m bhsm.interface minimal-equatorial-boundary-action-status --format json
+python -m bhsm.interface minimal-equatorial-boundary-action-status --format markdown
+python scripts/materialize_minimal_equatorial_boundary_action_v6_1_3.py
+```
+
+The command reports provisional Boundary Axiom B1, the frozen intrinsic M4
+action, the trace-versus-intrinsic no-cancellation theorem, exact metric
+matching, the failed one-normalization coefficient lock, canonical sector
+normalizations, and the nonzero round-equator junction residual. It keeps the
+coefficient source, shifted background, full mixed spectrum, scalar potential,
+physical gauge and fermion interpretation, absolute unit, and completion
+gates open.

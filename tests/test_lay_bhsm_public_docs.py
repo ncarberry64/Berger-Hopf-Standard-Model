@@ -67,13 +67,14 @@ def test_cern_lay_explanation_states_the_data_flow_and_nonphysics_scope():
         assert required in text
 
 
-def test_contribution_ledger_distinguishes_merged_results_from_open_pr():
+def test_contribution_ledger_records_merged_frontier_without_preclaiming_active_work():
     text = read(ROOT / "docs" / "bhsm_scientific_contribution_ledger.md")
     assert "positive mathematical derivation" in text
     assert "obstruction or kill test" in text
     assert "[#153]" in text
     assert "[#154]" in text
-    assert "Open PR; not yet part of main" in text
+    assert "latest result on `main` is PR #154" in text
+    assert "not listed as an achievement before review" in text
     assert "does not assert" in text
 
 
