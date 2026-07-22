@@ -873,3 +873,24 @@ Completion gate:
 `V6_0_8_CONTINUE_TO_TWISTOR_BERGER_ACTION_NORMALIZATION`.
 
 Command: `python -m bhsm.interface twistor-berger-associated-bundle-status --format markdown`.
+
+<!-- BHSM_TWISTOR_BERGER_ACTION_NORMALIZATION_V6_0_9 -->
+## Twistor--Berger action normalization v6.0.9
+
+Primary result:
+`BHSM_TWISTOR_BERGER_ACTION_NORMALIZATION_DERIVED_CONDITIONALLY`.
+
+The fixed P1 branch now has an explicit physical measure, off-shell curvature
+reduction, positive connection kinetic matrix, canonical scalar multiplet
+factors, overlap rules, and an exact minimal-scalar gap. Tree-level tower
+integration is controlled only below that gap.
+
+The round and Jensen-squashed critical ratios are fixed-lapse spatial
+extrema, not Lorentzian parent vacua. The lapse/stress background remains
+unsolved, and their length depends on the primitive ratio `kappa1/kappa0`.
+No absolute unit or physical gauge coupling follows from this result.
+
+Completion gate:
+`V6_0_9_CONTINUE_TO_P1_LORENTZIAN_BACKGROUND_CONSTRAINT_CLOSURE`.
+
+Command: `python -m bhsm.interface twistor-berger-action-normalization-status --format markdown`.
