@@ -788,3 +788,38 @@ These are not automatically a physical fermion equation, magnetic field, or
 magnetic charge. Physical magnetic monopoles, Dirac strings, monopole harmonic
 mode sectors, magnetic-charge quantization, monopole-induced chirality, and
 monopole-generated generations are not part of BHSM.
+
+<!-- BHSM_PARENT_M5_M4_BOUNDARY_REDUCTION_V6_1_1 -->
+## v6.1.1 parent-M5 to equatorial-M4 boundary claims
+
+Allowed: the round M5 hyperspherical metric, equatorial induced Lorentzian
+metric, zero extrinsic curvature, intrinsic curvature and Einstein tensor,
+Gauss--Codazzi identity, GHY variational completion, warped normal
+Sturm--Liouville operator, self-adjoint scalar domains, and the exact even
+constant scalar normal zero mode are derived.
+
+Allowed: all great S3 equators are symmetry equivalent, so geometry supplies
+no preferred axis. Restriction to an equator, selection of a hemisphere,
+creation of a boundary, Z2 quotient/interface interpretation, and independent
+boundary localization are distinct operations.
+
+Allowed with downgrade: formal M4 gravity and homogeneous scalar profile
+coefficients can be integrated exactly. They are not a complete Lorentzian M4
+action because the S4 is warped rather than a product: smooth temporal and
+spatial weights differ, and no regular massless tangential vector or
+product-graviton zero mode exists.
+
+Allowed conditionally: an intrinsic boundary or collar-localization action
+could provide common M4 gravitational, connection, and scalar kinetic
+coefficients. Its action source, profiles, and coefficient values remain open.
+
+Not supported: a uniquely selected equator; automatic physical-boundary
+status; observed spacetime or cosmology; Standard Model group or charge
+identification; a measured g4; alpha; a parent-derived v5 scalar potential;
+a physical fermion equation; any magnetic-monopole sector; an absolute unit;
+or full BHSM completion.
+
+Primary result:
+`BHSM_ROUND_EQUATORIAL_M4_ZERO_MODE_ARCHITECTURE_DERIVED`.
+Boundary-action status: `BHSM_M5_TO_M4_BOUNDARY_ACTION_PARTIAL`.
+`FULL_BHSM_NOT_COMPLETE`.

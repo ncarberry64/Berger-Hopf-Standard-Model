@@ -724,3 +724,18 @@ payloads also freeze the permanent fermionic/Clifford and no-monopole
 firewall.
 
 Doctrine: `docs/bhsm_round_background_gauge_scalar_v6_1.md`.
+
+<!-- BHSM_PARENT_M5_M4_BOUNDARY_REDUCTION_V6_1_1 -->
+## Parent M5 to equatorial-M4 boundary reduction v6.1.1
+
+The 26 deterministic artifacts enumerated by
+`src/bhsm/interface/m5_m4_boundary_reduction.py` cover the permanent
+fermionic/Clifford and no-monopole firewall; exact M5 hyperspherical and
+equatorial geometry; equator roles and selection; boundary/control-surface
+separation; Gauss--Codazzi and GHY variation; the normal Sturm--Liouville
+problem and zero-mode audit; gravitational, Sp1, nested-U1, and scalar
+normalizations; localization sources and self-adjoint domains; currents,
+aperture, potential, parent-to-v5/v4, Clifford readiness, scale, hidden inputs,
+and final doctrine report.
+
+Doctrine: `docs/bhsm_parent_m5_to_m4_boundary_reduction_v6_1_1.md`.

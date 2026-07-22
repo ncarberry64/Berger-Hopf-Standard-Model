@@ -588,3 +588,18 @@ The report applies the permanent fermionic/Clifford and no-monopole firewall:
 spinorial first-order operators remain mathematical candidates pending a
 BHSM-native action and domain, while Hopf/Chern connection data are not
 physical magnetic charge and no monopole-based mode sector is admitted.
+
+<!-- BHSM_PARENT_M5_M4_BOUNDARY_REDUCTION_V6_1_1 -->
+## Parent M5 to equatorial-M4 boundary reduction v6.1.1
+
+```bash
+python -m bhsm.interface m5-m4-boundary-reduction-status --format json
+python -m bhsm.interface m5-m4-boundary-reduction-status --format markdown
+python scripts/materialize_m5_m4_boundary_reduction_v6_1_1.py
+```
+
+The command reports the exact equatorial geometry, Gauss--Codazzi and GHY
+ledgers, warped normal spectrum and scalar zero mode, profile-normalization
+obstruction, boundary-condition ledger, no-monopole firewall, and the precise
+intrinsic-boundary/collar action family still required for a physical
+Lorentzian M4 sector.
