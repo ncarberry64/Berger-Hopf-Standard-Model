@@ -1059,3 +1059,33 @@ Completion gate:
 `FULL_BHSM_NOT_COMPLETE`.
 
 Command: `python -m bhsm.interface minimal-equatorial-boundary-action-status --format markdown`.
+
+<!-- BHSM_INTRINSIC_M4_JUNCTION_BACKGROUND_V6_1_4 -->
+## Intrinsic M4 junction-supported background closure v6.1.4
+
+Primary result:
+`BHSM_INTRINSIC_M4_JUNCTION_BACKGROUND_DERIVED_CONDITIONALLY`.
+
+The frozen B1 action admits an exact positive-curvature P1 background without
+added boundary vacuum energy. An offset de Sitter-4 hyperplane in de Sitter-5
+has nonzero isotropic one-sided extrinsic curvature. Z2 doubling one regular
+cap produces the required jump while preserving regular cap poles.
+
+For `q_5=kappa_0/(12kappa_1)` and
+`eta=C_partial/kappa_1`, the boundary curvature obeys
+`eta^2 X^2-X+q_5=0`. Both real roots give shifted closed-de-Sitter bounce
+trajectories when `4eta^2q_5<=1`. At the critical double root a distinct exact
+static `R x S3` cap-doubled embedding also exists. This is a branch-dependent
+background relation and existence bound, not a universal derivation of
+`C_partial`.
+
+The principal intrinsic gravity, connection, and scalar signs remain healthy
+for positive coefficients. The complete constraint-reduced bulk-boundary
+bending and tensor spectrum, B1 source, coefficient sources, scalar
+potential, physical field map, and absolute unit remain open.
+
+Completion gate:
+`V6_1_4_Z2_TWO_CAP_BACKGROUND_DERIVED_MIXED_STABILITY_AND_COEFFICIENT_SOURCE_OPEN`.
+`FULL_BHSM_NOT_COMPLETE`.
+
+Command: `python -m bhsm.interface intrinsic-m4-junction-background-status --format markdown`.

@@ -46,6 +46,7 @@ as specified; they do not by themselves validate BHSM Physics.
 | [#152](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/pull/152) | Derived the round-background effective-M5 connection and scalar normalization while exposing the exact one-third time-control floor. | Conditional bosonic action | Physical 3+1-dimensional localization and couplings. |
 | [#153](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/pull/153) | Derived the exact totally geodesic Lorentzian equator and showed why smooth bulk zero modes do not automatically form a physical M4 theory. | M5-to-M4 geometry and obstruction | An action-derived boundary/localization sector. |
 | [#154](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/pull/154) | Proved that exact Lorentz kinetic equality selects equatorial great-`S3` support and identified the minimum unsourced boundary-action family. | Localization theorem and source obstruction | Boundary-field ontology, coefficient source/locking, and localized physical spectrum. |
+| [#156](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/pull/156) | Froze one provisional intrinsic equatorial M4 action, proved that finite boundary terms cannot repair smooth-trace mismatch, and exposed the resulting round-junction backreaction. | Conditional action construction and coefficient-lock obstruction | Parent source, shifted junction background, and full mixed stability. |
 
 ## Reproducibility and scientific-discipline achievements
 
@@ -61,12 +62,12 @@ as specified; they do not by themselves validate BHSM Physics.
 
 ## Current frontier
 
-The latest result on `main` is PR #154. The active v6.1.3 construction tests a
-provisional intrinsic boundary-field ontology and minimum action; it is not a
-merged result and is not listed as an achievement before review. The public
-completion status remains `FULL_BHSM_NOT_COMPLETE`.
+The latest result on `main` is PR #156. The active v6.1.4 construction tests
+the resulting junction-supported background; it is not a merged result and
+is not listed as an achievement before review. The public completion status
+remains `FULL_BHSM_NOT_COMPLETE`.
 
 The next scientific question is not whether an equator can be named as the
-physical world. It is whether an intrinsic boundary action is consistent with
-the parent junction equations and whether its coefficient relations can be
-derived rather than independently supplied.
+physical world. It is whether the frozen intrinsic action has a regular,
+stable parent junction background and whether its coefficients can be sourced
+rather than independently supplied.

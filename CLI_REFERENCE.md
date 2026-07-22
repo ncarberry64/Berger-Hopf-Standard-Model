@@ -636,3 +636,19 @@ normalizations, and the nonzero round-equator junction residual. It keeps the
 coefficient source, shifted background, full mixed spectrum, scalar potential,
 physical gauge and fermion interpretation, absolute unit, and completion
 gates open.
+
+<!-- BHSM_INTRINSIC_M4_JUNCTION_BACKGROUND_V6_1_4 -->
+## Intrinsic M4 junction-supported background closure v6.1.4
+
+```bash
+python -m bhsm.interface intrinsic-m4-junction-background-status --format json
+python -m bhsm.interface intrinsic-m4-junction-background-status --format markdown
+python scripts/materialize_intrinsic_m4_junction_background_v6_1_4.py
+```
+
+The command reports the exact frozen-action variation, matching-multiplier
+elimination, K=0 residual, one-sided/Z2 junction factors, the two
+constant-curvature roots, regular doubled-cap construction, boundary FRW
+bounce, and branch-dependent `C_partial` relation. It keeps B1 and coefficient
+sources, full mixed bending/tensor stability, scalar potential, physical
+field interpretation, absolute units, and completion open.

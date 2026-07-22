@@ -261,6 +261,7 @@ from .round_background_gauge_scalar_sector import round_bosonic_status_report, r
 from .m5_m4_boundary_reduction import m5_m4_status_report, m5_m4_status_to_markdown
 from .m4_lorentz_localization import localization_status_report, localization_status_to_markdown
 from .minimal_equatorial_boundary_action import boundary_action_status_report, boundary_action_status_to_markdown
+from .intrinsic_m4_junction_background import junction_background_status_report, junction_background_status_to_markdown
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -729,6 +730,8 @@ def build_parser() -> argparse.ArgumentParser:
     m4_localization.add_argument("--format", choices=("json", "markdown"), default="json")
     boundary_action = commands.add_parser("minimal-equatorial-boundary-action-status", help="Render the BHSM v6.1.3 minimal intrinsic equatorial boundary-action freeze")
     boundary_action.add_argument("--format", choices=("json", "markdown"), default="json")
+    junction_background = commands.add_parser("intrinsic-m4-junction-background-status", help="Render the BHSM v6.1.4 intrinsic-M4 junction-supported background closure")
+    junction_background.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
 
@@ -1639,6 +1642,13 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(json.dumps(payload, indent=2, sort_keys=True))
         else:
             _print_unicode(boundary_action_status_to_markdown(payload))
+        return 0
+    if args.command == "intrinsic-m4-junction-background-status":
+        payload = junction_background_status_report()
+        if args.format == "json":
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        else:
+            _print_unicode(junction_background_status_to_markdown(payload))
         return 0
     if args.command in {
         "primitive-charged-incidence",

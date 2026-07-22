@@ -88,7 +88,7 @@ BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode
 | Charged closure audit | `CONDITIONAL_CHARGED_SOURCES` | Charged coefficients are inventoried; action normalization and CKM exponent derivation remain open. |
 | Normalized action CKM adjoint-pair audit | `OPEN_MISSING_NORMALIZED_ACTION_ADJOINT_PAIR_SELECTION` | Hermitian bidirectional count is conditional; normalized-action CKM transport-space selection remains open. |
 | FeynRules, UFO, MadGraph | `RUNTIME_GATED` | External validation is deferred until theorem and runtime gates pass. |
-| Current geometric construction frontier | `M4_EQUATORIAL_LOCALIZATION_SOURCE_SELECTED_ACTION_OPEN` | Main includes the exact Lorentz-selected great-`S3` support theorem through PR #154; the intrinsic boundary action and its coefficient source remain explicit gates. |
+| Current geometric construction frontier | `INTRINSIC_M4_ACTION_FROZEN_JUNCTION_BACKGROUND_OPEN` | Main includes the provisional minimal intrinsic M4 action through PR #156; its junction-supported background, mixed stability, and coefficient sources remain explicit gates. |
 
 [STATUS.md](STATUS.md) is the single source of truth. Historical README material is preserved in
 [docs/archive/README_status_history_pre_v0_7.md](docs/archive/README_status_history_pre_v0_7.md).
