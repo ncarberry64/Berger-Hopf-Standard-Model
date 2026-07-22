@@ -6,10 +6,36 @@ The Berger-Hopf Standard Model (BHSM) is an artifact-backed Python research fram
 
 It provides an artifact-backed computational framework with Python interfaces, provenance-tracked adapters, review tools, and theorem-closure machinery. Institutional integration, complete 4D export, and external HEP runtime validation remain outside the package.
 
+## Start Here: BHSM in Plain Language
+
+New to the project? Start with [BHSM in plain language](docs/bhsm_in_plain_language.md).
+It explains the geometric hypothesis, the role of boundaries and harmonics,
+what has actually been constructed, and what remains unproved without
+requiring a mathematical-physics background.
+
+- [BHSM in plain language](docs/bhsm_in_plain_language.md)
+- [Scientific contribution and PR achievement ledger](docs/bhsm_scientific_contribution_ledger.md)
+- [The CERN toy model in plain language](docs/cern_toy_model_in_plain_language.md)
+- [Current technical status](STATUS.md)
+- [Claim Boundaries](CLAIMS.md)
+
+In one sentence: BHSM asks whether a coupled geometric system can select an
+effectively four-dimensional boundary, fields, and interaction structure whose
+low-energy limit reproduces the Standard Model. The repository records real
+mathematical and computational progress toward that goal, but it does not yet
+claim physical validation, full Standard Model derivation, derived particle
+masses or gauge couplings, an absolute unit, or full BHSM completion.
+
 ## BHSM Engine on real CMS Open Data
 ![BHSM Engine CMS Open Data validation](docs/assets/pr98_cms_open_data_animation/pr98_cms_engine_validation_continuous.gif)
 
 This offline animation uses a compact deterministic sample from the PR #98 CMS Open Data validation path: CERN Open Data Record 303, DOI `10.7483/OPENDATA.CMS.4M97.3SQ9`. PR #98 validated coordinate transformations on 200,000 unique CMS dimuon muon four-vectors, with a 2,000,000-vector timed workload, 3.225x speedup versus the vectorized control, and backward error below 2.4 machine-epsilon. [Static SVG and provenance](docs/pr98_cms_open_data_animation.md).
+
+In everyday terms, this is a map-projection test using realistic coordinates:
+it checks whether the BHSM coordinate engine can transform real
+collision-derived vectors quickly and recover the same vectors accurately.
+It does not test why those particles exist. Read the
+[lay explanation of the CERN toy model](docs/cern_toy_model_in_plain_language.md).
 
 Scope boundary: Engine coordinate-transformation validation only. This is not detector reconstruction, empirical validation of BHSM Physics, or CMS/CERN endorsement.
 
@@ -62,6 +88,7 @@ BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode
 | Charged closure audit | `CONDITIONAL_CHARGED_SOURCES` | Charged coefficients are inventoried; action normalization and CKM exponent derivation remain open. |
 | Normalized action CKM adjoint-pair audit | `OPEN_MISSING_NORMALIZED_ACTION_ADJOINT_PAIR_SELECTION` | Hermitian bidirectional count is conditional; normalized-action CKM transport-space selection remains open. |
 | FeynRules, UFO, MadGraph | `RUNTIME_GATED` | External validation is deferred until theorem and runtime gates pass. |
+| Current geometric construction frontier | `M5_TO_M4_LOCALIZATION_ACTION_OPEN` | Main includes the exact equatorial M4 architecture through PR #153; the boundary-localization source remains an explicit gate. |
 
 [STATUS.md](STATUS.md) is the single source of truth. Historical README material is preserved in
 [docs/archive/README_status_history_pre_v0_7.md](docs/archive/README_status_history_pre_v0_7.md).
@@ -70,15 +97,9 @@ BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode
 
 Run `python -m pytest -q`, then see [QUICKSTART.md](QUICKSTART.md) and [CLI_REFERENCE.md](CLI_REFERENCE.md) for the complete offline review surface.
 
-The legacy gravitational curvature expression is dimensionally gated because K has units L^-2 and (c^2/G) r^2 K has units M/L, not M.
-BHSM does not use the legacy gravitational curvature expression as a direct particle mass formula.
-The preferred particle-sector path is the conditional action-normalized neutral spectral gap. No physical neutrino mass is emitted by repository defaults.
-
 The raw neutral kernel is not assumed positive semidefinite. BHSM distinguishes raw-kernel, conditional admissible-cone, and thresholded-response nonnegativity.
 
 BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity. Physical eV/GeV neutrino mass closure remains open pending a numeric neutral stiffness length sqrt(A_nu/Z_nu), a physical K_neutral,eff map in m^-2, and complete-action derivation of the admissible response cone.
-
-See [QUICKSTART.md](QUICKSTART.md) for a runnable walkthrough and [CLI_REFERENCE.md](CLI_REFERENCE.md) for the complete command table.
 
 ## Established Artifact-Backed Outputs
 
@@ -102,23 +123,11 @@ python -m bhsm.interface artifact-report --anchor W_boson --format json
 
 ## Candidate And Open Theorem Areas
 
-CP phase attachment to CKM/PMNS structures is artifact-backed. The v0.8 author
-ontology classifies CP as a Z6 boundary holonomy constraint and retires the
-standalone `O_int` production target. It defines `X_ch` conditionally as a
-charged boundary-response operator and the neutrino BHSM mass conditionally as
-a propagation-locked curvature response. These are structural theorem statuses;
-numerical closure and external HEP runtime readiness remain open.
-
-The v0.9 neutrino module evaluates the conditional dimensionless law
-`tau max(0, p g_nu ||K_nu psi||/||psi|| - kappa_nu)`. In BHSM, the neutrino
-mass contribution is modeled as a propagation-locked curvature response, not
-as an ordinary static rest-mass primitive. No dimensional neutrino mass is
-claimed because an artifact-backed neutral eV/GeV scale is absent.
-
-BHSM currently distinguishes dimensionless neutrino propagation closure from physical eV/GeV mass closure.
-A physical eV/GeV neutrino mass requires an artifact-backed or explicitly conditional neutral dimensionful scale.
-The electron-neutrino upper limit is a comparison reference only and is never used to set the neutral scale.
-A dimensionless BHSM response is not, by itself, a physical eV/GeV mass.
+Artifact-backed formulas, conditional response laws, and geometric candidates
+remain distinct from action-derived physical predictions. In particular, the
+neutral response still lacks an independently derived dimensional scale, and
+the electron-neutrino limit is comparison data rather than a calibration
+input. See [CLAIMS.md](CLAIMS.md) for the governing boundaries.
 
 Run the offline scale audit with:
 
@@ -128,10 +137,6 @@ python -m bhsm.interface neutrino-scale-report --format markdown
 python -m bhsm.interface legacy-neutral-scale-report --format markdown
 python -m bhsm.interface neutral-radius-curvature-report --format markdown
 ```
-
-The legacy curvature-threshold mass functional supplies a candidate mass bridge, not an empirical neutrino mass prediction by itself. A physical BHSM neutrino mass requires both a propagation/localization scale and a neutral curvature mapping with physical units.
-
-The v1.2 dimensional audit adds a further required gate: the mass functional itself must reduce to physical mass. The currently documented `r^2 k` expression does not pass that gate when `K` has dimension `length^-2`.
 
 The exact evidence boundary is reported by:
 
@@ -144,11 +149,6 @@ Long-form mathematical status remains available in
 [docs/current_bhsm_status.md](docs/current_bhsm_status.md),
 [theory/full_bhsm_completion_v1_candidate.md](theory/full_bhsm_completion_v1_candidate.md),
 and [theory/full_bhsm_open_proof_obligations.md](theory/full_bhsm_open_proof_obligations.md).
-
-## Claim Boundaries
-
-See [CLAIMS.md](CLAIMS.md). W calibration is not an independent prediction, and
-the electron-neutrino comparison remains upper-limit based.
 
 ## Engine and Physics Status
 
@@ -175,5 +175,3 @@ Start with [docs/README.md](docs/README.md) for the documentation map and
 [ROADMAP.md](ROADMAP.md) for the next work sequence.
 ## Citation
 Use [CITATION.cff](CITATION.cff) for current citation metadata.
-## v2.9 CKM Coefficient Form/Value Split
-The interface coefficient form `C_CKM=g2_BH/sqrt(2)` is artifact-backed, while `g2_BH` remains a runtime input rather than an action-derived value. The stacked v4.9 consolidation declares `COUPLING_BRIDGE_BLOCKED_PENDING_ACTION_PRINCIPLE`: both direct spectral action attachment and CKM-relative current normalization remain blocked. Work pivots to CKM relative transport transcription, kept separate from weak-coupling normalization; CKM value/exponent, running, and full completion remain open.

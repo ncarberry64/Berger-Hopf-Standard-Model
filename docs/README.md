@@ -12,6 +12,9 @@ The current minimal-action theory dictionary is documented in
 
 ## Overview
 
+- [BHSM in plain language](bhsm_in_plain_language.md)
+- [Scientific contribution and PR achievement ledger](bhsm_scientific_contribution_ledger.md)
+- [CERN toy model in plain language](cern_toy_model_in_plain_language.md)
 - [Engine vs Physics claim boundary](engine_vs_physics_claim_boundary.md)
 - [BHSM Engine status](bhsm_engine_status.md)
 - [BHSM Physics status](bhsm_physics_status.md)
@@ -32,6 +35,7 @@ The current minimal-action theory dictionary is documented in
 - [CKM log-transport application gate](ckm_log_transport_application_gate.md)
 
 - [CERN Open Data coordinate benchmark](cern_open_data_benchmark.md): checksum-gated
+  technical report; see the [plain-language explanation](cern_toy_model_in_plain_language.md)
 - [PR #98 CMS Open Data animation](pr98_cms_open_data_animation.md): compact offline real-data visualization with explicit claim boundaries
   CMS dimuon four-vector throughput validation; not track reconstruction.
 - [Native microarchitecture profiling](native_microarchitecture_profiling.md):
