@@ -2,6 +2,9 @@
 
 Status: `CERN_OPEN_DATA_FOUR_VECTOR_BENCHMARK_NOT_TRACK_RECONSTRUCTION`.
 
+For a nontechnical explanation of what this test does and does not show, read
+[The CERN toy model in plain language](cern_toy_model_in_plain_language.md).
+
 Source: [Events with two muons from 2010](https://opendata.cern.ch/record/303), DOI `10.7483/OPENDATA.CMS.4M97.3SQ9`.
 
 Unique four-vectors: `200,000`; timed four-vectors per pass: `2,000,000`; replication factor: `10`.
