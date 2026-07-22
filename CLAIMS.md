@@ -859,3 +859,39 @@ physical validation; or full BHSM completion.
 Primary result: `BHSM_M4_LORENTZ_SELECTED_LOCALIZATION_DERIVED`.
 Action status: `BHSM_M4_EQUATORIAL_LOCALIZATION_SOURCE_SELECTED_ACTION_OPEN`.
 `FULL_BHSM_NOT_COMPLETE`.
+
+<!-- BHSM_MINIMAL_EQUATORIAL_BOUNDARY_ACTION_V6_1_3 -->
+## v6.1.3 minimal equatorial boundary action claims
+
+Allowed: Boundary Axiom B1 may be studied as an explicitly provisional
+independent-field ontology on the Lorentz-selected great-`S3` orbit. Given
+B1, the minimum intrinsic Einstein--Hilbert, Yang--Mills, and free neutral
+scalar action has exact Lorentz principal structure and healthy principal
+kinetic signs when its coefficients are positive.
+
+Allowed: a finite common Lorentz-invariant boundary coefficient leaves a
+smooth trace field's temporal/spatial normalization difference unchanged.
+Exact Lorentz equality therefore requires the declared intrinsic-field or
+distributional-support distinction rather than a finite additive repair.
+
+Allowed with downgrade: the action has three raw coefficients, but while the
+scalar is free its normalization is removable. Two physical invariant
+combinations remain before a scalar potential or matching source. Dimensions,
+covariance, a common measure, and representation trace conventions do not
+derive a one-normalization lock.
+
+Required backreaction: adding `C_partial R4` makes the old totally geodesic
+round equator fail the combined junction equation at finite radius. A shifted
+bulk-boundary solution and its constraint-reduced mixed Hessian remain open.
+
+Not supported: parent derivation of B1 or its coefficients; a preferred
+equator; a derived scalar potential; identification with observed gravity,
+gauge groups, hypercharge, electric charge, alpha, Higgs physics, or an
+absolute unit; a physical fermion equation; magnetic monopoles; physical
+validation; Standard Model completion; or full BHSM completion.
+
+Primary result:
+`BHSM_MINIMAL_EQUATORIAL_BOUNDARY_ACTION_REQUIRES_MULTIPLE_PRIMITIVES`.
+Completion gate:
+`V6_1_3_INTRINSIC_ACTION_FROZEN_COEFFICIENT_LOCK_UNDERDETERMINED_SHIFTED_BACKGROUND_OPEN`.
+`FULL_BHSM_NOT_COMPLETE`.

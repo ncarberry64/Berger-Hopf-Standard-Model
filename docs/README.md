@@ -154,6 +154,7 @@ The current minimal-action theory dictionary is documented in
 - [Absolute unit-anchor generation v5.8](bhsm_absolute_unit_anchor_generation_v5_8.md)
 - [Pilot-wave scale-modulus dynamics v5.9](bhsm_pilot_wave_scale_modulus_dynamics_v5_9.md)
 - [Quantum effective action and Casimir backreaction v5.10](bhsm_quantum_effective_action_casimir_backreaction_v5_10.md)
+- [Minimal equatorial boundary action freeze v6.1.3](bhsm_minimal_equatorial_boundary_action_v6_1_3.md)
 
 ## CP O_int Sprint Docs
 

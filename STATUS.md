@@ -1027,3 +1027,35 @@ Completion gate:
 `FULL_BHSM_NOT_COMPLETE`.
 
 Command: `python -m bhsm.interface m4-lorentz-localization-status --format markdown`.
+
+<!-- BHSM_MINIMAL_EQUATORIAL_BOUNDARY_ACTION_V6_1_3 -->
+## Minimal equatorial boundary action freeze v6.1.3
+
+Primary result:
+`BHSM_MINIMAL_EQUATORIAL_BOUNDARY_ACTION_REQUIRES_MULTIPLE_PRIMITIVES`.
+
+Boundary Axiom B1 provisionally defines independent intrinsic
+`h_mu_nu`, `A_mu`, and neutral `sigma_partial` fields on the Lorentz-selected
+great-`S3` support. The frozen Einstein--Hilbert, Yang--Mills, and free-scalar
+action has exact M4 Lorentz principal symbols and healthy principal kinetic
+signs for positive `C_partial`, `tau_A`, and `Z_partial`.
+
+A finite common intrinsic coefficient cannot cancel the temporal/spatial
+mismatch of a smooth bulk trace. Dimensions and covariance do not lock the
+three raw coefficients to one normalization. Before a scalar potential or
+matching source, field redefinition leaves two physical invariant
+combinations; an independently sourced scalar interaction would restore a
+third. No such scalar interaction is added in this freeze.
+
+The intrinsic curvature term changes the junction equation. With vanishing
+boundary matter stress, the old `K_mu_nu=0` round equator leaves residual
+`2 C_partial G_mu_nu`, including a strictly positive finite-radius 00
+component. A shifted embedding, compensating action-derived stress, or
+modified parent solution is required before the full physical spectrum can
+be tested.
+
+Completion gate:
+`V6_1_3_INTRINSIC_ACTION_FROZEN_COEFFICIENT_LOCK_UNDERDETERMINED_SHIFTED_BACKGROUND_OPEN`.
+`FULL_BHSM_NOT_COMPLETE`.
+
+Command: `python -m bhsm.interface minimal-equatorial-boundary-action-status --format markdown`.

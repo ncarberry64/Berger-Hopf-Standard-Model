@@ -753,3 +753,18 @@ common action, currents, aperture, fermionic readiness, scale,
 parent-to-v5/v4, hidden-input, and final-report ledgers.
 
 Doctrine: `docs/bhsm_m4_lorentz_selected_localization_v6_1_2.md`.
+
+<!-- BHSM_MINIMAL_EQUATORIAL_BOUNDARY_ACTION_V6_1_3 -->
+## Minimal equatorial boundary action freeze v6.1.3
+
+The 23 deterministic artifacts enumerated by
+`src/bhsm/interface/minimal_equatorial_boundary_action.py` cover Boundary
+Axiom B1; the trace-versus-intrinsic theorem; the frozen action and exact
+metric matching; coefficient-lock and primitive-count tests; intrinsic
+gravity, connection, nested-U1, and scalar sectors; potential sourcing;
+combined variation and round-background backreaction; Lorentz hyperbolicity
+and constraint-reduced stability; physical-boundary status; current and
+aperture readiness; parent and fermionic maps; scale and hidden-input audits;
+and the final report.
+
+Doctrine: `docs/bhsm_minimal_equatorial_boundary_action_v6_1_3.md`.
