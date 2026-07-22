@@ -1000,3 +1000,30 @@ candidates until their BHSM action, domain, and physical interpretation are
 derived. Hopf curvature and Chern data are geometric bundle information, not
 magnetic charge. Monopole harmonic sectors, magnetic-charge quantization, and
 monopole-generated chirality or generations are excluded.
+
+<!-- BHSM_M4_LORENTZ_SELECTED_LOCALIZATION_V6_1_2 -->
+## M4 Lorentz-selected boundary localization v6.1.2
+
+Primary result: `BHSM_M4_LORENTZ_SELECTED_LOCALIZATION_DERIVED`.
+
+Exact nonnegative normalization differences prove that finite nonzero
+Lorentz equality for scalar, connection, and principal tensor profiles
+selects support on the `SO(5)` orbit of totally geodesic equatorial great
+`S3` hypersurfaces. The exact finite-width family has positive mismatches
+`delta_scalar=delta_tensor=1/(p+2)` and `delta_connection=1/p`; exact equality
+is distributional rather than a smooth finite-width mode.
+
+P1/GHY, a smooth Z2 cut, the round collar, the existing sigma sector, P2/P3
+boundary completion, and controlled tree-level bulk induction do not source
+the required intrinsic boundary kinetics. The minimum identified family has
+independent `C_partial`, `tau_A`, and `Z_partial`; it is recorded but not
+added or assigned coefficients.
+
+Action status:
+`BHSM_M4_EQUATORIAL_LOCALIZATION_SOURCE_SELECTED_ACTION_OPEN`.
+
+Completion gate:
+`V6_1_2_LORENTZ_SELECTS_GREAT_S3_SUPPORT_MINIMAL_BOUNDARY_ACTION_UNSOURCED`.
+`FULL_BHSM_NOT_COMPLETE`.
+
+Command: `python -m bhsm.interface m4-lorentz-localization-status --format markdown`.

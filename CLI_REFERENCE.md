@@ -603,3 +603,19 @@ ledgers, warped normal spectrum and scalar zero mode, profile-normalization
 obstruction, boundary-condition ledger, no-monopole firewall, and the precise
 intrinsic-boundary/collar action family still required for a physical
 Lorentzian M4 sector.
+
+<!-- BHSM_M4_LORENTZ_SELECTED_LOCALIZATION_V6_1_2 -->
+## M4 Lorentz-selected boundary localization v6.1.2
+
+```bash
+python -m bhsm.interface m4-lorentz-localization-status --format json
+python -m bhsm.interface m4-lorentz-localization-status --format markdown
+python scripts/materialize_m4_lorentz_localization_v6_1_2.py
+```
+
+The command reports the exact scalar, connection, and principal-tensor
+support-selection inequalities; the great-S3 orbit theorem; exact
+finite-width mismatch formulas; and the P1/GHY, Z2, collar, sigma, Lovelock,
+and tree-induction source audit. It identifies, but does not add, the minimum
+unsourced intrinsic boundary-action family and preserves the physical-Dirac,
+no-monopole, observed-input, absolute-unit, and full-completion firewalls.

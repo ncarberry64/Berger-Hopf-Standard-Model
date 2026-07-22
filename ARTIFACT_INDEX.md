@@ -739,3 +739,17 @@ aperture, potential, parent-to-v5/v4, Clifford readiness, scale, hidden inputs,
 and final doctrine report.
 
 Doctrine: `docs/bhsm_parent_m5_to_m4_boundary_reduction_v6_1_1.md`.
+
+<!-- BHSM_M4_LORENTZ_SELECTED_LOCALIZATION_V6_1_2 -->
+## M4 Lorentz-selected boundary localization v6.1.2
+
+The 25 deterministic artifacts enumerated by
+`src/bhsm/interface/m4_lorentz_localization.py` cover the scalar, connection,
+and principal tensor Lorentz-normalization theorems; mismatch functionals and
+great-S3 orbit selection; P1/GHY, Z2, exact collar, sigma, P2/P3, and
+tree-induction source audits; localized Sturm--Liouville and finite-width
+profile diagnostics; the minimum unsourced intrinsic boundary-action family;
+common action, currents, aperture, fermionic readiness, scale,
+parent-to-v5/v4, hidden-input, and final-report ledgers.
+
+Doctrine: `docs/bhsm_m4_lorentz_selected_localization_v6_1_2.md`.
