@@ -668,3 +668,17 @@ identity, the converged critical-cap odd-mode threshold, a fixed-background
 nonlinear probe, the conditional thin-wall junction polynomial, and the B1
 coefficient-source failures. It does not promote the probe to a coupled
 backreacted wall or a stability theorem.
+
+<!-- BHSM_SCALAR_WALL_BACKREACTED_BIFURCATION_V6_1_6 -->
+## Scalar-wall backreacted bifurcation v6.1.6
+
+```bash
+python -m bhsm.interface scalar-wall-bifurcation-status --format json
+python -m bhsm.interface scalar-wall-bifurcation-status --format markdown
+python scripts/materialize_scalar_wall_backreacted_bifurcation_v6_1_6.py
+```
+
+The command reports the independently recomputed critical mode, exact
+second-order critical-double-root junction obstruction, nonanalytic curvature
+fold, ensemble dependence, and the still-open Fredholm, continuation,
+on-shell-action, and mixed-stability gates.

@@ -1120,3 +1120,33 @@ Completion gate:
 `FULL_BHSM_NOT_COMPLETE`.
 
 Command: `python -m bhsm.interface scalar-wall-junction-audit-status --format markdown`.
+
+<!-- BHSM_SCALAR_WALL_BACKREACTED_BIFURCATION_V6_1_6 -->
+## Scalar-wall backreacted bifurcation v6.1.6
+
+Primary result:
+`BHSM_SCALAR_WALL_BIFURCATION_ENSEMBLE_DEPENDENT`.
+
+The v6.1.5 critical odd mode is independently reproduced at
+`mu_c/q5=29.430918352948...`. Its weighted-normalized junction derivative is
+nonzero. Combining the exact P1 normal constraint with the frozen B1 junction
+at the v6.1.4 critical double root gives
+
+`(X-2q5)^2/(4q5)=(Z5/(12kappa1)) sigma_J'^2`.
+
+Consequently the requested analytic fixed-`C_partial` expansion has an
+impossible positive order-`epsilon^2` junction residual. The same exact
+equation permits `X-X_c=O(|epsilon|)` on two curvature-fold sheets. Holding
+`X` fixed can restore analytic order only by varying the independent B1
+coefficient. No parent theorem selects the ensemble.
+
+No total Fredholm coefficient, supercritical/subcritical classification,
+coupled nonlinear branch, on-shell quartic preference, or amplitude/mixed
+stability result is claimed. The B1 primitive count and singlet
+`p1-p2=0` result are unchanged.
+
+Completion gate:
+`V6_1_6_CRITICAL_DOUBLE_ROOT_PUISEUX_CONTINUATION_AND_MIXED_STABILITY_OPEN`.
+`FULL_BHSM_NOT_COMPLETE`.
+
+Command: `python -m bhsm.interface scalar-wall-bifurcation-status --format markdown`.

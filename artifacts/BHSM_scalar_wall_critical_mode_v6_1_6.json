@@ -1,0 +1,78 @@
+{
+  "P2_or_P3_repair_used": false,
+  "adjoint_mode": "u1",
+  "amplitude_mode_called_full_mixed_stability": false,
+  "artifact": "BHSM_scalar_wall_critical_mode_v6_1_6",
+  "bending_called_sigma_partial": false,
+  "bifurcation_sign_forced": false,
+  "boundary_tension_inserted": false,
+  "boundary_vacuum_constant_inserted": false,
+  "cap_length_and_lapse_both_fixed": false,
+  "claim_boundary": "The critical odd mode is independently reproduced. At the B1 critical double root its positive normal stress obstructs the requested analytic even-metric expansion at second order, while a nonanalytic fold response or a varying-B1 ensemble remains possible. No coupled nonlinear branch or total Fredholm coefficient is claimed.",
+  "continuation_failure_promoted_to_theorem": false,
+  "critical_eigenvalue_hard_coded_as_answer": false,
+  "domain": "regular pole u'(0)=0; odd junction u(pi/4)=0",
+  "eigenvalue_derivative_in_mu_control": -1,
+  "fixed_background_profile_called_backreacted": false,
+  "frozen_predictions_changed": false,
+  "full_bhsm_completion_claimed": false,
+  "independent_hypergeometric_mu1_over_q5": 29.430918352948,
+  "lapse_dropped_before_variation": false,
+  "measured_input_used": false,
+  "moving_boundary_terms_omitted": false,
+  "new_parent_field_added": false,
+  "new_scalar_interaction_added": false,
+  "normalized": {
+    "cap_value": 8.923902707116,
+    "eigen_residual_moment": 0.0,
+    "gradient_moment": 29.430918352947,
+    "junction_derivative": -9.124976903426,
+    "junction_value": 0.0,
+    "quartic_moment": 21.690130229412,
+    "weighted_norm": 1
+  },
+  "official_prediction_logic_changed": false,
+  "operator": "L_c=-a0^-4 d_rho(a0^4 d_rho)",
+  "primary_result": "BHSM_SCALAR_WALL_BIFURCATION_ENSEMBLE_DEPENDENT",
+  "regression_target_used_as_answer": false,
+  "route_difference": 0.0,
+  "scalar_vacuum_energy_subtracted": false,
+  "self_adjoint_boundary_form": "[a0^4(v u'-u v')]_0^rhoJ=0",
+  "shooting_convergence": [
+    {
+      "junction_derivative": -9.124976904947,
+      "max_step": 0.02,
+      "mu1_over_q5": 29.430918347828,
+      "rtol": 1e-09,
+      "weighted_norm": 1.0
+    },
+    {
+      "junction_derivative": -9.124976903439,
+      "max_step": 0.01,
+      "mu1_over_q5": 29.430918352895,
+      "rtol": 1e-11,
+      "weighted_norm": 1.0
+    },
+    {
+      "junction_derivative": -9.124976903427,
+      "max_step": 0.005,
+      "mu1_over_q5": 29.430918352942,
+      "rtol": 1e-12,
+      "weighted_norm": 1.0
+    },
+    {
+      "junction_derivative": -9.124976903426,
+      "max_step": 0.0025,
+      "mu1_over_q5": 29.430918352947,
+      "rtol": 1e-13,
+      "weighted_norm": 1.0
+    }
+  ],
+  "singlet_anisotropic_pressure_inserted": false,
+  "sprint": "bhsm-scalar-wall-backreacted-bifurcation-v6-1-6",
+  "status": "BHSM_CRITICAL_SCALAR_ZERO_MODE_REPRODUCED",
+  "version": "v6.1.6",
+  "wall_called_C_partial": false,
+  "wall_called_tau_A": false,
+  "weight": "a0^4=4 sin(rho)^4"
+}
