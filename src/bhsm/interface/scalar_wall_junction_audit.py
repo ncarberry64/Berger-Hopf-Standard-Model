@@ -54,6 +54,11 @@ def deterministic_json(payload: dict[str, Any]) -> str:
     return json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False) + "\n"
 
 
+def stable_diagnostic(value: float, digits: int = 12) -> float:
+    """Quantize solver diagnostics for cross-platform artifact identity."""
+    return float(f"{value:.{digits}f}")
+
+
 def scalar_vacua(A_5: float, G_5: float) -> dict[str, Any]:
     """Classify the stationary points of U=A sigma^2/2+G sigma^4/4."""
     rows: list[dict[str, Any]] = [
@@ -231,8 +236,8 @@ def build_artifact_payloads(repo_root: Path | None = None) -> dict[str, dict[str
         {
             "max_step": step,
             "rtol": tolerance,
-            "mu1_over_q5": lowest_odd_cap_eigenvalue(
-                max_step=step, rtol=tolerance
+            "mu1_over_q5": stable_diagnostic(
+                lowest_odd_cap_eigenvalue(max_step=step, rtol=tolerance)
             ),
         }
         for step, tolerance in (
@@ -245,8 +250,8 @@ def build_artifact_payloads(repo_root: Path | None = None) -> dict[str, dict[str
         {
             "max_step": step,
             "rtol": tolerance,
-            "cap_amplitude": fixed_background_probe_amplitude(
-                max_step=step, rtol=tolerance
+            "cap_amplitude": stable_diagnostic(
+                fixed_background_probe_amplitude(max_step=step, rtol=tolerance)
             ),
         }
         for step, tolerance in (
