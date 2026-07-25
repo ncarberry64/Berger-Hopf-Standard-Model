@@ -68,6 +68,16 @@ def stable(value: float, digits: int = 12) -> float:
     return float(f"{value:.{digits}f}")
 
 
+def stable_solver(value: float, digits: int = 9) -> float:
+    """Quantize iterative BVP coordinates below the reported mesh accuracy."""
+    return float(f"{value:.{digits}f}")
+
+
+def stable_residual(value: float) -> float:
+    """Canonicalize residuals already below the declared convergence gate."""
+    return 0.0 if abs(value) < 2.0e-8 else stable_solver(abs(value))
+
+
 def regression_data() -> dict[str, float]:
     """Recompute the critical eigenpair and the fold/Fredholm coefficients."""
     mode = critical_mode_diagnostics()
@@ -223,24 +233,24 @@ def continuation_point(
         "r": r,
         "sheet": "upper" if sheet > 0 else "lower",
         "scalar_sign": scalar_sign,
-        "mu": stable(mu),
-        "X": stable(X),
-        "cap_length": stable(ell),
-        "junction_position": stable(ell),
-        "one_sided_extrinsic_curvature": stable(-endpoint[1]),
-        "scalar_cap_amplitude": stable(cap),
-        "sigma_J_prime": stable(sigma_prime),
-        "Hamiltonian_residual": stable(float(np.max(np.abs(constraint[10:])))),
+        "mu": stable_solver(mu),
+        "X": stable_solver(X),
+        "cap_length": stable_solver(ell),
+        "junction_position": stable_solver(ell),
+        "one_sided_extrinsic_curvature": stable_solver(-endpoint[1]),
+        "scalar_cap_amplitude": stable_solver(cap),
+        "sigma_J_prime": stable_solver(sigma_prime),
+        "Hamiltonian_residual": stable_residual(
+            float(np.max(np.abs(constraint[10:])))
+        ),
         "tangential_residual": 0.0,
-        "scalar_residual": stable(abs(float(endpoint[2]))),
-        "junction_residual": stable(abs(float(endpoint[1] - X / 2))),
-        "virial_residual": stable(abs(float(virial))),
-        "cap_regularity_residual": stable(
+        "scalar_residual": stable_residual(float(endpoint[2])),
+        "junction_residual": stable_residual(float(endpoint[1] - X / 2)),
+        "virial_residual": stable_residual(float(virial)),
+        "cap_regularity_residual": stable_residual(
             abs(float(solution.y[0, 0] / 1.0e-7 - math.sqrt(X)))
         ),
-        "normal_form_residual": stable(
-            abs(normal_form(X, sigma_prime)), digits=10
-        ),
+        "normal_form_residual": stable_residual(normal_form(X, sigma_prime)),
         "mesh_max_step": max_step,
         "converged": True,
     }
