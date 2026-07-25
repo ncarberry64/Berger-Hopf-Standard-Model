@@ -88,7 +88,7 @@ BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode
 | Charged closure audit | `CONDITIONAL_CHARGED_SOURCES` | Charged coefficients are inventoried; action normalization and CKM exponent derivation remain open. |
 | Normalized action CKM adjoint-pair audit | `OPEN_MISSING_NORMALIZED_ACTION_ADJOINT_PAIR_SELECTION` | Hermitian bidirectional count is conditional; normalized-action CKM transport-space selection remains open. |
 | FeynRules, UFO, MadGraph | `RUNTIME_GATED` | External validation is deferred until theorem and runtime gates pass. |
-| Current geometric construction frontier | `SCALAR_WALL_COUPLED_BRANCH_AND_MIXED_STABILITY_OPEN` | The exact v6.1.4 junction background is retained. The v6.1.5 audit derives the scalar vacuum-energy shift and cap instability threshold, while the finite-amplitude backreacted wall, B1 coefficient sources, and mixed spectrum remain open. |
+| Current geometric construction frontier | `BHSM_SCALAR_WALL_BIFURCATION_ENSEMBLE_DEPENDENT` | v6.1.6 reproduces the critical odd mode and proves that the B1 double root obstructs the requested analytic fixed-`C_partial` second-order response. A nonanalytic curvature fold or varying-B1 ensemble remains possible; Puiseux continuation, branch energy, and mixed stability remain open. |
 
 [STATUS.md](STATUS.md) is the single source of truth. Historical README material is preserved in
 [docs/archive/README_status_history_pre_v0_7.md](docs/archive/README_status_history_pre_v0_7.md).

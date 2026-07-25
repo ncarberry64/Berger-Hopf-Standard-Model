@@ -157,6 +157,7 @@ The current minimal-action theory dictionary is documented in
 - [Minimal equatorial boundary action freeze v6.1.3](bhsm_minimal_equatorial_boundary_action_v6_1_3.md)
 - [Intrinsic M4 junction-supported background closure v6.1.4](bhsm_intrinsic_m4_junction_background_v6_1_4.md)
 - [Scalar-wall junction and coefficient-source audit v6.1.5](bhsm_scalar_wall_junction_audit_v6_1_5.md)
+- [Scalar-wall backreacted bifurcation v6.1.6](bhsm_scalar_wall_backreacted_bifurcation_v6_1_6.md)
 
 ## CP O_int Sprint Docs
 

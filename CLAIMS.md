@@ -957,3 +957,34 @@ Primary result:
 Completion gate:
 `V6_1_5_COUPLED_FINITE_AMPLITUDE_WALL_AND_MIXED_STABILITY_OPEN`.
 `FULL_BHSM_NOT_COMPLETE`.
+
+<!-- BHSM_SCALAR_WALL_BACKREACTED_BIFURCATION_V6_1_6 -->
+## v6.1.6 scalar-wall bifurcation claims
+
+Derived: the v6.1.5 regular-pole/odd-junction scalar eigenpair is independently
+reproduced by shooting and a hypergeometric route. The exact constraint plus
+B1 junction at the critical double root reduces to
+`(X-2q5)^2/(4q5)=(Z5/(12kappa1))sigma_J'^2`.
+
+Derived: for positive `Z5/kappa1` and the nontrivial critical mode, the
+requested analytic even-metric fixed-`C_partial` hierarchy is inconsistent at
+order `epsilon^2`. This is an obstruction to that analytic ensemble, not a
+theorem excluding all nearby solutions.
+
+Conditional/open: the completed square admits two nonanalytic curvature
+sheets with `X-X_c=O(|epsilon|)`. A fixed-`X` analytic response instead
+requires variation of the independent B1 coefficient. A Puiseux
+Lyapunov--Schmidt reduction, controlled continuation, on-shell action,
+amplitude stability, and full mixed spectrum remain new work.
+
+Not supported: a total cubic Fredholm coefficient; a supercritical or
+subcritical classification; a finite-amplitude coupled wall; removal of a B1
+primitive; wall identification with `C_partial` or `tau_A`; bending
+identification with `sigma_partial`; singlet anisotropic pressure; physical
+validation; or full BHSM completion.
+
+Primary result:
+`BHSM_SCALAR_WALL_BIFURCATION_ENSEMBLE_DEPENDENT`.
+Completion gate:
+`V6_1_6_CRITICAL_DOUBLE_ROOT_PUISEUX_CONTINUATION_AND_MIXED_STABILITY_OPEN`.
+`FULL_BHSM_NOT_COMPLETE`.

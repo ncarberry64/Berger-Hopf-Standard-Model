@@ -797,3 +797,18 @@ coefficient-source and Berger-shape results; mixed-stability, hidden-input,
 and final-report ledgers.
 
 Doctrine: `docs/bhsm_scalar_wall_junction_audit_v6_1_5.md`.
+
+<!-- BHSM_SCALAR_WALL_BACKREACTED_BIFURCATION_V6_1_6 -->
+## Scalar-wall backreacted bifurcation v6.1.6
+
+The 16 deterministic artifacts enumerated by
+`src/bhsm/interface/scalar_wall_backreacted_bifurcation.py` cover the frozen
+ensemble and gauge; independently reproduced critical mode; moving/fixed
+domain map; attempted analytic expansion; exact second-order junction
+obstruction; formal third-order source and unresolved Fredholm decomposition;
+curvature-fold and ensemble classification; on-shell, continuation, residual,
+amplitude-stability, and mixed-operator audits; B1 source reaudit;
+hidden-input firewall; and final report.
+
+Doctrine:
+`docs/bhsm_scalar_wall_backreacted_bifurcation_v6_1_6.md`.
