@@ -1089,3 +1089,34 @@ Completion gate:
 `FULL_BHSM_NOT_COMPLETE`.
 
 Command: `python -m bhsm.interface intrinsic-m4-junction-background-status --format markdown`.
+
+<!-- BHSM_SCALAR_WALL_JUNCTION_AUDIT_V6_1_5 -->
+## Scalar-wall junction and coefficient-source audit v6.1.5
+
+Primary result:
+`BHSM_MINIMAL_P1_SCALAR_WALL_JUNCTION_NOT_FOUND`.
+
+The existing neutral bulk scalar was coupled to the v6.1.4
+Gaussian-normal cap equations without adding a boundary tension, vacuum
+constant, parent field, or interaction. Its nonzero vacuum energy is retained
+exactly through
+`kappa0_eff=kappa_0-A5^2/(2G5)`.
+
+An exact cap identity excludes nontrivial walls for
+`Z5>0`, `A5>=0`, `G5>=0`. In the stable double-well sign domain, the
+critical v6.1.4 cap has a first odd scalar threshold
+`mu1/q5=29.43091835294...`; a deterministic nonlinear profile exists on the
+fixed metric beyond that threshold. The finite-amplitude coupled
+Einstein--scalar-B1 branch and its mixed stability spectrum were not closed,
+so the probe is not promoted to a junction solution.
+
+Minimal scalar stress does not generate `C_partial` or `tau_A`. A possible
+translation collective coordinate is a bending mode, not automatically the
+declared B1 `sigma_partial`. The singlet wall stress is isotropic and cannot
+source a Berger split.
+
+Completion gate:
+`V6_1_5_COUPLED_FINITE_AMPLITUDE_WALL_AND_MIXED_STABILITY_OPEN`.
+`FULL_BHSM_NOT_COMPLETE`.
+
+Command: `python -m bhsm.interface scalar-wall-junction-audit-status --format markdown`.

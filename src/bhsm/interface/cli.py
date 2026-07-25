@@ -262,6 +262,7 @@ from .m5_m4_boundary_reduction import m5_m4_status_report, m5_m4_status_to_markd
 from .m4_lorentz_localization import localization_status_report, localization_status_to_markdown
 from .minimal_equatorial_boundary_action import boundary_action_status_report, boundary_action_status_to_markdown
 from .intrinsic_m4_junction_background import junction_background_status_report, junction_background_status_to_markdown
+from .scalar_wall_junction_audit import scalar_wall_status_report, scalar_wall_status_to_markdown
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -732,6 +733,8 @@ def build_parser() -> argparse.ArgumentParser:
     boundary_action.add_argument("--format", choices=("json", "markdown"), default="json")
     junction_background = commands.add_parser("intrinsic-m4-junction-background-status", help="Render the BHSM v6.1.4 intrinsic-M4 junction-supported background closure")
     junction_background.add_argument("--format", choices=("json", "markdown"), default="json")
+    scalar_wall = commands.add_parser("scalar-wall-junction-audit-status", help="Render the BHSM v6.1.5 scalar-wall junction and coefficient-source audit")
+    scalar_wall.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
 
@@ -1649,6 +1652,13 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(json.dumps(payload, indent=2, sort_keys=True))
         else:
             _print_unicode(junction_background_status_to_markdown(payload))
+        return 0
+    if args.command == "scalar-wall-junction-audit-status":
+        payload = scalar_wall_status_report()
+        if args.format == "json":
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        else:
+            _print_unicode(scalar_wall_status_to_markdown(payload))
         return 0
     if args.command in {
         "primitive-charged-incidence",

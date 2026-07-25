@@ -928,3 +928,32 @@ Primary result:
 Completion gate:
 `V6_1_4_Z2_TWO_CAP_BACKGROUND_DERIVED_MIXED_STABILITY_AND_COEFFICIENT_SOURCE_OPEN`.
 `FULL_BHSM_NOT_COMPLETE`.
+
+<!-- BHSM_SCALAR_WALL_JUNCTION_AUDIT_V6_1_5 -->
+## v6.1.5 scalar-wall junction claims
+
+Derived: retaining the existing scalar vacuum constant gives
+`kappa0_eff=kappa_0-A5^2/(2G5)` on the stable nonzero-vacuum branch. The
+Gaussian-normal Einstein--scalar equations, lapse-retaining reduced action,
+parity conditions, and compact-cap integral identity agree.
+
+Derived: the sign domain `Z5>0`, `A5>=0`, `G5>=0` admits only the zero odd
+profile. On the critical v6.1.4 cap the first odd mode instead crosses zero at
+`-A5/Z5=29.43091835294... q5`. A regular nonlinear profile was found on the
+fixed cap metric for one supercritical dimensionless control point.
+
+Required downgrade: the nonlinear probe omits metric backreaction. It is not
+a finite-amplitude solution of the coupled Einstein--scalar-B1 junction
+problem, and numerical non-closure is not a global theorem.
+
+Derived source failure: minimal scalar stress is not an intrinsic `R4`
+kinetic term and does not generate `C_partial`; the frozen action contains no
+sigma-dependent `F2` term and does not generate `tau_A`. A wall translation
+mode is an embedding field and is not `sigma_partial` without an explicit
+map. Singlet stress has `p1-p2=0` and does not source a Berger split.
+
+Primary result:
+`BHSM_MINIMAL_P1_SCALAR_WALL_JUNCTION_NOT_FOUND`.
+Completion gate:
+`V6_1_5_COUPLED_FINITE_AMPLITUDE_WALL_AND_MIXED_STABILITY_OPEN`.
+`FULL_BHSM_NOT_COMPLETE`.
