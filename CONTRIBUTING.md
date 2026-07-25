@@ -26,4 +26,17 @@ python tools/audit_bhsm_status.py
 python tools/audit_frozen_prediction_integrity.py
 ```
 
+### Test filesystem isolation
+
+Normal `pytest` runs treat every Git-tracked checkout file as read-only.
+Generator tests may temporarily rematerialize tracked files and inspect the
+result, but `tests/conftest.py` restores their exact pre-test bytes after each
+test. A session-end guard also restores the exact pre-session bytes and fails
+the run if a subprocess bypasses the per-test protection.
+
+Run materializers explicitly from their documented scripts when intentionally
+updating repository artifacts. Review and commit those generated changes
+before running the full test suite. Pytest preserves any tracked changes that
+already existed when the session started.
+
 The repository is publicly reviewable but remains all rights reserved. Opening an issue or pull request does not alter the terms in `LICENSE.md`.

@@ -20,6 +20,11 @@ target_include_directories(
   INTERFACE "${CMAKE_CURRENT_SOURCE_DIR}/integrations/cern-root/include"
 )
 target_compile_features(bhsm_coordinate INTERFACE cxx_std_17)
+if(MSVC)
+  # Make __cplusplus report the selected language standard. ROOT checks this
+  # value in RConfigure.h and warns when MSVC's legacy value is left enabled.
+  target_compile_options(bhsm_coordinate INTERFACE /Zc:__cplusplus)
+endif()
 
 function(bhsm_require_compile_flag flag variable)
   check_cxx_compiler_flag("${flag}" "${variable}")
