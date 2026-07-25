@@ -67,6 +67,8 @@ def deterministic_json(payload: dict[str, Any]) -> str:
 
 
 def stable(value: float, digits: int = 12) -> float:
+    if abs(value) < 5.0e-12:
+        return 0.0
     return float(f"{value:.{digits}f}")
 
 
