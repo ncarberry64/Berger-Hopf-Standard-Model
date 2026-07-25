@@ -158,6 +158,7 @@ The current minimal-action theory dictionary is documented in
 - [Intrinsic M4 junction-supported background closure v6.1.4](bhsm_intrinsic_m4_junction_background_v6_1_4.md)
 - [Scalar-wall junction and coefficient-source audit v6.1.5](bhsm_scalar_wall_junction_audit_v6_1_5.md)
 - [Scalar-wall backreacted bifurcation v6.1.6](bhsm_scalar_wall_backreacted_bifurcation_v6_1_6.md)
+- [Scalar-wall Puiseux curvature fold v6.1.7](bhsm_scalar_wall_puiseux_fold_v6_1_7.md)
 
 ## CP O_int Sprint Docs
 

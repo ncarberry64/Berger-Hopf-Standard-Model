@@ -987,4 +987,32 @@ Primary result:
 `BHSM_SCALAR_WALL_BIFURCATION_ENSEMBLE_DEPENDENT`.
 Completion gate:
 `V6_1_6_CRITICAL_DOUBLE_ROOT_PUISEUX_CONTINUATION_AND_MIXED_STABILITY_OPEN`.
+
+<!-- BHSM_SCALAR_WALL_PUISEUX_FOLD_V6_1_7 -->
+## v6.1.7 scalar-wall Puiseux-fold claim boundary
+
+Derived/validated conditionally:
+
+- the double-root normal form and two invariant-curvature sheets;
+- the regular non-gauge order-r cap tangent;
+- opposite leading `mu` orientations on the two sheets;
+- converged local coupled upper and lower sheets, for both scalar signs, in
+  the declared normalized provisional B1 representative;
+- preservation of the singlet result `p1-p2=0`.
+
+Conditional/open:
+
+- extension beyond the audited local interval or to arbitrary primitive
+  coefficient ratios;
+- gauge-invariant analytic separation of the full cubic coefficient;
+- a regulated complete P1+GHY+B1 action difference and fold stability sign;
+- the complete constrained scalar-metric-junction-Berger spectrum;
+- any parent ontology or derivation of `C_partial`, `tau_A`, or `Z_partial`.
+
+Primary status:
+`BHSM_SCALAR_WALL_PUISEUX_BRANCH_DERIVED_CONDITIONALLY`.
+
+Completion gate:
+`V6_1_7_FOLD_ACTION_AND_FULL_MIXED_STABILITY_OPEN`.
+
 `FULL_BHSM_NOT_COMPLETE`.

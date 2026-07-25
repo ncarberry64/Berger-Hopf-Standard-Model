@@ -812,3 +812,16 @@ hidden-input firewall; and final report.
 
 Doctrine:
 `docs/bhsm_scalar_wall_backreacted_bifurcation_v6_1_6.md`.
+
+<!-- BHSM_SCALAR_WALL_PUISEUX_FOLD_V6_1_7 -->
+## Scalar-wall Puiseux curvature fold v6.1.7
+
+The 16 deterministic artifacts enumerated by
+`src/bhsm/interface/scalar_wall_puiseux_fold.py` cover the fixed-coupling
+ensemble; double-root normal form; amplitude/sign split; order-r cap tangent;
+quadratic scalar solvability; second-order Einstein response; cubic
+projection ledger; upper and lower coupled continuation; residual
+convergence; action and fold-stability gates; ensemble interpretation; B1
+source and hidden-input audits; and final report.
+
+Doctrine: `docs/bhsm_scalar_wall_puiseux_fold_v6_1_7.md`.
