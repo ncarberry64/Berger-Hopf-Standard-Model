@@ -1147,6 +1147,36 @@ stability result is claimed. The B1 primitive count and singlet
 
 Completion gate:
 `V6_1_6_CRITICAL_DOUBLE_ROOT_PUISEUX_CONTINUATION_AND_MIXED_STABILITY_OPEN`.
+
+<!-- BHSM_SCALAR_WALL_PUISEUX_FOLD_V6_1_7 -->
+## v6.1.7 scalar-wall Puiseux curvature fold
+
+Primary result:
+`BHSM_SCALAR_WALL_PUISEUX_BRANCH_DERIVED_CONDITIONALLY`.
+
+The exact v6.1.6 completed square has been reduced to its two-sheet normal
+form. Recomputed normalized data give
+`|chi1|=5.268307871542...`. The regular constant-curvature cap supplies a
+non-gauge order-r Jacobi tangent with `N1=ell1=-chi1/4`. Fredholm shape
+differentiation gives `nu1=+109.666681740423...` on the upper sheet and its
+negative on the lower sheet.
+
+Both scalar signs on both fixed-`C_partial` sheets converge in the declared
+`q5=Z5/kappa1=G5/Z5=1` representative through `r=0.02`, with coupled
+Hamiltonian, scalar, junction, normal-form, virial, cap-regularity, and mesh
+checks. This establishes a conditional local solution, not universal
+continuation over all primitive ratios.
+
+The direct cubic projection remains
+`(G5/Z5)21.690130229412...`; its full gravity/junction/domain decomposition,
+the regulated complete on-shell action, fold-direction action stability,
+the full constrained mixed spectrum, and the parent source of B1 coefficients
+remain open.
+
+Completion gate:
+`V6_1_7_FOLD_ACTION_AND_FULL_MIXED_STABILITY_OPEN`.
+
 `FULL_BHSM_NOT_COMPLETE`.
 
-Command: `python -m bhsm.interface scalar-wall-bifurcation-status --format markdown`.
+Command:
+`python -m bhsm.interface scalar-wall-puiseux-fold-status --format markdown`.

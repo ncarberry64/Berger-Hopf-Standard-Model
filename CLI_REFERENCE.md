@@ -682,3 +682,18 @@ The command reports the independently recomputed critical mode, exact
 second-order critical-double-root junction obstruction, nonanalytic curvature
 fold, ensemble dependence, and the still-open Fredholm, continuation,
 on-shell-action, and mixed-stability gates.
+
+<!-- BHSM_SCALAR_WALL_PUISEUX_FOLD_V6_1_7 -->
+## Scalar-wall Puiseux curvature fold v6.1.7
+
+```bash
+python -m bhsm.interface scalar-wall-puiseux-fold-status --format json
+python -m bhsm.interface scalar-wall-puiseux-fold-status --format markdown
+python scripts/materialize_scalar_wall_puiseux_fold_v6_1_7.py
+```
+
+The command reports the recomputed double-root slope, regular order-r cap
+tangent, opposite quadratic solvability orientations, and converged local
+upper/lower sheets of the normalized frozen-B1 boundary problem. It keeps the
+complete action, analytic cubic decomposition, parent coefficient source,
+and full mixed stability open.

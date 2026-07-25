@@ -173,5 +173,13 @@ The abstract log-transport averaging lemma does not by itself derive the CKM exp
 
 Start with [docs/README.md](docs/README.md) for the documentation map and
 [ROADMAP.md](ROADMAP.md) for the next work sequence.
+
+The current construction frontier is the
+[v6.1.7 scalar-wall Puiseux fold](docs/bhsm_scalar_wall_puiseux_fold_v6_1_7.md):
+both local curvature sheets of a declared normalized provisional B1 action
+converge, while the complete action comparison, parent source of B1
+coefficients, and full mixed stability remain open.
+
 ## Citation
+
 Use [CITATION.cff](CITATION.cff) for current citation metadata.

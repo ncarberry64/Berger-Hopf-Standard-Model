@@ -264,6 +264,7 @@ from .minimal_equatorial_boundary_action import boundary_action_status_report, b
 from .intrinsic_m4_junction_background import junction_background_status_report, junction_background_status_to_markdown
 from .scalar_wall_junction_audit import scalar_wall_status_report, scalar_wall_status_to_markdown
 from .scalar_wall_backreacted_bifurcation import bifurcation_status_report, bifurcation_status_to_markdown
+from .scalar_wall_puiseux_fold import puiseux_status_report, puiseux_status_to_markdown
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -738,6 +739,8 @@ def build_parser() -> argparse.ArgumentParser:
     scalar_wall.add_argument("--format", choices=("json", "markdown"), default="json")
     scalar_bifurcation = commands.add_parser("scalar-wall-bifurcation-status", help="Render the BHSM v6.1.6 scalar-wall backreacted bifurcation audit")
     scalar_bifurcation.add_argument("--format", choices=("json", "markdown"), default="json")
+    scalar_fold = commands.add_parser("scalar-wall-puiseux-fold-status", help="Render the BHSM v6.1.7 fixed-B1 scalar-wall Puiseux-fold continuation")
+    scalar_fold.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
 
@@ -1669,6 +1672,13 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(json.dumps(payload, indent=2, sort_keys=True))
         else:
             _print_unicode(bifurcation_status_to_markdown(payload))
+        return 0
+    if args.command == "scalar-wall-puiseux-fold-status":
+        payload = puiseux_status_report()
+        if args.format == "json":
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        else:
+            _print_unicode(puiseux_status_to_markdown(payload))
         return 0
     if args.command in {
         "primitive-charged-incidence",
