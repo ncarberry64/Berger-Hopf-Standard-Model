@@ -156,6 +156,7 @@ The current minimal-action theory dictionary is documented in
 - [Quantum effective action and Casimir backreaction v5.10](bhsm_quantum_effective_action_casimir_backreaction_v5_10.md)
 - [Minimal equatorial boundary action freeze v6.1.3](bhsm_minimal_equatorial_boundary_action_v6_1_3.md)
 - [Intrinsic M4 junction-supported background closure v6.1.4](bhsm_intrinsic_m4_junction_background_v6_1_4.md)
+- [Scalar-wall junction and coefficient-source audit v6.1.5](bhsm_scalar_wall_junction_audit_v6_1_5.md)
 
 ## CP O_int Sprint Docs
 

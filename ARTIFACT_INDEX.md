@@ -783,3 +783,17 @@ audits; Lorentz structure; coefficient-source, parent-map, fermionic, scale,
 hidden-input, and final-report records.
 
 Doctrine: `docs/bhsm_intrinsic_m4_junction_background_v6_1_4.md`.
+
+<!-- BHSM_SCALAR_WALL_JUNCTION_AUDIT_V6_1_5 -->
+## Scalar-wall junction and coefficient-source audit v6.1.5
+
+The 14 deterministic artifacts enumerated by
+`src/bhsm/interface/scalar_wall_junction_audit.py` cover the immutable
+action/convention ledger; scalar vacua and gravitational energy shift;
+Gaussian-normal equations and reduced-action crosscheck; parity, cap
+regularity, and integral identities; the critical-cap spectral and nonlinear
+probe audit; flat-control thin limit and modified junction equation; B1
+coefficient-source and Berger-shape results; mixed-stability, hidden-input,
+and final-report ledgers.
+
+Doctrine: `docs/bhsm_scalar_wall_junction_audit_v6_1_5.md`.

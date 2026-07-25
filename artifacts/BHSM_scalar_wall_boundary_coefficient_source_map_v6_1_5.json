@@ -1,0 +1,42 @@
+{
+  "P2_or_P3_repair_used": false,
+  "artifact": "BHSM_scalar_wall_boundary_coefficient_source_map_v6_1_5",
+  "bending_mode_called_sigma_partial": false,
+  "boundary_tension_inserted": false,
+  "boundary_vacuum_constant_inserted": false,
+  "claim_boundary": "The frozen scalar polynomial admits a regular odd fixed-background cap profile beyond a derived spectral threshold, but no finite-amplitude coupled Einstein-scalar-B1 branch or mixed-stability proof is established.",
+  "frozen_predictions_changed": false,
+  "full_bhsm_completion_claimed": false,
+  "hard_coded_wall_thickness_used": false,
+  "independent_B1_primitives_removed": [],
+  "map": {
+    "C_partial": {
+      "parent_term": null,
+      "profile_integral": null,
+      "reason": "minimal stress changes background/junction tension but is not an intrinsic R4 kinetic term",
+      "status": "BHSM_SCALAR_WALL_DOES_NOT_GENERATE_CPARTIAL"
+    },
+    "Z_partial": {
+      "parent_term": "bulk scalar kinetic term",
+      "profile_integral": "T_excess for a normalizable translation collective coordinate",
+      "reason": "the bending coordinate is an embedding mode, not the declared sigma_partial without an action/domain map",
+      "status": "BHSM_WALL_BENDING_SCALAR_NORMALIZATION_DERIVED_CONDITIONALLY"
+    },
+    "tau_A": {
+      "parent_term": null,
+      "profile_integral": null,
+      "reason": "the frozen P1 action has no sigma-dependent F^2 coefficient",
+      "status": "BHSM_SCALAR_WALL_DOES_NOT_GENERATE_TAUA"
+    }
+  },
+  "measured_input_used": false,
+  "new_parent_field_added": false,
+  "new_scalar_interaction_added": false,
+  "numerical_null_promoted_to_theorem": false,
+  "official_prediction_logic_changed": false,
+  "primary_result": "BHSM_MINIMAL_P1_SCALAR_WALL_JUNCTION_NOT_FOUND",
+  "sprint": "bhsm-scalar-wall-junction-audit-v6-1-5",
+  "status": "BHSM_SCALAR_WALL_B1_COEFFICIENT_SOURCE_FAILURE_DERIVED",
+  "vacuum_energy_silently_subtracted": false,
+  "version": "v6.1.5"
+}

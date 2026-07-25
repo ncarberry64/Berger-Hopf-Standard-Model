@@ -652,3 +652,19 @@ constant-curvature roots, regular doubled-cap construction, boundary FRW
 bounce, and branch-dependent `C_partial` relation. It keeps B1 and coefficient
 sources, full mixed bending/tensor stability, scalar potential, physical
 field interpretation, absolute units, and completion open.
+
+<!-- BHSM_SCALAR_WALL_JUNCTION_AUDIT_V6_1_5 -->
+## Scalar-wall junction and coefficient-source audit v6.1.5
+
+```bash
+python -m bhsm.interface scalar-wall-junction-audit-status --format json
+python -m bhsm.interface scalar-wall-junction-audit-status --format markdown
+python scripts/materialize_scalar_wall_junction_audit_v6_1_5.py
+```
+
+The command reports the exact scalar vacuum-energy shift, coupled
+Gaussian-normal equations, reduced-action crosscheck, cap parity and integral
+identity, the converged critical-cap odd-mode threshold, a fixed-background
+nonlinear probe, the conditional thin-wall junction polynomial, and the B1
+coefficient-source failures. It does not promote the probe to a coupled
+backreacted wall or a stability theorem.

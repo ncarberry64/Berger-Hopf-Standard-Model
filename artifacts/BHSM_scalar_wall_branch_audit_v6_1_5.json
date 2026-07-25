@@ -1,0 +1,75 @@
+{
+  "P2_or_P3_repair_used": false,
+  "artifact": "BHSM_scalar_wall_branch_audit_v6_1_5",
+  "bending_mode_called_sigma_partial": false,
+  "boundary_tension_inserted": false,
+  "boundary_vacuum_constant_inserted": false,
+  "claim_boundary": "The frozen scalar polynomial admits a regular odd fixed-background cap profile beyond a derived spectral threshold, but no finite-amplitude coupled Einstein-scalar-B1 branch or mixed-stability proof is established.",
+  "coupled_backreaction_included": false,
+  "critical_ratio": "A5/Z5=-29.430918352942 q5 on the critical cap",
+  "eigenvalue_convergence": [
+    {
+      "max_step": 0.02,
+      "mu1_over_q5": 29.430918335545,
+      "rtol": 1e-08
+    },
+    {
+      "max_step": 0.01,
+      "mu1_over_q5": 29.430918352427,
+      "rtol": 1e-10
+    },
+    {
+      "max_step": 0.005,
+      "mu1_over_q5": 29.430918352942,
+      "rtol": 1e-12
+    }
+  ],
+  "finite_amplitude_coupled_branch_found": false,
+  "fixed_background_probe": {
+    "A5_over_Z5": -35.0,
+    "G5_over_Z5": 1.0,
+    "classification": "regular nonlinear scalar profile on the frozen metric only",
+    "convergence": [
+      {
+        "cap_amplitude": 4.047831526748,
+        "max_step": 0.02,
+        "rtol": 1e-08
+      },
+      {
+        "cap_amplitude": 4.047831525209,
+        "max_step": 0.01,
+        "rtol": 1e-09
+      },
+      {
+        "cap_amplitude": 4.047831525263,
+        "max_step": 0.005,
+        "rtol": 1e-10
+      }
+    ]
+  },
+  "frozen_predictions_changed": false,
+  "full_bhsm_completion_claimed": false,
+  "hard_coded_wall_thickness_used": false,
+  "linear_operator": "-a^-4 d_rho(a^4 d_rho), regular at rho=0 and Dirichlet at rho=pi/4",
+  "measured_input_used": false,
+  "new_parent_field_added": false,
+  "new_scalar_interaction_added": false,
+  "not_a_global_theorem": true,
+  "numerical_domain": "critical q5=1,X=2 cap; one supercritical fixed-background point",
+  "numerical_null_promoted_to_theorem": false,
+  "official_prediction_logic_changed": false,
+  "outcome": "probe branch found; coupled BVP not found/closed",
+  "primary_result": "BHSM_MINIMAL_P1_SCALAR_WALL_JUNCTION_NOT_FOUND",
+  "sprint": "bhsm-scalar-wall-junction-audit-v6-1-5",
+  "status": "BHSM_MINIMAL_P1_SCALAR_WALL_JUNCTION_NOT_FOUND",
+  "vacuum_energy_silently_subtracted": false,
+  "vacuum_regression": {
+    "C_partial_over_kappa_1": 0.5,
+    "X": 2.0,
+    "cap_warp": "a=sqrt(2) sin(rho)",
+    "junction_residual": 0.0,
+    "junction_rho": "pi/4",
+    "q5": 1.0
+  },
+  "version": "v6.1.5"
+}
