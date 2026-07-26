@@ -825,3 +825,17 @@ convergence; action and fold-stability gates; ensemble interpretation; B1
 source and hidden-input audits; and final report.
 
 Doctrine: `docs/bhsm_scalar_wall_puiseux_fold_v6_1_7.md`.
+
+<!-- BHSM_TRIALITY_GENERATION_SCALE_ARCHITECTURE_V6_2_0 -->
+## Triality, generation, cusp-action, and volume-scale architecture v6.2.0
+
+The 16 deterministic artifacts enumerated by
+`src/bhsm/interface/triality_generation_scale_architecture.py` cover the
+advanced handoff; regulated scalar-wall cusp and flat-kink retirement;
+adopted spacetime-sheet and Berger–Higgs ledgers; exact Spin(8) triality
+projectors; the triality/Berger no-double-counting intertwiner; conditional
+triality-fixed G2/SU(3) branching and color constraint; the three-family slot
+map; CKM/PMNS transport separation; exact sphere-volume anchors; coupling and
+absolute-scale dependency maps; hidden-input audit; and final report.
+
+Doctrine: `docs/bhsm_triality_generation_scale_architecture_v6_2_0.md`.

@@ -1016,3 +1016,58 @@ Completion gate:
 `V6_1_7_FOLD_ACTION_AND_FULL_MIXED_STABILITY_OPEN`.
 
 `FULL_BHSM_NOT_COMPLETE`.
+
+<!-- BHSM_TRIALITY_GENERATION_SCALE_ARCHITECTURE_V6_2_0 -->
+## v6.2.0 constructive claim ledger
+
+Adopted from established mathematics:
+
+- Spin(8) triality and exact cyclotomic projector algebra;
+- the triality-fixed G2 embedding and its SU(3) stabilizer branching;
+- exact unit-sphere volume formulas.
+
+Adopted BHSM axioms:
+
+- upper/lower fold sheets are respectively spacetime-facing/core-facing;
+- effective Higgs language translates Berger-sphere deformation;
+- G2 is a constraint and the retained SU(3) subconnection is the candidate
+  low-energy color channel.
+
+Derived consequences:
+
+- three exact triality family projectors;
+- a conditional exact intertwiner with the existing three-slot Berger family
+  ladder, without nine-generation multiplication;
+- `8 -> 1+1+3+conjugate(3)` on every triality-twisted carrier under the
+  selected triality-fixed embedding;
+- a rank-eight SU(3) connection projector with the six-dimensional coset
+  constrained;
+- structural CKM/PMNS transport separation;
+- exact volume ratio 16 and geometric denominator `6pi^2`;
+- the scalar-wall sheet cusp with exact leading coefficient `nu1/12`.
+
+Numerically validated:
+
+- both coupled sheets converge to opposite signs of
+  `nu1/12=9.138890145035...` under the declared regulated-action convention;
+- scalar-sign reversal leaves the geometry and action unchanged.
+
+Rejected by calculation:
+
+- multiplying triality families by the Berger ladder to obtain nine
+  generations;
+- promoting the uncompactified flat-kink `27/35` diagnostic to a compact-cap
+  theorem;
+- identifying neutral singlet `sigma` directly with the Berger radial mode;
+- propagating the full G2 adjoint as an unexplained low-energy connection.
+
+Needs empirical or global test:
+
+- spacetime-sheet causal/global propagation;
+- physical U(1), chirality, localization, and anomaly closure;
+- Berger–Higgs and connection normalization;
+- CKM/PMNS transport observables;
+- the `1:2:7` representation/incidence theorem and scale-transfer map.
+
+Primary status:
+`BHSM_TRIALITY_GENERATION_AND_VOLUME_SCALE_ARCHITECTURE_DERIVED_CONDITIONALLY`.

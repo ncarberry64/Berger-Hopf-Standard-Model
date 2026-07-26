@@ -697,3 +697,19 @@ tangent, opposite quadratic solvability orientations, and converged local
 upper/lower sheets of the normalized frozen-B1 boundary problem. It keeps the
 complete action, analytic cubic decomposition, parent coefficient source,
 and full mixed stability open.
+
+<!-- BHSM_TRIALITY_GENERATION_SCALE_ARCHITECTURE_V6_2_0 -->
+## Triality, generation, cusp action, and scale architecture v6.2.0
+
+```bash
+python -m bhsm.interface triality-generation-scale-status --format json
+python -m bhsm.interface triality-generation-scale-status --format markdown
+python scripts/materialize_triality_generation_scale_architecture_v6_2_0.py
+```
+
+The command reports exact cyclotomic triality projectors, the conditional
+Fourier identification with the existing three-slot family ladder,
+triality-fixed G2/SU(3) branching, the SU(3) color constraint, structural
+CKM/PMNS transport separation, exact sphere-volume identities, and the
+independently reproduced scalar-wall cubic cusp. Adopted BHSM axioms remain
+explicitly distinct from derived and numerically validated consequences.
