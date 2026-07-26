@@ -1263,3 +1263,46 @@ Completion gate:
 
 Command:
 `python -m bhsm.interface particle-chirality-anomaly-status --format markdown`.
+
+<!-- BHSM_PARENT_ACTION_POLARIZATION_LOCALIZATION_STABILITY_V6_4_0 -->
+## v6.4.0 parent-action polarization, localization, and stability
+
+Primary result:
+`BHSM_GLOBAL_POLARIZATION_AND_PRINCIPAL_STABILITY_ARCHITECTURE_DERIVED_CONDITIONALLY`.
+
+Derived consequences:
+
+- the G2 cross product supplies an exact complex structure on the
+  six-dimensional complement of a unit stabilizer section, with conjugate
+  rank-three projectors;
+- on the declared M4 boundary, the rank-seven associated bundle has no
+  section obstruction in degree seven; an SU(3) reduction can therefore be
+  globalized, although the frozen action does not dynamically select it;
+- the v6.2 triality isomorphisms carry the common polarization across exactly
+  three family projectors;
+- a symmetry audit isolates `y_sigma sigma Gamma_star` as the lowest-order
+  wall-odd representation-scalar localization term;
+- the complete-line wall problem has index one and one normalizable selected
+  chirality when its asymptotic mass changes sign;
+- the frozen P1 reduction gives an exact Hopf connection split
+  `tau_nested/tau_transverse=exp(2 beta)`;
+- the Berger orientation kinetic term produces a conditional electroweak
+  mass matrix with exactly one neutral `Q_em` null direction;
+- tensor, connection, scalar, and first-order principal sectors are
+  ghost-free/hyperbolic in the declared positive-coefficient domain.
+
+The frozen P1/B1 action has no first-order matter term, so `y_sigma` is an
+independent primitive if the minimal extension is adopted. The SU(3)
+parent-to-boundary transfer, several boundary overlaps, scalar mass signs,
+normal tensor/vector spectra, junction bending, and complete mixed spectrum
+remain unresolved.
+
+Local principal symbols are sheet-symmetric and do not uniquely select the
+upper branch. The spacetime-facing interpretation remains an adopted global
+envelopment axiom pending continuation.
+
+Completion gate:
+`V6_4_0_FIRST_ORDER_PARENT_COEFFICIENT_CONNECTION_TRANSFER_AND_FULL_SPECTRUM_OPEN`.
+
+Command:
+`python -m bhsm.interface parent-action-polarization-stability-status --format markdown`.

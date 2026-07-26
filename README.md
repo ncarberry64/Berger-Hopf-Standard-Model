@@ -172,7 +172,7 @@ The abstract log-transport averaging lemma does not by itself derive the CKM exp
 | `tests/` | Numerical, provenance, claim-boundary, and frozen-integrity tests |
 
 Start with [docs/README.md](docs/README.md), [ROADMAP.md](ROADMAP.md), and the current
-[v6.3 particle/chirality frontier](docs/bhsm_particle_chirality_anomaly_normalization_v6_3_0.md); its exact anomaly and connection-trace ledgers close conditionally, while parent polarization, action normalization, absolute scale, and mixed stability remain open.
+[v6.4 parent-action/polarization frontier](docs/bhsm_parent_action_polarization_localization_stability_v6_4_0.md); its global G2 polarization and positive-domain principal sectors close conditionally, while the first-order parent coefficient, connection transfers, absolute scale, and full spectrum remain open.
 
 ## Citation
 

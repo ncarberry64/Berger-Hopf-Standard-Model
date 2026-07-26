@@ -1,0 +1,50 @@
+{
+  "absolute_numerical_mass_claimed": false,
+  "artifact": "BHSM_global_color_polarization_bundle_v6_4_0",
+  "candidate_u": "the global G2/SU3 stabilizer section; twistor orientation is compatible only after an explicit bundle map",
+  "checks": {
+    "J_u_annihilates_u": true,
+    "J_u_squared_equals_minus_Q": true,
+    "Pi_01_idempotent": true,
+    "Pi_10_idempotent": true,
+    "conjugation_exchanges_projectors": true,
+    "projectors_complete_on_u_perp": true,
+    "projectors_orthogonal": true,
+    "rank_Pi_01": 3,
+    "rank_Pi_10": 3,
+    "trace_Pi_01": 3.0,
+    "trace_Pi_10": 3.0,
+    "u_unit": true
+  },
+  "dynamic_selection_by_frozen_action": false,
+  "frozen_predictions_changed": false,
+  "full_BHSM_claimed": false,
+  "globalization": {
+    "base_dimension": 4,
+    "bulk_extension": "extension away from M4 is conditional on extending the SU3 reduction; the M4 dimension argument alone does not prove it",
+    "bundle": "E_7=P_G2 x_7 R^7 over the selected M4 boundary",
+    "bundle_rank": 7,
+    "conjugate_bundle": "complex conjugation exchanges E_10 and E_01",
+    "existence": "a nowhere-zero section exists on the declared M4 base",
+    "obstruction_on_M4": "zero because H^7(M4)=0 for a four-manifold",
+    "primary_section_obstruction": "Euler/top obstruction lies in H^7(M4)",
+    "section_meaning": "a unit section u reduces P_G2 to its SU3 stabilizer",
+    "selection": "the frozen action does not dynamically choose one section",
+    "transition_functions": "after reduction they lie in SU3 and obey J_(g u)(g v)=g J_u(v), so Pi_10 and Pi_01 patch covariantly",
+    "unit_sphere_bundle": "S(E_7)=P_G2 x_G2 S^6"
+  },
+  "measured_derivation_input_used": false,
+  "monopole_structure_introduced": false,
+  "official_prediction_logic_changed": false,
+  "orientation_reversal": "u->-u exchanges Pi_10 and Pi_01; scalar-wall sign alone does not",
+  "physical_bulk_Dirac_parent_law_introduced": false,
+  "primary_result": "BHSM_GLOBAL_POLARIZATION_AND_PRINCIPAL_STABILITY_ARCHITECTURE_DERIVED_CONDITIONALLY",
+  "projectors": {
+    "Pi_01": "(Q+iJ_u)/2",
+    "Pi_10": "(Q-iJ_u)/2",
+    "Q": "I-u tensor u"
+  },
+  "sprint": "bhsm-parent-action-polarization-localization-stability-v6-4-0",
+  "status": "BHSM_GLOBAL_COMPLEX_POLARIZATION_OPERATOR_DERIVED_CONDITIONALLY",
+  "version": "v6.4.0"
+}

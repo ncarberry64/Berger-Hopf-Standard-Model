@@ -8,6 +8,13 @@ python -m bhsm.interface particle-chirality-anomaly-status --format json
 python -m bhsm.interface particle-chirality-anomaly-status --format markdown
 ```
 
+The current v6.4.0 parent-action/polarization architecture is available with:
+
+```powershell
+python -m bhsm.interface parent-action-polarization-stability-status --format json
+python -m bhsm.interface parent-action-polarization-stability-status --format markdown
+```
+
 The command reports the conditional particle map, chiral collar result,
 physical U(1), exact anomaly closure, connection traces, 1:2:7 rejection,
 family mass operator, and symbolic absolute-scale map. It does not modify
