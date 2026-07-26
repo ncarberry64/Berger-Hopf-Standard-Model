@@ -270,6 +270,10 @@ from .particle_chirality_anomaly_normalization import (
     architecture_status_report as particle_chirality_status_report,
     architecture_status_to_markdown as particle_chirality_status_to_markdown,
 )
+from .parent_action_polarization_localization_stability import (
+    architecture_status_report as parent_stability_status_report,
+    architecture_status_to_markdown as parent_stability_status_to_markdown,
+)
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -750,6 +754,8 @@ def build_parser() -> argparse.ArgumentParser:
     triality_scale.add_argument("--format", choices=("json", "markdown"), default="json")
     particle_chirality = commands.add_parser("particle-chirality-anomaly-status", help="Render the BHSM v6.3.0 particle, chirality, anomaly, and connection-normalization architecture")
     particle_chirality.add_argument("--format", choices=("json", "markdown"), default="json")
+    parent_stability = commands.add_parser("parent-action-polarization-stability-status", help="Render the BHSM v6.4.0 parent-action polarization, localization, and principal-stability architecture")
+    parent_stability.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
 
@@ -1702,6 +1708,13 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(json.dumps(payload, indent=2, sort_keys=True))
         else:
             _print_unicode(particle_chirality_status_to_markdown(payload))
+        return 0
+    if args.command == "parent-action-polarization-stability-status":
+        payload = parent_stability_status_report()
+        if args.format == "json":
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        else:
+            _print_unicode(parent_stability_status_to_markdown(payload))
         return 0
     if args.command in {
         "primitive-charged-incidence",

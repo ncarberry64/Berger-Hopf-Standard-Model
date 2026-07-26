@@ -1117,3 +1117,49 @@ mass, coupling prediction, or full BHSM completion is claimed.
 
 Primary status:
 `BHSM_CHIRAL_PARTICLE_AND_CONNECTION_ARCHITECTURE_DERIVED_CONDITIONALLY`.
+
+<!-- BHSM_PARENT_ACTION_POLARIZATION_LOCALIZATION_STABILITY_V6_4_0 -->
+## v6.4.0 constructive claim ledger
+
+Established mathematical inputs:
+
+- the G2-invariant cross product and SU(3) stabilizer of a unit
+  seven-dimensional direction;
+- obstruction theory for a nowhere-zero section of a rank-seven bundle over
+  a four-dimensional base;
+- domain-wall index and maximal-isotropic boundary-domain mathematics.
+
+Derived:
+
+- `J_u^2=-I+u tensor u` and conjugate rank-three projectors on
+  `u`-perpendicular;
+- global M4 polarization compatibility after choosing the SU(3) reduction;
+- exact compatibility with the three v6.2 triality family projectors;
+- classification of the lowest-order symmetry-compatible first-order matter
+  terms;
+- a conditional index-one normal wall profile;
+- exact Berger Hopf-connection splitting by `exp(2 beta)`;
+- the off-shell sigma/Berger kinetic metric and orientation stiffness;
+- the conditional electroweak mass-matrix rank and `Q_em` null direction;
+- positive principal kinetic/gradient signs in an explicit coefficient
+  domain.
+
+Rejected by calculation or source audit:
+
+- claiming that the frozen P1/B1 action already contains the first-order
+  matter action or fixes `y_sigma`;
+- restoring `1:2:7` through hidden normalization;
+- conflating sigma and beta before physical diagonalization;
+- using local principal symbols as a unique upper-sheet selector;
+- inferring the full spectrum from principal signs.
+
+Still requiring construction:
+
+- a parent invariant deriving or rejecting the first-order matter term;
+- SU(3) and boundary connection-transfer coefficients;
+- complete tensor, vector, scalar, bending, and matter spectra;
+- global spacetime-sheet continuation;
+- the total order-`r^4` coefficient and numerical absolute-scale closure.
+
+Primary status:
+`BHSM_GLOBAL_POLARIZATION_AND_PRINCIPAL_STABILITY_ARCHITECTURE_DERIVED_CONDITIONALLY`.

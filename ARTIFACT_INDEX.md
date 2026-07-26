@@ -855,3 +855,19 @@ Hessian ledgers; hidden-input audit; and final report.
 
 Doctrine:
 `docs/bhsm_particle_chirality_anomaly_normalization_v6_3_0.md`.
+
+<!-- BHSM_PARENT_ACTION_POLARIZATION_LOCALIZATION_STABILITY_V6_4_0 -->
+## Parent-action polarization, localization, and stability v6.4.0
+
+The 26 deterministic artifacts enumerated by
+`src/bhsm/interface/parent_action_polarization_localization_stability.py`
+cover the v6.3 handoff; G2 complex structure; global color polarization and
+triality compatibility; first-order matter-action and odd-wall-coupling
+source audits; chiral index and vectorlike-doubling tests; SU(3), Sp(1), U(1),
+and gravity transfer ledgers; Berger-Higgs kinetic, scalar-mass, and
+gauge-mass matrices; constraint-reduced tensor, vector, scalar, and matter
+principal sectors; spacetime-sheet audit; absolute-scale and order-`r^4`
+maps; the Full-BHSM integration ledger; hidden-input audit; and final report.
+
+Doctrine:
+`docs/bhsm_parent_action_polarization_localization_stability_v6_4_0.md`.
