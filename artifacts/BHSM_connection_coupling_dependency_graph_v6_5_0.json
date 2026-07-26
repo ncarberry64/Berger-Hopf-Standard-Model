@@ -1,0 +1,139 @@
+{
+  "SU3": {
+    "I3": "2",
+    "N": "N_3 cap/wall overlap remains unsolved",
+    "Z_A": "Z_A,3",
+    "parent_source": "no Spin8/G2 curvature transfer theorem derived",
+    "tau_intrinsic": "tau_3 remains independent"
+  },
+  "Sp1": {
+    "I2": "2",
+    "N": "N_2",
+    "Z_A": "Z_A,2",
+    "representative": {
+      "beta": 0.30000000000000004,
+      "expected_ratio": 1.822118800390509,
+      "matrix": [
+        [
+          106.58057942481084,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          106.58057942481084,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          194.2024775264617
+        ]
+      ],
+      "positive": true,
+      "ratio_nested_to_transverse": 1.822118800390509,
+      "tau_nested_U1": 194.2024775264617,
+      "tau_transverse": 106.58057942481084
+    },
+    "tau_intrinsic": "8 pi^2 kappa1 L2^4 L1"
+  },
+  "U1": {
+    "I1_normalized": "2",
+    "I1_raw": "10/3",
+    "N": "N_1",
+    "Z_A": "Z_A,1",
+    "eta_Y": "3/5",
+    "tau_intrinsic": "8 pi^2 kappa1 L2^2 L1^3"
+  },
+  "Z_g_equals_Z_A_assumed": false,
+  "absolute_numerical_mass_claimed": false,
+  "artifact": "BHSM_connection_coupling_dependency_graph_v6_5_0",
+  "candidate_1_2_7_restored": false,
+  "dependency_classes": {
+    "action": [
+      "kappa1 Hopf stiffness",
+      "tau_3 if supplied"
+    ],
+    "empirical_correspondence": [
+      "matching scale",
+      "RG transport"
+    ],
+    "geometry": [
+      "L1",
+      "L2",
+      "beta"
+    ],
+    "independent": [
+      "Z_A,1",
+      "Z_A,2",
+      "Z_A,3",
+      "Z_g"
+    ],
+    "localization": [
+      "N_1",
+      "N_2",
+      "N_3"
+    ],
+    "representation": [
+      "I1",
+      "I2",
+      "I3",
+      "eta_Y"
+    ]
+  },
+  "exact_Berger_ratio": 1.8221188003905089,
+  "frozen_predictions_changed": false,
+  "full_BHSM_claimed": false,
+  "legacy_dependency_ledger": {
+    "Berger_ratio": "tau_nested/tau_transverse=(L1/L2)^2=exp(2 beta)",
+    "SU3": {
+      "I3": "2",
+      "N_geom_3": "not derived by the frozen P1 Hopf reduction",
+      "Z_A3": "independent transfer coefficient",
+      "tau_3": "underdetermined"
+    },
+    "Sp1": {
+      "I2": "2",
+      "N_geom_2": "8 pi^2 kappa1 L2^4 L1 before collar transfer",
+      "Z_A2": "one in the v6.0.9 parent convention; boundary transfer open",
+      "tau_2": "8 pi^2 kappa1 L2^4 L1 times declared overlap"
+    },
+    "U1": {
+      "I1_normalized": "2",
+      "N_geom_1": "8 pi^2 kappa1 L2^2 L1^3 for nested Hopf direction",
+      "Z_A1": "physical Y_BH embedding/boundary transfer remains conditional",
+      "eta_Y": "3/5",
+      "tau_1": "nested coefficient times eta_Y and declared overlap"
+    },
+    "candidate_1_2_7_restored": false,
+    "formula": "1/g_i^2=tau_i I_i",
+    "measured_couplings_used": false,
+    "round_limit": "equal geometric Hopf coefficients at beta=0",
+    "trace_indices": {
+      "I1_normalized": "2",
+      "I1_raw": "10/3",
+      "I2": "2",
+      "I3": "2",
+      "eta_Y": "3/5"
+    }
+  },
+  "master_formula": "1/g_i^2 = I_i[tau_i,intrinsic + Z_A,i N_i]",
+  "measured_couplings_used": false,
+  "measured_derivation_input_used": false,
+  "monopole_structure_introduced": false,
+  "official_prediction_logic_changed": false,
+  "physical_bulk_Dirac_parent_law_introduced": false,
+  "primary_result": "BHSM_TOPOLOGICAL_MATTER_ACTION_SOURCE_AND_GLOBAL_SPECTRUM_REMAIN_CONDITIONAL",
+  "remote_branches_deleted": false,
+  "source_sha": "8330c7e78cb2cd59d883eadd82c385e7e717c946",
+  "sprint": "bhsm-topological-matter-action-global-spectrum-v6-5-0",
+  "status": "BHSM_CONNECTION_NORMALIZATION_DEPENDENCIES_EXPLICIT",
+  "trace_indices": {
+    "I1_normalized": "2",
+    "I1_raw": "10/3",
+    "I2": "2",
+    "I3": "2",
+    "eta_Y": "3/5"
+  },
+  "version": "v6.5.0"
+}

@@ -1163,3 +1163,56 @@ Still requiring construction:
 
 Primary status:
 `BHSM_GLOBAL_POLARIZATION_AND_PRINCIPAL_STABILITY_ARCHITECTURE_DERIVED_CONDITIONALLY`.
+
+<!-- BHSM_TOPOLOGICAL_MATTER_ACTION_GLOBAL_SPECTRUM_V6_5_0 -->
+## v6.5.0 constructive claim ledger
+
+Established mathematical inputs:
+
+- Finkelstein--Rubinstein sign representations and collective-coordinate
+  Berry forms;
+- the transitive G2 action on `G2/SU3=S6`;
+- maximal-isotropic first-order domains and Fredholm index diagnostics;
+- unitary holonomy for Hermitian connections.
+
+Derived or numerically validated:
+
+- the frozen P1+GHY+B1 action contains no topological collective carrier or
+  invariant generating `y_sigma sigma Gamma_star`;
+- canonical normalization, the FR character, and the wall index do not fix
+  `y_sigma`;
+- every G2-invariant potential of the unit section alone is constant;
+- direct Berger/G2 locking is absent in the declared, inequivalent bundles;
+- a rectangular compact first-order domain has one convergent zero mode and
+  a positive convergent gap;
+- compact mass reversal exposes boundary localization, so complete-line
+  nonnormalizability is not a compact no-doubling theorem;
+- the exact Hopf transfer ratio `exp(2 beta)` and gauge-mass rank persist;
+- an energy-independent neutral connection produces an `L E^0`, not `L/E`,
+  phase law.
+
+Rejected:
+
+- claiming the frozen action already derives the first-order matter sector;
+- circular eta-invariant sourcing, ad hoc torsion, or monopole structure;
+- identifying the G2 section, Berger orientation, and spacetime normal
+  without a bundle morphism;
+- manufacturing a global upper/lower spectral distinction from local
+  principal symbols;
+- promoting representative compact numerics to the complete B1 spectrum.
+
+Still requiring construction:
+
+- a fixed BHSM topological configuration component and computation of its
+  fundamental group and symplectic normalization;
+- a configuration-space-to-local-M4 transgression;
+- an action-derived polarization-locking section or an accepted flat modulus;
+- the complete B1 self-adjoint global operators and constrained spectrum;
+- connection overlaps, scalar Schur complement, total `r^4`, and absolute
+  scale closure.
+
+Primary status:
+`BHSM_TOPOLOGICAL_MATTER_ACTION_SOURCE_AND_GLOBAL_SPECTRUM_REMAIN_CONDITIONAL`.
+
+No fundamental bulk Dirac law, measured input fit, absolute numerical mass,
+monopole structure, empirical validation, or Full-BHSM completion is claimed.

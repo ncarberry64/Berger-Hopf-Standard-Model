@@ -172,7 +172,7 @@ The abstract log-transport averaging lemma does not by itself derive the CKM exp
 | `tests/` | Numerical, provenance, claim-boundary, and frozen-integrity tests |
 
 Start with [docs/README.md](docs/README.md), [ROADMAP.md](ROADMAP.md), and the current
-[v6.4 parent-action/polarization frontier](docs/bhsm_parent_action_polarization_localization_stability_v6_4_0.md); its global G2 polarization and positive-domain principal sectors close conditionally, while the first-order parent coefficient, connection transfers, absolute scale, and full spectrum remain open.
+[v6.5 topological-matter/global-spectrum frontier](docs/bhsm_topological_matter_action_global_spectrum_v6_5_0.md); it proves the frozen-action source and G2-only selection nulls and validates a compact domain diagnostic, while the topological carrier, dynamic locking, full B1 spectrum, transfers, and absolute scale remain open.
 
 ## Citation
 

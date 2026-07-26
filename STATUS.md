@@ -1306,3 +1306,46 @@ Completion gate:
 
 Command:
 `python -m bhsm.interface parent-action-polarization-stability-status --format markdown`.
+
+<!-- BHSM_TOPOLOGICAL_MATTER_ACTION_GLOBAL_SPECTRUM_V6_5_0 -->
+## v6.5.0 topological matter action and global spectrum
+
+Primary result:
+`BHSM_TOPOLOGICAL_MATTER_ACTION_SOURCE_AND_GLOBAL_SPECTRUM_REMAIN_CONDITIONAL`.
+
+PRs #162--#164 are merged into `main` with scientific history preserved.
+The source main SHA is `8330c7e78cb2cd59d883eadd82c385e7e717c946`.
+
+The frozen P1+GHY+B1 action does not define a fixed topological
+configuration component, its FR fundamental group, or a local M4
+collective-coordinate carrier. It also contains no invariant that generates
+the classified `y_sigma sigma Gamma_star` term. A one-invariant effective
+boundary extension is covariant and Hermitian, but leaves one dimensionless
+primitive and is not parent-derived.
+
+G2 invariance alone cannot select the unit polarization section because G2
+acts transitively on `G2/SU3`. A nonconstant locking potential requires a
+second rank-seven section or a derived bundle morphism. The direct
+Berger/G2/spacetime-normal identification is rejected in the declared bundle
+data.
+
+A compact maximal-isotropic first-order discretization validates one zero
+mode, a positive gap, and mesh convergence. It also shows that both wall
+signs are square integrable on a compact interval and that the reversed sign
+becomes boundary-localized. The action-selected B1 domain and complete
+tensor, connection, scalar, bending, matter, and boundary spectra remain
+open. No global upper/lower fold-sheet selector is derived.
+
+The exact representation traces, Hopf ratio `exp(2 beta)`, scalar kinetic
+metric, and conditional gauge-mass rank are preserved. SU(3) transfer,
+profile overlaps, physical scalar Schur complement, total `r^4`, and the
+absolute scale remain symbolic. The energy-independent neutral connection
+gives an `L E^0` phase template and does not derive `L/E`.
+
+Completion gate:
+`V6_5_0_CONFIGURATION_SPACE_PARENT_SOURCE_DYNAMIC_POLARIZATION_AND_COMPLETE_GLOBAL_SPECTRUM_OPEN`.
+
+`FULL_BHSM_NOT_COMPLETE`.
+
+Command:
+`python -m bhsm.interface topological-matter-global-spectrum-status --format markdown`.

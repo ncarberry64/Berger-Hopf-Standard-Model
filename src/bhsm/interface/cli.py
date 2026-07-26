@@ -274,6 +274,10 @@ from .parent_action_polarization_localization_stability import (
     architecture_status_report as parent_stability_status_report,
     architecture_status_to_markdown as parent_stability_status_to_markdown,
 )
+from .topological_matter_action_global_spectrum import (
+    architecture_status_report as topological_matter_status_report,
+    architecture_status_to_markdown as topological_matter_status_to_markdown,
+)
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -756,6 +760,8 @@ def build_parser() -> argparse.ArgumentParser:
     particle_chirality.add_argument("--format", choices=("json", "markdown"), default="json")
     parent_stability = commands.add_parser("parent-action-polarization-stability-status", help="Render the BHSM v6.4.0 parent-action polarization, localization, and principal-stability architecture")
     parent_stability.add_argument("--format", choices=("json", "markdown"), default="json")
+    topological_matter = commands.add_parser("topological-matter-global-spectrum-status", help="Render the BHSM v6.5.0 topological matter-action, dynamic-polarization, and global-spectrum audit")
+    topological_matter.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
 
@@ -1715,6 +1721,13 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(json.dumps(payload, indent=2, sort_keys=True))
         else:
             _print_unicode(parent_stability_status_to_markdown(payload))
+        return 0
+    if args.command == "topological-matter-global-spectrum-status":
+        payload = topological_matter_status_report()
+        if args.format == "json":
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        else:
+            _print_unicode(topological_matter_status_to_markdown(payload))
         return 0
     if args.command in {
         "primitive-charged-incidence",
