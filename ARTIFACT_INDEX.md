@@ -871,3 +871,20 @@ maps; the Full-BHSM integration ledger; hidden-input audit; and final report.
 
 Doctrine:
 `docs/bhsm_parent_action_polarization_localization_stability_v6_4_0.md`.
+
+<!-- BHSM_TOPOLOGICAL_MATTER_ACTION_GLOBAL_SPECTRUM_V6_5_0 -->
+## Topological matter action and global spectrum v6.5.0
+
+The 26 deterministic artifacts enumerated by
+`src/bhsm/interface/topological_matter_action_global_spectrum.py` cover the
+merged PR #162--#164 handoff and cleanup audit; topological configuration
+space and Finkelstein--Rubinstein templates; first-order source,
+minimal-extension, and `y_sigma` dependency theorems; dynamic-polarization
+bundle and potential audits; compact chiral-domain, vectorlike, and
+upper/lower-sheet spectrum diagnostics; SU(3), Sp(1), U(1), and full
+connection dependency ledgers; scalar/Berger, gauge, and global-Hessian
+audits; neutral phase, absolute scale, scalar-wall `r^4`, Full-BHSM
+integration, hidden-input, and final-report records.
+
+Doctrine:
+`docs/bhsm_topological_matter_action_global_spectrum_v6_5_0.md`.

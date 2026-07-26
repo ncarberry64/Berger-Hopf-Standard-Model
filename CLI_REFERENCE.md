@@ -713,3 +713,19 @@ triality-fixed G2/SU(3) branching, the SU(3) color constraint, structural
 CKM/PMNS transport separation, exact sphere-volume identities, and the
 independently reproduced scalar-wall cubic cusp. Adopted BHSM axioms remain
 explicitly distinct from derived and numerically validated consequences.
+
+<!-- BHSM_TOPOLOGICAL_MATTER_ACTION_GLOBAL_SPECTRUM_V6_5_0 -->
+## Topological matter action and global spectrum v6.5.0
+
+```bash
+python -m bhsm.interface topological-matter-global-spectrum-status --format json
+python -m bhsm.interface topological-matter-global-spectrum-status --format markdown
+python scripts/materialize_topological_matter_action_global_spectrum_v6_5_0.py
+```
+
+The command reports the first-order source audit, FR/configuration-space
+template, `y_sigma` dependency, G2 flat-direction theorem, compact
+maximal-isotropic spectrum diagnostic, global sheet gate, symbolic connection
+transfers, scalar/gauge audits, neutral phase scaling, and remaining scale
+gate. It does not modify frozen predictions or claim a complete physical
+spectrum.
