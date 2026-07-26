@@ -494,9 +494,12 @@ def cusp_action_point(
         "sheet": sheet,
         "X": float(f"{X:.8f}"),
         "mu": float(f"{mu:.8f}"),
-        "delta_Gamma_over_r3": float(f"{ratio:.4f}"),
+        # This is a convergence diagnostic, not the analytic coefficient.
+        # Three decimals are stable across libm/BLAS solver implementations;
+        # the fourth decimal can straddle a rounding boundary on Linux.
+        "delta_Gamma_over_r3": float(f"{ratio:.3f}"),
         "target": float(
-            f"{sheet * regression_data()['nu1_abs'] / 12:.4f}"
+            f"{sheet * regression_data()['nu1_abs'] / 12:.3f}"
         ),
         "max_step": max_step,
         "rtol": rtol,
@@ -586,6 +589,7 @@ def build_artifact_payloads(repo_root: Path | None = None) -> dict[str, dict[str
             "result": "Gamma_tau-Gamma_c=tau (nu1/12) r^3+O(r^4)",
             "nu1_over_12": float(f"{target:.12f}"),
             "scalar_sign_degenerate": True,
+            "diagnostic_ratio_decimal_places": 3,
             "Euclidean_continuation": "reverses the overall action sign, not the cubic power, magnitude, or sheet antisymmetry",
             "convention_invariant": ["leading power r^3", "absolute coefficient in the declared normalized field convention", "sheet antisymmetry", "scalar-sign degeneracy"],
             "numerical_convergence": convergence,

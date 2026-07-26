@@ -118,6 +118,7 @@ def test_exact_cusp_coefficient_and_sheet_sign():
 
 def test_numerical_cusp_convergence_on_both_sheets_and_meshes():
     rows = load("cusp")["numerical_convergence"]
+    assert load("cusp")["diagnostic_ratio_decimal_places"] == 3
     for sheet in (-1, 1):
         selected = [row for row in rows if row["sheet"] == sheet]
         assert len(selected) == 4
