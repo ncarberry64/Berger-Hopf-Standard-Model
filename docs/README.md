@@ -160,6 +160,7 @@ The current minimal-action theory dictionary is documented in
 - [Scalar-wall backreacted bifurcation v6.1.6](bhsm_scalar_wall_backreacted_bifurcation_v6_1_6.md)
 - [Scalar-wall Puiseux curvature fold v6.1.7](bhsm_scalar_wall_puiseux_fold_v6_1_7.md)
 - [Triality, generation, cusp-action, and volume-scale architecture v6.2.0](bhsm_triality_generation_scale_architecture_v6_2_0.md)
+- [Particle, chirality, anomaly, and connection normalization v6.3.0](bhsm_particle_chirality_anomaly_normalization_v6_3_0.md)
 
 ## CP O_int Sprint Docs
 
@@ -174,6 +175,7 @@ The current minimal-action theory dictionary is documented in
 - [Central claim boundaries](../CLAIMS.md)
 - [Artifact-backed claim policy](artifact_backed_claim_policy.md)
 - [Prediction-gallery claim policy](prediction_gallery_claim_policy.md)
+- [Current CLI reference](CLI_REFERENCE.md)
 
 ## Release And Administration History
 

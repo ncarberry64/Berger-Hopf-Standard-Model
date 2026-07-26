@@ -839,3 +839,19 @@ map; CKM/PMNS transport separation; exact sphere-volume anchors; coupling and
 absolute-scale dependency maps; hidden-input audit; and final report.
 
 Doctrine: `docs/bhsm_triality_generation_scale_architecture_v6_2_0.md`.
+
+<!-- BHSM_PARTICLE_CHIRALITY_ANOMALY_NORMALIZATION_V6_3_0 -->
+## Particle, chirality, anomaly, and connection normalization v6.3.0
+
+The 18 deterministic artifacts enumerated by
+`src/bhsm/interface/particle_chirality_anomaly_normalization.py` cover the
+v6.2 handoff; three-family particle representation map; triality/Berger
+family mass operator; first-order Clifford collar operator and chiral domain;
+physical U(1) search and surviving electromagnetic generator; one- and
+three-family anomaly audits; G2/SU(3) connection normalization; the `1:2:7`
+incidence test; connection-coefficient and absolute-scale dependency maps;
+Berger/scalar-wall mixed modes; order-`r^4` action and constraint-reduced
+Hessian ledgers; hidden-input audit; and final report.
+
+Doctrine:
+`docs/bhsm_particle_chirality_anomaly_normalization_v6_3_0.md`.

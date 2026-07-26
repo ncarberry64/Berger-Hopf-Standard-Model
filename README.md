@@ -172,7 +172,7 @@ The abstract log-transport averaging lemma does not by itself derive the CKM exp
 | `tests/` | Numerical, provenance, claim-boundary, and frozen-integrity tests |
 
 Start with [docs/README.md](docs/README.md), [ROADMAP.md](ROADMAP.md), and the current
-[v6.1.7 Puiseux-fold frontier](docs/bhsm_scalar_wall_puiseux_fold_v6_1_7.md); its normalized local sheets converge, while action, B1 sourcing, and mixed stability remain open.
+[v6.3 particle/chirality frontier](docs/bhsm_particle_chirality_anomaly_normalization_v6_3_0.md); its exact anomaly and connection-trace ledgers close conditionally, while parent polarization, action normalization, absolute scale, and mixed stability remain open.
 
 ## Citation
 
