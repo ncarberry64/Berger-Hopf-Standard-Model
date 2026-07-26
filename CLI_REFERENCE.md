@@ -729,3 +729,18 @@ maximal-isotropic spectrum diagnostic, global sheet gate, symbolic connection
 transfers, scalar/gauge audits, neutral phase scaling, and remaining scale
 gate. It does not modify frozen predictions or claim a complete physical
 spectrum.
+
+<!-- BHSM_TOPOLOGICAL_FR_NEUTRAL_DISPERSION_V6_6_0 -->
+## Topological FR quantization and neutral dispersion v6.6.0
+
+```bash
+python -m bhsm.interface topological-fr-neutral-dispersion-status --format json
+python -m bhsm.interface topological-fr-neutral-dispersion-status --format markdown
+python scripts/materialize_topological_fr_neutral_dispersion_v6_6_0.py
+```
+
+The command reports the explicit degree-`N` mapping-space fundamental group,
+FR sign characters and loop parity, the Architecture B transgression decision,
+the adopted minimal first-order boundary invariant with primitive `y_sigma`,
+the compact-domain coefficient sweep, and the conditional neutral `L/E`
+propagation law with its zero-rest-mass audit.

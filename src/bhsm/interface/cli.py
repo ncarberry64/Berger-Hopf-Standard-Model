@@ -278,6 +278,10 @@ from .topological_matter_action_global_spectrum import (
     architecture_status_report as topological_matter_status_report,
     architecture_status_to_markdown as topological_matter_status_to_markdown,
 )
+from .topological_fr_neutral_dispersion import (
+    architecture_status_report as topological_fr_status_report,
+    architecture_status_to_markdown as topological_fr_status_to_markdown,
+)
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -762,6 +766,8 @@ def build_parser() -> argparse.ArgumentParser:
     parent_stability.add_argument("--format", choices=("json", "markdown"), default="json")
     topological_matter = commands.add_parser("topological-matter-global-spectrum-status", help="Render the BHSM v6.5.0 topological matter-action, dynamic-polarization, and global-spectrum audit")
     topological_matter.add_argument("--format", choices=("json", "markdown"), default="json")
+    topological_fr = commands.add_parser("topological-fr-neutral-dispersion-status", help="Render the BHSM v6.6.0 topological FR and neutral-propagation dispersion construction")
+    topological_fr.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
 
@@ -1728,6 +1734,13 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(json.dumps(payload, indent=2, sort_keys=True))
         else:
             _print_unicode(topological_matter_status_to_markdown(payload))
+        return 0
+    if args.command == "topological-fr-neutral-dispersion-status":
+        payload = topological_fr_status_report()
+        if args.format == "json":
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        else:
+            _print_unicode(topological_fr_status_to_markdown(payload))
         return 0
     if args.command in {
         "primitive-charged-incidence",

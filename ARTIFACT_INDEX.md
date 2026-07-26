@@ -888,3 +888,19 @@ integration, hidden-input, and final-report records.
 
 Doctrine:
 `docs/bhsm_topological_matter_action_global_spectrum_v6_5_0.md`.
+
+<!-- BHSM_TOPOLOGICAL_FR_NEUTRAL_DISPERSION_V6_6_0 -->
+## Topological FR quantization and neutral dispersion v6.6.0
+
+The 26 deterministic artifacts enumerated by
+`src/bhsm/interface/topological_fr_neutral_dispersion.py` cover the merged
+PR #165 handoff; explicit degree-`N` mapping-space ontology and fundamental
+group; FR character, loop, collective metric, Berry, and local-transgression
+audits; the decisive Architecture B action selection and `y_sigma` dependency
+theorem; compact spectrum and vectorlike diagnostics; dynamic-polarization
+audit; high-energy propagation, conditional `L/E`, and zero-rest-mass ledgers;
+PMNS/CKM structural maps; connection, scalar/Berger, and scale forward links;
+Full-BHSM integration, hidden-input, and final-report records.
+
+Doctrine:
+`docs/bhsm_topological_fr_neutral_dispersion_v6_6_0.md`.

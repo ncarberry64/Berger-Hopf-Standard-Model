@@ -1349,3 +1349,28 @@ Completion gate:
 
 Command:
 `python -m bhsm.interface topological-matter-global-spectrum-status --format markdown`.
+
+## v6.6.0 topological FR quantization and neutral dispersion
+
+Primary result:
+`BHSM_TOPOLOGICAL_FR_AND_NEUTRAL_DISPERSION_ARCHITECTURE_DERIVED_CONDITIONALLY`.
+
+- Adopted BHSM identification: `Q_N=Map_*^N(S3,S3)`.
+- Derived: `pi1(Q_N)=pi4(S3)=Z2` and the two FR sign characters.
+- Derived: odd `N` has the nontrivial rotation/exchange sign; even `N` has
+  the trivial sign under the selected character.
+- Rejected by construction: FR quantization alone does not transgress to a
+  local first-order M4 action.
+- Adopted BHSM action invariant: the minimal boundary first-order action with
+  exactly one explicit dimensionless primitive, `y_sigma`.
+- Numerically validated: selected-domain index-one spectrum dependence and
+  Hermitian propagation diagnostics.
+- Derived conditionally: `Delta phi_ij=int Delta kappa_ij/(2E) d ell` when
+  `K_prop` is propagation-supported and flavor-dependent static `A0` is absent.
+- Open: action source for `K_prop`, complete B1 cap spectrum/domain selection,
+  dynamic polarization, absolute scale, and empirical prediction layer.
+
+`FULL_BHSM_NOT_COMPLETE`
+
+CLI:
+`python -m bhsm.interface topological-fr-neutral-dispersion-status --format markdown`.

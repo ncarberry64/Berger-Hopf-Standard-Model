@@ -171,8 +171,8 @@ The abstract log-transport averaging lemma does not by itself derive the CKM exp
 | `notebooks/` | Parse-only reviewer notebooks |
 | `tests/` | Numerical, provenance, claim-boundary, and frozen-integrity tests |
 
-Start with [docs/README.md](docs/README.md), [ROADMAP.md](ROADMAP.md), and the current
-[v6.5 topological-matter/global-spectrum frontier](docs/bhsm_topological_matter_action_global_spectrum_v6_5_0.md); it proves the frozen-action source and G2-only selection nulls and validates a compact domain diagnostic, while the topological carrier, dynamic locking, full B1 spectrum, transfers, and absolute scale remain open.
+Start with [docs/README.md](docs/README.md), [ROADMAP.md](ROADMAP.md), and the [v6.6 FR/neutral-dispersion frontier](docs/bhsm_topological_fr_neutral_dispersion_v6_6_0.md):
+the `Z2` FR result is derived for an adopted mapping space; the local action has one adopted primitive and the `L/E` law remains conditional.
 
 ## Citation
 
