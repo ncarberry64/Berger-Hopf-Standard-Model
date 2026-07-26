@@ -31,3 +31,10 @@ See `docs/bhsm_v1_2_0_cli_command_table.md` for the release command matrix.
 Additional offline commands cover `gallery`, `plot-gallery`, `notebook-pack`,
 `pdg-status`, `pdg-fetch`, `speculative`, `theorem-blockers`, and
 `theorem-attempt`.
+
+Current constructive architecture:
+
+```powershell
+python -m bhsm.interface particle-chirality-anomaly-status --format json
+python -m bhsm.interface particle-chirality-anomaly-status --format markdown
+```

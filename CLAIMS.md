@@ -1071,3 +1071,49 @@ Needs empirical or global test:
 
 Primary status:
 `BHSM_TRIALITY_GENERATION_AND_VOLUME_SCALE_ARCHITECTURE_DERIVED_CONDITIONALLY`.
+
+<!-- BHSM_PARTICLE_CHIRALITY_ANOMALY_NORMALIZATION_V6_3_0 -->
+## v6.3.0 constructive claim ledger
+
+Derived exactly:
+
+- the standard-normalized boundary U(1) operator and surviving
+  electromagnetic generator;
+- one- and three-family local anomaly cancellation in exact rational
+  arithmetic;
+- even Sp(1) global-anomaly parity, with four doublets per family;
+- representation traces `10/3,2,2`, canonical U(1) factor `3/5`, and
+  normalized trace equality;
+- compatibility of a general family mass operator with the exact triality
+  projectors and gauge-representation projectors.
+
+Derived conditionally:
+
+- one chiral collar profile per selected internal slot for the displayed
+  BHSM-native first-order action and odd wall profile;
+- the 15-slot charged or optional 16-slot neutral-completed family map after
+  choosing a global boundary complex polarization;
+- replication of that map on exactly three triality projectors without
+  multiplying by the Berger ladder.
+
+Rejected by calculation:
+
+- `1:2:7` as a representation-trace incidence ratio;
+- the nested integer U(1) alone as the physical boundary U(1);
+- treating unpolarized `3+conjugate(3)` as one chiral weak doublet;
+- interpreting the optional neutral singlet as a derived mass.
+
+Still requiring new mathematics:
+
+- parent-action derivation of the complex polarization and odd first-order
+  coupling;
+- a global index theorem excluding all additional family sectors;
+- action-derived connection localization and scale-transfer factors;
+- the full order-`r^4` scalar-wall projection and complete constrained mixed
+  spectrum.
+
+No physical bulk Dirac parent law, measured particle assignment, absolute
+mass, coupling prediction, or full BHSM completion is claimed.
+
+Primary status:
+`BHSM_CHIRAL_PARTICLE_AND_CONNECTION_ARCHITECTURE_DERIVED_CONDITIONALLY`.

@@ -266,6 +266,10 @@ from .scalar_wall_junction_audit import scalar_wall_status_report, scalar_wall_s
 from .scalar_wall_backreacted_bifurcation import bifurcation_status_report, bifurcation_status_to_markdown
 from .scalar_wall_puiseux_fold import puiseux_status_report, puiseux_status_to_markdown
 from .triality_generation_scale_architecture import architecture_status_report, architecture_status_to_markdown
+from .particle_chirality_anomaly_normalization import (
+    architecture_status_report as particle_chirality_status_report,
+    architecture_status_to_markdown as particle_chirality_status_to_markdown,
+)
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -744,6 +748,8 @@ def build_parser() -> argparse.ArgumentParser:
     scalar_fold.add_argument("--format", choices=("json", "markdown"), default="json")
     triality_scale = commands.add_parser("triality-generation-scale-status", help="Render the BHSM v6.2.0 triality, generation, cusp-action, and scale architecture")
     triality_scale.add_argument("--format", choices=("json", "markdown"), default="json")
+    particle_chirality = commands.add_parser("particle-chirality-anomaly-status", help="Render the BHSM v6.3.0 particle, chirality, anomaly, and connection-normalization architecture")
+    particle_chirality.add_argument("--format", choices=("json", "markdown"), default="json")
     return parser
 
 
@@ -1689,6 +1695,13 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(json.dumps(payload, indent=2, sort_keys=True))
         else:
             _print_unicode(architecture_status_to_markdown(payload))
+        return 0
+    if args.command == "particle-chirality-anomaly-status":
+        payload = particle_chirality_status_report()
+        if args.format == "json":
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        else:
+            _print_unicode(particle_chirality_status_to_markdown(payload))
         return 0
     if args.command in {
         "primitive-charged-incidence",

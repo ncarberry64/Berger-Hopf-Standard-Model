@@ -1224,3 +1224,42 @@ conclusions.
 
 Command:
 `python -m bhsm.interface triality-generation-scale-status --format markdown`.
+
+<!-- BHSM_PARTICLE_CHIRALITY_ANOMALY_NORMALIZATION_V6_3_0 -->
+## v6.3.0 particle, chirality, anomaly, and connection normalization
+
+Primary result:
+`BHSM_CHIRAL_PARTICLE_AND_CONNECTION_ARCHITECTURE_DERIVED_CONDITIONALLY`.
+
+Derived consequences:
+
+- a three-family chiral representation map based on one explicit boundary
+  complex polarization of each v6.2 triality carrier;
+- a BHSM-native first-order collar operator with one normalizable chiral
+  profile per selected internal slot, conditional on its odd wall coupling
+  and boundary domain;
+- the exact residual operator
+  `Y_BH=-I/2+(2/3)P_C+S_sigma/2-(P_w S_sigma)/2` and
+  `Q_em=T_n+Y_BH`;
+- exact one-family and three-family cancellation of the local connection
+  anomalies, plus even Sp(1) global-anomaly parity;
+- exact representation traces `I1_raw=10/3`, `I2=I3=2`, and
+  `eta_Y=3/5`;
+- a projector-compatible triality/Berger family mass architecture and a
+  symbolic representation-normalized scale map.
+
+Calculation rejects the proposed `1:2:7` incidence as a representation-trace
+ratio: the raw ratio is `5:3:3`, and canonical abelian normalization gives
+`1:1:1`. A separate action-derived geometric transfer remains possible but is
+not supplied here.
+
+The global complex polarization, odd first-order wall coupling, physical
+connection interpretation, scale-transfer factors, complete order-`r^4`
+action, and full mixed Hessian remain open. No physical bulk Dirac parent law,
+observed mass spectrum, measured coupling, or absolute unit is claimed.
+
+Completion gate:
+`V6_3_0_PARENT_POLARIZATION_ACTION_AND_MIXED_SPECTRUM_OPEN`.
+
+Command:
+`python -m bhsm.interface particle-chirality-anomaly-status --format markdown`.
