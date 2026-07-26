@@ -1180,3 +1180,47 @@ Completion gate:
 
 Command:
 `python -m bhsm.interface scalar-wall-puiseux-fold-status --format markdown`.
+
+<!-- BHSM_TRIALITY_GENERATION_SCALE_ARCHITECTURE_V6_2_0 -->
+## v6.2.0 triality, generation, cusp-action, and volume-scale architecture
+
+Primary result:
+`BHSM_TRIALITY_GENERATION_AND_VOLUME_SCALE_ARCHITECTURE_DERIVED_CONDITIONALLY`.
+
+Scalar-wall action result:
+`BHSM_SCALAR_WALL_LEADING_CUSP_ACTION_REPRODUCED`.
+
+Derived consequences:
+
+- exact `Q(omega)` triality projectors with `T^3=1`, completeness,
+  orthogonality, and exact eigenvalue identities;
+- an exact C3 Fourier intertwiner identifying the triality family factor with
+  the existing reference-plus-two-excitation ladder, conditional on explicit
+  triality-twisted carrier identifications;
+- rejection of a nine-generation product architecture;
+- triality-fixed `G2 -> SU(3)` branching
+  `8 -> 1+1+3+conjugate(3)` and the exact rank-eight color projector;
+- conditional CKM/PMNS transport separation without numerical fitting;
+- exact `Vol(S4)Vol(S3)/Vol(S7)=16` and `3Vol(S3)=6pi^2`;
+- the regulated scalar-wall action cusp
+  `Gamma_tau-Gamma_c=tau(nu1/12)r^3+O(r^4)`, with
+  `nu1/12=9.138890145035...`, confirmed on both numerical sheets.
+
+Adopted BHSM axioms:
+
+- the upper sheet is spacetime-facing and the lower sheet core-facing;
+- Berger deformation is the geometric translation of effective Higgs
+  language;
+- G2 supplies an octonionic constraint while the retained SU(3) subconnection
+  supplies the candidate color channel.
+
+The local principal symbols do not distinguish the two sheets, so global
+causal propagation remains an empirical/global test. The singlet `sigma`
+and Berger radial mode are separate linear coordinates because
+`p1-p2=0`. Physical U(1) normalization, particle-role closure, the `1:2:7`
+incidence theorem, scale-transfer factors, the analytic fourth-order action,
+and the full mixed Hessian remain work items rather than primary null
+conclusions.
+
+Command:
+`python -m bhsm.interface triality-generation-scale-status --format markdown`.
