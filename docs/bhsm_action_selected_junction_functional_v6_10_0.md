@@ -276,4 +276,3 @@ The v6.9 zero light-heavy block, missing bending invariant, and auxiliary
 index-one certification are preserved. No measured inputs, fitted matrices,
 sector-dependent couplings, physical bulk Dirac parent law, frozen prediction
 change, or official prediction-logic change is introduced.
-

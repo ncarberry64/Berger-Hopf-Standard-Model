@@ -17,4 +17,3 @@ from bhsm.interface.action_selected_junction_functional import (  # noqa: E402
 if __name__ == "__main__":
     for artifact in materialize_artifacts(ROOT):
         print(artifact.relative_to(ROOT).as_posix())
-
