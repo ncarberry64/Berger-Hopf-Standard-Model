@@ -1,0 +1,118 @@
+{
+  "Green_operator_constructed": false,
+  "arbitrary_threading_condition": false,
+  "artifact": "BHSM_Z2_interface_symplectic_flux_and_threading_v6_15_0",
+  "boundary_tension": false,
+  "canonical_pairing": {
+    "B1_metric_coefficient": "(C_partial G_mu_nu^(4)-T_partial,mu_nu/2)delta gamma^mu_nu",
+    "cap_metric_pair": {
+      "configuration": "gamma_mu_nu",
+      "momentum": "pi_out^mu_nu=(kappa_1/2)Q_out^mu_nu"
+    },
+    "common_orientation_metric_sum": "(kappa_1/2)[Q_mu_nu] delta gamma^mu_nu",
+    "endpoint_displacement": "absent as an independent configuration in the frozen fixed-iota action",
+    "matcher": "Lambda pairs with h-iota^*g algebraically and cancels from the combined junction equation after exact matching",
+    "on_shell_metric_coefficient": "one half of J_mu_nu delta gamma^mu_nu, with J_mu_nu=kappa_1[Q_mu_nu]+2C_partial G_mu_nu-T_partial,mu_nu",
+    "result": "BHSM_Z2_INTERFACE_SYMPLECTIC_FORM_DERIVED",
+    "scalar_pair": {
+      "configuration": "delta sigma_Sigma",
+      "momentum": "-Z5(n_out sigma) on each cap"
+    },
+    "threading": {
+      "Euler_Lagrange_partner": "bulk longitudinal momentum constraint",
+      "canonical_momentum": 0,
+      "classification": "gauge-invariant radial-shift/longitudinal multiplier trace",
+      "independent_interface_conjugate": null,
+      "present_in_symplectic_form": false
+    },
+    "total_potential": "Theta_Sigma,total=Theta_+^out+Theta_-^out+Theta_B1+Theta_match"
+  },
+  "complete_fold_kinetic_calculation": false,
+  "constraint_source": {
+    "automatic_compatibility": "oddness makes the symmetric weighted integral vanish against an even constant test mode",
+    "common_normal": {
+      "J_+": "J_tau(t)",
+      "J_-": "-J_tau(t)"
+    },
+    "derivation": "the copied outward-cap geometry gives equal sources; converting the minus cap to n_common contributes the normal-orientation sign",
+    "even_weight_integral": 0,
+    "full_Fredholm_compatibility_certified": false,
+    "one_cap": "J_tau(t)=-3 tau chi_1 t/[4 sin^2(pi t/4)]",
+    "outward_caps": {
+      "J_+": "J_tau(t)",
+      "J_-": "J_tau(t)"
+    },
+    "reason_full_compatibility_open": "the exact coupled radial operator and all adjoint kernels are not stored",
+    "result": "BHSM_TWO_CAP_SHIFT_SOURCE_PARITY_DERIVED",
+    "scalar_sign_dependence": false,
+    "sheet_dependence": true,
+    "signed_interval_sector": "odd",
+    "tau_dependence": "tau reverses the source on both caps"
+  },
+  "frozen_predictions_changed": false,
+  "junction_projections": {
+    "S_occurrence": "any raw longitudinal shift dependence lies in the constraint/Ward combination; no independent scalar projection supplies an interface equation for S_Sigma",
+    "condition_on_S_Sigma": null,
+    "dependencies": {
+      "longitudinal": "Codazzi plus the bulk momentum constraint equals the intrinsic Bianchi/stress-conservation identity",
+      "temporal": "the remaining scalar divergence is fixed by the bulk Hamiltonian/evolution identities and intrinsic conservation"
+    },
+    "equation": "J_mu_nu=kappa_1[Q_mu_nu]+2C_partial G_mu_nu^(4)-T_partial,mu_nu=0",
+    "independent_scalar_equation_count": 2,
+    "longitudinal_counted_twice": false,
+    "raw_projection_count": 4,
+    "scalar_Ward_relations": 2,
+    "scalar_projections": [
+      "Hamiltonian scalar J_00",
+      "longitudinal momentum scalar D^i J_0i",
+      "spatial trace scalar gamma^ij J_ij",
+      "traceless-longitudinal scalar D^iD^j J_ij^TL"
+    ]
+  },
+  "measured_input": false,
+  "neutral_work": false,
+  "new_action_term": false,
+  "new_coefficient": false,
+  "new_dimensionful_primitive": false,
+  "official_prediction_logic_changed": false,
+  "physical_bulk_Dirac_law": false,
+  "primary_result": "BHSM_Z2_SYMPLECTIC_FLUX_LEAVES_ONE_INTERFACE_TRACE",
+  "pseudoinverse": false,
+  "radion_potential": false,
+  "source_main_sha": "d859a321b5f44b5966853bd922d2d27487238644",
+  "sprint": "bhsm-z2-double-cap-threading-domain-v6-15-0",
+  "symplectic_flux": {
+    "Robin_family_parameter_dimension": null,
+    "S_Sigma_term": null,
+    "boundary_form": "Omega_Sigma(delta1,delta2)=delta1 Theta_Sigma,total(delta2)-delta2 Theta_Sigma,total(delta1)",
+    "conditions_applied": [
+      "cap reflection parity",
+      "induced-metric matching",
+      "odd scalar Dirichlet matching",
+      "intrinsic B1 equations",
+      "linearized metric junction",
+      "allowed fixed-gluing gauge quotient"
+    ],
+    "matcher_term": "zero after h=iota^*g and Lambda elimination",
+    "maximal_isotropic_conclusion": "S_Sigma is a presymplectic null direction, so flux does not select a Lagrangian slope or a value on its one-dimensional trace line",
+    "metric_flux_on_domain": 0,
+    "metric_term": "(1/2) integral_Sigma [delta1 J_mu_nu delta2 gamma^mu_nu-delta2 J_mu_nu delta1 gamma^mu_nu]",
+    "options": {
+      "Robin_relation": false,
+      "S_zero": false,
+      "additional_reflection_domain_declaration": "required only to impose stronger continuity/zero-trace data",
+      "cap_flux_cancellation_for_arbitrary_common_trace": true,
+      "common_orientation_relation": "S_common,-=-S_common,+",
+      "momentum_matching_for_S": false,
+      "outward_orientation_relation": "S_out,-=S_out,+"
+    },
+    "parity_allowed_null_trace_dimension": 1,
+    "result": "BHSM_Z2_SYMPLECTIC_FLUX_LEAVES_ONE_INTERFACE_TRACE",
+    "scalar_flux_on_fixed_Dirichlet_domain": 0,
+    "scalar_term": "-Z5 sum_caps integral_Sigma [delta1(n_out sigma) delta2 sigma-delta2(n_out sigma) delta1 sigma]",
+    "vanishing_flux_requires": "no condition on the surviving reflection-compatible S_Sigma trace"
+  },
+  "tau_J": false,
+  "v6_14_head_sha": "79531131fd3f3ab16e4690f5e2202c97e7e2c10b",
+  "version": "v6.15.0"
+}

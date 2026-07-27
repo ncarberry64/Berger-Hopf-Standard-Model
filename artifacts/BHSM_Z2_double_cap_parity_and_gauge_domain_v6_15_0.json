@@ -1,0 +1,196 @@
+{
+  "Green_operator_constructed": false,
+  "Z2_notions": {
+    "A_background_cap_exchange": {
+      "contained": true,
+      "meaning": "two identical static regular caps are exchanged by R"
+    },
+    "B_fixed_support_orbifold_parity": {
+      "contained": true,
+      "meaning": "the frozen gluing map has fixed set Sigma at y=0"
+    },
+    "C_moving_covariant_reflection": {
+      "contained": false,
+      "meaning": "R_zeta:y-zeta(x)->-[y-zeta(x)] is an x-dependent change of the fixed-set/gluing datum"
+    },
+    "composite_support": "sigma_hat can determine a moving center only after the additional v6.14 center-manifold domain identification is adopted",
+    "homogeneous_family": "rho_J(q) labels separately solved doubled backgrounds; it does not promote R to an x-dependent varied reflection",
+    "result": "BHSM_MOVING_Z2_REFLECTION_REQUIRES_DOMAIN_EXTENSION"
+  },
+  "arbitrary_threading_condition": false,
+  "artifact": "BHSM_Z2_double_cap_parity_and_gauge_domain_v6_15_0",
+  "boundary_tension": false,
+  "complete_fold_kinetic_calculation": false,
+  "diffeomorphisms": {
+    "S_Sigma_gauge_invariant": true,
+    "cap_exchanging": "composition of an allowed map with the fixed R",
+    "cap_preserving": "piecewise diffeomorphisms related by R and preserving pole regularity",
+    "forbidden_current_domain": "independent changes of the two pole-to-junction domains or of R",
+    "gauge_choices": {
+      "B_zero": "may be imposed locally only with compensating E/zeta data; it cannot change the invariant S_Sigma",
+      "E_zero": "allowed with even xi",
+      "all_three_zero": "possible only when S_Sigma was already zero or after an extra domain restriction",
+      "zeta_zero": "already fixed in Case I; not a removal of S_Sigma"
+    },
+    "global_Z2_removes_trace_as_gauge": false,
+    "gluing_preserving": "xi^y odd and continuous, hence xi^y|Sigma=0; xi tangential and even",
+    "interface_moving": "xi^y|Sigma!=0 changes the declared fixed set unless the embedding/reflection map is added to the domain",
+    "tangential_B1": "even xi generates intrinsic reparameterizations"
+  },
+  "frozen_predictions_changed": false,
+  "measured_input": false,
+  "neutral_work": false,
+  "new_action_term": false,
+  "new_coefficient": false,
+  "new_dimensionful_primitive": false,
+  "official_prediction_logic_changed": false,
+  "orientation": {
+    "derivatives": {
+      "partial_rho,+": "+partial_y",
+      "partial_rho,-": "-partial_y"
+    },
+    "endpoint_displacement": {
+      "common_conversion": "zeta_common,-=-zeta_common,+",
+      "homogeneous_copied_caps": "zeta_out,-=zeta_out,+",
+      "single_moving_center": "one zeta(x) in y-zeta(x) changes the reflection map and is not the stored copywise homogeneous cap-length variation"
+    },
+    "extrinsic_curvature": {
+      "K_zero_inferred": false,
+      "Q": "Q_common,-=-Q_common,+ and [Q]=2Q_common,+",
+      "common": "K_common,-=-K_common,+",
+      "definition": "K_mu_nu=(1/2)L_n gamma_mu_nu",
+      "nonzero_allowed": true,
+      "outward": "K_out,-=K_out,+ for reflection-copied caps",
+      "trace": "K reverses with the chosen normal"
+    },
+    "lapse": "N_-(rho)=N_+(rho); N is positive and reflection even",
+    "longitudinal_derivative": {
+      "outward_cap": "partial_rho,- E=partial_rho,+ E",
+      "signed": "partial_y E(0+)=-partial_y E(0-)"
+    },
+    "normals": {
+      "n_+": "+N^-1 partial_y=+N^-1 partial_rho,+",
+      "n_-": "-N^-1 partial_y=+N^-1 partial_rho,-",
+      "n_common": "+N^-1 partial_y=n_+=-n_-",
+      "required_check": "n_-=-n_+ under the interface identification"
+    },
+    "radial_shift": {
+      "outward_cap": "N_rho,-=N_rho,+ after the coordinate Jacobian",
+      "signed": "N_y(0+)=-N_y(0-)"
+    },
+    "reflection": "R:(y,x^mu)->(-y,x^mu), equivalently rho_+<->rho_-",
+    "scalar_normal_derivative": {
+      "background": "sigma_-(rho)=-sigma_+(rho)",
+      "common": "(n_common sigma)_-=(n_common sigma)_+",
+      "outward": "(n_- sigma)_-=-(n_+ sigma)_+",
+      "signed_y": "partial_y sigma is reflection even"
+    },
+    "signed_coordinate": {
+      "M_+": "y=rho_+-rho_J in [-rho_J,0]",
+      "M_-": "y=rho_J-rho_- in [0,rho_J]"
+    },
+    "status": "Derived consequence",
+    "stored_cap_coordinates": "rho_+,rho_- in [0,rho_J], each increasing from its regular pole toward the common junction"
+  },
+  "parity": {
+    "ADM_fields_signed_y": {
+      "B": "odd",
+      "E": "even",
+      "N": "even (positive lapse branch)",
+      "N_mu": "odd",
+      "psi": "even"
+    },
+    "derivation": "R has Jacobian diag(-1,1,1,1,1); every covariant y index contributes one minus sign in R^*g",
+    "endpoint": {
+      "copywise_common_normal": "odd across cap labels",
+      "copywise_outward": "even across cap labels",
+      "fixed_support": "zeta=0",
+      "moving_reflection_center": "not assigned frozen-domain parity"
+    },
+    "gauge_invariants": {
+      "Psi_Sigma": "even",
+      "S_Sigma_common": "odd one-sided trace",
+      "S_Sigma_outward": "equal on the two copied caps",
+      "delta_X_Sigma": "even",
+      "delta_sigma_Sigma": "odd (and zero in the stored Dirichlet domain)"
+    },
+    "gauge_parameters": {
+      "xi": "even tangential scalar",
+      "xi^y": "odd for a continuous fixed-gluing diffeomorphism",
+      "xi^y_at_Sigma": 0
+    },
+    "metric_pullback": {
+      "g_mu_nu": "even",
+      "g_y_mu": "odd",
+      "g_yy": "even"
+    },
+    "result": "BHSM_Z2_SHIFT_PARITY_DERIVED",
+    "scalar": {
+      "background": "odd: sigma_-(rho)=-sigma_+(rho)",
+      "fold_amplitude_perturbation": "odd",
+      "orbifold_admissible_arbitrary_perturbation": "odd and Dirichlet",
+      "pure_radial_gauge_perturbation": "-sigma_0' xi^y is odd because sigma_0' is even and xi^y is odd",
+      "sigma_hat": "odd on every fixed (tau,s) center sheet",
+      "unrestricted_cover_perturbation": "decomposes into even and odd sectors; background parity alone does not silently admit the even sector"
+    },
+    "threading_relations": {
+      "common": "S_common,-=-S_common,+",
+      "outward": "S_out,-=S_out,+",
+      "zero_forced_by_parity": false
+    }
+  },
+  "physical_bulk_Dirac_law": false,
+  "primary_result": "BHSM_Z2_SYMPLECTIC_FLUX_LEAVES_ONE_INTERFACE_TRACE",
+  "provenance": [
+    {
+      "item": "tensor pullback and oriented-boundary symplectic formulas",
+      "status": "Adopted from established physics/mathematics"
+    },
+    {
+      "item": "provisional B1 and exact metric matcher",
+      "status": "Adopted BHSM axiom"
+    },
+    {
+      "item": "fixed signed-coordinate orientation ledger",
+      "status": "BHSM identification"
+    },
+    {
+      "item": "Z2 threading parity and source parity",
+      "status": "Derived consequence"
+    },
+    {
+      "item": "one surviving presymplectic-null interface trace",
+      "status": "Derived consequence"
+    },
+    {
+      "item": "adapted-reflection zero-threading shortcut",
+      "status": "Rejected by calculation"
+    },
+    {
+      "item": "constraint Green operator after a domain theorem",
+      "status": "Active construction target"
+    }
+  ],
+  "pseudoinverse": false,
+  "radion_potential": false,
+  "regularity": {
+    "B_zero_from_parity": false,
+    "K_and_Q": "finite one-sided traces with the B1-supported jump",
+    "N": "reflection-even one-sided traces; positive lapse may be continuous",
+    "N_mu_and_B": "one-sided multiplier traces obey reflection parity; neither the induced-metric matcher nor the stored action establishes their signed-coordinate continuity",
+    "erroneous_smoothness_condition": "K=0 is rejected",
+    "geometry_class": "piecewise C^2 bulk metric with continuous induced metric and an intentional one-sided first-normal-derivative jump at Sigma",
+    "h_mu_nu": "continuous trace; piecewise C^2; normal derivative may jump",
+    "normal_E": "one-sided odd relation; a jump is allowed",
+    "normal_sigma": "common-normal derivative even; outward derivatives opposite",
+    "odd_trace_rule": "odd parity implies a zero fixed-set value only after continuity of that field is established",
+    "partial_y_E_zero_from_parity": false,
+    "psi_and_E": "continuous as induced-metric scalars; piecewise C^2",
+    "sigma": "continuous odd Dirichlet trace sigma_Sigma=0; piecewise C^2"
+  },
+  "source_main_sha": "d859a321b5f44b5966853bd922d2d27487238644",
+  "sprint": "bhsm-z2-double-cap-threading-domain-v6-15-0",
+  "tau_J": false,
+  "v6_14_head_sha": "79531131fd3f3ab16e4690f5e2202c97e7e2c10b",
+  "version": "v6.15.0"
+}
