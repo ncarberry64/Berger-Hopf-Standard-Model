@@ -83,8 +83,8 @@ GUARDS = {
 }
 
 
-def stable(value: float, digits: int = 12) -> float:
-    """Canonicalize numerical diagnostics below their convergence accuracy."""
+def stable(value: float, digits: int = 9) -> float:
+    """Canonicalize diagnostics below cross-platform eigensolver accuracy."""
     if abs(value) < 5.0e-13:
         return 0.0
     return float(f"{value:.{digits}f}")

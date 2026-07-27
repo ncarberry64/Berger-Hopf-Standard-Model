@@ -28,6 +28,11 @@ def load(key):
     )
 
 
+def test_numeric_canonicalization_absorbs_sub_eigensolver_noise():
+    reference = 3.901943686331
+    assert arch.stable(reference) == arch.stable(reference - 3.0e-12)
+
+
 def test_registry_has_exactly_twenty_eight_payloads():
     payloads = arch.build_artifact_payloads(ROOT)
     assert len(payloads) == 28
