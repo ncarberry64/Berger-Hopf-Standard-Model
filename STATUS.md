@@ -1886,3 +1886,40 @@ No measured input, fitted threshold, arbitrary switch, new primitive, new
 scale, new fundamental action, boundary tension, `tau_J`, neutral work,
 physical bulk Dirac law, frozen-prediction change, or official
 prediction-logic change is introduced.
+
+<!-- BHSM_CRITICAL_FOLD_SCHUR_KILLSCREEN_V6_19_0 -->
+## v6.19.0 critical-fold quadratic Schur-complement kill-screen
+
+At the exact critical fold, fixed support removes `zeta`, `delta sigma=q u_1`
+is the physical tangent, `E` is removed only after forming
+`S=B-a0^2 partial_t E`, and the v6.18 response eliminates `S` without a
+seam-slide quotient. The surviving constrained metric vector is `(A,psi)`:
+the radial lapse multiplier and Weyl scalar.
+
+The known direct terms remain
+`K_scalar=2 integral a0^2 u_1^2 d rho>=2` and
+`K_Weyl=1.220620174933802...`. The first remaining Schur step requires the
+critical radial saddle Hessian
+`L_Apsi^crit=[[0,C_H^dagger],[C_H,H_psi_psi]]`, with pole-regular and B1
+metric-junction domain. This exact `2x2` operator block is not stored in the
+quadratic action ledgers.
+
+Because `L_Apsi^crit` is absent, the lapse cannot be eliminated and the
+radial source, adjoint domain, kernel, compatibility, and inverse are
+undefined. The formal expression
+`K_red=K_direct-<J_rad,(L_Apsi^crit)^-1 J_rad>` therefore has no numerical
+value. No radial numerical solve or generic pseudoinverse is attempted.
+
+The single primary theorem is
+`BHSM_FOLD_KINETIC_REQUIRES_ONE_MISSING_ACTION_BLOCK`. The missing object is
+the critical lapse--Weyl radial Hessian block derived by the second variation
+of the existing P1+GHY+B1+matcher+scalar action; it is not a request for a
+new action term.
+
+`K_shift+endpoint^red`, `k_q^E`, its uncertainty, and its sign remain
+undefined. The fold is not kinetically classified as positive, ghost, or
+null, and no physical mass is inferred.
+
+No measured or fitted input, primitive, scale, action term, threshold,
+`tau_J`, boundary tension, neutral work, frozen-prediction change, or
+official prediction-logic change is introduced.
