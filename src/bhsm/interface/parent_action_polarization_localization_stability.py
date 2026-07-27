@@ -269,6 +269,7 @@ def normal_mode_diagnostic(nu: float = 1.0, delta: float = 1.0) -> dict[str, Any
     f = normal_mode_profile(x, nu, delta)
     norm = float(np.trapezoid(f * f, x))
     sigma = np.tanh(x / delta)
+    sigma_overlap = float(np.trapezoid(sigma * f * f, x))
     sigma2_overlap = float(np.trapezoid(sigma * sigma * f * f, x))
     return {
         "profile": "N sech(rho/delta)^nu",
@@ -276,7 +277,7 @@ def normal_mode_diagnostic(nu: float = 1.0, delta: float = 1.0) -> dict[str, Any
         "delta": delta,
         "normalization": normal_mode_normalization(nu, delta),
         "numerical_norm": norm,
-        "sigma_overlap": float(np.trapezoid(sigma * f * f, x)),
+        "sigma_overlap": 0.0 if abs(sigma_overlap) < 1.0e-14 else sigma_overlap,
         "sigma_squared_overlap": sigma2_overlap,
         "representative_exact_sigma_squared_overlap": "1/3 for nu=1",
         "asymptotic_width": "delta/nu",
