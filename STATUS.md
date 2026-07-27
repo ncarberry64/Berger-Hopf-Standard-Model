@@ -1608,3 +1608,42 @@ an action-derived endpoint-threading domain.
 No arbitrary boundary condition, new action term, primitive, `tau_J`,
 boundary tension, radion potential, measured input, neutral work,
 frozen-prediction change, or official prediction-logic change is introduced.
+
+<!-- BHSM_SCALAR_LEVEL_SET_COMPOSITE_B1_V6_14_0 -->
+## v6.14.0 scalar-level-set and blow-up composite B1
+
+Primary result:
+`BHSM_COMPOSITE_B1_SUPPORT_LEAVES_ENDPOINT_THREADING_OPEN`.
+
+For sufficiently small `q>0`, the bulk scalar has a unique regular junction
+zero because
+`partial_rho sigma|Sigma=s[q u1'(rho_J)+O(q^2)]`
+and `u1'(rho_J)=-9.124976903426...`. The lowest Dirichlet mode has no
+interior nodes. At `q=0`, however, `sigma_0=0` and `grad sigma_0=0`
+everywhere, so the direct level set is singular:
+`BHSM_DIRECT_SCALAR_LEVEL_SET_IS_SINGULAR_AT_THE_FOLD`.
+
+The invariant per-cap norm
+`Q^2=integral a^4 sigma^2 d rho=integral N a^4 sigma^2 dt`
+obeys `Q=q+O(q^2)`. Thus `sigma_hat=sigma/Q -> s u1` along a fixed fold
+center-manifold branch, and `{u1=0}` supplies a regular limiting support.
+Differentiating its zero exactly reproduces
+`partial_q rho_J=-tau chi_1/4`.
+
+This is a nonlocal coefficient-free center-manifold chart, not a new field
+or an adopted support law. Making `iota=iota[sigma_hat]` would be an
+additional BHSM domain identification. It would turn scalar Dirichlet data
+into a kinematic level-set identity and induce projected shape/pullback terms
+without adding a local coefficient.
+
+The composite substitution gives
+`S_Sigma=[B-N0^2 delta sigma_hat/(n partial sigma_hat)
+-a0^2 partial_rho E]_Sigma0`.
+It fixes `zeta` but does not impose a condition on `S_Sigma`; one invariant
+endpoint trace remains. No constraint Green operator or total
+Einstein-frame kinetic coefficient is constructed.
+
+No new action term, coefficient, primitive, boundary tension, `tau_J`,
+radion potential, arbitrary threading condition, measured input, neutral
+work, physical bulk Dirac law, frozen-prediction change, or official
+prediction-logic change is introduced.
