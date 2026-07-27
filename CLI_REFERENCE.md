@@ -744,3 +744,17 @@ FR sign characters and loop parity, the Architecture B transgression decision,
 the adopted minimal first-order boundary invariant with primitive `y_sigma`,
 the compact-domain coefficient sweep, and the conditional neutral `L/E`
 propagation law with its zero-rest-mass audit.
+
+<!-- BHSM_BOUNDARY_MATTER_DYNAMICS_NEUTRAL_RESPONSE_V6_7_0 -->
+## Boundary matter dynamics and neutral response v6.7.0
+
+```bash
+python -m bhsm.interface boundary-matter-neutral-response-status --format json
+python -m bhsm.interface boundary-matter-neutral-response-status --format markdown
+python scripts/materialize_boundary_matter_dynamics_neutral_response_v6_7_0.py
+```
+
+The command reports the adopted invariant’s independent variation, source
+functionals and Green form; the unresolved `U(1)` self-adjoint domain family;
+actual-profile upper/lower B1 cap spectral diagnostics; the zero minimal
+light-sector Schur response; and the active operator/domain/coupling gate.

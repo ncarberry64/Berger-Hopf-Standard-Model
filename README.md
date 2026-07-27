@@ -171,8 +171,8 @@ The abstract log-transport averaging lemma does not by itself derive the CKM exp
 | `notebooks/` | Parse-only reviewer notebooks |
 | `tests/` | Numerical, provenance, claim-boundary, and frozen-integrity tests |
 
-Start with [docs/README.md](docs/README.md), [ROADMAP.md](ROADMAP.md), and the [v6.6 FR/neutral-dispersion frontier](docs/bhsm_topological_fr_neutral_dispersion_v6_6_0.md):
-the `Z2` FR result is derived for an adopted mapping space; the local action has one adopted primitive and the `L/E` law remains conditional.
+Start with [docs/README.md](docs/README.md), [ROADMAP.md](ROADMAP.md), and the [v6.7 boundary-matter frontier](docs/bhsm_boundary_matter_dynamics_neutral_response_v6_7_0.md):
+the adopted invariant has a consistent variation, while its junction domain and a nonzero neutral propagation response remain open.
 
 ## Citation
 

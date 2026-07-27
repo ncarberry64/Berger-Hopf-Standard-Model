@@ -122,7 +122,7 @@ def test_normal_mode_is_normalized_and_has_one_sided_index(nu):
 def test_representative_profile_integrals_are_exact_regressions():
     result = arch.normal_mode_diagnostic()
     assert abs(result["numerical_norm"] - 1) < 1e-12
-    assert abs(result["sigma_overlap"]) < 1e-14
+    assert result["sigma_overlap"] == 0.0
     assert abs(result["sigma_squared_overlap"] - 1 / 3) < 1e-12
 
 

@@ -164,6 +164,7 @@ The current minimal-action theory dictionary is documented in
 - [Parent-action polarization, localization, and stability v6.4.0](bhsm_parent_action_polarization_localization_stability_v6_4_0.md)
 - [Topological matter action and global spectrum v6.5.0](bhsm_topological_matter_action_global_spectrum_v6_5_0.md)
 - [Topological FR quantization and neutral dispersion v6.6.0](bhsm_topological_fr_neutral_dispersion_v6_6_0.md)
+- [Boundary matter dynamics and neutral response v6.7.0](bhsm_boundary_matter_dynamics_neutral_response_v6_7_0.md)
 
 ## CP O_int Sprint Docs
 
