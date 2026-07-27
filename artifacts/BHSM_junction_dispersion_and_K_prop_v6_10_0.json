@@ -1,0 +1,88 @@
+{
+  "Clifford": {
+    "Gamma_n": [
+      [
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "0"
+      ]
+    ],
+    "Gamma_star": [
+      [
+        "0",
+        "-I"
+      ],
+      [
+        "I",
+        "0"
+      ]
+    ],
+    "Gamma_star_beta_independent": true,
+    "K": [
+      [
+        "-1",
+        "0"
+      ],
+      [
+        "0",
+        "1"
+      ]
+    ]
+  },
+  "artifact": "BHSM_junction_dispersion_and_K_prop_v6_10_0",
+  "dispersion": {
+    "algebra_audit": "H0=p K on the declared rank-two collar factor",
+    "current_K_prop": null,
+    "current_energy_shift": 0,
+    "current_operator": 0,
+    "mass_squared_classification": "not generated",
+    "measured_input": [],
+    "opposite_sector": {
+      "anticommutator_with_H0": 0,
+      "conditional_dispersion": "E_i^2=p^2+mu_i",
+      "high_energy": "E_i=p+mu_i/(2p)+O(p^-3)",
+      "mu_i": "eigenvalues of M_eff M_eff^dagger",
+      "operators": [
+        "Gamma_n",
+        "Gamma_star"
+      ],
+      "status": "symmetry permitted but absent and coefficient dependent"
+    },
+    "relative_neutral_phase": 0,
+    "result": "BHSM_JUNCTION_K_PROP_REJECTED_FOR_CURRENT_ACTION",
+    "same_sector": {
+      "K_prop": null,
+      "classification": "additive E^0 or kinetic-sign/velocity response",
+      "commutator_with_H0": 0,
+      "operators": [
+        "I",
+        "K"
+      ]
+    }
+  },
+  "fermion_loop_inserted": false,
+  "fitted_parameters_used": false,
+  "frozen_predictions_changed": false,
+  "full_BHSM_claimed": false,
+  "junction_tension_assumed": false,
+  "lambda_geom_universality_changed": false,
+  "measured_inputs_used": false,
+  "official_prediction_logic_changed": false,
+  "physical_bulk_Dirac_parent_law_introduced": false,
+  "preserved_results": [
+    "BHSM_Y_SIGMA_EXP_MINUS_BETA_REJECTED_BY_CANONICAL_NORMALIZATION",
+    "BHSM_AVAILABLE_C_BHSM_HAS_ZERO_LIGHT_HEAVY_COUPLING",
+    "BHSM_LOWER_SHEET_KILL_SCREEN_REQUIRES_ONE_MISSING_HESSIAN_INVARIANT",
+    "BHSM_AUXILIARY_INDEX_ONE_CERTIFIED"
+  ],
+  "primary_result": "BHSM_MINIMAL_WELL_POSED_ACTION_HAS_NO_JUNCTION_MIXING_TERM",
+  "sector_dependent_coupling_introduced": false,
+  "source_main_sha": "9aec8bb759326e08e2215c0c8e11c3458f761ddd",
+  "sprint": "bhsm-action-selected-junction-functional-v6-10-0",
+  "status": "BHSM_JUNCTION_K_PROP_REJECTED_FOR_CURRENT_ACTION",
+  "v6_9_scientific_sha": "d2a084b39babff72550fb0eac3d00fbd01afc7aa",
+  "version": "v6.10.0"
+}

@@ -1469,3 +1469,39 @@ domain; APS data remain unavailable there.
 predictions and official prediction logic are unchanged, with no measured
 input, fitted matrix, sector-dependent coupling, physical bulk Dirac parent
 law, global spectrum, or full PDE introduced.
+
+<!-- BHSM_ACTION_SELECTED_JUNCTION_FUNCTIONAL_V6_10_0 -->
+## v6.10.0 action-selected junction functional
+
+Primary result:
+`BHSM_MINIMAL_WELL_POSED_ACTION_HAS_NO_JUNCTION_MIXING_TERM`.
+
+The stored P1 geometry has one smooth oriented boundary. Its GHY coefficient
+is fixed by `kappa_1`, but B1 and the moving cap endpoint do not declare a
+second boundary face, normal pair, joint angle, or codimension-two corner.
+Hence no gravitational joint term is presently required.
+
+The surviving family symmetry is exactly cyclic C3. Its Hermitian commutant
+is the three-real-parameter circulant algebra
+`a I+x(C+C^2)+iy(C-C^2)`, with exact eigenvalues
+`a+2x`, `a-x-sqrt(3)y`, and `a-x+sqrt(3)y`. Nonuniversal optional junction
+response is permitted but not action fixed.
+
+The matter Green form still admits a `U(1)` family of maximal-isotropic
+domains. Because the current action contains no junction generator, it
+selects no member. Its action-derived trace operator is exactly zero, so
+`j_01=0`, `V_LH=0`, the junction energy correction vanishes, and no
+`K_prop` or relative phase is generated. Optional mass-like Clifford terms
+would require independent coefficients and point traces absent from v6.7.
+
+At `Psi_background=0`, a quadratic fermion junction term contributes no
+tree-level classical bending. The present bosonic action exports neither
+`k_b`, `B_+`, nor `B_-`. The minimal optional bosonic junction-volume
+invariant has coefficient `tau_J`, which is not fixed by smooth-boundary
+well-posedness. Thus the result is structural Case 7, with
+`BHSM_JUNCTION_BENDING_REQUIRES_ONE_BOSONIC_CORNER_INVARIANT`.
+
+The v6.8 universal `lambda_geom` theorem and all v6.9 results are preserved.
+Frozen predictions and official prediction logic are unchanged. No measured
+input, fit, sector-dependent coupling, physical bulk Dirac parent law, loop
+term, or phenomenological junction tension is introduced.
