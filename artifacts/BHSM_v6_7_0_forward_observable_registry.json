@@ -1,0 +1,39 @@
+{
+  "absolute_numerical_mass_claimed": false,
+  "artifact": "BHSM_v6_7_0_forward_observable_registry",
+  "assumptions": {
+    "G5_over_Z5": 1,
+    "domain": "rectangular maximal-isotropic diagnostic member",
+    "mesh_points": 321,
+    "q5": 1,
+    "r": 0.01,
+    "y_sigma": 1
+  },
+  "dependency": [
+    "B1 representative",
+    "y_sigma",
+    "domain",
+    "sheet"
+  ],
+  "falsification": "recompute the exported B1 profiles and first-order discretization; a ratio differing by more than 5e-4 fails this diagnostic",
+  "fitted": false,
+  "frozen_predictions_changed": false,
+  "full_BHSM_claimed": false,
+  "measured_derivation_input_used": false,
+  "measured_inputs": [],
+  "monopole_structure_introduced": false,
+  "name": "normalized upper/lower first compact-gap ratio",
+  "official_prediction_logic_changed": false,
+  "physical_bulk_Dirac_parent_law_introduced": false,
+  "physical_prediction": false,
+  "primary_result": "BHSM_BOUNDARY_MATTER_VARIATION_DERIVED_CONDITIONALLY_DOMAIN_AND_NEUTRAL_RESPONSE_OPEN",
+  "remote_branches_deleted": false,
+  "sector_dependent_Yukawa_fit_introduced": false,
+  "source_sha": "134cb35ce20b31d5eb59fa43ec8bf49ec4fc0ea1",
+  "sprint": "bhsm-boundary-matter-dynamics-neutral-response-v6-7-0",
+  "status": "Pre-registered coefficient/domain-dependent diagnostic",
+  "symbol": "R_gap=g_upper/g_lower",
+  "units": "dimensionless normalized cap units",
+  "value": 1.03426465747,
+  "version": "v6.7.0"
+}

@@ -1374,3 +1374,35 @@ Primary result:
 
 CLI:
 `python -m bhsm.interface topological-fr-neutral-dispersion-status --format markdown`.
+
+<!-- BHSM_BOUNDARY_MATTER_DYNAMICS_NEUTRAL_RESPONSE_V6_7_0 -->
+## v6.7.0 boundary matter dynamics and neutral response
+
+Primary result:
+`BHSM_BOUNDARY_MATTER_VARIATION_DERIVED_CONDITIONALLY_DOMAIN_AND_NEUTRAL_RESPONSE_OPEN`.
+
+The adopted first-order boundary invariant now has explicit independent
+matter/adjoint equations, scalar and gauge-current source functionals, a
+minimal stress tensor, and a Green boundary form. Canonical normalization
+retains one dimensionless primitive, `y_sigma`.
+
+The action does not select a unique self-adjoint junction domain. The reduced
+normal Green form admits a `U(1)` family of maximal-isotropic domains, so the
+domain remains one additional action axiom.
+
+On a declared diagnostic domain, the actual nonlinear v6.1.7 upper/lower B1
+cap profiles have an index-one zero mode, positive gap, mesh convergence, and
+finite-difference/shooting agreement. Missing angular Clifford, curvature,
+connection, Berger, polarization, and junction-domain terms prevent promotion
+to the complete physical B1 spectrum.
+
+The three minimal light zero modes are degenerate and have no derived
+light-heavy coupling. Their Schur correction and `K_prop` vanish, so the
+available operator generates no relative neutral `L/E` phase. Constant heavy
+compact levels retain the operational meaning of vacuum mass-squared.
+
+Active construction:
+`V6_7_0_EXPLICIT_C_BHSM_JUNCTION_DOMAIN_AND_PROPAGATING_HEAVY_MODE_COUPLING_REQUIRED`.
+
+Command:
+`python -m bhsm.interface boundary-matter-neutral-response-status --format markdown`.

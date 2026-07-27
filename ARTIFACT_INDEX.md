@@ -904,3 +904,20 @@ Full-BHSM integration, hidden-input, and final-report records.
 
 Doctrine:
 `docs/bhsm_topological_fr_neutral_dispersion_v6_6_0.md`.
+
+<!-- BHSM_BOUNDARY_MATTER_DYNAMICS_NEUTRAL_RESPONSE_V6_7_0 -->
+## Boundary matter dynamics and neutral response v6.7.0
+
+The 28 deterministic artifacts enumerated by
+`src/bhsm/interface/boundary_matter_dynamics_neutral_response.py` cover the
+PR #166 handoff and merge audit; adopted combined action; independent matter
+variation; scalar, Berger, current, stress, and boundary-form source ledgers;
+self-adjoint domain classification; actual nonlinear upper/lower B1 cap
+spectra and convergence; vectorlike and family diagnostics; neutral Schur
+reduction, propagation-response, phase, zero-rest-mass, and PMNS audits;
+polarization, sheet, connection, Hessian, and scalar-wall forward links; a
+preregistered diagnostic; integration and hidden-input ledgers; and the final
+report.
+
+Doctrine:
+`docs/bhsm_boundary_matter_dynamics_neutral_response_v6_7_0.md`.

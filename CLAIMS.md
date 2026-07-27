@@ -1267,3 +1267,47 @@ Primary status:
 `BHSM_TOPOLOGICAL_FR_AND_NEUTRAL_DISPERSION_ARCHITECTURE_DERIVED_CONDITIONALLY`.
 
 `FULL_BHSM_NOT_COMPLETE`
+
+<!-- BHSM_BOUNDARY_MATTER_DYNAMICS_NEUTRAL_RESPONSE_V6_7_0 -->
+## v6.7.0 constructive claim ledger
+
+Adopted input:
+
+- the minimal boundary invariant
+  `C_BHSM+y_sigma sigma Gamma_star`, with one retained dimensionless
+  primitive `y_sigma`;
+- a declared maximal-isotropic reduced domain for numerical diagnostics.
+
+Derived:
+
+- independent matter/adjoint equations and the scalar and representation
+  current sources;
+- the minimal boundary stress and Green boundary form;
+- a `U(1)` family of reduced maximal-isotropic self-adjoint domains;
+- the Hermitian light-heavy Schur reduction.
+
+Numerically validated:
+
+- an index-one zero mode and positive gap on the actual nonlinear v6.1.7
+  upper/lower B1 cap profiles;
+- mesh convergence and finite-difference/shooting agreement in the declared
+  diagnostic domain;
+- a coefficient- and domain-dependent sheet gap-ratio regression.
+
+Rejected or not generated:
+
+- unique junction-domain selection by the current adopted action;
+- a nontrivial neutral `K_prop` or relative `L/E` phase from the available
+  minimal light sector;
+- dynamic polarization or global fold-sheet selection from the available
+  normal spectrum.
+
+Still requiring construction:
+
+- the complete covariant `C_BHSM` and action-selected junction domain;
+- propagation-activated light-heavy coupling;
+- occupation/determinant prescriptions and the full constrained spectrum;
+- dynamic polarization, absolute scale, and empirical confrontation.
+
+Primary status:
+`BHSM_BOUNDARY_MATTER_VARIATION_DERIVED_CONDITIONALLY_DOMAIN_AND_NEUTRAL_RESPONSE_OPEN`.
