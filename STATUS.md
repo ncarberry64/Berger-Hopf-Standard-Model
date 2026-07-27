@@ -1505,3 +1505,38 @@ The v6.8 universal `lambda_geom` theorem and all v6.9 results are preserved.
 Frozen predictions and official prediction logic are unchanged. No measured
 input, fit, sector-dependent coupling, physical bulk Dirac parent law, loop
 term, or phenomenological junction tension is introduced.
+
+<!-- BHSM_SCALAR_WALL_FOLD_MORSE_SHEET_SELECTION_V6_11_0 -->
+## v6.11.0 scalar-wall fold Morse sheet selection
+
+Primary result:
+`BHSM_TWO_FOLD_SHEETS_HAVE_OPPOSITE_REDUCED_HESSIAN_SIGN`.
+
+The Puiseux solution tangent changes the action control:
+`d mu_tau/dr=tau nu_1`, while `d X_tau/dr=tau chi_1`. After separating that
+parameter component, the one-sided fixed-control fold vector contains the
+critical scalar mode, the stored warp/lapse correction, endpoint traces, and
+`delta X=tau chi_1`; it is not pure gauge because it changes intrinsic
+four-curvature.
+
+Feynman--Hellmann fixes the reduced unfolding coefficient. With
+`q=r=|epsilon|`,
+`Gamma_red,tau=Gamma_c+(delta_mu/4)q^2-tau(nu_1/6)q^3+O(q^4)`.
+This reproduces the frozen on-shell cusp and yields
+`B_tau^red=-tau(nu_1/2)q+O(q^2)` at fixed `mu`.
+
+The intrinsic map `sign(X-2)=tau` is invariant under normal and radial
+orientation reversal. Under the adopted v6.2 naming, `tau=+1` is the
+upper/exterior sheet and has negative reduced curvature; `tau=-1` is the
+lower/core-facing sheet and has positive reduced curvature near the fold.
+The requested core-facing negative curvature is not generated.
+
+The scalar collective kinetic contribution is strictly positive and obeys
+`k_q^scalar>=2` in the two-cap normalization. The total sign remains open
+because the x-dependent P1+GHY+B1 gravitational/lapse/endpoint Schur
+reduction `k_q^grav,red` is not stored. Consequently no physical tachyon,
+ghost, or Morse-index lower bound is certified.
+
+No `tau_J`, new primitive, neutral construction, measured input, fermion
+loop, physical bulk Dirac law, frozen-prediction change, or official
+prediction-logic change is introduced.

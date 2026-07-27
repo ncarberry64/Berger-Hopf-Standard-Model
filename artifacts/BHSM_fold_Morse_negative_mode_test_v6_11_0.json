@@ -1,0 +1,63 @@
+{
+  "artifact": "BHSM_fold_Morse_negative_mode_test_v6_11_0",
+  "fermion_loop_introduced": false,
+  "formal_H_phys": [
+    [
+      "-c_1**2/h_c + h_qq",
+      "-c_1*c_2/h_c + h_qx"
+    ],
+    [
+      "-c_1*c_2/h_c + h_qx",
+      "-c_2**2/h_c + h_xx"
+    ]
+  ],
+  "frozen_predictions_changed": false,
+  "global_stability_claimed": false,
+  "lambda_geom_changed": false,
+  "measured_inputs_used": false,
+  "morse": {
+    "Morse_index_lower_bound": null,
+    "Rayleigh_quotients": {
+      "core": "[+nu_1 q/2+O(q^2)]/k_q",
+      "exterior": "[-nu_1 q/2+O(q^2)]/k_q"
+    },
+    "asymptotic_sign": {
+      "core": "positive for sufficiently small q>0",
+      "exterior": "negative for sufficiently small q>0"
+    },
+    "core_negative_mode": false,
+    "core_result": "BHSM_CORE_FACING_SHEET_PHYSICAL_NEGATIVE_MODE_NOT_CERTIFIED",
+    "exterior_result": "BHSM_EXTERIOR_FOLD_REDUCED_CURVATURE_IS_NEGATIVE",
+    "ghost_certified": false,
+    "global_stability": false,
+    "kinetic_norm": "k_q=k_q^scalar+k_q^grav,red",
+    "kinetic_sign": null,
+    "modulus_certified": false,
+    "physical_tachyon_certified": false,
+    "reason_no_minmax_certificate": "Rayleigh--Ritz requires the unresolved positive total kinetic norm",
+    "reduced_hessians": {
+      "tau_minus_core": "+(nu_1/2)q+O(q^2)",
+      "tau_plus_exterior": "-(nu_1/2)q+O(q^2)"
+    },
+    "result": "BHSM_TWO_FOLD_SHEETS_HAVE_OPPOSITE_REDUCED_HESSIAN_SIGN",
+    "upper_stability": "not certified; only one reduced potential direction is negative and its kinetic norm is unresolved"
+  },
+  "neutral_transport_used": false,
+  "new_primitive_introduced": false,
+  "official_prediction_logic_changed": false,
+  "phenomenological_junction_action_added": false,
+  "physical_bulk_Dirac_law_introduced": false,
+  "preserved_results": [
+    "BHSM_Y_SIGMA_EXP_MINUS_BETA_REJECTED_BY_CANONICAL_NORMALIZATION",
+    "BHSM_AVAILABLE_C_BHSM_HAS_ZERO_LIGHT_HEAVY_COUPLING",
+    "BHSM_AUXILIARY_INDEX_ONE_CERTIFIED",
+    "BHSM_MINIMAL_WELL_POSED_ACTION_HAS_NO_JUNCTION_MIXING_TERM"
+  ],
+  "primary_result": "BHSM_TWO_FOLD_SHEETS_HAVE_OPPOSITE_REDUCED_HESSIAN_SIGN",
+  "source_main_sha": "3e5b8069d8f06852dfdc7d9c8023b441b7486a8b",
+  "sprint": "bhsm-scalar-wall-fold-morse-sheet-selection-v6-11-0",
+  "status": "BHSM_TWO_FOLD_SHEETS_HAVE_OPPOSITE_REDUCED_HESSIAN_SIGN",
+  "tau_J_introduced": false,
+  "v6_10_head_sha": "ea79f96b07bc9ca0cee30c42fb5c2e5b2ee1fc0f",
+  "version": "v6.11.0"
+}
