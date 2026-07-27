@@ -1699,3 +1699,66 @@ No new action term, coefficient, primitive, arbitrary boundary condition,
 boundary tension, `tau_J`, radion potential, measured input, neutral work,
 physical bulk Dirac law, frozen-prediction change, or official
 prediction-logic change is introduced.
+
+<!-- BHSM_SEAM_SLIDE_SYMMETRY_QUOTIENT_V6_16_0 -->
+## v6.16.0 finite seam-slide symmetry and interface quotient
+
+Primary result:
+`BHSM_SEAM_SLIDE_HAS_NONZERO_HIGHER_ORDER_ACTION_COST`.
+
+The collar gluing map
+`(y,x)_+ ~ (-y,Phi_y(x))_-` has first normal glue jet
+`V=partial_y Phi_y|_0`. Metric pullback gives
+`V=N_++N_-` in outward-cap conventions, so the gradient sector is the
+difference trace
+`lambda_jet=S_common,+ + S_common,-=S_out,+-S_out,-`.
+The unresolved Z2-compatible threading trace is instead the average
+`Sbar=(S_out,++S_out,-)/2`. Reflection sets the glue jet to zero while
+leaving arbitrary `Sbar`; seam threading is therefore not the first normal
+gluing jet.
+
+The minimal finite trace shift sends both outward traces to
+`S_out,+/- + lambda` and the common-normal traces to
+`S_common,+ + lambda`, `S_common,- - lambda`. A smooth reflected collar
+profile provides an off-shell global field map with identity, additive
+composition, and inverse `-lambda`. It fixes the wall, fold coordinate,
+support, scalar, induced metric, lapse, and B1 data. Constant spacetime
+`lambda` is a trivial stabilizer, while nonconstant modes shift the ADM
+vector by `D lambda`.
+
+For nonconstant `lambda`,
+`delta K_mn=-D_m D_n lambda/N` and
+`delta Q_mn=-(D_m D_n lambda-h_mn D^2 lambda)/N`. The map therefore changes
+one-sided extrinsic curvature, the junction momentum, and generically bulk
+curvature. The P1+GHY action has a momentum-constraint first variation plus
+divergences, which vanishes on the constrained static fold, but its first
+nonzero term is quadratic:
+`N^-2[(D_mD_n lambda)^2-(D^2 lambda)^2]`. On a round spatial S3 harmonic it
+integrates, per `integral lambda^2`, to
+`-2 ell(ell+2)/a^4`, nonzero for every `ell>=1`.
+
+The radial shift remains a multiplier and its multiplier-only variation is
+a presymplectic null direction, but that direction is not tangent to the
+nonlinear solution space and is not an action symmetry. The actual
+first-class momentum generator produces the previously declared
+diffeomorphisms, under which `S` is invariant. No new Noether identity,
+first-class constraint, boundary charge, or reducibility follows.
+
+An abstract coefficient-free core-contact functional independent of
+threading is admissible only as an unadopted BHSM identification. No such
+functional is present in the frozen action, and its independence would not
+erase the changed junction momentum, bulk curvature, or action. Hence the
+finite seam slide is neither an exact redundancy, a global on-shell
+degeneracy, nor a physical flat modulus. It is an accidental linearized
+null/domain label lifted at quadratic order.
+
+The interface quotient is not taken:
+`unresolved_interface_trace_count_before=1` and
+`unresolved_interface_trace_count_after=1`. Setting the trace to zero would
+remain an arbitrary condition. The fold route stays paused, and no fold
+kinetic or mass coefficient is evaluated.
+
+No new action term, coefficient, primitive, arbitrary boundary condition,
+boundary tension, `tau_J`, radion potential, measured input, neutral work,
+physical bulk Dirac law, frozen-prediction change, or official
+prediction-logic change is introduced.
