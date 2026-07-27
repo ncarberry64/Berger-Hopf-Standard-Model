@@ -1647,3 +1647,55 @@ No new action term, coefficient, primitive, boundary tension, `tau_J`,
 radion potential, arbitrary threading condition, measured input, neutral
 work, physical bulk Dirac law, frozen-prediction change, or official
 prediction-logic change is introduced.
+
+<!-- BHSM_Z2_DOUBLE_CAP_THREADING_DOMAIN_V6_15_0 -->
+## v6.15.0 Z2 double-cap scalar threading domain
+
+Primary result:
+`BHSM_Z2_SYMPLECTIC_FLUX_LEAVES_ONE_INTERFACE_TRACE`.
+
+For cap coordinates increasing from each regular pole to the common
+junction, the signed coordinate is
+`y=rho_+-rho_J` on `M_+` and `y=rho_J-rho_-` on `M_-`. Thus
+`n_common=n_+=-n_-`. Reflection reverses common-normal `K` and `Q` while
+the copied outward-cap values agree, reproducing `[Q]=2Q_+` without forcing
+the nonzero one-sided extrinsic curvature to vanish.
+
+The metric pullback gives even `N`, `psi`, and `E`, and odd signed-coordinate
+shift `B`. The odd wall, its fold tangent, and `sigma_hat` are odd.
+Fixed-gluing gauge transformations have odd continuous `xi^y`, hence
+`xi^y|Sigma=0`, while tangential `xi` is even. The full threading invariant
+obeys `S_common,-=-S_common,+`, equivalently
+`S_out,-=S_out,+`; parity does not set either one-sided value to zero because
+the matcher does not establish continuity of `B` or `partial_y E`.
+
+The copied outward-cap constraint sources are `(J_tau,J_tau)`, with
+`J_tau=-3 tau chi_1 t/[4 sin^2(pi t/4)]`. Common-normal conversion gives
+`(J_tau,-J_tau)`, an odd signed-interval source independent of scalar sign.
+Its even-weight integral vanishes, but the absent coupled operator and
+adjoint kernels prevent a full Fredholm claim.
+
+The exact interface canonical pairs are induced metric with
+`(kappa_1/2)Q_out` and scalar trace with `-Z5 n_out sigma`. The radial shift
+is a multiplier, so `S_Sigma` has zero canonical momentum and no independent
+interface conjugate. After matching, the linearized junction, Ward
+identities, and odd scalar Dirichlet data are imposed, total interface
+symplectic flux vanishes for arbitrary reflection-compatible `S_Sigma`.
+The four raw scalar junction projections contain two Ward dependencies and
+no independent threading equation.
+
+Fixed support and the unadopted v6.14 composite support each leave one trace.
+A moving reflection `y-zeta(x)->-[y-zeta(x)]` changes the gluing datum and is
+not a gauge transformation of the frozen double. The shortcut using adapted
+parity to impose `B=partial_y E=zeta=0` is rejected.
+
+The exact count is `unresolved_interface_trace_count=1`. No Green operator,
+pseudoinverse, fold kinetic coefficient, or physical homogeneous kernel is
+invented. The fold-route decision is Case C: pause until an action-derived
+or explicitly adopted BHSM interface-domain axiom fixes the remaining
+gauge-invariant trace.
+
+No new action term, coefficient, primitive, arbitrary boundary condition,
+boundary tension, `tau_J`, radion potential, measured input, neutral work,
+physical bulk Dirac law, frozen-prediction change, or official
+prediction-logic change is introduced.
