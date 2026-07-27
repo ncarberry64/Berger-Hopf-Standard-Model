@@ -1,0 +1,154 @@
+{
+  "artifact": "BHSM_minimum_threading_axiom_and_domain_v6_17_0",
+  "axiom": {
+    "classification": "Adopted BHSM axiom",
+    "coefficient_free": true,
+    "common_core": {
+      "density": null,
+      "distance": null,
+      "duration": null,
+      "metric": null,
+      "ordinary_inside_outside": null,
+      "ordinary_stress_tensor": null
+    },
+    "historical_status": "S_Sigma=0 was not previously derived or licensed as a quotient representative; v6.17 explicitly adopts it as domain data.",
+    "name": "BHSM_MINIMUM_NET_THREADING_AXIOM",
+    "new_action_term": false,
+    "old_action_derivation_claimed": false,
+    "one_cap_Z2_consequence": "S_out,Sigma,+=S_out,Sigma,-=S_Sigma=0",
+    "physical_interpretation": "Uniform contact with an unmarked common core selects zero net longitudinal threading bias in the resting configuration.",
+    "seam_potential_adopted": false,
+    "seam_stiffness_coefficient": null,
+    "statement": "Sbar_Sigma(x)=1/2[S_out,Sigma,+(x)+S_out,Sigma,-(x)]=0 for all admissible scalar harmonics in the resting interface domain."
+  },
+  "boundary_tension": false,
+  "consistency": {
+    "Ward": {
+      "Codazzi_Bianchi_counted_as_new_equation": false,
+      "axiom_duplicates_Ward_identity": false,
+      "role": "the bulk momentum constraint evaluates the compatibility of the independent boundary trace with the junction tangent"
+    },
+    "Z2": {
+      "average_rule_equivalent_to_one_cap_zero": true,
+      "glue_jet_difference_preserved": true,
+      "outward_relation": "S_out,Sigma,+=S_out,Sigma,-"
+    },
+    "condition_count": {
+      "admissible_dynamical_fold_solutions_after": 0,
+      "duplicate_conditions": 0,
+      "formal_free_trace_after": 0,
+      "interpretation": "the count closes formally, but the inhomogeneous momentum source fails the imposed endpoint value",
+      "new_scalar_trace_conditions": 1,
+      "unresolved_trace_before": 1
+    },
+    "gauge": {
+      "E_zero_gauge_allowed": true,
+      "Sbar_invariant_under_declared_diffeomorphisms": true,
+      "fixed_support_form": "E=0 and zeta=0 imply S_Sigma=B_Sigma",
+      "result": "kinematically consistent"
+    },
+    "junction": {
+      "critical_endpoint_H_q": "tau*chi_1/2",
+      "critical_scalar_flux": 0,
+      "duplicated_by_axiom": false,
+      "independent_metric_condition": "kappa_1[Q_mu_nu]+2C_partial G_mu_nu^(4)=T_partial,mu_nu"
+    },
+    "pole": {
+      "axiom_alone_conflicts_with_pole_regularity": false,
+      "limit_t_to_zero": 0,
+      "regular": true,
+      "required_constraint_profile": "-tau*pi*chi_1*t/16"
+    },
+    "result": "BHSM_MINIMUM_THREADING_AXIOM_OVERCONSTRAINS_FOLD_CONSTRAINT",
+    "support": {
+      "composite_center_manifold": "axiom gives the same invariant S_Sigma=0 after zeta is reconstructed from sigma_hat",
+      "fixed_iota": "axiom gives B_Sigma=0 in E=0 gauge",
+      "official": "fixed-iota support (least assumption-heavy)",
+      "support_choice_changes_obstruction": false
+    },
+    "v6_16_seam_cost": {
+      "conflict_with_homogeneous_resting_background": false,
+      "conflict_with_nonconstant_fold_tangent": true,
+      "old_action_proves_minimum": false,
+      "reason": "the P1 Hessian is nonzero and convention/sign dependent; the boundary rule is an axiom, not an induced potential",
+      "zero_trace_is_stationary": true
+    }
+  },
+  "endpoint_obstruction": {
+    "analytic_q_to_zero": "S_Sigma(q)=-tau*pi*chi_1*q/16+O(q^2)",
+    "convergence_study_started": false,
+    "finite_q_consequence": "by continuity no sufficiently small q>0 sequence satisfying S_Sigma=0 can converge to the fold tangent",
+    "lower_core_tau_minus": {
+      "axiom_value": 0.0,
+      "momentum_residual": 7.9024618073131805,
+      "partial_q_S_required": 1.0344298316303753
+    },
+    "normalized_chi_1": 5.26830787154212,
+    "normalized_nu_1": 109.6666817404231,
+    "reason": "the q=0 compatibility residual is bounded away from zero",
+    "result": "BHSM_MINIMUM_THREADING_AXIOM_OVERCONSTRAINS_FOLD_CONSTRAINT",
+    "scalar_sign_independent": true,
+    "scalar_sign_minus": "same",
+    "scalar_sign_plus": "same",
+    "upper_exterior_tau_plus": {
+      "axiom_value": 0.0,
+      "momentum_residual": -7.9024618073131805,
+      "partial_q_S_required": -1.0344298316303753
+    }
+  },
+  "fitted_parameter": false,
+  "frozen_predictions_changed": false,
+  "generic_pseudoinverse": false,
+  "measured_input": false,
+  "metric_assigned_to_common_core": false,
+  "neutral_work": false,
+  "new_action_term": false,
+  "new_dimensionful_primitive": false,
+  "new_numerical_primitive": false,
+  "official_prediction_logic_changed": false,
+  "physical_bulk_Dirac_law": false,
+  "pr_176_merge_sha": "bd1f929d2f04d37f876bb798eaf57da22adc8b21",
+  "primary_result": "BHSM_MINIMUM_THREADING_AXIOM_OVERCONSTRAINS_FOLD_CONSTRAINT",
+  "provenance": [
+    {
+      "item": "ADM momentum constraint and constant-curvature commutator",
+      "status": "Adopted from established physics/mathematics"
+    },
+    {
+      "item": "minimum net threading rule Sbar_Sigma=0",
+      "status": "Adopted BHSM axiom"
+    },
+    {
+      "item": "uniform unmarked-core interpretation",
+      "status": "BHSM identification"
+    },
+    {
+      "item": "Z2 one-cap zero trace",
+      "status": "Derived consequence"
+    },
+    {
+      "item": "critical required profile S=-tau*pi*chi_1*t/16",
+      "status": "Derived consequence"
+    },
+    {
+      "item": "nonzero normalized endpoint residual",
+      "status": "Numerically validated"
+    },
+    {
+      "item": "minimum-threading domain for a dynamical fold tangent",
+      "status": "Rejected by calculation"
+    },
+    {
+      "item": "alternative action-derived fold-compatible interface domain",
+      "status": "Active construction target"
+    }
+  ],
+  "radion_potential": false,
+  "seam_potential_added": false,
+  "seam_stiffness_coefficient": false,
+  "source_main_sha": "bd1f929d2f04d37f876bb798eaf57da22adc8b21",
+  "sprint": "bhsm-minimum-threading-fold-kinetic-closure-v6-17-0",
+  "tau_J": false,
+  "v6_16_head_sha": "8975cf83486833d32d4f5864240291fcd35819db",
+  "version": "v6.17.0"
+}

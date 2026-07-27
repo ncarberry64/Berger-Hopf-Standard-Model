@@ -1762,3 +1762,70 @@ No new action term, coefficient, primitive, arbitrary boundary condition,
 boundary tension, `tau_J`, radion potential, measured input, neutral work,
 physical bulk Dirac law, frozen-prediction change, or official
 prediction-logic change is introduced.
+
+<!-- BHSM_MINIMUM_THREADING_FOLD_KINETIC_V6_17_0 -->
+## v6.17.0 minimum net threading axiom and fold kinetic domain
+
+The coefficient-free
+`BHSM_MINIMUM_NET_THREADING_AXIOM` is now adopted:
+`Sbar_Sigma=(S_out,Sigma,++S_out,Sigma,-)/2=0` in the resting interface
+domain. With Z2-compatible outward traces its one-cap form is
+`S_Sigma=0`. This is explicitly adopted domain data, not a result derived
+from the old P1+GHY+B1+scalar action and not a seam-slide quotient. No
+metric, duration, density, ordinary stress tensor, or ordinary
+inside/outside structure is assigned to the common core.
+
+The rule is gauge invariant, Z2 compatible, pole-regular, and independent
+of the metric junction and its Codazzi/Bianchi Ward identities. It supplies
+one formal trace condition without duplicating an inherited equation. Fixed
+support is the official least-assumption domain; the conditional composite
+support gives the same gauge-invariant trace condition.
+
+The leading critical momentum constraint nevertheless rejects the hard
+extension of the rule to every dynamical fold harmonic. With
+`a0=sqrt(2)sin(pi t/4)`, `N0=pi/4`, and `Xc=2`, its exact threading subblock
+is
+`J_shift+L_S S_q=0`, where
+`J_shift=-3 tau chi_1 t/[4 sin^2(pi t/4)]` and
+`L_S=-3Xc/(N0 a0^2)`. The unique regular solution is
+the linear response `S_q,req(t)=-tau pi chi_1 t/16`, so
+`partial_q S_req,Sigma=-tau pi chi_1/16`, while the axiom imposed for every
+q has zero linear response. Equivalently, the endpoint residual is
+`-3 tau chi_1/2`; the critical scalar flux cannot cancel it. The obstruction
+has equal magnitude and opposite sign on the two sheets and is scalar-sign
+independent.
+
+The domain theorem is
+`BHSM_MINIMUM_THREADING_AXIOM_OVERCONSTRAINS_FOLD_CONSTRAINT` when the
+resting rule is imposed as a hard condition on nonconstant fold harmonics.
+The trace count changes formally from one to zero, but the resulting
+dynamical fold domain is empty at leading `D_mu q` order. Per the
+inconsistency stop rule, no full constraint operator, Fredholm projector,
+Green operator, or generic pseudoinverse is manufactured.
+
+A conditional rest--transition--rest interpretation remains viable as a
+BHSM identification: zero threading may select early and late resting
+configurations, while a transition carries the nonzero
+constraint-determined threading profile and later relaxes. A white-hole-like
+early release is a possible M4/interface interpretation, not a derived
+result; no time is assigned to the common core. Making this official
+requires a covariant phase criterion or action-derived switching law.
+
+`K_scalar>=2` and
+`K_Weyl=3 chi_1^2(4-pi)^2/(16 pi)=1.220620174933802...` remain positive,
+but `K_shift+endpoint^red` and `k_q^E` are undefined on the rejected domain.
+The kinetic theorem is
+`BHSM_FOLD_KINETIC_REMAINS_UNRESOLVED_BY_EXACT_OPERATOR_OBSTRUCTION`.
+The fold coordinate is not promoted to a four-dimensional field, and no
+positive-norm, ghost, null, nondynamical, or physical-mass claim is issued.
+
+The static relation
+`B_tau^red=-tau(nu_1/2)q+O(q^2)` is preserved: the exterior sheet has
+negative reduced static curvature and the core-facing sheet positive
+reduced static curvature in the tested direction. These remain distinct
+from Einstein-frame physical mass numerators.
+
+No new action term, fitted coefficient, measured input, dimensionful
+primitive, boundary tension, `tau_J`, radion potential, seam potential,
+neutral work, physical bulk Dirac law, frozen-prediction change, or official
+prediction-logic change is introduced.
