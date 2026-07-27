@@ -1,0 +1,77 @@
+{
+  "artifact": "BHSM_fold_radial_ADM_scalar_constraints_v6_12_0",
+  "constraints": {
+    "ADM_metric": "ds5^2=N^2 dt^2+h_mu_nu(dx^mu+N^mu dt)(dx^nu+N^nu dt)",
+    "B1_stored_variation": "homogeneous background junction and conservation identities only; no x-dependent scalar shift/endpoint second variation",
+    "Hamiltonian": "delta_N S=0; normal Einstein constraint including scalar and x-dependent metric terms",
+    "boundary_flux_cancellation": null,
+    "bulk_regular_condition": "regular at t=0",
+    "critical_scalar_flux": 0,
+    "endpoint_compensator": null,
+    "homogeneous_mode_classification": "cannot distinguish residual gauge from boundary radion until the endpoint shift condition is fixed",
+    "lapse_solution": null,
+    "missing_boundary_condition": "the scalar radial-shift/longitudinal Green-function condition at the moving B1 endpoint t=1",
+    "momentum": "D_nu(K^nu_mu-delta^nu_mu K)=kappa_1^-1 Z5(n sigma)D_mu sigma",
+    "result": "BHSM_FOLD_KINETIC_SIGN_REQUIRES_MOVING_ENDPOINT_SHIFT_BOUNDARY_CONDITION",
+    "scalar_variables": [
+      "lapse A_q(t)",
+      "radial shift N_mu=partial_mu B_q(t)",
+      "Weyl scalar psi_q(t)",
+      "longitudinal scalar E_q(t)",
+      "endpoint delta rho_J,q",
+      "bulk scalar delta sigma_q(t)"
+    ],
+    "shift_solution": null,
+    "unique_constraint_inverse": false,
+    "zero_shift_admissible": false,
+    "zero_shift_mismatch": "-3 tau chi_1 t/[4 sin(pi t/4)^2] partial_mu q"
+  },
+  "exact_checks": {
+    "H0": "1/tan(pi*t/4)",
+    "H1": "chi_1*t/(4*sin(pi*t/4)**2)",
+    "zero_shift_mismatch_minus": "3*chi_1*t/(4*sin(pi*t/4)**2)",
+    "zero_shift_mismatch_plus": "-3*chi_1*t/(4*sin(pi*t/4)**2)"
+  },
+  "fermion_loop_introduced": false,
+  "frozen_predictions_changed": false,
+  "gauge": {
+    "M4_scalar_parameter": "xi(x,t), delta x^mu=nabla^mu xi",
+    "complete_gauge_fixed": false,
+    "endpoint_invariant": "delta rho_J+xi-compensated induced trace",
+    "fold_not_pure_gauge": "delta X=tau chi_1 is intrinsic",
+    "gauge_kernel_inverted": false,
+    "radial_parameter": "xi^rho(x,t)",
+    "residual_mode": "homogeneous scalar shift solution until a B1 endpoint condition is supplied",
+    "transformations": {
+      "delta_X": "intrinsic pullback curvature is invariant when the endpoint transformation is included",
+      "delta_sigma": "delta_sigma-xi^rho partial_rho sigma_0",
+      "endpoint": "delta rho_J-xi^rho|J",
+      "lapse_A": "A-N0^-1 partial_t(N0 xi^rho)",
+      "longitudinal_E": "E-xi",
+      "psi": "psi-H xi^rho",
+      "shift_B": "B-N0^2 xi^rho-a0^2 partial_t xi"
+    }
+  },
+  "global_stability_claimed": false,
+  "lambda_geom_changed": false,
+  "measured_inputs_used": false,
+  "neutral_transport_used": false,
+  "new_action_term_introduced": false,
+  "new_primitive_introduced": false,
+  "official_prediction_logic_changed": false,
+  "physical_bulk_Dirac_law_introduced": false,
+  "preserved_results": [
+    "BHSM_Y_SIGMA_EXP_MINUS_BETA_REJECTED_BY_CANONICAL_NORMALIZATION",
+    "BHSM_AVAILABLE_C_BHSM_HAS_ZERO_LIGHT_HEAVY_COUPLING",
+    "BHSM_MINIMAL_WELL_POSED_ACTION_HAS_NO_JUNCTION_MIXING_TERM",
+    "BHSM_TWO_FOLD_SHEETS_HAVE_OPPOSITE_REDUCED_HESSIAN_SIGN"
+  ],
+  "primary_result": "BHSM_FOLD_KINETIC_SIGN_REQUIRES_MOVING_ENDPOINT_SHIFT_BOUNDARY_CONDITION",
+  "sheet_map_changed": false,
+  "source_main_sha": "f4816c03f531becdcbb5dde8f1b025b21eeb770e",
+  "sprint": "bhsm-fold-einstein-frame-kinetic-reduction-v6-12-0",
+  "status": "BHSM_FOLD_KINETIC_SIGN_REQUIRES_MOVING_ENDPOINT_SHIFT_BOUNDARY_CONDITION",
+  "tau_J_introduced": false,
+  "v6_11_head_sha": "3688995f49a77c270f20ccc9817e5a69a82a0a58",
+  "version": "v6.12.0"
+}
