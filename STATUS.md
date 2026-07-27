@@ -1572,3 +1572,39 @@ unchanged.
 No new action term, `tau_J`, new primitive, measured input, neutral
 construction, fermion loop, physical bulk Dirac law, frozen-prediction
 change, or official prediction-logic change is introduced.
+
+<!-- BHSM_MOVING_ENDPOINT_SHIFT_DOMAIN_V6_13_0 -->
+## v6.13.0 moving-endpoint scalar-shift domain
+
+Primary result:
+`BHSM_EXISTING_B1_VARIATION_DOES_NOT_SUPPLY_SHIFT_BOUNDARY_DATA`.
+
+For the convention
+`delta g -> delta g-L_xi g` and
+`rho_Sigma=rho_J+zeta`, the exact linear endpoint threading invariant is
+
+`S_Sigma=[B+N0^2 zeta-a0^2 partial_rho E]_Sigma`.
+
+The frozen B1 variational problem fixes the support and embedding `iota`,
+while varying the bulk metric, independent intrinsic metric, and exact
+matching multiplier. It derives
+`kappa_1[Q_mu_nu]+2C_partial G_mu_nu=T_partial,mu_nu`
+and the bulk momentum constraint. Since the ADM shift has no radial
+derivative and `zeta` is not a freely varied action field, the first
+variation contains no independent `delta S_Sigma` coefficient and supplies
+no scalar shift/longitudinal endpoint condition.
+
+`S_Sigma` is gauge invariant, so its undetermined homogeneous trace is not
+residual gauge. It is not called a physical radion because the repository
+does not vary the embedding. No constraint operator, pseudoinverse, Green
+function, Schur kinetic correction, total `k_q^E` sign, or physical mass is
+constructed.
+
+The preserved results are `F0=M4^2=pi/2`, `K_scalar>=2`, the positive exact
+Weyl contribution, and the v6.12 zero-shift mismatch. The exact remaining
+input is an action-domain declaration for x-dependent embedding variation or
+an action-derived endpoint-threading domain.
+
+No arbitrary boundary condition, new action term, primitive, `tau_J`,
+boundary tension, radion potential, measured input, neutral work,
+frozen-prediction change, or official prediction-logic change is introduced.

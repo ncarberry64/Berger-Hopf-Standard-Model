@@ -1,0 +1,123 @@
+{
+  "arbitrary_boundary_condition_added": false,
+  "artifact": "BHSM_moving_endpoint_variation_v6_13_0",
+  "boundary_data": {
+    "constrained": [
+      "h_mu_nu=iota^*g_mu_nu",
+      "bulk Hamiltonian and momentum constraints",
+      "metric junction condition",
+      "a_Sigma=1 and the stored scalar-wall junction traces"
+    ],
+    "fixed": [
+      "B1 support/domain and embedding iota",
+      "bulk and B1 action coefficients",
+      "topology, Z2 gluing, and normal orientation",
+      "bulk scalar Dirichlet trace sigma_Sigma=0"
+    ],
+    "freely_varied": [
+      "bulk metric and independent intrinsic metric before matching",
+      "metric matching multiplier Lambda",
+      "bulk radial shift in the interior as a constraint multiplier"
+    ],
+    "gauge": [
+      "radial coordinate displacement zeta used to represent the fixed support",
+      "longitudinal scalar E"
+    ],
+    "physically_dynamical": [
+      "constraint-reduced bulk fields",
+      "intrinsic B1 metric/connection/scalar sectors in their declared domain"
+    ],
+    "radion_status": "not established: zeta is not an independent action variable, while S_Sigma is gauge invariant but lacks boundary-domain data",
+    "unspecified": [
+      "gauge-invariant endpoint threading S_Sigma",
+      "a variational rule for x-dependent embedding deformations"
+    ]
+  },
+  "boundary_tension_introduced": false,
+  "embedding_variation_assumed": false,
+  "exact": {
+    "endpoint_shift_invariant": "B - E_rho*a_0**2 + N_0**2*zeta",
+    "mismatch_minus": "3*chi_1*t/(4*sin(pi*t/4)**2)",
+    "mismatch_plus": "-3*chi_1*t/(4*sin(pi*t/4)**2)",
+    "transformed_endpoint_shift": "B - E_rho*a_0**2 + N_0**2*zeta"
+  },
+  "first_variation": {
+    "B1_metric_boundary_term": "integral_Sigma sqrt|gamma| (C_partial G_mu_nu-T_partial,mu_nu/2)delta gamma^mu_nu",
+    "P1_GHY_metric_boundary_term": "(1/2) integral_Sigma sqrt|gamma| kappa_1[Q_mu_nu] delta gamma^mu_nu",
+    "action": "S_P1+S_GHY+S_B1+S_scalar+S_match",
+    "bulk_shift_radial_endpoint_term": 0,
+    "bulk_shift_variation": "D_nu(K^nu_mu-delta^nu_mu K)=kappa_1^-1 Z5(n sigma)D_mu sigma",
+    "coefficient_of_free_delta_S_Sigma": null,
+    "condition_classification": "absent because embedding/threading data are not varied",
+    "derived_metric_condition": "kappa_1[Q_mu_nu]+2C_partial G_mu_nu=T_partial,mu_nu",
+    "embedding_variation": "absent; if it were declared, tangential displacement gives the Codazzi/Ward momentum balance and normal displacement gives a shape equation, neither present in the frozen variational domain",
+    "endpoint_condition": null,
+    "junction_is_shift_boundary_condition": false,
+    "longitudinal_classification": "Codazzi/Bianchi Ward identity after the bulk momentum constraint; not an independent endpoint-domain equation for S_Sigma",
+    "longitudinal_junction_identity": "D^mu(kappa_1[Q_mu_nu]+2C_partial G_mu_nu-T_partial,mu_nu)=-[T_bulk,n nu]",
+    "matching": "vary independent g,h,Lambda; impose h=iota^*g; eliminate Lambda",
+    "reason_no_shift_endpoint_term": "the ADM shift enters K_mu_nu through tangential derivatives and has no radial derivative; at fixed embedding gamma_mu_nu=h_mu_nu, so GHY, B1, scalar Dirichlet data, and S_match contain no independent delta S_Sigma",
+    "result": "BHSM_EXISTING_B1_VARIATION_DOES_NOT_SUPPLY_SHIFT_BOUNDARY_DATA",
+    "scalar_endpoint_term": "-Z5 integral_Sigma sqrt|gamma| (n sigma)delta sigma; the wall problem fixes delta sigma_Sigma=0",
+    "x_dependent_embedding_variation": false
+  },
+  "frozen_predictions_changed": false,
+  "gauge": {
+    "convention": "delta g -> delta g-L_xi g, xi^A=(xi^rho,D^mu xi), rho_Sigma=rho_J+zeta",
+    "delta_X_intrinsic_proof": "radial xi^rho terms cancel in the pullback; an M4 scalar diffeomorphism acts only by the Lie derivative of background X, which vanishes for the homogeneous constant-X fold",
+    "endpoint_conformal_invariant": "Psi_Sigma=[psi+(a0'/a0)zeta]_Sigma",
+    "endpoint_curvature_invariant": "delta X_Sigma=[delta X+X0' zeta]_Sigma",
+    "endpoint_scalar_invariant": "delta sigma_Sigma=[delta sigma+sigma0' zeta]_Sigma",
+    "endpoint_shift_invariant": "S_Sigma=[B+N0^2 zeta-a0^2 partial_rho E]_Sigma",
+    "fixed_endpoint_gauge": "zeta=0 may be chosen with xi^rho|Sigma=-zeta",
+    "longitudinal_gauge": "E=0 may be chosen with xi=E",
+    "residual_classification": "S_Sigma is unchanged by both choices and by their residual transformations; an undetermined S_Sigma trace is not residual gauge",
+    "transformations": {
+      "A": "A-(N0 xi^rho)'",
+      "B": "B-N0^2 xi^rho-a0^2 partial_rho xi",
+      "E": "E-xi",
+      "delta_X": "delta_X-X0' xi^rho",
+      "delta_sigma": "delta_sigma-sigma0' xi^rho",
+      "psi": "psi-(a0'/a0)xi^rho",
+      "zeta": "zeta+xi^rho|Sigma"
+    }
+  },
+  "measured_input_used": false,
+  "neutral_work_performed": false,
+  "new_action_term_introduced": false,
+  "new_primitive_introduced": false,
+  "official_prediction_logic_changed": false,
+  "primary_result": "BHSM_EXISTING_B1_VARIATION_DOES_NOT_SUPPLY_SHIFT_BOUNDARY_DATA",
+  "pullback": {
+    "bulk_ADM_metric": "ds5^2=N^2 d rho^2+h_mu_nu(dx^mu+N^mu d rho)(dx^nu+N^nu d rho)",
+    "embedding": "X^A(x)=(rho_J+zeta(x),x^mu)",
+    "induced_metric_exact": "gamma_mu_nu=[h_mu_nu+N_mu D_nu zeta+N_nu D_mu zeta+(N^2+N_alpha N^alpha)D_mu zeta D_nu zeta]_Sigma",
+    "induced_metric_linear": "delta gamma_mu_nu=delta h_mu_nu+zeta partial_rho h0_mu_nu",
+    "lapse_normal_exact": "N_Sigma=[N^-2+2N^mu D_mu zeta/N^2+(h^mu_nu+N^mu N^nu/N^2)D_mu zeta D_nu zeta]^-1/2",
+    "lapse_normal_linear": "delta N_Sigma=A+zeta partial_rho N0",
+    "level_set_normal": "s_A=(1,-D_mu zeta)",
+    "relative_shift_one_form": "V_mu=N_mu+N^2 D_mu zeta",
+    "scalar_pullback": "sigma_Sigma=sigma0+delta sigma+zeta sigma0'",
+    "shift_enters_induced_metric_at": "quadratic derivative order",
+    "unit_normal_linear": "n_A=(N,-N D_mu zeta); n^mu=-(N^mu+N^2 D^mu zeta)/N"
+  },
+  "radion_potential_introduced": false,
+  "repository_domain": {
+    "B1_geometry": "a provisional codimension-one intrinsic M4 boundary/interface; the Z2 construction uses y=0 and glues two regular caps",
+    "B1_support_in_frozen_action": "fixed boundary domain and fixed embedding iota",
+    "boundary_domains_frozen": true,
+    "embedding_varied": false,
+    "metric_ontology": "independent intrinsic h_mu_nu with exact multiplier constraint h_mu_nu=iota^*g_mu_nu",
+    "rho_J_static_status": "cap length/junction position solved by the homogeneous boundary-value problem; not promoted to an x-dependent embedding field",
+    "shift_boundary_value_fixed": false,
+    "static_transversality": "v6.1.7 includes the one-dimensional moving-upper-limit/domain shape response along the homogeneous cap family",
+    "v6_11_moving_endpoint": "proper-normal coordinate representation of the same solved domain; fixed-domain and moving-coordinate descriptions agree after matching endpoint data",
+    "zeta_action_variable": false
+  },
+  "source_main_sha": "39a01dcc877105a41d0dfa145407585d55906756",
+  "sprint": "bhsm-moving-endpoint-shift-domain-v6-13-0",
+  "status": "BHSM_EXISTING_B1_VARIATION_DOES_NOT_SUPPLY_SHIFT_BOUNDARY_DATA",
+  "tau_J_introduced": false,
+  "v6_12_head_sha": "b8d6c1550ade4cb2c86e331f8f74cb001d35b94b",
+  "version": "v6.13.0"
+}
