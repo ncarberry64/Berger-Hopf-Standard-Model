@@ -1829,3 +1829,60 @@ No new action term, fitted coefficient, measured input, dimensionful
 primitive, boundary tension, `tau_J`, radion potential, seam potential,
 neutral work, physical bulk Dirac law, frozen-prediction change, or official
 prediction-logic change is introduced.
+
+<!-- BHSM_COVARIANT_THREADING_RESPONSE_V6_18_0 -->
+## v6.18.0 covariant threading response and local fold phase
+
+The corrected resting principle fixes only the source-free homogeneous
+integration constant `C_Sigma=0`; it does not impose
+`partial_q Sbar_Sigma=0`. The v6.17 hard zero rule remains rejected during
+active fold transitions.
+
+The existing v6.16 P1 Hessian and v6.17 momentum constraint define an induced
+Hamilton--Jacobi threading functional on the symmetric background:
+`Gamma_eff=1/2<S,K_Sigma S>+
+<S,K_Sigma tau(pi chi_1/16)q>+Gamma_0`. This is an on-shell constrained-collar
+response derived from the existing action, not a new fundamental B1 term.
+On round spatial S3,
+`K_Sigma,ell=-2 ell(ell+2)/a^4`. Its `ell=0` kernel is the integration
+constant; every `ell>=1` mode is invertible and gives
+`Pi_perp Sbar=-tau(pi chi_1/16)Pi_perp q`.
+
+The source is derivative generated and vanishes whenever `D_mu q=0`.
+Therefore
+`BHSM_FOLD_SOURCE_VANISHING_REPLACES_EXPLICIT_ENERGY_THRESHOLD`: no
+activation scale, energy observer, switching function, or fitted threshold
+is needed. The fold discriminant, static Hessian eigenvalue, scalar-wall
+invariants, normal stress, and intrinsic curvature do not by themselves
+distinguish rest from transition. `Dq^2` does, but is not a positive
+Lorentzian energy density.
+
+The response equation replaces the rejected hard zero condition. The
+dynamic domain is gauge invariant, Z2 compatible, pole regular, does not
+duplicate the junction or Ward identity, is nonempty, and closes the
+unresolved trace count from one to zero after the resting selection.
+The primary theorem is
+`BHSM_INDUCED_THREADING_ACTION_REPRODUCES_CONSTRAINT_RESPONSE`; the domain
+result is `BHSM_THREADING_RESPONSE_ACTION_RESTORES_NONEMPTY_FOLD_DOMAIN`.
+
+The general covariant Dirichlet-to-Neumann operator remains nonlocal; only
+its symmetric-background harmonic kernel is derived. The Lorentzian spatial
+eigenvalues have the displayed negative sign, but the complete Euclidean
+and canonical signs are not certified, so no ghost claim follows.
+
+The threading block is closed, but the complete finite-q coupled ADM
+operator for `Y=(A,B,psi,E,delta sigma,zeta)`, its absolute normalization,
+and Green operator remain open. Thus `K_shift+endpoint^red` and `k_q^E`
+remain undefined, while `K_scalar>=2` and
+`K_Weyl=1.220620174933802...` are preserved. The kinetic theorem remains
+`BHSM_FOLD_KINETIC_REMAINS_UNRESOLVED_BY_EXACT_OPERATOR_OBSTRUCTION`.
+
+Rest--transition--rest is established only as comparison of stationary
+constraint responses. Retarded relaxation or dissipation is not derived. A
+white-hole-like interpretation remains a conditional BHSM identification,
+and no time is assigned to the common core.
+
+No measured input, fitted threshold, arbitrary switch, new primitive, new
+scale, new fundamental action, boundary tension, `tau_J`, neutral work,
+physical bulk Dirac law, frozen-prediction change, or official
+prediction-logic change is introduced.
