@@ -1434,3 +1434,38 @@ a wall-coupling identity.
 No measured input, sector-dependent coupling, physical bulk Dirac parent law,
 new scalar normalization, global-spectrum theorem, frozen-prediction change,
 or official-prediction-logic change is introduced.
+
+<!-- BHSM_JUNCTION_EFT_SHEET_INDEX_CLOSURE_V6_9_0 -->
+## v6.9.0 junction EFT, sheet screen, and index certification
+
+Primary result:
+`BHSM_AVAILABLE_C_BHSM_HAS_ZERO_LIGHT_HEAVY_COUPLING`.
+
+On the smallest supported space—three triality copies of the neutral zero
+mode plus the first heavy compact level—the exact available block is
+`V_LH=0`. All supported bulk terms vanish between the two subspaces by
+spectral orthogonality, neutral charge, harmonic selection, or family
+universality. The one unresolved exception is the boundary overlap
+`j_J=<f0,C_junction f1>`.
+
+The minimal Hermitian universal extension is `V_LH=j_J I_3`. Its exact Schur
+root has
+`delta E=-j_J^2/M_H+j_J^4/M_H^3+...`: a universal leading `E^0` correction,
+not `1/p`. It generates neither `K_prop` nor a relative neutral phase. For
+the available operator `j_J=0`, the correction vanishes.
+
+The lower-sheet pure-bending witness has exact Rayleigh quotient
+`B_minus/k_b`, but the constraint-reduced junction-bending invariant
+`B_sheet` is absent from the existing action/Hessian data. No lower-sheet
+tachyon, ghost, or rejection is certified.
+
+The auxiliary noncompact complete-collar operator satisfies the Callias
+conditions and has index one per selected slot. The adjoint zero mode is
+independently nonnormalizable in that rank-one problem. This agrees with the
+selected-domain compact diagnostic but does not select the physical cap
+domain; APS data remain unavailable there.
+
+`lambda_geom` remains one universal dimensionless primitive. Frozen
+predictions and official prediction logic are unchanged, with no measured
+input, fitted matrix, sector-dependent coupling, physical bulk Dirac parent
+law, global spectrum, or full PDE introduced.
