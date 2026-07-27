@@ -163,6 +163,7 @@ The current minimal-action theory dictionary is documented in
 - [Particle, chirality, anomaly, and connection normalization v6.3.0](bhsm_particle_chirality_anomaly_normalization_v6_3_0.md)
 - [Parent-action polarization, localization, and stability v6.4.0](bhsm_parent_action_polarization_localization_stability_v6_4_0.md)
 - [Topological matter action and global spectrum v6.5.0](bhsm_topological_matter_action_global_spectrum_v6_5_0.md)
+- [Topological FR quantization and neutral dispersion v6.6.0](bhsm_topological_fr_neutral_dispersion_v6_6_0.md)
 
 ## CP O_int Sprint Docs
 
