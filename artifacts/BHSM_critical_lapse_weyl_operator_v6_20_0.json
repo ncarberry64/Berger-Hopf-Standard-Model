@@ -1,0 +1,144 @@
+{
+  "artifact": "BHSM_critical_lapse_weyl_operator_v6_20_0",
+  "background_residuals": {
+    "B1_matching": "0",
+    "critical_scalar_boundary": "0",
+    "hamiltonian": "0",
+    "radial_evolution": "0",
+    "scalar_background": "0"
+  },
+  "boundary_tension": false,
+  "domain_and_reduction": {
+    "B1_conditions": null,
+    "Fredholm_status": null,
+    "Hamiltonian_constraint_reproduced": "principal C_H psi plus the threading source only",
+    "J_A_threading": "-3*chi_1*kappa_1*t*tau*cos(pi*t/4)/(4*sin(pi*t/4)**3)",
+    "J_psi_threading": "(3*chi_1*kappa_1*t*tau/(pi*sin(pi*t/4)**2))*partial_t",
+    "J_rad_complete": false,
+    "Schur_complement": "K_red=K_direct-<J_rad,L_Apsi^-1 J_rad> is not defined until T_X fixes J_rad and Dom(L)",
+    "Weyl_equation_reproduced": "bulk principal part only; B1 scalar projection missing",
+    "actual_symmetry_on_domain": null,
+    "adjoint_kernel_dimension": null,
+    "analytic_elimination_launched": false,
+    "bulk_principal_operator_order": 0,
+    "domain_condition_count": null,
+    "earliest_obstruction": "domain/source completion requires T_X",
+    "full_operator_order": null,
+    "generic_pseudoinverse_used": false,
+    "kernel_dimension": null,
+    "momentum_constraint_reproduced": true,
+    "numerical_solve_launched": false,
+    "pole_regular_series": "A and psi regular is necessary; leading powers cannot be completed without the lower radial/domain block",
+    "source_compatibility": null,
+    "threading_unresolved_trace_count": 0
+  },
+  "expansion": {
+    "B1_endpoint": "6 C_partial (D psi_J)^2",
+    "GHY": "normal derivatives of delta g cancel cap by cap",
+    "ansatz": "N=N0(1+A), h_mu_nu=a0^2[(1+2psi)hbar_mu_nu+2D_muD_nu E], delta sigma=q u1",
+    "bulk_principal_density": "6*kappa_1*N0*a0^2[(D A).(D psi)+(D psi).(D psi)]",
+    "determinant": "4*epsilon**2*psi**2 + 4*epsilon*psi + 1",
+    "fixed_support": "zeta=0",
+    "gauge_order": "form S=B-a0^2 partial_t E; reproduce momentum equation; then choose E=0",
+    "inverse_metric": "4*epsilon**2*psi**2 - 2*epsilon*psi + 1",
+    "matcher": "algebraic after h=iota^*g and Lambda elimination",
+    "order": "O(epsilon^2), exactly two M4 derivatives",
+    "radial_measure": "pi*sin(pi*t/4)**4",
+    "scalar_direct": "K_scalar=2 integral a0^2 u1^2 d rho >=2",
+    "threading": "Pi_perp B=-tau(pi chi_1/16)t Pi_perp q; C_Sigma=0"
+  },
+  "fitted_coefficient": false,
+  "frozen_predictions_changed": false,
+  "generic_pseudoinverse": false,
+  "measured_input": false,
+  "missing_object": {
+    "action_sectors": "P1 R4 + intrinsic B1 R4 + exact metric matcher",
+    "boundary_domain_role": "fixes the independent scalar B1 junction projection, the q--A/q--psi source, its endpoint term, and the split from the Einstein-frame Weyl contribution",
+    "coefficient_dimensions": "L^2 before q5=1 normalization because hbar is dimensionless and X has dimension L^-2",
+    "exact_repository_entry_points": [
+      "src/bhsm/interface/scalar_wall_fold_morse_sheet_selection.py:218",
+      "src/bhsm/interface/scalar_wall_fold_morse_sheet_selection.py:233",
+      "src/bhsm/interface/fold_einstein_frame_kinetic_reduction.py:359",
+      "src/bhsm/interface/intrinsic_m4_junction_background.py:244",
+      "src/bhsm/interface/intrinsic_m4_junction_background.py:252"
+    ],
+    "formula": "T_X,mu_nu(x,x')=delta hbar_mu_nu[X](x)/delta X(x')|X=2, with delta R4[T_X]=tau chi_1 q",
+    "minimum_future_derivation": "choose a covariant regulated M4 metric family hbar[X], compute its gauge-quotiented Frechet derivative, insert it into the already frozen P1+GHY+B1+matcher action, and derive the two independent scalar B1 conditions",
+    "name": "covariant X-metric pullback tangent T_X",
+    "new_action_required": false,
+    "stored_information": "only scalar delta X=tau chi_1 and the homogeneous matched junction; no local metric representative or adjoint domain",
+    "tensor_operator_type": "symmetric-2-tensor-valued scalar Green operator modulo M4 diffeomorphisms"
+  },
+  "neutral_work": false,
+  "new_action": false,
+  "new_primitive": false,
+  "new_scale": false,
+  "official_prediction_logic_changed": false,
+  "operator": {
+    "B1_antisymmetric_Green_form": "12 C_partial[psi1(1)psi2(1)-psi2(1)psi1(1)]=0",
+    "B1_endpoint_hessian": "12*C_partial",
+    "C_H": "3*kappa_1/sin(pi*t/4)**2",
+    "C_H_dagger": "3*kappa_1/sin(pi*t/4)**2",
+    "H_AA": "0",
+    "H_psipsi": "6*kappa_1/sin(pi*t/4)**2",
+    "L_AA_zero_verified": true,
+    "L_matrix": [
+      [
+        "0",
+        "3*kappa_1/sin(pi*t/4)**2"
+      ],
+      [
+        "3*kappa_1/sin(pi*t/4)**2",
+        "6*kappa_1/sin(pi*t/4)**2"
+      ]
+    ],
+    "Y_rad": [
+      "A",
+      "psi"
+    ],
+    "bulk_Green_form": "0 (real multiplication operator)",
+    "complete_operator": false,
+    "formal_adjoint": "L_bulk^dagger=L_bulk under weight N0 a0^4",
+    "order_in_t_bulk_principal": 0,
+    "saddle_determinant": "-9*kappa_1**2/sin(pi*t/4)**4",
+    "weight": "N0 a0^4 dt"
+  },
+  "physical_mass_claim": false,
+  "pr_179_merge_sha": "d9b639a00715ad725f0a29e25bb015e5c26d6bb7",
+  "preserved_results": [
+    "BHSM_INDUCED_THREADING_ACTION_REPRODUCES_CONSTRAINT_RESPONSE",
+    "BHSM_FOLD_SOURCE_VANISHING_REPLACES_EXPLICIT_ENERGY_THRESHOLD",
+    "BHSM_THREADING_RESPONSE_ACTION_RESTORES_NONEMPTY_FOLD_DOMAIN",
+    "BHSM_FOLD_KINETIC_REQUIRES_ONE_MISSING_ACTION_BLOCK"
+  ],
+  "primary_result": "BHSM_CRITICAL_LAPSE_WEYL_DOMAIN_IS_UNDERDETERMINED",
+  "provenance": {
+    "new_coefficient_used": false,
+    "normalization": {
+      "B1": "integral_M4 sqrt(-h) C_partial R4",
+      "GHY": "kappa_1 integral_boundary sqrt(-h) K on each cap",
+      "P1": "(1/2) integral_M5 sqrt(-g)(kappa_1 R5-kappa_0)",
+      "cap_count": "two reflected bulk caps; one common B1",
+      "matcher": "integral_M4 sqrt(-h) Lambda^(mu nu)(h_mu nu-iota^*g_mu nu)",
+      "representative": "q5=kappa_1=Z5=1, C_partial/kappa_1=1/2",
+      "scalar": "-(Z5/2) integral_M5 sqrt(-g)(grad sigma)^2-U5"
+    },
+    "source_locations": [
+      "src/bhsm/interface/intrinsic_m4_junction_background.py:231",
+      "src/bhsm/interface/intrinsic_m4_junction_background.py:232",
+      "src/bhsm/interface/intrinsic_m4_junction_background.py:233",
+      "src/bhsm/interface/intrinsic_m4_junction_background.py:242",
+      "src/bhsm/interface/intrinsic_m4_junction_background.py:244",
+      "src/bhsm/interface/intrinsic_m4_junction_background.py:252",
+      "src/bhsm/interface/scalar_wall_junction_audit.py:273",
+      "src/bhsm/interface/scalar_wall_junction_audit.py:326",
+      "src/bhsm/interface/scalar_wall_junction_audit.py:327"
+    ]
+  },
+  "source_main_sha": "d9b639a00715ad725f0a29e25bb015e5c26d6bb7",
+  "sprint": "bhsm-critical-lapse-weyl-hessian-v6-20-0",
+  "tau_J": false,
+  "threshold": false,
+  "v6_19_head_sha": "6607752008f20dc417b8be45e469b8ccf5d26b09",
+  "version": "v6.20.0"
+}

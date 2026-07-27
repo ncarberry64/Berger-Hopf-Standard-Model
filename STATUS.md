@@ -1923,3 +1923,45 @@ null, and no physical mass is inferred.
 No measured or fitted input, primitive, scale, action term, threshold,
 `tau_J`, boundary tension, neutral work, frozen-prediction change, or
 official prediction-logic change is introduced.
+
+<!-- BHSM_CRITICAL_LAPSE_WEYL_HESSIAN_V6_20_0 -->
+## v6.20.0 critical lapse--Weyl Hessian and domain theorem
+
+The direct second variation of the normalized frozen
+P1+GHY+B1+matcher+scalar action fixes the action-derived radial measure
+`N0 a0^4 dt=pi sin(pi t/4)^4 dt` and the bulk principal
+two-four-dimensional-derivative block
+`L_Apsi^crit=[[0,6 kappa_1/a0^2],
+[6 kappa_1/a0^2,12 kappa_1/a0^2]]`.
+The B1 contribution is the symmetric endpoint Hessian
+`12 C_partial`, GHY cancels normal metric variations cap by cap, and the
+exact matcher carries no independent propagating block after multiplier
+elimination. The bulk block is a real order-zero saddle multiplication
+operator, formally self-adjoint in the derived weight, with zero bulk Green
+form.
+
+The ADM expansion also derives the threading portions of `J_A` and `J_psi`
+and reproduces the v6.18 momentum response. It does not determine the full
+mixed source. The stored fold tangent specifies only
+`delta X=tau chi_1 q`, not the covariant metric-valued pullback derivative
+`T_X=delta hbar[X]/delta X|X=2` modulo four-dimensional diffeomorphisms.
+That symmetric-two-tensor-valued Green operator is required simultaneously
+by the P1 `R4`, intrinsic B1 `R4`, and exact matcher sectors. It fixes the
+remaining source, independent scalar B1 conditions, adjoint domain,
+kernels, compatibility, and separation from the Einstein-frame Weyl term.
+
+Accordingly the single primary theorem is
+`BHSM_CRITICAL_LAPSE_WEYL_DOMAIN_IS_UNDERDETERMINED`. The threading trace
+count remains zero, but the full lapse--Weyl condition count, kernel,
+adjoint kernel, Fredholm status, and Schur complement are not defined.
+No numerical solve or generic pseudoinverse is launched.
+
+`K_scalar=2 integral a0^2 u_1^2 d rho>=2` and
+`K_Weyl=1.220620174933802...` remain positive.
+`K_shift+endpoint^red`, total `k_q^E`, uncertainty, sheet dependence, and
+kinetic sign remain unresolved. The fold is not classified as positive,
+ghost, or null, and no physical mass is claimed.
+
+No measured input, fitted coefficient, new primitive, new scale, new
+action, threshold, boundary tension, `tau_J`, neutral work,
+frozen-prediction change, or official prediction-logic change is introduced.
