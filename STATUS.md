@@ -1540,3 +1540,35 @@ ghost, or Morse-index lower bound is certified.
 No `tau_J`, new primitive, neutral construction, measured input, fermion
 loop, physical bulk Dirac law, frozen-prediction change, or official
 prediction-logic change is introduced.
+
+<!-- BHSM_FOLD_EINSTEIN_FRAME_KINETIC_REDUCTION_V6_12_0 -->
+## v6.12.0 fold Einstein-frame kinetic reduction
+
+Primary result:
+`BHSM_FOLD_KINETIC_SIGN_REQUIRES_MOVING_ENDPOINT_SHIFT_BOUNDARY_CONDITION`.
+
+The exact two-cap bulk plus B1 frame coefficient is
+`F0=pi/2`, with one-sided derivative
+`F1,tau=tau chi_1(pi-4)/4`. The Einstein metric is
+`g_E=(F/F0)h`, and the Weyl contribution to the fold kinetic coefficient is
+the positive, sheet-independent quantity
+`3 chi_1^2(4-pi)^2/(16 pi)`.
+
+The zero-shift promotion of the v6.11 static tangent violates the radial
+momentum constraint by
+`-3 tau chi_1 t/[4 sin(pi t/4)^2] partial_mu q`. The stored action does not
+provide the x-dependent scalar radial-shift/longitudinal boundary condition
+at the moving B1 endpoint. Hence the lapse/shift/endpoint Schur reduction is
+not unique and the total `K_J` and `k_q^E` signs remain open.
+
+The v6.11 cusp is an on-shell, `X(q)`-substituted regulated action rather
+than the off-shell Jordan potential. Transforming its curvature requires
+`F2[a2,N2]` and the off-shell `V0,V1,V2`. Therefore
+`B_ext^E`, `B_core^E`, and both canonical mass-squared signs remain
+unresolved. The result is physical Case E; no tachyon, ghost, gauge,
+nondynamical, or Morse-index claim is made and the invariant sheet map is
+unchanged.
+
+No new action term, `tau_J`, new primitive, measured input, neutral
+construction, fermion loop, physical bulk Dirac law, frozen-prediction
+change, or official prediction-logic change is introduced.
