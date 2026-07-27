@@ -1,0 +1,119 @@
+{
+  "Levi_Civita_connection": {
+    "omega_12_on_e3": "(exp(beta) - 2*exp(-beta))/R",
+    "omega_13_on_e2": "exp(beta)/R",
+    "omega_23_on_e1": "-exp(beta)/R"
+  },
+  "Maurer_Cartan_convention": "d eta_1=-eta_2 wedge eta_3 cyclically",
+  "artifact": "BHSM_Berger_geometry_and_vielbein_v6_8_0",
+  "coframe": [
+    "e^1=(R/2)[cos(psi)dtheta+sin(psi)sin(theta)dphi]",
+    "e^2=(R/2)[-sin(psi)dtheta+cos(psi)sin(theta)dphi]",
+    "e^3=(R/2)exp(beta)[dpsi+cos(theta)dphi]"
+  ],
+  "coordinate_gamma_coefficients": {
+    "phi": [
+      "2*sin(psi)/(R*sin(theta))",
+      "2*cos(psi)/(R*sin(theta))",
+      "0"
+    ],
+    "psi": [
+      "-2*sin(psi)/(R*tan(theta))",
+      "-2*cos(psi)/(R*tan(theta))",
+      "2*exp(-beta)/R"
+    ],
+    "theta": [
+      "2*cos(psi)/R",
+      "-2*sin(psi)/R",
+      "0"
+    ]
+  },
+  "coordinates": [
+    "theta",
+    "phi",
+    "psi"
+  ],
+  "determinant": "R^6 exp(2 beta) sin^2(theta)/64",
+  "dual_frame": [
+    "X_1=(2/R)[cos(psi)partial_theta+sin(psi)csc(theta)partial_phi-sin(psi)cot(theta)partial_psi]",
+    "X_2=(2/R)[-sin(psi)partial_theta+cos(psi)csc(theta)partial_phi-cos(psi)cot(theta)partial_psi]",
+    "X_3=(2/R)exp(-beta)partial_psi"
+  ],
+  "exact_checks": {
+    "coframe_reconstructs_metric": true,
+    "dual_frame": true,
+    "inverse_metric": true,
+    "normalized_mode": true
+  },
+  "frozen_predictions_changed": false,
+  "full_BHSM_claimed": false,
+  "global_spectrum_claimed": false,
+  "internal_mode": {
+    "actual_mode": "homogeneous left-invariant Berger spinor",
+    "cos_squared_candidate": {
+      "internal_operator_status": "unsupported as an eigenspinor density",
+      "profile": "rho(theta) proportional to cos^2(theta/2)",
+      "repository_source_found": false,
+      "used_in_theorem": false
+    },
+    "eigenvalue": "[exp(beta)+2 exp(-beta)]/(2R)",
+    "normalization": "exactly one",
+    "operator": "D_B=i sum_a Gamma^hat_a X_a +[exp(beta)+2 exp(-beta)]/(2R)",
+    "pointwise_density": "1/[2 pi^2 R^3 exp(beta)]",
+    "round_eigenvalue": "3/(2R)",
+    "spectral_scope": "exact eigenspinor in the homogeneous sector; no global-lowest spectrum claim is required for the mode-independent overlap"
+  },
+  "inverse_metric": [
+    [
+      "4/R**2",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "4/(R**2*sin(theta)**2)",
+      "-4*cos(theta)/(R**2*sin(theta)**2)"
+    ],
+    [
+      "0",
+      "-4*cos(theta)/(R**2*sin(theta)**2)",
+      "4/(R**2*tan(theta)**2) + 4*exp(-2*beta)/R**2"
+    ]
+  ],
+  "lambda_geom_set_to_one": false,
+  "measured_derivation_input_used": false,
+  "metric": [
+    [
+      "R**2/4",
+      "0",
+      "0"
+    ],
+    [
+      "0",
+      "R**2*(exp(2*beta)*cos(theta)**2 + sin(theta)**2)/4",
+      "R**2*exp(2*beta)*cos(theta)/4"
+    ],
+    [
+      "0",
+      "R**2*exp(2*beta)*cos(theta)/4",
+      "R**2*exp(2*beta)/4"
+    ]
+  ],
+  "neutrino_work_introduced": false,
+  "official_prediction_logic_changed": false,
+  "physical_bulk_Dirac_parent_law_introduced": false,
+  "primary_result": "BHSM_Y_SIGMA_EXP_MINUS_BETA_REJECTED_BY_CANONICAL_NORMALIZATION",
+  "ranges": {
+    "phi": "[0,2pi]",
+    "psi": "[0,4pi]",
+    "theta": "[0,pi]"
+  },
+  "sector_dependent_coupling_introduced": false,
+  "source_main_sha": "59308347b233aceeeb491b9cec855a5f96218a47",
+  "sprint": "bhsm-berger-clifford-y-sigma-reduction-v6-8-0",
+  "status": "BHSM_EXPLICIT_BERGER_GEOMETRY_AND_VIELBEIN_DERIVED",
+  "total_volume": "2 pi^2 R^3 exp(beta)",
+  "v6_7_scientific_sha": "46c4854ab56871610b8850494d585eb4d8b2d240",
+  "version": "v6.8.0",
+  "volume_form": "(R^3/8) exp(beta) sin(theta) dtheta wedge dphi wedge dpsi"
+}
