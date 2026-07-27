@@ -304,7 +304,7 @@ The preregistered code-level observable is
 ```text
 R_gap
  = lambda_1,upper / lambda_1,lower
- = 1.034264657
+ = 1.034264658
 ```
 
 for `r=0.01`, `q5=1`, `G5/Z5=1`, `y_sigma=1`, 321 grid points, and the

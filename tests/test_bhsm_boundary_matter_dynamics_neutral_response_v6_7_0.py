@@ -369,7 +369,7 @@ def test_scalar_wall_cusp_preserved_without_total_r4_claim():
 
 def test_forward_observable_is_preregistered_not_physical_prediction():
     row = arch.forward_observable()
-    assert row["value"] == pytest.approx(1.03426465747)
+    assert row["value"] == pytest.approx(1.034264658, abs=5e-10)
     assert row["measured_inputs"] == []
     assert not row["fitted"]
     assert not row["physical_prediction"]
