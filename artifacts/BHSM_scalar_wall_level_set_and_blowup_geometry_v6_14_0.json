@@ -1,0 +1,154 @@
+{
+  "Green_operator_constructed": false,
+  "amplitude_and_blowup": {
+    "M4_diffeomorphism_covariance": "Q is an M4 scalar collective norm and the zero set pulls back under tangential reparameterizations",
+    "cap_dependence": "Z2-related caps reverse scalar/normal orientation but share support",
+    "cap_multiplicity": "per-cap normalization; a two-cap norm differs by a fixed sqrt(2) and leaves the projective zero set unchanged",
+    "center_manifold_status": "coefficient-free chart on the selected one-dimensional fold center manifold after the stored normalization",
+    "critical_regular": true,
+    "critical_support": "Sigma_0={u1=0}={rho_J}",
+    "critical_witness": "u1'(rho_J)=-9.124976903426... !=0",
+    "definition": "sigma_hat=sigma/Q[sigma] for Q>0",
+    "field_status": "nonlocal collective-coordinate chart, not a new field",
+    "fixed_domain_measure": "Q[sigma]^2=integral_0^1 N a^4 sigma^2 dt",
+    "limit": "sigma_hat -> s u1 along a fixed (tau,s) center-manifold branch",
+    "local_inverse": "q=Q-alpha_tau Q^2+O(Q^3)",
+    "normalization_dependence": "positive constant rescaling changes sigma_hat but not its zero set; Q=q+O(q^2) uses the stored unit norm",
+    "off_center_status": "undefined at sigma=0 without an approach direction; different orthogonal perturbations select different projective profiles and zeros",
+    "positive_root": "Q[sigma]=q+alpha_tau q^2+O(q^3)",
+    "proper_normal_measure": "Q[sigma]^2=integral_0^rhoJ a^4 sigma^2 d rho",
+    "radial_gauge_covariance": "Q is an invariant scalar integral and sigma_hat is a scalar; its zero set is carried covariantly",
+    "result": "BHSM_B1_LEVEL_SET_IS_ONLY_A_CENTER_MANIFOLD_CHART",
+    "scalar_sign_support": "independent",
+    "series": "Q[sigma]^2=q^2[1+2 alpha_tau q+O(q^2)]",
+    "stored_normalization": "integral_0^rhoJ a0^4 u1^2 d rho=1",
+    "tau_support": "same limiting support; tau enters the first q correction and rho_J'(0)",
+    "valid_perturbation_space": "the one-dimensional fold mode only"
+  },
+  "arbitrary_threading_condition_added": false,
+  "artifact": "BHSM_scalar_wall_level_set_and_blowup_geometry_v6_14_0",
+  "boundary_tension_introduced": false,
+  "composite_support_adopted": false,
+  "direct_level_set": {
+    "Z2_caps": "odd continuation reverses sigma across the two caps while retaining their common sigma=0 junction",
+    "additional_cap_zeros": false,
+    "additional_zero_reason": "u1 is the lowest regular-pole/Dirichlet Sturm-Liouville mode and has no interior nodes; small branch corrections preserve this",
+    "branch_expansion": "sigma_tau,s=s[q u1+q^2 u2_tau+O(q^3)]",
+    "critical_gradient": 0,
+    "critical_sigma": "sigma_0(rho)=0 for every rho",
+    "critical_zero_set": "the entire cap, not a hypersurface",
+    "junction_zero_locally_unique": true,
+    "normal_derivative": "partial_rho sigma|Sigma=s[q u1'(rho_J)+O(q^2)]",
+    "q_positive_regular_value": true,
+    "q_zero_regular_value": false,
+    "regularity_reason": "u1'(rho_J) is nonzero, so the O(q) term dominates the O(q^2) profile correction",
+    "regularity_scope": "all sufficiently small q>0 on either Puiseux sheet",
+    "result": "BHSM_DIRECT_SCALAR_LEVEL_SET_IS_SINGULAR_AT_THE_FOLD",
+    "scalar_sign_independence": "multiplication by s=+/-1 reverses orientation but not the zero set",
+    "sheet_dependence": "tau changes u2_tau and rho_J'(0)=-tau chi_1/4, not regularity",
+    "u1_junction_derivative": "-9.124976903426",
+    "u1_junction_value": 0,
+    "uniqueness_reason": "implicit-function theorem at the simple junction zero"
+  },
+  "embedding_response": {
+    "blowup_fold": "zeta_0=-delta sigma_hat/(n partial sigma_hat)|Sigma0",
+    "direct_fold_rejected": "sigma'_Sigma=O(q), so division by sigma'_Sigma at q=0 is invalid",
+    "direct_q_positive": "zeta=-delta sigma/(n partial sigma), valid only for q>0",
+    "endpoint_identity": "partial_q sigma_hat+s u1'(rho_J) partial_q rho_J=0",
+    "endpoint_slope_minus": "+chi_1/4",
+    "endpoint_slope_plus": "-chi_1/4",
+    "orientation": "outward cap normal; reversing n reverses numerator convention consistently and leaves the geometric support fixed",
+    "profile_derivative_at_J": "partial_q sigma_hat|J=s tau chi_1 u1'(rho_J)/4",
+    "recovered_displacement": "zeta_0=-(tau chi_1/4)delta q",
+    "regular_formula": "zeta=-delta f/(n^A partial_A f)|Sigma",
+    "v6_1_7_comparison": "exactly reproduces ell_1=rho_J'(0)=-tau chi_1/4; the alpha_tau normalization term vanishes at J because u1(J)=0"
+  },
+  "exact": {
+    "Q_series": "alpha*q**2 + q",
+    "Q_squared": "2*alpha*q**3 + beta*q**4 + q**2",
+    "rhoJ1_minus": "chi_1/4",
+    "rhoJ1_plus": "-chi_1/4",
+    "sigma_hat_series": "-alpha*q*s*u_1 + q*s*u_2_tau + s*u_1",
+    "zeta_minus": "chi_1*delta_q/4",
+    "zeta_plus": "-chi_1*delta_q/4"
+  },
+  "fixed_and_composite_Dirichlet_double_imposed": false,
+  "fold_constants": {
+    "chi_1": "5.268307871542",
+    "mu_c": "29.430918352947",
+    "nu_1": "109.666681740423",
+    "u1_cap": "8.923902707116",
+    "u1_junction": 0,
+    "u1_junction_derivative": "-9.124976903426",
+    "weighted_norm": 1
+  },
+  "frozen_predictions_changed": false,
+  "measured_input_used": false,
+  "neutral_work_performed": false,
+  "new_action_coefficient_introduced": false,
+  "new_action_term_introduced": false,
+  "new_primitive_introduced": false,
+  "official_prediction_logic_changed": false,
+  "physical_bulk_Dirac_law_introduced": false,
+  "primary_result": "BHSM_COMPOSITE_B1_SUPPORT_LEAVES_ENDPOINT_THREADING_OPEN",
+  "provenance": [
+    {
+      "ingredient": "regular-level-set normal, pullback, and shape formulas",
+      "scope": "conditional standard geometry; no old BHSM profile theorem",
+      "source": "PO-BH-58 and PO-BH-59",
+      "status": "Adopted from established physics/mathematics"
+    },
+    {
+      "ingredient": "normal displacement and surface shape variation",
+      "scope": "formulas retained; old symbolic surface coefficients rejected here",
+      "source": "v5.11-v5.12 geometric Hessian/source ledgers",
+      "status": "Adopted from established physics/mathematics"
+    },
+    {
+      "ingredient": "fixed-iota intrinsic B1 with exact metric matching",
+      "scope": "provisional boundary ontology, not parent-derived",
+      "source": "v6.1.3",
+      "status": "Adopted BHSM axiom"
+    },
+    {
+      "ingredient": "curved odd scalar and lowest Dirichlet mode",
+      "scope": "bulk sigma; not intrinsic sigma_partial",
+      "source": "v6.1.5-v6.1.6",
+      "status": "Numerically validated"
+    },
+    {
+      "ingredient": "two nonlinear Puiseux sheets and moving endpoint",
+      "scope": "conditional frozen representative with numerical continuation",
+      "source": "v6.1.7",
+      "status": "Derived consequence"
+    },
+    {
+      "ingredient": "direct sigma level-set degeneracy at q=0",
+      "scope": "sigma_0=0 and grad sigma_0=0",
+      "source": "v6.1.7 expansion evaluated at the fold",
+      "status": "Rejected by calculation"
+    },
+    {
+      "ingredient": "missing gauge-invariant endpoint threading domain",
+      "scope": "preserved obstruction",
+      "source": "v6.12-v6.13",
+      "status": "Active construction target"
+    },
+    {
+      "ingredient": "iota=iota[sigma_hat]",
+      "scope": "candidate only; not adopted by the current action",
+      "source": "v6.14 test",
+      "status": "BHSM identification"
+    }
+  ],
+  "pseudoinverse_constructed": false,
+  "radion_potential_introduced": false,
+  "sigma_hat_promoted_to_field": false,
+  "sigma_identified_with_sigma_partial": false,
+  "source_main_sha": "b5e926245ba49510e84b03060ec17a1170f9f3ee",
+  "sprint": "bhsm-scalar-level-set-composite-b1-blowup-v6-14-0",
+  "status": "BHSM_B1_LEVEL_SET_IS_ONLY_A_CENTER_MANIFOLD_CHART",
+  "tau_J_introduced": false,
+  "v6_13_head_sha": "50ddd8bfb22931d8d914de620ae112ac2a746da3",
+  "version": "v6.14.0"
+}
