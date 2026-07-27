@@ -1,0 +1,55 @@
+{
+  "artifact": "BHSM_v6_10_0_hidden_input_and_final_report",
+  "central_answer": "The current one-boundary well-posed action requires GHY but no gravitational joint and contains no matter junction generator. It therefore selects no U, gives V_LH=0, and cannot define K_prop or B_sheet. C3 permits optional nonuniversal circulant bilinears, while bending minimally requires the independent bosonic junction-volume coefficient tau_J.",
+  "dependency_graph": {
+    "current": {
+      "B_minus": null,
+      "B_plus": null,
+      "K_prop": null,
+      "M_J": 0,
+      "S_J": 0,
+      "S_J_bos": 0,
+      "V_LH": 0,
+      "domain_U": "unselected U(1)",
+      "energy_law": "no junction correction"
+    },
+    "independent_primitives_remain": [
+      "fermion junction coefficients",
+      "tau_J"
+    ],
+    "one_package_closes_all_targets": false,
+    "optional_boson": "independent tau_J (or declared corner geometry) -> shape Hessian plus constraint response",
+    "optional_fermion": "alpha_J and C3 commutant coefficients -> conditional U/M_J -> trace data still required",
+    "structural_case": 7
+  },
+  "fermion_loop_inserted": false,
+  "fitted_parameters_used": false,
+  "frozen_predictions_changed": false,
+  "full_BHSM_claimed": false,
+  "hidden_inputs": [
+    "fermion junction coefficient and Clifford grade",
+    "point traces of f0 and normalized f1",
+    "tau_J or a declared corner normal pair and joint angle",
+    "constraint-reduced embedding Hessian and k_b"
+  ],
+  "junction_tension_assumed": false,
+  "lambda_geom_universality_changed": false,
+  "measured_inputs_used": false,
+  "next_construction": "derive a two-face corner geometry from the parent action or derive tau_J from a localized bosonic source, then compute the gauge-quotiented second shape variation",
+  "official_prediction_logic_changed": false,
+  "physical_bulk_Dirac_parent_law_introduced": false,
+  "preserved_results": [
+    "BHSM_Y_SIGMA_EXP_MINUS_BETA_REJECTED_BY_CANONICAL_NORMALIZATION",
+    "BHSM_AVAILABLE_C_BHSM_HAS_ZERO_LIGHT_HEAVY_COUPLING",
+    "BHSM_LOWER_SHEET_KILL_SCREEN_REQUIRES_ONE_MISSING_HESSIAN_INVARIANT",
+    "BHSM_AUXILIARY_INDEX_ONE_CERTIFIED"
+  ],
+  "primary_result": "BHSM_MINIMAL_WELL_POSED_ACTION_HAS_NO_JUNCTION_MIXING_TERM",
+  "sector_dependent_coupling_introduced": false,
+  "source_main_sha": "9aec8bb759326e08e2215c0c8e11c3458f761ddd",
+  "sprint": "bhsm-action-selected-junction-functional-v6-10-0",
+  "status": "BHSM_MINIMAL_WELL_POSED_ACTION_HAS_NO_JUNCTION_MIXING_TERM",
+  "structural_case": 7,
+  "v6_9_scientific_sha": "d2a084b39babff72550fb0eac3d00fbd01afc7aa",
+  "version": "v6.10.0"
+}

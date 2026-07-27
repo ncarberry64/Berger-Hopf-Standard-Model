@@ -1,0 +1,227 @@
+{
+  "artifact": "BHSM_junction_invariant_and_triality_commutant_v6_10_0",
+  "fermion_loop_inserted": false,
+  "fitted_parameters_used": false,
+  "frozen_predictions_changed": false,
+  "full_BHSM_claimed": false,
+  "geometry": {
+    "B1": "provisional intrinsic M4 boundary action/condition",
+    "B1_parent_status": "not derived from P1",
+    "GHY": "kappa_1 integral_boundary epsilon_n K sqrt|h|",
+    "GHY_classification": "required Dirichlet variational completion, not tension",
+    "GHY_coefficient": "fixed by kappa_1 when P1 is chosen",
+    "boundary": "one smooth oriented S7 boundary with a Gaussian-normal collar",
+    "boundary_count": 1,
+    "bulk": "P1=(1/2) integral_M sqrt|G| (kappa_0+kappa_1 R)",
+    "cap_collar_joint": false,
+    "codimension_two_corner": false,
+    "intersecting_boundary_pieces": false,
+    "joint_angle_eta": null,
+    "junction_hypersurface": "Sigma_J is the cap endpoint trace locus used by the reduced matter problem, not a declared nonsmooth gravitational corner",
+    "moving_endpoint": true,
+    "moving_endpoint_status": "v6.1.7 includes transversality/shape response in the fixed-B1 cap problem; it does not create a second boundary face",
+    "normal_pair": null,
+    "reason_no_required_joint": "a coefficient-locked gravitational joint term requires two declared boundary faces and their relative angle; neither exists",
+    "required_Hayward_joint_term": false,
+    "sheet_orientation": "upper/lower Puiseux branches have opposite leading orientation; orientation alone does not fix a second variation"
+  },
+  "invariants": [
+    {
+      "classification": "smooth-boundary variational completion",
+      "coefficient": "kappa_1",
+      "coefficient_fixed": true,
+      "density": "epsilon_n K",
+      "id": "P1_GHY",
+      "junction_localized": false,
+      "present": true,
+      "required": true,
+      "sector": "bosonic"
+    },
+    {
+      "classification": "inapplicable: no normal pair or joint angle",
+      "coefficient": "kappa_1 if a genuine P1 corner is declared",
+      "coefficient_fixed": "conditional",
+      "density": "eta",
+      "id": "Hayward_joint",
+      "junction_localized": true,
+      "present": false,
+      "required": false,
+      "sector": "bosonic"
+    },
+    {
+      "classification": "optional physical joint energy; new primitive",
+      "coefficient": "tau_J",
+      "coefficient_fixed": false,
+      "density": "1",
+      "id": "junction_volume",
+      "junction_localized": true,
+      "present": false,
+      "required": false,
+      "sector": "bosonic"
+    },
+    {
+      "classification": "optional higher-derivative bending invariant",
+      "coefficient": "c_K2 or c_S",
+      "coefficient_fixed": false,
+      "density": "K^2 or Tr(S^2)",
+      "id": "junction_shape_quadratic",
+      "junction_localized": true,
+      "present": false,
+      "required": false,
+      "sector": "bosonic"
+    },
+    {
+      "classification": "optional same-kinetic-sector bilinear",
+      "coefficient": "a_I,x_I,y_I",
+      "coefficient_fixed": false,
+      "density": "bar(Psi)(I tensor J_C3)Psi",
+      "id": "matter_scalar",
+      "junction_localized": true,
+      "present": false,
+      "required": false,
+      "sector": "fermionic"
+    },
+    {
+      "classification": "optional orientation-odd trace bilinear",
+      "coefficient": "a_n,x_n,y_n",
+      "coefficient_fixed": false,
+      "density": "bar(Psi)(Gamma_n tensor J_C3)Psi",
+      "id": "matter_normal",
+      "junction_localized": true,
+      "present": false,
+      "required": false,
+      "sector": "fermionic"
+    },
+    {
+      "classification": "optional wall-even product after paired Z2 transformation",
+      "coefficient": "a_star,x_star,y_star",
+      "coefficient_fixed": false,
+      "density": "bar(Psi)(sigma_J Gamma_star tensor J_C3)Psi",
+      "id": "matter_wall",
+      "junction_localized": true,
+      "present": false,
+      "required": false,
+      "sector": "fermionic"
+    },
+    {
+      "classification": "optional grading bilinear",
+      "coefficient": "a_K,x_K,y_K",
+      "coefficient_fixed": false,
+      "density": "bar(Psi)(K tensor J_C3)Psi",
+      "id": "matter_grading",
+      "junction_localized": true,
+      "present": false,
+      "required": false,
+      "sector": "fermionic"
+    }
+  ],
+  "junction_tension_assumed": false,
+  "lambda_geom_universality_changed": false,
+  "measured_inputs_used": false,
+  "no_duplicate_invariant": true,
+  "official_prediction_logic_changed": false,
+  "physical_bulk_Dirac_parent_law_introduced": false,
+  "preserved_results": [
+    "BHSM_Y_SIGMA_EXP_MINUS_BETA_REJECTED_BY_CANONICAL_NORMALIZATION",
+    "BHSM_AVAILABLE_C_BHSM_HAS_ZERO_LIGHT_HEAVY_COUPLING",
+    "BHSM_LOWER_SHEET_KILL_SCREEN_REQUIRES_ONE_MISSING_HESSIAN_INVARIANT",
+    "BHSM_AUXILIARY_INDEX_ONE_CERTIFIED"
+  ],
+  "primary_result": "BHSM_MINIMAL_WELL_POSED_ACTION_HAS_NO_JUNCTION_MIXING_TERM",
+  "sector_dependent_coupling_introduced": false,
+  "source_main_sha": "9aec8bb759326e08e2215c0c8e11c3458f761ddd",
+  "sprint": "bhsm-action-selected-junction-functional-v6-10-0",
+  "status": "BHSM_C3_HERMITIAN_COMMUTANT_IS_CIRCULANT",
+  "triality": {
+    "Hermitian_commutant_basis": [
+      [
+        [
+          "1",
+          "0",
+          "0"
+        ],
+        [
+          "0",
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "1"
+        ]
+      ],
+      [
+        [
+          "0",
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "0",
+          "1"
+        ],
+        [
+          "1",
+          "1",
+          "0"
+        ]
+      ],
+      [
+        [
+          "0",
+          "-I",
+          "I"
+        ],
+        [
+          "I",
+          "0",
+          "-I"
+        ],
+        [
+          "-I",
+          "I",
+          "0"
+        ]
+      ]
+    ],
+    "coefficients_fixed": [],
+    "eigenvalues": [
+      "a + 2*x",
+      "a - x - sqrt(3)*y",
+      "a - x + sqrt(3)*y"
+    ],
+    "equivalent_matrix": "a I+b C+b* C^2, b=x+iy",
+    "full_S3_declared": false,
+    "general_matrix": "a I+x(C+C^2)+iy(C-C^2)",
+    "generator": [
+      [
+        "0",
+        "0",
+        "1"
+      ],
+      [
+        "1",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1",
+        "0"
+      ]
+    ],
+    "generic_multiplicities": [
+      1,
+      1,
+      1
+    ],
+    "nonuniversal_response_permitted": true,
+    "nonuniversal_response_required": false,
+    "real_coefficient_count": 3,
+    "surviving_group": "C3"
+  },
+  "v6_9_scientific_sha": "d2a084b39babff72550fb0eac3d00fbd01afc7aa",
+  "version": "v6.10.0"
+}

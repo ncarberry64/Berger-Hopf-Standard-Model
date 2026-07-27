@@ -1,0 +1,60 @@
+{
+  "artifact": "BHSM_junction_bending_sheet_response_v6_10_0",
+  "bending": {
+    "B_minus": null,
+    "B_plus": null,
+    "H_phys": "H_PP-H_PC H_CC^(-1)H_CP",
+    "H_phys_Hermitian": true,
+    "alternative_if_corner_declared": "a Hayward joint integral kappa_1 integral sqrt|gamma| eta would be coefficient locked, but requires a new normal pair and angle",
+    "background_matter_state": "Psi_background=0",
+    "current_S_J_bos": 0,
+    "fermion_loop_used": false,
+    "fermion_quadratic_tree_level_bending": 0,
+    "gauge_kernel": "must be removed before H_CC inversion",
+    "induced_measure_variation": "delta dmu_J=K_J xi_perp dmu_J",
+    "k_b": null,
+    "lower_ghost_certified": false,
+    "lower_tachyon_certified": false,
+    "minimal_missing_bosonic_invariant": "S_J,bos^(0)=tau_J integral_SigmaJ sqrt(|gamma|)",
+    "missing_coefficient": "tau_J",
+    "orientation_sign_is_second_variation": false,
+    "result": "BHSM_JUNCTION_BENDING_REQUIRES_ONE_BOSONIC_CORNER_INVARIANT",
+    "second_variation_status": "no junction density exists to vary; P1 GHY belongs to the smooth boundary and B1 data do not export the constrained bending Hessian",
+    "shape_variation": "delta K=-Delta_Sigma xi_perp-[Tr(S^2)+Ric(n,n)]xi_perp",
+    "tau_J_status": "optional physical junction energy, not GHY and not fixed by well-posedness in the one-boundary geometry",
+    "upper_stability_certified": false,
+    "witness": "e_b=(0,0,1) after the gauge quotient"
+  },
+  "fermion_loop_inserted": false,
+  "fitted_parameters_used": false,
+  "formal_H_phys": [
+    [
+      "-c1**2/h_c + h11",
+      "-c1*c2/h_c + h12"
+    ],
+    [
+      "-c1*c2/h_c + h12",
+      "-c2**2/h_c + h22"
+    ]
+  ],
+  "frozen_predictions_changed": false,
+  "full_BHSM_claimed": false,
+  "junction_tension_assumed": false,
+  "lambda_geom_universality_changed": false,
+  "measured_inputs_used": false,
+  "official_prediction_logic_changed": false,
+  "physical_bulk_Dirac_parent_law_introduced": false,
+  "preserved_results": [
+    "BHSM_Y_SIGMA_EXP_MINUS_BETA_REJECTED_BY_CANONICAL_NORMALIZATION",
+    "BHSM_AVAILABLE_C_BHSM_HAS_ZERO_LIGHT_HEAVY_COUPLING",
+    "BHSM_LOWER_SHEET_KILL_SCREEN_REQUIRES_ONE_MISSING_HESSIAN_INVARIANT",
+    "BHSM_AUXILIARY_INDEX_ONE_CERTIFIED"
+  ],
+  "primary_result": "BHSM_MINIMAL_WELL_POSED_ACTION_HAS_NO_JUNCTION_MIXING_TERM",
+  "sector_dependent_coupling_introduced": false,
+  "source_main_sha": "9aec8bb759326e08e2215c0c8e11c3458f761ddd",
+  "sprint": "bhsm-action-selected-junction-functional-v6-10-0",
+  "status": "BHSM_JUNCTION_BENDING_REQUIRES_ONE_BOSONIC_CORNER_INVARIANT",
+  "v6_9_scientific_sha": "d2a084b39babff72550fb0eac3d00fbd01afc7aa",
+  "version": "v6.10.0"
+}
