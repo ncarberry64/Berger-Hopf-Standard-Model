@@ -1,0 +1,80 @@
+{
+  "arbitrary_boundary_condition_added": false,
+  "artifact": "BHSM_v6_13_0_final_report",
+  "boundary_data": {
+    "constrained": [
+      "h_mu_nu=iota^*g_mu_nu",
+      "bulk Hamiltonian and momentum constraints",
+      "metric junction condition",
+      "a_Sigma=1 and the stored scalar-wall junction traces"
+    ],
+    "fixed": [
+      "B1 support/domain and embedding iota",
+      "bulk and B1 action coefficients",
+      "topology, Z2 gluing, and normal orientation",
+      "bulk scalar Dirichlet trace sigma_Sigma=0"
+    ],
+    "freely_varied": [
+      "bulk metric and independent intrinsic metric before matching",
+      "metric matching multiplier Lambda",
+      "bulk radial shift in the interior as a constraint multiplier"
+    ],
+    "gauge": [
+      "radial coordinate displacement zeta used to represent the fixed support",
+      "longitudinal scalar E"
+    ],
+    "physically_dynamical": [
+      "constraint-reduced bulk fields",
+      "intrinsic B1 metric/connection/scalar sectors in their declared domain"
+    ],
+    "radion_status": "not established: zeta is not an independent action variable, while S_Sigma is gauge invariant but lacks boundary-domain data",
+    "unspecified": [
+      "gauge-invariant endpoint threading S_Sigma",
+      "a variational rule for x-dependent embedding deformations"
+    ]
+  },
+  "boundary_tension_introduced": false,
+  "central_answer": "The frozen P1+GHY+B1+scalar variational problem varies the matched induced metrics on a fixed B1 embedding. It derives the junction tensor and the bulk momentum constraint, but no term proportional to a free variation of the gauge-invariant endpoint threading S_Sigma. Therefore no endpoint condition, unique constraint operator, Green function, Schur correction, or total Einstein-frame kinetic sign follows.",
+  "constraint_and_kinetic": {
+    "Green_operator_constructed": false,
+    "Green_operator_exists": null,
+    "K_shift_endpoint_red": null,
+    "L_C_constructed": false,
+    "adjoint_kernel": null,
+    "differential_order": null,
+    "endpoint_condition": null,
+    "endpoint_condition_derived": false,
+    "exact_next_input": "declare from the existing theory whether iota is fixed or freely varied for x-dependent deformations and, if varied, supply its action-derived shape/momentum domain; otherwise specify an action-derived boundary threading domain for S_Sigma",
+    "homogeneous_trace": "S_Sigma is not residual gauge, but cannot be called a physical radion or zero mode without an embedding/domain variational rule",
+    "k_q_E": null,
+    "kernel": null,
+    "kinetic_sign": null,
+    "physical_masses_calculated": false,
+    "pole_regularity": "known but insufficient without endpoint domain",
+    "preserved": {
+      "F0_equals_M4_squared": "pi/2",
+      "K_Weyl": "3 chi_1^2(4-pi)^2/(16 pi)>0",
+      "K_scalar": ">=2>0",
+      "k_q_E": "K_scalar+K_shift_endpoint_red+K_Weyl"
+    },
+    "pseudoinverse_used": false,
+    "result": "BHSM_FOLD_KINETIC_SIGN_REQUIRES_EMBEDDING_VARIATION_OR_SHIFT_DOMAIN",
+    "solvability_condition": null,
+    "source": "J_shift(t)=-3 tau chi_1 t/[4 sin^2(pi t/4)]"
+  },
+  "embedding_variation_assumed": false,
+  "frozen_predictions_changed": false,
+  "measured_input_used": false,
+  "neutral_work_performed": false,
+  "new_action_term_introduced": false,
+  "new_primitive_introduced": false,
+  "official_prediction_logic_changed": false,
+  "primary_result": "BHSM_EXISTING_B1_VARIATION_DOES_NOT_SUPPLY_SHIFT_BOUNDARY_DATA",
+  "radion_potential_introduced": false,
+  "source_main_sha": "39a01dcc877105a41d0dfa145407585d55906756",
+  "sprint": "bhsm-moving-endpoint-shift-domain-v6-13-0",
+  "status": "BHSM_FOLD_KINETIC_SIGN_REQUIRES_EMBEDDING_VARIATION_OR_SHIFT_DOMAIN",
+  "tau_J_introduced": false,
+  "v6_12_head_sha": "b8d6c1550ade4cb2c86e331f8f74cb001d35b94b",
+  "version": "v6.13.0"
+}
