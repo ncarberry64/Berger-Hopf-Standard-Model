@@ -1406,3 +1406,31 @@ Active construction:
 
 Command:
 `python -m bhsm.interface boundary-matter-neutral-response-status --format markdown`.
+
+<!-- BHSM_BERGER_CLIFFORD_Y_SIGMA_REDUCTION_V6_8_0 -->
+## v6.8.0 Berger-Clifford wall-coupling reduction
+
+Primary result:
+`BHSM_Y_SIGMA_EXP_MINUS_BETA_REJECTED_BY_CANONICAL_NORMALIZATION`.
+
+The exact Berger determinant is
+`R^6 exp(2 beta) sin^2(theta)/64`, and the volume is
+`2 pi^2 R^3 exp(beta)`. The vertical dual frame contains
+`X_3=(2/R)exp(-beta)partial_psi`, but the coordinate matrix `Gamma^psi`
+also contains transverse frame mixing.
+
+The adopted `Gamma_star` is instead the beta-independent rank-two collar
+Clifford partner defined by `K=i Gamma_n Gamma_star`. It acts as the identity
+on the internal Berger factor. Hence its interaction overlap equals the
+fermion kinetic norm and canonical normalization gives
+`y_sigma(beta)=y_sigma(0)=lambda_geom`, not an `exp(-beta)` law.
+
+The relative beta dependence is fixed to one; the absolute dimensionless
+coefficient remains the single primitive already exposed by v6.6/v6.7. The
+stiffness identity
+`sqrt(tau_transverse/tau_nested)=exp(-beta)` remains exact but does not prove
+a wall-coupling identity.
+
+No measured input, sector-dependent coupling, physical bulk Dirac parent law,
+new scalar normalization, global-spectrum theorem, frozen-prediction change,
+or official-prediction-logic change is introduced.

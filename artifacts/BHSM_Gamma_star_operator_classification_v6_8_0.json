@@ -1,0 +1,52 @@
+{
+  "Gamma_star_equals_Gamma_psi": false,
+  "artifact": "BHSM_Gamma_star_operator_classification_v6_8_0",
+  "candidates": {
+    "Gamma_hat3": {
+      "Berger_beta_dependence": "none",
+      "classification": "B: orthonormal internal Hopf-direction matrix"
+    },
+    "Gamma_psi": {
+      "Berger_beta_dependence": "exp(-beta) only in its vertical component; transverse frame mixing is also present",
+      "classification": "C: coordinate-index internal operator",
+      "formula": "-(2/R) cot(theta) [sin(psi) Gamma^hat1 + cos(psi) Gamma^hat2] + (2/R) exp(-beta) Gamma^hat3"
+    },
+    "internal_volume": {
+      "Berger_beta_dependence": "none in an orthonormal frame",
+      "classification": "D: i Gamma^hat1 Gamma^hat2 Gamma^hat3"
+    },
+    "projected_composite": {
+      "Berger_beta_dependence": "not assignable without a new operator",
+      "classification": "E: not defined by the adopted v6.6/v6.7 action"
+    }
+  },
+  "declared_Gamma_star": {
+    "Berger_beta_dependence": "none",
+    "bundle_factor": "rank-two collar-normal Clifford factor, tensored with the internal representation bundle",
+    "classification": "A: collar-normal Clifford partner/chirality operator",
+    "definition": "K=i Gamma_n Gamma_star",
+    "source_evidence": [
+      "src/bhsm/interface/particle_chirality_anomaly_normalization.py",
+      "artifacts/BHSM_first_order_Clifford_boundary_operator_v6_3_0.json",
+      "docs/bhsm_particle_chirality_anomaly_normalization_v6_3_0.md"
+    ]
+  },
+  "frozen_predictions_changed": false,
+  "full_BHSM_claimed": false,
+  "gamma_star_projection_exp_minus_beta": false,
+  "global_spectrum_claimed": false,
+  "lambda_geom_set_to_one": false,
+  "measured_derivation_input_used": false,
+  "neutrino_work_introduced": false,
+  "objects_silently_identified": false,
+  "official_prediction_logic_changed": false,
+  "operator_result": "BHSM_WALL_GAMMA_OPERATOR_HAS_NO_BERGER_SCALING",
+  "physical_bulk_Dirac_parent_law_introduced": false,
+  "primary_result": "BHSM_Y_SIGMA_EXP_MINUS_BETA_REJECTED_BY_CANONICAL_NORMALIZATION",
+  "sector_dependent_coupling_introduced": false,
+  "source_main_sha": "59308347b233aceeeb491b9cec855a5f96218a47",
+  "sprint": "bhsm-berger-clifford-y-sigma-reduction-v6-8-0",
+  "status": "BHSM_WALL_GAMMA_OPERATOR_HAS_NO_BERGER_SCALING",
+  "v6_7_scientific_sha": "46c4854ab56871610b8850494d585eb4d8b2d240",
+  "version": "v6.8.0"
+}
