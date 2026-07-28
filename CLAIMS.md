@@ -1369,3 +1369,39 @@ Still requiring construction:
 
 Primary status:
 `BHSM_BOUNDARY_MATTER_VARIATION_DERIVED_CONDITIONALLY_DOMAIN_AND_NEUTRAL_RESPONSE_OPEN`.
+
+<!-- BHSM_LOCAL_SCALAR_CONSTRAINT_B1_DOMAIN_V6_24_0 -->
+## v6.24.0 local scalar constraint and moving-endpoint claims
+
+Derived consequences:
+
+- the complete first-order geometry of a B1 graph in the stored normal and
+  extrinsic-curvature conventions;
+- gauge invariance of
+  `S_Sigma=B+N0^2 zeta-a0^2 partial_rho E`;
+- equivalence of fixed-endpoint and moving-coordinate descriptions of one
+  fixed support;
+- the corrected affine identity
+  `K'-<J',L^-1J'>=K-<J,L^-1J>`;
+- separation of the v6.18 spatial nonhomogeneous response, its adopted
+  time-independent homogeneous constant, the uncovered time-dependent
+  homogeneous Lorentzian sector, and the uncovered endpoint trace.
+
+Rejected by calculation:
+
+- treating `zeta` as a freely varied physical embedding field of the frozen
+  action;
+- deriving a normal endpoint Euler-Lagrange equation from a fixed-embedding
+  variational problem;
+- inserting the v6.18 spatial projected inverse as the complete Lorentzian
+  threading block.
+
+Active construction target:
+
+- declare or derive an off-shell `iota_zeta` and its Z2
+  cap-exchange/reflection extension as variational-domain data, then derive
+  the endpoint equation before reopening the complete quadratic operator.
+
+No local `X_FRW(x)` field, scalar-curvature inverse, measured input, fitted
+coefficient, new action, arbitrary boundary condition, Schur number, kinetic
+sign, physical mass, or stability claim is introduced.

@@ -1,0 +1,188 @@
+{
+  "B1_domain_verdict": "BHSM_B1_MOVING_ENDPOINT_DOMAIN_BLOCKED_BY_UNSTORED_X_DEPENDENT_GLUE_REFLECTION_DATUM",
+  "action_and_background": {
+    "action": {
+      "B1_primary_freeze": "∫sqrt(-h)[C_partial R4-tau_A Tr(F^2)/4-Z_partial(partial sigma_partial)^2/2]",
+      "GHY_each_oriented_cap": "+kappa_1 ∫sqrt(-h) K",
+      "P1": "∫sqrt(-g)[kappa_1 R5/2-kappa_0/2-Z5(grad sigma)^2/2-U5(sigma)]",
+      "U5": "A5 sigma^2/2+G5 sigma^4/4",
+      "U_partial": "absent (zero in the primary freeze)",
+      "cap_count": 2,
+      "common_B1_count": 1,
+      "matcher": "∫_B1 sqrt(-h) Lambda^(mu nu)(h_mu nu-iota^*g_mu nu)",
+      "matcher_coefficient": null,
+      "new_term_added": false,
+      "total": [
+        "S_P1,cap+",
+        "S_P1,cap-",
+        "S_GHY,cap+",
+        "S_GHY,cap-",
+        "S_B1",
+        "S_match",
+        "S_sigma"
+      ]
+    },
+    "background": {
+      "C_partial_over_kappa1": "1/2",
+      "K_convention": "K_mu_nu=(1/2)L_n h_mu_nu",
+      "M4": "Ric(hbar)=3 X_c hbar (maximally symmetric branch)",
+      "N0": "pi/4",
+      "R4": "12 X_c",
+      "X_c": 2,
+      "Z2": "two reflected regular caps and one common B1",
+      "Z5": 1,
+      "a0": "sqrt(2) sin(pi t/4)",
+      "cap_endpoint": "t=1",
+      "common_normal": "outward normals are used capwise; signed common-normal threading amplitudes have opposite signs",
+      "kappa1": 1,
+      "metric": "ds5^2=N0^2 dt^2+a0(t)^2 hbar_mu_nu dx^mu dx^nu",
+      "normal": "n_out=N0^-1 partial_t on each outward cap coordinate",
+      "q5": 1,
+      "radial_coordinate": "t∈[0,1] on each normalized cap",
+      "regular_pole": "t=0",
+      "sigma0": 0
+    },
+    "provenance": {
+      "Z2_gluing_domain": "z2_double_cap_threading_domain.py:support_domain_ledger",
+      "critical_background": "scalar_wall_junction_audit.py:359-370",
+      "fixed_embedding_domain": "moving_endpoint_shift_domain.py:repository_domain_ledger",
+      "frozen_action": "intrinsic_m4_junction_background.py:224-263",
+      "principal_block": "critical_lapse_weyl_hessian.py",
+      "scalar_completion": "scalar_wall_junction_audit.py:266-291",
+      "threading_response": "covariant_threading_response.py:kernel_ledger,response_domain_ledger"
+    }
+  },
+  "arbitrary_boundary_parameter_introduced": false,
+  "arbitrary_global_green_state_selected": false,
+  "artifact": "BHSM_local_scalar_gauge_ledger_v6_24_0",
+  "chat_only_candidate_imported": false,
+  "conformal_tangent_used_as_action_input": false,
+  "embedding_variation_assumed": false,
+  "fitted_coefficients_introduced": false,
+  "frozen_predictions_changed": false,
+  "gauge": {
+    "convention": "delta g→delta g-L_xi g; zeta→zeta+xi^rho|B1",
+    "count_status": {
+      "fixed_embedding_count": "inherited and consistent",
+      "physical_moving_embedding_count": null,
+      "why": "zeta has neither a declared variation nor a conjugate boundary/domain condition in the frozen configuration space"
+    },
+    "fixed_support_equivalence": {
+      "fixed_endpoint_gauge": "xi^rho|B1=-zeta gives zeta=0",
+      "moving_coordinate_representative": "zeta may be nonzero",
+      "physical_support_moved": false,
+      "threading_unchanged": true
+    },
+    "gauge_functions": {
+      "M4_scalar": "L with xi^mu=D^mu L",
+      "intrinsic_B1": "the pullback of L at B1, acting simultaneously on intrinsic fields and iota^*g",
+      "radial": "xi^rho"
+    },
+    "invariants": {
+      "critical_scalar_pullback": "delta sigma|B1 because n(sigma0)=0",
+      "metric_pullback": "delta gamma_ab|B1+2K_ab zeta+L_v gamma_ab",
+      "scalar_pullback": "delta sigma|B1+zeta n(sigma0)",
+      "threading": "S_Sigma=B+N0^2 zeta-a0^2 partial_rho E"
+    },
+    "physical_moving_support": {
+      "gauge_equivalent_to_fixed_support": false,
+      "reason": "changing the embedded submanifold and the Z2 reflection map changes action-domain data, not merely coordinates"
+    },
+    "pre_quotient_fields": {
+      "collective_source": "q with delta sigma=s u1 q+delta sigma_perp",
+      "diagnostic_endpoint_representative": "zeta",
+      "each_cap": [
+        "A (radial lapse scalar)",
+        "B (radial shift potential)",
+        "psi (M4 trace/Weyl scalar)",
+        "E (M4 scalar-longitudinal potential)",
+        "delta sigma_perp"
+      ],
+      "independent_B1_before_matching": [
+        "intrinsic metric trace scalar",
+        "intrinsic metric scalar-longitudinal scalar",
+        "retained intrinsic scalar if sourced"
+      ],
+      "matcher_before_elimination": [
+        "Lambda trace scalar",
+        "Lambda scalar-longitudinal scalar"
+      ]
+    },
+    "symbolic_threading_invariance": "0",
+    "transformations": {
+      "A": "A-(N0 xi^rho)'/N0",
+      "B": "B-N0^2 xi^rho-a0^2 partial_rho L",
+      "E": "E-L",
+      "delta_sigma": "delta sigma-sigma0' xi^rho",
+      "intrinsic_metric": "delta h_partial→delta h_partial-L_(xi_parallel)hbar",
+      "matcher": "tensor-density pullback law; no physical multiplier mode",
+      "psi": "psi-(a0'/a0)xi^rho",
+      "zeta": "zeta+xi^rho|B1"
+    }
+  },
+  "generic_pseudoinverse_emitted": false,
+  "ghost_or_stability_claimed": false,
+  "kinetic_number_emitted": false,
+  "local_X_field_invented": false,
+  "local_operator_verdict": "BHSM_LOCAL_SCALAR_CONSTRAINT_SYSTEM_BLOCKED_BY_UNSTORED_X_DEPENDENT_EMBEDDING_DOMAIN",
+  "measured_inputs_used": false,
+  "moving_graph_kinematics": {
+    "ADM_graph": {
+      "exact_induced_metric": "[gamma_mu_nu+N_mu D_nu zeta+N_nu D_mu zeta+(N^2+N_alpha N^alpha)D_mu zeta D_nu zeta]_graph",
+      "linear_normal_lapse": "delta N_graph=A+zeta partial_rho N0",
+      "relative_shift_one_form": "V_mu=N_mu+N^2D_mu zeta"
+    },
+    "conventions": "n.n=+1; K_ab=(1/2)L_n gamma_ab",
+    "critical_scalar_pullback": "delta sigma_ind=delta sigma because sigma0=0",
+    "extrinsic_curvature_shape_part": "delta_zeta K_ab=-D_aD_b zeta+zeta(K_a^c K_cb-R_n a n b)",
+    "gauge_pullback": "delta A_ind=iota^*(delta A+L_(zeta n+v)A0); zero on the retained A0=0 background",
+    "graph": "X_zeta(x)=Exp_iota(x)[zeta(x)n]+v^a e_a+O(zeta^2)",
+    "induced_metric": "delta gamma_ab=p_ab+2zeta K_ab+2D_(a v_b)",
+    "matcher_pullback": "delta(iota_zeta^*g)_ab=p_ab+2zeta K_ab+2D_(a v_b)",
+    "measure": "delta sqrt(|gamma|)/sqrt(|gamma|)=p^a_a/2+K zeta+D_a v^a",
+    "normal_covector": "delta n_A=(p_nn/2)n_A-(D_a zeta)e^a_A (normal-graph representative)",
+    "normal_vector": "delta n^A=-(p_nn/2)n^A-(p_n^a+D^a zeta)e_a^A",
+    "scalar_pullback": "delta sigma_ind=delta sigma+zeta n(sigma0)+v^aD_a sigma0",
+    "scope": "these identities compare embeddings geometrically; they do not declare iota_zeta to be a field varied by the frozen action",
+    "status": "Derived consequence (kinematics only)",
+    "trace_shape_part": "delta_zeta K=-D^2 zeta-(K_ab K^ab+Ric_nn)zeta"
+  },
+  "new_action_introduced": false,
+  "new_corner_term_introduced": false,
+  "new_primitive_introduced": false,
+  "new_scale_introduced": false,
+  "official_prediction_logic_changed": false,
+  "physical_mass_claimed": false,
+  "provenance_status": [
+    {
+      "item": "moving-hypersurface first-variation identities",
+      "status": "Adopted from established physics/mathematics"
+    },
+    {
+      "item": "frozen P1+GHY+B1+matcher+scalar action and fixed iota",
+      "status": "Adopted BHSM axiom"
+    },
+    {
+      "item": "two-cap/common-B1 identification",
+      "status": "BHSM identification"
+    },
+    {
+      "item": "coordinate moving/fixed endpoint gauge equivalence",
+      "status": "Derived consequence"
+    },
+    {
+      "item": "physical moving-endpoint equation from the frozen action",
+      "status": "Rejected by calculation"
+    },
+    {
+      "item": "x-dependent embedding and Z2 gluing variational domain",
+      "status": "Active construction target"
+    }
+  ],
+  "scalar_curvature_inverse_revived": false,
+  "schur_number_emitted": false,
+  "source_main_sha": "21c7e8fe9057d75f353e4f23ad5dbe49a1b41c6b",
+  "sprint": "bhsm-local-scalar-constraint-b1-domain-v6-24-0",
+  "v6_23_scientific_sha": "9d13432b055a52e4a7e0ca4d599b7f465328f447",
+  "version": "v6.24.0"
+}

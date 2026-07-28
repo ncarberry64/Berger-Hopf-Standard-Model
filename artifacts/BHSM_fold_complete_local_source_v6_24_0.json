@@ -1,0 +1,75 @@
+{
+  "B1_domain_verdict": "BHSM_B1_MOVING_ENDPOINT_DOMAIN_BLOCKED_BY_UNSTORED_X_DEPENDENT_GLUE_REFLECTION_DATUM",
+  "arbitrary_boundary_parameter_introduced": false,
+  "arbitrary_global_green_state_selected": false,
+  "artifact": "BHSM_fold_complete_local_source_v6_24_0",
+  "chat_only_candidate_imported": false,
+  "conformal_tangent_used_as_action_input": false,
+  "embedding_variation_assumed": false,
+  "fitted_coefficients_introduced": false,
+  "frozen_predictions_changed": false,
+  "generic_pseudoinverse_emitted": false,
+  "ghost_or_stability_claimed": false,
+  "kinetic_number_emitted": false,
+  "local_X_field_invented": false,
+  "local_operator_verdict": "BHSM_LOCAL_SCALAR_CONSTRAINT_SYSTEM_BLOCKED_BY_UNSTORED_X_DEPENDENT_EMBEDDING_DOMAIN",
+  "measured_inputs_used": false,
+  "new_action_introduced": false,
+  "new_corner_term_introduced": false,
+  "new_primitive_introduced": false,
+  "new_scale_introduced": false,
+  "official_prediction_logic_changed": false,
+  "physical_mass_claimed": false,
+  "scalar_curvature_inverse_revived": false,
+  "schur_number_emitted": false,
+  "source": {
+    "affine_identity": "K'-<J',L^-1J'>=K-<J,L^-1J>",
+    "affine_identity_symbolic_residual": "0",
+    "bookkeeping_convention": "A: homogeneous radial profiles would be affine shifts of constraint variables; they are not also inserted as direct terms",
+    "full_J0": null,
+    "full_J1": null,
+    "homogeneous_input_only": {
+      "delta_X_FRW": "tau chi_1 q",
+      "delta_sigma": "s u1 q+delta sigma_perp",
+      "status": "on-shell homogeneous tangent data, not local equations"
+    },
+    "identity_applicability": "algebraically proved, but numerical use requires the same closed invertible quotient operator and domain, which are unavailable",
+    "known_components": {
+      "Einstein_frame_later": "K_Weyl=3 chi_1^2(4-pi)^2/(16pi), counted once only after a Jordan-frame reduction",
+      "principal_lapse_weyl": "partial source only from v6.20",
+      "scalar_direct": "K_scalar=2∫a0^2 u1^2 d rho>=2",
+      "threading_projected": "Pi_perp Sbar=-tau(pi chi_1/16)Pi_perp q"
+    },
+    "missing_components": [
+      "physical moving-endpoint source",
+      "matcher source induced by iota_zeta",
+      "complete intrinsic B1 scalar-curvature source",
+      "time-dependent homogeneous threading source",
+      "delta sigma_perp mixed source after the full constraint solve",
+      "all lower-order coupled metric sources"
+    ],
+    "no_double_counting_proved_for_available_terms": true,
+    "source_verdict": "BHSM_FOLD_COMPLETE_LOCAL_MIXED_SOURCE_BLOCKED_BY_UNSTORED_X_DEPENDENT_EMBEDDING_DOMAIN"
+  },
+  "source_main_sha": "21c7e8fe9057d75f353e4f23ad5dbe49a1b41c6b",
+  "sprint": "bhsm-local-scalar-constraint-b1-domain-v6-24-0",
+  "threading_coverage": {
+    "required_mode_outside_v6_18": true,
+    "sector_audit": {
+      "general_Lorentzian_M4_scalar": "not covered; general lower DtN terms were left open",
+      "moving_endpoint_trace": "not covered; zeta was not promoted to an action variable",
+      "spatial_homogeneous_ell_0_time_independent": "kernel; selected by C_Sigma=0 axiom",
+      "spatial_nonhomogeneous_ell_ge_1": "covered mode by mode",
+      "time_dependent_spatially_homogeneous": "not covered by the time-independent S3 harmonic Hessian"
+    },
+    "v6_18_exact_scope": {
+      "background": "round spatial S3 symmetric background",
+      "homogeneous_constant": "C_Sigma=0 by adopted BHSM axiom",
+      "kernel": "Khat_Sigma=(2/a^2)D_spatial^2",
+      "projected_response": "Pi_perp Sbar=-tau(pi chi_1/16)Pi_perp q"
+    },
+    "why_it_matters": "the requested local q(x) operator includes Lorentzian homogeneous response and endpoint mixing, so the spatial Pi_perp inverse cannot be inserted as the complete threading block"
+  },
+  "v6_23_scientific_sha": "9d13432b055a52e4a7e0ca4d599b7f465328f447",
+  "version": "v6.24.0"
+}

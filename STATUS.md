@@ -2093,3 +2093,27 @@ metric operator/source and x-dependent B1/matcher moving-endpoint domain:
 `BHSM_FOLD_SCHUR_REDUCTION_BLOCKED_BY_INCOMPLETE_LOCAL_CONSTRAINT_OPERATOR_AND_B1_DOMAIN`.
 No total `k_q^E`, kinetic sign, physical mass, or stability result is
 emitted.
+
+<!-- BHSM_LOCAL_SCALAR_CONSTRAINT_B1_DOMAIN_V6_24_0 -->
+## v6.24.0 local scalar constraint and moving-B1-domain audit
+
+The frozen P1+GHY+B1+matcher+scalar action retains two caps, two capwise GHY
+terms, one common intrinsic B1, and a fixed embedding `iota`. Universal
+moving-graph kinematics were derived, including the induced metric, unit
+normal, extrinsic curvature, trace, measure, scalar pullback, and invariant
+threading trace
+`S_Sigma=B+N0^2 zeta-a0^2 partial_rho E`.
+
+A nonzero `zeta(x)` is a valid coordinate representative of the fixed
+support. A physically moving support is not selected by the frozen
+variational domain: `iota` is not varied, and the doubled geometry stores no
+`x`-dependent cap-exchange/reflection extension. The smallest missing object
+is an off-shell embedding family `iota_zeta` together with that Z2
+gluing/reflection datum.
+
+The exact domain verdict is
+`BHSM_B1_MOVING_ENDPOINT_DOMAIN_BLOCKED_BY_UNSTORED_X_DEPENDENT_GLUE_REFLECTION_DATUM`.
+Consequently the complete local operator, mixed source, adjoint domain,
+kernel, Schur complement, and kinetic sign remain undefined. No missing
+contribution is set to zero and no physical mass or stability result is
+emitted.
