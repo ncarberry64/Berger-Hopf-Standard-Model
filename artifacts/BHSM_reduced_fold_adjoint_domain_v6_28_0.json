@@ -1,0 +1,46 @@
+{
+  "M4_curvature_tangent_double_counted": false,
+  "Schur_number_emitted": false,
+  "artifact": "BHSM_reduced_fold_adjoint_domain_v6_28_0",
+  "domain": {
+    "B1": {
+      "full_momentum": "W=0; B is not an independent domain variable",
+      "matcher": "h=iota^*gamma eliminated algebraically",
+      "metric": "P_psi(1)+12 C_partial lambda psi(1)=0, P_psi=d A+2cPP psi'+f psi",
+      "scalar": "delta_sigma_perp(1)=0"
+    },
+    "adjoint_domain": "the same pole, B1 Robin/Dirichlet, matcher, quotient, and orthogonality conditions",
+    "formal_adjoint": "the displayed differential expressions with the same weight",
+    "gauge_quotient": "(A,psi)~(A-xi',psi-(a0'/a0)xi) for regular xi with xi(0)=xi(1)=0",
+    "inner_product": "<Y1,Y2>=integral_0^1 N0 a0^4(A1 A2+psi1 psi2+s1 s2)dt",
+    "proof": "the exact Green current vanishes at the pole; at B1 it becomes psi2 P1-psi1 P2 plus the scalar Dirichlet current and vanishes for two fields in the domain",
+    "regular_pole": {
+      "derivative_expansion": "A=A0+O(t^2), psi=psi0+O(t^2), delta_sigma=s0+O(t^2); coefficientwise radial flux vanishes",
+      "finite_lambda_resummation": "not used; lambda is the local derivative-pencil parameter"
+    },
+    "result": "BHSM_REDUCED_FOLD_ADJOINT_DOMAIN_DERIVED",
+    "scalar_orthogonality": "integral_0^1 N0 a0^4 u1 delta_sigma_perp dt=0",
+    "self_adjointness": true
+  },
+  "fitted_parameter_used": false,
+  "frozen_predictions_changed": false,
+  "generic_pseudoinverse_used": false,
+  "global_Lorentzian_propagator_selected": false,
+  "kinetic_sign_emitted": false,
+  "measured_input_used": false,
+  "new_action_introduced": false,
+  "new_boundary_parameter_introduced": false,
+  "new_primitive_introduced": false,
+  "new_scale_introduced": false,
+  "official_prediction_logic_changed": false,
+  "operator_inverse_emitted": false,
+  "phase_result": "BHSM_REDUCED_FOLD_OPERATOR_AND_DOMAIN_CLOSED_CONDITIONALLY",
+  "physical_mass_claimed": false,
+  "primary_result": "BHSM_REDUCED_FOLD_OPERATOR_L0_L1_DERIVED",
+  "radial_profile_double_counted": false,
+  "source_main_sha": "d94f2dd71eac8f03649f73011e6b4ee830f7b09b",
+  "sprint": "bhsm-reduced-fold-operator-domain-v6-28-0",
+  "stability_claimed": false,
+  "v6_27_scientific_sha": "643bc7371fc81f07cce465abded3f5d2885bca3c",
+  "version": "v6.28.0"
+}

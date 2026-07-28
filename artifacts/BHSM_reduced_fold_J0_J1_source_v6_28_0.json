@@ -1,0 +1,64 @@
+{
+  "M4_curvature_tangent_double_counted": false,
+  "Schur_number_emitted": false,
+  "artifact": "BHSM_reduced_fold_J0_J1_source_v6_28_0",
+  "fitted_parameter_used": false,
+  "frozen_predictions_changed": false,
+  "generic_pseudoinverse_used": false,
+  "global_Lorentzian_propagator_selected": false,
+  "kinetic_sign_emitted": false,
+  "measured_input_used": false,
+  "new_action_introduced": false,
+  "new_boundary_parameter_introduced": false,
+  "new_primitive_introduced": false,
+  "new_scale_introduced": false,
+  "official_prediction_logic_changed": false,
+  "operator_inverse_emitted": false,
+  "phase_result": "BHSM_REDUCED_FOLD_OPERATOR_AND_DOMAIN_CLOSED_CONDITIONALLY",
+  "physical_mass_claimed": false,
+  "primary_result": "BHSM_REDUCED_FOLD_OPERATOR_L0_L1_DERIVED",
+  "projector": {
+    "boundary": "u1,_rho(0)=0, u1(1)=0",
+    "critical_mode": "u1 solves [a0^-4 partial_rho(a0^4 partial_rho)-A5/Z5]u1=0",
+    "domain_condition": "integral_0^1 N0 a0^4 u1 delta_sigma_perp dt=0",
+    "kernel_removed": true,
+    "normalization": "integral_0^1 N0 a0^4 u1^2 dt=1 per cap",
+    "projector": "P_perp f=f-u1 integral_0^1 N0 a0^4 u1 f dt",
+    "source_projection": "J_sigma is replaced by P_perp J_sigma"
+  },
+  "radial_profile_double_counted": false,
+  "source": {
+    "J0": "J0[Y]=B0_metric(v_metric,Y_metric)+B0_scalar(s u1,delta_sigma_perp); the scalar term is zero and the metric functional includes its B1 boundary distribution",
+    "J1": "J1[Y]=B1_metric(v_metric,Y_metric)-2Z5 integral N0 a0^2(s u1)delta_sigma_perp dt+integral w[J_A A+J_psi_derivative partial_t psi]dt",
+    "K_direct": {
+      "Einstein_frame_Weyl_term_included": false,
+      "K0": "B0_metric(v,v)+B0_scalar(su1,su1); the scalar term vanishes by the critical Jacobi equation",
+      "K1": "B1_metric(v,v)-2Z5 integral N0 a0^2 u1^2 dt+2 integral w[J_A v_A+J_psi_derivative partial_t v_psi]dt",
+      "pure_shift_square": "zero after the parent constraint: the shift Hessian is a quadratic form in W=B+tau(pi chi_1/16)tq and W=0",
+      "radial_profiles_counted_once": true
+    },
+    "affine_convention": "Y_total=Y_response+q v with v=(N1/N0,a1/a0,s u1); independent M4 h is varied and no separate X-metric tangent is added",
+    "global_Lorentzian_state": null,
+    "profiles": {
+      "A_q": "-chi_1*tau/pi",
+      "B_q": "-pi*chi_1*t*tau/16",
+      "E_q": "0",
+      "M4_X_tangent_added": "False",
+      "psi_q": "chi_1*tau*(-t/tan(pi*t/4) + 1)/4",
+      "sigma_q": "s u1(t), with <u1,u1>_(N0 a0^4)=1 per cap",
+      "zeta_q": "0"
+    },
+    "result": "BHSM_REDUCED_FOLD_SOURCE_J0_J1_DERIVED",
+    "source_boundary_form_retained": true,
+    "threading": {
+      "J_A": "-3*chi_1*kappa_1*t*tau*cos(pi*t/4)/(4*sin(pi*t/4)**3)",
+      "J_psi_derivative": "3*chi_1*kappa_1*t*tau/(pi*sin(pi*t/4)**2)",
+      "endpoint_after_radial_IBP": "[w J_psi_derivative psi]_(0,1); retained with the B1 source"
+    }
+  },
+  "source_main_sha": "d94f2dd71eac8f03649f73011e6b4ee830f7b09b",
+  "sprint": "bhsm-reduced-fold-operator-domain-v6-28-0",
+  "stability_claimed": false,
+  "v6_27_scientific_sha": "643bc7371fc81f07cce465abded3f5d2885bca3c",
+  "version": "v6.28.0"
+}
