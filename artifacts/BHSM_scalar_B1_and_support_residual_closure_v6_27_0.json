@@ -1,0 +1,132 @@
+{
+  "B1": {
+    "Ward": {
+      "dependent_rows": [
+        "scalar momentum",
+        "traceless scalar-longitudinal"
+      ],
+      "identity_1": "D^mu J_mu u=-[T_bulk,n u], reduced by the parent momentum constraint",
+      "identity_2": "scalar-longitudinal divergence of J_mu nu, reduced by matcher and scalar equation",
+      "independent_rows": [
+        "temporal/Hamiltonian",
+        "spatial trace"
+      ]
+    },
+    "complete_response_columns": [
+      "Pi_H: doubled canonical-momentum H response after bulk lapse/Weyl/longitudinal/scalar constraints",
+      "Pi_T: doubled canonical-momentum trace response after those constraints",
+      "G_H,G_T: matcher-eliminated intrinsic B1 Einstein responses",
+      "T_H,T_T: scalar-field and other frozen B1 stress responses"
+    ],
+    "endpoint_trace": {
+      "after_C1_parent_constraint_and_C0_axiom": "-tau(pi chi_1/16)q",
+      "all_agree": true,
+      "invariant": "S_Sigma=B+N0^2 zeta-a0^2 partial_rho E",
+      "new_embedding_data": false,
+      "representations": {
+        "fixed_endpoint_gauge": "-tau(pi chi_1/16)q",
+        "full_shift": "-tau(pi chi_1/16)q",
+        "moving_coordinate_same_fixed_support": "-tau(pi chi_1/16)q",
+        "scalar_potential_plus_parent_constraint": "-tau(pi chi_1/16)q"
+      },
+      "result": "BHSM_ENDPOINT_TRACE_RESPONSE_DERIVED"
+    },
+    "four_projections": {
+      "scalar_momentum": "0 for q=q(u); Ward-dependent row",
+      "spatial_trace_T": "(tau chi_1/4)(ddot q+2H4 dot q) per cap",
+      "temporal_H": "-3(tau chi_1/4)H4 dot q per cap",
+      "traceless_longitudinal": "0 for q=q(u); Ward-dependent row"
+    },
+    "junction": "J_mu_nu=kappa_1[Q_mu_nu]+2C_partial G_mu_nu-T_mu_nu=0",
+    "matcher_eliminated_system": {
+      "equations": [
+        "kappa_1 Pi_H+2C_partial G_H-T_H=(3/2)kappa_1 tau chi_1 H4 dot q",
+        "kappa_1 Pi_T+2C_partial G_T-T_T=-(kappa_1 tau chi_1/2)(ddot q+2H4 dot q)"
+      ],
+      "field_vector": [
+        "Pi_H",
+        "Pi_T",
+        "G_H",
+        "G_T",
+        "T_H",
+        "T_T"
+      ],
+      "matrix": [
+        [
+          "kappa_1",
+          "0",
+          "2*C_partial",
+          "0",
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "kappa_1",
+          "0",
+          "2*C_partial",
+          "0",
+          "-1"
+        ]
+      ],
+      "source": [
+        "3*sqrt(X)*chi_1*kappa_1*tau*tanh(sqrt(X)*(u - u_0))*Derivative(q(u), u)/2",
+        "-chi_1*kappa_1*tau*(2*sqrt(X)*tanh(sqrt(X)*(u - u_0))*Derivative(q(u), u) + Derivative(q(u), (u, 2)))/2"
+      ]
+    },
+    "rank": 2,
+    "rank_witness": "det J[:,(Pi_H,Pi_T)]=kappa_1^2 !=0",
+    "result": "BHSM_SCALAR_B1_TWO_EQUATION_SYSTEM_DERIVED",
+    "source_compatibility": "the two zero source projections obey the two Ward identities once the bulk momentum/scalar equations and matcher are imposed"
+  },
+  "C1_result": "BHSM_LORENTZIAN_C1_MODE_ELIMINATED_BY_FULL_MOMENTUM_CONSTRAINT",
+  "Euclidean_state_selected": false,
+  "Feynman_state_selected": false,
+  "Schur_number_emitted": false,
+  "advanced_state_selected": false,
+  "arbitrary_Lorentzian_state_selected": false,
+  "artifact": "BHSM_scalar_B1_and_support_residual_closure_v6_27_0",
+  "chat_only_candidate_imported": false,
+  "commutativity_result": "BHSM_SCALAR_REDUCTION_BEFORE_VARIATION_LOSES_C1_MOMENTUM_CONSTRAINT",
+  "fitted_coefficient_introduced": false,
+  "frozen_predictions_changed": false,
+  "kinetic_number_emitted": false,
+  "local_X_field_invented": false,
+  "measured_input_used": false,
+  "new_action_introduced": false,
+  "new_boundary_axiom_introduced": false,
+  "new_boundary_condition_introduced": false,
+  "new_corner_term_introduced": false,
+  "new_primitive_introduced": false,
+  "new_scale_introduced": false,
+  "normal_support_residual": {
+    "Noether_route": "normal diffeomorphism invariance gives R_perp as the same combination of bulk Euler expressions, momentum/scalar equations, matcher, and J",
+    "affine_invariant": true,
+    "basis_identity": "Box4 q=-ddot q-3H4 dot q",
+    "before_basis_reduction": "R_perp^(2)=0 ddot q+0 H4 dot q+0 Box4 q",
+    "definition": "R_perp=(sqrt|h|)^-1 delta_zeta^diag S_total evaluated at zeta=0",
+    "fixed_moving_invariant": true,
+    "gauge_invariant": true,
+    "independent_basis": {
+      "H4_dot_q": 0,
+      "ddot_q": 0
+    },
+    "normal_junction_route": "Gauss-Codazzi normal projection reduces the same coefficient to a linear combination k_H J_H+k_T J_T",
+    "rank_check": "appending R_perp=k_H J_H+k_T J_T leaves symbolic rank 2",
+    "result": "BHSM_NORMAL_SUPPORT_RESIDUAL_VANISHES_THROUGH_D2Q",
+    "routes_agree": true,
+    "shape_route": "differentiate the complete fixed-support action response, then use bulk Einstein, M_mu=0, scalar equation, matcher, endpoint trace, and the two independent junction rows"
+  },
+  "official_prediction_logic_changed": false,
+  "operator_inverse_emitted": false,
+  "physical_mass_claimed": false,
+  "primary_result": "BHSM_FULL_SHIFT_VARIATION_IMPOSES_COMPLETE_MOMENTUM_CONSTRAINT",
+  "retarded_state_selected": false,
+  "scalar_curvature_inverse_revived": false,
+  "source_main_sha": "7a5de9fc2d9ad75504ed9db40d42b92aa1bc38e6",
+  "sprint": "bhsm-full-shift-variation-support-closure-v6-27-0",
+  "stability_claimed": false,
+  "support_result": "BHSM_FOLD_LOCALIZATION_COMPATIBLE_WITH_FIXED_B1_SUPPORT",
+  "v6_26_scientific_sha": "aa146f05db8d63ef9436b3fc1cf94b79eba4c755",
+  "version": "v6.27.0"
+}

@@ -1479,3 +1479,40 @@ No fixed-support theorem, dynamical-embedding necessity, operator inverse,
 Schur number, kinetic sign, physical mass, or stability result is claimed.
 The exact primary status is
 `BHSM_SUPPORT_DOMAIN_DECISION_BLOCKED_BY_UNFIXED_SOURCE_FREE_HOMOGENEOUS_LORENTZIAN_THREADING_MODE`.
+
+<!-- BHSM_FULL_SHIFT_VARIATION_SUPPORT_CLOSURE_V6_27_0 -->
+## v6.27.0 full-shift and support-closure claims
+
+Derived consequences:
+
+- the parent P1+GHY metric variation admits arbitrary interior
+  `delta N_mu` and imposes the complete vector momentum constraint;
+- reducing to `N_mu=D_mu B` before variation retains only its divergence and
+  loses the homogeneous Lorentzian `C1/a4^3` covector;
+- `C1=0` follows from the parent local constraint, while `C0=0` continues to
+  use only the inherited v6.18 `C_Sigma=0` scope;
+- the endpoint invariant is uniquely
+  `S_Sigma=-tau(pi chi_1/16)q`;
+- the matcher-eliminated B1 scalar junction matrix has rank two with
+  determinant witness `kappa_1^2`;
+- the normal-support residual is Noether-dependent and vanishes through
+  `O(D2q)`, so fixed B1 support is compatible with fold localization.
+
+Invalidated:
+
+- interpreting the v6.26 `C1` divergence kernel as an unstored Lorentzian
+  state;
+- treating the scalar-potential Euler equation as the complete parent shift
+  equation;
+- using that premature reduction as evidence that a dynamical B1 embedding
+  is required.
+
+Still active:
+
+- the complete action-normalized reopened `L0/L1` radial operator, its
+  adjoint boundary domain, and kernel/compatibility analysis before any
+  optional Schur inverse or kinetic-sign result.
+
+No measured input, fit, new action, primitive, scale, state condition,
+boundary axiom, corner term, frozen prediction change, official
+prediction-logic change, physical mass, or stability claim is introduced.

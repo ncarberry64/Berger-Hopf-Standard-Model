@@ -1,0 +1,123 @@
+{
+  "C1_result": "BHSM_LORENTZIAN_C1_MODE_ELIMINATED_BY_FULL_MOMENTUM_CONSTRAINT",
+  "Euclidean_state_selected": false,
+  "Feynman_state_selected": false,
+  "Schur_number_emitted": false,
+  "advanced_state_selected": false,
+  "arbitrary_Lorentzian_state_selected": false,
+  "artifact": "BHSM_full_shift_variational_domain_v6_27_0",
+  "chat_only_candidate_imported": false,
+  "commutativity_result": "BHSM_SCALAR_REDUCTION_BEFORE_VARIATION_LOSES_C1_MOMENTUM_CONSTRAINT",
+  "fitted_coefficient_introduced": false,
+  "frozen_predictions_changed": false,
+  "full_shift": {
+    "ADM": {
+      "K": "K_mu_nu=(2N)^-1(partial_rho gamma_mu_nu-D_mu N_nu-D_nu N_mu)",
+      "Q": "Q_mu_nu=K_mu_nu-K gamma_mu_nu",
+      "delta_N_K": "delta K_mu_nu=-(2N)^-1(D_mu delta N_nu+D_nu delta N_mu)",
+      "metric": "ds5^2=N^2 d rho^2+gamma_mu_nu(dx^mu+N^mu d rho)(dx^nu+N^nu d rho)"
+    },
+    "independent_variables": [
+      "N",
+      "N_mu (arbitrary one-form)",
+      "gamma_mu_nu"
+    ],
+    "linearized_v626": {
+      "C_M": "-3 kappa_1 X_c/[N0 a0(t)^2]",
+      "W": "B+tau(pi chi_1/16)t q",
+      "equation": "M_mu=C_M D_mu W=0",
+      "homogeneous": {
+        "M_i": 0,
+        "M_u": "C_M dot W"
+      }
+    },
+    "nonlinear_constraint": "D_nu(K^nu_mu-delta^nu_mu K)=kappa_1^-1 Z5(n sigma)D_mu sigma",
+    "parent_action": "S_P1+GHY=(kappa_1/2) integral d rho d4x N sqrt|gamma|[R4+K_mu_nu K^mu_nu-K^2]+S_sigma+capwise GHY completion",
+    "provenance": {
+      "10_scalar_action_status": {
+        "answer": "scalar projection, incomplete on the Lorentzian divergence-free kernel",
+        "equation": "-D^mu M_mu=[3 kappa_1 X_c/(N0 a0^2)]Box4 W",
+        "source": "src/bhsm/interface/homogeneous_threading_support_verdict.py:239-313"
+      },
+      "1_arbitrary_symmetric_metric": {
+        "answer": true,
+        "equation": "delta_g S gives kappa_1 G_AB+(kappa_0/2)g_AB=0; variation_order begins 'vary independent g'",
+        "source": "src/bhsm/interface/intrinsic_m4_junction_background.py:241-253"
+      },
+      "2_mixed_component_independent": {
+        "answer": true,
+        "equation": "g_AB is varied before matching or any scalar ansatz",
+        "source": "src/bhsm/interface/intrinsic_m4_junction_background.py:241-253"
+      },
+      "3_shift_general_four_vector": {
+        "answer": true,
+        "equation": "D_nu(K^nu_mu-delta^nu_mu K)=kappa_1^-1 Z5(n sigma)D_mu sigma",
+        "source": "src/bhsm/interface/moving_endpoint_shift_domain.py:238-246"
+      },
+      "4_scalar_potential_stage": {
+        "answer": "perturbative scalar-sector projection after the parent ADM system",
+        "equation": "delta N_mu=D_mu lambda",
+        "source": "src/bhsm/interface/seam_slide_symmetry_quotient.py:342"
+      },
+      "5_decomposition_relative_to_EL": {
+        "answer": "after the parent tensor Euler-Lagrange variation",
+        "equation": "independent-g variation precedes matching/elimination",
+        "source": "src/bhsm/interface/intrinsic_m4_junction_background.py:241-253"
+      },
+      "6_homogeneous_delta_Nu_excluded": {
+        "answer": false,
+        "equation": "bulk radial shift is freely varied in the interior",
+        "source": "src/bhsm/interface/moving_endpoint_shift_domain.py:278-284"
+      },
+      "7_fixed_map_restricts_Nu": {
+        "answer": false,
+        "equation": "fixed support fixes embedding, not the interior shift multiplier",
+        "source": "src/bhsm/interface/moving_endpoint_shift_domain.py:187,238-246"
+      },
+      "8_compact_delta_Nu_admissible": {
+        "answer": true,
+        "equation": "arbitrary interior multiplier variations have zero endpoint trace",
+        "source": "src/bhsm/interface/moving_endpoint_shift_domain.py:238-246,278-284"
+      },
+      "9_B1_matcher_restrict_delta_Nu": {
+        "answer": false,
+        "equation": "GHY, B1, Dirichlet scalar, matcher add no independent shift endpoint term",
+        "source": "src/bhsm/interface/moving_endpoint_shift_domain.py:242-246"
+      }
+    },
+    "result": "BHSM_FULL_SHIFT_VARIATION_IMPOSES_COMPLETE_MOMENTUM_CONSTRAINT",
+    "variation": {
+      "B1_or_matcher_contribution": 0,
+      "B1_shift_endpoint_term": 0,
+      "GHY_independent_shift_endpoint_term": 0,
+      "M4_boundary": "-kappa_1 integral_{partial M4} sqrt|s| s_mu Q^mu_nu delta N_nu=0; closed S3 and compact-support test variations",
+      "admissible_variations": "arbitrary smooth compactly supported delta N_mu in each cap; no frozen statement excludes homogeneous time-component tests",
+      "bulk_coefficient": "M_mu=kappa_1 D_nu Q^nu_mu-Z5(n sigma)D_mu sigma",
+      "gravity_before_M4_integration_by_parts": "-kappa_1 integral sqrt|gamma| Q^mu_nu D_mu delta N_nu",
+      "radial_integration_by_parts": false,
+      "regular_pole_term": 0,
+      "two_cap_rule": "each cap supplies its own reflected M_mu=0; the common-normal Z2 convention doubles jumps and does not cancel constraints"
+    }
+  },
+  "kinetic_number_emitted": false,
+  "local_X_field_invented": false,
+  "measured_input_used": false,
+  "new_action_introduced": false,
+  "new_boundary_axiom_introduced": false,
+  "new_boundary_condition_introduced": false,
+  "new_corner_term_introduced": false,
+  "new_primitive_introduced": false,
+  "new_scale_introduced": false,
+  "official_prediction_logic_changed": false,
+  "operator_inverse_emitted": false,
+  "physical_mass_claimed": false,
+  "primary_result": "BHSM_FULL_SHIFT_VARIATION_IMPOSES_COMPLETE_MOMENTUM_CONSTRAINT",
+  "retarded_state_selected": false,
+  "scalar_curvature_inverse_revived": false,
+  "source_main_sha": "7a5de9fc2d9ad75504ed9db40d42b92aa1bc38e6",
+  "sprint": "bhsm-full-shift-variation-support-closure-v6-27-0",
+  "stability_claimed": false,
+  "support_result": "BHSM_FOLD_LOCALIZATION_COMPATIBLE_WITH_FIXED_B1_SUPPORT",
+  "v6_26_scientific_sha": "aa146f05db8d63ef9436b3fc1cf94b79eba4c755",
+  "version": "v6.27.0"
+}
