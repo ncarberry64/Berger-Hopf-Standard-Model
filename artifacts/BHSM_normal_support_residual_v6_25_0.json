@@ -1,0 +1,121 @@
+{
+  "arbitrary_boundary_condition_introduced": false,
+  "arbitrary_regulator_selected": false,
+  "artifact": "BHSM_normal_support_residual_v6_25_0",
+  "boundary_equations": {
+    "bulk_scalar": {
+      "B1_data": "odd Dirichlet sigma|B1=0",
+      "equation": "Z5 box_5 sigma-U5'(sigma)=0",
+      "linear_pullback": "u1(1)q=0"
+    },
+    "dependency": {
+      "bulk_momentum_constraint": "[T_bulk,n nu] supplies the same Ward source",
+      "dependency_rank": 2,
+      "double_counted": false,
+      "identity": "D^mu J_mu_nu=-[T_bulk,n nu] after intrinsic Bianchi",
+      "independent_rank": 2,
+      "independent_scalar_junction_combinations": 2,
+      "scalar_Ward_relations": 2,
+      "scalar_projection_count": 4
+    },
+    "local_q_status": {
+      "all_scalar_B1_equations_closed": false,
+      "endpoint_trace_response": null,
+      "spatial_Pi_perp_junction_threading": "covered by v6.18",
+      "time_dependent_spatially_homogeneous_junction_threading": null
+    },
+    "matcher": {
+      "algebraic_closure": true,
+      "equation": "h_mu_nu=iota^*g_mu_nu at fixed t=1",
+      "multiplier_eliminated": true,
+      "propagating_multiplier": false,
+      "scalar_matcher_components": 2
+    },
+    "scalar_projections_on_closed_FRW_foliation": {
+      "Hamiltonian": "u^mu u^nu J_mu_nu=0",
+      "momentum": "D^i(u^mu s_i^nu J_mu_nu)=0",
+      "spatial_trace": "(1/3)s^mu_nu J_mu^nu=0",
+      "traceless_longitudinal": "(D^iD^j-D_sp^2 s^ij/3)J_ij=0"
+    },
+    "tensor_junction": "J_mu_nu=kappa_1[Q_mu_nu]+2C_partial G_mu_nu^(4)-T_boundary,mu_nu=0"
+  },
+  "chat_only_candidate_imported": false,
+  "dynamical_embedding_necessity_emitted": false,
+  "embedding_domain_invented": false,
+  "embedding_equation_invented": false,
+  "fitted_coefficients_introduced": false,
+  "fixed_support_success_emitted": false,
+  "frozen_predictions_changed": false,
+  "generic_pseudoinverse_emitted": false,
+  "kinetic_number_emitted": false,
+  "local_X_field_invented": false,
+  "localization_result": "BHSM_FIXED_MANIFOLD_LOCALIZATION_MAP_DERIVED",
+  "measured_inputs_used": false,
+  "new_action_introduced": false,
+  "new_corner_term_introduced": false,
+  "new_primitive_introduced": false,
+  "new_scale_introduced": false,
+  "normal_support_residual": {
+    "Noether_Bianchi": {
+      "identity_role": "relates R_perp to bulk normal constraints and independent B1/scalar/matcher equations; it does not set R_perp to zero before those equations are solved",
+      "independence_decided": false,
+      "normal_boundary_diffeomorphism_is_Domain_F_gauge": false,
+      "reason": "xi^t|B1!=0 does not preserve the fixed abstract support"
+    },
+    "Z2": {
+      "cap_exchange": "R_perp is even",
+      "common_normal_junction": "uses the stored [Q_mu_nu] jump",
+      "outward_cap_Hamiltonian_terms": "orientation even",
+      "scalar_sign_s": "absent at linear order because sigma0=0",
+      "tau": "changes the linear source sign, not the dependency rank"
+    },
+    "action_origin": [
+      "two P1 cap domain responses",
+      "two capwise GHY responses",
+      "one intrinsic B1 response",
+      "exact matcher pullback response",
+      "bulk and boundary scalar responses"
+    ],
+    "covariance": "scalar on the common B1",
+    "equivalent_routes": {
+      "Noether": "boundary coefficient in the five-dimensional diffeomorphism identity for xi^A=zeta n^A",
+      "normal_system": "normal projection of the cap Einstein constraints plus the contraction of the tensor junction with the background extrinsic curvature and scalar/matcher boundary equations",
+      "shape": "diagnostic shape derivative of P1+GHY+B1+matcher+scalar without adding zeta to the configuration space"
+    },
+    "explicit_result": null,
+    "gauge": {
+      "affine_bookkeeping_residual": "0",
+      "built_from_covariant_equations": true,
+      "fixed_moving_coordinate_independent": true,
+      "transformation": "R_perp -> R_perp"
+    },
+    "homogeneous_order": {
+      "O(q)": "zero on the stored homogeneous bulk and junction tangent",
+      "evidence": "a1(1)=u1(1)=0 and delta a'_J=delta X/2"
+    },
+    "linearized_structure": "R_perp^(1)=sum_caps c_H delta E_nn+Kbar^(mu nu)delta J_mu_nu+terms proportional to the scalar and matcher boundary equations",
+    "local_orders": {
+      "O((Dq)^2)": "present beyond linear order and additionally depends on ell2,a2,N2 and constraint corrections",
+      "O(D2q)": "enters delta K_mu_nu through +tau(chi_1/4)t D_muD_nu q at the fold",
+      "O(Dq)": "enters the shift one-form but cannot form R_perp alone",
+      "first_unresolved_order": "O(D2q)"
+    },
+    "missing_object": "the action-normalized time-dependent spatially homogeneous threading contribution to the scalar B1 junction projections and endpoint trace",
+    "normalization_status": "the coefficient c_H and complete endpoint terms require the unexpanded fixed-support quadratic action; no arbitrary normalization is assigned",
+    "primary_definition": "R_perp[q]=(sqrt|h|)^-1 delta_zeta^diag S_total|zeta=0, where delta_zeta^diag is a diagnostic simultaneous normal domain displacement and field pullback, not a varied field",
+    "proved_nonzero": false,
+    "proved_zero": false,
+    "result": "BHSM_NORMAL_SUPPORT_RESIDUAL_BLOCKED_BY_UNDERIVED_TIME_DEPENDENT_HOMOGENEOUS_THREADING_JUNCTION_RESPONSE",
+    "why_v6_18_insufficient": "v6.18 derives K_Sigma=(2/a^2)D_spatial^2 on round S3 and C_Sigma=0; it does not derive D_0D_0 q or the Lorentzian homogeneous endpoint response"
+  },
+  "official_prediction_logic_changed": false,
+  "physical_mass_claimed": false,
+  "primary_result": "BHSM_SUPPORT_DOMAIN_DECISION_BLOCKED_BY_UNDERIVED_TIME_DEPENDENT_HOMOGENEOUS_THREADING_JUNCTION_RESPONSE",
+  "scalar_curvature_inverse_revived": false,
+  "source_main_sha": "4a59a2a3d1dc7e2d21fbc5f0d9e0f69aac28b34e",
+  "sprint": "bhsm-fixed-support-vs-dynamical-embedding-v6-25-0",
+  "stability_claimed": false,
+  "v6_24_reproducibility_sha": "16e75be50b12545383b62fd9d0d9ded0915b568a",
+  "v6_24_scientific_sha": "94879c94ac8ef5b61d5072a6c4eb1af7d3003b16",
+  "version": "v6.25.0"
+}

@@ -2117,3 +2117,32 @@ Consequently the complete local operator, mixed source, adjoint domain,
 kernel, Schur complement, and kinetic sign remain undefined. No missing
 contribution is set to zero and no physical mass or stability result is
 emitted.
+
+<!-- BHSM_FIXED_SUPPORT_VS_DYNAMICAL_EMBEDDING_V6_25_0 -->
+## v6.25.0 fixed-support localization and support-domain decision
+
+The local map `rho=ell(q(x))t` represents the homogeneous cap-length
+variation on the fixed manifold `[0,1]_t x M4`. It induces
+`B=t[ell(q)^2-ell0^2]/2`, whose linear term is exactly
+`-tau(pi chi_1/16)t q`, matching the v6.18 spatial threading response.
+The same map produces rank-one `(Dq)^2` corrections in the induced metric
+and lapse and a linear
+`+tau(chi_1/4)t D_muD_nu q` contribution to the extrinsic curvature.
+The coordinate graph is removed by a nonsingular rank-two scalar gauge map,
+with no physical embedding scalar added.
+
+Kinematic localization is therefore derived, but fixed-support compatibility
+is not yet proved. The normal-support residual is defined diagnostically by
+`R_perp=(sqrt|h|)^-1 delta_zeta^diag S_total|zeta=0`. Its first unresolved
+sector is the time-dependent spatially homogeneous Lorentzian threading and
+endpoint response at `O(D2q)`, which lies outside the spatial round-S3
+v6.18 theorem. The four scalar tensor-junction projections have two Ward
+dependencies and two independent combinations; those combinations cannot
+yet be completed in the missing sector.
+
+The primary result is
+`BHSM_SUPPORT_DOMAIN_DECISION_BLOCKED_BY_UNDERIVED_TIME_DEPENDENT_HOMOGENEOUS_THREADING_JUNCTION_RESPONSE`.
+Neither fixed-support success nor dynamical-embedding necessity is emitted.
+The dynamical domain, Z2 glue rule, enlarged-domain differentiability, and
+embedding equation are not invented. Operator reopening, Schur reduction,
+and the kinetic sign remain blocked by the undecided support domain.

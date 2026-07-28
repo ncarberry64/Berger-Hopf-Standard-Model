@@ -1405,3 +1405,42 @@ Active construction target:
 No local `X_FRW(x)` field, scalar-curvature inverse, measured input, fitted
 coefficient, new action, arbitrary boundary condition, Schur number, kinetic
 sign, physical mass, or stability claim is introduced.
+
+<!-- BHSM_FIXED_SUPPORT_VS_DYNAMICAL_EMBEDDING_V6_25_0 -->
+## v6.25.0 fixed-support and embedding-domain claims
+
+Derived consequences:
+
+- `rho=ell(q(x))t` localizes the cap-length modulus on fixed
+  `[0,1]_t x M4` using the inherited ADM fields;
+- its induced linear shift is
+  `B=-tau(pi chi_1/16)t q`, exactly matching the v6.18 spatial response;
+- the pullback places local derivatives in the shift at `O(Dq)`, extrinsic
+  curvature at `O(D2q)`, and the induced metric and lapse at `O((Dq)^2)`;
+- the fixed/moving coordinate descriptions are related by a nonsingular
+  scalar gauge map and contain no extra physical support scalar;
+- four scalar tensor-junction projections reduce to two independent
+  combinations by two scalar Ward dependencies.
+
+Active construction target:
+
+- derive the action-normalized time-dependent spatially homogeneous
+  threading and endpoint response, insert it into the two independent scalar
+  B1 junction projections, and evaluate the normal-support residual at
+  `O(D2q)`.
+
+Not claimed:
+
+- vanishing or nonvanishing of `R_perp` on the complete frozen equations;
+- fixed-support compatibility;
+- necessity of a dynamical B1 embedding;
+- a Z2 embedding glue rule, enlarged-domain differentiability result, or
+  embedding Euler--Lagrange equation;
+- operator reopening, a Schur number, kinetic sign, physical mass, or
+  stability.
+
+The exact primary status is
+`BHSM_SUPPORT_DOMAIN_DECISION_BLOCKED_BY_UNDERIVED_TIME_DEPENDENT_HOMOGENEOUS_THREADING_JUNCTION_RESPONSE`.
+No measured input, fitted coefficient, new primitive, new action, new scale,
+corner term, arbitrary boundary condition, local `X_FRW(x)` field,
+scalar-curvature inverse, or chat-only candidate is introduced.

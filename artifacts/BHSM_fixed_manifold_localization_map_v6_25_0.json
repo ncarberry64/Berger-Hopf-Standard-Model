@@ -1,0 +1,177 @@
+{
+  "arbitrary_boundary_condition_introduced": false,
+  "arbitrary_regulator_selected": false,
+  "artifact": "BHSM_fixed_manifold_localization_map_v6_25_0",
+  "chat_only_candidate_imported": false,
+  "dynamical_embedding_necessity_emitted": false,
+  "embedding_domain_invented": false,
+  "embedding_equation_invented": false,
+  "fitted_coefficients_introduced": false,
+  "fixed_manifold": {
+    "ADM_components": {
+      "B": "t[ell(q)^2-ell0^2]/2",
+      "N_mu": "t ell ell_q D_mu q",
+      "N_squared": "ell^2[1-t^2 ell_q^2(Dq)^2]+O(D^4)",
+      "g_tt": "ell^2",
+      "gamma_mu_nu": "gamma_tilde_mu_nu(ell t,q)+t^2 ell_q^2 D_mu q D_nu q",
+      "linear_B": "-tau(pi chi_1/16)t q",
+      "linear_shift_match_residual": "0"
+    },
+    "affine_convention": "the homogeneous ell1,a1,u1 profiles are included as affine q-dependent fixed-domain fields; they are not duplicated in J_q",
+    "coordinate_map": {
+      "differential": "d rho=ell dt+t ell_q D_mu q dx^mu",
+      "fixed_domain": "rho=ell(q(x))t, 0≤t≤1",
+      "invertible_near_fold": true,
+      "proper_domain": "0≤rho≤ell(q(x))"
+    },
+    "derivative_placement": {
+      "O((Dq)^2)": [
+        "rank-one induced metric t^2 ell_q^2 D_muq D_nuq",
+        "lapse correction -ell^2 t^2 ell_q^2(Dq)^2",
+        "the complete K_mu_nu coefficient also contains ell_qq and q-dependent connection/profile terms"
+      ],
+      "O(D2q)": "delta K_mu_nu contains -t ell_q D_muD_nu q; at q=0 this is +tau(chi_1/4)t D_muD_nu q",
+      "O(Dq)": "N_mu=t ell ell_q D_mu q",
+      "matcher_pullback": "h_mu_nu equals the complete fixed-t gamma_mu_nu at t=1, including the rank-one (Dq)^2 term",
+      "scalar_pullback": "sigma_fixed(t,x)=sigma_tilde(ell(q)t,q); sigma_fixed(1,x)=0 because u1(1)=0"
+    },
+    "domain_F": {
+      "B1": "{t=1}",
+      "embedding": "fixed inclusion iota(x)=(1,x)",
+      "fields": [
+        "N(t,x)",
+        "N_mu(t,x)",
+        "gamma_mu_nu(t,x)",
+        "sigma(t,x)",
+        "independent h_mu_nu(x)",
+        "Lambda_mu_nu(x)"
+      ],
+      "manifold": "M5=[0,1]_t×M4 on each cap",
+      "physical_embedding_variation": 0
+    },
+    "homogeneous_profiles": {
+      "a0": "sqrt(2)sin(pi t/4)",
+      "a1": "chi_1[a0/4-sqrt(2)t cos(pi t/4)/4]",
+      "delta_X": "tau chi_1",
+      "ell0_equals_N0": "pi/4",
+      "ell1_equals_N1": "-chi_1/4 before tau",
+      "endpoint": "a1(1)=0",
+      "junction_tangent": "delta a'_J=delta X/2 after domain correction",
+      "sigma1": "s u1 with u1(1)=0"
+    },
+    "local_q_ansatz": {
+      "N": "N0+tau N1 q+delta N_constraint",
+      "N_mu": "D_mu B with B=t[ell(q)^2-ell0^2]/2",
+      "a": "a0+tau a1 q+delta a_constraint",
+      "sigma": "s u1 q+delta sigma_perp"
+    },
+    "result": "BHSM_FIXED_MANIFOLD_LOCALIZATION_MAP_DERIVED",
+    "second_response": {
+      "a2_N2": "not stored",
+      "ell2": "not stored",
+      "needed_for_complete_quadratic_coefficient": true,
+      "needed_for_linear_O(D2q)_support_test": false
+    }
+  },
+  "fixed_support_success_emitted": false,
+  "frozen_predictions_changed": false,
+  "gauge": {
+    "endpoint_invariant": "S_Sigma=B+N0^2 zeta-a0^2 partial_t E",
+    "gauge_fix": {
+      "FP_matrix": [
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          -1
+        ]
+      ],
+      "conditions": [
+        "zeta=0",
+        "E=0"
+      ],
+      "determinant": "-1",
+      "nonsingular": true,
+      "rank": 2
+    },
+    "gauge_functions": [
+      "xi^t(t,x)",
+      "L(t,x)"
+    ],
+    "moving_to_fixed": {
+      "fixed_graph": "zeta=0",
+      "generated_B": "tau ell0 ell1 t q=-tau(pi chi_1/16)t q",
+      "moving_graph": "zeta_t=tau ell1 q/ell0 at B1",
+      "parameter": "xi^t=-t(tau ell1/ell0)q",
+      "pullback_data_equal": true
+    },
+    "pole_and_B1": {
+      "B1": "xi^t(1,x)=-zeta(x) before fixing",
+      "compatible_interpolation": "xi^t=-t zeta is smooth",
+      "pole": "xi^t(0,x)=0",
+      "residual_normal_gauge": "xi^t(1,x)=0 after zeta=0"
+    },
+    "support_count": {
+      "M4_scalar_gauge_conditions": 1,
+      "M4_scalar_gauge_functions": 1,
+      "coordinate_graph_variables_before_fix": 1,
+      "full_constraint_reduced_propagating_count": null,
+      "normal_gauge_values_used": 1,
+      "physical_embedding_scalars_added": 0,
+      "support_specific_count_closes": true,
+      "unpaired_support_variable": null
+    },
+    "symbolic_invariance_residual": "0",
+    "transformations": {
+      "A": "A-N0^-1 partial_t(N0 xi^t)",
+      "B": "B-N0^2 xi^t-a0^2 partial_t L",
+      "E": "E-L",
+      "delta_sigma": "delta sigma-sigma0' xi^t",
+      "psi": "psi-(a0'/a0)xi^t",
+      "zeta": "zeta+xi^t|B1"
+    }
+  },
+  "generic_pseudoinverse_emitted": false,
+  "kinetic_number_emitted": false,
+  "local_X_field_invented": false,
+  "localization_result": "BHSM_FIXED_MANIFOLD_LOCALIZATION_MAP_DERIVED",
+  "measured_inputs_used": false,
+  "new_action_introduced": false,
+  "new_corner_term_introduced": false,
+  "new_primitive_introduced": false,
+  "new_scale_introduced": false,
+  "official_prediction_logic_changed": false,
+  "physical_mass_claimed": false,
+  "primary_result": "BHSM_SUPPORT_DOMAIN_DECISION_BLOCKED_BY_UNDERIVED_TIME_DEPENDENT_HOMOGENEOUS_THREADING_JUNCTION_RESPONSE",
+  "provenance": [
+    {
+      "item": "field-dependent coordinate pullback and ADM decomposition",
+      "status": "Adopted from established physics/mathematics"
+    },
+    {
+      "item": "frozen two-cap P1+GHY+B1+matcher+scalar action",
+      "status": "Adopted BHSM axiom"
+    },
+    {
+      "item": "q=r on one fold sheet and the Z2 cap identification",
+      "status": "BHSM identification"
+    },
+    {
+      "item": "fixed-manifold localization map and induced shift",
+      "status": "Derived consequence"
+    },
+    {
+      "item": "either fixed-support success or dynamical-embedding necessity",
+      "status": "Active construction target"
+    }
+  ],
+  "scalar_curvature_inverse_revived": false,
+  "source_main_sha": "4a59a2a3d1dc7e2d21fbc5f0d9e0f69aac28b34e",
+  "sprint": "bhsm-fixed-support-vs-dynamical-embedding-v6-25-0",
+  "stability_claimed": false,
+  "v6_24_reproducibility_sha": "16e75be50b12545383b62fd9d0d9ded0915b568a",
+  "v6_24_scientific_sha": "94879c94ac8ef5b61d5072a6c4eb1af7d3003b16",
+  "version": "v6.25.0"
+}
