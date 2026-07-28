@@ -1547,3 +1547,31 @@ Active construction target:
 No global Lorentzian state, generic pseudoinverse, measured input, fit, new
 action, primitive, scale, boundary parameter, frozen change, physical mass,
 kinetic sign, or stability claim is introduced.
+
+<!-- BHSM_FOLD_SCHUR_KINETIC_V6_29_0 -->
+## v6.29.0 Schur and kinetic claims
+
+Derived consequences:
+
+- the v6.28 singular pencil reduces at two-derivative order to one lifted
+  metric-modulus Lyapunov--Schmidt equation;
+- the exact gravitational constraint response is
+  `-j_z^2/[12C_partial+3kappa_1(6-pi)]`;
+- two independent scalar eigenfunction/quadrature methods agree on
+  `K_scalar` within `9e-15`;
+- the scalar orthogonal sector has a positive spectral gap;
+- the complete normalized fold kinetic coefficient is positive,
+  `k_q^E=6.935084858283065 +/- 2e-12`.
+
+The result is conditional on the frozen normalized action representative and
+the repository-derived continuation coefficient `chi_1`. It is not a
+potential-stability, physical-mass, or empirical claim.
+
+Still active:
+
+- the complete off-shell Jordan and Einstein-frame potential and the
+  dimensionless canonical fold mass curvature.
+
+No measured input, fit, chat-only value, new action, primitive, scale,
+global state, generic pseudoinverse, frozen change, or official
+prediction-logic change is introduced.

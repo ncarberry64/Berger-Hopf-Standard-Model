@@ -1,0 +1,54 @@
+{
+  "B1_source_dropped": false,
+  "Weyl_term_double_counted": false,
+  "artifact": "BHSM_fold_kinetic_numerical_validation_v6_29_0",
+  "chat_only_value_imported": false,
+  "fitted_parameter_used": false,
+  "frozen_predictions_changed": false,
+  "generic_pseudoinverse_used": false,
+  "global_Lorentzian_state_selected": false,
+  "kernel_ignored": false,
+  "measured_input_used": false,
+  "negative_sign_hidden": false,
+  "new_action_introduced": false,
+  "new_primitive_introduced": false,
+  "new_scale_introduced": false,
+  "official_prediction_logic_changed": false,
+  "physical_mass_claimed": false,
+  "primary_result": "BHSM_FOLD_KINETIC_NORM_POSITIVE_CONDITIONALLY",
+  "source_main_sha": "86df2f5c72e8c6fe07c2fb3ee41372a521229c84",
+  "sprint": "bhsm-fold-schur-kinetic-v6-29-0",
+  "stability_claimed": false,
+  "two_cap_factor_dropped": false,
+  "unprojected_inverse_used": false,
+  "v6_28_scientific_sha": "853bddac1852c6b328fc4cf7af2786e2f59baf34",
+  "validation": {
+    "convergence": {
+      "K_scalar_method_difference": 8.881784197001252e-15,
+      "reported_uncertainty": 2e-12
+    },
+    "kernel_projection": {
+      "metric_modulus_lift": 14.57522203923062,
+      "one_by_one_condition_number": 1.0,
+      "scalar_perp_gap": 64.01473666898566
+    },
+    "methods": [
+      "regular-pole shooting + adaptive Gauss-Kronrod quadrature",
+      "hypergeometric eigenfunction + mpmath tanh-sinh quadrature"
+    ],
+    "platform_tolerance": 5e-10,
+    "precision": {
+      "hypergeometric_dps": 60,
+      "shooting_max_step": 0.0015,
+      "shooting_rtol": 2e-13
+    },
+    "residuals": {
+      "hypergeometric_endpoint": 1.3281288743879861e-61,
+      "hypergeometric_weighted_norm": 1.0,
+      "shooting_eigen_moment": 1.7763568394002505e-14,
+      "shooting_endpoint": 1.9036181676391305e-15,
+      "shooting_weighted_norm": 1.0
+    }
+  },
+  "version": "v6.29.0"
+}
