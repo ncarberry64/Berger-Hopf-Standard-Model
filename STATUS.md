@@ -35,14 +35,22 @@ its principal bulk block follows from the existing action sectors:
 with action-derived measure
 `dmu_rad=N_0 a_0^4 dt=pi sin^4(pi t/4) dt`.
 
-The exact **Active construction target** is
-`T_mu_nu^(X)=delta hbar_mu_nu[X]/delta X|X=2`, satisfying
-`delta R_4[T^(X)]=tau chi_1 q`, after the four-dimensional gauge quotient and
-regulated boundary domain are fixed. It is required for the complete mixed
-source, B1/matcher domain, adjoint kernels, compatibility, Schur complement,
-and kinetic sign. The fold kinetic sign is unresolved, and no physical mass,
-ghost, null, tachyon, stability, production, or white-hole-dynamics claim is
-supported.
+The v6.22 definition audit is a **Rejected by calculation** result for the
+stored tangent normalization. Repository-native `X` is the homogeneous FRW
+invariant `H^2+a^-2`. The scalar-wall action declares
+`Ric_mu_nu(h)=3X h_mu_nu`, hence `R_4=12X` and
+`delta R_4=12 delta X` on its maximally symmetric branch, whereas the v6.20
+target stored `delta R_4=delta X`. The separate exact critical static
+`R x S3` branch instead has `R_4=6X`.
+
+Therefore the exact **Active construction target** is first to reconcile the
+`X`/`R_4` normalization and store the covariant maximally symmetric
+`hbar_mu_nu[X]` family and regulated domain for
+`T_mu_nu^(X)=delta hbar_mu_nu[X]/delta X|X=2`. The gauge quotient, complete
+mixed source, B1/matcher domain, adjoint kernels, compatibility, Schur
+complement, and kinetic sign are not constructed before that declaration.
+The fold kinetic sign is unresolved, and no physical mass, ghost, null,
+tachyon, stability, production, or white-hole-dynamics claim is supported.
 
 Reviewer entry points:
 [public scientific handoff](docs/bhsm_public_scientific_handoff_v6_21_0.md),
@@ -2011,3 +2019,31 @@ ghost, or null, and no physical mass is claimed.
 No measured input, fitted coefficient, new primitive, new scale, new
 action, threshold, boundary tension, `tau_J`, neutral work,
 frozen-prediction change, or official prediction-logic change is introduced.
+
+<!-- BHSM_M4_X_METRIC_TANGENT_FOLD_SCHUR_V6_22_0 -->
+## v6.22.0 M4 X-metric tangent and fold-Schur obstruction
+
+The repository definition ledger finds that `X=H^2+a^-2` is a homogeneous
+on-shell curvature/branch coordinate, not a stored local scalar field. The
+frozen scalar-wall action uses the maximally symmetric convention
+`Ric(h)=3Xh`, which implies `R_4=12X` and `dR_4/dX=12`. The separate exact
+critical static `R x S3` branch has `R_4=6X` and `dR_4/dX=6`. Both are
+incompatible with the coefficient one in the v6.20 target
+`delta R_4[T_X]=delta X`.
+
+The convention-specific Fréchet derivative is verified as
+`DR_h[k]=nabla_mu nabla_nu k^(mu nu)-Box tr(k)-Ric_mu_nu k^(mu nu)`.
+Its conformal and pure-diffeomorphism special cases pass, but no York
+quotient or inverse is constructed: on the Einstein branch TT tensors
+already lie in the scalar-curvature kernel, and neither their action-source
+projection nor an M4/adjoint boundary domain is stored.
+
+The exact tangent verdict is
+`BHSM_M4_X_METRIC_TANGENT_BLOCKED_BY_X_TO_R4_NORMALIZATION_CONFLICT`.
+Consequently the complete P1/GHY/B1/matcher source and operator remain
+undefined, with Schur verdict
+`BHSM_FOLD_SCHUR_REDUCTION_BLOCKED_BY_X_TO_R4_NORMALIZATION_CONFLICT` and
+kinetic verdict
+`BHSM_FOLD_KINETIC_SIGN_REMAINS_UNRESOLVED_BY_X_TO_R4_NORMALIZATION_CONFLICT`.
+No numerical solve, pseudoinverse, `k_q^E`, kinetic sign, physical mass, or
+stability claim is emitted.

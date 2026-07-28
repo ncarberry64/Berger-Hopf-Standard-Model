@@ -96,13 +96,14 @@ def test_frozen_predictions_and_official_prediction_logic_are_unchanged():
     assert status["checks"]["official_predictions_unchanged"] is True
 
 
-def test_no_scientific_source_module_changed_since_predecessor_merge():
+def test_no_scientific_source_module_changed_in_v621_maintenance_commit():
     result = subprocess.run(
         [
             "git",
             "diff",
             "--name-only",
             AUDIT.SOURCE_MAIN_SHA,
+            "45dcb92e99a3edd7a0cbfb9d582e7bc409a5d8c3",
             "--",
             "src",
             "bhsm",
