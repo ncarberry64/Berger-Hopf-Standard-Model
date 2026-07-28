@@ -1,0 +1,136 @@
+{
+  "Euclidean_state_selected": false,
+  "Feynman_state_selected": false,
+  "action": {
+    "B1": "integral_B1 sqrt(-h)[C_partial R4-tau_A Tr(F^2)/4-Z_partial(partial sigma_partial)^2/2]",
+    "GHY_each_cap": "kappa_1 integral_B1 sqrt(-h) K",
+    "P1": "integral sqrt(-g)[kappa_1 R5/2-kappa_0/2-Z5(grad sigma)^2/2-U5(sigma)]",
+    "cap_count": 2,
+    "common_B1_count": 1,
+    "conventions": {
+      "K": "K_mu_nu=(2N)^-1(partial_t gamma_mu_nu-D_mu N_nu-D_nu N_mu)",
+      "Q": "Q_mu_nu=K_mu_nu-K gamma_mu_nu",
+      "signature_M4": "(-,+,+,+)"
+    },
+    "matcher": "integral_B1 sqrt(-h) Lambda^(mu nu)(h_mu nu-iota^*g_mu nu)",
+    "matcher_coefficient": null,
+    "new_term_added": false,
+    "total": [
+      "S_P1,+",
+      "S_P1,-",
+      "S_GHY,+",
+      "S_GHY,-",
+      "S_B1",
+      "S_match",
+      "S_sigma"
+    ]
+  },
+  "advanced_state_selected": false,
+  "arbitrary_Lorentzian_state_selected": false,
+  "artifact": "BHSM_homogeneous_Lorentzian_threading_response_v6_26_0",
+  "background": {
+    "H4": "sqrt(X_c)tanh[sqrt(X_c)(u-u0)]",
+    "Ricci": "Ric_mu_nu=3 X_c h_mu_nu",
+    "X_c": 2,
+    "a4": "X_c^-1/2 cosh[sqrt(X_c)(u-u0)]",
+    "branch": "action-selected maximally symmetric closed dS4",
+    "connection": {
+      "Gamma^i_uj": "H4 delta^i_j",
+      "Gamma^u_ij": "H4 h_ij",
+      "Gamma^u_uu": 0
+    },
+    "identity": "dot H4+H4^2=X_c",
+    "metric": "ds4^2=-du^2+a4(u)^2 dOmega3^2",
+    "turning_point_used_for_verdict": false
+  },
+  "chat_only_candidate_imported": false,
+  "dynamic_domain_enabled": false,
+  "dynamical_embedding_necessity_emitted": false,
+  "fitted_coefficient_introduced": false,
+  "fixed_support_success_emitted": false,
+  "frozen_predictions_changed": false,
+  "hindsight": {
+    "Invalidated": [
+      "treating spatial homogeneity as four-dimensional constancy",
+      "extending C_Sigma=0 to the Lorentzian C1 mode without domain data",
+      "declaring the local particular solution to be the unique response"
+    ],
+    "Still active": "action-selected Lorentzian scalar-shift zero-mode domain and the resulting two-equation B1/R_perp closure",
+    "Validated": [
+      "closed-dS4 Hessian and Box4 identities",
+      "local particular B=-tau(pi chi_1/16)t q(u)",
+      "action equation equals the divergence of the momentum constraint",
+      "fixed/moving endpoint invariant agreement",
+      "direct threading pieces of delta K and delta Q"
+    ]
+  },
+  "kinetic_number_emitted": false,
+  "local_X_field_invented": false,
+  "measured_input_used": false,
+  "new_action_introduced": false,
+  "new_boundary_condition_introduced": false,
+  "new_corner_term_introduced": false,
+  "new_primitive_introduced": false,
+  "new_scale_introduced": false,
+  "official_prediction_logic_changed": false,
+  "operator_inverse_emitted": false,
+  "physical_mass_claimed": false,
+  "primary_result": "BHSM_SUPPORT_DOMAIN_DECISION_BLOCKED_BY_UNFIXED_SOURCE_FREE_HOMOGENEOUS_LORENTZIAN_THREADING_MODE",
+  "retarded_state_selected": false,
+  "scalar_curvature_inverse_revived": false,
+  "source_main_sha": "2236cade321828e26d9a78ecbd5f2a6c67b67982",
+  "sprint": "bhsm-homogeneous-threading-support-verdict-v6-26-0",
+  "stability_claimed": false,
+  "threading": {
+    "B_particular": "-tau(pi chi_1/16)t q(u)",
+    "C_Sigma_axiom_scope": {
+      "exact_inherited_scope": "time-independent spatial ell=0 integration constant in the v6.18 round-S3 projected domain",
+      "extension_assumed": false,
+      "fixes_C0": true,
+      "fixes_C1_Lorentzian_mode": false
+    },
+    "N_u_particular": "-tau(pi chi_1/16)t dot q",
+    "P1_GHY_quadratic_density": "(kappa_1/2)N sqrt|gamma| N^-2[(D_muD_nu W)^2-(Box4 W)^2]",
+    "action_variation": {
+      "absolute_coefficient": "[-C_M]=3 kappa_1 X_c/[N0 a0(t)^2]",
+      "equation": "[-C_M] Box4 W=0",
+      "origin": "P1 shift Hessian; GHY cancels radial metric derivatives"
+    },
+    "completion_variable": "W=B+c t q",
+    "derivatives": {
+      "Box4_B": "+c t(ddot q+3H4 dot q)",
+      "D_iD_j_B": "+c t H4 h_ij dot q",
+      "D_uD_u_B": "-c t ddot q",
+      "c": "tau pi chi_1/16"
+    },
+    "fixed_map": "rho=ell(q(u))t",
+    "momentum_constraint": {
+      "C_M": "-3 kappa_1 X_c/[N0 a0(t)^2]",
+      "divergence": "D^mu M_mu=C_M Box4 W",
+      "equation": "M_mu=C_M D_mu W=0",
+      "normalization_match": "the action equation is -D^mu M_mu=0"
+    },
+    "q_sector": "q=q(u), smooth and spatially homogeneous; dot q need not vanish",
+    "result": "BHSM_HOMOGENEOUS_THREADING_RESPONSE_BLOCKED_BY_UNSTORED_LORENTZIAN_STATE",
+    "solutions": {
+      "action_kernel": "W_h=C0+C1 integral^u du'/a4(u')^3",
+      "extra_action_only_mode": "C1 integral^u du'/a4(u')^3",
+      "momentum_kernel": "W_h=C0",
+      "particular": "W=0, hence B=-c t q"
+    },
+    "state_requirement": {
+      "complete_response_unique": false,
+      "local_particular_coefficient_derived": true,
+      "selected": null,
+      "would_require": "an initial/final or Green-state condition eliminating C1"
+    },
+    "v6_18_recovery": {
+      "eigenvalue": "-2 ell(ell+2)/a_S^4",
+      "particular_response": "-tau(pi chi_1/16)t Pi_perp q",
+      "static_round_S3_operator": "(2/a_S^2)Delta_S3"
+    }
+  },
+  "threading_result": "BHSM_HOMOGENEOUS_THREADING_RESPONSE_BLOCKED_BY_UNSTORED_LORENTZIAN_STATE",
+  "v6_25_scientific_sha": "df76a3d30a76df90bed2d0aecd0dbaa29af280a0",
+  "version": "v6.26.0"
+}

@@ -2146,3 +2146,35 @@ Neither fixed-support success nor dynamical-embedding necessity is emitted.
 The dynamical domain, Z2 glue rule, enlarged-domain differentiability, and
 embedding equation are not invented. Operator reopening, Schur reduction,
 and the kinetic sign remain blocked by the undecided support domain.
+
+<!-- BHSM_HOMOGENEOUS_THREADING_SUPPORT_VERDICT_V6_26_0 -->
+## v6.26.0 homogeneous Lorentzian threading and support verdict
+
+On the action-selected closed-dS4 branch, a homogeneous time-dependent
+`q=q(u)` has
+`Box4 q=-ddot q-3H4 dot q`. The fixed-manifold map gives the exact local
+particular shift
+`B=-tau(pi chi_1/16)t q` and
+`N_u=-tau(pi chi_1/16)t dot q`. Its direct B1 extrinsic-curvature response is
+derived through `O(D2q)`.
+
+For `W=B+tau(pi chi_1/16)t q`, variation of the P1+GHY scalar shift potential
+gives `Box4 W=0` with coefficient
+`3 kappa_1 X_c/[N0 a0(t)^2]`. The full radial momentum constraint gives
+`D_mu W=0` with the same absolute normalization before divergence. The
+action equation admits
+`W_h=C0+C1 integral du/a4(u)^3`, while the momentum constraint removes the
+`C1` mode. The v6.18 `C_Sigma=0` axiom fixes the time-independent spatial
+zero mode `C0`, not this Lorentzian homogeneous mode. No global state or new
+boundary condition is selected.
+
+Fixed and moving coordinate representatives give the same endpoint invariant
+`S_Sigma=-tau(pi chi_1/16)q+W_h`. Because `D_0D_0 W_h` changes the endpoint
+junction response even when `Box4 W_h=0`, the two independent scalar B1
+equations, Noether rank, and `R_perp` coefficient at `O(D2q)` remain
+nonunique.
+
+The primary result is
+`BHSM_SUPPORT_DOMAIN_DECISION_BLOCKED_BY_UNFIXED_SOURCE_FREE_HOMOGENEOUS_LORENTZIAN_THREADING_MODE`.
+Neither support domain is selected; the embedding, operator, adjoint, Schur,
+and kinetic continuations are not entered.

@@ -1,0 +1,67 @@
+{
+  "B1": {
+    "Ward": {
+      "dependency_count": 2,
+      "expected_independent_count": 2,
+      "identity": "D^mu J_mu nu=-[T_bulk,n nu]",
+      "projection_count": 4
+    },
+    "compatibility": null,
+    "complete_O_D2q_coefficients": false,
+    "direct_particular_one_cap_Q": {
+      "delta_Q_ij_over_h_ij": "chi_1*tau*(2*sqrt(X)*tanh(sqrt(X)*(u - u_0))*Derivative(q(u), u) + Derivative(q(u), (u, 2)))/4",
+      "delta_Q_trace": "3*chi_1*tau*(3*sqrt(X)*tanh(sqrt(X)*(u - u_0))*Derivative(q(u), u) + Derivative(q(u), (u, 2)))/4",
+      "delta_Q_ui": "0",
+      "delta_Q_uu": "-3*sqrt(X)*chi_1*tau*tanh(sqrt(X)*(u - u_0))*Derivative(q(u), u)/4"
+    },
+    "earliest_stop": "BHSM_HOMOGENEOUS_THREADING_RESPONSE_BLOCKED_BY_UNSTORED_LORENTZIAN_STATE",
+    "four_scalar_projections": {
+      "scalar_momentum_threading_piece": "0 for q=q(u)",
+      "spatial_trace_threading_piece": "(1/3)s^mu_nu delta Q_mu^nu=(tau chi_1/4)(ddot q+2H4 dot q) at t=1",
+      "temporal_threading_piece": "u^mu u^nu delta Q_mu_nu=-3(tau chi_1/4)H4 dot q at t=1",
+      "traceless_longitudinal_threading_piece": "0 for q=q(u)"
+    },
+    "junction": "J_mu_nu=kappa_1[Q_mu_nu]+2C_partial G_mu_nu^(4)-T_boundary,mu_nu=0",
+    "matcher_elimination": "algebraic and retained",
+    "missing_insertions": [
+      "unique endpoint W_h",
+      "complete lapse/Weyl/longitudinal constraint response",
+      "action-normalized cap-jump orientation after that response"
+    ],
+    "rank_after_complete_insertion": null,
+    "result": "BHSM_SCALAR_B1_TWO_EQUATION_CLOSURE_BLOCKED_BY_UNFIXED_SOURCE_FREE_HOMOGENEOUS_LORENTZIAN_THREADING_MODE",
+    "two_independent_equations": null,
+    "unfixed_mode_contribution": "delta Q_mu_nu[W_h]=N0^-1[-D_muD_nu W_h+h_mu_nu Box4 W_h]=-N0^-1 D_muD_nu W_h"
+  },
+  "Euclidean_state_selected": false,
+  "Feynman_state_selected": false,
+  "advanced_state_selected": false,
+  "arbitrary_Lorentzian_state_selected": false,
+  "artifact": "BHSM_scalar_B1_two_equation_closure_v6_26_0",
+  "chat_only_candidate_imported": false,
+  "dynamic_domain_enabled": false,
+  "dynamical_embedding_necessity_emitted": false,
+  "fitted_coefficient_introduced": false,
+  "fixed_support_success_emitted": false,
+  "frozen_predictions_changed": false,
+  "kinetic_number_emitted": false,
+  "local_X_field_invented": false,
+  "measured_input_used": false,
+  "new_action_introduced": false,
+  "new_boundary_condition_introduced": false,
+  "new_corner_term_introduced": false,
+  "new_primitive_introduced": false,
+  "new_scale_introduced": false,
+  "official_prediction_logic_changed": false,
+  "operator_inverse_emitted": false,
+  "physical_mass_claimed": false,
+  "primary_result": "BHSM_SUPPORT_DOMAIN_DECISION_BLOCKED_BY_UNFIXED_SOURCE_FREE_HOMOGENEOUS_LORENTZIAN_THREADING_MODE",
+  "retarded_state_selected": false,
+  "scalar_curvature_inverse_revived": false,
+  "source_main_sha": "2236cade321828e26d9a78ecbd5f2a6c67b67982",
+  "sprint": "bhsm-homogeneous-threading-support-verdict-v6-26-0",
+  "stability_claimed": false,
+  "threading_result": "BHSM_HOMOGENEOUS_THREADING_RESPONSE_BLOCKED_BY_UNSTORED_LORENTZIAN_STATE",
+  "v6_25_scientific_sha": "df76a3d30a76df90bed2d0aecd0dbaa29af280a0",
+  "version": "v6.26.0"
+}

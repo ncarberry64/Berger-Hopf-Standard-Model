@@ -1444,3 +1444,38 @@ The exact primary status is
 No measured input, fitted coefficient, new primitive, new action, new scale,
 corner term, arbitrary boundary condition, local `X_FRW(x)` field,
 scalar-curvature inverse, or chat-only candidate is introduced.
+
+<!-- BHSM_HOMOGENEOUS_THREADING_SUPPORT_VERDICT_V6_26_0 -->
+## v6.26.0 homogeneous-threading and support claims
+
+Validated:
+
+- the closed-dS4 identities
+  `D_uD_u q=ddot q`, `D_iD_j q=-H4 h_ij dot q`, and
+  `Box4 q=-ddot q-3H4 dot q`;
+- the local fixed-manifold response
+  `B=-tau(pi chi_1/16)t q(u)` and its `N_u`, extrinsic-curvature, and
+  one-cap `Q_mu_nu` contributions;
+- equality of the scalar-potential action equation with the divergence of
+  the radial momentum constraint, including absolute normalization;
+- recovery of the v6.18 static spatial kernel and response coefficient;
+- equality of fixed- and moving-coordinate endpoint invariants.
+
+Invalidated:
+
+- identifying spatial homogeneity with four-dimensional constancy;
+- silently applying the v6.18 `C_Sigma=0` axiom to the source-free
+  Lorentzian mode `C1 integral du/a4^3`;
+- treating the local particular response as the unique action-selected
+  endpoint trace.
+
+Still active:
+
+- derive an action-selected Lorentzian scalar-shift domain for the `C1` mode,
+  then complete the two independent scalar B1 equations, Noether dependency
+  rank, and `R_perp` at `O(D2q)`.
+
+No fixed-support theorem, dynamical-embedding necessity, operator inverse,
+Schur number, kinetic sign, physical mass, or stability result is claimed.
+The exact primary status is
+`BHSM_SUPPORT_DOMAIN_DECISION_BLOCKED_BY_UNFIXED_SOURCE_FREE_HOMOGENEOUS_LORENTZIAN_THREADING_MODE`.
