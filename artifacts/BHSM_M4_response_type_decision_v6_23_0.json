@@ -1,0 +1,66 @@
+{
+  "K_Weyl_double_counted": false,
+  "arbitrary_boundary_parameter_introduced": false,
+  "artifact": "BHSM_M4_response_type_decision_v6_23_0",
+  "chat_only_candidate_imported": false,
+  "conformal_tangent_assumed_as_action_input": false,
+  "fitted_coefficients_introduced": false,
+  "frozen_predictions_changed": false,
+  "generic_green_operator_emitted": false,
+  "kinetic_number_emitted": false,
+  "local_X_field_invented": false,
+  "measured_inputs_used": false,
+  "new_action_introduced": false,
+  "new_primitive_introduced": false,
+  "new_scale_introduced": false,
+  "normalization_verdict": "BHSM_X_TO_R4_ACTION_NORMALIZATION_DERIVED",
+  "official_prediction_logic_changed": false,
+  "physical_mass_claimed": false,
+  "response_type": {
+    "Green_operator_required": false,
+    "classification": "local constraint response about a homogeneous on-shell fold background",
+    "routes": {
+      "A_homogeneous_family_derivative": {
+        "exists": true,
+        "reason": "the action does not identify the independent h field with hbar[X_FRW(q(x))]",
+        "selected_for_local_action": false,
+        "use": "diagnostic background derivative only"
+      },
+      "B_local_curvature_right_inverse": {
+        "reasons": [
+          "X_FRW(x) is not an action field",
+          "DR_h[k]=source is only one contraction of the metric equation",
+          "TT and gauge components make the scalar equation underdetermined",
+          "the Einstein and junction equations supply the tensor response",
+          "inserting a Green operator would double count independent metric variation"
+        ],
+        "rejected_by_calculation": true,
+        "required": false,
+        "selected": false,
+        "verdict": "BHSM_V6_20_LOCAL_RIGHT_INVERSE_TARGET_REJECTED_BY_CALCULATION"
+      },
+      "C_adiabatic_metric_family_promotion": {
+        "derivative_corrections": "for h=(X0/X(q))h0, R4=12X(q)+(X/X0)[3 Box ln X-(3/2)(D ln X)^2]",
+        "mathematically_testable": true,
+        "missing_for_quadratic_expansion": "X''(0) and an action/domain-selected coordinate representative",
+        "reason": "the scalar-tensor action retains independent h rather than imposing this ansatz",
+        "selected": false
+      },
+      "D_independent_metric_plus_collective_field": {
+        "action": "P1 metric g and B1 metric h are independently varied; the matcher imposes h=iota^*g after variation",
+        "local_response": "solve the linearized Einstein, radial ADM, B1 junction, and matcher constraints",
+        "reduced_form": "S_J=integral sqrt(-h)[F(q)R4/2-K_J(q)(Dq)^2/2-V_J(q)]",
+        "selected": true
+      }
+    },
+    "scalar_curvature_right_inverse_emitted": false,
+    "selected_route": "D",
+    "verdict": "BHSM_M4_X_RESPONSE_REQUIRES_LOCAL_CONSTRAINT_SOLVE"
+  },
+  "response_type_verdict": "BHSM_M4_X_RESPONSE_REQUIRES_LOCAL_CONSTRAINT_SOLVE",
+  "source_main_sha": "1cea7ee804a7a4a07f7b42dc0635a24642d43317",
+  "sprint": "bhsm-x-r4-moduli-tangent-resolution-v6-23-0",
+  "stability_claimed": false,
+  "v6_22_scientific_sha": "8034dbfd0865e469a669dea5605114f234b5e119",
+  "version": "v6.23.0"
+}
