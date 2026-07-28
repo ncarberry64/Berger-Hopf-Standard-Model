@@ -1,0 +1,72 @@
+{
+  "F2_assumed": false,
+  "Jordan": {
+    "available": {
+      "affine_identity": "J0=L0 v and K0=<v,L0 v>",
+      "control_branch": "delta_mu=tau nu1 q+O(q^2)",
+      "fixed_control_normal_form": "Gamma-Gamma_c=delta_mu q^2/4-tau nu1 q^3/6+...",
+      "quadratic_action": "v6.28 S2 on (A,psi,delta_sigma_perp) with affine q profiles",
+      "scalar_identity": "u1 is the critical normalized Jacobi zero mode",
+      "stored_cusp": "tau nu1 q^3/12+O(q^4)"
+    },
+    "candidate_rejected": "the Puiseux continuation changes mu=-A5/Z5 with q and therefore moves among neighboring actions; it is not V_J(q) in one action",
+    "control_varying_curve_is_fixed_action": false,
+    "full_Jordan_potential_derived": false,
+    "not_available": [
+      "a fixed-action off-shell nonlinear radial family indexed by q",
+      "a common regulated M4 density for comparing different q",
+      "the full coefficient functions V_J(q) and F(q)",
+      "analytic a2(t), N2(t), and higher radial responses"
+    ],
+    "obstruction_class": "B: missing derivation within the frozen action",
+    "on_shell_cusp_is_off_shell_potential": false
+  },
+  "V2_assumed": false,
+  "action": {
+    "cap_multiplicity": 2,
+    "common_B1_multiplicity": 1,
+    "critical_point": "q0=0 at Xc=2 in the normalized representative",
+    "frame_regular": "pi/2",
+    "matcher_eliminated": true,
+    "sectors": [
+      "two reflected P1 Einstein-Hilbert caps",
+      "two capwise GHY completions",
+      "bulk scalar kinetic and U5=A5 sigma^2/2+G5 sigma^4/4",
+      "one common intrinsic C_partial R4 action",
+      "exact matcher",
+      "v6.27 full momentum constraint",
+      "v6.28 projected L0/J0/K0 quadratic action",
+      "v6.29 positive Einstein-frame kinetic coefficient"
+    ],
+    "stationarity": "the critical background obeys the frozen Euler-Lagrange and junction equations; the first variation along q therefore vanishes"
+  },
+  "artifact": "BHSM_fold_Jordan_potential_provenance_audit_v6_30_0",
+  "chat_only_value_imported": false,
+  "control_varying_curve_used_as_fixed_action_potential": false,
+  "fitted_parameter_used": false,
+  "frozen_predictions_changed": false,
+  "full_potential_claimed": false,
+  "measured_input_used": false,
+  "new_action_introduced": false,
+  "new_primitive_introduced": false,
+  "new_scale_introduced": false,
+  "normal_form_checks": {
+    "branch_control": "nu_1*q*tau",
+    "fixed_control": "delta_mu*q**2/4 - nu_1*q**3*tau/6",
+    "fixed_control_hessian_at_fold": "0",
+    "on_shell_cusp": "nu_1*q**3*tau/12"
+  },
+  "official_prediction_logic_changed": false,
+  "on_shell_cusp_used_as_off_shell_potential": false,
+  "physical_mass_claimed": false,
+  "potential_stability_claimed": false,
+  "primary_result": "BHSM_FOLD_EINSTEIN_POTENTIAL_REQUIRES_FIXED_ACTION_OFFSHELL_RADIAL_FAMILY",
+  "source_main_sha": "6e123ec1864044a3949b13e26c205acbe26ad898",
+  "sprint": "bhsm-fold-potential-mass-v6-30-0",
+  "v6_28_scientific_sha": "853bddac1852c6b328fc4cf7af2786e2f59baf34",
+  "v6_29_reproducibility_sha": "4f7ca8791c74bc86397e0f8275de25cea4a71c73",
+  "v6_29_scientific_sha": "0c65bd9bf6480eee705fc6ee7769ecb4521b3abf",
+  "v6_31_permitted": false,
+  "vacuum_constant_subtracted": false,
+  "version": "v6.30.0"
+}
