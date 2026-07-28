@@ -1,0 +1,118 @@
+{
+  "C1_result": "BHSM_LORENTZIAN_C1_MODE_ELIMINATED_BY_FULL_MOMENTUM_CONSTRAINT",
+  "Euclidean_state_selected": false,
+  "Feynman_state_selected": false,
+  "Schur_number_emitted": false,
+  "advanced_state_selected": false,
+  "arbitrary_Lorentzian_state_selected": false,
+  "artifact": "BHSM_support_domain_and_operator_reopening_v6_27_0",
+  "chat_only_candidate_imported": false,
+  "commutativity_result": "BHSM_SCALAR_REDUCTION_BEFORE_VARIATION_LOSES_C1_MOMENTUM_CONSTRAINT",
+  "fitted_coefficient_introduced": false,
+  "frozen_predictions_changed": false,
+  "hindsight": {
+    "Invalidated": [
+      "treating Box4 W=0 as the complete parent shift equation",
+      "interpreting C1 as an unstored Lorentzian state",
+      "using premature scalar reduction as a support-domain obstruction"
+    ],
+    "Still_active": "complete reopened L0/L1 radial operator, adjoint domain, kernels, then the optional Schur and kinetic calculation",
+    "Validated": [
+      "parent arbitrary-metric and arbitrary-shift variational domain",
+      "full vector momentum constraint and v6.26 normalization",
+      "unique endpoint trace after parent C1 constraint plus inherited C0 axiom",
+      "rank-two scalar B1 system and Noether-dependent normal residual",
+      "fixed-B1 support compatibility through O(D2q)"
+    ],
+    "loop_cause": "premature reduction before variation"
+  },
+  "kinetic_number_emitted": false,
+  "local_X_field_invented": false,
+  "measured_input_used": false,
+  "new_action_introduced": false,
+  "new_boundary_axiom_introduced": false,
+  "new_boundary_condition_introduced": false,
+  "new_corner_term_introduced": false,
+  "new_primitive_introduced": false,
+  "new_scale_introduced": false,
+  "official_prediction_logic_changed": false,
+  "operator_inverse_emitted": false,
+  "physical_mass_claimed": false,
+  "primary_result": "BHSM_FULL_SHIFT_VARIATION_IMPOSES_COMPLETE_MOMENTUM_CONSTRAINT",
+  "retarded_state_selected": false,
+  "scalar_curvature_inverse_revived": false,
+  "source_main_sha": "7a5de9fc2d9ad75504ed9db40d42b92aa1bc38e6",
+  "sprint": "bhsm-full-shift-variation-support-closure-v6-27-0",
+  "stability_claimed": false,
+  "support": {
+    "dynamic_embedding": {
+      "embedding_equation": null,
+      "entered": false,
+      "new_gluing_law": null,
+      "required": false,
+      "result": "BHSM_DYNAMICAL_B1_EMBEDDING_NOT_REQUIRED"
+    },
+    "exact_next_target": "expand the complete action-normalized L0/L1 radial blocks and derive the adjoint domain before any Schur inverse or kinetic sign",
+    "fixed_support_compatible": true,
+    "kill_screen": {
+      "active_domain_choice": false,
+      "fatal_inconsistency": false,
+      "repairable_reduction_error": true,
+      "result": "BHSM_SHIFT_SECTOR_REPAIRABLE_REDUCTION_ERROR"
+    },
+    "operator": {
+      "Schur": {
+        "K_grav_constraint_J": null,
+        "constructed": false,
+        "result": "BHSM_FOLD_SCHUR_REDUCTION_BLOCKED_BY_INCOMPLETE_REOPENED_RADIAL_OPERATOR_AND_ADJOINT_DOMAIN"
+      },
+      "blocks": {
+        "J_H": "rank-one temporal/Hamiltonian B1 row",
+        "J_T": "rank-one spatial-trace B1 row",
+        "L_AA": "radial lapse/Hamiltonian constraint block",
+        "L_Apsi": "lapse-Weyl mixing",
+        "L_metric_sigma": "Einstein-scalar mixing",
+        "L_psipsi": "critical Weyl/radial Einstein block",
+        "L_sigma": "orthogonal scalar Sturm-Liouville block",
+        "source_q": "unique threading plus fold-localization source"
+      },
+      "boundary": "J(lambda)=J0+lambda J1+O(lambda^2)",
+      "boundary_conditions": [
+        "regular pole at t=0",
+        "fixed B1 at t=1",
+        "full momentum constraint W=0",
+        "rank-two matcher-eliminated B1 junction system",
+        "scalar Dirichlet trace",
+        "metric matching h=iota^*gamma"
+      ],
+      "complete_for_inverse": false,
+      "domain": "M5=[0,1]_t x M4, B1={t=1}, fixed support",
+      "field_vector": "Y_red=(A,psi,delta_sigma_perp); E=0 by scalar gauge, B is fixed by M_mu=0, matcher variables are eliminated, q enters as a source",
+      "kinetic": {
+        "number": null,
+        "result": "BHSM_FOLD_KINETIC_SIGN_REMAINS_UNRESOLVED_BY_INCOMPLETE_REOPENED_RADIAL_OPERATOR_AND_ADJOINT_DOMAIN",
+        "sign": null
+      },
+      "missing_for_inverse": [
+        "fully expanded action-normalized L0 and L1 radial blocks",
+        "adjoint boundary domain",
+        "kernel and compatibility classification for the reopened system"
+      ],
+      "operator": "L(lambda)=L0+lambda L1+O(lambda^2)",
+      "result": "BHSM_FOLD_LOCAL_SCALAR_OPERATOR_REOPENED_ON_FIXED_SUPPORT"
+    },
+    "requirements": {
+      "B1_rank_two": true,
+      "C1_eliminated": true,
+      "R_perp_zero_through_D2q": true,
+      "endpoint_closed": true,
+      "new_gluing_datum": false,
+      "state_condition": false
+    },
+    "selected_support": "fixed B1 support",
+    "support_result": "BHSM_FOLD_LOCALIZATION_COMPATIBLE_WITH_FIXED_B1_SUPPORT"
+  },
+  "support_result": "BHSM_FOLD_LOCALIZATION_COMPATIBLE_WITH_FIXED_B1_SUPPORT",
+  "v6_26_scientific_sha": "aa146f05db8d63ef9436b3fc1cf94b79eba4c755",
+  "version": "v6.27.0"
+}

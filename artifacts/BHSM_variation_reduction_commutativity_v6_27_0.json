@@ -1,0 +1,59 @@
+{
+  "C1_result": "BHSM_LORENTZIAN_C1_MODE_ELIMINATED_BY_FULL_MOMENTUM_CONSTRAINT",
+  "Euclidean_state_selected": false,
+  "Feynman_state_selected": false,
+  "Schur_number_emitted": false,
+  "advanced_state_selected": false,
+  "arbitrary_Lorentzian_state_selected": false,
+  "artifact": "BHSM_variation_reduction_commutativity_v6_27_0",
+  "chat_only_candidate_imported": false,
+  "commutativity": {
+    "Lorentzian_kernel": {
+      "covector": "M_u=C/a4^3, M_i=0",
+      "divergence_test": "dot M_u+3H4 M_u=0",
+      "removed_by": "the parent local equation M_u=0",
+      "survives": [
+        "closed-dS4 smoothness",
+        "local finite action",
+        "fixed support",
+        "B1 shift endpoint analysis"
+      ]
+    },
+    "Route_I": "vary arbitrary N_mu -> M_mu=0 -> scalar-decompose",
+    "Route_II": "set N_mu=D_mu B -> delta N_mu=D_mu delta B -> delta_B S=-integral sqrt|gamma| delta B D_mu M^mu+M4 boundary",
+    "Route_II_equation": "D_mu M^mu=0",
+    "classification": "incomplete scalar projection of an already-existing action constraint",
+    "equivalence_condition": "the divergence-free kernel intersecting the declared scalar image must vanish (or be independently removed by a parent constraint)",
+    "historical_supersession": "v6.26 correctly found the divergence kernel but its state/domain blocker is superseded: the parent arbitrary-shift variation removes C1",
+    "identity": "-D^mu M_mu=[3 kappa_1 X_c/(N0 a0(t)^2)]Box4 W",
+    "result": "BHSM_SCALAR_REDUCTION_BEFORE_VARIATION_LOSES_C1_MOMENTUM_CONSTRAINT",
+    "static_S3_audit": {
+      "ell_0": "constant potential has zero gradient and is the inherited C_Sigma stabilizer fixed by C_Sigma=0",
+      "ell_ge_1": "eigenvalue -2 ell(ell+2)/a_S^4 is nonzero, so no analogous kernel"
+    }
+  },
+  "commutativity_result": "BHSM_SCALAR_REDUCTION_BEFORE_VARIATION_LOSES_C1_MOMENTUM_CONSTRAINT",
+  "fitted_coefficient_introduced": false,
+  "frozen_predictions_changed": false,
+  "kinetic_number_emitted": false,
+  "local_X_field_invented": false,
+  "measured_input_used": false,
+  "new_action_introduced": false,
+  "new_boundary_axiom_introduced": false,
+  "new_boundary_condition_introduced": false,
+  "new_corner_term_introduced": false,
+  "new_primitive_introduced": false,
+  "new_scale_introduced": false,
+  "official_prediction_logic_changed": false,
+  "operator_inverse_emitted": false,
+  "physical_mass_claimed": false,
+  "primary_result": "BHSM_FULL_SHIFT_VARIATION_IMPOSES_COMPLETE_MOMENTUM_CONSTRAINT",
+  "retarded_state_selected": false,
+  "scalar_curvature_inverse_revived": false,
+  "source_main_sha": "7a5de9fc2d9ad75504ed9db40d42b92aa1bc38e6",
+  "sprint": "bhsm-full-shift-variation-support-closure-v6-27-0",
+  "stability_claimed": false,
+  "support_result": "BHSM_FOLD_LOCALIZATION_COMPATIBLE_WITH_FIXED_B1_SUPPORT",
+  "v6_26_scientific_sha": "aa146f05db8d63ef9436b3fc1cf94b79eba4c755",
+  "version": "v6.27.0"
+}

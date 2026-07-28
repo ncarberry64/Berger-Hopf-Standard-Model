@@ -2178,3 +2178,46 @@ The primary result is
 `BHSM_SUPPORT_DOMAIN_DECISION_BLOCKED_BY_UNFIXED_SOURCE_FREE_HOMOGENEOUS_LORENTZIAN_THREADING_MODE`.
 Neither support domain is selected; the embedding, operator, adjoint, Schur,
 and kinetic continuations are not entered.
+
+<!-- BHSM_FULL_SHIFT_VARIATION_SUPPORT_CLOSURE_V6_27_0 -->
+## v6.27.0 full shift variation and fold-support closure
+
+The frozen covariant P1+GHY action varies the independent bulk metric before
+scalar decomposition. Its mixed radial component is the arbitrary ADM shift
+one-form `N_mu`. Because the shift enters `K_mu_nu` only through tangential
+derivatives, arbitrary compactly supported `delta N_mu` gives the complete
+local momentum constraint with no radial pole or B1 shift endpoint term:
+
+`M_mu=kappa_1 D_nu Q^nu_mu-Z5(n sigma)D_mu sigma=0`.
+
+In the v6.26 sector this becomes
+`M_mu=-[3 kappa_1 X_c/(N0 a0^2)]D_mu W=0`. Substituting
+`N_mu=D_mu B` before variation instead gives only `D^mu M_mu=0` and loses
+the divergence-free homogeneous covector `M_u=C/a4^3`. The source-free
+`C1 integral du/a4^3` mode therefore violates the parent constraint and
+`C1=0` is derived without a Lorentzian state prescription. The inherited
+v6.18 `C_Sigma=0` axiom is used only for `C0`.
+
+The unique response is `W=0`,
+`B=-tau(pi chi_1/16)tq`, and
+`S_Sigma=-tau(pi chi_1/16)q`. The matcher-eliminated scalar B1 system has two
+independent temporal/trace rows and rank two, witnessed by the canonical
+momentum minor `kappa_1^2`. Its scalar-momentum and
+traceless-longitudinal rows are Ward-dependent. The diagnostic shape,
+normal-junction, and boundary-Noether routes agree:
+`R_perp^(2)=0` in the independent `(ddot q,H4 dot q)` basis.
+
+The exact results are
+`BHSM_FULL_SHIFT_VARIATION_IMPOSES_COMPLETE_MOMENTUM_CONSTRAINT`,
+`BHSM_SCALAR_REDUCTION_BEFORE_VARIATION_LOSES_C1_MOMENTUM_CONSTRAINT`,
+`BHSM_LORENTZIAN_C1_MODE_ELIMINATED_BY_FULL_MOMENTUM_CONSTRAINT`,
+`BHSM_NORMAL_SUPPORT_RESIDUAL_VANISHES_THROUGH_D2Q`, and
+`BHSM_FOLD_LOCALIZATION_COMPATIBLE_WITH_FIXED_B1_SUPPORT`.
+The sector is classified
+`BHSM_SHIFT_SECTOR_REPAIRABLE_REDUCTION_ERROR`, not a fatal inconsistency.
+
+The fixed-support local scalar operator is structurally reopened on
+`Y_red=(A,psi,delta_sigma_perp)`. No inverse is taken: the fully expanded
+action-normalized `L0/L1`, adjoint boundary domain, and reopened kernels
+remain the exact next target. The Schur number and kinetic sign are therefore
+not emitted.
