@@ -2339,3 +2339,32 @@ The required verdict `BHSM_FOLD_EINSTEIN_FRAME_POTENTIAL_DERIVED` is not
 emitted. This is a class-B missing derivation, not a fatal inconsistency.
 Phase v6.31 is not permitted, and the controlled campaign stops at v6.30
 with `BHSM_FULL_CLOSURE_CAMPAIGN_STOPPED_AT_V6_30_CLASS_B_BLOCKER`.
+
+<!-- BHSM_FIXED_ACTION_OFFSHELL_RADIAL_FAMILY_V6_30_1 -->
+## v6.30.1 fixed-action off-shell radial-family audit
+
+The frozen-action audit holds
+`kappa0,kappa1,Z5,A5,G5,C_partial` fixed, imposes `dmu/dq=0`, uses one
+fixed `[0,1]_t x M4` regulator with B1 at `t=1`, and keeps the M4 metric
+independent of the fold coordinate.
+
+The audit reaches first order and retains the normalized scalar Jacobi
+mode. It does not emit `Phi2`, `Phi3`, or `Phi4`. The v6.28 radial operator
+belongs to the matcher-eliminated, on-shell-M4 Robin domain
+`P_psi(1)+12C_partial lambda psi(1)=0`. A fixed-h effective action instead
+keeps the matcher multiplier as a boundary response and requires induced
+metric Dirichlet data `psi(1)=0`. The inherited metric modulus has
+`psi_z(1)=1`, so the two domains and their complement inverses cannot be
+identified.
+
+The primary verdict is
+`BHSM_FIXED_ACTION_OFFSHELL_RADIAL_FAMILY_BLOCKED_BY_UNDERIVED_FIXED_H_MATCHER_DIRICHLET_RANGE_OPERATOR`.
+This is a class-C missing derivation within the frozen action, not a fatal
+inconsistency. The next target is the uneliminated-matcher fixed-h operator,
+adjoint domain, Green current, kernel/range theorem, complement inverse, and
+nonlinear boundary map.
+
+The inherited `F0`, `F1`, and `V_E'(0)=V_E''(0)=0` remain valid. `F2`,
+`V2`, the first nonzero self-interaction, and the canonical self-coupling
+remain unresolved. Local stability and the scale bridge are not permitted
+before the fixed-h Dirichlet range problem closes.
