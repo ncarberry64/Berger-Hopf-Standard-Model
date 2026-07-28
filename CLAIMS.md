@@ -1516,3 +1516,34 @@ Still active:
 No measured input, fit, new action, primitive, scale, state condition,
 boundary axiom, corner term, frozen prediction change, official
 prediction-logic change, physical mass, or stability claim is introduced.
+
+<!-- BHSM_REDUCED_FOLD_OPERATOR_DOMAIN_V6_28_0 -->
+## v6.28.0 reduced-operator and domain claims
+
+Derived consequences:
+
+- the frozen action determines all six blocks of the
+  `(A,psi,delta_sigma_perp)` local radial pencil through two M4 derivatives;
+- `A` is an algebraic Hamiltonian constraint variable in a symmetric
+  differential-algebraic system;
+- the metric-scalar Hessian blocks vanish at the critical
+  `sigma0=D sigma0=0` background;
+- one affine convention determines `J0`, `J1`, and the direct terms without
+  duplicating radial profiles or the independent M4 metric;
+- the radial Green current fixes the actual and adjoint domains and proves
+  their equality;
+- radial diffeomorphisms, the scalar Jacobi collective mode, the background
+  conformal modulus, and the forbidden v6.27 C1 shift mode are separately
+  classified;
+- the scalar projector and the nonzero first-order metric-modulus lifting
+  coefficient establish source compatibility for the projected pencil.
+
+Active construction target:
+
+- evaluate the v6.29 projected Schur response, retaining the
+  Lyapunov--Schmidt modulus equation and B1 source, and derive the canonical
+  fold kinetic sign.
+
+No global Lorentzian state, generic pseudoinverse, measured input, fit, new
+action, primitive, scale, boundary parameter, frozen change, physical mass,
+kinetic sign, or stability claim is introduced.

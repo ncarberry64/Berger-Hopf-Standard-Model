@@ -1,0 +1,90 @@
+{
+  "M4_curvature_tangent_double_counted": false,
+  "Schur_number_emitted": false,
+  "action": {
+    "B1": "one common integral sqrt|h| C_partial R4",
+    "GHY": "kappa_1 integral_B1 sqrt|h|K on each of two caps",
+    "P1": "(1/2)integral sqrt|g|(kappa_1 R5-kappa_0), kappa_0=12kappa_1 on the critical representative",
+    "cap_count": 2,
+    "common_B1_count": 1,
+    "matcher": "integral sqrt|h| Lambda^(mu nu)(h_mu nu-iota^*gamma_mu nu)",
+    "metric_ansatz": "N=N0(1+A), gamma_mu_nu=a0^2(1+2psi)hbar_mu_nu, E=0 after the momentum equation",
+    "new_term": false,
+    "radial_measure": "N0 a0^4 dt=pi sin^4(pi t/4)dt",
+    "scalar": "integral sqrt|g|[-Z5(grad sigma)^2/2-U5], U5''(0)=A5",
+    "scalar_background": "sigma0=0",
+    "v627": "W=0, B=-tau(pi chi_1/16)tq, fixed B1 support, S_Sigma=-tau(pi chi_1/16)q"
+  },
+  "artifact": "BHSM_reduced_fold_L0_L1_operator_v6_28_0",
+  "background": {
+    "B1_H": "0",
+    "Hamiltonian": "0",
+    "kappa0_relation": "0",
+    "radial_evolution": "0"
+  },
+  "fitted_parameter_used": false,
+  "frozen_predictions_changed": false,
+  "generic_pseudoinverse_used": false,
+  "global_Lorentzian_propagator_selected": false,
+  "kinetic_sign_emitted": false,
+  "measured_input_used": false,
+  "new_action_introduced": false,
+  "new_boundary_parameter_introduced": false,
+  "new_primitive_introduced": false,
+  "new_scale_introduced": false,
+  "official_prediction_logic_changed": false,
+  "operator": {
+    "L0": {
+      "L_AA": "3*kappa_1*(1 - cos(pi*t))/sin(pi*t/4)**4",
+      "L_Adelta_sigma": "0",
+      "L_Apsi": "(-96*kappa_1/(pi*tan(pi*t/4))) partial_t+(-24*kappa_1/sin(pi*t/4)**2)",
+      "L_delta_sigmadelta_sigma": "2 Z5 w^-1 partial_t[a0^4/N0 partial_t]-2 A5",
+      "L_psiA": "-w^-1 partial_t[(-96*kappa_1*sin(pi*t/4)**3*cos(pi*t/4)) .]+(-24*kappa_1/sin(pi*t/4)**2)",
+      "L_psidelta_sigma": "0",
+      "L_psipsi": "-2 w^-1 partial_t[(192*kappa_1*sin(pi*t/4)**4/pi) partial_t]+(-48*kappa_1/sin(pi*t/4)**2)"
+    },
+    "L1": {
+      "B1_endpoint_Hessian": "12 C_partial in the psi-psi slot",
+      "metric": [
+        [
+          "0",
+          "3*kappa_1/sin(pi*t/4)**2",
+          "0"
+        ],
+        [
+          "3*kappa_1/sin(pi*t/4)**2",
+          "6*kappa_1/sin(pi*t/4)**2",
+          "0"
+        ],
+        [
+          "0",
+          "0",
+          "-Z5/sin(pi*t/4)**2"
+        ]
+      ]
+    },
+    "mixed_scalar_blocks_zero_reason": "sigma0=0 and D sigma0=0, so every metric-scalar cross term starts at cubic order",
+    "operator_type": "symmetric radial differential-algebraic pencil: A algebraic, psi second order, delta_sigma_perp Sturm-Liouville",
+    "weight": "pi*sin(pi*t/4)**4"
+  },
+  "operator_inverse_emitted": false,
+  "phase_result": "BHSM_REDUCED_FOLD_OPERATOR_AND_DOMAIN_CLOSED_CONDITIONALLY",
+  "physical_mass_claimed": false,
+  "primary_result": "BHSM_REDUCED_FOLD_OPERATOR_L0_L1_DERIVED",
+  "principal_matrix": [
+    [
+      "0",
+      "3*kappa_1/sin(pi*t/4)**2"
+    ],
+    [
+      "3*kappa_1/sin(pi*t/4)**2",
+      "6*kappa_1/sin(pi*t/4)**2"
+    ]
+  ],
+  "radial_profile_double_counted": false,
+  "source_main_sha": "d94f2dd71eac8f03649f73011e6b4ee830f7b09b",
+  "sprint": "bhsm-reduced-fold-operator-domain-v6-28-0",
+  "stability_claimed": false,
+  "v6_27_scientific_sha": "643bc7371fc81f07cce465abded3f5d2885bca3c",
+  "version": "v6.28.0"
+}

@@ -2221,3 +2221,46 @@ The fixed-support local scalar operator is structurally reopened on
 action-normalized `L0/L1`, adjoint boundary domain, and reopened kernels
 remain the exact next target. The Schur number and kinetic sign are therefore
 not emitted.
+
+<!-- BHSM_REDUCED_FOLD_OPERATOR_DOMAIN_V6_28_0 -->
+## v6.28.0 reduced fold operator and radial domain
+
+The complete local two-M4-derivative quadratic operator pencil is derived on
+`Y=(A,psi,delta_sigma_perp)` from the frozen two-cap P1+GHY action, bulk
+scalar action, one common intrinsic B1 action, matcher, and the v6.27
+full-momentum solution. The radial measure is
+`N0 a0^4 dt=pi sin^4(pi t/4)dt`.
+
+The zero-order metric block contains the complete radial and curvature
+terms. `A` has no radial derivative and is an algebraic Hamiltonian
+constraint variable; `psi` is second order before the radial gauge quotient.
+At `sigma0=0`, both metric-scalar mixed Hessian blocks vanish. The
+two-derivative block exactly recovers
+`(6kappa_1/a0^2)[[0,1],[1,2]]`, with scalar entry
+`-2Z5/a0^2` and the common B1 endpoint Hessian `12C_partial`.
+
+One affine convention encodes the inherited `N1,a1,u1` profiles and the
+v6.27 threading response exactly once. It gives explicit bilinear
+functionals `J0`, `J1`, `K0`, and `K1`, including the radial-integration
+endpoint source. No separate M4 `X` tangent or Einstein-frame Weyl term is
+double counted.
+
+The exact Green current yields the regular-pole and B1
+Robin/Dirichlet domains and proves `Dom(L)=Dom(L^dagger)`. The prequotient
+kernel consists of radial diffeomorphisms and the critical scalar Jacobi
+mode. The scalar mode is removed by `P_perp`. After the radial gauge quotient
+one background conformal modulus remains and is lifted at first derivative
+order by
+`12C_partial+3kappa_1(6-pi)>0`; its Lyapunov--Schmidt equation supplies the
+compatibility condition without a generic pseudoinverse.
+
+The four derived results are:
+
+- `BHSM_REDUCED_FOLD_OPERATOR_L0_L1_DERIVED`;
+- `BHSM_REDUCED_FOLD_SOURCE_J0_J1_DERIVED`;
+- `BHSM_REDUCED_FOLD_ADJOINT_DOMAIN_DERIVED`;
+- `BHSM_REDUCED_FOLD_KERNEL_AND_COMPATIBILITY_DERIVED`.
+
+Phase v6.29 is permitted with the projected pencil. No Schur coefficient,
+kinetic sign, potential curvature, dimensionful scale, or physical mass is
+claimed in v6.28.
