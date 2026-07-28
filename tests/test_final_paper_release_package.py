@@ -28,28 +28,23 @@ def test_required_final_release_files_exist():
     assert missing == []
 
 
-def test_release_metadata_has_no_invented_doi_and_matches_active_release():
+def test_release_metadata_uses_verified_doi_and_latest_github_release():
     citation = _read("CITATION.cff")
     zenodo = json.loads(_read(".zenodo.json"))
     release_notes = _read("docs/zenodo_release_notes.md") + "\n" + _read("RELEASE_NOTES.md")
 
-    v1_manifest = ROOT / "artifacts" / "BHSM_v1_release_manifest.json"
-    if v1_manifest.exists():
-        assert 'version: "1.0.0"' in citation
-        assert 'date-released: "2026-06-25"' in citation
-        assert zenodo["version"] == "1.0.0"
-        manifest = json.loads(v1_manifest.read_text(encoding="utf-8"))
-        assert manifest["doi"] == "PENDING_ZENODO_RELEASE"
-        assert manifest["external_empirical_comparison_package"] == "IMPLEMENTED_COMPARISON_ONLY_LAYER"
-    else:
-        assert "version: \"v1.2.0\"" in citation
-        assert "date-released: \"2026-06-11\"" in citation
-        assert zenodo["version"] == "v1.2.0"
-    assert "10.5281/zenodo" not in citation
-    assert "10.5281/zenodo" not in json.dumps(zenodo)
+    assert 'version: "v1.1.0"' in citation
+    assert 'date-released: "2026-06-26"' in citation
+    assert zenodo["version"] == "v1.1.0"
+    assert "10.5281/zenodo.20663419" in citation
+    assert "10.5281/zenodo.20663419" in json.dumps(zenodo)
+    v1_manifest = json.loads(
+        _read("artifacts/BHSM_v1_release_manifest.json")
+    )
+    assert v1_manifest["doi"] == "PENDING_ZENODO_RELEASE"
     assert (
-        "Zenodo DOI is assigned after release archival" in release_notes
-        or "PENDING_ZENODO_RELEASE" in citation
+        v1_manifest["external_empirical_comparison_package"]
+        == "IMPLEMENTED_COMPARISON_ONLY_LAYER"
     )
 
 

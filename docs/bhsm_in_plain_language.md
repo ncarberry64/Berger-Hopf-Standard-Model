@@ -90,9 +90,18 @@ without treating an internal BHSM result as established experimental science.
 
 ## What remains open
 
-The largest open tasks include:
+The current fold calculation has derived a nonhomogeneous threading response,
+a nonempty dynamic threading domain, and the principal lapse--Weyl block. Its
+next exact target is the gauge-quotiented four-metric change
+`T_mu_nu^(X)` that produces the already known curvature change. In plain
+language, the program knows how much the four-curvature must change but has
+not yet uniquely determined which physical metric deformation, gauge
+representative, and boundary domain produce that change. The fold kinetic
+sign therefore remains unresolved.
 
-- deriving the physical four-dimensional boundary/localization action;
+Other major open tasks include:
+
+- completing the physical four-dimensional boundary/localization action;
 - deriving rather than importing an absolute unit of length, mass, or energy;
 - completing a healthy gauge-fixed physical spectrum;
 - deriving the physical gauge group and normalized couplings;
@@ -102,8 +111,7 @@ The largest open tasks include:
 - making new quantitative predictions and passing independent experimental
   tests.
 
-Until those gates close, `FULL_BHSM_NOT_COMPLETE` is the correct project
-status.
+These are active construction targets, not accomplished results.
 
 ## What the CERN demonstration means
 

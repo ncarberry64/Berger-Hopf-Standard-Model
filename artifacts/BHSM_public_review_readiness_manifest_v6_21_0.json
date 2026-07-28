@@ -1,0 +1,93 @@
+{
+  "active_construction_target": "T_mu_nu^(X)=delta hbar_mu_nu[X]/delta X|X=2, delta R_4[T^(X)]=tau chi_1 q, with M4 gauge quotient and regulated domain",
+  "artifact": "BHSM_public_review_readiness_manifest_v6_21_0",
+  "audit_results": {
+    "citation": true,
+    "current_claims": true,
+    "frozen_predictions": true,
+    "hygiene": true,
+    "license_visibility": true,
+    "markdown_links": true,
+    "reproduction": true,
+    "required_files": true,
+    "science_alignment": true
+  },
+  "blockers": [],
+  "branch": "bhsm-public-review-readiness-v6-21-0",
+  "citation": {
+    "doi": "10.5281/zenodo.20663419",
+    "doi_resolution_checked": true,
+    "latest_github_release_date": "2026-06-26",
+    "latest_github_release_tag": "v1.1.0",
+    "license": "LicenseRef-AllRightsReserved",
+    "title": "Berger-Hopf Standard Model: Artifact-Backed Geometric Physics Research Framework",
+    "zenodo_archive_date": "2026-06-12",
+    "zenodo_archive_version": "v1.2.0"
+  },
+  "current_scientific_summary": {
+    "critical_lapse_weyl_principal_block": "[[0,6 kappa_1/a_0^2],[6 kappa_1/a_0^2,12 kappa_1/a_0^2]]",
+    "explicit_energy_threshold": "not required",
+    "fold_kinetic_sign": "unresolved",
+    "physical_mass_claim": false,
+    "threading_response": "derived: Pi_perp S_Sigma=-tau(pi chi_1/16)Pi_perp q",
+    "threading_unresolved_trace_count": 0
+  },
+  "external_urls_recorded": [
+    "https://doi.org/10.5281/zenodo.20663419",
+    "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg",
+    "https://img.shields.io/badge/python-3.10%2B-3776AB",
+    "https://img.shields.io/github/v/release/ncarberry64/Berger-Hopf-Standard-Model",
+    "https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg"
+  ],
+  "frozen_prediction_hashes": {
+    "docs/frozen_predictions.json": "F38210E0689871A25A9D5B0A1A4239883B7240CD7D0E25CDCF4C8CAB72A2CBE7",
+    "docs/frozen_predictions.md": "9EA147C56537520C86D3C4F9B864C6BA98BAC9E64931EDAE96449F3B335A36C4"
+  },
+  "frozen_predictions_changed": false,
+  "official_prediction_logic_changed": false,
+  "predecessor_merge_sha": "5fbad0de4e414084743c081693aebe510bb0b84f",
+  "public_file_inventory": {
+    ".zenodo.json": true,
+    "ARTIFACT_INDEX.md": true,
+    "CITATION.cff": true,
+    "CLAIMS.md": true,
+    "CONTRIBUTING.md": true,
+    "LICENSE.md": true,
+    "QUICKSTART.md": true,
+    "README.md": true,
+    "SECURITY.md": true,
+    "STATUS.md": true,
+    "docs/bhsm_public_scientific_handoff_v6_21_0.md": true
+  },
+  "public_readiness_verdict": "BHSM_REPOSITORY_PUBLIC_REVIEW_READY",
+  "repository": {
+    "default_branch": "main",
+    "url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model",
+    "visibility": "PUBLIC"
+  },
+  "scientific_commit": "5fbad0de4e414084743c081693aebe510bb0b84f",
+  "scientific_formulas_changed": false,
+  "scientific_source_modules_changed": false,
+  "source_main_sha": "5fbad0de4e414084743c081693aebe510bb0b84f",
+  "tested_quickstart_commands": [
+    "python -m bhsm.interface --help",
+    "python -m bhsm.interface registry",
+    "python -m bhsm.interface physics-status --format markdown",
+    "python tools/audit_forbidden_claims.py",
+    "python tools/audit_bhsm_status.py",
+    "python tools/audit_frozen_prediction_integrity.py",
+    "python tools/verify_precision.py"
+  ],
+  "unsupported_claims": [
+    "complete physical BHSM action",
+    "complete Standard Model derivation",
+    "empirical validation",
+    "physical fold mass or kinetic classification",
+    "action-derived gauge couplings",
+    "action-derived CKM exponent",
+    "physical neutrino mass or Delta m^2",
+    "collider-production readiness",
+    "CERN or institutional endorsement"
+  ],
+  "version": "v6.21.0"
+}

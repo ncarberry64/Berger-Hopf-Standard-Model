@@ -3,6 +3,52 @@
 This file is the current area-level status source. Detailed sprint records are
 evidence, not competing public status pages.
 
+## Current public summary
+
+BHSM is an artifact-backed mathematical and computational research framework,
+not a replacement for the Standard Model established by empirical tests. Frozen
+internal prediction records, executable interfaces, deterministic artifacts,
+and extensive geometric/action calculations exist, while the complete
+physical four-dimensional action, independently normalized couplings and
+scales, and empirical validation remain active work.
+
+Preferred current classifications are: **Adopted from established
+physics/mathematics**, **Adopted BHSM axiom**, **BHSM identification**,
+**Derived consequence**, **Numerically validated**, **Needs empirical test**,
+**Rejected by calculation**, and **Active construction target**. Historical
+status labels below remain dated provenance and do not override this summary.
+
+The v6.18 threading response is a **Derived consequence** on its declared
+domain:
+
+`Pi_perp S_Sigma = -tau (pi chi_1/16) Pi_perp q`.
+
+No explicit energy threshold is required for that response. The source-free
+choice `C_Sigma=0` is an **Adopted BHSM axiom**. The dynamic threading domain
+is nonempty and its unresolved threading trace count is zero.
+
+The v6.20 critical lapse--Weyl principal block is a **Derived consequence**;
+its principal bulk block follows from the existing action sectors:
+
+`L_Apsi^crit=[[0,6 kappa_1/a_0^2],[6 kappa_1/a_0^2,12 kappa_1/a_0^2]]`,
+
+with action-derived measure
+`dmu_rad=N_0 a_0^4 dt=pi sin^4(pi t/4) dt`.
+
+The exact **Active construction target** is
+`T_mu_nu^(X)=delta hbar_mu_nu[X]/delta X|X=2`, satisfying
+`delta R_4[T^(X)]=tau chi_1 q`, after the four-dimensional gauge quotient and
+regulated boundary domain are fixed. It is required for the complete mixed
+source, B1/matcher domain, adjoint kernels, compatibility, Schur complement,
+and kinetic sign. The fold kinetic sign is unresolved, and no physical mass,
+ghost, null, tachyon, stability, production, or white-hole-dynamics claim is
+supported.
+
+Reviewer entry points:
+[public scientific handoff](docs/bhsm_public_scientific_handoff_v6_21_0.md),
+[claim boundaries](CLAIMS.md), and
+[reproduction guide](docs/reviewer_reproduction_guide.md).
+
 BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: structural architecture integrated conditional; frozen predictions unchanged; physical eV/GeV neutrino mass closure remains open; external HEP runtime integration remains gated.
 
 BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity. Physical eV/GeV neutrino mass closure remains open pending a numeric neutral stiffness length sqrt(A_nu/Z_nu), a physical K_neutral,eff map in m^-2, and complete-action derivation of the admissible response cone.

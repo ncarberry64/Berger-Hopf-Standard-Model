@@ -1,80 +1,117 @@
 # BHSM Quickstart
 
-Run from the repository root with the project environment active.
+Run these commands from the repository root. BHSM supports Python 3.10 or
+newer.
+
+## Install
 
 ```bash
-python -m pytest -q
+git clone https://github.com/ncarberry64/Berger-Hopf-Standard-Model.git
+cd Berger-Hopf-Standard-Model
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -e .
 ```
 
-Runs the complete local test suite.
+Windows PowerShell uses the same commands except for activation:
+
+```powershell
+.\.venv\Scripts\Activate.ps1
+```
+
+`numpy`, `scipy`, `sympy`, and `pytest` are core dependencies. Plot and image
+generation require the optional `benchmark` extra:
 
 ```bash
+python -m pip install -e ".[benchmark]"
+```
+
+ROOT, native profiling tools, and CERN Open Data downloads are optional and
+runtime-gated.
+
+## Reviewer smoke
+
+When GNU Make is available:
+
+```bash
+make reviewer-smoke
+```
+
+Portable Python equivalent:
+
+```bash
+python -m pytest -q tests/test_engine_invariant_preservation.py tests/test_engine_physics_status_separation.py
+```
+
+Expected result: three passing tests. This smoke validates software invariants
+and the engine/physics claim separation; it is not empirical validation of
+BHSM physics.
+
+## Interface and current status
+
+```bash
+python -m bhsm.interface --help
 python -m bhsm.interface registry
+python -m bhsm.interface physics-status --format markdown
 ```
 
-Lists prediction, comparison, theorem-blocker, and runtime-gate entries.
+The `status` subcommand requires a registry key. For example:
 
 ```bash
 python -m bhsm.interface status W_boson
 ```
 
-Shows the W calibration-anchor policy.
+## Public-readiness and integrity checks
+
+```bash
+python tools/audit_public_readiness.py
+python tools/audit_public_readiness.py --format json
+python tools/audit_forbidden_claims.py
+python tools/audit_bhsm_status.py
+python tools/audit_frozen_prediction_integrity.py
+python tools/verify_precision.py
+```
+
+All commands above are offline. They check current public files, claim
+boundaries, repository status, frozen artifact hashes, and numerical
+precision.
+
+## Artifact and provenance review
 
 ```bash
 python -m bhsm.interface gallery --format markdown
-```
-
-Builds the default claim-aware prediction gallery.
-
-```bash
 python -m bhsm.interface artifact-sources
-```
-
-Discovers local machine-readable evidence and provenance sources.
-
-```bash
 python -m bhsm.interface formula-registry
-```
-
-Lists artifact-backed callables, interface defaults, and open theorem entries.
-
-```bash
 python -m bhsm.interface compute-artifact CKM_matrix_BHSM
 python -m bhsm.interface compute-artifact PMNS_matrix_BHSM
-```
-
-Loads the frozen CKM or PMNS artifact through the provenance adapter.
-
-```bash
 python -m bhsm.interface artifact-report --anchor W_boson --format json
-```
-
-Builds a provenance-aware report while preserving the calibration policy.
-
-```bash
 python -m bhsm.interface cp-o-int-field-action --format json
-```
-
-Reports the callable symbolic CP `O_int` candidate and its exact action gap.
-
-```bash
 python -m bhsm.interface theorem-blockers
 ```
 
-Lists current theorem dispositions, including conditional and retired targets.
+These commands expose internal artifacts with provenance. Loading an artifact
+does not upgrade its scientific status.
+
+## Optional full and network workflows
+
+The complete local suite is available with:
 
 ```bash
-python -m bhsm.interface minimal-action-status
-python -m bhsm.interface minimal-action-report --format markdown
+python -m pytest -q
 ```
 
-Runs the ontology-aware minimal-action decision and prints its concise report.
+The CERN Open Data path requires network access or a checksum-verified cached
+sample:
 
 ```bash
-python -m bhsm.interface weak-gauge-action-source-report --format markdown
+python -m bhsm.interface.benchmarks.cern_open_data_benchmark --download --summary
 ```
 
-Reports the conditional weak algebra/action/trace sources while keeping `g2_BH`, `alpha2_BH`, the normalized action coefficient, and the CKM value provenance distinct.
+That path validates coordinate transformations and numerical precision on
+published collision-derived vectors. It is not detector reconstruction,
+physics validation, or CERN/CMS endorsement.
 
-All commands above run offline. Live PDG lookup and external HEP tool execution
-are optional, separate workflows.
+See the [reviewer reproduction guide](docs/reviewer_reproduction_guide.md)
+and [public scientific handoff](docs/bhsm_public_scientific_handoff_v6_21_0.md)
+for the evidence model and current frontier.
