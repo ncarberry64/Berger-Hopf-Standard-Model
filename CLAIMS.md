@@ -1575,3 +1575,37 @@ Still active:
 No measured input, fit, chat-only value, new action, primitive, scale,
 global state, generic pseudoinverse, frozen change, or official
 prediction-logic change is introduced.
+
+<!-- BHSM_FOLD_POTENTIAL_MASS_V6_30_0 -->
+## v6.30.0 potential and mass-curvature claims
+
+Derived consequences:
+
+- the complete v6.28 stationary quadratic form fixes the invariant critical
+  Jordan and Einstein potential Hessians to zero;
+- stationarity gives
+  `V1=2(F1/F0)V0`, while null critical curvature fixes only the combination
+  `V2=2[(F1/F0)^2+F2/F0]V0`;
+- the positive v6.29 kinetic coefficient therefore gives the exact scoped
+  result `mu_q^2=0` at `q0=0`;
+- the critical null mode is neither a kinetic ghost nor a tachyon.
+
+Rejected by calculation:
+
+- using the control-varying Puiseux branch as a fixed-action potential;
+- identifying an on-shell, X-dependent regulated cusp with `V_J(q)`;
+- setting `F2`, `V2`, or the vacuum constant to a convenient value.
+
+Active construction target:
+
+- a fixed-action, fixed-regulator off-shell constrained radial family,
+  holding all action primitives fixed and supplying `F(q)`, `V_J(q)`,
+  `a2,N2`, nonlinear boundary data, and a common M4 density.
+
+The full-potential verdict is not emitted, so v6.31 is not permitted. The
+obstruction is class B (missing derivation within the frozen action), not a
+fatal inconsistency.
+
+No measured input, fit, chat-only value, new action, primitive, scale,
+vacuum subtraction, physical mass, potential-stability result, frozen
+prediction change, or official prediction-logic change is introduced.

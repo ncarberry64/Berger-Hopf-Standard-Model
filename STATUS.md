@@ -2299,3 +2299,43 @@ stability or a physical mass.
 
 Phase v6.30 is permitted to derive the off-shell Einstein-frame potential
 and dimensionless fold mass curvature.
+
+<!-- BHSM_FOLD_POTENTIAL_MASS_V6_30_0 -->
+## v6.30.0 Einstein-frame potential and critical fold mass
+
+The v6.28 zero-derivative quadratic action closes the invariant critical
+Hessian even though it does not reconstruct the Jordan and frame
+coefficients separately. In the one-affine-profile convention,
+`J0=L0 v` and `K0=<v,L0 v>`, so the projected metric Schur form vanishes.
+The scalar amplitude is the critical Jacobi zero mode and also has zero
+quadratic form. The v6.28 Lyapunov--Schmidt compatibility condition retains
+the metric modulus without an unprojected inverse.
+
+Because the critical background is stationary and `F0=pi/2>0`, the regular
+Jordan-to-Einstein field redefinition preserves this null Hessian:
+
+`V_E'(0)=0`, `V_E''(0)=0`.
+
+With the positive v6.29 coefficient
+`k_q^E=6.935084858283065 +/- 2e-12`, the dimensionless critical curvature is
+
+`mu_q^2=V_E''(0)/k_q^E=0`.
+
+The scoped verdicts are
+`BHSM_FOLD_EINSTEIN_POTENTIAL_DERIVED_THROUGH_QUADRATIC_ORDER_AT_CRITICALITY`,
+`BHSM_FOLD_DIMENSIONLESS_MASS_CURVATURE_DERIVED`, and
+`BHSM_FOLD_CRITICAL_MASS_CURVATURE_NULL`. This is neither a ghost nor a
+tachyon, but it is not a positive massive mode or a physical eV/GeV mass.
+
+The full fixed-action potential remains unavailable. The stored Puiseux
+curve substitutes `delta_mu=tau nu1 q`, thereby varying the action control
+`mu=-A5/Z5`, and also changes the regulated M4 geometry. It is not an
+off-shell potential in one frozen action. The smallest missing object is a
+fixed-action, fixed-regulator constrained radial family with independent M4
+metric, analytic `a2,N2` and higher responses, and one common P1+GHY+scalar+
+B1+matcher action density.
+
+The required verdict `BHSM_FOLD_EINSTEIN_FRAME_POTENTIAL_DERIVED` is not
+emitted. This is a class-B missing derivation, not a fatal inconsistency.
+Phase v6.31 is not permitted, and the controlled campaign stops at v6.30
+with `BHSM_FULL_CLOSURE_CAMPAIGN_STOPPED_AT_V6_30_CLASS_B_BLOCKER`.

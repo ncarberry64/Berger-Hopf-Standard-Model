@@ -1,0 +1,50 @@
+{
+  "Einstein": {
+    "coefficient_sensitivities": {
+      "d_hessian_d_F2": "-2*V_0/F_0",
+      "d_hessian_d_V2": "1"
+    },
+    "critical_null_relation": "Eq(V_2, 2*V_0*(F_0*F_2 + F_1**2)/F_0**2)",
+    "formal_gradient": "V_1 - 2*F_1*V_0/F_0",
+    "formal_hessian": "V_2 - 4*F_1*V_1/F_0 - 2*F_2*V_0/F_0 + 6*F_1**2*V_0/F_0**2",
+    "formal_transform": "V_E=(F0/F)^2 V_J",
+    "formal_value": "V_0",
+    "frame": {
+      "F0": "pi/2",
+      "F1_minus": "chi_1*(4 - pi)/4",
+      "F1_plus": "chi_1*(-4 + pi)/4",
+      "F2_functional": "-chi_1**2/2 + chi_1**2/pi**2 + chi_1**2/(2*pi) + pi*chi_1**2/12 + 4*Integral(N_2(t)*sin(pi*t/4)**2, (t, 0, 1)) + sqrt(2)*pi*Integral(a_2(t)*sin(pi*t/4), (t, 0, 1))"
+    },
+    "full_function_fixed": false,
+    "invariant_combination_fixed": "the complete v6.28 stationary Hessian fixes the displayed V2/F2 combination to zero, not V2 or F2 separately",
+    "required_full_potential_verdict_emitted": false,
+    "result": "BHSM_FOLD_EINSTEIN_POTENTIAL_REQUIRES_FIXED_ACTION_OFFSHELL_RADIAL_FAMILY",
+    "stationary_hessian": "(F_0**2*V_2 - 2*F_0*F_2*V_0 - 2*F_1**2*V_0)/F_0**2",
+    "stationary_relation": "Eq(V_1, 2*F_1*V_0/F_0)"
+  },
+  "F2_assumed": false,
+  "V2_assumed": false,
+  "artifact": "BHSM_fold_Einstein_potential_sufficiency_v6_30_0",
+  "chat_only_value_imported": false,
+  "control_varying_curve_used_as_fixed_action_potential": false,
+  "fitted_parameter_used": false,
+  "frozen_predictions_changed": false,
+  "full_potential_claimed": false,
+  "measured_input_used": false,
+  "new_action_introduced": false,
+  "new_primitive_introduced": false,
+  "new_scale_introduced": false,
+  "official_prediction_logic_changed": false,
+  "on_shell_cusp_used_as_off_shell_potential": false,
+  "physical_mass_claimed": false,
+  "potential_stability_claimed": false,
+  "primary_result": "BHSM_FOLD_EINSTEIN_POTENTIAL_REQUIRES_FIXED_ACTION_OFFSHELL_RADIAL_FAMILY",
+  "source_main_sha": "6e123ec1864044a3949b13e26c205acbe26ad898",
+  "sprint": "bhsm-fold-potential-mass-v6-30-0",
+  "v6_28_scientific_sha": "853bddac1852c6b328fc4cf7af2786e2f59baf34",
+  "v6_29_reproducibility_sha": "4f7ca8791c74bc86397e0f8275de25cea4a71c73",
+  "v6_29_scientific_sha": "0c65bd9bf6480eee705fc6ee7769ecb4521b3abf",
+  "v6_31_permitted": false,
+  "vacuum_constant_subtracted": false,
+  "version": "v6.30.0"
+}
