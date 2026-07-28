@@ -35,6 +35,17 @@ ARTIFACT_FILES = {
     "handoff": "BHSM_fold_potential_phase_handoff_v6_29_0.json",
 }
 
+ARTIFACT_SIGNIFICANT_DIGITS = 13
+ARTIFACT_CERTIFIED_BOUNDS = {
+    "K_scalar_method_difference": 5.0e-12,
+    "eigen_moment_residual": 1.0e-10,
+    "hypergeometric_endpoint": 1.0e-40,
+    "method_difference": 5.0e-12,
+    "quadrature_error": 1.0e-12,
+    "shooting_eigen_moment": 1.0e-10,
+    "shooting_endpoint": 1.0e-11,
+}
+
 GUARDS = {
     "measured_input_used": False,
     "fitted_parameter_used": False,
@@ -70,6 +81,59 @@ Z5_NORMALIZED = 1.0
 
 def deterministic_json(payload: dict[str, Any]) -> str:
     return json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False) + "\n"
+
+
+def _certified_bound(path: tuple[str, ...]) -> float | None:
+    key = path[-1]
+    if key == "endpoint_residual":
+        if "hypergeometric" in path:
+            return 1.0e-40
+        if "shooting" in path:
+            return 1.0e-11
+    return ARTIFACT_CERTIFIED_BOUNDS.get(key)
+
+
+def artifact_stable_payload(
+    value: Any,
+    path: tuple[str, ...] = (),
+) -> Any:
+    """Remove platform-noise bytes without changing runtime diagnostics.
+
+    The SciPy shooting solver is precision-qualified by inequalities, not by
+    the last bits of its Linux or Windows residue. Artifacts therefore record
+    those certified bounds explicitly and round other binary floats to the
+    precision supported by the independent-method agreement. Exact integers,
+    booleans, strings, and symbolic formulae are unchanged.
+    """
+
+    if isinstance(value, dict):
+        return {
+            key: artifact_stable_payload(item, path + (key,))
+            for key, item in value.items()
+        }
+    if isinstance(value, list):
+        return [
+            artifact_stable_payload(item, path + (str(index),))
+            for index, item in enumerate(value)
+        ]
+    if isinstance(value, float):
+        bound = _certified_bound(path)
+        if bound is not None:
+            if not value < bound:
+                raise ValueError(
+                    f"{'.'.join(path)}={value!r} does not satisfy "
+                    f"certified artifact bound {bound!r}"
+                )
+            return {
+                "certified_upper_bound": bound,
+                "relation": "<",
+            }
+        if not math.isfinite(value):
+            raise ValueError(
+                f"{'.'.join(path)} contains non-finite artifact value {value!r}"
+            )
+        return float(f"{value:.{ARTIFACT_SIGNIFICANT_DIGITS}g}")
+    return value
 
 
 def schur_derivative_identity_residual() -> sp.Expr:
@@ -512,7 +576,9 @@ def artifact_payloads() -> dict[str, dict[str, Any]]:
 
 def artifact_bytes() -> dict[str, bytes]:
     return {
-        ARTIFACT_FILES[key]: deterministic_json(payload).encode("utf-8")
+        ARTIFACT_FILES[key]: deterministic_json(
+            artifact_stable_payload(payload)
+        ).encode("utf-8")
         for key, payload in artifact_payloads().items()
     }
 

@@ -305,6 +305,59 @@ def test_deterministic_artifact_bytes():
     }
 
 
+def test_artifact_serialization_is_cross_platform_stable():
+    windows_like = {
+        "shooting": {
+            "K_scalar": 6.673443432880105,
+            "endpoint_residual": 1.9036181676391305e-15,
+            "eigen_moment_residual": 1.7763568394002505e-14,
+            "quadrature_error": 7.409010552717033e-14,
+        },
+        "method_difference": 8.881784197001252e-15,
+    }
+    linux_like = {
+        "shooting": {
+            "K_scalar": 6.6734434328801076,
+            "endpoint_residual": 8.983529700904373e-16,
+            "eigen_moment_residual": 3.197442310920451e-14,
+            "quadrature_error": 7.409010552717039e-14,
+        },
+        "method_difference": 3.552713678800501e-15,
+    }
+    assert kinetic.artifact_stable_payload(windows_like) == (
+        kinetic.artifact_stable_payload(linux_like)
+    )
+
+
+def test_artifact_residuals_are_bounds_not_false_zeroes():
+    payload = kinetic.artifact_stable_payload(
+        {
+            "shooting": {
+                "endpoint_residual": 2.0e-15,
+                "eigen_moment_residual": 2.0e-14,
+            },
+            "method_difference": 9.0e-15,
+        }
+    )
+    assert payload["shooting"]["endpoint_residual"] == {
+        "certified_upper_bound": 1.0e-11,
+        "relation": "<",
+    }
+    assert payload["shooting"]["eigen_moment_residual"][
+        "certified_upper_bound"
+    ] == 1.0e-10
+    assert payload["method_difference"]["certified_upper_bound"] == 5.0e-12
+
+
+def test_artifact_bound_violation_fails_closed():
+    try:
+        kinetic.artifact_stable_payload({"method_difference": 5.0e-12})
+    except ValueError as error:
+        assert "does not satisfy" in str(error)
+    else:
+        raise AssertionError("artifact bound violation was silently serialized")
+
+
 def test_materializer_matches_generated_bytes(tmp_path):
     paths = kinetic.materialize_artifacts(tmp_path)
     assert len(paths) == 5

@@ -163,10 +163,18 @@ with a 60-decimal root and tanh--sinh quadrature. It gives
 K_{\rm scalar}=6.673443432880109\ldots .
 \]
 
-The kinetic values differ by \(8.9\times10^{-15}\). The shooting endpoint
-residual is below \(2\times10^{-15}\), its integrated eigenvalue residual is
-below \(2\times10^{-14}\), and the hypergeometric endpoint residual is below
-\(2\times10^{-61}\). Both weighted norms equal one at reported precision.
+The kinetic values agree within \(5\times10^{-12}\). The shooting endpoint
+residual is below \(10^{-11}\), its integrated eigenvalue residual is below
+\(10^{-10}\), and the hypergeometric endpoint residual is below \(10^{-40}\)
+on both tested platforms. Both weighted norms equal one at reported precision.
+
+Runtime tests retain the raw solver residuals. Checked-in JSON does not
+serialize their platform-dependent last bits: it records the certified upper
+bounds above and rounds other binary floating-point values to 13 significant
+digits. Artifact generation fails closed if a raw diagnostic no longer
+satisfies its declared bound. This keeps the byte-level artifact-current test
+reproducible across Windows and Linux without reporting tiny residues as exact
+zero.
 
 The next Dirichlet eigenvalue is
 

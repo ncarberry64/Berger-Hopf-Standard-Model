@@ -21,27 +21,42 @@
     "cap_multiplicity": 2,
     "formula": "K_scalar=2 Z5 integral_0^1 N0 a0^2 u1^2 dt",
     "hypergeometric": {
-      "K_scalar": 6.673443432880109,
+      "K_scalar": 6.67344343288,
       "dps": 60,
-      "endpoint_residual": 1.3281288743879861e-61,
-      "mu": 29.43091835294756,
-      "normalization": 8.923902707116394,
-      "nu": 3.78194762627158,
+      "endpoint_residual": {
+        "certified_upper_bound": 1e-40,
+        "relation": "<"
+      },
+      "mu": 29.43091835295,
+      "normalization": 8.923902707116,
+      "nu": 3.781947626272,
       "weighted_norm": 1.0
     },
     "lower_bound": 2,
-    "method_difference": 8.881784197001252e-15,
+    "method_difference": {
+      "certified_upper_bound": 5e-12,
+      "relation": "<"
+    },
     "normalization": "integral_0^1 N0 a0^4 u1^2 dt=1 per cap",
-    "reported": 6.673443432880105,
+    "reported": 6.67344343288,
     "result": "BHSM_FOLD_SCALAR_KINETIC_NORMALIZATION_RECOMPUTED",
     "shooting": {
-      "K_scalar": 6.6734434328801004,
-      "eigen_moment_residual": 1.7763568394002505e-14,
-      "endpoint_residual": 1.9036181676391305e-15,
+      "K_scalar": 6.67344343288,
+      "eigen_moment_residual": {
+        "certified_upper_bound": 1e-10,
+        "relation": "<"
+      },
+      "endpoint_residual": {
+        "certified_upper_bound": 1e-11,
+        "relation": "<"
+      },
       "max_step": 0.0015,
-      "mu": 29.43091835294754,
-      "normalization": 8.923902707116383,
-      "quadrature_error": 7.409010552717033e-14,
+      "mu": 29.43091835295,
+      "normalization": 8.923902707116,
+      "quadrature_error": {
+        "certified_upper_bound": 1e-12,
+        "relation": "<"
+      },
       "rtol": 2e-13,
       "weighted_norm": 1.0
     }
