@@ -1,0 +1,151 @@
+{
+  "K_Weyl_double_counted": false,
+  "arbitrary_boundary_parameter_introduced": false,
+  "artifact": "BHSM_X_R4_action_normalization_v6_23_0",
+  "chat_only_candidate_imported": false,
+  "conformal_tangent_assumed_as_action_input": false,
+  "fitted_coefficients_introduced": false,
+  "frozen_predictions_changed": false,
+  "generic_green_operator_emitted": false,
+  "kinetic_number_emitted": false,
+  "local_X_field_invented": false,
+  "measured_inputs_used": false,
+  "new_action_introduced": false,
+  "new_primitive_introduced": false,
+  "new_scale_introduced": false,
+  "normalization": {
+    "X_definition": "X_FRW=H^2+a^-2",
+    "action_identity": "Ric_mu_nu(h)=3 X_FRW h_mu_nu",
+    "action_selected_branch": "maximally symmetric scalar-wall reference",
+    "coefficient_one_target": {
+      "classification": "unsupported local-field/right-inverse promotion with an X_FRW-to-R4 normalization error",
+      "historical_artifacts_edited": false,
+      "historical_source": "critical_lapse_weyl_hessian.py:265-305",
+      "implicit_X_R_equals_R4": false,
+      "implicit_x_R_equals_R4_over_12": false,
+      "notation_redefinition_stored": false,
+      "stored_equation": "delta R4[T_X]=delta X_FRW=tau chi_1 q",
+      "superseded_by": [
+        "BHSM_X_TO_R4_ACTION_NORMALIZATION_DERIVED",
+        "BHSM_V6_20_LOCAL_RIGHT_INVERSE_TARGET_REJECTED_BY_CALCULATION"
+      ]
+    },
+    "dR4_dq": "12 tau chi_1",
+    "dX_dq": "tau chi_1",
+    "dimension": 4,
+    "fold_relation": "X_FRW(q)=2+tau chi_1 q+O(q^2)",
+    "static_comparison": {
+      "R4": "6 X_FRW",
+      "branch": "critical R x S3, H=A=0 and a=X_FRW^-1/2",
+      "dR4_dq": "6 tau chi_1",
+      "no_conflict_reason": "the dS4 and static metrics are distinct homogeneous branches even when X_FRW=2q5"
+    },
+    "trace": "R4=h^(mu nu)Ric_mu_nu=4*3 X_FRW=12 X_FRW",
+    "verdict": "BHSM_X_TO_R4_ACTION_NORMALIZATION_DERIVED"
+  },
+  "normalization_verdict": "BHSM_X_TO_R4_ACTION_NORMALIZATION_DERIVED",
+  "official_prediction_logic_changed": false,
+  "physical_mass_claimed": false,
+  "provenance": {
+    "chain": "q -> delta X_FRW -> homogeneous background curvature; local h is varied independently -> action variation",
+    "questions": {
+      "10_v6_20_target_origin": "later attempted completion ansatz, not derived from the frozen action variation",
+      "1_fold_control_parameter": "mu=-A5/Z5; q is the one-sided collective amplitude, not the external control",
+      "2_collective_field": "q=r=|epsilon| on a fixed tau sheet",
+      "3_delta_X": "dX_FRW/dq|0=tau chi_1, hence delta X_FRW=tau chi_1 q+O(q^2)",
+      "4_q_dimensionless": true,
+      "5_X_varied_off_shell": false,
+      "6_X_eliminated_before_promotion": true,
+      "7_h_independent_during_variation": true,
+      "8_action_declares_local_hbar_family": false,
+      "9_scalar_wall_is_moduli_reduction": "homogeneous on-shell Lyapunov-Schmidt/background reduction; not a local metric-family substitution theorem"
+    },
+    "symbols": {
+      "A_FRW": {
+        "definition": "N_partial^-1 dot(H)+H^2",
+        "source": "intrinsic_m4_junction_background.py:264,298"
+      },
+      "B1_intrinsic_metric": {
+        "definition": "independent h_mu_nu in the intrinsic C_partial R4 action before matcher elimination"
+      },
+      "Einstein_frame_metric": {
+        "definition": "g_E=(F(q)/F0)h",
+        "source": "fold_einstein_frame_kinetic_reduction.py:131-172"
+      },
+      "H": {
+        "definition": "proper-lapse Hubble rate of the closed-FRW B1 metric",
+        "source": "intrinsic_m4_junction_background.py:130-140"
+      },
+      "R4": {
+        "definition": "four-dimensional scalar curvature",
+        "relations": {
+          "critical_static": "6 X_FRW",
+          "general_closed_FRW": "6(A_FRW+X_FRW)",
+          "maximally_symmetric": "12 X_FRW"
+        }
+      },
+      "Ric_h": {
+        "definition": "Ric_mu_nu(h)=3 X_FRW h_mu_nu on the scalar-wall reference",
+        "source": "scalar_wall_junction_audit.py:269-275"
+      },
+      "X_FRW": {
+        "definition": "H^2+a^-2",
+        "source": "intrinsic_m4_junction_background.py:264,298,337",
+        "type": "homogeneous closed-FRW invariant and on-shell branch coordinate"
+      },
+      "a": {
+        "definition": "closed-FRW scale factor; a=X_FRW^-1/2 at a bounce/static slice",
+        "source": "intrinsic_m4_junction_background.py:172-180,191-210"
+      },
+      "chi_1": {
+        "definition": "positive leading curvature-sheet coefficient",
+        "relation": "dX_FRW/dq|0=tau chi_1"
+      },
+      "delta_X_FRW": {
+        "clarification": "tau chi_1 is the derivative; multiplying by q gives the linear variation",
+        "definition": "tau chi_1 q+O(q^2)"
+      },
+      "epsilon": {
+        "definition": "signed scalar amplitude",
+        "source": "scalar_wall_puiseux_fold.py:320-327"
+      },
+      "hbar_mu_nu": {
+        "definition": "maximally symmetric reference metric satisfying Ric(hbar)=3X_FRW hbar",
+        "status": "no action-level local family hbar[X_FRW(x)] or regulator domain is declared"
+      },
+      "matcher_pullback_metric": {
+        "constraint": "h_mu_nu=iota^*g_mu_nu",
+        "definition": "iota^*g_mu_nu"
+      },
+      "mu": {
+        "definition": "-A5/Z5",
+        "source": "scalar_wall_puiseux_fold.py:299-304",
+        "type": "external fold/action control parameter"
+      },
+      "physical_M4_metric": {
+        "definition": "independent B1 metric h_mu_nu during variation",
+        "source": "intrinsic_m4_junction_background.py:249-255"
+      },
+      "q": {
+        "definition": "q=r on each sheet after fixed-control Lyapunov-Schmidt projection",
+        "dimension": "dimensionless in the q5=kappa1=Z5=1 normalized representative",
+        "source": "scalar_wall_fold_morse_sheet_selection.py:312-335",
+        "type": "promoted collective field"
+      },
+      "r": {
+        "definition": "|epsilon|>=0",
+        "type": "one-sided Puiseux branch amplitude"
+      },
+      "tau": {
+        "definition": "+/-1 curvature-sheet label",
+        "not": "normal orientation or scalar sign"
+      }
+    }
+  },
+  "response_type_verdict": "BHSM_M4_X_RESPONSE_REQUIRES_LOCAL_CONSTRAINT_SOLVE",
+  "source_main_sha": "1cea7ee804a7a4a07f7b42dc0635a24642d43317",
+  "sprint": "bhsm-x-r4-moduli-tangent-resolution-v6-23-0",
+  "stability_claimed": false,
+  "v6_22_scientific_sha": "8034dbfd0865e469a669dea5605114f234b5e119",
+  "version": "v6.23.0"
+}

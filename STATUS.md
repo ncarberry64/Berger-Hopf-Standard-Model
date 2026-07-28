@@ -35,22 +35,30 @@ its principal bulk block follows from the existing action sectors:
 with action-derived measure
 `dmu_rad=N_0 a_0^4 dt=pi sin^4(pi t/4) dt`.
 
-The v6.22 definition audit is a **Rejected by calculation** result for the
-stored tangent normalization. Repository-native `X` is the homogeneous FRW
-invariant `H^2+a^-2`. The scalar-wall action declares
-`Ric_mu_nu(h)=3X h_mu_nu`, hence `R_4=12X` and
-`delta R_4=12 delta X` on its maximally symmetric branch, whereas the v6.20
-target stored `delta R_4=delta X`. The separate exact critical static
-`R x S3` branch instead has `R_4=6X`.
+The v6.23 normalization theorem is a **Derived consequence**:
+repository-native `X_FRW=H^2+a^-2` is a homogeneous on-shell branch
+coordinate, and the scalar-wall action convention `Ric(h)=3X_FRW h` gives
+`R_4=12X_FRW`. Since
+`dX_FRW/dq=tau chi_1`, the homogeneous action-selected branch has
+`dR_4/dq=12 tau chi_1`. The separate critical static `R x S3` branch has
+`R_4=6X_FRW` and `dR_4/dq=6 tau chi_1`; it is a distinct metric branch.
 
-Therefore the exact **Active construction target** is first to reconcile the
-`X`/`R_4` normalization and store the covariant maximally symmetric
-`hbar_mu_nu[X]` family and regulated domain for
-`T_mu_nu^(X)=delta hbar_mu_nu[X]/delta X|X=2`. The gauge quotient, complete
-mixed source, B1/matcher domain, adjoint kernels, compatibility, Schur
-complement, and kinetic sign are not constructed before that declaration.
-The fold kinetic sign is unresolved, and no physical mass, ghost, null,
-tachyon, stability, production, or white-hole-dynamics claim is supported.
+The v6.20 coefficient-one local right-inverse target is **Rejected by
+calculation**. The frozen action varies the P1 and B1 metrics independently
+and imposes the matcher after variation; it does not declare a local
+`X_FRW(x)` or identify `h` with `hbar[X_FRW(q(x))]`. The selected response
+type is therefore
+`BHSM_M4_X_RESPONSE_REQUIRES_LOCAL_CONSTRAINT_SOLVE`: local metric response
+must follow from the Einstein, radial ADM, B1, matcher, and moving-endpoint
+constraints. The former `T_mu_nu^(X)` target is not the missing action
+object.
+
+The exact **Active construction target** is the complete local scalar metric
+constraint operator, source, and x-dependent B1/matcher moving-endpoint
+domain. The Schur complement and kinetic sign remain unresolved, and no
+physical mass, ghost, null, tachyon, stability, production, or
+white-hole-dynamics claim is supported.
+The fold kinetic sign is unresolved.
 
 Reviewer entry points:
 [public scientific handoff](docs/bhsm_public_scientific_handoff_v6_21_0.md),
@@ -2047,3 +2055,41 @@ kinetic verdict
 `BHSM_FOLD_KINETIC_SIGN_REMAINS_UNRESOLVED_BY_X_TO_R4_NORMALIZATION_CONFLICT`.
 No numerical solve, pseudoinverse, `k_q^E`, kinetic sign, physical mass, or
 stability claim is emitted.
+
+<!-- BHSM_X_R4_MODULI_TANGENT_RESOLUTION_V6_23_0 -->
+## v6.23.0 action-selected X-to-R4 normalization and M4 response type
+
+The scalar-wall convention `Ric(h)=3X_FRW h`, together with
+`X_FRW=H^2+a^-2`, gives `R_4=12X_FRW` on the action-selected maximally
+symmetric branch. The fold relation
+`X_FRW=2+tau chi_1 q+O(q^2)` therefore fixes
+`dX_FRW/dq=tau chi_1` and `dR_4/dq=12 tau chi_1`. The separate exact static
+branch gives `dR_4/dq=6 tau chi_1`; branch identity removes the apparent
+conflict.
+
+The fixed-dimensional-time and fixed-dimensionless-time derivatives of the
+homogeneous dS4 family differ by
+`L_xi h`, with `xi=(u-u0)/(2X_FRW) partial_u`. The fixed-conformal-time
+representative is `K_mu_nu=-h_mu_nu/X_FRW` and satisfies `DR_h[K]=12`.
+The corresponding static-family check gives `DR_h[K]=6`. These are
+diagnostic homogeneous-family tangents, not a local action response.
+Because the stored M4 regulator has no coordinate-level boundary, no
+boundary-canonical family representative is claimed.
+
+The frozen action varies the P1 metric and intrinsic B1 metric independently,
+then imposes `h=iota^*g` through the matcher. It contains no independent
+local field `X_FRW(x)`. Hence the v6.20 scalar-curvature Green-operator target
+is rejected and the response theorem is
+`BHSM_M4_X_RESPONSE_REQUIRES_LOCAL_CONSTRAINT_SOLVE`.
+
+An explicit affine field-redefinition identity proves that the radial
+profiles `a1,N1` may be encoded either in the direct source or as a shift of
+the lapse/Weyl constraint variables, never both. The independently varied M4
+metric receives no added `K^(X)`, and the inherited Einstein-frame
+`K_Weyl=3 chi_1^2(4-pi)^2/(16 pi)` is counted once.
+
+The Schur reduction remains blocked by the incomplete full local scalar
+metric operator/source and x-dependent B1/matcher moving-endpoint domain:
+`BHSM_FOLD_SCHUR_REDUCTION_BLOCKED_BY_INCOMPLETE_LOCAL_CONSTRAINT_OPERATOR_AND_B1_DOMAIN`.
+No total `k_q^E`, kinetic sign, physical mass, or stability result is
+emitted.

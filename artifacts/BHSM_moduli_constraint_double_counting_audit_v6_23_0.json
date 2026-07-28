@@ -1,0 +1,67 @@
+{
+  "K_Weyl_double_counted": false,
+  "arbitrary_boundary_parameter_introduced": false,
+  "artifact": "BHSM_moduli_constraint_double_counting_audit_v6_23_0",
+  "chat_only_candidate_imported": false,
+  "conformal_tangent_assumed_as_action_input": false,
+  "double_counting": {
+    "Einstein_frame": {
+      "K_Weyl": "3 chi_1^2(4-pi)^2/(16 pi)",
+      "count": 1,
+      "reason": "generated once by g_E=(F/F0)h after the Jordan reduction"
+    },
+    "Jordan_frame": {
+      "F_q_R4": "retained once with independent h",
+      "constraint_contribution": "unevaluated until the full local operator/domain is derived"
+    },
+    "affine_field_redefinition": {
+      "after": {
+        "J_prime": "J+Lv",
+        "K_prime": "K+2<J,v>+<v,Lv>",
+        "L_prime": "L"
+      },
+      "before": "1/2 K(Dq)^2+(Dq)<J,Y>+1/2<Y,LY>",
+      "condition": "only after the same invertible quotient operator and domain are used",
+      "form": "Y_total=Y_constraint+v q",
+      "identity": "K_prime-<J_prime,L^-1J_prime>=K-<J,L^-1J>",
+      "symbolic_residual": "0"
+    },
+    "independent_variables": {
+      "metric_scalar_sector": [
+        "A",
+        "B",
+        "psi",
+        "E"
+      ],
+      "q": "collective scalar zero-mode amplitude",
+      "threading": "v6.18 fixed response plus C_Sigma=0"
+    },
+    "no_double_counting_theorem": "the homogeneous radial profiles may be encoded either as an affine q shift of A,psi or in the direct source, never both; the independent M4 metric is not supplemented by K^(X)",
+    "numerical_constraint_term": null,
+    "proof_complete_algebraically": true,
+    "radial_profile_overlap": {
+      "M4_X_family_tangent": "not added",
+      "Weyl": "a=a0+tau a1 q+constraint correction",
+      "lapse": "N=N0+tau N1 q+constraint correction",
+      "longitudinal": "E is an independent scalar-gauge/constraint variable"
+    }
+  },
+  "fitted_coefficients_introduced": false,
+  "frozen_predictions_changed": false,
+  "generic_green_operator_emitted": false,
+  "kinetic_number_emitted": false,
+  "local_X_field_invented": false,
+  "measured_inputs_used": false,
+  "new_action_introduced": false,
+  "new_primitive_introduced": false,
+  "new_scale_introduced": false,
+  "normalization_verdict": "BHSM_X_TO_R4_ACTION_NORMALIZATION_DERIVED",
+  "official_prediction_logic_changed": false,
+  "physical_mass_claimed": false,
+  "response_type_verdict": "BHSM_M4_X_RESPONSE_REQUIRES_LOCAL_CONSTRAINT_SOLVE",
+  "source_main_sha": "1cea7ee804a7a4a07f7b42dc0635a24642d43317",
+  "sprint": "bhsm-x-r4-moduli-tangent-resolution-v6-23-0",
+  "stability_claimed": false,
+  "v6_22_scientific_sha": "8034dbfd0865e469a669dea5605114f234b5e119",
+  "version": "v6.23.0"
+}

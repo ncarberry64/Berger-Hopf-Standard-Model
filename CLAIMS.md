@@ -21,12 +21,20 @@ below preserve dated scientific and repository provenance.
 - The v6.20 critical lapse--Weyl principal block is a **Derived consequence**
   of the existing action sectors:
   `[[0,6 kappa_1/a_0^2],[6 kappa_1/a_0^2,12 kappa_1/a_0^2]]`.
-- The v6.22 definition audit **Rejects by calculation** the coefficient-one
-  normalization `delta R_4=delta X`: the scalar-wall action convention
-  `Ric(h)=3Xh` requires `R_4=12X` on its maximally symmetric branch, while
-  the separate critical static `R x S3` branch has `R_4=6X`.
-- Reconciliation of the `X`/`R_4` normalization and a stored covariant
-  `hbar_mu_nu[X]` family/domain are the exact **Active construction target**.
+- The v6.23 action normalization is a **Derived consequence**:
+  `X_FRW=H^2+a^-2`, `R_4=12X_FRW`, `dX_FRW/dq=tau chi_1`, and
+  `dR_4/dq=12 tau chi_1` on the maximally symmetric scalar-wall branch.
+- The separate critical static `R x S3` branch has `R_4=6X_FRW` and
+  `dR_4/dq=6 tau chi_1`; it is not substituted for the scalar-wall branch.
+- The v6.20 local scalar-curvature right-inverse target is **Rejected by
+  calculation**. The action varies the M4 metric independently and does not
+  declare a local `X_FRW(x)`; the former `T_mu_nu^(X)` target is not the
+  missing action object.
+- The selected M4 response type is
+  `BHSM_M4_X_RESPONSE_REQUIRES_LOCAL_CONSTRAINT_SOLVE`.
+- The complete local scalar metric operator/source and x-dependent
+  B1/matcher moving-endpoint domain are the exact **Active construction
+  target**.
 - The fold kinetic sign is unresolved.
 - Engine coordinate and precision tests are **Numerically validated**; they
   are not validation of BHSM as particle physics.
@@ -36,18 +44,19 @@ below preserve dated scientific and repository provenance.
 - a complete physical BHSM action or complete Standard Model derivation;
 - empirical validation or replacement of the Standard Model;
 - a physical fold mass, ghost classification, or nonlinear-stability result;
-- a gauge-quotiented local X-metric tangent, complete fold mixed source,
-  Schur complement, or numerical `k_q^E`;
+- a complete local fold metric source/domain, Schur complement, or numerical
+  `k_q^E`;
 - action-derived physical particle masses or gauge couplings;
 - an action-derived CKM exponent;
 - a physical neutrino mass or physical `Delta m^2`;
 - collider-production, FeynRules, UFO, or MadGraph readiness;
 - CERN, CMS, or institutional endorsement.
 
-The threading response is derived, no explicit energy threshold is required,
-the lapse--Weyl principal block is derived, the local `T_mu_nu^(X)` remains
-blocked by the exact `X`-to-`R_4` normalization conflict, the fold kinetic
-sign is unresolved, and no physical mass claim follows.
+The threading response and lapse--Weyl principal block are derived. The
+`X_FRW`-to-`R_4` normalization is resolved, the local right-inverse target is
+rejected, the independent-metric response requires the complete local
+constraint and B1/matcher domain, the fold kinetic sign is unresolved, and
+no physical mass claim follows.
 
 ## Allowed
 
