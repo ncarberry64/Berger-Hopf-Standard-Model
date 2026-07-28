@@ -1,5 +1,48 @@
 # BHSM Claim Boundaries
 
+## Current public claim boundary
+
+This section is the current reviewer-facing boundary. The longer sections
+below preserve dated scientific and repository provenance.
+
+### Supported
+
+- BHSM is an artifact-backed mathematical and computational research
+  framework.
+- Frozen internal prediction artifacts exist with byte-integrity guards.
+- The v6.18 constrained threading response is a **Derived consequence** on
+  the stated domain:
+  `Pi_perp S_Sigma=-tau(pi chi_1/16)Pi_perp q`.
+- No explicit energy threshold is required for that response.
+- `C_Sigma=0` is an **Adopted BHSM axiom** for the source-free homogeneous
+  integration constant.
+- The dynamic threading domain is nonempty and the unresolved threading trace
+  count is zero.
+- The v6.20 critical lapse--Weyl principal block is a **Derived consequence**
+  of the existing action sectors:
+  `[[0,6 kappa_1/a_0^2],[6 kappa_1/a_0^2,12 kappa_1/a_0^2]]`.
+- The gauge-quotiented metric tangent
+  `T_mu_nu^(X)=delta hbar_mu_nu[X]/delta X|X=2` is the exact **Active
+  construction target**.
+- The fold kinetic sign is unresolved.
+- Engine coordinate and precision tests are **Numerically validated**; they
+  are not validation of BHSM as particle physics.
+
+### Not supported
+
+- a complete physical BHSM action or complete Standard Model derivation;
+- empirical validation or replacement of the Standard Model;
+- a physical fold mass, ghost classification, or nonlinear-stability result;
+- action-derived physical particle masses or gauge couplings;
+- an action-derived CKM exponent;
+- a physical neutrino mass or physical `Delta m^2`;
+- collider-production, FeynRules, UFO, or MadGraph readiness;
+- CERN, CMS, or institutional endorsement.
+
+The threading response is derived, no explicit energy threshold is required,
+the lapse--Weyl principal block is derived, `T_mu_nu^(X)` remains active, the
+fold kinetic sign is unresolved, and no physical mass claim follows.
+
 ## Allowed
 
 - v6.0.2 identifies the finite eight-dimensional Lovelock geometry family under explicit locality, covariance, metric-only, and second-order-equation assumptions. This is a mathematical action-family classification, not a derived physical gravitational law.

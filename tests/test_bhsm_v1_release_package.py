@@ -45,12 +45,18 @@ def test_release_metadata_files_exist_and_parse() -> None:
         assert (ROOT / path).exists(), path
 
     zenodo = read_json(".zenodo.json")
-    assert zenodo["title"] == "Berger-Hopf Standard Model v1.0.0: Complete Internal Boundary No-Fit Package"
+    assert zenodo["title"] == (
+        "Berger-Hopf Standard Model: "
+        "Artifact-Backed Geometric Physics Research Framework"
+    )
+    assert zenodo["version"] == "v1.1.0"
     assert zenodo["license"] == "LicenseRef-AllRightsReserved"
 
     citation = read_text("CITATION.cff")
     assert "cff-version: 1.2.0" in citation
-    assert 'version: "1.0.0"' in citation
+    assert 'version: "v1.1.0"' in citation
+    assert 'date-released: "2026-06-26"' in citation
+    assert "10.5281/zenodo.20663419" in citation
     assert 'license: "LicenseRef-AllRightsReserved"' in citation
 
     try:
@@ -59,7 +65,7 @@ def test_release_metadata_files_exist_and_parse() -> None:
         yaml = None
     if yaml is not None:
         parsed = yaml.safe_load(citation)
-        assert parsed["version"] == "1.0.0"
+        assert parsed["version"] == "v1.1.0"
         assert parsed["license"] == "LicenseRef-AllRightsReserved"
 
 
@@ -123,7 +129,7 @@ def test_release_docs_record_no_empirical_feedback() -> None:
     assert "NOT_EVALUATED_DATA_ABSENT" in combined
 
 
-def test_no_invented_doi_in_release_files() -> None:
+def test_current_metadata_uses_verified_doi_while_history_remains_frozen() -> None:
     release_paths = [
         "docs/archive/README_status_history_pre_v0_7.md",
         "CITATION.cff",
@@ -136,7 +142,10 @@ def test_no_invented_doi_in_release_files() -> None:
     ]
     combined = "\n".join(read_text(path) for path in release_paths)
     assert "PENDING_ZENODO_RELEASE" in combined
-    assert re.search(r"10\.\d{4,9}/[-._;()/:A-Za-z0-9]+", combined) is None
+    assert "10.5281/zenodo.20663419" in read_text("CITATION.cff")
+    assert "10.5281/zenodo.20663419" in read_text(".zenodo.json")
+    found = set(re.findall(r"10\.\d{4,9}/[-._;()/:A-Za-z0-9]+", combined))
+    assert found == {"10.5281/zenodo.20663419"}
 
 
 def test_frozen_prediction_files_unchanged() -> None:

@@ -1086,3 +1086,18 @@ fold kinetic sign:
 
 Doctrine:
 `docs/bhsm_critical_lapse_weyl_hessian_v6_20_0.md`.
+
+<!-- BHSM_PUBLIC_REVIEW_READINESS_V6_21_0 -->
+## Public-review readiness and scientific handoff v6.21.0
+
+The deterministic, offline public-readiness manifest records the predecessor
+merge, public-file inventory, tested reviewer commands, audit results,
+repository hygiene, frozen-prediction hashes, current scientific boundary,
+unsupported claims, citation state, and one machine-readable readiness
+verdict:
+
+- `artifacts/BHSM_public_review_readiness_manifest_v6_21_0.json`
+
+The corresponding audit is
+`tools/audit_public_readiness.py`; the reviewer-facing scientific handoff is
+`docs/bhsm_public_scientific_handoff_v6_21_0.md`.
