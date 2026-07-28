@@ -2264,3 +2264,38 @@ The four derived results are:
 Phase v6.29 is permitted with the projected pencil. No Schur coefficient,
 kinetic sign, potential curvature, dimensionful scale, or physical mass is
 claimed in v6.28.
+
+<!-- BHSM_FOLD_SCHUR_KINETIC_V6_29_0 -->
+## v6.29.0 projected Schur reduction and fold kinetic norm
+
+The v6.28 projected operator pencil gives a one-dimensional
+Lyapunov--Schmidt metric-modulus solve at two-derivative order. Affine
+`L1 v` terms cancel against the leading constraint response, while
+complementary `J1` responses first enter at `O(lambda^2)`.
+
+The exact modulus source and lift are
+`j_z=tau chi_1 kappa_1[(3/2)ln2-6 Catalan/pi]` and
+`M_z=12C_partial+3kappa_1(6-pi)`. Thus
+`K_grav,constraint^J=-j_z^2/M_z`.
+
+Two independent scalar calculations—regular-pole shooting with adaptive
+quadrature and a hypergeometric representation with 60-decimal
+tanh--sinh quadrature—give
+`K_scalar=6.673443432880105` in the frozen normalized representative. The
+method difference is below `9e-15`; endpoint, norm, and eigen-moment
+residuals pass. The projected scalar spectral gap is positive.
+
+With
+`K_grav,constraint^J=-0.9589787495308423` and the exactly-once inherited
+`K_Weyl=1.220620174933802`, the complete coefficient is
+
+`k_q^E=6.935084858283065 +/- 2e-12`.
+
+The verdict is
+`BHSM_FOLD_KINETIC_NORM_POSITIVE_CONDITIONALLY`. The negative gravitational
+Schur term is retained; the complete sign is positive, so the physical
+negative-norm audit is not triggered. This does not establish potential
+stability or a physical mass.
+
+Phase v6.30 is permitted to derive the off-shell Einstein-frame potential
+and dimensionless fold mass curvature.

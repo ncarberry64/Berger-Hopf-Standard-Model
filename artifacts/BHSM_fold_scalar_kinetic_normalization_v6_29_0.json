@@ -1,0 +1,71 @@
+{
+  "B1_source_dropped": false,
+  "Weyl_term_double_counted": false,
+  "artifact": "BHSM_fold_scalar_kinetic_normalization_v6_29_0",
+  "chat_only_value_imported": false,
+  "fitted_parameter_used": false,
+  "frozen_predictions_changed": false,
+  "generic_pseudoinverse_used": false,
+  "global_Lorentzian_state_selected": false,
+  "kernel_ignored": false,
+  "measured_input_used": false,
+  "negative_sign_hidden": false,
+  "new_action_introduced": false,
+  "new_primitive_introduced": false,
+  "new_scale_introduced": false,
+  "official_prediction_logic_changed": false,
+  "physical_mass_claimed": false,
+  "primary_result": "BHSM_FOLD_KINETIC_NORM_POSITIVE_CONDITIONALLY",
+  "scalar": {
+    "Z5_normalized": 1.0,
+    "cap_multiplicity": 2,
+    "formula": "K_scalar=2 Z5 integral_0^1 N0 a0^2 u1^2 dt",
+    "hypergeometric": {
+      "K_scalar": 6.67344343288,
+      "dps": 60,
+      "endpoint_residual": {
+        "certified_upper_bound": 1e-40,
+        "relation": "<"
+      },
+      "mu": 29.43091835295,
+      "normalization": 8.923902707116,
+      "nu": 3.781947626272,
+      "weighted_norm": 1.0
+    },
+    "lower_bound": 2,
+    "method_difference": {
+      "certified_upper_bound": 5e-12,
+      "relation": "<"
+    },
+    "normalization": "integral_0^1 N0 a0^4 u1^2 dt=1 per cap",
+    "reported": 6.67344343288,
+    "result": "BHSM_FOLD_SCALAR_KINETIC_NORMALIZATION_RECOMPUTED",
+    "shooting": {
+      "K_scalar": 6.67344343288,
+      "eigen_moment_residual": {
+        "certified_upper_bound": 1e-10,
+        "relation": "<"
+      },
+      "endpoint_residual": {
+        "certified_upper_bound": 1e-11,
+        "relation": "<"
+      },
+      "max_step": 0.0015,
+      "mu": 29.43091835295,
+      "normalization": 8.923902707116,
+      "quadrature_error": {
+        "certified_upper_bound": 1e-12,
+        "relation": "<"
+      },
+      "rtol": 2e-13,
+      "weighted_norm": 1.0
+    }
+  },
+  "source_main_sha": "86df2f5c72e8c6fe07c2fb3ee41372a521229c84",
+  "sprint": "bhsm-fold-schur-kinetic-v6-29-0",
+  "stability_claimed": false,
+  "two_cap_factor_dropped": false,
+  "unprojected_inverse_used": false,
+  "v6_28_scientific_sha": "853bddac1852c6b328fc4cf7af2786e2f59baf34",
+  "version": "v6.29.0"
+}
