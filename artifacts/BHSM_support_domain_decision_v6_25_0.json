@@ -1,0 +1,77 @@
+{
+  "arbitrary_boundary_condition_introduced": false,
+  "arbitrary_regulator_selected": false,
+  "artifact": "BHSM_support_domain_decision_v6_25_0",
+  "chat_only_candidate_imported": false,
+  "decision": {
+    "Schur": {
+      "K_Weyl": "3 chi_1^2(4-pi)^2/(16pi)",
+      "K_grav_constraint_J": null,
+      "K_scalar": "2 integral a0^2 u1^2 d rho>=2",
+      "inverse_constructed": false,
+      "k_q_E": null,
+      "result": "BHSM_FOLD_SCHUR_REDUCTION_BLOCKED_BY_UNDECIDED_SUPPORT_DOMAIN"
+    },
+    "candidate_domains": {
+      "D": "common abstract B1 with two varied cap embeddings",
+      "F": "fixed abstract support B1={t=1}"
+    },
+    "evidence_against_declaring_D_required": [
+      "no explicit nonzero R_perp has been derived",
+      "existing ADM fields already encode the local cap-length coordinate effect",
+      "failure of a calculation is not proof of dynamical embedding necessity"
+    ],
+    "evidence_against_declaring_F_success": [
+      "the time-dependent spatially homogeneous scalar junction response is underived",
+      "the endpoint threading trace entering R_perp is underived",
+      "R_perp has not been evaluated on every existing equation"
+    ],
+    "evidence_for_F": [
+      "rho=ell(q(x))t maps the moving homogeneous cap to fixed support",
+      "the induced shift is an existing ADM field",
+      "its linear coefficient exactly matches v6.18 on Pi_perp",
+      "zeta=0 has a nonsingular gauge map and adds no support scalar"
+    ],
+    "exact_next_target": "derive the action-normalized time-dependent spatially homogeneous threading/endpoint response and insert it into the two independent scalar B1 junction projections, then evaluate R_perp at O(D^2q)",
+    "kinetic": {
+      "ghost": null,
+      "result": "BHSM_FOLD_KINETIC_SIGN_REMAINS_UNRESOLVED_BY_UNDECIDED_SUPPORT_DOMAIN",
+      "sign": null,
+      "stability": null
+    },
+    "one_primary_support_result": true,
+    "operator": {
+      "field_vector_status": "candidate Domain-F vector recorded",
+      "reopened": false,
+      "result": "BHSM_FOLD_LOCAL_SCALAR_OPERATOR_REOPENING_BLOCKED_BY_UNDECIDED_SUPPORT_DOMAIN"
+    },
+    "primary_result": "BHSM_SUPPORT_DOMAIN_DECISION_BLOCKED_BY_UNDERIVED_TIME_DEPENDENT_HOMOGENEOUS_THREADING_JUNCTION_RESPONSE",
+    "rejected_alternative": null,
+    "selected_domain": null
+  },
+  "dynamical_embedding_necessity_emitted": false,
+  "embedding_domain_invented": false,
+  "embedding_equation_invented": false,
+  "fitted_coefficients_introduced": false,
+  "fixed_support_success_emitted": false,
+  "frozen_predictions_changed": false,
+  "generic_pseudoinverse_emitted": false,
+  "kinetic_number_emitted": false,
+  "local_X_field_invented": false,
+  "localization_result": "BHSM_FIXED_MANIFOLD_LOCALIZATION_MAP_DERIVED",
+  "measured_inputs_used": false,
+  "new_action_introduced": false,
+  "new_corner_term_introduced": false,
+  "new_primitive_introduced": false,
+  "new_scale_introduced": false,
+  "official_prediction_logic_changed": false,
+  "physical_mass_claimed": false,
+  "primary_result": "BHSM_SUPPORT_DOMAIN_DECISION_BLOCKED_BY_UNDERIVED_TIME_DEPENDENT_HOMOGENEOUS_THREADING_JUNCTION_RESPONSE",
+  "scalar_curvature_inverse_revived": false,
+  "source_main_sha": "4a59a2a3d1dc7e2d21fbc5f0d9e0f69aac28b34e",
+  "sprint": "bhsm-fixed-support-vs-dynamical-embedding-v6-25-0",
+  "stability_claimed": false,
+  "v6_24_reproducibility_sha": "16e75be50b12545383b62fd9d0d9ded0915b568a",
+  "v6_24_scientific_sha": "94879c94ac8ef5b61d5072a6c4eb1af7d3003b16",
+  "version": "v6.25.0"
+}
