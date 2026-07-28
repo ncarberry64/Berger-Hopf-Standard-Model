@@ -1,0 +1,120 @@
+{
+  "B1_domain_verdict": "BHSM_B1_MOVING_ENDPOINT_DOMAIN_BLOCKED_BY_UNSTORED_X_DEPENDENT_GLUE_REFLECTION_DATUM",
+  "action_and_background": {
+    "action": {
+      "B1_primary_freeze": "∫sqrt(-h)[C_partial R4-tau_A Tr(F^2)/4-Z_partial(partial sigma_partial)^2/2]",
+      "GHY_each_oriented_cap": "+kappa_1 ∫sqrt(-h) K",
+      "P1": "∫sqrt(-g)[kappa_1 R5/2-kappa_0/2-Z5(grad sigma)^2/2-U5(sigma)]",
+      "U5": "A5 sigma^2/2+G5 sigma^4/4",
+      "U_partial": "absent (zero in the primary freeze)",
+      "cap_count": 2,
+      "common_B1_count": 1,
+      "matcher": "∫_B1 sqrt(-h) Lambda^(mu nu)(h_mu nu-iota^*g_mu nu)",
+      "matcher_coefficient": null,
+      "new_term_added": false,
+      "total": [
+        "S_P1,cap+",
+        "S_P1,cap-",
+        "S_GHY,cap+",
+        "S_GHY,cap-",
+        "S_B1",
+        "S_match",
+        "S_sigma"
+      ]
+    },
+    "background": {
+      "C_partial_over_kappa1": "1/2",
+      "K_convention": "K_mu_nu=(1/2)L_n h_mu_nu",
+      "M4": "Ric(hbar)=3 X_c hbar (maximally symmetric branch)",
+      "N0": "pi/4",
+      "R4": "12 X_c",
+      "X_c": 2,
+      "Z2": "two reflected regular caps and one common B1",
+      "Z5": 1,
+      "a0": "sqrt(2) sin(pi t/4)",
+      "cap_endpoint": "t=1",
+      "common_normal": "outward normals are used capwise; signed common-normal threading amplitudes have opposite signs",
+      "kappa1": 1,
+      "metric": "ds5^2=N0^2 dt^2+a0(t)^2 hbar_mu_nu dx^mu dx^nu",
+      "normal": "n_out=N0^-1 partial_t on each outward cap coordinate",
+      "q5": 1,
+      "radial_coordinate": "t∈[0,1] on each normalized cap",
+      "regular_pole": "t=0",
+      "sigma0": 0
+    },
+    "provenance": {
+      "Z2_gluing_domain": "z2_double_cap_threading_domain.py:support_domain_ledger",
+      "critical_background": "scalar_wall_junction_audit.py:359-370",
+      "fixed_embedding_domain": "moving_endpoint_shift_domain.py:repository_domain_ledger",
+      "frozen_action": "intrinsic_m4_junction_background.py:224-263",
+      "principal_block": "critical_lapse_weyl_hessian.py",
+      "scalar_completion": "scalar_wall_junction_audit.py:266-291",
+      "threading_response": "covariant_threading_response.py:kernel_ledger,response_domain_ledger"
+    }
+  },
+  "arbitrary_boundary_parameter_introduced": false,
+  "arbitrary_global_green_state_selected": false,
+  "artifact": "BHSM_P1_GHY_scalar_quadratic_operator_v6_24_0",
+  "chat_only_candidate_imported": false,
+  "conformal_tangent_used_as_action_input": false,
+  "embedding_variation_assumed": false,
+  "fitted_coefficients_introduced": false,
+  "frozen_predictions_changed": false,
+  "generic_pseudoinverse_emitted": false,
+  "ghost_or_stability_claimed": false,
+  "kinetic_number_emitted": false,
+  "local_X_field_invented": false,
+  "local_operator_verdict": "BHSM_LOCAL_SCALAR_CONSTRAINT_SYSTEM_BLOCKED_BY_UNSTORED_X_DEPENDENT_EMBEDDING_DOMAIN",
+  "measured_inputs_used": false,
+  "new_action_introduced": false,
+  "new_corner_term_introduced": false,
+  "new_primitive_introduced": false,
+  "new_scale_introduced": false,
+  "official_prediction_logic_changed": false,
+  "operator": {
+    "action_expansion_started": false,
+    "not_derived": {
+      "Green_current": null,
+      "L0": null,
+      "L1": null,
+      "adjoint_domain": null,
+      "adjoint_kernel_dimension": null,
+      "boundary_matrix": null,
+      "complete_quadratic_action": null,
+      "complete_scalar_junction_projections": null,
+      "domain": null,
+      "endpoint_Noether_dependency_matrix": null,
+      "formal_adjoint": null,
+      "kernel_dimension": null,
+      "lower_order_radial_blocks": null,
+      "moving_endpoint_mixing": null
+    },
+    "operator_verdict": "BHSM_LOCAL_SCALAR_CONSTRAINT_SYSTEM_BLOCKED_BY_UNSTORED_X_DEPENDENT_EMBEDDING_DOMAIN",
+    "reason": "earliest stop occurs before promoting iota_zeta in the action",
+    "retained_exact_checks": {
+      "GHY_fixed_cap": "normal derivatives of delta g cancel capwise in the stored fixed-embedding variation",
+      "matcher": "h_ab=iota^*g_ab after independent variation and Lambda elimination",
+      "principal_A_psi_block": "(6kappa_1/a0^2)[[0,1],[1,2]]",
+      "principal_matrix_symbolic": [
+        [
+          "0",
+          "6*kappa_1/a_0**2"
+        ],
+        [
+          "6*kappa_1/a_0**2",
+          "12*kappa_1/a_0**2"
+        ]
+      ],
+      "radial_measure": "N0 a0^4=pi sin^4(pi t/4)",
+      "tensor_junction": "kappa_1[Q_ab]+2C_partial G_ab^(4)=T_partial,ab"
+    },
+    "zero_assigned_to_missing_blocks": false
+  },
+  "physical_mass_claimed": false,
+  "scalar_curvature_inverse_revived": false,
+  "schur_number_emitted": false,
+  "source_main_sha": "21c7e8fe9057d75f353e4f23ad5dbe49a1b41c6b",
+  "sprint": "bhsm-local-scalar-constraint-b1-domain-v6-24-0",
+  "v6_23_scientific_sha": "9d13432b055a52e4a7e0ca4d599b7f465328f447",
+  "version": "v6.24.0"
+}
