@@ -1,0 +1,98 @@
+{
+  "artifact": "BHSM_M4_X_definition_and_branch_audit_v6_22_0",
+  "chat_only_candidate_imported": false,
+  "definition_ledger": {
+    "branch_inventory": {
+      "critical_static_RxS3": {
+        "R4": "6*X",
+        "action_role": "separate exact critical junction branch, not the maximally symmetric scalar-wall regulator",
+        "dR4_dX": "6",
+        "homogeneous_metric_family": "ds4^2=-du^2+X^-1 dOmega3^2 at the critical embedding",
+        "stored_relation": "A=0; H=0; a=X^-1/2"
+      },
+      "maximally_symmetric_dS4": {
+        "R4": "12*X",
+        "action_role": "used by the scalar-wall reduced action and analytic maximally symmetric M4 volume regulator",
+        "dR4_dX": "12",
+        "homogeneous_metric_family": "ds4^2=-du^2+X^-1 cosh^2(sqrt(X)(u-u0)) dOmega3^2",
+        "stored_relation": "A=X; Ric(h)=3X h"
+      }
+    },
+    "critical_degeneracy": "the dS4 bounce and static R x S3 branch are distinct metrics with X=2 q5",
+    "definitions": [
+      {
+        "classification": "homogeneous closed-FRW invariant",
+        "source": "src/bhsm/interface/intrinsic_m4_junction_background.py:264",
+        "statement": "X=H^2+a^-2; A=N^-1 dot(H)+H^2"
+      },
+      {
+        "classification": "maximally symmetric M4 curvature parameter in the frozen scalar-wall action",
+        "source": "src/bhsm/interface/scalar_wall_junction_audit.py:268-275",
+        "statement": "signature=(-,+,+,+,+), Ric_mu_nu(h)=3 X h_mu_nu"
+      },
+      {
+        "classification": "homogeneous on-shell Puiseux branch coordinate",
+        "source": "src/bhsm/interface/scalar_wall_puiseux_fold.py:299-318",
+        "statement": "X is solved with the warp factor and cap endpoint; X=2+tau chi_1 r+O(r^2)"
+      },
+      {
+        "classification": "homogeneous tangent promoted adiabatically through q(x)",
+        "source": "src/bhsm/interface/scalar_wall_fold_morse_sheet_selection.py:195-235",
+        "statement": "delta X=tau chi_1 is a component of the stored fixed-control fold vector"
+      },
+      {
+        "classification": "v6.20 proposed local tangent target",
+        "source": "src/bhsm/interface/critical_lapse_weyl_hessian.py:267-303",
+        "statement": "delta R4[T_X]=tau chi_1 q and a local hbar[X] representative/domain are absent"
+      }
+    ],
+    "local_vs_homogeneous": "A: ordinary derivative exists for stored homogeneous ansatz branches; B: no field-valued right inverse is stored; C: their combination is therefore not defined",
+    "questions": {
+      "X_is_FRW_H2_plus_a_minus2": true,
+      "X_is_homogeneous_family_parameter": true,
+      "X_is_local_scalar_field": false,
+      "X_is_on_shell_branch_coordinate": true,
+      "X_is_universally_proportional_to_R4": false,
+      "hbar_mu_nu_X_declared": false,
+      "one_X_has_multiple_stored_M4_branches": true,
+      "only_curvature_condition_declared": true,
+      "v6_20_action_branch": "maximally symmetric Einstein M4 action density/regulator; no coordinate-level hbar[X] family or regulated domain"
+    },
+    "symbol_scope": "curvature X only; unrelated embedding maps named X and ordinary coordinates x are excluded"
+  },
+  "fitted_coefficient": false,
+  "frozen_predictions_changed": false,
+  "generic_pseudoinverse": false,
+  "kinetic_result": "BHSM_FOLD_KINETIC_SIGN_REMAINS_UNRESOLVED_BY_X_TO_R4_NORMALIZATION_CONFLICT",
+  "measured_input": false,
+  "new_action": false,
+  "new_boundary_parameter": false,
+  "new_primitive": false,
+  "new_scale": false,
+  "normalization_conflict": {
+    "action_consequence": "R4=12X and delta R4=12 delta X",
+    "action_convention": "Ric_mu_nu(h)=3X h_mu_nu",
+    "action_convention_source": "src/bhsm/interface/scalar_wall_junction_audit.py:270",
+    "can_be_fixed_by_gauge_choice": false,
+    "can_be_removed_by_diffeomorphism": false,
+    "coefficient_expected": 12,
+    "coefficient_stored_in_target": 1,
+    "conflict_residual_maximally_symmetric": 11,
+    "earliest_stop": "BHSM_M4_X_METRIC_TANGENT_BLOCKED_BY_X_TO_R4_NORMALIZATION_CONFLICT",
+    "minimum_missing_object": "one repository-level declaration fixing whether the local response variable is X, R4, or R4/12, together with the corresponding covariant hbar[X] family and domain",
+    "normalization_resolved": false,
+    "requires_new_measured_input": false,
+    "static_branch_coefficient": 6,
+    "v6_20_target": "delta R4[T_X]=delta X=tau chi_1 q",
+    "v6_20_target_source": "src/bhsm/interface/critical_lapse_weyl_hessian.py:269-271"
+  },
+  "numerical_solve_launched": false,
+  "official_prediction_logic_changed": false,
+  "physical_mass_claim": false,
+  "primary_result": "BHSM_M4_X_METRIC_TANGENT_BLOCKED_BY_X_TO_R4_NORMALIZATION_CONFLICT",
+  "schur_result": "BHSM_FOLD_SCHUR_REDUCTION_BLOCKED_BY_X_TO_R4_NORMALIZATION_CONFLICT",
+  "source_main_sha": "4bdedf9e492f35696b2af076afae84e3ca5f67e7",
+  "sprint": "bhsm-m4-x-metric-tangent-fold-schur-v6-22-0",
+  "stability_claim": false,
+  "version": "v6.22.0"
+}

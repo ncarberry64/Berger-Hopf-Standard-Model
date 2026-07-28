@@ -21,9 +21,12 @@ below preserve dated scientific and repository provenance.
 - The v6.20 critical lapse--Weyl principal block is a **Derived consequence**
   of the existing action sectors:
   `[[0,6 kappa_1/a_0^2],[6 kappa_1/a_0^2,12 kappa_1/a_0^2]]`.
-- The gauge-quotiented metric tangent
-  `T_mu_nu^(X)=delta hbar_mu_nu[X]/delta X|X=2` is the exact **Active
-  construction target**.
+- The v6.22 definition audit **Rejects by calculation** the coefficient-one
+  normalization `delta R_4=delta X`: the scalar-wall action convention
+  `Ric(h)=3Xh` requires `R_4=12X` on its maximally symmetric branch, while
+  the separate critical static `R x S3` branch has `R_4=6X`.
+- Reconciliation of the `X`/`R_4` normalization and a stored covariant
+  `hbar_mu_nu[X]` family/domain are the exact **Active construction target**.
 - The fold kinetic sign is unresolved.
 - Engine coordinate and precision tests are **Numerically validated**; they
   are not validation of BHSM as particle physics.
@@ -33,6 +36,8 @@ below preserve dated scientific and repository provenance.
 - a complete physical BHSM action or complete Standard Model derivation;
 - empirical validation or replacement of the Standard Model;
 - a physical fold mass, ghost classification, or nonlinear-stability result;
+- a gauge-quotiented local X-metric tangent, complete fold mixed source,
+  Schur complement, or numerical `k_q^E`;
 - action-derived physical particle masses or gauge couplings;
 - an action-derived CKM exponent;
 - a physical neutrino mass or physical `Delta m^2`;
@@ -40,8 +45,9 @@ below preserve dated scientific and repository provenance.
 - CERN, CMS, or institutional endorsement.
 
 The threading response is derived, no explicit energy threshold is required,
-the lapse--Weyl principal block is derived, `T_mu_nu^(X)` remains active, the
-fold kinetic sign is unresolved, and no physical mass claim follows.
+the lapse--Weyl principal block is derived, the local `T_mu_nu^(X)` remains
+blocked by the exact `X`-to-`R_4` normalization conflict, the fold kinetic
+sign is unresolved, and no physical mass claim follows.
 
 ## Allowed
 
