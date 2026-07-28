@@ -333,6 +333,24 @@ def test_frozen_prediction_hashes():
         assert hashlib.sha256(payload).hexdigest().upper() == digest
 
 
+def test_deterministic_artifact_checkout_uses_lf_on_all_platforms():
+    attributes = (ROOT / ".gitattributes").read_text(
+        encoding="utf-8"
+    ).splitlines()
+    general = "artifacts/*.json text eol=lf"
+    nested = "artifacts/**/*.json text eol=lf"
+    frozen_exception = (
+        "artifacts/CKM_no_fit_operator_output_v1.json text eol=crlf"
+    )
+    assert general in attributes
+    assert nested in attributes
+    assert frozen_exception in attributes
+    # Git uses the last matching attribute, so the frozen CRLF exception must
+    # follow the general canonical-LF materialized-artifact rule.
+    assert attributes.index(general) < attributes.index(frozen_exception)
+    assert attributes.index(nested) < attributes.index(frozen_exception)
+
+
 def test_artifact_payloads_have_required_sections():
     payloads = local.artifact_payloads()
     assert set(payloads) == set(local.ARTIFACT_FILES)

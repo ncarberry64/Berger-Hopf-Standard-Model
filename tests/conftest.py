@@ -19,6 +19,36 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 _ORIGINAL_WRITE_TEXT = Path.write_text
 _ORIGINAL_WRITE_BYTES = Path.write_bytes
+_ORIGINAL_READ_BYTES = Path.read_bytes
+_ARTIFACT_ROOT = (ROOT / "artifacts").resolve()
+_CRLF_ARTIFACT_EXCEPTIONS = frozenset(
+    {"CKM_no_fit_operator_output_v1.json"}
+)
+
+
+def _canonical_test_bytes(path: Path) -> bytes:
+    """Read materialized JSON with its repository-canonical line endings.
+
+    Git's Windows checkout conversion can leave historical artifact files
+    as CRLF in an existing clone even after an ``eol=lf`` attribute is
+    introduced.  Materializers and index blobs are canonical LF, so byte
+    comparisons normalize only that checkout representation.  Explicit
+    hash-frozen CRLF artifacts remain untouched.
+    """
+
+    payload = _ORIGINAL_READ_BYTES(path)
+    resolved = path.resolve()
+    try:
+        relative = resolved.relative_to(_ARTIFACT_ROOT)
+    except ValueError:
+        return payload
+    if (
+        resolved.suffix.lower() == ".json"
+        and resolved.name not in _CRLF_ARTIFACT_EXCEPTIONS
+        and relative.parts
+    ):
+        return payload.replace(b"\r\n", b"\n")
+    return payload
 
 
 def _tracked_paths() -> tuple[Path, ...]:
@@ -53,7 +83,7 @@ def _inside_checkout(path: Path) -> bool:
 
 @pytest.fixture(autouse=True)
 def protect_tracked_checkout(monkeypatch: pytest.MonkeyPatch):
-    """Allow tracked writes during one test, then restore the prior bytes."""
+    """Canonicalize artifact reads and restore tracked writes after each test."""
 
     originals: dict[Path, tuple[bytes, int] | None] = {}
 
@@ -89,6 +119,7 @@ def protect_tracked_checkout(monkeypatch: pytest.MonkeyPatch):
 
     monkeypatch.setattr(Path, "write_text", guarded_write_text)
     monkeypatch.setattr(Path, "write_bytes", guarded_write_bytes)
+    monkeypatch.setattr(Path, "read_bytes", _canonical_test_bytes)
     yield
 
     for path, snapshot in originals.items():
