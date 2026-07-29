@@ -33,9 +33,15 @@ below preserve dated scientific and repository provenance.
 - The selected M4 response type is
   `BHSM_M4_X_RESPONSE_REQUIRES_LOCAL_CONSTRAINT_SOLVE`.
 - The complete local scalar metric operator/source and x-dependent
-  B1/matcher moving-endpoint domain are the exact **Active construction
-  target**.
+  B1/matcher moving-endpoint domain remain a historical conditional operator
+  problem, not the current highest-upstream release gate.
 - The fold kinetic sign is unresolved.
+- The v7.1 finite-input dimensionless stratified correspondence action is
+  internally complete. Its physical \(S^3\) pushforward is restricted to
+  genuine invariant/equivariant modes, while Standard Model fields remain
+  intrinsic \(M_4\) fields.
+- The exact current **Active construction target** is
+  `COMMON_SCHEME_OBSERVABLE_TRANSPORT_FUNCTOR`.
 - Engine coordinate and precision tests are **Numerically validated**; they
   are not validation of BHSM as particle physics.
 
@@ -1847,3 +1853,32 @@ Not supported:
 
 Exact verdict:
 `BHSM_UNIFIED_PARENT_ACTION_BLOCKED_BY_MISSING_COVARIANT_BULK_BOUNDARY_REDUCTION_FUNCTOR_SOURCE`.
+## v7.1 official core claim boundary
+
+BHSM v7.1 adopts one finite-input covariant stratified correspondence
+action. The oriented quaternionic Hopf pushforward transports only genuine
+invariant or associated-bundle modes. The two-cap action is an independently
+owned target-stratum Wilson action, and the Standard Model gauge, fermion,
+Yukawa, and Higgs fields are intrinsic M4 fields.
+
+The official dimensionless core claims are limited to:
+
+- a well-posed stratified action with explicit compatibility maps;
+- the anomaly-consistent Standard Model representation structure,
+  conditional on its finite representation input;
+- gauge couplings and Yukawa matrices as independent theory inputs;
+- CKM as the left-handed mismatch derived from those Yukawa matrices;
+- the retained scalar action with `lambda5` an independent input;
+- explicit cap, GHY, matcher, gauge, Dirac, scalar, and optional neutral
+  domains;
+- one common symbolic dimensionful calibration, not a prediction.
+
+The historical charged hierarchy, charged-lepton eta, CKM `1/16`, gauge
+`1,2,7`, mass-overlap, PMNS, and neutral-response numerical rules are not
+official action predictions. They remain screens or conditional extensions.
+
+The v7.1 result permits `BHSM_CORE_COMPLETE`. It does not permit a claim
+that the Standard Model is derived from pure geometry, that an independent
+dimensionless input is predicted, or that BHSM is physically or
+release-complete. The next exact object is
+`COMMON_SCHEME_OBSERVABLE_TRANSPORT_FUNCTOR`.

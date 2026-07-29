@@ -3,12 +3,11 @@
 from __future__ import annotations
 
 import hashlib
-import json
 from pathlib import Path
 from typing import Any
 
-from . import coefficients, fields, hessians, measures, reductions, symmetries, terms, validation, variations
-from .common import FROZEN_HASHES, MISSING_OBJECT, VERDICT, VERSION, deterministic_json
+from . import coefficients, fields, hessians, measures, reduction, reductions, symmetries, terms, validation, variations
+from .common import FROZEN_HASHES, deterministic_json
 
 
 ARTIFACT_FILES = {
@@ -77,8 +76,12 @@ def materialize(root: Path) -> list[Path]:
         path.write_bytes(content)
         paths.append(path)
     canonical = target / "BHSM_1_0_completion_gate.json"
+    from bhsm.interface.claim_input_completion_consistency import (
+        canonical_completion_gate_payload,
+    )
+
     canonical.write_bytes(
-        deterministic_json(validation.canonical_completion_gate_payload()).encode("utf-8")
+        deterministic_json(canonical_completion_gate_payload()).encode("utf-8")
     )
     paths.append(canonical)
     return paths
@@ -92,54 +95,36 @@ def frozen_hashes_match(root: Path) -> bool:
 
 
 def status_payload() -> dict[str, Any]:
-    checks = validation.validate_model()
-    return {
-        "version": VERSION,
-        "action_levels": ["S8_PROVISIONAL", "S5_TWO_CAP_RELATIVE", "S4_EFFECTIVE"],
-        "action_terms": [r["term_id"] for r in terms.term_rows()],
-        "coefficient_types": {
-            r["coefficient_id"]: r["classification"] for r in coefficients.rows()
-        },
-        "attached_sectors": [r["sector"] for r in reductions.sector_rows()],
-        "unresolved_sources": [MISSING_OBJECT, "ONE_UNIVERSAL_PHYSICAL_SCALE"],
-        "low_energy_reduction": reductions.sm_payload()["relation_status"],
-        "RB01_verdict": VERDICT,
-        "completion_impact": "Tier A remains blocked; Tier B/C not eligible.",
-        "validation": checks,
-        "validation_passed": all(checks.values()),
-    }
+    return reduction.status_report()
 
 
 def status_to_markdown(payload: dict[str, Any] | None = None) -> str:
     data = payload or status_payload()
     lines = [
-        "# BHSM v7.0 master-action status",
+        "# BHSM v7.1 covariant master-action status",
         "",
-        f"Verdict: `{data['RB01_verdict']}`",
+        f"Architecture: `{data['authoritative_architecture']}`",
         "",
-        "## Action architecture",
+        "## Reduction maps",
         "",
-        "`S8 --R_8to5--> S5|4 --R_5to4--> S4eff`",
+        *[f"- `{name}`: `{formula}`" for name, formula in data["maps"].items()],
         "",
-        "The three levelwise actions are explicit. The covariant reduction "
-        "functor supplying both arrows is not sourced, so this is a maximal "
-        "action complex rather than a closed unified parent action.",
+        f"RB-01: `{data['RB01_result']}`.",
         "",
-        "## Attached sectors",
+        f"Core: `{data['core_result']}`.",
+        "",
+        "The physical fiber pushforward is used only on the invariant or "
+        "equivariant retained subcategory. The M5 cap action and intrinsic "
+        "M4 Standard Model action retain independent stratum ownership and "
+        "are linked by covariant compatibility constraints.",
+        "",
+        "## Completion",
+        "",
+        f"- Current tier: `{data['current_tier']}`",
+        f"- Scale bridge: `{data['scale_bridge']}`",
+        f"- Remaining exact object: `{data['remaining_exact_object']}`",
+        "",
+        f"Verdict: `{data['final_verdict']}`",
         "",
     ]
-    lines.extend(f"- {sector}" for sector in data["attached_sectors"])
-    lines.extend(
-        [
-            "",
-            "## Unresolved sources",
-            "",
-            *[f"- `{item}`" for item in data["unresolved_sources"]],
-            "",
-            "## Completion impact",
-            "",
-            data["completion_impact"],
-            "",
-        ]
-    )
     return "\n".join(lines)

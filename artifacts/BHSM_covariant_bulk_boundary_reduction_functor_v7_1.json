@@ -1,0 +1,833 @@
+{
+  "RB01_result": "RB_01_UNIFIED_PARENT_ACTION_PROVENANCE_CLOSED",
+  "action_term_recovery": [
+    {
+      "result": "independent theory input",
+      "term": "eight-dimensional Einstein/carrier/scalar"
+    },
+    {
+      "result": "independent theory input",
+      "term": "capwise Einstein-scalar"
+    },
+    {
+      "result": "transported by trace",
+      "term": "GHY"
+    },
+    {
+      "result": "boundary-localized fundamental term",
+      "term": "intrinsic B1 gravity/matter"
+    },
+    {
+      "result": "transported by trace",
+      "term": "metric and scalar compatibility matchers"
+    },
+    {
+      "result": "boundary-localized fundamental term",
+      "term": "Yang-Mills"
+    },
+    {
+      "result": "boundary-localized fundamental term",
+      "term": "Dirac/Yukawa"
+    },
+    {
+      "result": "boundary-localized fundamental term",
+      "term": "Higgs/scalar"
+    },
+    {
+      "result": "conditional extension",
+      "term": "neutral auxiliary response"
+    }
+  ],
+  "artifact": "BHSM_covariant_bulk_boundary_reduction_functor_v7_1",
+  "authoritative_architecture": {
+    "S5_claimed_as_pi_pushforward_of_S8": false,
+    "architecture": "covariant source-target correspondence plus stratified M5 cap and M4 boundary-localized Wilson actions",
+    "boundary_SM_claimed_as_bulk_descendant": false,
+    "compatibility_action": "int_M5 <Lambda85,g5-Q_H(G8)>+<lambda_sigma,sigma5-P0 sigma8> +sum_epsilon int_M4 Lambda54,epsilon^{ab}(h_ab-iota_epsilon^*g_epsilon,ab)",
+    "formula": "S8[G,chi,sigma]+sum_epsilon(S5,epsilon[g_epsilon,sigma5]+S_GHY,epsilon)+S4,localized[h,A,Psi,H;I4]+S_compatibility[G,g_epsilon,sigma,sigma5,h,Lambda85,Lambda54]",
+    "name": "S_BHSM^strat",
+    "off_shell_fields_distinct": true,
+    "ownership_rule": "each term occurs once on its declared source, target, or boundary stratum; compatibility multipliers carry no kinetic term and their normalization is redundant",
+    "quantum_scope": "classical correspondence action with an M4 EFT stratum; no quantum-gravity completion claimed",
+    "status": "BHSM_STRATIFIED_MASTER_ACTION_CLOSED_WITH_COVARIANT_COMPATIBILITY_MAPS"
+  },
+  "coefficient_and_input_ledger": [
+    {
+      "action_level": "S8",
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "coefficient_id": "bulk_cosmological",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "Frozen provisional P1 primitive.",
+      "sector": "M8 gravity",
+      "symbol": "kappa0",
+      "value": null
+    },
+    {
+      "action_level": "S8,S5",
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "coefficient_id": "bulk_einstein",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "Common positive gravitational normalization input.",
+      "sector": "M8/M5 gravity",
+      "symbol": "kappa1",
+      "value": null
+    },
+    {
+      "action_level": "S8",
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "coefficient_id": "carrier_kinetic",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "Frozen primitive.",
+      "sector": "M8 carrier",
+      "symbol": "Zchi",
+      "value": null
+    },
+    {
+      "action_level": "S8",
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "coefficient_id": "scalar_kinetic",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "Frozen primitive; field normalization leaves invariants.",
+      "sector": "scalar",
+      "symbol": "Zsigma",
+      "value": null
+    },
+    {
+      "action_level": "S8",
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "coefficient_id": "scalar_mass",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "Parameterized relevant scalar coefficient.",
+      "sector": "scalar",
+      "symbol": "A0",
+      "value": null
+    },
+    {
+      "action_level": "S8",
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "coefficient_id": "scalar_quartic",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "Parameterized primitive; no sign or value selected.",
+      "sector": "scalar",
+      "symbol": "G0",
+      "value": null
+    },
+    {
+      "action_level": "S8",
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "coefficient_id": "carrier_scalar",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "Frozen provisional interaction.",
+      "sector": "M8 carrier-scalar",
+      "symbol": "g",
+      "value": null
+    },
+    {
+      "action_level": "S5_reduced",
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "coefficient_id": "lambda5",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "Field-redefinition invariant scalar input.",
+      "sector": "reduced scalar",
+      "symbol": "kappa1 G5/Z5^2",
+      "value": null
+    },
+    {
+      "action_level": "S5",
+      "classification": "ACTION_DERIVED",
+      "coefficient_id": "GHY_coefficient",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "Fixed by Einstein-Hilbert Dirichlet variation.",
+      "sector": "cap gravity",
+      "symbol": "kappa1",
+      "value": null
+    },
+    {
+      "action_level": "S5|B1",
+      "classification": "REMOVED_AS_REDUNDANT",
+      "coefficient_id": "matcher_normalization",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "Absorbed into the Lagrange multiplier.",
+      "sector": "junction",
+      "symbol": "1",
+      "value": null
+    },
+    {
+      "action_level": "S4_boundary",
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "coefficient_id": "B1_einstein",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "Provisional B1 Wilson coefficient.",
+      "sector": "intrinsic boundary gravity",
+      "symbol": "C_partial",
+      "value": null
+    },
+    {
+      "action_level": "S4_boundary",
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "coefficient_id": "B1_gauge",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "Not pushed forward from M8/M5.",
+      "sector": "boundary gauge",
+      "symbol": "tau_A",
+      "value": null
+    },
+    {
+      "action_level": "S4_effective",
+      "classification": "REPRESENTATION_DERIVED",
+      "coefficient_id": "gauge_trace_rep",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "Exact traces of retained chiral representation.",
+      "sector": "gauge",
+      "symbol": "K1,K2,K3=10/3,2,2",
+      "value": null
+    },
+    {
+      "action_level": "SCREEN_ONLY",
+      "classification": "REJECTED_AS_INCOMPATIBLE",
+      "coefficient_id": "gauge_screen_weights",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "Active-generator counts are not representation trace coefficients.",
+      "sector": "gauge screen",
+      "symbol": "w1,w2,w3=1,2,7",
+      "value": null
+    },
+    {
+      "action_level": "S4_effective",
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "coefficient_id": "gauge_couplings",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "Finite EFT inputs; not predicted by the current action.",
+      "sector": "gauge",
+      "symbol": "g1,g2,g3",
+      "value": null
+    },
+    {
+      "action_level": "S4_effective",
+      "classification": "REMOVED_AS_REDUNDANT",
+      "coefficient_id": "fermion_kinetic",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "Set to one by a common nonzero field rescaling.",
+      "sector": "fermion",
+      "symbol": "zeta_psi",
+      "value": null
+    },
+    {
+      "action_level": "S4_effective",
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "coefficient_id": "hypercharge_norm",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "Conventional normalization input.",
+      "sector": "representation",
+      "symbol": "Y_H=1/2",
+      "value": null
+    },
+    {
+      "action_level": "S4_effective",
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "coefficient_id": "Yukawa_matrices",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "Finite matrices; frozen overlap screens do not derive them.",
+      "sector": "fermion/scalar",
+      "symbol": "Y_u,Y_d,Y_e",
+      "value": null
+    },
+    {
+      "action_level": "S4_effective",
+      "classification": "ACTION_DERIVED",
+      "coefficient_id": "CKM_matrix",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "Derived from independent Yukawa matrices after diagonalization.",
+      "sector": "charged current",
+      "symbol": "V=U_u^dagger U_d",
+      "value": null
+    },
+    {
+      "action_level": "SCREEN_ONLY",
+      "classification": "REJECTED_AS_INCOMPATIBLE",
+      "coefficient_id": "ckm_screen_law",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "Retained only as a frozen internal-rule screen, not an action consequence.",
+      "sector": "screen",
+      "symbol": "sqrt(d/s),2s/b,sqrt(u/t)",
+      "value": null
+    },
+    {
+      "action_level": "S4_effective",
+      "classification": "REMOVED_AS_REDUNDANT",
+      "coefficient_id": "charged_extra_coupling",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "Would double count the SU2 covariant derivative.",
+      "sector": "charged current",
+      "symbol": "g_ch",
+      "value": null
+    },
+    {
+      "action_level": "SCREEN_ONLY",
+      "classification": "REJECTED_AS_INCOMPATIBLE",
+      "coefficient_id": "charged_stiffness",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "No action selection; not required once current is in D_mu.",
+      "sector": "charged screen",
+      "symbol": "rho_ch",
+      "value": null
+    },
+    {
+      "action_level": "SCREEN_ONLY",
+      "classification": "REJECTED_AS_INCOMPATIBLE",
+      "coefficient_id": "charged_lepton_eta",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "No normalized action source.",
+      "sector": "charged screen",
+      "symbol": "eta_l",
+      "value": null
+    },
+    {
+      "action_level": "DeltaS4",
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "coefficient_id": "neutral_aux_kinetic",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "Finite effective response coefficient.",
+      "sector": "neutral response",
+      "symbol": "Z_neu",
+      "value": null
+    },
+    {
+      "action_level": "DeltaS4",
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "coefficient_id": "neutral_aux_mass",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "Finite effective response coefficient; no physical mass without scale.",
+      "sector": "neutral response",
+      "symbol": "A_neu",
+      "value": null
+    },
+    {
+      "action_level": "DeltaS4",
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "coefficient_id": "neutral_coupling",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "Finite effective coupling.",
+      "sector": "neutral response",
+      "symbol": "g_neu",
+      "value": null
+    },
+    {
+      "action_level": "SCREEN_ONLY",
+      "classification": "REJECTED_AS_INCOMPATIBLE",
+      "coefficient_id": "pmns_screen_rule",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "Effective-extension screen, not action-derived.",
+      "sector": "screen",
+      "symbol": "alpha effective rule",
+      "value": null
+    },
+    {
+      "action_level": "S4_effective",
+      "classification": "REPRESENTATION_DERIVED",
+      "coefficient_id": "triality_projectors",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "Exact Spin8 triality projectors conditional on carrier choice.",
+      "sector": "generations",
+      "symbol": "P0,P1,P2",
+      "value": null
+    },
+    {
+      "action_level": "S4_effective",
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "coefficient_id": "sector_projectors",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "Finite Hermitian intertwiners fixed before comparison.",
+      "sector": "sectors",
+      "symbol": "P_f",
+      "value": null
+    },
+    {
+      "action_level": "SCREEN/EFT",
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "coefficient_id": "mode_ledger",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "Finite spectral projector ledger; not predicted.",
+      "sector": "generations",
+      "symbol": "Pi_f,n",
+      "value": null
+    },
+    {
+      "action_level": "SCREEN_ONLY",
+      "classification": "REMOVED_AS_REDUNDANT",
+      "coefficient_id": "omega_target_rules",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "Implementation route superseded by explicit projector ledger.",
+      "sector": "mode selection",
+      "symbol": "Omega_f target rule",
+      "value": null
+    },
+    {
+      "action_level": "SCREEN_ONLY",
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "coefficient_id": "S_overlap",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "Declared no-fit screen input.",
+      "sector": "flavor screen",
+      "symbol": "1/(4 pi)",
+      "value": null
+    },
+    {
+      "action_level": "INTERNAL_GEOMETRY",
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "coefficient_id": "geometry_a",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "Positive dimensionless shape input, not a prediction.",
+      "sector": "Berger geometry",
+      "symbol": "a",
+      "value": null
+    },
+    {
+      "action_level": "ACTION_EXCLUDED",
+      "classification": "REJECTED_AS_INCOMPATIBLE",
+      "coefficient_id": "alpha_low_energy",
+      "comparison_input": true,
+      "fitted": false,
+      "rationale": "Measured alpha cannot source parent geometry; comparison only.",
+      "sector": "comparison/screen",
+      "symbol": "alpha_inv_low_energy",
+      "value": null
+    },
+    {
+      "action_level": "ACTION_EXCLUDED",
+      "classification": "REJECTED_AS_INCOMPATIBLE",
+      "coefficient_id": "Planck_energy",
+      "comparison_input": true,
+      "fitted": false,
+      "rationale": "Measured dimensionful constant is not an exercised universal calibration.",
+      "sector": "scale screen",
+      "symbol": "E_P",
+      "value": null
+    },
+    {
+      "action_level": "CROSS_LEVEL",
+      "classification": "ONE_UNIVERSAL_DIMENSIONFUL_CALIBRATION",
+      "coefficient_id": "universal_scale",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "Permitted common calibration; not a prediction and not a dimensionless fit.",
+      "sector": "physical units",
+      "symbol": "ell_star",
+      "value": "one positive common length; no value selected"
+    },
+    {
+      "action_level": "S8->S5->S4",
+      "classification": "GEOMETRICALLY_DERIVED",
+      "coefficient_id": "reduction_pushforward",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "Constructed by the v7.1 correspondence architecture.",
+      "sector": "cross-level reduction",
+      "symbol": "R_85,R_54",
+      "value": "oriented pushforward, trace, and compatibility maps"
+    },
+    {
+      "action_level": "S8->M5",
+      "classification": "GEOMETRICALLY_DERIVED",
+      "coefficient_id": "fiber_volume_VF",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "Physical action-density pushforward factor.",
+      "sector": "M8 to M5 transport",
+      "symbol": "V_F",
+      "value": "16 pi^2 a_F^3"
+    },
+    {
+      "action_level": "S_compatibility",
+      "classification": "REMOVED_AS_REDUNDANT",
+      "coefficient_id": "compatibility_multiplier_normalization",
+      "comparison_input": false,
+      "fitted": false,
+      "rationale": "Constraint-multiplier normalization carries no dynamics.",
+      "sector": "compatibility constraints",
+      "symbol": "zeta_85,zeta_54",
+      "value": "absorbed into Lambda85 and Lambda54"
+    }
+  ],
+  "completion_DAG": [
+    {
+      "id": "RB-01",
+      "resolution": "BHSM_STRATIFIED_MASTER_ACTION_CLOSED_WITH_COVARIANT_COMPATIBILITY_MAPS",
+      "status": "CLOSED"
+    },
+    {
+      "id": "RB-02",
+      "resolution": "lambda5 remains an independent input; not Tier-A blocking",
+      "status": "OPEN_PARAMETER_FREE_EXTENSION"
+    },
+    {
+      "id": "RB-03",
+      "resolution": "finite projectors and all operator domains typed",
+      "status": "CLOSED"
+    },
+    {
+      "id": "RB-04",
+      "resolution": "charged stiffness is a historical screen, not an official action output",
+      "status": "CLOSED_BY_CLAIM_REMOVAL"
+    },
+    {
+      "id": "RB-05",
+      "resolution": "eta_l is a historical screen, not an official action output",
+      "status": "CLOSED_BY_CLAIM_REMOVAL"
+    },
+    {
+      "id": "RB-06",
+      "resolution": "CKM=U_u^dagger U_d from independent Yukawas; 1/16 remains screen-only",
+      "status": "CLOSED"
+    },
+    {
+      "id": "RB-07",
+      "resolution": "PMNS/neutrino mass operators excluded from minimal core and retained only as extension",
+      "status": "CLOSED_BY_CONDITIONAL_CLASSIFICATION"
+    },
+    {
+      "id": "RB-08",
+      "resolution": "g1,g2,g3 are finite independent dimensionless inputs",
+      "status": "CLOSED"
+    },
+    {
+      "id": "RB-09",
+      "resolution": "fiber, cap, seam, and collar measures/orientations explicit",
+      "status": "CLOSED"
+    },
+    {
+      "id": "RB-10",
+      "resolution": "neutral cone and coefficients typed only in DeltaS4",
+      "status": "CLOSED_BY_CONDITIONAL_CLASSIFICATION"
+    },
+    {
+      "id": "RB-11",
+      "resolution": "retained scalar action closed with lambda5 independent; profile screens removed from core",
+      "status": "CLOSED"
+    },
+    {
+      "id": "RB-12",
+      "resolution": "one common ell_star; no value or dimensionless fit",
+      "status": "CLOSED_WITH_ALLOWED_CALIBRATION"
+    },
+    {
+      "id": "RB-13",
+      "resolution": "COMMON_SCHEME_OBSERVABLE_TRANSPORT_FUNCTOR",
+      "status": "BLOCKED_EXACT_OBJECT_LOCALIZED"
+    },
+    {
+      "id": "RB-14",
+      "resolution": "depends on RB-13",
+      "status": "DOWNSTREAM_BLOCKED"
+    },
+    {
+      "id": "RB-15",
+      "resolution": "depends on RB-13 and RB-14",
+      "status": "DOWNSTREAM_BLOCKED"
+    },
+    {
+      "id": "RB-16",
+      "resolution": "depends on RB-14 and RB-15",
+      "status": "DOWNSTREAM_BLOCKED"
+    }
+  ],
+  "core_result": "BHSM_CORE_COMPLETE",
+  "domain_and_Hessian_intertwiner": {
+    "D0": "regular cap pole, fixed h, sigma|B1=0, exact matcher reaction; unchanged from v6.30",
+    "D0_recovered_without_modification": true,
+    "Dirac_domain": "H1 maximal-isotropic domain of the boundary Green pairing",
+    "KKT_Hessian": "[[H8,0,0,C85,8*,0],[0,H5,0,-C85,5*,C54,5*],[0,0,H4,0,-C54,4*],[C85,8,-C85,5,0,0,0],[0,C54,5,-C54,4,0,0]]",
+    "gauge_domain": "H2 coexact representatives modulo allowed gauge transformations",
+    "generic_pseudoinverse_used": false,
+    "inverse_domain": "closed-range complement of gauge, constraint, and Lyapunov-Schmidt kernels only",
+    "kernel_inverted": false,
+    "kernel_rule": "all Lyapunov-Schmidt kernel coordinates remain explicit",
+    "master_domain": "(D8/gauge8) x (D5,cap/ADM) x (D4,gauge x D4,Dirac x D4,scalar) x multiplier duals",
+    "neutral_domain": "declared closed response cone when DeltaS4 is enabled",
+    "reduced_Hessian": "H_eff=H_bb-H_bi H_ii,perp^-1 H_ib",
+    "status": "DOMAIN_AND_CONSTRAINED_SCHUR_INTERTWINER_EXPLICIT",
+    "unlicensed_Robin_domain_used": false
+  },
+  "field_and_bundle_transport": [
+    {
+      "classification": "GEOMETRICALLY_TRANSPORTED",
+      "field": "G8",
+      "lower_owner": "independent constrained g5",
+      "map": "Q_H horizontal metric plus vertical I_F and omega"
+    },
+    {
+      "classification": "RETAINED_SPECTRAL_MODE",
+      "field": "chi8",
+      "lower_owner": "bulk parent; no invented M4 carrier",
+      "map": "P0 or finite associated modes"
+    },
+    {
+      "classification": "BASIC_DIRECT_DESCENT",
+      "field": "sigma8",
+      "lower_owner": "M5 scalar",
+      "map": "P0 sigma8=sigma5 compatibility trace"
+    },
+    {
+      "classification": "GEOMETRICALLY_TRANSPORTED",
+      "field": "radion a_F",
+      "lower_owner": "diagnostic pi_!S8; not identified with sigma",
+      "map": "vertical metric determinant"
+    },
+    {
+      "classification": "GEOMETRICALLY_TRANSPORTED",
+      "field": "omega",
+      "lower_owner": "transport connection, not SM gauge field",
+      "map": "canonical Sp(1) associated-bundle connection"
+    },
+    {
+      "classification": "INDEPENDENT_TARGET_STRATUM_FIELD",
+      "field": "g5_epsilon",
+      "lower_owner": "cap action",
+      "map": "compatibility with Q_H(G8)"
+    },
+    {
+      "classification": "TRANSPORTED_BY_TRACE",
+      "field": "h",
+      "lower_owner": "common seam",
+      "map": "h=iota_epsilon^*g5_epsilon"
+    },
+    {
+      "classification": "BOUNDARY_LOCALIZED_FUNDAMENTAL",
+      "field": "A_SM",
+      "lower_owner": "M4",
+      "map": null
+    },
+    {
+      "classification": "BOUNDARY_LOCALIZED_FUNDAMENTAL",
+      "field": "Psi",
+      "lower_owner": "M4",
+      "map": null
+    },
+    {
+      "classification": "BOUNDARY_LOCALIZED_FUNDAMENTAL",
+      "field": "H",
+      "lower_owner": "M4",
+      "map": null
+    },
+    {
+      "classification": "CONDITIONAL_BOUNDARY_EXTENSION",
+      "field": "N_neu",
+      "lower_owner": "DeltaS4 only",
+      "map": null
+    }
+  ],
+  "final_verdict": "BHSM_PHYSICAL_COMPLETION_BLOCKED_BY_MISSING_COMMON_SCHEME_OBSERVABLE_TRANSPORT_FUNCTOR",
+  "geometry_maps": {
+    "collar": {
+      "boundary_orientation": "outward-normal-first; reflection reverses the normal and exchanges the two oriented GHY terms",
+      "cap_reflection": "J(t,chi,x)=(t,pi-chi,x), exchanging epsilon=+ and -",
+      "dimensionless_coordinate": true,
+      "formula": "c_epsilon(t,x,rho)=(t,pi/2-epsilon*rho,x), 0<=rho<epsilon_chi",
+      "normal_metric": "a(t)^2 d rho^2",
+      "physical_normal_element": "ds=a(t)d rho at fixed t",
+      "status": "EXPLICIT_DIMENSIONLESS_GAUSSIAN_NORMAL_COLLAR"
+    },
+    "iota_54": {
+      "ambient_metric": "g5=-dt^2+a(t)^2[dchi^2+sin^2(chi)g_S3]",
+      "extrinsic_curvature_at_seam": "K_ab=0 on the round background",
+      "formula": "iota_epsilon(t,x)=(t,chi=pi/2,x) : M4=I_t x S3 -> M5_epsilon",
+      "induced_metric": "h=-dt^2+a(t)^2 g_S3",
+      "normal": "n_+=+a^-1 partial_chi on the north cap; n_-=-a^-1 partial_chi on the south cap",
+      "seam": "chi=pi/2",
+      "status": "EXPLICIT_ORIENTED_EQUATORIAL_INCLUSION"
+    },
+    "pi_85": {
+      "bundle": "Sp(1) -> S7 -> S4 with c2=+1",
+      "codomain_metric": "g5=-N^2 dt^2+g_H",
+      "domain_metric": "G8=-N^2 dt^2+g_H+<I_F omega,omega>; round invariant branch I_F=a_F^2 identity",
+      "fiber": "S3=Sp(1), compact, closed, oriented",
+      "formula": "id_I x p_H : I_t x S7 -> I_t x S4",
+      "orientation": "or(M8)=or(M5) wedge or(S3)",
+      "retained_covariance": "time-oriented diffeomorphisms of I_t and bundle automorphisms covering orientation-preserving S4 maps",
+      "status": "EXPLICIT_PROPER_ORIENTED_SUBMERSION"
+    }
+  },
+  "integrity": {
+    "arbitrary_dynamical_term_added": false,
+    "comparison_data_imported": false,
+    "double_counting_retained": false,
+    "exact_neighboring_branch_restored": false,
+    "fitting_used": false,
+    "frozen_prediction_changed": false,
+    "hidden_scale_added": false,
+    "lambda5_reopened": false
+  },
+  "measure_and_orientation": {
+    "M4": "dmu4=N a^3 dt dmu_S3 at chi=pi/2",
+    "M5": "dmu5=N a^4 sin^3(chi) dt dchi dmu_S3 on the round hyperspherical branch",
+    "M8": "dmu8=dmu5 wedge dmuF; dmuF=a_F^3 eta1 wedge eta2 wedge eta3",
+    "absolute_unit_introduced": false,
+    "action_pushforward": "pi_!(L8 dmu8)=[integral_F L8 dmuF]dmu5",
+    "collar": "dmu5=N a^4 cos^3(rho) dt d rho dmu_S3 for chi=pi/2-epsilon rho",
+    "fiber_volume": "V_F=16 pi^2 a_F^3",
+    "field_pairing": "P_alpha Phi=N_alpha^-1 integral_F u_alpha^* Phi dmuF",
+    "normalized_fiber_measure": "dnu_F=dmuF/V_F, integral_F dnu_F=1",
+    "status": "DIMENSIONLESS_NORMALIZATION_AND_PHYSICAL_VOLUME_EXPLICIT",
+    "stokes": "d pi_! omega=pi_! d omega because the S3 fiber is closed"
+  },
+  "projector_and_representation_transport": [
+    {
+      "classification": "REPRESENTATION_DERIVED",
+      "projector": "Spin8 triality",
+      "transport": "equivariant associated-bundle projector"
+    },
+    {
+      "classification": "FINITE_INDEPENDENT_THEORY_INPUT",
+      "projector": "SM representations",
+      "transport": "intrinsic M4 bundle data"
+    },
+    {
+      "classification": "FINITE_INDEPENDENT_THEORY_INPUT",
+      "projector": "sector projectors",
+      "transport": "M4 orthogonal bundle endomorphisms"
+    },
+    {
+      "classification": "CONDITIONAL",
+      "projector": "generation/mode projectors",
+      "transport": "retained spectral subspace; historical mass-selected labels are screen-only"
+    },
+    {
+      "classification": "REPRESENTATION_DERIVED",
+      "projector": "chirality",
+      "transport": "intrinsic four-dimensional spin bundle"
+    },
+    {
+      "classification": "GEOMETRICALLY_TRANSPORTED",
+      "projector": "charged channels",
+      "transport": "SU2 covariant derivative and Yukawa basis"
+    },
+    {
+      "classification": "CONDITIONAL",
+      "projector": "neutral channels",
+      "transport": "SM neutral current plus optional DeltaS4 cone"
+    }
+  ],
+  "reduction_5_to_4": {
+    "constraints": [
+      "cap Einstein/scalar equations",
+      "Hamiltonian and momentum constraints",
+      "GHY-completed metric trace",
+      "exact metric matcher",
+      "gauge quotient conditions where a bulk gauge field is retained",
+      "D0 scalar Dirichlet condition"
+    ],
+    "critical_value": "S4,response[varphi,k]=Crit_{Phi5:Tr Phi5=varphi,C(Phi5)=0,k retained} S5|4[Phi5,eta]",
+    "existence_scope": "local stationary branches on the declared cap/KKT domains; no global uniqueness claim",
+    "kernel_rule": "Lyapunov-Schmidt variables k remain explicit; the critical value eliminates only the closed-range complement",
+    "localized_fields": "A_SM,Psi,H and optional N_neu are intrinsic M4 fields; they are varied on M4 and are not extended into M5 to manufacture a bulk provenance",
+    "status": "CONSTRAINED_CRITICAL_VALUE_AND_TRACE_FUNCTOR_CONSTRUCTED",
+    "trace": "Tr_B1 Phi5=iota_54^*Phi5"
+  },
+  "reduction_8_to_5": {
+    "basic_sector": "u0=V_F^-1/2; P0 is a global scalar/base mode",
+    "coefficient_rules": {
+      "Einstein_base": "kappa5(x)=V_F(x) kappa8",
+      "orthonormal_modes": "c5,alpha_beta=c8 integral_F u_alpha^*u_beta dmuF",
+      "quadratic": "A5,alpha_beta=A8 N_alpha_beta+vertical mass matrix",
+      "quartic": "G5,alpha_beta_gamma_delta=G8 integral_F u_alpha u_beta u_gamma u_delta dmuF",
+      "scalar_kinetic": "Z5,alpha_beta=Z8 N_alpha_beta",
+      "unnormalized_basic": "c5=V_F c8"
+    },
+    "connection": "the canonical Sp(1) connection transports associated modes; no global preferred U(1) axis is asserted",
+    "covariant_derivative_intertwiner": "D5 P_alpha=P_alpha D8 on invariant/equivariant retained modes; curvature-induced transitions outside I_ret are assigned to Phi_perp and are not called a consistent truncation",
+    "field_expansion": "Phi8(x,y)=sum_{alpha in I_ret} phi_alpha(x)u_alpha(y)+Phi_perp",
+    "functor": "R_85=(pi_!,P_ret,Q_H) on the category of bundle-like metrics, equivariant bundles, and finite retained spectral subspaces",
+    "nontrivial_sector": "phi_alpha is a section of E_R=P x_R V_R with connection induced by omega",
+    "radion_firewall": "If a_F varies, pi_!S8 is scalar-tensor gravity with radion and connection terms. It is not identified with the historical constant-kappa5 cap action.",
+    "retained_coefficient": "phi_alpha=N_alpha^-1 integral_F u_alpha^* Phi8 dmuF",
+    "status": "COVARIANT_PUSHFORWARD_CONSTRUCTED_ON_RETAINED_SUBCATEGORY",
+    "stored_S5_relation": "independent target-stratum Wilson action constrained by compatibility maps, not falsely declared equal to pi_!S8"
+  },
+  "remaining_exact_object": "COMMON_SCHEME_OBSERVABLE_TRANSPORT_FUNCTOR",
+  "scale_bridge": {
+    "calibration": "ell_star>0",
+    "called_prediction": false,
+    "common_to_all_sectors": true,
+    "count": 1,
+    "dimensionless_couplings": "unchanged",
+    "dimensionless_fit": false,
+    "mass_rule": "m_phys=m_hat/ell_star",
+    "numeric_value_selected": false,
+    "rule": "Q_phys=ell_star^(-d_L) Q_hat",
+    "sector_retuning": false,
+    "status": "ONE_UNIVERSAL_SCALE_BRIDGE_TYPED"
+  },
+  "source_main_sha": "aea655dcb12690629337fe34a2c9d74b8e53bb72",
+  "sprint": "bhsm-covariant-bulk-boundary-reduction-functor-v7-1",
+  "validation": {
+    "D0_recovered": true,
+    "Hessian_relation_explicit": true,
+    "RB01_closed": true,
+    "Tier_A_complete": true,
+    "authoritative_architecture_selected": true,
+    "base_maps_explicit": true,
+    "coefficient_pushforwards_explicit": true,
+    "domains_and_adjoints_explicit": true,
+    "every_action_term_owned": true,
+    "fields_classified": true,
+    "measures_and_orientations_explicit": true,
+    "next_independent_blocker_exact": true,
+    "no_comparison_value_in_action": true,
+    "no_double_counting": true,
+    "variational_intertwiner_explicit": true
+  },
+  "validation_passed": true,
+  "variational_intertwiner": {
+    "ADM": "lapse and shift variations retain Hamiltonian/momentum constraints",
+    "GHY": "cancels normal metric-derivative variations capwise",
+    "derived_equation_rule": "D(pi_!S8)∘D R85=R85_*∘D S8 on the retained invariant subspace, including the radion and connection terms",
+    "fermion": "Dirac Green pairing vanishes on the declared maximal-isotropic domain",
+    "fiber_rule": "delta pi_!=pi_! delta and d pi_!=pi_! d on the closed fiber",
+    "gauge": "M4 gauge equations close on the gauge quotient",
+    "manual_term_copying_used": false,
+    "matcher": "Lambda54 supplies equal-and-opposite seam reactions",
+    "neutral": "varied only when the conditional extension is enabled",
+    "status": "CONSTRAINED_VARIATIONAL_INTERTWINER_EXPLICIT",
+    "stratified_KKT_equations": [
+      "E8+C85,8^* Lambda85=0",
+      "E5-C85,5^* Lambda85+C54,5^* Lambda54=0",
+      "E4-C54,4^* Lambda54=0",
+      "C85=0",
+      "C54=0"
+    ]
+  },
+  "version": "v7.1"
+}

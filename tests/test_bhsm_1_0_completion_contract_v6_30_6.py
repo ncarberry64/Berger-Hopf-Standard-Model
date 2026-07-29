@@ -160,13 +160,14 @@ def test_exactly_three_deterministic_artifacts():
 
 def test_artifact_schema_keeps_release_and_post_1_0_items_separate():
     payload = contract.completion_payload()
-    assert payload["RB01"]["release_blocking"] is True
+    assert payload["RB01"]["release_blocking"] is False
+    assert payload["RB01"]["status"] == "CLOSED"
     assert payload["parameter_free_extension_blocker"] == "RB-02"
-    assert payload["downstream_release_blockers"] == [
-        f"RB-{index:02d}" for index in range(3, 17)
+    assert payload["open_release_blockers"] == [
+        "RB-13", "RB-14", "RB-15", "RB-16"
     ]
     assert payload["next_highest_upstream_blocker"] == (
-        "CONSTRUCT_OR_RULE_OUT_COVARIANT_BULK_BOUNDARY_REDUCTION_FUNCTOR"
+        "COMMON_SCHEME_OBSERVABLE_TRANSPORT_FUNCTOR"
     )
 
 

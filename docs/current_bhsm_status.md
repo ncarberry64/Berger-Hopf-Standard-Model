@@ -6,11 +6,11 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 
 | Item | Current status |
 | --- | --- |
-| Overall status | structural architecture integrated conditional; numerical closure open |
-| Latest theorem branch | `bhsm-boundary-graded-defect-action-kernel-v1` |
+| Overall status | finite-input dimensionless core complete; physical scheme/observable transport open |
+| Latest theorem branch | `bhsm-covariant-bulk-boundary-reduction-functor-v7-1` |
 | Latest completed theorem commits | PO-BH-47 `ae5dac5`; PO-BH-47 cleanup `1c11d2b`; PO-BH-48 `8ac577c`; PO-BH-49 `c2cfc70`; PO-BH-50 `7a4523a`; PO-BH-51 `225786f`; PO-BH-52 `4de6d9c`; PO-BH-53 `20c58b1`; PO-BH-54 `11d1c60`; PO-BH-55 `cf0e998`; PO-BH-56 `9f93330`; PO-BH-57/58/59 merged to main; PO-BH-60 merged to main; PO-BH-61 merged to main; PO-BH-62 merged to main; PO-BH-63 merged to main; PO-BH-64 merged to main; PO-BH-65 stacked in PR #21; PO-BH-66 stacked in PR #22; PO-BH-67 stacked in PR #23; PO-BH-68 stacked in PR #24; full freeze protocol / charged `K_f` stacked in PR #25; boundary action source audit stacked in PR #26; boundary graded defect action kernel on this branch |
-| Test result summary | boundary graded defect action kernel focused tests `10 passed`; full suite `1526 passed`; guardrail audits passed |
-| Current theorem/status label | `STRUCTURAL_ARCHITECTURE_INTEGRATED_CONDITIONAL_NUMERICAL_CLOSURE_OPEN` |
+| Test result summary | v7.1 import, deterministic materialization, CLI, and syntax checks pass; required GitHub CI is authoritative |
+| Current theorem/status label | `BHSM_PHYSICAL_COMPLETION_BLOCKED_BY_MISSING_COMMON_SCHEME_OBSERVABLE_TRANSPORT_FUNCTOR` |
 | Candidate architecture complete | yes |
 | Full BHSM proven | no |
 | Standard Model fully derived | no |
@@ -272,3 +272,18 @@ cross-level object. Scale and downstream completion gates remain open.
 
 Current exact verdict:
 `BHSM_UNIFIED_PARENT_ACTION_BLOCKED_BY_MISSING_COVARIANT_BULK_BOUNDARY_REDUCTION_FUNCTOR_SOURCE`.
+## v7.1 authoritative status
+
+The dimensionless BHSM core is internally complete as a finite-input
+covariant stratified correspondence action. The source map is
+`id_I x p_H:I_t x S7->I_t x S4`; the target-to-boundary map is the oriented
+equatorial inclusion into the two M5 caps. Intrinsic Standard Model fields
+remain M4-localized and are not called descendants of the M8 metric.
+
+RB-01 and RB-03 through RB-12 are resolved within their retained claim
+scope. Historical numerical screens were either left as screens or removed
+from the official core prediction set. One symbolic common calibration
+`ell_star` is permitted and has no selected value.
+
+Current tier: Tier A complete; Tier B blocked. The exact next object is
+`COMMON_SCHEME_OBSERVABLE_TRANSPORT_FUNCTOR`. Tier C is not eligible.
