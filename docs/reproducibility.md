@@ -150,3 +150,17 @@ Materialize twice and require byte-identical output. The contract tests
 require every release blocker to carry a relevance rationale and affected
 headline deliverable, every nonblocker to carry a post-1.0 category, and
 external acceptance and arbitrary higher orders to remain nonblocking.
+
+<!-- BHSM_SCALAR_WALL_QUARTIC_SOURCE_V6_30_7 -->
+## Reproducing the v6.30.7 scalar quartic audit
+
+```text
+python scripts/materialize_scalar_wall_quartic_source_v6_30_7.py
+python -m pytest -q tests/test_bhsm_scalar_wall_quartic_source_v6_30_7.py
+```
+
+Materialize twice and require byte-identical UTF-8/LF output. The tests
+verify the signed normalization group, KKT rephasing, canonical invariance,
+factored coefficients, provenance, selector failures, exact
+branch/stability incompatibility, integrity guards, negative scale
+permission, and Tier A gate update.

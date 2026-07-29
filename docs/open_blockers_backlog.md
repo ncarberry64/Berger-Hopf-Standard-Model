@@ -109,3 +109,18 @@ no such dependency has moved to
 The next tractable release blocker is `RB-02`: prove the scalar
 field-normalization invariant and audit the actual parent-action source of
 the quartic coefficient. The exact neighboring branch is not a blocker.
+
+<!-- BHSM_SCALAR_WALL_QUARTIC_SOURCE_V6_30_7 -->
+## v6.30.7 exact upstream stop
+
+`RB-02` is now localized exactly. Scalar normalization leaves the
+independent dimensionless invariant `lambda5=kappa1 G5/Z5^2`. The parent
+term is present as a frozen provisional-action primitive, but no licensed
+source fixes its sign or magnitude.
+
+The result is
+`BHSM_CORE_COMPLETION_BLOCKED_BY_UNSELECTED_SCALAR_QUARTIC_INVARIANT`.
+The campaign stop rule is reached. v6.31 and dependent benchmark/prediction
+work are forbidden until an action-derived selector exists. Exact branch
+restoration and higher orders at its unselected cancellation locus remain
+post-1.0.

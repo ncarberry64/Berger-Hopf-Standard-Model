@@ -47,6 +47,22 @@ normalization invariant and action-source audit. Exact-branch restoration,
 unselected cancellation-point higher orders, external acceptance, and
 unclaimed downstream catalogues are nonblocking.
 
+## v6.30.7 scalar quartic status
+
+The scalar normalization audit identifies
+`lambda5=kappa1 G5/Z5^2` as the genuine dimensionless quartic invariant.
+The frozen provisional action contains the term, but its primitive ledger
+leaves the invariant unsourced and no licensed selection mechanism fixes it.
+
+The canonical interaction remains
+`g4_can=(5.84444718718846 lambda5+81.5773688846122)/kappa1`.
+The exact-branch cancellation value lies below the local-minimum threshold,
+so branch restoration remains outside the release critical path.
+
+Tier A is blocked, Tier B and Tier C are not eligible, and v6.31 is not
+permitted. Exact verdict:
+`BHSM_CORE_COMPLETION_BLOCKED_BY_UNSELECTED_SCALAR_QUARTIC_INVARIANT`.
+
 ## Current Cleanup Guidance
 
 The public status is: structural architecture integrated conditional; numerical closure open. PO-BH-47 exposes remaining symbolic inputs and forbidden fit routes. PO-BH-48 localizes `S_nu_topo` without deriving a numerical value. The exact next recommended sprint is to derive or reject one localized numerical-closure object before comparison, preferably `CKM_1_16_EXPONENT_NOT_DERIVED` or the missing `S_nu_topo` components listed below.
