@@ -1,42 +1,15 @@
 {
-  "BHSM_1_0_release_complete": false,
-  "artifact": "BHSM_1_0_completion_gate",
+  "artifact": "BHSM_release_blocker_DAG",
   "bhsm_1_0_release_complete_claimed": false,
-  "contract_reconciled_from": "v6.30.6",
-  "current_verdict": "BHSM_SCALAR_QUARTIC_PARAMETERIZED_NOT_PREDICTED",
-  "external_validation_is_internal_gate": false,
   "fitted_parameter_used": false,
-  "frozen_hashes": {
-    "docs/frozen_predictions.json": "F38210E0689871A25A9D5B0A1A4239883B7240CD7D0E25CDCF4C8CAB72A2CBE7",
-    "docs/frozen_predictions.md": "9EA147C56537520C86D3C4F9B864C6BA98BAC9E64931EDAE96449F3B335A36C4"
-  },
   "frozen_prediction_changed": false,
   "lambda5_sign_selected": false,
   "lambda5_value_selected": false,
   "measured_input_promoted_to_action_input": false,
   "new_action_term_added": false,
   "new_scale_added": false,
-  "next_highest_upstream_blocker": "RB-01_UNIFIED_PARENT_ACTION_PROVENANCE",
-  "official_prediction_changed": false,
-  "parameter_free_extension_blockers": [
-    {
-      "affected_retained_claims": [
-        "C06",
-        "C07",
-        "C08"
-      ],
-      "blocker_id": "RB-02",
-      "classification": "PARAMETER_FREE_EXTENSION_BLOCKER",
-      "depends_on": [],
-      "reassessment": "lambda5 is an independent theory input; only a parameter-free scalar extension requires its derivation/selection",
-      "release_blocking": false,
-      "stale_as_release_blocker": false,
-      "status": "RECLASSIFIED_OPEN_EXTENSION",
-      "title": "Scalar quartic invariant selection"
-    }
-  ],
-  "physical_mass_claimed": false,
-  "release_blockers": [
+  "next_highest_upstream_scientific_target": "RB-01_UNIFIED_PARENT_ACTION_PROVENANCE",
+  "nodes": [
     {
       "affected_retained_claims": [
         "C01",
@@ -52,6 +25,21 @@
       "stale_as_release_blocker": false,
       "status": "OPEN",
       "title": "Unified parent-action provenance"
+    },
+    {
+      "affected_retained_claims": [
+        "C06",
+        "C07",
+        "C08"
+      ],
+      "blocker_id": "RB-02",
+      "classification": "PARAMETER_FREE_EXTENSION_BLOCKER",
+      "depends_on": [],
+      "reassessment": "lambda5 is an independent theory input; only a parameter-free scalar extension requires its derivation/selection",
+      "release_blocking": false,
+      "stale_as_release_blocker": false,
+      "status": "RECLASSIFIED_OPEN_EXTENSION",
+      "title": "Scalar quartic invariant selection"
     },
     {
       "affected_retained_claims": [
@@ -296,27 +284,30 @@
       "title": "Release manuscript and clean reproduction package"
     }
   ],
-  "scientific_formula_changed": false,
-  "source_main_sha": "258cb9ce8dd0a14b2d3ddacd28baddbd73db6f82",
-  "sprint": "bhsm-claim-input-completion-consistency-v6-30-8",
-  "tiers": [
-    {
-      "name": "BHSM Core Complete",
-      "policy": "Dimensionless coefficients may be independent theory inputs when typed and not claimed as predictions; no unselected coefficient may remain inside an official parameter-free prediction.",
-      "status": "BLOCKED",
-      "tier": "A"
-    },
-    {
-      "name": "BHSM Physical Complete",
-      "status": "NOT_ELIGIBLE_TIER_A_BLOCKED",
-      "tier": "B"
-    },
-    {
-      "name": "Internally Complete / External Review Ready",
-      "status": "NOT_ELIGIBLE_TIER_B_BLOCKED",
-      "tier": "C"
-    }
+  "official_prediction_changed": false,
+  "parameter_free_extension_blocker_ids": [
+    "RB-02"
   ],
+  "physical_mass_claimed": false,
+  "release_blocker_ids": [
+    "RB-01",
+    "RB-03",
+    "RB-04",
+    "RB-05",
+    "RB-06",
+    "RB-07",
+    "RB-08",
+    "RB-09",
+    "RB-10",
+    "RB-11",
+    "RB-12",
+    "RB-13",
+    "RB-14",
+    "RB-15",
+    "RB-16"
+  ],
+  "scientific_formula_changed": false,
+  "stale_release_blockers": [],
   "unconditional_stability_claimed": false,
   "version": "v6.30.8"
 }

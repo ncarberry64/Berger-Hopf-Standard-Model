@@ -2530,3 +2530,21 @@ remains nonblocking; the reduced effective family is the release object.
 Tier A is blocked, Tier B and Tier C are not eligible, and v6.31 is
 forbidden. The campaign reaches the prescribed stop:
 `BHSM_CORE_COMPLETION_BLOCKED_BY_UNSELECTED_SCALAR_QUARTIC_INVARIANT`.
+
+<!-- BHSM_CLAIM_INPUT_COMPLETION_CONSISTENCY_V6_30_8 -->
+## v6.30.8 claim/input/completion consistency correction
+
+The v6.30.7 mathematical result is retained, but its release classification
+is corrected. `lambda5=kappa1 G5/Z5^2` is an explicit, unfitted independent
+theory input of the parameterized reduced scalar family; BHSM does not
+predict its value or sign. It is absent from every frozen-output computation
+path.
+
+`RB-02` is therefore a `PARAMETER_FREE_EXTENSION_BLOCKER`, not a BHSM 1.0
+release blocker. Fifteen release blockers remain, so Tier A is still
+blocked and Tiers B/C remain ineligible. Scale permission remains denied
+for independent action, measure, normalization, scale, and observable-map
+dependencies. The next target is
+`RB-01_UNIFIED_PARENT_ACTION_PROVENANCE`; no v6.31 work is performed.
+
+Exact verdict: `BHSM_SCALAR_QUARTIC_PARAMETERIZED_NOT_PREDICTED`.

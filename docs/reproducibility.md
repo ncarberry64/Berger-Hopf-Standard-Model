@@ -164,3 +164,19 @@ verify the signed normalization group, KKT rephasing, canonical invariance,
 factored coefficients, provenance, selector failures, exact
 branch/stability incompatibility, integrity guards, negative scale
 permission, and Tier A gate update.
+
+<!-- BHSM_CLAIM_INPUT_COMPLETION_CONSISTENCY_V6_30_8 -->
+## Reproducing the v6.30.8 consistency audit
+
+```text
+python scripts/materialize_claim_input_completion_consistency_v6_30_8.py
+python -m pytest -q tests/test_bhsm_claim_input_completion_consistency_v6_30_8.py
+```
+
+Materialize twice and require byte-identical UTF-8/LF output. The tests
+require evidence for every retained claim; exactly one valid type per
+input; strict separation of derived, calibrated, comparison, candidate,
+and independent inputs; complete leaf-level frozen-output paths; explicit
+absence of `lambda5`, `G5`, `Z5`, and `kappa1`; a fifteen-node release
+blocker set; RB-02 narrowing; correct scale dependencies; unchanged frozen
+hashes; and a non-closed canonical completion gate.

@@ -1,0 +1,370 @@
+{
+  "allowed_types": [
+    "ACTION_DERIVED",
+    "CANDIDATE_NOT_OFFICIAL",
+    "EXTERNAL_COMPARISON_DATA",
+    "GEOMETRICALLY_DERIVED",
+    "INDEPENDENT_THEORY_INPUT",
+    "ONE_UNIVERSAL_DIMENSIONFUL_CALIBRATION",
+    "POST_BHSM_1_0",
+    "REPRESENTATION_DERIVED",
+    "UNLICENSED_ORIGIN_BLOCKER"
+  ],
+  "artifact": "BHSM_1_0_typed_input_ledger",
+  "bhsm_1_0_release_complete_claimed": false,
+  "fitted_parameter_used": false,
+  "frozen_prediction_changed": false,
+  "inputs": [
+    {
+      "advertised_as_prediction": false,
+      "allowed_in_parent_action": true,
+      "calibrated": false,
+      "derived": false,
+      "fitted": false,
+      "input_id": "lambda5",
+      "rationale": "Free dimensionless coefficient of the parameterized reduced scalar family.",
+      "type": "INDEPENDENT_THEORY_INPUT"
+    },
+    {
+      "advertised_as_prediction": false,
+      "allowed_in_parent_action": true,
+      "calibrated": false,
+      "derived": false,
+      "fitted": false,
+      "input_id": "S_overlap",
+      "rationale": "Declared S=1/(4*pi); not advertised as action-derived.",
+      "type": "INDEPENDENT_THEORY_INPUT"
+    },
+    {
+      "advertised_as_prediction": false,
+      "allowed_in_parent_action": false,
+      "calibrated": false,
+      "derived": false,
+      "fitted": false,
+      "input_id": "alpha_inv_low_energy",
+      "rationale": "Measured low-energy alpha enters geometry and several numerical screens.",
+      "type": "UNLICENSED_ORIGIN_BLOCKER"
+    },
+    {
+      "advertised_as_prediction": false,
+      "allowed_in_parent_action": false,
+      "calibrated": false,
+      "derived": false,
+      "fitted": false,
+      "input_id": "geometry_a",
+      "rationale": "Computed from alpha_inv/(12*pi^2), not yet derived from the parent action.",
+      "type": "UNLICENSED_ORIGIN_BLOCKER"
+    },
+    {
+      "advertised_as_prediction": false,
+      "allowed_in_parent_action": false,
+      "calibrated": false,
+      "derived": false,
+      "fitted": false,
+      "input_id": "mode_ledger",
+      "rationale": "Supplied sector/generation modes require operator-domain derivation.",
+      "type": "UNLICENSED_ORIGIN_BLOCKER"
+    },
+    {
+      "advertised_as_prediction": false,
+      "allowed_in_parent_action": false,
+      "calibrated": false,
+      "derived": false,
+      "fitted": false,
+      "input_id": "omega_target_rules",
+      "rationale": "Supplied target rules require spectral derivation.",
+      "type": "UNLICENSED_ORIGIN_BLOCKER"
+    },
+    {
+      "advertised_as_prediction": false,
+      "allowed_in_parent_action": false,
+      "calibrated": false,
+      "derived": false,
+      "fitted": false,
+      "input_id": "ckm_screen_law",
+      "rationale": "Internal numerical rule is not yet an action-derived mixing map.",
+      "type": "UNLICENSED_ORIGIN_BLOCKER"
+    },
+    {
+      "advertised_as_prediction": false,
+      "allowed_in_parent_action": false,
+      "calibrated": false,
+      "derived": false,
+      "fitted": false,
+      "input_id": "gauge_trace_weights",
+      "rationale": "Trace weights lack unified action attachment.",
+      "type": "UNLICENSED_ORIGIN_BLOCKER"
+    },
+    {
+      "advertised_as_prediction": false,
+      "allowed_in_parent_action": true,
+      "calibrated": false,
+      "derived": true,
+      "fitted": false,
+      "input_id": "sector_representation_pattern",
+      "rationale": "Charge/anomaly algebra follows once this stated representation input is fixed.",
+      "type": "REPRESENTATION_DERIVED"
+    },
+    {
+      "advertised_as_prediction": false,
+      "allowed_in_parent_action": true,
+      "calibrated": false,
+      "derived": false,
+      "fitted": false,
+      "input_id": "hypercharge_normalization_YH_half",
+      "rationale": "Conventional normalization is declared, not numerically predicted.",
+      "type": "INDEPENDENT_THEORY_INPUT"
+    },
+    {
+      "advertised_as_prediction": false,
+      "allowed_in_parent_action": false,
+      "calibrated": false,
+      "derived": false,
+      "fitted": false,
+      "input_id": "Planck_energy_GeV",
+      "rationale": "External dimensionful constant enters an unlicensed scale screen.",
+      "type": "UNLICENSED_ORIGIN_BLOCKER"
+    },
+    {
+      "advertised_as_prediction": false,
+      "allowed_in_parent_action": false,
+      "calibrated": false,
+      "derived": false,
+      "fitted": false,
+      "input_id": "published_mass_references",
+      "rationale": "Used only for score comparison.",
+      "type": "EXTERNAL_COMPARISON_DATA"
+    },
+    {
+      "advertised_as_prediction": false,
+      "allowed_in_parent_action": false,
+      "calibrated": false,
+      "derived": false,
+      "fitted": false,
+      "input_id": "published_CKM_references",
+      "rationale": "Used only for score comparison.",
+      "type": "EXTERNAL_COMPARISON_DATA"
+    },
+    {
+      "advertised_as_prediction": false,
+      "allowed_in_parent_action": false,
+      "calibrated": false,
+      "derived": false,
+      "fitted": false,
+      "input_id": "published_PMNS_references",
+      "rationale": "Used only for score comparison.",
+      "type": "EXTERNAL_COMPARISON_DATA"
+    },
+    {
+      "advertised_as_prediction": false,
+      "allowed_in_parent_action": false,
+      "calibrated": false,
+      "derived": false,
+      "fitted": false,
+      "input_id": "published_gauge_references",
+      "rationale": "Used only for score comparison.",
+      "type": "EXTERNAL_COMPARISON_DATA"
+    },
+    {
+      "advertised_as_prediction": false,
+      "allowed_in_parent_action": false,
+      "calibrated": false,
+      "derived": false,
+      "fitted": false,
+      "input_id": "published_Higgs_v_references",
+      "rationale": "Used only for score comparison.",
+      "type": "EXTERNAL_COMPARISON_DATA"
+    },
+    {
+      "advertised_as_prediction": false,
+      "allowed_in_parent_action": false,
+      "calibrated": false,
+      "derived": false,
+      "fitted": false,
+      "input_id": "Zvirt_half",
+      "rationale": "Only the dressed candidate branch uses it.",
+      "type": "CANDIDATE_NOT_OFFICIAL"
+    },
+    {
+      "advertised_as_prediction": false,
+      "allowed_in_parent_action": true,
+      "calibrated": false,
+      "derived": true,
+      "fitted": false,
+      "input_id": "berger_spectral_eigenvalues",
+      "rationale": "Derived from the declared Berger geometry.",
+      "type": "GEOMETRICALLY_DERIVED"
+    },
+    {
+      "advertised_as_prediction": false,
+      "allowed_in_parent_action": true,
+      "calibrated": false,
+      "derived": true,
+      "fitted": false,
+      "input_id": "yukawa_overlap_ratios",
+      "rationale": "Derived conditionally from a, S, and the supplied mode ledger.",
+      "type": "GEOMETRICALLY_DERIVED"
+    },
+    {
+      "advertised_as_prediction": false,
+      "allowed_in_parent_action": true,
+      "calibrated": false,
+      "derived": true,
+      "fitted": false,
+      "input_id": "anomaly_sums",
+      "rationale": "Exact algebraic consequences of the stated charges.",
+      "type": "REPRESENTATION_DERIVED"
+    },
+    {
+      "advertised_as_prediction": false,
+      "allowed_in_parent_action": true,
+      "calibrated": false,
+      "derived": true,
+      "fitted": false,
+      "input_id": "fixed_h_quartic_map",
+      "rationale": "Derived as a function of lambda5 from the retained reduced action.",
+      "type": "ACTION_DERIVED"
+    },
+    {
+      "advertised_as_prediction": false,
+      "allowed_in_parent_action": true,
+      "calibrated": false,
+      "derived": true,
+      "fitted": false,
+      "input_id": "local_stability_threshold",
+      "rationale": "Derived inequality; it does not select lambda5.",
+      "type": "ACTION_DERIVED"
+    },
+    {
+      "advertised_as_prediction": false,
+      "allowed_in_parent_action": true,
+      "calibrated": false,
+      "derived": true,
+      "fitted": false,
+      "input_id": "charged_ratio_screens",
+      "rationale": "Conditional outputs of the overlap map and typed upstream inputs.",
+      "type": "GEOMETRICALLY_DERIVED"
+    },
+    {
+      "advertised_as_prediction": false,
+      "allowed_in_parent_action": true,
+      "calibrated": false,
+      "derived": true,
+      "fitted": false,
+      "input_id": "sector_charges",
+      "rationale": "Algebraic consequences of the stated representation ledger.",
+      "type": "REPRESENTATION_DERIVED"
+    },
+    {
+      "advertised_as_prediction": false,
+      "allowed_in_parent_action": false,
+      "calibrated": false,
+      "derived": false,
+      "fitted": false,
+      "input_id": "pmns_effective_rule",
+      "rationale": "Effective-extension rule, not a minimal-SM prediction.",
+      "type": "CANDIDATE_NOT_OFFICIAL"
+    },
+    {
+      "advertised_as_prediction": false,
+      "allowed_in_parent_action": false,
+      "calibrated": false,
+      "derived": false,
+      "fitted": false,
+      "input_id": "gauge_normalization_rule",
+      "rationale": "Requires attachment to the unified parent action.",
+      "type": "UNLICENSED_ORIGIN_BLOCKER"
+    },
+    {
+      "advertised_as_prediction": false,
+      "allowed_in_parent_action": false,
+      "calibrated": false,
+      "derived": false,
+      "fitted": false,
+      "input_id": "higgs_scale_screen_rule",
+      "rationale": "Conditional numerical screen without licensed scale provenance.",
+      "type": "UNLICENSED_ORIGIN_BLOCKER"
+    },
+    {
+      "advertised_as_prediction": false,
+      "allowed_in_parent_action": false,
+      "calibrated": false,
+      "derived": false,
+      "fitted": false,
+      "input_id": "proxy_basis",
+      "rationale": "Finite basis used only for proxy spectral evidence.",
+      "type": "CANDIDATE_NOT_OFFICIAL"
+    },
+    {
+      "advertised_as_prediction": false,
+      "allowed_in_parent_action": false,
+      "calibrated": false,
+      "derived": false,
+      "fitted": false,
+      "input_id": "finite_basis_HT_proxy",
+      "rationale": "Proxy operator is not the full analytic spectrum.",
+      "type": "CANDIDATE_NOT_OFFICIAL"
+    },
+    {
+      "advertised_as_prediction": false,
+      "allowed_in_parent_action": false,
+      "calibrated": false,
+      "derived": false,
+      "fitted": false,
+      "input_id": "higgs_electroweak_screen",
+      "rationale": "Conditional upstream screen used by the decoupling scaffold.",
+      "type": "CANDIDATE_NOT_OFFICIAL"
+    },
+    {
+      "advertised_as_prediction": false,
+      "allowed_in_parent_action": false,
+      "calibrated": false,
+      "derived": false,
+      "fitted": false,
+      "input_id": "proxy_scalar_modes",
+      "rationale": "Finite illustrative mode ledger.",
+      "type": "CANDIDATE_NOT_OFFICIAL"
+    },
+    {
+      "advertised_as_prediction": false,
+      "allowed_in_parent_action": false,
+      "calibrated": false,
+      "derived": false,
+      "fitted": false,
+      "input_id": "finite_basis_scalar_scaffold",
+      "rationale": "Conditional scaffold, not an action-level theorem.",
+      "type": "CANDIDATE_NOT_OFFICIAL"
+    },
+    {
+      "advertised_as_prediction": false,
+      "allowed_in_parent_action": false,
+      "calibrated": false,
+      "derived": false,
+      "fitted": false,
+      "input_id": "one_universal_dimensionful_scale",
+      "rationale": "No universal calibration has been exercised in BHSM 1.0.",
+      "type": "POST_BHSM_1_0"
+    },
+    {
+      "advertised_as_prediction": false,
+      "allowed_in_parent_action": false,
+      "calibrated": false,
+      "derived": false,
+      "fitted": false,
+      "input_id": "exact_branch_higher_orders",
+      "rationale": "Not required by a retained release claim.",
+      "type": "POST_BHSM_1_0"
+    }
+  ],
+  "lambda5_sign_selected": false,
+  "lambda5_value_selected": false,
+  "measured_input_promoted_to_action_input": false,
+  "new_action_term_added": false,
+  "new_scale_added": false,
+  "official_prediction_changed": false,
+  "one_universal_dimensionful_calibration_used": false,
+  "physical_mass_claimed": false,
+  "scientific_formula_changed": false,
+  "unconditional_stability_claimed": false,
+  "version": "v6.30.8"
+}

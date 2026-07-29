@@ -751,7 +751,7 @@ def dag_payload() -> dict[str, Any]:
     }
 
 
-def completion_payload() -> dict[str, Any]:
+def historical_completion_payload() -> dict[str, Any]:
     return {
         "artifact": "BHSM_1_0_completion_gate",
         "version": VERSION,
@@ -780,6 +780,18 @@ def completion_payload() -> dict[str, Any]:
         "frozen_hashes": FROZEN_HASHES,
         **GUARDS,
     }
+
+
+def completion_payload() -> dict[str, Any]:
+    """Return the v6.30.8-reconciled canonical completion gate.
+
+    The historical v6.30.6 DAG and scope registry remain reproducible, but
+    the older materializer must not restore a stale canonical gate.
+    """
+
+    from bhsm.interface import claim_input_completion_consistency as current
+
+    return current.canonical_completion_gate_payload()
 
 
 def scope_payload() -> dict[str, Any]:

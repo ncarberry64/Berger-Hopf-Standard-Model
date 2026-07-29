@@ -45,3 +45,15 @@
 - Compute the full twisted Dirac `H_T` spectrum.
 - Complete two-/three-loop threshold RG matching.
 - Prove scalar decoupling in the full action.
+
+## v6.30.8 completion-gate reconciliation
+
+`lambda5` is typed as an independent theory input. It is not selected,
+fitted, or advertised as predicted, and it does not occur in any frozen
+output path. Scalar-quartic selection is therefore a parameter-free
+extension gate, not a BHSM 1.0 release gate.
+
+The current release critical path begins at
+`RB-01_UNIFIED_PARENT_ACTION_PROVENANCE`. The full fifteen-blocker graph is
+`artifacts/BHSM_release_blocker_DAG_v6_30_8.json`; scale permission remains
+closed independently of the scalar-quartic input.

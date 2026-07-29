@@ -162,9 +162,12 @@ def test_artifact_schema_keeps_release_and_post_1_0_items_separate():
     payload = contract.completion_payload()
     assert all(row["release_blocking"] for row in payload["release_blockers"])
     assert not any(
-        row["release_blocking"] for row in payload["post_1_0_items"]
+        row["release_blocking"]
+        for row in payload["parameter_free_extension_blockers"]
     )
-    assert payload["next_highest_upstream_blocker"] == contract.NEXT_BLOCKER
+    assert payload["next_highest_upstream_blocker"] == (
+        "RB-01_UNIFIED_PARENT_ACTION_PROVENANCE"
+    )
 
 
 def test_checked_in_artifacts_are_current_and_valid_json():

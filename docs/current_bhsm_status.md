@@ -240,3 +240,19 @@ The generic finite-width feature-rank theorem-discharge attempt defines the loca
 The explicit symbolic Gram/minor theorem-discharge attempt constructs generation feature matrices and enumerates concrete symbolic 3x3 minor candidates from Wigner/Hopf local jet expressions. It remains partial because no candidate minor is proven nonzero and local Wigner/Hopf jet independence remains open; numerical Yukawa values, CKM, PMNS, and replacement readiness remain open.
 
 The PO-BH-47 numerical input closure-map theorem records that BHSM has an integrated conditional structural architecture for SM-like finite algebra, charges, Higgs/scalar mass generation, fermion hierarchy, CKM, PMNS, and CP sources. It also exposes remaining symbolic inputs and forbidden fit routes. Numerical closure remains open.
+
+## v6.30.8 authoritative completion correction
+
+The scalar quartic invariant `lambda5` is an explicit independent theory
+input, not a BHSM prediction. Its absence from every frozen-output
+dependency path means that selecting it is not a BHSM 1.0 release
+requirement. It remains open only for a parameter-free scalar extension.
+
+This correction does not complete BHSM. The frozen flavor, gauge, PMNS,
+Higgs/scale, gap, and scalar screens retain their existing conditional,
+candidate, proxy, or scaffold labels. Fifteen release blockers remain.
+Scale work remains blocked independently of `lambda5`. The next
+highest-upstream scientific target is unified parent-action provenance.
+
+Current exact verdict:
+`BHSM_SCALAR_QUARTIC_PARAMETERIZED_NOT_PREDICTED`.

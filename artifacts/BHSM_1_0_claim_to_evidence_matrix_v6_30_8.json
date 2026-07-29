@@ -1,0 +1,648 @@
+{
+  "artifact": "BHSM_1_0_claim_to_evidence_matrix",
+  "bhsm_1_0_release_complete_claimed": false,
+  "claims": [
+    {
+      "benchmark": null,
+      "blockers": [
+        "RB-01",
+        "RB-03"
+      ],
+      "calibrated_quantities": [],
+      "caveat": "",
+      "claim_class": "STATUS",
+      "claim_id": "C01",
+      "claim_text": "BHSM is a conditional framework, not a completed Standard Model derivation.",
+      "comparison_data": [],
+      "derived_coefficients": [],
+      "evidence": [
+        "docs/current_bhsm_status.md"
+      ],
+      "falsifier": null,
+      "frozen_artifact": null,
+      "independent_inputs": [],
+      "lambda5_dependency": false,
+      "locations": [
+        "README.md",
+        "STATUS.md",
+        "CLAIMS.md"
+      ],
+      "operator_domain_source": "OPEN",
+      "parent_action_source": "OPEN",
+      "retained": true,
+      "status": "RETAINED_CONDITIONAL",
+      "surface": "PUBLIC",
+      "variational_source": "OPEN"
+    },
+    {
+      "benchmark": null,
+      "blockers": [],
+      "calibrated_quantities": [],
+      "caveat": "",
+      "claim_class": "REPRODUCIBILITY",
+      "claim_id": "C02",
+      "claim_text": "The numerical engine and deterministic regression suite are reproducible.",
+      "comparison_data": [],
+      "derived_coefficients": [],
+      "evidence": [
+        "tests/",
+        "docs/reproducibility.md"
+      ],
+      "falsifier": null,
+      "frozen_artifact": null,
+      "independent_inputs": [],
+      "lambda5_dependency": false,
+      "locations": [
+        "README.md"
+      ],
+      "operator_domain_source": "NOT_REQUIRED_OR_CITED",
+      "parent_action_source": "NOT_REQUIRED_OR_CITED",
+      "retained": true,
+      "status": "RETAINED",
+      "surface": "PUBLIC",
+      "variational_source": "NOT_REQUIRED_OR_CITED"
+    },
+    {
+      "benchmark": null,
+      "blockers": [
+        "RB-14"
+      ],
+      "calibrated_quantities": [],
+      "caveat": "",
+      "claim_class": "FROZEN_SCREEN",
+      "claim_id": "C03",
+      "claim_text": "The frozen no-retuning screen package is immutable under the declared hash audit.",
+      "comparison_data": [],
+      "derived_coefficients": [],
+      "evidence": [
+        "docs/frozen_predictions.md",
+        "docs/frozen_predictions.json"
+      ],
+      "falsifier": "hash or output change",
+      "frozen_artifact": "docs/frozen_predictions.json",
+      "independent_inputs": [],
+      "lambda5_dependency": false,
+      "locations": [
+        "README.md",
+        "CLAIMS.md"
+      ],
+      "operator_domain_source": "NOT_REQUIRED_OR_CITED",
+      "parent_action_source": "NOT_REQUIRED_OR_CITED",
+      "retained": true,
+      "status": "RETAINED_CONDITIONAL",
+      "surface": "PUBLIC",
+      "variational_source": "NOT_REQUIRED_OR_CITED"
+    },
+    {
+      "benchmark": null,
+      "blockers": [],
+      "calibrated_quantities": [],
+      "caveat": "",
+      "claim_class": "MATHEMATICAL_RESULT",
+      "claim_id": "C04",
+      "claim_text": "The strict D0 fixed-h Lyapunov-Schmidt reduction is established through quartic order.",
+      "comparison_data": [],
+      "derived_coefficients": [],
+      "evidence": [
+        "artifacts/BHSM_fixed_h_canonical_interaction_v6_30_5.json"
+      ],
+      "falsifier": null,
+      "frozen_artifact": null,
+      "independent_inputs": [],
+      "lambda5_dependency": false,
+      "locations": [
+        "docs/bhsm_fixed_h_lyapunov_schmidt_potential_v6_30_5.md"
+      ],
+      "operator_domain_source": "NOT_REQUIRED_OR_CITED",
+      "parent_action_source": "NOT_REQUIRED_OR_CITED",
+      "retained": true,
+      "status": "RETAINED",
+      "surface": "INTERNAL",
+      "variational_source": "NOT_REQUIRED_OR_CITED"
+    },
+    {
+      "benchmark": null,
+      "blockers": [],
+      "calibrated_quantities": [],
+      "caveat": "",
+      "claim_class": "MATHEMATICAL_RESULT",
+      "claim_id": "C05",
+      "claim_text": "The generic neighboring exact branch is obstructed at the selected base point.",
+      "comparison_data": [],
+      "derived_coefficients": [],
+      "evidence": [
+        "artifacts/BHSM_fixed_h_exact_branch_permission_v6_30_5.json"
+      ],
+      "falsifier": null,
+      "frozen_artifact": null,
+      "independent_inputs": [],
+      "lambda5_dependency": false,
+      "locations": [
+        "CLAIMS.md"
+      ],
+      "operator_domain_source": "NOT_REQUIRED_OR_CITED",
+      "parent_action_source": "NOT_REQUIRED_OR_CITED",
+      "retained": true,
+      "status": "RETAINED",
+      "surface": "PUBLIC",
+      "variational_source": "NOT_REQUIRED_OR_CITED"
+    },
+    {
+      "benchmark": null,
+      "blockers": [],
+      "calibrated_quantities": [],
+      "caveat": "No value or sign of lambda5 is selected.",
+      "claim_class": "PARAMETERIZED_RESULT",
+      "claim_id": "C06",
+      "claim_text": "The reduced scalar potential is a one-parameter family in lambda5.",
+      "comparison_data": [],
+      "derived_coefficients": [
+        "quartic_coefficient_as_function_of_lambda5"
+      ],
+      "evidence": [
+        "artifacts/BHSM_G5_action_source_ledger_v6_30_7.json"
+      ],
+      "falsifier": null,
+      "frozen_artifact": null,
+      "independent_inputs": [
+        "lambda5"
+      ],
+      "lambda5_dependency": false,
+      "locations": [
+        "CLAIMS.md",
+        "STATUS.md"
+      ],
+      "operator_domain_source": "NOT_REQUIRED_OR_CITED",
+      "parent_action_source": "NOT_REQUIRED_OR_CITED",
+      "retained": true,
+      "status": "RETAINED_CONDITIONAL",
+      "surface": "PUBLIC",
+      "variational_source": "NOT_REQUIRED_OR_CITED"
+    },
+    {
+      "benchmark": null,
+      "blockers": [],
+      "calibrated_quantities": [],
+      "caveat": "Not an unconditional or global stability claim.",
+      "claim_class": "CONDITIONAL_RESULT",
+      "claim_id": "C07",
+      "claim_text": "Local scalar stability is conditional on the lambda5 inequality.",
+      "comparison_data": [],
+      "derived_coefficients": [
+        "local_stability_threshold"
+      ],
+      "evidence": [
+        "artifacts/BHSM_fixed_h_local_stability_v6_30_5.json"
+      ],
+      "falsifier": null,
+      "frozen_artifact": null,
+      "independent_inputs": [
+        "lambda5"
+      ],
+      "lambda5_dependency": false,
+      "locations": [
+        "CLAIMS.md"
+      ],
+      "operator_domain_source": "NOT_REQUIRED_OR_CITED",
+      "parent_action_source": "NOT_REQUIRED_OR_CITED",
+      "retained": true,
+      "status": "RETAINED_CONDITIONAL",
+      "surface": "PUBLIC",
+      "variational_source": "NOT_REQUIRED_OR_CITED"
+    },
+    {
+      "benchmark": null,
+      "blockers": [],
+      "calibrated_quantities": [],
+      "caveat": "",
+      "claim_class": "NEGATIVE_CLAIM",
+      "claim_id": "C08",
+      "claim_text": "No numerical scalar quartic is predicted by the current BHSM action.",
+      "comparison_data": [],
+      "derived_coefficients": [],
+      "evidence": [
+        "artifacts/BHSM_G5_action_source_ledger_v6_30_7.json"
+      ],
+      "falsifier": null,
+      "frozen_artifact": null,
+      "independent_inputs": [],
+      "lambda5_dependency": false,
+      "locations": [
+        "CLAIMS.md"
+      ],
+      "operator_domain_source": "NOT_REQUIRED_OR_CITED",
+      "parent_action_source": "NOT_REQUIRED_OR_CITED",
+      "retained": true,
+      "status": "RETAINED",
+      "surface": "PUBLIC",
+      "variational_source": "NOT_REQUIRED_OR_CITED"
+    },
+    {
+      "benchmark": null,
+      "blockers": [
+        "RB-01",
+        "RB-03",
+        "RB-08"
+      ],
+      "calibrated_quantities": [],
+      "caveat": "",
+      "claim_class": "CONDITIONAL_SCREEN",
+      "claim_id": "C09",
+      "claim_text": "Gauge-charge and anomaly relations are conditional on the stated representation pattern and normalization.",
+      "comparison_data": [],
+      "derived_coefficients": [],
+      "evidence": [
+        "src/hypercharge.py",
+        "src/anomalies.py"
+      ],
+      "falsifier": null,
+      "frozen_artifact": null,
+      "independent_inputs": [],
+      "lambda5_dependency": false,
+      "locations": [
+        "README.md"
+      ],
+      "operator_domain_source": "OPEN",
+      "parent_action_source": "OPEN",
+      "retained": true,
+      "status": "RETAINED_CONDITIONAL",
+      "surface": "PUBLIC",
+      "variational_source": "OPEN"
+    },
+    {
+      "benchmark": null,
+      "blockers": [
+        "RB-03",
+        "RB-04"
+      ],
+      "calibrated_quantities": [],
+      "caveat": "",
+      "claim_class": "CONDITIONAL_SCREEN",
+      "claim_id": "C10",
+      "claim_text": "Generation assignments are conditional on the supplied mode ledger.",
+      "comparison_data": [],
+      "derived_coefficients": [],
+      "evidence": [
+        "src/mode_selection.py",
+        "src/constants.py"
+      ],
+      "falsifier": null,
+      "frozen_artifact": null,
+      "independent_inputs": [
+        "mode_ledger"
+      ],
+      "lambda5_dependency": false,
+      "locations": [
+        "README.md"
+      ],
+      "operator_domain_source": "OPEN",
+      "parent_action_source": "NOT_REQUIRED_OR_CITED",
+      "retained": true,
+      "status": "RETAINED_CONDITIONAL",
+      "surface": "PUBLIC",
+      "variational_source": "OPEN"
+    },
+    {
+      "benchmark": "charged mass-ratio references",
+      "blockers": [
+        "RB-03",
+        "RB-04",
+        "RB-05"
+      ],
+      "calibrated_quantities": [],
+      "caveat": "",
+      "claim_class": "FROZEN_SCREEN",
+      "claim_id": "C11",
+      "claim_text": "Charged-fermion ratios are frozen numerical screens.",
+      "comparison_data": [
+        "published_reference_values"
+      ],
+      "derived_coefficients": [],
+      "evidence": [
+        "src/yukawa_overlap.py",
+        "theory/bhsm_v1_frozen_prediction_set.json"
+      ],
+      "falsifier": "scheme-consistent ratios outside declared bands",
+      "frozen_artifact": "theory/bhsm_v1_frozen_prediction_set.json",
+      "independent_inputs": [
+        "S_overlap",
+        "mode_ledger",
+        "alpha_inv_low_energy"
+      ],
+      "lambda5_dependency": false,
+      "locations": [
+        "docs/frozen_predictions.md"
+      ],
+      "operator_domain_source": "OPEN",
+      "parent_action_source": "NOT_REQUIRED_OR_CITED",
+      "retained": true,
+      "status": "RETAINED_CONDITIONAL",
+      "surface": "INTERNAL",
+      "variational_source": "OPEN"
+    },
+    {
+      "benchmark": "CKM references",
+      "blockers": [
+        "RB-06"
+      ],
+      "calibrated_quantities": [],
+      "caveat": "",
+      "claim_class": "FROZEN_SCREEN",
+      "claim_id": "C12",
+      "claim_text": "CKM quantities are frozen internal-rule screens, not action-derived predictions.",
+      "comparison_data": [
+        "published_reference_values"
+      ],
+      "derived_coefficients": [],
+      "evidence": [
+        "src/ckm.py",
+        "src/flavor_matrix.py"
+      ],
+      "falsifier": "CKM screen outside declared bands",
+      "frozen_artifact": "theory/bhsm_v1_frozen_prediction_set.json",
+      "independent_inputs": [
+        "charged_ratio_screens",
+        "S_overlap",
+        "sector_charges"
+      ],
+      "lambda5_dependency": false,
+      "locations": [
+        "docs/frozen_predictions.md"
+      ],
+      "operator_domain_source": "NOT_REQUIRED_OR_CITED",
+      "parent_action_source": "NOT_REQUIRED_OR_CITED",
+      "retained": true,
+      "status": "RETAINED_CONDITIONAL",
+      "surface": "INTERNAL",
+      "variational_source": "NOT_REQUIRED_OR_CITED"
+    },
+    {
+      "benchmark": null,
+      "blockers": [],
+      "calibrated_quantities": [],
+      "caveat": "",
+      "claim_class": "CANDIDATE",
+      "claim_id": "C13",
+      "claim_text": "The Zvirt=1/2 dressed c/t branch is a candidate only.",
+      "comparison_data": [],
+      "derived_coefficients": [],
+      "evidence": [
+        "src/virtual_environment.py"
+      ],
+      "falsifier": null,
+      "frozen_artifact": "theory/bhsm_v1_frozen_prediction_set.json",
+      "independent_inputs": [
+        "Zvirt_candidate"
+      ],
+      "lambda5_dependency": false,
+      "locations": [
+        "docs/frozen_predictions.md"
+      ],
+      "operator_domain_source": "NOT_REQUIRED_OR_CITED",
+      "parent_action_source": "NOT_REQUIRED_OR_CITED",
+      "retained": true,
+      "status": "RETAINED_CANDIDATE",
+      "surface": "INTERNAL",
+      "variational_source": "NOT_REQUIRED_OR_CITED"
+    },
+    {
+      "benchmark": "PMNS references",
+      "blockers": [
+        "RB-07"
+      ],
+      "calibrated_quantities": [],
+      "caveat": "",
+      "claim_class": "EFFECTIVE_EXTENSION",
+      "claim_id": "C14",
+      "claim_text": "PMNS numbers are an effective-extension screen.",
+      "comparison_data": [
+        "published_reference_values"
+      ],
+      "derived_coefficients": [],
+      "evidence": [
+        "src/pmns.py"
+      ],
+      "falsifier": null,
+      "frozen_artifact": "theory/bhsm_v1_frozen_prediction_set.json",
+      "independent_inputs": [
+        "alpha_inv_low_energy"
+      ],
+      "lambda5_dependency": false,
+      "locations": [
+        "docs/frozen_predictions.md"
+      ],
+      "operator_domain_source": "NOT_REQUIRED_OR_CITED",
+      "parent_action_source": "NOT_REQUIRED_OR_CITED",
+      "retained": true,
+      "status": "RETAINED_CONDITIONAL",
+      "surface": "INTERNAL",
+      "variational_source": "NOT_REQUIRED_OR_CITED"
+    },
+    {
+      "benchmark": "electroweak gauge references",
+      "blockers": [
+        "RB-01",
+        "RB-08"
+      ],
+      "calibrated_quantities": [],
+      "caveat": "",
+      "claim_class": "CONDITIONAL_SCREEN",
+      "claim_id": "C15",
+      "claim_text": "Gauge-coupling numbers are conditional geometric screens.",
+      "comparison_data": [
+        "published_reference_values"
+      ],
+      "derived_coefficients": [],
+      "evidence": [
+        "src/gauge_couplings.py"
+      ],
+      "falsifier": null,
+      "frozen_artifact": "theory/bhsm_v1_frozen_prediction_set.json",
+      "independent_inputs": [
+        "gauge_trace_weights"
+      ],
+      "lambda5_dependency": false,
+      "locations": [
+        "docs/frozen_predictions.md"
+      ],
+      "operator_domain_source": "NOT_REQUIRED_OR_CITED",
+      "parent_action_source": "OPEN",
+      "retained": true,
+      "status": "RETAINED_CONDITIONAL",
+      "surface": "INTERNAL",
+      "variational_source": "NOT_REQUIRED_OR_CITED"
+    },
+    {
+      "benchmark": "v and Higgs-mass references",
+      "blockers": [
+        "RB-09",
+        "RB-12",
+        "RB-13"
+      ],
+      "calibrated_quantities": [],
+      "caveat": "",
+      "claim_class": "CONDITIONAL_SCREEN",
+      "claim_id": "C16",
+      "claim_text": "The Higgs/electroweak scale numbers are a conditional screen, not a licensed scale derivation.",
+      "comparison_data": [
+        "published_reference_values"
+      ],
+      "derived_coefficients": [],
+      "evidence": [
+        "src/higgs_scale.py"
+      ],
+      "falsifier": null,
+      "frozen_artifact": "theory/bhsm_v1_frozen_prediction_set.json",
+      "independent_inputs": [
+        "Planck_energy_GeV",
+        "alpha_inv_low_energy"
+      ],
+      "lambda5_dependency": false,
+      "locations": [
+        "docs/frozen_predictions.md"
+      ],
+      "operator_domain_source": "NOT_REQUIRED_OR_CITED",
+      "parent_action_source": "NOT_REQUIRED_OR_CITED",
+      "retained": true,
+      "status": "RETAINED_CONDITIONAL",
+      "surface": "INTERNAL",
+      "variational_source": "NOT_REQUIRED_OR_CITED"
+    },
+    {
+      "benchmark": null,
+      "blockers": [
+        "RB-03",
+        "RB-10"
+      ],
+      "calibrated_quantities": [],
+      "caveat": "",
+      "claim_class": "PROXY",
+      "claim_id": "C17",
+      "claim_text": "The H_T gap result is a finite-basis proxy audit.",
+      "comparison_data": [],
+      "derived_coefficients": [],
+      "evidence": [
+        "src/bhsm_model.py",
+        "theory/bhsm_v1_frozen_prediction_set.json"
+      ],
+      "falsifier": null,
+      "frozen_artifact": "theory/bhsm_v1_frozen_prediction_set.json",
+      "independent_inputs": [],
+      "lambda5_dependency": false,
+      "locations": [
+        "README.md"
+      ],
+      "operator_domain_source": "OPEN",
+      "parent_action_source": "NOT_REQUIRED_OR_CITED",
+      "retained": true,
+      "status": "RETAINED_CONDITIONAL",
+      "surface": "PUBLIC",
+      "variational_source": "OPEN"
+    },
+    {
+      "benchmark": null,
+      "blockers": [
+        "RB-01",
+        "RB-11"
+      ],
+      "calibrated_quantities": [],
+      "caveat": "",
+      "claim_class": "SCAFFOLD",
+      "claim_id": "C18",
+      "claim_text": "Scalar decoupling is a finite-basis conditional scaffold.",
+      "comparison_data": [],
+      "derived_coefficients": [],
+      "evidence": [
+        "src/scalar_decoupling.py",
+        "theory/bhsm_v1_frozen_prediction_set.json"
+      ],
+      "falsifier": null,
+      "frozen_artifact": "theory/bhsm_v1_frozen_prediction_set.json",
+      "independent_inputs": [],
+      "lambda5_dependency": false,
+      "locations": [
+        "README.md"
+      ],
+      "operator_domain_source": "OPEN",
+      "parent_action_source": "OPEN",
+      "retained": true,
+      "status": "RETAINED_CONDITIONAL",
+      "surface": "PUBLIC",
+      "variational_source": "NOT_REQUIRED_OR_CITED"
+    },
+    {
+      "benchmark": null,
+      "blockers": [
+        "RB-09",
+        "RB-12",
+        "RB-13"
+      ],
+      "calibrated_quantities": [],
+      "caveat": "",
+      "claim_class": "NEGATIVE_CLAIM",
+      "claim_id": "C19",
+      "claim_text": "No physical particle mass follows before scale and observable-map closure.",
+      "comparison_data": [],
+      "derived_coefficients": [],
+      "evidence": [
+        "artifacts/BHSM_scale_phase_permission_v6_30_5.json"
+      ],
+      "falsifier": null,
+      "frozen_artifact": null,
+      "independent_inputs": [],
+      "lambda5_dependency": false,
+      "locations": [
+        "CLAIMS.md",
+        "STATUS.md"
+      ],
+      "operator_domain_source": "NOT_REQUIRED_OR_CITED",
+      "parent_action_source": "NOT_REQUIRED_OR_CITED",
+      "retained": true,
+      "status": "RETAINED_CONDITIONAL",
+      "surface": "PUBLIC",
+      "variational_source": "NOT_REQUIRED_OR_CITED"
+    },
+    {
+      "benchmark": null,
+      "blockers": [
+        "RB-16"
+      ],
+      "calibrated_quantities": [],
+      "caveat": "Public packaging does not close scientific gates.",
+      "claim_class": "REPOSITORY_STATUS",
+      "claim_id": "C20",
+      "claim_text": "Repository review readiness is not scientific completion.",
+      "comparison_data": [],
+      "derived_coefficients": [],
+      "evidence": [
+        "docs/github_landing_status.md"
+      ],
+      "falsifier": null,
+      "frozen_artifact": null,
+      "independent_inputs": [],
+      "lambda5_dependency": false,
+      "locations": [
+        "STATUS.md"
+      ],
+      "operator_domain_source": "NOT_REQUIRED_OR_CITED",
+      "parent_action_source": "NOT_REQUIRED_OR_CITED",
+      "retained": true,
+      "status": "RETAINED_CONDITIONAL",
+      "surface": "PUBLIC",
+      "variational_source": "NOT_REQUIRED_OR_CITED"
+    }
+  ],
+  "fitted_parameter_used": false,
+  "frozen_prediction_changed": false,
+  "lambda5_sign_selected": false,
+  "lambda5_value_selected": false,
+  "measured_input_promoted_to_action_input": false,
+  "new_action_term_added": false,
+  "new_scale_added": false,
+  "official_prediction_changed": false,
+  "physical_mass_claimed": false,
+  "primary_verdict": "BHSM_SCALAR_QUARTIC_PARAMETERIZED_NOT_PREDICTED",
+  "scientific_formula_changed": false,
+  "unconditional_stability_claimed": false,
+  "version": "v6.30.8"
+}
