@@ -2548,3 +2548,21 @@ dependencies. The next target is
 `RB-01_UNIFIED_PARENT_ACTION_PROVENANCE`; no v6.31 work is performed.
 
 Exact verdict: `BHSM_SCALAR_QUARTIC_PARAMETERIZED_NOT_PREDICTED`.
+
+<!-- BHSM_COMPLETE_UNIFIED_PARENT_ACTION_V7_0 -->
+## v7.0 complete unified-parent-action attempt
+
+Every historical action architecture and every retained sector has been
+examined in one campaign. The strongest consistent object is
+
+`S8 --R_8to5--> S5|4 --R_5to4--> S4eff`.
+
+The levelwise actions, fields, coefficients, variations, boundaries,
+Hessians, Standard Model term map, and recovery matrix are explicit.
+However, the covariant reduction functor supplying the arrows is absent:
+there is no common sourced field, measure, domain, coefficient, or Hessian
+pushforward. RB-01 is therefore localized but not closed.
+
+Tier A remains blocked and Tiers B/C remain ineligible. Physical scale
+remains open independently. Exact verdict:
+`BHSM_UNIFIED_PARENT_ACTION_BLOCKED_BY_MISSING_COVARIANT_BULK_BOUNDARY_REDUCTION_FUNCTOR_SOURCE`.

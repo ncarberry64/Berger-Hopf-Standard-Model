@@ -286,6 +286,8 @@ from .boundary_matter_dynamics_neutral_response import (
     architecture_status_report as boundary_matter_status_report,
     architecture_status_to_markdown as boundary_matter_status_to_markdown,
 )
+from .master_action import status_payload as master_action_status_payload
+from .master_action import status_to_markdown as master_action_status_to_markdown
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -774,11 +776,25 @@ def build_parser() -> argparse.ArgumentParser:
     topological_fr.add_argument("--format", choices=("json", "markdown"), default="json")
     boundary_matter = commands.add_parser("boundary-matter-neutral-response-status", help="Render the BHSM v6.7.0 boundary-matter variation, domain, cap-spectrum, and neutral-response audit")
     boundary_matter.add_argument("--format", choices=("json", "markdown"), default="json")
+    master_action = commands.add_parser(
+        "master-action-status",
+        help="Render the BHSM v7.0 complete unified-parent-action attempt",
+    )
+    master_action.add_argument(
+        "--format", choices=("json", "markdown"), default="markdown"
+    )
     return parser
 
 
 def main(argv: Sequence[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
+    if args.command == "master-action-status":
+        payload = master_action_status_payload()
+        if args.format == "markdown":
+            print(master_action_status_to_markdown(payload), end="")
+        else:
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        return 0
     registry = default_prediction_registry()
     if args.command == "registry":
         _emit(registry.to_dict(), args.format)

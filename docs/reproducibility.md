@@ -180,3 +180,24 @@ and independent inputs; complete leaf-level frozen-output paths; explicit
 absence of `lambda5`, `G5`, `Z5`, and `kappa1`; a fifteen-node release
 blocker set; RB-02 narrowing; correct scale dependencies; unchanged frozen
 hashes; and a non-closed canonical completion gate.
+
+<!-- BHSM_COMPLETE_UNIFIED_PARENT_ACTION_V7_0 -->
+## Reproducing the v7.0 complete unified-action attempt
+
+```text
+python scripts/materialize_complete_unified_parent_action_v7_0.py
+python -m pytest -q tests/test_bhsm_complete_unified_parent_action_v7_0.py
+python -m bhsm.interface master-action-status --format markdown
+```
+
+When running directly from a checkout that has not been installed, place
+`src` on `PYTHONPATH` for the CLI command. Materialize twice and require
+byte-identical UTF-8/LF output.
+
+The tests cover action reality, dimensions, gauge invariance,
+representation/anomaly consistency, cap orientation, GHY cancellation,
+matcher variation, scalar redefinition invariance, coefficient typing,
+comparison-data exclusion, no double counting, fermion Hermiticity,
+charged adjoint pairing, neutral domains, D0/quartic recovery, Standard
+Model term classification, deterministic artifacts, CLI status, and
+frozen hashes.

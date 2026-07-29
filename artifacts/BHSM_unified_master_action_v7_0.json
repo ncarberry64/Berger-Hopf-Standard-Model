@@ -1,0 +1,225 @@
+{
+  "action_complex": "S_BHSM^max := [ S8 --R_8to5--> S5|4 --R_5to4--> S4eff ]; R_8to5 and R_5to4 are not sourced",
+  "artifact": "BHSM_unified_master_action_v7_0",
+  "bhsm_1_0_release_complete_claimed": false,
+  "comparison_data_used_in_action": false,
+  "exact_missing_object": "COVARIANT_BULK_BOUNDARY_REDUCTION_FUNCTOR",
+  "fitted_parameter_used": false,
+  "frozen_prediction_changed": false,
+  "lambda5_sign_selected": false,
+  "lambda5_value_selected": false,
+  "levels": {
+    "S4_effective": "S4eff=int_M4 sqrt(-h)[-sum_i Tr(F_i^2)/(4 g_i^2)+i barPsi gamma^mu D_mu Psi-barQ_L Y_d H d_R-barQ_L Y_u Htilde u_R-barL_L Y_e H e_R+h.c.+|D H|^2-V(H;lambda5)+L_neu,eff]+DeltaS_BHSM",
+    "S5_relative": "S5|4=sum_{eps=+,-}{int_M5_eps sqrt(-g_eps)[kappa1 R5/2-kappa0/2-Z5|dsigma|^2/2-U5(sigma)]+eps*kappa1 int_B1 sqrt(-gamma_eps) K_eps}+int_B1 sqrt(-h)[C_partial R4+L_B1,matter]+sum_eps int_B1 Lambda_eps^{ab}(h_ab-gamma_eps,ab)",
+    "S8": "S8=int_M8 sqrt(-G)[kappa1 R8/2-kappa0/2-Zchi(1+g sigma^2)|dchi|^2/2-Zsigma|dsigma|^2/2-A0 sigma^2/2-G0 sigma^4/4]"
+  },
+  "maps": {
+    "R_5to4": null,
+    "R_8to5": null
+  },
+  "master_action_closed": false,
+  "official_prediction_changed": false,
+  "physical_mass_claimed": false,
+  "physical_scale_claimed": false,
+  "quantum_EFT_classification": {
+    "S4_effective": "classical four-dimensional EFT",
+    "S5_relative": "classical constrained-gravity relative action",
+    "S8": "classical higher-dimensional provisional EFT",
+    "cutoff_required_for_higher_dimension_operators": true,
+    "quantum_fundamental_claim": false
+  },
+  "quantum_completion_claimed": false,
+  "source_main_sha": "c7abad29688839add1ab06480b0a284c442d6a70",
+  "sprint": "bhsm-complete-unified-parent-action-v7-0",
+  "terms": [
+    {
+      "coefficient": "kappa1",
+      "expression": "int sqrt(-G) kappa1 R8/2",
+      "fields": [
+        "G_AB"
+      ],
+      "gauge_invariant": true,
+      "level": "S8",
+      "mass_dimension_closed": true,
+      "real": true,
+      "term_id": "T8_EH",
+      "variation_used": "E8_AB=0"
+    },
+    {
+      "coefficient": "kappa0",
+      "expression": "-int sqrt(-G) kappa0/2",
+      "fields": [
+        "G_AB"
+      ],
+      "gauge_invariant": true,
+      "level": "S8",
+      "mass_dimension_closed": true,
+      "real": true,
+      "term_id": "T8_vacuum",
+      "variation_used": "vacuum stress"
+    },
+    {
+      "coefficient": "Zchi,g",
+      "expression": "-int sqrt(-G) Zchi(1+g sigma^2)|dchi|^2/2",
+      "fields": [
+        "G_AB",
+        "chi",
+        "sigma"
+      ],
+      "gauge_invariant": true,
+      "level": "S8",
+      "mass_dimension_closed": true,
+      "real": true,
+      "term_id": "T8_carrier",
+      "variation_used": "chi and sigma equations"
+    },
+    {
+      "coefficient": "Zsigma,A0,G0",
+      "expression": "-int sqrt(-G)[Zsigma|dsigma|^2/2+A0 sigma^2/2+G0 sigma^4/4]",
+      "fields": [
+        "G_AB",
+        "sigma"
+      ],
+      "gauge_invariant": true,
+      "level": "S8",
+      "mass_dimension_closed": true,
+      "real": true,
+      "term_id": "T8_scalar",
+      "variation_used": "bulk scalar equation"
+    },
+    {
+      "coefficient": "kappa1,kappa0,Z5,A5,G5",
+      "expression": "sum_eps int_M5_eps sqrt(-g_eps)[kappa1 R5/2-kappa0/2-Z5|dsigma|^2/2-U5]",
+      "fields": [
+        "g_eps",
+        "sigma"
+      ],
+      "gauge_invariant": true,
+      "level": "S5|4",
+      "mass_dimension_closed": true,
+      "real": true,
+      "term_id": "T5_caps",
+      "variation_used": "cap Einstein/scalar equations"
+    },
+    {
+      "coefficient": "kappa1",
+      "expression": "sum_eps eps kappa1 int_B1 sqrt(-gamma_eps) K_eps",
+      "fields": [
+        "g_eps"
+      ],
+      "gauge_invariant": true,
+      "level": "S5|4",
+      "mass_dimension_closed": true,
+      "real": true,
+      "term_id": "T5_GHY",
+      "variation_used": "normal-derivative cancellation and canonical momentum"
+    },
+    {
+      "coefficient": "C_partial plus typed EFT inputs",
+      "expression": "int_B1 sqrt(-h)[C_partial R4+L_B1,matter]",
+      "fields": [
+        "h_ab",
+        "A_i",
+        "Psi",
+        "sigma"
+      ],
+      "gauge_invariant": true,
+      "level": "S5|4",
+      "mass_dimension_closed": true,
+      "real": true,
+      "term_id": "T4_B1",
+      "variation_used": "intrinsic B1 equations"
+    },
+    {
+      "coefficient": "redundant multiplier normalization",
+      "expression": "sum_eps int_B1 Lambda_eps^{ab}(h_ab-gamma_eps,ab)",
+      "fields": [
+        "Lambda_eps",
+        "h_ab",
+        "g_eps"
+      ],
+      "gauge_invariant": true,
+      "level": "S5|4",
+      "mass_dimension_closed": true,
+      "real": true,
+      "term_id": "T4_matcher",
+      "variation_used": "exact metric matching and reaction"
+    },
+    {
+      "coefficient": "g1,g2,g3",
+      "expression": "-int sqrt(-h) sum_i Tr(F_i^2)/(4 g_i^2)",
+      "fields": [
+        "A_i",
+        "h_ab"
+      ],
+      "gauge_invariant": true,
+      "level": "S4eff",
+      "mass_dimension_closed": true,
+      "real": true,
+      "term_id": "T4_gauge",
+      "variation_used": "Yang-Mills equations and stress"
+    },
+    {
+      "coefficient": "canonical",
+      "expression": "int sqrt(-h) i barPsi gamma^mu D_mu Psi",
+      "fields": [
+        "Psi",
+        "A_i",
+        "h_ab"
+      ],
+      "gauge_invariant": true,
+      "level": "S4eff",
+      "mass_dimension_closed": true,
+      "real": true,
+      "term_id": "T4_fermion",
+      "variation_used": "Dirac equations and currents"
+    },
+    {
+      "coefficient": "Y_u,Y_d,Y_e",
+      "expression": "-int sqrt(-h)[barQ_L Y_d H d_R+barQ_L Y_u Htilde u_R+barL_L Y_e H e_R+h.c.]",
+      "fields": [
+        "Psi",
+        "H"
+      ],
+      "gauge_invariant": true,
+      "level": "S4eff",
+      "mass_dimension_closed": true,
+      "real": true,
+      "term_id": "T4_Yukawa",
+      "variation_used": "fermion and scalar sources"
+    },
+    {
+      "coefficient": "lambda5 and quadratic input",
+      "expression": "int sqrt(-h)[|D H|^2-V(H;lambda5)]",
+      "fields": [
+        "H",
+        "A_i"
+      ],
+      "gauge_invariant": true,
+      "level": "S4eff",
+      "mass_dimension_closed": true,
+      "real": true,
+      "term_id": "T4_scalar",
+      "variation_used": "scalar equation and reduced quartic"
+    },
+    {
+      "coefficient": "Z_neu,A_neu,g_neu",
+      "expression": "int sqrt(-h)[Z_neu|D N|^2/2-A_neu N^2/2+g_neu N.R]",
+      "fields": [
+        "N_neu",
+        "Psi",
+        "sigma"
+      ],
+      "gauge_invariant": true,
+      "level": "DeltaS4",
+      "mass_dimension_closed": true,
+      "real": true,
+      "term_id": "T4_neutral_aux",
+      "variation_used": "conditional neutral response equation"
+    }
+  ],
+  "unconditional_stability_claimed": false,
+  "unified_parent_action_claimed_closed": false,
+  "verdict": "BHSM_UNIFIED_PARENT_ACTION_BLOCKED_BY_MISSING_COVARIANT_BULK_BOUNDARY_REDUCTION_FUNCTOR_SOURCE",
+  "version": "v7.0"
+}

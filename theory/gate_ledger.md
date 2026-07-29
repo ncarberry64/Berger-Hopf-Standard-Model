@@ -57,3 +57,15 @@ The current release critical path begins at
 `RB-01_UNIFIED_PARENT_ACTION_PROVENANCE`. The full fifteen-blocker graph is
 `artifacts/BHSM_release_blocker_DAG_v6_30_8.json`; scale permission remains
 closed independently of the scalar-quartic input.
+
+## v7.0 unified-parent-action gate
+
+The full RB-01 attempt yields a maximal action complex
+`S8 -> S5|4 -> S4eff`, not a closed parent action. The exact missing object
+is the covariant bulk-boundary reduction functor carrying all field,
+bundle, measure, orientation, domain, coefficient, and Hessian data.
+
+RB-01 status: `BLOCKED_EXACT_OBJECT_LOCALIZED`.
+
+Exact verdict:
+`BHSM_UNIFIED_PARENT_ACTION_BLOCKED_BY_MISSING_COVARIANT_BULK_BOUNDARY_REDUCTION_FUNCTOR_SOURCE`.

@@ -1,0 +1,87 @@
+{
+  "Hessian_blocks": [
+    {
+      "adjoint_domain": "same after endpoint conditions",
+      "block": "M8_gravity_scalar",
+      "domain": "H2 metric intersect gauge slice; H1 scalars",
+      "kernel": "diffeomorphism zero modes plus background moduli",
+      "operator": "gauge-fixed Lovelock/P1 metric-scalar Hessian",
+      "positivity": "not established",
+      "status": "PROVISIONAL"
+    },
+    {
+      "adjoint_domain": "explicit v6.30.2 KKT domain",
+      "block": "D0_fixed_h",
+      "domain": "regular pole, fixed h, scalar Dirichlet trace, matcher reaction",
+      "kernel": "one scalar Jacobi mode before amplitude quotient",
+      "operator": "radial Sturm-Liouville plus finite-rank matcher KKT block",
+      "positivity": "conditional quartic inequality",
+      "status": "RECOVERED_EXACTLY"
+    },
+    {
+      "adjoint_domain": "same for absolute/relative elliptic choice",
+      "block": "gauge",
+      "domain": "H2 coexact gauge slice with declared boundary condition",
+      "kernel": "flat/stabilizer connections",
+      "operator": "d_A^dagger d_A plus curvature on coexact adjoint one-forms",
+      "positivity": "nonnegative principal block",
+      "status": "EFT_LEVEL_ONLY"
+    },
+    {
+      "adjoint_domain": "equals domain by input choice",
+      "block": "fermion",
+      "domain": "H1 maximal-isotropic/self-adjoint Dirac domain",
+      "kernel": "chiral zero modes representation dependent",
+      "operator": "i slashD_A plus Yukawa background",
+      "positivity": "indefinite first-order Hermitian",
+      "status": "DOMAIN_FAMILY_NOT_PARENT_SELECTED"
+    },
+    {
+      "adjoint_domain": "Hermitian adjoint pair",
+      "block": "charged",
+      "domain": "gauge x Dirac domains",
+      "kernel": "gauge zero modes",
+      "operator": "SU2 gauge-fermion Hessian and Yukawa flavor off-diagonal blocks",
+      "positivity": "indefinite saddle",
+      "status": "EFT_DERIVED"
+    },
+    {
+      "adjoint_domain": "boundary-condition dependent",
+      "block": "neutral_response",
+      "domain": "H2 intersect response cone",
+      "kernel": "coefficient dependent",
+      "operator": "-Z_neu D2-A_neu on declared cone",
+      "positivity": "conditional on Z_neu and cone inequality",
+      "status": "EFFECTIVE_CONDITIONAL"
+    },
+    {
+      "adjoint_domain": null,
+      "block": "cross_level",
+      "domain": null,
+      "kernel": null,
+      "operator": null,
+      "positivity": null,
+      "status": "MISSING_REDUCTION_INTERTWINER"
+    }
+  ],
+  "artifact": "BHSM_master_hessian_operator_map_v7_0",
+  "bhsm_1_0_release_complete_claimed": false,
+  "closed_range_cross_level_unproved": true,
+  "comparison_data_used_in_action": false,
+  "fitted_parameter_used": false,
+  "fixed_h_D0_recovered": true,
+  "frozen_prediction_changed": false,
+  "full_master_Hessian_exists": false,
+  "lambda5_sign_selected": false,
+  "lambda5_value_selected": false,
+  "obstruction": "No R_* intertwines levelwise Hessians or their domains.",
+  "official_prediction_changed": false,
+  "physical_mass_claimed": false,
+  "physical_scale_claimed": false,
+  "quantum_completion_claimed": false,
+  "source_main_sha": "c7abad29688839add1ab06480b0a284c442d6a70",
+  "sprint": "bhsm-complete-unified-parent-action-v7-0",
+  "unconditional_stability_claimed": false,
+  "unified_parent_action_claimed_closed": false,
+  "version": "v7.0"
+}

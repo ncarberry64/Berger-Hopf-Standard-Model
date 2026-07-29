@@ -256,3 +256,19 @@ highest-upstream scientific target is unified parent-action provenance.
 
 Current exact verdict:
 `BHSM_SCALAR_QUARTIC_PARAMETERIZED_NOT_PREDICTED`.
+
+## v7.0 authoritative parent-action status
+
+The entire RB-01 action inventory has been attempted. The repository
+supports three levelwise objects: the provisional \(M_8\) scalar-gravity
+action, the \(M_5|B_1\) two-cap constrained-gravity action, and a finite
+input \(M_4\) EFT. It does not supply the covariant reduction functor that
+would make them one hierarchy.
+
+All gauge, fermion, scalar, charged, neutral, projector, generation,
+measure, normalization, and scale terms have been attached, retired, or
+typed. RB-01 remains release blocking but is now localized to that single
+cross-level object. Scale and downstream completion gates remain open.
+
+Current exact verdict:
+`BHSM_UNIFIED_PARENT_ACTION_BLOCKED_BY_MISSING_COVARIANT_BULK_BOUNDARY_REDUCTION_FUNCTOR_SOURCE`.

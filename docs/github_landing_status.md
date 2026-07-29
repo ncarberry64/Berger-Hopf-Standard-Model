@@ -38,3 +38,9 @@ dependency, so its selection is required for a parameter-free extension,
 not for parameterized BHSM 1.0. The repository is still not Core Complete,
 Physical Complete, or internally complete/external-review ready: fifteen
 upstream release blockers remain and scale permission is still denied.
+
+The v7.0 complete action campaign examines all of RB-01 in one branch. It
+does not close the parent action. It identifies a single exact missing
+covariant reduction functor connecting the provisional \(M_8\), two-cap
+\(M_5|B_1\), and finite-input \(M_4\) actions. Repository readiness remains
+distinct from scientific completion.
