@@ -1,5 +1,10 @@
 # Gate Ledger
 
+Current cumulative status: Tier A is `BHSM_CORE_COMPLETE`. The single
+dimensionful bridge is typed by the common calibration `ell_star`. Tier B is
+blocked by `COMMON_SCHEME_OBSERVABLE_TRANSPORT_FUNCTOR`; the detailed table
+below preserves historical gate provenance.
+
 | Gate | Status | Repository Check |
 | --- | --- | --- |
 | Hypercharge derivation | Conditional | `tests/test_hypercharges.py` |
@@ -69,3 +74,16 @@ RB-01 status: `BLOCKED_EXACT_OBJECT_LOCALIZED`.
 
 Exact verdict:
 `BHSM_UNIFIED_PARENT_ACTION_BLOCKED_BY_MISSING_COVARIANT_BULK_BOUNDARY_REDUCTION_FUNCTOR_SOURCE`.
+## v7.1 covariant correspondence gate
+
+`RB_01_UNIFIED_PARENT_ACTION_PROVENANCE_CLOSED`.
+
+The authoritative structure combines the oriented quaternionic Hopf
+pushforward, an independent two-cap target-stratum action, intrinsic M4
+Standard Model fields, and covariant compatibility multipliers. The fixed-h
+`D0` domain and its KKT block are recovered without modification.
+
+Tier A: `BHSM_CORE_COMPLETE`.
+
+Tier B exact blocker:
+`COMMON_SCHEME_OBSERVABLE_TRANSPORT_FUNCTOR`.

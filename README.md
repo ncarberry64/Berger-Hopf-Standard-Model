@@ -37,12 +37,15 @@ as evidence and provenance, not competing current-status pages.
 | Homogeneous threading | Adopted BHSM axiom | `C_Sigma=0` in the source-free resting configuration. |
 | Lapse--Weyl block | Derived consequence | The principal bulk block and radial measure are action-derived. |
 | Fold kinetic classification | Active construction target | Mixed source, boundary domain, Schur complement, and sign remain open. |
-| Complete physical action | Active construction target | Several sectors are explicit; the complete four-dimensional action is not. |
+| Dimensionless core action | Internally complete, finite-input stratified EFT | The v7.1 correspondence action owns every retained term; physical scheme/observable transport remains open. |
 | External physics test | Needs empirical test | Engine tests do not validate BHSM particle physics. |
 
 The threading response is derived and no explicit energy threshold is
-required. The lapse--Weyl principal block is derived. The exact active target
-is the gauge-quotiented metric tangent
+required. The lapse--Weyl principal block is derived. The historical fold
+target below remains a conditional operator problem, but it is no longer the
+highest-upstream BHSM 1.0 gate. The live target is the common
+scheme/observable transport functor identified by v7.1. The fold construction
+had targeted the gauge-quotiented metric tangent
 
 ```text
 T_mu_nu^(X) (x,x')
@@ -166,8 +169,9 @@ For critique or changes, read [CONTRIBUTING.md](CONTRIBUTING.md), use the
 [bug template](.github/ISSUE_TEMPLATE/bug-report.yml), and route security
 reports through [SECURITY.md](SECURITY.md).
 
-The authoritative unified-action assessment is the
-[v7.0 complete parent-action attempt](docs/bhsm_complete_unified_parent_action_v7_0.md).
-It constructs the maximal \(M_8\to M_5|M_4\to M_4\) action complex and
-localizes the exact missing covariant reduction functor. It does not claim
-a closed unified parent action or a completed Standard Model derivation.
+The authoritative action assessment is the
+[v7.1 covariant bulk--boundary reduction](docs/bhsm_covariant_bulk_boundary_reduction_functor_v7_1.md).
+It constructs the oriented \(M_8\to M_5\) pushforward on the retained
+subcategory and adopts a stratified correspondence action for independently
+owned cap and boundary-localized fields. The dimensionless finite-input core
+is internally closed; physical scheme/observable transport remains open.

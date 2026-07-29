@@ -1468,3 +1468,13 @@ Doctrine and manuscript chapter:
 
 - `docs/bhsm_complete_unified_parent_action_v7_0.md`
 - `docs/BHSM_UNIFIED_MASTER_ACTION_CHAPTER.md`
+## BHSM v7.1 covariant reduction
+
+- `artifacts/BHSM_covariant_bulk_boundary_reduction_functor_v7_1.json`:
+  authoritative geometry maps, normalized and physical pushforwards,
+  stratified action, field/coefficient/projector ownership, variational and
+  Hessian intertwiners, live completion DAG, one-scale bridge, and the exact
+  Tier-B obstruction.
+- `artifacts/BHSM_1_0_completion_gate.json`: canonical v7.1 completion gate
+  with Tier A complete and Tier B blocked by the common scheme/observable
+  transport functor.

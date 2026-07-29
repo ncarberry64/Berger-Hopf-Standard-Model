@@ -778,7 +778,7 @@ def build_parser() -> argparse.ArgumentParser:
     boundary_matter.add_argument("--format", choices=("json", "markdown"), default="json")
     master_action = commands.add_parser(
         "master-action-status",
-        help="Render the BHSM v7.0 complete unified-parent-action attempt",
+        help="Render the BHSM v7.1 covariant stratified master action",
     )
     master_action.add_argument(
         "--format", choices=("json", "markdown"), default="markdown"

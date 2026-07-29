@@ -32,11 +32,12 @@ Tier A requires:
 
 The only permitted Tier-A verdict is `BHSM_CORE_COMPLETE`.
 
-Current status: **blocked**. The parent-action, sector-domain, charged
-hierarchy, charged-lepton, CKM, neutrino, gauge, boundary
-measure, and retained scalar/topographic dependencies are not all closed.
-The scalar quartic is an explicit independent input to a parameterized
-theory; selecting it is required only for a parameter-free extension.
+Current status: **complete at v7.1**. The finite-input stratified
+correspondence action owns every retained sector, and every domain,
+projector, measure, and dimensionless coefficient is derived, typed,
+classified as conditional, or removed from the official core claim set.
+The scalar quartic remains an explicit independent input; selecting it is
+required only for a parameter-free extension.
 
 ## Tier B — BHSM Physical Complete
 
@@ -63,7 +64,10 @@ One universal dimensionful calibration is permitted only if:
 6. no dimensionless coefficient is fitted;
 7. no sector-specific retuning occurs.
 
-Current status: **not eligible because Tier A is blocked**.
+Current status: **blocked by the exact independent object
+`COMMON_SCHEME_OBSERVABLE_TRANSPORT_FUNCTOR`**. The one-scale bridge is
+typed as a single common calibration `ell_star`, but no common quantum
+scheme, threshold, running, and observable map has been supplied.
 
 ## Tier C — Internally Complete / External Review Ready
 
@@ -87,17 +91,19 @@ Current status: **not eligible because Tier B is blocked**.
 
 | Gate | Required result | Current status |
 | --- | --- | --- |
-| G1 Parent action | every retained sector attached to one frozen action with coefficient provenance | blocked |
-| G2 Mathematical legitimacy | valid domains, variations, boundaries, gauges, adjoints, kernels, inverses, and needed nonlinear reductions | partial |
-| G3 Standard Model structure | every retained structural claim derived or removed | blocked |
-| G4 Parameter and scale closure | every dimensionless prediction derived; scale action-derived or one transparent universal calibration | blocked |
+| G1 Parent action | every retained sector attached to one frozen action with coefficient provenance | complete: stratified correspondence action |
+| G2 Mathematical legitimacy | valid domains, variations, boundaries, gauges, adjoints, kernels, inverses, and needed nonlinear reductions | complete for retained core |
+| G3 Standard Model structure | every retained structural claim derived or removed | complete for finite-input core |
+| G4 Parameter and scale closure | every dimensionless prediction derived; scale action-derived or one transparent universal calibration | scale bridge complete; scheme/observable transport blocked |
 | G5 Finite validation and prediction set | typed benchmark suite, novel predictions, and falsification criteria frozen | downstream blocked |
 | G6 Reproducibility and release | clean regeneration of headline artifacts and manuscript | partial/downstream |
 
 The machine-readable gate and dependency records are:
 
 - `artifacts/BHSM_1_0_completion_gate.json`;
-- `artifacts/BHSM_release_blocker_DAG.json`;
+- the `completion_DAG` section of
+  `artifacts/BHSM_covariant_bulk_boundary_reduction_functor_v7_1.json`
+  (the older `BHSM_release_blocker_DAG*.json` files remain historical);
 - `artifacts/BHSM_scope_relevance_registry.json`.
 
 ## Release-relevance firewall

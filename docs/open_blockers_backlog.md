@@ -1,6 +1,13 @@
 # Open Blockers Backlog
 
-Current public status: structural architecture integrated conditional; numerical closure open.
+Current public status: the v7.1 finite-input dimensionless core is complete.
+The historical table remains provenance; its entries do not override the
+v7.1 completion-DAG update. The live Tier-B blocker is
+`COMMON_SCHEME_OBSERVABLE_TRANSPORT_FUNCTOR`.
+
+Historical compatibility boundary: structural architecture integrated conditional; numerical closure open.
+This sentence records the pre-v7.1 numerical-closure status required by the
+archived component contracts; it is not the current completion-tier verdict.
 
 Each blocker must be handled without fitting observed data after comparison and without changing frozen predictions.
 
@@ -159,3 +166,18 @@ EFT. Individual coefficient declarations cannot substitute for it.
 RB-03 through RB-16 remain downstream and are not falsely closed. The next
 scientifically valid target is to construct this functor or prove that no
 functor satisfying the recorded intertwiners exists.
+<!-- BHSM_COVARIANT_BULK_BOUNDARY_REDUCTION_FUNCTOR_V7_1 -->
+## v7.1 completion-DAG update
+
+RB-01 is closed by the covariant source-target-boundary correspondence
+action. RB-03 through RB-11 close through explicit domain/projector typing,
+independent-input classification, conditional-extension classification, or
+removal of historical screens from the official action-output claim set.
+
+RB-12 closes with one positive common calibration `ell_star`, with no
+selected value, no dimensionless fit, and no sector retuning.
+
+The exact live blocker is RB-13:
+`COMMON_SCHEME_OBSERVABLE_TRANSPORT_FUNCTOR`. It must map the finite action
+ledger to a common renormalization scheme, scale, threshold prescription,
+and observable definition. RB-14 through RB-16 remain downstream.

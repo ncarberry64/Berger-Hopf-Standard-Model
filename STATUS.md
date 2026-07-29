@@ -8,9 +8,10 @@ evidence, not competing public status pages.
 BHSM is an artifact-backed mathematical and computational research framework,
 not a replacement for the Standard Model established by empirical tests. Frozen
 internal prediction records, executable interfaces, deterministic artifacts,
-and extensive geometric/action calculations exist, while the complete
-physical four-dimensional action, independently normalized couplings and
-scales, and empirical validation remain active work.
+and extensive geometric/action calculations exist. The v7.1 finite-input
+dimensionless stratified action is internally complete, while the common
+physical scheme/observable transport, numerical calibration, and empirical
+validation remain active work.
 
 Preferred current classifications are: **Adopted from established
 physics/mathematics**, **Adopted BHSM axiom**, **BHSM identification**,
@@ -2566,3 +2567,30 @@ pushforward. RB-01 is therefore localized but not closed.
 Tier A remains blocked and Tiers B/C remain ineligible. Physical scale
 remains open independently. Exact verdict:
 `BHSM_UNIFIED_PARENT_ACTION_BLOCKED_BY_MISSING_COVARIANT_BULK_BOUNDARY_REDUCTION_FUNCTOR_SOURCE`.
+## v7.1 covariant reduction and core completion
+
+The authoritative action is now the covariant stratified correspondence
+described in
+`docs/bhsm_covariant_bulk_boundary_reduction_functor_v7_1.md`.
+The maps are
+`pi_85=id_I x p_H:I_t x S7->I_t x S4` and the equatorial cap inclusion
+`iota_54:M4=I_t x S3->M5`, with explicit oriented fiber, cap, seam, and
+collar measures.
+
+Physical fiber integration is retained for genuinely descended invariant or
+associated-bundle modes. The historical cap action is not falsely equated
+with that pushforward: its constant Einstein coefficient omits the
+dynamical fiber-volume/radion terms. Instead, the cap action and intrinsic
+M4 Standard Model action have independent stratum ownership and are linked
+to the source geometry by covariant compatibility multipliers.
+
+RB-01 and its Tier-A descendants RB-03 through RB-11 are closed by explicit
+transport, finite input typing, conditional-extension classification, or
+removal of screen-only quantities from the official core claim set.
+`BHSM_CORE_COMPLETE` is therefore the current Tier-A result. One common
+symbolic calibration `ell_star` supplies the permitted scale bridge without
+a numerical value or dimensionless fit.
+
+Tier B remains blocked by the exact independent object
+`COMMON_SCHEME_OBSERVABLE_TRANSPORT_FUNCTOR`. No physical-completion or
+BHSM 1.0 release-completion claim is made.

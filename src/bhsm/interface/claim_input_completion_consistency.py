@@ -420,9 +420,9 @@ def historical_canonical_completion_gate_payload() -> dict[str, Any]:
 
 
 def canonical_completion_gate_payload() -> dict[str, Any]:
-    """Return the v7.0-reconciled canonical completion gate."""
+    """Return the current master-action completion gate."""
 
-    from bhsm.interface.master_action.validation import (
+    from bhsm.interface.master_action.reduction import (
         canonical_completion_gate_payload as current_payload,
     )
 

@@ -215,14 +215,14 @@ def test_nineteen_required_artifacts_are_deterministic_and_current():
             json.loads(content)
 
 
-def test_materializer_is_idempotent_and_canonical_gate_is_v7():
+def test_materializer_is_idempotent_and_canonical_gate_is_current():
     script = ROOT / "scripts" / "materialize_complete_unified_parent_action_v7_0.py"
     subprocess.run([sys.executable, str(script)], cwd=ROOT, check=True)
     first = master_action.artifact_bytes()
     subprocess.run([sys.executable, str(script)], cwd=ROOT, check=True)
     assert first == master_action.artifact_bytes()
     canonical = json.loads((ROOT / "artifacts" / "BHSM_1_0_completion_gate.json").read_text(encoding="utf-8"))
-    assert canonical["version"] == "v7.0"
+    assert canonical["version"] == "v7.1"
 
 
 def test_cli_reports_action_terms_inputs_reduction_and_verdict():
@@ -238,8 +238,13 @@ def test_cli_reports_action_terms_inputs_reduction_and_verdict():
     )
     payload = json.loads(result.stdout)
     assert payload["validation_passed"] is True
-    assert payload["RB01_verdict"] == master_action.VERDICT
-    assert len(payload["attached_sectors"]) == 8
+    assert payload["RB01_result"] == (
+        "RB_01_UNIFIED_PARENT_ACTION_PROVENANCE_CLOSED"
+    )
+    assert payload["core_result"] == "BHSM_CORE_COMPLETE"
+    assert payload["remaining_exact_object"] == (
+        "COMMON_SCHEME_OBSERVABLE_TRANSPORT_FUNCTOR"
+    )
 
 
 def test_frozen_prediction_integrity_is_exact():

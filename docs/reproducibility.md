@@ -201,3 +201,15 @@ comparison-data exclusion, no double counting, fermion Hermiticity,
 charged adjoint pairing, neutral domains, D0/quartic recovery, Standard
 Model term classification, deterministic artifacts, CLI status, and
 frozen hashes.
+## BHSM v7.1 reduction record
+
+From an uninstalled checkout:
+
+```powershell
+$env:PYTHONPATH=(Resolve-Path 'src').Path
+python scripts/materialize_covariant_bulk_boundary_reduction_functor_v7_1.py
+python -m bhsm.interface master-action-status --format markdown
+```
+
+The materializer updates only the single v7.1 reduction artifact and the
+canonical completion gate.

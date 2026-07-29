@@ -107,14 +107,15 @@ def test_next_target_is_highest_upstream_parent_action():
     assert rb01["depends_on"] == []
 
 
-def test_completion_gate_is_corrected_but_not_closed():
+def test_completion_gate_tracks_current_v7_1_tier_status():
     payload = audit.canonical_completion_gate_payload()
-    assert payload["version"] == "v7.0"
+    assert payload["version"] == "v7.1"
     assert payload["BHSM_1_0_release_complete"] is False
     assert payload["next_highest_upstream_blocker"] == (
-        "CONSTRUCT_OR_RULE_OUT_COVARIANT_BULK_BOUNDARY_REDUCTION_FUNCTOR"
+        "COMMON_SCHEME_OBSERVABLE_TRANSPORT_FUNCTOR"
     )
-    assert payload["RB01"]["status"] == "BLOCKED_EXACT_OBJECT_LOCALIZED"
+    assert payload["RB01"]["status"] == "CLOSED"
+    assert payload["current_tier_status"]["Tier_A"] == "COMPLETE"
     assert payload["parameter_free_extension_blocker"] == "RB-02"
 
 
@@ -151,4 +152,4 @@ def test_materializer_is_idempotent_and_updates_canonical_gate():
     canonical_second = (ROOT / "artifacts" / "BHSM_1_0_completion_gate.json").read_bytes()
     assert first == second == audit.artifact_bytes(ROOT)
     assert canonical_first == canonical_second
-    assert json.loads(canonical_second)["version"] == "v7.0"
+    assert json.loads(canonical_second)["version"] == "v7.1"
