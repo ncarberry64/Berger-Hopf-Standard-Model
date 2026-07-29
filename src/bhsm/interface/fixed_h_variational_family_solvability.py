@@ -492,6 +492,33 @@ def second_order_numerical_diagnostics() -> dict[str, Any]:
         shooting_du_j = shooting_norm * shooting_raw(endpoint_float, 1)
         shooting_A2_j = -(shooting_du_j**2) / 12
         shooting_eta2_j = 2 * shooting_du_j**2
+        observed_differences = {
+            "mu_difference": abs(float(hyper_mu) - shooting_mu),
+            "normalization_difference": abs(
+                float(hyper_norm) - shooting_norm
+            ),
+            "A2_endpoint_difference": abs(
+                float(hyper_A2_j) - shooting_A2_j
+            ),
+            "eta2_endpoint_difference": abs(
+                float(hyper_eta2_j) - shooting_eta2_j
+            ),
+            "A2_profile_max_difference_33_nodes": max(
+                profile_differences
+            ),
+        }
+        certified_bounds = {
+            "mu_difference": 5.0e-13,
+            "normalization_difference": 5.0e-13,
+            "A2_endpoint_difference": 2.0e-12,
+            "eta2_endpoint_difference": 5.0e-11,
+            "A2_profile_max_difference_33_nodes": 2.0e-12,
+        }
+        for key, observed in observed_differences.items():
+            if not observed < certified_bounds[key]:
+                raise RuntimeError(
+                    f"{key}={observed} exceeds {certified_bounds[key]}"
+                )
 
         return {
             "normalization": "Z5/kappa1=1 representative; u1 has unit weighted norm",
@@ -522,21 +549,40 @@ def second_order_numerical_diagnostics() -> dict[str, Any]:
                 "eta2_endpoint": stable(shooting_eta2_j),
             },
             "agreement": {
-                "mu_difference": stable(
-                    abs(float(hyper_mu) - shooting_mu)
+                "serialization_policy": (
+                    "store cross-platform certified bounds, not unstable "
+                    "raw last-bit method differences"
                 ),
-                "normalization_difference": stable(
-                    abs(float(hyper_norm) - shooting_norm)
-                ),
-                "A2_endpoint_difference": stable(
-                    abs(float(hyper_A2_j) - shooting_A2_j)
-                ),
-                "eta2_endpoint_difference": stable(
-                    abs(float(hyper_eta2_j) - shooting_eta2_j)
-                ),
-                "A2_profile_max_difference_33_nodes": stable(
-                    max(profile_differences)
-                ),
+                "mu_difference": {
+                    "relation": "<",
+                    "certified_upper_bound": certified_bounds[
+                        "mu_difference"
+                    ],
+                },
+                "normalization_difference": {
+                    "relation": "<",
+                    "certified_upper_bound": certified_bounds[
+                        "normalization_difference"
+                    ],
+                },
+                "A2_endpoint_difference": {
+                    "relation": "<",
+                    "certified_upper_bound": certified_bounds[
+                        "A2_endpoint_difference"
+                    ],
+                },
+                "eta2_endpoint_difference": {
+                    "relation": "<",
+                    "certified_upper_bound": certified_bounds[
+                        "eta2_endpoint_difference"
+                    ],
+                },
+                "A2_profile_max_difference_33_nodes": {
+                    "relation": "<",
+                    "certified_upper_bound": certified_bounds[
+                        "A2_profile_max_difference_33_nodes"
+                    ],
+                },
             },
             "residual_bounds": {
                 "regular_pole_A2": "A2=O(rho^2) exactly",

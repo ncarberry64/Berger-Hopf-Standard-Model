@@ -90,11 +90,27 @@
     },
     "numerical_validation": {
       "agreement": {
-        "A2_endpoint_difference": 9.7699626167014e-14,
-        "A2_profile_max_difference_33_nodes": 1.2256862191862e-13,
-        "eta2_endpoint_difference": 2.3305801732931e-12,
-        "mu_difference": 0.0,
-        "normalization_difference": 0.0
+        "A2_endpoint_difference": {
+          "certified_upper_bound": 2e-12,
+          "relation": "<"
+        },
+        "A2_profile_max_difference_33_nodes": {
+          "certified_upper_bound": 2e-12,
+          "relation": "<"
+        },
+        "eta2_endpoint_difference": {
+          "certified_upper_bound": 5e-11,
+          "relation": "<"
+        },
+        "mu_difference": {
+          "certified_upper_bound": 5e-13,
+          "relation": "<"
+        },
+        "normalization_difference": {
+          "certified_upper_bound": 5e-13,
+          "relation": "<"
+        },
+        "serialization_policy": "store cross-platform certified bounds, not unstable raw last-bit method differences"
       },
       "complement_gap": 64.0147366689857,
       "condition_measure": "positive scalar complement gap and algebraic metric coefficient -12 kappa1 cot(rho)^2; no near-zero inversion",

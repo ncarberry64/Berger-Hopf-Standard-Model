@@ -140,19 +140,44 @@ def test_two_method_precision_and_profile_agreement():
     diagnostics = solve.second_order_numerical_diagnostics()
     assert len(diagnostics["methods"]) == 2
     assert diagnostics["hypergeometric"]["dps"] == 60
-    assert diagnostics["agreement"]["mu_difference"] < 1.0e-12
-    assert diagnostics["agreement"]["A2_endpoint_difference"] < 1.0e-11
     assert (
-        diagnostics["agreement"]["A2_profile_max_difference_33_nodes"]
-        < 2.0e-12
+        diagnostics["agreement"]["mu_difference"]["certified_upper_bound"]
+        <= 5.0e-13
+    )
+    assert (
+        diagnostics["agreement"]["A2_endpoint_difference"][
+            "certified_upper_bound"
+        ]
+        <= 2.0e-12
+    )
+    assert (
+        diagnostics["agreement"]["A2_profile_max_difference_33_nodes"][
+            "certified_upper_bound"
+        ]
+        <= 2.0e-12
     )
     assert diagnostics["complement_gap"] > 64
 
 
 def test_endpoint_reaction_numerics_agree():
     diagnostics = solve.second_order_numerical_diagnostics()
-    assert diagnostics["agreement"]["eta2_endpoint_difference"] < 2.0e-10
+    assert (
+        diagnostics["agreement"]["eta2_endpoint_difference"][
+            "certified_upper_bound"
+        ]
+        <= 5.0e-11
+    )
     assert diagnostics["hypergeometric"]["eta2_endpoint"] > 166
+
+
+def test_cross_platform_agreement_serialization_uses_bounds_not_raw_floats():
+    agreement = solve.second_order_numerical_diagnostics()["agreement"]
+    assert "certified bounds" in agreement["serialization_policy"]
+    for key, row in agreement.items():
+        if key == "serialization_policy":
+            continue
+        assert row["relation"] == "<"
+        assert isinstance(row["certified_upper_bound"], float)
 
 
 def test_permission_is_only_for_v6305_not_scale():
