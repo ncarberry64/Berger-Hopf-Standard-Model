@@ -1478,3 +1478,14 @@ Doctrine and manuscript chapter:
 - `artifacts/BHSM_1_0_completion_gate.json`: canonical v7.1 completion gate
   with Tier A complete and Tier B blocked by the common scheme/observable
   transport functor.
+
+## BHSM v7.2 observable transport
+
+- `artifacts/BHSM_common_scheme_observable_transport_v7_2.json`:
+  one-loop Standard Model `overline_MS` transport, universal reference
+  scale, fixed-active-content threshold domain, electroweak and CKM maps,
+  one `G_F` calibration, spectral classifications, finite benchmark
+  manifest, and the Tier-C falsification audit.
+- `artifacts/BHSM_1_0_completion_gate.json`: canonical v7.2 gate with
+  Tier B complete and Tier C blocked by the absence of a distinct
+  action-derived falsifiable physical prediction.

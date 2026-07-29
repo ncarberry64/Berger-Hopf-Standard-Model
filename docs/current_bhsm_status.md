@@ -287,3 +287,20 @@ from the official core prediction set. One symbolic common calibration
 
 Current tier: Tier A complete; Tier B blocked. The exact next object is
 `COMMON_SCHEME_OBSERVABLE_TRANSPORT_FUNCTOR`. Tier C is not eligible.
+
+## v7.2 authoritative status
+
+The common observable transport functor is constructed in one
+`overline_MS` scheme with `Y_H=1/2`, reference
+`mu_star=ell_star^-1`, one-loop full-SM running, a fixed-active-content
+threshold domain, explicit electroweak and CKM maps, and exactly one `G_F`
+calibration. Tier B is complete: `BHSM_PHYSICAL_COMPLETE`.
+
+The finite benchmark manifest is frozen, closing RB-14. Tier C stops at a
+new singular obstruction: the official post-v7.1 claim set contains no
+distinct action-derived falsifiable physical prediction. Input-dependent
+Standard Model calculations, calibration identities, parameterized scalar
+relations, historical screens, and conditional extensions are not promoted.
+
+Current exact verdict:
+`BHSM_RELEASE_COMPLETION_BLOCKED_BY_ABSENCE_OF_DISTINCT_ACTION_DERIVED_FALSIFIABLE_PREDICTION`.

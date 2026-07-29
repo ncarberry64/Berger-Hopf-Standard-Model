@@ -163,11 +163,9 @@ def test_artifact_schema_keeps_release_and_post_1_0_items_separate():
     assert payload["RB01"]["release_blocking"] is False
     assert payload["RB01"]["status"] == "CLOSED"
     assert payload["parameter_free_extension_blocker"] == "RB-02"
-    assert payload["open_release_blockers"] == [
-        "RB-13", "RB-14", "RB-15", "RB-16"
-    ]
+    assert payload["open_release_blockers"] == ["RB-15", "RB-16"]
     assert payload["next_highest_upstream_blocker"] == (
-        "COMMON_SCHEME_OBSERVABLE_TRANSPORT_FUNCTOR"
+        "ABSENCE_OF_DISTINCT_ACTION_DERIVED_FALSIFIABLE_PREDICTION"
     )
 
 

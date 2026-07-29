@@ -50,9 +50,9 @@ Tier B requires Tier A plus:
 - no hidden retuning;
 - representative established-physics benchmarks.
 
-Allowed verdicts are
-`BHSM_PHYSICAL_COMPLETE_ACTION_DERIVED_SCALE` or
-`BHSM_PHYSICAL_COMPLETE_ONE_UNIVERSAL_SCALE_CALIBRATION`.
+The current finite-input verdict is `BHSM_PHYSICAL_COMPLETE`; its scale
+provenance must separately state whether the bridge is action-derived or
+uses one universal calibration.
 
 One universal dimensionful calibration is permitted only if:
 
@@ -64,10 +64,10 @@ One universal dimensionful calibration is permitted only if:
 6. no dimensionless coefficient is fitted;
 7. no sector-specific retuning occurs.
 
-Current status: **blocked by the exact independent object
-`COMMON_SCHEME_OBSERVABLE_TRANSPORT_FUNCTOR`**. The one-scale bridge is
-typed as a single common calibration `ell_star`, but no common quantum
-scheme, threshold, running, and observable map has been supplied.
+Current status: **complete at v7.2 with one universal calibration**. The
+common `overline_MS` map uses `mu_star=ell_star^-1`, one-loop full-SM
+running on a fixed-active-content interval, an explicit threshold stop,
+running mass and CKM definitions, and one `G_F` calibration.
 
 ## Tier C — Internally Complete / External Review Ready
 
@@ -85,7 +85,9 @@ Tier C requires Tier B plus:
 
 The sole Tier-C verdict is `BHSM_1_0_RELEASE_COMPLETE`.
 
-Current status: **not eligible because Tier B is blocked**.
+Current status: **blocked at RB-15**. The finite benchmark suite is frozen,
+but no surviving official claim is simultaneously distinctively BHSM,
+action-derived, physical, and falsifiable. RB-16 remains downstream.
 
 ## Six cumulative gates
 
@@ -94,15 +96,15 @@ Current status: **not eligible because Tier B is blocked**.
 | G1 Parent action | every retained sector attached to one frozen action with coefficient provenance | complete: stratified correspondence action |
 | G2 Mathematical legitimacy | valid domains, variations, boundaries, gauges, adjoints, kernels, inverses, and needed nonlinear reductions | complete for retained core |
 | G3 Standard Model structure | every retained structural claim derived or removed | complete for finite-input core |
-| G4 Parameter and scale closure | every dimensionless prediction derived; scale action-derived or one transparent universal calibration | scale bridge complete; scheme/observable transport blocked |
-| G5 Finite validation and prediction set | typed benchmark suite, novel predictions, and falsification criteria frozen | downstream blocked |
-| G6 Reproducibility and release | clean regeneration of headline artifacts and manuscript | partial/downstream |
+| G4 Parameter and scale closure | every dimensionless prediction derived; scale action-derived or one transparent universal calibration | complete with one `G_F` calibration and common observable map |
+| G5 Finite validation and prediction set | typed benchmark suite, novel predictions, and falsification criteria frozen | benchmark complete; distinct action-derived prediction absent |
+| G6 Reproducibility and release | clean regeneration of headline artifacts and manuscript | downstream blocked by RB-15 |
 
 The machine-readable gate and dependency records are:
 
 - `artifacts/BHSM_1_0_completion_gate.json`;
-- the `completion_DAG` section of
-  `artifacts/BHSM_covariant_bulk_boundary_reduction_functor_v7_1.json`
+- the `completion_DAG_update` section of
+  `artifacts/BHSM_common_scheme_observable_transport_v7_2.json`
   (the older `BHSM_release_blocker_DAG*.json` files remain historical);
 - `artifacts/BHSM_scope_relevance_registry.json`.
 

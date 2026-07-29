@@ -288,6 +288,12 @@ from .boundary_matter_dynamics_neutral_response import (
 )
 from .master_action import status_payload as master_action_status_payload
 from .master_action import status_to_markdown as master_action_status_to_markdown
+from .master_action.observable_transport import (
+    status_report as observable_transport_status_payload,
+)
+from .master_action.observable_transport import (
+    status_to_markdown as observable_transport_status_to_markdown,
+)
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -783,6 +789,13 @@ def build_parser() -> argparse.ArgumentParser:
     master_action.add_argument(
         "--format", choices=("json", "markdown"), default="markdown"
     )
+    observable_transport = commands.add_parser(
+        "observable-transport-status",
+        help="Render the BHSM v7.2 common-scheme observable transport",
+    )
+    observable_transport.add_argument(
+        "--format", choices=("json", "markdown"), default="markdown"
+    )
     return parser
 
 
@@ -792,6 +805,13 @@ def main(argv: Sequence[str] | None = None) -> int:
         payload = master_action_status_payload()
         if args.format == "markdown":
             print(master_action_status_to_markdown(payload), end="")
+        else:
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        return 0
+    if args.command == "observable-transport-status":
+        payload = observable_transport_status_payload()
+        if args.format == "markdown":
+            print(observable_transport_status_to_markdown(payload), end="")
         else:
             print(json.dumps(payload, indent=2, sort_keys=True))
         return 0

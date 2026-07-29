@@ -11,8 +11,10 @@ SRC = ROOT / "src"
 if str(SRC) not in sys.path:
     sys.path.insert(0, str(SRC))
 
-from bhsm.interface.master_action.reduction import (  # noqa: E402
+from bhsm.interface.claim_input_completion_consistency import (  # noqa: E402
     canonical_completion_gate_payload,
+)
+from bhsm.interface.master_action.reduction import (  # noqa: E402
     deterministic_json,
     payload,
 )

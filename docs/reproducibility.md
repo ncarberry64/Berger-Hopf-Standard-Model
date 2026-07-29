@@ -213,3 +213,20 @@ python -m bhsm.interface master-action-status --format markdown
 
 The materializer updates only the single v7.1 reduction artifact and the
 canonical completion gate.
+
+## BHSM v7.2 observable transport
+
+From an uninstalled checkout:
+
+```powershell
+$env:PYTHONPATH=(Resolve-Path 'src').Path
+python -m bhsm.interface.master_action.observable_transport --materialize
+python -m bhsm.interface observable-transport-status --format json
+python -m bhsm.interface observable-transport-status --format markdown
+```
+
+Materialize twice and require byte-identical UTF-8/LF output. The v7.2
+artifact records the scheme, reference scale, perturbative order, active
+content, threshold domain, Higgs branch, universal calibration, running
+mass and CKM definitions, benchmark manifest, falsification audit, and
+comparison firewall.

@@ -1,0 +1,286 @@
+{
+  "CKM_transport": {
+    "Jarlskog": "Im(Vud Vcs Vus^* Vcd^*)",
+    "angles": "s13=|Vub|; s12=|Vus|/c13; s23=|Vcb|/c13",
+    "decomposition": "Y_u=U_u y_u W_u^dagger; Y_d=U_d y_d W_d^dagger",
+    "degenerate_spectrum_rule": "UNDEFINED_BASIS_STOP",
+    "historical_1_over_16_used": false,
+    "map": "V_CKM=U_u^dagger U_d",
+    "parameter_free": false,
+    "phase_convention": "PDG chart extracted from rephasing invariants; singular-value ordering is ascending (u,c,t) and (d,s,b)",
+    "scale": "the declared common mu",
+    "scheme": "overline_MS",
+    "threshold_convention": "run only on the maximal connected fixed-active-content interval containing mu_star; stop at the first running-mass threshold and require a separately declared matched EFT before crossing"
+  },
+  "RG_transport": {
+    "active_field_content": "three-generation minimal Standard Model with one Higgs doublet; no neutrino mass operator",
+    "anomalous_dimension_order": "ONE_LOOP_YUKAWA_AND_HIGGS_MASS",
+    "beta_function_order": "ONE_LOOP_FULL_SM",
+    "hypercharge_convention": "Y_H=1/2; g1 is not GUT-rescaled",
+    "map": "Theta(mu)=U_overlineMS^(1)(mu,mu_star) Theta(mu_star)",
+    "numerical_transport": "fixed-step RK4 in ln(mu/mu_star), with step count explicit",
+    "out_of_domain_result": "EFT_MATCHING_REQUIRED_AT_FIRST_THRESHOLD",
+    "perturbative_truncation": "O((16*pi^2)^-1); no two-loop terms",
+    "pole_conversion": "NOT_IMPLEMENTED_NOT_INFERRED",
+    "reference_scale": "mu_star=ell_star^-1; mu_hat_star=mu_star*ell_star=1",
+    "scheme": "overline_MS",
+    "threshold_rule": "run only on the maximal connected fixed-active-content interval containing mu_star; stop at the first running-mass threshold and require a separately declared matched EFT before crossing",
+    "valid_scale_range": "mu in I_active(mu_star), below the declared M4 EFT cutoff and before the first active-content threshold"
+  },
+  "artifact": "BHSM_common_scheme_observable_transport_v7_2",
+  "benchmark_manifest": [
+    {
+      "class": "structural identity",
+      "evaluation": "compatibility-map covariance and KKT equivariance",
+      "id": "B72-01",
+      "item": "stratified-action covariance"
+    },
+    {
+      "class": "structural identity",
+      "evaluation": "typed SM representation traces and anomaly sums",
+      "id": "B72-02",
+      "item": "representation and anomaly identities"
+    },
+    {
+      "class": "structural identity",
+      "evaluation": "one-loop b=(41/6,-19/6,-7) with Y_H=1/2",
+      "id": "B72-03",
+      "item": "common-scheme gauge identities"
+    },
+    {
+      "class": "input-dependent calculation",
+      "evaluation": "mW=g2 v/2; mZ=sqrt(g1^2+g2^2)v/2",
+      "id": "B72-04",
+      "item": "electroweak mass relations"
+    },
+    {
+      "class": "input-dependent calculation",
+      "evaluation": "SVD followed by U_u^dagger U_d and invariant PDG extraction",
+      "id": "B72-05",
+      "item": "CKM construction from Yukawa inputs"
+    },
+    {
+      "class": "input-dependent calculation",
+      "evaluation": "m_tau_MSbar(mu)=v(mu)y_tau(mu)/sqrt(2)",
+      "id": "B72-06",
+      "item": "charged-lepton running-mass example"
+    },
+    {
+      "class": "input-dependent calculation",
+      "evaluation": "m_b_MSbar(mu)=v(mu)y_b(mu)/sqrt(2) after U_overlineMS^(1)",
+      "id": "B72-07",
+      "item": "quark running-mass example"
+    },
+    {
+      "class": "structural identity",
+      "evaluation": "unchanged regular-pole Dirichlet reduced domain",
+      "id": "B72-08",
+      "item": "fixed-h D0 result"
+    },
+    {
+      "class": "parameterized relation",
+      "evaluation": "lambda5 remains an unfitted independent coefficient",
+      "id": "B72-09",
+      "item": "parameterized scalar quartic"
+    },
+    {
+      "class": "calibration check",
+      "evaluation": "v_hat/ell_star=(sqrt(2)G_F)^(-1/2) in every sector",
+      "id": "B72-10",
+      "item": "universal calibration consistency"
+    }
+  ],
+  "common_scheme": "overline_MS",
+  "comparison_firewall": {
+    "comparison_after_output_freeze_only": true,
+    "ell_star_calibrations": [
+      "G_F"
+    ],
+    "historical_screens_restored": false,
+    "independent_inputs_visible_in_outputs": true,
+    "measured_values_select_action_inputs": false,
+    "measured_values_select_matching_scale": false,
+    "measured_values_select_modes_or_projectors": false,
+    "measured_values_select_thresholds_or_RG_order": false,
+    "second_mass_calibration_allowed": false
+  },
+  "completion_DAG_update": [
+    {
+      "id": "RB-13",
+      "resolution": "BHSM_COMMON_SCHEME_OBSERVABLE_TRANSPORT_FUNCTOR_CONSTRUCTED",
+      "status": "CLOSED"
+    },
+    {
+      "id": "RB-14",
+      "resolution": "FINITE_TYPED_V7_2_BENCHMARK_MANIFEST",
+      "status": "CLOSED"
+    },
+    {
+      "id": "RB-15",
+      "resolution": "ABSENCE_OF_DISTINCT_ACTION_DERIVED_FALSIFIABLE_PREDICTION",
+      "status": "BLOCKED_EXACT_OBJECT_PROVED"
+    },
+    {
+      "id": "RB-16",
+      "resolution": "release packaging is ineligible while RB-15 is open",
+      "status": "DOWNSTREAM_BLOCKED"
+    }
+  ],
+  "electroweak_map": {
+    "branch_domain": "m_H_squared_hat<0 and lambda_H>0",
+    "fermion_masses": {
+      "Md_MSbar(mu)": "v(mu)Y_d(mu)/sqrt(2)",
+      "Me_MSbar(mu)": "v(mu)Y_e(mu)/sqrt(2)",
+      "Mu_MSbar(mu)": "v(mu)Y_u(mu)/sqrt(2)"
+    },
+    "gauge_masses": {
+      "mW_MSbar(mu)": "g2(mu)v(mu)/2",
+      "mZ_MSbar(mu)": "sqrt(g1(mu)^2+g2(mu)^2)v(mu)/2"
+    },
+    "neutrino_mass_operator_added": false,
+    "physical_vev": "v_phys=v_hat/ell_star",
+    "potential_convention": "V(H)=m_H^2 H^dagger H+lambda_H(H^dagger H)^2",
+    "retained_quartic_identification": "lambda_H(mu_star)=lambda5 in the canonical M4 Higgs normalization; no second scalar quartic is introduced",
+    "stationary_branch": "v_hat^2=-m_H_squared_hat/lambda_H"
+  },
+  "falsification_result": {
+    "audit_scope": "claims surviving the v7.1 claim firewall and the v7.2 finite-input observable map",
+    "distinct_action_derived_falsifiable_physical_predictions": [],
+    "excluded_as_distinct_predictions": [
+      "historical charged hierarchy and overlap screens",
+      "CKM 1/16 screen",
+      "1,2,7 gauge screen",
+      "eta_l and rho_ch screens",
+      "G_F calibration identity",
+      "parameterized scalar relations",
+      "neutral conditional extension"
+    ],
+    "input_dependent_outputs": [
+      "gauge and charged-fermion running masses",
+      "CKM matrix and invariants from independent Yukawa inputs"
+    ],
+    "release_blocker": "ABSENCE_OF_DISTINCT_ACTION_DERIVED_FALSIFIABLE_PREDICTION",
+    "result": "NO_DISTINCT_ACTION_DERIVED_FALSIFIABLE_PHYSICAL_PREDICTION",
+    "structural_results": [
+      "stratified action covariance",
+      "conditional representation/anomaly identities",
+      "fixed-h D0 variational result"
+    ]
+  },
+  "final_verdict": "BHSM_RELEASE_COMPLETION_BLOCKED_BY_ABSENCE_OF_DISTINCT_ACTION_DERIVED_FALSIFIABLE_PREDICTION",
+  "functor": "T_obs:(S_BHSM^strat,Theta_BHSM,ell_star)->O_phys",
+  "input_ledger": [
+    {
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "input": "g1(mu_star),g2(mu_star),g3(mu_star)",
+      "prediction": false
+    },
+    {
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "input": "Y_u(mu_star),Y_d(mu_star),Y_e(mu_star)",
+      "prediction": false
+    },
+    {
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "input": "m_H_squared(mu_star),lambda_H(mu_star)=lambda5 in the canonical retained Higgs normalization",
+      "prediction": false
+    },
+    {
+      "classification": "FINITE_TYPED_CORE_INPUT",
+      "input": "sector/projector/representation data",
+      "prediction": false
+    },
+    {
+      "classification": "ONE_UNIVERSAL_DIMENSIONFUL_CALIBRATION",
+      "input": "G_F",
+      "prediction": false
+    }
+  ],
+  "integrity": {
+    "comparison_value_used_to_define_output": false,
+    "dimensionless_input_retuned": false,
+    "fit_used": false,
+    "frozen_prediction_changed": false,
+    "hidden_scale_used": false,
+    "historical_screen_promoted": false,
+    "neutrino_mass_operator_added": false,
+    "pole_conversion_invented": false,
+    "sector_scale_used": false
+  },
+  "physical_result": "BHSM_PHYSICAL_COMPLETE",
+  "reference_scale": "mu_star=ell_star^-1; mu_hat_star=mu_star*ell_star=1",
+  "release_result": "BHSM_1_0_RELEASE_BLOCKED",
+  "remaining_exact_obstruction": "ABSENCE_OF_DISTINCT_ACTION_DERIVED_FALSIFIABLE_PREDICTION",
+  "source_main_sha": "97cb8d4e65da0dbdb7cf198324d763cba552cd32",
+  "spectral_classification": [
+    {
+      "class": "dimensionless geometric result",
+      "quantity": "Berger/Hopf eigenvalues and indices"
+    },
+    {
+      "class": "action coefficient",
+      "quantity": "kappa_i,Z_i,lambda5 and retained Wilson data"
+    },
+    {
+      "class": "running parameter",
+      "quantity": "g_i,Y_f,m_H_squared,lambda_H in overline_MS"
+    },
+    {
+      "class": "running mass",
+      "quantity": "mW,mZ and charged-fermion singular values in overline_MS"
+    },
+    {
+      "class": "no physical observable",
+      "quantity": "pole masses and widths"
+    },
+    {
+      "class": "structural identity",
+      "quantity": "anomaly cancellation and V_CKM=U_u^dagger U_d"
+    },
+    {
+      "class": "calibration",
+      "quantity": "G_F and the resulting ell_star"
+    },
+    {
+      "class": "historical screen",
+      "quantity": "1,2,7; CKM 1/16; eta_l; rho_ch; overlap mass tables"
+    },
+    {
+      "class": "conditional extension",
+      "quantity": "neutral/PMNS/neutrino-mass sector"
+    },
+    {
+      "class": "no physical observable",
+      "quantity": "unmapped raw spectral eigenvalue as a particle mass"
+    }
+  ],
+  "sprint": "bhsm-common-scheme-observable-transport-v7-2",
+  "transport_result": "BHSM_COMMON_SCHEME_OBSERVABLE_TRANSPORT_FUNCTOR_CONSTRUCTED",
+  "universal_calibration": {
+    "all_sector_scales_identical": true,
+    "called_prediction": false,
+    "classification": "ONE_UNIVERSAL_DIMENSIONFUL_CALIBRATION",
+    "count": 1,
+    "dimensionless_retuning_allowed": false,
+    "ell_star": "v_hat/(sqrt(2)G_F)^(-1/2)",
+    "input": "G_F",
+    "mass_recalibration_allowed": false,
+    "v_phys": "(sqrt(2)G_F)^(-1/2)"
+  },
+  "validation": {
+    "Tier_B_closed": true,
+    "Tier_C_obstruction_singular": true,
+    "benchmark_manifest_finite": true,
+    "mass_and_mixing_definitions_explicit": true,
+    "no_hidden_retuning": true,
+    "one_RG_map": true,
+    "one_calibration": true,
+    "one_reference_scale": true,
+    "one_scheme": true,
+    "spectral_classes_exhaustive": true,
+    "symmetry_breaking_map_explicit": true,
+    "threshold_prescription_explicit": true
+  },
+  "validation_passed": true,
+  "version": "v7.2"
+}

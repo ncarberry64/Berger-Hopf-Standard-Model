@@ -1,9 +1,9 @@
 # Open Blockers Backlog
 
-Current public status: the v7.1 finite-input dimensionless core is complete.
+Current public status: the v7.2 finite-input physical observable map is complete.
 The historical table remains provenance; its entries do not override the
-v7.1 completion-DAG update. The live Tier-B blocker is
-`COMMON_SCHEME_OBSERVABLE_TRANSPORT_FUNCTOR`.
+v7.2 completion-DAG update. Tier B is complete. The live Tier-C blocker is
+`ABSENCE_OF_DISTINCT_ACTION_DERIVED_FALSIFIABLE_PREDICTION`.
 
 Historical compatibility boundary: structural architecture integrated conditional; numerical closure open.
 This sentence records the pre-v7.1 numerical-closure status required by the
