@@ -124,3 +124,22 @@ The campaign stop rule is reached. v6.31 and dependent benchmark/prediction
 work are forbidden until an action-derived selector exists. Exact branch
 restoration and higher orders at its unselected cancellation locus remain
 post-1.0.
+
+<!-- BHSM_CLAIM_INPUT_COMPLETION_CONSISTENCY_V6_30_8 -->
+## v6.30.8 rebuilt blocker classification
+
+The authoritative rebuilt graph is
+`artifacts/BHSM_release_blocker_DAG_v6_30_8.json`.
+
+- `RB-02` is reclassified as `PARAMETER_FREE_EXTENSION_BLOCKER`.
+- The other fifteen `RB-*` nodes remain `BHSM_1_0_RELEASE_BLOCKER` and
+  each names at least one retained claim it can change.
+- No stale release blocker remains in the rebuilt DAG.
+- Scale permission remains denied by RB-01, RB-08, RB-09, RB-11, RB-12,
+  and RB-13, independently of `lambda5`.
+- The next highest-upstream target is
+  `RB-01_UNIFIED_PARENT_ACTION_PROVENANCE`.
+
+The former v6.30.7 instruction to wait for a `lambda5` selector before all
+other upstream work is superseded. This campaign does not itself enter the
+next scientific sprint.

@@ -31,3 +31,10 @@ The v6.30.7 audit proves that the scalar quartic freedom is the invariant
 `lambda5=kappa1 G5/Z5^2`. The frozen provisional action contains the term
 but does not select this dimensionless coefficient. BHSM Core Complete
 therefore remains blocked and the v6.31 scale phase is not permitted.
+
+The v6.30.8 consistency audit corrects only that blocker classification.
+`lambda5` is a declared independent theory input and is not a frozen-output
+dependency, so its selection is required for a parameter-free extension,
+not for parameterized BHSM 1.0. The repository is still not Core Complete,
+Physical Complete, or internally complete/external-review ready: fifteen
+upstream release blockers remain and scale permission is still denied.

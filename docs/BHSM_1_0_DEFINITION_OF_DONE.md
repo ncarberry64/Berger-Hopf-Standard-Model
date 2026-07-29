@@ -26,14 +26,17 @@ Tier A requires:
 - charged and neutral current structure;
 - mathematically valid operators and reductions;
 - closure of every dimensionless headline relation;
-- no unselected dimensionless coefficient that changes an official
-  prediction.
+- every dimensionless coefficient used by an official prediction is either
+  derived or explicitly typed as an unfitted independent theory input;
+- no independent input is advertised as a BHSM prediction.
 
 The only permitted Tier-A verdict is `BHSM_CORE_COMPLETE`.
 
-Current status: **blocked**. The parent-action, sector-domain, scalar
-quartic, charged hierarchy, charged-lepton, CKM, neutrino, gauge, boundary
+Current status: **blocked**. The parent-action, sector-domain, charged
+hierarchy, charged-lepton, CKM, neutrino, gauge, boundary
 measure, and retained scalar/topographic dependencies are not all closed.
+The scalar quartic is an explicit independent input to a parameterized
+theory; selecting it is required only for a parameter-free extension.
 
 ## Tier B — BHSM Physical Complete
 
@@ -62,7 +65,7 @@ One universal dimensionful calibration is permitted only if:
 
 Current status: **not eligible because Tier A is blocked**.
 
-## Tier C — BHSM 1.0 Release Complete
+## Tier C — Internally Complete / External Review Ready
 
 Tier C requires Tier B plus:
 
@@ -137,13 +140,13 @@ object. Higher-order work at the unselected cancellation point is post-1.0.
 
 ## Current critical path
 
-The next tractable release blocker is
-`RB-02_SCALAR_QUARTIC_INVARIANT_SELECTION`: determine the
-field-normalization invariant and audit the actual parent-action source of
-the scalar quartic. This does not imply that the invariant can be selected.
-A rigorous missing-source or unselected-coefficient verdict closes the
-campaign at the scientifically justified blocker.
+The next highest-upstream release blocker is
+`RB-01_UNIFIED_PARENT_ACTION_PROVENANCE`. The v6.30.8 dependency audit
+reclassifies `RB-02_SCALAR_QUARTIC_INVARIANT_SELECTION` as a
+`PARAMETER_FREE_EXTENSION_BLOCKER`: `lambda5` is an explicit independent
+theory input, is not predicted, and is absent from every frozen-output
+computation path.
 
 ## Current exact verdict
 
-`BHSM_1_0_COMPLETION_CONTRACT_ESTABLISHED_RELEASE_BLOCKERS_OPEN`
+`BHSM_SCALAR_QUARTIC_PARAMETERIZED_NOT_PREDICTED`

@@ -1797,3 +1797,27 @@ Not supported:
 
 Exact verdict:
 `BHSM_CORE_COMPLETION_BLOCKED_BY_UNSELECTED_SCALAR_QUARTIC_INVARIANT`.
+
+<!-- BHSM_CLAIM_INPUT_COMPLETION_CONSISTENCY_V6_30_8 -->
+## v6.30.8 corrected scalar and completion claims
+
+Supported:
+
+- the reduced scalar potential is a parameterized family in the independent
+  theory input `lambda5`;
+- the canonical quartic and local-stability inequality are derived as
+  functions of that input;
+- no frozen bare or dressed-candidate output depends on `lambda5`, `G5`,
+  `Z5`, or `kappa1`;
+- `RB-02` blocks only a parameter-free scalar extension;
+- the BHSM 1.0 release remains blocked by fifteen other claim dependencies.
+
+Not supported:
+
+- a predicted numerical value or sign for `lambda5`;
+- a parameter-free numerical scalar quartic;
+- unconditional or global scalar stability;
+- promotion of conditional frozen screens to action-derived predictions;
+- scale permission, physical masses, or BHSM 1.0 completion.
+
+Exact verdict: `BHSM_SCALAR_QUARTIC_PARAMETERIZED_NOT_PREDICTED`.
