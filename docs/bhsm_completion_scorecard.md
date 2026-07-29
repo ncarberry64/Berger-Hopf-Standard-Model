@@ -16,3 +16,23 @@ Status rows are candidate/audit classifications, not official release changes.
 | claim discipline | `CLEAN_SURVIVAL` | official guardrail | `verified by tests` | candidate package denies confirmation/replacement claims | low | keep candidate labels visible |
 
 BHSM is not confirmed. This scorecard is a falsification and completion-candidate target.
+
+## v7.2 finite official benchmark manifest
+
+This table supersedes the historical candidate scorecard only for the live
+v7.2 completion gate. It contains no comparison values.
+
+| ID | Item | Classification |
+| --- | --- | --- |
+| `B72-01` | stratified-action covariance | structural identity |
+| `B72-02` | representation and anomaly identities | structural identity |
+| `B72-03` | common-scheme gauge identities | structural identity |
+| `B72-04` | electroweak mass relations | input-dependent calculation |
+| `B72-05` | CKM construction from Yukawa inputs | input-dependent calculation |
+| `B72-06` | charged-lepton running-mass example | input-dependent calculation |
+| `B72-07` | quark running-mass example | input-dependent calculation |
+| `B72-08` | fixed-h D0 result | structural identity |
+| `B72-09` | parameterized scalar quartic | parameterized relation |
+| `B72-10` | universal calibration consistency | calibration check |
+
+No row is classified as a distinct action-derived physical prediction.

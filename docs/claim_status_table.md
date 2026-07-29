@@ -109,3 +109,15 @@ collider-interface review package. It must not be described as official CERN
 integration, complete BHSM 4D Lagrangian export, validated UFO output,
 MadGraph validation, event generation, Athena integration, CMSSW integration,
 or empirical validation.
+
+## v7.2 live claim matrix
+
+| Claim | Live status | Boundary |
+| --- | --- | --- |
+| Common `overline_MS` observable transport | `CONSTRUCTED` | finite-input one-loop map on its declared active interval |
+| Physical observable-map completion | `BHSM_PHYSICAL_COMPLETE` | not parameter-free and not empirical confirmation |
+| Gauge and Yukawa values | `INDEPENDENT_THEORY_INPUT` | every dependent output must expose this dependence |
+| `G_F` scale bridge | `ONE_UNIVERSAL_DIMENSIONFUL_CALIBRATION` | not predicted and not repeatable with another mass |
+| CKM | `INPUT_DEPENDENT_CALCULATION` | derived from independent Yukawa matrices, not the historical `1/16` screen |
+| Pole observables | `NOT_IMPLEMENTED_NOT_INFERRED` | retained as running quantities when conversion is unavailable |
+| Distinct action-derived falsifiable physical prediction | `ABSENT` | exact Tier-C release blocker |

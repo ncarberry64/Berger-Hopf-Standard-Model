@@ -1882,3 +1882,28 @@ that the Standard Model is derived from pure geometry, that an independent
 dimensionless input is predicted, or that BHSM is physically or
 release-complete. The next exact object is
 `COMMON_SCHEME_OBSERVABLE_TRANSPORT_FUNCTOR`.
+
+## v7.2 physical-map and release claim boundary
+
+Supported:
+
+- one non-GUT-normalized Standard Model `overline_MS` scheme;
+- one reference scale `mu_star=ell_star^-1`;
+- one-loop full-SM running on a fixed-active-content interval;
+- an explicit stop at the first threshold requiring a matched EFT;
+- the retained broken Higgs branch and running mass definitions;
+- CKM from the left singular bases of independent Yukawa inputs;
+- one universal `G_F` calibration of `ell_star`;
+- `BHSM_PHYSICAL_COMPLETE` as finite-input observable-map completion.
+
+Not supported:
+
+- pole masses or widths without an implemented conversion;
+- a neutrino mass operator in the minimal action;
+- parameter-free gauge, Yukawa, CKM, or scalar predictions;
+- promotion of historical numerical screens;
+- a distinct action-derived falsifiable physical prediction;
+- the BHSM 1.0 external-review-ready release label.
+
+Exact verdict:
+`BHSM_RELEASE_COMPLETION_BLOCKED_BY_ABSENCE_OF_DISTINCT_ACTION_DERIVED_FALSIFIABLE_PREDICTION`.

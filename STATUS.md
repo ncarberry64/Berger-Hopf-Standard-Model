@@ -2594,3 +2594,28 @@ a numerical value or dimensionless fit.
 Tier B remains blocked by the exact independent object
 `COMMON_SCHEME_OBSERVABLE_TRANSPORT_FUNCTOR`. No physical-completion or
 BHSM 1.0 release-completion claim is made.
+
+## v7.2 common-scheme observable transport
+
+The finite-input observable map is now closed in the non-GUT-normalized
+Standard Model `overline_MS` convention at
+`mu_star=ell_star^-1`, `mu_hat_star=1`. One-loop running is defined on the
+maximal fixed-active-content interval containing that point. Threshold
+crossing stops explicitly for a separately declared matched EFT; no
+unsupported pole conversion is invented.
+
+The broken Higgs branch, running gauge and charged-fermion masses, CKM
+diagonalization, and one universal `G_F` calibration are explicit. Gauge
+couplings, Yukawa matrices, and scalar coefficients remain independent
+theory inputs. This closes RB-13 and yields
+`BHSM_COMMON_SCHEME_OBSERVABLE_TRANSPORT_FUNCTOR_CONSTRUCTED` and
+`BHSM_PHYSICAL_COMPLETE`.
+
+RB-14 closes with ten typed benchmarks. The Tier-C falsification audit finds
+that every surviving distinctive BHSM result is structural, mathematical,
+input-dependent, calibrated, parameterized, screened, or conditional. No
+distinct action-derived falsifiable physical prediction remains. RB-15 is
+therefore blocked and RB-16 remains downstream.
+
+Exact verdict:
+`BHSM_RELEASE_COMPLETION_BLOCKED_BY_ABSENCE_OF_DISTINCT_ACTION_DERIVED_FALSIFIABLE_PREDICTION`.

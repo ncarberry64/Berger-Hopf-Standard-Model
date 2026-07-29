@@ -1,8 +1,8 @@
 # BHSM GitHub Landing Status
 
-BHSM now has a **Tier-A complete finite-input dimensionless core**. It is
-not physically complete, release complete, an empirical proof, or a
-replacement of the Standard Model.
+BHSM now has a **Tier-B complete finite-input physical observable map**. It
+is not release complete, an empirical proof, or a replacement of the
+Standard Model.
 
 The v7.1 action treats local Standard Model gauge and matter structure as an
 intrinsic \(M_4\) layer rather than falsely deriving it from the \(M_8\)
@@ -13,7 +13,9 @@ Current public-safe summary:
 
 - Covariant stratified core architecture: complete.
 - Tier A / BHSM Core Complete: yes.
-- Tier B / Physical Complete: no; common scheme/observable transport open.
+- Tier B / Physical Complete: yes, as a finite-input one-scheme map.
+- Tier C / External Review Ready: no; distinct action-derived falsifiable
+  physical prediction absent.
 - Full BHSM proven: no.
 - Standard Model fully derived: no.
 - Mass numerical closure: no.
@@ -30,7 +32,7 @@ parameter-conditional because `G5` remains unselected; it is not a physical
 mass, scale prediction, global-stability theorem, or completion claim.
 
 The v6.30.6 governance contract defines the three-tier BHSM 1.0 finish line.
-Its historical status statements are superseded by the canonical v7.1 gate.
+Its historical status statements are superseded by the canonical v7.2 gate.
 
 The v6.30.7 audit proves that the scalar quartic freedom is the invariant
 `lambda5=kappa1 G5/Z5^2`. The frozen provisional action contains the term
@@ -55,3 +57,10 @@ correspondence with independently owned cap and \(M_4\) Wilson terms.
 RB-01 and the retained Tier-A dependencies are closed. One symbolic common
 calibration supplies the allowed scale bridge. The exact live Tier-B object
 is `COMMON_SCHEME_OBSERVABLE_TRANSPORT_FUNCTOR`.
+
+V7.2 constructs that common map in the non-GUT Standard Model
+`overline_MS` convention with one-loop running, a fixed-active-content
+threshold domain, explicit electroweak and CKM maps, and one `G_F`
+calibration. RB-13 and RB-14 close. The Tier-C audit proves the singular
+release obstruction
+`ABSENCE_OF_DISTINCT_ACTION_DERIVED_FALSIFIABLE_PREDICTION`.

@@ -341,3 +341,20 @@ docs/release_checklist_v1.0.0.md
 Post-merge release commands are documented there but are not run by this
 manuscript.
 
+## v7.2 status addendum
+
+The current repository supersedes the earlier physical-map status of this
+historical v1.0.0 package. A finite-input common observable transport is now
+defined in the Standard Model `overline_MS` scheme at
+`mu_star=ell_star^-1`, with one-loop running on a fixed-active-content
+interval, explicit electroweak and CKM maps, and one `G_F` calibration.
+
+This establishes `BHSM_PHYSICAL_COMPLETE` as observable-map completion. It
+does not promote the independent gauge, Yukawa, or scalar inputs to
+predictions. The release audit finds no distinct action-derived falsifiable
+physical prediction after historical screens and conditional extensions are
+excluded. The manuscript is therefore not relabeled external-review ready.
+
+Current exact verdict:
+`BHSM_RELEASE_COMPLETION_BLOCKED_BY_ABSENCE_OF_DISTINCT_ACTION_DERIVED_FALSIFIABLE_PREDICTION`.
+
