@@ -15,3 +15,9 @@ Current public-safe summary:
 - Collective curvature / effective dark matter: candidate connected extension only.
 
 Start with [current_bhsm_status.md](current_bhsm_status.md) and [full_bhsm_completion_v1_candidate.md](../theory/full_bhsm_completion_v1_candidate.md).
+
+The v6.30.5 constrained-gravity result constructs a fixed-h reduced
+effective family and its first quartic interaction. It separately reports
+that the exact radial branch is generically blocked. The result is
+parameter-conditional because `G5` remains unselected; it is not a physical
+mass, scale prediction, global-stability theorem, or completion claim.

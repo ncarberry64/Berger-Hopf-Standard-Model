@@ -121,3 +121,19 @@ adaptive regular-pole shooting. It must reproduce `Omega2=0`,
 `A2(pi/4)=-6.93876695733808`, `eta2=166.530406976114`, and a 33-node
 profile discrepancy below `2e-12` in the normalized `Z5/kappa1=1`
 representative.
+
+<!-- BHSM_FIXED_H_LYAPUNOV_SCHMIDT_POTENTIAL_V6_30_5 -->
+## Reproducing the v6.30.5 fixed-h reduced potential
+
+Run:
+
+```text
+python scripts/materialize_fixed_h_lyapunov_schmidt_potential_v6_30_5.py
+python -m pytest -q tests/test_bhsm_fixed_h_lyapunov_schmidt_potential_v6_30_5.py
+```
+
+Materialize twice and require byte-identical output. The two numerical
+routes must reproduce `M4=21.6901302294121`,
+`C_grav=394.705988442955`, the regular Dirichlet `Phi3` complement, and the
+serialized certified bounds. The scale artifact must remain explicitly
+negative unless a later action-derived selection of `G5` exists.
