@@ -1,5 +1,13 @@
 # Full Theorem Blocker Dag v4.0
 
+## v6.30.5 fixed-h reduced-potential gate
+
+The D0 complement-range, third-order projection, fourth-order response, and
+reduced-action identity nodes are closed. The exact-branch node terminates
+generically at nonzero `Omega3`. The downstream unconditional-stability and
+scale nodes remain blocked by the unselected frozen coefficient `G5`; no
+new control or fit may be inserted.
+
 Status: `FULL_BHSM_NOT_COMPLETE`
 
 ## Claim boundary

@@ -23,6 +23,12 @@ Interface default formulas remain interface defaults unless a theorem-backed art
 
 Theorem blockers remain blockers unless explicit artifact-backed theorem support is present.
 
+The v6.30.5 D0 registry additions are `g3=-Omega3`,
+`Gamma4=-2 Z5 g3`, and
+`VE4=260.281562752946 G5+3633.0356624841 Z5^2/kappa1`.
+They are parameterized action-derived formulas, not numerical physical
+predictions. Their unconditional sign remains blocked by unselected `G5`.
+
 Sprint A records `OPEN_EXACT_MISSING_THEOREM` for `X_ch` and the physical
 neutrino map, and `OPEN_MISSING_INTERACTION_ATTACHMENT` for standalone CP
 `O_int`. Their formula statuses remain `OPEN_THEOREM_REQUIRED`.

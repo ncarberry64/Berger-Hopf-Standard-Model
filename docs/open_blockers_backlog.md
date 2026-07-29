@@ -83,3 +83,16 @@ The active blocker has moved to the first untested higher-order Fredholm
 condition: derive the order-three source and its KKT projection on the same
 D0 domain. No potential, stability, or scale claim is allowed before that
 chain closes.
+
+<!-- BHSM_FIXED_H_LYAPUNOV_SCHMIDT_POTENTIAL_V6_30_5 -->
+## v6.30.5 reduced-potential closure and remaining blocker
+
+The D0 order-three and order-four complement chain is now constructed. A
+nonzero third-order force is retained as quartic effective-interaction data
+rather than misclassified as a complement obstruction. The exact radial
+branch is generically blocked and is rigorously blocked in the stable-wall
+sign domain.
+
+The remaining local-stability and scale blocker is the unselected frozen
+coefficient `G5`. No repository theorem fixes its sign or magnitude. The
+v6.31 scale phase remains closed; choosing or fitting `G5` is forbidden.

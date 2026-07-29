@@ -1735,3 +1735,23 @@ The verdict is
 Only v6.30.5 higher-order construction is permitted. No measured input, fit,
 empirical inverse, new action term, primitive, free control coefficient,
 Robin inverse, pseudoinverse, regulator, scale, or frozen change is used.
+
+<!-- BHSM_FIXED_H_LYAPUNOV_SCHMIDT_POTENTIAL_V6_30_5 -->
+## v6.30.5 fixed-h reduced-potential claims
+
+Derived:
+
+- exact D0 KKT projectors and amplitude-coordinate phase;
+- the third-order source, two-route projection, and unique complement;
+- the fourth-order lapse/reaction complement and nonlinear Noether
+  residual representative;
+- `Gamma4=-2 Z5 g3` by action differentiation and projected force;
+- same-domain Jordan/Einstein coefficients, positive D0 kinetic norm, and
+  the first quartic canonical interaction.
+
+The stable-wall sign domain blocks the exact branch at third order and gives
+a local quartic minimum. This does not establish an unconditional minimum
+because the frozen action does not select `G5`. It also does not establish a
+continuous family of exact vacua, global stability, a physical mass, a
+dimensionful scale, phenomenological viability, or full BHSM completion.
+v6.31 scale work is not permitted.

@@ -23,6 +23,17 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 | Frozen predictions changed | no |
 | Official predictions changed | no |
 
+## v6.30.5 constrained-gravity update
+
+The strict fixed-h D0 Lyapunov--Schmidt complement family is constructed
+through fourth order. The exact radial branch is generically blocked at
+third order, while the nonzero kernel projection supplies a quartic reduced
+interaction. The first same-domain canonical Einstein-frame interaction is
+locally stabilizing for the stable-wall sign domain. Because the frozen
+action does not select `G5`, unconditional stability and the v6.31 scale
+phase remain open/forbidden. No official prediction or physical mass is
+changed.
+
 ## Current Cleanup Guidance
 
 The public status is: structural architecture integrated conditional; numerical closure open. PO-BH-47 exposes remaining symbolic inputs and forbidden fit routes. PO-BH-48 localizes `S_nu_topo` without deriving a numerical value. The exact next recommended sprint is to derive or reject one localized numerical-closure object before comparison, preferably `CKM_1_16_EXPONENT_NOT_DERIVED` or the missing `S_nu_topo` components listed below.

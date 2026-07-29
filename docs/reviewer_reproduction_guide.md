@@ -28,3 +28,12 @@ potential or mass prediction. Reviewers should verify that D0 fixes
 the weighted KKT projection is exactly zero, and that both independent
 numerical routes reproduce the constructed `Phi2`. The permission artifact
 opens only v6.30.5; it explicitly leaves v6.31 closed.
+
+<!-- BHSM_FIXED_H_LYAPUNOV_SCHMIDT_POTENTIAL_V6_30_5 -->
+## Reviewer checkpoint: v6.30.5
+
+Verify the sign and two-cap factor in `Gamma4=-2 Z5 g3`, the separation
+between the blocked exact branch and valid reduced family, and the
+field-dependent Noether completion. Confirm that the D0 kinetic norm
+excludes historical D2 threading/Weyl pieces and that the scale artifact
+explicitly denies v6.31 because `G5` is unselected.

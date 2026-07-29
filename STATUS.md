@@ -2466,3 +2466,25 @@ The exact verdict is
 The v6.30.3 blocker is resolved through second order, not erased and not
 promoted to an all-orders theorem. v6.30.5 higher-order construction is
 permitted. v6.31 remains forbidden.
+
+<!-- BHSM_FIXED_H_LYAPUNOV_SCHMIDT_POTENTIAL_V6_30_5 -->
+## v6.30.5 fixed-h Lyapunov--Schmidt potential
+
+The third-order projection is
+`Omega3=-130.140781376473(G5/Z5)-2368.23593065773(Z5/kappa1)`.
+It is nonzero throughout the stable-wall sign domain, so the exact radial
+branch is blocked at third order. The scalar complement `Phi3`, algebraic
+fourth-order lapse response, and matcher reaction are nevertheless
+constructed. The dependent tangential residual is the exact
+field-dependent Noether completion of the reduced force.
+
+For the two-cap action, `Gamma4=-2 Z5 g3`. Same-domain coefficients and the
+post-extraction M4 stationarity equation give `VE1=VE2=VE3=0` and
+`VE4=260.281562752946 G5+3633.0356624841 Z5^2/kappa1`.
+The D0 kinetic norm is `k0=6.673443432880105>0`; the historical larger
+number contains D2 threading/Weyl data.
+
+The point is a local quartic minimum for `G5>0`, but the frozen action leaves
+`G5` unselected. No unconditional stability or scale follows. The reduced
+family is valid; a continuous exact-vacuum family is not claimed. v6.31 is
+explicitly not permitted.
