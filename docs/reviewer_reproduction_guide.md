@@ -19,3 +19,12 @@ python docs/assets/pr98_cms_open_data_animation/generate_pr98_cms_animation.py
 
 The generator verifies the PR #98 SHA-256 before reading 64 deterministic
 event rows. It never commits or embeds the complete source dataset.
+<!-- BHSM_FIXED_H_VARIATIONAL_FAMILY_SOLVABILITY_V6_30_4 -->
+## Reviewer checkpoint: v6.30.4
+
+The v6.30.4 package is a same-domain Fredholm-solvability result, not a
+potential or mass prediction. Reviewers should verify that D0 fixes
+`r(q)=r0`, that D2 coefficients are absent from the selected source, that
+the weighted KKT projection is exactly zero, and that both independent
+numerical routes reproduce the constructed `Phi2`. The permission artifact
+opens only v6.30.5; it explicitly leaves v6.31 closed.

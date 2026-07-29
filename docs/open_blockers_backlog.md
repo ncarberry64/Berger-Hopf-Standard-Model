@@ -71,3 +71,15 @@ Each blocker must be handled without fitting observed data after comparison and 
 | `PMNS_NUMERICAL_LOCK_OPEN` | open pre-comparison lock | Needed before claiming numerical PMNS prediction. | Lock neutral operator parameters and phase loop before comparison. | Tune PMNS angles or CP phase to data. |
 | `NEUTRINO_ORDERING_OPEN` | open physics-output blocker | Needed before any neutrino ordering claim. | Derive ordering from the neutral operator after pre-comparison lock. | Choose ordering from observed oscillation data. |
 | `STABILITY_AND_COUPLING_BOUNDS_OPEN` | open theorem blocker | Needed for robust low-energy equivalence and decoupling claims. | Prove stability and coupling bounds in the relevant operator/domain scaffold. | Assert stability from finite tests alone. |
+<!-- BHSM_FIXED_H_VARIATIONAL_FAMILY_SOLVABILITY_V6_30_4 -->
+## v6.30.4 fixed-h nonlinear-family blocker refinement
+
+The v6.30.3 incompatible-first-tangent blocker is resolved through second
+order by selecting strict domain D0 and excluding the historical
+curvature-varying D2 tangent. The quadratic Fredholm coefficient is exactly
+zero and `Phi2` is constructive.
+
+The active blocker has moved to the first untested higher-order Fredholm
+condition: derive the order-three source and its KKT projection on the same
+D0 domain. No potential, stability, or scale claim is allowed before that
+chain closes.

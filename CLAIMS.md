@@ -1704,3 +1704,34 @@ blocker is
 No measured input, fit, empirical inverse, new action, primitive, scale,
 regulator drift, vacuum subtraction, physical mass, or frozen prediction
 change is introduced.
+
+<!-- BHSM_FIXED_H_VARIATIONAL_FAMILY_SOLVABILITY_V6_30_4 -->
+## v6.30.4 fixed-h solvability claims
+
+Derived:
+
+- D0, D1, D2, and D3 are separated by their varied fields, curvature data,
+  action provenance, and ability to define a fixed-h potential;
+- D0 is selected with `r(q)=r0`, while the historical D2 coefficient
+  `F1_tau` is excluded;
+- scalar reflection makes the second-order scalar source vanish and assigns
+  even parity to the metric, lapse, matcher reaction, frame, and Jordan
+  potential;
+- the full saddle pairing gives `Omega2=0`, so the second-order source is in
+  the fixed-h KKT range without a control unfolding;
+- the unique areal-gauge complement response `Phi2` and matcher reaction are
+  constructed and independently reproduced;
+- the exact radial Noether identity closes both quadratic Einstein
+  equations.
+
+Not derived:
+
+- an all-orders nonlinear family;
+- `Phi3`, `Phi4`, `F2`, `V2`, a canonical self-interaction, stability sign,
+  scale, or physical mass.
+
+The verdict is
+`BHSM_STRICT_FIXED_H_NONLINEAR_FAMILY_SECOND_ORDER_SOLVABLE`.
+Only v6.30.5 higher-order construction is permitted. No measured input, fit,
+empirical inverse, new action term, primitive, free control coefficient,
+Robin inverse, pseudoinverse, regulator, scale, or frozen change is used.
