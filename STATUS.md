@@ -2368,3 +2368,31 @@ The inherited `F0`, `F1`, and `V_E'(0)=V_E''(0)=0` remain valid. `F2`,
 `V2`, the first nonzero self-interaction, and the canonical self-coupling
 remain unresolved. Local stability and the scale bridge are not permitted
 before the fixed-h Dirichlet range problem closes.
+
+<!-- BHSM_FIXED_H_MATCHER_DIRICHLET_OPERATOR_V6_30_2 -->
+## v6.30.2 fixed-h uneliminated-matcher Dirichlet operator
+
+The frozen P1+GHY+scalar+B1+matcher action has been re-varied with
+`delta h_mu_nu=0` and arbitrary bulk-boundary metric and matcher variations.
+The scalar induced-metric trace map has two pre-gauge components,
+`psi(1)+Box4 E(1)/4` and `E(1)`. After the momentum equation and scalar gauge,
+the homogeneous KKT constraint is `psi(1)=0`; the matcher trace is retained
+as the canonical-momentum reaction `eta_tr=P_psi(1)`.
+
+The fixed-h radial system is an indefinite symmetric KKT saddle operator,
+not a Robin realization. Its extended Green current contains the finite
+matcher pairing `psi1 eta2-psi2 eta1`, which cancels the B1
+canonical-momentum current. The operator and adjoint domains are equal.
+
+The v6.28 conformal metric modulus is excluded by `psi_z(1)=1`. After the
+endpoint-preserving radial-gauge quotient, the kernel and adjoint kernel are
+both `span{u1}`, the range is closed, and the Fredholm index is zero. The
+metric inverse is exact in fixed-h areal gauge on the Noether-compatible
+range; the scalar complement inverse is the Dirichlet spectral sum over
+`n>=2`. Independent adaptive-collocation and hypergeometric spectral routes
+agree within a certified `1e-10` weighted-L2 bound, with positive complement
+gap `64.0147366689857`.
+
+The exact nonlinear fixed-h trace map and arbitrary-order multiplier
+reaction generator are derived. All five Phase-A verdicts are emitted, so
+v6.30.3 is scientifically permitted after v6.30.2 is merged.

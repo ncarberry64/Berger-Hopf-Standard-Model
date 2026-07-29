@@ -1,0 +1,113 @@
+{
+  "M4_equation_imposed": false,
+  "action_control_varied": false,
+  "arbitrary_regularization_used": false,
+  "artifact": "BHSM_fixed_h_Dirichlet_KKT_operator_v6_30_2",
+  "empirical_generation_basis_used": false,
+  "empirical_inverse_used": false,
+  "fitted_parameter_used": false,
+  "frozen_predictions_changed": false,
+  "generic_pseudoinverse_used": false,
+  "matcher_eliminated_before_variation": false,
+  "measured_input_used": false,
+  "new_action_introduced": false,
+  "new_primitive_introduced": false,
+  "new_scale_introduced": false,
+  "official_prediction_logic_changed": false,
+  "operator": {
+    "B_D": "endpoint evaluation psi -> psi(1)",
+    "B_D_dagger": "endpoint delta distribution in the psi equation",
+    "L_bulk": {
+      "L0": {
+        "L_AA": "3*kappa_1*(1 - cos(pi*t))/sin(pi*t/4)**4",
+        "L_Adelta_sigma": "0",
+        "L_Apsi": "(-96*kappa_1/(pi*tan(pi*t/4))) partial_t+(-24*kappa_1/sin(pi*t/4)**2)",
+        "L_delta_sigmadelta_sigma": "2 Z5 w^-1 partial_t[a0^4/N0 partial_t]-2 A5",
+        "L_psiA": "-w^-1 partial_t[(-96*kappa_1*sin(pi*t/4)**3*cos(pi*t/4)) .]+(-24*kappa_1/sin(pi*t/4)**2)",
+        "L_psidelta_sigma": "0",
+        "L_psipsi": "-2 w^-1 partial_t[(192*kappa_1*sin(pi*t/4)**4/pi) partial_t]+(-48*kappa_1/sin(pi*t/4)**2)"
+      },
+      "L1": {
+        "B1_endpoint_Hessian": "12 C_partial in the psi-psi slot",
+        "metric": [
+          [
+            "0",
+            "3*kappa_1/sin(pi*t/4)**2",
+            "0"
+          ],
+          [
+            "3*kappa_1/sin(pi*t/4)**2",
+            "6*kappa_1/sin(pi*t/4)**2",
+            "0"
+          ],
+          [
+            "0",
+            "0",
+            "-Z5/sin(pi*t/4)**2"
+          ]
+        ]
+      },
+      "mixed_scalar_blocks_zero_reason": "sigma0=0 and D sigma0=0, so every metric-scalar cross term starts at cubic order",
+      "operator_type": "symmetric radial differential-algebraic pencil: A algebraic, psi second order, delta_sigma_perp Sturm-Liouville",
+      "weight": "pi*sin(pi*t/4)**4"
+    },
+    "extended_vector": [
+      "A",
+      "psi",
+      "delta_sigma",
+      "eta_tr"
+    ],
+    "intrinsic_B1_Hessian_included": false,
+    "matcher_normalization": "eta_tr absorbs 2a_J^2 hbar_mu_nu delta Lambda^(mu nu) and uses the same doubled-Hessian convention as v6.28",
+    "matcher_sign": "minus because S_match=Lambda(h-gamma); Q_match=-(eta_1 psi_2+eta_2 psi_1)",
+    "matrix": [
+      [
+        "L_AA",
+        "L_Apsi",
+        "0",
+        "0"
+      ],
+      [
+        "L_psiA",
+        "L_psipsi",
+        "0",
+        "-B_D^dagger"
+      ],
+      [
+        "0",
+        "0",
+        "L_sigma",
+        "0"
+      ],
+      [
+        "0",
+        "-B_D",
+        "0",
+        "0"
+      ]
+    ],
+    "natural_boundary_reaction": "P_psi(1)-eta_tr=r_eta",
+    "operator_type": "symmetric indefinite saddle operator, not a Robin realization",
+    "pre_gauge_boundary_extension": [
+      "E",
+      "eta_L"
+    ],
+    "quadratic_reconstruction": "integral(Q_g+Q_sigma)dt -eta_tr psi(1), polarized before taking equations",
+    "result": "BHSM_FIXED_H_UNELIMINATED_MATCHER_OPERATOR_DERIVED",
+    "scalar_boundary": "s(1)=0",
+    "strong_equations": [
+      "L_AA A+L_Apsi psi=f_A",
+      "L_psiA A+L_psipsi psi-B_D^dagger eta_tr=f_psi",
+      "L_sigma s=f_sigma",
+      "B_D psi=b_D"
+    ]
+  },
+  "physical_mass_claimed": false,
+  "q_dependent_regulator_used": false,
+  "source_main_sha": "57f5945f93b7db6d5781a2b919904073dcc05def",
+  "sprint": "bhsm-fixed-h-matcher-dirichlet-operator-v6-30-2",
+  "stability_claimed": false,
+  "v6_28_Robin_inverse_reused": false,
+  "v6_30_1_scientific_sha": "e54960b714edd4baba740d9fcb1a587ff0d64f1c",
+  "version": "v6.30.2"
+}

@@ -1,0 +1,114 @@
+{
+  "M4_equation_imposed": false,
+  "action_control_varied": false,
+  "arbitrary_regularization_used": false,
+  "artifact": "BHSM_fixed_h_kernel_closed_range_inverse_v6_30_2",
+  "empirical_generation_basis_used": false,
+  "empirical_inverse_used": false,
+  "fitted_parameter_used": false,
+  "frozen_predictions_changed": false,
+  "generic_pseudoinverse_used": false,
+  "inverse": {
+    "complement": "endpoint-preserving radial-gauge quotient, fixed-h psi(1)=0, and scalar fields orthogonal to u1",
+    "generic_pseudoinverse_used": false,
+    "inverse": "G_D=(Q_D mathbb L_D Q_D)^-1",
+    "metric_inverse": {
+      "compatibility": "f_psi=L_psiA A by the radial Noether identity",
+      "formula": "A=f_A/L_AA",
+      "gauge": "areal gauge psi=0",
+      "metric_kernel": 0,
+      "reaction": "eta_tr=P_psi[A,0](1)"
+    },
+    "normalization": "u_n are unit normalized in weight 4 sin(rho)^4 d rho",
+    "projector": "Q_D f=f-u1 integral_0^1 N0 a0^4 u1 f_sigma dt",
+    "result": "BHSM_FIXED_H_MATCHER_COMPLEMENT_INVERSE_DERIVED",
+    "scalar_inverse": "G_sigma^D f=sum_{n>=2} <u_n,f>_w u_n/(mu_n-mu_1)",
+    "source_compatibility": [
+      "<u1,f_sigma>_w=0",
+      "metric source satisfies the radial Noether identity",
+      "Dirichlet trace source is supplied in the KKT lower row"
+    ],
+    "v6_28_Robin_inverse_used": false
+  },
+  "kernel_and_range": {
+    "Fredholm_index": 0,
+    "adjoint_kernel": "span{u1}",
+    "adjoint_kernel_dimension": 1,
+    "background_rescaling": "same excluded z direction",
+    "closed_range": true,
+    "closed_range_reason": "regular singular Sturm-Liouville scalar block plus a finite-rank KKT boundary extension on a compact interval; the metric quotient has no Dirichlet zero mode",
+    "compatibility": "<u1,f_sigma>_w=0; metric sources obey the radial Noether identity",
+    "curvature_probe": "external fixed-h source, not a radial kernel vector",
+    "kernel_dimension": 1,
+    "matcher_only": "Y=0 forces eta_tr=0 through P_psi-eta_tr=0; no multiplier zero mode",
+    "metric_modulus": {
+      "Dirichlet_residual": 1,
+      "admitted": false,
+      "representative": "z_A=sec^2(pi t/4), z_psi=1"
+    },
+    "quotient_kernel": "span{u1}",
+    "radial_gauge": "(A,psi)=(-xi',-(a0'/a0)xi), xi(0)=xi(1)=0; quotient",
+    "result": "BHSM_FIXED_H_MATCHER_KERNEL_AND_CLOSED_RANGE_DERIVED",
+    "scalar_Jacobi": {
+      "admitted": true,
+      "normalization": "integral_0^1 N0 a0^4 u1^2 dt=1",
+      "vector": "(A,psi,s,eta_tr)=(0,0,u1,0)"
+    },
+    "threading": "W=0 by the full parent momentum constraint"
+  },
+  "matcher_eliminated_before_variation": false,
+  "measured_input_used": false,
+  "new_action_introduced": false,
+  "new_primitive_introduced": false,
+  "new_scale_introduced": false,
+  "numerical_validation": {
+    "Dirichlet_residual": {
+      "certified_upper_bound": 1e-10,
+      "relation": "<"
+    },
+    "collocation_nodes": 927,
+    "condition_measure": "spectral complement denominator mu2-mu1; no near-zero complement eigenvalue",
+    "convergence": "collocation and the one-mode spectral inverse agree within the certified weighted-L2 bound",
+    "critical_mu1": 29.4309183529476,
+    "inverse_norm_upper_bound": 0.0156214030086683,
+    "matcher_parameter_residual": {
+      "certified_upper_bound": 1e-08,
+      "relation": "<"
+    },
+    "methods": [
+      "SciPy adaptive collocation with an augmented orthogonality row",
+      "independent hypergeometric spectral eigenfunction inversion"
+    ],
+    "next_mu2": 93.4456550219332,
+    "pole_residual": {
+      "certified_upper_bound": 1e-10,
+      "relation": "<"
+    },
+    "positive_complement_gap": 64.0147366689857,
+    "projector_residual": {
+      "certified_upper_bound": 1e-10,
+      "relation": "<"
+    },
+    "route_difference": {
+      "certified_upper_bound": 1e-10,
+      "relation": "<"
+    },
+    "source_compatibility": {
+      "certified_upper_bound": 1e-10,
+      "relation": "<"
+    },
+    "working_precision": {
+      "collocation_tolerance": 3e-08,
+      "hypergeometric_decimal_digits": 60
+    }
+  },
+  "official_prediction_logic_changed": false,
+  "physical_mass_claimed": false,
+  "q_dependent_regulator_used": false,
+  "source_main_sha": "57f5945f93b7db6d5781a2b919904073dcc05def",
+  "sprint": "bhsm-fixed-h-matcher-dirichlet-operator-v6-30-2",
+  "stability_claimed": false,
+  "v6_28_Robin_inverse_reused": false,
+  "v6_30_1_scientific_sha": "e54960b714edd4baba740d9fcb1a587ff0d64f1c",
+  "version": "v6.30.2"
+}

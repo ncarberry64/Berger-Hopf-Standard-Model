@@ -1636,3 +1636,34 @@ The exact blocker is
 `BHSM_FIXED_ACTION_OFFSHELL_RADIAL_FAMILY_BLOCKED_BY_UNDERIVED_FIXED_H_MATCHER_DIRICHLET_RANGE_OPERATOR`.
 No Puiseux neighboring-action profile, empirical inverse, measured input,
 fit, new action, primitive, scale, or frozen prediction change is used.
+
+<!-- BHSM_FIXED_H_MATCHER_DIRICHLET_OPERATOR_V6_30_2 -->
+## v6.30.2 fixed-h matcher operator claims
+
+Derived consequences:
+
+- the fixed-h matcher variation gives the induced-metric Dirichlet trace and
+  canonical-momentum multiplier reaction before any matcher elimination;
+- the complete pre-gauge scalar trace has trace and
+  scalar-longitudinal channels, while neither the radial lapse nor radial
+  shift is induced-metric data;
+- the reduced radial Hessian is a symmetric indefinite KKT operator whose
+  Green current fixes equal operator and adjoint domains;
+- the old metric modulus is rejected, the physical scalar Jacobi kernel
+  survives, and the quotient operator has closed range and Fredholm index
+  zero;
+- the fixed-h complement inverse and an arbitrary-order nonlinear
+  trace/reaction boundary map are constructed;
+- collocation and independent hypergeometric spectral inversion validate the
+  scalar complement normalization and positive gap.
+
+The exact verdicts are
+`BHSM_FIXED_H_UNELIMINATED_MATCHER_OPERATOR_DERIVED`,
+`BHSM_FIXED_H_DIRICHLET_GREEN_CURRENT_AND_ADJOINT_DOMAIN_DERIVED`,
+`BHSM_FIXED_H_MATCHER_KERNEL_AND_CLOSED_RANGE_DERIVED`,
+`BHSM_FIXED_H_MATCHER_COMPLEMENT_INVERSE_DERIVED`, and
+`BHSM_FIXED_H_NONLINEAR_BOUNDARY_MAP_DERIVED`.
+
+No Robin inverse, pseudoinverse, empirical input, fit, action-control drift,
+new action, primitive, scale, physical mass, stability result, or frozen
+prediction change is introduced.

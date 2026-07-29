@@ -1,0 +1,86 @@
+{
+  "M4_equation_imposed": false,
+  "action_control_varied": false,
+  "arbitrary_regularization_used": false,
+  "artifact": "BHSM_fixed_h_matcher_second_variation_v6_30_2",
+  "empirical_generation_basis_used": false,
+  "empirical_inverse_used": false,
+  "fitted_parameter_used": false,
+  "frozen_predictions_changed": false,
+  "generic_pseudoinverse_used": false,
+  "matcher_eliminated_before_variation": false,
+  "measured_input_used": false,
+  "new_action_introduced": false,
+  "new_primitive_introduced": false,
+  "new_scale_introduced": false,
+  "official_prediction_logic_changed": false,
+  "physical_mass_claimed": false,
+  "q_dependent_regulator_used": false,
+  "source_main_sha": "57f5945f93b7db6d5781a2b919904073dcc05def",
+  "sprint": "bhsm-fixed-h-matcher-dirichlet-operator-v6-30-2",
+  "stability_claimed": false,
+  "trace": {
+    "B_D": {
+      "scalar_longitudinal": "E(1) on nonzero scalar harmonics",
+      "trace_scalar": "psi(1)+Box4 E(1)/4"
+    },
+    "does_not_enter_trace": [
+      "A (normal-normal radial lapse)",
+      "B (normal-tangential shift)"
+    ],
+    "homogeneous_reduction": {
+      "B_D": "psi(1)",
+      "E": 0,
+      "active_matcher_reaction": "eta_tr",
+      "eta_L": "Ward-dependent reaction paired with the removed E row",
+      "minimum_condition_recovered": "psi(1)=0"
+    },
+    "induced_metric": "delta gamma_mu_nu/(2a_J^2)=psi hbar_mu_nu+D_mu D_nu E",
+    "matcher_reactions": [
+      "eta_tr: normalized matcher trace scalar",
+      "eta_L: normalized matcher scalar-longitudinal scalar"
+    ],
+    "pre_gauge_bulk_vector": [
+      "A: radial lapse",
+      "B: radial M4 scalar shift",
+      "psi: induced Weyl trace",
+      "E: induced scalar-longitudinal metric potential",
+      "delta_sigma"
+    ],
+    "separate_equations": {
+      "bulk_scalar": "delta_sigma(1)=0",
+      "gauge": "E=0 may be chosen only after the momentum equation",
+      "induced_metric_Dirichlet": "B_D Y=0",
+      "momentum": "W=0 fixes B after variation",
+      "reaction": "Pi_tr=eta_tr and Pi_L=eta_L"
+    }
+  },
+  "v6_28_Robin_inverse_reused": false,
+  "v6_30_1_scientific_sha": "e54960b714edd4baba740d9fcb1a587ff0d64f1c",
+  "variation": {
+    "B1": "one common C_partial integral sqrt|h| R4; at fixed h its variation and Hessian with respect to bulk fields vanish",
+    "GHY": "kappa_1 integral_B1 sqrt|h| K on each cap; cancels normal derivatives of delta gamma cap by cap",
+    "P1": "(1/2) integral sqrt|g|(kappa_1 R5-kappa_0), two reflected caps",
+    "Ward_identity": "D^mu(Pi_mu_nu-Lambda_mu_nu)=0 after the bulk momentum constraint; scalar momentum and traceless-longitudinal rows are the two dependent scalar projections",
+    "arbitrary_variations": [
+      "bulk delta gamma_mu_nu including its B1 trace",
+      "delta Lambda^(mu nu) on B1",
+      "bulk delta sigma with odd Dirichlet B1 data"
+    ],
+    "fixed_h_variation": "delta h_mu_nu=0",
+    "intrinsic_B1_in_radial_KKT": false,
+    "intrinsic_B1_reason": "S_B1 is a functional of independent fixed h, not of the bulk induced metric before the matcher equation is solved",
+    "matcher": "integral_B1 sqrt|h| Lambda^(mu nu)(h_mu nu-iota^*gamma_mu nu)",
+    "matcher_equations": {
+      "delta_Lambda": "h_mu_nu-iota^*gamma_mu_nu=0",
+      "delta_gamma": "Pi_cap,mu_nu-Lambda_mu_nu=0",
+      "delta_h": "not imposed in Gamma[h,q] because h is fixed"
+    },
+    "new_action_term": false,
+    "result": "BHSM_FIXED_H_MATCHER_SECOND_VARIATION_DERIVED",
+    "scalar": "integral sqrt|g|[-Z5(grad sigma)^2/2-U5(sigma)]",
+    "total_action": "S_P1,+ + S_P1,- + S_GHY,+ + S_GHY,- + S_scalar + S_B1 + S_match",
+    "two_cap_orientation": "outward normals reverse under cap exchange while the common-normal canonical-momentum jump adds the two reflected responses"
+  },
+  "version": "v6.30.2"
+}
