@@ -66,7 +66,7 @@ Reviewer entry points:
 [claim boundaries](CLAIMS.md), and
 [reproduction guide](docs/reviewer_reproduction_guide.md).
 
-BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: structural architecture integrated conditional; frozen predictions unchanged; physical eV/GeV neutrino mass closure remains open; external HEP runtime integration remains gated.
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: the finite-input physical observable map is complete in one declared scheme; release completion is blocked because no distinct action-derived falsifiable physical prediction survives the claim firewall.
 
 BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity. Physical eV/GeV neutrino mass closure remains open pending a numeric neutral stiffness length sqrt(A_nu/Z_nu), a physical K_neutral,eff map in m^-2, and complete-action derivation of the admissible response cone.
 

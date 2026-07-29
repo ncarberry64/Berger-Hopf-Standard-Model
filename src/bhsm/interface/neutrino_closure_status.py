@@ -26,9 +26,9 @@ NEUTRINO_PUBLIC_STATUS = (
 
 PUBLIC_REPO_STATUS = (
     "BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. "
-    "Current public status: structural architecture integrated conditional; frozen predictions "
-    "unchanged; physical eV/GeV neutrino mass closure remains open; external HEP runtime integration "
-    "remains gated."
+    "Current public status: the finite-input physical observable map is complete in one declared "
+    "scheme; release completion is blocked because no distinct action-derived falsifiable physical "
+    "prediction survives the claim firewall."
 )
 
 REMAINING_MISSING_OBJECTS = (
