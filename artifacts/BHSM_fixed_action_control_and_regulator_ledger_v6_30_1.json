@@ -1,0 +1,112 @@
+{
+  "M4": {
+    "M4_equation_timing": "only after F(q) and V_J(q) extraction",
+    "X_FRW_local_field": null,
+    "curvature_probe": "R4=R_c+r with r independent of q",
+    "d_r_d_q": 0,
+    "metric": "independent h_mu_nu",
+    "q_identified_with_curvature": false
+  },
+  "M4_metric_equation_imposed_before_extraction": false,
+  "artifact": "BHSM_fixed_action_control_and_regulator_ledger_v6_30_1",
+  "chat_only_value_imported": false,
+  "controls": [
+    {
+      "critical_value_or_status": "12 kappa_1",
+      "derivative_with_respect_to_q": 0,
+      "derivative_with_respect_to_tau": 0,
+      "dimension": "L^-5",
+      "regulator_dependence": "none",
+      "repository_source": "scalar_wall_junction_audit action ledger",
+      "status": "fixed action control",
+      "symbol": "kappa_0"
+    },
+    {
+      "critical_value_or_status": "symbolic positive",
+      "derivative_with_respect_to_q": 0,
+      "derivative_with_respect_to_tau": 0,
+      "dimension": "L^-3",
+      "regulator_dependence": "none",
+      "repository_source": "P1 Einstein-Hilbert action",
+      "status": "fixed action control",
+      "symbol": "kappa_1"
+    },
+    {
+      "critical_value_or_status": "symbolic positive",
+      "derivative_with_respect_to_q": 0,
+      "derivative_with_respect_to_tau": 0,
+      "dimension": "L^-3",
+      "regulator_dependence": "none",
+      "repository_source": "bulk scalar kinetic action",
+      "status": "fixed action control",
+      "symbol": "Z5"
+    },
+    {
+      "critical_value_or_status": "-mu_c Z5",
+      "derivative_with_respect_to_q": 0,
+      "derivative_with_respect_to_tau": 0,
+      "dimension": "L^-5",
+      "regulator_dependence": "none",
+      "repository_source": "U5 quadratic coefficient",
+      "status": "fixed action control",
+      "symbol": "A5"
+    },
+    {
+      "critical_value_or_status": "symbolic fixed",
+      "derivative_with_respect_to_q": 0,
+      "derivative_with_respect_to_tau": 0,
+      "dimension": "L^-5",
+      "regulator_dependence": "none",
+      "repository_source": "U5 quartic coefficient",
+      "status": "fixed action control",
+      "symbol": "G5"
+    },
+    {
+      "critical_value_or_status": "kappa_1/2",
+      "derivative_with_respect_to_q": 0,
+      "derivative_with_respect_to_tau": 0,
+      "dimension": "L^-2",
+      "regulator_dependence": "none",
+      "repository_source": "one common intrinsic B1 action",
+      "status": "fixed action control",
+      "symbol": "C_partial"
+    }
+  ],
+  "dmu_dq": 0,
+  "empirical_generation_basis_used": false,
+  "empirical_inverse_used": false,
+  "fitted_parameter_used": false,
+  "frozen_predictions_changed": false,
+  "generic_pseudoinverse_used": false,
+  "global_stability_claimed": false,
+  "historical_artifact_rewritten": false,
+  "local_X_FRW_field_created": false,
+  "measured_input_used": false,
+  "mu_varied_with_q": false,
+  "new_action_introduced": false,
+  "new_primitive_introduced": false,
+  "new_scale_introduced": false,
+  "official_prediction_logic_changed": false,
+  "on_shell_Puiseux_curve_used": false,
+  "physical_mass_claimed": false,
+  "primary_result": "BHSM_FIXED_ACTION_OFFSHELL_RADIAL_FAMILY_BLOCKED_BY_UNDERIVED_FIXED_H_MATCHER_DIRICHLET_RANGE_OPERATOR",
+  "q_dependent_regulator_used": false,
+  "regulator": {
+    "B1": "{t=1}",
+    "B1_location_q_dependent": false,
+    "M4_regulator": "one formal Vol_reg(M4,h) functional",
+    "M4_regulator_q_dependent": false,
+    "coordinate_manifold": "M5=[0,1]_t x M4 on each cap",
+    "coordinate_range_q_dependent": false,
+    "reference_chart_q_dependent": false,
+    "reported_quantity": "reduced density per fixed Vol_reg(M4,h)",
+    "subtraction_convention": "none",
+    "vacuum_constant_subtracted": false
+  },
+  "source_main_sha": "ceaff39ad4c9d2996182407f411a38e6d85ee284",
+  "sprint": "bhsm-fixed-action-offshell-radial-family-v6-30-1",
+  "unprojected_inverse_used": false,
+  "v6_30_scientific_sha": "0956941ce156ca30a7dc48369b5efeda00245471",
+  "vacuum_constant_subtracted": false,
+  "version": "v6.30.1"
+}

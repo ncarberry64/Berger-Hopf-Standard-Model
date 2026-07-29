@@ -1609,3 +1609,30 @@ fatal inconsistency.
 No measured input, fit, chat-only value, new action, primitive, scale,
 vacuum subtraction, physical mass, potential-stability result, frozen
 prediction change, or official prediction-logic change is introduced.
+
+<!-- BHSM_FIXED_ACTION_OFFSHELL_RADIAL_FAMILY_V6_30_1 -->
+## v6.30.1 fixed-action off-shell radial-family claims
+
+Derived:
+
+- all action controls and the regulator are q-independent, with
+  `dmu/dq=0`;
+- the off-shell fixed-h matcher ensemble imposes `psi(1)=0` and retains the
+  matcher multiplier as the boundary response;
+- this Dirichlet domain differs from the v6.28 matcher-eliminated Robin
+  domain, and the v6.28 metric modulus is excluded because `psi_z(1)=1`;
+- the first-order scalar Jacobi kernel equation and normalization survive
+  on the intended fixed-h construction.
+
+Not derived:
+
+- the fixed-h Dirichlet operator, adjoint domain, Green current, closed
+  range, complement inverse, and nonlinear matcher boundary map;
+- `Phi2` and higher responses, `F2`, `V2`, the first nonzero
+  self-interaction, or a canonical fold self-coupling;
+- a local-stability sign, scale bridge, or physical mass.
+
+The exact blocker is
+`BHSM_FIXED_ACTION_OFFSHELL_RADIAL_FAMILY_BLOCKED_BY_UNDERIVED_FIXED_H_MATCHER_DIRICHLET_RANGE_OPERATOR`.
+No Puiseux neighboring-action profile, empirical inverse, measured input,
+fit, new action, primitive, scale, or frozen prediction change is used.
