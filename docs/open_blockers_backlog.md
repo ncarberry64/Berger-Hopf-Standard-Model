@@ -96,3 +96,16 @@ sign domain.
 The remaining local-stability and scale blocker is the unselected frozen
 coefficient `G5`. No repository theorem fixes its sign or magnitude. The
 v6.31 scale phase remains closed; choosing or fitting `G5` is forbidden.
+
+<!-- BHSM_1_0_COMPLETION_CONTRACT_V6_30_6 -->
+## v6.30.6 release relevance
+
+The authoritative release-blocking subset and dependencies are now in
+`artifacts/BHSM_release_blocker_DAG.json`. Every release blocker names the
+headline deliverable it can change. Broad or historically listed work with
+no such dependency has moved to
+`docs/BHSM_POST_1_0_RESEARCH_BACKLOG.md`.
+
+The next tractable release blocker is `RB-02`: prove the scalar
+field-normalization invariant and audit the actual parent-action source of
+the quartic coefficient. The exact neighboring branch is not a blocker.

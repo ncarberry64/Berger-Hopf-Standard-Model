@@ -2488,3 +2488,22 @@ The point is a local quartic minimum for `G5>0`, but the frozen action leaves
 `G5` unselected. No unconditional stability or scale follows. The reduced
 family is valid; a continuous exact-vacuum family is not claimed. v6.31 is
 explicitly not permitted.
+
+<!-- BHSM_1_0_COMPLETION_CONTRACT_V6_30_6 -->
+## v6.30.6 BHSM 1.0 completion contract
+
+One governance contract now reconciles the existing completion, hard
+closure, claim, and public-readiness ledgers. It defines exactly three
+cumulative tiers: Core Complete, Physical Complete, and 1.0 Release
+Complete, with six machine-readable gates.
+
+Current status is Tier A blocked, Tier B not eligible, and Tier C not
+eligible. Historical “internal boundary package complete” wording is
+retained as a package-level result and is not promoted to BHSM Core,
+Physical, or Release Complete.
+
+The exact fixed-h branch obstruction is removed from the release critical
+path. The next tractable release blocker is the scalar field-normalization
+invariant and actual `G5` action source. No physics, frozen prediction,
+official prediction, scale, or completion claim changes in this governance
+phase.

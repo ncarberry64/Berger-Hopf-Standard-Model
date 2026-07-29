@@ -34,6 +34,19 @@ action does not select `G5`, unconditional stability and the v6.31 scale
 phase remain open/forbidden. No official prediction or physical mass is
 changed.
 
+## v6.30.6 completion-contract status
+
+The cumulative BHSM 1.0 contract classifies Core Complete as blocked,
+Physical Complete as not yet eligible, and Release Complete as not yet
+eligible. Existing internal boundary-package exports remain valid but do
+not satisfy these stronger release tiers.
+
+The release blocker DAG separates headline-changing dependencies from the
+post-1.0 research backlog. The next tractable item is the scalar quartic
+normalization invariant and action-source audit. Exact-branch restoration,
+unselected cancellation-point higher orders, external acceptance, and
+unclaimed downstream catalogues are nonblocking.
+
 ## Current Cleanup Guidance
 
 The public status is: structural architecture integrated conditional; numerical closure open. PO-BH-47 exposes remaining symbolic inputs and forbidden fit routes. PO-BH-48 localizes `S_nu_topo` without deriving a numerical value. The exact next recommended sprint is to derive or reject one localized numerical-closure object before comparison, preferably `CKM_1_16_EXPONENT_NOT_DERIVED` or the missing `S_nu_topo` components listed below.

@@ -21,3 +21,8 @@ effective family and its first quartic interaction. It separately reports
 that the exact radial branch is generically blocked. The result is
 parameter-conditional because `G5` remains unselected; it is not a physical
 mass, scale prediction, global-stability theorem, or completion claim.
+
+The v6.30.6 governance contract defines the stronger three-tier BHSM 1.0
+finish line. The repository is not currently Core Complete, Physical
+Complete, or Release Complete. Existing package-level completion labels are
+not silently promoted.

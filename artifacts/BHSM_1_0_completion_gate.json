@@ -1,0 +1,700 @@
+{
+  "BHSM_1_0_release_complete": false,
+  "artifact": "BHSM_1_0_completion_gate",
+  "current_tier_status": {
+    "Tier_A": "BLOCKED",
+    "Tier_B": "NOT_ELIGIBLE_TIER_A_BLOCKED",
+    "Tier_C": "NOT_ELIGIBLE_TIER_B_BLOCKED"
+  },
+  "current_verdict": "BHSM_1_0_COMPLETION_CONTRACT_ESTABLISHED_RELEASE_BLOCKERS_OPEN",
+  "definition_of_release_complete": "Every official prediction and benchmark is derived from one frozen parent action and input ledger; required mathematical, normalization, scale, and observable maps close; benchmarks, novel predictions, and falsification conditions are frozen; and no release blocker can change a headline deliverable.",
+  "empirical_inverse_used": false,
+  "external_validation_is_internal_gate": false,
+  "fitted_parameter_used": false,
+  "frozen_hashes": {
+    "docs/frozen_predictions.json": "F38210E0689871A25A9D5B0A1A4239883B7240CD7D0E25CDCF4C8CAB72A2CBE7",
+    "docs/frozen_predictions.md": "9EA147C56537520C86D3C4F9B864C6BA98BAC9E64931EDAE96449F3B335A36C4"
+  },
+  "frozen_prediction_changed": false,
+  "gates": [
+    {
+      "evidence": [
+        "artifacts/BHSM_full_completion_gate_v4_0.json",
+        "artifacts/BHSM_action_derivation_gates_report_v1_9.json",
+        "artifacts/BHSM_G5_action_source_ledger_v6_30_7.json (required)"
+      ],
+      "gate_id": "G1",
+      "name": "Parent action",
+      "open_blockers": [
+        "RB-01",
+        "RB-02",
+        "RB-03",
+        "RB-09"
+      ],
+      "status": "BLOCKED",
+      "tier": "A"
+    },
+    {
+      "closed_subresults": [
+        "strict D0 fixed-h operator and adjoint domain",
+        "D0 complement inverse and reduction through fourth order",
+        "exact-branch obstruction correctly separated"
+      ],
+      "evidence": [
+        "docs/bhsm_fixed_h_lyapunov_schmidt_potential_v6_30_5.md",
+        "artifacts/BHSM_full_completion_blocker_ledger_v1_8.json"
+      ],
+      "gate_id": "G2",
+      "name": "Mathematical legitimacy",
+      "open_blockers": [
+        "RB-03",
+        "RB-10",
+        "RB-11"
+      ],
+      "status": "PARTIAL",
+      "tier": "A"
+    },
+    {
+      "evidence": [
+        "docs/current_bhsm_status.md",
+        "artifacts/BHSM_full_completion_blocker_ledger_v1_8.json",
+        "docs/BHSM_HARD_CLOSURE_STATUS.json"
+      ],
+      "gate_id": "G3",
+      "name": "Standard Model structure",
+      "open_blockers": [
+        "RB-03",
+        "RB-04",
+        "RB-05",
+        "RB-06",
+        "RB-07",
+        "RB-08",
+        "RB-10",
+        "RB-11"
+      ],
+      "status": "BLOCKED",
+      "tier": "A"
+    },
+    {
+      "dimensionless_status": "BLOCKED",
+      "evidence": [
+        "artifacts/BHSM_scale_phase_permission_v6_30_5.json",
+        "artifacts/BHSM_physical_normalization_gate_v2_0.json",
+        "artifacts/BHSM_dimensionful_scale_bridge_v4_0.json"
+      ],
+      "gate_id": "G4",
+      "name": "Parameter and scale closure",
+      "open_blockers": [
+        "RB-02",
+        "RB-04",
+        "RB-05",
+        "RB-06",
+        "RB-08",
+        "RB-09",
+        "RB-12",
+        "RB-13"
+      ],
+      "scale_status": "BLOCKED",
+      "status": "BLOCKED",
+      "tier": "B"
+    },
+    {
+      "evidence": [
+        "docs/bhsm_completion_scorecard.json",
+        "artifacts/BHSM_falsification_gates_v1.json",
+        "artifacts/BHSM_v1_2_0_prediction_registry_status.json"
+      ],
+      "gate_id": "G5",
+      "name": "Finite validation and prediction set",
+      "open_blockers": [
+        "RB-14",
+        "RB-15"
+      ],
+      "status": "BLOCKED_DOWNSTREAM",
+      "tier": "C"
+    },
+    {
+      "closed_subresults": [
+        "offline test suite",
+        "frozen hash audit",
+        "claim audit",
+        "public repository readiness"
+      ],
+      "evidence": [
+        "artifacts/BHSM_public_review_readiness_manifest_v6_21_0.json",
+        "docs/external_reproduction_status.md",
+        "ARTIFACT_INDEX.md"
+      ],
+      "gate_id": "G6",
+      "name": "Reproducibility and release",
+      "open_blockers": [
+        "RB-16"
+      ],
+      "status": "PARTIAL_DOWNSTREAM",
+      "tier": "C"
+    }
+  ],
+  "global_stability_claimed": false,
+  "institutional_acceptance_made_internal_gate": false,
+  "measured_input_used": false,
+  "new_action_term_added": false,
+  "new_primitive_added": false,
+  "new_scale_added": false,
+  "next_highest_upstream_blocker": "RB-02_SCALAR_QUARTIC_INVARIANT_SELECTION",
+  "official_prediction_changed": false,
+  "peer_review_made_internal_gate": false,
+  "physical_mass_claimed": false,
+  "post_1_0_items": [
+    {
+      "item_id": "P10-01",
+      "nonblocking_rationale": "the reduced effective family is the operative 1.0 scalar object",
+      "post_1_0_category": "exact_branch_restoration",
+      "release_blocking": false,
+      "status": "POST_BHSM_1_0_RESEARCH_BACKLOG",
+      "title": "restore the generic fixed-h neighboring exact branch"
+    },
+    {
+      "item_id": "P10-02",
+      "nonblocking_rationale": "no frozen mechanism selects the cancellation value",
+      "post_1_0_category": "isolated_cancellation_higher_order",
+      "release_blocking": false,
+      "status": "POST_BHSM_1_0_RESEARCH_BACKLOG",
+      "title": "higher interaction at the unselected exact-branch cancellation"
+    },
+    {
+      "item_id": "P10-03",
+      "nonblocking_rationale": "cannot alter the established first interaction absent a dependency",
+      "post_1_0_category": "arbitrary_perturbative_orders",
+      "release_blocking": false,
+      "status": "POST_BHSM_1_0_RESEARCH_BACKLOG",
+      "title": "orders beyond the first physically relevant interaction"
+    },
+    {
+      "item_id": "P10-04",
+      "nonblocking_rationale": "Tier A needs only configurations used by retained predictions",
+      "post_1_0_category": "global_vacuum_classification",
+      "release_blocking": false,
+      "status": "POST_BHSM_1_0_RESEARCH_BACKLOG",
+      "title": "classify every vacuum and nonlinear solution"
+    },
+    {
+      "item_id": "P10-05",
+      "nonblocking_rationale": "not required by a retained 1.0 headline claim",
+      "post_1_0_category": "topology_catalogue",
+      "release_blocking": false,
+      "status": "POST_BHSM_1_0_RESEARCH_BACKLOG",
+      "title": "classify every boundary topology and admissible manifold"
+    },
+    {
+      "item_id": "P10-06",
+      "nonblocking_rationale": "outside the declared finite BHSM 1.0 claim set",
+      "post_1_0_category": "quantum_gravity",
+      "release_blocking": false,
+      "status": "POST_BHSM_1_0_RESEARCH_BACKLOG",
+      "title": "full nonperturbative quantum-gravity completion"
+    },
+    {
+      "item_id": "P10-07",
+      "nonblocking_rationale": "only minimal scheme maps for retained benchmarks are required",
+      "post_1_0_category": "all_loop_rg",
+      "release_blocking": false,
+      "status": "POST_BHSM_1_0_RESEARCH_BACKLOG",
+      "title": "all-loop renormalization and every threshold"
+    },
+    {
+      "item_id": "P10-08",
+      "nonblocking_rationale": "collider production is not a current BHSM 1.0 claim",
+      "post_1_0_category": "collider_catalogue",
+      "release_blocking": false,
+      "status": "POST_BHSM_1_0_RESEARCH_BACKLOG",
+      "title": "every amplitude, collider process, and full hadronization"
+    },
+    {
+      "item_id": "P10-09",
+      "nonblocking_rationale": "outside release claims",
+      "post_1_0_category": "downstream_matter",
+      "release_blocking": false,
+      "status": "POST_BHSM_1_0_RESEARCH_BACKLOG",
+      "title": "hadron, nuclear, atomic, molecular, material, or biological models"
+    },
+    {
+      "item_id": "P10-10",
+      "nonblocking_rationale": "not required by a frozen 1.0 prediction",
+      "post_1_0_category": "astrophysical_cosmological_catalogue",
+      "release_blocking": false,
+      "status": "POST_BHSM_1_0_RESEARCH_BACKLOG",
+      "title": "full astrophysical simulations and cosmological history"
+    },
+    {
+      "item_id": "P10-11",
+      "nonblocking_rationale": "scope-creep firewall",
+      "post_1_0_category": "black_hole_catalogue",
+      "release_blocking": false,
+      "status": "POST_BHSM_1_0_RESEARCH_BACKLOG",
+      "title": "black-hole classifications unrelated to a retained 1.0 claim"
+    },
+    {
+      "item_id": "P10-12",
+      "nonblocking_rationale": "external validation begins after internal release completion",
+      "post_1_0_category": "external_acceptance",
+      "release_blocking": false,
+      "status": "POST_BHSM_1_0_RESEARCH_BACKLOG",
+      "title": "peer review, citation, institutional endorsement, future confirmation"
+    },
+    {
+      "item_id": "P10-13",
+      "nonblocking_rationale": "nonblocking unless a later official 1.0 deliverable depends on it",
+      "post_1_0_category": "external_hep_runtime",
+      "release_blocking": false,
+      "status": "POST_BHSM_1_0_RESEARCH_BACKLOG",
+      "title": "licensed FeynRules/MadGraph production for unclaimed collider outputs"
+    }
+  ],
+  "pseudoinverse_used": false,
+  "regulator_changed": false,
+  "release_blockers": [
+    {
+      "affected_headline_deliverables": [
+        "frozen parent action",
+        "all sector action maps"
+      ],
+      "blocker_id": "RB-01",
+      "dependencies": [],
+      "evidence_files": [
+        "artifacts/BHSM_full_completion_gate_v4_0.json",
+        "artifacts/BHSM_full_completion_blocker_ledger_v1_8.json"
+      ],
+      "gate": "G1",
+      "next_valid_action": "close or remove every claimed sector lacking one action source",
+      "release_blocking": true,
+      "release_relevance_rationale": "Missing coefficient provenance can change parent-action terms and every downstream operator.",
+      "status": "OPEN",
+      "title": "Unified parent-action provenance",
+      "tractable_now": false
+    },
+    {
+      "affected_headline_deliverables": [
+        "BHSM fixed-h canonical quartic",
+        "scalar local-stability verdict",
+        "Tier A dimensionless parameter ledger"
+      ],
+      "blocker_id": "RB-02",
+      "dependencies": [],
+      "evidence_files": [
+        "artifacts/BHSM_fixed_h_canonical_interaction_v6_30_5.json",
+        "artifacts/BHSM_scale_phase_permission_v6_30_5.json"
+      ],
+      "gate": "G1",
+      "next_valid_action": "derive field-normalization invariant and audit its actual parent-action source in v6.30.7",
+      "release_blocking": true,
+      "release_relevance_rationale": "The unselected dimensionless scalar quartic invariant changes the canonical quartic and local stability.",
+      "status": "OPEN",
+      "title": "Scalar quartic invariant selection",
+      "tractable_now": true
+    },
+    {
+      "affected_headline_deliverables": [
+        "sector assignment ledger",
+        "generation and charge benchmark"
+      ],
+      "blocker_id": "RB-03",
+      "dependencies": [
+        "RB-01"
+      ],
+      "evidence_files": [
+        "artifacts/BHSM_action_derivation_gates_report_v1_9.json",
+        "artifacts/BHSM_full_completion_blocker_ledger_v1_8.json"
+      ],
+      "gate": "G2",
+      "next_valid_action": "derive sector boundary functional from the unified action",
+      "release_blocking": true,
+      "release_relevance_rationale": "Open projector and action-domain provenance can change charges, generations, and particle assignments.",
+      "status": "OPEN",
+      "title": "Sector projectors, domains, and boundary operators",
+      "tractable_now": false
+    },
+    {
+      "affected_headline_deliverables": [
+        "charged mass-ratio benchmark",
+        "charged K_f operator"
+      ],
+      "blocker_id": "RB-04",
+      "dependencies": [
+        "RB-01",
+        "RB-03"
+      ],
+      "evidence_files": [
+        "artifacts/BHSM_full_completion_blocker_ledger_v1_8.json"
+      ],
+      "gate": "G3",
+      "next_valid_action": "derive rho_ch and bridge magnitudes from the charged action",
+      "release_blocking": true,
+      "release_relevance_rationale": "Unselected charged stiffness changes official charged mass-ratio relations.",
+      "status": "OPEN",
+      "title": "Charged hierarchy and stiffness normalization",
+      "tractable_now": false
+    },
+    {
+      "affected_headline_deliverables": [
+        "charged-lepton ratio benchmark"
+      ],
+      "blocker_id": "RB-05",
+      "dependencies": [
+        "RB-01",
+        "RB-03"
+      ],
+      "evidence_files": [
+        "docs/BHSM_HARD_CLOSURE_STATUS.json",
+        "docs/BHSM_SEQUENTIAL_BLOCKER_CLOSURE.json"
+      ],
+      "gate": "G3",
+      "next_valid_action": "derive or remove eta_l from the official prediction set",
+      "release_blocking": true,
+      "release_relevance_rationale": "The candidate eta_l changes headline charged-lepton ratios and is not independently derived.",
+      "status": "OPEN",
+      "title": "Charged-lepton eta_l action source",
+      "tractable_now": false
+    },
+    {
+      "affected_headline_deliverables": [
+        "CKM benchmark",
+        "CKM official prediction artifact"
+      ],
+      "blocker_id": "RB-06",
+      "dependencies": [
+        "RB-03",
+        "RB-04"
+      ],
+      "evidence_files": [
+        "docs/BHSM_HARD_CLOSURE_STATUS.json",
+        "artifacts/BHSM_ckm_completion_gate_v4_0.json"
+      ],
+      "gate": "G3",
+      "next_valid_action": "derive or reject the exponent without comparison input",
+      "release_blocking": true,
+      "release_relevance_rationale": "The exponent changes headline CKM elements and remains a candidate projection chain.",
+      "status": "OPEN",
+      "title": "CKM mixing law and 1/16 exponent",
+      "tractable_now": false
+    },
+    {
+      "affected_headline_deliverables": [
+        "PMNS benchmark",
+        "neutrino observable map"
+      ],
+      "blocker_id": "RB-07",
+      "dependencies": [
+        "RB-01",
+        "RB-03",
+        "RB-10",
+        "RB-13"
+      ],
+      "evidence_files": [
+        "docs/BHSM_SEQUENTIAL_BLOCKER_CLOSURE.json",
+        "artifacts/BHSM_neutral_scale_gate_v4_0.json"
+      ],
+      "gate": "G3",
+      "next_valid_action": "derive the operator and map or remove numerical claims",
+      "release_blocking": true,
+      "release_relevance_rationale": "The current candidate leakage ledger does not fix the claimed neutrino operator, PMNS map, or physical unit map.",
+      "status": "OPEN",
+      "title": "PMNS and neutrino structural closure",
+      "tractable_now": false
+    },
+    {
+      "affected_headline_deliverables": [
+        "gauge-coupling benchmark",
+        "canonical 4D action"
+      ],
+      "blocker_id": "RB-08",
+      "dependencies": [
+        "RB-01",
+        "RB-03",
+        "RB-09"
+      ],
+      "evidence_files": [
+        "artifacts/BHSM_full_completion_blocker_ledger_v1_8.json",
+        "docs/physical_normalization_gate.md"
+      ],
+      "gate": "G3",
+      "next_valid_action": "derive boundary trace and gauge kinetic normalization",
+      "release_blocking": true,
+      "release_relevance_rationale": "Conditional gauge normalization can change canonical dimensionless couplings.",
+      "status": "OPEN",
+      "title": "Gauge normalization",
+      "tractable_now": false
+    },
+    {
+      "affected_headline_deliverables": [
+        "normalized parent action",
+        "physical observable map"
+      ],
+      "blocker_id": "RB-09",
+      "dependencies": [
+        "RB-01"
+      ],
+      "evidence_files": [
+        "artifacts/BHSM_full_completion_blocker_ledger_v1_8.json"
+      ],
+      "gate": "G1",
+      "next_valid_action": "derive physical measure units and cross-scale transport",
+      "release_blocking": true,
+      "release_relevance_rationale": "The missing normalized measure affects action coefficients and physical observable transport.",
+      "status": "OPEN",
+      "title": "Boundary measure, collar, and transport normalization",
+      "tractable_now": false
+    },
+    {
+      "affected_headline_deliverables": [
+        "neutral-current benchmark",
+        "neutral response operator"
+      ],
+      "blocker_id": "RB-10",
+      "dependencies": [
+        "RB-01",
+        "RB-09"
+      ],
+      "evidence_files": [
+        "artifacts/BHSM_full_completion_blocker_ledger_v1_8.json"
+      ],
+      "gate": "G2",
+      "next_valid_action": "derive the response cone from the complete neutral action",
+      "release_blocking": true,
+      "release_relevance_rationale": "The response cone is conditional and can change the admissible neutral field domain.",
+      "status": "OPEN",
+      "title": "Neutral response domain and positivity",
+      "tractable_now": false
+    },
+    {
+      "affected_headline_deliverables": [
+        "scalar-role benchmark",
+        "claimed Higgs/topographic map"
+      ],
+      "blocker_id": "RB-11",
+      "dependencies": [
+        "RB-01",
+        "RB-02",
+        "RB-09"
+      ],
+      "evidence_files": [
+        "artifacts/BHSM_full_completion_blocker_ledger_v1_8.json",
+        "theory/theorem_discharge_higgs_scalar_boundary_mechanism.md"
+      ],
+      "gate": "G2",
+      "next_valid_action": "close only profile/action pieces retained in the 1.0 claim set",
+      "release_blocking": true,
+      "release_relevance_rationale": "The complete claimed scalar/topographic profile and collar action remain conditional beyond the D0 local reduction.",
+      "status": "OPEN",
+      "title": "Scalar/topographic claimed-sector action closure",
+      "tractable_now": false
+    },
+    {
+      "affected_headline_deliverables": [
+        "physical mass map",
+        "physical scale artifact"
+      ],
+      "blocker_id": "RB-12",
+      "dependencies": [
+        "RB-02",
+        "RB-08",
+        "RB-09",
+        "RB-11"
+      ],
+      "evidence_files": [
+        "artifacts/BHSM_scale_phase_permission_v6_30_5.json",
+        "artifacts/BHSM_dimensionful_scale_bridge_v4_0.json"
+      ],
+      "gate": "G4",
+      "next_valid_action": "enter v6.31 only after an explicit scalar-quartic permission",
+      "release_blocking": true,
+      "release_relevance_rationale": "No physical mass or unit-bearing observable is defined until one action-derived scale or one allowed universal calibration is isolated.",
+      "status": "OPEN",
+      "title": "Physical scale bridge",
+      "tractable_now": false
+    },
+    {
+      "affected_headline_deliverables": [
+        "physical observable map",
+        "scheme-classified benchmark"
+      ],
+      "blocker_id": "RB-13",
+      "dependencies": [
+        "RB-04",
+        "RB-06",
+        "RB-08",
+        "RB-09",
+        "RB-12"
+      ],
+      "evidence_files": [
+        "docs/mass_width_renormalization_open_gates.md",
+        "artifacts/common_scale_transport_closure_or_obstruction_v1.json"
+      ],
+      "gate": "G4",
+      "next_valid_action": "derive the minimal scheme map for retained 1.0 observables",
+      "release_blocking": true,
+      "release_relevance_rationale": "Official masses, couplings, and mixings require a common scheme and observable map without hidden retuning.",
+      "status": "OPEN",
+      "title": "Scheme and observable transport map",
+      "tractable_now": false
+    },
+    {
+      "affected_headline_deliverables": [
+        "BHSM 1.0 benchmark manifest"
+      ],
+      "blocker_id": "RB-14",
+      "dependencies": [
+        "RB-03",
+        "RB-04",
+        "RB-06",
+        "RB-07",
+        "RB-08",
+        "RB-11",
+        "RB-13"
+      ],
+      "evidence_files": [
+        "docs/bhsm_completion_scorecard.json"
+      ],
+      "gate": "G5",
+      "next_valid_action": "freeze only representative benchmarks after upstream closure",
+      "release_blocking": true,
+      "release_relevance_rationale": "Without a finite typed benchmark set, headline equations cannot be reproducibly evaluated or frozen.",
+      "status": "OPEN",
+      "title": "Finite official benchmark suite freeze",
+      "tractable_now": false
+    },
+    {
+      "affected_headline_deliverables": [
+        "novel prediction registry",
+        "falsification criteria"
+      ],
+      "blocker_id": "RB-15",
+      "dependencies": [
+        "RB-12",
+        "RB-13",
+        "RB-14"
+      ],
+      "evidence_files": [
+        "artifacts/BHSM_falsification_gates_v1.json",
+        "artifacts/BHSM_v1_2_0_prediction_registry_status.json"
+      ],
+      "gate": "G5",
+      "next_valid_action": "freeze the retained prediction set after upstream closure",
+      "release_blocking": true,
+      "release_relevance_rationale": "Release claims require immutable no-fit predictions and explicit kill criteria.",
+      "status": "OPEN",
+      "title": "Novel prediction and falsification freeze",
+      "tractable_now": false
+    },
+    {
+      "affected_headline_deliverables": [
+        "release manuscript",
+        "release manifest",
+        "clean build report"
+      ],
+      "blocker_id": "RB-16",
+      "dependencies": [
+        "RB-14",
+        "RB-15"
+      ],
+      "evidence_files": [
+        "artifacts/BHSM_public_review_readiness_manifest_v6_21_0.json",
+        "docs/external_reproduction_status.md"
+      ],
+      "gate": "G6",
+      "next_valid_action": "assemble only after all scientific release blockers close",
+      "release_blocking": true,
+      "release_relevance_rationale": "Tier C requires a clean environment to regenerate all headline artifacts and the complete manuscript.",
+      "status": "OPEN",
+      "title": "BHSM 1.0 release manuscript and clean reproduction package",
+      "tractable_now": false
+    }
+  ],
+  "scientific_formula_changed": false,
+  "source_main_sha": "e39f936b285d1917e29ed4803dc5e46e65e4bfc2",
+  "sprint": "bhsm-1-0-completion-contract-v6-30-6",
+  "tiers": [
+    {
+      "blocking_gates": [
+        "G1",
+        "G2",
+        "G3",
+        "G4_dimensionless"
+      ],
+      "cumulative": true,
+      "current_status": "BLOCKED",
+      "name": "BHSM Core Complete",
+      "possible_verdict": "BHSM_CORE_COMPLETE",
+      "requirements": [
+        "one parent action for every claimed sector",
+        "complete configuration and variational domain",
+        "correct gauge and fermion structure",
+        "anomaly consistency",
+        "generation structure",
+        "charged and neutral current structure",
+        "mathematically valid operators and reductions",
+        "all dimensionless headline relations closed",
+        "no unselected dimensionless coefficient that changes an official prediction"
+      ],
+      "tier": "A",
+      "verdict_emitted": false
+    },
+    {
+      "blocking_gates": [
+        "G4"
+      ],
+      "cumulative": true,
+      "current_status": "NOT_ELIGIBLE_TIER_A_BLOCKED",
+      "name": "BHSM Physical Complete",
+      "one_scale_allowance": {
+        "calibrated_quantity_not_prediction": true,
+        "common_to_all_sectors": true,
+        "dimensionless_structure_independently_derived": true,
+        "exactly_one_universal_dimensionful_scale": true,
+        "no_dimensionless_fit": true,
+        "no_sector_retuning": true,
+        "openly_labeled_calibration": true
+      },
+      "possible_verdicts": [
+        "BHSM_PHYSICAL_COMPLETE_ACTION_DERIVED_SCALE",
+        "BHSM_PHYSICAL_COMPLETE_ONE_UNIVERSAL_SCALE_CALIBRATION"
+      ],
+      "requirements": [
+        "canonical four-dimensional normalization",
+        "physical scale bridge",
+        "physical observable map",
+        "masses, couplings, and mixing quantities classified by scheme",
+        "no hidden retuning",
+        "representative established-physics benchmarks"
+      ],
+      "requires_tier": "A",
+      "tier": "B",
+      "verdict_emitted": false
+    },
+    {
+      "blocking_gates": [
+        "G5",
+        "G6"
+      ],
+      "cumulative": true,
+      "current_status": "NOT_ELIGIBLE_TIER_B_BLOCKED",
+      "name": "BHSM 1.0 Release Complete",
+      "possible_verdict": "BHSM_1_0_RELEASE_COMPLETE",
+      "requirements": [
+        "frozen finite benchmark suite",
+        "frozen novel predictions",
+        "falsification criteria",
+        "reproducible clean-environment build",
+        "deterministic artifacts",
+        "complete derivation manuscript",
+        "status and claim ledgers",
+        "public release package",
+        "no remaining release blocker"
+      ],
+      "requires_tier": "B",
+      "tier": "C",
+      "verdict_emitted": false
+    }
+  ],
+  "vacuum_subtracted": false,
+  "version": "v6.30.6"
+}

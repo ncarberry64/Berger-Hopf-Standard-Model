@@ -137,3 +137,16 @@ routes must reproduce `M4=21.6901302294121`,
 `C_grav=394.705988442955`, the regular Dirichlet `Phi3` complement, and the
 serialized certified bounds. The scale artifact must remain explicitly
 negative unless a later action-derived selection of `G5` exists.
+
+<!-- BHSM_1_0_COMPLETION_CONTRACT_V6_30_6 -->
+## Reproducing the v6.30.6 completion contract
+
+```text
+python scripts/materialize_bhsm_1_0_completion_contract_v6_30_6.py
+python -m pytest -q tests/test_bhsm_1_0_completion_contract_v6_30_6.py
+```
+
+Materialize twice and require byte-identical output. The contract tests
+require every release blocker to carry a relevance rationale and affected
+headline deliverable, every nonblocker to carry a post-1.0 category, and
+external acceptance and arbitrary higher orders to remain nonblocking.
