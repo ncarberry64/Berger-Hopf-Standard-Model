@@ -5,6 +5,10 @@ The historical table remains provenance; its entries do not override the
 v7.1 completion-DAG update. The live Tier-B blocker is
 `COMMON_SCHEME_OBSERVABLE_TRANSPORT_FUNCTOR`.
 
+Historical compatibility boundary: structural architecture integrated conditional; numerical closure open.
+This sentence records the pre-v7.1 numerical-closure status required by the
+archived component contracts; it is not the current completion-tier verdict.
+
 Each blocker must be handled without fitting observed data after comparison and without changing frozen predictions.
 
 | Blocker | Current status | Why it matters | Next valid action | Forbidden invalid action |
