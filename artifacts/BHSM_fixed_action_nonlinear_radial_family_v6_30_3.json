@@ -1,0 +1,72 @@
+{
+  "M4_metric_equation_imposed_before_extraction": false,
+  "artifact": "BHSM_fixed_action_nonlinear_radial_family_v6_30_3",
+  "curvature_probe_varied_with_q": false,
+  "empirical_generation_basis_used": false,
+  "empirical_inverse_used": false,
+  "family": {
+    "Phi1": [
+      "0",
+      "0",
+      "u1",
+      "0"
+    ],
+    "Phi1_KKT_order": [
+      "A",
+      "psi",
+      "delta_sigma",
+      "eta_tr"
+    ],
+    "Phi1_equation": "mathbb L_D Phi1=0",
+    "Phi1_source": "v6.30.2 fixed-h quotient kernel span{u1}",
+    "Phi2": null,
+    "curvature_probe": "R4=R_c+r with dr/dq=0",
+    "dmu_dq": 0,
+    "failed_equation": "mathbb L_D Phi1=0 at dr/dq=0 cannot simultaneously have Phi1=(0,0,u1,0) and the nonzero (N1,a1) tangent used by F1_tau",
+    "fixed_controls": [
+      "kappa_0",
+      "kappa_1",
+      "Z5",
+      "A5",
+      "G5",
+      "C_partial"
+    ],
+    "fixed_domain": "M5=[0,1]_t x M4; B1={t=1}",
+    "fixed_regulator": "one q-independent Vol_reg(M4,h)",
+    "highest_consistent_order": 1,
+    "historical_affine_tangent": {
+      "N1": "-tau chi_1/4",
+      "a1": "tau chi_1[a0/4-sqrt(2)t cos(pi t/4)/4]",
+      "dX_dq": "tau chi_1",
+      "domain": "curvature-varying affine fold tangent"
+    },
+    "missing_object_location": "none: the requirements are mutually exclusive; supplying the historical tangent varies the independent M4 curvature probe",
+    "noether_identity": "a' E_a+sigma' E_sigma-N(E_N)'=0",
+    "noether_identity_symbolic_residual": "0",
+    "offshell_force_warning": "if the local metric and lapse equations are both imposed, a scalar-only residual g(q)u1 must be accompanied by the metric/lapse variation of a covariant amplitude constraint; otherwise sigma' g(q)u1=0 forces g(q)=0 on a nontrivial profile",
+    "result": "BHSM_FIXED_ACTION_NONLINEAR_FOLD_FAMILY_BLOCKED_BY_INCOMPATIBLE_FIXED_H_AND_CURVATURE_VARYING_FIRST_TANGENTS",
+    "smallest_missing_object": "a single first tangent belonging simultaneously to fixed h, dr/dq=0, and the historical dX/dq=tau chi_1 family"
+  },
+  "fitted_parameter_used": false,
+  "frozen_predictions_changed": false,
+  "generic_pseudoinverse_used": false,
+  "global_stability_claimed": false,
+  "historical_artifact_rewritten": false,
+  "measured_input_used": false,
+  "mu_varied_with_q": false,
+  "new_action_introduced": false,
+  "new_primitive_introduced": false,
+  "new_scale_introduced": false,
+  "official_prediction_logic_changed": false,
+  "on_shell_Puiseux_curve_used_as_fixed_action_family": false,
+  "physical_mass_claimed": false,
+  "primary_result": "BHSM_FIXED_ACTION_NONLINEAR_FOLD_FAMILY_BLOCKED_BY_INCOMPATIBLE_FIXED_H_AND_CURVATURE_VARYING_FIRST_TANGENTS",
+  "q_dependent_regulator_used": false,
+  "source_main_sha": "c049d4d6833c7c9b2c98682cdd81a9368693a0d3",
+  "sprint": "bhsm-fixed-action-nonlinear-fold-potential-v6-30-3",
+  "terminal_surface_assumed_from_quadratic_flatness": false,
+  "v6_28_Robin_inverse_reused": false,
+  "v6_30_2_scientific_sha": "0d72d9ab14d203cb7a5dd7c12733824d56d563c7",
+  "vacuum_constant_subtracted": false,
+  "version": "v6.30.3"
+}

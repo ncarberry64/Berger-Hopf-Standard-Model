@@ -2396,3 +2396,39 @@ gap `64.0147366689857`.
 The exact nonlinear fixed-h trace map and arbitrary-order multiplier
 reaction generator are derived. All five Phase-A verdicts are emitted, so
 v6.30.3 is scientifically permitted after v6.30.2 is merged.
+
+<!-- BHSM_FIXED_ACTION_NONLINEAR_FOLD_POTENTIAL_V6_30_3 -->
+## v6.30.3 fixed-action fold tangent and surface-existence test
+
+The merged fixed-h quotient kernel fixes the normalized first tangent to
+`Phi1=(A1,psi1,sigma1,eta1)=(0,0,u1,0)`. Differentiating the common
+four-dimensional frame functional
+`F=2 kappa1 integral N a^2 dt+2 C_partial` on this tangent gives the new
+exact coefficient `F1=0`.
+
+The inherited nonzero
+`F1_tau=tau chi_1(pi-4)/4` was evaluated on affine profiles with
+`dX/dq=tau chi_1`. It is a curvature-varying tangent and cannot also be the
+fixed-h, `dr/dq=0` scalar Jacobi tangent. The failed equation is already
+`mathbb L_D Phi1=0`: its fixed-h kernel is purely scalar, whereas the
+historical derivative uses nonzero lapse and warp components sourced by
+varying the independent M4 curvature.
+
+The lapse-retained action also yields the exact radial Noether identity
+`a' E_a+sigma' E_sigma-N(E_N)'=0`. A scalar-only reduced force therefore
+requires the metric/lapse response of a covariant amplitude constraint if
+the full local constraints are imposed.
+
+At `q=0`, the induced metric has rank four and unit determinant and measure
+relative to the fixed boundary metric. Matcher and KKT boundary ranks do not
+change; the one-cap proper length is `pi/4`, `F0=pi/2`,
+`k_E(0)=6.935084858283065>0`, `H_J=1`, and canonical distance is finite.
+The surface verdict is
+`BHSM_CRITICAL_FOLD_IS_REGULAR_SPACETIME_CONFIGURATION`.
+
+The primary result is
+`BHSM_FIXED_ACTION_NONLINEAR_FOLD_FAMILY_BLOCKED_BY_INCOMPATIBLE_FIXED_H_AND_CURVATURE_VARYING_FIRST_TANGENTS`.
+This is an incompatibility between two variational domains, not an
+inconsistency of the frozen action. `Phi2`, `F2`, `V2`, and the first
+Einstein-frame interaction are not promoted. The v6.31 scale phase is not
+permitted.
