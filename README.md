@@ -165,3 +165,9 @@ For critique or changes, read [CONTRIBUTING.md](CONTRIBUTING.md), use the
 [research template](.github/ISSUE_TEMPLATE/research-source.yml) or
 [bug template](.github/ISSUE_TEMPLATE/bug-report.yml), and route security
 reports through [SECURITY.md](SECURITY.md).
+
+The authoritative unified-action assessment is the
+[v7.0 complete parent-action attempt](docs/bhsm_complete_unified_parent_action_v7_0.md).
+It constructs the maximal \(M_8\to M_5|M_4\to M_4\) action complex and
+localizes the exact missing covariant reduction functor. It does not claim
+a closed unified parent action or a completed Standard Model derivation.

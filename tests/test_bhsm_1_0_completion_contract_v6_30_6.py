@@ -160,13 +160,13 @@ def test_exactly_three_deterministic_artifacts():
 
 def test_artifact_schema_keeps_release_and_post_1_0_items_separate():
     payload = contract.completion_payload()
-    assert all(row["release_blocking"] for row in payload["release_blockers"])
-    assert not any(
-        row["release_blocking"]
-        for row in payload["parameter_free_extension_blockers"]
-    )
+    assert payload["RB01"]["release_blocking"] is True
+    assert payload["parameter_free_extension_blocker"] == "RB-02"
+    assert payload["downstream_release_blockers"] == [
+        f"RB-{index:02d}" for index in range(3, 17)
+    ]
     assert payload["next_highest_upstream_blocker"] == (
-        "RB-01_UNIFIED_PARENT_ACTION_PROVENANCE"
+        "CONSTRUCT_OR_RULE_OUT_COVARIANT_BULK_BOUNDARY_REDUCTION_FUNCTOR"
     )
 
 

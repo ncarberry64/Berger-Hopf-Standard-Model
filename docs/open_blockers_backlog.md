@@ -143,3 +143,19 @@ The authoritative rebuilt graph is
 The former v6.30.7 instruction to wait for a `lambda5` selector before all
 other upstream work is superseded. This campaign does not itself enter the
 next scientific sprint.
+
+<!-- BHSM_COMPLETE_UNIFIED_PARENT_ACTION_V7_0 -->
+## v7.0 RB-01 exact obstruction
+
+RB-01 has been exhaustively attempted across every independent sector. Its
+status is now `BLOCKED_EXACT_OBJECT_LOCALIZED`, with exact missing object
+`COVARIANT_BULK_BOUNDARY_REDUCTION_FUNCTOR`.
+
+The required functor must jointly supply base, field/bundle, measure,
+orientation, variational-domain, coefficient, and Hessian maps from
+\(M_8\) through the two-cap \(M_5|B_1\) problem to the retained \(M_4\)
+EFT. Individual coefficient declarations cannot substitute for it.
+
+RB-03 through RB-16 remain downstream and are not falsely closed. The next
+scientifically valid target is to construct this functor or prove that no
+functor satisfying the recorded intertwiners exists.

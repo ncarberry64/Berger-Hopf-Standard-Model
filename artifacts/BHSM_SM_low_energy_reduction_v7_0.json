@@ -1,0 +1,94 @@
+{
+  "artifact": "BHSM_SM_low_energy_reduction_v7_0",
+  "bhsm_1_0_release_complete_claimed": false,
+  "comparison_data_used_in_action": false,
+  "exact_missing_terms": [
+    "licensed neutrino mass operator",
+    "parent-derived Yukawa/projector map"
+  ],
+  "fitted_parameter_used": false,
+  "formal_relation": "S4eff = S_SM,retained(inputs) + DeltaS_BHSM",
+  "frozen_prediction_changed": false,
+  "full_Standard_Model_recovered": false,
+  "lambda5_sign_selected": false,
+  "lambda5_value_selected": false,
+  "official_prediction_changed": false,
+  "physical_mass_claimed": false,
+  "physical_observable_map_closed": false,
+  "physical_scale_claimed": false,
+  "quantum_completion_claimed": false,
+  "relation_status": "VALID_EFT_DECOMPOSITION_NOT_DERIVED_FROM_S8_OR_S5",
+  "source_main_sha": "c7abad29688839add1ab06480b0a284c442d6a70",
+  "sprint": "bhsm-complete-unified-parent-action-v7-0",
+  "terms": [
+    {
+      "SM_term": "SU3xSU2xU1 gauge kinetic",
+      "missing_for_parent_recovery": "gauge bundle/measure pushforward",
+      "source": "S4eff",
+      "status": "PRESENT_AS_INDEPENDENT_INPUT"
+    },
+    {
+      "SM_term": "fermion kinetic and spin connection",
+      "missing_for_parent_recovery": "bulk spinor branching and unique Dirac domain",
+      "source": "S4eff",
+      "status": "RECOVERED_CONDITIONALLY"
+    },
+    {
+      "SM_term": "chirality and representations",
+      "missing_for_parent_recovery": "polarization from parent bundle",
+      "source": "retained representation ledger",
+      "status": "RECOVERED_CONDITIONALLY"
+    },
+    {
+      "SM_term": "charges and anomaly cancellation",
+      "missing_for_parent_recovery": "representation selection",
+      "source": "v6.3 ledger",
+      "status": "RECOVERED_EXACTLY_CONDITIONAL_ON_REPRESENTATION"
+    },
+    {
+      "SM_term": "scalar kinetic/potential",
+      "missing_for_parent_recovery": "cross-level scalar normalization",
+      "source": "S4eff and D0 map",
+      "status": "PRESENT_AS_INDEPENDENT_INPUT"
+    },
+    {
+      "SM_term": "charged currents",
+      "missing_for_parent_recovery": "bulk gauge-spinor reduction",
+      "source": "SU2 covariant derivative",
+      "status": "RECOVERED_EXACTLY_AT_EFT_LEVEL"
+    },
+    {
+      "SM_term": "neutral currents",
+      "missing_for_parent_recovery": "bulk gauge-spinor reduction",
+      "source": "SU2xU1 covariant derivative",
+      "status": "RECOVERED_EXACTLY_AT_EFT_LEVEL"
+    },
+    {
+      "SM_term": "Yukawa and mass operators",
+      "missing_for_parent_recovery": "overlap/projector pushforward",
+      "source": "Y_u,Y_d,Y_e",
+      "status": "PRESENT_AS_INDEPENDENT_INPUT"
+    },
+    {
+      "SM_term": "CKM",
+      "missing_for_parent_recovery": "BHSM screen law not derived",
+      "source": "U_u^dagger U_d",
+      "status": "ACTION_DERIVED_FROM_INDEPENDENT_YUKAWAS"
+    },
+    {
+      "SM_term": "PMNS/neutrino masses",
+      "missing_for_parent_recovery": "licensed neutrino mass operator and scale",
+      "source": null,
+      "status": "MISSING_FROM_MINIMAL_RETAINED_SM_ACTION"
+    },
+    {
+      "SM_term": "higher-dimensional BHSM corrections",
+      "missing_for_parent_recovery": "cutoff and reduction coefficients",
+      "source": "neutral/scalar response EFT",
+      "status": "PARAMETERIZED_DELTA_S"
+    }
+  ],
+  "unconditional_stability_claimed": false,
+  "unified_parent_action_claimed_closed": false,
+  "version": "v7.0"
+}

@@ -150,3 +150,15 @@ computation path.
 ## Current exact verdict
 
 `BHSM_SCALAR_QUARTIC_PARAMETERIZED_NOT_PREDICTED`
+
+## v7.0 RB-01 reconciliation
+
+The complete action attempt localizes RB-01 to the missing
+`COVARIANT_BULK_BOUNDARY_REDUCTION_FUNCTOR`. Levelwise actions and finite
+typed inputs are insufficient for Tier A without the functor that maps
+fields, measures, domains, coefficients, and Hessians across dimensions.
+
+Tier A remains blocked; Tiers B/C remain ineligible. The current exact
+verdict superseding the v6.30.8 campaign verdict is:
+
+`BHSM_UNIFIED_PARENT_ACTION_BLOCKED_BY_MISSING_COVARIANT_BULK_BOUNDARY_REDUCTION_FUNCTOR_SOURCE`

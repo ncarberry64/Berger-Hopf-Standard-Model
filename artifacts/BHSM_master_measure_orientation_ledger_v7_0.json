@@ -1,0 +1,65 @@
+{
+  "GHY_sign_check": true,
+  "artifact": "BHSM_master_measure_orientation_ledger_v7_0",
+  "bhsm_1_0_release_complete_claimed": false,
+  "cap_orientation_check": true,
+  "common_physical_measure_exists": false,
+  "comparison_data_used_in_action": false,
+  "fitted_parameter_used": false,
+  "frozen_prediction_changed": false,
+  "lambda5_sign_selected": false,
+  "lambda5_value_selected": false,
+  "measures": [
+    {
+      "domain": "M8",
+      "formula": "sqrt(-G) d8x",
+      "measure_id": "mu8",
+      "normalization": "UNLICENSED_ACROSS_REDUCTION",
+      "orientation": "Lorentzian time orientation plus S7 orientation",
+      "status": "DEFINED_PROVISIONALLY"
+    },
+    {
+      "domain": "M5_+ disjoint_union M5_-",
+      "formula": "sum_epsilon sqrt(-g_epsilon) d5x",
+      "measure_id": "mu5_caps",
+      "normalization": "DIMENSIONLESS_REPRESENTATIVE",
+      "orientation": "outward normals n_+=-n_- at common B1",
+      "status": "DEFINED_IN_TWO_CAP_CHAIN"
+    },
+    {
+      "domain": "B1",
+      "formula": "sqrt(-h) d4x",
+      "measure_id": "mu4_B1",
+      "normalization": "PHYSICAL_UNIT_OPEN",
+      "orientation": "fixed intrinsic B1 orientation; cap junction signs separate",
+      "status": "DEFINED_INTRINSICALLY"
+    },
+    {
+      "domain": "B1 x (-eps,eps)",
+      "formula": "det(I+rho S) dmu_h d rho",
+      "measure_id": "mu_collar",
+      "normalization": "EMBEDDING_AND_WIDTH_OPEN",
+      "orientation": "normal-first convention",
+      "status": "CONDITIONAL_GEOMETRIC_IDENTITY"
+    },
+    {
+      "domain": "Berger S3",
+      "formula": "a1 a2 a3 sigma1 wedge sigma2 wedge sigma3",
+      "measure_id": "mu_Berger",
+      "normalization": "PUSHFORWARD_TO_M4_OPEN",
+      "orientation": "sigma1 wedge sigma2 wedge sigma3 positive",
+      "status": "GEOMETRICALLY_DEFINED"
+    }
+  ],
+  "obstruction": "The fiber/collar pushforward measure is part of the missing reduction functor.",
+  "official_prediction_changed": false,
+  "physical_mass_claimed": false,
+  "physical_scale_claimed": false,
+  "pushforward_measure": null,
+  "quantum_completion_claimed": false,
+  "source_main_sha": "c7abad29688839add1ab06480b0a284c442d6a70",
+  "sprint": "bhsm-complete-unified-parent-action-v7-0",
+  "unconditional_stability_claimed": false,
+  "unified_parent_action_claimed_closed": false,
+  "version": "v7.0"
+}

@@ -1821,3 +1821,29 @@ Not supported:
 - scale permission, physical masses, or BHSM 1.0 completion.
 
 Exact verdict: `BHSM_SCALAR_QUARTIC_PARAMETERIZED_NOT_PREDICTED`.
+
+<!-- BHSM_COMPLETE_UNIFIED_PARENT_ACTION_V7_0 -->
+## v7.0 unified-action claims
+
+Supported:
+
+- the provisional \(M_8\), two-cap \(M_5|B_1\), and retained \(M_4\) EFT
+  actions are individually explicit on their declared domains;
+- the two-cap action recovers the fixed-\(h\) D0 KKT operator, reduced
+  quartic, and conditional scalar stability result;
+- all action coefficients have one finite classification;
+- the Standard Model gauge, fermion, scalar, and current terms form a
+  consistent finite-input four-dimensional EFT;
+- one exact cross-level missing object is common to every sector.
+
+Not supported:
+
+- a reduction of the \(M_8\) action to the two-cap action;
+- a reduction of the two-cap action to the four-dimensional EFT;
+- parent derivation of gauge couplings, Yukawa matrices, CKM/PMNS screens,
+  mode projectors, or physical scale;
+- a closed unified parent action;
+- BHSM Core, Physical, or Release completion.
+
+Exact verdict:
+`BHSM_UNIFIED_PARENT_ACTION_BLOCKED_BY_MISSING_COVARIANT_BULK_BOUNDARY_REDUCTION_FUNCTOR_SOURCE`.

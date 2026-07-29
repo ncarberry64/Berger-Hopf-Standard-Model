@@ -396,7 +396,7 @@ def reconciliation_payload() -> dict[str, Any]:
     }
 
 
-def canonical_completion_gate_payload() -> dict[str, Any]:
+def historical_canonical_completion_gate_payload() -> dict[str, Any]:
     return {
         "artifact": "BHSM_1_0_completion_gate",
         "version": VERSION,
@@ -417,6 +417,16 @@ def canonical_completion_gate_payload() -> dict[str, Any]:
         "frozen_hashes": FROZEN_HASHES,
         **GUARDS,
     }
+
+
+def canonical_completion_gate_payload() -> dict[str, Any]:
+    """Return the v7.0-reconciled canonical completion gate."""
+
+    from bhsm.interface.master_action.validation import (
+        canonical_completion_gate_payload as current_payload,
+    )
+
+    return current_payload()
 
 
 def artifact_payloads(root: Path) -> dict[str, dict[str, Any]]:

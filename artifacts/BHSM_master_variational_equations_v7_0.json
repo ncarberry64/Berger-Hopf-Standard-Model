@@ -1,0 +1,95 @@
+{
+  "Noether_identities": [
+    "nabla_A(E_G^{AB}) equals scalar/carrier equations times gradients",
+    "D_nu[D_mu(F^{mu nu}/g^2)-J^nu]=0 on fermion equations",
+    "cap Hamiltonian/tangential identities close with matcher reaction"
+  ],
+  "artifact": "BHSM_master_variational_equations_v7_0",
+  "bhsm_1_0_release_complete_claimed": false,
+  "comparison_data_used_in_action": false,
+  "cross_level_variation_commutes_with_reduction": false,
+  "equations": [
+    {
+      "equation": "kappa1 Einstein8_AB+(kappa0/2)G_AB-T_chi_AB-T_sigma_AB=0",
+      "level": "S8",
+      "status": "LEVELWISE_DERIVED",
+      "variation": "delta G_AB"
+    },
+    {
+      "equation": "nabla_A[Zchi(1+g sigma^2)nabla^A chi]=0",
+      "level": "S8",
+      "status": "LEVELWISE_DERIVED",
+      "variation": "delta chi"
+    },
+    {
+      "equation": "Zsigma Box8 sigma-A0 sigma-G0 sigma^3-Zchi g sigma |dchi|^2=0",
+      "level": "S8",
+      "status": "LEVELWISE_DERIVED",
+      "variation": "delta sigma"
+    },
+    {
+      "equation": "cap Einstein-scalar equations plus Pi_eps^{ab}+matcher reaction=0",
+      "level": "S5|4",
+      "status": "RECOVERED_V6_CHAIN",
+      "variation": "delta g_eps"
+    },
+    {
+      "equation": "h_ab-gamma_eps,ab=0",
+      "level": "S5|4",
+      "status": "EXACT_MATCHER",
+      "variation": "delta Lambda_eps"
+    },
+    {
+      "equation": "intrinsic B1 Einstein-matter equation+sum_eps Lambda_eps=0",
+      "level": "S5|4",
+      "status": "LEVELWISE_CONDITIONAL",
+      "variation": "delta h_ab"
+    },
+    {
+      "equation": "Hamiltonian and momentum constraints",
+      "level": "S5|4",
+      "status": "RECOVERED_D0_BLOCK",
+      "variation": "delta N,delta N^a"
+    },
+    {
+      "equation": "D_mu(F_i^{mu nu}/g_i^2)=J_i^nu",
+      "level": "S4eff",
+      "status": "EFT_DERIVED",
+      "variation": "delta A_i"
+    },
+    {
+      "equation": "i gamma^mu D_mu Psi-Y(H)Psi=0",
+      "level": "S4eff",
+      "status": "EFT_DERIVED_DOMAIN_INPUT",
+      "variation": "delta barPsi"
+    },
+    {
+      "equation": "D_mu D^mu H+dV/dHdagger+Yukawa sources=0",
+      "level": "S4eff",
+      "status": "EFT_DERIVED",
+      "variation": "delta H"
+    },
+    {
+      "equation": "-Z_neu D^2 N_neu-A_neu N_neu+g_neu R=0",
+      "level": "DeltaS4",
+      "status": "EFFECTIVE_CONDITIONAL",
+      "variation": "delta N_neu"
+    }
+  ],
+  "every_equation_has_action_term": true,
+  "every_term_has_variation": true,
+  "fitted_parameter_used": false,
+  "frozen_prediction_changed": false,
+  "lambda5_sign_selected": false,
+  "lambda5_value_selected": false,
+  "official_prediction_changed": false,
+  "physical_mass_claimed": false,
+  "physical_scale_claimed": false,
+  "quantum_completion_claimed": false,
+  "reason": "R_* is undefined.",
+  "source_main_sha": "c7abad29688839add1ab06480b0a284c442d6a70",
+  "sprint": "bhsm-complete-unified-parent-action-v7-0",
+  "unconditional_stability_claimed": false,
+  "unified_parent_action_claimed_closed": false,
+  "version": "v7.0"
+}
