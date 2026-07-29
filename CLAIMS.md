@@ -1667,3 +1667,40 @@ The exact verdicts are
 No Robin inverse, pseudoinverse, empirical input, fit, action-control drift,
 new action, primitive, scale, physical mass, stability result, or frozen
 prediction change is introduced.
+
+<!-- BHSM_FIXED_ACTION_NONLINEAR_FOLD_POTENTIAL_V6_30_3 -->
+## v6.30.3 fixed-action fold-tangent claims
+
+Derived consequences:
+
+- the fixed-h scalar Jacobi tangent has no linear lapse, warp, or matcher
+  component;
+- the common Jordan frame functional therefore has fixed-action derivative
+  `F1=0`;
+- the historical nonzero `F1_tau` traces exactly to a different tangent
+  with `dX/dq=tau chi_1`, contradicting the required `dr/dq=0` identification;
+- the frozen lapse-retained action obeys
+  `a' E_a+sigma' E_sigma-N(E_N)'=0`, exposing the required covariant
+  completion of any off-shell amplitude constraint;
+- the critical boundary metric and measure are nondegenerate, all matcher
+  and KKT boundary ranks remain constant, and the critical point lies at
+  finite canonical distance;
+- scalar reflection sends `(q,tau)` to `(-q,tau)`, so `tau` is not the sign
+  of the scalar Jacobi amplitude.
+
+Rejected by calculation:
+
+- inserting the curvature-varying `F1_tau` into the fixed-h,
+  fixed-curvature Taylor family;
+- interpreting quadratic flatness as loss of spacetime support;
+- proceeding to `Phi2`, a local stability sign, or the scale bridge before
+  one first-order variational domain is selected consistently.
+
+The exact surface verdict is
+`BHSM_CRITICAL_FOLD_IS_REGULAR_SPACETIME_CONFIGURATION`. The exact family
+blocker is
+`BHSM_FIXED_ACTION_NONLINEAR_FOLD_FAMILY_BLOCKED_BY_INCOMPATIBLE_FIXED_H_AND_CURVATURE_VARYING_FIRST_TANGENTS`.
+
+No measured input, fit, empirical inverse, new action, primitive, scale,
+regulator drift, vacuum subtraction, physical mass, or frozen prediction
+change is introduced.
