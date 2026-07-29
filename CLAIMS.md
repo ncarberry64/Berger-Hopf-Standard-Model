@@ -1755,3 +1755,17 @@ because the frozen action does not select `G5`. It also does not establish a
 continuous family of exact vacua, global stability, a physical mass, a
 dimensionful scale, phenomenological viability, or full BHSM completion.
 v6.31 scale work is not permitted.
+
+<!-- BHSM_1_0_COMPLETION_CONTRACT_V6_30_6 -->
+## v6.30.6 BHSM 1.0 completion claims
+
+The repository now has a single three-tier internal definition of done and
+a release-relevance firewall. It does not currently satisfy
+`BHSM_CORE_COMPLETE`, either Physical Complete verdict, or
+`BHSM_1_0_RELEASE_COMPLETE`.
+
+The exact D0 neighboring-branch obstruction is a completed, nonblocking
+scientific result. Peer review, institutional acceptance, and future
+experimental confirmation are external stages. No prior package-level
+“complete/exported” label may be interpreted as satisfying the new
+cumulative release contract without all six gates.
