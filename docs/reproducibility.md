@@ -105,3 +105,19 @@ artifacts/BHSM_v1_1_0_phase_three_consolidated_gate_status.json
 
 The runtime validation path remains gated by external licensed Wolfram/FeynRules
 tooling and legal MadGraph/UFO validation steps.
+<!-- BHSM_FIXED_H_VARIATIONAL_FAMILY_SOLVABILITY_V6_30_4 -->
+## Reproducing the v6.30.4 fixed-h solvability result
+
+Run:
+
+```text
+python scripts/materialize_fixed_h_variational_family_solvability_v6_30_4.py
+python -m pytest -q tests/test_bhsm_fixed_h_variational_family_solvability_v6_30_4.py
+```
+
+Materialize twice and require byte-identical output. The numerical
+cross-check uses a 60-digit hypergeometric eigenfunction and independent
+adaptive regular-pole shooting. It must reproduce `Omega2=0`,
+`A2(pi/4)=-6.93876695733808`, `eta2=166.530406976114`, and a 33-node
+profile discrepancy below `2e-12` in the normalized `Z5/kappa1=1`
+representative.

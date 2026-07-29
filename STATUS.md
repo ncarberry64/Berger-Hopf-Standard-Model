@@ -2432,3 +2432,37 @@ This is an incompatibility between two variational domains, not an
 inconsistency of the frozen action. `Phi2`, `F2`, `V2`, and the first
 Einstein-frame interaction are not promoted. The v6.31 scale phase is not
 permitted.
+
+<!-- BHSM_FIXED_H_VARIATIONAL_FAMILY_SOLVABILITY_V6_30_4 -->
+## v6.30.4 fixed-h second-order Fredholm solvability
+
+The v6.30.3 tangent mismatch is repaired at second order by selecting D0:
+the strict fixed-h family with `r(q)=r0` at every order. D1 (even external
+curvature response), D2 (the historical `X1=tau chi_1` family), and D3 (an
+unlicensed amplitude multiplier) are retained as distinct, unselected
+domains.
+
+Reflection fixes the D0 parity: the scalar is odd, while lapse, Weyl field,
+matcher reaction, `F`, and `V_J` are even. The label `tau` is fixed and is
+not the sign of `q`.
+
+The complete quadratic scalar stress gives metric and lapse sources but no
+scalar source. With the full KKT pairing,
+`Omega2=<Phi1^dagger,S2>_KKT=0` exactly. No control unfolding is required.
+The constructive complement response in fixed-h areal gauge is
+
+`A2=-(Z5/(12 kappa1)) tan(rho)^2 [u1'^2+mu_c u1^2]`,
+`psi2=sigma2=0`, and
+`eta2=-24 kappa1 A2(pi/4)=2 Z5 u1'(pi/4)^2`.
+
+For `Z5/kappa1=1`, the endpoint values are
+`A2(pi/4)=-6.93876695733808` and `eta2=166.530406976114`.
+Independent 60-digit hypergeometric and adaptive shooting routes agree on
+the 33-node profile within `1.2e-13`. The Hamiltonian, tangential Einstein,
+Noether, scalar-projector, fixed-h trace, and matcher residuals close.
+
+The exact verdict is
+`BHSM_STRICT_FIXED_H_NONLINEAR_FAMILY_SECOND_ORDER_SOLVABLE`.
+The v6.30.3 blocker is resolved through second order, not erased and not
+promoted to an all-orders theorem. v6.30.5 higher-order construction is
+permitted. v6.31 remains forbidden.
