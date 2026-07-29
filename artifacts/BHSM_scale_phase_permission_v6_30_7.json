@@ -1,0 +1,111 @@
+{
+  "artifact": "BHSM_scale_phase_permission_v6_30_7",
+  "branch_restoration_tuning_used": false,
+  "candidate_source_tests": "artifacts/BHSM_G5_candidate_selection_tests_v6_30_7.json",
+  "certified_numerical_consequences": {
+    "exact_branch_below_threshold": true,
+    "exact_branch_lambda5": -18.197492789034907,
+    "g4_bracket_at_exact_branch": -24.776916660145154,
+    "stability_threshold_lambda5": -13.95809839182684,
+    "threshold_minus_branch": 4.239394397208066
+  },
+  "coefficient_definition": "G5=Vol(S3) G0 on the frozen internal slice; lambda5=kappa1 G5/Z5^2",
+  "completion_tier_impact": {
+    "Tier_A": "BLOCKED_BY_UNSELECTED_DIMENSIONLESS_COEFFICIENT",
+    "Tier_B": "NOT_ELIGIBLE_TIER_A_BLOCKED",
+    "Tier_C": "NOT_ELIGIBLE_TIER_B_BLOCKED"
+  },
+  "empirical_inverse_used": false,
+  "exact_symbolic_result": {
+    "Omega3": "-g3",
+    "VE4": "(Z5^2/kappa1)(260.281562752946 lambda5+3633.0356624841)",
+    "g3": "(Z5/kappa1)(130.140781376473 lambda5+2368.23593065773)",
+    "g4_can": "(1/kappa1)(5.84444718718846 lambda5+81.5773688846122)",
+    "lambda5": "kappa1 G5/Z5^2 is invariant and independent"
+  },
+  "exact_term": "-integral sqrt(-G) G0 sigma^4/4 in M8; pushforward gives -integral N a^4 G5 sigma^4/4 in the M5 radial action",
+  "field_normalization": "sigma_hat=c sigma, c!=0; Z5_hat=Z5/c^2, A5_hat=A5/c^2, G5_hat=G5/c^4",
+  "fitted_parameter_used": false,
+  "frozen_hash_status": "UNCHANGED_VERSION_SCOPED_FILES_ONLY",
+  "frozen_prediction_changed": false,
+  "global_stability_claimed": false,
+  "invalidated": [
+    "G5 can be removed completely by scalar normalization",
+    "the stable-wall label selects G5>0",
+    "exact-branch cancellation is a licensed coefficient selector",
+    "the one-universal-scale allowance can absorb lambda5"
+  ],
+  "invariant_combinations": [
+    "mu_c=-A5/Z5",
+    "lambda5=kappa1 G5/Z5^2",
+    "canonical g4=(5.84444718718846 lambda5+81.5773688846122)/kappa1"
+  ],
+  "measured_input_used": false,
+  "new_action_term_added": false,
+  "new_primitive_added": false,
+  "new_scale_added": false,
+  "official_prediction_logic_changed": false,
+  "open": [
+    "an action-derived selection rule for lambda5",
+    "unconditional local quartic stability",
+    "Tier A dimensionless parameter closure",
+    "permission to enter the v6.31 scale phase"
+  ],
+  "original_introduction": {
+    "classification": "general Taylor coefficient in conditional scalar-potential architecture; source not derived",
+    "commit": "1a8e2bcad6cb892b75bbf4951a67de76dcebff55",
+    "first_frozen_action_commit": "c903a2b6788515196225c0634753826d0e7d241d",
+    "first_frozen_action_version": "v6.0.5",
+    "version": "v6.0.2"
+  },
+  "parent_action_path": "artifacts/BHSM_minimal_parent_theory_freeze_v6_0_5.json",
+  "parent_freeze_id": "3131ff26bfa3ee1ec66465a7b714e7bde42718a120141f93e94819561e1227cc",
+  "physical_mass_claimed": false,
+  "primary_verdict": "BHSM_CORE_COMPLETION_BLOCKED_BY_UNSELECTED_SCALAR_QUARTIC_INVARIANT",
+  "regulator_changed": false,
+  "rejected_selection_mechanisms": [
+    "stable-wall tuning",
+    "exact-branch restoration tuning",
+    "observed Higgs self-coupling or mass fitting",
+    "vacuum-expectation-value fitting",
+    "setting G5 to one by convention",
+    "new sigma^4 or sigma^6 term",
+    "cutoff or renormalization condition chosen for a target",
+    "naturalness"
+  ],
+  "release_blocking_status": {
+    "affected_headline_artifacts": [
+      "artifacts/BHSM_fixed_h_canonical_interaction_v6_30_5.json",
+      "artifacts/BHSM_fixed_h_local_stability_v6_30_5.json",
+      "artifacts/BHSM_scale_phase_permission_v6_30_5.json",
+      "artifacts/BHSM_1_0_completion_gate.json"
+    ],
+    "blocker_id": "RB-02_SCALAR_QUARTIC_INVARIANT_SELECTION",
+    "release_blocking": true
+  },
+  "renormalization_condition_selected": false,
+  "repaired": [
+    "the blocker is stated in the invariant lambda5 rather than separate normalization-dependent G5 and Z5",
+    "the parent term's presence is separated from derivation of its coefficient"
+  ],
+  "scale": {
+    "dimensionless_structure_closed": false,
+    "independent_dimensionful_normalization_derived": false,
+    "one_universal_scale_allowance_applies": false,
+    "result": "BHSM_SCALE_BRIDGE_PHASE_NOT_PERMITTED_WITH_UNSELECTED_SCALAR_QUARTIC_INVARIANT",
+    "stop_reason": "Tier A remains blocked by lambda5; a dimensionless coefficient cannot be hidden in one universal dimensionful calibration",
+    "unselected_dimensionless_coefficient": "lambda5",
+    "v6_31_permitted": false
+  },
+  "source_main_sha": "f9b0d4ed11205d6a7d5e5d9f7cbf50bdde8f2715",
+  "sprint": "bhsm-scalar-wall-quartic-source-v6-30-7",
+  "stability_tuning_used": false,
+  "vacuum_subtracted": false,
+  "validated": [
+    "lambda5 is invariant under every nonzero constant scalar redefinition",
+    "G0 is present in the frozen provisional action as an independent primitive",
+    "the v6.30.5 coefficients factor through lambda5",
+    "exact-branch cancellation and local quartic stability are incompatible"
+  ],
+  "version": "v6.30.7"
+}

@@ -1769,3 +1769,31 @@ scientific result. Peer review, institutional acceptance, and future
 experimental confirmation are external stages. No prior package-level
 “complete/exported” label may be interpreted as satisfying the new
 cumulative release contract without all six gates.
+
+<!-- BHSM_SCALAR_WALL_QUARTIC_SOURCE_V6_30_7 -->
+## v6.30.7 scalar quartic claims
+
+Supported:
+
+- `lambda5=kappa1 G5/Z5^2` is invariant under every nonzero constant scalar
+  redefinition;
+- the canonical quartic is
+  `(5.84444718718846 lambda5+81.5773688846122)/kappa1`;
+- the frozen provisional parent action contains the quartic as an
+  independent primitive, but no licensed mechanism selects `lambda5`;
+- the exact-branch locus lies below the local-minimum threshold;
+- the reduced effective family remains valid and is the BHSM 1.0 scalar
+  object.
+
+Not supported:
+
+- selecting `G5>0` from the phrase “stable wall”;
+- setting `G5=1` as removal of all physical freedom;
+- choosing the exact-branch cancellation value;
+- unconditional or global stability;
+- a physical scalar mass or scale;
+- permission to enter v6.31;
+- BHSM Core, Physical, or Release Complete.
+
+Exact verdict:
+`BHSM_CORE_COMPLETION_BLOCKED_BY_UNSELECTED_SCALAR_QUARTIC_INVARIANT`.

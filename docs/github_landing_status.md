@@ -26,3 +26,8 @@ The v6.30.6 governance contract defines the stronger three-tier BHSM 1.0
 finish line. The repository is not currently Core Complete, Physical
 Complete, or Release Complete. Existing package-level completion labels are
 not silently promoted.
+
+The v6.30.7 audit proves that the scalar quartic freedom is the invariant
+`lambda5=kappa1 G5/Z5^2`. The frozen provisional action contains the term
+but does not select this dimensionless coefficient. BHSM Core Complete
+therefore remains blocked and the v6.31 scale phase is not permitted.

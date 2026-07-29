@@ -2507,3 +2507,26 @@ path. The next tractable release blocker is the scalar field-normalization
 invariant and actual `G5` action source. No physics, frozen prediction,
 official prediction, scale, or completion claim changes in this governance
 phase.
+
+<!-- BHSM_SCALAR_WALL_QUARTIC_SOURCE_V6_30_7 -->
+## v6.30.7 scalar-wall quartic source and invariant
+
+For `sigma_hat=c sigma`, the coefficients transform as `Z5/c^2`,
+`A5/c^2`, and `G5/c^4`. Both `mu_c=-A5/Z5` and
+`lambda5=kappa1 G5/Z5^2` are invariant. Unit KKT normalization gives
+`u1_hat=sign(c)u1`, `q_hat=abs(c)q`, and `k0_hat=k0/c^2`, leaving the
+canonical field and canonical quartic invariant.
+
+The quartic first entered v6.0.2 as a conditional Taylor coefficient and
+was frozen in v6.0.5 as an independent provisional-action primitive. The
+term is present, but no licensed regularity, gluing, matcher, wall,
+boundedness, critical-mode, or exact-branch mechanism selects its sign or
+magnitude.
+
+The exact-branch value `lambda5=-18.1974927890349085` lies below the local
+minimum threshold `lambda5>-13.95809839182684`. The neighboring exact branch
+remains nonblocking; the reduced effective family is the release object.
+
+Tier A is blocked, Tier B and Tier C are not eligible, and v6.31 is
+forbidden. The campaign reaches the prescribed stop:
+`BHSM_CORE_COMPLETION_BLOCKED_BY_UNSELECTED_SCALAR_QUARTIC_INVARIANT`.
