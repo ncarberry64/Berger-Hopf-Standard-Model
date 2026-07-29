@@ -1,0 +1,42 @@
+{
+  "M4_equation_imposed": false,
+  "action_control_varied": false,
+  "arbitrary_regularization_used": false,
+  "artifact": "BHSM_fixed_h_nonlinear_boundary_map_v6_30_2",
+  "boundary_map": {
+    "arbitrary_order": "alpha_n=-(1/2)sum_{k=1}^{n-1}binomial(n,k)alpha_k alpha_(n-k)",
+    "coordinate_conversion": "alpha=a/a0-1 is the warp response, while the KKT Weyl variable satisfies psi=alpha+alpha^2/2",
+    "coordinate_conversion_arbitrary_order": "psi_n=alpha_n+(1/2)sum_{k=1}^{n-1}binomial(n,k)alpha_k alpha_(n-k)",
+    "exact_trace_equation": "(1+alpha(q,1))^2=1",
+    "factorial_convention": "alpha(q)=sum_{n>=1}q^n alpha_n/n!",
+    "fixed_h_consequence": "alpha_1(1)=0 implies alpha_n(1)=0 recursively for every n; the nonlinear trace source vanishes on lower-order solutions",
+    "linear_reaction_matches_v6_28_momentum": true,
+    "longitudinal_map": "E_n(1)=0 in additive scalar-longitudinal coordinates; its source is zero after lower-order fixed-h data",
+    "multiplier_reaction": "eta_n is generated at arbitrary order by matcher_reaction_coefficient from the exact canonical momentum after converting warp alpha coefficients to additive Weyl psi",
+    "orders": {
+      "1": "0",
+      "2": "-alpha_1**2",
+      "3": "-3*alpha_1*alpha_2"
+    },
+    "result": "BHSM_FIXED_H_NONLINEAR_BOUNDARY_MAP_DERIVED"
+  },
+  "empirical_generation_basis_used": false,
+  "empirical_inverse_used": false,
+  "fitted_parameter_used": false,
+  "frozen_predictions_changed": false,
+  "generic_pseudoinverse_used": false,
+  "matcher_eliminated_before_variation": false,
+  "measured_input_used": false,
+  "new_action_introduced": false,
+  "new_primitive_introduced": false,
+  "new_scale_introduced": false,
+  "official_prediction_logic_changed": false,
+  "physical_mass_claimed": false,
+  "q_dependent_regulator_used": false,
+  "source_main_sha": "57f5945f93b7db6d5781a2b919904073dcc05def",
+  "sprint": "bhsm-fixed-h-matcher-dirichlet-operator-v6-30-2",
+  "stability_claimed": false,
+  "v6_28_Robin_inverse_reused": false,
+  "v6_30_1_scientific_sha": "e54960b714edd4baba740d9fcb1a587ff0d64f1c",
+  "version": "v6.30.2"
+}
