@@ -1,7 +1,7 @@
 """BHSM master-action, transport, and curvature-response API.
 
 The v7.0 constants and v7.1 master-action report remain exported for
-artifact compatibility. Current v8.1 completion constants and status are
+artifact compatibility. Current v8.2 completion constants and status are
 exposed separately.
 """
 
@@ -18,14 +18,13 @@ from .report import (
 )
 from .validation import validate_model
 
-CURRENT_VERSION = "v8.1"
+CURRENT_VERSION = "v8.2"
 CURRENT_MISSING_OBJECT = (
-    "ACTION_DERIVED_INTERNAL_FERMION_BUNDLE_FACTOR_WITH_HOPF_"
-    "ACTION_FINITE_PROJECTOR_AND_LOCALIZED_YUKAWA_INCIDENCE"
+    "ACTION_DOMAIN_HIGHER_MODE_EXCLUSION_THEOREM"
 )
 CURRENT_VERDICT = (
-    "BHSM_FAMILY_RESOLUTION_REQUIRES_NEW_INTERNAL_FERMION_"
-    "BUNDLE_EXTENSION"
+    "BHSM_ORIGINAL_GENERATION_PROJECTOR_BLOCKED_BY_"
+    "UNEXCLUDED_HIGHER_MODES"
 )
 
 
@@ -85,6 +84,20 @@ def mode_resolved_curvature_status_to_markdown(payload=None):
     return status_to_markdown(payload)
 
 
+def original_generation_projector_status_payload():
+    """Return the current v8.2 original-projector recovery status."""
+    from .original_generation_projector import status_report
+
+    return status_report()
+
+
+def original_generation_projector_status_to_markdown(payload=None):
+    """Render the current v8.2 original-projector recovery status."""
+    from .original_generation_projector import status_to_markdown
+
+    return status_to_markdown(payload)
+
+
 __all__ = [
     "ARTIFACT_FILES",
     "CURRENT_MISSING_OBJECT",
@@ -105,6 +118,8 @@ __all__ = [
     "mode_resolved_curvature_status_to_markdown",
     "observable_status_payload",
     "observable_status_to_markdown",
+    "original_generation_projector_status_payload",
+    "original_generation_projector_status_to_markdown",
     "payloads",
     "status_payload",
     "status_to_markdown",

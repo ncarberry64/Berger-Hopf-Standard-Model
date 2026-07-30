@@ -361,3 +361,26 @@ RB-15 remains `BLOCKED_EXACT_OBJECT_PROVED`; RB-16 remains downstream.
 
 Current exact verdict:
 `BHSM_FAMILY_RESOLUTION_REQUIRES_NEW_INTERNAL_FERMION_BUNDLE_EXTENSION`.
+
+## v8.2 authoritative status
+
+V8.2 applies the steering correction and recovers the original charged-sector
+architecture: one `(0,0)` base slot plus the two stored excitation modes in
+each sector. The resulting orthogonal projector has rank three. Exact
+triality projectors provide a conditional representation-space realization
+of the same three slots, while the master-action ledger types the physical
+mode projector as an independent finite generation-module input.
+
+The complete boundary equations do not select exactly two excitations. They
+give infinitely many charged-lepton and up-sector roots and four nonzero
+down-sector roots. `n_modes=2` is the stored finite input, not an action
+result. No domain or gap theorem excludes the first higher modes `(13,4)`,
+`(14,2)`, and `(10,1)`. The proxy modes still have no localized-fermion mode
+stress, so no action-derived response matrix, mass ratio, or CKM result is
+defined.
+
+The cap-domain-wall replacement is paused and non-authoritative. RB-15
+remains `BLOCKED_EXACT_OBJECT_PROVED`; RB-16 remains downstream.
+
+Current exact verdict:
+`BHSM_ORIGINAL_GENERATION_PROJECTOR_BLOCKED_BY_UNEXCLUDED_HIGHER_MODES`.

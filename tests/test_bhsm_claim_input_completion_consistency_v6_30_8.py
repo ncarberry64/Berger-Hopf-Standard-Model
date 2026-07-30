@@ -107,12 +107,12 @@ def test_next_target_is_highest_upstream_parent_action():
     assert rb01["depends_on"] == []
 
 
-def test_completion_gate_tracks_current_v8_1_tier_status():
+def test_completion_gate_tracks_current_v8_2_tier_status():
     payload = audit.canonical_completion_gate_payload()
-    assert payload["version"] == "v8.1"
+    assert payload["version"] == "v8.2"
     assert payload["BHSM_1_0_release_complete"] is False
     assert payload["next_highest_upstream_blocker"] == (
-        "NEW_INTERNAL_FERMION_BUNDLE_EXTENSION_REQUIRED"
+        "ACTION_DOMAIN_HIGHER_MODE_EXCLUSION_THEOREM"
     )
     assert payload["current_tier_status"]["Tier_A"] == "COMPLETE"
     assert payload["current_tier_status"]["Tier_B"] == "COMPLETE"
@@ -152,4 +152,4 @@ def test_materializer_is_idempotent_and_updates_canonical_gate():
     canonical_second = (ROOT / "artifacts" / "BHSM_1_0_completion_gate.json").read_bytes()
     assert first == second == audit.artifact_bytes(ROOT)
     assert canonical_first == canonical_second
-    assert json.loads(canonical_second)["version"] == "v8.1"
+    assert json.loads(canonical_second)["version"] == "v8.2"

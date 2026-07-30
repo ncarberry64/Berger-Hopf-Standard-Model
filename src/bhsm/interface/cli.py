@@ -312,6 +312,12 @@ from .master_action.mode_resolved_curvature_incidence import (
 from .master_action.mode_resolved_curvature_incidence import (
     status_to_markdown as mode_resolved_curvature_status_to_markdown,
 )
+from .master_action.original_generation_projector import (
+    status_report as original_generation_projector_status_payload,
+)
+from .master_action.original_generation_projector import (
+    status_to_markdown as original_generation_projector_status_to_markdown,
+)
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -835,6 +841,13 @@ def build_parser() -> argparse.ArgumentParser:
     mode_resolved_curvature.add_argument(
         "--format", choices=("json", "markdown"), default="markdown"
     )
+    original_generation_projector = commands.add_parser(
+        "original-generation-projector-status",
+        help="Render the BHSM v8.2 original generation projector recovery",
+    )
+    original_generation_projector.add_argument(
+        "--format", choices=("json", "markdown"), default="markdown"
+    )
     return parser
 
 
@@ -876,6 +889,16 @@ def main(argv: Sequence[str] | None = None) -> int:
         if args.format == "markdown":
             print(
                 mode_resolved_curvature_status_to_markdown(payload),
+                end="",
+            )
+        else:
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        return 0
+    if args.command == "original-generation-projector-status":
+        payload = original_generation_projector_status_payload()
+        if args.format == "markdown":
+            print(
+                original_generation_projector_status_to_markdown(payload),
                 end="",
             )
         else:

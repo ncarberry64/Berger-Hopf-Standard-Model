@@ -435,3 +435,26 @@ downstream.
 Current exact verdict:
 `BHSM_FAMILY_RESOLUTION_REQUIRES_NEW_INTERNAL_FERMION_BUNDLE_EXTENSION`.
 
+## v8.2 original generation-projector recovery addendum
+
+The corrected campaign recovers the historical charged-sector triples as one
+base mode plus two excitation modes and constructs their rank-three
+orthogonal projectors. The exact triality projectors conditionally realize
+the same three abstract slots; they are not multiplied by the Berger ladder.
+The master-action classification remains a finite independent
+generation-module input rather than an action-derived family theorem.
+
+Solving the operational boundary equations completely gives infinitely many
+lepton and up roots and four nonzero down roots. The implementation's
+`n_modes=2` truncation is the structural input. No regularity, chirality,
+anomaly, self-adjoint-domain, or action-gap result excludes the displayed
+higher roots.
+
+The full interface tensor cannot be projected into a physical family
+response because the proxy mode stress is absent from the localized fermion
+action. Mass ratios and CKM therefore remain undefined. The domain-wall
+replacement is paused. RB-15 remains blocked and RB-16 remains downstream.
+
+Current exact verdict:
+`BHSM_ORIGINAL_GENERATION_PROJECTOR_BLOCKED_BY_UNEXCLUDED_HIGHER_MODES`.
+

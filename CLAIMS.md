@@ -2003,3 +2003,33 @@ Not supported:
 
 Exact verdict:
 `BHSM_FAMILY_RESOLUTION_REQUIRES_NEW_INTERNAL_FERMION_BUNDLE_EXTENSION`.
+
+## v8.2 original generation projector claim boundary
+
+Supported:
+
+- recovery of the original one-base-plus-two-excitation mode triples;
+- a rank-three orthogonal projector on each supplied charged-sector triple;
+- exact triality projector algebra and its conditional Fourier
+  identification with the same three slots;
+- classification of the physical generation projector as
+  `INDEPENDENT_FINITE_GENERATION_MODULE_INPUT`;
+- exact complete root families for all three operational boundary equations;
+- proof that the first unretained higher modes satisfy the existing rules;
+- absence of an action/domain higher-mode exclusion theorem;
+- absence of an action-defined mode stress, response matrix, mass ratio, or
+  CKM result.
+
+Not supported:
+
+- treating `n_modes=2`, finite `k_max`, or observed three generations as a
+  boundary theorem;
+- claiming that the operational `Omega_f` targets derive family count,
+  because their scaffold already contains `family_index=3`;
+- multiplying triality and Berger triplications;
+- calling the scalar proxy modes localized fermion modes;
+- reusing historical overlap or CKM screens as action-derived response;
+- promoting the paused domain-wall route.
+
+Exact verdict:
+`BHSM_ORIGINAL_GENERATION_PROJECTOR_BLOCKED_BY_UNEXCLUDED_HIGHER_MODES`.

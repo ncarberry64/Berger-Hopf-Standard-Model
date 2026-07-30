@@ -773,3 +773,18 @@ firewall, Hopf and triality actions, full Brown--York tensor, corrected
 four-dimensional trace split, first nonzero cap-even collar responses,
 mode-stress and symmetry-centrality results, physical family-module
 obstruction, prediction freeze, and RB-15/RB-16 status.
+
+<!-- BHSM_ORIGINAL_GENERATION_PROJECTOR_RECOVERY_V8_2 -->
+## Original generation projector recovery v8.2
+
+```bash
+python -m bhsm.interface original-generation-projector-status --format json
+python -m bhsm.interface original-generation-projector-status --format markdown
+python -m bhsm.interface.master_action.original_generation_projector --materialize
+```
+
+The command reports the original doctrine provenance, base and excitation
+slots, sector assignments, selection operator, rank and classification,
+complete higher-mode audit, action-domain status, mode response, mass-ratio
+and CKM boundaries, prediction freeze, domain-wall fallback, RB-15/RB-16,
+and release verdict.

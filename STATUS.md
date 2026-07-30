@@ -9,12 +9,12 @@ BHSM is an artifact-backed mathematical and computational research framework,
 not a replacement for the Standard Model established by empirical tests. Frozen
 internal prediction records, executable interfaces, deterministic artifacts,
 and extensive geometric/action calculations exist. The v7.2 finite-input
-physical observable map is complete in one declared scheme. BHSM v8.1
-retains the full Brown--York tensor and computes its first nonzero
-equatorial response. The Hopf reduction supplies an exact internal scalar
-associated-bundle tower, but the localized fermion bundle has no Hopf factor
-and the action selects no finite physical family projector. It therefore
-produces no distinct mass hierarchy or CKM prediction.
+physical observable map is complete in one declared scheme. BHSM v8.2
+recovers the original one-base-plus-two-excitation rank-three projector and
+types it as an independent finite generation-module input. Its boundary
+rules leave infinitely many lepton/up roots and four down roots, so no
+action/domain theorem excludes higher modes. Mode-dependent response, mass
+ratios, and CKM remain undefined.
 
 Preferred current classifications are: **Adopted from established
 physics/mathematics**, **Adopted BHSM axiom**, **BHSM identification**,
@@ -69,7 +69,7 @@ Reviewer entry points:
 [claim boundaries](CLAIMS.md), and
 [reproduction guide](docs/reviewer_reproduction_guide.md).
 
-BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v8.1 retains the full Brown--York tensor and computes its first equatorial shape response. The exact internal scalar Hopf tower is not a factor of the localized fermion bundle and no physical family projector is selected, so no distinct mass hierarchy or CKM prediction follows and RB-15/RB-16 remain blocked.
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v8.2 recovers the original one-base-plus-two-excitation rank-three projector and types it as an independent finite generation-module input. The boundary rules leave infinitely many lepton/up roots and four down roots, so higher modes are unexcluded; action-derived mode response, mass ratios, and CKM remain undefined, with RB-15/RB-16 blocked.
 
 BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity. Physical eV/GeV neutrino mass closure remains open pending a numeric neutral stiffness length sqrt(A_nu/Z_nu), a physical K_neutral,eff map in m^-2, and complete-action derivation of the admissible response cone.
 
@@ -2686,3 +2686,26 @@ RB-15 remains `BLOCKED_EXACT_OBJECT_PROVED`; RB-16 remains downstream.
 
 Current exact verdict:
 `BHSM_FAMILY_RESOLUTION_REQUIRES_NEW_INTERNAL_FERMION_BUNDLE_EXTENSION`.
+
+## v8.2 original generation projector recovery
+
+The steering correction restores the original BHSM division of
+responsibility. The common round geometry is not asked to create family
+multiplicity. The charged-sector family module is the supplied base mode plus
+two excitation modes, and its orthogonal projector has rank three. Exact
+triality projectors conditionally realize the same three slots; the
+authoritative action ledger types the mode projector as an independent finite
+generation-module input.
+
+The complete operational boundary equations admit infinitely many lepton and
+up roots and four nonzero down roots. The stored `n_modes=2` cutoff is not
+action-derived, and no physical domain or gap excludes the higher roots.
+Because the Berger proxy modes have no action-defined localized-fermion mode
+stress, the full interface tensor still yields no family response matrix,
+mass ratio, or CKM observable.
+
+The domain-wall replacement is paused and non-authoritative. RB-15 remains
+`BLOCKED_EXACT_OBJECT_PROVED`; RB-16 remains downstream.
+
+Current exact verdict:
+`BHSM_ORIGINAL_GENERATION_PROJECTOR_BLOCKED_BY_UNEXCLUDED_HIGHER_MODES`.

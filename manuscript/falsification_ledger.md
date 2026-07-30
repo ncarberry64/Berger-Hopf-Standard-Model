@@ -17,6 +17,7 @@ criteria protect the no-retuning status of the frozen branches.
 | `F10` | The v7.3 route-exhaustion theorem localizes the missing non-universal physical-sector action cross block. | `BLOCKED_EXACT_OBJECT_PROVED` |
 | `F11` | Any nondegenerate charged-sector singular-value ratio falsifies the universal v8.0 Brown--York response as a flavor mechanism; the post-freeze repository comparison already does so. | `INVALIDATED` |
 | `F12` | The v8.1 obstruction is overturned only by an existing nonzero action map from an action-selected internal Hopf fermion module, with finite projector and domain, into localized Yukawa incidence; the repository audit finds none. | `BLOCKED_EXACT_OBJECT_PROVED` |
+| `F13` | The v8.2 obstruction is overturned by an action/domain theorem selecting exactly the stored base plus two excitation slots and excluding the allowed higher boundary roots without empirical input. | `BLOCKED_EXACT_OBJECT_PROVED` |
 
 ## Fixed Tolerance Bands
 
