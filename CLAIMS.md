@@ -1907,3 +1907,34 @@ Not supported:
 
 Exact verdict:
 `BHSM_RELEASE_COMPLETION_BLOCKED_BY_ABSENCE_OF_DISTINCT_ACTION_DERIVED_FALSIFIABLE_PREDICTION`.
+
+## v7.3 distinct-prediction claim boundary
+
+Supported:
+
+- the exact localized fermion operator
+  `i gamma^mu(nabla_mu^S_h+rho(A_SM)_mu)-Y(H)`;
+- absence of a Hopf/ Berger twist acting on the localized fermion bundle;
+- absence of an action-selected maximal-isotropic fermion domain;
+- no protected family index or positive universal fermion gap;
+- fixed-metric scalar-Hessian splitting between cap/KKT and Higgs blocks;
+- no action-selected Berger shape, orthogonal physical scalar projector, or
+  generation projector;
+- the fixed-h result that the first canonical same-family interaction is
+  quartic, without particle interpretation;
+- the exact missing non-universal cross block from distinctive BHSM
+  variables to localized physical operators.
+
+Not supported:
+
+- inserting a zero mode, gap floor, empirical scalar mass, or historical
+  mode ledger into an operator theorem;
+- calling the supplied `C3_family` factor an action-derived three-generation
+  index;
+- a scalar, fermion, generation, or input-cancelling physical prediction;
+- adding a bulk-boundary coupling and reporting it as a consequence of the
+  current action;
+- closing RB-15 or generating the release package.
+
+Exact verdict:
+`BHSM_DISTINCT_PREDICTION_REQUIRES_NEW_BULK_BOUNDARY_COUPLING_NOT_PRESENT_IN_ACTION`.

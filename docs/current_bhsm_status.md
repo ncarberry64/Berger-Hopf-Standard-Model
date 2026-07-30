@@ -304,3 +304,21 @@ relations, historical screens, and conditional extensions are not promoted.
 
 Current exact verdict:
 `BHSM_RELEASE_COMPLETION_BLOCKED_BY_ABSENCE_OF_DISTINCT_ACTION_DERIVED_FALSIFIABLE_PREDICTION`.
+
+## v7.3 authoritative status
+
+The prediction-construction campaign evaluates the exact twisted-Dirac,
+scalar/topographic Hessian, internal-geometry, generation-selection,
+input-cancelling, and fixed-h routes. The current action supplies no
+non-universal term connecting distinctive Berger/Hopf/topographic variables
+to `A_SM`, `Psi`, `H`, or a derived generation projector. The existing seam
+metric trace is universal gravity and does not select a distinctive spectral
+coefficient.
+
+The exact common obstruction is
+`NONUNIVERSAL_BHSM_TO_LOCALIZED_PHYSICAL_SECTOR_ACTION_COUPLING`.
+No new prediction is frozen; RB-15 remains blocked and RB-16 remains
+downstream.
+
+Current exact verdict:
+`BHSM_DISTINCT_PREDICTION_REQUIRES_NEW_BULK_BOUNDARY_COUPLING_NOT_PRESENT_IN_ACTION`.

@@ -230,3 +230,20 @@ artifact records the scheme, reference scale, perturbative order, active
 content, threshold domain, Higgs branch, universal calibration, running
 mass and CKM definitions, benchmark manifest, falsification audit, and
 comparison firewall.
+
+## BHSM v7.3 distinct-prediction campaign
+
+From an uninstalled checkout:
+
+```powershell
+$env:PYTHONPATH=(Resolve-Path 'src').Path
+python -m bhsm.interface.master_action.distinct_prediction --materialize
+python -m bhsm.interface distinct-prediction-status --format json
+python -m bhsm.interface distinct-prediction-status --format markdown
+```
+
+Materialize twice and require byte-identical UTF-8/LF output. The v7.3
+artifact records every attempted route, exact operators/equations, typed
+candidate status, rejected proxy inputs, the singular action cross-block
+obstruction, and live RB-15/RB-16 status. It does not consult comparison
+data or alter frozen predictions.

@@ -294,6 +294,12 @@ from .master_action.observable_transport import (
 from .master_action.observable_transport import (
     status_to_markdown as observable_transport_status_to_markdown,
 )
+from .master_action.distinct_prediction import (
+    status_report as distinct_prediction_status_payload,
+)
+from .master_action.distinct_prediction import (
+    status_to_markdown as distinct_prediction_status_to_markdown,
+)
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -796,6 +802,13 @@ def build_parser() -> argparse.ArgumentParser:
     observable_transport.add_argument(
         "--format", choices=("json", "markdown"), default="markdown"
     )
+    distinct_prediction = commands.add_parser(
+        "distinct-prediction-status",
+        help="Render the BHSM v7.3 distinct-prediction campaign",
+    )
+    distinct_prediction.add_argument(
+        "--format", choices=("json", "markdown"), default="markdown"
+    )
     return parser
 
 
@@ -812,6 +825,13 @@ def main(argv: Sequence[str] | None = None) -> int:
         payload = observable_transport_status_payload()
         if args.format == "markdown":
             print(observable_transport_status_to_markdown(payload), end="")
+        else:
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        return 0
+    if args.command == "distinct-prediction-status":
+        payload = distinct_prediction_status_payload()
+        if args.format == "markdown":
+            print(distinct_prediction_status_to_markdown(payload), end="")
         else:
             print(json.dumps(payload, indent=2, sort_keys=True))
         return 0

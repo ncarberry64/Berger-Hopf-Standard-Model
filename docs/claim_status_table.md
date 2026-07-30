@@ -110,7 +110,7 @@ integration, complete BHSM 4D Lagrangian export, validated UFO output,
 MadGraph validation, event generation, Athena integration, CMSSW integration,
 or empirical validation.
 
-## v7.2 live claim matrix
+## v7.3 live claim matrix
 
 | Claim | Live status | Boundary |
 | --- | --- | --- |
@@ -120,4 +120,6 @@ or empirical validation.
 | `G_F` scale bridge | `ONE_UNIVERSAL_DIMENSIONFUL_CALIBRATION` | not predicted and not repeatable with another mass |
 | CKM | `INPUT_DEPENDENT_CALCULATION` | derived from independent Yukawa matrices, not the historical `1/16` screen |
 | Pole observables | `NOT_IMPLEMENTED_NOT_INFERRED` | retained as running quantities when conversion is unavailable |
-| Distinct action-derived falsifiable physical prediction | `ABSENT` | exact Tier-C release blocker |
+| Distinct action-derived falsifiable physical prediction | `BLOCKED_EXACT_OBJECT_PROVED` | requires a non-universal BHSM-to-localized-physical-sector action coupling |
+| Exact twisted Dirac operator | `STANDARD_MODEL_EFT_OPERATOR_ONLY` | no Hopf/ Berger twist acts on localized `Psi` |
+| Fixed-h quartic consequence | `STRUCTURAL_BUT_NOT_PHYSICAL` | no particle-observable transport |
