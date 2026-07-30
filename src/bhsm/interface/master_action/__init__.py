@@ -1,7 +1,7 @@
-"""BHSM master-action, transport, and curvature-response API.
+"""BHSM master-action, transport, and mode-stress API.
 
 The v7.0 constants and v7.1 master-action report remain exported for
-artifact compatibility. Current v8.2 completion constants and status are
+artifact compatibility. Current v8.3 completion constants and status are
 exposed separately.
 """
 
@@ -18,12 +18,15 @@ from .report import (
 )
 from .validation import validate_model
 
-CURRENT_VERSION = "v8.2"
+CURRENT_VERSION = "v8.3"
 CURRENT_MISSING_OBJECT = (
-    "ACTION_DERIVED_CLASSICAL_MODE_STRESS_INCIDENCE_ON_"
-    "FROZEN_THREE_SLOT_MODULE"
+    "ACTION_DENSITY_FOR_FROZEN_MODE_AMPLITUDES_WITH_"
+    "METRIC_VARIATION"
 )
-CURRENT_VERDICT = "BHSM_MODE_DEPENDENT_RESPONSE_BLOCKED_BY_UNDEFINED_MODE_STRESS"
+CURRENT_VERDICT = (
+    "BHSM_CLASSICAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DENSITY_"
+    "FOR_FROZEN_MODES"
+)
 
 
 def observable_status_payload():
@@ -96,6 +99,20 @@ def generation_projector_action_status_to_markdown(payload=None):
     return status_to_markdown(payload)
 
 
+def classical_mode_stress_status_payload():
+    """Return the current v8.3 classical mode-stress status."""
+    from .classical_mode_stress_incidence import status_report
+
+    return status_report()
+
+
+def classical_mode_stress_status_to_markdown(payload=None):
+    """Render the current v8.3 classical mode-stress status."""
+    from .classical_mode_stress_incidence import status_to_markdown
+
+    return status_to_markdown(payload)
+
+
 __all__ = [
     "ARTIFACT_FILES",
     "CURRENT_MISSING_OBJECT",
@@ -105,6 +122,8 @@ __all__ = [
     "VERDICT",
     "VERSION",
     "artifact_bytes",
+    "classical_mode_stress_status_payload",
+    "classical_mode_stress_status_to_markdown",
     "distinct_prediction_status_payload",
     "distinct_prediction_status_to_markdown",
     "frozen_file_sha256",

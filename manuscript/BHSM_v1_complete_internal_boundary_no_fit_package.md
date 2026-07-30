@@ -470,3 +470,28 @@ downstream. The emergent Layer-Q map remains
 Current exact verdict:
 `BHSM_MODE_DEPENDENT_RESPONSE_BLOCKED_BY_UNDEFINED_MODE_STRESS`.
 
+## v8.3 classical mode-stress incidence addendum
+
+The v8.3 source audit sharpens the remaining obstruction. The frozen
+three-slot modules and their projector attachment are retained exactly, but
+the master action contains no classical mode profiles, amplitude variables,
+or metric-dependent quadratic operator whose stationary solutions are the
+frozen `(k,j)` ledger entries.
+
+The localized Dirac term produces only a family-central effective stress.
+The finite defect functional constrains labels and has no metric variation;
+the collar measure has no mode profiles to normalize; and the universal
+Brown--York response has no frozen-mode source. Hence the action-canonical
+Gram matrices, bilinear stresses, mixed Hessians, response matrices, mass
+ratios, and CKM basis are undefined.
+
+A mode-bilinear metric source would also generate quartic backreaction after
+metric elimination about the zero-amplitude background, not a quadratic mass
+term. The virtual-door factor is not present in an action stress, and the
+alpha-impedance interpretation lacks action attachment.
+
+RB-15 remains blocked and RB-16 remains downstream.
+
+Current exact verdict:
+`BHSM_CLASSICAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DENSITY_FOR_FROZEN_MODES`.
+

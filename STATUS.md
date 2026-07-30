@@ -9,12 +9,11 @@ BHSM is an artifact-backed mathematical and computational research framework,
 not a replacement for the Standard Model established by empirical tests. Frozen
 internal prediction records, executable interfaces, deterministic artifacts,
 and extensive geometric/action calculations exist. The v7.2 finite-input
-physical observable map is complete in one declared scheme. BHSM v8.2
-recovers the original one-base-plus-two-excitation rank-three projector and
-types it as an independent finite generation-module input. Its boundary
-rules leave infinitely many lepton/up roots and four down roots, so no
-action/domain theorem excludes higher modes. Mode-dependent response, mass
-ratios, and CKM remain undefined.
+physical observable map is complete in one declared scheme. BHSM v8.3 retains
+the conditionally derived and frozen three-slot modules but proves that the
+master action has no classical amplitude density for their ledger modes.
+Action-canonical stress, response matrices, mass ratios, and CKM therefore
+remain undefined.
 
 Preferred current classifications are: **Adopted from established
 physics/mathematics**, **Adopted BHSM axiom**, **BHSM identification**,
@@ -69,7 +68,7 @@ Reviewer entry points:
 [claim boundaries](CLAIMS.md), and
 [reproduction guide](docs/reviewer_reproduction_guide.md).
 
-BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: the conditionally derived and frozen one-base-plus-two-excitation family modules are attached to the v8.2 localized master-action field and Dirac domain. Higher tower modes are not additional generation slots. The action-derived classical mode-stress incidence, mass ratios, and CKM remain undefined, with RB-15/RB-16 blocked.
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v8.3 proves that the frozen three-slot modules have no corresponding classical amplitude action density in the authoritative master action. Their action-canonical Gram matrices, metric stresses, response matrices, mass ratios, and CKM therefore remain undefined, with RB-15/RB-16 blocked.
 
 BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity. Physical eV/GeV neutrino mass closure remains open pending a numeric neutral stiffness length sqrt(A_nu/Z_nu), a physical K_neutral,eff map in m^-2, and complete-action derivation of the admissible response cone.
 
@@ -2721,3 +2720,29 @@ RB-15 remains `BLOCKED_EXACT_OBJECT_PROVED`; RB-16 remains downstream.
 
 Current exact verdict:
 `BHSM_MODE_DEPENDENT_RESPONSE_BLOCKED_BY_UNDEFINED_MODE_STRESS`.
+
+## v8.3 classical mode-stress incidence
+
+V8.3 imports the frozen family modules unchanged and audits the complete
+action source of their proposed classical stress. No authoritative term
+contains the frozen mode profiles `u_f,i(Y,rho)`, their amplitudes `c_f,i`,
+or a metric-dependent quadratic operator `A_f,ij[h]` for which the ledger
+modes are stationary solutions.
+
+The M4 Dirac term yields only the formal central expression
+`delta_ij T_Dirac`; it is effective-QFT stress, not the stress of the
+classical Berger ledger modes. The `(Omega-T)^2` defect is a metric-free
+label constraint, the collar Jacobian has no profiles to normalize, and
+Brown--York response has no frozen-mode source. The virtual-door factor
+remains diagnostic dressing and is applied zero times.
+
+No action-canonical Gram matrix, bilinear stress, mixed metric--mode Hessian,
+seam compliance contraction, response matrix, mass hierarchy, or CKM basis
+is therefore defined. Moreover, eliminating a metric sourced at order
+`conjugate(c)c` would generate quartic, not quadratic, backreaction around
+the zero-amplitude background.
+
+RB-15 remains `BLOCKED_EXACT_OBJECT_PROVED`; RB-16 remains downstream.
+
+Current exact verdict:
+`BHSM_CLASSICAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DENSITY_FOR_FROZEN_MODES`.

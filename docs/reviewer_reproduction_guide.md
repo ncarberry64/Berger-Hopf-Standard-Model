@@ -66,3 +66,19 @@ and localized field/domain attachment. Confirm that higher tower modes are
 not typed as extra generations, the `(6,0)` middle-up factor remains `1/2`,
 no mode-stress matrix or flavor observable is fabricated, and the
 domain-wall route remains a non-authoritative fallback.
+
+## Reviewer checkpoint: v8.3
+
+```bash
+python -m bhsm.interface classical-mode-stress-status --format json
+python -m bhsm.interface classical-mode-stress-status --format markdown
+python -m bhsm.interface.master_action.classical_mode_stress_incidence --materialize
+```
+
+Verify that the frozen ledgers are unchanged and that every audited source
+lacks at least one required element of the classical amplitude action:
+profiles, amplitudes, metric-dependent quadratic operator, or selected
+domain. Confirm that the finite `I3` Gram is not presented as a collar
+profile integral, the formal M4 stress is rejected as family central,
+response matrices remain `None`, the virtual-door factor is applied zero
+times, and no alpha factor is inserted.

@@ -2046,3 +2046,34 @@ Not supported:
 
 Exact verdict:
 `BHSM_MODE_DEPENDENT_RESPONSE_BLOCKED_BY_UNDEFINED_MODE_STRESS`.
+
+## v8.3 classical mode-stress claim boundary
+
+Supported:
+
+- unchanged import of the frozen charged-sector modules;
+- exhaustive classification of relevant action, projector, collar,
+  Brown--York, scalar, charged-current, and virtual-door sources;
+- proof that the action contains no frozen-mode profiles, amplitudes, or
+  metric-dependent quadratic operator;
+- distinction between the abstract finite `I3` Gram matrix and an undefined
+  action-canonical profile Gram matrix;
+- the formal but rejected family-central M4 EFT stress
+  `delta_ij T_Dirac`;
+- proof that compliant metric elimination from a bilinear source is quartic
+  around the zero-amplitude background;
+- zero action-stress applications of `Z_virt^(u,2)=1/2`;
+- absence of an action attachment for the proposed alpha-impedance
+  interpretation.
+
+Not supported:
+
+- inserting `(k,j,q)` weights into a stress tensor;
+- treating the label-defect Hessian as a field-amplitude Hessian;
+- using Yukawa matrices, historical mass ratios, or CKM screens as inputs;
+- selecting a seam inverse before its gauge kernel and domain are fixed;
+- calling quartic backreaction a quadratic mass term;
+- constructing response matrices, mass ratios, CKM, or a release package.
+
+Exact verdict:
+`BHSM_CLASSICAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DENSITY_FOR_FROZEN_MODES`.

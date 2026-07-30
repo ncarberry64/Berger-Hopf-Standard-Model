@@ -387,3 +387,22 @@ Layer Q remains `OPEN_EMERGENT_QUANTUM_CORRESPONDENCE`. RB-15 remains
 
 Current exact verdict:
 `BHSM_MODE_DEPENDENT_RESPONSE_BLOCKED_BY_UNDEFINED_MODE_STRESS`.
+
+## v8.3 authoritative status
+
+The frozen three-slot modules remain attached and unchanged. V8.3 proves
+that no authoritative action term supplies their classical profiles,
+amplitudes, metric-dependent quadratic operator, or action-canonical Gram
+matrix. The M4 Dirac stress is family central and belongs to the effective
+fermion field, while the defect functional acts only on discrete labels.
+
+The mixed metric--mode Hessian and response matrices are therefore
+undefined. Compliance cannot repair this upstream absence; around the
+zero-amplitude background it would in any event produce quartic rather than
+quadratic backreaction. The virtual-door factor remains diagnostic and alpha
+has no action attachment to mass incidence.
+
+RB-15 remains `BLOCKED_EXACT_OBJECT_PROVED`; RB-16 remains downstream.
+
+Current exact verdict:
+`BHSM_CLASSICAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DENSITY_FOR_FROZEN_MODES`.

@@ -318,6 +318,12 @@ from .master_action.generation_projector_action_attachment import (
 from .master_action.generation_projector_action_attachment import (
     status_to_markdown as generation_projector_action_status_to_markdown,
 )
+from .master_action.classical_mode_stress_incidence import (
+    status_report as classical_mode_stress_status_payload,
+)
+from .master_action.classical_mode_stress_incidence import (
+    status_to_markdown as classical_mode_stress_status_to_markdown,
+)
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -848,6 +854,13 @@ def build_parser() -> argparse.ArgumentParser:
     generation_projector_action.add_argument(
         "--format", choices=("json", "markdown"), default="markdown"
     )
+    classical_mode_stress = commands.add_parser(
+        "classical-mode-stress-status",
+        help="Render the BHSM v8.3 classical mode-stress incidence audit",
+    )
+    classical_mode_stress.add_argument(
+        "--format", choices=("json", "markdown"), default="markdown"
+    )
     return parser
 
 
@@ -901,6 +914,13 @@ def main(argv: Sequence[str] | None = None) -> int:
                 generation_projector_action_status_to_markdown(payload),
                 end="",
             )
+        else:
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        return 0
+    if args.command == "classical-mode-stress-status":
+        payload = classical_mode_stress_status_payload()
+        if args.format == "markdown":
+            print(classical_mode_stress_status_to_markdown(payload), end="")
         else:
             print(json.dumps(payload, indent=2, sort_keys=True))
         return 0

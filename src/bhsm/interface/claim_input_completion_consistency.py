@@ -420,10 +420,10 @@ def historical_canonical_completion_gate_payload() -> dict[str, Any]:
 
 
 def canonical_completion_gate_payload() -> dict[str, Any]:
-    """Return the current projector-action-attachment completion gate."""
+    """Return the current classical-mode-stress completion gate."""
 
     from bhsm.interface.master_action import (
-        generation_projector_action_attachment as current,
+        classical_mode_stress_incidence as current,
     )
 
     return current.completion_gate_payload()

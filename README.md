@@ -5,7 +5,7 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
-BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: the conditionally derived and frozen one-base-plus-two-excitation family modules are attached to the v8.2 localized master-action field and Dirac domain. Higher tower modes are not additional generation slots. The action-derived classical mode-stress incidence, mass ratios, and CKM remain undefined, with RB-15/RB-16 blocked.
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v8.3 proves that the frozen three-slot modules have no corresponding classical amplitude action density in the authoritative master action. Their action-canonical Gram matrices, metric stresses, response matrices, mass ratios, and CKM therefore remain undefined, with RB-15/RB-16 blocked.
 
 This independent mathematical-physics project investigates whether
 Berger-Hopf boundary geometry can organize structures associated with
@@ -22,6 +22,7 @@ Standard Model, or received institutional endorsement.
 - [CERN toy model in plain language](docs/cern_toy_model_in_plain_language.md)
 - [STATUS.md](STATUS.md) and [claim boundaries](CLAIMS.md)
 - [BHSM v8.2 generation-projector action attachment](docs/bhsm_generation_projector_action_attachment_v8_2.md)
+- [BHSM v8.3 classical mode-stress incidence](docs/bhsm_classical_mode_stress_incidence_v8_3.md)
 - [Reviewer reproduction guide](docs/reviewer_reproduction_guide.md)
 - [Frozen records](docs/frozen_predictions.md) and [artifact index](ARTIFACT_INDEX.md)
 
