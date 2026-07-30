@@ -23,6 +23,7 @@ evidence, status, blockers, and caveat.
 | Proxy gap and scalar scaffold | retired as theorem data | `artifacts/BHSM_distinct_action_derived_prediction_v7_3.json` | exact non-universal physical-sector coupling absent |
 | Running masses and mixings | finite-input map complete | `artifacts/BHSM_common_scheme_observable_transport_v7_2.json` | pole conversion and empirical validation not inferred |
 | Distinct physical prediction routes | exhausted; exact object blocked | `artifacts/BHSM_distinct_action_derived_prediction_v7_3.json` | RB-15 |
+| Mass--curvature response | unique minimal Brown--York extension constructed; family mechanism invalidated | `artifacts/BHSM_mass_curvature_response_v8_0.json` | no positive energy split and universal `I3` response |
 | Repository readiness | retained repository status only | `docs/github_landing_status.md` | RB-16 |
 
 No retained claim depends on an unrecorded evidence row. The table is a

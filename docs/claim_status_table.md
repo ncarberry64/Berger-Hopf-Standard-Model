@@ -2,6 +2,7 @@
 
 | Claim | Status | Where to inspect | What would break it |
 | --- | --- | --- | --- |
+| Brown--York mass--curvature response v8.0 | `ACTION_EXTENSION_CONSTRUCTED; FLAVOR_MECHANISM_INVALIDATED` | `docs/bhsm_mass_curvature_response_v8_0.md`, `artifacts/BHSM_mass_curvature_response_v8_0.json` | A family-resolving action incidence or positive core/surface energy functional would require a new audited construction |
 | Standard Model gauge ledger is reproduced conditionally | `DERIVED_CONDITIONAL` | `theory/claims_ledger.json`, `tests/test_hypercharges.py`, `tests/test_anomalies.py` | Failure of admitted ledger consistency or anomaly tests |
 | Hypercharge derivation within admitted chiral pattern | `VERIFIED_TEST` | `src/hypercharge.py`, `tests/test_hypercharges.py` | Hypercharges no longer satisfy invariance/anomaly checks |
 | Anomaly cancellation | `VERIFIED_TEST` | `src/anomalies.py`, `tests/test_anomalies.py` | Nonzero anomaly residuals |

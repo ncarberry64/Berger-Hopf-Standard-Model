@@ -1,10 +1,12 @@
 # Open Blockers Backlog
 
-Current public status: the v7.2 finite-input physical observable map is complete.
-The historical table remains provenance; its entries do not override the
-v7.3 completion-DAG update. Tier B is complete. The v7.3 route-exhaustion
-theorem localizes the live Tier-C blocker to
-`NONUNIVERSAL_BHSM_TO_LOCALIZED_PHYSICAL_SECTOR_ACTION_COUPLING`.
+Current public status: the v7.2 finite-input physical observable map is
+complete. The historical table remains provenance; its entries do not
+override the v8.0 completion-DAG update. Tier B is complete. V8.0 constructs
+the unique minimal Brown--York curvature-response coupling, but no positive
+core/surface energy ratio and no family-resolving incidence follow. The
+live Tier-C object is
+`FAMILY_RESOLVING_ACTION_INCIDENCE_BEYOND_THE_UNIVERSAL_CURVATURE_SCALAR`.
 
 Historical compatibility boundary: structural architecture integrated conditional; numerical closure open.
 This sentence records the pre-v7.1 numerical-closure status required by the

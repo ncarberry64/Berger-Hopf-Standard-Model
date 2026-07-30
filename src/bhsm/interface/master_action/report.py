@@ -87,9 +87,17 @@ def materialize(root: Path) -> list[Path]:
     return paths
 
 
+def frozen_file_sha256(path: Path) -> str:
+    """Hash legacy frozen text in its declared canonical CRLF form."""
+
+    canonical_lf = path.read_bytes().replace(b"\r\n", b"\n")
+    canonical_crlf = canonical_lf.replace(b"\n", b"\r\n")
+    return hashlib.sha256(canonical_crlf).hexdigest().upper()
+
+
 def frozen_hashes_match(root: Path) -> bool:
     return all(
-        hashlib.sha256((root / path).read_bytes()).hexdigest().upper() == digest
+        frozen_file_sha256(root / path) == digest
         for path, digest in FROZEN_HASHES.items()
     )
 

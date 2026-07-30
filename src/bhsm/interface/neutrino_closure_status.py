@@ -27,8 +27,10 @@ NEUTRINO_PUBLIC_STATUS = (
 PUBLIC_REPO_STATUS = (
     "BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. "
     "Current public status: the finite-input physical observable map is complete in one declared "
-    "scheme; the v7.3 route-exhaustion theorem proves that a distinct action-derived physical "
-    "prediction requires a new non-universal bulk-boundary coupling not present in the current action."
+    "scheme; v8.0 adds the unique minimal Brown-York curvature-response coupling, but the response "
+    "is family-universal and the action supplies no positive core/surface energy-envelopment "
+    "functional, so no distinct mass hierarchy or CKM prediction follows and RB-15/RB-16 remain "
+    "blocked."
 )
 
 REMAINING_MISSING_OBJECTS = (
@@ -123,8 +125,14 @@ def write_v1_5_status_stabilization_artifact(path: str | Path) -> Path:
 
     destination = Path(path)
     destination.parent.mkdir(parents=True, exist_ok=True)
-    destination.write_text(
-        json.dumps(build_v1_5_status_stabilization_report().to_dict(), indent=2, sort_keys=True) + "\n",
-        encoding="utf-8",
+    destination.write_bytes(
+        (
+            json.dumps(
+                build_v1_5_status_stabilization_report().to_dict(),
+                indent=2,
+                sort_keys=True,
+            )
+            + "\n"
+        ).encode("utf-8")
     )
     return destination

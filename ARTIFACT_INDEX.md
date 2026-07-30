@@ -1500,3 +1500,13 @@ Doctrine and manuscript chapter:
 - `artifacts/BHSM_1_0_completion_gate.json`: canonical v7.3 gate with
   Tier C blocked by
   `NONUNIVERSAL_BHSM_TO_LOCALIZED_PHYSICAL_SECTOR_ACTION_COUPLING`.
+
+## BHSM v8.0 mass--curvature response
+
+- `artifacts/BHSM_mass_curvature_response_v8_0.json`: canonical carrier
+  audit, Brown--York curvature invariant, minimal coupling classification,
+  collar Jacobian, radial operator/domain, positive-energy obstruction,
+  family-space theorem, response matrices, prediction freeze/hash, and
+  post-freeze invalidation.
+- `artifacts/BHSM_1_0_completion_gate.json`: canonical v8.0 gate retaining
+  RB-15 as `BLOCKED_EXACT_OBJECT_PROVED` and RB-16 as downstream.

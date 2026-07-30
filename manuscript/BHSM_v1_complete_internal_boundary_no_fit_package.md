@@ -380,3 +380,33 @@ and RB-16 therefore remain open.
 Current exact verdict:
 `BHSM_DISTINCT_PREDICTION_REQUIRES_NEW_BULK_BOUNDARY_COUPLING_NOT_PRESENT_IN_ACTION`.
 
+## v8.0 mass--curvature response addendum
+
+V8.0 explicitly extends the stratified action by coupling the cap-even trace
+of the Einstein--GHY canonical momentum to the localized Yukawa operators.
+The selected scalar is
+\(\kappa_{\rm env}=-(3\kappa_1)^{-1}h_{ab}\pi_{\rm env}^{ab}\). Scalar
+momentum is excluded by the retained scalar parity and zero seam trace; the
+matcher reaction is the same metric canonical response and is not counted
+twice.
+
+The collar construction retains
+\(J(Y,\rho)=\det(I+\rho S(Y))\), with
+\(J_{\rm round}=\cos^3\rho\). The constrained action does not supply two
+independent positive core and surface energies, so no normalized
+energy-envelopment ratio or stationary radial localization family is
+derived.
+
+The curvature response is one real gauge-singlet channel. Conditional on
+the supplied three-family localized spaces it acts as the identity, giving
+exact singular-value ratios \(1:1:1\) and leaving CKM undefined under
+degeneracy. This result was hashed before comparison and subsequently
+invalidated by the nondegenerate historical and common-scale records. No
+fit, new mediator, second scale, or post-comparison retuning was used.
+
+RB-15 remains blocked by the absence of family-resolving action incidence;
+RB-16 remains downstream.
+
+Current exact verdict:
+`BHSM_MASS_RESPONSE_BLOCKED_BY_UNIVERSAL_RESPONSE_WITH_NO_FAMILY_RESOLUTION`.
+

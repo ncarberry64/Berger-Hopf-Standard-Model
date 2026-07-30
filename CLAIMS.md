@@ -1938,3 +1938,33 @@ Not supported:
 
 Exact verdict:
 `BHSM_DISTINCT_PREDICTION_REQUIRES_NEW_BULK_BOUNDARY_COUPLING_NOT_PRESENT_IN_ACTION`.
+
+## v8.0 mass--curvature response claim boundary
+
+Supported:
+
+- the explicit dimension-five Brown--York-trace coupling to localized
+  Yukawa operators as a v8.0 action extension;
+- the cap-even canonical scalar
+  `kappa_env=-(3 kappa1)^-1 h_ab pi_env^ab`;
+- the v7.1 local collar factor `J(Y,rho)=det(I+rho S(Y))` and exact round
+  factor `cos(rho)^3`;
+- the constrained scalar radial operator and zero-trace self-adjoint
+  domain;
+- absence of an action-derived positive core/surface energy pair;
+- one derived scalar response channel, acting as `I3` on any supplied
+  three-family space;
+- a pre-comparison frozen `1:1:1` conditional prediction and its
+  post-freeze invalidation.
+
+Not supported:
+
+- an energy-envelopment ratio, localization profile family, or monotonic
+  core-shift law;
+- three generations derived from the curvature response;
+- nondegenerate charged mass ratios or a CKM invariant;
+- promoting the historical bare or dressed screens;
+- closing RB-15, RB-16, or the BHSM 1.0 release gate.
+
+Exact verdict:
+`BHSM_MASS_RESPONSE_BLOCKED_BY_UNIVERSAL_RESPONSE_WITH_NO_FAMILY_RESOLUTION`.

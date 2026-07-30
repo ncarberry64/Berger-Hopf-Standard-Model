@@ -102,3 +102,17 @@ RB-16 remains downstream.
 
 Exact verdict:
 `BHSM_DISTINCT_PREDICTION_REQUIRES_NEW_BULK_BOUNDARY_COUPLING_NOT_PRESENT_IN_ACTION`.
+
+## v8.0 mass--curvature response gate
+
+V8.0 adds the unique minimal cap-even Brown--York trace coupling to the
+localized Yukawa operators. The action supplies no positive core/surface
+energy pair. The derived response space is one scalar singlet and therefore
+acts as `I3` on each supplied charged-family space. The frozen `1:1:1`
+prediction is incompatible with all repository-held charged-sector
+comparisons, with no retuning.
+
+RB-15 remains `BLOCKED_EXACT_OBJECT_PROVED`; RB-16 remains downstream.
+
+Exact verdict:
+`BHSM_MASS_RESPONSE_BLOCKED_BY_UNIVERSAL_RESPONSE_WITH_NO_FAMILY_RESOLUTION`.

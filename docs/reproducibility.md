@@ -247,3 +247,17 @@ artifact records every attempted route, exact operators/equations, typed
 candidate status, rejected proxy inputs, the singular action cross-block
 obstruction, and live RB-15/RB-16 status. It does not consult comparison
 data or alter frozen predictions.
+
+## BHSM v8.0 mass--curvature response
+
+```powershell
+$env:PYTHONPATH=(Resolve-Path 'src').Path
+python -m bhsm.interface.master_action.mass_curvature_response --materialize
+python -m bhsm.interface mass-curvature-response-status --format json
+python -m bhsm.interface mass-curvature-response-status --format markdown
+```
+
+Materialize twice and require byte-identical UTF-8/LF output. The artifact
+freezes and hashes the universal `I3` response before its comparison block.
+The comparison is then recorded as `INVALIDATED` without changing the
+prediction-freeze hash. No official v7.2 prediction or calibration changes.

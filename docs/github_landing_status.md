@@ -14,8 +14,8 @@ Current public-safe summary:
 - Covariant stratified core architecture: complete.
 - Tier A / BHSM Core Complete: yes.
 - Tier B / Physical Complete: yes, as a finite-input one-scheme map.
-- Tier C / External Review Ready: no; all six prediction routes meet the
-  exact missing non-universal physical-sector coupling.
+- Tier C / External Review Ready: no; v8.0 constructs the unique minimal
+  Brown--York mass-response coupling, but it is family-universal.
 - Full BHSM proven: no.
 - Standard Model fully derived: no.
 - Mass numerical closure: no.
@@ -32,7 +32,14 @@ parameter-conditional because `G5` remains unselected; it is not a physical
 mass, scale prediction, global-stability theorem, or completion claim.
 
 The v6.30.6 governance contract defines the three-tier BHSM 1.0 finish line.
-Its historical status statements are superseded by the canonical v7.3 gate.
+Its historical status statements are superseded by the canonical v8.0 gate.
+
+V8.0 explicitly couples the cap-even Brown--York trace response to the
+localized Yukawa operators. The current action has no positive
+core/surface energy-envelopment split, and the response acts as `I3` on
+each supplied charged-family space. The frozen `1:1:1` response is
+incompatible with the repository-held nondegenerate ratios. No fit or
+retuning occurred; RB-15 and RB-16 remain blocked.
 
 The v6.30.7 audit proves that the scalar quartic freedom is the invariant
 `lambda5=kappa1 G5/Z5^2`. The frozen provisional action contains the term

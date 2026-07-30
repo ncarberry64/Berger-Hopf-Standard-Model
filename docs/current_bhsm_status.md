@@ -322,3 +322,22 @@ downstream.
 
 Current exact verdict:
 `BHSM_DISTINCT_PREDICTION_REQUIRES_NEW_BULK_BOUNDARY_COUPLING_NOT_PRESENT_IN_ACTION`.
+
+## v8.0 authoritative status
+
+V8.0 adds the explicit minimal coupling between the cap-even Brown--York
+trace response and localized Yukawa operators. The selected curvature
+scalar is
+`kappa_env=-(3 kappa1)^-1 h_ab pi_env^ab`. The existing action supplies no
+independent positive core/surface energy pair, so it defines no
+energy-envelopment ratio or stationary radial localization family.
+
+Conditional on the supplied three-family M4 spaces, the curvature response
+is the identity in every charged sector. Its prediction was frozen as
+`1:1:1` before comparison and then invalidated by the repository's
+nondegenerate historical and common-scale ratios. No CKM invariant follows
+from exactly degenerate response matrices. RB-15 remains
+`BLOCKED_EXACT_OBJECT_PROVED`; RB-16 remains downstream.
+
+Current exact verdict:
+`BHSM_MASS_RESPONSE_BLOCKED_BY_UNIVERSAL_RESPONSE_WITH_NO_FAMILY_RESOLUTION`.
