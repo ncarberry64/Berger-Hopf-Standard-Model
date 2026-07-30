@@ -358,3 +358,25 @@ excluded. The manuscript is therefore not relabeled external-review ready.
 Current exact verdict:
 `BHSM_RELEASE_COMPLETION_BLOCKED_BY_ABSENCE_OF_DISTINCT_ACTION_DERIVED_FALSIFIABLE_PREDICTION`.
 
+## v7.3 prediction-construction addendum
+
+The six independent construction routes have now been evaluated against the
+authoritative action. The exact fermion operator is the localized Standard
+Model Dirac-Yukawa operator; no Hopf connection acts on its bundle and no
+self-adjoint boundary member is action-selected. The protected kernel and
+positive BHSM fermion gap therefore do not exist as current action outputs.
+
+The scalar/topographic Hessian separates into cap/KKT and localized Higgs
+blocks at fixed metric. No orthogonal physical scalar projector is derived.
+The Berger shape and generation projectors remain inputs. Input cancellation
+leaves only structural invariants, and the fixed-h quartic coefficient has no
+particle-observable map.
+
+The common missing object is a non-universal action coupling transporting a
+distinctive Berger/Hopf/topographic mode into a localized physical operator.
+Adding such a term would extend rather than derive the current action. RB-15
+and RB-16 therefore remain open.
+
+Current exact verdict:
+`BHSM_DISTINCT_PREDICTION_REQUIRES_NEW_BULK_BOUNDARY_COUPLING_NOT_PRESENT_IN_ACTION`.
+

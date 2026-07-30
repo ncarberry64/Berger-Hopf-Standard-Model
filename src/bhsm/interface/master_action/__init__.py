@@ -1,7 +1,7 @@
-"""BHSM master-action and observable-transport API.
+"""BHSM master-action, observable-transport, and prediction-campaign API.
 
 The v7.0 constants and v7.1 master-action report remain exported for
-artifact compatibility. Current v7.2 completion constants and status are
+artifact compatibility. Current v7.3 completion constants and status are
 exposed separately.
 """
 
@@ -17,13 +17,13 @@ from .report import (
 )
 from .validation import validate_model
 
-CURRENT_VERSION = "v7.2"
+CURRENT_VERSION = "v7.3"
 CURRENT_MISSING_OBJECT = (
-    "ABSENCE_OF_DISTINCT_ACTION_DERIVED_FALSIFIABLE_PREDICTION"
+    "NONUNIVERSAL_BHSM_TO_LOCALIZED_PHYSICAL_SECTOR_ACTION_COUPLING"
 )
 CURRENT_VERDICT = (
-    "BHSM_RELEASE_COMPLETION_BLOCKED_BY_ABSENCE_OF_DISTINCT_"
-    "ACTION_DERIVED_FALSIFIABLE_PREDICTION"
+    "BHSM_DISTINCT_PREDICTION_REQUIRES_NEW_BULK_BOUNDARY_"
+    "COUPLING_NOT_PRESENT_IN_ACTION"
 )
 
 
@@ -40,6 +40,21 @@ def observable_status_to_markdown(payload=None):
 
     return status_to_markdown(payload)
 
+
+def distinct_prediction_status_payload():
+    """Return the current v7.3 prediction-campaign status."""
+    from .distinct_prediction import status_report
+
+    return status_report()
+
+
+def distinct_prediction_status_to_markdown(payload=None):
+    """Render the current v7.3 prediction-campaign status."""
+    from .distinct_prediction import status_to_markdown
+
+    return status_to_markdown(payload)
+
+
 __all__ = [
     "ARTIFACT_FILES",
     "CURRENT_MISSING_OBJECT",
@@ -49,6 +64,8 @@ __all__ = [
     "VERDICT",
     "VERSION",
     "artifact_bytes",
+    "distinct_prediction_status_payload",
+    "distinct_prediction_status_to_markdown",
     "frozen_hashes_match",
     "materialize",
     "observable_status_payload",

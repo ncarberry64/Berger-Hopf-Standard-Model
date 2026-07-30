@@ -1489,3 +1489,14 @@ Doctrine and manuscript chapter:
 - `artifacts/BHSM_1_0_completion_gate.json`: canonical v7.2 gate with
   Tier B complete and Tier C blocked by the absence of a distinct
   action-derived falsifiable physical prediction.
+
+## BHSM v7.3 distinct-prediction construction
+
+- `artifacts/BHSM_distinct_action_derived_prediction_v7_3.json`:
+  exhaustive route ledger for the exact twisted-Dirac/gap,
+  scalar/topographic Hessian, internal-geometry, generation-selection,
+  input-cancelling, and fixed-h routes; exact action-incidence theorem;
+  proxy retirement; and RB-15/RB-16 status.
+- `artifacts/BHSM_1_0_completion_gate.json`: canonical v7.3 gate with
+  Tier C blocked by
+  `NONUNIVERSAL_BHSM_TO_LOCALIZED_PHYSICAL_SECTOR_ACTION_COUPLING`.

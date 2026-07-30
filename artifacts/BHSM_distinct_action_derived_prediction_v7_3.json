@@ -1,0 +1,395 @@
+{
+  "RB15": {
+    "resolution": "NONUNIVERSAL_BHSM_TO_LOCALIZED_PHYSICAL_SECTOR_ACTION_COUPLING",
+    "status": "BLOCKED_EXACT_OBJECT_PROVED"
+  },
+  "RB16": {
+    "release_package_generated": false,
+    "status": "DOWNSTREAM_BLOCKED"
+  },
+  "accepted_predictions": [],
+  "action_incidence_theorem": {
+    "authoritative_action": "S_BHSM^strat=S8+sum_epsilon(S5,epsilon+S_GHY,epsilon)+S4,localized+S_compatibility",
+    "distinctive_BHSM_variables": [
+      "Sp(1) Hopf connection omega",
+      "fiber metric/radion a_F",
+      "Berger shape and associated-mode spectral data",
+      "cap scalar sigma and fixed-h D0 KKT mode",
+      "cap/seam orientation and matcher reactions"
+    ],
+    "existing_cross_stratum_terms": [
+      "Lambda85 metric compatibility and lambda_sigma(sigma5-P0 sigma8)",
+      "Lambda54(h-iota^*g5) metric trace compatibility"
+    ],
+    "fixed_metric_mixed_variations": {
+      "delta2S/da_F_deltaH": "0",
+      "delta2S/da_F_deltaPsi": "0",
+      "delta2S/domega_deltaA_SM": "0",
+      "delta2S/domega_deltaPsi": "0",
+      "delta2S/dsigma_deltaH": "0"
+    },
+    "localized_ownership": "A_SM,Psi,H are intrinsic M4 fields and are not extended into M5 or M8 by the v7.1 correspondence",
+    "localized_physical_fields": [
+      "A_SM",
+      "Psi",
+      "H"
+    ],
+    "missing_cross_block": "C_BHSM->phys[omega,a_F,sigma_perp,KKT;A_SM,Psi,H,Pi_generation]",
+    "missing_cross_block_definition": "a gauge-covariant action term or derived operator map whose variation supplies a nonzero, normalized cross block from a distinctive BHSM mode to a localized physical observable, together with its selected domain",
+    "proof": [
+      "Every distinctive geometric candidate belongs to S8, the M8-to-M5 retained-mode pushforward, or the cap/KKT sector.",
+      "Every v7.2 particle mass and mixing observable belongs to S4,localized and depends on independently declared g_i,Y_f,m_H_squared,lambda_H and finite projectors.",
+      "Inspection of the complete term registry finds no term containing both a distinctive variable and A_SM, Psi, H, or a generation-mode projector, apart from the universal metric dependence described above.",
+      "Therefore eliminating internal variables cannot generate a distinctive coefficient in an M4 observable operator: the relevant fixed-metric mixed Hessian blocks vanish.",
+      "Adding a nonzero block would add a new action term, not derive a consequence of S_BHSM^strat."
+    ],
+    "result": "BHSM_DISTINCT_PREDICTION_REQUIRES_NEW_BULK_BOUNDARY_COUPLING_NOT_PRESENT_IN_ACTION",
+    "universal_metric_exception": "The common seam metric h enters every M4 kinetic term through ordinary covariant coupling.  Its background and moduli are not uniquely selected, and this universal gravitational edge does not insert Hopf charge, Berger eigenvalues, D0 amplitude, or a generation projector into a physical operator."
+  },
+  "artifact": "BHSM_distinct_action_derived_prediction_v7_3",
+  "campaign_requirement": "distinctively BHSM and action-derived and physical and falsifiable and frozen before comparison",
+  "exact_twisted_Dirac_operator": {
+    "action_equation": "D_M4 Psi=[i gamma^mu(nabla_mu^S_h tensor 1+1 tensor rho(A_SM)_mu)-Y(H)]Psi=0",
+    "bundle": "S_h tensor E_SM tensor C3_family over intrinsic M4; C3_family and E_SM are supplied finite bundle data",
+    "chirality": "P_L/P_R is the intrinsic four-dimensional grading fixed by the retained SM representation ledger",
+    "classification": "STANDARD_MODEL_EFT_DIRAC_YUKAWA_OPERATOR_WITH_NO_BHSM_TWIST",
+    "domain": "H1 maximal-isotropic subspace of the Dirac Green form; the current action supplies no graph unitary, bag angle, APS cut, or junction fermion term selecting one member",
+    "gauge_covariance": "D_(A^u)(rho(u)Psi)=rho(u)D_A Psi under SU3xSU2xU1",
+    "green_identity": "<D Psi,Phi>-<Psi,D Phi>=integral_boundary <Psi,i gamma.n Phi>",
+    "hermiticity": "self-adjoint only after one maximal-isotropic member is supplied",
+    "principal_symbol": "sigma_1(D_M4)(x,xi)=i gamma^mu xi_mu tensor identity_(E_SM tensor C3_family)",
+    "requested_decomposition": {
+      "D_Hopf_twist": "0 (omega acts on M8-to-M5 associated modes, not Psi)",
+      "D_Yukawa_zero_order": "-Y(H)",
+      "D_boundary": "0 as an action summand; only a maximal-isotropic domain family is declared",
+      "D_gauge": "i gamma^mu rho(A_SM)_mu",
+      "D_spin": "i gamma^mu nabla_mu^S_h"
+    },
+    "status": "BLOCKED_BY_EXACT_MISSING_OBJECT",
+    "v7_1_compatibility": "Psi remains boundary-localized; only h is pulled back through the metric compatibility map"
+  },
+  "fermionic_gap": {
+    "available_gap": "inf spec(D_M4^dagger D_M4|ker(D_M4)^perp), conditional on h,A_SM,H,Y_f and a selected maximal-isotropic domain",
+    "physical_transport": "M_D^gap=sqrt(Delta_D_hat)/ell_star is unavailable because Delta_D_hat is not defined by the current action",
+    "requested_gap": "Delta_D_hat=inf spec(D_BHSM^dagger D_BHSM|ker(D_BHSM)^perp)",
+    "status": "BLOCKED_BY_EXACT_MISSING_OBJECT",
+    "uncertainty": "UNBOUNDED_BY_CURRENT_ACTION",
+    "universal_positive_bound": false,
+    "zero_infimum_proof": "The allowed finite theory-input space contains arbitrarily small Yukawa singular values and does not impose a uniform geometric or domain gap; hence the infimum over allowed inputs of the available squared gap is zero."
+  },
+  "final_verdict": "BHSM_DISTINCT_PREDICTION_REQUIRES_NEW_BULK_BOUNDARY_COUPLING_NOT_PRESENT_IN_ACTION",
+  "fixed_h_physical_consequence": {
+    "action_source": "P1+GHY+scalar+B1+matcher on strict fixed-h D0",
+    "canonical_potential": "V_E(phi)=V0+g4 phi^4/4!+O(phi^6)",
+    "conditional_minimum": "G5/Z5>-13.95809839182684 Z5/kappa1",
+    "exact_vanishing": "V_E'(0)=V_E''(0)=V_E'''(0)=0",
+    "first_nonzero_coefficient": "g4=5.84444718718846 G5/Z5^2+81.5773688846122/kappa1",
+    "physical_observable_map": null,
+    "status": "STRUCTURAL_BUT_NOT_PHYSICAL",
+    "structural_result": "the first same-family Einstein interaction is quartic",
+    "why_not_physical": "The D0 amplitude is not H, is not a particle-normalized M4 field, and has no action term coupling it to a v7.2 observable. G5 is independently unselected."
+  },
+  "generation_selection": {
+    "action_selected_low_energy_projector": null,
+    "classification": "physical field-content statement but an input tautology, not an action-derived family-count prediction",
+    "declared_family_bundle": "C3_family",
+    "fourth_generation_excluded": false,
+    "mode_projectors": "conditional retained spectral subspaces; historical mass-selected labels are screen-only",
+    "sector_projectors": "finite independent theory inputs",
+    "status": "PHYSICAL_BUT_INPUT_TAUTOLOGY",
+    "three_generation_statement": "The present M4 field ledger contains three family components.",
+    "triality_projectors": "representation-derived conditional on the supplied Spin8 carrier choice"
+  },
+  "geometry_selection": {
+    "alpha_used": false,
+    "berger_shape_equation": "partial S_BHSM^strat/partial a=UNDEFINED",
+    "berger_shape_result": "The Berger shape a is classified as an independent fixed theory input and has no reduction/source law making it an active coordinate of S_BHSM^strat.",
+    "cap_collar_result": "cap radius/collar data remain background or domain data; no input-independent simultaneous modulus stationarity system is present",
+    "fiber_equation": "delta S_BHSM^strat/delta a_F=0",
+    "fiber_result": "If a_F is varied, pi_!S8 is a scalar-tensor action with radion and connection terms.  Its stationary equation depends on the independent bulk coefficients and background fields; the stored S5 action is not identified with pi_!S8.",
+    "selected_branch": null,
+    "status": "BLOCKED_BY_EXACT_MISSING_OBJECT",
+    "unique_or_discrete_geometry": false
+  },
+  "input_cancelling_sum_rules": {
+    "input_cancelling_physical_relation": null,
+    "status": "STRUCTURAL_BUT_NOT_PHYSICAL",
+    "tested_classes": [
+      {
+        "candidate": "M_scalar_gap/M_D_gap",
+        "result": "both action-derived gaps are unavailable"
+      },
+      {
+        "candidate": "Index(D_BHSM)",
+        "result": "operator, twisting action, and domain are unselected"
+      },
+      {
+        "candidate": "charged-fermion mass and mixing invariants",
+        "result": "depend freely on independent Y_u,Y_d,Y_e"
+      },
+      {
+        "candidate": "gauge-coupling ratios",
+        "result": "depend freely on independent g1,g2,g3"
+      },
+      {
+        "candidate": "scalar-to-electroweak ratios",
+        "result": "depend on independent lambda5 and m_H_squared"
+      },
+      {
+        "candidate": "Hopf c2 and boundary orientation signs",
+        "result": "exact structural invariants, but no term transports them into a localized physical observable"
+      },
+      {
+        "candidate": "anomaly and representation traces",
+        "result": "structural identities conditional on the supplied SM representation ledger"
+      }
+    ]
+  },
+  "integrity": {
+    "arbitrary_gap_floor_used": false,
+    "comparison_data_consulted": false,
+    "empirical_scalar_mass_used": false,
+    "fit_used": false,
+    "frozen_prediction_changed": false,
+    "hidden_calibration_used": false,
+    "inserted_zero_mode_used": false,
+    "new_action_term_used": false,
+    "second_scale_used": false,
+    "target_selected_input_used": false
+  },
+  "kernel_and_index": {
+    "candidate_index": "Index(D_A^+) depends on (h,A_SM,E_SM,topological sector,selected boundary domain)",
+    "exact_three_generation_index_derived": false,
+    "family_factor": "C3_family is already present in the declared fermion bundle; counting its three supplied components is an input tautology",
+    "fixed_topological_inputs": {
+      "Dirac_boundary_domain_selected": false,
+      "Hopf_bundle_acts_on_Psi": false,
+      "Hopf_bundle_c2": 1,
+      "SM_gauge_topological_sector_selected": false
+    },
+    "protected_kernel_dimension": null,
+    "reason": "No action-supported Hopf-twisted fermion bundle/operator and no selected self-adjoint domain exist on which an index could fix the low-energy family count.",
+    "status": "BLOCKED_BY_EXACT_MISSING_OBJECT",
+    "triality": "triality projectors are representation-derived conditional projectors, not a computed kernel of D_M4"
+  },
+  "prediction_candidate_ledger": [
+    {
+      "candidate_id": "V73-A",
+      "comparison_data_excluded_during_derivation": true,
+      "distinctively_bhsm_reason": "would require omega, Berger spin data, or a seam operator to act on Psi; none does",
+      "exact_action_source": "S4,localized Dirac/Yukawa term",
+      "exact_operator_or_equation": "D_M4 Psi=[i gamma^mu(nabla_mu^S_h tensor 1+1 tensor rho(A_SM)_mu)-Y(H)]Psi=0",
+      "falsifier": null,
+      "independent_inputs": [
+        "h",
+        "A_SM",
+        "Y_f",
+        "H",
+        "maximal-isotropic domain member"
+      ],
+      "numerical_value_interval_or_discrete_statement": null,
+      "physical_transport": "M_D^gap=sqrt(Delta_D_hat)/ell_star is unavailable because Delta_D_hat is not defined by the current action",
+      "prediction_formula": null,
+      "quantities_eliminated": [],
+      "route": "EXACT_TWISTED_DIRAC_AND_EXOTIC_GAP",
+      "scale": "mu_star=ell_star^-1; mu_hat_star=mu_star*ell_star=1",
+      "scheme": "overline_MS",
+      "status": "BLOCKED_BY_EXACT_MISSING_OBJECT",
+      "uncertainty": "UNBOUNDED_BY_CURRENT_ACTION"
+    },
+    {
+      "candidate_id": "V73-B",
+      "comparison_data_excluded_during_derivation": true,
+      "distinctively_bhsm_reason": "would use the cap/topographic Hessian to exclude an M4 extra scalar",
+      "exact_action_source": "S8/S5 sigma plus S4,localized Higgs",
+      "exact_operator_or_equation": "H_scalar=H_sigma,strat direct_sum H_H,M4; delta2S/(delta sigma delta H)=0",
+      "falsifier": null,
+      "independent_inputs": [
+        "Z5,G5 and cap/gravity coefficients",
+        "m_H_squared(mu_star)",
+        "lambda_H(mu_star)=lambda5",
+        "background h,H,sigma"
+      ],
+      "numerical_value_interval_or_discrete_statement": null,
+      "physical_transport": null,
+      "prediction_formula": null,
+      "quantities_eliminated": [
+        "closed-range cap/KKT complement only"
+      ],
+      "route": "FULL_SCALAR_TOPOGRAPHIC_DECOUPLING",
+      "scale": "mu_star=ell_star^-1; mu_hat_star=mu_star*ell_star=1",
+      "scheme": "overline_MS",
+      "status": "BLOCKED_BY_EXACT_MISSING_OBJECT",
+      "uncertainty": "ORTHOGONAL_PHYSICAL_DOMAIN_UNDEFINED"
+    },
+    {
+      "candidate_id": "V73-C",
+      "comparison_data_excluded_during_derivation": true,
+      "distinctively_bhsm_reason": "would select the Hopf/ Berger geometry before comparison",
+      "exact_action_source": "S8 metric variation and v7.1 pushforward",
+      "exact_operator_or_equation": "delta S/delta a_F=0; partial S/partial a is undefined",
+      "falsifier": null,
+      "independent_inputs": [
+        "kappa0",
+        "kappa1",
+        "Zchi",
+        "Zsigma",
+        "A0",
+        "G0",
+        "background fields",
+        "fixed Berger shape a"
+      ],
+      "numerical_value_interval_or_discrete_statement": null,
+      "physical_transport": null,
+      "prediction_formula": null,
+      "quantities_eliminated": [],
+      "route": "ACTION_SELECTION_OF_INTERNAL_GEOMETRY",
+      "scale": "mu_star=ell_star^-1; mu_hat_star=mu_star*ell_star=1",
+      "scheme": "overline_MS",
+      "status": "BLOCKED_BY_EXACT_MISSING_OBJECT",
+      "uncertainty": "CONTINUOUS_INPUT_AND_BACKGROUND_DEPENDENCE"
+    },
+    {
+      "candidate_id": "V73-D",
+      "comparison_data_excluded_during_derivation": true,
+      "distinctively_bhsm_reason": "triality is BHSM-specific but is not a computed low-energy Dirac kernel",
+      "exact_action_source": "S4 fermion bundle and v7.1 projector ledger",
+      "exact_operator_or_equation": "Psi in S_h tensor E_SM tensor C3_family; Pi_f,n is input",
+      "falsifier": null,
+      "independent_inputs": [
+        "C3_family",
+        "sector projectors",
+        "mode projectors"
+      ],
+      "numerical_value_interval_or_discrete_statement": "N_family=3 is supplied, not derived",
+      "physical_transport": "three supplied M4 family components",
+      "prediction_formula": null,
+      "quantities_eliminated": [],
+      "route": "MODE_AND_GENERATION_SELECTION",
+      "scale": "mu_star=ell_star^-1; mu_hat_star=mu_star*ell_star=1",
+      "scheme": "overline_MS",
+      "status": "PHYSICAL_BUT_INPUT_TAUTOLOGY",
+      "uncertainty": "NOT_APPLICABLE_INPUT_TAUTOLOGY"
+    },
+    {
+      "candidate_id": "V73-E",
+      "comparison_data_excluded_during_derivation": true,
+      "distinctively_bhsm_reason": "tested all available BHSM invariants against the physical map",
+      "exact_action_source": "complete v7.1 coefficient ledger and v7.2 observable map",
+      "exact_operator_or_equation": "O_phys=O_phys(g_i,Y_f,m_H_squared,lambda5,projectors,G_F)",
+      "falsifier": null,
+      "independent_inputs": [
+        "g_i",
+        "Y_f",
+        "m_H_squared",
+        "lambda5",
+        "projectors"
+      ],
+      "numerical_value_interval_or_discrete_statement": null,
+      "physical_transport": "input-free remnants are only structural topology, orientation, and representation identities",
+      "prediction_formula": null,
+      "quantities_eliminated": [
+        "one common ell_star in dimensionless ratios"
+      ],
+      "route": "INPUT_CANCELLING_ACTION_SUM_RULES",
+      "scale": "mu_star=ell_star^-1; mu_hat_star=mu_star*ell_star=1",
+      "scheme": "overline_MS",
+      "status": "STRUCTURAL_BUT_NOT_PHYSICAL",
+      "uncertainty": "NO_PHYSICAL_INPUT_FREE_INVARIANT"
+    },
+    {
+      "candidate_id": "V73-F",
+      "comparison_data_excluded_during_derivation": true,
+      "distinctively_bhsm_reason": "the strict cap/matcher D0 variational structure is BHSM-specific",
+      "exact_action_source": "P1+GHY+scalar+B1+matcher on strict fixed-h D0",
+      "exact_operator_or_equation": "V_E(phi)=V0+g4 phi^4/4!+O(phi^6)",
+      "falsifier": null,
+      "independent_inputs": [
+        "G5",
+        "Z5",
+        "kappa1"
+      ],
+      "numerical_value_interval_or_discrete_statement": "first nonzero canonical interaction has order four",
+      "physical_transport": null,
+      "prediction_formula": "g4=5.84444718718846 G5/Z5^2+81.5773688846122/kappa1",
+      "quantities_eliminated": [
+        "closed-range D0 KKT complement",
+        "odd amplitude-coordinate freedom"
+      ],
+      "route": "FIXED_H_CRITICAL_SECTOR_PHYSICAL_CONSEQUENCE",
+      "scale": "mu_star=ell_star^-1; mu_hat_star=mu_star*ell_star=1",
+      "scheme": "overline_MS",
+      "status": "STRUCTURAL_BUT_NOT_PHYSICAL",
+      "uncertainty": "G5 unselected and D0 amplitude lacks particle normalization"
+    }
+  ],
+  "proxy_results_retired": [
+    {
+      "proxy": "manually inserted zero modes and zero_mode_count",
+      "reason": "not a kernel theorem",
+      "status": "PROXY_ONLY_REJECTED"
+    },
+    {
+      "proxy": "complement_floor and arbitrary twist/boundary strengths",
+      "reason": "not action coefficients",
+      "status": "PROXY_ONLY_REJECTED"
+    },
+    {
+      "proxy": "finite k_max convergence",
+      "reason": "not a complete spectrum or certified analytic bound",
+      "status": "PROXY_ONLY_REJECTED"
+    },
+    {
+      "proxy": "empirical 125.10 GeV scalar mode",
+      "reason": "comparison value cannot be an operator entry",
+      "status": "PROXY_ONLY_REJECTED"
+    },
+    {
+      "proxy": "assumed 4 pi^2 v gap threshold",
+      "reason": "no current action theorem produces this threshold",
+      "status": "PROXY_ONLY_REJECTED"
+    },
+    {
+      "proxy": "hand-classified screened modes and mode_ledger targets",
+      "reason": "no action-selected low-energy projector",
+      "status": "PROXY_ONLY_REJECTED"
+    }
+  ],
+  "release_verdict": "BHSM_1_0_RELEASE_BLOCKED",
+  "remaining_exact_obstruction": "NONUNIVERSAL_BHSM_TO_LOCALIZED_PHYSICAL_SECTOR_ACTION_COUPLING",
+  "scalar_topographic_Hessian": {
+    "Higgs_block": "H_H,M4 is the covariant Hessian of |D H|^2-[m_H^2 H^dagger H+lambda_H(H^dagger H)^2]",
+    "Higgs_projection_selected": false,
+    "cap_block": "H_sigma,strat is the cap scalar/KKT operator with regular pole, fixed-h Dirichlet trace, matcher reaction, and the exact D0 Lyapunov-Schmidt kernel coordinate",
+    "fixed_metric_block_form": "H_scalar=H_sigma,strat direct_sum H_H,M4; delta2S/(delta sigma delta H)=0",
+    "independent_inputs": [
+      "Z5,G5 and cap/gravity coefficients",
+      "m_H_squared(mu_star)",
+      "lambda_H(mu_star)=lambda5",
+      "background h,H,sigma"
+    ],
+    "metric_mediated_terms": "Constraint-reduced metric Schur blocks are background- and coefficient-dependent and do not identify sigma with H or derive a topographic orthogonal projector.",
+    "orthogonal_scalar_space_selected": false,
+    "physical_transport": null,
+    "reason": "H_Higgs^perp is not an action-derived subspace and the absent sigma-H cross block prevents the cap/topographic spectrum from becoming an extra-scalar exclusion spectrum.",
+    "requested_gap": "Delta_perp_hat=inf spec(H_scalar|H_Higgs^perp)",
+    "status": "BLOCKED_BY_EXACT_MISSING_OBJECT",
+    "universal_positive_orthogonal_gap": false
+  },
+  "source_main_sha": "3cb9809ee78550112588c20ae42a95f5dca03ea3",
+  "sprint": "bhsm-distinct-action-derived-prediction-v7-3",
+  "validation": {
+    "RB15_exact": true,
+    "RB16_downstream": true,
+    "all_six_routes_attempted": true,
+    "candidate_fields_complete": true,
+    "integrity_clean": true,
+    "no_prediction_fabricated": true,
+    "no_proxy_promoted": true,
+    "no_unfrozen_comparison": true,
+    "singular_cross_block_obstruction_proved": true,
+    "statuses_typed": true
+  },
+  "validation_passed": true,
+  "version": "v7.3"
+}

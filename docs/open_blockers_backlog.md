@@ -2,8 +2,9 @@
 
 Current public status: the v7.2 finite-input physical observable map is complete.
 The historical table remains provenance; its entries do not override the
-v7.2 completion-DAG update. Tier B is complete. The live Tier-C blocker is
-`ABSENCE_OF_DISTINCT_ACTION_DERIVED_FALSIFIABLE_PREDICTION`.
+v7.3 completion-DAG update. Tier B is complete. The v7.3 route-exhaustion
+theorem localizes the live Tier-C blocker to
+`NONUNIVERSAL_BHSM_TO_LOCALIZED_PHYSICAL_SECTOR_ACTION_COUPLING`.
 
 Historical compatibility boundary: structural architecture integrated conditional; numerical closure open.
 This sentence records the pre-v7.1 numerical-closure status required by the

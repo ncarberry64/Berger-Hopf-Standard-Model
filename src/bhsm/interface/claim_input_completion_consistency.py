@@ -420,10 +420,10 @@ def historical_canonical_completion_gate_payload() -> dict[str, Any]:
 
 
 def canonical_completion_gate_payload() -> dict[str, Any]:
-    """Return the current observable-transport completion gate."""
+    """Return the current distinct-prediction completion gate."""
 
-    from bhsm.interface.master_action.observable_transport import (
-        canonical_completion_gate_payload as current_payload,
+    from bhsm.interface.master_action.distinct_prediction import (
+        completion_gate_payload as current_payload,
     )
 
     return current_payload()

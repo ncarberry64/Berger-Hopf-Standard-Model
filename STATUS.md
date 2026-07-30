@@ -8,10 +8,11 @@ evidence, not competing public status pages.
 BHSM is an artifact-backed mathematical and computational research framework,
 not a replacement for the Standard Model established by empirical tests. Frozen
 internal prediction records, executable interfaces, deterministic artifacts,
-and extensive geometric/action calculations exist. The v7.1 finite-input
-dimensionless stratified action is internally complete, while the common
-physical scheme/observable transport, numerical calibration, and empirical
-validation remain active work.
+and extensive geometric/action calculations exist. The v7.2 finite-input
+physical observable map is complete in one declared scheme. The v7.3
+prediction campaign exhausts all six action-supported routes and proves that
+the current action lacks a non-universal coupling from distinctive
+Berger/Hopf/topographic variables to the localized physical operators.
 
 Preferred current classifications are: **Adopted from established
 physics/mathematics**, **Adopted BHSM axiom**, **BHSM identification**,
@@ -66,7 +67,7 @@ Reviewer entry points:
 [claim boundaries](CLAIMS.md), and
 [reproduction guide](docs/reviewer_reproduction_guide.md).
 
-BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: the finite-input physical observable map is complete in one declared scheme; release completion is blocked because no distinct action-derived falsifiable physical prediction survives the claim firewall.
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: the finite-input physical observable map is complete in one declared scheme; the v7.3 route-exhaustion theorem proves that a distinct action-derived physical prediction requires a new non-universal bulk-boundary coupling not present in the current action.
 
 BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity. Physical eV/GeV neutrino mass closure remains open pending a numeric neutral stiffness length sqrt(A_nu/Z_nu), a physical K_neutral,eff map in m^-2, and complete-action derivation of the admissible response cone.
 
@@ -2619,3 +2620,22 @@ therefore blocked and RB-16 remains downstream.
 
 Exact verdict:
 `BHSM_RELEASE_COMPLETION_BLOCKED_BY_ABSENCE_OF_DISTINCT_ACTION_DERIVED_FALSIFIABLE_PREDICTION`.
+
+## v7.3 distinct-prediction construction
+
+Routes A--F are exhausted against the authoritative stratified action. The
+only action-supported fermion operator is the localized Standard Model
+Dirac-Yukawa operator on
+`S_h tensor E_SM tensor C3_family`; the Hopf connection does not act on
+that bundle, and the action selects no member of the maximal-isotropic
+domain family. The scalar Hessian splits into cap/KKT and localized-Higgs
+blocks at fixed seam metric, the Berger shape and generation projectors
+remain inputs, no physical input-cancelling sum rule survives, and the exact
+fixed-h quartic result has no particle-observable transport.
+
+The common exact missing object is
+`NONUNIVERSAL_BHSM_TO_LOCALIZED_PHYSICAL_SECTOR_ACTION_COUPLING`.
+RB-15 remains `BLOCKED_EXACT_OBJECT_PROVED`; RB-16 remains downstream.
+
+Current exact verdict:
+`BHSM_DISTINCT_PREDICTION_REQUIRES_NEW_BULK_BOUNDARY_COUPLING_NOT_PRESENT_IN_ACTION`.

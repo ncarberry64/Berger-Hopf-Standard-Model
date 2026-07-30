@@ -86,8 +86,10 @@ Tier C requires Tier B plus:
 The sole Tier-C verdict is `BHSM_1_0_RELEASE_COMPLETE`.
 
 Current status: **blocked at RB-15**. The finite benchmark suite is frozen,
-but no surviving official claim is simultaneously distinctively BHSM,
-action-derived, physical, and falsifiable. RB-16 remains downstream.
+and v7.3 has exhausted every independent prediction route. The exact missing
+object is a non-universal action coupling from distinctive
+Berger/Hopf/topographic variables to the localized physical operators.
+RB-16 remains downstream.
 
 ## Six cumulative gates
 
@@ -97,7 +99,7 @@ action-derived, physical, and falsifiable. RB-16 remains downstream.
 | G2 Mathematical legitimacy | valid domains, variations, boundaries, gauges, adjoints, kernels, inverses, and needed nonlinear reductions | complete for retained core |
 | G3 Standard Model structure | every retained structural claim derived or removed | complete for finite-input core |
 | G4 Parameter and scale closure | every dimensionless prediction derived; scale action-derived or one transparent universal calibration | complete with one `G_F` calibration and common observable map |
-| G5 Finite validation and prediction set | typed benchmark suite, novel predictions, and falsification criteria frozen | benchmark complete; distinct action-derived prediction absent |
+| G5 Finite validation and prediction set | typed benchmark suite, novel predictions, and falsification criteria frozen | benchmark complete; exact non-universal physical-sector coupling absent |
 | G6 Reproducibility and release | clean regeneration of headline artifacts and manuscript | downstream blocked by RB-15 |
 
 The machine-readable gate and dependency records are:
@@ -106,6 +108,7 @@ The machine-readable gate and dependency records are:
 - the `completion_DAG_update` section of
   `artifacts/BHSM_common_scheme_observable_transport_v7_2.json`
   (the older `BHSM_release_blocker_DAG*.json` files remain historical);
+- `artifacts/BHSM_distinct_action_derived_prediction_v7_3.json`;
 - `artifacts/BHSM_scope_relevance_registry.json`.
 
 ## Release-relevance firewall

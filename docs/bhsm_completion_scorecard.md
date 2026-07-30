@@ -36,3 +36,17 @@ v7.2 completion gate. It contains no comparison values.
 | `B72-10` | universal calibration consistency | calibration check |
 
 No row is classified as a distinct action-derived physical prediction.
+
+## v7.3 prediction-route result
+
+| Route | Result |
+| --- | --- |
+| Exact twisted Dirac, kernel, and gap | `BLOCKED_BY_EXACT_MISSING_OBJECT` |
+| Full scalar/topographic Hessian | `BLOCKED_BY_EXACT_MISSING_OBJECT` |
+| Internal-geometry selection | `BLOCKED_BY_EXACT_MISSING_OBJECT` |
+| Mode and generation selection | `PHYSICAL_BUT_INPUT_TAUTOLOGY` |
+| Input-cancelling sum rules | `STRUCTURAL_BUT_NOT_PHYSICAL` |
+| Fixed-h physical consequence | `STRUCTURAL_BUT_NOT_PHYSICAL` |
+
+The exact common obstruction is
+`NONUNIVERSAL_BHSM_TO_LOCALIZED_PHYSICAL_SECTOR_ACTION_COUPLING`.
