@@ -5,7 +5,7 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
-BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v8.1 retains the full Brown--York tensor and computes its first equatorial shape response. An exact internal scalar Hopf-associated tower exists, but no Hopf factor acts on the localized fermion bundle and no finite physical family projector is selected. No mass hierarchy or CKM prediction follows; RB-15/RB-16 remain blocked.
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v8.1 retains the full Brown--York tensor and computes its first equatorial shape response. The exact internal scalar Hopf tower is not a factor of the localized fermion bundle and no physical family projector is selected, so no distinct mass hierarchy or CKM prediction follows and RB-15/RB-16 remain blocked.
 
 This independent mathematical-physics project investigates whether
 Berger-Hopf boundary geometry can organize structures associated with
