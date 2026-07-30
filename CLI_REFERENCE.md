@@ -773,3 +773,18 @@ firewall, Hopf and triality actions, full Brown--York tensor, corrected
 four-dimensional trace split, first nonzero cap-even collar responses,
 mode-stress and symmetry-centrality results, physical family-module
 obstruction, prediction freeze, and RB-15/RB-16 status.
+
+<!-- BHSM_GENERATION_PROJECTOR_ACTION_ATTACHMENT_V8_2 -->
+## Generation-projector action attachment v8.2
+
+```bash
+python -m bhsm.interface generation-projector-action-status --format json
+python -m bhsm.interface generation-projector-action-status --format markdown
+python -m bhsm.interface.master_action.generation_projector_action_attachment --materialize
+```
+
+The command reports the authoritative imported theorem sources, frozen
+base-plus-two-excitation modules, sector and triality incidence, localized
+field/domain attachment, higher-tower typing, middle-up weak projection,
+missing classical mode stress, mass-ratio and CKM boundaries, prediction
+freeze, domain-wall fallback, RB-15/RB-16, and release verdict.

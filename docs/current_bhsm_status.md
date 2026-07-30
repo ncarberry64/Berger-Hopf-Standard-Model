@@ -361,3 +361,29 @@ RB-15 remains `BLOCKED_EXACT_OBJECT_PROVED`; RB-16 remains downstream.
 
 Current exact verdict:
 `BHSM_FAMILY_RESOLUTION_REQUIRES_NEW_INTERNAL_FERMION_BUNDLE_EXTENSION`.
+
+This v8.1 absence verdict is historical. V8.2 establishes that the frozen
+family module existed and that its master-action incidence attachment, not a
+new internal-family invention, was missing.
+
+## v8.2 authoritative status
+
+V8.2 imports the previously derived and frozen primitive `[1,2,3]`
+generation architecture. Its one-base-plus-two-excitation modules are
+`FROZEN_DERIVED_CONDITIONAL_GEOMETRIC_STRUCTURE`, not newly recovered inputs.
+They are attached to the localized master-action field
+`S_h tensor E_SM,r tensor F_r` and domain `D_Dirac,r tensor F_r`.
+
+The higher mode tower does not supply additional generation slots; its modes
+belong to higher/composite/excess or other excitation sectors. The remaining
+problem is therefore not a higher-mode exclusion theorem. It is the missing
+action-derived classical mode stress on the frozen family basis. Until that
+mixed metric-mode incidence exists, no charged response matrix, mass ratio,
+up/down basis nonalignment, or CKM result is defined.
+
+The cap-domain-wall route remains a paused non-authoritative fallback.
+Layer Q remains `OPEN_EMERGENT_QUANTUM_CORRESPONDENCE`. RB-15 remains
+`BLOCKED_EXACT_OBJECT_PROVED`; RB-16 remains downstream.
+
+Current exact verdict:
+`BHSM_MODE_DEPENDENT_RESPONSE_BLOCKED_BY_UNDEFINED_MODE_STRESS`.

@@ -51,3 +51,18 @@ cap-identified Brown--York response, the second-order signed-even intrinsic
 operator response, and the firewall between internal Hopf representations
 and physical S3 momentum harmonics. The artifact must define no family
 dimension, response matrix, mass ratio, or CKM result.
+
+## Reviewer checkpoint: v8.2
+
+```bash
+python -m bhsm.interface generation-projector-action-status --format json
+python -m bhsm.interface generation-projector-action-status --format markdown
+python -m bhsm.interface.master_action.generation_projector_action_attachment --materialize
+```
+
+Verify the imported primitive spectrum `[1,2,3]`, the exact frozen
+one-base-plus-two-excitation triples, source hashes, rank-three projectors,
+and localized field/domain attachment. Confirm that higher tower modes are
+not typed as extra generations, the `(6,0)` middle-up factor remains `1/2`,
+no mode-stress matrix or flavor observable is fabricated, and the
+domain-wall route remains a non-authoritative fallback.

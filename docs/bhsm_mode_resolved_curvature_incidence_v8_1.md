@@ -1,5 +1,10 @@
 # BHSM v8.1 mode-resolved curvature incidence
 
+> Historical-status notice: v8.2 supersedes the broad v8.1 statement that no
+> family module exists. Earlier BHSM layers already contained the frozen
+> three-slot module; the missing object was its master-action incidence
+> attachment and then its mode-resolved classical stress.
+
 ## Result
 
 The complete Brown--York tensor and its first nonzero equatorial normal

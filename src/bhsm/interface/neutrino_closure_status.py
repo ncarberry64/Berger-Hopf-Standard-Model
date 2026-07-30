@@ -26,10 +26,10 @@ NEUTRINO_PUBLIC_STATUS = (
 
 PUBLIC_REPO_STATUS = (
     "BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. "
-    "Current public status: v8.1 retains the full Brown--York tensor and computes its first "
-    "equatorial shape response. The exact internal scalar Hopf tower is not a factor of the "
-    "localized fermion bundle and no physical family projector is selected, so no distinct mass "
-    "hierarchy or CKM prediction follows and RB-15/RB-16 remain blocked."
+    "Current public status: the conditionally derived and frozen one-base-plus-two-excitation "
+    "family modules are attached to the v8.2 localized master-action field and Dirac domain. "
+    "Higher tower modes are not additional generation slots. The action-derived classical "
+    "mode-stress incidence, mass ratios, and CKM remain undefined, with RB-15/RB-16 blocked."
 )
 
 REMAINING_MISSING_OBJECTS = (
