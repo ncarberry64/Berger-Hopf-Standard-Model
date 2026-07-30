@@ -55,14 +55,14 @@ dimension, response matrix, mass ratio, or CKM result.
 ## Reviewer checkpoint: v8.2
 
 ```bash
-python -m bhsm.interface original-generation-projector-status --format json
-python -m bhsm.interface original-generation-projector-status --format markdown
-python -m bhsm.interface.master_action.original_generation_projector --materialize
+python -m bhsm.interface generation-projector-action-status --format json
+python -m bhsm.interface generation-projector-action-status --format markdown
+python -m bhsm.interface.master_action.generation_projector_action_attachment --materialize
 ```
 
-Verify the stored one-base-plus-two-excitation triples and rank-three input
-projector. Check the complete roots
-`(4r-3,r)`, `(4r+6,r)`, and `(12-2r,r)` in their declared ranges. Confirm
-that `n_modes=2` is not promoted to an action theorem, the displayed higher
-modes remain allowed, no mode-stress matrix or flavor observable is
-fabricated, and the domain-wall fallback remains non-authoritative.
+Verify the imported primitive spectrum `[1,2,3]`, the exact frozen
+one-base-plus-two-excitation triples, source hashes, rank-three projectors,
+and localized field/domain attachment. Confirm that higher tower modes are
+not typed as extra generations, the `(6,0)` middle-up factor remains `1/2`,
+no mode-stress matrix or flavor observable is fabricated, and the
+domain-wall route remains a non-authoritative fallback.

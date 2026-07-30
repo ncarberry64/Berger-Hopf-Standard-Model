@@ -69,7 +69,7 @@ Reviewer entry points:
 [claim boundaries](CLAIMS.md), and
 [reproduction guide](docs/reviewer_reproduction_guide.md).
 
-BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v8.2 recovers the original one-base-plus-two-excitation rank-three projector and types it as an independent finite generation-module input. The boundary rules leave infinitely many lepton/up roots and four down roots, so higher modes are unexcluded; action-derived mode response, mass ratios, and CKM remain undefined, with RB-15/RB-16 blocked.
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: the conditionally derived and frozen one-base-plus-two-excitation family modules are attached to the v8.2 localized master-action field and Dirac domain. Higher tower modes are not additional generation slots. The action-derived classical mode-stress incidence, mass ratios, and CKM remain undefined, with RB-15/RB-16 blocked.
 
 BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity. Physical eV/GeV neutrino mass closure remains open pending a numeric neutral stiffness length sqrt(A_nu/Z_nu), a physical K_neutral,eff map in m^-2, and complete-action derivation of the admissible response cone.
 
@@ -2687,34 +2687,37 @@ RB-15 remains `BLOCKED_EXACT_OBJECT_PROVED`; RB-16 remains downstream.
 Current exact verdict:
 `BHSM_FAMILY_RESOLUTION_REQUIRES_NEW_INTERNAL_FERMION_BUNDLE_EXTENSION`.
 
-## v8.2 original generation projector recovery
+This v8.1 verdict is historical and superseded by the v8.2 source recovery:
+the frozen three-slot family module already existed. The missing object was
+its master-action incidence attachment, followed by mode-resolved stress.
 
-The steering correction restores the original BHSM division of
-responsibility. The common round geometry is not asked to create family
-multiplicity. The charged-sector family module is the supplied base mode plus
-two excitation modes, and its orthogonal projector has rank three. Exact
-triality projectors conditionally realize the same three slots; the
-authoritative action ledger types the mode projector as an independent finite
-generation-module input.
+## v8.2 generation-projector action attachment
 
-BHSM is treated here as a deterministic geometric boundary theory: classical
-geometry, topology, variational boundary data, and resonances precede the
-effective particle/QFT description. The v7.2 observable map is a
-`GEOMETRIC_TO_QFT_CORRESPONDENCE`, not a microscopic-ontology theorem.
+The primitive `[1,2,3]` spectrum and the one-base-plus-two-excitation
+charged-sector modules are imported as previously derived, frozen BHSM
+structures. Their current classification is
+`FROZEN_DERIVED_CONDITIONAL_GEOMETRIC_STRUCTURE`; v8.2 neither recovers nor
+re-proves them. Triality, chirality, anomaly compatibility, finite sector
+incidence, and the middle-up `(6,0)` result `Z_virt=1/2` retain their earlier
+conditional status.
 
-The complete operational boundary equations admit infinitely many lepton and
-up roots and four nonzero down roots. The stored `n_modes=2` cutoff is not
-action-derived, and no physical domain or gap excludes the higher roots.
-Because the Berger proxy modes have no action-defined localized-fermion mode
-stress, the full interface tensor still yields no family response matrix,
-mass ratio, or CKM observable.
+V8.2 attaches each module to
+`Psi_r in Gamma(S_h tensor E_SM,r tensor F_r)` with domain
+`D_Dirac,r tensor F_r`. The finite projectors preserve the domain and commute
+with gauge and chirality actions. This corrects v8.1: the family module was
+not absent; its action-incidence attachment was missing.
 
-The domain-wall replacement is paused and non-authoritative. RB-15 remains
-`BLOCKED_EXACT_OBJECT_PROVED`; RB-16 remains downstream.
-The separate Layer-Q status is
-`OPEN_EMERGENT_QUANTUM_CORRESPONDENCE`; it does not replace the Layer-G
-higher-mode obstruction and prevents any claim of a demonstrated full
-quantum-theory replacement.
+Higher tower modes are other/composite/excess excitations, not extra
+generation slots. Their physical gap remains a separate conditional
+question, not the current family-projector blocker.
+
+The remaining exact object is an action-derived classical mode stress
+`T_ab^(ij)` on the frozen modules. Without it there are no charged-sector
+response matrices, mass ratios, nonaligned up/down bases, or CKM observable.
+The domain-wall route is paused as a non-authoritative fallback. Layer Q
+remains `OPEN_EMERGENT_QUANTUM_CORRESPONDENCE`.
+
+RB-15 remains `BLOCKED_EXACT_OBJECT_PROVED`; RB-16 remains downstream.
 
 Current exact verdict:
-`BHSM_ORIGINAL_GENERATION_PROJECTOR_BLOCKED_BY_UNEXCLUDED_HIGHER_MODES`.
+`BHSM_MODE_DEPENDENT_RESPONSE_BLOCKED_BY_UNDEFINED_MODE_STRESS`.

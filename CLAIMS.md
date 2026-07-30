@@ -2004,35 +2004,40 @@ Not supported:
 Exact verdict:
 `BHSM_FAMILY_RESOLUTION_REQUIRES_NEW_INTERNAL_FERMION_BUNDLE_EXTENSION`.
 
-## v8.2 original generation projector claim boundary
+This is retained as the historical v8.1 diagnostic. V8.2 supersedes its broad
+absence claim: the frozen family module existed in earlier repository layers
+and required master-action incidence attachment.
+
+## v8.2 generation-projector action-attachment claim boundary
 
 Supported:
 
 - the deterministic causal order from geometry/topology through a classical
   boundary-value problem and discrete modes to effective particle/QFT
   correspondence;
-- recovery of the original one-base-plus-two-excitation mode triples;
-- a rank-three orthogonal projector on each supplied charged-sector triple;
+- authoritative import of the conditionally derived primitive `[1,2,3]`
+  spectrum and frozen one-base-plus-two-excitation charged-sector modules;
+- a rank-three orthogonal projector on each frozen charged-sector module;
 - exact triality projector algebra and its conditional Fourier
   identification with the same three slots;
-- classification of the physical generation projector as
-  `INDEPENDENT_FINITE_GENERATION_MODULE_INPUT`;
-- exact complete root families for all three operational boundary equations;
-- proof that the first unretained higher modes satisfy the existing rules;
-- absence of an action/domain higher-mode exclusion theorem;
+- finite sector incidence, chirality and anomaly compatibility, and the
+  conditional middle-up `(6,0)` weak projection `Z_virt=1/2`;
+- attachment of `F_r` to the localized field
+  `S_h tensor E_SM,r tensor F_r` and domain `D_Dirac,r tensor F_r`;
+- classification of higher tower modes as non-generation excitations outside
+  the frozen primitive family ledger;
 - absence of an action-defined mode stress, response matrix, mass ratio, or
   CKM result.
 
 Not supported:
 
-- treating `n_modes=2`, finite `k_max`, or observed three generations as a
-  boundary theorem;
-- claiming that the operational `Omega_f` targets derive family count,
-  because their scaffold already contains `family_index=3`;
+- recovering, re-proving, replacing, or reopening the frozen generation
+  projector in this campaign;
+- interpreting higher/composite/excess tower modes as fourth or later
+  physical generation slots;
 - multiplying triality and Berger triplications;
-- calling the scalar proxy modes localized fermion modes;
 - reusing historical overlap or CKM screens as action-derived response;
-- promoting the paused domain-wall route.
+- promoting the paused domain-wall route;
 - treating effective Standard Model QFT parameters as demonstrated
   microscopic BHSM primitives;
 - claiming probabilistic, Bell-compatible, spin-statistics, scattering,
@@ -2040,4 +2045,4 @@ Not supported:
   `OPEN_EMERGENT_QUANTUM_CORRESPONDENCE`.
 
 Exact verdict:
-`BHSM_ORIGINAL_GENERATION_PROJECTOR_BLOCKED_BY_UNEXCLUDED_HIGHER_MODES`.
+`BHSM_MODE_DEPENDENT_RESPONSE_BLOCKED_BY_UNDEFINED_MODE_STRESS`.

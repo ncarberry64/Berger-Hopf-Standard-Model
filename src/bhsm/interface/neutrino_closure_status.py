@@ -26,10 +26,10 @@ NEUTRINO_PUBLIC_STATUS = (
 
 PUBLIC_REPO_STATUS = (
     "BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. "
-    "Current public status: v8.2 recovers the original one-base-plus-two-excitation rank-three "
-    "projector and types it as an independent finite generation-module input. The boundary rules "
-    "leave infinitely many lepton/up roots and four down roots, so higher modes are unexcluded; "
-    "action-derived mode response, mass ratios, and CKM remain undefined, with RB-15/RB-16 blocked."
+    "Current public status: the conditionally derived and frozen one-base-plus-two-excitation "
+    "family modules are attached to the v8.2 localized master-action field and Dirac domain. "
+    "Higher tower modes are not additional generation slots. The action-derived classical "
+    "mode-stress incidence, mass ratios, and CKM remain undefined, with RB-15/RB-16 blocked."
 )
 
 REMAINING_MISSING_OBJECTS = (

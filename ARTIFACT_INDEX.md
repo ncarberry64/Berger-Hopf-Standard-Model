@@ -1522,13 +1522,13 @@ Doctrine and manuscript chapter:
 - `artifacts/BHSM_1_0_completion_gate.json`: canonical v8.1 gate retaining
   RB-15 as `BLOCKED_EXACT_OBJECT_PROVED` and RB-16 as downstream.
 
-## BHSM v8.2 original generation projector recovery
+## BHSM v8.2 generation-projector action attachment
 
-- `artifacts/BHSM_original_generation_projector_recovery_v8_2.json`:
-  complete doctrine provenance, historical mode assignments, boundary
-  selection operator, rank-three finite-input projector, exact higher-root
-  theorem, action-domain and mode-response boundaries, freeze/hash,
+- `artifacts/BHSM_generation_projector_action_attachment_v8_2.json`:
+  authoritative source hashes, frozen three-slot modules, finite sector and
+  triality incidence, localized field/domain attachment, higher-tower typing,
+  middle-up weak projection, missing mode-stress result, freeze/hash,
   non-authoritative domain-wall fallback, and RB-15/RB-16 result.
 - `artifacts/BHSM_1_0_completion_gate.json`: canonical v8.2 gate retaining
-  RB-15 as `BLOCKED_EXACT_OBJECT_PROVED` because higher modes are unexcluded
-  and RB-16 as downstream.
+  RB-15 as `BLOCKED_EXACT_OBJECT_PROVED` because the classical mode-stress
+  incidence is undefined and RB-16 as downstream.

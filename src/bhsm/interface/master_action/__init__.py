@@ -20,12 +20,10 @@ from .validation import validate_model
 
 CURRENT_VERSION = "v8.2"
 CURRENT_MISSING_OBJECT = (
-    "ACTION_DOMAIN_HIGHER_MODE_EXCLUSION_THEOREM"
+    "ACTION_DERIVED_CLASSICAL_MODE_STRESS_INCIDENCE_ON_"
+    "FROZEN_THREE_SLOT_MODULE"
 )
-CURRENT_VERDICT = (
-    "BHSM_ORIGINAL_GENERATION_PROJECTOR_BLOCKED_BY_"
-    "UNEXCLUDED_HIGHER_MODES"
-)
+CURRENT_VERDICT = "BHSM_MODE_DEPENDENT_RESPONSE_BLOCKED_BY_UNDEFINED_MODE_STRESS"
 
 
 def observable_status_payload():
@@ -84,16 +82,16 @@ def mode_resolved_curvature_status_to_markdown(payload=None):
     return status_to_markdown(payload)
 
 
-def original_generation_projector_status_payload():
-    """Return the current v8.2 original-projector recovery status."""
-    from .original_generation_projector import status_report
+def generation_projector_action_status_payload():
+    """Return the current v8.2 projector-to-action attachment status."""
+    from .generation_projector_action_attachment import status_report
 
     return status_report()
 
 
-def original_generation_projector_status_to_markdown(payload=None):
-    """Render the current v8.2 original-projector recovery status."""
-    from .original_generation_projector import status_to_markdown
+def generation_projector_action_status_to_markdown(payload=None):
+    """Render the current v8.2 projector-to-action attachment status."""
+    from .generation_projector_action_attachment import status_to_markdown
 
     return status_to_markdown(payload)
 
@@ -118,8 +116,8 @@ __all__ = [
     "mode_resolved_curvature_status_to_markdown",
     "observable_status_payload",
     "observable_status_to_markdown",
-    "original_generation_projector_status_payload",
-    "original_generation_projector_status_to_markdown",
+    "generation_projector_action_status_payload",
+    "generation_projector_action_status_to_markdown",
     "payloads",
     "status_payload",
     "status_to_markdown",

@@ -112,7 +112,8 @@ def test_completion_gate_tracks_current_v8_2_tier_status():
     assert payload["version"] == "v8.2"
     assert payload["BHSM_1_0_release_complete"] is False
     assert payload["next_highest_upstream_blocker"] == (
-        "ACTION_DOMAIN_HIGHER_MODE_EXCLUSION_THEOREM"
+        "ACTION_DERIVED_CLASSICAL_MODE_STRESS_INCIDENCE_ON_"
+        "FROZEN_THREE_SLOT_MODULE"
     )
     assert payload["current_tier_status"]["Tier_A"] == "COMPLETE"
     assert payload["current_tier_status"]["Tier_B"] == "COMPLETE"

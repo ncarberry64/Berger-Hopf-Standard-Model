@@ -435,7 +435,11 @@ downstream.
 Current exact verdict:
 `BHSM_FAMILY_RESOLUTION_REQUIRES_NEW_INTERNAL_FERMION_BUNDLE_EXTENSION`.
 
-## v8.2 original generation-projector recovery addendum
+V8.2 supersedes the breadth of this historical v8.1 absence claim: the
+finite family module existed in earlier BHSM layers and required attachment
+to the master-action incidence map.
+
+## v8.2 generation-projector action-attachment addendum
 
 BHSM is formulated as a deterministic geometric boundary theory in which
 particle and quantum-field descriptions are intended to emerge from
@@ -445,28 +449,24 @@ fundamental microscopic ontology. Accordingly, the present campaign first
 tests the original finite BHSM boundary-mode generation architecture before
 introducing additional quantum-field primitives.
 
-The corrected campaign recovers the historical charged-sector triples as one
-base mode plus two excitation modes and constructs their rank-three
-orthogonal projectors. The exact triality projectors conditionally realize
-the same three abstract slots; they are not multiplied by the Berger ladder.
-The master-action classification remains a finite independent
-generation-module input rather than an action-derived family theorem.
+The corrected campaign imports the conditionally derived primitive
+`[1,2,3]` closure spectrum and the frozen charged-sector triples as one base
+mode plus two excitation modes. Their rank-three projectors, finite sector
+incidence, triality realization, chirality, anomaly compatibility, and
+middle-up `(6,0)` weak projection are not re-derived in v8.2.
 
-Solving the operational boundary equations completely gives infinitely many
-lepton and up roots and four nonzero down roots. The implementation's
-`n_modes=2` truncation is the structural input. No regularity, chirality,
-anomaly, self-adjoint-domain, or action-gap result excludes the displayed
-higher roots.
+The frozen modules are attached to the localized field
+`Psi_r in Gamma(S_h tensor E_SM,r tensor F_r)` and self-adjoint domain
+`D_Dirac,r tensor F_r`. Higher tower modes remain other/composite/excess
+excitations and do not become additional generations.
 
-The full interface tensor cannot be projected into a physical family
-response because the proxy mode stress is absent from the localized fermion
-action. Mass ratios and CKM therefore remain undefined. The domain-wall
-replacement is paused. RB-15 remains blocked and RB-16 remains downstream.
-The emergent Layer-Q map remains
-`OPEN_EMERGENT_QUANTUM_CORRESPONDENCE`; this is distinct from the classical
-Layer-G higher-mode obstruction and bars a claim of a completed quantum
-replacement.
+The full interface tensor still cannot produce a physical family response
+because the mixed metric-mode stress on the attached modules is absent from
+the action. Mass ratios and CKM therefore remain undefined. The domain-wall
+route is paused as a fallback. RB-15 remains blocked and RB-16 remains
+downstream. The emergent Layer-Q map remains
+`OPEN_EMERGENT_QUANTUM_CORRESPONDENCE`.
 
 Current exact verdict:
-`BHSM_ORIGINAL_GENERATION_PROJECTOR_BLOCKED_BY_UNEXCLUDED_HIGHER_MODES`.
+`BHSM_MODE_DEPENDENT_RESPONSE_BLOCKED_BY_UNDEFINED_MODE_STRESS`.
 

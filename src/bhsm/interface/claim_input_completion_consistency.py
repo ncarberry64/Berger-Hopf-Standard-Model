@@ -420,13 +420,13 @@ def historical_canonical_completion_gate_payload() -> dict[str, Any]:
 
 
 def canonical_completion_gate_payload() -> dict[str, Any]:
-    """Return the current original-generation-projector completion gate."""
+    """Return the current projector-action-attachment completion gate."""
 
-    from bhsm.interface.master_action.original_generation_projector import (
-        completion_gate_payload as current_payload,
+    from bhsm.interface.master_action import (
+        generation_projector_action_attachment as current,
     )
 
-    return current_payload()
+    return current.completion_gate_payload()
 
 
 def artifact_payloads(root: Path) -> dict[str, dict[str, Any]]:

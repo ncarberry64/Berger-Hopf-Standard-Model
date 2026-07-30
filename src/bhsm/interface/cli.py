@@ -312,11 +312,11 @@ from .master_action.mode_resolved_curvature_incidence import (
 from .master_action.mode_resolved_curvature_incidence import (
     status_to_markdown as mode_resolved_curvature_status_to_markdown,
 )
-from .master_action.original_generation_projector import (
-    status_report as original_generation_projector_status_payload,
+from .master_action.generation_projector_action_attachment import (
+    status_report as generation_projector_action_status_payload,
 )
-from .master_action.original_generation_projector import (
-    status_to_markdown as original_generation_projector_status_to_markdown,
+from .master_action.generation_projector_action_attachment import (
+    status_to_markdown as generation_projector_action_status_to_markdown,
 )
 
 
@@ -841,11 +841,11 @@ def build_parser() -> argparse.ArgumentParser:
     mode_resolved_curvature.add_argument(
         "--format", choices=("json", "markdown"), default="markdown"
     )
-    original_generation_projector = commands.add_parser(
-        "original-generation-projector-status",
-        help="Render the BHSM v8.2 original generation projector recovery",
+    generation_projector_action = commands.add_parser(
+        "generation-projector-action-status",
+        help="Render the BHSM v8.2 frozen-projector action attachment",
     )
-    original_generation_projector.add_argument(
+    generation_projector_action.add_argument(
         "--format", choices=("json", "markdown"), default="markdown"
     )
     return parser
@@ -894,11 +894,11 @@ def main(argv: Sequence[str] | None = None) -> int:
         else:
             print(json.dumps(payload, indent=2, sort_keys=True))
         return 0
-    if args.command == "original-generation-projector-status":
-        payload = original_generation_projector_status_payload()
+    if args.command == "generation-projector-action-status":
+        payload = generation_projector_action_status_payload()
         if args.format == "markdown":
             print(
-                original_generation_projector_status_to_markdown(payload),
+                generation_projector_action_status_to_markdown(payload),
                 end="",
             )
         else:
