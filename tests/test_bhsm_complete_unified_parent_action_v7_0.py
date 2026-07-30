@@ -222,7 +222,7 @@ def test_materializer_is_idempotent_and_canonical_gate_is_current():
     subprocess.run([sys.executable, str(script)], cwd=ROOT, check=True)
     assert first == master_action.artifact_bytes()
     canonical = json.loads((ROOT / "artifacts" / "BHSM_1_0_completion_gate.json").read_text(encoding="utf-8"))
-    assert canonical["version"] == "v7.3"
+    assert canonical["version"] == "v8.0"
 
 
 def test_cli_reports_action_terms_inputs_reduction_and_verdict():
@@ -253,4 +253,4 @@ def test_frozen_prediction_integrity_is_exact():
         "docs/frozen_predictions.md": "9EA147C56537520C86D3C4F9B864C6BA98BAC9E64931EDAE96449F3B335A36C4",
         "docs/frozen_predictions.json": "F38210E0689871A25A9D5B0A1A4239883B7240CD7D0E25CDCF4C8CAB72A2CBE7",
     }.items():
-        assert hashlib.sha256((ROOT / path).read_bytes()).hexdigest().upper() == expected
+        assert master_action.frozen_file_sha256(ROOT / path) == expected

@@ -85,11 +85,12 @@ Tier C requires Tier B plus:
 
 The sole Tier-C verdict is `BHSM_1_0_RELEASE_COMPLETE`.
 
-Current status: **blocked at RB-15**. The finite benchmark suite is frozen,
-and v7.3 has exhausted every independent prediction route. The exact missing
-object is a non-universal action coupling from distinctive
-Berger/Hopf/topographic variables to the localized physical operators.
-RB-16 remains downstream.
+Current status: **blocked at RB-15**. The finite benchmark suite is frozen.
+V8.0 constructs the unique minimal Brown--York response coupling, but its
+family-scalar form predicts exact `1:1:1` degeneracy and supplies no CKM
+invariant. The action also has no positive core/surface energy-envelopment
+functional. The exact remaining object is family-resolving action incidence
+beyond the universal curvature scalar. RB-16 remains downstream.
 
 ## Six cumulative gates
 
@@ -109,6 +110,7 @@ The machine-readable gate and dependency records are:
   `artifacts/BHSM_common_scheme_observable_transport_v7_2.json`
   (the older `BHSM_release_blocker_DAG*.json` files remain historical);
 - `artifacts/BHSM_distinct_action_derived_prediction_v7_3.json`;
+- `artifacts/BHSM_mass_curvature_response_v8_0.json`;
 - `artifacts/BHSM_scope_relevance_registry.json`.
 
 ## Release-relevance firewall

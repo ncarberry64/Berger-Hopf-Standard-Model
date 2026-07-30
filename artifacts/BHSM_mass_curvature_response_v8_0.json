@@ -1,0 +1,673 @@
+{
+  "CKM": {
+    "Jarlskog": null,
+    "angles": null,
+    "formula": "V_CKM^BH=U_u^dagger U_d",
+    "phase": null,
+    "reason": "the exactly degenerate identity responses leave U_u and U_d arbitrary; CKM is not an invariant of the response",
+    "result": null,
+    "status": "BLOCKED_BY_EXACT_MISSING_OBJECT"
+  },
+  "RB15": {
+    "resolution": "BHSM_MASS_RESPONSE_BLOCKED_BY_UNIVERSAL_RESPONSE_WITH_NO_FAMILY_RESOLUTION",
+    "status": "BLOCKED_EXACT_OBJECT_PROVED"
+  },
+  "RB16": {
+    "release_package_generated": false,
+    "status": "DOWNSTREAM_BLOCKED"
+  },
+  "action_extension": {
+    "Yukawa_operators": {
+      "d": "O_Y,d=bar Q_L H d_R",
+      "e": "O_Y,e=bar L_L H e_R",
+      "u": "O_Y,u=bar Q_L H_tilde u_R"
+    },
+    "arbitrary_flavor_spurion": false,
+    "doctrine": "BHSM v8.0 introduces or completes the mass-curvature response coupling between the hyperspherical core/cap system and localized M4 matter.",
+    "extended_action": "S_BHSM^v8=S_BHSM^strat+S_mass-response^(5)",
+    "new_dynamical_field": false,
+    "new_mediator": false,
+    "new_scale": false,
+    "normalization_rule": "the sole nonzero family-singlet response channel has action canonical norm one; its only singular value is one",
+    "normalized_interaction": "-int_M4 sqrt(|h|)[y_u bar Q_L H_tilde Lambda_hat_env u_R+y_d bar Q_L H Lambda_hat_env d_R+y_e bar L_L H Lambda_hat_env e_R+h.c.]",
+    "normalized_response": "Lambda_hat_env=kappa_env/|kappa_env|_action on a selected nonzero response channel",
+    "result": "BHSM_MINIMAL_BROWN_YORK_MASS_RESPONSE_EXTENSION_CONSTRUCTED",
+    "second_calibration": false,
+    "typed_overall_inputs": [
+      "one charged-sector strength y_u",
+      "one charged-sector strength y_d",
+      "one charged-sector strength y_e"
+    ],
+    "unnormalized_interaction": "S_mass-response^(5)=-sum_f c_f int_M4 sqrt(|h|) kappa_env O_Y,f+h.c.",
+    "zero_response_rule": "normalization is undefined when kappa_env=0; the exact round equatorial background therefore produces no mass incidence"
+  },
+  "artifact": "BHSM_mass_curvature_response_v8_0",
+  "canonical_boundary_response": {
+    "Dirichlet_to_Neumann_map": "Lambda_env:delta h|M4 -> delta pi_env|M4 after solving the cap Einstein-scalar, ADM, matcher, gauge, and closed-range complement equations",
+    "background_value": "kappa_env=0 on the exact round equatorial background K_ab=0",
+    "density_free_momentum": "pi_epsilon^ab=epsilon kappa1(K_epsilon^ab-K_epsilon h^ab)",
+    "matcher_equation": "pi_epsilon^ab=Lambda_epsilon^ab",
+    "nonlocality": "the complete covariant Lambda_env is a nonlocal seam operator",
+    "reflection_even_sum": "pi_env^ab=(pi_+^ab+pi_-^ab)/2",
+    "result": "BHSM_MINIMAL_BROWN_YORK_MASS_RESPONSE_EXTENSION_CONSTRUCTED",
+    "selected_carrier": "cap-summed metric/Brown-York canonical momentum",
+    "unique_scalar_contraction": "kappa_env=-(3 kappa1)^-1 h_ab pi_env^ab=(epsilon_+ K_+ + epsilon_- K_-)/2"
+  },
+  "collar_geometry": {
+    "constant_replacement_used": false,
+    "embedding_width_selected": false,
+    "general_surface_factor": "J(Y,rho)=det(I+rho S(Y)) in the repository normal-first tubular convention",
+    "inner_product": "<u,v>_collar=int_M4 int_C u^dagger v J(Y,rho) d rho dmu_h",
+    "normal_metric": "a(t)^2 d rho^2",
+    "orientation": "rho=0 is the common M4 seam; increasing rho enters either cap toward its hyperspherical core",
+    "round_cap_exact_factor": "J_round(rho)=cos(rho)^3",
+    "round_cap_measure": "dmu5=N a^4 cos(rho)^3 dt d rho dmu_S3",
+    "v7_1_embedding": "c_epsilon(t,x,rho)=(t,pi/2-epsilon rho,x)"
+  },
+  "core_surface_localization": {
+    "arbitrary_profile_inserted": false,
+    "core_limit": null,
+    "epsilon": null,
+    "mean_rho_monotonicity": null,
+    "reason": "without two independent sign-controlled energies, an epsilon-dependent radial potential would be an arbitrary interpolation not produced by the action",
+    "result": "BHSM_MASS_RESPONSE_BLOCKED_BY_NO_POSITIVE_ENERGY_ENVELOPMENT_FUNCTIONAL",
+    "stationary_profile_family": null,
+    "surface_limit": null
+  },
+  "curvature_invariant_audit": [
+    {
+      "accepted": true,
+      "action_source": "trace of Einstein-GHY canonical momentum",
+      "candidate": "kappa_env",
+      "independent_coefficient_required": false,
+      "operator_dimension": 1,
+      "reason": "unique linear scalar at minimal dimension"
+    },
+    {
+      "accepted": false,
+      "action_source": "GHY",
+      "candidate": "K",
+      "independent_coefficient_required": false,
+      "operator_dimension": 1,
+      "reason": "one-sided K is cap-reflection odd; its allowed cap sum is exactly kappa_env"
+    },
+    {
+      "accepted": false,
+      "action_source": "metric canonical momentum",
+      "candidate": "u_a u_b pi_env^ab",
+      "independent_coefficient_required": false,
+      "operator_dimension": 1,
+      "reason": "no action-derived timelike observer u is selected"
+    },
+    {
+      "accepted": false,
+      "action_source": "intrinsic B1 Einstein term",
+      "candidate": "R[h]",
+      "independent_coefficient_required": false,
+      "operator_dimension": 2,
+      "reason": "multiplying a Yukawa operator gives dimension six"
+    },
+    {
+      "accepted": false,
+      "action_source": "not produced linearly by the P1+GHY variation",
+      "candidate": "K_ab K^ab or K^2",
+      "independent_coefficient_required": true,
+      "operator_dimension": 2,
+      "reason": "new higher-dimensional coefficient would be required"
+    },
+    {
+      "accepted": false,
+      "action_source": "scalar kinetic boundary form",
+      "candidate": "sigma pi_sigma",
+      "independent_coefficient_required": true,
+      "operator_dimension": "greater than one",
+      "reason": "zero on the retained odd Dirichlet seam"
+    },
+    {
+      "accepted": false,
+      "action_source": "compatibility multiplier",
+      "candidate": "matcher trace",
+      "independent_coefficient_required": false,
+      "operator_dimension": 1,
+      "reason": "on-shell duplicate of kappa_env"
+    }
+  ],
+  "doctrine": "BHSM v8.0 introduces or completes the mass-curvature response coupling between the hyperspherical core/cap system and localized M4 matter.",
+  "energy_envelopment_ratio": {
+    "arbitrary_absolute_value_used": false,
+    "candidates": [
+      {
+        "positive": false,
+        "result": "indefinite constrained KKT saddle",
+        "source": "full cap/ADM/matcher quadratic form"
+      },
+      {
+        "positive": false,
+        "result": "observer- and reference-subtraction-dependent; no positivity theorem",
+        "source": "Brown-York surface density"
+      },
+      {
+        "positive": false,
+        "result": "not a positive energy without a selected observer",
+        "source": "Lorentzian scalar gradient Dq squared"
+      },
+      {
+        "positive": true,
+        "result": "positive complement gap exists, but its Dirichlet trace is zero and its quadratic form is the same bulk energy represented by its DtN form, so counting both as core and surface double counts one action contribution",
+        "source": "fixed-h scalar physical complement"
+      },
+      {
+        "positive": false,
+        "result": "a Lagrange-multiplier constraint with zero on-shell constraint value, not positive energy",
+        "source": "compatibility response"
+      }
+    ],
+    "observer_added": false,
+    "positive_core_surface_pair_exists": false,
+    "ratio": null,
+    "reference_subtraction_added": false,
+    "required_ratio": "epsilon=E_core/(E_core+E_surface), 0<=epsilon<=1",
+    "result": "BHSM_MASS_RESPONSE_BLOCKED_BY_NO_POSITIVE_ENERGY_ENVELOPMENT_FUNCTIONAL"
+  },
+  "falsification_condition": "any nondegenerate charged-sector singular-value ratio invalidates the universal response as a flavor mechanism",
+  "family_space": {
+    "C3_family_used_as_derivation_input": false,
+    "Schur_lemma": "a scalar gauge-singlet curvature response commutes with every existing family/sector symmetry and therefore acts as a multiple of the identity on each supplied family multiplet",
+    "additional_light_modes_excluded": false,
+    "conditional_on_existing_M4_C3": "Lambda_hat_f=I3 for f=u,d,e",
+    "derived_dimension": 1,
+    "derived_response_space": "one real cap-reflection-even scalar response channel",
+    "exactly_three_selected": false,
+    "kernel_dimension": "one scalar D0 Jacobi mode, but it has zero Dirichlet trace and does not become a localized chiral family",
+    "representation": "Lorentz and SU3xSU2xU1 singlet; no chirality",
+    "result": "BHSM_MASS_RESPONSE_BLOCKED_BY_UNIVERSAL_RESPONSE_WITH_NO_FAMILY_RESOLUTION"
+  },
+  "final_verdict": "BHSM_MASS_RESPONSE_BLOCKED_BY_UNIVERSAL_RESPONSE_WITH_NO_FAMILY_RESOLUTION",
+  "frozen_predictions": [
+    {
+      "freeze_sha256": "BDE7FA8DC967120E09823BBC496F2FE564912A7CD363857571C4B6B9F3AD767C",
+      "official_prediction": false,
+      "post_freeze_status": "INVALIDATED",
+      "prediction_id": "V8_MASS_RESPONSE_CHARGED_DEGENERACY",
+      "uncertainty": "EXACT_UNIVERSALITY_WITHIN_THE_EXTENSION",
+      "value": "1:1:1 in every supplied charged sector"
+    }
+  ],
+  "integrity": {
+    "arbitrary_gap_floor_used": false,
+    "arbitrary_profile_used": false,
+    "fit_used": false,
+    "frozen_prediction_changed": false,
+    "hidden_calibration_used": false,
+    "inserted_zero_mode_used": false,
+    "measured_mode_selection_used": false,
+    "new_action_extension_declared": true,
+    "new_mediator_used": false,
+    "post_comparison_retuning_used": false,
+    "second_scale_used": false,
+    "unselected_domain_parameter_used": false
+  },
+  "minimal_interaction_classification": [
+    {
+      "Hermitian": true,
+      "Hopf_equivariant": true,
+      "Lorentz": true,
+      "SM_gauge": true,
+      "accepted_as_flavor_mechanism": false,
+      "cap_reflection": true,
+      "dimension": 5,
+      "extension_candidate": true,
+      "interaction": "kappa_env O_Y,f+h.c.",
+      "new_field": false,
+      "reason": "this is the unique action-supported local response coupling, but it is removed from the admissible physical flavor set because it has no family incidence",
+      "redundant": "universal kappa_env is equivalent to a common local rescaling of the sector Yukawa strength on a fixed background",
+      "scalar_parity": true
+    },
+    {
+      "Hermitian": true,
+      "Hopf_equivariant": true,
+      "Lorentz": true,
+      "SM_gauge": true,
+      "accepted_as_flavor_mechanism": false,
+      "cap_reflection": "fails scalar parity",
+      "dimension": "greater than five without a new scale",
+      "extension_candidate": false,
+      "interaction": "pi_sigma O_Y,f+h.c.",
+      "new_field": false,
+      "redundant": false,
+      "scalar_parity": false
+    },
+    {
+      "Hermitian": true,
+      "Hopf_equivariant": true,
+      "Lorentz": true,
+      "SM_gauge": true,
+      "accepted_as_flavor_mechanism": false,
+      "cap_reflection": true,
+      "dimension": 6,
+      "extension_candidate": false,
+      "interaction": "R[h] O_Y,f+h.c.",
+      "new_field": false,
+      "redundant": false,
+      "scalar_parity": true
+    },
+    {
+      "Hermitian": true,
+      "Hopf_equivariant": true,
+      "Lorentz": true,
+      "SM_gauge": true,
+      "accepted_as_flavor_mechanism": false,
+      "cap_reflection": true,
+      "dimension": 6,
+      "extension_candidate": false,
+      "interaction": "(K_ab K^ab or K^2) O_Y,f+h.c.",
+      "new_field": false,
+      "redundant": false,
+      "scalar_parity": true
+    },
+    {
+      "Hermitian": true,
+      "Hopf_equivariant": true,
+      "Lorentz": true,
+      "SM_gauge": true,
+      "accepted_as_flavor_mechanism": false,
+      "cap_reflection": true,
+      "dimension": 5,
+      "extension_candidate": false,
+      "interaction": "Lambda_matcher O_Y,f+h.c.",
+      "new_field": false,
+      "redundant": "duplicates pi_env by the matcher equation",
+      "scalar_parity": true
+    }
+  ],
+  "physical_transport": {
+    "conditional_prediction": "every charged sector is exactly family-degenerate wherever the normalized response is defined",
+    "mass_formula": "m_f,i^MSbar(mu_star)=y_f v(mu_star) s_f,i/sqrt(2)",
+    "ratio_formula": "m_f,i/m_f,j=s_f,i/s_f,j=1",
+    "reference_scale": "mu_star=ell_star^-1; mu_hat_star=mu_star*ell_star=1",
+    "round_background": "kappa_env=0, so the normalized response and curvature-induced mass incidence are undefined rather than nonzero",
+    "scheme": "overline_MS",
+    "second_calibration_used": false,
+    "second_scale_used": false
+  },
+  "post_freeze_comparison": {
+    "common_scale_external_references": {
+      "charged_lepton_ratios_heavy_middle_light": [
+        1.0,
+        0.05946353426831603,
+        0.0002875853753250115
+      ],
+      "classification": "INCOMPATIBLE",
+      "down_ratios_heavy_middle_light": [
+        1.0,
+        0.022344497607655504,
+        0.0011172248803827751
+      ],
+      "reason": "nondegenerate common-scale reference ratios falsify the universal response as a charged-flavor mechanism",
+      "up_ratios_heavy_middle_light": [
+        1.0,
+        0.007354218541895883,
+        1.2507962244484336e-05
+      ]
+    },
+    "comparison_performed_after_freeze": true,
+    "freeze_hash_verified_before_comparison": "BDE7FA8DC967120E09823BBC496F2FE564912A7CD363857571C4B6B9F3AD767C",
+    "historical_bare_BHSM_screens": {
+      "charged_lepton_ratios_heavy_middle_light": [
+        1.0,
+        0.06007447093260976,
+        0.00029729106456492414
+      ],
+      "classification": "INCOMPATIBLE",
+      "disposition": "RETIRED_FROM_V8_CURVATURE_RESPONSE_PREDICTIVE_PATH",
+      "down_ratios_heavy_middle_light": [
+        1.0,
+        0.021933971495439474,
+        0.0011165200546001757
+      ],
+      "reason": "every historical charged-sector screen is nondegenerate, whereas the frozen response is exactly 1:1:1",
+      "up_ratios_heavy_middle_light": [
+        1.0,
+        0.008310500554068288,
+        1.2690463017606151e-05
+      ]
+    },
+    "historical_dressed_candidate": {
+      "changed_ratio": {
+        "quantity": "c/t",
+        "value": 0.004155250277034144
+      },
+      "classification": "INCOMPATIBLE",
+      "disposition": "RETIRED_FROM_V8_CURVATURE_RESPONSE_PREDICTIVE_PATH; retained only as historical provenance",
+      "reason": "the dressing changes one already nondegenerate ratio and cannot convert the frozen universal response into a family-resolving operator"
+    },
+    "operator_retuned_after_comparison": false,
+    "sources": [
+      "theory/bhsm_v1_frozen_prediction_set.json",
+      "theory/bhsm_bare_vs_dressed_prediction_ledger.json"
+    ],
+    "status": "INVALIDATED"
+  },
+  "prediction_freeze": {
+    "CKM_prediction": null,
+    "collar_orientation": "rho=0 is the common M4 seam; increasing rho enters either cap toward its hyperspherical core",
+    "comparison_data_used": false,
+    "conditional_supplied_family_dimension": 3,
+    "curvature_invariant": "kappa_env=-(3 kappa1)^-1 h_ab pi_env^ab=(epsilon_+ K_+ + epsilon_- K_-)/2",
+    "domain": "regular weighted H2 scalar domain with zero seam trace, metric gauge quotient, matcher reaction, and explicit Lyapunov-Schmidt kernel coordinate",
+    "energy_envelopment_ratio": null,
+    "extended_action": "S_BHSM^v8=S_BHSM^strat+S_mass-response^(5)",
+    "falsification_threshold": "any nondegenerate charged-sector singular-value ratio invalidates the universal response as a flavor mechanism",
+    "family_dimension_derived": 1,
+    "mass_ratio_prediction": "1:1:1 in every supplied charged sector",
+    "matrix_normalization": "the sole nonzero family-singlet response channel has action canonical norm one; its only singular value is one",
+    "radial_operator": "L_sigma=-J^-1 D_rho(J Z5 D_rho)+U5''(sigma_background)+V_metric_constraint",
+    "response_carrier": "cap-summed metric/Brown-York canonical momentum",
+    "response_matrices": {
+      "charged_lepton": {
+        "basis": "any orthonormal basis of the supplied C3 family input",
+        "left_basis": "UNSELECTED_BY_EXACT_THREEFOLD_DEGENERACY",
+        "matrix": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "rank": 3,
+        "singular_value_ratios": [
+          "1",
+          "1",
+          "1"
+        ],
+        "singular_values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "status": "ACTION_DERIVED_CONDITIONAL_PREDICTION"
+      },
+      "down": {
+        "basis": "any orthonormal basis of the supplied C3 family input",
+        "left_basis": "UNSELECTED_BY_EXACT_THREEFOLD_DEGENERACY",
+        "matrix": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "rank": 3,
+        "singular_value_ratios": [
+          "1",
+          "1",
+          "1"
+        ],
+        "singular_values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "status": "ACTION_DERIVED_CONDITIONAL_PREDICTION"
+      },
+      "up": {
+        "basis": "any orthonormal basis of the supplied C3 family input",
+        "left_basis": "UNSELECTED_BY_EXACT_THREEFOLD_DEGENERACY",
+        "matrix": [
+          [
+            1.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "rank": 3,
+        "singular_value_ratios": [
+          "1",
+          "1",
+          "1"
+        ],
+        "singular_values": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "status": "ACTION_DERIVED_CONDITIONAL_PREDICTION"
+      }
+    },
+    "retuning_permitted": false,
+    "round_surface_factor": "J_round(rho)=cos(rho)^3",
+    "singular_values": {
+      "charged_lepton": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "down": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "up": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "status": "ACTION_DERIVED_CONDITIONAL_PREDICTION",
+    "surface_factor": "J(Y,rho)=det(I+rho S(Y)) in the repository normal-first tubular convention",
+    "uncertainty": "EXACT_UNIVERSALITY_WITHIN_THE_EXTENSION",
+    "version": "v8.0"
+  },
+  "prediction_freeze_sha256": "BDE7FA8DC967120E09823BBC496F2FE564912A7CD363857571C4B6B9F3AD767C",
+  "radial_response_operator": {
+    "boundary_conditions": "regular cap pole and odd scalar Dirichlet trace at rho=0",
+    "chirality_incidence": "none",
+    "complement_gap": "64.0147366689857 in the normalized D0 representative",
+    "core_loading": "no independent positive loading term exists in the current action",
+    "curvature_potential": "the connection/measure terms generated by J and the constraint-reduced metric Schur block",
+    "field_bundle": "real gauge-singlet cap scalar line bundle",
+    "gap_used_as_mass_floor": false,
+    "gauge_representation": "singlet",
+    "kernel": "span{u1} on strict fixed-h D0",
+    "mass_response_eligibility": false,
+    "operator": "L_sigma=-J^-1 D_rho(J Z5 D_rho)+U5''(sigma_background)+V_metric_constraint",
+    "physical_complement": "u1-perpendicular closed-range scalar subspace plus the endpoint-preserving metric gauge quotient",
+    "principal_part": "-J^-1 D_rho(J Z5 D_rho)",
+    "reason": "the action-selected zero trace and scalar parity prevent its canonical momentum from furnishing the minimal mass insertion",
+    "round_surface_factor": "J_round(rho)=cos(rho)^3",
+    "self_adjoint_domain": "regular weighted H2 scalar domain with zero seam trace, metric gauge quotient, matcher reaction, and explicit Lyapunov-Schmidt kernel coordinate",
+    "surface_factor": "J(Y,rho)=det(I+rho S(Y)) in the repository normal-first tubular convention",
+    "surface_loading": "no independent positive surface term exists in the current action"
+  },
+  "release_verdict": "BHSM_1_0_RELEASE_BLOCKED",
+  "remaining_exact_obstruction": "FAMILY_RESOLVING_ACTION_INCIDENCE_BEYOND_THE_UNIVERSAL_CURVATURE_SCALAR",
+  "response_carrier_audit": [
+    {
+      "carrier": "scalar canonical momentum",
+      "formula": "pi_sigma,epsilon=-sqrt(|h|) Z5 n_epsilon^A D_A sigma",
+      "mass_operator_eligibility": false,
+      "reason": "the nonzero linear response violates scalar parity, while the lowest even response vanishes; quadratic momentum would exceed the minimal dimension and require a scale",
+      "reflection_and_parity": "linear pi_sigma is scalar-parity odd; sigma pi_sigma is even but vanishes on the retained odd Dirichlet seam sigma|M4=0",
+      "status": "BLOCKED_BY_EXACT_MISSING_OBJECT",
+      "variation_source": "S5 scalar kinetic term"
+    },
+    {
+      "carrier": "metric canonical momentum",
+      "formula": "pi_epsilon^ab=epsilon kappa1(K_epsilon^ab-K_epsilon h^ab)",
+      "mass_operator_eligibility": true,
+      "reason": "its cap-summed trace is the unique dimension-one Lorentz scalar directly produced by the existing variation",
+      "reflection_and_parity": "epsilon pi_epsilon is exchanged evenly by cap reflection",
+      "status": "ACTION_EXTENSION_CONSTRUCTED",
+      "variation_source": "Einstein-Hilbert plus coefficient-locked GHY"
+    },
+    {
+      "carrier": "coupled scalar-metric KKT response",
+      "formula": "H_eff=H_bb-H_bi H_ii,perp^-1 H_ib",
+      "mass_operator_eligibility": false,
+      "reason": "the scalar-metric block vanishes on the retained sigma=0 fixed-h background and the remaining KKT saddle is indefinite; it supplies no additional minimal scalar",
+      "reflection_and_parity": "covariant on the declared KKT domain",
+      "status": "STRUCTURAL_BUT_NOT_PHYSICAL",
+      "variation_source": "complete cap/matcher constrained Hessian"
+    },
+    {
+      "carrier": "matcher reaction",
+      "formula": "Lambda_epsilon^ab=pi_epsilon^ab on shell",
+      "mass_operator_eligibility": false,
+      "reason": "it is the same canonical response and cannot be counted as an independent interaction",
+      "reflection_and_parity": "same as metric canonical momentum",
+      "status": "PROXY_ONLY_REJECTED",
+      "variation_source": "metric compatibility multiplier"
+    }
+  ],
+  "response_matrices": {
+    "charged_lepton": {
+      "basis": "any orthonormal basis of the supplied C3 family input",
+      "left_basis": "UNSELECTED_BY_EXACT_THREEFOLD_DEGENERACY",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "rank": 3,
+      "singular_value_ratios": [
+        "1",
+        "1",
+        "1"
+      ],
+      "singular_values": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "status": "ACTION_DERIVED_CONDITIONAL_PREDICTION"
+    },
+    "down": {
+      "basis": "any orthonormal basis of the supplied C3 family input",
+      "left_basis": "UNSELECTED_BY_EXACT_THREEFOLD_DEGENERACY",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "rank": 3,
+      "singular_value_ratios": [
+        "1",
+        "1",
+        "1"
+      ],
+      "singular_values": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "status": "ACTION_DERIVED_CONDITIONAL_PREDICTION"
+    },
+    "up": {
+      "basis": "any orthonormal basis of the supplied C3 family input",
+      "left_basis": "UNSELECTED_BY_EXACT_THREEFOLD_DEGENERACY",
+      "matrix": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "rank": 3,
+      "singular_value_ratios": [
+        "1",
+        "1",
+        "1"
+      ],
+      "singular_values": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "status": "ACTION_DERIVED_CONDITIONAL_PREDICTION"
+    }
+  },
+  "source_main_sha": "8048faa2039a907b77a1776ca44e3cf333201336",
+  "sprint": "bhsm-mass-curvature-response-v8-0",
+  "validation": {
+    "RB15_exact": true,
+    "RB16_downstream": true,
+    "carrier_selected_by_variation": true,
+    "comparison_postdates_freeze": true,
+    "curvature_invariant_unique": true,
+    "doctrine_explicit": true,
+    "domain_selected_without_parameter": true,
+    "family_universality_proved": true,
+    "freeze_hashed": true,
+    "minimal_interaction_unique": true,
+    "no_nonredundant_flavor_interaction": true,
+    "no_positive_energy_ratio_fabricated": true,
+    "no_post_comparison_retuning": true,
+    "surface_factor_nonconstant": true
+  },
+  "validation_passed": true,
+  "version": "v8.0"
+}

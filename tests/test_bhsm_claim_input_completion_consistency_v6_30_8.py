@@ -107,12 +107,12 @@ def test_next_target_is_highest_upstream_parent_action():
     assert rb01["depends_on"] == []
 
 
-def test_completion_gate_tracks_current_v7_3_tier_status():
+def test_completion_gate_tracks_current_v8_0_tier_status():
     payload = audit.canonical_completion_gate_payload()
-    assert payload["version"] == "v7.3"
+    assert payload["version"] == "v8.0"
     assert payload["BHSM_1_0_release_complete"] is False
     assert payload["next_highest_upstream_blocker"] == (
-        "NONUNIVERSAL_BHSM_TO_LOCALIZED_PHYSICAL_SECTOR_ACTION_COUPLING"
+        "UNIVERSAL_RESPONSE_WITH_NO_FAMILY_RESOLUTION"
     )
     assert payload["current_tier_status"]["Tier_A"] == "COMPLETE"
     assert payload["current_tier_status"]["Tier_B"] == "COMPLETE"
@@ -123,7 +123,7 @@ def test_all_guards_are_false_and_frozen_hashes_match():
     assert all(value is False for value in audit.GUARDS.values())
     assert audit.frozen_hashes_match(ROOT)
     for path, expected in audit.FROZEN_HASHES.items():
-        assert hashlib.sha256((ROOT / path).read_bytes()).hexdigest().upper() == expected
+        assert audit.frozen_file_sha256(ROOT / path) == expected
 
 
 def test_validation_contract_passes():
@@ -152,4 +152,4 @@ def test_materializer_is_idempotent_and_updates_canonical_gate():
     canonical_second = (ROOT / "artifacts" / "BHSM_1_0_completion_gate.json").read_bytes()
     assert first == second == audit.artifact_bytes(ROOT)
     assert canonical_first == canonical_second
-    assert json.loads(canonical_second)["version"] == "v7.3"
+    assert json.loads(canonical_second)["version"] == "v8.0"

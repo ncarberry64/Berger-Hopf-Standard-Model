@@ -420,9 +420,9 @@ def historical_canonical_completion_gate_payload() -> dict[str, Any]:
 
 
 def canonical_completion_gate_payload() -> dict[str, Any]:
-    """Return the current distinct-prediction completion gate."""
+    """Return the current mass-curvature-response completion gate."""
 
-    from bhsm.interface.master_action.distinct_prediction import (
+    from bhsm.interface.master_action.mass_curvature_response import (
         completion_gate_payload as current_payload,
     )
 
@@ -482,5 +482,16 @@ def validate(root: Path) -> dict[str, bool]:
     }
 
 
+def frozen_file_sha256(path: Path) -> str:
+    """Hash legacy frozen text in its declared canonical CRLF form."""
+
+    canonical_lf = path.read_bytes().replace(b"\r\n", b"\n")
+    canonical_crlf = canonical_lf.replace(b"\n", b"\r\n")
+    return hashlib.sha256(canonical_crlf).hexdigest().upper()
+
+
 def frozen_hashes_match(root: Path) -> bool:
-    return all(hashlib.sha256((root / path).read_bytes()).hexdigest().upper() == digest for path, digest in FROZEN_HASHES.items())
+    return all(
+        frozen_file_sha256(root / path) == digest
+        for path, digest in FROZEN_HASHES.items()
+    )

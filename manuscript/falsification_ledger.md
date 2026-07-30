@@ -14,6 +14,8 @@ criteria protect the no-retuning status of the frozen branches.
 | `F7` | If unscreened light scalar/topographic modes remain, BHSM fails as a Standard-Model-equivalent low-energy theory. | `OPEN_ACTION_LEVEL_PROOF` |
 | `F8` | If higher-loop/threshold RG matching moves coupling agreement away from the electroweak scale beyond tolerance, the coupling branch weakens. | `OPEN_RG_MATCHING` |
 | `F9` | Any post-freeze adjustment of `a`, `S`, modes, or `Z_virt` based on residuals invalidates the v1.0 prediction set. | `FREEZE_CONSTRAINT` |
+| `F10` | The v7.3 route-exhaustion theorem localizes the missing non-universal physical-sector action cross block. | `BLOCKED_EXACT_OBJECT_PROVED` |
+| `F11` | Any nondegenerate charged-sector singular-value ratio falsifies the universal v8.0 Brown--York response as a flavor mechanism; the post-freeze repository comparison already does so. | `INVALIDATED` |
 
 ## Fixed Tolerance Bands
 

@@ -1,7 +1,7 @@
-"""BHSM master-action, observable-transport, and prediction-campaign API.
+"""BHSM master-action, transport, and curvature-response API.
 
 The v7.0 constants and v7.1 master-action report remain exported for
-artifact compatibility. Current v7.3 completion constants and status are
+artifact compatibility. Current v8.0 completion constants and status are
 exposed separately.
 """
 
@@ -9,6 +9,7 @@ from .common import MISSING_OBJECT, VERDICT, VERSION
 from .report import (
     ARTIFACT_FILES,
     artifact_bytes,
+    frozen_file_sha256,
     frozen_hashes_match,
     materialize,
     payloads,
@@ -17,13 +18,14 @@ from .report import (
 )
 from .validation import validate_model
 
-CURRENT_VERSION = "v7.3"
+CURRENT_VERSION = "v8.0"
 CURRENT_MISSING_OBJECT = (
-    "NONUNIVERSAL_BHSM_TO_LOCALIZED_PHYSICAL_SECTOR_ACTION_COUPLING"
+    "FAMILY_RESOLVING_ACTION_INCIDENCE_BEYOND_THE_"
+    "UNIVERSAL_CURVATURE_SCALAR"
 )
 CURRENT_VERDICT = (
-    "BHSM_DISTINCT_PREDICTION_REQUIRES_NEW_BULK_BOUNDARY_"
-    "COUPLING_NOT_PRESENT_IN_ACTION"
+    "BHSM_MASS_RESPONSE_BLOCKED_BY_UNIVERSAL_RESPONSE_WITH_NO_"
+    "FAMILY_RESOLUTION"
 )
 
 
@@ -55,6 +57,20 @@ def distinct_prediction_status_to_markdown(payload=None):
     return status_to_markdown(payload)
 
 
+def mass_curvature_response_status_payload():
+    """Return the current v8.0 mass-curvature response status."""
+    from .mass_curvature_response import status_report
+
+    return status_report()
+
+
+def mass_curvature_response_status_to_markdown(payload=None):
+    """Render the current v8.0 mass-curvature response status."""
+    from .mass_curvature_response import status_to_markdown
+
+    return status_to_markdown(payload)
+
+
 __all__ = [
     "ARTIFACT_FILES",
     "CURRENT_MISSING_OBJECT",
@@ -66,8 +82,11 @@ __all__ = [
     "artifact_bytes",
     "distinct_prediction_status_payload",
     "distinct_prediction_status_to_markdown",
+    "frozen_file_sha256",
     "frozen_hashes_match",
     "materialize",
+    "mass_curvature_response_status_payload",
+    "mass_curvature_response_status_to_markdown",
     "observable_status_payload",
     "observable_status_to_markdown",
     "payloads",

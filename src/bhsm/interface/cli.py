@@ -300,6 +300,12 @@ from .master_action.distinct_prediction import (
 from .master_action.distinct_prediction import (
     status_to_markdown as distinct_prediction_status_to_markdown,
 )
+from .master_action.mass_curvature_response import (
+    status_report as mass_curvature_response_status_payload,
+)
+from .master_action.mass_curvature_response import (
+    status_to_markdown as mass_curvature_response_status_to_markdown,
+)
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -809,6 +815,13 @@ def build_parser() -> argparse.ArgumentParser:
     distinct_prediction.add_argument(
         "--format", choices=("json", "markdown"), default="markdown"
     )
+    mass_curvature_response = commands.add_parser(
+        "mass-curvature-response-status",
+        help="Render the BHSM v8.0 mass-curvature response construction",
+    )
+    mass_curvature_response.add_argument(
+        "--format", choices=("json", "markdown"), default="markdown"
+    )
     return parser
 
 
@@ -832,6 +845,16 @@ def main(argv: Sequence[str] | None = None) -> int:
         payload = distinct_prediction_status_payload()
         if args.format == "markdown":
             print(distinct_prediction_status_to_markdown(payload), end="")
+        else:
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        return 0
+    if args.command == "mass-curvature-response-status":
+        payload = mass_curvature_response_status_payload()
+        if args.format == "markdown":
+            print(
+                mass_curvature_response_status_to_markdown(payload),
+                end="",
+            )
         else:
             print(json.dumps(payload, indent=2, sort_keys=True))
         return 0

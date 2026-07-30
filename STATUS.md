@@ -9,10 +9,11 @@ BHSM is an artifact-backed mathematical and computational research framework,
 not a replacement for the Standard Model established by empirical tests. Frozen
 internal prediction records, executable interfaces, deterministic artifacts,
 and extensive geometric/action calculations exist. The v7.2 finite-input
-physical observable map is complete in one declared scheme. The v7.3
-prediction campaign exhausts all six action-supported routes and proves that
-the current action lacks a non-universal coupling from distinctive
-Berger/Hopf/topographic variables to the localized physical operators.
+physical observable map is complete in one declared scheme. BHSM v8.0 adds
+the unique minimal Brown--York curvature-response coupling, but its scalar
+response is family-universal and the action supplies no positive
+core/surface energy-envelopment functional. It therefore produces no
+distinct mass hierarchy or CKM prediction.
 
 Preferred current classifications are: **Adopted from established
 physics/mathematics**, **Adopted BHSM axiom**, **BHSM identification**,
@@ -67,7 +68,7 @@ Reviewer entry points:
 [claim boundaries](CLAIMS.md), and
 [reproduction guide](docs/reviewer_reproduction_guide.md).
 
-BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: the finite-input physical observable map is complete in one declared scheme; the v7.3 route-exhaustion theorem proves that a distinct action-derived physical prediction requires a new non-universal bulk-boundary coupling not present in the current action.
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: the finite-input physical observable map is complete in one declared scheme; v8.0 adds the unique minimal Brown-York curvature-response coupling, but the response is family-universal and the action supplies no positive core/surface energy-envelopment functional, so no distinct mass hierarchy or CKM prediction follows and RB-15/RB-16 remain blocked.
 
 BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity. Physical eV/GeV neutrino mass closure remains open pending a numeric neutral stiffness length sqrt(A_nu/Z_nu), a physical K_neutral,eff map in m^-2, and complete-action derivation of the admissible response cone.
 
@@ -2639,3 +2640,24 @@ RB-15 remains `BLOCKED_EXACT_OBJECT_PROVED`; RB-16 remains downstream.
 
 Current exact verdict:
 `BHSM_DISTINCT_PREDICTION_REQUIRES_NEW_BULK_BOUNDARY_COUPLING_NOT_PRESENT_IN_ACTION`.
+
+## v8.0 mass--curvature response
+
+BHSM v8.0 introduces the explicit coupling between the cap-even
+Brown--York trace
+`kappa_env=-(3 kappa1)^-1 h_ab pi_env^ab` and the localized Yukawa
+operators. This is an action extension, not a retroactive v7.3 derivation.
+It uses no new field, mediator, flavor spurion, or second calibration.
+
+The current action has no two independent positive core and surface
+energies, so it supplies no normalized energy-envelopment ratio or
+stationary radial localization family. The response is a single real
+gauge-singlet scalar. Conditional on the supplied three-family spaces it is
+`I3` in all charged sectors, with exact `1:1:1` singular-value ratios and no
+CKM invariant. That prediction was hashed before comparison and then
+invalidated by the repository's nondegenerate charged-sector records.
+
+RB-15 remains `BLOCKED_EXACT_OBJECT_PROVED`; RB-16 remains downstream.
+
+Current exact verdict:
+`BHSM_MASS_RESPONSE_BLOCKED_BY_UNIVERSAL_RESPONSE_WITH_NO_FAMILY_RESOLUTION`.

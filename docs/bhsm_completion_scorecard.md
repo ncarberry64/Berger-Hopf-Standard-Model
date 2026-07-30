@@ -50,3 +50,20 @@ No row is classified as a distinct action-derived physical prediction.
 
 The exact common obstruction is
 `NONUNIVERSAL_BHSM_TO_LOCALIZED_PHYSICAL_SECTOR_ACTION_COUPLING`.
+
+## v8.0 mass--curvature response result
+
+| Object | Result |
+| --- | --- |
+| Canonical carrier | cap-even Brown--York metric momentum trace |
+| Minimal action coupling | unique dimension-five extension candidate constructed |
+| Positive energy-envelopment ratio | `BLOCKED_BY_EXACT_MISSING_OBJECT` |
+| Derived response dimension | one real scalar channel |
+| Conditional charged matrices | `I3`, singular values `(1,1,1)` |
+| Mass ratios | exact `1:1:1`, post-freeze `INVALIDATED` |
+| CKM | undefined under exact degeneracy |
+| RB-15 | `BLOCKED_EXACT_OBJECT_PROVED` |
+| RB-16 | `DOWNSTREAM_BLOCKED` |
+
+The remaining object is
+`FAMILY_RESOLVING_ACTION_INCIDENCE_BEYOND_THE_UNIVERSAL_CURVATURE_SCALAR`.
