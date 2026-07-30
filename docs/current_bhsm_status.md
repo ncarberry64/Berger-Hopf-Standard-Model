@@ -341,3 +341,23 @@ from exactly degenerate response matrices. RB-15 remains
 
 Current exact verdict:
 `BHSM_MASS_RESPONSE_BLOCKED_BY_UNIVERSAL_RESPONSE_WITH_NO_FAMILY_RESOLUTION`.
+
+## v8.1 authoritative status
+
+V8.1 retains the full Brown--York tensor and computes its first nonzero
+equatorial shape response. The correct trace coefficient on four-dimensional
+M4 is one quarter. The first cap-identified Brown--York normal response is
+nonzero, while the signed intrinsic operator/measure expansion is even and
+starts at second order.
+
+The exact Hopf reduction supplies an internal scalar associated-bundle tower
+of ranks `2J+1`, but no member is selected as a finite physical family
+module. The localized fermion bundle contains no Hopf-associated factor and
+its exact Dirac operator has `D_Hopf_twist=0`. Triality projectors remain
+representation transport rather than a localized family kernel. No response
+matrix, mass ratio, or CKM prediction is defined.
+
+RB-15 remains `BLOCKED_EXACT_OBJECT_PROVED`; RB-16 remains downstream.
+
+Current exact verdict:
+`BHSM_FAMILY_RESOLUTION_REQUIRES_NEW_INTERNAL_FERMION_BUNDLE_EXTENSION`.

@@ -1510,3 +1510,14 @@ Doctrine and manuscript chapter:
   post-freeze invalidation.
 - `artifacts/BHSM_1_0_completion_gate.json`: canonical v8.0 gate retaining
   RB-15 as `BLOCKED_EXACT_OBJECT_PROVED` and RB-16 as downstream.
+
+## BHSM v8.1 mode-resolved curvature incidence
+
+- `artifacts/BHSM_mode_resolved_curvature_incidence_v8_1.json`: exact carrier
+  audit, internal/spacetime-mode firewall, Hopf/triality classification,
+  complete Brown--York tensor and four-dimensional trace split, first
+  nonzero cap-even responses, mode-stress and centrality theorems,
+  family-projector obstruction, prediction freeze/hash, and post-freeze
+  no-comparison result.
+- `artifacts/BHSM_1_0_completion_gate.json`: canonical v8.1 gate retaining
+  RB-15 as `BLOCKED_EXACT_OBJECT_PROVED` and RB-16 as downstream.

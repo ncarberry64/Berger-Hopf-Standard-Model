@@ -1968,3 +1968,38 @@ Not supported:
 
 Exact verdict:
 `BHSM_MASS_RESPONSE_BLOCKED_BY_UNIVERSAL_RESPONSE_WITH_NO_FAMILY_RESOLUTION`.
+
+## v8.1 mode-resolved curvature-incidence claim boundary
+
+Supported:
+
+- the complete round-collar Brown--York tensor, its four-dimensional
+  trace/traceless split, and its first nonzero normal response;
+- the distinction between the first cap-identified Brown--York order and
+  the second signed-even intrinsic operator order;
+- the exact scalar Hopf-associated tower
+  `H_(J,m)=S7 times_(rho_J) V_J`, of rank `2J+1`;
+- centrality of the round response on each irreducible `Sp(1)` block;
+- absence of a Hopf action on the exact localized fermion bundle and
+  Dirac-Yukawa operator;
+- absence of an action-selected finite internal fermion projector, physical
+  family dimension, response matrix, mass ratio, or CKM result;
+- preservation of the firewall between internal representation modes and
+  ordinary M4/S3 momentum harmonics.
+
+Not supported:
+
+- using the one-third trace coefficient for the full four-dimensional seam
+  tensor;
+- treating the internal scalar associated bundle as an internal chiral
+  fermion bundle;
+- choosing the rank-three `J=1` scalar block because three generations are
+  observed;
+- relabeling physical S3 harmonics, triality images, or supplied
+  `C3_family` components as an action-derived family theorem;
+- assigning a collar profile to `L1`, `L2`, or the Hopf connection;
+- constructing charged response matrices, mass ratios, CKM observables, or
+  release completion from the present action.
+
+Exact verdict:
+`BHSM_FAMILY_RESOLUTION_REQUIRES_NEW_INTERNAL_FERMION_BUNDLE_EXTENSION`.

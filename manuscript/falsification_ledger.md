@@ -16,6 +16,7 @@ criteria protect the no-retuning status of the frozen branches.
 | `F9` | Any post-freeze adjustment of `a`, `S`, modes, or `Z_virt` based on residuals invalidates the v1.0 prediction set. | `FREEZE_CONSTRAINT` |
 | `F10` | The v7.3 route-exhaustion theorem localizes the missing non-universal physical-sector action cross block. | `BLOCKED_EXACT_OBJECT_PROVED` |
 | `F11` | Any nondegenerate charged-sector singular-value ratio falsifies the universal v8.0 Brown--York response as a flavor mechanism; the post-freeze repository comparison already does so. | `INVALIDATED` |
+| `F12` | The v8.1 obstruction is overturned only by an existing nonzero action map from an action-selected internal Hopf fermion module, with finite projector and domain, into localized Yukawa incidence; the repository audit finds none. | `BLOCKED_EXACT_OBJECT_PROVED` |
 
 ## Fixed Tolerance Bands
 

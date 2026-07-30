@@ -410,3 +410,28 @@ RB-16 remains downstream.
 Current exact verdict:
 `BHSM_MASS_RESPONSE_BLOCKED_BY_UNIVERSAL_RESPONSE_WITH_NO_FAMILY_RESOLUTION`.
 
+## v8.1 mode-resolved curvature-incidence addendum
+
+V8.1 retains the complete Brown--York tensor. On the round collar its
+four-dimensional trace split uses one quarter, and the first cap-identified
+normal response contains a nonzero traceless time/spatial tensor. The signed
+intrinsic operator and measure are even and first change at second collar
+order. The spatial response remains isotropic.
+
+The exact Hopf reduction provides scalar associated bundles
+\(\mathcal H_{(J,m)}=S^7\times_{\rho_J}V_J\) of rank \(2J+1\). It does not
+provide an internal spinor parent, chirality, finite family projector, or a
+bundle/action map attaching those modes to the localized fermion operator.
+The latter remains the intrinsic Standard Model Dirac--Yukawa operator with
+\(D_{\rm Hopf/twist}=0\). Triality likewise supplies representation
+transport, not three independently responding localized fermion states.
+
+Within each irreducible \(V_J\), the round response commutes with \(Sp(1)\)
+and is central by Schur's lemma. Different blocks are not selected as
+same-charge families. No physical response matrix, mass ratio, or CKM
+observable is therefore defined. RB-15 remains blocked and RB-16 remains
+downstream.
+
+Current exact verdict:
+`BHSM_FAMILY_RESOLUTION_REQUIRES_NEW_INTERNAL_FERMION_BUNDLE_EXTENSION`.
+
