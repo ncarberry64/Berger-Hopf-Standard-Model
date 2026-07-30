@@ -24,12 +24,13 @@ SPRINT = "bhsm-classical-mode-stress-incidence-v8-3"
 SOURCE_MAIN_SHA = "3afc556ca7a6d64ce58b82053961c364de11fb8a"
 ARTIFACT_NAME = "BHSM_classical_mode_stress_incidence_v8_3"
 FINAL_VERDICT = (
-    "BHSM_FROZEN_MODE_LEDGER_NOT_REALIZED_AS_SPECTRUM_"
-    "OF_ANY_ACTION_OPERATOR"
+    "BHSM_PROJECTED_SPECTRAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_"
+    "DERIVED_INTERTWINER_FROM_FROZEN_LEDGER_TO_LOCALIZED_ACTION_"
+    "SPECTRUM"
 )
 NEXT_MISSING_OBJECT = (
-    "ACTION_DERIVED_INTERTWINER_FROM_FROZEN_KJQ_MODULES_TO_"
-    "AN_ACTION_OPERATOR_SPECTRAL_DOMAIN"
+    "ACTION_DERIVED_SPECTRAL_INTERTWINER_FROM_FROZEN_KJQ_MODULE_"
+    "TO_LOCALIZED_ACTION_EIGENMODES"
 )
 RELEASE_VERDICT = "BHSM_1_0_RELEASE_BLOCKED"
 
@@ -295,8 +296,10 @@ def projected_spectral_action_audit() -> dict[str, Any]:
             },
             {
                 "operator": "exact Berger associated-scalar operator O_(J,m)",
-                "action_owned": (
-                    "PROVISIONAL_PARENT_SCALAR_REDUCTION_ONLY"
+                "action_owned": True,
+                "ownership_scope": (
+                    "exact scalar spectral action; not yet transported to "
+                    "the localized physical carrier"
                 ),
                 "projector_restriction_defined": False,
                 "projected_K": None,
@@ -366,6 +369,7 @@ def hellmann_feynman_audit() -> dict[str, Any]:
             "nondegenerate action eigenmodes"
         ),
         "exact_action_scalar_eigenvalues_metric_dependent": True,
+        "exact_action_scalar_metric_derivatives_exist": True,
         "legacy_proxy_eigenvalues_metric_dependent": True,
         "frozen_modes_proved_normalized_action_eigenmodes": False,
         "candidate_derivatives": {
@@ -375,6 +379,16 @@ def hellmann_feynman_audit() -> dict[str, Any]:
         "candidate_nondegeneracy": {
             sector: data["candidate_tau_nondegenerate"]
             for sector, data in proxy_spectral_candidate()["sectors"].items()
+        },
+        "projected_proxy_noncentral": {
+            "charged_lepton": True,
+            "up": True,
+            "down": True,
+        },
+        "projected_proxy_three_slot_nondegenerate": {
+            "charged_lepton": True,
+            "up": True,
+            "down": False,
         },
         "down_sector_note": (
             "the proxy squashing derivative has a repeated zero for the "
@@ -462,12 +476,12 @@ def action_ownership_audit() -> list[dict[str, Any]]:
             "object": "exact associated-scalar O_(J,m)",
             "role": "metric-dependent quadratic scalar spectral action",
             "family_dependence": "J,m eigenspaces with physical-fiber Gram",
-            "classification": "ACTION_LINKED_PROVISIONAL_SCALAR_CARRIER",
+            "classification": "EXACT_ACTION_OWNED_SCALAR_SPECTRAL_CARRIER",
             "target_stress_contribution": False,
             "reason": (
                 "no action-derived intertwiner realizes the frozen (k,j,q) "
-                "modules as these scalar eigenspaces, and this is not the "
-                "localized fermion carrier"
+                "modules as these eigenspaces or transports their response "
+                "to the localized physical carrier"
             ),
         },
         {
@@ -601,6 +615,10 @@ def mode_action_source() -> dict[str, Any]:
         "scalar_operator_on_frozen_module": None,
         "legacy_proxy_K_evaluated": True,
         "ledger_to_action_spectral_intertwiner": None,
+        "action_spectral_operator_exists": True,
+        "action_spectral_metric_derivatives_exist": True,
+        "missing_result_is_operator_ownership_of_frozen_physical_ledger": True,
+        "absence_of_all_action_spectra_claimed": False,
         "finite_attachment_is_not_action_density": True,
         "proof": [
             (
@@ -1132,7 +1150,8 @@ def status_to_markdown(report: dict[str, Any] | None = None) -> str:
         (
             "The frozen modules remain attached. The basis-free spectral "
             "route is exhausted, but no action-derived intertwiner realizes "
-            "their ledger as one action operator's normalized spectrum."
+            "their ledger in normalized action eigenspaces and transports "
+            "it to the localized physical carrier."
         ),
         "",
         (
@@ -1156,8 +1175,8 @@ def status_to_markdown(report: dict[str, Any] | None = None) -> str:
             "",
             "- Formal M4 EFT stress: `delta_ij T_Dirac` (central, rejected)",
             (
-                "- Exact associated-scalar operator: metric dependent, "
-                "but its frozen-ledger intertwiner is absent"
+                "- Exact action-owned associated-scalar operator: metric "
+                "derivatives exist; localized frozen-ledger intertwiner absent"
             ),
             (
                 "- Berger proxy: evaluated exactly and retained as "

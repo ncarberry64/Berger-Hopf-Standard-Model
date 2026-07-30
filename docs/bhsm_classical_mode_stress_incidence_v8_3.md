@@ -21,8 +21,19 @@ action-canonical mode stress on the frozen physical modules.
 The strongest exact verdict is
 
 ```text
-BHSM_FROZEN_MODE_LEDGER_NOT_REALIZED_AS_SPECTRUM_OF_ANY_ACTION_OPERATOR
+BHSM_PROJECTED_SPECTRAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DERIVED_INTERTWINER_FROM_FROZEN_LEDGER_TO_LOCALIZED_ACTION_SPECTRUM
 ```
+
+Precisely:
+
+1. the action-owned scalar Berger spectral operator exists;
+2. its metric/modulus derivatives exist;
+3. the projected proxy response is noncentral in the lepton and up sectors;
+4. the down proxy retains a two-slot degeneracy;
+5. the missing result is action ownership of the frozen physical ledger and
+   its localized-carrier transport, not absence of all action spectra;
+6. alpha impedance remains downstream and unattached;
+7. RB-15 is blocked by the missing intertwiner.
 
 ## Frozen modules
 
@@ -89,8 +100,10 @@ where
 ```
 
 The charged-lepton and up proxy derivatives are nondegenerate. The down
-proxy derivative has a repeated zero. These are exact evaluations of a
-conditional candidate, not physical mass ratios or stresses.
+proxy derivative has a repeated zero. Thus the lepton and up proxy responses
+are noncentral and three-slot nondegenerate, while the down proxy is
+noncentral but retains a two-slot degeneracy. These are exact evaluations of
+a conditional candidate, not physical mass ratios or stresses.
 
 Formally,
 
@@ -187,7 +200,7 @@ RB-15 remains `BLOCKED_EXACT_OBJECT_PROVED`; RB-16 remains downstream and no
 release package is generated. The next exact object is
 
 ```text
-ACTION_DERIVED_INTERTWINER_FROM_FROZEN_KJQ_MODULES_TO_AN_ACTION_OPERATOR_SPECTRAL_DOMAIN
+ACTION_DERIVED_SPECTRAL_INTERTWINER_FROM_FROZEN_KJQ_MODULE_TO_LOCALIZED_ACTION_EIGENMODES
 ```
 
 It must be isometric, domain preserving, representation compatible, and

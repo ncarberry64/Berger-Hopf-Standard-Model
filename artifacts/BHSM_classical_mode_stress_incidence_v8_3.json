@@ -25,14 +25,25 @@
     },
     "down_sector_note": "the proxy squashing derivative has a repeated zero for the (0,0) and (6,3) slots even before action ownership",
     "exact_action_scalar_eigenvalues_metric_dependent": true,
+    "exact_action_scalar_metric_derivatives_exist": true,
     "frozen_modes_proved_normalized_action_eigenmodes": false,
     "identity": "delta lambda_i=<u_i,(delta B)u_i> for normalized nondegenerate action eigenmodes",
     "legacy_proxy_eigenvalues_metric_dependent": true,
+    "projected_proxy_noncentral": {
+      "charged_lepton": true,
+      "down": true,
+      "up": true
+    },
+    "projected_proxy_three_slot_nondegenerate": {
+      "charged_lepton": true,
+      "down": false,
+      "up": true
+    },
     "reason": "Hellmann--Feynman cannot transfer a proxy derivative to the frozen physical module until the action intertwiner proves that its slots are normalized eigenmodes of the same operator",
     "result": "CONDITIONAL_PROXY_RESPONSE_ONLY"
   },
   "RB15": {
-    "resolution": "BHSM_FROZEN_MODE_LEDGER_NOT_REALIZED_AS_SPECTRUM_OF_ANY_ACTION_OPERATOR",
+    "resolution": "BHSM_PROJECTED_SPECTRAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DERIVED_INTERTWINER_FROM_FROZEN_LEDGER_TO_LOCALIZED_ACTION_SPECTRUM",
     "status": "BLOCKED_EXACT_OBJECT_PROVED"
   },
   "RB16": {
@@ -173,9 +184,20 @@
       },
       "down_sector_note": "the proxy squashing derivative has a repeated zero for the (0,0) and (6,3) slots even before action ownership",
       "exact_action_scalar_eigenvalues_metric_dependent": true,
+      "exact_action_scalar_metric_derivatives_exist": true,
       "frozen_modes_proved_normalized_action_eigenmodes": false,
       "identity": "delta lambda_i=<u_i,(delta B)u_i> for normalized nondegenerate action eigenmodes",
       "legacy_proxy_eigenvalues_metric_dependent": true,
+      "projected_proxy_noncentral": {
+        "charged_lepton": true,
+        "down": true,
+        "up": true
+      },
+      "projected_proxy_three_slot_nondegenerate": {
+        "charged_lepton": true,
+        "down": false,
+        "up": true
+      },
       "reason": "Hellmann--Feynman cannot transfer a proxy derivative to the frozen physical module until the action intertwiner proves that its slots are normalized eigenmodes of the same operator",
       "result": "CONDITIONAL_PROXY_RESPONSE_ONLY"
     },
@@ -537,7 +559,7 @@
       }
     },
     "proxy_response_status": "RECORDED_NOT_PROMOTED_TO_ACTION_CANONICAL_STRESS",
-    "result": "BHSM_FROZEN_MODE_LEDGER_NOT_REALIZED_AS_SPECTRUM_OF_ANY_ACTION_OPERATOR",
+    "result": "BHSM_PROJECTED_SPECTRAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DERIVED_INTERTWINER_FROM_FROZEN_LEDGER_TO_LOCALIZED_ACTION_SPECTRUM",
     "up": {
       "Hopf_horizontal": null,
       "Hopf_vertical": null,
@@ -605,7 +627,7 @@
     }
   },
   "falsification_condition": "An existing or independently justified, domain-preserving intertwiner must map every frozen (k,j,q) slot into normalized eigenmodes of one action-owned metric-dependent operator, thereby defining P_f B[h] P_f and its projected Gram without using mass or mixing data.",
-  "final_verdict": "BHSM_FROZEN_MODE_LEDGER_NOT_REALIZED_AS_SPECTRUM_OF_ANY_ACTION_OPERATOR",
+  "final_verdict": "BHSM_PROJECTED_SPECTRAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DERIVED_INTERTWINER_FROM_FROZEN_LEDGER_TO_LOCALIZED_ACTION_SPECTRUM",
   "frozen_sector_modules": {
     "classification": "FROZEN_DERIVED_CONDITIONAL_GEOMETRIC_STRUCTURE",
     "family_slot_count": 3,
@@ -1022,14 +1044,14 @@
       "vanishes_by_orthogonality": false
     },
     {
-      "classification": "ACTION_LINKED_PROVISIONAL_SCALAR_CARRIER",
+      "classification": "EXACT_ACTION_OWNED_SCALAR_SPECTRAL_CARRIER",
       "diagonal_stress": false,
       "family_dependence": "J,m eigenspaces with physical-fiber Gram",
       "forbidden_by_sector_or_projector": true,
       "not_action_owned_for_frozen_modes": true,
       "object": "exact associated-scalar O_(J,m)",
       "off_diagonal_stress": false,
-      "reason": "no action-derived intertwiner realizes the frozen (k,j,q) modules as these scalar eigenspaces, and this is not the localized fermion carrier",
+      "reason": "no action-derived intertwiner realizes the frozen (k,j,q) modules as these eigenspaces or transports their response to the localized physical carrier",
       "role": "metric-dependent quadratic scalar spectral action",
       "target_stress_contribution": false,
       "universal_removable_normalization": false,
@@ -1135,6 +1157,9 @@
     }
   ],
   "mode_action_source": {
+    "absence_of_all_action_spectra_claimed": false,
+    "action_spectral_metric_derivatives_exist": true,
+    "action_spectral_operator_exists": true,
     "basis_free_projection_exhausted": true,
     "exact_metric_dependent_scalar_operator_located": "O_(J,m)=-D_A^*D_A+lambda_(J,m)(L1,L2)",
     "finite_attachment_is_not_action_density": true,
@@ -1144,6 +1169,7 @@
     "located_amplitude_fields": null,
     "located_metric_dependent_operator_A_f": null,
     "located_mode_profiles": null,
+    "missing_result_is_operator_ownership_of_frozen_physical_ledger": true,
     "proof": [
       "The master term registry contains no c_f amplitudes, Phi_f expansion, or frozen u_f profile.",
       "The q,j defect functional is a metric-independent label constraint whose charged-Hessian use is invalidated.",
@@ -1153,7 +1179,7 @@
     ],
     "required_form": "S_f^(2)=sum_ij conjugate(c_f,i) A_f,ij[h,S,J,...] c_f,j",
     "required_stationary_modes": "u_f,0,u_f,1,u_f,2",
-    "result": "BHSM_FROZEN_MODE_LEDGER_NOT_REALIZED_AS_SPECTRUM_OF_ANY_ACTION_OPERATOR",
+    "result": "BHSM_PROJECTED_SPECTRAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DERIVED_INTERTWINER_FROM_FROZEN_LEDGER_TO_LOCALIZED_ACTION_SPECTRUM",
     "scalar_operator_on_frozen_module": null
   },
   "physical_observables": {
@@ -1174,7 +1200,7 @@
   },
   "post_freeze_comparison": {
     "common_scale_external_references": "UNDEFINED_COMPARISON",
-    "freeze_hash_verified_before_comparison": "135A559287D4FDA1704C8DF19039E1BA22B7936BB2E303834CB5F7D84E13F27F",
+    "freeze_hash_verified_before_comparison": "7873D7DFDA2A3083A282C27D02FD58D5E83372209B4AA5921728BF691665A738",
     "historical_CKM_screen": "UNDEFINED_COMPARISON",
     "historical_bare_ratios": "UNDEFINED_COMPARISON",
     "historical_dressed_candidate": "UNDEFINED_COMPARISON",
@@ -1282,9 +1308,20 @@
       },
       "down_sector_note": "the proxy squashing derivative has a repeated zero for the (0,0) and (6,3) slots even before action ownership",
       "exact_action_scalar_eigenvalues_metric_dependent": true,
+      "exact_action_scalar_metric_derivatives_exist": true,
       "frozen_modes_proved_normalized_action_eigenmodes": false,
       "identity": "delta lambda_i=<u_i,(delta B)u_i> for normalized nondegenerate action eigenmodes",
       "legacy_proxy_eigenvalues_metric_dependent": true,
+      "projected_proxy_noncentral": {
+        "charged_lepton": true,
+        "down": true,
+        "up": true
+      },
+      "projected_proxy_three_slot_nondegenerate": {
+        "charged_lepton": true,
+        "down": false,
+        "up": true
+      },
       "reason": "Hellmann--Feynman cannot transfer a proxy derivative to the frozen physical module until the action intertwiner proves that its slots are normalized eigenmodes of the same operator",
       "result": "CONDITIONAL_PROXY_RESPONSE_ONLY"
     },
@@ -1326,9 +1363,20 @@
         },
         "down_sector_note": "the proxy squashing derivative has a repeated zero for the (0,0) and (6,3) slots even before action ownership",
         "exact_action_scalar_eigenvalues_metric_dependent": true,
+        "exact_action_scalar_metric_derivatives_exist": true,
         "frozen_modes_proved_normalized_action_eigenmodes": false,
         "identity": "delta lambda_i=<u_i,(delta B)u_i> for normalized nondegenerate action eigenmodes",
         "legacy_proxy_eigenvalues_metric_dependent": true,
+        "projected_proxy_noncentral": {
+          "charged_lepton": true,
+          "down": true,
+          "up": true
+        },
+        "projected_proxy_three_slot_nondegenerate": {
+          "charged_lepton": true,
+          "down": false,
+          "up": true
+        },
         "reason": "Hellmann--Feynman cannot transfer a proxy derivative to the frozen physical module until the action intertwiner proves that its slots are normalized eigenmodes of the same operator",
         "result": "CONDITIONAL_PROXY_RESPONSE_ONLY"
       },
@@ -1690,7 +1738,7 @@
         }
       },
       "proxy_response_status": "RECORDED_NOT_PROMOTED_TO_ACTION_CANONICAL_STRESS",
-      "result": "BHSM_FROZEN_MODE_LEDGER_NOT_REALIZED_AS_SPECTRUM_OF_ANY_ACTION_OPERATOR",
+      "result": "BHSM_PROJECTED_SPECTRAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DERIVED_INTERTWINER_FROM_FROZEN_LEDGER_TO_LOCALIZED_ACTION_SPECTRUM",
       "up": {
         "Hopf_horizontal": null,
         "Hopf_vertical": null,
@@ -2160,6 +2208,9 @@
       "result": "UNDEFINED_BECAUSE_ACTION_PROJECTION_ON_F_f_IS_ABSENT"
     },
     "mode_action": {
+      "absence_of_all_action_spectra_claimed": false,
+      "action_spectral_metric_derivatives_exist": true,
+      "action_spectral_operator_exists": true,
       "basis_free_projection_exhausted": true,
       "exact_metric_dependent_scalar_operator_located": "O_(J,m)=-D_A^*D_A+lambda_(J,m)(L1,L2)",
       "finite_attachment_is_not_action_density": true,
@@ -2169,6 +2220,7 @@
       "located_amplitude_fields": null,
       "located_metric_dependent_operator_A_f": null,
       "located_mode_profiles": null,
+      "missing_result_is_operator_ownership_of_frozen_physical_ledger": true,
       "proof": [
         "The master term registry contains no c_f amplitudes, Phi_f expansion, or frozen u_f profile.",
         "The q,j defect functional is a metric-independent label constraint whose charged-Hessian use is invalidated.",
@@ -2178,7 +2230,7 @@
       ],
       "required_form": "S_f^(2)=sum_ij conjugate(c_f,i) A_f,ij[h,S,J,...] c_f,j",
       "required_stationary_modes": "u_f,0,u_f,1,u_f,2",
-      "result": "BHSM_FROZEN_MODE_LEDGER_NOT_REALIZED_AS_SPECTRUM_OF_ANY_ACTION_OPERATOR",
+      "result": "BHSM_PROJECTED_SPECTRAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DERIVED_INTERTWINER_FROM_FROZEN_LEDGER_TO_LOCALIZED_ACTION_SPECTRUM",
       "scalar_operator_on_frozen_module": null
     },
     "observables": {
@@ -2218,10 +2270,11 @@
           "result": "RANK_ONE_LABEL_CONSTRAINT_INVALIDATED_AS_CHARGED_HESSIAN"
         },
         {
-          "action_owned": "PROVISIONAL_PARENT_SCALAR_REDUCTION_ONLY",
+          "action_owned": true,
           "frozen_ledger_is_its_spectrum": false,
           "metric_dependence": "exact in L1,L2",
           "operator": "exact Berger associated-scalar operator O_(J,m)",
+          "ownership_scope": "exact scalar spectral action; not yet transported to the localized physical carrier",
           "projected_K": null,
           "projector_restriction_defined": false,
           "result": "MISSING_KJQ_TO_JM_ACTION_INTERTWINER"
@@ -2495,7 +2548,7 @@
           "the exact operator is a provisional parent-scalar carrier, not the localized fermion action carrier"
         ]
       },
-      "result": "BHSM_FROZEN_MODE_LEDGER_NOT_REALIZED_AS_SPECTRUM_OF_ANY_ACTION_OPERATOR",
+      "result": "BHSM_PROJECTED_SPECTRAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DERIVED_INTERTWINER_FROM_FROZEN_LEDGER_TO_LOCALIZED_ACTION_SPECTRUM",
       "successful_action_canonical_projection": null,
       "target": "K_f[h]=P_f^(3) B_f[h] P_f^(3); S_red=c_f^dagger G_f[h]K_f[h]c_f"
     },
@@ -2609,7 +2662,7 @@
       "surface_incidence": false
     }
   },
-  "prediction_freeze_sha256": "135A559287D4FDA1704C8DF19039E1BA22B7936BB2E303834CB5F7D84E13F27F",
+  "prediction_freeze_sha256": "7873D7DFDA2A3083A282C27D02FD58D5E83372209B4AA5921728BF691665A738",
   "projected_spectral_action_audit": {
     "candidates": [
       {
@@ -2631,10 +2684,11 @@
         "result": "RANK_ONE_LABEL_CONSTRAINT_INVALIDATED_AS_CHARGED_HESSIAN"
       },
       {
-        "action_owned": "PROVISIONAL_PARENT_SCALAR_REDUCTION_ONLY",
+        "action_owned": true,
         "frozen_ledger_is_its_spectrum": false,
         "metric_dependence": "exact in L1,L2",
         "operator": "exact Berger associated-scalar operator O_(J,m)",
+        "ownership_scope": "exact scalar spectral action; not yet transported to the localized physical carrier",
         "projected_K": null,
         "projector_restriction_defined": false,
         "result": "MISSING_KJQ_TO_JM_ACTION_INTERTWINER"
@@ -2908,12 +2962,12 @@
         "the exact operator is a provisional parent-scalar carrier, not the localized fermion action carrier"
       ]
     },
-    "result": "BHSM_FROZEN_MODE_LEDGER_NOT_REALIZED_AS_SPECTRUM_OF_ANY_ACTION_OPERATOR",
+    "result": "BHSM_PROJECTED_SPECTRAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DERIVED_INTERTWINER_FROM_FROZEN_LEDGER_TO_LOCALIZED_ACTION_SPECTRUM",
     "successful_action_canonical_projection": null,
     "target": "K_f[h]=P_f^(3) B_f[h] P_f^(3); S_red=c_f^dagger G_f[h]K_f[h]c_f"
   },
   "release_status": "BHSM_1_0_RELEASE_BLOCKED",
-  "remaining_exact_obstruction": "ACTION_DERIVED_INTERTWINER_FROM_FROZEN_KJQ_MODULES_TO_AN_ACTION_OPERATOR_SPECTRAL_DOMAIN",
+  "remaining_exact_obstruction": "ACTION_DERIVED_SPECTRAL_INTERTWINER_FROM_FROZEN_KJQ_MODULE_TO_LOCALIZED_ACTION_EIGENMODES",
   "response_matrices": {
     "charged_lepton": {
       "conditional_proxy_matrix": [

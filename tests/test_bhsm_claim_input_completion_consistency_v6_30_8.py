@@ -112,8 +112,8 @@ def test_completion_gate_tracks_current_v8_3_tier_status():
     assert payload["version"] == "v8.3"
     assert payload["BHSM_1_0_release_complete"] is False
     assert payload["next_highest_upstream_blocker"] == (
-        "ACTION_DERIVED_INTERTWINER_FROM_FROZEN_KJQ_MODULES_TO_"
-        "AN_ACTION_OPERATOR_SPECTRAL_DOMAIN"
+        "ACTION_DERIVED_SPECTRAL_INTERTWINER_FROM_FROZEN_KJQ_MODULE_"
+        "TO_LOCALIZED_ACTION_EIGENMODES"
     )
     assert payload["current_tier_status"]["Tier_A"] == "COMPLETE"
     assert payload["current_tier_status"]["Tier_B"] == "COMPLETE"

@@ -70,7 +70,7 @@ Reviewer entry points:
 [claim boundaries](CLAIMS.md), and
 [reproduction guide](docs/reviewer_reproduction_guide.md).
 
-BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v8.3 exhausts the basis-free projected-spectral route. The exact associated-scalar operator is metric dependent and the legacy Berger proxy gives explicit diagonal derivatives, but no action-derived intertwiner realizes the frozen (k,j,q) ledger as that operator's normalized spectrum. Action-canonical stresses, response matrices, mass ratios, and CKM therefore remain undefined, with RB-15/RB-16 blocked.
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v8.3 exhausts the basis-free projected-spectral route. The exact action-owned scalar Berger operator and its metric derivatives exist, and the legacy proxy gives explicit diagonal responses, but no action-derived intertwiner maps the frozen (k,j,q) ledger to normalized action eigenspaces and the localized physical carrier. Action-canonical physical stresses, mass ratios, and CKM therefore remain undefined, with RB-15/RB-16 blocked.
 
 BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity. Physical eV/GeV neutrino mass closure remains open pending a numeric neutral stiffness length sqrt(A_nu/Z_nu), a physical K_neutral,eff map in m^-2, and complete-action derivation of the admissible response cone.
 
@@ -2756,4 +2756,4 @@ is applied zero times.
 RB-15 remains `BLOCKED_EXACT_OBJECT_PROVED`; RB-16 remains downstream.
 
 Current exact verdict:
-`BHSM_FROZEN_MODE_LEDGER_NOT_REALIZED_AS_SPECTRUM_OF_ANY_ACTION_OPERATOR`.
+`BHSM_PROJECTED_SPECTRAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DERIVED_INTERTWINER_FROM_FROZEN_LEDGER_TO_LOCALIZED_ACTION_SPECTRUM`.
