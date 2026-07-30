@@ -713,6 +713,14 @@ def completion_gate_payload() -> dict[str, Any]:
         ),
         "mass_curvature_response_extension": RESPONSE_RESULT,
         "distinct_action_derived_prediction_exists": False,
+        "RB01": {
+            "status": "CLOSED",
+            "architecture": (
+                "BHSM_STRATIFIED_MASTER_ACTION_CLOSED_WITH_"
+                "COVARIANT_COMPATIBILITY_MAPS"
+            ),
+            "release_blocking": False,
+        },
         "RB15": {
             "status": "BLOCKED_EXACT_OBJECT_PROVED",
             "resolution": "UNIVERSAL_RESPONSE_WITH_NO_FAMILY_RESOLUTION",
