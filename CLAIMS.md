@@ -2052,16 +2052,21 @@ Exact verdict:
 Supported:
 
 - unchanged import of the frozen charged-sector modules;
-- exhaustive classification of relevant action, projector, collar,
-  Brown--York, scalar, charged-current, and virtual-door sources;
-- proof that the action contains no frozen-mode profiles, amplitudes, or
-  metric-dependent quadratic operator;
+- exhaustive basis-free projection audit of the action, projector, collar,
+  Brown--York, scalar, defect, charged-current, and virtual-door sources;
+- the exact metric-dependent associated-scalar operator and its
+  physical-fiber-orthonormal action reduction;
+- exact evaluation of the legacy Berger proxy matrices and conditional
+  squashing derivatives `(0,-2,-18)`, `(0,-72,-128)`, and `(0,0,-32)`;
+- proof that the repository does not supply the action-derived intertwiner
+  identifying frozen `(k,j,q)` slots with normalized `(J,m)` eigenspaces;
 - distinction between the abstract finite `I3` Gram matrix and an undefined
-  action-canonical profile Gram matrix;
+  action-canonical projected Gram matrix on the frozen physical module;
 - the formal but rejected family-central M4 EFT stress
   `delta_ij T_Dirac`;
-- proof that compliant metric elimination from a bilinear source is quartic
-  around the zero-amplitude background;
+- separation of background quadratic spectral response from quartic
+  self-induced metric backreaction;
+- the first cap-even measure/operator split on its established domain;
 - zero action-stress applications of `Z_virt^(u,2)=1/2`;
 - absence of an action attachment for the proposed alpha-impedance
   interpretation.
@@ -2069,6 +2074,8 @@ Supported:
 Not supported:
 
 - inserting `(k,j,q)` weights into a stress tensor;
+- promoting the evaluated Berger proxy or a formal formula match to an
+  action-canonical frozen-module operator;
 - treating the label-defect Hessian as a field-amplitude Hessian;
 - using Yukawa matrices, historical mass ratios, or CKM screens as inputs;
 - selecting a seam inverse before its gauge kernel and domain are fixed;
@@ -2076,4 +2083,4 @@ Not supported:
 - constructing response matrices, mass ratios, CKM, or a release package.
 
 Exact verdict:
-`BHSM_CLASSICAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DENSITY_FOR_FROZEN_MODES`.
+`BHSM_FROZEN_MODE_LEDGER_NOT_REALIZED_AS_SPECTRUM_OF_ANY_ACTION_OPERATOR`.

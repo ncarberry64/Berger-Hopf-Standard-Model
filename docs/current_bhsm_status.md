@@ -390,19 +390,27 @@ Current exact verdict:
 
 ## v8.3 authoritative status
 
-The frozen three-slot modules remain attached and unchanged. V8.3 proves
-that no authoritative action term supplies their classical profiles,
-amplitudes, metric-dependent quadratic operator, or action-canonical Gram
-matrix. The M4 Dirac stress is family central and belongs to the effective
-fermion field, while the defect functional acts only on discrete labels.
+The frozen three-slot modules remain attached and unchanged. V8.3 exhausts
+the basis-free `P_f B[h]P_f` route rather than requiring coordinate
+profiles. The exact associated-scalar action operator has normalized
+eigenspaces and `L1,L2` dependence; the legacy Berger proxy gives
+conditional diagonal derivatives
+`(0,-2,-18)`, `(0,-72,-128)`, and `(0,0,-32)`.
 
-The mixed metric--mode Hessian and response matrices are therefore
-undefined. Compliance cannot repair this upstream absence; around the
-zero-amplitude background it would in any event produce quartic rather than
-quadratic backreaction. The virtual-door factor remains diagnostic and alpha
-has no action attachment to mass incidence.
+The repository does not, however, provide the action-derived intertwiner
+that realizes the frozen `(k,j,q)` slots as those `(J,m)` eigenspaces. Its
+explicit eigenfunction map and harmonic assignment remain open, and the
+exact carrier is scalar rather than the localized fermion carrier. The M4
+Dirac restriction is family central, while defect/incidence operators lack
+metric dependence or normalized-action ownership.
+
+The proxy values are therefore retained as conditional evidence but are not
+action-canonical stresses. Background quadratic response is kept logically
+separate from quartic self-backreaction. The mixed metric--mode Hessian and
+physical response matrices remain undefined; the virtual-door factor
+remains diagnostic and alpha has no action attachment to mass incidence.
 
 RB-15 remains `BLOCKED_EXACT_OBJECT_PROVED`; RB-16 remains downstream.
 
 Current exact verdict:
-`BHSM_CLASSICAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DENSITY_FOR_FROZEN_MODES`.
+`BHSM_FROZEN_MODE_LEDGER_NOT_REALIZED_AS_SPECTRUM_OF_ANY_ACTION_OPERATOR`.

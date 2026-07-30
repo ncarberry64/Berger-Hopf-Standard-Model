@@ -1,9 +1,10 @@
-"""BHSM v8.3 audit of classical mode-stress incidence.
+"""BHSM v8.3 projected-spectral audit of classical mode-stress incidence.
 
-The frozen three-slot modules are imported from v8.2.  This module asks the
-strictly narrower question whether the authoritative action contains a
-quadratic classical amplitude density for those modes whose metric variation
-defines a bilinear stress.  It does not invent such a density.
+The frozen three-slot modules are imported from v8.2.  Explicit profiles are
+not required here: every repository operator is also tested basis-free through
+``P_f B[h] P_f`` and, where possible, by Hellmann--Feynman differentiation.
+Conditional spectral coefficients are retained without promoting an unproved
+ledger-to-action intertwiner.
 """
 
 from __future__ import annotations
@@ -23,12 +24,12 @@ SPRINT = "bhsm-classical-mode-stress-incidence-v8-3"
 SOURCE_MAIN_SHA = "3afc556ca7a6d64ce58b82053961c364de11fb8a"
 ARTIFACT_NAME = "BHSM_classical_mode_stress_incidence_v8_3"
 FINAL_VERDICT = (
-    "BHSM_CLASSICAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DENSITY_"
-    "FOR_FROZEN_MODES"
+    "BHSM_FROZEN_MODE_LEDGER_NOT_REALIZED_AS_SPECTRUM_"
+    "OF_ANY_ACTION_OPERATOR"
 )
 NEXT_MISSING_OBJECT = (
-    "ACTION_DENSITY_FOR_FROZEN_MODE_AMPLITUDES_WITH_"
-    "METRIC_VARIATION"
+    "ACTION_DERIVED_INTERTWINER_FROM_FROZEN_KJQ_MODULES_TO_"
+    "AN_ACTION_OPERATOR_SPECTRAL_DOMAIN"
 )
 RELEASE_VERDICT = "BHSM_1_0_RELEASE_BLOCKED"
 
@@ -39,14 +40,25 @@ SOURCE_PATHS = (
     "src/bhsm/interface/master_action/generation_projector_action_attachment.py",
     "src/bhsm/interface/master_action/mode_resolved_curvature_incidence.py",
     "src/bhsm/interface/master_action/mass_curvature_response.py",
+    "src/bhsm/interface/twistor_berger_associated_bundle.py",
+    "src/bhsm/interface/twistor_berger_action_normalization.py",
+    "src/bhsm/interface/action_lemmas/source_search.py",
+    "src/bhsm/interface/action_lemmas/primitive_lattice_rule.py",
+    "src/bhsm/interface/normalized_action_adjoint_pair/hermitian_action_rule.py",
+    "src/bhsm/interface/primitive_charged_incidence/projector_reduction_audit.py",
+    "src/bhsm/interface/primitive_charged_incidence/omega_trace_audit.py",
+    "src/bhsm/interface/primitive_charged_incidence/physical_normalization_gate.py",
     "src/boundary_graded_defect_action_kernel.py",
     "src/boundary_derivation.py",
+    "src/berger_spectrum.py",
     "src/mode_selection.py",
     "src/constants.py",
     "src/weak_double_projection_zvirt_bridge.py",
     "src/virtual_environment.py",
     "src/rg_matching.py",
     "docs/gauge_coupling_registry_pattern.md",
+    "theory/derived_qj_eigenfunction_map_status.md",
+    "theory/derived_m_weight_assignment_status.md",
 )
 
 
@@ -69,12 +81,18 @@ def _sha256(path: str) -> str:
 
 
 def source_audit() -> dict[str, Any]:
-    terms = _text(SOURCE_PATHS[0])
-    defect = _text(SOURCE_PATHS[6])
-    boundary = _text(SOURCE_PATHS[7])
-    selector = _text(SOURCE_PATHS[8])
-    weak = _text(SOURCE_PATHS[10])
-    dressing = _text(SOURCE_PATHS[11])
+    terms = _text("src/bhsm/interface/master_action/terms.py")
+    defect = _text("src/boundary_graded_defect_action_kernel.py")
+    boundary = _text("src/boundary_derivation.py")
+    selector = _text("src/mode_selection.py")
+    weak = _text("src/weak_double_projection_zvirt_bridge.py")
+    dressing = _text("src/virtual_environment.py")
+    berger = _text("src/berger_spectrum.py")
+    associated = _text(
+        "src/bhsm/interface/twistor_berger_associated_bundle.py"
+    )
+    qj_status = _text("theory/derived_qj_eigenfunction_map_status.md")
+    m_status = _text("theory/derived_m_weight_assignment_status.md")
     checks = {
         "localized_fermion_term_exists": "T4_fermion" in terms,
         "localized_Yukawa_term_exists": "T4_Yukawa" in terms,
@@ -98,6 +116,22 @@ def source_audit() -> dict[str, Any]:
         ),
         "weak_factor_lives_in_diagnostic_dressing": (
             "Not canonically adopted in this phase." in dressing
+        ),
+        "berger_formula_is_explicitly_proxy": (
+            "Berger scalar spectrum proxy" in berger
+        ),
+        "exact_scalar_action_operator_exists": (
+            "quadratic_scalar_reduction" in associated
+            and "physical-fiber-orthonormal basis" in associated
+        ),
+        "legacy_kj_intertwiner_not_asserted": (
+            '"legacy_k_j_identification": "not asserted' in associated
+        ),
+        "qj_eigenfunction_map_remains_open": (
+            "explicit Berger/BHSM eigenfunction map | `OPEN`" in qj_status
+        ),
+        "harmonic_m_assignment_remains_open": (
+            "m assignment | `OPEN`" in m_status
         ),
     }
     return {
@@ -123,6 +157,271 @@ def frozen_sector_modules() -> dict[str, Any]:
         "rederived": False,
         "labels_changed": False,
         "normalization_changed": False,
+    }
+
+
+def _hopf_charge(mode: tuple[int, int]) -> int:
+    k, j = mode
+    return k - 2 * j
+
+
+def _proxy_eigenvalue(mode: tuple[int, int]) -> int:
+    """Return berger_lambda(k,j,a=1) exactly."""
+
+    k, _ = mode
+    return k * (k + 2)
+
+
+def _proxy_tau(mode: tuple[int, int]) -> int:
+    """Return -d berger_lambda/d ln(a) at a=1 exactly."""
+
+    q = _hopf_charge(mode)
+    return -2 * q * q
+
+
+def proxy_spectral_candidate() -> dict[str, Any]:
+    """Evaluate the strongest algebraic spectral candidate without licensing it."""
+
+    sectors: dict[str, Any] = {}
+    for sector, modes in v82.SECTOR_MODES.items():
+        rows = []
+        for slot, mode in enumerate(modes):
+            k, j = mode
+            q = _hopf_charge(mode)
+            rows.append(
+                {
+                    "slot": slot,
+                    "mode": [k, j],
+                    "q": q,
+                    "candidate_J": f"{k}/2",
+                    "candidate_m": f"{q}/2",
+                    "berger_proxy_lambda_at_a_1": _proxy_eigenvalue(mode),
+                    "d_lambda_d_ln_a_at_a_1": -_proxy_tau(mode),
+                    "candidate_tau": _proxy_tau(mode),
+                    "projected_normalization": (
+                        "I3 only conditional on the missing intertwiner"
+                    ),
+                    "action_stress": None,
+                }
+            )
+        tau = [row["candidate_tau"] for row in rows]
+        sectors[sector] = {
+            "candidate_K_at_a_1": [
+                [
+                    _proxy_eigenvalue(modes[i]) if i == j else 0
+                    for j in range(3)
+                ]
+                for i in range(3)
+            ],
+            "candidate_tau_diagonal": tau,
+            "candidate_tau_nondegenerate": len(set(tau)) == 3,
+            "per_mode": rows,
+        }
+    return {
+        "formula": (
+            "lambda_proxy(k,j;a)=k(k+2)+(a^2-1)q^2, q=k-2j"
+        ),
+        "hellmann_feynman_candidate": (
+            "tau=-partial lambda_proxy/partial ln(a)=-2a^2q^2"
+        ),
+        "exact_scalar_operator_formula": (
+            "lambda_(J,m)=J(J+1)/L2^2+m^2(1/L1^2-1/L2^2)"
+        ),
+        "formal_formula_match": (
+            "J=k/2, m=q/2, L2=1/2, L1=1/(2a) would make "
+            "lambda_(J,m)=lambda_proxy"
+        ),
+        "formula_match_licensed": False,
+        "why_not_licensed": [
+            (
+                "berger_spectrum.py calls its eigenvalue a scalar spectrum "
+                "proxy rather than an action operator"
+            ),
+            (
+                "the exact associated-bundle artifact explicitly says the "
+                "legacy (k,j) identification is not asserted and requires "
+                "an intertwiner"
+            ),
+            (
+                "the earlier qj eigenfunction map is a conditional symbolic "
+                "scaffold; its explicit map and harmonic m assignment remain "
+                "open"
+            ),
+            (
+                "the exact operator is a provisional parent-scalar carrier, "
+                "not the localized fermion action carrier"
+            ),
+        ],
+        "sectors": sectors,
+        "classification": (
+            "EXACTLY_EVALUATED_PROXY_NOT_ACTION_OWNED_ON_FROZEN_MODULE"
+        ),
+    }
+
+
+def projected_spectral_action_audit() -> dict[str, Any]:
+    """Exhaust the basis-free P_f B[h] P_f candidates."""
+
+    return {
+        "target": (
+            "K_f[h]=P_f^(3) B_f[h] P_f^(3); "
+            "S_red=c_f^dagger G_f[h]K_f[h]c_f"
+        ),
+        "candidates": [
+            {
+                "operator": "localized M4 Dirac-Yukawa Hessian",
+                "action_owned": True,
+                "projector_restriction_defined": True,
+                "projected_K": "I3 tensor D_M4 before Yukawa input",
+                "metric_dependence": "ordinary M4 Dirac stress",
+                "frozen_ledger_is_its_spectrum": False,
+                "result": "FAMILY_CENTRAL_NOT_MODE_RESOLVED",
+            },
+            {
+                "operator": "S_index_trace=lambda_IT(Omega-T)^2",
+                "action_owned": (
+                    "CONDITIONAL_SCAFFOLD_NOT_AUTHORITATIVE_ACTION_TERM"
+                ),
+                "projector_restriction_defined": "labelwise only",
+                "projected_K": (
+                    "zero on admissible nonbase slots; the base-slot "
+                    "reference convention is not an amplitude spectrum"
+                ),
+                "metric_dependence": None,
+                "frozen_ledger_is_its_spectrum": False,
+                "result": (
+                    "RANK_ONE_LABEL_CONSTRAINT_INVALIDATED_AS_CHARGED_HESSIAN"
+                ),
+            },
+            {
+                "operator": "exact Berger associated-scalar operator O_(J,m)",
+                "action_owned": (
+                    "PROVISIONAL_PARENT_SCALAR_REDUCTION_ONLY"
+                ),
+                "projector_restriction_defined": False,
+                "projected_K": None,
+                "metric_dependence": "exact in L1,L2",
+                "frozen_ledger_is_its_spectrum": False,
+                "result": "MISSING_KJQ_TO_JM_ACTION_INTERTWINER",
+            },
+            {
+                "operator": "legacy berger_lambda(k,j;a)",
+                "action_owned": False,
+                "projector_restriction_defined": True,
+                "projected_K": (
+                    "conditional diagonal matrices recorded in "
+                    "proxy_spectral_candidate"
+                ),
+                "metric_dependence": "exact proxy dependence on a",
+                "frozen_ledger_is_its_spectrum": "PROXY_ONLY",
+                "result": "OPERATIONAL_SPECTRAL_PROXY_NOT_ACTION_OWNED",
+            },
+            {
+                "operator": "fixed-h scalar/KKT Hessian",
+                "action_owned": True,
+                "projector_restriction_defined": False,
+                "projected_K": None,
+                "metric_dependence": (
+                    "fixed-h cap scalar and matcher variables only"
+                ),
+                "frozen_ledger_is_its_spectrum": False,
+                "result": "DIFFERENT_BUNDLE_DOMAIN_AND_FIELD_CONTENT",
+            },
+            {
+                "operator": "first cap-even intrinsic collar operator",
+                "action_owned": True,
+                "projector_restriction_defined": (
+                    "only on its ordinary tangential/scalar domain"
+                ),
+                "projected_K": None,
+                "metric_dependence": (
+                    "A(rho)=sec(rho)^2 A(0); "
+                    "(cos(rho)^3 A(rho))''|0=-A(0)"
+                ),
+                "frozen_ledger_is_its_spectrum": False,
+                "result": "UNIVERSAL_OR_WRONG_CARRIER_NOT_FAMILY_INCIDENCE",
+            },
+            {
+                "operator": "Omega/incidence/adjoint-pair operators",
+                "action_owned": False,
+                "projector_restriction_defined": "finite symbolic maps only",
+                "projected_K": None,
+                "metric_dependence": None,
+                "frozen_ledger_is_its_spectrum": False,
+                "result": (
+                    "STRUCTURALLY_INTEGRATED_WITH_PHYSICAL_NORMALIZATION_OPEN"
+                ),
+            },
+        ],
+        "proxy_candidate": proxy_spectral_candidate(),
+        "successful_action_canonical_projection": None,
+        "result": FINAL_VERDICT,
+    }
+
+
+def hellmann_feynman_audit() -> dict[str, Any]:
+    return {
+        "identity": (
+            "delta lambda_i=<u_i,(delta B)u_i> for normalized "
+            "nondegenerate action eigenmodes"
+        ),
+        "exact_action_scalar_eigenvalues_metric_dependent": True,
+        "legacy_proxy_eigenvalues_metric_dependent": True,
+        "frozen_modes_proved_normalized_action_eigenmodes": False,
+        "candidate_derivatives": {
+            sector: data["candidate_tau_diagonal"]
+            for sector, data in proxy_spectral_candidate()["sectors"].items()
+        },
+        "candidate_nondegeneracy": {
+            sector: data["candidate_tau_nondegenerate"]
+            for sector, data in proxy_spectral_candidate()["sectors"].items()
+        },
+        "down_sector_note": (
+            "the proxy squashing derivative has a repeated zero for the "
+            "(0,0) and (6,3) slots even before action ownership"
+        ),
+        "action_canonical_tau": None,
+        "reason": (
+            "Hellmann--Feynman cannot transfer a proxy derivative to the "
+            "frozen physical module until the action intertwiner proves "
+            "that its slots are normalized eigenmodes of the same operator"
+        ),
+        "result": "CONDITIONAL_PROXY_RESPONSE_ONLY",
+    }
+
+
+def background_vs_self_backreaction() -> dict[str, Any]:
+    return {
+        "background_quadratic": {
+            "formula": "c^dagger K_f[h_bg] c",
+            "amplitude_order": "conjugate(c)c",
+            "logically_excluded_by_quartic_self_response": False,
+            "target_K_f": None,
+            "reason": "the frozen-module action projection is not established",
+        },
+        "self_induced_metric_backreaction": {
+            "formula": (
+                "(c^dagger B_f c) H_hh^+ (c^dagger B_f c)"
+            ),
+            "amplitude_order": "(conjugate(c)c)^2",
+            "status": "SEPARATE_DOWNSTREAM_EFFECT",
+        },
+        "first_cap_even_order": {
+            "intrinsic_operator": 2,
+            "measure_operator_split": (
+                "delta(GK)=(delta G)K+G(delta K)"
+            ),
+            "known_result": (
+                "G=cos(rho)^3 and K=sec(rho)^2K(0) give "
+                "(GK)''|0=-K(0) on the established intrinsic domain"
+            ),
+            "frozen_family_application": None,
+            "reason": (
+                "the internal vertical action supplies no rho-dependent "
+                "L1,L2 profile and the intrinsic domain is not the frozen "
+                "fermion module"
+            ),
+        },
     }
 
 
@@ -160,12 +459,28 @@ def action_ownership_audit() -> list[dict[str, Any]]:
             ),
         },
         {
-            "object": "Berger eigenvalue and boundary_penalty",
+            "object": "exact associated-scalar O_(J,m)",
+            "role": "metric-dependent quadratic scalar spectral action",
+            "family_dependence": "J,m eigenspaces with physical-fiber Gram",
+            "classification": "ACTION_LINKED_PROVISIONAL_SCALAR_CARRIER",
+            "target_stress_contribution": False,
+            "reason": (
+                "no action-derived intertwiner realizes the frozen (k,j,q) "
+                "modules as these scalar eigenspaces, and this is not the "
+                "localized fermion carrier"
+            ),
+        },
+        {
+            "object": "Berger proxy eigenvalue and boundary_penalty",
             "role": "spectral ordering and selection diagnostics",
             "family_dependence": "k,j,q and Omega_f",
             "classification": "OPERATIONAL_NOT_ACTION_OWNED",
             "target_stress_contribution": False,
-            "reason": "no pushforward amplitude density on the seam exists",
+            "reason": (
+                "its diagonal K and squashing derivative are computable, "
+                "but repository provenance calls it a proxy and does not "
+                "supply the action intertwiner"
+            ),
         },
         {
             "object": "sector and mode projectors",
@@ -231,7 +546,10 @@ def action_ownership_audit() -> list[dict[str, Any]]:
         "S_index_trace=lambda_IT(Omega-T)^2": (
             False, False, False, False, False, True
         ),
-        "Berger eigenvalue and boundary_penalty": (
+        "exact associated-scalar O_(J,m)": (
+            False, False, False, False, True, True
+        ),
+        "Berger proxy eigenvalue and boundary_penalty": (
             False, False, False, False, False, True
         ),
         "sector and mode projectors": (
@@ -276,6 +594,13 @@ def mode_action_source() -> dict[str, Any]:
         "located_mode_profiles": None,
         "located_amplitude_fields": None,
         "located_metric_dependent_operator_A_f": None,
+        "basis_free_projection_exhausted": True,
+        "exact_metric_dependent_scalar_operator_located": (
+            "O_(J,m)=-D_A^*D_A+lambda_(J,m)(L1,L2)"
+        ),
+        "scalar_operator_on_frozen_module": None,
+        "legacy_proxy_K_evaluated": True,
+        "ledger_to_action_spectral_intertwiner": None,
         "finite_attachment_is_not_action_density": True,
         "proof": [
             (
@@ -283,17 +608,23 @@ def mode_action_source() -> dict[str, Any]:
                 "Phi_f expansion, or frozen u_f profile."
             ),
             (
-                "The only explicit q,j functional is an algebraic defect "
-                "constraint with no h_ab dependence or field measure."
+                "The q,j defect functional is a metric-independent label "
+                "constraint whose charged-Hessian use is invalidated."
             ),
             (
-                "The localized Dirac-Yukawa term acts on M4 spinors; its "
-                "finite family identity does not make the ledger modes its "
-                "stationary solutions."
+                "The exact associated-scalar action has normalized (J,m) "
+                "eigenspaces and L1,L2 dependence, but its own source says "
+                "the legacy (k,j) identification requires an intertwiner."
             ),
             (
-                "Therefore partial^2 S/(partial conjugate(c_i) partial c_j) "
-                "is not defined for the frozen classical modes."
+                "The symbolic qj eigenfunction map and harmonic m assignment "
+                "remain open, while the localized Dirac action is family "
+                "central and has no Hopf operator."
+            ),
+            (
+                "Therefore P_f B[h] P_f is not action-canonically defined "
+                "on the frozen modules even though a conditional proxy "
+                "matrix can be evaluated."
             ),
         ],
         "result": FINAL_VERDICT,
@@ -309,11 +640,16 @@ def gram_matrices() -> dict[str, Any]:
     row = {
         "finite_attachment_Gram": formal,
         "finite_attachment_status": "ABSTRACT_ORTHOGONAL_PROJECTOR_BASIS",
+        "associated_scalar_action_Gram": (
+            "I3 conditional on an isometric frozen-ledger intertwiner into "
+            "the physical-fiber-orthonormal (J,m) eigenspaces"
+        ),
         "action_canonical_Gram": None,
         "collar_measure": "J(Y,rho)=det(I+rho S(Y))",
         "reason": (
-            "the finite I3 inner product is not an integral of classical "
-            "mode profiles against an action-owned density"
+            "the exact scalar tower is orthonormal, but no action map "
+            "identifies its eigenspaces with the frozen physical slots; "
+            "the charged-incidence physical normalization gate is also open"
         ),
     }
     return {sector: dict(row) for sector in ("charged_lepton", "up", "down")}
@@ -356,6 +692,14 @@ def classical_mode_stress() -> dict[str, Any]:
             "base_excitation_distinguished": False,
             "accepted_as_target": False,
         },
+        "projected_proxy_response": proxy_spectral_candidate()["sectors"],
+        "proxy_response_status": (
+            "RECORDED_NOT_PROMOTED_TO_ACTION_CANONICAL_STRESS"
+        ),
+        "measure_operator_split": (
+            "delta(G_f K_f)=(delta G_f)K_f+G_f(delta K_f)"
+        ),
+        "Hellmann_Feynman": hellmann_feynman_audit(),
         "base_excitation_inequality_test": None,
         "result": FINAL_VERDICT,
     }
@@ -377,7 +721,10 @@ def mixed_hessian() -> dict[str, Any]:
             "closed_range_complement_required": True,
             "selected_inverse_for_this_response": None,
         },
-        "result": "UNDEFINED_BECAUSE_A_f_IS_ABSENT",
+        "candidate_proxy_block": (
+            "diagonal d lambda_proxy/d ln(a), not an action Hessian"
+        ),
+        "result": "UNDEFINED_BECAUSE_ACTION_PROJECTION_ON_F_f_IS_ABSENT",
     }
 
 
@@ -394,8 +741,8 @@ def interface_compliance() -> dict[str, Any]:
         "gauge_quotient_fixed_for_this_contraction": False,
         "kernel_treated_for_this_contraction": False,
         "reason": (
-            "compliance selection is downstream of the absent action-owned "
-            "mode source B_f; no candidate can act on a nonexistent stress"
+            "compliance selection is downstream of the missing action "
+            "projection and cannot act on the conditional proxy derivative"
         ),
         "downstream_obstruction": (
             "BHSM_INTERFACE_INCIDENCE_BLOCKED_BY_NO_SELECTED_"
@@ -435,25 +782,39 @@ def geometric_work() -> dict[str, Any]:
                 "to obtain a quadratic fluctuation correction"
             ),
         },
+        "background_vs_self_backreaction": background_vs_self_backreaction(),
         "unique_action_derived_response": None,
     }
 
 
 def response_matrices() -> dict[str, Any]:
-    row = {
-        "matrix": None,
-        "rank": None,
-        "eigenvalues": None,
-        "generalized_eigenvalues": None,
-        "hierarchy": None,
-        "exact_zeros": None,
-        "uncertainty": "EXACT_STRUCTURAL_OBSTRUCTION",
-        "normalization_dependence": None,
-    }
-    return {
-        sector: dict(row)
-        for sector in ("charged_lepton", "up", "down")
-    }
+    result: dict[str, Any] = {}
+    proxy = proxy_spectral_candidate()["sectors"]
+    for sector in ("charged_lepton", "up", "down"):
+        result[sector] = {
+            "matrix": None,
+            "rank": None,
+            "eigenvalues": None,
+            "generalized_eigenvalues": None,
+            "hierarchy": None,
+            "exact_zeros": None,
+            "uncertainty": "EXACT_STRUCTURAL_OBSTRUCTION",
+            "normalization_dependence": None,
+            "conditional_proxy_matrix": [
+                [
+                    proxy[sector]["candidate_tau_diagonal"][i]
+                    if i == j
+                    else 0
+                    for j in range(3)
+                ]
+                for i in range(3)
+            ],
+            "conditional_proxy_nondegenerate": proxy[sector][
+                "candidate_tau_nondegenerate"
+            ],
+            "conditional_proxy_promoted": False,
+        }
+    return result
 
 
 def virtual_door_placement() -> dict[str, Any]:
@@ -524,6 +885,8 @@ def prediction_freeze() -> dict[str, Any]:
         "doctrine": v82.foundational_doctrine(),
         "frozen_modules": frozen_sector_modules(),
         "mode_action": mode_action_source(),
+        "projected_spectral_action": projected_spectral_action_audit(),
+        "Hellmann_Feynman": hellmann_feynman_audit(),
         "Gram_matrices": gram_matrices(),
         "classical_stress": classical_mode_stress(),
         "mixed_Hessian": mixed_hessian(),
@@ -535,9 +898,10 @@ def prediction_freeze() -> dict[str, Any]:
         "observables": physical_observables(),
         "uncertainties": "EXACT_STRUCTURAL_OBSTRUCTION",
         "falsification_thresholds": {
-            "action_density": "pass_fail",
+            "action_operator": "pass_fail",
+            "frozen_ledger_spectral_intertwiner": "pass_fail",
+            "projected_Gram": "pass_fail",
             "metric_variation": "pass_fail",
-            "mode_profile_and_measure": "pass_fail",
             "response_matrix": "pass_fail",
         },
         "comparison_data_used": False,
@@ -605,6 +969,13 @@ def payload() -> dict[str, Any]:
         "frozen_sector_modules": frozen_sector_modules(),
         "mode_action_ownership": action_ownership_audit(),
         "mode_action_source": mode_action_source(),
+        "projected_spectral_action_audit": (
+            projected_spectral_action_audit()
+        ),
+        "Hellmann_Feynman_audit": hellmann_feynman_audit(),
+        "background_quadratic_vs_self_backreaction": (
+            background_vs_self_backreaction()
+        ),
         "action_canonical_Gram_matrices": gram_matrices(),
         "classical_bilinear_mode_stress": classical_mode_stress(),
         "mixed_metric_mode_Hessian": mixed_hessian(),
@@ -618,9 +989,10 @@ def payload() -> dict[str, Any]:
         "prediction_freeze_sha256": prediction_freeze_hash(),
         "post_freeze_comparison": post_freeze_comparison(),
         "falsification_condition": (
-            "An existing or independently justified action term must supply "
-            "normalized frozen profiles u_f,i, amplitudes c_f,i, a metric-"
-            "dependent quadratic A_f,ij, and its admissible domain without "
+            "An existing or independently justified, domain-preserving "
+            "intertwiner must map every frozen (k,j,q) slot into normalized "
+            "eigenmodes of one action-owned metric-dependent operator, "
+            "thereby defining P_f B[h] P_f and its projected Gram without "
             "using mass or mixing data."
         ),
         "RB15": {
@@ -656,6 +1028,38 @@ def payload() -> dict[str, Any]:
         ),
         "no_action_density": (
             result["mode_action_source"]["located_action_density"] is None
+        ),
+        "projected_spectral_route_exhausted": (
+            len(
+                result["projected_spectral_action_audit"]["candidates"]
+            )
+            == 7
+        ),
+        "proxy_derivatives_recorded": (
+            result["Hellmann_Feynman_audit"]["candidate_derivatives"]
+            ["charged_lepton"]
+            == [0, -2, -18]
+            and result["Hellmann_Feynman_audit"][
+                "candidate_derivatives"
+            ]["up"]
+            == [0, -72, -128]
+            and result["Hellmann_Feynman_audit"][
+                "candidate_derivatives"
+            ]["down"]
+            == [0, 0, -32]
+        ),
+        "proxy_not_promoted": all(
+            result["response_matrices"][sector][
+                "conditional_proxy_promoted"
+            ]
+            is False
+            for sector in ("charged_lepton", "up", "down")
+        ),
+        "ledger_action_intertwiner_absent": (
+            result["mode_action_source"][
+                "ledger_to_action_spectral_intertwiner"
+            ]
+            is None
         ),
         "no_classical_stress_fabricated": all(
             result["classical_bilinear_mode_stress"][sector][
@@ -695,6 +1099,9 @@ def status_report() -> dict[str, Any]:
             "version",
             "frozen_sector_modules",
             "mode_action_source",
+            "projected_spectral_action_audit",
+            "Hellmann_Feynman_audit",
+            "background_quadratic_vs_self_backreaction",
             "action_canonical_Gram_matrices",
             "classical_bilinear_mode_stress",
             "mixed_metric_mode_Hessian",
@@ -723,24 +1130,39 @@ def status_to_markdown(report: dict[str, Any] | None = None) -> str:
         "# BHSM v8.3 classical mode-stress incidence",
         "",
         (
-            "The frozen modules remain attached, but no action-owned "
-            "classical amplitude density exists for their ledger modes."
+            "The frozen modules remain attached. The basis-free spectral "
+            "route is exhausted, but no action-derived intertwiner realizes "
+            "their ledger as one action operator's normalized spectrum."
         ),
         "",
-        "| Sector | Frozen basis | Action Gram | Stress | Response |",
+        (
+            "| Sector | Frozen basis | Proxy tau | Action Gram | "
+            "Physical response |"
+        ),
         "| --- | --- | --- | --- | --- |",
     ]
     for sector in ("charged_lepton", "up", "down"):
         basis = ", ".join(
             str(tuple(mode)) for mode in modules[sector]["basis"]
         )
+        tau = report["Hellmann_Feynman_audit"][
+            "candidate_derivatives"
+        ][sector]
         lines.append(
-            f"| {sector} | {basis} | `None` | `None` | `None` |"
+            f"| {sector} | {basis} | `{tau}` | `None` | `None` |"
         )
     lines.extend(
         [
             "",
             "- Formal M4 EFT stress: `delta_ij T_Dirac` (central, rejected)",
+            (
+                "- Exact associated-scalar operator: metric dependent, "
+                "but its frozen-ledger intertwiner is absent"
+            ),
+            (
+                "- Berger proxy: evaluated exactly and retained as "
+                "conditional evidence, not promoted"
+            ),
             "- Mixed metric-mode Hessian: `None`",
             "- Selected seam compliance: `None`",
             "- Mass ratios: `None`",

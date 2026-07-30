@@ -1,31 +1,28 @@
-# BHSM v8.3 classical mode-stress incidence
+# BHSM v8.3 projected spectral mode-stress incidence
 
 ## Result
 
-The v8.2 three-slot modules remain frozen and attached. The authoritative
-action does not, however, contain a classical field expansion
+The v8.2 three-slot modules remain frozen and attached. V8.3 now exhausts
+the basis-free construction
 
 ```math
-\Phi_f=\sum_{i=0}^{2}c_{f,i}u_{f,i},
+K_f[h]=P_f^{(3)}\mathcal B_f[h]P_f^{(3)},\qquad
+S_{f,\mathrm{red}}^{(2)}=c_f^\dagger G_f[h]K_f[h]c_f.
 ```
 
-or a quadratic density
-
-```math
-S_f^{(2)}=\sum_{i,j}\bar c_{f,i}A^{(f)}_{ij}[h]c_{f,j}
-```
-
-whose stationary profiles are the frozen ledger modes. Consequently the
-metric derivative defining their classical bilinear stress does not exist.
+The repository contains an exact metric-dependent associated-scalar
+operator and a physical-fiber-orthonormal scalar action reduction. It also
+contains a legacy Berger proxy whose restriction to the frozen labels is
+algebraically computable. It does not contain the action-derived
+intertwiner that identifies the frozen `(k,j,q)` modules with normalized
+eigenspaces of that operator. Therefore neither candidate is an
+action-canonical mode stress on the frozen physical modules.
 
 The strongest exact verdict is
 
 ```text
-BHSM_CLASSICAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DENSITY_FOR_FROZEN_MODES
+BHSM_FROZEN_MODE_LEDGER_NOT_REALIZED_AS_SPECTRUM_OF_ANY_ACTION_OPERATOR
 ```
-
-This is stronger than the v8.2 statement that mode stress was merely
-undefined: v8.3 identifies the absent action primitive precisely.
 
 ## Frozen modules
 
@@ -37,121 +34,152 @@ F_u : (0,0), (6,0), (10,1)
 F_d : (0,0), (6,3),  (8,2)
 ```
 
-The primitive `[1,2,3]` architecture, base/excitation ordering, sector
-projectors, triality identification, chirality and anomaly compatibility,
-and higher-mode typing are not reopened.
+Generation selection, base/excitation ordering, sector and triality
+projectors, chirality, anomaly compatibility, and higher-mode typing are not
+reopened.
 
-## Action-source theorem
+## Exhaustive projected-operator audit
 
-The complete relevant source audit gives:
+| Candidate | Projection result | Metric dependence | Target status |
+| --- | --- | --- | --- |
+| Localized M4 Dirac Hessian | `I3 tensor D_M4` | Ordinary M4 metric stress | Family central; frozen labels are not its spectrum |
+| `S_index_trace=lambda_IT(Omega-T)^2` | Labelwise constraint | None | Conditional rank-one defect, invalidated as charged Hessian |
+| Exact associated-scalar `O_(J,m)` | Not defined on `F_f` | Exact in `L1,L2` | Missing `(k,j,q)->(J,m)` action intertwiner; wrong carrier |
+| Legacy `berger_lambda(k,j;a)` | Exact conditional diagonal matrix | Exact in `a` | Explicitly a proxy, not action owned |
+| Fixed-h scalar/KKT Hessian | No `F_f` restriction | Cap/matcher variables | Different bundle, domain, and field content |
+| First cap-even intrinsic operator | Established only on intrinsic/scalar domain | Second collar order | Universal or wrong carrier |
+| `Omega`/incidence/adjoint-pair maps | Finite symbolic maps | None | Normalized-action and physical-measure selection open |
 
-| Source | Exact role | Stress result |
-| --- | --- | --- |
-| `T4_fermion` | Effective M4 Dirac kinetic action | Formal `delta_ij T_Dirac`; family central and not the classical ledger-mode stress |
-| `T4_Yukawa` | Effective M4 Yukawa action | `Y_f` is an independent input; forbidden as the desired output |
-| `S_index_trace` | Algebraic `(q,j)` defect constraint | No amplitudes, metric variation, or seam density |
-| Berger eigenvalues and `boundary_penalty` | Ordering/selection diagnostics | Not an action density |
-| `P_f`, `Pi_f,i` | Fixed finite incidence | Organize a bilinear but do not supply `A_f[h]` |
-| Collar Jacobian | Conditional measure | Cannot normalize absent profiles |
-| GHY/Brown--York/matcher | Universal metric response | No frozen-mode source block |
-| Scalar/topographic action | Separate bundle/domain | No cross-term to the charged modules |
-| Charged current | Effective SU(2) incidence | No frozen-mode amplitude source |
-| `Z_virt^(u,2)` | Conditional diagnostic dressing | Zero applications in an action stress |
+The v8.2 attachment makes the finite projectors part of the localized
+field/domain ledger. It does not, by itself, define how the internal scalar
+operator acts on the localized fermion family fiber.
 
-The finite attachment in v8.2 is therefore an ownership/domain ledger, not
-the missing dynamical mode action.
+## Conditional Berger candidate
 
-## Gram matrices
-
-The abstract attached fiber has the exact finite Gram matrix `I3`, consistent
-with its orthogonal projectors. This is not the action-canonical integral
+The proxy formula is
 
 ```math
-\int \overline{u_{f,i}(Y,\rho)}u_{f,j}(Y,\rho)
-J(Y,\rho)\,d\mu_h\,d\rho,
-\qquad
-J=\det(I+\rho S),
+\lambda_{\rm proxy}(k,j;a)
+=k(k+2)+(a^2-1)q^2,\qquad q=k-2j.
 ```
 
-because no profiles `u_f,i(Y,rho)`, amplitude domain, or action weight is
-defined. The action-canonical Gram matrices are therefore `None`.
+At `a=1`, the conditional projected matrices and
+Hellmann--Feynman-style squashing derivatives are
 
-## Stress and mixed Hessian
+```math
+K_\ell=\operatorname{diag}(0,35,99),
+\quad \tau_\ell=\operatorname{diag}(0,-2,-18),
+```
 
-Since `A_f,ij[h]` is absent,
+```math
+K_u=\operatorname{diag}(0,48,120),
+\quad \tau_u=\operatorname{diag}(0,-72,-128),
+```
+
+```math
+K_d=\operatorname{diag}(0,48,80),
+\quad \tau_d=\operatorname{diag}(0,0,-32),
+```
+
+where
+
+```math
+\tau=-\frac{\partial\lambda_{\rm proxy}}{\partial\ln a}
+=-2a^2q^2.
+```
+
+The charged-lepton and up proxy derivatives are nondegenerate. The down
+proxy derivative has a repeated zero. These are exact evaluations of a
+conditional candidate, not physical mass ratios or stresses.
+
+Formally,
+
+```math
+J=k/2,\quad m=q/2,\quad L_2=1/2,\quad L_1=1/(2a)
+```
+
+would make the exact scalar eigenvalue
+
+```math
+\lambda_{J,m}
+=\frac{J(J+1)}{L_2^2}
++m^2\left(\frac1{L_1^2}-\frac1{L_2^2}\right)
+```
+
+equal the proxy formula. That formula match is not the missing theorem. The
+associated-bundle source explicitly leaves the legacy `(k,j)` identification
+unasserted and requiring an intertwiner. Earlier theorem-discharge records
+also leave the explicit `(q,j)` eigenfunction map and harmonic assignment
+open. Promoting the match would silently choose the missing map and would
+also transfer a scalar operator to a localized fermion carrier without an
+action term.
+
+## Gram and stress
+
+The abstract finite attachment has Gram `I3`. The exact scalar tower also has
+a physical-fiber-orthonormal basis. But no isometric, domain-preserving
+action intertwiner identifies those two spaces, and the charged-incidence
+physical-normalization gate remains open. Thus the action-canonical
+projected `G_f` is `None`.
+
+The required variation is
+
+```math
+\delta(G_fK_f)=(\delta G_f)K_f+G_f(\delta K_f).
+```
+
+Because `G_fK_f` is not action-canonically defined on the frozen modules,
 
 ```text
 T_f,ab^(ij) = None
 B_f,ab;ij   = None
 ```
 
-for all three sectors. Trace, traceless, normal, tangential,
-Hopf-horizontal, Hopf-vertical, and collar components are likewise
-undefined. It is not legitimate to assign weights from `(k,j,q)`,
-`Omega_f`, historical ratios, or the virtual-door screen.
+for all three physical sectors. The proxy derivatives above are retained
+separately and are not inserted into these tensors.
 
-The constrained metric KKT Hessian exists only with its gauge and
-Lyapunov--Schmidt kernels retained. No inverse is selected for this
-contraction, but that is downstream: there is no mode source on which a
-compliance operator could act.
+## Collar response and backreaction
 
-## Backreaction order
-
-There is a separate amplitude-order obstruction. A metric source generated
-by a bilinear mode stress is order `bar(c)c`. Solving the metric response and
-substituting it back produces order
+The established intrinsic cap-even result is
 
 ```math
-(\bar c c)^2,
+G(\rho)=\cos^3\rho,\qquad
+K(\rho)=\sec^2\rho\,K(0),\qquad
+(GK)''(0)=-K(0).
 ```
 
-which is quartic about the zero-amplitude background. It cannot by itself be
-renamed a quadratic mass incidence. A quadratic fluctuation correction would
-require a separately selected nonzero coherent background amplitude.
+It acts on its intrinsic/scalar domain. The internal vertical operator has
+no action-owned collar profiles `L1(rho),L2(rho)`, and no map attaches this
+collar result to the frozen fermion modules.
 
-This order theorem does not replace the earlier missing-density obstruction;
-it prevents a future compliance contraction from being overinterpreted.
-
-## Response and observables
-
-No unique geometric-work contraction can be formed:
-
-- `int pi_env^ab T_ab dmu_h` has no `T_ab`;
-- `<B,C B>` has neither an action-owned `B` nor selected `C`;
-- `A-B^dagger H_hh^+ B` has no `A` or `B` and no licensed inverse.
-
-Thus `R_l`, `R_u`, and `R_d`, their ranks and eigenvalues, mass ratios, and
-the CKM basis are all `None`.
-
-## Virtual door
-
-The conditional bridge
+Background and self-induced effects are distinct:
 
 ```math
-Z_{\rm virt}^{u,2}=\frac12
+S_{\rm background}^{(2)}=c^\dagger K[h_{\rm bg}]c
 ```
 
-remains associated with the middle up mode `(6,0)`, but the repository source
-explicitly leaves it in diagnostic virtual dressing. It enters neither mode
-normalization, kinetic response, surface incidence, stress, nor mass
-incidence in v8.3. It is applied zero times and is not double counted.
+is quadratic and is not excluded by the fact that eliminating a metric
+sourced by `c^\dagger Bc` produces the quartic term
 
-## Alpha status
-
-The proposed interface value `12*pi^2 = 118.435...` has no action attachment
-to the mode response. The repository must also keep distinct:
-
-- the registered gauge-screen denominator `6*pi^2`;
-- the empirical-alpha scale `alpha^-1/(12*pi^2)`;
-- the one-loop gauge-running scaffold, which uses empirical reference inputs.
-
-No action-derived electromagnetic projector maps `12*pi^2` to the
-low-energy inverse fine-structure constant, and alpha is not multiplied into
-any mass response. The subordinate verdict is
-
-```text
-BHSM_ALPHA_IMPEDANCE_INTERPRETATION_LACKS_ACTION_ATTACHMENT
+```math
+(c^\dagger Bc)H_{hh}^{+}(c^\dagger Bc).
 ```
+
+The quartic theorem therefore remains valid but is not used to rule out a
+background spectral action. The background frozen-module `K_f` fails at the
+intertwiner step instead.
+
+## Responses and observables
+
+The charged-lepton, up, and down physical response matrices remain `None`.
+The conditional proxy matrices are not mass matrices. Hence no physical
+mass ratios, nonaligned up/down bases, CKM angles, phase, or Jarlskog
+invariant are obtained.
+
+The middle-up factor `Z_virt^(u,2)=1/2` remains conditional diagnostic
+dressing and is applied zero times in action stress. The proposed
+`12*pi^2` alpha impedance remains unattached to the action response and is
+not multiplied into any candidate.
 
 ## Completion boundary
 
@@ -159,12 +187,14 @@ RB-15 remains `BLOCKED_EXACT_OBJECT_PROVED`; RB-16 remains downstream and no
 release package is generated. The next exact object is
 
 ```text
-ACTION_DENSITY_FOR_FROZEN_MODE_AMPLITUDES_WITH_METRIC_VARIATION
+ACTION_DERIVED_INTERTWINER_FROM_FROZEN_KJQ_MODULES_TO_AN_ACTION_OPERATOR_SPECTRAL_DOMAIN
 ```
 
-It must supply normalized profiles, amplitudes, a metric-dependent quadratic
-operator, and a selected domain without importing observed mass or mixing
-data.
+It must be isometric, domain preserving, representation compatible, and
+fixed without mass or mixing data. It must show that all frozen slots are
+normalized eigenmodes of one action-owned metric-dependent operator. Only
+then can `P_f B[h]P_f`, its Gram variation, and classical mode stress be
+promoted.
 
 ## Reproduction
 

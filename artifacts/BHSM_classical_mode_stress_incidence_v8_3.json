@@ -1,6 +1,38 @@
 {
+  "Hellmann_Feynman_audit": {
+    "action_canonical_tau": null,
+    "candidate_derivatives": {
+      "charged_lepton": [
+        0,
+        -2,
+        -18
+      ],
+      "down": [
+        0,
+        0,
+        -32
+      ],
+      "up": [
+        0,
+        -72,
+        -128
+      ]
+    },
+    "candidate_nondegeneracy": {
+      "charged_lepton": true,
+      "down": false,
+      "up": true
+    },
+    "down_sector_note": "the proxy squashing derivative has a repeated zero for the (0,0) and (6,3) slots even before action ownership",
+    "exact_action_scalar_eigenvalues_metric_dependent": true,
+    "frozen_modes_proved_normalized_action_eigenmodes": false,
+    "identity": "delta lambda_i=<u_i,(delta B)u_i> for normalized nondegenerate action eigenmodes",
+    "legacy_proxy_eigenvalues_metric_dependent": true,
+    "reason": "Hellmann--Feynman cannot transfer a proxy derivative to the frozen physical module until the action intertwiner proves that its slots are normalized eigenmodes of the same operator",
+    "result": "CONDITIONAL_PROXY_RESPONSE_ONLY"
+  },
   "RB15": {
-    "resolution": "BHSM_CLASSICAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DENSITY_FOR_FROZEN_MODES",
+    "resolution": "BHSM_FROZEN_MODE_LEDGER_NOT_REALIZED_AS_SPECTRUM_OF_ANY_ACTION_OPERATOR",
     "status": "BLOCKED_EXACT_OBJECT_PROVED"
   },
   "RB16": {
@@ -10,6 +42,7 @@
   "action_canonical_Gram_matrices": {
     "charged_lepton": {
       "action_canonical_Gram": null,
+      "associated_scalar_action_Gram": "I3 conditional on an isometric frozen-ledger intertwiner into the physical-fiber-orthonormal (J,m) eigenspaces",
       "collar_measure": "J(Y,rho)=det(I+rho S(Y))",
       "finite_attachment_Gram": [
         [
@@ -29,10 +62,11 @@
         ]
       ],
       "finite_attachment_status": "ABSTRACT_ORTHOGONAL_PROJECTOR_BASIS",
-      "reason": "the finite I3 inner product is not an integral of classical mode profiles against an action-owned density"
+      "reason": "the exact scalar tower is orthonormal, but no action map identifies its eigenspaces with the frozen physical slots; the charged-incidence physical normalization gate is also open"
     },
     "down": {
       "action_canonical_Gram": null,
+      "associated_scalar_action_Gram": "I3 conditional on an isometric frozen-ledger intertwiner into the physical-fiber-orthonormal (J,m) eigenspaces",
       "collar_measure": "J(Y,rho)=det(I+rho S(Y))",
       "finite_attachment_Gram": [
         [
@@ -52,10 +86,11 @@
         ]
       ],
       "finite_attachment_status": "ABSTRACT_ORTHOGONAL_PROJECTOR_BASIS",
-      "reason": "the finite I3 inner product is not an integral of classical mode profiles against an action-owned density"
+      "reason": "the exact scalar tower is orthonormal, but no action map identifies its eigenspaces with the frozen physical slots; the charged-incidence physical normalization gate is also open"
     },
     "up": {
       "action_canonical_Gram": null,
+      "associated_scalar_action_Gram": "I3 conditional on an isometric frozen-ledger intertwiner into the physical-fiber-orthonormal (J,m) eigenspaces",
       "collar_measure": "J(Y,rho)=det(I+rho S(Y))",
       "finite_attachment_Gram": [
         [
@@ -75,7 +110,7 @@
         ]
       ],
       "finite_attachment_status": "ABSTRACT_ORTHOGONAL_PROJECTOR_BASIS",
-      "reason": "the finite I3 inner product is not an integral of classical mode profiles against an action-owned density"
+      "reason": "the exact scalar tower is orthonormal, but no action map identifies its eigenspaces with the frozen physical slots; the charged-incidence physical normalization gate is also open"
     }
   },
   "alpha_impedance_status": {
@@ -90,7 +125,60 @@
     "twelve_pi_squared": 118.4352528130723
   },
   "artifact": "BHSM_classical_mode_stress_incidence_v8_3",
+  "background_quadratic_vs_self_backreaction": {
+    "background_quadratic": {
+      "amplitude_order": "conjugate(c)c",
+      "formula": "c^dagger K_f[h_bg] c",
+      "logically_excluded_by_quartic_self_response": false,
+      "reason": "the frozen-module action projection is not established",
+      "target_K_f": null
+    },
+    "first_cap_even_order": {
+      "frozen_family_application": null,
+      "intrinsic_operator": 2,
+      "known_result": "G=cos(rho)^3 and K=sec(rho)^2K(0) give (GK)''|0=-K(0) on the established intrinsic domain",
+      "measure_operator_split": "delta(GK)=(delta G)K+G(delta K)",
+      "reason": "the internal vertical action supplies no rho-dependent L1,L2 profile and the intrinsic domain is not the frozen fermion module"
+    },
+    "self_induced_metric_backreaction": {
+      "amplitude_order": "(conjugate(c)c)^2",
+      "formula": "(c^dagger B_f c) H_hh^+ (c^dagger B_f c)",
+      "status": "SEPARATE_DOWNSTREAM_EFFECT"
+    }
+  },
   "classical_bilinear_mode_stress": {
+    "Hellmann_Feynman": {
+      "action_canonical_tau": null,
+      "candidate_derivatives": {
+        "charged_lepton": [
+          0,
+          -2,
+          -18
+        ],
+        "down": [
+          0,
+          0,
+          -32
+        ],
+        "up": [
+          0,
+          -72,
+          -128
+        ]
+      },
+      "candidate_nondegeneracy": {
+        "charged_lepton": true,
+        "down": false,
+        "up": true
+      },
+      "down_sector_note": "the proxy squashing derivative has a repeated zero for the (0,0) and (6,3) slots even before action ownership",
+      "exact_action_scalar_eigenvalues_metric_dependent": true,
+      "frozen_modes_proved_normalized_action_eigenmodes": false,
+      "identity": "delta lambda_i=<u_i,(delta B)u_i> for normalized nondegenerate action eigenmodes",
+      "legacy_proxy_eigenvalues_metric_dependent": true,
+      "reason": "Hellmann--Feynman cannot transfer a proxy derivative to the frozen physical module until the action intertwiner proves that its slots are normalized eigenmodes of the same operator",
+      "result": "CONDITIONAL_PROXY_RESPONSE_ONLY"
+    },
     "base_excitation_inequality_test": null,
     "charged_lepton": {
       "Hopf_horizontal": null,
@@ -229,7 +317,227 @@
       "formula": "T_EFT,ab^(ij)=delta_ij T_Dirac,ab",
       "status": "FAMILY_CENTRAL_NOT_CLASSICAL_LEDGER_MODE_STRESS"
     },
-    "result": "BHSM_CLASSICAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DENSITY_FOR_FROZEN_MODES",
+    "measure_operator_split": "delta(G_f K_f)=(delta G_f)K_f+G_f(delta K_f)",
+    "projected_proxy_response": {
+      "charged_lepton": {
+        "candidate_K_at_a_1": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            35,
+            0
+          ],
+          [
+            0,
+            0,
+            99
+          ]
+        ],
+        "candidate_tau_diagonal": [
+          0,
+          -2,
+          -18
+        ],
+        "candidate_tau_nondegenerate": true,
+        "per_mode": [
+          {
+            "action_stress": null,
+            "berger_proxy_lambda_at_a_1": 0,
+            "candidate_J": "0/2",
+            "candidate_m": "0/2",
+            "candidate_tau": 0,
+            "d_lambda_d_ln_a_at_a_1": 0,
+            "mode": [
+              0,
+              0
+            ],
+            "projected_normalization": "I3 only conditional on the missing intertwiner",
+            "q": 0,
+            "slot": 0
+          },
+          {
+            "action_stress": null,
+            "berger_proxy_lambda_at_a_1": 35,
+            "candidate_J": "5/2",
+            "candidate_m": "1/2",
+            "candidate_tau": -2,
+            "d_lambda_d_ln_a_at_a_1": 2,
+            "mode": [
+              5,
+              2
+            ],
+            "projected_normalization": "I3 only conditional on the missing intertwiner",
+            "q": 1,
+            "slot": 1
+          },
+          {
+            "action_stress": null,
+            "berger_proxy_lambda_at_a_1": 99,
+            "candidate_J": "9/2",
+            "candidate_m": "3/2",
+            "candidate_tau": -18,
+            "d_lambda_d_ln_a_at_a_1": 18,
+            "mode": [
+              9,
+              3
+            ],
+            "projected_normalization": "I3 only conditional on the missing intertwiner",
+            "q": 3,
+            "slot": 2
+          }
+        ]
+      },
+      "down": {
+        "candidate_K_at_a_1": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            48,
+            0
+          ],
+          [
+            0,
+            0,
+            80
+          ]
+        ],
+        "candidate_tau_diagonal": [
+          0,
+          0,
+          -32
+        ],
+        "candidate_tau_nondegenerate": false,
+        "per_mode": [
+          {
+            "action_stress": null,
+            "berger_proxy_lambda_at_a_1": 0,
+            "candidate_J": "0/2",
+            "candidate_m": "0/2",
+            "candidate_tau": 0,
+            "d_lambda_d_ln_a_at_a_1": 0,
+            "mode": [
+              0,
+              0
+            ],
+            "projected_normalization": "I3 only conditional on the missing intertwiner",
+            "q": 0,
+            "slot": 0
+          },
+          {
+            "action_stress": null,
+            "berger_proxy_lambda_at_a_1": 48,
+            "candidate_J": "6/2",
+            "candidate_m": "0/2",
+            "candidate_tau": 0,
+            "d_lambda_d_ln_a_at_a_1": 0,
+            "mode": [
+              6,
+              3
+            ],
+            "projected_normalization": "I3 only conditional on the missing intertwiner",
+            "q": 0,
+            "slot": 1
+          },
+          {
+            "action_stress": null,
+            "berger_proxy_lambda_at_a_1": 80,
+            "candidate_J": "8/2",
+            "candidate_m": "4/2",
+            "candidate_tau": -32,
+            "d_lambda_d_ln_a_at_a_1": 32,
+            "mode": [
+              8,
+              2
+            ],
+            "projected_normalization": "I3 only conditional on the missing intertwiner",
+            "q": 4,
+            "slot": 2
+          }
+        ]
+      },
+      "up": {
+        "candidate_K_at_a_1": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            48,
+            0
+          ],
+          [
+            0,
+            0,
+            120
+          ]
+        ],
+        "candidate_tau_diagonal": [
+          0,
+          -72,
+          -128
+        ],
+        "candidate_tau_nondegenerate": true,
+        "per_mode": [
+          {
+            "action_stress": null,
+            "berger_proxy_lambda_at_a_1": 0,
+            "candidate_J": "0/2",
+            "candidate_m": "0/2",
+            "candidate_tau": 0,
+            "d_lambda_d_ln_a_at_a_1": 0,
+            "mode": [
+              0,
+              0
+            ],
+            "projected_normalization": "I3 only conditional on the missing intertwiner",
+            "q": 0,
+            "slot": 0
+          },
+          {
+            "action_stress": null,
+            "berger_proxy_lambda_at_a_1": 48,
+            "candidate_J": "6/2",
+            "candidate_m": "6/2",
+            "candidate_tau": -72,
+            "d_lambda_d_ln_a_at_a_1": 72,
+            "mode": [
+              6,
+              0
+            ],
+            "projected_normalization": "I3 only conditional on the missing intertwiner",
+            "q": 6,
+            "slot": 1
+          },
+          {
+            "action_stress": null,
+            "berger_proxy_lambda_at_a_1": 120,
+            "candidate_J": "10/2",
+            "candidate_m": "8/2",
+            "candidate_tau": -128,
+            "d_lambda_d_ln_a_at_a_1": 128,
+            "mode": [
+              10,
+              1
+            ],
+            "projected_normalization": "I3 only conditional on the missing intertwiner",
+            "q": 8,
+            "slot": 2
+          }
+        ]
+      }
+    },
+    "proxy_response_status": "RECORDED_NOT_PROMOTED_TO_ACTION_CANONICAL_STRESS",
+    "result": "BHSM_FROZEN_MODE_LEDGER_NOT_REALIZED_AS_SPECTRUM_OF_ANY_ACTION_OPERATOR",
     "up": {
       "Hopf_horizontal": null,
       "Hopf_vertical": null,
@@ -296,8 +604,8 @@
       "traceless": null
     }
   },
-  "falsification_condition": "An existing or independently justified action term must supply normalized frozen profiles u_f,i, amplitudes c_f,i, a metric-dependent quadratic A_f,ij, and its admissible domain without using mass or mixing data.",
-  "final_verdict": "BHSM_CLASSICAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DENSITY_FOR_FROZEN_MODES",
+  "falsification_condition": "An existing or independently justified, domain-preserving intertwiner must map every frozen (k,j,q) slot into normalized eigenmodes of one action-owned metric-dependent operator, thereby defining P_f B[h] P_f and its projected Gram without using mass or mixing data.",
+  "final_verdict": "BHSM_FROZEN_MODE_LEDGER_NOT_REALIZED_AS_SPECTRUM_OF_ANY_ACTION_OPERATOR",
   "frozen_sector_modules": {
     "classification": "FROZEN_DERIVED_CONDITIONAL_GEOMETRIC_STRUCTURE",
     "family_slot_count": 3,
@@ -594,6 +902,27 @@
       "nonzero_background_requirement": "a selected coherent amplitude background would be required to obtain a quadratic fluctuation correction",
       "result": "about the zero-mode-amplitude background, compliant metric backreaction is quartic and cannot itself be a quadratic mass incidence"
     },
+    "background_vs_self_backreaction": {
+      "background_quadratic": {
+        "amplitude_order": "conjugate(c)c",
+        "formula": "c^dagger K_f[h_bg] c",
+        "logically_excluded_by_quartic_self_response": false,
+        "reason": "the frozen-module action projection is not established",
+        "target_K_f": null
+      },
+      "first_cap_even_order": {
+        "frozen_family_application": null,
+        "intrinsic_operator": 2,
+        "known_result": "G=cos(rho)^3 and K=sec(rho)^2K(0) give (GK)''|0=-K(0) on the established intrinsic domain",
+        "measure_operator_split": "delta(GK)=(delta G)K+G(delta K)",
+        "reason": "the internal vertical action supplies no rho-dependent L1,L2 profile and the intrinsic domain is not the frozen fermion module"
+      },
+      "self_induced_metric_backreaction": {
+        "amplitude_order": "(conjugate(c)c)^2",
+        "formula": "(c^dagger B_f c) H_hh^+ (c^dagger B_f c)",
+        "status": "SEPARATE_DOWNSTREAM_EFFECT"
+      }
+    },
     "compliance_contraction": {
       "accepted": false,
       "formula": "<B_f,C B_f>",
@@ -630,11 +959,12 @@
     "downstream_obstruction": "BHSM_INTERFACE_INCIDENCE_BLOCKED_BY_NO_SELECTED_SEAM_COMPLIANCE_OPERATOR",
     "gauge_quotient_fixed_for_this_contraction": false,
     "kernel_treated_for_this_contraction": false,
-    "reason": "compliance selection is downstream of the absent action-owned mode source B_f; no candidate can act on a nonexistent stress",
+    "reason": "compliance selection is downstream of the missing action projection and cannot act on the conditional proxy derivative",
     "selected_operator": null,
     "source_block_available": false
   },
   "mixed_metric_mode_Hessian": {
+    "candidate_proxy_block": "diagonal d lambda_proxy/d ln(a), not an action Hessian",
     "classical_mode_block": null,
     "complete_block_matrix": null,
     "formal_EFT_block": "delta_ij delta T_Dirac,ab/delta Psi",
@@ -646,7 +976,7 @@
       "selected_inverse_for_this_response": null
     },
     "requested_block": "B_f,ab;ij=delta^3 S/(delta h^ab delta conjugate(c_f,i) delta c_f,j)",
-    "result": "UNDEFINED_BECAUSE_A_f_IS_ABSENT"
+    "result": "UNDEFINED_BECAUSE_ACTION_PROJECTION_ON_F_f_IS_ABSENT"
   },
   "mode_action_ownership": [
     {
@@ -692,14 +1022,28 @@
       "vanishes_by_orthogonality": false
     },
     {
+      "classification": "ACTION_LINKED_PROVISIONAL_SCALAR_CARRIER",
+      "diagonal_stress": false,
+      "family_dependence": "J,m eigenspaces with physical-fiber Gram",
+      "forbidden_by_sector_or_projector": true,
+      "not_action_owned_for_frozen_modes": true,
+      "object": "exact associated-scalar O_(J,m)",
+      "off_diagonal_stress": false,
+      "reason": "no action-derived intertwiner realizes the frozen (k,j,q) modules as these scalar eigenspaces, and this is not the localized fermion carrier",
+      "role": "metric-dependent quadratic scalar spectral action",
+      "target_stress_contribution": false,
+      "universal_removable_normalization": false,
+      "vanishes_by_orthogonality": false
+    },
+    {
       "classification": "OPERATIONAL_NOT_ACTION_OWNED",
       "diagonal_stress": false,
       "family_dependence": "k,j,q and Omega_f",
       "forbidden_by_sector_or_projector": false,
       "not_action_owned_for_frozen_modes": true,
-      "object": "Berger eigenvalue and boundary_penalty",
+      "object": "Berger proxy eigenvalue and boundary_penalty",
       "off_diagonal_stress": false,
-      "reason": "no pushforward amplitude density on the seam exists",
+      "reason": "its diagonal K and squashing derivative are computable, but repository provenance calls it a proxy and does not supply the action intertwiner",
       "role": "spectral ordering and selection diagnostics",
       "target_stress_contribution": false,
       "universal_removable_normalization": false,
@@ -791,20 +1135,26 @@
     }
   ],
   "mode_action_source": {
+    "basis_free_projection_exhausted": true,
+    "exact_metric_dependent_scalar_operator_located": "O_(J,m)=-D_A^*D_A+lambda_(J,m)(L1,L2)",
     "finite_attachment_is_not_action_density": true,
+    "ledger_to_action_spectral_intertwiner": null,
+    "legacy_proxy_K_evaluated": true,
     "located_action_density": null,
     "located_amplitude_fields": null,
     "located_metric_dependent_operator_A_f": null,
     "located_mode_profiles": null,
     "proof": [
       "The master term registry contains no c_f amplitudes, Phi_f expansion, or frozen u_f profile.",
-      "The only explicit q,j functional is an algebraic defect constraint with no h_ab dependence or field measure.",
-      "The localized Dirac-Yukawa term acts on M4 spinors; its finite family identity does not make the ledger modes its stationary solutions.",
-      "Therefore partial^2 S/(partial conjugate(c_i) partial c_j) is not defined for the frozen classical modes."
+      "The q,j defect functional is a metric-independent label constraint whose charged-Hessian use is invalidated.",
+      "The exact associated-scalar action has normalized (J,m) eigenspaces and L1,L2 dependence, but its own source says the legacy (k,j) identification requires an intertwiner.",
+      "The symbolic qj eigenfunction map and harmonic m assignment remain open, while the localized Dirac action is family central and has no Hopf operator.",
+      "Therefore P_f B[h] P_f is not action-canonically defined on the frozen modules even though a conditional proxy matrix can be evaluated."
     ],
     "required_form": "S_f^(2)=sum_ij conjugate(c_f,i) A_f,ij[h,S,J,...] c_f,j",
     "required_stationary_modes": "u_f,0,u_f,1,u_f,2",
-    "result": "BHSM_CLASSICAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DENSITY_FOR_FROZEN_MODES"
+    "result": "BHSM_FROZEN_MODE_LEDGER_NOT_REALIZED_AS_SPECTRUM_OF_ANY_ACTION_OPERATOR",
+    "scalar_operator_on_frozen_module": null
   },
   "physical_observables": {
     "CKM": {
@@ -824,7 +1174,7 @@
   },
   "post_freeze_comparison": {
     "common_scale_external_references": "UNDEFINED_COMPARISON",
-    "freeze_hash_verified_before_comparison": "735E5EAB5E17D8EFC8466425BBEE7F103446FE4E7A3ECC9A862A6B1A081C9BF8",
+    "freeze_hash_verified_before_comparison": "135A559287D4FDA1704C8DF19039E1BA22B7936BB2E303834CB5F7D84E13F27F",
     "historical_CKM_screen": "UNDEFINED_COMPARISON",
     "historical_bare_ratios": "UNDEFINED_COMPARISON",
     "historical_dressed_candidate": "UNDEFINED_COMPARISON",
@@ -835,6 +1185,7 @@
     "Gram_matrices": {
       "charged_lepton": {
         "action_canonical_Gram": null,
+        "associated_scalar_action_Gram": "I3 conditional on an isometric frozen-ledger intertwiner into the physical-fiber-orthonormal (J,m) eigenspaces",
         "collar_measure": "J(Y,rho)=det(I+rho S(Y))",
         "finite_attachment_Gram": [
           [
@@ -854,10 +1205,11 @@
           ]
         ],
         "finite_attachment_status": "ABSTRACT_ORTHOGONAL_PROJECTOR_BASIS",
-        "reason": "the finite I3 inner product is not an integral of classical mode profiles against an action-owned density"
+        "reason": "the exact scalar tower is orthonormal, but no action map identifies its eigenspaces with the frozen physical slots; the charged-incidence physical normalization gate is also open"
       },
       "down": {
         "action_canonical_Gram": null,
+        "associated_scalar_action_Gram": "I3 conditional on an isometric frozen-ledger intertwiner into the physical-fiber-orthonormal (J,m) eigenspaces",
         "collar_measure": "J(Y,rho)=det(I+rho S(Y))",
         "finite_attachment_Gram": [
           [
@@ -877,10 +1229,11 @@
           ]
         ],
         "finite_attachment_status": "ABSTRACT_ORTHOGONAL_PROJECTOR_BASIS",
-        "reason": "the finite I3 inner product is not an integral of classical mode profiles against an action-owned density"
+        "reason": "the exact scalar tower is orthonormal, but no action map identifies its eigenspaces with the frozen physical slots; the charged-incidence physical normalization gate is also open"
       },
       "up": {
         "action_canonical_Gram": null,
+        "associated_scalar_action_Gram": "I3 conditional on an isometric frozen-ledger intertwiner into the physical-fiber-orthonormal (J,m) eigenspaces",
         "collar_measure": "J(Y,rho)=det(I+rho S(Y))",
         "finite_attachment_Gram": [
           [
@@ -900,8 +1253,40 @@
           ]
         ],
         "finite_attachment_status": "ABSTRACT_ORTHOGONAL_PROJECTOR_BASIS",
-        "reason": "the finite I3 inner product is not an integral of classical mode profiles against an action-owned density"
+        "reason": "the exact scalar tower is orthonormal, but no action map identifies its eigenspaces with the frozen physical slots; the charged-incidence physical normalization gate is also open"
       }
+    },
+    "Hellmann_Feynman": {
+      "action_canonical_tau": null,
+      "candidate_derivatives": {
+        "charged_lepton": [
+          0,
+          -2,
+          -18
+        ],
+        "down": [
+          0,
+          0,
+          -32
+        ],
+        "up": [
+          0,
+          -72,
+          -128
+        ]
+      },
+      "candidate_nondegeneracy": {
+        "charged_lepton": true,
+        "down": false,
+        "up": true
+      },
+      "down_sector_note": "the proxy squashing derivative has a repeated zero for the (0,0) and (6,3) slots even before action ownership",
+      "exact_action_scalar_eigenvalues_metric_dependent": true,
+      "frozen_modes_proved_normalized_action_eigenmodes": false,
+      "identity": "delta lambda_i=<u_i,(delta B)u_i> for normalized nondegenerate action eigenmodes",
+      "legacy_proxy_eigenvalues_metric_dependent": true,
+      "reason": "Hellmann--Feynman cannot transfer a proxy derivative to the frozen physical module until the action intertwiner proves that its slots are normalized eigenmodes of the same operator",
+      "result": "CONDITIONAL_PROXY_RESPONSE_ONLY"
     },
     "alpha": {
       "ELECTROMAGNETIC_CHANNEL_PROJECTION": null,
@@ -915,6 +1300,38 @@
       "twelve_pi_squared": 118.4352528130723
     },
     "classical_stress": {
+      "Hellmann_Feynman": {
+        "action_canonical_tau": null,
+        "candidate_derivatives": {
+          "charged_lepton": [
+            0,
+            -2,
+            -18
+          ],
+          "down": [
+            0,
+            0,
+            -32
+          ],
+          "up": [
+            0,
+            -72,
+            -128
+          ]
+        },
+        "candidate_nondegeneracy": {
+          "charged_lepton": true,
+          "down": false,
+          "up": true
+        },
+        "down_sector_note": "the proxy squashing derivative has a repeated zero for the (0,0) and (6,3) slots even before action ownership",
+        "exact_action_scalar_eigenvalues_metric_dependent": true,
+        "frozen_modes_proved_normalized_action_eigenmodes": false,
+        "identity": "delta lambda_i=<u_i,(delta B)u_i> for normalized nondegenerate action eigenmodes",
+        "legacy_proxy_eigenvalues_metric_dependent": true,
+        "reason": "Hellmann--Feynman cannot transfer a proxy derivative to the frozen physical module until the action intertwiner proves that its slots are normalized eigenmodes of the same operator",
+        "result": "CONDITIONAL_PROXY_RESPONSE_ONLY"
+      },
       "base_excitation_inequality_test": null,
       "charged_lepton": {
         "Hopf_horizontal": null,
@@ -1053,7 +1470,227 @@
         "formula": "T_EFT,ab^(ij)=delta_ij T_Dirac,ab",
         "status": "FAMILY_CENTRAL_NOT_CLASSICAL_LEDGER_MODE_STRESS"
       },
-      "result": "BHSM_CLASSICAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DENSITY_FOR_FROZEN_MODES",
+      "measure_operator_split": "delta(G_f K_f)=(delta G_f)K_f+G_f(delta K_f)",
+      "projected_proxy_response": {
+        "charged_lepton": {
+          "candidate_K_at_a_1": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              35,
+              0
+            ],
+            [
+              0,
+              0,
+              99
+            ]
+          ],
+          "candidate_tau_diagonal": [
+            0,
+            -2,
+            -18
+          ],
+          "candidate_tau_nondegenerate": true,
+          "per_mode": [
+            {
+              "action_stress": null,
+              "berger_proxy_lambda_at_a_1": 0,
+              "candidate_J": "0/2",
+              "candidate_m": "0/2",
+              "candidate_tau": 0,
+              "d_lambda_d_ln_a_at_a_1": 0,
+              "mode": [
+                0,
+                0
+              ],
+              "projected_normalization": "I3 only conditional on the missing intertwiner",
+              "q": 0,
+              "slot": 0
+            },
+            {
+              "action_stress": null,
+              "berger_proxy_lambda_at_a_1": 35,
+              "candidate_J": "5/2",
+              "candidate_m": "1/2",
+              "candidate_tau": -2,
+              "d_lambda_d_ln_a_at_a_1": 2,
+              "mode": [
+                5,
+                2
+              ],
+              "projected_normalization": "I3 only conditional on the missing intertwiner",
+              "q": 1,
+              "slot": 1
+            },
+            {
+              "action_stress": null,
+              "berger_proxy_lambda_at_a_1": 99,
+              "candidate_J": "9/2",
+              "candidate_m": "3/2",
+              "candidate_tau": -18,
+              "d_lambda_d_ln_a_at_a_1": 18,
+              "mode": [
+                9,
+                3
+              ],
+              "projected_normalization": "I3 only conditional on the missing intertwiner",
+              "q": 3,
+              "slot": 2
+            }
+          ]
+        },
+        "down": {
+          "candidate_K_at_a_1": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              48,
+              0
+            ],
+            [
+              0,
+              0,
+              80
+            ]
+          ],
+          "candidate_tau_diagonal": [
+            0,
+            0,
+            -32
+          ],
+          "candidate_tau_nondegenerate": false,
+          "per_mode": [
+            {
+              "action_stress": null,
+              "berger_proxy_lambda_at_a_1": 0,
+              "candidate_J": "0/2",
+              "candidate_m": "0/2",
+              "candidate_tau": 0,
+              "d_lambda_d_ln_a_at_a_1": 0,
+              "mode": [
+                0,
+                0
+              ],
+              "projected_normalization": "I3 only conditional on the missing intertwiner",
+              "q": 0,
+              "slot": 0
+            },
+            {
+              "action_stress": null,
+              "berger_proxy_lambda_at_a_1": 48,
+              "candidate_J": "6/2",
+              "candidate_m": "0/2",
+              "candidate_tau": 0,
+              "d_lambda_d_ln_a_at_a_1": 0,
+              "mode": [
+                6,
+                3
+              ],
+              "projected_normalization": "I3 only conditional on the missing intertwiner",
+              "q": 0,
+              "slot": 1
+            },
+            {
+              "action_stress": null,
+              "berger_proxy_lambda_at_a_1": 80,
+              "candidate_J": "8/2",
+              "candidate_m": "4/2",
+              "candidate_tau": -32,
+              "d_lambda_d_ln_a_at_a_1": 32,
+              "mode": [
+                8,
+                2
+              ],
+              "projected_normalization": "I3 only conditional on the missing intertwiner",
+              "q": 4,
+              "slot": 2
+            }
+          ]
+        },
+        "up": {
+          "candidate_K_at_a_1": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              48,
+              0
+            ],
+            [
+              0,
+              0,
+              120
+            ]
+          ],
+          "candidate_tau_diagonal": [
+            0,
+            -72,
+            -128
+          ],
+          "candidate_tau_nondegenerate": true,
+          "per_mode": [
+            {
+              "action_stress": null,
+              "berger_proxy_lambda_at_a_1": 0,
+              "candidate_J": "0/2",
+              "candidate_m": "0/2",
+              "candidate_tau": 0,
+              "d_lambda_d_ln_a_at_a_1": 0,
+              "mode": [
+                0,
+                0
+              ],
+              "projected_normalization": "I3 only conditional on the missing intertwiner",
+              "q": 0,
+              "slot": 0
+            },
+            {
+              "action_stress": null,
+              "berger_proxy_lambda_at_a_1": 48,
+              "candidate_J": "6/2",
+              "candidate_m": "6/2",
+              "candidate_tau": -72,
+              "d_lambda_d_ln_a_at_a_1": 72,
+              "mode": [
+                6,
+                0
+              ],
+              "projected_normalization": "I3 only conditional on the missing intertwiner",
+              "q": 6,
+              "slot": 1
+            },
+            {
+              "action_stress": null,
+              "berger_proxy_lambda_at_a_1": 120,
+              "candidate_J": "10/2",
+              "candidate_m": "8/2",
+              "candidate_tau": -128,
+              "d_lambda_d_ln_a_at_a_1": 128,
+              "mode": [
+                10,
+                1
+              ],
+              "projected_normalization": "I3 only conditional on the missing intertwiner",
+              "q": 8,
+              "slot": 2
+            }
+          ]
+        }
+      },
+      "proxy_response_status": "RECORDED_NOT_PROMOTED_TO_ACTION_CANONICAL_STRESS",
+      "result": "BHSM_FROZEN_MODE_LEDGER_NOT_REALIZED_AS_SPECTRUM_OF_ANY_ACTION_OPERATOR",
       "up": {
         "Hopf_horizontal": null,
         "Hopf_vertical": null,
@@ -1158,9 +1795,10 @@
       "statement": "BHSM is formulated as a deterministic geometric boundary theory in which particle and quantum-field descriptions are intended to emerge from classical nonlinear modes, topology, and interface response. Standard QFT is used as an effective observable correspondence, not assumed to be the fundamental microscopic ontology. Accordingly, the present campaign first tests the original finite BHSM boundary-mode generation architecture before introducing additional quantum-field primitives."
     },
     "falsification_thresholds": {
-      "action_density": "pass_fail",
+      "action_operator": "pass_fail",
+      "frozen_ledger_spectral_intertwiner": "pass_fail",
       "metric_variation": "pass_fail",
-      "mode_profile_and_measure": "pass_fail",
+      "projected_Gram": "pass_fail",
       "response_matrix": "pass_fail"
     },
     "frozen_modules": {
@@ -1459,6 +2097,27 @@
         "nonzero_background_requirement": "a selected coherent amplitude background would be required to obtain a quadratic fluctuation correction",
         "result": "about the zero-mode-amplitude background, compliant metric backreaction is quartic and cannot itself be a quadratic mass incidence"
       },
+      "background_vs_self_backreaction": {
+        "background_quadratic": {
+          "amplitude_order": "conjugate(c)c",
+          "formula": "c^dagger K_f[h_bg] c",
+          "logically_excluded_by_quartic_self_response": false,
+          "reason": "the frozen-module action projection is not established",
+          "target_K_f": null
+        },
+        "first_cap_even_order": {
+          "frozen_family_application": null,
+          "intrinsic_operator": 2,
+          "known_result": "G=cos(rho)^3 and K=sec(rho)^2K(0) give (GK)''|0=-K(0) on the established intrinsic domain",
+          "measure_operator_split": "delta(GK)=(delta G)K+G(delta K)",
+          "reason": "the internal vertical action supplies no rho-dependent L1,L2 profile and the intrinsic domain is not the frozen fermion module"
+        },
+        "self_induced_metric_backreaction": {
+          "amplitude_order": "(conjugate(c)c)^2",
+          "formula": "(c^dagger B_f c) H_hh^+ (c^dagger B_f c)",
+          "status": "SEPARATE_DOWNSTREAM_EFFECT"
+        }
+      },
       "compliance_contraction": {
         "accepted": false,
         "formula": "<B_f,C B_f>",
@@ -1481,11 +2140,12 @@
       "downstream_obstruction": "BHSM_INTERFACE_INCIDENCE_BLOCKED_BY_NO_SELECTED_SEAM_COMPLIANCE_OPERATOR",
       "gauge_quotient_fixed_for_this_contraction": false,
       "kernel_treated_for_this_contraction": false,
-      "reason": "compliance selection is downstream of the absent action-owned mode source B_f; no candidate can act on a nonexistent stress",
+      "reason": "compliance selection is downstream of the missing action projection and cannot act on the conditional proxy derivative",
       "selected_operator": null,
       "source_block_available": false
     },
     "mixed_Hessian": {
+      "candidate_proxy_block": "diagonal d lambda_proxy/d ln(a), not an action Hessian",
       "classical_mode_block": null,
       "complete_block_matrix": null,
       "formal_EFT_block": "delta_ij delta T_Dirac,ab/delta Psi",
@@ -1497,23 +2157,29 @@
         "selected_inverse_for_this_response": null
       },
       "requested_block": "B_f,ab;ij=delta^3 S/(delta h^ab delta conjugate(c_f,i) delta c_f,j)",
-      "result": "UNDEFINED_BECAUSE_A_f_IS_ABSENT"
+      "result": "UNDEFINED_BECAUSE_ACTION_PROJECTION_ON_F_f_IS_ABSENT"
     },
     "mode_action": {
+      "basis_free_projection_exhausted": true,
+      "exact_metric_dependent_scalar_operator_located": "O_(J,m)=-D_A^*D_A+lambda_(J,m)(L1,L2)",
       "finite_attachment_is_not_action_density": true,
+      "ledger_to_action_spectral_intertwiner": null,
+      "legacy_proxy_K_evaluated": true,
       "located_action_density": null,
       "located_amplitude_fields": null,
       "located_metric_dependent_operator_A_f": null,
       "located_mode_profiles": null,
       "proof": [
         "The master term registry contains no c_f amplitudes, Phi_f expansion, or frozen u_f profile.",
-        "The only explicit q,j functional is an algebraic defect constraint with no h_ab dependence or field measure.",
-        "The localized Dirac-Yukawa term acts on M4 spinors; its finite family identity does not make the ledger modes its stationary solutions.",
-        "Therefore partial^2 S/(partial conjugate(c_i) partial c_j) is not defined for the frozen classical modes."
+        "The q,j defect functional is a metric-independent label constraint whose charged-Hessian use is invalidated.",
+        "The exact associated-scalar action has normalized (J,m) eigenspaces and L1,L2 dependence, but its own source says the legacy (k,j) identification requires an intertwiner.",
+        "The symbolic qj eigenfunction map and harmonic m assignment remain open, while the localized Dirac action is family central and has no Hopf operator.",
+        "Therefore P_f B[h] P_f is not action-canonically defined on the frozen modules even though a conditional proxy matrix can be evaluated."
       ],
       "required_form": "S_f^(2)=sum_ij conjugate(c_f,i) A_f,ij[h,S,J,...] c_f,j",
       "required_stationary_modes": "u_f,0,u_f,1,u_f,2",
-      "result": "BHSM_CLASSICAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DENSITY_FOR_FROZEN_MODES"
+      "result": "BHSM_FROZEN_MODE_LEDGER_NOT_REALIZED_AS_SPECTRUM_OF_ANY_ACTION_OPERATOR",
+      "scalar_operator_on_frozen_module": null
     },
     "observables": {
       "CKM": {
@@ -1531,8 +2197,329 @@
       },
       "physical_transport": "BLOCKED_BEFORE_GEOMETRIC_TO_QFT_MASS_TRANSPORT"
     },
+    "projected_spectral_action": {
+      "candidates": [
+        {
+          "action_owned": true,
+          "frozen_ledger_is_its_spectrum": false,
+          "metric_dependence": "ordinary M4 Dirac stress",
+          "operator": "localized M4 Dirac-Yukawa Hessian",
+          "projected_K": "I3 tensor D_M4 before Yukawa input",
+          "projector_restriction_defined": true,
+          "result": "FAMILY_CENTRAL_NOT_MODE_RESOLVED"
+        },
+        {
+          "action_owned": "CONDITIONAL_SCAFFOLD_NOT_AUTHORITATIVE_ACTION_TERM",
+          "frozen_ledger_is_its_spectrum": false,
+          "metric_dependence": null,
+          "operator": "S_index_trace=lambda_IT(Omega-T)^2",
+          "projected_K": "zero on admissible nonbase slots; the base-slot reference convention is not an amplitude spectrum",
+          "projector_restriction_defined": "labelwise only",
+          "result": "RANK_ONE_LABEL_CONSTRAINT_INVALIDATED_AS_CHARGED_HESSIAN"
+        },
+        {
+          "action_owned": "PROVISIONAL_PARENT_SCALAR_REDUCTION_ONLY",
+          "frozen_ledger_is_its_spectrum": false,
+          "metric_dependence": "exact in L1,L2",
+          "operator": "exact Berger associated-scalar operator O_(J,m)",
+          "projected_K": null,
+          "projector_restriction_defined": false,
+          "result": "MISSING_KJQ_TO_JM_ACTION_INTERTWINER"
+        },
+        {
+          "action_owned": false,
+          "frozen_ledger_is_its_spectrum": "PROXY_ONLY",
+          "metric_dependence": "exact proxy dependence on a",
+          "operator": "legacy berger_lambda(k,j;a)",
+          "projected_K": "conditional diagonal matrices recorded in proxy_spectral_candidate",
+          "projector_restriction_defined": true,
+          "result": "OPERATIONAL_SPECTRAL_PROXY_NOT_ACTION_OWNED"
+        },
+        {
+          "action_owned": true,
+          "frozen_ledger_is_its_spectrum": false,
+          "metric_dependence": "fixed-h cap scalar and matcher variables only",
+          "operator": "fixed-h scalar/KKT Hessian",
+          "projected_K": null,
+          "projector_restriction_defined": false,
+          "result": "DIFFERENT_BUNDLE_DOMAIN_AND_FIELD_CONTENT"
+        },
+        {
+          "action_owned": true,
+          "frozen_ledger_is_its_spectrum": false,
+          "metric_dependence": "A(rho)=sec(rho)^2 A(0); (cos(rho)^3 A(rho))''|0=-A(0)",
+          "operator": "first cap-even intrinsic collar operator",
+          "projected_K": null,
+          "projector_restriction_defined": "only on its ordinary tangential/scalar domain",
+          "result": "UNIVERSAL_OR_WRONG_CARRIER_NOT_FAMILY_INCIDENCE"
+        },
+        {
+          "action_owned": false,
+          "frozen_ledger_is_its_spectrum": false,
+          "metric_dependence": null,
+          "operator": "Omega/incidence/adjoint-pair operators",
+          "projected_K": null,
+          "projector_restriction_defined": "finite symbolic maps only",
+          "result": "STRUCTURALLY_INTEGRATED_WITH_PHYSICAL_NORMALIZATION_OPEN"
+        }
+      ],
+      "proxy_candidate": {
+        "classification": "EXACTLY_EVALUATED_PROXY_NOT_ACTION_OWNED_ON_FROZEN_MODULE",
+        "exact_scalar_operator_formula": "lambda_(J,m)=J(J+1)/L2^2+m^2(1/L1^2-1/L2^2)",
+        "formal_formula_match": "J=k/2, m=q/2, L2=1/2, L1=1/(2a) would make lambda_(J,m)=lambda_proxy",
+        "formula": "lambda_proxy(k,j;a)=k(k+2)+(a^2-1)q^2, q=k-2j",
+        "formula_match_licensed": false,
+        "hellmann_feynman_candidate": "tau=-partial lambda_proxy/partial ln(a)=-2a^2q^2",
+        "sectors": {
+          "charged_lepton": {
+            "candidate_K_at_a_1": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                35,
+                0
+              ],
+              [
+                0,
+                0,
+                99
+              ]
+            ],
+            "candidate_tau_diagonal": [
+              0,
+              -2,
+              -18
+            ],
+            "candidate_tau_nondegenerate": true,
+            "per_mode": [
+              {
+                "action_stress": null,
+                "berger_proxy_lambda_at_a_1": 0,
+                "candidate_J": "0/2",
+                "candidate_m": "0/2",
+                "candidate_tau": 0,
+                "d_lambda_d_ln_a_at_a_1": 0,
+                "mode": [
+                  0,
+                  0
+                ],
+                "projected_normalization": "I3 only conditional on the missing intertwiner",
+                "q": 0,
+                "slot": 0
+              },
+              {
+                "action_stress": null,
+                "berger_proxy_lambda_at_a_1": 35,
+                "candidate_J": "5/2",
+                "candidate_m": "1/2",
+                "candidate_tau": -2,
+                "d_lambda_d_ln_a_at_a_1": 2,
+                "mode": [
+                  5,
+                  2
+                ],
+                "projected_normalization": "I3 only conditional on the missing intertwiner",
+                "q": 1,
+                "slot": 1
+              },
+              {
+                "action_stress": null,
+                "berger_proxy_lambda_at_a_1": 99,
+                "candidate_J": "9/2",
+                "candidate_m": "3/2",
+                "candidate_tau": -18,
+                "d_lambda_d_ln_a_at_a_1": 18,
+                "mode": [
+                  9,
+                  3
+                ],
+                "projected_normalization": "I3 only conditional on the missing intertwiner",
+                "q": 3,
+                "slot": 2
+              }
+            ]
+          },
+          "down": {
+            "candidate_K_at_a_1": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                48,
+                0
+              ],
+              [
+                0,
+                0,
+                80
+              ]
+            ],
+            "candidate_tau_diagonal": [
+              0,
+              0,
+              -32
+            ],
+            "candidate_tau_nondegenerate": false,
+            "per_mode": [
+              {
+                "action_stress": null,
+                "berger_proxy_lambda_at_a_1": 0,
+                "candidate_J": "0/2",
+                "candidate_m": "0/2",
+                "candidate_tau": 0,
+                "d_lambda_d_ln_a_at_a_1": 0,
+                "mode": [
+                  0,
+                  0
+                ],
+                "projected_normalization": "I3 only conditional on the missing intertwiner",
+                "q": 0,
+                "slot": 0
+              },
+              {
+                "action_stress": null,
+                "berger_proxy_lambda_at_a_1": 48,
+                "candidate_J": "6/2",
+                "candidate_m": "0/2",
+                "candidate_tau": 0,
+                "d_lambda_d_ln_a_at_a_1": 0,
+                "mode": [
+                  6,
+                  3
+                ],
+                "projected_normalization": "I3 only conditional on the missing intertwiner",
+                "q": 0,
+                "slot": 1
+              },
+              {
+                "action_stress": null,
+                "berger_proxy_lambda_at_a_1": 80,
+                "candidate_J": "8/2",
+                "candidate_m": "4/2",
+                "candidate_tau": -32,
+                "d_lambda_d_ln_a_at_a_1": 32,
+                "mode": [
+                  8,
+                  2
+                ],
+                "projected_normalization": "I3 only conditional on the missing intertwiner",
+                "q": 4,
+                "slot": 2
+              }
+            ]
+          },
+          "up": {
+            "candidate_K_at_a_1": [
+              [
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                48,
+                0
+              ],
+              [
+                0,
+                0,
+                120
+              ]
+            ],
+            "candidate_tau_diagonal": [
+              0,
+              -72,
+              -128
+            ],
+            "candidate_tau_nondegenerate": true,
+            "per_mode": [
+              {
+                "action_stress": null,
+                "berger_proxy_lambda_at_a_1": 0,
+                "candidate_J": "0/2",
+                "candidate_m": "0/2",
+                "candidate_tau": 0,
+                "d_lambda_d_ln_a_at_a_1": 0,
+                "mode": [
+                  0,
+                  0
+                ],
+                "projected_normalization": "I3 only conditional on the missing intertwiner",
+                "q": 0,
+                "slot": 0
+              },
+              {
+                "action_stress": null,
+                "berger_proxy_lambda_at_a_1": 48,
+                "candidate_J": "6/2",
+                "candidate_m": "6/2",
+                "candidate_tau": -72,
+                "d_lambda_d_ln_a_at_a_1": 72,
+                "mode": [
+                  6,
+                  0
+                ],
+                "projected_normalization": "I3 only conditional on the missing intertwiner",
+                "q": 6,
+                "slot": 1
+              },
+              {
+                "action_stress": null,
+                "berger_proxy_lambda_at_a_1": 120,
+                "candidate_J": "10/2",
+                "candidate_m": "8/2",
+                "candidate_tau": -128,
+                "d_lambda_d_ln_a_at_a_1": 128,
+                "mode": [
+                  10,
+                  1
+                ],
+                "projected_normalization": "I3 only conditional on the missing intertwiner",
+                "q": 8,
+                "slot": 2
+              }
+            ]
+          }
+        },
+        "why_not_licensed": [
+          "berger_spectrum.py calls its eigenvalue a scalar spectrum proxy rather than an action operator",
+          "the exact associated-bundle artifact explicitly says the legacy (k,j) identification is not asserted and requires an intertwiner",
+          "the earlier qj eigenfunction map is a conditional symbolic scaffold; its explicit map and harmonic m assignment remain open",
+          "the exact operator is a provisional parent-scalar carrier, not the localized fermion action carrier"
+        ]
+      },
+      "result": "BHSM_FROZEN_MODE_LEDGER_NOT_REALIZED_AS_SPECTRUM_OF_ANY_ACTION_OPERATOR",
+      "successful_action_canonical_projection": null,
+      "target": "K_f[h]=P_f^(3) B_f[h] P_f^(3); S_red=c_f^dagger G_f[h]K_f[h]c_f"
+    },
     "response_matrices": {
       "charged_lepton": {
+        "conditional_proxy_matrix": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            -2,
+            0
+          ],
+          [
+            0,
+            0,
+            -18
+          ]
+        ],
+        "conditional_proxy_nondegenerate": true,
+        "conditional_proxy_promoted": false,
         "eigenvalues": null,
         "exact_zeros": null,
         "generalized_eigenvalues": null,
@@ -1543,6 +2530,25 @@
         "uncertainty": "EXACT_STRUCTURAL_OBSTRUCTION"
       },
       "down": {
+        "conditional_proxy_matrix": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            -32
+          ]
+        ],
+        "conditional_proxy_nondegenerate": false,
+        "conditional_proxy_promoted": false,
         "eigenvalues": null,
         "exact_zeros": null,
         "generalized_eigenvalues": null,
@@ -1553,6 +2559,25 @@
         "uncertainty": "EXACT_STRUCTURAL_OBSTRUCTION"
       },
       "up": {
+        "conditional_proxy_matrix": [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            -72,
+            0
+          ],
+          [
+            0,
+            0,
+            -128
+          ]
+        ],
+        "conditional_proxy_nondegenerate": true,
+        "conditional_proxy_promoted": false,
         "eigenvalues": null,
         "exact_zeros": null,
         "generalized_eigenvalues": null,
@@ -1584,11 +2609,332 @@
       "surface_incidence": false
     }
   },
-  "prediction_freeze_sha256": "735E5EAB5E17D8EFC8466425BBEE7F103446FE4E7A3ECC9A862A6B1A081C9BF8",
+  "prediction_freeze_sha256": "135A559287D4FDA1704C8DF19039E1BA22B7936BB2E303834CB5F7D84E13F27F",
+  "projected_spectral_action_audit": {
+    "candidates": [
+      {
+        "action_owned": true,
+        "frozen_ledger_is_its_spectrum": false,
+        "metric_dependence": "ordinary M4 Dirac stress",
+        "operator": "localized M4 Dirac-Yukawa Hessian",
+        "projected_K": "I3 tensor D_M4 before Yukawa input",
+        "projector_restriction_defined": true,
+        "result": "FAMILY_CENTRAL_NOT_MODE_RESOLVED"
+      },
+      {
+        "action_owned": "CONDITIONAL_SCAFFOLD_NOT_AUTHORITATIVE_ACTION_TERM",
+        "frozen_ledger_is_its_spectrum": false,
+        "metric_dependence": null,
+        "operator": "S_index_trace=lambda_IT(Omega-T)^2",
+        "projected_K": "zero on admissible nonbase slots; the base-slot reference convention is not an amplitude spectrum",
+        "projector_restriction_defined": "labelwise only",
+        "result": "RANK_ONE_LABEL_CONSTRAINT_INVALIDATED_AS_CHARGED_HESSIAN"
+      },
+      {
+        "action_owned": "PROVISIONAL_PARENT_SCALAR_REDUCTION_ONLY",
+        "frozen_ledger_is_its_spectrum": false,
+        "metric_dependence": "exact in L1,L2",
+        "operator": "exact Berger associated-scalar operator O_(J,m)",
+        "projected_K": null,
+        "projector_restriction_defined": false,
+        "result": "MISSING_KJQ_TO_JM_ACTION_INTERTWINER"
+      },
+      {
+        "action_owned": false,
+        "frozen_ledger_is_its_spectrum": "PROXY_ONLY",
+        "metric_dependence": "exact proxy dependence on a",
+        "operator": "legacy berger_lambda(k,j;a)",
+        "projected_K": "conditional diagonal matrices recorded in proxy_spectral_candidate",
+        "projector_restriction_defined": true,
+        "result": "OPERATIONAL_SPECTRAL_PROXY_NOT_ACTION_OWNED"
+      },
+      {
+        "action_owned": true,
+        "frozen_ledger_is_its_spectrum": false,
+        "metric_dependence": "fixed-h cap scalar and matcher variables only",
+        "operator": "fixed-h scalar/KKT Hessian",
+        "projected_K": null,
+        "projector_restriction_defined": false,
+        "result": "DIFFERENT_BUNDLE_DOMAIN_AND_FIELD_CONTENT"
+      },
+      {
+        "action_owned": true,
+        "frozen_ledger_is_its_spectrum": false,
+        "metric_dependence": "A(rho)=sec(rho)^2 A(0); (cos(rho)^3 A(rho))''|0=-A(0)",
+        "operator": "first cap-even intrinsic collar operator",
+        "projected_K": null,
+        "projector_restriction_defined": "only on its ordinary tangential/scalar domain",
+        "result": "UNIVERSAL_OR_WRONG_CARRIER_NOT_FAMILY_INCIDENCE"
+      },
+      {
+        "action_owned": false,
+        "frozen_ledger_is_its_spectrum": false,
+        "metric_dependence": null,
+        "operator": "Omega/incidence/adjoint-pair operators",
+        "projected_K": null,
+        "projector_restriction_defined": "finite symbolic maps only",
+        "result": "STRUCTURALLY_INTEGRATED_WITH_PHYSICAL_NORMALIZATION_OPEN"
+      }
+    ],
+    "proxy_candidate": {
+      "classification": "EXACTLY_EVALUATED_PROXY_NOT_ACTION_OWNED_ON_FROZEN_MODULE",
+      "exact_scalar_operator_formula": "lambda_(J,m)=J(J+1)/L2^2+m^2(1/L1^2-1/L2^2)",
+      "formal_formula_match": "J=k/2, m=q/2, L2=1/2, L1=1/(2a) would make lambda_(J,m)=lambda_proxy",
+      "formula": "lambda_proxy(k,j;a)=k(k+2)+(a^2-1)q^2, q=k-2j",
+      "formula_match_licensed": false,
+      "hellmann_feynman_candidate": "tau=-partial lambda_proxy/partial ln(a)=-2a^2q^2",
+      "sectors": {
+        "charged_lepton": {
+          "candidate_K_at_a_1": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              35,
+              0
+            ],
+            [
+              0,
+              0,
+              99
+            ]
+          ],
+          "candidate_tau_diagonal": [
+            0,
+            -2,
+            -18
+          ],
+          "candidate_tau_nondegenerate": true,
+          "per_mode": [
+            {
+              "action_stress": null,
+              "berger_proxy_lambda_at_a_1": 0,
+              "candidate_J": "0/2",
+              "candidate_m": "0/2",
+              "candidate_tau": 0,
+              "d_lambda_d_ln_a_at_a_1": 0,
+              "mode": [
+                0,
+                0
+              ],
+              "projected_normalization": "I3 only conditional on the missing intertwiner",
+              "q": 0,
+              "slot": 0
+            },
+            {
+              "action_stress": null,
+              "berger_proxy_lambda_at_a_1": 35,
+              "candidate_J": "5/2",
+              "candidate_m": "1/2",
+              "candidate_tau": -2,
+              "d_lambda_d_ln_a_at_a_1": 2,
+              "mode": [
+                5,
+                2
+              ],
+              "projected_normalization": "I3 only conditional on the missing intertwiner",
+              "q": 1,
+              "slot": 1
+            },
+            {
+              "action_stress": null,
+              "berger_proxy_lambda_at_a_1": 99,
+              "candidate_J": "9/2",
+              "candidate_m": "3/2",
+              "candidate_tau": -18,
+              "d_lambda_d_ln_a_at_a_1": 18,
+              "mode": [
+                9,
+                3
+              ],
+              "projected_normalization": "I3 only conditional on the missing intertwiner",
+              "q": 3,
+              "slot": 2
+            }
+          ]
+        },
+        "down": {
+          "candidate_K_at_a_1": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              48,
+              0
+            ],
+            [
+              0,
+              0,
+              80
+            ]
+          ],
+          "candidate_tau_diagonal": [
+            0,
+            0,
+            -32
+          ],
+          "candidate_tau_nondegenerate": false,
+          "per_mode": [
+            {
+              "action_stress": null,
+              "berger_proxy_lambda_at_a_1": 0,
+              "candidate_J": "0/2",
+              "candidate_m": "0/2",
+              "candidate_tau": 0,
+              "d_lambda_d_ln_a_at_a_1": 0,
+              "mode": [
+                0,
+                0
+              ],
+              "projected_normalization": "I3 only conditional on the missing intertwiner",
+              "q": 0,
+              "slot": 0
+            },
+            {
+              "action_stress": null,
+              "berger_proxy_lambda_at_a_1": 48,
+              "candidate_J": "6/2",
+              "candidate_m": "0/2",
+              "candidate_tau": 0,
+              "d_lambda_d_ln_a_at_a_1": 0,
+              "mode": [
+                6,
+                3
+              ],
+              "projected_normalization": "I3 only conditional on the missing intertwiner",
+              "q": 0,
+              "slot": 1
+            },
+            {
+              "action_stress": null,
+              "berger_proxy_lambda_at_a_1": 80,
+              "candidate_J": "8/2",
+              "candidate_m": "4/2",
+              "candidate_tau": -32,
+              "d_lambda_d_ln_a_at_a_1": 32,
+              "mode": [
+                8,
+                2
+              ],
+              "projected_normalization": "I3 only conditional on the missing intertwiner",
+              "q": 4,
+              "slot": 2
+            }
+          ]
+        },
+        "up": {
+          "candidate_K_at_a_1": [
+            [
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              48,
+              0
+            ],
+            [
+              0,
+              0,
+              120
+            ]
+          ],
+          "candidate_tau_diagonal": [
+            0,
+            -72,
+            -128
+          ],
+          "candidate_tau_nondegenerate": true,
+          "per_mode": [
+            {
+              "action_stress": null,
+              "berger_proxy_lambda_at_a_1": 0,
+              "candidate_J": "0/2",
+              "candidate_m": "0/2",
+              "candidate_tau": 0,
+              "d_lambda_d_ln_a_at_a_1": 0,
+              "mode": [
+                0,
+                0
+              ],
+              "projected_normalization": "I3 only conditional on the missing intertwiner",
+              "q": 0,
+              "slot": 0
+            },
+            {
+              "action_stress": null,
+              "berger_proxy_lambda_at_a_1": 48,
+              "candidate_J": "6/2",
+              "candidate_m": "6/2",
+              "candidate_tau": -72,
+              "d_lambda_d_ln_a_at_a_1": 72,
+              "mode": [
+                6,
+                0
+              ],
+              "projected_normalization": "I3 only conditional on the missing intertwiner",
+              "q": 6,
+              "slot": 1
+            },
+            {
+              "action_stress": null,
+              "berger_proxy_lambda_at_a_1": 120,
+              "candidate_J": "10/2",
+              "candidate_m": "8/2",
+              "candidate_tau": -128,
+              "d_lambda_d_ln_a_at_a_1": 128,
+              "mode": [
+                10,
+                1
+              ],
+              "projected_normalization": "I3 only conditional on the missing intertwiner",
+              "q": 8,
+              "slot": 2
+            }
+          ]
+        }
+      },
+      "why_not_licensed": [
+        "berger_spectrum.py calls its eigenvalue a scalar spectrum proxy rather than an action operator",
+        "the exact associated-bundle artifact explicitly says the legacy (k,j) identification is not asserted and requires an intertwiner",
+        "the earlier qj eigenfunction map is a conditional symbolic scaffold; its explicit map and harmonic m assignment remain open",
+        "the exact operator is a provisional parent-scalar carrier, not the localized fermion action carrier"
+      ]
+    },
+    "result": "BHSM_FROZEN_MODE_LEDGER_NOT_REALIZED_AS_SPECTRUM_OF_ANY_ACTION_OPERATOR",
+    "successful_action_canonical_projection": null,
+    "target": "K_f[h]=P_f^(3) B_f[h] P_f^(3); S_red=c_f^dagger G_f[h]K_f[h]c_f"
+  },
   "release_status": "BHSM_1_0_RELEASE_BLOCKED",
-  "remaining_exact_obstruction": "ACTION_DENSITY_FOR_FROZEN_MODE_AMPLITUDES_WITH_METRIC_VARIATION",
+  "remaining_exact_obstruction": "ACTION_DERIVED_INTERTWINER_FROM_FROZEN_KJQ_MODULES_TO_AN_ACTION_OPERATOR_SPECTRAL_DOMAIN",
   "response_matrices": {
     "charged_lepton": {
+      "conditional_proxy_matrix": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          -2,
+          0
+        ],
+        [
+          0,
+          0,
+          -18
+        ]
+      ],
+      "conditional_proxy_nondegenerate": true,
+      "conditional_proxy_promoted": false,
       "eigenvalues": null,
       "exact_zeros": null,
       "generalized_eigenvalues": null,
@@ -1599,6 +2945,25 @@
       "uncertainty": "EXACT_STRUCTURAL_OBSTRUCTION"
     },
     "down": {
+      "conditional_proxy_matrix": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          -32
+        ]
+      ],
+      "conditional_proxy_nondegenerate": false,
+      "conditional_proxy_promoted": false,
       "eigenvalues": null,
       "exact_zeros": null,
       "generalized_eigenvalues": null,
@@ -1609,6 +2974,25 @@
       "uncertainty": "EXACT_STRUCTURAL_OBSTRUCTION"
     },
     "up": {
+      "conditional_proxy_matrix": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          -72,
+          0
+        ],
+        [
+          0,
+          0,
+          -128
+        ]
+      ],
+      "conditional_proxy_nondegenerate": true,
+      "conditional_proxy_promoted": false,
       "eigenvalues": null,
       "exact_zeros": null,
       "generalized_eigenvalues": null,
@@ -1622,12 +3006,17 @@
   "source_audit": {
     "baseline": "3afc556ca7a6d64ce58b82053961c364de11fb8a",
     "checks": {
+      "berger_formula_is_explicitly_proxy": true,
       "boundary_operator_only_action_linked": true,
       "defect_hessian_invalid_as_charged_hierarchy": true,
+      "exact_scalar_action_operator_exists": true,
+      "harmonic_m_assignment_remains_open": true,
+      "legacy_kj_intertwiner_not_asserted": true,
       "localized_Yukawa_term_exists": true,
       "localized_fermion_term_exists": true,
       "mode_selection_is_finite_label_algorithm": true,
       "no_mode_amplitudes_in_term_registry": true,
+      "qj_eigenfunction_map_remains_open": true,
       "weak_factor_is_conditional": true,
       "weak_factor_lives_in_diagnostic_dressing": true
     },
@@ -1658,12 +3047,48 @@
         "sha256": "976bfce9a396df574a3b18895cf0bbb8a7836f8c49ef94b0868d2359a4f3a4ef"
       },
       {
+        "path": "src/bhsm/interface/twistor_berger_associated_bundle.py",
+        "sha256": "92e16d94b46ca786ff217b16533511fc73e787514da82cb2431a4721a3974795"
+      },
+      {
+        "path": "src/bhsm/interface/twistor_berger_action_normalization.py",
+        "sha256": "125c53556497ac0b29d8d23897515ebb8ed1de6b09a172040fd8d297a330eedf"
+      },
+      {
+        "path": "src/bhsm/interface/action_lemmas/source_search.py",
+        "sha256": "8b6467819cb7c8a88cdf9e43b99c7ac38db7b70c44f7ead9d79f38aec2a2cf5a"
+      },
+      {
+        "path": "src/bhsm/interface/action_lemmas/primitive_lattice_rule.py",
+        "sha256": "6012844074ed76e05fa0c99390d8f6cbbac488bb2e1fe5b8d2d947067699544b"
+      },
+      {
+        "path": "src/bhsm/interface/normalized_action_adjoint_pair/hermitian_action_rule.py",
+        "sha256": "168fc3df2bd9493c5ae8176d8988b3b3e61fd3a20de632d670aa16959ac01125"
+      },
+      {
+        "path": "src/bhsm/interface/primitive_charged_incidence/projector_reduction_audit.py",
+        "sha256": "03bf2c1bad1e36e7aeb2ff3e2756c3e5cdb8d72124cf20ccb909e770882c9e2e"
+      },
+      {
+        "path": "src/bhsm/interface/primitive_charged_incidence/omega_trace_audit.py",
+        "sha256": "5f7fd39cc0021e51ae283bf9ff3c1e28c2cdacdf009364c224d2357b6f0ccbae"
+      },
+      {
+        "path": "src/bhsm/interface/primitive_charged_incidence/physical_normalization_gate.py",
+        "sha256": "31840005d2503839964708b022f315431be954753a6530fa018c85a65d7db402"
+      },
+      {
         "path": "src/boundary_graded_defect_action_kernel.py",
         "sha256": "77e3b702f07429268dfa0a70d8b4f7939531a499f152fc6849758cb604d9c8fd"
       },
       {
         "path": "src/boundary_derivation.py",
         "sha256": "264063f91c736f98c7673c0f31dd4c044d9d55c50ff6b48436ddbd49bfd4c3ac"
+      },
+      {
+        "path": "src/berger_spectrum.py",
+        "sha256": "980ab621495a0e51d7286c0e0bcc543d3df47b7685b3186a79ed02b572d4dde4"
       },
       {
         "path": "src/mode_selection.py",
@@ -1688,6 +3113,14 @@
       {
         "path": "docs/gauge_coupling_registry_pattern.md",
         "sha256": "58cccd7f6ed9a314743fd79be506f2e91626dff319b58ff5942992bfc893f778"
+      },
+      {
+        "path": "theory/derived_qj_eigenfunction_map_status.md",
+        "sha256": "f413786a92b25573e0c439048ea879bceb0bad12031c090b82de61c6065ef7bd"
+      },
+      {
+        "path": "theory/derived_m_weight_assignment_status.md",
+        "sha256": "764d96dda4c0ef880c8c6af191dc73af9cd0213b21cf0783f1a843d0eabd498b"
       }
     ]
   },
@@ -1697,9 +3130,13 @@
   "validation": {
     "alpha_not_inserted": true,
     "frozen_modules_imported": true,
+    "ledger_action_intertwiner_absent": true,
     "no_action_density": true,
     "no_classical_stress_fabricated": true,
     "no_response_fabricated": true,
+    "projected_spectral_route_exhausted": true,
+    "proxy_derivatives_recorded": true,
+    "proxy_not_promoted": true,
     "sources_pass": true,
     "stronger_than_v8_2": true,
     "virtual_door_not_applied": true

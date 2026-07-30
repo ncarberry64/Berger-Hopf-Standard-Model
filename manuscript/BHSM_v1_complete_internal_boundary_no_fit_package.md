@@ -472,26 +472,29 @@ Current exact verdict:
 
 ## v8.3 classical mode-stress incidence addendum
 
-The v8.3 source audit sharpens the remaining obstruction. The frozen
-three-slot modules and their projector attachment are retained exactly, but
-the master action contains no classical mode profiles, amplitude variables,
-or metric-dependent quadratic operator whose stationary solutions are the
-frozen `(k,j)` ledger entries.
+The corrected v8.3 audit exhausts the basis-free spectral construction. The
+exact associated-scalar operator has normalized `(J,m)` eigenspaces and
+metric-dependent eigenvalues. The legacy Berger proxy can therefore be
+tested algebraically and yields conditional squashing derivatives
+`(0,-2,-18)`, `(0,-72,-128)`, and `(0,0,-32)` on the three frozen ledgers.
 
-The localized Dirac term produces only a family-central effective stress.
-The finite defect functional constrains labels and has no metric variation;
-the collar measure has no mode profiles to normalize; and the universal
-Brown--York response has no frozen-mode source. Hence the action-canonical
-Gram matrices, bilinear stresses, mixed Hessians, response matrices, mass
-ratios, and CKM basis are undefined.
+Those matrices are not physical outputs. Repository provenance explicitly
+leaves the legacy `(k,j)` intertwiner, explicit eigenfunction map, and
+harmonic assignment open, and the exact operator is a scalar carrier rather
+than the localized fermion carrier. The M4 Dirac block is family central;
+the finite defect and incidence blocks do not supply a normalized
+metric-dependent action operator on the frozen modules.
 
-A mode-bilinear metric source would also generate quartic backreaction after
-metric elimination about the zero-amplitude background, not a quadratic mass
-term. The virtual-door factor is not present in an action stress, and the
+Background quadratic spectral response is distinguished from quartic
+self-induced metric backreaction; the latter does not exclude the former.
+The former nevertheless remains undefined on the frozen physical modules.
+Hence the action-canonical Gram matrices, bilinear stresses, mixed Hessians,
+response matrices, mass ratios, and CKM basis remain undefined. The
+virtual-door factor is not present in an action stress, and the
 alpha-impedance interpretation lacks action attachment.
 
 RB-15 remains blocked and RB-16 remains downstream.
 
 Current exact verdict:
-`BHSM_CLASSICAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DENSITY_FOR_FROZEN_MODES`.
+`BHSM_FROZEN_MODE_LEDGER_NOT_REALIZED_AS_SPECTRUM_OF_ANY_ACTION_OPERATOR`.
 

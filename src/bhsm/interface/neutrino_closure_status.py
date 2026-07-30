@@ -26,10 +26,11 @@ NEUTRINO_PUBLIC_STATUS = (
 
 PUBLIC_REPO_STATUS = (
     "BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. "
-    "Current public status: v8.3 proves that the frozen three-slot modules have no corresponding "
-    "classical amplitude action density in the authoritative master action. Their action-canonical "
-    "Gram matrices, metric stresses, response matrices, mass ratios, and CKM therefore remain "
-    "undefined, with RB-15/RB-16 blocked."
+    "Current public status: v8.3 exhausts the basis-free projected-spectral route. The exact "
+    "associated-scalar operator is metric dependent and the legacy Berger proxy gives explicit "
+    "diagonal derivatives, but no action-derived intertwiner realizes the frozen (k,j,q) ledger "
+    "as that operator's normalized spectrum. Action-canonical stresses, response matrices, mass "
+    "ratios, and CKM therefore remain undefined, with RB-15/RB-16 blocked."
 )
 
 REMAINING_MISSING_OBJECTS = (
