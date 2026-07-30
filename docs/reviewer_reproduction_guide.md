@@ -37,3 +37,17 @@ between the blocked exact branch and valid reduced family, and the
 field-dependent Noether completion. Confirm that the D0 kinetic norm
 excludes historical D2 threading/Weyl pieces and that the scale artifact
 explicitly denies v6.31 because `G5` is unselected.
+
+## Reviewer checkpoint: v8.1
+
+```bash
+python -m bhsm.interface mode-resolved-curvature-status --format json
+python -m bhsm.interface mode-resolved-curvature-status --format markdown
+python -m bhsm.interface.master_action.mode_resolved_curvature_incidence --materialize
+```
+
+Verify the four-dimensional one-quarter trace split, the first-order
+cap-identified Brown--York response, the second-order signed-even intrinsic
+operator response, and the firewall between internal Hopf representations
+and physical S3 momentum harmonics. The artifact must define no family
+dimension, response matrix, mass ratio, or CKM result.

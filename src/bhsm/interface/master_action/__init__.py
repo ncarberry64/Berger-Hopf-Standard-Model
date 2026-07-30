@@ -1,7 +1,7 @@
 """BHSM master-action, transport, and curvature-response API.
 
 The v7.0 constants and v7.1 master-action report remain exported for
-artifact compatibility. Current v8.0 completion constants and status are
+artifact compatibility. Current v8.1 completion constants and status are
 exposed separately.
 """
 
@@ -18,14 +18,14 @@ from .report import (
 )
 from .validation import validate_model
 
-CURRENT_VERSION = "v8.0"
+CURRENT_VERSION = "v8.1"
 CURRENT_MISSING_OBJECT = (
-    "FAMILY_RESOLVING_ACTION_INCIDENCE_BEYOND_THE_"
-    "UNIVERSAL_CURVATURE_SCALAR"
+    "ACTION_DERIVED_INTERNAL_FERMION_BUNDLE_FACTOR_WITH_HOPF_"
+    "ACTION_FINITE_PROJECTOR_AND_LOCALIZED_YUKAWA_INCIDENCE"
 )
 CURRENT_VERDICT = (
-    "BHSM_MASS_RESPONSE_BLOCKED_BY_UNIVERSAL_RESPONSE_WITH_NO_"
-    "FAMILY_RESOLUTION"
+    "BHSM_FAMILY_RESOLUTION_REQUIRES_NEW_INTERNAL_FERMION_"
+    "BUNDLE_EXTENSION"
 )
 
 
@@ -71,6 +71,20 @@ def mass_curvature_response_status_to_markdown(payload=None):
     return status_to_markdown(payload)
 
 
+def mode_resolved_curvature_status_payload():
+    """Return the current v8.1 mode-resolved curvature status."""
+    from .mode_resolved_curvature_incidence import status_report
+
+    return status_report()
+
+
+def mode_resolved_curvature_status_to_markdown(payload=None):
+    """Render the current v8.1 mode-resolved curvature status."""
+    from .mode_resolved_curvature_incidence import status_to_markdown
+
+    return status_to_markdown(payload)
+
+
 __all__ = [
     "ARTIFACT_FILES",
     "CURRENT_MISSING_OBJECT",
@@ -87,6 +101,8 @@ __all__ = [
     "materialize",
     "mass_curvature_response_status_payload",
     "mass_curvature_response_status_to_markdown",
+    "mode_resolved_curvature_status_payload",
+    "mode_resolved_curvature_status_to_markdown",
     "observable_status_payload",
     "observable_status_to_markdown",
     "payloads",

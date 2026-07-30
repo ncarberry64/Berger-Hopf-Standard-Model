@@ -1,0 +1,393 @@
+{
+  "CKM": {
+    "CP_phase": null,
+    "Jarlskog": null,
+    "angles": null,
+    "matrix": null,
+    "reason": "no up/down physical response matrices exist"
+  },
+  "RB15": {
+    "resolution": "BHSM_FAMILY_RESOLUTION_REQUIRES_NEW_INTERNAL_FERMION_BUNDLE_EXTENSION",
+    "status": "BLOCKED_EXACT_OBJECT_PROVED"
+  },
+  "RB16": {
+    "release_package_generated": false,
+    "status": "DOWNSTREAM_BLOCKED"
+  },
+  "artifact": "BHSM_mode_resolved_curvature_incidence_v8_1",
+  "carrier_audit": [
+    {
+      "action_source": null,
+      "candidate": "internal Hopf-associated Dirac operator",
+      "eligible": false,
+      "exact_object": null,
+      "reason": "the M8-to-M5 reduction supplies associated scalar bundles but no parent spinor action, internal spinor bundle, chirality operator, lower-order endomorphism, or domain",
+      "status": "ABSENT_FROM_ACTION"
+    },
+    {
+      "action_source": "S_4,localized",
+      "adjoint": "formal Dirac adjoint on the supplied domain",
+      "bundle": "S_h tensor E_SM tensor C3_family",
+      "candidate": "localized tangential Dirac-Yukawa operator",
+      "chirality": "the supplied Standard Model chiral representation",
+      "covariance": "Spin(h) times G_SM",
+      "domain": "a supplied maximal-isotropic domain; no member is selected by the action",
+      "eligible": false,
+      "exact_object": "D_M4=i gamma^mu(nabla_mu^S_h+rho(A_SM)_mu)-Y(H)",
+      "hopf_action": "D_Hopf_twist=0",
+      "lower_order_terms": "-Y(H)",
+      "manifold": "M4",
+      "principal_symbol": "i gamma^mu xi_mu",
+      "reason": "its shape sensitivity is ordinary M4 stress/momentum and cannot turn spacetime harmonics into family states",
+      "status": "PHYSICAL_BUT_NO_INTERNAL_HOPF_ACTION"
+    },
+    {
+      "action_source": null,
+      "candidate": "Hopf-twisted localized Dirac operator",
+      "eligible": false,
+      "exact_object": null,
+      "reason": "the canonical Sp(1) Hopf connection does not act on Psi; a twist strength or boundary strength would be new input",
+      "status": "RETIRED_PROXY_REJECTED"
+    },
+    {
+      "action_source": "provisional M8 parent scalar fiber reduction",
+      "adjoint": "formally self-adjoint scalar Laplace type",
+      "bundle": "H_(J,m)=S7 times_(rho_J) V_J",
+      "candidate": "Berger scalar associated-bundle Laplace operator",
+      "chirality": null,
+      "connection": "canonical quaternionic-Hopf Sp(1) connection A",
+      "covariance": "left Sp(1) associated-bundle covariance",
+      "domain": "associated scalar sections with the selected M5 boundary domain; no physical fermion domain follows",
+      "eligible": false,
+      "exact_object": "O_(J,m)=-D_A^*D_A+lambda_(J,m)(L1,L2)+E_(J,m)",
+      "lower_order_terms": "lambda_(J,m)(L1,L2); E_(J,m)=0 in the minimal scalar reduction",
+      "manifold": "M5=I_t times S4, restricted geometrically at M4",
+      "principal_symbol": "-|xi|_g^2 identity_(V_J)",
+      "reason": "it is an internal geometric mode carrier, but it is scalar, has no action-selected finite projector, and is not a tensor factor of the localized fermion bundle",
+      "representation": "left Sp(1) irrep V_J of rank 2J+1 and preserved right U(1) weight m",
+      "status": "STRONGEST_EXACT_GEOMETRIC_CARRIER_ONLY"
+    },
+    {
+      "action_source": "S5 plus matcher constraints",
+      "candidate": "scalar/topographic Hessian",
+      "eligible": false,
+      "exact_object": "constrained cap/KKT scalar-metric Hessian",
+      "reason": "at fixed seam metric the cap scalar and localized Higgs/fermion cross-blocks vanish",
+      "status": "BLOCK_DIAGONAL_FROM_LOCALIZED_YUKAWA"
+    },
+    {
+      "action_source": "Einstein-scalar ADM and matcher equations",
+      "candidate": "coupled cap-response operator",
+      "eligible": false,
+      "exact_object": "closed-range constrained cap response",
+      "reason": "it acts on cap/seam geometric data and supplies no internal fermion representation",
+      "status": "GEOMETRIC_RESPONSE_WITHOUT_FAMILY_CARRIER"
+    },
+    {
+      "action_source": "conditional associated-scalar cap problem",
+      "candidate": "representation-resolved Dirichlet-to-Neumann map",
+      "eligible": false,
+      "exact_object": "Lambda_(J,m):boundary scalar data -> normal scalar data",
+      "reason": "a representation-resolved scalar DtN map can be defined only after its domain is selected and still has no Yukawa incidence or localized fermion bundle map",
+      "status": "CONDITIONAL_SCALAR_DTN_ONLY"
+    }
+  ],
+  "falsification_condition": "an existing action term must exhibit a nonzero equivariant map from an action-selected internal Hopf spinor/associated module into the localized fermion Yukawa incidence, together with its finite projector and domain",
+  "family_space": {
+    "derived_family_dimension": null,
+    "finite_action_selected_projector": null,
+    "fourth_mode_excluded": false,
+    "geometric_internal_tower": "{H_(J,m): rank(H_(J,m))=2J+1, J=0,1/2,1,...}",
+    "isolated_selected_cluster": null,
+    "physical_family_module": null,
+    "precisely_three_selected": false,
+    "selected_chirality": null,
+    "selected_standard_model_sector_representation": null,
+    "supplied_C3_family": "existing M4 field-content input, not a result of this audit",
+    "uniform_gap_theorem": null,
+    "why_rank_three_is_not_selected": "J=1 has rank three, but choosing it because its rank matches observed generations would be a forbidden manual selection; it is also a scalar Sp(1) representation, not a localized fermion family theorem"
+  },
+  "final_verdict": "BHSM_FAMILY_RESOLUTION_REQUIRES_NEW_INTERNAL_FERMION_BUNDLE_EXTENSION",
+  "first_nonzero_cap_even_shape_derivative": {
+    "brown_york_normal_derivative": "nabla_n pi_env^a_b|0=(kappa1/a^2)*diag(3,2,2,2)",
+    "brown_york_trace_normal_derivative": "9*kappa1/a^2",
+    "brown_york_traceless_normal_derivative": "(kappa1/(4*a^2))*diag(3,-1,-1,-1)",
+    "domain_warning": "no moving embedding or x-dependent endpoint is varied; doing so would violate the v6.24 fixed-domain audit",
+    "equivalence_scope": "delta_h A contracted with L_n h=2K gives the first shape variation when the domain is fixed and the measure variation is included. Since g_rho,rho=a^2, partial_rho h=2aK in the dimensionless repository collar, not 2K. At the equator K=0, the intrinsic operator variation starts at second order. The one-sided Brown--York traction instead starts through nabla_n K.",
+    "first_nonzero_cap_identified_brown_york_order": 1,
+    "internal_family_shape_order": null,
+    "internal_vertical_operator": {
+      "collar_derivative": null,
+      "operator": "lambda_(J,m)(L1,L2) identity_(V_J)",
+      "reason": "the action supplies no rho-dependent L1, L2, or Hopf connection profile; assigning one would add input"
+    },
+    "riccati_equation": "nabla_n K_ij=-R_i n j n+K_i k K^k_j",
+    "round_radial_curvature": "R_i n j n=a^-2 h_ij",
+    "signed_intrinsic_operator_parity": {
+      "first_derivative": 0,
+      "first_nonzero_order": 2,
+      "measure": "J(rho)=cos(rho)^3",
+      "metric_factor": "h_spatial(rho)=cos(rho)^2 h_spatial(0)",
+      "principal_action_bilinear_with_measure": "J(rho) A(rho)=cos(rho) A(0), so (J A)''(0)=-A(0)",
+      "tangential_laplacian": "A(rho)=sec(rho)^2 A(0), so A''(0)=2 A(0)"
+    },
+    "unit_inward_normal": "n=a^-1 partial_rho"
+  },
+  "full_brown_york_response": {
+    "canonical_momentum": "pi^a_b=kappa1(K^a_b-K delta^a_b)",
+    "cap_even_identification": "pull both cap momenta to M4 with the repository epsilon orientation factor before averaging",
+    "collar": "c_epsilon(t,x,rho)=(t,pi/2-epsilon rho,x); rho increases from the seam into either cap",
+    "equatorial_value": "pi_env^a_b|rho=0=0",
+    "full_mixed_tensor": "pi_env^a_b=kappa1*s*diag(-3,-2,-2,-2)",
+    "interpretation": "the nonzero traceless spacetime tensor distinguishes the time and spatial blocks, but remains proportional to the spatial identity and acts trivially on every internal representation",
+    "inward_shape_endomorphism": "K^a_b=diag(0,s,s,s), s=-tan(rho)/a",
+    "requested_one_third_correction": "1/3 is not traceless on four-dimensional M4; 1/4 is required. A 1/3 split would apply only to the spatial three-block.",
+    "round_induced_metric": "h(rho)=-N(t)^2 dt^2+a(t)^2 cos(rho)^2 gamma_S3",
+    "seam_dimension": 4,
+    "spatial_vertical_horizontal_anisotropy": 0,
+    "trace": "pi_env=pi_env^a_a=-9*kappa1*s",
+    "trace_part": "(1/4) pi_env delta^a_b",
+    "traceless_check": "tilde(pi)_env^a_a=0",
+    "traceless_part": "tilde(pi)_env^a_b=(kappa1*s/4)*diag(-3,1,1,1)"
+  },
+  "hopf_and_triality": {
+    "directional_response_candidates": {
+      "Delta_kappa": "kappa_V-kappa_H",
+      "berger_internal_value": "potentially nonzero for an internal Berger deformation",
+      "kappa_H": "(1/2) P_H^ab pi_env,ab",
+      "kappa_V": "P_V^ab pi_env,ab",
+      "licensed_physical_incidence": false,
+      "round_value": 0
+    },
+    "hopf_vertical_horizontal_structure": {
+      "acts_on_localized_fermion": false,
+      "global_and_covariant": true,
+      "internal_S3_fiber": "T S3=H direct_sum V; P_V=xi tensor eta; P_H=I-P_V",
+      "reason": "the canonical splitting belongs to the internal Hopf fiber; importing it as a preferred physical seam direction would mix internal and spacetime geometry",
+      "seam_direction_selected_by_authoritative_round_cap": false
+    },
+    "triality": {
+      "exact_projectors": "P_0,P_1,P_2 from the order-three outer action",
+      "exact_representation_space": "8_v direct_sum 8_s direct_sum 8_c",
+      "family_interpretation": "CONDITIONAL",
+      "localized_action_map": null,
+      "response_channels_proved_distinct": false,
+      "result": "triality supplies representation transport, not an action-derived three-state fermion kernel or projector"
+    }
+  },
+  "immediate_obstruction": "BHSM_FAMILY_RESPONSE_BLOCKED_BY_NO_HOPF_ACTION_ON_LOCALIZED_FERMION_BUNDLE",
+  "integrity": {
+    "arbitrary_collar_coefficient_used": false,
+    "arbitrary_matrix_input_used": false,
+    "assumed_three_family_module_used": false,
+    "fit_used": false,
+    "frozen_prediction_changed": false,
+    "hidden_calibration_used": false,
+    "inserted_zero_mode_used": false,
+    "measured_mode_selection_used": false,
+    "new_action_extension_declared": false,
+    "new_mediator_used": false,
+    "post_comparison_retuning_used": false,
+    "second_scale_used": false,
+    "spacetime_harmonic_relabeling_used": false
+  },
+  "internal_vs_spacetime_modes": {
+    "candidate_extended_bundle": "S_h tensor E_SM tensor F_BH, with F_BH action-selected from the Hopf reduction",
+    "candidate_extension_present": false,
+    "firewall": "M4/S3 momentum labels are not family labels and are never counted as generations",
+    "hopf_associated_factor_in_localized_bundle": null,
+    "internal_geometric_modes_exist": true,
+    "internal_module_tower": "{H_(J,m)=S7 times_(rho_J) V_J; rank=2J+1}",
+    "localized_fermion_bundle": "S_h tensor E_SM tensor C3_family",
+    "ordinary_spacetime_modes": "eigenmodes of the tangential M4/S3 differential operators"
+  },
+  "mass_ratio_predictions": null,
+  "mode_stress_incidence": {
+    "definition": "T_ab^(ij)=<u_i,(delta A/delta h^ab)u_j>; R_ij=int_M4 pi_env^ab T_ab^(ij) dmu_h",
+    "exact_geometric_scalar_result": "within a fixed irreducible V_J, covariance makes the vertical lambda_(J,m) contribution proportional to identity_(V_J)",
+    "higher_even_definition": "use the second variation of the full action bilinear, including J(rho)=cos(rho)^3",
+    "localized_fermion_result": null,
+    "ordinary_tangential_result": "the second collar response is diagonal in ordinary spacetime eigenmodes and is therefore momentum dependence, not family incidence",
+    "reason": "there is no common bundle, common domain, or action cross-term on which both the Hopf mode and localized fermion states live"
+  },
+  "physical_transport": {
+    "reason": "there are no dimensionless response singular values or left singular vectors to transport",
+    "reference_scale": "mu_star=ell_star^-1; mu_hat_star=1",
+    "scheme": "overline_MS",
+    "transport_performed": false
+  },
+  "post_freeze_comparison": {
+    "comparison_performed_after_freeze": true,
+    "external_mass_and_mixing_references": "UNRELATED_OBSERVABLE",
+    "freeze_hash_verified_before_comparison": "34F9C1AB744ECFBE23292CE04FBB7A092607BD78711143B205257C8471D4FDA5",
+    "historical_mode_and_mass_screens": "UNRELATED_OBSERVABLE",
+    "operator_retuned_after_comparison": false,
+    "reason": "v8.1 freezes no physical response matrix, ratio, or mixing prediction to compare",
+    "status": "NO_PHYSICAL_PREDICTION_AVAILABLE_FOR_COMPARISON"
+  },
+  "prediction_freeze": {
+    "CKM": null,
+    "carrier_operator": {
+      "closest_exact_geometric_carrier": "O_(J,m)=-D_A^*D_A+lambda_(J,m)(L1,L2)",
+      "closest_exact_physical_carrier": "D_M4=i gamma^mu(nabla_mu^S_h+rho(A_SM)_mu)-Y(H)",
+      "physical_mode_resolved_carrier": null,
+      "reason": "the first carrier is an internal scalar unconnected to Psi; the second is physical but has D_Hopf_twist=0",
+      "selection_status": "NO_ELIGIBLE_FERMION_INCIDENCE_CARRIER"
+    },
+    "collar_order": {
+      "brown_york_cap_identified": 1,
+      "internal_family_response": null,
+      "intrinsic_signed_even_operator": 2
+    },
+    "comparison_data_used": false,
+    "falsification_condition": "an existing action term must exhibit a nonzero equivariant map from an action-selected internal Hopf spinor/associated module into the localized fermion Yukawa incidence, together with its finite projector and domain",
+    "family_dimension": null,
+    "full_tensor_response": {
+      "canonical_momentum": "pi^a_b=kappa1(K^a_b-K delta^a_b)",
+      "cap_even_identification": "pull both cap momenta to M4 with the repository epsilon orientation factor before averaging",
+      "collar": "c_epsilon(t,x,rho)=(t,pi/2-epsilon rho,x); rho increases from the seam into either cap",
+      "equatorial_value": "pi_env^a_b|rho=0=0",
+      "full_mixed_tensor": "pi_env^a_b=kappa1*s*diag(-3,-2,-2,-2)",
+      "interpretation": "the nonzero traceless spacetime tensor distinguishes the time and spatial blocks, but remains proportional to the spatial identity and acts trivially on every internal representation",
+      "inward_shape_endomorphism": "K^a_b=diag(0,s,s,s), s=-tan(rho)/a",
+      "requested_one_third_correction": "1/3 is not traceless on four-dimensional M4; 1/4 is required. A 1/3 split would apply only to the spatial three-block.",
+      "round_induced_metric": "h(rho)=-N(t)^2 dt^2+a(t)^2 cos(rho)^2 gamma_S3",
+      "seam_dimension": 4,
+      "spatial_vertical_horizontal_anisotropy": 0,
+      "trace": "pi_env=pi_env^a_a=-9*kappa1*s",
+      "trace_part": "(1/4) pi_env delta^a_b",
+      "traceless_check": "tilde(pi)_env^a_a=0",
+      "traceless_part": "tilde(pi)_env^a_b=(kappa1*s/4)*diag(-3,1,1,1)"
+    },
+    "internal_mode_module": {
+      "derived_family_dimension": null,
+      "finite_action_selected_projector": null,
+      "fourth_mode_excluded": false,
+      "geometric_internal_tower": "{H_(J,m): rank(H_(J,m))=2J+1, J=0,1/2,1,...}",
+      "isolated_selected_cluster": null,
+      "physical_family_module": null,
+      "precisely_three_selected": false,
+      "selected_chirality": null,
+      "selected_standard_model_sector_representation": null,
+      "supplied_C3_family": "existing M4 field-content input, not a result of this audit",
+      "uniform_gap_theorem": null,
+      "why_rank_three_is_not_selected": "J=1 has rank three, but choosing it because its rank matches observed generations would be a forbidden manual selection; it is also a scalar Sp(1) representation, not a localized fermion family theorem"
+    },
+    "mass_ratios": null,
+    "normalization": null,
+    "operator_domain": "no common internal-fermion domain; existing scalar and M4 fermion domains remain distinct",
+    "response_matrix": {
+      "charged_lepton": {
+        "mass_ratios": null,
+        "matrix": null,
+        "normalization": null,
+        "rank": null,
+        "reason": "no action-derived physical family module, projector, and left/right carrier pair exist",
+        "singular_values": null
+      },
+      "down": {
+        "mass_ratios": null,
+        "matrix": null,
+        "normalization": null,
+        "rank": null,
+        "reason": "no action-derived physical family module, projector, and left/right carrier pair exist",
+        "singular_values": null
+      },
+      "up": {
+        "mass_ratios": null,
+        "matrix": null,
+        "normalization": null,
+        "rank": null,
+        "reason": "no action-derived physical family module, projector, and left/right carrier pair exist",
+        "singular_values": null
+      }
+    },
+    "retuning_permitted": false,
+    "scale": "mu_star=ell_star^-1; mu_hat_star=1",
+    "scheme": "overline_MS",
+    "status": "FROZEN_EXACT_OBSTRUCTION",
+    "symmetry_representation": {
+      "across_blocks": "different (J,m) blocks may have different scalar eigenvalues, but no action-derived finite projector identifies such blocks as same-charge fermion families",
+      "geometric_module": "each fixed V_J in H_(J,m)",
+      "multiplicity_space": "no action-selected multiplicity basis or noncentral endomorphism",
+      "physical_family_theorem_applicable": false,
+      "reason": "no physical F_BH module is present",
+      "representation_property": "V_J is irreducible over C",
+      "response_covariance": "the round-cap collar response commutes with left Sp(1)",
+      "schur_result": "End_Sp(1)(V_J)=C identity_(V_J); the exact round response is central on each irreducible associated-mode block",
+      "symmetry_group": "left Sp(1), with preserved right U(1) weight m",
+      "triality_result": "the Brown--York/collar geometry has no triality-specific action, so any transported triality copies receive the same central response unless a new coupling breaks that symmetry"
+    },
+    "uncertainty": "EXACT_STRUCTURAL_OBSTRUCTION_WITHIN_THE_AUTHORITATIVE_ACTION",
+    "version": "v8.1"
+  },
+  "prediction_freeze_sha256": "34F9C1AB744ECFBE23292CE04FBB7A092607BD78711143B205257C8471D4FDA5",
+  "release_verdict": "BHSM_1_0_RELEASE_BLOCKED",
+  "remaining_exact_obstruction": "ACTION_DERIVED_INTERNAL_FERMION_BUNDLE_FACTOR_WITH_HOPF_ACTION_FINITE_PROJECTOR_AND_LOCALIZED_YUKAWA_INCIDENCE",
+  "response_matrices": {
+    "charged_lepton": {
+      "mass_ratios": null,
+      "matrix": null,
+      "normalization": null,
+      "rank": null,
+      "reason": "no action-derived physical family module, projector, and left/right carrier pair exist",
+      "singular_values": null
+    },
+    "down": {
+      "mass_ratios": null,
+      "matrix": null,
+      "normalization": null,
+      "rank": null,
+      "reason": "no action-derived physical family module, projector, and left/right carrier pair exist",
+      "singular_values": null
+    },
+    "up": {
+      "mass_ratios": null,
+      "matrix": null,
+      "normalization": null,
+      "rank": null,
+      "reason": "no action-derived physical family module, projector, and left/right carrier pair exist",
+      "singular_values": null
+    }
+  },
+  "response_result": "BHSM_MODE_RESOLVED_CURVATURE_INCIDENCE_NOT_CONSTRUCTED",
+  "selected_carrier": {
+    "closest_exact_geometric_carrier": "O_(J,m)=-D_A^*D_A+lambda_(J,m)(L1,L2)",
+    "closest_exact_physical_carrier": "D_M4=i gamma^mu(nabla_mu^S_h+rho(A_SM)_mu)-Y(H)",
+    "physical_mode_resolved_carrier": null,
+    "reason": "the first carrier is an internal scalar unconnected to Psi; the second is physical but has D_Hopf_twist=0",
+    "selection_status": "NO_ELIGIBLE_FERMION_INCIDENCE_CARRIER"
+  },
+  "source_main_sha": "45e5030d672f6805b27e8cc0552d474aa8d4a72d",
+  "sprint": "bhsm-mode-resolved-curvature-incidence-v8-1",
+  "symmetry_centrality": {
+    "across_blocks": "different (J,m) blocks may have different scalar eigenvalues, but no action-derived finite projector identifies such blocks as same-charge fermion families",
+    "geometric_module": "each fixed V_J in H_(J,m)",
+    "multiplicity_space": "no action-selected multiplicity basis or noncentral endomorphism",
+    "physical_family_theorem_applicable": false,
+    "reason": "no physical F_BH module is present",
+    "representation_property": "V_J is irreducible over C",
+    "response_covariance": "the round-cap collar response commutes with left Sp(1)",
+    "schur_result": "End_Sp(1)(V_J)=C identity_(V_J); the exact round response is central on each irreducible associated-mode block",
+    "symmetry_group": "left Sp(1), with preserved right U(1) weight m",
+    "triality_result": "the Brown--York/collar geometry has no triality-specific action, so any transported triality copies receive the same central response unless a new coupling breaks that symmetry"
+  },
+  "validation": {
+    "RB15_exact": true,
+    "RB16_downstream": true,
+    "all_carriers_audited": true,
+    "comparison_postdates_freeze": true,
+    "first_nonzero_orders_computed": true,
+    "four_dimensional_trace_split": true,
+    "freeze_hashed": true,
+    "internal_spacetime_firewall": true,
+    "no_family_dimension_assumed": true,
+    "no_ineligible_carrier_selected": true,
+    "no_internal_profile_fabricated": true,
+    "no_post_comparison_retuning": true,
+    "no_response_matrix_fabricated": true,
+    "traceless_response_retained": true
+  },
+  "validation_passed": true,
+  "version": "v8.1"
+}

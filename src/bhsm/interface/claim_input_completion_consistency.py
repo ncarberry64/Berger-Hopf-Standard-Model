@@ -420,9 +420,9 @@ def historical_canonical_completion_gate_payload() -> dict[str, Any]:
 
 
 def canonical_completion_gate_payload() -> dict[str, Any]:
-    """Return the current mass-curvature-response completion gate."""
+    """Return the current mode-resolved-curvature completion gate."""
 
-    from bhsm.interface.master_action.mass_curvature_response import (
+    from bhsm.interface.master_action.mode_resolved_curvature_incidence import (
         completion_gate_payload as current_payload,
     )
 

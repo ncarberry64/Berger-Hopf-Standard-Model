@@ -306,6 +306,12 @@ from .master_action.mass_curvature_response import (
 from .master_action.mass_curvature_response import (
     status_to_markdown as mass_curvature_response_status_to_markdown,
 )
+from .master_action.mode_resolved_curvature_incidence import (
+    status_report as mode_resolved_curvature_status_payload,
+)
+from .master_action.mode_resolved_curvature_incidence import (
+    status_to_markdown as mode_resolved_curvature_status_to_markdown,
+)
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -822,6 +828,13 @@ def build_parser() -> argparse.ArgumentParser:
     mass_curvature_response.add_argument(
         "--format", choices=("json", "markdown"), default="markdown"
     )
+    mode_resolved_curvature = commands.add_parser(
+        "mode-resolved-curvature-status",
+        help="Render the BHSM v8.1 mode-resolved curvature incidence",
+    )
+    mode_resolved_curvature.add_argument(
+        "--format", choices=("json", "markdown"), default="markdown"
+    )
     return parser
 
 
@@ -853,6 +866,16 @@ def main(argv: Sequence[str] | None = None) -> int:
         if args.format == "markdown":
             print(
                 mass_curvature_response_status_to_markdown(payload),
+                end="",
+            )
+        else:
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        return 0
+    if args.command == "mode-resolved-curvature-status":
+        payload = mode_resolved_curvature_status_payload()
+        if args.format == "markdown":
+            print(
+                mode_resolved_curvature_status_to_markdown(payload),
                 end="",
             )
         else:

@@ -758,3 +758,18 @@ The command reports the adopted invariant’s independent variation, source
 functionals and Green form; the unresolved `U(1)` self-adjoint domain family;
 actual-profile upper/lower B1 cap spectral diagnostics; the zero minimal
 light-sector Schur response; and the active operator/domain/coupling gate.
+
+<!-- BHSM_MODE_RESOLVED_CURVATURE_INCIDENCE_V8_1 -->
+## Mode-resolved curvature incidence v8.1
+
+```bash
+python -m bhsm.interface mode-resolved-curvature-status --format json
+python -m bhsm.interface mode-resolved-curvature-status --format markdown
+python -m bhsm.interface.master_action.mode_resolved_curvature_incidence --materialize
+```
+
+The command reports the exact carrier audit, internal/spacetime-mode
+firewall, Hopf and triality actions, full Brown--York tensor, corrected
+four-dimensional trace split, first nonzero cap-even collar responses,
+mode-stress and symmetry-centrality results, physical family-module
+obstruction, prediction freeze, and RB-15/RB-16 status.

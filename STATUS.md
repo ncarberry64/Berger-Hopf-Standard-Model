@@ -9,11 +9,12 @@ BHSM is an artifact-backed mathematical and computational research framework,
 not a replacement for the Standard Model established by empirical tests. Frozen
 internal prediction records, executable interfaces, deterministic artifacts,
 and extensive geometric/action calculations exist. The v7.2 finite-input
-physical observable map is complete in one declared scheme. BHSM v8.0 adds
-the unique minimal Brown--York curvature-response coupling, but its scalar
-response is family-universal and the action supplies no positive
-core/surface energy-envelopment functional. It therefore produces no
-distinct mass hierarchy or CKM prediction.
+physical observable map is complete in one declared scheme. BHSM v8.1
+retains the full Brown--York tensor and computes its first nonzero
+equatorial response. The Hopf reduction supplies an exact internal scalar
+associated-bundle tower, but the localized fermion bundle has no Hopf factor
+and the action selects no finite physical family projector. It therefore
+produces no distinct mass hierarchy or CKM prediction.
 
 Preferred current classifications are: **Adopted from established
 physics/mathematics**, **Adopted BHSM axiom**, **BHSM identification**,
@@ -68,7 +69,7 @@ Reviewer entry points:
 [claim boundaries](CLAIMS.md), and
 [reproduction guide](docs/reviewer_reproduction_guide.md).
 
-BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: the finite-input physical observable map is complete in one declared scheme; v8.0 adds the unique minimal Brown-York curvature-response coupling, but the response is family-universal and the action supplies no positive core/surface energy-envelopment functional, so no distinct mass hierarchy or CKM prediction follows and RB-15/RB-16 remain blocked.
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v8.1 retains the full Brown--York tensor and computes its first equatorial shape response. The exact internal scalar Hopf tower is not a factor of the localized fermion bundle and no physical family projector is selected, so no distinct mass hierarchy or CKM prediction follows and RB-15/RB-16 remain blocked.
 
 BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity. Physical eV/GeV neutrino mass closure remains open pending a numeric neutral stiffness length sqrt(A_nu/Z_nu), a physical K_neutral,eff map in m^-2, and complete-action derivation of the admissible response cone.
 
@@ -2661,3 +2662,27 @@ RB-15 remains `BLOCKED_EXACT_OBJECT_PROVED`; RB-16 remains downstream.
 
 Current exact verdict:
 `BHSM_MASS_RESPONSE_BLOCKED_BY_UNIVERSAL_RESPONSE_WITH_NO_FAMILY_RESOLUTION`.
+
+## v8.1 mode-resolved curvature incidence
+
+BHSM v8.1 retains the complete Brown--York momentum. On the round collar,
+the four-dimensional trace split is
+`pi_env^ab=(1/4)(h_cd pi_env^cd)h^ab+tilde(pi)_env^ab`; the proposed
+one-third coefficient would not be traceless on M4. The cap-identified
+Brown--York traction has a nonzero first normal derivative, while the signed
+intrinsic metric/operator expansion is even and first changes at second
+order. Both responses remain spatially isotropic on the round branch.
+
+The v7.1 reduction supplies exact internal scalar associated bundles
+`H_(J,m)=S7 times_(rho_J) V_J` of rank `2J+1`. It supplies no internal
+fermion parent operator or action map attaching such a module to
+`S_h tensor E_SM tensor C3_family`; the exact localized Dirac operator has
+`D_Hopf_twist=0`. No finite `(J,m)` projector, chirality, family dimension,
+response matrix, mass ratio, or CKM invariant follows. Ordinary M4/S3
+harmonics remain spacetime momentum states and are not relabeled as
+families.
+
+RB-15 remains `BLOCKED_EXACT_OBJECT_PROVED`; RB-16 remains downstream.
+
+Current exact verdict:
+`BHSM_FAMILY_RESOLUTION_REQUIRES_NEW_INTERNAL_FERMION_BUNDLE_EXTENSION`.
