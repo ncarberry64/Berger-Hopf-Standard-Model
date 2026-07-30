@@ -5,7 +5,7 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
-BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v8.3 exhausts the basis-free projected-spectral route. The exact associated-scalar operator is metric dependent and the legacy Berger proxy gives explicit diagonal derivatives, but no action-derived intertwiner realizes the frozen `(k,j,q)` ledger as that operator's normalized spectrum. Action-canonical stresses, response matrices, mass ratios, and CKM therefore remain undefined, with RB-15/RB-16 blocked.
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v8.3 exhausts the basis-free projected-spectral route. The exact associated-scalar operator is metric dependent and the legacy Berger proxy gives explicit diagonal derivatives, but no action-derived intertwiner realizes the frozen (k,j,q) ledger as that operator's normalized spectrum. Action-canonical stresses, response matrices, mass ratios, and CKM therefore remain undefined, with RB-15/RB-16 blocked.
 
 This independent mathematical-physics project investigates whether
 Berger-Hopf boundary geometry can organize structures associated with
