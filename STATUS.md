@@ -2697,6 +2697,11 @@ triality projectors conditionally realize the same three slots; the
 authoritative action ledger types the mode projector as an independent finite
 generation-module input.
 
+BHSM is treated here as a deterministic geometric boundary theory: classical
+geometry, topology, variational boundary data, and resonances precede the
+effective particle/QFT description. The v7.2 observable map is a
+`GEOMETRIC_TO_QFT_CORRESPONDENCE`, not a microscopic-ontology theorem.
+
 The complete operational boundary equations admit infinitely many lepton and
 up roots and four nonzero down roots. The stored `n_modes=2` cutoff is not
 action-derived, and no physical domain or gap excludes the higher roots.
@@ -2706,6 +2711,10 @@ mass ratio, or CKM observable.
 
 The domain-wall replacement is paused and non-authoritative. RB-15 remains
 `BLOCKED_EXACT_OBJECT_PROVED`; RB-16 remains downstream.
+The separate Layer-Q status is
+`OPEN_EMERGENT_QUANTUM_CORRESPONDENCE`; it does not replace the Layer-G
+higher-mode obstruction and prevents any claim of a demonstrated full
+quantum-theory replacement.
 
 Current exact verdict:
 `BHSM_ORIGINAL_GENERATION_PROJECTOR_BLOCKED_BY_UNEXCLUDED_HIGHER_MODES`.

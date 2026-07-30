@@ -14,6 +14,15 @@ N_{\rm family}=1\ {\rm base}+2\ {\rm excitations}=3.
 No domain-wall cap-fermion action is committed, the field ledger is not
 replaced, and the original mode architecture is not removed.
 
+> BHSM is formulated as a deterministic geometric boundary theory in which particle and quantum-field descriptions are intended to emerge from classical nonlinear modes, topology, and interface response. Standard QFT is used as an effective observable correspondence, not assumed to be the fundamental microscopic ontology. Accordingly, the present campaign first tests the original finite BHSM boundary-mode generation architecture before introducing additional quantum-field primitives.
+
+The causal order used here is geometry and topology, then the classical
+boundary-value problem, then discrete resonances and modes, and only then
+effective particle and QFT descriptions. Differential operators, spectral
+projectors, and self-adjoint domains are admissible when they arise from the
+classical geometric action or its Hessian; resemblance to a microscopic QFT
+operator is not an action source.
+
 ## Provenance and mode assignments
 
 The repository supplies the charged-sector ledger in `src/constants.py` and
@@ -203,6 +212,22 @@ does not close.
 The domain-wall route remains a paused, non-authoritative fallback. The next
 exact object is an action/domain theorem selecting exactly the stored base
 and two excitation modes while excluding all displayed higher roots.
+
+Layer G is the deterministic geometric-core problem. In this campaign its
+finite projector is recovered, but its higher-mode exclusion and
+mode-specific interface response remain blocked. Layer Q is the later map
+from geometric dynamics to effective quantum states, probabilities,
+spin-statistics, scattering, decay, and radiative observables. Its status is
+
+`OPEN_EMERGENT_QUANTUM_CORRESPONDENCE`.
+
+That open correspondence does not by itself invalidate the classical
+projector campaign, but it prevents a claim that BHSM has already
+demonstrated a full replacement for quantum theory. The v7.2 Standard Model
+observable map is retained as `GEOMETRIC_TO_QFT_CORRESPONDENCE`; its gauge
+and Yukawa parameters are `EFFECTIVE_QFT_PARAMETER`, `G_F` is
+`EMPIRICAL_CALIBRATION`, and the legacy overlap/CKM rules remain
+`HISTORICAL_SCREEN`.
 
 The singular v8.2 verdict is
 

@@ -2008,6 +2008,9 @@ Exact verdict:
 
 Supported:
 
+- the deterministic causal order from geometry/topology through a classical
+  boundary-value problem and discrete modes to effective particle/QFT
+  correspondence;
 - recovery of the original one-base-plus-two-excitation mode triples;
 - a rank-three orthogonal projector on each supplied charged-sector triple;
 - exact triality projector algebra and its conditional Fourier
@@ -2030,6 +2033,11 @@ Not supported:
 - calling the scalar proxy modes localized fermion modes;
 - reusing historical overlap or CKM screens as action-derived response;
 - promoting the paused domain-wall route.
+- treating effective Standard Model QFT parameters as demonstrated
+  microscopic BHSM primitives;
+- claiming probabilistic, Bell-compatible, spin-statistics, scattering,
+  decay, or radiative quantum emergence while its status is
+  `OPEN_EMERGENT_QUANTUM_CORRESPONDENCE`.
 
 Exact verdict:
 `BHSM_ORIGINAL_GENERATION_PROJECTOR_BLOCKED_BY_UNEXCLUDED_HIGHER_MODES`.

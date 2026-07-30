@@ -27,6 +27,16 @@ FINAL_VERDICT = (
     "BHSM_ORIGINAL_GENERATION_PROJECTOR_BLOCKED_BY_UNEXCLUDED_HIGHER_MODES"
 )
 RELEASE_VERDICT = "BHSM_1_0_RELEASE_BLOCKED"
+DOCTRINE_STATEMENT = (
+    "BHSM is formulated as a deterministic geometric boundary theory in "
+    "which particle and quantum-field descriptions are intended to emerge "
+    "from classical nonlinear modes, topology, and interface response. "
+    "Standard QFT is used as an effective observable correspondence, not "
+    "assumed to be the fundamental microscopic ontology. Accordingly, the "
+    "present campaign first tests the original finite BHSM boundary-mode "
+    "generation architecture before introducing additional quantum-field "
+    "primitives."
+)
 
 SECTOR_MODES: dict[str, tuple[tuple[int, int], ...]] = {
     "charged_lepton": ((0, 0), (5, 2), (9, 3)),
@@ -127,6 +137,54 @@ def original_doctrine_provenance() -> list[dict[str, Any]]:
             "classification": "AUTHORITATIVE_V7_1_BOUNDARY",
         },
     ]
+
+
+def foundational_doctrine() -> dict[str, Any]:
+    return {
+        "statement": DOCTRINE_STATEMENT,
+        "causal_order": [
+            "geometry and topology",
+            "classical boundary-value problem",
+            "discrete resonances and modes",
+            "effective particles and QFT",
+        ],
+        "Layer_G_geometric_core": {
+            "ontology": (
+                "deterministic action/field equations, topology, variational "
+                "domain, classical modes, and interface response"
+            ),
+            "generation_projector_status": (
+                "FINITE_INPUT_RECOVERED_HIGHER_MODE_EXCLUSION_BLOCKED"
+            ),
+            "mode_response_status": (
+                "BLOCKED_BY_UNDEFINED_CLASSICAL_MODE_STRESS"
+            ),
+        },
+        "Layer_Q_emergent_quantum_correspondence": {
+            "status": "OPEN_EMERGENT_QUANTUM_CORRESPONDENCE",
+            "v7_2_role": "GEOMETRIC_TO_QFT_CORRESPONDENCE",
+            "open_objects": [
+                "probabilistic measurement statistics",
+                "Bell-compatible correlations",
+                "spin-statistics",
+                "unitary effective evolution",
+                "scattering and decay rules",
+                "radiative observables",
+            ],
+            "geometric_core_blocked_solely_by_Layer_Q": False,
+        },
+        "output_typing": {
+            "Brown_York_and_shape_response": "GEOMETRIC_CORE_OUTPUT",
+            "localized_SM_gauge_and_Yukawa_parameters": (
+                "EFFECTIVE_QFT_PARAMETER"
+            ),
+            "v7_2_observable_map": "GEOMETRIC_TO_QFT_CORRESPONDENCE",
+            "G_F": "EMPIRICAL_CALIBRATION",
+            "full_quantum_emergence": "OPEN_EMERGENT_QUANTUM_MAP",
+            "legacy_overlap_and_CKM_rules": "HISTORICAL_SCREEN",
+        },
+        "microscopic_quantum_field_primitive_added": False,
+    }
 
 
 def historical_mode_assignments() -> dict[str, Any]:
@@ -446,6 +504,7 @@ def domain_wall_fallback() -> dict[str, Any]:
 def prediction_freeze() -> dict[str, Any]:
     return {
         "version": VERSION,
+        "foundational_doctrine": foundational_doctrine(),
         "original_doctrine": "one base slot plus two excitation slots",
         "mode_assignments": historical_mode_assignments(),
         "selection_operator": boundary_selection_operator(),
@@ -508,6 +567,10 @@ def completion_gate_payload() -> dict[str, Any]:
         "projector_classification": (
             "INDEPENDENT_FINITE_GENERATION_MODULE_INPUT"
         ),
+        "Layer_G_generation_status": (
+            "FINITE_INPUT_RECOVERED_HIGHER_MODE_EXCLUSION_BLOCKED"
+        ),
+        "Layer_Q_status": "OPEN_EMERGENT_QUANTUM_CORRESPONDENCE",
         "distinct_action_derived_prediction_exists": False,
         "RB01": {
             "status": "CLOSED",
@@ -571,6 +634,7 @@ def payload() -> dict[str, Any]:
         "sprint": SPRINT,
         "source_main_sha": SOURCE_MAIN_SHA,
         "steering_correction_applied": True,
+        "foundational_doctrine": foundational_doctrine(),
         "original_doctrine_provenance": original_doctrine_provenance(),
         "base_plus_two_excitation_architecture": {
             "rule": "N_family=1 base+2 excitations=3",
@@ -658,6 +722,13 @@ def payload() -> dict[str, Any]:
         "domain_wall_not_committed": not result[
             "fallback_domain_wall_status"
         ]["new_cap_fermion_action_committed"],
+        "deterministic_doctrine_recorded": result[
+            "foundational_doctrine"
+        ]["statement"] == DOCTRINE_STATEMENT,
+        "quantum_correspondence_open": result[
+            "foundational_doctrine"
+        ]["Layer_Q_emergent_quantum_correspondence"]["status"]
+        == "OPEN_EMERGENT_QUANTUM_CORRESPONDENCE",
         "RB15_exact": (
             result["RB15"]["status"] == "BLOCKED_EXACT_OBJECT_PROVED"
         ),
@@ -673,6 +744,7 @@ def status_report() -> dict[str, Any]:
     data = payload()
     return {
         "version": VERSION,
+        "foundational_doctrine": data["foundational_doctrine"],
         "original_doctrine_provenance": data[
             "original_doctrine_provenance"
         ],
@@ -747,6 +819,10 @@ def status_to_markdown(report: dict[str, Any] | None = None) -> str:
             "- Mode-response matrices: `None`",
             "- Mass ratios: `None`",
             "- CKM: `None`",
+            (
+                "- Emergent quantum correspondence: "
+                "`OPEN_EMERGENT_QUANTUM_CORRESPONDENCE`"
+            ),
             (
                 "- Prediction freeze SHA-256: "
                 f"`{report['prediction_freeze_sha256']}`"

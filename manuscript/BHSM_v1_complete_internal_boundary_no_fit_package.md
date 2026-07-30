@@ -437,6 +437,14 @@ Current exact verdict:
 
 ## v8.2 original generation-projector recovery addendum
 
+BHSM is formulated as a deterministic geometric boundary theory in which
+particle and quantum-field descriptions are intended to emerge from
+classical nonlinear modes, topology, and interface response. Standard QFT is
+used as an effective observable correspondence, not assumed to be the
+fundamental microscopic ontology. Accordingly, the present campaign first
+tests the original finite BHSM boundary-mode generation architecture before
+introducing additional quantum-field primitives.
+
 The corrected campaign recovers the historical charged-sector triples as one
 base mode plus two excitation modes and constructs their rank-three
 orthogonal projectors. The exact triality projectors conditionally realize
@@ -454,6 +462,10 @@ The full interface tensor cannot be projected into a physical family
 response because the proxy mode stress is absent from the localized fermion
 action. Mass ratios and CKM therefore remain undefined. The domain-wall
 replacement is paused. RB-15 remains blocked and RB-16 remains downstream.
+The emergent Layer-Q map remains
+`OPEN_EMERGENT_QUANTUM_CORRESPONDENCE`; this is distinct from the classical
+Layer-G higher-mode obstruction and bars a claim of a completed quantum
+replacement.
 
 Current exact verdict:
 `BHSM_ORIGINAL_GENERATION_PROJECTOR_BLOCKED_BY_UNEXCLUDED_HIGHER_MODES`.
