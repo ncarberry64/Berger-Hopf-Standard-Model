@@ -18,6 +18,7 @@ criteria protect the no-retuning status of the frozen branches.
 | `F11` | Any nondegenerate charged-sector singular-value ratio falsifies the universal v8.0 Brown--York response as a flavor mechanism; the post-freeze repository comparison already does so. | `INVALIDATED` |
 | `F12` | The v8.1 obstruction is overturned only by an existing nonzero action map from an action-selected internal Hopf fermion module, with finite projector and domain, into localized Yukawa incidence; the repository audit finds none. | `BLOCKED_EXACT_OBJECT_PROVED` |
 | `F13` | The v8.2 obstruction is overturned only by an action-derived classical mode-stress/incidence operator on the frozen three-slot modules that yields definite charged-sector response matrices without empirical mode selection. | `BLOCKED_EXACT_OBJECT_PROVED` |
+| `F14` | The v8.3 obstruction is overturned only by an action-derived, isometric, domain-preserving intertwiner realizing every frozen `(k,j,q)` slot as a normalized eigenmode of one metric-dependent action operator; a proxy formula match, finite label constraint, or effective Yukawa input does not qualify. | `BLOCKED_EXACT_OBJECT_PROVED` |
 
 ## Fixed Tolerance Bands
 

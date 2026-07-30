@@ -9,12 +9,13 @@ BHSM is an artifact-backed mathematical and computational research framework,
 not a replacement for the Standard Model established by empirical tests. Frozen
 internal prediction records, executable interfaces, deterministic artifacts,
 and extensive geometric/action calculations exist. The v7.2 finite-input
-physical observable map is complete in one declared scheme. BHSM v8.2
-recovers the original one-base-plus-two-excitation rank-three projector and
-types it as an independent finite generation-module input. Its boundary
-rules leave infinitely many lepton/up roots and four down roots, so no
-action/domain theorem excludes higher modes. Mode-dependent response, mass
-ratios, and CKM remain undefined.
+physical observable map is complete in one declared scheme. BHSM v8.3 retains
+the conditionally derived and frozen three-slot modules and exhausts the
+basis-free projected-spectral route. An exact metric-dependent associated-
+scalar operator and explicit legacy proxy derivatives exist, but no
+action-derived intertwiner realizes the frozen `(k,j,q)` ledger as that
+operator's normalized spectrum. Action-canonical stress, response matrices,
+mass ratios, and CKM therefore remain undefined.
 
 Preferred current classifications are: **Adopted from established
 physics/mathematics**, **Adopted BHSM axiom**, **BHSM identification**,
@@ -69,7 +70,7 @@ Reviewer entry points:
 [claim boundaries](CLAIMS.md), and
 [reproduction guide](docs/reviewer_reproduction_guide.md).
 
-BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: the conditionally derived and frozen one-base-plus-two-excitation family modules are attached to the v8.2 localized master-action field and Dirac domain. Higher tower modes are not additional generation slots. The action-derived classical mode-stress incidence, mass ratios, and CKM remain undefined, with RB-15/RB-16 blocked.
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v8.3 exhausts the basis-free projected-spectral route. The exact action-owned scalar Berger operator and its metric derivatives exist, and the legacy proxy gives explicit diagonal responses, but no action-derived intertwiner maps the frozen (k,j,q) ledger to normalized action eigenspaces and the localized physical carrier. Action-canonical physical stresses, mass ratios, and CKM therefore remain undefined, with RB-15/RB-16 blocked.
 
 BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity. Physical eV/GeV neutrino mass closure remains open pending a numeric neutral stiffness length sqrt(A_nu/Z_nu), a physical K_neutral,eff map in m^-2, and complete-action derivation of the admissible response cone.
 
@@ -2721,3 +2722,38 @@ RB-15 remains `BLOCKED_EXACT_OBJECT_PROVED`; RB-16 remains downstream.
 
 Current exact verdict:
 `BHSM_MODE_DEPENDENT_RESPONSE_BLOCKED_BY_UNDEFINED_MODE_STRESS`.
+
+## v8.3 classical mode-stress incidence
+
+V8.3 imports the frozen family modules unchanged and exhausts the basis-free
+projection `K_f=P_f B[h]P_f`. The exact associated-scalar action operator
+has a physical-fiber-orthonormal Gram matrix and exact `L1,L2` dependence.
+The legacy proxy also yields the conditional squashing derivatives
+
+`tau_l=(0,-2,-18)`, `tau_u=(0,-72,-128)`, and
+`tau_d=(0,0,-32)` at `a=1`.
+
+These are not promoted to physical stress. The exact operator's own source
+says the legacy `(k,j)` identification requires an intertwiner; the earlier
+`(q,j)` eigenfunction map is only a symbolic scaffold, the harmonic
+assignment remains open, and the carrier is scalar rather than the
+localized fermion carrier. Thus neither its orthonormal Gram nor the proxy
+derivatives are action-canonical on the frozen physical modules.
+
+The M4 Dirac restriction is family central. The `(Omega-T)^2` defect is a
+metric-independent label constraint invalidated as a charged Hessian.
+Incidence and adjoint-pair operators lack normalized-action selection.
+The first cap-even collar result acts on a different intrinsic/scalar
+domain and supplies no internal `L1,L2(rho)` profile.
+
+Background quadratic response and quartic self-backreaction are kept
+separate: the latter does not rule out the former, but the required
+background `K_f` is not established. No action-canonical bilinear stress,
+mixed metric--mode Hessian, response matrix, mass hierarchy, or CKM basis is
+therefore defined. The virtual-door factor remains diagnostic dressing and
+is applied zero times.
+
+RB-15 remains `BLOCKED_EXACT_OBJECT_PROVED`; RB-16 remains downstream.
+
+Current exact verdict:
+`BHSM_PROJECTED_SPECTRAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DERIVED_INTERTWINER_FROM_FROZEN_LEDGER_TO_LOCALIZED_ACTION_SPECTRUM`.

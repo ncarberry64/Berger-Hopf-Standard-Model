@@ -2046,3 +2046,41 @@ Not supported:
 
 Exact verdict:
 `BHSM_MODE_DEPENDENT_RESPONSE_BLOCKED_BY_UNDEFINED_MODE_STRESS`.
+
+## v8.3 classical mode-stress claim boundary
+
+Supported:
+
+- unchanged import of the frozen charged-sector modules;
+- exhaustive basis-free projection audit of the action, projector, collar,
+  Brown--York, scalar, defect, charged-current, and virtual-door sources;
+- the exact metric-dependent associated-scalar operator and its
+  physical-fiber-orthonormal action reduction;
+- exact evaluation of the legacy Berger proxy matrices and conditional
+  squashing derivatives `(0,-2,-18)`, `(0,-72,-128)`, and `(0,0,-32)`;
+- proof that the repository does not supply the action-derived intertwiner
+  identifying frozen `(k,j,q)` slots with normalized `(J,m)` eigenspaces;
+- distinction between the abstract finite `I3` Gram matrix and an undefined
+  action-canonical projected Gram matrix on the frozen physical module;
+- the formal but rejected family-central M4 EFT stress
+  `delta_ij T_Dirac`;
+- separation of background quadratic spectral response from quartic
+  self-induced metric backreaction;
+- the first cap-even measure/operator split on its established domain;
+- zero action-stress applications of `Z_virt^(u,2)=1/2`;
+- absence of an action attachment for the proposed alpha-impedance
+  interpretation.
+
+Not supported:
+
+- inserting `(k,j,q)` weights into a stress tensor;
+- promoting the evaluated Berger proxy or a formal formula match to an
+  action-canonical frozen-module operator;
+- treating the label-defect Hessian as a field-amplitude Hessian;
+- using Yukawa matrices, historical mass ratios, or CKM screens as inputs;
+- selecting a seam inverse before its gauge kernel and domain are fixed;
+- calling quartic backreaction a quadratic mass term;
+- constructing response matrices, mass ratios, CKM, or a release package.
+
+Exact verdict:
+`BHSM_PROJECTED_SPECTRAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DERIVED_INTERTWINER_FROM_FROZEN_LEDGER_TO_LOCALIZED_ACTION_SPECTRUM`.

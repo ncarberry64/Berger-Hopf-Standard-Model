@@ -165,8 +165,8 @@ def test_artifact_schema_keeps_release_and_post_1_0_items_separate():
     assert payload["parameter_free_extension_blocker"] == "RB-02"
     assert payload["open_release_blockers"] == ["RB-15", "RB-16"]
     assert payload["next_highest_upstream_blocker"] == (
-        "ACTION_DERIVED_CLASSICAL_MODE_STRESS_INCIDENCE_ON_"
-        "FROZEN_THREE_SLOT_MODULE"
+        "ACTION_DERIVED_SPECTRAL_INTERTWINER_FROM_FROZEN_KJQ_MODULE_"
+        "TO_LOCALIZED_ACTION_EIGENMODES"
     )
 
 

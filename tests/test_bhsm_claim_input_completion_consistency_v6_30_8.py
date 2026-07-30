@@ -107,13 +107,13 @@ def test_next_target_is_highest_upstream_parent_action():
     assert rb01["depends_on"] == []
 
 
-def test_completion_gate_tracks_current_v8_2_tier_status():
+def test_completion_gate_tracks_current_v8_3_tier_status():
     payload = audit.canonical_completion_gate_payload()
-    assert payload["version"] == "v8.2"
+    assert payload["version"] == "v8.3"
     assert payload["BHSM_1_0_release_complete"] is False
     assert payload["next_highest_upstream_blocker"] == (
-        "ACTION_DERIVED_CLASSICAL_MODE_STRESS_INCIDENCE_ON_"
-        "FROZEN_THREE_SLOT_MODULE"
+        "ACTION_DERIVED_SPECTRAL_INTERTWINER_FROM_FROZEN_KJQ_MODULE_"
+        "TO_LOCALIZED_ACTION_EIGENMODES"
     )
     assert payload["current_tier_status"]["Tier_A"] == "COMPLETE"
     assert payload["current_tier_status"]["Tier_B"] == "COMPLETE"
@@ -153,4 +153,4 @@ def test_materializer_is_idempotent_and_updates_canonical_gate():
     canonical_second = (ROOT / "artifacts" / "BHSM_1_0_completion_gate.json").read_bytes()
     assert first == second == audit.artifact_bytes(ROOT)
     assert canonical_first == canonical_second
-    assert json.loads(canonical_second)["version"] == "v8.2"
+    assert json.loads(canonical_second)["version"] == "v8.3"

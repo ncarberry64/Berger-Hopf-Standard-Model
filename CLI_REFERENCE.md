@@ -788,3 +788,20 @@ base-plus-two-excitation modules, sector and triality incidence, localized
 field/domain attachment, higher-tower typing, middle-up weak projection,
 missing classical mode stress, mass-ratio and CKM boundaries, prediction
 freeze, domain-wall fallback, RB-15/RB-16, and release verdict.
+
+<!-- BHSM_CLASSICAL_MODE_STRESS_INCIDENCE_V8_3 -->
+## Classical mode-stress incidence v8.3
+
+```bash
+python -m bhsm.interface classical-mode-stress-status --format json
+python -m bhsm.interface classical-mode-stress-status --format markdown
+python -m bhsm.interface.master_action.classical_mode_stress_incidence --materialize
+```
+
+The command reports the unchanged frozen modules, complete basis-free
+projected-spectral audit, conditional Berger proxy matrices and
+Hellmann--Feynman derivatives, ledger-to-action intertwiner obstruction,
+Gram matrices, bilinear stress components, mixed metric--mode Hessian,
+background/self-backreaction split, interface compliance, all three
+response matrices, virtual-door placement, alpha status, prediction freeze,
+post-freeze comparison, RB-15/RB-16, and release verdict.

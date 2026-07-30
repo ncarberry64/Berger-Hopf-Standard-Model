@@ -470,3 +470,31 @@ downstream. The emergent Layer-Q map remains
 Current exact verdict:
 `BHSM_MODE_DEPENDENT_RESPONSE_BLOCKED_BY_UNDEFINED_MODE_STRESS`.
 
+## v8.3 classical mode-stress incidence addendum
+
+The corrected v8.3 audit exhausts the basis-free spectral construction. The
+exact associated-scalar operator has normalized `(J,m)` eigenspaces and
+metric-dependent eigenvalues. The legacy Berger proxy can therefore be
+tested algebraically and yields conditional squashing derivatives
+`(0,-2,-18)`, `(0,-72,-128)`, and `(0,0,-32)` on the three frozen ledgers.
+
+Those matrices are not physical outputs. Repository provenance explicitly
+leaves the legacy `(k,j)` intertwiner, explicit eigenfunction map, and
+harmonic assignment open, and the exact operator is a scalar carrier rather
+than the localized fermion carrier. The M4 Dirac block is family central;
+the finite defect and incidence blocks do not supply a normalized
+metric-dependent action operator on the frozen modules.
+
+Background quadratic spectral response is distinguished from quartic
+self-induced metric backreaction; the latter does not exclude the former.
+The former nevertheless remains undefined on the frozen physical modules.
+Hence the action-canonical Gram matrices, bilinear stresses, mixed Hessians,
+response matrices, mass ratios, and CKM basis remain undefined. The
+virtual-door factor is not present in an action stress, and the
+alpha-impedance interpretation lacks action attachment.
+
+RB-15 remains blocked and RB-16 remains downstream.
+
+Current exact verdict:
+`BHSM_PROJECTED_SPECTRAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DERIVED_INTERTWINER_FROM_FROZEN_LEDGER_TO_LOCALIZED_ACTION_SPECTRUM`.
+

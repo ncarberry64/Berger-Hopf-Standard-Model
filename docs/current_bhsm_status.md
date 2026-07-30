@@ -387,3 +387,30 @@ Layer Q remains `OPEN_EMERGENT_QUANTUM_CORRESPONDENCE`. RB-15 remains
 
 Current exact verdict:
 `BHSM_MODE_DEPENDENT_RESPONSE_BLOCKED_BY_UNDEFINED_MODE_STRESS`.
+
+## v8.3 authoritative status
+
+The frozen three-slot modules remain attached and unchanged. V8.3 exhausts
+the basis-free `P_f B[h]P_f` route rather than requiring coordinate
+profiles. The exact associated-scalar action operator has normalized
+eigenspaces and `L1,L2` dependence; the legacy Berger proxy gives
+conditional diagonal derivatives
+`(0,-2,-18)`, `(0,-72,-128)`, and `(0,0,-32)`.
+
+The repository does not, however, provide the action-derived intertwiner
+that realizes the frozen `(k,j,q)` slots as those `(J,m)` eigenspaces. Its
+explicit eigenfunction map and harmonic assignment remain open, and the
+exact carrier is scalar rather than the localized fermion carrier. The M4
+Dirac restriction is family central, while defect/incidence operators lack
+metric dependence or normalized-action ownership.
+
+The proxy values are therefore retained as conditional evidence but are not
+action-canonical stresses. Background quadratic response is kept logically
+separate from quartic self-backreaction. The mixed metric--mode Hessian and
+physical response matrices remain undefined; the virtual-door factor
+remains diagnostic and alpha has no action attachment to mass incidence.
+
+RB-15 remains `BLOCKED_EXACT_OBJECT_PROVED`; RB-16 remains downstream.
+
+Current exact verdict:
+`BHSM_PROJECTED_SPECTRAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DERIVED_INTERTWINER_FROM_FROZEN_LEDGER_TO_LOCALIZED_ACTION_SPECTRUM`.

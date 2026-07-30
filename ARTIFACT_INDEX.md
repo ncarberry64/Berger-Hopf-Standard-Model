@@ -1532,3 +1532,17 @@ Doctrine and manuscript chapter:
 - `artifacts/BHSM_1_0_completion_gate.json`: canonical v8.2 gate retaining
   RB-15 as `BLOCKED_EXACT_OBJECT_PROVED` because the classical mode-stress
   incidence is undefined and RB-16 as downstream.
+
+## BHSM v8.3 classical mode-stress incidence
+
+- `artifacts/BHSM_classical_mode_stress_incidence_v8_3.json`: authoritative
+  source hashes, unchanged frozen modules, exhaustive projected-spectral
+  action audit, exact conditional Berger proxy matrices and
+  Hellmann--Feynman derivatives, missing ledger-to-action intertwiner,
+  abstract and action-canonical Gram distinction, background/self-response
+  split, absent physical stress and mixed Hessian, virtual-door placement,
+  alpha status, freeze/hash, and RB-15/RB-16 result.
+- `artifacts/BHSM_1_0_completion_gate.json`: canonical v8.3 gate retaining
+  RB-15 as `BLOCKED_EXACT_OBJECT_PROVED` because the frozen ledger is not
+  realized as the normalized spectrum of an action operator; RB-16 remains
+  downstream.

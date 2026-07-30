@@ -66,3 +66,21 @@ and localized field/domain attachment. Confirm that higher tower modes are
 not typed as extra generations, the `(6,0)` middle-up factor remains `1/2`,
 no mode-stress matrix or flavor observable is fabricated, and the
 domain-wall route remains a non-authoritative fallback.
+
+## Reviewer checkpoint: v8.3
+
+```bash
+python -m bhsm.interface classical-mode-stress-status --format json
+python -m bhsm.interface classical-mode-stress-status --format markdown
+python -m bhsm.interface.master_action.classical_mode_stress_incidence --materialize
+```
+
+Verify that the frozen ledgers are unchanged and the basis-free projected
+spectral route is exhausted. Confirm the exact associated-scalar operator,
+the conditional proxy derivatives `(0,-2,-18)`, `(0,-72,-128)`, and
+`(0,0,-32)`, and the missing action intertwiner from frozen `(k,j,q)` slots
+to normalized `(J,m)` eigenspaces. Confirm that proxy matrices are not
+promoted, the formal M4 stress is rejected as family central, background
+quadratic response is separated from quartic self-backreaction, response
+matrices remain `None`, the virtual-door factor is applied zero times, and
+no alpha factor is inserted.
