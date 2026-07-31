@@ -90,3 +90,55 @@ def test_topology_report_is_fail_closed_and_input_clean():
     assert report["new_fundamental_fermion_added"] is False
     assert report["frozen_predictions_changed"] is False
 
+
+def test_closed_flrw_reduction_retains_lapse_and_has_exact_desitter_solution():
+    row = v91.closed_flrw_reduction()
+    assert "N(t)" in row["ansatz"]
+    assert "lapse_constraint" in row
+    assert row["exact_constraint_residual"] == "0"
+    assert row["exact_evolution_residual"] == "0"
+    assert row["stationary"] is False
+    assert row["periodic"] is False
+    assert row["Hamiltonian_reduction_supplies_stationary_vacuum"] is False
+
+
+def test_closed_flrw_is_crosschecked_by_independent_numerical_methods():
+    row = v91.flrw_numerical_crosscheck()
+    assert row["classification"] == "ANSATZ_VALIDATION_ONLY"
+    assert row["physical_promotion"] is False
+    assert row["representative_inputs_are_physical"] is False
+    assert row["methods_agree"]
+    assert row["cross_method_residual"] < 1.0e-9
+    assert row["ivp_constraint_residual"] < 1.0e-9
+    assert row["bvp_constraint_residual"] < 1.0e-9
+    assert row["action_cross_method_residual"] < 1.0e-10
+    assert row["stationary_geon_constructed"] is False
+
+
+def test_berger_hopf_reduction_includes_connection_and_static_no_go():
+    row = v91.berger_hopf_reduction()
+    assert row["lapse_retained"]
+    assert row["canonical_connection_curvature_included"]
+    assert set(row["Einstein_shape_roots"]) == {"1/5", "1"}
+    assert "<0" in row["vertical_derivative"]
+    assert row["positive_scale_static_solution"] is False
+    assert row["static_product_geon_vacuum"] is False
+
+
+def test_remaining_ansatz_ladder_does_not_manufacture_a_branch():
+    rows = v91.ansatz_ladder_audit()
+    assert len(rows) == 5
+    assert all(row["physical_vacuum_selected"] is False for row in rows)
+    local = v91.cohomogeneity_one_and_localized_audit()
+    assert local["cohomogeneity_one_wall"]["scalar_target_topological_charge"] is None
+    assert local["localized_geon"]["existence_theorem"] is None
+
+
+def test_vacuum_status_reports_no_physical_residual_for_an_unselected_vacuum():
+    row = v91.vacuum_status()
+    assert row["validation_passed"]
+    assert row["action_selected_unique_vacuum"] is False
+    assert row["stationary_geon_vacuum"] is None
+    assert row["action_value_of_physical_vacuum"] is None
+    assert row["physical_equation_residual"] is None
+    assert row["physical_stability_spectrum"] is None
