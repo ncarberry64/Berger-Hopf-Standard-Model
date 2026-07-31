@@ -10,6 +10,12 @@ below preserve dated scientific and repository provenance.
 - BHSM is an artifact-backed mathematical and computational research
   framework.
 - Frozen internal prediction artifacts exist with byte-integrity guards.
+- The v8.4--v8.9 representation/profile/current/lens chain is a validated
+  **conditional theorem pipeline**. Its numerical matrices are proxy stress
+  tests, not physical flavor predictions.
+- V9.0 proves that the current stratified action cannot evaluate that pipeline:
+  no unique stationary 8D vacuum, global composite immersion, or action-owned
+  parent charged-current kernel is supplied.
 - The v6.18 constrained threading response is a **Derived consequence** on
   the stated domain:
   `Pi_perp S_Sigma=-tau(pi chi_1/16)Pi_perp q`.
@@ -41,7 +47,7 @@ below preserve dated scientific and repository provenance.
   genuine invariant/equivariant modes, while Standard Model fields remain
   intrinsic \(M_4\) fields.
 - The exact current **Active construction target** is
-  `COMMON_SCHEME_OBSERVABLE_TRANSPORT_FUNCTOR`.
+  `ACTION_SELECTED_STATIONARY_8D_VACUUM_WITH_ACTION_OWNED_GLOBAL_COMPOSITE_IMMERSIONS_AND_COMMON_PARENT_CHARGED_CURRENT_KERNEL`.
 - Engine coordinate and precision tests are **Numerically validated**; they
   are not validation of BHSM as particle physics.
 
@@ -2084,3 +2090,25 @@ Not supported:
 
 Exact verdict:
 `BHSM_PROJECTED_SPECTRAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DERIVED_INTERTWINER_FROM_FROZEN_LEDGER_TO_LOCALIZED_ACTION_SPECTRUM`.
+
+## v9.0 action-selected vacuum/flavor claim boundary
+
+Supported:
+
+- exact conditional integration of the v8.4--v8.9 finite-dimensional flavor
+  functor;
+- rejection of the finite-radius static `R_t x S7` constant-scalar vacuum;
+- scoped scalar-target FR no-go;
+- independent numerical agreement for proxy generalized eigensolvers and
+  polar decompositions.
+
+Not supported:
+
+- existence or uniqueness of a stationary localized eight-dimensional vacuum;
+- an action-owned `C_f`, `A_f`, `K8`, `H8`, or `K_ud`;
+- positivity, simple spectrum, or full rank of physical pullback matrices;
+- a numerical `V_BHSM`, physical CKM prediction, or completion of RB-15/RB-16.
+
+Exact verdict:
+
+`BHSM_ACTION_SELECTED_8D_VACUUM_FLAVOR_MATRIX_NOT_DERIVABLE_FROM_CURRENT_STRATIFIED_ACTION`.

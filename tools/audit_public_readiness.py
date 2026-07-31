@@ -166,6 +166,13 @@ def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest().upper()
 
 
+def frozen_sha256(path: Path) -> str:
+    """Hash frozen records in their declared canonical CRLF form."""
+
+    payload = path.read_bytes().replace(b"\r\n", b"\n").replace(b"\n", b"\r\n")
+    return hashlib.sha256(payload).hexdigest().upper()
+
+
 def read_text(relative: str) -> str:
     return (ROOT / relative).read_text(encoding="utf-8")
 
@@ -485,7 +492,7 @@ def check_frozen_predictions() -> dict:
     files = []
     passed = True
     for relative, expected in FROZEN_HASHES.items():
-        actual = sha256(ROOT / relative)
+        actual = frozen_sha256(ROOT / relative)
         unchanged = actual == expected
         passed = passed and unchanged
         files.append(

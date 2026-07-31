@@ -175,3 +175,18 @@ Tier A remains blocked; Tiers B/C remain ineligible. The current exact
 verdict superseding the v6.30.8 campaign verdict is:
 
 `BHSM_UNIFIED_PARENT_ACTION_BLOCKED_BY_MISSING_COVARIANT_BULK_BOUNDARY_REDUCTION_FUNCTOR_SOURCE`
+
+## v9.0 completion-gate update
+
+RB-15 remains `BLOCKED_EXACT_ACTION_CHAIN_OBSTRUCTION`; RB-16 remains
+downstream. The v8.4--v8.9 conditional lens functor is not sufficient for
+release because the current stratified action supplies neither a unique
+stationary 8D vacuum nor evaluable composite immersions and a parent current.
+
+Exact next object:
+
+`ACTION_SELECTED_STATIONARY_8D_VACUUM_WITH_ACTION_OWNED_GLOBAL_COMPOSITE_IMMERSIONS_AND_COMMON_PARENT_CHARGED_CURRENT_KERNEL`
+
+Exact verdict:
+
+`BHSM_ACTION_SELECTED_8D_VACUUM_FLAVOR_MATRIX_NOT_DERIVABLE_FROM_CURRENT_STRATIFIED_ACTION`

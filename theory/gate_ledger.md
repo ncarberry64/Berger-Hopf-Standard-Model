@@ -116,3 +116,19 @@ RB-15 remains `BLOCKED_EXACT_OBJECT_PROVED`; RB-16 remains downstream.
 
 Exact verdict:
 `BHSM_MASS_RESPONSE_BLOCKED_BY_UNIVERSAL_RESPONSE_WITH_NO_FAMILY_RESOLUTION`.
+
+## v8.4--v9.0 composite-state flavor gate
+
+V8.4--v8.9 close the conditional finite-dimensional representation and lens
+theorems without promoting their proxy matrices. V9.0 audits the upstream
+action chain. The static finite-radius `R_t x S7` constant-scalar branch fails,
+and the current `S8` bundle owns no global composite immersions or common
+parent charged-current kernel. Therefore `G_u,Q_u,G_d,Q_d,K_ud` and
+`V_BHSM` are undefined.
+
+RB-15: `BLOCKED_EXACT_ACTION_CHAIN_OBSTRUCTION`.
+
+RB-16: `DOWNSTREAM_BLOCKED`.
+
+Exact verdict:
+`BHSM_ACTION_SELECTED_8D_VACUUM_FLAVOR_MATRIX_NOT_DERIVABLE_FROM_CURRENT_STRATIFIED_ACTION`.

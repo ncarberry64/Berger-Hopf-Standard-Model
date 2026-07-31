@@ -1546,3 +1546,14 @@ Doctrine and manuscript chapter:
   RB-15 as `BLOCKED_EXACT_OBJECT_PROVED` because the frozen ledger is not
   realized as the normalized spectrum of an action operator; RB-16 remains
   downstream.
+
+## BHSM v8.4--v9.0 composite-state flavor campaign
+
+- `artifacts/BHSM_composite_carrier_current_reduction_v8_4.json`: exact Berger-block and normalized weak-current representation closure.
+- `artifacts/BHSM_topographic_profile_component_selection_v8_5.json`: Riesz component selector, profile moment functional, and rank no-go audits.
+- `artifacts/BHSM_complex_profile_isospectral_attachment_v8_6.json`: linear isospectral attachment, polar current, and complex-profile kill screens.
+- `artifacts/BHSM_master_action_relative_channel_normalization_v8_7.json`: canonical C3/G2 relative normalization and action-attachment boundary.
+- `artifacts/BHSM_common_parent_charged_current_attachment_v8_8.json`: conditional SU(2)-closed common-parent interface construction.
+- `artifacts/BHSM_automatic_geometric_lens_theorem_v8_9.json`: fail-closed Gram/Hessian/current lens theorem and proxy validation.
+- `artifacts/BHSM_action_selected_8d_vacuum_flavor_completion_v9_0.json`: action-chain audit, vacuum obstruction, numerical cross-checks, null physical matrix readout, and exact verdict.
+- `artifacts/BHSM_1_0_completion_gate.json`: canonical v9.0 RB-15/RB-16 gate.

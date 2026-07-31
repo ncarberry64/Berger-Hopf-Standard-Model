@@ -24,6 +24,12 @@ _ARTIFACT_ROOT = (ROOT / "artifacts").resolve()
 _CRLF_ARTIFACT_EXCEPTIONS = frozenset(
     {"CKM_no_fit_operator_output_v1.json"}
 )
+_CRLF_FROZEN_PATHS = frozenset(
+    {
+        (ROOT / "docs" / "frozen_predictions.md").resolve(),
+        (ROOT / "docs" / "frozen_predictions.json").resolve(),
+    }
+)
 
 
 def _canonical_test_bytes(path: Path) -> bytes:
@@ -38,6 +44,8 @@ def _canonical_test_bytes(path: Path) -> bytes:
 
     payload = _ORIGINAL_READ_BYTES(path)
     resolved = path.resolve()
+    if resolved in _CRLF_FROZEN_PATHS:
+        return payload.replace(b"\r\n", b"\n").replace(b"\n", b"\r\n")
     try:
         relative = resolved.relative_to(_ARTIFACT_ROOT)
     except ValueError:

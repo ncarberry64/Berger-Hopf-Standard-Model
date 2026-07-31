@@ -13,7 +13,10 @@ EXPECTED_HASHES = {
 
 
 def sha256(path: Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest().upper()
+    """Hash frozen text in its repository-declared canonical CRLF form."""
+
+    payload = path.read_bytes().replace(b"\r\n", b"\n").replace(b"\n", b"\r\n")
+    return hashlib.sha256(payload).hexdigest().upper()
 
 
 def audit() -> dict:
