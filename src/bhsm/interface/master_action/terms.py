@@ -27,6 +27,31 @@ ACTION_COMPLEX = (
     "S_BHSM^max := [ S8 --R_8to5--> S5|4 "
     "--R_5to4--> S4eff ]; R_8to5 and R_5to4 are not sourced"
 )
+CONDITIONAL_CC_INTERFACE = (
+    "L_cc^CG=-(g2/sqrt(2))[W_mu^+ bar(u_L) gamma^mu U_CG d_L"
+    "+W_mu^- bar(d_L) gamma^mu U_CG^dagger u_L]"
+)
+
+
+def conditional_interface_rows() -> list[dict]:
+    """Constructions that are admissible interfaces but not derived S8 terms."""
+
+    return [
+        {
+            "term_id": "T4_C3_G2_charged_interface_candidate",
+            "level": "S_compatibility,current on M4",
+            "expression": CONDITIONAL_CC_INTERFACE,
+            "operation": "replace I3 in the existing SU2 raising/lowering generators",
+            "coefficient": "existing g2/sqrt(2)",
+            "new_continuous_coefficient": False,
+            "Hermitian": True,
+            "SU2_algebra_closed_when_U_CG_unitary": True,
+            "neutral_current_family_central": True,
+            "abstract_kernel": "U_CG=Pol(K_CG)",
+            "K_CG_derived_from_S8": False,
+            "classification": "CONDITIONAL_INTERFACE_CONSTRUCTION_NOT_ACTIVE_PARENT_TERM",
+        }
+    ]
 
 
 def term_rows() -> list[dict]:

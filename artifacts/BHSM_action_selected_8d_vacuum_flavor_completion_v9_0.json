@@ -1,0 +1,392 @@
+{
+  "action_configuration_inventory": [
+    {
+      "ansatz": "homogeneous static round or Berger-deformed S7",
+      "closure": "SCALAR_SUBSECTOR_CLOSED_BUT_STATIC_PRODUCT_VACUUM_FAILS",
+      "reason": "constant singlet scalars give cosmological-form stress, while R_t x S7 at finite radius is not Einstein"
+    },
+    {
+      "ansatz": "Hopf-fiber anisotropic configuration",
+      "closure": "OPEN_NO_CONSISTENT_TRUNCATION_THEOREM",
+      "reason": "the current action has a general metric but no proved finite Hopf-anisotropy mode closure"
+    },
+    {
+      "ansatz": "two-cap/equatorial wall",
+      "closure": "LEVELWISE_M5_PROBLEM_NOT_AN_S8_VACUUM_REDUCTION",
+      "reason": "the M8-to-M5 action map does not derive the cap fields and matcher from S8"
+    },
+    {
+      "ansatz": "localized equivariant chi/sigma profiles",
+      "closure": "OPEN_FULL_PDE_AND_BOUNDARY_DOMAIN",
+      "reason": "no action-selected localization center, global boundary conditions, or retained-mode closure is supplied"
+    },
+    {
+      "ansatz": "G2-polarized nonlinear state",
+      "closure": "BLOCKED_FIELD_AND_CURRENT_NOT_OWNED_BY_S8",
+      "reason": "G, chi, and sigma are singlets; S8 has no active G2/C3 polarization or charged-current field"
+    },
+    {
+      "ansatz": "finite frozen-ledger mode reduction",
+      "closure": "BLOCKED_NO_ACTION_DERIVED_SPECTRAL_INTERTWINER",
+      "reason": "ACTION_DERIVED_SPECTRAL_INTERTWINER_FROM_FROZEN_KJQ_MODULE_TO_LOCALIZED_ACTION_EIGENMODES"
+    }
+  ],
+  "action_ownership_obstruction": {
+    "S8_C3_family_field": null,
+    "S8_G2_polarized_current": null,
+    "S8_SU2_connection": null,
+    "S8_active_fields": [
+      "G_AB",
+      "chi",
+      "sigma"
+    ],
+    "S8_chiral_fermion_carrier": null,
+    "extension_added": false,
+    "localized_M4_fermions": "independently owned EFT fields",
+    "localized_Yukawa_matrices": "independent EFT inputs",
+    "logical_result": "variation of the current S8 action cannot produce D C_f or a bifundamental K_ud because neither object is defined on its active field bundle",
+    "v8_8_interface_term": "conditional construction; abstract K_CG is not derived from S8"
+  },
+  "artifact": "BHSM_action_selected_8d_vacuum_flavor_completion_v9_0",
+  "composite_immersion": {
+    "Frechet_derivatives_A_f": {
+      "charged_lepton": null,
+      "down": null,
+      "neutrino": null,
+      "up": null
+    },
+    "chirality_transport": null,
+    "component_selection": "conditional Riesz selector exists; no action-selected point/frame",
+    "explicit_maps": {
+      "charged_lepton": null,
+      "down": null,
+      "neutrino": null,
+      "up": null
+    },
+    "global_patching": null,
+    "reason": "the S8 configuration bundle contains only the metric and real singlet scalars; the triality, sector, FR, chiral, and localized SM carriers are independently owned lower-stratum data",
+    "representation_transport": null,
+    "requested_maps": {
+      "charged_lepton": "C^3_family -> Q8_physical",
+      "down": "C^3_family -> Q8_physical",
+      "neutrino": "C^3_family -> Q8_physical",
+      "up": "C^3_family -> Q8_physical"
+    }
+  },
+  "conditional_geometric_lens_theorem": {
+    "conclusions": [
+      "X_f^dagger G_f X_f=I",
+      "X_f^dagger Q_f X_f=diag(mu_f)",
+      "the two lenses are unique modulo unphysical column phases",
+      "V is unitary",
+      "all |V_ij| and J are computable from spectral projectors and commutator traces without choosing phases",
+      "no continuous normalization, angle, or phase parameter is introduced",
+      "rank loss or spectral degeneracy is a fail-closed theorem boundary"
+    ],
+    "construction": [
+      "grind: G_f^(-1/2), the unique positive canonical-normalization operator",
+      "polish: diagonalize L_f=G_f^(-1/2)Q_fG_f^(-1/2) in ordered simple spectrum",
+      "sector lens: X_f=G_f^(-1/2)W_f",
+      "current polish: U_CG=Pol[G_u^(-1/2)K_raw G_d^(-1/2)]",
+      "physical matrix: V=W_u^dagger U_CG W_d"
+    ],
+    "hypotheses": [
+      "an action-selected stationary eight-dimensional geometric state Phi_*",
+      "smooth full-rank composite immersions C_u,C_d from the three-slot family modules into the physical quotient of eight-dimensional configuration space",
+      "a positive pullback kinetic form G_f=(D C_f)^dagger K_8(D C_f)",
+      "a Hermitian pullback response form Q_f=(D C_f)^dagger Hess(S_8)(D C_f)",
+      "simple sector spectra after kinetic whitening",
+      "a full-rank raw common-parent C3/G2 charged-current kernel"
+    ],
+    "interpretation": "the eight-dimensional kinetic geometry grinds away norm and shear, while the eight-dimensional response Hessian polishes the two sector axes; the common-parent current then compares the finished lenses",
+    "name": "BHSM automatic eight-dimensional geometric lens theorem"
+  },
+  "final_verdict": "BHSM_ACTION_SELECTED_8D_VACUUM_FLAVOR_MATRIX_NOT_DERIVABLE_FROM_CURRENT_STRATIFIED_ACTION",
+  "frozen_predictions_changed": false,
+  "homogeneous_static_product_no_go": {
+    "ansatz": "ds8^2=-dt^2+r^2 ds^2(S7), dchi=dsigma=0",
+    "contradiction": "R_tt/G_tt=0 but R_ij/G_ij=6/r^2 for finite r",
+    "finite_radius_solution": false,
+    "matter_stress": "T_AB=-V_eff(sigma) G_AB",
+    "required_geometry": "Ric_AB proportional to G_AB",
+    "ricci_components": {
+      "R8": "42/r^2",
+      "R_ij": "6 g_ij/r^2",
+      "R_tt": "0"
+    },
+    "scope": "rules out this static homogeneous candidate, not all time-dependent or localized solutions"
+  },
+  "integration_matrix": [
+    {
+      "artifact": "artifacts/BHSM_composite_carrier_current_reduction_v8_4.json",
+      "conflict": "candidate lacked repository CLI/materializer registration",
+      "current_repository_equivalent": "v8.2 frozen projector modules",
+      "disposition": "INTEGRATED_CONDITIONALLY",
+      "source": "src/bhsm/interface/master_action/composite_carrier_current_reduction.py",
+      "sprint": "v8.4",
+      "test": "tests/test_bhsm_composite_carrier_current_reduction_v8_4.py",
+      "theorem": "composite carrier and weak-current representation closure"
+    },
+    {
+      "artifact": "artifacts/BHSM_topographic_profile_component_selection_v8_5.json",
+      "conflict": "heat profile is a proxy and direct mass dressing fails",
+      "current_repository_equivalent": "v8.4 normalized transition library",
+      "disposition": "INTEGRATED_WITH_PROXY_FIREWALL",
+      "source": "src/bhsm/interface/master_action/topographic_profile_component_selection.py",
+      "sprint": "v8.5",
+      "test": "tests/test_bhsm_topographic_profile_component_selection_v8_5.py",
+      "theorem": "Riesz component selector and full-S3 profile requirements"
+    },
+    {
+      "artifact": "artifacts/BHSM_complex_profile_isospectral_attachment_v8_6.json",
+      "conflict": "mixed-normalization near miss cannot be promoted",
+      "current_repository_equivalent": "frozen screen retained as post-construction comparison only",
+      "disposition": "INTEGRATED_CONDITIONALLY",
+      "source": "src/bhsm/interface/master_action/complex_profile_isospectral_attachment.py",
+      "sprint": "v8.6",
+      "test": "tests/test_bhsm_complex_profile_isospectral_attachment_v8_6.py",
+      "theorem": "linear isospectral alignment and polar-current functor"
+    },
+    {
+      "artifact": "artifacts/BHSM_master_action_relative_channel_normalization_v8_7.json",
+      "conflict": "Fourier 1/sqrt(3) is not a physical coupling",
+      "current_repository_equivalent": "orthonormal C3 character basis",
+      "disposition": "INTEGRATED_CONDITIONALLY",
+      "source": "src/bhsm/interface/master_action/relative_channel_normalization.py",
+      "sprint": "v8.7",
+      "test": "tests/test_bhsm_master_action_relative_channel_normalization_v8_7.py",
+      "theorem": "canonical relative C3/G2 normalization"
+    },
+    {
+      "artifact": "artifacts/BHSM_common_parent_charged_current_attachment_v8_8.json",
+      "conflict": "abstract K_CG is not derived from the current S8 action",
+      "current_repository_equivalent": "localized SU2 charged generator",
+      "disposition": "INTEGRATED_AS_CONDITIONAL_INTERFACE_CONSTRUCTION",
+      "source": "src/bhsm/interface/master_action/common_parent_charged_current_attachment.py",
+      "sprint": "v8.8",
+      "test": "tests/test_bhsm_common_parent_charged_current_attachment_v8_8.py",
+      "theorem": "common-parent charged-current interface"
+    },
+    {
+      "artifact": "artifacts/BHSM_automatic_geometric_lens_theorem_v8_9.json",
+      "conflict": "all numerical matrices are explicit proxy stress tests",
+      "current_repository_equivalent": "v7--v8 Hessian and current-pullback architecture",
+      "disposition": "INTEGRATED_AS_FAIL_CLOSED_FINITE_DIMENSIONAL_THEOREM",
+      "source": "src/bhsm/interface/master_action/automatic_geometric_lens_theorem.py",
+      "sprint": "v8.9",
+      "test": "tests/test_bhsm_automatic_geometric_lens_theorem_v8_9.py",
+      "theorem": "automatic geometric lens theorem"
+    }
+  ],
+  "invalidated": [
+    "promotion of any manual heat/profile matrix to physical CKM",
+    "derivation of a parent charged current by merely writing the v8.8 interface term",
+    "derivation of FR quantization from the contractible chi/sigma target alone",
+    "claim that the current S8 action selects a unique numerical flavor matrix"
+  ],
+  "lens_numerical_crosscheck": {
+    "classification": "PROXY_STRESS_TEST_ONLY",
+    "eigenvalue_residual": 3.2449105060007273e-15,
+    "generalized_eigensolver_methods": [
+      "kinetic whitening plus numpy.eigh",
+      "scipy.linalg.eigh(Q,G)"
+    ],
+    "methods_agree": true,
+    "physical_promotion": false,
+    "polar_cross_method_residual": 3.932359555759647e-15,
+    "polar_methods": [
+      "positive-Gram spectral factor",
+      "SVD polar decomposition"
+    ],
+    "polar_unitarity_residual": 1.1112621793074955e-15,
+    "uses_historical_screen_kernel": true
+  },
+  "measured_flavor_data_used": false,
+  "new_continuous_parameter_added": false,
+  "new_fundamental_fermion_added": false,
+  "next_missing_object": "ACTION_SELECTED_STATIONARY_8D_VACUUM_WITH_ACTION_OWNED_GLOBAL_COMPOSITE_IMMERSIONS_AND_COMMON_PARENT_CHARGED_CURRENT_KERNEL",
+  "open": [
+    "ACTION_SELECTED_STATIONARY_8D_VACUUM_WITH_ACTION_OWNED_GLOBAL_COMPOSITE_IMMERSIONS_AND_COMMON_PARENT_CHARGED_CURRENT_KERNEL",
+    "consistent nonhomogeneous S8 truncation and stationary branch theorem",
+    "gauge-fixed physical K8 and H8 on that branch",
+    "localized-carrier transport replacing independent M4 Yukawa ownership"
+  ],
+  "parameter_input_ledger": [
+    {
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "flavor_data": false,
+      "symbol": "kappa0",
+      "value": null
+    },
+    {
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "flavor_data": false,
+      "symbol": "kappa1",
+      "value": null
+    },
+    {
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "flavor_data": false,
+      "symbol": "Zchi",
+      "value": null
+    },
+    {
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "flavor_data": false,
+      "symbol": "Zsigma",
+      "value": null
+    },
+    {
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "flavor_data": false,
+      "symbol": "g",
+      "value": null
+    },
+    {
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "flavor_data": false,
+      "symbol": "A0",
+      "value": null
+    },
+    {
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "flavor_data": false,
+      "symbol": "G0",
+      "value": null
+    },
+    {
+      "classification": "FROZEN_STRUCTURAL_INPUT",
+      "flavor_data": false,
+      "symbol": "frozen (k,j,q) ledgers",
+      "value": "unchanged"
+    },
+    {
+      "classification": "INDEPENDENT_LOCALIZED_EFT_INPUT",
+      "flavor_data": true,
+      "symbol": "Y_u,Y_d,Y_e",
+      "value": null
+    }
+  ],
+  "physical_matrix_promoted": false,
+  "physical_pullback_forms": {
+    "A_d": null,
+    "A_u": null,
+    "G_d": null,
+    "G_u": null,
+    "H8_gauge_fixed": null,
+    "K8_gauge_fixed": null,
+    "K_ud": null,
+    "Q_d": null,
+    "Q_u": null,
+    "V_BHSM": null,
+    "full_rank_gate": "NOT_EVALUABLE",
+    "physical_matrix_promoted": false,
+    "positivity_gate": "NOT_EVALUABLE",
+    "simple_spectrum_gate": "NOT_EVALUABLE"
+  },
+  "prediction_freeze": {
+    "G_d": null,
+    "G_u": null,
+    "K_ud": null,
+    "Q_d": null,
+    "Q_u": null,
+    "frozen_historical_predictions_changed": false,
+    "physical_matrix": null,
+    "physical_promotion": false,
+    "sha256": "CA9FB49AFB15DB9AE0307585FE7634DD4CF4298B3429A678CDD117D7CD732669",
+    "verdict": "BHSM_ACTION_SELECTED_8D_VACUUM_FLAVOR_MATRIX_NOT_DERIVABLE_FROM_CURRENT_STRATIFIED_ACTION",
+    "version": "v9.0"
+  },
+  "release_status": "BHSM_1_0_RELEASE_BLOCKED",
+  "scalar_topology_audit": {
+    "FR_sector_from_scalar_maps_alone": false,
+    "active_scalar_target": "R_chi x R_sigma",
+    "pi_7_of_scalar_target": 0,
+    "scope": "does not rule out metric/geon topology; it rules out assigning FR quantization to chi/sigma profile topology alone",
+    "target_contractible": true
+  },
+  "source_main_sha": "0721ee6a79f97cae5b3ac5bf040fa07ef9584678",
+  "sprint": "bhsm-action-selected-8d-vacuum-flavor-completion-v9-0",
+  "stationary_equations": {
+    "action": "S8=int sqrt(-G)[kappa1 R8/2-kappa0/2-Zchi(1+g sigma^2)|dchi|^2/2-Zsigma|dsigma|^2/2-A0 sigma^2/2-G0 sigma^4/4]",
+    "carrier_equation": "Zchi nabla_A[(1+g sigma^2)nabla^A chi]=0",
+    "carrier_zero_mode": "chi=constant is an unfixed shift-symmetric modulus",
+    "coefficient_selection": "kappa0,kappa1,Zchi,Zsigma,g,A0,G0 remain independent theory inputs",
+    "homogeneous_scalar_roots": [
+      "sigma=0",
+      "sigma^2=-A0/G0 when real"
+    ],
+    "metric_equation": "kappa1 Einstein_AB+(kappa0/2)G_AB=T_AB[chi,sigma]",
+    "scalar_equation": "Zsigma box sigma-Zchi g sigma |dchi|^2-A0 sigma-G0 sigma^3=0"
+  },
+  "vacuum_proxy_crosscheck": {
+    "all_methods_agree": true,
+    "classification": "PROXY_STRESS_TEST_ONLY",
+    "coefficient_values_are_physical_inputs": false,
+    "methods": [
+      "exact symbolic factorization",
+      "80-digit mpmath root solve"
+    ],
+    "physical_promotion": false,
+    "rows": [
+      {
+        "A0": 2,
+        "G0": 1,
+        "case": "symmetric",
+        "methods_agree": true,
+        "mpmath_real_roots": [
+          0.0
+        ],
+        "root_set_residual": 0.0,
+        "symbolic_real_roots": [
+          0.0
+        ]
+      },
+      {
+        "A0": -2,
+        "G0": 1,
+        "case": "broken",
+        "methods_agree": true,
+        "mpmath_real_roots": [
+          -1.4142135623730951,
+          0.0,
+          1.4142135623730951
+        ],
+        "root_set_residual": 4.440892098500626e-16,
+        "symbolic_real_roots": [
+          -1.4142135623730951,
+          0.0,
+          1.4142135623730951
+        ]
+      }
+    ]
+  },
+  "vacuum_result": {
+    "action_selected_unique_vacuum": false,
+    "branch_classification_complete": false,
+    "reason": "the simplest static compact branch is obstructed and more general branches lack a proved consistent truncation, boundary domain, and coefficient selection",
+    "stationary_full_PDE_solved": false
+  },
+  "validated": [
+    "v8.4--v8.9 conditional representation, profile, normalization, current, and lens theorems",
+    "exact failure of the finite-radius static R_t x round-S7 constant-scalar vacuum",
+    "scalar-target topology cannot alone supply an FR sector",
+    "basis-covariant fail-closed lens functor on admissible finite forms"
+  ],
+  "validation": {
+    "lens_proxy_methods_agree": true,
+    "no_physical_matrix_promoted": true,
+    "physical_forms_fail_closed": true,
+    "scalar_FR_not_fabricated": true,
+    "static_round_product_rejected": true,
+    "v8_4_passed": true,
+    "v8_5_passed": true,
+    "v8_6_passed": true,
+    "v8_7_passed": true,
+    "v8_8_passed": true,
+    "v8_9_passed": true,
+    "vacuum_proxy_methods_agree": true
+  },
+  "validation_passed": true,
+  "version": "v9.0"
+}

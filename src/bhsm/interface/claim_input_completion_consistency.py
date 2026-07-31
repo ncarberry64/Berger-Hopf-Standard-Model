@@ -420,10 +420,10 @@ def historical_canonical_completion_gate_payload() -> dict[str, Any]:
 
 
 def canonical_completion_gate_payload() -> dict[str, Any]:
-    """Return the current classical-mode-stress completion gate."""
+    """Return the current action-selected 8D vacuum/flavor completion gate."""
 
     from bhsm.interface.master_action import (
-        classical_mode_stress_incidence as current,
+        eight_dimensional_vacuum_flavor_completion as current,
     )
 
     return current.completion_gate_payload()

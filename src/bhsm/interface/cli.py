@@ -324,6 +324,29 @@ from .master_action.classical_mode_stress_incidence import (
 from .master_action.classical_mode_stress_incidence import (
     status_to_markdown as classical_mode_stress_status_to_markdown,
 )
+from .master_action.composite_carrier_current_reduction import (
+    status_report as composite_carrier_current_status_payload,
+)
+from .master_action.topographic_profile_component_selection import (
+    status_report as topographic_profile_status_payload,
+)
+from .master_action.complex_profile_isospectral_attachment import (
+    status_report as complex_profile_status_payload,
+)
+from .master_action.relative_channel_normalization import (
+    payload as channel_normalization_status_payload,
+)
+from .master_action.common_parent_charged_current_attachment import (
+    payload as common_parent_current_status_payload,
+)
+from .master_action.automatic_geometric_lens_theorem import (
+    payload as geometric_lens_status_payload,
+)
+from .master_action.eight_dimensional_vacuum_flavor_completion import (
+    conditional_status_to_markdown,
+    status_report as eight_dimensional_vacuum_flavor_status_payload,
+    status_to_markdown as eight_dimensional_vacuum_flavor_status_to_markdown,
+)
 
 
 def _emit(payload: dict[str, Any], output_format: str) -> None:
@@ -861,6 +884,20 @@ def build_parser() -> argparse.ArgumentParser:
     classical_mode_stress.add_argument(
         "--format", choices=("json", "markdown"), default="markdown"
     )
+    integrated_status_commands = (
+        ("composite-carrier-current-status", "Render the BHSM v8.4 composite-carrier/current closure"),
+        ("topographic-profile-status", "Render the BHSM v8.5 profile component-selection audit"),
+        ("complex-profile-status", "Render the BHSM v8.6 complex-profile attachment audit"),
+        ("channel-normalization-status", "Render the BHSM v8.7 C3/G2 normalization audit"),
+        ("common-parent-current-status", "Render the BHSM v8.8 conditional charged-current interface"),
+        ("geometric-lens-status", "Render the BHSM v8.9 automatic geometric-lens theorem"),
+        ("8d-vacuum-flavor-status", "Render the BHSM v9.0 action-selected vacuum/flavor audit"),
+    )
+    for command, help_text in integrated_status_commands:
+        status_command = commands.add_parser(command, help=help_text)
+        status_command.add_argument(
+            "--format", choices=("json", "markdown"), default="markdown"
+        )
     return parser
 
 
@@ -921,6 +958,47 @@ def main(argv: Sequence[str] | None = None) -> int:
         payload = classical_mode_stress_status_payload()
         if args.format == "markdown":
             print(classical_mode_stress_status_to_markdown(payload), end="")
+        else:
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        return 0
+    integrated_payloads = {
+        "composite-carrier-current-status": (
+            "BHSM composite-carrier/current reduction v8.4",
+            composite_carrier_current_status_payload,
+        ),
+        "topographic-profile-status": (
+            "BHSM topographic-profile component selection v8.5",
+            topographic_profile_status_payload,
+        ),
+        "complex-profile-status": (
+            "BHSM complex-profile isospectral attachment v8.6",
+            complex_profile_status_payload,
+        ),
+        "channel-normalization-status": (
+            "BHSM relative channel normalization v8.7",
+            channel_normalization_status_payload,
+        ),
+        "common-parent-current-status": (
+            "BHSM common-parent charged-current interface v8.8",
+            common_parent_current_status_payload,
+        ),
+        "geometric-lens-status": (
+            "BHSM automatic geometric lens theorem v8.9",
+            geometric_lens_status_payload,
+        ),
+    }
+    if args.command in integrated_payloads:
+        title, factory = integrated_payloads[args.command]
+        payload = factory()
+        if args.format == "markdown":
+            print(conditional_status_to_markdown(title, payload), end="")
+        else:
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        return 0
+    if args.command == "8d-vacuum-flavor-status":
+        payload = eight_dimensional_vacuum_flavor_status_payload()
+        if args.format == "markdown":
+            print(eight_dimensional_vacuum_flavor_status_to_markdown(payload), end="")
         else:
             print(json.dumps(payload, indent=2, sort_keys=True))
         return 0

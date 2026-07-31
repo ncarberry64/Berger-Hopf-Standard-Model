@@ -1,7 +1,7 @@
-"""BHSM master-action, transport, and mode-stress API.
+"""BHSM master-action, transport, and vacuum-to-flavor audit API.
 
 The v7.0 constants and v7.1 master-action report remain exported for
-artifact compatibility. Current v8.3 completion constants and status are
+artifact compatibility. Current v9.0 completion constants and status are
 exposed separately.
 """
 
@@ -18,14 +18,14 @@ from .report import (
 )
 from .validation import validate_model
 
-CURRENT_VERSION = "v8.3"
+CURRENT_VERSION = "v9.0"
 CURRENT_MISSING_OBJECT = (
-    "ACTION_DENSITY_FOR_FROZEN_MODE_AMPLITUDES_WITH_"
-    "METRIC_VARIATION"
+    "ACTION_SELECTED_STATIONARY_8D_VACUUM_WITH_ACTION_OWNED_GLOBAL_"
+    "COMPOSITE_IMMERSIONS_AND_COMMON_PARENT_CHARGED_CURRENT_KERNEL"
 )
 CURRENT_VERDICT = (
-    "BHSM_CLASSICAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DENSITY_"
-    "FOR_FROZEN_MODES"
+    "BHSM_ACTION_SELECTED_8D_VACUUM_FLAVOR_MATRIX_NOT_DERIVABLE_"
+    "FROM_CURRENT_STRATIFIED_ACTION"
 )
 
 
@@ -113,6 +113,20 @@ def classical_mode_stress_status_to_markdown(payload=None):
     return status_to_markdown(payload)
 
 
+def eight_dimensional_vacuum_flavor_status_payload():
+    """Return the current v9.0 action-selected vacuum/flavor status."""
+    from .eight_dimensional_vacuum_flavor_completion import status_report
+
+    return status_report()
+
+
+def eight_dimensional_vacuum_flavor_status_to_markdown(payload=None):
+    """Render the current v9.0 action-selected vacuum/flavor status."""
+    from .eight_dimensional_vacuum_flavor_completion import status_to_markdown
+
+    return status_to_markdown(payload)
+
+
 __all__ = [
     "ARTIFACT_FILES",
     "CURRENT_MISSING_OBJECT",
@@ -126,6 +140,8 @@ __all__ = [
     "classical_mode_stress_status_to_markdown",
     "distinct_prediction_status_payload",
     "distinct_prediction_status_to_markdown",
+    "eight_dimensional_vacuum_flavor_status_payload",
+    "eight_dimensional_vacuum_flavor_status_to_markdown",
     "frozen_file_sha256",
     "frozen_hashes_match",
     "materialize",
