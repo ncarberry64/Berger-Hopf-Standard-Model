@@ -1,0 +1,144 @@
+{
+  "action_ownership": {
+    "all_axes": "ordered spectral projectors of action-owned Hermitian forms",
+    "all_square_roots": "unique positive functional calculus of action-owned forms",
+    "composite_pullback": "G_f=(D C_f)^dagger K_8(D C_f), Q_f=(D C_f)^dagger Hess(S_BHSM^strat)(D C_f)",
+    "f_of_X_violation": false,
+    "new_coefficient": false,
+    "new_field": false,
+    "raw_current": "K_raw=(D C_u)^dagger J_parent^(C3/G2)(D C_d)",
+    "remaining_nonformal_task": "evaluate D C_u,D C_d,K_8,Hess(S), and J_parent on the actual action-selected vacuum"
+  },
+  "basis_covariance": {
+    "basis_invariant_observables": true,
+    "jarlskog_residual": 7.593752016088473e-16,
+    "matrix_moduli_residual": 3.6685591279044003e-13
+  },
+  "final_verdict": "BHSM_UP_DOWN_MASS_BASIS_LENSES_ARE_CANONICAL_OUTPUTS_OF_THE_COMPOSITE_EIGHT_DIMENSIONAL_ACTION_REDUCTION_CONDITIONALLY",
+  "next_missing_object": "EVALUATION_OF_THE_COMPOSITE_IMMERSIONS_AND_THEIR_PULLBACK_GRAM_HESSIAN_CURRENT_FORMS_ON_THE_ACTION_SELECTED_EIGHT_DIMENSIONAL_VACUUM",
+  "primary_result": "BHSM_EIGHT_DIMENSIONAL_ACTION_GRAM_HESSIAN_LENS_THEOREM_PROVED_CONDITIONALLY",
+  "proxy_audit": {
+    "current_unitarity_residual": 7.534042302205097e-15,
+    "down_lens_kinetic_residual": 3.9371989652060033e-16,
+    "down_response_eigenvalues": [
+      0.97693807240599,
+      1.1056397243074672,
+      1.5005874284183056
+    ],
+    "jarlskog": 0.001963012494880824,
+    "matrix_magnitudes": [
+      [
+        0.9109369089569775,
+        0.40819189853759474,
+        0.05977726882504058
+      ],
+      [
+        0.4062373533329767,
+        0.9092742696010472,
+        0.09050699088189422
+      ],
+      [
+        0.07186905214988631,
+        0.0812383936925956,
+        0.9941001774133847
+      ]
+    ],
+    "phase_free_invariants": {
+      "eigenvector_phases_needed_for_observables": false,
+      "frame_jarlskog": 0.001963012494880824,
+      "frame_moduli_squared": [
+        [
+          0.8298060521000928,
+          0.16662062603172603,
+          0.0035733218681811684
+        ],
+        [
+          0.16502878724298178,
+          0.8267796973585179,
+          0.008191515398495284
+        ],
+        [
+          0.005165160656923079,
+          0.0065996766097531565,
+          0.988235162733323
+        ]
+      ],
+      "invariant_jarlskog": 0.001963012494881569,
+      "jarlskog_residual": 7.450637329320386e-16,
+      "moduli_residual": 5.990851889903786e-16,
+      "projector_moduli_squared": [
+        [
+          0.8298060521000925,
+          0.16662062603172603,
+          0.0035733218681811667
+        ],
+        [
+          0.16502878724298178,
+          0.8267796973585176,
+          0.008191515398495273
+        ],
+        [
+          0.005165160656923082,
+          0.006599676609753193,
+          0.9882351627333226
+        ]
+      ]
+    },
+    "physical_promotion": false,
+    "proxy_role": "domain and theorem stress test only",
+    "proxy_uses_historical_screen_inputs": true,
+    "standard_sines": {
+      "sin_theta_12": 0.4089231594138042,
+      "sin_theta_13": 0.05977726882504057,
+      "sin_theta_23": 0.09066913085011134
+    },
+    "up_lens_kinetic_residual": 4.78606380102276e-16,
+    "up_response_eigenvalues": [
+      0.9996659776097955,
+      1.815983940379859,
+      2.6290857506419547
+    ]
+  },
+  "sprint": "bhsm-automatic-geometric-lens-theorem-v8-9",
+  "theorem": {
+    "conclusions": [
+      "X_f^dagger G_f X_f=I",
+      "X_f^dagger Q_f X_f=diag(mu_f)",
+      "the two lenses are unique modulo unphysical column phases",
+      "V is unitary",
+      "all |V_ij| and J are computable from spectral projectors and commutator traces without choosing phases",
+      "no continuous normalization, angle, or phase parameter is introduced",
+      "rank loss or spectral degeneracy is a fail-closed theorem boundary"
+    ],
+    "construction": [
+      "grind: G_f^(-1/2), the unique positive canonical-normalization operator",
+      "polish: diagonalize L_f=G_f^(-1/2)Q_fG_f^(-1/2) in ordered simple spectrum",
+      "sector lens: X_f=G_f^(-1/2)W_f",
+      "current polish: U_CG=Pol[G_u^(-1/2)K_raw G_d^(-1/2)]",
+      "physical matrix: V=W_u^dagger U_CG W_d"
+    ],
+    "hypotheses": [
+      "an action-selected stationary eight-dimensional geometric state Phi_*",
+      "smooth full-rank composite immersions C_u,C_d from the three-slot family modules into the physical quotient of eight-dimensional configuration space",
+      "a positive pullback kinetic form G_f=(D C_f)^dagger K_8(D C_f)",
+      "a Hermitian pullback response form Q_f=(D C_f)^dagger Hess(S_8)(D C_f)",
+      "simple sector spectra after kinetic whitening",
+      "a full-rank raw common-parent C3/G2 charged-current kernel"
+    ],
+    "interpretation": "the eight-dimensional kinetic geometry grinds away norm and shear, while the eight-dimensional response Hessian polishes the two sector axes; the common-parent current then compares the finished lenses",
+    "name": "BHSM automatic eight-dimensional geometric lens theorem"
+  },
+  "validation": {
+    "all_passed": true,
+    "basis_invariant_observables": true,
+    "down_lens_canonically_normalized": true,
+    "frozen_predictions_changed": false,
+    "new_continuous_parameter": false,
+    "phase_free_jarlskog_matches": true,
+    "phase_free_moduli_match": true,
+    "physical_CKM_promoted": false,
+    "physical_current_unitary": true,
+    "up_lens_canonically_normalized": true
+  },
+  "version": "v8.9"
+}

@@ -1,0 +1,170 @@
+{
+  "C3_commutant_freedom": {
+    "current_minimal_action_value": "nontrivial junction/current generator absent",
+    "fourier_eigenvalues": [
+      "a+2x",
+      "a-x-sqrt(3)y",
+      "a-x+sqrt(3)y"
+    ],
+    "general_hermitian_C3_commutant": "J=a I+x(C+C^2)+i y(C-C^2)=a I+b C+b* C^2",
+    "independent_real_coefficients": [
+      "a",
+      "x",
+      "y"
+    ],
+    "symmetry_fixes_relative_norm": false
+  },
+  "G2_normalized_complex_pair": {
+    "conjugate_branch": "z_-=(x+iJx)/sqrt(2)",
+    "normalized_vector": "z_+=(x-iJx)/sqrt(2)",
+    "orientation_ambiguity": "+i versus -i until the action selects polarization/chirality",
+    "overall_1_over_sqrt2_physical_for_polar_unitary": false,
+    "projector": "Pi_10=(Q-iJ)/2",
+    "raw_norm_squared_for_unit_x": 0.5,
+    "raw_projected_vector": "Pi_10 x=(x-iJx)/2",
+    "relative_modulus": 1.0,
+    "relative_phase": "-i"
+  },
+  "artifact": "BHSM_master_action_relative_channel_normalization_v8_7",
+  "canonical_candidate_kill_test": {
+    "comparison_to_frozen_screen": {
+      "all_within_declared_ten_percent": false,
+      "candidate_angles": {
+        "sin_theta_12": 0.10103735718781436,
+        "sin_theta_13": 0.004847874178342302,
+        "sin_theta_23": 0.06362894128507034
+      },
+      "candidate_jarlskog": 2.3867419926658882e-05,
+      "frobenius_magnitude_error": 0.1806824285872001,
+      "matrix_magnitudes": [
+        [
+          0.9948709416243667,
+          0.10103616989671178,
+          0.004847874178342302
+        ],
+        [
+          0.10102821077430811,
+          0.992846792616805,
+          0.06362819358067708
+        ],
+        [
+          0.005011001814755528,
+          0.06361555441243011,
+          0.9979618986201879
+        ]
+      ],
+      "relative_angle_errors": {
+        "sin_theta_12": -0.5521760139604845,
+        "sin_theta_13": 0.3608573576817981,
+        "sin_theta_23": 0.45046557798026016
+      },
+      "relative_jarlskog_error": -0.23037377313166632,
+      "target_angles": {
+        "sin_theta_12": 0.2256184580048353,
+        "sin_theta_13": 0.0035623676140463315,
+        "sin_theta_23": 0.04386794299087895
+      },
+      "target_jarlskog": 3.10117029454378e-05
+    },
+    "interpretation": "The canonical normalization is not a successful frozen-CKM completion under the present profile/oriented-transfer map. The profile/current attachment must change; the normalization must not be tuned to repair the residuals.",
+    "jarlskog": 2.3867419926658882e-05,
+    "matrix_magnitudes": [
+      [
+        0.9948709416243667,
+        0.10103616989671178,
+        0.004847874178342302
+      ],
+      [
+        0.10102821077430811,
+        0.992846792616805,
+        0.06362819358067708
+      ],
+      [
+        0.005011001814755528,
+        0.06361555441243011,
+        0.9979618986201879
+      ]
+    ],
+    "passes_frozen_ten_percent_gate": false,
+    "profile": "T_chi0-i T_chi1"
+  },
+  "canonical_relative_ratio": {
+    "canonical_profile": "T_chi0-i T_chi1",
+    "conjugate_formula": "c_chi1/c_chi0=+i on the conjugate branch",
+    "formula": "c_chi1/c_chi0=-i",
+    "modulus": 1.0,
+    "overall_normalization_irrelevant_to_polar_unitary": true,
+    "phase": "-pi/2",
+    "premises": [
+      "chi0 and chi1 are orthonormal retained modes of the same parent carrier term",
+      "the same parent quadratic coefficient multiplies both modes",
+      "the Pi_10 G2 polarization is selected for the particle branch"
+    ],
+    "ratio_c_chi1_over_c_chi0": {
+      "imag": -1.0,
+      "real": 0.0
+    },
+    "status": "BHSM_CANONICAL_ORTHONORMAL_G2_C3_RELATIVE_NORMALIZATION_DERIVED_CONDITIONALLY"
+  },
+  "final_verdict": "BHSM_MASTER_ACTION_PHYSICAL_G2_C3_CHANNEL_COUPLING_REMAINS_UNSELECTED",
+  "frozen_predictions_changed": false,
+  "new_continuous_parameter_added": false,
+  "next_missing_object": "ACTION_OWNED_COMMON_PARENT_CURRENT_TERM_ATTACHING_ORTHONORMAL_C3_MODES_TO_THE_G2_POLARIZED_LOCALIZED_CHARGED_CURRENT",
+  "parent_orthonormal_pushforward": {
+    "canonical_rescaling": "phi_a^c=sqrt(c_parent) phi_a for every a",
+    "character_gram_real": [
+      [
+        1.0000000000000002,
+        -3.9163918018655056e-17,
+        1.10502606860735e-16
+      ],
+      [
+        -3.9163918018655056e-17,
+        1.0000000000000002,
+        -1.181995387332941e-16
+      ],
+      [
+        1.10502606860735e-16,
+        -1.181995387332941e-16,
+        1.0000000000000004
+      ]
+    ],
+    "common_parent_coefficient": "c_parent",
+    "new_continuous_parameter": false,
+    "orthonormal": true,
+    "parent_rule": "c_ab=c_parent integral_F u_a^* u_b dnu_F",
+    "relative_modulus_chi1_over_chi0": 1.0
+  },
+  "physical_CKM_promoted": false,
+  "physical_action_attachment": {
+    "G2_polarization_dynamically_selected": false,
+    "S8_parent_carrier_expression": "-Zchi(1+g sigma^2)|dchi|^2/2",
+    "S8_parent_carrier_term_present": true,
+    "common_parent_current_term_present": false,
+    "localized_M4_fields_intrinsic": true,
+    "localized_Yukawa_matrices_independent": true,
+    "orthonormal_mode_pushforward_rule_present": true,
+    "physical_relative_channel_ratio_selected": false,
+    "reason": "The master action can normalize orthonormal modes equally, but it does not identify chi0/chi1 as co-components of one localized charged-current operator. Therefore -i is a canonical kinematic ratio under a missing attachment theorem, not a current action output.",
+    "triality_character_to_Berger_current_map_present": false
+  },
+  "point_character_identity": {
+    "identity": "T_point=(T_chi0+T_chi1+T_chi2)/sqrt(3)",
+    "interpretation": "The 1/sqrt(3) is a Fourier basis-conversion coefficient, not a dynamical singlet-to-complex coupling.",
+    "residual_frobenius": 5.357343119375472e-16,
+    "verified": true
+  },
+  "primary_result": "BHSM_CANONICAL_ORTHONORMAL_G2_C3_RELATIVE_NORMALIZATION_DERIVED_CONDITIONALLY",
+  "sprint": "bhsm-master-action-relative-channel-normalization-v8-7",
+  "validation": {
+    "C3_characters_orthonormal": true,
+    "G2_phase_fixed_conditionally": true,
+    "canonical_ratio_unit_modulus": true,
+    "master_action_physical_attachment_absent": true,
+    "no_frozen_promotion": true,
+    "point_character_identity": true,
+    "symmetry_alone_leaves_coefficients": true
+  },
+  "validation_passed": true,
+  "version": "v8.7"
+}

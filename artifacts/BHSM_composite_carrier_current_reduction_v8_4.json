@@ -1,0 +1,810 @@
+{
+  "CKM_matrix": null,
+  "artifact": "BHSM_composite_carrier_current_reduction_v8_4",
+  "blocker_verdict": "BHSM_MASS_AND_CKM_BLOCKED_BY_NO_ACTION_SELECTED_BERGER_MULTIPLET_STATES_AND_NO_ACTION_OWNED_LINEAR_COMBINATION_OF_NORMALIZED_WEAK_CURRENT_INTERTWINERS",
+  "common_structure_mixing_audit": {
+    "FR": {
+      "can_generate_generic_CKM": false,
+      "continuous_parameter_count": 0,
+      "holonomy_group": "Z2",
+      "reason": "contributes at most a sign to a bilinear matrix element",
+      "values": [
+        -1,
+        1
+      ]
+    },
+    "G2_polarization": {
+      "can_generate_generic_CKM": false,
+      "family_action": "central when the same section is carried by triality",
+      "reason": "does not select different up/down vectors in family space",
+      "role": "common internal G2/SU3 polarization carrier"
+    },
+    "conclusion": "continuous mixing must arise from action-selected component-resolved up/down states and a noncentral weak-current kernel",
+    "triality": {
+      "can_generate_generic_CKM": false,
+      "family_central_current_result": "F^dagger I3 F=I3",
+      "map": "same exact C3 Fourier intertwiner on up and down slots",
+      "reason": "a common unitary basis change cancels; permutations and discrete phases remain monomial rather than generic"
+    }
+  },
+  "component_selection_obstruction": {
+    "equivariant_rank_one_map": "Hom_Sp(1)(C,V_J)=0 for J>0",
+    "nontrivial_blocks": [
+      {
+        "J": "5/2",
+        "rank": 6,
+        "sector": "charged_lepton",
+        "slot": 1
+      },
+      {
+        "J": "9/2",
+        "rank": 10,
+        "sector": "charged_lepton",
+        "slot": 2
+      },
+      {
+        "J": "3",
+        "rank": 7,
+        "sector": "up",
+        "slot": 1
+      },
+      {
+        "J": "5",
+        "rank": 11,
+        "sector": "up",
+        "slot": 2
+      },
+      {
+        "J": "3",
+        "rank": 7,
+        "sector": "down",
+        "slot": 1
+      },
+      {
+        "J": "4",
+        "rank": 9,
+        "sector": "down",
+        "slot": 2
+      }
+    ],
+    "required_extra_structure": [
+      "action-selected polarization or coherent state",
+      "action-selected localized profile",
+      "symmetry-reduction quotient with one surviving state",
+      "collective-coordinate ground-state theorem"
+    ],
+    "unique_component_selected_by_block_labels": false,
+    "verdict": "BERGER_BLOCK_LABELS_SELECT_EIGENSPACES_NOT_UNIQUE_PHYSICAL_STATES"
+  },
+  "frozen_composite_carriers": {
+    "block_level_construction": true,
+    "classification": "CONDITIONAL_COMPOSITE_BLOCK_CARRIER_WITH_COMPONENT_SELECTION_OPEN",
+    "new_family_factor_added": false,
+    "new_free_parameter_added": false,
+    "rank_one_component_selection": false,
+    "sectors": {
+      "charged_lepton": [
+        {
+          "FR_role": "flat Z2 sign line; no continuous coefficient",
+          "J": "0",
+          "block_rank": 1,
+          "carrier": "H_(J,m) tensor P_triality,slot tensor E_G2/SU3 tensor L_FR tensor E_SM,sector",
+          "component_selected": true,
+          "exact_label_map": "J=k/2, m=(k-2j)/2",
+          "m": "0",
+          "mode": [
+            0,
+            0
+          ],
+          "q": 0,
+          "slot": 0,
+          "slot_role": "base",
+          "triality_role": "same three slots through the existing Fourier intertwiner; not a second family factor",
+          "two_J": 0,
+          "two_m": 0
+        },
+        {
+          "FR_role": "flat Z2 sign line; no continuous coefficient",
+          "J": "5/2",
+          "block_rank": 6,
+          "carrier": "H_(J,m) tensor P_triality,slot tensor E_G2/SU3 tensor L_FR tensor E_SM,sector",
+          "component_selected": false,
+          "exact_label_map": "J=k/2, m=(k-2j)/2",
+          "m": "1/2",
+          "mode": [
+            5,
+            2
+          ],
+          "q": 1,
+          "slot": 1,
+          "slot_role": "excitation_1",
+          "triality_role": "same three slots through the existing Fourier intertwiner; not a second family factor",
+          "two_J": 5,
+          "two_m": 1
+        },
+        {
+          "FR_role": "flat Z2 sign line; no continuous coefficient",
+          "J": "9/2",
+          "block_rank": 10,
+          "carrier": "H_(J,m) tensor P_triality,slot tensor E_G2/SU3 tensor L_FR tensor E_SM,sector",
+          "component_selected": false,
+          "exact_label_map": "J=k/2, m=(k-2j)/2",
+          "m": "3/2",
+          "mode": [
+            9,
+            3
+          ],
+          "q": 3,
+          "slot": 2,
+          "slot_role": "excitation_2",
+          "triality_role": "same three slots through the existing Fourier intertwiner; not a second family factor",
+          "two_J": 9,
+          "two_m": 3
+        }
+      ],
+      "down": [
+        {
+          "FR_role": "flat Z2 sign line; no continuous coefficient",
+          "J": "0",
+          "block_rank": 1,
+          "carrier": "H_(J,m) tensor P_triality,slot tensor E_G2/SU3 tensor L_FR tensor E_SM,sector",
+          "component_selected": true,
+          "exact_label_map": "J=k/2, m=(k-2j)/2",
+          "m": "0",
+          "mode": [
+            0,
+            0
+          ],
+          "q": 0,
+          "slot": 0,
+          "slot_role": "base",
+          "triality_role": "same three slots through the existing Fourier intertwiner; not a second family factor",
+          "two_J": 0,
+          "two_m": 0
+        },
+        {
+          "FR_role": "flat Z2 sign line; no continuous coefficient",
+          "J": "3",
+          "block_rank": 7,
+          "carrier": "H_(J,m) tensor P_triality,slot tensor E_G2/SU3 tensor L_FR tensor E_SM,sector",
+          "component_selected": false,
+          "exact_label_map": "J=k/2, m=(k-2j)/2",
+          "m": "0",
+          "mode": [
+            6,
+            3
+          ],
+          "q": 0,
+          "slot": 1,
+          "slot_role": "excitation_1",
+          "triality_role": "same three slots through the existing Fourier intertwiner; not a second family factor",
+          "two_J": 6,
+          "two_m": 0
+        },
+        {
+          "FR_role": "flat Z2 sign line; no continuous coefficient",
+          "J": "4",
+          "block_rank": 9,
+          "carrier": "H_(J,m) tensor P_triality,slot tensor E_G2/SU3 tensor L_FR tensor E_SM,sector",
+          "component_selected": false,
+          "exact_label_map": "J=k/2, m=(k-2j)/2",
+          "m": "2",
+          "mode": [
+            8,
+            2
+          ],
+          "q": 4,
+          "slot": 2,
+          "slot_role": "excitation_2",
+          "triality_role": "same three slots through the existing Fourier intertwiner; not a second family factor",
+          "two_J": 8,
+          "two_m": 4
+        }
+      ],
+      "up": [
+        {
+          "FR_role": "flat Z2 sign line; no continuous coefficient",
+          "J": "0",
+          "block_rank": 1,
+          "carrier": "H_(J,m) tensor P_triality,slot tensor E_G2/SU3 tensor L_FR tensor E_SM,sector",
+          "component_selected": true,
+          "exact_label_map": "J=k/2, m=(k-2j)/2",
+          "m": "0",
+          "mode": [
+            0,
+            0
+          ],
+          "q": 0,
+          "slot": 0,
+          "slot_role": "base",
+          "triality_role": "same three slots through the existing Fourier intertwiner; not a second family factor",
+          "two_J": 0,
+          "two_m": 0
+        },
+        {
+          "FR_role": "flat Z2 sign line; no continuous coefficient",
+          "J": "3",
+          "block_rank": 7,
+          "carrier": "H_(J,m) tensor P_triality,slot tensor E_G2/SU3 tensor L_FR tensor E_SM,sector",
+          "component_selected": false,
+          "exact_label_map": "J=k/2, m=(k-2j)/2",
+          "m": "3",
+          "mode": [
+            6,
+            0
+          ],
+          "q": 6,
+          "slot": 1,
+          "slot_role": "excitation_1",
+          "triality_role": "same three slots through the existing Fourier intertwiner; not a second family factor",
+          "two_J": 6,
+          "two_m": 6
+        },
+        {
+          "FR_role": "flat Z2 sign line; no continuous coefficient",
+          "J": "5",
+          "block_rank": 11,
+          "carrier": "H_(J,m) tensor P_triality,slot tensor E_G2/SU3 tensor L_FR tensor E_SM,sector",
+          "component_selected": false,
+          "exact_label_map": "J=k/2, m=(k-2j)/2",
+          "m": "4",
+          "mode": [
+            10,
+            1
+          ],
+          "q": 8,
+          "slot": 2,
+          "slot_role": "excitation_2",
+          "triality_role": "same three slots through the existing Fourier intertwiner; not a second family factor",
+          "two_J": 10,
+          "two_m": 8
+        }
+      ]
+    }
+  },
+  "frozen_predictions_changed": false,
+  "invalidated": [
+    "FR sign as source of continuous CKM angles or CP phase",
+    "one irreducible current as the complete weak kernel",
+    "one point-localized separable current as a rank-three CKM source",
+    "block-central spectral function as a component selector"
+  ],
+  "mass_basis_mismatch_criterion": {
+    "CP_test": "for nondegenerate spectra, a physical CP phase requires a nonzero imaginary rephasing invariant, equivalently nonzero Jarlskog commutator invariant",
+    "block_central_common_slot_functions_sufficient": false,
+    "common_triality_G2_FR_result": "common triality, common G2 polarization, and FR signs alone give only identity/monomial overlap",
+    "commutator_test": "[H_u,H_d] != 0 with H_f=M_f M_f^dagger",
+    "mass_basis_overlap": "V_CKM=U_u^dagger U_d",
+    "nontrivial_mixing_condition": "the action must select inequivalent up/down component isometries, equivalently non-simultaneously-diagonalizable sector response operators",
+    "physical_CKM_derived": false,
+    "same_embedding_result": "U_u=U_d implies V_CKM=I3",
+    "sector_embeddings": {
+      "down": "U_d: C3_family -> H_down,physical",
+      "up": "U_u: C3_family -> H_up,physical"
+    },
+    "universal_weak_current_in_gauge_basis": "J_W proportional to I3"
+  },
+  "new_free_parameter_added": false,
+  "next_missing_object": "ACTION_DERIVED_COMPONENT_SELECTION_AND_CURRENT_COEFFICIENT_FUNCTIONAL_ON_NORMALIZED_BERGER_INTERTWINERS",
+  "nonlinear_channel_witnesses": {
+    "all_nine_generated": true,
+    "classification": "REPRESENTATION_CONTENT_CLOSED_CONDITIONALLY_THROUGH_CUBIC_ORDER",
+    "maximum_required_degree": 3,
+    "primitive_independent_channels": {
+      "A": [
+        2,
+        2
+      ],
+      "B": [
+        3,
+        3
+      ],
+      "S": [
+        0,
+        0
+      ]
+    },
+    "rows": [
+      {
+        "down_slot": 0,
+        "nonlinear_degree": 0,
+        "target": [
+          0,
+          0
+        ],
+        "target_generated": true,
+        "up_slot": 0,
+        "witness": [
+          "S"
+        ]
+      },
+      {
+        "down_slot": 1,
+        "nonlinear_degree": 2,
+        "target": [
+          3,
+          0
+        ],
+        "target_generated": true,
+        "up_slot": 0,
+        "witness": [
+          "B",
+          "B_dagger"
+        ]
+      },
+      {
+        "down_slot": 2,
+        "nonlinear_degree": 3,
+        "target": [
+          4,
+          -2
+        ],
+        "target_generated": true,
+        "up_slot": 0,
+        "witness": [
+          "A_dagger",
+          "B",
+          "B_dagger"
+        ]
+      },
+      {
+        "down_slot": 0,
+        "nonlinear_degree": 1,
+        "target": [
+          3,
+          3
+        ],
+        "target_generated": true,
+        "up_slot": 1,
+        "witness": [
+          "B"
+        ]
+      },
+      {
+        "down_slot": 1,
+        "nonlinear_degree": 1,
+        "target": [
+          3,
+          3
+        ],
+        "target_generated": true,
+        "up_slot": 1,
+        "witness": [
+          "B"
+        ]
+      },
+      {
+        "down_slot": 2,
+        "nonlinear_degree": 2,
+        "target": [
+          1,
+          1
+        ],
+        "target_generated": true,
+        "up_slot": 1,
+        "witness": [
+          "B",
+          "A_dagger"
+        ]
+      },
+      {
+        "down_slot": 0,
+        "nonlinear_degree": 3,
+        "target": [
+          5,
+          4
+        ],
+        "target_generated": true,
+        "up_slot": 2,
+        "witness": [
+          "B",
+          "B",
+          "A_dagger"
+        ]
+      },
+      {
+        "down_slot": 1,
+        "nonlinear_degree": 2,
+        "target": [
+          4,
+          4
+        ],
+        "target_generated": true,
+        "up_slot": 2,
+        "witness": [
+          "A",
+          "A"
+        ]
+      },
+      {
+        "down_slot": 2,
+        "nonlinear_degree": 1,
+        "target": [
+          2,
+          2
+        ],
+        "target_generated": true,
+        "up_slot": 2,
+        "witness": [
+          "A"
+        ]
+      }
+    ]
+  },
+  "normalized_peter_weyl_intertwiners": {
+    "Haar_measure": "normalized to total volume one",
+    "all_reduced_elements_nonzero": true,
+    "classification": "KINEMATICALLY_NORMALIZED_INTERTWINER_LIBRARY_NOT_ACTION_OWNED_CURRENT",
+    "formal_equal_coefficient_matrix": [
+      [
+        "1",
+        "-sqrt(7)",
+        "3"
+      ],
+      [
+        "sqrt(7)",
+        "-7*sqrt(6)/6",
+        "sqrt(3)/2"
+      ],
+      [
+        "sqrt(11)",
+        "42*sqrt(65)/65",
+        "-sqrt(21)"
+      ]
+    ],
+    "formal_equal_coefficient_matrix_rank": 3,
+    "matrix_element_formula": "sqrt((2L+1)(2J_d+1)/(2J_u+1)) CG_left CG_right",
+    "orthonormal_basis": "Y^J_(n,m)=sqrt(2J+1) D^J_(n,m)",
+    "physical_matrix_claimed": false,
+    "reduced_element_formula": "sqrt((2L+1)(2J_d+1)) CG(J_d m_d,L r|J_u m_u)",
+    "rows": [
+      {
+        "channel": [
+          0,
+          0
+        ],
+        "down_slot": 0,
+        "nonzero": true,
+        "normalized_reduced_element": "1",
+        "reduced_element_squared": "1",
+        "right_CG": "1",
+        "up_slot": 0
+      },
+      {
+        "channel": [
+          3,
+          0
+        ],
+        "down_slot": 1,
+        "nonzero": true,
+        "normalized_reduced_element": "-sqrt(7)",
+        "reduced_element_squared": "7",
+        "right_CG": "-sqrt(7)/7",
+        "up_slot": 0
+      },
+      {
+        "channel": [
+          4,
+          -2
+        ],
+        "down_slot": 2,
+        "nonzero": true,
+        "normalized_reduced_element": "3",
+        "reduced_element_squared": "9",
+        "right_CG": "1/3",
+        "up_slot": 0
+      },
+      {
+        "channel": [
+          3,
+          3
+        ],
+        "down_slot": 0,
+        "nonzero": true,
+        "normalized_reduced_element": "sqrt(7)",
+        "reduced_element_squared": "7",
+        "right_CG": "1",
+        "up_slot": 1
+      },
+      {
+        "channel": [
+          3,
+          3
+        ],
+        "down_slot": 1,
+        "nonzero": true,
+        "normalized_reduced_element": "-7*sqrt(6)/6",
+        "reduced_element_squared": "49/6",
+        "right_CG": "-sqrt(6)/6",
+        "up_slot": 1
+      },
+      {
+        "channel": [
+          1,
+          1
+        ],
+        "down_slot": 2,
+        "nonzero": true,
+        "normalized_reduced_element": "sqrt(3)/2",
+        "reduced_element_squared": "3/4",
+        "right_CG": "1/6",
+        "up_slot": 1
+      },
+      {
+        "channel": [
+          5,
+          4
+        ],
+        "down_slot": 0,
+        "nonzero": true,
+        "normalized_reduced_element": "sqrt(11)",
+        "reduced_element_squared": "11",
+        "right_CG": "1",
+        "up_slot": 2
+      },
+      {
+        "channel": [
+          4,
+          4
+        ],
+        "down_slot": 1,
+        "nonzero": true,
+        "normalized_reduced_element": "42*sqrt(65)/65",
+        "reduced_element_squared": "1764/65",
+        "right_CG": "2*sqrt(455)/65",
+        "up_slot": 2
+      },
+      {
+        "channel": [
+          2,
+          2
+        ],
+        "down_slot": 2,
+        "nonzero": true,
+        "normalized_reduced_element": "-sqrt(21)",
+        "reduced_element_squared": "21",
+        "right_CG": "-sqrt(105)/15",
+        "up_slot": 2
+      }
+    ],
+    "why_not_physical": "each entry belongs to a different normalized current harmonic; the action has not selected their coefficients, phases, or the component states inside the source and target blocks"
+  },
+  "official_prediction_logic_changed": false,
+  "open": [
+    "action-selected vector or state inside each nontrivial Berger block",
+    "action-generated primitive S, A, and B current components",
+    "action-selected coefficients and phases for the normalized intertwiner library",
+    "action-selected complex phase source for nonzero Jarlskog invariant",
+    "physical mass attachment and S_overlap=1/(4pi) derivation"
+  ],
+  "physical_masses": null,
+  "primary_result": "BHSM_COMPOSITE_CARRIER_AND_WEAK_CURRENT_REPRESENTATION_CLOSURE_DERIVED_CONDITIONALLY",
+  "release_verdict": "BHSM_1_0_RELEASE_BLOCKED",
+  "right_clebsch_gordan_witnesses": {
+    "all_minimal_right_CG_coefficients_nonzero": true,
+    "convention": "<J_d,m_d;L,r|J_u,m_u>",
+    "rows": [
+      {
+        "channel": [
+          0,
+          0
+        ],
+        "coefficient": "1",
+        "down_slot": 0,
+        "nonzero": true,
+        "up_slot": 0
+      },
+      {
+        "channel": [
+          3,
+          0
+        ],
+        "coefficient": "-sqrt(7)/7",
+        "down_slot": 1,
+        "nonzero": true,
+        "up_slot": 0
+      },
+      {
+        "channel": [
+          4,
+          -2
+        ],
+        "coefficient": "1/3",
+        "down_slot": 2,
+        "nonzero": true,
+        "up_slot": 0
+      },
+      {
+        "channel": [
+          3,
+          3
+        ],
+        "coefficient": "1",
+        "down_slot": 0,
+        "nonzero": true,
+        "up_slot": 1
+      },
+      {
+        "channel": [
+          3,
+          3
+        ],
+        "coefficient": "-sqrt(6)/6",
+        "down_slot": 1,
+        "nonzero": true,
+        "up_slot": 1
+      },
+      {
+        "channel": [
+          1,
+          1
+        ],
+        "coefficient": "1/6",
+        "down_slot": 2,
+        "nonzero": true,
+        "up_slot": 1
+      },
+      {
+        "channel": [
+          5,
+          4
+        ],
+        "coefficient": "1",
+        "down_slot": 0,
+        "nonzero": true,
+        "up_slot": 2
+      },
+      {
+        "channel": [
+          4,
+          4
+        ],
+        "coefficient": "2*sqrt(455)/65",
+        "down_slot": 1,
+        "nonzero": true,
+        "up_slot": 2
+      },
+      {
+        "channel": [
+          2,
+          2
+        ],
+        "coefficient": "-sqrt(105)/15",
+        "down_slot": 2,
+        "nonzero": true,
+        "up_slot": 2
+      }
+    ]
+  },
+  "separable_current_rank_theorem": {
+    "N_separable_channels_rank_bound": "rank(V) <= N",
+    "minimum_separable_channels_for_rank_three": 3,
+    "one_point_full_CKM_possible": false,
+    "single_point_kernel": "V_ij=a_i^* b_j",
+    "single_point_rank_bound": 1,
+    "verdict": "SINGLE_POINT_OR_SINGLE_SEPARABLE_TOPOGRAPHIC_CURRENT_CANNOT_GENERATE_FULL_RANK_CKM"
+  },
+  "single_irreducible_current_no_go": {
+    "diagonal_minimal_channels": [
+      [
+        0,
+        0
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        2,
+        2
+      ]
+    ],
+    "distinct_diagonal_irreps": 3,
+    "single_irrep_sufficient": false,
+    "verdict": "SINGLE_IRREDUCIBLE_WEAK_CURRENT_CANNOT_CONNECT_ALL_FROZEN_UP_DOWN_DIAGONAL_PAIRS"
+  },
+  "source_main_sha": "0721ee6a79f97cae5b3ac5bf040fa07ef9584678",
+  "spectral_function_boundary": {
+    "S_overlap_derived_from_action": false,
+    "can_generate_CKM_from_a_common_basis": false,
+    "can_generate_diagonal_hierarchy": "conditionally, after S_overlap and physical attachment",
+    "can_select_multiplet_component": false,
+    "central_function": "f(O_Berger)|H_(J,m)=f(lambda_(J,m)) I",
+    "historical_candidate": "exp[-S_overlap lambda_(J,m)]",
+    "physical_mass_attachment_derived": false
+  },
+  "sprint": "bhsm-composite-carrier-current-reduction-v8-4",
+  "validated": [
+    "block-level composite carrier architecture",
+    "exact minimal Wigner--Eckart channel table",
+    "nonzero exact right-weight Clebsch--Gordan witnesses",
+    "kinematically normalized Peter--Weyl reduced elements for all nine channels",
+    "three primitive current irreps suffice through cubic order",
+    "FR/triality/common-polarization mixing no-go",
+    "single-separable-channel rank no-go",
+    "mass-basis mismatch criterion for nontrivial CKM"
+  ],
+  "validation": {
+    "FR_not_continuous_mixing": true,
+    "all_nine_channels_generated": true,
+    "block_ranks_exact": true,
+    "closure_degree_at_most_three": true,
+    "component_selection_remains_open": true,
+    "formal_intertwiner_library_rank_three": true,
+    "frozen_ledgers_unchanged": true,
+    "mass_basis_mismatch_required": true,
+    "minimal_channel_table_exact": true,
+    "minimal_right_CG_coefficients_nonzero": true,
+    "no_CKM_matrix_emitted": true,
+    "no_new_free_parameter": true,
+    "no_physical_mass_emitted": true,
+    "normalized_reduced_elements_nonzero": true,
+    "single_irrep_no_go": true,
+    "single_point_rank_no_go": true,
+    "triality_not_generic_mixing": true
+  },
+  "validation_passed": true,
+  "version": "v8.4",
+  "weak_current_channel_table": {
+    "column_order": [
+      "D0",
+      "D1",
+      "D2"
+    ],
+    "entries_are": "minimal [L,r]",
+    "matrix": [
+      [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          -2
+        ]
+      ],
+      [
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      [
+        [
+          5,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          2,
+          2
+        ]
+      ]
+    ],
+    "row_order": [
+      "U0",
+      "U1",
+      "U2"
+    ],
+    "selection_rules": [
+      "|J_u-J_d| <= L <= J_u+J_d",
+      "r=m_u-m_d",
+      "|r| <= L"
+    ]
+  }
+}
