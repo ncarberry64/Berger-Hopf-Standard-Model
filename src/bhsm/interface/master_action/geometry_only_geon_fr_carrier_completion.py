@@ -596,6 +596,450 @@ def vacuum_status() -> dict[str, Any]:
     }
 
 
+def dependency_graph() -> list[dict[str, Any]]:
+    """Action-owned status of every arrow in the requested completion chain."""
+
+    return [
+        {
+            "node_or_arrow": "S8",
+            "value": "metric G_AB and real singlets chi,sigma",
+            "status": "ACTION_OWNED",
+        },
+        {
+            "node_or_arrow": "S8 -> Q_geom^0",
+            "value": configuration_space_definition()["physical_configuration_space"],
+            "status": "DERIVED_CANONICAL_CONFIGURATION_SPACE",
+        },
+        {
+            "node_or_arrow": "Q_geom^0 -> Phi_*",
+            "value": None,
+            "status": "BLOCKED_NO_ACTION_SELECTED_STATIONARY_GEON",
+        },
+        {
+            "node_or_arrow": "Q_geom^0 -> L_FR",
+            "value": None,
+            "status": "BLOCKED_PI1_TRIVIAL_FOR_DECLARED_SMALL_DIFF_QUOTIENT",
+        },
+        {
+            "node_or_arrow": "(Phi_*,L_FR) -> C_f",
+            "value": None,
+            "status": "BLOCKED_NO_LOCAL_CHIRAL_TRANSGRESSION_OR_G2_SELECTION",
+        },
+        {
+            "node_or_arrow": "C_f -> A_f",
+            "value": None,
+            "status": "BLOCKED_NO_GLOBAL_COMPOSITE_IMMERSION",
+        },
+        {
+            "node_or_arrow": "A_f -> (G_f,Q_f)",
+            "value": None,
+            "status": "NOT_EVALUABLE",
+        },
+        {
+            "node_or_arrow": "(A_u,J_CG,A_d) -> K_ud",
+            "value": None,
+            "status": "BLOCKED_NO_ACTION_OWNED_PARENT_CURRENT",
+        },
+        {
+            "node_or_arrow": "(G_f,Q_f,K_ud) -> V_BHSM",
+            "value": None,
+            "status": "CONDITIONAL_V8_9_FUNCTOR_NOT_EVALUABLE",
+        },
+    ]
+
+
+def geometry_only_no_go_theorem() -> dict[str, Any]:
+    return {
+        "hypotheses": [
+            "fixed M8=I x S7 smooth topology",
+            "active S8 fields exactly G_AB,chi,sigma",
+            "identity-component framed diffeomorphisms are gauge",
+            "no measured flavor input and no new field or coefficient",
+        ],
+        "failed_requirements": {
+            "nontrivial_pi1_Q_geom": "PROVED_FALSE_FOR_Q_geom^0",
+            "localized_stationary_solution": "OPEN_NOT_SELECTED",
+            "stable_geon_sector": "ABSENT_FROM_FIXED_TOPOLOGY_DOMAIN",
+            "G2_polarization": "PROVED_NOT_NATURALLY_METRIC_SELECTED",
+            "spinorial_composite_lift": "ABSENT_NO_LOCAL_TRANSGRESSION",
+            "chirality": "ABSENT_NO_LOCAL_CLIFFORD_CARRIER",
+            "global_family_immersion": "ABSENT",
+            "positive_Gram_form": "NOT_EVALUABLE",
+            "full_rank_current": "NOT_EVALUABLE",
+            "unique_branch_selection": "FALSE",
+            "parameter_independence": "FALSE_FOR_HOMOGENEOUS_BRANCHES",
+        },
+        "logical_core": [
+            "pi1(Q_geom^0)=0, so the declared geometry-only quotient has no nontrivial FR sign character",
+            "even a separately adopted global sign line has no local Spin(1,3) Clifford or chirality data",
+            "a metric and orientation do not naturally select a point of SO(7)/G2",
+            "therefore the original active field bundle cannot define C_f, A_f, or J_CG",
+        ],
+        "stronger_than_numerical_nonfinding": True,
+        "scope": "the current S8 action and fixed-manifold gauge doctrine; not every conceivable extended quantum-gravity theory",
+        "verdict": FINAL_VERDICT,
+    }
+
+
+def composite_immersion_audit() -> dict[str, Any]:
+    sectors = ("charged_lepton", "neutrino", "up", "down")
+    slots = ("base", "excitation_1", "excitation_2")
+    return {
+        "nonlinear_states": {
+            sector: {slot: None for slot in slots} for sector in sectors
+        },
+        "Psi_geom": {sector: None for sector in sectors},
+        "collective_tangents_Z_fi": {sector: None for sector in sectors},
+        "immersions_C_f": {sector: None for sector in sectors},
+        "evaluated_derivatives_A_f": {sector: None for sector in sectors},
+        "global_well_definedness_gate": "NOT_EVALUABLE",
+        "gauge_covariance_gate": "NOT_EVALUABLE",
+        "diffeomorphism_covariance_gate": "NOT_EVALUABLE",
+        "chirality_gate": "BLOCKED",
+        "FR_sign_gate": "BLOCKED",
+        "component_selection_gate": "CONDITIONAL_V8_5_SELECTOR_HAS_NO_ACTION_SELECTED_STATE",
+        "effective_localized_pole": None,
+        "reason": (
+            "the frozen finite family modules are representation data, but the "
+            "current action supplies neither a geon solution nor the FR/G2/local "
+            "spinor structures required to realize them as nonlinear states"
+        ),
+    }
+
+
+def physical_operator_and_flavor_readout() -> dict[str, Any]:
+    return {
+        "Phi_star": None,
+        "K8_gauge_fixed": None,
+        "H8_gauge_fixed": None,
+        "Hessian_self_adjoint_domain": None,
+        "physical_negative_modes": None,
+        "gauge_zero_modes_removed": False,
+        "G_charged_lepton": None,
+        "Q_charged_lepton": None,
+        "G_neutrino": None,
+        "Q_neutrino": None,
+        "G_u": None,
+        "Q_u": None,
+        "G_d": None,
+        "Q_d": None,
+        "J_CG": None,
+        "K_ud": None,
+        "Gram_positivity_gate": "NOT_EVALUABLE",
+        "simple_spectrum_gate": "NOT_EVALUABLE",
+        "current_full_rank_gate": "NOT_EVALUABLE",
+        "current_smallest_singular_value": None,
+        "V_BHSM": None,
+        "unitarity_residual": None,
+        "s12": None,
+        "s13": None,
+        "s23": None,
+        "J": None,
+        "Jarlskog_trace_identity_residual": None,
+        "basis_covariance_gate": "NOT_EVALUABLE",
+        "physical_matrix_promoted": False,
+        "comparison_with_external_data_performed": False,
+    }
+
+
+def mass_and_lepton_audit() -> dict[str, Any]:
+    return {
+        "action_decides_energy_vs_transfer_residue": False,
+        "universal_physical_scale": None,
+        "sector_base_energies": None,
+        "charged_lepton_masses": None,
+        "up_quark_masses": None,
+        "down_quark_masses": None,
+        "neutrino_propagation_spectrum": None,
+        "PMNS": None,
+        "leptonic_CP_invariants": None,
+        "Z_virt_u2_action_location": None,
+        "one_over_4pi_origin": None,
+        "mass_ratios_derived_in_v9_1": False,
+        "separate_sector_scales_fit": False,
+        "reason": "no action-selected nonlinear states, physical Hessian, or universal scale is available",
+    }
+
+
+def minimal_extension_comparison() -> dict[str, Any]:
+    """Compare permitted parent extensions without adopting an incomplete one."""
+
+    candidates = [
+        {
+            "rank": 1,
+            "candidate": "global manifold/geon topology sector",
+            "bundle_or_data": "sum over declared spatial topologies or full observer mapping classes",
+            "local_degrees_of_freedom": 0,
+            "new_coefficients": 0,
+            "FR": "possible after a sector and sign character are chosen",
+            "G2_triality": False,
+            "local_chirality": False,
+            "current_ownership": False,
+            "creates_new_particle": False,
+            "problem": "changes global action domain and still lacks local transgression",
+        },
+        {
+            "rank": 2,
+            "candidate": "S7-valued topological sigma field",
+            "bundle_or_data": "section U of an S7 target bundle",
+            "local_degrees_of_freedom": 7,
+            "new_coefficients": "at least one kinetic normalization",
+            "FR": "pi1 Map_*^N(S7,S7)=pi8(S7)=Z2",
+            "G2_triality": "not without extra octonionic structure",
+            "local_chirality": False,
+            "current_ownership": False,
+            "creates_new_particle": "generically yes",
+            "problem": "topology alone does not close the Clifford/current arrows",
+        },
+        {
+            "rank": 3,
+            "candidate": "unit spinor section",
+            "bundle_or_data": "unit section of the real rank-eight Spin(7) spinor bundle",
+            "local_degrees_of_freedom": 7,
+            "new_coefficients": "kinetic/constraint normalization",
+            "FR": False,
+            "G2_triality": "defines a G2 reduction by bilinears",
+            "local_chirality": "requires a separate M8-to-M4 reduction",
+            "current_ownership": False,
+            "creates_new_particle": "yes unless constrained as auxiliary geometry",
+            "problem": "violates the no-fundamental-spinor default and does not derive FR/current",
+        },
+        {
+            "rank": 4,
+            "candidate": "stable G2 three-form",
+            "bundle_or_data": "positive section phi in Lambda^3 T*S7",
+            "local_degrees_of_freedom": "35 before gauge/constraints",
+            "new_coefficients": "kinetic, torsion, and constraint data",
+            "FR": False,
+            "G2_triality": True,
+            "local_chirality": False,
+            "current_ownership": False,
+            "creates_new_particle": "yes unless the metric is derived from phi",
+            "problem": "duplicates metric data if added independently and does not close FR/current",
+        },
+        {
+            "rank": 5,
+            "candidate": "octonion-bundle section",
+            "bundle_or_data": "unit octonionic section plus multiplication/connection",
+            "local_degrees_of_freedom": "at least 7",
+            "new_coefficients": "connection and kinetic data",
+            "FR": False,
+            "G2_triality": True,
+            "local_chirality": "conditional",
+            "current_ownership": "conditional",
+            "creates_new_particle": "generically yes",
+            "problem": "more structure than a G2 reduction and no canonical FR sector",
+        },
+        {
+            "rank": 6,
+            "candidate": "constrained frame/triality field",
+            "bundle_or_data": "Spin(8) frame plus outer-automorphism polarization",
+            "local_degrees_of_freedom": "constraint-dependent",
+            "new_coefficients": "constraint and kinetic data",
+            "FR": False,
+            "G2_triality": True,
+            "local_chirality": "conditional",
+            "current_ownership": "conditional",
+            "creates_new_particle": "possibly",
+            "problem": "large redundant field content and no derived topology",
+        },
+        {
+            "rank": 7,
+            "candidate": "higher-form gauge field",
+            "bundle_or_data": "p-form connection/gerbe",
+            "local_degrees_of_freedom": "degree- and gauge-dependent",
+            "new_coefficients": "kinetic and topological levels",
+            "FR": "flux sectors possible",
+            "G2_triality": False,
+            "local_chirality": False,
+            "current_ownership": False,
+            "creates_new_particle": "generically yes",
+            "problem": "does not jointly derive the required representation carrier",
+        },
+    ]
+    return {
+        "comparison_performed_only_after_geometry_no_go": True,
+        "ranking_criterion": [
+            "minimum new independent data",
+            "maximum geometric inevitability",
+            "number of missing arrows closed",
+            "no flavor fitting",
+            "consistency and quantizability",
+        ],
+        "candidates": candidates,
+        "candidate_closing_all_missing_arrows": None,
+        "unique_minimal_extension": None,
+        "extension_adopted": False,
+        "BHSM_v2_parent_action_proposed": False,
+        "reason": (
+            "the globally minimal topology change and the locally minimal G2/spinor "
+            "changes close different arrows; none simultaneously derives FR, local "
+            "chirality, family immersion, and the parent current without further data"
+        ),
+    }
+
+
+def parameter_input_ledger() -> list[dict[str, Any]]:
+    return [
+        {
+            "symbol": symbol,
+            "classification": "INDEPENDENT_THEORY_INPUT",
+            "value": None,
+            "flavor_data": False,
+        }
+        for symbol in ("kappa0", "kappa1", "Zchi", "Zsigma", "g", "A0", "G0")
+    ] + [
+        {
+            "symbol": "frozen (k,j,q) family ledgers",
+            "classification": "FROZEN_STRUCTURAL_INPUT",
+            "value": "unchanged",
+            "flavor_data": False,
+        },
+        {
+            "symbol": "Y_u,Y_d,Y_e",
+            "classification": "INDEPENDENT_LOCALIZED_EFT_INPUT_NOT_USED",
+            "value": None,
+            "flavor_data": True,
+        },
+    ]
+
+
+def completion_gate_payload() -> dict[str, Any]:
+    from . import eight_dimensional_vacuum_flavor_completion as v90
+
+    gate = v90.completion_gate_payload()
+    gate.update(
+        {
+            "version": VERSION,
+            "sprint": SPRINT,
+            "source_pr207_sha": SOURCE_PR207_SHA,
+            "current_verdict": FINAL_VERDICT,
+            "next_highest_upstream_blocker": NEXT_MISSING_OBJECT,
+            "geometry_only_geon_FR_carrier": FINAL_VERDICT,
+            "geometry_only_completion": False,
+            "minimal_extension_adopted": False,
+            "BHSM_1_0_release_complete": False,
+        }
+    )
+    gate["RB15"] = {
+        "status": "BLOCKED_EXACT_GEOMETRY_ONLY_TOPOLOGY_AND_CARRIER_NO_GO",
+        "resolution": FINAL_VERDICT,
+    }
+    gate["RB16"] = {
+        "status": "DOWNSTREAM_BLOCKED",
+        "resolution": "no physical flavor/mass artifact is licensed",
+    }
+    return gate
+
+
+def status_report() -> dict[str, Any]:
+    topology = topology_status_report()
+    vacuum = vacuum_status()
+    forms = physical_operator_and_flavor_readout()
+    extension = minimal_extension_comparison()
+    validations = {
+        "topology_theorem_passed": topology["validation_passed"],
+        "vacuum_reductions_passed": vacuum["validation_passed"],
+        "FR_fails_closed": topology["small_diffeomorphism_pi1_theorem"]["FR_line_bundle"] is None,
+        "G2_fails_closed": topology["G2_selection_no_go"]["eta_phi"] is None,
+        "composite_immersion_fails_closed": all(
+            value is None for value in composite_immersion_audit()["immersions_C_f"].values()
+        ),
+        "physical_forms_fail_closed": all(
+            forms[key] is None
+            for key in ("G_u", "Q_u", "G_d", "Q_d", "K_ud", "V_BHSM")
+        ),
+        "no_incomplete_extension_adopted": not extension["extension_adopted"],
+        "no_physical_matrix_promoted": not forms["physical_matrix_promoted"],
+    }
+    return {
+        "artifact": ARTIFACT_NAME,
+        "version": VERSION,
+        "sprint": SPRINT,
+        "source_pr207_sha": SOURCE_PR207_SHA,
+        "exact_field_content": ["G_AB", "chi", "sigma"],
+        "original_or_extended_action": "ORIGINAL_S8_ACTION_ONLY",
+        "dependency_graph": dependency_graph(),
+        "geometry_and_topology": topology,
+        "vacuum": vacuum,
+        "geometry_only_no_go": geometry_only_no_go_theorem(),
+        "composite_immersion": composite_immersion_audit(),
+        "physical_operator_and_flavor_readout": forms,
+        "mass_and_lepton_sectors": mass_and_lepton_audit(),
+        "minimal_extension_comparison": extension,
+        "parameter_input_ledger": parameter_input_ledger(),
+        "prediction_freeze": topology_prediction_freeze(),
+        "validated": [
+            "the exact action-owned canonical configuration-space definition",
+            "trivial pi1 for the declared small-diffeomorphism quotient",
+            "separation of the optional large-diffeomorphism Theta_8 class from physical rotation/exchange",
+            "metric-only G2 naturality and torsion-free S7 obstructions",
+            "lapse-retaining closed-FLRW and quaternionic-Hopf reductions",
+            "two-method numerical validation of the representative de Sitter closed slicing",
+        ],
+        "invalidated": [
+            "promotion of the adopted v6.6 Map_*(S3,S3) FR line to an S8 action theorem",
+            "identification of the S7 exotic-sphere mapping class with a 2pi rotation or geon exchange",
+            "a stationary or periodic vacuum from the homogeneous closed-FLRW branch",
+            "a static finite-radius quaternionic-Hopf product vacuum",
+            "natural selection of a G2/triality polarization by metric and orientation alone",
+            "completion by any single currently listed minimal extension",
+        ],
+        "open": [
+            NEXT_MISSING_OBJECT,
+            "a revised global action domain if large diffeomorphisms or topology sums are physical",
+            "a local configuration-space-to-M4 chiral transgression theorem",
+            "a parent current term closing the same extended field bundle",
+        ],
+        "validation": validations,
+        "validation_passed": all(validations.values()),
+        "frozen_predictions_changed": False,
+        "measured_flavor_data_used": False,
+        "new_fundamental_fermion_added": False,
+        "new_continuous_parameter_added": False,
+        "physical_matrix_promoted": False,
+        "release_status": RELEASE_VERDICT,
+        "next_missing_object": NEXT_MISSING_OBJECT,
+        "final_verdict": FINAL_VERDICT,
+    }
+
+
+def status_to_markdown(payload: dict[str, Any] | None = None) -> str:
+    data = status_report() if payload is None else payload
+    topology = data["geometry_and_topology"]["small_diffeomorphism_pi1_theorem"]
+    forms = data["physical_operator_and_flavor_readout"]
+    return "\n".join(
+        [
+            "# BHSM geometry-only geon/FR carrier completion v9.1",
+            "",
+            f"Primary verdict: `{data['final_verdict']}`",
+            "",
+            f"- `pi1(Q_geom^0)`: `{topology['pi1_Q_geom_0']}`",
+            f"- nontrivial FR line: `{topology['FR_line_bundle']}`",
+            f"- action-selected stationary geon: `{data['vacuum']['stationary_geon_vacuum']}`",
+            f"- `G_u,Q_u,G_d,Q_d,K_ud,V_BHSM`: `{forms['V_BHSM']}`",
+            f"- physical promotion: `{str(data['physical_matrix_promoted']).lower()}`",
+            "",
+            "## Exact next object",
+            "",
+            f"`{data['next_missing_object']}`",
+            "",
+            f"Validation passed: `{str(data['validation_passed']).lower()}`",
+        ]
+    ) + "\n"
+
+
+def materialize(root: Path | None = None) -> list[Path]:
+    repository = Path(__file__).resolve().parents[4] if root is None else Path(root)
+    target = repository / "artifacts"
+    target.mkdir(parents=True, exist_ok=True)
+    artifact = target / f"{ARTIFACT_NAME}.json"
+    artifact.write_text(deterministic_json(status_report()), encoding="utf-8", newline="\n")
+    gate = target / "BHSM_1_0_completion_gate.json"
+    gate.write_text(deterministic_json(completion_gate_payload()), encoding="utf-8", newline="\n")
+    return [artifact, gate]
+
+
 def topology_status_report() -> dict[str, Any]:
     topology = small_diffeomorphism_pi1_theorem()
     g2 = g2_selection_no_go()
@@ -667,13 +1111,28 @@ __all__ = [
     "FINAL_VERDICT",
     "NEXT_MISSING_OBJECT",
     "candidate_loop_ledger",
+    "closed_flrw_reduction",
+    "cohomogeneity_one_and_localized_audit",
+    "completion_gate_payload",
+    "composite_immersion_audit",
     "configuration_space_definition",
     "configuration_space_strata",
+    "dependency_graph",
+    "flrw_numerical_crosscheck",
     "g2_selection_no_go",
+    "geometry_only_no_go_theorem",
     "large_diffeomorphism_audit",
     "local_carrier_no_go",
+    "mass_and_lepton_audit",
+    "materialize",
+    "minimal_extension_comparison",
+    "parameter_input_ledger",
+    "physical_operator_and_flavor_readout",
     "prior_fr_reconciliation",
     "small_diffeomorphism_pi1_theorem",
+    "status_report",
+    "status_to_markdown",
     "topology_prediction_freeze",
     "topology_status_report",
+    "vacuum_status",
 ]

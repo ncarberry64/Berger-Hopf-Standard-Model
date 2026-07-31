@@ -142,3 +142,95 @@ def test_vacuum_status_reports_no_physical_residual_for_an_unselected_vacuum():
     assert row["action_value_of_physical_vacuum"] is None
     assert row["physical_equation_residual"] is None
     assert row["physical_stability_spectrum"] is None
+
+
+def test_no_go_names_every_failed_completion_requirement():
+    row = v91.geometry_only_no_go_theorem()
+    failed = row["failed_requirements"]
+    assert len(failed) == 11
+    assert failed["nontrivial_pi1_Q_geom"].startswith("PROVED_FALSE")
+    assert failed["spinorial_composite_lift"].startswith("ABSENT")
+    assert failed["positive_Gram_form"] == "NOT_EVALUABLE"
+    assert row["stronger_than_numerical_nonfinding"]
+    assert row["verdict"] == v91.FINAL_VERDICT
+
+
+def test_dependency_graph_stops_at_the_first_missing_action_owned_arrows():
+    rows = v91.dependency_graph()
+    by_arrow = {row["node_or_arrow"]: row for row in rows}
+    assert by_arrow["S8"]["status"] == "ACTION_OWNED"
+    assert by_arrow["Q_geom^0 -> L_FR"]["value"] is None
+    assert by_arrow["C_f -> A_f"]["value"] is None
+    assert by_arrow["(G_f,Q_f,K_ud) -> V_BHSM"]["value"] is None
+
+
+def test_composite_states_and_immersions_are_null_not_synthetic():
+    row = v91.composite_immersion_audit()
+    assert all(
+        state is None
+        for sector in row["nonlinear_states"].values()
+        for state in sector.values()
+    )
+    assert all(value is None for value in row["immersions_C_f"].values())
+    assert all(value is None for value in row["evaluated_derivatives_A_f"].values())
+    assert row["chirality_gate"] == "BLOCKED"
+    assert row["FR_sign_gate"] == "BLOCKED"
+
+
+def test_physical_operators_current_matrix_and_invariants_fail_closed():
+    row = v91.physical_operator_and_flavor_readout()
+    assert all(
+        row[key] is None
+        for key in (
+            "K8_gauge_fixed",
+            "H8_gauge_fixed",
+            "G_u",
+            "Q_u",
+            "G_d",
+            "Q_d",
+            "K_ud",
+            "V_BHSM",
+            "s12",
+            "s13",
+            "s23",
+            "J",
+        )
+    )
+    assert row["Gram_positivity_gate"] == "NOT_EVALUABLE"
+    assert row["current_full_rank_gate"] == "NOT_EVALUABLE"
+    assert row["physical_matrix_promoted"] is False
+    assert row["comparison_with_external_data_performed"] is False
+
+
+def test_mass_and_lepton_outputs_remain_null_without_scale_fitting():
+    row = v91.mass_and_lepton_audit()
+    assert row["universal_physical_scale"] is None
+    assert row["charged_lepton_masses"] is None
+    assert row["PMNS"] is None
+    assert row["one_over_4pi_origin"] is None
+    assert row["separate_sector_scales_fit"] is False
+
+
+def test_minimal_extensions_are_compared_only_after_no_go_and_none_adopted():
+    row = v91.minimal_extension_comparison()
+    assert row["comparison_performed_only_after_geometry_no_go"]
+    assert len(row["candidates"]) == 7
+    assert row["candidate_closing_all_missing_arrows"] is None
+    assert row["unique_minimal_extension"] is None
+    assert row["extension_adopted"] is False
+    assert row["BHSM_v2_parent_action_proposed"] is False
+
+
+def test_completion_gate_and_full_report_preserve_original_action_scope():
+    gate = v91.completion_gate_payload()
+    report = v91.status_report()
+    assert gate["version"] == "v9.1"
+    assert gate["current_verdict"] == v91.FINAL_VERDICT
+    assert gate["minimal_extension_adopted"] is False
+    assert gate["BHSM_1_0_release_complete"] is False
+    assert report["original_or_extended_action"] == "ORIGINAL_S8_ACTION_ONLY"
+    assert report["validation_passed"]
+    assert report["physical_matrix_promoted"] is False
+    assert report["measured_flavor_data_used"] is False
+    assert report["new_fundamental_fermion_added"] is False
+    assert report["new_continuous_parameter_added"] is False
