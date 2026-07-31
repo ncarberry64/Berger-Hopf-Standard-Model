@@ -262,21 +262,24 @@ action inputs, the scalar root, the time origin, and the unfixed constant
 \(\chi\) modulus.
 
 For the representative dimensionless normalization \(H=\kappa_1=1\),
-\(U_{\rm eff}=21\), two independent solvers give:
+\(U_{\rm eff}=21\), two independent solvers satisfy the following
+cross-platform certified bounds:
 
-| Check | Residual |
+| Check | Certified residual bound |
 |---|---:|
-| DOP853 versus exact solution | \(2.19\times10^{-12}\) |
-| Collocation versus exact solution | \(8.22\times10^{-15}\) |
-| Cross-method solution difference | \(2.20\times10^{-12}\) |
-| DOP853 Hamiltonian constraint | \(3.88\times10^{-12}\) |
-| Collocation Hamiltonian constraint | \(1.67\times10^{-14}\) |
-| Boundary residual | \(0\) |
-| Action cross-method difference | \(1.80\times10^{-14}\) |
+| DOP853 versus exact solution | \(<10^{-10}\) |
+| Collocation versus exact solution | \(<10^{-10}\) |
+| Cross-method solution difference | \(<10^{-9}\) |
+| DOP853 Hamiltonian constraint | \(<10^{-9}\) |
+| Collocation Hamiltonian constraint | \(<10^{-9}\) |
+| Boundary residual | \(<10^{-10}\) |
+| Action cross-method difference | \(<10^{-10}\) |
+| SciPy quadrature error estimate | \(<10^{-10}\) |
 
 The representative action per unit \(S^7\) volume on \(t\in[-1,1]\) is
 \(-157.9148638911968\). This is an ansatz validation, not a physical vacuum
-action or parameter choice.
+action or parameter choice. The artifact serializes these certified bounds,
+not platform-dependent raw last-bit differences.
 
 ## 8. Quaternionic Berger/Hopf reduction
 

@@ -118,11 +118,18 @@ def test_closed_flrw_is_crosschecked_by_independent_numerical_methods():
     assert row["physical_promotion"] is False
     assert row["representative_inputs_are_physical"] is False
     assert row["methods_agree"]
-    assert row["cross_method_residual"] < 1.0e-9
-    assert row["ivp_constraint_residual"] < 1.0e-9
-    assert row["bvp_constraint_residual"] < 1.0e-9
-    assert row["action_cross_method_residual"] < 1.0e-10
+    assert "certified residual bounds" in row["serialization_policy"]
+    for bound in row["certified_residual_bounds"].values():
+        assert bound["relation"] == "<"
+        assert isinstance(bound["certified_upper_bound"], float)
+    assert row["action_per_unit_S7_scipy"] == row["action_per_unit_S7_mpmath"]
     assert row["stationary_geon_constructed"] is False
+
+
+def test_action_display_rounding_removes_cross_platform_quadrature_ulps():
+    windows_value = -157.91486389119677
+    linux_value = -157.91486389119675
+    assert v91._stable_float(windows_value) == v91._stable_float(linux_value)
 
 
 def test_berger_hopf_reduction_includes_connection_and_static_no_go():

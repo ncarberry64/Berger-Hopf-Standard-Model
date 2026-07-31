@@ -687,17 +687,44 @@
       "unit_S7_volume": "pi^4/3"
     },
     "closed_FLRW_numerical_crosscheck": {
-      "action_cross_method_residual": 1.8033596937772764e-14,
-      "action_per_unit_S7_mpmath": -157.91486389119675,
-      "action_per_unit_S7_scipy": -157.91486389119677,
-      "boundary_residual": 0.0,
-      "bvp_constraint_residual": 1.6653345369377348e-14,
-      "bvp_exact_solution_residual": 8.215650382226158e-15,
+      "action_per_unit_S7_mpmath": -157.914863891197,
+      "action_per_unit_S7_scipy": -157.914863891197,
       "bvp_success": true,
+      "certified_residual_bounds": {
+        "action_cross_method_residual": {
+          "certified_upper_bound": 1e-10,
+          "relation": "<"
+        },
+        "boundary_residual": {
+          "certified_upper_bound": 1e-10,
+          "relation": "<"
+        },
+        "bvp_constraint_residual": {
+          "certified_upper_bound": 1e-09,
+          "relation": "<"
+        },
+        "bvp_exact_solution_residual": {
+          "certified_upper_bound": 1e-10,
+          "relation": "<"
+        },
+        "cross_method_residual": {
+          "certified_upper_bound": 1e-09,
+          "relation": "<"
+        },
+        "ivp_constraint_residual": {
+          "certified_upper_bound": 1e-09,
+          "relation": "<"
+        },
+        "ivp_exact_solution_residual": {
+          "certified_upper_bound": 1e-10,
+          "relation": "<"
+        },
+        "scipy_quadrature_error_estimate": {
+          "certified_upper_bound": 1e-10,
+          "relation": "<"
+        }
+      },
       "classification": "ANSATZ_VALIDATION_ONLY",
-      "cross_method_residual": 2.191358206005134e-12,
-      "ivp_constraint_residual": 3.881339694089547e-12,
-      "ivp_exact_solution_residual": 2.1886936707460336e-12,
       "ivp_success": true,
       "mesh_points_final": 619,
       "mesh_points_initial": 81,
@@ -713,7 +740,7 @@
         "Ueff": 21.0,
         "kappa1": 1.0
       },
-      "scipy_quadrature_error_estimate": 1.753207178225075e-12,
+      "serialization_policy": "store cross-platform certified residual bounds, not unstable raw last-bit method differences",
       "stationary_geon_constructed": false
     },
     "cohomogeneity_one_and_localized": {

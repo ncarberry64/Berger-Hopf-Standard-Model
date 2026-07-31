@@ -48,6 +48,12 @@ def deterministic_json(value: Any) -> str:
     return json.dumps(value, indent=2, sort_keys=True, ensure_ascii=False) + "\n"
 
 
+def _stable_float(value: float, digits: int = 15) -> float:
+    """Round a display value without serializing platform-specific last bits."""
+
+    return float(f"{value:.{digits}g}")
+
+
 def configuration_space_definition() -> dict[str, Any]:
     """Return the declared canonical geometry-only configuration space.
 
@@ -414,17 +420,7 @@ def flrw_numerical_crosscheck() -> dict[str, Any]:
 
     ivp_constraint = ivp_values[1] ** 2 + 1.0 - ivp_values[0] ** 2
     bvp_constraint = bvp_values[1] ** 2 + 1.0 - bvp_values[0] ** 2
-    return {
-        "classification": "ANSATZ_VALIDATION_ONLY",
-        "physical_promotion": False,
-        "representative_inputs_are_physical": False,
-        "representative_normalization": {"H": 1.0, "kappa1": 1.0, "Ueff": 21.0},
-        "methods": [
-            "DOP853 initial-value integration",
-            "fourth-order collocation boundary-value solve",
-        ],
-        "ivp_success": bool(ivp.success),
-        "bvp_success": bool(bvp.success),
+    observed_residuals = {
         "ivp_exact_solution_residual": float(
             np.max(np.abs(ivp_values - np.vstack((exact_a, exact_v))))
         ),
@@ -437,20 +433,47 @@ def flrw_numerical_crosscheck() -> dict[str, Any]:
         "boundary_residual": float(
             np.max(np.abs(boundary(bvp_values[:, 0], bvp_values[:, -1])))
         ),
-        "action_per_unit_S7_scipy": float(scipy_action),
-        "action_per_unit_S7_mpmath": float(mpmath_action),
         "action_cross_method_residual": float(abs(scipy_action - mpmath_action)),
         "scipy_quadrature_error_estimate": float(scipy_error),
+    }
+    certified_bounds = {
+        "ivp_exact_solution_residual": 1.0e-10,
+        "bvp_exact_solution_residual": 1.0e-10,
+        "cross_method_residual": 1.0e-9,
+        "ivp_constraint_residual": 1.0e-9,
+        "bvp_constraint_residual": 1.0e-9,
+        "boundary_residual": 1.0e-10,
+        "action_cross_method_residual": 1.0e-10,
+        "scipy_quadrature_error_estimate": 1.0e-10,
+    }
+    for key, observed in observed_residuals.items():
+        if not observed < certified_bounds[key]:
+            raise RuntimeError(f"{key}={observed} exceeds {certified_bounds[key]}")
+
+    return {
+        "classification": "ANSATZ_VALIDATION_ONLY",
+        "physical_promotion": False,
+        "representative_inputs_are_physical": False,
+        "representative_normalization": {"H": 1.0, "kappa1": 1.0, "Ueff": 21.0},
+        "methods": [
+            "DOP853 initial-value integration",
+            "fourth-order collocation boundary-value solve",
+        ],
+        "ivp_success": bool(ivp.success),
+        "bvp_success": bool(bvp.success),
+        "action_per_unit_S7_scipy": _stable_float(scipy_action),
+        "action_per_unit_S7_mpmath": _stable_float(float(mpmath_action)),
+        "serialization_policy": (
+            "store cross-platform certified residual bounds, not unstable "
+            "raw last-bit method differences"
+        ),
+        "certified_residual_bounds": {
+            key: {"relation": "<", "certified_upper_bound": bound}
+            for key, bound in certified_bounds.items()
+        },
         "mesh_points_initial": int(grid.size),
         "mesh_points_final": int(bvp.x.size),
-        "methods_agree": bool(
-            ivp.success
-            and bvp.success
-            and np.max(np.abs(ivp_values - bvp_values)) < 1.0e-9
-            and np.max(np.abs(ivp_constraint)) < 1.0e-9
-            and np.max(np.abs(bvp_constraint)) < 1.0e-9
-            and abs(scipy_action - mpmath_action) < 1.0e-10
-        ),
+        "methods_agree": bool(ivp.success and bvp.success),
         "stationary_geon_constructed": False,
     }
 
