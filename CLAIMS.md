@@ -2112,3 +2112,33 @@ Not supported:
 Exact verdict:
 
 `BHSM_ACTION_SELECTED_8D_VACUUM_FLAVOR_MATRIX_NOT_DERIVABLE_FROM_CURRENT_STRATIFIED_ACTION`.
+
+## v9.1 geometry-only geon/FR carrier claim boundary
+
+Supported:
+
+- the canonical metric-plus-real-scalar configuration space on fixed
+  `M8=I x S7`, with observer-framed small diffeomorphisms;
+- `pi1(Q_geom^0)=0` for that declared quotient;
+- separation of the optional `Theta_8=Z2` large-diffeomorphism class from a
+  physical rotation/exchange loop and from a local spinor bundle;
+- the exact closed-FLRW and quaternionic-Hopf homogeneous reductions;
+- the absence of a metric-natural `G2` selection and of torsion-free `G2`
+  holonomy on `S7`;
+- fail-closed null physical flavor, current, mass, and lepton outputs.
+
+Not supported:
+
+- promoting the v6.6 adopted `Map_*^N(S3,S3)` FR line to an `S8` result;
+- selecting a sign character for large diffeomorphisms without new global
+  action doctrine;
+- identifying the exotic-sphere mapping class with `2pi` rotation or geon
+  exchange;
+- a stationary geon, action-selected `G2/C3` polarization, local chiral
+  transgression, global family immersion, physical Gram/Hessian forms, or
+  parent current;
+- any numerical flavor matrix, mass spectrum, or minimal parent extension.
+
+Exact verdict:
+
+`BHSM_GEOMETRY_ONLY_PARENT_ACTION_CANNOT_GENERATE_THE_REQUIRED_FR_CHIRAL_FLAVOR_CARRIER`.

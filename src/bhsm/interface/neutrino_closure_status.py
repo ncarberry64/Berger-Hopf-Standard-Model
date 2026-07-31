@@ -26,12 +26,12 @@ NEUTRINO_PUBLIC_STATUS = (
 
 PUBLIC_REPO_STATUS = (
     "BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. "
-    "Current public status: v9.0 integrates the conditional v8.4--v8.9 composite-carrier, "
-    "profile, channel-normalization, charged-current, and geometric-lens theorems. The current "
-    "stratified action does not select a unique stationary eight-dimensional vacuum or own the "
-    "global composite immersions and parent charged-current kernel required to evaluate "
-    "G_u,Q_u,G_d,Q_d,K_ud. No physical flavor matrix is therefore derived; RB-15/RB-16 remain "
-    "blocked."
+    "Current public status: v9.1 proves that the original metric-plus-real-scalar S8 action "
+    "cannot generate the required geometry-only FR chiral flavor carrier. The declared "
+    "small-diffeomorphism configuration space has trivial fundamental group; the optional "
+    "large-diffeomorphism Z2 is neither an action-selected rotation/exchange character nor a "
+    "local spinor bundle. No stationary geon, G2 polarization, composite immersion, parent "
+    "current, or physical flavor matrix is derived; RB-15/RB-16 remain blocked."
 )
 
 REMAINING_MISSING_OBJECTS = (

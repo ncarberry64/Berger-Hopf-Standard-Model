@@ -5,7 +5,7 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
-BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v9.0 integrates the conditional v8.4--v8.9 composite-carrier, profile, channel-normalization, charged-current, and geometric-lens theorems. The current stratified action does not select a unique stationary eight-dimensional vacuum or own the global composite immersions and parent charged-current kernel required to evaluate G_u,Q_u,G_d,Q_d,K_ud. No physical flavor matrix is therefore derived; RB-15/RB-16 remain blocked.
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v9.1 proves that the original metric-plus-real-scalar S8 action cannot generate the required geometry-only FR chiral flavor carrier. The declared small-diffeomorphism configuration space has trivial fundamental group; the optional large-diffeomorphism Z2 is neither an action-selected rotation/exchange character nor a local spinor bundle. No stationary geon, G2 polarization, composite immersion, parent current, or physical flavor matrix is derived; RB-15/RB-16 remain blocked.
 
 This independent mathematical-physics project investigates whether
 Berger-Hopf boundary geometry can organize structures associated with
@@ -21,7 +21,7 @@ Standard Model, or received institutional endorsement.
 - [Scientific contribution ledger](docs/bhsm_scientific_contribution_ledger.md)
 - [CERN toy model in plain language](docs/cern_toy_model_in_plain_language.md)
 - [STATUS.md](STATUS.md) and [claim boundaries](CLAIMS.md)
-- [BHSM v8.2 generation attachment](docs/bhsm_generation_projector_action_attachment_v8_2.md), [v8.3 mode stress](docs/bhsm_classical_mode_stress_incidence_v8_3.md), and [v9.0 vacuum/flavor audit](docs/bhsm_action_selected_8d_vacuum_flavor_completion_v9_0.md)
+- [BHSM v8.2 generation attachment](docs/bhsm_generation_projector_action_attachment_v8_2.md), [v8.3 mode stress](docs/bhsm_classical_mode_stress_incidence_v8_3.md), [v9.0 vacuum/flavor audit](docs/bhsm_action_selected_8d_vacuum_flavor_completion_v9_0.md), and [v9.1 geometry-only geon/FR audit](docs/bhsm_geometry_only_geon_fr_carrier_completion_v9_1.md)
 - [Reviewer reproduction guide](docs/reviewer_reproduction_guide.md)
 - [Frozen records](docs/frozen_predictions.md) and [artifact index](ARTIFACT_INDEX.md)
 

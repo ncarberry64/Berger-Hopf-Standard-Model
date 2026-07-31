@@ -816,6 +816,7 @@ python -m bhsm.interface channel-normalization-status --format markdown
 python -m bhsm.interface common-parent-current-status --format markdown
 python -m bhsm.interface geometric-lens-status --format markdown
 python -m bhsm.interface 8d-vacuum-flavor-status --format markdown
+python -m bhsm.interface geometry-only-geon-fr-status --format markdown
 ```
 
 The v8.4--v8.9 commands report conditional theorems and explicitly marked

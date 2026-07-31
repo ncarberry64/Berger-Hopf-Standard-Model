@@ -75,7 +75,7 @@ Reviewer entry points:
 [claim boundaries](CLAIMS.md), and
 [reproduction guide](docs/reviewer_reproduction_guide.md).
 
-BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v9.0 integrates the conditional v8.4--v8.9 composite-carrier, profile, channel-normalization, charged-current, and geometric-lens theorems. The current stratified action does not select a unique stationary eight-dimensional vacuum or own the global composite immersions and parent charged-current kernel required to evaluate G_u,Q_u,G_d,Q_d,K_ud. No physical flavor matrix is therefore derived; RB-15/RB-16 remain blocked.
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v9.1 proves that the original metric-plus-real-scalar S8 action cannot generate the required geometry-only FR chiral flavor carrier. The declared small-diffeomorphism configuration space has trivial fundamental group; the optional large-diffeomorphism Z2 is neither an action-selected rotation/exchange character nor a local spinor bundle. No stationary geon, G2 polarization, composite immersion, parent current, or physical flavor matrix is derived; RB-15/RB-16 remain blocked.
 
 BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity. Physical eV/GeV neutrino mass closure remains open pending a numeric neutral stiffness length sqrt(A_nu/Z_nu), a physical K_neutral,eff map in m^-2, and complete-action derivation of the admissible response cone.
 
@@ -2784,3 +2784,25 @@ and `V_BHSM` are undefined, and no physical matrix is promoted.
 
 Current exact verdict:
 `BHSM_ACTION_SELECTED_8D_VACUUM_FLAVOR_MATRIX_NOT_DERIVABLE_FROM_CURRENT_STRATIFIED_ACTION`.
+
+## v9.1 geometry-only geon/FR carrier gate
+
+The action-owned canonical space is
+`Q_geom^0=[Met_+(S7) x H^s(S7,R)^2]/Diff_(0,fr)(S7)`. Its total field
+space is contractible and its framed gauge group is connected, so
+`pi1(Q_geom^0)=0`. The separate `pi0 Diff^+(S7)=Theta_8=Z2` mapping
+class belongs to a different full-diffeomorphism quotient and is not an
+action-selected rotation/exchange character or local chiral bundle.
+
+The closed-FLRW reduction yields coefficient-dependent de Sitter evolution,
+not a stationary or periodic geon. The homogeneous quaternionic-Hopf
+two-scale reduction has no positive-scale static product solution. Metric and
+orientation alone do not select a point of `SO(7)/G2=RP7`, and (S^7)
+admits no torsion-free (G_2) form because (H^3(S^7)=0).
+
+`G_u,Q_u,G_d,Q_d,K_ud,V_BHSM` remain undefined. No minimal extension is
+adopted because none of the audited candidates closes FR topology, local
+chirality, global family immersion, and parent-current ownership together.
+
+Current exact verdict:
+`BHSM_GEOMETRY_ONLY_PARENT_ACTION_CANNOT_GENERATE_THE_REQUIRED_FR_CHIRAL_FLAVOR_CARRIER`.
