@@ -1,8 +1,18 @@
 from __future__ import annotations
 
+import json
+import os
+from pathlib import Path
+import subprocess
+import sys
+
 from bhsm.interface.master_action import (
+    eight_dimensional_vacuum_flavor_completion as v90,
     geometry_only_geon_fr_carrier_completion as v91,
 )
+
+
+ROOT = Path(__file__).resolve().parents[1]
 
 
 def test_configuration_space_is_exactly_typed_and_framed():
@@ -234,3 +244,70 @@ def test_completion_gate_and_full_report_preserve_original_action_scope():
     assert report["measured_flavor_data_used"] is False
     assert report["new_fundamental_fermion_added"] is False
     assert report["new_continuous_parameter_added"] is False
+
+
+def test_materializer_is_byte_idempotent(tmp_path):
+    first_paths = v91.materialize(tmp_path)
+    first = {path.name: path.read_bytes() for path in first_paths}
+    second_paths = v91.materialize(tmp_path)
+    second = {path.name: path.read_bytes() for path in second_paths}
+    assert first == second
+    artifact = json.loads(
+        (tmp_path / "artifacts" / f"{v91.ARTIFACT_NAME}.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    assert artifact["physical_operator_and_flavor_readout"]["V_BHSM"] is None
+
+
+def test_cli_json_and_markdown_are_fail_closed():
+    env = dict(os.environ)
+    env["PYTHONPATH"] = str(ROOT / "src")
+    command = [
+        sys.executable,
+        "-m",
+        "bhsm.interface",
+        "geometry-only-geon-fr-status",
+    ]
+    json_run = subprocess.run(
+        command + ["--format", "json"],
+        cwd=ROOT,
+        env=env,
+        text=True,
+        capture_output=True,
+        check=True,
+    )
+    markdown_run = subprocess.run(
+        command + ["--format", "markdown"],
+        cwd=ROOT,
+        env=env,
+        text=True,
+        capture_output=True,
+        check=True,
+    )
+    assert json.loads(json_run.stdout)["final_verdict"] == v91.FINAL_VERDICT
+    assert v91.FINAL_VERDICT in markdown_run.stdout
+    assert "physical promotion: `false`" in markdown_run.stdout
+
+
+def test_repository_artifact_and_theorem_report_match_the_implementation():
+    artifact_path = ROOT / "artifacts" / f"{v91.ARTIFACT_NAME}.json"
+    report_path = (
+        ROOT / "docs" / "bhsm_geometry_only_geon_fr_carrier_completion_v9_1.md"
+    )
+    assert artifact_path.read_text(encoding="utf-8") == v91.deterministic_json(
+        v91.status_report()
+    )
+    report = report_path.read_text(encoding="utf-8")
+    assert v91.FINAL_VERDICT in report
+    assert v91.NEXT_MISSING_OBJECT in report
+    assert "pi_1(\\mathcal Q_{\\rm geom}^0)" in report
+
+
+def test_v90_proxy_firewall_remains_unchanged():
+    vacuum = v90.vacuum_proxy_crosscheck()
+    lens = v90.lens_numerical_crosscheck()
+    assert vacuum["classification"] == "PROXY_STRESS_TEST_ONLY"
+    assert lens["classification"] == "PROXY_STRESS_TEST_ONLY"
+    assert vacuum["physical_promotion"] is False
+    assert lens["physical_promotion"] is False

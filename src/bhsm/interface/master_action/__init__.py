@@ -1,7 +1,7 @@
 """BHSM master-action, transport, and vacuum-to-flavor audit API.
 
 The v7.0 constants and v7.1 master-action report remain exported for
-artifact compatibility. Current v9.0 completion constants and status are
+artifact compatibility. Current v9.1 completion constants and status are
 exposed separately.
 """
 
@@ -18,14 +18,14 @@ from .report import (
 )
 from .validation import validate_model
 
-CURRENT_VERSION = "v9.0"
+CURRENT_VERSION = "v9.1"
 CURRENT_MISSING_OBJECT = (
-    "ACTION_SELECTED_STATIONARY_8D_VACUUM_WITH_ACTION_OWNED_GLOBAL_"
-    "COMPOSITE_IMMERSIONS_AND_COMMON_PARENT_CHARGED_CURRENT_KERNEL"
+    "ACTION_LEVEL_GLOBAL_TOPOLOGICAL_SECTOR_WITH_LOCAL_CHIRAL_"
+    "TRANSGRESSION_AND_COMMON_PARENT_CURRENT_OWNERSHIP"
 )
 CURRENT_VERDICT = (
-    "BHSM_ACTION_SELECTED_8D_VACUUM_FLAVOR_MATRIX_NOT_DERIVABLE_"
-    "FROM_CURRENT_STRATIFIED_ACTION"
+    "BHSM_GEOMETRY_ONLY_PARENT_ACTION_CANNOT_GENERATE_THE_REQUIRED_"
+    "FR_CHIRAL_FLAVOR_CARRIER"
 )
 
 
@@ -127,6 +127,20 @@ def eight_dimensional_vacuum_flavor_status_to_markdown(payload=None):
     return status_to_markdown(payload)
 
 
+def geometry_only_geon_fr_carrier_status_payload():
+    """Return the current v9.1 geometry-only completion status."""
+    from .geometry_only_geon_fr_carrier_completion import status_report
+
+    return status_report()
+
+
+def geometry_only_geon_fr_carrier_status_to_markdown(payload=None):
+    """Render the current v9.1 geometry-only completion status."""
+    from .geometry_only_geon_fr_carrier_completion import status_to_markdown
+
+    return status_to_markdown(payload)
+
+
 __all__ = [
     "ARTIFACT_FILES",
     "CURRENT_MISSING_OBJECT",
@@ -144,6 +158,8 @@ __all__ = [
     "eight_dimensional_vacuum_flavor_status_to_markdown",
     "frozen_file_sha256",
     "frozen_hashes_match",
+    "geometry_only_geon_fr_carrier_status_payload",
+    "geometry_only_geon_fr_carrier_status_to_markdown",
     "materialize",
     "mass_curvature_response_status_payload",
     "mass_curvature_response_status_to_markdown",
