@@ -79,6 +79,11 @@ python scripts/materialize_physical_deformation_domain_v10_3.py
 
 ```powershell
 python -m bhsm.interface spacetime-removal-depth-status --format json
+python -m bhsm.interface spacetime-support-status --format json
+python -m bhsm.interface support-action-status --format json
+python -m bhsm.interface support-constraint-status --format json
+python -m bhsm.interface core-stratum-status --format json
+python -m bhsm.interface support-three-mode-status --format json
 python -m bhsm.interface three-mode-action-status --format json
 python -m bhsm.interface global-equilibrium-status --format json
 python -m bhsm.interface cosmic-unit-anchor-status --format json
@@ -89,5 +94,5 @@ python scripts/materialize_spacetime_removal_completion_v10_4.py
 ```
 
 Every status command also accepts `--format markdown`. These commands report
-the exact proper-volume constraint no-go, the unselected geometric-extension
-decision, and null downstream physical outputs.
+the exact proper-volume constraint no-go, the author-selected support ontology,
+the remaining support-action non-uniqueness, and null downstream outputs.

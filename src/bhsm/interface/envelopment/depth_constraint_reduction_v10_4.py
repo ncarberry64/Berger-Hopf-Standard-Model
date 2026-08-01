@@ -13,8 +13,11 @@ REDUCTION_VERDICT = (
     "BHSM_PROPER_VOLUME_DEFICIT_HAS_NO_INDEPENDENT_PHYSICAL_SCALAR_"
     "AFTER_CONSTRAINT_REDUCTION"
 )
-EXTENSION_VERDICT = "BHSM_MINIMAL_GEOMETRIC_DEPTH_EXTENSION_REQUIRES_AUTHOR_SELECTION"
-NEXT_EXACT_OBJECT = "AUTHOR_SELECTION_OF_MINIMAL_GEOMETRIC_DEPTH_EXTENSION_CONFIGURATION_AND_ACTION"
+EXTENSION_VERDICT = (
+    "STRATIFIED_CORE_SPACETIME_SUPPORT_ORDER_PARAMETER_"
+    "AUTHOR_SELECTED_GEOMETRIC_EXTENSION_CLASS"
+)
+NEXT_EXACT_OBJECT = "ACTION_PRINCIPLE_FIXING_Z_UPSILON_U_UPSILON_AND_SUPPORT_COUPLINGS"
 
 
 def constraint_count() -> dict[str, Any]:
@@ -79,7 +82,7 @@ def extension_rows() -> list[dict[str, Any]]:
         {"class": "constrained volume-form degree", "independent_or_auxiliary": "auxiliary/global unless new kinetic structure is added", "transformation": "top-form density", "kinetic": None, "potential": "constraint only", "localized_depth": False, "new_parameters": "normalization/source", "ghost_gradient": "no local mode", "restoring_role": "global", "strictly_dominates": False, "adopted": False},
         {"class": "unimodular plus volume decomposition", "independent_or_auxiliary": "field redefinition in current EH action", "transformation": "scalar conformal factor plus unit determinant metric", "kinetic": "DeWitt conformal direction remains constrained", "potential": "existing curvature/cosmological terms", "localized_depth": False, "new_parameters": [], "ghost_gradient": "constraint-reduced", "restoring_role": "none new", "strictly_dominates": False, "adopted": False},
         {"class": "independent measure/density field", "independent_or_auxiliary": "new geometric density", "transformation": "weight-one density or scalar ratio to dmu_G", "kinetic": "must be specified", "potential": "must be specified", "localized_depth": "possible", "new_parameters": "kinetic, potential, and coupling coefficients", "ghost_gradient": "open", "restoring_role": "possible", "strictly_dominates": False, "adopted": False},
-        {"class": "core-support order parameter", "independent_or_auxiliary": "new geometric scalar", "transformation": "diffeomorphism scalar", "kinetic": "must be specified", "potential": "must select supported/depleted phases", "localized_depth": "possible", "new_parameters": "profile/potential/coupling data", "ghost_gradient": "open", "restoring_role": "possible", "strictly_dominates": False, "adopted": False},
+        {"class": "stratified core spacetime-support order parameter", "independent_or_auxiliary": "author-selected new geometric scalar", "transformation": "dimensionless diffeomorphism scalar", "kinetic": "must be specified and positive", "potential": "regular background conditions known; function not selected", "localized_depth": "possible after canonical normalization", "new_parameters": "kinetic, potential, and coupling data", "ghost_gradient": "healthy only conditionally on positive reduced kinetic function", "restoring_role": "possible", "strictly_dominates": False, "adopted": True},
         {"class": "stratified degenerate-metric transition", "independent_or_auxiliary": "new domain/action class", "transformation": "stratum-compatible metric/measure data", "kinetic": "requires a well-posed degenerate or first-order action", "potential": "transition law open", "localized_depth": "conceptually direct", "new_parameters": "junction/transition data", "ghost_gradient": "open", "restoring_role": "possible", "strictly_dominates": False, "adopted": False},
         {"class": "non-Riemannian volume form/topological density modulus", "independent_or_auxiliary": "typically auxiliary or global flux", "transformation": "top form", "kinetic": "no local polarization in minimal form", "potential": "flux sector", "localized_depth": False, "new_parameters": "normalization and sources", "ghost_gradient": "no local mode", "restoring_role": "global only", "strictly_dominates": False, "adopted": False},
         {"class": "normal-support scalar from parent measure", "independent_or_auxiliary": "composite in current action", "transformation": "requires relational pullback", "kinetic": "none independent", "potential": None, "localized_depth": "target only", "new_parameters": [], "ghost_gradient": "not an independent mode", "restoring_role": "none", "strictly_dominates": False, "adopted": False},
@@ -92,7 +95,7 @@ def extension_rows() -> list[dict[str, Any]]:
                 "coupling_to_localized_stress": "not derived",
                 "Hamiltonian_constraints": "must be derived for the proposed configuration space",
                 "reduction_to_current_BHSM": "required when the new geometric datum is auxiliary, frozen, or removed",
-                "unique": False,
+                "unique": row["class"] == "stratified core spacetime-support order parameter",
             }
         )
     return rows
@@ -107,8 +110,8 @@ def reduction_payload() -> dict[str, Any]:
         "shape_metric_positive": kinetic["shape_metric_positive"],
         "volume_projection_zero": projection["reduced_physical_q_V_vector_in_beta_gamma_space"] == [0.0, 0.0],
         "no_qD": projection["q_D_nonzero"] is False,
-        "no_extension_selected": not any(row["adopted"] for row in extensions),
-        "multiple_extension_classes": len(extensions) > 1,
+        "author_extension_selected": sum(bool(row["adopted"]) for row in extensions) == 1,
+        "action_not_selected_by_extension_choice": True,
     }
     return {
         "constraint_analysis": constraint_count(),
@@ -118,9 +121,9 @@ def reduction_payload() -> dict[str, Any]:
         "target_count_reached": False,
         "existing_action_verdict": REDUCTION_VERDICT,
         "minimal_extension_comparison": extensions,
-        "unique_minimal_extension": None,
+        "unique_minimal_extension": "stratified core spacetime-support order parameter",
         "extension_verdict": EXTENSION_VERDICT,
-        "new_geometric_fields_adopted": [],
+        "new_geometric_fields_adopted": ["upsilon (author-selected configuration variable; action ownership open)"],
         "new_continuous_parameters_adopted": [],
         "next_exact_object": NEXT_EXACT_OBJECT,
         "validation": validation,

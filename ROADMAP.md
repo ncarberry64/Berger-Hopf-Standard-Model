@@ -358,14 +358,14 @@ The existing metric sector is now exhausted for the proper-volume candidate.
 Do not reopen raw determinant suppression, call the constrained conformal sign
 a ghost, or continue into physical cycles with a rank-two mode system.
 
-The next exact object requires an author choice of geometric configuration
-space and action:
+The author has selected the stratified-core support configuration variable.
+The next exact object is now an action principle that fixes its kinetic
+function, potential, and support couplings:
 
-`AUTHOR_SELECTION_OF_MINIMAL_GEOMETRIC_DEPTH_EXTENSION_CONFIGURATION_AND_ACTION`.
+`ACTION_PRINCIPLE_FIXING_Z_UPSILON_U_UPSILON_AND_SUPPORT_COUPLINGS`.
 
-The decision must select or reject the independent-measure, core-support,
-stratified-degenerate-transition, constrained/topological-volume, and
-parent-measure classes with explicit transformation law, kinetic term,
-potential, stress coupling, constraints, domain, parameters, and frozen-action
-limit. Only a healthy action-owned local degree licenses reconstruction of the
-common three-mode Hessian and downstream orbit campaign.
+The audit must distinguish the inequivalent constant-kinetic and
+inverse-square-kinetic families (and their couplings), fix the core variational
+ensemble, and preserve the frozen-action limit. Only a healthy uniquely
+action-owned local degree licenses reconstruction of the common three-mode
+Hessian and downstream orbit campaign.

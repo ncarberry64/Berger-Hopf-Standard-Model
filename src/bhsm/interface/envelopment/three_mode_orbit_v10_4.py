@@ -5,7 +5,7 @@ from __future__ import annotations
 from typing import Any
 
 
-ORBIT_VERDICT = "BHSM_THREE_MODE_ORBIT_INELIGIBLE_WITHOUT_ACTION_OWNED_DEPTH_MODE"
+ORBIT_VERDICT = "BHSM_SUPPORT_RELATIVE_PERIODIC_ORBIT_BLOCKED_BY_INCOMPLETE_THREE_MODE_ACTION"
 
 
 def orbit_payload() -> dict[str, Any]:
@@ -33,7 +33,10 @@ def orbit_payload() -> dict[str, Any]:
         "marginal_directions": None,
         "unstable_directions": None,
         "numerical_solve_performed": False,
-        "reason": "q_D, the complete common action, and a stationary common background are absent",
+        "reason": (
+            "the upsilon extension class exists, but its unique action/canonical q_D, the complete common "
+            "three-mode operator, core data, and a stationary localized background are absent"
+        ),
         "verdict": ORBIT_VERDICT,
         "validation_passed": True,
     }

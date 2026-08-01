@@ -8,16 +8,34 @@ from typing import Any
 from .cosmic_unit_anchor_v10_4 import ANCHOR_VERDICT, cosmic_anchor_payload
 from .depth_constraint_reduction_v10_4 import (
     EXTENSION_VERDICT,
-    NEXT_EXACT_OBJECT,
     REDUCTION_VERDICT,
     reduction_payload,
 )
+from .core_stratum_matching_v10_4 import CORE_STATUS, core_matching_payload
 from .generation_monodromy_v10_4 import GENERATION_VERDICT, generation_payload
 from .global_equilibrium_v10_4 import GLOBAL_VERDICT, global_equilibrium_payload
 from .particle_cycle_v10_4 import PARTICLE_VERDICT, particle_cycle_payload
 from .physical_mass_mixing_gate_v10_4 import MASS_MIXING_VERDICT, mass_mixing_payload
 from .proper_volume_depth_v10_4 import proper_volume_payload
 from .relational_axioms import AUTHOR_DOCTRINE, deterministic_json, doctrine_sha256
+from .spacetime_support_order_parameter_v10_4 import (
+    ORDER_PARAMETER_STATUS,
+    order_parameter_payload,
+)
+from .support_action_v10_4 import (
+    ACTION_VERDICT as SUPPORT_ACTION_VERDICT,
+    NEXT_EXACT_OBJECT,
+    support_action_payload,
+)
+from .support_constraint_analysis_v10_4 import (
+    CONSTRAINT_STATUS,
+    support_constraint_payload,
+)
+from .support_orbit_gate_v10_4 import support_orbit_payload
+from .support_three_mode_coupling_v10_4 import (
+    THREE_MODE_STATUS,
+    support_three_mode_payload,
+)
 from .three_mode_action_v10_4 import ACTION_VERDICT, three_mode_action_payload
 from .three_mode_orbit_v10_4 import ORBIT_VERDICT, orbit_payload
 
@@ -25,10 +43,15 @@ from .three_mode_orbit_v10_4 import ORBIT_VERDICT, orbit_payload
 VERSION = "v10.4"
 SPRINT = "bhsm-spacetime-removal-completion-v10-4"
 SOURCE_V10_3_SHA = "887f1e57c2aa967dc3abde61ad19f4745491d7eb"
-PRIMARY_VERDICT = EXTENSION_VERDICT
+PRIMARY_VERDICT = SUPPORT_ACTION_VERDICT
 
 ARTIFACT_FILES = {
     "depth": "BHSM_spacetime_removal_depth_gate_v10_4.json",
+    "support_order_parameter": "BHSM_spacetime_support_order_parameter_v10_4.json",
+    "support_action": "BHSM_support_action_gate_v10_4.json",
+    "support_constraint": "BHSM_support_constraint_gate_v10_4.json",
+    "core_matching": "BHSM_core_stratum_matching_gate_v10_4.json",
+    "support_three_mode": "BHSM_support_three_mode_coupling_v10_4.json",
     "three_mode": "BHSM_three_mode_action_v10_4.json",
     "global": "BHSM_global_equilibrium_gate_v10_4.json",
     "anchor": "BHSM_cosmic_unit_anchor_v10_4.json",
@@ -46,7 +69,9 @@ def hindsight_payload() -> dict[str, list[str]]:
             "the exact P1 DeWitt reduction separates one constrained negative volume direction from two positive shape directions",
             "the physical projection of q_V into the reduced beta/gamma space is zero",
             "exact metric degeneracy lies outside the current inverse-metric action domain",
-            "no compared geometric extension strictly dominates without an author action choice",
+            "the author selects upsilon as a stratified-core support order parameter",
+            "a positive-Z scalar contributes one physical canonical pair conditionally",
+            "constant and inverse-square kinetic families give inequivalent canonical depths",
         ],
         "INVALIDATED": [
             "determinant suppression treated as locally gauge invariant without a background pullback",
@@ -56,10 +81,12 @@ def hindsight_payload() -> dict[str, list[str]]:
             "arbitrary depth potential inserted",
             "particle mass used as unit calibration",
             "three geometric modes identified with three generations",
+            "the author-selected extension class treated as a uniquely selected action",
             "incomplete current used to print CKM or PMNS",
         ],
         "OPEN": [
             NEXT_EXACT_OBJECT,
+            "CORE_STRATUM_ACTION_AND_SYMPLECTIC_CURRENT",
             "ACTION_OWNED_THREE_MODE_COMMON_DOMAIN_KINETIC_HESSIAN_AND_SOURCE",
             "STABLE_RELATIVE_PERIODIC_THREE_MODE_ORBIT_AND_PHYSICAL_FLOQUET_SPECTRUM",
             "COMPLETE_ACTION_SELECTED_GLOBAL_EQUILIBRIUM_AND_ELIGIBLE_COSMIC_ANCHOR",
@@ -87,6 +114,12 @@ def completion_marks() -> dict[str, Any]:
 def completion_payload() -> dict[str, Any]:
     depth = proper_volume_payload()
     reduction = reduction_payload()
+    order_parameter = order_parameter_payload()
+    support_action = support_action_payload()
+    support_constraint = support_constraint_payload()
+    core_matching = core_matching_payload()
+    support_three_mode = support_three_mode_payload()
+    support_orbit = support_orbit_payload()
     action = three_mode_action_payload()
     orbit = orbit_payload()
     global_result = global_equilibrium_payload()
@@ -99,7 +132,13 @@ def completion_payload() -> dict[str, Any]:
         "depth_valid": depth["validation_passed"],
         "reduction_valid": reduction["validation_passed"],
         "volume_no_go_exact": reduction["existing_action_verdict"] == REDUCTION_VERDICT,
-        "no_extension_adopted": reduction["new_geometric_fields_adopted"] == [],
+        "author_extension_selected": reduction["extension_verdict"] == EXTENSION_VERDICT,
+        "order_parameter_valid": order_parameter["validation_passed"],
+        "support_action_audit_valid": support_action["validation_passed"],
+        "support_action_not_fabricated": support_action["selected_Z_upsilon"] is None,
+        "conditional_constraint_audit_valid": support_constraint["validation_passed"],
+        "core_matching_fail_closed": core_matching["complete_junction_law"] is False,
+        "support_three_mode_fail_closed": support_three_mode["stable_eigenmode"] is None,
         "three_mode_fail_closed": action["target_rank_three_reached"] is False,
         "orbit_not_fabricated": orbit["numerical_solve_performed"] is False,
         "global_not_promoted": global_result["unique_dimensionless_shape"] is False,
@@ -118,6 +157,11 @@ def completion_payload() -> dict[str, Any]:
         "canonical_paradigm": AUTHOR_DOCTRINE["paradigm"],
         "primary_verdict": PRIMARY_VERDICT,
         "depth_verdict": REDUCTION_VERDICT,
+        "order_parameter_verdict": ORDER_PARAMETER_STATUS,
+        "support_action_verdict": SUPPORT_ACTION_VERDICT,
+        "support_constraint_verdict": CONSTRAINT_STATUS,
+        "core_stratum_verdict": CORE_STATUS,
+        "support_three_mode_verdict": THREE_MODE_STATUS,
         "three_mode_verdict": ACTION_VERDICT,
         "orbit_verdict": ORBIT_VERDICT,
         "global_verdict": GLOBAL_VERDICT,
@@ -127,6 +171,12 @@ def completion_payload() -> dict[str, Any]:
         "mass_mixing_verdict": MASS_MIXING_VERDICT,
         "spacetime_removal_depth": depth,
         "constraint_reduction_and_extension_decision": reduction,
+        "spacetime_support_order_parameter": order_parameter,
+        "support_action": support_action,
+        "support_constraint_analysis": support_constraint,
+        "core_stratum_matching": core_matching,
+        "support_three_mode_coupling": support_three_mode,
+        "support_orbit_gate": support_orbit,
         "three_mode_action": action,
         "three_mode_orbit_and_interference": orbit,
         "global_equilibrium": global_result,
@@ -140,7 +190,7 @@ def completion_payload() -> dict[str, Any]:
         "official_prediction_logic_changed": False,
         "measured_particle_inputs_used": [],
         "global_unit_anchor_used": False,
-        "new_geometric_fields_adopted": [],
+        "new_geometric_fields_adopted": ["upsilon (author-selected extension class; action normalization open)"],
         "new_continuous_parameters_adopted": [],
         "new_gravity_mediator": False,
         "fundamental_dissipation": False,
@@ -165,6 +215,11 @@ def artifact_payloads() -> dict[str, dict[str, Any]]:
     }
     return {
         "depth": depth,
+        "support_order_parameter": completion["spacetime_support_order_parameter"],
+        "support_action": completion["support_action"],
+        "support_constraint": completion["support_constraint_analysis"],
+        "core_matching": completion["core_stratum_matching"],
+        "support_three_mode": completion["support_three_mode_coupling"],
         "three_mode": {**completion["three_mode_action"], "orbit_and_interference": completion["three_mode_orbit_and_interference"]},
         "global": completion["global_equilibrium"],
         "anchor": completion["cosmic_unit_anchor"],
@@ -186,22 +241,29 @@ def canonical_completion_gate_payload() -> dict[str, Any]:
             "current_verdict": PRIMARY_VERDICT,
             "next_highest_upstream_blocker": NEXT_EXACT_OBJECT,
             "proper_volume_depth_verdict": REDUCTION_VERDICT,
+            "support_order_parameter_extension_class": ORDER_PARAMETER_STATUS,
+            "support_action_verdict": SUPPORT_ACTION_VERDICT,
             "third_spacetime_removal_mode_action_owned": False,
             "three_mode_action_complete": False,
             "physical_particle_cycles_complete": False,
             "physical_mass_mixing_complete": False,
-            "new_fields_in_v10_4": [],
+            "new_fields_in_v10_4": ["upsilon (author-selected extension class; action ownership open)"],
             "new_continuous_parameters_in_v10_4": [],
             "BHSM_1_0_release_complete": False,
         }
     )
-    gate["RB15"] = {"status": "BLOCKED_BY_GEOMETRIC_DEPTH_EXTENSION_AUTHOR_SELECTION", "resolution": NEXT_EXACT_OBJECT}
+    gate["RB15"] = {"status": "BLOCKED_BY_NONUNIQUE_SUPPORT_ACTION_AND_COMMON_THREE_MODE_OPERATOR", "resolution": NEXT_EXACT_OBJECT}
     gate["RB16"] = {"status": "DOWNSTREAM_BLOCKED", "resolution": "no physical mass, CKM, or PMNS artifact is licensed"}
     return gate
 
 
 COMMAND_SECTIONS = {
     "spacetime-removal-depth-status": "spacetime_removal_depth",
+    "spacetime-support-status": "spacetime_support_order_parameter",
+    "support-action-status": "support_action",
+    "support-constraint-status": "support_constraint_analysis",
+    "core-stratum-status": "core_stratum_matching",
+    "support-three-mode-status": "support_three_mode_coupling",
     "three-mode-action-status": "three_mode_action",
     "global-equilibrium-status": "global_equilibrium",
     "cosmic-unit-anchor-status": "cosmic_unit_anchor",
@@ -240,7 +302,8 @@ def command_to_markdown(command: str, payload: dict[str, Any] | None = None) -> 
             "",
             "- Physical derivation complete: `false`",
             "- Frozen predictions changed: `false`",
-            "- New geometric field or parameter adopted: `false`",
+            "- Author-selected geometric extension class: `upsilon`",
+            "- Unique support action or new continuous parameter adopted: `false`",
             "- Particle calibration used: `false`",
             "",
             "## Exact next object",

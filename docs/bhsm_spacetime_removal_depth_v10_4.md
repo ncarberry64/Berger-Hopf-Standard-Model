@@ -91,8 +91,15 @@ author axioms. No field or parameter is adopted.
 
 Campaign verdict:
 
+Historical pre-selection verdict:
 `BHSM_MINIMAL_GEOMETRIC_DEPTH_EXTENSION_REQUIRES_AUTHOR_SELECTION`.
+
+The continuation resolves only the extension-class selection: the author
+selects a stratified-core spacetime-support scalar `upsilon`. The action audit
+then finds multiple inequivalent healthy kinetic/coupling families. Current
+verdict:
+`BHSM_MULTIPLE_INEQUIVALENT_SUPPORT_ACTIONS_REMAIN_AFTER_AUTHOR_EXTENSION_SELECTION`.
 
 Exact next object:
 
-`AUTHOR_SELECTION_OF_MINIMAL_GEOMETRIC_DEPTH_EXTENSION_CONFIGURATION_AND_ACTION`.
+`ACTION_PRINCIPLE_FIXING_Z_UPSILON_U_UPSILON_AND_SUPPORT_COUPLINGS`.

@@ -107,7 +107,7 @@
       ]
     },
     "existing_action_verdict": "BHSM_PROPER_VOLUME_DEFICIT_HAS_NO_INDEPENDENT_PHYSICAL_SCALAR_AFTER_CONSTRAINT_REDUCTION",
-    "extension_verdict": "BHSM_MINIMAL_GEOMETRIC_DEPTH_EXTENSION_REQUIRES_AUTHOR_SELECTION",
+    "extension_verdict": "STRATIFIED_CORE_SPACETIME_SUPPORT_ORDER_PARAMETER_AUTHOR_SELECTED_GEOMETRIC_EXTENSION_CLASS",
     "kinetic_reduction": {
       "deWitt_u_matrix": [
         [
@@ -222,22 +222,22 @@
       },
       {
         "Hamiltonian_constraints": "must be derived for the proposed configuration space",
-        "adopted": false,
-        "class": "core-support order parameter",
+        "adopted": true,
+        "class": "stratified core spacetime-support order parameter",
         "coupling_to_localized_stress": "not derived",
         "coupling_to_q_C_q_W": "not derived",
-        "ghost_gradient": "open",
-        "independent_or_auxiliary": "new geometric scalar",
-        "kinetic": "must be specified",
-        "localized_depth": "possible",
+        "ghost_gradient": "healthy only conditionally on positive reduced kinetic function",
+        "independent_or_auxiliary": "author-selected new geometric scalar",
+        "kinetic": "must be specified and positive",
+        "localized_depth": "possible after canonical normalization",
         "mass_dimension": "undetermined until a canonical action normalization is selected",
-        "new_parameters": "profile/potential/coupling data",
-        "potential": "must select supported/depleted phases",
+        "new_parameters": "kinetic, potential, and coupling data",
+        "potential": "regular background conditions known; function not selected",
         "reduction_to_current_BHSM": "required when the new geometric datum is auxiliary, frozen, or removed",
         "restoring_role": "possible",
         "strictly_dominates": false,
-        "transformation": "diffeomorphism scalar",
-        "unique": false
+        "transformation": "dimensionless diffeomorphism scalar",
+        "unique": true
       },
       {
         "Hamiltonian_constraints": "must be derived for the proposed configuration space",
@@ -298,8 +298,10 @@
       }
     ],
     "new_continuous_parameters_adopted": [],
-    "new_geometric_fields_adopted": [],
-    "next_exact_object": "AUTHOR_SELECTION_OF_MINIMAL_GEOMETRIC_DEPTH_EXTENSION_CONFIGURATION_AND_ACTION",
+    "new_geometric_fields_adopted": [
+      "upsilon (author-selected configuration variable; action ownership open)"
+    ],
+    "next_exact_object": "ACTION_PRINCIPLE_FIXING_Z_UPSILON_U_UPSILON_AND_SUPPORT_COUPLINGS",
     "physical_projection": {
       "P_perp_CW_q_V": [
         0.0,
@@ -319,10 +321,10 @@
     },
     "physical_scalar_count_across_qC_qW_qD": 2,
     "target_count_reached": false,
-    "unique_minimal_extension": null,
+    "unique_minimal_extension": "stratified core spacetime-support order parameter",
     "validation": {
-      "multiple_extension_classes": true,
-      "no_extension_selected": true,
+      "action_not_selected_by_extension_choice": true,
+      "author_extension_selected": true,
       "no_qD": true,
       "shape_metric_positive": true,
       "two_physical_shapes": true,

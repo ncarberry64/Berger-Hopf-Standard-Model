@@ -4,13 +4,13 @@ from bhsm.interface.envelopment.three_mode_action_v10_4 import ACTION_VERDICT, t
 from bhsm.interface.envelopment.three_mode_orbit_v10_4 import ORBIT_VERDICT, orbit_payload
 
 
-def test_three_mode_action_stays_rank_two_and_types_every_missing_block():
+def test_three_mode_action_adds_only_a_conditional_support_slot():
     payload = three_mode_action_payload()
-    assert payload["mode_status"]["q_D"] == "ABSENT_AFTER_CONSTRAINT_REDUCTION"
-    assert payload["physical_rank"] == 2
+    assert payload["mode_status"]["q_D"] == "DERIVED_CONDITIONAL_ON_POSITIVE_Z_UPSILON"
+    assert payload["physical_rank"] == "2+1 conditional"
     assert payload["target_rank_three_reached"] is False
     assert payload["K_0"][0][1]["status"] == "UNDEFINED_CROSS_DOMAIN"
-    assert payload["K_0"][2][2]["status"] == "OPEN"
+    assert payload["K_0"][2][2]["status"] == "DERIVED_CONDITIONAL"
     assert payload["complete_common_source"] is None
     assert payload["verdict"] == ACTION_VERDICT
 

@@ -160,6 +160,11 @@ observables, and unchanged frozen hashes.
 
 ```bash
 python -m bhsm.interface spacetime-removal-depth-status --format json
+python -m bhsm.interface spacetime-support-status --format json
+python -m bhsm.interface support-action-status --format json
+python -m bhsm.interface support-constraint-status --format json
+python -m bhsm.interface core-stratum-status --format json
+python -m bhsm.interface support-three-mode-status --format json
 python -m bhsm.interface three-mode-action-status --format json
 python -m bhsm.interface global-equilibrium-status --format json
 python -m bhsm.interface cosmic-unit-anchor-status --format json
@@ -167,13 +172,14 @@ python -m bhsm.interface particle-cycle-status --format json
 python -m bhsm.interface physical-mass-mixing-status --format json
 python -m bhsm.interface v10-4-final-completion-status --format json
 python scripts/materialize_spacetime_removal_completion_v10_4.py
-python -m pytest -q tests/test_bhsm_proper_volume_depth_v10_4.py tests/test_bhsm_depth_constraint_reduction_v10_4.py tests/test_bhsm_three_mode_action_v10_4.py tests/test_bhsm_global_equilibrium_scale_v10_4.py tests/test_bhsm_particle_generation_mass_mixing_v10_4.py tests/test_bhsm_final_completion_gate_v10_4.py
+python -m pytest -q tests/test_bhsm_proper_volume_depth_v10_4.py tests/test_bhsm_depth_constraint_reduction_v10_4.py tests/test_bhsm_spacetime_support_order_parameter_v10_4.py tests/test_bhsm_support_action_v10_4.py tests/test_bhsm_support_constraint_analysis_v10_4.py tests/test_bhsm_core_stratum_matching_v10_4.py tests/test_bhsm_support_three_mode_coupling_v10_4.py tests/test_bhsm_three_mode_action_v10_4.py tests/test_bhsm_global_equilibrium_scale_v10_4.py tests/test_bhsm_particle_generation_mass_mixing_v10_4.py tests/test_bhsm_final_completion_gate_v10_4.py
 ```
 
 Run the materializer twice and compare bytes. Verify
 `q_V=-(7/8)delta rho`, DeWitt coefficient `-42`, positive shape eigenvalues
 `4/7` and `2`, the zero reduced volume projection, no propagated conformal
-ghost claim, no extension adoption, null three-mode/orbit/scale/mass/mixing
+ghost claim, author-selected `upsilon` without an adopted action coefficient,
+null three-mode/orbit/scale/mass/mixing
 outputs, no particle calibration, and unchanged frozen predictions.
 
 ## Reviewer checkpoint: v10.3

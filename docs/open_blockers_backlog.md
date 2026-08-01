@@ -2,11 +2,12 @@
 
 Current public status: v10.4 proves that the proper-volume candidate is the
 Hamiltonian-constrained common-volume direction and has zero reduced physical
-projection. It does not provide `q_D`. Seven inequivalent geometric extension
-classes remain unselected; no field or coefficient was added. The seam remains
+projection. It does not provide `q_D`. The author selects a stratified-core
+support scalar `upsilon`, but its action and canonical normalization remain
+non-unique; no coefficient was added. The seam remains
 a coordinate/observable projection, and three modes remain distinct from
 three generation phases. The live Tier-C object is
-`AUTHOR_SELECTION_OF_MINIMAL_GEOMETRIC_DEPTH_EXTENSION_CONFIGURATION_AND_ACTION`.
+`ACTION_PRINCIPLE_FIXING_Z_UPSILON_U_UPSILON_AND_SUPPORT_COUPLINGS`.
 
 Historical compatibility boundary: structural architecture integrated conditional; numerical closure open.
 This sentence records the pre-v7.1 numerical-closure status required by the
@@ -16,19 +17,19 @@ Each blocker must be handled without fitting observed data after comparison and 
 
 ## Current v10.4 highest-upstream blocker
 
-`AUTHOR_SELECTION_OF_MINIMAL_GEOMETRIC_DEPTH_EXTENSION_CONFIGURATION_AND_ACTION`
+`ACTION_PRINCIPLE_FIXING_Z_UPSILON_U_UPSILON_AND_SUPPORT_COUPLINGS`
 
 The exact ADM calculation reduces `q_V` to `-(7/8)delta rho`; lapse and the
 Hamiltonian constraint remove that canonical pair. Its physical kinetic
-projection is zero. Independent-measure, support-order, stratified transition,
-and topological-volume alternatives require inequivalent new action data, so
-the repository cannot choose among them. Until the author supplies that action
-choice, the three-mode kinetic matrix, Hessian, source, orbit, interference
+projection is zero. The selected support ontology admits inequivalent constant
+and inverse-square positive kinetic families as well as unfixed potentials and
+couplings. Until an action principle selects among them, the three-mode kinetic
+matrix, Hessian, source, orbit, interference
 output, scale, cycles, masses, mixing, and M4 normalization remain ineligible.
 
 Exact verdict:
 
-`BHSM_MINIMAL_GEOMETRIC_DEPTH_EXTENSION_REQUIRES_AUTHOR_SELECTION`
+`BHSM_MULTIPLE_INEQUIVALENT_SUPPORT_ACTIONS_REMAIN_AFTER_AUTHOR_EXTENSION_SELECTION`
 
 | Blocker | Current status | Why it matters | Next valid action | Forbidden invalid action |
 | --- | --- | --- | --- | --- |

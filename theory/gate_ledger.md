@@ -231,11 +231,11 @@ Exact next object:
 
 The proper-volume candidate reduces exactly to the Hamiltonian-constrained
 common-volume direction and has zero vector in the positive physical shape
-space. It supplies no independent `q_D`. No minimal geometric extension is
-selected because the compared local-measure/support/stratified classes require
-inequivalent new action data.
+space. It supplies no independent `q_D`. The author selects the stratified-core
+support scalar `upsilon`, but its kinetic, potential, coupling, and core-action
+data remain inequivalent and unselected.
 
-RB-15: `BLOCKED_BY_GEOMETRIC_DEPTH_EXTENSION_AUTHOR_SELECTION`.
+RB-15: `BLOCKED_BY_NONUNIQUE_SUPPORT_ACTION_AND_COMMON_THREE_MODE_OPERATOR`.
 
 RB-16: `DOWNSTREAM_BLOCKED`.
 
@@ -243,7 +243,7 @@ Depth verdict:
 `BHSM_PROPER_VOLUME_DEFICIT_HAS_NO_INDEPENDENT_PHYSICAL_SCALAR_AFTER_CONSTRAINT_REDUCTION`.
 
 Current verdict:
-`BHSM_MINIMAL_GEOMETRIC_DEPTH_EXTENSION_REQUIRES_AUTHOR_SELECTION`.
+`BHSM_MULTIPLE_INEQUIVALENT_SUPPORT_ACTIONS_REMAIN_AFTER_AUTHOR_EXTENSION_SELECTION`.
 
 Exact next object:
-`AUTHOR_SELECTION_OF_MINIMAL_GEOMETRIC_DEPTH_EXTENSION_CONFIGURATION_AND_ACTION`.
+`ACTION_PRINCIPLE_FIXING_Z_UPSILON_U_UPSILON_AND_SUPPORT_COUPLINGS`.

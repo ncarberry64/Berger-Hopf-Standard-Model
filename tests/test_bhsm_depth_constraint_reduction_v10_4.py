@@ -26,11 +26,13 @@ def test_hamiltonian_reduction_removes_volume_pair_not_shape_modes():
     assert payload["existing_action_verdict"] == REDUCTION_VERDICT
 
 
-def test_multiple_geometric_extensions_remain_unselected():
+def test_author_selects_support_extension_but_not_its_action():
     payload = reduction_payload()
     assert len(payload["minimal_extension_comparison"]) == 7
-    assert not any(row["adopted"] for row in payload["minimal_extension_comparison"])
-    assert payload["unique_minimal_extension"] is None
+    assert sum(row["adopted"] for row in payload["minimal_extension_comparison"]) == 1
+    assert payload["unique_minimal_extension"] == "stratified core spacetime-support order parameter"
     assert payload["extension_verdict"] == EXTENSION_VERDICT
-    assert payload["new_geometric_fields_adopted"] == []
+    assert payload["new_geometric_fields_adopted"] == [
+        "upsilon (author-selected configuration variable; action ownership open)"
+    ]
     assert payload["new_continuous_parameters_adopted"] == []

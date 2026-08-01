@@ -1,0 +1,149 @@
+{
+  "H_3m": [
+    [
+      {
+        "reason": "localized equilibrium absent",
+        "status": "DERIVED_CONDITIONAL",
+        "value": "H_C"
+      },
+      {
+        "reason": "q_C and q_W still lack a single localized parent-domain Hessian",
+        "status": "UNDEFINED_CROSS_DOMAIN",
+        "value": null
+      },
+      {
+        "reason": "the author selected upsilon, but Z, U, F_C, and F_W remain action-unselected",
+        "status": "OPEN",
+        "value": null
+      }
+    ],
+    [
+      {
+        "reason": "q_C and q_W still lack a single localized parent-domain Hessian",
+        "status": "UNDEFINED_CROSS_DOMAIN",
+        "value": null
+      },
+      {
+        "reason": "fold domain only",
+        "status": "DERIVED_CONDITIONAL",
+        "value": "H_W"
+      },
+      {
+        "reason": "the author selected upsilon, but Z, U, F_C, and F_W remain action-unselected",
+        "status": "OPEN",
+        "value": null
+      }
+    ],
+    [
+      {
+        "reason": "the author selected upsilon, but Z, U, F_C, and F_W remain action-unselected",
+        "status": "OPEN",
+        "value": null
+      },
+      {
+        "reason": "the author selected upsilon, but Z, U, F_C, and F_W remain action-unselected",
+        "status": "OPEN",
+        "value": null
+      },
+      {
+        "reason": "nonnegative value required but not selected",
+        "status": "DERIVED_CONDITIONAL",
+        "value": "U_eff''(1)"
+      }
+    ]
+  ],
+  "K_3m": [
+    [
+      {
+        "reason": "M8 Einstein-frame q_C",
+        "status": "DERIVED_CONDITIONAL",
+        "value": "6*kappa5"
+      },
+      {
+        "reason": "q_C and q_W still lack a single localized parent-domain Hessian",
+        "status": "UNDEFINED_CROSS_DOMAIN",
+        "value": null
+      },
+      {
+        "reason": "the author selected upsilon, but Z, U, F_C, and F_W remain action-unselected",
+        "status": "OPEN",
+        "value": null
+      }
+    ],
+    [
+      {
+        "reason": "q_C and q_W still lack a single localized parent-domain Hessian",
+        "status": "UNDEFINED_CROSS_DOMAIN",
+        "value": null
+      },
+      {
+        "reason": "M5 fold q_W",
+        "status": "DERIVED_CONDITIONAL",
+        "value": 6.935084858283065
+      },
+      {
+        "reason": "the author selected upsilon, but Z, U, F_C, and F_W remain action-unselected",
+        "status": "OPEN",
+        "value": null
+      }
+    ],
+    [
+      {
+        "reason": "the author selected upsilon, but Z, U, F_C, and F_W remain action-unselected",
+        "status": "OPEN",
+        "value": null
+      },
+      {
+        "reason": "the author selected upsilon, but Z, U, F_C, and F_W remain action-unselected",
+        "status": "OPEN",
+        "value": null
+      },
+      {
+        "reason": "requires one selected Z_reduced>0",
+        "status": "DERIVED_CONDITIONAL",
+        "value": "1 after q_D canonicalization"
+      }
+    ]
+  ],
+  "artifact": "BHSM_support_three_mode_coupling_v10_4",
+  "eigenproblem_solved": false,
+  "generalized_eigenproblem": "H_3m v_n=omega_n^2 K_3m v_n",
+  "interference_energy": null,
+  "mixed_block_classification": {
+    "H_CD": "OPEN",
+    "H_CW": "UNDEFINED_CROSS_DOMAIN",
+    "H_WD": "OPEN",
+    "K_CD": "OPEN",
+    "K_CW": "UNDEFINED_CROSS_DOMAIN",
+    "K_WD": "OPEN"
+  },
+  "mode_ontology": {
+    "q_C": "core/Hopf geometric breathing mode",
+    "q_D": "canonical spacetime-support/depth mode, map open",
+    "q_W": "enclosure-wall/fold mode"
+  },
+  "observable_output": null,
+  "physical_rank": "2+1 conditional; no complete common rank-three operator",
+  "seam_is_physical_mode": false,
+  "seam_projection": "psi_seam=Pi_seam(q_C,q_W,q_D)",
+  "stable_eigenmode": null,
+  "state": [
+    "q_C",
+    "q_W",
+    "q_D(upsilon)"
+  ],
+  "status": "BHSM_THREE_MODE_COMMON_ACTION_BLOCKED_BY_NONUNIQUE_SUPPORT_COUPLINGS",
+  "support_source": "J_upsilon=F_C'X_C+F_W'X_W; functions and localized invariants unselected",
+  "three_mode_completion_verdict": null,
+  "three_modes_identified_with_generations": false,
+  "validation": {
+    "hessian_ledger_hermitian": true,
+    "kinetic_ledger_hermitian": true,
+    "mixed_blocks_not_fabricated": true,
+    "modes_distinct_from_generations": true,
+    "seam_excluded_from_rank": true,
+    "stable_output_not_promoted": true,
+    "support_not_spectator_promoted": true
+  },
+  "validation_passed": true
+}

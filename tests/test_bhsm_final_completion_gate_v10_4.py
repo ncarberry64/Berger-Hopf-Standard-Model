@@ -13,15 +13,17 @@ from bhsm.interface.envelopment import final_completion_gate_v10_4 as gate
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def test_completion_gate_reports_exact_no_go_and_author_decision():
+def test_completion_gate_preserves_no_go_and_records_author_extension():
     payload = gate.completion_payload()
     assert payload["validation_passed"] is True
-    assert payload["primary_verdict"] == "BHSM_MINIMAL_GEOMETRIC_DEPTH_EXTENSION_REQUIRES_AUTHOR_SELECTION"
+    assert payload["primary_verdict"] == "BHSM_MULTIPLE_INEQUIVALENT_SUPPORT_ACTIONS_REMAIN_AFTER_AUTHOR_EXTENSION_SELECTION"
     assert payload["depth_verdict"] == "BHSM_PROPER_VOLUME_DEFICIT_HAS_NO_INDEPENDENT_PHYSICAL_SCALAR_AFTER_CONSTRAINT_REDUCTION"
     assert payload["physical_BHSM_complete"] is False
     assert payload["empirical_replacement_complete"] is False
     assert payload["physical_outputs"] == {"depth": None, "interference_energy": None, "masses": None, "CKM": None, "PMNS": None}
-    assert payload["new_geometric_fields_adopted"] == []
+    assert payload["new_geometric_fields_adopted"] == [
+        "upsilon (author-selected extension class; action normalization open)"
+    ]
     assert payload["new_continuous_parameters_adopted"] == []
     assert payload["completion_marks"]["Mark_I_Foundation"] == "REACHED"
     assert payload["completion_marks"]["Mark_II_Conditional_architecture"] == "REACHED_CONDITIONALLY"

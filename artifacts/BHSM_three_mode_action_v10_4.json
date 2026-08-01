@@ -12,7 +12,7 @@
         "value": null
       },
       {
-        "reason": "constraint-reduced q_V vanishes and no extension was selected",
+        "reason": "upsilon is selected, but Z, U, F_C, and F_W are not action-selected",
         "status": "OPEN",
         "value": null
       }
@@ -29,26 +29,26 @@
         "value": "H_W on D_fold"
       },
       {
-        "reason": "constraint-reduced q_V vanishes and no extension was selected",
+        "reason": "upsilon is selected, but Z, U, F_C, and F_W are not action-selected",
         "status": "OPEN",
         "value": null
       }
     ],
     [
       {
-        "reason": "constraint-reduced q_V vanishes and no extension was selected",
+        "reason": "upsilon is selected, but Z, U, F_C, and F_W are not action-selected",
         "status": "OPEN",
         "value": null
       },
       {
-        "reason": "constraint-reduced q_V vanishes and no extension was selected",
+        "reason": "upsilon is selected, but Z, U, F_C, and F_W are not action-selected",
         "status": "OPEN",
         "value": null
       },
       {
-        "reason": "constraint-reduced q_V vanishes and no extension was selected",
-        "status": "OPEN",
-        "value": null
+        "reason": "nonnegative but not selected",
+        "status": "DERIVED_CONDITIONAL",
+        "value": "U_eff''(1)"
       }
     ]
   ],
@@ -70,7 +70,7 @@
         "value": null
       },
       {
-        "reason": "constraint-reduced q_V vanishes and no extension was selected",
+        "reason": "upsilon is selected, but Z, U, F_C, and F_W are not action-selected",
         "status": "OPEN",
         "value": null
       }
@@ -87,26 +87,26 @@
         "value": 6.935084858283065
       },
       {
-        "reason": "constraint-reduced q_V vanishes and no extension was selected",
+        "reason": "upsilon is selected, but Z, U, F_C, and F_W are not action-selected",
         "status": "OPEN",
         "value": null
       }
     ],
     [
       {
-        "reason": "constraint-reduced q_V vanishes and no extension was selected",
+        "reason": "upsilon is selected, but Z, U, F_C, and F_W are not action-selected",
         "status": "OPEN",
         "value": null
       },
       {
-        "reason": "constraint-reduced q_V vanishes and no extension was selected",
+        "reason": "upsilon is selected, but Z, U, F_C, and F_W are not action-selected",
         "status": "OPEN",
         "value": null
       },
       {
-        "reason": "constraint-reduced q_V vanishes and no extension was selected",
-        "status": "OPEN",
-        "value": null
+        "reason": "requires selected Z_reduced>0",
+        "status": "DERIVED_CONDITIONAL",
+        "value": "1 after canonical normalization"
       }
     ]
   ],
@@ -115,7 +115,7 @@
   "complete_common_source": null,
   "mode_status": {
     "q_C": "DERIVED_CONDITIONAL",
-    "q_D": "ABSENT_AFTER_CONSTRAINT_REDUCTION",
+    "q_D": "DERIVED_CONDITIONAL_ON_POSITIVE_Z_UPSILON",
     "q_W": "DERIVED_CONDITIONAL"
   },
   "nonlinear_potential": null,
@@ -137,7 +137,7 @@
     "q_C_orbit": null,
     "q_D_orbit": null,
     "q_W_orbit": null,
-    "reason": "q_D, the complete common action, and a stationary common background are absent",
+    "reason": "the upsilon extension class exists, but its unique action/canonical q_D, the complete common three-mode operator, core data, and a stationary localized background are absent",
     "relative_periodic_state": null,
     "relative_phases": null,
     "removed_coordinate_seam_modes": true,
@@ -145,9 +145,9 @@
     "stable_directions": null,
     "unstable_directions": null,
     "validation_passed": true,
-    "verdict": "BHSM_THREE_MODE_ORBIT_INELIGIBLE_WITHOUT_ACTION_OWNED_DEPTH_MODE"
+    "verdict": "BHSM_SUPPORT_RELATIVE_PERIODIC_ORBIT_BLOCKED_BY_INCOMPLETE_THREE_MODE_ACTION"
   },
-  "physical_rank": 2,
+  "physical_rank": "2+1 conditional",
   "seam_projection": "psi_seam=Pi_seam(q_C,q_W,q_D); only the historical q_W coefficient is known",
   "state": [
     "q_C",
@@ -156,5 +156,5 @@
   ],
   "target_rank_three_reached": false,
   "validation_passed": true,
-  "verdict": "BHSM_THREE_MODE_CROSS_DOMAIN_HESSIAN_REMAINS_INCOMPLETE"
+  "verdict": "BHSM_THREE_MODE_COMMON_ACTION_BLOCKED_BY_NONUNIQUE_SUPPORT_COUPLINGS"
 }

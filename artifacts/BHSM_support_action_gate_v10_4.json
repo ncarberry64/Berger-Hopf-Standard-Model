@@ -1,0 +1,157 @@
+{
+  "action_owned_q_D": null,
+  "admissible_counterexamples_to_uniqueness": [
+    {
+      "Z_upsilon": "zeta*kappa_1",
+      "background": "upsilon=1, nabla upsilon=0",
+      "canonical_map": "q_D=sqrt(zeta*kappa_1)*(1-upsilon)",
+      "condition": "zeta*kappa_1>0",
+      "core_distance": "finite",
+      "coupling_conditions": [
+        "F_a(1)=1",
+        "sum_a F_a'(1) X_a,*=0",
+        "nontrivial response away from upsilon=1"
+      ],
+      "domain": "M_regular, 0<upsilon<=1",
+      "free_data": [
+        "zeta",
+        "U(upsilon)",
+        "F_C(upsilon)",
+        "F_W(upsilon)"
+      ],
+      "name": "constant-positive-kinetic family",
+      "not_adopted": true,
+      "potential_conditions": [
+        "U(1)=0 by action-offset convention",
+        "U'(1)=0",
+        "U_eff''(1)>=0"
+      ]
+    },
+    {
+      "Z_upsilon": "zeta*kappa_1/upsilon^2",
+      "background": "upsilon=1, nabla upsilon=0",
+      "canonical_map": "q_D=-sqrt(zeta*kappa_1)*log(upsilon)",
+      "condition": "zeta*kappa_1>0",
+      "core_distance": "infinite",
+      "coupling_conditions": [
+        "F_a(1)=1",
+        "sum_a F_a'(1) X_a,*=0",
+        "nontrivial response away from upsilon=1"
+      ],
+      "domain": "M_regular, 0<upsilon<=1",
+      "free_data": [
+        "zeta",
+        "U(upsilon)",
+        "F_C(upsilon)",
+        "F_W(upsilon)"
+      ],
+      "name": "logarithmic-positive-kinetic family",
+      "not_adopted": true,
+      "potential_conditions": [
+        "U(1)=0 by action-offset convention",
+        "U'(1)=0",
+        "U_eff''(1)>=0"
+      ]
+    }
+  ],
+  "artifact": "BHSM_support_action_gate_v10_4",
+  "background_conditions": {
+    "U_prime_1": 0.0,
+    "full_stationarity": "sum_a F_a'(1) X_a,*=0",
+    "nabla_upsilon_star": 0.0,
+    "regular_stability": "U_eff''(1)>=0 after constraints and mixing",
+    "upsilon_star": 1.0
+  },
+  "boundary_action": "existing metric completion plus an open S_Sigma_core; scalar Dirichlet data need no new bulk cancellation term",
+  "bulk_phase_audit": "U'(0)=0 is optional and unproved; no regular second vacuum is selected",
+  "core_boundary_audit": "preferred ontology; upsilon=0 is boundary data on Sigma_core",
+  "coupling_ledger": [
+    {
+      "boundary_term": "-integral_Sigma sqrt|h| n_A Z nabla^A upsilon delta upsilon",
+      "coefficient": "Z_upsilon; not selected",
+      "domain": "M_regular",
+      "mass_dimension": "6 in D=8 when upsilon is dimensionless",
+      "new_parameter": "at least one positive normalization relative to kappa_1",
+      "reason_required": "one healthy local support polarization",
+      "source_current": null,
+      "status": "REQUIRED_FORM_COEFFICIENT_OPEN",
+      "stress_tensor": "Z nabla_A upsilon nabla_B upsilon-G_AB[1/2 Z|nabla upsilon|^2]",
+      "symmetry": "diffeomorphism scalar density",
+      "term": "-1/2 Z_upsilon(upsilon) G^AB nabla_A upsilon nabla_B upsilon",
+      "variation": "nabla_A(Z nabla^A upsilon)-1/2 Z'|nabla upsilon|^2"
+    },
+    {
+      "boundary_term": null,
+      "coefficient": "function U_upsilon; not selected",
+      "domain": "M_regular",
+      "mass_dimension": "8 in D=8",
+      "new_parameter": "optional stiffness/scale unless U=0",
+      "reason_required": "not required for hyperbolicity; constrained only if a restoring branch is claimed",
+      "source_current": null,
+      "status": "OPTIONAL_OPEN",
+      "stress_tensor": "-G_AB U_upsilon",
+      "symmetry": "diffeomorphism scalar density",
+      "term": "-U_upsilon(upsilon)",
+      "variation": "-U_upsilon'"
+    },
+    {
+      "boundary_term": "inherits X_C boundary completion",
+      "coefficient": "function F_C; not selected",
+      "domain": "common parent localization of the q_C invariant",
+      "mass_dimension": "dimensionless F_C multiplying the inherited X_C density",
+      "new_parameter": "support-response Taylor data",
+      "reason_required": "q_D must respond to q_C rather than remain a spectator",
+      "source_current": "J_C=F_C' X_C",
+      "status": "REQUIRED_INTERACTION_CLASS_SOURCE_OPEN",
+      "stress_tensor": "metric variation of [F_C-1]X_C",
+      "symmetry": "requires X_C to be an action-owned scalar",
+      "term": "[F_C(upsilon)-1] X_C",
+      "variation": "F_C' X_C"
+    },
+    {
+      "boundary_term": "inherits the fold/moving-endpoint completion",
+      "coefficient": "function F_W; not selected",
+      "domain": "common parent localization of the q_W/fold invariant",
+      "mass_dimension": "dimensionless F_W multiplying the inherited X_W density",
+      "new_parameter": "support-response Taylor data",
+      "reason_required": "q_D must respond to q_W rather than remain a spectator",
+      "source_current": "J_W=F_W' X_W",
+      "status": "REQUIRED_INTERACTION_CLASS_SOURCE_OPEN",
+      "stress_tensor": "metric variation of [F_W-1]X_W",
+      "symmetry": "requires X_W to be an action-owned scalar",
+      "term": "[F_W(upsilon)-1] X_W",
+      "variation": "F_W' X_W"
+    }
+  ],
+  "curvature_coupling": "F_R(upsilon)R_8 is allowed but not required or selected; it changes the gravity constraint",
+  "eta_coupling": "no direct F_eta term selected without a common action-owned invariant",
+  "euler_equation": "nabla_A(Z nabla^A upsilon)-1/2 Z'|nabla upsilon|^2-U'+F_C'X_C+F_W'X_W=0",
+  "general_regular_action": "S_upsilon=int_Mregular sqrt(-G)[-1/2 Z(upsilon)|nabla upsilon|^2-U(upsilon)+(F_C(upsilon)-1)X_C+(F_W(upsilon)-1)X_W]+S_Sigma_core",
+  "new_parameter_audit": {
+    "author_or_action_principle_required": true,
+    "changes_dimensionless_predictions": true,
+    "cosmic_anchor_role": "can convert units only after a dimensionless action is selected; cannot choose its dimensionless ratio",
+    "dimension": "mass^6 relative to the D=8 curvature coefficient kappa_1",
+    "kinetic_normalization": "unavoidable for a propagating dimensionless order parameter; relative value is not fixed by topology"
+  },
+  "next_exact_object": "ACTION_PRINCIPLE_FIXING_Z_UPSILON_U_UPSILON_AND_SUPPORT_COUPLINGS",
+  "physical_depth": null,
+  "selected_U_upsilon": null,
+  "selected_Z_upsilon": null,
+  "selected_boundary_action": null,
+  "selected_couplings": null,
+  "sigma_coupling": "no direct F_sigma term selected without a common action-owned invariant",
+  "stress_tensor": "T_AB^upsilon=Z nabla_A upsilon nabla_B upsilon-G_AB[1/2 Z|nabla upsilon|^2+U]+T_AB^coupling",
+  "validation": {
+    "background_reduces_to_frozen_action": true,
+    "both_maps_monotone_toward_depletion": true,
+    "canonical_maps_differ": true,
+    "no_arbitrary_function_adopted": true,
+    "no_new_mediator_claim": true,
+    "no_particle_fit": true,
+    "two_inequivalent_healthy_families": true
+  },
+  "validation_passed": true,
+  "verdict": "BHSM_MULTIPLE_INEQUIVALENT_SUPPORT_ACTIONS_REMAIN_AFTER_AUTHOR_EXTENSION_SELECTION",
+  "wall_coupling": "required in class through F_W X_W, coefficient/function open"
+}

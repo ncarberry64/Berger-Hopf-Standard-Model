@@ -96,7 +96,7 @@
       ]
     },
     "existing_action_verdict": "BHSM_PROPER_VOLUME_DEFICIT_HAS_NO_INDEPENDENT_PHYSICAL_SCALAR_AFTER_CONSTRAINT_REDUCTION",
-    "extension_verdict": "BHSM_MINIMAL_GEOMETRIC_DEPTH_EXTENSION_REQUIRES_AUTHOR_SELECTION",
+    "extension_verdict": "STRATIFIED_CORE_SPACETIME_SUPPORT_ORDER_PARAMETER_AUTHOR_SELECTED_GEOMETRIC_EXTENSION_CLASS",
     "kinetic_reduction": {
       "deWitt_u_matrix": [
         [
@@ -211,22 +211,22 @@
       },
       {
         "Hamiltonian_constraints": "must be derived for the proposed configuration space",
-        "adopted": false,
-        "class": "core-support order parameter",
+        "adopted": true,
+        "class": "stratified core spacetime-support order parameter",
         "coupling_to_localized_stress": "not derived",
         "coupling_to_q_C_q_W": "not derived",
-        "ghost_gradient": "open",
-        "independent_or_auxiliary": "new geometric scalar",
-        "kinetic": "must be specified",
-        "localized_depth": "possible",
+        "ghost_gradient": "healthy only conditionally on positive reduced kinetic function",
+        "independent_or_auxiliary": "author-selected new geometric scalar",
+        "kinetic": "must be specified and positive",
+        "localized_depth": "possible after canonical normalization",
         "mass_dimension": "undetermined until a canonical action normalization is selected",
-        "new_parameters": "profile/potential/coupling data",
-        "potential": "must select supported/depleted phases",
+        "new_parameters": "kinetic, potential, and coupling data",
+        "potential": "regular background conditions known; function not selected",
         "reduction_to_current_BHSM": "required when the new geometric datum is auxiliary, frozen, or removed",
         "restoring_role": "possible",
         "strictly_dominates": false,
-        "transformation": "diffeomorphism scalar",
-        "unique": false
+        "transformation": "dimensionless diffeomorphism scalar",
+        "unique": true
       },
       {
         "Hamiltonian_constraints": "must be derived for the proposed configuration space",
@@ -287,8 +287,10 @@
       }
     ],
     "new_continuous_parameters_adopted": [],
-    "new_geometric_fields_adopted": [],
-    "next_exact_object": "AUTHOR_SELECTION_OF_MINIMAL_GEOMETRIC_DEPTH_EXTENSION_CONFIGURATION_AND_ACTION",
+    "new_geometric_fields_adopted": [
+      "upsilon (author-selected configuration variable; action ownership open)"
+    ],
+    "next_exact_object": "ACTION_PRINCIPLE_FIXING_Z_UPSILON_U_UPSILON_AND_SUPPORT_COUPLINGS",
     "physical_projection": {
       "P_perp_CW_q_V": [
         0.0,
@@ -308,10 +310,10 @@
     },
     "physical_scalar_count_across_qC_qW_qD": 2,
     "target_count_reached": false,
-    "unique_minimal_extension": null,
+    "unique_minimal_extension": "stratified core spacetime-support order parameter",
     "validation": {
-      "multiple_extension_classes": true,
-      "no_extension_selected": true,
+      "action_not_selected_by_extension_choice": true,
+      "author_extension_selected": true,
       "no_qD": true,
       "shape_metric_positive": true,
       "two_physical_shapes": true,
@@ -319,6 +321,58 @@
     },
     "validation_passed": true
   },
+  "core_stratum_matching": {
+    "absorption_or_emission": null,
+    "artifact": "BHSM_core_stratum_matching_gate_v10_4",
+    "complete_junction_law": false,
+    "domain": "M_complete=M_regular union Sigma_core union M_core",
+    "exact_missing_core_terms": [
+      "S_core and its field content",
+      "S_Sigma_core or a declared terminal Dirichlet ensemble",
+      "core metric momentum/stress response",
+      "core symplectic form",
+      "core topological and gauge currents"
+    ],
+    "fundamental_dissipation": false,
+    "gauge_current": "[J_gauge^A n_A]_Sigma+D_a j_gauge^a=0; no core current or emission map is presently owned",
+    "information_destruction": false,
+    "internal_core_action": null,
+    "metric_matching": "[Pi_metric^ab]_Sigma=-(2/sqrt|h|) delta(S_Sigma_core+S_core)/delta h_ab; the regular P1 side includes its coefficient-locked GHY momentum",
+    "normal_stress_balance": "[T_AB n^A h^B_b]_Sigma+D_a tau^a_b+support/core exchange=0",
+    "regular_domain_boundary": "Sigma_core is approached from upsilon>0 with det(G)!=0; upsilon|Sigma_core=0",
+    "status": "BHSM_REGULAR_TO_CORE_SUPPORT_BOUNDARY_CONDITIONS_DERIVED_CONDITIONALLY",
+    "stress_transfer": null,
+    "support_flux": "[Pi_upsilon]_Sigma=0 conditionally; numerical flux is undefined without S_core",
+    "symplectic_flux": "omega_regular|Sigma+omega_Sigma+omega_core=0; only the regular support contribution delta pi_upsilon wedge delta upsilon is identified",
+    "topological_charge": "[J_top^A n_A]_Sigma+D_a j_top^a=0 when a core current is supplied; current value is undefined",
+    "validation": {
+      "absorption_not_claimed": true,
+      "core_action_not_fabricated": true,
+      "fail_closed": true,
+      "metric_flux_balance_recorded": true,
+      "regular_metric_nondegenerate": true,
+      "scalar_boundary_variation_recorded": true,
+      "symplectic_flux_recorded": true,
+      "topological_flux_not_fabricated": true
+    },
+    "validation_passed": true,
+    "variational_ensembles": {
+      "dirichlet_terminal": {
+        "data": "delta upsilon|Sigma_core=0 and fixed induced metric",
+        "extra_scalar_boundary_action": null,
+        "support_condition": "upsilon|Sigma_core=0",
+        "transfer_claim_allowed": false
+      },
+      "flux_matching": {
+        "data": "delta upsilon free with a supplied S_Sigma_core+S_core",
+        "extra_scalar_boundary_action": "OPEN",
+        "support_condition": "[Pi_upsilon]_Sigma=0 with Pi_upsilon=sqrt(|h|) n_A Z nabla^A upsilon+delta(S_Sigma_core+S_core)/delta upsilon",
+        "transfer_claim_allowed": "only after the core variation and orientation are supplied"
+      }
+    },
+    "wall_termination_or_continuation": null
+  },
+  "core_stratum_verdict": "BHSM_REGULAR_TO_CORE_SUPPORT_BOUNDARY_CONDITIONS_DERIVED_CONDITIONALLY",
   "cosmic_unit_anchor": {
     "absolute_scale": null,
     "anchor_count_used": 0,
@@ -465,10 +519,12 @@
       "arbitrary depth potential inserted",
       "particle mass used as unit calibration",
       "three geometric modes identified with three generations",
+      "the author-selected extension class treated as a uniquely selected action",
       "incomplete current used to print CKM or PMNS"
     ],
     "OPEN": [
-      "AUTHOR_SELECTION_OF_MINIMAL_GEOMETRIC_DEPTH_EXTENSION_CONFIGURATION_AND_ACTION",
+      "ACTION_PRINCIPLE_FIXING_Z_UPSILON_U_UPSILON_AND_SUPPORT_COUPLINGS",
+      "CORE_STRATUM_ACTION_AND_SYMPLECTIC_CURRENT",
       "ACTION_OWNED_THREE_MODE_COMMON_DOMAIN_KINETIC_HESSIAN_AND_SOURCE",
       "STABLE_RELATIVE_PERIODIC_THREE_MODE_ORBIT_AND_PHYSICAL_FLOQUET_SPECTRUM",
       "COMPLETE_ACTION_SELECTED_GLOBAL_EQUILIBRIUM_AND_ELIGIBLE_COSMIC_ANCHOR",
@@ -481,17 +537,22 @@
       "the exact P1 DeWitt reduction separates one constrained negative volume direction from two positive shape directions",
       "the physical projection of q_V into the reduced beta/gamma space is zero",
       "exact metric degeneracy lies outside the current inverse-metric action domain",
-      "no compared geometric extension strictly dominates without an author action choice"
+      "the author selects upsilon as a stratified-core support order parameter",
+      "a positive-Z scalar contributes one physical canonical pair conditionally",
+      "constant and inverse-square kinetic families give inequivalent canonical depths"
     ]
   },
   "mass_mixing_verdict": "BHSM_PHYSICAL_MASS_AND_MIXING_READOUT_REMAINS_FAIL_CLOSED",
   "measured_particle_inputs_used": [],
   "new_continuous_parameters_adopted": [],
-  "new_geometric_fields_adopted": [],
+  "new_geometric_fields_adopted": [
+    "upsilon (author-selected extension class; action normalization open)"
+  ],
   "new_gravity_mediator": false,
-  "next_exact_object": "AUTHOR_SELECTION_OF_MINIMAL_GEOMETRIC_DEPTH_EXTENSION_CONFIGURATION_AND_ACTION",
+  "next_exact_object": "ACTION_PRINCIPLE_FIXING_Z_UPSILON_U_UPSILON_AND_SUPPORT_COUPLINGS",
   "official_prediction_logic_changed": false,
-  "orbit_verdict": "BHSM_THREE_MODE_ORBIT_INELIGIBLE_WITHOUT_ACTION_OWNED_DEPTH_MODE",
+  "orbit_verdict": "BHSM_SUPPORT_RELATIVE_PERIODIC_ORBIT_BLOCKED_BY_INCOMPLETE_THREE_MODE_ACTION",
+  "order_parameter_verdict": "STRATIFIED_CORE_SPACETIME_SUPPORT_ORDER_PARAMETER_AUTHOR_SELECTED_GEOMETRIC_EXTENSION_CLASS",
   "particle_cycles": {
     "artifact": "BHSM_particle_cycle_gate_v10_4",
     "charged_lepton": {
@@ -639,7 +700,7 @@
     "interference_energy": null,
     "masses": null
   },
-  "primary_verdict": "BHSM_MINIMAL_GEOMETRIC_DEPTH_EXTENSION_REQUIRES_AUTHOR_SELECTION",
+  "primary_verdict": "BHSM_MULTIPLE_INEQUIVALENT_SUPPORT_ACTIONS_REMAIN_AFTER_AUTHOR_EXTENSION_SELECTION",
   "source_v10_3_sha": "887f1e57c2aa967dc3abde61ad19f4745491d7eb",
   "spacetime_removal_depth": {
     "artifact": "BHSM_spacetime_removal_depth_gate_v10_4",
@@ -719,7 +780,478 @@
     "validation_passed": true,
     "verdict": "BHSM_PROPER_VOLUME_DEFICIT_HAS_NO_INDEPENDENT_PHYSICAL_SCALAR_AFTER_CONSTRAINT_REDUCTION"
   },
+  "spacetime_support_order_parameter": {
+    "artifact": "BHSM_spacetime_support_order_parameter_v10_4",
+    "canonical_normalization_status": "OPEN_PENDING_UNIQUE_Z_UPSILON",
+    "canonical_q_D": null,
+    "complete_domain": "M_complete=M_regular union Sigma_core union M_core",
+    "core_value": 0.0,
+    "core_value_domain": "Sigma_core or M_core; not an interior point of the inverse-metric equations",
+    "depleted_region": "0<upsilon<1",
+    "generation_relation": "three generations remain phases of one sector-specific cycle",
+    "geometric_interpretation": "local availability of ordinary nondegenerate spacetime support for an envelopment",
+    "initial_depth_coordinate": "d_log=-log(upsilon)",
+    "initial_depth_coordinate_role": "monotone ontology coordinate only",
+    "not_interpreted_as": [
+      "elementary matter particle",
+      "gravity mediator",
+      "coordinate radius",
+      "seam displacement",
+      "metric determinant",
+      "homogeneous Hopf radion",
+      "scalar-wall fold mode",
+      "generation label",
+      "externally imposed density profile"
+    ],
+    "order_parameter_status": "STRATIFIED_CORE_SPACETIME_SUPPORT_ORDER_PARAMETER_AUTHOR_SELECTED_GEOMETRIC_EXTENSION_CLASS",
+    "proper_volume_deficit_as_q_D": "INVALIDATED",
+    "range": "0<=upsilon<=1",
+    "regular_action_domain": "0<upsilon<=1 with det(G)!=0",
+    "regular_background": {
+      "nabla_upsilon_star": 0.0,
+      "upsilon_star": 1.0
+    },
+    "seam": "psi_seam=Pi_seam(q_C,q_W,q_D), a coordinate projection",
+    "symbol": "upsilon",
+    "transformation": "dimensionless diffeomorphism scalar on M_regular",
+    "validation": {
+      "core_is_separate_stratum": true,
+      "depletion_monotone": true,
+      "metric_remains_nondegenerate_on_regular_domain": true,
+      "modes_not_generations": true,
+      "proper_volume_not_relabelled": true,
+      "regular_background_normalized": true,
+      "seam_not_counted": true
+    },
+    "validation_passed": true
+  },
   "sprint": "bhsm-spacetime-removal-completion-v10-4",
+  "support_action": {
+    "action_owned_q_D": null,
+    "admissible_counterexamples_to_uniqueness": [
+      {
+        "Z_upsilon": "zeta*kappa_1",
+        "background": "upsilon=1, nabla upsilon=0",
+        "canonical_map": "q_D=sqrt(zeta*kappa_1)*(1-upsilon)",
+        "condition": "zeta*kappa_1>0",
+        "core_distance": "finite",
+        "coupling_conditions": [
+          "F_a(1)=1",
+          "sum_a F_a'(1) X_a,*=0",
+          "nontrivial response away from upsilon=1"
+        ],
+        "domain": "M_regular, 0<upsilon<=1",
+        "free_data": [
+          "zeta",
+          "U(upsilon)",
+          "F_C(upsilon)",
+          "F_W(upsilon)"
+        ],
+        "name": "constant-positive-kinetic family",
+        "not_adopted": true,
+        "potential_conditions": [
+          "U(1)=0 by action-offset convention",
+          "U'(1)=0",
+          "U_eff''(1)>=0"
+        ]
+      },
+      {
+        "Z_upsilon": "zeta*kappa_1/upsilon^2",
+        "background": "upsilon=1, nabla upsilon=0",
+        "canonical_map": "q_D=-sqrt(zeta*kappa_1)*log(upsilon)",
+        "condition": "zeta*kappa_1>0",
+        "core_distance": "infinite",
+        "coupling_conditions": [
+          "F_a(1)=1",
+          "sum_a F_a'(1) X_a,*=0",
+          "nontrivial response away from upsilon=1"
+        ],
+        "domain": "M_regular, 0<upsilon<=1",
+        "free_data": [
+          "zeta",
+          "U(upsilon)",
+          "F_C(upsilon)",
+          "F_W(upsilon)"
+        ],
+        "name": "logarithmic-positive-kinetic family",
+        "not_adopted": true,
+        "potential_conditions": [
+          "U(1)=0 by action-offset convention",
+          "U'(1)=0",
+          "U_eff''(1)>=0"
+        ]
+      }
+    ],
+    "artifact": "BHSM_support_action_gate_v10_4",
+    "background_conditions": {
+      "U_prime_1": 0.0,
+      "full_stationarity": "sum_a F_a'(1) X_a,*=0",
+      "nabla_upsilon_star": 0.0,
+      "regular_stability": "U_eff''(1)>=0 after constraints and mixing",
+      "upsilon_star": 1.0
+    },
+    "boundary_action": "existing metric completion plus an open S_Sigma_core; scalar Dirichlet data need no new bulk cancellation term",
+    "bulk_phase_audit": "U'(0)=0 is optional and unproved; no regular second vacuum is selected",
+    "core_boundary_audit": "preferred ontology; upsilon=0 is boundary data on Sigma_core",
+    "coupling_ledger": [
+      {
+        "boundary_term": "-integral_Sigma sqrt|h| n_A Z nabla^A upsilon delta upsilon",
+        "coefficient": "Z_upsilon; not selected",
+        "domain": "M_regular",
+        "mass_dimension": "6 in D=8 when upsilon is dimensionless",
+        "new_parameter": "at least one positive normalization relative to kappa_1",
+        "reason_required": "one healthy local support polarization",
+        "source_current": null,
+        "status": "REQUIRED_FORM_COEFFICIENT_OPEN",
+        "stress_tensor": "Z nabla_A upsilon nabla_B upsilon-G_AB[1/2 Z|nabla upsilon|^2]",
+        "symmetry": "diffeomorphism scalar density",
+        "term": "-1/2 Z_upsilon(upsilon) G^AB nabla_A upsilon nabla_B upsilon",
+        "variation": "nabla_A(Z nabla^A upsilon)-1/2 Z'|nabla upsilon|^2"
+      },
+      {
+        "boundary_term": null,
+        "coefficient": "function U_upsilon; not selected",
+        "domain": "M_regular",
+        "mass_dimension": "8 in D=8",
+        "new_parameter": "optional stiffness/scale unless U=0",
+        "reason_required": "not required for hyperbolicity; constrained only if a restoring branch is claimed",
+        "source_current": null,
+        "status": "OPTIONAL_OPEN",
+        "stress_tensor": "-G_AB U_upsilon",
+        "symmetry": "diffeomorphism scalar density",
+        "term": "-U_upsilon(upsilon)",
+        "variation": "-U_upsilon'"
+      },
+      {
+        "boundary_term": "inherits X_C boundary completion",
+        "coefficient": "function F_C; not selected",
+        "domain": "common parent localization of the q_C invariant",
+        "mass_dimension": "dimensionless F_C multiplying the inherited X_C density",
+        "new_parameter": "support-response Taylor data",
+        "reason_required": "q_D must respond to q_C rather than remain a spectator",
+        "source_current": "J_C=F_C' X_C",
+        "status": "REQUIRED_INTERACTION_CLASS_SOURCE_OPEN",
+        "stress_tensor": "metric variation of [F_C-1]X_C",
+        "symmetry": "requires X_C to be an action-owned scalar",
+        "term": "[F_C(upsilon)-1] X_C",
+        "variation": "F_C' X_C"
+      },
+      {
+        "boundary_term": "inherits the fold/moving-endpoint completion",
+        "coefficient": "function F_W; not selected",
+        "domain": "common parent localization of the q_W/fold invariant",
+        "mass_dimension": "dimensionless F_W multiplying the inherited X_W density",
+        "new_parameter": "support-response Taylor data",
+        "reason_required": "q_D must respond to q_W rather than remain a spectator",
+        "source_current": "J_W=F_W' X_W",
+        "status": "REQUIRED_INTERACTION_CLASS_SOURCE_OPEN",
+        "stress_tensor": "metric variation of [F_W-1]X_W",
+        "symmetry": "requires X_W to be an action-owned scalar",
+        "term": "[F_W(upsilon)-1] X_W",
+        "variation": "F_W' X_W"
+      }
+    ],
+    "curvature_coupling": "F_R(upsilon)R_8 is allowed but not required or selected; it changes the gravity constraint",
+    "eta_coupling": "no direct F_eta term selected without a common action-owned invariant",
+    "euler_equation": "nabla_A(Z nabla^A upsilon)-1/2 Z'|nabla upsilon|^2-U'+F_C'X_C+F_W'X_W=0",
+    "general_regular_action": "S_upsilon=int_Mregular sqrt(-G)[-1/2 Z(upsilon)|nabla upsilon|^2-U(upsilon)+(F_C(upsilon)-1)X_C+(F_W(upsilon)-1)X_W]+S_Sigma_core",
+    "new_parameter_audit": {
+      "author_or_action_principle_required": true,
+      "changes_dimensionless_predictions": true,
+      "cosmic_anchor_role": "can convert units only after a dimensionless action is selected; cannot choose its dimensionless ratio",
+      "dimension": "mass^6 relative to the D=8 curvature coefficient kappa_1",
+      "kinetic_normalization": "unavoidable for a propagating dimensionless order parameter; relative value is not fixed by topology"
+    },
+    "next_exact_object": "ACTION_PRINCIPLE_FIXING_Z_UPSILON_U_UPSILON_AND_SUPPORT_COUPLINGS",
+    "physical_depth": null,
+    "selected_U_upsilon": null,
+    "selected_Z_upsilon": null,
+    "selected_boundary_action": null,
+    "selected_couplings": null,
+    "sigma_coupling": "no direct F_sigma term selected without a common action-owned invariant",
+    "stress_tensor": "T_AB^upsilon=Z nabla_A upsilon nabla_B upsilon-G_AB[1/2 Z|nabla upsilon|^2+U]+T_AB^coupling",
+    "validation": {
+      "background_reduces_to_frozen_action": true,
+      "both_maps_monotone_toward_depletion": true,
+      "canonical_maps_differ": true,
+      "no_arbitrary_function_adopted": true,
+      "no_new_mediator_claim": true,
+      "no_particle_fit": true,
+      "two_inequivalent_healthy_families": true
+    },
+    "validation_passed": true,
+    "verdict": "BHSM_MULTIPLE_INEQUIVALENT_SUPPORT_ACTIONS_REMAIN_AFTER_AUTHOR_EXTENSION_SELECTION",
+    "wall_coupling": "required in class through F_W X_W, coefficient/function open"
+  },
+  "support_action_verdict": "BHSM_MULTIPLE_INEQUIVALENT_SUPPORT_ACTIONS_REMAIN_AFTER_AUTHOR_EXTENSION_SELECTION",
+  "support_constraint_analysis": {
+    "artifact": "BHSM_support_constraint_gate_v10_4",
+    "assumed_action_class": "second-order local scalar with Z_upsilon(upsilon)>0 on M_regular",
+    "background_stability_complete": false,
+    "canonical_depth": {
+      "definition": "q_D(upsilon)=integral_upsilon^1 sqrt(Z_reduced(s)) ds",
+      "derivative": "dq_D/dupsilon=-sqrt(Z_reduced(upsilon))<0",
+      "minus_log_condition": "q_D proportional to -log(upsilon) iff Z_reduced proportional to upsilon^-2",
+      "monotonicity": "upsilon down implies q_D up",
+      "q_D_1": 0.0,
+      "selected_map": null
+    },
+    "constraint_ledger": {
+      "bulk_configuration": [
+        "h_ij",
+        "upsilon",
+        "lapse N",
+        "shift N^i"
+      ],
+      "bulk_second_class": [],
+      "canonical_momentum": "pi_upsilon=sqrt(h) Z_upsilon/N (dot(upsilon)-N^i partial_i upsilon)",
+      "core_boundary_constraints": "boundary conditions, not classified as bulk Dirac constraints until S_core is supplied",
+      "primary_first_class": [
+        "p_N=0",
+        "p_Ni=0"
+      ],
+      "radial_constraints": [
+        "normal Hamiltonian matching constraint",
+        "tangential momentum matching constraint"
+      ],
+      "radial_multipliers": [
+        "radial lapse",
+        "radial shift"
+      ],
+      "secondary_first_class": [
+        "C_H^gravity+C_H^upsilon=0",
+        "C_i^gravity+pi_upsilon partial_i upsilon=0"
+      ],
+      "support_gauge_transformation": "delta_xi upsilon=Lie_xi upsilon; no additional internal gauge orbit",
+      "support_primary_constraint": null
+    },
+    "gradient_speed_squared": 1.0,
+    "gradient_stability": "DERIVED_CONDITIONAL_ON_LORENTZIAN_MINIMAL_PRINCIPAL_PART_AND_Z>0",
+    "hamiltonian_density": "C_H^upsilon=pi_upsilon^2/(2 sqrt(h) Z_upsilon)+sqrt(h)[Z_upsilon h^ij partial_i upsilon partial_j upsilon/2+U_eff]",
+    "independence": {
+      "from_q_C": "configuration-space independent by author extension; kinetic orthogonality/mixing remains action-open",
+      "from_q_V": "q_V has zero reduced metric projection; upsilon is an added scalar coordinate",
+      "from_q_W": "configuration-space independent by author extension; kinetic orthogonality/mixing remains action-open"
+    },
+    "physical_scalar_count": 1,
+    "physical_scalar_count_status": "DERIVED_CONDITIONAL",
+    "reason_not_complete": "Z, U_eff, common-domain mixed blocks, and the localized background are not action-selected",
+    "reduced_kinetic_norm": "integral sqrt(h) Z_reduced (delta upsilon)^2 > 0 iff Z_reduced>0",
+    "reduced_kinetic_norm_positive": "CONDITIONAL_ON_Z_REDUCED>0",
+    "status": "BHSM_SUPPORT_MODE_SURVIVES_CONSTRAINT_REDUCTION_CONDITIONALLY_ON_POSITIVE_Z_UPSILON",
+    "uncontrolled_gauge_mode_created": false,
+    "validation": {
+      "bulk_first_class_algebra_preserved": true,
+      "momentum_nonzero_for_positive_Z": true,
+      "no_support_primary_constraint": true,
+      "not_duplicate_metric_volume": true,
+      "not_duplicate_q_C": true,
+      "not_duplicate_q_W": true,
+      "one_conditional_scalar_pair": true,
+      "positive_norm_requires_Z": true
+    },
+    "validation_passed": true
+  },
+  "support_constraint_verdict": "BHSM_SUPPORT_MODE_SURVIVES_CONSTRAINT_REDUCTION_CONDITIONALLY_ON_POSITIVE_Z_UPSILON",
+  "support_orbit_gate": {
+    "artifact": "BHSM_support_orbit_gate_v10_4",
+    "constraint_zero_modes_removed": false,
+    "frozen_family_ledger_relation": null,
+    "gauge_zero_modes_removed": false,
+    "monodromy_operator": null,
+    "numerical_solve_performed": false,
+    "orbit": null,
+    "physical_floquet_spectrum": null,
+    "physical_outputs": {
+      "color_open_nested_sub_envelopment": null,
+      "core_transition_state": null,
+      "diffuse_field_output": null,
+      "near_null_envelopment": null,
+      "timelike_self_envelopment": null,
+      "unstable_branch": null
+    },
+    "prerequisites": {
+      "complete_boundary_and_core_data": false,
+      "complete_common_three_mode_domain": false,
+      "gauge_fixed_nonlinear_equations": false,
+      "positive_full_reduced_kinetic_matrix": false,
+      "stationary_localized_background": false,
+      "unique_support_action": false
+    },
+    "quantum_core_interface": {
+      "detector_environment_coupling": null,
+      "no_signalling": null,
+      "norm_preservation": null,
+      "probability_normalization": null,
+      "quantum_mechanics_derived": false,
+      "shape": "Phi_in^M4 -> Phi_core -> Phi_out,a^M4",
+      "transition_amplitude": null
+    },
+    "relative_periodic_condition": "Phi(tau+T)=h.Phi(tau)",
+    "required_state": [
+      "q_C",
+      "q_W",
+      "q_D",
+      "eta",
+      "sigma",
+      "metric",
+      "gauge dressing",
+      "core boundary data"
+    ],
+    "sector_phase_eigenspaces": null,
+    "status": "BHSM_SUPPORT_RELATIVE_PERIODIC_ORBIT_BLOCKED_BY_INCOMPLETE_THREE_MODE_ACTION",
+    "validation_passed": true
+  },
+  "support_three_mode_coupling": {
+    "H_3m": [
+      [
+        {
+          "reason": "localized equilibrium absent",
+          "status": "DERIVED_CONDITIONAL",
+          "value": "H_C"
+        },
+        {
+          "reason": "q_C and q_W still lack a single localized parent-domain Hessian",
+          "status": "UNDEFINED_CROSS_DOMAIN",
+          "value": null
+        },
+        {
+          "reason": "the author selected upsilon, but Z, U, F_C, and F_W remain action-unselected",
+          "status": "OPEN",
+          "value": null
+        }
+      ],
+      [
+        {
+          "reason": "q_C and q_W still lack a single localized parent-domain Hessian",
+          "status": "UNDEFINED_CROSS_DOMAIN",
+          "value": null
+        },
+        {
+          "reason": "fold domain only",
+          "status": "DERIVED_CONDITIONAL",
+          "value": "H_W"
+        },
+        {
+          "reason": "the author selected upsilon, but Z, U, F_C, and F_W remain action-unselected",
+          "status": "OPEN",
+          "value": null
+        }
+      ],
+      [
+        {
+          "reason": "the author selected upsilon, but Z, U, F_C, and F_W remain action-unselected",
+          "status": "OPEN",
+          "value": null
+        },
+        {
+          "reason": "the author selected upsilon, but Z, U, F_C, and F_W remain action-unselected",
+          "status": "OPEN",
+          "value": null
+        },
+        {
+          "reason": "nonnegative value required but not selected",
+          "status": "DERIVED_CONDITIONAL",
+          "value": "U_eff''(1)"
+        }
+      ]
+    ],
+    "K_3m": [
+      [
+        {
+          "reason": "M8 Einstein-frame q_C",
+          "status": "DERIVED_CONDITIONAL",
+          "value": "6*kappa5"
+        },
+        {
+          "reason": "q_C and q_W still lack a single localized parent-domain Hessian",
+          "status": "UNDEFINED_CROSS_DOMAIN",
+          "value": null
+        },
+        {
+          "reason": "the author selected upsilon, but Z, U, F_C, and F_W remain action-unselected",
+          "status": "OPEN",
+          "value": null
+        }
+      ],
+      [
+        {
+          "reason": "q_C and q_W still lack a single localized parent-domain Hessian",
+          "status": "UNDEFINED_CROSS_DOMAIN",
+          "value": null
+        },
+        {
+          "reason": "M5 fold q_W",
+          "status": "DERIVED_CONDITIONAL",
+          "value": 6.935084858283065
+        },
+        {
+          "reason": "the author selected upsilon, but Z, U, F_C, and F_W remain action-unselected",
+          "status": "OPEN",
+          "value": null
+        }
+      ],
+      [
+        {
+          "reason": "the author selected upsilon, but Z, U, F_C, and F_W remain action-unselected",
+          "status": "OPEN",
+          "value": null
+        },
+        {
+          "reason": "the author selected upsilon, but Z, U, F_C, and F_W remain action-unselected",
+          "status": "OPEN",
+          "value": null
+        },
+        {
+          "reason": "requires one selected Z_reduced>0",
+          "status": "DERIVED_CONDITIONAL",
+          "value": "1 after q_D canonicalization"
+        }
+      ]
+    ],
+    "artifact": "BHSM_support_three_mode_coupling_v10_4",
+    "eigenproblem_solved": false,
+    "generalized_eigenproblem": "H_3m v_n=omega_n^2 K_3m v_n",
+    "interference_energy": null,
+    "mixed_block_classification": {
+      "H_CD": "OPEN",
+      "H_CW": "UNDEFINED_CROSS_DOMAIN",
+      "H_WD": "OPEN",
+      "K_CD": "OPEN",
+      "K_CW": "UNDEFINED_CROSS_DOMAIN",
+      "K_WD": "OPEN"
+    },
+    "mode_ontology": {
+      "q_C": "core/Hopf geometric breathing mode",
+      "q_D": "canonical spacetime-support/depth mode, map open",
+      "q_W": "enclosure-wall/fold mode"
+    },
+    "observable_output": null,
+    "physical_rank": "2+1 conditional; no complete common rank-three operator",
+    "seam_is_physical_mode": false,
+    "seam_projection": "psi_seam=Pi_seam(q_C,q_W,q_D)",
+    "stable_eigenmode": null,
+    "state": [
+      "q_C",
+      "q_W",
+      "q_D(upsilon)"
+    ],
+    "status": "BHSM_THREE_MODE_COMMON_ACTION_BLOCKED_BY_NONUNIQUE_SUPPORT_COUPLINGS",
+    "support_source": "J_upsilon=F_C'X_C+F_W'X_W; functions and localized invariants unselected",
+    "three_mode_completion_verdict": null,
+    "three_modes_identified_with_generations": false,
+    "validation": {
+      "hessian_ledger_hermitian": true,
+      "kinetic_ledger_hermitian": true,
+      "mixed_blocks_not_fabricated": true,
+      "modes_distinct_from_generations": true,
+      "seam_excluded_from_rank": true,
+      "stable_output_not_promoted": true,
+      "support_not_spectator_promoted": true
+    },
+    "validation_passed": true
+  },
+  "support_three_mode_verdict": "BHSM_THREE_MODE_COMMON_ACTION_BLOCKED_BY_NONUNIQUE_SUPPORT_COUPLINGS",
   "three_mode_action": {
     "H_0": [
       [
@@ -734,7 +1266,7 @@
           "value": null
         },
         {
-          "reason": "constraint-reduced q_V vanishes and no extension was selected",
+          "reason": "upsilon is selected, but Z, U, F_C, and F_W are not action-selected",
           "status": "OPEN",
           "value": null
         }
@@ -751,26 +1283,26 @@
           "value": "H_W on D_fold"
         },
         {
-          "reason": "constraint-reduced q_V vanishes and no extension was selected",
+          "reason": "upsilon is selected, but Z, U, F_C, and F_W are not action-selected",
           "status": "OPEN",
           "value": null
         }
       ],
       [
         {
-          "reason": "constraint-reduced q_V vanishes and no extension was selected",
+          "reason": "upsilon is selected, but Z, U, F_C, and F_W are not action-selected",
           "status": "OPEN",
           "value": null
         },
         {
-          "reason": "constraint-reduced q_V vanishes and no extension was selected",
+          "reason": "upsilon is selected, but Z, U, F_C, and F_W are not action-selected",
           "status": "OPEN",
           "value": null
         },
         {
-          "reason": "constraint-reduced q_V vanishes and no extension was selected",
-          "status": "OPEN",
-          "value": null
+          "reason": "nonnegative but not selected",
+          "status": "DERIVED_CONDITIONAL",
+          "value": "U_eff''(1)"
         }
       ]
     ],
@@ -792,7 +1324,7 @@
           "value": null
         },
         {
-          "reason": "constraint-reduced q_V vanishes and no extension was selected",
+          "reason": "upsilon is selected, but Z, U, F_C, and F_W are not action-selected",
           "status": "OPEN",
           "value": null
         }
@@ -809,26 +1341,26 @@
           "value": 6.935084858283065
         },
         {
-          "reason": "constraint-reduced q_V vanishes and no extension was selected",
+          "reason": "upsilon is selected, but Z, U, F_C, and F_W are not action-selected",
           "status": "OPEN",
           "value": null
         }
       ],
       [
         {
-          "reason": "constraint-reduced q_V vanishes and no extension was selected",
+          "reason": "upsilon is selected, but Z, U, F_C, and F_W are not action-selected",
           "status": "OPEN",
           "value": null
         },
         {
-          "reason": "constraint-reduced q_V vanishes and no extension was selected",
+          "reason": "upsilon is selected, but Z, U, F_C, and F_W are not action-selected",
           "status": "OPEN",
           "value": null
         },
         {
-          "reason": "constraint-reduced q_V vanishes and no extension was selected",
-          "status": "OPEN",
-          "value": null
+          "reason": "requires selected Z_reduced>0",
+          "status": "DERIVED_CONDITIONAL",
+          "value": "1 after canonical normalization"
         }
       ]
     ],
@@ -837,11 +1369,11 @@
     "complete_common_source": null,
     "mode_status": {
       "q_C": "DERIVED_CONDITIONAL",
-      "q_D": "ABSENT_AFTER_CONSTRAINT_REDUCTION",
+      "q_D": "DERIVED_CONDITIONAL_ON_POSITIVE_Z_UPSILON",
       "q_W": "DERIVED_CONDITIONAL"
     },
     "nonlinear_potential": null,
-    "physical_rank": 2,
+    "physical_rank": "2+1 conditional",
     "seam_projection": "psi_seam=Pi_seam(q_C,q_W,q_D); only the historical q_W coefficient is known",
     "state": [
       "q_C",
@@ -850,7 +1382,7 @@
     ],
     "target_rank_three_reached": false,
     "validation_passed": true,
-    "verdict": "BHSM_THREE_MODE_CROSS_DOMAIN_HESSIAN_REMAINS_INCOMPLETE"
+    "verdict": "BHSM_THREE_MODE_COMMON_ACTION_BLOCKED_BY_NONUNIQUE_SUPPORT_COUPLINGS"
   },
   "three_mode_orbit_and_interference": {
     "Hermitian_interference_operator": null,
@@ -870,7 +1402,7 @@
     "q_C_orbit": null,
     "q_D_orbit": null,
     "q_W_orbit": null,
-    "reason": "q_D, the complete common action, and a stationary common background are absent",
+    "reason": "the upsilon extension class exists, but its unique action/canonical q_D, the complete common three-mode operator, core data, and a stationary localized background are absent",
     "relative_periodic_state": null,
     "relative_phases": null,
     "removed_coordinate_seam_modes": true,
@@ -878,21 +1410,27 @@
     "stable_directions": null,
     "unstable_directions": null,
     "validation_passed": true,
-    "verdict": "BHSM_THREE_MODE_ORBIT_INELIGIBLE_WITHOUT_ACTION_OWNED_DEPTH_MODE"
+    "verdict": "BHSM_SUPPORT_RELATIVE_PERIODIC_ORBIT_BLOCKED_BY_INCOMPLETE_THREE_MODE_ACTION"
   },
-  "three_mode_verdict": "BHSM_THREE_MODE_CROSS_DOMAIN_HESSIAN_REMAINS_INCOMPLETE",
+  "three_mode_verdict": "BHSM_THREE_MODE_COMMON_ACTION_BLOCKED_BY_NONUNIQUE_SUPPORT_COUPLINGS",
   "validation": {
     "anchor_not_used": true,
+    "author_extension_selected": true,
+    "conditional_constraint_audit_valid": true,
+    "core_matching_fail_closed": true,
     "depth_valid": true,
     "doctrine_preserved": true,
     "generation_modes_distinct": true,
     "global_not_promoted": true,
     "mark_III_closed": true,
-    "no_extension_adopted": true,
     "no_mass_or_matrices": true,
     "orbit_not_fabricated": true,
+    "order_parameter_valid": true,
     "particle_cycles_not_fabricated": true,
     "reduction_valid": true,
+    "support_action_audit_valid": true,
+    "support_action_not_fabricated": true,
+    "support_three_mode_fail_closed": true,
     "three_mode_fail_closed": true,
     "volume_no_go_exact": true
   },

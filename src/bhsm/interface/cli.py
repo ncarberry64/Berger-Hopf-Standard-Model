@@ -919,6 +919,11 @@ def build_parser() -> argparse.ArgumentParser:
         ("three-mode-envelopment-status", "Render the BHSM v10.3 author-clarified three-mode architecture"),
         ("spacetime-removal-depth-v10-3-status", "Render the historical BHSM v10.3 invariant depth candidate audit"),
         ("spacetime-removal-depth-status", "Render the current BHSM v10.4 constrained proper-volume depth audit"),
+        ("spacetime-support-status", "Render the BHSM v10.4 stratified-core support order parameter"),
+        ("support-action-status", "Render the BHSM v10.4 covariant support-action audit"),
+        ("support-constraint-status", "Render the BHSM v10.4 support-field constraint audit"),
+        ("core-stratum-status", "Render the BHSM v10.4 regular-to-core matching gate"),
+        ("support-three-mode-status", "Render the BHSM v10.4 support three-mode coupling gate"),
         ("three-mode-interference-status", "Render the BHSM v10.3 interference-output gate"),
         ("seam-projection-status", "Render the BHSM v10.3 coordinate-seam projection gate"),
         ("global-scale-anchor-status", "Render the BHSM v10.3 global geometry/unit-anchor policy"),
@@ -1097,6 +1102,11 @@ def main(argv: Sequence[str] | None = None) -> int:
         return 0
     if args.command in {
         "spacetime-removal-depth-status",
+        "spacetime-support-status",
+        "support-action-status",
+        "support-constraint-status",
+        "core-stratum-status",
+        "support-three-mode-status",
         "three-mode-action-status",
         "global-equilibrium-status",
         "cosmic-unit-anchor-status",

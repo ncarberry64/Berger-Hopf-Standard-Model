@@ -44,14 +44,19 @@ from a positive shape block with eigenvalues `4/7` and `2`; the lapse and
 Hamiltonian constraint remove the common-volume canonical pair. The physical
 projection of `q_V` is zero. Its unreduced sign is not called a ghost, and
 metric degeneracy is outside the current inverse-metric action domain. Seven
-geometric extension classes remain inequivalent, so none is adopted without
-author selection.
+geometric extension classes remain inequivalent. The author now selects a
+stratified-core scalar `upsilon in [0,1]` as the extension class while keeping
+the regular metric nondegenerate. A positive `Z_upsilon` would add one
+conditional scalar pair, but the current action does not choose `Z_upsilon`,
+`U_upsilon`, the `q_C/q_W` support couplings, or the core action. Constant and
+inverse-square positive kinetic families already yield inequivalent canonical
+depth maps, so the action remains non-unique.
 
 Current exact verdict:
-`BHSM_MINIMAL_GEOMETRIC_DEPTH_EXTENSION_REQUIRES_AUTHOR_SELECTION`.
+`BHSM_MULTIPLE_INEQUIVALENT_SUPPORT_ACTIONS_REMAIN_AFTER_AUTHOR_EXTENSION_SELECTION`.
 
 Exact next object:
-`AUTHOR_SELECTION_OF_MINIMAL_GEOMETRIC_DEPTH_EXTENSION_CONFIGURATION_AND_ACTION`.
+`ACTION_PRINCIPLE_FIXING_Z_UPSILON_U_UPSILON_AND_SUPPORT_COUPLINGS`.
 
 The v8.4--v8.9 conditional theorem chain remains integrated. V10.0 embeds its
 static Gram--Hessian/current formulas as the stationary-cycle limit. Because
