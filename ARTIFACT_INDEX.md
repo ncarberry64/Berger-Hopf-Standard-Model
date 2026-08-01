@@ -1566,3 +1566,20 @@ Doctrine and manuscript chapter:
   numerical checks, null composite/flavor/mass readout, and minimal-extension
   comparison.
 - `artifacts/BHSM_1_0_completion_gate.json`: canonical v9.1 RB-15/RB-16 gate.
+
+## BHSM v10.0 Machian geometric-envelopment campaign
+
+- `artifacts/BHSM_machian_geometric_envelopment_foundation_v10_0.json`:
+  canonical doctrine, definitions, sector ontology, frozen-ledger/C3 gate,
+  hierarchy reinterpretation, and source-boundary record.
+- `artifacts/BHSM_dynamic_envelopment_completion_gate_v10_0.json`:
+  extended action, topology/current audit, dynamic-sector gates, four
+  completion marks, hindsight ledger, and fail-closed outputs.
+- `artifacts/BHSM_dynamic_envelope_reduction_v10_0.json`:
+  exact seven-dimensional scaling reduction, normalized degree-one profile
+  integrals, independent quadrature certification, collective kinetic metric,
+  equilibrium/stiffness/energy formulas, and proxy breathing calculation.
+- `artifacts/BHSM_global_scale_gate_v10_0.json`: exact dilation-family audit
+  with verdict `BHSM_GLOBAL_SCALE_REMAINS_UNDERDETERMINED_BY_CURRENT_ACTION`.
+- `artifacts/BHSM_1_0_completion_gate.json`: canonical v10.0 gate; Mark I is
+  reached, Mark II is conditional, Marks III/IV and RB-15/RB-16 remain open.

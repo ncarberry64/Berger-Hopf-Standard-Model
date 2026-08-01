@@ -1,10 +1,10 @@
 # Open Blockers Backlog
 
-Current public status: v9.1 proves that the original metric-plus-real-scalar
-action cannot generate the required geometry-only FR chiral flavor carrier.
-The historical table remains provenance and does not override this exact
-topology/field-bundle gate. The live Tier-C object is
-`ACTION_LEVEL_GLOBAL_TOPOLOGICAL_SECTOR_WITH_LOCAL_CHIRAL_TRANSGRESSION_AND_COMMON_PARENT_CURRENT_OWNERSHIP`.
+Current public status: v10.0 conditionally constructs the Machian
+geometric-envelopment action and completion architecture. The v9.1 no-go
+remains authoritative for the original metric-plus-real-scalar action. The
+historical table remains provenance. The live Tier-C object is
+`ACTION_SELECTED_GAUGE_DRESSED_CHARGED_SELF_ENVELOPMENT_RELATIVE_PERIODIC_ORBIT_WITH_LOCAL_CHIRAL_TRANSGRESSION`.
 
 Historical compatibility boundary: structural architecture integrated conditional; numerical closure open.
 This sentence records the pre-v7.1 numerical-closure status required by the
@@ -12,9 +12,9 @@ archived component contracts; it is not the current completion-tier verdict.
 
 Each blocker must be handled without fitting observed data after comparison and without changing frozen predictions.
 
-## Current v9.1 highest-upstream blocker
+## Current v10.0 highest-upstream blocker
 
-`ACTION_LEVEL_GLOBAL_TOPOLOGICAL_SECTOR_WITH_LOCAL_CHIRAL_TRANSGRESSION_AND_COMMON_PARENT_CURRENT_OWNERSHIP`
+`ACTION_SELECTED_GAUGE_DRESSED_CHARGED_SELF_ENVELOPMENT_RELATIVE_PERIODIC_ORBIT_WITH_LOCAL_CHIRAL_TRANSGRESSION`
 
 The declared small-diffeomorphism geometry quotient has trivial fundamental
 group. The optional large-diffeomorphism class is not a selected FR
@@ -23,13 +23,15 @@ The current action selects neither a stationary geon nor a `G2/C3`
 polarization. Downstream composite immersions, physical pullbacks, current,
 matrix, and mass/lepton outputs remain null.
 
-Any future extension must close the global topology, local transgression, and
-common-current arrows together. None of the v9.1 comparison candidates is
-uniquely minimal, so no extension is currently licensed.
+The structural eta extension supplies a based-map topology and connection
+current, but it does not yet supply a localized physical rotation/exchange
+representative, local M4 chirality, or a stable gauge-dressed orbit. The next
+valid construction must solve that coupled boundary-value/orbit problem and
+classify its physical Floquet spectrum before any family or mass readout.
 
 Exact verdict:
 
-`BHSM_GEOMETRY_ONLY_PARENT_ACTION_CANNOT_GENERATE_THE_REQUIRED_FR_CHIRAL_FLAVOR_CARRIER`
+`BHSM_DYNAMIC_ENVELOPMENT_ACTION_AND_COMPLETION_ARCHITECTURE_CONSTRUCTED_CONDITIONALLY`
 
 | Blocker | Current status | Why it matters | Next valid action | Forbidden invalid action |
 | --- | --- | --- | --- | --- |

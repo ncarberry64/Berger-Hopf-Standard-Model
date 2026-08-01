@@ -204,3 +204,17 @@ ownership without fitted flavor data or sector-dependent tuning.
 
 Exact verdict:
 `BHSM_GEOMETRY_ONLY_PARENT_ACTION_CANNOT_GENERATE_THE_REQUIRED_FR_CHIRAL_FLAVOR_CARRIER`.
+
+## v10.0 envelopment completion gate
+
+Mark I is `REACHED`; Mark II is `REACHED_CONDITIONALLY`; Marks III and IV are
+`OPEN`. The eta extension is a structural postulate, not a completed physical
+theory. RB-15 is blocked by the absence of an action-selected, gauge-dressed
+charged relative-periodic orbit with local chiral transgression; RB-16 remains
+downstream. No physical matrix, mass, or absolute unit is licensed.
+
+Exact verdict:
+`BHSM_DYNAMIC_ENVELOPMENT_ACTION_AND_COMPLETION_ARCHITECTURE_CONSTRUCTED_CONDITIONALLY`.
+
+Exact next object:
+`ACTION_SELECTED_GAUGE_DRESSED_CHARGED_SELF_ENVELOPMENT_RELATIVE_PERIODIC_ORBIT_WITH_LOCAL_CHIRAL_TRANSGRESSION`.

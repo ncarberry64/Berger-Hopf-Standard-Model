@@ -1,0 +1,166 @@
+{
+  "artifact": "BHSM_dynamic_envelope_reduction_v10_0",
+  "global_scale": {
+    "classification": "BLOCKED_EXACT_OBJECT_PROVED",
+    "closed_cosmic_solution_selected": false,
+    "dilation_family": {
+      "A0": "c^-8 A0",
+      "G0": "c^-8 G0",
+      "G_AB": "c^2 G_AB",
+      "Lambda_eta": "c^-8 Lambda_eta",
+      "X_eta^4 term": "invariant",
+      "Zchi": "c^-6 Zchi",
+      "Zsigma": "c^-6 Zsigma",
+      "g": "g",
+      "kappa0": "c^-8 kappa0",
+      "kappa1": "c^-6 kappa1",
+      "scope": "covariance of the dimensionful coupling family, not a symmetry at fixed couplings"
+    },
+    "kappa1_dimension": "mass^6=L^-6",
+    "kappa1_fixed_by_field_equations": false,
+    "natural_local_mass_scale": "mu_env=kappa1^(1/6)",
+    "physical_eV_GeV_bridge": null,
+    "remaining_degeneracy": "the numerical value of the dimensionful input kappa1 and hence one overall physical unit remain unselected; dimensionless coupling ratios also remain inputs until a closed cosmic boundary-value and normalization theorem is supplied",
+    "status": "BHSM_GLOBAL_SCALE_REMAINS_UNDERDETERMINED_BY_CURRENT_ACTION",
+    "total_energy_or_topological_normalization_fixed": false,
+    "uniqueness": false
+  },
+  "kinetic_metric": {
+    "M_RR": "kappa1 D2 R^5+D8/R+g s^2(kappa1 E2 R^5+E8/R)+Zsigma s^2 S2 R^5",
+    "M_Rs": "-Zsigma s S1 R^6",
+    "M_ss": "Zsigma S0 R^7",
+    "breathing_frequency_squared": "omega_R^2=30 kappa1 A2 R0^3/(kappa1 D2 R0^5+D8/R0)",
+    "classification": "DERIVED_CONDITIONAL",
+    "coordinates": [
+      "R",
+      "s"
+    ],
+    "higher_velocity_terms": "the X_eta^4 action also contains O(dot R^4) and higher terms",
+    "positive_at_s0": "M_RR=kappa1 D2 R^5+D8/R>0 and M_ss=Zsigma S0 R^7>0",
+    "quadratic_velocity_expansion": true
+  },
+  "physical_promotion": false,
+  "profiles": {
+    "all_finite": true,
+    "all_potential_coefficients_positive": true,
+    "certified_relative_method_bound": 2e-09,
+    "coefficient_definitions": {
+      "A2": "(1/2) int_R7 X0",
+      "A8": "(1/8) int_R7 X0^4",
+      "B0": "(1/2) int_R7 q^2",
+      "B2": "(1/2) int_R7 |grad q|^2",
+      "B4": "(1/4) int_R7 q^4",
+      "C2": "(1/2) int_R7 q^2 X0",
+      "C8": "(1/8) int_R7 q^2 X0^4",
+      "D2": "int_R7 |y.grad eta0|^2",
+      "D8": "int_R7 X0^3 |y.grad eta0|^2",
+      "E2": "int_R7 q^2 |y.grad eta0|^2",
+      "E8": "int_R7 q^2 X0^3 |y.grad eta0|^2",
+      "S0": "int_R7 q^2",
+      "S1": "int_R7 q(y.grad q)",
+      "S2": "int_R7 (y.grad q)^2"
+    },
+    "methods": [
+      "70-digit mpmath tanh-sinh",
+      "SciPy adaptive Gauss-Kronrod"
+    ],
+    "physical_promotion": false,
+    "profiles": {
+      "Hopf_weighted_current_compatibility": null,
+      "X0": "f'^2+6 sin(f)^2/r^2=88 r^6/(1+r^8)^2",
+      "action_selected": false,
+      "boundary_conditions": {
+        "f(0)": "0",
+        "f(infinity)": "pi"
+      },
+      "classification": "PROXY_ONLY",
+      "degree": 1,
+      "domain": "R7 compactified by one point to S7",
+      "eta": "eta_0(r,Omega)=(cos f(r),sin f(r) Omega)",
+      "f": "2 atan(r^4)",
+      "role": "explicit normalized coefficient audit only",
+      "sigma_profile": "q(r)=N exp(-r^2), normalized by int_R7 q^2=1"
+    },
+    "serialization_policy": "serialize high-precision values and certified cross-platform method bounds, not raw last-bit differences",
+    "values": {
+      "A2": 386.594414700179,
+      "A8": 222345.015325136,
+      "B0": 0.5,
+      "B2": 3.5,
+      "B4": 0.00454899494516074,
+      "C2": 4.32984572555144,
+      "C8": 6626.22531507428,
+      "D2": 1900.58192109033,
+      "D8": 1293643.72552807,
+      "E2": 7.0133444596165,
+      "E8": 36040.5739283354,
+      "S0": 1.0,
+      "S1": -3.5,
+      "S2": 15.75
+    }
+  },
+  "representative_proxy": {
+    "E0": 120987.826255278,
+    "R0": 2.20529640583177,
+    "breathing_frequency": 0.425901033279284,
+    "breathing_frequency_squared": 0.181391690148362,
+    "classification": "PROXY_ONLY",
+    "normalization": {
+      "Zsigma": 1.0,
+      "g": 0.0,
+      "kappa1": 1.0
+    },
+    "normalization_is_physical": false,
+    "physical_orbit": false,
+    "radial_collective_mass": 685741.371283422,
+    "radial_stiffness": 124387.786341755
+  },
+  "scaling": {
+    "classification": "DERIVED_CONDITIONAL",
+    "derived_from_action": true,
+    "eta_p2": "R^5",
+    "eta_p8": "R^-1",
+    "rule": "int_R7 |partial Phi|^p d^7x scales as R^(7-p)",
+    "sigma_eta_p2": "s^2 R^5",
+    "sigma_eta_p8": "s^2 R^-1",
+    "sigma_gradient": "s^2 R^5",
+    "sigma_quadratic_potential": "s^2 R^7",
+    "sigma_quartic_potential": "s^4 R^7",
+    "spatial_dimension": 7
+  },
+  "sigma_gate": {
+    "C_sigma": "Zsigma B2 R^5+A0 B0 R^7+g(kappa1 C2 R^5+C8/R)",
+    "amplitude_Hessian_at_s0": "d_s^2 V(R,0)=2 C_sigma(R)",
+    "classification": "DERIVED_CONDITIONAL",
+    "fixed_R_branch": "s_*^2=-C_sigma(R)/(2 G0 B4 R^7)",
+    "fixed_R_branch_condition": "C_sigma(R)<0 and G0 B4>0",
+    "full_branch_requirement": "also solve d_R V(R,s_*)=0 and the complete constraints",
+    "surface_licensed_by_collective_branch_alone": false
+  },
+  "source_pr208_sha": "953aea690c5aba356d305c9031a759dd672dccfa",
+  "sprint": "bhsm-unified-envelopment-foundation-v10-0",
+  "symbolic_reduction": {
+    "E0": "6 kappa1^(1/6) A2^(1/6) A8^(5/6)/5^(5/6)",
+    "R0": "(A8/(5 kappa1 A2))^(1/6)",
+    "classification": "DERIVED_CONDITIONAL",
+    "energy_identity_exact": true,
+    "quadratic_only_eta_finite_radius": false,
+    "quadratic_only_reason": "A8=0 gives V=kappa1 A2 R^5 with no positive stationary R",
+    "radial_stiffness": "30 kappa1 A2 R0^3",
+    "radial_stiffness_identity_exact": true,
+    "reduced_potential": "V=kappa1 A2 R^5+A8/R+Zsigma B2 s^2 R^5+A0 B0 s^2 R^7+G0 B4 s^4 R^7+g s^2(kappa1 C2 R^5+C8/R)",
+    "stationarity_exact": true
+  },
+  "validation": {
+    "energy_exact": true,
+    "equilibrium_exact": true,
+    "independent_quadratures_agree": true,
+    "potential_coefficients_positive": true,
+    "profile_coefficients_finite": true,
+    "quadratic_only_texture_invalidated": true,
+    "seven_dimensional_scaling_derived": true,
+    "stiffness_exact": true
+  },
+  "validation_passed": true,
+  "version": "v10.0"
+}

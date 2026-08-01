@@ -46,3 +46,14 @@ runtime-validation path for the minimal bounded collider-interface subset.
 Failed FeynRules, UFO, MadGraph, LHE/HepMC, Athena, or CMSSW gates should be
 reported as software/interface validation failures unless they trace back to a
 frozen BHSM source artifact.
+
+## BHSM v10.0 envelopment falsification boundary
+
+The v10.0 structural extension makes no empirical particle prediction. Its
+internal claims fail if the C3 projector algebra, eta variational identities,
+`pi1(Map_*^N(S7,S7))=Z2` topology, seven-dimensional scaling laws, independent
+profile quadratures, or global dilation degeneracy cannot be reproduced.
+A future physical-particle claim additionally fails unless a gauge-fixed
+relative-periodic orbit passes constraint, convergence, conservation, and
+Floquet tests before comparison. Frozen observables remain outside and
+unchanged by this campaign.
