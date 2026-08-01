@@ -156,6 +156,26 @@ typed statuses, no `S3 x M4=M8` identification, no inserted buoyancy force,
 the scalar-energy caveat, eta-sector-only complementarity, null neutrino
 observables, and unchanged frozen hashes.
 
+## Reviewer checkpoint: v10.3
+
+```bash
+python -m bhsm.interface deformation-domain-status --format json
+python -m bhsm.interface embedding-constraint-status --format json
+python -m bhsm.interface local-radion-status --format json
+python -m bhsm.interface common-stress-pullback-status --format json
+python -m bhsm.interface global-zero-mode-status --format json
+python -m bhsm.interface deformation-selection-status --format json
+python scripts/materialize_physical_deformation_domain_v10_3.py
+python -m pytest -q tests/test_bhsm_full_configuration_space_v10_3.py tests/test_bhsm_embedding_constraint_v10_3.py tests/test_bhsm_local_radion_v10_3.py tests/test_bhsm_gauge_invariant_deformation_v10_3.py tests/test_bhsm_stress_pullback_v10_3.py tests/test_bhsm_global_zero_mode_v10_3.py tests/test_bhsm_deformation_selection_gate_v10_3.py
+```
+
+Run the materializer twice and compare bytes. Verify the historical-name
+equivalences; codimensions four, one, and one for the three embedding problems;
+Einstein-frame radion coefficient `6`; the gauge-invariant combination; formal
+tangential delta stress and its shape-force divergence; exact imported v6.29
+fold response; rejection of every candidate/extension; null physical outputs;
+and unchanged frozen predictions.
+
 ## Reviewer checkpoint: v10.2
 
 ```bash

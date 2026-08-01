@@ -6,11 +6,11 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 
 | Item | Current status |
 | --- | --- |
-| Overall status | relational doctrine retained; present action exhausted for Topological Buoyancy with an exact obstruction; physical derivation and empirical replacement open |
-| Latest theorem branch | `agent/bhsm-topological-buoyancy-functional-v10-2` |
+| Overall status | prior seam-shift work recovered; no unique parameter-free physical deformation completion is selected; physical derivation and empirical replacement open |
+| Latest theorem branch | `agent/bhsm-physical-deformation-domain-v10-3` |
 | Latest completed theorem commits | PO-BH-47 `ae5dac5`; PO-BH-47 cleanup `1c11d2b`; PO-BH-48 `8ac577c`; PO-BH-49 `c2cfc70`; PO-BH-50 `7a4523a`; PO-BH-51 `225786f`; PO-BH-52 `4de6d9c`; PO-BH-53 `20c58b1`; PO-BH-54 `11d1c60`; PO-BH-55 `cf0e998`; PO-BH-56 `9f93330`; PO-BH-57/58/59 merged to main; PO-BH-60 merged to main; PO-BH-61 merged to main; PO-BH-62 merged to main; PO-BH-63 merged to main; PO-BH-64 merged to main; PO-BH-65 stacked in PR #21; PO-BH-66 stacked in PR #22; PO-BH-67 stacked in PR #23; PO-BH-68 stacked in PR #24; full freeze protocol / charged `K_f` stacked in PR #25; boundary action source audit stacked in PR #26; boundary graded defect action kernel on this branch |
-| Test result summary | v10.2 focused geometry, radion, constraint, backreaction, functional, CLI, and materialization checks pass; required GitHub CI is authoritative |
-| Current theorem/status label | `BHSM_CURRENT_PARENT_ACTION_CANNOT_GENERATE_TOPOLOGICAL_BUOYANCY` |
+| Test result summary | v10.3 focused configuration, embedding, radion, gauge, stress, zero-mode, selection, CLI, and materialization checks pass; required GitHub CI is authoritative |
+| Current theorem/status label | `BHSM_NO_PARAMETER_FREE_PHYSICAL_DEFORMATION_COMPLETION_EXISTS` |
 | Candidate architecture complete | yes |
 | Full BHSM proven | no |
 | Standard Model fully derived | no |
@@ -22,6 +22,32 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 | Collective curvature layer | connected topographic-gravity extension candidate |
 | Frozen predictions changed | no |
 | Official predictions changed | no |
+
+## v10.3 authoritative physical deformation-domain status
+
+The historical audit resolves the naming collision. The v6.13--v6.27
+moving B1 endpoint, support shift, threading trace, and normal-support residual
+are the earlier treatment of the M5 seam displacement. Full shift variation
+imposes the complete momentum constraint, removes the Lorentzian C1 mode, and
+shows that a dynamical B1 embedding is unnecessary through local order `D^2 q`.
+The M8 Hopf breathing mode and M5 critical-wall fold amplitude remain different
+conditional degrees of freedom; neither may be renamed as the other.
+
+No candidate simultaneously has action ownership, an admissible gauge quotient,
+a common localized stress domain, a covariant global restoring law, a stable
+background, and parameter-free scale closure. Direct `M4 -> M8` embedding is
+codimension four, while the codimension-one lifted seam has no current action
+owner. Formal distributional stress is tangential and needs a shape equation or
+bulk reaction for normal conservation.
+
+Exact verdict:
+`BHSM_NO_PARAMETER_FREE_PHYSICAL_DEFORMATION_COMPLETION_EXISTS`.
+
+Minimality verdict:
+`BHSM_MULTIPLE_INEQUIVALENT_DEFORMATION_COMPLETIONS_REMAIN`.
+
+Exact next object:
+`AUTHOR_SELECTED_COMMON_DOMAIN_COMPLETION_BETWEEN_DISTRIBUTIONAL_DYNAMICAL_SEAM_AND_SMOOTH_PARENT_LOCALIZATION_WITH_FULL_LOCAL_RADION_PUSHFORWARD`.
 
 ## v10.2 authoritative Topological-Buoyancy status
 

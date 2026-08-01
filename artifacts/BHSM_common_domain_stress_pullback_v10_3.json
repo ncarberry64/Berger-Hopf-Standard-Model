@@ -1,0 +1,72 @@
+{
+  "artifact": "BHSM_common_domain_stress_pullback_v10_3",
+  "components": {
+    "current_shape_equation_present": false,
+    "distributional_lift": "T8_seam^AB(x)=int_M4 sqrt|h| T4^mu_nu e_mu^A e_nu^B delta8(x-X(y))/sqrt|G| d4y",
+    "divergence_identity": "nabla_A T8_seam^AB=delta_Sigma[(D_mu T4^mu_nu)e_nu^B-T4^mu_nu K^I_mu_nu n_I^B]",
+    "normal_conservation_requires": "T4^mu_nu K^I_mu_nu plus bulk/matcher reaction=0",
+    "normal_force_location": "distributional divergence through K^I_mu_nu T4^mu_nu, not T_nn",
+    "normal_normal_component": 0,
+    "normal_tangential_component": 0,
+    "tangential_component": "T4^mu_nu exactly",
+    "tangential_conservation": "D_mu T4^mu_nu=0 on intrinsic equations"
+  },
+  "ownership": {
+    "M4_stress": [
+      "intrinsic SM EFT, h, and currents"
+    ],
+    "M5_stress": [
+      "independent cap geometry and sigma5"
+    ],
+    "M8_stress": [
+      "G/chi/sigma8/eta/omega sectors"
+    ],
+    "distributional_conservation": false,
+    "matcher_is_physical_stress_tensor": false,
+    "matcher_response": "KKT adjoint reactions C85*Lambda85 and C54*Lambda54",
+    "one_common_T8_total": null,
+    "regulated_conservation": null,
+    "special_fold_result_is_all_sector_nonlinear_conservation": false,
+    "v6_27_special_fold_residual": "vanishes through O(D2 q) on fixed B1 support"
+  },
+  "representations": [
+    {
+      "current_action_selected": false,
+      "free_width": false,
+      "linear_distribution_well_defined": true,
+      "nonlinear_self_products_controlled": false,
+      "representation": "delta-supported M4 in M8"
+    },
+    {
+      "current_action_selected": false,
+      "free_width": true,
+      "linear_distribution_well_defined": true,
+      "nonlinear_self_products_controlled": "conditional on profile",
+      "representation": "finite collar profile"
+    },
+    {
+      "current_action_selected": "only the separate M5 scalar wall, not an M8 localization of all M4 sectors",
+      "free_width": "must follow from wall action",
+      "linear_distribution_well_defined": true,
+      "nonlinear_self_products_controlled": true,
+      "representation": "smooth scalar domain wall"
+    },
+    {
+      "current_action_selected": "maps exist, but source/target actions remain independent off shell",
+      "free_width": false,
+      "linear_distribution_well_defined": true,
+      "nonlinear_self_products_controlled": true,
+      "representation": "normalized cap/fiber pushforward"
+    }
+  ],
+  "validation": {
+    "intrinsic_lift_is_tangential": true,
+    "no_common_tensor": true,
+    "no_regulator_selected": true,
+    "normal_force_in_divergence": true,
+    "shape_equation_missing": true,
+    "special_result_not_overpromoted": true
+  },
+  "validation_passed": true,
+  "verdict": "BHSM_STRATIFIED_ACTION_LACKS_A_CONSERVED_COMMON_DOMAIN_STRESS_TENSOR"
+}

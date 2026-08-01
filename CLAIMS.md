@@ -2205,3 +2205,37 @@ Not supported:
 
 Exact verdict:
 `BHSM_CURRENT_PARENT_ACTION_CANNOT_GENERATE_TOPOLOGICAL_BUOYANCY`.
+
+## v10.3 physical deformation-domain claim boundary
+
+Supported:
+
+- the v6.27 M5 moving-endpoint/support-shift problem is already closed through
+  local order `D^2 q`; it is not an unresolved radion;
+- a direct `M4 -> M8` embedding has four normal directions, while the lifted
+  seven-dimensional seam is codimension one but lacks current action ownership;
+- the M8 Hopf breathing mode has Einstein-frame kinetic coefficient `6` for
+  positive gravitational normalization, but pure Einstein curvature gives no
+  positive stationary radius;
+- the M5 fold Jacobi amplitude is a separate, conditionally normalized mode;
+- a formal delta-supported intrinsic-stress lift is tangential and requires a
+  shape equation or bulk reaction for normal distributional conservation;
+- none of the audited candidates passes all action ownership, gauge,
+  localization, stress, restoring-law, stability, and scale gates.
+
+Not supported:
+
+- identifying seam depth, the Hopf radius, and the fold amplitude;
+- adding one scalar normal to a codimension-four embedding without a
+  normal-bundle selection theorem;
+- treating Fredholm compatibility or an integrated Hamiltonian constraint as
+  a new global restoring law;
+- promoting delta stress, a collar, or a smooth defect without an
+  author/action-selected common domain;
+- any physical buoyancy force, effective Newton constant, mass, or prediction.
+
+Exact verdict:
+`BHSM_NO_PARAMETER_FREE_PHYSICAL_DEFORMATION_COMPLETION_EXISTS`.
+
+Minimality verdict:
+`BHSM_MULTIPLE_INEQUIVALENT_DEFORMATION_COMPLETIONS_REMAIN`.

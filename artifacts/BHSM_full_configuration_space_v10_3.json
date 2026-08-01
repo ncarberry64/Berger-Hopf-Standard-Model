@@ -1,0 +1,186 @@
+{
+  "artifact": "BHSM_full_configuration_space_v10_3",
+  "buoyancy_selected_physical_scalar_count": 0,
+  "configuration_space": {
+    "M4_current": [
+      "h_mu_nu",
+      "A_SM",
+      "Psi_SM",
+      "H",
+      "intrinsic currents"
+    ],
+    "M5_current": [
+      "g_5,+",
+      "g_5,-",
+      "sigma_5,+",
+      "sigma_5,-",
+      "ADM lapse",
+      "ADM shift"
+    ],
+    "M8_current": [
+      "G_AB",
+      "chi",
+      "sigma_8",
+      "eta",
+      "omega_Sp1"
+    ],
+    "compatibility": [
+      "Lambda_85",
+      "lambda_sigma",
+      "Lambda_54,+",
+      "Lambda_54,-"
+    ],
+    "fixed_data": [
+      "iota_54,+",
+      "iota_54,-",
+      "B1 support",
+      "collar charts",
+      "Z2 gluing"
+    ],
+    "largest_supported_pre_gauge_space": "product of the independently owned M8, M5, M4, and multiplier spaces with fixed embeddings",
+    "not_in_current_configuration_space": [
+      "varied X:M4->M8",
+      "varied Sigma7 embedding"
+    ],
+    "proposed_space_with_X": "action-domain extension, not a recovered current field"
+  },
+  "gauge_group": {
+    "cap": "cap diffeomorphisms compatible with fixed B1 and Z2 gluing",
+    "compatibility": "matched subgroup acting consistently through Q_H, trace, and pullback maps",
+    "internal": "Sp(1) bundle automorphisms and retained internal gauge groups",
+    "parent": "Diff(M8) preserving the declared bundle/topology and boundary class",
+    "reason": "the stratified fields are distinct off shell and linked by KKT matchers",
+    "seam": "Diff(M4) x SM gauge group",
+    "single_semidirect_product_proved": false
+  },
+  "prior_work_equivalence": [
+    {
+      "authoritative_result": "BHSM_FOLD_LOCALIZATION_COMPATIBLE_WITH_FIXED_B1_SUPPORT",
+      "earlier_name": "moving B1 endpoint, support shift, and normal-support residual",
+      "imported_conclusion": "full shift variation removes the apparent obstruction and no dynamical B1 embedding is required through local two-derivative order",
+      "same_object": "only for the M5 B1 fold-support question",
+      "v10_3_name": "seam normal displacement / dynamical embedding",
+      "versions": [
+        "v6.13",
+        "v6.24",
+        "v6.25",
+        "v6.27"
+      ]
+    },
+    {
+      "authoritative_result": "BHSM_ENDPOINT_TRACE_RESPONSE_DERIVED",
+      "earlier_name": "interface threading trace S_Sigma",
+      "imported_conclusion": "the trace is gauge invariant but is fixed by the complete momentum constraint; it is not an independent physical radion",
+      "same_object": false,
+      "v10_3_name": "gauge-invariant normal/radion scalar",
+      "versions": [
+        "v6.15",
+        "v6.16",
+        "v6.17",
+        "v6.18",
+        "v6.27"
+      ]
+    },
+    {
+      "authoritative_result": "BHSM_FOLD_KINETIC_NORM_POSITIVE_CONDITIONALLY",
+      "earlier_name": "critical scalar-wall fold amplitude q",
+      "imported_conclusion": "q is an action-linked scalar-wall Jacobi amplitude with a conditional positive kinetic norm and Fredholm construction, not seam depth or Hopf radius",
+      "same_object": false,
+      "v10_3_name": "one healthy scalar deformation",
+      "versions": [
+        "v6.28",
+        "v6.29",
+        "v6.30.2",
+        "v6.30.4",
+        "v6.30.5"
+      ]
+    },
+    {
+      "authoritative_result": "If a_F varies, pi_!S8 is scalar-tensor gravity and is not the stored S5 action",
+      "earlier_name": "vertical metric determinant / diagnostic pi_! S8 radion",
+      "imported_conclusion": "the breathing mode is already an M8 metric degree, but its lower-stratum ownership, localized source, and stabilizing background are not completed",
+      "same_object": true,
+      "v10_3_name": "localized Hopf radion",
+      "versions": [
+        "v7.1",
+        "v9.1",
+        "v10.2"
+      ]
+    },
+    {
+      "authoritative_result": "BHSM_FOLD_PROJECTED_SCHUR_REDUCTION_DERIVED",
+      "earlier_name": "metric-modulus Schur lift and Fredholm projection",
+      "imported_conclusion": "a normalized fold-sector kernel response exists, but it neither fixes a dimensional modulus nor supplies the Hopf-radion restoring law",
+      "same_object": false,
+      "v10_3_name": "compact-domain global zero-mode response",
+      "versions": [
+        "v6.28",
+        "v6.29",
+        "v6.30.4"
+      ]
+    },
+    {
+      "authoritative_result": "BHSM_LOCALIZED_NORMAL_STRESS_PULLBACK_NOT_DERIVED",
+      "earlier_name": "covariant reduction functor and KKT compatibility adjoints",
+      "imported_conclusion": "trace/pushforward maps and matcher reactions exist, but no single conserved M8 tensor contains every independently owned stratum",
+      "same_object": "partial infrastructure only",
+      "v10_3_name": "common-domain stress pullback",
+      "versions": [
+        "v7.1",
+        "v7.3",
+        "v10.2"
+      ]
+    }
+  ],
+  "scalar_degree_ledger": [
+    {
+      "candidate": "rho coordinate shift",
+      "canonical_pair": false,
+      "configuration_status": "coordinate/gauge",
+      "physical_scalar_count": 0,
+      "survives_constraints": false
+    },
+    {
+      "candidate": "B1 threading/endpoint trace",
+      "canonical_pair": false,
+      "configuration_status": "metric/endpoint representative",
+      "physical_scalar_count": 0,
+      "prior_result": "v6.27 complete momentum constraint fixes W and the endpoint trace",
+      "survives_constraints": false
+    },
+    {
+      "candidate": "normal embedding psi",
+      "canonical_pair": false,
+      "configuration_status": "absent from current action domain",
+      "physical_scalar_count": 0,
+      "survives_constraints": null
+    },
+    {
+      "candidate": "local Hopf breathing beta=ln(a_F/a_F0)",
+      "canonical_pair": true,
+      "complete_stratified_ownership": false,
+      "configuration_status": "existing M8 vertical-metric degree",
+      "physical_scalar_count": 1,
+      "survives_constraints": "conditionally in the invariant M8 reduction"
+    },
+    {
+      "candidate": "scalar-wall fold amplitude q",
+      "canonical_pair": true,
+      "configuration_status": "existing M5 critical Jacobi amplitude",
+      "physical_scalar_count": 1,
+      "same_as_normal_or_radion": false,
+      "survives_constraints": "conditionally on the v6.28-v6.30 fixed-h domain"
+    }
+  ],
+  "validation": {
+    "coordinate_count_zero": true,
+    "embedding_not_silently_added": true,
+    "fold_not_conflated": true,
+    "prior_routes_named": true,
+    "radion_candidate_count_one": true,
+    "threading_count_zero": true
+  },
+  "validation_passed": true,
+  "verdict": "BHSM_CURRENT_STRATIFIED_CONFIGURATION_SPACE_CONTAINS_A_LOCAL_M8_BREATHING_MODE_BUT_NO_SELECTED_BUOYANCY_DEGREE",
+  "version": "v10.3"
+}

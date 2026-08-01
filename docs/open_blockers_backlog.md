@@ -1,10 +1,11 @@
 # Open Blockers Backlog
 
-Current public status: v10.2 exhausts the present action for Topological
-Buoyancy and proves an exact obstruction. Relational Envelopment Holism
-remains author doctrine, while the v9.1--v10.1 results remain authoritative in
-their scopes. The historical table remains provenance. The live Tier-C object
-is `ACTION_DOMAIN_THEOREM_SELECTING_ONE_PHYSICAL_NORMAL_OR_RADION_DEGREE_WITH_COMPLETE_LOCALIZED_STRESS_PULLBACK_AND_COVARIANT_GLOBAL_RESTORING_CONSTRAINT`.
+Current public status: v10.3 recovers the earlier M5 seam-shift and fold-mode
+results and proves that multiple inequivalent deformation completions remain.
+The repository selects none of them parameter-free. Relational Envelopment
+Holism remains author doctrine and all earlier scoped results remain
+authoritative. The historical table remains provenance. The live Tier-C object
+is `AUTHOR_SELECTED_COMMON_DOMAIN_COMPLETION_BETWEEN_DISTRIBUTIONAL_DYNAMICAL_SEAM_AND_SMOOTH_PARENT_LOCALIZATION_WITH_FULL_LOCAL_RADION_PUSHFORWARD`.
 
 Historical compatibility boundary: structural architecture integrated conditional; numerical closure open.
 This sentence records the pre-v7.1 numerical-closure status required by the
@@ -12,31 +13,28 @@ archived component contracts; it is not the current completion-tier verdict.
 
 Each blocker must be handled without fitting observed data after comparison and without changing frozen predictions.
 
-## Current v10.2 highest-upstream blocker
+## Current v10.3 highest-upstream blocker
 
-`ACTION_DOMAIN_THEOREM_SELECTING_ONE_PHYSICAL_NORMAL_OR_RADION_DEGREE_WITH_COMPLETE_LOCALIZED_STRESS_PULLBACK_AND_COVARIANT_GLOBAL_RESTORING_CONSTRAINT`
+`AUTHOR_SELECTED_COMMON_DOMAIN_COMPLETION_BETWEEN_DISTRIBUTIONAL_DYNAMICAL_SEAM_AND_SMOOTH_PARENT_LOCALIZATION_WITH_FULL_LOCAL_RADION_PUSHFORWARD`
 
-The declared small-diffeomorphism geometry quotient has trivial fundamental
-group. The optional large-diffeomorphism class is not a selected FR
-rotation/exchange sector and cannot supply a local chiral Clifford bundle.
-The current action selects neither a stationary geon nor a `G2/C3`
-polarization. Downstream composite immersions, physical pullbacks, current,
-matrix, and mass/lepton outputs remain null.
+The prior-work audit finds that the M5 seam displacement was already treated as
+the moving endpoint, support shift, threading trace, and normal-support
+residual. That special fold construction is compatible with fixed B1 support
+through local order `D^2 q`; it does not supply an all-sector nonlinear M8
+embedding. The M8 Hopf breathing mode and M5 fold Jacobi amplitude remain
+different conditional scalar directions.
 
-The collar normal, Hopf radion, Brown--York/GHY response, ADM constraints, and
-eta stress exist separately. They are not assembled into one covariant
-global-local radial variational problem, so the author-required energy-depth
-sign and weak-field/equivalence limits cannot be evaluated. The charged orbit
-remains downstream of this relational background constraint.
-
-The v10.2 audit proves that these pieces cannot be assembled from the current
-action: the seam embedding is fixed, the homogeneous Hopf radion has no
-positive static equilibrium, no global restoring law is action-derived, and
-the localized stress pullback is incomplete.
+Direct `M4 -> M8` embedding has four normal directions. The lifted
+seven-dimensional seam is codimension one but lacks an action owner. The
+formal intrinsic delta-stress lift is tangential and requires a shape equation
+or bulk reaction for normal conservation. Delta support, finite collar, and
+smooth parent localization are inequivalent completions, none selected by the
+current action. The energy-depth sign and weak-field/equivalence limits remain
+ineligible.
 
 Exact verdict:
 
-`BHSM_CURRENT_PARENT_ACTION_CANNOT_GENERATE_TOPOLOGICAL_BUOYANCY`
+`BHSM_NO_PARAMETER_FREE_PHYSICAL_DEFORMATION_COMPLETION_EXISTS`
 
 | Blocker | Current status | Why it matters | Next valid action | Forbidden invalid action |
 | --- | --- | --- | --- | --- |

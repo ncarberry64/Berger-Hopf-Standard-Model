@@ -334,3 +334,16 @@ The v4.7 action-attachment block and all downstream coupling, CKM, running, and 
 The coupling bridge is blocked pending a new action/current principle. Stop spectral-gauge normalization work unless new artifact-backed action evidence appears.
 
 Recommended pivot: transcribe existing CKM relative transport and flavor geometry while maintaining separate CKM-geometry and charged-current-normalization ledgers. Reconnect them only after a real normalization theorem.
+
+## v10.3 deformation-domain pivot
+
+Do not reopen the M5 moving-endpoint calculation, invent a unique scalar normal
+for `M4 -> M8`, or merge the Hopf breathing mode with the fold Jacobi amplitude.
+The repository contains several inequivalent conditional completions but no
+parameter-free selector. The next exact object is:
+
+`AUTHOR_SELECTED_COMMON_DOMAIN_COMPLETION_BETWEEN_DISTRIBUTIONAL_DYNAMICAL_SEAM_AND_SMOOTH_PARENT_LOCALIZATION_WITH_FULL_LOCAL_RADION_PUSHFORWARD`.
+
+After that choice is made, derive its full local stress pushforward, shape or
+radion equation, covariant global restoring law, stability, weak-field limit,
+and scale before evaluating Topological Buoyancy.

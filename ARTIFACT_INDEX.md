@@ -1617,3 +1617,21 @@ Doctrine and manuscript chapter:
 - `artifacts/BHSM_buoyancy_completion_gate_v10_2.json`: canonical v10.2
   verdict, hindsight ledger, validation, and exact next object.
 - `artifacts/BHSM_1_0_completion_gate.json`: canonical v10.2 RB-15/RB-16 gate.
+
+## BHSM v10.3 physical deformation-domain campaign
+
+- `artifacts/BHSM_full_configuration_space_v10_3.json`: prior-name
+  equivalence ledger, stratified configuration space, gauge groups, and
+  constrained scalar count.
+- `artifacts/BHSM_physical_deformation_dof_ledger_v10_3.json`: embedding,
+  codimension, Hopf breathing, gauge-invariant deformation, and fold-mode
+  separation audit.
+- `artifacts/BHSM_common_domain_stress_pullback_v10_3.json`: formal
+  distributional stress lift, normal-divergence/shape equation, and
+  localization-domain alternatives.
+- `artifacts/BHSM_global_restoring_constraint_v10_3.json`: Hamiltonian and
+  Fredholm compatibility audit, including the exact prior fold Schur response.
+- `artifacts/BHSM_minimal_deformation_selection_gate_v10_3.json`: exhaustive
+  candidate/extension comparison, no-selection theorem, exact next object, and
+  fail-closed physical outputs.
+- `artifacts/BHSM_1_0_completion_gate.json`: canonical v10.3 RB-15/RB-16 gate.

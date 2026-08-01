@@ -907,6 +907,12 @@ def build_parser() -> argparse.ArgumentParser:
         ("global-constraint-status", "Render the BHSM v10.2 global restoring-constraint audit"),
         ("local-backreaction-status", "Render the BHSM v10.2 localized backreaction audit"),
         ("buoyancy-weak-field-status", "Render the BHSM v10.2 weak-field gate"),
+        ("deformation-domain-status", "Render the BHSM v10.3 configuration-space audit"),
+        ("embedding-constraint-status", "Render the BHSM v10.3 embedding constraint audit"),
+        ("local-radion-status", "Render the BHSM v10.3 localized Hopf-radion audit"),
+        ("common-stress-pullback-status", "Render the BHSM v10.3 common-domain stress audit"),
+        ("global-zero-mode-status", "Render the BHSM v10.3 compact zero-mode audit"),
+        ("deformation-selection-status", "Render the BHSM v10.3 minimal deformation selection gate"),
     )
     for command, help_text in integrated_status_commands:
         status_command = commands.add_parser(command, help=help_text)
@@ -1082,6 +1088,24 @@ def main(argv: Sequence[str] | None = None) -> int:
     }:
         module = import_module(
             ".envelopment.buoyancy_gate_v10_2",
+            package=__package__,
+        )
+        payload = module.command_payload(args.command)
+        if args.format == "markdown":
+            print(module.command_to_markdown(args.command, payload), end="")
+        else:
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        return 0
+    if args.command in {
+        "deformation-domain-status",
+        "embedding-constraint-status",
+        "local-radion-status",
+        "common-stress-pullback-status",
+        "global-zero-mode-status",
+        "deformation-selection-status",
+    }:
+        module = import_module(
+            ".envelopment.deformation_selection_gate_v10_3",
             package=__package__,
         )
         payload = module.command_payload(args.command)

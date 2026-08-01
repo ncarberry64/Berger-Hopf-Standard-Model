@@ -24,6 +24,23 @@ physics/mathematics**, **Adopted BHSM axiom**, **BHSM identification**,
 **Rejected by calculation**, and **Active construction target**. Historical
 status labels below remain dated provenance and do not override this summary.
 
+V10.2 exhausts the current action for Topological Buoyancy. V10.3 then audits
+the requested deformation completion against the complete historical record.
+The apparent missing seam displacement was already treated as the M5 moving
+endpoint/support shift/threading trace in v6.13--v6.27; full shift variation
+imposes the complete momentum constraint, eliminates the Lorentzian C1 mode,
+and makes a dynamical B1 embedding unnecessary through local order `D^2 q`.
+That result does not select a unique M8 deformation. The M8 Hopf breathing
+mode `beta=log(a_F/a_F0)` and the M5 fold Jacobi amplitude `q` are distinct
+conditional directions, and neither supplies the missing common localized
+stress domain plus covariant global restoring law.
+
+Current exact verdict:
+`BHSM_NO_PARAMETER_FREE_PHYSICAL_DEFORMATION_COMPLETION_EXISTS`.
+
+Exact next object:
+`AUTHOR_SELECTED_COMMON_DOMAIN_COMPLETION_BETWEEN_DISTRIBUTIONAL_DYNAMICAL_SEAM_AND_SMOOTH_PARENT_LOCALIZATION_WITH_FULL_LOCAL_RADION_PUSHFORWARD`.
+
 The v8.4--v8.9 conditional theorem chain remains integrated. V10.0 embeds its
 static Gram--Hessian/current formulas as the stationary-cycle limit. Because
 there is no stable action-selected orbit or action-owned family immersion,
@@ -77,7 +94,7 @@ Reviewer entry points:
 [claim boundaries](CLAIMS.md), and
 [reproduction guide](docs/reviewer_reproduction_guide.md).
 
-BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v10.2 exhausts the present action for Topological Buoyancy and proves that it lacks a varied physical normal embedding, a static seam radion, a global restoring constraint, and complete localized stress pullback. Relational Envelopment Holism remains authoritative author doctrine, not a promoted physical theorem; prior no-go results and RB-15/RB-16 remain in force.
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v10.3 proves that the repository does not yet select a unique, parameter-free physical deformation completion. Earlier work already closes the M5 moving-endpoint/support-shift problem through local second order, while the M8 Hopf breathing mode and M5 fold Jacobi amplitude remain distinct conditional degrees of freedom. A common localized stress domain and global restoring law are still absent; prior no-go results and RB-15/RB-16 remain in force.
 
 BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity. Physical eV/GeV neutrino mass closure remains open pending a numeric neutral stiffness length sqrt(A_nu/Z_nu), a physical K_neutral,eff map in m^-2, and complete-action derivation of the admissible response cone.
 

@@ -208,3 +208,21 @@ Exact next object:
 
 Exact verdict:
 `BHSM_CURRENT_PARENT_ACTION_CANNOT_GENERATE_TOPOLOGICAL_BUOYANCY`.
+
+## v10.3 physical deformation selection gate
+
+The v6.27 M5 support-shift/moving-endpoint solution is recovered as prior work
+and remains valid through local order `D^2 q`. It does not select the M8 Hopf
+breathing mode, the separate M5 fold Jacobi amplitude, or a codimension-four
+normal direction for `M4 -> M8`. No audited candidate satisfies every physical
+action-domain criterion.
+
+RB-15: `BLOCKED_BY_NO_PARAMETER_FREE_PHYSICAL_DEFORMATION_COMPLETION`.
+
+RB-16: `DOWNSTREAM_BLOCKED`.
+
+Exact verdict:
+`BHSM_NO_PARAMETER_FREE_PHYSICAL_DEFORMATION_COMPLETION_EXISTS`.
+
+Exact next object:
+`AUTHOR_SELECTED_COMMON_DOMAIN_COMPLETION_BETWEEN_DISTRIBUTIONAL_DYNAMICAL_SEAM_AND_SMOOTH_PARENT_LOCALIZATION_WITH_FULL_LOCAL_RADION_PUSHFORWARD`.

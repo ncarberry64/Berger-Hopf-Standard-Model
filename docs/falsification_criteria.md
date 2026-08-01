@@ -80,3 +80,12 @@ constraint. Any future positive buoyancy claim must also derive its
 gauge-invariant compactness observable, energy-depth sign, weak-field limit,
 equivalence behavior, stability, and dimensional scale from that same action.
 The present campaign emits none of those physical outputs.
+
+## BHSM v10.3 physical deformation no-selection boundary
+
+The no-selection theorem fails if the existing action and declared domains,
+without a new coefficient or author choice, select one gauge-invariant physical
+deformation and derive its common localized stress pushforward, global restoring
+law, stable background, and dimensional normalization. It is not falsified by
+renaming the v6.27 support shift, M8 Hopf radius, or v6.28 fold amplitude, which
+are already distinguished by action owner, stratum, and variational domain.

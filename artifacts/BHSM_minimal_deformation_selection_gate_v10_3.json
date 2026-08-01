@@ -1,0 +1,607 @@
+{
+  "artifact": "BHSM_minimal_deformation_selection_gate_v10_3",
+  "canonical_paradigm": "Relational Envelopment Holism",
+  "common_domain_stress": {
+    "artifact": "BHSM_common_domain_stress_pullback_v10_3",
+    "components": {
+      "current_shape_equation_present": false,
+      "distributional_lift": "T8_seam^AB(x)=int_M4 sqrt|h| T4^mu_nu e_mu^A e_nu^B delta8(x-X(y))/sqrt|G| d4y",
+      "divergence_identity": "nabla_A T8_seam^AB=delta_Sigma[(D_mu T4^mu_nu)e_nu^B-T4^mu_nu K^I_mu_nu n_I^B]",
+      "normal_conservation_requires": "T4^mu_nu K^I_mu_nu plus bulk/matcher reaction=0",
+      "normal_force_location": "distributional divergence through K^I_mu_nu T4^mu_nu, not T_nn",
+      "normal_normal_component": 0,
+      "normal_tangential_component": 0,
+      "tangential_component": "T4^mu_nu exactly",
+      "tangential_conservation": "D_mu T4^mu_nu=0 on intrinsic equations"
+    },
+    "ownership": {
+      "M4_stress": [
+        "intrinsic SM EFT, h, and currents"
+      ],
+      "M5_stress": [
+        "independent cap geometry and sigma5"
+      ],
+      "M8_stress": [
+        "G/chi/sigma8/eta/omega sectors"
+      ],
+      "distributional_conservation": false,
+      "matcher_is_physical_stress_tensor": false,
+      "matcher_response": "KKT adjoint reactions C85*Lambda85 and C54*Lambda54",
+      "one_common_T8_total": null,
+      "regulated_conservation": null,
+      "special_fold_result_is_all_sector_nonlinear_conservation": false,
+      "v6_27_special_fold_residual": "vanishes through O(D2 q) on fixed B1 support"
+    },
+    "representations": [
+      {
+        "current_action_selected": false,
+        "free_width": false,
+        "linear_distribution_well_defined": true,
+        "nonlinear_self_products_controlled": false,
+        "representation": "delta-supported M4 in M8"
+      },
+      {
+        "current_action_selected": false,
+        "free_width": true,
+        "linear_distribution_well_defined": true,
+        "nonlinear_self_products_controlled": "conditional on profile",
+        "representation": "finite collar profile"
+      },
+      {
+        "current_action_selected": "only the separate M5 scalar wall, not an M8 localization of all M4 sectors",
+        "free_width": "must follow from wall action",
+        "linear_distribution_well_defined": true,
+        "nonlinear_self_products_controlled": true,
+        "representation": "smooth scalar domain wall"
+      },
+      {
+        "current_action_selected": "maps exist, but source/target actions remain independent off shell",
+        "free_width": false,
+        "linear_distribution_well_defined": true,
+        "nonlinear_self_products_controlled": true,
+        "representation": "normalized cap/fiber pushforward"
+      }
+    ],
+    "validation": {
+      "intrinsic_lift_is_tangential": true,
+      "no_common_tensor": true,
+      "no_regulator_selected": true,
+      "normal_force_in_divergence": true,
+      "shape_equation_missing": true,
+      "special_result_not_overpromoted": true
+    },
+    "validation_passed": true,
+    "verdict": "BHSM_STRATIFIED_ACTION_LACKS_A_CONSERVED_COMMON_DOMAIN_STRESS_TENSOR"
+  },
+  "configuration": {
+    "artifact": "BHSM_full_configuration_space_v10_3",
+    "buoyancy_selected_physical_scalar_count": 0,
+    "configuration_space": {
+      "M4_current": [
+        "h_mu_nu",
+        "A_SM",
+        "Psi_SM",
+        "H",
+        "intrinsic currents"
+      ],
+      "M5_current": [
+        "g_5,+",
+        "g_5,-",
+        "sigma_5,+",
+        "sigma_5,-",
+        "ADM lapse",
+        "ADM shift"
+      ],
+      "M8_current": [
+        "G_AB",
+        "chi",
+        "sigma_8",
+        "eta",
+        "omega_Sp1"
+      ],
+      "compatibility": [
+        "Lambda_85",
+        "lambda_sigma",
+        "Lambda_54,+",
+        "Lambda_54,-"
+      ],
+      "fixed_data": [
+        "iota_54,+",
+        "iota_54,-",
+        "B1 support",
+        "collar charts",
+        "Z2 gluing"
+      ],
+      "largest_supported_pre_gauge_space": "product of the independently owned M8, M5, M4, and multiplier spaces with fixed embeddings",
+      "not_in_current_configuration_space": [
+        "varied X:M4->M8",
+        "varied Sigma7 embedding"
+      ],
+      "proposed_space_with_X": "action-domain extension, not a recovered current field"
+    },
+    "gauge_group": {
+      "cap": "cap diffeomorphisms compatible with fixed B1 and Z2 gluing",
+      "compatibility": "matched subgroup acting consistently through Q_H, trace, and pullback maps",
+      "internal": "Sp(1) bundle automorphisms and retained internal gauge groups",
+      "parent": "Diff(M8) preserving the declared bundle/topology and boundary class",
+      "reason": "the stratified fields are distinct off shell and linked by KKT matchers",
+      "seam": "Diff(M4) x SM gauge group",
+      "single_semidirect_product_proved": false
+    },
+    "prior_work_equivalence": [
+      {
+        "authoritative_result": "BHSM_FOLD_LOCALIZATION_COMPATIBLE_WITH_FIXED_B1_SUPPORT",
+        "earlier_name": "moving B1 endpoint, support shift, and normal-support residual",
+        "imported_conclusion": "full shift variation removes the apparent obstruction and no dynamical B1 embedding is required through local two-derivative order",
+        "same_object": "only for the M5 B1 fold-support question",
+        "v10_3_name": "seam normal displacement / dynamical embedding",
+        "versions": [
+          "v6.13",
+          "v6.24",
+          "v6.25",
+          "v6.27"
+        ]
+      },
+      {
+        "authoritative_result": "BHSM_ENDPOINT_TRACE_RESPONSE_DERIVED",
+        "earlier_name": "interface threading trace S_Sigma",
+        "imported_conclusion": "the trace is gauge invariant but is fixed by the complete momentum constraint; it is not an independent physical radion",
+        "same_object": false,
+        "v10_3_name": "gauge-invariant normal/radion scalar",
+        "versions": [
+          "v6.15",
+          "v6.16",
+          "v6.17",
+          "v6.18",
+          "v6.27"
+        ]
+      },
+      {
+        "authoritative_result": "BHSM_FOLD_KINETIC_NORM_POSITIVE_CONDITIONALLY",
+        "earlier_name": "critical scalar-wall fold amplitude q",
+        "imported_conclusion": "q is an action-linked scalar-wall Jacobi amplitude with a conditional positive kinetic norm and Fredholm construction, not seam depth or Hopf radius",
+        "same_object": false,
+        "v10_3_name": "one healthy scalar deformation",
+        "versions": [
+          "v6.28",
+          "v6.29",
+          "v6.30.2",
+          "v6.30.4",
+          "v6.30.5"
+        ]
+      },
+      {
+        "authoritative_result": "If a_F varies, pi_!S8 is scalar-tensor gravity and is not the stored S5 action",
+        "earlier_name": "vertical metric determinant / diagnostic pi_! S8 radion",
+        "imported_conclusion": "the breathing mode is already an M8 metric degree, but its lower-stratum ownership, localized source, and stabilizing background are not completed",
+        "same_object": true,
+        "v10_3_name": "localized Hopf radion",
+        "versions": [
+          "v7.1",
+          "v9.1",
+          "v10.2"
+        ]
+      },
+      {
+        "authoritative_result": "BHSM_FOLD_PROJECTED_SCHUR_REDUCTION_DERIVED",
+        "earlier_name": "metric-modulus Schur lift and Fredholm projection",
+        "imported_conclusion": "a normalized fold-sector kernel response exists, but it neither fixes a dimensional modulus nor supplies the Hopf-radion restoring law",
+        "same_object": false,
+        "v10_3_name": "compact-domain global zero-mode response",
+        "versions": [
+          "v6.28",
+          "v6.29",
+          "v6.30.4"
+        ]
+      },
+      {
+        "authoritative_result": "BHSM_LOCALIZED_NORMAL_STRESS_PULLBACK_NOT_DERIVED",
+        "earlier_name": "covariant reduction functor and KKT compatibility adjoints",
+        "imported_conclusion": "trace/pushforward maps and matcher reactions exist, but no single conserved M8 tensor contains every independently owned stratum",
+        "same_object": "partial infrastructure only",
+        "v10_3_name": "common-domain stress pullback",
+        "versions": [
+          "v7.1",
+          "v7.3",
+          "v10.2"
+        ]
+      }
+    ],
+    "scalar_degree_ledger": [
+      {
+        "candidate": "rho coordinate shift",
+        "canonical_pair": false,
+        "configuration_status": "coordinate/gauge",
+        "physical_scalar_count": 0,
+        "survives_constraints": false
+      },
+      {
+        "candidate": "B1 threading/endpoint trace",
+        "canonical_pair": false,
+        "configuration_status": "metric/endpoint representative",
+        "physical_scalar_count": 0,
+        "prior_result": "v6.27 complete momentum constraint fixes W and the endpoint trace",
+        "survives_constraints": false
+      },
+      {
+        "candidate": "normal embedding psi",
+        "canonical_pair": false,
+        "configuration_status": "absent from current action domain",
+        "physical_scalar_count": 0,
+        "survives_constraints": null
+      },
+      {
+        "candidate": "local Hopf breathing beta=ln(a_F/a_F0)",
+        "canonical_pair": true,
+        "complete_stratified_ownership": false,
+        "configuration_status": "existing M8 vertical-metric degree",
+        "physical_scalar_count": 1,
+        "survives_constraints": "conditionally in the invariant M8 reduction"
+      },
+      {
+        "candidate": "scalar-wall fold amplitude q",
+        "canonical_pair": true,
+        "configuration_status": "existing M5 critical Jacobi amplitude",
+        "physical_scalar_count": 1,
+        "same_as_normal_or_radion": false,
+        "survives_constraints": "conditionally on the v6.28-v6.30 fixed-h domain"
+      }
+    ],
+    "validation": {
+      "coordinate_count_zero": true,
+      "embedding_not_silently_added": true,
+      "fold_not_conflated": true,
+      "prior_routes_named": true,
+      "radion_candidate_count_one": true,
+      "threading_count_zero": true
+    },
+    "validation_passed": true,
+    "verdict": "BHSM_CURRENT_STRATIFIED_CONFIGURATION_SPACE_CONTAINS_A_LOCAL_M8_BREATHING_MODE_BUT_NO_SELECTED_BUOYANCY_DEGREE",
+    "version": "v10.3"
+  },
+  "configuration_verdict": "BHSM_CURRENT_STRATIFIED_CONFIGURATION_SPACE_CONTAINS_A_LOCAL_M8_BREATHING_MODE_BUT_NO_SELECTED_BUOYANCY_DEGREE",
+  "deformation_verdict": "BHSM_ONE_LOCAL_HOPF_BREATHING_MODE_SURVIVES_THE_INVARIANT_M8_REDUCTION_CONDITIONALLY_BUT_NO_UNIQUE_BUOYANCY_MODE_IS_SELECTED",
+  "embedding": {
+    "artifact": "BHSM_embedding_constraint_v10_3",
+    "codimension": [
+      {
+        "normal_rank": 4,
+        "parent_dimension": 8,
+        "support": "intrinsic M4 embedded directly in M8",
+        "support_dimension": 4,
+        "unique_normal_scalar": false
+      },
+      {
+        "action_owner": null,
+        "normal_rank": 1,
+        "parent_dimension": 8,
+        "support": "lifted Sigma7=S3_fiber bundle over M4 in M8 collar",
+        "support_dimension": 7,
+        "unique_normal_scalar": true
+      },
+      {
+        "action_owner": "fixed-support P1+GHY+B1+matcher",
+        "normal_rank": 1,
+        "parent_dimension": 5,
+        "support": "B1=M4 in each M5 cap",
+        "support_dimension": 4,
+        "unique_normal_scalar": true
+      }
+    ],
+    "embedding": {
+      "X_current_status": "fixed iota, not varied",
+      "conjugate_momentum_current": null,
+      "fixed_support_prior_result": "BHSM_DYNAMICAL_B1_EMBEDDING_NOT_REQUIRED",
+      "fixed_support_scope": "v6.27 fold localization through local O(D^2 q), not an all-sector M4->M8 theorem",
+      "formal_induced_action_shape_term": "E_I=T4^mu_nu K^I_mu_nu plus bulk/matcher reactions",
+      "intrinsic_M4_source_present": true,
+      "intrinsic_source_makes_X_automatically_physical": false,
+      "normal_X_variations": "undefined until M4->M8 or Sigma7->M8 support is selected",
+      "primary_constraints_current": null,
+      "reason": "the intrinsic fields distinguish a stratum, but the action still fixes its embedding; codimension and distributional versus smooth ownership remain separate choices",
+      "shape_equation_current": null,
+      "tangential_X_variations": "M4 reparametrizations"
+    },
+    "validation": {
+      "direct_M4_has_four_normals": true,
+      "fixed_B1_imported": true,
+      "lifted_seam_has_one_normal": true,
+      "momentum_fails_closed": true,
+      "shape_fails_closed": true
+    },
+    "validation_passed": true,
+    "verdict": "BHSM_SEAM_EMBEDDING_NOT_IN_CURRENT_CONFIGURATION_SPACE_AND_CODIMENSION_CHOICE_NOT_UNIQUE"
+  },
+  "embedding_verdict": "BHSM_SEAM_EMBEDDING_NOT_IN_CURRENT_CONFIGURATION_SPACE_AND_CODIMENSION_CHOICE_NOT_UNIQUE",
+  "frozen_predictions_changed": false,
+  "fundamental_dissipation": false,
+  "gauge_invariant_deformation": {
+    "artifact": "BHSM_gauge_invariant_deformation_v10_3",
+    "canonical_mode": {
+      "boundary_conditions": "not selected for a localized nonhomogeneous background",
+      "buoyancy_eligible_count": 0,
+      "canonical_field": "phi_beta=sqrt(6 kappa5) delta beta",
+      "complete_source": null,
+      "field": "delta beta",
+      "global_zero_mode_fixed": false,
+      "kinetic_sign": "HEALTHY_IF_KAPPA5_POSITIVE",
+      "normalizable": "conditional on the compact retained M8/M5 measure",
+      "physical_scalar_count_in_invariant_M8_sector": 1
+    },
+    "gauge_invariant_combination": {
+      "candidate": "q_env=delta beta+beta_0' psi",
+      "coefficient_inserted": false,
+      "current_limit": "q_env=delta beta because psi is absent and beta_0'=0",
+      "homogeneous_background_beta_prime": 0,
+      "invariant": true,
+      "residual": "0",
+      "transformation": "delta beta -> delta beta-beta_0' xi; psi -> psi+xi"
+    },
+    "prior_fold_mode": {
+      "Fredholm_status": "v6.28-v6.30.4 operator/domain and second-order solvability derived",
+      "complete_parent_stress_source": false,
+      "conditional_kinetic_norm": 6.935084858283065,
+      "field": "q_fold",
+      "gauge_status": "quotient mode after v6.27 momentum-constraint reduction",
+      "global_dimensional_scale": false,
+      "kinetic_verdict": "BHSM_FOLD_KINETIC_NORM_POSITIVE_CONDITIONALLY",
+      "origin": "normalized critical scalar-wall Jacobi kernel in the M5 P1+GHY+scalar+B1+matcher action",
+      "physical_depth": false,
+      "same_as_beta": false,
+      "same_as_psi": false
+    },
+    "validation": {
+      "fold_not_depth": true,
+      "fold_not_radion": true,
+      "invariance_exact": true,
+      "no_alpha_inserted": true,
+      "no_buoyancy_mode": true,
+      "one_local_radion": true
+    },
+    "validation_passed": true,
+    "verdict": "BHSM_ONE_LOCAL_HOPF_BREATHING_MODE_SURVIVES_THE_INVARIANT_M8_REDUCTION_CONDITIONALLY_BUT_NO_UNIQUE_BUOYANCY_MODE_IS_SELECTED"
+  },
+  "global_restoring_constraint": {
+    "artifact": "BHSM_global_restoring_constraint_v10_3",
+    "global_constraint": {
+      "Fredholm_condition": "<u0,J_local>=0 if O_q has an unlifted kernel",
+      "Fredholm_is_restoring_law_by_itself": false,
+      "beta0_fixed": false,
+      "eta_degree_role": "topological sector label; may enter sources but fixes no length",
+      "external_targets_adopted": [],
+      "external_targets_rejected": [
+        "V_star",
+        "R_star",
+        "E_star"
+      ],
+      "fixes_homogeneous_radion": false,
+      "independent_global_equation": false,
+      "integrated_Hamiltonian": "int_Sigma7 H dmu7=0 follows from the local lapse equation",
+      "local_source_shifts_beta0": null,
+      "normalized_decomposition": "beta=beta0+tilde_beta with int tilde_beta dmu=0",
+      "reason": "the v10.2 homogeneous radion has no static critical point and the overall scale remains free",
+      "remaining_dimensional_moduli": 1
+    },
+    "prior_fold_zero_mode": {
+      "M_z_positive": true,
+      "constraint_response_derived": true,
+      "fixes_dimensional_scale": false,
+      "kernel": "z_A=sec^2(pi t/4), z_psi=1",
+      "lifting_M_z": 14.57522203923062,
+      "response_c_z": 0.25650563011337596,
+      "same_as_Hopf_radion_zero_mode": false,
+      "sector": "v6.29 scalar-wall fold",
+      "source_projection_j_z": -3.7386265132152148
+    },
+    "validation": {
+      "beta0_unfixed": true,
+      "fold_not_radion": true,
+      "fold_response_positive_lift": true,
+      "integrated_not_independent": true,
+      "no_external_target": true,
+      "scale_remains": true
+    },
+    "validation_passed": true,
+    "verdict": "BHSM_NO_GLOBAL_RESTORING_CONSTRAINT_EXISTS_WITHOUT_AN_EXTERNAL_SCALE_INPUT"
+  },
+  "global_verdict": "BHSM_NO_GLOBAL_RESTORING_CONSTRAINT_EXISTS_WITHOUT_AN_EXTERNAL_SCALE_INPUT",
+  "localized_radion": {
+    "artifact": "BHSM_local_radion_v10_3",
+    "homogeneous_limit": {
+      "R7": "-12*a_F**2/a_H**4 + 48/a_H**2 + 6/a_F**2",
+      "dR7_da_F": "-12*(2*a_F**4 + a_H**4)/(a_F**3*a_H**4)",
+      "positive_static_solution": false,
+      "strictly_negative": true,
+      "v10_2_reproduced": true
+    },
+    "localized_source": {
+      "M4_intrinsic_source": null,
+      "M8_definition": "J_beta=-delta(S8_env+S8_matter)/delta beta(x)",
+      "M8_eta_sigma_connection_dependence": "action-derived through vertical metric and V_F when explicit profiles are supplied",
+      "complete_J_beta": null,
+      "new_stabilizing_term_added": false,
+      "reason_M4_missing": "S4 is independently owned and v7.3 has zero a_F-Psi and a_F-H mixed blocks; the v7.1 matcher does not identify S5 with pi_!S8"
+    },
+    "reduction": {
+      "base_dimension": 5,
+      "canonical_Z_beta": "6 kappa5",
+      "einstein_frame_action": "(kappa5/2) int sqrt|gE| [R_E-6(grad beta)^2+R_F a_F0^-2 exp(-4 beta)+...]",
+      "fiber_dimension": 3,
+      "fiber_volume_factor": "V_F=V_F0 exp(3 beta)",
+      "internal_curvature_exponent": -4,
+      "kinetic_coefficient_C_beta": 6,
+      "kinetic_sign": "HEALTHY_IF_KAPPA5_POSITIVE",
+      "metric_origin": "G_fiber=a_F^2 gamma_3; beta=ln(a_F/a_F0)",
+      "new_scalar_appended": false,
+      "pure_EH_potential": "-R_F*kappa_5*exp(-4*beta)/(2*a_0**2)",
+      "pure_EH_potential_derivative": "2*R_F*kappa_5*exp(-4*beta)/a_0**2",
+      "stationary_point_from_positive_round_fiber_curvature": false
+    },
+    "validation": {
+      "M4_source_fails_closed": true,
+      "coefficient_is_six": true,
+      "kinetic_healthy": true,
+      "no_hidden_potential": true,
+      "no_new_scalar": true,
+      "v10_2_limit": true
+    },
+    "validation_passed": true,
+    "verdict": "BHSM_LOCALIZED_HOPF_RADION_IS_AN_EXISTING_METRIC_DEGREE_BUT_NOT_A_COMPLETE_STRATIFIED_ACTION_VARIABLE"
+  },
+  "measured_inputs_used": false,
+  "minimality": {
+    "buoyancy_physical_scalar_count": 0,
+    "candidates": [
+      {
+        "action_owned": false,
+        "candidate": "direct M4 embedding X:M4->M8",
+        "complete_localized_stress_source": false,
+        "fatal_reason": "codimension four and X is absent from the action domain",
+        "frozen_limit_recovers_current_action": true,
+        "gauge_invariant": "unresolved",
+        "global_restoring_relation": false,
+        "no_new_continuous_coefficient": "possible but unproved",
+        "no_new_mediator": true,
+        "one_physical_scalar": false,
+        "positive_kinetic": null,
+        "relational_holism_compatible": true,
+        "weak_field_path": false,
+        "well_posed_domain": false
+      },
+      {
+        "action_owned": false,
+        "candidate": "lifted Sigma7 codimension-one embedding",
+        "complete_localized_stress_source": false,
+        "fatal_reason": "no Sigma7 action owner or M4-to-Sigma7 localization map",
+        "frozen_limit_recovers_current_action": true,
+        "gauge_invariant": "conditional after quotient",
+        "global_restoring_relation": false,
+        "no_new_continuous_coefficient": "possible but unproved",
+        "no_new_mediator": true,
+        "one_physical_scalar": "conditional",
+        "positive_kinetic": null,
+        "relational_holism_compatible": true,
+        "weak_field_path": false,
+        "well_posed_domain": false
+      },
+      {
+        "action_owned": true,
+        "candidate": "local Hopf breathing beta",
+        "complete_localized_stress_source": false,
+        "fatal_reason": "runaway/no background plus incomplete cross-stratum ownership",
+        "frozen_limit_recovers_current_action": true,
+        "gauge_invariant": true,
+        "global_restoring_relation": false,
+        "no_new_continuous_coefficient": true,
+        "no_new_mediator": true,
+        "one_physical_scalar": true,
+        "positive_kinetic": true,
+        "relational_holism_compatible": true,
+        "weak_field_path": "conditional",
+        "well_posed_domain": false
+      },
+      {
+        "action_owned": true,
+        "candidate": "critical scalar-wall fold q",
+        "complete_localized_stress_source": false,
+        "fatal_reason": "not a normal/radion mode; G5 remains unselected and parent stress is incomplete",
+        "frozen_limit_recovers_current_action": true,
+        "gauge_invariant": true,
+        "global_restoring_relation": false,
+        "no_new_continuous_coefficient": false,
+        "no_new_mediator": true,
+        "one_physical_scalar": true,
+        "positive_kinetic": true,
+        "relational_holism_compatible": "not established",
+        "weak_field_path": false,
+        "well_posed_domain": true
+      },
+      {
+        "action_owned": false,
+        "candidate": "coupled q_env=delta beta+beta0' psi",
+        "complete_localized_stress_source": false,
+        "fatal_reason": "psi absent and beta0'=0 on the current homogeneous background",
+        "frozen_limit_recovers_current_action": true,
+        "gauge_invariant": true,
+        "global_restoring_relation": false,
+        "no_new_continuous_coefficient": true,
+        "no_new_mediator": true,
+        "one_physical_scalar": "formal",
+        "positive_kinetic": "radion part only",
+        "relational_holism_compatible": true,
+        "weak_field_path": false,
+        "well_posed_domain": false
+      }
+    ],
+    "criteria": [
+      "action_owned",
+      "gauge_invariant",
+      "one_physical_scalar",
+      "positive_kinetic",
+      "well_posed_domain",
+      "complete_localized_stress_source",
+      "global_restoring_relation",
+      "no_new_mediator",
+      "no_new_continuous_coefficient",
+      "frozen_limit_recovers_current_action",
+      "relational_holism_compatible",
+      "weak_field_path"
+    ],
+    "extensions": [
+      {
+        "adopted": false,
+        "class": "distributional dynamical seam",
+        "new_continuous_parameters": [],
+        "new_field_content": "varied embedding support and its normal bundle",
+        "unresolved_choice": "M4 codimension four versus lifted Sigma7 codimension one"
+      },
+      {
+        "adopted": false,
+        "class": "smooth parent defect",
+        "new_continuous_parameters": "none only if width follows from existing action",
+        "new_field_content": "action-selected localization profile or soliton realization",
+        "unresolved_choice": "which M8 field localizes every M4 sector"
+      },
+      {
+        "adopted": false,
+        "class": "full local-radion pushforward",
+        "new_continuous_parameters": [],
+        "new_field_content": "none in M8; replaces/completes lower-stratum ownership",
+        "unresolved_choice": "relation to independently owned S5 and S4 actions"
+      }
+    ],
+    "fully_admissible_candidates": [],
+    "new_fields_adopted": [],
+    "new_parameters_adopted": [],
+    "selected_variable": null,
+    "unique": false,
+    "verdict": "BHSM_MULTIPLE_INEQUIVALENT_DEFORMATION_COMPLETIONS_REMAIN"
+  },
+  "minimality_verdict": "BHSM_MULTIPLE_INEQUIVALENT_DEFORMATION_COMPLETIONS_REMAIN",
+  "new_continuous_parameters": [],
+  "new_fields_adopted": [],
+  "new_gravity_mediator": false,
+  "next_exact_object": "AUTHOR_SELECTED_COMMON_DOMAIN_COMPLETION_BETWEEN_DISTRIBUTIONAL_DYNAMICAL_SEAM_AND_SMOOTH_PARENT_LOCALIZATION_WITH_FULL_LOCAL_RADION_PUSHFORWARD",
+  "official_prediction_logic_changed": false,
+  "physical_mass_or_matrix_emitted": false,
+  "primary_verdict": "BHSM_NO_PARAMETER_FREE_PHYSICAL_DEFORMATION_COMPLETION_EXISTS",
+  "radion_verdict": "BHSM_LOCALIZED_HOPF_RADION_IS_AN_EXISTING_METRIC_DEGREE_BUT_NOT_A_COMPLETE_STRATIFIED_ACTION_VARIABLE",
+  "source_v10_2_sha": "dfdbc29217f13bc2c7c5f46a47ce554052b23503",
+  "sprint": "bhsm-physical-deformation-domain-v10-3",
+  "stress_verdict": "BHSM_STRATIFIED_ACTION_LACKS_A_CONSERVED_COMMON_DOMAIN_STRESS_TENSOR",
+  "topological_buoyancy_claimed": false,
+  "v10_2_no_go_preserved": true,
+  "validation": {
+    "configuration_valid": true,
+    "deformation_valid": true,
+    "doctrine_preserved": true,
+    "embedding_valid": true,
+    "global_valid": true,
+    "no_candidate_selected": true,
+    "no_extension_adopted": true,
+    "radion_valid": true,
+    "stress_valid": true
+  },
+  "validation_passed": true,
+  "version": "v10.3"
+}

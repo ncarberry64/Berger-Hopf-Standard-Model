@@ -4,7 +4,7 @@ Use the top-level [STATUS.md](../STATUS.md) for current status and
 [CLAIMS.md](../CLAIMS.md) for claim boundaries. Files below provide supporting
 detail and historical evidence.
 
-Current campaign: [v10.2 Topological-Buoyancy action exhaustion](bhsm_topological_buoyancy_action_derivation_v10_2.md), with [normal/radion geometry](bhsm_normal_radion_geometry_v10_2.md), [global-constraint audit](bhsm_global_constraint_audit_v10_2.md), [localized backreaction](bhsm_local_envelopment_backreaction_v10_2.md), and [weak-field gate](bhsm_buoyancy_weak_field_limit_v10_2.md). It preserves [v10.1 Relational Envelopment Holism](bhsm_relational_envelopment_holism_v10_1.md) as author doctrine and imports prior action/domain results instead of re-deriving them.
+Current campaign: [v10.3 physical deformation action-domain theorem](bhsm_physical_deformation_action_domain_v10_3.md), with [embedding/radion constraints](bhsm_embedding_radion_constraint_analysis_v10_3.md), [common stress pullback](bhsm_common_domain_stress_pullback_v10_3.md), [global zero-mode closure](bhsm_global_zero_mode_closure_v10_3.md), and the [minimal selection theorem](bhsm_minimal_deformation_selection_theorem_v10_3.md). It preserves the v10.2 no-go while recovering the earlier M5 moving-endpoint/support-shift and fold-mode results under their historical names.
 
 BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity. Physical eV/GeV neutrino mass closure remains open pending a numeric neutral stiffness length sqrt(A_nu/Z_nu), a physical K_neutral,eff map in m^-2, and complete-action derivation of the admissible response cone.
 
