@@ -22,10 +22,10 @@ def test_current_bhsm_status_json_schema() -> None:
         "collective_curvature_layer": "connected topographic-gravity extension candidate",
         "frozen_predictions_changed": False,
         "official_predictions_changed": False,
-        "current_campaign": "v10.2 Topological Buoyancy current-action exhaustion",
+        "current_campaign": "v10.3 Physical deformation action-domain theorem",
         "physical_flavor_matrix_derived": False,
-        "current_exact_verdict": "BHSM_CURRENT_PARENT_ACTION_CANNOT_GENERATE_TOPOLOGICAL_BUOYANCY",
-        "next_exact_object": "ACTION_DOMAIN_THEOREM_SELECTING_ONE_PHYSICAL_NORMAL_OR_RADION_DEGREE_WITH_COMPLETE_LOCALIZED_STRESS_PULLBACK_AND_COVARIANT_GLOBAL_RESTORING_CONSTRAINT",
+        "current_exact_verdict": "BHSM_THIRD_SPACETIME_REMOVAL_MODE_NOT_PRESENT_IN_CURRENT_ACTION_DOMAIN",
+        "next_exact_object": "ACTION_OWNED_GAUGE_INVARIANT_SPACETIME_REMOVAL_DEPTH_DEGREE",
     }
 
 

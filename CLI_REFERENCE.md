@@ -870,3 +870,33 @@ Hopf-radion no-go, the global-restoring-constraint audit, localized-stress
 ownership, the complete current-action obstruction, and the blocked weak-field
 limit. They do not promote proxy `R` to physical depth, introduce a gravity
 mediator, or modify frozen predictions.
+
+## Physical deformation action-domain theorem v10.3
+
+```bash
+python -m bhsm.interface deformation-domain-status --format markdown
+python -m bhsm.interface embedding-constraint-status --format json
+python -m bhsm.interface local-radion-status --format json
+python -m bhsm.interface common-stress-pullback-status --format markdown
+python -m bhsm.interface global-zero-mode-status --format json
+python -m bhsm.interface deformation-selection-status --format markdown
+python scripts/materialize_physical_deformation_domain_v10_3.py
+```
+
+These commands report prior-name equivalences, the stratified configuration
+and gauge audit, embedding codimensions, Einstein-frame Hopf breathing,
+separation from the fold Jacobi amplitude, formal distributional stress,
+global compatibility, and the pre-unification candidate audit. They emit no
+physical depth, force, mass, or prediction.
+
+The steering-complete common-mode audit adds:
+
+```bash
+python -m bhsm.interface common-envelopment-mode-status --format json
+python -m bhsm.interface deformation-intertwiner-status --format markdown
+python -m bhsm.interface coupled-deformation-rank-status --format json
+```
+
+These reports import the exact seam--fold projection, type every kinetic and
+Hessian block, keep missing fold--Hopf blocks `UNDEFINED_CROSS_DOMAIN`, and
+return `EQUIVALENCE_UNRESOLVED` rather than physical inequivalence.

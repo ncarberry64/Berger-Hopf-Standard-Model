@@ -1,0 +1,52 @@
+{
+  "artifact": "BHSM_coupled_physical_rank_v10_3",
+  "equivalence_status": "EQUIVALENCE_UNRESOLVED",
+  "formal_reduced_basis": [
+    "zeta",
+    "varphi_F"
+  ],
+  "gauge_rank": 0,
+  "generalized_eigenproblem": "H_env v=omega^2 K_env v",
+  "known_constraint_rank": 1,
+  "lowest_common_eigenmode": null,
+  "nonlinear_continuation": {
+    "branch": "Phi(epsilon)=Phi0+epsilon v_env+O(epsilon^2)",
+    "exact_blocker": "no common linear operator or stationary common background",
+    "status": "EQUIVALENCE_UNRESOLVED",
+    "tracked_components": [
+      "a_F(epsilon)",
+      "sigma_wall(epsilon)",
+      "X_seam(epsilon)"
+    ]
+  },
+  "physical_kinetic_rank": null,
+  "physically_inequivalent": false,
+  "primary_verdict": "BHSM_COMMON_ENVELOPMENT_MODE_EQUIVALENCE_BLOCKED_BY_UNDERIVED_CROSS_DOMAIN_HESSIAN",
+  "rank_bounds": {
+    "determinant": "-K_zetaF**2 + 41.61050914969839*kappa5",
+    "matrix": [
+      [
+        "6.935084858283065",
+        "K_zetaF"
+      ],
+      [
+        "K_zetaF",
+        "6*kappa5"
+      ]
+    ],
+    "possible_ranks": [
+      1,
+      2
+    ],
+    "rank_one_condition": "Eq(K_zetaF**2, 41.61050914969839*kappa5)",
+    "rank_two_condition": "Ne(K_zetaF**2, 41.61050914969839*kappa5)"
+  },
+  "reason_eigenproblem_unavailable": "cross-domain K/H blocks and one stationary common background are absent",
+  "validation": {
+    "eigenmode_not_claimed": true,
+    "known_constraint_removes_seam_duplicate": true,
+    "nonlinear_branch_not_claimed": true,
+    "rank_not_guessed": true
+  },
+  "validation_passed": true
+}

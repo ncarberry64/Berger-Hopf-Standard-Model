@@ -907,6 +907,21 @@ def build_parser() -> argparse.ArgumentParser:
         ("global-constraint-status", "Render the BHSM v10.2 global restoring-constraint audit"),
         ("local-backreaction-status", "Render the BHSM v10.2 localized backreaction audit"),
         ("buoyancy-weak-field-status", "Render the BHSM v10.2 weak-field gate"),
+        ("deformation-domain-status", "Render the BHSM v10.3 configuration-space audit"),
+        ("embedding-constraint-status", "Render the BHSM v10.3 embedding constraint audit"),
+        ("local-radion-status", "Render the BHSM v10.3 localized Hopf-radion audit"),
+        ("common-stress-pullback-status", "Render the BHSM v10.3 common-domain stress audit"),
+        ("global-zero-mode-status", "Render the BHSM v10.3 compact zero-mode audit"),
+        ("deformation-selection-status", "Render the BHSM v10.3 minimal deformation selection gate"),
+        ("common-envelopment-mode-status", "Render the BHSM v10.3 seam-fold-Hopf common-mode audit"),
+        ("deformation-intertwiner-status", "Render the BHSM v10.3 deformation intertwiner audit"),
+        ("coupled-deformation-rank-status", "Render the BHSM v10.3 coupled physical-rank audit"),
+        ("three-mode-envelopment-status", "Render the BHSM v10.3 author-clarified three-mode architecture"),
+        ("spacetime-removal-depth-status", "Render the BHSM v10.3 invariant depth candidate audit"),
+        ("three-mode-interference-status", "Render the BHSM v10.3 interference-output gate"),
+        ("seam-projection-status", "Render the BHSM v10.3 coordinate-seam projection gate"),
+        ("global-scale-anchor-status", "Render the BHSM v10.3 global geometry/unit-anchor policy"),
+        ("generation-phase-interface-status", "Render the BHSM v10.3 one-cycle three-phase interface"),
     )
     for command, help_text in integrated_status_commands:
         status_command = commands.add_parser(command, help=help_text)
@@ -1082,6 +1097,33 @@ def main(argv: Sequence[str] | None = None) -> int:
     }:
         module = import_module(
             ".envelopment.buoyancy_gate_v10_2",
+            package=__package__,
+        )
+        payload = module.command_payload(args.command)
+        if args.format == "markdown":
+            print(module.command_to_markdown(args.command, payload), end="")
+        else:
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        return 0
+    if args.command in {
+        "deformation-domain-status",
+        "embedding-constraint-status",
+        "local-radion-status",
+        "common-stress-pullback-status",
+        "global-zero-mode-status",
+        "deformation-selection-status",
+        "common-envelopment-mode-status",
+        "deformation-intertwiner-status",
+        "coupled-deformation-rank-status",
+        "three-mode-envelopment-status",
+        "spacetime-removal-depth-status",
+        "three-mode-interference-status",
+        "seam-projection-status",
+        "global-scale-anchor-status",
+        "generation-phase-interface-status",
+    }:
+        module = import_module(
+            ".envelopment.deformation_selection_gate_v10_3",
             package=__package__,
         )
         payload = module.command_payload(args.command)

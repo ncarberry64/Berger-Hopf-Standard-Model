@@ -1,0 +1,89 @@
+{
+  "action_source": null,
+  "artifact": "BHSM_spacetime_removal_depth_gate_v10_3",
+  "author_definition": "gauge-invariant spacetime support removal/compression relative to the selected global background",
+  "candidate_audit": [
+    {
+      "action_owned_degree": false,
+      "background_zero": true,
+      "candidate": "-log(sqrt|G|_local/sqrt|G|_background)",
+      "canonically_normalized": false,
+      "distinct_from_q_C": "unproved",
+      "fatal_reason": "density ratio needs a common relational map and may only repackage metric breathing",
+      "gauge_invariant": "only after a relational point-identification map",
+      "monotonic_removal": "unproved"
+    },
+    {
+      "action_owned_degree": false,
+      "background_zero": false,
+      "candidate": "R_ABCD R^ABCD concentration",
+      "canonically_normalized": false,
+      "distinct_from_q_C": true,
+      "fatal_reason": "curvature concentration is not an action-selected removal coordinate",
+      "gauge_invariant": true,
+      "monotonic_removal": false
+    },
+    {
+      "action_owned_degree": false,
+      "background_zero": "model dependent",
+      "candidate": "T_AB n^A n^B",
+      "canonically_normalized": false,
+      "distinct_from_q_C": true,
+      "fatal_reason": "stress projection is a source, and the common stress tensor is absent",
+      "gauge_invariant": "conditional on common tensor and normal",
+      "monotonic_removal": false
+    },
+    {
+      "action_owned_degree": false,
+      "background_zero": false,
+      "candidate": "K_mu_nu K^mu_nu or K^2",
+      "canonically_normalized": false,
+      "distinct_from_q_C": true,
+      "fatal_reason": "extrinsic concentration is not a canonical depth degree",
+      "gauge_invariant": "boundary-covariant after support/normal selection",
+      "monotonic_removal": false
+    },
+    {
+      "action_owned_degree": true,
+      "background_zero": true,
+      "candidate": "fiber-volume deficit -3 delta beta",
+      "canonically_normalized": true,
+      "distinct_from_q_C": false,
+      "fatal_reason": "identical to the core/Hopf amplitude, forbidden as the third slot",
+      "gauge_invariant": "within the invariant bundle reduction",
+      "monotonic_removal": "only fiber volume"
+    },
+    {
+      "action_owned_degree": false,
+      "background_zero": false,
+      "candidate": "lapse degeneration",
+      "canonically_normalized": false,
+      "distinct_from_q_C": true,
+      "fatal_reason": "lapse is a gauge/constraint multiplier",
+      "gauge_invariant": false,
+      "monotonic_removal": false
+    },
+    {
+      "action_owned_degree": false,
+      "background_zero": true,
+      "candidate": "normalized effective-support loss",
+      "canonically_normalized": false,
+      "distinct_from_q_C": true,
+      "fatal_reason": "no action-selected support functional or measure comparison",
+      "gauge_invariant": "target property only",
+      "monotonic_removal": "target property only"
+    }
+  ],
+  "canonical_momentum": null,
+  "physical_depth_value": null,
+  "selected_depth_functional": null,
+  "validation": {
+    "curvature_not_called_removal": true,
+    "fiber_deficit_not_duplicated": true,
+    "lapse_rejected_as_coordinate": true,
+    "no_candidate_selected": true,
+    "requested_candidates_audited": true
+  },
+  "validation_passed": true,
+  "verdict": "BHSM_SPACETIME_REMOVAL_DEPTH_REQUIRES_A_NEW_ACTION_OWNED_DEGREE"
+}

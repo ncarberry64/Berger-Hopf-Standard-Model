@@ -1,7 +1,7 @@
 """BHSM master-action, transport, and vacuum-to-flavor audit API.
 
 The v7.0 constants and v7.1 master-action report remain exported for
-artifact compatibility. Current v10.2 completion constants and status are
+artifact compatibility. Current v10.3 completion constants and status are
 exposed separately.
 """
 
@@ -18,12 +18,11 @@ from .report import (
 )
 from .validation import validate_model
 
-CURRENT_VERSION = "v10.2"
+CURRENT_VERSION = "v10.3"
 CURRENT_MISSING_OBJECT = (
-    "ACTION_DOMAIN_THEOREM_SELECTING_ONE_PHYSICAL_NORMAL_OR_RADION_DEGREE_"
-    "WITH_COMPLETE_LOCALIZED_STRESS_PULLBACK_AND_COVARIANT_GLOBAL_RESTORING_CONSTRAINT"
+    "ACTION_OWNED_GAUGE_INVARIANT_SPACETIME_REMOVAL_DEPTH_DEGREE"
 )
-CURRENT_VERDICT = "BHSM_CURRENT_PARENT_ACTION_CANNOT_GENERATE_TOPOLOGICAL_BUOYANCY"
+CURRENT_VERDICT = "BHSM_THIRD_SPACETIME_REMOVAL_MODE_NOT_PRESENT_IN_CURRENT_ACTION_DOMAIN"
 
 
 def observable_status_payload():
@@ -193,6 +192,20 @@ def buoyancy_status_to_markdown(payload=None):
     return command_to_markdown("topological-buoyancy-status")
 
 
+def deformation_domain_status_payload():
+    """Return the current v10.3 physical deformation-domain status."""
+    from ..envelopment.deformation_selection_gate_v10_3 import completion_payload
+
+    return completion_payload()
+
+
+def deformation_domain_status_to_markdown(payload=None):
+    """Render the current v10.3 physical deformation-domain status."""
+    from ..envelopment.deformation_selection_gate_v10_3 import command_to_markdown
+
+    return command_to_markdown("deformation-selection-status")
+
+
 __all__ = [
     "ARTIFACT_FILES",
     "CURRENT_MISSING_OBJECT",
@@ -204,6 +217,8 @@ __all__ = [
     "artifact_bytes",
     "buoyancy_status_payload",
     "buoyancy_status_to_markdown",
+    "deformation_domain_status_payload",
+    "deformation_domain_status_to_markdown",
     "classical_mode_stress_status_payload",
     "classical_mode_stress_status_to_markdown",
     "distinct_prediction_status_payload",

@@ -9,6 +9,9 @@ from .completion_gate import (
 )
 from .relational_completion_gate import completion_payload as relational_completion_payload
 from .buoyancy_gate_v10_2 import completion_payload as buoyancy_completion_payload
+from .deformation_selection_gate_v10_3 import completion_payload as deformation_completion_payload
+from .common_envelopment_mode_v10_3 import common_mode_payload
+from .three_mode_architecture_v10_3 import architecture_payload
 
 __all__ = [
     "PRIMARY_VERDICT",
@@ -18,4 +21,7 @@ __all__ = [
     "status_to_markdown",
     "relational_completion_payload",
     "buoyancy_completion_payload",
+    "deformation_completion_payload",
+    "common_mode_payload",
+    "architecture_payload",
 ]

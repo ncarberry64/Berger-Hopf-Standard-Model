@@ -1,0 +1,145 @@
+{
+  "artifact": "BHSM_physical_deformation_dof_ledger_v10_3",
+  "buoyancy_physical_scalar_count": 0,
+  "embedding": {
+    "artifact": "BHSM_embedding_constraint_v10_3",
+    "codimension": [
+      {
+        "normal_rank": 4,
+        "parent_dimension": 8,
+        "support": "intrinsic M4 embedded directly in M8",
+        "support_dimension": 4,
+        "unique_normal_scalar": false
+      },
+      {
+        "action_owner": null,
+        "normal_rank": 1,
+        "parent_dimension": 8,
+        "support": "lifted Sigma7=S3_fiber bundle over M4 in M8 collar",
+        "support_dimension": 7,
+        "unique_normal_scalar": true
+      },
+      {
+        "action_owner": "fixed-support P1+GHY+B1+matcher",
+        "normal_rank": 1,
+        "parent_dimension": 5,
+        "support": "B1=M4 in each M5 cap",
+        "support_dimension": 4,
+        "unique_normal_scalar": true
+      }
+    ],
+    "embedding": {
+      "X_current_status": "fixed iota, not varied",
+      "conjugate_momentum_current": null,
+      "fixed_support_prior_result": "BHSM_DYNAMICAL_B1_EMBEDDING_NOT_REQUIRED",
+      "fixed_support_scope": "v6.27 fold localization through local O(D^2 q), not an all-sector M4->M8 theorem",
+      "formal_induced_action_shape_term": "E_I=T4^mu_nu K^I_mu_nu plus bulk/matcher reactions",
+      "intrinsic_M4_source_present": true,
+      "intrinsic_source_makes_X_automatically_physical": false,
+      "normal_X_variations": "undefined until M4->M8 or Sigma7->M8 support is selected",
+      "primary_constraints_current": null,
+      "reason": "the intrinsic fields distinguish a stratum, but the action still fixes its embedding; codimension and distributional versus smooth ownership remain separate choices",
+      "shape_equation_current": null,
+      "tangential_X_variations": "M4 reparametrizations"
+    },
+    "validation": {
+      "direct_M4_has_four_normals": true,
+      "fixed_B1_imported": true,
+      "lifted_seam_has_one_normal": true,
+      "momentum_fails_closed": true,
+      "shape_fails_closed": true
+    },
+    "validation_passed": true,
+    "verdict": "BHSM_SEAM_EMBEDDING_NOT_IN_CURRENT_CONFIGURATION_SPACE_AND_CODIMENSION_CHOICE_NOT_UNIQUE"
+  },
+  "gauge_invariant_deformation": {
+    "artifact": "BHSM_gauge_invariant_deformation_v10_3",
+    "canonical_mode": {
+      "boundary_conditions": "not selected for a localized nonhomogeneous background",
+      "buoyancy_eligible_count": 0,
+      "canonical_field": "phi_beta=sqrt(6 kappa5) delta beta",
+      "complete_source": null,
+      "field": "delta beta",
+      "global_zero_mode_fixed": false,
+      "kinetic_sign": "HEALTHY_IF_KAPPA5_POSITIVE",
+      "normalizable": "conditional on the compact retained M8/M5 measure",
+      "physical_scalar_count_in_invariant_M8_sector": 1
+    },
+    "gauge_invariant_combination": {
+      "candidate": "q_env=delta beta+beta_0' psi",
+      "coefficient_inserted": false,
+      "current_limit": "q_env=delta beta because psi is absent and beta_0'=0",
+      "homogeneous_background_beta_prime": 0,
+      "invariant": true,
+      "residual": "0",
+      "transformation": "delta beta -> delta beta-beta_0' xi; psi -> psi+xi"
+    },
+    "prior_fold_mode": {
+      "Fredholm_status": "v6.28-v6.30.4 operator/domain and second-order solvability derived",
+      "complete_parent_stress_source": false,
+      "conditional_kinetic_norm": 6.935084858283065,
+      "field": "q_fold",
+      "gauge_status": "quotient mode after v6.27 momentum-constraint reduction",
+      "global_dimensional_scale": false,
+      "kinetic_verdict": "BHSM_FOLD_KINETIC_NORM_POSITIVE_CONDITIONALLY",
+      "origin": "normalized critical scalar-wall Jacobi kernel in the M5 P1+GHY+scalar+B1+matcher action",
+      "physical_depth": false,
+      "same_as_beta": false,
+      "same_as_psi": false
+    },
+    "validation": {
+      "fold_not_depth": true,
+      "fold_not_radion": true,
+      "invariance_exact": true,
+      "no_alpha_inserted": true,
+      "no_buoyancy_mode": true,
+      "one_local_radion": true
+    },
+    "validation_passed": true,
+    "verdict": "BHSM_ONE_LOCAL_HOPF_BREATHING_MODE_SURVIVES_THE_INVARIANT_M8_REDUCTION_CONDITIONALLY_BUT_NO_UNIQUE_BUOYANCY_MODE_IS_SELECTED"
+  },
+  "localized_radion": {
+    "artifact": "BHSM_local_radion_v10_3",
+    "homogeneous_limit": {
+      "R7": "-12*a_F**2/a_H**4 + 48/a_H**2 + 6/a_F**2",
+      "dR7_da_F": "-12*(2*a_F**4 + a_H**4)/(a_F**3*a_H**4)",
+      "positive_static_solution": false,
+      "strictly_negative": true,
+      "v10_2_reproduced": true
+    },
+    "localized_source": {
+      "M4_intrinsic_source": null,
+      "M8_definition": "J_beta=-delta(S8_env+S8_matter)/delta beta(x)",
+      "M8_eta_sigma_connection_dependence": "action-derived through vertical metric and V_F when explicit profiles are supplied",
+      "complete_J_beta": null,
+      "new_stabilizing_term_added": false,
+      "reason_M4_missing": "S4 is independently owned and v7.3 has zero a_F-Psi and a_F-H mixed blocks; the v7.1 matcher does not identify S5 with pi_!S8"
+    },
+    "reduction": {
+      "base_dimension": 5,
+      "canonical_Z_beta": "6 kappa5",
+      "einstein_frame_action": "(kappa5/2) int sqrt|gE| [R_E-6(grad beta)^2+R_F a_F0^-2 exp(-4 beta)+...]",
+      "fiber_dimension": 3,
+      "fiber_volume_factor": "V_F=V_F0 exp(3 beta)",
+      "internal_curvature_exponent": -4,
+      "kinetic_coefficient_C_beta": 6,
+      "kinetic_sign": "HEALTHY_IF_KAPPA5_POSITIVE",
+      "metric_origin": "G_fiber=a_F^2 gamma_3; beta=ln(a_F/a_F0)",
+      "new_scalar_appended": false,
+      "pure_EH_potential": "-R_F*kappa_5*exp(-4*beta)/(2*a_0**2)",
+      "pure_EH_potential_derivative": "2*R_F*kappa_5*exp(-4*beta)/a_0**2",
+      "stationary_point_from_positive_round_fiber_curvature": false
+    },
+    "validation": {
+      "M4_source_fails_closed": true,
+      "coefficient_is_six": true,
+      "kinetic_healthy": true,
+      "no_hidden_potential": true,
+      "no_new_scalar": true,
+      "v10_2_limit": true
+    },
+    "validation_passed": true,
+    "verdict": "BHSM_LOCALIZED_HOPF_RADION_IS_AN_EXISTING_METRIC_DEGREE_BUT_NOT_A_COMPLETE_STRATIFIED_ACTION_VARIABLE"
+  },
+  "verdict": "BHSM_THIRD_SPACETIME_REMOVAL_MODE_NOT_PRESENT_IN_CURRENT_ACTION_DOMAIN"
+}

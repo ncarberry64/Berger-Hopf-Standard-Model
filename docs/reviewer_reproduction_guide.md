@@ -156,6 +156,38 @@ typed statuses, no `S3 x M4=M8` identification, no inserted buoyancy force,
 the scalar-energy caveat, eta-sector-only complementarity, null neutrino
 observables, and unchanged frozen hashes.
 
+## Reviewer checkpoint: v10.3
+
+```bash
+python -m bhsm.interface deformation-domain-status --format json
+python -m bhsm.interface embedding-constraint-status --format json
+python -m bhsm.interface local-radion-status --format json
+python -m bhsm.interface common-stress-pullback-status --format json
+python -m bhsm.interface global-zero-mode-status --format json
+python -m bhsm.interface deformation-selection-status --format json
+python -m bhsm.interface common-envelopment-mode-status --format json
+python -m bhsm.interface deformation-intertwiner-status --format json
+python -m bhsm.interface coupled-deformation-rank-status --format json
+python -m bhsm.interface three-mode-envelopment-status --format json
+python -m bhsm.interface spacetime-removal-depth-status --format json
+python -m bhsm.interface three-mode-interference-status --format json
+python -m bhsm.interface seam-projection-status --format json
+python -m bhsm.interface global-scale-anchor-status --format json
+python -m bhsm.interface generation-phase-interface-status --format json
+python scripts/materialize_physical_deformation_domain_v10_3.py
+python -m pytest -q tests/test_bhsm_full_configuration_space_v10_3.py tests/test_bhsm_embedding_constraint_v10_3.py tests/test_bhsm_local_radion_v10_3.py tests/test_bhsm_gauge_invariant_deformation_v10_3.py tests/test_bhsm_stress_pullback_v10_3.py tests/test_bhsm_global_zero_mode_v10_3.py tests/test_bhsm_common_envelopment_mode_v10_3.py tests/test_bhsm_deformation_intertwiner_v10_3.py tests/test_bhsm_effective_mode_reductions_v10_3.py tests/test_bhsm_coupled_physical_rank_v10_3.py tests/test_bhsm_three_mode_architecture_v10_3.py tests/test_bhsm_spacetime_removal_depth_v10_3.py tests/test_bhsm_three_mode_interference_v10_3.py tests/test_bhsm_seam_projection_v10_3.py tests/test_bhsm_global_scale_anchor_v10_3.py tests/test_bhsm_generation_phase_interface_v10_3.py tests/test_bhsm_deformation_selection_gate_v10_3.py
+```
+
+Run the materializer twice and compare bytes. Verify the historical-name
+equivalences; codimensions four, one, and one for the three embedding problems;
+Einstein-frame radion coefficient `6`; the gauge-invariant combination; formal
+tangential delta stress and its shape-force divergence; the exact v6.27
+seam--fold projection; the seam excluded from the physical-mode count; exactly
+three author-ontology slots `q_C,q_W,q_D`; no eligible action-owned `q_D`;
+null common three-mode matrices, interference output, and global scale; the
+historical one-mode audit marked `INVALIDATED_BY_AUTHOR_ONTOLOGY`; no particle
+calibration; and unchanged frozen predictions.
+
 ## Reviewer checkpoint: v10.2
 
 ```bash

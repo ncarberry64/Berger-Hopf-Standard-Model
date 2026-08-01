@@ -1617,3 +1617,40 @@ Doctrine and manuscript chapter:
 - `artifacts/BHSM_buoyancy_completion_gate_v10_2.json`: canonical v10.2
   verdict, hindsight ledger, validation, and exact next object.
 - `artifacts/BHSM_1_0_completion_gate.json`: canonical v10.2 RB-15/RB-16 gate.
+
+## BHSM v10.3 physical deformation-domain campaign
+
+- `artifacts/BHSM_full_configuration_space_v10_3.json`: prior-name
+  equivalence ledger, stratified configuration space, gauge groups, and
+  constrained scalar count.
+- `artifacts/BHSM_physical_deformation_dof_ledger_v10_3.json`: embedding,
+  codimension, Hopf breathing, gauge-invariant deformation, and fold-mode
+  separation audit.
+- `artifacts/BHSM_common_domain_stress_pullback_v10_3.json`: formal
+  distributional stress lift, normal-divergence/shape equation, and
+  localization-domain alternatives.
+- `artifacts/BHSM_global_restoring_constraint_v10_3.json`: Hamiltonian and
+  Fredholm compatibility audit, including the exact prior fold Schur response.
+- `artifacts/BHSM_common_envelopment_mode_v10_3.json`: common perturbation
+  vector, block typing, gauge matrix, seam--fold constraint, and source ledger.
+- `artifacts/BHSM_deformation_intertwiner_v10_3.json`: exact seam--fold map,
+  missing Hopf intertwiners, effective-reduction audit, and equivalence gates.
+- `artifacts/BHSM_coupled_physical_rank_v10_3.json`: rank bounds, generalized
+  eigenproblem status, and nonlinear-continuation blocker.
+- `artifacts/BHSM_three_mode_architecture_v10_3.json`: corrected author
+  ontology, distinct `q_C`, `q_W`, and `q_D` slots, common block ledger, and
+  current exact depth blocker.
+- `artifacts/BHSM_spacetime_removal_depth_gate_v10_3.json`: exhaustive audit
+  of existing depth-like candidates and the fail-closed missing `q_D` result.
+- `artifacts/BHSM_three_mode_interference_gate_v10_3.json`: Hermitian
+  interference-law scaffold with null action coefficients, phases, and output.
+- `artifacts/BHSM_seam_projection_gate_v10_3.json`: coordinate transformation,
+  no-independent-kinetic test, historical invariant fold readout, and open
+  full three-mode projection.
+- `artifacts/BHSM_global_scale_anchor_policy_v10_3.json`: closed-geometry
+  stationarity audit and the at-most-one-cosmic-anchor/no-particle-calibration
+  policy.
+- `artifacts/BHSM_minimal_deformation_selection_gate_v10_3.json`: exhaustive
+  candidate/extension comparison, corrected three-mode audit, exact next
+  object, and fail-closed physical outputs.
+- `artifacts/BHSM_1_0_completion_gate.json`: canonical v10.3 RB-15/RB-16 gate.

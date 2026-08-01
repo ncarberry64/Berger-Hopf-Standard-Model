@@ -1,0 +1,133 @@
+{
+  "artifact": "BHSM_deformation_intertwiner_v10_3",
+  "boundary_domain_equivalence": {
+    "D_env": null,
+    "cap_parity_match": "fold cap parity known; Hopf comparison not derived",
+    "one_common_boundary_condition": null,
+    "status": "EQUIVALENCE_UNRESOLVED",
+    "to_D_F": "separate M8 regularity domain only",
+    "to_D_psi": "derived through v6.27 fixed-support projection",
+    "to_D_zeta": "derived for the v6.28-v6.30 fold domain"
+  },
+  "conserved_charge_equivalence": {
+    "Hopf_weight": {
+      "Hopf_comparison": null,
+      "seam_fold_comparison": "compatible where the v6.27 projection applies",
+      "status": "EQUIVALENCE_UNRESOLVED"
+    },
+    "canonical_energy": {
+      "Hopf_comparison": null,
+      "seam_fold_comparison": "compatible where the v6.27 projection applies",
+      "status": "EQUIVALENCE_UNRESOLVED"
+    },
+    "constraint_charge": {
+      "Hopf_comparison": null,
+      "seam_fold_comparison": "compatible where the v6.27 projection applies",
+      "status": "EQUIVALENCE_UNRESOLVED"
+    },
+    "normal_flux": {
+      "Hopf_comparison": null,
+      "seam_fold_comparison": "compatible where the v6.27 projection applies",
+      "status": "EQUIVALENCE_UNRESOLVED"
+    },
+    "parity": {
+      "Hopf_comparison": null,
+      "seam_fold_comparison": "compatible where the v6.27 projection applies",
+      "status": "EQUIVALENCE_UNRESOLVED"
+    },
+    "symplectic_norm": {
+      "Hopf_comparison": null,
+      "seam_fold_comparison": "compatible where the v6.27 projection applies",
+      "status": "EQUIVALENCE_UNRESOLVED"
+    },
+    "topological_degree": {
+      "Hopf_comparison": null,
+      "seam_fold_comparison": "compatible where the v6.27 projection applies",
+      "status": "EQUIVALENCE_UNRESOLVED"
+    },
+    "triality": {
+      "Hopf_comparison": null,
+      "seam_fold_comparison": "compatible where the v6.27 projection applies",
+      "status": "EQUIVALENCE_UNRESOLVED"
+    }
+  },
+  "effective_mode_reductions": {
+    "H_eff_F": null,
+    "H_eff_psi": null,
+    "H_eff_zeta": null,
+    "Schur_complement_equivalence": "EQUIVALENCE_UNRESOLVED",
+    "artifact": "BHSM_effective_mode_reductions_v10_3",
+    "historical_operator_recovery_without_duplicate_derivation": true,
+    "historical_reductions": [
+      {
+        "historical_operator": "support-shift/threading response",
+        "is_full_three_sector_Schur_reduction": false,
+        "recovery": "psi=-(tau*pi*chi_1/16) zeta after the full momentum constraint",
+        "status": "DERIVED_CONDITIONAL"
+      },
+      {
+        "historical_operator": "fold/Fredholm operator",
+        "is_full_three_sector_Schur_reduction": null,
+        "recovery": "exact Schur reduction over lapse/Weyl/constraint complement inside D_fold",
+        "status": "DERIVED_CONDITIONAL"
+      },
+      {
+        "historical_operator": "Hopf-radion operator",
+        "is_full_three_sector_Schur_reduction": null,
+        "recovery": "direct invariant M8 metric reduction",
+        "status": "DERIVED_CONDITIONAL"
+      }
+    ],
+    "physically_inequivalent": false,
+    "primary_verdict": "BHSM_COMMON_ENVELOPMENT_MODE_EQUIVALENCE_BLOCKED_BY_UNDERIVED_CROSS_DOMAIN_HESSIAN",
+    "reason": "H_zetaF, H_Fzeta, and the common domain are undefined"
+  },
+  "equivalence_status": "EQUIVALENCE_UNRESOLVED",
+  "full_common_intertwiner": null,
+  "gauge_equivalence": "not proved; seam--fold relation is a constraint projection",
+  "intertwiners": [
+    {
+      "boundary_preservation": true,
+      "domain_preservation": "fixed-B1 fold domain through local O(D^2 q)",
+      "invertible_on_physical_subspace": true,
+      "kinetic_norm_preservation": "not a separate norm; psi is a constrained projection",
+      "map": "q_fold -> S_Sigma=-(tau*pi*chi_1/16) q_fold",
+      "operator": "U_zeta_to_psi",
+      "source_preservation": true,
+      "spectral_preservation": "one-dimensional amplitude map only",
+      "status": "DERIVED_CONDITIONAL"
+    },
+    {
+      "boundary_preservation": null,
+      "domain_preservation": null,
+      "invertible_on_physical_subspace": null,
+      "kinetic_norm_preservation": null,
+      "map": null,
+      "operator": "U_zeta_to_F",
+      "source_preservation": null,
+      "spectral_preservation": null,
+      "status": "UNDEFINED_CROSS_DOMAIN"
+    },
+    {
+      "boundary_preservation": null,
+      "domain_preservation": null,
+      "invertible_on_physical_subspace": null,
+      "kinetic_norm_preservation": null,
+      "map": null,
+      "operator": "U_F_to_psi",
+      "source_preservation": null,
+      "spectral_preservation": null,
+      "status": "UNDEFINED_CROSS_DOMAIN"
+    }
+  ],
+  "physically_inequivalent": false,
+  "primary_verdict": "BHSM_COMMON_ENVELOPMENT_MODE_EQUIVALENCE_BLOCKED_BY_UNDERIVED_CROSS_DOMAIN_HESSIAN",
+  "source_equivalence": "EQUIVALENCE_UNRESOLVED",
+  "spectral_equivalence": "EQUIVALENCE_UNRESOLVED",
+  "validation": {
+    "Hopf_maps_fail_closed": true,
+    "no_inequivalence_promotion": true,
+    "seam_fold_map_imported": true
+  },
+  "validation_passed": true
+}

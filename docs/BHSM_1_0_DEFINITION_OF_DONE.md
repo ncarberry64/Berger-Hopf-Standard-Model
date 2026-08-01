@@ -249,3 +249,18 @@ prediction changes.
 
 Exact verdict:
 `BHSM_CURRENT_PARENT_ACTION_CANNOT_GENERATE_TOPOLOGICAL_BUOYANCY`.
+
+## v10.3 current completion gate
+
+RB-15 remains blocked because the current action has no distinct action-owned,
+gauge-invariant spacetime-removal/depth degree `q_D`. Author ontology requires
+three interacting physical slots (`q_C`, `q_W`, `q_D`), while the seam is only
+a coordinate/observable projection. The common three-mode kinetic matrix,
+Hessian, source, interference-selected output, and global geometry therefore
+remain unavailable. RB-16 remains downstream.
+
+Exact verdict:
+`BHSM_THIRD_SPACETIME_REMOVAL_MODE_NOT_PRESENT_IN_CURRENT_ACTION_DOMAIN`.
+
+Exact next object:
+`ACTION_OWNED_GAUGE_INVARIANT_SPACETIME_REMOVAL_DEPTH_DEGREE`.

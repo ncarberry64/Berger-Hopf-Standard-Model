@@ -17,3 +17,11 @@ and no complete localized stress pullback. A future extension must derive all
 four and then pass stability, weak-field, equivalence-principle, and scale
 tests. Proxy `R`, coordinate `rho`, or an inserted volume target cannot satisfy
 this gate.
+
+For v10.3, the current blocker is falsified if the checked-in action and
+declared domains already contain a distinct, action-owned, gauge-invariant
+spacetime-removal/depth degree `q_D`. It must be independent of core/Hopf
+`q_C`, enclosure-wall/fold `q_W`, coordinate seam displacement, and gauge
+variables. Only after that degree exists may the common three-mode
+kinetic/Hessian/source system and interference-selected output be tested. No
+fit to particle data may define the missing degree or its couplings.

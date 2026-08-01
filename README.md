@@ -5,7 +5,7 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
-BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v10.2 exhausts the present action for Topological Buoyancy and proves that it lacks a varied physical normal embedding, a static seam radion, a global restoring constraint, and complete localized stress pullback. Relational Envelopment Holism remains authoritative author doctrine, not a promoted physical theorem; prior no-go results and RB-15/RB-16 remain in force.
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v10.3 records three distinct interacting physical-mode slots as author ontology and reclassifies the seam as a coordinate/observable projection. The current action contains core/Hopf and enclosure-wall/fold candidates but no distinct, action-owned gauge-invariant spacetime-removal/depth degree. No interference-selected output, physical depth, or global scale is emitted. Prior no-go results and RB-15/RB-16 remain in force.
 
 This independent mathematical-physics project investigates whether
 Berger-Hopf boundary geometry can organize structures associated with
@@ -21,7 +21,7 @@ Standard Model, or received institutional endorsement.
 - [Scientific contribution ledger](docs/bhsm_scientific_contribution_ledger.md)
 - [CERN toy model in plain language](docs/cern_toy_model_in_plain_language.md)
 - [STATUS.md](STATUS.md) and [claim boundaries](CLAIMS.md)
-- [BHSM v8.2 generation attachment](docs/bhsm_generation_projector_action_attachment_v8_2.md), [v8.3 mode stress](docs/bhsm_classical_mode_stress_incidence_v8_3.md), [v9.0 vacuum/flavor audit](docs/bhsm_action_selected_8d_vacuum_flavor_completion_v9_0.md), [v9.1 geometry-only geon/FR audit](docs/bhsm_geometry_only_geon_fr_carrier_completion_v9_1.md), [v10.0 envelopment foundation](docs/bhsm_machian_geometric_envelopment_foundation_v10_0.md), [v10.1 relational action constraints](docs/bhsm_relational_envelopment_action_constraints_v10_1.md), and [v10.2 buoyancy action exhaustion](docs/bhsm_topological_buoyancy_action_derivation_v10_2.md)
+- [BHSM v8.2 generation attachment](docs/bhsm_generation_projector_action_attachment_v8_2.md), [v8.3 mode stress](docs/bhsm_classical_mode_stress_incidence_v8_3.md), [v9.0 vacuum/flavor audit](docs/bhsm_action_selected_8d_vacuum_flavor_completion_v9_0.md), [v9.1 geometry-only geon/FR audit](docs/bhsm_geometry_only_geon_fr_carrier_completion_v9_1.md), [v10.0 envelopment foundation](docs/bhsm_machian_geometric_envelopment_foundation_v10_0.md), [v10.1 relational action constraints](docs/bhsm_relational_envelopment_action_constraints_v10_1.md), [v10.2 buoyancy action exhaustion](docs/bhsm_topological_buoyancy_action_derivation_v10_2.md), and [v10.3 three-mode relational architecture](docs/bhsm_three_mode_relational_envelopment_v10_3.md)
 - [Reviewer reproduction guide](docs/reviewer_reproduction_guide.md)
 - [Frozen records](docs/frozen_predictions.md) and [artifact index](ARTIFACT_INDEX.md)
 

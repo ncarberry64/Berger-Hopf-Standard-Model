@@ -334,3 +334,20 @@ The v4.7 action-attachment block and all downstream coupling, CKM, running, and 
 The coupling bridge is blocked pending a new action/current principle. Stop spectral-gauge normalization work unless new artifact-backed action evidence appears.
 
 Recommended pivot: transcribe existing CKM relative transport and flavor geometry while maintaining separate CKM-geometry and charged-current-normalization ledgers. Reconnect them only after a real normalization theorem.
+
+## v10.3 deformation-domain pivot
+
+Do not reopen the M5 moving-endpoint calculation, count the seam as a physical
+mode, or identify three modes with three generations. Preserve the exact
+seam--fold projection as an observable map and preserve the earlier one-mode
+audit as `INVALIDATED_BY_AUTHOR_ONTOLOGY`. The live architecture requires
+distinct `q_C`, `q_W`, and `q_D` slots. The next exact object is:
+
+`ACTION_OWNED_GAUGE_INVARIANT_SPACETIME_REMOVAL_DEPTH_DEGREE`.
+
+After `q_D` is action-owned and gauge invariant, derive all common three-mode
+kinetic/Hessian/source blocks, the Hermitian interference law and selected
+output, the seam projection, and the generation-phase interface. Only then
+derive the full local stress pushforward, covariant restoring law, stability,
+weak-field limit, and at most one cosmic unit anchor before evaluating
+Topological Buoyancy. Particle-data calibration remains forbidden.

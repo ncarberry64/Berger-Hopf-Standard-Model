@@ -26,11 +26,12 @@ NEUTRINO_PUBLIC_STATUS = (
 
 PUBLIC_REPO_STATUS = (
     "BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. "
-    "Current public status: v10.2 exhausts the present action for Topological Buoyancy and proves "
-    "that it lacks a varied physical normal embedding, a static seam radion, a global restoring "
-    "constraint, and complete localized stress pullback. Relational Envelopment Holism remains "
-    "authoritative author doctrine, not a promoted physical theorem; prior no-go results and "
-    "RB-15/RB-16 remain in force."
+    "Current public status: v10.3 records three distinct interacting physical-mode slots as "
+    "author ontology and reclassifies the seam as a coordinate/observable projection. The "
+    "current action contains core/Hopf and enclosure-wall/fold candidates but no distinct, "
+    "action-owned gauge-invariant spacetime-removal/depth degree. No interference-selected "
+    "output, physical depth, or global scale is emitted. "
+    "Prior no-go results and RB-15/RB-16 remain in force."
 )
 
 REMAINING_MISSING_OBJECTS = (

@@ -6,11 +6,11 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 
 | Item | Current status |
 | --- | --- |
-| Overall status | relational doctrine retained; present action exhausted for Topological Buoyancy with an exact obstruction; physical derivation and empirical replacement open |
-| Latest theorem branch | `agent/bhsm-topological-buoyancy-functional-v10-2` |
+| Overall status | three distinct physical-mode slots recorded as author ontology; core/Hopf and enclosure-wall/fold candidates exist, but no independent action-owned spacetime-removal/depth degree exists; physical derivation and empirical replacement open |
+| Latest theorem branch | `agent/bhsm-physical-deformation-domain-v10-3` |
 | Latest completed theorem commits | PO-BH-47 `ae5dac5`; PO-BH-47 cleanup `1c11d2b`; PO-BH-48 `8ac577c`; PO-BH-49 `c2cfc70`; PO-BH-50 `7a4523a`; PO-BH-51 `225786f`; PO-BH-52 `4de6d9c`; PO-BH-53 `20c58b1`; PO-BH-54 `11d1c60`; PO-BH-55 `cf0e998`; PO-BH-56 `9f93330`; PO-BH-57/58/59 merged to main; PO-BH-60 merged to main; PO-BH-61 merged to main; PO-BH-62 merged to main; PO-BH-63 merged to main; PO-BH-64 merged to main; PO-BH-65 stacked in PR #21; PO-BH-66 stacked in PR #22; PO-BH-67 stacked in PR #23; PO-BH-68 stacked in PR #24; full freeze protocol / charged `K_f` stacked in PR #25; boundary action source audit stacked in PR #26; boundary graded defect action kernel on this branch |
-| Test result summary | v10.2 focused geometry, radion, constraint, backreaction, functional, CLI, and materialization checks pass; required GitHub CI is authoritative |
-| Current theorem/status label | `BHSM_CURRENT_PARENT_ACTION_CANNOT_GENERATE_TOPOLOGICAL_BUOYANCY` |
+| Test result summary | v10.3 focused configuration, embedding, radion, gauge, stress, zero-mode, selection, CLI, and materialization checks pass; required GitHub CI is authoritative |
+| Current theorem/status label | `BHSM_THIRD_SPACETIME_REMOVAL_MODE_NOT_PRESENT_IN_CURRENT_ACTION_DOMAIN` |
 | Candidate architecture complete | yes |
 | Full BHSM proven | no |
 | Standard Model fully derived | no |
@@ -22,6 +22,35 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 | Collective curvature layer | connected topographic-gravity extension candidate |
 | Frozen predictions changed | no |
 | Official predictions changed | no |
+
+## v10.3 authoritative physical deformation-domain status
+
+Author ontology requires three distinct interacting physical modes: core/Hopf
+breathing `q_C`, enclosure-wall/fold motion `q_W`, and invariant
+spacetime-removal/depth `q_D`. The first two have conditional representatives
+in separate reduced actions. The current action has no third, independent,
+gauge-invariant `q_D`; determinant ratio, curvature concentration, normal
+stress, extrinsic curvature, fiber deficit, lapse, and support loss all fail at
+least one required ownership, invariance, or independence gate. Consequently
+the common three-mode kinetic matrix, Hessian, source, interference output,
+and physical scale remain null.
+
+The historical v6.13--v6.27 seam displacement is retained as a coordinate or
+observable projection, not a fourth mode. Its invariant fold readout obeys
+`S_Sigma=-(tau*pi*chi_1/16)q_W`. The earlier seam--fold--Hopf one-mode
+hypothesis is preserved for provenance and marked
+`INVALIDATED_BY_AUTHOR_ONTOLOGY`; it is not the live architecture. Three
+generation slots are likewise not these three modes: they remain cycle phases
+of a sector cycle, with their dynamical phase interface still open.
+
+Exact verdict:
+`BHSM_THIRD_SPACETIME_REMOVAL_MODE_NOT_PRESENT_IN_CURRENT_ACTION_DOMAIN`.
+
+Architecture verdict:
+`BHSM_THREE_MODE_ARCHITECTURE_INTEGRATED_BUT_COMMON_ACTION_COUPLINGS_REMAIN_OPEN`.
+
+Exact next object:
+`ACTION_OWNED_GAUGE_INVARIANT_SPACETIME_REMOVAL_DEPTH_DEGREE`.
 
 ## v10.2 authoritative Topological-Buoyancy status
 

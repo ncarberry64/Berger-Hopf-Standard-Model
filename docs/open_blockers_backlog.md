@@ -1,10 +1,13 @@
 # Open Blockers Backlog
 
-Current public status: v10.2 exhausts the present action for Topological
-Buoyancy and proves an exact obstruction. Relational Envelopment Holism
-remains author doctrine, while the v9.1--v10.1 results remain authoritative in
-their scopes. The historical table remains provenance. The live Tier-C object
-is `ACTION_DOMAIN_THEOREM_SELECTING_ONE_PHYSICAL_NORMAL_OR_RADION_DEGREE_WITH_COMPLETE_LOCALIZED_STRESS_PULLBACK_AND_COVARIANT_GLOBAL_RESTORING_CONSTRAINT`.
+Current public status: v10.3 records exactly three interacting physical-mode
+slots as author ontology: core/Hopf `q_C`, enclosure-wall/fold `q_W`, and
+spacetime-removal/depth `q_D`. The current action has conditional candidates for
+the first two and no distinct action-owned gauge-invariant `q_D`. The seam is a
+coordinate/observable projection, not a physical mode. The earlier one-mode
+hypothesis remains historical provenance and is marked
+`INVALIDATED_BY_AUTHOR_ONTOLOGY`. The live Tier-C object is
+`ACTION_OWNED_GAUGE_INVARIANT_SPACETIME_REMOVAL_DEPTH_DEGREE`.
 
 Historical compatibility boundary: structural architecture integrated conditional; numerical closure open.
 This sentence records the pre-v7.1 numerical-closure status required by the
@@ -12,31 +15,21 @@ archived component contracts; it is not the current completion-tier verdict.
 
 Each blocker must be handled without fitting observed data after comparison and without changing frozen predictions.
 
-## Current v10.2 highest-upstream blocker
+## Current v10.3 highest-upstream blocker
 
-`ACTION_DOMAIN_THEOREM_SELECTING_ONE_PHYSICAL_NORMAL_OR_RADION_DEGREE_WITH_COMPLETE_LOCALIZED_STRESS_PULLBACK_AND_COVARIANT_GLOBAL_RESTORING_CONSTRAINT`
+`ACTION_OWNED_GAUGE_INVARIANT_SPACETIME_REMOVAL_DEPTH_DEGREE`
 
-The declared small-diffeomorphism geometry quotient has trivial fundamental
-group. The optional large-diffeomorphism class is not a selected FR
-rotation/exchange sector and cannot supply a local chiral Clifford bundle.
-The current action selects neither a stationary geon nor a `G2/C3`
-polarization. Downstream composite immersions, physical pullbacks, current,
-matrix, and mass/lepton outputs remain null.
-
-The collar normal, Hopf radion, Brown--York/GHY response, ADM constraints, and
-eta stress exist separately. They are not assembled into one covariant
-global-local radial variational problem, so the author-required energy-depth
-sign and weak-field/equivalence limits cannot be evaluated. The charged orbit
-remains downstream of this relational background constraint.
-
-The v10.2 audit proves that these pieces cannot be assembled from the current
-action: the seam embedding is fixed, the homogeneous Hopf radion has no
-positive static equilibrium, no global restoring law is action-derived, and
-the localized stress pullback is incomplete.
+The candidate audit rejects determinant ratio, curvature concentration, normal
+stress, extrinsic curvature, fiber deficit, lapse, and support loss as a
+presently eligible `q_D`: each lacks action ownership, gauge invariance, or
+independence from `q_C`/`q_W`. Until a genuine `q_D` is added by derivation, the
+three-mode kinetic matrix, Hessian, source, interference output, seam
+projection, energy-depth sign, and weak-field/equivalence limits remain
+ineligible. The v6.27 invariant seam readout of `q_W` remains exact.
 
 Exact verdict:
 
-`BHSM_CURRENT_PARENT_ACTION_CANNOT_GENERATE_TOPOLOGICAL_BUOYANCY`
+`BHSM_THIRD_SPACETIME_REMOVAL_MODE_NOT_PRESENT_IN_CURRENT_ACTION_DOMAIN`
 
 | Blocker | Current status | Why it matters | Next valid action | Forbidden invalid action |
 | --- | --- | --- | --- | --- |

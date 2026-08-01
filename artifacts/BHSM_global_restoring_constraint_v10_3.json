@@ -1,0 +1,43 @@
+{
+  "artifact": "BHSM_global_restoring_constraint_v10_3",
+  "global_constraint": {
+    "Fredholm_condition": "<u0,J_local>=0 if O_q has an unlifted kernel",
+    "Fredholm_is_restoring_law_by_itself": false,
+    "beta0_fixed": false,
+    "eta_degree_role": "topological sector label; may enter sources but fixes no length",
+    "external_targets_adopted": [],
+    "external_targets_rejected": [
+      "V_star",
+      "R_star",
+      "E_star"
+    ],
+    "fixes_homogeneous_radion": false,
+    "independent_global_equation": false,
+    "integrated_Hamiltonian": "int_Sigma7 H dmu7=0 follows from the local lapse equation",
+    "local_source_shifts_beta0": null,
+    "normalized_decomposition": "beta=beta0+tilde_beta with int tilde_beta dmu=0",
+    "reason": "the v10.2 homogeneous radion has no static critical point and the overall scale remains free",
+    "remaining_dimensional_moduli": 1
+  },
+  "prior_fold_zero_mode": {
+    "M_z_positive": true,
+    "constraint_response_derived": true,
+    "fixes_dimensional_scale": false,
+    "kernel": "z_A=sec^2(pi t/4), z_psi=1",
+    "lifting_M_z": 14.57522203923062,
+    "response_c_z": 0.25650563011337596,
+    "same_as_Hopf_radion_zero_mode": false,
+    "sector": "v6.29 scalar-wall fold",
+    "source_projection_j_z": -3.7386265132152148
+  },
+  "validation": {
+    "beta0_unfixed": true,
+    "fold_not_radion": true,
+    "fold_response_positive_lift": true,
+    "integrated_not_independent": true,
+    "no_external_target": true,
+    "scale_remains": true
+  },
+  "validation_passed": true,
+  "verdict": "BHSM_NO_GLOBAL_RESTORING_CONSTRAINT_EXISTS_WITHOUT_AN_EXTERNAL_SCALE_INPUT"
+}
