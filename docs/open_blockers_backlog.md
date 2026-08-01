@@ -1,18 +1,27 @@
 # Open Blockers Backlog
 
-Current public status: the v7.2 finite-input physical observable map is
-complete. The historical table remains provenance; its entries do not
-override the v8.0 completion-DAG update. Tier B is complete. V8.0 constructs
-the unique minimal Brown--York curvature-response coupling, but no positive
-core/surface energy ratio and no family-resolving incidence follow. The
-live Tier-C object is
-`FAMILY_RESOLVING_ACTION_INCIDENCE_BEYOND_THE_UNIVERSAL_CURVATURE_SCALAR`.
+Current public status: v9.0 integrates the v8.4--v8.9 conditional flavor
+functor but proves that the current stratified action cannot evaluate it. The
+historical table remains provenance and does not override the v9.0 action-chain
+gate. The live Tier-C object is
+`ACTION_SELECTED_STATIONARY_8D_VACUUM_WITH_ACTION_OWNED_GLOBAL_COMPOSITE_IMMERSIONS_AND_COMMON_PARENT_CHARGED_CURRENT_KERNEL`.
 
 Historical compatibility boundary: structural architecture integrated conditional; numerical closure open.
 This sentence records the pre-v7.1 numerical-closure status required by the
 archived component contracts; it is not the current completion-tier verdict.
 
 Each blocker must be handled without fitting observed data after comparison and without changing frozen predictions.
+
+## Current v9.0 highest-upstream blocker
+
+`ACTION_SELECTED_STATIONARY_8D_VACUUM_WITH_ACTION_OWNED_GLOBAL_COMPOSITE_IMMERSIONS_AND_COMMON_PARENT_CHARGED_CURRENT_KERNEL`
+
+The v8.4--v8.9 algebraic functor is complete conditionally, but the current
+`S8[G,chi,sigma]` field bundle cannot evaluate its physical pullbacks. Do not
+substitute heat-profile proxies, identity matrices, independent M4 Yukawas, or
+measured CKM data. The static finite-radius `R_t x S7` constant-scalar branch
+is rejected; any alternative must first prove consistent closure, stationarity,
+domain conditions, and action ownership.
 
 | Blocker | Current status | Why it matters | Next valid action | Forbidden invalid action |
 | --- | --- | --- | --- | --- |

@@ -84,3 +84,20 @@ promoted, the formal M4 stress is rejected as family central, background
 quadratic response is separated from quartic self-backreaction, response
 matrices remain `None`, the virtual-door factor is applied zero times, and
 no alpha factor is inserted.
+
+## Reviewer checkpoint: v8.4--v9.0
+
+```bash
+python -m bhsm.interface composite-carrier-current-status --format json
+python -m bhsm.interface topographic-profile-status --format json
+python -m bhsm.interface complex-profile-status --format json
+python -m bhsm.interface channel-normalization-status --format json
+python -m bhsm.interface common-parent-current-status --format json
+python -m bhsm.interface geometric-lens-status --format json
+python -m bhsm.interface 8d-vacuum-flavor-status --format json
+python scripts/materialize_action_selected_8d_vacuum_flavor_v9_0.py
+```
+
+Run the materializer twice and compare bytes. All matrices in the v8.5--v8.9
+diagnostics must remain `PROXY_STRESS_TEST_ONLY`; the v9.0 physical matrix must
+remain null unless the complete action-owned dependency chain is supplied.

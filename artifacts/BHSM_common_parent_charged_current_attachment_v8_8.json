@@ -1,0 +1,193 @@
+{
+  "SU2_closure": {
+    "SU2_algebra_closed": true,
+    "casimir_residual": 5.01777628209038e-15,
+    "generator_definition": {
+      "T_3": "diag(I3,-I3)/2",
+      "T_minus_CG": "|d><u| tensor U_CG^dagger",
+      "T_plus_CG": "|u><d| tensor U_CG"
+    },
+    "neutral_generator_family_central": true,
+    "residual_[T1,T2]-iT3": 5.028511797141819e-15,
+    "residual_[T3,Tminus]+Tminus": 0.0,
+    "residual_[T3,Tplus]-Tplus": 0.0,
+    "residual_[Tplus,Tminus]-2T3": 1.0055589793695361e-14,
+    "tree_level_neutral_FCNC_generated": false
+  },
+  "action_term": {
+    "Hermitian": true,
+    "Lorentz_scalar": true,
+    "candidate_owner": "S_compatibility,current on the common M4 seam",
+    "classification": "CONDITIONAL_MINIMAL_DIMENSION_FOUR_ZERO_NEW_COEFFICIENT_INTERFACE_TERM",
+    "conjugate_branch": "W^- carries U_CG^dagger and hence Pi_01/chi2",
+    "covariant_derivative_form": "D_mu^CG=nabla_mu-i g2[W_mu^3 T3+(W_mu^+ T_plus^CG+W_mu^- T_minus^CG)/sqrt(2)] plus unchanged U1/SU3 pieces",
+    "current_stratified_action_contains_term": false,
+    "kernel": "U_CG=Pol[K_CG]",
+    "mass_dimension": 4,
+    "new_charged_coupling": false,
+    "new_continuous_parameter": false,
+    "new_fundamental_field": false,
+    "no_double_counting_form": "DeltaL_attach=-(g2/sqrt(2))[W_mu^+ bar(u_L) gamma^mu(U_CG-I3)d_L+h.c.], added to the existing identity current",
+    "normalized_branch": "K_CG proportional to T_chi0-i T_chi1",
+    "ownership_requires_action_derived_K_CG": true,
+    "parent_composite": "K_CG=P_u R_84[Pi_10(P_chi0 direct_sum P_chi1)J_parent[G,omega,sigma]] P_d",
+    "replacement_form": "L_cc^CG=-(g2/sqrt(2))[W_mu^+ bar(u_L) gamma^mu U_CG d_L+W_mu^- bar(d_L) gamma^mu U_CG^dagger u_L]",
+    "uses_existing_g2_only": true
+  },
+  "artifact": "BHSM_common_parent_charged_current_attachment_v8_8",
+  "basis_covariance": {
+    "basis_covariant": true,
+    "covariance_residual": 6.154234745030674e-13,
+    "kernel_law": "K_CG -> V_u K_CG V_d^dagger",
+    "polar_law": "U_CG -> V_u U_CG V_d^dagger"
+  },
+  "final_verdict": "BHSM_C3_G2_CHARGED_CURRENT_INTERFACE_CONSTRUCTION_CONDITIONAL_ON_ACTION_DERIVED_PARENT_KERNEL",
+  "frozen_predictions_changed": false,
+  "kernel_domain": {
+    "abstract_kernel": "K_CG=P_u R_84[Pi_10(P_chi0 direct_sum P_chi1) J_parent] P_d",
+    "full_rank": true,
+    "new_continuous_parameter": false,
+    "normalized_channel_form": "K_CG proportional to T_chi0-i T_chi1",
+    "pointwise_not_spacetime_nonlocal": true,
+    "polar_formula": "U_CG=K_CG(K_CG^dagger K_CG)^(-1/2)",
+    "polar_unitarity_residual": 7.115718513242904e-15,
+    "proxy_role": "full-rank and algebraic stress test only",
+    "proxy_singular_values": [
+      1.732778753608903,
+      0.22342731758753268,
+      0.006307460267131694
+    ],
+    "proxy_smallest_singular_value": 0.006307460267131694,
+    "proxy_uses_screen_inputs": true
+  },
+  "manual_extension_status": "CONDITIONAL_INTERFACE_CANDIDATE_NOT_CURRENT_ACTION_DERIVATION",
+  "new_continuous_parameter_added": false,
+  "new_fundamental_field_added": false,
+  "next_missing_object": "ACTION_DERIVATION_OF_THE_LOCAL_PARENT_CURRENT_KERNEL_AND_MASS_BASIS_ATTACHMENT_WITHOUT_SCREEN_INPUTS",
+  "physical_CKM_promoted": false,
+  "physical_interpretation_boundary": {
+    "conditional_interface_attachment_defined": true,
+    "current_action_attachment_derived": false,
+    "frozen_predictions_changed": false,
+    "mass_basis_formula": "V_phys=U_u^dagger U_CG U_d",
+    "physical_CKM_equals_U_CG": false,
+    "proxy_U_CG_jarlskog": 4.8514578493092246e-05,
+    "proxy_U_CG_matrix_magnitudes": [
+      [
+        0.9997416708048258,
+        0.02219435634679289,
+        0.0048992042952512495
+      ],
+      [
+        0.016473490684410952,
+        0.7854867655508928,
+        0.6186591672714992
+      ],
+      [
+        0.015659366559524292,
+        0.6184803567541515,
+        0.7856442149906079
+      ]
+    ],
+    "proxy_comparison_to_frozen_screen": {
+      "all_within_declared_ten_percent": false,
+      "candidate_angles": {
+        "sin_theta_12": 0.02219462270830806,
+        "sin_theta_13": 0.0048992042952512495,
+        "sin_theta_23": 0.6186665919965324
+      },
+      "candidate_jarlskog": 4.8514578493092246e-05,
+      "frobenius_magnitude_error": 0.9099527717803512,
+      "matrix_magnitudes": [
+        [
+          0.9997416708048258,
+          0.02219435634679289,
+          0.0048992042952512495
+        ],
+        [
+          0.016473490684410952,
+          0.7854867655508928,
+          0.6186591672714992
+        ],
+        [
+          0.015659366559524292,
+          0.6184803567541515,
+          0.7856442149906079
+        ]
+      ],
+      "relative_angle_errors": {
+        "sin_theta_12": -0.9016276287650526,
+        "sin_theta_13": 0.3752663470029883,
+        "sin_theta_23": 13.102931430479108
+      },
+      "relative_jarlskog_error": 0.5643958211017669,
+      "target_angles": {
+        "sin_theta_12": 0.2256184580048353,
+        "sin_theta_13": 0.0035623676140463315,
+        "sin_theta_23": 0.04386794299087895
+      },
+      "target_jarlskog": 3.10117029454378e-05
+    },
+    "proxy_promoted": false,
+    "screen_inputs_used_in_action_term": false,
+    "why_not_yet_CKM": "the localized Yukawa/mass-basis isometries U_u and U_d remain independent in the current stratified EFT"
+  },
+  "primary_result": "BHSM_MINIMAL_ZERO_PARAMETER_COMMON_PARENT_C3_G2_CHARGED_CURRENT_TERM_CONSTRUCTED_CONDITIONALLY",
+  "repository_master_action_modified": false,
+  "sprint": "bhsm-common-parent-charged-current-attachment-v8-8",
+  "transport_compatibility": {
+    "dynamic_case": "the existing parent-induced associated-bundle connections A_mu^u,d carry the variation; no arbitrary family connection is added",
+    "gauge_covariance_requires_parallel_transport": true,
+    "new_connection_parameter": false,
+    "spacetime_dependent_kernel_law": "D_mu^fam U_CG=partial_mu U_CG+A_mu^u U_CG-U_CG A_mu^d",
+    "static_retained_background": "D_mu^fam U_CG=0"
+  },
+  "uniqueness": {
+    "arbitrary_relative_C3_coefficient_allowed": false,
+    "consequence_1": "the family kernel in T_plus must be unitary; otherwise [T_plus,T_minus]=2T3 fails",
+    "consequence_2": "for full-rank K_CG the polar factor is the unique canonical unitary",
+    "consequence_3": "the coefficient is g2/sqrt(2), already fixed by the SU2 covariant derivative",
+    "extra_g_ch_allowed": false,
+    "f_of_X_deformation_added": false,
+    "polar_role": "canonical normalization, not a tunable dynamical response law",
+    "requirements": [
+      "local M4 Lorentz scalar",
+      "linear in W_plus/W_minus and a left-handed fermion bilinear",
+      "uses the existing SU2 coupling g2",
+      "Hermitian",
+      "family-basis covariant",
+      "preserves the SU2 algebra and the family-central T3 generator",
+      "uses the full-rank common-parent C3/G2 kernel without a fitted function"
+    ],
+    "unique_under_declared_requirements": true
+  },
+  "validation": {
+    "SU2_algebra_closed": true,
+    "basis_covariant": true,
+    "conditional_parent_backreaction_formula_present": true,
+    "frozen_predictions_unchanged": true,
+    "neutral_current_remains_family_central": true,
+    "no_new_charged_coupling": true,
+    "no_new_continuous_parameter": true,
+    "no_new_fundamental_field": true,
+    "no_physical_CKM_overclaim": true,
+    "polar_isometry_unitary": true,
+    "proxy_kernel_full_rank": true,
+    "unique_minimal_term": true
+  },
+  "validation_passed": true,
+  "variation_and_backreaction": {
+    "W_minus_current": "Hermitian adjoint of the W_plus current",
+    "W_plus_current": "delta S/delta W_mu^+=-(g2/sqrt(2))sqrt(-h) bar(u_L) gamma^mu U_CG d_L",
+    "fermion_equations": "the localized Dirac equations acquire the same U_CG/U_CG^dagger charged-current blocks",
+    "full_rank_required": true,
+    "parent_backreaction": "conditional delta S_parent-current is nonzero through delta U_CG/delta(G,omega,sigma) only after K_CG is action-derived",
+    "polar_differential": [
+      "K=U H, H=(K^dagger K)^(1/2)",
+      "H deltaH+deltaH H=deltaK^dagger K+K^dagger deltaK",
+      "deltaU=(deltaK-U deltaH)H^(-1)"
+    ],
+    "rank_drop_behavior": "a partial isometry would not represent three complete weak families; rank loss is therefore a fail-closed action-domain boundary"
+  },
+  "version": "v8.8"
+}

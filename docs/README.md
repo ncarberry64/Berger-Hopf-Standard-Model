@@ -4,6 +4,8 @@ Use the top-level [STATUS.md](../STATUS.md) for current status and
 [CLAIMS.md](../CLAIMS.md) for claim boundaries. Files below provide supporting
 detail and historical evidence.
 
+Current campaign: [v9.0 action-selected 8D vacuum/flavor completion](bhsm_action_selected_8d_vacuum_flavor_completion_v9_0.md), with the conditional [v8.4 carrier](bhsm_composite_carrier_current_reduction_v8_4.md), [v8.5 profile](bhsm_topographic_profile_component_selection_v8_5.md), [v8.6 complex attachment](bhsm_complex_profile_isospectral_attachment_v8_6.md), [v8.7 normalization](bhsm_master_action_relative_channel_normalization_v8_7.md), [v8.8 current interface](bhsm_common_parent_charged_current_attachment_v8_8.md), and [v8.9 lens theorem](bhsm_automatic_geometric_lens_theorem_v8_9.md) reports.
+
 BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity. Physical eV/GeV neutrino mass closure remains open pending a numeric neutral stiffness length sqrt(A_nu/Z_nu), a physical K_neutral,eff map in m^-2, and complete-action derivation of the admissible response cone.
 
 The current minimal-action theory dictionary is documented in

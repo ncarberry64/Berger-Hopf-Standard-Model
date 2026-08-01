@@ -160,3 +160,27 @@ Implement tests for:
 
 Do not proceed to manuscript polishing until the tests run.
 
+## Durable Action-to-Prediction Policy
+
+- Never use measured mass or mixing data in an action, vacuum solve, branch
+  choice, normalization, regularization, or eigenvector ordering rule.
+- Do not change frozen prediction files, their hashes, or historical bare and
+  dressed screens during an action-completion sprint.
+- Fail closed: a screen, proxy, or conditional theorem is not a physical
+  prediction until every action-owned map in its dependency chain is explicit
+  and evaluable.
+- Deterministic artifacts must be materialized twice with byte-identical
+  output; run the status, forbidden-claim, frozen-integrity, precision, and
+  public-readiness audits before publication.
+- The authoritative architecture is stratified: provisional `S8`, relative
+  two-cap `S5|4`, intrinsic localized `S4` EFT, and explicit compatibility
+  maps. Do not silently move fields or coefficients between strata.
+- Preserve the distinction among historical screen, algebraic candidate,
+  conditional theorem, and action-derived physical prediction.
+- Ignore archive caches and generated files, including `__pycache__/`,
+  `.pytest_cache/`, and `*.pyc`; integrate only reviewed source, tests,
+  reports, and reproducible artifacts.
+
+See `docs/BHSM_1_0_DEFINITION_OF_DONE.md`, `docs/current_bhsm_status.md`, and
+`theory/gate_ledger.md` for the current release and claim boundaries.
+

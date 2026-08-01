@@ -414,3 +414,24 @@ RB-15 remains `BLOCKED_EXACT_OBJECT_PROVED`; RB-16 remains downstream.
 
 Current exact verdict:
 `BHSM_PROJECTED_SPECTRAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DERIVED_INTERTWINER_FROM_FROZEN_LEDGER_TO_LOCALIZED_ACTION_SPECTRUM`.
+
+## v9.0 authoritative status
+
+The v8.4--v8.9 packages are integrated as conditional representation,
+profile, normalization, charged-current-interface, and geometric-lens
+theorems. The simplest finite-radius static `R_t x S7` constant-scalar vacuum
+is ruled out because it is not Einstein. More general stationary branches are
+not selected by a proved consistent truncation, boundary domain, or the
+independent action coefficients.
+
+The active `S8` field bundle does not own a chiral family carrier, global
+composite immersion, or G2/C3 common-parent charged current. Thus the physical
+pullbacks `G_u,Q_u,G_d,Q_d,K_ud` and `V_BHSM` remain undefined. All retained
+manual numerical matrices are `PROXY_STRESS_TEST_ONLY` and have
+`physical_promotion=false`.
+
+RB-15 remains blocked by the exact action-chain obstruction; RB-16 remains
+downstream.
+
+Current exact verdict:
+`BHSM_ACTION_SELECTED_8D_VACUUM_FLAVOR_MATRIX_NOT_DERIVABLE_FROM_CURRENT_STRATIFIED_ACTION`.

@@ -805,3 +805,19 @@ Gram matrices, bilinear stress components, mixed metric--mode Hessian,
 background/self-backreaction split, interface compliance, all three
 response matrices, virtual-door placement, alpha status, prediction freeze,
 post-freeze comparison, RB-15/RB-16, and release verdict.
+
+## Composite-state flavor campaign v8.4--v9.0
+
+```bash
+python -m bhsm.interface composite-carrier-current-status --format markdown
+python -m bhsm.interface topographic-profile-status --format markdown
+python -m bhsm.interface complex-profile-status --format markdown
+python -m bhsm.interface channel-normalization-status --format markdown
+python -m bhsm.interface common-parent-current-status --format markdown
+python -m bhsm.interface geometric-lens-status --format markdown
+python -m bhsm.interface 8d-vacuum-flavor-status --format markdown
+```
+
+The v8.4--v8.9 commands report conditional theorems and explicitly marked
+proxy stress tests. The v9.0 command is the authoritative action-chain result:
+no physical `G_u,Q_u,G_d,Q_d,K_ud` or flavor matrix is emitted.

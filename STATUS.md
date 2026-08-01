@@ -9,19 +9,24 @@ BHSM is an artifact-backed mathematical and computational research framework,
 not a replacement for the Standard Model established by empirical tests. Frozen
 internal prediction records, executable interfaces, deterministic artifacts,
 and extensive geometric/action calculations exist. The v7.2 finite-input
-physical observable map is complete in one declared scheme. BHSM v8.3 retains
-the conditionally derived and frozen three-slot modules and exhausts the
-basis-free projected-spectral route. An exact metric-dependent associated-
-scalar operator and explicit legacy proxy derivatives exist, but no
-action-derived intertwiner realizes the frozen `(k,j,q)` ledger as that
-operator's normalized spectrum. Action-canonical stress, response matrices,
-mass ratios, and CKM therefore remain undefined.
+physical observable map is complete in one declared scheme. BHSM v9.0
+integrates the conditional v8.4--v8.9 flavor functor but proves that the
+current stratified action cannot evaluate it: no unique stationary 8D vacuum,
+global composite immersion, or action-owned parent current is supplied.
+Action-canonical pullback matrices and a physical flavor matrix therefore
+remain undefined.
 
 Preferred current classifications are: **Adopted from established
 physics/mathematics**, **Adopted BHSM axiom**, **BHSM identification**,
 **Derived consequence**, **Numerically validated**, **Needs empirical test**,
 **Rejected by calculation**, and **Active construction target**. Historical
 status labels below remain dated provenance and do not override this summary.
+
+The v8.4--v8.9 conditional theorem chain is now integrated. BHSM v9.0 proves
+that the current stratified action does not supply a unique stationary 8D
+vacuum, explicit composite immersions, or an action-derived common-parent
+charged-current kernel. Therefore `G_u,Q_u,G_d,Q_d,K_ud` and
+`V_BHSM` remain undefined; no physical matrix is promoted.
 
 The v6.18 threading response is a **Derived consequence** on its declared
 domain:
@@ -70,7 +75,7 @@ Reviewer entry points:
 [claim boundaries](CLAIMS.md), and
 [reproduction guide](docs/reviewer_reproduction_guide.md).
 
-BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v8.3 exhausts the basis-free projected-spectral route. The exact action-owned scalar Berger operator and its metric derivatives exist, and the legacy proxy gives explicit diagonal responses, but no action-derived intertwiner maps the frozen (k,j,q) ledger to normalized action eigenspaces and the localized physical carrier. Action-canonical physical stresses, mass ratios, and CKM therefore remain undefined, with RB-15/RB-16 blocked.
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v9.0 integrates the conditional v8.4--v8.9 composite-carrier, profile, channel-normalization, charged-current, and geometric-lens theorems. The current stratified action does not select a unique stationary eight-dimensional vacuum or own the global composite immersions and parent charged-current kernel required to evaluate G_u,Q_u,G_d,Q_d,K_ud. No physical flavor matrix is therefore derived; RB-15/RB-16 remain blocked.
 
 BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity. Physical eV/GeV neutrino mass closure remains open pending a numeric neutral stiffness length sqrt(A_nu/Z_nu), a physical K_neutral,eff map in m^-2, and complete-action derivation of the admissible response cone.
 
@@ -2757,3 +2762,25 @@ RB-15 remains `BLOCKED_EXACT_OBJECT_PROVED`; RB-16 remains downstream.
 
 Current exact verdict:
 `BHSM_PROJECTED_SPECTRAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DERIVED_INTERTWINER_FROM_FROZEN_LEDGER_TO_LOCALIZED_ACTION_SPECTRUM`.
+
+## v9.0 action-selected 8D vacuum/flavor completion
+
+The v8.4--v8.9 representation, profile, normalization, charged-current, and
+geometric-lens results are integrated as conditional theorems. All archived
+tests pass, and the algebraic lens pipeline is independently cross-checked.
+The v8.8 charged-current expression is a conditional compatibility interface;
+its abstract `K_CG` is not derived from `S8`.
+
+For homogeneous scalars, `chi` retains a constant zero mode and the scalar
+stationary branches depend on independent `A0,G0`. The finite-radius static
+`R_t x S7` constant-scalar ansatz is not Einstein. More general vacuum
+branches remain open because no consistent truncation and boundary-domain
+theorem has been established.
+
+The current `S8[G,chi,sigma]` field bundle contains no active chiral family
+carrier, G2/C3 parent current, or SU(2) connection. Consequently the composite
+immersions and their pullbacks cannot be evaluated. `G_u,Q_u,G_d,Q_d,K_ud`
+and `V_BHSM` are undefined, and no physical matrix is promoted.
+
+Current exact verdict:
+`BHSM_ACTION_SELECTED_8D_VACUUM_FLAVOR_MATRIX_NOT_DERIVABLE_FROM_CURRENT_STRATIFIED_ACTION`.

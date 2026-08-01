@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+from importlib import import_module
 import json
 import sys
 from pathlib import Path
@@ -324,8 +325,6 @@ from .master_action.classical_mode_stress_incidence import (
 from .master_action.classical_mode_stress_incidence import (
     status_to_markdown as classical_mode_stress_status_to_markdown,
 )
-
-
 def _emit(payload: dict[str, Any], output_format: str) -> None:
     if output_format == "json":
         print(json.dumps(payload, indent=2, sort_keys=True))
@@ -345,6 +344,29 @@ def _emit(payload: dict[str, Any], output_format: str) -> None:
         return
     for key, value in payload.items():
         print(f"{key}: {value}")
+
+
+def _conditional_status_to_markdown(title: str, payload: dict[str, Any]) -> str:
+    """Render an integrated conditional sprint without importing its stack."""
+
+    primary = payload.get("primary_result", payload.get("final_verdict"))
+    final = payload.get("final_verdict", primary)
+    passed = payload.get("validation_passed")
+    if passed is None:
+        passed = payload.get("validation", {}).get("all_passed")
+    lines = [f"# {title}", "", f"Primary result: `{primary}`", ""]
+    if final != primary:
+        lines.extend([f"Boundary: `{final}`", ""])
+    lines.extend(
+        [
+            f"Physical promotion: `{str(bool(payload.get('physical_CKM_promoted') or payload.get('physical_CKM_emitted'))).lower()}`",
+            f"Validation passed: `{str(bool(passed)).lower()}`",
+        ]
+    )
+    next_object = payload.get("next_missing_object")
+    if next_object:
+        lines.extend(["", "## Exact next object", "", f"`{next_object}`"])
+    return "\n".join(lines) + "\n"
 
 
 def _print_unicode(text: str) -> None:
@@ -861,6 +883,20 @@ def build_parser() -> argparse.ArgumentParser:
     classical_mode_stress.add_argument(
         "--format", choices=("json", "markdown"), default="markdown"
     )
+    integrated_status_commands = (
+        ("composite-carrier-current-status", "Render the BHSM v8.4 composite-carrier/current closure"),
+        ("topographic-profile-status", "Render the BHSM v8.5 profile component-selection audit"),
+        ("complex-profile-status", "Render the BHSM v8.6 complex-profile attachment audit"),
+        ("channel-normalization-status", "Render the BHSM v8.7 C3/G2 normalization audit"),
+        ("common-parent-current-status", "Render the BHSM v8.8 conditional charged-current interface"),
+        ("geometric-lens-status", "Render the BHSM v8.9 automatic geometric-lens theorem"),
+        ("8d-vacuum-flavor-status", "Render the BHSM v9.0 action-selected vacuum/flavor audit"),
+    )
+    for command, help_text in integrated_status_commands:
+        status_command = commands.add_parser(command, help=help_text)
+        status_command.add_argument(
+            "--format", choices=("json", "markdown"), default="markdown"
+        )
     return parser
 
 
@@ -921,6 +957,58 @@ def main(argv: Sequence[str] | None = None) -> int:
         payload = classical_mode_stress_status_payload()
         if args.format == "markdown":
             print(classical_mode_stress_status_to_markdown(payload), end="")
+        else:
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        return 0
+    integrated_payloads = {
+        "composite-carrier-current-status": (
+            "BHSM composite-carrier/current reduction v8.4",
+            ".master_action.composite_carrier_current_reduction",
+            "status_report",
+        ),
+        "topographic-profile-status": (
+            "BHSM topographic-profile component selection v8.5",
+            ".master_action.topographic_profile_component_selection",
+            "status_report",
+        ),
+        "complex-profile-status": (
+            "BHSM complex-profile isospectral attachment v8.6",
+            ".master_action.complex_profile_isospectral_attachment",
+            "status_report",
+        ),
+        "channel-normalization-status": (
+            "BHSM relative channel normalization v8.7",
+            ".master_action.relative_channel_normalization",
+            "payload",
+        ),
+        "common-parent-current-status": (
+            "BHSM common-parent charged-current interface v8.8",
+            ".master_action.common_parent_charged_current_attachment",
+            "payload",
+        ),
+        "geometric-lens-status": (
+            "BHSM automatic geometric lens theorem v8.9",
+            ".master_action.automatic_geometric_lens_theorem",
+            "payload",
+        ),
+    }
+    if args.command in integrated_payloads:
+        title, module_name, factory_name = integrated_payloads[args.command]
+        module = import_module(module_name, package=__package__)
+        payload = getattr(module, factory_name)()
+        if args.format == "markdown":
+            print(_conditional_status_to_markdown(title, payload), end="")
+        else:
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        return 0
+    if args.command == "8d-vacuum-flavor-status":
+        module = import_module(
+            ".master_action.eight_dimensional_vacuum_flavor_completion",
+            package=__package__,
+        )
+        payload = module.status_report()
+        if args.format == "markdown":
+            print(module.status_to_markdown(payload), end="")
         else:
             print(json.dumps(payload, indent=2, sort_keys=True))
         return 0
