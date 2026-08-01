@@ -916,6 +916,12 @@ def build_parser() -> argparse.ArgumentParser:
         ("common-envelopment-mode-status", "Render the BHSM v10.3 seam-fold-Hopf common-mode audit"),
         ("deformation-intertwiner-status", "Render the BHSM v10.3 deformation intertwiner audit"),
         ("coupled-deformation-rank-status", "Render the BHSM v10.3 coupled physical-rank audit"),
+        ("three-mode-envelopment-status", "Render the BHSM v10.3 author-clarified three-mode architecture"),
+        ("spacetime-removal-depth-status", "Render the BHSM v10.3 invariant depth candidate audit"),
+        ("three-mode-interference-status", "Render the BHSM v10.3 interference-output gate"),
+        ("seam-projection-status", "Render the BHSM v10.3 coordinate-seam projection gate"),
+        ("global-scale-anchor-status", "Render the BHSM v10.3 global geometry/unit-anchor policy"),
+        ("generation-phase-interface-status", "Render the BHSM v10.3 one-cycle three-phase interface"),
     )
     for command, help_text in integrated_status_commands:
         status_command = commands.add_parser(command, help=help_text)
@@ -1109,6 +1115,12 @@ def main(argv: Sequence[str] | None = None) -> int:
         "common-envelopment-mode-status",
         "deformation-intertwiner-status",
         "coupled-deformation-rank-status",
+        "three-mode-envelopment-status",
+        "spacetime-removal-depth-status",
+        "three-mode-interference-status",
+        "seam-projection-status",
+        "global-scale-anchor-status",
+        "generation-phase-interface-status",
     }:
         module = import_module(
             ".envelopment.deformation_selection_gate_v10_3",

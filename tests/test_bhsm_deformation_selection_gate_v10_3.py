@@ -13,18 +13,19 @@ from bhsm.interface.envelopment import deformation_selection_gate_v10_3 as gate
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def test_common_mode_equivalence_fails_closed_before_nonuniqueness():
+def test_third_depth_mode_fails_closed_without_substituting_seam():
     payload = gate.completion_payload()
     assert payload["validation_passed"] is True
-    assert payload["primary_verdict"] == (
-        "BHSM_COMMON_ENVELOPMENT_MODE_EQUIVALENCE_BLOCKED_BY_UNDERIVED_CROSS_DOMAIN_HESSIAN"
-    )
+    assert payload["primary_verdict"] == "BHSM_THIRD_SPACETIME_REMOVAL_MODE_NOT_PRESENT_IN_CURRENT_ACTION_DOMAIN"
     assert payload["minimality"]["fully_admissible_candidates"] == []
     assert payload["minimality"]["buoyancy_physical_scalar_count"] == 0
     assert payload["new_fields_adopted"] == []
     assert payload["new_continuous_parameters"] == []
-    assert payload["equivalence_status"] == "EQUIVALENCE_UNRESOLVED"
+    assert payload["equivalence_status"] == "ONE_MODE_EQUIVALENCE_INVALIDATED_BY_AUTHOR_ONTOLOGY"
     assert payload["seam_fold_hopf_physically_inequivalent"] is False
+    assert payload["three_distinct_physical_modes"] == "AUTHOR_AXIOM"
+    assert payload["third_mode_action_owned"] is False
+    assert payload["physical_depth_value"] is None
 
 
 def test_v102_no_go_and_claim_firewall_are_preserved():
@@ -58,7 +59,7 @@ def test_materializer_is_idempotent(tmp_path: Path):
     assert json.loads(first["BHSM_1_0_completion_gate.json"])["version"] == "v10.3"
 
 
-def test_nine_cli_commands_render_json_and_markdown():
+def test_fifteen_cli_commands_render_json_and_markdown():
     env = dict(os.environ)
     env["PYTHONPATH"] = str(ROOT / "src")
     commands = (
@@ -66,6 +67,9 @@ def test_nine_cli_commands_render_json_and_markdown():
         "common-stress-pullback-status", "global-zero-mode-status", "deformation-selection-status",
         "common-envelopment-mode-status", "deformation-intertwiner-status",
         "coupled-deformation-rank-status",
+        "three-mode-envelopment-status", "spacetime-removal-depth-status",
+        "three-mode-interference-status", "seam-projection-status",
+        "global-scale-anchor-status", "generation-phase-interface-status",
     )
     for command in commands:
         base = [sys.executable, "-m", "bhsm.interface", command]

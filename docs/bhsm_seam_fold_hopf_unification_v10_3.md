@@ -1,4 +1,9 @@
-# BHSM v10.3 Seam--Fold--Hopf Unification Audit
+# BHSM v10.3 Historical One-Mode Unification Audit
+
+Status: `INVALIDATED_BY_AUTHOR_ONTOLOGY` as the active physical architecture.
+The mathematical comparison below remains useful provenance. The corrected
+architecture has distinct core, wall, and depth slots; the seam is a coordinate
+readout and is not one of them.
 
 The common state is
 

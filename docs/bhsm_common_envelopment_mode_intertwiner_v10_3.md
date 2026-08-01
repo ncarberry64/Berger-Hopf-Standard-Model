@@ -1,5 +1,10 @@
 # BHSM v10.3 Common Envelopment-Mode Intertwiner
 
+This document preserves the earlier one-mode hypothesis audit. Author
+clarification marks that hypothesis `INVALIDATED_BY_AUTHOR_ONTOLOGY`. The
+derived seam--fold map remains valid as projection data; it is not used to
+collapse the corrected three physical slots.
+
 The derived map
 
 \[

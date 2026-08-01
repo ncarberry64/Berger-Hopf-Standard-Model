@@ -252,13 +252,15 @@ Exact verdict:
 
 ## v10.3 current completion gate
 
-RB-15 remains blocked because the common seam--fold--Hopf cross-domain Hessian,
-source, and boundary domain are not derived. The v6.27 fixed-support result
-already maps the seam trace to the fold amplitude, so physical inequivalence is
-not established. RB-16 remains downstream.
+RB-15 remains blocked because the current action has no distinct action-owned,
+gauge-invariant spacetime-removal/depth degree `q_D`. Author ontology requires
+three interacting physical slots (`q_C`, `q_W`, `q_D`), while the seam is only
+a coordinate/observable projection. The common three-mode kinetic matrix,
+Hessian, source, interference-selected output, and global geometry therefore
+remain unavailable. RB-16 remains downstream.
 
 Exact verdict:
-`BHSM_COMMON_ENVELOPMENT_MODE_EQUIVALENCE_BLOCKED_BY_UNDERIVED_CROSS_DOMAIN_HESSIAN`.
+`BHSM_THIRD_SPACETIME_REMOVAL_MODE_NOT_PRESENT_IN_CURRENT_ACTION_DOMAIN`.
 
 Exact next object:
-`COMMON_PHYSICAL_ENVELOPMENT_MODE_INTERTWINER_BETWEEN_SEAM_SHIFT_FOLD_AND_HOPF_BREATHING`.
+`ACTION_OWNED_GAUGE_INVARIANT_SPACETIME_REMOVAL_DEPTH_DEGREE`.

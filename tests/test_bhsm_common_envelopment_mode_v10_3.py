@@ -25,6 +25,7 @@ def test_gauge_quotient_and_cross_blocks_fail_closed():
     assert payload["blocks"]["H_env"][2][1]["status"] == "UNDEFINED_CROSS_DOMAIN"
     assert payload["equivalence_status"] == "EQUIVALENCE_UNRESOLVED"
     assert payload["physically_inequivalent"] is False
+    assert payload["one_mode_equivalence_hypothesis"] == "INVALIDATED_BY_AUTHOR_ONTOLOGY"
 
 
 def test_known_blocks_are_symmetric_and_typed():

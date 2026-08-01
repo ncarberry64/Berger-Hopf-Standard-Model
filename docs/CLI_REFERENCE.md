@@ -50,3 +50,27 @@ python -m bhsm.interface triality-generation-scale-status --format markdown
 For prediction-registry and artifact-adapter commands, see
 [python_cli.md](python_cli.md) and
 [artifact_backed_cli.md](artifact_backed_cli.md).
+
+## v10.3 three-mode relational-envelopment audit
+
+The current v10.3 status is available without writing artifacts:
+
+```powershell
+python -m bhsm.interface three-mode-envelopment-status --format json
+python -m bhsm.interface spacetime-removal-depth-status --format json
+python -m bhsm.interface three-mode-interference-status --format json
+python -m bhsm.interface seam-projection-status --format json
+python -m bhsm.interface global-scale-anchor-status --format json
+python -m bhsm.interface generation-phase-interface-status --format json
+```
+
+The earlier `common-envelopment-mode-status`,
+`deformation-intertwiner-status`, and `coupled-deformation-rank-status`
+commands remain reproducible historical audits. Their one-mode hypothesis is
+`INVALIDATED_BY_AUTHOR_ONTOLOGY` and is not the current architecture.
+
+Regenerate every v10.3 artifact with:
+
+```powershell
+python scripts/materialize_physical_deformation_domain_v10_3.py
+```

@@ -5,11 +5,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from .common_envelopment_mode_v10_3 import (
-    NEXT_EXACT_OBJECT,
-    PRIMARY_VERDICT,
-    common_mode_payload,
-)
+from .common_envelopment_mode_v10_3 import common_mode_payload
 from .coupled_mode_rank_v10_3 import coupled_rank_payload
 from .deformation_intertwiner_v10_3 import intertwiner_payload
 from .embedding_constraint_v10_3 import EMBEDDING_VERDICT, embedding_payload
@@ -20,6 +16,17 @@ from .global_zero_mode_v10_3 import GLOBAL_VERDICT, global_payload
 from .local_radion_v10_3 import RADION_VERDICT, radion_payload
 from .relational_axioms import AUTHOR_DOCTRINE, deterministic_json, doctrine_sha256
 from .stress_pullback_v10_3 import STRESS_VERDICT, stress_payload
+from .three_mode_architecture_v10_3 import (
+    ARCHITECTURE_VERDICT,
+    NEXT_EXACT_OBJECT,
+    PRIMARY_VERDICT,
+    architecture_payload,
+)
+from .spacetime_removal_depth_v10_3 import DEPTH_VERDICT, depth_payload
+from .three_mode_interference_v10_3 import interference_payload
+from .seam_projection_v10_3 import SEAM_VERDICT, seam_payload
+from .global_scale_anchor_v10_3 import GLOBAL_VERDICT as GLOBAL_SCALE_VERDICT, global_scale_payload
+from .generation_phase_interface_v10_3 import generation_phase_payload
 
 
 VERSION = "v10.3"
@@ -35,6 +42,11 @@ ARTIFACT_FILES = {
     "common_mode": "BHSM_common_envelopment_mode_v10_3.json",
     "intertwiner": "BHSM_deformation_intertwiner_v10_3.json",
     "rank": "BHSM_coupled_physical_rank_v10_3.json",
+    "three_mode": "BHSM_three_mode_architecture_v10_3.json",
+    "depth": "BHSM_spacetime_removal_depth_gate_v10_3.json",
+    "interference": "BHSM_three_mode_interference_gate_v10_3.json",
+    "seam": "BHSM_seam_projection_gate_v10_3.json",
+    "scale": "BHSM_global_scale_anchor_policy_v10_3.json",
     "selection": "BHSM_minimal_deformation_selection_gate_v10_3.json",
 }
 
@@ -201,6 +213,12 @@ def completion_payload() -> dict[str, Any]:
     intertwiner = intertwiner_payload()
     reductions = effective_reduction_payload()
     rank = coupled_rank_payload()
+    architecture = architecture_payload()
+    depth = depth_payload()
+    interference = interference_payload()
+    seam = seam_payload()
+    scale = global_scale_payload()
+    generations = generation_phase_payload()
     validation = {
         "configuration_valid": configuration["validation_passed"],
         "embedding_valid": embedding["validation_passed"],
@@ -215,6 +233,15 @@ def completion_payload() -> dict[str, Any]:
         "rank_valid": rank["validation_passed"],
         "equivalence_unresolved": common_mode["equivalence_status"] == "EQUIVALENCE_UNRESOLVED",
         "inequivalence_not_promoted": not common_mode["physically_inequivalent"],
+        "three_mode_architecture_valid": architecture["validation_passed"],
+        "depth_gate_valid": depth["validation_passed"],
+        "third_mode_not_substituted": depth["selected_depth_functional"] is None,
+        "seam_projection_valid": seam["validation_passed"],
+        "seam_not_counted": not seam["independent_physical_mode"],
+        "interference_gate_valid": interference["validation_passed"],
+        "no_interference_output": not interference["physical_output_emitted"],
+        "global_scale_policy_valid": scale["validation_passed"],
+        "generation_interface_valid": generations["validation_passed"],
         "doctrine_preserved": doctrine_sha256() == "f981a6501526a3ff324cbf5cb4f1e26b1f7d3ecd0c7b2759c200f6aa1ee184b0",
     }
     return {
@@ -231,6 +258,10 @@ def completion_payload() -> dict[str, Any]:
         "stress_verdict": STRESS_VERDICT,
         "global_verdict": GLOBAL_VERDICT,
         "minimality_verdict": MINIMALITY_VERDICT,
+        "architecture_verdict": ARCHITECTURE_VERDICT,
+        "depth_verdict": DEPTH_VERDICT,
+        "seam_verdict": SEAM_VERDICT,
+        "global_scale_verdict": GLOBAL_SCALE_VERDICT,
         "configuration": configuration,
         "embedding": embedding,
         "localized_radion": radion,
@@ -241,6 +272,12 @@ def completion_payload() -> dict[str, Any]:
         "deformation_intertwiner": intertwiner,
         "effective_mode_reductions": reductions,
         "coupled_physical_rank": rank,
+        "three_mode_architecture": architecture,
+        "spacetime_removal_depth": depth,
+        "three_mode_interference": interference,
+        "seam_projection": seam,
+        "global_scale_anchor": scale,
+        "generation_phase_interface": generations,
         "minimality": minimality,
         "v10_2_no_go_preserved": True,
         "topological_buoyancy_claimed": False,
@@ -254,7 +291,13 @@ def completion_payload() -> dict[str, Any]:
         "physical_mass_or_matrix_emitted": False,
         "seam_fold_hopf_unified": False,
         "seam_fold_hopf_physically_inequivalent": False,
-        "equivalence_status": "EQUIVALENCE_UNRESOLVED",
+        "equivalence_status": "ONE_MODE_EQUIVALENCE_INVALIDATED_BY_AUTHOR_ONTOLOGY",
+        "three_distinct_physical_modes": "AUTHOR_AXIOM",
+        "third_mode_action_owned": False,
+        "physical_depth_value": None,
+        "physical_output_scale": None,
+        "generation_phases": [None, None, None],
+        "quantum_probabilities": None,
         "validation": validation,
         "validation_passed": all(validation.values()),
         "next_exact_object": NEXT_EXACT_OBJECT,
@@ -281,6 +324,11 @@ def artifact_payloads() -> dict[str, dict[str, Any]]:
             "effective_mode_reductions": completion["effective_mode_reductions"],
         },
         "rank": completion["coupled_physical_rank"],
+        "three_mode": completion["three_mode_architecture"],
+        "depth": completion["spacetime_removal_depth"],
+        "interference": completion["three_mode_interference"],
+        "seam": completion["seam_projection"],
+        "scale": completion["global_scale_anchor"],
         "selection": completion,
     }
 
@@ -298,15 +346,19 @@ def canonical_completion_gate_payload() -> dict[str, Any]:
             "next_highest_upstream_blocker": NEXT_EXACT_OBJECT,
             "physical_deformation_action_domain_derived": False,
             "buoyancy_physical_scalar_count": 0,
-            "common_envelopment_mode_equivalence": "EQUIVALENCE_UNRESOLVED",
+            "common_envelopment_mode_equivalence": "INVALIDATED_BY_AUTHOR_ONTOLOGY",
             "seam_fold_hopf_physically_inequivalent": False,
+            "three_distinct_physical_modes": "AUTHOR_AXIOM",
+            "third_spacetime_removal_mode_action_owned": False,
+            "physical_depth_emitted": False,
+            "physical_output_scale_emitted": False,
             "new_fields_in_v10_3": [],
             "new_continuous_parameters_in_v10_3": [],
             "BHSM_1_0_release_complete": False,
         }
     )
     gate["RB15"] = {
-        "status": "BLOCKED_BY_UNDERIVED_CROSS_DOMAIN_HESSIAN",
+        "status": "BLOCKED_BY_MISSING_ACTION_OWNED_SPACETIME_REMOVAL_DEPTH_MODE",
         "resolution": NEXT_EXACT_OBJECT,
     }
     return gate
@@ -324,6 +376,12 @@ def command_payload(command: str) -> dict[str, Any]:
         "common-envelopment-mode-status": completion["common_envelopment_mode"],
         "deformation-intertwiner-status": completion["deformation_intertwiner"],
         "coupled-deformation-rank-status": completion["coupled_physical_rank"],
+        "three-mode-envelopment-status": completion["three_mode_architecture"],
+        "spacetime-removal-depth-status": completion["spacetime_removal_depth"],
+        "three-mode-interference-status": completion["three_mode_interference"],
+        "seam-projection-status": completion["seam_projection"],
+        "global-scale-anchor-status": completion["global_scale_anchor"],
+        "generation-phase-interface-status": completion["generation_phase_interface"],
     }
     if command not in sections:
         raise ValueError(f"unknown v10.3 status command: {command}")

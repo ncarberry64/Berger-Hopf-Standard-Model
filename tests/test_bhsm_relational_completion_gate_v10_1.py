@@ -29,13 +29,8 @@ def test_completion_gate_is_conditional_and_fail_closed():
 
 def test_current_master_api_advances_while_historical_gate_stays_v101():
     assert CURRENT_VERSION == "v10.3"
-    assert CURRENT_VERDICT == (
-        "BHSM_COMMON_ENVELOPMENT_MODE_EQUIVALENCE_BLOCKED_BY_UNDERIVED_CROSS_DOMAIN_HESSIAN"
-    )
-    assert CURRENT_MISSING_OBJECT == (
-        "COMMON_PHYSICAL_ENVELOPMENT_MODE_INTERTWINER_BETWEEN_SEAM_SHIFT_"
-        "FOLD_AND_HOPF_BREATHING"
-    )
+    assert CURRENT_VERDICT == "BHSM_THIRD_SPACETIME_REMOVAL_MODE_NOT_PRESENT_IN_CURRENT_ACTION_DOMAIN"
+    assert CURRENT_MISSING_OBJECT == "ACTION_OWNED_GAUGE_INVARIANT_SPACETIME_REMOVAL_DEPTH_DEGREE"
     canonical = gate.canonical_completion_gate_payload()
     assert canonical["version"] == "v10.1"
     assert canonical["author_doctrine_integrated"] is True

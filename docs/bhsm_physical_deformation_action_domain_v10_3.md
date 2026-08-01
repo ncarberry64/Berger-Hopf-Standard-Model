@@ -2,7 +2,7 @@
 
 ## Verdict
 
-`BHSM_COMMON_ENVELOPMENT_MODE_EQUIVALENCE_BLOCKED_BY_UNDERIVED_CROSS_DOMAIN_HESSIAN`
+`BHSM_THIRD_SPACETIME_REMOVAL_MODE_NOT_PRESENT_IN_CURRENT_ACTION_DOMAIN`
 
 This result preserves the v10.2 Topological-Buoyancy no-go. It does not say
 that the full metric lacks scalar deformation degrees. It says that the
@@ -73,21 +73,23 @@ sign when `kappa5>0`. No scalar was appended. However its intrinsic M4 source
 is absent, the stored S5 action is not its full pushforward, and its
 homogeneous limit reproduces the v10.2 no-static-equilibrium result.
 
-## Degree count
+## Corrected physical-mode count
 
-After the known seam--fold constraint, the formal reduced basis contains two
-conditional components whose equivalence is unresolved:
+Author ontology requires three distinct physical slots. The current action
+supplies two conditional candidates:
 
 - local M8 breathing mode `beta`;
 - M5 scalar-wall fold amplitude `q`.
 
-The B1 threading trace is constraint-fixed and a coordinate `rho` shift is
-gauge. Neither surviving scalar satisfies the complete buoyancy criteria.
-The missing fold--Hopf kinetic/Hessian blocks allow physical kinetic rank one
-or two. Therefore the selected buoyancy scalar count is zero, but neither
-non-uniqueness nor physical inequivalence follows.
+The third slot is invariant spacetime removal/depth and has no current
+action-owned variable. The seam is a coordinate/observable readout, not a
+fourth physical mode. No complete three-mode kinetic rank is emitted.
 
-## Seam--Fold--Hopf Unification Audit
+## Historical Seam--Fold--Hopf Unification Audit
+
+Status: `INVALIDATED_BY_AUTHOR_ONTOLOGY`. The comparison is preserved because
+it supplies exact projection and missing-block information, but it is not the
+active physical architecture.
 
 Historical objects:
 
@@ -118,6 +120,71 @@ Unified physical variable: unavailable. Its boundary and interface components
 are related exactly, but its interior coefficient and normalization cannot be
 derived before the common cross-domain variation.
 
+## Author Clarification -- Three-Mode Architecture
+
+Physical modes:
+
+- core/Hopf mode: `q_C=delta ln(a_F/a_F0)`, conditional M8 candidate;
+- enclosure-wall/fold mode: `q_W=q_fold`, conditional M5 candidate;
+- spacetime-removal/depth mode: `q_D`, absent from the current action domain.
+
+Seam:
+
+- physical or coordinate: coordinate/observable projection;
+- projection map: `psi_seam=Pi_seam(q_C,q_W,q_D)`, full map open;
+- historical support-shift relation:
+  `S_Sigma=-(tau*pi*chi_1/16)q_W` through local `O(D^2 q)`.
+
+Three-mode action:
+
+- kinetic matrix: `K_CC` and `K_WW` conditional; `K_DD` open;
+- Hessian: `H_CC` and `H_WW` conditional; `H_DD` open;
+- mixed blocks: core--wall `UNDEFINED_CROSS_DOMAIN`; all depth blocks `OPEN`;
+- common source: absent;
+- constraints: historical seam projection retained; no complete three-mode
+  constraint system.
+
+Interference output:
+
+- stable coupled vector: null;
+- relative phases: null;
+- output functional: null; only the Hermitian interface
+  `epsilon_out=v^dagger M_env v` is recorded;
+- global-scale dependence: unresolved;
+- field/particle classification: null.
+
+Depth:
+
+- invariant: none selected;
+- action source: absent;
+- gauge status: candidate audit complete, no eligible degree;
+- background normalization: target only;
+- verdict: `BHSM_SPACETIME_REMOVAL_DEPTH_REQUIRES_A_NEW_ACTION_OWNED_DEGREE`.
+
+Global geometry:
+
+- stationary solution: absent;
+- unique shape: not selected;
+- remaining scale symmetry: yes;
+- cosmic anchor: at most one allowed, none used;
+- particle inputs used: none.
+
+Generations:
+
+- one particle cycle: interface only, no orbit;
+- three phases: three null slots;
+- monodromy interface: recorded, operator absent;
+- mass output: null;
+- mixing output: null.
+
+Core transition interface:
+
+- absorption, reorganization, emission, and probabilities: null;
+- no-signalling: future gate, not claimed.
+
+Verdict:
+`BHSM_THIRD_SPACETIME_REMOVAL_MODE_NOT_PRESENT_IN_CURRENT_ACTION_DOMAIN`.
+
 ## Exact next object
 
-`COMMON_PHYSICAL_ENVELOPMENT_MODE_INTERTWINER_BETWEEN_SEAM_SHIFT_FOLD_AND_HOPF_BREATHING`
+`ACTION_OWNED_GAUGE_INVARIANT_SPACETIME_REMOVAL_DEPTH_DEGREE`

@@ -165,8 +165,7 @@ def test_artifact_schema_keeps_release_and_post_1_0_items_separate():
     assert payload["parameter_free_extension_blocker"] == "RB-02"
     assert payload["open_release_blockers"] == ["RB-15", "RB-16"]
     assert payload["next_highest_upstream_blocker"] == (
-        "COMMON_PHYSICAL_ENVELOPMENT_MODE_INTERTWINER_BETWEEN_SEAM_SHIFT_"
-        "FOLD_AND_HOPF_BREATHING"
+        "ACTION_OWNED_GAUGE_INVARIANT_SPACETIME_REMOVAL_DEPTH_DEGREE"
     )
 
 

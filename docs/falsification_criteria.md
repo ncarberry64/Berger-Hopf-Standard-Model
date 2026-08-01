@@ -81,11 +81,14 @@ gauge-invariant compactness observable, energy-depth sign, weak-field limit,
 equivalence behavior, stability, and dimensional scale from that same action.
 The present campaign emits none of those physical outputs.
 
-## BHSM v10.3 common-deformation equivalence boundary
+## BHSM v10.3 three-mode/depth boundary
 
-The unresolved-equivalence verdict fails when one common action/domain derives
-the fold--Hopf mixed blocks, source projections, boundary maps, physical rank,
-and spectrum. Rank one would support one relational mode; rank greater than one
-with an action-selected lowest eigenvector would support a multicomponent
-sector. Physical inequivalence requires incompatible exact charges or spectra,
-not missing data. The v6.27 seam--fold projection is already established.
+The present verdict fails if the checked-in action already supplies a distinct,
+action-owned, gauge-invariant spacetime-removal/depth degree `q_D`, independent
+of core/Hopf `q_C`, enclosure-wall/fold `q_W`, and coordinate seam motion.
+After that prerequisite is met, one common action/domain must derive the full
+three-mode kinetic matrix, Hessian, source, boundary maps, Hermitian
+interference law, physical spectrum, and selected output without fitted
+coefficients. The v6.27 seam--fold projection remains an observable readout;
+it is not a fourth physical degree. Generation phases must be derived from the
+sector cycle and cannot be inferred from the three-mode count.

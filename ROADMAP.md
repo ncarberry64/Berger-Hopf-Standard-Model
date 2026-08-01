@@ -337,15 +337,17 @@ Recommended pivot: transcribe existing CKM relative transport and flavor geometr
 
 ## v10.3 deformation-domain pivot
 
-Do not reopen the M5 moving-endpoint calculation or invent a unique scalar
-normal for `M4 -> M8`. Import the exact seam--fold constraint map, then test its
-coupling to the Hopf breathing component without setting absent mixed blocks to
-zero. Physical equivalence and inequivalence are both unresolved. The next
-exact object is:
+Do not reopen the M5 moving-endpoint calculation, count the seam as a physical
+mode, or identify three modes with three generations. Preserve the exact
+seam--fold projection as an observable map and preserve the earlier one-mode
+audit as `INVALIDATED_BY_AUTHOR_ONTOLOGY`. The live architecture requires
+distinct `q_C`, `q_W`, and `q_D` slots. The next exact object is:
 
-`COMMON_PHYSICAL_ENVELOPMENT_MODE_INTERTWINER_BETWEEN_SEAM_SHIFT_FOLD_AND_HOPF_BREATHING`.
+`ACTION_OWNED_GAUGE_INVARIANT_SPACETIME_REMOVAL_DEPTH_DEGREE`.
 
-After that common operator is derived, determine its physical rank and derive
-its full local stress pushforward, shape or
-radion equation, covariant global restoring law, stability, weak-field limit,
-and scale before evaluating Topological Buoyancy.
+After `q_D` is action-owned and gauge invariant, derive all common three-mode
+kinetic/Hessian/source blocks, the Hermitian interference law and selected
+output, the seam projection, and the generation-phase interface. Only then
+derive the full local stress pushforward, covariant restoring law, stability,
+weak-field limit, and at most one cosmic unit anchor before evaluating
+Topological Buoyancy. Particle-data calibration remains forbidden.

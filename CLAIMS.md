@@ -2210,6 +2210,18 @@ Exact verdict:
 
 Supported:
 
+- as author ontology, exactly three distinct interacting physical-mode slots
+  are required: core/Hopf `q_C`, enclosure-wall/fold `q_W`, and invariant
+  spacetime-removal/depth `q_D`;
+- the present action contains conditional representatives for `q_C` and `q_W`
+  but no distinct action-owned, gauge-invariant representative for `q_D`;
+- the seam is a coordinate/observable projection and is excluded from the
+  physical-mode count; its exact historical invariant readout is
+  `S_Sigma=-(tau*pi*chi_1/16)q_W`;
+- the earlier one-mode equivalence hypothesis is preserved as historical work
+  and marked `INVALIDATED_BY_AUTHOR_ONTOLOGY`;
+- three generations are cycle phases of one sector cycle, not the three
+  envelopment modes; the action-derived generation-phase interface is open;
 - the v6.27 M5 moving-endpoint/support-shift problem is already closed through
   local order `D^2 q`; it is not an unresolved radion;
 - a direct `M4 -> M8` embedding has four normal directions, while the lifted
@@ -2226,8 +2238,14 @@ Supported:
 
 Not supported:
 
-- declaring the fold and Hopf components identical or physically inequivalent
-  before the common cross-domain operator is derived;
+- promoting the author three-mode ontology to an action-derived theorem;
+- treating seam shift as a fourth physical degree of freedom;
+- relabeling determinant ratio, curvature concentration, normal stress,
+  extrinsic curvature, fiber deficit, lapse, or support loss as `q_D` without
+  an action-owned invariant construction;
+- inventing coefficients, phases, or amplitudes for an interference-selected
+  output, or identifying that output with a mass or global scale;
+- identifying three physical modes with three generations;
 - adding one scalar normal to a codimension-four embedding without a
   normal-bundle selection theorem;
 - treating Fredholm compatibility or an integrated Hamiltonian constraint as
@@ -2237,7 +2255,7 @@ Not supported:
 - any physical buoyancy force, effective Newton constant, mass, or prediction.
 
 Exact verdict:
-`BHSM_COMMON_ENVELOPMENT_MODE_EQUIVALENCE_BLOCKED_BY_UNDERIVED_CROSS_DOMAIN_HESSIAN`.
+`BHSM_THIRD_SPACETIME_REMOVAL_MODE_NOT_PRESENT_IN_CURRENT_ACTION_DOMAIN`.
 
-Minimality verdict:
-`BHSM_PRE_UNIFICATION_CANDIDATE_AUDIT_INCONCLUSIVE`.
+Architecture verdict:
+`BHSM_THREE_MODE_ARCHITECTURE_INTEGRATED_BUT_COMMON_ACTION_COUPLINGS_REMAIN_OPEN`.

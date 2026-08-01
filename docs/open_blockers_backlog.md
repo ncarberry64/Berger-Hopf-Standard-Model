@@ -1,12 +1,13 @@
 # Open Blockers Backlog
 
-Current public status: v10.3 recovers the earlier M5 seam-shift and fold-mode
-results, including their exact constraint projection, and finds their coupling
-to M8 Hopf breathing unresolved. Physical inequivalence is not proved.
-Relational Envelopment
-Holism remains author doctrine and all earlier scoped results remain
-authoritative. The historical table remains provenance. The live Tier-C object
-is `COMMON_PHYSICAL_ENVELOPMENT_MODE_INTERTWINER_BETWEEN_SEAM_SHIFT_FOLD_AND_HOPF_BREATHING`.
+Current public status: v10.3 records exactly three interacting physical-mode
+slots as author ontology: core/Hopf `q_C`, enclosure-wall/fold `q_W`, and
+spacetime-removal/depth `q_D`. The current action has conditional candidates for
+the first two and no distinct action-owned gauge-invariant `q_D`. The seam is a
+coordinate/observable projection, not a physical mode. The earlier one-mode
+hypothesis remains historical provenance and is marked
+`INVALIDATED_BY_AUTHOR_ONTOLOGY`. The live Tier-C object is
+`ACTION_OWNED_GAUGE_INVARIANT_SPACETIME_REMOVAL_DEPTH_DEGREE`.
 
 Historical compatibility boundary: structural architecture integrated conditional; numerical closure open.
 This sentence records the pre-v7.1 numerical-closure status required by the
@@ -16,26 +17,19 @@ Each blocker must be handled without fitting observed data after comparison and 
 
 ## Current v10.3 highest-upstream blocker
 
-`COMMON_PHYSICAL_ENVELOPMENT_MODE_INTERTWINER_BETWEEN_SEAM_SHIFT_FOLD_AND_HOPF_BREATHING`
+`ACTION_OWNED_GAUGE_INVARIANT_SPACETIME_REMOVAL_DEPTH_DEGREE`
 
-The prior-work audit finds that the M5 seam displacement was already treated as
-the moving endpoint, support shift, threading trace, and normal-support
-residual. That special fold construction is compatible with fixed B1 support
-through local order `D^2 q`; it does not supply an all-sector nonlinear M8
-embedding. The seam trace is fixed by the fold amplitude; coupling of that
-boundary/interface component to the M8 Hopf breathing mode remains unresolved.
-
-Direct `M4 -> M8` embedding has four normal directions. The lifted
-seven-dimensional seam is codimension one but lacks an action owner. The
-formal intrinsic delta-stress lift is tangential and requires a shape equation
-or bulk reaction for normal conservation. Delta support, finite collar, and
-smooth parent localization are distinct representations whose common-domain
-equivalence is unresolved. The energy-depth sign and weak-field/equivalence limits remain
-ineligible.
+The candidate audit rejects determinant ratio, curvature concentration, normal
+stress, extrinsic curvature, fiber deficit, lapse, and support loss as a
+presently eligible `q_D`: each lacks action ownership, gauge invariance, or
+independence from `q_C`/`q_W`. Until a genuine `q_D` is added by derivation, the
+three-mode kinetic matrix, Hessian, source, interference output, seam
+projection, energy-depth sign, and weak-field/equivalence limits remain
+ineligible. The v6.27 invariant seam readout of `q_W` remains exact.
 
 Exact verdict:
 
-`BHSM_COMMON_ENVELOPMENT_MODE_EQUIVALENCE_BLOCKED_BY_UNDERIVED_CROSS_DOMAIN_HESSIAN`
+`BHSM_THIRD_SPACETIME_REMOVAL_MODE_NOT_PRESENT_IN_CURRENT_ACTION_DOMAIN`
 
 | Blocker | Current status | Why it matters | Next valid action | Forbidden invalid action |
 | --- | --- | --- | --- | --- |

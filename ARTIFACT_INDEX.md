@@ -1637,7 +1637,20 @@ Doctrine and manuscript chapter:
   missing Hopf intertwiners, effective-reduction audit, and equivalence gates.
 - `artifacts/BHSM_coupled_physical_rank_v10_3.json`: rank bounds, generalized
   eigenproblem status, and nonlinear-continuation blocker.
+- `artifacts/BHSM_three_mode_architecture_v10_3.json`: corrected author
+  ontology, distinct `q_C`, `q_W`, and `q_D` slots, common block ledger, and
+  current exact depth blocker.
+- `artifacts/BHSM_spacetime_removal_depth_gate_v10_3.json`: exhaustive audit
+  of existing depth-like candidates and the fail-closed missing `q_D` result.
+- `artifacts/BHSM_three_mode_interference_gate_v10_3.json`: Hermitian
+  interference-law scaffold with null action coefficients, phases, and output.
+- `artifacts/BHSM_seam_projection_gate_v10_3.json`: coordinate transformation,
+  no-independent-kinetic test, historical invariant fold readout, and open
+  full three-mode projection.
+- `artifacts/BHSM_global_scale_anchor_policy_v10_3.json`: closed-geometry
+  stationarity audit and the at-most-one-cosmic-anchor/no-particle-calibration
+  policy.
 - `artifacts/BHSM_minimal_deformation_selection_gate_v10_3.json`: exhaustive
-  candidate/extension comparison, common-mode audit, exact next object, and
-  fail-closed physical outputs.
+  candidate/extension comparison, corrected three-mode audit, exact next
+  object, and fail-closed physical outputs.
 - `artifacts/BHSM_1_0_completion_gate.json`: canonical v10.3 RB-15/RB-16 gate.

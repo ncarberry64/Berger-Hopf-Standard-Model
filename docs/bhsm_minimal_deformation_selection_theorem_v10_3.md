@@ -1,5 +1,10 @@
 # BHSM v10.3 Minimal Deformation Selection Theorem
 
+Historical status: `INVALIDATED_BY_AUTHOR_ONTOLOGY` as a search for one
+physical mode. This candidate audit remains useful provenance, but the live
+architecture requires three distinct slots and begins with the missing
+spacetime-removal/depth degree.
+
 An admissible buoyancy deformation must be action-owned, gauge invariant,
 one healthy scalar after constraints, well posed, completely sourced by
 localized stress, globally restored, parameter-clean, continuously reducible
@@ -22,6 +27,8 @@ equivalence is unresolved and Topological Buoyancy is not derived.
 Primary verdict:
 `BHSM_COMMON_ENVELOPMENT_MODE_EQUIVALENCE_BLOCKED_BY_UNDERIVED_CROSS_DOMAIN_HESSIAN`.
 
+This is the preserved historical verdict, not the current repository verdict.
+
 Minimality verdict:
 `BHSM_PRE_UNIFICATION_CANDIDATE_AUDIT_INCONCLUSIVE`.
 
@@ -38,3 +45,6 @@ Buoyancy remain downstream.
 
 Exact next object:
 `COMMON_PHYSICAL_ENVELOPMENT_MODE_INTERTWINER_BETWEEN_SEAM_SHIFT_FOLD_AND_HOPF_BREATHING`.
+
+This is the historical next object. The current next object is
+`ACTION_OWNED_GAUGE_INVARIANT_SPACETIME_REMOVAL_DEPTH_DEGREE`.
