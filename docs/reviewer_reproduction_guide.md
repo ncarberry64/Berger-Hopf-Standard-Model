@@ -118,3 +118,21 @@ and that the v6.6 mapping-space FR line remains adopted rather than
 parent-derived. The closed-FLRW numerical branch is an ansatz validation only.
 All physical Gram/Hessian/current/matrix and mass/lepton outputs must remain
 null, and no minimal extension may be marked adopted.
+
+## Reviewer checkpoint: v10.0
+
+```bash
+python -m bhsm.interface unified-envelopment-status --format json
+python -m bhsm.interface dynamic-envelope-status --format json
+python -m bhsm.interface completion-marks-status --format markdown
+python -m bhsm.interface global-scale-status --format json
+python -m bhsm.interface particle-orbit-status --format json
+python scripts/materialize_unified_envelopment_foundation_v10_0.py
+python -m pytest -q tests/test_bhsm_envelopment_foundation_v10_0.py tests/test_bhsm_dynamic_action_v10_0.py tests/test_bhsm_collective_reduction_v10_0.py tests/test_bhsm_floquet_v10_0.py tests/test_bhsm_completion_gate_v10_0.py
+```
+
+Run the materializer twice and compare bytes. Verify the independent profile
+quadratures, symbolic equilibrium identities, four completion marks, unchanged
+frozen-file hashes, null physical mass/matrices, and exact global-scale
+degeneracy. The representative collective-radius calculation is `PROXY_ONLY`,
+not a particle boundary-value solution.

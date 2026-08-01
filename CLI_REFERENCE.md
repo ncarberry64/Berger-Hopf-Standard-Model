@@ -822,3 +822,19 @@ python -m bhsm.interface geometry-only-geon-fr-status --format markdown
 The v8.4--v8.9 commands report conditional theorems and explicitly marked
 proxy stress tests. The v9.0 command is the authoritative action-chain result:
 no physical `G_u,Q_u,G_d,Q_d,K_ud` or flavor matrix is emitted.
+
+## Machian geometric envelopment v10.0
+
+```bash
+python -m bhsm.interface unified-envelopment-status --format markdown
+python -m bhsm.interface dynamic-envelope-status --format json
+python -m bhsm.interface completion-marks-status --format markdown
+python -m bhsm.interface global-scale-status --format json
+python -m bhsm.interface particle-orbit-status --format markdown
+python scripts/materialize_unified_envelopment_foundation_v10_0.py
+```
+
+These commands report the structural doctrine/action, exact collective
+reduction, four completion marks, scale degeneracy, and fail-closed physical
+orbit/family outputs. They emit no physical mass or CKM/PMNS matrix and do not
+alter the frozen prediction files.

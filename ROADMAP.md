@@ -1,5 +1,17 @@
 # BHSM Roadmap
 
+## v10.0 exact critical path
+
+The structural envelopment action and conditional completion architecture are
+implemented. The highest-upstream target is
+`ACTION_SELECTED_GAUGE_DRESSED_CHARGED_SELF_ENVELOPMENT_RELATIVE_PERIODIC_ORBIT_WITH_LOCAL_CHIRAL_TRANSGRESSION`.
+It must supply a gauge-fixed coupled eta/sigma/metric/gauge boundary-value
+problem, a localized M4 chiral transgression, two independent numerical
+solutions, constraint and convergence evidence, and a physical Floquet
+classification. Only then may the action-owned family immersions and cycle
+forms `G_f,Q_f,K_ud` be evaluated. CKM, PMNS, physical masses, and collider
+runtime remain downstream and must stay null until their gates pass.
+
 Current neutral-sector boundary: conditional dimensionless propagation closure,
 a conditional neutral spectral-mass theorem, and conditional
 measurement-supported admissible positivity. Physical eV/GeV mass closure

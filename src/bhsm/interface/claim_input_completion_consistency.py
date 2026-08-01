@@ -420,17 +420,15 @@ def historical_canonical_completion_gate_payload() -> dict[str, Any]:
 
 
 def canonical_completion_gate_payload() -> dict[str, Any]:
-    """Return the current geometry-only geon/FR completion gate.
+    """Return the current unified-envelopment completion gate.
 
     Historical materializers delegate here so that rerunning an earlier sprint
-    cannot silently roll the repository-wide canonical gate back from v9.1.
+    cannot silently roll the repository-wide canonical gate back from v10.0.
     """
 
-    from bhsm.interface.master_action import (
-        geometry_only_geon_fr_carrier_completion as current,
-    )
+    from bhsm.interface.envelopment import completion_gate as current
 
-    return current.completion_gate_payload()
+    return current.canonical_completion_gate_payload()
 
 
 def artifact_payloads(root: Path) -> dict[str, dict[str, Any]]:

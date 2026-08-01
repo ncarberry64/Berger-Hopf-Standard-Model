@@ -892,6 +892,11 @@ def build_parser() -> argparse.ArgumentParser:
         ("geometric-lens-status", "Render the BHSM v8.9 automatic geometric-lens theorem"),
         ("8d-vacuum-flavor-status", "Render the BHSM v9.0 action-selected vacuum/flavor audit"),
         ("geometry-only-geon-fr-status", "Render the BHSM v9.1 geometry-only geon/FR carrier audit"),
+        ("unified-envelopment-status", "Render the BHSM v10.0 unified envelopment campaign"),
+        ("dynamic-envelope-status", "Render the BHSM v10.0 collective envelope reduction"),
+        ("completion-marks-status", "Render the BHSM v10.0 four-level completion gate"),
+        ("global-scale-status", "Render the BHSM v10.0 closed-cosmic scale audit"),
+        ("particle-orbit-status", "Render the BHSM v10.0 particle-orbit and Floquet gates"),
     )
     for command, help_text in integrated_status_commands:
         status_command = commands.add_parser(command, help=help_text)
@@ -1021,6 +1026,23 @@ def main(argv: Sequence[str] | None = None) -> int:
         payload = module.status_report()
         if args.format == "markdown":
             print(module.status_to_markdown(payload), end="")
+        else:
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        return 0
+    if args.command in {
+        "unified-envelopment-status",
+        "dynamic-envelope-status",
+        "completion-marks-status",
+        "global-scale-status",
+        "particle-orbit-status",
+    }:
+        module = import_module(
+            ".envelopment.completion_gate",
+            package=__package__,
+        )
+        payload = module.command_payload(args.command)
+        if args.format == "markdown":
+            print(module.command_to_markdown(args.command, payload), end="")
         else:
             print(json.dumps(payload, indent=2, sort_keys=True))
         return 0

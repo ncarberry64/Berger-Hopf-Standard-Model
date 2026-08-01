@@ -222,7 +222,7 @@ def test_materializer_is_idempotent_and_canonical_gate_is_current():
     subprocess.run([sys.executable, str(script)], cwd=ROOT, check=True)
     assert first == master_action.artifact_bytes()
     canonical = json.loads((ROOT / "artifacts" / "BHSM_1_0_completion_gate.json").read_text(encoding="utf-8"))
-    assert canonical["version"] == "v9.1"
+    assert canonical["version"] == "v10.0"
 
 
 def test_cli_reports_action_terms_inputs_reduction_and_verdict():

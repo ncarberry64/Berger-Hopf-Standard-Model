@@ -22,10 +22,10 @@ def test_current_bhsm_status_json_schema() -> None:
         "collective_curvature_layer": "connected topographic-gravity extension candidate",
         "frozen_predictions_changed": False,
         "official_predictions_changed": False,
-        "current_campaign": "v9.1 geometry-only geon/FR carrier completion",
+        "current_campaign": "v10.0 Machian geometric envelopment foundation",
         "physical_flavor_matrix_derived": False,
-        "current_exact_verdict": "BHSM_GEOMETRY_ONLY_PARENT_ACTION_CANNOT_GENERATE_THE_REQUIRED_FR_CHIRAL_FLAVOR_CARRIER",
-        "next_exact_object": "ACTION_LEVEL_GLOBAL_TOPOLOGICAL_SECTOR_WITH_LOCAL_CHIRAL_TRANSGRESSION_AND_COMMON_PARENT_CURRENT_OWNERSHIP",
+        "current_exact_verdict": "BHSM_DYNAMIC_ENVELOPMENT_ACTION_AND_COMPLETION_ARCHITECTURE_CONSTRUCTED_CONDITIONALLY",
+        "next_exact_object": "ACTION_SELECTED_GAUGE_DRESSED_CHARGED_SELF_ENVELOPMENT_RELATIVE_PERIODIC_ORBIT_WITH_LOCAL_CHIRAL_TRANSGRESSION",
     }
 
 

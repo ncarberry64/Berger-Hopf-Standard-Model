@@ -9,12 +9,11 @@ BHSM is an artifact-backed mathematical and computational research framework,
 not a replacement for the Standard Model established by empirical tests. Frozen
 internal prediction records, executable interfaces, deterministic artifacts,
 and extensive geometric/action calculations exist. The v7.2 finite-input
-physical observable map is complete in one declared scheme. BHSM v9.0
-integrates the conditional v8.4--v8.9 flavor functor but proves that the
-current stratified action cannot evaluate it: no unique stationary 8D vacuum,
-global composite immersion, or action-owned parent current is supplied.
-Action-canonical pullback matrices and a physical flavor matrix therefore
-remain undefined.
+physical observable map is complete in one declared scheme. V9.1 proves that
+the original metric-plus-real-scalar action cannot generate the required
+geometry-only carrier. V10.0 adds a conditional structural bosonic
+envelopment extension and controlled collective reduction, but supplies no
+physical orbit, mass, flavor matrix, or absolute unit bridge.
 
 Preferred current classifications are: **Adopted from established
 physics/mathematics**, **Adopted BHSM axiom**, **BHSM identification**,
@@ -22,11 +21,11 @@ physics/mathematics**, **Adopted BHSM axiom**, **BHSM identification**,
 **Rejected by calculation**, and **Active construction target**. Historical
 status labels below remain dated provenance and do not override this summary.
 
-The v8.4--v8.9 conditional theorem chain is now integrated. BHSM v9.0 proves
-that the current stratified action does not supply a unique stationary 8D
-vacuum, explicit composite immersions, or an action-derived common-parent
-charged-current kernel. Therefore `G_u,Q_u,G_d,Q_d,K_ud` and
-`V_BHSM` remain undefined; no physical matrix is promoted.
+The v8.4--v8.9 conditional theorem chain remains integrated. V10.0 embeds its
+static Gram--Hessian/current formulas as the stationary-cycle limit. Because
+there is no stable action-selected orbit or action-owned family immersion,
+`G_u,Q_u,G_d,Q_d,K_ud` and `V_BHSM` remain undefined; no physical matrix is
+promoted.
 
 The v6.18 threading response is a **Derived consequence** on its declared
 domain:
@@ -75,7 +74,7 @@ Reviewer entry points:
 [claim boundaries](CLAIMS.md), and
 [reproduction guide](docs/reviewer_reproduction_guide.md).
 
-BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v9.1 proves that the original metric-plus-real-scalar S8 action cannot generate the required geometry-only FR chiral flavor carrier. The declared small-diffeomorphism configuration space has trivial fundamental group; the optional large-diffeomorphism Z2 is neither an action-selected rotation/exchange character nor a local spinor bundle. No stationary geon, G2 polarization, composite immersion, parent current, or physical flavor matrix is derived; RB-15/RB-16 remain blocked.
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v10.0 conditionally constructs the Machian geometric-envelopment action, based-map topology, connection current, and collective reduction. No charged physical orbit, invariant particle mass, CKM/PMNS matrix, absolute unit bridge, or complete 4D theory is derived. The v9.1 no-go remains authoritative for the original metric-plus-real-scalar action; RB-15/RB-16 remain blocked.
 
 BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity. Physical eV/GeV neutrino mass closure remains open pending a numeric neutral stiffness length sqrt(A_nu/Z_nu), a physical K_neutral,eff map in m^-2, and complete-action derivation of the admissible response cone.
 
@@ -2806,3 +2805,33 @@ chirality, global family immersion, and parent-current ownership together.
 
 Current exact verdict:
 `BHSM_GEOMETRY_ONLY_PARENT_ACTION_CANNOT_GENERATE_THE_REQUIRED_FR_CHIRAL_FLAVOR_CARRIER`.
+
+## v10.0 Machian geometric-envelopment foundation
+
+Machian Geometric Envelopment is now the canonical `STRUCTURAL_POSTULATE`:
+a particle is a stable gauge/diffeomorphism class of a relative-periodic
+complete state, a physical boundary forms only after the spectral
+`sigma=0` gate becomes marginal and a nonlinear branch exists, and charged
+mass is the invariant total cycle energy of the fully dressed solution.
+
+The v10.0 structural extension adds one constrained bosonic unit
+triality-spinor order parameter `eta` and an auxiliary multiplier. It derives
+the eta equation, boundary form, stress architecture, and connection current;
+it does not introduce an elementary fermion, mediator, fitted coupling, or
+physical mass input. The exact topology is
+`pi1(Map_*^N(S7,S7))=pi8(S7)=Z2`, while physical rotation and two-texture
+exchange representatives remain open.
+
+The seven-dimensional `p=2+p=8` reduction has an exact finite-radius
+collective equilibrium, positive radial stiffness, explicit normalized
+degree-one profile integrals, and a proxy breathing frequency. The overall
+scale remains degenerate. The physical orbit, local chiral transgression,
+Floquet stability, action-owned family immersion, current pullback, CKM,
+PMNS, and normalized 4D theory remain null.
+
+Completion marks are `REACHED`, `REACHED_CONDITIONALLY`, `OPEN`, and `OPEN`.
+Current exact verdict:
+`BHSM_DYNAMIC_ENVELOPMENT_ACTION_AND_COMPLETION_ARCHITECTURE_CONSTRUCTED_CONDITIONALLY`.
+
+Exact next object:
+`ACTION_SELECTED_GAUGE_DRESSED_CHARGED_SELF_ENVELOPMENT_RELATIVE_PERIODIC_ORBIT_WITH_LOCAL_CHIRAL_TRANSGRESSION`.

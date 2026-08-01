@@ -151,3 +151,23 @@ Exact next object:
 
 Exact verdict:
 `BHSM_GEOMETRY_ONLY_PARENT_ACTION_CANNOT_GENERATE_THE_REQUIRED_FR_CHIRAL_FLAVOR_CARRIER`.
+
+## v10.0 dynamic-envelopment gate
+
+The v9.1 no-go remains valid for the original metric-plus-real-scalar action.
+V10.0 conditionally extends that action by a constrained bosonic unit
+triality-spinor field. The based-map `Z2`, eta action/current, C3 structural
+projectors, and finite collective radius are established at their recorded
+classification levels. Physical rotation/exchange loops, local chirality,
+charged orbit, Floquet stability, family pullbacks, and the absolute scale are
+not established.
+
+RB-15: `BLOCKED_BY_NO_ACTION_SELECTED_CHARGED_RELATIVE_PERIODIC_ORBIT`.
+
+RB-16: `DOWNSTREAM_BLOCKED`.
+
+Exact next object:
+`ACTION_SELECTED_GAUGE_DRESSED_CHARGED_SELF_ENVELOPMENT_RELATIVE_PERIODIC_ORBIT_WITH_LOCAL_CHIRAL_TRANSGRESSION`.
+
+Exact verdict:
+`BHSM_DYNAMIC_ENVELOPMENT_ACTION_AND_COMPLETION_ARCHITECTURE_CONSTRUCTED_CONDITIONALLY`.

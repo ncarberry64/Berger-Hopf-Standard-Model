@@ -6,11 +6,11 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 
 | Item | Current status |
 | --- | --- |
-| Overall status | finite-input dimensionless core complete; physical scheme/observable transport open |
-| Latest theorem branch | `bhsm-covariant-bulk-boundary-reduction-functor-v7-1` |
+| Overall status | envelopment foundation reached; dynamic architecture conditional; physical derivation and empirical replacement open |
+| Latest theorem branch | `agent/bhsm-unified-envelopment-foundation-v10-0` |
 | Latest completed theorem commits | PO-BH-47 `ae5dac5`; PO-BH-47 cleanup `1c11d2b`; PO-BH-48 `8ac577c`; PO-BH-49 `c2cfc70`; PO-BH-50 `7a4523a`; PO-BH-51 `225786f`; PO-BH-52 `4de6d9c`; PO-BH-53 `20c58b1`; PO-BH-54 `11d1c60`; PO-BH-55 `cf0e998`; PO-BH-56 `9f93330`; PO-BH-57/58/59 merged to main; PO-BH-60 merged to main; PO-BH-61 merged to main; PO-BH-62 merged to main; PO-BH-63 merged to main; PO-BH-64 merged to main; PO-BH-65 stacked in PR #21; PO-BH-66 stacked in PR #22; PO-BH-67 stacked in PR #23; PO-BH-68 stacked in PR #24; full freeze protocol / charged `K_f` stacked in PR #25; boundary action source audit stacked in PR #26; boundary graded defect action kernel on this branch |
-| Test result summary | v7.1 import, deterministic materialization, CLI, and syntax checks pass; required GitHub CI is authoritative |
-| Current theorem/status label | `BHSM_PHYSICAL_COMPLETION_BLOCKED_BY_MISSING_COMMON_SCHEME_OBSERVABLE_TRANSPORT_FUNCTOR` |
+| Test result summary | v10.0 focused action, topology, reduction, CLI, materialization, and completion-gate checks pass; required GitHub CI is authoritative |
+| Current theorem/status label | `BHSM_DYNAMIC_ENVELOPMENT_ACTION_AND_COMPLETION_ARCHITECTURE_CONSTRUCTED_CONDITIONALLY` |
 | Candidate architecture complete | yes |
 | Full BHSM proven | no |
 | Standard Model fully derived | no |
@@ -22,6 +22,24 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 | Collective curvature layer | connected topographic-gravity extension candidate |
 | Frozen predictions changed | no |
 | Official predictions changed | no |
+
+## v10.0 authoritative envelopment status
+
+Machian Geometric Envelopment is integrated as a `STRUCTURAL_POSTULATE` and
+the eta structural extension is mathematically executable. The campaign
+derives the eta variational/current architecture, the exact based-map `Z2`,
+C3 projectors, and a normalized seven-dimensional collective reduction. It
+also proves that the present action retains an overall scale degeneracy.
+
+Mark I is `REACHED`, Mark II is `REACHED_CONDITIONALLY`, and Marks III/IV are
+`OPEN`. The charged relative-periodic orbit, local chiral transgression,
+physical Floquet spectrum, action-owned family forms, physical mass, CKM,
+PMNS, absolute unit bridge, and normalized 4D runtime remain absent. The v9.1
+no-go remains the exact result for the original metric-plus-real-scalar
+theory. Frozen predictions and official prediction logic are unchanged.
+
+Exact next object:
+`ACTION_SELECTED_GAUGE_DRESSED_CHARGED_SELF_ENVELOPMENT_RELATIVE_PERIODIC_ORBIT_WITH_LOCAL_CHIRAL_TRANSGRESSION`.
 
 ## v6.30.5 constrained-gravity update
 

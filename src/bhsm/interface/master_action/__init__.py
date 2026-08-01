@@ -1,7 +1,7 @@
 """BHSM master-action, transport, and vacuum-to-flavor audit API.
 
 The v7.0 constants and v7.1 master-action report remain exported for
-artifact compatibility. Current v9.1 completion constants and status are
+artifact compatibility. Current v10.0 completion constants and status are
 exposed separately.
 """
 
@@ -18,14 +18,14 @@ from .report import (
 )
 from .validation import validate_model
 
-CURRENT_VERSION = "v9.1"
+CURRENT_VERSION = "v10.0"
 CURRENT_MISSING_OBJECT = (
-    "ACTION_LEVEL_GLOBAL_TOPOLOGICAL_SECTOR_WITH_LOCAL_CHIRAL_"
-    "TRANSGRESSION_AND_COMMON_PARENT_CURRENT_OWNERSHIP"
+    "ACTION_SELECTED_GAUGE_DRESSED_CHARGED_SELF_ENVELOPMENT_RELATIVE_"
+    "PERIODIC_ORBIT_WITH_LOCAL_CHIRAL_TRANSGRESSION"
 )
 CURRENT_VERDICT = (
-    "BHSM_GEOMETRY_ONLY_PARENT_ACTION_CANNOT_GENERATE_THE_REQUIRED_"
-    "FR_CHIRAL_FLAVOR_CARRIER"
+    "BHSM_DYNAMIC_ENVELOPMENT_ACTION_AND_COMPLETION_ARCHITECTURE_"
+    "CONSTRUCTED_CONDITIONALLY"
 )
 
 
@@ -141,6 +141,20 @@ def geometry_only_geon_fr_carrier_status_to_markdown(payload=None):
     return status_to_markdown(payload)
 
 
+def unified_envelopment_status_payload():
+    """Return the current v10.0 unified-envelopment status."""
+    from ..envelopment.completion_gate import completion_status
+
+    return completion_status()
+
+
+def unified_envelopment_status_to_markdown(payload=None):
+    """Render the current v10.0 unified-envelopment status."""
+    from ..envelopment.completion_gate import status_to_markdown
+
+    return status_to_markdown(payload)
+
+
 __all__ = [
     "ARTIFACT_FILES",
     "CURRENT_MISSING_OBJECT",
@@ -160,6 +174,8 @@ __all__ = [
     "frozen_hashes_match",
     "geometry_only_geon_fr_carrier_status_payload",
     "geometry_only_geon_fr_carrier_status_to_markdown",
+    "unified_envelopment_status_payload",
+    "unified_envelopment_status_to_markdown",
     "materialize",
     "mass_curvature_response_status_payload",
     "mass_curvature_response_status_to_markdown",

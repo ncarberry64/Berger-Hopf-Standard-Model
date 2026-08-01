@@ -2142,3 +2142,23 @@ Not supported:
 Exact verdict:
 
 `BHSM_GEOMETRY_ONLY_PARENT_ACTION_CANNOT_GENERATE_THE_REQUIRED_FR_CHIRAL_FLAVOR_CARRIER`.
+
+## v10.0 Machian geometric-envelopment claim boundary
+
+Supported:
+
+- canonical structural definitions of particle, boundary formation, total-cycle mass, generation, neutrino, quark, and measurement;
+- a constrained bosonic unit-triality-spinor structural action, its Euler--Lagrange equation, boundary form, stress architecture, and connection current;
+- `pi1(Map_*^N(S7,S7))=pi8(S7)=Z2`, separated from unproved physical rotation and exchange representatives;
+- exact seven-dimensional `p=2+p=8` scaling, finite collective radius, positive stiffness, normalized prototype profile integrals, and stationary-cycle reduction to the v8.9 lens;
+- exact persistence of a global scale degeneracy.
+
+Not supported:
+
+- a physical charged relative-periodic orbit or Floquet stability;
+- a local M4 chiral transgression, unique C3-to-frozen-slot intertwiner, or full-rank physical current pullback;
+- a physical mass, CKM matrix, PMNS matrix, absolute unit bridge, confinement solution, measurement probabilities, or completed 4D theory;
+- interpreting the representative collective calculation as a particle or changing any frozen prediction.
+
+Exact verdict:
+`BHSM_DYNAMIC_ENVELOPMENT_ACTION_AND_COMPLETION_ARCHITECTURE_CONSTRUCTED_CONDITIONALLY`.
