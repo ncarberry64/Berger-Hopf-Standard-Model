@@ -69,3 +69,14 @@ backreaction follow from one covariant variation. Complementarity fails
 unless the full action, charges, spectra, representations, and vertices obey
 the involution. Entropy, neutrino equivalence, and measurement claims remain
 ineligible without their named maps and probability theorem.
+
+## BHSM v10.2 Topological-Buoyancy obstruction falsification boundary
+
+The obstruction fails if the current checked-in action and its declared
+domain can be shown, without a new term or fitted parameter, to vary one
+physical normal/radion degree, admit a positive static background, pull all
+localized stress into that equation, and derive a covariant global restoring
+constraint. Any future positive buoyancy claim must also derive its
+gauge-invariant compactness observable, energy-depth sign, weak-field limit,
+equivalence behavior, stability, and dimensional scale from that same action.
+The present campaign emits none of those physical outputs.

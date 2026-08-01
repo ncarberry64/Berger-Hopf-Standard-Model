@@ -2184,3 +2184,24 @@ Not supported:
 
 Exact verdict:
 `BHSM_RELATIONAL_ENVELOPMENT_PARENT_ACTION_CONSTRAINTS_CONSTRUCTED_CONDITIONALLY`.
+
+## v10.2 Topological Buoyancy claim boundary
+
+Supported:
+
+- exact normal-projector, collar-measure, and standard shape identities;
+- a geometric homogeneous M8 Hopf radion and its exact static no-go;
+- Hamiltonian/momentum constraints and constraint propagation;
+- a complete obstruction theorem for the present action.
+
+Not supported:
+
+- `rho` or proxy `R` as physical gravitational depth;
+- a varied physical seam embedding or static physical seam radion;
+- a compactness-dependent global restoring constraint;
+- a complete localized normal-stress pullback or energy-depth sign;
+- a Newtonian limit, equivalence-principle theorem, effective `G`, or absolute
+  mass scale.
+
+Exact verdict:
+`BHSM_CURRENT_PARENT_ACTION_CANNOT_GENERATE_TOPOLOGICAL_BUOYANCY`.

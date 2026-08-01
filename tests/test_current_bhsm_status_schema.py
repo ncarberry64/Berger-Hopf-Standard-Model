@@ -22,10 +22,10 @@ def test_current_bhsm_status_json_schema() -> None:
         "collective_curvature_layer": "connected topographic-gravity extension candidate",
         "frozen_predictions_changed": False,
         "official_predictions_changed": False,
-        "current_campaign": "v10.1 Relational Envelopment Holism constraints",
+        "current_campaign": "v10.2 Topological Buoyancy current-action exhaustion",
         "physical_flavor_matrix_derived": False,
-        "current_exact_verdict": "BHSM_RELATIONAL_ENVELOPMENT_PARENT_ACTION_CONSTRAINTS_CONSTRUCTED_CONDITIONALLY",
-        "next_exact_object": "COVARIANT_ACTION_DERIVED_NORMAL_RADION_BUOYANCY_FUNCTIONAL_WITH_GLOBAL_CONSTRAINT_AND_LOCAL_ENVELOPMENT_BACKREACTION",
+        "current_exact_verdict": "BHSM_CURRENT_PARENT_ACTION_CANNOT_GENERATE_TOPOLOGICAL_BUOYANCY",
+        "next_exact_object": "ACTION_DOMAIN_THEOREM_SELECTING_ONE_PHYSICAL_NORMAL_OR_RADION_DEGREE_WITH_COMPLETE_LOCALIZED_STRESS_PULLBACK_AND_COVARIANT_GLOBAL_RESTORING_CONSTRAINT",
     }
 
 

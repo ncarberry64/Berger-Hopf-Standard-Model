@@ -1601,3 +1601,19 @@ Doctrine and manuscript chapter:
 - `artifacts/BHSM_neutrino_relational_identity_gate_v10_1.json`: propagation
   ontology and null observable-equivalence outputs.
 - `artifacts/BHSM_1_0_completion_gate.json`: canonical v10.1 RB-15/RB-16 gate.
+
+## BHSM v10.2 Topological Buoyancy current-action exhaustion
+
+- `artifacts/BHSM_normal_radion_geometry_v10_2.json`: domain/index ledger,
+  normal geometry, collar identities, fixed-embedding audit, and exact
+  homogeneous Hopf-radion variation.
+- `artifacts/BHSM_global_constraint_audit_v10_2.json`: topology,
+  Hamiltonian, volume, curvature, Brown--York, and normalized-measure audit.
+- `artifacts/BHSM_topological_buoyancy_functional_v10_2.json`: complete
+  obstruction theorem, null functional, weak-field gate, dynamic-envelope
+  coupling firewall, scale gate, and unadopted extension comparison.
+- `artifacts/BHSM_local_envelopment_backreaction_v10_2.json`: stress-owner,
+  cross-stratum incidence, compactness, and energy-depth-sign audit.
+- `artifacts/BHSM_buoyancy_completion_gate_v10_2.json`: canonical v10.2
+  verdict, hindsight ledger, validation, and exact next object.
+- `artifacts/BHSM_1_0_completion_gate.json`: canonical v10.2 RB-15/RB-16 gate.

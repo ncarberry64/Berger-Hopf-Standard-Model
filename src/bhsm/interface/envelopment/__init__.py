@@ -8,6 +8,7 @@ from .completion_gate import (
     status_to_markdown,
 )
 from .relational_completion_gate import completion_payload as relational_completion_payload
+from .buoyancy_gate_v10_2 import completion_payload as buoyancy_completion_payload
 
 __all__ = [
     "PRIMARY_VERDICT",
@@ -16,4 +17,5 @@ __all__ = [
     "materialize",
     "status_to_markdown",
     "relational_completion_payload",
+    "buoyancy_completion_payload",
 ]

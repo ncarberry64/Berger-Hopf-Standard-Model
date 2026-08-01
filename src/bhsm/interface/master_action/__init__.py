@@ -1,7 +1,7 @@
 """BHSM master-action, transport, and vacuum-to-flavor audit API.
 
 The v7.0 constants and v7.1 master-action report remain exported for
-artifact compatibility. Current v10.1 completion constants and status are
+artifact compatibility. Current v10.2 completion constants and status are
 exposed separately.
 """
 
@@ -18,15 +18,12 @@ from .report import (
 )
 from .validation import validate_model
 
-CURRENT_VERSION = "v10.1"
+CURRENT_VERSION = "v10.2"
 CURRENT_MISSING_OBJECT = (
-    "COVARIANT_ACTION_DERIVED_NORMAL_RADION_BUOYANCY_FUNCTIONAL_WITH_"
-    "GLOBAL_CONSTRAINT_AND_LOCAL_ENVELOPMENT_BACKREACTION"
+    "ACTION_DOMAIN_THEOREM_SELECTING_ONE_PHYSICAL_NORMAL_OR_RADION_DEGREE_"
+    "WITH_COMPLETE_LOCALIZED_STRESS_PULLBACK_AND_COVARIANT_GLOBAL_RESTORING_CONSTRAINT"
 )
-CURRENT_VERDICT = (
-    "BHSM_RELATIONAL_ENVELOPMENT_PARENT_ACTION_CONSTRAINTS_"
-    "CONSTRUCTED_CONDITIONALLY"
-)
+CURRENT_VERDICT = "BHSM_CURRENT_PARENT_ACTION_CANNOT_GENERATE_TOPOLOGICAL_BUOYANCY"
 
 
 def observable_status_payload():
@@ -167,16 +164,33 @@ def relational_envelopment_status_to_markdown(payload=None):
     from ..envelopment.relational_completion_gate import command_to_markdown
 
     wrapped = {
-        "version": CURRENT_VERSION,
+        "version": "v10.1",
         "command": "relational-envelopment-status",
-        "primary_verdict": CURRENT_VERDICT,
+        "primary_verdict": "BHSM_RELATIONAL_ENVELOPMENT_PARENT_ACTION_CONSTRAINTS_CONSTRUCTED_CONDITIONALLY",
         "section": relational_envelopment_status_payload() if payload is None else payload,
         "author_axiom_promoted_to_theorem": False,
         "frozen_predictions_changed": False,
         "physical_matrix_emitted": False,
-        "next_exact_object": CURRENT_MISSING_OBJECT,
+        "next_exact_object": (
+            "COVARIANT_ACTION_DERIVED_NORMAL_RADION_BUOYANCY_FUNCTIONAL_WITH_"
+            "GLOBAL_CONSTRAINT_AND_LOCAL_ENVELOPMENT_BACKREACTION"
+        ),
     }
     return command_to_markdown("relational-envelopment-status", wrapped)
+
+
+def buoyancy_status_payload():
+    """Return the current v10.2 Topological Buoyancy obstruction status."""
+    from ..envelopment.buoyancy_gate_v10_2 import completion_payload
+
+    return completion_payload()
+
+
+def buoyancy_status_to_markdown(payload=None):
+    """Render the current v10.2 Topological Buoyancy status."""
+    from ..envelopment.buoyancy_gate_v10_2 import command_to_markdown
+
+    return command_to_markdown("topological-buoyancy-status")
 
 
 __all__ = [
@@ -188,6 +202,8 @@ __all__ = [
     "VERDICT",
     "VERSION",
     "artifact_bytes",
+    "buoyancy_status_payload",
+    "buoyancy_status_to_markdown",
     "classical_mode_stress_status_payload",
     "classical_mode_stress_status_to_markdown",
     "distinct_prediction_status_payload",

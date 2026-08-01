@@ -190,3 +190,21 @@ Exact next object:
 
 Exact verdict:
 `BHSM_RELATIONAL_ENVELOPMENT_PARENT_ACTION_CONSTRAINTS_CONSTRUCTED_CONDITIONALLY`.
+
+## v10.2 Topological-Buoyancy current-action gate
+
+The current stratified action has been exhausted for the v10.1 requested
+global-local radial balance. The seam embedding is not varied, the homogeneous
+Hopf radion has no positive static equilibrium, fixed topology supplies no
+radial energy scale, no global restoring constraint is action-derived, and
+the localized M4 stress has no complete pullback into the M8 radial equation.
+
+RB-15: `BLOCKED_BY_NO_PHYSICAL_NORMAL_RADION_ACTION_DOMAIN_AND_GLOBAL_RESTORING_CONSTRAINT`.
+
+RB-16: `DOWNSTREAM_BLOCKED`.
+
+Exact next object:
+`ACTION_DOMAIN_THEOREM_SELECTING_ONE_PHYSICAL_NORMAL_OR_RADION_DEGREE_WITH_COMPLETE_LOCALIZED_STRESS_PULLBACK_AND_COVARIANT_GLOBAL_RESTORING_CONSTRAINT`.
+
+Exact verdict:
+`BHSM_CURRENT_PARENT_ACTION_CANNOT_GENERATE_TOPOLOGICAL_BUOYANCY`.

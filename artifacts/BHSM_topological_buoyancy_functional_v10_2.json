@@ -1,0 +1,126 @@
+{
+  "absolute_scale": {
+    "global_modulus": null,
+    "kappa1_unit_bridge": null,
+    "physical_eV_GeV_output": null,
+    "primitive_ratio": "lambda=kappa0/kappa1 remains an unfixed theory coefficient ratio",
+    "remaining_dimensional_degeneracy": 1,
+    "unique_scale": false,
+    "verdict": "BHSM_BUOYANCY_BACKGROUND_LEAVES_ONE_UNFIXED_DIMENSIONAL_MODULUS"
+  },
+  "artifact": "BHSM_topological_buoyancy_functional_v10_2",
+  "dynamic_envelope": {
+    "R": "collective texture size only",
+    "R_map": null,
+    "a_F": "M8 homogeneous metric mode, not localized seam depth",
+    "arbitrary_coupling_added": false,
+    "coupled_reduced_action": null,
+    "depth_dependent_coefficients_A_i": null,
+    "kappa1_effective_of_depth": null,
+    "mixed_action_blocks": {
+      "delta2S_da_F_delta_H": 0,
+      "delta2S_da_F_delta_Psi": 0
+    },
+    "psi": null,
+    "s": "collective enclosure amplitude"
+  },
+  "extension_comparison": [
+    {
+      "adopted": false,
+      "class": "varied normal embedding",
+      "new_field": "psi or embedding X",
+      "new_parameter": null,
+      "status": "REQUIRES_ACTION_DOMAIN_EXTENSION"
+    },
+    {
+      "adopted": false,
+      "class": "full radion pushforward completion",
+      "new_field": "no new M8 field; new cross-stratum ownership",
+      "new_parameter": null,
+      "status": "REQUIRES_REPLACING_OR_MATCHING_STORED_S5_OWNER"
+    },
+    {
+      "adopted": false,
+      "class": "fixed global volume",
+      "new_field": "auxiliary multiplier",
+      "new_parameter": "V_star",
+      "status": "EXTERNAL_DIMENSIONFUL_INPUT"
+    },
+    {
+      "adopted": false,
+      "class": "nonminimal curvature-envelopment coupling",
+      "new_field": null,
+      "new_parameter": "new coupling",
+      "status": "NEW_ACTION_TERM"
+    },
+    {
+      "adopted": false,
+      "class": "topological multiplier",
+      "new_field": "auxiliary multiplier",
+      "new_parameter": "possibly none",
+      "status": "DEGREE_STILL_SCALE_FREE"
+    }
+  ],
+  "functional": {
+    "U_buoy": null,
+    "boundedness": null,
+    "delta_U_delta_a_F": null,
+    "delta_U_delta_psi": null,
+    "dimensions": null,
+    "domain": null,
+    "equilibrium": null,
+    "fitted_parameters": [],
+    "gauge_zero_modes_separated": false,
+    "ghost_status": null,
+    "global_restoring_term": null,
+    "gradient_status": null,
+    "local_source_term": null,
+    "new_gravity_mediator": false,
+    "proxy_R_promoted": false,
+    "second_variation": null,
+    "tachyon_status": null,
+    "verdict": "BHSM_CURRENT_PARENT_ACTION_CANNOT_GENERATE_TOPOLOGICAL_BUOYANCY"
+  },
+  "next_exact_object": "ACTION_DOMAIN_THEOREM_SELECTING_ONE_PHYSICAL_NORMAL_OR_RADION_DEGREE_WITH_COMPLETE_LOCALIZED_STRESS_PULLBACK_AND_COVARIANT_GLOBAL_RESTORING_CONSTRAINT",
+  "obstruction_theorem": {
+    "classification": "BLOCKED_EXACT_OBJECT_PROVED",
+    "conclusion": "BHSM_CURRENT_PARENT_ACTION_CANNOT_GENERATE_TOPOLOGICAL_BUOYANCY",
+    "premises": {
+      "compactness_observable_missing": true,
+      "complete_stress_pullback_missing": true,
+      "global_restoring_constraint_missing": true,
+      "normal_field_missing": true,
+      "radion_to_seam_map_missing": true,
+      "static_radion_equilibrium_missing": true
+    },
+    "premises_all_proved": true,
+    "statement": "The current stratified action has neither a varied normal embedding field nor a static action-selected seam radion, and it supplies no compactness-coupled global restoring constraint or complete localized stress pullback. Therefore no functional U_buoy[psi,a_F] with the required BHSM ownership can be obtained from this action."
+  },
+  "validation": {
+    "R_not_depth": true,
+    "functional_absent": true,
+    "no_extension_adopted": true,
+    "no_numerical_scan": true,
+    "obstruction_complete": true,
+    "scale_fails_closed": true,
+    "weak_field_fails_closed": true
+  },
+  "validation_passed": true,
+  "verdict": "BHSM_CURRENT_PARENT_ACTION_CANNOT_GENERATE_TOPOLOGICAL_BUOYANCY",
+  "weak_field": {
+    "action_selected_static_background": null,
+    "attraction_sign": null,
+    "composition_dependence": null,
+    "effective_G": null,
+    "effective_Newtonian_potential": null,
+    "empirical_constants_used": [],
+    "gravitational_redshift": null,
+    "inverse_square_far_field": null,
+    "linearized_buoyancy_operator": null,
+    "local_Lorentz_compatibility": "parent action covariant; no derived buoyancy limit",
+    "numerical_scan_performed": false,
+    "reason_no_scan": "no physical background or boundary-value problem is action-selected",
+    "universal_free_fall": null,
+    "verdict": "BHSM_BUOYANCY_WEAK_FIELD_LIMIT_BLOCKED_BY_NO_PHYSICAL_BUOYANCY_OPERATOR"
+  }
+}
