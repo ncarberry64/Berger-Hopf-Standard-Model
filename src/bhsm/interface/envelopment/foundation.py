@@ -41,6 +41,15 @@ FAMILY_LEDGERS = {
     "down": ((0, 0), (6, 3), (8, 2)),
 }
 
+PROJECTOR_RESIDUAL_ZERO_TOLERANCE = 1.0e-14
+
+
+def _stable_projector_residual(value: float) -> float:
+    """Serialize numerical zero independently of BLAS/platform roundoff."""
+
+    residual = float(value)
+    return 0.0 if abs(residual) <= PROJECTOR_RESIDUAL_ZERO_TOLERANCE else residual
+
 
 def canonical_doctrine() -> dict[str, Any]:
     return {
@@ -140,7 +149,7 @@ def cyclic_projectors() -> tuple[np.ndarray, ...]:
 def generation_definition() -> dict[str, Any]:
     projectors = cyclic_projectors()
     identity = np.eye(3, dtype=complex)
-    residuals = {
+    raw_residuals = {
         "idempotence": max(float(np.linalg.norm(P @ P - P)) for P in projectors),
         "Hermiticity": max(float(np.linalg.norm(P - P.conj().T)) for P in projectors),
         "orthogonality": max(
@@ -151,12 +160,14 @@ def generation_definition() -> dict[str, Any]:
         ),
         "completeness": float(np.linalg.norm(sum(projectors) - identity)),
     }
+    residuals = {key: _stable_projector_residual(value) for key, value in raw_residuals.items()}
     return {
         "definition": "three stable C3/Floquet family eigenbundles of one envelopment system",
         "projector_formula": "P_r=(1/3) sum_(n=0)^2 omega^(-rn) C^n",
         "frozen_ledgers": {key: [list(slot) for slot in value] for key, value in FAMILY_LEDGERS.items()},
         "projector_algebra": "DERIVED",
         "projector_residuals": residuals,
+        "projector_residual_zero_tolerance": PROJECTOR_RESIDUAL_ZERO_TOLERANCE,
         "unique_projector_to_frozen_slot_correspondence": None,
         "correspondence_gate": "OPEN_ACTION_OWNED_C3_FLOQUET_TO_FROZEN_KJQ_INTERTWINER",
         "classification": "DERIVED_CONDITIONAL",

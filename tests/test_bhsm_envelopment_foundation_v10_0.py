@@ -53,6 +53,17 @@ def test_frozen_ledgers_are_preserved_but_slot_intertwiner_is_open():
     assert row["unique_projector_to_frozen_slot_correspondence"] is None
 
 
+def test_projector_residual_report_serializes_numerical_zero_portably():
+    row = foundation.generation_definition()
+    assert row["projector_residual_zero_tolerance"] == 1.0e-14
+    assert row["projector_residuals"] == {
+        "idempotence": 0.0,
+        "Hermiticity": 0.0,
+        "orthogonality": 0.0,
+        "completeness": 0.0,
+    }
+
+
 def test_foundation_payload_reaches_only_foundational_mark():
     payload = foundation.foundation_payload()
     assert payload["foundation_status"] == "REACHED"
