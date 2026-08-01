@@ -1654,3 +1654,23 @@ Doctrine and manuscript chapter:
   candidate/extension comparison, corrected three-mode audit, exact next
   object, and fail-closed physical outputs.
 - `artifacts/BHSM_1_0_completion_gate.json`: canonical v10.3 RB-15/RB-16 gate.
+
+## BHSM v10.4 constrained spacetime-removal completion campaign
+
+- `artifacts/BHSM_spacetime_removal_depth_gate_v10_4.json`: common-pullback
+  covariance, exact block-volume identity, ADM constraint reduction, core
+  domain, and seven-class geometric extension decision ledger.
+- `artifacts/BHSM_three_mode_action_v10_4.json`: typed rank-two action blocks,
+  missing depth blocks, null interference/orbit data, and seam firewall.
+- `artifacts/BHSM_global_equilibrium_gate_v10_4.json`: fixed-shape provenance,
+  absent stationary complete-action solution, and residual scale gate.
+- `artifacts/BHSM_cosmic_unit_anchor_v10_4.json`: at-most-one cosmic anchor
+  policy with no eligible observable and no particle calibration.
+- `artifacts/BHSM_particle_cycle_gate_v10_4.json`: fail-closed charged,
+  quark/hadron, and neutrino cycle interfaces.
+- `artifacts/BHSM_generation_mass_mixing_gate_v10_4.json`: frozen ledgers,
+  null monodromy phases, masses, Gram/Hessian/current matrices, CKM/PMNS, and
+  normalized M4 reduction gate.
+- `artifacts/BHSM_final_completion_gate_v10_4.json`: marks I--IV, exact
+  verdict hierarchy, hindsight report, validation, and next object.
+- `artifacts/BHSM_1_0_completion_gate.json`: canonical v10.4 RB-15/RB-16 gate.

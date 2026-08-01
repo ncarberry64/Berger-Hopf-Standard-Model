@@ -1,0 +1,68 @@
+{
+  "artifact": "BHSM_support_constraint_gate_v10_4",
+  "assumed_action_class": "second-order local scalar with Z_upsilon(upsilon)>0 on M_regular",
+  "background_stability_complete": false,
+  "canonical_depth": {
+    "definition": "q_D(upsilon)=integral_upsilon^1 sqrt(Z_reduced(s)) ds",
+    "derivative": "dq_D/dupsilon=-sqrt(Z_reduced(upsilon))<0",
+    "minus_log_condition": "q_D proportional to -log(upsilon) iff Z_reduced proportional to upsilon^-2",
+    "monotonicity": "upsilon down implies q_D up",
+    "q_D_1": 0.0,
+    "selected_map": null
+  },
+  "constraint_ledger": {
+    "bulk_configuration": [
+      "h_ij",
+      "upsilon",
+      "lapse N",
+      "shift N^i"
+    ],
+    "bulk_second_class": [],
+    "canonical_momentum": "pi_upsilon=sqrt(h) Z_upsilon/N (dot(upsilon)-N^i partial_i upsilon)",
+    "core_boundary_constraints": "boundary conditions, not classified as bulk Dirac constraints until S_core is supplied",
+    "primary_first_class": [
+      "p_N=0",
+      "p_Ni=0"
+    ],
+    "radial_constraints": [
+      "normal Hamiltonian matching constraint",
+      "tangential momentum matching constraint"
+    ],
+    "radial_multipliers": [
+      "radial lapse",
+      "radial shift"
+    ],
+    "secondary_first_class": [
+      "C_H^gravity+C_H^upsilon=0",
+      "C_i^gravity+pi_upsilon partial_i upsilon=0"
+    ],
+    "support_gauge_transformation": "delta_xi upsilon=Lie_xi upsilon; no additional internal gauge orbit",
+    "support_primary_constraint": null
+  },
+  "gradient_speed_squared": 1.0,
+  "gradient_stability": "DERIVED_CONDITIONAL_ON_LORENTZIAN_MINIMAL_PRINCIPAL_PART_AND_Z>0",
+  "hamiltonian_density": "C_H^upsilon=pi_upsilon^2/(2 sqrt(h) Z_upsilon)+sqrt(h)[Z_upsilon h^ij partial_i upsilon partial_j upsilon/2+U_eff]",
+  "independence": {
+    "from_q_C": "configuration-space independent by author extension; kinetic orthogonality/mixing remains action-open",
+    "from_q_V": "q_V has zero reduced metric projection; upsilon is an added scalar coordinate",
+    "from_q_W": "configuration-space independent by author extension; kinetic orthogonality/mixing remains action-open"
+  },
+  "physical_scalar_count": 1,
+  "physical_scalar_count_status": "DERIVED_CONDITIONAL",
+  "reason_not_complete": "Z, U_eff, common-domain mixed blocks, and the localized background are not action-selected",
+  "reduced_kinetic_norm": "integral sqrt(h) Z_reduced (delta upsilon)^2 > 0 iff Z_reduced>0",
+  "reduced_kinetic_norm_positive": "CONDITIONAL_ON_Z_REDUCED>0",
+  "status": "BHSM_SUPPORT_MODE_SURVIVES_CONSTRAINT_REDUCTION_CONDITIONALLY_ON_POSITIVE_Z_UPSILON",
+  "uncontrolled_gauge_mode_created": false,
+  "validation": {
+    "bulk_first_class_algebra_preserved": true,
+    "momentum_nonzero_for_positive_Z": true,
+    "no_support_primary_constraint": true,
+    "not_duplicate_metric_volume": true,
+    "not_duplicate_q_C": true,
+    "not_duplicate_q_W": true,
+    "one_conditional_scalar_pair": true,
+    "positive_norm_requires_Z": true
+  },
+  "validation_passed": true
+}

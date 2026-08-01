@@ -264,3 +264,21 @@ Exact verdict:
 
 Exact next object:
 `ACTION_OWNED_GAUGE_INVARIANT_SPACETIME_REMOVAL_DEPTH_DEGREE`.
+
+## v10.4 current completion gate
+
+Mark I remains reached and Mark II remains conditional. Mark III is not
+reached: the constrained proper-volume candidate has zero physical projection,
+the support extension class is author-selected but its action is non-unique, and the common three-mode action,
+orbits, global scale, physical cycles, mass/mixing readout, and normalized M4
+theory remain unavailable. Mark IV remains downstream.
+
+RB-15: `BLOCKED_BY_NONUNIQUE_SUPPORT_ACTION_AND_COMMON_THREE_MODE_OPERATOR`.
+
+RB-16: `DOWNSTREAM_BLOCKED`.
+
+Exact verdict:
+`BHSM_MULTIPLE_INEQUIVALENT_SUPPORT_ACTIONS_REMAIN_AFTER_AUTHOR_EXTENSION_SELECTION`.
+
+Exact next object:
+`ACTION_PRINCIPLE_FIXING_Z_UPSILON_U_UPSILON_AND_SUPPORT_COUPLINGS`.

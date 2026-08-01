@@ -67,7 +67,7 @@ def test_fifteen_cli_commands_render_json_and_markdown():
         "common-stress-pullback-status", "global-zero-mode-status", "deformation-selection-status",
         "common-envelopment-mode-status", "deformation-intertwiner-status",
         "coupled-deformation-rank-status",
-        "three-mode-envelopment-status", "spacetime-removal-depth-status",
+        "three-mode-envelopment-status", "spacetime-removal-depth-v10-3-status",
         "three-mode-interference-status", "seam-projection-status",
         "global-scale-anchor-status", "generation-phase-interface-status",
     )

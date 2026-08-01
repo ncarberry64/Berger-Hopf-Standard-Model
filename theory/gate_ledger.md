@@ -226,3 +226,24 @@ Exact verdict:
 
 Exact next object:
 `ACTION_OWNED_GAUGE_INVARIANT_SPACETIME_REMOVAL_DEPTH_DEGREE`.
+
+## v10.4 constrained spacetime-removal gate
+
+The proper-volume candidate reduces exactly to the Hamiltonian-constrained
+common-volume direction and has zero vector in the positive physical shape
+space. It supplies no independent `q_D`. The author selects the stratified-core
+support scalar `upsilon`, but its kinetic, potential, coupling, and core-action
+data remain inequivalent and unselected.
+
+RB-15: `BLOCKED_BY_NONUNIQUE_SUPPORT_ACTION_AND_COMMON_THREE_MODE_OPERATOR`.
+
+RB-16: `DOWNSTREAM_BLOCKED`.
+
+Depth verdict:
+`BHSM_PROPER_VOLUME_DEFICIT_HAS_NO_INDEPENDENT_PHYSICAL_SCALAR_AFTER_CONSTRAINT_REDUCTION`.
+
+Current verdict:
+`BHSM_MULTIPLE_INEQUIVALENT_SUPPORT_ACTIONS_REMAIN_AFTER_AUTHOR_EXTENSION_SELECTION`.
+
+Exact next object:
+`ACTION_PRINCIPLE_FIXING_Z_UPSILON_U_UPSILON_AND_SUPPORT_COUPLINGS`.

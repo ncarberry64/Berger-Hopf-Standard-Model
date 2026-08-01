@@ -1,0 +1,385 @@
+{
+  "artifact": "BHSM_spacetime_removal_depth_gate_v10_4",
+  "block_reduction": {
+    "identity_verified": true,
+    "inverse": {
+      "u1": "6*beta/7 + 4*gamma/7 + rho",
+      "u2": "-beta/7 + 4*gamma/7 + rho",
+      "u4": "-beta/7 - 3*gamma/7 + rho"
+    },
+    "q_V_reduced": "-7*rho/8",
+    "q_V_spatial": "-u1/8 - u2/4 - u4/2",
+    "variables": [
+      "rho=(4u4+2u2+u1)/7",
+      "beta=u1-u2",
+      "gamma=u2-u4"
+    ]
+  },
+  "candidate": "q_V=-(1/8) log(dmu_G/dmu_Gbar)",
+  "conformal_decomposition": {
+    "Einstein_frame_volume_compensation": "rho=0 gives q_V=0 while a positive shape/radion mode may remain",
+    "candidate": "q_V=-omega",
+    "decomposition": "G_AB=exp(2 omega) Ghat_AB with det(Ghat)/det(Gbar)=1",
+    "dimension": 8,
+    "normalization_minus_one_eighth": "normalizes the isotropic conformal exponent, not its physical kinetic term",
+    "vertical_only_breathing": "delta u2=delta u1=b, delta u4=0 gives q_V=-3b/8",
+    "volume_ratio": "rho_V=exp(8 omega)"
+  },
+  "constraint_reduction": {
+    "constraint_analysis": {
+      "configuration_variables": [
+        "N",
+        "u4",
+        "u2",
+        "u1"
+      ],
+      "full_scalar_ledger": [
+        {
+          "canonical_momentum": "p_N=0",
+          "field": "temporal lapse N",
+          "physical_mode": false,
+          "role": "primary first-class multiplier"
+        },
+        {
+          "canonical_momentum": "primary zero",
+          "field": "longitudinal temporal shift",
+          "physical_mode": false,
+          "role": "momentum-constraint multiplier"
+        },
+        {
+          "canonical_momentum": "primary zero in radial ADM",
+          "field": "radial lapse A",
+          "physical_mode": false,
+          "role": "normal/Hamiltonian constraint"
+        },
+        {
+          "canonical_momentum": "primary zero",
+          "field": "radial scalar shift B",
+          "physical_mode": false,
+          "role": "v6.27 complete momentum constraint"
+        },
+        {
+          "canonical_momentum": "paired before reduction",
+          "field": "common conformal/volume perturbation rho",
+          "physical_mode": false,
+          "role": "Hamiltonian/time constraint pair"
+        },
+        {
+          "canonical_momentum": "conditional M8 canonical pair",
+          "field": "Hopf/core shape q_C",
+          "physical_mode": "DERIVED_CONDITIONAL",
+          "role": "positive reduced shape candidate"
+        },
+        {
+          "canonical_momentum": "conditional M5 Jacobi pair",
+          "field": "wall/fold q_W",
+          "physical_mode": "DERIVED_CONDITIONAL",
+          "role": "positive quotient mode"
+        },
+        {
+          "canonical_momentum": null,
+          "field": "seam psi",
+          "physical_mode": false,
+          "role": "coordinate/observable projection"
+        },
+        {
+          "canonical_momentum": null,
+          "field": "proper-volume q_V/q_D",
+          "physical_mode": false,
+          "role": "zero reduced projection"
+        }
+      ],
+      "inhomogeneous_extension": "scalar lapse/longitudinal shift remain multipliers; no extra pure-metric scalar polarization is established",
+      "phase_space_dimension": 8,
+      "physical_configuration_dimension": 2,
+      "physical_coordinates": [
+        "beta=u1-u2",
+        "gamma=u2-u4"
+      ],
+      "physical_phase_space_dimension": 4,
+      "primary_first_class": [
+        "p_N=0"
+      ],
+      "removed_common_volume_pair": "rho and its Hamiltonian-time partner",
+      "second_class": [],
+      "secondary_first_class": [
+        "C_H=0"
+      ]
+    },
+    "existing_action_verdict": "BHSM_PROPER_VOLUME_DEFICIT_HAS_NO_INDEPENDENT_PHYSICAL_SCALAR_AFTER_CONSTRAINT_REDUCTION",
+    "extension_verdict": "STRATIFIED_CORE_SPACETIME_SUPPORT_ORDER_PARAMETER_AUTHOR_SELECTED_GEOMETRIC_EXTENSION_CLASS",
+    "kinetic_reduction": {
+      "deWitt_u_matrix": [
+        [
+          -12.0,
+          -8.0,
+          -4.0
+        ],
+        [
+          -8.0,
+          -2.0,
+          -2.0
+        ],
+        [
+          -4.0,
+          -2.0,
+          0.0
+        ]
+      ],
+      "reason": "the negative conformal direction belongs to the lapse/Hamiltonian constraint chain",
+      "rho_beta_gamma_matrix": [
+        [
+          -42.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.8571428571428571,
+          0.5714285714285714
+        ],
+        [
+          0.0,
+          0.5714285714285714,
+          1.7142857142857142
+        ]
+      ],
+      "rho_norm": -42.0,
+      "shape_eigenvalues": [
+        0.5714285714285714,
+        1.9999999999999998
+      ],
+      "shape_metric": [
+        [
+          0.8571428571428571,
+          0.5714285714285714
+        ],
+        [
+          0.5714285714285714,
+          1.7142857142857142
+        ]
+      ],
+      "shape_metric_positive": true,
+      "unreduced_rho_called_ghost": false
+    },
+    "minimal_extension_comparison": [
+      {
+        "Hamiltonian_constraints": "must be derived for the proposed configuration space",
+        "adopted": false,
+        "class": "constrained volume-form degree",
+        "coupling_to_localized_stress": "not derived",
+        "coupling_to_q_C_q_W": "not derived",
+        "ghost_gradient": "no local mode",
+        "independent_or_auxiliary": "auxiliary/global unless new kinetic structure is added",
+        "kinetic": null,
+        "localized_depth": false,
+        "mass_dimension": "undetermined until a canonical action normalization is selected",
+        "new_parameters": "normalization/source",
+        "potential": "constraint only",
+        "reduction_to_current_BHSM": "required when the new geometric datum is auxiliary, frozen, or removed",
+        "restoring_role": "global",
+        "strictly_dominates": false,
+        "transformation": "top-form density",
+        "unique": false
+      },
+      {
+        "Hamiltonian_constraints": "must be derived for the proposed configuration space",
+        "adopted": false,
+        "class": "unimodular plus volume decomposition",
+        "coupling_to_localized_stress": "not derived",
+        "coupling_to_q_C_q_W": "not derived",
+        "ghost_gradient": "constraint-reduced",
+        "independent_or_auxiliary": "field redefinition in current EH action",
+        "kinetic": "DeWitt conformal direction remains constrained",
+        "localized_depth": false,
+        "mass_dimension": "undetermined until a canonical action normalization is selected",
+        "new_parameters": [],
+        "potential": "existing curvature/cosmological terms",
+        "reduction_to_current_BHSM": "required when the new geometric datum is auxiliary, frozen, or removed",
+        "restoring_role": "none new",
+        "strictly_dominates": false,
+        "transformation": "scalar conformal factor plus unit determinant metric",
+        "unique": false
+      },
+      {
+        "Hamiltonian_constraints": "must be derived for the proposed configuration space",
+        "adopted": false,
+        "class": "independent measure/density field",
+        "coupling_to_localized_stress": "not derived",
+        "coupling_to_q_C_q_W": "not derived",
+        "ghost_gradient": "open",
+        "independent_or_auxiliary": "new geometric density",
+        "kinetic": "must be specified",
+        "localized_depth": "possible",
+        "mass_dimension": "undetermined until a canonical action normalization is selected",
+        "new_parameters": "kinetic, potential, and coupling coefficients",
+        "potential": "must be specified",
+        "reduction_to_current_BHSM": "required when the new geometric datum is auxiliary, frozen, or removed",
+        "restoring_role": "possible",
+        "strictly_dominates": false,
+        "transformation": "weight-one density or scalar ratio to dmu_G",
+        "unique": false
+      },
+      {
+        "Hamiltonian_constraints": "must be derived for the proposed configuration space",
+        "adopted": true,
+        "class": "stratified core spacetime-support order parameter",
+        "coupling_to_localized_stress": "not derived",
+        "coupling_to_q_C_q_W": "not derived",
+        "ghost_gradient": "healthy only conditionally on positive reduced kinetic function",
+        "independent_or_auxiliary": "author-selected new geometric scalar",
+        "kinetic": "must be specified and positive",
+        "localized_depth": "possible after canonical normalization",
+        "mass_dimension": "undetermined until a canonical action normalization is selected",
+        "new_parameters": "kinetic, potential, and coupling data",
+        "potential": "regular background conditions known; function not selected",
+        "reduction_to_current_BHSM": "required when the new geometric datum is auxiliary, frozen, or removed",
+        "restoring_role": "possible",
+        "strictly_dominates": false,
+        "transformation": "dimensionless diffeomorphism scalar",
+        "unique": true
+      },
+      {
+        "Hamiltonian_constraints": "must be derived for the proposed configuration space",
+        "adopted": false,
+        "class": "stratified degenerate-metric transition",
+        "coupling_to_localized_stress": "not derived",
+        "coupling_to_q_C_q_W": "not derived",
+        "ghost_gradient": "open",
+        "independent_or_auxiliary": "new domain/action class",
+        "kinetic": "requires a well-posed degenerate or first-order action",
+        "localized_depth": "conceptually direct",
+        "mass_dimension": "undetermined until a canonical action normalization is selected",
+        "new_parameters": "junction/transition data",
+        "potential": "transition law open",
+        "reduction_to_current_BHSM": "required when the new geometric datum is auxiliary, frozen, or removed",
+        "restoring_role": "possible",
+        "strictly_dominates": false,
+        "transformation": "stratum-compatible metric/measure data",
+        "unique": false
+      },
+      {
+        "Hamiltonian_constraints": "must be derived for the proposed configuration space",
+        "adopted": false,
+        "class": "non-Riemannian volume form/topological density modulus",
+        "coupling_to_localized_stress": "not derived",
+        "coupling_to_q_C_q_W": "not derived",
+        "ghost_gradient": "no local mode",
+        "independent_or_auxiliary": "typically auxiliary or global flux",
+        "kinetic": "no local polarization in minimal form",
+        "localized_depth": false,
+        "mass_dimension": "undetermined until a canonical action normalization is selected",
+        "new_parameters": "normalization and sources",
+        "potential": "flux sector",
+        "reduction_to_current_BHSM": "required when the new geometric datum is auxiliary, frozen, or removed",
+        "restoring_role": "global only",
+        "strictly_dominates": false,
+        "transformation": "top form",
+        "unique": false
+      },
+      {
+        "Hamiltonian_constraints": "must be derived for the proposed configuration space",
+        "adopted": false,
+        "class": "normal-support scalar from parent measure",
+        "coupling_to_localized_stress": "not derived",
+        "coupling_to_q_C_q_W": "not derived",
+        "ghost_gradient": "not an independent mode",
+        "independent_or_auxiliary": "composite in current action",
+        "kinetic": "none independent",
+        "localized_depth": "target only",
+        "mass_dimension": "undetermined until a canonical action normalization is selected",
+        "new_parameters": [],
+        "potential": null,
+        "reduction_to_current_BHSM": "required when the new geometric datum is auxiliary, frozen, or removed",
+        "restoring_role": "none",
+        "strictly_dominates": false,
+        "transformation": "requires relational pullback",
+        "unique": false
+      }
+    ],
+    "new_continuous_parameters_adopted": [],
+    "new_geometric_fields_adopted": [
+      "upsilon (author-selected configuration variable; action ownership open)"
+    ],
+    "next_exact_object": "ACTION_PRINCIPLE_FIXING_Z_UPSILON_U_UPSILON_AND_SUPPORT_COUPLINGS",
+    "physical_projection": {
+      "P_perp_CW_q_V": [
+        0.0,
+        0.0
+      ],
+      "orthogonality_to_q_C": 0.0,
+      "orthogonality_to_q_W": "not needed after the physical q_V projection vanishes; a common M8/M5 kinetic product remains absent",
+      "q_D_nonzero": false,
+      "raw_q_V_direction": "-(7/8) delta rho on a fixed proper-time slice",
+      "reduced_kinetic_norm": 0.0,
+      "reduced_physical_q_V_vector_in_beta_gamma_space": [
+        0.0,
+        0.0
+      ],
+      "second_positive_M8_shape": "anisotropy gamma is not a volume-removal observable and is not relabeled q_D",
+      "vertical_breathing_firewall": "vertical volume deficit is q_C overlap before Einstein-frame compensation, not a third mode"
+    },
+    "physical_scalar_count_across_qC_qW_qD": 2,
+    "target_count_reached": false,
+    "unique_minimal_extension": "stratified core spacetime-support order parameter",
+    "validation": {
+      "action_not_selected_by_extension_choice": true,
+      "author_extension_selected": true,
+      "no_qD": true,
+      "shape_metric_positive": true,
+      "two_physical_shapes": true,
+      "volume_projection_zero": true
+    },
+    "validation_passed": true
+  },
+  "covariance": {
+    "arbitrary_coordinate_determinants_compared": false,
+    "compact_integrated_volume": "diffeomorphism invariant when boundary flux vanishes",
+    "definition": "rho_V=dmu_G/dmu_Gbar after an explicit common pullback",
+    "fixed_background_perturbative_gauge": "delta_xi q_V=-(1/8) div_Gbar(xi)",
+    "integrated_volume_is_local_depth": false,
+    "local_gauge_invariant_without_relational_map": false,
+    "same_parent_manifold_required": true,
+    "simultaneous_diffeomorphism": "rho_V is a scalar and q_V transforms by pullback"
+  },
+  "domain": [
+    {
+      "condition": "rho_V>0 finite",
+      "inverse_metric_action_valid": true,
+      "q_V": "finite",
+      "region": "regular parent manifold"
+    },
+    {
+      "condition": "0<rho_V<<1",
+      "inverse_metric_action_valid": "only while nondegenerate and curvature remains controlled",
+      "q_V": "large finite positive",
+      "region": "high-depletion transition"
+    },
+    {
+      "condition": "rho_V=0",
+      "inverse_metric_action_valid": false,
+      "q_V": "+infinity",
+      "region": "core/singular stratum"
+    },
+    {
+      "condition": "requires explicit reduction map",
+      "inverse_metric_action_valid": "current regular EFT only",
+      "q_V": null,
+      "region": "effective M4 readout"
+    }
+  ],
+  "finiteness": "finite only for two nondegenerate metrics with a common pullback",
+  "lapse_relation": "q_V=-(delta log N+7 delta rho)/8 before temporal gauge/constraint reduction",
+  "monotonicity": "monotone in the positive volume ratio, not proved monotone in physical core proximity",
+  "physical_depth": null,
+  "shift_relation": "shift has no determinant contribution but enforces momentum constraints",
+  "validation": {
+    "background_pullback_required": true,
+    "block_identity": true,
+    "conformal_unit_check": true,
+    "degenerate_core_excluded": true,
+    "raw_local_candidate_not_promoted": true
+  },
+  "validation_passed": true,
+  "verdict": "BHSM_PROPER_VOLUME_DEFICIT_HAS_NO_INDEPENDENT_PHYSICAL_SCALAR_AFTER_CONSTRAINT_REDUCTION"
+}

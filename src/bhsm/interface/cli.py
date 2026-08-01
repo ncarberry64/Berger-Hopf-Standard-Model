@@ -917,11 +917,23 @@ def build_parser() -> argparse.ArgumentParser:
         ("deformation-intertwiner-status", "Render the BHSM v10.3 deformation intertwiner audit"),
         ("coupled-deformation-rank-status", "Render the BHSM v10.3 coupled physical-rank audit"),
         ("three-mode-envelopment-status", "Render the BHSM v10.3 author-clarified three-mode architecture"),
-        ("spacetime-removal-depth-status", "Render the BHSM v10.3 invariant depth candidate audit"),
+        ("spacetime-removal-depth-v10-3-status", "Render the historical BHSM v10.3 invariant depth candidate audit"),
+        ("spacetime-removal-depth-status", "Render the current BHSM v10.4 constrained proper-volume depth audit"),
+        ("spacetime-support-status", "Render the BHSM v10.4 stratified-core support order parameter"),
+        ("support-action-status", "Render the BHSM v10.4 covariant support-action audit"),
+        ("support-constraint-status", "Render the BHSM v10.4 support-field constraint audit"),
+        ("core-stratum-status", "Render the BHSM v10.4 regular-to-core matching gate"),
+        ("support-three-mode-status", "Render the BHSM v10.4 support three-mode coupling gate"),
         ("three-mode-interference-status", "Render the BHSM v10.3 interference-output gate"),
         ("seam-projection-status", "Render the BHSM v10.3 coordinate-seam projection gate"),
         ("global-scale-anchor-status", "Render the BHSM v10.3 global geometry/unit-anchor policy"),
         ("generation-phase-interface-status", "Render the BHSM v10.3 one-cycle three-phase interface"),
+        ("three-mode-action-status", "Render the BHSM v10.4 common three-mode action gate"),
+        ("global-equilibrium-status", "Render the BHSM v10.4 closed global-equilibrium gate"),
+        ("cosmic-unit-anchor-status", "Render the BHSM v10.4 cosmic unit-anchor eligibility gate"),
+        ("particle-cycle-status", "Render the BHSM v10.4 physical particle-cycle gate"),
+        ("physical-mass-mixing-status", "Render the BHSM v10.4 physical mass/mixing gate"),
+        ("v10-4-final-completion-status", "Render the BHSM v10.4 final completion gate"),
     )
     for command, help_text in integrated_status_commands:
         status_command = commands.add_parser(command, help=help_text)
@@ -1089,6 +1101,30 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(json.dumps(payload, indent=2, sort_keys=True))
         return 0
     if args.command in {
+        "spacetime-removal-depth-status",
+        "spacetime-support-status",
+        "support-action-status",
+        "support-constraint-status",
+        "core-stratum-status",
+        "support-three-mode-status",
+        "three-mode-action-status",
+        "global-equilibrium-status",
+        "cosmic-unit-anchor-status",
+        "particle-cycle-status",
+        "physical-mass-mixing-status",
+        "v10-4-final-completion-status",
+    }:
+        module = import_module(
+            ".envelopment.final_completion_gate_v10_4",
+            package=__package__,
+        )
+        payload = module.command_payload(args.command)
+        if args.format == "markdown":
+            print(module.command_to_markdown(args.command, payload), end="")
+        else:
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        return 0
+    if args.command in {
         "normal-radion-status",
         "global-constraint-status",
         "topological-buoyancy-status",
@@ -1116,7 +1152,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         "deformation-intertwiner-status",
         "coupled-deformation-rank-status",
         "three-mode-envelopment-status",
-        "spacetime-removal-depth-status",
+        "spacetime-removal-depth-v10-3-status",
         "three-mode-interference-status",
         "seam-projection-status",
         "global-scale-anchor-status",

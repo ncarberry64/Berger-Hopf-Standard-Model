@@ -2259,3 +2259,45 @@ Exact verdict:
 
 Architecture verdict:
 `BHSM_THREE_MODE_ARCHITECTURE_INTEGRATED_BUT_COMMON_ACTION_COUPLINGS_REMAIN_OPEN`.
+
+## v10.4 constrained spacetime-removal claim boundary
+
+Supported:
+
+- the metric-volume ratio is a scalar only after an explicit common pullback
+  of the deformed and background metrics;
+- in the exact homogeneous P1 ADM reduction,
+  `q_V=-(4 delta u4+2 delta u2+delta u1)/8=-(7/8)delta rho`;
+- the DeWitt metric has one constrained common-volume direction and a positive
+  two-dimensional shape block with eigenvalues `4/7` and `2`;
+- primary lapse momentum and secondary Hamiltonian constraints remove the
+  common-volume canonical pair, so the reduced physical projection of `q_V`
+  is zero;
+- a vertical-only volume deficit overlaps the existing core/Hopf response and
+  is not a third mode;
+- exact metric degeneracy is outside the current inverse-metric action domain;
+- seven geometric extension classes were compared; the author selects the
+  stratified-core support scalar `upsilon`, while its action remains open;
+- a positive `Z_upsilon` conditionally yields one scalar pair, but constant
+  and inverse-square kinetic families give inequivalent canonical depths.
+
+Not supported:
+
+- a raw local determinant ratio as gauge-invariant physical depth;
+- an unreduced negative conformal norm as a propagating ghost;
+- a coordinate lapse collapse or determinant zero as core physics;
+- relabeling the second positive M8 shape anisotropy as spacetime removal;
+- treating author selection of the support ontology as a unique action;
+- selecting `Z_upsilon`, `U_upsilon`, support couplings, or a core action by convention;
+- any complete three-mode action, stable orbit, interference energy, cosmic
+  anchor, physical particle cycle, generation phase, mass, CKM, PMNS, or
+  normalized M4 collider theory.
+
+Depth verdict:
+`BHSM_PROPER_VOLUME_DEFICIT_HAS_NO_INDEPENDENT_PHYSICAL_SCALAR_AFTER_CONSTRAINT_REDUCTION`.
+
+Campaign verdict:
+`BHSM_MULTIPLE_INEQUIVALENT_SUPPORT_ACTIONS_REMAIN_AFTER_AUTHOR_EXTENSION_SELECTION`.
+
+Exact next object:
+`ACTION_PRINCIPLE_FIXING_Z_UPSILON_U_UPSILON_AND_SUPPORT_COUPLINGS`.

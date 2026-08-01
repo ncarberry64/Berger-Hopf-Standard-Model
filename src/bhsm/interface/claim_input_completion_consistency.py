@@ -423,10 +423,10 @@ def canonical_completion_gate_payload() -> dict[str, Any]:
     """Return the current relational-envelopment completion gate.
 
     Historical materializers delegate here so that rerunning an earlier sprint
-    cannot silently roll the repository-wide canonical gate back from v10.3.
+    cannot silently roll the repository-wide canonical gate back from v10.4.
     """
 
-    from bhsm.interface.envelopment import deformation_selection_gate_v10_3 as current
+    from bhsm.interface.envelopment import final_completion_gate_v10_4 as current
 
     return current.canonical_completion_gate_payload()
 

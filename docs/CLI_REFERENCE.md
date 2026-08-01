@@ -53,11 +53,11 @@ For prediction-registry and artifact-adapter commands, see
 
 ## v10.3 three-mode relational-envelopment audit
 
-The current v10.3 status is available without writing artifacts:
+The historical v10.3 status is available without writing artifacts:
 
 ```powershell
 python -m bhsm.interface three-mode-envelopment-status --format json
-python -m bhsm.interface spacetime-removal-depth-status --format json
+python -m bhsm.interface spacetime-removal-depth-v10-3-status --format json
 python -m bhsm.interface three-mode-interference-status --format json
 python -m bhsm.interface seam-projection-status --format json
 python -m bhsm.interface global-scale-anchor-status --format json
@@ -74,3 +74,25 @@ Regenerate every v10.3 artifact with:
 ```powershell
 python scripts/materialize_physical_deformation_domain_v10_3.py
 ```
+
+## v10.4 constrained spacetime-removal completion gate
+
+```powershell
+python -m bhsm.interface spacetime-removal-depth-status --format json
+python -m bhsm.interface spacetime-support-status --format json
+python -m bhsm.interface support-action-status --format json
+python -m bhsm.interface support-constraint-status --format json
+python -m bhsm.interface core-stratum-status --format json
+python -m bhsm.interface support-three-mode-status --format json
+python -m bhsm.interface three-mode-action-status --format json
+python -m bhsm.interface global-equilibrium-status --format json
+python -m bhsm.interface cosmic-unit-anchor-status --format json
+python -m bhsm.interface particle-cycle-status --format json
+python -m bhsm.interface physical-mass-mixing-status --format json
+python -m bhsm.interface v10-4-final-completion-status --format json
+python scripts/materialize_spacetime_removal_completion_v10_4.py
+```
+
+Every status command also accepts `--format markdown`. These commands report
+the exact proper-volume constraint no-go, the author-selected support ontology,
+the remaining support-action non-uniqueness, and null downstream outputs.

@@ -25,3 +25,11 @@ spacetime-removal/depth degree `q_D`. It must be independent of core/Hopf
 variables. Only after that degree exists may the common three-mode
 kinetic/Hessian/source system and interference-selected output be tested. No
 fit to particle data may define the missing degree or its couplings.
+
+For v10.4, the proper-volume no-go fails if a correct common-pullback and full
+constraint reduction produce a nonzero positive-norm Dirac observable from
+`q_V` that is independent of `q_C` and `q_W`. Merely retaining the unreduced
+negative DeWitt direction, fixing the lapse before variation, or relabeling a
+positive anisotropy shape is not a falsifier. The author-selection verdict
+fails if one compared geometric extension can be proved uniquely minimal from
+the existing axioms and action with no extra unselected coefficient.

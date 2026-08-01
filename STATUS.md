@@ -36,11 +36,27 @@ outside the physical-mode count. The three physical slots are core/Hopf,
 enclosure-wall/fold, and invariant spacetime-removal/depth. The current action
 has candidates for the first two but no distinct action-owned depth degree.
 
+V10.4 exhausts the strongest existing metric candidate. With a common
+background pullback, `q_V=-(1/8)log(dmu_G/dmu_Gbar)` is covariant on the
+regular domain. In the exact `(4,2,1)` P1 ADM variables it is
+`q_V=-(7/8)delta rho`. The DeWitt form separates `rho` with coefficient `-42`
+from a positive shape block with eigenvalues `4/7` and `2`; the lapse and
+Hamiltonian constraint remove the common-volume canonical pair. The physical
+projection of `q_V` is zero. Its unreduced sign is not called a ghost, and
+metric degeneracy is outside the current inverse-metric action domain. Seven
+geometric extension classes remain inequivalent. The author now selects a
+stratified-core scalar `upsilon in [0,1]` as the extension class while keeping
+the regular metric nondegenerate. A positive `Z_upsilon` would add one
+conditional scalar pair, but the current action does not choose `Z_upsilon`,
+`U_upsilon`, the `q_C/q_W` support couplings, or the core action. Constant and
+inverse-square positive kinetic families already yield inequivalent canonical
+depth maps, so the action remains non-unique.
+
 Current exact verdict:
-`BHSM_THIRD_SPACETIME_REMOVAL_MODE_NOT_PRESENT_IN_CURRENT_ACTION_DOMAIN`.
+`BHSM_MULTIPLE_INEQUIVALENT_SUPPORT_ACTIONS_REMAIN_AFTER_AUTHOR_EXTENSION_SELECTION`.
 
 Exact next object:
-`ACTION_OWNED_GAUGE_INVARIANT_SPACETIME_REMOVAL_DEPTH_DEGREE`.
+`ACTION_PRINCIPLE_FIXING_Z_UPSILON_U_UPSILON_AND_SUPPORT_COUPLINGS`.
 
 The v8.4--v8.9 conditional theorem chain remains integrated. V10.0 embeds its
 static Gram--Hessian/current formulas as the stationary-cycle limit. Because
@@ -95,7 +111,7 @@ Reviewer entry points:
 [claim boundaries](CLAIMS.md), and
 [reproduction guide](docs/reviewer_reproduction_guide.md).
 
-BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v10.3 records three distinct interacting physical-mode slots as author ontology and reclassifies the seam as a coordinate/observable projection. The current action contains core/Hopf and enclosure-wall/fold candidates but no distinct, action-owned gauge-invariant spacetime-removal/depth degree. No interference-selected output, physical depth, or global scale is emitted. Prior no-go results and RB-15/RB-16 remain in force.
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v10.4 proves that the proper-volume candidate is removed by the Hamiltonian constraint and has zero reduced physical projection. The author has selected a stratified-core spacetime-support scalar `upsilon` as the extension class. A positive kinetic function would give one conditional physical scalar pair, but covariance and the frozen action do not uniquely fix its kinetic function, potential, support couplings, canonical depth, or core action. No interference-selected output, physical depth, mass, mixing matrix, or global scale is emitted. Prior no-go results and RB-15/RB-16 remain in force.
 
 BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity. Physical eV/GeV neutrino mass closure remains open pending a numeric neutral stiffness length sqrt(A_nu/Z_nu), a physical K_neutral,eff map in m^-2, and complete-action derivation of the admissible response cone.
 

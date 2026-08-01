@@ -92,3 +92,17 @@ interference law, physical spectrum, and selected output without fitted
 coefficients. The v6.27 seam--fold projection remains an observable readout;
 it is not a fourth physical degree. Generation phases must be derived from the
 sector cycle and cannot be inferred from the three-mode count.
+
+## BHSM v10.4 proper-volume and extension-selection boundary
+
+The depth no-go is falsified by an explicit Dirac observable obtained from the
+same-parent volume ratio after lapse, shift, Hamiltonian, momentum, and
+boundary constraints, with nonzero positive kinetic norm and independence from
+`q_C` and `q_W`. A coordinate determinant, fixed-background gauge artifact,
+unreduced conformal factor, or exact metric degeneracy does not qualify.
+
+The minimal-extension verdict is falsified if the current author axioms and
+action uniquely select one geometric local-depth configuration and determine
+its transformation, kinetic term, potential, sources, constraints, domain,
+and frozen-action limit without particle fitting. Only then may the common
+three-mode and downstream physical gates be reopened.

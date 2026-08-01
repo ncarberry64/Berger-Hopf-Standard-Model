@@ -351,3 +351,21 @@ output, the seam projection, and the generation-phase interface. Only then
 derive the full local stress pushforward, covariant restoring law, stability,
 weak-field limit, and at most one cosmic unit anchor before evaluating
 Topological Buoyancy. Particle-data calibration remains forbidden.
+
+## v10.4 constrained-depth decision gate
+
+The existing metric sector is now exhausted for the proper-volume candidate.
+Do not reopen raw determinant suppression, call the constrained conformal sign
+a ghost, or continue into physical cycles with a rank-two mode system.
+
+The author has selected the stratified-core support configuration variable.
+The next exact object is now an action principle that fixes its kinetic
+function, potential, and support couplings:
+
+`ACTION_PRINCIPLE_FIXING_Z_UPSILON_U_UPSILON_AND_SUPPORT_COUPLINGS`.
+
+The audit must distinguish the inequivalent constant-kinetic and
+inverse-square-kinetic families (and their couplings), fix the core variational
+ensemble, and preserve the frozen-action limit. Only a healthy uniquely
+action-owned local degree licenses reconstruction of the common three-mode
+Hessian and downstream orbit campaign.

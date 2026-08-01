@@ -28,9 +28,9 @@ def test_completion_gate_is_conditional_and_fail_closed():
 
 
 def test_current_master_api_advances_while_historical_gate_stays_v101():
-    assert CURRENT_VERSION == "v10.3"
-    assert CURRENT_VERDICT == "BHSM_THIRD_SPACETIME_REMOVAL_MODE_NOT_PRESENT_IN_CURRENT_ACTION_DOMAIN"
-    assert CURRENT_MISSING_OBJECT == "ACTION_OWNED_GAUGE_INVARIANT_SPACETIME_REMOVAL_DEPTH_DEGREE"
+    assert CURRENT_VERSION == "v10.4"
+    assert CURRENT_VERDICT == "BHSM_MULTIPLE_INEQUIVALENT_SUPPORT_ACTIONS_REMAIN_AFTER_AUTHOR_EXTENSION_SELECTION"
+    assert CURRENT_MISSING_OBJECT == "ACTION_PRINCIPLE_FIXING_Z_UPSILON_U_UPSILON_AND_SUPPORT_COUPLINGS"
     canonical = gate.canonical_completion_gate_payload()
     assert canonical["version"] == "v10.1"
     assert canonical["author_doctrine_integrated"] is True

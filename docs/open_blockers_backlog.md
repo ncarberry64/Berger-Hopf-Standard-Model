@@ -1,13 +1,13 @@
 # Open Blockers Backlog
 
-Current public status: v10.3 records exactly three interacting physical-mode
-slots as author ontology: core/Hopf `q_C`, enclosure-wall/fold `q_W`, and
-spacetime-removal/depth `q_D`. The current action has conditional candidates for
-the first two and no distinct action-owned gauge-invariant `q_D`. The seam is a
-coordinate/observable projection, not a physical mode. The earlier one-mode
-hypothesis remains historical provenance and is marked
-`INVALIDATED_BY_AUTHOR_ONTOLOGY`. The live Tier-C object is
-`ACTION_OWNED_GAUGE_INVARIANT_SPACETIME_REMOVAL_DEPTH_DEGREE`.
+Current public status: v10.4 proves that the proper-volume candidate is the
+Hamiltonian-constrained common-volume direction and has zero reduced physical
+projection. It does not provide `q_D`. The author selects a stratified-core
+support scalar `upsilon`, but its action and canonical normalization remain
+non-unique; no coefficient was added. The seam remains
+a coordinate/observable projection, and three modes remain distinct from
+three generation phases. The live Tier-C object is
+`ACTION_PRINCIPLE_FIXING_Z_UPSILON_U_UPSILON_AND_SUPPORT_COUPLINGS`.
 
 Historical compatibility boundary: structural architecture integrated conditional; numerical closure open.
 This sentence records the pre-v7.1 numerical-closure status required by the
@@ -15,21 +15,21 @@ archived component contracts; it is not the current completion-tier verdict.
 
 Each blocker must be handled without fitting observed data after comparison and without changing frozen predictions.
 
-## Current v10.3 highest-upstream blocker
+## Current v10.4 highest-upstream blocker
 
-`ACTION_OWNED_GAUGE_INVARIANT_SPACETIME_REMOVAL_DEPTH_DEGREE`
+`ACTION_PRINCIPLE_FIXING_Z_UPSILON_U_UPSILON_AND_SUPPORT_COUPLINGS`
 
-The candidate audit rejects determinant ratio, curvature concentration, normal
-stress, extrinsic curvature, fiber deficit, lapse, and support loss as a
-presently eligible `q_D`: each lacks action ownership, gauge invariance, or
-independence from `q_C`/`q_W`. Until a genuine `q_D` is added by derivation, the
-three-mode kinetic matrix, Hessian, source, interference output, seam
-projection, energy-depth sign, and weak-field/equivalence limits remain
-ineligible. The v6.27 invariant seam readout of `q_W` remains exact.
+The exact ADM calculation reduces `q_V` to `-(7/8)delta rho`; lapse and the
+Hamiltonian constraint remove that canonical pair. Its physical kinetic
+projection is zero. The selected support ontology admits inequivalent constant
+and inverse-square positive kinetic families as well as unfixed potentials and
+couplings. Until an action principle selects among them, the three-mode kinetic
+matrix, Hessian, source, orbit, interference
+output, scale, cycles, masses, mixing, and M4 normalization remain ineligible.
 
 Exact verdict:
 
-`BHSM_THIRD_SPACETIME_REMOVAL_MODE_NOT_PRESENT_IN_CURRENT_ACTION_DOMAIN`
+`BHSM_MULTIPLE_INEQUIVALENT_SUPPORT_ACTIONS_REMAIN_AFTER_AUTHOR_EXTENSION_SELECTION`
 
 | Blocker | Current status | Why it matters | Next valid action | Forbidden invalid action |
 | --- | --- | --- | --- | --- |
