@@ -165,8 +165,8 @@ def test_artifact_schema_keeps_release_and_post_1_0_items_separate():
     assert payload["parameter_free_extension_blocker"] == "RB-02"
     assert payload["open_release_blockers"] == ["RB-15", "RB-16"]
     assert payload["next_highest_upstream_blocker"] == (
-        "ACTION_SELECTED_STATIONARY_8D_VACUUM_WITH_ACTION_OWNED_GLOBAL_"
-        "COMPOSITE_IMMERSIONS_AND_COMMON_PARENT_CHARGED_CURRENT_KERNEL"
+        "ACTION_LEVEL_GLOBAL_TOPOLOGICAL_SECTOR_WITH_LOCAL_CHIRAL_"
+        "TRANSGRESSION_AND_COMMON_PARENT_CURRENT_OWNERSHIP"
     )
 
 

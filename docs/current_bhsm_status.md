@@ -435,3 +435,27 @@ downstream.
 
 Current exact verdict:
 `BHSM_ACTION_SELECTED_8D_VACUUM_FLAVOR_MATRIX_NOT_DERIVABLE_FROM_CURRENT_STRATIFIED_ACTION`.
+
+## v9.1 authoritative geometry-only status
+
+The current action canonically defines the fixed-`S7` metric/scalar quotient
+by observer-framed small diffeomorphisms. Its unreduced field space is
+contractible and the gauge group is connected, so `pi1(Q_geom^0)=0`. The
+v6.6 mapping-space `Z2` remains a valid adopted construction but is not the
+action-owned configuration space. The optional `Theta_8=Z2` large mapping
+class belongs to a different quotient and supplies neither an action-selected
+rotation/exchange character nor a local chiral carrier.
+
+The lapse-retaining closed-FLRW branch is nonstationary de Sitter evolution;
+the homogeneous quaternionic-Hopf two-scale sector has no positive-scale
+static product solution. Metric and orientation do not naturally select the
+`SO(7)/G2=RP7` polarization fiber, and torsion-free `G2` is topologically
+excluded on `S7`.
+
+Therefore the nonlinear family states, immersions, physical Hessian
+pullbacks, common-parent current, flavor matrix, masses, and lepton readouts
+remain undefined. The extension audit finds no single uniquely minimal
+parent object closing all missing arrows, so no extended theory is adopted.
+
+Current exact verdict:
+`BHSM_GEOMETRY_ONLY_PARENT_ACTION_CANNOT_GENERATE_THE_REQUIRED_FR_CHIRAL_FLAVOR_CARRIER`.

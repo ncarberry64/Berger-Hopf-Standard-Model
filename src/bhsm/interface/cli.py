@@ -891,6 +891,7 @@ def build_parser() -> argparse.ArgumentParser:
         ("common-parent-current-status", "Render the BHSM v8.8 conditional charged-current interface"),
         ("geometric-lens-status", "Render the BHSM v8.9 automatic geometric-lens theorem"),
         ("8d-vacuum-flavor-status", "Render the BHSM v9.0 action-selected vacuum/flavor audit"),
+        ("geometry-only-geon-fr-status", "Render the BHSM v9.1 geometry-only geon/FR carrier audit"),
     )
     for command, help_text in integrated_status_commands:
         status_command = commands.add_parser(command, help=help_text)
@@ -1004,6 +1005,17 @@ def main(argv: Sequence[str] | None = None) -> int:
     if args.command == "8d-vacuum-flavor-status":
         module = import_module(
             ".master_action.eight_dimensional_vacuum_flavor_completion",
+            package=__package__,
+        )
+        payload = module.status_report()
+        if args.format == "markdown":
+            print(module.status_to_markdown(payload), end="")
+        else:
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        return 0
+    if args.command == "geometry-only-geon-fr-status":
+        module = import_module(
+            ".master_action.geometry_only_geon_fr_carrier_completion",
             package=__package__,
         )
         payload = module.status_report()

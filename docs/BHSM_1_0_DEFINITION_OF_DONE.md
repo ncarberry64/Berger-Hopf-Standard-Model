@@ -190,3 +190,17 @@ Exact next object:
 Exact verdict:
 
 `BHSM_ACTION_SELECTED_8D_VACUUM_FLAVOR_MATRIX_NOT_DERIVABLE_FROM_CURRENT_STRATIFIED_ACTION`
+
+## v9.1 geometry-only completion gate
+
+RB-15 is now `BLOCKED_EXACT_GEOMETRY_ONLY_TOPOLOGY_AND_CARRIER_NO_GO`.
+The current action-owned quotient has `pi1(Q_geom^0)=0`; no stationary geon,
+FR line, selected `G2/C3` polarization, local chiral transgression, composite
+immersion, or parent current is derived. RB-16 remains downstream.
+
+Completion remains ineligible until one action-level extension closes the
+global topological sector, the local chiral carrier, and common-current
+ownership without fitted flavor data or sector-dependent tuning.
+
+Exact verdict:
+`BHSM_GEOMETRY_ONLY_PARENT_ACTION_CANNOT_GENERATE_THE_REQUIRED_FR_CHIRAL_FLAVOR_CARRIER`.

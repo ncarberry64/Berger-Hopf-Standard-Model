@@ -22,10 +22,10 @@ def test_current_bhsm_status_json_schema() -> None:
         "collective_curvature_layer": "connected topographic-gravity extension candidate",
         "frozen_predictions_changed": False,
         "official_predictions_changed": False,
-        "current_campaign": "v9.0 action-selected 8D vacuum/flavor completion",
+        "current_campaign": "v9.1 geometry-only geon/FR carrier completion",
         "physical_flavor_matrix_derived": False,
-        "current_exact_verdict": "BHSM_ACTION_SELECTED_8D_VACUUM_FLAVOR_MATRIX_NOT_DERIVABLE_FROM_CURRENT_STRATIFIED_ACTION",
-        "next_exact_object": "ACTION_SELECTED_STATIONARY_8D_VACUUM_WITH_ACTION_OWNED_GLOBAL_COMPOSITE_IMMERSIONS_AND_COMMON_PARENT_CHARGED_CURRENT_KERNEL",
+        "current_exact_verdict": "BHSM_GEOMETRY_ONLY_PARENT_ACTION_CANNOT_GENERATE_THE_REQUIRED_FR_CHIRAL_FLAVOR_CARRIER",
+        "next_exact_object": "ACTION_LEVEL_GLOBAL_TOPOLOGICAL_SECTOR_WITH_LOCAL_CHIRAL_TRANSGRESSION_AND_COMMON_PARENT_CURRENT_OWNERSHIP",
     }
 
 

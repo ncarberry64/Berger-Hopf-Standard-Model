@@ -101,3 +101,20 @@ python scripts/materialize_action_selected_8d_vacuum_flavor_v9_0.py
 Run the materializer twice and compare bytes. All matrices in the v8.5--v8.9
 diagnostics must remain `PROXY_STRESS_TEST_ONLY`; the v9.0 physical matrix must
 remain null unless the complete action-owned dependency chain is supplied.
+
+## Reviewer checkpoint: v9.1
+
+```bash
+python -m bhsm.interface geometry-only-geon-fr-status --format json
+python -m bhsm.interface geometry-only-geon-fr-status --format markdown
+python scripts/materialize_geometry_only_geon_fr_carrier_v9_1.py
+python -m pytest -q tests/test_bhsm_geometry_only_geon_fr_carrier_v9_1.py
+```
+
+Run the materializer twice and compare bytes. Verify that the declared
+small-diffeomorphism quotient has `pi1=0`, that the optional `Theta_8=Z2`
+large mapping class is not promoted to rotation/exchange or a local spinor,
+and that the v6.6 mapping-space FR line remains adopted rather than
+parent-derived. The closed-FLRW numerical branch is an ansatz validation only.
+All physical Gram/Hessian/current/matrix and mass/lepton outputs must remain
+null, and no minimal extension may be marked adopted.

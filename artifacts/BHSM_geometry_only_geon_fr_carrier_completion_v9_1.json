@@ -1,0 +1,801 @@
+{
+  "artifact": "BHSM_geometry_only_geon_fr_carrier_completion_v9_1",
+  "composite_immersion": {
+    "FR_sign_gate": "BLOCKED",
+    "Psi_geom": {
+      "charged_lepton": null,
+      "down": null,
+      "neutrino": null,
+      "up": null
+    },
+    "chirality_gate": "BLOCKED",
+    "collective_tangents_Z_fi": {
+      "charged_lepton": null,
+      "down": null,
+      "neutrino": null,
+      "up": null
+    },
+    "component_selection_gate": "CONDITIONAL_V8_5_SELECTOR_HAS_NO_ACTION_SELECTED_STATE",
+    "diffeomorphism_covariance_gate": "NOT_EVALUABLE",
+    "effective_localized_pole": null,
+    "evaluated_derivatives_A_f": {
+      "charged_lepton": null,
+      "down": null,
+      "neutrino": null,
+      "up": null
+    },
+    "gauge_covariance_gate": "NOT_EVALUABLE",
+    "global_well_definedness_gate": "NOT_EVALUABLE",
+    "immersions_C_f": {
+      "charged_lepton": null,
+      "down": null,
+      "neutrino": null,
+      "up": null
+    },
+    "nonlinear_states": {
+      "charged_lepton": {
+        "base": null,
+        "excitation_1": null,
+        "excitation_2": null
+      },
+      "down": {
+        "base": null,
+        "excitation_1": null,
+        "excitation_2": null
+      },
+      "neutrino": {
+        "base": null,
+        "excitation_1": null,
+        "excitation_2": null
+      },
+      "up": {
+        "base": null,
+        "excitation_1": null,
+        "excitation_2": null
+      }
+    },
+    "reason": "the frozen finite family modules are representation data, but the current action supplies neither a geon solution nor the FR/G2/local spinor structures required to realize them as nonlinear states"
+  },
+  "dependency_graph": [
+    {
+      "node_or_arrow": "S8",
+      "status": "ACTION_OWNED",
+      "value": "metric G_AB and real singlets chi,sigma"
+    },
+    {
+      "node_or_arrow": "S8 -> Q_geom^0",
+      "status": "DERIVED_CANONICAL_CONFIGURATION_SPACE",
+      "value": "Q_geom^0=C_geom^s/Diff^(s+1)_(0,fr)(S7)"
+    },
+    {
+      "node_or_arrow": "Q_geom^0 -> Phi_*",
+      "status": "BLOCKED_NO_ACTION_SELECTED_STATIONARY_GEON",
+      "value": null
+    },
+    {
+      "node_or_arrow": "Q_geom^0 -> L_FR",
+      "status": "BLOCKED_PI1_TRIVIAL_FOR_DECLARED_SMALL_DIFF_QUOTIENT",
+      "value": null
+    },
+    {
+      "node_or_arrow": "(Phi_*,L_FR) -> C_f",
+      "status": "BLOCKED_NO_LOCAL_CHIRAL_TRANSGRESSION_OR_G2_SELECTION",
+      "value": null
+    },
+    {
+      "node_or_arrow": "C_f -> A_f",
+      "status": "BLOCKED_NO_GLOBAL_COMPOSITE_IMMERSION",
+      "value": null
+    },
+    {
+      "node_or_arrow": "A_f -> (G_f,Q_f)",
+      "status": "NOT_EVALUABLE",
+      "value": null
+    },
+    {
+      "node_or_arrow": "(A_u,J_CG,A_d) -> K_ud",
+      "status": "BLOCKED_NO_ACTION_OWNED_PARENT_CURRENT",
+      "value": null
+    },
+    {
+      "node_or_arrow": "(G_f,Q_f,K_ud) -> V_BHSM",
+      "status": "CONDITIONAL_V8_9_FUNCTOR_NOT_EVALUABLE",
+      "value": null
+    }
+  ],
+  "exact_field_content": [
+    "G_AB",
+    "chi",
+    "sigma"
+  ],
+  "final_verdict": "BHSM_GEOMETRY_ONLY_PARENT_ACTION_CANNOT_GENERATE_THE_REQUIRED_FR_CHIRAL_FLAVOR_CARRIER",
+  "frozen_predictions_changed": false,
+  "geometry_and_topology": {
+    "G2_selection_no_go": {
+      "J_u": null,
+      "P_chi0": null,
+      "P_chi1": null,
+      "P_chi2": null,
+      "Pi_10": null,
+      "S8_G2_energy_or_constraint_term": null,
+      "compatible_G2_fiber_for_fixed_metric_orientation": "SO(7)/G2=RP7",
+      "equivariance_obstruction": "an SO(7)-natural selection would be a fixed point of the transitive SO(7) action on SO(7)/G2, but no such fixed point exists",
+      "eta_phi": null,
+      "lowest_spinor_selection": null,
+      "metric_selects_unique_point": false,
+      "nearly_parallel_G2_exists": true,
+      "nearly_parallel_selected_by_metric_alone": false,
+      "result": "BHSM_ACTION_SELECTED_G2_TRIALITY_POLARIZATION_NOT_DERIVED",
+      "round_metric_lowest_spinor_simple": false,
+      "torsion_free_G2_on_S7": false,
+      "torsion_free_topology_reason": "a torsion-free G2 form is a nonzero harmonic 3-form, while H^3(S7)=0"
+    },
+    "artifact": "BHSM_geometry_only_geon_fr_carrier_completion_v9_1",
+    "candidate_loop_ledger": [
+      {
+        "candidate": "large orientation-preserving diffeomorphism",
+        "closed_in_Q_geom_0": false,
+        "order": 2,
+        "status": "different full-diffeomorphism quotient; exotic-sphere class"
+      },
+      {
+        "candidate": "2pi spatial rotation",
+        "closed_in_Q_geom_0": true,
+        "order": 1,
+        "status": "lies in the small gauge orbit and projects to the constant loop"
+      },
+      {
+        "candidate": "exchange of two localized geons",
+        "closed_in_Q_geom_0": false,
+        "order": null,
+        "status": "no two-geon stationary sector or exchange configuration space is action-derived"
+      },
+      {
+        "candidate": "quaternionic Hopf-fibration cycle",
+        "closed_in_Q_geom_0": false,
+        "order": null,
+        "status": "fixed bundle geometry, not an active configuration coordinate"
+      },
+      {
+        "candidate": "G2-compatible-structure path",
+        "closed_in_Q_geom_0": false,
+        "order": null,
+        "status": "G2 structure is not an active S8 field"
+      },
+      {
+        "candidate": "metric-plus-frame rotation",
+        "closed_in_Q_geom_0": true,
+        "order": 1,
+        "status": "the observer frame is gauge fixing, not a physical rotor"
+      },
+      {
+        "candidate": "two-cap exchange or reflection",
+        "closed_in_Q_geom_0": false,
+        "order": null,
+        "status": "belongs to independently owned S5|4 data, not the S8 canonical field space"
+      },
+      {
+        "candidate": "Spin(8) triality permutation",
+        "closed_in_Q_geom_0": false,
+        "order": 3,
+        "status": "discrete representation automorphism, not a metric/scalar loop"
+      },
+      {
+        "candidate": "connected-sum or handle geon",
+        "closed_in_Q_geom_0": false,
+        "order": null,
+        "status": "changes the fixed S7 manifold doctrine and is outside the action domain"
+      }
+    ],
+    "configuration_space": {
+      "admissible_metric_class": "all positive spatial metrics in the fixed S7 smooth topology; Lorentzian lapse/shift belong to histories and constraints",
+      "canonical_spatial_manifold": "Sigma=S7 with its standard smooth structure",
+      "fixed_topology": true,
+      "frame_bundle": "oriented orthonormal SO(7) frame bundle of each spatial metric",
+      "gauge_group": "Diff^(s+1)_(0,fr)(S7), the identity component fixing p and its oriented frame",
+      "history_time_domain": "compact interval I=[t_i,t_f], or R_t after a declared global extension",
+      "internal_gauge_group": "trivial on the active S8 singlets",
+      "large_diffeomorphisms_quotiented": false,
+      "observer_framing": "one fixed p in S7 and one fixed oriented frame at p",
+      "orientation": "dt wedge or_S7 with the standard orientation of S7",
+      "physical_configuration_space": "Q_geom^0=C_geom^s/Diff^(s+1)_(0,fr)(S7)",
+      "regularity": {
+        "diffeomorphisms": "H^(s+1) observer diffeomorphisms",
+        "metrics": "H^s positive-definite spatial metrics, s>9/2",
+        "scalars": "H^s(S7,R)_chi x H^s(S7,R)_sigma, s>9/2"
+      },
+      "spacetime": "M8=I_t x S7",
+      "spatial_boundary": null,
+      "spin_structure": "unique, since H^1(S7;Z2)=0",
+      "temporal_endpoint_conditions": "Dirichlet endpoint traces for G,chi,sigma; compactly supported interior variations",
+      "topology_change_allowed": false,
+      "unreduced_field_space": "C_geom^s=Met_+^s(S7) x H^s(S7,R)^2"
+    },
+    "configuration_space_strata": [
+      {
+        "meaning": "all admissible metrics and two real scalar sections on fixed S7",
+        "space": "full field space C_geom^s",
+        "topology_use": "contractible total space"
+      },
+      {
+        "meaning": "physical canonical configurations with observer framing",
+        "space": "small-diffeomorphism quotient Q_geom^0",
+        "topology_use": "the action-owned quotient used for the pi1 theorem"
+      },
+      {
+        "meaning": "a different quotient that also gauges mapping classes",
+        "space": "full-diffeomorphism observer quotient",
+        "topology_use": "comparison only; not silently substituted for Q_geom^0"
+      },
+      {
+        "meaning": "finite functions or collective coordinates retained by a proved truncation",
+        "space": "symmetry-reduced ansatz space",
+        "topology_use": "cannot determine the topology of the full quotient"
+      },
+      {
+        "meaning": "solutions modulo gauge after equations and boundary conditions",
+        "space": "stationary moduli space",
+        "topology_use": "undefined until a stationary branch exists"
+      },
+      {
+        "meaning": "normalizable zero modes around one selected solution",
+        "space": "collective-coordinate space near Phi_*",
+        "topology_use": "undefined because Phi_* and its zero modes are absent"
+      }
+    ],
+    "final_verdict": "BHSM_GEOMETRY_ONLY_PARENT_ACTION_CANNOT_GENERATE_THE_REQUIRED_FR_CHIRAL_FLAVOR_CARRIER",
+    "frozen_predictions_changed": false,
+    "large_diffeomorphism_audit": {
+      "action_selects_between_characters": false,
+      "available_characters_if_adopted": [
+        "trivial",
+        "sign"
+      ],
+      "belongs_to_small_diff_quotient": false,
+      "character_selected_by_S8": false,
+      "conclusion": "enlarging the quotient would add global gauge doctrine and a quantization choice; it would not derive the requested local carrier",
+      "identified_with_geon_exchange": false,
+      "identified_with_two_pi_rotation": false,
+      "if_full_observer_group_is_gauged": "pi1 of the corresponding classifying quotient can inherit this Z2",
+      "local_spinor_bundle_produced": false,
+      "loop_interpretation": "exotic-sphere gluing mapping class",
+      "mathematical_origin": "gluing two 8-disks by an S7 diffeomorphism gives the homotopy-8-sphere class",
+      "orientation_preserving_mapping_class_group": "pi0 Diff^+(S7)=Theta_8=Z2"
+    },
+    "local_carrier_no_go": {
+      "C3_family_action_from_FR": null,
+      "FR_object_if_available": "flat complex line over global configuration space",
+      "G2_SU3_current_from_FR": null,
+      "Spin_1_3_Clifford_action": null,
+      "configuration_to_M4_transgression": null,
+      "left_right_chirality_operator": null,
+      "local_principal_symbol": null,
+      "local_spacetime_bundle": null,
+      "logical_result": "even an adopted global sign character changes wavefunction holonomy only; it does not construct a local spinor field, chirality, or a bifundamental charged current",
+      "self_adjoint_local_domain": null
+    },
+    "measured_flavor_data_used": false,
+    "new_continuous_parameter_added": false,
+    "new_fundamental_fermion_added": false,
+    "next_missing_object": "ACTION_LEVEL_GLOBAL_TOPOLOGICAL_SECTOR_WITH_LOCAL_CHIRAL_TRANSGRESSION_AND_COMMON_PARENT_CURRENT_OWNERSHIP",
+    "physical_promotion": false,
+    "prior_FR_reconciliation": {
+      "action_derived_map_from_Q_geom_0_to_v6_6_space": null,
+      "equal_to_Q_geom_0": false,
+      "promotion_in_v9_1": false,
+      "reason": "the active S8 scalars are R-valued and no S3-valued degree field is present",
+      "v6_6_FR_sign": "(-1)^N after choosing the nontrivial character",
+      "v6_6_pi1": "pi4(S3)=Z2",
+      "v6_6_space": "Map_*^N(S3,S3)",
+      "v6_6_status": "ADOPTED_BHSM_IDENTIFICATION_NOT_PARENT_ACTION_THEOREM"
+    },
+    "small_diffeomorphism_pi1_theorem": {
+      "FR_line_bundle": null,
+      "action_free": true,
+      "free_action_reason": "an isometry fixing a point and its full tangent frame is the identity",
+      "gauge_group_connected_by_definition": true,
+      "homotopy_equivalence": "Q_geom^0 weakly equivalent to B Diff_(0,fr)",
+      "long_exact_sequence": "pi1(Q_geom^0)=pi0(Diff_(0,fr))",
+      "metric_space_reason": "the pointwise positive cone is convex",
+      "nontrivial_FR_character": null,
+      "nontrivial_order_two_loop": false,
+      "pi1_Q_geom_0": "0",
+      "principal_fibration": "Diff_(0,fr) -> C_geom^s -> Q_geom^0",
+      "result": "BHSM_SMALL_DIFF_GEOMETRY_CONFIGURATION_SPACE_HAS_NO_FR_Z2",
+      "scalar_space_reason": "both scalar Sobolev spaces are real topological vector spaces",
+      "scope": "the component and quotient declared by the current S8 gauge doctrine",
+      "total_space_contractible": true
+    },
+    "source_pr207_sha": "c9d233c10f08b2d238b2c0c1ad8024f6c99fa0fd",
+    "sprint": "bhsm-geometry-only-geon-fr-carrier-completion-v9-1",
+    "validation": {
+      "G2_selection_fails_closed": true,
+      "configuration_space_fully_typed": true,
+      "large_diff_kept_separate": true,
+      "local_chiral_carrier_absent": true,
+      "no_FR_character_fabricated": true,
+      "small_diff_pi1_trivial": true,
+      "v6_6_mapping_space_not_promoted": true
+    },
+    "validation_passed": true,
+    "version": "v9.1"
+  },
+  "geometry_only_no_go": {
+    "failed_requirements": {
+      "G2_polarization": "PROVED_NOT_NATURALLY_METRIC_SELECTED",
+      "chirality": "ABSENT_NO_LOCAL_CLIFFORD_CARRIER",
+      "full_rank_current": "NOT_EVALUABLE",
+      "global_family_immersion": "ABSENT",
+      "localized_stationary_solution": "OPEN_NOT_SELECTED",
+      "nontrivial_pi1_Q_geom": "PROVED_FALSE_FOR_Q_geom^0",
+      "parameter_independence": "FALSE_FOR_HOMOGENEOUS_BRANCHES",
+      "positive_Gram_form": "NOT_EVALUABLE",
+      "spinorial_composite_lift": "ABSENT_NO_LOCAL_TRANSGRESSION",
+      "stable_geon_sector": "ABSENT_FROM_FIXED_TOPOLOGY_DOMAIN",
+      "unique_branch_selection": "FALSE"
+    },
+    "hypotheses": [
+      "fixed M8=I x S7 smooth topology",
+      "active S8 fields exactly G_AB,chi,sigma",
+      "identity-component framed diffeomorphisms are gauge",
+      "no measured flavor input and no new field or coefficient"
+    ],
+    "logical_core": [
+      "pi1(Q_geom^0)=0, so the declared geometry-only quotient has no nontrivial FR sign character",
+      "even a separately adopted global sign line has no local Spin(1,3) Clifford or chirality data",
+      "a metric and orientation do not naturally select a point of SO(7)/G2",
+      "therefore the original active field bundle cannot define C_f, A_f, or J_CG"
+    ],
+    "scope": "the current S8 action and fixed-manifold gauge doctrine; not every conceivable extended quantum-gravity theory",
+    "stronger_than_numerical_nonfinding": true,
+    "verdict": "BHSM_GEOMETRY_ONLY_PARENT_ACTION_CANNOT_GENERATE_THE_REQUIRED_FR_CHIRAL_FLAVOR_CARRIER"
+  },
+  "invalidated": [
+    "promotion of the adopted v6.6 Map_*(S3,S3) FR line to an S8 action theorem",
+    "identification of the S7 exotic-sphere mapping class with a 2pi rotation or geon exchange",
+    "a stationary or periodic vacuum from the homogeneous closed-FLRW branch",
+    "a static finite-radius quaternionic-Hopf product vacuum",
+    "natural selection of a G2/triality polarization by metric and orientation alone",
+    "completion by any single currently listed minimal extension"
+  ],
+  "mass_and_lepton_sectors": {
+    "PMNS": null,
+    "Z_virt_u2_action_location": null,
+    "action_decides_energy_vs_transfer_residue": false,
+    "charged_lepton_masses": null,
+    "down_quark_masses": null,
+    "leptonic_CP_invariants": null,
+    "mass_ratios_derived_in_v9_1": false,
+    "neutrino_propagation_spectrum": null,
+    "one_over_4pi_origin": null,
+    "reason": "no action-selected nonlinear states, physical Hessian, or universal scale is available",
+    "sector_base_energies": null,
+    "separate_sector_scales_fit": false,
+    "universal_physical_scale": null,
+    "up_quark_masses": null
+  },
+  "measured_flavor_data_used": false,
+  "minimal_extension_comparison": {
+    "BHSM_v2_parent_action_proposed": false,
+    "candidate_closing_all_missing_arrows": null,
+    "candidates": [
+      {
+        "FR": "possible after a sector and sign character are chosen",
+        "G2_triality": false,
+        "bundle_or_data": "sum over declared spatial topologies or full observer mapping classes",
+        "candidate": "global manifold/geon topology sector",
+        "creates_new_particle": false,
+        "current_ownership": false,
+        "local_chirality": false,
+        "local_degrees_of_freedom": 0,
+        "new_coefficients": 0,
+        "problem": "changes global action domain and still lacks local transgression",
+        "rank": 1
+      },
+      {
+        "FR": "pi1 Map_*^N(S7,S7)=pi8(S7)=Z2",
+        "G2_triality": "not without extra octonionic structure",
+        "bundle_or_data": "section U of an S7 target bundle",
+        "candidate": "S7-valued topological sigma field",
+        "creates_new_particle": "generically yes",
+        "current_ownership": false,
+        "local_chirality": false,
+        "local_degrees_of_freedom": 7,
+        "new_coefficients": "at least one kinetic normalization",
+        "problem": "topology alone does not close the Clifford/current arrows",
+        "rank": 2
+      },
+      {
+        "FR": false,
+        "G2_triality": "defines a G2 reduction by bilinears",
+        "bundle_or_data": "unit section of the real rank-eight Spin(7) spinor bundle",
+        "candidate": "unit spinor section",
+        "creates_new_particle": "yes unless constrained as auxiliary geometry",
+        "current_ownership": false,
+        "local_chirality": "requires a separate M8-to-M4 reduction",
+        "local_degrees_of_freedom": 7,
+        "new_coefficients": "kinetic/constraint normalization",
+        "problem": "violates the no-fundamental-spinor default and does not derive FR/current",
+        "rank": 3
+      },
+      {
+        "FR": false,
+        "G2_triality": true,
+        "bundle_or_data": "positive section phi in Lambda^3 T*S7",
+        "candidate": "stable G2 three-form",
+        "creates_new_particle": "yes unless the metric is derived from phi",
+        "current_ownership": false,
+        "local_chirality": false,
+        "local_degrees_of_freedom": "35 before gauge/constraints",
+        "new_coefficients": "kinetic, torsion, and constraint data",
+        "problem": "duplicates metric data if added independently and does not close FR/current",
+        "rank": 4
+      },
+      {
+        "FR": false,
+        "G2_triality": true,
+        "bundle_or_data": "unit octonionic section plus multiplication/connection",
+        "candidate": "octonion-bundle section",
+        "creates_new_particle": "generically yes",
+        "current_ownership": "conditional",
+        "local_chirality": "conditional",
+        "local_degrees_of_freedom": "at least 7",
+        "new_coefficients": "connection and kinetic data",
+        "problem": "more structure than a G2 reduction and no canonical FR sector",
+        "rank": 5
+      },
+      {
+        "FR": false,
+        "G2_triality": true,
+        "bundle_or_data": "Spin(8) frame plus outer-automorphism polarization",
+        "candidate": "constrained frame/triality field",
+        "creates_new_particle": "possibly",
+        "current_ownership": "conditional",
+        "local_chirality": "conditional",
+        "local_degrees_of_freedom": "constraint-dependent",
+        "new_coefficients": "constraint and kinetic data",
+        "problem": "large redundant field content and no derived topology",
+        "rank": 6
+      },
+      {
+        "FR": "flux sectors possible",
+        "G2_triality": false,
+        "bundle_or_data": "p-form connection/gerbe",
+        "candidate": "higher-form gauge field",
+        "creates_new_particle": "generically yes",
+        "current_ownership": false,
+        "local_chirality": false,
+        "local_degrees_of_freedom": "degree- and gauge-dependent",
+        "new_coefficients": "kinetic and topological levels",
+        "problem": "does not jointly derive the required representation carrier",
+        "rank": 7
+      }
+    ],
+    "comparison_performed_only_after_geometry_no_go": true,
+    "extension_adopted": false,
+    "ranking_criterion": [
+      "minimum new independent data",
+      "maximum geometric inevitability",
+      "number of missing arrows closed",
+      "no flavor fitting",
+      "consistency and quantizability"
+    ],
+    "reason": "the globally minimal topology change and the locally minimal G2/spinor changes close different arrows; none simultaneously derives FR, local chirality, family immersion, and the parent current without further data",
+    "unique_minimal_extension": null
+  },
+  "new_continuous_parameter_added": false,
+  "new_fundamental_fermion_added": false,
+  "next_missing_object": "ACTION_LEVEL_GLOBAL_TOPOLOGICAL_SECTOR_WITH_LOCAL_CHIRAL_TRANSGRESSION_AND_COMMON_PARENT_CURRENT_OWNERSHIP",
+  "open": [
+    "ACTION_LEVEL_GLOBAL_TOPOLOGICAL_SECTOR_WITH_LOCAL_CHIRAL_TRANSGRESSION_AND_COMMON_PARENT_CURRENT_OWNERSHIP",
+    "a revised global action domain if large diffeomorphisms or topology sums are physical",
+    "a local configuration-space-to-M4 chiral transgression theorem",
+    "a parent current term closing the same extended field bundle"
+  ],
+  "original_or_extended_action": "ORIGINAL_S8_ACTION_ONLY",
+  "parameter_input_ledger": [
+    {
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "flavor_data": false,
+      "symbol": "kappa0",
+      "value": null
+    },
+    {
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "flavor_data": false,
+      "symbol": "kappa1",
+      "value": null
+    },
+    {
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "flavor_data": false,
+      "symbol": "Zchi",
+      "value": null
+    },
+    {
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "flavor_data": false,
+      "symbol": "Zsigma",
+      "value": null
+    },
+    {
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "flavor_data": false,
+      "symbol": "g",
+      "value": null
+    },
+    {
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "flavor_data": false,
+      "symbol": "A0",
+      "value": null
+    },
+    {
+      "classification": "INDEPENDENT_THEORY_INPUT",
+      "flavor_data": false,
+      "symbol": "G0",
+      "value": null
+    },
+    {
+      "classification": "FROZEN_STRUCTURAL_INPUT",
+      "flavor_data": false,
+      "symbol": "frozen (k,j,q) family ledgers",
+      "value": "unchanged"
+    },
+    {
+      "classification": "INDEPENDENT_LOCALIZED_EFT_INPUT_NOT_USED",
+      "flavor_data": true,
+      "symbol": "Y_u,Y_d,Y_e",
+      "value": null
+    }
+  ],
+  "physical_matrix_promoted": false,
+  "physical_operator_and_flavor_readout": {
+    "G_charged_lepton": null,
+    "G_d": null,
+    "G_neutrino": null,
+    "G_u": null,
+    "Gram_positivity_gate": "NOT_EVALUABLE",
+    "H8_gauge_fixed": null,
+    "Hessian_self_adjoint_domain": null,
+    "J": null,
+    "J_CG": null,
+    "Jarlskog_trace_identity_residual": null,
+    "K8_gauge_fixed": null,
+    "K_ud": null,
+    "Phi_star": null,
+    "Q_charged_lepton": null,
+    "Q_d": null,
+    "Q_neutrino": null,
+    "Q_u": null,
+    "V_BHSM": null,
+    "basis_covariance_gate": "NOT_EVALUABLE",
+    "comparison_with_external_data_performed": false,
+    "current_full_rank_gate": "NOT_EVALUABLE",
+    "current_smallest_singular_value": null,
+    "gauge_zero_modes_removed": false,
+    "physical_matrix_promoted": false,
+    "physical_negative_modes": null,
+    "s12": null,
+    "s13": null,
+    "s23": null,
+    "simple_spectrum_gate": "NOT_EVALUABLE",
+    "unitarity_residual": null
+  },
+  "prediction_freeze": {
+    "FR_line": null,
+    "G2_polarization": null,
+    "frozen_historical_predictions_changed": false,
+    "local_chiral_carrier": null,
+    "physical_promotion": false,
+    "sha256": "81036B115D5B5D7249BAF2613CDDC39030D9BD7CA1981ACDFC7774351F96379D",
+    "verdict": "BHSM_GEOMETRY_ONLY_PARENT_ACTION_CANNOT_GENERATE_THE_REQUIRED_FR_CHIRAL_FLAVOR_CARRIER",
+    "version": "v9.1"
+  },
+  "release_status": "BHSM_1_0_RELEASE_BLOCKED",
+  "source_pr207_sha": "c9d233c10f08b2d238b2c0c1ad8024f6c99fa0fd",
+  "sprint": "bhsm-geometry-only-geon-fr-carrier-completion-v9-1",
+  "vacuum": {
+    "Berger_Hopf": {
+      "Einstein_shape_equation": "5 x^2-6 x+1=0",
+      "Einstein_shape_roots": [
+        "1/5",
+        "1"
+      ],
+      "Jensen_squashed_ratio": "x=1/5",
+      "ansatz": "ds8^2=-N^2dt^2+a_H^2 g_S4+a_F^2<omega,omega>",
+      "bundle": "S3 -> S7 -> S4 with the canonical Sp(1) connection",
+      "canonical_connection_curvature_included": true,
+      "full_nonsinglet_stability_proved": false,
+      "homogeneous_consistency": "the two scale factors exhaust the Sp(2)xSp(1)-invariant diagonal metrics; compact-group symmetric criticality applies within this sector",
+      "invariant_volume_factor": "a_H^4 a_F^3",
+      "lapse_retained": true,
+      "positive_scale_static_solution": false,
+      "reduced_gravity_action": "Vol0 int dt a_H^4 a_F^3{(kappa1/(2N))[-12 H_Hdot^2-6 H_Fdot^2-24 H_Hdot H_Fdot]+N[kappa1 R7/2-Ueff]}",
+      "round_ratio": "x=1",
+      "scope": "exact for the lapse-retaining homogeneous quaternionic-Hopf two-scale sector",
+      "spatial_scalar_curvature": "R7=48/a_H^2+6/a_F^2-12 a_F^2/a_H^4",
+      "static_lapse_constraint": "kappa1 R7/2=Ueff",
+      "static_product_geon_vacuum": false,
+      "static_scale_equations_after_constraint": "partial_(a_H)R7=partial_(a_F)R7=0",
+      "velocity_definition": "H_Hdot=adot_H/a_H; H_Fdot=adot_F/a_F",
+      "vertical_derivative": "partial_(a_F)R7=-12/a_F^3-24 a_F/a_H^4<0",
+      "volume_normalized_curvature": "6*(2*x*(4 - x) + 1)/x**(4/7)",
+      "volume_normalized_curvature_variable": "x=(a_F/a_H)^2"
+    },
+    "action_selected_unique_vacuum": false,
+    "action_value_of_physical_vacuum": null,
+    "ansatz_ladder": [
+      {
+        "class": "A time-warped closed geometry",
+        "physical_vacuum_selected": false,
+        "reduction": "DERIVED_WITH_LAPSE",
+        "result": "coefficient-dependent de Sitter closed slicing; not stationary or periodic"
+      },
+      {
+        "class": "B Berger/Hopf anisotropic S7",
+        "physical_vacuum_selected": false,
+        "reduction": "DERIVED_IN_HOMOGENEOUS_INVARIANT_SECTOR",
+        "result": "no positive-scale static product solution"
+      },
+      {
+        "class": "C cohomogeneity-one wall/geon",
+        "physical_vacuum_selected": false,
+        "reduction": "NOT_UNIQUE_WITH_CURRENT_DOMAIN_DATA",
+        "result": "no topological scalar wall sector on compact S7"
+      },
+      {
+        "class": "D G2-structured configuration",
+        "physical_vacuum_selected": false,
+        "reduction": "BLOCKED_NO_ACTIVE_G2_STRUCTURE",
+        "result": "metric does not canonically select a compatible G2 point"
+      },
+      {
+        "class": "E localized geon branch",
+        "physical_vacuum_selected": false,
+        "reduction": "OPEN_PDE_BUT_UPSTREAM_TOPOLOGY_AND_CARRIER_BLOCKED",
+        "result": "no stable localized or two-geon sector is action-derived"
+      }
+    ],
+    "closed_FLRW": {
+      "Hamiltonian_reduction_supplies_stationary_vacuum": false,
+      "ansatz": "ds8^2=-N(t)^2 dt^2+a(t)^2 g_S7",
+      "branch_dependence": [
+        "kappa0,kappa1,A0,G0",
+        "choice of scalar stationary root",
+        "time translation t0",
+        "constant chi modulus"
+      ],
+      "branch_unique": false,
+      "constant_scalar_solution": "a(t)=H^-1 cosh(H(t-t0))",
+      "constant_scalar_solution_condition": "H^2=Ueff/(21 kappa1)>0",
+      "effective_potential": "Ueff(sigma)=kappa0/2+A0 sigma^2/2+G0 sigma^4/4",
+      "exact_constraint_residual": "0",
+      "exact_evolution_residual": "0",
+      "kinetic_terms": "Kchi=Zchi(1+g sigma^2) chidot^2; Ksigma=Zsigma sigmadot^2",
+      "lapse_constraint": "21 kappa1[(adot/(N a))^2+a^-2]=Ueff+(Kchi+Ksigma)/(2N^2)",
+      "periodic": false,
+      "periodic_reason": "for H^2>0 and a>0, addot=H^2 a>0",
+      "reduced_action": "S=Vol(S7) int dt[-21 kappa1 a^5 adot^2/N+21 kappa1 N a^5-N a^7 Ueff+a^7(Kchi+Ksigma)/(2N)]",
+      "scalar_stationarity": [
+        "sigma=0",
+        "sigma^2=-A0/G0 when real",
+        "chi=constant is an unfixed shift modulus"
+      ],
+      "stationary": false,
+      "stationary_reason": "at a closed-slicing turning point a=H^-1, the evolution gives addot=H rather than zero",
+      "unit_S7_volume": "pi^4/3"
+    },
+    "closed_FLRW_numerical_crosscheck": {
+      "action_per_unit_S7_mpmath": -157.914863891197,
+      "action_per_unit_S7_scipy": -157.914863891197,
+      "bvp_success": true,
+      "certified_residual_bounds": {
+        "action_cross_method_residual": {
+          "certified_upper_bound": 1e-10,
+          "relation": "<"
+        },
+        "boundary_residual": {
+          "certified_upper_bound": 1e-10,
+          "relation": "<"
+        },
+        "bvp_constraint_residual": {
+          "certified_upper_bound": 1e-09,
+          "relation": "<"
+        },
+        "bvp_exact_solution_residual": {
+          "certified_upper_bound": 1e-10,
+          "relation": "<"
+        },
+        "cross_method_residual": {
+          "certified_upper_bound": 1e-09,
+          "relation": "<"
+        },
+        "ivp_constraint_residual": {
+          "certified_upper_bound": 1e-09,
+          "relation": "<"
+        },
+        "ivp_exact_solution_residual": {
+          "certified_upper_bound": 1e-10,
+          "relation": "<"
+        },
+        "scipy_quadrature_error_estimate": {
+          "certified_upper_bound": 1e-10,
+          "relation": "<"
+        }
+      },
+      "classification": "ANSATZ_VALIDATION_ONLY",
+      "ivp_success": true,
+      "mesh_points_final": 619,
+      "mesh_points_initial": 81,
+      "methods": [
+        "DOP853 initial-value integration",
+        "fourth-order collocation boundary-value solve"
+      ],
+      "methods_agree": true,
+      "physical_promotion": false,
+      "representative_inputs_are_physical": false,
+      "representative_normalization": {
+        "H": 1.0,
+        "Ueff": 21.0,
+        "kappa1": 1.0
+      },
+      "serialization_policy": "store cross-platform certified residual bounds, not unstable raw last-bit method differences",
+      "stationary_geon_constructed": false
+    },
+    "cohomogeneity_one_and_localized": {
+      "G2_structured_branch": {
+        "nearly_parallel_polarization_selected": false,
+        "stable_three_form_active": false,
+        "torsion_free_branch_on_S7": false
+      },
+      "cohomogeneity_one_wall": {
+        "allowed_non_topological_profiles": "coefficient- and boundary-domain-dependent paired or nodal solutions",
+        "missing": [
+          "declared orbit type and singular-orbit regularity",
+          "proved retained metric modes",
+          "action-selected scalar coefficient signs",
+          "global lapse/shift gauge and boundary domain"
+        ],
+        "reason": "R_chi x R_sigma is contractible and S7 has no spatial boundary",
+        "scalar_target_topological_charge": null,
+        "single_wall_on_compact_S7": false,
+        "unique_reduced_action": null
+      },
+      "localized_geon": {
+        "connected_sum_sector_in_action_domain": false,
+        "existence_theorem": null,
+        "interpretation": "not excluded as a generic PDE solution, but it cannot repair the proved FR and local-carrier obstruction",
+        "stationary_relative_equilibrium_derived": false,
+        "topologically_protected_metric_lump": false,
+        "two_geon_exchange_space_derived": false
+      }
+    },
+    "physical_constraint_residual": null,
+    "physical_equation_residual": null,
+    "physical_stability_spectrum": null,
+    "reason": "the derived homogeneous branches are nonstationary or obstructed; the remaining PDE branches are not uniquely defined or selected, and the exact topology/carrier no-go is already upstream",
+    "stationary_geon_vacuum": null,
+    "validation_passed": true
+  },
+  "validated": [
+    "the exact action-owned canonical configuration-space definition",
+    "trivial pi1 for the declared small-diffeomorphism quotient",
+    "separation of the optional large-diffeomorphism Theta_8 class from physical rotation/exchange",
+    "metric-only G2 naturality and torsion-free S7 obstructions",
+    "lapse-retaining closed-FLRW and quaternionic-Hopf reductions",
+    "two-method numerical validation of the representative de Sitter closed slicing"
+  ],
+  "validation": {
+    "FR_fails_closed": true,
+    "G2_fails_closed": true,
+    "composite_immersion_fails_closed": true,
+    "no_incomplete_extension_adopted": true,
+    "no_physical_matrix_promoted": true,
+    "physical_forms_fail_closed": true,
+    "topology_theorem_passed": true,
+    "vacuum_reductions_passed": true
+  },
+  "validation_passed": true,
+  "version": "v9.1"
+}

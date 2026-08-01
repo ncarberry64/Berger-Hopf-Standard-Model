@@ -1557,3 +1557,12 @@ Doctrine and manuscript chapter:
 - `artifacts/BHSM_automatic_geometric_lens_theorem_v8_9.json`: fail-closed Gram/Hessian/current lens theorem and proxy validation.
 - `artifacts/BHSM_action_selected_8d_vacuum_flavor_completion_v9_0.json`: action-chain audit, vacuum obstruction, numerical cross-checks, null physical matrix readout, and exact verdict.
 - `artifacts/BHSM_1_0_completion_gate.json`: canonical v9.0 RB-15/RB-16 gate.
+
+## BHSM v9.1 geometry-only geon/FR carrier campaign
+
+- `artifacts/BHSM_geometry_only_geon_fr_carrier_completion_v9_1.json`:
+  canonical configuration-space theorem, small/large diffeomorphism split,
+  FR and `G2` no-go results, lapse-retaining vacuum reductions, two-method
+  numerical checks, null composite/flavor/mass readout, and minimal-extension
+  comparison.
+- `artifacts/BHSM_1_0_completion_gate.json`: canonical v9.1 RB-15/RB-16 gate.

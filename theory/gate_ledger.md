@@ -132,3 +132,22 @@ RB-16: `DOWNSTREAM_BLOCKED`.
 
 Exact verdict:
 `BHSM_ACTION_SELECTED_8D_VACUUM_FLAVOR_MATRIX_NOT_DERIVABLE_FROM_CURRENT_STRATIFIED_ACTION`.
+
+## v9.1 geometry-only topology/carrier gate
+
+The canonical `S8` configuration quotient by framed `Diff_0(S7)` has
+trivial fundamental group. The separate `Theta_8=Z2` mapping class belongs
+to a changed full-diffeomorphism quotient and does not derive a local chiral
+carrier. The homogeneous vacuum ladder supplies nonstationary de Sitter
+evolution and an exact static quaternionic-Hopf no-go, but no stationary
+geon or selected `G2` polarization.
+
+RB-15: `BLOCKED_EXACT_GEOMETRY_ONLY_TOPOLOGY_AND_CARRIER_NO_GO`.
+
+RB-16: `DOWNSTREAM_BLOCKED`.
+
+Exact next object:
+`ACTION_LEVEL_GLOBAL_TOPOLOGICAL_SECTOR_WITH_LOCAL_CHIRAL_TRANSGRESSION_AND_COMMON_PARENT_CURRENT_OWNERSHIP`.
+
+Exact verdict:
+`BHSM_GEOMETRY_ONLY_PARENT_ACTION_CANNOT_GENERATE_THE_REQUIRED_FR_CHIRAL_FLAVOR_CARRIER`.

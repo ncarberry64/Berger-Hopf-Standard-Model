@@ -1,10 +1,10 @@
 # Open Blockers Backlog
 
-Current public status: v9.0 integrates the v8.4--v8.9 conditional flavor
-functor but proves that the current stratified action cannot evaluate it. The
-historical table remains provenance and does not override the v9.0 action-chain
-gate. The live Tier-C object is
-`ACTION_SELECTED_STATIONARY_8D_VACUUM_WITH_ACTION_OWNED_GLOBAL_COMPOSITE_IMMERSIONS_AND_COMMON_PARENT_CHARGED_CURRENT_KERNEL`.
+Current public status: v9.1 proves that the original metric-plus-real-scalar
+action cannot generate the required geometry-only FR chiral flavor carrier.
+The historical table remains provenance and does not override this exact
+topology/field-bundle gate. The live Tier-C object is
+`ACTION_LEVEL_GLOBAL_TOPOLOGICAL_SECTOR_WITH_LOCAL_CHIRAL_TRANSGRESSION_AND_COMMON_PARENT_CURRENT_OWNERSHIP`.
 
 Historical compatibility boundary: structural architecture integrated conditional; numerical closure open.
 This sentence records the pre-v7.1 numerical-closure status required by the
@@ -12,16 +12,24 @@ archived component contracts; it is not the current completion-tier verdict.
 
 Each blocker must be handled without fitting observed data after comparison and without changing frozen predictions.
 
-## Current v9.0 highest-upstream blocker
+## Current v9.1 highest-upstream blocker
 
-`ACTION_SELECTED_STATIONARY_8D_VACUUM_WITH_ACTION_OWNED_GLOBAL_COMPOSITE_IMMERSIONS_AND_COMMON_PARENT_CHARGED_CURRENT_KERNEL`
+`ACTION_LEVEL_GLOBAL_TOPOLOGICAL_SECTOR_WITH_LOCAL_CHIRAL_TRANSGRESSION_AND_COMMON_PARENT_CURRENT_OWNERSHIP`
 
-The v8.4--v8.9 algebraic functor is complete conditionally, but the current
-`S8[G,chi,sigma]` field bundle cannot evaluate its physical pullbacks. Do not
-substitute heat-profile proxies, identity matrices, independent M4 Yukawas, or
-measured CKM data. The static finite-radius `R_t x S7` constant-scalar branch
-is rejected; any alternative must first prove consistent closure, stationarity,
-domain conditions, and action ownership.
+The declared small-diffeomorphism geometry quotient has trivial fundamental
+group. The optional large-diffeomorphism class is not a selected FR
+rotation/exchange sector and cannot supply a local chiral Clifford bundle.
+The current action selects neither a stationary geon nor a `G2/C3`
+polarization. Downstream composite immersions, physical pullbacks, current,
+matrix, and mass/lepton outputs remain null.
+
+Any future extension must close the global topology, local transgression, and
+common-current arrows together. None of the v9.1 comparison candidates is
+uniquely minimal, so no extension is currently licensed.
+
+Exact verdict:
+
+`BHSM_GEOMETRY_ONLY_PARENT_ACTION_CANNOT_GENERATE_THE_REQUIRED_FR_CHIRAL_FLAVOR_CARRIER`
 
 | Blocker | Current status | Why it matters | Next valid action | Forbidden invalid action |
 | --- | --- | --- | --- | --- |
