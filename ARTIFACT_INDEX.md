@@ -1583,3 +1583,21 @@ Doctrine and manuscript chapter:
   with verdict `BHSM_GLOBAL_SCALE_REMAINS_UNDERDETERMINED_BY_CURRENT_ACTION`.
 - `artifacts/BHSM_1_0_completion_gate.json`: canonical v10.0 gate; Mark I is
   reached, Mark II is conditional, Marks III/IV and RB-15/RB-16 remain open.
+
+## BHSM v10.1 Relational Envelopment Holism campaign
+
+- `artifacts/BHSM_relational_envelopment_holism_axioms_v10_1.json`: exact
+  author semantic JSON; SHA-256
+  `f981a6501526a3ff324cbf5cb4f1e26b1f7d3ecd0c7b2759c200f6aa1ee184b0`.
+- `artifacts/BHSM_relational_envelopment_constraint_ledger_v10_1.json`: typed
+  doctrine records, hard invariants, provenance, falsifiers, dependencies,
+  forbidden promotions, and geometry reconciliation.
+- `artifacts/BHSM_topological_buoyancy_gate_v10_1.json`: proxy radial
+  variation plus covariant normal/radion gate and no-go boundary.
+- `artifacts/BHSM_global_conservation_gate_v10_1.json`: reversibility,
+  Noether, eta-degree, boundary-flux, cosmic-energy, and entropy audit.
+- `artifacts/BHSM_boundary_complementarity_gate_v10_1.json`: exact eta-sector
+  conjugation diagnostics and fail-closed full charge-conjugation gate.
+- `artifacts/BHSM_neutrino_relational_identity_gate_v10_1.json`: propagation
+  ontology and null observable-equivalence outputs.
+- `artifacts/BHSM_1_0_completion_gate.json`: canonical v10.1 RB-15/RB-16 gate.

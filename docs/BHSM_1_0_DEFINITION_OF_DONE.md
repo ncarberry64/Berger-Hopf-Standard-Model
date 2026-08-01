@@ -218,3 +218,18 @@ Exact verdict:
 
 Exact next object:
 `ACTION_SELECTED_GAUGE_DRESSED_CHARGED_SELF_ENVELOPMENT_RELATIVE_PERIODIC_ORBIT_WITH_LOCAL_CHIRAL_TRANSGRESSION`.
+
+## v10.1 relational constraint gate
+
+Author doctrine is integrated without theorem promotion. RB-15 is now blocked
+at the required global-local background object: one covariant normal/radion
+buoyancy functional incorporating global constraints and local envelope
+backreaction. RB-16 remains downstream. No physical mass, matrix, cosmic
+energy, entropy, antimatter-equivalence, or measurement-probability output is
+licensed.
+
+Exact verdict:
+`BHSM_RELATIONAL_ENVELOPMENT_PARENT_ACTION_CONSTRAINTS_CONSTRUCTED_CONDITIONALLY`.
+
+Exact next object:
+`COVARIANT_ACTION_DERIVED_NORMAL_RADION_BUOYANCY_FUNCTIONAL_WITH_GLOBAL_CONSTRAINT_AND_LOCAL_ENVELOPMENT_BACKREACTION`.

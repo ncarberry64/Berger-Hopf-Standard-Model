@@ -6,11 +6,11 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 
 | Item | Current status |
 | --- | --- |
-| Overall status | envelopment foundation reached; dynamic architecture conditional; physical derivation and empirical replacement open |
-| Latest theorem branch | `agent/bhsm-unified-envelopment-foundation-v10-0` |
+| Overall status | relational doctrine integrated; parent-action constraints conditional; physical derivation and empirical replacement open |
+| Latest theorem branch | `agent/bhsm-relational-envelopment-holism-v10-1` |
 | Latest completed theorem commits | PO-BH-47 `ae5dac5`; PO-BH-47 cleanup `1c11d2b`; PO-BH-48 `8ac577c`; PO-BH-49 `c2cfc70`; PO-BH-50 `7a4523a`; PO-BH-51 `225786f`; PO-BH-52 `4de6d9c`; PO-BH-53 `20c58b1`; PO-BH-54 `11d1c60`; PO-BH-55 `cf0e998`; PO-BH-56 `9f93330`; PO-BH-57/58/59 merged to main; PO-BH-60 merged to main; PO-BH-61 merged to main; PO-BH-62 merged to main; PO-BH-63 merged to main; PO-BH-64 merged to main; PO-BH-65 stacked in PR #21; PO-BH-66 stacked in PR #22; PO-BH-67 stacked in PR #23; PO-BH-68 stacked in PR #24; full freeze protocol / charged `K_f` stacked in PR #25; boundary action source audit stacked in PR #26; boundary graded defect action kernel on this branch |
-| Test result summary | v10.0 focused action, topology, reduction, CLI, materialization, and completion-gate checks pass; required GitHub CI is authoritative |
-| Current theorem/status label | `BHSM_DYNAMIC_ENVELOPMENT_ACTION_AND_COMPLETION_ARCHITECTURE_CONSTRUCTED_CONDITIONALLY` |
+| Test result summary | v10.1 focused doctrine, geometry, buoyancy, conservation, complementarity, neutrino, CLI, and materialization checks pass; required GitHub CI is authoritative |
+| Current theorem/status label | `BHSM_RELATIONAL_ENVELOPMENT_PARENT_ACTION_CONSTRAINTS_CONSTRUCTED_CONDITIONALLY` |
 | Candidate architecture complete | yes |
 | Full BHSM proven | no |
 | Standard Model fully derived | no |
@@ -22,6 +22,20 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 | Collective curvature layer | connected topographic-gravity extension candidate |
 | Frozen predictions changed | no |
 | Official predictions changed | no |
+
+## v10.1 authoritative relational status
+
+Relational Envelopment Holism is preserved as exact author doctrine and a
+hard admissibility constraint, not a theorem. `S3 x M4` is the lifted M4 seam
+description and is locally completed by a collar normal; it is not the full
+M8 parent. The current action gives conditional local conservation, eta-degree
+conservation, a stable proxy radius, and eta-sector conjugation identities.
+It does not give the full buoyancy functional, scalar cosmic energy, entropy
+coarse graining, physical antimatter equivalence, neutrino vertex observable
+map, or transition probabilities.
+
+Exact next object:
+`COVARIANT_ACTION_DERIVED_NORMAL_RADION_BUOYANCY_FUNCTIONAL_WITH_GLOBAL_CONSTRAINT_AND_LOCAL_ENVELOPMENT_BACKREACTION`.
 
 ## v10.0 authoritative envelopment status
 

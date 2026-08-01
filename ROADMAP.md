@@ -1,5 +1,17 @@
 # BHSM Roadmap
 
+## v10.1 relational critical path
+
+The author doctrine and admissibility constraints are integrated. The
+highest-upstream construction is
+`COVARIANT_ACTION_DERIVED_NORMAL_RADION_BUOYANCY_FUNCTIONAL_WITH_GLOBAL_CONSTRAINT_AND_LOCAL_ENVELOPMENT_BACKREACTION`.
+It must reconcile collar-normal and Hopf-radion variation, total stress,
+GHY/Brown--York terms, ADM constraints, global volume/curvature/topology data,
+and local envelope backreaction. Its energy-depth sign, stable branch,
+weak-field/Newtonian limit, and equivalence-principle behavior must be
+calculated before Topological Buoyancy can be promoted. The charged physical
+orbit then remains the next dynamic-particle object.
+
 ## v10.0 exact critical path
 
 The structural envelopment action and conditional completion architecture are

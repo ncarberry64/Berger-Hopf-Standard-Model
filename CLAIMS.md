@@ -2162,3 +2162,25 @@ Not supported:
 
 Exact verdict:
 `BHSM_DYNAMIC_ENVELOPMENT_ACTION_AND_COMPLETION_ARCHITECTURE_CONSTRUCTED_CONDITIONALLY`.
+
+## v10.1 relational-envelopment claim boundary
+
+Supported:
+
+- exact deterministic preservation and typed classification of the author doctrine;
+- `S3 x M4` as a lifted seam/local reduction, not the full M8 parent;
+- action-varied stable v10 collective-radius proxy, without a buoyancy-force insertion;
+- conditional on-shell local stress conservation and smooth eta-degree conservation;
+- absence of explicit fundamental dissipation in the current parent action;
+- eta-sector conjugation involution preserving norm, kinetic action/stress and reversing its phase current.
+
+Not supported:
+
+- Topological Buoyancy as physical gravity, its required energy-depth sign, Newtonian limit, or equivalence principle;
+- a coordinate-independent scalar total cosmic energy or completed entropy theorem;
+- full matter/antimatter equivalence, charge representations, physical mass equality, vertices, or annihilation;
+- removal of conventional antiparticle fields or Dirac/Majorana observable questions;
+- a neutrino vertex-phase observable map, PMNS/Delta-m2 prediction, or normalized measurement probabilities.
+
+Exact verdict:
+`BHSM_RELATIONAL_ENVELOPMENT_PARENT_ACTION_CONSTRAINTS_CONSTRUCTED_CONDITIONALLY`.
