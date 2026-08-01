@@ -2217,7 +2217,8 @@ Supported:
 - the M8 Hopf breathing mode has Einstein-frame kinetic coefficient `6` for
   positive gravitational normalization, but pure Einstein curvature gives no
   positive stationary radius;
-- the M5 fold Jacobi amplitude is a separate, conditionally normalized mode;
+- the M5 fold Jacobi amplitude is conditionally normalized, and its seam trace
+  projection is fixed exactly by v6.27;
 - a formal delta-supported intrinsic-stress lift is tangential and requires a
   shape equation or bulk reaction for normal distributional conservation;
 - none of the audited candidates passes all action ownership, gauge,
@@ -2225,7 +2226,8 @@ Supported:
 
 Not supported:
 
-- identifying seam depth, the Hopf radius, and the fold amplitude;
+- declaring the fold and Hopf components identical or physically inequivalent
+  before the common cross-domain operator is derived;
 - adding one scalar normal to a codimension-four embedding without a
   normal-bundle selection theorem;
 - treating Fredholm compatibility or an integrated Hamiltonian constraint as
@@ -2235,7 +2237,7 @@ Not supported:
 - any physical buoyancy force, effective Newton constant, mass, or prediction.
 
 Exact verdict:
-`BHSM_NO_PARAMETER_FREE_PHYSICAL_DEFORMATION_COMPLETION_EXISTS`.
+`BHSM_COMMON_ENVELOPMENT_MODE_EQUIVALENCE_BLOCKED_BY_UNDERIVED_CROSS_DOMAIN_HESSIAN`.
 
 Minimality verdict:
-`BHSM_MULTIPLE_INEQUIVALENT_DEFORMATION_COMPLETIONS_REMAIN`.
+`BHSM_PRE_UNIFICATION_CANDIDATE_AUDIT_INCONCLUSIVE`.

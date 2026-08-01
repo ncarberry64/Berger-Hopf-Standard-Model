@@ -337,13 +337,15 @@ Recommended pivot: transcribe existing CKM relative transport and flavor geometr
 
 ## v10.3 deformation-domain pivot
 
-Do not reopen the M5 moving-endpoint calculation, invent a unique scalar normal
-for `M4 -> M8`, or merge the Hopf breathing mode with the fold Jacobi amplitude.
-The repository contains several inequivalent conditional completions but no
-parameter-free selector. The next exact object is:
+Do not reopen the M5 moving-endpoint calculation or invent a unique scalar
+normal for `M4 -> M8`. Import the exact seam--fold constraint map, then test its
+coupling to the Hopf breathing component without setting absent mixed blocks to
+zero. Physical equivalence and inequivalence are both unresolved. The next
+exact object is:
 
-`AUTHOR_SELECTED_COMMON_DOMAIN_COMPLETION_BETWEEN_DISTRIBUTIONAL_DYNAMICAL_SEAM_AND_SMOOTH_PARENT_LOCALIZATION_WITH_FULL_LOCAL_RADION_PUSHFORWARD`.
+`COMMON_PHYSICAL_ENVELOPMENT_MODE_INTERTWINER_BETWEEN_SEAM_SHIFT_FOLD_AND_HOPF_BREATHING`.
 
-After that choice is made, derive its full local stress pushforward, shape or
+After that common operator is derived, determine its physical rank and derive
+its full local stress pushforward, shape or
 radion equation, covariant global restoring law, stability, weak-field limit,
 and scale before evaluating Topological Buoyancy.

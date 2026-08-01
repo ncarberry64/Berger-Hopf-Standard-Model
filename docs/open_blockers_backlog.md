@@ -1,11 +1,12 @@
 # Open Blockers Backlog
 
 Current public status: v10.3 recovers the earlier M5 seam-shift and fold-mode
-results and proves that multiple inequivalent deformation completions remain.
-The repository selects none of them parameter-free. Relational Envelopment
+results, including their exact constraint projection, and finds their coupling
+to M8 Hopf breathing unresolved. Physical inequivalence is not proved.
+Relational Envelopment
 Holism remains author doctrine and all earlier scoped results remain
 authoritative. The historical table remains provenance. The live Tier-C object
-is `AUTHOR_SELECTED_COMMON_DOMAIN_COMPLETION_BETWEEN_DISTRIBUTIONAL_DYNAMICAL_SEAM_AND_SMOOTH_PARENT_LOCALIZATION_WITH_FULL_LOCAL_RADION_PUSHFORWARD`.
+is `COMMON_PHYSICAL_ENVELOPMENT_MODE_INTERTWINER_BETWEEN_SEAM_SHIFT_FOLD_AND_HOPF_BREATHING`.
 
 Historical compatibility boundary: structural architecture integrated conditional; numerical closure open.
 This sentence records the pre-v7.1 numerical-closure status required by the
@@ -15,26 +16,26 @@ Each blocker must be handled without fitting observed data after comparison and 
 
 ## Current v10.3 highest-upstream blocker
 
-`AUTHOR_SELECTED_COMMON_DOMAIN_COMPLETION_BETWEEN_DISTRIBUTIONAL_DYNAMICAL_SEAM_AND_SMOOTH_PARENT_LOCALIZATION_WITH_FULL_LOCAL_RADION_PUSHFORWARD`
+`COMMON_PHYSICAL_ENVELOPMENT_MODE_INTERTWINER_BETWEEN_SEAM_SHIFT_FOLD_AND_HOPF_BREATHING`
 
 The prior-work audit finds that the M5 seam displacement was already treated as
 the moving endpoint, support shift, threading trace, and normal-support
 residual. That special fold construction is compatible with fixed B1 support
 through local order `D^2 q`; it does not supply an all-sector nonlinear M8
-embedding. The M8 Hopf breathing mode and M5 fold Jacobi amplitude remain
-different conditional scalar directions.
+embedding. The seam trace is fixed by the fold amplitude; coupling of that
+boundary/interface component to the M8 Hopf breathing mode remains unresolved.
 
 Direct `M4 -> M8` embedding has four normal directions. The lifted
 seven-dimensional seam is codimension one but lacks an action owner. The
 formal intrinsic delta-stress lift is tangential and requires a shape equation
 or bulk reaction for normal conservation. Delta support, finite collar, and
-smooth parent localization are inequivalent completions, none selected by the
-current action. The energy-depth sign and weak-field/equivalence limits remain
+smooth parent localization are distinct representations whose common-domain
+equivalence is unresolved. The energy-depth sign and weak-field/equivalence limits remain
 ineligible.
 
 Exact verdict:
 
-`BHSM_NO_PARAMETER_FREE_PHYSICAL_DEFORMATION_COMPLETION_EXISTS`
+`BHSM_COMMON_ENVELOPMENT_MODE_EQUIVALENCE_BLOCKED_BY_UNDERIVED_CROSS_DOMAIN_HESSIAN`
 
 | Blocker | Current status | Why it matters | Next valid action | Forbidden invalid action |
 | --- | --- | --- | --- | --- |

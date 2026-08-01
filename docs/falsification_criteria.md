@@ -81,11 +81,11 @@ gauge-invariant compactness observable, energy-depth sign, weak-field limit,
 equivalence behavior, stability, and dimensional scale from that same action.
 The present campaign emits none of those physical outputs.
 
-## BHSM v10.3 physical deformation no-selection boundary
+## BHSM v10.3 common-deformation equivalence boundary
 
-The no-selection theorem fails if the existing action and declared domains,
-without a new coefficient or author choice, select one gauge-invariant physical
-deformation and derive its common localized stress pushforward, global restoring
-law, stable background, and dimensional normalization. It is not falsified by
-renaming the v6.27 support shift, M8 Hopf radius, or v6.28 fold amplitude, which
-are already distinguished by action owner, stratum, and variational domain.
+The unresolved-equivalence verdict fails when one common action/domain derives
+the fold--Hopf mixed blocks, source projections, boundary maps, physical rank,
+and spectrum. Rank one would support one relational mode; rank greater than one
+with an action-selected lowest eigenvector would support a multicomponent
+sector. Physical inequivalence requires incompatible exact charges or spectra,
+not missing data. The v6.27 seam--fold projection is already established.

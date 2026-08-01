@@ -112,8 +112,8 @@ def test_completion_gate_tracks_current_v103_deformation_status():
     assert payload["version"] == "v10.3"
     assert payload["BHSM_1_0_release_complete"] is False
     assert payload["next_highest_upstream_blocker"] == (
-        "AUTHOR_SELECTED_COMMON_DOMAIN_COMPLETION_BETWEEN_DISTRIBUTIONAL_"
-        "DYNAMICAL_SEAM_AND_SMOOTH_PARENT_LOCALIZATION_WITH_FULL_LOCAL_RADION_PUSHFORWARD"
+        "COMMON_PHYSICAL_ENVELOPMENT_MODE_INTERTWINER_BETWEEN_SEAM_SHIFT_"
+        "FOLD_AND_HOPF_BREATHING"
     )
     assert payload["current_tier_status"]["Tier_A"] == "COMPLETE"
     assert payload["current_tier_status"]["Tier_B"] == "COMPLETE"

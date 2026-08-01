@@ -73,6 +73,309 @@
     "validation_passed": true,
     "verdict": "BHSM_STRATIFIED_ACTION_LACKS_A_CONSERVED_COMMON_DOMAIN_STRESS_TENSOR"
   },
+  "common_envelopment_mode": {
+    "artifact": "BHSM_common_envelopment_mode_v10_3",
+    "blocks": {
+      "H_env": [
+        [
+          {
+            "reason": "psi is constrained to the fold amplitude on the imported fixed-B1 domain",
+            "status": "ZERO_BY_DOMAIN_RESTRICTION",
+            "value": 0
+          },
+          {
+            "reason": "psi is constrained to the fold amplitude on the imported fixed-B1 domain",
+            "status": "ZERO_BY_DOMAIN_RESTRICTION",
+            "value": 0
+          },
+          {
+            "reason": "no common M8/M5 variational domain has been derived",
+            "status": "UNDEFINED_CROSS_DOMAIN",
+            "value": null
+          }
+        ],
+        [
+          {
+            "reason": "psi is constrained to the fold amplitude on the imported fixed-B1 domain",
+            "status": "ZERO_BY_DOMAIN_RESTRICTION",
+            "value": 0
+          },
+          {
+            "reason": "v6.28-v6.30 fold operator and reduced interaction",
+            "status": "DERIVED_CONDITIONAL",
+            "value": "H_fold on D_fold"
+          },
+          {
+            "reason": "no common M8/M5 variational domain has been derived",
+            "status": "UNDEFINED_CROSS_DOMAIN",
+            "value": null
+          }
+        ],
+        [
+          {
+            "reason": "no common M8/M5 variational domain has been derived",
+            "status": "UNDEFINED_CROSS_DOMAIN",
+            "value": null
+          },
+          {
+            "reason": "no common M8/M5 variational domain has been derived",
+            "status": "UNDEFINED_CROSS_DOMAIN",
+            "value": null
+          },
+          {
+            "reason": "local Hopf-radion operator; no stationary background",
+            "status": "DERIVED_CONDITIONAL",
+            "value": "H_F on D_M8"
+          }
+        ]
+      ],
+      "K_env": [
+        [
+          {
+            "reason": "psi is constrained to the fold amplitude on the imported fixed-B1 domain",
+            "status": "ZERO_BY_DOMAIN_RESTRICTION",
+            "value": 0
+          },
+          {
+            "reason": "psi is constrained to the fold amplitude on the imported fixed-B1 domain",
+            "status": "ZERO_BY_DOMAIN_RESTRICTION",
+            "value": 0
+          },
+          {
+            "reason": "no common M8/M5 variational domain has been derived",
+            "status": "UNDEFINED_CROSS_DOMAIN",
+            "value": null
+          }
+        ],
+        [
+          {
+            "reason": "psi is constrained to the fold amplitude on the imported fixed-B1 domain",
+            "status": "ZERO_BY_DOMAIN_RESTRICTION",
+            "value": 0
+          },
+          {
+            "reason": "v6.29 normalized fold kinetic norm",
+            "status": "DERIVED_CONDITIONAL",
+            "value": 6.935084858283065
+          },
+          {
+            "reason": "no common M8/M5 variational domain has been derived",
+            "status": "UNDEFINED_CROSS_DOMAIN",
+            "value": null
+          }
+        ],
+        [
+          {
+            "reason": "no common M8/M5 variational domain has been derived",
+            "status": "UNDEFINED_CROSS_DOMAIN",
+            "value": null
+          },
+          {
+            "reason": "no common M8/M5 variational domain has been derived",
+            "status": "UNDEFINED_CROSS_DOMAIN",
+            "value": null
+          },
+          {
+            "reason": "Einstein-frame Hopf breathing coefficient",
+            "status": "DERIVED_CONDITIONAL",
+            "value": "6*kappa5"
+          }
+        ]
+      ],
+      "basis": [
+        "psi",
+        "zeta",
+        "varphi_F"
+      ]
+    },
+    "common_perturbation_vector": [
+      "psi",
+      "zeta",
+      "varphi_F"
+    ],
+    "constraints": {
+      "coefficient": "alpha_Sigma=tau*pi*chi_1/16",
+      "equation": "psi+alpha_Sigma*zeta=0",
+      "matrix": [
+        [
+          1,
+          "alpha_Sigma",
+          0
+        ]
+      ],
+      "quotient_dimension_after_known_constraint": 2,
+      "rank": 1,
+      "seam_fold_relation_type": "DERIVED_CONSTRAINT_PROJECTION_NOT_GAUGE_IDENTIFICATION"
+    },
+    "equivalence_status": "EQUIVALENCE_UNRESOLVED",
+    "gauge": {
+      "fiber_rescaling_in_ImG": false,
+      "general_local_identity": "q_env=delta beta+beta0' psi_raw",
+      "generators": [
+        "radial_diffeomorphism",
+        "seam_reparametrization",
+        "collar_coordinate_change",
+        "matcher_support_shift"
+      ],
+      "interpretation": "S_Sigma and q_fold are post-constraint/gauge representatives; delta beta is invariant on beta0'=0. Raw coordinate shifts are not substituted for them.",
+      "matrix": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "quotient_dimension_before_constraints": 3,
+      "rank": 0,
+      "requested_operations": [
+        "radial_diffeomorphism",
+        "seam_reparametrization",
+        "collar_coordinate_change",
+        "fiber_rescaling",
+        "matcher_support_shift"
+      ],
+      "transformation_ledger": [
+        {
+          "on_psi_zeta_varphiF": [
+            0,
+            0,
+            0
+          ],
+          "operation": "radial_diffeomorphism",
+          "scope": "invariant S_Sigma, quotient q_fold, and beta0'=0"
+        },
+        {
+          "on_psi_zeta_varphiF": [
+            0,
+            0,
+            0
+          ],
+          "operation": "seam_reparametrization",
+          "scope": "scalar representatives"
+        },
+        {
+          "on_psi_zeta_varphiF": [
+            0,
+            0,
+            0
+          ],
+          "operation": "collar_coordinate_change",
+          "scope": "S_Sigma is the invariant endpoint trace"
+        },
+        {
+          "on_psi_zeta_varphiF": [
+            0,
+            0,
+            "epsilon_F"
+          ],
+          "operation": "fiber_rescaling",
+          "scope": "physical metric breathing, not an admissible gauge generator"
+        },
+        {
+          "on_psi_zeta_varphiF": [
+            0,
+            0,
+            0
+          ],
+          "operation": "matcher_support_shift",
+          "scope": "fixed-support and moving-coordinate representatives give the same S_Sigma"
+        }
+      ]
+    },
+    "historical_operator_imports": [
+      {
+        "module": "bhsm.interface.full_shift_variation_support_closure",
+        "result": "BHSM_ENDPOINT_TRACE_RESPONSE_DERIVED"
+      },
+      {
+        "module": "bhsm.interface.full_shift_variation_support_closure",
+        "result": "BHSM_FOLD_LOCALIZATION_COMPATIBLE_WITH_FIXED_B1_SUPPORT"
+      },
+      {
+        "module": "bhsm.interface.fold_schur_kinetic",
+        "result": "BHSM_FOLD_PROJECTED_SCHUR_REDUCTION_DERIVED"
+      },
+      {
+        "module": "bhsm.interface.fold_schur_kinetic",
+        "result": "BHSM_FOLD_KINETIC_NORM_POSITIVE_CONDITIONALLY"
+      },
+      {
+        "module": "bhsm.interface.envelopment.local_radion_v10_3",
+        "result": "BHSM_LOCALIZED_HOPF_RADION_IS_AN_EXISTING_METRIC_DEGREE_BUT_NOT_A_COMPLETE_STRATIFIED_ACTION_VARIABLE"
+      }
+    ],
+    "next_exact_object": "COMMON_PHYSICAL_ENVELOPMENT_MODE_INTERTWINER_BETWEEN_SEAM_SHIFT_FOLD_AND_HOPF_BREATHING",
+    "physically_inequivalent": false,
+    "primary_verdict": "BHSM_COMMON_ENVELOPMENT_MODE_EQUIVALENCE_BLOCKED_BY_UNDERIVED_CROSS_DOMAIN_HESSIAN",
+    "provenance": [
+      {
+        "component": "psi",
+        "definition": "S_Sigma=-tau*pi*chi_1*q_fold/16",
+        "exact_repository_variable": "S_Sigma endpoint threading trace",
+        "independent_on_imported_domain": false,
+        "representation": "observable-boundary / fixed-B1 support response",
+        "source": "v6.27 full shift variation and support closure"
+      },
+      {
+        "component": "zeta",
+        "definition": "normalized critical scalar-wall kernel amplitude",
+        "exact_repository_variable": "q_fold",
+        "independent_on_imported_domain": true,
+        "representation": "scalar-wall/interface Jacobi amplitude",
+        "source": "v6.28-v6.30.5 fold Fredholm and Lyapunov--Schmidt chain"
+      },
+      {
+        "component": "varphi_F",
+        "definition": "variation of the vertical metric determinant",
+        "exact_repository_variable": "delta beta=delta ln(a_F/a_F0)",
+        "independent_on_imported_domain": "conditional M8 invariant reduction",
+        "representation": "M8 interior Hopf-fiber breathing",
+        "source": "v7.1, v9.1, v10.2, and v10.3 local-radion audit"
+      }
+    ],
+    "quadratic_action": "S2_env=1/2 int[(dot q)^T K_env dot q-q^T H_env q+2 q^T J_env] dmu",
+    "source": {
+      "J_F": "defined for M8 fields but lacks the complete localized M4 pullback",
+      "J_env": [
+        "J_psi",
+        "J_zeta",
+        "J_F"
+      ],
+      "J_psi": "derived boundary projection of the v6.27 fold/threading source",
+      "J_zeta": "derived conditionally in the v6.28-v6.30 fold domain",
+      "one_J_total": null,
+      "projection_maps": {
+        "Pi_F": null,
+        "Pi_psi": "derived locally from q_fold",
+        "Pi_zeta": "fold projector"
+      },
+      "unified_source_status": "EQUIVALENCE_UNRESOLVED"
+    },
+    "validation": {
+      "gauge_rank_exact": true,
+      "historical_operators_imported": true,
+      "inequivalence_not_claimed": true,
+      "known_constraint_rank_one": true,
+      "mixed_blocks_not_false_zero": true,
+      "statuses_typed": true,
+      "three_exact_variables": true
+    },
+    "validation_passed": true,
+    "version": "v10.3"
+  },
   "configuration": {
     "artifact": "BHSM_full_configuration_space_v10_3",
     "buoyancy_selected_physical_scalar_count": 0,
@@ -260,7 +563,192 @@
     "version": "v10.3"
   },
   "configuration_verdict": "BHSM_CURRENT_STRATIFIED_CONFIGURATION_SPACE_CONTAINS_A_LOCAL_M8_BREATHING_MODE_BUT_NO_SELECTED_BUOYANCY_DEGREE",
+  "coupled_physical_rank": {
+    "artifact": "BHSM_coupled_physical_rank_v10_3",
+    "equivalence_status": "EQUIVALENCE_UNRESOLVED",
+    "formal_reduced_basis": [
+      "zeta",
+      "varphi_F"
+    ],
+    "gauge_rank": 0,
+    "generalized_eigenproblem": "H_env v=omega^2 K_env v",
+    "known_constraint_rank": 1,
+    "lowest_common_eigenmode": null,
+    "nonlinear_continuation": {
+      "branch": "Phi(epsilon)=Phi0+epsilon v_env+O(epsilon^2)",
+      "exact_blocker": "no common linear operator or stationary common background",
+      "status": "EQUIVALENCE_UNRESOLVED",
+      "tracked_components": [
+        "a_F(epsilon)",
+        "sigma_wall(epsilon)",
+        "X_seam(epsilon)"
+      ]
+    },
+    "physical_kinetic_rank": null,
+    "physically_inequivalent": false,
+    "primary_verdict": "BHSM_COMMON_ENVELOPMENT_MODE_EQUIVALENCE_BLOCKED_BY_UNDERIVED_CROSS_DOMAIN_HESSIAN",
+    "rank_bounds": {
+      "determinant": "-K_zetaF**2 + 41.61050914969839*kappa5",
+      "matrix": [
+        [
+          "6.935084858283065",
+          "K_zetaF"
+        ],
+        [
+          "K_zetaF",
+          "6*kappa5"
+        ]
+      ],
+      "possible_ranks": [
+        1,
+        2
+      ],
+      "rank_one_condition": "Eq(K_zetaF**2, 41.61050914969839*kappa5)",
+      "rank_two_condition": "Ne(K_zetaF**2, 41.61050914969839*kappa5)"
+    },
+    "reason_eigenproblem_unavailable": "cross-domain K/H blocks and one stationary common background are absent",
+    "validation": {
+      "eigenmode_not_claimed": true,
+      "known_constraint_removes_seam_duplicate": true,
+      "nonlinear_branch_not_claimed": true,
+      "rank_not_guessed": true
+    },
+    "validation_passed": true
+  },
+  "deformation_intertwiner": {
+    "artifact": "BHSM_deformation_intertwiner_v10_3",
+    "boundary_domain_equivalence": {
+      "D_env": null,
+      "cap_parity_match": "fold cap parity known; Hopf comparison not derived",
+      "one_common_boundary_condition": null,
+      "status": "EQUIVALENCE_UNRESOLVED",
+      "to_D_F": "separate M8 regularity domain only",
+      "to_D_psi": "derived through v6.27 fixed-support projection",
+      "to_D_zeta": "derived for the v6.28-v6.30 fold domain"
+    },
+    "conserved_charge_equivalence": {
+      "Hopf_weight": {
+        "Hopf_comparison": null,
+        "seam_fold_comparison": "compatible where the v6.27 projection applies",
+        "status": "EQUIVALENCE_UNRESOLVED"
+      },
+      "canonical_energy": {
+        "Hopf_comparison": null,
+        "seam_fold_comparison": "compatible where the v6.27 projection applies",
+        "status": "EQUIVALENCE_UNRESOLVED"
+      },
+      "constraint_charge": {
+        "Hopf_comparison": null,
+        "seam_fold_comparison": "compatible where the v6.27 projection applies",
+        "status": "EQUIVALENCE_UNRESOLVED"
+      },
+      "normal_flux": {
+        "Hopf_comparison": null,
+        "seam_fold_comparison": "compatible where the v6.27 projection applies",
+        "status": "EQUIVALENCE_UNRESOLVED"
+      },
+      "parity": {
+        "Hopf_comparison": null,
+        "seam_fold_comparison": "compatible where the v6.27 projection applies",
+        "status": "EQUIVALENCE_UNRESOLVED"
+      },
+      "symplectic_norm": {
+        "Hopf_comparison": null,
+        "seam_fold_comparison": "compatible where the v6.27 projection applies",
+        "status": "EQUIVALENCE_UNRESOLVED"
+      },
+      "topological_degree": {
+        "Hopf_comparison": null,
+        "seam_fold_comparison": "compatible where the v6.27 projection applies",
+        "status": "EQUIVALENCE_UNRESOLVED"
+      },
+      "triality": {
+        "Hopf_comparison": null,
+        "seam_fold_comparison": "compatible where the v6.27 projection applies",
+        "status": "EQUIVALENCE_UNRESOLVED"
+      }
+    },
+    "equivalence_status": "EQUIVALENCE_UNRESOLVED",
+    "full_common_intertwiner": null,
+    "gauge_equivalence": "not proved; seam--fold relation is a constraint projection",
+    "intertwiners": [
+      {
+        "boundary_preservation": true,
+        "domain_preservation": "fixed-B1 fold domain through local O(D^2 q)",
+        "invertible_on_physical_subspace": true,
+        "kinetic_norm_preservation": "not a separate norm; psi is a constrained projection",
+        "map": "q_fold -> S_Sigma=-(tau*pi*chi_1/16) q_fold",
+        "operator": "U_zeta_to_psi",
+        "source_preservation": true,
+        "spectral_preservation": "one-dimensional amplitude map only",
+        "status": "DERIVED_CONDITIONAL"
+      },
+      {
+        "boundary_preservation": null,
+        "domain_preservation": null,
+        "invertible_on_physical_subspace": null,
+        "kinetic_norm_preservation": null,
+        "map": null,
+        "operator": "U_zeta_to_F",
+        "source_preservation": null,
+        "spectral_preservation": null,
+        "status": "UNDEFINED_CROSS_DOMAIN"
+      },
+      {
+        "boundary_preservation": null,
+        "domain_preservation": null,
+        "invertible_on_physical_subspace": null,
+        "kinetic_norm_preservation": null,
+        "map": null,
+        "operator": "U_F_to_psi",
+        "source_preservation": null,
+        "spectral_preservation": null,
+        "status": "UNDEFINED_CROSS_DOMAIN"
+      }
+    ],
+    "physically_inequivalent": false,
+    "primary_verdict": "BHSM_COMMON_ENVELOPMENT_MODE_EQUIVALENCE_BLOCKED_BY_UNDERIVED_CROSS_DOMAIN_HESSIAN",
+    "source_equivalence": "EQUIVALENCE_UNRESOLVED",
+    "spectral_equivalence": "EQUIVALENCE_UNRESOLVED",
+    "validation": {
+      "Hopf_maps_fail_closed": true,
+      "no_inequivalence_promotion": true,
+      "seam_fold_map_imported": true
+    },
+    "validation_passed": true
+  },
   "deformation_verdict": "BHSM_ONE_LOCAL_HOPF_BREATHING_MODE_SURVIVES_THE_INVARIANT_M8_REDUCTION_CONDITIONALLY_BUT_NO_UNIQUE_BUOYANCY_MODE_IS_SELECTED",
+  "effective_mode_reductions": {
+    "H_eff_F": null,
+    "H_eff_psi": null,
+    "H_eff_zeta": null,
+    "Schur_complement_equivalence": "EQUIVALENCE_UNRESOLVED",
+    "artifact": "BHSM_effective_mode_reductions_v10_3",
+    "historical_operator_recovery_without_duplicate_derivation": true,
+    "historical_reductions": [
+      {
+        "historical_operator": "support-shift/threading response",
+        "is_full_three_sector_Schur_reduction": false,
+        "recovery": "psi=-(tau*pi*chi_1/16) zeta after the full momentum constraint",
+        "status": "DERIVED_CONDITIONAL"
+      },
+      {
+        "historical_operator": "fold/Fredholm operator",
+        "is_full_three_sector_Schur_reduction": null,
+        "recovery": "exact Schur reduction over lapse/Weyl/constraint complement inside D_fold",
+        "status": "DERIVED_CONDITIONAL"
+      },
+      {
+        "historical_operator": "Hopf-radion operator",
+        "is_full_three_sector_Schur_reduction": null,
+        "recovery": "direct invariant M8 metric reduction",
+        "status": "DERIVED_CONDITIONAL"
+      }
+    ],
+    "physically_inequivalent": false,
+    "primary_verdict": "BHSM_COMMON_ENVELOPMENT_MODE_EQUIVALENCE_BLOCKED_BY_UNDERIVED_CROSS_DOMAIN_HESSIAN",
+    "reason": "H_zetaF, H_Fzeta, and the common domain are undefined"
+  },
   "embedding": {
     "artifact": "BHSM_embedding_constraint_v10_3",
     "codimension": [
@@ -313,6 +801,7 @@
     "verdict": "BHSM_SEAM_EMBEDDING_NOT_IN_CURRENT_CONFIGURATION_SPACE_AND_CODIMENSION_CHOICE_NOT_UNIQUE"
   },
   "embedding_verdict": "BHSM_SEAM_EMBEDDING_NOT_IN_CURRENT_CONFIGURATION_SPACE_AND_CODIMENSION_CHOICE_NOT_UNIQUE",
+  "equivalence_status": "EQUIVALENCE_UNRESOLVED",
   "frozen_predictions_changed": false,
   "fundamental_dissipation": false,
   "gauge_invariant_deformation": {
@@ -573,33 +1062,42 @@
     "fully_admissible_candidates": [],
     "new_fields_adopted": [],
     "new_parameters_adopted": [],
+    "physical_inequivalence_proved": false,
+    "reason_inconclusive": "candidate rows are reduced representations until the common cross-domain Hessian is known",
     "selected_variable": null,
-    "unique": false,
-    "verdict": "BHSM_MULTIPLE_INEQUIVALENT_DEFORMATION_COMPLETIONS_REMAIN"
+    "unique": null,
+    "verdict": "BHSM_PRE_UNIFICATION_CANDIDATE_AUDIT_INCONCLUSIVE"
   },
-  "minimality_verdict": "BHSM_MULTIPLE_INEQUIVALENT_DEFORMATION_COMPLETIONS_REMAIN",
+  "minimality_verdict": "BHSM_PRE_UNIFICATION_CANDIDATE_AUDIT_INCONCLUSIVE",
   "new_continuous_parameters": [],
   "new_fields_adopted": [],
   "new_gravity_mediator": false,
-  "next_exact_object": "AUTHOR_SELECTED_COMMON_DOMAIN_COMPLETION_BETWEEN_DISTRIBUTIONAL_DYNAMICAL_SEAM_AND_SMOOTH_PARENT_LOCALIZATION_WITH_FULL_LOCAL_RADION_PUSHFORWARD",
+  "next_exact_object": "COMMON_PHYSICAL_ENVELOPMENT_MODE_INTERTWINER_BETWEEN_SEAM_SHIFT_FOLD_AND_HOPF_BREATHING",
   "official_prediction_logic_changed": false,
   "physical_mass_or_matrix_emitted": false,
-  "primary_verdict": "BHSM_NO_PARAMETER_FREE_PHYSICAL_DEFORMATION_COMPLETION_EXISTS",
+  "primary_verdict": "BHSM_COMMON_ENVELOPMENT_MODE_EQUIVALENCE_BLOCKED_BY_UNDERIVED_CROSS_DOMAIN_HESSIAN",
   "radion_verdict": "BHSM_LOCALIZED_HOPF_RADION_IS_AN_EXISTING_METRIC_DEGREE_BUT_NOT_A_COMPLETE_STRATIFIED_ACTION_VARIABLE",
+  "seam_fold_hopf_physically_inequivalent": false,
+  "seam_fold_hopf_unified": false,
   "source_v10_2_sha": "dfdbc29217f13bc2c7c5f46a47ce554052b23503",
   "sprint": "bhsm-physical-deformation-domain-v10-3",
   "stress_verdict": "BHSM_STRATIFIED_ACTION_LACKS_A_CONSERVED_COMMON_DOMAIN_STRESS_TENSOR",
   "topological_buoyancy_claimed": false,
   "v10_2_no_go_preserved": true,
   "validation": {
+    "common_mode_valid": true,
     "configuration_valid": true,
     "deformation_valid": true,
     "doctrine_preserved": true,
     "embedding_valid": true,
+    "equivalence_unresolved": true,
     "global_valid": true,
+    "inequivalence_not_promoted": true,
+    "intertwiner_valid": true,
     "no_candidate_selected": true,
     "no_extension_adopted": true,
     "radion_valid": true,
+    "rank_valid": true,
     "stress_valid": true
   },
   "validation_passed": true,

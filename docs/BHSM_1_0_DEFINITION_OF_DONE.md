@@ -252,13 +252,13 @@ Exact verdict:
 
 ## v10.3 current completion gate
 
-RB-15 remains blocked because multiple inequivalent conditional deformation
-directions exist but no parameter-free selector or common localized stress
-domain does. The v6.27 fixed-support result is complete in its M5 scope and is
-not an open embedding mode. RB-16 remains downstream.
+RB-15 remains blocked because the common seam--fold--Hopf cross-domain Hessian,
+source, and boundary domain are not derived. The v6.27 fixed-support result
+already maps the seam trace to the fold amplitude, so physical inequivalence is
+not established. RB-16 remains downstream.
 
 Exact verdict:
-`BHSM_NO_PARAMETER_FREE_PHYSICAL_DEFORMATION_COMPLETION_EXISTS`.
+`BHSM_COMMON_ENVELOPMENT_MODE_EQUIVALENCE_BLOCKED_BY_UNDERIVED_CROSS_DOMAIN_HESSIAN`.
 
 Exact next object:
-`AUTHOR_SELECTED_COMMON_DOMAIN_COMPLETION_BETWEEN_DISTRIBUTIONAL_DYNAMICAL_SEAM_AND_SMOOTH_PARENT_LOCALIZATION_WITH_FULL_LOCAL_RADION_PUSHFORWARD`.
+`COMMON_PHYSICAL_ENVELOPMENT_MODE_INTERTWINER_BETWEEN_SEAM_SHIFT_FOLD_AND_HOPF_BREATHING`.

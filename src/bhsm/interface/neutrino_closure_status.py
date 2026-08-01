@@ -26,11 +26,11 @@ NEUTRINO_PUBLIC_STATUS = (
 
 PUBLIC_REPO_STATUS = (
     "BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. "
-    "Current public status: v10.3 proves that the repository does not yet select a unique, "
-    "parameter-free physical deformation completion. Earlier work already closes the M5 "
-    "moving-endpoint/support-shift problem through local second order, while the M8 Hopf "
-    "breathing mode and M5 fold Jacobi amplitude remain distinct conditional degrees of "
-    "freedom. A common localized stress domain and global restoring law are still absent; "
+    "Current public status: v10.3 derives the seam trace as a constrained projection of the "
+    "scalar-wall fold mode, while the possible coupling of that seam--fold component to the "
+    "M8 Hopf breathing mode remains unresolved because the common cross-domain Hessian, "
+    "source, and boundary domain are absent. Physical inequivalence is not claimed. "
+    "A common localized stress domain and global restoring law are still absent; "
     "prior no-go results and RB-15/RB-16 remain in force."
 )
 

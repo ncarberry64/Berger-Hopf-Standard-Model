@@ -913,6 +913,9 @@ def build_parser() -> argparse.ArgumentParser:
         ("common-stress-pullback-status", "Render the BHSM v10.3 common-domain stress audit"),
         ("global-zero-mode-status", "Render the BHSM v10.3 compact zero-mode audit"),
         ("deformation-selection-status", "Render the BHSM v10.3 minimal deformation selection gate"),
+        ("common-envelopment-mode-status", "Render the BHSM v10.3 seam-fold-Hopf common-mode audit"),
+        ("deformation-intertwiner-status", "Render the BHSM v10.3 deformation intertwiner audit"),
+        ("coupled-deformation-rank-status", "Render the BHSM v10.3 coupled physical-rank audit"),
     )
     for command, help_text in integrated_status_commands:
         status_command = commands.add_parser(command, help=help_text)
@@ -1103,6 +1106,9 @@ def main(argv: Sequence[str] | None = None) -> int:
         "common-stress-pullback-status",
         "global-zero-mode-status",
         "deformation-selection-status",
+        "common-envelopment-mode-status",
+        "deformation-intertwiner-status",
+        "coupled-deformation-rank-status",
     }:
         module = import_module(
             ".envelopment.deformation_selection_gate_v10_3",

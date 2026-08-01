@@ -886,5 +886,17 @@ python scripts/materialize_physical_deformation_domain_v10_3.py
 These commands report prior-name equivalences, the stratified configuration
 and gauge audit, embedding codimensions, Einstein-frame Hopf breathing,
 separation from the fold Jacobi amplitude, formal distributional stress,
-global compatibility, and the exhaustive no-selection theorem. They emit no
+global compatibility, and the pre-unification candidate audit. They emit no
 physical depth, force, mass, or prediction.
+
+The steering-complete common-mode audit adds:
+
+```bash
+python -m bhsm.interface common-envelopment-mode-status --format json
+python -m bhsm.interface deformation-intertwiner-status --format markdown
+python -m bhsm.interface coupled-deformation-rank-status --format json
+```
+
+These reports import the exact seam--fold projection, type every kinetic and
+Hessian block, keep missing fold--Hopf blocks `UNDEFINED_CROSS_DOMAIN`, and
+return `EQUIVALENCE_UNRESOLVED` rather than physical inequivalence.

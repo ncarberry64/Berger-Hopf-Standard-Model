@@ -18,10 +18,9 @@ four and then pass stability, weak-field, equivalence-principle, and scale
 tests. Proxy `R`, coordinate `rho`, or an inserted volume target cannot satisfy
 this gate.
 
-For v10.3, the no-selection theorem fails if the checked-in action and declared
-domains can be shown to choose exactly one gauge-invariant physical deformation
-from the inequivalent seam, Hopf-radion, and fold-mode candidates, while also
-deriving its localized stress pushforward, global restoring equation, stable
-background, and dimensional normalization without a new coefficient or author
-choice. A mere renaming of the v6.27 support shift, the local Hopf radius, or the
-v6.28 fold amplitude is not such a derivation.
+For v10.3, the unresolved-equivalence verdict fails if the checked-in action and
+declared domains determine the missing fold--Hopf mixed kinetic/Hessian blocks,
+common source, and boundary map. Those data must decide the physical rank,
+coupled spectrum, and intertwiners without fitting. The exact v6.27 seam--fold
+projection is already imported; neither missing blocks nor different historical
+names may be used as evidence of physical inequivalence.

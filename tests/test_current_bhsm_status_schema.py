@@ -24,8 +24,8 @@ def test_current_bhsm_status_json_schema() -> None:
         "official_predictions_changed": False,
         "current_campaign": "v10.3 Physical deformation action-domain theorem",
         "physical_flavor_matrix_derived": False,
-        "current_exact_verdict": "BHSM_NO_PARAMETER_FREE_PHYSICAL_DEFORMATION_COMPLETION_EXISTS",
-        "next_exact_object": "AUTHOR_SELECTED_COMMON_DOMAIN_COMPLETION_BETWEEN_DISTRIBUTIONAL_DYNAMICAL_SEAM_AND_SMOOTH_PARENT_LOCALIZATION_WITH_FULL_LOCAL_RADION_PUSHFORWARD",
+        "current_exact_verdict": "BHSM_COMMON_ENVELOPMENT_MODE_EQUIVALENCE_BLOCKED_BY_UNDERIVED_CROSS_DOMAIN_HESSIAN",
+        "next_exact_object": "COMMON_PHYSICAL_ENVELOPMENT_MODE_INTERTWINER_BETWEEN_SEAM_SHIFT_FOLD_AND_HOPF_BREATHING",
     }
 
 

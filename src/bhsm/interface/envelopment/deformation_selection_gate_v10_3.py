@@ -5,7 +5,15 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
+from .common_envelopment_mode_v10_3 import (
+    NEXT_EXACT_OBJECT,
+    PRIMARY_VERDICT,
+    common_mode_payload,
+)
+from .coupled_mode_rank_v10_3 import coupled_rank_payload
+from .deformation_intertwiner_v10_3 import intertwiner_payload
 from .embedding_constraint_v10_3 import EMBEDDING_VERDICT, embedding_payload
+from .effective_mode_reductions_v10_3 import effective_reduction_payload
 from .full_configuration_space_v10_3 import CONFIGURATION_VERDICT, configuration_payload
 from .gauge_invariant_deformation_v10_3 import DEFORMATION_VERDICT, deformation_payload
 from .global_zero_mode_v10_3 import GLOBAL_VERDICT, global_payload
@@ -17,18 +25,16 @@ from .stress_pullback_v10_3 import STRESS_VERDICT, stress_payload
 VERSION = "v10.3"
 SPRINT = "bhsm-physical-deformation-domain-v10-3"
 SOURCE_V10_2_SHA = "dfdbc29217f13bc2c7c5f46a47ce554052b23503"
-PRIMARY_VERDICT = "BHSM_NO_PARAMETER_FREE_PHYSICAL_DEFORMATION_COMPLETION_EXISTS"
-MINIMALITY_VERDICT = "BHSM_MULTIPLE_INEQUIVALENT_DEFORMATION_COMPLETIONS_REMAIN"
-NEXT_EXACT_OBJECT = (
-    "AUTHOR_SELECTED_COMMON_DOMAIN_COMPLETION_BETWEEN_DISTRIBUTIONAL_"
-    "DYNAMICAL_SEAM_AND_SMOOTH_PARENT_LOCALIZATION_WITH_FULL_LOCAL_RADION_PUSHFORWARD"
-)
+MINIMALITY_VERDICT = "BHSM_PRE_UNIFICATION_CANDIDATE_AUDIT_INCONCLUSIVE"
 
 ARTIFACT_FILES = {
     "configuration": "BHSM_full_configuration_space_v10_3.json",
     "dof": "BHSM_physical_deformation_dof_ledger_v10_3.json",
     "stress": "BHSM_common_domain_stress_pullback_v10_3.json",
     "global": "BHSM_global_restoring_constraint_v10_3.json",
+    "common_mode": "BHSM_common_envelopment_mode_v10_3.json",
+    "intertwiner": "BHSM_deformation_intertwiner_v10_3.json",
+    "rank": "BHSM_coupled_physical_rank_v10_3.json",
     "selection": "BHSM_minimal_deformation_selection_gate_v10_3.json",
 }
 
@@ -172,11 +178,13 @@ def minimality_payload() -> dict[str, Any]:
         "candidates": rows,
         "fully_admissible_candidates": selected,
         "selected_variable": None,
-        "unique": False,
+        "unique": None,
         "buoyancy_physical_scalar_count": 0,
         "new_fields_adopted": [],
         "new_parameters_adopted": [],
         "extensions": extension_comparison(),
+        "physical_inequivalence_proved": False,
+        "reason_inconclusive": "candidate rows are reduced representations until the common cross-domain Hessian is known",
         "verdict": MINIMALITY_VERDICT,
     }
 
@@ -189,6 +197,10 @@ def completion_payload() -> dict[str, Any]:
     stress = stress_payload()
     global_result = global_payload()
     minimality = minimality_payload()
+    common_mode = common_mode_payload()
+    intertwiner = intertwiner_payload()
+    reductions = effective_reduction_payload()
+    rank = coupled_rank_payload()
     validation = {
         "configuration_valid": configuration["validation_passed"],
         "embedding_valid": embedding["validation_passed"],
@@ -198,6 +210,11 @@ def completion_payload() -> dict[str, Any]:
         "global_valid": global_result["validation_passed"],
         "no_candidate_selected": minimality["fully_admissible_candidates"] == [],
         "no_extension_adopted": not any(row["adopted"] for row in extension_comparison()),
+        "common_mode_valid": common_mode["validation_passed"],
+        "intertwiner_valid": intertwiner["validation_passed"],
+        "rank_valid": rank["validation_passed"],
+        "equivalence_unresolved": common_mode["equivalence_status"] == "EQUIVALENCE_UNRESOLVED",
+        "inequivalence_not_promoted": not common_mode["physically_inequivalent"],
         "doctrine_preserved": doctrine_sha256() == "f981a6501526a3ff324cbf5cb4f1e26b1f7d3ecd0c7b2759c200f6aa1ee184b0",
     }
     return {
@@ -220,6 +237,10 @@ def completion_payload() -> dict[str, Any]:
         "gauge_invariant_deformation": deformation,
         "common_domain_stress": stress,
         "global_restoring_constraint": global_result,
+        "common_envelopment_mode": common_mode,
+        "deformation_intertwiner": intertwiner,
+        "effective_mode_reductions": reductions,
+        "coupled_physical_rank": rank,
         "minimality": minimality,
         "v10_2_no_go_preserved": True,
         "topological_buoyancy_claimed": False,
@@ -231,6 +252,9 @@ def completion_payload() -> dict[str, Any]:
         "new_continuous_parameters": [],
         "fundamental_dissipation": False,
         "physical_mass_or_matrix_emitted": False,
+        "seam_fold_hopf_unified": False,
+        "seam_fold_hopf_physically_inequivalent": False,
+        "equivalence_status": "EQUIVALENCE_UNRESOLVED",
         "validation": validation,
         "validation_passed": all(validation.values()),
         "next_exact_object": NEXT_EXACT_OBJECT,
@@ -251,6 +275,12 @@ def artifact_payloads() -> dict[str, dict[str, Any]]:
         },
         "stress": completion["common_domain_stress"],
         "global": completion["global_restoring_constraint"],
+        "common_mode": completion["common_envelopment_mode"],
+        "intertwiner": {
+            **completion["deformation_intertwiner"],
+            "effective_mode_reductions": completion["effective_mode_reductions"],
+        },
+        "rank": completion["coupled_physical_rank"],
         "selection": completion,
     }
 
@@ -268,13 +298,15 @@ def canonical_completion_gate_payload() -> dict[str, Any]:
             "next_highest_upstream_blocker": NEXT_EXACT_OBJECT,
             "physical_deformation_action_domain_derived": False,
             "buoyancy_physical_scalar_count": 0,
+            "common_envelopment_mode_equivalence": "EQUIVALENCE_UNRESOLVED",
+            "seam_fold_hopf_physically_inequivalent": False,
             "new_fields_in_v10_3": [],
             "new_continuous_parameters_in_v10_3": [],
             "BHSM_1_0_release_complete": False,
         }
     )
     gate["RB15"] = {
-        "status": "BLOCKED_BY_MULTIPLE_INEQUIVALENT_COMMON_DOMAIN_COMPLETIONS",
+        "status": "BLOCKED_BY_UNDERIVED_CROSS_DOMAIN_HESSIAN",
         "resolution": NEXT_EXACT_OBJECT,
     }
     return gate
@@ -289,6 +321,9 @@ def command_payload(command: str) -> dict[str, Any]:
         "common-stress-pullback-status": completion["common_domain_stress"],
         "global-zero-mode-status": completion["global_restoring_constraint"],
         "deformation-selection-status": completion["minimality"],
+        "common-envelopment-mode-status": completion["common_envelopment_mode"],
+        "deformation-intertwiner-status": completion["deformation_intertwiner"],
+        "coupled-deformation-rank-status": completion["coupled_physical_rank"],
     }
     if command not in sections:
         raise ValueError(f"unknown v10.3 status command: {command}")

@@ -30,16 +30,18 @@ The apparent missing seam displacement was already treated as the M5 moving
 endpoint/support shift/threading trace in v6.13--v6.27; full shift variation
 imposes the complete momentum constraint, eliminates the Lorentzian C1 mode,
 and makes a dynamical B1 embedding unnecessary through local order `D^2 q`.
-That result does not select a unique M8 deformation. The M8 Hopf breathing
-mode `beta=log(a_F/a_F0)` and the M5 fold Jacobi amplitude `q` are distinct
-conditional directions, and neither supplies the missing common localized
-stress domain plus covariant global restoring law.
+The same result fixes the invariant seam trace as
+`S_Sigma=-(tau*pi*chi_1/16)q_fold`, so seam and fold are boundary/interface
+components of one constrained response on that domain. Whether this component
+and the M8 Hopf breathing mode `beta=log(a_F/a_F0)` form one physical
+eigenmode is unresolved because their common kinetic/Hessian blocks, source,
+and boundary domain have not been derived.
 
 Current exact verdict:
-`BHSM_NO_PARAMETER_FREE_PHYSICAL_DEFORMATION_COMPLETION_EXISTS`.
+`BHSM_COMMON_ENVELOPMENT_MODE_EQUIVALENCE_BLOCKED_BY_UNDERIVED_CROSS_DOMAIN_HESSIAN`.
 
 Exact next object:
-`AUTHOR_SELECTED_COMMON_DOMAIN_COMPLETION_BETWEEN_DISTRIBUTIONAL_DYNAMICAL_SEAM_AND_SMOOTH_PARENT_LOCALIZATION_WITH_FULL_LOCAL_RADION_PUSHFORWARD`.
+`COMMON_PHYSICAL_ENVELOPMENT_MODE_INTERTWINER_BETWEEN_SEAM_SHIFT_FOLD_AND_HOPF_BREATHING`.
 
 The v8.4--v8.9 conditional theorem chain remains integrated. V10.0 embeds its
 static Gram--Hessian/current formulas as the stationary-cycle limit. Because
@@ -94,7 +96,7 @@ Reviewer entry points:
 [claim boundaries](CLAIMS.md), and
 [reproduction guide](docs/reviewer_reproduction_guide.md).
 
-BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v10.3 proves that the repository does not yet select a unique, parameter-free physical deformation completion. Earlier work already closes the M5 moving-endpoint/support-shift problem through local second order, while the M8 Hopf breathing mode and M5 fold Jacobi amplitude remain distinct conditional degrees of freedom. A common localized stress domain and global restoring law are still absent; prior no-go results and RB-15/RB-16 remain in force.
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v10.3 derives the seam trace as a constrained projection of the scalar-wall fold mode, while the possible coupling of that seam--fold component to the M8 Hopf breathing mode remains unresolved because the common cross-domain Hessian, source, and boundary domain are absent. Physical inequivalence is not claimed. A common localized stress domain and global restoring law are still absent; prior no-go results and RB-15/RB-16 remain in force.
 
 BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity. Physical eV/GeV neutrino mass closure remains open pending a numeric neutral stiffness length sqrt(A_nu/Z_nu), a physical K_neutral,eff map in m^-2, and complete-action derivation of the admissible response cone.
 

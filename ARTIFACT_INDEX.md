@@ -1631,7 +1631,13 @@ Doctrine and manuscript chapter:
   localization-domain alternatives.
 - `artifacts/BHSM_global_restoring_constraint_v10_3.json`: Hamiltonian and
   Fredholm compatibility audit, including the exact prior fold Schur response.
+- `artifacts/BHSM_common_envelopment_mode_v10_3.json`: common perturbation
+  vector, block typing, gauge matrix, seam--fold constraint, and source ledger.
+- `artifacts/BHSM_deformation_intertwiner_v10_3.json`: exact seam--fold map,
+  missing Hopf intertwiners, effective-reduction audit, and equivalence gates.
+- `artifacts/BHSM_coupled_physical_rank_v10_3.json`: rank bounds, generalized
+  eigenproblem status, and nonlinear-continuation blocker.
 - `artifacts/BHSM_minimal_deformation_selection_gate_v10_3.json`: exhaustive
-  candidate/extension comparison, no-selection theorem, exact next object, and
+  candidate/extension comparison, common-mode audit, exact next object, and
   fail-closed physical outputs.
 - `artifacts/BHSM_1_0_completion_gate.json`: canonical v10.3 RB-15/RB-16 gate.

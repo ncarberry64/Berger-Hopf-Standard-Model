@@ -13,14 +13,17 @@ to the frozen theory, and capable of a universal weak-field limit.
 | scalar-wall fold `q` | conditional positive kinetic and Fredholm domain | not depth/radion; parent stress incomplete; `G5` unselected |
 | coupled `delta beta+beta0' psi` | formally gauge invariant | `psi` absent and `beta0'=0` |
 
-No row satisfies every criterion. The result is therefore not a unique-mode
-selection and not Topological Buoyancy.
+No isolated row satisfies every criterion, but the rows are reduced
+representations rather than proved competing physical modes. The exact v6.27
+map identifies the seam trace as a constrained projection of the fold
+amplitude. The fold--Hopf mixed blocks remain undefined, so the common-mode
+equivalence is unresolved and Topological Buoyancy is not derived.
 
 Primary verdict:
-`BHSM_NO_PARAMETER_FREE_PHYSICAL_DEFORMATION_COMPLETION_EXISTS`.
+`BHSM_COMMON_ENVELOPMENT_MODE_EQUIVALENCE_BLOCKED_BY_UNDERIVED_CROSS_DOMAIN_HESSIAN`.
 
 Minimality verdict:
-`BHSM_MULTIPLE_INEQUIVALENT_DEFORMATION_COMPLETIONS_REMAIN`.
+`BHSM_PRE_UNIFICATION_CANDIDATE_AUDIT_INCONCLUSIVE`.
 
 Three extension classes remain comparison-only:
 
@@ -34,4 +37,4 @@ adopted. Physical masses, CKM, PMNS, weak-field gravity, and Topological
 Buoyancy remain downstream.
 
 Exact next object:
-`AUTHOR_SELECTED_COMMON_DOMAIN_COMPLETION_BETWEEN_DISTRIBUTIONAL_DYNAMICAL_SEAM_AND_SMOOTH_PARENT_LOCALIZATION_WITH_FULL_LOCAL_RADION_PUSHFORWARD`.
+`COMMON_PHYSICAL_ENVELOPMENT_MODE_INTERTWINER_BETWEEN_SEAM_SHIFT_FOLD_AND_HOPF_BREATHING`.

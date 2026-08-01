@@ -1,0 +1,303 @@
+{
+  "artifact": "BHSM_common_envelopment_mode_v10_3",
+  "blocks": {
+    "H_env": [
+      [
+        {
+          "reason": "psi is constrained to the fold amplitude on the imported fixed-B1 domain",
+          "status": "ZERO_BY_DOMAIN_RESTRICTION",
+          "value": 0
+        },
+        {
+          "reason": "psi is constrained to the fold amplitude on the imported fixed-B1 domain",
+          "status": "ZERO_BY_DOMAIN_RESTRICTION",
+          "value": 0
+        },
+        {
+          "reason": "no common M8/M5 variational domain has been derived",
+          "status": "UNDEFINED_CROSS_DOMAIN",
+          "value": null
+        }
+      ],
+      [
+        {
+          "reason": "psi is constrained to the fold amplitude on the imported fixed-B1 domain",
+          "status": "ZERO_BY_DOMAIN_RESTRICTION",
+          "value": 0
+        },
+        {
+          "reason": "v6.28-v6.30 fold operator and reduced interaction",
+          "status": "DERIVED_CONDITIONAL",
+          "value": "H_fold on D_fold"
+        },
+        {
+          "reason": "no common M8/M5 variational domain has been derived",
+          "status": "UNDEFINED_CROSS_DOMAIN",
+          "value": null
+        }
+      ],
+      [
+        {
+          "reason": "no common M8/M5 variational domain has been derived",
+          "status": "UNDEFINED_CROSS_DOMAIN",
+          "value": null
+        },
+        {
+          "reason": "no common M8/M5 variational domain has been derived",
+          "status": "UNDEFINED_CROSS_DOMAIN",
+          "value": null
+        },
+        {
+          "reason": "local Hopf-radion operator; no stationary background",
+          "status": "DERIVED_CONDITIONAL",
+          "value": "H_F on D_M8"
+        }
+      ]
+    ],
+    "K_env": [
+      [
+        {
+          "reason": "psi is constrained to the fold amplitude on the imported fixed-B1 domain",
+          "status": "ZERO_BY_DOMAIN_RESTRICTION",
+          "value": 0
+        },
+        {
+          "reason": "psi is constrained to the fold amplitude on the imported fixed-B1 domain",
+          "status": "ZERO_BY_DOMAIN_RESTRICTION",
+          "value": 0
+        },
+        {
+          "reason": "no common M8/M5 variational domain has been derived",
+          "status": "UNDEFINED_CROSS_DOMAIN",
+          "value": null
+        }
+      ],
+      [
+        {
+          "reason": "psi is constrained to the fold amplitude on the imported fixed-B1 domain",
+          "status": "ZERO_BY_DOMAIN_RESTRICTION",
+          "value": 0
+        },
+        {
+          "reason": "v6.29 normalized fold kinetic norm",
+          "status": "DERIVED_CONDITIONAL",
+          "value": 6.935084858283065
+        },
+        {
+          "reason": "no common M8/M5 variational domain has been derived",
+          "status": "UNDEFINED_CROSS_DOMAIN",
+          "value": null
+        }
+      ],
+      [
+        {
+          "reason": "no common M8/M5 variational domain has been derived",
+          "status": "UNDEFINED_CROSS_DOMAIN",
+          "value": null
+        },
+        {
+          "reason": "no common M8/M5 variational domain has been derived",
+          "status": "UNDEFINED_CROSS_DOMAIN",
+          "value": null
+        },
+        {
+          "reason": "Einstein-frame Hopf breathing coefficient",
+          "status": "DERIVED_CONDITIONAL",
+          "value": "6*kappa5"
+        }
+      ]
+    ],
+    "basis": [
+      "psi",
+      "zeta",
+      "varphi_F"
+    ]
+  },
+  "common_perturbation_vector": [
+    "psi",
+    "zeta",
+    "varphi_F"
+  ],
+  "constraints": {
+    "coefficient": "alpha_Sigma=tau*pi*chi_1/16",
+    "equation": "psi+alpha_Sigma*zeta=0",
+    "matrix": [
+      [
+        1,
+        "alpha_Sigma",
+        0
+      ]
+    ],
+    "quotient_dimension_after_known_constraint": 2,
+    "rank": 1,
+    "seam_fold_relation_type": "DERIVED_CONSTRAINT_PROJECTION_NOT_GAUGE_IDENTIFICATION"
+  },
+  "equivalence_status": "EQUIVALENCE_UNRESOLVED",
+  "gauge": {
+    "fiber_rescaling_in_ImG": false,
+    "general_local_identity": "q_env=delta beta+beta0' psi_raw",
+    "generators": [
+      "radial_diffeomorphism",
+      "seam_reparametrization",
+      "collar_coordinate_change",
+      "matcher_support_shift"
+    ],
+    "interpretation": "S_Sigma and q_fold are post-constraint/gauge representatives; delta beta is invariant on beta0'=0. Raw coordinate shifts are not substituted for them.",
+    "matrix": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "quotient_dimension_before_constraints": 3,
+    "rank": 0,
+    "requested_operations": [
+      "radial_diffeomorphism",
+      "seam_reparametrization",
+      "collar_coordinate_change",
+      "fiber_rescaling",
+      "matcher_support_shift"
+    ],
+    "transformation_ledger": [
+      {
+        "on_psi_zeta_varphiF": [
+          0,
+          0,
+          0
+        ],
+        "operation": "radial_diffeomorphism",
+        "scope": "invariant S_Sigma, quotient q_fold, and beta0'=0"
+      },
+      {
+        "on_psi_zeta_varphiF": [
+          0,
+          0,
+          0
+        ],
+        "operation": "seam_reparametrization",
+        "scope": "scalar representatives"
+      },
+      {
+        "on_psi_zeta_varphiF": [
+          0,
+          0,
+          0
+        ],
+        "operation": "collar_coordinate_change",
+        "scope": "S_Sigma is the invariant endpoint trace"
+      },
+      {
+        "on_psi_zeta_varphiF": [
+          0,
+          0,
+          "epsilon_F"
+        ],
+        "operation": "fiber_rescaling",
+        "scope": "physical metric breathing, not an admissible gauge generator"
+      },
+      {
+        "on_psi_zeta_varphiF": [
+          0,
+          0,
+          0
+        ],
+        "operation": "matcher_support_shift",
+        "scope": "fixed-support and moving-coordinate representatives give the same S_Sigma"
+      }
+    ]
+  },
+  "historical_operator_imports": [
+    {
+      "module": "bhsm.interface.full_shift_variation_support_closure",
+      "result": "BHSM_ENDPOINT_TRACE_RESPONSE_DERIVED"
+    },
+    {
+      "module": "bhsm.interface.full_shift_variation_support_closure",
+      "result": "BHSM_FOLD_LOCALIZATION_COMPATIBLE_WITH_FIXED_B1_SUPPORT"
+    },
+    {
+      "module": "bhsm.interface.fold_schur_kinetic",
+      "result": "BHSM_FOLD_PROJECTED_SCHUR_REDUCTION_DERIVED"
+    },
+    {
+      "module": "bhsm.interface.fold_schur_kinetic",
+      "result": "BHSM_FOLD_KINETIC_NORM_POSITIVE_CONDITIONALLY"
+    },
+    {
+      "module": "bhsm.interface.envelopment.local_radion_v10_3",
+      "result": "BHSM_LOCALIZED_HOPF_RADION_IS_AN_EXISTING_METRIC_DEGREE_BUT_NOT_A_COMPLETE_STRATIFIED_ACTION_VARIABLE"
+    }
+  ],
+  "next_exact_object": "COMMON_PHYSICAL_ENVELOPMENT_MODE_INTERTWINER_BETWEEN_SEAM_SHIFT_FOLD_AND_HOPF_BREATHING",
+  "physically_inequivalent": false,
+  "primary_verdict": "BHSM_COMMON_ENVELOPMENT_MODE_EQUIVALENCE_BLOCKED_BY_UNDERIVED_CROSS_DOMAIN_HESSIAN",
+  "provenance": [
+    {
+      "component": "psi",
+      "definition": "S_Sigma=-tau*pi*chi_1*q_fold/16",
+      "exact_repository_variable": "S_Sigma endpoint threading trace",
+      "independent_on_imported_domain": false,
+      "representation": "observable-boundary / fixed-B1 support response",
+      "source": "v6.27 full shift variation and support closure"
+    },
+    {
+      "component": "zeta",
+      "definition": "normalized critical scalar-wall kernel amplitude",
+      "exact_repository_variable": "q_fold",
+      "independent_on_imported_domain": true,
+      "representation": "scalar-wall/interface Jacobi amplitude",
+      "source": "v6.28-v6.30.5 fold Fredholm and Lyapunov--Schmidt chain"
+    },
+    {
+      "component": "varphi_F",
+      "definition": "variation of the vertical metric determinant",
+      "exact_repository_variable": "delta beta=delta ln(a_F/a_F0)",
+      "independent_on_imported_domain": "conditional M8 invariant reduction",
+      "representation": "M8 interior Hopf-fiber breathing",
+      "source": "v7.1, v9.1, v10.2, and v10.3 local-radion audit"
+    }
+  ],
+  "quadratic_action": "S2_env=1/2 int[(dot q)^T K_env dot q-q^T H_env q+2 q^T J_env] dmu",
+  "source": {
+    "J_F": "defined for M8 fields but lacks the complete localized M4 pullback",
+    "J_env": [
+      "J_psi",
+      "J_zeta",
+      "J_F"
+    ],
+    "J_psi": "derived boundary projection of the v6.27 fold/threading source",
+    "J_zeta": "derived conditionally in the v6.28-v6.30 fold domain",
+    "one_J_total": null,
+    "projection_maps": {
+      "Pi_F": null,
+      "Pi_psi": "derived locally from q_fold",
+      "Pi_zeta": "fold projector"
+    },
+    "unified_source_status": "EQUIVALENCE_UNRESOLVED"
+  },
+  "validation": {
+    "gauge_rank_exact": true,
+    "historical_operators_imported": true,
+    "inequivalence_not_claimed": true,
+    "known_constraint_rank_one": true,
+    "mixed_blocks_not_false_zero": true,
+    "statuses_typed": true,
+    "three_exact_variables": true
+  },
+  "validation_passed": true,
+  "version": "v10.3"
+}

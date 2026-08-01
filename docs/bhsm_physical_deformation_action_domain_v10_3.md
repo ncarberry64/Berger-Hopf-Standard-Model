@@ -2,12 +2,13 @@
 
 ## Verdict
 
-`BHSM_NO_PARAMETER_FREE_PHYSICAL_DEFORMATION_COMPLETION_EXISTS`
+`BHSM_COMMON_ENVELOPMENT_MODE_EQUIVALENCE_BLOCKED_BY_UNDERIVED_CROSS_DOMAIN_HESSIAN`
 
 This result preserves the v10.2 Topological-Buoyancy no-go. It does not say
 that the full metric lacks scalar deformation degrees. It says that the
-present stratified action does not select one unique scalar with all of the
-required domain, source, conservation, and global-restoring properties.
+present stratified action has not yet decided whether the seam--fold component
+and the Hopf breathing component form one physical mode. Physical
+inequivalence is not claimed.
 
 ## Prior work recovered under earlier names
 
@@ -17,7 +18,10 @@ The campaign imports six earlier chains instead of repeating them:
    threading trace, and normal-support residual. Full shift variation proved
    fixed-B1 compatibility through local two-derivative order and removed the
    apparent need for a dynamical B1 embedding.
-2. v6.28--v6.30.5 constructed the scalar-wall fold amplitude `q`, its
+2. v6.27 also derived the exact endpoint relation
+   `S_Sigma=-(tau*pi*chi_1/16)q_fold`; the seam trace is therefore a
+   constrained boundary projection of the fold amplitude on that domain.
+   v6.28--v6.30.5 constructed the scalar-wall fold amplitude `q`, its
    operator/domain, Fredholm projection, positive conditional kinetic norm,
    and reduced interaction. It is not seam depth or Hopf radius.
 3. v7.1 identified `a_F` as the vertical metric determinant and stated that
@@ -71,15 +75,49 @@ homogeneous limit reproduces the v10.2 no-static-equilibrium result.
 
 ## Degree count
 
-The current ledgers contain two inequivalent conditional scalar directions:
+After the known seam--fold constraint, the formal reduced basis contains two
+conditional components whose equivalence is unresolved:
 
 - local M8 breathing mode `beta`;
 - M5 scalar-wall fold amplitude `q`.
 
 The B1 threading trace is constraint-fixed and a coordinate `rho` shift is
 gauge. Neither surviving scalar satisfies the complete buoyancy criteria.
-Therefore the selected buoyancy scalar count is zero, not one.
+The missing fold--Hopf kinetic/Hessian blocks allow physical kinetic rank one
+or two. Therefore the selected buoyancy scalar count is zero, but neither
+non-uniqueness nor physical inequivalence follows.
+
+## Seam--Fold--Hopf Unification Audit
+
+Historical objects:
+
+- seam/support shift: invariant endpoint trace `S_Sigma` from v6.27;
+- scalar-wall fold: normalized Jacobi amplitude `q_fold` from v6.28--v6.30;
+- Hopf breathing: `varphi_F=delta ln(a_F/a_F0)` from the M8 metric.
+
+Common perturbation vector: `q_env=(psi,zeta,varphi_F)^T` with
+`psi=S_Sigma` and `zeta=q_fold`.
+
+Common kinetic matrix and Hessian: the fold and Hopf diagonal blocks are
+derived conditionally; the seam row is removed by the exact constraint
+`psi+(tau*pi*chi_1/16)zeta=0`; every fold--Hopf mixed block is
+`UNDEFINED_CROSS_DOMAIN`, not zero.
+
+- Gauge rank: `0` for the imported invariant/reduced representatives.
+- Constraint rank: `1`.
+- Physical kinetic rank: unresolved, with allowed rank `{1,2}`.
+- Gauge equivalence: not proved; seam--fold is a constraint projection.
+- Intertwiner: `U_zeta_to_psi` derived; Hopf intertwiners absent.
+- Schur-complement equivalence: unresolved across M5/M8.
+- Boundary-condition equivalence: seam--fold derived locally; Hopf unresolved.
+- Source, spectral, and conserved-charge equivalence: unresolved for Hopf.
+- Nonlinear continuation: blocked by the missing common linear operator and
+  stationary common background.
+
+Unified physical variable: unavailable. Its boundary and interface components
+are related exactly, but its interior coefficient and normalization cannot be
+derived before the common cross-domain variation.
 
 ## Exact next object
 
-`AUTHOR_SELECTED_COMMON_DOMAIN_COMPLETION_BETWEEN_DISTRIBUTIONAL_DYNAMICAL_SEAM_AND_SMOOTH_PARENT_LOCALIZATION_WITH_FULL_LOCAL_RADION_PUSHFORWARD`
+`COMMON_PHYSICAL_ENVELOPMENT_MODE_INTERTWINER_BETWEEN_SEAM_SHIFT_FOLD_AND_HOPF_BREATHING`
