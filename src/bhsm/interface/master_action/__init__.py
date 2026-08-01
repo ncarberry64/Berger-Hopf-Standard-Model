@@ -1,7 +1,7 @@
 """BHSM master-action, transport, and vacuum-to-flavor audit API.
 
 The v7.0 constants and v7.1 master-action report remain exported for
-artifact compatibility. Current v10.0 completion constants and status are
+artifact compatibility. Current v10.1 completion constants and status are
 exposed separately.
 """
 
@@ -18,13 +18,13 @@ from .report import (
 )
 from .validation import validate_model
 
-CURRENT_VERSION = "v10.0"
+CURRENT_VERSION = "v10.1"
 CURRENT_MISSING_OBJECT = (
-    "ACTION_SELECTED_GAUGE_DRESSED_CHARGED_SELF_ENVELOPMENT_RELATIVE_"
-    "PERIODIC_ORBIT_WITH_LOCAL_CHIRAL_TRANSGRESSION"
+    "COVARIANT_ACTION_DERIVED_NORMAL_RADION_BUOYANCY_FUNCTIONAL_WITH_"
+    "GLOBAL_CONSTRAINT_AND_LOCAL_ENVELOPMENT_BACKREACTION"
 )
 CURRENT_VERDICT = (
-    "BHSM_DYNAMIC_ENVELOPMENT_ACTION_AND_COMPLETION_ARCHITECTURE_"
+    "BHSM_RELATIONAL_ENVELOPMENT_PARENT_ACTION_CONSTRAINTS_"
     "CONSTRUCTED_CONDITIONALLY"
 )
 
@@ -155,6 +155,30 @@ def unified_envelopment_status_to_markdown(payload=None):
     return status_to_markdown(payload)
 
 
+def relational_envelopment_status_payload():
+    """Return the current v10.1 relational-envelopment status."""
+    from ..envelopment.relational_completion_gate import completion_payload
+
+    return completion_payload()
+
+
+def relational_envelopment_status_to_markdown(payload=None):
+    """Render the current v10.1 relational-envelopment status."""
+    from ..envelopment.relational_completion_gate import command_to_markdown
+
+    wrapped = {
+        "version": CURRENT_VERSION,
+        "command": "relational-envelopment-status",
+        "primary_verdict": CURRENT_VERDICT,
+        "section": relational_envelopment_status_payload() if payload is None else payload,
+        "author_axiom_promoted_to_theorem": False,
+        "frozen_predictions_changed": False,
+        "physical_matrix_emitted": False,
+        "next_exact_object": CURRENT_MISSING_OBJECT,
+    }
+    return command_to_markdown("relational-envelopment-status", wrapped)
+
+
 __all__ = [
     "ARTIFACT_FILES",
     "CURRENT_MISSING_OBJECT",
@@ -174,6 +198,8 @@ __all__ = [
     "frozen_hashes_match",
     "geometry_only_geon_fr_carrier_status_payload",
     "geometry_only_geon_fr_carrier_status_to_markdown",
+    "relational_envelopment_status_payload",
+    "relational_envelopment_status_to_markdown",
     "unified_envelopment_status_payload",
     "unified_envelopment_status_to_markdown",
     "materialize",

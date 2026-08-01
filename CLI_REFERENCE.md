@@ -838,3 +838,18 @@ These commands report the structural doctrine/action, exact collective
 reduction, four completion marks, scale degeneracy, and fail-closed physical
 orbit/family outputs. They emit no physical mass or CKM/PMNS matrix and do not
 alter the frozen prediction files.
+
+## Relational Envelopment Holism v10.1
+
+```bash
+python -m bhsm.interface relational-envelopment-status --format markdown
+python -m bhsm.interface topological-buoyancy-status --format json
+python -m bhsm.interface global-conservation-status --format json
+python -m bhsm.interface boundary-complementarity-status --format markdown
+python -m bhsm.interface neutrino-identity-status --format json
+python -m bhsm.interface relational-constraint-status --format markdown
+python scripts/materialize_relational_envelopment_holism_v10_1.py
+```
+
+The commands never promote an author axiom to `DERIVED`, print a physical
+matrix, or change frozen outputs.

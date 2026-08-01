@@ -1,0 +1,68 @@
+{
+  "artifact": "BHSM_topological_buoyancy_gate_v10_1",
+  "collective_subresult": "BHSM_TOPOLOGICAL_BUOYANCY_CONDITIONALLY_REALIZED_BY_RADION_EQUILIBRIUM",
+  "collective_variation": {
+    "B_R": "dV/dR=5 kappa1 A2 R^4-A8/R^2",
+    "classification": "DERIVED_CONDITIONAL",
+    "coordinate": "R (prototype texture scale)",
+    "equilibrium": "R0=(A8/(5 kappa1 A2))^(1/6)",
+    "equilibrium_residual_exact": true,
+    "inserted_force": false,
+    "physical_promotion": false,
+    "second_variation": "30 kappa1 A2 R0^3",
+    "second_variation_positive": true,
+    "source": "variation of the v10 p=2+p=8 collective potential"
+  },
+  "doctrine_status": "STRUCTURAL_POSTULATE",
+  "exact_missing_object": "COVARIANT_RADIAL_BUOYANCY_FUNCTIONAL",
+  "normal_variation": {
+    "assembled_single_functional": null,
+    "candidate_terms": [
+      "n^A n^B T_AB,total",
+      "Brown-York canonical momentum",
+      "GHY variation",
+      "collar Jacobian",
+      "radion a_F equation",
+      "Hamiltonian constraint",
+      "global volume/curvature constraint",
+      "topological degree density"
+    ],
+    "classification": "BLOCKED_EXACT_OBJECT_PROVED",
+    "covariant_definition": "B[Phi]=delta S_BHSM/delta r or the normal projection of the complete metric/boundary variation",
+    "domain_obstructions": [
+      "v6.10 adopted P1+GHY+B1+matter package contains no independent movable-junction density",
+      "normal displacement and its shape equation are absent from the frozen variational domain",
+      "varying a_F produces a scalar-tensor pushforward not identical to the stored independent S5 cap action"
+    ],
+    "existing_exact_inputs": [
+      "M5 Gaussian-normal rho and ds=a(t)d rho",
+      "cap GHY/Brown-York response",
+      "M5 Hamiltonian and momentum constraints",
+      "M8 eta stress and backreaction source",
+      "conditional M8-to-M5 radion transport"
+    ],
+    "selected_radial_variable": null
+  },
+  "theorem_gates": {
+    "Newtonian_weak_field_limit": "OPEN",
+    "conservation_compatibility": "DERIVED_CONDITIONAL_FROM_DIFFEO_INVARIANCE_AFTER_COMPLETE_BOUNDARY_FLUX_CLOSURE",
+    "covariance": "OPEN_NO_SINGLE_PARENT_NORMAL_RADION_DOMAIN",
+    "energy_depth_sign": "OPEN_NOT_FIXED_BY_THE_U_SHAPED_PROXY_POTENTIAL",
+    "equivalence_principle": "OPEN",
+    "local_to_global_backreaction": "FORMAL_ETA_STRESS_SOURCE_PRESENT_SOLUTION_MAP_OPEN",
+    "new_independent_gravity_mediator": false,
+    "radial_equilibrium_equation": "DERIVED_CONDITIONAL_ON_PROTOTYPE_R_ONLY",
+    "stable_equilibrium": "DERIVED_CONDITIONAL_FOR_POSITIVE_P2_P8_PROFILE_COEFFICIENTS"
+  },
+  "validation": {
+    "equilibrium_exact": true,
+    "no_new_gravity_mediator": true,
+    "sign_not_hard_coded": true,
+    "stable_proxy": true,
+    "v10_equilibrium_consistent": true,
+    "variation_not_inserted": true,
+    "weak_field_not_claimed": true
+  },
+  "validation_passed": true,
+  "verdict": "BHSM_TOPOLOGICAL_BUOYANCY_NOT_GENERATED_BY_CURRENT_PARENT_ACTION"
+}

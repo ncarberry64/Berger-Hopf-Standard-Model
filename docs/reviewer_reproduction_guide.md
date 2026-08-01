@@ -136,3 +136,41 @@ quadratures, symbolic equilibrium identities, four completion marks, unchanged
 frozen-file hashes, null physical mass/matrices, and exact global-scale
 degeneracy. The representative collective-radius calculation is `PROXY_ONLY`,
 not a particle boundary-value solution.
+
+## Reviewer checkpoint: v10.1
+
+```bash
+python -m bhsm.interface relational-envelopment-status --format json
+python -m bhsm.interface topological-buoyancy-status --format json
+python -m bhsm.interface global-conservation-status --format json
+python -m bhsm.interface boundary-complementarity-status --format json
+python -m bhsm.interface neutrino-identity-status --format json
+python -m bhsm.interface relational-constraint-status --format json
+python scripts/materialize_relational_envelopment_holism_v10_1.py
+python -m pytest -q tests/test_bhsm_relational_axioms_v10_1.py tests/test_bhsm_geometry_reconciliation_v10_1.py tests/test_bhsm_topological_buoyancy_v10_1.py tests/test_bhsm_global_conservation_v10_1.py tests/test_bhsm_boundary_complementarity_v10_1.py tests/test_bhsm_neutrino_identity_v10_1.py tests/test_bhsm_relational_completion_gate_v10_1.py
+```
+
+Run the materializer twice. Verify doctrine SHA
+`f981a6501526a3ff324cbf5cb4f1e26b1f7d3ecd0c7b2759c200f6aa1ee184b0`,
+typed statuses, no `S3 x M4=M8` identification, no inserted buoyancy force,
+the scalar-energy caveat, eta-sector-only complementarity, null neutrino
+observables, and unchanged frozen hashes.
+
+## Reviewer checkpoint: v10.1
+
+```bash
+python -m bhsm.interface relational-envelopment-status --format json
+python -m bhsm.interface topological-buoyancy-status --format json
+python -m bhsm.interface global-conservation-status --format json
+python -m bhsm.interface boundary-complementarity-status --format json
+python -m bhsm.interface neutrino-identity-status --format json
+python -m bhsm.interface relational-constraint-status --format json
+python scripts/materialize_relational_envelopment_holism_v10_1.py
+python -m pytest -q tests/test_bhsm_relational_axioms_v10_1.py tests/test_bhsm_geometry_reconciliation_v10_1.py tests/test_bhsm_topological_buoyancy_v10_1.py tests/test_bhsm_global_conservation_v10_1.py tests/test_bhsm_boundary_complementarity_v10_1.py tests/test_bhsm_neutrino_identity_v10_1.py tests/test_bhsm_relational_completion_gate_v10_1.py
+```
+
+Run the materializer twice. Verify doctrine SHA
+`f981a6501526a3ff324cbf5cb4f1e26b1f7d3ecd0c7b2759c200f6aa1ee184b0`,
+typed statuses, no `S3 x M4=M8` identification, no inserted buoyancy force,
+the scalar-energy caveat, eta-sector-only complementarity, null neutrino
+observables, and unchanged frozen hashes.

@@ -171,3 +171,22 @@ Exact next object:
 
 Exact verdict:
 `BHSM_DYNAMIC_ENVELOPMENT_ACTION_AND_COMPLETION_ARCHITECTURE_CONSTRUCTED_CONDITIONALLY`.
+
+## v10.1 relational-envelopment gate
+
+The exact author ontology constrains, but does not prove, the physical theory.
+The geometry is reconciled without identifying `S3 x M4` with M8. Existing
+normal/radion/stress/constraint pieces do not form a covariant buoyancy
+functional, and the action does not define scalar cosmic energy, full
+boundary complementarity, neutrino vertex observables, or normalized closed
+system probabilities.
+
+RB-15: `BLOCKED_BY_RELATIONAL_GLOBAL_LOCAL_ACTION_CONSTRAINT`.
+
+RB-16: `DOWNSTREAM_BLOCKED`.
+
+Exact next object:
+`COVARIANT_ACTION_DERIVED_NORMAL_RADION_BUOYANCY_FUNCTIONAL_WITH_GLOBAL_CONSTRAINT_AND_LOCAL_ENVELOPMENT_BACKREACTION`.
+
+Exact verdict:
+`BHSM_RELATIONAL_ENVELOPMENT_PARENT_ACTION_CONSTRAINTS_CONSTRUCTED_CONDITIONALLY`.

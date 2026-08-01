@@ -1,0 +1,90 @@
+{
+  "artifact": "BHSM_global_conservation_gate_v10_1",
+  "boundary_flux": {
+    "GHY_and_matcher_required": true,
+    "all_physical_boundary_conditions_selected": false,
+    "balance": "Q[Sigma2]-Q[Sigma1]=-int_timelike_boundary j.A s_A dSigma",
+    "classification": "DERIVED_CONDITIONAL",
+    "closed_cosmos_flux": 0,
+    "eta_boundary_flux": "n^A(1+g sigma^2)(kappa1+X_eta^3) Re<D_A eta,Sigma^(IJ)eta>"
+  },
+  "entropy": {
+    "classification": "OPEN",
+    "coarse_graining_map": null,
+    "discarded_variables": null,
+    "entropy_functional": null,
+    "exact_missing_object": "MICROSCOPIC_ENVELOPMENT_COARSE_GRAINING_AND_ENTROPY_PRODUCTION_THEOREM",
+    "fundamental_closed_state_space": "covariant constrained phase space of the complete stratified fields",
+    "information_conservation_beyond_topological_degree": null,
+    "local_entropy_explained": false,
+    "measure": null,
+    "monotonicity_theorem": null,
+    "observer_or_subsystem": null,
+    "recurrence_audit": null
+  },
+  "global_energy": {
+    "Brown_York_energy_available": "quasilocally after a boundary, normal, subtraction/reference, and ensemble are fixed",
+    "Hamiltonian_constraint": "H_perp approximately 0 on a closed generally covariant solution",
+    "Hamiltonian_constraint_is_positive_scalar_energy": false,
+    "Komar_charge_available": "only on a stationary branch with the required Killing field",
+    "classification": "BLOCKED_EXACT_OBJECT_PROVED",
+    "closed_cosmos_has_external_boundary": false,
+    "constraint_realization_verdict": "BHSM_HAMILTONIAN_CONSTRAINT_IS_NOT_A_SCALAR_TOTAL_COSMIC_ENERGY",
+    "covariant_local_conservation": true,
+    "global_timelike_Killing_field_selected": false,
+    "ordinary_integral_T00_coordinate_independent": false,
+    "scalar_energy_verdict": "BHSM_SCALAR_TOTAL_COSMIC_ENERGY_NOT_COVARIANTLY_DEFINED",
+    "scalar_total_cosmic_energy": null
+  },
+  "local_Noether_identity": {
+    "classification": "DERIVED_CONDITIONAL",
+    "homogeneous_scalar_check": {
+      "dE_dt": "sigma_dot(Z sigma_ddot+U')",
+      "energy": "E=Z sigma_dot^2/2+U(sigma)",
+      "equation": "Z sigma_ddot+U'=0",
+      "factorization_exact": true,
+      "on_shell_value": 0
+    },
+    "identity": "nabla_A T_total^(AB)=sum_fields E_field . nabla^B(field)+connection equations+boundary flux",
+    "on_shell_closed_conservation": true,
+    "on_shell_closed_value": 0,
+    "scope": "complete covariant action with all strata and fluxes included"
+  },
+  "reversibility": {
+    "CPT": "OPEN_FULL_LOCAL_LORENTZIAN_QUANTUM_FIELD_CONTENT_NOT_DERIVED",
+    "Hamiltonian_structure": "FORMAL_CONSTRAINED_COVARIANT_SYSTEM",
+    "classification": "DERIVED_CONDITIONAL",
+    "explicit_dissipative_terms": [],
+    "fundamental_time_arrow": false,
+    "nonlocal_memory_terms": [],
+    "open_system_dissipation": "allowed only after an explicit subsystem trace/coarse graining",
+    "parent_local_terms": "real and even in first derivatives after tensor contraction",
+    "symplectic_structure": "covariant presymplectic current exists sectorwise; global reduced nondegeneracy open",
+    "time_reversal": "invariant conditional on time-reversal-compatible gauge/background and boundary data",
+    "unitarity": "OPEN_NO_QUANTIZED_PHYSICAL_HILBERT_SPACE"
+  },
+  "topological_information": {
+    "change_requires": [
+      "singularity",
+      "loss of unit constraint",
+      "boundary flux",
+      "domain topology change"
+    ],
+    "charge": "N=deg(eta|Sigma7) in pi7(S7)=Z",
+    "classification": "DERIVED_CONDITIONAL",
+    "current_action_allows_unqualified_change": false,
+    "law": "N is homotopy invariant under smooth continuous evolution with fixed based boundary data",
+    "verdict": "BHSM_ETA_MAP_DEGREE_CONSERVED_UNDER_SMOOTH_FIXED_DOMAIN_EVOLUTION"
+  },
+  "validation": {
+    "T00_not_promoted": true,
+    "boundary_flux_accounted": true,
+    "entropy_not_overclaimed": true,
+    "homogeneous_energy_check_exact": true,
+    "local_identity_closes_on_shell": true,
+    "no_fundamental_dissipation": true,
+    "topological_charge_conserved_conditionally": true
+  },
+  "validation_passed": true,
+  "verdict": "BHSM_SCALAR_TOTAL_COSMIC_ENERGY_NOT_COVARIANTLY_DEFINED"
+}

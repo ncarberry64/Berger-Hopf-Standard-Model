@@ -1,10 +1,10 @@
 # Open Blockers Backlog
 
-Current public status: v10.0 conditionally constructs the Machian
-geometric-envelopment action and completion architecture. The v9.1 no-go
-remains authoritative for the original metric-plus-real-scalar action. The
+Current public status: v10.1 integrates Relational Envelopment Holism as
+author doctrine and conditionally constructs its parent-action constraints.
+The v9.1 and v10.0 results remain authoritative in their scopes. The
 historical table remains provenance. The live Tier-C object is
-`ACTION_SELECTED_GAUGE_DRESSED_CHARGED_SELF_ENVELOPMENT_RELATIVE_PERIODIC_ORBIT_WITH_LOCAL_CHIRAL_TRANSGRESSION`.
+`COVARIANT_ACTION_DERIVED_NORMAL_RADION_BUOYANCY_FUNCTIONAL_WITH_GLOBAL_CONSTRAINT_AND_LOCAL_ENVELOPMENT_BACKREACTION`.
 
 Historical compatibility boundary: structural architecture integrated conditional; numerical closure open.
 This sentence records the pre-v7.1 numerical-closure status required by the
@@ -12,9 +12,9 @@ archived component contracts; it is not the current completion-tier verdict.
 
 Each blocker must be handled without fitting observed data after comparison and without changing frozen predictions.
 
-## Current v10.0 highest-upstream blocker
+## Current v10.1 highest-upstream blocker
 
-`ACTION_SELECTED_GAUGE_DRESSED_CHARGED_SELF_ENVELOPMENT_RELATIVE_PERIODIC_ORBIT_WITH_LOCAL_CHIRAL_TRANSGRESSION`
+`COVARIANT_ACTION_DERIVED_NORMAL_RADION_BUOYANCY_FUNCTIONAL_WITH_GLOBAL_CONSTRAINT_AND_LOCAL_ENVELOPMENT_BACKREACTION`
 
 The declared small-diffeomorphism geometry quotient has trivial fundamental
 group. The optional large-diffeomorphism class is not a selected FR
@@ -23,15 +23,15 @@ The current action selects neither a stationary geon nor a `G2/C3`
 polarization. Downstream composite immersions, physical pullbacks, current,
 matrix, and mass/lepton outputs remain null.
 
-The structural eta extension supplies a based-map topology and connection
-current, but it does not yet supply a localized physical rotation/exchange
-representative, local M4 chirality, or a stable gauge-dressed orbit. The next
-valid construction must solve that coupled boundary-value/orbit problem and
-classify its physical Floquet spectrum before any family or mass readout.
+The collar normal, Hopf radion, Brown--York/GHY response, ADM constraints, and
+eta stress exist separately. They are not assembled into one covariant
+global-local radial variational problem, so the author-required energy-depth
+sign and weak-field/equivalence limits cannot be evaluated. The charged orbit
+remains downstream of this relational background constraint.
 
 Exact verdict:
 
-`BHSM_DYNAMIC_ENVELOPMENT_ACTION_AND_COMPLETION_ARCHITECTURE_CONSTRUCTED_CONDITIONALLY`
+`BHSM_RELATIONAL_ENVELOPMENT_PARENT_ACTION_CONSTRAINTS_CONSTRUCTED_CONDITIONALLY`
 
 | Blocker | Current status | Why it matters | Next valid action | Forbidden invalid action |
 | --- | --- | --- | --- | --- |

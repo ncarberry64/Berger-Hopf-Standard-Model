@@ -13,7 +13,10 @@ physical observable map is complete in one declared scheme. V9.1 proves that
 the original metric-plus-real-scalar action cannot generate the required
 geometry-only carrier. V10.0 adds a conditional structural bosonic
 envelopment extension and controlled collective reduction, but supplies no
-physical orbit, mass, flavor matrix, or absolute unit bridge.
+physical orbit, mass, flavor matrix, or absolute unit bridge. V10.1 preserves
+Relational Envelopment Holism as author doctrine and converts it into
+fail-closed action constraints; it does not promote those constraints to
+physical theorems.
 
 Preferred current classifications are: **Adopted from established
 physics/mathematics**, **Adopted BHSM axiom**, **BHSM identification**,
@@ -74,7 +77,7 @@ Reviewer entry points:
 [claim boundaries](CLAIMS.md), and
 [reproduction guide](docs/reviewer_reproduction_guide.md).
 
-BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v10.0 conditionally constructs the Machian geometric-envelopment action, based-map topology, connection current, and collective reduction. No charged physical orbit, invariant particle mass, CKM/PMNS matrix, absolute unit bridge, or complete 4D theory is derived. The v9.1 no-go remains authoritative for the original metric-plus-real-scalar action; RB-15/RB-16 remain blocked.
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v10.1 integrates Relational Envelopment Holism as authoritative author doctrine and constructs conditional parent-action constraints. S3 x M4 is a lifted seam/local reduction, not M8. The current action does not derive full topological buoyancy, scalar cosmic energy, full boundary complementarity, neutrino observable equivalence, or physical particle/mixing outputs; prior no-go results remain in force and RB-15/RB-16 remain blocked.
 
 BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity. Physical eV/GeV neutrino mass closure remains open pending a numeric neutral stiffness length sqrt(A_nu/Z_nu), a physical K_neutral,eff map in m^-2, and complete-action derivation of the admissible response cone.
 
@@ -2835,3 +2838,31 @@ Current exact verdict:
 
 Exact next object:
 `ACTION_SELECTED_GAUGE_DRESSED_CHARGED_SELF_ENVELOPMENT_RELATIVE_PERIODIC_ORBIT_WITH_LOCAL_CHIRAL_TRANSGRESSION`.
+
+## v10.1 Relational Envelopment Holism constraints
+
+The exact author doctrine is preserved with SHA-256
+`f981a6501526a3ff324cbf5cb4f1e26b1f7d3ecd0c7b2759c200f6aa1ee184b0`.
+It is typed as author axiom/ontology and hard architectural constraint, not
+as derived physics.
+
+The geometry reconciliation identifies `S3 x M4` as the seven-dimensional
+Hopf-fiber lift of the equatorial M4 seam. A collar normal completes it
+locally to eight dimensions; globally the parent remains `I_t x S7`.
+The v10 proxy equilibrium is variational and stable, but the full covariant
+buoyancy functional, energy-depth sign, weak-field limit, and equivalence
+principle are absent. The action contains no fundamental dissipation and
+conserves eta degree under smooth fixed-domain evolution; it does not define
+a coordinate-independent scalar cosmic energy or an entropy coarse graining.
+Eta conjugation gives a conditional sector involution, not full antimatter
+equivalence. Neutrino vertex observables and closed-system probabilities stay
+open.
+
+Current exact verdict:
+`BHSM_RELATIONAL_ENVELOPMENT_PARENT_ACTION_CONSTRAINTS_CONSTRUCTED_CONDITIONALLY`.
+
+Action-limit verdict:
+`BHSM_CURRENT_PARENT_ACTION_DOES_NOT_DERIVE_ALL_RELATIONAL_ENVELOPMENT_AXIOMS`.
+
+Exact next object:
+`COVARIANT_ACTION_DERIVED_NORMAL_RADION_BUOYANCY_FUNCTIONAL_WITH_GLOBAL_CONSTRAINT_AND_LOCAL_ENVELOPMENT_BACKREACTION`.

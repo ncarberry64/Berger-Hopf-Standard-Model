@@ -57,3 +57,15 @@ A future physical-particle claim additionally fails unless a gauge-fixed
 relative-periodic orbit passes constraint, convergence, conservation, and
 Floquet tests before comparison. Frozen observables remain outside and
 unchanged by this campaign.
+
+## BHSM v10.1 relational doctrine falsification boundary
+
+Doctrine integration fails if the canonical author JSON or its SHA changes
+without authorization, an author status is silently promoted to `DERIVED`,
+or a hard invariant is bypassed. The geometry claim fails if `S3 x M4` is
+treated as M8 without the lifted-seam/collar map. A future buoyancy claim fails
+unless its sign, stability, weak-field limit, equivalence principle, and
+backreaction follow from one covariant variation. Complementarity fails
+unless the full action, charges, spectra, representations, and vertices obey
+the involution. Entropy, neutrino equivalence, and measurement claims remain
+ineligible without their named maps and probability theorem.
