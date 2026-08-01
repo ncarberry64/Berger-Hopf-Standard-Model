@@ -27,10 +27,13 @@ def test_completion_gate_is_conditional_and_fail_closed():
     assert payload["fundamental_dissipation_introduced"] is False
 
 
-def test_current_master_api_and_canonical_gate_are_v101():
-    assert CURRENT_VERSION == "v10.1"
-    assert CURRENT_VERDICT == gate.PRIMARY_VERDICT
-    assert CURRENT_MISSING_OBJECT == gate.NEXT_EXACT_OBJECT
+def test_current_master_api_advances_while_historical_gate_stays_v101():
+    assert CURRENT_VERSION == "v10.2"
+    assert CURRENT_VERDICT == "BHSM_CURRENT_PARENT_ACTION_CANNOT_GENERATE_TOPOLOGICAL_BUOYANCY"
+    assert CURRENT_MISSING_OBJECT == (
+        "ACTION_DOMAIN_THEOREM_SELECTING_ONE_PHYSICAL_NORMAL_OR_RADION_DEGREE_"
+        "WITH_COMPLETE_LOCALIZED_STRESS_PULLBACK_AND_COVARIANT_GLOBAL_RESTORING_CONSTRAINT"
+    )
     canonical = gate.canonical_completion_gate_payload()
     assert canonical["version"] == "v10.1"
     assert canonical["author_doctrine_integrated"] is True
@@ -58,12 +61,11 @@ def test_materializer_is_idempotent(tmp_path: Path):
     assert json.loads(first["BHSM_1_0_completion_gate.json"])["version"] == "v10.1"
 
 
-def test_six_cli_commands_render_json_and_markdown():
+def test_current_v101_cli_commands_render_json_and_markdown():
     env = dict(os.environ)
     env["PYTHONPATH"] = str(ROOT / "src")
     for command in (
-        "relational-envelopment-status", "topological-buoyancy-status",
-        "global-conservation-status", "boundary-complementarity-status",
+        "relational-envelopment-status", "global-conservation-status", "boundary-complementarity-status",
         "neutrino-identity-status", "relational-constraint-status",
     ):
         base = [sys.executable, "-m", "bhsm.interface", command]
@@ -71,6 +73,12 @@ def test_six_cli_commands_render_json_and_markdown():
         md_run = subprocess.run(base + ["--format", "markdown"], cwd=ROOT, env=env, text=True, capture_output=True, check=True)
         assert json.loads(json_run.stdout)["author_axiom_promoted_to_theorem"] is False
         assert gate.PRIMARY_VERDICT in md_run.stdout
+
+
+def test_historical_v101_topological_payload_remains_available_directly():
+    payload = gate.command_payload("topological-buoyancy-status")
+    assert payload["version"] == "v10.1"
+    assert payload["primary_verdict"] == gate.PRIMARY_VERDICT
 
 
 def test_checked_in_artifacts_match_implementation():

@@ -1,0 +1,96 @@
+{
+  "artifact": "BHSM_global_constraint_audit_v10_2",
+  "candidates": [
+    {
+      "candidate": "eta degree N in pi7(S7)",
+      "classification": "TOPOLOGICAL_ACTION_COMPATIBLE",
+      "couples_compactness_to_displacement": false,
+      "covariant": true,
+      "dimensionful_input": false,
+      "fixes_scale": false,
+      "source": "topology and unit-eta sector",
+      "viable_buoyancy_restoring_constraint": false
+    },
+    {
+      "candidate": "radial/temporal Hamiltonian constraint",
+      "classification": "ACTION_DERIVED_LOCAL_CONSTRAINT",
+      "couples_compactness_to_displacement": false,
+      "covariant": true,
+      "dimensionful_input": false,
+      "fixes_scale": false,
+      "source": "lapse variation of the covariant action",
+      "viable_buoyancy_restoring_constraint": false
+    },
+    {
+      "candidate": "fixed total volume int_M8 sqrt|G|=V_star",
+      "classification": "EXTERNALLY_IMPOSED_EXTENSION",
+      "couples_compactness_to_displacement": "conditional only",
+      "covariant": true,
+      "dimensionful_input": true,
+      "fixes_scale": true,
+      "source": null,
+      "viable_buoyancy_restoring_constraint": false
+    },
+    {
+      "candidate": "fixed curvature integral int_M8 sqrt|G| R8=R_star",
+      "classification": "EXTERNALLY_IMPOSED_OR_FIELD_EQUATION_REDUNDANT",
+      "couples_compactness_to_displacement": false,
+      "covariant": true,
+      "dimensionful_input": true,
+      "fixes_scale": "conditional",
+      "source": null,
+      "viable_buoyancy_restoring_constraint": false
+    },
+    {
+      "candidate": "Brown-York/quasilocal closure",
+      "classification": "ACTION_DERIVED_QUASILOCAL_AFTER_ENSEMBLE_SELECTION",
+      "couples_compactness_to_displacement": false,
+      "covariant": "boundary-covariant",
+      "dimensionful_input": "reference/subtraction may be required",
+      "fixes_scale": false,
+      "source": "GHY-completed cap boundary variation",
+      "viable_buoyancy_restoring_constraint": false
+    },
+    {
+      "candidate": "normalized finite boundary measure",
+      "classification": "ACTION_LINKED_MEASURE_NOT_GLOBAL_GEOMETRY_CONSTRAINT",
+      "couples_compactness_to_displacement": false,
+      "covariant": "within declared boundary convention",
+      "dimensionful_input": false,
+      "fixes_scale": false,
+      "source": "existing finite operator normalization",
+      "viable_buoyancy_restoring_constraint": false
+    }
+  ],
+  "hamiltonian": {
+    "classification": "DERIVED_CONSTRAINT_NOT_BUOYANCY_RESTORING_LAW",
+    "compactness_depth_response": null,
+    "global_modulus_stationarity_equation": false,
+    "momentum_constraint": "C_i=kappa1 D_j(K^j_i-delta^j_i K)-j_i=0",
+    "parent_constraint": "C_H=[kappa1(R7-H^T G H)-kappa0]/2-rho=0",
+    "propagation": "D_t C_H=-Theta C_H",
+    "scalar_total_energy": false,
+    "zero_surface_preserved": true
+  },
+  "scale": {
+    "absolute_unit": null,
+    "lambda_action_selected_numerically": false,
+    "lambda_is_empirical_input": false,
+    "physical_eV_GeV_output": null,
+    "primitive_curvature_ratio": "lambda=kappa0/kappa1",
+    "topological_degree_under_metric_rescaling": "unchanged",
+    "topology_selects_length": false,
+    "verdict": "BHSM_FIXED_TOPOLOGY_DOES_NOT_FIX_A_RADIAL_ENERGY_SCALE"
+  },
+  "selected_constraint": null,
+  "validation": {
+    "all_candidates_classified": true,
+    "external_volume_not_adopted": true,
+    "hamiltonian_not_energy": true,
+    "hamiltonian_propagates": true,
+    "no_selected_constraint": true,
+    "topology_not_scale": true
+  },
+  "validation_passed": true,
+  "verdict": "BHSM_NO_ACTION_DERIVED_GLOBAL_BUOYANCY_RESTORING_CONSTRAINT"
+}

@@ -853,3 +853,20 @@ python scripts/materialize_relational_envelopment_holism_v10_1.py
 
 The commands never promote an author axiom to `DERIVED`, print a physical
 matrix, or change frozen outputs.
+
+## Topological-Buoyancy action exhaustion v10.2
+
+```bash
+python -m bhsm.interface normal-radion-status --format markdown
+python -m bhsm.interface global-constraint-status --format json
+python -m bhsm.interface topological-buoyancy-status --format json
+python -m bhsm.interface local-backreaction-status --format markdown
+python -m bhsm.interface buoyancy-weak-field-status --format json
+python scripts/materialize_topological_buoyancy_functional_v10_2.py
+```
+
+These commands report the fixed-embedding domain, the exact homogeneous
+Hopf-radion no-go, the global-restoring-constraint audit, localized-stress
+ownership, the complete current-action obstruction, and the blocked weak-field
+limit. They do not promote proxy `R` to physical depth, introduce a gravity
+mediator, or modify frozen predictions.

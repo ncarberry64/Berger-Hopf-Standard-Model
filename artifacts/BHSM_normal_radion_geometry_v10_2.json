@@ -1,0 +1,161 @@
+{
+  "artifact": "BHSM_normal_radion_geometry_v10_2",
+  "domains": [
+    {
+      "action_owner": "S8^env",
+      "dimension": 8,
+      "domain": "M8",
+      "metric": "G_AB",
+      "normal_object": "rho-normal only after a local collar/foliation is selected"
+    },
+    {
+      "action_owner": null,
+      "dimension": 7,
+      "domain": "lifted seam",
+      "metric": "S3_fiber x M4 pullback, locally",
+      "normal_object": "I_rho"
+    },
+    {
+      "action_owner": "S5+S_GHY",
+      "dimension": 5,
+      "domain": "M5 caps",
+      "metric": "radial ADM (N,N^mu,h_mu_nu)",
+      "normal_object": "cap normal to B1"
+    },
+    {
+      "action_owner": "S4,intrinsic+S_compatibility+S_current",
+      "dimension": 4,
+      "domain": "M4=B1",
+      "metric": "independent h_mu_nu with matcher h=iota^*g",
+      "normal_object": "fixed embedding iota in the frozen action"
+    }
+  ],
+  "metric_ansatz": {
+    "accepted_parts": {
+      "Hopf_connection": "canonical Sp(1) connection in the M8 reduction",
+      "Hopf_radion": "homogeneous M8 invariant metric sector",
+      "M4_metric": "intrinsic seam plus matcher",
+      "radial_lapse": "M5 cap ADM only"
+    },
+    "adopted_as_global_parent_metric": false,
+    "candidate_local_form": "ds8^2=N_rho^2 d rho^2+g_mu_nu dx^mu dx^nu+a_F^2 gamma_ab(theta^a+A^a_mu dx^mu)(theta^b+A^b_nu dx^nu)",
+    "not_proved": [
+      "one off-shell metric simultaneously realizes the independent S8, S5, and S4 action owners",
+      "the M5 rho-normal is the normal to the seven-dimensional lifted seam in M8",
+      "the M4 gauge connection is the Kaluza-Klein connection A^a_mu"
+    ]
+  },
+  "normal_variation": {
+    "GHY_role": "cancels normal derivatives of delta g for Dirichlet metric variation; it does not create a varied embedding",
+    "candidate_deformation": "delta X^A=psi n^A",
+    "coordinate_rho_shift_is_physical_displacement": false,
+    "delta_S_delta_psi": null,
+    "embedding_fixed": true,
+    "identities": {
+      "collar_measure": "delta(J dmu_h d rho)=J(K psi+delta log J)dmu_h d rho plus endpoint terms",
+      "delta_K": "-Delta_h psi-(K_ij K^ij+Ric(n,n))psi",
+      "delta_K_ij": "-D_iD_j psi+psi(K_i^k K_kj-R_ninj)",
+      "delta_h_ij": "2 psi K_ij",
+      "delta_sqrt_abs_h": "psi K sqrt|h|"
+    },
+    "prior_exact_results": [
+      "v5.12 standard normal-variation identities",
+      "v6.10 no independent junction density in the minimal well-posed action",
+      "v6.13 zeta is not an action variable",
+      "v6.15 interface threading is a presymplectic null trace",
+      "v6.25 dynamical embedding domain was not reached"
+    ],
+    "psi_in_configuration_space": false,
+    "shape_equation_from_current_action": null,
+    "verdict": "BHSM_PHYSICAL_NORMAL_DISPLACEMENT_ABSENT_FROM_CURRENT_ACTION_DOMAIN"
+  },
+  "radion": {
+    "equation": {
+      "current_M8_equation": "Euler-Lagrange equation from the homogeneous lapse-retaining metric reduction",
+      "current_static_result": "BHSM_HOPF_RADION_HAS_NO_STATIC_POSITIVE_EQUILIBRIUM_IN_CURRENT_M8_REDUCTION",
+      "current_stratified_equation": "delta S_BHSM^strat/delta a_F=0 only on the diagnostic pi_!S8 owner",
+      "independent_radion_potential_added": false,
+      "missing_terms_for_physical_seam_balance": [
+        "localized M4 stress pullback to the M8 vertical metric equation",
+        "matcher relation between the M8 radion and independent S5 cap metric",
+        "action-selected global restoring constraint",
+        "normal/radion boundary domain"
+      ],
+      "new_continuous_parameter_added": false,
+      "static_derivative_sign": "negative for all positive a_H,a_F",
+      "static_equilibrium": false
+    },
+    "ownership": {
+      "R": {
+        "gauge_invariant_map_R_of_a_F_psi_G_sigma_eta": null,
+        "identified_with_a_F": false,
+        "role": "collective texture size"
+      },
+      "a_F": {
+        "action_owned_in_M8_invariant_sector": true,
+        "gauge": false,
+        "homogeneous_metric_mode": true,
+        "localized_seam_depth": false,
+        "origin": "vertical metric determinant and Sp(1)-fiber metric",
+        "static_equilibrium": false
+      },
+      "physical_buoyancy_radion": null,
+      "pushforward": {
+        "compatibility_map_contains_radion_equation": false,
+        "pi_85_S8": "scalar-tensor gravity with radion, connection curvature, and fiber-potential terms",
+        "stored_S5_equals_pushforward": false
+      },
+      "rho": {
+        "identified_with_a_F": false,
+        "role": "dimensionless M5 collar coordinate"
+      }
+    },
+    "radion_variation": {
+      "R7": "-12*a_F**2/a_H**4 + 48/a_H**2 + 6/a_F**2",
+      "dR7_da_F": "-12*(2*a_F**4 + a_H**4)/(a_F**3*a_H**4)",
+      "dR7_da_F_formula": "-12/a_F^3-24 a_F/a_H^4",
+      "ghost_conclusion": null,
+      "ghost_reason": "the lapse constraint and gravitational conformal direction must be reduced before a physical ghost count",
+      "kinetic_determinant": -72,
+      "kinetic_indefinite": true,
+      "kinetic_matrix_log_scales": [
+        [
+          -12,
+          -12
+        ],
+        [
+          -12,
+          -6
+        ]
+      ],
+      "metric": "ds8^2=-N^2dt^2+a_H^2 g_S4+a_F^2<omega,omega>",
+      "positive_static_solution": false,
+      "source": "v9.1 lapse-retaining homogeneous quaternionic-Hopf reduction",
+      "static_lapse_constraint": "kappa1 R7/2=Ueff",
+      "static_radion_equation_after_constraint": "partial R7/partial a_F=0",
+      "vertical_derivative_strictly_negative": true,
+      "volume_factor": "a_H^4 a_F^3"
+    },
+    "validation": {
+      "R_distinct": true,
+      "derivative_negative": true,
+      "kinetic_constraint_qualified": true,
+      "no_new_potential": true,
+      "no_static_solution": true,
+      "rho_distinct": true
+    },
+    "validation_passed": true,
+    "verdict": "BHSM_HOPF_RADION_HAS_NO_STATIC_POSITIVE_EQUILIBRIUM_IN_CURRENT_M8_REDUCTION"
+  },
+  "validation": {
+    "domain_dimensions": true,
+    "projector_annihilates_normal": true,
+    "projector_idempotent": true,
+    "psi_fails_closed": true,
+    "rho_not_promoted": true,
+    "unit_normal": true
+  },
+  "validation_passed": true,
+  "verdict": "BHSM_PHYSICAL_NORMAL_DISPLACEMENT_ABSENT_FROM_CURRENT_ACTION_DOMAIN",
+  "version": "v10.2"
+}

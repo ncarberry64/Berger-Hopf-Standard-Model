@@ -898,11 +898,15 @@ def build_parser() -> argparse.ArgumentParser:
         ("global-scale-status", "Render the BHSM v10.0 closed-cosmic scale audit"),
         ("particle-orbit-status", "Render the BHSM v10.0 particle-orbit and Floquet gates"),
         ("relational-envelopment-status", "Render the BHSM v10.1 relational-envelopment doctrine audit"),
-        ("topological-buoyancy-status", "Render the BHSM v10.1 topological-buoyancy gate"),
+        ("topological-buoyancy-status", "Render the BHSM v10.2 current-action buoyancy obstruction"),
         ("global-conservation-status", "Render the BHSM v10.1 conservation and entropy gate"),
         ("boundary-complementarity-status", "Render the BHSM v10.1 matter-antimatter complementarity gate"),
         ("neutrino-identity-status", "Render the BHSM v10.1 relational neutrino gate"),
         ("relational-constraint-status", "Render the BHSM v10.1 hard constraint ledger"),
+        ("normal-radion-status", "Render the BHSM v10.2 normal/radion geometry audit"),
+        ("global-constraint-status", "Render the BHSM v10.2 global restoring-constraint audit"),
+        ("local-backreaction-status", "Render the BHSM v10.2 localized backreaction audit"),
+        ("buoyancy-weak-field-status", "Render the BHSM v10.2 weak-field gate"),
     )
     for command, help_text in integrated_status_commands:
         status_command = commands.add_parser(command, help=help_text)
@@ -1054,7 +1058,6 @@ def main(argv: Sequence[str] | None = None) -> int:
         return 0
     if args.command in {
         "relational-envelopment-status",
-        "topological-buoyancy-status",
         "global-conservation-status",
         "boundary-complementarity-status",
         "neutrino-identity-status",
@@ -1062,6 +1065,23 @@ def main(argv: Sequence[str] | None = None) -> int:
     }:
         module = import_module(
             ".envelopment.relational_completion_gate",
+            package=__package__,
+        )
+        payload = module.command_payload(args.command)
+        if args.format == "markdown":
+            print(module.command_to_markdown(args.command, payload), end="")
+        else:
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        return 0
+    if args.command in {
+        "normal-radion-status",
+        "global-constraint-status",
+        "topological-buoyancy-status",
+        "local-backreaction-status",
+        "buoyancy-weak-field-status",
+    }:
+        module = import_module(
+            ".envelopment.buoyancy_gate_v10_2",
             package=__package__,
         )
         payload = module.command_payload(args.command)

@@ -5,6 +5,20 @@
 The author doctrine and admissibility constraints are integrated. The
 highest-upstream construction is
 `COVARIANT_ACTION_DERIVED_NORMAL_RADION_BUOYANCY_FUNCTIONAL_WITH_GLOBAL_CONSTRAINT_AND_LOCAL_ENVELOPMENT_BACKREACTION`.
+
+## v10.2 completion pivot
+
+The current-action Topological Buoyancy route is exhausted by an exact
+obstruction. Do not reopen proxy-radius, coordinate-shift, fixed-volume, or
+phenomenological-force routes.
+
+Resume only from:
+
+`ACTION_DOMAIN_THEOREM_SELECTING_ONE_PHYSICAL_NORMAL_OR_RADION_DEGREE_WITH_COMPLETE_LOCALIZED_STRESS_PULLBACK_AND_COVARIANT_GLOBAL_RESTORING_CONSTRAINT`.
+
+Any proposed extension must separately justify its field/domain ownership,
+global constraint, conservation, higher-derivative/ghost status, and absence
+of empirical scale fitting before adoption.
 It must reconcile collar-normal and Hopf-radion variation, total stress,
 GHY/Brown--York terms, ADM constraints, global volume/curvature/topology data,
 and local envelope backreaction. Its energy-depth sign, stable branch,

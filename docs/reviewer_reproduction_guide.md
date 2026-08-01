@@ -156,6 +156,24 @@ typed statuses, no `S3 x M4=M8` identification, no inserted buoyancy force,
 the scalar-energy caveat, eta-sector-only complementarity, null neutrino
 observables, and unchanged frozen hashes.
 
+## Reviewer checkpoint: v10.2
+
+```bash
+python -m bhsm.interface normal-radion-status --format json
+python -m bhsm.interface global-constraint-status --format json
+python -m bhsm.interface topological-buoyancy-status --format json
+python -m bhsm.interface local-backreaction-status --format json
+python -m bhsm.interface buoyancy-weak-field-status --format json
+python scripts/materialize_topological_buoyancy_functional_v10_2.py
+python -m pytest -q tests/test_bhsm_normal_geometry_v10_2.py tests/test_bhsm_radion_variation_v10_2.py tests/test_bhsm_global_constraint_v10_2.py tests/test_bhsm_backreaction_v10_2.py tests/test_bhsm_buoyancy_functional_v10_2.py tests/test_bhsm_buoyancy_gate_v10_2.py
+```
+
+Run the materializer twice and compare bytes. Verify the exact projector and
+collar identities, fixed-embedding action domain, strictly negative static
+Hopf-radion curvature derivative, exhaustive rejection of all six global
+constraint candidates, zero inherited mixed action blocks, null physical
+depth/weak-field outputs, no numerical scan, and unchanged frozen predictions.
+
 ## Reviewer checkpoint: v10.1
 
 ```bash

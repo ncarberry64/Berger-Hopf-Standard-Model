@@ -77,7 +77,7 @@ Reviewer entry points:
 [claim boundaries](CLAIMS.md), and
 [reproduction guide](docs/reviewer_reproduction_guide.md).
 
-BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v10.1 integrates Relational Envelopment Holism as authoritative author doctrine and constructs conditional parent-action constraints. S3 x M4 is a lifted seam/local reduction, not M8. The current action does not derive full topological buoyancy, scalar cosmic energy, full boundary complementarity, neutrino observable equivalence, or physical particle/mixing outputs; prior no-go results remain in force and RB-15/RB-16 remain blocked.
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v10.2 exhausts the present action for Topological Buoyancy and proves that it lacks a varied physical normal embedding, a static seam radion, a global restoring constraint, and complete localized stress pullback. Relational Envelopment Holism remains authoritative author doctrine, not a promoted physical theorem; prior no-go results and RB-15/RB-16 remain in force.
 
 BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity. Physical eV/GeV neutrino mass closure remains open pending a numeric neutral stiffness length sqrt(A_nu/Z_nu), a physical K_neutral,eff map in m^-2, and complete-action derivation of the admissible response cone.
 
@@ -2866,3 +2866,26 @@ Action-limit verdict:
 
 Exact next object:
 `COVARIANT_ACTION_DERIVED_NORMAL_RADION_BUOYANCY_FUNCTIONAL_WITH_GLOBAL_CONSTRAINT_AND_LOCAL_ENVELOPMENT_BACKREACTION`.
+
+## v10.2 authoritative Topological Buoyancy status
+
+The current-action audit reuses the v5.12 normal identities, v6.10--v6.25
+fixed-embedding/domain results, v7.1/v7.3 reduction and incidence firewalls,
+and the v9.1 homogeneous Hopf-radion calculation.
+
+Validated: the physical M4 seam embedding is fixed; `rho` is a coordinate,
+not displacement; `a_F` is an M8 homogeneous metric mode; its static curvature
+derivative is strictly negative; the Hamiltonian constraint propagates but is
+not a global restoring modulus; fixed topology is scale free; current
+M4--radion mixed action blocks vanish.
+
+Absent: a varied `psi`, a static seam radion, a global compactness-restoring
+constraint, complete localized stress pullback, gauge-invariant compactness,
+energy-depth derivative, weak-field operator, effective Newton constant, and
+absolute unit bridge.
+
+Current exact verdict:
+`BHSM_CURRENT_PARENT_ACTION_CANNOT_GENERATE_TOPOLOGICAL_BUOYANCY`.
+
+Exact next object:
+`ACTION_DOMAIN_THEOREM_SELECTING_ONE_PHYSICAL_NORMAL_OR_RADION_DEGREE_WITH_COMPLETE_LOCALIZED_STRESS_PULLBACK_AND_COVARIANT_GLOBAL_RESTORING_CONSTRAINT`.

@@ -233,3 +233,19 @@ Exact verdict:
 
 Exact next object:
 `COVARIANT_ACTION_DERIVED_NORMAL_RADION_BUOYANCY_FUNCTIONAL_WITH_GLOBAL_CONSTRAINT_AND_LOCAL_ENVELOPMENT_BACKREACTION`.
+
+## v10.2 Topological-Buoyancy action gate
+
+The requested v10.1 next object is not derivable from the present action.
+Current-action exhaustion establishes a fixed seam embedding, no positive
+static homogeneous Hopf-radion equilibrium, no action-derived global
+restoring constraint, and no complete localized-stress pullback. Thus neither
+the weak-field buoyancy law nor a physical energy-depth scale is eligible.
+
+RB-15 remains blocked at
+`ACTION_DOMAIN_THEOREM_SELECTING_ONE_PHYSICAL_NORMAL_OR_RADION_DEGREE_WITH_COMPLETE_LOCALIZED_STRESS_PULLBACK_AND_COVARIANT_GLOBAL_RESTORING_CONSTRAINT`;
+RB-16 remains downstream. No physical mass, mixing matrix, or official
+prediction changes.
+
+Exact verdict:
+`BHSM_CURRENT_PARENT_ACTION_CANNOT_GENERATE_TOPOLOGICAL_BUOYANCY`.

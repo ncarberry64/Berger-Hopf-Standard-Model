@@ -5,7 +5,7 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
-BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v10.1 integrates Relational Envelopment Holism as authoritative author doctrine and constructs conditional parent-action constraints. S3 x M4 is a lifted seam/local reduction, not M8. The current action does not derive full topological buoyancy, scalar cosmic energy, full boundary complementarity, neutrino observable equivalence, or physical particle/mixing outputs; prior no-go results remain in force and RB-15/RB-16 remain blocked.
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v10.2 exhausts the present action for Topological Buoyancy and proves that it lacks a varied physical normal embedding, a static seam radion, a global restoring constraint, and complete localized stress pullback. Relational Envelopment Holism remains authoritative author doctrine, not a promoted physical theorem; prior no-go results and RB-15/RB-16 remain in force.
 
 This independent mathematical-physics project investigates whether
 Berger-Hopf boundary geometry can organize structures associated with
@@ -21,7 +21,7 @@ Standard Model, or received institutional endorsement.
 - [Scientific contribution ledger](docs/bhsm_scientific_contribution_ledger.md)
 - [CERN toy model in plain language](docs/cern_toy_model_in_plain_language.md)
 - [STATUS.md](STATUS.md) and [claim boundaries](CLAIMS.md)
-- [BHSM v8.2 generation attachment](docs/bhsm_generation_projector_action_attachment_v8_2.md), [v8.3 mode stress](docs/bhsm_classical_mode_stress_incidence_v8_3.md), [v9.0 vacuum/flavor audit](docs/bhsm_action_selected_8d_vacuum_flavor_completion_v9_0.md), [v9.1 geometry-only geon/FR audit](docs/bhsm_geometry_only_geon_fr_carrier_completion_v9_1.md), [v10.0 envelopment foundation](docs/bhsm_machian_geometric_envelopment_foundation_v10_0.md), and [v10.1 relational action constraints](docs/bhsm_relational_envelopment_action_constraints_v10_1.md)
+- [BHSM v8.2 generation attachment](docs/bhsm_generation_projector_action_attachment_v8_2.md), [v8.3 mode stress](docs/bhsm_classical_mode_stress_incidence_v8_3.md), [v9.0 vacuum/flavor audit](docs/bhsm_action_selected_8d_vacuum_flavor_completion_v9_0.md), [v9.1 geometry-only geon/FR audit](docs/bhsm_geometry_only_geon_fr_carrier_completion_v9_1.md), [v10.0 envelopment foundation](docs/bhsm_machian_geometric_envelopment_foundation_v10_0.md), [v10.1 relational action constraints](docs/bhsm_relational_envelopment_action_constraints_v10_1.md), and [v10.2 buoyancy action exhaustion](docs/bhsm_topological_buoyancy_action_derivation_v10_2.md)
 - [Reviewer reproduction guide](docs/reviewer_reproduction_guide.md)
 - [Frozen records](docs/frozen_predictions.md) and [artifact index](ARTIFACT_INDEX.md)
 
@@ -170,9 +170,8 @@ For critique or changes, read [CONTRIBUTING.md](CONTRIBUTING.md), use the
 [bug template](.github/ISSUE_TEMPLATE/bug-report.yml), and route security
 reports through [SECURITY.md](SECURITY.md).
 
-The authoritative action assessment is the
-[v7.1 covariant bulk--boundary reduction](docs/bhsm_covariant_bulk_boundary_reduction_functor_v7_1.md).
-It constructs the oriented \(M_8\to M_5\) pushforward on the retained
-subcategory and adopts a stratified correspondence action for independently
-owned cap and boundary-localized fields. The dimensionless finite-input core
-is internally closed; physical scheme/observable transport remains open.
+## v10.2 Topological Buoyancy current-action exhaustion
+
+V10.2 imports prior action/domain results and proves `BHSM_CURRENT_PARENT_ACTION_CANNOT_GENERATE_TOPOLOGICAL_BUOYANCY`; it emits no physical depth, force, Newtonian limit, scale, new term, or fitted parameter. See the [full derivation and exact next object](docs/bhsm_topological_buoyancy_action_derivation_v10_2.md).
+
+The authoritative [v7.1 covariant bulk--boundary reduction](docs/bhsm_covariant_bulk_boundary_reduction_functor_v7_1.md) constructs the oriented \(M_8\to M_5\) pushforward on the retained subcategory and adopts a stratified correspondence action for independently owned cap and boundary-localized fields. The dimensionless finite-input core is internally closed; physical scheme/observable transport remains open.

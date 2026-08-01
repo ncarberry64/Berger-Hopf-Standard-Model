@@ -1,0 +1,81 @@
+{
+  "artifact": "BHSM_local_envelopment_backreaction_v10_2",
+  "compactness": {
+    "C_env_candidate": "localized action energy/effective support volume",
+    "E_perp_candidate": "T_AB n^A n^B",
+    "T_parallel_candidate": "h^AB T_AB",
+    "action_selected_support": null,
+    "common_stress_domain": null,
+    "compactness_value": null,
+    "d_a_F_star_d_C_env": null,
+    "d_psi_star_d_C_env": null,
+    "desired_negative_sign_inserted": false,
+    "gauge_invariant_compactness_observable": null,
+    "sign": "UNDERDETERMINED"
+  },
+  "cross_stratum_gate": {
+    "M4_to_M5_normal_stress": "metric junction response exists, but fixed embedding has no shape equation",
+    "M4_to_M8_stress_pushforward": null,
+    "complete_T_AB_total_on_one_domain": null,
+    "delta2S_da_F_delta_H": 0,
+    "delta2S_da_F_delta_Psi": 0,
+    "localized_eta_backreacts_on_M8_metric": "formal stress source yes; localized orbit solution no",
+    "localized_source_modifies_physical_buoyancy_equation": false,
+    "localized_source_zero_recovers_background": true,
+    "source": "v7.3 action-incidence audit"
+  },
+  "stress_ownership": [
+    {
+      "common_M8_tensor": false,
+      "domain": "M8/M5/M4 by action stratum",
+      "sector": "geometry",
+      "stress_or_equation": "Einstein tensor/metric Euler equation"
+    },
+    {
+      "common_M8_tensor": true,
+      "domain": "M8",
+      "sector": "chi",
+      "stress_or_equation": "explicit from S8^env"
+    },
+    {
+      "common_M8_tensor": false,
+      "domain": "M8 plus independent M5 wall scalar",
+      "sector": "sigma",
+      "stress_or_equation": "explicit per owner; equality across strata not proved"
+    },
+    {
+      "common_M8_tensor": true,
+      "domain": "M8",
+      "sector": "eta",
+      "stress_or_equation": "explicit unit-spinor texture stress"
+    },
+    {
+      "common_M8_tensor": false,
+      "domain": "M4 intrinsic and conditional retained bundles",
+      "sector": "gauge",
+      "stress_or_equation": "intrinsic stress only"
+    },
+    {
+      "common_M8_tensor": false,
+      "domain": "M4 intrinsic seam",
+      "sector": "M4 matter",
+      "stress_or_equation": "intrinsic EFT stress"
+    },
+    {
+      "common_M8_tensor": false,
+      "domain": "M4 compatibility locus",
+      "sector": "matcher",
+      "stress_or_equation": "algebraic metric matching response"
+    }
+  ],
+  "validation": {
+    "compactness_fails_closed": true,
+    "complete_stress_absent": true,
+    "cross_blocks_zero": true,
+    "eta_owner_present": true,
+    "sign_not_inserted": true,
+    "zero_source_background": true
+  },
+  "validation_passed": true,
+  "verdict": "BHSM_LOCALIZED_NORMAL_STRESS_PULLBACK_NOT_DERIVED"
+}

@@ -6,11 +6,11 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 
 | Item | Current status |
 | --- | --- |
-| Overall status | relational doctrine integrated; parent-action constraints conditional; physical derivation and empirical replacement open |
-| Latest theorem branch | `agent/bhsm-relational-envelopment-holism-v10-1` |
+| Overall status | relational doctrine retained; present action exhausted for Topological Buoyancy with an exact obstruction; physical derivation and empirical replacement open |
+| Latest theorem branch | `agent/bhsm-topological-buoyancy-functional-v10-2` |
 | Latest completed theorem commits | PO-BH-47 `ae5dac5`; PO-BH-47 cleanup `1c11d2b`; PO-BH-48 `8ac577c`; PO-BH-49 `c2cfc70`; PO-BH-50 `7a4523a`; PO-BH-51 `225786f`; PO-BH-52 `4de6d9c`; PO-BH-53 `20c58b1`; PO-BH-54 `11d1c60`; PO-BH-55 `cf0e998`; PO-BH-56 `9f93330`; PO-BH-57/58/59 merged to main; PO-BH-60 merged to main; PO-BH-61 merged to main; PO-BH-62 merged to main; PO-BH-63 merged to main; PO-BH-64 merged to main; PO-BH-65 stacked in PR #21; PO-BH-66 stacked in PR #22; PO-BH-67 stacked in PR #23; PO-BH-68 stacked in PR #24; full freeze protocol / charged `K_f` stacked in PR #25; boundary action source audit stacked in PR #26; boundary graded defect action kernel on this branch |
-| Test result summary | v10.1 focused doctrine, geometry, buoyancy, conservation, complementarity, neutrino, CLI, and materialization checks pass; required GitHub CI is authoritative |
-| Current theorem/status label | `BHSM_RELATIONAL_ENVELOPMENT_PARENT_ACTION_CONSTRAINTS_CONSTRUCTED_CONDITIONALLY` |
+| Test result summary | v10.2 focused geometry, radion, constraint, backreaction, functional, CLI, and materialization checks pass; required GitHub CI is authoritative |
+| Current theorem/status label | `BHSM_CURRENT_PARENT_ACTION_CANNOT_GENERATE_TOPOLOGICAL_BUOYANCY` |
 | Candidate architecture complete | yes |
 | Full BHSM proven | no |
 | Standard Model fully derived | no |
@@ -22,6 +22,21 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 | Collective curvature layer | connected topographic-gravity extension candidate |
 | Frozen predictions changed | no |
 | Official predictions changed | no |
+
+## v10.2 authoritative Topological-Buoyancy status
+
+The present stratified action does not generate a covariant physical
+Topological-Buoyancy balance. The M4 seam embedding is fixed, the action-owned
+homogeneous Hopf radion has no positive static equilibrium, no global
+restoring constraint couples localized compactness to displacement, and the
+localized stress pullback into that radial equation is incomplete. The
+texture radius `R` remains a proxy and is not promoted to physical depth.
+
+Exact verdict:
+`BHSM_CURRENT_PARENT_ACTION_CANNOT_GENERATE_TOPOLOGICAL_BUOYANCY`.
+
+Exact next object:
+`ACTION_DOMAIN_THEOREM_SELECTING_ONE_PHYSICAL_NORMAL_OR_RADION_DEGREE_WITH_COMPLETE_LOCALIZED_STRESS_PULLBACK_AND_COVARIANT_GLOBAL_RESTORING_CONSTRAINT`.
 
 ## v10.1 authoritative relational status
 
