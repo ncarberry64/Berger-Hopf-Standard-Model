@@ -165,7 +165,7 @@ python -m bhsm.interface global-equilibrium-status --format json
 python -m bhsm.interface cosmic-unit-anchor-status --format json
 python -m bhsm.interface particle-cycle-status --format json
 python -m bhsm.interface physical-mass-mixing-status --format json
-python -m bhsm.interface final-completion-status --format json
+python -m bhsm.interface v10-4-final-completion-status --format json
 python scripts/materialize_spacetime_removal_completion_v10_4.py
 python -m pytest -q tests/test_bhsm_proper_volume_depth_v10_4.py tests/test_bhsm_depth_constraint_reduction_v10_4.py tests/test_bhsm_three_mode_action_v10_4.py tests/test_bhsm_global_equilibrium_scale_v10_4.py tests/test_bhsm_particle_generation_mass_mixing_v10_4.py tests/test_bhsm_final_completion_gate_v10_4.py
 ```

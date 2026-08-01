@@ -928,6 +928,7 @@ def build_parser() -> argparse.ArgumentParser:
         ("cosmic-unit-anchor-status", "Render the BHSM v10.4 cosmic unit-anchor eligibility gate"),
         ("particle-cycle-status", "Render the BHSM v10.4 physical particle-cycle gate"),
         ("physical-mass-mixing-status", "Render the BHSM v10.4 physical mass/mixing gate"),
+        ("v10-4-final-completion-status", "Render the BHSM v10.4 final completion gate"),
     )
     for command, help_text in integrated_status_commands:
         status_command = commands.add_parser(command, help=help_text)
@@ -1101,7 +1102,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         "cosmic-unit-anchor-status",
         "particle-cycle-status",
         "physical-mass-mixing-status",
-        "final-completion-status",
+        "v10-4-final-completion-status",
     }:
         module = import_module(
             ".envelopment.final_completion_gate_v10_4",

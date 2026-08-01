@@ -84,7 +84,7 @@ python -m bhsm.interface global-equilibrium-status --format json
 python -m bhsm.interface cosmic-unit-anchor-status --format json
 python -m bhsm.interface particle-cycle-status --format json
 python -m bhsm.interface physical-mass-mixing-status --format json
-python -m bhsm.interface final-completion-status --format json
+python -m bhsm.interface v10-4-final-completion-status --format json
 python scripts/materialize_spacetime_removal_completion_v10_4.py
 ```
 

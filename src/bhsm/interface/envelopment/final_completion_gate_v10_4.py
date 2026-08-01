@@ -207,7 +207,7 @@ COMMAND_SECTIONS = {
     "cosmic-unit-anchor-status": "cosmic_unit_anchor",
     "particle-cycle-status": "particle_cycles",
     "physical-mass-mixing-status": "physical_mass_mixing_and_M4_readout",
-    "final-completion-status": None,
+    "v10-4-final-completion-status": None,
 }
 
 

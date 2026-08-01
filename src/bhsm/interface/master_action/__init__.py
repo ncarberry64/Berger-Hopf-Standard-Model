@@ -215,7 +215,7 @@ def spacetime_removal_completion_status_to_markdown(payload=None):
     """Render the current v10.4 constrained depth/completion status."""
     from ..envelopment.final_completion_gate_v10_4 import command_to_markdown
 
-    return command_to_markdown("final-completion-status")
+    return command_to_markdown("v10-4-final-completion-status")
 
 
 __all__ = [

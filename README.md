@@ -5,7 +5,7 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
-BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v10.4 proves that the constrained proper-volume candidate `q_V` is the nonphysical common-volume direction, with zero projection into the reduced positive shape space. It therefore does not supply the third spacetime-removal/depth mode. Seven inequivalent geometric extension classes remain unselected pending an author action decision. No three-mode orbit, interference-selected output, physical depth, mass, mixing matrix, or global scale is emitted. Prior no-go results and RB-15/RB-16 remain in force.
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v10.4 proves that the proper-volume candidate is removed by the Hamiltonian constraint and has zero reduced physical projection. It does not supply the third spacetime-removal/depth mode. Multiple inequivalent geometric extension classes remain unselected pending an author action decision. No interference-selected output, physical depth, mass, mixing matrix, or global scale is emitted. Prior no-go results and RB-15/RB-16 remain in force.
 
 This independent mathematical-physics project investigates whether
 Berger-Hopf boundary geometry can organize structures associated with
