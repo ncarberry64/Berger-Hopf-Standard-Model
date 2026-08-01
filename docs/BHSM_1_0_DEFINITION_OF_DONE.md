@@ -264,3 +264,21 @@ Exact verdict:
 
 Exact next object:
 `ACTION_OWNED_GAUGE_INVARIANT_SPACETIME_REMOVAL_DEPTH_DEGREE`.
+
+## v10.4 current completion gate
+
+Mark I remains reached and Mark II remains conditional. Mark III is not
+reached: the constrained proper-volume candidate has zero physical projection,
+no geometric extension is author-selected, and the common three-mode action,
+orbits, global scale, physical cycles, mass/mixing readout, and normalized M4
+theory remain unavailable. Mark IV remains downstream.
+
+RB-15: `BLOCKED_BY_GEOMETRIC_DEPTH_EXTENSION_AUTHOR_SELECTION`.
+
+RB-16: `DOWNSTREAM_BLOCKED`.
+
+Exact verdict:
+`BHSM_MINIMAL_GEOMETRIC_DEPTH_EXTENSION_REQUIRES_AUTHOR_SELECTION`.
+
+Exact next object:
+`AUTHOR_SELECTION_OF_MINIMAL_GEOMETRIC_DEPTH_EXTENSION_CONFIGURATION_AND_ACTION`.

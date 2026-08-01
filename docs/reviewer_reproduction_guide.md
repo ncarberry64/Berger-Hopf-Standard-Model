@@ -156,6 +156,26 @@ typed statuses, no `S3 x M4=M8` identification, no inserted buoyancy force,
 the scalar-energy caveat, eta-sector-only complementarity, null neutrino
 observables, and unchanged frozen hashes.
 
+## Reviewer checkpoint: v10.4
+
+```bash
+python -m bhsm.interface spacetime-removal-depth-status --format json
+python -m bhsm.interface three-mode-action-status --format json
+python -m bhsm.interface global-equilibrium-status --format json
+python -m bhsm.interface cosmic-unit-anchor-status --format json
+python -m bhsm.interface particle-cycle-status --format json
+python -m bhsm.interface physical-mass-mixing-status --format json
+python -m bhsm.interface final-completion-status --format json
+python scripts/materialize_spacetime_removal_completion_v10_4.py
+python -m pytest -q tests/test_bhsm_proper_volume_depth_v10_4.py tests/test_bhsm_depth_constraint_reduction_v10_4.py tests/test_bhsm_three_mode_action_v10_4.py tests/test_bhsm_global_equilibrium_scale_v10_4.py tests/test_bhsm_particle_generation_mass_mixing_v10_4.py tests/test_bhsm_final_completion_gate_v10_4.py
+```
+
+Run the materializer twice and compare bytes. Verify
+`q_V=-(7/8)delta rho`, DeWitt coefficient `-42`, positive shape eigenvalues
+`4/7` and `2`, the zero reduced volume projection, no propagated conformal
+ghost claim, no extension adoption, null three-mode/orbit/scale/mass/mixing
+outputs, no particle calibration, and unchanged frozen predictions.
+
 ## Reviewer checkpoint: v10.3
 
 ```bash
@@ -169,7 +189,7 @@ python -m bhsm.interface common-envelopment-mode-status --format json
 python -m bhsm.interface deformation-intertwiner-status --format json
 python -m bhsm.interface coupled-deformation-rank-status --format json
 python -m bhsm.interface three-mode-envelopment-status --format json
-python -m bhsm.interface spacetime-removal-depth-status --format json
+python -m bhsm.interface spacetime-removal-depth-v10-3-status --format json
 python -m bhsm.interface three-mode-interference-status --format json
 python -m bhsm.interface seam-projection-status --format json
 python -m bhsm.interface global-scale-anchor-status --format json

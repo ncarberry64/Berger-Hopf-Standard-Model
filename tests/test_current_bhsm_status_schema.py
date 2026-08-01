@@ -22,10 +22,10 @@ def test_current_bhsm_status_json_schema() -> None:
         "collective_curvature_layer": "connected topographic-gravity extension candidate",
         "frozen_predictions_changed": False,
         "official_predictions_changed": False,
-        "current_campaign": "v10.3 Physical deformation action-domain theorem",
+        "current_campaign": "v10.4 Constrained spacetime-removal completion gate",
         "physical_flavor_matrix_derived": False,
-        "current_exact_verdict": "BHSM_THIRD_SPACETIME_REMOVAL_MODE_NOT_PRESENT_IN_CURRENT_ACTION_DOMAIN",
-        "next_exact_object": "ACTION_OWNED_GAUGE_INVARIANT_SPACETIME_REMOVAL_DEPTH_DEGREE",
+        "current_exact_verdict": "BHSM_MINIMAL_GEOMETRIC_DEPTH_EXTENSION_REQUIRES_AUTHOR_SELECTION",
+        "next_exact_object": "AUTHOR_SELECTION_OF_MINIMAL_GEOMETRIC_DEPTH_EXTENSION_CONFIGURATION_AND_ACTION",
     }
 
 

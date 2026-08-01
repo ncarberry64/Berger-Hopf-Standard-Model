@@ -26,11 +26,11 @@ NEUTRINO_PUBLIC_STATUS = (
 
 PUBLIC_REPO_STATUS = (
     "BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. "
-    "Current public status: v10.3 records three distinct interacting physical-mode slots as "
-    "author ontology and reclassifies the seam as a coordinate/observable projection. The "
-    "current action contains core/Hopf and enclosure-wall/fold candidates but no distinct, "
-    "action-owned gauge-invariant spacetime-removal/depth degree. No interference-selected "
-    "output, physical depth, or global scale is emitted. "
+    "Current public status: v10.4 proves that the proper-volume candidate is removed by the "
+    "Hamiltonian constraint and has zero reduced physical projection. It does not supply the "
+    "third spacetime-removal/depth mode. Multiple inequivalent geometric extension classes "
+    "remain unselected pending an author action decision. No interference-selected output, "
+    "physical depth, mass, mixing matrix, or global scale is emitted. "
     "Prior no-go results and RB-15/RB-16 remain in force."
 )
 

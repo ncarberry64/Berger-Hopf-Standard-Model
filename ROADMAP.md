@@ -351,3 +351,21 @@ output, the seam projection, and the generation-phase interface. Only then
 derive the full local stress pushforward, covariant restoring law, stability,
 weak-field limit, and at most one cosmic unit anchor before evaluating
 Topological Buoyancy. Particle-data calibration remains forbidden.
+
+## v10.4 constrained-depth decision gate
+
+The existing metric sector is now exhausted for the proper-volume candidate.
+Do not reopen raw determinant suppression, call the constrained conformal sign
+a ghost, or continue into physical cycles with a rank-two mode system.
+
+The next exact object requires an author choice of geometric configuration
+space and action:
+
+`AUTHOR_SELECTION_OF_MINIMAL_GEOMETRIC_DEPTH_EXTENSION_CONFIGURATION_AND_ACTION`.
+
+The decision must select or reject the independent-measure, core-support,
+stratified-degenerate-transition, constrained/topological-volume, and
+parent-measure classes with explicit transformation law, kinetic term,
+potential, stress coupling, constraints, domain, parameters, and frozen-action
+limit. Only a healthy action-owned local degree licenses reconstruction of the
+common three-mode Hessian and downstream orbit campaign.

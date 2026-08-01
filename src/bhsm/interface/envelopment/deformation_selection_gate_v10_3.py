@@ -377,6 +377,7 @@ def command_payload(command: str) -> dict[str, Any]:
         "deformation-intertwiner-status": completion["deformation_intertwiner"],
         "coupled-deformation-rank-status": completion["coupled_physical_rank"],
         "three-mode-envelopment-status": completion["three_mode_architecture"],
+        "spacetime-removal-depth-v10-3-status": completion["spacetime_removal_depth"],
         "spacetime-removal-depth-status": completion["spacetime_removal_depth"],
         "three-mode-interference-status": completion["three_mode_interference"],
         "seam-projection-status": completion["seam_projection"],

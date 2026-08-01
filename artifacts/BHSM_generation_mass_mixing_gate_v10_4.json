@@ -1,0 +1,183 @@
+{
+  "CKM": null,
+  "G_f": null,
+  "Gram_positive": null,
+  "K_ud": null,
+  "M4_reduction": {
+    "canonical_normalization_complete": false,
+    "collider_runtime": null,
+    "current_ownership_complete": false,
+    "effective_fields_retained": true,
+    "field_dictionary_complete": false,
+    "fields": [
+      {
+        "Lorentz": "symmetric tensor",
+        "current_owner": "intrinsic M4",
+        "field": "g_mu_nu",
+        "gauge": "Diff(M4)",
+        "kinetic": "intrinsic M4 term retained",
+        "mass": "massless metric layer",
+        "normalization": "incomplete common reduction",
+        "parent_source": "M8/M5 metric pullback conditional",
+        "vertex": null
+      },
+      {
+        "Lorentz": "vector",
+        "current_owner": "intrinsic M4/common parent incomplete",
+        "field": "A_mu",
+        "gauge": "retained SM gauge representations",
+        "kinetic": "conditional",
+        "mass": null,
+        "normalization": "action attachment incomplete",
+        "parent_source": "Hopf connections plus retained SM layer; full bridge open",
+        "vertex": null
+      },
+      {
+        "Lorentz": "chiral spinor ledger retained",
+        "current_owner": "intrinsic M4",
+        "field": "psi_f",
+        "gauge": "frozen SM representation ledger",
+        "kinetic": "intrinsic M4 retained",
+        "mass": null,
+        "normalization": null,
+        "parent_source": null,
+        "vertex": null
+      },
+      {
+        "Lorentz": "scalar doublet convention retained",
+        "current_owner": "intrinsic M4",
+        "field": "H",
+        "gauge": "retained electroweak layer",
+        "kinetic": "intrinsic M4 retained",
+        "mass": null,
+        "normalization": null,
+        "parent_source": "topographic/scalar identification conditional",
+        "vertex": null
+      },
+      {
+        "Lorentz": "vector current",
+        "current_owner": "cross-stratum ownership incomplete",
+        "field": "J_mu",
+        "gauge": "representation dependent",
+        "kinetic": "not independent",
+        "mass": null,
+        "normalization": null,
+        "parent_source": "effective composite current",
+        "vertex": null
+      }
+    ],
+    "gauge_Lorentz_representations_complete": false,
+    "interaction_vertices_complete": false,
+    "map": "R_M4:Phi_core/3m -> (g_mu_nu,A_mu,psi_f,H,J_mu)_effective"
+  },
+  "PMNS": null,
+  "Q_f": null,
+  "Theta_f_status": "frozen candidate cycle-transfer/residue operator; exact action origin open",
+  "artifact": "BHSM_generation_mass_mixing_gate_v10_4",
+  "cycle_energies": null,
+  "frozen_screen_mass_ratios_changed": false,
+  "full_rank_pullbacks": null,
+  "generation_monodromy": {
+    "derived_generation_phase_count": 0,
+    "frozen_ledgers_changed": false,
+    "sectors": {
+      "charged_leptons": {
+        "frozen_slots": [
+          [
+            0,
+            0
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            9,
+            3
+          ]
+        ],
+        "monodromy": null,
+        "sector_cycle": null,
+        "slot_to_phase_intertwiner": null,
+        "stable_eigenphases": [
+          null,
+          null,
+          null
+        ]
+      },
+      "down": {
+        "frozen_slots": [
+          [
+            0,
+            0
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            8,
+            2
+          ]
+        ],
+        "monodromy": null,
+        "sector_cycle": null,
+        "slot_to_phase_intertwiner": null,
+        "stable_eigenphases": [
+          null,
+          null,
+          null
+        ]
+      },
+      "neutrinos": {
+        "frozen_slots": null,
+        "monodromy": null,
+        "sector_cycle": null,
+        "slot_to_phase_intertwiner": null,
+        "stable_eigenphases": [
+          null,
+          null,
+          null
+        ]
+      },
+      "up": {
+        "frozen_slots": [
+          [
+            0,
+            0
+          ],
+          [
+            6,
+            0
+          ],
+          [
+            10,
+            1
+          ]
+        ],
+        "monodromy": null,
+        "sector_cycle": null,
+        "slot_to_phase_intertwiner": null,
+        "stable_eigenphases": [
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "three_modes_identified_with_generations": false,
+    "validation_passed": true,
+    "verdict": "BHSM_GENERATION_PHASE_MONODROMY_BLOCKED_BY_ABSENT_SECTOR_CYCLES"
+  },
+  "historical_screen_values_retained": true,
+  "mass_functional": "m_fi=mu_global epsilon_f(q_f,theta_fi)",
+  "mass_ratios": null,
+  "matrices_printed": false,
+  "measured_particle_inputs_used": [],
+  "mu_global": null,
+  "phase_dependence": null,
+  "physical_mass_values": null,
+  "reason": "no q_D, three-mode orbit, global unit, family tangent maps, or complete common currents",
+  "validation_passed": true,
+  "verdict": "BHSM_PHYSICAL_MASS_AND_MIXING_READOUT_REMAINS_FAIL_CLOSED"
+}

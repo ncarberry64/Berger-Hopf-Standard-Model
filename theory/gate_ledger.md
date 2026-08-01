@@ -226,3 +226,24 @@ Exact verdict:
 
 Exact next object:
 `ACTION_OWNED_GAUGE_INVARIANT_SPACETIME_REMOVAL_DEPTH_DEGREE`.
+
+## v10.4 constrained spacetime-removal gate
+
+The proper-volume candidate reduces exactly to the Hamiltonian-constrained
+common-volume direction and has zero vector in the positive physical shape
+space. It supplies no independent `q_D`. No minimal geometric extension is
+selected because the compared local-measure/support/stratified classes require
+inequivalent new action data.
+
+RB-15: `BLOCKED_BY_GEOMETRIC_DEPTH_EXTENSION_AUTHOR_SELECTION`.
+
+RB-16: `DOWNSTREAM_BLOCKED`.
+
+Depth verdict:
+`BHSM_PROPER_VOLUME_DEFICIT_HAS_NO_INDEPENDENT_PHYSICAL_SCALAR_AFTER_CONSTRAINT_REDUCTION`.
+
+Current verdict:
+`BHSM_MINIMAL_GEOMETRIC_DEPTH_EXTENSION_REQUIRES_AUTHOR_SELECTION`.
+
+Exact next object:
+`AUTHOR_SELECTION_OF_MINIMAL_GEOMETRIC_DEPTH_EXTENSION_CONFIGURATION_AND_ACTION`.

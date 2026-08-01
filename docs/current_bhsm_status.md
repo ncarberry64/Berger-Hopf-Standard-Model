@@ -6,11 +6,11 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 
 | Item | Current status |
 | --- | --- |
-| Overall status | three distinct physical-mode slots recorded as author ontology; core/Hopf and enclosure-wall/fold candidates exist, but no independent action-owned spacetime-removal/depth degree exists; physical derivation and empirical replacement open |
-| Latest theorem branch | `agent/bhsm-physical-deformation-domain-v10-3` |
+| Overall status | proper-volume depth candidate removed by the Hamiltonian constraint; no unique geometric extension selected; three-mode physical derivation and empirical replacement open |
+| Latest theorem branch | `agent/bhsm-spacetime-removal-completion-v10-4` |
 | Latest completed theorem commits | PO-BH-47 `ae5dac5`; PO-BH-47 cleanup `1c11d2b`; PO-BH-48 `8ac577c`; PO-BH-49 `c2cfc70`; PO-BH-50 `7a4523a`; PO-BH-51 `225786f`; PO-BH-52 `4de6d9c`; PO-BH-53 `20c58b1`; PO-BH-54 `11d1c60`; PO-BH-55 `cf0e998`; PO-BH-56 `9f93330`; PO-BH-57/58/59 merged to main; PO-BH-60 merged to main; PO-BH-61 merged to main; PO-BH-62 merged to main; PO-BH-63 merged to main; PO-BH-64 merged to main; PO-BH-65 stacked in PR #21; PO-BH-66 stacked in PR #22; PO-BH-67 stacked in PR #23; PO-BH-68 stacked in PR #24; full freeze protocol / charged `K_f` stacked in PR #25; boundary action source audit stacked in PR #26; boundary graded defect action kernel on this branch |
-| Test result summary | v10.3 focused configuration, embedding, radion, gauge, stress, zero-mode, selection, CLI, and materialization checks pass; required GitHub CI is authoritative |
-| Current theorem/status label | `BHSM_THIRD_SPACETIME_REMOVAL_MODE_NOT_PRESENT_IN_CURRENT_ACTION_DOMAIN` |
+| Test result summary | v10.4 focused covariance, ADM reduction, extension, downstream fail-closed interface, CLI, and materialization checks pass; full local/GitHub CI is required before publication |
+| Current theorem/status label | `BHSM_MINIMAL_GEOMETRIC_DEPTH_EXTENSION_REQUIRES_AUTHOR_SELECTION` |
 | Candidate architecture complete | yes |
 | Full BHSM proven | no |
 | Standard Model fully derived | no |
@@ -22,6 +22,32 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 | Collective curvature layer | connected topographic-gravity extension candidate |
 | Frozen predictions changed | no |
 | Official predictions changed | no |
+
+## v10.4 authoritative constrained-depth status
+
+With one common pullback, the metric volume ratio is covariant on the regular
+parent domain. For the exact P1 `(4,2,1)` block metric,
+`q_V=-(7/8)delta rho`. The DeWitt form has `K_rho,rho=-42` and a positive
+shape block with eigenvalues `4/7` and `2`. The lapse primary constraint and
+Hamiltonian secondary constraint remove the common-volume canonical pair;
+the reduced physical projection of `q_V` is exactly zero. Vertical-only volume
+change overlaps `q_C`, and the remaining positive anisotropy shape is not a
+volume-removal observable. No `q_D` is recovered.
+
+Exact degeneracy lies outside the current inverse-metric action. Seven
+geometric extension classes were compared, but their field content, local
+degrees, transition domains, and coefficients are inequivalent. None is
+adopted without author selection. Every three-mode, orbit, global-scale,
+particle-cycle, generation-phase, mass/mixing, and M4 output remains null.
+
+Depth verdict:
+`BHSM_PROPER_VOLUME_DEFICIT_HAS_NO_INDEPENDENT_PHYSICAL_SCALAR_AFTER_CONSTRAINT_REDUCTION`.
+
+Current verdict:
+`BHSM_MINIMAL_GEOMETRIC_DEPTH_EXTENSION_REQUIRES_AUTHOR_SELECTION`.
+
+Exact next object:
+`AUTHOR_SELECTION_OF_MINIMAL_GEOMETRIC_DEPTH_EXTENSION_CONFIGURATION_AND_ACTION`.
 
 ## v10.3 authoritative physical deformation-domain status
 
