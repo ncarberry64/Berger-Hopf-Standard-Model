@@ -90,7 +90,7 @@ def status_payload() -> dict[str, Any]:
         "physical_outputs_available": PHYSICAL_OUTPUTS_AVAILABLE,
         "validation_summary": {
             "focused": "224 passed in 88.93s",
-            "full_pytest": "PENDING_CLEAN_HEAD_EXECUTION",
+            "full_pytest": "4839 passed in 757.52s (0:12:37) from clean commit c88b8e3",
             "audits": "status, frozen prediction integrity, forbidden claims, public readiness, compileall, and diff checks passed",
             "artifact_determinism": "18 versioned v11.1 JSON artifacts reproduced byte-identically across consecutive materializations",
         },
