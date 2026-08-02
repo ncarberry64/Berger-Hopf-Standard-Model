@@ -1,0 +1,384 @@
+{
+  "artifact": "BHSM_support_functor_equivalence_quotient_v11_1",
+  "boundary_core_comparison": {
+    "GHY_variation": null,
+    "boundary_measure": null,
+    "core_deficiency_indices": null,
+    "first_certain_failure": "the weight-changing map is singular at upsilon=0 and cannot define a global core intertwiner",
+    "first_undecidable_physical_test": "support-gradient terms in the regular local Euler-Lagrange and symplectic structures",
+    "normal_momentum": null,
+    "regular_bulk_pointwise_map": "invertible for upsilon>0",
+    "self_adjoint_extensions": null,
+    "stress_flux": null,
+    "support_flux": null,
+    "symplectic_flux": null,
+    "transfer_domain": null
+  },
+  "canonical_structure_comparison": {
+    "Omega_physical_comparison": "not computable without a complete supported action and boundary/core domain",
+    "canonical_transformation_exists": null,
+    "isospectral_reduced_operator": null,
+    "physical_observable_equivalence": null,
+    "reduced_hessian_comparison": "not computable without a complete supported action and boundary/core domain",
+    "reduced_kinetic_comparison": "not computable without a complete supported action and boundary/core domain",
+    "stress_tensor_comparison": "not computable without a complete supported action and boundary/core domain",
+    "support_current_comparison": "not computable without a complete supported action and boundary/core domain"
+  },
+  "coframe_derived_uniqueness_test": {
+    "adopted": false,
+    "all_sector_weights_unique": false,
+    "ansatz": "e_supported^a=upsilon^r_e e_0^a",
+    "boundary_and_fiber_compatibility_derived": false,
+    "derived_weights_D8": {
+      "coframe": "r_e",
+      "curvature_scalar_algebraic": "-2 r_e plus support-gradient terms",
+      "inverse_metric": "-2 r_e",
+      "metric": "2 r_e",
+      "sqrt_abs_det_metric": "8 r_e"
+    },
+    "frozen_limit_recovered": true,
+    "lambda_D_fixed": false,
+    "new_parameter_if_adopted": "r_e",
+    "r_e_fixed_by_established_support_definition": false,
+    "stratified_measure_rule": "a fully supported d-dimensional measure has weight d r_e; partial support requires an action-owned supported subbundle"
+  },
+  "field_redefinition_test": {
+    "candidate": "Phi_B=upsilon^(Delta w) Phi_A; q_D^B=c q_D^A; lambda_D^B=c lambda_D^A",
+    "classification": "REGULAR_POINTWISE_REDEFINITION_EXISTS_BUT_PHYSICAL_CANONICAL_EQUIVALENCE_UNDECIDED",
+    "complete_action_comparison_available": false,
+    "derivative_identity": "d(upsilon^r Phi)=upsilon^r[dPhi+r Phi d(log upsilon)]",
+    "generated_interactions": [
+      "support-gradient current",
+      "support-gradient-squared term",
+      "connection shift",
+      "boundary normal derivative"
+    ],
+    "invertible_at_core": false,
+    "invertible_on_regular_domain": true,
+    "known_to_be_boundary_only": false,
+    "reason": "the frozen action contains neither the complete support-dependent derivative couplings nor a core domain on which the singular map can be tested"
+  },
+  "final_equivalence_classification": "NOT_YET_DECIDABLE_FROM_CURRENT_ACTION",
+  "first_point_blocking_physical_classification": "support-gradient local action and boundary/core canonical domain",
+  "first_point_of_inequivalence": "fixed-character Rep(G_D) wall object and singular core limit",
+  "functor_A": "R_D^(A): provisional wall/fiber representative (1,0)",
+  "functor_B": "R_D^(B): provisional wall/fiber representative (2,1)",
+  "haar_invariant_test": {
+    "invariant_candidate": "w_a/lambda_D",
+    "lambda_D_physical_or_conventional": null,
+    "quotient_decided": false
+  },
+  "measure_redistribution_test": {
+    "boundary_variation_preserved": null,
+    "canonical_symplectic_form_preserved": null,
+    "core_asymptotics_preserved": null,
+    "dimensional_reduction_preserved": null,
+    "dimensionless_observables_preserved": null,
+    "integrated_character_preserved_algebraically": true,
+    "local_euler_lagrange_preserved": null,
+    "map": "w(dmu)->w(dmu)+c; w(I_a)->w(I_a)-c",
+    "reason": "when upsilon is dynamical, redistributing its character changes local variations unless a complete invertible canonical map proves otherwise",
+    "representation_gauge_freedom_established": false,
+    "stress_tensor_preserved": null,
+    "support_current_preserved": null
+  },
+  "natural_isomorphism_test": {
+    "classification": "DISTINCT_FIXED_REPRESENTATIONS_BUT_PHYSICAL_QUOTIENT_REQUIRES_MISSING_ACTION_DATA",
+    "field_dependent_eta_is_gd_linear_natural_map": false,
+    "field_dependent_nonlinear_eta_regular_domain": "eta_X=upsilon^(wB-wA) is pointwise invertible for upsilon>0",
+    "fixed_linear_rep_category": "NO_ISOMORPHISM_BETWEEN_DISTINCT_REAL_CHARACTERS",
+    "monoidal_linear_natural_isomorphism_exists": false,
+    "naturality_for_core_restriction": false,
+    "naturality_for_derivatives": false,
+    "naturality_for_fiber_integration": null,
+    "proof": "a nonzero intertwiner eta obeys eta upsilon^wA=upsilon^wB eta for every upsilon, forcing wA=wB",
+    "wall_weights": {
+      "A": 1,
+      "B": 2
+    }
+  },
+  "next_exact_object": "COMPLETE_LOCAL_SUPPORTED_ACTION_WITH_SUPPORT_DERIVATIVE_COUPLINGS_AND_BOUNDARY_CORE_CANONICAL_DOMAIN",
+  "physically_equivalent_descriptions_proven": false,
+  "physically_inequivalent_theories_proven": false,
+  "primitive_ownership_candidates": [
+    {
+      "action_owned_selection": false,
+      "candidate": "supported coframe",
+      "result": "r_e is not fixed; adopting it introduces a new continuous character"
+    },
+    {
+      "action_owned_selection": false,
+      "candidate": "supported line element",
+      "result": "equivalent missing primitive scale assignment"
+    },
+    {
+      "action_owned_selection": false,
+      "candidate": "primitive normal line",
+      "result": "normal-bundle support action absent"
+    },
+    {
+      "action_owned_selection": false,
+      "candidate": "Hopf fiber generator",
+      "result": "incidence is discrete but no map to the continuous character generator is derived"
+    },
+    {
+      "action_owned_selection": false,
+      "candidate": "wall embedding",
+      "result": "embedding character is the disputed datum"
+    },
+    {
+      "action_owned_selection": false,
+      "candidate": "core-to-surface attachment",
+      "result": "attachment representation and core domain absent"
+    },
+    {
+      "action_owned_selection": false,
+      "candidate": "primitive support current",
+      "result": "normalized current cannot be derived before the complete supported action"
+    }
+  ],
+  "status": "BHSM_SUPPORT_FUNCTOR_PHYSICAL_EQUIVALENCE_QUOTIENT_BLOCKED_BY_ABSENT_COMPLETE_LOCAL_BOUNDARY_AND_CORE_ACTION_DATA",
+  "validation": {
+    "all_primitive_candidates_tested": true,
+    "both_provisional_lifts_explicit": true,
+    "coframe_not_adopted": true,
+    "linear_natural_isomorphism_decided": true,
+    "measure_redistribution_not_assumed_gauge": true,
+    "minimum_ledger_present": true,
+    "ordinary_redefinition_tested": true,
+    "physical_equivalence_not_overclaimed": true,
+    "weyl_derivative_terms_included": true
+  },
+  "validation_passed": true,
+  "weight_comparison": [
+    {
+      "integrated_total_weight_A": null,
+      "integrated_total_weight_B": null,
+      "object_or_term": "supported_coframe",
+      "origin_of_difference": "same chosen forgotten-action representative",
+      "weight_A": 0,
+      "weight_B": 0,
+      "weight_difference_B_minus_A": 0
+    },
+    {
+      "integrated_total_weight_A": null,
+      "integrated_total_weight_B": null,
+      "object_or_term": "metric",
+      "origin_of_difference": "same chosen forgotten-action representative",
+      "weight_A": 0,
+      "weight_B": 0,
+      "weight_difference_B_minus_A": 0
+    },
+    {
+      "integrated_total_weight_A": null,
+      "integrated_total_weight_B": null,
+      "object_or_term": "inverse_metric",
+      "origin_of_difference": "same chosen forgotten-action representative",
+      "weight_A": 0,
+      "weight_B": 0,
+      "weight_difference_B_minus_A": 0
+    },
+    {
+      "integrated_total_weight_A": null,
+      "integrated_total_weight_B": null,
+      "object_or_term": "determinant",
+      "origin_of_difference": "same chosen forgotten-action representative",
+      "weight_A": 0,
+      "weight_B": 0,
+      "weight_difference_B_minus_A": 0
+    },
+    {
+      "integrated_total_weight_A": null,
+      "integrated_total_weight_B": null,
+      "object_or_term": "bulk_volume_measure",
+      "origin_of_difference": "same chosen forgotten-action representative",
+      "weight_A": 0,
+      "weight_B": 0,
+      "weight_difference_B_minus_A": 0
+    },
+    {
+      "integrated_total_weight_A": null,
+      "integrated_total_weight_B": null,
+      "object_or_term": "boundary_measure",
+      "origin_of_difference": "no primitive GD action is supplied by the parent action",
+      "weight_A": null,
+      "weight_B": null,
+      "weight_difference_B_minus_A": null
+    },
+    {
+      "integrated_total_weight_A": null,
+      "integrated_total_weight_B": null,
+      "object_or_term": "normal_vector",
+      "origin_of_difference": "no primitive GD action is supplied by the parent action",
+      "weight_A": null,
+      "weight_B": null,
+      "weight_difference_B_minus_A": null
+    },
+    {
+      "integrated_total_weight_A": null,
+      "integrated_total_weight_B": null,
+      "object_or_term": "normal_covector",
+      "origin_of_difference": "no primitive GD action is supplied by the parent action",
+      "weight_A": null,
+      "weight_B": null,
+      "weight_difference_B_minus_A": null
+    },
+    {
+      "integrated_total_weight_A": null,
+      "integrated_total_weight_B": null,
+      "object_or_term": "hodge_star",
+      "origin_of_difference": "same chosen forgotten-action representative",
+      "weight_A": 0,
+      "weight_B": 0,
+      "weight_difference_B_minus_A": 0
+    },
+    {
+      "integrated_total_weight_A": 0,
+      "integrated_total_weight_B": 0,
+      "object_or_term": "curvature_scalar",
+      "origin_of_difference": "same chosen forgotten-action representative",
+      "weight_A": 0,
+      "weight_B": 0,
+      "weight_difference_B_minus_A": 0
+    },
+    {
+      "integrated_total_weight_A": null,
+      "integrated_total_weight_B": null,
+      "object_or_term": "hopf_base_measure",
+      "origin_of_difference": "measure compensation for changed wall character",
+      "weight_A": 0,
+      "weight_B": 1,
+      "weight_difference_B_minus_A": 1
+    },
+    {
+      "integrated_total_weight_A": 1,
+      "integrated_total_weight_B": 2,
+      "object_or_term": "fiber_integration",
+      "origin_of_difference": "fiber-measure character",
+      "weight_A": 0,
+      "weight_B": 1,
+      "weight_difference_B_minus_A": 1
+    },
+    {
+      "integrated_total_weight_A": 1,
+      "integrated_total_weight_B": 2,
+      "object_or_term": "wall_embedding",
+      "origin_of_difference": "provisional wall character",
+      "weight_A": 1,
+      "weight_B": 2,
+      "weight_difference_B_minus_A": 1
+    },
+    {
+      "integrated_total_weight_A": 0,
+      "integrated_total_weight_B": 0,
+      "object_or_term": "support_field",
+      "origin_of_difference": "same chosen forgotten-action representative",
+      "weight_A": 0,
+      "weight_B": 0,
+      "weight_difference_B_minus_A": 0
+    },
+    {
+      "integrated_total_weight_A": null,
+      "integrated_total_weight_B": null,
+      "object_or_term": "gauge_curvature",
+      "origin_of_difference": "no primitive GD action is supplied by the parent action",
+      "weight_A": null,
+      "weight_B": null,
+      "weight_difference_B_minus_A": null
+    },
+    {
+      "integrated_total_weight_A": null,
+      "integrated_total_weight_B": null,
+      "object_or_term": "fermion_fields",
+      "origin_of_difference": "no primitive GD action is supplied by the parent action",
+      "weight_A": null,
+      "weight_B": null,
+      "weight_difference_B_minus_A": null
+    },
+    {
+      "integrated_total_weight_A": null,
+      "integrated_total_weight_B": null,
+      "object_or_term": "scalar_topographic_fields",
+      "origin_of_difference": "no primitive GD action is supplied by the parent action",
+      "weight_A": null,
+      "weight_B": null,
+      "weight_difference_B_minus_A": null
+    },
+    {
+      "integrated_total_weight_A": null,
+      "integrated_total_weight_B": null,
+      "object_or_term": "charged_currents",
+      "origin_of_difference": "no primitive GD action is supplied by the parent action",
+      "weight_A": null,
+      "weight_B": null,
+      "weight_difference_B_minus_A": null
+    },
+    {
+      "integrated_total_weight_A": null,
+      "integrated_total_weight_B": null,
+      "object_or_term": "neutral_currents",
+      "origin_of_difference": "no primitive GD action is supplied by the parent action",
+      "weight_A": null,
+      "weight_B": null,
+      "weight_difference_B_minus_A": null
+    },
+    {
+      "integrated_total_weight_A": null,
+      "integrated_total_weight_B": null,
+      "object_or_term": "GHY_term",
+      "origin_of_difference": "boundary measure and normal characters absent",
+      "weight_A": null,
+      "weight_B": null,
+      "weight_difference_B_minus_A": null
+    },
+    {
+      "integrated_total_weight_A": null,
+      "integrated_total_weight_B": null,
+      "object_or_term": "intrinsic_boundary_terms",
+      "origin_of_difference": "boundary measure character absent",
+      "weight_A": null,
+      "weight_B": null,
+      "weight_difference_B_minus_A": null
+    },
+    {
+      "integrated_total_weight_A": null,
+      "integrated_total_weight_B": null,
+      "object_or_term": "compatibility_maps",
+      "origin_of_difference": "cross-stratum intertwiner absent",
+      "weight_A": null,
+      "weight_B": null,
+      "weight_difference_B_minus_A": null
+    },
+    {
+      "integrated_total_weight_A": null,
+      "integrated_total_weight_B": null,
+      "object_or_term": "core_asymptotic_data",
+      "origin_of_difference": "core representation and domain absent",
+      "weight_A": null,
+      "weight_B": null,
+      "weight_difference_B_minus_A": null
+    },
+    {
+      "integrated_total_weight_A": null,
+      "integrated_total_weight_B": null,
+      "object_or_term": "effective_M4_reduction",
+      "origin_of_difference": "normalized fiber integration absent",
+      "weight_A": null,
+      "weight_B": null,
+      "weight_difference_B_minus_A": null
+    }
+  ],
+  "weyl_frame_test": {
+    "D8_EH_density": "sqrt(-G_tilde)R_tilde=exp(6 omega)sqrt(-G)[R-14 Box(omega)-42(grad omega)^2]",
+    "D8_curvature": "R_tilde=exp(-2 omega)[R-14 Box(omega)-42(grad omega)^2]",
+    "D8_gauge_density": "sqrt(-G_tilde)F_tilde^2=exp(4 omega)sqrt(-G)F^2",
+    "D8_measure": "sqrt(-G_tilde)=exp(8 omega)sqrt(-G)",
+    "additional_derivative_interactions": true,
+    "boundary_note": "sqrt(h)K transforms with exp(6 omega)[K+7 n.grad(omega)]; EH/GHY cancel the normal Box boundary piece only when the complete paired domain is present",
+    "classification": "NOT_PROVEN_EINSTEIN_JORDAN_FRAME_EQUIVALENCE",
+    "map": "G_tilde=exp(2 omega(q_D)) G",
+    "massless_fermion_note": "conformal covariance requires the D8 spinor weight -7/2 and transformed spin connection",
+    "removable_from_current_complete_action": null,
+    "scalar_note": "generic scalar kinetic and potential terms generate frame-dependent derivative/potential factors"
+  }
+}

@@ -960,12 +960,32 @@ def build_parser() -> argparse.ArgumentParser:
         ("mixing-status-v11", "Render the BHSM v11.0 CKM/PMNS/core-mixing gate"),
         ("geometric-charge-status-v11", "Render the BHSM v11.0 geometric-charge gate"),
         ("quantum-measurement-status-v11", "Render the BHSM v11.0 quantum-measurement gate"),
+        ("support-category-status-v11-1", "Render the BHSM v11.1 stratified support category"),
+        ("support-functor-status-v11-1", "Render the BHSM v11.1 support-functor obstruction"),
+        ("support-equivalence-status-v11-1", "Render the BHSM v11.1 physical equivalence quotient"),
+        ("haar-scale-status-v11-1", "Render the BHSM v11.1 Haar-scale normalization audit"),
+        ("supported-action-status-v11-1", "Render the BHSM v11.1 supported action family"),
+        ("core-transfer-status-v11-1", "Render the BHSM v11.1 core-transfer gate"),
+        ("three-mode-status-v11-1", "Render the BHSM v11.1 physical three-mode gate"),
+        ("buoyancy-higgs-status-v11-1", "Render the BHSM v11.1 buoyancy/Higgs gate"),
+        ("global-scale-status-v11-1", "Render the BHSM v11.1 global-scale gate"),
+        ("generation-status-v11-1", "Render the BHSM v11.1 generation gate"),
+        ("mass-mixing-status-v11-1", "Render the BHSM v11.1 mass/mixing gate"),
+        ("effective-m4-status-v11-1", "Render the BHSM v11.1 effective-M4 gate"),
+        ("quantum-measurement-status-v11-1", "Render the BHSM v11.1 quantum gate"),
+        ("physical-completion-status-v11-1", "Render the BHSM v11.1 completion gate"),
+        ("historical-recovery-status", "Render the historical-recovery gate"),
+        ("historical-object-search", "Render the typed historical-object search"),
+        ("historical-equivalence-audit", "Render the historical equivalence audit"),
+        ("blocker-readiness-status", "Fail closed unless historical recovery is complete"),
     )
     for command, help_text in integrated_status_commands:
         status_command = commands.add_parser(command, help=help_text)
         status_command.add_argument(
             "--format", choices=("json", "markdown"), default="markdown"
         )
+        if command in {"historical-recovery-status", "historical-object-search", "historical-equivalence-audit", "blocker-readiness-status"}:
+            status_command.add_argument("--object", default="support representation functor")
     return parser
 
 
@@ -1089,6 +1109,45 @@ def main(argv: Sequence[str] | None = None) -> int:
         payload = module.status_report()
         if args.format == "markdown":
             print(module.status_to_markdown(payload), end="")
+        else:
+            print(json.dumps(payload, indent=2, sort_keys=True))
+        return 0
+    if args.command in {
+        "historical-recovery-status",
+        "historical-object-search",
+        "historical-equivalence-audit",
+        "blocker-readiness-status",
+    }:
+        module = import_module(
+            ".recovery.historical_equivalence_audit",
+            package=__package__,
+        )
+        payload = module.command_payload(args.command, args.object)
+        print(json.dumps(payload, indent=2, sort_keys=True))
+        return 0
+    if args.command in {
+        "support-category-status-v11-1",
+        "support-functor-status-v11-1",
+        "support-equivalence-status-v11-1",
+        "haar-scale-status-v11-1",
+        "supported-action-status-v11-1",
+        "core-transfer-status-v11-1",
+        "three-mode-status-v11-1",
+        "buoyancy-higgs-status-v11-1",
+        "global-scale-status-v11-1",
+        "generation-status-v11-1",
+        "mass-mixing-status-v11-1",
+        "effective-m4-status-v11-1",
+        "quantum-measurement-status-v11-1",
+        "physical-completion-status-v11-1",
+    }:
+        module = import_module(
+            ".completion.final_completion_gate_v11_1",
+            package=__package__,
+        )
+        payload = module.command_payload(args.command)
+        if args.format == "markdown":
+            print(module.command_to_markdown(args.command, payload), end="")
         else:
             print(json.dumps(payload, indent=2, sort_keys=True))
         return 0

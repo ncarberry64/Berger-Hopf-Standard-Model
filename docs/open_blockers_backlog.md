@@ -1,5 +1,12 @@
 # Open Blockers Backlog
 
+## Current upstream blocker (v11.1)
+
+Verdict: `BHSM_SUPPORT_FUNCTOR_PHYSICAL_EQUIVALENCE_QUOTIENT_BLOCKED_BY_ABSENT_COMPLETE_LOCAL_BOUNDARY_AND_CORE_ACTION_DATA`.
+Construct only
+`COMPLETE_LOCAL_SUPPORTED_ACTION_WITH_SUPPORT_DERIVATIVE_COUPLINGS_AND_BOUNDARY_CORE_CANONICAL_DOMAIN`.
+All core-transfer and physical-output gates remain downstream.
+
 Current public status: v11.0 derives
 `q_D=-lambda_D log(upsilon)` and the inverse-square Haar kinetic metric from
 multiplicative support composition. The Haar scale and stratified-sector

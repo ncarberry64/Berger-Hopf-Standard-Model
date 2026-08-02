@@ -2,6 +2,17 @@
 
 ## Current public claim boundary
 
+V11.1 verdict:
+`BHSM_SUPPORT_FUNCTOR_PHYSICAL_EQUIVALENCE_QUOTIENT_BLOCKED_BY_ABSENT_COMPLETE_LOCAL_BOUNDARY_AND_CORE_ACTION_DATA`.
+The result establishes nonuniqueness of the lift to `Rep(G_D)` by two explicit
+action-compatible character assignments. It does not establish a physical
+support representation, normalized Haar scale, mass, mixing matrix, orbit, or
+quantum law. The next admissible construction is
+`COMPLETE_LOCAL_SUPPORTED_ACTION_WITH_SUPPORT_DERIVATIVE_COUPLINGS_AND_BOUNDARY_CORE_CANONICAL_DOMAIN`.
+Historical recovery narrows but does not close this object; no recovered
+1:2:7, coframe, incidence, boundary-measure, or primitive-lattice result is
+silently promoted to a support character.
+
 This section is the current reviewer-facing boundary. The longer sections
 below preserve dated scientific and repository provenance.
 

@@ -24,7 +24,13 @@ NEUTRINO_PUBLIC_STATUS = (
     "admissible response cone."
 )
 
-PUBLIC_REPO_STATUS = (
+from .current_program_status import public_repo_status
+
+PUBLIC_REPO_STATUS = public_repo_status()
+
+# Text embedded in the historical v1.5 artifact. The live public status
+# advances by campaign while versioned records remain byte-reproducible.
+V15_PUBLIC_REPO_STATUS = (
     "BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. "
     "Current public status: v11.0 crystallizes the Relational Envelopment Holism ontology and "
     "derives the logarithmic depth `q_D=-lambda_D log(upsilon)` "
@@ -92,7 +98,7 @@ def build_v1_5_status_stabilization_report() -> V15StatusStabilizationReport:
         official_prediction_logic_changed=False,
         empirical_inputs_used=False,
         claim_boundary=NEUTRINO_PUBLIC_STATUS,
-        public_repo_status=PUBLIC_REPO_STATUS,
+        public_repo_status=V15_PUBLIC_REPO_STATUS,
         external_review_ready=True,
     )
 

@@ -1,5 +1,13 @@
 # BHSM 1.0 definition of done
 
+## Current v11.1 evaluation
+
+Mark I is reached; Marks II-IV are not reached. The current verdict is
+`BHSM_SUPPORT_FUNCTOR_PHYSICAL_EQUIVALENCE_QUOTIENT_BLOCKED_BY_ABSENT_COMPLETE_LOCAL_BOUNDARY_AND_CORE_ACTION_DATA`.
+Completion cannot advance until
+`COMPLETE_LOCAL_SUPPORTED_ACTION_WITH_SUPPORT_DERIVATIVE_COUPLINGS_AND_BOUNDARY_CORE_CANONICAL_DOMAIN`
+is action-derived and its downstream gates pass.
+
 ## Current v11.0 completion-mark reconciliation
 
 The historical finite-input Tier A/Tier B labels below describe the retained

@@ -2,9 +2,12 @@
 
 > This file preserves the boundary-package status lineage. The authoritative
 > whole-project status is [current_bhsm_status.md](current_bhsm_status.md).
-> BHSM v11.0 derives logarithmic/Haar support kinematics but leaves the Haar
-> scale, support characters, core transfer operator, and all downstream
-> physical outputs open.
+> BHSM v11.1 presents the support-representation category but leaves the
+> physical equivalence quotient, Haar-scale classification, core transfer
+> operator, and all downstream physical outputs open. Current verdict:
+> `BHSM_SUPPORT_FUNCTOR_PHYSICAL_EQUIVALENCE_QUOTIENT_BLOCKED_BY_ABSENT_COMPLETE_LOCAL_BOUNDARY_AND_CORE_ACTION_DATA`.
+> Exact next object:
+> `COMPLETE_LOCAL_SUPPORTED_ACTION_WITH_SUPPORT_DERIVATIVE_COUPLINGS_AND_BOUNDARY_CORE_CANONICAL_DOMAIN`.
 
 Current status: BHSM v1.0.0 internal boundary no-fit package complete/exported; external empirical comparison layer separate/open.
 

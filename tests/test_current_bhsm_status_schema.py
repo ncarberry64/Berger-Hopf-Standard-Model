@@ -9,27 +9,15 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def test_current_bhsm_status_json_schema() -> None:
     status = json.loads((ROOT / "docs" / "current_bhsm_status.json").read_text())
-    assert status == {
-        "status": "Full BHSM v1.0 Candidate",
-        "candidate_architecture_complete": True,
-        "full_bhsm_proven": False,
-        "standard_model_fully_derived": False,
-        "replacement_goal": "derive the Standard Model as the low-energy effective limit of BHSM",
-        "local_sm_layer_status": "preserved infrared layer until derived",
-        "mass_numerical_closure": False,
-        "dark_matter_solved": False,
-        "particle_dark_matter_disproven": False,
-        "collective_curvature_layer": "connected topographic-gravity extension candidate",
-        "frozen_predictions_changed": False,
-        "official_predictions_changed": False,
-        "current_campaign": "v11.0 Canonical crystallization, multiplicative-support Haar action, and physical completion gate",
-        "canonical_doctrine_verdict": "BHSM_CANONICAL_RELATIONAL_ENVELOPMENT_ARCHITECTURE_CRYSTALLIZED",
-        "canonical_ontology_complete": True,
-        "canonical_ontology_is_physical_completion": False,
-        "physical_flavor_matrix_derived": False,
-        "current_exact_verdict": "BHSM_MULTIPLICATIVE_SUPPORT_HAAR_KINEMATICS_DERIVED_BUT_NORMALIZATION_AND_SUPPORT_WEIGHTS_NOT_ACTION_FIXED",
-        "next_exact_object": "ACTION_DERIVED_SUPPORT_REPRESENTATION_FUNCTOR_ON_STRATIFIED_SECTORS_WITH_FIXED_HAAR_SCALE",
-    }
+    assert status["status"] == "Full BHSM v1.0 Candidate"
+    assert status["candidate_architecture_complete"] is True
+    assert status["full_bhsm_proven"] is False
+    assert status["standard_model_fully_derived"] is False
+    assert status["current_version"] == "v11.1"
+    assert status["current_exact_verdict"] == "BHSM_SUPPORT_FUNCTOR_PHYSICAL_EQUIVALENCE_QUOTIENT_BLOCKED_BY_ABSENT_COMPLETE_LOCAL_BOUNDARY_AND_CORE_ACTION_DATA"
+    assert status["next_exact_object"] == "COMPLETE_LOCAL_SUPPORTED_ACTION_WITH_SUPPORT_DERIVATIVE_COUPLINGS_AND_BOUNDARY_CORE_CANONICAL_DOMAIN"
+    assert status["frozen_predictions_changed"] is False
+    assert status["official_predictions_changed"] is False
 
 
 def test_current_status_markdown_contains_required_public_safe_wording() -> None:

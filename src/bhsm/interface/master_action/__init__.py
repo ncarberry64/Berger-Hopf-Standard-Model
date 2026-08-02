@@ -1,7 +1,7 @@
 """BHSM master-action, transport, and vacuum-to-flavor audit API.
 
 The v7.0 constants and v7.1 master-action report remain exported for
-artifact compatibility. Current v11.0 completion constants and status are
+artifact compatibility. Current v11.1 completion constants and status are
 exposed separately.
 """
 
@@ -18,14 +18,10 @@ from .report import (
 )
 from .validation import validate_model
 
-CURRENT_VERSION = "v11.0"
-CURRENT_MISSING_OBJECT = (
-    "ACTION_DERIVED_SUPPORT_REPRESENTATION_FUNCTOR_ON_STRATIFIED_SECTORS_"
-    "WITH_FIXED_HAAR_SCALE"
-)
-CURRENT_VERDICT = (
-    "BHSM_MULTIPLICATIVE_SUPPORT_HAAR_KINEMATICS_DERIVED_BUT_"
-    "NORMALIZATION_AND_SUPPORT_WEIGHTS_NOT_ACTION_FIXED"
+from ..current_program_status import (
+    CURRENT_VERSION,
+    EXACT_NEXT_OBJECT as CURRENT_MISSING_OBJECT,
+    PRIMARY_VERDICT as CURRENT_VERDICT,
 )
 
 

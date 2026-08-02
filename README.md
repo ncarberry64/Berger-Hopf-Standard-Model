@@ -5,7 +5,11 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
-BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v11.0 crystallizes the Relational Envelopment Holism ontology and derives the logarithmic depth `q_D=-lambda_D log(upsilon)` and inverse-square Haar kinetic metric from the author-specified multiplicative support law. Canonical doctrine is explicitly separated from action-derived theorem status. The regular depth sector has one healthy canonical pair, but the parent action does not fix the Haar scale or the support characters carried by its stratified sectors. The core endpoint is at infinite Haar field distance and has no action-owned transfer operator. No orbit, global scale, particle mass, mixing matrix, normalized M4 action, or quantum transition amplitude is emitted. Frozen predictions and prior no-go results remain unchanged.
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current campaign status: v11.1 presents the stratified action category and proves that the current parent action admits distinct fixed-character support lifts. They are not linearly naturally isomorphic, but physical equivalence is undecidable because the support-gradient local action and boundary/core canonical domain are absent. Genuine physical nonuniqueness and the physical-or-conventional status of lambda_D are not claimed. The v11.0 logarithmic depth, positive Haar metric, healthy conditional support pair, infinite-distance core endpoint, canonical ontology, and frozen generation architecture remain intact. No core transfer operator, physical three-mode Hessian, stable particle cycle, mass, CKM/PMNS matrix, normalized M4 action, or quantum probability law is emitted. Frozen predictions are unchanged.
+
+## Current BHSM status — v11.1
+
+Verdict: `BHSM_SUPPORT_FUNCTOR_PHYSICAL_EQUIVALENCE_QUOTIENT_BLOCKED_BY_ABSENT_COMPLETE_LOCAL_BOUNDARY_AND_CORE_ACTION_DATA`. Exact next object: `COMPLETE_LOCAL_SUPPORTED_ACTION_WITH_SUPPORT_DERIVATIVE_COUPLINGS_AND_BOUNDARY_CORE_CANONICAL_DOMAIN`. Mark I is reached; Marks II-IV and all downstream outputs remain open and fail closed. See the [reviewer reproduction guide](docs/reviewer_reproduction_guide.md) for exact commands.
 
 This independent mathematical-physics project investigates whether
 Berger-Hopf boundary geometry can organize structures associated with
@@ -21,12 +25,9 @@ Standard Model, or received institutional endorsement.
 - [Scientific contribution ledger](docs/bhsm_scientific_contribution_ledger.md)
 - [CERN toy model in plain language](docs/cern_toy_model_in_plain_language.md)
 - [STATUS.md](STATUS.md) and [claim boundaries](CLAIMS.md)
-- [BHSM v8.2 generation attachment](docs/bhsm_generation_projector_action_attachment_v8_2.md), [v8.3 mode stress](docs/bhsm_classical_mode_stress_incidence_v8_3.md), [v9.0 vacuum/flavor audit](docs/bhsm_action_selected_8d_vacuum_flavor_completion_v9_0.md), [v9.1 geometry-only geon/FR audit](docs/bhsm_geometry_only_geon_fr_carrier_completion_v9_1.md), [v10.0 envelopment foundation](docs/bhsm_machian_geometric_envelopment_foundation_v10_0.md), [v10.1 relational action constraints](docs/bhsm_relational_envelopment_action_constraints_v10_1.md), [v10.2 buoyancy action exhaustion](docs/bhsm_topological_buoyancy_action_derivation_v10_2.md), [v10.3 three-mode relational architecture](docs/bhsm_three_mode_relational_envelopment_v10_3.md), [v10.4 constrained spacetime-removal audit](docs/bhsm_spacetime_removal_depth_v10_4.md), [v10.4 stratified-core support action audit](docs/bhsm_support_action_derivation_v10_4.md), [v11.0 canonical synthesis](docs/BHSM_CANONICAL_SYNTHESIS_v11_0.md), and [v11.0 unified completion audit](docs/bhsm_final_completion_report_v11_0.md)
+- [BHSM v11.1 support representation audit](docs/BHSM_SUPPORT_REPRESENTATION_FUNCTOR_v11_1.md), [v11.1 completion report](docs/BHSM_FINAL_COMPLETION_REPORT_v11_1.md), [v11.0 canonical synthesis](docs/BHSM_CANONICAL_SYNTHESIS_v11_0.md), and [historical documentation index](docs/README.md)
 - [Reviewer reproduction guide](docs/reviewer_reproduction_guide.md)
 - [Frozen records](docs/frozen_predictions.md) and [artifact index](ARTIFACT_INDEX.md)
-
-Historical sprint reports remain in the [documentation index](docs/README.md)
-as evidence and provenance, not competing current-status pages.
 
 ## Current Public Status
 

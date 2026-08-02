@@ -1,5 +1,16 @@
 # BHSM Falsification Entry Point
 
+For v11.1, the verdict
+`BHSM_SUPPORT_FUNCTOR_PHYSICAL_EQUIVALENCE_QUOTIENT_BLOCKED_BY_ABSENT_COMPLETE_LOCAL_BOUNDARY_AND_CORE_ACTION_DATA`
+is falsified if the checked-in parent action uniquely defines the `G_D` action
+on the primitive metric, measures, embeddings, bundles, and core boundary data,
+including one normalized primitive character. That exact missing object is
+`COMPLETE_LOCAL_SUPPORTED_ACTION_WITH_SUPPORT_DERIVATIVE_COUPLINGS_AND_BOUNDARY_CORE_CANONICAL_DOMAIN`.
+An imposed convention or particle-data fit is not a falsifier.
+The blocker is also falsified by an exact or equivalent historical action-owned
+result missed by the recovery matrix; `blocker-readiness-status` must therefore
+remain a required fail-closed gate.
+
 The canonical detailed criteria are in
 [`docs/falsification_criteria.md`](docs/falsification_criteria.md), with
 machine-readable historical gates in `artifacts/` and `theory/`.
