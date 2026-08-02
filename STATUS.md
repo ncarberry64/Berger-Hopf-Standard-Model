@@ -5,12 +5,14 @@ evidence, not competing public status pages.
 
 ## Current public summary
 
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current campaign status: v11.2 derives the composite flat connection A_D=d log(upsilon) and exhausts the primitive-character/current routes. The strongest exact action-character system has rank 7 and nullity 5: it rejects nontrivial universal coframe scaling but leaves the core/Hopf, wall/fold, wall-embedding, compatibility, and core-asymptotic character directions unowned by the action. The complete support current, quadratic completion, variation, and boundary/core domain remain open. Physical equivalence and the physical-or-conventional status of lambda_D are not claimed. The v11.0 logarithmic depth, positive Haar metric, healthy conditional support pair, infinite-distance core endpoint, canonical ontology, and frozen generation architecture remain intact. No core transfer operator, physical three-mode Hessian, stable particle cycle, mass, CKM/PMNS matrix, normalized M4 action, or quantum probability law is emitted. Frozen predictions are unchanged.
+
 BHSM v11.2 exhaustively recovers the earlier supported-action, reduction, and
 boundary-domain work and derives the composite flat connection
 `A_D=d log(upsilon)=-(dq_D/lambda_D)`. The current verdict is
-`BHSM_HISTORICAL_RECOVERY_NARROWS_BUT_DOES_NOT_CLOSE_COMPLETE_SUPPORTED_ACTION`.
+`BHSM_COMPOSITE_SUPPORT_CONNECTION_DERIVED_BUT_PRIMITIVE_CHARACTER_AND_CURRENT_LEDGER_NOT_ACTION_FIXED`.
 The exact next object is
-`ACTION_DERIVED_PRIMITIVE_SUPPORT_CHARACTER_AND_CURRENT_COUPLING_LEDGER`.
+`ACTION_TERM_OR_GEOMETRIC_PRINCIPLE_FIXING_PRIMITIVE_SUPPORT_CHARACTER_OWNERSHIP`.
 The action does not yet assign the primitive characters that fix `-A_D.J_D`
 and its quadratic completion, nor a core response/domain. Mark II remains not
 reached; all physical outputs fail closed and frozen predictions are unchanged.

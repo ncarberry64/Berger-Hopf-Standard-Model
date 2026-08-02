@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from typing import Any
 
-PRIMARY_VERDICT = "BHSM_HISTORICAL_RECOVERY_NARROWS_BUT_DOES_NOT_CLOSE_COMPLETE_SUPPORTED_ACTION"
-EXACT_NEXT_OBJECT = "ACTION_DERIVED_PRIMITIVE_SUPPORT_CHARACTER_AND_CURRENT_COUPLING_LEDGER"
+PRIMARY_VERDICT = "BHSM_COMPOSITE_SUPPORT_CONNECTION_DERIVED_BUT_PRIMITIVE_CHARACTER_AND_CURRENT_LEDGER_NOT_ACTION_FIXED"
+EXACT_NEXT_OBJECT = "ACTION_TERM_OR_GEOMETRIC_PRINCIPLE_FIXING_PRIMITIVE_SUPPORT_CHARACTER_OWNERSHIP"
 ACTION_VERDICT = "BHSM_COMPLETE_LOCAL_SUPPORTED_ACTION_BLOCKED_BY_UNASSIGNED_PRIMITIVE_SUPPORT_CHARACTERS"
 
 
@@ -64,8 +64,8 @@ def action_payload() -> dict[str, Any]:
         "new_coefficients": [],
         "new_fields": [],
         "term_ledger": terms,
-        "first_missing_action_owned_term": "the primitive-character support-current coupling -A_D,A J_D^A together with its covariant A_D^2 seagull completion",
-        "smallest_missing_datum": "an action-derived primitive support-character/current ledger assigning the charges entering J_D and K_D",
+        "first_missing_action_owned_term": "a term or geometric principle assigning a nontrivial primitive G_D character; only then are -A_D,A J_D^A and its covariant quadratic completion determined",
+        "smallest_missing_datum": "primitive support-character ownership on at least one nontrivial action field or cross-stratum map",
         "complete_local_action": None,
         "status": ACTION_VERDICT,
         "primary_verdict": PRIMARY_VERDICT,

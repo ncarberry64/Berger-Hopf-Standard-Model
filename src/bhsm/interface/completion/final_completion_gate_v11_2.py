@@ -25,10 +25,16 @@ from .downstream_physical_gates_v11_2 import downstream_payload
 from .haar_scale_closure_v11_2 import haar_payload
 from .historical_recovery_complete_supported_action_v11_2 import recovery_payload
 from .local_supported_geometry_v11_2 import geometry_payload
+from .primitive_support_character_ledger_v11_2 import ledger_payload
 from .support_action_variation_v11_2 import variation_payload
+from .support_character_boundary_core_selection_v11_2 import boundary_core_payload
+from .support_character_constraint_system_v11_2 import constraint_payload as character_constraint_payload
+from .support_character_equivalence_classes_v11_2 import equivalence_class_payload
 from .support_covariant_derivative_v11_2 import derivative_payload
 from .support_covariant_phase_space_v11_2 import phase_space_payload
 from .support_dirac_constraints_v11_2 import constraint_payload
+from .support_linear_quadratic_connection_couplings_v11_2 import couplings_payload
+from .support_noether_current_v11_2 import current_payload
 from .support_physical_equivalence_quotient_v11_2 import equivalence_payload
 from .three_mode_physical_action_v11_2 import three_mode_payload
 
@@ -49,6 +55,12 @@ ARTIFACT_FILES = {
     "three_mode_physical_action": "BHSM_three_mode_physical_action_v11_2.json",
     "downstream_physical_gates": "BHSM_downstream_physical_gates_v11_2.json",
     "completion": "BHSM_final_completion_gate_v11_2.json",
+    "primitive_support_character_ledger": "BHSM_primitive_support_character_ledger_v11_2.json",
+    "support_noether_current": "BHSM_support_noether_current_v11_2.json",
+    "support_linear_quadratic_connection_couplings": "BHSM_support_linear_quadratic_connection_couplings_v11_2.json",
+    "support_character_constraint_system": "BHSM_support_character_constraint_system_v11_2.json",
+    "support_character_boundary_core_selection": "BHSM_support_character_boundary_core_selection_v11_2.json",
+    "support_character_equivalence_classes": "BHSM_support_character_equivalence_classes_v11_2.json",
 }
 
 
@@ -68,6 +80,12 @@ def completion_payload() -> dict[str, Any]:
         "core_transfer_operator": core_transfer_payload(),
         "three_mode_physical_action": three_mode_payload(),
         "downstream_physical_gates": downstream_payload(),
+        "primitive_support_character_ledger": ledger_payload(),
+        "support_noether_current": current_payload(),
+        "support_linear_quadratic_connection_couplings": couplings_payload(),
+        "support_character_constraint_system": character_constraint_payload(),
+        "support_character_boundary_core_selection": boundary_core_payload(),
+        "support_character_equivalence_classes": equivalence_class_payload(),
     }
     validation = {
         "all_sections_valid": all(section["validation_passed"] for section in sections.values()),
@@ -80,6 +98,12 @@ def completion_payload() -> dict[str, Any]:
         "haar_not_fabricated": sections["haar_scale_closure"]["lambda_D"] is None,
         "downstream_fail_closed": not sections["downstream_physical_gates"]["automatic_continuation_triggered"],
         "no_prediction_changes": True,
+        "primitive_ledger_exhausted": sections["primitive_support_character_ledger"]["nontrivial_action_owned_ledger"] is None,
+        "constraint_rank_and_nullity_exact": sections["support_character_constraint_system"]["rank"] == 7 and sections["support_character_constraint_system"]["nullity"] == 5,
+        "current_classified_without_gauge_overclaim": not sections["support_noether_current"]["transformation_classification"]["local_gauge_redundancy"],
+        "linear_quadratic_pairing_enforced": sections["support_linear_quadratic_connection_couplings"]["validation_passed"],
+        "boundary_core_anomaly_exhausted": sections["support_character_boundary_core_selection"]["validation_passed"],
+        "equivalence_quotient_exhausted": sections["support_character_equivalence_classes"]["validation_passed"],
     }
     return {
         "artifact": "BHSM_final_completion_gate_v11_2",
@@ -111,7 +135,42 @@ def completion_payload() -> dict[str, Any]:
 
 def artifact_payloads() -> dict[str, dict[str, Any]]:
     result = completion_payload()
-    return {key: result[key] for key in ARTIFACT_FILES if key != "completion"} | {"completion": result}
+    payloads = {key: result[key] for key in ARTIFACT_FILES if key != "completion"} | {"completion": result}
+    steering_keys = {
+        "primitive_support_character_ledger",
+        "support_noether_current",
+        "support_linear_quadratic_connection_couplings",
+        "support_character_constraint_system",
+        "support_character_boundary_core_selection",
+        "support_character_equivalence_classes",
+    }
+    ledger = result["primitive_support_character_ledger"]
+    constraints = result["support_character_constraint_system"]
+    current = result["support_noether_current"]
+    couplings = result["support_linear_quadratic_connection_couplings"]
+    selection = result["support_character_boundary_core_selection"]
+    equivalence = result["support_character_equivalence_classes"]
+    common = {
+        "historical_sources": [row["object"] for row in result["historical_recovery"]["candidates"]],
+        "primitive_fields": [row["object"] for row in ledger["primitive_objects"]],
+        "candidate_weights": constraints["variables"],
+        "derivation_equations": constraints["row_labels"],
+        "constraint_matrix": constraints["matrix"],
+        "rank": constraints["rank"],
+        "nullity": constraints["nullity"],
+        "normalization_freedom": equivalence["common_rescaling_test"],
+        "current": current["current_classification"],
+        "linear_couplings": couplings["complete_linear_couplings"],
+        "quadratic_couplings": couplings["complete_quadratic_couplings"],
+        "boundary_result": selection["boundary_test"],
+        "core_result": selection["core_test"],
+        "anomaly_result": selection["anomaly_test"],
+        "frozen_limit": "A_D=0 at constant upsilon=1; frozen action and predictions unchanged",
+        "final_status": PRIMARY_VERDICT,
+    }
+    for key in steering_keys:
+        payloads[key] = payloads[key] | common
+    return payloads
 
 
 def canonical_completion_gate_payload() -> dict[str, Any]:
@@ -126,6 +185,9 @@ def canonical_completion_gate_payload() -> dict[str, Any]:
         "current_verdict": PRIMARY_VERDICT,
         "next_highest_upstream_blocker": EXACT_NEXT_OBJECT,
         "composite_support_connection_derived": True,
+        "primitive_support_character_current_ledger_action_owned": False,
+        "support_character_constraint_rank": 7,
+        "support_character_constraint_nullity": 5,
         "complete_local_supported_action": False,
         "boundary_core_canonical_domain_complete": False,
         "support_equivalence_quotient_complete": False,
@@ -137,7 +199,7 @@ def canonical_completion_gate_payload() -> dict[str, Any]:
         "frozen_predictions_changed": False,
         "validation_passed": result["validation_passed"],
     })
-    gate["RB15"] = {"status": "BLOCKED_BY_MISSING_PRIMITIVE_SUPPORT_CHARACTER_CURRENT_LEDGER", "resolution": EXACT_NEXT_OBJECT}
+    gate["RB15"] = {"status": "BLOCKED_AFTER_EXACT_RANK_7_NULLITY_5_CHARACTER_AUDIT", "resolution": EXACT_NEXT_OBJECT}
     gate["RB16"] = {"status": "DOWNSTREAM_BLOCKED", "resolution": "Mark II remains NOT_REACHED"}
     return gate
 
@@ -156,6 +218,12 @@ COMMAND_SECTIONS = {
     "core-transfer-status-v11-2": "core_transfer_operator",
     "three-mode-status-v11-2": "three_mode_physical_action",
     "physical-completion-status-v11-2": None,
+    "primitive-support-ledger-status-v11-2": "primitive_support_character_ledger",
+    "support-current-status-v11-2": "support_noether_current",
+    "support-connection-couplings-status-v11-2": "support_linear_quadratic_connection_couplings",
+    "support-character-constraint-status-v11-2": "support_character_constraint_system",
+    "support-character-boundary-core-status-v11-2": "support_character_boundary_core_selection",
+    "support-character-equivalence-class-status-v11-2": "support_character_equivalence_classes",
 }
 
 

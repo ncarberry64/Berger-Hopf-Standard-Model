@@ -2,7 +2,7 @@
 
 ## Current upstream blocker (v11.2)
 
-`ACTION_DERIVED_PRIMITIVE_SUPPORT_CHARACTER_AND_CURRENT_COUPLING_LEDGER` is
+`ACTION_TERM_OR_GEOMETRIC_PRINCIPLE_FIXING_PRIMITIVE_SUPPORT_CHARACTER_OWNERSHIP` is
 the highest-upstream open object. It must fix the charges in the linear
 support current and quadratic connection completion, including induced
 measure, normal, and cross-stratum characters. Core-domain selection and all

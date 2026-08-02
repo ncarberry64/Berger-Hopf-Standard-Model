@@ -39,18 +39,18 @@
     "compatibility_sector": null,
     "complete_local_action": null,
     "core_asymptotic_sector": null,
-    "exact_next_object": "ACTION_DERIVED_PRIMITIVE_SUPPORT_CHARACTER_AND_CURRENT_COUPLING_LEDGER",
+    "exact_next_object": "ACTION_TERM_OR_GEOMETRIC_PRINCIPLE_FIXING_PRIMITIVE_SUPPORT_CHARACTER_OWNERSHIP",
     "fermion_sector": null,
-    "first_missing_action_owned_term": "the primitive-character support-current coupling -A_D,A J_D^A together with its covariant A_D^2 seagull completion",
+    "first_missing_action_owned_term": "a term or geometric principle assigning a nontrivial primitive G_D character; only then are -A_D,A J_D^A and its covariant quadratic completion determined",
     "gauge_sector": null,
     "known_action_skeleton": "S_parent+D-dimensional integral[-(partial q_D)^2/2] with A_D=-(dq_D/lambda_D)",
     "neutral_response_sector": null,
     "new_coefficients": [],
     "new_fields": [],
-    "primary_verdict": "BHSM_HISTORICAL_RECOVERY_NARROWS_BUT_DOES_NOT_CLOSE_COMPLETE_SUPPORTED_ACTION",
+    "primary_verdict": "BHSM_COMPOSITE_SUPPORT_CONNECTION_DERIVED_BUT_PRIMITIVE_CHARACTER_AND_CURRENT_LEDGER_NOT_ACTION_FIXED",
     "required_derivative_completion": "replace each parent derivative by D^(w); expansion generates -A_D.J_D and A_D^2 K_D terms fixed by the same action-owned characters",
     "scalar_topographic_sector": null,
-    "smallest_missing_datum": "an action-derived primitive support-character/current ledger assigning the charges entering J_D and K_D",
+    "smallest_missing_datum": "primitive support-character ownership on at least one nontrivial action field or cross-stratum map",
     "status": "BHSM_COMPLETE_LOCAL_SUPPORTED_ACTION_BLOCKED_BY_UNASSIGNED_PRIMITIVE_SUPPORT_CHARACTERS",
     "support_kinetic_term": "-1/2 G^AB partial_A q_D partial_B q_D",
     "term_ledger": [
@@ -390,19 +390,22 @@
     "validation_passed": true
   },
   "empirical_replacement_complete": false,
-  "exact_next_object": "ACTION_DERIVED_PRIMITIVE_SUPPORT_CHARACTER_AND_CURRENT_COUPLING_LEDGER",
+  "exact_next_object": "ACTION_TERM_OR_GEOMETRIC_PRINCIPLE_FIXING_PRIMITIVE_SUPPORT_CHARACTER_OWNERSHIP",
   "frozen_predictions_changed": false,
   "haar_scale_closure": {
     "artifact": "BHSM_haar_scale_closure_v11_2",
     "canonical_coupling": "g_Da=w_a/lambda_D",
+    "exact_character_constraint_nullity": 5,
+    "exact_character_constraint_rank": 7,
     "lambda_D": null,
     "lambda_D_positive": true,
+    "nullspace_is_single_common_normalization": false,
     "physical_or_conventional": null,
     "primitive_lattice": null,
     "routes": [
       {
-        "reason": "canonical kinetic normalization makes w/lambda_D interaction data, but no primitive charge is selected",
-        "result": "OPEN",
+        "reason": "w/lambda_D is invariant under common rescaling, but the exact action-character kernel has five independent directions rather than one common scale",
+        "result": "NOT_A_COMPLETE_QUOTIENT",
         "route": "generator_redundancy"
       },
       {
@@ -533,14 +536,64 @@
         "object": "collar measure/extrinsic geometry",
         "pr": 13,
         "reason": "does not define a support transformation law"
+      },
+      {
+        "classification": "REJECTED_FOR_GD_CHARACTER",
+        "commit": "6f4f415",
+        "object": "v4.0 sector-weight action attachment",
+        "pr": 117,
+        "reason": "explicitly states 1:2:7 is not an action-selected trace weight"
+      },
+      {
+        "classification": "REUSABLE_COMPOSITE_GEOMETRY",
+        "commit": "24f4c0f",
+        "object": "v4.3 Hodge/coframe metric factors",
+        "pr": 120,
+        "reason": "derives metric Hodge factors but not a support action on the coframe"
+      },
+      {
+        "classification": "REJECTED_AS_SELECTION",
+        "commit": "a365b2f",
+        "object": "v4.4 gauge-action coframe selection",
+        "pr": 121,
+        "reason": "available raw and orthonormal coframes exist, but the gauge action selects neither"
+      },
+      {
+        "classification": "CONDITIONAL_ACTION_ONLY",
+        "commit": "71db297",
+        "object": "v5.4 unified dynamical action candidate",
+        "pr": 132,
+        "reason": "keeps gauge, fermion, scalar, current, response, and scale normalizations provisional"
+      },
+      {
+        "classification": "REUSABLE_NORMALIZATION_NOT_CHARACTER",
+        "commit": "239c864",
+        "object": "v6.0.9 normalized fiber measure",
+        "pr": 150,
+        "reason": "normalized Haar measure fixes pushforward integrals, not the G_D measure transformation"
+      },
+      {
+        "classification": "RELATED_GAUGE_CONNECTION_NOT_GD",
+        "commit": "239c864",
+        "object": "v6.0.9 canonical connection field map",
+        "pr": 150,
+        "reason": "normalizes gauge fields using the kinetic matrix; it is not the support connection"
       }
     ],
-    "exact_next_object": "ACTION_DERIVED_PRIMITIVE_SUPPORT_CHARACTER_AND_CURRENT_COUPLING_LEDGER",
+    "exact_next_object": "ACTION_TERM_OR_GEOMETRIC_PRINCIPLE_FIXING_PRIMITIVE_SUPPORT_CHARACTER_OWNERSHIP",
     "exact_object_recovered": false,
     "historical_routes_exhausted": true,
+    "preservation_bundles": [
+      "v8.3 verified",
+      "v10.4 verified",
+      "v11.0 verified",
+      "v11.1 verified"
+    ],
     "rejected_promotions": [
+      "1:2:7 sector weights",
       "target-fitted winding multipliers",
       "partial boundary-source scaffold",
+      "gauge coframe availability without action selection",
       "sector-specific self-adjoint domains",
       "coordinate level-set chart",
       "Berger radius convention"
@@ -552,19 +605,31 @@
       "git_history_searched": true,
       "merged_and_unmerged_prs_searched": true,
       "preservation_bundles_searched_and_verified": true,
+      "primitive_character_current_terms_targeted": true,
       "remote_branches_searched": true,
       "tests_searched": true,
-      "usb_mirror_searched_read_only": true
+      "usb_mirror_searched_read_only": true,
+      "v8_3_v10_4_v11_0_v11_1_bundles_verified": true
     },
     "reusable_ingredients": [
       "v10.4 covariant support-action class",
       "v7.1 normalized fiber pushforward",
       "v11.0 logarithmic Haar support pair",
       "v11.1 categorical/equivalence ledgers",
+      "v4.3 Hodge/coframe composite laws",
+      "v6.0.9 normalized fiber measure",
       "finite-boundary Green and flux forms"
     ],
     "searched_object": "complete local supported action with derivative couplings and boundary/core canonical domain",
-    "status": "BHSM_HISTORICAL_RECOVERY_NARROWS_BUT_DOES_NOT_CLOSE_COMPLETE_SUPPORTED_ACTION",
+    "status": "BHSM_COMPOSITE_SUPPORT_CONNECTION_DERIVED_BUT_PRIMITIVE_CHARACTER_AND_CURRENT_LEDGER_NOT_ACTION_FIXED",
+    "targeted_terms": [
+      "primitive support character",
+      "Noether/response/scale current",
+      "coframe/metric/density scaling",
+      "A_D and dq_D couplings",
+      "linear and quadratic connection completion",
+      "boundary/fiber/wall/core incidence"
+    ],
     "validation": {
       "all_resource_classes_searched": true,
       "blocker_ready": true,
@@ -617,7 +682,700 @@
     "normalized M4 action",
     "quantum probabilities"
   ],
-  "primary_verdict": "BHSM_HISTORICAL_RECOVERY_NARROWS_BUT_DOES_NOT_CLOSE_COMPLETE_SUPPORTED_ACTION",
+  "primary_verdict": "BHSM_COMPOSITE_SUPPORT_CONNECTION_DERIVED_BUT_PRIMITIVE_CHARACTER_AND_CURRENT_LEDGER_NOT_ACTION_FIXED",
+  "primitive_support_character_ledger": {
+    "artifact": "BHSM_primitive_support_character_ledger_v11_2",
+    "coframe_candidate": {
+      "ansatz": "e_supported=upsilon^r_e e_0",
+      "candidate_classification": "NONTRIVIAL_COFRAME_SUPPORT_CHARACTER_REJECTED_FOR_CURRENT_ACTION",
+      "constant_scaling_action_equations": [
+        "EH: 6 r_e=0",
+        "cosmological: 8 r_e=0"
+      ],
+      "inherited_full_D8": {
+        "Ricci_scalar_algebraic": "-2 r_e",
+        "bulk_measure": "8 r_e",
+        "coframe": "r_e",
+        "inverse_metric": "-2 r_e",
+        "metric": "2 r_e"
+      },
+      "local_scaling_obstruction": "the D8 Einstein-Hilbert density also generates Box(epsilon) and (d epsilon)^2 terms; the frozen action has no Weyl compensator completion",
+      "nonzero_r_e_requires": "spurionic transformations of independent coefficients or a new Weyl-compensated action",
+      "solution_with_inert_existing_coefficients": {
+        "r_e": 0
+      },
+      "support_definition_fixes_nonzero_r_e": false
+    },
+    "exact_next_object": "ACTION_TERM_OR_GEOMETRIC_PRINCIPLE_FIXING_PRIMITIVE_SUPPORT_CHARACTER_OWNERSHIP",
+    "ledger_unique": false,
+    "nontrivial_action_owned_ledger": null,
+    "primitive_objects": [
+      {
+        "boundary_incidence": "none",
+        "candidate_derivation_source": "coframe ansatz, not an established support definition",
+        "candidate_support_character": "r_e (provisional)",
+        "core_incidence": "none",
+        "density_type": "none",
+        "domain": "S8 regular",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": "metric action only through G",
+        "existing_normalization": null,
+        "fiber_base_ownership": "none",
+        "gauge_representation": "singlet",
+        "historical_aliases": [
+          "orthonormal frame",
+          "supported frame"
+        ],
+        "object": "supported_coframe_e",
+        "primitive_or_composite": "primitive candidate",
+        "tensor_type": "coframe one-form",
+        "wall_incidence": "none"
+      },
+      {
+        "boundary_incidence": "none",
+        "candidate_derivation_source": "inverse law",
+        "candidate_support_character": "-r_e",
+        "core_incidence": "none",
+        "density_type": "none",
+        "domain": "S8 regular",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": "inverse of e",
+        "existing_normalization": null,
+        "fiber_base_ownership": "none",
+        "gauge_representation": "singlet",
+        "historical_aliases": [
+          "dual frame"
+        ],
+        "object": "inverse_coframe",
+        "primitive_or_composite": "composite",
+        "tensor_type": "frame vector",
+        "wall_incidence": "none"
+      },
+      {
+        "boundary_incidence": "none",
+        "candidate_derivation_source": "G=eta_ab e^a tensor e^b",
+        "candidate_support_character": "2 r_e",
+        "core_incidence": "none",
+        "density_type": "none",
+        "domain": "S8 regular",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": "S8 Einstein-Hilbert",
+        "existing_normalization": "kappa1",
+        "fiber_base_ownership": "none",
+        "gauge_representation": "singlet",
+        "historical_aliases": [
+          "bulk metric"
+        ],
+        "object": "metric_G_AB",
+        "primitive_or_composite": "composite",
+        "tensor_type": "symmetric (0,2)",
+        "wall_incidence": "none"
+      },
+      {
+        "boundary_incidence": "none",
+        "candidate_derivation_source": "inverse law",
+        "candidate_support_character": "-2 r_e",
+        "core_incidence": "none",
+        "density_type": "none",
+        "domain": "S8 regular",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": "all contractions",
+        "existing_normalization": null,
+        "fiber_base_ownership": "none",
+        "gauge_representation": "singlet",
+        "historical_aliases": [
+          "inverse bulk metric"
+        ],
+        "object": "inverse_metric_G_AB",
+        "primitive_or_composite": "composite",
+        "tensor_type": "symmetric (2,0)",
+        "wall_incidence": "none"
+      },
+      {
+        "boundary_incidence": "none",
+        "candidate_derivation_source": "determinant law",
+        "candidate_support_character": "8 r_e for full support",
+        "core_incidence": "none",
+        "density_type": "weight-one density",
+        "domain": "S8 regular",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": "all S8 terms",
+        "existing_normalization": "orientation fixed",
+        "fiber_base_ownership": "none",
+        "gauge_representation": "singlet",
+        "historical_aliases": [
+          "dmu_G",
+          "sqrt(|G|)d8x"
+        ],
+        "object": "bulk_measure",
+        "primitive_or_composite": "composite",
+        "tensor_type": "top form",
+        "wall_incidence": "none"
+      },
+      {
+        "boundary_incidence": "finite regular",
+        "candidate_derivation_source": "induced determinant; partial support open",
+        "candidate_support_character": "7 r_e only for a fully supported codimension-one induced metric",
+        "core_incidence": "none",
+        "density_type": "weight-one boundary density",
+        "domain": "finite regular boundary",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": "GHY and localized terms",
+        "existing_normalization": null,
+        "fiber_base_ownership": "none",
+        "gauge_representation": "singlet",
+        "historical_aliases": [
+          "dmu_h"
+        ],
+        "object": "boundary_measure",
+        "primitive_or_composite": "composite after embedding choice",
+        "tensor_type": "top boundary form",
+        "wall_incidence": "none"
+      },
+      {
+        "boundary_incidence": "finite regular",
+        "candidate_derivation_source": "unit-normal condition",
+        "candidate_support_character": "r_e for full Weyl scaling",
+        "core_incidence": "none",
+        "density_type": "none",
+        "domain": "finite regular boundary",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": "GHY",
+        "existing_normalization": "G^AB n_A n_B=+/-1",
+        "fiber_base_ownership": "none",
+        "gauge_representation": "singlet",
+        "historical_aliases": [
+          "n_flat"
+        ],
+        "object": "normal_covector",
+        "primitive_or_composite": "composite after normalization",
+        "tensor_type": "one-form",
+        "wall_incidence": "none"
+      },
+      {
+        "boundary_incidence": "finite regular",
+        "candidate_derivation_source": "metric inverse plus normal covector",
+        "candidate_support_character": "-r_e for full Weyl scaling",
+        "core_incidence": "none",
+        "density_type": "none",
+        "domain": "finite regular boundary",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": "GHY and flux",
+        "existing_normalization": "n^A=G^AB n_B",
+        "fiber_base_ownership": "none",
+        "gauge_representation": "singlet",
+        "historical_aliases": [
+          "n_sharp"
+        ],
+        "object": "normal_vector",
+        "primitive_or_composite": "composite",
+        "tensor_type": "vector",
+        "wall_incidence": "none"
+      },
+      {
+        "boundary_incidence": "none",
+        "candidate_derivation_source": "metric Hodge law",
+        "candidate_support_character": "(d-2p) r_e for full support",
+        "core_incidence": "none",
+        "density_type": "none",
+        "domain": "supported d-stratum",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": "gauge/scalar kinetic sectors",
+        "existing_normalization": "orientation fixed",
+        "fiber_base_ownership": "none",
+        "gauge_representation": "singlet",
+        "historical_aliases": [
+          "star_G"
+        ],
+        "object": "hodge_star",
+        "primitive_or_composite": "composite",
+        "tensor_type": "p-form to (d-p)-form",
+        "wall_incidence": "none"
+      },
+      {
+        "boundary_incidence": "none",
+        "candidate_derivation_source": "determinant law",
+        "candidate_support_character": "d r_e for covariant volume form",
+        "core_incidence": "none",
+        "density_type": "density",
+        "domain": "supported d-stratum",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": "Hodge and volume",
+        "existing_normalization": "orientation fixed",
+        "fiber_base_ownership": "none",
+        "gauge_representation": "singlet",
+        "historical_aliases": [
+          "epsilon_G"
+        ],
+        "object": "levi_civita_density",
+        "primitive_or_composite": "composite",
+        "tensor_type": "alternating density",
+        "wall_incidence": "none"
+      },
+      {
+        "boundary_incidence": "none",
+        "candidate_derivation_source": "no G_D action in the normalized Hopf geometry",
+        "candidate_support_character": null,
+        "core_incidence": "none",
+        "density_type": "none",
+        "domain": "Hopf fiber",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": "v6.0.7/v6.0.9 reduction",
+        "existing_normalization": "period fixed in selected bundle convention",
+        "fiber_base_ownership": "fiber",
+        "gauge_representation": "singlet",
+        "historical_aliases": [
+          "contact form",
+          "sigma_3"
+        ],
+        "object": "hopf_fiber_one_form",
+        "primitive_or_composite": "primitive geometric form",
+        "tensor_type": "one-form",
+        "wall_incidence": "none"
+      },
+      {
+        "boundary_incidence": "none",
+        "candidate_derivation_source": "partial-support subbundle not action-selected",
+        "candidate_support_character": null,
+        "core_incidence": "none",
+        "density_type": "none",
+        "domain": "Hopf base",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": "Berger metric/Hodge map",
+        "existing_normalization": "Berger radii",
+        "fiber_base_ownership": "base",
+        "gauge_representation": "singlet",
+        "historical_aliases": [
+          "sigma_1,sigma_2"
+        ],
+        "object": "base_coframe",
+        "primitive_or_composite": "primitive geometric frame",
+        "tensor_type": "horizontal coframe",
+        "wall_incidence": "none"
+      },
+      {
+        "boundary_incidence": "none",
+        "candidate_derivation_source": "normalization fixes integral, not G_D character",
+        "candidate_support_character": null,
+        "core_incidence": "none",
+        "density_type": "density",
+        "domain": "closed Hopf fiber",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": "v7.1 pi_!",
+        "existing_normalization": "normalized Haar dnu_F",
+        "fiber_base_ownership": "fiber",
+        "gauge_representation": "singlet",
+        "historical_aliases": [
+          "dmu_F",
+          "dnu_F"
+        ],
+        "object": "fiber_measure",
+        "primitive_or_composite": "composite",
+        "tensor_type": "top fiber form",
+        "wall_incidence": "none"
+      },
+      {
+        "boundary_incidence": "none",
+        "candidate_derivation_source": "embedding support action absent",
+        "candidate_support_character": null,
+        "core_incidence": "none",
+        "density_type": "none",
+        "domain": "S5 into S8/collar",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": "cap and compatibility action",
+        "existing_normalization": null,
+        "fiber_base_ownership": "none",
+        "gauge_representation": "singlet",
+        "historical_aliases": [
+          "i_W",
+          "moving fold"
+        ],
+        "object": "wall_embedding",
+        "primitive_or_composite": "primitive map",
+        "tensor_type": "embedding",
+        "wall_incidence": "enclosure wall"
+      },
+      {
+        "boundary_incidence": "none",
+        "candidate_derivation_source": "depends on unassigned wall embedding and metric character",
+        "candidate_support_character": null,
+        "core_incidence": "none",
+        "density_type": "none",
+        "domain": "S5 wall",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": "wall/GHY variation",
+        "existing_normalization": "unit normalization",
+        "fiber_base_ownership": "none",
+        "gauge_representation": "singlet",
+        "historical_aliases": [
+          "fold normal"
+        ],
+        "object": "wall_normal",
+        "primitive_or_composite": "composite after embedding",
+        "tensor_type": "normal vector/covector",
+        "wall_incidence": "enclosure wall"
+      },
+      {
+        "boundary_incidence": "none",
+        "candidate_derivation_source": "multiplicative group law",
+        "candidate_support_character": "group coordinate, not a linear character",
+        "core_incidence": "vanishes asymptotically",
+        "density_type": "scalar",
+        "domain": "regular support",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": "v11.0 Haar term",
+        "existing_normalization": "upsilon in (0,1]",
+        "fiber_base_ownership": "none",
+        "gauge_representation": "singlet",
+        "historical_aliases": [
+          "support order parameter"
+        ],
+        "object": "support_scalar_upsilon",
+        "primitive_or_composite": "primitive",
+        "tensor_type": "positive real scalar",
+        "wall_incidence": "none"
+      },
+      {
+        "boundary_incidence": "none",
+        "candidate_derivation_source": "logarithmic Haar coordinate",
+        "candidate_support_character": "affine shift delta q_D=-lambda_D epsilon",
+        "core_incidence": "tends to +infinity",
+        "density_type": "scalar",
+        "domain": "regular support",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": "v11.0 Haar term",
+        "existing_normalization": "q_D=-lambda_D log upsilon",
+        "fiber_base_ownership": "none",
+        "gauge_representation": "singlet",
+        "historical_aliases": [
+          "depth",
+          "spacetime-removal depth"
+        ],
+        "object": "canonical_depth_q_D",
+        "primitive_or_composite": "composite coordinate",
+        "tensor_type": "real scalar",
+        "wall_incidence": "none"
+      },
+      {
+        "boundary_incidence": "none",
+        "candidate_derivation_source": "no map from Hopf incidence to G_D generator",
+        "candidate_support_character": "w_C open",
+        "core_incidence": "core-facing",
+        "density_type": "scalar",
+        "domain": "S8/Hopf",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": "S8 env",
+        "existing_normalization": null,
+        "fiber_base_ownership": "Hopf",
+        "gauge_representation": "singlet",
+        "historical_aliases": [
+          "core mode",
+          "Hopf mode"
+        ],
+        "object": "core_Hopf_mode_q_C",
+        "primitive_or_composite": "primitive mode class",
+        "tensor_type": "scalar/metric mode",
+        "wall_incidence": "none"
+      },
+      {
+        "boundary_incidence": "none",
+        "candidate_derivation_source": "no map from wall incidence to G_D generator",
+        "candidate_support_character": "w_W open",
+        "core_incidence": "none",
+        "density_type": "scalar",
+        "domain": "S5/wall",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": "S5 cap",
+        "existing_normalization": null,
+        "fiber_base_ownership": "none",
+        "gauge_representation": "singlet",
+        "historical_aliases": [
+          "wall mode",
+          "fold mode"
+        ],
+        "object": "wall_fold_mode_q_W",
+        "primitive_or_composite": "primitive mode class",
+        "tensor_type": "scalar/radial mode",
+        "wall_incidence": "enclosure wall"
+      },
+      {
+        "boundary_incidence": "none",
+        "candidate_derivation_source": "dA and A wedge A homogeneity",
+        "candidate_support_character": "0 under multiplicative support scaling of a non-Abelian connection",
+        "core_incidence": "none",
+        "density_type": "none",
+        "domain": "localized S4",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": "intrinsic gauge action",
+        "existing_normalization": "g1,g2,g3",
+        "fiber_base_ownership": "none",
+        "gauge_representation": "U1 x SU2 x SU3 adjoint",
+        "historical_aliases": [
+          "A_mu"
+        ],
+        "object": "gauge_connections",
+        "primitive_or_composite": "primitive",
+        "tensor_type": "adjoint one-forms",
+        "wall_incidence": "none"
+      },
+      {
+        "boundary_incidence": "none",
+        "candidate_derivation_source": "F=dA+A wedge A",
+        "candidate_support_character": "0 when gauge-connection weight is zero",
+        "core_incidence": "none",
+        "density_type": "none",
+        "domain": "localized S4",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": "intrinsic gauge action",
+        "existing_normalization": null,
+        "fiber_base_ownership": "none",
+        "gauge_representation": "adjoint",
+        "historical_aliases": [
+          "F_A"
+        ],
+        "object": "gauge_curvatures",
+        "primitive_or_composite": "composite",
+        "tensor_type": "adjoint two-forms",
+        "wall_incidence": "none"
+      },
+      {
+        "boundary_incidence": "none",
+        "candidate_derivation_source": "kinetic/Yukawa covariance conditional on support action",
+        "candidate_support_character": "0 only inside the rejected full-coframe scale-symmetry candidate; otherwise unassigned",
+        "core_incidence": "none",
+        "density_type": "spinor",
+        "domain": "localized S4",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": "Dirac/Yukawa terms",
+        "existing_normalization": "common kinetic normalization",
+        "fiber_base_ownership": "none",
+        "gauge_representation": "frozen SM reps",
+        "historical_aliases": [
+          "psi_L,psi_R"
+        ],
+        "object": "fermion_fields",
+        "primitive_or_composite": "primitive",
+        "tensor_type": "chiral spinors",
+        "wall_incidence": "none"
+      },
+      {
+        "boundary_incidence": "none",
+        "candidate_derivation_source": "positive-real Hermitian and contragredient dual laws differ; action supplies no G_D pairing",
+        "candidate_support_character": null,
+        "core_incidence": "none",
+        "density_type": "spinor",
+        "domain": "localized S4",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": "Dirac/Yukawa terms",
+        "existing_normalization": null,
+        "fiber_base_ownership": "none",
+        "gauge_representation": "singlet",
+        "historical_aliases": [
+          "bar psi",
+          "psi dagger"
+        ],
+        "object": "fermion_adjoints",
+        "primitive_or_composite": "composite but pairing-dependent",
+        "tensor_type": "dual/Hermitian spinors",
+        "wall_incidence": "none"
+      },
+      {
+        "boundary_incidence": "none",
+        "candidate_derivation_source": "mass/quartic coexistence with inert coefficients",
+        "candidate_support_character": "sigma=0 and localized scalar=0 inside full-coframe candidate; otherwise unassigned",
+        "core_incidence": "none",
+        "density_type": "scalar",
+        "domain": "S8/S5/S4",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": "scalar kinetic/potential terms",
+        "existing_normalization": "retained EFT inputs",
+        "fiber_base_ownership": "none",
+        "gauge_representation": "sector dependent",
+        "historical_aliases": [
+          "sigma",
+          "Higgs",
+          "topographic scalar"
+        ],
+        "object": "scalar_topographic_fields",
+        "primitive_or_composite": "primitive",
+        "tensor_type": "real/complex scalars",
+        "wall_incidence": "none"
+      },
+      {
+        "boundary_incidence": "none",
+        "candidate_derivation_source": "action normalization/current origin incomplete",
+        "candidate_support_character": null,
+        "core_incidence": "none",
+        "density_type": "none",
+        "domain": "localized S4/common current",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": "S_current",
+        "existing_normalization": null,
+        "fiber_base_ownership": "none",
+        "gauge_representation": "charged weak",
+        "historical_aliases": [
+          "charged-current incidence"
+        ],
+        "object": "charged_current_maps",
+        "primitive_or_composite": "primitive morphisms",
+        "tensor_type": "current intertwiners",
+        "wall_incidence": "none"
+      },
+      {
+        "boundary_incidence": "none",
+        "candidate_derivation_source": "response normalization remains conditional",
+        "candidate_support_character": null,
+        "core_incidence": "none",
+        "density_type": "boundary density",
+        "domain": "localized S4/collar",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": "neutral response layer",
+        "existing_normalization": null,
+        "fiber_base_ownership": "none",
+        "gauge_representation": "singlet",
+        "historical_aliases": [
+          "neutral incidence"
+        ],
+        "object": "neutral_response_maps",
+        "primitive_or_composite": "primitive morphisms",
+        "tensor_type": "response operators",
+        "wall_incidence": "none"
+      },
+      {
+        "boundary_incidence": "none",
+        "candidate_derivation_source": "idempotency requires 2w_P=w_P",
+        "candidate_support_character": "0",
+        "core_incidence": "none",
+        "density_type": "none",
+        "domain": "finite localized module",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": "frozen finite ledger",
+        "existing_normalization": "P^2=P",
+        "fiber_base_ownership": "none",
+        "gauge_representation": "commutant projectors",
+        "historical_aliases": [
+          "P_l,P_u,P_d"
+        ],
+        "object": "sector_projectors",
+        "primitive_or_composite": "composite idempotents",
+        "tensor_type": "endomorphisms",
+        "wall_incidence": "none"
+      },
+      {
+        "boundary_incidence": "none",
+        "candidate_derivation_source": "schematic action lacks a G_D-equivariant intertwiner",
+        "candidate_support_character": "w_compat open",
+        "core_incidence": "none",
+        "density_type": "density after contraction",
+        "domain": "cross-stratum",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": "S_compatibility",
+        "existing_normalization": "normalization 1",
+        "fiber_base_ownership": "none",
+        "gauge_representation": "singlet",
+        "historical_aliases": [
+          "matching multipliers"
+        ],
+        "object": "compatibility_fields",
+        "primitive_or_composite": "primitive multipliers",
+        "tensor_type": "multiplier tensors",
+        "wall_incidence": "none"
+      },
+      {
+        "boundary_incidence": "finite regular",
+        "candidate_derivation_source": "embedding action absent",
+        "candidate_support_character": null,
+        "core_incidence": "none",
+        "density_type": "none",
+        "domain": "bulk to boundary",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": "boundary variation",
+        "existing_normalization": null,
+        "fiber_base_ownership": "none",
+        "gauge_representation": "singlet",
+        "historical_aliases": [
+          "i*",
+          "trace"
+        ],
+        "object": "boundary_trace_maps",
+        "primitive_or_composite": "primitive morphisms",
+        "tensor_type": "trace/pullback",
+        "wall_incidence": "none"
+      },
+      {
+        "boundary_incidence": "none",
+        "candidate_derivation_source": "requires a basic connection and fiber-measure character",
+        "candidate_support_character": null,
+        "core_incidence": "none",
+        "density_type": "measure dependent",
+        "domain": "S8 to S5/S4",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": "v7.1 reduction",
+        "existing_normalization": "V_F normalized",
+        "fiber_base_ownership": "pushforward",
+        "gauge_representation": "singlet",
+        "historical_aliases": [
+          "pi_!"
+        ],
+        "object": "fiber_integration_maps",
+        "primitive_or_composite": "primitive morphisms",
+        "tensor_type": "pushforward",
+        "wall_incidence": "none"
+      },
+      {
+        "boundary_incidence": "none",
+        "candidate_derivation_source": "complete G_D-natural cross-stratum map absent",
+        "candidate_support_character": null,
+        "core_incidence": "none",
+        "density_type": "M4 density",
+        "domain": "stratified parent to effective M4",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": "v7.1 reduction plus localized incidence",
+        "existing_normalization": null,
+        "fiber_base_ownership": "none",
+        "gauge_representation": "singlet",
+        "historical_aliases": [
+          "R_84",
+          "effective projection"
+        ],
+        "object": "M4_reduction_maps",
+        "primitive_or_composite": "composite morphism",
+        "tensor_type": "functor",
+        "wall_incidence": "none"
+      },
+      {
+        "boundary_incidence": "none",
+        "candidate_derivation_source": "core action and phase space absent",
+        "candidate_support_character": "w_core open",
+        "core_incidence": "terminal asymptotic end",
+        "density_type": "not supplied",
+        "domain": "q_D=+infinity",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": null,
+        "existing_normalization": null,
+        "fiber_base_ownership": "none",
+        "gauge_representation": "singlet",
+        "historical_aliases": [
+          "core response",
+          "terminal stratum data"
+        ],
+        "object": "core_asymptotic_data",
+        "primitive_or_composite": "primitive boundary data",
+        "tensor_type": "phase-space candidate",
+        "wall_incidence": "none"
+      }
+    ],
+    "status": "BHSM_COMPOSITE_SUPPORT_CONNECTION_DERIVED_BUT_PRIMITIVE_CHARACTER_AND_CURRENT_LEDGER_NOT_ACTION_FIXED",
+    "validation": {
+      "coframe_candidate_exhausted": true,
+      "composites_not_independently_weighted": true,
+      "every_object_typed": true,
+      "minimum_inventory_complete": true,
+      "no_1_2_7_import": true,
+      "no_empirical_inputs": true
+    },
+    "validation_passed": true
+  },
   "source_base_main_sha": "96677288b8a60570b43b2383d2517f57a33a6da4",
   "source_base_tree_sha": "7d1c0024ccb6fee3ea36579e313143b24ceec9c8",
   "support_action_variation": {
@@ -645,6 +1403,434 @@
     "validation_passed": true,
     "wall_equation": null
   },
+  "support_character_boundary_core_selection": {
+    "anomaly_selects_ledger": false,
+    "anomaly_test": {
+      "Hermiticity": "requires a missing G_D pairing/adjoint law",
+      "charge_conjugation": null,
+      "fermion_measure_jacobian": null,
+      "forced_zero_matter_candidate": "trivially compatible with gauge anomaly cancellation",
+      "mixed_support_gauge_anomalies": null,
+      "orientation_reversal": null,
+      "selection_result": "does not fix w_C,w_W,w_wall,w_compatibility,w_core"
+    },
+    "artifact": "BHSM_support_character_boundary_core_selection_v11_2",
+    "boundary_selects_ledger": false,
+    "boundary_test": {
+      "GHY": "full Weyl scaling generates paired normal derivatives, but the nontrivial coframe candidate is already rejected and partial support weights are absent",
+      "action_owned_ensemble": null,
+      "compatibility_terms": "no G_D-equivariant cross-stratum multiplier law",
+      "fermion_boundary_form": "historical maximal-isotropic families do not determine a G_D character",
+      "gauge_boundary_terms": "no support term for forced-zero gauge-connection character",
+      "normalized_boundary_measure": "normalization fixes an integral, not its support transformation",
+      "scalar_boundary_terms": "conditional linear coupling yields -w boundary(n.A_D |phi|^2), but w is open",
+      "support_normal_derivative": "pi_D=sqrt(|h|) n.dq_D is known; its boundary ensemble is not selected",
+      "weights_fixed": []
+    },
+    "core_selects_ledger": false,
+    "core_test": {
+      "candidate_character_behavior": "upsilon^w=exp[-w q_D/lambda_D] decays for w>0, is constant for w=0, and grows for w<0",
+      "finite_action": null,
+      "finite_energy": null,
+      "finite_support_flux": null,
+      "finite_symplectic_flux": null,
+      "incoming_outgoing_domain": null,
+      "limit": "q_D->+infinity, upsilon->0+",
+      "reason": "the core measure, response functional, asymptotic field profiles, and self-adjoint domain are absent",
+      "weights_fixed": []
+    },
+    "status": "BHSM_BOUNDARY_CORE_AND_ANOMALY_TESTS_DO_NOT_SELECT_PRIMITIVE_SUPPORT_LEDGER_FROM_CURRENT_ACTION",
+    "validation": {
+      "all_boundary_sectors_tested": true,
+      "all_core_finiteness_tests_explicit": true,
+      "anomaly_not_assumed_away": true,
+      "no_core_selection_fabricated": true,
+      "no_ensemble_imposed": true
+    },
+    "validation_passed": true
+  },
+  "support_character_constraint_system": {
+    "artifact": "BHSM_support_character_constraint_system_v11_2",
+    "assumptions": [
+      "the provisional coframe character acts on the full D8 metric and its induced localized S4 coframe",
+      "existing independent coefficients are inert rather than spurions",
+      "real and Hermitian-conjugate fields co-scale under the positive real character in this candidate",
+      "action invariance is tested as a candidate global representation symmetry; no local G_D gauge symmetry is assumed"
+    ],
+    "boundary_only_ambiguities": [
+      "w_wall_embedding"
+    ],
+    "coefficient_policy": "existing independent action coefficients are inert; assigning spurion characters would add the missing datum rather than derive it",
+    "continuous_rescalings": "five independent directions, not one common normalization",
+    "core_only_ambiguities": [
+      "w_core"
+    ],
+    "discrete_solutions": [],
+    "forced_zero_within_full_coframe_candidate": [
+      "r_e",
+      "w_gauge_connection",
+      "w_projector",
+      "w_chi",
+      "w_sigma",
+      "w_psi",
+      "w_phi"
+    ],
+    "interpretation": "the current action rejects nontrivial universal coframe scaling but contains no equations for the intended support, wall, compatibility, and core characters",
+    "matrix": [
+      [
+        6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        8,
+        0,
+        0,
+        0,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0,
+        0,
+        0,
+        2,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "nullity": 5,
+    "nullspace_basis": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "rank": 7,
+    "right_hand_side": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "row_labels": [
+      "S8_Einstein_Hilbert",
+      "S8_cosmological",
+      "S8_sigma_mass",
+      "S8_sigma_quartic",
+      "S8_chi_kinetic",
+      "nonabelian_F_homogeneity",
+      "projector_idempotency",
+      "S4_fermion_kinetic",
+      "S4_scalar_kinetic",
+      "S4_Yukawa",
+      "S4_scalar_quartic",
+      "S4_scalar_mass"
+    ],
+    "scope": "maximal exact homogeneous-character system justified by the explicit frozen S8/S4 terms and the full-coframe candidate",
+    "sector_specific_ambiguities": [
+      "w_C",
+      "w_W",
+      "w_compatibility"
+    ],
+    "sign_ambiguities": [
+      "w_C",
+      "w_W",
+      "w_wall_embedding",
+      "w_compatibility",
+      "w_core"
+    ],
+    "status": "EXACT_CONSTRAINT_MATRIX_RANK_7_NULLITY_5_PRIMITIVE_LEDGER_UNDERDETERMINED",
+    "unconstrained": [
+      "w_C",
+      "w_W",
+      "w_wall_embedding",
+      "w_compatibility",
+      "w_core"
+    ],
+    "validation": {
+      "forced_coframe_trivial": true,
+      "matrix_exact": true,
+      "nullity_exact": true,
+      "open_columns_exact": true,
+      "rank_exact": true
+    },
+    "validation_passed": true,
+    "variables": [
+      "r_e",
+      "w_gauge_connection",
+      "w_projector",
+      "w_chi",
+      "w_sigma",
+      "w_psi",
+      "w_phi",
+      "w_C",
+      "w_W",
+      "w_wall_embedding",
+      "w_compatibility",
+      "w_core"
+    ]
+  },
+  "support_character_equivalence_classes": {
+    "Haar_scale_disposition": "UNRESOLVED: five independent character directions remain, and canonical/domain equivalence is incomplete",
+    "artifact": "BHSM_support_character_equivalence_classes_v11_2",
+    "common_rescaling_test": {
+      "beta_a_invariant": "beta_a=w_a/lambda_D",
+      "boundary_core_equivalence": null,
+      "candidate": "w_a->c w_a, lambda_D->c lambda_D",
+      "canonical_q_D_kinetic_term_invariant": false,
+      "common_scaling_quotiented": false,
+      "complete_symplectic_equivalence": null,
+      "connection_couplings_in_q_D_coordinates": "depend on beta_a",
+      "reason": "q_D->c q_D changes the canonically normalized kinetic coefficient unless an action coefficient is also transformed"
+    },
+    "multiple_physically_equivalent_ledgers_proven": false,
+    "multiple_physically_inequivalent_ledgers_proven": false,
+    "null_directions_form_one_common_normalization": false,
+    "number_of_action_allowed_null_directions": 5,
+    "pure_gauge_test": {
+      "boundary_conditions_preserved": null,
+      "classification": "LOCALLY_PURE_GAUGE_AS_A_CONNECTION_FORM_BUT_NOT_PROVEN_PHYSICALLY_REMOVABLE_AT_BOUNDARY_OR_CORE",
+      "core_map_invertible": false,
+      "fiber_integration_preserved": null,
+      "globally_trivial_on_regular_domain": "yes when upsilon is single-valued and strictly positive and the bundle has no extra support holonomy",
+      "local_curvature": "dA_D=0 on every smooth regular chart",
+      "nontrivial_holonomy": "none from exact d log upsilon on a single-valued regular chart; extra bundle data are not supplied",
+      "quantum_measure_preserved": null,
+      "regular_field_redefinition": "Phi_w -> upsilon^(-w) Phi_w removes A_D from D=nabla-wA_D",
+      "wall_topology_preserved": null
+    },
+    "status": "BHSM_SUPPORT_CHARACTER_EQUIVALENCE_QUOTIENT_EXHAUSTED_BUT_NOT_CLOSED",
+    "validation": {
+      "beta_invariance_recorded": true,
+      "core_singularity_explicit": true,
+      "flat_not_equated_with_irrelevance": true,
+      "normalization_not_prematurely_quotiented": true,
+      "regular_redefinition_explicit": true
+    },
+    "validation_passed": true
+  },
   "support_constraint_ledger": {
     "artifact": "BHSM_support_constraint_ledger_v11_2",
     "complete_dirac_matrix": null,
@@ -671,6 +1857,7 @@
     "connection_is_independent_field": false,
     "derivative_verdict": "BHSM_COMPOSITE_FLAT_SUPPORT_CONNECTION_DERIVED_BUT_PRIMITIVE_SUPPORT_CHARACTERS_NOT_ACTION_ASSIGNED",
     "fiber_measure_weight": null,
+    "interpretation": "A_D is the exact Maurer-Cartan form of multiplicative support; using it as a local representation connection is conditional on a G_D field action",
     "laws": {
       "boundary_pullback": "i*(D Phi)=D_boundary(i*Phi) when i is equivariant and A_D pulls back",
       "contraction": "support weights add, including the weight of every inverse metric used in contraction",
@@ -680,11 +1867,12 @@
       "dual": "w(Phi*)=-w(Phi), so D<Phi*,Phi>=d<Phi*,Phi>",
       "fiber_integration": "D_base pi_!(alpha)=pi_!(D alpha) only for basic A_D and an assigned fiber-measure character",
       "frozen_limit": "upsilon=1 constant implies A_D=0 and D^(w)=nabla",
-      "local_transformation": "upsilon->t upsilon; Phi_w->t^w Phi_w; A_D->A_D+d log(t)",
+      "local_transformation": "conditional local-frame test: upsilon->t upsilon; Phi_w->t^w Phi_w; A_D->A_D+d log(t)",
       "metric": "D G=-w_G A_D tensor G for the Levi-Civita parent connection; metric compatibility occurs iff w_G=0",
       "support_connection": "A_D=d log(upsilon)=-(1/lambda_D)dq_D",
       "tensor": "D^(w1+w2)(Phi tensor Psi)=D^(w1)Phi tensor Psi+Phi tensor D^(w2)Psi"
     },
+    "local_support_frame_is_action_derived_gauge_redundancy": false,
     "metric_weight": null,
     "primitive_field_weights": null,
     "support_group": "G_D=(R_{>0},multiplication)",
@@ -721,6 +1909,133 @@
       "regular_support_pair_retained": true
     },
     "validation_passed": true
+  },
+  "support_linear_quadratic_connection_couplings": {
+    "artifact": "BHSM_support_linear_quadratic_connection_couplings_v11_2",
+    "complete_boundary_contributions": null,
+    "complete_canonical_momentum_shifts": null,
+    "complete_linear_couplings": null,
+    "complete_quadratic_couplings": null,
+    "connection_convention": "delta Phi=+w epsilon Phi, delta A_D=d epsilon, D=nabla-w A_D",
+    "frozen_limit": "A_D=0 at constant upsilon=1 restores every parent kinetic term",
+    "sectors": [
+      {
+        "exact_norm": "|D phi|^2=|nabla phi|^2-2w A_D.phi nabla phi+w^2 A_D^2 phi^2",
+        "integration_by_parts": "-w A_D.d(phi^2)=+w phi^2 div(A_D)-w boundary(n.A_D phi^2)",
+        "linear_term": "-2w A_D.phi nabla phi",
+        "momentum_shift": "Pi_phi=Pi_phi,parent-w sqrt(gamma) A_D,normal phi (signature convention dependent)",
+        "quadratic_term": "+w^2 A_D^2 phi^2",
+        "sector": "real scalar",
+        "status": "weight/pairing not action-owned",
+        "stress_and_current": "fixed uniquely once w and the kinetic coefficient are action-owned"
+      },
+      {
+        "exact_norm": "(D phi)^dagger D phi=|nabla phi|^2-w A_D.(phi^dagger nabla phi+(nabla phi)^dagger phi)+w^2 A_D^2|phi|^2",
+        "integration_by_parts": "linear term is -w A_D.d|phi|^2 plus its boundary term",
+        "linear_term": "Hermitian radial current, not the U(1) phase current",
+        "momentum_shift": "paired shift in Pi_phi and Pi_phi_dagger",
+        "quadratic_term": "+w^2 A_D^2|phi|^2",
+        "sector": "complex Hermitian co-scaling scalar",
+        "status": "weight/pairing not action-owned",
+        "stress_and_current": "requires the action to declare Hermitian co-scaling rather than contragredient duality"
+      },
+      {
+        "exact_norm": "D^(-w)Phi* paired with D^(w)Phi; signs follow the two opposite characters",
+        "integration_by_parts": "boundary Green form inherits the pairing character",
+        "linear_term": "antisymmetric representation current determined by the declared pairing",
+        "momentum_shift": "dual canonical momenta shift oppositely",
+        "quadratic_term": "the product of opposite connection charges; never selectable independently",
+        "sector": "dual-paired field",
+        "status": "weight/pairing not action-owned",
+        "stress_and_current": "current unavailable because the parent action supplies no G_D pairing law"
+      },
+      {
+        "exact_norm": "first-order Dirac terms are at most linear in A_D before eliminating auxiliaries; a standalone A_D^2 fermion seagull is not generated by minimal first-order covariantization",
+        "integration_by_parts": "Dirac Green boundary form",
+        "linear_term": "-w bar(psi) Gamma^A A_D,A psi, with adjoint character fixed by the support pairing",
+        "momentum_shift": "first-order constraint structure, not a scalar momentum shift",
+        "quadratic_term": "none for a primitive first-order Dirac operator; may arise only after squaring/reduction and must not be inserted independently",
+        "sector": "fermion",
+        "status": "weight/pairing not action-owned",
+        "stress_and_current": "blocked by adjoint/pairing character and chiral anomaly audit"
+      },
+      {
+        "exact_norm": "no A_D coupling follows when the non-Abelian gauge connection has forced multiplicative weight zero",
+        "integration_by_parts": null,
+        "linear_term": null,
+        "momentum_shift": null,
+        "quadratic_term": null,
+        "sector": "gauge",
+        "status": "TRIVIAL_ZERO_IN_TESTED_CANDIDATE",
+        "stress_and_current": "unchanged in the tested coframe candidate"
+      },
+      {
+        "exact_norm": null,
+        "integration_by_parts": null,
+        "linear_term": null,
+        "momentum_shift": null,
+        "quadratic_term": null,
+        "sector": "geometry/wall/boundary/compatibility/core",
+        "status": "NO_PRIMITIVE_CHARACTER_OR_COMPLETE_LOCAL_TERM",
+        "stress_and_current": null
+      }
+    ],
+    "status": "EXACT_COUPLING_IDENTITIES_DERIVED_CONDITIONALLY; COEFFICIENT_LEDGER_NOT_ACTION_FIXED",
+    "validation": {
+      "fermion_first_order_exception_explicit": true,
+      "frozen_limit": true,
+      "gauge_zero_weight_respected": true,
+      "linear_never_without_quadratic_for_second_order_scalar": true,
+      "real_scalar_identity_exact": true
+    },
+    "validation_passed": true
+  },
+  "support_noether_current": {
+    "anomaly_result": {
+      "action_forced_matter_character_candidate": 0,
+      "mixed_support_gauge_anomaly_for_forced_zero_candidate": 0,
+      "nonzero_candidate_jacobian": null,
+      "reason": "no nonzero chiral support-charge ledger or regulator-defined support symmetry exists to evaluate a Fujikawa Jacobian"
+    },
+    "artifact": "BHSM_support_noether_current_v11_2",
+    "boundary_current": null,
+    "coefficient_of_gradient_epsilon": "j_shift^A=-lambda_D^2 A_D^A=lambda_D nabla^A q_D",
+    "complete_support_current": null,
+    "core_current": null,
+    "covariant_derivative": "D Phi_w=nabla Phi_w-w A_D Phi_w",
+    "current_classification": "ISOLATED_Q_D_SHIFT_NOETHER_CURRENT_AND_FORMAL_COMPOSITE_RESPONSE; NO_ACTION_OWNED_PRIMITIVE_MATTER_CURRENT",
+    "field_law_tested": "delta Phi_w=+w epsilon Phi_w",
+    "formal_response_current": "J_response^A=-delta S/delta A_D,A=+lambda_D^2 A_D^A=-lambda_D nabla^A q_D",
+    "functional_derivative_legitimacy": "formal source derivative only: A_D is composite, not an independent varied connection in the parent configuration bundle",
+    "geometry_current": null,
+    "infinitesimal_support_law": {
+      "delta_A_D": "d epsilon",
+      "delta_log_upsilon": "epsilon",
+      "delta_q_D": "-lambda_D epsilon"
+    },
+    "isolated_support_kinetic_action": "L_D=-lambda_D^2 A_D^2/2=-|dq_D|^2/2",
+    "local_variation": "delta S_D=integral sqrt(-G)[-lambda_D^2 A_D^A nabla_A epsilon] plus boundary orientation conventions",
+    "matter_character_current": null,
+    "measure_current": null,
+    "rejected_sign_pair": "delta Phi_w=+w epsilon Phi_w with D=nabla+w A_D is not covariant; it leaves 2w d(epsilon)Phi",
+    "sign_relation": "j_shift=-J_response under the stated response-current convention",
+    "transformation_classification": {
+      "field_redefinition_on_regular_domain": true,
+      "geometric_coframe_scaling": "nontrivial candidate rejected by EH/cosmological action and local Weyl derivative terms",
+      "global_representation_symmetry_of_isolated_support_kinetic_term": true,
+      "global_symmetry_of_nonzero_character_couplings": false,
+      "local_gauge_redundancy": false,
+      "spurionic_symmetry": "possible only after assigning transformations to independent coefficients; not current-action owned"
+    },
+    "validation": {
+      "composite_source_derivative_qualified": true,
+      "local_gauge_symmetry_not_assumed": true,
+      "minus_sign_fixed_for_positive_character": true,
+      "plus_candidate_rejected_for_positive_character": true,
+      "plus_sign_valid_for_opposite_character": true
+    },
+    "validation_passed": true,
+    "wall_current": null
   },
   "support_physical_equivalence_quotient": {
     "artifact": "BHSM_support_physical_equivalence_quotient_v11_2",
@@ -798,14 +2113,20 @@
   },
   "validation": {
     "all_sections_valid": true,
+    "boundary_core_anomaly_exhausted": true,
     "canonical_domain_fail_closed": true,
     "complete_action_fail_closed": true,
     "complete_variation_fail_closed": true,
+    "constraint_rank_and_nullity_exact": true,
+    "current_classified_without_gauge_overclaim": true,
     "downstream_fail_closed": true,
     "equivalence_not_overclaimed": true,
+    "equivalence_quotient_exhausted": true,
     "haar_not_fabricated": true,
     "historical_recovery_exhausted": true,
+    "linear_quadratic_pairing_enforced": true,
     "no_prediction_changes": true,
+    "primitive_ledger_exhausted": true,
     "support_connection_derived": true
   },
   "validation_passed": true,

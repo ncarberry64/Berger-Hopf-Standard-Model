@@ -3,9 +3,9 @@
 ## v11.2 current critical path
 
 The current verdict is
-`BHSM_HISTORICAL_RECOVERY_NARROWS_BUT_DOES_NOT_CLOSE_COMPLETE_SUPPORTED_ACTION`.
+`BHSM_COMPOSITE_SUPPORT_CONNECTION_DERIVED_BUT_PRIMITIVE_CHARACTER_AND_CURRENT_LEDGER_NOT_ACTION_FIXED`.
 Resume only from
-`ACTION_DERIVED_PRIMITIVE_SUPPORT_CHARACTER_AND_CURRENT_COUPLING_LEDGER`.
+`ACTION_TERM_OR_GEOMETRIC_PRINCIPLE_FIXING_PRIMITIVE_SUPPORT_CHARACTER_OWNERSHIP`.
 It must determine the primitive charges in `J_D`, the quadratic connection
 completion, all induced measure/normal characters, and their cross-stratum
 intertwiners without particle-data tuning. Only then may the full variation,

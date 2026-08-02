@@ -29,6 +29,11 @@ DERIVED_RESULTS = [
     "composite flat support connection A_D=d log(upsilon)=-(dq_D/lambda_D)",
     "support-covariant tensor, dual, contraction, density, boundary-pullback, and conditional fiber-integration laws",
     "exhaustive complete-supported-action historical reconciliation through v11.1 and the closest unmerged branches",
+    "targeted primitive-character/current recovery through v4--v11.1, verified bundles, USB mirror, and author resources",
+    "exact strongest-coframe action-character matrix with rank 7 and nullity 5",
+    "rejection of nontrivial universal coframe scaling by the D8 Einstein-Hilbert/cosmological terms",
+    "isolated q_D shift current and formal composite A_D response classified without treating G_D as a local gauge symmetry",
+    "paired linear/quadratic scalar connection identities and first-order fermion exception",
 ]
 CONDITIONAL_RESULTS = [
     "complete supported-action family indexed by action-owned primitive characters and lambda_D",
@@ -41,6 +46,8 @@ INVALIDATED_RESULTS = [
     "the frozen parent limit at upsilon=1 selects a unique support functor",
     "the composite flat connection by itself assigns primitive support characters",
     "earlier matter/interface self-adjoint domains select the support/core canonical domain",
+    "the five remaining character directions are one common normalization freedom",
+    "flatness of A_D proves physical removability at the boundary or core",
 ]
 OPEN_RESULTS = [
     EXACT_NEXT_OBJECT,
@@ -117,10 +124,11 @@ def status_payload() -> dict[str, Any]:
 def public_repo_status() -> str:
     return (
         "BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. "
-        "Current campaign status: v11.2 exhaustively recovers the earlier supported-action, reduction, "
-        "and boundary-domain work and derives the composite flat connection A_D=d log(upsilon). The "
-        "parent action still does not assign primitive support characters, so its support-current and "
-        "quadratic connection couplings, complete variation, and boundary/core canonical domain remain open. "
+        "Current campaign status: v11.2 derives the composite flat connection A_D=d log(upsilon) and "
+        "exhausts the primitive-character/current routes. The strongest exact action-character system "
+        "has rank 7 and nullity 5: it rejects nontrivial universal coframe scaling but leaves the core/Hopf, "
+        "wall/fold, wall-embedding, compatibility, and core-asymptotic character directions unowned by the action. The "
+        "complete support current, quadratic completion, variation, and boundary/core domain remain open. "
         "Physical equivalence and the physical-or-conventional status of lambda_D are not claimed. "
         "The v11.0 logarithmic depth, positive Haar metric, healthy conditional support pair, "
         "infinite-distance core endpoint, canonical ontology, and frozen generation architecture remain intact. "

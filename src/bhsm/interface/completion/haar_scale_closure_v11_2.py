@@ -7,7 +7,7 @@ from typing import Any
 
 def haar_payload() -> dict[str, Any]:
     routes = [
-        {"route": "generator_redundancy", "result": "OPEN", "reason": "canonical kinetic normalization makes w/lambda_D interaction data, but no primitive charge is selected"},
+        {"route": "generator_redundancy", "result": "NOT_A_COMPLETE_QUOTIENT", "reason": "w/lambda_D is invariant under common rescaling, but the exact action-character kernel has five independent directions rather than one common scale"},
         {"route": "primitive_character_lattice", "result": "BLOCKED", "reason": "no action-owned primitive support character"},
         {"route": "canonical_kinetic_normalization", "result": "PARTIAL", "reason": "fixes the q_D kinetic convention, not a coupled character"},
         {"route": "gravitational_matching", "result": "BLOCKED", "reason": "supported coframe and full reduced kinetic matrix absent"},
@@ -25,6 +25,9 @@ def haar_payload() -> dict[str, Any]:
         "lambda_D": None,
         "lambda_D_positive": True,
         "primitive_lattice": None,
+        "exact_character_constraint_rank": 7,
+        "exact_character_constraint_nullity": 5,
+        "nullspace_is_single_common_normalization": False,
         "canonical_coupling": "g_Da=w_a/lambda_D",
         "physical_or_conventional": None,
         "routes": routes,

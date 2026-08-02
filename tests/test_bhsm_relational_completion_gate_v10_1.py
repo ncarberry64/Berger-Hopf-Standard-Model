@@ -28,9 +28,9 @@ def test_completion_gate_is_conditional_and_fail_closed():
 
 
 def test_current_master_api_advances_while_historical_gate_stays_v101():
-    assert CURRENT_VERSION == "v11.1"
-    assert CURRENT_VERDICT == "BHSM_SUPPORT_FUNCTOR_PHYSICAL_EQUIVALENCE_QUOTIENT_BLOCKED_BY_ABSENT_COMPLETE_LOCAL_BOUNDARY_AND_CORE_ACTION_DATA"
-    assert CURRENT_MISSING_OBJECT == "COMPLETE_LOCAL_SUPPORTED_ACTION_WITH_SUPPORT_DERIVATIVE_COUPLINGS_AND_BOUNDARY_CORE_CANONICAL_DOMAIN"
+    assert CURRENT_VERSION == "v11.2"
+    assert CURRENT_VERDICT == "BHSM_COMPOSITE_SUPPORT_CONNECTION_DERIVED_BUT_PRIMITIVE_CHARACTER_AND_CURRENT_LEDGER_NOT_ACTION_FIXED"
+    assert CURRENT_MISSING_OBJECT == "ACTION_TERM_OR_GEOMETRIC_PRINCIPLE_FIXING_PRIMITIVE_SUPPORT_CHARACTER_OWNERSHIP"
     canonical = gate.canonical_completion_gate_payload()
     assert canonical["version"] == "v10.1"
     assert canonical["author_doctrine_integrated"] is True

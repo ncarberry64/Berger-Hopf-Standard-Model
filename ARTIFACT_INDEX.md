@@ -2,13 +2,15 @@
 
 ## BHSM v11.2 complete-supported-action campaign
 
-Fifteen deterministic `BHSM_*_v11_2.json` records cover historical recovery,
+Twenty-one deterministic `BHSM_*_v11_2.json` records cover historical recovery,
 supported geometry, the composite support derivative, action terms,
 variation, phase space, constraints, boundary/core domains, equivalence,
 Haar scale, core transfer, three-mode dynamics, downstream gates, and the
-final gate. `BHSM_1_0_completion_gate.json` is the canonical current gate.
-Verdict: `BHSM_HISTORICAL_RECOVERY_NARROWS_BUT_DOES_NOT_CLOSE_COMPLETE_SUPPORTED_ACTION`.
-Next object: `ACTION_DERIVED_PRIMITIVE_SUPPORT_CHARACTER_AND_CURRENT_COUPLING_LEDGER`.
+final gate, plus the primitive ledger, exact constraint matrix, current,
+paired connection couplings, boundary/core selection, and equivalence classes.
+`BHSM_1_0_completion_gate.json` is the canonical current gate.
+Verdict: `BHSM_COMPOSITE_SUPPORT_CONNECTION_DERIVED_BUT_PRIMITIVE_CHARACTER_AND_CURRENT_LEDGER_NOT_ACTION_FIXED`.
+Next object: `ACTION_TERM_OR_GEOMETRIC_PRINCIPLE_FIXING_PRIMITIVE_SUPPORT_CHARACTER_OWNERSHIP`.
 
 ## Historical BHSM v11.1 support-representation campaign
 

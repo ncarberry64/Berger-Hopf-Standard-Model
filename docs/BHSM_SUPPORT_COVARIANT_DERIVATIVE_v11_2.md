@@ -17,4 +17,6 @@ Fiber integration commutes only for basic `A_D` and an assigned fiber-measure
 character. At constant `upsilon=1`, `A_D=0` and the parent derivative returns.
 
 The connection is derived; primitive field weights are not.
-
+The parent action does not make local `t(x)` a gauge redundancy. The local
+law is therefore a representation-frame covariance test for the exact
+Maurer--Cartan form, not a newly postulated gauge symmetry.

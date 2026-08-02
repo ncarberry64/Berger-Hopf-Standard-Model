@@ -1,14 +1,17 @@
 {
   "artifact": "BHSM_haar_scale_closure_v11_2",
   "canonical_coupling": "g_Da=w_a/lambda_D",
+  "exact_character_constraint_nullity": 5,
+  "exact_character_constraint_rank": 7,
   "lambda_D": null,
   "lambda_D_positive": true,
+  "nullspace_is_single_common_normalization": false,
   "physical_or_conventional": null,
   "primitive_lattice": null,
   "routes": [
     {
-      "reason": "canonical kinetic normalization makes w/lambda_D interaction data, but no primitive charge is selected",
-      "result": "OPEN",
+      "reason": "w/lambda_D is invariant under common rescaling, but the exact action-character kernel has five independent directions rather than one common scale",
+      "result": "NOT_A_COMPLETE_QUOTIENT",
       "route": "generator_redundancy"
     },
     {

@@ -3,7 +3,7 @@
 ## v11.2 authoritative complete-supported-action status
 
 Historical recovery is exhaustive and yields verdict
-`BHSM_HISTORICAL_RECOVERY_NARROWS_BUT_DOES_NOT_CLOSE_COMPLETE_SUPPORTED_ACTION`.
+`BHSM_COMPOSITE_SUPPORT_CONNECTION_DERIVED_BUT_PRIMITIVE_CHARACTER_AND_CURRENT_LEDGER_NOT_ACTION_FIXED`.
 The regular domain and all strata are reconciled, and multiplicative support
 derives the composite flat connection
 `A_D=d log(upsilon)=-(dq_D/lambda_D)`. For a specified character `w`,
@@ -13,12 +13,20 @@ parent derivative at constant `upsilon=1`.
 
 The parent action does not specify the primitive characters. Consequently it
 does not own the linear support-current coupling or its quadratic connection
-completion, and cannot yet produce the complete variation, constraint rank,
+completion, and cannot yet produce the complete variation, Dirac constraint rank,
 boundary/core domain, equivalence quotient, or Haar normalization. The exact
 next object is
-`ACTION_DERIVED_PRIMITIVE_SUPPORT_CHARACTER_AND_CURRENT_COUPLING_LEDGER`.
+`ACTION_TERM_OR_GEOMETRIC_PRINCIPLE_FIXING_PRIMITIVE_SUPPORT_CHARACTER_OWNERSHIP`.
 Mark I is reached; Marks II-IV are not reached. No physical output is promoted
 and frozen predictions are unchanged.
+
+The targeted steering audit constructs the strongest exact homogeneous
+character system permitted by the explicit S8/S4 action. Its 12-by-12 matrix
+has rank 7 and nullity 5. It forces the coframe, gauge-connection, projector,
+chi, sigma, fermion, and localized scalar candidate weights to zero while
+leaving independent `w_C`, `w_W`, wall-embedding, compatibility, and core
+directions. Boundary, core-finiteness, anomaly, and equivalence tests do not
+remove this kernel. The five directions are not one common normalization.
 
 ## v11.1 historical support-representation status
 

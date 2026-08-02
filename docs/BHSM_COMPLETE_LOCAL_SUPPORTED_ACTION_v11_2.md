@@ -16,5 +16,4 @@ scalar, current, compatibility, or core data. Writing a candidate formula
 would therefore choose new physics rather than derive it.
 
 Exact next object:
-`ACTION_DERIVED_PRIMITIVE_SUPPORT_CHARACTER_AND_CURRENT_COUPLING_LEDGER`.
-
+`ACTION_TERM_OR_GEOMETRIC_PRINCIPLE_FIXING_PRIMITIVE_SUPPORT_CHARACTER_OWNERSHIP`.

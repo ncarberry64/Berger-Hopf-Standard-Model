@@ -17,6 +17,12 @@ python -m bhsm.interface haar-scale-status-v11-2 --format json
 python -m bhsm.interface core-transfer-status-v11-2 --format json
 python -m bhsm.interface three-mode-status-v11-2 --format json
 python -m bhsm.interface physical-completion-status-v11-2 --format markdown
+python -m bhsm.interface primitive-support-ledger-status-v11-2 --format json
+python -m bhsm.interface support-current-status-v11-2 --format json
+python -m bhsm.interface support-connection-couplings-status-v11-2 --format json
+python -m bhsm.interface support-character-constraint-status-v11-2 --format json
+python -m bhsm.interface support-character-boundary-core-status-v11-2 --format json
+python -m bhsm.interface support-character-equivalence-class-status-v11-2 --format json
 python scripts/materialize_complete_local_supported_action_v11_2.py
 ```
 

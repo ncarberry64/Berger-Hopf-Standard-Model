@@ -91,14 +91,64 @@
       "object": "collar measure/extrinsic geometry",
       "pr": 13,
       "reason": "does not define a support transformation law"
+    },
+    {
+      "classification": "REJECTED_FOR_GD_CHARACTER",
+      "commit": "6f4f415",
+      "object": "v4.0 sector-weight action attachment",
+      "pr": 117,
+      "reason": "explicitly states 1:2:7 is not an action-selected trace weight"
+    },
+    {
+      "classification": "REUSABLE_COMPOSITE_GEOMETRY",
+      "commit": "24f4c0f",
+      "object": "v4.3 Hodge/coframe metric factors",
+      "pr": 120,
+      "reason": "derives metric Hodge factors but not a support action on the coframe"
+    },
+    {
+      "classification": "REJECTED_AS_SELECTION",
+      "commit": "a365b2f",
+      "object": "v4.4 gauge-action coframe selection",
+      "pr": 121,
+      "reason": "available raw and orthonormal coframes exist, but the gauge action selects neither"
+    },
+    {
+      "classification": "CONDITIONAL_ACTION_ONLY",
+      "commit": "71db297",
+      "object": "v5.4 unified dynamical action candidate",
+      "pr": 132,
+      "reason": "keeps gauge, fermion, scalar, current, response, and scale normalizations provisional"
+    },
+    {
+      "classification": "REUSABLE_NORMALIZATION_NOT_CHARACTER",
+      "commit": "239c864",
+      "object": "v6.0.9 normalized fiber measure",
+      "pr": 150,
+      "reason": "normalized Haar measure fixes pushforward integrals, not the G_D measure transformation"
+    },
+    {
+      "classification": "RELATED_GAUGE_CONNECTION_NOT_GD",
+      "commit": "239c864",
+      "object": "v6.0.9 canonical connection field map",
+      "pr": 150,
+      "reason": "normalizes gauge fields using the kinetic matrix; it is not the support connection"
     }
   ],
-  "exact_next_object": "ACTION_DERIVED_PRIMITIVE_SUPPORT_CHARACTER_AND_CURRENT_COUPLING_LEDGER",
+  "exact_next_object": "ACTION_TERM_OR_GEOMETRIC_PRINCIPLE_FIXING_PRIMITIVE_SUPPORT_CHARACTER_OWNERSHIP",
   "exact_object_recovered": false,
   "historical_routes_exhausted": true,
+  "preservation_bundles": [
+    "v8.3 verified",
+    "v10.4 verified",
+    "v11.0 verified",
+    "v11.1 verified"
+  ],
   "rejected_promotions": [
+    "1:2:7 sector weights",
     "target-fitted winding multipliers",
     "partial boundary-source scaffold",
+    "gauge coframe availability without action selection",
     "sector-specific self-adjoint domains",
     "coordinate level-set chart",
     "Berger radius convention"
@@ -110,19 +160,31 @@
     "git_history_searched": true,
     "merged_and_unmerged_prs_searched": true,
     "preservation_bundles_searched_and_verified": true,
+    "primitive_character_current_terms_targeted": true,
     "remote_branches_searched": true,
     "tests_searched": true,
-    "usb_mirror_searched_read_only": true
+    "usb_mirror_searched_read_only": true,
+    "v8_3_v10_4_v11_0_v11_1_bundles_verified": true
   },
   "reusable_ingredients": [
     "v10.4 covariant support-action class",
     "v7.1 normalized fiber pushforward",
     "v11.0 logarithmic Haar support pair",
     "v11.1 categorical/equivalence ledgers",
+    "v4.3 Hodge/coframe composite laws",
+    "v6.0.9 normalized fiber measure",
     "finite-boundary Green and flux forms"
   ],
   "searched_object": "complete local supported action with derivative couplings and boundary/core canonical domain",
-  "status": "BHSM_HISTORICAL_RECOVERY_NARROWS_BUT_DOES_NOT_CLOSE_COMPLETE_SUPPORTED_ACTION",
+  "status": "BHSM_COMPOSITE_SUPPORT_CONNECTION_DERIVED_BUT_PRIMITIVE_CHARACTER_AND_CURRENT_LEDGER_NOT_ACTION_FIXED",
+  "targeted_terms": [
+    "primitive support character",
+    "Noether/response/scale current",
+    "coframe/metric/density scaling",
+    "A_D and dq_D couplings",
+    "linear and quadratic connection completion",
+    "boundary/fiber/wall/core incidence"
+  ],
   "validation": {
     "all_resource_classes_searched": true,
     "blocker_ready": true,

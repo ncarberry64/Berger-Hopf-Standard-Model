@@ -22,6 +22,12 @@ def recovery_payload() -> dict[str, Any]:
         {"object": "primitive lattice/common rescaling audit", "commit": None, "pr": 103, "classification": "CONDITIONAL_ONLY", "reason": "its own complete-action quotient remains open"},
         {"object": "Berger radius/measure normalization fork", "commit": None, "pr": 49, "classification": "RELATED_NOT_EQUIVALENT", "reason": "radius convention does not normalize G_D or its current"},
         {"object": "collar measure/extrinsic geometry", "commit": None, "pr": 13, "classification": "REUSABLE_GEOMETRY_ONLY", "reason": "does not define a support transformation law"},
+        {"object": "v4.0 sector-weight action attachment", "commit": "6f4f415", "pr": 117, "classification": "REJECTED_FOR_GD_CHARACTER", "reason": "explicitly states 1:2:7 is not an action-selected trace weight"},
+        {"object": "v4.3 Hodge/coframe metric factors", "commit": "24f4c0f", "pr": 120, "classification": "REUSABLE_COMPOSITE_GEOMETRY", "reason": "derives metric Hodge factors but not a support action on the coframe"},
+        {"object": "v4.4 gauge-action coframe selection", "commit": "a365b2f", "pr": 121, "classification": "REJECTED_AS_SELECTION", "reason": "available raw and orthonormal coframes exist, but the gauge action selects neither"},
+        {"object": "v5.4 unified dynamical action candidate", "commit": "71db297", "pr": 132, "classification": "CONDITIONAL_ACTION_ONLY", "reason": "keeps gauge, fermion, scalar, current, response, and scale normalizations provisional"},
+        {"object": "v6.0.9 normalized fiber measure", "commit": "239c864", "pr": 150, "classification": "REUSABLE_NORMALIZATION_NOT_CHARACTER", "reason": "normalized Haar measure fixes pushforward integrals, not the G_D measure transformation"},
+        {"object": "v6.0.9 canonical connection field map", "commit": "239c864", "pr": 150, "classification": "RELATED_GAUGE_CONNECTION_NOT_GD", "reason": "normalizes gauge fields using the kinetic matrix; it is not the support connection"},
     ]
     resources = {
         "current_tree_searched": True,
@@ -33,10 +39,12 @@ def recovery_payload() -> dict[str, Any]:
         "preservation_bundles_searched_and_verified": True,
         "usb_mirror_searched_read_only": True,
         "author_resources_searched": True,
+        "primitive_character_current_terms_targeted": True,
+        "v8_3_v10_4_v11_0_v11_1_bundles_verified": True,
     }
     validation = {
         "all_resource_classes_searched": all(resources.values()),
-        "minimum_candidate_matrix": len(candidates) >= 13,
+        "minimum_candidate_matrix": len(candidates) >= 19,
         "every_candidate_classified": all(row["classification"] for row in candidates),
         "exact_complete_action_not_recovered": not any(row["classification"] == "EXACT_COMPLETE_ACTION" for row in candidates),
         "no_candidate_promoted_silently": True,
@@ -47,8 +55,10 @@ def recovery_payload() -> dict[str, Any]:
         "searched_object": "complete local supported action with derivative couplings and boundary/core canonical domain",
         "resources": resources,
         "candidates": candidates,
-        "reusable_ingredients": ["v10.4 covariant support-action class", "v7.1 normalized fiber pushforward", "v11.0 logarithmic Haar support pair", "v11.1 categorical/equivalence ledgers", "finite-boundary Green and flux forms"],
-        "rejected_promotions": ["target-fitted winding multipliers", "partial boundary-source scaffold", "sector-specific self-adjoint domains", "coordinate level-set chart", "Berger radius convention"],
+        "targeted_terms": ["primitive support character", "Noether/response/scale current", "coframe/metric/density scaling", "A_D and dq_D couplings", "linear and quadratic connection completion", "boundary/fiber/wall/core incidence"],
+        "preservation_bundles": ["v8.3 verified", "v10.4 verified", "v11.0 verified", "v11.1 verified"],
+        "reusable_ingredients": ["v10.4 covariant support-action class", "v7.1 normalized fiber pushforward", "v11.0 logarithmic Haar support pair", "v11.1 categorical/equivalence ledgers", "v4.3 Hodge/coframe composite laws", "v6.0.9 normalized fiber measure", "finite-boundary Green and flux forms"],
+        "rejected_promotions": ["1:2:7 sector weights", "target-fitted winding multipliers", "partial boundary-source scaffold", "gauge coframe availability without action selection", "sector-specific self-adjoint domains", "coordinate level-set chart", "Berger radius convention"],
         "exact_object_recovered": False,
         "historical_routes_exhausted": True,
         "status": PRIMARY_VERDICT,
@@ -56,4 +66,3 @@ def recovery_payload() -> dict[str, Any]:
         "validation": validation,
         "validation_passed": all(validation.values()),
     }
-

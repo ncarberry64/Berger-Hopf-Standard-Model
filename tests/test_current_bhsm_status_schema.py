@@ -13,9 +13,9 @@ def test_current_bhsm_status_json_schema() -> None:
     assert status["candidate_architecture_complete"] is True
     assert status["full_bhsm_proven"] is False
     assert status["standard_model_fully_derived"] is False
-    assert status["current_version"] == "v11.1"
-    assert status["current_exact_verdict"] == "BHSM_SUPPORT_FUNCTOR_PHYSICAL_EQUIVALENCE_QUOTIENT_BLOCKED_BY_ABSENT_COMPLETE_LOCAL_BOUNDARY_AND_CORE_ACTION_DATA"
-    assert status["next_exact_object"] == "COMPLETE_LOCAL_SUPPORTED_ACTION_WITH_SUPPORT_DERIVATIVE_COUPLINGS_AND_BOUNDARY_CORE_CANONICAL_DOMAIN"
+    assert status["current_version"] == "v11.2"
+    assert status["current_exact_verdict"] == "BHSM_COMPOSITE_SUPPORT_CONNECTION_DERIVED_BUT_PRIMITIVE_CHARACTER_AND_CURRENT_LEDGER_NOT_ACTION_FIXED"
+    assert status["next_exact_object"] == "ACTION_TERM_OR_GEOMETRIC_PRINCIPLE_FIXING_PRIMITIVE_SUPPORT_CHARACTER_OWNERSHIP"
     assert status["frozen_predictions_changed"] is False
     assert status["official_predictions_changed"] is False
 

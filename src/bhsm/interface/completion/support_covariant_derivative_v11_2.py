@@ -36,7 +36,7 @@ def transformed_derivative_component(
 def derivative_payload() -> dict[str, Any]:
     laws = {
         "support_connection": "A_D=d log(upsilon)=-(1/lambda_D)dq_D",
-        "local_transformation": "upsilon->t upsilon; Phi_w->t^w Phi_w; A_D->A_D+d log(t)",
+        "local_transformation": "conditional local-frame test: upsilon->t upsilon; Phi_w->t^w Phi_w; A_D->A_D+d log(t)",
         "covariant_derivative": "D_A^(w)Phi=nabla_A Phi-w A_D,A Phi",
         "curvature": "F_D=dA_D=d^2 log(upsilon)=0 on each smooth regular chart",
         "tensor": "D^(w1+w2)(Phi tensor Psi)=D^(w1)Phi tensor Psi+Phi tensor D^(w2)Psi",
@@ -61,6 +61,8 @@ def derivative_payload() -> dict[str, Any]:
         "artifact": "BHSM_support_covariant_derivative_v11_2",
         "support_group": "G_D=(R_{>0},multiplication)",
         "connection_is_independent_field": False,
+        "local_support_frame_is_action_derived_gauge_redundancy": False,
+        "interpretation": "A_D is the exact Maurer-Cartan form of multiplicative support; using it as a local representation connection is conditional on a G_D field action",
         "laws": laws,
         "primitive_field_weights": None,
         "metric_weight": None,
@@ -70,4 +72,3 @@ def derivative_payload() -> dict[str, Any]:
         "validation": validation,
         "validation_passed": all(validation.values()),
     }
-

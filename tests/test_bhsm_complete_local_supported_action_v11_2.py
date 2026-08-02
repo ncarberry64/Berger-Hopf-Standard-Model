@@ -78,7 +78,7 @@ def test_materialization_is_byte_deterministic(tmp_path) -> None:
     first_bytes = {path.name: path.read_bytes() for path in first}
     second = gate.materialize(tmp_path)
     assert first_bytes == {path.name: path.read_bytes() for path in second}
-    assert len(first) == 16
+    assert len(first) == 22
     canonical = json.loads((tmp_path / "artifacts" / "BHSM_1_0_completion_gate.json").read_text())
     assert canonical["version"] == CURRENT_VERSION == "v11.2"
     assert canonical["current_verdict"] == PRIMARY_VERDICT
@@ -92,4 +92,3 @@ def test_all_v11_2_commands_emit_current_json(capsys) -> None:
         assert payload["primary_verdict"] == PRIMARY_VERDICT
     assert cli.main(["historical-recovery-status", "--object", "complete local supported action", "--format", "json"]) == 0
     assert json.loads(capsys.readouterr().out)["artifact"].endswith("v11_2")
-

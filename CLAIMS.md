@@ -3,13 +3,13 @@
 ## Current public claim boundary
 
 V11.2 verdict:
-`BHSM_HISTORICAL_RECOVERY_NARROWS_BUT_DOES_NOT_CLOSE_COMPLETE_SUPPORTED_ACTION`.
+`BHSM_COMPOSITE_SUPPORT_CONNECTION_DERIVED_BUT_PRIMITIVE_CHARACTER_AND_CURRENT_LEDGER_NOT_ACTION_FIXED`.
 The composite flat connection `A_D=d log(upsilon)` is derived on the smooth
 regular domain. Its covariance laws are conditional on a declared field
 character. No primitive character, complete support current, quadratic
 connection coupling, core response, self-adjoint core domain, physical
 equivalence class, or Haar normalization is claimed. The next exact object is
-`ACTION_DERIVED_PRIMITIVE_SUPPORT_CHARACTER_AND_CURRENT_COUPLING_LEDGER`.
+`ACTION_TERM_OR_GEOMETRIC_PRINCIPLE_FIXING_PRIMITIVE_SUPPORT_CHARACTER_OWNERSHIP`.
 Frozen predictions and official prediction logic are unchanged.
 
 ### v11.1 historical claim boundary
