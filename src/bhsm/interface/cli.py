@@ -974,6 +974,19 @@ def build_parser() -> argparse.ArgumentParser:
         ("effective-m4-status-v11-1", "Render the BHSM v11.1 effective-M4 gate"),
         ("quantum-measurement-status-v11-1", "Render the BHSM v11.1 quantum gate"),
         ("physical-completion-status-v11-1", "Render the BHSM v11.1 completion gate"),
+        ("supported-geometry-status-v11-2", "Render the BHSM v11.2 supported geometric domain"),
+        ("support-derivative-status-v11-2", "Render the BHSM v11.2 composite support connection"),
+        ("supported-action-status-v11-2", "Render the BHSM v11.2 complete local action audit"),
+        ("support-variation-status-v11-2", "Render the BHSM v11.2 covariant variation gate"),
+        ("support-phase-space-status-v11-2", "Render the BHSM v11.2 covariant phase-space gate"),
+        ("support-constraint-status-v11-2", "Render the BHSM v11.2 Dirac constraint gate"),
+        ("boundary-domain-status-v11-2", "Render the BHSM v11.2 boundary variational domain"),
+        ("core-domain-status-v11-2", "Render the BHSM v11.2 core asymptotic domain"),
+        ("support-equivalence-status-v11-2", "Render the BHSM v11.2 physical equivalence quotient"),
+        ("haar-scale-status-v11-2", "Render the BHSM v11.2 Haar-scale gate"),
+        ("core-transfer-status-v11-2", "Render the BHSM v11.2 core-transfer gate"),
+        ("three-mode-status-v11-2", "Render the BHSM v11.2 physical three-mode gate"),
+        ("physical-completion-status-v11-2", "Render the BHSM v11.2 completion gate"),
         ("historical-recovery-status", "Render the historical-recovery gate"),
         ("historical-object-search", "Render the typed historical-object search"),
         ("historical-equivalence-audit", "Render the historical equivalence audit"),
@@ -1118,12 +1131,44 @@ def main(argv: Sequence[str] | None = None) -> int:
         "historical-equivalence-audit",
         "blocker-readiness-status",
     }:
+        if "complete local supported action" in args.object.lower():
+            module = import_module(
+                ".completion.historical_recovery_complete_supported_action_v11_2",
+                package=__package__,
+            )
+            print(json.dumps(module.recovery_payload(), indent=2, sort_keys=True))
+            return 0
         module = import_module(
             ".recovery.historical_equivalence_audit",
             package=__package__,
         )
         payload = module.command_payload(args.command, args.object)
         print(json.dumps(payload, indent=2, sort_keys=True))
+        return 0
+    if args.command in {
+        "supported-geometry-status-v11-2",
+        "support-derivative-status-v11-2",
+        "supported-action-status-v11-2",
+        "support-variation-status-v11-2",
+        "support-phase-space-status-v11-2",
+        "support-constraint-status-v11-2",
+        "boundary-domain-status-v11-2",
+        "core-domain-status-v11-2",
+        "support-equivalence-status-v11-2",
+        "haar-scale-status-v11-2",
+        "core-transfer-status-v11-2",
+        "three-mode-status-v11-2",
+        "physical-completion-status-v11-2",
+    }:
+        module = import_module(
+            ".completion.final_completion_gate_v11_2",
+            package=__package__,
+        )
+        payload = module.command_payload(args.command)
+        if args.format == "markdown":
+            print(module.command_to_markdown(args.command, payload), end="")
+        else:
+            print(json.dumps(payload, indent=2, sort_keys=True))
         return 0
     if args.command in {
         "support-category-status-v11-1",

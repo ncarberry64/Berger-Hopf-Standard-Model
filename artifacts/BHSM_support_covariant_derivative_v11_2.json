@@ -1,0 +1,34 @@
+{
+  "artifact": "BHSM_support_covariant_derivative_v11_2",
+  "boundary_measure_weight": null,
+  "connection_is_independent_field": false,
+  "derivative_verdict": "BHSM_COMPOSITE_FLAT_SUPPORT_CONNECTION_DERIVED_BUT_PRIMITIVE_SUPPORT_CHARACTERS_NOT_ACTION_ASSIGNED",
+  "fiber_measure_weight": null,
+  "laws": {
+    "boundary_pullback": "i*(D Phi)=D_boundary(i*Phi) when i is equivariant and A_D pulls back",
+    "contraction": "support weights add, including the weight of every inverse metric used in contraction",
+    "covariant_derivative": "D_A^(w)Phi=nabla_A Phi-w A_D,A Phi",
+    "curvature": "F_D=dA_D=d^2 log(upsilon)=0 on each smooth regular chart",
+    "density": "D rho=d rho-w_rho A_D rho",
+    "dual": "w(Phi*)=-w(Phi), so D<Phi*,Phi>=d<Phi*,Phi>",
+    "fiber_integration": "D_base pi_!(alpha)=pi_!(D alpha) only for basic A_D and an assigned fiber-measure character",
+    "frozen_limit": "upsilon=1 constant implies A_D=0 and D^(w)=nabla",
+    "local_transformation": "upsilon->t upsilon; Phi_w->t^w Phi_w; A_D->A_D+d log(t)",
+    "metric": "D G=-w_G A_D tensor G for the Levi-Civita parent connection; metric compatibility occurs iff w_G=0",
+    "support_connection": "A_D=d log(upsilon)=-(1/lambda_D)dq_D",
+    "tensor": "D^(w1+w2)(Phi tensor Psi)=D^(w1)Phi tensor Psi+Phi tensor D^(w2)Psi"
+  },
+  "metric_weight": null,
+  "primitive_field_weights": null,
+  "support_group": "G_D=(R_{>0},multiplication)",
+  "validation": {
+    "connection_is_composite": true,
+    "connection_sign_covariant": true,
+    "dual_weight_opposite": true,
+    "flat_on_smooth_regular_charts": true,
+    "frozen_limit_exact": true,
+    "no_weight_assigned": true,
+    "tensor_weight_additive": true
+  },
+  "validation_passed": true
+}

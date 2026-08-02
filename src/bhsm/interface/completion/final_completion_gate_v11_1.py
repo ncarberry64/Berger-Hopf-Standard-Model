@@ -8,16 +8,7 @@ from typing import Any
 from bhsm.interface.envelopment.relational_axioms import deterministic_json
 from bhsm.interface.recovery.historical_equivalence_audit import recovery_payload
 
-from ..current_program_status import (
-    COMPLETION_MARKS,
-    CURRENT_CAMPAIGN,
-    CURRENT_VERSION,
-    EXACT_NEXT_OBJECT,
-    PRIMARY_VERDICT,
-    SOURCE_BASE_MAIN_SHA,
-    SOURCE_BASE_TREE_SHA,
-    status_payload,
-)
+from ..current_program_status import status_payload
 from .downstream_physical_gates_v11_1 import (
     buoyancy_payload,
     core_transfer_payload,
@@ -34,6 +25,22 @@ from .haar_scale_normalization_v11_1 import haar_scale_payload
 from .support_functor_equivalence_quotient_v11_1 import equivalence_payload
 from .support_representation_category_v11_1 import category_payload, functor_payload
 from .supported_parent_action_v11_1 import supported_action_payload
+
+
+# Historical CLI/artifact identity must not drift when the canonical current
+# status advances. These are the values merged by the v11.1 campaign.
+CURRENT_CAMPAIGN = "v11.1 Support representation functor and physical completion campaign"
+CURRENT_VERSION = "v11.1"
+PRIMARY_VERDICT = "BHSM_SUPPORT_FUNCTOR_PHYSICAL_EQUIVALENCE_QUOTIENT_BLOCKED_BY_ABSENT_COMPLETE_LOCAL_BOUNDARY_AND_CORE_ACTION_DATA"
+EXACT_NEXT_OBJECT = "COMPLETE_LOCAL_SUPPORTED_ACTION_WITH_SUPPORT_DERIVATIVE_COUPLINGS_AND_BOUNDARY_CORE_CANONICAL_DOMAIN"
+SOURCE_BASE_MAIN_SHA = "76ca770729d73805e79e2e6528fc735dcdd559ec"
+SOURCE_BASE_TREE_SHA = "3f09b0a891b1e11ffbf8943d380df81dfb169209"
+COMPLETION_MARKS = {
+    "Mark_I_Canonical_ontology": "REACHED",
+    "Mark_II_Complete_conditional_architecture": "NOT_REACHED",
+    "Mark_III_Physical_derivation": "NOT_REACHED",
+    "Mark_IV_Empirical_replacement": "NOT_REACHED",
+}
 
 
 ARTIFACT_FILES = {

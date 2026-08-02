@@ -1,6 +1,14 @@
 # Open Blockers Backlog
 
-## Current upstream blocker (v11.1)
+## Current upstream blocker (v11.2)
+
+`ACTION_DERIVED_PRIMITIVE_SUPPORT_CHARACTER_AND_CURRENT_COUPLING_LEDGER` is
+the highest-upstream open object. It must fix the charges in the linear
+support current and quadratic connection completion, including induced
+measure, normal, and cross-stratum characters. Core-domain selection and all
+physical gates remain downstream.
+
+## Historical upstream blocker (v11.1)
 
 Verdict: `BHSM_SUPPORT_FUNCTOR_PHYSICAL_EQUIVALENCE_QUOTIENT_BLOCKED_BY_ABSENT_COMPLETE_LOCAL_BOUNDARY_AND_CORE_ACTION_DATA`.
 Construct only

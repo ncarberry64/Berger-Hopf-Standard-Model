@@ -1,5 +1,13 @@
 # BHSM CLI reference
 
+## v11.2 complete-supported-action audit
+
+Use `python -m bhsm.interface physical-completion-status-v11-2 --format json`
+for the canonical gate and
+`python scripts/materialize_complete_local_supported_action_v11_2.py` for all
+deterministic records. Component commands are listed in the root
+`CLI_REFERENCE.md`; every historical command remains available.
+
 The current v6.5.0 topological matter-action/global-spectrum audit is
 available with:
 

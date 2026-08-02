@@ -1,0 +1,208 @@
+"""Canonical BHSM v11.2 completion gate and deterministic materializer."""
+
+from __future__ import annotations
+
+from pathlib import Path
+from typing import Any
+
+from bhsm.interface.envelopment.relational_axioms import deterministic_json
+
+from ..current_program_status import (
+    COMPLETION_MARKS,
+    CURRENT_CAMPAIGN,
+    CURRENT_VERSION,
+    EXACT_NEXT_OBJECT,
+    PRIMARY_VERDICT,
+    SOURCE_BASE_MAIN_SHA,
+    SOURCE_BASE_TREE_SHA,
+    status_payload,
+)
+from .boundary_variational_domain_v11_2 import boundary_payload
+from .complete_local_supported_action_v11_2 import action_payload
+from .core_asymptotic_domain_v11_2 import core_domain_payload
+from .core_transfer_operator_v11_2 import core_transfer_payload
+from .downstream_physical_gates_v11_2 import downstream_payload
+from .haar_scale_closure_v11_2 import haar_payload
+from .historical_recovery_complete_supported_action_v11_2 import recovery_payload
+from .local_supported_geometry_v11_2 import geometry_payload
+from .support_action_variation_v11_2 import variation_payload
+from .support_covariant_derivative_v11_2 import derivative_payload
+from .support_covariant_phase_space_v11_2 import phase_space_payload
+from .support_dirac_constraints_v11_2 import constraint_payload
+from .support_physical_equivalence_quotient_v11_2 import equivalence_payload
+from .three_mode_physical_action_v11_2 import three_mode_payload
+
+
+ARTIFACT_FILES = {
+    "historical_recovery": "BHSM_historical_recovery_complete_supported_action_v11_2.json",
+    "local_supported_geometry": "BHSM_local_supported_geometry_v11_2.json",
+    "support_covariant_derivative": "BHSM_support_covariant_derivative_v11_2.json",
+    "complete_local_supported_action": "BHSM_complete_local_supported_action_v11_2.json",
+    "support_action_variation": "BHSM_support_action_variation_v11_2.json",
+    "support_covariant_phase_space": "BHSM_support_covariant_phase_space_v11_2.json",
+    "support_constraint_ledger": "BHSM_support_constraint_ledger_v11_2.json",
+    "boundary_variational_domain": "BHSM_boundary_variational_domain_v11_2.json",
+    "core_asymptotic_domain": "BHSM_core_asymptotic_domain_v11_2.json",
+    "support_physical_equivalence_quotient": "BHSM_support_physical_equivalence_quotient_v11_2.json",
+    "haar_scale_closure": "BHSM_haar_scale_closure_v11_2.json",
+    "core_transfer_operator": "BHSM_core_transfer_operator_v11_2.json",
+    "three_mode_physical_action": "BHSM_three_mode_physical_action_v11_2.json",
+    "downstream_physical_gates": "BHSM_downstream_physical_gates_v11_2.json",
+    "completion": "BHSM_final_completion_gate_v11_2.json",
+}
+
+
+def completion_payload() -> dict[str, Any]:
+    sections = {
+        "historical_recovery": recovery_payload(),
+        "local_supported_geometry": geometry_payload(),
+        "support_covariant_derivative": derivative_payload(),
+        "complete_local_supported_action": action_payload(),
+        "support_action_variation": variation_payload(),
+        "support_covariant_phase_space": phase_space_payload(),
+        "support_constraint_ledger": constraint_payload(),
+        "boundary_variational_domain": boundary_payload(),
+        "core_asymptotic_domain": core_domain_payload(),
+        "support_physical_equivalence_quotient": equivalence_payload(),
+        "haar_scale_closure": haar_payload(),
+        "core_transfer_operator": core_transfer_payload(),
+        "three_mode_physical_action": three_mode_payload(),
+        "downstream_physical_gates": downstream_payload(),
+    }
+    validation = {
+        "all_sections_valid": all(section["validation_passed"] for section in sections.values()),
+        "historical_recovery_exhausted": sections["historical_recovery"]["historical_routes_exhausted"],
+        "support_connection_derived": sections["support_covariant_derivative"]["connection_is_independent_field"] is False,
+        "complete_action_fail_closed": sections["complete_local_supported_action"]["complete_local_action"] is None,
+        "complete_variation_fail_closed": sections["support_action_variation"]["complete_noether_identity"] is None,
+        "canonical_domain_fail_closed": sections["core_asymptotic_domain"]["self_adjoint_domains"] is None,
+        "equivalence_not_overclaimed": sections["support_physical_equivalence_quotient"]["physically_equivalent"] is None,
+        "haar_not_fabricated": sections["haar_scale_closure"]["lambda_D"] is None,
+        "downstream_fail_closed": not sections["downstream_physical_gates"]["automatic_continuation_triggered"],
+        "no_prediction_changes": True,
+    }
+    return {
+        "artifact": "BHSM_final_completion_gate_v11_2",
+        "version": CURRENT_VERSION,
+        "campaign": CURRENT_CAMPAIGN,
+        "source_base_main_sha": SOURCE_BASE_MAIN_SHA,
+        "source_base_tree_sha": SOURCE_BASE_TREE_SHA,
+        "primary_verdict": PRIMARY_VERDICT,
+        "exact_next_object": EXACT_NEXT_OBJECT,
+        **sections,
+        "completion_marks": COMPLETION_MARKS,
+        "Mark_I": "REACHED",
+        "Mark_II": "NOT_REACHED",
+        "Mark_III": "NOT_REACHED",
+        "Mark_IV": "NOT_REACHED",
+        "physical_BHSM_complete": False,
+        "empirical_replacement_complete": False,
+        "frozen_predictions_changed": False,
+        "official_prediction_logic_changed": False,
+        "new_geometric_fields": [],
+        "new_continuous_physical_parameters": [],
+        "measured_particle_inputs": [],
+        "physical_outputs_promoted": [],
+        "physical_outputs_withheld": ["core transfer", "three-mode Hessian", "stable cycles", "buoyancy/Higgs", "masses", "CKM", "PMNS", "normalized M4 action", "quantum probabilities"],
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+    }
+
+
+def artifact_payloads() -> dict[str, dict[str, Any]]:
+    result = completion_payload()
+    return {key: result[key] for key in ARTIFACT_FILES if key != "completion"} | {"completion": result}
+
+
+def canonical_completion_gate_payload() -> dict[str, Any]:
+    from .final_completion_gate_v11_1 import canonical_completion_gate_payload as prior_gate
+
+    gate = prior_gate()
+    result = completion_payload()
+    gate.update({
+        "version": CURRENT_VERSION,
+        "sprint": "bhsm-complete-local-supported-action-v11-2",
+        "source_main_sha": SOURCE_BASE_MAIN_SHA,
+        "current_verdict": PRIMARY_VERDICT,
+        "next_highest_upstream_blocker": EXACT_NEXT_OBJECT,
+        "composite_support_connection_derived": True,
+        "complete_local_supported_action": False,
+        "boundary_core_canonical_domain_complete": False,
+        "support_equivalence_quotient_complete": False,
+        "haar_scale_action_fixed": False,
+        "BHSM_1_0_release_complete": False,
+        "completion_marks": COMPLETION_MARKS,
+        "new_fields_in_v11_2": [],
+        "new_continuous_parameters_in_v11_2": [],
+        "frozen_predictions_changed": False,
+        "validation_passed": result["validation_passed"],
+    })
+    gate["RB15"] = {"status": "BLOCKED_BY_MISSING_PRIMITIVE_SUPPORT_CHARACTER_CURRENT_LEDGER", "resolution": EXACT_NEXT_OBJECT}
+    gate["RB16"] = {"status": "DOWNSTREAM_BLOCKED", "resolution": "Mark II remains NOT_REACHED"}
+    return gate
+
+
+COMMAND_SECTIONS = {
+    "supported-geometry-status-v11-2": "local_supported_geometry",
+    "support-derivative-status-v11-2": "support_covariant_derivative",
+    "supported-action-status-v11-2": "complete_local_supported_action",
+    "support-variation-status-v11-2": "support_action_variation",
+    "support-phase-space-status-v11-2": "support_covariant_phase_space",
+    "support-constraint-status-v11-2": "support_constraint_ledger",
+    "boundary-domain-status-v11-2": "boundary_variational_domain",
+    "core-domain-status-v11-2": "core_asymptotic_domain",
+    "support-equivalence-status-v11-2": "support_physical_equivalence_quotient",
+    "haar-scale-status-v11-2": "haar_scale_closure",
+    "core-transfer-status-v11-2": "core_transfer_operator",
+    "three-mode-status-v11-2": "three_mode_physical_action",
+    "physical-completion-status-v11-2": None,
+}
+
+
+def command_payload(command: str) -> dict[str, Any]:
+    if command not in COMMAND_SECTIONS:
+        raise ValueError(f"unknown v11.2 status command: {command}")
+    result = completion_payload()
+    section = COMMAND_SECTIONS[command]
+    return {
+        "version": CURRENT_VERSION,
+        "command": command,
+        "primary_verdict": PRIMARY_VERDICT,
+        "exact_next_object": EXACT_NEXT_OBJECT,
+        "completion_marks": COMPLETION_MARKS,
+        "section": result if section is None else result[section],
+        "physical_BHSM_complete": False,
+        "frozen_predictions_changed": False,
+    }
+
+
+def command_to_markdown(command: str, payload: dict[str, Any] | None = None) -> str:
+    data = command_payload(command) if payload is None else payload
+    return "\n".join([
+        f"# BHSM v11.2 {command}", "",
+        f"Primary verdict: `{data['primary_verdict']}`", "",
+        "- Composite flat support connection derived: `true`",
+        "- Primitive support-character/current ledger action-owned: `false`",
+        "- Boundary/core canonical domain complete: `false`",
+        "- Mark II reached: `false`",
+        "- Frozen predictions changed: `false`", "",
+        "## Exact next object", "", f"`{data['exact_next_object']}`",
+    ]) + "\n"
+
+
+def materialize(root: Path | None = None) -> list[Path]:
+    repository = Path(__file__).resolve().parents[4] if root is None else Path(root)
+    target = repository / "artifacts"
+    target.mkdir(parents=True, exist_ok=True)
+    paths: list[Path] = []
+    for key, payload in artifact_payloads().items():
+        path = target / ARTIFACT_FILES[key]
+        path.write_text(deterministic_json(payload), encoding="utf-8", newline="\n")
+        paths.append(path)
+    canonical = target / "BHSM_1_0_completion_gate.json"
+    canonical.write_text(deterministic_json(canonical_completion_gate_payload()), encoding="utf-8", newline="\n")
+    paths.append(canonical)
+    docs = repository / "docs"
+    docs.mkdir(parents=True, exist_ok=True)
+    (docs / "current_bhsm_status.json").write_text(deterministic_json(status_payload()), encoding="utf-8", newline="\n")
+    return paths

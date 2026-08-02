@@ -1,6 +1,26 @@
 # Current BHSM Status
 
-## v11.1 authoritative support-representation status
+## v11.2 authoritative complete-supported-action status
+
+Historical recovery is exhaustive and yields verdict
+`BHSM_HISTORICAL_RECOVERY_NARROWS_BUT_DOES_NOT_CLOSE_COMPLETE_SUPPORTED_ACTION`.
+The regular domain and all strata are reconciled, and multiplicative support
+derives the composite flat connection
+`A_D=d log(upsilon)=-(dq_D/lambda_D)`. For a specified character `w`,
+`D^(w)Phi=nabla Phi-w A_D Phi` obeys the tensor, dual, contraction, density,
+boundary-pullback, and conditional fiber-integration laws and returns to the
+parent derivative at constant `upsilon=1`.
+
+The parent action does not specify the primitive characters. Consequently it
+does not own the linear support-current coupling or its quadratic connection
+completion, and cannot yet produce the complete variation, constraint rank,
+boundary/core domain, equivalence quotient, or Haar normalization. The exact
+next object is
+`ACTION_DERIVED_PRIMITIVE_SUPPORT_CHARACTER_AND_CURRENT_COUPLING_LEDGER`.
+Mark I is reached; Marks II-IV are not reached. No physical output is promoted
+and frozen predictions are unchanged.
+
+## v11.1 historical support-representation status
 
 The stratified action category and two fixed-character support lifts are now
 explicit. The representatives are not linearly naturally isomorphic, but this

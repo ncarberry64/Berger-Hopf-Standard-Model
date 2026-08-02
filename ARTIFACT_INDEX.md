@@ -1,6 +1,16 @@
 # BHSM Artifact Index
 
-## BHSM v11.1 support-representation campaign
+## BHSM v11.2 complete-supported-action campaign
+
+Fifteen deterministic `BHSM_*_v11_2.json` records cover historical recovery,
+supported geometry, the composite support derivative, action terms,
+variation, phase space, constraints, boundary/core domains, equivalence,
+Haar scale, core transfer, three-mode dynamics, downstream gates, and the
+final gate. `BHSM_1_0_completion_gate.json` is the canonical current gate.
+Verdict: `BHSM_HISTORICAL_RECOVERY_NARROWS_BUT_DOES_NOT_CLOSE_COMPLETE_SUPPORTED_ACTION`.
+Next object: `ACTION_DERIVED_PRIMITIVE_SUPPORT_CHARACTER_AND_CURRENT_COUPLING_LEDGER`.
+
+## Historical BHSM v11.1 support-representation campaign
 
 The v11.1 records present the stratified category,
 two-functor counterexample, five-route Haar audit, formal supported-action

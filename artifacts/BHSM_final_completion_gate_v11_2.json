@@ -1,0 +1,813 @@
+{
+  "Mark_I": "REACHED",
+  "Mark_II": "NOT_REACHED",
+  "Mark_III": "NOT_REACHED",
+  "Mark_IV": "NOT_REACHED",
+  "artifact": "BHSM_final_completion_gate_v11_2",
+  "boundary_variational_domain": {
+    "admissible_scalar_ensembles": [
+      "Dirichlet delta q_D=0",
+      "Neumann pi_D fixed with the corresponding Legendre boundary term",
+      "mixed only after an action-owned boundary functional"
+    ],
+    "artifact": "BHSM_boundary_variational_domain_v11_2",
+    "complete_boundary_counterterm": null,
+    "complete_boundary_symplectic_flux": null,
+    "known_normal_momentum": "pi_D=sqrt(|h|) n^A partial_A q_D",
+    "known_support_boundary_form": "-integral_boundary pi_D delta q_D",
+    "matter_domain": "v6.7/v6.10 maximal-isotropic families are sector-specific and do not select the support/core domain",
+    "metric_boundary_pair": "the parent Einstein-Hilbert/GHY pair on finite regular boundaries",
+    "selected_scalar_ensemble": null,
+    "status": "BHSM_BOUNDARY_SUPPORT_FLUX_DERIVED_BUT_CANONICAL_ENSEMBLE_NOT_ACTION_SELECTED",
+    "validation": {
+      "canonical_domain_not_invented": true,
+      "ghy_role_preserved": true,
+      "historical_domains_not_misapplied": true,
+      "scalar_flux_recovered": true
+    },
+    "validation_passed": true,
+    "well_posed_complete_variation": false,
+    "z2_interface_result": "v6.15 interface trace is presymplectic-null and selects no support boundary condition"
+  },
+  "campaign": "v11.2 Complete local supported action and boundary/core canonical-domain campaign",
+  "complete_local_supported_action": {
+    "artifact": "BHSM_complete_local_supported_action_v11_2",
+    "bare_support_potential": 0,
+    "boundary_sector": null,
+    "bulk_action": null,
+    "charged_current_sector": null,
+    "compatibility_sector": null,
+    "complete_local_action": null,
+    "core_asymptotic_sector": null,
+    "exact_next_object": "ACTION_DERIVED_PRIMITIVE_SUPPORT_CHARACTER_AND_CURRENT_COUPLING_LEDGER",
+    "fermion_sector": null,
+    "first_missing_action_owned_term": "the primitive-character support-current coupling -A_D,A J_D^A together with its covariant A_D^2 seagull completion",
+    "gauge_sector": null,
+    "known_action_skeleton": "S_parent+D-dimensional integral[-(partial q_D)^2/2] with A_D=-(dq_D/lambda_D)",
+    "neutral_response_sector": null,
+    "new_coefficients": [],
+    "new_fields": [],
+    "primary_verdict": "BHSM_HISTORICAL_RECOVERY_NARROWS_BUT_DOES_NOT_CLOSE_COMPLETE_SUPPORTED_ACTION",
+    "required_derivative_completion": "replace each parent derivative by D^(w); expansion generates -A_D.J_D and A_D^2 K_D terms fixed by the same action-owned characters",
+    "scalar_topographic_sector": null,
+    "smallest_missing_datum": "an action-derived primitive support-character/current ledger assigning the charges entering J_D and K_D",
+    "status": "BHSM_COMPLETE_LOCAL_SUPPORTED_ACTION_BLOCKED_BY_UNASSIGNED_PRIMITIVE_SUPPORT_CHARACTERS",
+    "support_kinetic_term": "-1/2 G^AB partial_A q_D partial_B q_D",
+    "term_ledger": [
+      {
+        "action_owner": "S8",
+        "boundary_completion": "inherits parent completion only after a character is selected",
+        "frozen_limit": "kappa1 R8/2",
+        "linear_support_current_coupling": null,
+        "parent_coefficient": "kappa1",
+        "parent_term": "kappa1 R8/2",
+        "primitive_support_character": null,
+        "quadratic_seagull_coupling": null,
+        "sector": "geometry",
+        "status": "BLOCKED_BY_MISSING_ACTION_OWNED_CHARACTER",
+        "support_covariant_derivative": null
+      },
+      {
+        "action_owner": "S8",
+        "boundary_completion": "inherits parent completion only after a character is selected",
+        "frozen_limit": "-kappa0/2",
+        "linear_support_current_coupling": null,
+        "parent_coefficient": "kappa0",
+        "parent_term": "-kappa0/2",
+        "primitive_support_character": null,
+        "quadratic_seagull_coupling": null,
+        "sector": "geometry",
+        "status": "BLOCKED_BY_MISSING_ACTION_OWNED_CHARACTER",
+        "support_covariant_derivative": null
+      },
+      {
+        "action_owner": "S8",
+        "boundary_completion": "inherits parent completion only after a character is selected",
+        "frozen_limit": "-Zchi(1+g sigma^2)|dchi|^2/2",
+        "linear_support_current_coupling": null,
+        "parent_coefficient": "Zchi,g",
+        "parent_term": "-Zchi(1+g sigma^2)|dchi|^2/2",
+        "primitive_support_character": null,
+        "quadratic_seagull_coupling": null,
+        "sector": "core/Hopf",
+        "status": "BLOCKED_BY_MISSING_ACTION_OWNED_CHARACTER",
+        "support_covariant_derivative": null
+      },
+      {
+        "action_owner": "S8",
+        "boundary_completion": "inherits parent completion only after a character is selected",
+        "frozen_limit": "-Zsigma|dsigma|^2/2",
+        "linear_support_current_coupling": null,
+        "parent_coefficient": "Zsigma",
+        "parent_term": "-Zsigma|dsigma|^2/2",
+        "primitive_support_character": null,
+        "quadratic_seagull_coupling": null,
+        "sector": "core/Hopf",
+        "status": "BLOCKED_BY_MISSING_ACTION_OWNED_CHARACTER",
+        "support_covariant_derivative": null
+      },
+      {
+        "action_owner": "S8",
+        "boundary_completion": "inherits parent completion only after a character is selected",
+        "frozen_limit": "-U(sigma)",
+        "linear_support_current_coupling": null,
+        "parent_coefficient": "A0,G0",
+        "parent_term": "-U(sigma)",
+        "primitive_support_character": null,
+        "quadratic_seagull_coupling": null,
+        "sector": "core/Hopf",
+        "status": "BLOCKED_BY_MISSING_ACTION_OWNED_CHARACTER",
+        "support_covariant_derivative": null
+      },
+      {
+        "action_owner": "S8",
+        "boundary_completion": "inherits parent completion only after a character is selected",
+        "frozen_limit": "-(1+g sigma^2)kappa1 X_eta/2",
+        "linear_support_current_coupling": null,
+        "parent_coefficient": "kappa1,g",
+        "parent_term": "-(1+g sigma^2)kappa1 X_eta/2",
+        "primitive_support_character": null,
+        "quadratic_seagull_coupling": null,
+        "sector": "core/Hopf",
+        "status": "BLOCKED_BY_MISSING_ACTION_OWNED_CHARACTER",
+        "support_covariant_derivative": null
+      },
+      {
+        "action_owner": "S8",
+        "boundary_completion": "inherits parent completion only after a character is selected",
+        "frozen_limit": "-(1+g sigma^2)X_eta^4/8",
+        "linear_support_current_coupling": null,
+        "parent_coefficient": "g",
+        "parent_term": "-(1+g sigma^2)X_eta^4/8",
+        "primitive_support_character": null,
+        "quadratic_seagull_coupling": null,
+        "sector": "core/Hopf",
+        "status": "BLOCKED_BY_MISSING_ACTION_OWNED_CHARACTER",
+        "support_covariant_derivative": null
+      },
+      {
+        "action_owner": "S8",
+        "boundary_completion": "inherits parent completion only after a character is selected",
+        "frozen_limit": "+Lambda_eta(<eta,eta>-1)/2",
+        "linear_support_current_coupling": null,
+        "parent_coefficient": "Lambda_eta",
+        "parent_term": "+Lambda_eta(<eta,eta>-1)/2",
+        "primitive_support_character": null,
+        "quadratic_seagull_coupling": null,
+        "sector": "core/Hopf",
+        "status": "BLOCKED_BY_MISSING_ACTION_OWNED_CHARACTER",
+        "support_covariant_derivative": null
+      },
+      {
+        "action_owner": "S5",
+        "boundary_completion": "inherits parent completion only after a character is selected",
+        "frozen_limit": "S5 Einstein term",
+        "linear_support_current_coupling": null,
+        "parent_coefficient": "kappa1",
+        "parent_term": "S5 Einstein term",
+        "primitive_support_character": null,
+        "quadratic_seagull_coupling": null,
+        "sector": "wall",
+        "status": "BLOCKED_BY_MISSING_ACTION_OWNED_CHARACTER",
+        "support_covariant_derivative": null
+      },
+      {
+        "action_owner": "S5",
+        "boundary_completion": "inherits parent completion only after a character is selected",
+        "frozen_limit": "S5 reduced scalar terms",
+        "linear_support_current_coupling": null,
+        "parent_coefficient": "lambda5 and retained coefficients",
+        "parent_term": "S5 reduced scalar terms",
+        "primitive_support_character": null,
+        "quadratic_seagull_coupling": null,
+        "sector": "wall",
+        "status": "BLOCKED_BY_MISSING_ACTION_OWNED_CHARACTER",
+        "support_covariant_derivative": null
+      },
+      {
+        "action_owner": "boundary of S5",
+        "boundary_completion": null,
+        "frozen_limit": "S_GHY",
+        "linear_support_current_coupling": null,
+        "parent_coefficient": "kappa1",
+        "parent_term": "S_GHY",
+        "primitive_support_character": null,
+        "quadratic_seagull_coupling": null,
+        "sector": "boundary",
+        "status": "BLOCKED_BY_MISSING_ACTION_OWNED_CHARACTER",
+        "support_covariant_derivative": null
+      },
+      {
+        "action_owner": "S4 intrinsic",
+        "boundary_completion": "inherits parent completion only after a character is selected",
+        "frozen_limit": "B1 intrinsic Einstein term",
+        "linear_support_current_coupling": null,
+        "parent_coefficient": "C_partial",
+        "parent_term": "B1 intrinsic Einstein term",
+        "primitive_support_character": null,
+        "quadratic_seagull_coupling": null,
+        "sector": "geometry",
+        "status": "BLOCKED_BY_MISSING_ACTION_OWNED_CHARACTER",
+        "support_covariant_derivative": null
+      },
+      {
+        "action_owner": "S4 intrinsic",
+        "boundary_completion": "inherits parent completion only after a character is selected",
+        "frozen_limit": "intrinsic gauge kinetic terms",
+        "linear_support_current_coupling": null,
+        "parent_coefficient": "g1,g2,g3",
+        "parent_term": "intrinsic gauge kinetic terms",
+        "primitive_support_character": null,
+        "quadratic_seagull_coupling": null,
+        "sector": "gauge",
+        "status": "BLOCKED_BY_MISSING_ACTION_OWNED_CHARACTER",
+        "support_covariant_derivative": null
+      },
+      {
+        "action_owner": "S4 intrinsic",
+        "boundary_completion": "inherits parent completion only after a character is selected",
+        "frozen_limit": "intrinsic chiral kinetic terms",
+        "linear_support_current_coupling": null,
+        "parent_coefficient": "canonical common normalization",
+        "parent_term": "intrinsic chiral kinetic terms",
+        "primitive_support_character": null,
+        "quadratic_seagull_coupling": null,
+        "sector": "fermion",
+        "status": "BLOCKED_BY_MISSING_ACTION_OWNED_CHARACTER",
+        "support_covariant_derivative": null
+      },
+      {
+        "action_owner": "S4 intrinsic",
+        "boundary_completion": "inherits parent completion only after a character is selected",
+        "frozen_limit": "intrinsic Yukawa terms",
+        "linear_support_current_coupling": null,
+        "parent_coefficient": "Y_u,Y_d,Y_e",
+        "parent_term": "intrinsic Yukawa terms",
+        "primitive_support_character": null,
+        "quadratic_seagull_coupling": null,
+        "sector": "fermion",
+        "status": "BLOCKED_BY_MISSING_ACTION_OWNED_CHARACTER",
+        "support_covariant_derivative": null
+      },
+      {
+        "action_owner": "S4 intrinsic",
+        "boundary_completion": "inherits parent completion only after a character is selected",
+        "frozen_limit": "intrinsic scalar/Higgs terms",
+        "linear_support_current_coupling": null,
+        "parent_coefficient": "retained EFT inputs",
+        "parent_term": "intrinsic scalar/Higgs terms",
+        "primitive_support_character": null,
+        "quadratic_seagull_coupling": null,
+        "sector": "scalar/topographic",
+        "status": "BLOCKED_BY_MISSING_ACTION_OWNED_CHARACTER",
+        "support_covariant_derivative": null
+      },
+      {
+        "action_owner": "S5|4 compatibility",
+        "boundary_completion": "inherits parent completion only after a character is selected",
+        "frozen_limit": "metric/bundle compatibility multipliers",
+        "linear_support_current_coupling": null,
+        "parent_coefficient": "normalization 1",
+        "parent_term": "metric/bundle compatibility multipliers",
+        "primitive_support_character": null,
+        "quadratic_seagull_coupling": null,
+        "sector": "compatibility",
+        "status": "BLOCKED_BY_MISSING_ACTION_OWNED_CHARACTER",
+        "support_covariant_derivative": null
+      },
+      {
+        "action_owner": "S4/common-current layer",
+        "boundary_completion": "inherits parent completion only after a character is selected",
+        "frozen_limit": "retained gauge and eta-current terms",
+        "linear_support_current_coupling": null,
+        "parent_coefficient": "retained gauge data",
+        "parent_term": "retained gauge and eta-current terms",
+        "primitive_support_character": null,
+        "quadratic_seagull_coupling": null,
+        "sector": "current",
+        "status": "BLOCKED_BY_MISSING_ACTION_OWNED_CHARACTER",
+        "support_covariant_derivative": null
+      },
+      {
+        "action_owner": "Sigma_core and M_core",
+        "boundary_completion": null,
+        "frozen_limit": "S_Sigma_core+S_core",
+        "linear_support_current_coupling": null,
+        "parent_coefficient": null,
+        "parent_term": "S_Sigma_core+S_core",
+        "primitive_support_character": null,
+        "quadratic_seagull_coupling": null,
+        "sector": "core boundary",
+        "status": "BLOCKED_BY_MISSING_ACTION_OWNED_CHARACTER",
+        "support_covariant_derivative": null
+      }
+    ],
+    "validation": {
+      "all_parent_terms_audited": true,
+      "connection_derived_before_action_audit": true,
+      "frozen_terms_preserved": true,
+      "linear_and_quadratic_derivative_couplings_not_silently_omitted": true,
+      "no_character_fabricated": true,
+      "no_new_parameter": true,
+      "support_kinetic_recovered": true
+    },
+    "validation_passed": true,
+    "wall_sector": null
+  },
+  "completion_marks": {
+    "Mark_III_Physical_derivation": "NOT_REACHED",
+    "Mark_II_Complete_conditional_architecture": "NOT_REACHED",
+    "Mark_IV_Empirical_replacement": "NOT_REACHED",
+    "Mark_I_Canonical_ontology": "REACHED"
+  },
+  "core_asymptotic_domain": {
+    "artifact": "BHSM_core_asymptotic_domain_v11_2",
+    "core_limit": "q_D->+infinity (upsilon->0+) at infinite regular Haar distance",
+    "core_response_functional": null,
+    "core_symplectic_form": null,
+    "deficiency_indices": null,
+    "finite_action_condition": "requires asymptotic decay sufficient for the complete, presently unknown supported integrand",
+    "finite_energy_condition": null,
+    "finite_symplectic_flux_condition": null,
+    "incoming_data": null,
+    "outgoing_data": null,
+    "reflection": null,
+    "self_adjoint_domains": null,
+    "status": "BHSM_CORE_ASYMPTOTIC_CANONICAL_DOMAIN_NOT_SELECTED_BY_CURRENT_ACTION",
+    "transit": null,
+    "validation": {
+      "deficiency_indices_withheld": true,
+      "finite_cutoff_ensembles_distinguished_from_core_selection": true,
+      "infinite_distance_endpoint_preserved": true,
+      "transfer_not_inferred": true
+    },
+    "validation_passed": true
+  },
+  "core_transfer_operator": {
+    "artifact": "BHSM_core_transfer_operator_v11_2",
+    "energy_matching": null,
+    "gauge_transport": null,
+    "momentum_matching": null,
+    "phase_transport": null,
+    "status": "BHSM_CORE_TRANSFER_NOT_REACHED_BECAUSE_MARK_II_IS_OPEN",
+    "symplectic_or_unitary_preservation": null,
+    "topology_transport": null,
+    "trajectory_selection": null,
+    "transfer_operator": null,
+    "validation": {
+      "all_transport_channels_withheld": true,
+      "blocked_by_mark_ii": true,
+      "no_white_hole_or_absorption_claim": true
+    },
+    "validation_passed": true
+  },
+  "downstream_physical_gates": {
+    "Mark_II": "NOT_REACHED",
+    "artifact": "BHSM_downstream_physical_gates_v11_2",
+    "automatic_continuation_triggered": false,
+    "outputs": {
+      "CKM": null,
+      "PMNS": null,
+      "curvature_scale": null,
+      "effective_M4_action": null,
+      "global_equilibrium": null,
+      "higgs_mode": null,
+      "mass_ratios": null,
+      "measurement_rule": null,
+      "nonlinear_cycles": null,
+      "physical_masses": null,
+      "quantum_amplitudes": null,
+      "three_generations": "frozen structural ledger preserved; not re-derived",
+      "topological_buoyancy": null
+    },
+    "status": "BHSM_DOWNSTREAM_PHYSICAL_COMPLETION_FAIL_CLOSED_AT_MARK_II",
+    "validation": {
+      "frozen_generation_ledger_preserved": true,
+      "mark_ii_gate_enforced": true,
+      "no_new_physical_output": true,
+      "no_particle_input": true
+    },
+    "validation_passed": true
+  },
+  "empirical_replacement_complete": false,
+  "exact_next_object": "ACTION_DERIVED_PRIMITIVE_SUPPORT_CHARACTER_AND_CURRENT_COUPLING_LEDGER",
+  "frozen_predictions_changed": false,
+  "haar_scale_closure": {
+    "artifact": "BHSM_haar_scale_closure_v11_2",
+    "canonical_coupling": "g_Da=w_a/lambda_D",
+    "lambda_D": null,
+    "lambda_D_positive": true,
+    "physical_or_conventional": null,
+    "primitive_lattice": null,
+    "routes": [
+      {
+        "reason": "canonical kinetic normalization makes w/lambda_D interaction data, but no primitive charge is selected",
+        "result": "OPEN",
+        "route": "generator_redundancy"
+      },
+      {
+        "reason": "no action-owned primitive support character",
+        "result": "BLOCKED",
+        "route": "primitive_character_lattice"
+      },
+      {
+        "reason": "fixes the q_D kinetic convention, not a coupled character",
+        "result": "PARTIAL",
+        "route": "canonical_kinetic_normalization"
+      },
+      {
+        "reason": "supported coframe and full reduced kinetic matrix absent",
+        "result": "BLOCKED",
+        "route": "gravitational_matching"
+      },
+      {
+        "reason": "core response and selected domain absent",
+        "result": "BLOCKED",
+        "route": "boundary_core_normalization"
+      },
+      {
+        "reason": "no unique global equilibrium",
+        "result": "BLOCKED",
+        "route": "global_scale"
+      }
+    ],
+    "status": "BHSM_HAAR_SCALE_REMAINS_UNCLASSIFIED_PENDING_ACTION_OWNED_PRIMITIVE_SUPPORT_CHARACTER",
+    "validation": {
+      "all_six_routes_tested": true,
+      "lambda_not_set_to_one": true,
+      "no_empirical_input": true,
+      "physical_or_conventional_withheld": true
+    },
+    "validation_passed": true
+  },
+  "historical_recovery": {
+    "artifact": "BHSM_historical_recovery_complete_supported_action_v11_2",
+    "candidates": [
+      {
+        "classification": "REUSABLE_PARTIAL",
+        "commit": "837d806",
+        "object": "v10.4 scalar support action class",
+        "pr": 213,
+        "reason": "owns Z,U,F_C,F_W action form but does not select its functions or core action"
+      },
+      {
+        "classification": "REUSABLE_EXACT_KERNEL",
+        "commit": "27a9dee",
+        "object": "v7.1 normalized reduction functor",
+        "pr": 200,
+        "reason": "owns pi_!, fiber volume, and stratified pushforward; no G_D representation"
+      },
+      {
+        "classification": "REUSABLE_EXACT_KERNEL",
+        "commit": "c1cc07f",
+        "object": "v11.0 Haar support field",
+        "pr": 214,
+        "reason": "owns q_D and the inverse-square Haar kinetic metric; characters remain open"
+      },
+      {
+        "classification": "REUSABLE_EXACT_KERNEL",
+        "commit": "c88b8e3",
+        "object": "v11.1 representation/equivalence audit",
+        "pr": 215,
+        "reason": "owns the category and provisional representatives; local derivative action absent"
+      },
+      {
+        "classification": "RELATED_NOT_EQUIVALENT",
+        "commit": "73a6af3",
+        "object": "v6.7 matter boundary domains",
+        "pr": 167,
+        "reason": "sector maximal-isotropic domains do not select the support/core ensemble"
+      },
+      {
+        "classification": "RELATED_NOT_EQUIVALENT",
+        "commit": "f3b69d5",
+        "object": "v6.10 junction functional/domain",
+        "pr": 170,
+        "reason": "current action has M_J=0 and no selected U(1) junction graph"
+      },
+      {
+        "classification": "RELATED_NOT_EQUIVALENT",
+        "commit": "2437eda",
+        "object": "v6.15 Z2 interface symplectic domain",
+        "pr": 175,
+        "reason": "presymplectic-null trace selects no boundary condition"
+      },
+      {
+        "classification": "REJECTED_AS_DERIVATION",
+        "commit": "820198f",
+        "object": "coframe/sector-winding closure branch",
+        "pr": null,
+        "reason": "C_f and W_f explicitly marked not action-derived"
+      },
+      {
+        "classification": "REUSABLE_CANDIDATE_ONLY",
+        "commit": "75894b9",
+        "object": "boundary-action representation-connection branch",
+        "pr": null,
+        "reason": "source scaffold is partial and A_j normalization convention-dependent"
+      },
+      {
+        "classification": "RELATED_NOT_ADOPTED",
+        "commit": null,
+        "object": "v6.14 composite level-set support",
+        "pr": 174,
+        "reason": "chart is not the fixed-iota action and does not close threading"
+      },
+      {
+        "classification": "CONDITIONAL_ONLY",
+        "commit": null,
+        "object": "primitive lattice/common rescaling audit",
+        "pr": 103,
+        "reason": "its own complete-action quotient remains open"
+      },
+      {
+        "classification": "RELATED_NOT_EQUIVALENT",
+        "commit": null,
+        "object": "Berger radius/measure normalization fork",
+        "pr": 49,
+        "reason": "radius convention does not normalize G_D or its current"
+      },
+      {
+        "classification": "REUSABLE_GEOMETRY_ONLY",
+        "commit": null,
+        "object": "collar measure/extrinsic geometry",
+        "pr": 13,
+        "reason": "does not define a support transformation law"
+      }
+    ],
+    "exact_next_object": "ACTION_DERIVED_PRIMITIVE_SUPPORT_CHARACTER_AND_CURRENT_COUPLING_LEDGER",
+    "exact_object_recovered": false,
+    "historical_routes_exhausted": true,
+    "rejected_promotions": [
+      "target-fitted winding multipliers",
+      "partial boundary-source scaffold",
+      "sector-specific self-adjoint domains",
+      "coordinate level-set chart",
+      "Berger radius convention"
+    ],
+    "resources": {
+      "artifacts_searched": true,
+      "author_resources_searched": true,
+      "current_tree_searched": true,
+      "git_history_searched": true,
+      "merged_and_unmerged_prs_searched": true,
+      "preservation_bundles_searched_and_verified": true,
+      "remote_branches_searched": true,
+      "tests_searched": true,
+      "usb_mirror_searched_read_only": true
+    },
+    "reusable_ingredients": [
+      "v10.4 covariant support-action class",
+      "v7.1 normalized fiber pushforward",
+      "v11.0 logarithmic Haar support pair",
+      "v11.1 categorical/equivalence ledgers",
+      "finite-boundary Green and flux forms"
+    ],
+    "searched_object": "complete local supported action with derivative couplings and boundary/core canonical domain",
+    "status": "BHSM_HISTORICAL_RECOVERY_NARROWS_BUT_DOES_NOT_CLOSE_COMPLETE_SUPPORTED_ACTION",
+    "validation": {
+      "all_resource_classes_searched": true,
+      "blocker_ready": true,
+      "every_candidate_classified": true,
+      "exact_complete_action_not_recovered": true,
+      "minimum_candidate_matrix": true,
+      "no_candidate_promoted_silently": true
+    },
+    "validation_passed": true
+  },
+  "local_supported_geometry": {
+    "artifact": "BHSM_local_supported_geometry_v11_2",
+    "boundary": "ordinary finite boundaries of S8/S5 with induced metric and outward unit normal",
+    "coframe": "the frozen regular coframe e_0; a supported coframe character is not action-owned",
+    "core_asymptotic_end": "upsilon->0+ iff q_D->+infinity; not a regular inverse-metric point",
+    "fiber_base_decomposition": "pi_85=id_I x p_H with closed normalized Hopf fiber",
+    "m4_reduction_map": "v7.1 normalized pushforward pi_! followed by localized S4 incidence",
+    "measure": "parent bulk, fiber, wall, and boundary measures retained with support characters unassigned",
+    "metric": "nondegenerate G on M_regular",
+    "new_geometric_fields": [],
+    "regular_domain": "M_regular={p in M_strat: 0<upsilon(p)<=1}",
+    "seam": "the localized S4 incidence locus; not a fourth physical deformation mode",
+    "status": "BHSM_SUPPORTED_REGULAR_DOMAIN_AND_STRATA_RECOVERED_WITHOUT_NEW_SUPPORT_REPRESENTATION",
+    "support_character_assignment": null,
+    "support_depth": "q_D=-lambda_D log(upsilon), lambda_D>0",
+    "validation": {
+      "core_not_inserted_into_inverse_metric_domain": true,
+      "metric_nondegenerate_on_regular_domain": true,
+      "reduction_map_reused": true,
+      "regular_domain_separated_from_core": true,
+      "wall_boundary_and_seam_distinguished": true
+    },
+    "validation_passed": true,
+    "wall": "the S5 enclosure-wall/fold stratum carrying q_W"
+  },
+  "measured_particle_inputs": [],
+  "new_continuous_physical_parameters": [],
+  "new_geometric_fields": [],
+  "official_prediction_logic_changed": false,
+  "physical_BHSM_complete": false,
+  "physical_outputs_promoted": [],
+  "physical_outputs_withheld": [
+    "core transfer",
+    "three-mode Hessian",
+    "stable cycles",
+    "buoyancy/Higgs",
+    "masses",
+    "CKM",
+    "PMNS",
+    "normalized M4 action",
+    "quantum probabilities"
+  ],
+  "primary_verdict": "BHSM_HISTORICAL_RECOVERY_NARROWS_BUT_DOES_NOT_CLOSE_COMPLETE_SUPPORTED_ACTION",
+  "source_base_main_sha": "96677288b8a60570b43b2383d2517f57a33a6da4",
+  "source_base_tree_sha": "7d1c0024ccb6fee3ea36579e313143b24ceec9c8",
+  "support_action_variation": {
+    "artifact": "BHSM_support_action_variation_v11_2",
+    "boundary_equations": null,
+    "complete_noether_identity": null,
+    "complete_stress_conservation": null,
+    "core_asymptotic_equations": null,
+    "formal_coupled_support_equation": "Box_G q_D=J_D only after the action-owned character/current ledger fixes J_D",
+    "known_boundary_variation": "-integral_boundary sqrt(|h|) n^A partial_A q_D delta q_D",
+    "known_scalar_stress": "T_AB[q_D]=partial_A q_D partial_B q_D-G_AB(partial q_D)^2/2",
+    "known_support_equation": "Box_G q_D=0 for the isolated canonical support kinetic term",
+    "matter_equations": null,
+    "metric_equation": "parent metric equation plus T_AB[q_D] for the known regular term; all support-weighted matter contributions open",
+    "mode_equations": null,
+    "status": "BHSM_FULL_SUPPORTED_VARIATION_BLOCKED_WITH_KNOWN_SCALAR_SUBSECTOR_PRESERVED",
+    "support_current": null,
+    "validation": {
+      "boundary_sign_recorded": true,
+      "known_support_variation_recorded": true,
+      "no_equation_promoted_from_formal_family": true,
+      "stress_conservation_not_overclaimed": true,
+      "unknown_matter_sources_withheld": true
+    },
+    "validation_passed": true,
+    "wall_equation": null
+  },
+  "support_constraint_ledger": {
+    "artifact": "BHSM_support_constraint_ledger_v11_2",
+    "complete_dirac_matrix": null,
+    "complete_physical_rank": null,
+    "first_class_constraints": null,
+    "ghost_status": "not classifiable for the incomplete coupled action; the isolated support kinetic term is healthy",
+    "known_support_pair": "one conditional regular canonical scalar pair for positive Haar kinetic sign",
+    "known_support_primary_constraints": [],
+    "parent_primary_constraints": "lapse/shift and gauge constraints inherited unchanged",
+    "second_class_constraints": null,
+    "secondary_constraints": "parent Hamiltonian, momentum, and gauge constraints inherited; supported modifications not computable",
+    "status": "BHSM_COMPLETE_SUPPORTED_DIRAC_ANALYSIS_BLOCKED_BY_MISSING_ACTION_OWNED_CURRENT_COUPLINGS",
+    "validation": {
+      "gravity_constraints_preserved": true,
+      "known_regular_scalar_has_nonzero_legendre_map": true,
+      "no_false_ghost_claim": true,
+      "unknown_complete_rank_withheld": true
+    },
+    "validation_passed": true
+  },
+  "support_covariant_derivative": {
+    "artifact": "BHSM_support_covariant_derivative_v11_2",
+    "boundary_measure_weight": null,
+    "connection_is_independent_field": false,
+    "derivative_verdict": "BHSM_COMPOSITE_FLAT_SUPPORT_CONNECTION_DERIVED_BUT_PRIMITIVE_SUPPORT_CHARACTERS_NOT_ACTION_ASSIGNED",
+    "fiber_measure_weight": null,
+    "laws": {
+      "boundary_pullback": "i*(D Phi)=D_boundary(i*Phi) when i is equivariant and A_D pulls back",
+      "contraction": "support weights add, including the weight of every inverse metric used in contraction",
+      "covariant_derivative": "D_A^(w)Phi=nabla_A Phi-w A_D,A Phi",
+      "curvature": "F_D=dA_D=d^2 log(upsilon)=0 on each smooth regular chart",
+      "density": "D rho=d rho-w_rho A_D rho",
+      "dual": "w(Phi*)=-w(Phi), so D<Phi*,Phi>=d<Phi*,Phi>",
+      "fiber_integration": "D_base pi_!(alpha)=pi_!(D alpha) only for basic A_D and an assigned fiber-measure character",
+      "frozen_limit": "upsilon=1 constant implies A_D=0 and D^(w)=nabla",
+      "local_transformation": "upsilon->t upsilon; Phi_w->t^w Phi_w; A_D->A_D+d log(t)",
+      "metric": "D G=-w_G A_D tensor G for the Levi-Civita parent connection; metric compatibility occurs iff w_G=0",
+      "support_connection": "A_D=d log(upsilon)=-(1/lambda_D)dq_D",
+      "tensor": "D^(w1+w2)(Phi tensor Psi)=D^(w1)Phi tensor Psi+Phi tensor D^(w2)Psi"
+    },
+    "metric_weight": null,
+    "primitive_field_weights": null,
+    "support_group": "G_D=(R_{>0},multiplication)",
+    "validation": {
+      "connection_is_composite": true,
+      "connection_sign_covariant": true,
+      "dual_weight_opposite": true,
+      "flat_on_smooth_regular_charts": true,
+      "frozen_limit_exact": true,
+      "no_weight_assigned": true,
+      "tensor_weight_additive": true
+    },
+    "validation_passed": true
+  },
+  "support_covariant_phase_space": {
+    "artifact": "BHSM_support_covariant_phase_space_v11_2",
+    "boundary_momentum": "pi_D,boundary=sqrt(|h|) n^A partial_A q_D",
+    "canonical_pairs": [
+      "(q_D,Pi_D) on a regular Cauchy slice"
+    ],
+    "complete_flux_conservation": null,
+    "complete_symplectic_current": null,
+    "complete_symplectic_potential": null,
+    "core_phase_space": null,
+    "known_symplectic_current": "omega_D^A=delta_1 Theta_D^A[delta_2]-delta_2 Theta_D^A[delta_1]",
+    "known_symplectic_potential": "Theta_D^A=-sqrt(-G) partial^A q_D delta q_D (orientation convention inherited from the action)",
+    "positive_physical_kinetic_rank": null,
+    "status": "BHSM_COMPLETE_SUPPORTED_COVARIANT_PHASE_SPACE_BLOCKED_BY_MISSING_LOCAL_ACTION_AND_CORE_RESPONSE",
+    "support_momentum": "Pi_D=sqrt(gamma) n^A partial_A q_D",
+    "validation": {
+      "boundary_flux_retained": true,
+      "complete_symplectic_form_withheld": true,
+      "core_phase_space_withheld": true,
+      "regular_support_pair_retained": true
+    },
+    "validation_passed": true
+  },
+  "support_physical_equivalence_quotient": {
+    "artifact": "BHSM_support_physical_equivalence_quotient_v11_2",
+    "boundary_equivalence": null,
+    "bulk_equivalence": null,
+    "core_equivalence": null,
+    "observable_equivalence": null,
+    "physically_equivalent": null,
+    "physically_inequivalent": null,
+    "representative_A": "R_D^(A), provisional wall/fiber character (1,0)",
+    "representative_B": "R_D^(B), provisional wall/fiber character (2,1)",
+    "spectral_equivalence": null,
+    "status": "BHSM_SUPPORT_REPRESENTATIVE_PHYSICAL_EQUIVALENCE_REMAINS_UNDECIDABLE_WITHOUT_COMPLETE_ACTION_AND_DOMAIN",
+    "tests": {
+      "canonical": {
+        "symplectomorphism": null
+      },
+      "domain": {
+        "same_self_adjoint_domain": null
+      },
+      "field_redefinition": {
+        "core_invertible": false,
+        "derivative_map": "D_B(upsilon^(Delta w)Phi_A)=upsilon^(Delta w)D_A Phi_A only when the full character and connection assignments match",
+        "map": "Phi_B=upsilon^(Delta w) Phi_A",
+        "regular_invertible": true
+      },
+      "measure_redistribution": {
+        "algebraic_integrated_weight_preserved": true,
+        "canonical_equivalence": null
+      },
+      "natural_isomorphism": {
+        "fixed_distinct_characters_linearly_isomorphic": false,
+        "nonlinear_regular_map_is_global": false
+      },
+      "observables": {
+        "dimensionless_observables_equal": null
+      },
+      "spectral": {
+        "isospectral": null
+      },
+      "weyl": {
+        "complete_test": false,
+        "reason": "primitive coframe weight and paired GHY/core terms are not assigned"
+      }
+    },
+    "validation": {
+      "all_required_equivalence_classes_tested": true,
+      "core_singularity_preserved": true,
+      "neither_equivalence_nor_inequivalence_overclaimed": true,
+      "regular_redefinition_identity_sharpened": true
+    },
+    "validation_passed": true
+  },
+  "three_mode_physical_action": {
+    "artifact": "BHSM_three_mode_physical_action_v11_2",
+    "eigenmodes": null,
+    "hessian": null,
+    "kinetic_matrix": null,
+    "mixed_blocks": null,
+    "modes": {
+      "q_C": "core/Hopf",
+      "q_D": "support depth",
+      "q_W": "enclosure-wall/fold"
+    },
+    "physical_stability": null,
+    "reason": "the complete local support-current couplings and reduced Dirac domain are absent",
+    "status": "BHSM_PHYSICAL_THREE_MODE_ACTION_NOT_REACHED_BECAUSE_MARK_II_IS_OPEN",
+    "validation": {
+      "hessian_withheld": true,
+      "no_stability_claim": true,
+      "seam_not_counted_as_fourth_mode": true,
+      "three_modes_remain_distinct": true
+    },
+    "validation_passed": true
+  },
+  "validation": {
+    "all_sections_valid": true,
+    "canonical_domain_fail_closed": true,
+    "complete_action_fail_closed": true,
+    "complete_variation_fail_closed": true,
+    "downstream_fail_closed": true,
+    "equivalence_not_overclaimed": true,
+    "haar_not_fabricated": true,
+    "historical_recovery_exhausted": true,
+    "no_prediction_changes": true,
+    "support_connection_derived": true
+  },
+  "validation_passed": true,
+  "version": "v11.2"
+}

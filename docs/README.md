@@ -1,6 +1,17 @@
 # BHSM Documentation Index
 
-## Current v11.1 campaign
+## Current v11.2 campaign
+
+- [Final completion report](BHSM_FINAL_COMPLETION_REPORT_v11_2.md)
+- [Historical recovery](BHSM_HISTORICAL_RECOVERY_COMPLETE_SUPPORTED_ACTION_v11_2.md)
+- [Support covariant derivative](BHSM_SUPPORT_COVARIANT_DERIVATIVE_v11_2.md)
+- [Complete local supported-action audit](BHSM_COMPLETE_LOCAL_SUPPORTED_ACTION_v11_2.md)
+- [Boundary/core domain audit](BHSM_CORE_ASYMPTOTIC_DOMAIN_v11_2.md)
+
+Current verdict: `BHSM_HISTORICAL_RECOVERY_NARROWS_BUT_DOES_NOT_CLOSE_COMPLETE_SUPPORTED_ACTION`.
+Next object: `ACTION_DERIVED_PRIMITIVE_SUPPORT_CHARACTER_AND_CURRENT_COUPLING_LEDGER`.
+
+## Historical v11.1 campaign
 
 - [Support representation functor](BHSM_SUPPORT_REPRESENTATION_FUNCTOR_v11_1.md)
 - [Haar scale audit](BHSM_HAAR_SCALE_NORMALIZATION_v11_1.md)

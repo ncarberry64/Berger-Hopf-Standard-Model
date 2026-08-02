@@ -1,5 +1,27 @@
 # BHSM CLI Reference
 
+## BHSM v11.2 supported-action completion gate
+
+```bash
+python -m bhsm.interface historical-recovery-status --object "complete local supported action" --format json
+python -m bhsm.interface supported-geometry-status-v11-2 --format json
+python -m bhsm.interface support-derivative-status-v11-2 --format json
+python -m bhsm.interface supported-action-status-v11-2 --format json
+python -m bhsm.interface support-variation-status-v11-2 --format json
+python -m bhsm.interface support-phase-space-status-v11-2 --format json
+python -m bhsm.interface support-constraint-status-v11-2 --format json
+python -m bhsm.interface boundary-domain-status-v11-2 --format json
+python -m bhsm.interface core-domain-status-v11-2 --format json
+python -m bhsm.interface support-equivalence-status-v11-2 --format json
+python -m bhsm.interface haar-scale-status-v11-2 --format json
+python -m bhsm.interface core-transfer-status-v11-2 --format json
+python -m bhsm.interface three-mode-status-v11-2 --format json
+python -m bhsm.interface physical-completion-status-v11-2 --format markdown
+python scripts/materialize_complete_local_supported_action_v11_2.py
+```
+
+Historical commands remain available unchanged.
+
 ## v11.1 support-representation commands
 
 The thirteen commands from `support-category-status-v11-1` through

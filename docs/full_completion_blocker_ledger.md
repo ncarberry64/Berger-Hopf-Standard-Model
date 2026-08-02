@@ -1,5 +1,12 @@
 # BHSM Full-Completion Blocker Ledger
 
+## v11.2 canonical blocker
+
+Mark II is `NOT_REACHED`: the composite flat connection is derived, but the
+complete local supported action lacks an action-owned primitive
+character/current ledger and boundary/core canonical domain. Exact object:
+`ACTION_DERIVED_PRIMITIVE_SUPPORT_CHARACTER_AND_CURRENT_COUPLING_LEDGER`.
+
 BHSM full completion requires action-level or artifact-backed closure of all core sector projectors, mass/mixing laws, gauge/scalar normalization, admissible domains, dimensionful unit maps, and external runtime gates.
 
 BHSM currently has an integrated conditional structural architecture and unchanged frozen predictions.
