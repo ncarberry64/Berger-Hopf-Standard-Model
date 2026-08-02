@@ -1,13 +1,18 @@
 # BHSM Falsification Entry Point
 
-For v11.2, the verdict
-`BHSM_BIDIRECTIONAL_BUOYANCY_AND_FIXED_ENCLOSURE_ARCHITECTURE_DERIVED_CONDITIONALLY_BUT_ATTACHMENT_CHARACTER_REMAINS_UNFIXED`
-is falsified by a checked-in historical or current action term that uniquely
-assigns the primitive support characters and therefore fixes the coupling
-`-A_D,A J_D^A`, its quadratic connection completion, induced measure/normal
-weights, and cross-stratum maps. The exact target is
-`ACTION_OWNED_CORE_SURFACE_ATTACHMENT_TERM_FIXING_ATTACHMENT_CHARACTER_AND_EXCHANGE_CURRENT`.
-A convention, target arithmetic, or particle-data fit is not a falsifier.
+For v11.3, the verdict
+`BHSM_RECIPROCAL_ATTACHMENT_ACTION_AND_CURRENT_DERIVED_WITH_THREE_MODE_DOMAIN_CONDITIONAL`
+is falsified if the inherited `Lambda85` slot does not own `Q_H(G8)` and `g5`,
+if the reciprocal dressing fails its frozen `upsilon=1` limit, or if its
+variation fails the stated scalar-source and three-sector Ward identities.
+The remaining conditional qualifier is closed only by
+`ACTION_NORMALIZED_CORE_WALL_RESPONSE_GRAM_HESSIAN_ON_COMMON_ATTACHMENT_DOMAIN`.
+A whitened identity matrix, target arithmetic, or particle-data fit is not a
+physical Hessian derivation.
+
+The v11.2 criterion below is retained as historical chronology. V11.3 closes
+its attachment-character/current target while proving that the algebraic
+matcher itself supplies no linear or quadratic `A_D` term.
 
 The v11.1 criterion below is retained as historical chronology.
 

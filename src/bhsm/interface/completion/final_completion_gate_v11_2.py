@@ -7,16 +7,7 @@ from typing import Any
 
 from bhsm.interface.envelopment.relational_axioms import deterministic_json
 
-from ..current_program_status import (
-    COMPLETION_MARKS,
-    CURRENT_CAMPAIGN,
-    CURRENT_VERSION,
-    EXACT_NEXT_OBJECT,
-    PRIMARY_VERDICT,
-    SOURCE_BASE_MAIN_SHA,
-    SOURCE_BASE_TREE_SHA,
-    status_payload,
-)
+from ..current_program_status import status_payload
 from .boundary_variational_domain_v11_2 import boundary_payload
 from .bidirectional_buoyancy_v11_2 import (
     black_hole_payload,
@@ -47,6 +38,21 @@ from .support_linear_quadratic_connection_couplings_v11_2 import couplings_paylo
 from .support_noether_current_v11_2 import current_payload
 from .support_physical_equivalence_quotient_v11_2 import equivalence_payload
 from .three_mode_physical_action_v11_2 import three_mode_payload
+
+
+# Historical CLI/artifact identity must not drift when current status advances.
+CURRENT_CAMPAIGN = "v11.2 Complete local supported action and boundary/core canonical-domain campaign"
+CURRENT_VERSION = "v11.2"
+PRIMARY_VERDICT = "BHSM_BIDIRECTIONAL_BUOYANCY_AND_FIXED_ENCLOSURE_ARCHITECTURE_DERIVED_CONDITIONALLY_BUT_ATTACHMENT_CHARACTER_REMAINS_UNFIXED"
+EXACT_NEXT_OBJECT = "ACTION_OWNED_CORE_SURFACE_ATTACHMENT_TERM_FIXING_ATTACHMENT_CHARACTER_AND_EXCHANGE_CURRENT"
+SOURCE_BASE_MAIN_SHA = "96677288b8a60570b43b2383d2517f57a33a6da4"
+SOURCE_BASE_TREE_SHA = "7d1c0024ccb6fee3ea36579e313143b24ceec9c8"
+COMPLETION_MARKS = {
+    "Mark_I_Canonical_ontology": "REACHED",
+    "Mark_II_Complete_conditional_architecture": "NOT_REACHED",
+    "Mark_III_Physical_derivation": "NOT_REACHED",
+    "Mark_IV_Empirical_replacement": "NOT_REACHED",
+}
 
 
 ARTIFACT_FILES = {

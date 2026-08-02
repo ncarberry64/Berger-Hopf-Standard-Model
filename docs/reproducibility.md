@@ -261,3 +261,23 @@ Materialize twice and require byte-identical UTF-8/LF output. The artifact
 freezes and hashes the universal `I3` response before its comparison block.
 The comparison is then recorded as `INVALIDATED` without changing the
 prediction-freeze hash. No official v7.2 prediction or calibration changes.
+
+## BHSM v11.3 reciprocal core-surface attachment
+
+From an uninstalled checkout:
+
+```powershell
+$env:PYTHONPATH=(Resolve-Path 'src').Path
+python scripts/materialize_reciprocal_attachment_v11_3.py
+python -m bhsm.interface reciprocal-attachment-status --format json
+python -m bhsm.interface attachment-character-status --format markdown
+python -m bhsm.interface attachment-current-status --format markdown
+python -m bhsm.interface attachment-domain-status --format markdown
+python -m bhsm.interface three-mode-action-status-v11-3 --format markdown
+python -m bhsm.interface mark-ii-status --format markdown
+```
+
+Run the materializer twice and require byte-identical UTF-8/LF artifacts.
+The campaign updates ten v11.3 records plus the canonical completion gate and
+current-status JSON. It does not change frozen predictions or turn the
+conditional normalized KKT model into a physical three-mode Hessian.

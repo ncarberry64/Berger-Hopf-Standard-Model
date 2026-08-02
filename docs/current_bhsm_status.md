@@ -1,6 +1,38 @@
 # Current BHSM Status
 
-## v11.2 authoritative complete-supported-action status
+## v11.3 authoritative reciprocal-attachment status
+
+The v7.0/v7.1 reduction owns the compatibility incidence pair
+`I_C=Q_H(G8)` and `I_W=g5`. V11.3 applies the adopted reciprocal attachment
+principle directly to that existing `Lambda85` matcher:
+
+`S_attach = int_M5 <Lambda85, upsilon^(-1/2) I_W - upsilon^(1/2) I_C>`.
+
+The primitive normalization fixes `w(I_C)=-1/2`, `w(I_W)=+1/2`, and leaves
+the intrinsic enclosure neutral. The multiplier equation is
+`I_W=upsilon I_C`; variation with `q_D=-lambda_D log(upsilon)` derives the
+signed scalar source and the diffeomorphism Ward identity closes total
+core/wall/depth transfer. Since the matcher contains no derivatives, its
+linear `A_D` and quadratic `A_D^2` contributions are exactly zero.
+
+The boundary presymplectic contribution is zero, and ordinary-core closure
+is finite on the constraint surface. The exact action-character matrix grows
+from rank 7/nullity 12 to rank 11/nullity 8, while the isolated attachment
+subsystem has rank 5/nullity 0. An action-normalized three-coordinate KKT
+model has reduced matrix `[[2,1],[1,2]]` and positive eigenvalues `(1,3)`,
+but this is a conditional normalized local model, not the physical response
+operator.
+
+Current verdict:
+`BHSM_RECIPROCAL_ATTACHMENT_ACTION_AND_CURRENT_DERIVED_WITH_THREE_MODE_DOMAIN_CONDITIONAL`.
+
+Exact next object:
+`ACTION_NORMALIZED_CORE_WALL_RESPONSE_GRAM_HESSIAN_ON_COMMON_ATTACHMENT_DOMAIN`.
+
+Mark II is `REACHED_CONDITIONALLY`; Marks III-IV remain open. No downstream
+physical output is promoted and frozen predictions are unchanged.
+
+## v11.2 historical complete-supported-action status
 
 Historical recovery is exhaustive and yields verdict
 `BHSM_BIDIRECTIONAL_BUOYANCY_AND_FIXED_ENCLOSURE_ARCHITECTURE_DERIVED_CONDITIONALLY_BUT_ATTACHMENT_CHARACTER_REMAINS_UNFIXED`.

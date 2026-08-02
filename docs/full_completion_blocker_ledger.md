@@ -1,11 +1,12 @@
 # BHSM Full-Completion Blocker Ledger
 
-## v11.2 canonical blocker
+## v11.3 canonical blocker
 
-Mark II is `NOT_REACHED`: the composite flat connection is derived, but the
-complete local supported action lacks an action-owned primitive
-character/current ledger and boundary/core canonical domain. Exact object:
-`ACTION_OWNED_CORE_SURFACE_ATTACHMENT_TERM_FIXING_ATTACHMENT_CHARACTER_AND_EXCHANGE_CURRENT`.
+Mark II is `REACHED_CONDITIONALLY`: the reciprocal attachment action fixes the
+primitive incidence half-characters, scalar source, Ward transfer, and finite
+boundary/core behavior. The exact remaining object is
+`ACTION_NORMALIZED_CORE_WALL_RESPONSE_GRAM_HESSIAN_ON_COMMON_ATTACHMENT_DOMAIN`.
+No physical three-mode Hessian or downstream output is emitted.
 
 BHSM full completion requires action-level or artifact-backed closure of all core sector projectors, mass/mixing laws, gauge/scalar normalization, admissible domains, dimensionful unit maps, and external runtime gates.
 

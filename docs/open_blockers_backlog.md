@@ -1,12 +1,22 @@
 # Open Blockers Backlog
 
-## Current upstream blocker (v11.2)
+## Current upstream blocker (v11.3)
+
+`ACTION_NORMALIZED_CORE_WALL_RESPONSE_GRAM_HESSIAN_ON_COMMON_ATTACHMENT_DOMAIN`
+is the highest-upstream open object. The reciprocal action fixes the incidence
+half-characters, scalar source, stress-transfer identity, boundary variation,
+and ordinary-core scaling. The local whitened KKT model is positive with two
+tangent modes, but the action-owned core and wall response Gram operators have
+not been pulled back to one physical attachment domain. That missing Hessian
+must be derived before any physical three-mode dynamics, orbit, mass, or
+mixing output is eligible.
+
+## Historical upstream blocker (v11.2)
 
 `ACTION_OWNED_CORE_SURFACE_ATTACHMENT_TERM_FIXING_ATTACHMENT_CHARACTER_AND_EXCHANGE_CURRENT` is
-the highest-upstream open object. It must fix the charges in the linear
-support current and quadratic connection completion, including induced
-measure, normal, and cross-stratum characters. Core-domain selection and all
-physical gates remain downstream.
+the object v11.2 left open. V11.3 closes the attachment-character and exchange
+current part by dressing the inherited algebraic matcher; it also proves that
+this term itself produces no linear or quadratic `A_D` coupling.
 
 ## Historical upstream blocker (v11.1)
 

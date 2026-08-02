@@ -2,15 +2,26 @@
 
 ## Current public claim boundary
 
-V11.2 verdict:
-`BHSM_COMPOSITE_SUPPORT_CONNECTION_DERIVED_BUT_PRIMITIVE_CHARACTER_AND_CURRENT_LEDGER_NOT_ACTION_FIXED`.
-The composite flat connection `A_D=d log(upsilon)` is derived on the smooth
-regular domain. Its covariance laws are conditional on a declared field
-character. No primitive character, complete support current, quadratic
-connection coupling, core response, self-adjoint core domain, physical
-equivalence class, or Haar normalization is claimed. The next exact object is
-`ACTION_TERM_OR_GEOMETRIC_PRINCIPLE_FIXING_PRIMITIVE_SUPPORT_CHARACTER_OWNERSHIP`.
+V11.3 verdict:
+`BHSM_RECIPROCAL_ATTACHMENT_ACTION_AND_CURRENT_DERIVED_WITH_THREE_MODE_DOMAIN_CONDITIONAL`.
+The existing action-owned `Lambda85` compatibility matcher admits the
+reciprocal dressing `upsilon^(-1/2) I_W-upsilon^(1/2) I_C`, with
+`I_C=Q_H(G8)` and `I_W=g5`. This fixes primitive half-characters, the
+multiplier constraint `I_W=upsilon I_C`, a signed scalar `q_D` source, and a
+three-sector Ward-transfer identity. Because the matcher is algebraic, it
+does not generate an independent linear or quadratic `A_D` term. The
+action-normalized local KKT model is not claimed to be the physical
+common-domain core/wall Hessian. No mass, mixing matrix, stable orbit, core
+transition, normalized M4 action, or quantum law follows. The next exact
+object is
+`ACTION_NORMALIZED_CORE_WALL_RESPONSE_GRAM_HESSIAN_ON_COMMON_ATTACHMENT_DOMAIN`.
 Frozen predictions and official prediction logic are unchanged.
+
+### v11.2 historical claim boundary
+
+V11.2 ended with the attachment character and exchange current not yet fixed.
+Its exact next object was
+`ACTION_OWNED_CORE_SURFACE_ATTACHMENT_TERM_FIXING_ATTACHMENT_CHARACTER_AND_EXCHANGE_CURRENT`.
 
 ### v11.1 historical claim boundary
 

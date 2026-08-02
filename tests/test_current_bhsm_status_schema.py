@@ -13,9 +13,9 @@ def test_current_bhsm_status_json_schema() -> None:
     assert status["candidate_architecture_complete"] is True
     assert status["full_bhsm_proven"] is False
     assert status["standard_model_fully_derived"] is False
-    assert status["current_version"] == "v11.2"
-    assert status["current_exact_verdict"] == "BHSM_BIDIRECTIONAL_BUOYANCY_AND_FIXED_ENCLOSURE_ARCHITECTURE_DERIVED_CONDITIONALLY_BUT_ATTACHMENT_CHARACTER_REMAINS_UNFIXED"
-    assert status["next_exact_object"] == "ACTION_OWNED_CORE_SURFACE_ATTACHMENT_TERM_FIXING_ATTACHMENT_CHARACTER_AND_EXCHANGE_CURRENT"
+    assert status["current_version"] == "v11.3"
+    assert status["current_exact_verdict"] == "BHSM_RECIPROCAL_ATTACHMENT_ACTION_AND_CURRENT_DERIVED_WITH_THREE_MODE_DOMAIN_CONDITIONAL"
+    assert status["next_exact_object"] == "ACTION_NORMALIZED_CORE_WALL_RESPONSE_GRAM_HESSIAN_ON_COMMON_ATTACHMENT_DOMAIN"
     assert status["frozen_predictions_changed"] is False
     assert status["official_predictions_changed"] is False
 

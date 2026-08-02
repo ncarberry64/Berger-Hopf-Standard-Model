@@ -5,17 +5,27 @@ evidence, not competing public status pages.
 
 ## Current public summary
 
-BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current campaign status: v11.2 derives the composite flat connection A_D=d log(upsilon), exhausts the primitive-character/current routes, and conditionally separates fixed intrinsic enclosure geometry from external relational embedding. The original exact action-character system remains rank 7/nullity 5; adding the action-unowned attachment, embedding, displacement, boundary-spectrum, and transfer candidates gives rank 7/nullity 12. The leading candidate carrier is the core-surface attachment map, but its character and exchange current are not action-fixed. The complete support current, quadratic completion, variation, and boundary/core domain remain open. Physical equivalence and the physical-or-conventional status of lambda_D are not claimed. The v11.0 logarithmic depth, positive Haar metric, healthy conditional support pair, infinite-distance core endpoint, canonical ontology, and frozen generation architecture remain intact. No core transfer operator, physical three-mode Hessian, stable particle cycle, mass, CKM/PMNS matrix, normalized M4 action, or quantum probability law is emitted. Frozen predictions are unchanged.
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current campaign status: v11.3 dresses the action-owned Lambda85 compatibility matcher reciprocally, with I_C=Q_H(G8), I_W=g5, w(I_C)=-1/2, and w(I_W)=+1/2 while the intrinsic enclosure remains neutral. The algebraic matcher derives a signed q_D source and total three-sector stress-transfer identity; it generates neither a linear nor a quadratic A_D term. Its boundary variation and ordinary core closure are finite. Mark II is reached conditionally: the exact action-normalized core/wall response Gram-Hessian on the common attachment domain remains open. Physical equivalence and the physical-or-conventional status of lambda_D are not claimed. The v11.0 logarithmic depth, positive Haar metric, healthy conditional support pair, infinite-distance core endpoint, canonical ontology, and frozen generation architecture remain intact. No core transfer operator, physical three-mode Hessian, stable particle cycle, mass, CKM/PMNS matrix, normalized M4 action, or quantum probability law is emitted. Frozen predictions are unchanged.
 
-BHSM v11.2 exhaustively recovers the earlier supported-action, reduction, and
-boundary-domain work and derives the composite flat connection
-`A_D=d log(upsilon)=-(dq_D/lambda_D)`. The current verdict is
-`BHSM_BIDIRECTIONAL_BUOYANCY_AND_FIXED_ENCLOSURE_ARCHITECTURE_DERIVED_CONDITIONALLY_BUT_ATTACHMENT_CHARACTER_REMAINS_UNFIXED`.
+BHSM v11.3 recovers the v7 compatibility incidence and dresses the existing
+`Lambda85` matcher without adding a field, mediator, or normalization. The
+current verdict is
+`BHSM_RECIPROCAL_ATTACHMENT_ACTION_AND_CURRENT_DERIVED_WITH_THREE_MODE_DOMAIN_CONDITIONAL`.
 The exact next object is
+`ACTION_NORMALIZED_CORE_WALL_RESPONSE_GRAM_HESSIAN_ON_COMMON_ATTACHMENT_DOMAIN`.
+The action now fixes reciprocal half-characters and the signed `q_D` source,
+but its algebraic form supplies no independent `A_D` or `A_D^2` coupling.
+The normalized local three-coordinate KKT model has two positive tangent
+modes; promoting it to the physical common-domain Hessian remains open. Mark
+II is reached conditionally; all physical outputs fail closed and frozen
+predictions are unchanged.
+
+## v11.2 historical complete-supported-action status
+
+V11.2 historical verdict:
+`BHSM_BIDIRECTIONAL_BUOYANCY_AND_FIXED_ENCLOSURE_ARCHITECTURE_DERIVED_CONDITIONALLY_BUT_ATTACHMENT_CHARACTER_REMAINS_UNFIXED`.
+Its exact next object was
 `ACTION_OWNED_CORE_SURFACE_ATTACHMENT_TERM_FIXING_ATTACHMENT_CHARACTER_AND_EXCHANGE_CURRENT`.
-The action does not yet assign the primitive characters that fix `-A_D.J_D`
-and its quadratic completion, nor a core response/domain. Mark II remains not
-reached; all physical outputs fail closed and frozen predictions are unchanged.
 
 ## v11.1 historical support-representation status
 

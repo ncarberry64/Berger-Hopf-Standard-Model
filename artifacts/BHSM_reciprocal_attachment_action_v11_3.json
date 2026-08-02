@@ -1,0 +1,48 @@
+{
+  "artifact": "BHSM_reciprocal_attachment_action_v11_3",
+  "classification": "AUTHOR_ACTION_SELECTION_AND_DERIVED_COMPLETION",
+  "core_variation": "delta_I_C S_attach=-int dmu5 <upsilon^(1/2)Lambda85,delta I_C>",
+  "embedding_equation": "the Q_H and trace adjoints insert the two dressed reactions into the inherited E8/E5 KKT embedding equations",
+  "exact_action": "S_attach=int_M5 dmu5 <Lambda85,upsilon^(-1/2) I_W-upsilon^(1/2) I_C>",
+  "exact_next_object": "ACTION_NORMALIZED_CORE_WALL_RESPONSE_GRAM_HESSIAN_ON_COMMON_ATTACHMENT_DOMAIN",
+  "frozen_limit": {
+    "A_D": 0,
+    "action": "exact inherited Lambda85 term",
+    "mismatch": "I_W-I_C",
+    "q_D": 0,
+    "upsilon": 1
+  },
+  "hermitian_completion": "the recovered metric pairing is real; for a complex associated incidence use Re<Lambda85,C_attach>, which adds no coefficient",
+  "incidence_identification": {
+    "I_C": "Q_H(G8)",
+    "I_W": "id_5(g5)"
+  },
+  "inherited_term": "int_M5 dmu5 <Lambda85,I_W-I_C>",
+  "multiplier_equation": "upsilon^(-1/2) I_W-upsilon^(1/2) I_C=0, equivalently I_W=upsilon I_C",
+  "new_coefficients": [],
+  "new_fields": [],
+  "new_parameters": [],
+  "primary_verdict": "BHSM_RECIPROCAL_ATTACHMENT_ACTION_AND_CURRENT_DERIVED_WITH_THREE_MODE_DOMAIN_CONDITIONAL",
+  "q_D_equation": "Box_G q_D=J_shift,inherited+J_attach, with each inherited term included once",
+  "q_D_source": "J_attach=-(1/(2 lambda_D))<Lambda85,upsilon^(-1/2)I_W+upsilon^(1/2)I_C>",
+  "q_D_variation": "delta S_attach/delta q_D=(1/(2 lambda_D))<Lambda85,upsilon^(-1/2)I_W+upsilon^(1/2)I_C>",
+  "selection_principle": "BHSM_RECIPROCAL_CORE_SURFACE_ATTACHMENT_PRINCIPLE",
+  "sign_reason": "this ordering preserves the exact inherited g5-Q_H(G8) convention",
+  "unchanged_compatibility_terms": [
+    "lambda_sigma(sigma5-P0 sigma8)",
+    "Lambda54(h-iota^*g5)"
+  ],
+  "validation": {
+    "compatibility_action_recovered": true,
+    "frozen_mismatch_exact": true,
+    "frozen_predictions_unchanged": true,
+    "intrinsic_metric_not_dressed": true,
+    "multiplier_equation_exact": true,
+    "no_new_coefficient": true,
+    "no_new_field": true,
+    "no_new_mediator": true,
+    "qd_source_sign_fixed": true
+  },
+  "validation_passed": true,
+  "wall_variation": "delta_I_W S_attach=+int dmu5 <upsilon^(-1/2)Lambda85,delta I_W>"
+}

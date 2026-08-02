@@ -1,17 +1,26 @@
 # Reviewer Reproduction Guide
 
-## Current v11.2 audit
+## Current v11.3 audit
+
+```bash
+python scripts/materialize_reciprocal_attachment_v11_3.py
+python -m bhsm.interface reciprocal-attachment-status --format json
+python -m bhsm.interface attachment-current-status --format markdown
+python -m bhsm.interface three-mode-action-status-v11-3 --format markdown
+python -m bhsm.interface mark-ii-status --format markdown
+python -m pytest -q tests/test_bhsm_reciprocal_attachment_v11_3.py tests/test_current_program_status_v11_2.py
+```
+
+Expected verdict: `BHSM_RECIPROCAL_ATTACHMENT_ACTION_AND_CURRENT_DERIVED_WITH_THREE_MODE_DOMAIN_CONDITIONAL`.
+Expected next object: `ACTION_NORMALIZED_CORE_WALL_RESPONSE_GRAM_HESSIAN_ON_COMMON_ATTACHMENT_DOMAIN`.
+
+## Historical v11.2 audit
 
 ```bash
 python scripts/materialize_complete_local_supported_action_v11_2.py
-python -m bhsm.interface support-derivative-status-v11-2 --format json
 python -m bhsm.interface physical-completion-status-v11-2 --format markdown
-python -m bhsm.interface historical-recovery-status --object "complete local supported action" --format json
-python -m pytest -q tests/test_bhsm_complete_local_supported_action_v11_2.py tests/test_current_program_status_v11_2.py
+python -m pytest -q tests/test_bhsm_complete_local_supported_action_v11_2.py
 ```
-
-Expected verdict: `BHSM_BIDIRECTIONAL_BUOYANCY_AND_FIXED_ENCLOSURE_ARCHITECTURE_DERIVED_CONDITIONALLY_BUT_ATTACHMENT_CHARACTER_REMAINS_UNFIXED`.
-Expected next object: `ACTION_OWNED_CORE_SURFACE_ATTACHMENT_TERM_FIXING_ATTACHMENT_CHARACTER_AND_EXCHANGE_CURRENT`.
 
 ## Historical v11.1 audit
 

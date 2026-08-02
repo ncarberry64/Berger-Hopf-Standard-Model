@@ -1,7 +1,7 @@
 """BHSM master-action, transport, and vacuum-to-flavor audit API.
 
 The v7.0 constants and v7.1 master-action report remain exported for
-artifact compatibility. Current v11.1 completion constants and status are
+artifact compatibility. Current v11.3 completion constants and status are
 exposed separately.
 """
 
