@@ -2346,3 +2346,13 @@ Campaign verdict:
 
 Exact next object:
 `ACTION_PRINCIPLE_FIXING_Z_UPSILON_U_UPSILON_AND_SUPPORT_COUPLINGS`.
+
+## Current v11.2 steering boundary
+
+The current verdict is
+`BHSM_BIDIRECTIONAL_BUOYANCY_AND_FIXED_ENCLOSURE_ARCHITECTURE_DERIVED_CONDITIONALLY_BUT_ATTACHMENT_CHARACTER_REMAINS_UNFIXED`.
+The exact next object is
+`ACTION_OWNED_CORE_SURFACE_ATTACHMENT_TERM_FIXING_ATTACHMENT_CHARACTER_AND_EXCHANGE_CURRENT`.
+This records the author ontology and conditional intrinsic/extrinsic split
+without promoting a force law, Casimir contribution, de-envelopment transfer,
+cosmological result, or any changed frozen prediction.

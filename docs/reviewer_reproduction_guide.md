@@ -10,8 +10,8 @@ python -m bhsm.interface historical-recovery-status --object "complete local sup
 python -m pytest -q tests/test_bhsm_complete_local_supported_action_v11_2.py tests/test_current_program_status_v11_2.py
 ```
 
-Expected verdict: `BHSM_COMPOSITE_SUPPORT_CONNECTION_DERIVED_BUT_PRIMITIVE_CHARACTER_AND_CURRENT_LEDGER_NOT_ACTION_FIXED`.
-Expected next object: `ACTION_TERM_OR_GEOMETRIC_PRINCIPLE_FIXING_PRIMITIVE_SUPPORT_CHARACTER_OWNERSHIP`.
+Expected verdict: `BHSM_BIDIRECTIONAL_BUOYANCY_AND_FIXED_ENCLOSURE_ARCHITECTURE_DERIVED_CONDITIONALLY_BUT_ATTACHMENT_CHARACTER_REMAINS_UNFIXED`.
+Expected next object: `ACTION_OWNED_CORE_SURFACE_ATTACHMENT_TERM_FIXING_ATTACHMENT_CHARACTER_AND_EXCHANGE_CURRENT`.
 
 ## Historical v11.1 audit
 

@@ -29,8 +29,8 @@ def test_completion_gate_is_conditional_and_fail_closed():
 
 def test_current_master_api_advances_while_historical_gate_stays_v101():
     assert CURRENT_VERSION == "v11.2"
-    assert CURRENT_VERDICT == "BHSM_COMPOSITE_SUPPORT_CONNECTION_DERIVED_BUT_PRIMITIVE_CHARACTER_AND_CURRENT_LEDGER_NOT_ACTION_FIXED"
-    assert CURRENT_MISSING_OBJECT == "ACTION_TERM_OR_GEOMETRIC_PRINCIPLE_FIXING_PRIMITIVE_SUPPORT_CHARACTER_OWNERSHIP"
+    assert CURRENT_VERDICT == "BHSM_BIDIRECTIONAL_BUOYANCY_AND_FIXED_ENCLOSURE_ARCHITECTURE_DERIVED_CONDITIONALLY_BUT_ATTACHMENT_CHARACTER_REMAINS_UNFIXED"
+    assert CURRENT_MISSING_OBJECT == "ACTION_OWNED_CORE_SURFACE_ATTACHMENT_TERM_FIXING_ATTACHMENT_CHARACTER_AND_EXCHANGE_CURRENT"
     canonical = gate.canonical_completion_gate_payload()
     assert canonical["version"] == "v10.1"
     assert canonical["author_doctrine_integrated"] is True

@@ -18,6 +18,16 @@ from ..current_program_status import (
     status_payload,
 )
 from .boundary_variational_domain_v11_2 import boundary_payload
+from .bidirectional_buoyancy_v11_2 import (
+    black_hole_payload,
+    boundary_pressure_payload,
+    casimir_payload,
+    displacement_payload,
+    exchange_current_payload,
+    fixed_encapsulation_payload,
+    ontology_payload,
+    steering_payload,
+)
 from .complete_local_supported_action_v11_2 import action_payload
 from .core_asymptotic_domain_v11_2 import core_domain_payload
 from .core_transfer_operator_v11_2 import core_transfer_payload
@@ -61,6 +71,13 @@ ARTIFACT_FILES = {
     "support_character_constraint_system": "BHSM_support_character_constraint_system_v11_2.json",
     "support_character_boundary_core_selection": "BHSM_support_character_boundary_core_selection_v11_2.json",
     "support_character_equivalence_classes": "BHSM_support_character_equivalence_classes_v11_2.json",
+    "bidirectional_topological_buoyancy_ontology": "BHSM_bidirectional_topological_buoyancy_ontology_v11_2.json",
+    "fixed_encapsulation_geometry": "BHSM_fixed_encapsulation_geometry_v11_2.json",
+    "relational_spacetime_displacement": "BHSM_relational_spacetime_displacement_v11_2.json",
+    "core_surface_exchange_current": "BHSM_core_surface_exchange_current_v11_2.json",
+    "boundary_spectral_pressure": "BHSM_boundary_spectral_pressure_v11_2.json",
+    "casimir_reproduction_gate": "BHSM_casimir_reproduction_gate_v11_2.json",
+    "black_hole_de_envelopment_transfer": "BHSM_black_hole_de_envelopment_transfer_v11_2.json",
 }
 
 
@@ -86,6 +103,14 @@ def completion_payload() -> dict[str, Any]:
         "support_character_constraint_system": character_constraint_payload(),
         "support_character_boundary_core_selection": boundary_core_payload(),
         "support_character_equivalence_classes": equivalence_class_payload(),
+        "bidirectional_topological_buoyancy_ontology": ontology_payload(),
+        "fixed_encapsulation_geometry": fixed_encapsulation_payload(),
+        "relational_spacetime_displacement": displacement_payload(),
+        "core_surface_exchange_current": exchange_current_payload(),
+        "boundary_spectral_pressure": boundary_pressure_payload(),
+        "casimir_reproduction_gate": casimir_payload(),
+        "black_hole_de_envelopment_transfer": black_hole_payload(),
+        "bidirectional_buoyancy_steering": steering_payload(),
     }
     validation = {
         "all_sections_valid": all(section["validation_passed"] for section in sections.values()),
@@ -99,11 +124,12 @@ def completion_payload() -> dict[str, Any]:
         "downstream_fail_closed": not sections["downstream_physical_gates"]["automatic_continuation_triggered"],
         "no_prediction_changes": True,
         "primitive_ledger_exhausted": sections["primitive_support_character_ledger"]["nontrivial_action_owned_ledger"] is None,
-        "constraint_rank_and_nullity_exact": sections["support_character_constraint_system"]["rank"] == 7 and sections["support_character_constraint_system"]["nullity"] == 5,
+        "constraint_rank_and_nullity_exact": sections["support_character_constraint_system"]["rank"] == 7 and sections["support_character_constraint_system"]["nullity"] == 12,
         "current_classified_without_gauge_overclaim": not sections["support_noether_current"]["transformation_classification"]["local_gauge_redundancy"],
         "linear_quadratic_pairing_enforced": sections["support_linear_quadratic_connection_couplings"]["validation_passed"],
         "boundary_core_anomaly_exhausted": sections["support_character_boundary_core_selection"]["validation_passed"],
         "equivalence_quotient_exhausted": sections["support_character_equivalence_classes"]["validation_passed"],
+        "bidirectional_ontology_fail_closed": steering_payload()["validation_passed"] and steering_payload()["supported_action"]["complete"] is False,
     }
     return {
         "artifact": "BHSM_final_completion_gate_v11_2",
@@ -187,7 +213,9 @@ def canonical_completion_gate_payload() -> dict[str, Any]:
         "composite_support_connection_derived": True,
         "primitive_support_character_current_ledger_action_owned": False,
         "support_character_constraint_rank": 7,
-        "support_character_constraint_nullity": 5,
+        "support_character_constraint_nullity": 12,
+        "pre_ontology_support_character_constraint_nullity": 5,
+        "leading_support_character_candidate_owner": "core_surface_attachment",
         "complete_local_supported_action": False,
         "boundary_core_canonical_domain_complete": False,
         "support_equivalence_quotient_complete": False,
@@ -199,7 +227,7 @@ def canonical_completion_gate_payload() -> dict[str, Any]:
         "frozen_predictions_changed": False,
         "validation_passed": result["validation_passed"],
     })
-    gate["RB15"] = {"status": "BLOCKED_AFTER_EXACT_RANK_7_NULLITY_5_CHARACTER_AUDIT", "resolution": EXACT_NEXT_OBJECT}
+    gate["RB15"] = {"status": "BLOCKED_AFTER_RELATIONAL_RANK_7_NULLITY_12_ATTACHMENT_AUDIT", "resolution": EXACT_NEXT_OBJECT}
     gate["RB16"] = {"status": "DOWNSTREAM_BLOCKED", "resolution": "Mark II remains NOT_REACHED"}
     return gate
 
@@ -224,6 +252,7 @@ COMMAND_SECTIONS = {
     "support-character-constraint-status-v11-2": "support_character_constraint_system",
     "support-character-boundary-core-status-v11-2": "support_character_boundary_core_selection",
     "support-character-equivalence-class-status-v11-2": "support_character_equivalence_classes",
+    "bidirectional-buoyancy-status-v11-2": "bidirectional_buoyancy_steering",
 }
 
 

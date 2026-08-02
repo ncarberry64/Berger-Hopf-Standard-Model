@@ -993,6 +993,7 @@ def build_parser() -> argparse.ArgumentParser:
         ("support-character-constraint-status-v11-2", "Render the BHSM v11.2 exact character constraint system"),
         ("support-character-boundary-core-status-v11-2", "Render the BHSM v11.2 boundary/core character selection"),
         ("support-character-equivalence-class-status-v11-2", "Render the BHSM v11.2 support-character equivalence classes"),
+        ("bidirectional-buoyancy-status-v11-2", "Render the BHSM v11.2 bidirectional-buoyancy steering result"),
         ("historical-recovery-status", "Render the historical-recovery gate"),
         ("historical-object-search", "Render the typed historical-object search"),
         ("historical-equivalence-audit", "Render the historical equivalence audit"),
@@ -1171,6 +1172,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         "support-character-constraint-status-v11-2",
         "support-character-boundary-core-status-v11-2",
         "support-character-equivalence-class-status-v11-2",
+        "bidirectional-buoyancy-status-v11-2",
     }:
         module = import_module(
             ".completion.final_completion_gate_v11_2",

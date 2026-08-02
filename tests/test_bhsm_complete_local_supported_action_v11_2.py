@@ -78,7 +78,7 @@ def test_materialization_is_byte_deterministic(tmp_path) -> None:
     first_bytes = {path.name: path.read_bytes() for path in first}
     second = gate.materialize(tmp_path)
     assert first_bytes == {path.name: path.read_bytes() for path in second}
-    assert len(first) == 22
+    assert len(first) == 29
     canonical = json.loads((tmp_path / "artifacts" / "BHSM_1_0_completion_gate.json").read_text())
     assert canonical["version"] == CURRENT_VERSION == "v11.2"
     assert canonical["current_verdict"] == PRIMARY_VERDICT

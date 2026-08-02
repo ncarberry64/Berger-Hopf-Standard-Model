@@ -4,6 +4,224 @@
   "Mark_III": "NOT_REACHED",
   "Mark_IV": "NOT_REACHED",
   "artifact": "BHSM_final_completion_gate_v11_2",
+  "bidirectional_buoyancy_steering": {
+    "artifact": "BHSM_bidirectional_buoyancy_steering_result_v11_2",
+    "black_hole_transfer": {
+      "Gamma_BH": null,
+      "artifact": "BHSM_black_hole_de_envelopment_transfer_v11_2",
+      "classification": "AUTHOR_BLACK_HOLE_DE_ENVELOPMENT_HYPOTHESIS",
+      "conserved_sum_if_same_domain_and_orientation": "nabla_A(J_enc^A+J_surface^A)=0",
+      "cosmic_expansion_relation": null,
+      "enclosed_balance_candidate": "nabla_A J_enc^A=-Gamma_BH",
+      "new_transfer_term_added": false,
+      "ordinary_motion": "dA_enc/dtau=dL_enc/dtau=0 on the conditional fixed-enclosure sector",
+      "status": "BLOCKED_BY_ABSENT_TRIGGER_TRANSFER_OPERATOR_AND_SURFACE_RECEIVING_DOMAIN",
+      "surface_balance_candidate": "nabla_A J_surface^A=+Gamma_BH",
+      "surface_receiving_domain": null,
+      "transfer_map": null,
+      "trigger": null,
+      "validation_passed": true
+    },
+    "boundary_spectral_pressure": {
+      "artifact": "BHSM_boundary_spectral_pressure_v11_2",
+      "boundary_operator": null,
+      "classification": "AUTHOR_HYPOTHESIS_AND_DERIVATION_TARGET",
+      "exterior_spectrum": null,
+      "formal_energy_difference": "Delta E(a)=E_in(a)-E_out(a)",
+      "formal_pressure": "P(a)=-partial_a[Delta E(a)/Area]",
+      "geometry_cases_calculable": [],
+      "interior_spectrum": null,
+      "no_double_counting_rule": "standard field modes and any BHSM support modes must be identified or proved independent before summing",
+      "normalized_spectral_measure": null,
+      "regularization": null,
+      "status": "BLOCKED_BY_ABSENT_NORMALIZED_BOUNDARY_SUPPORT_OPERATOR_DOMAIN_AND_SPECTRAL_MEASURE",
+      "validation_passed": true
+    },
+    "casimir_gate": {
+      "a_minus_4_scaling_reproduced_by_bhsm": null,
+      "additional_bhsm_contribution": null,
+      "artifact": "BHSM_casimir_reproduction_gate_v11_2",
+      "benchmark_energy_per_area": "-pi^2 hbar c/(720 a^3)",
+      "benchmark_pressure": "-pi^2 hbar c/(240 a^4)",
+      "bhsm_spacetime_displacement_interpretation": "AUTHOR_HYPOTHESIS",
+      "bhsm_support_mode_restriction": null,
+      "classification": "EXTERNAL_REPRODUCTION_BENCHMARK",
+      "exact_coefficient_reproduced_by_bhsm": null,
+      "measured_coefficient_used_as_input": false,
+      "standard_qft_equivalence": null,
+      "standard_qft_mode_restriction": "established benchmark only",
+      "validation_passed": true,
+      "verdict": "BHSM_CASIMIR_REINTERPRETATION_BLOCKED_BY_ABSENT_NORMALIZED_BOUNDARY_SPECTRUM"
+    },
+    "core_surface_exchange": {
+      "action_derived_decomposition": null,
+      "artifact": "BHSM_core_surface_exchange_current_v11_2",
+      "candidate_closed_identity": "nabla_A(J_core^A+J_surface^A+J_attach^A)=0",
+      "candidate_decomposition": "J_D^A=J_core^A+J_surface^A+J_attach^A",
+      "classification": "CANDIDATE",
+      "core_mediated_nonlocal_transfer": "OPEN",
+      "global_closed_system_conservation": "REQUIRED_BY_AUTHOR_ONTOLOGY_BUT_NOT_YET_ACTION_DERIVED",
+      "isolated_known_current": "j_shift^A=-lambda_D^2 A_D^A=lambda_D nabla^A q_D",
+      "local_conservation": null,
+      "new_independent_current_field": false,
+      "orientation_signs_fixed": false,
+      "status": "BLOCKED_BY_ABSENT_ATTACHMENT_ACTION_AND_ORIENTATION_FIXED_VARIATION",
+      "validation_passed": true
+    },
+    "exact_next_object": "ACTION_OWNED_CORE_SURFACE_ATTACHMENT_TERM_FIXING_ATTACHMENT_CHARACTER_AND_EXCHANGE_CURRENT",
+    "fixed_encapsulation": {
+      "action_owned_constraint_or_stability_term": null,
+      "artifact": "BHSM_fixed_encapsulation_geometry_v11_2",
+      "classification": "AUTHOR_ONTOLOGY_CLARIFICATION_AND_DERIVED_CONDITIONAL",
+      "external_data": [
+        "embedding X",
+        "normal bundle N Sigma_enc",
+        "extrinsic curvature K",
+        "ambient metric",
+        "attachment morphism",
+        "relational interval"
+      ],
+      "intrinsic_candidate": {
+        "area": "integral_Sigma sqrt(|h_enc|)",
+        "cross_distance": "geodesic diameter along the selected inside-edge pair",
+        "metric": "h_enc_ab",
+        "topology": "T_enc"
+      },
+      "new_lagrange_multipliers_added": false,
+      "ordinary_motion_condition": "delta h_enc_ab=0 (isometric-embedding constraint surface)",
+      "ordinary_motion_invariance_automatic": false,
+      "status": "FIXED_INTRINSIC_GEOMETRY_CONDITIONALLY_CONSISTENT_BUT_NOT_DERIVED_AS_AN_EQUATION_OF_MOTION",
+      "support_character": {
+        "attachment": null,
+        "embedding": null,
+        "intrinsic_metric": 0,
+        "normal_bundle": null
+      },
+      "validation_passed": true,
+      "variation_identity": "delta h_enc_ab=i_X^*(delta g)_ab+2 nabla_(a xi_b)+2 K^I_ab xi_I"
+    },
+    "frozen_predictions_changed": false,
+    "invalidated": [
+      "nonzero support character on the intrinsic enclosure metric in the current full-coframe action",
+      "one universal inverse-square law",
+      "plate Casimir pressure from spherical dilution",
+      "unrestricted spacetime creation",
+      "black-hole transfer without a receiving channel"
+    ],
+    "ontology": {
+      "artifact": "BHSM_bidirectional_topological_buoyancy_ontology_v11_2",
+      "author_axioms": [
+        "spacetime is surface-seeking",
+        "energy is core-seeking",
+        "observable differentials arise from their relational interaction"
+      ],
+      "classification": "AUTHOR_ONTOLOGY_CLARIFICATION",
+      "derived_consequences": [
+        "intrinsic enclosure data and external embedding data are mathematically distinct",
+        "a paired variational response requires an action coupling both sectors"
+      ],
+      "not_derived": [
+        "a force law",
+        "a primitive character",
+        "a transfer rate",
+        "a cosmological response"
+      ],
+      "status": "AUTHOR_AXIOM_RECORDED; ACTION_REALIZATION_OPEN",
+      "validation_passed": true
+    },
+    "open": [
+      "attachment character",
+      "exchange current",
+      "normalized boundary support spectrum",
+      "de-envelopment threshold and transfer",
+      "cosmological response"
+    ],
+    "physical_outputs_promoted": [],
+    "primary_verdict": "BHSM_BIDIRECTIONAL_BUOYANCY_AND_FIXED_ENCLOSURE_ARCHITECTURE_DERIVED_CONDITIONALLY_BUT_ATTACHMENT_CHARACTER_REMAINS_UNFIXED",
+    "relational_displacement": {
+      "artifact": "BHSM_relational_spacetime_displacement_v11_2",
+      "classification": "AUTHOR_HYPOTHESIS_AND_DERIVED_CONDITIONAL",
+      "current_candidate": "J_st^A may be the support/attachment component of the existing ambient response, not an added independent field",
+      "global_balance_requirement": "integrated boundary flux plus core/surface transfer vanishes on a closed system",
+      "global_covariant_candidate": "twice Synge world function or a boundary-to-boundary geodesic distance on a normal convex domain",
+      "inverse_square_is_force_law": false,
+      "local_balance_candidate": "nabla_A J_st^A=Gamma_release-Gamma_capture+Gamma_displacement",
+      "new_fields_added": [],
+      "plate_casimir_uses_inverse_square": false,
+      "q_D_candidate_interpretation": "relational support differential between a fixed enclosure and ambient core-surface placement",
+      "q_D_reclassification": "OPEN; retained in the three-mode system pending constraints",
+      "relational_interval_local": "Delta s_ij^2=g_ambient(mu,nu) Delta X_ij^mu Delta X_ij^nu",
+      "spherical_limit": "J_r=Phi/(4 pi r^2) only for stationary conserved radial flux",
+      "status": "RELATIONAL_AND_SPHERICAL_KINEMATICS_DERIVED_CONDITIONALLY; PHYSICAL_CURRENT_OPEN",
+      "validation_passed": true
+    },
+    "supported_action": {
+      "Mark_II": "NOT_REACHED",
+      "arbitrary_choices_introduced": false,
+      "complete": false,
+      "new_action_owned_term": null,
+      "new_coefficients": [],
+      "new_fields": []
+    },
+    "validated": [
+      "intrinsic/extrinsic separation",
+      "conditional inverse-square radial flux dilution",
+      "need for a boundary spectral-pressure calculation"
+    ],
+    "validation_passed": true
+  },
+  "bidirectional_topological_buoyancy_ontology": {
+    "artifact": "BHSM_bidirectional_topological_buoyancy_ontology_v11_2",
+    "author_axioms": [
+      "spacetime is surface-seeking",
+      "energy is core-seeking",
+      "observable differentials arise from their relational interaction"
+    ],
+    "classification": "AUTHOR_ONTOLOGY_CLARIFICATION",
+    "derived_consequences": [
+      "intrinsic enclosure data and external embedding data are mathematically distinct",
+      "a paired variational response requires an action coupling both sectors"
+    ],
+    "not_derived": [
+      "a force law",
+      "a primitive character",
+      "a transfer rate",
+      "a cosmological response"
+    ],
+    "status": "AUTHOR_AXIOM_RECORDED; ACTION_REALIZATION_OPEN",
+    "validation_passed": true
+  },
+  "black_hole_de_envelopment_transfer": {
+    "Gamma_BH": null,
+    "artifact": "BHSM_black_hole_de_envelopment_transfer_v11_2",
+    "classification": "AUTHOR_BLACK_HOLE_DE_ENVELOPMENT_HYPOTHESIS",
+    "conserved_sum_if_same_domain_and_orientation": "nabla_A(J_enc^A+J_surface^A)=0",
+    "cosmic_expansion_relation": null,
+    "enclosed_balance_candidate": "nabla_A J_enc^A=-Gamma_BH",
+    "new_transfer_term_added": false,
+    "ordinary_motion": "dA_enc/dtau=dL_enc/dtau=0 on the conditional fixed-enclosure sector",
+    "status": "BLOCKED_BY_ABSENT_TRIGGER_TRANSFER_OPERATOR_AND_SURFACE_RECEIVING_DOMAIN",
+    "surface_balance_candidate": "nabla_A J_surface^A=+Gamma_BH",
+    "surface_receiving_domain": null,
+    "transfer_map": null,
+    "trigger": null,
+    "validation_passed": true
+  },
+  "boundary_spectral_pressure": {
+    "artifact": "BHSM_boundary_spectral_pressure_v11_2",
+    "boundary_operator": null,
+    "classification": "AUTHOR_HYPOTHESIS_AND_DERIVATION_TARGET",
+    "exterior_spectrum": null,
+    "formal_energy_difference": "Delta E(a)=E_in(a)-E_out(a)",
+    "formal_pressure": "P(a)=-partial_a[Delta E(a)/Area]",
+    "geometry_cases_calculable": [],
+    "interior_spectrum": null,
+    "no_double_counting_rule": "standard field modes and any BHSM support modes must be identified or proved independent before summing",
+    "normalized_spectral_measure": null,
+    "regularization": null,
+    "status": "BLOCKED_BY_ABSENT_NORMALIZED_BOUNDARY_SUPPORT_OPERATOR_DOMAIN_AND_SPECTRAL_MEASURE",
+    "validation_passed": true
+  },
   "boundary_variational_domain": {
     "admissible_scalar_ensembles": [
       "Dirichlet delta q_D=0",
@@ -30,6 +248,22 @@
     "z2_interface_result": "v6.15 interface trace is presymplectic-null and selects no support boundary condition"
   },
   "campaign": "v11.2 Complete local supported action and boundary/core canonical-domain campaign",
+  "casimir_reproduction_gate": {
+    "a_minus_4_scaling_reproduced_by_bhsm": null,
+    "additional_bhsm_contribution": null,
+    "artifact": "BHSM_casimir_reproduction_gate_v11_2",
+    "benchmark_energy_per_area": "-pi^2 hbar c/(720 a^3)",
+    "benchmark_pressure": "-pi^2 hbar c/(240 a^4)",
+    "bhsm_spacetime_displacement_interpretation": "AUTHOR_HYPOTHESIS",
+    "bhsm_support_mode_restriction": null,
+    "classification": "EXTERNAL_REPRODUCTION_BENCHMARK",
+    "exact_coefficient_reproduced_by_bhsm": null,
+    "measured_coefficient_used_as_input": false,
+    "standard_qft_equivalence": null,
+    "standard_qft_mode_restriction": "established benchmark only",
+    "validation_passed": true,
+    "verdict": "BHSM_CASIMIR_REINTERPRETATION_BLOCKED_BY_ABSENT_NORMALIZED_BOUNDARY_SPECTRUM"
+  },
   "complete_local_supported_action": {
     "artifact": "BHSM_complete_local_supported_action_v11_2",
     "bare_support_potential": 0,
@@ -39,18 +273,18 @@
     "compatibility_sector": null,
     "complete_local_action": null,
     "core_asymptotic_sector": null,
-    "exact_next_object": "ACTION_TERM_OR_GEOMETRIC_PRINCIPLE_FIXING_PRIMITIVE_SUPPORT_CHARACTER_OWNERSHIP",
+    "exact_next_object": "ACTION_OWNED_CORE_SURFACE_ATTACHMENT_TERM_FIXING_ATTACHMENT_CHARACTER_AND_EXCHANGE_CURRENT",
     "fermion_sector": null,
-    "first_missing_action_owned_term": "a term or geometric principle assigning a nontrivial primitive G_D character; only then are -A_D,A J_D^A and its covariant quadratic completion determined",
+    "first_missing_action_owned_term": "a core-surface attachment functional assigning the attachment character and exchange current; only then are -A_D,A J_D^A and its covariant quadratic completion determined",
     "gauge_sector": null,
     "known_action_skeleton": "S_parent+D-dimensional integral[-(partial q_D)^2/2] with A_D=-(dq_D/lambda_D)",
     "neutral_response_sector": null,
     "new_coefficients": [],
     "new_fields": [],
-    "primary_verdict": "BHSM_COMPOSITE_SUPPORT_CONNECTION_DERIVED_BUT_PRIMITIVE_CHARACTER_AND_CURRENT_LEDGER_NOT_ACTION_FIXED",
+    "primary_verdict": "BHSM_BIDIRECTIONAL_BUOYANCY_AND_FIXED_ENCLOSURE_ARCHITECTURE_DERIVED_CONDITIONALLY_BUT_ATTACHMENT_CHARACTER_REMAINS_UNFIXED",
     "required_derivative_completion": "replace each parent derivative by D^(w); expansion generates -A_D.J_D and A_D^2 K_D terms fixed by the same action-owned characters",
     "scalar_topographic_sector": null,
-    "smallest_missing_datum": "primitive support-character ownership on at least one nontrivial action field or cross-stratum map",
+    "smallest_missing_datum": "the action-owned support character and orientation-fixed current of the core-surface attachment map",
     "status": "BHSM_COMPLETE_LOCAL_SUPPORTED_ACTION_BLOCKED_BY_UNASSIGNED_PRIMITIVE_SUPPORT_CHARACTERS",
     "support_kinetic_term": "-1/2 G^AB partial_A q_D partial_B q_D",
     "term_ledger": [
@@ -343,6 +577,21 @@
     },
     "validation_passed": true
   },
+  "core_surface_exchange_current": {
+    "action_derived_decomposition": null,
+    "artifact": "BHSM_core_surface_exchange_current_v11_2",
+    "candidate_closed_identity": "nabla_A(J_core^A+J_surface^A+J_attach^A)=0",
+    "candidate_decomposition": "J_D^A=J_core^A+J_surface^A+J_attach^A",
+    "classification": "CANDIDATE",
+    "core_mediated_nonlocal_transfer": "OPEN",
+    "global_closed_system_conservation": "REQUIRED_BY_AUTHOR_ONTOLOGY_BUT_NOT_YET_ACTION_DERIVED",
+    "isolated_known_current": "j_shift^A=-lambda_D^2 A_D^A=lambda_D nabla^A q_D",
+    "local_conservation": null,
+    "new_independent_current_field": false,
+    "orientation_signs_fixed": false,
+    "status": "BLOCKED_BY_ABSENT_ATTACHMENT_ACTION_AND_ORIENTATION_FIXED_VARIATION",
+    "validation_passed": true
+  },
   "core_transfer_operator": {
     "artifact": "BHSM_core_transfer_operator_v11_2",
     "energy_matching": null,
@@ -390,7 +639,38 @@
     "validation_passed": true
   },
   "empirical_replacement_complete": false,
-  "exact_next_object": "ACTION_TERM_OR_GEOMETRIC_PRINCIPLE_FIXING_PRIMITIVE_SUPPORT_CHARACTER_OWNERSHIP",
+  "exact_next_object": "ACTION_OWNED_CORE_SURFACE_ATTACHMENT_TERM_FIXING_ATTACHMENT_CHARACTER_AND_EXCHANGE_CURRENT",
+  "fixed_encapsulation_geometry": {
+    "action_owned_constraint_or_stability_term": null,
+    "artifact": "BHSM_fixed_encapsulation_geometry_v11_2",
+    "classification": "AUTHOR_ONTOLOGY_CLARIFICATION_AND_DERIVED_CONDITIONAL",
+    "external_data": [
+      "embedding X",
+      "normal bundle N Sigma_enc",
+      "extrinsic curvature K",
+      "ambient metric",
+      "attachment morphism",
+      "relational interval"
+    ],
+    "intrinsic_candidate": {
+      "area": "integral_Sigma sqrt(|h_enc|)",
+      "cross_distance": "geodesic diameter along the selected inside-edge pair",
+      "metric": "h_enc_ab",
+      "topology": "T_enc"
+    },
+    "new_lagrange_multipliers_added": false,
+    "ordinary_motion_condition": "delta h_enc_ab=0 (isometric-embedding constraint surface)",
+    "ordinary_motion_invariance_automatic": false,
+    "status": "FIXED_INTRINSIC_GEOMETRY_CONDITIONALLY_CONSISTENT_BUT_NOT_DERIVED_AS_AN_EQUATION_OF_MOTION",
+    "support_character": {
+      "attachment": null,
+      "embedding": null,
+      "intrinsic_metric": 0,
+      "normal_bundle": null
+    },
+    "validation_passed": true,
+    "variation_identity": "delta h_enc_ab=i_X^*(delta g)_ab+2 nabla_(a xi_b)+2 K^I_ab xi_I"
+  },
   "frozen_predictions_changed": false,
   "haar_scale_closure": {
     "artifact": "BHSM_haar_scale_closure_v11_2",
@@ -580,7 +860,7 @@
         "reason": "normalizes gauge fields using the kinetic matrix; it is not the support connection"
       }
     ],
-    "exact_next_object": "ACTION_TERM_OR_GEOMETRIC_PRINCIPLE_FIXING_PRIMITIVE_SUPPORT_CHARACTER_OWNERSHIP",
+    "exact_next_object": "ACTION_OWNED_CORE_SURFACE_ATTACHMENT_TERM_FIXING_ATTACHMENT_CHARACTER_AND_EXCHANGE_CURRENT",
     "exact_object_recovered": false,
     "historical_routes_exhausted": true,
     "preservation_bundles": [
@@ -621,7 +901,7 @@
       "finite-boundary Green and flux forms"
     ],
     "searched_object": "complete local supported action with derivative couplings and boundary/core canonical domain",
-    "status": "BHSM_COMPOSITE_SUPPORT_CONNECTION_DERIVED_BUT_PRIMITIVE_CHARACTER_AND_CURRENT_LEDGER_NOT_ACTION_FIXED",
+    "status": "BHSM_BIDIRECTIONAL_BUOYANCY_AND_FIXED_ENCLOSURE_ARCHITECTURE_DERIVED_CONDITIONALLY_BUT_ATTACHMENT_CHARACTER_REMAINS_UNFIXED",
     "targeted_terms": [
       "primitive support character",
       "Noether/response/scale current",
@@ -682,7 +962,7 @@
     "normalized M4 action",
     "quantum probabilities"
   ],
-  "primary_verdict": "BHSM_COMPOSITE_SUPPORT_CONNECTION_DERIVED_BUT_PRIMITIVE_CHARACTER_AND_CURRENT_LEDGER_NOT_ACTION_FIXED",
+  "primary_verdict": "BHSM_BIDIRECTIONAL_BUOYANCY_AND_FIXED_ENCLOSURE_ARCHITECTURE_DERIVED_CONDITIONALLY_BUT_ATTACHMENT_CHARACTER_REMAINS_UNFIXED",
   "primitive_support_character_ledger": {
     "artifact": "BHSM_primitive_support_character_ledger_v11_2",
     "coframe_candidate": {
@@ -706,7 +986,8 @@
       },
       "support_definition_fixes_nonzero_r_e": false
     },
-    "exact_next_object": "ACTION_TERM_OR_GEOMETRIC_PRINCIPLE_FIXING_PRIMITIVE_SUPPORT_CHARACTER_OWNERSHIP",
+    "exact_next_object": "ACTION_OWNED_CORE_SURFACE_ATTACHMENT_TERM_FIXING_ATTACHMENT_CHARACTER_AND_EXCHANGE_CURRENT",
+    "leading_candidate_owner": "core_surface_attachment (author-ontology candidate, not action-derived)",
     "ledger_unique": false,
     "nontrivial_action_owned_ledger": null,
     "primitive_objects": [
@@ -1363,17 +1644,178 @@
         "primitive_or_composite": "primitive boundary data",
         "tensor_type": "phase-space candidate",
         "wall_incidence": "none"
+      },
+      {
+        "boundary_incidence": "none",
+        "candidate_derivation_source": "full-coframe action rejects nonzero intrinsic metric character",
+        "candidate_support_character": "0 in the current action candidate",
+        "core_incidence": "none",
+        "density_type": "none",
+        "domain": "Sigma_enc",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": null,
+        "existing_normalization": "fixed only as author ontology",
+        "fiber_base_ownership": "none",
+        "gauge_representation": "singlet",
+        "historical_aliases": [
+          "h_enc"
+        ],
+        "object": "intrinsic_enclosure_metric",
+        "primitive_or_composite": "primitive sector datum candidate",
+        "tensor_type": "symmetric (0,2)",
+        "wall_incidence": "enclosure"
+      },
+      {
+        "boundary_incidence": "none",
+        "candidate_derivation_source": "new author ontology identifies a candidate owner but supplies no action term",
+        "candidate_support_character": "w_attachment open",
+        "core_incidence": "core-to-surface",
+        "density_type": "none",
+        "domain": "E_core to S_surface",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": null,
+        "existing_normalization": null,
+        "fiber_base_ownership": "none",
+        "gauge_representation": "singlet",
+        "historical_aliases": [
+          "A_attach",
+          "attachment map"
+        ],
+        "object": "core_surface_attachment",
+        "primitive_or_composite": "primitive morphism candidate",
+        "tensor_type": "attachment morphism",
+        "wall_incidence": "enclosure"
+      },
+      {
+        "boundary_incidence": "none",
+        "candidate_derivation_source": "fixed intrinsic geometry allows only conditional isometric embedding; no embedding action fixes a character",
+        "candidate_support_character": "w_embedding open",
+        "core_incidence": "none",
+        "density_type": "none",
+        "domain": "Sigma_enc into M_ambient",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": null,
+        "existing_normalization": null,
+        "fiber_base_ownership": "none",
+        "gauge_representation": "singlet",
+        "historical_aliases": [
+          "X"
+        ],
+        "object": "external_enclosure_embedding",
+        "primitive_or_composite": "primitive map candidate",
+        "tensor_type": "embedding",
+        "wall_incidence": "enclosure"
+      },
+      {
+        "boundary_incidence": "none",
+        "candidate_derivation_source": "induced from embedding and metric only after the attachment law is chosen",
+        "candidate_support_character": "w_normal_bundle open",
+        "core_incidence": "none",
+        "density_type": "none",
+        "domain": "N Sigma_enc",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": null,
+        "existing_normalization": "unit normal after metric choice",
+        "fiber_base_ownership": "none",
+        "gauge_representation": "singlet",
+        "historical_aliases": [
+          "N Sigma_enc"
+        ],
+        "object": "normal_bundle_attachment",
+        "primitive_or_composite": "composite/candidate connection",
+        "tensor_type": "normal bundle data",
+        "wall_incidence": "enclosure"
+      },
+      {
+        "boundary_incidence": "none",
+        "candidate_derivation_source": "coordinate-local quadratic form is covariant as a scalar; global operator/domain absent",
+        "candidate_support_character": "w_relational_interval open",
+        "core_incidence": "none",
+        "density_type": "none",
+        "domain": "between encapsulations",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": null,
+        "existing_normalization": null,
+        "fiber_base_ownership": "none",
+        "gauge_representation": "singlet",
+        "historical_aliases": [
+          "Delta_rel",
+          "Delta s_ij"
+        ],
+        "object": "relational_interval",
+        "primitive_or_composite": "composite candidate",
+        "tensor_type": "biscalar/distance",
+        "wall_incidence": "none"
+      },
+      {
+        "boundary_incidence": "none",
+        "candidate_derivation_source": "may be an attachment component of ambient response; not added independently",
+        "candidate_support_character": "w_displacement_current open",
+        "core_incidence": "none",
+        "density_type": "current density after measure",
+        "domain": "ambient/intervening region",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": null,
+        "existing_normalization": null,
+        "fiber_base_ownership": "none",
+        "gauge_representation": "singlet",
+        "historical_aliases": [
+          "J_st"
+        ],
+        "object": "spacetime_displacement_current",
+        "primitive_or_composite": "response/current candidate",
+        "tensor_type": "vector current",
+        "wall_incidence": "none"
+      },
+      {
+        "boundary_incidence": "global surface",
+        "candidate_derivation_source": "black-hole transfer receiving domain absent",
+        "candidate_support_character": "w_surface open",
+        "core_incidence": "transfer endpoint",
+        "density_type": "not supplied",
+        "domain": "global surface",
+        "engineering_dimension": "action dependent",
+        "existing_action_source": null,
+        "existing_normalization": null,
+        "fiber_base_ownership": "none",
+        "gauge_representation": "singlet",
+        "historical_aliases": [
+          "S_released"
+        ],
+        "object": "surface_receiving_data",
+        "primitive_or_composite": "primitive boundary data candidate",
+        "tensor_type": "boundary phase-space data",
+        "wall_incidence": "none"
       }
     ],
-    "status": "BHSM_COMPOSITE_SUPPORT_CONNECTION_DERIVED_BUT_PRIMITIVE_CHARACTER_AND_CURRENT_LEDGER_NOT_ACTION_FIXED",
+    "status": "BHSM_BIDIRECTIONAL_BUOYANCY_AND_FIXED_ENCLOSURE_ARCHITECTURE_DERIVED_CONDITIONALLY_BUT_ATTACHMENT_CHARACTER_REMAINS_UNFIXED",
     "validation": {
+      "attachment_owner_not_promoted": true,
       "coframe_candidate_exhausted": true,
       "composites_not_independently_weighted": true,
       "every_object_typed": true,
+      "intrinsic_enclosure_neutral": true,
       "minimum_inventory_complete": true,
       "no_1_2_7_import": true,
       "no_empirical_inputs": true
     },
+    "validation_passed": true
+  },
+  "relational_spacetime_displacement": {
+    "artifact": "BHSM_relational_spacetime_displacement_v11_2",
+    "classification": "AUTHOR_HYPOTHESIS_AND_DERIVED_CONDITIONAL",
+    "current_candidate": "J_st^A may be the support/attachment component of the existing ambient response, not an added independent field",
+    "global_balance_requirement": "integrated boundary flux plus core/surface transfer vanishes on a closed system",
+    "global_covariant_candidate": "twice Synge world function or a boundary-to-boundary geodesic distance on a normal convex domain",
+    "inverse_square_is_force_law": false,
+    "local_balance_candidate": "nabla_A J_st^A=Gamma_release-Gamma_capture+Gamma_displacement",
+    "new_fields_added": [],
+    "plate_casimir_uses_inverse_square": false,
+    "q_D_candidate_interpretation": "relational support differential between a fixed enclosure and ambient core-surface placement",
+    "q_D_reclassification": "OPEN; retained in the three-mode system pending constraints",
+    "relational_interval_local": "Delta s_ij^2=g_ambient(mu,nu) Delta X_ij^mu Delta X_ij^nu",
+    "spherical_limit": "J_r=Phi/(4 pi r^2) only for stationary conserved radial flux",
+    "status": "RELATIONAL_AND_SPHERICAL_KINEMATICS_DERIVED_CONDITIONALLY; PHYSICAL_CURRENT_OPEN",
     "validation_passed": true
   },
   "source_base_main_sha": "96677288b8a60570b43b2383d2517f57a33a6da4",
@@ -1458,13 +1900,18 @@
       "action invariance is tested as a candidate global representation symmetry; no local G_D gauge symmetry is assumed"
     ],
     "boundary_only_ambiguities": [
-      "w_wall_embedding"
+      "w_wall_embedding",
+      "w_surface"
     ],
+    "boundary_only_constraints": [],
     "coefficient_policy": "existing independent action coefficients are inert; assigning spurion characters would add the missing datum rather than derive it",
-    "continuous_rescalings": "five independent directions, not one common normalization",
+    "common_normalization_direction": null,
+    "continuous_rescalings": "twelve independent directions after including relational candidates, not one common normalization",
     "core_only_ambiguities": [
-      "w_core"
+      "w_core",
+      "w_BH_transfer"
     ],
+    "core_only_constraints": [],
     "discrete_solutions": [],
     "forced_zero_within_full_coframe_candidate": [
       "r_e",
@@ -1475,10 +1922,18 @@
       "w_psi",
       "w_phi"
     ],
-    "interpretation": "the current action rejects nontrivial universal coframe scaling but contains no equations for the intended support, wall, compatibility, and core characters",
+    "inconsistent_rows": [],
+    "interpretation": "the current action rejects nontrivial universal/intrinsic coframe scaling but supplies no attachment, embedding, displacement, boundary-spectrum, or transfer equation; the ontology relocates the leading candidate without fixing it",
     "matrix": [
       [
         6,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0,
@@ -1493,6 +1948,13 @@
       ],
       [
         8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0,
@@ -1511,6 +1973,13 @@
         0,
         0,
         2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0,
@@ -1531,6 +2000,13 @@
         0,
         0,
         0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0
       ],
       [
@@ -1545,6 +2021,13 @@
         0,
         0,
         0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0
       ],
       [
@@ -1559,12 +2042,26 @@
         0,
         0,
         0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0
       ],
       [
         0,
         0,
         1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0,
@@ -1587,6 +2084,13 @@
         0,
         0,
         0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0
       ],
       [
@@ -1597,6 +2101,13 @@
         0,
         0,
         2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0,
@@ -1615,6 +2126,13 @@
         0,
         0,
         0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0
       ],
       [
@@ -1625,6 +2143,13 @@
         0,
         0,
         4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0,
@@ -1643,10 +2168,17 @@
         0,
         0,
         0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0
       ]
     ],
-    "nullity": 5,
+    "nullity": 12,
     "nullspace_basis": [
       [
         0,
@@ -1660,9 +2192,170 @@
         0,
         0,
         0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0
       ],
       [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0,
@@ -1686,6 +2379,13 @@
         0,
         0,
         0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         1,
         0,
         0
@@ -1701,10 +2401,24 @@
         0,
         0,
         0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         1,
         0
       ],
       [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
         0,
         0,
         0,
@@ -1719,6 +2433,35 @@
         1
       ]
     ],
+    "ontology_rows_not_promoted": [
+      "core/surface opposition",
+      "attachment neutrality",
+      "boundary spectral invariance",
+      "displacement conservation",
+      "black-hole transfer neutrality"
+    ],
+    "physical_null_directions": [
+      "w_C",
+      "w_W",
+      "w_wall_embedding",
+      "w_compatibility",
+      "w_core",
+      "w_attachment",
+      "w_embedding",
+      "w_normal_bundle",
+      "w_relational_interval",
+      "w_surface",
+      "w_displacement_current",
+      "w_BH_transfer"
+    ],
+    "pre_ontology_result_preserved": {
+      "nullity": 5,
+      "rank": 7,
+      "shape": [
+        12,
+        12
+      ]
+    },
     "rank": 7,
     "right_hand_side": [
       0,
@@ -1748,7 +2491,7 @@
       "S4_scalar_quartic",
       "S4_scalar_mass"
     ],
-    "scope": "maximal exact homogeneous-character system justified by the explicit frozen S8/S4 terms and the full-coframe candidate",
+    "scope": "maximal exact homogeneous-character system justified by explicit frozen S8/S4 terms, with the new relational objects included as columns but no ontology-only equation promoted to an action constraint",
     "sector_specific_ambiguities": [
       "w_C",
       "w_W",
@@ -1759,15 +2502,29 @@
       "w_W",
       "w_wall_embedding",
       "w_compatibility",
-      "w_core"
+      "w_core",
+      "w_attachment",
+      "w_embedding",
+      "w_normal_bundle",
+      "w_relational_interval",
+      "w_surface",
+      "w_displacement_current",
+      "w_BH_transfer"
     ],
-    "status": "EXACT_CONSTRAINT_MATRIX_RANK_7_NULLITY_5_PRIMITIVE_LEDGER_UNDERDETERMINED",
+    "status": "EXACT_EXPANDED_CONSTRAINT_MATRIX_RANK_7_NULLITY_12_ATTACHMENT_LEDGER_UNDERDETERMINED",
     "unconstrained": [
       "w_C",
       "w_W",
       "w_wall_embedding",
       "w_compatibility",
-      "w_core"
+      "w_core",
+      "w_attachment",
+      "w_embedding",
+      "w_normal_bundle",
+      "w_relational_interval",
+      "w_surface",
+      "w_displacement_current",
+      "w_BH_transfer"
     ],
     "validation": {
       "forced_coframe_trivial": true,
@@ -1789,7 +2546,14 @@
       "w_W",
       "w_wall_embedding",
       "w_compatibility",
-      "w_core"
+      "w_core",
+      "w_attachment",
+      "w_embedding",
+      "w_normal_bundle",
+      "w_relational_interval",
+      "w_surface",
+      "w_displacement_current",
+      "w_BH_transfer"
     ]
   },
   "support_character_equivalence_classes": {
@@ -2113,6 +2877,7 @@
   },
   "validation": {
     "all_sections_valid": true,
+    "bidirectional_ontology_fail_closed": true,
     "boundary_core_anomaly_exhausted": true,
     "canonical_domain_fail_closed": true,
     "complete_action_fail_closed": true,

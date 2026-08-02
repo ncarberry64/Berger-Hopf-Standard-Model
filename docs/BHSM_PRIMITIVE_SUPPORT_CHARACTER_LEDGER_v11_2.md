@@ -12,5 +12,9 @@ current-action coframe scaling is `r_e=0`; the established meaning of
 
 Non-Abelian curvature homogeneity forces a multiplicative gauge-connection
 weight of zero, and projector idempotency forces projector weight zero. The
-intended `q_C`, `q_W`, wall, compatibility, and core characters remain absent.
-
+new ontology adds attachment, embedding, normal-bundle, relational-interval,
+displacement-current, surface, and transfer candidates. Because none occurs
+in an action-owned term, adding their columns preserves rank 7 but expands
+nullity from 5 to 12. This does not erase the earlier result: it demonstrates
+that ontology alone relocates the leading candidate to the core–surface
+attachment map without fixing its character or current.

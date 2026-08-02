@@ -22,7 +22,7 @@ def test_primitive_object_inventory_and_composite_inheritance() -> None:
     payload = ledger_payload()
     rows = {row["object"]: row for row in payload["primitive_objects"]}
     assert payload["validation_passed"]
-    assert len(rows) >= 30
+    assert len(rows) >= 39
     assert rows["metric_G_AB"]["candidate_support_character"] == "2 r_e"
     assert rows["inverse_metric_G_AB"]["candidate_support_character"] == "-2 r_e"
     assert rows["bulk_measure"]["candidate_support_character"] == "8 r_e for full support"
@@ -51,7 +51,7 @@ def test_exact_action_character_matrix_rank_nullity_and_kernel() -> None:
     payload = constraint_payload()
     assert isinstance(matrix, Matrix)
     assert matrix.rank() == payload["rank"] == 7
-    assert len(matrix.nullspace()) == payload["nullity"] == 5
+    assert len(matrix.nullspace()) == payload["nullity"] == 12
     assert payload["unconstrained"] == VARIABLES[7:]
     assert payload["forced_zero_within_full_coframe_candidate"] == VARIABLES[:7]
     assert all(matrix * vector == Matrix.zeros(matrix.rows, 1) for vector in matrix.nullspace())
@@ -106,7 +106,7 @@ def test_all_six_steering_artifacts_carry_required_common_record(tmp_path) -> No
     for name in names:
         payload = json.loads((tmp_path / "artifacts" / name).read_text())
         assert required <= payload.keys(), name
-        assert payload["rank"] == 7 and payload["nullity"] == 5
+        assert payload["rank"] == 7 and payload["nullity"] == 12
         assert payload["final_status"] == VERDICT
 
 

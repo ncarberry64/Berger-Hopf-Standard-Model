@@ -2,7 +2,7 @@
 
 ## Current upstream blocker (v11.2)
 
-`ACTION_TERM_OR_GEOMETRIC_PRINCIPLE_FIXING_PRIMITIVE_SUPPORT_CHARACTER_OWNERSHIP` is
+`ACTION_OWNED_CORE_SURFACE_ATTACHMENT_TERM_FIXING_ATTACHMENT_CHARACTER_AND_EXCHANGE_CURRENT` is
 the highest-upstream open object. It must fix the charges in the linear
 support current and quadratic connection completion, including induced
 measure, normal, and cross-stratum characters. Core-domain selection and all

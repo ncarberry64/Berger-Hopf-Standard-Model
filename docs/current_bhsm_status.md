@@ -3,7 +3,7 @@
 ## v11.2 authoritative complete-supported-action status
 
 Historical recovery is exhaustive and yields verdict
-`BHSM_COMPOSITE_SUPPORT_CONNECTION_DERIVED_BUT_PRIMITIVE_CHARACTER_AND_CURRENT_LEDGER_NOT_ACTION_FIXED`.
+`BHSM_BIDIRECTIONAL_BUOYANCY_AND_FIXED_ENCLOSURE_ARCHITECTURE_DERIVED_CONDITIONALLY_BUT_ATTACHMENT_CHARACTER_REMAINS_UNFIXED`.
 The regular domain and all strata are reconciled, and multiplicative support
 derives the composite flat connection
 `A_D=d log(upsilon)=-(dq_D/lambda_D)`. For a specified character `w`,
@@ -16,13 +16,14 @@ does not own the linear support-current coupling or its quadratic connection
 completion, and cannot yet produce the complete variation, Dirac constraint rank,
 boundary/core domain, equivalence quotient, or Haar normalization. The exact
 next object is
-`ACTION_TERM_OR_GEOMETRIC_PRINCIPLE_FIXING_PRIMITIVE_SUPPORT_CHARACTER_OWNERSHIP`.
+`ACTION_OWNED_CORE_SURFACE_ATTACHMENT_TERM_FIXING_ATTACHMENT_CHARACTER_AND_EXCHANGE_CURRENT`.
 Mark I is reached; Marks II-IV are not reached. No physical output is promoted
 and frozen predictions are unchanged.
 
 The targeted steering audit constructs the strongest exact homogeneous
 character system permitted by the explicit S8/S4 action. Its 12-by-12 matrix
-has rank 7 and nullity 5. It forces the coframe, gauge-connection, projector,
+preserves the pre-ontology rank 7/nullity 5 result and expands to rank 7/nullity 12
+when relational candidates are included without invented action rows. It forces the coframe, gauge-connection, projector,
 chi, sigma, fermion, and localized scalar candidate weights to zero while
 leaving independent `w_C`, `w_W`, wall-embedding, compatibility, and core
 directions. Boundary, core-finiteness, anomaly, and equivalence tests do not

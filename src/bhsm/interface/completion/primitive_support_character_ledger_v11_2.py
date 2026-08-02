@@ -5,8 +5,8 @@ from __future__ import annotations
 from typing import Any
 
 
-VERDICT = "BHSM_COMPOSITE_SUPPORT_CONNECTION_DERIVED_BUT_PRIMITIVE_CHARACTER_AND_CURRENT_LEDGER_NOT_ACTION_FIXED"
-NEXT_OBJECT = "ACTION_TERM_OR_GEOMETRIC_PRINCIPLE_FIXING_PRIMITIVE_SUPPORT_CHARACTER_OWNERSHIP"
+VERDICT = "BHSM_BIDIRECTIONAL_BUOYANCY_AND_FIXED_ENCLOSURE_ARCHITECTURE_DERIVED_CONDITIONALLY_BUT_ATTACHMENT_CHARACTER_REMAINS_UNFIXED"
+NEXT_OBJECT = "ACTION_OWNED_CORE_SURFACE_ATTACHMENT_TERM_FIXING_ATTACHMENT_CHARACTER_AND_EXCHANGE_CURRENT"
 
 
 def _row(
@@ -84,6 +84,13 @@ def primitive_object_ledger() -> list[dict[str, Any]]:
         _row("fiber_integration_maps", "primitive morphisms", "S8 to S5/S4", "pushforward", "measure dependent", "v7.1 reduction", "V_F normalized", ["pi_!"], None, "requires a basic connection and fiber-measure character", fiber="pushforward"),
         _row("M4_reduction_maps", "composite morphism", "stratified parent to effective M4", "functor", "M4 density", "v7.1 reduction plus localized incidence", None, ["R_84", "effective projection"], None, "complete G_D-natural cross-stratum map absent"),
         _row("core_asymptotic_data", "primitive boundary data", "q_D=+infinity", "phase-space candidate", "not supplied", None, None, ["core response", "terminal stratum data"], "w_core open", "core action and phase space absent", core="terminal asymptotic end"),
+        _row("intrinsic_enclosure_metric", "primitive sector datum candidate", "Sigma_enc", "symmetric (0,2)", "none", None, "fixed only as author ontology", ["h_enc"], "0 in the current action candidate", "full-coframe action rejects nonzero intrinsic metric character", wall="enclosure"),
+        _row("core_surface_attachment", "primitive morphism candidate", "E_core to S_surface", "attachment morphism", "none", None, None, ["A_attach", "attachment map"], "w_attachment open", "new author ontology identifies a candidate owner but supplies no action term", wall="enclosure", core="core-to-surface"),
+        _row("external_enclosure_embedding", "primitive map candidate", "Sigma_enc into M_ambient", "embedding", "none", None, None, ["X"], "w_embedding open", "fixed intrinsic geometry allows only conditional isometric embedding; no embedding action fixes a character", wall="enclosure"),
+        _row("normal_bundle_attachment", "composite/candidate connection", "N Sigma_enc", "normal bundle data", "none", None, "unit normal after metric choice", ["N Sigma_enc"], "w_normal_bundle open", "induced from embedding and metric only after the attachment law is chosen", wall="enclosure"),
+        _row("relational_interval", "composite candidate", "between encapsulations", "biscalar/distance", "none", None, None, ["Delta_rel", "Delta s_ij"], "w_relational_interval open", "coordinate-local quadratic form is covariant as a scalar; global operator/domain absent"),
+        _row("spacetime_displacement_current", "response/current candidate", "ambient/intervening region", "vector current", "current density after measure", None, None, ["J_st"], "w_displacement_current open", "may be an attachment component of ambient response; not added independently"),
+        _row("surface_receiving_data", "primitive boundary data candidate", "global surface", "boundary phase-space data", "not supplied", None, None, ["S_released"], "w_surface open", "black-hole transfer receiving domain absent", boundary="global surface", core="transfer endpoint"),
     ]
 
 
@@ -103,12 +110,14 @@ def coframe_candidate_test() -> dict[str, Any]:
 def ledger_payload() -> dict[str, Any]:
     rows = primitive_object_ledger()
     validation = {
-        "minimum_inventory_complete": len(rows) >= 30,
+        "minimum_inventory_complete": len(rows) >= 39,
         "every_object_typed": all(row["domain"] and row["tensor_type"] and row["primitive_or_composite"] for row in rows),
         "composites_not_independently_weighted": all(row["candidate_derivation_source"] for row in rows),
         "coframe_candidate_exhausted": coframe_candidate_test()["solution_with_inert_existing_coefficients"] == {"r_e": 0},
         "no_empirical_inputs": True,
         "no_1_2_7_import": True,
+        "intrinsic_enclosure_neutral": next(row for row in rows if row["object"] == "intrinsic_enclosure_metric")["candidate_support_character"] == "0 in the current action candidate",
+        "attachment_owner_not_promoted": next(row for row in rows if row["object"] == "core_surface_attachment")["existing_action_source"] is None,
     }
     return {
         "artifact": "BHSM_primitive_support_character_ledger_v11_2",
@@ -116,9 +125,9 @@ def ledger_payload() -> dict[str, Any]:
         "coframe_candidate": coframe_candidate_test(),
         "ledger_unique": False,
         "nontrivial_action_owned_ledger": None,
+        "leading_candidate_owner": "core_surface_attachment (author-ontology candidate, not action-derived)",
         "status": VERDICT,
         "exact_next_object": NEXT_OBJECT,
         "validation": validation,
         "validation_passed": all(validation.values()),
     }
-

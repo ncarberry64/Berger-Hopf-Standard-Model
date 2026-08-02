@@ -23,4 +23,4 @@ defining a support character. Verified v8.3, v10.4, v11.0, and v11.1 bundles,
 the USB mirror, and author materials contain no stronger result.
 
 Verdict after targeted primitive-current recovery:
-`BHSM_COMPOSITE_SUPPORT_CONNECTION_DERIVED_BUT_PRIMITIVE_CHARACTER_AND_CURRENT_LEDGER_NOT_ACTION_FIXED`.
+`BHSM_BIDIRECTIONAL_BUOYANCY_AND_FIXED_ENCLOSURE_ARCHITECTURE_DERIVED_CONDITIONALLY_BUT_ATTACHMENT_CHARACTER_REMAINS_UNFIXED`.

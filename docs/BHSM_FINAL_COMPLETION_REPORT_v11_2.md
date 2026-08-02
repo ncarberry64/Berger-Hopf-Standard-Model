@@ -3,16 +3,17 @@
 The campaign derives the composite flat support connection and exhaustively
 reconciles all known action, reduction, boundary-domain, primitive-character,
 current, and connection-coupling candidates. The strongest exact 12-by-12
-character system has rank 7 and nullity 5. The surviving directions are
+character system has rank 7 and nullity 5. Adding the relational ontology
+candidates without inventing action rows gives rank 7 and nullity 12. The surviving directions include
 independent, are not one common normalization, and are not selected by the
 boundary, core, anomaly, or physical-equivalence tests. The campaign does not
 close the complete supported action.
 
 Primary verdict:
-`BHSM_COMPOSITE_SUPPORT_CONNECTION_DERIVED_BUT_PRIMITIVE_CHARACTER_AND_CURRENT_LEDGER_NOT_ACTION_FIXED`.
+`BHSM_BIDIRECTIONAL_BUOYANCY_AND_FIXED_ENCLOSURE_ARCHITECTURE_DERIVED_CONDITIONALLY_BUT_ATTACHMENT_CHARACTER_REMAINS_UNFIXED`.
 
 Exact next object:
-`ACTION_TERM_OR_GEOMETRIC_PRINCIPLE_FIXING_PRIMITIVE_SUPPORT_CHARACTER_OWNERSHIP`.
+`ACTION_OWNED_CORE_SURFACE_ATTACHMENT_TERM_FIXING_ATTACHMENT_CHARACTER_AND_EXCHANGE_CURRENT`.
 
 Mark I is reached. Marks II, III, and IV are not reached. Core transfer,
 three-mode dynamics, nonlinear cycles, Topological Buoyancy/Higgs, global

@@ -31,9 +31,13 @@ DERIVED_RESULTS = [
     "exhaustive complete-supported-action historical reconciliation through v11.1 and the closest unmerged branches",
     "targeted primitive-character/current recovery through v4--v11.1, verified bundles, USB mirror, and author resources",
     "exact strongest-coframe action-character matrix with rank 7 and nullity 5",
+    "expanded relational candidate matrix with rank 7 and nullity 12 while preserving the pre-ontology result",
     "rejection of nontrivial universal coframe scaling by the D8 Einstein-Hilbert/cosmological terms",
     "isolated q_D shift current and formal composite A_D response classified without treating G_D as a local gauge symmetry",
     "paired linear/quadratic scalar connection identities and first-order fermion exception",
+    "conditional separation of fixed intrinsic enclosure geometry from external embedding dynamics",
+    "conditional conserved spherical-flux dilution J_r=Phi/(4 pi r^2), explicitly inapplicable to plate Casimir pressure",
+    "Casimir and black-hole de-envelopment gates classified without promoting author hypotheses",
 ]
 CONDITIONAL_RESULTS = [
     "complete supported-action family indexed by action-owned primitive characters and lambda_D",
@@ -47,6 +51,10 @@ INVALIDATED_RESULTS = [
     "the composite flat connection by itself assigns primitive support characters",
     "earlier matter/interface self-adjoint domains select the support/core canonical domain",
     "the five remaining character directions are one common normalization freedom",
+    "the expanded twelve relational/legacy null directions are one common normalization freedom",
+    "fixed intrinsic enclosure geometry follows automatically from arbitrary embedding motion",
+    "a universal inverse-square law or spherical-flux derivation of plate Casimir pressure",
+    "black-hole de-envelopment without a conserved surface receiving channel",
     "flatness of A_D proves physical removability at the boundary or core",
 ]
 OPEN_RESULTS = [
@@ -97,10 +105,10 @@ def status_payload() -> dict[str, Any]:
         "frozen_prediction_state": FROZEN_PREDICTION_STATE,
         "physical_outputs_available": PHYSICAL_OUTPUTS_AVAILABLE,
         "validation_summary": {
-            "focused": "PENDING_FINAL_VALIDATION",
-            "full_pytest": "PENDING_FINAL_VALIDATION",
-            "audits": "PENDING_FINAL_VALIDATION",
-            "artifact_determinism": "PENDING_FINAL_VALIDATION",
+            "focused": "44 final focused/status tests passed (37 steering/gate plus 7 public-status)",
+            "full_pytest": "4860 passed in 748.52 s at c1bfd68 before the final steering-only delta; no repeated local full suite by author direction, protected CI is the final comprehensive gate",
+            "audits": "status, frozen-integrity, forbidden-claims, and public-readiness audits passed",
+            "artifact_determinism": "29 materialized outputs reproduced byte-identically in focused tests",
         },
         "source_base_main_sha": SOURCE_BASE_MAIN_SHA,
         "source_base_tree_sha": SOURCE_BASE_TREE_SHA,
@@ -124,10 +132,11 @@ def status_payload() -> dict[str, Any]:
 def public_repo_status() -> str:
     return (
         "BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. "
-        "Current campaign status: v11.2 derives the composite flat connection A_D=d log(upsilon) and "
-        "exhausts the primitive-character/current routes. The strongest exact action-character system "
-        "has rank 7 and nullity 5: it rejects nontrivial universal coframe scaling but leaves the core/Hopf, "
-        "wall/fold, wall-embedding, compatibility, and core-asymptotic character directions unowned by the action. The "
+        "Current campaign status: v11.2 derives the composite flat connection A_D=d log(upsilon), "
+        "exhausts the primitive-character/current routes, and conditionally separates fixed intrinsic enclosure geometry "
+        "from external relational embedding. The original exact action-character system remains rank 7/nullity 5; adding "
+        "the action-unowned attachment, embedding, displacement, boundary-spectrum, and transfer candidates gives rank 7/nullity 12. "
+        "The leading candidate carrier is the core-surface attachment map, but its character and exchange current are not action-fixed. The "
         "complete support current, quadratic completion, variation, and boundary/core domain remain open. "
         "Physical equivalence and the physical-or-conventional status of lambda_D are not claimed. "
         "The v11.0 logarithmic depth, positive Haar metric, healthy conditional support pair, "

@@ -4,8 +4,8 @@ from __future__ import annotations
 
 from typing import Any
 
-PRIMARY_VERDICT = "BHSM_COMPOSITE_SUPPORT_CONNECTION_DERIVED_BUT_PRIMITIVE_CHARACTER_AND_CURRENT_LEDGER_NOT_ACTION_FIXED"
-EXACT_NEXT_OBJECT = "ACTION_TERM_OR_GEOMETRIC_PRINCIPLE_FIXING_PRIMITIVE_SUPPORT_CHARACTER_OWNERSHIP"
+PRIMARY_VERDICT = "BHSM_BIDIRECTIONAL_BUOYANCY_AND_FIXED_ENCLOSURE_ARCHITECTURE_DERIVED_CONDITIONALLY_BUT_ATTACHMENT_CHARACTER_REMAINS_UNFIXED"
+EXACT_NEXT_OBJECT = "ACTION_OWNED_CORE_SURFACE_ATTACHMENT_TERM_FIXING_ATTACHMENT_CHARACTER_AND_EXCHANGE_CURRENT"
 ACTION_VERDICT = "BHSM_COMPLETE_LOCAL_SUPPORTED_ACTION_BLOCKED_BY_UNASSIGNED_PRIMITIVE_SUPPORT_CHARACTERS"
 
 
@@ -64,8 +64,8 @@ def action_payload() -> dict[str, Any]:
         "new_coefficients": [],
         "new_fields": [],
         "term_ledger": terms,
-        "first_missing_action_owned_term": "a term or geometric principle assigning a nontrivial primitive G_D character; only then are -A_D,A J_D^A and its covariant quadratic completion determined",
-        "smallest_missing_datum": "primitive support-character ownership on at least one nontrivial action field or cross-stratum map",
+        "first_missing_action_owned_term": "a core-surface attachment functional assigning the attachment character and exchange current; only then are -A_D,A J_D^A and its covariant quadratic completion determined",
+        "smallest_missing_datum": "the action-owned support character and orientation-fixed current of the core-surface attachment map",
         "complete_local_action": None,
         "status": ACTION_VERDICT,
         "primary_verdict": PRIMARY_VERDICT,
