@@ -1,0 +1,255 @@
+{
+  "artifact": "BHSM_historical_recovery_audit_support_representation_v11_1",
+  "current_object": {
+    "canonical_current_name": "support representation functor",
+    "codomain": "continuous representations of G_D=(R_{>0}, multiplication)",
+    "defining_property": "assign primitive characters and equivariant morphisms preserving the complete local action, boundary/core variation, symplectic form, and reduction",
+    "domain": "stratified S8/S5/S4/regular-core BHSM action category",
+    "downstream_claims_blocked": [
+      "core transfer",
+      "three-mode action",
+      "cycles",
+      "masses",
+      "mixing",
+      "M4",
+      "quantum"
+    ],
+    "historical_synonyms": [
+      "support weight",
+      "sector weight",
+      "depth character",
+      "spacetime-removal weight",
+      "boundary incidence",
+      "carrier weight",
+      "representation charge",
+      "measure scaling",
+      "fiber incidence",
+      "wall incidence",
+      "support coupling",
+      "upsilon exponent",
+      "q_D coupling",
+      "Haar character",
+      "dimensional support factor",
+      "primitive coframe",
+      "active-generator weight",
+      "normalized boundary measure"
+    ],
+    "mathematical_type": "strong monoidal functor C_BHSM^strat -> Rep(G_D), modulo physical natural/canonical equivalence",
+    "normalization": "one primitive character or a proof that generator rescaling is representation gauge",
+    "required_inputs": [
+      "primitive GD action",
+      "supported derivative couplings",
+      "measure characters",
+      "boundary/core canonical domain"
+    ],
+    "required_outputs": [
+      "physical equivalence class",
+      "canonical representative",
+      "invariant w/lambda_D ratios"
+    ],
+    "symmetries": [
+      "diffeomorphism",
+      "gauge",
+      "triality",
+      "GD monoidal naturality"
+    ],
+    "upstream_dependencies": [
+      "v11.0 multiplicative support",
+      "v7.1 reduction",
+      "v10.4 support action class"
+    ]
+  },
+  "equivalence_reconstruction": {
+    "1_2_7_to_support_character": "REJECTED: active-generator counts are sector screens, not GD characters",
+    "boundary_measure_to_GD_measure_character": "PARTIAL_ONLY: normalized local measure does not define transformation under GD",
+    "coframe_winding_to_primitive_GD_action": "PARTIAL_ONLY: discrete incidence is not derived as the continuous support generator",
+    "primitive_lattice_to_Haar_normalization": "CONDITIONAL_ONLY: its own action quotient gate is open",
+    "v7_1_reduction_to_support_functor": "PARTIAL_ONLY: geometric pushforward has no GD representation"
+  },
+  "exact_current_object_recovered": false,
+  "historical_routes_exhausted": true,
+  "new_action_principle_created": false,
+  "provenance_matrix": [
+    {
+      "PR": 214,
+      "artifact": "artifacts/BHSM_supported_parent_action_v11_0.json",
+      "branch": "agent/bhsm-canonical-unification-completion-v11-0",
+      "campaign_version": "v11.0",
+      "classification": "PARTIAL_INGREDIENT",
+      "commit": "76ca770729d73805e79e2e6528fc735dcdd559ec",
+      "equation": "F_a(upsilon)=upsilon^w_a",
+      "historical_name": "multiplicative support characters",
+      "reason": "derives the character family but not a primitive representation or equivalence quotient",
+      "source_path": "src/bhsm/interface/envelopment/support_weight_derivation_v11_0.py",
+      "source_type": "merged action audit",
+      "status_at_that_time": "weights and lambda_D not action fixed",
+      "tests": [
+        "tests/test_bhsm_supported_parent_action_v11_0.py"
+      ]
+    },
+    {
+      "PR": 213,
+      "artifact": "artifacts/BHSM_support_action_gate_v10_4.json",
+      "branch": "agent/bhsm-spacetime-removal-completion-v10-4",
+      "campaign_version": "v10.4",
+      "classification": "PARTIAL_INGREDIENT",
+      "commit": "04a38d962e32613ff4486f6ef068a01d24a9e4ac",
+      "equation": "S_upsilon=int sqrt(-G)[-Z(upsilon)|grad upsilon|^2/2-U+(F_C-1)X_C+(F_W-1)X_W]",
+      "historical_name": "stratified support action",
+      "reason": "supplies the exact derivative terms needed by the quotient but not their selected coefficients/domain",
+      "source_path": "src/bhsm/interface/envelopment/support_action_v10_4.py",
+      "source_type": "merged action-family audit",
+      "status_at_that_time": "Z, U, support couplings, and core action open",
+      "tests": [
+        "tests/test_bhsm_support_action_v10_4.py"
+      ]
+    },
+    {
+      "PR": 200,
+      "artifact": "artifacts/BHSM_covariant_bulk_boundary_reduction_functor_v7_1.json",
+      "branch": "bhsm-covariant-bulk-boundary-reduction-functor-v7-1",
+      "campaign_version": "v7.1",
+      "classification": "PARTIAL_INGREDIENT",
+      "commit": "97cb8d4e65da0dbdb7cf198324d763cba552cd32",
+      "equation": "pi_85=id_I x p_H with normalized retained-mode pairing and explicit fiber volume",
+      "historical_name": "covariant bulk-boundary reduction functor",
+      "reason": "owns geometric reduction and normalized measures but no GD action on support-charged objects",
+      "source_path": "src/bhsm/interface/master_action/reduction.py",
+      "source_type": "merged reduction theorem",
+      "status_at_that_time": "covariant pushforward adopted",
+      "tests": [
+        "tests/test_bhsm_complete_unified_parent_action_v7_0.py"
+      ]
+    },
+    {
+      "PR": 199,
+      "artifact": "artifacts/BHSM_master_coefficient_input_ledger_v7_0.json",
+      "branch": "bhsm-complete-unified-parent-action-v7-0",
+      "campaign_version": "v7.0",
+      "classification": "INVALIDATED",
+      "commit": "aea655dcb12690629337fe34a2c9d74b8e53bb72",
+      "equation": "w_1:w_2:w_3=1:2:7",
+      "historical_name": "1:2:7 active-generator sector weights",
+      "reason": "active-generator screen counts are not support characters or representation trace coefficients",
+      "source_path": "src/bhsm/interface/master_action/coefficients.py",
+      "source_type": "merged representation/action reconciliation",
+      "status_at_that_time": "rejected as action/representation trace weights",
+      "tests": [
+        "tests/test_bhsm_complete_unified_parent_action_v7_0.py"
+      ]
+    },
+    {
+      "PR": 103,
+      "artifact": "artifacts/BHSM_primitive_lattice_normalization_rule_v2_1.json",
+      "branch": "bhsm-action-lemma-closure-v2-1",
+      "campaign_version": "v2.1 action lemmas",
+      "classification": "CONDITIONAL_CANDIDATE",
+      "commit": "339ba7c13117e9c4b9a4ace78574db68646e3d5d",
+      "equation": "(3,6,12)/gcd=(1,2,4)",
+      "historical_name": "primitive lattice common-rescaling quotient",
+      "reason": "directly anticipates the quotient issue but records that the action-invariance proof is absent",
+      "source_path": "src/bhsm/interface/action_lemmas/primitive_lattice_rule.py",
+      "source_type": "merged exact lemma and action gate",
+      "status_at_that_time": "open without action quotient of common incidence rescalings",
+      "tests": [
+        "tests/test_primitive_lattice_normalization_rule.py"
+      ]
+    },
+    {
+      "PR": null,
+      "artifact": "audits/coframe_sector_winding_closure_audit.json",
+      "branch": "origin/bhsm-coframe-sector-winding-closure",
+      "campaign_version": "historical closure sprint",
+      "classification": "CONDITIONAL_CANDIDATE",
+      "commit": "820198fd6a561c28ecbeba45c980ee8575c52a55",
+      "equation": "base=-4 T3 C_f; winding=(1,2,4)",
+      "historical_name": "coframe multiplier and sector winding",
+      "reason": "tested and structurally motivated, but explicitly not forced by action variation",
+      "source_path": "src/coframe_sector_winding_closure.py",
+      "source_type": "unmerged tested branch",
+      "status_at_that_time": "COFRAME_MULTIPLIER_NOT_DERIVED and SECTOR_WINDING_RULE_NOT_DERIVED",
+      "tests": [
+        "tests/test_coframe_sector_winding_closure.py"
+      ]
+    },
+    {
+      "PR": null,
+      "artifact": null,
+      "branch": "origin/bhsm-boundary-action-to-rep-connection-closure",
+      "campaign_version": "historical boundary connection sprint",
+      "classification": "PARTIAL_INGREDIENT",
+      "commit": "75894b95d32ddbb34689c6a6cd957569735ae2d6",
+      "equation": "A_f=O_q A_q+O_j A_j",
+      "historical_name": "boundary action to representation connection",
+      "reason": "gives sector connection incidence, not the multiplicative support representation",
+      "source_path": "src/bhsm_boundary_action_to_rep_connection.py",
+      "source_type": "unmerged tested branch",
+      "status_at_that_time": "A_q partial; A_j normalization convention-dependent; full action incomplete",
+      "tests": []
+    },
+    {
+      "PR": 13,
+      "artifact": null,
+      "branch": "main",
+      "campaign_version": "PO-BH-57",
+      "classification": "PARTIAL_INGREDIENT",
+      "commit": "6dee862c3ac02205e2a7973579dadbb88cb8f1e7",
+      "equation": "J(Y,rho)=det(I+rho S)=1+rho K+O(rho^2)",
+      "historical_name": "normalized boundary/collar measure",
+      "reason": "fixes a local Jacobian expansion, not a GD measure character",
+      "source_path": "theory/theorem_discharge_collar_measure_extrinsic_geometry.md",
+      "source_type": "merged geometry audits",
+      "status_at_that_time": "conditional local collar formula; physical normalization/embedding data open",
+      "tests": [
+        "tests/test_collar_measure_extrinsic_geometry.py"
+      ]
+    }
+  ],
+  "resources_searched": {
+    "artifacts_searched": true,
+    "author_attachments_searched": true,
+    "canonical_resources_searched": true,
+    "current_tree_searched": true,
+    "git_content_history_searched": true,
+    "github_issues_searched": true,
+    "github_prs_searched": true,
+    "local_and_remote_branches_searched": true,
+    "preservation_bundles": [
+      {
+        "main": "0721ee6a79f97cae5b3ac5bf040fa07ef9584678",
+        "path": "D:/Carberry_Greatest_Works_Curated_FINAL_2026-06-26/01_BHSM/Berger-Hopf-Standard-Model_v8.3_2026-07-30.bundle",
+        "verified": true
+      },
+      {
+        "main": "04a38d962e32613ff4486f6ef068a01d24a9e4ac",
+        "path": "D:/Carberry_Greatest_Works_Curated_FINAL_2026-06-26/01_BHSM/Berger-Hopf-Standard-Model_v10.4_2026-08-01.bundle",
+        "verified": true
+      },
+      {
+        "main": "76ca770729d73805e79e2e6528fc735dcdd559ec",
+        "path": "D:/Carberry_Greatest_Works_Curated_FINAL_2026-06-26/01_BHSM/BHSM_v11.0_2026-08-02_76ca770.bundle",
+        "verified": true
+      }
+    ],
+    "search_complete": true,
+    "tags_searched": true,
+    "tests_searched": true,
+    "usb_mirror_searched_read_only": true
+  },
+  "reusable_historical_kernel": [
+    "v10.4 supported derivative action class",
+    "v7.1 normalized reduction maps",
+    "exact finite incidence/projector ledgers"
+  ],
+  "status": "BHSM_HISTORICAL_RECOVERY_NARROWS_BUT_DOES_NOT_CLOSE_CURRENT_OBJECT",
+  "validation": {
+    "all_resource_classes_searched": true,
+    "bundles_verified": true,
+    "every_candidate_classified": true,
+    "no_candidate_silently_promoted": true,
+    "provenance_matrix_present": true,
+    "question_typed": true,
+    "synonyms_searched": true
+  },
+  "validation_passed": true
+}

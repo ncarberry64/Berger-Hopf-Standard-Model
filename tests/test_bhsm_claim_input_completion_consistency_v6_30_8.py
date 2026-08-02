@@ -107,12 +107,12 @@ def test_next_target_is_highest_upstream_parent_action():
     assert rb01["depends_on"] == []
 
 
-def test_completion_gate_tracks_current_v110_support_status():
+def test_completion_gate_tracks_current_v111_support_status():
     payload = audit.canonical_completion_gate_payload()
-    assert payload["version"] == "v11.0"
+    assert payload["version"] == "v11.1"
     assert payload["BHSM_1_0_release_complete"] is False
     assert payload["next_highest_upstream_blocker"] == (
-        "ACTION_DERIVED_SUPPORT_REPRESENTATION_FUNCTOR_ON_STRATIFIED_SECTORS_WITH_FIXED_HAAR_SCALE"
+        "COMPLETE_LOCAL_SUPPORTED_ACTION_WITH_SUPPORT_DERIVATIVE_COUPLINGS_AND_BOUNDARY_CORE_CANONICAL_DOMAIN"
     )
     assert payload["current_tier_status"]["Tier_A"] == "COMPLETE"
     assert payload["current_tier_status"]["Tier_B"] == "COMPLETE"
@@ -152,4 +152,4 @@ def test_materializer_is_idempotent_and_updates_canonical_gate():
     canonical_second = (ROOT / "artifacts" / "BHSM_1_0_completion_gate.json").read_bytes()
     assert first == second == audit.artifact_bytes(ROOT)
     assert canonical_first == canonical_second
-    assert json.loads(canonical_second)["version"] == "v11.0"
+    assert json.loads(canonical_second)["version"] == "v11.1"

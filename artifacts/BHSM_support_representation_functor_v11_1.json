@@ -1,0 +1,65 @@
+{
+  "action_defined_natural_gd_action": null,
+  "action_extension_required": true,
+  "artifact": "BHSM_support_representation_functor_v11_1",
+  "candidate_action_limit_compatible_lifts": [
+    {
+      "action_selected": false,
+      "derived_composite_rule": "tensor/wedge weights add; dual weights negate relative to the selected pairing measure",
+      "fiber_integration_homogeneous": true,
+      "identity_and_composition_preserved": true,
+      "name": "R_D^(A)",
+      "parent_action_recovered_at_upsilon_one": true,
+      "particle_inputs_used": false,
+      "positive_characters_on_regular_domain": true,
+      "primitive_weights": {
+        "bulk_measure": 0,
+        "enclosure_wall_invariant": 1,
+        "fiber_measure_S8_to_S5": 0,
+        "hopf_core_invariant": 1,
+        "regular_bulk_metric": 0,
+        "support_depth_mode": 0
+      },
+      "tensor_law_preserved": true
+    },
+    {
+      "action_selected": false,
+      "derived_composite_rule": "tensor/wedge weights add; dual weights negate relative to the selected pairing measure",
+      "fiber_integration_homogeneous": true,
+      "identity_and_composition_preserved": true,
+      "name": "R_D^(B)",
+      "parent_action_recovered_at_upsilon_one": true,
+      "particle_inputs_used": false,
+      "positive_characters_on_regular_domain": true,
+      "primitive_weights": {
+        "bulk_measure": 0,
+        "enclosure_wall_invariant": 2,
+        "fiber_measure_S8_to_S5": 1,
+        "hopf_core_invariant": 1,
+        "regular_bulk_metric": 0,
+        "support_depth_mode": 0
+      },
+      "tensor_law_preserved": true
+    }
+  ],
+  "character_family": "chi_w(upsilon)=upsilon^w=exp[-w q_D/lambda_D]",
+  "next_exact_object": "COMPLETE_LOCAL_SUPPORTED_ACTION_WITH_SUPPORT_DERIVATIVE_COUPLINGS_AND_BOUNDARY_CORE_CANONICAL_DOMAIN",
+  "physical_equivalence_quotient_complete": false,
+  "provisional_counterexample": "R_D^(A) and R_D^(B) have different fixed characters and coincide with the frozen action at upsilon=1. This proves that the forgotten data do not select a representative, but physical inequivalence requires the separate equivalence quotient.",
+  "smallest_blocking_morphism": "fiber integration, whose character depends on an action-unfixed fiber-measure weight",
+  "smallest_blocking_object": "primitive regular-bulk metric/measure pair and its induced fiber/boundary measures",
+  "status": "BHSM_SUPPORT_FUNCTOR_PHYSICAL_EQUIVALENCE_QUOTIENT_BLOCKED_BY_ABSENT_COMPLETE_LOCAL_BOUNDARY_AND_CORE_ACTION_DATA",
+  "support_weights": null,
+  "target": "Rep(G_D)",
+  "unique_fixed_character_representative": false,
+  "unique_functor": null,
+  "validation": {
+    "both_preserve_declared_generated_laws": true,
+    "both_recover_parent": true,
+    "lifts_inequivalent": true,
+    "neither_action_selected": true,
+    "no_particle_inputs": true,
+    "two_lifts_present": true
+  },
+  "validation_passed": true
+}

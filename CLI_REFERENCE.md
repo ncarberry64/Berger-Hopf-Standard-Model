@@ -1,5 +1,21 @@
 # BHSM CLI Reference
 
+## v11.1 support-representation commands
+
+The thirteen commands from `support-category-status-v11-1` through
+`physical-completion-status-v11-1` accept `--format json|markdown`.
+
+```bash
+python -m bhsm.interface support-functor-status-v11-1 --format json
+python -m bhsm.interface haar-scale-status-v11-1 --format json
+python -m bhsm.interface physical-completion-status-v11-1 --format markdown
+python -m bhsm.interface historical-recovery-status --object "support representation functor" --format json
+python -m bhsm.interface blocker-readiness-status --object "support representation functor" --format json
+```
+
+They report `BHSM_SUPPORT_FUNCTOR_PHYSICAL_EQUIVALENCE_QUOTIENT_BLOCKED_BY_ABSENT_COMPLETE_LOCAL_BOUNDARY_AND_CORE_ACTION_DATA`
+and `COMPLETE_LOCAL_SUPPORTED_ACTION_WITH_SUPPORT_DERIVATIVE_COUPLINGS_AND_BOUNDARY_CORE_CANONICAL_DOMAIN`.
+
 All commands use `python -m bhsm.interface`. Internet and external HEP tools are
 not required for the listed local behavior.
 

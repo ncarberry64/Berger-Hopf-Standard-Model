@@ -1,5 +1,17 @@
 # BHSM Documentation Index
 
+## Current v11.1 campaign
+
+- [Support representation functor](BHSM_SUPPORT_REPRESENTATION_FUNCTOR_v11_1.md)
+- [Haar scale audit](BHSM_HAAR_SCALE_NORMALIZATION_v11_1.md)
+- [Final completion report](BHSM_FINAL_COMPLETION_REPORT_v11_1.md)
+- [Support-functor equivalence quotient](BHSM_SUPPORT_FUNCTOR_EQUIVALENCE_AND_PRIMITIVE_OWNERSHIP_v11_1.md)
+- [Historical recovery audit](BHSM_HISTORICAL_RECOVERY_AUDIT_SUPPORT_REPRESENTATION_v11_1.md)
+- [Current status](current_bhsm_status.md)
+
+Current verdict: `BHSM_SUPPORT_FUNCTOR_PHYSICAL_EQUIVALENCE_QUOTIENT_BLOCKED_BY_ABSENT_COMPLETE_LOCAL_BOUNDARY_AND_CORE_ACTION_DATA`.
+Next object: `COMPLETE_LOCAL_SUPPORTED_ACTION_WITH_SUPPORT_DERIVATIVE_COUPLINGS_AND_BOUNDARY_CORE_CANONICAL_DOMAIN`.
+
 Current v11.0 canonical integration:
 
 - [Canonical synthesis](BHSM_CANONICAL_SYNTHESIS_v11_0.md)

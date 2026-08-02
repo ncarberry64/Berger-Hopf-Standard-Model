@@ -5,6 +5,24 @@ evidence, not competing public status pages.
 
 ## Current public summary
 
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current campaign status: v11.1 presents the stratified action category and proves that the current parent action admits distinct fixed-character support lifts. They are not linearly naturally isomorphic, but physical equivalence is undecidable because the support-gradient local action and boundary/core canonical domain are absent. Genuine physical nonuniqueness and the physical-or-conventional status of lambda_D are not claimed. The v11.0 logarithmic depth, positive Haar metric, healthy conditional support pair, infinite-distance core endpoint, canonical ontology, and frozen generation architecture remain intact. No core transfer operator, physical three-mode Hessian, stable particle cycle, mass, CKM/PMNS matrix, normalized M4 action, or quantum probability law is emitted. Frozen predictions are unchanged.
+
+V11.1 current verdict:
+`BHSM_SUPPORT_FUNCTOR_PHYSICAL_EQUIVALENCE_QUOTIENT_BLOCKED_BY_ABSENT_COMPLETE_LOCAL_BOUNDARY_AND_CORE_ACTION_DATA`.
+The exact next object is
+`COMPLETE_LOCAL_SUPPORTED_ACTION_WITH_SUPPORT_DERIVATIVE_COUPLINGS_AND_BOUNDARY_CORE_CANONICAL_DOMAIN`.
+The stratified category and character law are derived, and two distinct
+fixed-character lifts recover the same frozen action at `upsilon=1`. They are
+not naturally isomorphic as fixed linear representations, but their physical
+equivalence or inequivalence is undecided without the complete supported local
+and boundary/core canonical action. Mark I is reached; Marks II-IV remain not reached. All
+downstream physical outputs and frozen predictions remain unchanged.
+
+The mandatory historical recovery gate passes with verdict
+`BHSM_HISTORICAL_RECOVERY_NARROWS_BUT_DOES_NOT_CLOSE_CURRENT_OBJECT`.
+It reconciles the live tree, Git history, branches, PRs, tests, artifacts,
+author attachments, USB mirror, and verified v8.3/v10.4/v11.0 bundles.
+
 BHSM is an artifact-backed mathematical and computational research framework,
 not a replacement for the Standard Model established by empirical tests. Frozen
 internal prediction records, executable interfaces, deterministic artifacts,

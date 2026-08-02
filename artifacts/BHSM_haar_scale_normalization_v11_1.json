@@ -1,0 +1,55 @@
+{
+  "artifact": "BHSM_haar_scale_normalization_v11_1",
+  "canonical_interaction_strength": "g_Da=w_a/lambda_D",
+  "global_normalization": null,
+  "kinetic_matching": null,
+  "lambda_D": null,
+  "lambda_D_positive": true,
+  "next_exact_object": "COMPLETE_LOCAL_SUPPORTED_ACTION_WITH_SUPPORT_DERIVATIVE_COUPLINGS_AND_BOUNDARY_CORE_CANONICAL_DOMAIN",
+  "physical_or_conventional": null,
+  "primitive_character": null,
+  "pure_coordinate_convention": false,
+  "reason_not_classified": "the invariance of w_a/lambda_D under the allowed representation quotient is undecidable without the complete supported canonical action",
+  "routes": [
+    {
+      "reason": "the canonical kinetic coefficient changes unless a compensating action coefficient is changed; coupled slopes w/lambda_D are physical data",
+      "result": "INVALIDATED_AS_A_PHYSICAL_EQUIVALENCE_AFTER_CANONICAL_KINETIC_NORMALIZATION",
+      "route": "A_pure_coordinate_normalization",
+      "tested_transformation": "q_D->c q_D, lambda_D->c lambda_D"
+    },
+    {
+      "reason": "the action does not identify a primitive support-charged object; choosing the smallest integer is an external convention",
+      "result": "OPEN_NOT_SELECTED",
+      "route": "B_primitive_character_normalization",
+      "tested_transformation": "select w_primitive=1"
+    },
+    {
+      "reason": "no common S8/S5/S4 reduction functor owns all kinetic coefficients and the q_D cross blocks",
+      "result": "BLOCKED",
+      "route": "C_kinetic_matching",
+      "tested_transformation": "match q_D to gravity, q_C, q_W, boundary, or global kinetic metric"
+    },
+    {
+      "reason": "discrete topology labels do not canonically normalize the independent continuous multiplicative-support generator",
+      "result": "INVALIDATED_AS_UNPROVEN_IDENTIFICATION",
+      "route": "D_topological_normalization",
+      "tested_transformation": "identify support character with winding, codimension, Hopf charge, or triality"
+    },
+    {
+      "reason": "the complete supported action and unique dimensionless global equilibrium are unavailable",
+      "result": "BLOCKED",
+      "route": "E_global_normalization",
+      "tested_transformation": "fix lambda_D from a unique closed equilibrium"
+    }
+  ],
+  "status": "BHSM_HAAR_SCALE_PHYSICAL_OR_CONVENTIONAL_STATUS_AWAITS_SUPPORT_REPRESENTATION_EQUIVALENCE_QUOTIENT",
+  "topological_normalization": null,
+  "validation": {
+    "all_five_routes_tested": true,
+    "lambda_not_set_by_convenience": true,
+    "no_empirical_scale_used": true,
+    "no_route_claimed_complete": true,
+    "physical_canonical_slope_retained": true
+  },
+  "validation_passed": true
+}

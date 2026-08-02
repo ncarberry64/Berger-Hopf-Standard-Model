@@ -1,5 +1,17 @@
 # BHSM Roadmap
 
+## v11.1 current critical path
+
+The current verdict is
+`BHSM_SUPPORT_FUNCTOR_PHYSICAL_EQUIVALENCE_QUOTIENT_BLOCKED_BY_ABSENT_COMPLETE_LOCAL_BOUNDARY_AND_CORE_ACTION_DATA`.
+Resume only from
+`COMPLETE_LOCAL_SUPPORTED_ACTION_WITH_SUPPORT_DERIVATIVE_COUPLINGS_AND_BOUNDARY_CORE_CANONICAL_DOMAIN`.
+Do not tune weights or `lambda_D`. Core transfer, three-mode dynamics, cycles,
+buoyancy/Higgs, global scale, generations, masses/mixing, M4 reduction, and
+quantum measurement remain downstream and fail closed.
+The reusable historical-recovery gate must remain green before this or any
+future blocker/action-extension verdict is emitted.
+
 ## v11.0 canonical critical path
 
 The canonical Relational Envelopment Holism ontology, historical

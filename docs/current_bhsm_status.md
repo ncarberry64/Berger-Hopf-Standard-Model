@@ -1,5 +1,27 @@
 # Current BHSM Status
 
+## v11.1 authoritative support-representation status
+
+The stratified action category and two fixed-character support lifts are now
+explicit. The representatives are not linearly naturally isomorphic, but this
+does not establish physical inequivalence: on the regular domain their ratio
+is a field-dependent rescaling that generates support-gradient terms, and the
+rescaling is singular at the `upsilon=0` core. The repository lacks the
+complete local derivative action and boundary/core canonical domain needed to
+decide the physical equivalence quotient.
+
+Current verdict:
+`BHSM_SUPPORT_FUNCTOR_PHYSICAL_EQUIVALENCE_QUOTIENT_BLOCKED_BY_ABSENT_COMPLETE_LOCAL_BOUNDARY_AND_CORE_ACTION_DATA`.
+
+Exact next object:
+`COMPLETE_LOCAL_SUPPORTED_ACTION_WITH_SUPPORT_DERIVATIVE_COUPLINGS_AND_BOUNDARY_CORE_CANONICAL_DOMAIN`.
+
+The Haar scale remains unclassified as physical or conventional. Mark I is
+reached; Marks II-IV are not reached. No core transfer operator, physical
+three-mode Hessian, stable particle cycle, mass, CKM/PMNS matrix, normalized
+M4 action, or quantum probability law is emitted. Frozen predictions and
+official prediction logic are unchanged.
+
 Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a completed replacement of the Standard Model. Its strategic objective is replacement by derivation: the Standard Model should ultimately emerge as the low-energy effective limit of BHSM. Until that derivation is achieved, local SM gauge structure remains a preserved infrared layer, while BHSM provides a candidate Berger-Hopf/topographic completion of the flavor, channel, generation, response, and collective-threshold architecture.
 
 ## Summary
@@ -44,9 +66,11 @@ stratified action contains no support-group action on its metrics, measures,
 bundles, or embeddings. It therefore does not determine the weights. The
 integer assignments `(w_C,w_W)=(1,1)` and `(1,2)`, with all other weights
 zero, both satisfy the declared covariance, dimension, positivity, parent
-limit, and nontrivial-source conditions. They are physically inequivalent.
-Moreover `lambda_D` enters the canonical slopes `w/lambda_D`, so it is not a
-pure unit convention in a coupled theory.
+limit, and nontrivial-source conditions. The v11.0 text classified them as
+physically inequivalent; v11.1 retracts that overbroad classification because
+the physical equivalence quotient requires the missing local support-gradient
+action and boundary/core canonical domain. Likewise, the physical or
+conventional status of `lambda_D` is now left undecided.
 
 The endpoint `upsilon=0` is at `q_D=+infinity`. Regular variation determines
 the form of flux matching but does not supply a finite core response,

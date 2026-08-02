@@ -1,5 +1,16 @@
 # BHSM Artifact Index
 
+## BHSM v11.1 support-representation campaign
+
+The v11.1 records present the stratified category,
+two-functor counterexample, five-route Haar audit, formal supported-action
+family, physical-equivalence quotient, historical provenance matrix, and
+fail-closed downstream gates. `artifacts/BHSM_1_0_completion_gate.json`
+is the current v11.1 canonical gate. Verdict:
+`BHSM_SUPPORT_FUNCTOR_PHYSICAL_EQUIVALENCE_QUOTIENT_BLOCKED_BY_ABSENT_COMPLETE_LOCAL_BOUNDARY_AND_CORE_ACTION_DATA`.
+Next object:
+`COMPLETE_LOCAL_SUPPORTED_ACTION_WITH_SUPPORT_DERIVATIVE_COUPLINGS_AND_BOUNDARY_CORE_CANONICAL_DOMAIN`.
+
 ## BHSM v11.0 unified physical-completion campaign
 
 - `artifacts/BHSM_canonical_ontology_v11_0.json`: typed author axioms,

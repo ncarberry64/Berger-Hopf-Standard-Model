@@ -1,5 +1,17 @@
 # Reviewer Reproduction Guide
 
+## Current v11.1 audit
+
+```bash
+python scripts/materialize_support_representation_completion_v11_1.py
+python -m bhsm.interface support-functor-status-v11-1 --format json
+python -m bhsm.interface physical-completion-status-v11-1 --format markdown
+python -m pytest -q tests/test_bhsm_support_representation_v11_1.py tests/test_current_program_status_v11_1.py
+```
+
+Expected verdict: `BHSM_SUPPORT_FUNCTOR_PHYSICAL_EQUIVALENCE_QUOTIENT_BLOCKED_BY_ABSENT_COMPLETE_LOCAL_BOUNDARY_AND_CORE_ACTION_DATA`.
+Expected next object: `COMPLETE_LOCAL_SUPPORTED_ACTION_WITH_SUPPORT_DERIVATIVE_COUPLINGS_AND_BOUNDARY_CORE_CANONICAL_DOMAIN`.
+
 - `reviewer-smoke`: `python -m pytest -q tests/test_engine_invariant_preservation.py tests/test_engine_physics_status_separation.py`
 - `reviewer-full`: `python -m pytest -q`
 - `reviewer-cern-open-data`: `python -m bhsm.interface.benchmarks.cern_open_data_benchmark --download --summary`

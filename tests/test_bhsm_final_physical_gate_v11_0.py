@@ -61,4 +61,6 @@ def test_checked_in_artifacts_match_implementation():
     for key, filename in gate.ARTIFACT_FILES.items():
         assert (ROOT / "artifacts" / filename).read_text(encoding="utf-8") == gate.deterministic_json(expected[key])
     canonical = ROOT / "artifacts" / "BHSM_1_0_completion_gate.json"
-    assert canonical.read_text(encoding="utf-8") == gate.deterministic_json(gate.canonical_completion_gate_payload())
+    from bhsm.interface.completion import final_completion_gate_v11_1 as current
+
+    assert canonical.read_text(encoding="utf-8") == gate.deterministic_json(current.canonical_completion_gate_payload())
