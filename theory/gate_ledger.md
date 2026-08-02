@@ -1,6 +1,25 @@
 # Gate Ledger
 
-## v11.2 current gate
+## v11.3 current gate
+
+The recovered action-owned `Lambda85` compatibility matcher fixes the
+reciprocal incidence half-characters, the multiplier equation, the signed
+`q_D` source, and the total three-sector stress-transfer Ward identity. Its
+algebraic form generates neither a linear nor a quadratic `A_D` term. The
+boundary contribution is canonically zero and ordinary-core closure is
+finite. The normalized local three-coordinate KKT reduction has two positive
+tangent modes.
+
+Mark II is `REACHED_CONDITIONALLY`. The exact open gate is
+`ACTION_NORMALIZED_CORE_WALL_RESPONSE_GRAM_HESSIAN_ON_COMMON_ATTACHMENT_DOMAIN`;
+the normalized local model is not promoted to a physical Hessian. Marks
+III-IV and downstream particle, mass, flavor, normalized-4D, and quantum
+outputs remain open.
+
+Current verdict:
+`BHSM_RECIPROCAL_ATTACHMENT_ACTION_AND_CURRENT_DERIVED_WITH_THREE_MODE_DOMAIN_CONDITIONAL`.
+
+## v11.2 historical gate
 
 Historical recovery and the composite support connection pass. The complete
 local action, full variation, canonical domain, equivalence quotient, and Haar

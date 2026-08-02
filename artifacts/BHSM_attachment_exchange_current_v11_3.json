@@ -1,0 +1,31 @@
+{
+  "J_attach": "-(1/(2 lambda_D))<Lambda85,upsilon^(-1/2)I_W+upsilon^(1/2)I_C>",
+  "artifact": "BHSM_attachment_exchange_current_v11_3",
+  "attachment_dependence": "algebraic in upsilon; I_C and I_W are not differentiated in S_attach",
+  "attachment_exchange_object": "the action-derived scalar J_attach in the q_D equation plus the diffeomorphism stress-transfer identity",
+  "classification": "DERIVED",
+  "conservation_scope": "total stratified diffeomorphism Ward identity; sectors are not separately conserved",
+  "formal_existing_support_response": "J_D^A=-delta S_D/delta A_D,A=+lambda_D^2 A_D^A=-lambda_D nabla^A q_D",
+  "linear_A_D_term": 0,
+  "new_boundary_flux": 0,
+  "normal_momentum_shift": 0,
+  "quadratic_A_D_term": 0,
+  "reason_both_zero": "the exact inherited multiplier constraint has no derivative-containing incidence argument; support covariance is completed by reciprocal algebraic dressing",
+  "spherical_export": "if the resulting normal flux is stationary and conserved, 4 pi r^2 J_r=Phi; no gravity/inertia/electrodynamics claim",
+  "stress_tensor": "T_attach^{AB}=-(2/sqrt(|G|)) delta S_attach/delta G_AB, including the Q_H incidence and measure variations",
+  "transfer_vectors": {
+    "Q_C^B": "E_I_C contracted with nabla^B I_C through Q_H",
+    "Q_D^B": "E_qD nabla^B q_D plus the attachment stress divergence",
+    "Q_W^B": "E_I_W contracted with nabla^B I_W through id_5/trace",
+    "identity": "Q_C^B+Q_W^B+Q_D^B=0 on the multiplier and field equations"
+  },
+  "validation": {
+    "algebraic_action_has_no_A_linear_term": true,
+    "algebraic_action_has_no_A_quadratic_term": true,
+    "linear_without_quadratic_not_inserted": true,
+    "no_independent_displacement_current": true,
+    "qd_sign_exact": true,
+    "three_way_transfer_closes": true
+  },
+  "validation_passed": true
+}

@@ -4,16 +4,16 @@ from __future__ import annotations
 
 from typing import Any
 
-from .completion.complete_local_supported_action_v11_2 import EXACT_NEXT_OBJECT, PRIMARY_VERDICT
+from .completion.reciprocal_attachment_action_v11_3 import EXACT_NEXT_OBJECT, PRIMARY_VERDICT
 
 
-CURRENT_CAMPAIGN = "v11.2 Complete local supported action and boundary/core canonical-domain campaign"
-CURRENT_VERSION = "v11.2"
-SOURCE_BASE_MAIN_SHA = "96677288b8a60570b43b2383d2517f57a33a6da4"
-SOURCE_BASE_TREE_SHA = "7d1c0024ccb6fee3ea36579e313143b24ceec9c8"
+CURRENT_CAMPAIGN = "v11.3 Reciprocal core-surface attachment construction sprint"
+CURRENT_VERSION = "v11.3"
+SOURCE_BASE_MAIN_SHA = "1aa1ebf1c924e494c903e794aaed5f0d7d42e173"
+SOURCE_BASE_TREE_SHA = "8975c13c1993dcca1e88a73d28e613b22704ac6d"
 COMPLETION_MARKS = {
     "Mark_I_Canonical_ontology": "REACHED",
-    "Mark_II_Complete_conditional_architecture": "NOT_REACHED",
+    "Mark_II_Complete_conditional_architecture": "REACHED_CONDITIONALLY",
     "Mark_III_Physical_derivation": "NOT_REACHED",
     "Mark_IV_Empirical_replacement": "NOT_REACHED",
 }
@@ -38,9 +38,13 @@ DERIVED_RESULTS = [
     "conditional separation of fixed intrinsic enclosure geometry from external embedding dynamics",
     "conditional conserved spherical-flux dilution J_r=Phi/(4 pi r^2), explicitly inapplicable to plate Casimir pressure",
     "Casimir and black-hole de-envelopment gates classified without promoting author hypotheses",
+    "action-owned reciprocal Lambda85 attachment term on Q_H(G8) and g5 incidence lifts",
+    "opposite half-characters w(I_C)=-1/2 and w(I_W)=+1/2 with neutral intrinsic metric",
+    "signed q_D attachment source and total three-sector diffeomorphism stress-transfer identity",
+    "differentiable algebraic attachment boundary completion and finite ordinary core closure",
 ]
 CONDITIONAL_RESULTS = [
-    "complete supported-action family indexed by action-owned primitive characters and lambda_D",
+    "full numerical core/wall Gram-Hessian on the common attachment domain",
     "physical equivalence quotient of the provisional support lifts",
     "core transfer, three-mode, cycle, buoyancy, Higgs, global, generation, M4, and quantum interfaces",
 ]
@@ -55,6 +59,7 @@ INVALIDATED_RESULTS = [
     "fixed intrinsic enclosure geometry follows automatically from arbitrary embedding motion",
     "a universal inverse-square law or spherical-flux derivation of plate Casimir pressure",
     "black-hole de-envelopment without a conserved surface receiving channel",
+    "the recovered algebraic matcher requires an independent linear A_D current or seagull term",
     "flatness of A_D proves physical removability at the boundary or core",
 ]
 OPEN_RESULTS = [
@@ -105,19 +110,19 @@ def status_payload() -> dict[str, Any]:
         "frozen_prediction_state": FROZEN_PREDICTION_STATE,
         "physical_outputs_available": PHYSICAL_OUTPUTS_AVAILABLE,
         "validation_summary": {
-            "focused": "44 final focused/status tests passed (37 steering/gate plus 7 public-status)",
-            "full_pytest": "4860 passed in 748.52 s at c1bfd68 before the final steering-only delta; no repeated local full suite by author direction, protected CI is the final comprehensive gate",
-            "audits": "status, frozen-integrity, forbidden-claims, and public-readiness audits passed",
-            "artifact_determinism": "29 materialized outputs reproduced byte-identically in focused tests",
+            "focused": "PENDING_FINAL_V11_3_VALIDATION",
+            "full_pytest": "PENDING_FINAL_V11_3_VALIDATION",
+            "audits": "PENDING_FINAL_V11_3_VALIDATION",
+            "artifact_determinism": "PENDING_FINAL_V11_3_VALIDATION",
         },
         "source_base_main_sha": SOURCE_BASE_MAIN_SHA,
         "source_base_tree_sha": SOURCE_BASE_TREE_SHA,
         "current_main_sha": "RESOLVE_AT_RUNTIME_WITH_GIT_REV_PARSE_HEAD",
         "current_tree_sha": "RESOLVE_AT_RUNTIME_WITH_GIT_REV_PARSE_HEAD_TREE",
         "sha_embedding_policy": "a commit cannot contain its own eventual merge SHA; final merged SHA is reported from Git and the tree is contract-tested",
-        "live_merged_status": "v11.1 at campaign branch point; v11.2 becomes live when this tree is merged to main",
+        "live_merged_status": "v11.2 at campaign branch point; v11.3 becomes live when this tree is merged to main",
         "active_branch_status": PRIMARY_VERDICT,
-        "haar_scale_status": "BHSM_HAAR_SCALE_REMAINS_UNCLASSIFIED_PENDING_ACTION_OWNED_PRIMITIVE_SUPPORT_CHARACTER",
+        "haar_scale_status": "attachment generator normalized conventionally; physical lambda_D classification remains downstream of the common Hessian quotient",
         "historical_recovery_status": PRIMARY_VERDICT,
         "historical_recovery_complete": True,
         "frozen_predictions_changed": False,
@@ -132,12 +137,11 @@ def status_payload() -> dict[str, Any]:
 def public_repo_status() -> str:
     return (
         "BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. "
-        "Current campaign status: v11.2 derives the composite flat connection A_D=d log(upsilon), "
-        "exhausts the primitive-character/current routes, and conditionally separates fixed intrinsic enclosure geometry "
-        "from external relational embedding. The original exact action-character system remains rank 7/nullity 5; adding "
-        "the action-unowned attachment, embedding, displacement, boundary-spectrum, and transfer candidates gives rank 7/nullity 12. "
-        "The leading candidate carrier is the core-surface attachment map, but its character and exchange current are not action-fixed. The "
-        "complete support current, quadratic completion, variation, and boundary/core domain remain open. "
+        "Current campaign status: v11.3 dresses the action-owned Lambda85 compatibility matcher reciprocally, with "
+        "I_C=Q_H(G8), I_W=g5, w(I_C)=-1/2, and w(I_W)=+1/2 while the intrinsic enclosure remains neutral. "
+        "The algebraic matcher derives a signed q_D source and total three-sector stress-transfer identity; it generates "
+        "neither a linear nor a quadratic A_D term. Its boundary variation and ordinary core closure are finite. "
+        "Mark II is reached conditionally: the exact action-normalized core/wall response Gram-Hessian on the common attachment domain remains open. "
         "Physical equivalence and the physical-or-conventional status of lambda_D are not claimed. "
         "The v11.0 logarithmic depth, positive Haar metric, healthy conditional support pair, "
         "infinite-distance core endpoint, canonical ontology, and frozen generation architecture remain intact. "

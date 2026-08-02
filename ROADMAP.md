@@ -1,17 +1,22 @@
 # BHSM Roadmap
 
-## v11.2 current critical path
+## v11.3 current critical path
 
 The current verdict is
-`BHSM_BIDIRECTIONAL_BUOYANCY_AND_FIXED_ENCLOSURE_ARCHITECTURE_DERIVED_CONDITIONALLY_BUT_ATTACHMENT_CHARACTER_REMAINS_UNFIXED`.
+`BHSM_RECIPROCAL_ATTACHMENT_ACTION_AND_CURRENT_DERIVED_WITH_THREE_MODE_DOMAIN_CONDITIONAL`.
 Resume only from
+`ACTION_NORMALIZED_CORE_WALL_RESPONSE_GRAM_HESSIAN_ON_COMMON_ATTACHMENT_DOMAIN`.
+It must pull the action-owned core and wall response Gram operators onto one
+physical attachment domain and derive the constrained Hessian without
+particle-data tuning. The whitened local KKT identity is only a normalization
+test. Mark II is reached conditionally; every downstream physical gate remains
+fail closed.
+
+## v11.2 historical critical path
+
+V11.2 stopped at
 `ACTION_OWNED_CORE_SURFACE_ATTACHMENT_TERM_FIXING_ATTACHMENT_CHARACTER_AND_EXCHANGE_CURRENT`.
-It must determine the primitive charges in `J_D`, the quadratic connection
-completion, all induced measure/normal characters, and their cross-stratum
-intertwiners without particle-data tuning. Only then may the full variation,
-constraint rank, selected boundary/core domain, equivalence quotient, and
-Haar scale be closed. Mark II and every downstream physical gate remain fail
-closed.
+V11.3 closes that action-incidence attachment layer.
 
 ## v11.1 historical critical path
 

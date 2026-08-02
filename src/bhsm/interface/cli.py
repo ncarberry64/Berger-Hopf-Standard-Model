@@ -994,6 +994,12 @@ def build_parser() -> argparse.ArgumentParser:
         ("support-character-boundary-core-status-v11-2", "Render the BHSM v11.2 boundary/core character selection"),
         ("support-character-equivalence-class-status-v11-2", "Render the BHSM v11.2 support-character equivalence classes"),
         ("bidirectional-buoyancy-status-v11-2", "Render the BHSM v11.2 bidirectional-buoyancy steering result"),
+        ("reciprocal-attachment-status", "Render the BHSM v11.3 reciprocal attachment action"),
+        ("attachment-character-status", "Render the BHSM v11.3 attachment character derivation"),
+        ("attachment-current-status", "Render the BHSM v11.3 attachment exchange current"),
+        ("attachment-domain-status", "Render the BHSM v11.3 attachment core domain"),
+        ("three-mode-action-status-v11-3", "Render the BHSM v11.3 three-mode action"),
+        ("mark-ii-status", "Render the BHSM v11.3 conditional Mark II gate"),
         ("historical-recovery-status", "Render the historical-recovery gate"),
         ("historical-object-search", "Render the typed historical-object search"),
         ("historical-equivalence-audit", "Render the historical equivalence audit"),
@@ -1151,6 +1157,24 @@ def main(argv: Sequence[str] | None = None) -> int:
         )
         payload = module.command_payload(args.command, args.object)
         print(json.dumps(payload, indent=2, sort_keys=True))
+        return 0
+    if args.command in {
+        "reciprocal-attachment-status",
+        "attachment-character-status",
+        "attachment-current-status",
+        "attachment-domain-status",
+        "three-mode-action-status-v11-3",
+        "mark-ii-status",
+    }:
+        module = import_module(
+            ".completion.mark_ii_gate_v11_3",
+            package=__package__,
+        )
+        payload = module.command_payload(args.command)
+        if args.format == "markdown":
+            print(module.command_to_markdown(args.command, payload), end="")
+        else:
+            print(json.dumps(payload, indent=2, sort_keys=True))
         return 0
     if args.command in {
         "supported-geometry-status-v11-2",

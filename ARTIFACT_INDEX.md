@@ -1,6 +1,22 @@
 # BHSM Artifact Index
 
-## BHSM v11.2 complete-supported-action campaign
+## BHSM v11.3 reciprocal core-surface attachment campaign
+
+Ten deterministic v11.3 records cover the recovered incidence ledger,
+reciprocal action, primitive-character derivation, exchange current,
+boundary variation, core domain, expanded character matrix, conditional
+three-mode action, Mark II gate, and final completion report.
+`BHSM_1_0_completion_gate.json` is the canonical current gate.
+Verdict: `BHSM_RECIPROCAL_ATTACHMENT_ACTION_AND_CURRENT_DERIVED_WITH_THREE_MODE_DOMAIN_CONDITIONAL`.
+Next object:
+`ACTION_NORMALIZED_CORE_WALL_RESPONSE_GRAM_HESSIAN_ON_COMMON_ATTACHMENT_DOMAIN`.
+
+Primary CLI commands are `reciprocal-attachment-status`,
+`attachment-character-status`, `attachment-current-status`,
+`attachment-domain-status`, `three-mode-action-status-v11-3`, and
+`mark-ii-status`.
+
+## Historical BHSM v11.2 complete-supported-action campaign
 
 Twenty-one deterministic `BHSM_*_v11_2.json` records cover historical recovery,
 supported geometry, the composite support derivative, action terms,
@@ -8,9 +24,10 @@ variation, phase space, constraints, boundary/core domains, equivalence,
 Haar scale, core transfer, three-mode dynamics, downstream gates, and the
 final gate, plus the primitive ledger, exact constraint matrix, current,
 paired connection couplings, boundary/core selection, and equivalence classes.
-`BHSM_1_0_completion_gate.json` is the canonical current gate.
-Verdict: `BHSM_COMPOSITE_SUPPORT_CONNECTION_DERIVED_BUT_PRIMITIVE_CHARACTER_AND_CURRENT_LEDGER_NOT_ACTION_FIXED`.
-Next object: `ACTION_TERM_OR_GEOMETRIC_PRINCIPLE_FIXING_PRIMITIVE_SUPPORT_CHARACTER_OWNERSHIP`.
+The v11.2 final steering verdict was
+`BHSM_BIDIRECTIONAL_BUOYANCY_AND_FIXED_ENCLOSURE_ARCHITECTURE_DERIVED_CONDITIONALLY_BUT_ATTACHMENT_CHARACTER_REMAINS_UNFIXED`.
+Its next object was
+`ACTION_OWNED_CORE_SURFACE_ATTACHMENT_TERM_FIXING_ATTACHMENT_CHARACTER_AND_EXCHANGE_CURRENT`.
 
 ## Historical BHSM v11.1 support-representation campaign
 
