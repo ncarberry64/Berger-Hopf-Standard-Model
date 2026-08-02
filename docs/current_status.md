@@ -1,5 +1,11 @@
 # Current BHSM Status
 
+> This file preserves the boundary-package status lineage. The authoritative
+> whole-project status is [current_bhsm_status.md](current_bhsm_status.md).
+> BHSM v11.0 derives logarithmic/Haar support kinematics but leaves the Haar
+> scale, support characters, core transfer operator, and all downstream
+> physical outputs open.
+
 Current status: BHSM v1.0.0 internal boundary no-fit package complete/exported; external empirical comparison layer separate/open.
 
 ```text

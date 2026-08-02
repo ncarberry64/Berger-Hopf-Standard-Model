@@ -1,5 +1,16 @@
 # BHSM 1.0 definition of done
 
+## Current v11.0 completion-mark reconciliation
+
+The historical finite-input Tier A/Tier B labels below describe the retained
+stratified EFT and observable-map contract. They do not mean that the stronger
+v11.0 physical-completion campaign has derived the Standard Model. Under the
+v11.0 marks, Mark I is `REACHED`; Marks II, III, and IV are `NOT_REACHED`.
+The highest-upstream object is
+`ACTION_DERIVED_SUPPORT_REPRESENTATION_FUNCTOR_ON_STRATIFIED_SECTORS_WITH_FIXED_HAAR_SCALE`.
+No physical mass, CKM, PMNS, core transition, or empirical-replacement claim is
+licensed by the older tier terminology.
+
 ## Internal finish line
 
 BHSM 1.0 is internally release complete when every quantity in its official

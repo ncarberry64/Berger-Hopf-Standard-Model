@@ -1,7 +1,7 @@
 """BHSM master-action, transport, and vacuum-to-flavor audit API.
 
 The v7.0 constants and v7.1 master-action report remain exported for
-artifact compatibility. Current v10.4 completion constants and status are
+artifact compatibility. Current v11.0 completion constants and status are
 exposed separately.
 """
 
@@ -18,9 +18,15 @@ from .report import (
 )
 from .validation import validate_model
 
-CURRENT_VERSION = "v10.4"
-CURRENT_MISSING_OBJECT = "ACTION_PRINCIPLE_FIXING_Z_UPSILON_U_UPSILON_AND_SUPPORT_COUPLINGS"
-CURRENT_VERDICT = "BHSM_MULTIPLE_INEQUIVALENT_SUPPORT_ACTIONS_REMAIN_AFTER_AUTHOR_EXTENSION_SELECTION"
+CURRENT_VERSION = "v11.0"
+CURRENT_MISSING_OBJECT = (
+    "ACTION_DERIVED_SUPPORT_REPRESENTATION_FUNCTOR_ON_STRATIFIED_SECTORS_"
+    "WITH_FIXED_HAAR_SCALE"
+)
+CURRENT_VERDICT = (
+    "BHSM_MULTIPLICATIVE_SUPPORT_HAAR_KINEMATICS_DERIVED_BUT_"
+    "NORMALIZATION_AND_SUPPORT_WEIGHTS_NOT_ACTION_FIXED"
+)
 
 
 def observable_status_payload():
@@ -218,6 +224,20 @@ def spacetime_removal_completion_status_to_markdown(payload=None):
     return command_to_markdown("v10-4-final-completion-status")
 
 
+def unified_physical_completion_status_payload():
+    """Return the current v11.0 unified physical-completion status."""
+    from ..envelopment.final_physical_gate_v11_0 import completion_payload
+
+    return completion_payload()
+
+
+def unified_physical_completion_status_to_markdown(payload=None):
+    """Render the current v11.0 unified physical-completion status."""
+    from ..envelopment.final_physical_gate_v11_0 import command_to_markdown
+
+    return command_to_markdown("physical-completion-status-v11")
+
+
 __all__ = [
     "ARTIFACT_FILES",
     "CURRENT_MISSING_OBJECT",
@@ -247,6 +267,8 @@ __all__ = [
     "relational_envelopment_status_to_markdown",
     "unified_envelopment_status_payload",
     "unified_envelopment_status_to_markdown",
+    "unified_physical_completion_status_payload",
+    "unified_physical_completion_status_to_markdown",
     "materialize",
     "mass_curvature_response_status_payload",
     "mass_curvature_response_status_to_markdown",

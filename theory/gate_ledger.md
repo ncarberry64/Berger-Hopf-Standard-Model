@@ -52,6 +52,28 @@ below preserves historical gate provenance.
 - Complete two-/three-loop threshold RG matching.
 - Prove scalar decoupling in the full action.
 
+## v11.0 multiplicative-support and physical-completion gate
+
+The binding support composition law closes the v10.4 kinetic-family ambiguity:
+`q_D=-lambda_D log(upsilon)` and
+`Z_upsilon=lambda_D^2/upsilon^2`. Canonical ADM reduction supplies exactly one
+healthy regular support pair. The bare support potential is zero by author
+axiom.
+
+The full action remains open. Multiplicativity restricts couplings to
+characters `upsilon^w` but the parent action defines no support representation
+on its stratified sectors. The Haar scale also becomes a physical relative
+coupling through `w/lambda_D`. Integer assignments `(1,1)` and `(1,2)` for the
+required core/wall sources are explicit inequivalent counterexamples to
+uniqueness. The core is at infinite Haar distance and lacks a core phase space
+or transfer operator. RB-15 and all physical readouts remain blocked.
+
+Exact verdict:
+`BHSM_MULTIPLICATIVE_SUPPORT_HAAR_KINEMATICS_DERIVED_BUT_NORMALIZATION_AND_SUPPORT_WEIGHTS_NOT_ACTION_FIXED`.
+
+Exact next object:
+`ACTION_DERIVED_SUPPORT_REPRESENTATION_FUNCTOR_ON_STRATIFIED_SECTORS_WITH_FIXED_HAAR_SCALE`.
+
 ## v6.30.8 completion-gate reconciliation
 
 `lambda5` is typed as an independent theory input. It is not selected,

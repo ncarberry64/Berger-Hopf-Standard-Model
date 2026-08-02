@@ -426,7 +426,7 @@ def canonical_completion_gate_payload() -> dict[str, Any]:
     cannot silently roll the repository-wide canonical gate back from v10.4.
     """
 
-    from bhsm.interface.envelopment import final_completion_gate_v10_4 as current
+    from bhsm.interface.envelopment import final_physical_gate_v11_0 as current
 
     return current.canonical_completion_gate_payload()
 

@@ -7,6 +7,16 @@ below preserve dated scientific and repository provenance.
 
 ### Supported
 
+- V11.0 derives `q_D=-lambda_D log(upsilon)` and
+  `Z_upsilon=lambda_D^2/upsilon^2` from the binding multiplicative-support
+  composition law and continuity.
+- The canonical regular depth contributes one healthy scalar pair. The core
+  endpoint `upsilon=0` is at infinite Haar field distance.
+- Composition fixes support couplings to the character form `upsilon^w`, but
+  neither the weights nor `lambda_D` are action-derived in the coupled theory.
+- No complete support action, core transfer law, physical orbit, mass, mixing
+  matrix, normalized M4 theory, or quantum probability law follows from the
+  v11.0 kinematic theorem.
 - BHSM is an artifact-backed mathematical and computational research
   framework.
 - Frozen internal prediction artifacts exist with byte-integrity guards.
