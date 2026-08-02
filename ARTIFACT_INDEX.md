@@ -2,6 +2,13 @@
 
 ## BHSM v11.0 unified physical-completion campaign
 
+- `artifacts/BHSM_canonical_ontology_v11_0.json`: typed author axioms,
+  structural postulates, working identifications, derived statements, and exact
+  proof gates.
+- `artifacts/BHSM_canonical_dependency_graph_v11_0.json`: acyclic D00-D13
+  dependency graph with a unique highest-upstream open action object.
+- `artifacts/BHSM_canonical_falsification_v11_0.json`: pending physical
+  rejection conditions without fabricated evaluations.
 - `artifacts/BHSM_support_composition_v11_0.json`: exact logarithmic depth,
   Haar metric, canonical kinetic term, and infinite-distance core endpoint.
 - `artifacts/BHSM_supported_parent_action_v11_0.json`: complete stratified term
@@ -9,6 +16,16 @@
   non-uniqueness.
 - `artifacts/BHSM_core_stratum_action_v11_0.json`: variational flux forms,
   boundary-data classification, and missing core response operator.
+- `artifacts/BHSM_support_action_v11_0.json`,
+  `artifacts/BHSM_core_transfer_v11_0.json`,
+  `artifacts/BHSM_topological_buoyancy_v11_0.json`,
+  `artifacts/BHSM_higgs_buoyancy_mode_v11_0.json`, and
+  `artifacts/BHSM_geometric_charges_v11_0.json`: canonical aliases and
+  fail-closed doctrine-to-action gates.
+- `artifacts/BHSM_global_scale_v11_0.json`,
+  `artifacts/BHSM_particle_cycles_v11_0.json`, and
+  `artifacts/BHSM_quantum_measurement_v11_0.json`: downstream scale, cycle,
+  and measurement gates.
 - `artifacts/BHSM_three_mode_hessian_v11_0.json` through
   `artifacts/BHSM_core_transition_v11_0.json`: deterministic downstream
   fail-closed gates.
@@ -17,6 +34,7 @@
 - `artifacts/BHSM_1_0_completion_gate.json`: canonical v11.0 completion gate.
 
 Primary CLI:
+`python -m bhsm.interface canonical-ontology-status-v11 --format json` and
 `python -m bhsm.interface physical-completion-status-v11 --format markdown`.
 
 Primary verdict:

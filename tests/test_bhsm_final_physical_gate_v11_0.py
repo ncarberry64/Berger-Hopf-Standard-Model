@@ -27,7 +27,7 @@ def test_completion_gate_advances_only_the_exact_support_results():
         "transition_amplitudes": None,
     }
     assert payload["completion_marks"] == {
-        "Mark_I_Foundational_ontology": "REACHED",
+        "Mark_I_Canonical_ontology": "REACHED",
         "Mark_II_Complete_conditional_architecture": "NOT_REACHED",
         "Mark_III_Physical_derivation": "NOT_REACHED",
         "Mark_IV_Empirical_replacement": "NOT_REACHED",

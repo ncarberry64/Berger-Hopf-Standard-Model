@@ -1,20 +1,24 @@
-# BHSM v11.0 Unified Physical Completion Report
+# BHSM v11.0 Canonical Unification and Physical Completion Report
 
 ## Completion marks
 
 | Mark | Status | Boundary |
 | --- | --- | --- |
-| I — Foundational ontology | `REACHED` | binding v11.0 author ontology registered |
+| I — Canonical ontology | `REACHED` | typed v11.0 doctrine and dependency registry integrated |
 | II — Complete conditional architecture | `NOT_REACHED` | support representation, core action, and common three-mode action remain open |
 | III — Physical derivation | `NOT_REACHED` | no orbit, global equilibrium, particle cycle, phase spectrum, mass, mixing, or normalized M4 action |
 | IV — Empirical replacement | `NOT_REACHED` | repository work cannot establish empirical replacement |
 
 ## Validated
 
+- Relational Envelopment Holism has a canonical typed ontology, dependency
+  graph, falsification registry, and historical equivalence ledger.
+- Canonical registration preserves the boundary between author axiom,
+  structural postulate, working geometric identification, and derived result.
 - Multiplicative support plus continuous additive depth uniquely yields
   `q_D=-lambda_D log(upsilon)`.
 - The invariant kinetic metric is
-  `lambda_D^2 dupsilon^2/upsilon^2` and the canonical depth has one healthy
+  `lambda_D^2 dupsilon^2/upsilon^2`, and the canonical depth has one healthy
   regular scalar pair.
 - Constant `Z_upsilon` is invalid under the v11.0 composition axiom.
 - The core endpoint `upsilon=0` is at `q_D=+infinity`.
@@ -54,9 +58,21 @@ The common S8/S5/S4 reduction, complete three-mode Hessian, stable sector
 cycles, global equilibrium, slot-to-phase intertwiners, normalized M4
 reduction, and quantum channel remain downstream.
 
-## Primary verdict
+Topological Buoyancy, the Higgs/buoyancy identification, geometric charge
+assignments, order-three generation synchronization, core-mediated mixing, and
+quantum measurement are canonical hypotheses with exact action gates. Their
+physical values remain null. A single global curvature-radius anchor remains
+unused until the dimensionless global geometry is uniquely action-selected.
+
+## Verdicts
+
+Primary verdict:
 
 `BHSM_MULTIPLICATIVE_SUPPORT_HAAR_KINEMATICS_DERIVED_BUT_NORMALIZATION_AND_SUPPORT_WEIGHTS_NOT_ACTION_FIXED`.
+
+Canonical-doctrine verdict:
+
+`BHSM_CANONICAL_RELATIONAL_ENVELOPMENT_ARCHITECTURE_CRYSTALLIZED`.
 
 Frozen predictions and official prediction logic are unchanged. No new
 continuous parameter is adopted, no particle datum is used, no cosmic anchor

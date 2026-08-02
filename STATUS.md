@@ -32,6 +32,13 @@ the declared kinematic requirements, so the complete supported action remains
 non-unique. The core endpoint is at infinite Haar distance and no core response
 operator is owned.
 
+V11.0 also crystallizes the author-selected Relational Envelopment Holism
+architecture into a typed ontology and an acyclic dependency graph. This is a
+repository-integration result, not a promotion of Topological Buoyancy, the
+Higgs/buoyancy identification, geometric charge assignments, generation
+synchronization, or quantum measurement to physical theorem status. Mark I
+canonical ontology is reached; Marks II-IV remain not reached.
+
 V10.2 exhausts the current action for Topological Buoyancy. V10.3 then audits
 the requested deformation completion against the complete historical record.
 The apparent missing seam displacement was already treated as the M5 moving

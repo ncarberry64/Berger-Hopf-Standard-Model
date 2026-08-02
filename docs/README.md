@@ -1,5 +1,12 @@
 # BHSM Documentation Index
 
+Current v11.0 canonical integration:
+
+- [Canonical synthesis](BHSM_CANONICAL_SYNTHESIS_v11_0.md)
+- [Canonical dependency graph](BHSM_CANONICAL_DEPENDENCY_GRAPH_v11_0.md)
+- [Author axioms and derived status](BHSM_AUTHOR_AXIOMS_AND_DERIVED_STATUS_v11_0.md)
+- [Unified completion report](bhsm_final_completion_report_v11_0.md)
+
 Use the top-level [STATUS.md](../STATUS.md) for current status and
 [CLAIMS.md](../CLAIMS.md) for claim boundaries. Files below provide supporting
 detail and historical evidence.

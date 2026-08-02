@@ -1,0 +1,133 @@
+{
+  "acyclic_by_declared_order": true,
+  "artifact": "BHSM_canonical_dependency_graph_v11_0",
+  "highest_upstream_open_object": "ACTION_DERIVED_SUPPORT_REPRESENTATION_FUNCTOR_ON_STRATIFIED_SECTORS_WITH_FIXED_HAAR_SCALE",
+  "nodes": [
+    {
+      "depends_on": [],
+      "id": "D00",
+      "object": "CANONICAL_ONTOLOGY_REGISTRY",
+      "status": "CLOSED"
+    },
+    {
+      "depends_on": [
+        "D00"
+      ],
+      "id": "D01",
+      "object": "MULTIPLICATIVE_SUPPORT_HAAR_KINEMATICS",
+      "status": "CLOSED"
+    },
+    {
+      "depends_on": [
+        "D01"
+      ],
+      "id": "D02",
+      "object": "ACTION_DERIVED_SUPPORT_REPRESENTATION_FUNCTOR_ON_STRATIFIED_SECTORS_WITH_FIXED_HAAR_SCALE",
+      "status": "OPEN_HIGHEST_UPSTREAM"
+    },
+    {
+      "depends_on": [
+        "D02"
+      ],
+      "id": "D03",
+      "object": "COMPLETE_SUPPORTED_PARENT_ACTION_AND_EFFECTIVE_RESTORING_RESPONSE",
+      "status": "BLOCKED"
+    },
+    {
+      "depends_on": [
+        "D03"
+      ],
+      "id": "D04",
+      "object": "CORE_BOUNDARY_PHASE_SPACE_AND_SELF_ADJOINT_TRANSFER_OPERATOR_AT_QD_INFINITY",
+      "status": "BLOCKED"
+    },
+    {
+      "depends_on": [
+        "D03",
+        "D04"
+      ],
+      "id": "D05",
+      "object": "COMMON_S8_S5_S4_REDUCTION_FUNCTOR_AND_COMPLETE_THREE_MODE_HESSIAN",
+      "status": "BLOCKED"
+    },
+    {
+      "depends_on": [
+        "D05"
+      ],
+      "id": "D06",
+      "object": "BUOYANCY_HIGGS_CHARGE_AND_WEAK_FIELD_DERIVATIONS",
+      "status": "BLOCKED"
+    },
+    {
+      "depends_on": [
+        "D05",
+        "D06"
+      ],
+      "id": "D07",
+      "object": "STABLE_RELATIVE_PERIODIC_PARTICLE_CYCLES_AND_FLOQUET_SPECTRA",
+      "status": "BLOCKED"
+    },
+    {
+      "depends_on": [
+        "D07"
+      ],
+      "id": "D08",
+      "object": "ORDER_THREE_MONODROMIES_AND_FROZEN_SLOT_INTERTWINERS",
+      "status": "BLOCKED"
+    },
+    {
+      "depends_on": [
+        "D03",
+        "D05"
+      ],
+      "id": "D09",
+      "object": "UNIQUE_GLOBAL_GEOMETRY_AND_CURVATURE_RADIUS_ANCHOR",
+      "status": "BLOCKED"
+    },
+    {
+      "depends_on": [
+        "D07",
+        "D08",
+        "D09"
+      ],
+      "id": "D10",
+      "object": "PHYSICAL_MASSES_CKM_PMNS_AND_CORE_TRANSITIONS",
+      "status": "BLOCKED"
+    },
+    {
+      "depends_on": [
+        "D06",
+        "D10"
+      ],
+      "id": "D11",
+      "object": "NORMALIZED_EFFECTIVE_M4_STANDARD_MODEL",
+      "status": "BLOCKED"
+    },
+    {
+      "depends_on": [
+        "D04",
+        "D07",
+        "D11"
+      ],
+      "id": "D12",
+      "object": "QUANTUM_MEASUREMENT_PROBABILITY_AND_NO_SIGNALLING",
+      "status": "BLOCKED"
+    },
+    {
+      "depends_on": [
+        "D11",
+        "D12"
+      ],
+      "id": "D13",
+      "object": "EMPIRICAL_REPLACEMENT",
+      "status": "NOT_ELIGIBLE_FROM_REPOSITORY_WORK"
+    }
+  ],
+  "validation": {
+    "dependencies_exist": true,
+    "empirical_replacement_not_repo_gate": true,
+    "no_downstream_false_closure": true,
+    "single_highest_upstream_open": true
+  },
+  "validation_passed": true
+}

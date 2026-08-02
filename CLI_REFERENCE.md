@@ -6,6 +6,19 @@ not required for the listed local behavior.
 BHSM v11.0 completion commands:
 
 ```bash
+python -m bhsm.interface canonical-ontology-status-v11 --format json
+python -m bhsm.interface support-action-status-v11 --format json
+python -m bhsm.interface core-transfer-status-v11 --format json
+python -m bhsm.interface three-mode-status-v11 --format json
+python -m bhsm.interface topological-buoyancy-status-v11 --format json
+python -m bhsm.interface higgs-buoyancy-status-v11 --format json
+python -m bhsm.interface particle-cycle-status-v11 --format json
+python -m bhsm.interface generation-status-v11 --format json
+python -m bhsm.interface global-scale-status-v11 --format json
+python -m bhsm.interface mass-spectrum-status-v11 --format json
+python -m bhsm.interface mixing-status-v11 --format json
+python -m bhsm.interface geometric-charge-status-v11 --format json
+python -m bhsm.interface quantum-measurement-status-v11 --format json
 python -m bhsm.interface support-composition-status --format json
 python -m bhsm.interface supported-action-status --format markdown
 python -m bhsm.interface core-stratum-action-status --format json
@@ -21,9 +34,10 @@ python -m bhsm.interface core-transition-status --format json
 python -m bhsm.interface physical-completion-status-v11 --format markdown
 ```
 
-These commands distinguish the derived Haar-depth theorem from the unresolved
-support representation and downstream physical gates. They emit no particle
-mass, mixing matrix, cosmic calibration, or transition amplitude.
+These commands expose the canonical ontology while distinguishing author
+axioms and working identifications from the derived Haar-depth theorem, the
+unresolved support representation, and downstream physical gates. They emit no
+particle mass, mixing matrix, cosmic calibration, or transition amplitude.
 
 Neutral spectral-stiffness commands:
 

@@ -947,6 +947,19 @@ def build_parser() -> argparse.ArgumentParser:
         ("m4-reduction-status", "Render the BHSM v11.0 effective-M4 gate"),
         ("core-transition-status", "Render the BHSM v11.0 quantum-core gate"),
         ("physical-completion-status-v11", "Render the BHSM v11.0 final physical-completion gate"),
+        ("canonical-ontology-status-v11", "Render the BHSM v11.0 canonical ontology registry"),
+        ("support-action-status-v11", "Render the BHSM v11.0 canonical support-action gate"),
+        ("core-transfer-status-v11", "Render the BHSM v11.0 trajectory-selected core-transfer gate"),
+        ("three-mode-status-v11", "Render the BHSM v11.0 canonical three-mode gate"),
+        ("topological-buoyancy-status-v11", "Render the BHSM v11.0 universal-buoyancy gate"),
+        ("higgs-buoyancy-status-v11", "Render the BHSM v11.0 Higgs/buoyancy-mode gate"),
+        ("particle-cycle-status-v11", "Render the BHSM v11.0 canonical particle-cycle gate"),
+        ("generation-status-v11", "Render the BHSM v11.0 synchronization-generation gate"),
+        ("global-scale-status-v11", "Render the BHSM v11.0 global-curvature-scale gate"),
+        ("mass-spectrum-status-v11", "Render the BHSM v11.0 canonical mass-spectrum gate"),
+        ("mixing-status-v11", "Render the BHSM v11.0 CKM/PMNS/core-mixing gate"),
+        ("geometric-charge-status-v11", "Render the BHSM v11.0 geometric-charge gate"),
+        ("quantum-measurement-status-v11", "Render the BHSM v11.0 quantum-measurement gate"),
     )
     for command, help_text in integrated_status_commands:
         status_command = commands.add_parser(command, help=help_text)
@@ -1114,6 +1127,19 @@ def main(argv: Sequence[str] | None = None) -> int:
             print(json.dumps(payload, indent=2, sort_keys=True))
         return 0
     if args.command in {
+        "canonical-ontology-status-v11",
+        "support-action-status-v11",
+        "core-transfer-status-v11",
+        "three-mode-status-v11",
+        "topological-buoyancy-status-v11",
+        "higgs-buoyancy-status-v11",
+        "particle-cycle-status-v11",
+        "generation-status-v11",
+        "global-scale-status-v11",
+        "mass-spectrum-status-v11",
+        "mixing-status-v11",
+        "geometric-charge-status-v11",
+        "quantum-measurement-status-v11",
         "support-composition-status",
         "supported-action-status",
         "core-stratum-action-status",

@@ -5,6 +5,17 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
+from .canonical_crystallization_v11_0 import (
+    CANONICAL_DOCTRINE_VERDICT,
+    buoyancy_payload,
+    charge_payload,
+    core_transfer_payload,
+    dependency_payload,
+    falsification_payload,
+    higgs_payload,
+    ontology_payload,
+    quantum_measurement_payload,
+)
 from .core_stratum_action_v11_0 import CORE_VERDICT, core_action_payload
 from .generation_monodromy_v10_4 import FROZEN_LEDGERS
 from .relational_axioms import deterministic_json
@@ -17,22 +28,33 @@ from .support_weight_derivation_v11_0 import (
 
 
 VERSION = "v11.0"
-SPRINT = "bhsm-unified-physical-completion-v11-0"
+SPRINT = "bhsm-canonical-unification-completion-v11-0"
 SOURCE_V10_4_SHA = "04a38d962e32613ff4486f6ef068a01d24a9e4ac"
 
 ARTIFACT_FILES = {
+    "canonical_ontology": "BHSM_canonical_ontology_v11_0.json",
+    "canonical_dependency_graph": "BHSM_canonical_dependency_graph_v11_0.json",
+    "canonical_falsification": "BHSM_canonical_falsification_v11_0.json",
     "support_composition": "BHSM_support_composition_v11_0.json",
     "supported_parent_action": "BHSM_supported_parent_action_v11_0.json",
+    "support_action": "BHSM_support_action_v11_0.json",
     "core_stratum_action": "BHSM_core_stratum_action_v11_0.json",
+    "core_transfer": "BHSM_core_transfer_v11_0.json",
     "three_mode_hessian": "BHSM_three_mode_hessian_v11_0.json",
+    "topological_buoyancy": "BHSM_topological_buoyancy_v11_0.json",
+    "higgs_buoyancy_mode": "BHSM_higgs_buoyancy_mode_v11_0.json",
     "nonlinear_orbits": "BHSM_nonlinear_orbits_v11_0.json",
     "global_equilibrium": "BHSM_global_equilibrium_v11_0.json",
+    "global_scale": "BHSM_global_scale_v11_0.json",
     "sector_cycles": "BHSM_sector_cycles_v11_0.json",
+    "particle_cycles": "BHSM_particle_cycles_v11_0.json",
     "generation_monodromy": "BHSM_generation_monodromy_v11_0.json",
     "mass_spectrum": "BHSM_mass_spectrum_v11_0.json",
     "ckm_pmns": "BHSM_ckm_pmns_v11_0.json",
     "m4_reduction": "BHSM_m4_reduction_v11_0.json",
+    "geometric_charges": "BHSM_geometric_charges_v11_0.json",
     "core_transition": "BHSM_core_transition_v11_0.json",
+    "quantum_measurement": "BHSM_quantum_measurement_v11_0.json",
     "completion": "BHSM_final_physical_gate_v11_0.json",
 }
 
@@ -239,7 +261,7 @@ def core_transition_payload() -> dict[str, Any]:
 
 def completion_marks() -> dict[str, str]:
     return {
-        "Mark_I_Foundational_ontology": "REACHED",
+        "Mark_I_Canonical_ontology": "REACHED",
         "Mark_II_Complete_conditional_architecture": "NOT_REACHED",
         "Mark_III_Physical_derivation": "NOT_REACHED",
         "Mark_IV_Empirical_replacement": "NOT_REACHED",
@@ -277,10 +299,16 @@ def hindsight_payload() -> dict[str, list[str]]:
 
 
 def completion_payload() -> dict[str, Any]:
+    ontology = ontology_payload()
+    dependencies = dependency_payload()
+    falsification = falsification_payload()
     support = composition_payload()
     action = supported_action_payload()
     core = core_action_payload()
+    transfer = core_transfer_payload()
     three_mode = three_mode_payload()
+    buoyancy = buoyancy_payload()
+    higgs = higgs_payload()
     orbit = nonlinear_orbit_payload()
     global_result = global_equilibrium_payload()
     cycles = sector_cycles_payload()
@@ -288,12 +316,18 @@ def completion_payload() -> dict[str, Any]:
     masses = mass_payload()
     mixing = mixing_payload()
     m4 = m4_payload()
+    charges = charge_payload()
     transition = core_transition_payload()
+    measurement = quantum_measurement_payload()
     validation = {
+        "canonical_ontology_crystallized": ontology["validation_passed"],
+        "dependency_graph_valid": dependencies["validation_passed"],
+        "falsification_registry_valid": falsification["validation_passed"],
         "support_composition_exact": support["validation_passed"],
         "support_nonuniqueness_proved": action["validation_passed"] and not action["support_weights_fixed"],
         "one_healthy_support_pair": support_constraint_payload()["physical_support_pairs"] == 1,
         "core_fail_closed": core["validation_passed"] and not core["complete_flux_relation"],
+        "core_transfer_fail_closed": transfer["transfer_operator"] is None,
         "three_mode_fail_closed": three_mode["stable_coupled_eigenmode"] is None,
         "orbit_not_fabricated": orbit["solver_run"] is False,
         "global_anchor_unused": global_result["cosmic_anchor_used"] is False,
@@ -302,7 +336,11 @@ def completion_payload() -> dict[str, Any]:
         "masses_withheld": masses["physical_masses"] is None,
         "mixing_withheld": mixing["CKM"] is None and mixing["PMNS"] is None,
         "m4_fail_closed": m4["collider_runtime"] is None,
+        "buoyancy_not_promoted": buoyancy["displaced_energy_functional"] is None,
+        "higgs_not_promoted": higgs["normalized_scalar_mode"] is None,
+        "charges_not_promoted": charges["geometric_assignments"] is None,
         "quantum_not_fabricated": transition["transition_operator"] is None,
+        "measurement_not_fabricated": measurement["measurement_channel"] is None,
         "no_particle_inputs": True,
     }
     return {
@@ -311,20 +349,32 @@ def completion_payload() -> dict[str, Any]:
         "sprint": SPRINT,
         "source_v10_4_sha": SOURCE_V10_4_SHA,
         "primary_verdict": PRIMARY_VERDICT,
+        "canonical_doctrine_verdict": CANONICAL_DOCTRINE_VERDICT,
         "next_exact_object": NEXT_EXACT_OBJECT,
+        "canonical_ontology": ontology,
+        "canonical_dependency_graph": dependencies,
+        "canonical_falsification": falsification,
         "support_composition": support,
         "supported_parent_action": action,
+        "support_action": action,
         "support_constraint_analysis": support_constraint_payload(),
         "core_stratum_action": core,
+        "core_transfer": transfer,
         "three_mode_hessian": three_mode,
+        "topological_buoyancy": buoyancy,
+        "higgs_buoyancy_mode": higgs,
         "nonlinear_orbits": orbit,
         "global_equilibrium": global_result,
+        "global_scale": global_result,
         "sector_cycles": cycles,
+        "particle_cycles": cycles,
         "generation_monodromy": generations,
         "mass_spectrum": masses,
         "ckm_pmns": mixing,
         "m4_reduction": m4,
+        "geometric_charges": charges,
         "core_transition": transition,
+        "quantum_measurement": measurement,
         "completion_marks": completion_marks(),
         "hindsight_20_20": hindsight_payload(),
         "physical_BHSM_complete": False,
@@ -349,6 +399,19 @@ def artifact_payloads() -> dict[str, dict[str, Any]]:
 
 
 COMMAND_SECTIONS = {
+    "canonical-ontology-status-v11": "canonical_ontology",
+    "support-action-status-v11": "support_action",
+    "core-transfer-status-v11": "core_transfer",
+    "three-mode-status-v11": "three_mode_hessian",
+    "topological-buoyancy-status-v11": "topological_buoyancy",
+    "higgs-buoyancy-status-v11": "higgs_buoyancy_mode",
+    "particle-cycle-status-v11": "particle_cycles",
+    "generation-status-v11": "generation_monodromy",
+    "global-scale-status-v11": "global_scale",
+    "mass-spectrum-status-v11": "mass_spectrum",
+    "mixing-status-v11": "ckm_pmns",
+    "geometric-charge-status-v11": "geometric_charges",
+    "quantum-measurement-status-v11": "quantum_measurement",
     "support-composition-status": "support_composition",
     "supported-action-status": "supported_parent_action",
     "core-stratum-action-status": "core_stratum_action",

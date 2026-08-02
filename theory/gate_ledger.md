@@ -54,6 +54,12 @@ below preserves historical gate provenance.
 
 ## v11.0 multiplicative-support and physical-completion gate
 
+Canonical graph status: D00 ontology and D01 Haar kinematics are closed. D02,
+`ACTION_DERIVED_SUPPORT_REPRESENTATION_FUNCTOR_ON_STRATIFIED_SECTORS_WITH_FIXED_HAAR_SCALE`,
+is the unique highest-upstream open object. D03-D12 are downstream blocked;
+D13 empirical replacement is not eligible for completion by repository work
+alone. The full DAG is `artifacts/BHSM_canonical_dependency_graph_v11_0.json`.
+
 The binding support composition law closes the v10.4 kinetic-family ambiguity:
 `q_D=-lambda_D log(upsilon)` and
 `Z_upsilon=lambda_D^2/upsilon^2`. Canonical ADM reduction supplies exactly one

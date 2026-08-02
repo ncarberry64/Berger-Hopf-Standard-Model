@@ -20,17 +20,16 @@ Each blocker must be handled without fitting observed data after comparison and 
 
 `ACTION_DERIVED_SUPPORT_REPRESENTATION_FUNCTOR_ON_STRATIFIED_SECTORS_WITH_FIXED_HAAR_SCALE`
 
-The exact ADM calculation reduces `q_V` to `-(7/8)delta rho`; lapse and the
-Hamiltonian constraint remove that canonical pair. Its physical kinetic
-projection is zero. The selected support ontology admits inequivalent constant
-and inverse-square positive kinetic families as well as unfixed potentials and
-couplings. Until an action principle selects among them, the three-mode kinetic
-matrix, Hessian, source, orbit, interference
+V11.0 closes the old constant-versus-inverse-square kinetic ambiguity: the
+multiplicative-support axiom uniquely selects the inverse-square Haar family.
+The remaining non-uniqueness is the action-unfixed Haar scale and the support
+characters on stratified sectors. Until a support representation functor fixes
+them, the three-mode kinetic matrix, Hessian, source, orbit, interference
 output, scale, cycles, masses, mixing, and M4 normalization remain ineligible.
 
 Exact verdict:
 
-`BHSM_MULTIPLE_INEQUIVALENT_SUPPORT_ACTIONS_REMAIN_AFTER_AUTHOR_EXTENSION_SELECTION`
+`BHSM_MULTIPLICATIVE_SUPPORT_HAAR_KINEMATICS_DERIVED_BUT_NORMALIZATION_AND_SUPPORT_WEIGHTS_NOT_ACTION_FIXED`
 
 | Blocker | Current status | Why it matters | Next valid action | Forbidden invalid action |
 | --- | --- | --- | --- | --- |
