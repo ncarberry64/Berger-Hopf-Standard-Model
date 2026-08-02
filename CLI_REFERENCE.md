@@ -3,6 +3,28 @@
 All commands use `python -m bhsm.interface`. Internet and external HEP tools are
 not required for the listed local behavior.
 
+BHSM v11.0 completion commands:
+
+```bash
+python -m bhsm.interface support-composition-status --format json
+python -m bhsm.interface supported-action-status --format markdown
+python -m bhsm.interface core-stratum-action-status --format json
+python -m bhsm.interface three-mode-hessian-status --format json
+python -m bhsm.interface nonlinear-orbit-status --format json
+python -m bhsm.interface global-equilibrium-status-v11 --format json
+python -m bhsm.interface sector-cycle-status --format json
+python -m bhsm.interface generation-monodromy-status-v11 --format json
+python -m bhsm.interface mass-spectrum-status --format json
+python -m bhsm.interface ckm-pmns-status --format json
+python -m bhsm.interface m4-reduction-status --format json
+python -m bhsm.interface core-transition-status --format json
+python -m bhsm.interface physical-completion-status-v11 --format markdown
+```
+
+These commands distinguish the derived Haar-depth theorem from the unresolved
+support representation and downstream physical gates. They emit no particle
+mass, mixing matrix, cosmic calibration, or transition amplitude.
+
 Neutral spectral-stiffness commands:
 
 ```bash
