@@ -1,5 +1,16 @@
 # BHSM Falsification Entry Point
 
+For v11.2, the verdict
+`BHSM_BIDIRECTIONAL_BUOYANCY_AND_FIXED_ENCLOSURE_ARCHITECTURE_DERIVED_CONDITIONALLY_BUT_ATTACHMENT_CHARACTER_REMAINS_UNFIXED`
+is falsified by a checked-in historical or current action term that uniquely
+assigns the primitive support characters and therefore fixes the coupling
+`-A_D,A J_D^A`, its quadratic connection completion, induced measure/normal
+weights, and cross-stratum maps. The exact target is
+`ACTION_OWNED_CORE_SURFACE_ATTACHMENT_TERM_FIXING_ATTACHMENT_CHARACTER_AND_EXCHANGE_CURRENT`.
+A convention, target arithmetic, or particle-data fit is not a falsifier.
+
+The v11.1 criterion below is retained as historical chronology.
+
 For v11.1, the verdict
 `BHSM_SUPPORT_FUNCTOR_PHYSICAL_EQUIVALENCE_QUOTIENT_BLOCKED_BY_ABSENT_COMPLETE_LOCAL_BOUNDARY_AND_CORE_ACTION_DATA`
 is falsified if the checked-in parent action uniquely defines the `G_D` action

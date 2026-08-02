@@ -5,11 +5,11 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
-BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current campaign status: v11.1 presents the stratified action category and proves that the current parent action admits distinct fixed-character support lifts. They are not linearly naturally isomorphic, but physical equivalence is undecidable because the support-gradient local action and boundary/core canonical domain are absent. Genuine physical nonuniqueness and the physical-or-conventional status of lambda_D are not claimed. The v11.0 logarithmic depth, positive Haar metric, healthy conditional support pair, infinite-distance core endpoint, canonical ontology, and frozen generation architecture remain intact. No core transfer operator, physical three-mode Hessian, stable particle cycle, mass, CKM/PMNS matrix, normalized M4 action, or quantum probability law is emitted. Frozen predictions are unchanged.
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current campaign status: v11.2 derives the composite flat connection A_D=d log(upsilon), exhausts the primitive-character/current routes, and conditionally separates fixed intrinsic enclosure geometry from external relational embedding. The original exact action-character system remains rank 7/nullity 5; adding the action-unowned attachment, embedding, displacement, boundary-spectrum, and transfer candidates gives rank 7/nullity 12. The leading candidate carrier is the core-surface attachment map, but its character and exchange current are not action-fixed. The complete support current, quadratic completion, variation, and boundary/core domain remain open. Physical equivalence and the physical-or-conventional status of lambda_D are not claimed. The v11.0 logarithmic depth, positive Haar metric, healthy conditional support pair, infinite-distance core endpoint, canonical ontology, and frozen generation architecture remain intact. No core transfer operator, physical three-mode Hessian, stable particle cycle, mass, CKM/PMNS matrix, normalized M4 action, or quantum probability law is emitted. Frozen predictions are unchanged.
 
-## Current BHSM status — v11.1
+## Current BHSM status — v11.2
 
-Verdict: `BHSM_SUPPORT_FUNCTOR_PHYSICAL_EQUIVALENCE_QUOTIENT_BLOCKED_BY_ABSENT_COMPLETE_LOCAL_BOUNDARY_AND_CORE_ACTION_DATA`. Exact next object: `COMPLETE_LOCAL_SUPPORTED_ACTION_WITH_SUPPORT_DERIVATIVE_COUPLINGS_AND_BOUNDARY_CORE_CANONICAL_DOMAIN`. Mark I is reached; Marks II-IV and all downstream outputs remain open and fail closed. See the [reviewer reproduction guide](docs/reviewer_reproduction_guide.md) for exact commands.
+Verdict: `BHSM_BIDIRECTIONAL_BUOYANCY_AND_FIXED_ENCLOSURE_ARCHITECTURE_DERIVED_CONDITIONALLY_BUT_ATTACHMENT_CHARACTER_REMAINS_UNFIXED`. Exact next object: `ACTION_OWNED_CORE_SURFACE_ATTACHMENT_TERM_FIXING_ATTACHMENT_CHARACTER_AND_EXCHANGE_CURRENT`. Mark I is reached; Marks II-IV and all downstream outputs remain open and fail closed. See the [v11.2 completion report](docs/BHSM_FINAL_COMPLETION_REPORT_v11_2.md) and [reviewer reproduction guide](docs/reviewer_reproduction_guide.md).
 
 This independent mathematical-physics project investigates whether
 Berger-Hopf boundary geometry can organize structures associated with
@@ -25,7 +25,7 @@ Standard Model, or received institutional endorsement.
 - [Scientific contribution ledger](docs/bhsm_scientific_contribution_ledger.md)
 - [CERN toy model in plain language](docs/cern_toy_model_in_plain_language.md)
 - [STATUS.md](STATUS.md) and [claim boundaries](CLAIMS.md)
-- [BHSM v11.1 support representation audit](docs/BHSM_SUPPORT_REPRESENTATION_FUNCTOR_v11_1.md), [v11.1 completion report](docs/BHSM_FINAL_COMPLETION_REPORT_v11_1.md), [v11.0 canonical synthesis](docs/BHSM_CANONICAL_SYNTHESIS_v11_0.md), and [historical documentation index](docs/README.md)
+- [BHSM v11.2 supported-action audit](docs/BHSM_COMPLETE_LOCAL_SUPPORTED_ACTION_v11_2.md), [v11.2 completion report](docs/BHSM_FINAL_COMPLETION_REPORT_v11_2.md), [v11.1 support representation audit](docs/BHSM_SUPPORT_REPRESENTATION_FUNCTOR_v11_1.md), and [historical documentation index](docs/README.md)
 - [Reviewer reproduction guide](docs/reviewer_reproduction_guide.md)
 - [Frozen records](docs/frozen_predictions.md) and [artifact index](ARTIFACT_INDEX.md)
 

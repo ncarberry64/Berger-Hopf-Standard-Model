@@ -1,0 +1,51 @@
+{
+  "artifact": "BHSM_haar_scale_closure_v11_2",
+  "canonical_coupling": "g_Da=w_a/lambda_D",
+  "exact_character_constraint_nullity": 5,
+  "exact_character_constraint_rank": 7,
+  "lambda_D": null,
+  "lambda_D_positive": true,
+  "nullspace_is_single_common_normalization": false,
+  "physical_or_conventional": null,
+  "primitive_lattice": null,
+  "routes": [
+    {
+      "reason": "w/lambda_D is invariant under common rescaling, but the exact action-character kernel has five independent directions rather than one common scale",
+      "result": "NOT_A_COMPLETE_QUOTIENT",
+      "route": "generator_redundancy"
+    },
+    {
+      "reason": "no action-owned primitive support character",
+      "result": "BLOCKED",
+      "route": "primitive_character_lattice"
+    },
+    {
+      "reason": "fixes the q_D kinetic convention, not a coupled character",
+      "result": "PARTIAL",
+      "route": "canonical_kinetic_normalization"
+    },
+    {
+      "reason": "supported coframe and full reduced kinetic matrix absent",
+      "result": "BLOCKED",
+      "route": "gravitational_matching"
+    },
+    {
+      "reason": "core response and selected domain absent",
+      "result": "BLOCKED",
+      "route": "boundary_core_normalization"
+    },
+    {
+      "reason": "no unique global equilibrium",
+      "result": "BLOCKED",
+      "route": "global_scale"
+    }
+  ],
+  "status": "BHSM_HAAR_SCALE_REMAINS_UNCLASSIFIED_PENDING_ACTION_OWNED_PRIMITIVE_SUPPORT_CHARACTER",
+  "validation": {
+    "all_six_routes_tested": true,
+    "lambda_not_set_to_one": true,
+    "no_empirical_input": true,
+    "physical_or_conventional_withheld": true
+  },
+  "validation_passed": true
+}

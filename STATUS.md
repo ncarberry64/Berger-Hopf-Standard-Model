@@ -5,9 +5,21 @@ evidence, not competing public status pages.
 
 ## Current public summary
 
-BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current campaign status: v11.1 presents the stratified action category and proves that the current parent action admits distinct fixed-character support lifts. They are not linearly naturally isomorphic, but physical equivalence is undecidable because the support-gradient local action and boundary/core canonical domain are absent. Genuine physical nonuniqueness and the physical-or-conventional status of lambda_D are not claimed. The v11.0 logarithmic depth, positive Haar metric, healthy conditional support pair, infinite-distance core endpoint, canonical ontology, and frozen generation architecture remain intact. No core transfer operator, physical three-mode Hessian, stable particle cycle, mass, CKM/PMNS matrix, normalized M4 action, or quantum probability law is emitted. Frozen predictions are unchanged.
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current campaign status: v11.2 derives the composite flat connection A_D=d log(upsilon), exhausts the primitive-character/current routes, and conditionally separates fixed intrinsic enclosure geometry from external relational embedding. The original exact action-character system remains rank 7/nullity 5; adding the action-unowned attachment, embedding, displacement, boundary-spectrum, and transfer candidates gives rank 7/nullity 12. The leading candidate carrier is the core-surface attachment map, but its character and exchange current are not action-fixed. The complete support current, quadratic completion, variation, and boundary/core domain remain open. Physical equivalence and the physical-or-conventional status of lambda_D are not claimed. The v11.0 logarithmic depth, positive Haar metric, healthy conditional support pair, infinite-distance core endpoint, canonical ontology, and frozen generation architecture remain intact. No core transfer operator, physical three-mode Hessian, stable particle cycle, mass, CKM/PMNS matrix, normalized M4 action, or quantum probability law is emitted. Frozen predictions are unchanged.
 
-V11.1 current verdict:
+BHSM v11.2 exhaustively recovers the earlier supported-action, reduction, and
+boundary-domain work and derives the composite flat connection
+`A_D=d log(upsilon)=-(dq_D/lambda_D)`. The current verdict is
+`BHSM_BIDIRECTIONAL_BUOYANCY_AND_FIXED_ENCLOSURE_ARCHITECTURE_DERIVED_CONDITIONALLY_BUT_ATTACHMENT_CHARACTER_REMAINS_UNFIXED`.
+The exact next object is
+`ACTION_OWNED_CORE_SURFACE_ATTACHMENT_TERM_FIXING_ATTACHMENT_CHARACTER_AND_EXCHANGE_CURRENT`.
+The action does not yet assign the primitive characters that fix `-A_D.J_D`
+and its quadratic completion, nor a core response/domain. Mark II remains not
+reached; all physical outputs fail closed and frozen predictions are unchanged.
+
+## v11.1 historical support-representation status
+
+V11.1 historical verdict:
 `BHSM_SUPPORT_FUNCTOR_PHYSICAL_EQUIVALENCE_QUOTIENT_BLOCKED_BY_ABSENT_COMPLETE_LOCAL_BOUNDARY_AND_CORE_ACTION_DATA`.
 The exact next object is
 `COMPLETE_LOCAL_SUPPORTED_ACTION_WITH_SUPPORT_DERIVATIVE_COUPLINGS_AND_BOUNDARY_CORE_CANONICAL_DOMAIN`.

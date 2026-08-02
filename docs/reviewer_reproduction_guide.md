@@ -1,6 +1,19 @@
 # Reviewer Reproduction Guide
 
-## Current v11.1 audit
+## Current v11.2 audit
+
+```bash
+python scripts/materialize_complete_local_supported_action_v11_2.py
+python -m bhsm.interface support-derivative-status-v11-2 --format json
+python -m bhsm.interface physical-completion-status-v11-2 --format markdown
+python -m bhsm.interface historical-recovery-status --object "complete local supported action" --format json
+python -m pytest -q tests/test_bhsm_complete_local_supported_action_v11_2.py tests/test_current_program_status_v11_2.py
+```
+
+Expected verdict: `BHSM_BIDIRECTIONAL_BUOYANCY_AND_FIXED_ENCLOSURE_ARCHITECTURE_DERIVED_CONDITIONALLY_BUT_ATTACHMENT_CHARACTER_REMAINS_UNFIXED`.
+Expected next object: `ACTION_OWNED_CORE_SURFACE_ATTACHMENT_TERM_FIXING_ATTACHMENT_CHARACTER_AND_EXCHANGE_CURRENT`.
+
+## Historical v11.1 audit
 
 ```bash
 python scripts/materialize_support_representation_completion_v11_1.py

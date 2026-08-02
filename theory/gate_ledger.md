@@ -1,5 +1,13 @@
 # Gate Ledger
 
+## v11.2 current gate
+
+Historical recovery and the composite support connection pass. The complete
+local action, full variation, canonical domain, equivalence quotient, and Haar
+scale fail closed at
+`ACTION_TERM_OR_GEOMETRIC_PRINCIPLE_FIXING_PRIMITIVE_SUPPORT_CHARACTER_OWNERSHIP`.
+Mark II remains `NOT_REACHED`; all later gates are unevaluated.
+
 Current cumulative status: Tier A is `BHSM_CORE_COMPLETE`. The single
 dimensionful bridge is typed by the common calibration `ell_star`. Tier B is
 blocked by `COMMON_SCHEME_OBSERVABLE_TRANSPORT_FUNCTOR`; the detailed table

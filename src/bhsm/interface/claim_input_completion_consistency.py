@@ -423,10 +423,10 @@ def canonical_completion_gate_payload() -> dict[str, Any]:
     """Return the current support-representation completion gate.
 
     Historical materializers delegate here so that rerunning an earlier sprint
-    cannot silently roll the repository-wide canonical gate back from v11.1.
+    cannot silently roll the repository-wide canonical gate back from v11.2.
     """
 
-    from bhsm.interface.completion import final_completion_gate_v11_1 as current
+    from bhsm.interface.completion import final_completion_gate_v11_2 as current
 
     return current.canonical_completion_gate_payload()
 

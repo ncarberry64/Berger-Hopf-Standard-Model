@@ -1,6 +1,19 @@
 # BHSM Roadmap
 
-## v11.1 current critical path
+## v11.2 current critical path
+
+The current verdict is
+`BHSM_BIDIRECTIONAL_BUOYANCY_AND_FIXED_ENCLOSURE_ARCHITECTURE_DERIVED_CONDITIONALLY_BUT_ATTACHMENT_CHARACTER_REMAINS_UNFIXED`.
+Resume only from
+`ACTION_OWNED_CORE_SURFACE_ATTACHMENT_TERM_FIXING_ATTACHMENT_CHARACTER_AND_EXCHANGE_CURRENT`.
+It must determine the primitive charges in `J_D`, the quadratic connection
+completion, all induced measure/normal characters, and their cross-stratum
+intertwiners without particle-data tuning. Only then may the full variation,
+constraint rank, selected boundary/core domain, equivalence quotient, and
+Haar scale be closed. Mark II and every downstream physical gate remain fail
+closed.
+
+## v11.1 historical critical path
 
 The current verdict is
 `BHSM_SUPPORT_FUNCTOR_PHYSICAL_EQUIVALENCE_QUOTIENT_BLOCKED_BY_ABSENT_COMPLETE_LOCAL_BOUNDARY_AND_CORE_ACTION_DATA`.

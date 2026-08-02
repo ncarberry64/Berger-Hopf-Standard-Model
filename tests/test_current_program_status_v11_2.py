@@ -1,0 +1,38 @@
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+from bhsm.interface.completion.complete_local_supported_action_v11_2 import EXACT_NEXT_OBJECT, PRIMARY_VERDICT
+from bhsm.interface.completion.final_completion_gate_v11_2 import canonical_completion_gate_payload
+from bhsm.interface.current_program_status import CURRENT_VERSION, public_repo_status, status_payload
+
+
+ROOT = Path(__file__).resolve().parents[1]
+
+
+def test_python_current_status_is_v11_2_and_fail_closed() -> None:
+    payload = status_payload()
+    assert CURRENT_VERSION == "v11.2"
+    assert payload["primary_verdict"] == PRIMARY_VERDICT
+    assert payload["exact_next_object"] == EXACT_NEXT_OBJECT
+    assert "composite flat connection" in public_repo_status()
+    assert canonical_completion_gate_payload()["current_verdict"] == PRIMARY_VERDICT
+
+
+def test_repository_current_surfaces_are_synchronized() -> None:
+    for name in ("README.md", "STATUS.md", "CLAIMS.md", "ROADMAP.md", "FALSIFICATION.md"):
+        text = (ROOT / name).read_text(encoding="utf-8")
+        assert "v11.2" in text.lower(), name
+        assert PRIMARY_VERDICT in text, name
+        assert EXACT_NEXT_OBJECT in text, name
+    current = json.loads((ROOT / "docs" / "current_bhsm_status.json").read_text(encoding="utf-8"))
+    assert current["current_version"] == CURRENT_VERSION
+    assert current["primary_verdict"] == PRIMARY_VERDICT
+
+
+def test_historical_status_chronology_is_preserved() -> None:
+    for name in ("STATUS.md", "CLAIMS.md", "ROADMAP.md", "FALSIFICATION.md"):
+        text = (ROOT / name).read_text(encoding="utf-8")
+        assert "v11.1" in text.lower(), name
+

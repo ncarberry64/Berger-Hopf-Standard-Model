@@ -2,7 +2,19 @@
 
 ## Current public claim boundary
 
-V11.1 verdict:
+V11.2 verdict:
+`BHSM_COMPOSITE_SUPPORT_CONNECTION_DERIVED_BUT_PRIMITIVE_CHARACTER_AND_CURRENT_LEDGER_NOT_ACTION_FIXED`.
+The composite flat connection `A_D=d log(upsilon)` is derived on the smooth
+regular domain. Its covariance laws are conditional on a declared field
+character. No primitive character, complete support current, quadratic
+connection coupling, core response, self-adjoint core domain, physical
+equivalence class, or Haar normalization is claimed. The next exact object is
+`ACTION_TERM_OR_GEOMETRIC_PRINCIPLE_FIXING_PRIMITIVE_SUPPORT_CHARACTER_OWNERSHIP`.
+Frozen predictions and official prediction logic are unchanged.
+
+### v11.1 historical claim boundary
+
+V11.1 historical verdict:
 `BHSM_SUPPORT_FUNCTOR_PHYSICAL_EQUIVALENCE_QUOTIENT_BLOCKED_BY_ABSENT_COMPLETE_LOCAL_BOUNDARY_AND_CORE_ACTION_DATA`.
 The result establishes nonuniqueness of the lift to `Rep(G_D)` by two explicit
 action-compatible character assignments. It does not establish a physical
@@ -2334,3 +2346,13 @@ Campaign verdict:
 
 Exact next object:
 `ACTION_PRINCIPLE_FIXING_Z_UPSILON_U_UPSILON_AND_SUPPORT_COUPLINGS`.
+
+## Current v11.2 steering boundary
+
+The current verdict is
+`BHSM_BIDIRECTIONAL_BUOYANCY_AND_FIXED_ENCLOSURE_ARCHITECTURE_DERIVED_CONDITIONALLY_BUT_ATTACHMENT_CHARACTER_REMAINS_UNFIXED`.
+The exact next object is
+`ACTION_OWNED_CORE_SURFACE_ATTACHMENT_TERM_FIXING_ATTACHMENT_CHARACTER_AND_EXCHANGE_CURRENT`.
+This records the author ontology and conditional intrinsic/extrinsic split
+without promoting a force law, Casimir contribution, de-envelopment transfer,
+cosmological result, or any changed frozen prediction.

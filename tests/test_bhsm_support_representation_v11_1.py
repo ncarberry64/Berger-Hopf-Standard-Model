@@ -12,7 +12,7 @@ from bhsm.interface.completion.support_representation_category_v11_1 import (
 )
 from bhsm.interface.completion.support_functor_equivalence_quotient_v11_1 import equivalence_payload
 from bhsm.interface.recovery.historical_equivalence_audit import blocker_readiness_payload, recovery_payload
-from bhsm.interface.current_program_status import CURRENT_VERSION, EXACT_NEXT_OBJECT
+from bhsm.interface.completion.final_completion_gate_v11_1 import CURRENT_VERSION, EXACT_NEXT_OBJECT
 
 
 def test_category_is_complete_but_has_no_action_owned_gd_lift() -> None:

@@ -1,6 +1,22 @@
 # BHSM Documentation Index
 
-## Current v11.1 campaign
+## Current v11.2 campaign
+
+- [Final completion report](BHSM_FINAL_COMPLETION_REPORT_v11_2.md)
+- [Historical recovery](BHSM_HISTORICAL_RECOVERY_COMPLETE_SUPPORTED_ACTION_v11_2.md)
+- [Support covariant derivative](BHSM_SUPPORT_COVARIANT_DERIVATIVE_v11_2.md)
+- [Complete local supported-action audit](BHSM_COMPLETE_LOCAL_SUPPORTED_ACTION_v11_2.md)
+- [Boundary/core domain audit](BHSM_CORE_ASYMPTOTIC_DOMAIN_v11_2.md)
+- [Primitive support-character ledger](BHSM_PRIMITIVE_SUPPORT_CHARACTER_LEDGER_v11_2.md)
+- [Support Noether/response current](BHSM_SUPPORT_NOETHER_CURRENT_v11_2.md)
+- [Linear and quadratic connection couplings](BHSM_SUPPORT_LINEAR_AND_QUADRATIC_CONNECTION_COUPLINGS_v11_2.md)
+- [Exact character constraint system](BHSM_SUPPORT_CHARACTER_CONSTRAINT_SYSTEM_v11_2.md)
+- [Boundary/core character selection](BHSM_SUPPORT_CHARACTER_BOUNDARY_CORE_SELECTION_v11_2.md)
+
+Current verdict: `BHSM_BIDIRECTIONAL_BUOYANCY_AND_FIXED_ENCLOSURE_ARCHITECTURE_DERIVED_CONDITIONALLY_BUT_ATTACHMENT_CHARACTER_REMAINS_UNFIXED`.
+Next object: `ACTION_OWNED_CORE_SURFACE_ATTACHMENT_TERM_FIXING_ATTACHMENT_CHARACTER_AND_EXCHANGE_CURRENT`.
+
+## Historical v11.1 campaign
 
 - [Support representation functor](BHSM_SUPPORT_REPRESENTATION_FUNCTOR_v11_1.md)
 - [Haar scale audit](BHSM_HAAR_SCALE_NORMALIZATION_v11_1.md)

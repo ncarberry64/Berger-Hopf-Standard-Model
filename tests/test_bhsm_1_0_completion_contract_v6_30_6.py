@@ -165,7 +165,7 @@ def test_artifact_schema_keeps_release_and_post_1_0_items_separate():
     assert payload["parameter_free_extension_blocker"] == "RB-02"
     assert payload["open_release_blockers"] == ["RB-15", "RB-16"]
     assert payload["next_highest_upstream_blocker"] == (
-        "COMPLETE_LOCAL_SUPPORTED_ACTION_WITH_SUPPORT_DERIVATIVE_COUPLINGS_AND_BOUNDARY_CORE_CANONICAL_DOMAIN"
+        "ACTION_OWNED_CORE_SURFACE_ATTACHMENT_TERM_FIXING_ATTACHMENT_CHARACTER_AND_EXCHANGE_CURRENT"
     )
 
 
