@@ -26,9 +26,11 @@ NEUTRINO_PUBLIC_STATUS = (
 
 PUBLIC_REPO_STATUS = (
     "BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. "
-    "Current public status: v11.0 derives the logarithmic depth `q_D=-lambda_D log(upsilon)` "
+    "Current public status: v11.0 crystallizes the Relational Envelopment Holism ontology and "
+    "derives the logarithmic depth `q_D=-lambda_D log(upsilon)` "
     "and inverse-square Haar kinetic metric from the author-specified multiplicative support "
-    "law. The regular depth sector has one healthy canonical pair, but the parent action does "
+    "law. Canonical doctrine is explicitly separated from action-derived theorem status. The "
+    "regular depth sector has one healthy canonical pair, but the parent action does "
     "not fix the Haar scale or the support characters carried by its stratified sectors. The "
     "core endpoint is at infinite Haar field distance and has no action-owned transfer operator. "
     "No orbit, global scale, particle mass, mixing matrix, normalized M4 action, or quantum "
