@@ -1,5 +1,27 @@
 # BHSM Artifact Index
 
+## BHSM v11.0 unified physical-completion campaign
+
+- `artifacts/BHSM_support_composition_v11_0.json`: exact logarithmic depth,
+  Haar metric, canonical kinetic term, and infinite-distance core endpoint.
+- `artifacts/BHSM_supported_parent_action_v11_0.json`: complete stratified term
+  inventory and two integer-character counterexamples proving residual action
+  non-uniqueness.
+- `artifacts/BHSM_core_stratum_action_v11_0.json`: variational flux forms,
+  boundary-data classification, and missing core response operator.
+- `artifacts/BHSM_three_mode_hessian_v11_0.json` through
+  `artifacts/BHSM_core_transition_v11_0.json`: deterministic downstream
+  fail-closed gates.
+- `artifacts/BHSM_final_physical_gate_v11_0.json`: completion marks,
+  hindsight audit, primary verdict, and exact next object.
+- `artifacts/BHSM_1_0_completion_gate.json`: canonical v11.0 completion gate.
+
+Primary CLI:
+`python -m bhsm.interface physical-completion-status-v11 --format markdown`.
+
+Primary verdict:
+`BHSM_MULTIPLICATIVE_SUPPORT_HAAR_KINEMATICS_DERIVED_BUT_NORMALIZATION_AND_SUPPORT_WEIGHTS_NOT_ACTION_FIXED`.
+
 ## B8 geometry–energy parent action v6.0.2
 
 | Package | Contents | Primary artifact | Status | CLI |
