@@ -1,13 +1,14 @@
 # Open Blockers Backlog
 
-Current public status: v10.4 proves that the proper-volume candidate is the
-Hamiltonian-constrained common-volume direction and has zero reduced physical
-projection. It does not provide `q_D`. The author selects a stratified-core
-support scalar `upsilon`, but its action and canonical normalization remain
-non-unique; no coefficient was added. The seam remains
+Current public status: v11.0 derives
+`q_D=-lambda_D log(upsilon)` and the inverse-square Haar kinetic metric from
+multiplicative support composition. The Haar scale and stratified-sector
+support characters remain action-unfixed; no coefficient was adopted. The
+core endpoint lies at infinite Haar field distance and has no transfer
+operator. The seam remains
 a coordinate/observable projection, and three modes remain distinct from
 three generation phases. The live Tier-C object is
-`ACTION_PRINCIPLE_FIXING_Z_UPSILON_U_UPSILON_AND_SUPPORT_COUPLINGS`.
+`ACTION_DERIVED_SUPPORT_REPRESENTATION_FUNCTOR_ON_STRATIFIED_SECTORS_WITH_FIXED_HAAR_SCALE`.
 
 Historical compatibility boundary: structural architecture integrated conditional; numerical closure open.
 This sentence records the pre-v7.1 numerical-closure status required by the
@@ -15,9 +16,9 @@ archived component contracts; it is not the current completion-tier verdict.
 
 Each blocker must be handled without fitting observed data after comparison and without changing frozen predictions.
 
-## Current v10.4 highest-upstream blocker
+## Current v11.0 highest-upstream blocker
 
-`ACTION_PRINCIPLE_FIXING_Z_UPSILON_U_UPSILON_AND_SUPPORT_COUPLINGS`
+`ACTION_DERIVED_SUPPORT_REPRESENTATION_FUNCTOR_ON_STRATIFIED_SECTORS_WITH_FIXED_HAAR_SCALE`
 
 The exact ADM calculation reduces `q_V` to `-(7/8)delta rho`; lapse and the
 Hamiltonian constraint remove that canonical pair. Its physical kinetic

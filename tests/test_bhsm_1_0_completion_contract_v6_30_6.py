@@ -165,7 +165,7 @@ def test_artifact_schema_keeps_release_and_post_1_0_items_separate():
     assert payload["parameter_free_extension_blocker"] == "RB-02"
     assert payload["open_release_blockers"] == ["RB-15", "RB-16"]
     assert payload["next_highest_upstream_blocker"] == (
-        "ACTION_PRINCIPLE_FIXING_Z_UPSILON_U_UPSILON_AND_SUPPORT_COUPLINGS"
+        "ACTION_DERIVED_SUPPORT_REPRESENTATION_FUNCTOR_ON_STRATIFIED_SECTORS_WITH_FIXED_HAAR_SCALE"
     )
 
 
