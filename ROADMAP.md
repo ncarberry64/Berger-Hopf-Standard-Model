@@ -1,5 +1,18 @@
 # BHSM Roadmap
 
+## v11.0 canonical critical path
+
+The canonical Relational Envelopment Holism ontology, historical
+equivalence/supersession ledger, dependency graph, and falsification registry
+are integrated. Multiplicative support fixes logarithmic depth and Haar
+kinematics, but not the support representation or relative Haar scale.
+
+Resume only from
+`ACTION_DERIVED_SUPPORT_REPRESENTATION_FUNCTOR_ON_STRATIFIED_SECTORS_WITH_FIXED_HAAR_SCALE`.
+Core transfer, the common three-mode Hessian, buoyancy/Higgs/charge
+derivations, particle cycles, generation monodromies, scale, masses, mixing,
+M4 normalization, and quantum measurement are downstream and fail-closed.
+
 ## v10.1 relational critical path
 
 The author doctrine and admissibility constraints are integrated. The

@@ -1,0 +1,1863 @@
+{
+  "artifact": "BHSM_final_physical_gate_v11_0",
+  "canonical_dependency_graph": {
+    "acyclic_by_declared_order": true,
+    "artifact": "BHSM_canonical_dependency_graph_v11_0",
+    "highest_upstream_open_object": "ACTION_DERIVED_SUPPORT_REPRESENTATION_FUNCTOR_ON_STRATIFIED_SECTORS_WITH_FIXED_HAAR_SCALE",
+    "nodes": [
+      {
+        "depends_on": [],
+        "id": "D00",
+        "object": "CANONICAL_ONTOLOGY_REGISTRY",
+        "status": "CLOSED"
+      },
+      {
+        "depends_on": [
+          "D00"
+        ],
+        "id": "D01",
+        "object": "MULTIPLICATIVE_SUPPORT_HAAR_KINEMATICS",
+        "status": "CLOSED"
+      },
+      {
+        "depends_on": [
+          "D01"
+        ],
+        "id": "D02",
+        "object": "ACTION_DERIVED_SUPPORT_REPRESENTATION_FUNCTOR_ON_STRATIFIED_SECTORS_WITH_FIXED_HAAR_SCALE",
+        "status": "OPEN_HIGHEST_UPSTREAM"
+      },
+      {
+        "depends_on": [
+          "D02"
+        ],
+        "id": "D03",
+        "object": "COMPLETE_SUPPORTED_PARENT_ACTION_AND_EFFECTIVE_RESTORING_RESPONSE",
+        "status": "BLOCKED"
+      },
+      {
+        "depends_on": [
+          "D03"
+        ],
+        "id": "D04",
+        "object": "CORE_BOUNDARY_PHASE_SPACE_AND_SELF_ADJOINT_TRANSFER_OPERATOR_AT_QD_INFINITY",
+        "status": "BLOCKED"
+      },
+      {
+        "depends_on": [
+          "D03",
+          "D04"
+        ],
+        "id": "D05",
+        "object": "COMMON_S8_S5_S4_REDUCTION_FUNCTOR_AND_COMPLETE_THREE_MODE_HESSIAN",
+        "status": "BLOCKED"
+      },
+      {
+        "depends_on": [
+          "D05"
+        ],
+        "id": "D06",
+        "object": "BUOYANCY_HIGGS_CHARGE_AND_WEAK_FIELD_DERIVATIONS",
+        "status": "BLOCKED"
+      },
+      {
+        "depends_on": [
+          "D05",
+          "D06"
+        ],
+        "id": "D07",
+        "object": "STABLE_RELATIVE_PERIODIC_PARTICLE_CYCLES_AND_FLOQUET_SPECTRA",
+        "status": "BLOCKED"
+      },
+      {
+        "depends_on": [
+          "D07"
+        ],
+        "id": "D08",
+        "object": "ORDER_THREE_MONODROMIES_AND_FROZEN_SLOT_INTERTWINERS",
+        "status": "BLOCKED"
+      },
+      {
+        "depends_on": [
+          "D03",
+          "D05"
+        ],
+        "id": "D09",
+        "object": "UNIQUE_GLOBAL_GEOMETRY_AND_CURVATURE_RADIUS_ANCHOR",
+        "status": "BLOCKED"
+      },
+      {
+        "depends_on": [
+          "D07",
+          "D08",
+          "D09"
+        ],
+        "id": "D10",
+        "object": "PHYSICAL_MASSES_CKM_PMNS_AND_CORE_TRANSITIONS",
+        "status": "BLOCKED"
+      },
+      {
+        "depends_on": [
+          "D06",
+          "D10"
+        ],
+        "id": "D11",
+        "object": "NORMALIZED_EFFECTIVE_M4_STANDARD_MODEL",
+        "status": "BLOCKED"
+      },
+      {
+        "depends_on": [
+          "D04",
+          "D07",
+          "D11"
+        ],
+        "id": "D12",
+        "object": "QUANTUM_MEASUREMENT_PROBABILITY_AND_NO_SIGNALLING",
+        "status": "BLOCKED"
+      },
+      {
+        "depends_on": [
+          "D11",
+          "D12"
+        ],
+        "id": "D13",
+        "object": "EMPIRICAL_REPLACEMENT",
+        "status": "NOT_ELIGIBLE_FROM_REPOSITORY_WORK"
+      }
+    ],
+    "validation": {
+      "dependencies_exist": true,
+      "empirical_replacement_not_repo_gate": true,
+      "no_downstream_false_closure": true,
+      "single_highest_upstream_open": true
+    },
+    "validation_passed": true
+  },
+  "canonical_doctrine_verdict": "BHSM_CANONICAL_RELATIONAL_ENVELOPMENT_ARCHITECTURE_CRYSTALLIZED",
+  "canonical_falsification": {
+    "artifact": "BHSM_canonical_falsification_v11_0",
+    "physical_rejection_tests_run": false,
+    "reason": "their prerequisite action operators and solutions remain unavailable",
+    "rows": [
+      {
+        "evaluated": false,
+        "principle": "support",
+        "rejection_condition": "ghost, gradient instability, incompatible conservation, or failed parent limit",
+        "required_result": "healthy reduced scalar, conservation, v10.4 limit"
+      },
+      {
+        "evaluated": false,
+        "principle": "three_mode",
+        "rejection_condition": "no stable physical orbit after complete reduction",
+        "required_result": "complete reduced action and stable coupled orbit"
+      },
+      {
+        "evaluated": false,
+        "principle": "buoyancy",
+        "rejection_condition": "no universal law or failed weak-field/equivalence limit",
+        "required_result": "universal displaced-energy restoring law and weak-field limit"
+      },
+      {
+        "evaluated": false,
+        "principle": "higgs",
+        "rejection_condition": "scalar mode cannot realize the required representation or couplings",
+        "required_result": "normalized scalar mode with effective Higgs representation/interactions"
+      },
+      {
+        "evaluated": false,
+        "principle": "generation",
+        "rejection_condition": "phase count differs from three or frozen slots have no intertwiner",
+        "required_result": "exactly three stable physical monodromy phases"
+      },
+      {
+        "evaluated": false,
+        "principle": "charge",
+        "rejection_condition": "derived charges fail the relation or anomaly cancellation",
+        "required_result": "geometric assignments, Q=T3+Y/2, and anomaly compatibility"
+      },
+      {
+        "evaluated": false,
+        "principle": "mixing",
+        "rejection_condition": "rank deficiency, nonunitarity, or missing common current ownership",
+        "required_result": "positive Grams, full-rank currents, unitary CKM/PMNS"
+      },
+      {
+        "evaluated": false,
+        "principle": "quantum",
+        "rejection_condition": "core transfer violates any required property",
+        "required_result": "norm preservation, conservation, CPTP reduction, no-signalling"
+      }
+    ],
+    "validation_passed": true
+  },
+  "canonical_ontology": {
+    "artifact": "BHSM_canonical_ontology_v11_0",
+    "canonical_doctrine_verdict": "BHSM_CANONICAL_RELATIONAL_ENVELOPMENT_ARCHITECTURE_CRYSTALLIZED",
+    "entries": [
+      {
+        "classification": "AUTHOR_AXIOM",
+        "exact_gate": null,
+        "key": "relational_envelopment_holism",
+        "physical_theorem": false,
+        "statement": "the whole selects permitted local differentials and local differentials reshape the whole"
+      },
+      {
+        "classification": "AUTHOR_AXIOM",
+        "exact_gate": "CORE_BOUNDARY_PHASE_SPACE_AND_SELF_ADJOINT_TRANSFER_OPERATOR_AT_QD_INFINITY",
+        "key": "pure_energy_core",
+        "physical_theorem": false,
+        "statement": "pure energy without ordinary spacetime support is the core"
+      },
+      {
+        "classification": "AUTHOR_AXIOM",
+        "exact_gate": null,
+        "key": "support_surface",
+        "physical_theorem": false,
+        "statement": "ordinary spacetime is the support/enclosure geometry around the core"
+      },
+      {
+        "classification": "AUTHOR_AXIOM",
+        "exact_gate": "COMMON_S8_S5_S4_REDUCTION_FUNCTOR_AND_COMPLETE_THREE_MODE_HESSIAN",
+        "key": "three_modes",
+        "physical_theorem": false,
+        "statement": "q_C, q_W, and q_D are distinct physical geometric mode classes"
+      },
+      {
+        "classification": "AUTHOR_AXIOM",
+        "exact_gate": null,
+        "key": "seam",
+        "physical_theorem": false,
+        "statement": "the observable M4 seam is a coordinate projection and not a fourth mode"
+      },
+      {
+        "classification": "WORKING_GEOMETRIC_IDENTIFICATION",
+        "exact_gate": "STABLE_RELATIVE_PERIODIC_PARTICLE_CYCLES_AND_PHYSICAL_FLOQUET_SPECTRA",
+        "key": "particle",
+        "physical_theorem": false,
+        "statement": "a particle is a stable localized or parent-bound spacetime envelopment"
+      },
+      {
+        "classification": "WORKING_GEOMETRIC_IDENTIFICATION",
+        "exact_gate": "NORMALIZED_M4_REDUCTION_AND_FIELD_SOURCE_DICTIONARY",
+        "key": "field",
+        "physical_theorem": false,
+        "statement": "a field is an extended topology of warped spacetime"
+      },
+      {
+        "classification": "WORKING_GEOMETRIC_IDENTIFICATION",
+        "exact_gate": "ACTION_DERIVED_DISPLACED_ENERGY_MASS_FUNCTIONAL",
+        "key": "mass",
+        "physical_theorem": false,
+        "statement": "mass is invariant displaced energy in a stable spacetime-bearing envelopment"
+      },
+      {
+        "classification": "STRUCTURAL_POSTULATE",
+        "exact_gate": "UNIVERSAL_ACTION_DERIVED_BUOYANCY_FUNCTIONAL_AND_WEAK_FIELD_LIMIT",
+        "key": "topological_buoyancy",
+        "physical_theorem": false,
+        "statement": "closed geometry supplies a universal restoring response to displacement"
+      },
+      {
+        "classification": "WORKING_GEOMETRIC_IDENTIFICATION",
+        "exact_gate": "NORMALIZED_SCALAR_BUOYANCY_EIGENMODE_WITH_EFFECTIVE_HIGGS_REPRESENTATION",
+        "key": "higgs",
+        "physical_theorem": false,
+        "statement": "the Higgs is the primary scalar support/displacement/buoyancy wave"
+      },
+      {
+        "classification": "WORKING_GEOMETRIC_IDENTIFICATION",
+        "exact_gate": "ACTION_DERIVED_GEOMETRIC_CHARGE_FUNCTOR",
+        "key": "electric_charge",
+        "physical_theorem": false,
+        "statement": "electric charge is signed boundary-phase winding relative to the core"
+      },
+      {
+        "classification": "WORKING_GEOMETRIC_IDENTIFICATION",
+        "exact_gate": "ACTION_DERIVED_GEOMETRIC_CHARGE_FUNCTOR",
+        "key": "weak_isospin",
+        "physical_theorem": false,
+        "statement": "weak isospin is two-state handed orientation of core attachment"
+      },
+      {
+        "classification": "WORKING_GEOMETRIC_IDENTIFICATION",
+        "exact_gate": "LOCAL_TEXTURE_TO_M4_CHIRAL_CLIFFORD_TRANSGRESSION",
+        "key": "chirality",
+        "physical_theorem": false,
+        "statement": "chirality is circulation orientation between the knot and core geometry"
+      },
+      {
+        "classification": "WORKING_GEOMETRIC_IDENTIFICATION",
+        "exact_gate": "ACTION_DERIVED_COLOR_TRIALITY_CONFINEMENT_FUNCTIONAL",
+        "key": "color",
+        "physical_theorem": false,
+        "statement": "color is open threefold triality closed only in a hadronic parent"
+      },
+      {
+        "classification": "WORKING_GEOMETRIC_IDENTIFICATION",
+        "exact_gate": "ACTION_DERIVED_GEOMETRIC_CHARGE_FUNCTOR",
+        "key": "hypercharge",
+        "physical_theorem": false,
+        "statement": "hypercharge combines phase, weak orientation, and support representation"
+      },
+      {
+        "classification": "AUTHOR_AXIOM",
+        "exact_gate": "COMPLETE_ACTION_SECTOR_ANTILINEAR_INVOLUTION",
+        "key": "antimatter",
+        "physical_theorem": false,
+        "statement": "antimatter is the complementary orientation of the same envelopment class"
+      },
+      {
+        "classification": "AUTHOR_AXIOM",
+        "exact_gate": "ORDER_THREE_PHYSICAL_MONODROMY_AND_FROZEN_SLOT_INTERTWINER",
+        "key": "generations",
+        "physical_theorem": false,
+        "statement": "three generations are three stable synchronization phases of one sector cycle"
+      },
+      {
+        "classification": "AUTHOR_AXIOM",
+        "exact_gate": "FULL_RANK_CYCLE_AVERAGED_CURRENT_PULLBACK_AND_CORE_TRANSITION",
+        "key": "mixing",
+        "physical_theorem": false,
+        "statement": "mixing is basis overlap dynamically realized by core-mediated reorganization"
+      },
+      {
+        "classification": "STRUCTURAL_POSTULATE",
+        "exact_gate": "NORM_PRESERVING_NO_SIGNALLING_CORE_TRANSFER_CHANNEL",
+        "key": "quantum",
+        "physical_theorem": false,
+        "statement": "surface quantum behavior is an effective description of core-mediated dynamics"
+      },
+      {
+        "classification": "STRUCTURAL_POSTULATE",
+        "exact_gate": "ACTION_DERIVED_CPTP_MEASUREMENT_REDUCTION_AND_PROBABILITY_RULE",
+        "key": "measurement",
+        "physical_theorem": false,
+        "statement": "measurement is whole-system re-synchronization to a stable output"
+      },
+      {
+        "classification": "AUTHOR_AXIOM",
+        "exact_gate": "ACTION_SELECTED_UNIQUE_DIMENSIONLESS_GLOBAL_GEOMETRY",
+        "key": "global_anchor",
+        "physical_theorem": false,
+        "statement": "one measured global curvature radius may convert completed dimensionless geometry to units"
+      },
+      {
+        "classification": "AUTHOR_AXIOM",
+        "exact_gate": null,
+        "key": "multiplicative_support",
+        "physical_theorem": false,
+        "statement": "upsilon composes multiplicatively and depth additively"
+      },
+      {
+        "classification": "DERIVED",
+        "exact_gate": null,
+        "key": "logarithmic_depth",
+        "physical_theorem": true,
+        "statement": "q_D=-lambda_D log(upsilon)"
+      },
+      {
+        "classification": "DERIVED",
+        "exact_gate": null,
+        "key": "haar_metric",
+        "physical_theorem": true,
+        "statement": "ds_D^2=lambda_D^2 dupsilon^2/upsilon^2"
+      },
+      {
+        "classification": "AUTHOR_AXIOM",
+        "exact_gate": null,
+        "key": "zero_bare_support_potential",
+        "physical_theorem": false,
+        "statement": "U_D,bare=0"
+      }
+    ],
+    "paradigm": "Relational Envelopment Holism",
+    "physical_completion_claimed": false,
+    "validation": {
+      "all_entries_typed": true,
+      "derived_support_results_present": true,
+      "hypotheses_not_promoted": true,
+      "seam_not_fourth_mode": true,
+      "three_modes_not_generations": true
+    },
+    "validation_passed": true
+  },
+  "ckm_pmns": {
+    "CKM": null,
+    "G_f": null,
+    "Gram_positive": null,
+    "K_ud": null,
+    "PMNS": null,
+    "Q_f": null,
+    "artifact": "BHSM_ckm_pmns_v11_0",
+    "current_pullback_rank": null,
+    "measured_mixing_inputs": [],
+    "status": "BHSM_CKM_PMNS_WITHHELD_BECAUSE_CYCLE_FORMS_AND_CURRENTS_ARE_UNEVALUABLE",
+    "unitarity": null,
+    "validation_passed": true
+  },
+  "completion_marks": {
+    "Mark_III_Physical_derivation": "NOT_REACHED",
+    "Mark_II_Complete_conditional_architecture": "NOT_REACHED",
+    "Mark_IV_Empirical_replacement": "NOT_REACHED",
+    "Mark_I_Canonical_ontology": "REACHED"
+  },
+  "core_stratum_action": {
+    "artifact": "BHSM_core_stratum_action_v11_0",
+    "classifications": {
+      "Hamiltonian_and_momentum_flux_form": "DERIVED",
+      "absorption_emission_transfer_operator": "OPEN",
+      "core_gauge_charge_balance_form": "FIXED_BY_CONSERVATION",
+      "core_response_functional": "OPEN",
+      "core_symplectic_form": "OPEN",
+      "core_topological_charge_balance_form": "FIXED_BY_CONSERVATION",
+      "regular_metric_GHY_momentum": "DERIVED_CONDITIONAL",
+      "regular_support_momentum": "DERIVED",
+      "support_endpoint_upsilon_zero": "FIXED_BY_TOPOLOGY"
+    },
+    "complete_domain": "M_regular union Sigma_core union M_core",
+    "complete_flux_relation": false,
+    "conservative_counterexamples": [
+      {
+        "adopted_as_absorption_model": false,
+        "core_action_required": false,
+        "data": "delta q_D vanishes at a finite cutoff q_D=Q before Q->infinity",
+        "name": "terminal Dirichlet",
+        "regular_symplectic_flux": 0,
+        "transfer": false
+      },
+      {
+        "adopted_as_absorption_model": false,
+        "core_action_required": false,
+        "data": "Pi_D=n^A nabla_A q_D=0 at a finite cutoff before Q->infinity",
+        "name": "reflecting Neumann",
+        "regular_symplectic_flux": 0,
+        "transfer": false
+      }
+    ],
+    "core_boundary": "upsilon=0 corresponds to q_D=+infinity in the Haar metric",
+    "gauge_flux_balance": "[J_gauge^A n_A]+D_a j_gauge^a=0",
+    "infinite_distance_consequence": "the regular action supplies only an asymptotic endpoint; a finite transfer law cannot be evaluated without asymptotic core data, a compactification, or an explicit core phase space",
+    "metric_matching": "[Pi_metric^ab]_Sigma=-(2/sqrt|h|) delta S_core-total/delta h_ab",
+    "minimal_core_action": null,
+    "next_exact_object": "CORE_BOUNDARY_PHASE_SPACE_AND_SELF_ADJOINT_TRANSFER_OPERATOR_AT_QD_INFINITY",
+    "regular_domain": "0<upsilon<=1, equivalently 0<=q_D<infinity, det(G)!=0",
+    "reversible_absorption_emission": false,
+    "status": "BHSM_CORE_JUNCTION_REMAINS_OPEN_AT_INFINITE_HAAR_DISTANCE_WITHOUT_A_CORE_RESPONSE_OPERATOR",
+    "stress_flux_balance": "[T_AB n^A h^B_b]+D_a tau^a_b+exchange_b=0",
+    "support_boundary_variation": "-integral_Sigma sqrt|h| (n^A nabla_A q_D) delta q_D",
+    "support_flux_balance": "Pi_D,regular+delta S_core-total/delta q_D=0",
+    "support_momentum": "Pi_D=sqrt|h| n^A nabla_A q_D",
+    "symplectic_flux_balance": "omega_regular+omega_Sigma+omega_core=0",
+    "topological_flux_balance": "[J_top^A n_A]+D_a j_top^a=0",
+    "validation": {
+      "conservation_does_not_select_transfer": true,
+      "core_at_infinite_field_distance_recorded": true,
+      "core_response_not_fabricated": true,
+      "no_dissipation_added": true,
+      "no_information_destruction_claim": true,
+      "regular_boundary_form_derived": true,
+      "two_conservative_boundary_ensembles_exist": true
+    },
+    "validation_passed": true
+  },
+  "core_transfer": {
+    "artifact": "BHSM_core_transfer_v11_0",
+    "core_endpoint": "q_D=+infinity",
+    "energy_matching": null,
+    "exit_condition": null,
+    "flux_conservation_form": "regular+boundary+core=0",
+    "gauge_transport": null,
+    "mass_shell_transport": null,
+    "next_exact_object": "CORE_BOUNDARY_PHASE_SPACE_AND_SELF_ADJOINT_TRANSFER_OPERATOR_AT_QD_INFINITY",
+    "penetration_threshold": null,
+    "phase_transport": null,
+    "reflection_condition": null,
+    "status": "BHSM_TRAJECTORY_SELECTED_CORE_TRANSFER_MAP_NOT_DERIVED",
+    "target_map": "T_core:(X_in,P_in,phase,Q_topology,G_gauge)->(X_out,P_out,phase_out,Q_out,G_out)",
+    "topology_transport": null,
+    "trajectory_target_selection": "AUTHOR_AXIOM_NOT_DERIVED",
+    "transfer_operator": null,
+    "validation_passed": true
+  },
+  "core_transition": {
+    "CPTP_reduction": null,
+    "absorption_map": null,
+    "artifact": "BHSM_core_transition_v11_0",
+    "core_evolution": null,
+    "emission_map": null,
+    "fundamental_dissipation": false,
+    "measurement_interpretation": "author doctrine only; not action-derived",
+    "no_signalling": null,
+    "norm_preservation": null,
+    "probability_law": null,
+    "status": "BHSM_QUANTUM_CORE_TRANSITION_NOT_DERIVED_WITHOUT_CORE_PHASE_SPACE",
+    "transition_operator": null,
+    "validation_passed": true
+  },
+  "empirical_replacement_complete": false,
+  "frozen_predictions_changed": false,
+  "fundamental_dissipation": false,
+  "generation_monodromy": {
+    "artifact": "BHSM_generation_monodromy_v11_0",
+    "derived_stable_phase_count": 0,
+    "frozen_ledgers_changed": false,
+    "sectors": {
+      "charged_leptons": {
+        "cycle": null,
+        "frozen_slots": [
+          [
+            0,
+            0
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            9,
+            3
+          ]
+        ],
+        "monodromy": null,
+        "slot_to_phase_intertwiner": null,
+        "stable_eigenphases": [
+          null,
+          null,
+          null
+        ]
+      },
+      "down": {
+        "cycle": null,
+        "frozen_slots": [
+          [
+            0,
+            0
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            8,
+            2
+          ]
+        ],
+        "monodromy": null,
+        "slot_to_phase_intertwiner": null,
+        "stable_eigenphases": [
+          null,
+          null,
+          null
+        ]
+      },
+      "neutrinos": {
+        "cycle": null,
+        "frozen_slots": null,
+        "monodromy": null,
+        "slot_to_phase_intertwiner": null,
+        "stable_eigenphases": [
+          null,
+          null,
+          null
+        ]
+      },
+      "up": {
+        "cycle": null,
+        "frozen_slots": [
+          [
+            0,
+            0
+          ],
+          [
+            6,
+            0
+          ],
+          [
+            10,
+            1
+          ]
+        ],
+        "monodromy": null,
+        "slot_to_phase_intertwiner": null,
+        "stable_eigenphases": [
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "status": "BHSM_GENERATION_PHASE_MONODROMY_BLOCKED_BY_ABSENT_SECTOR_CYCLES",
+    "three_modes_are_generations": false,
+    "validation_passed": true
+  },
+  "geometric_charges": {
+    "Q_equals_T3_plus_Y_over_2_derived": false,
+    "anomaly_cancellation_from_geometric_hypotheses": false,
+    "artifact": "BHSM_geometric_charges_v11_0",
+    "classification": "WORKING_GEOMETRIC_IDENTIFICATION",
+    "existing_anomaly_free_SM_ledger_retained": true,
+    "geometric_assignments": null,
+    "hypotheses": {
+      "chirality": "circulation direction between knot and core",
+      "color": "open threefold triality in a color-neutral parent",
+      "electric_charge": "signed boundary-phase winding relative to core",
+      "hypercharge": "combination of phase, weak orientation, and support representation",
+      "weak_isospin": "two-state handed core-attachment orientation"
+    },
+    "next_exact_object": "ACTION_DERIVED_GEOMETRIC_CHARGE_FUNCTOR",
+    "reason": "support weights, chiral transgression, and action-owned charge functor remain missing",
+    "status": "BHSM_GEOMETRIC_CHARGE_HYPOTHESES_NOT_DERIVED_FROM_UNIFIED_ACTION",
+    "validation_passed": true
+  },
+  "global_equilibrium": {
+    "artifact": "BHSM_global_equilibrium_v11_0",
+    "closed_topology_postulate": "author binding structural postulate",
+    "cosmic_anchor": null,
+    "cosmic_anchor_used": false,
+    "particle_inputs_used": [],
+    "residual_moduli": [
+      "lambda_D",
+      "support weights",
+      "existing parent theory inputs",
+      "cross-stratum reduction data",
+      "core response data"
+    ],
+    "stationary_equations_complete": false,
+    "status": "BHSM_UNIQUE_CLOSED_GLOBAL_EQUILIBRIUM_NOT_TESTABLE_BEFORE_COMPLETE_ACTION",
+    "unique_dimensionless_shape": false,
+    "validation_passed": true
+  },
+  "global_scale": {
+    "artifact": "BHSM_global_equilibrium_v11_0",
+    "closed_topology_postulate": "author binding structural postulate",
+    "cosmic_anchor": null,
+    "cosmic_anchor_used": false,
+    "particle_inputs_used": [],
+    "residual_moduli": [
+      "lambda_D",
+      "support weights",
+      "existing parent theory inputs",
+      "cross-stratum reduction data",
+      "core response data"
+    ],
+    "stationary_equations_complete": false,
+    "status": "BHSM_UNIQUE_CLOSED_GLOBAL_EQUILIBRIUM_NOT_TESTABLE_BEFORE_COMPLETE_ACTION",
+    "unique_dimensionless_shape": false,
+    "validation_passed": true
+  },
+  "higgs_buoyancy_mode": {
+    "artifact": "BHSM_higgs_buoyancy_mode_v11_0",
+    "classification": "WORKING_GEOMETRIC_IDENTIFICATION",
+    "components": {
+      "q_C": null,
+      "q_D": null,
+      "q_W": null
+    },
+    "effective_Higgs_representation_recovered": false,
+    "fermion_couplings": null,
+    "gauge_couplings": null,
+    "identification": "primary scalar wave of support, displacement, and buoyancy",
+    "mass": null,
+    "next_exact_object": "NORMALIZED_SCALAR_BUOYANCY_EIGENMODE_WITH_EFFECTIVE_HIGGS_REPRESENTATION",
+    "normalized_scalar_mode": null,
+    "status": "BHSM_HIGGS_BUOYANCY_IDENTIFICATION_AWAITS_COMPLETE_PHYSICAL_HESSIAN",
+    "tensor_scalar_separation": null,
+    "validation_passed": true
+  },
+  "hindsight_20_20": {
+    "INVALIDATED": [
+      "constant support kinetic function as a physical realization of the multiplicative composition axiom",
+      "lambda_D treated as a pure unit convention after nonzero support couplings are present",
+      "tensor rank or density weight alone treated as a derivation of support character exponents",
+      "minimal positive integer weights treated as action-derived merely because they are simple",
+      "finite regular-domain core transfer inferred at an infinite field-space endpoint without core data",
+      "downstream orbit, mass, mixing, M4, or quantum outputs inferred from unevaluable equations"
+    ],
+    "OPEN": [
+      "ACTION_DERIVED_SUPPORT_REPRESENTATION_FUNCTOR_ON_STRATIFIED_SECTORS_WITH_FIXED_HAAR_SCALE",
+      "CORE_BOUNDARY_PHASE_SPACE_AND_SELF_ADJOINT_TRANSFER_OPERATOR_AT_QD_INFINITY",
+      "COMMON_S8_S5_S4_REDUCTION_FUNCTOR_AND_COMPLETE_THREE_MODE_HESSIAN",
+      "STABLE_RELATIVE_PERIODIC_SECTOR_CYCLES_AND_PHYSICAL_MONODROMIES",
+      "ACTION_SELECTED_GLOBAL_EQUILIBRIUM_AND_ELIGIBLE_COSMIC_ANCHOR",
+      "FROZEN_SLOT_TO_CYCLE_PHASE_INTERTWINERS",
+      "NORMALIZED_M4_REDUCTION_AND_COMPLETE_CURRENT_PULLBACKS"
+    ],
+    "VALIDATED": [
+      "multiplicative support and continuous additive depth uniquely give q_D=-lambda_D log(upsilon)",
+      "the invariant support metric is lambda_D^2 dupsilon^2/upsilon^2",
+      "canonical q_D contributes one healthy regular scalar pair",
+      "the core endpoint upsilon=0 is at infinite Haar field distance",
+      "continuous support characters have the form upsilon^w",
+      "the frozen parent action is recovered at upsilon=1 for every normalized character"
+    ]
+  },
+  "m4_reduction": {
+    "anomaly_ledger_retained": true,
+    "artifact": "BHSM_m4_reduction_v11_0",
+    "collider_runtime": null,
+    "currents_complete": false,
+    "effective_fields": [
+      "g_mu_nu",
+      "A_mu",
+      "W_mu",
+      "B_mu",
+      "G_mu",
+      "psi_f",
+      "H",
+      "J_mu"
+    ],
+    "established_physics_reproduction_complete": false,
+    "field_source_dictionary_complete": false,
+    "gauge_couplings_action_derived": false,
+    "intrinsic_fields_retained": true,
+    "map": "R_M4:Phi_complete -> (g,A,W,B,G,psi,H,J)_effective",
+    "normalized_action_complete": false,
+    "scalar_sector_action_derived": false,
+    "status": "BHSM_EFFECTIVE_M4_REDUCTION_REMAINS_CONDITIONAL",
+    "validation_passed": true,
+    "vertices": null
+  },
+  "mass_spectrum": {
+    "artifact": "BHSM_mass_spectrum_v11_0",
+    "dimensionless_outputs": null,
+    "functional": "m_fi=mu_global epsilon_f(q_f,theta_fi)",
+    "global_scale": null,
+    "hierarchy_operator": "Theta_f=exp[-Lambda_f/(4pi)] retained as frozen candidate",
+    "hierarchy_operator_action_origin": null,
+    "particle_calibration_used": false,
+    "physical_masses": null,
+    "status": "BHSM_PHYSICAL_MASS_SPECTRUM_WITHHELD_BY_ACTION_AND_SCALE_GATES",
+    "validation_passed": true
+  },
+  "measured_particle_inputs": [],
+  "new_continuous_physical_parameters_adopted": [],
+  "new_geometric_fields": [],
+  "new_gravity_mediator": false,
+  "next_exact_object": "ACTION_DERIVED_SUPPORT_REPRESENTATION_FUNCTOR_ON_STRATIFIED_SECTORS_WITH_FIXED_HAAR_SCALE",
+  "nonlinear_orbits": {
+    "artifact": "BHSM_nonlinear_orbits_v11_0",
+    "constraint_residual": null,
+    "equations_available": false,
+    "monodromy": null,
+    "orbit": null,
+    "physical_floquet_multipliers": null,
+    "reason": "the common three-mode action, core response, boundary data, and stationary background are incomplete",
+    "relative_periodic_equation": "Phi(tau+T)=h.Phi(tau)",
+    "residual_norm": null,
+    "solver_run": false,
+    "status": "BHSM_RELATIVE_PERIODIC_ORBIT_NOT_EVALUABLE_FROM_INCOMPLETE_ACTION",
+    "validation_passed": true
+  },
+  "official_prediction_logic_changed": false,
+  "particle_cycles": {
+    "artifact": "BHSM_sector_cycles_v11_0",
+    "physical_cycle_count": 0,
+    "reason": "no complete three-mode equations, global equilibrium, core transfer law, or normalized asymptotic state",
+    "sectors": {
+      "antimatter": {
+        "interpretation": "complementary orientation of same envelopment class",
+        "involution": null
+      },
+      "charged_leptons": {
+        "cycle": null,
+        "interpretation": "timelike self-envelopment"
+      },
+      "neutrinos": {
+        "cycle": null,
+        "interpretation": "near-null propagation-supported envelopment"
+      },
+      "quarks_hadrons": {
+        "cycle": null,
+        "interpretation": "color-open sub-envelope in color-neutral parent"
+      }
+    },
+    "status": "BHSM_PHYSICAL_SECTOR_CYCLES_REMAIN_FAIL_CLOSED",
+    "validation_passed": true
+  },
+  "physical_BHSM_complete": false,
+  "physical_outputs": {
+    "CKM": null,
+    "PMNS": null,
+    "masses": null,
+    "transition_amplitudes": null
+  },
+  "primary_verdict": "BHSM_MULTIPLICATIVE_SUPPORT_HAAR_KINEMATICS_DERIVED_BUT_NORMALIZATION_AND_SUPPORT_WEIGHTS_NOT_ACTION_FIXED",
+  "quantum_measurement": {
+    "absorption": null,
+    "artifact": "BHSM_quantum_measurement_v11_0",
+    "classical_limit": null,
+    "classification": "STRUCTURAL_POSTULATE",
+    "core_evolution": null,
+    "core_state_space": null,
+    "emission": null,
+    "entanglement": null,
+    "measurement_channel": null,
+    "measurement_interpretation": "whole-system re-synchronization to a stable output",
+    "next_exact_object": "NORM_PRESERVING_NO_SIGNALLING_CORE_TRANSFER_CHANNEL",
+    "no_signalling": null,
+    "probability_law": null,
+    "quantum_interpretation": "core-mediated dynamics seen from the regular surface",
+    "status": "BHSM_QUANTUM_MEASUREMENT_INTERPRETATION_AWAITS_CORE_TRANSFER_DYNAMICS",
+    "validation_passed": true
+  },
+  "sector_cycles": {
+    "artifact": "BHSM_sector_cycles_v11_0",
+    "physical_cycle_count": 0,
+    "reason": "no complete three-mode equations, global equilibrium, core transfer law, or normalized asymptotic state",
+    "sectors": {
+      "antimatter": {
+        "interpretation": "complementary orientation of same envelopment class",
+        "involution": null
+      },
+      "charged_leptons": {
+        "cycle": null,
+        "interpretation": "timelike self-envelopment"
+      },
+      "neutrinos": {
+        "cycle": null,
+        "interpretation": "near-null propagation-supported envelopment"
+      },
+      "quarks_hadrons": {
+        "cycle": null,
+        "interpretation": "color-open sub-envelope in color-neutral parent"
+      }
+    },
+    "status": "BHSM_PHYSICAL_SECTOR_CYCLES_REMAIN_FAIL_CLOSED",
+    "validation_passed": true
+  },
+  "source_v10_4_sha": "04a38d962e32613ff4486f6ef068a01d24a9e4ac",
+  "sprint": "bhsm-canonical-unification-completion-v11-0",
+  "support_action": {
+    "admissible_counterexamples": [
+      {
+        "F_C": "upsilon^1",
+        "F_C_at_one": 1.0,
+        "F_W": "upsilon^1",
+        "F_W_at_one": 1.0,
+        "adopted": false,
+        "all_other_parent_weights": 0,
+        "canonical_slopes_at_lambda_one": [
+          1.0,
+          1.0
+        ],
+        "covariant": true,
+        "dimension_preserving": true,
+        "integer_weights": true,
+        "name": "A",
+        "particle_data_used": false,
+        "positive_on_regular_domain": true,
+        "q_C_source_nontrivial": true,
+        "q_W_source_nontrivial": true,
+        "w_C": 1,
+        "w_W": 1
+      },
+      {
+        "F_C": "upsilon^1",
+        "F_C_at_one": 1.0,
+        "F_W": "upsilon^2",
+        "F_W_at_one": 1.0,
+        "adopted": false,
+        "all_other_parent_weights": 0,
+        "canonical_slopes_at_lambda_one": [
+          1.0,
+          2.0
+        ],
+        "covariant": true,
+        "dimension_preserving": true,
+        "integer_weights": true,
+        "name": "B",
+        "particle_data_used": false,
+        "positive_on_regular_domain": true,
+        "q_C_source_nontrivial": true,
+        "q_W_source_nontrivial": true,
+        "w_C": 1,
+        "w_W": 2
+      }
+    ],
+    "artifact": "BHSM_supported_parent_action_v11_0",
+    "bare_support_potential": 0,
+    "canonical_support_term": "-1/2 |nabla q_D|^2",
+    "complete_supported_parent_action": null,
+    "general_character_form": "F_a(upsilon)=upsilon^w_a=exp[-(w_a/lambda_D)q_D]",
+    "lambda_D_fixed": false,
+    "minimality_audit": {
+      "fewest_nonzero_weights_allowed_by_required_sources": 2,
+      "reason": "the ordering is an external sparsity convention; the parent variational principle and geometry do not derive positivity, grouping, or relative character exponents",
+      "smallest_positive_integer_magnitude_candidate": {
+        "w_C": 1,
+        "w_W": 1
+      },
+      "unique_physical_theorem": false
+    },
+    "next_exact_object": "ACTION_DERIVED_SUPPORT_REPRESENTATION_FUNCTOR_ON_STRATIFIED_SECTORS_WITH_FIXED_HAAR_SCALE",
+    "parent_action": "S8^env+sum(S5+S_GHY)+S4,intrinsic+S_compatibility+S_current",
+    "status": "BHSM_MULTIPLICATIVE_SUPPORT_HAAR_KINEMATICS_DERIVED_BUT_NORMALIZATION_AND_SUPPORT_WEIGHTS_NOT_ACTION_FIXED",
+    "support_action_success_verdict_reached": false,
+    "support_equation": "Box_G q_D=J_D, with J_D=sum_a (w_a/lambda_D) exp[-w_a q_D/lambda_D] I_a up to the action sign convention",
+    "support_weights_fixed": false,
+    "term_inventory": [
+      {
+        "action_owner": "S8",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "Hopf metric",
+        "original_coefficient": "kappa1",
+        "q_D_variation": null,
+        "sector": "geometry",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 8,
+        "tensor_rank": "Ricci scalar",
+        "term": "kappa1 R8/2",
+        "wall_incidence": false,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "S8",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "bulk measure",
+        "original_coefficient": "kappa0",
+        "q_D_variation": null,
+        "sector": "geometry",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 8,
+        "tensor_rank": "scalar",
+        "term": "-kappa0/2",
+        "wall_incidence": false,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "S8",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "bulk carrier",
+        "original_coefficient": "Zchi,g",
+        "q_D_variation": null,
+        "sector": "core/Hopf",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 8,
+        "tensor_rank": "contracted one-form square",
+        "term": "-Zchi(1+g sigma^2)|dchi|^2/2",
+        "wall_incidence": false,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "S8",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "bulk envelopment",
+        "original_coefficient": "Zsigma",
+        "q_D_variation": null,
+        "sector": "core/Hopf",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 8,
+        "tensor_rank": "contracted one-form square",
+        "term": "-Zsigma|dsigma|^2/2",
+        "wall_incidence": false,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "S8",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "bulk envelopment",
+        "original_coefficient": "A0,G0",
+        "q_D_variation": null,
+        "sector": "core/Hopf",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 8,
+        "tensor_rank": "scalar",
+        "term": "-U(sigma)",
+        "wall_incidence": false,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "S8",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "Hopf/triality carrier",
+        "original_coefficient": "kappa1,g",
+        "q_D_variation": null,
+        "sector": "core/Hopf",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 8,
+        "tensor_rank": "contracted spinor-covariant gradient",
+        "term": "-(1+g sigma^2)kappa1 X_eta/2",
+        "wall_incidence": false,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "S8",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "Hopf/triality carrier",
+        "original_coefficient": "g",
+        "q_D_variation": null,
+        "sector": "core/Hopf",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 8,
+        "tensor_rank": "fourth power of scalar X_eta",
+        "term": "-(1+g sigma^2)X_eta^4/8",
+        "wall_incidence": false,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "S8",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "triality carrier",
+        "original_coefficient": "Lambda_eta",
+        "q_D_variation": null,
+        "sector": "core/Hopf",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 8,
+        "tensor_rank": "scalar constraint",
+        "term": "+Lambda_eta(<eta,eta>-1)/2",
+        "wall_incidence": false,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "S5",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "cap reduction",
+        "original_coefficient": "kappa1",
+        "q_D_variation": null,
+        "sector": "wall",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 5,
+        "tensor_rank": "Ricci scalar",
+        "term": "S5 Einstein term",
+        "wall_incidence": true,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "S5",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "cap reduction",
+        "original_coefficient": "lambda5 and retained coefficients",
+        "q_D_variation": null,
+        "sector": "wall",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 5,
+        "tensor_rank": "contracted gradients/scalars",
+        "term": "S5 reduced scalar terms",
+        "wall_incidence": true,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "boundary of S5",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "cap boundary",
+        "original_coefficient": "kappa1",
+        "q_D_variation": null,
+        "sector": "boundary",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 4,
+        "tensor_rank": "extrinsic-curvature scalar",
+        "term": "S_GHY",
+        "wall_incidence": true,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "S4 intrinsic",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "localized boundary",
+        "original_coefficient": "C_partial",
+        "q_D_variation": null,
+        "sector": "geometry",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 4,
+        "tensor_rank": "Ricci scalar",
+        "term": "B1 intrinsic Einstein term",
+        "wall_incidence": true,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "S4 intrinsic",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "retained gauge bundles",
+        "original_coefficient": "g1,g2,g3",
+        "q_D_variation": null,
+        "sector": "gauge",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 4,
+        "tensor_rank": "contracted curvature two-forms",
+        "term": "intrinsic gauge kinetic terms",
+        "wall_incidence": false,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "S4 intrinsic",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "retained chiral bundles",
+        "original_coefficient": "canonical common normalization",
+        "q_D_variation": null,
+        "sector": "fermion",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 4,
+        "tensor_rank": "Dirac bilinear",
+        "term": "intrinsic chiral kinetic terms",
+        "wall_incidence": false,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "S4 intrinsic",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "family/sector bundles",
+        "original_coefficient": "Y_u,Y_d,Y_e",
+        "q_D_variation": null,
+        "sector": "fermion",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 4,
+        "tensor_rank": "fermion-scalar bilinear",
+        "term": "intrinsic Yukawa terms",
+        "wall_incidence": false,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "S4 intrinsic",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "localized scalar bundle",
+        "original_coefficient": "retained EFT inputs",
+        "q_D_variation": null,
+        "sector": "scalar/topographic",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 4,
+        "tensor_rank": "gradient and scalar invariants",
+        "term": "intrinsic scalar/Higgs terms",
+        "wall_incidence": false,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "S5|4 compatibility",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "cross-stratum incidence",
+        "original_coefficient": "normalization 1",
+        "q_D_variation": null,
+        "sector": "compatibility",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 4,
+        "tensor_rank": "multiplier contractions",
+        "term": "metric/bundle compatibility multipliers",
+        "wall_incidence": true,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "S4/common-current layer",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "current incidence",
+        "original_coefficient": "retained gauge data",
+        "q_D_variation": null,
+        "sector": "current",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 4,
+        "tensor_rank": "vector-current contraction",
+        "term": "retained gauge and eta-current terms",
+        "wall_incidence": false,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "Sigma_core and M_core",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "core incidence open",
+        "original_coefficient": null,
+        "q_D_variation": null,
+        "sector": "core boundary",
+        "status": "OPEN_PARENT_TERM_AND_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": null,
+        "tensor_rank": "not supplied",
+        "term": "S_Sigma_core+S_core",
+        "wall_incidence": true,
+        "weighted_term": null
+      }
+    ],
+    "validation": {
+      "bare_potential_absent": true,
+      "both_core_and_wall_source_depth": true,
+      "counterexamples_are_inequivalent": true,
+      "haar_kinetic_selected": true,
+      "no_particle_fit": true,
+      "no_weight_fabricated": true,
+      "parent_limit_at_upsilon_one": true,
+      "two_integer_nontrivial_counterexamples": true
+    },
+    "validation_passed": true,
+    "weight_derivation_result": "tensor rank, density weight, dimensionality, and covariance do not fix w_a because upsilon is an independent dimensionless scalar and no support dilation action on parent fields is defined"
+  },
+  "support_composition": {
+    "artifact": "BHSM_support_composition_v11_0",
+    "author_axiom": "upsilon_12=upsilon_1*upsilon_2",
+    "bare_potential": 0,
+    "bare_potential_status": "AUTHOR_AXIOM",
+    "canonical_action_term": "-1/2 G^AB nabla_A q_D nabla_B q_D",
+    "continuity_monotonicity_solution": "q_D=-lambda_D log(upsilon), lambda_D>0",
+    "core_distance": "infinite",
+    "core_endpoint": "upsilon=0 is excluded from the regular group and lies at q_D=+infinity",
+    "domain": "restriction (0,1] of the positive multiplicative group on M_regular",
+    "functional_equation": "q_D(uv)=q_D(u)+q_D(v), q_D(1)=0",
+    "haar_line_element": "ds_D^2=lambda_D^2 dupsilon^2/upsilon^2",
+    "lambda_D_coordinate_only_in_free_sector": true,
+    "lambda_D_physical_when_weight_nonzero": true,
+    "lambda_D_status": "UNFIXED_POSITIVE_HAAR_SCALE",
+    "reason_lambda_D_is_physical_when_coupled": "upsilon^w=exp[-(w/lambda_D)q_D], so canonical interactions depend on w/lambda_D",
+    "reduced_kinetic_function": "Z_upsilon,reduced=lambda_D^2/upsilon^2",
+    "regular_identity": 1.0,
+    "status": "BHSM_MULTIPLICATIVE_SUPPORT_HAAR_KINEMATICS_DERIVED",
+    "superseded_v10_4_family": "constant Z_upsilon is inadmissible under multiplicative/additive composition",
+    "validation": {
+      "canonical_kinetic_identity": true,
+      "characters_are_multiplicative": true,
+      "composition_is_additive": true,
+      "core_is_infinite_haar_distance": true,
+      "normalization_qD_at_one": true
+    },
+    "validation_passed": true
+  },
+  "support_constraint_analysis": {
+    "gradient_speed_squared": 1.0,
+    "kinetic_norm": "integral sqrt(h) (delta q_D)^2>0",
+    "long_range_scalar_control": "interaction/restoring Hessian open until support characters and equilibrium are action fixed",
+    "no_duplicate_common_volume_pair": true,
+    "no_duplicate_q_C_or_q_W": true,
+    "physical_support_pairs": 1,
+    "pi_D": "sqrt(h)/N (dot(q_D)-N^i partial_i q_D)",
+    "primary_first_class": [
+      "p_N=0",
+      "p_Ni=0"
+    ],
+    "regular_canonical_pair": [
+      "q_D",
+      "pi_D"
+    ],
+    "secondary_first_class": [
+      "C_H,total=0",
+      "C_i,total=0"
+    ],
+    "status": "BHSM_HAAR_DEPTH_HAS_ONE_HEALTHY_REGULAR_CANONICAL_PAIR",
+    "support_internal_gauge_orbit": null,
+    "support_second_class_constraints": []
+  },
+  "supported_parent_action": {
+    "admissible_counterexamples": [
+      {
+        "F_C": "upsilon^1",
+        "F_C_at_one": 1.0,
+        "F_W": "upsilon^1",
+        "F_W_at_one": 1.0,
+        "adopted": false,
+        "all_other_parent_weights": 0,
+        "canonical_slopes_at_lambda_one": [
+          1.0,
+          1.0
+        ],
+        "covariant": true,
+        "dimension_preserving": true,
+        "integer_weights": true,
+        "name": "A",
+        "particle_data_used": false,
+        "positive_on_regular_domain": true,
+        "q_C_source_nontrivial": true,
+        "q_W_source_nontrivial": true,
+        "w_C": 1,
+        "w_W": 1
+      },
+      {
+        "F_C": "upsilon^1",
+        "F_C_at_one": 1.0,
+        "F_W": "upsilon^2",
+        "F_W_at_one": 1.0,
+        "adopted": false,
+        "all_other_parent_weights": 0,
+        "canonical_slopes_at_lambda_one": [
+          1.0,
+          2.0
+        ],
+        "covariant": true,
+        "dimension_preserving": true,
+        "integer_weights": true,
+        "name": "B",
+        "particle_data_used": false,
+        "positive_on_regular_domain": true,
+        "q_C_source_nontrivial": true,
+        "q_W_source_nontrivial": true,
+        "w_C": 1,
+        "w_W": 2
+      }
+    ],
+    "artifact": "BHSM_supported_parent_action_v11_0",
+    "bare_support_potential": 0,
+    "canonical_support_term": "-1/2 |nabla q_D|^2",
+    "complete_supported_parent_action": null,
+    "general_character_form": "F_a(upsilon)=upsilon^w_a=exp[-(w_a/lambda_D)q_D]",
+    "lambda_D_fixed": false,
+    "minimality_audit": {
+      "fewest_nonzero_weights_allowed_by_required_sources": 2,
+      "reason": "the ordering is an external sparsity convention; the parent variational principle and geometry do not derive positivity, grouping, or relative character exponents",
+      "smallest_positive_integer_magnitude_candidate": {
+        "w_C": 1,
+        "w_W": 1
+      },
+      "unique_physical_theorem": false
+    },
+    "next_exact_object": "ACTION_DERIVED_SUPPORT_REPRESENTATION_FUNCTOR_ON_STRATIFIED_SECTORS_WITH_FIXED_HAAR_SCALE",
+    "parent_action": "S8^env+sum(S5+S_GHY)+S4,intrinsic+S_compatibility+S_current",
+    "status": "BHSM_MULTIPLICATIVE_SUPPORT_HAAR_KINEMATICS_DERIVED_BUT_NORMALIZATION_AND_SUPPORT_WEIGHTS_NOT_ACTION_FIXED",
+    "support_action_success_verdict_reached": false,
+    "support_equation": "Box_G q_D=J_D, with J_D=sum_a (w_a/lambda_D) exp[-w_a q_D/lambda_D] I_a up to the action sign convention",
+    "support_weights_fixed": false,
+    "term_inventory": [
+      {
+        "action_owner": "S8",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "Hopf metric",
+        "original_coefficient": "kappa1",
+        "q_D_variation": null,
+        "sector": "geometry",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 8,
+        "tensor_rank": "Ricci scalar",
+        "term": "kappa1 R8/2",
+        "wall_incidence": false,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "S8",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "bulk measure",
+        "original_coefficient": "kappa0",
+        "q_D_variation": null,
+        "sector": "geometry",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 8,
+        "tensor_rank": "scalar",
+        "term": "-kappa0/2",
+        "wall_incidence": false,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "S8",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "bulk carrier",
+        "original_coefficient": "Zchi,g",
+        "q_D_variation": null,
+        "sector": "core/Hopf",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 8,
+        "tensor_rank": "contracted one-form square",
+        "term": "-Zchi(1+g sigma^2)|dchi|^2/2",
+        "wall_incidence": false,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "S8",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "bulk envelopment",
+        "original_coefficient": "Zsigma",
+        "q_D_variation": null,
+        "sector": "core/Hopf",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 8,
+        "tensor_rank": "contracted one-form square",
+        "term": "-Zsigma|dsigma|^2/2",
+        "wall_incidence": false,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "S8",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "bulk envelopment",
+        "original_coefficient": "A0,G0",
+        "q_D_variation": null,
+        "sector": "core/Hopf",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 8,
+        "tensor_rank": "scalar",
+        "term": "-U(sigma)",
+        "wall_incidence": false,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "S8",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "Hopf/triality carrier",
+        "original_coefficient": "kappa1,g",
+        "q_D_variation": null,
+        "sector": "core/Hopf",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 8,
+        "tensor_rank": "contracted spinor-covariant gradient",
+        "term": "-(1+g sigma^2)kappa1 X_eta/2",
+        "wall_incidence": false,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "S8",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "Hopf/triality carrier",
+        "original_coefficient": "g",
+        "q_D_variation": null,
+        "sector": "core/Hopf",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 8,
+        "tensor_rank": "fourth power of scalar X_eta",
+        "term": "-(1+g sigma^2)X_eta^4/8",
+        "wall_incidence": false,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "S8",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "triality carrier",
+        "original_coefficient": "Lambda_eta",
+        "q_D_variation": null,
+        "sector": "core/Hopf",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 8,
+        "tensor_rank": "scalar constraint",
+        "term": "+Lambda_eta(<eta,eta>-1)/2",
+        "wall_incidence": false,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "S5",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "cap reduction",
+        "original_coefficient": "kappa1",
+        "q_D_variation": null,
+        "sector": "wall",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 5,
+        "tensor_rank": "Ricci scalar",
+        "term": "S5 Einstein term",
+        "wall_incidence": true,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "S5",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "cap reduction",
+        "original_coefficient": "lambda5 and retained coefficients",
+        "q_D_variation": null,
+        "sector": "wall",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 5,
+        "tensor_rank": "contracted gradients/scalars",
+        "term": "S5 reduced scalar terms",
+        "wall_incidence": true,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "boundary of S5",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "cap boundary",
+        "original_coefficient": "kappa1",
+        "q_D_variation": null,
+        "sector": "boundary",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 4,
+        "tensor_rank": "extrinsic-curvature scalar",
+        "term": "S_GHY",
+        "wall_incidence": true,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "S4 intrinsic",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "localized boundary",
+        "original_coefficient": "C_partial",
+        "q_D_variation": null,
+        "sector": "geometry",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 4,
+        "tensor_rank": "Ricci scalar",
+        "term": "B1 intrinsic Einstein term",
+        "wall_incidence": true,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "S4 intrinsic",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "retained gauge bundles",
+        "original_coefficient": "g1,g2,g3",
+        "q_D_variation": null,
+        "sector": "gauge",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 4,
+        "tensor_rank": "contracted curvature two-forms",
+        "term": "intrinsic gauge kinetic terms",
+        "wall_incidence": false,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "S4 intrinsic",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "retained chiral bundles",
+        "original_coefficient": "canonical common normalization",
+        "q_D_variation": null,
+        "sector": "fermion",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 4,
+        "tensor_rank": "Dirac bilinear",
+        "term": "intrinsic chiral kinetic terms",
+        "wall_incidence": false,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "S4 intrinsic",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "family/sector bundles",
+        "original_coefficient": "Y_u,Y_d,Y_e",
+        "q_D_variation": null,
+        "sector": "fermion",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 4,
+        "tensor_rank": "fermion-scalar bilinear",
+        "term": "intrinsic Yukawa terms",
+        "wall_incidence": false,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "S4 intrinsic",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "localized scalar bundle",
+        "original_coefficient": "retained EFT inputs",
+        "q_D_variation": null,
+        "sector": "scalar/topographic",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 4,
+        "tensor_rank": "gradient and scalar invariants",
+        "term": "intrinsic scalar/Higgs terms",
+        "wall_incidence": false,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "S5|4 compatibility",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "cross-stratum incidence",
+        "original_coefficient": "normalization 1",
+        "q_D_variation": null,
+        "sector": "compatibility",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 4,
+        "tensor_rank": "multiplier contractions",
+        "term": "metric/bundle compatibility multipliers",
+        "wall_incidence": true,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "S4/common-current layer",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "current incidence",
+        "original_coefficient": "retained gauge data",
+        "q_D_variation": null,
+        "sector": "current",
+        "status": "OPEN_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": 4,
+        "tensor_rank": "vector-current contraction",
+        "term": "retained gauge and eta-current terms",
+        "wall_incidence": false,
+        "weighted_term": null
+      },
+      {
+        "action_owner": "Sigma_core and M_core",
+        "boundary_contribution": "inherits parent completion only after a character is selected",
+        "density_weight": 1,
+        "fiber_incidence": "core incidence open",
+        "original_coefficient": null,
+        "q_D_variation": null,
+        "sector": "core boundary",
+        "status": "OPEN_PARENT_TERM_AND_SUPPORT_CHARACTER",
+        "stress_contribution": null,
+        "support_weight_w_a": null,
+        "supported_dimensions": null,
+        "tensor_rank": "not supplied",
+        "term": "S_Sigma_core+S_core",
+        "wall_incidence": true,
+        "weighted_term": null
+      }
+    ],
+    "validation": {
+      "bare_potential_absent": true,
+      "both_core_and_wall_source_depth": true,
+      "counterexamples_are_inequivalent": true,
+      "haar_kinetic_selected": true,
+      "no_particle_fit": true,
+      "no_weight_fabricated": true,
+      "parent_limit_at_upsilon_one": true,
+      "two_integer_nontrivial_counterexamples": true
+    },
+    "validation_passed": true,
+    "weight_derivation_result": "tensor rank, density weight, dimensionality, and covariance do not fix w_a because upsilon is an independent dimensionless scalar and no support dilation action on parent fields is defined"
+  },
+  "three_mode_hessian": {
+    "H_0": [
+      [
+        {
+          "reason": "no localized stationary q_C background",
+          "status": "OPEN_BACKGROUND",
+          "value": null
+        },
+        {
+          "reason": "q_C and q_W remain owned on distinct S8/S5 strata without a derived common reduction functor",
+          "status": "UNDEFINED_CROSS_DOMAIN",
+          "value": null
+        },
+        {
+          "reason": "support characters and lambda_D are not action fixed",
+          "status": "OPEN",
+          "value": null
+        }
+      ],
+      [
+        {
+          "reason": "q_C and q_W remain owned on distinct S8/S5 strata without a derived common reduction functor",
+          "status": "UNDEFINED_CROSS_DOMAIN",
+          "value": null
+        },
+        {
+          "reason": "fold Hessian lacks common stationary background",
+          "status": "OPEN_BACKGROUND",
+          "value": null
+        },
+        {
+          "reason": "support characters and lambda_D are not action fixed",
+          "status": "OPEN",
+          "value": null
+        }
+      ],
+      [
+        {
+          "reason": "support characters and lambda_D are not action fixed",
+          "status": "OPEN",
+          "value": null
+        },
+        {
+          "reason": "support characters and lambda_D are not action fixed",
+          "status": "OPEN",
+          "value": null
+        },
+        {
+          "reason": "emergent effective potential cannot be reduced before couplings",
+          "status": "OPEN",
+          "value": null
+        }
+      ]
+    ],
+    "J_D_requirement": "nonzero q_C and q_W contributions retained as a gate",
+    "K_0": [
+      [
+        {
+          "reason": "historical M8 Einstein-frame block",
+          "status": "DERIVED_CONDITIONAL",
+          "value": "6*kappa5"
+        },
+        {
+          "reason": "q_C and q_W remain owned on distinct S8/S5 strata without a derived common reduction functor",
+          "status": "UNDEFINED_CROSS_DOMAIN",
+          "value": null
+        },
+        {
+          "reason": "support characters and lambda_D are not action fixed",
+          "status": "OPEN",
+          "value": null
+        }
+      ],
+      [
+        {
+          "reason": "q_C and q_W remain owned on distinct S8/S5 strata without a derived common reduction functor",
+          "status": "UNDEFINED_CROSS_DOMAIN",
+          "value": null
+        },
+        {
+          "reason": "historical M5 fold block",
+          "status": "DERIVED_CONDITIONAL",
+          "value": 6.935084858283065
+        },
+        {
+          "reason": "support characters and lambda_D are not action fixed",
+          "status": "OPEN",
+          "value": null
+        }
+      ],
+      [
+        {
+          "reason": "support characters and lambda_D are not action fixed",
+          "status": "OPEN",
+          "value": null
+        },
+        {
+          "reason": "support characters and lambda_D are not action fixed",
+          "status": "OPEN",
+          "value": null
+        },
+        {
+          "reason": "canonical Haar depth",
+          "status": "DERIVED",
+          "value": 1.0
+        }
+      ]
+    ],
+    "artifact": "BHSM_three_mode_hessian_v11_0",
+    "common_domain": null,
+    "complete_source": null,
+    "hessian_complete": false,
+    "kinetic_matrix_complete": false,
+    "mixed_blocks_complete": false,
+    "seam_projection": "psi_seam=Pi_seam(q_C,q_W,q_D); no fourth mode",
+    "stable_coupled_eigenmode": null,
+    "state": [
+      "q_C",
+      "q_W",
+      "q_D"
+    ],
+    "status": "BHSM_THREE_MODE_ACTION_BLOCKED_BY_UNFIXED_SUPPORT_REPRESENTATION_AND_COMMON_DOMAIN",
+    "validation_passed": true
+  },
+  "topological_buoyancy": {
+    "artifact": "BHSM_topological_buoyancy_v11_0",
+    "black_hole_limit": null,
+    "classification": "STRUCTURAL_POSTULATE",
+    "definition": "F_B=-delta E_complete/delta q_D",
+    "displaced_energy_functional": null,
+    "equivalence_principle": null,
+    "inertial_gravitational_identity": null,
+    "mass_depth_monotonicity": null,
+    "next_exact_object": "UNIVERSAL_ACTION_DERIVED_BUOYANCY_FUNCTIONAL_AND_WEAK_FIELD_LIMIT",
+    "status": "BHSM_TOPOLOGICAL_BUOYANCY_REMAINS_UNDERIVED_WITHOUT_COMPLETE_SUPPORT_ACTION",
+    "universal_scale_range": "AUTHOR_AXIOM_NOT_DERIVED",
+    "validation_passed": true,
+    "weak_field_limit": null
+  },
+  "unfixed_continuous_action_data": [
+    "lambda_D"
+  ],
+  "validation": {
+    "buoyancy_not_promoted": true,
+    "canonical_ontology_crystallized": true,
+    "charges_not_promoted": true,
+    "core_fail_closed": true,
+    "core_transfer_fail_closed": true,
+    "cycles_not_fabricated": true,
+    "dependency_graph_valid": true,
+    "falsification_registry_valid": true,
+    "frozen_ledgers_unchanged": true,
+    "global_anchor_unused": true,
+    "higgs_not_promoted": true,
+    "m4_fail_closed": true,
+    "masses_withheld": true,
+    "measurement_not_fabricated": true,
+    "mixing_withheld": true,
+    "no_particle_inputs": true,
+    "one_healthy_support_pair": true,
+    "orbit_not_fabricated": true,
+    "quantum_not_fabricated": true,
+    "support_composition_exact": true,
+    "support_nonuniqueness_proved": true,
+    "three_mode_fail_closed": true
+  },
+  "validation_passed": true,
+  "version": "v11.0"
+}

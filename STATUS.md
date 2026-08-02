@@ -24,6 +24,21 @@ physics/mathematics**, **Adopted BHSM axiom**, **BHSM identification**,
 **Rejected by calculation**, and **Active construction target**. Historical
 status labels below remain dated provenance and do not override this summary.
 
+V11.0 derives the unique continuous additive support depth
+`q_D=-lambda_D log(upsilon)` and its inverse-square Haar kinetic metric. It
+does not derive the positive Haar scale or the support characters assigned to
+the S8/S5/S4/core strata. Two inequivalent integer assignments already satisfy
+the declared kinematic requirements, so the complete supported action remains
+non-unique. The core endpoint is at infinite Haar distance and no core response
+operator is owned.
+
+V11.0 also crystallizes the author-selected Relational Envelopment Holism
+architecture into a typed ontology and an acyclic dependency graph. This is a
+repository-integration result, not a promotion of Topological Buoyancy, the
+Higgs/buoyancy identification, geometric charge assignments, generation
+synchronization, or quantum measurement to physical theorem status. Mark I
+canonical ontology is reached; Marks II-IV remain not reached.
+
 V10.2 exhausts the current action for Topological Buoyancy. V10.3 then audits
 the requested deformation completion against the complete historical record.
 The apparent missing seam displacement was already treated as the M5 moving
@@ -53,10 +68,10 @@ inverse-square positive kinetic families already yield inequivalent canonical
 depth maps, so the action remains non-unique.
 
 Current exact verdict:
-`BHSM_MULTIPLE_INEQUIVALENT_SUPPORT_ACTIONS_REMAIN_AFTER_AUTHOR_EXTENSION_SELECTION`.
+`BHSM_MULTIPLICATIVE_SUPPORT_HAAR_KINEMATICS_DERIVED_BUT_NORMALIZATION_AND_SUPPORT_WEIGHTS_NOT_ACTION_FIXED`.
 
 Exact next object:
-`ACTION_PRINCIPLE_FIXING_Z_UPSILON_U_UPSILON_AND_SUPPORT_COUPLINGS`.
+`ACTION_DERIVED_SUPPORT_REPRESENTATION_FUNCTOR_ON_STRATIFIED_SECTORS_WITH_FIXED_HAAR_SCALE`.
 
 The v8.4--v8.9 conditional theorem chain remains integrated. V10.0 embeds its
 static Gram--Hessian/current formulas as the stationary-cycle limit. Because
@@ -111,7 +126,7 @@ Reviewer entry points:
 [claim boundaries](CLAIMS.md), and
 [reproduction guide](docs/reviewer_reproduction_guide.md).
 
-BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v10.4 proves that the proper-volume candidate is removed by the Hamiltonian constraint and has zero reduced physical projection. The author has selected a stratified-core spacetime-support scalar `upsilon` as the extension class. A positive kinetic function would give one conditional physical scalar pair, but covariance and the frozen action do not uniquely fix its kinetic function, potential, support couplings, canonical depth, or core action. No interference-selected output, physical depth, mass, mixing matrix, or global scale is emitted. Prior no-go results and RB-15/RB-16 remain in force.
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v11.0 crystallizes the Relational Envelopment Holism ontology and derives the logarithmic depth `q_D=-lambda_D log(upsilon)` and inverse-square Haar kinetic metric from the author-specified multiplicative support law. Canonical doctrine is explicitly separated from action-derived theorem status. The regular depth sector has one healthy canonical pair, but the parent action does not fix the Haar scale or the support characters carried by its stratified sectors. The core endpoint is at infinite Haar field distance and has no action-owned transfer operator. No orbit, global scale, particle mass, mixing matrix, normalized M4 action, or quantum transition amplitude is emitted. Frozen predictions and prior no-go results remain unchanged.
 
 BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity. Physical eV/GeV neutrino mass closure remains open pending a numeric neutral stiffness length sqrt(A_nu/Z_nu), a physical K_neutral,eff map in m^-2, and complete-action derivation of the admissible response cone.
 

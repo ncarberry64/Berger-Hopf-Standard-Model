@@ -4,6 +4,16 @@ The canonical detailed criteria are in
 [`docs/falsification_criteria.md`](docs/falsification_criteria.md), with
 machine-readable historical gates in `artifacts/` and `theory/`.
 
+For v11.0, canonical ontology registration is falsified by a type mismatch or
+by promotion of an unevaluated hypothesis to theorem status. The physical
+program has explicit pending rejection tests for support stability and parent
+limits, stable three-mode orbits, universal buoyancy and weak-field behavior,
+the effective Higgs representation, exactly three physical monodromy phases,
+geometric charge relations and anomalies, unitary full-rank mixing, and
+norm-preserving no-signalling measurement dynamics. These tests have not run
+because their action-owned prerequisites are absent; see
+`artifacts/BHSM_canonical_falsification_v11_0.json`.
+
 For v10.1, author doctrine is an admissibility constraint rather than an
 empirical result. Topological Buoyancy, scalar cosmic energy, entropy,
 matter--antimatter equivalence, neutrino vertex identity, and closed-system

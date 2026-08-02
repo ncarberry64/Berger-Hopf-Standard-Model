@@ -7,6 +7,28 @@ below preserve dated scientific and repository provenance.
 
 ### Supported
 
+- V11.0 crystallizes the Relational Envelopment Holism doctrine in a typed
+  ontology and dependency graph. Author axioms, structural postulates, working
+  geometric identifications, and derived statements remain distinct.
+- V11.0 derives `q_D=-lambda_D log(upsilon)` and
+  `Z_upsilon=lambda_D^2/upsilon^2` from the binding multiplicative-support
+  composition law and continuity.
+- The canonical regular depth contributes one healthy scalar pair. The core
+  endpoint `upsilon=0` is at infinite Haar field distance.
+- Composition fixes support couplings to the character form `upsilon^w`, but
+  neither the weights nor `lambda_D` are action-derived in the coupled theory.
+- No complete support action, core transfer law, physical orbit, mass, mixing
+  matrix, normalized M4 theory, or quantum probability law follows from the
+  v11.0 kinematic theorem.
+
+### Not promoted by canonical registration
+
+- Topological Buoyancy is not yet an action-derived universal force law.
+- The Higgs/buoyancy, geometric-charge, order-three synchronization, mixing,
+  and quantum-measurement identifications remain hypotheses with explicit
+  proof gates.
+- A global curvature radius is not consumed until a unique dimensionless
+  global geometry is action-selected.
 - BHSM is an artifact-backed mathematical and computational research
   framework.
 - Frozen internal prediction artifacts exist with byte-integrity guards.

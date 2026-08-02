@@ -1,0 +1,59 @@
+{
+  "artifact": "BHSM_core_stratum_action_v11_0",
+  "classifications": {
+    "Hamiltonian_and_momentum_flux_form": "DERIVED",
+    "absorption_emission_transfer_operator": "OPEN",
+    "core_gauge_charge_balance_form": "FIXED_BY_CONSERVATION",
+    "core_response_functional": "OPEN",
+    "core_symplectic_form": "OPEN",
+    "core_topological_charge_balance_form": "FIXED_BY_CONSERVATION",
+    "regular_metric_GHY_momentum": "DERIVED_CONDITIONAL",
+    "regular_support_momentum": "DERIVED",
+    "support_endpoint_upsilon_zero": "FIXED_BY_TOPOLOGY"
+  },
+  "complete_domain": "M_regular union Sigma_core union M_core",
+  "complete_flux_relation": false,
+  "conservative_counterexamples": [
+    {
+      "adopted_as_absorption_model": false,
+      "core_action_required": false,
+      "data": "delta q_D vanishes at a finite cutoff q_D=Q before Q->infinity",
+      "name": "terminal Dirichlet",
+      "regular_symplectic_flux": 0,
+      "transfer": false
+    },
+    {
+      "adopted_as_absorption_model": false,
+      "core_action_required": false,
+      "data": "Pi_D=n^A nabla_A q_D=0 at a finite cutoff before Q->infinity",
+      "name": "reflecting Neumann",
+      "regular_symplectic_flux": 0,
+      "transfer": false
+    }
+  ],
+  "core_boundary": "upsilon=0 corresponds to q_D=+infinity in the Haar metric",
+  "gauge_flux_balance": "[J_gauge^A n_A]+D_a j_gauge^a=0",
+  "infinite_distance_consequence": "the regular action supplies only an asymptotic endpoint; a finite transfer law cannot be evaluated without asymptotic core data, a compactification, or an explicit core phase space",
+  "metric_matching": "[Pi_metric^ab]_Sigma=-(2/sqrt|h|) delta S_core-total/delta h_ab",
+  "minimal_core_action": null,
+  "next_exact_object": "CORE_BOUNDARY_PHASE_SPACE_AND_SELF_ADJOINT_TRANSFER_OPERATOR_AT_QD_INFINITY",
+  "regular_domain": "0<upsilon<=1, equivalently 0<=q_D<infinity, det(G)!=0",
+  "reversible_absorption_emission": false,
+  "status": "BHSM_CORE_JUNCTION_REMAINS_OPEN_AT_INFINITE_HAAR_DISTANCE_WITHOUT_A_CORE_RESPONSE_OPERATOR",
+  "stress_flux_balance": "[T_AB n^A h^B_b]+D_a tau^a_b+exchange_b=0",
+  "support_boundary_variation": "-integral_Sigma sqrt|h| (n^A nabla_A q_D) delta q_D",
+  "support_flux_balance": "Pi_D,regular+delta S_core-total/delta q_D=0",
+  "support_momentum": "Pi_D=sqrt|h| n^A nabla_A q_D",
+  "symplectic_flux_balance": "omega_regular+omega_Sigma+omega_core=0",
+  "topological_flux_balance": "[J_top^A n_A]+D_a j_top^a=0",
+  "validation": {
+    "conservation_does_not_select_transfer": true,
+    "core_at_infinite_field_distance_recorded": true,
+    "core_response_not_fabricated": true,
+    "no_dissipation_added": true,
+    "no_information_destruction_claim": true,
+    "regular_boundary_form_derived": true,
+    "two_conservative_boundary_ensembles_exist": true
+  },
+  "validation_passed": true
+}

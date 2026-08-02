@@ -182,6 +182,28 @@ ghost claim, author-selected `upsilon` without an adopted action coefficient,
 null three-mode/orbit/scale/mass/mixing
 outputs, no particle calibration, and unchanged frozen predictions.
 
+## Reviewer checkpoint: v11.0
+
+```bash
+python -m bhsm.interface canonical-ontology-status-v11 --format json
+python -m bhsm.interface support-action-status-v11 --format json
+python -m bhsm.interface core-transfer-status-v11 --format json
+python -m bhsm.interface three-mode-status-v11 --format json
+python -m bhsm.interface topological-buoyancy-status-v11 --format json
+python -m bhsm.interface higgs-buoyancy-status-v11 --format json
+python -m bhsm.interface geometric-charge-status-v11 --format json
+python -m bhsm.interface quantum-measurement-status-v11 --format json
+python -m bhsm.interface physical-completion-status-v11 --format markdown
+python scripts/materialize_unified_physical_completion_v11_0.py
+python -m pytest -q tests/test_bhsm_support_composition_v11_0.py tests/test_bhsm_supported_parent_action_v11_0.py tests/test_bhsm_core_stratum_action_v11_0.py tests/test_bhsm_canonical_crystallization_v11_0.py tests/test_bhsm_final_physical_gate_v11_0.py
+```
+
+Run the materializer twice and compare bytes. Verify typed doctrine boundaries,
+the D00-D13 acyclic graph, logarithmic depth and Haar metric, unfixed support
+characters and `lambda_D`, the infinite-distance core endpoint, null core
+transfer/buoyancy/Higgs/charge/measurement outputs, unchanged frozen ledgers,
+and no particle or cosmic calibration.
+
 ## Reviewer checkpoint: v10.3
 
 ```bash

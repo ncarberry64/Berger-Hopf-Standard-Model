@@ -6,11 +6,11 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 
 | Item | Current status |
 | --- | --- |
-| Overall status | proper-volume depth candidate removed; stratified-core support extension class author-selected; support action non-unique; three-mode physical derivation and empirical replacement open |
-| Latest theorem branch | `agent/bhsm-spacetime-removal-completion-v10-4` |
+| Overall status | logarithmic/Haar support kinematics derived; Haar scale and stratified-sector support characters not action-fixed; core transfer, three-mode physical derivation, and empirical replacement open |
+| Latest theorem branch | `agent/bhsm-canonical-unification-completion-v11-0` |
 | Latest completed theorem commits | PO-BH-47 `ae5dac5`; PO-BH-47 cleanup `1c11d2b`; PO-BH-48 `8ac577c`; PO-BH-49 `c2cfc70`; PO-BH-50 `7a4523a`; PO-BH-51 `225786f`; PO-BH-52 `4de6d9c`; PO-BH-53 `20c58b1`; PO-BH-54 `11d1c60`; PO-BH-55 `cf0e998`; PO-BH-56 `9f93330`; PO-BH-57/58/59 merged to main; PO-BH-60 merged to main; PO-BH-61 merged to main; PO-BH-62 merged to main; PO-BH-63 merged to main; PO-BH-64 merged to main; PO-BH-65 stacked in PR #21; PO-BH-66 stacked in PR #22; PO-BH-67 stacked in PR #23; PO-BH-68 stacked in PR #24; full freeze protocol / charged `K_f` stacked in PR #25; boundary action source audit stacked in PR #26; boundary graded defect action kernel on this branch |
-| Test result summary | v10.4 focused covariance, ADM reduction, extension, downstream fail-closed interface, CLI, and materialization checks pass; full local/GitHub CI is required before publication |
-| Current theorem/status label | `BHSM_MULTIPLE_INEQUIVALENT_SUPPORT_ACTIONS_REMAIN_AFTER_AUTHOR_EXTENSION_SELECTION` |
+| Test result summary | v11.0 focused composition, weight non-uniqueness, core endpoint, downstream fail-closed interface, CLI, and materialization checks pass; full local/GitHub CI is required before publication |
+| Current theorem/status label | `BHSM_MULTIPLICATIVE_SUPPORT_HAAR_KINEMATICS_DERIVED_BUT_NORMALIZATION_AND_SUPPORT_WEIGHTS_NOT_ACTION_FIXED` |
 | Candidate architecture complete | yes |
 | Full BHSM proven | no |
 | Standard Model fully derived | no |
@@ -23,7 +23,44 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 | Frozen predictions changed | no |
 | Official predictions changed | no |
 
-## v10.4 authoritative constrained-depth status
+## v11.0 authoritative multiplicative-support status
+
+The Relational Envelopment Holism architecture is now crystallized in a typed
+canonical ontology, dependency DAG, and falsification registry. Registration
+does not turn author axioms, structural postulates, or working geometric
+identifications into physical theorems. Mark I canonical ontology is reached;
+the conditional architecture, physical derivation, and empirical-replacement
+marks remain open.
+
+The binding composition law `upsilon_12=upsilon_1 upsilon_2`, together with
+continuous additive depth and `q_D(1)=0`, uniquely yields
+`q_D=-lambda_D log(upsilon)`. The invariant field metric is
+`lambda_D^2 dupsilon^2/upsilon^2`, so the regular domain contains one healthy
+canonical scalar pair. This supersedes the v10.4 constant-kinetic
+counterexample. The bare support potential is zero by author axiom.
+
+Continuous support couplings must be characters `upsilon^w`, but the frozen
+stratified action contains no support-group action on its metrics, measures,
+bundles, or embeddings. It therefore does not determine the weights. The
+integer assignments `(w_C,w_W)=(1,1)` and `(1,2)`, with all other weights
+zero, both satisfy the declared covariance, dimension, positivity, parent
+limit, and nontrivial-source conditions. They are physically inequivalent.
+Moreover `lambda_D` enters the canonical slopes `w/lambda_D`, so it is not a
+pure unit convention in a coupled theory.
+
+The endpoint `upsilon=0` is at `q_D=+infinity`. Regular variation determines
+the form of flux matching but does not supply a finite core response,
+symplectic phase space, or absorption/emission operator. All three-mode,
+orbit, global, particle, generation-phase, mass, mixing, M4, and quantum
+outputs remain fail-closed.
+
+Current verdict:
+`BHSM_MULTIPLICATIVE_SUPPORT_HAAR_KINEMATICS_DERIVED_BUT_NORMALIZATION_AND_SUPPORT_WEIGHTS_NOT_ACTION_FIXED`.
+
+Exact next object:
+`ACTION_DERIVED_SUPPORT_REPRESENTATION_FUNCTOR_ON_STRATIFIED_SECTORS_WITH_FIXED_HAAR_SCALE`.
+
+## v10.4 historical constrained-depth status
 
 With one common pullback, the metric volume ratio is covariant on the regular
 parent domain. For the exact P1 `(4,2,1)` block metric,
