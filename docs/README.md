@@ -1,6 +1,15 @@
 # BHSM Documentation Index
 
-## Current v11.3 campaign
+## Current v11.5 campaign
+
+- [Conditional flavor-action assembly](BHSM_FLAVOR_ACTION_COMPLETION_v11_5.md)
+- [2026-08-03 Downloads progress review](BHSM_DOWNLOAD_PROGRESS_REVIEW_2026-08-03.md)
+- [Archived manual research packets](research_packets/2026-08-03/)
+
+Current verdict: `BHSM_FLAVOR_ACTION_CANDIDATES_ASSEMBLED_WITH_CHARGED_CURRENT_PROVENANCE_GATE_OPEN`.
+Next object: `PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL`.
+
+## Historical v11.3 campaign
 
 - [Reciprocal core-surface attachment](BHSM_RECIPROCAL_CORE_SURFACE_ATTACHMENT_v11_3.md)
 - [Attachment character and current](BHSM_ATTACHMENT_CHARACTER_AND_CURRENT_v11_3.md)

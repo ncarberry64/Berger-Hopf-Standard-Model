@@ -1,0 +1,294 @@
+{
+  "BHSM_1_0_release_complete": false,
+  "Mark_I": "REACHED",
+  "Mark_II": "REACHED_ON_SELECTED_FINITE_RADIUS_CORE_BRANCH",
+  "Mark_III": "NOT_REACHED",
+  "Mark_IV": "NOT_REACHED",
+  "artifact": "BHSM_completion_gate_v11_4",
+  "charged_lepton_action": {
+    "action": "int_M4 [|DH|^2-lambda_H(Hdagger H-nu_BH^2)^2+i Lbar DL+i ebar De-(Lbar Y_BH H e+h.c.)]",
+    "anisotropy": 1.157054135733433,
+    "anisotropy_status": "INDEPENDENT_FROZEN_THEORY_INPUT_WITH_ALPHA_ANCHORED_NUMERICAL_SCREEN",
+    "artifact": "BHSM_minimal_M4_charged_lepton_action_v11_4",
+    "candidate_mass_eigenvalues_GeV": {
+      "e_slot": 0.0005229143548875549,
+      "mu_slot": 0.10566682607467498,
+      "tau_slot": 1.758930614523592
+    },
+    "candidate_mass_status": "CONDITIONAL_CALIBRATED_OUTPUT_NOT_PARAMETER_FREE_PREDICTION",
+    "classification": "AUTHOR_SELECTED_MINIMAL_M4_ACTION_COMPLETION_CONDITIONAL",
+    "electroweak_saddle_GeV": 246.16986520825228,
+    "exact_next_object": "ACTION_OWNED_UP_DOWN_YUKAWA_PAIR_AND_COMMON_LEFT_HANDED_CURRENT_KERNEL",
+    "independent_Ye_retained": false,
+    "overlap_eigenvalues": {
+      "e_slot": 0.00029729106456492414,
+      "mu_slot": 0.060074470932609786,
+      "tau_slot": 1.0
+    },
+    "primary_verdict": "BHSM_MINIMAL_M4_CHARGED_LEPTON_ACTION_ASSEMBLED_CONDITIONALLY",
+    "scale_calibration_GeV": 1.22089e+19,
+    "scale_status": "ONE_UNIVERSAL_DIMENSIONFUL_CALIBRATION",
+    "validation": {
+      "conditional_inputs_exposed": true,
+      "no_family_fit": true,
+      "no_lepton_mass_input": true,
+      "overlap_positive_contraction": true,
+      "single_profile_lift": true,
+      "single_trace_normalization": true,
+      "spectral_operator_nonnegative": true,
+      "standard_gauge_invariant_contraction": true,
+      "yukawa_dimensionless": true
+    },
+    "validation_passed": true,
+    "version": "v11.4",
+    "yukawa_eigenvalues": {
+      "e_slot": 3.0040743289839823e-06,
+      "mu_slot": 0.0006070420455456905,
+      "tau_slot": 0.010104825496118923
+    },
+    "yukawa_prefactor": 0.010104825496118923
+  },
+  "classification": "EXECUTABLE_CONDITIONAL_ASSEMBLY_ADVANCEMENT",
+  "closed_in_v11_4": [
+    "canonical whitened common-domain KKT response",
+    "positive nondegenerate family-octave attachment seeds",
+    "minimal conditional M4 charged-lepton spectral action",
+    "conditional up/down spectral Yukawa pair",
+    "canonical-identification CKM no-mixing theorem"
+  ],
+  "common_attachment_response": {
+    "artifact": "BHSM_common_attachment_response_v11_4",
+    "characteristic_equation": "3 mu^2-2(h_C+K+1) mu+h_C(K+1)=0",
+    "classification": "DERIVED_ON_AUTHOR_SELECTED_FINITE_RADIUS_CORE_BRANCH",
+    "constraint_jacobian": [
+      [
+        -1,
+        1,
+        1
+      ]
+    ],
+    "coordinate_order": [
+      "q_C",
+      "q_W",
+      "x_D=q_D/lambda_D"
+    ],
+    "exact_next_object": "MINIMAL_M4_CHARGED_LEPTON_ACTION_WITH_TRACE_NORMALIZED_HOPF_SEMIGROUP",
+    "family_octaves": {
+      "heavy": 0,
+      "light": 99,
+      "middle": 35
+    },
+    "ground_hessian_matrix": [
+      [
+        0.181391690148362,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "ground_reduced_hessian": [
+      [
+        0.181391690148362,
+        0.181391690148362
+      ],
+      [
+        0.181391690148362,
+        1.181391690148362
+      ]
+    ],
+    "inverse_octave_checks": {
+      "heavy": 5.995204332975845e-15,
+      "light": 98.99999999914081,
+      "middle": 34.99999999999181
+    },
+    "kinetic_matrix": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "lower_family_roots": {
+      "heavy": 0.08620600507952429,
+      "light": 0.09065467908218731,
+      "middle": 0.09058131073338889
+    },
+    "normalization_fix": "retain the v11.3 action-whitened coordinates and apply one shared map W to both K_white=W^T K_action W and H_white=W^T H_action W; do not combine them with the separate unwhitened packet pencil",
+    "primary_verdict": "BHSM_COMMON_ATTACHMENT_RESPONSE_POSITIVE_AND_NONDEGENERATE_ON_SELECTED_CORE_BRANCH",
+    "reduced_kinetic_matrix": [
+      [
+        2,
+        1
+      ],
+      [
+        1,
+        2
+      ]
+    ],
+    "source_ledger": {
+      "constraint": {
+        "source": "v11.3 reciprocal Lambda85 matcher",
+        "status": "ACTION_DERIVED"
+      },
+      "core_curvature": {
+        "source": "BHSM_dynamic_envelope_reduction_v10_0 breathing_frequency_squared",
+        "status": "ACTION_DERIVED_ON_SELECTED_FINITE_RADIUS_CORE_BRANCH"
+      },
+      "depth_curvature": {
+        "source": "v11.0 positive Haar support metric plus the round S3 spectral octave",
+        "status": "CONDITIONAL_SPECTRAL_ACTION_ASSIGNMENT"
+      },
+      "kinetic_gram": {
+        "source": "v11.3 action-normalized local KKT model",
+        "status": "ACTION_WHITENED_CONDITIONAL"
+      },
+      "wall_curvature": {
+        "source": "BHSM_fixed_h_lyapunov_schmidt_potential_v6_30_5 critical quadratic coefficient",
+        "status": "ACTION_DERIVED_AT_CRITICAL_WALL_BRANCH"
+      }
+    },
+    "tangent_basis": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        1
+      ]
+    ],
+    "validation": {
+      "critical_wall_curvature_zero": true,
+      "family_octaves_reconstructed": true,
+      "family_roots_nondegenerate": true,
+      "family_roots_positive": true,
+      "ground_depth_curvature_one": true,
+      "no_measured_mass_input": true,
+      "reduced_hessian_positive": true,
+      "reduced_kinetic_exact": true,
+      "shared_whitening_map_applied_to_gram_and_hessian": true,
+      "tangent_basis_exact": true,
+      "v11_3_constraint_preserved": true,
+      "whitened_kinetic_preserved": true
+    },
+    "validation_passed": true,
+    "version": "v11.4",
+    "whitening_provenance": {
+      "gram_transform": "K_white=W^T K_action W",
+      "hessian_transform": "H_white=W^T H_action W",
+      "incompatible_unwhitened_packet_pencil_used": false,
+      "map_from_v11_3_action_whitened_coordinates": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ]
+    }
+  },
+  "exact_next_object": "ACTION_NORMALIZED_SU2L_RAISING_CURRENT_CROSS_GRAM_KERNEL_ON_FROZEN_UP_DOWN_FAMILY_MODULES",
+  "frozen_predictions_changed": false,
+  "official_prediction_logic_changed": false,
+  "open": [
+    "ACTION_NORMALIZED_SU2L_RAISING_CURRENT_CROSS_GRAM_KERNEL_ON_FROZEN_UP_DOWN_FAMILY_MODULES",
+    "sector-wide action normalization for up/down absolute masses",
+    "RG transport and external comparison",
+    "Mark III physical orbit/current completion",
+    "Mark IV empirical replacement and release"
+  ],
+  "primary_verdict": "BHSM_MARK_II_RESPONSE_CLOSED_AND_MINIMAL_M4_FLAVOR_ACTION_ASSEMBLED_CONDITIONALLY",
+  "quark_yukawa_ckm_gate": {
+    "anisotropy": 1.157054135733433,
+    "artifact": "BHSM_quark_yukawa_CKM_gate_v11_4",
+    "canonical_CKM": "I3",
+    "canonical_Jarlskog": 0,
+    "canonical_commutator": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "classification": "CONDITIONAL_SPECTRAL_PAIR_AND_EXACT_OBSTRUCTION",
+    "down_overlap_eigenvalues": {
+      "heavy": 1.0,
+      "light": 0.0011165200546001757,
+      "middle": 0.021933971495439474
+    },
+    "exact_next_object": "ACTION_NORMALIZED_SU2L_RAISING_CURRENT_CROSS_GRAM_KERNEL_ON_FROZEN_UP_DOWN_FAMILY_MODULES",
+    "primary_verdict": "BHSM_QUARK_SPECTRAL_PAIR_ASSEMBLED_BUT_NONTRIVIAL_CKM_REQUIRES_CROSS_CURRENT_KERNEL",
+    "required_kernel": "K_ud[i,j]=<u_i,J_plus_action d_j>_common",
+    "up_overlap_eigenvalues": {
+      "heavy": 1.0,
+      "light": 1.2690463017606151e-05,
+      "middle": 0.004155250277034144
+    },
+    "validation": {
+      "arbitrary_unitary_not_inserted": true,
+      "canonical_ckm_identity": true,
+      "canonical_jarlskog_zero": true,
+      "canonical_left_responses_commute": true,
+      "down_hierarchy_positive": true,
+      "middle_up_virtual_door_once": true,
+      "missing_cross_kernel_exposed": true,
+      "up_hierarchy_positive": true
+    },
+    "validation_passed": true,
+    "version": "v11.4"
+  },
+  "validation": {
+    "charged_lepton_action_valid": true,
+    "common_response_valid": true,
+    "conditional_inputs_visible": true,
+    "frozen_predictions_unchanged": true,
+    "mark_ii_operator_block_closed": true,
+    "nontrivial_CKM_not_fabricated": true,
+    "quark_gate_valid": true,
+    "release_not_overclaimed": true
+  },
+  "validation_passed": true,
+  "version": "v11.4"
+}

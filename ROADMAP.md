@@ -1,6 +1,19 @@
 # BHSM Roadmap
 
-## v11.3 current critical path
+## v11.5 current critical path
+
+The current verdict is
+`BHSM_FLAVOR_ACTION_CANDIDATES_ASSEMBLED_WITH_CHARGED_CURRENT_PROVENANCE_GATE_OPEN`.
+Resume from
+`PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL`.
+The next sprint must recover the candidate kernel from an existing parent-action
+charged-current term by explicit mixed second variation/current pairing, or
+prove a stated uniqueness theorem from declared BHSM axioms. RG transport,
+sector-wide quark normalization, and finite empirical replacement tests may
+proceed as downstream conditional evaluations, but cannot close this provenance
+gate. Marks III and IV remain fail closed.
+
+## v11.3 historical critical path
 
 The current verdict is
 `BHSM_RECIPROCAL_ATTACHMENT_ACTION_AND_CURRENT_DERIVED_WITH_THREE_MODE_DOMAIN_CONDITIONAL`.

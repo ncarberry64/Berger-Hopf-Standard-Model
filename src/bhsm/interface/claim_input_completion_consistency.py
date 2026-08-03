@@ -450,11 +450,14 @@ def artifact_bytes(root: Path) -> dict[str, bytes]:
     return {ARTIFACT_FILES[key]: deterministic_json(payload).encode("utf-8") for key, payload in artifact_payloads(root).items()}
 
 
-def materialize_artifacts(root: Path) -> list[Path]:
+def materialize_artifacts(root: Path, source_root: Path | None = None) -> list[Path]:
+    """Materialize under ``root`` while optionally reading inputs elsewhere."""
+
+    input_root = root if source_root is None else source_root
     target = root / "artifacts"
     target.mkdir(parents=True, exist_ok=True)
     paths = []
-    for filename, content in artifact_bytes(root).items():
+    for filename, content in artifact_bytes(input_root).items():
         path = target / filename
         path.write_bytes(content)
         paths.append(path)

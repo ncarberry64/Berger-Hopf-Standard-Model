@@ -5,7 +5,19 @@ evidence, not competing public status pages.
 
 ## Current public summary
 
-BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current campaign status: v11.3 dresses the action-owned Lambda85 compatibility matcher reciprocally, with I_C=Q_H(G8), I_W=g5, w(I_C)=-1/2, and w(I_W)=+1/2 while the intrinsic enclosure remains neutral. The algebraic matcher derives a signed q_D source and total three-sector stress-transfer identity; it generates neither a linear nor a quadratic A_D term. Its boundary variation and ordinary core closure are finite. Mark II is reached conditionally: the exact action-normalized core/wall response Gram-Hessian on the common attachment domain remains open. Physical equivalence and the physical-or-conventional status of lambda_D are not claimed. The v11.0 logarithmic depth, positive Haar metric, healthy conditional support pair, infinite-distance core endpoint, canonical ontology, and frozen generation architecture remain intact. No core transfer operator, physical three-mode Hessian, stable particle cycle, mass, CKM/PMNS matrix, normalized M4 action, or quantum probability law is emitted. Frozen predictions are unchanged.
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: structural architecture integrated conditional; frozen predictions unchanged; physical eV/GeV neutrino mass closure remains open; external HEP runtime integration remains gated. Current campaign status: v11.5 preserves the v11.3 reciprocal attachment and evaluates the common-domain response in its canonical whitened coordinates. On the selected finite-radius core branch the constrained response is positive and nondegenerate. A minimal intrinsic M4 charged-lepton spectral action, conditional up/down Yukawa pair, and full-rank no-fit spectral charged-current candidate are executable; the kernel is unitary, closes SU2 exactly, preserves family-central neutral currents, and carries nonzero CP without measured mixing inputs. The kernel is an author-selected no-fit action candidate, not action-derived. Mark III remains open until a parent-action mixed second variation/current pairing recovers it or a stated uniqueness theorem selects it. RG transport, normalization, and empirical tests are downstream conditional evaluations and cannot replace that provenance gate. Mark IV and BHSM 1.0 release completion remain open. Frozen predictions are unchanged.
+
+BHSM v11.5 closes the v11.3 common-response target in canonical action-whitened coordinates on the selected finite-radius core branch, with the Gram and Hessian transformed by one shared map and their sources recorded. It assembles a minimal conditional M4 charged-lepton action, conditional up/down spectral Yukawa pair, and a full-rank no-fit spectral charged-current candidate. The candidate is unitary, has nonzero Jarlskog invariant, closes the SU(2) algebra, and preserves family-central neutral currents. Its angle rule reads only frozen spectral overlaps and `S=1/(4*pi)`; measured CKM values are not inputs. These facts establish mathematical viability, not parent-action provenance.
+
+Current verdict:
+`BHSM_FLAVOR_ACTION_CANDIDATES_ASSEMBLED_WITH_CHARGED_CURRENT_PROVENANCE_GATE_OPEN`.
+Exact next object:
+`PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL`.
+Mark III, Mark IV, and release completion remain open. The charged-current kernel must be recovered from an existing parent-action charged-current term by explicit mixed second variation/current pairing, or selected by a stated BHSM-axiom uniqueness theorem. RG transport, quark normalization, and empirical replacement tests may proceed only as downstream conditional evaluations.
+The charged-lepton absolute triplet remains a one-calibration conditional output,
+and up/down absolute normalization is not closed. Frozen predictions are unchanged.
+
+## v11.3 historical reciprocal-attachment status
 
 BHSM v11.3 recovers the v7 compatibility incidence and dresses the existing
 `Lambda85` matcher without adding a field, mediator, or normalization. The
