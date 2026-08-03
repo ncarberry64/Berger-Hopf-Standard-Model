@@ -215,13 +215,13 @@ def test_nineteen_required_artifacts_are_deterministic_and_current():
             json.loads(content)
 
 
-def test_materializer_is_idempotent_and_canonical_gate_is_current():
-    script = ROOT / "scripts" / "materialize_complete_unified_parent_action_v7_0.py"
-    subprocess.run([sys.executable, str(script)], cwd=ROOT, check=True)
-    first = master_action.artifact_bytes()
-    subprocess.run([sys.executable, str(script)], cwd=ROOT, check=True)
-    assert first == master_action.artifact_bytes()
-    canonical = json.loads((ROOT / "artifacts" / "BHSM_1_0_completion_gate.json").read_text(encoding="utf-8"))
+def test_materializer_is_idempotent_and_canonical_gate_is_current(tmp_path):
+    master_action.materialize(tmp_path)
+    first = {path.name: path.read_bytes() for path in (tmp_path / "artifacts").iterdir()}
+    master_action.materialize(tmp_path)
+    second = {path.name: path.read_bytes() for path in (tmp_path / "artifacts").iterdir()}
+    assert first == second
+    canonical = json.loads((tmp_path / "artifacts" / "BHSM_1_0_completion_gate.json").read_text(encoding="utf-8"))
     assert canonical["version"] == "v11.3"
 
 

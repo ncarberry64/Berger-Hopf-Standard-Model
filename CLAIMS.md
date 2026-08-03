@@ -2,6 +2,24 @@
 
 ## Current public claim boundary
 
+V11.5 verdict:
+`BHSM_FLAVOR_ACTION_CANDIDATES_ASSEMBLED_WITH_CHARGED_CURRENT_PROVENANCE_GATE_OPEN`.
+The canonical v11.3 whitened KKT response is positive and nondegenerate on the
+selected finite-radius core branch. A minimal M4 charged-lepton spectral action,
+up/down spectral pair, and no-fit unitary charged-current kernel are now explicit.
+The kernel closes SU(2) and carries nonzero CP without measured mixing inputs.
+The charged-current kernel is an author-selected no-fit action candidate. Full
+rank, unitarity, SU(2) closure, nonzero CP, and frozen inputs establish
+mathematical viability but do not make it action-derived. Mark III and
+nontrivial CKM remain open unless an explicit parent-action mixed second
+variation/current pairing recovers the kernel or a stated uniqueness theorem
+selects it from declared BHSM axioms.
+No parameter-free absolute quark spectrum, PMNS completion, or empirical
+replacement claim is made. The next exact object is
+`PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL`.
+
+### v11.3 historical claim boundary
+
 V11.3 verdict:
 `BHSM_RECIPROCAL_ATTACHMENT_ACTION_AND_CURRENT_DERIVED_WITH_THREE_MODE_DOMAIN_CONDITIONAL`.
 The existing action-owned `Lambda85` compatibility matcher admits the

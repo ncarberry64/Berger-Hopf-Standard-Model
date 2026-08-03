@@ -1,6 +1,37 @@
 # Current BHSM Status
 
-## v11.3 authoritative reciprocal-attachment status
+## v11.5 authoritative conditional flavor-action status
+
+V11.5 retains the reciprocal v11.3 attachment and fixes the packet's
+normalization conflict by keeping the canonical whitened coordinates
+`(q_C,q_W,x_D)`. On the selected finite-radius core branch, the KKT response
+has positive nondegenerate lower roots for the charged-family octaves
+`K=(0,35,99)`.
+
+The intrinsic M4 candidate contains an explicit minimal charged-lepton
+spectral Yukawa operator and conditional up/down spectral pair. The no-fit
+charged-current candidate uses only the frozen overlap eigenvalues and
+`S=1/(4*pi)` to define its three angles and CP phase. It is full rank and
+unitary, closes the SU(2) algebra, preserves family-central neutral currents,
+and has a nonzero Jarlskog invariant. No measured CKM quantity is used. These
+properties establish mathematical viability but not action provenance.
+
+Current verdict:
+`BHSM_FLAVOR_ACTION_CANDIDATES_ASSEMBLED_WITH_CHARGED_CURRENT_PROVENANCE_GATE_OPEN`.
+
+Exact next object:
+`PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL`.
+
+Mark I is reached. Mark II is reached on the selected finite-radius branch.
+Mark III remains open. The kernel must be recovered by explicit parent-action
+mixed second variation/current pairing or selected by a stated uniqueness
+theorem from declared BHSM axioms. Mark IV and BHSM 1.0 release completion remain open.
+The absolute charged-lepton triplet is a one-calibration conditional output;
+up/down absolute normalization, common-scheme transport, PMNS, and the final
+empirical replacement audit remain downstream conditional evaluations. None
+substitutes for the charged-current provenance gate. Frozen predictions are unchanged.
+
+## v11.3 historical reciprocal-attachment status
 
 The v7.0/v7.1 reduction owns the compatibility incidence pair
 `I_C=Q_H(G8)` and `I_W=g5`. V11.3 applies the adopted reciprocal attachment

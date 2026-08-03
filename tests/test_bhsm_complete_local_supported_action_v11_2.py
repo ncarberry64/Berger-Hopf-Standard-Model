@@ -81,7 +81,7 @@ def test_materialization_is_byte_deterministic(tmp_path) -> None:
     assert len(first) == 29
     canonical = json.loads((tmp_path / "artifacts" / "BHSM_1_0_completion_gate.json").read_text())
     assert canonical["version"] == "v11.2"
-    assert CURRENT_VERSION == "v11.3"
+    assert CURRENT_VERSION == "v11.5"
     assert canonical["current_verdict"] == PRIMARY_VERDICT
 
 

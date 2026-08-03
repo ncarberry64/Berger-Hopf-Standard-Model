@@ -1,5 +1,18 @@
 # BHSM Falsification Entry Point
 
+For v11.5, the verdict
+`BHSM_FLAVOR_ACTION_CANDIDATES_ASSEMBLED_WITH_CHARGED_CURRENT_PROVENANCE_GATE_OPEN`
+is falsified internally if the canonical whitened KKT response is not positive
+on the selected branch, if the spectral current loses rank or unitarity, if the
+weak generators fail SU(2) closure, if a neutral family-changing current is
+generated, or if a measured mass/mixing value enters the action rule. It is
+falsified as an empirical replacement if the predeclared common-scheme finite
+benchmark fails. The kernel nevertheless remains an author-selected candidate
+even if every downstream test passes. Its current upstream gate is:
+`PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL`.
+
+The v11.3 criterion below is retained as historical chronology.
+
 For v11.3, the verdict
 `BHSM_RECIPROCAL_ATTACHMENT_ACTION_AND_CURRENT_DERIVED_WITH_THREE_MODE_DOMAIN_CONDITIONAL`
 is falsified if the inherited `Lambda85` slot does not own `Q_H(G8)` and `g5`,

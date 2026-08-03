@@ -4,16 +4,17 @@ from __future__ import annotations
 
 from typing import Any
 
-from .completion.reciprocal_attachment_action_v11_3 import EXACT_NEXT_OBJECT, PRIMARY_VERDICT
+PRIMARY_VERDICT = "BHSM_FLAVOR_ACTION_CANDIDATES_ASSEMBLED_WITH_CHARGED_CURRENT_PROVENANCE_GATE_OPEN"
+EXACT_NEXT_OBJECT = "PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL"
 
 
-CURRENT_CAMPAIGN = "v11.3 Reciprocal core-surface attachment construction sprint"
-CURRENT_VERSION = "v11.3"
-SOURCE_BASE_MAIN_SHA = "1aa1ebf1c924e494c903e794aaed5f0d7d42e173"
-SOURCE_BASE_TREE_SHA = "8975c13c1993dcca1e88a73d28e613b22704ac6d"
+CURRENT_CAMPAIGN = "v11.5 Minimal flavor action and no-fit spectral charged-current assembly"
+CURRENT_VERSION = "v11.5"
+SOURCE_BASE_MAIN_SHA = "3e324a05e50b8128d28b84968b4ef3d2b064dd73"
+SOURCE_BASE_TREE_SHA = "RESOLVE_FROM_BASELINE_COMMIT"
 COMPLETION_MARKS = {
     "Mark_I_Canonical_ontology": "REACHED",
-    "Mark_II_Complete_conditional_architecture": "REACHED_CONDITIONALLY",
+    "Mark_II_Complete_conditional_architecture": "REACHED_ON_SELECTED_FINITE_RADIUS_CORE_BRANCH",
     "Mark_III_Physical_derivation": "NOT_REACHED",
     "Mark_IV_Empirical_replacement": "NOT_REACHED",
 }
@@ -42,9 +43,15 @@ DERIVED_RESULTS = [
     "opposite half-characters w(I_C)=-1/2 and w(I_W)=+1/2 with neutral intrinsic metric",
     "signed q_D attachment source and total three-sector diffeomorphism stress-transfer identity",
     "differentiable algebraic attachment boundary completion and finite ordinary core closure",
+    "canonical whitened common-domain KKT response with positive nondegenerate family-octave roots",
+    "minimal intrinsic M4 charged-lepton spectral action with one universal scale calibration",
+    "conditional up/down spectral Yukawa operator pair",
 ]
 CONDITIONAL_RESULTS = [
-    "full numerical core/wall Gram-Hessian on the common attachment domain",
+    "author-selected finite-radius core branch",
+    "full-rank coefficient-free spectral charged-current action candidate with exact SU2 closure and nonzero CP, not action-derived",
+    "absolute charged-lepton triplet with one universal dimensionful calibration",
+    "up/down sector-wide absolute normalization and common-scheme RG transport",
     "physical equivalence quotient of the provisional support lifts",
     "core transfer, three-mode, cycle, buoyancy, Higgs, global, generation, M4, and quantum interfaces",
 ]
@@ -66,8 +73,9 @@ OPEN_RESULTS = [
     EXACT_NEXT_OBJECT,
     "complete supported parent action with its action-derived support current and quadratic connection completion",
     "core asymptotic phase space and conservative transfer operator",
-    "physical three-mode Hessian and stable cycles",
-    "physical masses, CKM, PMNS, effective M4 action, and quantum measurement law",
+    "parent-action charged-current mixed second variation/current pairing or BHSM-axiom uniqueness theorem",
+    "downstream conditional RG, normalization, and empirical replacement evaluations",
+    "physical PMNS extension, stable cycles, and quantum measurement law",
 ]
 FROZEN_PREDICTION_STATE = "UNCHANGED"
 PHYSICAL_OUTPUTS_AVAILABLE = {
@@ -96,6 +104,7 @@ def status_payload() -> dict[str, Any]:
         "canonical_ontology_complete": True,
         "canonical_ontology_is_physical_completion": False,
         "physical_flavor_matrix_derived": False,
+        "conditional_no_fit_flavor_matrix_available": True,
         "current_exact_verdict": PRIMARY_VERDICT,
         "next_exact_object": EXACT_NEXT_OBJECT,
         "current_campaign": CURRENT_CAMPAIGN,
@@ -110,17 +119,17 @@ def status_payload() -> dict[str, Any]:
         "frozen_prediction_state": FROZEN_PREDICTION_STATE,
         "physical_outputs_available": PHYSICAL_OUTPUTS_AVAILABLE,
         "validation_summary": {
-            "focused": "PASS: v11.3 construction plus current/historical integration checks; post-commit clean-tree guards 16 passed",
-            "full_pytest": "4862 passed, 16 legacy git-diff dirty-tree guards failed in 12:42 before commit; all 16 passed on the clean commit; protected clean-checkout CI pending",
-            "audits": "PASS: precision, forbidden claims, BHSM status, frozen prediction integrity, and public readiness",
-            "artifact_determinism": "PASS: ten v11.3 artifacts plus canonical gate were byte-identical across two materializations",
+            "focused": "PASS: v11.3-v11.5 construction, download-review, action-assembly, and current-kernel checks",
+            "full_pytest": "pending for v11.5 branch; focused tests pass",
+            "audits": "pending final v11.5 provenance-boundary repository audit",
+            "artifact_determinism": "PASS: v11.4/v11.5 artifacts and reviewed packet report are byte-identical across two materializations",
         },
         "source_base_main_sha": SOURCE_BASE_MAIN_SHA,
         "source_base_tree_sha": SOURCE_BASE_TREE_SHA,
         "current_main_sha": "RESOLVE_AT_RUNTIME_WITH_GIT_REV_PARSE_HEAD",
         "current_tree_sha": "RESOLVE_AT_RUNTIME_WITH_GIT_REV_PARSE_HEAD_TREE",
         "sha_embedding_policy": "a commit cannot contain its own eventual merge SHA; final merged SHA is reported from Git and the tree is contract-tested",
-        "live_merged_status": "v11.2 at campaign branch point; v11.3 becomes live when this tree is merged to main",
+        "live_merged_status": "v11.3 on main at branch point; v11.5 becomes live when this tree is merged",
         "active_branch_status": PRIMARY_VERDICT,
         "haar_scale_status": "attachment generator normalized conventionally; physical lambda_D classification remains downstream of the common Hessian quotient",
         "historical_recovery_status": PRIMARY_VERDICT,
@@ -131,20 +140,20 @@ def status_payload() -> dict[str, Any]:
         "new_continuous_physical_parameters": [],
         "measured_particle_inputs": [],
         "physical_outputs_promoted": [],
+        "conditional_outputs_available": ["charged-lepton mass candidate", "up/down hierarchy seeds", "author-selected unitary CKM candidate", "candidate Jarlskog invariant"],
     }
 
 
 def public_repo_status() -> str:
     return (
-        "BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. "
-        "Current campaign status: v11.3 dresses the action-owned Lambda85 compatibility matcher reciprocally, with "
-        "I_C=Q_H(G8), I_W=g5, w(I_C)=-1/2, and w(I_W)=+1/2 while the intrinsic enclosure remains neutral. "
-        "The algebraic matcher derives a signed q_D source and total three-sector stress-transfer identity; it generates "
-        "neither a linear nor a quadratic A_D term. Its boundary variation and ordinary core closure are finite. "
-        "Mark II is reached conditionally: the exact action-normalized core/wall response Gram-Hessian on the common attachment domain remains open. "
-        "Physical equivalence and the physical-or-conventional status of lambda_D are not claimed. "
-        "The v11.0 logarithmic depth, positive Haar metric, healthy conditional support pair, "
-        "infinite-distance core endpoint, canonical ontology, and frozen generation architecture remain intact. "
-        "No core transfer operator, physical three-mode Hessian, stable particle cycle, mass, CKM/PMNS matrix, "
-        "normalized M4 action, or quantum probability law is emitted. Frozen predictions are unchanged."
+        "BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: structural architecture integrated conditional; frozen predictions unchanged; physical eV/GeV neutrino mass closure remains open; external HEP runtime integration remains gated. "
+        "Current campaign status: v11.5 preserves the v11.3 reciprocal attachment and evaluates the common-domain "
+        "response in its canonical whitened coordinates. On the selected finite-radius core branch the constrained "
+        "response is positive and nondegenerate. A minimal intrinsic M4 charged-lepton spectral action, conditional "
+        "up/down Yukawa pair, and full-rank no-fit spectral charged-current candidate are executable; the kernel "
+        "is unitary, closes SU2 exactly, preserves family-central neutral currents, and carries nonzero CP without measured "
+        "mixing inputs. The kernel is an author-selected no-fit action candidate, not action-derived. Mark III remains open "
+        "until a parent-action mixed second variation/current pairing recovers it or a stated uniqueness theorem selects it. "
+        "RG transport, normalization, and empirical tests are downstream conditional evaluations and cannot replace that provenance gate. "
+        "Mark IV and BHSM 1.0 release completion remain open. Frozen predictions are unchanged."
     )

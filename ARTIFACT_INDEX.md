@@ -1,5 +1,22 @@
 # BHSM Artifact Index
 
+## BHSM v11.5 conditional flavor-action assembly
+
+- `artifacts/BHSM_common_attachment_response_v11_4.json`: canonical whitened
+  common-domain response and family-octave roots.
+- `artifacts/BHSM_minimal_M4_charged_lepton_action_v11_4.json`: conditional
+  trace-normalized charged-lepton spectral action.
+- `artifacts/BHSM_quark_yukawa_CKM_gate_v11_4.json`: up/down spectral pair and
+  canonical-identification no-mixing theorem.
+- `artifacts/BHSM_spectral_charged_current_v11_5.json`: full-rank no-fit
+  author-selected charged-current candidate, SU(2) audit, CP invariant, and open action-provenance gate.
+- `artifacts/BHSM_completion_gate_v11_5.json`: current conditional candidate and provenance gate.
+- `artifacts/BHSM_download_progress_review_2026_08_03.json`: hash-locked review
+  of the nine manual research packets.
+
+Verdict: `BHSM_FLAVOR_ACTION_CANDIDATES_ASSEMBLED_WITH_CHARGED_CURRENT_PROVENANCE_GATE_OPEN`.
+Next object: `PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL`.
+
 ## BHSM v11.3 reciprocal core-surface attachment campaign
 
 Ten deterministic v11.3 records cover the recovered incidence ledger,

@@ -1,0 +1,107 @@
+{
+  "SU2_residuals": {
+    "[T1,T2]-iT3": 1.7609662062125164e-16,
+    "[T3,Tminus]+Tminus": 0.0,
+    "[T3,Tplus]-Tplus": 0.0,
+    "[Tplus,Tminus]-2T3": 3.521798114113826e-16
+  },
+  "action_derived": false,
+  "action_ownership": "NOT_ESTABLISHED: the kernel has not been recovered from a parent-action mixed second variation/current pairing and is not selected by a stated uniqueness theorem",
+  "artifact": "BHSM_spectral_charged_current_v11_5",
+  "basis_order": [
+    "light",
+    "middle",
+    "heavy"
+  ],
+  "candidate_action_term": "-(g2/sqrt(2))[W+_mu ubar_L gamma^mu K_ud d_L+h.c.]",
+  "classification": "AUTHOR_SELECTED_NO_FIT_ACTION_CANDIDATE_NOT_ACTION_DERIVED",
+  "determinant_modulus": 1.0,
+  "exact_next_object": "PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL",
+  "input_rule": {
+    "delta": "4 sqrt(S_overlap)=2/sqrt(pi)",
+    "sin_theta_12": "sqrt(T_down_light/T_down_middle)",
+    "sin_theta_13": "sqrt(T_up_light)",
+    "sin_theta_23": "2 T_down_middle"
+  },
+  "inputs": {
+    "delta": 1.1283791670955126,
+    "sin_theta_12": 0.2256184580048353,
+    "sin_theta_13": 0.0035623676140463315,
+    "sin_theta_23": 0.04386794299087895
+  },
+  "jarlskog": 3.10117029454378e-05,
+  "kernel_imag": [
+    [
+      0.0,
+      0.0,
+      -0.003219380927352981
+    ],
+    [
+      -0.00013758616958226645,
+      -3.1863557623551165e-05,
+      0.0
+    ],
+    [
+      -0.0031333523136212837,
+      -0.0007256525296335275,
+      0.0
+    ]
+  ],
+  "kernel_magnitudes": [
+    [
+      0.9742095600721029,
+      0.22561702639894465,
+      0.0035623676140463315
+    ],
+    [
+      0.2254664853946855,
+      0.9732628072432431,
+      0.04386766463774175
+    ],
+    [
+      0.008977584746899065,
+      0.04308671994825354,
+      0.9990309992869156
+    ]
+  ],
+  "kernel_real": [
+    [
+      0.9742095600721029,
+      0.22561702639894465,
+      0.0015251391615855954
+    ],
+    [
+      -0.22546644341515187,
+      0.9732628067216543,
+      0.04386766463774175
+    ],
+    [
+      0.008413033410517214,
+      -0.043080608912891026,
+      0.9990309992869156
+    ]
+  ],
+  "measured_mixing_inputs": [],
+  "new_coefficients": [],
+  "new_fields": [],
+  "primary_verdict": "BHSM_SPECTRAL_CHARGED_CURRENT_KERNEL_MATHEMATICALLY_VIABLE_AS_AUTHOR_SELECTED_NO_FIT_ACTION_CANDIDATE",
+  "provenance_gate_satisfied": false,
+  "unitarity_residual": 2.489446392764738e-16,
+  "validation": {
+    "SU2_algebra_closed": true,
+    "absence_of_axiomatic_uniqueness_theorem_recorded": true,
+    "absence_of_parent_action_mixed_variation_or_current_pairing_recorded": true,
+    "angles_recovered": true,
+    "full_rank": true,
+    "kernel_selection_is_author_selected": true,
+    "neutral_current_family_central": true,
+    "no_measured_CKM_input": true,
+    "no_new_continuous_coefficient": true,
+    "nonzero_CP": true,
+    "provenance_gate_remains_open": true,
+    "unitary": true,
+    "uses_existing_g2_only": true
+  },
+  "validation_passed": true,
+  "version": "v11.5"
+}

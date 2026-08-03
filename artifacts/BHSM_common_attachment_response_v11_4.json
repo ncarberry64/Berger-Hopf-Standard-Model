@@ -1,0 +1,163 @@
+{
+  "artifact": "BHSM_common_attachment_response_v11_4",
+  "characteristic_equation": "3 mu^2-2(h_C+K+1) mu+h_C(K+1)=0",
+  "classification": "DERIVED_ON_AUTHOR_SELECTED_FINITE_RADIUS_CORE_BRANCH",
+  "constraint_jacobian": [
+    [
+      -1,
+      1,
+      1
+    ]
+  ],
+  "coordinate_order": [
+    "q_C",
+    "q_W",
+    "x_D=q_D/lambda_D"
+  ],
+  "exact_next_object": "MINIMAL_M4_CHARGED_LEPTON_ACTION_WITH_TRACE_NORMALIZED_HOPF_SEMIGROUP",
+  "family_octaves": {
+    "heavy": 0,
+    "light": 99,
+    "middle": 35
+  },
+  "ground_hessian_matrix": [
+    [
+      0.181391690148362,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "ground_reduced_hessian": [
+    [
+      0.181391690148362,
+      0.181391690148362
+    ],
+    [
+      0.181391690148362,
+      1.181391690148362
+    ]
+  ],
+  "inverse_octave_checks": {
+    "heavy": 5.995204332975845e-15,
+    "light": 98.99999999914081,
+    "middle": 34.99999999999181
+  },
+  "kinetic_matrix": [
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      1
+    ]
+  ],
+  "lower_family_roots": {
+    "heavy": 0.08620600507952429,
+    "light": 0.09065467908218731,
+    "middle": 0.09058131073338889
+  },
+  "normalization_fix": "retain the v11.3 action-whitened coordinates and apply one shared map W to both K_white=W^T K_action W and H_white=W^T H_action W; do not combine them with the separate unwhitened packet pencil",
+  "primary_verdict": "BHSM_COMMON_ATTACHMENT_RESPONSE_POSITIVE_AND_NONDEGENERATE_ON_SELECTED_CORE_BRANCH",
+  "reduced_kinetic_matrix": [
+    [
+      2,
+      1
+    ],
+    [
+      1,
+      2
+    ]
+  ],
+  "source_ledger": {
+    "constraint": {
+      "source": "v11.3 reciprocal Lambda85 matcher",
+      "status": "ACTION_DERIVED"
+    },
+    "core_curvature": {
+      "source": "BHSM_dynamic_envelope_reduction_v10_0 breathing_frequency_squared",
+      "status": "ACTION_DERIVED_ON_SELECTED_FINITE_RADIUS_CORE_BRANCH"
+    },
+    "depth_curvature": {
+      "source": "v11.0 positive Haar support metric plus the round S3 spectral octave",
+      "status": "CONDITIONAL_SPECTRAL_ACTION_ASSIGNMENT"
+    },
+    "kinetic_gram": {
+      "source": "v11.3 action-normalized local KKT model",
+      "status": "ACTION_WHITENED_CONDITIONAL"
+    },
+    "wall_curvature": {
+      "source": "BHSM_fixed_h_lyapunov_schmidt_potential_v6_30_5 critical quadratic coefficient",
+      "status": "ACTION_DERIVED_AT_CRITICAL_WALL_BRANCH"
+    }
+  },
+  "tangent_basis": [
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      0,
+      1
+    ]
+  ],
+  "validation": {
+    "critical_wall_curvature_zero": true,
+    "family_octaves_reconstructed": true,
+    "family_roots_nondegenerate": true,
+    "family_roots_positive": true,
+    "ground_depth_curvature_one": true,
+    "no_measured_mass_input": true,
+    "reduced_hessian_positive": true,
+    "reduced_kinetic_exact": true,
+    "shared_whitening_map_applied_to_gram_and_hessian": true,
+    "tangent_basis_exact": true,
+    "v11_3_constraint_preserved": true,
+    "whitened_kinetic_preserved": true
+  },
+  "validation_passed": true,
+  "version": "v11.4",
+  "whitening_provenance": {
+    "gram_transform": "K_white=W^T K_action W",
+    "hessian_transform": "H_white=W^T H_action W",
+    "incompatible_unwhitened_packet_pencil_used": false,
+    "map_from_v11_3_action_whitened_coordinates": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ]
+  }
+}
