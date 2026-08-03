@@ -302,3 +302,13 @@ Current verdict:
 
 Exact next object:
 `ACTION_PRINCIPLE_FIXING_Z_UPSILON_U_UPSILON_AND_SUPPORT_COUPLINGS`.
+# v11.6 parent-action charged-current gate
+
+- Direct action route: evaluated. The effective SU(2)L Dirac mixed variation has family kernel `I3`.
+- Physical rephasing equivalence: rejected because entrywise magnitudes differ from the v11.5 kernel.
+- Uniqueness route: rejected for the current axioms by a continuous family of full-rank, unitary, CP-odd, SU(2)-closing, rephasing-inequivalent kernels.
+- Spectral-only route: commuting v11.4 `H_u,H_d` have diagonal joint functional calculus and cannot generate nontrivial mixing.
+- Mark III: `NOT_REACHED`.
+- Mark IV: `NOT_REACHED`.
+- Exact next object: `ACTION_OWNED_COMMON_DOMAIN_UP_DOWN_FAMILY_WAVEFUNCTION_ORIENTATION_AND_CURRENT_PAIRING_MAP`.
+- Verdict: `BHSM_PARENT_ACTION_CURRENT_REDUCTION_BLOCKED_BY_UNFIXED_COMMON_DOMAIN_FAMILY_WAVEFUNCTION_MAP`.

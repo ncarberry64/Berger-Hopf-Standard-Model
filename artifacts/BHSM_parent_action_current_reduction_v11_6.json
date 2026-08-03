@@ -1,0 +1,80 @@
+{
+  "action_kernel_imag": [
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0
+    ]
+  ],
+  "action_kernel_real": [
+    [
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "artifact": "BHSM_parent_action_current_reduction_v11_6",
+  "calculation": {
+    "action_term": "int sqrt(-h) i bar(Q_L) gamma^mu D_mu Q_L",
+    "covariant_derivative_charged_piece": "-i g2 (W+ T+ + W- T-)/sqrt(2)",
+    "mass_basis_rule": "V_action=W_u^dagger I3 W_d",
+    "mixed_variation": "delta^3 S4/(delta W+_mu delta bar(u_L,i) delta d_L,j) = (g2/sqrt(2)) gamma^mu delta_ij",
+    "v11_4_canonical_response_rule": "W_u=W_d=I3 up to diagonal phases and common slot ordering",
+    "v11_4_canonical_result": "V_action=I3 up to diagonal quark-field rephasings; J=0",
+    "weak_basis_family_kernel": "I3"
+  },
+  "equivalence_result": "NOT_EQUIVALENT_UP_TO_LEFT_RIGHT_DIAGONAL_QUARK_REPHASING",
+  "exact_next_object": "ACTION_OWNED_COMMON_DOMAIN_UP_DOWN_FAMILY_WAVEFUNCTION_ORIENTATION_AND_CURRENT_PAIRING_MAP",
+  "missing_map": {
+    "codomain": "frozen down family module F_d on the same domain",
+    "domain": "frozen up family module F_u on the common attachment Hilbert domain",
+    "not_supplied_by": [
+      "diagonal scalar spectral weights",
+      "triality projector labels alone",
+      "unitarity or SU2 closure",
+      "the polar functor after an unsourced raw kernel is declared"
+    ],
+    "required_data": [
+      "normalized common-domain up and down family wavefunctions",
+      "their action-owned relative orientation and phase convention",
+      "the SU2L raising-current operator on that common domain",
+      "the action measure and projector sandwich defining <u_i,J_plus d_j>_common"
+    ]
+  },
+  "primary_verdict": "BHSM_PARENT_ACTION_CURRENT_REDUCTION_BLOCKED_BY_UNFIXED_COMMON_DOMAIN_FAMILY_WAVEFUNCTION_MAP",
+  "rephasing_invariant_magnitude_residual": 0.3270982525105819,
+  "v11_5_kernel_off_diagonal_norm": 0.3249804664359198,
+  "validation": {
+    "action_kernel_full_rank": true,
+    "action_kernel_is_I3": true,
+    "no_empirical_inputs": true,
+    "no_parent_action_spectral_kernel_recovery": true,
+    "not_equivalent_by_quark_rephasing": true,
+    "spectral_kernel_has_nonzero_off_diagonal_entries": true,
+    "v11_4_family_modules_exactly_traced": true,
+    "v11_4_responses_commute_in_canonical_basis": true
+  },
+  "validation_passed": true,
+  "version": "v11.6",
+  "why": "left/right diagonal rephasings preserve every entry magnitude, while I3 has zero off-diagonal magnitudes and the v11.5 kernel does not"
+}

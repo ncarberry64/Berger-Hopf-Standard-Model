@@ -13,9 +13,9 @@ def test_current_bhsm_status_json_schema() -> None:
     assert status["candidate_architecture_complete"] is True
     assert status["full_bhsm_proven"] is False
     assert status["standard_model_fully_derived"] is False
-    assert status["current_version"] == "v11.5"
-    assert status["current_exact_verdict"] == "BHSM_FLAVOR_ACTION_CANDIDATES_ASSEMBLED_WITH_CHARGED_CURRENT_PROVENANCE_GATE_OPEN"
-    assert status["next_exact_object"] == "PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL"
+    assert status["current_version"] == "v11.6"
+    assert status["current_exact_verdict"] == "BHSM_PARENT_ACTION_CURRENT_REDUCTION_BLOCKED_BY_UNFIXED_COMMON_DOMAIN_FAMILY_WAVEFUNCTION_MAP"
+    assert status["next_exact_object"] == "ACTION_OWNED_COMMON_DOMAIN_UP_DOWN_FAMILY_WAVEFUNCTION_ORIENTATION_AND_CURRENT_PAIRING_MAP"
     assert status["frozen_predictions_changed"] is False
     assert status["official_predictions_changed"] is False
 
