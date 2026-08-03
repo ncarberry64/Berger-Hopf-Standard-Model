@@ -2,21 +2,27 @@
 
 ## Current public claim boundary
 
-V11.5 verdict:
-`BHSM_FLAVOR_ACTION_CANDIDATES_ASSEMBLED_WITH_CHARGED_CURRENT_PROVENANCE_GATE_OPEN`.
-The canonical v11.3 whitened KKT response is positive and nondegenerate on the
-selected finite-radius core branch. A minimal M4 charged-lepton spectral action,
-up/down spectral pair, and no-fit unitary charged-current kernel are now explicit.
-The kernel closes SU(2) and carries nonzero CP without measured mixing inputs.
-The charged-current kernel is an author-selected no-fit action candidate. Full
-rank, unitarity, SU(2) closure, nonzero CP, and frozen inputs establish
-mathematical viability but do not make it action-derived. Mark III and
-nontrivial CKM remain open unless an explicit parent-action mixed second
-variation/current pairing recovers the kernel or a stated uniqueness theorem
-selects it from declared BHSM axioms.
+V11.6 verdict:
+`BHSM_PARENT_ACTION_CURRENT_REDUCTION_BLOCKED_BY_UNFIXED_COMMON_DOMAIN_FAMILY_WAVEFUNCTION_MAP`.
+The live effective SU(2)L Dirac mixed variation has family kernel `I3`. It is
+not rephasing-equivalent to the v11.5 spectral kernel. Full rank, unitarity,
+SU(2) closure, nonzero CP, and neutral-current centrality leave a continuous
+family of inequivalent kernels, so they do not establish uniqueness. The
+commuting v11.4 response pair also cannot generate mixing by joint functional
+calculus. The v11.5 kernel remains an author-selected no-fit action candidate,
+not an action-derived physical CKM matrix. Mark III remains open.
 No parameter-free absolute quark spectrum, PMNS completion, or empirical
 replacement claim is made. The next exact object is
+`ACTION_OWNED_COMMON_DOMAIN_UP_DOWN_FAMILY_WAVEFUNCTION_ORIENTATION_AND_CURRENT_PAIRING_MAP`.
+
+### v11.5 historical claim boundary
+
+V11.5 verdict was
+`BHSM_FLAVOR_ACTION_CANDIDATES_ASSEMBLED_WITH_CHARGED_CURRENT_PROVENANCE_GATE_OPEN`,
+with exact next object
 `PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL`.
+V11.6 attacks both branches of that disjunction and replaces it with the more
+precise action-level missing object above.
 
 ### v11.3 historical claim boundary
 

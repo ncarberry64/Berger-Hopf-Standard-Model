@@ -1,4 +1,50 @@
-# Current BHSM Status
+# Current BHSM status
+
+Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a completed replacement of the Standard Model. The program goal remains replacement by derivation, with the Standard Model retained as the preserved infrared layer until that derivation is complete.
+
+## v11.6 parent-action charged-current result
+
+The live effective four-dimensional action contains the left-handed quark
+current through `i bar(Psi) gamma^mu D_mu Psi`. Its mixed variation with
+respect to `W+`, `bar(u_L,i)`, and `d_L,j` has family factor `delta_ij`; the
+action-owned weak-basis kernel is therefore `I3`. The diagonal, commuting
+v11.4 up/down response pair leaves this result diagonal up to quark-field
+rephasings and common slot ordering.
+
+The v11.5 spectral kernel is not equivalent to this action current under
+allowed left/right diagonal quark rephasings: those rephasings preserve every
+entry magnitude, whereas `I3` has zero off-diagonal entries and the v11.5
+kernel does not.
+
+The uniqueness route also fails for the current declared axioms. A continuous
+family of rephasing-inequivalent unitary kernels remains full rank, closes the
+same SU(2) algebra, preserves the family-central neutral current, and has a
+nonzero CP invariant. Joint functional calculus of the commuting v11.4
+response operators is diagonal and cannot supply the missing orientation.
+
+Verdict:
+`BHSM_PARENT_ACTION_CURRENT_REDUCTION_BLOCKED_BY_UNFIXED_COMMON_DOMAIN_FAMILY_WAVEFUNCTION_MAP`.
+
+Exact next object:
+`ACTION_OWNED_COMMON_DOMAIN_UP_DOWN_FAMILY_WAVEFUNCTION_ORIENTATION_AND_CURRENT_PAIRING_MAP`.
+
+Mark I is reached. Mark II is reached on the selected finite-radius core
+branch. Mark III and Mark IV are not reached, and BHSM 1.0 is incomplete. The
+v11.5 kernel remains an author-selected no-fit action candidate; no physical
+CKM matrix or unconditional flavor action is claimed. RG transport,
+normalization, and empirical replacement tests remain downstream conditional
+evaluations and cannot replace the action-provenance gate. Frozen predictions
+are unchanged.
+
+## Preserved historical audit statements
+
+No numerical neutrino prediction or local FTL claim is made. No numerical closure is claimed by the legacy scalar/topographic audits. PO-BH-61 completes a derivation-source audit; it does not close the numerical profile problem. The full virtual loop/threshold source remains open.
+
+| Release invariant | Value |
+| --- | --- |
+| Official predictions changed | no |
+
+## Preserved full historical status ledger
 
 ## v11.5 authoritative conditional flavor-action status
 
@@ -45,7 +91,6 @@ the intrinsic enclosure neutral. The multiplier equation is
 signed scalar source and the diffeomorphism Ward identity closes total
 core/wall/depth transfer. Since the matcher contains no derivatives, its
 linear `A_D` and quadratic `A_D^2` contributions are exactly zero.
-
 The boundary presymplectic contribution is zero, and ordinary-core closure
 is finite on the constraint surface. The exact action-character matrix grows
 from rank 7/nullity 12 to rank 11/nullity 8, while the isolated attachment
@@ -93,7 +138,6 @@ directions. Boundary, core-finiteness, anomaly, and equivalence tests do not
 remove this kernel. The five directions are not one common normalization.
 
 ## v11.1 historical support-representation status
-
 The stratified action category and two fixed-character support lifts are now
 explicit. The representatives are not linearly naturally isomorphic, but this
 does not establish physical inequivalence: on the regular domain their ratio
@@ -669,7 +713,6 @@ physical response matrices remain undefined; the virtual-door factor
 remains diagnostic and alpha has no action attachment to mass incidence.
 
 RB-15 remains `BLOCKED_EXACT_OBJECT_PROVED`; RB-16 remains downstream.
-
 Current exact verdict:
 `BHSM_PROJECTED_SPECTRAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DERIVED_INTERTWINER_FROM_FROZEN_LEDGER_TO_LOCALIZED_ACTION_SPECTRUM`.
 

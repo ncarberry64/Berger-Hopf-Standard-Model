@@ -1,0 +1,109 @@
+{
+  "action_owned_current_source": "T4_fermion SU2L covariant derivative",
+  "artifact": "BHSM_parent_action_charged_current_v11_6",
+  "classification": "PARENT_ACTION_TERM_AND_VARIATION_PROVENANCE_LEDGER",
+  "cross_level_reduction_status": "MISSING_BULK_GAUGE_SPINOR_REDUCTION",
+  "parent_S8_current_source": null,
+  "sources": [
+    {
+      "family_factor": "I3 in the weak/generation basis",
+      "mixed_variation": "delta^3 S4/(delta W+_mu delta bar(u_L) delta d_L) = g2 gamma^mu I3/sqrt(2)",
+      "ownership": "EFFECTIVE_ACTION_OWNED",
+      "source": "src/bhsm/interface/master_action/terms.py",
+      "term": "T4_fermion = int sqrt(-h) i bar(Psi) gamma^mu D_mu Psi"
+    },
+    {
+      "family_factor": "Y_u,Y_d are typed independent inputs, not a spectral cross-current selection",
+      "mixed_variation": "mass-basis current is W_u^dagger W_d only after independently supplied Yukawa diagonalizations",
+      "ownership": "EFFECTIVE_ACTION_INPUT",
+      "source": "src/bhsm/interface/master_action/terms.py",
+      "term": "T4_Yukawa with independent Y_u and Y_d"
+    },
+    {
+      "family_factor": "J_ch and X_ch are not explicitly defined or action-normalized",
+      "mixed_variation": "not evaluable as a kernel",
+      "ownership": "CONDITIONAL_SYMBOLIC_TEMPLATE",
+      "source": "src/bhsm/interface/unified_dynamical_action.py",
+      "term": "g_ch Re <J_ch(P_gen Psi,A_SU2),X_ch(P_ch Psi)>_Sigma"
+    },
+    {
+      "family_factor": "K_CG must first be action derived",
+      "mixed_variation": "not a source for K_CG",
+      "ownership": "CONDITIONAL_INTERFACE_NOT_ACTIVE_PARENT_TERM",
+      "source": "src/bhsm/interface/master_action/common_parent_charged_current_attachment.py",
+      "term": "L_cc^CG with U_CG=Pol(K_CG)"
+    },
+    {
+      "family_factor": "commuting diagonal operators; canonical CKM=I3 and J=0",
+      "mixed_variation": "does not supply <u_i,J_plus_action d_j>_common",
+      "ownership": "CONDITIONAL_SPECTRAL_RESPONSE_PAIR",
+      "source": "src/bhsm/interface/completion/quark_yukawa_ckm_v11_4.py",
+      "term": "diagonal common-basis H_u and H_d response pair"
+    },
+    {
+      "family_factor": "nontrivial unitary 3x3 kernel",
+      "mixed_variation": "absent from the existing action",
+      "ownership": "AUTHOR_SELECTED_NO_FIT_ACTION_CANDIDATE",
+      "source": "src/bhsm/interface/completion/spectral_charged_current_v11_5.py",
+      "term": "declared coefficient-free K_ud spectral rule"
+    }
+  ],
+  "v11_5_kernel_factor_provenance": [
+    {
+      "factor": "sin(theta12)=sqrt(T_down_light/T_down_middle)",
+      "parent_action_variation_source": null,
+      "source": "src/bhsm/interface/completion/spectral_charged_current_v11_5.py",
+      "status": "AUTHOR_SELECTED_RULE_USING_FROZEN_V11_4_SPECTRAL_WEIGHTS"
+    },
+    {
+      "factor": "sin(theta23)=2*T_down_middle",
+      "parent_action_variation_source": null,
+      "source": "src/bhsm/interface/completion/spectral_charged_current_v11_5.py",
+      "status": "AUTHOR_SELECTED_RULE; FACTOR_2_NOT_SELECTED_BY_CURRENT ACTION"
+    },
+    {
+      "factor": "sin(theta13)=sqrt(T_up_light)",
+      "parent_action_variation_source": null,
+      "source": "src/bhsm/interface/completion/spectral_charged_current_v11_5.py",
+      "status": "AUTHOR_SELECTED_RULE_USING_FROZEN_V11_4_SPECTRAL_WEIGHT"
+    },
+    {
+      "factor": "delta=2/sqrt(pi)",
+      "parent_action_variation_source": null,
+      "source": "src/bhsm/interface/completion/spectral_charged_current_v11_5.py",
+      "status": "AUTHOR_SELECTED_PHASE_RULE; NO ACTION-SELECTED COMPLEX ORIENTATION"
+    },
+    {
+      "factor": "standard three-angle one-phase unitary parameterization",
+      "parent_action_variation_source": null,
+      "source": "src/bhsm/interface/completion/spectral_charged_current_v11_5.py",
+      "status": "CONVENTIONAL_UNITARY_PARAMETERIZATION"
+    },
+    {
+      "factor": "g2/sqrt(2) and W+/W- adjoint pair",
+      "parent_action_variation_source": "T4_fermion covariant derivative",
+      "source": "src/bhsm/interface/master_action/terms.py",
+      "status": "EFFECTIVE_SU2L_DIRAC_CURRENT_OWNED; g2 VALUE REMAINS LEVELWISE INPUT"
+    },
+    {
+      "factor": "frozen up/down three-slot modules",
+      "parent_action_variation_source": null,
+      "source": "src/bhsm/interface/master_action/generation_projector_action_attachment.py",
+      "status": "FROZEN_DERIVED_CONDITIONAL_GEOMETRIC_STRUCTURE_ATTACHED_TO_EFFECTIVE_M4"
+    },
+    {
+      "factor": "common-domain wavefunction pairing <u_i,J_plus d_j>_common",
+      "parent_action_variation_source": null,
+      "source": null,
+      "status": "MISSING_EXACT_ACTION_OBJECT"
+    }
+  ],
+  "validation": {
+    "conditional_templates_not_promoted": true,
+    "explicit_effective_dirac_source_located": true,
+    "no_measured_mixing_inputs": true,
+    "v11_5_boundary_preserved": true
+  },
+  "validation_passed": true,
+  "version": "v11.6"
+}

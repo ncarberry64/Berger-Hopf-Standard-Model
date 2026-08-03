@@ -4,12 +4,12 @@ from __future__ import annotations
 
 from typing import Any
 
-PRIMARY_VERDICT = "BHSM_FLAVOR_ACTION_CANDIDATES_ASSEMBLED_WITH_CHARGED_CURRENT_PROVENANCE_GATE_OPEN"
-EXACT_NEXT_OBJECT = "PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL"
+PRIMARY_VERDICT = "BHSM_PARENT_ACTION_CURRENT_REDUCTION_BLOCKED_BY_UNFIXED_COMMON_DOMAIN_FAMILY_WAVEFUNCTION_MAP"
+EXACT_NEXT_OBJECT = "ACTION_OWNED_COMMON_DOMAIN_UP_DOWN_FAMILY_WAVEFUNCTION_ORIENTATION_AND_CURRENT_PAIRING_MAP"
 
 
-CURRENT_CAMPAIGN = "v11.5 Minimal flavor action and no-fit spectral charged-current assembly"
-CURRENT_VERSION = "v11.5"
+CURRENT_CAMPAIGN = "v11.6 Parent-action spectral charged-current reduction and uniqueness audit"
+CURRENT_VERSION = "v11.6"
 SOURCE_BASE_MAIN_SHA = "3e324a05e50b8128d28b84968b4ef3d2b064dd73"
 SOURCE_BASE_TREE_SHA = "RESOLVE_FROM_BASELINE_COMMIT"
 COMPLETION_MARKS = {
@@ -46,6 +46,10 @@ DERIVED_RESULTS = [
     "canonical whitened common-domain KKT response with positive nondegenerate family-octave roots",
     "minimal intrinsic M4 charged-lepton spectral action with one universal scale calibration",
     "conditional up/down spectral Yukawa operator pair",
+    "explicit mixed variation of the effective SU2L Dirac current with family kernel I3",
+    "rephasing-invariant proof that the v11.5 spectral kernel is not the live action current",
+    "continuous counterexample family disproving selection by the v11.5 viability properties",
+    "joint-functional-calculus no-go for nontrivial mixing from the commuting v11.4 response pair",
 ]
 CONDITIONAL_RESULTS = [
     "author-selected finite-radius core branch",
@@ -68,12 +72,14 @@ INVALIDATED_RESULTS = [
     "black-hole de-envelopment without a conserved surface receiving channel",
     "the recovered algebraic matcher requires an independent linear A_D current or seagull term",
     "flatness of A_D proves physical removability at the boundary or core",
+    "full rank, unitarity, SU2 closure, family-central neutral current, and nonzero CP uniquely select the v11.5 kernel",
+    "commuting diagonal up/down spectral response operators alone generate nontrivial CKM mixing",
 ]
 OPEN_RESULTS = [
     EXACT_NEXT_OBJECT,
     "complete supported parent action with its action-derived support current and quadratic connection completion",
     "core asymptotic phase space and conservative transfer operator",
-    "parent-action charged-current mixed second variation/current pairing or BHSM-axiom uniqueness theorem",
+    "action-owned common-domain up/down family wavefunction orientation and current pairing map",
     "downstream conditional RG, normalization, and empirical replacement evaluations",
     "physical PMNS extension, stable cycles, and quantum measurement law",
 ]
@@ -119,17 +125,17 @@ def status_payload() -> dict[str, Any]:
         "frozen_prediction_state": FROZEN_PREDICTION_STATE,
         "physical_outputs_available": PHYSICAL_OUTPUTS_AVAILABLE,
         "validation_summary": {
-            "focused": "PASS: v11.3-v11.5 construction, download-review, action-assembly, and current-kernel checks",
-            "full_pytest": "pending for v11.5 branch; focused tests pass",
-            "audits": "pending final v11.5 provenance-boundary repository audit",
-            "artifact_determinism": "PASS: v11.4/v11.5 artifacts and reviewed packet report are byte-identical across two materializations",
+            "focused": "PASS: v11.5 recovery plus v11.6 parent-current reduction, equivalence, and uniqueness checks",
+            "full_pytest": "pending final v11.6 branch validation",
+            "audits": "pending final v11.6 publication audit cadence",
+            "artifact_determinism": "PASS: v11.6 artifacts are byte-identical across repeated materializations",
         },
         "source_base_main_sha": SOURCE_BASE_MAIN_SHA,
         "source_base_tree_sha": SOURCE_BASE_TREE_SHA,
         "current_main_sha": "RESOLVE_AT_RUNTIME_WITH_GIT_REV_PARSE_HEAD",
         "current_tree_sha": "RESOLVE_AT_RUNTIME_WITH_GIT_REV_PARSE_HEAD_TREE",
         "sha_embedding_policy": "a commit cannot contain its own eventual merge SHA; final merged SHA is reported from Git and the tree is contract-tested",
-        "live_merged_status": "v11.3 on main at branch point; v11.5 becomes live when this tree is merged",
+        "live_merged_status": "v11.3 on main at branch point; v11.5 recovery is PR 218 and v11.6 is its stacked continuation",
         "active_branch_status": PRIMARY_VERDICT,
         "haar_scale_status": "attachment generator normalized conventionally; physical lambda_D classification remains downstream of the common Hessian quotient",
         "historical_recovery_status": PRIMARY_VERDICT,
@@ -140,20 +146,19 @@ def status_payload() -> dict[str, Any]:
         "new_continuous_physical_parameters": [],
         "measured_particle_inputs": [],
         "physical_outputs_promoted": [],
-        "conditional_outputs_available": ["charged-lepton mass candidate", "up/down hierarchy seeds", "author-selected unitary CKM candidate", "candidate Jarlskog invariant"],
+        "conditional_outputs_available": ["charged-lepton mass candidate", "up/down hierarchy seeds", "author-selected unitary CKM candidate", "candidate Jarlskog invariant", "action-current identity-kernel reduction", "spectral-current non-uniqueness counterexamples"],
     }
 
 
 def public_repo_status() -> str:
     return (
         "BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: structural architecture integrated conditional; frozen predictions unchanged; physical eV/GeV neutrino mass closure remains open; external HEP runtime integration remains gated. "
-        "Current campaign status: v11.5 preserves the v11.3 reciprocal attachment and evaluates the common-domain "
-        "response in its canonical whitened coordinates. On the selected finite-radius core branch the constrained "
-        "response is positive and nondegenerate. A minimal intrinsic M4 charged-lepton spectral action, conditional "
-        "up/down Yukawa pair, and full-rank no-fit spectral charged-current candidate are executable; the kernel "
-        "is unitary, closes SU2 exactly, preserves family-central neutral currents, and carries nonzero CP without measured "
-        "mixing inputs. The kernel is an author-selected no-fit action candidate, not action-derived. Mark III remains open "
-        "until a parent-action mixed second variation/current pairing recovers it or a stated uniqueness theorem selects it. "
+        "Current campaign status: v11.6 preserves the v11.5 recovery point and evaluates the live action current. The "
+        "effective SU2L Dirac mixed variation has family kernel I3. It is not rephasing-equivalent to the full-rank no-fit "
+        "spectral charged-current candidate. The viability properties leave a continuous family of inequivalent kernels, "
+        "and the commuting v11.4 response pair cannot generate mixing by joint functional calculus. The v11.5 kernel "
+        "therefore remains an author-selected no-fit action candidate, not action-derived. Mark III remains open pending an "
+        "action-owned common-domain up/down family wavefunction orientation and current pairing map. "
         "RG transport, normalization, and empirical tests are downstream conditional evaluations and cannot replace that provenance gate. "
         "Mark IV and BHSM 1.0 release completion remain open. Frozen predictions are unchanged."
     )

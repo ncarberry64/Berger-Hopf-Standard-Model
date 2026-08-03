@@ -1,14 +1,17 @@
 # BHSM Falsification Entry Point
 
-For v11.5, the verdict
-`BHSM_FLAVOR_ACTION_CANDIDATES_ASSEMBLED_WITH_CHARGED_CURRENT_PROVENANCE_GATE_OPEN`
-is falsified internally if the canonical whitened KKT response is not positive
-on the selected branch, if the spectral current loses rank or unitarity, if the
-weak generators fail SU(2) closure, if a neutral family-changing current is
-generated, or if a measured mass/mixing value enters the action rule. It is
-falsified as an empirical replacement if the predeclared common-scheme finite
-benchmark fails. The kernel nevertheless remains an author-selected candidate
-even if every downstream test passes. Its current upstream gate is:
+For v11.6, the verdict
+`BHSM_PARENT_ACTION_CURRENT_REDUCTION_BLOCKED_BY_UNFIXED_COMMON_DOMAIN_FAMILY_WAVEFUNCTION_MAP`
+is falsified by an existing action term and declared common domain whose mixed
+variation yields the v11.5 kernel up to quark rephasing, or by a valid theorem
+showing that prior declared BHSM axioms uniquely select that kernel. A target
+interface term, an unsourced raw kernel followed by polar decomposition, or
+downstream empirical success is not a falsifier. Its exact upstream gate is:
+`ACTION_OWNED_COMMON_DOMAIN_UP_DOWN_FAMILY_WAVEFUNCTION_ORIENTATION_AND_CURRENT_PAIRING_MAP`.
+
+For v11.5, the historical verdict was
+`BHSM_FLAVOR_ACTION_CANDIDATES_ASSEMBLED_WITH_CHARGED_CURRENT_PROVENANCE_GATE_OPEN`,
+and its gate was
 `PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL`.
 
 The v11.3 criterion below is retained as historical chronology.
