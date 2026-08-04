@@ -2,6 +2,76 @@
 
 Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a completed replacement of the Standard Model. The program goal remains replacement by derivation, with the Standard Model retained as the preserved infrared layer until that derivation is complete.
 
+## v14.2 FR eta-knot color-matter completion audit
+
+V14.2 proves that the classical eta-wall stabilizer selector cannot source the
+retained independent SU3 Gauss law: every stabilizer generator satisfies
+`T^a u_eta=0`, hence `D_mu u_eta=partial_mu u_eta` and the conventional
+selector current vanishes. The selector fixes color polarization but is not
+the color-charged matter state.
+
+FR odd topology and the finite diagnostic inertia are preserved, but the
+physical one-particle Hilbert bundle is not derived. Normalized collective
+states, a complete moduli metric/measure, zero-mode quotient, regular domain,
+M4 gluing, retained-principal-bundle transition maps, and the physical
+`3/bar3` action remain open. FR parity does not derive a local Dirac action,
+and the existing S4 effective fermion term is not reused as eta provenance.
+
+Primary result:
+`BHSM_ETA_KNOT_TO_M4_COLOR_COUPLING_REMAINS_BLOCKED_AT_THE_COMMON_PARENT_CONNECTION_OR_EQUIVALENT_BUNDLE_GAUGING_THEOREM`.
+
+Exact next object:
+`ACTION_OWNED_ETA_EXTENSION_OF_THE_V7_1_PARENT_BUNDLE_REDUCTION_FUNCTOR_WITH_COMMON_SU3_CONNECTION_COLOR_AND_POLARIZATION_REPRESENTATIONS_AND_VARIATIONAL_GAUSS_LAW`.
+
+The conditional minimal-coupling variation is typed, but no eta-knot current
+or sourced independent Gauss equation is promoted. `A^P` remains restricted
+Berry geometry and `A` remains the independent physical connection; general
+color `c2` sectors and the Yang-Mills principal symbol are preserved. The
+boundary Dirac domain/index remains open, color is family central,
+`J_+^family=I3`, and no `K_ud`, physical `g3`, CKM, PMNS, or gauge-dressed BVP
+is emitted.
+
+## v14.1 eta-induced versus independent SU3 fork theorem
+
+The eta projector connection is reclassified as a restricted induced
+polarization-frame/Berry connection, not the full independent QCD connection.
+Its universal curvature planes and commutator closure can generate all eight
+su(3) directions, but the selector-derived spacetime curvature map has generic
+Jacobian rank 23 into 48 curvature components and linear rank zero at a
+constant selector. The composite `Tr(F_P^2)` action begins quartically in
+selector perturbations and has no quadratic gluon kinetic term at that vacuum.
+
+The universal polarization bundle over S6 has c1=c2=0. Naturality forces the
+M4 pullback bundle to have c2=0, so it cannot span general nonzero-instanton
+SU3 sectors. No action-owned wall-to-M4 extension or bundle isomorphism
+`Phi:E_P->E_color` exists. The retained Lambda85/Lambda54 matchers act on
+metric incidence data and do not currently instantiate a color connection
+constraint, transgression, or eta-sourced independent Gauss equation.
+
+The historical recovery corrects the earlier overstatement: v7.0-v7.1
+already owns a conditional parent associated-bundle and covariant reduction
+architecture, including normalized bulk-boundary measures, generic
+associated-mode transport, trace/pushforward maps, compatibility multipliers,
+and KKT variational intertwiners. The v8.8 current architecture also uses
+parent-induced associated-bundle connections. What remains unproved is that
+the eta polarization connection and independent M4 SU3 connection are the two
+associated projections of one action-owned parent connection.
+
+Branch decision:
+`BHSM_COMMON_PARENT_BUNDLE_AND_REDUCTION_ARCHITECTURE_ALREADY_EXISTS_CONDITIONALLY`.
+
+Projection-provenance verdict:
+`BHSM_ETA_POLARIZATION_AND_INDEPENDENT_M4_SU3_CONNECTION_HAVE_NOT_YET_BEEN_PROVEN_TO_BE_ASSOCIATED_PROJECTIONS_OF_THAT_PARENT_CONNECTION`.
+
+Exact continuation object:
+`RECOVERY_AND_ETA_EXTENSION_OF_THE_V7_0_V7_1_UNIFIED_PARENT_BUNDLE_CONNECTION_AND_COVARIANT_REDUCTION_FUNCTOR_TO_THE_M4_SU3_AND_ETA_POLARIZATION_ASSOCIATED_BUNDLES`.
+
+The boundary Dirac/index object remains a contract without a selected
+self-adjoint domain or evaluable APS invariant. Color remains identity on the
+C3 family factor, the weak family current remains I3, and no K_ud, physical
+CKM/PMNS value, physical g3, new field, or new continuous coefficient is
+introduced. Mark III and BHSM physical completion remain open.
+
 ## v14.0 eta-knot action-completion result
 
 The recovered v13.1–v13.5 chain has been reproduced and integrated

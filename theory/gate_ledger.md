@@ -1,5 +1,23 @@
 # Gate Ledger
 
+## v14.1 eta/SU3 connection fork gate
+
+The composite eta projector connection fails full physical-SU3 equivalence on
+three independent grounds: its constant-selector quadratic principal symbol
+has rank zero versus rank 24 for independent Yang-Mills; its generic
+spacetime-curvature Jacobian has rank 23 into 48 components; and its pullback
+bundle has c2=0, excluding general nonzero-instanton sectors. Full universal
+SU3 holonomy remains valid but is not field-space equivalence.
+
+The retained action owns no wall-to-M4 bundle map, no `E_P -> E_color`
+isomorphism, and no connection matcher or eta-sourced independent Gauss law.
+The unique branch classification is
+`BHSM_COLOR_DYNAMICS_REQUIRES_A_NEW_DECLARED_CROSS_STRATUM_BUNDLE_CONNECTION_ACTION_OBJECT`.
+The next gate is
+`ACTION_OWNED_COMMON_HIGHER_DIMENSIONAL_CONNECTION_WHOSE_M4_SU3_RESTRICTION_AND_ETA_POLARIZATION_CONNECTION_ARE_DERIVED_COMPATIBLE_PROJECTIONS`.
+Gauge-dressed singlet BVPs remain ineligible. Mark III and Mark IV are not
+reached.
+
 ## v14.0 eta-knot action gate
 
 The degree-one static eta-knot, FR odd-degree spin parity, eta-wall G2/SU3
