@@ -2,6 +2,35 @@
 
 Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a completed replacement of the Standard Model. The program goal remains replacement by derivation, with the Standard Model retained as the preserved infrared layer until that derivation is complete.
 
+## v14.1 eta-induced versus independent SU3 fork theorem
+
+The eta projector connection is reclassified as a restricted induced
+polarization-frame/Berry connection, not the full independent QCD connection.
+Its universal curvature planes and commutator closure can generate all eight
+su(3) directions, but the selector-derived spacetime curvature map has generic
+Jacobian rank 23 into 48 curvature components and linear rank zero at a
+constant selector. The composite `Tr(F_P^2)` action begins quartically in
+selector perturbations and has no quadratic gluon kinetic term at that vacuum.
+
+The universal polarization bundle over S6 has c1=c2=0. Naturality forces the
+M4 pullback bundle to have c2=0, so it cannot span general nonzero-instanton
+SU3 sectors. No action-owned wall-to-M4 extension or bundle isomorphism
+`Phi:E_P->E_color` exists. The retained Lambda85/Lambda54 matchers act on
+metric incidence data and do not provide a color connection constraint,
+transgression, or eta-sourced independent Gauss equation.
+
+Branch decision:
+`BHSM_COLOR_DYNAMICS_REQUIRES_A_NEW_DECLARED_CROSS_STRATUM_BUNDLE_CONNECTION_ACTION_OBJECT`.
+
+Exact continuation object:
+`ACTION_OWNED_COMMON_HIGHER_DIMENSIONAL_CONNECTION_WHOSE_M4_SU3_RESTRICTION_AND_ETA_POLARIZATION_CONNECTION_ARE_DERIVED_COMPATIBLE_PROJECTIONS`.
+
+The boundary Dirac/index object remains a contract without a selected
+self-adjoint domain or evaluable APS invariant. Color remains identity on the
+C3 family factor, the weak family current remains I3, and no K_ud, physical
+CKM/PMNS value, physical g3, new field, or new continuous coefficient is
+introduced. Mark III and BHSM physical completion remain open.
+
 ## v14.0 eta-knot action-completion result
 
 The recovered v13.1–v13.5 chain has been reproduced and integrated

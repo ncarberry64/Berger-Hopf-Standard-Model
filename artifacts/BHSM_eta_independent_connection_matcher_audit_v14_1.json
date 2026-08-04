@@ -1,0 +1,77 @@
+{
+  "artifact": "BHSM_eta_independent_connection_matcher_audit_v14_1",
+  "branch_decision": "BHSM_COLOR_DYNAMICS_REQUIRES_A_NEW_DECLARED_CROSS_STRATUM_BUNDLE_CONNECTION_ACTION_OBJECT",
+  "candidates": [
+    {
+      "candidate": "A=Phi_*AP",
+      "effect": "removes the independent gluon configuration space; cannot arise without a matcher/constraint",
+      "status": "NOT_ACTION_OWNED"
+    },
+    {
+      "candidate": "F_A=Phi_*F_P",
+      "effect": "forces the independent bundle into c2=0 and eliminates general instanton/gluon sectors",
+      "status": "NOT_ACTION_OWNED_AND_OVERCONSTRAINING"
+    },
+    {
+      "candidate": "connection transgression",
+      "effect": "Chern-Weil difference is a boundary term; a five-dimensional transgression requires a common bundle/connection not present",
+      "status": "ABSENT"
+    },
+    {
+      "candidate": "tr(A-Phi_*AP)^2",
+      "effect": "requires Phi and a dimensionful locking coefficient and gives an unbroken-color gauge boson mass",
+      "status": "REJECTED"
+    },
+    {
+      "candidate": "tr(F_A-Phi_*F_P)^2",
+      "effect": "requires Phi and a new relative normalization; it changes both dynamics without imposing equality exactly",
+      "status": "UNSELECTED_EXTENSION"
+    },
+    {
+      "candidate": "shared higher-dimensional universal connection",
+      "effect": "would derive both restrictions without a new low-energy field if supplied by the parent action",
+      "status": "PREFERRED_EXACT_MISSING_OBJECT"
+    }
+  ],
+  "eta_sourced_independent_Gauss_law": null,
+  "exact_next_object": "ACTION_OWNED_COMMON_HIGHER_DIMENSIONAL_CONNECTION_WHOSE_M4_SU3_RESTRICTION_AND_ETA_POLARIZATION_CONNECTION_ARE_DERIVED_COMPATIBLE_PROJECTIONS",
+  "retained_S4_gauge_term": {
+    "coefficient": "g1,g2,g3",
+    "expression": "-int sqrt(-h) sum_i Tr(F_i^2)/(4 g_i^2)",
+    "fields": [
+      "A_i",
+      "h_ab"
+    ],
+    "gauge_invariant": true,
+    "level": "S4eff",
+    "mass_dimension_closed": true,
+    "real": true,
+    "term_id": "T4_gauge",
+    "variation_used": "Yang-Mills equations and stress"
+  },
+  "retained_matcher": null,
+  "stratified_ownership": {
+    "S4_intrinsic": "retained localized EFT; not claimed to descend from G_AB",
+    "S5_and_GHY": "retained conditional stratified action",
+    "S8_env": "STRUCTURAL_POSTULATE",
+    "S_compatibility": "retained conditional ownership map",
+    "S_current": "eta spin current candidate plus unresolved physical pullback",
+    "classification": "DERIVED_CONDITIONAL",
+    "complete_action": "S_BHSM^env=S8^env+sum_(epsilon=+/-)(S5,epsilon+S_GHY,epsilon)+S4,intrinsic+S_compatibility+S_current",
+    "intrinsic_SM_from_metric_derived": false
+  },
+  "validation": {
+    "Lambda54_matches_seam_metrics_not_connections": true,
+    "Lambda85_matches_metrics_not_connections": true,
+    "S4_YM_has_no_eta": true,
+    "S8_eta_has_no_independent_SU3_connection": true,
+    "branch_decision_is_missing_action_object": true,
+    "gauge_reduction_missing": true,
+    "independent_SU3_Gauss_equation_not_eta_sourced": true,
+    "no_candidate_silently_added": true,
+    "no_existing_multiplier_or_transgression_for_color": true,
+    "physical_eta_current_pullback_missing": true
+  },
+  "validation_passed": true,
+  "version": "v14.1"
+}
