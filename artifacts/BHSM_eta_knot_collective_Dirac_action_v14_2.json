@@ -1,0 +1,54 @@
+{
+  "artifact": "BHSM_eta_knot_collective_Dirac_action_v14_2",
+  "effective_field_status": "INTENDED_SECOND_QUANTIZED_FR_KNOT_FIELD_NOT_ADDED_AS_AN_INDEPENDENT_UV_FIELD",
+  "ownership_ledger": [
+    {
+      "classification": "ACTION_DERIVED",
+      "contribution": "eta static profile",
+      "source": "retained eta action"
+    },
+    {
+      "classification": "QUANTIZATION_DERIVED",
+      "contribution": "FR odd line and spin parity",
+      "source": "pi1(Q_N)=Z2"
+    },
+    {
+      "classification": "GEOMETRY_DERIVED_RESTRICTED",
+      "contribution": "projector Berry connection",
+      "source": "eta polarization bundle"
+    },
+    {
+      "classification": "DERIVED_CONDITIONAL_NOT_FROM_COLLECTIVE_ACTION",
+      "contribution": "Weyl/Dirac principal symbol",
+      "source": "v13.4 local normal form"
+    },
+    {
+      "classification": "OPEN",
+      "contribution": "independent SU3 minimal coupling",
+      "source": null
+    },
+    {
+      "classification": "EFT_OWNED_NOT_ETA_DERIVED",
+      "contribution": "weak and hypercharge action",
+      "source": "retained S4eff Dirac term"
+    },
+    {
+      "classification": "OPEN",
+      "contribution": "response mass",
+      "source": null
+    }
+  ],
+  "target_normal_form": "int_M4 sqrt(-h) bar(Psi_eta)[i gamma^mu(nabla_spin+nabla_FR+nabla_Berry+rho_color(A)+rho_weak(W)+rho_Y(B))-M_response]Psi_eta",
+  "validation": {
+    "FR_topology_does_not_supply_Dirac_symbol": true,
+    "diagnostic_inertia_does_not_supply_local_first_order_action": true,
+    "existing_fermion_term_not_reused_as_eta_derivation": true,
+    "new_elementary_fermion_not_added": true,
+    "physical_Hilbert_bundle_missing": true,
+    "retained_Dirac_normal_form_identified": true,
+    "retained_SU3_representation_missing": true
+  },
+  "validation_passed": true,
+  "verdict": "COLLECTIVE_WEYL_DIRAC_KINETIC_ACTION_AND_MINIMAL_SU3_COUPLING_NOT_DERIVED_FROM_THE_RETAINED_ETA_MODULI_ACTION",
+  "version": "v14.2"
+}

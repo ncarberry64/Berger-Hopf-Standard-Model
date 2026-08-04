@@ -301,3 +301,12 @@ Exact verdict:
 
 Exact next object:
 `ACTION_PRINCIPLE_FIXING_Z_UPSILON_U_UPSILON_AND_SUPPORT_COUPLINGS`.
+# v14.2 eta-knot color-matter blocker update
+
+The classical stabilizer selector has zero SU3 current. FR spin/statistics
+parity, a rank-three polarization label, and a conditional Weyl normal form do
+not yet construct the normalized one-particle Hilbert bundle, physical
+`3/bar3` transition maps, collective Dirac action, or eta-sourced independent
+Gauss equation. The active exact object is
+`ACTION_OWNED_ETA_EXTENSION_OF_THE_V7_1_PARENT_BUNDLE_REDUCTION_FUNCTOR_WITH_COMMON_SU3_CONNECTION_COLOR_AND_POLARIZATION_REPRESENTATIONS_AND_VARIATIONAL_GAUSS_LAW`.
+Mark III remains open.

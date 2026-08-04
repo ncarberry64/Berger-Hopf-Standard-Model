@@ -1,6 +1,6 @@
 {
   "artifact": "BHSM_eta_independent_connection_matcher_audit_v14_1",
-  "branch_decision": "BHSM_COLOR_DYNAMICS_REQUIRES_A_NEW_DECLARED_CROSS_STRATUM_BUNDLE_CONNECTION_ACTION_OBJECT",
+  "branch_decision": "BHSM_COMMON_PARENT_BUNDLE_AND_REDUCTION_ARCHITECTURE_ALREADY_EXISTS_CONDITIONALLY",
   "candidates": [
     {
       "candidate": "A=Phi_*AP",
@@ -14,8 +14,8 @@
     },
     {
       "candidate": "connection transgression",
-      "effect": "Chern-Weil difference is a boundary term; a five-dimensional transgression requires a common bundle/connection not present",
-      "status": "ABSENT"
+      "effect": "the generic v7 reduction framework exists, but no common color/eta bundle, connection, or transgression is declared",
+      "status": "NOT_INSTANTIATED_IN_RECOVERED_ARCHITECTURE"
     },
     {
       "candidate": "tr(A-Phi_*AP)^2",
@@ -28,13 +28,14 @@
       "status": "UNSELECTED_EXTENSION"
     },
     {
-      "candidate": "shared higher-dimensional universal connection",
-      "effect": "would derive both restrictions without a new low-energy field if supplied by the parent action",
-      "status": "PREFERRED_EXACT_MISSING_OBJECT"
+      "candidate": "v7 parent-bundle connection eta extension",
+      "effect": "audit whether the recovered parent functor already induces both restrictions before proposing any new term",
+      "status": "RECOVERY_AND_EXTENSION_GATE"
     }
   ],
   "eta_sourced_independent_Gauss_law": null,
-  "exact_next_object": "ACTION_OWNED_COMMON_HIGHER_DIMENSIONAL_CONNECTION_WHOSE_M4_SU3_RESTRICTION_AND_ETA_POLARIZATION_CONNECTION_ARE_DERIVED_COMPATIBLE_PROJECTIONS",
+  "exact_next_object": "RECOVERY_AND_ETA_EXTENSION_OF_THE_V7_0_V7_1_UNIFIED_PARENT_BUNDLE_CONNECTION_AND_COVARIANT_REDUCTION_FUNCTOR_TO_THE_M4_SU3_AND_ETA_POLARIZATION_ASSOCIATED_BUNDLES",
+  "projection_provenance_verdict": "BHSM_ETA_POLARIZATION_AND_INDEPENDENT_M4_SU3_CONNECTION_HAVE_NOT_YET_BEEN_PROVEN_TO_BE_ASSOCIATED_PROJECTIONS_OF_THAT_PARENT_CONNECTION",
   "retained_S4_gauge_term": {
     "coefficient": "g1,g2,g3",
     "expression": "-int sqrt(-h) sum_i Tr(F_i^2)/(4 g_i^2)",
@@ -65,12 +66,14 @@
     "Lambda85_matches_metrics_not_connections": true,
     "S4_YM_has_no_eta": true,
     "S8_eta_has_no_independent_SU3_connection": true,
-    "branch_decision_is_missing_action_object": true,
+    "branch_decision_recovers_conditional_architecture": true,
     "gauge_reduction_missing": true,
+    "generic_cross_stratum_compatibility_framework_exists": true,
     "independent_SU3_Gauss_equation_not_eta_sourced": true,
     "no_candidate_silently_added": true,
-    "no_existing_multiplier_or_transgression_for_color": true,
-    "physical_eta_current_pullback_missing": true
+    "no_instantiated_multiplier_or_transgression_for_eta_color": true,
+    "physical_eta_current_pullback_missing": true,
+    "projection_provenance_remains_open": true
   },
   "validation_passed": true,
   "version": "v14.1"

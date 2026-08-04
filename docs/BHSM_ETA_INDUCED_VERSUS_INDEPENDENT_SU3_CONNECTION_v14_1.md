@@ -6,13 +6,17 @@ The eta-wall projector connection is a genuine induced color-frame/Berry
 connection, but it is not action-equivalent to the independent physical
 four-dimensional SU(3) connection.
 
-The unique final branch classification is:
+The recovered architectural classification is:
 
-`BHSM_COLOR_DYNAMICS_REQUIRES_A_NEW_DECLARED_CROSS_STRATUM_BUNDLE_CONNECTION_ACTION_OBJECT`
+`BHSM_COMMON_PARENT_BUNDLE_AND_REDUCTION_ARCHITECTURE_ALREADY_EXISTS_CONDITIONALLY`
+
+The remaining provenance verdict is:
+
+`BHSM_ETA_POLARIZATION_AND_INDEPENDENT_M4_SU3_CONNECTION_HAVE_NOT_YET_BEEN_PROVEN_TO_BE_ASSOCIATED_PROJECTIONS_OF_THAT_PARENT_CONNECTION`
 
 The exact next object is:
 
-`ACTION_OWNED_COMMON_HIGHER_DIMENSIONAL_CONNECTION_WHOSE_M4_SU3_RESTRICTION_AND_ETA_POLARIZATION_CONNECTION_ARE_DERIVED_COMPATIBLE_PROJECTIONS`
+`RECOVERY_AND_ETA_EXTENSION_OF_THE_V7_0_V7_1_UNIFIED_PARENT_BUNDLE_CONNECTION_AND_COVARIANT_REDUCTION_FUNCTOR_TO_THE_M4_SU3_AND_ETA_POLARIZATION_ASSOCIATED_BUNDLES`
 
 No new action term, field, multiplier, mass, locking coefficient, physical
 (g_3), or gauge-dressed proxy solution is introduced.
@@ -21,6 +25,9 @@ No new action term, field, multiplier, mass, locking coefficient, physical
 
 | Layer | Classification | Retained result |
 | --- | --- | --- |
+| v6.3-v6.4 | recovered conditional geometry | G2/SU3 projectors, complex polarization, Hopf connection split, and conditional chiral collar; action selection and transgression open |
+| v7.0-v7.1 | recovered conditional parent architecture | stratified action, associated-bundle R85 transport, R54 trace, normalized measures, compatibility multipliers, and KKT intertwiners |
+| v8.8 common-parent current | recovered conditional precedent | `D_mu^fam U` uses parent-induced associated-bundle connections; current-kernel provenance remained conditional |
 | main through v11.3 | live merged | reciprocal metric attachment; no color matcher |
 | v11.5 / PR 218 | open stacked diagnostic | no-fit spectral current candidate; provenance open |
 | v11.6 / PR 219 | open stacked action-owned | weak family current (I_3); uniqueness no-go |
@@ -161,11 +168,48 @@ and action-derived extensions were audited. None is presently selected by the
 action. The candidate is undefined as a global (M_4) connection without that
 extension.
 
+## Recovered parent architecture and eta-extension audit
+
+V7.0-v7.1 already owns the conditional pattern needed for the next step:
+
+\[
+R_{85}=(\pi_!,P_{\rm ret},Q_H),
+\qquad
+D_5P_\alpha=P_\alpha D_8,
+\qquad
+\operatorname{Tr}_{B_1}=\iota_{54}^*.
+\]
+
+It also owns normalized fiber integration, collar and seam measures, generic
+associated bundles (E_R=P\times_R V_R), the canonical Sp(1) Hopf transport
+connection, metric/scalar compatibility multipliers, and the constrained KKT
+variational intertwiner. Later common-parent current work explicitly used
+parent-induced associated-bundle connections in
+(D_\mu^{\rm fam}\mathcal U).
+
+This is genuine pre-existing cross-stratum architecture. It does not yet
+instantiate the required color/eta diagram:
+
+\[
+A_{SU(3)}=\rho_{\rm color}(\iota_4^*A_{\rm parent}),
+\qquad
+A^P=\rho_P(\iota_\eta^*A_{\rm parent}).
+\]
+
+The recovered parent connection is the Sp(1) Hopf transport connection and is
+explicitly not the SM gauge field. The repository does not yet supply a common
+SU(3)-capable (P_parent,A_parent), the two representation maps, the
+eta-dependent reduction, a shared color/eta transformation law, their mixed
+action variation, or an eta-sourced independent Gauss equation. The physical
+M4 color connection remains a boundary-localized fundamental field.
+
 ## Independent-connection matcher audit
 
-The retained action contains no connection equality multiplier, curvature
-matcher, common principal bundle, or color transgression. `Lambda85` and
-`Lambda54` match metric incidence/seam data, not gauge connections.
+The retained action contains no instantiated eta/color connection equality
+multiplier, curvature matcher, common principal bundle, or color
+transgression. The generic v7 compatibility framework exists, but `Lambda85`
+and `Lambda54` currently match metric incidence/seam data, not gauge
+connections.
 
 - (A=\Phi_*A^P) removes independent gluon modes and lacks a variational source.
 - (F_A=\Phi_*F_P) overconstrains the field and forces the (c_2=0) sector.
@@ -173,11 +217,12 @@ matcher, common principal bundle, or color transgression. `Lambda85` and
   would mass unbroken color.
 - A curvature-difference term requires (Phi) and an unselected relative
   normalization.
-- A transgression requires a common bundle and appropriate odd-dimensional
-  extension absent from the retained action.
+- A transgression requires the v7 architecture to be extended with a common
+  color/eta bundle and appropriate odd-dimensional connection data.
 
-The preferred no-new-low-energy-field route is a common higher-dimensional
-connection whose two restrictions are derived compatible projections.
+The next route is therefore recovery and eta extension of the existing
+parent-bundle functor. A new action term is not justified unless that audit
+proves the existing architecture cannot supply the two projections.
 
 ## Chirality and flavor
 
@@ -201,6 +246,10 @@ weak chirality is introduced.
 
 ### Validated
 
+- Conditional parent associated-bundle and covariant reduction architecture
+  already exists in v7.0-v7.1.
+- G2/SU3 projectors, Hopf splitting, compatibility multipliers, and normalized
+  bulk-boundary measures predate the eta-projector fork.
 - The projector connection and its nonzero SU(3)-valued curvature are real
   induced geometry.
 - Generic universal curvature generators close to full SU(3) holonomy.
@@ -216,17 +265,21 @@ weak chirality is introduced.
 - The projector bundle spanning nonzero SU(3) instanton sectors.
 - Rank-three bundle coincidence supplying an action-owned (Phi).
 - Existing metric matchers supplying a color-connection Gauss law.
+- The stronger claim that the entire required cross-stratum architecture is
+  new or absent.
 
 ### Reclassified
 
 The eta projector connection is a restricted polarization-frame/Berry
 connection controlling knot color orientation, induced holonomy, conjugation,
-and singlet closure. It may be a background or compatible projection of a
-future common connection, but it is not the full QCD connection.
+and singlet closure. It may be a compatible projection of the recovered
+conditional parent architecture, but that eta extension and projection
+provenance have not been proved. It is not the full QCD connection.
 
 ### Open
 
-- the common higher-dimensional connection and its two compatible restrictions;
+- recovery of the exact v7 parent bundle/connection and proof or rejection of
+  its two color/eta associated projections;
 - the wall-to-(M_4) selector/bundle extension;
 - coupled eta and independent-SU3 Euler equations and Gauss law;
 - the oriented boundary Dirac operator and self-adjoint domain;

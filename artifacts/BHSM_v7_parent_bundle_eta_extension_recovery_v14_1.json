@@ -1,0 +1,146 @@
+{
+  "artifact": "BHSM_v7_parent_bundle_eta_extension_recovery_v14_1",
+  "central_diagram": {
+    "M4_projection": "A_SU3=rho_color(iota_4^* A_parent)",
+    "eta_projection": "A_P=rho_P(iota_eta^* A_parent)",
+    "parent": "A_parent in Conn(P_parent)"
+  },
+  "exact_next_object": "RECOVERY_AND_ETA_EXTENSION_OF_THE_V7_0_V7_1_UNIFIED_PARENT_BUNDLE_CONNECTION_AND_COVARIANT_REDUCTION_FUNCTOR_TO_THE_M4_SU3_AND_ETA_POLARIZATION_ASSOCIATED_BUNDLES",
+  "object_audit": [
+    {
+      "eta_SU3_gap": "no declared common principal bundle whose associated projections are E_color and E_P",
+      "object": "P_parent",
+      "recovered_owner": "Sp(1)->S7->S4 principal Hopf bundle in R_85",
+      "status": "CONDITIONAL_GENERIC_PARENT_BUNDLE_ARCHITECTURE_RECOVERED"
+    },
+    {
+      "eta_SU3_gap": "omega is explicitly not the SM gauge field and no action map to both SU3 connections is supplied",
+      "object": "A_parent",
+      "recovered_owner": "canonical Sp(1) associated-bundle connection",
+      "status": "CANONICAL_SP1_TRANSPORT_CONNECTION_RECOVERED"
+    },
+    {
+      "eta_SU3_gap": "the color and eta-polarization representation homomorphisms are not declared",
+      "object": "rho_color and rho_P",
+      "recovered_owner": "phi_alpha is a section of E_R=P x_R V_R with connection induced by omega",
+      "status": "GENERIC_ASSOCIATED_REPRESENTATION_SLOT_RECOVERED"
+    },
+    {
+      "eta_SU3_gap": "R_85 and R_54 predate eta and do not export u_eta, P_eta, or A_P",
+      "object": "eta-dependent reduction",
+      "recovered_owner": null,
+      "status": "MISSING"
+    },
+    {
+      "eta_SU3_gap": "no eta-polarization pushforward measure/intertwiner is yet selected",
+      "object": "bundle measures",
+      "recovered_owner": "dnu_F=dmuF/V_F, integral_F dnu_F=1",
+      "status": "RECOVERED_FOR_M8_TO_M5_AND_M5_TO_M4_COLLAR"
+    },
+    {
+      "eta_SU3_gap": "no single action-owned gauge transformation is shown to induce both physical SU3 laws",
+      "object": "common transformation law",
+      "recovered_owner": "D5 P_alpha=P_alpha D8 on invariant/equivariant retained modes; curvature-induced transitions outside I_ret are assigned to Phi_perp and are not called a consistent truncation",
+      "status": "GENERIC_EQUIVARIANT_LAW_RECOVERED"
+    },
+    {
+      "eta_SU3_gap": "the retained action has no eta--independent-SU3 mixed second variation/current pairing",
+      "object": "mixed action variation",
+      "recovered_owner": "D(pi_!S8)∘D R85=R85_*∘D S8 on the retained invariant subspace, including the radion and connection terms",
+      "status": "GENERIC_KKT_VARIATIONAL_INTERTWINER_RECOVERED"
+    },
+    {
+      "eta_SU3_gap": "no parent projection or eta source appears in the independent SU3 Euler equation",
+      "object": "independent Gauss equation",
+      "recovered_owner": "intrinsic M4 Yang-Mills variation on the gauge quotient",
+      "status": "INDEPENDENT_M4_EQUATION_RECOVERED_BUT_ETA_UNSOURCED"
+    }
+  ],
+  "primary_classification": "BHSM_COMMON_PARENT_BUNDLE_AND_REDUCTION_ARCHITECTURE_ALREADY_EXISTS_CONDITIONALLY",
+  "projection_provenance_verdict": "BHSM_ETA_POLARIZATION_AND_INDEPENDENT_M4_SU3_CONNECTION_HAVE_NOT_YET_BEEN_PROVEN_TO_BE_ASSOCIATED_PROJECTIONS_OF_THAT_PARENT_CONNECTION",
+  "recovered_v7_architecture": {
+    "R_54": {
+      "constraints": [
+        "cap Einstein/scalar equations",
+        "Hamiltonian and momentum constraints",
+        "GHY-completed metric trace",
+        "exact metric matcher",
+        "gauge quotient conditions where a bulk gauge field is retained",
+        "D0 scalar Dirichlet condition"
+      ],
+      "critical_value": "S4,response[varphi,k]=Crit_{Phi5:Tr Phi5=varphi,C(Phi5)=0,k retained} S5|4[Phi5,eta]",
+      "existence_scope": "local stationary branches on the declared cap/KKT domains; no global uniqueness claim",
+      "kernel_rule": "Lyapunov-Schmidt variables k remain explicit; the critical value eliminates only the closed-range complement",
+      "localized_fields": "A_SM,Psi,H and optional N_neu are intrinsic M4 fields; they are varied on M4 and are not extended into M5 to manufacture a bulk provenance",
+      "status": "CONSTRAINED_CRITICAL_VALUE_AND_TRACE_FUNCTOR_CONSTRUCTED",
+      "trace": "Tr_B1 Phi5=iota_54^*Phi5"
+    },
+    "R_85": {
+      "basic_sector": "u0=V_F^-1/2; P0 is a global scalar/base mode",
+      "coefficient_rules": {
+        "Einstein_base": "kappa5(x)=V_F(x) kappa8",
+        "orthonormal_modes": "c5,alpha_beta=c8 integral_F u_alpha^*u_beta dmuF",
+        "quadratic": "A5,alpha_beta=A8 N_alpha_beta+vertical mass matrix",
+        "quartic": "G5,alpha_beta_gamma_delta=G8 integral_F u_alpha u_beta u_gamma u_delta dmuF",
+        "scalar_kinetic": "Z5,alpha_beta=Z8 N_alpha_beta",
+        "unnormalized_basic": "c5=V_F c8"
+      },
+      "connection": "the canonical Sp(1) connection transports associated modes; no global preferred U(1) axis is asserted",
+      "covariant_derivative_intertwiner": "D5 P_alpha=P_alpha D8 on invariant/equivariant retained modes; curvature-induced transitions outside I_ret are assigned to Phi_perp and are not called a consistent truncation",
+      "field_expansion": "Phi8(x,y)=sum_{alpha in I_ret} phi_alpha(x)u_alpha(y)+Phi_perp",
+      "functor": "R_85=(pi_!,P_ret,Q_H) on the category of bundle-like metrics, equivariant bundles, and finite retained spectral subspaces",
+      "nontrivial_sector": "phi_alpha is a section of E_R=P x_R V_R with connection induced by omega",
+      "radion_firewall": "If a_F varies, pi_!S8 is scalar-tensor gravity with radion and connection terms. It is not identified with the historical constant-kappa5 cap action.",
+      "retained_coefficient": "phi_alpha=N_alpha^-1 integral_F u_alpha^* Phi8 dmuF",
+      "status": "COVARIANT_PUSHFORWARD_CONSTRUCTED_ON_RETAINED_SUBCATEGORY",
+      "stored_S5_relation": "independent target-stratum Wilson action constrained by compatibility maps, not falsely declared equal to pi_!S8"
+    },
+    "family_transport_precedent": {
+      "dynamic_case": "the existing parent-induced associated-bundle connections A_mu^u,d carry the variation; no arbitrary family connection is added",
+      "gauge_covariance_requires_parallel_transport": true,
+      "new_connection_parameter": false,
+      "spacetime_dependent_kernel_law": "D_mu^fam U_CG=partial_mu U_CG+A_mu^u U_CG-U_CG A_mu^d",
+      "static_retained_background": "D_mu^fam U_CG=0"
+    },
+    "measures": {
+      "M4": "dmu4=N a^3 dt dmu_S3 at chi=pi/2",
+      "M5": "dmu5=N a^4 sin^3(chi) dt dchi dmu_S3 on the round hyperspherical branch",
+      "M8": "dmu8=dmu5 wedge dmuF; dmuF=a_F^3 eta1 wedge eta2 wedge eta3",
+      "absolute_unit_introduced": false,
+      "action_pushforward": "pi_!(L8 dmu8)=[integral_F L8 dmuF]dmu5",
+      "collar": "dmu5=N a^4 cos^3(rho) dt d rho dmu_S3 for chi=pi/2-epsilon rho",
+      "fiber_volume": "V_F=16 pi^2 a_F^3",
+      "field_pairing": "P_alpha Phi=N_alpha^-1 integral_F u_alpha^* Phi dmuF",
+      "normalized_fiber_measure": "dnu_F=dmuF/V_F, integral_F dnu_F=1",
+      "status": "DIMENSIONLESS_NORMALIZATION_AND_PHYSICAL_VOLUME_EXPLICIT",
+      "stokes": "d pi_! omega=pi_! d omega because the S3 fiber is closed"
+    },
+    "stratified_action": {
+      "S5_claimed_as_pi_pushforward_of_S8": false,
+      "architecture": "covariant source-target correspondence plus stratified M5 cap and M4 boundary-localized Wilson actions",
+      "boundary_SM_claimed_as_bulk_descendant": false,
+      "compatibility_action": "int_M5 <Lambda85,g5-Q_H(G8)>+<lambda_sigma,sigma5-P0 sigma8> +sum_epsilon int_M4 Lambda54,epsilon^{ab}(h_ab-iota_epsilon^*g_epsilon,ab)",
+      "formula": "S8[G,chi,sigma]+sum_epsilon(S5,epsilon[g_epsilon,sigma5]+S_GHY,epsilon)+S4,localized[h,A,Psi,H;I4]+S_compatibility[G,g_epsilon,sigma,sigma5,h,Lambda85,Lambda54]",
+      "name": "S_BHSM^strat",
+      "off_shell_fields_distinct": true,
+      "ownership_rule": "each term occurs once on its declared source, target, or boundary stratum; compatibility multipliers carry no kinetic term and their normalization is redundant",
+      "quantum_scope": "classical correspondence action with an M4 EFT stratum; no quantum-gravity completion claimed",
+      "status": "BHSM_STRATIFIED_MASTER_ACTION_CLOSED_WITH_COVARIANT_COMPATIBILITY_MAPS"
+    }
+  },
+  "validation": {
+    "eta_polarization_extension_not_in_v7_functor": true,
+    "eta_sourced_independent_Gauss_law_not_recovered": true,
+    "generic_covariant_intertwiner_recovered": true,
+    "no_new_object_or_coefficient_introduced": true,
+    "normalized_bundle_measures_recovered": true,
+    "parent_induced_associated_connection_language_recovered": true,
+    "physical_M4_color_remains_boundary_localized": true,
+    "two_SU3_projection_maps_not_recovered": true,
+    "v7_R54_trace_functor_recovered": true,
+    "v7_R85_associated_bundle_functor_recovered": true,
+    "v7_stratified_action_recovered": true
+  },
+  "validation_passed": true,
+  "version": "v14.1"
+}

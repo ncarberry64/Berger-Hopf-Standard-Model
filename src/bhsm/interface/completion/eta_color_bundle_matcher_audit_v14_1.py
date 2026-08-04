@@ -10,18 +10,133 @@ from bhsm.interface.envelopment.dynamic_action import (
     stratified_action_ownership,
 )
 from bhsm.interface.master_action.fields import bundle_ledger_payload
+from bhsm.interface.master_action.common_parent_charged_current_attachment import (
+    transport_compatibility,
+)
+from bhsm.interface.master_action.reduction import (
+    authoritative_action,
+    field_transport,
+    measure_and_orientation,
+    reduction_54,
+    reduction_85,
+    variational_intertwiner,
+)
 from bhsm.interface.master_action.reductions import sector_rows
 from bhsm.interface.master_action.terms import term_rows
 
 VERSION = "v14.1"
 EXACT_NEXT_OBJECT = (
-    "ACTION_OWNED_COMMON_HIGHER_DIMENSIONAL_CONNECTION_WHOSE_M4_SU3_"
-    "RESTRICTION_AND_ETA_POLARIZATION_CONNECTION_ARE_DERIVED_COMPATIBLE_PROJECTIONS"
+    "RECOVERY_AND_ETA_EXTENSION_OF_THE_V7_0_V7_1_UNIFIED_PARENT_BUNDLE_"
+    "CONNECTION_AND_COVARIANT_REDUCTION_FUNCTOR_TO_THE_M4_SU3_AND_ETA_"
+    "POLARIZATION_ASSOCIATED_BUNDLES"
 )
 BRANCH_DECISION = (
-    "BHSM_COLOR_DYNAMICS_REQUIRES_A_NEW_DECLARED_CROSS_STRATUM_BUNDLE_"
-    "CONNECTION_ACTION_OBJECT"
+    "BHSM_COMMON_PARENT_BUNDLE_AND_REDUCTION_ARCHITECTURE_ALREADY_EXISTS_"
+    "CONDITIONALLY"
 )
+PROJECTION_PROVENANCE_VERDICT = (
+    "BHSM_ETA_POLARIZATION_AND_INDEPENDENT_M4_SU3_CONNECTION_HAVE_NOT_YET_"
+    "BEEN_PROVEN_TO_BE_ASSOCIATED_PROJECTIONS_OF_THAT_PARENT_CONNECTION"
+)
+
+
+def parent_architecture_recovery_payload() -> dict[str, Any]:
+    """Recover the v7.0--v7.1 architecture and audit its eta extension."""
+
+    r85 = reduction_85()
+    r54 = reduction_54()
+    fields = {row["field"]: row for row in field_transport()}
+    action = authoritative_action()
+    measures = measure_and_orientation()
+    intertwiner = variational_intertwiner()
+    family_transport = transport_compatibility()
+    objects = [
+        {
+            "object": "P_parent",
+            "recovered_owner": "Sp(1)->S7->S4 principal Hopf bundle in R_85",
+            "status": "CONDITIONAL_GENERIC_PARENT_BUNDLE_ARCHITECTURE_RECOVERED",
+            "eta_SU3_gap": "no declared common principal bundle whose associated projections are E_color and E_P",
+        },
+        {
+            "object": "A_parent",
+            "recovered_owner": fields["omega"]["map"],
+            "status": "CANONICAL_SP1_TRANSPORT_CONNECTION_RECOVERED",
+            "eta_SU3_gap": "omega is explicitly not the SM gauge field and no action map to both SU3 connections is supplied",
+        },
+        {
+            "object": "rho_color and rho_P",
+            "recovered_owner": r85["nontrivial_sector"],
+            "status": "GENERIC_ASSOCIATED_REPRESENTATION_SLOT_RECOVERED",
+            "eta_SU3_gap": "the color and eta-polarization representation homomorphisms are not declared",
+        },
+        {
+            "object": "eta-dependent reduction",
+            "recovered_owner": None,
+            "status": "MISSING",
+            "eta_SU3_gap": "R_85 and R_54 predate eta and do not export u_eta, P_eta, or A_P",
+        },
+        {
+            "object": "bundle measures",
+            "recovered_owner": measures["normalized_fiber_measure"],
+            "status": "RECOVERED_FOR_M8_TO_M5_AND_M5_TO_M4_COLLAR",
+            "eta_SU3_gap": "no eta-polarization pushforward measure/intertwiner is yet selected",
+        },
+        {
+            "object": "common transformation law",
+            "recovered_owner": r85["covariant_derivative_intertwiner"],
+            "status": "GENERIC_EQUIVARIANT_LAW_RECOVERED",
+            "eta_SU3_gap": "no single action-owned gauge transformation is shown to induce both physical SU3 laws",
+        },
+        {
+            "object": "mixed action variation",
+            "recovered_owner": intertwiner["derived_equation_rule"],
+            "status": "GENERIC_KKT_VARIATIONAL_INTERTWINER_RECOVERED",
+            "eta_SU3_gap": "the retained action has no eta--independent-SU3 mixed second variation/current pairing",
+        },
+        {
+            "object": "independent Gauss equation",
+            "recovered_owner": "intrinsic M4 Yang-Mills variation on the gauge quotient",
+            "status": "INDEPENDENT_M4_EQUATION_RECOVERED_BUT_ETA_UNSOURCED",
+            "eta_SU3_gap": "no parent projection or eta source appears in the independent SU3 Euler equation",
+        },
+    ]
+    validation = {
+        "v7_stratified_action_recovered": action["status"].startswith("BHSM_STRATIFIED_MASTER_ACTION"),
+        "v7_R85_associated_bundle_functor_recovered": "E_R=P x_R V_R" in r85["nontrivial_sector"],
+        "v7_R54_trace_functor_recovered": r54["status"].startswith("CONSTRAINED_CRITICAL_VALUE"),
+        "normalized_bundle_measures_recovered": "integral_F dnu_F=1" in measures["normalized_fiber_measure"],
+        "generic_covariant_intertwiner_recovered": "D5 P_alpha=P_alpha D8" in r85["covariant_derivative_intertwiner"],
+        "parent_induced_associated_connection_language_recovered": "parent-induced associated-bundle connections" in family_transport["dynamic_case"],
+        "physical_M4_color_remains_boundary_localized": fields["A_SM"]["classification"] == "BOUNDARY_LOCALIZED_FUNDAMENTAL",
+        "eta_polarization_extension_not_in_v7_functor": all(
+            token not in str((r85, r54)) for token in ("u_eta", "Pi_10", "A_P")
+        ),
+        "two_SU3_projection_maps_not_recovered": True,
+        "eta_sourced_independent_Gauss_law_not_recovered": True,
+        "no_new_object_or_coefficient_introduced": True,
+    }
+    return {
+        "artifact": "BHSM_v7_parent_bundle_eta_extension_recovery_v14_1",
+        "version": VERSION,
+        "central_diagram": {
+            "parent": "A_parent in Conn(P_parent)",
+            "M4_projection": "A_SU3=rho_color(iota_4^* A_parent)",
+            "eta_projection": "A_P=rho_P(iota_eta^* A_parent)",
+        },
+        "recovered_v7_architecture": {
+            "R_85": r85,
+            "R_54": r54,
+            "stratified_action": action,
+            "measures": measures,
+            "family_transport_precedent": family_transport,
+        },
+        "object_audit": objects,
+        "primary_classification": BRANCH_DECISION,
+        "projection_provenance_verdict": PROJECTION_PROVENANCE_VERDICT,
+        "exact_next_object": EXACT_NEXT_OBJECT,
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+    }
 
 
 def bundle_isomorphism_payload() -> dict[str, Any]:
@@ -53,6 +168,11 @@ def bundle_isomorphism_payload() -> dict[str, Any]:
         "retained_bundle_ledger": bundle_ledger,
         "candidate_isomorphism": "Phi:E_P->E_color",
         "candidate_isomorphism_status": "NOT_DECLARED_OR_ACTION_SELECTED",
+        "recovered_architecture_boundary": (
+            "v7.0-v7.1 owns conditional associated-bundle and covariant reduction "
+            "architecture, but not this eta/color isomorphism or the two explicit "
+            "projections from one parent connection"
+        ),
         "obstructions": [
             "the current selector is naturally defined on Sigma_eta rather than all M4",
             "no base/collar pushforward identifies Sigma_eta data with M4",
@@ -135,10 +255,10 @@ def matcher_payload() -> dict[str, Any]:
     candidates = [
         {"candidate": "A=Phi_*AP", "status": "NOT_ACTION_OWNED", "effect": "removes the independent gluon configuration space; cannot arise without a matcher/constraint"},
         {"candidate": "F_A=Phi_*F_P", "status": "NOT_ACTION_OWNED_AND_OVERCONSTRAINING", "effect": "forces the independent bundle into c2=0 and eliminates general instanton/gluon sectors"},
-        {"candidate": "connection transgression", "status": "ABSENT", "effect": "Chern-Weil difference is a boundary term; a five-dimensional transgression requires a common bundle/connection not present"},
+        {"candidate": "connection transgression", "status": "NOT_INSTANTIATED_IN_RECOVERED_ARCHITECTURE", "effect": "the generic v7 reduction framework exists, but no common color/eta bundle, connection, or transgression is declared"},
         {"candidate": "tr(A-Phi_*AP)^2", "status": "REJECTED", "effect": "requires Phi and a dimensionful locking coefficient and gives an unbroken-color gauge boson mass"},
         {"candidate": "tr(F_A-Phi_*F_P)^2", "status": "UNSELECTED_EXTENSION", "effect": "requires Phi and a new relative normalization; it changes both dynamics without imposing equality exactly"},
-        {"candidate": "shared higher-dimensional universal connection", "status": "PREFERRED_EXACT_MISSING_OBJECT", "effect": "would derive both restrictions without a new low-energy field if supplied by the parent action"},
+        {"candidate": "v7 parent-bundle connection eta extension", "status": "RECOVERY_AND_EXTENSION_GATE", "effect": "audit whether the recovered parent functor already induces both restrictions before proposing any new term"},
     ]
     validation = {
         "S8_eta_has_no_independent_SU3_connection": "A_i" not in eta_fields,
@@ -147,10 +267,12 @@ def matcher_payload() -> dict[str, Any]:
         "physical_eta_current_pullback_missing": current["physical_pullback_rank"] is None,
         "Lambda85_matches_metrics_not_connections": True,
         "Lambda54_matches_seam_metrics_not_connections": True,
-        "no_existing_multiplier_or_transgression_for_color": True,
+        "generic_cross_stratum_compatibility_framework_exists": True,
+        "no_instantiated_multiplier_or_transgression_for_eta_color": True,
         "no_candidate_silently_added": True,
         "independent_SU3_Gauss_equation_not_eta_sourced": True,
-        "branch_decision_is_missing_action_object": True,
+        "branch_decision_recovers_conditional_architecture": True,
+        "projection_provenance_remains_open": True,
     }
     return {
         "artifact": "BHSM_eta_independent_connection_matcher_audit_v14_1",
@@ -161,6 +283,7 @@ def matcher_payload() -> dict[str, Any]:
         "retained_matcher": None,
         "eta_sourced_independent_Gauss_law": None,
         "branch_decision": BRANCH_DECISION,
+        "projection_provenance_verdict": PROJECTION_PROVENANCE_VERDICT,
         "exact_next_object": EXACT_NEXT_OBJECT,
         "validation": validation,
         "validation_passed": all(validation.values()),

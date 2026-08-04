@@ -9,9 +9,11 @@ from bhsm.interface.completion.eta_boundary_dirac_contract_v14_1 import (
 from bhsm.interface.completion.eta_color_bundle_matcher_audit_v14_1 import (
     BRANCH_DECISION,
     EXACT_NEXT_OBJECT,
+    PROJECTION_PROVENANCE_VERDICT,
     bundle_isomorphism_payload,
     composite_variational_payload,
     matcher_payload,
+    parent_architecture_recovery_payload,
     wall_extension_payload,
 )
 from bhsm.interface.completion.eta_knot_chiral_color_completion_v13_4 import (
@@ -158,6 +160,17 @@ def test_bundle_isomorphism_is_not_implied_by_rank_and_group() -> None:
     assert payload["validation"]["canonical_Phi_absent"]
 
 
+def test_v7_parent_architecture_is_recovered_without_promoting_eta_projection() -> None:
+    payload = parent_architecture_recovery_payload()
+    assert payload["validation_passed"]
+    assert payload["primary_classification"] == BRANCH_DECISION
+    assert payload["projection_provenance_verdict"] == PROJECTION_PROVENANCE_VERDICT
+    rows = {row["object"]: row for row in payload["object_audit"]}
+    assert rows["P_parent"]["status"].startswith("CONDITIONAL")
+    assert rows["eta-dependent reduction"]["status"] == "MISSING"
+    assert rows["independent Gauss equation"]["status"].endswith("ETA_UNSOURCED")
+
+
 def test_wall_extension_singularity_and_nonuniqueness_are_detected() -> None:
     payload = wall_extension_payload()
     assert payload["validation_passed"]
@@ -178,6 +191,7 @@ def test_retained_action_has_no_eta_color_matcher() -> None:
     assert payload["retained_matcher"] is None
     assert payload["eta_sourced_independent_Gauss_law"] is None
     assert payload["branch_decision"] == BRANCH_DECISION
+    assert payload["projection_provenance_verdict"] == PROJECTION_PROVENANCE_VERDICT
     assert payload["exact_next_object"] == EXACT_NEXT_OBJECT
 
 
