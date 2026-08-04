@@ -216,3 +216,21 @@ gate remains
 
 Mark III and BHSM physical completion remain open. Gauge-dressed BVP work is
 not attempted because the sourced independent Gauss equation is not closed.
+
+## Validation record
+
+The required pre-v14.2 full-suite process was not interrupted or restarted.
+It returned exit code 1 with 4,922 passed and 16 failed in 790.57 seconds
+(792.52-second wrapper duration). All 16 failures were clean-source guards
+detecting the intentional uncommitted v14.1 recovery correction; no numerical
+or physics assertion failed.
+
+After the recovery correction and v14.2 implementation were checkpointed, the
+new focused suite returned 21 passed, the v13-v14 regression suite returned 62
+passed, and the full suite returned exit code 0 with 4,959 passed in 771.45
+seconds (773.34-second wrapper duration).
+
+Eleven v14.2 artifacts were materialized twice and compared byte-for-byte by
+SHA-256. Forbidden-claim, BHSM-status, frozen-prediction, precision,
+public-readiness, safety, diff-hygiene, and clean-tree audits are publication
+gates. Frozen predictions and official prediction logic remain unchanged.
