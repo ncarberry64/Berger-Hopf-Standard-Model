@@ -2,6 +2,47 @@
 
 Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a completed replacement of the Standard Model. The program goal remains replacement by derivation, with the Standard Model retained as the preserved infrared layer until that derivation is complete.
 
+## v14.0 eta-knot action-completion result
+
+The recovered v13.1–v13.5 chain has been reproduced and integrated
+semantically. The retained p=2+p=8 eta action has a degree-one equivariant
+static solution satisfying the Derrick identity, a positive finite-interval
+radial Jacobi spectrum, and a finite collective inertia. Odd topological
+degree supports the discrete FR half-integer-spin sector. The oriented knot
+wall selects conjugate rank-three G2/SU3 polarizations, and its varying
+projector defines a nonzero su(3)-valued Grassmann curvature. Meson and baryon
+invariant tensors close exactly under that transport.
+
+The requested gauge-dressed singlet BVP is not yet an Euler–Lagrange problem
+of the retained action. Eta is owned by S8, while the independent SU3
+connection and its Yang–Mills density are owned by S4eff. The master-action
+ledger records the gauge bundle/measure pushforward as missing, the physical
+eta-current pullback is unresolved, and no density depends jointly on eta and
+the independent SU3 connection. A composite projector connection is not
+automatically the S4 connection varied by the action.
+
+Current verdict:
+`ETA_WALL_PROJECTOR_GEOMETRY_IS_DERIVED_BUT_GAUGE_DRESSED_BVP_IS_NOT_OWNED_BY_THE_CURRENT_ACTION`.
+
+Exact next action object:
+`ACTION_OWNED_ETA_WALL_TO_M4_SU3_BUNDLE_PULLBACK_AND_CONNECTION_IDENTIFICATION_WITH_VARIATIONAL_GAUSS_LAW`.
+
+Orientation reversal exchanges the conjugate color polarizations and
+complex-conjugates the projector curvature. This is a physical degree-branch
+reversal, not rotation relative to an external frame. It does not yet prove a
+chiral index because no oriented boundary Dirac operator or self-adjoint
+domain has been derived. The projector connection acts as identity on the
+independent C3 family factor; it cannot generate a family-noncentral up/down
+current. In the zero-orientation limit its curvature vanishes and the weak
+family current remains I3.
+
+The v11.5 spectral charged-current kernel is not inserted. Its unchanged
+flavor provenance gate remains
+`PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL`.
+No physical CKM/PMNS matrix, confinement theorem, gauge-dressed hadron
+solution, or unconditional flavor action is claimed. Frozen predictions and
+official prediction logic are unchanged.
+
 ## v11.6 parent-action charged-current result
 
 The live effective four-dimensional action contains the left-handed quark

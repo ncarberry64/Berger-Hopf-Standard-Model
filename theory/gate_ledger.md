@@ -1,5 +1,24 @@
 # Gate Ledger
 
+## v14.0 eta-knot action gate
+
+The degree-one static eta-knot, FR odd-degree spin parity, eta-wall G2/SU3
+polarization, canonical projector curvature, and meson/baryon covariant
+singlet closure are reached at their declared conditional or exact
+mathematical levels.
+
+The nonlinear gauge-dressed singlet BVP is not eligible under the current
+action. Eta belongs to S8, the independent Yang–Mills connection belongs to
+S4eff, and the gauge bundle/measure pushforward and physical eta-current
+pullback are absent. The first missing action object is
+`ACTION_OWNED_ETA_WALL_TO_M4_SU3_BUNDLE_PULLBACK_AND_CONNECTION_IDENTIFICATION_WITH_VARIATIONAL_GAUSS_LAW`.
+
+The oriented projector connection acts on color as (A^P\otimes I_{C_3}),
+so it remains family central and reduces to the v11.6 I3 weak current when the
+orientation variation is removed. The chiral index and nontrivial flavor
+current remain blocked separately. Physical Mark III and Mark IV are not
+reached.
+
 ## v11.3 current gate
 
 The recovered action-owned `Lambda85` compatibility matcher fixes the
