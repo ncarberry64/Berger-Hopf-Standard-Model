@@ -1,0 +1,33 @@
+{
+  "Hessian_block_rule": "H_theta is the pullback of the (A,eta) Hessian, not an additional block",
+  "artifact": "BHSM_theta_no_independent_vector_Hessian_v14_29",
+  "composite_linearization": "delta theta=Theta(D^A delta eta+delta A.K)+DTheta[delta eta,D^A eta]",
+  "independent_field_tangent": "delta A in Omega1(ad P_color), delta eta in Gamma(eta^* V Sigma_eta)",
+  "principal_symbol": {
+    "A": "ordinary Yang-Mills symbol on eight adjoint one-forms modulo gauge",
+    "eta": "six existing sigma-model scalar tangent symbols",
+    "theta": null
+  },
+  "scope": "conditional candidate common-domain Hessian; not a proof of the missing M8-to-collar action reduction",
+  "vacuum_blocks": {
+    "Faddeev_Popov": "-partial^2 delta_ab at the selected vacuum",
+    "H_AA": "g3^-2 delta_ab[-h_mn partial^2+(1-alpha^-1)partial_m partial_n] after covariant gauge fixing",
+    "H_A_eta": "0 at A=0 and the SU3-fixed coset base point because K_a(eta0)=0",
+    "H_eta_eta": "w kappa1(-partial^2) on six tangent scalars; X^4 begins at eighth fluctuation order",
+    "H_theta_theta": null
+  },
+  "validation": {
+    "YM_vector_principal_symbol_directions": true,
+    "additional_vector_principal_symbol_directions": true,
+    "eta_tangent_scalar_components": true,
+    "independent_YM_connection_components": true,
+    "independent_theta_propagator_absent": true,
+    "mixed_A_eta_symbol_does_not_create_new_field_coordinate": true,
+    "new_G2_coset_vector_pole_absent": true,
+    "theta_configuration_components": true
+  },
+  "validation_passed": true,
+  "vector_pole_count_added": 0,
+  "verdict": "COMPOSITE_THETA_INTRODUCES_NO_INDEPENDENT_SIX_VECTOR_DEGREES_OR_PROPAGATOR",
+  "version": "v14.29"
+}

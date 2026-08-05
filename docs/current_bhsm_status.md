@@ -871,3 +871,7 @@ parent object closing all missing arrows, so no extended theory is adopted.
 
 Current exact verdict:
 `BHSM_GEOMETRY_ONLY_PARENT_ACTION_CANNOT_GENERATE_THE_REQUIRED_FR_CHIRAL_FLAVOR_CARRIER`.
+
+## v14.29 continuation override
+
+The v14.29 scientific proof audit reclassifies View 2 as Outcome B: `BHSM_VIEW2_MINIMALLY_GAUGED_ETA_ACTION_AND_COMPOSITE_THETA_CURRENT_ARE_CONSTRUCTED_CONDITIONALLY_BUT_FULL_MASTER_ACTION_OWNERSHIP_REMAINS_BLOCKED`. It validates the local candidate variation and no-new-vector Hessian, but the retained `M8` eta sector is not reduced to a common collar with the independent `M4` physical SU3 field, and no FR/Dirac matching theorem prevents double counting. Exact next object: `COMMON_DOMAIN_ETA_TO_PHYSICAL_SU3_ASSOCIATED_BUNDLE_REDUCTION_WITH_COLLAR_MEASURE_AND_VARIATIONAL_INTERTWINER`.

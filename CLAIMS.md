@@ -2391,3 +2391,7 @@ The exact next object is
 This records the author ontology and conditional intrinsic/extrinsic split
 without promoting a force law, Casimir contribution, de-envelopment transfer,
 cosmological result, or any changed frozen prediction.
+
+## v14.29 claim boundary
+
+Validated only for a conditional common-domain candidate: the minimally covariantized eta `p=2+p=8` density, its convention-corrected SU(3) source/Noether identity, the pure-wall zero-current limit, a finite-action off-shell tangent witness, and the absence of an independent theta vector pole. The prior stratified action does not derive the required eta-to-physical-SU3 reduction. FR/Dirac quantization, matching, and its self-adjoint domain are open. Exact source identity: Wilson singlet zero total charge with `-4/3` mesonic color correlation. Not claimed: a physical quark current, confinement, area law, common gauge normalization, physical scale, mass, CKM/PMNS, neutrino spectrum, or `c_sigma`.

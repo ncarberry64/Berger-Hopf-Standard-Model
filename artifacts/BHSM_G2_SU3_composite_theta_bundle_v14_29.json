@@ -1,0 +1,30 @@
+{
+  "allowed_variations": "delta theta=DTheta[delta eta,D^A eta]+Theta(D^A delta eta+delta A.K(eta))",
+  "artifact": "BHSM_G2_SU3_composite_theta_bundle_v14_29",
+  "canonical_map": "Theta_eta:T_eta(G2/SU3)->m_eta from T(G/H)=G x_H m",
+  "composite_definition": "theta_M=Theta_eta(D_M^A eta)",
+  "configuration_space": "Conn(P_color) x Gamma(Sigma_eta); theta is not a coordinate",
+  "coset_bundle": "Sigma_eta=Q_G2/SU3=P_color x_SU3 (G2/SU3)",
+  "extended_bundle": "Q_G2=P_color x_SU3 G2",
+  "forbidden_independent_variation": "delta theta!=0 with delta eta=delta A=0",
+  "original_M8_eta_to_collar_section_map": null,
+  "physical_color_bundle": "P_color->M4, with arbitrary retained c2 sector",
+  "reductive_decomposition": "g2=su3 direct_sum m, dim_R(m)=6, m_C=3+bar3",
+  "section_existence_scope": "G2/SU3=S6 is 5-connected; over a four-dimensional CW base the associated S6 bundle has no obstruction to a section",
+  "status_of_equality": "CANONICAL_ASSOCIATED_BUNDLE_GEOMETRY_AND_DEFINITION_AFTER_ADOPTING_THE_COMMON_PHYSICAL_SU3_BUNDLE; NOT_AN_EULER_LAGRANGE_EQUATION_OR_ACTION_DERIVATION",
+  "topology_firewall": "forming associated bundles does not impose c2(P_color)=0",
+  "transformation_law": "theta_M -> Ad_h theta_M under h in SU3",
+  "validation": {
+    "associated_coset_bundle_retains_parent_c2": true,
+    "complexified_coset_is_3_plus_bar3": true,
+    "extended_principal_bundle_defined_for_any_Pcolor": true,
+    "independent_theta_variation_absent": true,
+    "reductive_dimension_8_plus_6_equals_14": true,
+    "section_obstruction_absent_over_M4_dimension": true,
+    "theta_is_composite": true,
+    "theta_map_is_fiberwise_isomorphism": true
+  },
+  "validation_passed": true,
+  "version": "v14.29",
+  "vertical_tangent_bundle": "V Sigma_eta=P_color x_SU3 m"
+}

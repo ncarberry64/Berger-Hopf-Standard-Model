@@ -431,3 +431,7 @@ inverse-square-kinetic families (and their couplings), fix the core variational
 ensemble, and preserve the frozen-action limit. Only a healthy uniquely
 action-owned local degree licenses reconstruction of the common three-mode
 Hessian and downstream orbit campaign.
+
+## v14.29 next campaign
+
+First derive the common-domain map from the retained `M8` eta field to the physical-SU3 collar bundle, including its measure and variational intertwiner, then derive the FR/Dirac collective matching and mode subtraction. Only then fix the self-adjoint gauge/ghost/FR domain and solve the nonradial parent-relative SU(3)-eta-collar Wilson-singlet BVP. A stable transverse saddle and negative-mode audit must precede the determinant/worldsheet limit. Common Yang-Mills normalization, dimensional anchoring, masses, and flavor remain downstream and may not be supplied from measurements.

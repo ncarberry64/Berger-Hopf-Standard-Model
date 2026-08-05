@@ -349,3 +349,14 @@ Exact next object:
 - Mark IV: `NOT_REACHED`.
 - Exact next object: `ACTION_OWNED_COMMON_DOMAIN_UP_DOWN_FAMILY_WAVEFUNCTION_ORIENTATION_AND_CURRENT_PAIRING_MAP`.
 - Verdict: `BHSM_PARENT_ACTION_CURRENT_REDUCTION_BLOCKED_BY_UNFIXED_COMMON_DOMAIN_FAMILY_WAVEFUNCTION_MAP`.
+
+# v14.29 View 2 classical action/current gate
+
+- Bundle/action/current/Hessian: `VALIDATED_CONDITIONALLY` for a candidate common-domain action; not derived from the prior stratified action.
+- Projector/Berry connection versus physical SU(3): `DISTINCT`.
+- Selector and pure-wall source: `ZERO`, retained as the background limit.
+- Tangent source: `NONZERO_OFF_SHELL_CANDIDATE_ACTION_VARIATION`.
+- FR current: `OPEN_COLLECTIVE_MATCHING_THEOREM_NOT_ADDITIVE_SOURCE`.
+- Confinement and worldsheet: `OPEN`.
+- Mark III / Mark IV: `NOT_REACHED` / `NOT_REACHED`.
+- Exact next object: `COMMON_DOMAIN_ETA_TO_PHYSICAL_SU3_ASSOCIATED_BUNDLE_REDUCTION_WITH_COLLAR_MEASURE_AND_VARIATIONAL_INTERTWINER`.
