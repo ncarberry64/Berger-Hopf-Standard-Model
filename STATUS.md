@@ -2993,4 +2993,4 @@ Exact next object:
 
 ## v14.29 authoritative View 2 update
 
-Outcome A is reached for the classical View 2 bundle/action/current/Hessian gate: `BHSM_VIEW2_COMPOSITE_G2_SU3_COSET_INTRINSIC_TORSION_IS_ACTION_OWNED_AND_SOURCES_THE_INDEPENDENT_SU3_GAUSS_LAW_WITHOUT_NEW_VECTOR_DEGREES`. This does not close Mark III or BHSM. FR first-order action equivalence remains conditional; the full nonlinear confinement problem remains open. Exact next object: `GAUGE_FIXED_COUPLED_ETA_SU3_COLLAR_WILSON_SINGLET_BOUNDARY_VALUE_PROBLEM_WITH_SELF_ADJOINT_DOMAIN_PARENT_RELATIVE_SUBTRACTION_AND_NONRADIAL_HESSIAN`.
+The formal scientific audit issues Outcome B: `BHSM_VIEW2_MINIMALLY_GAUGED_ETA_ACTION_AND_COMPOSITE_THETA_CURRENT_ARE_CONSTRUCTED_CONDITIONALLY_BUT_FULL_MASTER_ACTION_OWNERSHIP_REMAINS_BLOCKED`. The local candidate variation and no-new-vector result are valid, but the original `M8` eta action has no derived common-domain reduction to the physical `M4` SU3 connection, and the bosonic-to-FR/Dirac matching theorem is absent. First exact object: `COMMON_DOMAIN_ETA_TO_PHYSICAL_SU3_ASSOCIATED_BUNDLE_REDUCTION_WITH_COLLAR_MEASURE_AND_VARIATIONAL_INTERTWINER`.

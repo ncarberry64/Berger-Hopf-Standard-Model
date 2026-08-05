@@ -313,4 +313,4 @@ Mark III remains open.
 
 ## v14.29 View 2 progress
 
-The independent physical SU(3) connection now minimally gauges the retained eta collar term and receives its variational tangent current with no new vector field. This closes the classical View 2 ownership subgate, not Mark III. FR action equivalence, the full gauge-fixed nonlinear BVP, a stable non-Gaussian center-sector saddle, the worldsheet/area-law limit, common gauge normalization, physical scale, and all mass/flavor/neutrino outputs remain required.
+A conditional action candidate lets the independent physical SU(3) connection gauge an eta collar term and yields a variational tangent current with no new vector field. It does not close the View 2 ownership subgate: the original `M8` eta sector lacks a common-domain reduction/measure theorem to the physical `M4` connection, and FR/Dirac matching is absent. Those objects precede the nonlinear BVP, center-sector saddle, worldsheet/area-law limit, common gauge normalization, physical scale, and all mass/flavor/neutrino outputs.

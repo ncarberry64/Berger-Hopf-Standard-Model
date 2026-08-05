@@ -21,7 +21,9 @@ from bhsm.interface.confinement.view2_coupled_bvp_v14_29 import EXACT_NEXT_OBJEC
 from bhsm.interface.master_action.view2_master_action_promotion_v14_29 import PRIMARY_VERDICT, master_action_payload
 
 VERSION = "v14.29"
-SECONDARY_VERDICT = "VIEW2_CLASSICAL_ACTION_GATE_CLOSED; FR_ACTION_EQUIVALENCE_AND_FULL_NONLINEAR_CONFINEMENT_BVP_REMAIN_CONDITIONAL_OR_OPEN"
+SECONDARY_VERDICT = "LOCAL_CANDIDATE_VARIATION_GAUGE_INVARIANCE_AND_NO_NEW_VECTOR_RESULT_VALID; ACTION_OWNERSHIP_FR_MATCHING_AND_PHYSICAL_GAUSS_CHARGE_REMAIN_OPEN"
+OWNERSHIP_NEXT_OBJECT = "COMMON_DOMAIN_ETA_TO_PHYSICAL_SU3_ASSOCIATED_BUNDLE_REDUCTION_WITH_COLLAR_MEASURE_AND_VARIATIONAL_INTERTWINER"
+MATCHING_NEXT_OBJECT = "COLLECTIVE_COORDINATE_PATH_INTEGRAL_MATCHING_OF_THE_ETA_ZERO_MODE_CURRENT_TO_A_NORMALIZED_FR_DIRAC_ACTION_WITH_SELF_ADJOINT_DOMAIN_AND_MODE_SUBTRACTION"
 
 ARTIFACT_BUILDERS: dict[str, Callable[[], dict[str, Any]]] = {
     "BHSM_v14_9_to_v14_28_lineage_recovery.json": lineage_recovery_payload,
@@ -59,8 +61,8 @@ def completion_payload() -> dict[str, Any]:
     ]
     validation = {
         "lineage_recovered_with_missing_versions_fail_closed": lineage_recovery_payload()["validation_passed"],
-        "classical_View2_action_bundle_current_Hessian_closed": all(item["validation_passed"] for item in classical),
-        "FR_no_double_counting_gate_passed_conditionally": fr_quantization_payload()["validation_passed"],
+        "conditional_View2_candidate_audits_pass": all(item["validation_passed"] for item in classical),
+        "FR_no_double_counting_policy_audited_but_matching_open": fr_quantization_payload()["validation_passed"],
         "Wilson_singlet_exact": wilson_singlet_payload()["validation_passed"],
         "downstream_BVP_specified_but_not_falsely_solved": coupled_bvp_payload()["validation_passed"],
         "transverse_analytic_screens_pass": transverse_flux_payload()["validation_passed"],
@@ -80,17 +82,20 @@ def completion_payload() -> dict[str, Any]:
         "BHSM_complete": False,
         "frozen_predictions_changed": False,
         "physical_outputs_emitted": False,
-        "validated": ["G2/SU3 associated-bundle View 2", "composite theta and no-new-vector Hessian", "minimally gauged eta p2+p8 action", "variational SU3 current and Noether identity", "pure-wall zero/tangent nonzero split", "exact Wilson singlet invariants"],
+        "validated": ["conditional G2/SU3 associated-bundle geometry", "composite theta has no independent vector coordinate", "local variation and gauge identity of the candidate eta p2+p8 covariantization", "pure-wall zero/off-shell tangent nonzero split", "exact Wilson singlet invariants"],
         "invalidated": ["identical-layer DtN radius selection", "family splitting from degenerate thresholds", "linear/Gaussian collar as an asymptotic confinement mechanism", "generator-trace or 6pi2 derivation of an absolute common gauge coefficient", "rank-(dim g-1) unbroken kinetic projectors", "a complete Dirac pair or family hierarchy from one common eta wall profile"],
-        "reclassified": ["FR Dirac current is a conditional collective representative, not an additive source", "stable finite tube does not alone establish an area law", "trace data determine ratios only"],
+        "reclassified": ["v14.29 minimal gauging is a candidate action completion, not derived from the prior stratified action", "theta is canonical associated-bundle geometry/definition, not action-derived", "FR Dirac current is an intended but unproved collective representative, not an additive source", "stable finite tube does not alone establish an area law", "trace data determine ratios only"],
         "open": [
+            {"object": OWNERSHIP_NEXT_OBJECT, "type": "mathematical/action-domain"},
+            {"object": MATCHING_NEXT_OBJECT, "type": "mathematical/quantization-matching"},
             {"object": fr_quantization_payload()["open_gate"], "type": "mathematical/action-domain"},
             {"object": EXACT_NEXT_OBJECT, "type": "mathematical-computational-numerical"},
             {"object": "COMMON_YANG_MILLS_NORMALIZATION_MATCHING_SCALE_AND_THRESHOLD_FUNCTIONAL", "type": "action-principle/physical"},
             {"object": chiral_overlap_no_go_payload()["exact_next_object"], "type": "mathematical/action-principle"},
             {"object": "NON_GAUSSIAN_Z3_CENTER_SECTOR_MEASURE_AND_WORLDSHEET_LIMIT", "type": "nonperturbative mathematical-physical"},
         ],
-        "exact_next_object": EXACT_NEXT_OBJECT,
+        "exact_next_object": OWNERSHIP_NEXT_OBJECT,
+        "downstream_BVP_object": EXACT_NEXT_OBJECT,
         "forbidden_outputs": {"physical_CKM": None, "physical_PMNS": None, "absolute_masses": None, "mass_splittings": None, "c_sigma": None},
         "validation": validation,
         "validation_passed": all(validation.values()),

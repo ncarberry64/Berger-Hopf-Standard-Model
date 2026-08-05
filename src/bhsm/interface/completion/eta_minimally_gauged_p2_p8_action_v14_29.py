@@ -1,4 +1,4 @@
-"""Minimal physical-SU(3) gauging of the retained eta p2+p8 collar action."""
+"""Conditional physical-SU(3) covariantization of the eta p2+p8 action."""
 
 from __future__ import annotations
 
@@ -27,7 +27,7 @@ def su3_generators() -> tuple[np.ndarray, ...]:
 
 
 def covariant_derivative(eta: np.ndarray, partial_eta: np.ndarray, gauge_components: np.ndarray) -> np.ndarray:
-    """D_mu eta=partial_mu eta+A_mu^a t_a eta in the local m_C=3 chart."""
+    """D_mu xi=partial_mu xi+A_mu^a t_a xi in a local m_C=3 tangent chart."""
     eta = np.asarray(eta, dtype=complex)
     partial_eta = np.asarray(partial_eta, dtype=complex)
     gauge_components = np.asarray(gauge_components, dtype=float)
@@ -54,11 +54,11 @@ def collar_density(x_eta: float, kappa1: float = 1.0, weight: float = 1.0) -> fl
 
 
 def action_current(eta: np.ndarray, derivative: np.ndarray, kappa1: float = 1.0, weight: float = 1.0) -> np.ndarray:
-    """delta L/d A_mu^a in the anti-Hermitian generator convention."""
+    """Source J=-delta L/dA in the convention delta S=-int J delta A."""
     eta = np.asarray(eta, dtype=complex)
     derivative = np.asarray(derivative, dtype=complex)
     x_eta = kinetic_invariant(derivative)
-    multiplier = -2.0 * weight * (kappa1 + x_eta**3)
+    multiplier = 2.0 * weight * (kappa1 + x_eta**3)
     return np.asarray([
         [multiplier * np.real(np.vdot(derivative[mu], generator @ eta)) for generator in su3_generators()]
         for mu in range(derivative.shape[0])
@@ -79,13 +79,15 @@ def minimally_gauged_action_payload() -> dict[str, Any]:
     return {
         "artifact": "BHSM_eta_minimally_gauged_p2_p8_action_v14_29",
         "version": VERSION,
-        "classification": "AUTHORITATIVE_CLASSICAL_ACTION_PROMOTION",
-        "domain": "BHSM collar with the retained parent measure and positive weight w",
-        "fields": "A_physical in Conn(P_color), eta in Gamma(P_color x_SU3 S6)",
-        "derivative": "D_mu^A eta=partial_mu eta+A_mu^a K_a(eta)",
-        "invariant": "X_eta=<D_A eta,D^A eta>=2 Re sum_mu (D_mu eta)^dagger D_mu eta in a local m_C chart",
+        "classification": "CANDIDATE_ACTION_COMPLETION_NOT_DERIVED_FROM_THE_PRE_V14_29_STRATIFIED_ACTION",
+        "domain": "conditional collar C_eta=B1 x (-epsilon,epsilon); its embedding, width, and pushforward into the physical M4 action remain open",
+        "fields": "candidate A_physical in Conn(P_color) and eta in Gamma(P_color x_SU3 S6)",
+        "derivative": "D_mu^A eta=partial_mu eta+A_mu^a K_a(eta); implemented numerically only in the local tangent coordinate xi in m_C=3",
+        "invariant": "X_eta=G_IJ D_M eta^I D^M eta^J; locally X=2 Re sum_mu (D_mu xi)^dagger D^mu xi",
         "density": "L_etaA=-w[kappa1 X_eta/2+X_eta^4/8]",
-        "variation": "delta_A L=-2w(kappa1+X_eta^3) Re<(D^mu eta),t_a eta> delta A_mu^a",
+        "variation": "delta_A L=-J_a^mu delta A_mu^a, J_a^mu=2w(kappa1+X_eta^3) Re[(t_a xi)^dagger D^mu xi] in the local tangent chart",
+        "retained_action_boundary": "the v10 D_A is the M8 spin-covariant derivative; it is not the independently varied physical M4 SU3 connection",
+        "missing_ownership_theorem": "COMMON_DOMAIN_ETA_TO_PHYSICAL_SU3_ASSOCIATED_BUNDLE_REDUCTION_WITH_COLLAR_MEASURE_AND_VARIATIONAL_INTERTWINER",
         "coefficient_ledger": {"kappa1": "pre-existing eta coefficient", "p8": "fixed retained coefficient 1/8", "new": []},
         "validation": validation,
         "validation_passed": all(validation.values()),

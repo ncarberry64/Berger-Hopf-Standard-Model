@@ -352,11 +352,11 @@ Exact next object:
 
 # v14.29 View 2 classical action/current gate
 
-- Bundle/action/current/Hessian: `CLOSED` at the classical eta-collar level.
+- Bundle/action/current/Hessian: `VALIDATED_CONDITIONALLY` for a candidate common-domain action; not derived from the prior stratified action.
 - Projector/Berry connection versus physical SU(3): `DISTINCT`.
 - Selector and pure-wall source: `ZERO`, retained as the background limit.
-- Tangent source: `NONZERO_ACTION_VARIATION`.
-- FR current: `CONDITIONAL_COLLECTIVE_REPRESENTATIVE_NOT_ADDITIVE_SOURCE`.
+- Tangent source: `NONZERO_OFF_SHELL_CANDIDATE_ACTION_VARIATION`.
+- FR current: `OPEN_COLLECTIVE_MATCHING_THEOREM_NOT_ADDITIVE_SOURCE`.
 - Confinement and worldsheet: `OPEN`.
 - Mark III / Mark IV: `NOT_REACHED` / `NOT_REACHED`.
-- Exact next object: `GAUGE_FIXED_COUPLED_ETA_SU3_COLLAR_WILSON_SINGLET_BOUNDARY_VALUE_PROBLEM_WITH_SELF_ADJOINT_DOMAIN_PARENT_RELATIVE_SUBTRACTION_AND_NONRADIAL_HESSIAN`.
+- Exact next object: `COMMON_DOMAIN_ETA_TO_PHYSICAL_SU3_ASSOCIATED_BUNDLE_REDUCTION_WITH_COLLAR_MEASURE_AND_VARIATIONAL_INTERTWINER`.

@@ -1,7 +1,7 @@
 {
-  "Noether_identity": "(D_mu J^mu)_a + <E_eta,K_a(eta)>=0 (off shell; signs follow delta S=E_eta delta eta+J delta A)",
+  "Noether_identity": "for source J defined by delta S=-int J delta A and delta A=-D epsilon: (D_mu J^mu)_a-<E_eta,K_a(eta)>=0; equivalently D_mu(delta S/delta A_mu)_a+<E_eta,K_a>=0",
   "artifact": "BHSM_SU3_current_and_Noether_identity_v14_29",
-  "current": "J_a^mu=-2w(kappa1+X_eta^3) Re<(D^mu eta),t_a eta>",
+  "current": "source J_a^mu=+2w(kappa1+X_eta^3) Re[(t_a xi)^dagger D^mu xi] in the local m_C chart; delta S/delta A=-J",
   "generator_convention": "t_a anti-Hermitian, tr(t_a^dagger t_b)=delta_ab/2",
   "on_shell_consequence": "D_mu J^mu=0 when E_eta=0",
   "validation": {
@@ -14,6 +14,7 @@
   "validation_passed": true,
   "version": "v14.29",
   "witness_nonzero_components": [
-    4
+    2,
+    7
   ]
 }

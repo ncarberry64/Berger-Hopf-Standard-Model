@@ -1,16 +1,18 @@
 {
   "artifact": "BHSM_eta_minimally_gauged_p2_p8_action_v14_29",
-  "classification": "AUTHORITATIVE_CLASSICAL_ACTION_PROMOTION",
+  "classification": "CANDIDATE_ACTION_COMPLETION_NOT_DERIVED_FROM_THE_PRE_V14_29_STRATIFIED_ACTION",
   "coefficient_ledger": {
     "kappa1": "pre-existing eta coefficient",
     "new": [],
     "p8": "fixed retained coefficient 1/8"
   },
   "density": "L_etaA=-w[kappa1 X_eta/2+X_eta^4/8]",
-  "derivative": "D_mu^A eta=partial_mu eta+A_mu^a K_a(eta)",
-  "domain": "BHSM collar with the retained parent measure and positive weight w",
-  "fields": "A_physical in Conn(P_color), eta in Gamma(P_color x_SU3 S6)",
-  "invariant": "X_eta=<D_A eta,D^A eta>=2 Re sum_mu (D_mu eta)^dagger D_mu eta in a local m_C chart",
+  "derivative": "D_mu^A eta=partial_mu eta+A_mu^a K_a(eta); implemented numerically only in the local tangent coordinate xi in m_C=3",
+  "domain": "conditional collar C_eta=B1 x (-epsilon,epsilon); its embedding, width, and pushforward into the physical M4 action remain open",
+  "fields": "candidate A_physical in Conn(P_color) and eta in Gamma(P_color x_SU3 S6)",
+  "invariant": "X_eta=G_IJ D_M eta^I D^M eta^J; locally X=2 Re sum_mu (D_mu xi)^dagger D^mu xi",
+  "missing_ownership_theorem": "COMMON_DOMAIN_ETA_TO_PHYSICAL_SU3_ASSOCIATED_BUNDLE_REDUCTION_WITH_COLLAR_MEASURE_AND_VARIATIONAL_INTERTWINER",
+  "retained_action_boundary": "the v10 D_A is the M8 spin-covariant derivative; it is not the independently varied physical M4 SU3 connection",
   "validation": {
     "current_is_action_variation": true,
     "frozen_inputs_and_no_CKM_data": true,
@@ -21,6 +23,6 @@
     "ungauged_action_recovered_at_A_zero": true
   },
   "validation_passed": true,
-  "variation": "delta_A L=-2w(kappa1+X_eta^3) Re<(D^mu eta),t_a eta> delta A_mu^a",
+  "variation": "delta_A L=-J_a^mu delta A_mu^a, J_a^mu=2w(kappa1+X_eta^3) Re[(t_a xi)^dagger D^mu xi] in the local tangent chart",
   "version": "v14.29"
 }

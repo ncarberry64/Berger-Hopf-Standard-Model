@@ -1,7 +1,8 @@
 {
   "BHSM_complete": false,
   "artifact": "BHSM_completion_gate_v14_29",
-  "exact_next_object": "GAUGE_FIXED_COUPLED_ETA_SU3_COLLAR_WILSON_SINGLET_BOUNDARY_VALUE_PROBLEM_WITH_SELF_ADJOINT_DOMAIN_PARENT_RELATIVE_SUBTRACTION_AND_NONRADIAL_HESSIAN",
+  "downstream_BVP_object": "GAUGE_FIXED_COUPLED_ETA_SU3_COLLAR_WILSON_SINGLET_BOUNDARY_VALUE_PROBLEM_WITH_SELF_ADJOINT_DOMAIN_PARENT_RELATIVE_SUBTRACTION_AND_NONRADIAL_HESSIAN",
+  "exact_next_object": "COMMON_DOMAIN_ETA_TO_PHYSICAL_SU3_ASSOCIATED_BUNDLE_REDUCTION_WITH_COLLAR_MEASURE_AND_VARIATIONAL_INTERTWINER",
   "forbidden_outputs": {
     "absolute_masses": null,
     "c_sigma": null,
@@ -19,6 +20,14 @@
     "a complete Dirac pair or family hierarchy from one common eta wall profile"
   ],
   "open": [
+    {
+      "object": "COMMON_DOMAIN_ETA_TO_PHYSICAL_SU3_ASSOCIATED_BUNDLE_REDUCTION_WITH_COLLAR_MEASURE_AND_VARIATIONAL_INTERTWINER",
+      "type": "mathematical/action-domain"
+    },
+    {
+      "object": "COLLECTIVE_COORDINATE_PATH_INTEGRAL_MATCHING_OF_THE_ETA_ZERO_MODE_CURRENT_TO_A_NORMALIZED_FR_DIRAC_ACTION_WITH_SELF_ADJOINT_DOMAIN_AND_MODE_SUBTRACTION",
+      "type": "mathematical/quantization-matching"
+    },
     {
       "object": "ACTION_EQUIVALENCE_OF_THE_FR_FIRST_ORDER_DIRAC_NORMAL_FORM_WITH_SELF_ADJOINT_RELATIVE_KNOT_DOMAIN",
       "type": "mathematical/action-domain"
@@ -41,26 +50,27 @@
     }
   ],
   "physical_outputs_emitted": false,
-  "primary_verdict": "BHSM_VIEW2_COMPOSITE_G2_SU3_COSET_INTRINSIC_TORSION_IS_ACTION_OWNED_AND_SOURCES_THE_INDEPENDENT_SU3_GAUSS_LAW_WITHOUT_NEW_VECTOR_DEGREES",
+  "primary_verdict": "BHSM_VIEW2_MINIMALLY_GAUGED_ETA_ACTION_AND_COMPOSITE_THETA_CURRENT_ARE_CONSTRUCTED_CONDITIONALLY_BUT_FULL_MASTER_ACTION_OWNERSHIP_REMAINS_BLOCKED",
   "reclassified": [
-    "FR Dirac current is a conditional collective representative, not an additive source",
+    "v14.29 minimal gauging is a candidate action completion, not derived from the prior stratified action",
+    "theta is canonical associated-bundle geometry/definition, not action-derived",
+    "FR Dirac current is an intended but unproved collective representative, not an additive source",
     "stable finite tube does not alone establish an area law",
     "trace data determine ratios only"
   ],
-  "secondary_verdict": "VIEW2_CLASSICAL_ACTION_GATE_CLOSED; FR_ACTION_EQUIVALENCE_AND_FULL_NONLINEAR_CONFINEMENT_BVP_REMAIN_CONDITIONAL_OR_OPEN",
+  "secondary_verdict": "LOCAL_CANDIDATE_VARIATION_GAUGE_INVARIANCE_AND_NO_NEW_VECTOR_RESULT_VALID; ACTION_OWNERSHIP_FR_MATCHING_AND_PHYSICAL_GAUSS_CHARGE_REMAIN_OPEN",
   "validated": [
-    "G2/SU3 associated-bundle View 2",
-    "composite theta and no-new-vector Hessian",
-    "minimally gauged eta p2+p8 action",
-    "variational SU3 current and Noether identity",
-    "pure-wall zero/tangent nonzero split",
+    "conditional G2/SU3 associated-bundle geometry",
+    "composite theta has no independent vector coordinate",
+    "local variation and gauge identity of the candidate eta p2+p8 covariantization",
+    "pure-wall zero/off-shell tangent nonzero split",
     "exact Wilson singlet invariants"
   ],
   "validation": {
     "A_P_not_A_physical": true,
-    "FR_no_double_counting_gate_passed_conditionally": true,
+    "FR_no_double_counting_policy_audited_but_matching_open": true,
     "Wilson_singlet_exact": true,
-    "classical_View2_action_bundle_current_Hessian_closed": true,
+    "conditional_View2_candidate_audits_pass": true,
     "downstream_BVP_specified_but_not_falsely_solved": true,
     "family_current_remains_I3_until_action_derived": true,
     "forbidden_physical_outputs_absent": true,

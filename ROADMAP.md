@@ -434,4 +434,4 @@ Hessian and downstream orbit campaign.
 
 ## v14.29 next campaign
 
-Fix the self-adjoint gauge/ghost/FR domain and solve the nonradial parent-relative SU(3)-eta-collar Wilson-singlet BVP. Only after a stable transverse saddle and negative-mode audit may the relative determinant and worldsheet limit be evaluated. Common Yang-Mills normalization, dimensional anchoring, masses, and flavor remain downstream and may not be supplied from measurements.
+First derive the common-domain map from the retained `M8` eta field to the physical-SU3 collar bundle, including its measure and variational intertwiner, then derive the FR/Dirac collective matching and mode subtraction. Only then fix the self-adjoint gauge/ghost/FR domain and solve the nonradial parent-relative SU(3)-eta-collar Wilson-singlet BVP. A stable transverse saddle and negative-mode audit must precede the determinant/worldsheet limit. Common Yang-Mills normalization, dimensional anchoring, masses, and flavor remain downstream and may not be supplied from measurements.

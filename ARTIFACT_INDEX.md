@@ -1774,4 +1774,4 @@ Doctrine and manuscript chapter:
 
 ## v14.29 View 2 action artifacts
 
-The deterministic v14.29 set contains the v14.9-v14.28 lineage ledger, `G2/SU3` bundle/composite-theta and Hessian audits, minimally gauged eta action, Noether/current and wall/tangent screens, FR no-double-counting ledger, Wilson singlet source functional, authoritative master-action promotion, downstream BVP/relative-determinant gates, and `BHSM_completion_gate_v14_29.json`. Regenerate with `python scripts/materialize_view2_completion_v14_29.py`.
+The deterministic v14.29 set contains the v14.9-v14.28 lineage ledger, `G2/SU3` bundle/composite-theta and Hessian audits, conditional minimally gauged eta candidate, convention-corrected Noether/current and wall/tangent screens, FR no-double-counting policy/open matching ledger, Wilson singlet source functional, conditional master-action completion audit, downstream BVP/relative-determinant gates, and `BHSM_completion_gate_v14_29.json`. Regenerate with `python scripts/materialize_view2_completion_v14_29.py` and read the controlling scientific proof audit before interpreting the payloads.

@@ -989,4 +989,4 @@ python -m bhsm.interface view2-completion-status-v14-29 --format json
 python scripts/materialize_view2_completion_v14_29.py
 ```
 
-The command reports the classical Outcome A boundary, the conditional FR bridge, forbidden physical outputs, and the exact downstream BVP object.
+The command reports Outcome B: a valid local candidate action/current audit, open common-domain action ownership, open FR/Dirac matching, forbidden physical outputs, and the exact upstream reduction object.

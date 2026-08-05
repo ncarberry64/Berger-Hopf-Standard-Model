@@ -12,7 +12,7 @@ from bhsm.interface.completion.eta_minimally_gauged_p2_p8_action_v14_29 import a
 from bhsm.interface.completion.eta_su3_noether_current_v14_29 import noether_current_payload, pure_wall_current_payload, selector_background_witness, tangent_mode_payload, tangent_mode_witness
 from bhsm.interface.completion.recovered_gauge_chiral_no_go_v14_29 import chiral_overlap_no_go_payload, gauge_normalization_no_go_payload, six_pi_squared_identity
 from bhsm.interface.completion.v14_9_28_lineage_recovery_v14_29 import lineage_recovery_payload
-from bhsm.interface.completion.view2_completion_gate_v14_29 import all_payloads, completion_payload, materialization_hashes
+from bhsm.interface.completion.view2_completion_gate_v14_29 import OWNERSHIP_NEXT_OBJECT, all_payloads, completion_payload, materialization_hashes
 from bhsm.interface.completion.wilson_singlet_source_functional_v14_29 import meson_amplitudes, singlet_color_invariants, wilson_singlet_payload
 from bhsm.interface.confinement.view2_coupled_bvp_v14_29 import coupled_bvp_payload, reduced_tension, stationary_equation, transverse_flux_payload, wall_only_solution, wallless_solution
 from bhsm.interface.master_action.view2_master_action_promotion_v14_29 import master_action_payload
@@ -80,7 +80,7 @@ def test_08_current_equals_exact_connection_variation():
         plus[0, index] += eps
         minus[0, index] -= eps
         numeric = (collar_density(kinetic_invariant(covariant_derivative(eta, partial, plus))) - collar_density(kinetic_invariant(covariant_derivative(eta, partial, minus)))) / (2 * eps)
-        assert np.isclose(numeric, current[0, index], rtol=2e-5, atol=2e-7)
+        assert np.isclose(numeric, -current[0, index], rtol=2e-5, atol=2e-7)
 
 
 def test_09_noether_identity_is_recorded_off_shell():
@@ -156,7 +156,8 @@ def test_23_canonical_completion_gate_consistent():
     payload = completion_payload()
     assert payload["validation_passed"]
     assert payload["BHSM_complete"] is False
-    assert payload["exact_next_object"] == coupled_bvp_payload()["exact_next_object"]
+    assert payload["exact_next_object"] == OWNERSHIP_NEXT_OBJECT
+    assert payload["downstream_BVP_object"] == coupled_bvp_payload()["exact_next_object"]
 
 
 def test_24_historical_download_lineage_explicitly_classified():
@@ -177,6 +178,8 @@ def test_26_master_action_owns_view2_without_duplicate_eta_term():
     payload = master_action_payload()
     assert payload["validation_passed"]
     assert payload["validation"]["eta_term_not_duplicated"]
+    assert payload["authoritative_action"] is None
+    assert payload["validation"]["preexisting_parent_action_derivation_absent"]
 
 
 def test_27_wallless_and_wall_only_extrema_are_exact():
@@ -213,3 +216,23 @@ def test_32_single_wall_chiral_pair_and_overlap_no_go_recovered():
     assert payload["validation_passed"]
     assert payload["validation"]["single_wall_supplies_one_chiral_branch_not_Dirac_pair"]
     assert payload["validation"]["common_profile_overlap_is_family_central"]
+
+
+def test_33_final_verdict_is_outcome_b_not_action_owned_outcome_a():
+    payload = completion_payload()
+    assert payload["primary_verdict"].startswith("BHSM_VIEW2_MINIMALLY_GAUGED_ETA_ACTION")
+    assert master_action_payload()["authoritative_action"] is None
+
+
+def test_34_tangent_witness_uses_stabilizer_zero_chart_and_phase_mode():
+    background, _ = selector_background_witness()
+    tangent, derivative, current = tangent_mode_witness()
+    assert np.allclose(background, 0)
+    assert np.vdot(tangent, derivative).imag != 0
+    assert np.linalg.norm(current) > 0
+
+
+def test_35_formal_scientific_audit_records_proof_and_blockers():
+    report = (Path(__file__).parents[1] / "docs" / "BHSM_VIEW2_SCIENTIFIC_PROOF_AUDIT_V14_29.md").read_text(encoding="utf-8")
+    for required in ("Outcome B", "delta_A S_etaA^cand", "Quadratic Hessian", "Double-counting audit", "COMMON_DOMAIN_ETA_TO_PHYSICAL_SU3"):
+        assert required in report

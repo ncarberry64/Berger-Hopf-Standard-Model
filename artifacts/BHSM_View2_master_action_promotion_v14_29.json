@@ -1,8 +1,9 @@
 {
   "YM_equation": "g3^(-2)(D_nu F^(nu mu))_a=j_eta,a^mu+j_retained,a^mu",
   "artifact": "BHSM_View2_master_action_promotion_v14_29",
-  "authoritative_action": "S_master^(14.29)=S_retained_without_old_ungauged_eta_kinetic+S_YM[A_physical]+S_etaA[A_physical,eta]+S_constraint+S_collar_geometry; Wilson functionals are source insertions",
-  "configuration_space": "Conn(P_color) x Gamma(Sigma_eta) x retained independent fields and multipliers",
+  "authoritative_action": null,
+  "conditional_completion_candidate": "S_candidate=S_retained_without_old_ungauged_eta_kinetic+S_YM[A_physical]+S_etaA[A_physical,eta]+S_constraint+S_collar_geometry; Wilson functionals are source insertions",
+  "configuration_space": "candidate common-domain space Conn(P_color) x Gamma(Sigma_eta) x retained fields; the map from the original M8 eta field to this collar space is not derived",
   "object_ledger": [
     {
       "Double-counting risk": "must not equal A^P",
@@ -16,13 +17,13 @@
       "Variation": "delta A"
     },
     {
-      "Double-counting risk": "S_etaA replaces, not supplements, ungauged eta kinetic term",
-      "Equation produced": "gauged p2+p8 eta Euler equation",
+      "Double-counting risk": "S_etaA must replace, not supplement, the ungauged eta kinetic term",
+      "Equation produced": "candidate gauged p2+p8 eta Euler equation",
       "Independent/composite": "independent section",
       "Normalization source": "retained kappa1 and fixed p8 term",
       "Object": "eta",
-      "Status": "authoritative",
-      "Stratum": "collar",
+      "Status": "conditional; common-domain reduction open",
+      "Stratum": "candidate physical-SU3 collar; original field is on M8",
       "Type": "G2/SU3=S6 section",
       "Variation": "delta eta tangent to Sigma_eta"
     },
@@ -32,8 +33,8 @@
       "Independent/composite": "composite",
       "Normalization source": "canonical reductive bundle map",
       "Object": "theta=Theta_eta(D_A eta)",
-      "Status": "derived",
-      "Stratum": "collar",
+      "Status": "geometric definition conditional on common bundle; not action-derived",
+      "Stratum": "candidate collar",
       "Type": "intrinsic torsion",
       "Variation": "chain rule from delta A,delta eta"
     },
@@ -71,7 +72,11 @@
       "Variation": "source response only"
     }
   ],
-  "primary_verdict": "BHSM_VIEW2_COMPOSITE_G2_SU3_COSET_INTRINSIC_TORSION_IS_ACTION_OWNED_AND_SOURCES_THE_INDEPENDENT_SU3_GAUSS_LAW_WITHOUT_NEW_VECTOR_DEGREES",
+  "precise_blockers": [
+    "common-domain M8-to-collar eta/SU3 reduction and measure",
+    "collective FR/Dirac action-equivalence and mode-subtraction theorem"
+  ],
+  "primary_verdict": "BHSM_VIEW2_MINIMALLY_GAUGED_ETA_ACTION_AND_COMPOSITE_THETA_CURRENT_ARE_CONSTRUCTED_CONDITIONALLY_BUT_FULL_MASTER_ACTION_OWNERSHIP_REMAINS_BLOCKED",
   "replacement_rule": "S_etaA is the gauge-covariant replacement of the retained eta p2+p8 term, not an added duplicate",
   "retained_source_definition": "variations of pre-existing non-eta color-charged action terms only; after FR quantization the eta zero-mode Dirac representative replaces its classical source",
   "source_functionals": [
@@ -81,11 +86,13 @@
   "validation": {
     "A_P_distinct_from_A_physical": true,
     "FR_current_not_double_counted": true,
+    "FR_matching_theorem_absent": true,
     "Wilson_operator_is_source_not_field": true,
     "all_classical_View2_dependencies_pass": true,
+    "conditional_action_layer_recorded": true,
     "eta_term_not_duplicated": true,
-    "master_action_promoted": true,
     "physical_YM_connection_retained": true,
+    "preexisting_parent_action_derivation_absent": true,
     "theta_not_independently_varied": true
   },
   "validation_passed": true,

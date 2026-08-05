@@ -2,18 +2,18 @@
 
 ## Outcome
 
-The classical View 2 gate reaches Outcome A:
+The subsequent scientific proof audit reclassifies this campaign as Outcome B:
 
-`BHSM_VIEW2_COMPOSITE_G2_SU3_COSET_INTRINSIC_TORSION_IS_ACTION_OWNED_AND_SOURCES_THE_INDEPENDENT_SU3_GAUSS_LAW_WITHOUT_NEW_VECTOR_DEGREES`
+`BHSM_VIEW2_MINIMALLY_GAUGED_ETA_ACTION_AND_COMPOSITE_THETA_CURRENT_ARE_CONSTRUCTED_CONDITIONALLY_BUT_FULL_MASTER_ACTION_OWNERSHIP_REMAINS_BLOCKED`
 
-This is not a claim that BHSM, confinement, the physical scale, or flavor is complete.
+The initial software-consistency result did not prove the missing `M8` eta-to-physical-SU3 common-domain reduction or the FR/Dirac matching theorem. The controlling derivation and corrected current convention are in [BHSM_VIEW2_SCIENTIFIC_PROOF_AUDIT_V14_29.md](BHSM_VIEW2_SCIENTIFIC_PROOF_AUDIT_V14_29.md). This is not a claim that BHSM, confinement, the physical scale, or flavor is complete.
 
 ## Validated
 
 - For the retained color bundle `P_color`, the extension `Q_G2=P_color x_SU3 G2` and associated `S6=G2/SU3` bundle retain arbitrary parent `c2` sectors. The vertical tangent is `P_color x_SU3 m`, with `dim_R m=6` and `m_C=3+bar3`.
 - `theta=Theta_eta(D_A eta)` is composite. The independent configuration variables are `A_physical` and `eta`; the Hessian has the ordinary eight Yang-Mills vector symbols and the six existing eta scalar tangent symbols, with no extra vector pole.
-- The retained `p=2+p=8` eta term is covariantized without a new coefficient: `L_etaA=-w[kappa1 X_eta/2+X_eta^4/8]`. It replaces the ungauged eta kinetic term and uses `A_physical`, never `A^P`.
-- Direct connection variation gives `J_a^mu=-2w(kappa1+X_eta^3) Re<(D^mu eta),t_a eta>` in the declared anti-Hermitian-generator convention. Gauge symmetry gives the off-shell Noether identity and on-shell covariant conservation.
+- A conditional candidate covariantizes the retained `p=2+p=8` eta density without a new coefficient. It is not derived from the prior stratified action because eta and `A_physical` live on different owned strata with no common reduction/measure theorem.
+- Direct variation gives the source `J_a^mu=+2w(kappa1+X_eta^3) Re[(t_a xi)^dagger D^mu xi]` in the local complex tangent convention when `delta S=-int J delta A`. Gauge symmetry gives the convention-corrected off-shell identity and on-shell conservation for the candidate.
 - The stabilizer selector and a featureless pure normal wall have zero current. A nontrivial eta tangent excitation has an explicit noncentral current and positive dimensionless reference `Z_eta` on the retained stable branch.
 - The exact Wilson-dressed meson/baryon source functionals have zero total singlet charge and mesonic summed endpoint correlation `-4/3`.
 
