@@ -86,3 +86,7 @@ negative DeWitt direction, fixing the lapse before variation, or relabeling a
 positive anisotropy shape is not a falsifier. The author-selection verdict
 fails if one compared geometric extension can be proved uniquely minimal from
 the existing axioms and action with no extra unselected coefficient.
+
+## v14.29 View 2 falsifiers
+
+The classical View 2 closure fails if the associated `G2/SU3` section forces trivial `c2(P_color)`, if theta admits an independent variation/pole, if finite variation disagrees with the declared current, if gauge covariance or the Noether identity fails, or if the eta term duplicates rather than replaces the ungauged action. Confinement remains falsified for the Gaussian collar by its zero asymptotic string tension; a finite tube alone is not an area-law proof.

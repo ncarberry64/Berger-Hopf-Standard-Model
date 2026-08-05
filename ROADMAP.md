@@ -431,3 +431,7 @@ inverse-square-kinetic families (and their couplings), fix the core variational
 ensemble, and preserve the frozen-action limit. Only a healthy uniquely
 action-owned local degree licenses reconstruction of the common three-mode
 Hessian and downstream orbit campaign.
+
+## v14.29 next campaign
+
+Fix the self-adjoint gauge/ghost/FR domain and solve the nonradial parent-relative SU(3)-eta-collar Wilson-singlet BVP. Only after a stable transverse saddle and negative-mode audit may the relative determinant and worldsheet limit be evaluated. Common Yang-Mills normalization, dimensional anchoring, masses, and flavor remain downstream and may not be supplied from measurements.

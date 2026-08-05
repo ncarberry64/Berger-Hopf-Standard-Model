@@ -1,0 +1,93 @@
+{
+  "YM_equation": "g3^(-2)(D_nu F^(nu mu))_a=j_eta,a^mu+j_retained,a^mu",
+  "artifact": "BHSM_View2_master_action_promotion_v14_29",
+  "authoritative_action": "S_master^(14.29)=S_retained_without_old_ungauged_eta_kinetic+S_YM[A_physical]+S_etaA[A_physical,eta]+S_constraint+S_collar_geometry; Wilson functionals are source insertions",
+  "configuration_space": "Conn(P_color) x Gamma(Sigma_eta) x retained independent fields and multipliers",
+  "object_ledger": [
+    {
+      "Double-counting risk": "must not equal A^P",
+      "Equation produced": "Yang-Mills Gauss/evolution equation",
+      "Independent/composite": "independent",
+      "Normalization source": "retained S_YM; common coefficient unresolved",
+      "Object": "A_physical",
+      "Status": "authoritative",
+      "Stratum": "M4/collar pullback",
+      "Type": "SU(3) connection",
+      "Variation": "delta A"
+    },
+    {
+      "Double-counting risk": "S_etaA replaces, not supplements, ungauged eta kinetic term",
+      "Equation produced": "gauged p2+p8 eta Euler equation",
+      "Independent/composite": "independent section",
+      "Normalization source": "retained kappa1 and fixed p8 term",
+      "Object": "eta",
+      "Status": "authoritative",
+      "Stratum": "collar",
+      "Type": "G2/SU3=S6 section",
+      "Variation": "delta eta tangent to Sigma_eta"
+    },
+    {
+      "Double-counting risk": "forbid independent theta Hessian",
+      "Equation produced": "none independently",
+      "Independent/composite": "composite",
+      "Normalization source": "canonical reductive bundle map",
+      "Object": "theta=Theta_eta(D_A eta)",
+      "Status": "derived",
+      "Stratum": "collar",
+      "Type": "intrinsic torsion",
+      "Variation": "chain rule from delta A,delta eta"
+    },
+    {
+      "Double-counting risk": "do not infer all tangent currents vanish",
+      "Equation produced": "J[u_eta]=0",
+      "Independent/composite": "fixed background section",
+      "Normalization source": "stabilizer selection",
+      "Object": "u_eta",
+      "Status": "background limit",
+      "Stratum": "pure wall",
+      "Type": "selector background",
+      "Variation": "not a source insertion"
+    },
+    {
+      "Double-counting risk": "replace, never add to, classical zero-mode current",
+      "Equation produced": "conditional first-order collective equation",
+      "Independent/composite": "effective quantization of eta zero mode",
+      "Normalization source": "relative knot Hilbert bundle",
+      "Object": "Psi_eta",
+      "Status": "conditional",
+      "Stratum": "effective M4",
+      "Type": "FR collective field",
+      "Variation": "conditional Dirac variation"
+    },
+    {
+      "Double-counting risk": "not a new eta action term",
+      "Equation produced": "singlet response functional",
+      "Independent/composite": "functional of A and endpoint matter",
+      "Normalization source": "SU(3) invariant tensor and unitary holonomy",
+      "Object": "Wilson singlet",
+      "Status": "exact source functional",
+      "Stratum": "M4 paths",
+      "Type": "source/observable insertion",
+      "Variation": "source response only"
+    }
+  ],
+  "primary_verdict": "BHSM_VIEW2_COMPOSITE_G2_SU3_COSET_INTRINSIC_TORSION_IS_ACTION_OWNED_AND_SOURCES_THE_INDEPENDENT_SU3_GAUSS_LAW_WITHOUT_NEW_VECTOR_DEGREES",
+  "replacement_rule": "S_etaA is the gauge-covariant replacement of the retained eta p2+p8 term, not an added duplicate",
+  "retained_source_definition": "variations of pre-existing non-eta color-charged action terms only; after FR quantization the eta zero-mode Dirac representative replaces its classical source",
+  "source_functionals": [
+    "Wilson-dressed meson",
+    "Wilson-dressed baryon"
+  ],
+  "validation": {
+    "A_P_distinct_from_A_physical": true,
+    "FR_current_not_double_counted": true,
+    "Wilson_operator_is_source_not_field": true,
+    "all_classical_View2_dependencies_pass": true,
+    "eta_term_not_duplicated": true,
+    "master_action_promoted": true,
+    "physical_YM_connection_retained": true,
+    "theta_not_independently_varied": true
+  },
+  "validation_passed": true,
+  "version": "v14.29"
+}

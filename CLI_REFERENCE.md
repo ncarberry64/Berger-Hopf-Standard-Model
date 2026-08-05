@@ -980,3 +980,13 @@ python -m bhsm.interface coupled-deformation-rank-status --format json
 These reports import the exact seam--fold projection, type every kinetic and
 Hessian block, keep missing fold--Hopf blocks `UNDEFINED_CROSS_DOMAIN`, and
 return `EQUIVALENCE_UNRESOLVED` rather than physical inequivalence.
+
+## v14.29 View 2
+
+```bash
+python -m bhsm.interface view2-completion-status-v14-29 --format markdown
+python -m bhsm.interface view2-completion-status-v14-29 --format json
+python scripts/materialize_view2_completion_v14_29.py
+```
+
+The command reports the classical Outcome A boundary, the conditional FR bridge, forbidden physical outputs, and the exact downstream BVP object.

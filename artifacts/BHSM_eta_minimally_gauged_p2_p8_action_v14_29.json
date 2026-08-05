@@ -1,0 +1,26 @@
+{
+  "artifact": "BHSM_eta_minimally_gauged_p2_p8_action_v14_29",
+  "classification": "AUTHORITATIVE_CLASSICAL_ACTION_PROMOTION",
+  "coefficient_ledger": {
+    "kappa1": "pre-existing eta coefficient",
+    "new": [],
+    "p8": "fixed retained coefficient 1/8"
+  },
+  "density": "L_etaA=-w[kappa1 X_eta/2+X_eta^4/8]",
+  "derivative": "D_mu^A eta=partial_mu eta+A_mu^a K_a(eta)",
+  "domain": "BHSM collar with the retained parent measure and positive weight w",
+  "fields": "A_physical in Conn(P_color), eta in Gamma(P_color x_SU3 S6)",
+  "invariant": "X_eta=<D_A eta,D^A eta>=2 Re sum_mu (D_mu eta)^dagger D_mu eta in a local m_C chart",
+  "validation": {
+    "current_is_action_variation": true,
+    "frozen_inputs_and_no_CKM_data": true,
+    "gauge_covariant_X_eta": true,
+    "no_new_connection_or_coefficient": true,
+    "representation_is_real_six_via_3_plus_bar3": true,
+    "same_independent_physical_SU3_connection": true,
+    "ungauged_action_recovered_at_A_zero": true
+  },
+  "validation_passed": true,
+  "variation": "delta_A L=-2w(kappa1+X_eta^3) Re<(D^mu eta),t_a eta> delta A_mu^a",
+  "version": "v14.29"
+}

@@ -310,3 +310,7 @@ not yet construct the normalized one-particle Hilbert bundle, physical
 Gauss equation. The active exact object is
 `ACTION_OWNED_ETA_EXTENSION_OF_THE_V7_1_PARENT_BUNDLE_REDUCTION_FUNCTOR_WITH_COMMON_SU3_CONNECTION_COLOR_AND_POLARIZATION_REPRESENTATIONS_AND_VARIATIONAL_GAUSS_LAW`.
 Mark III remains open.
+
+## v14.29 View 2 progress
+
+The independent physical SU(3) connection now minimally gauges the retained eta collar term and receives its variational tangent current with no new vector field. This closes the classical View 2 ownership subgate, not Mark III. FR action equivalence, the full gauge-fixed nonlinear BVP, a stable non-Gaussian center-sector saddle, the worldsheet/area-law limit, common gauge normalization, physical scale, and all mass/flavor/neutrino outputs remain required.

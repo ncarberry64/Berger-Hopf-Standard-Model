@@ -884,6 +884,7 @@ def build_parser() -> argparse.ArgumentParser:
         "--format", choices=("json", "markdown"), default="markdown"
     )
     integrated_status_commands = (
+        ("view2-completion-status-v14-29", "Render the authoritative BHSM v14.29 View 2 completion gate"),
         ("composite-carrier-current-status", "Render the BHSM v8.4 composite-carrier/current closure"),
         ("topographic-profile-status", "Render the BHSM v8.5 profile component-selection audit"),
         ("complex-profile-status", "Render the BHSM v8.6 complex-profile attachment audit"),
@@ -1017,6 +1018,13 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main(argv: Sequence[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
+    if args.command == "view2-completion-status-v14-29":
+        from .completion.view2_completion_gate_v14_29 import completion_payload, deterministic_json, status_text
+        if args.format == "markdown":
+            print(status_text())
+        else:
+            print(deterministic_json(completion_payload()), end="")
+        return 0
     if args.command == "master-action-status":
         payload = master_action_status_payload()
         if args.format == "markdown":

@@ -871,3 +871,7 @@ parent object closing all missing arrows, so no extended theory is adopted.
 
 Current exact verdict:
 `BHSM_GEOMETRY_ONLY_PARENT_ACTION_CANNOT_GENERATE_THE_REQUIRED_FR_CHIRAL_FLAVOR_CARRIER`.
+
+## v14.29 continuation override
+
+The later View 2 campaign closes the classical common physical-SU(3) gauging obstruction without replacing `A_physical` by the projector connection: `BHSM_VIEW2_COMPOSITE_G2_SU3_COSET_INTRINSIC_TORSION_IS_ACTION_OWNED_AND_SOURCES_THE_INDEPENDENT_SU3_GAUSS_LAW_WITHOUT_NEW_VECTOR_DEGREES`. The FR first-order action/domain and full coupled nonlinear solution remain open, so Mark III and BHSM completion are not reached. Exact next object: `GAUGE_FIXED_COUPLED_ETA_SU3_COLLAR_WILSON_SINGLET_BOUNDARY_VALUE_PROBLEM_WITH_SELF_ADJOINT_DOMAIN_PARENT_RELATIVE_SUBTRACTION_AND_NONRADIAL_HESSIAN`.

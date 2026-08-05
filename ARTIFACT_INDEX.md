@@ -1771,3 +1771,7 @@ Doctrine and manuscript chapter:
 - `artifacts/BHSM_final_completion_gate_v10_4.json`: marks I--IV, exact
   verdict hierarchy, hindsight report, validation, and next object.
 - `artifacts/BHSM_1_0_completion_gate.json`: canonical v10.4 RB-15/RB-16 gate.
+
+## v14.29 View 2 action artifacts
+
+The deterministic v14.29 set contains the v14.9-v14.28 lineage ledger, `G2/SU3` bundle/composite-theta and Hessian audits, minimally gauged eta action, Noether/current and wall/tangent screens, FR no-double-counting ledger, Wilson singlet source functional, authoritative master-action promotion, downstream BVP/relative-determinant gates, and `BHSM_completion_gate_v14_29.json`. Regenerate with `python scripts/materialize_view2_completion_v14_29.py`.
