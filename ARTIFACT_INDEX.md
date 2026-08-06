@@ -1775,3 +1775,17 @@ Doctrine and manuscript chapter:
 ## v14.29 View 2 action artifacts
 
 The deterministic v14.29 set contains the v14.9-v14.28 lineage ledger, `G2/SU3` bundle/composite-theta and Hessian audits, conditional minimally gauged eta candidate, convention-corrected Noether/current and wall/tangent screens, FR no-double-counting policy/open matching ledger, Wilson singlet source functional, conditional master-action completion audit, downstream BVP/relative-determinant gates, and `BHSM_completion_gate_v14_29.json`. Regenerate with `python scripts/materialize_view2_completion_v14_29.py` and read the controlling scientific proof audit before interpreting the payloads.
+
+## v14.30 common-domain and full-preimage reduction artifacts
+
+The v14.30 extension adds the arbitrary-`c2` bundle/transition audit, exact
+Hopf-section and non-basic topology obstruction, collar Jacobian and nonlinear
+fiber-moment calculation, Dirichlet-to-Neumann variational counterexample,
+uniqueness audit, full-recall path-composition ledger, exact Peter--Weyl fiber
+spectrum, conditional parent Hessian, quadratic DtN/Schur calculation,
+low-energy matching table, and retained-action Outcome-D gate. Regenerate the combined
+v14.29-v14.30 set with
+`python scripts/materialize_view2_completion_v14_30.py`. The controlling proof
+chain is `docs/BHSM_COMMON_DOMAIN_ETA_SU3_REDUCTION_PROOF.md`,
+`docs/BHSM_FULL_RECALL_PATH_COMPOSITION_AUDIT_v14_30.md`, and
+`docs/BHSM_FULL_HOPF_PREIMAGE_EFFECTIVE_ACTION_PROOF.md`.

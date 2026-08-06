@@ -1,0 +1,109 @@
+{
+  "artifact": "BHSM_v14_29_full_preimage_low_energy_matching_gate_v14_30",
+  "classification": "NO_MATCH",
+  "current_status": "v14.29 bosonic candidate current remains exact for its candidate action; parent effective physical current is undefined",
+  "matching_table": [
+    {
+      "derived_coefficient": "w on C_tilde",
+      "dimension": "0",
+      "fiber_contribution": "mode overlap",
+      "normalization": "unfixed reduction",
+      "parent_origin": "same S8 weight",
+      "sign": "+ in positive Euclidean Hessian",
+      "status": "STRUCTURE_ONLY",
+      "threshold": "background dependent",
+      "v14_29_operator": "w(sigma)"
+    },
+    {
+      "derived_coefficient": "DtN Z depends on width, mode gap, and normalization",
+      "dimension": "reduction dependent",
+      "fiber_contribution": "lambda_Jm",
+      "normalization": "open",
+      "parent_origin": "S8 p2",
+      "sign": "Z>0 on stable proxy",
+      "status": "NO_FIXED_MATCH",
+      "threshold": "fixed only after geometry/domain",
+      "v14_29_operator": "kappa1 X/2"
+    },
+    {
+      "derived_coefficient": null,
+      "dimension": "L^-8 density",
+      "fiber_contribution": "infinite Clebsch-Gordan tower",
+      "normalization": "nonlinear profile tensors",
+      "parent_origin": "S8 p8",
+      "sign": "parent positive-energy sign retained",
+      "status": "NOT_DERIVED",
+      "threshold": "nonlinear critical value",
+      "v14_29_operator": "X^4/8"
+    },
+    {
+      "derived_coefficient": null,
+      "dimension": "L^-1",
+      "fiber_contribution": "Sp1 twist distinct from physical color",
+      "normalization": "requires eta/color bundle identification",
+      "parent_origin": null,
+      "sign": null,
+      "status": "NO_MATCH",
+      "threshold": null,
+      "v14_29_operator": "D_A eta"
+    },
+    {
+      "derived_coefficient": "cos^3 rho with V_F",
+      "dimension": "V_F ds",
+      "fiber_contribution": "16 pi^2 a_F^3",
+      "normalization": "exact round branch",
+      "parent_origin": "v7.1 measure",
+      "sign": "+ orientation fixed",
+      "status": "EXACT_CONDITIONAL_BRANCH",
+      "threshold": null,
+      "v14_29_operator": "collar Jacobian"
+    },
+    {
+      "derived_coefficient": null,
+      "dimension": null,
+      "fiber_contribution": "parent has seven tangent modes before an action-unowned singlet elimination",
+      "normalization": null,
+      "parent_origin": "exact algebraic 7=1+3+bar3 branching",
+      "sign": null,
+      "status": "NO_MATCH",
+      "threshold": null,
+      "v14_29_operator": "six eta tangent modes"
+    },
+    {
+      "derived_coefficient": null,
+      "dimension": null,
+      "fiber_contribution": "requires on-shell mode response",
+      "normalization": "open",
+      "parent_origin": "delta_A S_eff",
+      "sign": "v14.29 convention preserved",
+      "status": "NOT_DEFINED_FROM_PARENT",
+      "threshold": "open",
+      "v14_29_operator": "Noether current"
+    },
+    {
+      "derived_coefficient": "constraint retained",
+      "dimension": "Lambda L^-8",
+      "fiber_contribution": "mode products",
+      "normalization": "parent",
+      "parent_origin": "Lambda_eta on S7",
+      "sign": "retained",
+      "status": "TARGET_MISMATCH_S7_VS_S6",
+      "threshold": "constraint couples tower",
+      "v14_29_operator": "unit constraint"
+    }
+  ],
+  "primary_outcome": "BHSM_VIEW2_FAILS_THE_FULL_HOPF_PREIMAGE_EFFECTIVE_ACTION_MATCHING_GATE",
+  "v14_29_status": "VALIDATED_CONDITIONALLY_AS_A_LOCAL_COMPLETION_CANDIDATE_BUT_NOT_THE_LOW_ENERGY_LIMIT_OF_THE_RETAINED_PARENT_ACTION",
+  "validation": {
+    "all_required_v14_29_operators_audited": true,
+    "exact_match_rejected": true,
+    "local_current_sign_preserved": true,
+    "low_energy_match_rejected_under_retained_action": true,
+    "no_coefficient_tuned": true,
+    "no_measured_input_used": true,
+    "no_new_vector_pole_preserved": true,
+    "selector_and_pure_wall_zero_current_preserved": true
+  },
+  "validation_passed": true,
+  "version": "v14.30"
+}

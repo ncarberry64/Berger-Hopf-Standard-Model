@@ -875,3 +875,37 @@ Current exact verdict:
 ## v14.29 continuation override
 
 The v14.29 scientific proof audit reclassifies View 2 as Outcome B: `BHSM_VIEW2_MINIMALLY_GAUGED_ETA_ACTION_AND_COMPOSITE_THETA_CURRENT_ARE_CONSTRUCTED_CONDITIONALLY_BUT_FULL_MASTER_ACTION_OWNERSHIP_REMAINS_BLOCKED`. It validates the local candidate variation and no-new-vector Hessian, but the retained `M8` eta sector is not reduced to a common collar with the independent `M4` physical SU3 field, and no FR/Dirac matching theorem prevents double counting. Exact next object: `COMMON_DOMAIN_ETA_TO_PHYSICAL_SU3_ASSOCIATED_BUNDLE_REDUCTION_WITH_COLLAR_MEASURE_AND_VARIATIONAL_INTERTWINER`.
+
+## v14.30 common-domain reduction audit
+
+The requested common-domain theorem reaches Outcome C:
+`BHSM_COMMON_DOMAIN_ETA_TO_PHYSICAL_SU3_GAUGING_REMAINS_BLOCKED_OR_NONUNIQUE`.
+The arbitrary-`c2` associated `G2/SU3` bundle and pulled-back physical
+connection are valid, but v7.1 supplies no action-owned `R_eta`. It selects no
+canonical collar section, and its `c2=+1` Hopf bundle has no full-base section;
+a degree-one eta texture
+cannot be fiber-basic, the nonlinear `p=8` density is not closed under fiber
+averaging, and an exact Dirichlet-to-Neumann witness disproves naive
+trace/variation intertwining. The v14.29 local current remains conditional.
+FR/Dirac matching and all later physical gates remain ineligible. Exact next
+object:
+`ACTION_OWNED_SU3_EQUIVARIANT_ETA_BUNDLE_MORPHISM_AND_NONBASIC_HOPF_COLLAR_CRITICAL_VALUE_FUNCTOR_WITH_SELF_ADJOINT_NORMAL_DOMAIN`.
+
+## v14.30 full-recall and full-preimage matching result
+
+The complete repository/Downloads recall recovers an exact algebraic
+`8 -> 1+1+3+bar3` triality branching, the Hopf Peter--Weyl tower, conditional
+eta-wall color polarization, normalized eta zero-mode localization, a
+conditional two-sided chiral pair, and generic DtN/Schur reduction machinery.
+The v12 historical noncommuting up/down responses and CP-odd relative holonomy
+remain mechanism witnesses because their bridge normalization and mixed
+second variation are not action-owned.
+
+The missing result is not an algebraic SU3 representation. It is the
+action-owned equivariant identification of the triality `3/bar3` cocycle and
+connection with the pulled physical color bundle, together with a degree-one
+full Hopf-preimage stationary background and self-adjoint cap domain. Without
+those objects the physical gauged parent critical value, current, and
+coefficient matching are undefined. View 2 therefore reaches retained-action
+Outcome D without invalidating the local v14.29 candidate. Exact next object:
+`ACTION_OWNED_TRIALITY_THREE_ANTITHREE_TO_PHYSICAL_COLOR_BUNDLE_IDENTIFICATION_WITH_DEGREE_ONE_FULL_HOPF_PREIMAGE_STATIONARY_BACKGROUND_AND_SELF_ADJOINT_CAP_DOMAIN`.

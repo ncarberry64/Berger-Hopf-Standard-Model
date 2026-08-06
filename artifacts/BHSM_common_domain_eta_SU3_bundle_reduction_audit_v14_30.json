@@ -1,0 +1,36 @@
+{
+  "R_eta_transition_condition": "r_j(h_ij^eta v)=g_ij^(-1)r_i(v)",
+  "artifact": "BHSM_common_domain_eta_SU3_bundle_reduction_audit_v14_30",
+  "collar_bundle": "Sigma_eta,C=pi_C^*P_color x_SU3 G2/SU3",
+  "common_fixed_tangent_dimension": 0,
+  "diagram": {
+    "M4": "I_t x S3 equatorial seam",
+    "M5": "I_t x S4",
+    "M8": "I_t x S7",
+    "alternative_action_status": "not selected by the retained action as an eta/color reduction domain",
+    "existing_maps": "M8 --pi85--> M5 <--iota54-- M4",
+    "reason": "the collar restriction is trivializable, while any extension M5->M8 would section the c2=+1 Hopf Sp(1) bundle; v7.1 selects neither a collar section nor its gauge gluing",
+    "requested_five_dimensional_inclusion": "exists after choosing a noncanonical trivialization of the equatorial collar, but is absent from the retained action",
+    "valid_geometric_alternative": "C8=pi85^(-1)(C5) subset M8 with pi_C=retraction_C5_to_M4 composed with pi85"
+  },
+  "local_transition_law": "eta_j=g_ij^(-1) eta_i; A_j=g_ij^(-1)A_i g_ij+g_ij^(-1)dg_ij; D_Aj eta_j=g_ij^(-1)D_Ai eta_i",
+  "missing_cocycle_relation": "no retained homomorphism relates h_ij^eta from the M8 Spin/triality bundle to g_ij of the independent P_color",
+  "naturality_no_go": "without such a relation, gauge-natural tangent output must be SU3-fixed; the common fixed subspace in 3 is zero",
+  "orientation_selection": "conditional topological branch, not selected by the retained action",
+  "physical_bundle": "P_color->M4 with arbitrary retained c2",
+  "representation": "m_C=3+bar3; reversing the oriented G2 branch conjugates 3 and bar3",
+  "topology": "Sigma_eta,C exists without forcing c2(P_color)=0; existence is not a canonical map from E_eta,8",
+  "validation": {
+    "R_eta_absent": true,
+    "associated_bundle_valid_for_arbitrary_c2": true,
+    "collar_local_trivialization_not_confused_with_action_selection": true,
+    "m_complex_is_3_plus_bar3": true,
+    "no_nonzero_gauge_natural_tangent_selector": true,
+    "orientation_branch_not_action_selected": true,
+    "physical_connection_pullback_is_global": true,
+    "transition_law_for_covariant_derivative_explicit": true,
+    "v7_hopf_bundle_has_no_full_base_section": true
+  },
+  "validation_passed": true,
+  "version": "v14.30"
+}
