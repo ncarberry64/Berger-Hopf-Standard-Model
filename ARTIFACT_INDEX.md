@@ -1,5 +1,22 @@
 # BHSM Artifact Index
 
+## BHSM v11.5 conditional flavor-action assembly
+
+- `artifacts/BHSM_common_attachment_response_v11_4.json`: canonical whitened
+  common-domain response and family-octave roots.
+- `artifacts/BHSM_minimal_M4_charged_lepton_action_v11_4.json`: conditional
+  trace-normalized charged-lepton spectral action.
+- `artifacts/BHSM_quark_yukawa_CKM_gate_v11_4.json`: up/down spectral pair and
+  canonical-identification no-mixing theorem.
+- `artifacts/BHSM_spectral_charged_current_v11_5.json`: full-rank no-fit
+  author-selected charged-current candidate, SU(2) audit, CP invariant, and open action-provenance gate.
+- `artifacts/BHSM_completion_gate_v11_5.json`: current conditional candidate and provenance gate.
+- `artifacts/BHSM_download_progress_review_2026_08_03.json`: hash-locked review
+  of the nine manual research packets.
+
+Verdict: `BHSM_FLAVOR_ACTION_CANDIDATES_ASSEMBLED_WITH_CHARGED_CURRENT_PROVENANCE_GATE_OPEN`.
+Next object: `PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL`.
+
 ## BHSM v11.3 reciprocal core-surface attachment campaign
 
 Ten deterministic v11.3 records cover the recovered incidence ledger,
@@ -1754,3 +1771,21 @@ Doctrine and manuscript chapter:
 - `artifacts/BHSM_final_completion_gate_v10_4.json`: marks I--IV, exact
   verdict hierarchy, hindsight report, validation, and next object.
 - `artifacts/BHSM_1_0_completion_gate.json`: canonical v10.4 RB-15/RB-16 gate.
+
+## v14.29 View 2 action artifacts
+
+The deterministic v14.29 set contains the v14.9-v14.28 lineage ledger, `G2/SU3` bundle/composite-theta and Hessian audits, conditional minimally gauged eta candidate, convention-corrected Noether/current and wall/tangent screens, FR no-double-counting policy/open matching ledger, Wilson singlet source functional, conditional master-action completion audit, downstream BVP/relative-determinant gates, and `BHSM_completion_gate_v14_29.json`. Regenerate with `python scripts/materialize_view2_completion_v14_29.py` and read the controlling scientific proof audit before interpreting the payloads.
+
+## v14.30 common-domain and full-preimage reduction artifacts
+
+The v14.30 extension adds the arbitrary-`c2` bundle/transition audit, exact
+Hopf-section and non-basic topology obstruction, collar Jacobian and nonlinear
+fiber-moment calculation, Dirichlet-to-Neumann variational counterexample,
+uniqueness audit, full-recall path-composition ledger, exact Peter--Weyl fiber
+spectrum, conditional parent Hessian, quadratic DtN/Schur calculation,
+low-energy matching table, and retained-action Outcome-D gate. Regenerate the combined
+v14.29-v14.30 set with
+`python scripts/materialize_view2_completion_v14_30.py`. The controlling proof
+chain is `docs/BHSM_COMMON_DOMAIN_ETA_SU3_REDUCTION_PROOF.md`,
+`docs/BHSM_FULL_RECALL_PATH_COMPOSITION_AUDIT_v14_30.md`, and
+`docs/BHSM_FULL_HOPF_PREIMAGE_EFFECTIVE_ACTION_PROOF.md`.

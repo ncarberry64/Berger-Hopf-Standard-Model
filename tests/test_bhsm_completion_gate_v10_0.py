@@ -49,7 +49,7 @@ def test_primary_status_has_no_mass_or_matrix_promotion():
 
 
 def test_v10_master_action_api_remains_available_below_current_campaign():
-    assert CURRENT_VERSION == "v11.3"
+    assert CURRENT_VERSION == "v11.6"
     assert CURRENT_VERDICT != gate.PRIMARY_VERDICT
     assert CURRENT_MISSING_OBJECT != gate.NEXT_EXACT_OBJECT
     assert unified_envelopment_status_payload()["primary_verdict"] == gate.PRIMARY_VERDICT
@@ -106,4 +106,5 @@ def test_checked_in_artifacts_match_current_implementation():
         expected = gate.deterministic_json(gate.artifact_payloads()[key])
         assert (ROOT / "artifacts" / filename).read_text(encoding="utf-8") == expected
     canonical = json.loads((ROOT / "artifacts" / "BHSM_1_0_completion_gate.json").read_text(encoding="utf-8"))
-    assert canonical["version"] == "v11.3"
+    assert canonical["version"] == "v11.6"
+    assert canonical["spectral_charged_current_kernel_action_derived"] is False

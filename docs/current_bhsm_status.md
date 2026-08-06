@@ -1,6 +1,194 @@
-# Current BHSM Status
+# Current BHSM status
 
-## v11.3 authoritative reciprocal-attachment status
+Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a completed replacement of the Standard Model. The program goal remains replacement by derivation, with the Standard Model retained as the preserved infrared layer until that derivation is complete.
+
+## v14.2 FR eta-knot color-matter completion audit
+
+V14.2 proves that the classical eta-wall stabilizer selector cannot source the
+retained independent SU3 Gauss law: every stabilizer generator satisfies
+`T^a u_eta=0`, hence `D_mu u_eta=partial_mu u_eta` and the conventional
+selector current vanishes. The selector fixes color polarization but is not
+the color-charged matter state.
+
+FR odd topology and the finite diagnostic inertia are preserved, but the
+physical one-particle Hilbert bundle is not derived. Normalized collective
+states, a complete moduli metric/measure, zero-mode quotient, regular domain,
+M4 gluing, retained-principal-bundle transition maps, and the physical
+`3/bar3` action remain open. FR parity does not derive a local Dirac action,
+and the existing S4 effective fermion term is not reused as eta provenance.
+
+Primary result:
+`BHSM_ETA_KNOT_TO_M4_COLOR_COUPLING_REMAINS_BLOCKED_AT_THE_COMMON_PARENT_CONNECTION_OR_EQUIVALENT_BUNDLE_GAUGING_THEOREM`.
+
+Exact next object:
+`ACTION_OWNED_ETA_EXTENSION_OF_THE_V7_1_PARENT_BUNDLE_REDUCTION_FUNCTOR_WITH_COMMON_SU3_CONNECTION_COLOR_AND_POLARIZATION_REPRESENTATIONS_AND_VARIATIONAL_GAUSS_LAW`.
+
+The conditional minimal-coupling variation is typed, but no eta-knot current
+or sourced independent Gauss equation is promoted. `A^P` remains restricted
+Berry geometry and `A` remains the independent physical connection; general
+color `c2` sectors and the Yang-Mills principal symbol are preserved. The
+boundary Dirac domain/index remains open, color is family central,
+`J_+^family=I3`, and no `K_ud`, physical `g3`, CKM, PMNS, or gauge-dressed BVP
+is emitted.
+
+## v14.1 eta-induced versus independent SU3 fork theorem
+
+The eta projector connection is reclassified as a restricted induced
+polarization-frame/Berry connection, not the full independent QCD connection.
+Its universal curvature planes and commutator closure can generate all eight
+su(3) directions, but the selector-derived spacetime curvature map has generic
+Jacobian rank 23 into 48 curvature components and linear rank zero at a
+constant selector. The composite `Tr(F_P^2)` action begins quartically in
+selector perturbations and has no quadratic gluon kinetic term at that vacuum.
+
+The universal polarization bundle over S6 has c1=c2=0. Naturality forces the
+M4 pullback bundle to have c2=0, so it cannot span general nonzero-instanton
+SU3 sectors. No action-owned wall-to-M4 extension or bundle isomorphism
+`Phi:E_P->E_color` exists. The retained Lambda85/Lambda54 matchers act on
+metric incidence data and do not currently instantiate a color connection
+constraint, transgression, or eta-sourced independent Gauss equation.
+
+The historical recovery corrects the earlier overstatement: v7.0-v7.1
+already owns a conditional parent associated-bundle and covariant reduction
+architecture, including normalized bulk-boundary measures, generic
+associated-mode transport, trace/pushforward maps, compatibility multipliers,
+and KKT variational intertwiners. The v8.8 current architecture also uses
+parent-induced associated-bundle connections. What remains unproved is that
+the eta polarization connection and independent M4 SU3 connection are the two
+associated projections of one action-owned parent connection.
+
+Branch decision:
+`BHSM_COMMON_PARENT_BUNDLE_AND_REDUCTION_ARCHITECTURE_ALREADY_EXISTS_CONDITIONALLY`.
+
+Projection-provenance verdict:
+`BHSM_ETA_POLARIZATION_AND_INDEPENDENT_M4_SU3_CONNECTION_HAVE_NOT_YET_BEEN_PROVEN_TO_BE_ASSOCIATED_PROJECTIONS_OF_THAT_PARENT_CONNECTION`.
+
+Exact continuation object:
+`RECOVERY_AND_ETA_EXTENSION_OF_THE_V7_0_V7_1_UNIFIED_PARENT_BUNDLE_CONNECTION_AND_COVARIANT_REDUCTION_FUNCTOR_TO_THE_M4_SU3_AND_ETA_POLARIZATION_ASSOCIATED_BUNDLES`.
+
+The boundary Dirac/index object remains a contract without a selected
+self-adjoint domain or evaluable APS invariant. Color remains identity on the
+C3 family factor, the weak family current remains I3, and no K_ud, physical
+CKM/PMNS value, physical g3, new field, or new continuous coefficient is
+introduced. Mark III and BHSM physical completion remain open.
+
+## v14.0 eta-knot action-completion result
+
+The recovered v13.1–v13.5 chain has been reproduced and integrated
+semantically. The retained p=2+p=8 eta action has a degree-one equivariant
+static solution satisfying the Derrick identity, a positive finite-interval
+radial Jacobi spectrum, and a finite collective inertia. Odd topological
+degree supports the discrete FR half-integer-spin sector. The oriented knot
+wall selects conjugate rank-three G2/SU3 polarizations, and its varying
+projector defines a nonzero su(3)-valued Grassmann curvature. Meson and baryon
+invariant tensors close exactly under that transport.
+
+The requested gauge-dressed singlet BVP is not yet an Euler–Lagrange problem
+of the retained action. Eta is owned by S8, while the independent SU3
+connection and its Yang–Mills density are owned by S4eff. The master-action
+ledger records the gauge bundle/measure pushforward as missing, the physical
+eta-current pullback is unresolved, and no density depends jointly on eta and
+the independent SU3 connection. A composite projector connection is not
+automatically the S4 connection varied by the action.
+
+Current verdict:
+`ETA_WALL_PROJECTOR_GEOMETRY_IS_DERIVED_BUT_GAUGE_DRESSED_BVP_IS_NOT_OWNED_BY_THE_CURRENT_ACTION`.
+
+Exact next action object:
+`ACTION_OWNED_ETA_WALL_TO_M4_SU3_BUNDLE_PULLBACK_AND_CONNECTION_IDENTIFICATION_WITH_VARIATIONAL_GAUSS_LAW`.
+
+Orientation reversal exchanges the conjugate color polarizations and
+complex-conjugates the projector curvature. This is a physical degree-branch
+reversal, not rotation relative to an external frame. It does not yet prove a
+chiral index because no oriented boundary Dirac operator or self-adjoint
+domain has been derived. The projector connection acts as identity on the
+independent C3 family factor; it cannot generate a family-noncentral up/down
+current. In the zero-orientation limit its curvature vanishes and the weak
+family current remains I3.
+
+The v11.5 spectral charged-current kernel is not inserted. Its unchanged
+flavor provenance gate remains
+`PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL`.
+No physical CKM/PMNS matrix, confinement theorem, gauge-dressed hadron
+solution, or unconditional flavor action is claimed. Frozen predictions and
+official prediction logic are unchanged.
+
+## v11.6 parent-action charged-current result
+
+The live effective four-dimensional action contains the left-handed quark
+current through `i bar(Psi) gamma^mu D_mu Psi`. Its mixed variation with
+respect to `W+`, `bar(u_L,i)`, and `d_L,j` has family factor `delta_ij`; the
+action-owned weak-basis kernel is therefore `I3`. The diagonal, commuting
+v11.4 up/down response pair leaves this result diagonal up to quark-field
+rephasings and common slot ordering.
+
+The v11.5 spectral kernel is not equivalent to this action current under
+allowed left/right diagonal quark rephasings: those rephasings preserve every
+entry magnitude, whereas `I3` has zero off-diagonal entries and the v11.5
+kernel does not.
+
+The uniqueness route also fails for the current declared axioms. A continuous
+family of rephasing-inequivalent unitary kernels remains full rank, closes the
+same SU(2) algebra, preserves the family-central neutral current, and has a
+nonzero CP invariant. Joint functional calculus of the commuting v11.4
+response operators is diagonal and cannot supply the missing orientation.
+
+Verdict:
+`BHSM_PARENT_ACTION_CURRENT_REDUCTION_BLOCKED_BY_UNFIXED_COMMON_DOMAIN_FAMILY_WAVEFUNCTION_MAP`.
+
+Exact next object:
+`ACTION_OWNED_COMMON_DOMAIN_UP_DOWN_FAMILY_WAVEFUNCTION_ORIENTATION_AND_CURRENT_PAIRING_MAP`.
+
+Mark I is reached. Mark II is reached on the selected finite-radius core
+branch. Mark III and Mark IV are not reached, and BHSM 1.0 is incomplete. The
+v11.5 kernel remains an author-selected no-fit action candidate; no physical
+CKM matrix or unconditional flavor action is claimed. RG transport,
+normalization, and empirical replacement tests remain downstream conditional
+evaluations and cannot replace the action-provenance gate. Frozen predictions
+are unchanged.
+
+## Preserved historical audit statements
+
+No numerical neutrino prediction or local FTL claim is made. No numerical closure is claimed by the legacy scalar/topographic audits. PO-BH-61 completes a derivation-source audit; it does not close the numerical profile problem. The full virtual loop/threshold source remains open.
+
+| Release invariant | Value |
+| --- | --- |
+| Official predictions changed | no |
+
+## Preserved full historical status ledger
+
+## v11.5 authoritative conditional flavor-action status
+
+V11.5 retains the reciprocal v11.3 attachment and fixes the packet's
+normalization conflict by keeping the canonical whitened coordinates
+`(q_C,q_W,x_D)`. On the selected finite-radius core branch, the KKT response
+has positive nondegenerate lower roots for the charged-family octaves
+`K=(0,35,99)`.
+
+The intrinsic M4 candidate contains an explicit minimal charged-lepton
+spectral Yukawa operator and conditional up/down spectral pair. The no-fit
+charged-current candidate uses only the frozen overlap eigenvalues and
+`S=1/(4*pi)` to define its three angles and CP phase. It is full rank and
+unitary, closes the SU(2) algebra, preserves family-central neutral currents,
+and has a nonzero Jarlskog invariant. No measured CKM quantity is used. These
+properties establish mathematical viability but not action provenance.
+
+Current verdict:
+`BHSM_FLAVOR_ACTION_CANDIDATES_ASSEMBLED_WITH_CHARGED_CURRENT_PROVENANCE_GATE_OPEN`.
+
+Exact next object:
+`PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL`.
+
+Mark I is reached. Mark II is reached on the selected finite-radius branch.
+Mark III remains open. The kernel must be recovered by explicit parent-action
+mixed second variation/current pairing or selected by a stated uniqueness
+theorem from declared BHSM axioms. Mark IV and BHSM 1.0 release completion remain open.
+The absolute charged-lepton triplet is a one-calibration conditional output;
+up/down absolute normalization, common-scheme transport, PMNS, and the final
+empirical replacement audit remain downstream conditional evaluations. None
+substitutes for the charged-current provenance gate. Frozen predictions are unchanged.
+
+## v11.3 historical reciprocal-attachment status
 
 The v7.0/v7.1 reduction owns the compatibility incidence pair
 `I_C=Q_H(G8)` and `I_W=g5`. V11.3 applies the adopted reciprocal attachment
@@ -14,7 +202,6 @@ the intrinsic enclosure neutral. The multiplier equation is
 signed scalar source and the diffeomorphism Ward identity closes total
 core/wall/depth transfer. Since the matcher contains no derivatives, its
 linear `A_D` and quadratic `A_D^2` contributions are exactly zero.
-
 The boundary presymplectic contribution is zero, and ordinary-core closure
 is finite on the constraint surface. The exact action-character matrix grows
 from rank 7/nullity 12 to rank 11/nullity 8, while the isolated attachment
@@ -62,7 +249,6 @@ directions. Boundary, core-finiteness, anomaly, and equivalence tests do not
 remove this kernel. The five directions are not one common normalization.
 
 ## v11.1 historical support-representation status
-
 The stratified action category and two fixed-character support lifts are now
 explicit. The representatives are not linearly naturally isomorphic, but this
 does not establish physical inequivalence: on the regular domain their ratio
@@ -638,7 +824,6 @@ physical response matrices remain undefined; the virtual-door factor
 remains diagnostic and alpha has no action attachment to mass incidence.
 
 RB-15 remains `BLOCKED_EXACT_OBJECT_PROVED`; RB-16 remains downstream.
-
 Current exact verdict:
 `BHSM_PROJECTED_SPECTRAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DERIVED_INTERTWINER_FROM_FROZEN_LEDGER_TO_LOCALIZED_ACTION_SPECTRUM`.
 
@@ -686,3 +871,41 @@ parent object closing all missing arrows, so no extended theory is adopted.
 
 Current exact verdict:
 `BHSM_GEOMETRY_ONLY_PARENT_ACTION_CANNOT_GENERATE_THE_REQUIRED_FR_CHIRAL_FLAVOR_CARRIER`.
+
+## v14.29 continuation override
+
+The v14.29 scientific proof audit reclassifies View 2 as Outcome B: `BHSM_VIEW2_MINIMALLY_GAUGED_ETA_ACTION_AND_COMPOSITE_THETA_CURRENT_ARE_CONSTRUCTED_CONDITIONALLY_BUT_FULL_MASTER_ACTION_OWNERSHIP_REMAINS_BLOCKED`. It validates the local candidate variation and no-new-vector Hessian, but the retained `M8` eta sector is not reduced to a common collar with the independent `M4` physical SU3 field, and no FR/Dirac matching theorem prevents double counting. Exact next object: `COMMON_DOMAIN_ETA_TO_PHYSICAL_SU3_ASSOCIATED_BUNDLE_REDUCTION_WITH_COLLAR_MEASURE_AND_VARIATIONAL_INTERTWINER`.
+
+## v14.30 common-domain reduction audit
+
+The requested common-domain theorem reaches Outcome C:
+`BHSM_COMMON_DOMAIN_ETA_TO_PHYSICAL_SU3_GAUGING_REMAINS_BLOCKED_OR_NONUNIQUE`.
+The arbitrary-`c2` associated `G2/SU3` bundle and pulled-back physical
+connection are valid, but v7.1 supplies no action-owned `R_eta`. It selects no
+canonical collar section, and its `c2=+1` Hopf bundle has no full-base section;
+a degree-one eta texture
+cannot be fiber-basic, the nonlinear `p=8` density is not closed under fiber
+averaging, and an exact Dirichlet-to-Neumann witness disproves naive
+trace/variation intertwining. The v14.29 local current remains conditional.
+FR/Dirac matching and all later physical gates remain ineligible. Exact next
+object:
+`ACTION_OWNED_SU3_EQUIVARIANT_ETA_BUNDLE_MORPHISM_AND_NONBASIC_HOPF_COLLAR_CRITICAL_VALUE_FUNCTOR_WITH_SELF_ADJOINT_NORMAL_DOMAIN`.
+
+## v14.30 full-recall and full-preimage matching result
+
+The complete repository/Downloads recall recovers an exact algebraic
+`8 -> 1+1+3+bar3` triality branching, the Hopf Peter--Weyl tower, conditional
+eta-wall color polarization, normalized eta zero-mode localization, a
+conditional two-sided chiral pair, and generic DtN/Schur reduction machinery.
+The v12 historical noncommuting up/down responses and CP-odd relative holonomy
+remain mechanism witnesses because their bridge normalization and mixed
+second variation are not action-owned.
+
+The missing result is not an algebraic SU3 representation. It is the
+action-owned equivariant identification of the triality `3/bar3` cocycle and
+connection with the pulled physical color bundle, together with a degree-one
+full Hopf-preimage stationary background and self-adjoint cap domain. Without
+those objects the physical gauged parent critical value, current, and
+coefficient matching are undefined. View 2 therefore reaches retained-action
+Outcome D without invalidating the local v14.29 candidate. Exact next object:
+`ACTION_OWNED_TRIALITY_THREE_ANTITHREE_TO_PHYSICAL_COLOR_BUNDLE_IDENTIFICATION_WITH_DEGREE_ONE_FULL_HOPF_PREIMAGE_STATIONARY_BACKGROUND_AND_SELF_ADJOINT_CAP_DOMAIN`.

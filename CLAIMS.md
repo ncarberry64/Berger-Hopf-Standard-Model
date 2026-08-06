@@ -2,6 +2,30 @@
 
 ## Current public claim boundary
 
+V11.6 verdict:
+`BHSM_PARENT_ACTION_CURRENT_REDUCTION_BLOCKED_BY_UNFIXED_COMMON_DOMAIN_FAMILY_WAVEFUNCTION_MAP`.
+The live effective SU(2)L Dirac mixed variation has family kernel `I3`. It is
+not rephasing-equivalent to the v11.5 spectral kernel. Full rank, unitarity,
+SU(2) closure, nonzero CP, and neutral-current centrality leave a continuous
+family of inequivalent kernels, so they do not establish uniqueness. The
+commuting v11.4 response pair also cannot generate mixing by joint functional
+calculus. The v11.5 kernel remains an author-selected no-fit action candidate,
+not an action-derived physical CKM matrix. Mark III remains open.
+No parameter-free absolute quark spectrum, PMNS completion, or empirical
+replacement claim is made. The next exact object is
+`ACTION_OWNED_COMMON_DOMAIN_UP_DOWN_FAMILY_WAVEFUNCTION_ORIENTATION_AND_CURRENT_PAIRING_MAP`.
+
+### v11.5 historical claim boundary
+
+V11.5 verdict was
+`BHSM_FLAVOR_ACTION_CANDIDATES_ASSEMBLED_WITH_CHARGED_CURRENT_PROVENANCE_GATE_OPEN`,
+with exact next object
+`PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL`.
+V11.6 attacks both branches of that disjunction and replaces it with the more
+precise action-level missing object above.
+
+### v11.3 historical claim boundary
+
 V11.3 verdict:
 `BHSM_RECIPROCAL_ATTACHMENT_ACTION_AND_CURRENT_DERIVED_WITH_THREE_MODE_DOMAIN_CONDITIONAL`.
 The existing action-owned `Lambda85` compatibility matcher admits the
@@ -2367,3 +2391,7 @@ The exact next object is
 This records the author ontology and conditional intrinsic/extrinsic split
 without promoting a force law, Casimir contribution, de-envelopment transfer,
 cosmological result, or any changed frozen prediction.
+
+## v14.29 claim boundary
+
+Validated only for a conditional common-domain candidate: the minimally covariantized eta `p=2+p=8` density, its convention-corrected SU(3) source/Noether identity, the pure-wall zero-current limit, a finite-action off-shell tangent witness, and the absence of an independent theta vector pole. The prior stratified action does not derive the required eta-to-physical-SU3 reduction. FR/Dirac quantization, matching, and its self-adjoint domain are open. Exact source identity: Wilson singlet zero total charge with `-4/3` mesonic color correlation. Not claimed: a physical quark current, confinement, area law, common gauge normalization, physical scale, mass, CKM/PMNS, neutrino spectrum, or `c_sigma`.

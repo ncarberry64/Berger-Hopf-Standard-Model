@@ -1,6 +1,25 @@
 # BHSM Roadmap
 
-## v11.3 current critical path
+## v11.6 current critical path
+
+The current verdict is
+`BHSM_PARENT_ACTION_CURRENT_REDUCTION_BLOCKED_BY_UNFIXED_COMMON_DOMAIN_FAMILY_WAVEFUNCTION_MAP`.
+Resume from
+`ACTION_OWNED_COMMON_DOMAIN_UP_DOWN_FAMILY_WAVEFUNCTION_ORIENTATION_AND_CURRENT_PAIRING_MAP`.
+The next construction must supply normalized up/down family wavefunctions on
+one action-owned common domain, their relative complex orientation, the SU(2)L
+raising operator, and the action measure/projector pairing. RG transport,
+sector-wide quark normalization, and finite empirical replacement tests cannot
+close this provenance gate. Marks III and IV remain fail closed.
+
+## v11.5 historical critical path
+
+V11.5 stopped at
+`PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL`.
+V11.6 evaluates both routes: direct variation gives `I3`, and the viability
+axioms fail uniqueness by a continuous counterexample family.
+
+## v11.3 historical critical path
 
 The current verdict is
 `BHSM_RECIPROCAL_ATTACHMENT_ACTION_AND_CURRENT_DERIVED_WITH_THREE_MODE_DOMAIN_CONDITIONAL`.
@@ -412,3 +431,7 @@ inverse-square-kinetic families (and their couplings), fix the core variational
 ensemble, and preserve the frozen-action limit. Only a healthy uniquely
 action-owned local degree licenses reconstruction of the common three-mode
 Hessian and downstream orbit campaign.
+
+## v14.29 next campaign
+
+First derive the common-domain map from the retained `M8` eta field to the physical-SU3 collar bundle, including its measure and variational intertwiner, then derive the FR/Dirac collective matching and mode subtraction. Only then fix the self-adjoint gauge/ghost/FR domain and solve the nonradial parent-relative SU(3)-eta-collar Wilson-singlet BVP. A stable transverse saddle and negative-mode audit must precede the determinant/worldsheet limit. Common Yang-Mills normalization, dimensional anchoring, masses, and flavor remain downstream and may not be supplied from measurements.

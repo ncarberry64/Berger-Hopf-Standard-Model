@@ -1,0 +1,28 @@
+{
+  "artifact": "BHSM_eta_gauge_covariant_DtN_and_Schur_audit_v14_30",
+  "computed_chain_Heff": 1.1906543065596278,
+  "computed_chain_Hpp": 5.288000000000001,
+  "gauge_covariance": "H_A->U^-1 H_A U implies N_A->U^-1 N_A U by spectral functional calculus",
+  "low_energy_coefficients_reference": {
+    "Z": 0.9422737029726937,
+    "c4": -0.10901441699630973,
+    "mass_term": 1.645941749349827
+  },
+  "naive_reduction_failure": "the nonzero Schur term is the discrete Dirichlet-to-Neumann correction",
+  "quadratic_proxy": "one frozen Hermitian eta mode with H_A=-D_A^2+M_Jm^2 on a constant normal interval",
+  "schur_complement": "H_eff=H_pp-H_pb H_bb^-1 H_bp",
+  "scope": "exact quadratic constant-mode theorem; not the nonlinear degree-one BHSM eta critical value",
+  "self_adjointness": "N_A is self-adjoint and nonnegative when H_A is self-adjoint and nonnegative",
+  "two_sided_DtN": "N_A=2 sqrt(H_A) tanh(L sqrt(H_A)) for regular/Neumann outer caps",
+  "validation": {
+    "dtn_low_energy_Z_positive": true,
+    "dtn_positive_on_positive_mode": true,
+    "gauge_covariance_is_functional_calculus": true,
+    "matrix_dtn_self_adjoint": true,
+    "naive_trace_missing_schur_term": true,
+    "nonlinear_dtn_not_claimed": true,
+    "schur_complement_positive": true
+  },
+  "validation_passed": true,
+  "version": "v14.30"
+}

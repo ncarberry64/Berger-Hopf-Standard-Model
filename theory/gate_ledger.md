@@ -1,5 +1,42 @@
 # Gate Ledger
 
+## v14.1 eta/SU3 connection fork gate
+
+The composite eta projector connection fails full physical-SU3 equivalence on
+three independent grounds: its constant-selector quadratic principal symbol
+has rank zero versus rank 24 for independent Yang-Mills; its generic
+spacetime-curvature Jacobian has rank 23 into 48 components; and its pullback
+bundle has c2=0, excluding general nonzero-instanton sectors. Full universal
+SU3 holonomy remains valid but is not field-space equivalence.
+
+The retained action owns no wall-to-M4 bundle map, no `E_P -> E_color`
+isomorphism, and no connection matcher or eta-sourced independent Gauss law.
+The unique branch classification is
+`BHSM_COLOR_DYNAMICS_REQUIRES_A_NEW_DECLARED_CROSS_STRATUM_BUNDLE_CONNECTION_ACTION_OBJECT`.
+The next gate is
+`ACTION_OWNED_COMMON_HIGHER_DIMENSIONAL_CONNECTION_WHOSE_M4_SU3_RESTRICTION_AND_ETA_POLARIZATION_CONNECTION_ARE_DERIVED_COMPATIBLE_PROJECTIONS`.
+Gauge-dressed singlet BVPs remain ineligible. Mark III and Mark IV are not
+reached.
+
+## v14.0 eta-knot action gate
+
+The degree-one static eta-knot, FR odd-degree spin parity, eta-wall G2/SU3
+polarization, canonical projector curvature, and meson/baryon covariant
+singlet closure are reached at their declared conditional or exact
+mathematical levels.
+
+The nonlinear gauge-dressed singlet BVP is not eligible under the current
+action. Eta belongs to S8, the independent Yang–Mills connection belongs to
+S4eff, and the gauge bundle/measure pushforward and physical eta-current
+pullback are absent. The first missing action object is
+`ACTION_OWNED_ETA_WALL_TO_M4_SU3_BUNDLE_PULLBACK_AND_CONNECTION_IDENTIFICATION_WITH_VARIATIONAL_GAUSS_LAW`.
+
+The oriented projector connection acts on color as (A^P\otimes I_{C_3}),
+so it remains family central and reduces to the v11.6 I3 weak current when the
+orientation variation is removed. The chiral index and nontrivial flavor
+current remain blocked separately. Physical Mark III and Mark IV are not
+reached.
+
 ## v11.3 current gate
 
 The recovered action-owned `Lambda85` compatibility matcher fixes the
@@ -302,3 +339,24 @@ Current verdict:
 
 Exact next object:
 `ACTION_PRINCIPLE_FIXING_Z_UPSILON_U_UPSILON_AND_SUPPORT_COUPLINGS`.
+# v11.6 parent-action charged-current gate
+
+- Direct action route: evaluated. The effective SU(2)L Dirac mixed variation has family kernel `I3`.
+- Physical rephasing equivalence: rejected because entrywise magnitudes differ from the v11.5 kernel.
+- Uniqueness route: rejected for the current axioms by a continuous family of full-rank, unitary, CP-odd, SU(2)-closing, rephasing-inequivalent kernels.
+- Spectral-only route: commuting v11.4 `H_u,H_d` have diagonal joint functional calculus and cannot generate nontrivial mixing.
+- Mark III: `NOT_REACHED`.
+- Mark IV: `NOT_REACHED`.
+- Exact next object: `ACTION_OWNED_COMMON_DOMAIN_UP_DOWN_FAMILY_WAVEFUNCTION_ORIENTATION_AND_CURRENT_PAIRING_MAP`.
+- Verdict: `BHSM_PARENT_ACTION_CURRENT_REDUCTION_BLOCKED_BY_UNFIXED_COMMON_DOMAIN_FAMILY_WAVEFUNCTION_MAP`.
+
+# v14.29 View 2 classical action/current gate
+
+- Bundle/action/current/Hessian: `VALIDATED_CONDITIONALLY` for a candidate common-domain action; not derived from the prior stratified action.
+- Projector/Berry connection versus physical SU(3): `DISTINCT`.
+- Selector and pure-wall source: `ZERO`, retained as the background limit.
+- Tangent source: `NONZERO_OFF_SHELL_CANDIDATE_ACTION_VARIATION`.
+- FR current: `OPEN_COLLECTIVE_MATCHING_THEOREM_NOT_ADDITIVE_SOURCE`.
+- Confinement and worldsheet: `OPEN`.
+- Mark III / Mark IV: `NOT_REACHED` / `NOT_REACHED`.
+- Exact next object: `COMMON_DOMAIN_ETA_TO_PHYSICAL_SU3_ASSOCIATED_BUNDLE_REDUCTION_WITH_COLLAR_MEASURE_AND_VARIATIONAL_INTERTWINER`.

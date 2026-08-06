@@ -1,5 +1,21 @@
 # BHSM Falsification Entry Point
 
+For v11.6, the verdict
+`BHSM_PARENT_ACTION_CURRENT_REDUCTION_BLOCKED_BY_UNFIXED_COMMON_DOMAIN_FAMILY_WAVEFUNCTION_MAP`
+is falsified by an existing action term and declared common domain whose mixed
+variation yields the v11.5 kernel up to quark rephasing, or by a valid theorem
+showing that prior declared BHSM axioms uniquely select that kernel. A target
+interface term, an unsourced raw kernel followed by polar decomposition, or
+downstream empirical success is not a falsifier. Its exact upstream gate is:
+`ACTION_OWNED_COMMON_DOMAIN_UP_DOWN_FAMILY_WAVEFUNCTION_ORIENTATION_AND_CURRENT_PAIRING_MAP`.
+
+For v11.5, the historical verdict was
+`BHSM_FLAVOR_ACTION_CANDIDATES_ASSEMBLED_WITH_CHARGED_CURRENT_PROVENANCE_GATE_OPEN`,
+and its gate was
+`PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL`.
+
+The v11.3 criterion below is retained as historical chronology.
+
 For v11.3, the verdict
 `BHSM_RECIPROCAL_ATTACHMENT_ACTION_AND_CURRENT_DERIVED_WITH_THREE_MODE_DOMAIN_CONDITIONAL`
 is falsified if the inherited `Lambda85` slot does not own `Q_H(G8)` and `g5`,
@@ -70,3 +86,7 @@ negative DeWitt direction, fixing the lapse before variation, or relabeling a
 positive anisotropy shape is not a falsifier. The author-selection verdict
 fails if one compared geometric extension can be proved uniquely minimal from
 the existing axioms and action with no extra unselected coefficient.
+
+## v14.29 View 2 falsifiers
+
+The View 2 candidate fails if the associated `G2/SU3` section forces trivial `c2(P_color)`, theta admits an independent variation/pole, finite variation disagrees with the source convention, gauge covariance/Noether identity fails, or the eta term duplicates the ungauged action. Outcome A also fails—and currently does—when the retained `M8` eta action lacks a common-domain reduction to the physical `M4` SU3 field or when no FR/Dirac matching theorem prevents double counting. Confinement remains falsified for the Gaussian collar by its zero asymptotic string tension; a finite tube alone is not an area-law proof.
