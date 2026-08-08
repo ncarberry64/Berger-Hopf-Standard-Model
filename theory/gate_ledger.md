@@ -558,3 +558,22 @@ Exact next object:
 - Flavor provenance gates: `OPEN_UNCHANGED`.
 - Mark III / BHSM completion / USB synchronization: `NOT_REACHED`.
 <!-- /BHSM_V14_88_ACTION_SELECTED_CHARGE_SCHUR_GATE -->
+
+<!-- BHSM_V14_89_DRIVER_BHSM_EXCHANGE_TRACTION_NO_GO -->
+## v14.89 driver--BHSM exchange/traction gates
+
+- Independent retained driver field: `ABSENT`.
+- Direct driver--BHSM interaction/interface-transfer term: `ABSENT`.
+- Physical exchange current `Q_ex`: `UNDEFINED_NO_COUPLED_FUNCTIONAL`.
+- Physical tangential coexact L2 traction and shape vertex: `UNDEFINED_NO_COUPLED_FUNCTIONAL`.
+- Formal zero-coupling exchange current/vertex: `ZERO`.
+- Isotropic scalar or normal-pressure tangential traction: `ZERO_EXACT`.
+- Scalar-driver times scalar-ell2 to coexact L2: `FORBIDDEN_BY_ROUND_SPIN4`.
+- Internal reciprocal attachment as external driver: `REJECTED_INTERNAL_WARD_TRANSFER_ONLY`.
+- v14.83 `R^7` work bridge: `PROVISIONAL_DIMENSIONAL_NORMAL_FORM_NOT_PHYSICAL_DRIVER`.
+- General common-domain Schur response: `PRESERVED_CONDITIONAL_NONPOSITIVE`.
+- Full driver/BHSM common self-adjoint domain: `NOT_DERIVED`.
+- Next route: `FOUNDATIONAL_OR_DERIVED_DRIVER_SECTOR_AND_ITS_UNIQUE_COVARIANT_COUPLING_TO_THE_BHSM_FULL_PREIMAGE_BOUNDARY_ACTION_WITH_CONSERVED_INTERFACE_TRACTION_REFLECTION_PARITY_AND_COMMON_SELF_ADJOINT_DOMAIN`.
+- Flavor provenance gates: `OPEN_UNCHANGED`.
+- Mark III / BHSM completion / USB synchronization: `NOT_REACHED`.
+<!-- /BHSM_V14_89_DRIVER_BHSM_EXCHANGE_TRACTION_NO_GO -->

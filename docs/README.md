@@ -361,3 +361,12 @@ charge-sector and FR selection audit, exact fixed-charge Routh reduction,
 general common-domain Schur Hessian, round Spin(4) kill screen, and conserved
 exchange-current continuation object.
 <!-- /BHSM_V14_88_ACTION_SELECTED_CHARGE_SCHUR_GATE -->
+
+<!-- BHSM_V14_89_DRIVER_BHSM_EXCHANGE_TRACTION_NO_GO -->
+## v14.89 driver--BHSM exchange/traction no-go
+
+See `BHSM_DRIVER_BHSM_EXCHANGE_TRACTION_NO_GO_V14_89.md` for the exhaustive
+driver-coupling provenance audit, decoupled Ward theorem, tangential-traction
+and Hodge/Spin(4) kill screens, v14.83 bridge disposition, and foundational
+driver-sector continuation object.
+<!-- /BHSM_V14_89_DRIVER_BHSM_EXCHANGE_TRACTION_NO_GO -->

@@ -1889,3 +1889,12 @@ with
 The controlling report is
 `docs/BHSM_ACTION_SELECTED_CHARGE_CURRENT_SHAPE_SCHUR_GATE_V14_88.md`.
 <!-- /BHSM_V14_88_ACTION_SELECTED_CHARGE_SCHUR_GATE -->
+
+<!-- BHSM_V14_89_DRIVER_BHSM_EXCHANGE_TRACTION_NO_GO -->
+## v14.89 driver--BHSM exchange/traction no-go artifact
+
+Regenerate `BHSM_driver_bhsm_exchange_traction_no_go_v14_89.json` with
+`python scripts/materialize_driver_bhsm_exchange_traction_no_go_v14_89.py`.
+The controlling report is
+`docs/BHSM_DRIVER_BHSM_EXCHANGE_TRACTION_NO_GO_V14_89.md`.
+<!-- /BHSM_V14_89_DRIVER_BHSM_EXCHANGE_TRACTION_NO_GO -->
