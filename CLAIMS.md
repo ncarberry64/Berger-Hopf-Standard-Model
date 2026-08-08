@@ -2455,3 +2455,8 @@ BHSM may claim a moduli-to-Clifford rank obstruction, a conditional unitary seam
 
 BHSM may claim the odd-field/action-ownership obstruction, a conditional worldline-SUSY and product-superconnection architecture, the full-Clifford seam-commutant reduction, and the twelve-of-sixteen orbital spinor-branch connectivity theorem. BHSM may not claim that FR parity derives gamma matrices, that the worldline or local fermion action is action-owned, that the parent spin coframe or physical seam matcher is selected, that relative flavor holonomy follows from the universal spin lift, that full Kosmann matrix elements or a determinant crossing are calculated, or that CKM, CP, masses, couplings, radii, or scales are derived.
 <!-- /BHSM_V14_44_WORLDLINE_CLIFFORD_SPIN_LIFT -->
+<!-- BHSM_V14_45_FOUNDATIONAL_DIRAC_SPIN_GLUE -->
+## v14.45 claim boundary
+
+BHSM may claim a foundational effective eta-bound Dirac action, exact unit normal-mode pullback, global-spin-bundle seam cancellation, a collective-coordinate no-double-counting projector, and the determinant-420 L2/L3 counterterm underdetermination theorem. BHSM must not describe the local fermion action as derived from Path B, treat the global spin lift as relative flavor holonomy, claim full compact-cap Kosmann matrix elements, choose renormalized curvature coefficients without an explicit microscopic or renormalization principle, or emit a physical determinant, bifurcation, CKM matrix, CP phase, mass, coupling, radius, or scale.
+<!-- /BHSM_V14_45_FOUNDATIONAL_DIRAC_SPIN_GLUE -->

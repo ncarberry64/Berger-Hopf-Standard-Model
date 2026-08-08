@@ -3084,3 +3084,14 @@ The source-free stationary coexact shift is a weighted Killing-operator square. 
 - The orbital L2/L3 library retains twelve of sixteen connected spinor branch pairs; full Kosmann vertices remain open.
 - Frozen predictions are unchanged; BHSM is not complete.
 <!-- /BHSM_V14_44_WORLDLINE_CLIFFORD_SPIN_LIFT -->
+<!-- BHSM_V14_45_FOUNDATIONAL_DIRAC_SPIN_GLUE -->
+## v14.45 foundational Dirac and spin-glue continuation
+
+- BHSM adopts the canonically normalized two-sided eta-bound Dirac action as foundational low-energy data, not as a derivation from the bosonic Path-B action.
+- The normalized eta zero mode gives an exact unit four-dimensional kinetic pullback and unit two-sheet Higgs overlap.
+- A single global parent spin bundle fixes the seam transmission and cancels the internal Green form; the remaining common sign or gauge phase is family central.
+- Collective eta zero modes are removed from the bosonic determinant through an explicit orthogonal projector, preventing double counting with the local fermion field.
+- The two renormalized local gravitational coefficients span the L=2 and L=3 channels independently; their channel matrix has determinant 420.
+- The physical bifurcation remains underdetermined until a microscopic regulator or two renormalization conditions and the tangential Kosmann spectrum are supplied.
+- Frozen predictions are unchanged; BHSM is not complete.
+<!-- /BHSM_V14_45_FOUNDATIONAL_DIRAC_SPIN_GLUE -->

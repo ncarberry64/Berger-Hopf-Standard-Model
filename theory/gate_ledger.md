@@ -497,3 +497,17 @@ Exact next object:
 - Orbital spinor branch connectivity: `12_OF_16`.
 - Full normalized Kosmann L2/L3 polarization: `OPEN`.
 <!-- /BHSM_V14_44_WORLDLINE_CLIFFORD_SPIN_LIFT -->
+<!-- BHSM_V14_45_FOUNDATIONAL_DIRAC_SPIN_GLUE -->
+## v14.45 foundational fermion and renormalization gates
+
+- Local eta-bound Dirac action: `ADOPTED_FOUNDATIONAL_EFFECTIVE_DATA`.
+- Derivation from bosonic Path B: `FAILED_NOT_CLAIMED`.
+- Normal zero-mode pullback: `EXACT_UNIT_COEFFICIENT`.
+- Two-sheet seam-Higgs normal overlap: `EXACTLY_ONE`.
+- Parent spin-bundle seam matcher: `FIXED_FOUNDATIONALLY_UP_TO_GLOBAL_SIGN_OR_GAUGE`.
+- Relative flavor holonomy from spin glue: `ZERO_FAMILY_CENTRAL`.
+- Collective zero-mode double counting: `REMOVED_BY_P_COLL_Q_ETA_SPLIT`.
+- L2/L3 local counterterm map: `FULL_RANK_DETERMINANT_420`.
+- Renormalized bifurcation: `UNDERDETERMINED`.
+- Tangential compact-cap Kosmann spectrum: `OPEN`.
+<!-- /BHSM_V14_45_FOUNDATIONAL_DIRAC_SPIN_GLUE -->

@@ -306,3 +306,8 @@ See `BHSM_MODULI_CLIFFORD_MATCHER_ZETA_V14_43.md` for the FR-line Clifford-rank 
 
 See `BHSM_WORLDLINE_CLIFFORD_SPIN_LIFT_V14_44.md` for the odd-field action-ownership no-go, conditional product superconnection, full-Clifford seam matcher theorem, parent spin-lift condition, and spinor branch-connectivity audit.
 <!-- /BHSM_V14_44_WORLDLINE_CLIFFORD_SPIN_LIFT -->
+<!-- BHSM_V14_45_FOUNDATIONAL_DIRAC_SPIN_GLUE -->
+## v14.45 foundational Dirac and spin-glue continuation
+
+See `BHSM_FOUNDATIONAL_DIRAC_SPIN_GLUE_V14_45.md` for the foundational fermion-action declaration, exact eta zero-mode pullback, global spin-bundle seam theorem, collective no-double-counting projector, and the full-rank L2/L3 renormalization obstruction.
+<!-- /BHSM_V14_45_FOUNDATIONAL_DIRAC_SPIN_GLUE -->

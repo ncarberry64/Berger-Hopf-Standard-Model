@@ -1849,3 +1849,8 @@ Regenerate with `python scripts/materialize_moduli_clifford_matcher_zeta_v14_43.
 
 Regenerate with `python scripts/materialize_worldline_clifford_spin_lift_v14_44.py`. The controlling report is `docs/BHSM_WORLDLINE_CLIFFORD_SPIN_LIFT_V14_44.md`.
 <!-- /BHSM_V14_44_WORLDLINE_CLIFFORD_SPIN_LIFT -->
+<!-- BHSM_V14_45_FOUNDATIONAL_DIRAC_SPIN_GLUE -->
+## v14.45 foundational Dirac/spin-glue artifacts
+
+Regenerate with `python scripts/materialize_foundational_dirac_spin_glue_v14_45.py`. The controlling report is `docs/BHSM_FOUNDATIONAL_DIRAC_SPIN_GLUE_V14_45.md`.
+<!-- /BHSM_V14_45_FOUNDATIONAL_DIRAC_SPIN_GLUE -->
