@@ -142,3 +142,15 @@ mathematically viable action candidate, not an action-derived CKM matrix.
 - Mark III: **not reached**;
 - BHSM complete: **false**;
 - USB synchronization eligible: **false**.
+
+## Validation record
+
+- Authoritative committed-state repository suite: `5990 passed in 791.43s`,
+  exit code `0`.
+- Focused v6.15/v6.18/v14.40/v14.41/v14.70/v14.81/v14.84/v14.85/v14.86
+  source-chain and status suite: `168 passed`.
+- Final frozen/status/public/precision guard suite: `90 passed`.
+- All 41 v14.46--v14.86 deterministic materializers exited `0`; the new
+  artifact was byte-identical on rerun and no tracked artifact changed.
+- Frozen-prediction, forbidden-claim, BHSM-status, public-readiness, and
+  precision audits all passed with exit code `0`.

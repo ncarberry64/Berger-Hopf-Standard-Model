@@ -1008,3 +1008,9 @@ variation into the full-preimage ell=2 Hessian.
 The canonical exact next object remains unchanged. Flavor provenance gates
 remain open, BHSM remains incomplete, Mark III is not reached, and USB
 synchronization is not eligible.
+
+Validation: the authoritative committed-state suite passed `5990` tests in
+`791.43s` with exit code `0`; the focused source-chain/status suite passed
+`168` tests; the final guard suite passed `90` tests; and all 41
+v14.46--v14.86 materializers exited `0` with deterministic output. Frozen,
+forbidden-claim, status, public-readiness, and precision audits passed.

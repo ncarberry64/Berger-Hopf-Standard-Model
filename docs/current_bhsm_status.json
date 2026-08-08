@@ -429,10 +429,11 @@
     "version": "v14.86"
   },
   "validation_summary": {
-    "artifact_determinism": "PASS: 40 v14.46-v14.85 materializers are byte-identical across repeated materializations",
+    "artifact_determinism": "PASS: 41 v14.46-v14.86 materializers exited 0; new artifact byte-identical on rerun; no tracked artifact diff",
     "audits": "PASS: frozen integrity, forbidden claims, status, precision, public readiness, safety scan, diff hygiene, and clean tree",
-    "focused": "PASS: 81 v14.39/v14.41/v14.77/v14.81/v14.84/v14.85 source-chain tests",
-    "full_pytest": "PASS: 5983 passed in 791.84 seconds, exit code 0",
+    "final_guards_v14_86": "PASS: 90 frozen/status/public/precision guard tests",
+    "focused": "PASS: 168 v6.15/v6.18/v14.40/v14.41/v14.70/v14.81/v14.84/v14.85/v14.86 source-chain and status tests",
+    "full_pytest": "PASS: 5990 passed in 791.43 seconds, exit code 0",
     "pre_commit_v14_85_run": "RECORDED: 5968 passed and 15 identical untracked-source guard failures in 789.39 seconds, exit code 1",
     "pre_final_v14_83_run": "RECORDED: 5967 passed and 2 README-length guard failures in 799.83 seconds, exit code 1"
   }
