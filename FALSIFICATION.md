@@ -130,3 +130,8 @@ The hypothesis that the static degree-one eta background itself activates the Sp
 
 The hypothesis that the current rigid FR rotor, a static Wilson insertion, or diagonal stationary family occupations supply the universal L=2,L=3 Spin(4) source is rejected. The route survives only through an action-selected nonaxisymmetric background or a derived collective-fermion effective action.
 <!-- /BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->
+<!-- BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->
+## v14.41 relative-frame falsification boundary
+
+The hypothesis that the present source-free classical ADM action spontaneously selects an L=2 or L=3 relative frame is rejected. The route survives only through an action-owned source, rotating boundary data, time dependence, or a derived renormalized quantum effective action.
+<!-- /BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->

@@ -1829,3 +1829,8 @@ Regenerate with `python scripts/materialize_static_eta_metric_spin4_source_v14_3
 
 Regenerate with `python scripts/materialize_matter_sourced_spin4_multipole_v14_40.py`. The controlling report is `docs/BHSM_MATTER_SOURCED_SPIN4_MULTIPOLE_V14_40.md`.
 <!-- /BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->
+<!-- BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->
+## v14.41 source-free relative-frame artifacts
+
+Regenerate with `python scripts/materialize_source_free_relative_frame_v14_41.py`. The controlling report is `docs/BHSM_SOURCE_FREE_RELATIVE_FRAME_V14_41.md`.
+<!-- /BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->

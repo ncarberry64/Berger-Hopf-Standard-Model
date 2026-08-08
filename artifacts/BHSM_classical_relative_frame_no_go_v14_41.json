@@ -1,0 +1,32 @@
+{
+  "artifact": "BHSM_classical_relative_frame_no_go_v14_41",
+  "classical_gate": {
+    "L1": "KILLING_OR_GLOBAL_ROTATION_ONLY",
+    "L2": "OFF_STRICTLY_POSITIVE",
+    "L3": "OFF_STRICTLY_POSITIVE",
+    "spontaneous_source_free_relative_frame": false
+  },
+  "general_stationary_geometry": {
+    "Euler_equation": "D_K^*[N^(-1) D_K beta]=0",
+    "coexact_condition": "D_i beta^i=0 implies K=0",
+    "energy_identity": "<beta,O beta>=integral N^(-1)|L_beta h|^2; therefore O beta=0 implies L_beta h=0",
+    "extrinsic_curvature": "K_ij=-(2N)^(-1)(D_i beta_j+D_j beta_i) for dot(h)_ij=0",
+    "kernel": "Killing vector fields compatible with cap/seam boundary data",
+    "quadratic_form": "Q[beta]=(kappa_G/8) integral dmu_h N^(-1) |L_beta h|^2 >= 0"
+  },
+  "nonlinear_statement": "At fixed stationary h and N, K_ij is linear in beta and the ADM shift functional is exactly quadratic.  There is no hidden quartic term capable of producing a finite-amplitude pitchfork after all non-Killing quadratic eigenvalues are positive.",
+  "relative_two_cap_statement": "The sum of the two cap Killing-operator squares is nonnegative. With homogeneous matching and nonrotating boundary data, each cap shift is Killing; after the common global-rotation quotient the relative source-free shift is zero.",
+  "scope_boundary": "This theorem does not exclude a rotating boundary condition, an occupied-state momentum source, a coupled time-dependent solution, or a renormalized quantum effective action with a negative vacuum-polarization contribution.",
+  "validation": {
+    "absolute_shift_is_gauge_until_relative_matching_is_declared": true,
+    "fixed_geometry_shift_dependence_is_exactly_quadratic": true,
+    "no_L2_or_L3_stationary_branch": true,
+    "nonrotating_boundary_removes_Killing_modes": true,
+    "source_free_stationary_equation_is_homogeneous": true,
+    "two_source_free_caps_do_not_generate_relative_nonKilling_rotation": true,
+    "weighted_Killing_square_nonnegative": true,
+    "zero_action_implies_Killing_field": true
+  },
+  "validation_passed": true,
+  "version": "v14.41"
+}

@@ -2435,3 +2435,8 @@ BHSM may claim the exact local eta/metric mixed second-variation identity and th
 
 BHSM may claim the source-character and family-selection no-go results under the stated equivariant, static-Wilson, and diagonal-occupation assumptions. It may not claim that every time-dependent or deformed matter source vanishes, that the compact-cap shift spectrum is solved, or that CKM, CP, masses, scales, or BHSM completion are derived.
 <!-- /BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->
+<!-- BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->
+## v14.41 claim boundary
+
+BHSM may claim the classical source-free coexact-shift no-go under stationary, source-free, nonrotating-boundary and self-adjoint-domain assumptions. It may not claim that every sourced, time-dependent, quantum, or rotating-boundary branch vanishes, or that a collective determinant, CKM matrix, CP phase, mass, scale, or completed BHSM has been derived.
+<!-- /BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->

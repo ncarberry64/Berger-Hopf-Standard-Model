@@ -1,0 +1,74 @@
+{
+  "artifact": "BHSM_source_free_coexact_shift_spectrum_v14_41",
+  "flavor_channels": {
+    "L2": {
+      "eigenvalue": "5/R^2",
+      "status": "POSITIVE"
+    },
+    "L3": {
+      "eigenvalue": "12/R^2",
+      "status": "POSITIVE"
+    }
+  },
+  "normalization_warning": "The dimensionless R^2-scaled spectrum is exact for a round cap. The physical radius, gravitational coefficient, collar measure, and seam normalization remain open BHSM data.",
+  "operator": "O_shift=D_K^* D_K=Delta_H-2 Ric",
+  "round_S3_specialization": {
+    "Delta_H_coexact_eigenvalue": "(L+1)^2/R^2",
+    "O_shift_eigenvalue": "(L-1)(L+3)/R^2",
+    "Ric": "2 h/R^2"
+  },
+  "spectrum": [
+    {
+      "L": 1,
+      "classification": "KILLING_ZERO_MODE",
+      "hodge_eigenvalue_R2": 4,
+      "multiplicity": 6,
+      "shift_eigenvalue_R2": 0
+    },
+    {
+      "L": 2,
+      "classification": "STRICTLY_POSITIVE",
+      "hodge_eigenvalue_R2": 9,
+      "multiplicity": 16,
+      "shift_eigenvalue_R2": 5
+    },
+    {
+      "L": 3,
+      "classification": "STRICTLY_POSITIVE",
+      "hodge_eigenvalue_R2": 16,
+      "multiplicity": 30,
+      "shift_eigenvalue_R2": 12
+    },
+    {
+      "L": 4,
+      "classification": "STRICTLY_POSITIVE",
+      "hodge_eigenvalue_R2": 25,
+      "multiplicity": 48,
+      "shift_eigenvalue_R2": 21
+    },
+    {
+      "L": 5,
+      "classification": "STRICTLY_POSITIVE",
+      "hodge_eigenvalue_R2": 36,
+      "multiplicity": 70,
+      "shift_eigenvalue_R2": 32
+    },
+    {
+      "L": 6,
+      "classification": "STRICTLY_POSITIVE",
+      "hodge_eigenvalue_R2": 49,
+      "multiplicity": 96,
+      "shift_eigenvalue_R2": 45
+    }
+  ],
+  "stationary_ADM_functional": "S_beta=(kappa_G/(8N)) integral dmu_h |L_beta h|^2 on divergence-free beta",
+  "validation": {
+    "L1_is_Killing_kernel": true,
+    "L1_multiplicity_is_six": true,
+    "L2_shift_eigenvalue_R2_is_5": true,
+    "L3_shift_eigenvalue_R2_is_12": true,
+    "all_nonKilling_rows_positive": true
+  },
+  "validation_passed": true,
+  "version": "v14.41"
+}

@@ -286,3 +286,8 @@ See `BHSM_STATIC_ETA_METRIC_SPIN4_SOURCE_V14_39.md` for the exact eta/metric mix
 
 See `BHSM_MATTER_SOURCED_SPIN4_MULTIPOLE_V14_40.md` for the rigid-rotor L=1 theorem, diagonal-family r=0 theorem, static-Wilson source audit, and universality gate.
 <!-- /BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->
+<!-- BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->
+## v14.41 source-free relative-frame gate
+
+See `BHSM_SOURCE_FREE_RELATIVE_FRAME_V14_41.md` for the weighted Killing-square theorem, the exact round-cap L=2/L=3 spectrum, and the collective-fermion vacuum-polarization threshold contract.
+<!-- /BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->

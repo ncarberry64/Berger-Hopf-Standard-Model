@@ -448,3 +448,14 @@ Exact next object:
 - Universal L2/L3 relative-frame background: `OPEN`.
 - Physical CKM/CP/masses: `OPEN`.
 <!-- /BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->
+<!-- BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->
+## v14.41 universal relative-frame gates
+
+- Source-free coexact L=1: `KILLING_KERNEL_ONLY`.
+- Source-free coexact L=2: `STRICTLY_POSITIVE_OFF`.
+- Source-free coexact L=3: `STRICTLY_POSITIVE_OFF`.
+- Classical spontaneous relative frame: `FAILED`.
+- Collective-fermion vacuum determinant: `OPEN_NOT_EVALUABLE`.
+- Renormalized Pi_2 and Pi_3: `OPEN`.
+- Physical CKM/CP/masses: `OPEN`.
+<!-- /BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->

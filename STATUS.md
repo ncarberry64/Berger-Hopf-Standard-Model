@@ -3048,3 +3048,10 @@ The exact Path-B eta/spatial-metric mixed variation is derived. A static eta bac
 
 The rigid eta rotor supplies only L=1. Static Wilson insertions supply no universal coexact momentum source. Diagonal family occupations have r=0 only and do not connect the frozen family chains. Off-diagonal coherence remains circular until selected by the collective action.
 <!-- /BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->
+<!-- BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->
+## BHSM v14.41 source-free relative-frame gate
+
+`BHSM_SOURCE_FREE_CLASSICAL_COMPACT_CAP_ADM_ACTION_HAS_ONLY_KILLING_COEXACT_SHIFT_ZERO_MODES_AND_CANNOT_SPONTANEOUSLY_SELECT_THE_L2_L3_RELATIVE_FRAME_BACKGROUND`
+
+The source-free stationary coexact shift is a weighted Killing-operator square. On a round S3 cap its L=2 and L=3 eigenvalues are 5/R^2 and 12/R^2. The classical universal relative-frame branch is therefore off. A renormalized collective-fermion vacuum polarization remains open.
+<!-- /BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->

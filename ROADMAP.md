@@ -507,3 +507,13 @@ First derive the common-domain map from the retained `M8` eta field to the physi
 4. Construct normalized common-domain Dirac modes and action-derived up/down responses.
 5. Compute CKM only after the raw response kernel is action owned.
 <!-- /BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->
+<!-- BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->
+## v14.41 exact continuation
+
+1. Construct the normalized Path-B/FR one-knot Hilbert bundle.
+2. Derive the collective Weyl/Dirac operator and compact cap/seam self-adjoint domain.
+3. Match the relative tetrad and spin connection.
+4. Compute and renormalize the coexact stress polarization in L=2 and L=3.
+5. Test whether c_G lambda_L plus Pi_L crosses zero.
+6. Derive up/down response matrices only after the raw determinant kernel is action owned.
+<!-- /BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->

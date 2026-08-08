@@ -884,6 +884,7 @@ def build_parser() -> argparse.ArgumentParser:
         "--format", choices=("json", "markdown"), default="markdown"
     )
     integrated_status_commands = (
+        ("source-free-relative-frame-status-v14-41", "Render the BHSM v14.41 source-free relative-frame gate"),
         ("matter-sourced-spin4-multipole-status-v14-40", "Render the BHSM v14.40 matter-sourced Spin(4) multipole gate"),
         ("static-eta-metric-spin4-source-status-v14-39", "Render the BHSM v14.39 static eta/metric and Spin(4) source gate"),
         ("lambda85-eta-mixed-hessian-status-v14-38", "Render the BHSM v14.38 Lambda85/eta mixed-Hessian gate"),
@@ -1028,6 +1029,13 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main(argv: Sequence[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
+    if args.command == "source-free-relative-frame-status-v14-41":
+        from .completion.source_free_relative_frame_completion_gate_v14_41 import completion_payload, deterministic_json, status_text
+        if args.format == "markdown":
+            print(status_text())
+        else:
+            print(deterministic_json(completion_payload()), end="")
+        return 0
     if args.command == "matter-sourced-spin4-multipole-status-v14-40":
         from .completion.matter_sourced_spin4_completion_gate_v14_40 import completion_payload, deterministic_json, status_text
         if args.format == "markdown":
