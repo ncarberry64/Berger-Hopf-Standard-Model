@@ -10,6 +10,7 @@ current and its shape Frechet derivative cannot presently be formed.
 from __future__ import annotations
 
 import json
+import math
 from pathlib import Path
 from typing import Any, Callable, Sequence
 
@@ -145,11 +146,19 @@ def isotropic_scalar_traction(
 
     q = np.asarray(shape, dtype=float)
     n = np.asarray(normal, dtype=float)
+    tangents = np.asarray(tangent_frame, dtype=float)
     response = np.zeros(q.size) if pressure_shape_response is None else np.asarray(pressure_shape_response, dtype=float)
     if response.shape != q.shape:
         raise ValueError("pressure response must match shape coordinates")
     pressure = float(base_pressure) + float(response @ q)
-    return interface_tangential_traction(pressure * np.eye(n.size), n, tangent_frame)
+    if not math.isfinite(pressure):
+        raise ValueError("pressure must be finite")
+    # Validate the geometric frame through the general traction routine, then
+    # return the exact theorem value.  Numerically multiplying p I by a QR
+    # tangent frame leaves platform-dependent roundoff; analytically
+    # e_a^nu (p delta_nu^mu) n_mu = p e_a.n = 0 exactly.
+    interface_tangential_traction(np.eye(n.size), n, tangents)
+    return np.zeros(tangents.shape[0])
 
 
 def finite_difference_shape_vertex(

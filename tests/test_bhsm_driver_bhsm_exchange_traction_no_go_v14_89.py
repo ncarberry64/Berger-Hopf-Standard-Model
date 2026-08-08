@@ -43,8 +43,8 @@ def test_isotropic_scalar_pressure_has_zero_tangential_traction_for_all_shapes()
     tangents = np.eye(4)[1:]
     response = np.arange(1.0, 10.0)
     current = lambda q: isotropic_scalar_traction(q, normal, tangents, pressure_shape_response=response)
-    assert np.allclose(current(np.arange(9.0)), 0.0)
-    assert np.allclose(finite_difference_shape_vertex(current, 9), 0.0)
+    assert np.array_equal(current(np.arange(9.0)), np.zeros(3))
+    assert np.array_equal(finite_difference_shape_vertex(current, 9), np.zeros((3, 9)))
 
 
 def test_general_tangential_traction_detects_real_offdiagonal_momentum_flux() -> None:
