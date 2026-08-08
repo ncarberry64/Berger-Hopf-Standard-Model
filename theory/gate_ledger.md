@@ -438,3 +438,13 @@ Exact next object:
 - Fermion/Wilson-sourced coexact shift: `OPEN`.
 - Physical CKM/CP/masses: `OPEN`.
 <!-- /BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->
+<!-- BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->
+## v14.40 matter-source gates
+
+- Rigid eta rotor source: `L1_ONLY`.
+- Static Wilson coexact source: `ZERO_OR_NOT_DYNAMICAL`.
+- Diagonal family occupation source: `R0_ONLY_NOT_CONNECTED`.
+- Off-diagonal coherence source: `KINEMATICALLY_ALLOWED_BUT_CIRCULAR_UNTIL_ACTION_SELECTED`.
+- Universal L2/L3 relative-frame background: `OPEN`.
+- Physical CKM/CP/masses: `OPEN`.
+<!-- /BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->

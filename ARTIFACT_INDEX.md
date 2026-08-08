@@ -1824,3 +1824,8 @@ Regenerate with `python scripts/materialize_lambda85_eta_mixed_hessian_v14_38.py
 
 Regenerate with `python scripts/materialize_static_eta_metric_spin4_source_v14_39.py`. The controlling report is `docs/BHSM_STATIC_ETA_METRIC_SPIN4_SOURCE_V14_39.md`.
 <!-- /BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->
+<!-- BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->
+## v14.40 matter-sourced Spin(4) artifacts
+
+Regenerate with `python scripts/materialize_matter_sourced_spin4_multipole_v14_40.py`. The controlling report is `docs/BHSM_MATTER_SOURCED_SPIN4_MULTIPOLE_V14_40.md`.
+<!-- /BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->

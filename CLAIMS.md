@@ -2430,3 +2430,8 @@ BHSM may claim an exact zero mixed block between the currently retained homogene
 
 BHSM may claim the exact local eta/metric mixed second-variation identity and the zero static eta momentum/shift source under the stated static assumptions. It may not claim that every spatial metric mixed block vanishes, that the Spin(4) response is action-selected in a sourced state, or that CKM, CP, masses, scales, or BHSM completion are derived.
 <!-- /BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->
+<!-- BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->
+## v14.40 claim boundary
+
+BHSM may claim the source-character and family-selection no-go results under the stated equivariant, static-Wilson, and diagonal-occupation assumptions. It may not claim that every time-dependent or deformed matter source vanishes, that the compact-cap shift spectrum is solved, or that CKM, CP, masses, scales, or BHSM completion are derived.
+<!-- /BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->

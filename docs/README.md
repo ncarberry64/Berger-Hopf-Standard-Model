@@ -281,3 +281,8 @@ See `BHSM_LAMBDA85_ETA_MIXED_HESSIAN_V14_38.md` for the homogeneous-character se
 
 See `BHSM_STATIC_ETA_METRIC_SPIN4_SOURCE_V14_39.md` for the exact eta/metric mixed variation, static ADM source no-go, and the pivot to a self-consistent matter-sourced coexact shift.
 <!-- /BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->
+<!-- BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->
+## v14.40 matter-sourced Spin(4) multipole audit
+
+See `BHSM_MATTER_SOURCED_SPIN4_MULTIPOLE_V14_40.md` for the rigid-rotor L=1 theorem, diagonal-family r=0 theorem, static-Wilson source audit, and universality gate.
+<!-- /BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->

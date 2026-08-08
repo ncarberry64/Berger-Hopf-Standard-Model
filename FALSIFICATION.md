@@ -125,3 +125,8 @@ The hypothesis that the already-derived homogeneous v11.3 Lambda85/KKT branch tr
 
 The hypothesis that the static degree-one eta background itself activates the Spin(4) L=2,L=3 family branch is rejected. The route survives only if a time-dependent collective, fermion, Wilson, or rotating-boundary source generates a nonzero coexact momentum mode and the matched spin connection.
 <!-- /BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->
+<!-- BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->
+## v14.40 source falsification boundary
+
+The hypothesis that the current rigid FR rotor, a static Wilson insertion, or diagonal stationary family occupations supply the universal L=2,L=3 Spin(4) source is rejected. The route survives only through an action-selected nonaxisymmetric background or a derived collective-fermion effective action.
+<!-- /BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->

@@ -498,3 +498,12 @@ First derive the common-domain map from the retained `M8` eta field to the physi
 4. Evaluate the action-normalized L=2,L=3 family response and its up/down mismatch.
 5. Attach the existing Z6 relative orientation only after nonzero bridge amplitudes are derived.
 <!-- /BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->
+<!-- BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->
+## v14.40 exact continuation
+
+1. Derive a family-independent nonaxisymmetric relative-frame background or the collective-fermion effective action.
+2. Solve the compact-cap coexact L=2,L=3 operator with physical seam conditions.
+3. Match the resulting shift to the tetrad and spin connection.
+4. Construct normalized common-domain Dirac modes and action-derived up/down responses.
+5. Compute CKM only after the raw response kernel is action owned.
+<!-- /BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->

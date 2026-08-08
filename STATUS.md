@@ -3041,3 +3041,10 @@ The available v11.3 KKT attachment reduction is a homogeneous `(ell,p)=(0,0)` br
 
 The exact Path-B eta/spatial-metric mixed variation is derived. A static eta background has zero ADM momentum density, so it does not activate the coexact L=2,L=3 Spin(4) branch. The nonhomogeneous Lambda85 continuation is a gauge-fixed constraint-reduced metric problem, not a multiplier spectrum.
 <!-- /BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->
+<!-- BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->
+## BHSM v14.40 matter-sourced Spin(4) multipole audit
+
+`BHSM_RIGID_FR_ETA_ROTOR_STATIC_WILSON_INSERTIONS_AND_DIAGONAL_FAMILY_OCCUPATIONS_DO_NOT_SUPPLY_THE_UNIVERSAL_CONNECTED_L2_L3_COEXACT_SHIFT_REQUIRED_FOR_CKM`
+
+The rigid eta rotor supplies only L=1. Static Wilson insertions supply no universal coexact momentum source. Diagonal family occupations have r=0 only and do not connect the frozen family chains. Off-diagonal coherence remains circular until selected by the collective action.
+<!-- /BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->
