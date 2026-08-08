@@ -1,0 +1,26 @@
+{
+  "artifact": "BHSM_full_Clifford_seam_matcher_v14_44",
+  "commutant_complex_dimensions": {
+    "full_complex_Clifford_module": 1,
+    "normal_symbol_only": 8
+  },
+  "full_condition": "U c_core(v)=c_wall(Lambda v) U for every retained Clifford vector v",
+  "internal_bundle_commutant": "gauge/FR/family intertwiners remain after the spin factor; a universal identity matcher is family central and cannot produce CKM",
+  "normal_only_condition": "U^dagger alpha_n^wall U=alpha_n^core; residual unitary class U(2)_+ x U(2)_-",
+  "secondary_verdict": "FULL_CLIFFORD_SEAM_COMPATIBILITY_REDUCES_THE_CORE_WALL_MATCHER_TO_A_COMMON_PHASE_TIMES_RETAINED_BUNDLE_INTERTWINERS_BUT_DOES_NOT_SELECT_RELATIVE_FLAVOR_HOLONOMY",
+  "spin_lift_theorem": {
+    "hypothesis": "core and wall coframes are restrictions of one oriented, time-oriented parent spin coframe and Lambda is their seam frame map",
+    "matcher": "U_cw=rho(SpinLift(Lambda)) times a common U(1) phase",
+    "metric_only_status": "the metric and normal symbol do not select the parent coframe or its spin lift",
+    "twofold_spin_lift": "+/- before the global spin structure fixes the lift"
+  },
+  "validation": {
+    "Dirac_Clifford_relations_exact_numerically": true,
+    "common_phase_is_family_central": true,
+    "full_irreducible_Clifford_commutant_dimension_is_1": true,
+    "full_matcher_reduces_to_common_phase_before_internal_bundles": true,
+    "normal_only_commutant_dimension_is_8": true
+  },
+  "validation_passed": true,
+  "version": "v14.44"
+}

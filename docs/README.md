@@ -301,3 +301,8 @@ See `BHSM_COLLECTIVE_DIRAC_VACUUM_POLARIZATION_V14_42.md` for the action-ownersh
 
 See `BHSM_MODULI_CLIFFORD_MATCHER_ZETA_V14_43.md` for the FR-line Clifford-rank obstruction, local-field normalization ambiguity, unitary seam-transmission theorem, spinor recoupling audit, and exact free round-S3 zeta diagnostics.
 <!-- /BHSM_V14_43_MODULI_CLIFFORD_MATCHER_ZETA -->
+<!-- BHSM_V14_44_WORLDLINE_CLIFFORD_SPIN_LIFT -->
+## v14.44 worldline/Clifford spin-lift audit
+
+See `BHSM_WORLDLINE_CLIFFORD_SPIN_LIFT_V14_44.md` for the odd-field action-ownership no-go, conditional product superconnection, full-Clifford seam matcher theorem, parent spin-lift condition, and spinor branch-connectivity audit.
+<!-- /BHSM_V14_44_WORLDLINE_CLIFFORD_SPIN_LIFT -->

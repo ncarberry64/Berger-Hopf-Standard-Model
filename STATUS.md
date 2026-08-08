@@ -3074,3 +3074,13 @@ The source-free stationary coexact shift is a weighted Killing-operator square. 
 - Exact free round-S3 zeta diagnostics are recorded, but the renormalized L2/L3 polarization remains open.
 - Frozen predictions are unchanged; BHSM is not complete.
 <!-- /BHSM_V14_43_MODULI_CLIFFORD_MATCHER_ZETA -->
+<!-- BHSM_V14_44_WORLDLINE_CLIFFORD_SPIN_LIFT -->
+## v14.44 worldline/Clifford spin-lift audit
+
+- The bosonic Path B eta/FR collective action does not generate the odd worldline variables or local supercharge needed for a spacetime Dirac operator.
+- N=1 supersymmetric quantum mechanics gives a coefficient-fixed moduli Hodge-Dirac only after new Grassmann variables are added; it acts on configuration space rather than M4.
+- Full Clifford seam compatibility reduces the spin matcher from U(2)xU(2) to one common phase before internal bundle intertwiners.
+- A parent spin coframe would select the seam spin lift up to a common sign/phase, but the current metric action does not own that coframe attachment.
+- The orbital L2/L3 library retains twelve of sixteen connected spinor branch pairs; full Kosmann vertices remain open.
+- Frozen predictions are unchanged; BHSM is not complete.
+<!-- /BHSM_V14_44_WORLDLINE_CLIFFORD_SPIN_LIFT -->

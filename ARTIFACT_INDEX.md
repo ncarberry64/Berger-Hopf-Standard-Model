@@ -1844,3 +1844,8 @@ Regenerate with `python scripts/materialize_collective_dirac_vacuum_polarization
 
 Regenerate with `python scripts/materialize_moduli_clifford_matcher_zeta_v14_43.py`. The controlling report is `docs/BHSM_MODULI_CLIFFORD_MATCHER_ZETA_V14_43.md`.
 <!-- /BHSM_V14_43_MODULI_CLIFFORD_MATCHER_ZETA -->
+<!-- BHSM_V14_44_WORLDLINE_CLIFFORD_SPIN_LIFT -->
+## v14.44 worldline/Clifford spin-lift artifacts
+
+Regenerate with `python scripts/materialize_worldline_clifford_spin_lift_v14_44.py`. The controlling report is `docs/BHSM_WORLDLINE_CLIFFORD_SPIN_LIFT_V14_44.md`.
+<!-- /BHSM_V14_44_WORLDLINE_CLIFFORD_SPIN_LIFT -->

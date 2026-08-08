@@ -2450,3 +2450,8 @@ BHSM may claim a conditional compact Dirac-domain theorem, a coefficient-free si
 
 BHSM may claim a moduli-to-Clifford rank obstruction, a conditional unitary seam-transmission theorem, exact orbital-to-spinor 6j recoupling factors, and free round-S3 zeta diagnostics. BHSM may not claim that FR parity derives gamma matrices, that the local collective Dirac action or field residue is action normalized, that the core-wall matcher is uniquely selected, that the displayed orbital Clebsch factors are complete Dirac/Kosmann matrix elements, or that a renormalized L2/L3 crossing, CKM matrix, CP phase, mass, coupling, radius, or scale is derived.
 <!-- /BHSM_V14_43_MODULI_CLIFFORD_MATCHER_ZETA -->
+<!-- BHSM_V14_44_WORLDLINE_CLIFFORD_SPIN_LIFT -->
+## v14.44 claim boundary
+
+BHSM may claim the odd-field/action-ownership obstruction, a conditional worldline-SUSY and product-superconnection architecture, the full-Clifford seam-commutant reduction, and the twelve-of-sixteen orbital spinor-branch connectivity theorem. BHSM may not claim that FR parity derives gamma matrices, that the worldline or local fermion action is action-owned, that the parent spin coframe or physical seam matcher is selected, that relative flavor holonomy follows from the universal spin lift, that full Kosmann matrix elements or a determinant crossing are calculated, or that CKM, CP, masses, couplings, radii, or scales are derived.
+<!-- /BHSM_V14_44_WORLDLINE_CLIFFORD_SPIN_LIFT -->

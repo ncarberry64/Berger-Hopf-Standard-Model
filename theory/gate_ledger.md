@@ -485,3 +485,15 @@ Exact next object:
 - Free round-S3 zeta diagnostic: `DERIVED`.
 - Renormalized L2/L3 polarization and physical CKM/CP/masses: `OPEN`.
 <!-- /BHSM_V14_43_MODULI_CLIFFORD_MATCHER_ZETA -->
+<!-- BHSM_V14_44_WORLDLINE_CLIFFORD_SPIN_LIFT -->
+## v14.44 graded-fermion and seam-spin gates
+
+- Bosonic Path B to odd worldline variables: `FAILED_NOT_DERIVED`.
+- Moduli N=1 Hodge-Dirac: `CONDITIONAL_NEW_EXTENSION_WRONG_BASE`.
+- Product spacetime/moduli superconnection: `CONDITIONAL_ARCHITECTURE`.
+- Full Clifford matcher commutant: `U1_BEFORE_INTERNAL_BUNDLES`.
+- Parent coframe spin lift: `CONDITIONAL_THEOREM_PARENT_COFRAME_OPEN`.
+- Relative flavor holonomy from universal spin lift: `ZERO_FAMILY_CENTRAL`.
+- Orbital spinor branch connectivity: `12_OF_16`.
+- Full normalized Kosmann L2/L3 polarization: `OPEN`.
+<!-- /BHSM_V14_44_WORLDLINE_CLIFFORD_SPIN_LIFT -->

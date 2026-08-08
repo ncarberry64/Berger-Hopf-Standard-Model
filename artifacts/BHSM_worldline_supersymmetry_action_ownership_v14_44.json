@@ -1,0 +1,54 @@
+{
+  "artifact": "BHSM_worldline_supersymmetry_action_ownership_v14_44",
+  "finite_witness": {
+    "Q2_diagonal": [
+      1.0624999999999998,
+      1.0624999999999998
+    ],
+    "p": [
+      1.25,
+      -0.75
+    ],
+    "residual": 3.164349175491591e-16,
+    "target": 1.0625,
+    "validation_passed": true
+  },
+  "minimal_moduli_SUSY_QM": {
+    "action": "S=integral dt [1/2 G_AB qdot^A qdot^B + i/2 G_AB psi^A D_t psi^B]",
+    "action_status": "NEW_SUPERSYMMETRIC_EXTENSION_NOT_IN_PATH_B",
+    "base_space": "configuration/moduli space, not M4",
+    "quantization": "Q_mod becomes the Hodge-Dirac on moduli-space forms",
+    "supercharge": "Q_mod=psi^A pi_A"
+  },
+  "minimal_spacetime_spinning_particle": {
+    "FR_role": "flat tensor twist selecting global sign class",
+    "action_status": "FOUNDATIONAL_CANDIDATE_NOT_DERIVED",
+    "constraint": "Q=psi^a e_a^mu pi_mu; quantization gives gamma^mu pi_mu",
+    "fields": [
+      "x^mu(tau)",
+      "psi^a(tau)",
+      "einbein e",
+      "gravitino chi"
+    ]
+  },
+  "missing_odd_data": [
+    "Grassmann tangent variables psi^A or psi^a",
+    "worldline einbein and gravitino for local supersymmetry",
+    "odd symplectic structure and supercharge",
+    "second-quantized local field residue"
+  ],
+  "primary_verdict": "BHSM_BOSONIC_PATH_B_FR_DATA_DO_NOT_GENERATE_THE_GRASSMANN_WORLDLINE_VARIABLES_OR_LOCAL_SUPERCHARGE_REQUIRED_FOR_A_SPACETIME_DIRAC_OPERATOR",
+  "retained_bosonic_data": [
+    "eta field and Path B p2+p8 action",
+    "bosonic collective coordinates and moduli metric",
+    "flat rank-one FR sign line"
+  ],
+  "validation": {
+    "FR_line_changes_global_holonomy_not_local_Clifford_rank": true,
+    "N1_worldline_square_works_after_odd_fields_are_adjoined": true,
+    "bosonic_Path_B_has_no_odd_worldline_fields": true,
+    "worldline_extension_not_promoted": true
+  },
+  "validation_passed": true,
+  "version": "v14.44"
+}
