@@ -1898,3 +1898,13 @@ Regenerate `BHSM_driver_bhsm_exchange_traction_no_go_v14_89.json` with
 The controlling report is
 `docs/BHSM_DRIVER_BHSM_EXCHANGE_TRACTION_NO_GO_V14_89.md`.
 <!-- /BHSM_V14_89_DRIVER_BHSM_EXCHANGE_TRACTION_NO_GO -->
+
+<!-- BHSM_V14_90_INTRINSIC_DYNAMICAL_MOMENTUM_GATE -->
+## v14.90 intrinsic full-preimage dynamical momentum artifact
+
+Regenerate `BHSM_intrinsic_full_preimage_dynamical_momentum_gate_v14_90.json`
+with
+`python scripts/materialize_intrinsic_full_preimage_dynamical_momentum_gate_v14_90.py`.
+The controlling report is
+`docs/BHSM_INTRINSIC_FULL_PREIMAGE_DYNAMICAL_MOMENTUM_GATE_V14_90.md`.
+<!-- /BHSM_V14_90_INTRINSIC_DYNAMICAL_MOMENTUM_GATE -->

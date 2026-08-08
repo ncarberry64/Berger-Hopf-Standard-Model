@@ -370,3 +370,12 @@ driver-coupling provenance audit, decoupled Ward theorem, tangential-traction
 and Hodge/Spin(4) kill screens, v14.83 bridge disposition, and foundational
 driver-sector continuation object.
 <!-- /BHSM_V14_89_DRIVER_BHSM_EXCHANGE_TRACTION_NO_GO -->
+
+<!-- BHSM_V14_90_INTRINSIC_DYNAMICAL_MOMENTUM_GATE -->
+## v14.90 intrinsic full-preimage dynamical momentum gate
+
+See `BHSM_INTRINSIC_FULL_PREIMAGE_DYNAMICAL_MOMENTUM_GATE_V14_90.md` for the
+Lorentzian canonical-variable audit, metric-velocity/shift separation,
+homogeneous cap-relative momentum theorem, dynamical response kernel, and
+degree-one coupled symplectic-BVP continuation object.
+<!-- /BHSM_V14_90_INTRINSIC_DYNAMICAL_MOMENTUM_GATE -->

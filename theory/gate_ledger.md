@@ -577,3 +577,27 @@ Exact next object:
 - Flavor provenance gates: `OPEN_UNCHANGED`.
 - Mark III / BHSM completion / USB synchronization: `NOT_REACHED`.
 <!-- /BHSM_V14_89_DRIVER_BHSM_EXCHANGE_TRACTION_NO_GO -->
+
+<!-- BHSM_V14_90_INTRINSIC_DYNAMICAL_MOMENTUM_GATE -->
+## v14.90 intrinsic dynamical full-preimage momentum gates
+
+- Lorentzian P1 ADM symplectic structure: `ACTION_OWNED`.
+- Dynamical metric momentum versus stationary ADM shift: `DISTINCT_EXACT`.
+- Explicit round/Jensen P1 dynamical momentum: `NONZERO_CAP_COMMON`.
+- Reflection-relative momentum in explicit homogeneous sector: `ZERO`.
+- Nonhomogeneous relative gravitational tensor modes: `OPEN_NOT_RULED_OUT`.
+- Compact degree-one full-preimage background: `NOT_DERIVED`.
+- Coupled metric/eta/gauge/Dirac linearized spectrum: `NOT_DERIVED`.
+- Full dynamical common self-adjoint/symplectic domain: `NOT_DERIVED`.
+- Physical cap inertias `M_plus,M_minus`: `UNDEFINED`.
+- Reflection equal inertia and `nu=1/4`: `CONDITIONAL_NOT_PHYSICAL`.
+- Physical intrinsic `J_dyn` and `B_dyn,L2`: `UNDEFINED`.
+- Explicit homogeneous intrinsic `J_dyn` and `B_dyn,L2`: `ZERO`.
+- Rigid L1 representation no-go: `PRESERVED`.
+- Rank-two shear route: `NOT_EXCLUDED_BUT_OPERATOR_DOMAIN_ABSENT`.
+- Positive-block static Schur sign: `DERIVED_CONDITIONAL_NONPOSITIVE`.
+- Finite-frequency response: `FREQUENCY_DEPENDENT_NOT_STATIC_IN_GENERAL`.
+- Next route: `LORENTZIAN_DEGREE_ONE_FULL_PREIMAGE_BACKGROUND_AND_GAUGE_REDUCED_COUPLED_METRIC_ETA_GAUGE_DIRAC_LINEARIZED_SYMPLECTIC_BOUNDARY_VALUE_PROBLEM_WITH_REFLECTION_ODD_CAP_RELATIVE_TENSOR_MODES_AND_EXPLICIT_COEXACT_L2_MIXED_VARIATION`.
+- Flavor provenance gates: `OPEN_UNCHANGED`.
+- Mark III / BHSM completion / USB synchronization: `NOT_REACHED`.
+<!-- /BHSM_V14_90_INTRINSIC_DYNAMICAL_MOMENTUM_GATE -->

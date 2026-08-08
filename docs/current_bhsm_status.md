@@ -1124,3 +1124,37 @@ CLI audits each exited `0`; the final frozen/status/public/precision guard
 selection passed `161` tests. The pre-commit diagnostic run recorded `6002`
 passes and `16` identical committed-source guard failures in `826.04s`, exit
 code `1`; no physics or numerical test failed in that diagnostic run.
+
+## v14.90 intrinsic full-preimage dynamical momentum gate
+
+The retained Lorentzian P1 action has an action-owned ADM symplectic
+structure and canonical metric momentum
+`pi^ij=(kappa1/2)sqrt(h)(K^ij-Kh^ij)`. Metric velocity is distinct from the
+stationary shift, so v14.41 does not imply that all dynamical gravitational
+momentum vanishes.
+
+The only explicit constraint-reduced P1 dynamical solutions are homogeneous
+round and Jensen trajectories. They carry cap-common expansion momentum, but
+reflection identification gives `DeltaPi=0` and zero traceless relative shear.
+The round branch's two homogeneous masses squared are `4/a^2`; Jensen has
+`52/(5a^2)` and `-4/a^2`. These are common modes, not the requested relative
+coexact L2 transport.
+
+The nonhomogeneous degree-one full-preimage phase space, coupled
+metric/eta/gauge/Dirac linearized operator, moving-seam symplectic reduction,
+Green form, seam flux, cap inertias and coexact L2 mixed variation are not
+retained. General rank-two intrinsic relative modes are not excluded by the
+rigid-L1 representation theorem, but their physical `J_dyn` and `B_dyn,L2`
+are undefined; both are zero only in the explicit homogeneous truncation.
+Reflection equal inertia and `nu=1/4` remain conditional.
+
+For a future positive momentum block, the static response remains
+`-B^dagger K_dyn^-1 B<=0`; at finite frequency the kernel is instead
+`-B^dagger[K_dyn-omega^2 M_dyn]^-1B` away from poles. No such physical term is
+inserted now, and oscillator existence is not promoted to population.
+
+The exactly next executable object is
+`LORENTZIAN_DEGREE_ONE_FULL_PREIMAGE_BACKGROUND_AND_GAUGE_REDUCED_COUPLED_METRIC_ETA_GAUGE_DIRAC_LINEARIZED_SYMPLECTIC_BOUNDARY_VALUE_PROBLEM_WITH_REFLECTION_ODD_CAP_RELATIVE_TENSOR_MODES_AND_EXPLICIT_COEXACT_L2_MIXED_VARIATION`.
+BHSM remains incomplete, Mark III is not reached, physical execution remains
+blocked, and USB synchronization remains ineligible. Flavor provenance gates
+remain open and unchanged.
