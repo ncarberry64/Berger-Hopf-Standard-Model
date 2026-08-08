@@ -334,3 +334,12 @@ Norman/BHSM source reconciliation, pure-repartition inertia no-go,
 time-symmetric Brown--York momentum theorem, present-branch zero-transport
 evaluation, and sourced relative-periodic reopening condition.
 <!-- /BHSM_V14_85_STATIONARY_TRANSPORT_NO_GO -->
+
+<!-- BHSM_V14_86_LONGITUDINAL_COEXACT_GATE -->
+## v14.86 longitudinal-threading/coexact-rotation gate
+
+See `BHSM_LONGITUDINAL_THREADING_COEXACT_ROTATION_GATE_V14_86.md` for the
+recovered v6.18 reflection-odd source, exact Hodge separation theorem,
+nine-dimensional representation claim boundary, reflection-equivariant
+response theorem, and eta/Dirac coexact-current continuation object.
+<!-- /BHSM_V14_86_LONGITUDINAL_COEXACT_GATE -->

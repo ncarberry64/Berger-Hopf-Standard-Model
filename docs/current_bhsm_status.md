@@ -985,3 +985,26 @@ with exit code `0`; the 81-test source-chain suite passed; and all 40
 v14.46--v14.85 materializers were byte-identical on repeated runs. The earlier
 pre-commit run recorded `5968 passed, 15 failed` solely because the frozen
 source-integrity guards reject an untracked source module.
+
+## v14.86 longitudinal-threading/coexact-rotation gate
+
+The full recall recovers the v6.18 coefficient-free, action-owned,
+reflection-odd constrained-collar response. Its scalar ell=2 harmonic space
+has dimension nine, but the response one-form is exact/longitudinal. On the
+closed S3 it has zero vorticity, zero coexact projection, and zero Hodge
+pairing with the transverse relative-frame sector. It remains a valid scalar
+fold Schur response and cannot be relabeled as the v14.84 rotational
+transport.
+
+Reflection-equivariant linear response also proves that an even environmental
+scalar cannot directly source the required odd cap current; a parametric
+route would require a derived Floquet crossing and nonlinear branch
+selection. The rigid eta rotor supplies only L1 Killing content. The next
+executable no-new-field object is therefore an action-selected
+nonaxisymmetric relative-periodic eta or collective-Dirac solution with a
+reflection-odd coexact L2 cap momentum current and an explicit mixed
+variation into the full-preimage ell=2 Hessian.
+
+The canonical exact next object remains unchanged. Flavor provenance gates
+remain open, BHSM remains incomplete, Mark III is not reached, and USB
+synchronization is not eligible.
