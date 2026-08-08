@@ -1839,3 +1839,8 @@ Regenerate with `python scripts/materialize_source_free_relative_frame_v14_41.py
 
 Regenerate with `python scripts/materialize_collective_dirac_vacuum_polarization_v14_42.py`. The controlling report is `docs/BHSM_COLLECTIVE_DIRAC_VACUUM_POLARIZATION_V14_42.md`.
 <!-- /BHSM_V14_42_COLLECTIVE_DIRAC_VACUUM_POLARIZATION -->
+<!-- BHSM_V14_43_MODULI_CLIFFORD_MATCHER_ZETA -->
+## v14.43 moduli/Clifford matcher-zeta artifacts
+
+Regenerate with `python scripts/materialize_moduli_clifford_matcher_zeta_v14_43.py`. The controlling report is `docs/BHSM_MODULI_CLIFFORD_MATCHER_ZETA_V14_43.md`.
+<!-- /BHSM_V14_43_MODULI_CLIFFORD_MATCHER_ZETA -->

@@ -2445,3 +2445,8 @@ BHSM may claim the classical source-free coexact-shift no-go under stationary, s
 
 BHSM may claim a conditional compact Dirac-domain theorem, a coefficient-free single-cap Kosmann/ADM shift vertex, and a nonpositive finite-cutoff filled-sea transition term. BHSM may not claim that FR quantization derives the local Dirac principal symbol, that the determinant is action normalized, that a renormalized `Pi_2` or `Pi_3` has been calculated, or that the flavor bifurcation, CKM matrix, CP phase, mass, coupling, or physical scale is derived.
 <!-- /BHSM_V14_42_COLLECTIVE_DIRAC_VACUUM_POLARIZATION -->
+<!-- BHSM_V14_43_MODULI_CLIFFORD_MATCHER_ZETA -->
+## v14.43 claim boundary
+
+BHSM may claim a moduli-to-Clifford rank obstruction, a conditional unitary seam-transmission theorem, exact orbital-to-spinor 6j recoupling factors, and free round-S3 zeta diagnostics. BHSM may not claim that FR parity derives gamma matrices, that the local collective Dirac action or field residue is action normalized, that the core-wall matcher is uniquely selected, that the displayed orbital Clebsch factors are complete Dirac/Kosmann matrix elements, or that a renormalized L2/L3 crossing, CKM matrix, CP phase, mass, coupling, radius, or scale is derived.
+<!-- /BHSM_V14_43_MODULI_CLIFFORD_MATCHER_ZETA -->

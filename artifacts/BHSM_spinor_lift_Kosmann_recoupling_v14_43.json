@@ -1,0 +1,187 @@
+{
+  "Kosmann_decomposition": {
+    "full_reduced_element": "orbital/spin angular recoupling times a normalized radial and seam integral",
+    "spin": "-(i/4)(D_i beta_j) gamma^{ij}",
+    "transport": "-i beta^i nabla_i"
+  },
+  "artifact": "BHSM_spinor_lift_Kosmann_recoupling_v14_43",
+  "frozen_orbital_blocks": {
+    "down": {
+      "heavy": {
+        "orbital_J": 0,
+        "orbital_m": 0,
+        "possible_total_j": [
+          "1/2"
+        ]
+      },
+      "light": {
+        "orbital_J": 4,
+        "orbital_m": 2,
+        "possible_total_j": [
+          "7/2",
+          "9/2"
+        ]
+      },
+      "middle": {
+        "orbital_J": 3,
+        "orbital_m": 0,
+        "possible_total_j": [
+          "5/2",
+          "7/2"
+        ]
+      }
+    },
+    "up": {
+      "heavy": {
+        "orbital_J": 0,
+        "orbital_m": 0,
+        "possible_total_j": [
+          "1/2"
+        ]
+      },
+      "light": {
+        "orbital_J": 5,
+        "orbital_m": 4,
+        "possible_total_j": [
+          "9/2",
+          "11/2"
+        ]
+      },
+      "middle": {
+        "orbital_J": 3,
+        "orbital_m": 3,
+        "possible_total_j": [
+          "5/2",
+          "7/2"
+        ]
+      }
+    }
+  },
+  "important_reclassification": "The v12.1 numbers are exact orbital Clebsch factors. They are not yet the final local-Dirac Kosmann coefficients after spinor recoupling.",
+  "missing_for_explicit_matrix_elements": [
+    "which S3 spinor-harmonic branch realizes each frozen orbital block",
+    "the total magnetic-state embedding and chiral polarization",
+    "the normalized compact-cap radial spinors",
+    "the normalized L=2 and L=3 coexact shift eigenfields",
+    "the selected unitary core-wall matcher",
+    "the response endomorphism and physical scale"
+  ],
+  "orbital_Wigner_Eckart_factors": {
+    "down_heavy_middle_L3": {
+      "exact": "1",
+      "float": 1.0
+    },
+    "down_middle_light_L2": {
+      "exact": "-sqrt(21)/7",
+      "float": -0.6546536707079771
+    },
+    "up_heavy_middle_L3": {
+      "exact": "1",
+      "float": 1.0
+    },
+    "up_middle_light_L2": {
+      "exact": "sqrt(10)/5",
+      "float": 0.6324555320336759
+    }
+  },
+  "recoupling_table": {
+    "down_middle_to_light_L2": [
+      {
+        "nonzero": true,
+        "six_j_recoupling_exact": "5*sqrt(14)/21",
+        "six_j_recoupling_float": 0.8908708063747479,
+        "source_total_j": "5/2",
+        "target_total_j": "7/2",
+        "tensor_rank": 2
+      },
+      {
+        "nonzero": true,
+        "six_j_recoupling_exact": "-sqrt(42)/21",
+        "six_j_recoupling_float": -0.3086066999241838,
+        "source_total_j": "7/2",
+        "target_total_j": "7/2",
+        "tensor_rank": 2
+      },
+      {
+        "nonzero": true,
+        "six_j_recoupling_exact": "2*sqrt(7)/21",
+        "six_j_recoupling_float": 0.25197631533948484,
+        "source_total_j": "5/2",
+        "target_total_j": "9/2",
+        "tensor_rank": 2
+      },
+      {
+        "nonzero": true,
+        "six_j_recoupling_exact": "sqrt(462)/21",
+        "six_j_recoupling_float": 1.023532631438318,
+        "source_total_j": "7/2",
+        "target_total_j": "9/2",
+        "tensor_rank": 2
+      }
+    ],
+    "heavy_to_middle_L3": [
+      {
+        "nonzero": true,
+        "six_j_recoupling_exact": "-sqrt(42)/7",
+        "six_j_recoupling_float": -0.9258200997725514,
+        "source_total_j": "1/2",
+        "target_total_j": "5/2",
+        "tensor_rank": 3
+      },
+      {
+        "nonzero": true,
+        "six_j_recoupling_exact": "2*sqrt(14)/7",
+        "six_j_recoupling_float": 1.0690449676496976,
+        "source_total_j": "1/2",
+        "target_total_j": "7/2",
+        "tensor_rank": 3
+      }
+    ],
+    "up_middle_to_light_L2": [
+      {
+        "nonzero": true,
+        "six_j_recoupling_exact": "sqrt(42)/7",
+        "six_j_recoupling_float": 0.9258200997725514,
+        "source_total_j": "5/2",
+        "target_total_j": "9/2",
+        "tensor_rank": 2
+      },
+      {
+        "nonzero": true,
+        "six_j_recoupling_exact": "-2*sqrt(77)/77",
+        "six_j_recoupling_float": -0.2279211529192759,
+        "source_total_j": "7/2",
+        "target_total_j": "9/2",
+        "tensor_rank": 2
+      },
+      {
+        "nonzero": false,
+        "six_j_recoupling_exact": "0",
+        "six_j_recoupling_float": 0.0,
+        "source_total_j": "5/2",
+        "target_total_j": "11/2",
+        "tensor_rank": 2
+      },
+      {
+        "nonzero": true,
+        "six_j_recoupling_exact": "2*sqrt(33)/11",
+        "six_j_recoupling_float": 1.044465935734187,
+        "source_total_j": "7/2",
+        "target_total_j": "11/2",
+        "tensor_rank": 2
+      }
+    ]
+  },
+  "spinor_lift_verdict": "THE_V12_1_L2_L3_CLEBSCH_FACTORS_ARE_EXACT_ORBITAL_FACTORS_BUT_FULL_KOSMANN_MATRIX_ELEMENTS_REQUIRE_AN_ACTION_SELECTED_SPINOR_HARMONIC_LIFT_AND_RADIAL_REDUCED_ELEMENTS",
+  "spinor_recoupling_formula": "<(j_t,1/2)J_t||T^L||(j_s,1/2)J_s>=(-1)^(j_t+1/2+J_s+L) sqrt[(2J_t+1)(2J_s+1)] {j_t J_t 1/2; J_s j_s L}<j_t||T^L||j_s>",
+  "validation": {
+    "full_spinorial_L2_L3_matrix_not_emitted": true,
+    "one_up_L2_spinor_branch_vanishes": true,
+    "radial_Kosmann_reduced_elements_still_open": true,
+    "six_j_recoupling_changes_orbital_reduced_elements": true,
+    "spinor_tensor_product_has_branch_choice": true,
+    "v12_1_orbital_CG_values_reproduced": true
+  },
+  "validation_passed": true,
+  "version": "v14.43"
+}

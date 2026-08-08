@@ -471,3 +471,17 @@ Exact next object:
 - Renormalized `L=2,3` crossing: `OPEN_NOT_NUMERICALLY_DEFINED`.
 - Physical CKM/CP/masses: `OPEN`.
 <!-- /BHSM_V14_42_COLLECTIVE_DIRAC_VACUUM_POLARIZATION -->
+<!-- BHSM_V14_43_MODULI_CLIFFORD_MATCHER_ZETA -->
+## v14.43 first-order collective-field gates
+
+- FR spin/statistics: `PRESERVED_CONDITIONAL`.
+- Moduli Hodge-Dirac: `CANONICAL_BUT_WRONG_BASE_FOR_LOCAL_M4_DIRAC`.
+- Local spacetime Clifford principal symbol: `OPEN_NOT_DERIVED`.
+- Canonical local-field normalization: `OPEN`.
+- Self-adjoint matcher class: `DERIVED_CONDITIONAL`.
+- Action-selected matcher member: `OPEN`.
+- Orbital L2/L3 Clebsch factors: `DERIVED`.
+- Full spinorial Kosmann reduced elements: `OPEN`.
+- Free round-S3 zeta diagnostic: `DERIVED`.
+- Renormalized L2/L3 polarization and physical CKM/CP/masses: `OPEN`.
+<!-- /BHSM_V14_43_MODULI_CLIFFORD_MATCHER_ZETA -->

@@ -3064,3 +3064,13 @@ The source-free stationary coexact shift is a weighted Killing-operator square. 
 - Physical `L=2` and `L=3` zero crossings remain undefined.
 - Frozen predictions are unchanged; BHSM is not complete.
 <!-- /BHSM_V14_42_COLLECTIVE_DIRAC_VACUUM_POLARIZATION -->
+<!-- BHSM_V14_43_MODULI_CLIFFORD_MATCHER_ZETA -->
+## v14.43 moduli/Clifford matcher-zeta audit
+
+- Bosonic FR-knot moduli quantization supplies a scalar mass-shell/Laplace symbol and a global Z2 spin/statistics character, not a local spacetime Clifford principal symbol.
+- The rank-one FR line cannot carry the full complex spacetime Clifford algebra; the canonical Hodge-Dirac acts on moduli space, not M4.
+- The self-adjoint core-wall transmission domain is a nonunique family of unitary Clifford intertwiners.
+- The v12.1 L2/L3 Clebsch factors are exact orbital factors; full Kosmann elements require a selected spinor lift and radial/seam integrals.
+- Exact free round-S3 zeta diagnostics are recorded, but the renormalized L2/L3 polarization remains open.
+- Frozen predictions are unchanged; BHSM is not complete.
+<!-- /BHSM_V14_43_MODULI_CLIFFORD_MATCHER_ZETA -->

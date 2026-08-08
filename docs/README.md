@@ -296,3 +296,8 @@ See `BHSM_SOURCE_FREE_RELATIVE_FRAME_V14_41.md` for the weighted Killing-square 
 
 See `BHSM_COLLECTIVE_DIRAC_VACUUM_POLARIZATION_V14_42.md` for the action-ownership audit, compact Dirac domain, Kosmann stress vertex, filled-sea sign theorem, and renormalized `L=2,3` crossing contract.
 <!-- /BHSM_V14_42_COLLECTIVE_DIRAC_VACUUM_POLARIZATION -->
+<!-- BHSM_V14_43_MODULI_CLIFFORD_MATCHER_ZETA -->
+## v14.43 moduli/Clifford matcher-zeta audit
+
+See `BHSM_MODULI_CLIFFORD_MATCHER_ZETA_V14_43.md` for the FR-line Clifford-rank obstruction, local-field normalization ambiguity, unitary seam-transmission theorem, spinor recoupling audit, and exact free round-S3 zeta diagnostics.
+<!-- /BHSM_V14_43_MODULI_CLIFFORD_MATCHER_ZETA -->

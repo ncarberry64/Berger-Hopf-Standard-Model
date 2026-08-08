@@ -884,6 +884,7 @@ def build_parser() -> argparse.ArgumentParser:
         "--format", choices=("json", "markdown"), default="markdown"
     )
     integrated_status_commands = (
+        ("moduli-clifford-matcher-zeta-status-v14-43", "Render the BHSM v14.43 moduli/Clifford matcher-zeta gate"),
         ("collective-dirac-vacuum-polarization-status-v14-42", "Render the BHSM v14.42 collective Dirac vacuum-polarization gate"),
         ("source-free-relative-frame-status-v14-41", "Render the BHSM v14.41 source-free relative-frame gate"),
         ("matter-sourced-spin4-multipole-status-v14-40", "Render the BHSM v14.40 matter-sourced Spin(4) multipole gate"),
@@ -1030,6 +1031,13 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main(argv: Sequence[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
+    if args.command == "moduli-clifford-matcher-zeta-status-v14-43":
+        from .completion.moduli_clifford_matcher_zeta_completion_gate_v14_43 import completion_payload, deterministic_json, status_text
+        if args.format == "markdown":
+            print(status_text())
+        else:
+            print(deterministic_json(completion_payload()), end="")
+        return 0
     if args.command == "collective-dirac-vacuum-polarization-status-v14-42":
         from .completion.collective_dirac_vacuum_polarization_completion_gate_v14_42 import completion_payload, deterministic_json, status_text
         if args.format == "markdown":
