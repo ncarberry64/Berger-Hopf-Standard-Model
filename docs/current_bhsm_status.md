@@ -1036,3 +1036,10 @@ an action-selected nonzero reflected coexact L2 eta or collective-Dirac charge
 or exchange sector that satisfies the Legendre kill screen, global
 constraints, and common self-adjoint domain. BHSM remains incomplete, Mark
 III is not reached, and USB synchronization remains ineligible.
+
+Validation: the authoritative committed-state suite passed `6000` tests in
+`791.99s` with exit code `0`; the focused scientific/status chain passed `67`
+tests; the final guard suite passed `90` tests; and all 42 v14.46--v14.87
+materializers reproduced with zero tracked artifact difference. Frozen,
+forbidden-claim, status, public-readiness, precision and CLI audits exited
+`0`.

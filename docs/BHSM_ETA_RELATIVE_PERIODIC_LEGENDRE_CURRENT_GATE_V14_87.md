@@ -190,3 +190,18 @@ No CKM, PMNS, mass, coupling or measured flavor datum enters this theorem.
 - `MARK_III = NOT_REACHED`
 - `PHYSICAL_EXECUTION_BLOCKED = TRUE`
 - `USB_SYNCHRONIZATION_ELIGIBLE = FALSE`
+
+## Validation record
+
+- Authoritative committed-state suite: `6000 passed in 791.99s`, exit code
+  `0`.
+- Focused v14.36/v14.39--v14.41/v14.84--v14.87 and status chain:
+  `67 passed`.
+- Final frozen/status/public/precision guard suite: `90 passed`.
+- All 42 v14.46--v14.87 materializers reproduced twice with zero tracked
+  artifact difference.
+- Frozen-prediction, forbidden-claim, BHSM-status, public-readiness,
+  precision and CLI audits each exited `0`.
+- The unrelated native-profile CDN integrity failure was repaired with a
+  bounded clean-redownload retry that retains the frozen size, SHA-256 and
+  Adler-32 gates; its focused benchmark suite passed `6` tests.
