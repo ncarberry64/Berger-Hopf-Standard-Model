@@ -2440,3 +2440,8 @@ BHSM may claim the source-character and family-selection no-go results under the
 
 BHSM may claim the classical source-free coexact-shift no-go under stationary, source-free, nonrotating-boundary and self-adjoint-domain assumptions. It may not claim that every sourced, time-dependent, quantum, or rotating-boundary branch vanishes, or that a collective determinant, CKM matrix, CP phase, mass, scale, or completed BHSM has been derived.
 <!-- /BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->
+<!-- BHSM_V14_42_COLLECTIVE_DIRAC_VACUUM_POLARIZATION -->
+## v14.42 claim boundary
+
+BHSM may claim a conditional compact Dirac-domain theorem, a coefficient-free single-cap Kosmann/ADM shift vertex, and a nonpositive finite-cutoff filled-sea transition term. BHSM may not claim that FR quantization derives the local Dirac principal symbol, that the determinant is action normalized, that a renormalized `Pi_2` or `Pi_3` has been calculated, or that the flavor bifurcation, CKM matrix, CP phase, mass, coupling, or physical scale is derived.
+<!-- /BHSM_V14_42_COLLECTIVE_DIRAC_VACUUM_POLARIZATION -->

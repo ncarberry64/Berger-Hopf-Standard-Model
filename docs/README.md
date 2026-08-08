@@ -291,3 +291,8 @@ See `BHSM_MATTER_SOURCED_SPIN4_MULTIPOLE_V14_40.md` for the rigid-rotor L=1 theo
 
 See `BHSM_SOURCE_FREE_RELATIVE_FRAME_V14_41.md` for the weighted Killing-square theorem, the exact round-cap L=2/L=3 spectrum, and the collective-fermion vacuum-polarization threshold contract.
 <!-- /BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->
+<!-- BHSM_V14_42_COLLECTIVE_DIRAC_VACUUM_POLARIZATION -->
+## v14.42 collective Dirac vacuum-polarization audit
+
+See `BHSM_COLLECTIVE_DIRAC_VACUUM_POLARIZATION_V14_42.md` for the action-ownership audit, compact Dirac domain, Kosmann stress vertex, filled-sea sign theorem, and renormalized `L=2,3` crossing contract.
+<!-- /BHSM_V14_42_COLLECTIVE_DIRAC_VACUUM_POLARIZATION -->

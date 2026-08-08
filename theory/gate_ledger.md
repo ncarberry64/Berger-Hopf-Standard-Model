@@ -459,3 +459,15 @@ Exact next object:
 - Renormalized Pi_2 and Pi_3: `OPEN`.
 - Physical CKM/CP/masses: `OPEN`.
 <!-- /BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->
+<!-- BHSM_V14_42_COLLECTIVE_DIRAC_VACUUM_POLARIZATION -->
+## v14.42 collective determinant gates
+
+- FR spin/statistics gate: `PRESERVED_CONDITIONAL`.
+- Local collective Dirac principal symbol: `OPEN_NOT_DERIVED_FROM_MODULI_ACTION`.
+- Compact `H1` domain: `PASSED_CONDITIONAL_ON_SUPPLIED_DIRAC_NORMAL_FORM`.
+- Single-cap Kosmann vertex: `PASSED_CONDITIONAL`.
+- Core-wall spinor matcher: `OPEN`.
+- Bare coexact transition susceptibility: `NONPOSITIVE_ZERO_ON_KILLING_MODES`.
+- Renormalized `L=2,3` crossing: `OPEN_NOT_NUMERICALLY_DEFINED`.
+- Physical CKM/CP/masses: `OPEN`.
+<!-- /BHSM_V14_42_COLLECTIVE_DIRAC_VACUUM_POLARIZATION -->

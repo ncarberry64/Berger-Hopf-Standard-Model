@@ -1834,3 +1834,8 @@ Regenerate with `python scripts/materialize_matter_sourced_spin4_multipole_v14_4
 
 Regenerate with `python scripts/materialize_source_free_relative_frame_v14_41.py`. The controlling report is `docs/BHSM_SOURCE_FREE_RELATIVE_FRAME_V14_41.md`.
 <!-- /BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->
+<!-- BHSM_V14_42_COLLECTIVE_DIRAC_VACUUM_POLARIZATION -->
+## v14.42 collective Dirac vacuum-polarization artifacts
+
+Regenerate with `python scripts/materialize_collective_dirac_vacuum_polarization_v14_42.py`. The controlling report is `docs/BHSM_COLLECTIVE_DIRAC_VACUUM_POLARIZATION_V14_42.md`.
+<!-- /BHSM_V14_42_COLLECTIVE_DIRAC_VACUUM_POLARIZATION -->

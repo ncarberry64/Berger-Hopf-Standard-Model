@@ -3055,3 +3055,12 @@ The rigid eta rotor supplies only L=1. Static Wilson insertions supply no univer
 
 The source-free stationary coexact shift is a weighted Killing-operator square. On a round S3 cap its L=2 and L=3 eigenvalues are 5/R^2 and 12/R^2. The classical universal relative-frame branch is therefore off. A renormalized collective-fermion vacuum polarization remains open.
 <!-- /BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->
+<!-- BHSM_V14_42_COLLECTIVE_DIRAC_VACUUM_POLARIZATION -->
+## v14.42 collective Dirac vacuum-polarization audit
+
+- FR parity, rotor inertia, and the compact `H1` domain do not by themselves derive an action-normalized local collective Dirac operator.
+- Conditional on a supplied gapped self-adjoint Dirac completion, the coexact ADM/Kosmann filled-sea transition susceptibility is nonpositive and vanishes on Killing modes.
+- The continuum polarization requires a regulator and independent Einstein plus curvature-squared counterterms.
+- Physical `L=2` and `L=3` zero crossings remain undefined.
+- Frozen predictions are unchanged; BHSM is not complete.
+<!-- /BHSM_V14_42_COLLECTIVE_DIRAC_VACUUM_POLARIZATION -->

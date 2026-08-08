@@ -1,0 +1,64 @@
+{
+  "artifact": "BHSM_compact_cap_Dirac_domain_and_spectrum_v14_42",
+  "bundle": "Spin(S3) tensor E_color tensor L_FR tensor E_weak,Y tensor C3_family, subject to the Path-B associated-bundle and singlet constraints",
+  "massless_round_spectrum": {
+    "formula": "+/-(n+3/2)/R",
+    "multiplicity_each_sign": "(n+1)(n+2)",
+    "rows": [
+      {
+        "eigenvalue_minus_times_R": -1.5,
+        "eigenvalue_plus_times_R": 1.5,
+        "multiplicity_each_sign": 2,
+        "n": 0
+      },
+      {
+        "eigenvalue_minus_times_R": -2.5,
+        "eigenvalue_plus_times_R": 2.5,
+        "multiplicity_each_sign": 6,
+        "n": 1
+      },
+      {
+        "eigenvalue_minus_times_R": -3.5,
+        "eigenvalue_plus_times_R": 3.5,
+        "multiplicity_each_sign": 12,
+        "n": 2
+      },
+      {
+        "eigenvalue_minus_times_R": -4.5,
+        "eigenvalue_plus_times_R": 4.5,
+        "multiplicity_each_sign": 20,
+        "n": 3
+      },
+      {
+        "eigenvalue_minus_times_R": -5.5,
+        "eigenvalue_plus_times_R": 5.5,
+        "multiplicity_each_sign": 30,
+        "n": 4
+      }
+    ]
+  },
+  "operator_contract": {
+    "Hamiltonian": "H0=-i alpha^i nabla_i^total+beta M_eta+Phi_response",
+    "conditions": [
+      "smooth unitary bundle connection",
+      "bounded Hermitian mass/response endomorphism",
+      "compact boundaryless spatial S3"
+    ],
+    "domain": "H1(S3,E_total)",
+    "result": "unique self-adjoint closure with compact resolvent"
+  },
+  "scope_boundary": "This is a rigorous domain and spectrum contract for a supplied twisted Dirac operator.  It does not derive that operator from the eta moduli action or fix its physical mass, response term, radius, or normalization.",
+  "spatial_manifold": "round S3(R) reference compact cap section",
+  "validation": {
+    "APS_not_required_on_boundaryless_S3": true,
+    "Euclidean_index_not_claimed": true,
+    "Lorentzian_spatial_domain_is_H1": true,
+    "compact_resolvent": true,
+    "first_multiplicity_is_two": true,
+    "lowest_absolute_eigenvalue_times_R_is_3_over_2": true,
+    "smooth_bounded_Hermitian_response_preserves_self_adjointness": true,
+    "spectrum_is_symmetric": true
+  },
+  "validation_passed": true,
+  "version": "v14.42"
+}
