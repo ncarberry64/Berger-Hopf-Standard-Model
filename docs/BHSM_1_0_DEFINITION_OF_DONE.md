@@ -350,3 +350,16 @@ Marks III and IV remain not reached and BHSM 1.0 remains incomplete.
 
 Exact next object:
 `ACTION_OWNED_FULL_PREIMAGE_TWO_STRATUM_KINETIC_REDUCTION_WITH_DERIVED_LAYER_INERTIAS_SHEAR_COVARIANCE_AND_DEGREE_ONE_SELF_ADJOINT_BACKGROUND`.
+
+## v14.91 degree-one Lorentzian full-preimage result
+
+The parent degree is the global M8 spatial map `S7->S7` in `pi7(S7)=Z`, not
+an M4 FR charge and not an independent degree on either Hopf cap. The retained
+M8 P1--eta block has an exact compact round identity-map stationary point on
+the existing-coefficient locus `X^3=5 kappa1` and
+`kappa0=(15/4)kappa1 X`. Smooth cap transmission closes the M8 internal Green
+form and symplectic flux. The locus is not selected by retained axioms, and the
+independent M4 metric/gauge/Dirac sector has no action-owned critical-value or
+bundle intertwiner with M8. Consequently the full stationary stratified
+background, physical projector, relative tensor spectrum, cap inertias, and
+coexact L2 mixed vertex remain open. BHSM 1.0 is not complete.

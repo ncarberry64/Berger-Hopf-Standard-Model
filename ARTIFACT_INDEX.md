@@ -1908,3 +1908,13 @@ with
 The controlling report is
 `docs/BHSM_INTRINSIC_FULL_PREIMAGE_DYNAMICAL_MOMENTUM_GATE_V14_90.md`.
 <!-- /BHSM_V14_90_INTRINSIC_DYNAMICAL_MOMENTUM_GATE -->
+
+<!-- BHSM_V14_91_DEGREE_ONE_LORENTZIAN_PHASE_SPACE_GATE -->
+## v14.91 degree-one Lorentzian full-preimage phase-space artifact
+
+Regenerate `BHSM_degree_one_lorentzian_full_preimage_phase_space_gate_v14_91.json`
+with
+`python scripts/materialize_degree_one_lorentzian_full_preimage_phase_space_v14_91.py`.
+The controlling report is
+`docs/BHSM_DEGREE_ONE_LORENTZIAN_FULL_PREIMAGE_PHASE_SPACE_V14_91.md`.
+<!-- /BHSM_V14_91_DEGREE_ONE_LORENTZIAN_PHASE_SPACE_GATE -->

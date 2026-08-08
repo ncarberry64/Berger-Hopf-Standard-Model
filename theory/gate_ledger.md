@@ -601,3 +601,23 @@ Exact next object:
 - Flavor provenance gates: `OPEN_UNCHANGED`.
 - Mark III / BHSM completion / USB synchronization: `NOT_REACHED`.
 <!-- /BHSM_V14_90_INTRINSIC_DYNAMICAL_MOMENTUM_GATE -->
+
+<!-- BHSM_V14_91_DEGREE_ONE_LORENTZIAN_PHASE_SPACE_GATE -->
+## v14.91 degree-one Lorentzian full-preimage phase-space gates
+
+- Global parent eta degree: `M8_SPATIAL_MAP_S7_TO_S7_IN_PI7_S7_EQUALS_Z`.
+- Physical M4 eta degree/FR sector: `ABSENT_PI3_S6_AND_PI4_S6_ZERO`.
+- Round degree-one identity-map M8 Einstein--eta branch: `EXACT_ON_EXISTING_COEFFICIENT_LOCUS`.
+- Coefficient locus selected by retained BHSM axioms: `NO`.
+- Hopf hemispherical full-preimage cap geometry: `DERIVED_AS_ACTUAL_M8_SUBDOMAINS`.
+- Individual cap integer degree: `INVALID_WITHOUT_GLOBAL_BOUNDARY_GLUING`.
+- Smooth M8 cap Green form and symplectic flux: `ZERO_BY_TRANSMISSION_MATCHING`.
+- Intrinsic M4 gauge/Dirac common-domain action reduction: `NOT_DERIVED`.
+- Full stratified stationary solution: `NOT_DERIVED`.
+- Full gauge-reduced physical projector and coupled spectrum: `UNDEFINED`.
+- Physical reflection-odd DeltaPi, cap inertias, J_dyn and B_dyn,L2: `UNDEFINED_NOT_ZERO`.
+- Equal inertia and nu=1/4: `CONDITIONAL_V14_84_THEOREM_ONLY`.
+- Next route: `ACTION_OWNED_LORENTZIAN_M8_TO_M4_METRIC_ETA_GAUGE_DIRAC_COMMON_DOMAIN_CRITICAL_VALUE_FUNCTOR_WITH_VARIATIONAL_BUNDLE_INTERTWINER`.
+- Flavor provenance gates: `OPEN_UNCHANGED`.
+- Mark III / BHSM completion / USB synchronization: `NOT_REACHED`.
+<!-- /BHSM_V14_91_DEGREE_ONE_LORENTZIAN_PHASE_SPACE_GATE -->

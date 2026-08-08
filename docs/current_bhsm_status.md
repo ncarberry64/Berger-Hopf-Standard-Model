@@ -1168,6 +1168,44 @@ frozen/status/public/precision guard selection passed `179` tests.
 Frozen-prediction, forbidden-claim, BHSM-status, public-readiness, precision,
 physics-status CLI, JSON and diff audits each exited `0`.
 
+## v14.91 degree-one Lorentzian full-preimage phase-space gate
+
+The global degree-one object is now fixed precisely: on an M8 spatial slice it
+is the parent map `eta:S7->S7`, with degree in `pi7(S7)=Z`. It is not a
+physical M4 FR charge; the M4 `S3->S6` candidate has trivial `pi3(S6)` and
+`pi4(S6)`. Splitting the Hopf base into reflected hemispheres gives actual
+full-preimage domains `C_tilde_plus/minus` with lifted seam `S3xS3` and no new
+fluid or field. The integer degree belongs to the glued closed S7, not to an
+individual cap.
+
+The retained M8 P1--eta block has an exact compact round static identity-map
+branch. With `X=7/a^2`, its equations reduce to
+`X^3=5 kappa1`, `a^2=7/X`, and
+`kappa0=(15/4) kappa1 X`. The M8 eta, Hamiltonian, spatial Einstein, and
+momentum residuals vanish on this locus. This is a conditional existence
+theorem, not an action selection of the locus, because `kappa0` and `kappa1`
+remain independent primitives.
+
+The smooth Hopf cap cut inherits continuous traces and matched opposite
+conormal/canonical fluxes. Its internal GHY pair, Green form, and symplectic
+flux cancel for restrictions of global smooth M8 perturbations. This closes
+the M8 transmission-domain question, but not the full stratified domain.
+
+The physical M4 gauge connection and adopted Dirac sector remain independent
+intrinsic data. There is no action-owned M8-to-M4 critical-value reduction,
+eta/color bundle intertwiner, common Green form, or closed intrinsic Einstein
+junction. Therefore the exact M8 branch is not a full stationary solution of
+the stratified action, and the requested coupled physical projector, spectrum,
+`DeltaPi`, cap inertias, `J_dyn`, and `B_dyn,L2` are undefined rather than
+zero. Equal inertia and `nu=1/4` remain conditional.
+
+Exact next object:
+`ACTION_OWNED_LORENTZIAN_M8_TO_M4_METRIC_ETA_GAUGE_DIRAC_COMMON_DOMAIN_CRITICAL_VALUE_FUNCTOR_WITH_VARIATIONAL_BUNDLE_INTERTWINER`.
+
+BHSM remains incomplete, Mark III is not reached, physical execution remains
+blocked, frozen predictions and flavor provenance gates are unchanged, and
+USB synchronization is not eligible.
+
 The prior exact-head Linux CI run at v14.89 recorded `6017` passes and one
 failure in `1490.98s`: numerical evaluation of the analytically zero isotropic
 tangential traction left platform-dependent roundoff that crossed its vertex

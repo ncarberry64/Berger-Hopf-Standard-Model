@@ -379,3 +379,12 @@ Lorentzian canonical-variable audit, metric-velocity/shift separation,
 homogeneous cap-relative momentum theorem, dynamical response kernel, and
 degree-one coupled symplectic-BVP continuation object.
 <!-- /BHSM_V14_90_INTRINSIC_DYNAMICAL_MOMENTUM_GATE -->
+
+<!-- BHSM_V14_91_DEGREE_ONE_LORENTZIAN_PHASE_SPACE_GATE -->
+## v14.91 degree-one Lorentzian full-preimage phase-space gate
+
+See `BHSM_DEGREE_ONE_LORENTZIAN_FULL_PREIMAGE_PHASE_SPACE_V14_91.md` for the
+global M8 degree provenance, exact conditional round identity-map background,
+Hopf cap/seam smooth-transmission domain, canonical field ledger, and the
+full-coupled M8/M4 variational-ownership obstruction.
+<!-- /BHSM_V14_91_DEGREE_ONE_LORENTZIAN_PHASE_SPACE_GATE -->
