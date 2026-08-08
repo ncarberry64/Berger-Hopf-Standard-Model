@@ -266,3 +266,8 @@ See `BHSM_HOPF_PHASE_BIFURCATION_CP_V14_35.md` for the five-component support th
 
 See `BHSM_DEGREE_ONE_PHASE_HESSIAN_SPECTRUM_V14_36.md` for the exact nonnegative phase-Hessian theorem, five-channel finite-box spectrum, and the relative-holonomy continuation gate.
 <!-- /BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->
+<!-- BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->
+## v14.37 relative-holonomy/full-shape Hessian audit
+
+See `BHSM_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN_V14_37.md` for the v12 holonomy Hessian no-go, the complete v13.1 surrogate tangent-sector spectra, and the exact mixed-block zero-crossing criterion.
+<!-- /BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->

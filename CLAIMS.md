@@ -2415,3 +2415,8 @@ BHSM derives the smallest flavor-bearing harmonic support and its rephasing-inva
 
 BHSM proves nonnegativity of the isometry-generated phase Hessian for the foundational Path B action and finds no negative phase mode in the five requested flavor channels on the round-smash surrogate. It does not prove full nonradial stability, construct the compact-cap spectrum, attach the v12 holonomy, or derive CKM, CP, masses or scale.
 <!-- /BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->
+<!-- BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->
+## v14.37 claim boundary
+
+BHSM may claim that the v12 relative holonomy orients an already nonzero bridge but does not create its amplitude at quadratic order. BHSM may also report the positive finite-box full-shape surrogate spectra. It may not claim the compact physical cap spectrum, a derived mixed block, a zero crossing, CKM, CP, masses, scale, or total completion.
+<!-- /BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->

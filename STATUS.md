@@ -3020,3 +3020,10 @@ The minimal connected full-rank mixing seed uses four components, while the Cabi
 
 The pure Path B phase Hessian is a sum of nonnegative squares. The requested `(ell,p)` flavor channels have positive finite-box lower-bound spectra on the v13.1 round-smash surrogate, approaching zero from above as the noncompact box expands. The phase bifurcation does not turn on without a signed holonomy or other action source.
 <!-- /BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->
+<!-- BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->
+## BHSM v14.37 relative-holonomy/full-shape Hessian audit
+
+`BHSM_V12_Z6_RELATIVE_HOLONOMY_IS_AN_ORIENTATION_CONSTRAINT_NOT_A_QUADRATIC_BIFURCATION_SOURCE_AND_THE_V13_1_DEGREE_ONE_FULL_SHAPE_SURROGATE_HAS_NO_NEGATIVE_MODE_IN_THE_TESTED_ELL_SECTORS`
+
+The recovered v12 `Z6` phase preserves isolated-sector spectra and has no quadratic amplitude curvature. The v13.1 degree-one surrogate has no negative polar, coexact, or coupled polar/exact mode in the tested `ell=2,4,6,8,10` sectors. A bifurcation now requires an action-owned eta–attachment mixed Hessian block reaching the normalized singular-value threshold one.
+<!-- /BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->

@@ -1809,3 +1809,8 @@ Regenerate with `python scripts/materialize_hopf_phase_bifurcation_v14_35.py`. T
 
 Regenerate with `python scripts/materialize_degree_one_phase_hessian_v14_36.py`. The controlling report is `docs/BHSM_DEGREE_ONE_PHASE_HESSIAN_SPECTRUM_V14_36.md`.
 <!-- /BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->
+<!-- BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->
+## v14.37 Hessian artifacts
+
+Regenerate with `python scripts/materialize_relative_holonomy_full_shape_hessian_v14_37.py`. The controlling report is `docs/BHSM_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN_V14_37.md`.
+<!-- /BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->

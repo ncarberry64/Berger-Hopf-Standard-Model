@@ -110,3 +110,8 @@ The route fails if all required Hessian blocks are strictly positive with no non
 
 The pure Path B phase mechanism is falsified as a spontaneous flavor-bifurcation source by the nonnegative Hessian theorem. The broader route remains viable only if an action-owned holonomy, Wilson/background source, compact-cap coupling, or non-isometric shape mode produces a genuine zero crossing without destabilizing the full system.
 <!-- /BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->
+<!-- BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->
+## v14.37 bifurcation falsification boundary
+
+The hypothesis that the artifact-backed `pi/3` holonomy itself destabilizes the zero-amplitude eta branch is rejected. The broader flavor-bifurcation route survives only if the action-derived mixed eta–attachment Hessian block reaches the exact zero-crossing threshold while the remaining physical Hessian stays admissible.
+<!-- /BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->

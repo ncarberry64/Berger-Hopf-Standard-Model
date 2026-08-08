@@ -405,3 +405,14 @@ Exact next object:
 - Relative holonomy signed contribution: `OPEN_NEXT`.
 - Physical CKM/CP/masses: `OPEN`.
 <!-- /BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->
+<!-- BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->
+## v14.37 relative-holonomy/full-shape gates
+
+- Relative `Z6` holonomy as quadratic amplitude source: `FAILED`.
+- Relative `Z6` holonomy as branch orientation: `VALIDATED_CONDITIONALLY`.
+- v13.1 full non-isometric surrogate spectrum: `PASSED_NO_NEGATIVE_TESTED_MODE`.
+- Compact-cap/Hopf-resolved spectrum: `OPEN`.
+- Action-owned eta–attachment mixed Hessian: `OPEN_NEXT`.
+- Normalized singular-value crossing: `NOT_EVALUABLE_UNTIL_MIXED_BLOCK_EXISTS`.
+- Physical CKM/CP/masses: `OPEN`.
+<!-- /BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->

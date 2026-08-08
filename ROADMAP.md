@@ -471,3 +471,12 @@ First derive the common-domain map from the retained `M8` eta field to the physi
 4. Test zero crossing in `(2,2),(4,4),(6,6),(8,8),(10,8)`.
 5. Continue to the nonlinear branch and dressed cross-Gram kernel only after a crossing is proved.
 <!-- /BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->
+<!-- BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->
+## v14.37 exact continuation
+
+1. Put the compact full-preimage eta and attachment modes on one self-adjoint cap domain.
+2. Derive the `Lambda85` or Spin(4) mixed second variation `B`.
+3. Resolve both angular degree `ell` and Hopf weight `p`.
+4. Evaluate `sigma_max(H_eta^-1/2 B H_A^-1/2)` channel by channel.
+5. Continue to a nonlinear `Z6`-oriented branch only if the singular value crosses one.
+<!-- /BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->
