@@ -1158,3 +1158,20 @@ The exactly next executable object is
 BHSM remains incomplete, Mark III is not reached, physical execution remains
 blocked, and USB synchronization remains ineligible. Flavor provenance gates
 remain open and unchanged.
+
+Validation: after the cross-platform exact-zero traction repair, the
+authoritative committed-state suite passed `6027` tests in `807.50s` with
+exit code `0`. All `45` v14.46--v14.90 materializers exited `0` on each of
+two runs and reproduced with zero tracked artifact difference. The v14.90
+focused package passed `9` tests, and the final v14.89/v14.90 plus
+frozen/status/public/precision guard selection passed `179` tests.
+Frozen-prediction, forbidden-claim, BHSM-status, public-readiness, precision,
+physics-status CLI, JSON and diff audits each exited `0`.
+
+The prior exact-head Linux CI run at v14.89 recorded `6017` passes and one
+failure in `1490.98s`: numerical evaluation of the analytically zero isotropic
+tangential traction left platform-dependent roundoff that crossed its vertex
+tolerance. The implementation now validates the frame and returns the exact
+theorem value zero; the focused post-fix v14.89/v14.90 chain passed `18`
+tests. The earlier pre-fix local v14.90 full run passed `6027` tests in
+`797.45s`; it is superseded by the post-fix authoritative run above.
