@@ -382,3 +382,15 @@ Exact next object:
 - Feshbach-dressed cross-Gram route: `VALID_MATHEMATICALLY_ACTION_OWNERSHIP_OPEN`.
 - Physical CKM/CP/masses: `OPEN`.
 <!-- /BHSM_V14_34_HOPF_PHASE_FLAVOR -->
+<!-- BHSM_V14_35_HOPF_PHASE_BIFURCATION -->
+## v14.35 Hopf-phase bifurcation gates
+
+- Minimal connected five-component texture: `PASSED_KINEMATICALLY`.
+- Generic full-rank determinant condition: `DERIVED_NOT_ACTION_EVALUATED`.
+- Rephasing cycle and weight resonance: `DERIVED`.
+- Nontrivial CP phase: `NORMAL_FORM_ROUTE_ONLY`.
+- Degree-one nonaxisymmetric Hessian: `OPEN`.
+- Exact finite truncation: `FAILED`; tower required.
+- Relative holonomy attachment: `OPEN`.
+- Physical CKM/CP/masses: `OPEN`.
+<!-- /BHSM_V14_35_HOPF_PHASE_BIFURCATION -->

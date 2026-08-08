@@ -1799,3 +1799,8 @@ Regenerate the cumulative artifacts with `python scripts/materialize_hopf_smash_
 
 Regenerate with `python scripts/materialize_hopf_phase_flavor_v14_34.py`. The controlling report is `docs/BHSM_HOPF_PHASE_FLAVOR_CROSS_GRAM_V14_34.md`.
 <!-- /BHSM_V14_34_HOPF_PHASE_FLAVOR -->
+<!-- BHSM_V14_35_HOPF_PHASE_BIFURCATION -->
+## v14.35 phase-bifurcation artifacts
+
+Regenerate with `python scripts/materialize_hopf_phase_bifurcation_v14_35.py`. The controlling report is `docs/BHSM_HOPF_PHASE_BIFURCATION_CP_V14_35.md`.
+<!-- /BHSM_V14_35_HOPF_PHASE_BIFURCATION -->

@@ -453,3 +453,12 @@ First derive the common-domain map from the retained `M8` eta field to the physi
 4. Test full rank, polar unitarity, CP orientation and nonlinear stability.
 5. Only then promote a CKM result and continue absolute-scale/RG closure.
 <!-- /BHSM_V14_34_HOPF_PHASE_FLAVOR -->
+<!-- BHSM_V14_35_HOPF_PHASE_BIFURCATION -->
+## v14.35 exact continuation
+
+1. Construct the degree-one full-preimage stationary background and cap domain.
+2. Compute the self-adjoint `(ell,p)=(2,2),(4,4),(6,6),(8,8),(10,8)` Hessian blocks.
+3. Prove or reject an equivariant nonaxisymmetric bifurcation branch.
+4. Derive phase-locking coefficients and attach the existing relative holonomy.
+5. Construct the tower resolvent, dressed embeddings and physical cross-Gram kernel.
+<!-- /BHSM_V14_35_HOPF_PHASE_BIFURCATION -->

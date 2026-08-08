@@ -100,3 +100,8 @@ The physical `M4` `S6` field alone cannot support a degree-one or FR sector. The
 
 The phase-harmonic route fails if the action-selected stationary texture is axisymmetric, if its bridge has insufficient harmonic support, if the dressed cross-Gram kernel is rank deficient, if the effective sector operators commute, if the self-adjoint tower reduction fails, or if no stable no-fit polar kernel follows.
 <!-- /BHSM_V14_34_HOPF_PHASE_FLAVOR -->
+<!-- BHSM_V14_35_HOPF_PHASE_BIFURCATION -->
+## v14.35 flavor-branch falsification boundary
+
+The route fails if all required Hessian blocks are strictly positive with no nonaxisymmetric source, if the nonlinear branch is absent or unstable, if the tower resolvent does not exist, if phase locking is CP conserving only, or if the final dressed cross-Gram kernel is rank deficient or has zero physical Jarlskog invariant.
+<!-- /BHSM_V14_35_HOPF_PHASE_BIFURCATION -->

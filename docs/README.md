@@ -256,3 +256,8 @@ The three controlling reports document the foundational action, physical-topolog
 
 See `BHSM_HOPF_PHASE_FLAVOR_CROSS_GRAM_V14_34.md` for the same-shell `c/s` result, single-phase no-go, multi-harmonic selection rules and Feshbach-dressed CKM route.
 <!-- /BHSM_V14_34_HOPF_PHASE_FLAVOR -->
+<!-- BHSM_V14_35_HOPF_PHASE_BIFURCATION -->
+## v14.35 Hopf-phase bifurcation
+
+See `BHSM_HOPF_PHASE_BIFURCATION_CP_V14_35.md` for the five-component support theorem, phase resonance, nonlinear tower gate and exact Hessian-bifurcation dependency.
+<!-- /BHSM_V14_35_HOPF_PHASE_BIFURCATION -->

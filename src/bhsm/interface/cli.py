@@ -884,6 +884,7 @@ def build_parser() -> argparse.ArgumentParser:
         "--format", choices=("json", "markdown"), default="markdown"
     )
     integrated_status_commands = (
+        ("hopf-phase-bifurcation-status-v14-35", "Render the BHSM v14.35 Hopf-phase bifurcation gate"),
         ("hopf-phase-flavor-status-v14-34", "Render the BHSM v14.34 Hopf-phase flavor gate"),
         ("hopf-smash-status-v14-33", "Render the BHSM v14.33 Hopf-smash transgression gate"),
         ("path-b-topology-status-v14-32", "Render the BHSM v14.32 Path B topology and FR gate"),
@@ -1022,6 +1023,13 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main(argv: Sequence[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
+    if args.command == "hopf-phase-bifurcation-status-v14-35":
+        from .completion.hopf_phase_bifurcation_completion_gate_v14_35 import completion_payload, deterministic_json, status_text
+        if args.format == "markdown":
+            print(status_text())
+        else:
+            print(deterministic_json(completion_payload()), end="")
+        return 0
     if args.command == "hopf-phase-flavor-status-v14-34":
         from .completion.hopf_phase_flavor_completion_gate_v14_34 import completion_payload, deterministic_json, status_text
         if args.format == "markdown":

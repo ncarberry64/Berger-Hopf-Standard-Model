@@ -3006,3 +3006,10 @@ v14.31 adopts the canonical `G2` extension of the physical color bundle and the 
 
 Charm and strange are validated as the same `K=48` harmonic shell with `q=6` versus `q=0`. A constant phase is only a rephasing, and one fixed Hopf weight has rank at most one for the frozen ledger. The viable route retains the live `I3` weak current and derives mixing from action-selected non-axisymmetric multi-harmonic phase textures plus sector-dependent Feshbach-dressed up/down embeddings. CKM remains uncomputed.
 <!-- /BHSM_V14_34_HOPF_PHASE_FLAVOR -->
+<!-- BHSM_V14_35_HOPF_PHASE_BIFURCATION -->
+## BHSM v14.35 Hopf-phase bifurcation audit
+
+`BHSM_V14_35_MINIMAL_FOUR_COMPONENT_MIXING_SEED_AND_FIVE_COMPONENT_CABIBBO_CP_TEXTURE_ARE_DERIVED_KINEMATICALLY_BUT_THE_PATH_B_ACTION_HAS_NOT_SELECTED_THE_NONAXISYMMETRIC_BIFURCATION_BRANCH_OR_SELF_ADJOINT_TOWER_RESOLVENT`
+
+The minimal connected full-rank mixing seed uses four components, while the Cabibbo-aligned CP texture uses `(ell,p)=(0,0),(2,2),(4,4),(6,6),(8,8)`, has one rephasing cycle, and admits a generic full-rank cross-Gram normal form. The physical branch, phase-locking coefficients, tower resolvent and CKM remain open.
+<!-- /BHSM_V14_35_HOPF_PHASE_BIFURCATION -->

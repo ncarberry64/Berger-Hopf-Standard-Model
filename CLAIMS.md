@@ -2405,3 +2405,8 @@ BHSM owns a foundational bosonic Path-B color–eta action and a conditional ful
 
 BHSM validates the `c/s` same-shell Hopf-imbalance mechanism and exact selection-rule no-go for a constant or single-weight phase. A Feshbach-dressed cross-Gram route is mathematically valid, but the stationary phase texture, tower Hessians, current pairing, polar CKM matrix, CP phase, masses and RG transport are not action derived.
 <!-- /BHSM_V14_34_HOPF_PHASE_FLAVOR -->
+<!-- BHSM_V14_35_HOPF_PHASE_BIFURCATION -->
+## v14.35 phase-bifurcation claim boundary
+
+BHSM derives the smallest flavor-bearing harmonic support and its rephasing-invariant phase resonance. It does not derive the nonaxisymmetric stationary solution, Hessian eigenvalues, physical phase, CKM matrix, Jarlskog invariant, masses or RG transport.
+<!-- /BHSM_V14_35_HOPF_PHASE_BIFURCATION -->
