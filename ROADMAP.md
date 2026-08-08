@@ -462,3 +462,12 @@ First derive the common-domain map from the retained `M8` eta field to the physi
 4. Derive phase-locking coefficients and attach the existing relative holonomy.
 5. Construct the tower resolvent, dressed embeddings and physical cross-Gram kernel.
 <!-- /BHSM_V14_35_HOPF_PHASE_BIFURCATION -->
+<!-- BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->
+## v14.36 exact continuation
+
+1. Attach the v12 relative holonomy to the Path B/full-preimage action.
+2. Derive its signed channel potential on the degree-one background.
+3. Construct the compact-cap self-adjoint domain and full coupled Hessian.
+4. Test zero crossing in `(2,2),(4,4),(6,6),(8,8),(10,8)`.
+5. Continue to the nonlinear branch and dressed cross-Gram kernel only after a crossing is proved.
+<!-- /BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->

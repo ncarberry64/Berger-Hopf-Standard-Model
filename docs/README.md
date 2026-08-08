@@ -261,3 +261,8 @@ See `BHSM_HOPF_PHASE_FLAVOR_CROSS_GRAM_V14_34.md` for the same-shell `c/s` resul
 
 See `BHSM_HOPF_PHASE_BIFURCATION_CP_V14_35.md` for the five-component support theorem, phase resonance, nonlinear tower gate and exact Hessian-bifurcation dependency.
 <!-- /BHSM_V14_35_HOPF_PHASE_BIFURCATION -->
+<!-- BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->
+## v14.36 degree-one phase-Hessian audit
+
+See `BHSM_DEGREE_ONE_PHASE_HESSIAN_SPECTRUM_V14_36.md` for the exact nonnegative phase-Hessian theorem, five-channel finite-box spectrum, and the relative-holonomy continuation gate.
+<!-- /BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->

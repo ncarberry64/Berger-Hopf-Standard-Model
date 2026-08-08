@@ -105,3 +105,8 @@ The phase-harmonic route fails if the action-selected stationary texture is axis
 
 The route fails if all required Hessian blocks are strictly positive with no nonaxisymmetric source, if the nonlinear branch is absent or unstable, if the tower resolvent does not exist, if phase locking is CP conserving only, or if the final dressed cross-Gram kernel is rank deficient or has zero physical Jarlskog invariant.
 <!-- /BHSM_V14_35_HOPF_PHASE_BIFURCATION -->
+<!-- BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->
+## v14.36 bifurcation falsification boundary
+
+The pure Path B phase mechanism is falsified as a spontaneous flavor-bifurcation source by the nonnegative Hessian theorem. The broader route remains viable only if an action-owned holonomy, Wilson/background source, compact-cap coupling, or non-isometric shape mode produces a genuine zero crossing without destabilizing the full system.
+<!-- /BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->

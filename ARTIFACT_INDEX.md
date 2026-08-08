@@ -1804,3 +1804,8 @@ Regenerate with `python scripts/materialize_hopf_phase_flavor_v14_34.py`. The co
 
 Regenerate with `python scripts/materialize_hopf_phase_bifurcation_v14_35.py`. The controlling report is `docs/BHSM_HOPF_PHASE_BIFURCATION_CP_V14_35.md`.
 <!-- /BHSM_V14_35_HOPF_PHASE_BIFURCATION -->
+<!-- BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->
+## v14.36 phase-Hessian artifacts
+
+Regenerate with `python scripts/materialize_degree_one_phase_hessian_v14_36.py`. The controlling report is `docs/BHSM_DEGREE_ONE_PHASE_HESSIAN_SPECTRUM_V14_36.md`.
+<!-- /BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->

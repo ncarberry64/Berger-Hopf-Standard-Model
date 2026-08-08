@@ -2410,3 +2410,8 @@ BHSM validates the `c/s` same-shell Hopf-imbalance mechanism and exact selection
 
 BHSM derives the smallest flavor-bearing harmonic support and its rephasing-invariant phase resonance. It does not derive the nonaxisymmetric stationary solution, Hessian eigenvalues, physical phase, CKM matrix, Jarlskog invariant, masses or RG transport.
 <!-- /BHSM_V14_35_HOPF_PHASE_BIFURCATION -->
+<!-- BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->
+## v14.36 phase-Hessian claim boundary
+
+BHSM proves nonnegativity of the isometry-generated phase Hessian for the foundational Path B action and finds no negative phase mode in the five requested flavor channels on the round-smash surrogate. It does not prove full nonradial stability, construct the compact-cap spectrum, attach the v12 holonomy, or derive CKM, CP, masses or scale.
+<!-- /BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->

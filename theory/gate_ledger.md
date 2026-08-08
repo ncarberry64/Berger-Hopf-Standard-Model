@@ -394,3 +394,14 @@ Exact next object:
 - Relative holonomy attachment: `OPEN`.
 - Physical CKM/CP/masses: `OPEN`.
 <!-- /BHSM_V14_35_HOPF_PHASE_BIFURCATION -->
+<!-- BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->
+## v14.36 degree-one phase-Hessian gates
+
+- Exact Path B phase-Hessian sign: `PASSED_NONNEGATIVE`.
+- Requested finite-box channel spectra: `PASSED_NO_NEGATIVE_MODE`.
+- Infinite-volume positive mass gap: `NOT_CLAIMED`; threshold approaches zero.
+- Pure Path B phase bifurcation: `FAILED_TO_TURN_ON`.
+- Full non-isometric/cap Hessian: `OPEN`.
+- Relative holonomy signed contribution: `OPEN_NEXT`.
+- Physical CKM/CP/masses: `OPEN`.
+<!-- /BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->

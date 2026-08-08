@@ -3013,3 +3013,10 @@ Charm and strange are validated as the same `K=48` harmonic shell with `q=6` ver
 
 The minimal connected full-rank mixing seed uses four components, while the Cabibbo-aligned CP texture uses `(ell,p)=(0,0),(2,2),(4,4),(6,6),(8,8)`, has one rephasing cycle, and admits a generic full-rank cross-Gram normal form. The physical branch, phase-locking coefficients, tower resolvent and CKM remain open.
 <!-- /BHSM_V14_35_HOPF_PHASE_BIFURCATION -->
+<!-- BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->
+## BHSM v14.36 degree-one phase-Hessian audit
+
+`BHSM_PATH_B_DEGREE_ONE_PHASE_HESSIAN_IS_NONNEGATIVE_AND_THE_REQUESTED_HOPF_FLAVOR_CHANNELS_HAVE_NO_NEGATIVE_MODE_ON_THE_ROUND_SMASH_SURROGATE`
+
+The pure Path B phase Hessian is a sum of nonnegative squares. The requested `(ell,p)` flavor channels have positive finite-box lower-bound spectra on the v13.1 round-smash surrogate, approaching zero from above as the noncompact box expands. The phase bifurcation does not turn on without a signed holonomy or other action source.
+<!-- /BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->
