@@ -1076,3 +1076,11 @@ The exactly next executable object is
 BHSM remains incomplete, Mark III is not reached, physical execution remains
 blocked, and USB synchronization remains ineligible. Flavor provenance gates
 remain open and unchanged.
+
+Validation: the authoritative committed-state suite passed `6009` tests in
+`811.23s` with exit code `0`; all `43` v14.46--v14.88 materializers exited `0`
+on each of two runs and reproduced with zero tracked artifact difference. The
+v14.88 focused package passed `9` tests. The final frozen/status/public/
+precision guard selection passed `120` tests; frozen-prediction,
+forbidden-claim, BHSM-status, public-readiness, precision and physics-status
+CLI audits each exited `0`.
