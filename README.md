@@ -17,12 +17,7 @@ BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode
 
 Historical v11.6 verdict: `BHSM_PARENT_ACTION_CURRENT_REDUCTION_BLOCKED_BY_UNFIXED_COMMON_DOMAIN_FAMILY_WAVEFUNCTION_MAP`. Historical v11.6 exact next object: `ACTION_OWNED_COMMON_DOMAIN_UP_DOWN_FAMILY_WAVEFUNCTION_ORIENTATION_AND_CURRENT_PAIRING_MAP`.
 
-This independent mathematical-physics project investigates whether
-Berger-Hopf boundary geometry can organize structures associated with
-Standard Model fields, flavor, generations, interactions, and dimensional
-emergence. It records calculations and candidate relationships; it has not
-received empirical validation, completed a derivation or replacement of the
-Standard Model, or received institutional endorsement.
+This independent mathematical-physics project investigates whether Berger-Hopf boundary geometry can organize structures associated with Standard Model fields, flavor, generations, interactions, and dimensional emergence. It records calculations and candidate relationships; it has not received empirical validation, completed a derivation or replacement of the Standard Model, or received institutional endorsement.
 
 ## Start Here: BHSM in Plain Language
 
@@ -48,12 +43,7 @@ Standard Model, or received institutional endorsement.
 | Dimensionless core action | Internally complete, finite-input stratified EFT | The v7.1 correspondence action owns every retained term; physical scheme/observable transport remains open. |
 | External physics test | Needs empirical test | Engine tests do not validate BHSM particle physics. |
 
-The threading response is derived and no explicit energy threshold is
-required. The lapse--Weyl principal block is derived. The historical fold
-target below remains a conditional operator problem, but it is no longer the
-highest-upstream BHSM 1.0 gate. The live target is the common
-scheme/observable transport functor identified by v7.1. The fold construction
-had targeted the gauge-quotiented metric tangent
+The threading response is derived and no explicit energy threshold is required. The lapse--Weyl principal block is derived. The historical fold target below remains a conditional operator problem, but it is no longer the highest-upstream BHSM 1.0 gate. The live target is the common scheme/observable transport functor identified by v7.1. The fold construction had targeted the gauge-quotiented metric tangent
 
 ```text
 T_mu_nu^(X) (x,x')

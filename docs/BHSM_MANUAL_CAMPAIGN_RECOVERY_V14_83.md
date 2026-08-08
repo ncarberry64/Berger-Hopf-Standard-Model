@@ -77,3 +77,14 @@ background can the complete D2/D3/D4 response, physical
 noncentral current, conserved environmental stress projection, radial inertia
 partition, and frozen downstream kill screens be evaluated without inserting
 the desired answers.
+
+## Validation record
+
+- Full repository suite: `5969 passed in 795.27s`, exit code `0`.
+- All 38 v14.46--v14.83 materializers were byte-identical on repeated runs.
+- Frozen-prediction, forbidden-claim, status, public-readiness, precision, and
+  diff-hygiene audits passed with exit code `0`.
+- The 49-package canonical ledger SHA-256 is
+  `6d9b56b6efdc54c67ee3f5adc0bcd42d5f41d201ec34049990aa2785f6adca2e`.
+- The final shear handoff SHA-256 is
+  `aa8b8cfc3c07b8538c72b759485e1da91f0599ffbfc233b18c050cb4b7815c9f`.
