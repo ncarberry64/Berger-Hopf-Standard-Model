@@ -1043,3 +1043,36 @@ tests; the final guard suite passed `90` tests; and all 42 v14.46--v14.87
 materializers reproduced with zero tracked artifact difference. Frozen,
 forbidden-claim, status, public-readiness, precision and CLI audits exited
 `0`.
+
+## v14.88 action-selected charge/current-shape Schur gate
+
+The retained charge sectors have now been exhausted at the selection gate. The
+physical M4 S6 eta field has trivial relevant FR loop group because
+`pi4(S6)=0`. The historical M8 S7 odd-degree `j=1/2` rule remains conditional
+on physical transgression, rotation-loop identification and state selection.
+The adopted Dirac action permits charged states but does not select occupancy,
+charge or orientation. Gauge charge is constrained or superselected, and
+Wilson states are externally sourced. No presently retained physical sector
+therefore action-selects the required nonzero charge.
+
+More strongly, fixing `p_eta=0` throughout the connected positive Legendre
+branch gives `D0 eta(Q)=0`, so `J_eta(Q)=0` and `B_L2=0` for every nearby shape.
+On the round Spin(4) reference, `(1,0)+(0,1)` rigid current times the `(1,1)`
+scalar ell=2 shape does not contain the `(3/2,1/2)+(1/2,3/2)` coexact L2
+representation. Diagonal SO3 would allow L2, so this round theorem is not
+overextended to the unconstructed degree-one reduced-symmetry background.
+
+The exact fixed-charge Routh reduction and the complete common-domain second
+variation of `-J(Q)^dagger K(Q)^-1 J(Q)/2` are derived. For `J0=0` and positive
+gauge-reduced K, the response is exactly `-B^dagger K^-1 B <= 0`, including
+the round coefficient `-(kappa_grav R^2/5)B_L2^dagger B_L2`. This conditional
+softening theorem has no retained physical nonzero vertex. Projector,
+zero-mode and moving-domain variations require a common-domain trivialization,
+which remains open.
+
+The closed-system charge route is therefore closed at current action content.
+The exactly next executable object is
+`ACTION_DERIVED_CONSERVED_REFLECTION_ODD_COEXACT_L2_EXCHANGE_CURRENT_SHAPE_VERTEX_FROM_THE_DRIVER_BHSM_COUPLED_FUNCTIONAL_WITH_NO_ARBITRARY_PROFILE_OR_SUSCEPTIBILITY`.
+BHSM remains incomplete, Mark III is not reached, physical execution remains
+blocked, and USB synchronization remains ineligible. Flavor provenance gates
+remain open and unchanged.

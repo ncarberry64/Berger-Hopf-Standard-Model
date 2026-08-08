@@ -1879,3 +1879,13 @@ with
 The controlling report is
 `docs/BHSM_ETA_RELATIVE_PERIODIC_LEGENDRE_CURRENT_GATE_V14_87.md`.
 <!-- /BHSM_V14_87_ETA_LEGENDRE_CURRENT_GATE -->
+
+<!-- BHSM_V14_88_ACTION_SELECTED_CHARGE_SCHUR_GATE -->
+## v14.88 action-selected charge/current-shape Schur artifact
+
+Regenerate `BHSM_action_selected_charge_current_shape_schur_gate_v14_88.json`
+with
+`python scripts/materialize_action_selected_charge_current_shape_schur_gate_v14_88.py`.
+The controlling report is
+`docs/BHSM_ACTION_SELECTED_CHARGE_CURRENT_SHAPE_SCHUR_GATE_V14_88.md`.
+<!-- /BHSM_V14_88_ACTION_SELECTED_CHARGE_SCHUR_GATE -->

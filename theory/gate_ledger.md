@@ -539,3 +539,22 @@ Exact next object:
 - Degree-one periodic background/common domain/complete Hessian: `OPEN`.
 - Mark III / BHSM completion / USB synchronization: `NOT_REACHED`.
 <!-- /BHSM_V14_87_ETA_LEGENDRE_CURRENT_GATE -->
+
+<!-- BHSM_V14_88_ACTION_SELECTED_CHARGE_SCHUR_GATE -->
+## v14.88 action-selected charge/current-shape gates
+
+- Physical M4 S6 eta FR charge: `FAILED_PI4_S6_EQUALS_ZERO`.
+- Historical M8 S7 FR charge: `CONDITIONAL_NOT_PHYSICALLY_TRANSGRESSED_OR_STATE_SELECTED`.
+- Fixed-zero-charge eta current map and L2 shape vertex: `ZERO_IDENTICALLY_IN_POSITIVE_LEGENDRE_BRANCH`.
+- Foundational Dirac nonzero charge/occupancy: `ALLOWED_SUPERSELECTION_DATA_NOT_ACTION_SELECTED`.
+- Round Spin4 rigid-L1-current times scalar-ell2 to coexact L2: `FORBIDDEN_BY_REPRESENTATION_PRODUCT`.
+- Reduced diagonal-SO3 degree-one vertex: `ALLOWED_BUT_BACKGROUND_DOMAIN_AND_MATRIX_ELEMENTS_OPEN`.
+- General common-domain Routh/Schur Hessian: `DERIVED_EXACT`.
+- Zero-background positive-momentum-operator response: `MINUS_B_DAGGER_K_INVERSE_B_NONPOSITIVE`.
+- Physical nonzero B_L2: `NOT_DERIVED`.
+- Reflection-odd full-preimage parity and common domain: `OPEN`.
+- Cap inertias and complete ell2 Hessian: `OPEN`.
+- Next route: `ACTION_DERIVED_CONSERVED_REFLECTION_ODD_COEXACT_L2_EXCHANGE_CURRENT_SHAPE_VERTEX_FROM_THE_DRIVER_BHSM_COUPLED_FUNCTIONAL_WITH_NO_ARBITRARY_PROFILE_OR_SUSCEPTIBILITY`.
+- Flavor provenance gates: `OPEN_UNCHANGED`.
+- Mark III / BHSM completion / USB synchronization: `NOT_REACHED`.
+<!-- /BHSM_V14_88_ACTION_SELECTED_CHARGE_SCHUR_GATE -->

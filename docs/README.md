@@ -352,3 +352,12 @@ exact Path-B velocity Legendre spectrum, pointwise kinetic kill screen,
 zero-momentum current theorem, conditional sourced L2 coexact resolvent, and
 the sharpened charge/exchange-sector blocker.
 <!-- /BHSM_V14_87_ETA_LEGENDRE_CURRENT_GATE -->
+
+<!-- BHSM_V14_88_ACTION_SELECTED_CHARGE_SCHUR_GATE -->
+## v14.88 action-selected charge/current-shape Schur gate
+
+See `BHSM_ACTION_SELECTED_CHARGE_CURRENT_SHAPE_SCHUR_GATE_V14_88.md` for the
+charge-sector and FR selection audit, exact fixed-charge Routh reduction,
+general common-domain Schur Hessian, round Spin(4) kill screen, and conserved
+exchange-current continuation object.
+<!-- /BHSM_V14_88_ACTION_SELECTED_CHARGE_SCHUR_GATE -->
