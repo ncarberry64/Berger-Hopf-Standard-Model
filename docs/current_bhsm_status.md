@@ -958,3 +958,24 @@ and complete Hessian remain open. V14.41 excludes source-free ADM coordinate
 shift as the transport source. The exact next object is unchanged:
 
 `ACTION_OWNED_FULL_PREIMAGE_TWO_STRATUM_KINETIC_REDUCTION_WITH_DERIVED_LAYER_INERTIAS_SHEAR_COVARIANCE_AND_DEGREE_ONE_SELF_ADJOINT_BACKGROUND`.
+
+## v14.85 Norman/BHSM recall and stationary transport no-go
+
+The recalled Norman compact-S3 topographic EFT supplies useful harmonic
+intuition but introduces an independent scalar and continuous coefficients,
+so it is not a completion of the retained BHSM action. The historical BHSM
+closure report is superseded by later common-domain, mixed-Hessian, and
+action-provenance no-go results.
+
+On the presently retained reflection-symmetric stationary classical branch,
+pure cap motion is only a complementary-domain repartition and has zero total
+action inertia. The source-free non-Killing ADM shift, static eta/Yang--Mills
+momentum, and time-symmetric Brown--York momentum also vanish. Consequently
+`Delta A=0` and the v14.84 normalized shear operator evaluates to zero on this
+branch. Its positive-semidefinite sign theorem is preserved.
+
+The canonical exact next object is unchanged. The first executable subobject
+is now a sourced relative-periodic full-preimage solution with a nonzero
+conserved cap momentum difference, global constraint-reduced ell=2 inertia,
+degree-one self-adjoint domain, and complete Hessian. BHSM remains incomplete,
+Mark III is not reached, and USB synchronization is not eligible.

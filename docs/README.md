@@ -325,3 +325,12 @@ See `BHSM_FULL_PREIMAGE_CAP_INERTIA_OPERATOR_THEOREM_V14_84.md` for the exact
 noncommuting operator parallel-sum identity, reflection intertwining theorem,
 conditional `nu=1/4` result, ADM-shift exclusion, and four sequential gates.
 <!-- /BHSM_V14_84_CAP_INERTIA_OPERATOR -->
+
+<!-- BHSM_V14_85_STATIONARY_TRANSPORT_NO_GO -->
+## v14.85 Norman/BHSM recall and stationary transport no-go
+
+See `BHSM_NORMAN_FULL_RECALL_AND_STATIONARY_TRANSPORT_NO_GO_V14_85.md` for the
+Norman/BHSM source reconciliation, pure-repartition inertia no-go,
+time-symmetric Brown--York momentum theorem, present-branch zero-transport
+evaluation, and sourced relative-periodic reopening condition.
+<!-- /BHSM_V14_85_STATIONARY_TRANSPORT_NO_GO -->
