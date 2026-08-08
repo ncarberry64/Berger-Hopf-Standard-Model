@@ -525,3 +525,17 @@ Exact next object:
 - Action-owned noncentral left-handed current and charged-current provenance: `OPEN`.
 - Mark III / BHSM completion / USB synchronization: `NOT_REACHED`.
 <!-- /BHSM_V14_83_MANUAL_RECOVERY -->
+
+<!-- BHSM_V14_87_ETA_LEGENDRE_CURRENT_GATE -->
+## v14.87 eta relative-periodic kinetic/current gates
+
+- Eta velocity Legendre spectrum: `DERIVED_EXACT`.
+- Pointwise positivity cone: `KAPPA1_PLUS_X3_MINUS_6X2_SPEED2_POSITIVE`.
+- Unknown periodic-branch eta inertia: `CONDITIONAL_NOT_EVALUATED`.
+- Zero-momentum stationary eta current: `FAILED_ZERO`.
+- Sourced round L2 coexact resolvent: `DERIVED_CONDITIONAL`.
+- Sourced ADM response as physical shape transport: `OPEN_MIXED_VARIATION`.
+- Action-selected reflected L2 eta/Dirac charge sector: `OPEN`.
+- Degree-one periodic background/common domain/complete Hessian: `OPEN`.
+- Mark III / BHSM completion / USB synchronization: `NOT_REACHED`.
+<!-- /BHSM_V14_87_ETA_LEGENDRE_CURRENT_GATE -->

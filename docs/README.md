@@ -343,3 +343,12 @@ recovered v6.18 reflection-odd source, exact Hodge separation theorem,
 nine-dimensional representation claim boundary, reflection-equivariant
 response theorem, and eta/Dirac coexact-current continuation object.
 <!-- /BHSM_V14_86_LONGITUDINAL_COEXACT_GATE -->
+
+<!-- BHSM_V14_87_ETA_LEGENDRE_CURRENT_GATE -->
+## v14.87 eta relative-periodic Legendre/current gate
+
+See `BHSM_ETA_RELATIVE_PERIODIC_LEGENDRE_CURRENT_GATE_V14_87.md` for the
+exact Path-B velocity Legendre spectrum, pointwise kinetic kill screen,
+zero-momentum current theorem, conditional sourced L2 coexact resolvent, and
+the sharpened charge/exchange-sector blocker.
+<!-- /BHSM_V14_87_ETA_LEGENDRE_CURRENT_GATE -->

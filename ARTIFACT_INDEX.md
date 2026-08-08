@@ -1869,3 +1869,13 @@ Regenerate `BHSM_full_preimage_cap_inertia_operator_theorem_v14_84.json` with
 The controlling report is
 `docs/BHSM_FULL_PREIMAGE_CAP_INERTIA_OPERATOR_THEOREM_V14_84.md`.
 <!-- /BHSM_V14_84_CAP_INERTIA_OPERATOR -->
+
+<!-- BHSM_V14_87_ETA_LEGENDRE_CURRENT_GATE -->
+## v14.87 eta relative-periodic Legendre/current artifact
+
+Regenerate `BHSM_eta_relative_periodic_legendre_current_gate_v14_87.json`
+with
+`python scripts/materialize_eta_relative_periodic_legendre_current_gate_v14_87.py`.
+The controlling report is
+`docs/BHSM_ETA_RELATIVE_PERIODIC_LEGENDRE_CURRENT_GATE_V14_87.md`.
+<!-- /BHSM_V14_87_ETA_LEGENDRE_CURRENT_GATE -->

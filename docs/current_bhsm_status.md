@@ -1014,3 +1014,25 @@ Validation: the authoritative committed-state suite passed `5990` tests in
 `168` tests; the final guard suite passed `90` tests; and all 41
 v14.46--v14.86 materializers exited `0` with deterministic output. Frozen,
 forbidden-claim, status, public-readiness, and precision audits passed.
+
+## v14.87 eta relative-periodic Legendre/current gate
+
+For the retained Lorentzian Path-B density, the exact eta velocity Legendre
+eigenvalues are `w(kappa1+X^3)` transversely and
+`w[kappa1+X^3-6X^2|D0 eta|^2]` parallel to the velocity. Thus positivity of
+the eta contribution to a periodic cap inertia is conditional on an explicit
+pointwise convexity cone and cannot be assumed before the periodic background
+is known.
+
+On the retained positive branch, zero pointwise canonical eta momentum is
+equivalent to `D0 eta=0` and forces zero eta spatial current, including its
+reflection-odd coexact L2 projection. If a nonzero current is supplied, the
+round reference sourced response is
+`beta_L2=(kappa_grav R^2/5)J_L2`, but this ADM response is not yet the
+physical shape transport without the canonical mixed variation.
+
+The source-free zero-momentum eta route is closed. The sharper open object is
+an action-selected nonzero reflected coexact L2 eta or collective-Dirac charge
+or exchange sector that satisfies the Legendre kill screen, global
+constraints, and common self-adjoint domain. BHSM remains incomplete, Mark
+III is not reached, and USB synchronization remains ineligible.
