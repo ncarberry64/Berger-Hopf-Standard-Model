@@ -2472,3 +2472,18 @@ strata or their inertias are action-derived, that the ordering survives the
 complete Hessian, that shear directly creates three modes, or that CKM, PMNS,
 particle observables, Mark III, or full BHSM completion are derived.
 <!-- /BHSM_V14_83_MANUAL_RECOVERY -->
+
+<!-- BHSM_V14_84_CAP_INERTIA_OPERATOR -->
+## v14.84 cap-inertia operator claim boundary
+
+BHSM may claim that the two candidate strata are the existing reflected
+full-preimage cap domains; that the operator parallel-sum kinetic identity is
+exact on a common positive reduced trace space; that its shear operator is
+positive semidefinite; and that reflection plus round SO(4) equivariance
+conditionally fixes the normalized inertia factor to `nu=1/4`. It may not
+claim that the full reduced cap actions or positive inertias have been
+constructed, that reflection alone derives the physical transport covariance,
+that ADM coordinate shift is the shear source, that the complete ell=2
+Hessian is known, or that `chi_2`, Landau coefficients, CKM, PMNS, particle
+observables, Mark III, or full BHSM completion are unconditional outputs.
+<!-- /BHSM_V14_84_CAP_INERTIA_OPERATOR -->

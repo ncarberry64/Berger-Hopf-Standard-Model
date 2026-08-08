@@ -932,3 +932,29 @@ the USB is not eligible for synchronization.
 
 Exact next object:
 `ACTION_OWNED_FULL_PREIMAGE_TWO_STRATUM_KINETIC_REDUCTION_WITH_DERIVED_LAYER_INERTIAS_SHEAR_COVARIANCE_AND_DEGREE_ONE_SELF_ADJOINT_BACKGROUND`.
+
+## v14.84 full-preimage cap-inertia operator theorem
+
+The two strata are narrowed to the reflected domains of the existing v14.30
+full-preimage collar. No new fluid, field, or duplicate eta action is added.
+For positive cap inertia operators on the common reduced ell=2 trace space,
+the exact noncommutative parallel-sum identity gives
+
+\[
+H_{\rm eff}=H_0-\Delta A^\dagger
+(M_+^{-1}+M_-^{-1})^{-1}\Delta A,
+\]
+
+so the differential-shear contribution is negative semidefinite in the
+stiffness. Reflection covariance is properly an intertwining theorem; after
+canonical cap identification and round SO(4) reduction it conditionally
+derives `nu=1/4`, independent of the absolute inertia. The coefficient
+`chi_2=2/(3R^2)` still assumes normalized isotropic physical relative
+transport.
+
+The cap critical actions, positivity after complete constraint/gauge/ghost
+reduction, physical nonzero transport, degree-one self-adjoint background,
+and complete Hessian remain open. V14.41 excludes source-free ADM coordinate
+shift as the transport source. The exact next object is unchanged:
+
+`ACTION_OWNED_FULL_PREIMAGE_TWO_STRATUM_KINETIC_REDUCTION_WITH_DERIVED_LAYER_INERTIAS_SHEAR_COVARIANCE_AND_DEGREE_ONE_SELF_ADJOINT_BACKGROUND`.

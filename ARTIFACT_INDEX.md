@@ -1860,3 +1860,12 @@ Regenerate with `python scripts/materialize_foundational_dirac_spin_glue_v14_45.
 
 Regenerate `BHSM_manual_campaign_recovery_v14_83.json` with `python scripts/materialize_manual_campaign_recovery_v14_83.py` and `BHSM_differential_shear_softening_v14_83.json` with `python scripts/materialize_differential_shear_softening_v14_83.py`. The controlling report is `docs/BHSM_MANUAL_CAMPAIGN_RECOVERY_V14_83.md`.
 <!-- /BHSM_V14_83_MANUAL_RECOVERY -->
+
+<!-- BHSM_V14_84_CAP_INERTIA_OPERATOR -->
+## v14.84 full-preimage cap-inertia operator artifact
+
+Regenerate `BHSM_full_preimage_cap_inertia_operator_theorem_v14_84.json` with
+`python scripts/materialize_full_preimage_cap_inertia_operator_v14_84.py`.
+The controlling report is
+`docs/BHSM_FULL_PREIMAGE_CAP_INERTIA_OPERATOR_THEOREM_V14_84.md`.
+<!-- /BHSM_V14_84_CAP_INERTIA_OPERATOR -->

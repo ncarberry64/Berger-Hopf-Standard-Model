@@ -3106,3 +3106,19 @@ shear action, physical layer data, degree-one background, complete Hessian,
 noncentral current, and observables remain open. `FULL_BHSM_COMPLETE=FALSE`,
 `MARK_III=NOT_REACHED`, and USB synchronization is ineligible.
 <!-- /BHSM_V14_83_MANUAL_RECOVERY -->
+
+<!-- BHSM_V14_84_CAP_INERTIA_OPERATOR -->
+## BHSM v14.84 full-preimage cap-inertia operator gate
+
+The natural strata are the existing reflected full-preimage caps, not new
+fluids or fields. On a common positive reduced ell=2 domain, the exact
+operator parallel-sum identity proves
+`H_eff=H0-DeltaA^dagger P DeltaA` with a positive-semidefinite softening
+operator, even when the cap inertias do not commute. Reflection intertwining
+conditionally gives `nu=1/4`; `chi_2=2/(3R^2)` additionally retains the
+normalized isotropic-transport hypothesis. Actual cap inertias, positive
+gravity/gauge/ghost reduction, physical nonzero transport, the degree-one
+self-adjoint background, and the complete Hessian remain open. Source-free
+ADM coordinate shift is excluded as the physical shear source. BHSM remains
+incomplete and USB synchronization remains ineligible.
+<!-- /BHSM_V14_84_CAP_INERTIA_OPERATOR -->

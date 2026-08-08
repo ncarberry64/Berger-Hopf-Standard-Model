@@ -317,3 +317,11 @@ See `BHSM_FOUNDATIONAL_DIRAC_SPIN_GLUE_V14_45.md` for the foundational fermion-a
 
 See `BHSM_MANUAL_CAMPAIGN_RECOVERY_V14_83.md` for the 49-package provenance audit, independently checked Landau/DtN/core-softening results, final differential-shear theorem, and the current fail-closed completion gate.
 <!-- /BHSM_V14_83_MANUAL_RECOVERY -->
+
+<!-- BHSM_V14_84_CAP_INERTIA_OPERATOR -->
+## v14.84 full-preimage cap-inertia operator theorem
+
+See `BHSM_FULL_PREIMAGE_CAP_INERTIA_OPERATOR_THEOREM_V14_84.md` for the exact
+noncommuting operator parallel-sum identity, reflection intertwining theorem,
+conditional `nu=1/4` result, ADM-shift exclusion, and four sequential gates.
+<!-- /BHSM_V14_84_CAP_INERTIA_OPERATOR -->

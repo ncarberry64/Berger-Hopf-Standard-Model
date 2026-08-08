@@ -1,0 +1,119 @@
+{
+  "artifact": "BHSM_full_preimage_cap_inertia_operator_theorem_v14_84",
+  "completion_status": {
+    "BHSM_complete": false,
+    "Mark_III": "NOT_REACHED",
+    "USB_synchronization_eligible": false,
+    "cap_inertia_gate": "OPEN",
+    "complete_response_gate": "OPEN",
+    "operator_parallel_sum_sign_gate": "PASSED",
+    "physical_transport_gate": "OPEN",
+    "reflection_inertia_fraction_gate": "PASSED_CONDITIONALLY"
+  },
+  "exact_next_object": "ACTION_OWNED_FULL_PREIMAGE_TWO_STRATUM_KINETIC_REDUCTION_WITH_DERIVED_LAYER_INERTIAS_SHEAR_COVARIANCE_AND_DEGREE_ONE_SELF_ADJOINT_BACKGROUND",
+  "existing_geometry": {
+    "full_preimage_collar": "C_tilde_eta=pi_85^-1(C_eta)",
+    "intersection": "Sigma_tilde={rho=0}",
+    "minus_cap": "C_tilde_minus={rho<=0}",
+    "new_fluid_or_field_introduced": false,
+    "plus_cap": "C_tilde_plus={rho>=0}",
+    "round_measure": "dmu8=dmuF cos(rho)^3 ds dmu4"
+  },
+  "frozen_predictions_changed": false,
+  "not_claimed": [
+    "positivity of the cap inertia after the unconstructed full gravity/gauge/ghost reduction",
+    "a physical nonzero relative transport or its covariance",
+    "the round Jacobi ordering for the complete BHSM Hessian",
+    "action-derived Landau coefficients, CKM, PMNS, or particle observables",
+    "full BHSM completion"
+  ],
+  "numeric_witness": {
+    "inertia_commutator_norm": 0.17155007936153813,
+    "kinetic_residual": 0.0,
+    "parallel_sum_minimum_eigenvalue": 1.0952930288787701,
+    "shear_minimum_eigenvalue": 0.37339393577365104
+  },
+  "official_prediction_logic_changed": false,
+  "open_gates": {
+    "charged_current_kernel": "PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL",
+    "noncentral_left_handed_current": "ACTION_OWNED_FAMILY_NONCENTRAL_LEFT_HANDED_CURRENT_SOURCE"
+  },
+  "operator_theorem": {
+    "cap_inertias": "M_plus/minus=delta^2 Gamma_plus/minus^crit / delta Q_dot^2 at Phi_star",
+    "kinetic_identity": "T=1/2< Q_dot+Abar Q,M(Q_dot+Abar Q)>+1/2<Delta A Q,P Delta A Q>",
+    "mean_transport": "Abar Q=M^-1(M_plus A_plus+M_minus A_minus)Q",
+    "parallel_sum": "P=(M_plus^-1+M_minus^-1)^-1",
+    "relative_transport": "Delta A=A_plus-A_minus",
+    "sign": "Delta A^dagger P Delta A is positive semidefinite",
+    "stationary_comoving_stiffness": "H_eff=H0-Delta A^dagger P Delta A",
+    "total_inertia": "M=M_plus+M_minus"
+  },
+  "physical_transport_gate": {
+    "ADM_coordinate_shift_is_physical_shear": false,
+    "eligible_sources": [
+      "gauge-reduced covariantly conserved matter/eta/Dirac momentum transport",
+      "gauge-reduced quasilocal or canonical cap-boundary momentum",
+      "conserved environmental exchange current Q^nu"
+    ],
+    "nonzero_physical_relative_transport_derived": false,
+    "v14_41_source_free_relative_shift_after_rotation_quotient": "ZERO"
+  },
+  "primary_verdict": "BHSM_V14_84_THE_FULL_PREIMAGE_CAP_OPERATOR_PARALLEL_SUM_PRESERVES_POSITIVE_SEMIDEFINITE_DIFFERENTIAL_SHEAR_SOFTENING_AND_REFLECTION_CONDITIONALLY_DERIVES_THE_ONE_QUARTER_INERTIA_FRACTION_BUT_THE_CAP_CRITICAL_ACTIONS_PHYSICAL_RELATIVE_TRANSPORT_DEGREE_ONE_DOMAIN_AND_COMPLETE_HESSIAN_REMAIN_OPEN",
+  "reflection_theorem": {
+    "actual_reflection_symmetric_degree_one_background_verified": false,
+    "chi2_status": "chi_2=2/(3R^2) only after retaining the normalized isotropic relative-transport hypothesis",
+    "covariant_statement": "M_minus=R M_plus R^T; hence R^T M_minus R=M_plus",
+    "derived_normalized_inertia_fraction": "nu=1/4 independent of m0",
+    "identified_caps": "M_plus=M_minus=M0",
+    "parallel_sum": "P=M0/2",
+    "round_SO4_branch": "H2 is irreducible, so M0=m0 I9"
+  },
+  "round_reflection_witness": {
+    "ell2_isotropic_coefficient_per_R2": 0.6666666666666669,
+    "nu": 0.25000000000000006,
+    "spread": 0.0
+  },
+  "sequential_subgates": [
+    {
+      "gate": "CAP_INERTIA",
+      "object": "derive M_plus and M_minus from the full-preimage critical action",
+      "status": "OPEN"
+    },
+    {
+      "gate": "REFLECTION",
+      "object": "verify the stationary background/domain reflection intertwiner and derive nu=1/4",
+      "status": "CONDITIONAL_THEOREM"
+    },
+    {
+      "gate": "PHYSICAL_TRANSPORT",
+      "object": "derive nonzero conserved gauge-reduced Delta A; ADM coordinate shift is excluded",
+      "status": "OPEN"
+    },
+    {
+      "gate": "COMPLETE_RESPONSE",
+      "object": "insert the normalized shear operator into the complete ell=2 Hessian",
+      "status": "OPEN"
+    }
+  ],
+  "theorem_hypotheses": [
+    "the gauge/constraint/ghost-reduced cap critical actions are twice differentiable on one common nine-dimensional ell=2 trace space",
+    "M_plus and M_minus are coercive after quotienting all gauge and zero modes",
+    "the reduced action is cap-additive in the kinetic block, with any seam or cross-cap kinetic terms separately retained",
+    "A_plus and A_minus preserve the common self-adjoint trace domain",
+    "the background and transports are stationary enough that omitted gyroscopic and time-dependent-connection terms vanish in the quoted H_eff formula"
+  ],
+  "validation": {
+    "adm_shift_route_forbidden": true,
+    "ell2_coefficient_conditionally_two_thirds": true,
+    "flavor_provenance_gates_preserved": true,
+    "full_bhsm_not_claimed": true,
+    "noncommuting_operator_identity_exact": true,
+    "parallel_sum_positive": true,
+    "reflection_round_nu_is_one_quarter": true,
+    "round_factor_independent_of_component": true,
+    "shear_operator_positive_semidefinite": true,
+    "witness_inertias_actually_noncommute": true
+  },
+  "validation_passed": true,
+  "version": "v14.84"
+}
