@@ -489,3 +489,12 @@ First derive the common-domain map from the retained `M8` eta field to the physi
 4. Recompute `sigma_max(H_eta^-1/2 B H_A^-1/2)` on the compact cap.
 5. Continue to a nonlinear Z6-oriented branch only after a genuine zero crossing.
 <!-- /BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->
+<!-- BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->
+## v14.39 exact continuation
+
+1. Solve a self-consistent fermion or Wilson-sourced coexact L=2,L=3 momentum constraint on the compact cap.
+2. Pull the resulting relative shift into the matched tetrad and Levi-Civita spin connection.
+3. Construct normalized common-domain Dirac modes.
+4. Evaluate the action-normalized L=2,L=3 family response and its up/down mismatch.
+5. Attach the existing Z6 relative orientation only after nonzero bridge amplitudes are derived.
+<!-- /BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->

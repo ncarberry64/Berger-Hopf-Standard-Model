@@ -2425,3 +2425,8 @@ BHSM may claim that the v12 relative holonomy orients an already nonzero bridge 
 
 BHSM may claim an exact zero mixed block between the currently retained homogeneous Lambda85 attachment reduction and the nontrivial `(ell,p)` flavor channels. It may also claim that Lambda85 is an algebraic multiplier and that the canonical C3 projection is family diagonal. It may not claim that all unreduced nonhomogeneous attachment modes vanish, that the Spin(4) block is action-owned, or that CKM, CP, masses, scale, or BHSM completion has been derived.
 <!-- /BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->
+<!-- BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->
+## v14.39 claim boundary
+
+BHSM may claim the exact local eta/metric mixed second-variation identity and the zero static eta momentum/shift source under the stated static assumptions. It may not claim that every spatial metric mixed block vanishes, that the Spin(4) response is action-selected in a sourced state, or that CKM, CP, masses, scales, or BHSM completion are derived.
+<!-- /BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->

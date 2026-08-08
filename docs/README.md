@@ -276,3 +276,8 @@ See `BHSM_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN_V14_37.md` for the v12 holonomy H
 
 See `BHSM_LAMBDA85_ETA_MIXED_HESSIAN_V14_38.md` for the homogeneous-character selection theorem, the exact zero-crossing result, the canonical C3 family-diagonality theorem, and the corrected nonhomogeneous continuation.
 <!-- /BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->
+<!-- BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->
+## v14.39 static eta/metric and Spin(4) source audit
+
+See `BHSM_STATIC_ETA_METRIC_SPIN4_SOURCE_V14_39.md` for the exact eta/metric mixed variation, static ADM source no-go, and the pivot to a self-consistent matter-sourced coexact shift.
+<!-- /BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->

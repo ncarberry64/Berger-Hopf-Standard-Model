@@ -3034,3 +3034,10 @@ The recovered v12 `Z6` phase preserves isolated-sector spectra and has no quadra
 
 The available v11.3 KKT attachment reduction is a homogeneous `(ell,p)=(0,0)` branch. It is orthogonal to all requested nontrivial flavor channels, so the normalized mixed singular value is exactly zero. The canonical C3 projection is diagonal in the exact family-projector basis. A nonhomogeneous constraint-reduced attachment mode or matched Spin(4) pullback is still required.
 <!-- /BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->
+<!-- BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->
+## BHSM v14.39 static eta/metric and Spin(4) source audit
+
+`BHSM_STATIC_DEGREE_ONE_PATH_B_BACKGROUND_HAS_ZERO_COEXACT_ADM_MOMENTUM_SOURCE_AND_ZERO_STATIC_ETA_SHIFT_MIXED_BLOCK_SO_THE_SPIN4_L2_L3_BRANCH_DOES_NOT_TURN_ON`
+
+The exact Path-B eta/spatial-metric mixed variation is derived. A static eta background has zero ADM momentum density, so it does not activate the coexact L=2,L=3 Spin(4) branch. The nonhomogeneous Lambda85 continuation is a gauge-fixed constraint-reduced metric problem, not a multiplier spectrum.
+<!-- /BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->

@@ -427,3 +427,14 @@ Exact next object:
 - Spin(4) matched tetrad/spin-connection block: `OPEN`.
 - Physical CKM/CP/masses: `OPEN`.
 <!-- /BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->
+<!-- BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->
+## v14.39 source gates
+
+- Path-B eta/metric local mixed variation: `DERIVED_EXACT`.
+- Static eta ADM momentum source: `FAILED_ZERO`.
+- Static shift/phase mixed Hessian: `FAILED_ZERO`.
+- Spin(4) L=2,L=3 activation on static branch: `OFF`.
+- Nonhomogeneous spatial metric/Lambda85-reduced operator: `OPEN`.
+- Fermion/Wilson-sourced coexact shift: `OPEN`.
+- Physical CKM/CP/masses: `OPEN`.
+<!-- /BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->

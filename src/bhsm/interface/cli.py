@@ -884,6 +884,7 @@ def build_parser() -> argparse.ArgumentParser:
         "--format", choices=("json", "markdown"), default="markdown"
     )
     integrated_status_commands = (
+        ("static-eta-metric-spin4-source-status-v14-39", "Render the BHSM v14.39 static eta/metric and Spin(4) source gate"),
         ("lambda85-eta-mixed-hessian-status-v14-38", "Render the BHSM v14.38 Lambda85/eta mixed-Hessian gate"),
         ("relative-holonomy-full-shape-hessian-status-v14-37", "Render the BHSM v14.37 relative-holonomy/full-shape Hessian gate"),
         ("degree-one-phase-hessian-status-v14-36", "Render the BHSM v14.36 degree-one phase-Hessian gate"),
@@ -1026,6 +1027,13 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main(argv: Sequence[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
+    if args.command == "static-eta-metric-spin4-source-status-v14-39":
+        from .completion.static_eta_metric_spin4_completion_gate_v14_39 import completion_payload, deterministic_json, status_text
+        if args.format == "markdown":
+            print(status_text())
+        else:
+            print(deterministic_json(completion_payload()), end="")
+        return 0
     if args.command == "lambda85-eta-mixed-hessian-status-v14-38":
         from .completion.lambda85_eta_mixed_hessian_completion_gate_v14_38 import completion_payload, deterministic_json, status_text
         if args.format == "markdown":

@@ -1819,3 +1819,8 @@ Regenerate with `python scripts/materialize_relative_holonomy_full_shape_hessian
 
 Regenerate with `python scripts/materialize_lambda85_eta_mixed_hessian_v14_38.py`. The controlling report is `docs/BHSM_LAMBDA85_ETA_MIXED_HESSIAN_V14_38.md`.
 <!-- /BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->
+<!-- BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->
+## v14.39 static eta/metric and Spin(4) artifacts
+
+Regenerate with `python scripts/materialize_static_eta_metric_spin4_source_v14_39.py`. The controlling report is `docs/BHSM_STATIC_ETA_METRIC_SPIN4_SOURCE_V14_39.md`.
+<!-- /BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->

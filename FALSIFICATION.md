@@ -120,3 +120,8 @@ The hypothesis that the artifact-backed `pi/3` holonomy itself destabilizes the 
 
 The hypothesis that the already-derived homogeneous v11.3 Lambda85/KKT branch triggers the nonaxisymmetric flavor bifurcation is rejected. The broader attachment route survives only through an action-owned nonhomogeneous constraint-reduced metric or Spin(4) mode with the same `(ell,p)` character and a nonzero normalized mixed Hessian.
 <!-- /BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->
+<!-- BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->
+## v14.39 source falsification boundary
+
+The hypothesis that the static degree-one eta background itself activates the Spin(4) L=2,L=3 family branch is rejected. The route survives only if a time-dependent collective, fermion, Wilson, or rotating-boundary source generates a nonzero coexact momentum mode and the matched spin connection.
+<!-- /BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->
