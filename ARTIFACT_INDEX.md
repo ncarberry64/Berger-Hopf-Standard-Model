@@ -1789,3 +1789,8 @@ v14.29-v14.30 set with
 chain is `docs/BHSM_COMMON_DOMAIN_ETA_SU3_REDUCTION_PROOF.md`,
 `docs/BHSM_FULL_RECALL_PATH_COMPOSITION_AUDIT_v14_30.md`, and
 `docs/BHSM_FULL_HOPF_PREIMAGE_EFFECTIVE_ACTION_PROOF.md`.
+<!-- BHSM_V14_31_TO_V14_33_CUMULATIVE -->
+## v14.31–v14.33 artifacts
+
+Regenerate the cumulative artifacts with `python scripts/materialize_hopf_smash_transgression_v14_33.py`. Controlling reports: `BHSM_PATH_B_FOUNDATIONAL_ACTION_V14_31.md`, `BHSM_PATH_B_PHYSICAL_TOPOLOGY_AND_FR_GATE_V14_32.md`, and `BHSM_HOPF_SMASH_TOPOLOGICAL_TRANSGRESSION_V14_33.md`.
+<!-- /BHSM_V14_31_TO_V14_33_CUMULATIVE -->

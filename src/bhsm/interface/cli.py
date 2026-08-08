@@ -884,6 +884,9 @@ def build_parser() -> argparse.ArgumentParser:
         "--format", choices=("json", "markdown"), default="markdown"
     )
     integrated_status_commands = (
+        ("hopf-smash-status-v14-33", "Render the BHSM v14.33 Hopf-smash transgression gate"),
+        ("path-b-topology-status-v14-32", "Render the BHSM v14.32 Path B topology and FR gate"),
+        ("path-b-completion-status-v14-31", "Render the BHSM v14.31 Path B foundational action gate"),
         ("view2-completion-status-v14-29", "Render the authoritative BHSM v14.29 View 2 completion gate"),
         ("composite-carrier-current-status", "Render the BHSM v8.4 composite-carrier/current closure"),
         ("topographic-profile-status", "Render the BHSM v8.5 profile component-selection audit"),
@@ -1018,6 +1021,21 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main(argv: Sequence[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
+    if args.command == "hopf-smash-status-v14-33":
+        from .completion.hopf_smash_completion_gate_v14_33 import completion_payload, deterministic_json, status_text
+        if args.format == "markdown": print(status_text())
+        else: print(deterministic_json(completion_payload()), end="")
+        return 0
+    if args.command == "path-b-topology-status-v14-32":
+        from .completion.path_b_completion_gate_v14_32 import completion_payload, deterministic_json, status_text
+        if args.format == "markdown": print(status_text())
+        else: print(deterministic_json(completion_payload()), end="")
+        return 0
+    if args.command == "path-b-completion-status-v14-31":
+        from .completion.path_b_completion_gate_v14_31 import completion_payload, deterministic_json, status_text
+        if args.format == "markdown": print(status_text())
+        else: print(deterministic_json(completion_payload()), end="")
+        return 0
     if args.command == "view2-completion-status-v14-29":
         from .completion.view2_completion_gate_v14_29 import completion_payload, deterministic_json, status_text
         if args.format == "markdown":

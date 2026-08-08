@@ -2395,3 +2395,8 @@ cosmological result, or any changed frozen prediction.
 ## v14.29 claim boundary
 
 Validated only for a conditional common-domain candidate: the minimally covariantized eta `p=2+p=8` density, its convention-corrected SU(3) source/Noether identity, the pure-wall zero-current limit, a finite-action off-shell tangent witness, and the absence of an independent theta vector pole. The prior stratified action does not derive the required eta-to-physical-SU3 reduction. FR/Dirac quantization, matching, and its self-adjoint domain are open. Exact source identity: Wilson singlet zero total charge with `-4/3` mesonic color correlation. Not claimed: a physical quark current, confinement, area law, common gauge normalization, physical scale, mass, CKM/PMNS, neutrino spectrum, or `c_sigma`.
+<!-- BHSM_V14_31_TO_V14_33_CUMULATIVE -->
+## v14.31–v14.33 claim boundary
+
+BHSM owns a foundational bosonic Path-B color–eta action and a conditional full-preimage topological-current transgression. It does not yet claim a smooth action-normalized `SU(3)`-equivariant smash map, normalized FR Hilbert bundle, self-adjoint collective Dirac action, confinement, string tension, scale, mass, CKM, PMNS, or neutrino output.
+<!-- /BHSM_V14_31_TO_V14_33_CUMULATIVE -->

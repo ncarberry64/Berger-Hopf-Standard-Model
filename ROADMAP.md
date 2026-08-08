@@ -435,3 +435,12 @@ Hessian and downstream orbit campaign.
 ## v14.29 next campaign
 
 First derive the common-domain map from the retained `M8` eta field to the physical-SU3 collar bundle, including its measure and variational intertwiner, then derive the FR/Dirac collective matching and mode subtraction. Only then fix the self-adjoint gauge/ghost/FR domain and solve the nonradial parent-relative SU(3)-eta-collar Wilson-singlet BVP. A stable transverse saddle and negative-mode audit must precede the determinant/worldsheet limit. Common Yang-Mills normalization, dimensional anchoring, masses, and flavor remain downstream and may not be supplied from measurements.
+<!-- BHSM_V14_31_TO_V14_33_CUMULATIVE -->
+## v14.33 exact continuation
+
+1. Construct the smooth Hopf-clutching-compatible `SU(3)`-equivariant degree-one smash map.
+2. Solve the full-preimage stationary profile and self-adjoint cap domain.
+3. Derive internal zero-mode pinning, normalized collective measure and physical rotation loop.
+4. Derive the self-adjoint Dirac transgression and mode-subtraction theorem.
+5. Continue the external Wilson-response BVP and confinement audit in parallel.
+<!-- /BHSM_V14_31_TO_V14_33_CUMULATIVE -->

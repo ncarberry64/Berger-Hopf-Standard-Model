@@ -1,0 +1,35 @@
+{
+  "artifact": "BHSM_Path_B_G2_connection_fork_v14_31",
+  "curvature_observation": "at A=0 and eta=Exp_eta0(phi), theta=d phi+O(phi^2), so d theta vanishes at linear order and pure G2 Yang-Mills supplies no (d phi)^2 term",
+  "fork": [
+    {
+      "branch": "canonical reduction-preserving extension",
+      "connection": "mathcal_A0=iota_*A",
+      "result": "no eta color source",
+      "theta": "0"
+    },
+    {
+      "branch": "independent full G2 connection",
+      "connection": "mathcal_A=A+theta with theta independent",
+      "result": "six additional colored vector principal symbols",
+      "status": "REJECTED_BY_NO_NEW_VECTOR_GATE"
+    },
+    {
+      "branch": "Path B composite reduction connection",
+      "connection": "mathcal_A[A,eta]=iota_*A+Theta_eta(D_A eta)",
+      "result": "one parent geometry, eight vector fields, six eta scalar tangent modes",
+      "status": "SELECTED"
+    }
+  ],
+  "physical_action_consequence": "the eta p2+p8 sigma term is foundational physical dynamics, not a pure-G2-YM derivative",
+  "validation": {
+    "composite_theta_has_no_independent_variation": true,
+    "general_extension_is_affine_in_m_valued_one_forms": true,
+    "independent_theta_with_G2_YM_adds_six_vector_symbols": true,
+    "path_B_uses_SU3_YM_plus_eta_sigma_not_full_G2_YM": true,
+    "pure_G2_YM_does_not_supply_the_eta_p2_quadratic_term": true,
+    "reduction_preserving_extension_has_theta_zero": true
+  },
+  "validation_passed": true,
+  "version": "v14.31"
+}

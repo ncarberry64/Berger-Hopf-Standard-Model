@@ -246,3 +246,8 @@ The current minimal-action theory dictionary is documented in
 - [Release checklist](bhsm_v1_2_0_release_checklist.md)
 - [Institutional HEP handoff](institutional_hep_handoff_index.md)
 - [Citation guide](how_to_cite.md)
+<!-- BHSM_V14_31_TO_V14_33_CUMULATIVE -->
+## v14.31–v14.33 Path B continuation
+
+The three controlling reports document the foundational action, physical-topology correction, and full-preimage Hopf-smash transgression route.
+<!-- /BHSM_V14_31_TO_V14_33_CUMULATIVE -->

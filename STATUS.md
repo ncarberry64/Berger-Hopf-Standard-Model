@@ -2994,3 +2994,8 @@ Exact next object:
 ## v14.29 authoritative View 2 update
 
 The formal scientific audit issues Outcome B: `BHSM_VIEW2_MINIMALLY_GAUGED_ETA_ACTION_AND_COMPOSITE_THETA_CURRENT_ARE_CONSTRUCTED_CONDITIONALLY_BUT_FULL_MASTER_ACTION_OWNERSHIP_REMAINS_BLOCKED`. The local candidate variation and no-new-vector result are valid, but the original `M8` eta action has no derived common-domain reduction to the physical `M4` SU3 connection, and the bosonic-to-FR/Dirac matching theorem is absent. First exact object: `COMMON_DOMAIN_ETA_TO_PHYSICAL_SU3_ASSOCIATED_BUNDLE_REDUCTION_WITH_COLLAR_MEASURE_AND_VARIATIONAL_INTERTWINER`.
+<!-- BHSM_V14_31_TO_V14_33_CUMULATIVE -->
+## BHSM v14.31–v14.33 Path B and Hopf-smash continuation
+
+v14.31 adopts the canonical `G2` extension of the physical color bundle and the gauged eta `p=2+p=8` sigma action as foundational physical data, closing local color–eta action ownership without six new vector fields. v14.32 proves that the physical `M4` `S6` field alone has no degree-one or FR sector because `pi3(S6)=pi4(S6)=0`. v14.33 then identifies the full-preimage resolution: `S3_base smash S3_fiber = S6` and its suspension gives `S7`; oriented fiber integration of the closed degree form yields a conserved physical particle-number current when cap flux vanishes. The smooth equivariant map, full-preimage stationary solution, collective measure and Dirac action remain open.
+<!-- /BHSM_V14_31_TO_V14_33_CUMULATIVE -->

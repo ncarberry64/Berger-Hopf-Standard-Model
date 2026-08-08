@@ -360,3 +360,14 @@ Exact next object:
 - Confinement and worldsheet: `OPEN`.
 - Mark III / Mark IV: `NOT_REACHED` / `NOT_REACHED`.
 - Exact next object: `COMMON_DOMAIN_ETA_TO_PHYSICAL_SU3_ASSOCIATED_BUNDLE_REDUCTION_WITH_COLLAR_MEASURE_AND_VARIATIONAL_INTERTWINER`.
+<!-- BHSM_V14_31_TO_V14_33_CUMULATIVE -->
+## v14.31–v14.33 cumulative gates
+
+- Color–eta physical action ownership: `PASSED_BY_FOUNDATIONAL_POSTULATE`.
+- Extra vector pole gate: `PASSED_NO_NEW_VECTORS`.
+- M4 S6 degree/FR gate: `FAILED_PI3_AND_PI4_ZERO`.
+- Full-preimage smash topology: `PASSED_TOPOLOGY_HOMOLOGY_LEVEL`.
+- M8 degree to M4 particle-number current: `PASSED_CONDITIONALLY_ZERO_CAP_FLUX`.
+- Smooth equivariant map/stationary background/collective Dirac: `OPEN`.
+- Wilson-response BVP and confinement: `PARALLEL_OPEN`.
+<!-- /BHSM_V14_31_TO_V14_33_CUMULATIVE -->

@@ -90,3 +90,8 @@ the existing axioms and action with no extra unselected coefficient.
 ## v14.29 View 2 falsifiers
 
 The View 2 candidate fails if the associated `G2/SU3` section forces trivial `c2(P_color)`, theta admits an independent variation/pole, finite variation disagrees with the source convention, gauge covariance/Noether identity fails, or the eta term duplicates the ungauged action. Outcome A also fails—and currently does—when the retained `M8` eta action lacks a common-domain reduction to the physical `M4` SU3 field or when no FR/Dirac matching theorem prevents double counting. Confinement remains falsified for the Gaussian collar by its zero asymptotic string tension; a finite tube alone is not an area-law proof.
+<!-- BHSM_V14_31_TO_V14_33_CUMULATIVE -->
+## v14.31–v14.33 falsification boundary
+
+The physical `M4` `S6` field alone cannot support a degree-one or FR sector. The full-preimage transgression fails if no smooth clutching-compatible representative exists, cap flux prevents current conservation, the stationary degree-one branch is absent/unstable, or collective quantization cannot yield the required normalized Dirac matter sector without double counting.
+<!-- /BHSM_V14_31_TO_V14_33_CUMULATIVE -->
