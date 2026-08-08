@@ -1,0 +1,36 @@
+{
+  "artifact": "BHSM_moving_seam_bvp_contract_v14_55",
+  "implemented_now": [
+    "three linearly independent noncommuting shape channels",
+    "deterministic harmonic collocation residual evaluator",
+    "periodic position and tangent closure checks",
+    "symbolic lambda and Berger stationarity slots",
+    "synthetic exact residual witness"
+  ],
+  "missing_physical_inputs": [
+    "matched parent and child backgrounds",
+    "action-derived DtN map and seam traction coefficients",
+    "complete trace-class relative heat kernel",
+    "renormalized nonlocal determinant and anomaly",
+    "action-selected harmonic amplitudes, phases and ordering",
+    "matter current and detector response functional",
+    "full gauge-fixed domain and stability operator",
+    "cosmology-particle action deriving the shared R_H and nesting ratios"
+  ],
+  "physical_solution_obtained": false,
+  "required_residual_blocks": [
+    "bulk Euler-Lagrange equations in parent and child",
+    "induced metric, spin-frame and gauge compatibility",
+    "Dirichlet-to-Neumann traction balance including GHY/corner terms",
+    "relative periodicity Y(T)=h.Y(0) and tangent closure",
+    "cycle-averaged seam force balance",
+    "nesting stationarity dGamma_rel/dlambda=0",
+    "Berger stationarity dGamma_rel/da=0",
+    "gauge fixing and zero-mode removal",
+    "parent subtraction and relative heat-kernel regularization",
+    "Floquet monodromy and reduced-Hessian stability"
+  ],
+  "seam_expansion": "xi(tau,Omega)=sum_(k=1)^3 q_k(tau) M_k(Omega)+higher modes",
+  "state": "Y=(G,eta,sigma,A_YM,Psi,X;dot X) on parent and child domains",
+  "version": "v14.55"
+}

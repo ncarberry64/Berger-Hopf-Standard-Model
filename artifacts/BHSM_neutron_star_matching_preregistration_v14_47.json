@@ -1,0 +1,34 @@
+{
+  "artifact": "BHSM_neutron_star_matching_preregistration_v14_47",
+  "calibration_layer": [
+    "predeclared subset of mass-radius likelihoods",
+    "predeclared subset of tidal likelihoods",
+    "EOS hyperparameters marginalized, not fixed post hoc"
+  ],
+  "counts_as_microscopic_derivation": false,
+  "held_out_layer": [
+    "unused stellar radius or moment-of-inertia observable",
+    "unused tidal-deformability event",
+    "maximum-mass and radial-stability checks"
+  ],
+  "kill_screens": [
+    "star-by-star counterterm retuning",
+    "EOS choice selected after seeing BHSM residuals",
+    "regularity or causality failure",
+    "negative fundamental radial mode on the claimed stable branch",
+    "failure of held-out observables after coefficient freeze",
+    "incompatibility with compact-cap projection normalization"
+  ],
+  "may_bound_coefficients": true,
+  "may_define_declared_renormalization_conditions": true,
+  "observational_values_loaded": false,
+  "required_upstream": [
+    "physical covariant coefficient normalization and scale",
+    "well-posed higher-derivative stellar boundary value problem",
+    "EOS family and prior declared before data evaluation",
+    "vacuum exterior and junction conditions",
+    "radial-stability and tidal-response solvers"
+  ],
+  "status": "PROTOCOL_ONLY_NOT_EXECUTED",
+  "version": "v14.47"
+}

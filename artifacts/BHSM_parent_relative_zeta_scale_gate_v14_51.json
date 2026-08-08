@@ -1,0 +1,31 @@
+{
+  "artifact": "BHSM_parent_relative_zeta_scale_gate_v14_51",
+  "consequences": {
+    "finite_scale_requires": [
+      "a second term with different L dependence or running coupling",
+      "a declared parent/interface renormalization condition",
+      "positive second derivative at the stationary point"
+    ],
+    "zeta_rel_nonzero_only": "a lone logarithm has constant slope and no finite stable minimum",
+    "zeta_rel_zero": "relative determinant is scale invariant"
+  },
+  "fermion_effective_action_convention": "Gamma_F_rel=-log det_rel D=+1/2 zeta_rel_prime(0;P/mu^2)",
+  "operator_scaling": "P_child,parent(L,a)=L^(-2) P_hat_child,parent(a)",
+  "relative_zeta": "zeta_rel(s;L,a)=L^(2s)[zeta_child_hat(s;a)-zeta_parent_hat(s;a)]",
+  "scale_derivative": "d Gamma_F_rel / d log L = zeta_rel(0;a)",
+  "scale_form": "Gamma_F_rel(L,a;mu)=Gamma_hat_F_rel(a)+zeta_rel(0;a) log(mu L)",
+  "scale_verdict": "BHSM_PARENT_RELATIVE_NONLOCAL_DETERMINANT_CAN_SUPPLY_LOGARITHMIC_SCALE_DEPENDENCE_ONLY_THROUGH_A_NONZERO_RELATIVE_ZETA_ANOMALY_AND_REQUIRES_A_SECOND_SCALE_DEPENDENT_TERM_FOR_A_FINITE_STABLE_SCALE",
+  "trace_class_requirements": [
+    "common principal symbol and compatible self-adjoint seam domain",
+    "heat-kernel difference trace class after collective zero-mode quotient",
+    "identical parent/child ultraviolet subtraction convention",
+    "zero and negative modes treated explicitly"
+  ],
+  "validation": {
+    "absolute_scale_not_emitted": true,
+    "nonzero_anomaly_alone_not_a_minimum": true,
+    "parent_subtraction_may_cancel_anomaly": true,
+    "relative_anomaly_controls_log_scale": true
+  },
+  "version": "v14.51"
+}

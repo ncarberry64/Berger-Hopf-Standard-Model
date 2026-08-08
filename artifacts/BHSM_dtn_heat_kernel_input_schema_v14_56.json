@@ -1,0 +1,44 @@
+{
+  "artifact": "BHSM_dtn_heat_kernel_input_schema_v14_56",
+  "bundle_present": false,
+  "physical_BVP_execution_allowed": false,
+  "physical_acceptance_conditions": [
+    "all matrices Hermitian within declared tolerance",
+    "all provenance hashes non-placeholder",
+    "trace-class and gauge-domain proofs marked complete",
+    "same coefficient bundle used for vacuum and matter propagation",
+    "no measured neutrino quantity used to select coefficients"
+  ],
+  "required_geometry": [
+    "cosmological parent radius or symbolic anchor",
+    "child/parent ratio lambda",
+    "Berger parameter a",
+    "period T",
+    "moving-seam embedding and normal orientation"
+  ],
+  "required_mode_data": [
+    "three normalized Peter-Weyl harmonics",
+    "parent DtN 3x3 Hermitian matrix",
+    "child DtN 3x3 Hermitian matrix",
+    "shape-current 3x3 Hermitian wake generator",
+    "mode Gram matrix and zero-mode exclusions"
+  ],
+  "required_provenance": [
+    "repository commit and branch",
+    "parent and child background hashes",
+    "gauge-fixing operator and domain",
+    "zero-mode projector hash",
+    "renormalization prescription and scale",
+    "derivation notebook or symbolic artifact hash"
+  ],
+  "required_relative_spectral_data": [
+    "trace-class proof for Delta exp(-t D^2)",
+    "relative heat-trace samples or exact representation",
+    "small-t subtraction coefficients",
+    "large-t convergence bound",
+    "relative zeta value and derivative",
+    "lambda, a, and seam-amplitude derivatives"
+  ],
+  "status": "STRICT_INPUT_SCHEMA_ONLY_NO_ACTION_DERIVED_KERNEL_BUNDLE_PRESENT",
+  "version": "v14.56"
+}

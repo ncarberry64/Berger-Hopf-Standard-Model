@@ -1854,3 +1854,9 @@ Regenerate with `python scripts/materialize_worldline_clifford_spin_lift_v14_44.
 
 Regenerate with `python scripts/materialize_foundational_dirac_spin_glue_v14_45.py`. The controlling report is `docs/BHSM_FOUNDATIONAL_DIRAC_SPIN_GLUE_V14_45.md`.
 <!-- /BHSM_V14_45_FOUNDATIONAL_DIRAC_SPIN_GLUE -->
+
+<!-- BHSM_V14_83_MANUAL_RECOVERY -->
+## v14.83 manual recovery and differential-shear artifacts
+
+Regenerate `BHSM_manual_campaign_recovery_v14_83.json` with `python scripts/materialize_manual_campaign_recovery_v14_83.py` and `BHSM_differential_shear_softening_v14_83.json` with `python scripts/materialize_differential_shear_softening_v14_83.py`. The controlling report is `docs/BHSM_MANUAL_CAMPAIGN_RECOVERY_V14_83.md`.
+<!-- /BHSM_V14_83_MANUAL_RECOVERY -->

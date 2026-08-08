@@ -337,3 +337,16 @@ physical color bundle, and no work solves the degree-one full-preimage parent
 background with a self-adjoint cap domain. Accordingly the v14.29 local action
 does not match the retained parent as a derived low-energy action. BHSM 1.0 and
 every downstream physical gate remain open.
+
+## v14.83 manual-campaign recovery update
+
+The v14.31--v14.83 manual campaign is incorporated without promoting its
+provisional bridges. The reduced two-stratum differential-shear calculation
+closes the susceptibility sign gate and gives `chi_2=2/(3R^2)` for equal
+inertias. It does not close the action-owned full-preimage kinetic reduction,
+physical shear covariance, degree-one stationary background, complete
+operator domain/Hessian, noncentral charged current, or observable gates.
+Marks III and IV remain not reached and BHSM 1.0 remains incomplete.
+
+Exact next object:
+`ACTION_OWNED_FULL_PREIMAGE_TWO_STRATUM_KINETIC_REDUCTION_WITH_DERIVED_LAYER_INERTIAS_SHEAR_COVARIANCE_AND_DEGREE_ONE_SELF_ADJOINT_BACKGROUND`.

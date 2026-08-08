@@ -1,0 +1,40 @@
+{
+  "C3_equivariance_theorem": "for every Hermitian H=a I+b C+bar(b) C^2, P_r H P_s=0 for r!=s",
+  "CKM_consequence": "if the up and down responses use the same C3 projectors and differ only in their diagonal eigenvalues, their left eigenbases coincide up to phases and permutations, so the weak-basis mismatch is trivial",
+  "artifact": "BHSM_lambda85_family_projection_no_go_v14_52",
+  "attachment_term": "S_attach=<Lambda85,C(q)>, C=upsilon^(-1/2) I_W-upsilon^(1/2) I_C",
+  "flavor_verdict": "BHSM_LAMBDA85_IS_AN_ALGEBRAIC_FAMILY_BLIND_CONSTRAINT_AND_ITS_TANGENT_REDUCED_SECOND_VARIATION_CANNOT_BY_ITSELF_GENERATE_SECTOR_RELATIVE_UP_DOWN_BRIDGES_OR_A_NONTRIVIAL_CKM_MATRIX",
+  "historical_beta_kappa_status": "mechanism diagnostics; not derived from the present family-blind Lambda85 term",
+  "numerical_exactness_diagnostic": {
+    "maximum_norm": 6.341404989338363e-16,
+    "off_diagonal_block_norms": {
+      "P0_H_P1": 1.8619006149354548e-16,
+      "P0_H_P2": 6.341404989338363e-16,
+      "P1_H_P0": 1.6711069443220836e-16,
+      "P1_H_P2": 3.991723989276279e-16,
+      "P2_H_P0": 4.90457592513324e-16,
+      "P2_H_P1": 4.454604156787652e-16
+    },
+    "passes": true,
+    "tolerance": 1e-12
+  },
+  "physical_tangent_condition": "DC delta q=0",
+  "reduced_result": {
+    "Lambda85_background_nonzero": "only Lambda85_0 times the curvature of the constraint surface survives",
+    "Lambda85_background_zero": "the tangent-reduced multiplier contribution vanishes exactly",
+    "family_blind_constraint": "the surviving term is proportional to the identity in C3 family space unless C, Lambda85, or the tangent embeddings carry an action-owned sector-relative family structure"
+  },
+  "required_nontrivial_source": [
+    "sector-relative family tangent embeddings A_u != A_d",
+    "a noncommuting action-owned family connection or transgression",
+    "a nonlinear attachment/current kernel whose second variation is not C3-central"
+  ],
+  "second_variation": "delta2 S_attach=2<delta Lambda85, DC delta q>+<Lambda85_0,D2C[delta q,delta q]>",
+  "validation": {
+    "C3_equivariant_operator_is_character_diagonal": true,
+    "Lambda85_is_constraint_multiplier_not_propagating_family_field": true,
+    "no_physical_CKM_emitted": true,
+    "zero_background_multiplier_gives_zero_tangent_Hessian": true
+  },
+  "version": "v14.52"
+}

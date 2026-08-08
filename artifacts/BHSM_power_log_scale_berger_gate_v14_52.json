@@ -1,0 +1,44 @@
+{
+  "artifact": "BHSM_power_log_scale_berger_gate_v14_52",
+  "current_evaluation_status": {
+    "A_p_of_a_computed_on_full_composite_parent_pair": false,
+    "B_of_a_finite_relative_determinant_computed": false,
+    "Z_of_a_relative_anomaly_computed": false,
+    "stationary_L_and_a_emitted": false
+  },
+  "equations": {
+    "F_a": "sum_p A_p'(a) exp(p x)+B'(a)+Z'(a)x=0",
+    "F_x": "sum_p p A_p(a) exp(p x)+Z(a)=0"
+  },
+  "one_power_exact_solution": {
+    "berger_curvature": "Gamma_aa=A'' exp(p x)+B''+Z''x",
+    "existence": "exp(p x_star)=-Z/(p A), requiring -Z/(p A)>0",
+    "mixed_curvature": "Gamma_xa=Z'-(A'/A)Z",
+    "nondegenerate_Jacobian": "J=(-p Z) Gamma_aa-[Z'-(A'/A)Z]^2 != 0",
+    "positive_two_variable_Hessian": "-p Z>0 and J>0 after all constrained fields are Schur reduced",
+    "scale_curvature": "Gamma_xx(x_star)=-p Z",
+    "scale_stability": "-p Z>0"
+  },
+  "reduced_action": "Gamma(x,a)=sum_p A_p(a) exp(p x)+B(a)+Z(a) x, x=log(L/l_ref)",
+  "reference_scale_rule": {
+    "effective_branch": "with one universal l_ref=E_star^(-1), the equations can select a dimensionless ratio L/l_ref and Berger modulus a",
+    "zero_input_branch": "the same equations do not derive l_ref; an action-derived reference unit or parent-child constitutive recursion is still required"
+  },
+  "validation": {
+    "absolute_reference_unit_not_emitted": true,
+    "lone_log_is_not_promoted_to_scale_solution": true,
+    "negative_anomaly_with_positive_amplitude_is_scale_stable": true,
+    "one_power_plus_log_can_have_finite_stationary_ratio": true
+  },
+  "version": "v14.52",
+  "witness": {
+    "amplitude": 2.0,
+    "anomaly": -3.0,
+    "exists": true,
+    "hessian_xx": 18.0,
+    "power": 6,
+    "scale_ratio_L_over_lref": 0.7937005259840998,
+    "stable_in_scale_direction": true,
+    "x_star": -0.23104906018664842
+  }
+}

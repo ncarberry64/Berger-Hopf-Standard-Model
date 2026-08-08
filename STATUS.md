@@ -3095,3 +3095,14 @@ The source-free stationary coexact shift is a weighted Killing-operator square. 
 - The physical bifurcation remains underdetermined until a microscopic regulator or two renormalization conditions and the tangential Kosmann spectrum are supplied.
 - Frozen predictions are unchanged; BHSM is not complete.
 <!-- /BHSM_V14_45_FOUNDATIONAL_DIRAC_SPIN_GLUE -->
+
+<!-- BHSM_V14_83_MANUAL_RECOVERY -->
+## BHSM v14.83 manual recovery and shear gate
+
+All 49 canonical manual packages through v14.83 are integrated. The reduced
+two-stratum kinetic identity derives a positive isotropic ell=2 shear
+susceptibility, with `chi_2=2/(3R^2)` for equal inertias. The full-preimage
+shear action, physical layer data, degree-one background, complete Hessian,
+noncentral current, and observables remain open. `FULL_BHSM_COMPLETE=FALSE`,
+`MARK_III=NOT_REACHED`, and USB synchronization is ineligible.
+<!-- /BHSM_V14_83_MANUAL_RECOVERY -->

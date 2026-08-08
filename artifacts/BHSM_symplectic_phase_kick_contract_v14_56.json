@@ -1,0 +1,49 @@
+{
+  "artifact": "BHSM_symplectic_phase_kick_contract_v14_56",
+  "closed_action_jump": {
+    "coherent_wake_jump": "z^+=exp(-i K_k) z^- with K_k Hermitian",
+    "cycle_momentum_jump": "p_phi^+-p_phi^-=-partial_phi G_k",
+    "generating_function": "G_k(X,phi,z;I_k,E_k)",
+    "momentum_jump": "P_X^+-P_X^-=-partial_X G_k"
+  },
+  "deterministic_witness": {
+    "globally_invertible": true,
+    "parameters": {
+      "modulation": 0.22,
+      "offset": 0.31,
+      "orientation": -0.47
+    },
+    "physical_law": false,
+    "samples": [
+      {
+        "jacobian": 1.1961450234029725,
+        "phase_minus": 0.0,
+        "phase_plus": 0.21036501721660497
+      },
+      {
+        "jacobian": 1.2081293155762451,
+        "phase_minus": 0.8,
+        "phase_plus": 1.1812894662468711
+      },
+      {
+        "jacobian": 0.9869827993828874,
+        "phase_minus": 2.1,
+        "phase_plus": 2.629614554363079
+      },
+      {
+        "jacobian": 0.8979426887630244,
+        "phase_minus": 4.7,
+        "phase_plus": 4.815104373514747
+      }
+    ]
+  },
+  "impact_dependence_required": [
+    "impact strength",
+    "impact direction relative to pair motion",
+    "pair phase at encounter",
+    "local environment"
+  ],
+  "invertibility_condition": "1+partial_phi Delta != 0 everywhere",
+  "phase_coordinate_map": "phi_plus=phi_minus+Delta(phi_minus,impact,environment) modulo 2pi",
+  "version": "v14.56"
+}

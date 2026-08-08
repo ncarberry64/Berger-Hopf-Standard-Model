@@ -517,3 +517,14 @@ First derive the common-domain map from the retained `M8` eta field to the physi
 5. Test whether c_G lambda_L plus Pi_L crosses zero.
 6. Derive up/down response matrices only after the raw determinant kernel is action owned.
 <!-- /BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->
+
+<!-- BHSM_V14_83_MANUAL_RECOVERY -->
+## v14.83 exact continuation
+
+1. Derive the two physical strata and their common shape kinetic term from the full-preimage action.
+2. Derive positive layer inertias, covariant normal transport, and the shear covariance without measured inputs.
+3. Solve the degree-one stationary parent-child background and self-adjoint Dirac/Calderon domain.
+4. Recompute the complete bulk, GHY, KKT, matter, and nonlocal Hessian and D2/D3/D4 Landau response.
+5. Derive the noncentral left-handed current and charged-current kernel before CKM/PMNS evaluation.
+6. Run frozen downstream and Floquet gates only after those upstream objects close.
+<!-- /BHSM_V14_83_MANUAL_RECOVERY -->

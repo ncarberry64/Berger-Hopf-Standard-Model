@@ -884,6 +884,7 @@ def build_parser() -> argparse.ArgumentParser:
         "--format", choices=("json", "markdown"), default="markdown"
     )
     integrated_status_commands = (
+        ("manual-recovery-status-v14-83", "Render the BHSM v14.83 manual recovery and shear gate"),
         ("foundational-dirac-spin-glue-status-v14-45", "Render the BHSM v14.45 foundational Dirac/spin-glue gate"),
         ("worldline-clifford-spin-lift-status-v14-44", "Render the BHSM v14.44 worldline/Clifford spin-lift gate"),
         ("moduli-clifford-matcher-zeta-status-v14-43", "Render the BHSM v14.43 moduli/Clifford matcher-zeta gate"),
@@ -1033,6 +1034,13 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main(argv: Sequence[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
+    if args.command == "manual-recovery-status-v14-83":
+        from .completion.manual_campaign_recovery_v14_83 import completion_payload, deterministic_json, status_text
+        if args.format == "markdown":
+            print(status_text())
+        else:
+            print(deterministic_json(completion_payload()), end="")
+        return 0
     if args.command == "foundational-dirac-spin-glue-status-v14-45":
         from .completion.foundational_dirac_spin_glue_completion_gate_v14_45 import completion_payload, deterministic_json, status_text
         if args.format == "markdown":

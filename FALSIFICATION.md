@@ -135,3 +135,9 @@ The hypothesis that the current rigid FR rotor, a static Wilson insertion, or di
 
 The hypothesis that the present source-free classical ADM action spontaneously selects an L=2 or L=3 relative frame is rejected. The route survives only through an action-owned source, rotating boundary data, time dependence, or a derived renormalized quantum effective action.
 <!-- /BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->
+
+<!-- BHSM_V14_83_MANUAL_RECOVERY -->
+## v14.83 differential-shear falsification boundary
+
+The reduced shear route fails if the full action does not derive two positive-inertia strata carrying one common shape coordinate, if the physical shear covariance vanishes, or if the complete gauge-reduced Hessian prevents the round-reference ell=2 crossing. A positive reduced susceptibility does not establish a black-hole source, a physical crossing, diagonal locking, or three lifted physical channels.
+<!-- /BHSM_V14_83_MANUAL_RECOVERY -->

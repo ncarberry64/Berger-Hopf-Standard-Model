@@ -511,3 +511,17 @@ Exact next object:
 - Renormalized bifurcation: `UNDERDETERMINED`.
 - Tangential compact-cap Kosmann spectrum: `OPEN`.
 <!-- /BHSM_V14_45_FOUNDATIONAL_DIRAC_SPIN_GLUE -->
+
+<!-- BHSM_V14_83_MANUAL_RECOVERY -->
+## v14.83 recovery gates
+
+- Canonical manual package integrity: `PASSED_49_BUNDLES`.
+- Reduced two-stratum kinetic identity: `PASSED_EXACT`.
+- Reduced isotropic ell=2 shear-sign gate: `PASSED_CHI_POSITIVE`.
+- Equal-inertia coefficient: `CHI2_EQUALS_2_OVER_3R2`.
+- Full-preimage two-stratum action and physical shear covariance: `OPEN`.
+- Degree-one stationary background and self-adjoint stratified domain: `OPEN`.
+- Complete D2/D3/D4 Landau response and Goldstone/Floquet stability: `OPEN`.
+- Action-owned noncentral left-handed current and charged-current provenance: `OPEN`.
+- Mark III / BHSM completion / USB synchronization: `NOT_REACHED`.
+<!-- /BHSM_V14_83_MANUAL_RECOVERY -->

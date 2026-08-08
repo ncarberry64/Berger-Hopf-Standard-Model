@@ -311,3 +311,9 @@ See `BHSM_WORLDLINE_CLIFFORD_SPIN_LIFT_V14_44.md` for the odd-field action-owner
 
 See `BHSM_FOUNDATIONAL_DIRAC_SPIN_GLUE_V14_45.md` for the foundational fermion-action declaration, exact eta zero-mode pullback, global spin-bundle seam theorem, collective no-double-counting projector, and the full-rank L2/L3 renormalization obstruction.
 <!-- /BHSM_V14_45_FOUNDATIONAL_DIRAC_SPIN_GLUE -->
+
+<!-- BHSM_V14_83_MANUAL_RECOVERY -->
+## v14.83 manual campaign recovery
+
+See `BHSM_MANUAL_CAMPAIGN_RECOVERY_V14_83.md` for the 49-package provenance audit, independently checked Landau/DtN/core-softening results, final differential-shear theorem, and the current fail-closed completion gate.
+<!-- /BHSM_V14_83_MANUAL_RECOVERY -->

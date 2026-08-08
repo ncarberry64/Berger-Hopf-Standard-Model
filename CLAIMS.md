@@ -2460,3 +2460,15 @@ BHSM may claim the odd-field/action-ownership obstruction, a conditional worldli
 
 BHSM may claim a foundational effective eta-bound Dirac action, exact unit normal-mode pullback, global-spin-bundle seam cancellation, a collective-coordinate no-double-counting projector, and the determinant-420 L2/L3 counterterm underdetermination theorem. BHSM must not describe the local fermion action as derived from Path B, treat the global spin lift as relative flavor holonomy, claim full compact-cap Kosmann matrix elements, choose renormalized curvature coefficients without an explicit microscopic or renormalization principle, or emit a physical determinant, bifurcation, CKM matrix, CP phase, mass, coupling, radius, or scale.
 <!-- /BHSM_V14_45_FOUNDATIONAL_DIRAC_SPIN_GLUE -->
+
+<!-- BHSM_V14_83_MANUAL_RECOVERY -->
+## v14.83 recovery claim boundary
+
+BHSM may claim the exact reduced two-stratum kinetic decomposition, its
+negative-semidefinite relative-flow stiffness contribution, the positive
+isotropic ell=2 susceptibility, and the round-reference first-band ordering.
+It may not claim that black holes produce the physical shear, that the two
+strata or their inertias are action-derived, that the ordering survives the
+complete Hessian, that shear directly creates three modes, or that CKM, PMNS,
+particle observables, Mark III, or full BHSM completion are derived.
+<!-- /BHSM_V14_83_MANUAL_RECOVERY -->

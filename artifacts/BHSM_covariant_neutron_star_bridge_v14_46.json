@@ -1,0 +1,72 @@
+{
+  "covariant_operator_basis": {
+    "H1": "H1_mn = R R_mn - 1/4 g_mn R^2 + g_mn Box R - nabla_m nabla_n R",
+    "H2": "H2_mn = 2 R_manb R^ab - 1/2 g_mn R_ab R^ab + Box R_mn + 1/2 g_mn Box R - nabla_m nabla_n R",
+    "bulk_action": "Gamma_4D = integral sqrt(-g) [M2/2 R - Lambda + alpha R^2 + beta R_mn R^mn] + Gamma_nonlocal + S_matter",
+    "cap_projection_definition": "H_L[I_i] = normalized second variation of integral sqrt(g) I_i on the compact-cap coexact L channel",
+    "channel_inverse": {
+      "c2": "(144 H_2 - 25 H_3)/420",
+      "c4": "(-12 H_2 + 5 H_3)/420",
+      "determinant": 420
+    },
+    "field_equation": "M2 G_mn + 2 alpha H1_mn + beta H2_mn + Hnonlocal_mn = T_mn",
+    "gauss_bonnet_note": "In four dimensions Riemann^2 may be exchanged for R^2 and Ricci^2 plus the Euler density and a boundary transgression.",
+    "status": "COVARIANT_BASIS_AND_PROJECTION_CONTRACT_DERIVED_MAP_VALUES_OPEN"
+  },
+  "no_fit_protocol": {
+    "external_matching_stage": [
+      "predeclare calibration observables",
+      "marginalize over an explicit equation-of-state family",
+      "infer an allowed coefficient region rather than select by eye",
+      "freeze the matched coefficients and renormalization scale"
+    ],
+    "forbidden": [
+      "using neutron-star data inside the cap-regularity theorem",
+      "retuning coefficients separately for each star or equation of state",
+      "identifying cap coefficients with 4D curvature coefficients before projection",
+      "claiming microscopic derivation from empirical matching"
+    ],
+    "held_out_stage": [
+      "predict stars or observables excluded from calibration",
+      "reject the bridge if held-out mass-radius, tidal, or stability tests fail"
+    ],
+    "internal_stage": [
+      "compute the cap projection of each covariant local operator",
+      "test a genuinely dynamical Berger modulus and its Hessian",
+      "compute the nonlocal fermion polarization with one declared regulator"
+    ],
+    "matching_executed": false,
+    "status": "PREREGISTERED_EXTERNAL_LAYER_ONLY"
+  },
+  "stellar_structure": {
+    "background_equations": [
+      "E^t_t[g;alpha,beta,Gamma_nonlocal] = -rho",
+      "E^r_r[g;alpha,beta,Gamma_nonlocal] = p",
+      "p_prime = -(rho+p) Phi_prime",
+      "E^theta_theta = p as consistency / additional higher-derivative equation"
+    ],
+    "center_conditions": [
+      "m(r)=O(r^3)",
+      "Phi finite",
+      "rho finite",
+      "all auxiliary curvature fields regular"
+    ],
+    "matter": "T^m_n = diag(-rho,p,p,p), p=p(rho)",
+    "metric": "ds^2=-exp(2 Phi(r))dt^2 + [1-2m(r)/r]^-1 dr^2 + r^2 dOmega^2",
+    "observables": [
+      "mass-radius curve",
+      "maximum stable mass",
+      "radial fundamental frequency",
+      "tidal Love number / deformability",
+      "moment of inertia when rotation is added"
+    ],
+    "radial_stability": "delta E=0 with Lagrangian displacement xi and auxiliary curvature perturbations; solve L_rad Y = omega^2 W_rad Y, require omega_0^2>0",
+    "status": "EQUATION_AND_BOUNDARY_CONTRACT_FORMULATED_NUMERICAL_SOLVER_NOT_YET_EXECUTED",
+    "surface_and_exterior": [
+      "p(R_star)=0",
+      "metric and required higher-derivative data matched to the vacuum exterior",
+      "asymptotic or parent-relative boundary conditions declared"
+    ],
+    "tidal_problem": "solve static even-parity ell=2 linearized equations through the surface and extract the response/source ratio defining the Love number"
+  }
+}

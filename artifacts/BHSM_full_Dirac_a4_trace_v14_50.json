@@ -1,0 +1,73 @@
+{
+  "artifact": "BHSM_full_Dirac_a4_trace_v14_50",
+  "berger_cylinder_diagnostic": {
+    "integrated_shape": "a*(a^2-1)^2",
+    "physical_compact_cap_claimed": false,
+    "shape_derivative": "(a^2-1)*(5*a^2-1)",
+    "weyl_squared": "(64/3)*(a^2-1)^2/R^4"
+  },
+  "canonical_one_generation_gauge_trace": {
+    "hypercharge": "10/3",
+    "normalized_to_su2": [
+      "5/3",
+      "1",
+      "1"
+    ],
+    "su2": "2",
+    "su3": "2"
+  },
+  "completion": {
+    "BHSM_complete": false,
+    "absolute_scale_closed": false,
+    "canonical_trace_matches_historical_1_2_7": false,
+    "full_phi_response_owned": false,
+    "zeta_spectral_ray_preserved_on_minimal_declared_response_branch": true
+  },
+  "curvature_response": {
+    "documented_terms": {
+      "eta_odd_mass": {
+        "explicit_4d_curvature_dependence": false,
+        "form": "m_eta(s)=-partial_s log(sin f_eta(s))",
+        "status": "DOCUMENTED_FOUNDATIONAL_PROFILE_TERM"
+      },
+      "higgs_yukawa_family_operator": {
+        "explicit_4d_curvature_dependence": false,
+        "form": "Y_f(H,a,k,j,q) acting in finite family/internal space",
+        "status": "DOCUMENTED_CONDITIONAL_OR_FOUNDATIONAL_INTERNAL_TERM"
+      },
+      "phi_response_remainder": {
+        "explicit_4d_curvature_dependence": null,
+        "form": null,
+        "status": "UNDEFINED_NOT_ACTION_SELECTED"
+      }
+    },
+    "r2_shift_numerator_per_internal_rank": "30*xi*(6*xi-1)",
+    "ray_preserving_xi": [
+      "0",
+      "1/6"
+    ]
+  },
+  "exact_next_object": "ACTION_SELECTED_INTERNAL_SPECTRAL_WEIGHT_OR_EXTENDED_STATE_CONTENT_WITH_COMPLETE_CURVATURE_RESPONSE_ENDOMORPHISM_AND_A_SEPARATE_DIMENSIONAL_TRANSMUTATION_OR_PARENT_CHILD_SCALE_EIGENVALUE",
+  "gauge_verdict": "THE_CANONICAL_THREE_GENERATION_STANDARD_MODEL_FERMION_TRACE_GIVES_K_Y_K_2_K_3_EQUALS_5_OVER_3_1_1_AFTER_NORMALIZATION_AND_DOES_NOT_GENERATE_THE_HISTORICAL_BHSM_1_2_7_PATTERN",
+  "primary_verdict": "BHSM_V14_50_THE_DOCUMENTED_ETA_HIGGS_AND_FAMILY_RESPONSES_ARE_CURVATURE_INDEPENDENT_AND_PRESERVE_THE_MINIMAL_DIRAC_A4_GRAVITATIONAL_RAY_BUT_THE_UNDEFINED_PHI_RESPONSE_CAN_REOPEN_THE_R2_DIRECTION",
+  "scale": {
+    "a4_global_metric_scaling_weight": 0,
+    "absolute_scale_selected": false
+  },
+  "scale_verdict": "THE_FOUR_DIMENSIONAL_ZETA_LOCAL_A4_FUNCTIONAL_IS_GLOBALLY_SCALE_INVARIANT_AND_CANNOT_SELECT_THE_ABSOLUTE_BHSM_LENGTH_OR_ENERGY_SCALE",
+  "validation": {
+    "a4_is_scale_invariant": true,
+    "canonical_hypercharge_trace_is_10_over_3": true,
+    "canonical_su2_trace_is_2": true,
+    "canonical_su3_trace_is_2": true,
+    "curvature_shift_factorizes": true,
+    "frozen_nonround_branch_not_selected_by_local_weyl_shape_alone": true,
+    "frozen_predictions_unchanged": true,
+    "normalized_trace_is_5_over_3_1_1": true,
+    "physical_outputs_not_emitted": true,
+    "ray_preserving_roots_are_zero_and_one_sixth": true,
+    "round_berger_cylinder_is_weyl_flat": true
+  },
+  "validation_passed": true,
+  "version": "14.50"
+}

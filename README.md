@@ -5,11 +5,17 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: the manual v14.31--v14.83 campaign is integrated as declared foundational effective data, exact conditional theorems, and fail-closed no-go results. The final reduced two-stratum calculation derives a positive differential-shear softening sign and the equal-inertia coefficient `chi_2=2/(3R^2)`, but it does not derive the physical strata, layer inertias, shear covariance, degree-one stationary background, complete Hessian, CKM/PMNS, or particle observables. Mark III, Mark IV, and BHSM 1.0 release completion remain open. Frozen predictions and official prediction logic are unchanged.
+
+## Current BHSM status — v14.83 recovery
+
+Verdict: `BHSM_V14_31_TO_V14_83_MANUAL_CAMPAIGN_INTEGRATED_WITH_EXACT_RESULTS_CONDITIONAL_THEOREMS_AND_NO_GOS_PRESERVED_BUT_FULL_PHYSICAL_CLOSURE_REMAINS_BLOCKED_BY_THE_MISSING_ACTION_SELECTED_GLOBAL_DEGREE_ONE_FULL_PREIMAGE_BACKGROUND_AND_COMPLETE_STRATIFIED_OPERATOR_DOMAIN`. Exact next object: `ACTION_OWNED_FULL_PREIMAGE_TWO_STRATUM_KINETIC_REDUCTION_WITH_DERIVED_LAYER_INERTIAS_SHEAR_COVARIANCE_AND_DEGREE_ONE_SELF_ADJOINT_BACKGROUND`. See the [v14.83 recovery audit](docs/BHSM_MANUAL_CAMPAIGN_RECOVERY_V14_83.md), [v11.5 recovery report](docs/BHSM_FLAVOR_ACTION_COMPLETION_v11_5.md), and [reviewer reproduction guide](docs/reviewer_reproduction_guide.md).
+
+### Preserved v11.6 compatibility record
+
 BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: structural architecture integrated conditional; frozen predictions unchanged; physical eV/GeV neutrino mass closure remains open; external HEP runtime integration remains gated. Current campaign status: v11.6 preserves the v11.5 recovery point and evaluates the live action current. The effective SU2L Dirac mixed variation has family kernel I3. It is not rephasing-equivalent to the full-rank no-fit spectral charged-current candidate. The viability properties leave a continuous family of inequivalent kernels, and the commuting v11.4 response pair cannot generate mixing by joint functional calculus. The v11.5 kernel therefore remains an author-selected no-fit action candidate, not action-derived. Mark III remains open pending an action-owned common-domain up/down family wavefunction orientation and current pairing map. RG transport, normalization, and empirical tests are downstream conditional evaluations and cannot replace that provenance gate. Mark IV and BHSM 1.0 release completion remain open. Frozen predictions are unchanged.
 
-## Current BHSM status — v11.6
-
-Verdict: `BHSM_PARENT_ACTION_CURRENT_REDUCTION_BLOCKED_BY_UNFIXED_COMMON_DOMAIN_FAMILY_WAVEFUNCTION_MAP`. Exact next object: `ACTION_OWNED_COMMON_DOMAIN_UP_DOWN_FAMILY_WAVEFUNCTION_ORIENTATION_AND_CURRENT_PAIRING_MAP`. See the [v11.6 parent-action current report](docs/BHSM_PARENT_ACTION_SPECTRAL_CURRENT_COMPLETION_v11_6.md), [v11.5 recovery report](docs/BHSM_FLAVOR_ACTION_COMPLETION_v11_5.md), and [reviewer reproduction guide](docs/reviewer_reproduction_guide.md).
+Historical v11.6 verdict: `BHSM_PARENT_ACTION_CURRENT_REDUCTION_BLOCKED_BY_UNFIXED_COMMON_DOMAIN_FAMILY_WAVEFUNCTION_MAP`. Historical v11.6 exact next object: `ACTION_OWNED_COMMON_DOMAIN_UP_DOWN_FAMILY_WAVEFUNCTION_ORIENTATION_AND_CURRENT_PAIRING_MAP`.
 
 This independent mathematical-physics project investigates whether
 Berger-Hopf boundary geometry can organize structures associated with

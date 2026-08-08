@@ -1,0 +1,156 @@
+{
+  "artifact": "BHSM_completion_minimum_input_v14_48",
+  "counterterm_channel_determinant": 420,
+  "counterterm_channel_matrix": [
+    [
+      5,
+      25
+    ],
+    [
+      12,
+      144
+    ]
+  ],
+  "counterterm_channel_rank": 2,
+  "current_internal_constraints": [
+    {
+      "interpretation": "both curvature invariants are separately regular",
+      "matrix": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "name": "smooth_cap_regularity",
+      "rank": 0
+    },
+    {
+      "interpretation": "q_1=0 makes the Ward condition identically satisfied",
+      "matrix": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "name": "killing_L1_ward_identity",
+      "rank": 0
+    },
+    {
+      "interpretation": "one modulus Euler equation constrains one coefficient direction",
+      "matrix": [
+        [
+          1,
+          1
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "name": "single_berger_modulus_stationarity",
+      "rank": 1
+    }
+  ],
+  "current_internal_maximum_rank": 1,
+  "effective_completion_available_without_new_author_declarations": false,
+  "einstein_matching_candidate": {
+    "matrix": [
+      [
+        0,
+        1
+      ],
+      [
+        3,
+        1
+      ]
+    ],
+    "rank": 2,
+    "solution": {
+      "c_R2": "0",
+      "c_Ricci2": "0"
+    },
+    "status": "DECLARED_RENORMALIZATION_CONDITION_NOT_DERIVED_PREDICTION"
+  },
+  "exact_next_object": "AUTHOR_OWNED_SELECTION_BETWEEN_A_ZERO_INPUT_UV_COMPLETION_AND_A_MINIMAL_EFFECTIVE_FOUNDATIONAL_INPUT_SET_FOLLOWED_BY_NORMALIZED_L2_L3_KOSMANN_SUMS_NONLINEAR_FLAVOR_BRANCH_COLOR_WILSON_STRESS_NEUTRINO_SCALE_AND_FULL_COUPLED_BVP",
+  "frozen_predictions_changed": false,
+  "minimum_continuous_effective_input_count": 4,
+  "minimum_continuous_effective_inputs": [
+    {
+      "derivation_status": "OPEN_OR_DECLARED",
+      "input": "c_R2^ren(mu_star)",
+      "role": "first independent local gravitational renormalization condition"
+    },
+    {
+      "derivation_status": "OPEN_OR_DECLARED",
+      "input": "c_Ricci2^ren(mu_star)",
+      "role": "second independent local gravitational renormalization condition"
+    },
+    {
+      "derivation_status": "OPEN_OR_DECLARED",
+      "input": "c_YM(mu_star)",
+      "role": "one common Yang-Mills normalization; trace data fix ratios only"
+    },
+    {
+      "derivation_status": "OPEN_OR_DECLARED",
+      "input": "L_star_or_equivalent_scale",
+      "role": "one universal dimensionful anchor or dimensional-transmutation condition"
+    }
+  ],
+  "physical_completion": false,
+  "primary_verdict": "BHSM_CANNOT_BE_COMPLETED_AS_A_ZERO_INPUT_PHYSICAL_DERIVATION_FROM_THE_CURRENT_ACTION_ARTIFACTS_AND_SPECTRAL_DATA",
+  "remaining_computation_gates": [
+    {
+      "gate": "normalized_L2_L3_Kosmann_sums",
+      "status": "OPEN",
+      "type": "spectral computation"
+    },
+    {
+      "gate": "nonlinear_flavor_branch_and_relative_holonomy_orientation",
+      "status": "OPEN",
+      "type": "nonlinear PDE/bifurcation computation"
+    },
+    {
+      "gate": "action_owned_up_down_wavefunction_embeddings_and_CKM",
+      "status": "OPEN",
+      "type": "operator/domain construction"
+    },
+    {
+      "gate": "SU3_Wilson_string_tension_and_color_stress",
+      "status": "OPEN",
+      "type": "nonperturbative gauge computation"
+    },
+    {
+      "gate": "neutrino_dimensionful_response_and_Delta_m2",
+      "status": "OPEN",
+      "type": "scale/neutral-response computation"
+    },
+    {
+      "gate": "full_coupled_Einstein_eta_Dirac_YM_Higgs_Wilson_BVP",
+      "status": "OPEN",
+      "type": "global nonlinear existence/stability computation"
+    }
+  ],
+  "secondary_verdict": "BHSM_CAN_BE_CLOSED_AS_A_DECLARED_EFFECTIVE_THEORY_ONLY_AFTER_EXPLICIT_RENORMALIZATION_GAUGE_AND_SCALE_INPUTS_PLUS_PENDING_NONPERTURBATIVE_AND_FLAVOR_OPERATOR_CALCULATIONS",
+  "usb_touched": false,
+  "validation": {
+    "cap_constraint_rank_zero": true,
+    "channel_determinant_is_420": true,
+    "channel_rank_is_two": true,
+    "completion_remains_false": true,
+    "einstein_matching_rank_two": true,
+    "einstein_matching_selects_zero": true,
+    "killing_constraint_rank_zero": true,
+    "one_modulus_rank_one": true
+  },
+  "validation_passed": true,
+  "version": "v14.48",
+  "zero_input_completion_supported": false
+}

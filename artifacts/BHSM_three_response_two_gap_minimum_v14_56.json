@@ -1,0 +1,32 @@
+{
+  "artifact": "BHSM_three_response_two_gap_minimum_v14_56",
+  "detector_map": "P_alpha=|<D_alpha,z>|^2 for alpha=e,mu,tau",
+  "fixed_pair_condition": "D_tau Xi_AB=0",
+  "interpretation": "the pair does not change identity; the three-component geometric wake acquires two independent relative phases",
+  "minimum_wake_state": {
+    "difference_map": [
+      [
+        -1.0,
+        1.0,
+        0.0
+      ],
+      [
+        -1.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "equation": "i D_tau z=H_wake z",
+    "global_phase_removed": true,
+    "independent_relative_phase_dimension": 2,
+    "monodromy": "U(T) z_j=exp(-i theta_j) z_j",
+    "state": "z(tau) in C^3 with z^dagger z=1"
+  },
+  "single_scalar_cycle": {
+    "form": "phi(tau)=omega tau+phi_0; every Fourier component has frequency n omega",
+    "independent_phase_scale_rank": 1,
+    "sufficient_for_two_generic_independent_splittings": false
+  },
+  "two_gap_verdict": "BHSM_ONE_SCALAR_CYCLE_HAS_PHASE_RANK_ONE_WHILE_THREE_WAKE_RESPONSES_WITH_TWO_INDEPENDENT_SPLITTINGS_REQUIRE_THREE_FLOQUET_EIGENPHASES_OR_TWO_RELATIVE_PHASE_COORDINATES_WITH_FIXED_PAIR_IDENTITY",
+  "version": "v14.56"
+}
