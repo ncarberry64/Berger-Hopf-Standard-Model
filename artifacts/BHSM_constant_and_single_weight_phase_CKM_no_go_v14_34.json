@@ -1,0 +1,77 @@
+{
+  "artifact": "BHSM_constant_and_single_weight_phase_CKM_no_go_v14_34",
+  "axisymmetric_no_go": "if both sector responses are functions only of the same commuting K and q operators, their left response operators commute and CKM remains I3 up to phases/permutations",
+  "fixed_weight_ranks": {
+    "-4": 1,
+    "0": 1,
+    "2": 1,
+    "4": 1,
+    "6": 1,
+    "8": 1
+  },
+  "identity_overlap_kernel": {
+    "imag": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "real": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ]
+  },
+  "required_escape": "a non-axisymmetric multi-harmonic texture or an equivalent sector-dependent common-domain embedding that does not commute with the frozen projectors",
+  "theorem": "a constant phase is a rephasing, and one fixed Hopf weight p only supports one up-sector row for the frozen ledgers; neither can yield a full-rank 3x3 cross-Gram kernel",
+  "validation": {
+    "axisymmetric_function_of_K_and_q_remains_diagonal": true,
+    "constant_phase_cannot_change_rank_or_magnitudes": true,
+    "every_single_weight_bridge_has_rank_at_most_one": true,
+    "identity_raw_harmonic_overlap_rank_one": true,
+    "only_exact_shared_mode_is_t_b_00": true,
+    "single_phase_quantum_cannot_generate_full_rank_CKM": true
+  },
+  "validation_passed": true,
+  "version": "v14.34",
+  "weight_difference_matrix": [
+    [
+      4,
+      8,
+      8
+    ],
+    [
+      2,
+      6,
+      6
+    ],
+    [
+      -4,
+      0,
+      0
+    ]
+  ]
+}

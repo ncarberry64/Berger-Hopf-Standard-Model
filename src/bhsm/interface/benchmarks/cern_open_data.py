@@ -59,24 +59,42 @@ def verify_download(path: str | Path, manifest: dict[str, Any]) -> None:
 
 
 def download_open_data(
-    manifest: dict[str, Any], destination: str | Path, *, timeout: float = 120.0
+    manifest: dict[str, Any],
+    destination: str | Path,
+    *,
+    timeout: float = 120.0,
+    attempts: int = 3,
 ) -> Path:
+    """Download and checksum-verify a pinned open-data file.
+
+    A short or intermediary CDN response is discarded and retried from byte
+    zero.  Every attempt must still pass the frozen size, SHA-256, and
+    Adler-32 gates; the final integrity error is propagated unchanged.
+    """
+
+    if not isinstance(attempts, int) or isinstance(attempts, bool) or attempts < 1:
+        raise ValueError("attempts must be a positive integer")
     target = Path(destination)
     target.parent.mkdir(parents=True, exist_ok=True)
     temporary = target.with_suffix(target.suffix + ".part")
     request = urllib.request.Request(
         manifest["file"]["url"], headers={"User-Agent": "BHSM-open-data-benchmark/1.0"}
     )
-    try:
-        with urllib.request.urlopen(request, timeout=timeout) as response, temporary.open("wb") as out:
-            while chunk := response.read(1024 * 1024):
-                out.write(chunk)
-        verify_download(temporary, manifest)
-        temporary.replace(target)
-    finally:
-        if temporary.exists():
-            temporary.unlink()
-    return target
+    for attempt in range(1, attempts + 1):
+        try:
+            with urllib.request.urlopen(request, timeout=timeout) as response, temporary.open("wb") as out:
+                while chunk := response.read(1024 * 1024):
+                    out.write(chunk)
+            verify_download(temporary, manifest)
+            temporary.replace(target)
+            return target
+        except (OSError, ValueError):
+            if attempt == attempts:
+                raise
+        finally:
+            if temporary.exists():
+                temporary.unlink()
+    raise RuntimeError("unreachable download retry state")
 
 
 def load_cms_dimuon_vectors(

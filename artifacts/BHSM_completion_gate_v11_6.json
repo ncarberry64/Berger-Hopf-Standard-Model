@@ -1,0 +1,779 @@
+{
+  "BHSM_1_0_release_complete": false,
+  "Mark_I": "REACHED",
+  "Mark_II": "REACHED_ON_SELECTED_FINITE_RADIUS_CORE_BRANCH",
+  "Mark_III": "NOT_REACHED",
+  "Mark_IV": "NOT_REACHED",
+  "artifact": "BHSM_completion_gate_v11_6",
+  "ckm_action_equivalence": {
+    "action_current": "I3 on the live effective-action weak-family basis",
+    "allowed_equivalence": "independent diagonal quark-field rephasings on up and down mass eigenstates",
+    "artifact": "BHSM_CKM_action_equivalence_v11_6",
+    "candidate_current": "v11.5 author-selected spectral K_ud",
+    "invariant": "entrywise magnitudes",
+    "physical_CKM_action_derived": false,
+    "residual": 0.3270982525105819,
+    "result": "NOT_EQUIVALENT_UP_TO_LEFT_RIGHT_DIAGONAL_QUARK_REPHASING",
+    "validation": {
+      "action_derived_claim_not_made": true,
+      "equivalence_rejected": true,
+      "nonzero_residual": true,
+      "rephasing_invariant_used": true
+    },
+    "validation_passed": true,
+    "version": "v11.6"
+  },
+  "classification": "TESTED_PARENT_ACTION_REDUCTION_AND_UNIQUENESS_NO_GO",
+  "exact_next_object": "ACTION_OWNED_COMMON_DOMAIN_UP_DOWN_FAMILY_WAVEFUNCTION_ORIENTATION_AND_CURRENT_PAIRING_MAP",
+  "flavor_action_unconditionally_closed": false,
+  "frozen_predictions_changed": false,
+  "invalidated_in_v11_6": [
+    "mathematical viability of the v11.5 kernel implies action ownership",
+    "SU2 closure uniquely selects a 3x3 family kernel",
+    "the polar functor selects a raw kernel before that raw kernel is action-derived",
+    "commuting up/down scalar spectral weights alone generate nontrivial CKM mixing"
+  ],
+  "official_prediction_logic_changed": false,
+  "open": [
+    "ACTION_OWNED_COMMON_DOMAIN_UP_DOWN_FAMILY_WAVEFUNCTION_ORIENTATION_AND_CURRENT_PAIRING_MAP",
+    "Mark III gauge-dressed orbit/current, stability, hadron, neutrino-current, unit-bridge, and canonical-normalization objects",
+    "Mark IV finite empirical replacement tests after Mark III"
+  ],
+  "parent_action_charged_current": {
+    "action_owned_current_source": "T4_fermion SU2L covariant derivative",
+    "artifact": "BHSM_parent_action_charged_current_v11_6",
+    "classification": "PARENT_ACTION_TERM_AND_VARIATION_PROVENANCE_LEDGER",
+    "cross_level_reduction_status": "MISSING_BULK_GAUGE_SPINOR_REDUCTION",
+    "parent_S8_current_source": null,
+    "sources": [
+      {
+        "family_factor": "I3 in the weak/generation basis",
+        "mixed_variation": "delta^3 S4/(delta W+_mu delta bar(u_L) delta d_L) = g2 gamma^mu I3/sqrt(2)",
+        "ownership": "EFFECTIVE_ACTION_OWNED",
+        "source": "src/bhsm/interface/master_action/terms.py",
+        "term": "T4_fermion = int sqrt(-h) i bar(Psi) gamma^mu D_mu Psi"
+      },
+      {
+        "family_factor": "Y_u,Y_d are typed independent inputs, not a spectral cross-current selection",
+        "mixed_variation": "mass-basis current is W_u^dagger W_d only after independently supplied Yukawa diagonalizations",
+        "ownership": "EFFECTIVE_ACTION_INPUT",
+        "source": "src/bhsm/interface/master_action/terms.py",
+        "term": "T4_Yukawa with independent Y_u and Y_d"
+      },
+      {
+        "family_factor": "J_ch and X_ch are not explicitly defined or action-normalized",
+        "mixed_variation": "not evaluable as a kernel",
+        "ownership": "CONDITIONAL_SYMBOLIC_TEMPLATE",
+        "source": "src/bhsm/interface/unified_dynamical_action.py",
+        "term": "g_ch Re <J_ch(P_gen Psi,A_SU2),X_ch(P_ch Psi)>_Sigma"
+      },
+      {
+        "family_factor": "K_CG must first be action derived",
+        "mixed_variation": "not a source for K_CG",
+        "ownership": "CONDITIONAL_INTERFACE_NOT_ACTIVE_PARENT_TERM",
+        "source": "src/bhsm/interface/master_action/common_parent_charged_current_attachment.py",
+        "term": "L_cc^CG with U_CG=Pol(K_CG)"
+      },
+      {
+        "family_factor": "commuting diagonal operators; canonical CKM=I3 and J=0",
+        "mixed_variation": "does not supply <u_i,J_plus_action d_j>_common",
+        "ownership": "CONDITIONAL_SPECTRAL_RESPONSE_PAIR",
+        "source": "src/bhsm/interface/completion/quark_yukawa_ckm_v11_4.py",
+        "term": "diagonal common-basis H_u and H_d response pair"
+      },
+      {
+        "family_factor": "nontrivial unitary 3x3 kernel",
+        "mixed_variation": "absent from the existing action",
+        "ownership": "AUTHOR_SELECTED_NO_FIT_ACTION_CANDIDATE",
+        "source": "src/bhsm/interface/completion/spectral_charged_current_v11_5.py",
+        "term": "declared coefficient-free K_ud spectral rule"
+      }
+    ],
+    "v11_5_kernel_factor_provenance": [
+      {
+        "factor": "sin(theta12)=sqrt(T_down_light/T_down_middle)",
+        "parent_action_variation_source": null,
+        "source": "src/bhsm/interface/completion/spectral_charged_current_v11_5.py",
+        "status": "AUTHOR_SELECTED_RULE_USING_FROZEN_V11_4_SPECTRAL_WEIGHTS"
+      },
+      {
+        "factor": "sin(theta23)=2*T_down_middle",
+        "parent_action_variation_source": null,
+        "source": "src/bhsm/interface/completion/spectral_charged_current_v11_5.py",
+        "status": "AUTHOR_SELECTED_RULE; FACTOR_2_NOT_SELECTED_BY_CURRENT ACTION"
+      },
+      {
+        "factor": "sin(theta13)=sqrt(T_up_light)",
+        "parent_action_variation_source": null,
+        "source": "src/bhsm/interface/completion/spectral_charged_current_v11_5.py",
+        "status": "AUTHOR_SELECTED_RULE_USING_FROZEN_V11_4_SPECTRAL_WEIGHT"
+      },
+      {
+        "factor": "delta=2/sqrt(pi)",
+        "parent_action_variation_source": null,
+        "source": "src/bhsm/interface/completion/spectral_charged_current_v11_5.py",
+        "status": "AUTHOR_SELECTED_PHASE_RULE; NO ACTION-SELECTED COMPLEX ORIENTATION"
+      },
+      {
+        "factor": "standard three-angle one-phase unitary parameterization",
+        "parent_action_variation_source": null,
+        "source": "src/bhsm/interface/completion/spectral_charged_current_v11_5.py",
+        "status": "CONVENTIONAL_UNITARY_PARAMETERIZATION"
+      },
+      {
+        "factor": "g2/sqrt(2) and W+/W- adjoint pair",
+        "parent_action_variation_source": "T4_fermion covariant derivative",
+        "source": "src/bhsm/interface/master_action/terms.py",
+        "status": "EFFECTIVE_SU2L_DIRAC_CURRENT_OWNED; g2 VALUE REMAINS LEVELWISE INPUT"
+      },
+      {
+        "factor": "frozen up/down three-slot modules",
+        "parent_action_variation_source": null,
+        "source": "src/bhsm/interface/master_action/generation_projector_action_attachment.py",
+        "status": "FROZEN_DERIVED_CONDITIONAL_GEOMETRIC_STRUCTURE_ATTACHED_TO_EFFECTIVE_M4"
+      },
+      {
+        "factor": "common-domain wavefunction pairing <u_i,J_plus d_j>_common",
+        "parent_action_variation_source": null,
+        "source": null,
+        "status": "MISSING_EXACT_ACTION_OBJECT"
+      }
+    ],
+    "validation": {
+      "conditional_templates_not_promoted": true,
+      "explicit_effective_dirac_source_located": true,
+      "no_measured_mixing_inputs": true,
+      "v11_5_boundary_preserved": true
+    },
+    "validation_passed": true,
+    "version": "v11.6"
+  },
+  "parent_action_current_reduction": {
+    "action_kernel_imag": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "action_kernel_real": [
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "artifact": "BHSM_parent_action_current_reduction_v11_6",
+    "calculation": {
+      "action_term": "int sqrt(-h) i bar(Q_L) gamma^mu D_mu Q_L",
+      "covariant_derivative_charged_piece": "-i g2 (W+ T+ + W- T-)/sqrt(2)",
+      "mass_basis_rule": "V_action=W_u^dagger I3 W_d",
+      "mixed_variation": "delta^3 S4/(delta W+_mu delta bar(u_L,i) delta d_L,j) = (g2/sqrt(2)) gamma^mu delta_ij",
+      "v11_4_canonical_response_rule": "W_u=W_d=I3 up to diagonal phases and common slot ordering",
+      "v11_4_canonical_result": "V_action=I3 up to diagonal quark-field rephasings; J=0",
+      "weak_basis_family_kernel": "I3"
+    },
+    "equivalence_result": "NOT_EQUIVALENT_UP_TO_LEFT_RIGHT_DIAGONAL_QUARK_REPHASING",
+    "exact_next_object": "ACTION_OWNED_COMMON_DOMAIN_UP_DOWN_FAMILY_WAVEFUNCTION_ORIENTATION_AND_CURRENT_PAIRING_MAP",
+    "missing_map": {
+      "codomain": "frozen down family module F_d on the same domain",
+      "domain": "frozen up family module F_u on the common attachment Hilbert domain",
+      "not_supplied_by": [
+        "diagonal scalar spectral weights",
+        "triality projector labels alone",
+        "unitarity or SU2 closure",
+        "the polar functor after an unsourced raw kernel is declared"
+      ],
+      "required_data": [
+        "normalized common-domain up and down family wavefunctions",
+        "their action-owned relative orientation and phase convention",
+        "the SU2L raising-current operator on that common domain",
+        "the action measure and projector sandwich defining <u_i,J_plus d_j>_common"
+      ]
+    },
+    "primary_verdict": "BHSM_PARENT_ACTION_CURRENT_REDUCTION_BLOCKED_BY_UNFIXED_COMMON_DOMAIN_FAMILY_WAVEFUNCTION_MAP",
+    "rephasing_invariant_magnitude_residual": 0.3270982525105819,
+    "v11_5_kernel_off_diagonal_norm": 0.3249804664359198,
+    "validation": {
+      "action_kernel_full_rank": true,
+      "action_kernel_is_I3": true,
+      "no_empirical_inputs": true,
+      "no_parent_action_spectral_kernel_recovery": true,
+      "not_equivalent_by_quark_rephasing": true,
+      "spectral_kernel_has_nonzero_off_diagonal_entries": true,
+      "v11_4_family_modules_exactly_traced": true,
+      "v11_4_responses_commute_in_canonical_basis": true
+    },
+    "validation_passed": true,
+    "version": "v11.6",
+    "why": "left/right diagonal rephasings preserve every entry magnitude, while I3 has zero off-diagonal magnitudes and the v11.5 kernel does not"
+  },
+  "physical_CKM_derived": false,
+  "previous_exact_object": "PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL",
+  "previous_object_resolution": "ATTACKED_BOTH_ROUTES_AND_REPLACED_BY_A_MORE_PRECISE_ACTION_LEVEL_MISSING_OBJECT",
+  "primary_verdict": "BHSM_PARENT_ACTION_CURRENT_REDUCTION_BLOCKED_BY_UNFIXED_COMMON_DOMAIN_FAMILY_WAVEFUNCTION_MAP",
+  "spectral_current_uniqueness": {
+    "algebraic_reason": "For every U in U(3), T+=[[0,U],[0,0]], T-=T+^dagger, and T3=diag(I3,-I3)/2 obey the same SU2 algebra. Nonzero CP removes lower-dimensional subsets but not the continuous U(3) freedom.",
+    "answer": "NO",
+    "artifact": "BHSM_spectral_current_uniqueness_v11_6",
+    "continuous_ambiguity": "For an open interval of scale_23 values, the standard unitary kernel remains full rank, SU2-closing, neutral-current central, and CP-odd.",
+    "counterexamples": [
+      {
+        "determinant_modulus": 1.0,
+        "jarlskog": 3.10117029454378e-05,
+        "magnitudes": [
+          [
+            0.9742095600721029,
+            0.22561702639894465,
+            0.0035623676140463315
+          ],
+          [
+            0.2254664853946855,
+            0.9732628072432431,
+            0.04386766463774175
+          ],
+          [
+            0.008977584746899065,
+            0.04308671994825354,
+            0.9990309992869156
+          ]
+        ],
+        "scale_23": 1.0,
+        "su2_residual_max": 3.521798114113826e-16,
+        "unitarity_residual": 2.489446392764738e-16
+      },
+      {
+        "determinant_modulus": 1.0,
+        "jarlskog": 2.4817971181057364e-05,
+        "magnitudes": [
+          [
+            0.9742095600721029,
+            0.22561702639894465,
+            0.0035623676140463315
+          ],
+          [
+            0.22553164836864426,
+            0.9736035525323589,
+            0.035094131710193405
+          ],
+          [
+            0.00715602181675634,
+            0.034540988626096315,
+            0.9993776620759992
+          ]
+        ],
+        "scale_23": 0.8,
+        "su2_residual_max": 3.3781855066423465e-17,
+        "unitarity_residual": 2.2356638449882963e-16
+      }
+    ],
+    "question": "Do full rank, unitarity, SU2 closure, family-central neutral current, nonzero CP, frozen inputs, and coefficient freedom uniquely select the v11.5 kernel?",
+    "rephasing_invariant_magnitude_residual": 0.012392054874971673,
+    "spectral_functional_calculus_no_go": {
+      "consequence": "A nontrivial cross-family orientation/current map is new required action data, not a consequence of the existing two response spectra.",
+      "premise": "The v11.4 H_u and H_d are diagonal, commuting, and nondegenerate on the declared common slot basis.",
+      "result": "Any joint polynomial or ordinary joint functional calculus F(H_u,H_d) is diagonal; its polar factor is diagonal and has no physical mixing or CP invariant."
+    },
+    "tautology_boundary": "Adding the four v11.5 angle/phase equations to the admissible-class axioms selects the declared matrix by definition; it is not a uniqueness theorem deriving those equations from the parent action or prior BHSM axioms.",
+    "uniqueness_established": false,
+    "validation": {
+      "both_close_SU2": true,
+      "both_full_rank": true,
+      "both_have_nonzero_CP": true,
+      "both_unitary": true,
+      "candidates_not_rephasing_equivalent": true,
+      "commuting_spectral_functional_calculus_cannot_mix": true,
+      "continuous_family_counterexample_established": true,
+      "neutral_current_family_central_for_any_unitary_kernel": true,
+      "no_measured_mixing_inputs": true
+    },
+    "validation_passed": true,
+    "verdict": "BHSM_SPECTRAL_CURRENT_UNIQUENESS_BLOCKED_BY_RESIDUAL_CONTINUOUS_EQUIVARIANT_KERNEL_FAMILY",
+    "version": "v11.6"
+  },
+  "v11_5_recovery_point": {
+    "BHSM_1_0_release_complete": false,
+    "Mark_I": "REACHED",
+    "Mark_II": "REACHED_ON_SELECTED_FINITE_RADIUS_CORE_BRANCH",
+    "Mark_III": "NOT_REACHED",
+    "Mark_IV": "NOT_REACHED",
+    "artifact": "BHSM_completion_gate_v11_5",
+    "classification": "EXECUTABLE_FLAVOR_ACTION_CANDIDATES_WITH_UPSTREAM_PROVENANCE_GATE_OPEN",
+    "exact_next_object": "PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL",
+    "frozen_predictions_changed": false,
+    "official_prediction_logic_changed": false,
+    "open": [
+      "PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL",
+      "explicit parent-action mixed second variation/current pairing or a BHSM-axiom uniqueness theorem",
+      "sector-wide up/down absolute normalization",
+      "common-scheme RG transport and finite empirical replacement tests as downstream conditional evaluations",
+      "neutrino/PMNS extension outside the minimal Standard Model core",
+      "full release synchronization after finite empirical audit"
+    ],
+    "primary_verdict": "BHSM_FLAVOR_ACTION_CANDIDATES_ASSEMBLED_WITH_CHARGED_CURRENT_PROVENANCE_GATE_OPEN",
+    "spectral_charged_current": {
+      "SU2_residuals": {
+        "[T1,T2]-iT3": 1.7609662062125164e-16,
+        "[T3,Tminus]+Tminus": 0.0,
+        "[T3,Tplus]-Tplus": 0.0,
+        "[Tplus,Tminus]-2T3": 3.521798114113826e-16
+      },
+      "action_derived": false,
+      "action_ownership": "NOT_ESTABLISHED: the kernel has not been recovered from a parent-action mixed second variation/current pairing and is not selected by a stated uniqueness theorem",
+      "artifact": "BHSM_spectral_charged_current_v11_5",
+      "basis_order": [
+        "light",
+        "middle",
+        "heavy"
+      ],
+      "candidate_action_term": "-(g2/sqrt(2))[W+_mu ubar_L gamma^mu K_ud d_L+h.c.]",
+      "classification": "AUTHOR_SELECTED_NO_FIT_ACTION_CANDIDATE_NOT_ACTION_DERIVED",
+      "determinant_modulus": 1.0,
+      "exact_next_object": "PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL",
+      "input_rule": {
+        "delta": "4 sqrt(S_overlap)=2/sqrt(pi)",
+        "sin_theta_12": "sqrt(T_down_light/T_down_middle)",
+        "sin_theta_13": "sqrt(T_up_light)",
+        "sin_theta_23": "2 T_down_middle"
+      },
+      "inputs": {
+        "delta": 1.1283791670955126,
+        "sin_theta_12": 0.2256184580048353,
+        "sin_theta_13": 0.0035623676140463315,
+        "sin_theta_23": 0.04386794299087895
+      },
+      "jarlskog": 3.10117029454378e-05,
+      "kernel_imag": [
+        [
+          0.0,
+          0.0,
+          -0.003219380927352981
+        ],
+        [
+          -0.00013758616958226645,
+          -3.1863557623551165e-05,
+          0.0
+        ],
+        [
+          -0.0031333523136212837,
+          -0.0007256525296335275,
+          0.0
+        ]
+      ],
+      "kernel_magnitudes": [
+        [
+          0.9742095600721029,
+          0.22561702639894465,
+          0.0035623676140463315
+        ],
+        [
+          0.2254664853946855,
+          0.9732628072432431,
+          0.04386766463774175
+        ],
+        [
+          0.008977584746899065,
+          0.04308671994825354,
+          0.9990309992869156
+        ]
+      ],
+      "kernel_real": [
+        [
+          0.9742095600721029,
+          0.22561702639894465,
+          0.0015251391615855954
+        ],
+        [
+          -0.22546644341515187,
+          0.9732628067216543,
+          0.04386766463774175
+        ],
+        [
+          0.008413033410517214,
+          -0.043080608912891026,
+          0.9990309992869156
+        ]
+      ],
+      "measured_mixing_inputs": [],
+      "new_coefficients": [],
+      "new_fields": [],
+      "primary_verdict": "BHSM_SPECTRAL_CHARGED_CURRENT_KERNEL_MATHEMATICALLY_VIABLE_AS_AUTHOR_SELECTED_NO_FIT_ACTION_CANDIDATE",
+      "provenance_gate_satisfied": false,
+      "unitarity_residual": 2.489446392764738e-16,
+      "validation": {
+        "SU2_algebra_closed": true,
+        "absence_of_axiomatic_uniqueness_theorem_recorded": true,
+        "absence_of_parent_action_mixed_variation_or_current_pairing_recorded": true,
+        "angles_recovered": true,
+        "full_rank": true,
+        "kernel_selection_is_author_selected": true,
+        "neutral_current_family_central": true,
+        "no_measured_CKM_input": true,
+        "no_new_continuous_coefficient": true,
+        "nonzero_CP": true,
+        "provenance_gate_remains_open": true,
+        "unitary": true,
+        "uses_existing_g2_only": true
+      },
+      "validation_passed": true,
+      "version": "v11.5"
+    },
+    "v11_4": {
+      "BHSM_1_0_release_complete": false,
+      "Mark_I": "REACHED",
+      "Mark_II": "REACHED_ON_SELECTED_FINITE_RADIUS_CORE_BRANCH",
+      "Mark_III": "NOT_REACHED",
+      "Mark_IV": "NOT_REACHED",
+      "artifact": "BHSM_completion_gate_v11_4",
+      "charged_lepton_action": {
+        "action": "int_M4 [|DH|^2-lambda_H(Hdagger H-nu_BH^2)^2+i Lbar DL+i ebar De-(Lbar Y_BH H e+h.c.)]",
+        "anisotropy": 1.157054135733433,
+        "anisotropy_status": "INDEPENDENT_FROZEN_THEORY_INPUT_WITH_ALPHA_ANCHORED_NUMERICAL_SCREEN",
+        "artifact": "BHSM_minimal_M4_charged_lepton_action_v11_4",
+        "candidate_mass_eigenvalues_GeV": {
+          "e_slot": 0.0005229143548875549,
+          "mu_slot": 0.10566682607467498,
+          "tau_slot": 1.758930614523592
+        },
+        "candidate_mass_status": "CONDITIONAL_CALIBRATED_OUTPUT_NOT_PARAMETER_FREE_PREDICTION",
+        "classification": "AUTHOR_SELECTED_MINIMAL_M4_ACTION_COMPLETION_CONDITIONAL",
+        "electroweak_saddle_GeV": 246.16986520825228,
+        "exact_next_object": "ACTION_OWNED_UP_DOWN_YUKAWA_PAIR_AND_COMMON_LEFT_HANDED_CURRENT_KERNEL",
+        "independent_Ye_retained": false,
+        "overlap_eigenvalues": {
+          "e_slot": 0.00029729106456492414,
+          "mu_slot": 0.060074470932609786,
+          "tau_slot": 1.0
+        },
+        "primary_verdict": "BHSM_MINIMAL_M4_CHARGED_LEPTON_ACTION_ASSEMBLED_CONDITIONALLY",
+        "scale_calibration_GeV": 1.22089e+19,
+        "scale_status": "ONE_UNIVERSAL_DIMENSIONFUL_CALIBRATION",
+        "validation": {
+          "conditional_inputs_exposed": true,
+          "no_family_fit": true,
+          "no_lepton_mass_input": true,
+          "overlap_positive_contraction": true,
+          "single_profile_lift": true,
+          "single_trace_normalization": true,
+          "spectral_operator_nonnegative": true,
+          "standard_gauge_invariant_contraction": true,
+          "yukawa_dimensionless": true
+        },
+        "validation_passed": true,
+        "version": "v11.4",
+        "yukawa_eigenvalues": {
+          "e_slot": 3.0040743289839823e-06,
+          "mu_slot": 0.0006070420455456905,
+          "tau_slot": 0.010104825496118923
+        },
+        "yukawa_prefactor": 0.010104825496118923
+      },
+      "classification": "EXECUTABLE_CONDITIONAL_ASSEMBLY_ADVANCEMENT",
+      "closed_in_v11_4": [
+        "canonical whitened common-domain KKT response",
+        "positive nondegenerate family-octave attachment seeds",
+        "minimal conditional M4 charged-lepton spectral action",
+        "conditional up/down spectral Yukawa pair",
+        "canonical-identification CKM no-mixing theorem"
+      ],
+      "common_attachment_response": {
+        "artifact": "BHSM_common_attachment_response_v11_4",
+        "characteristic_equation": "3 mu^2-2(h_C+K+1) mu+h_C(K+1)=0",
+        "classification": "DERIVED_ON_AUTHOR_SELECTED_FINITE_RADIUS_CORE_BRANCH",
+        "constraint_jacobian": [
+          [
+            -1,
+            1,
+            1
+          ]
+        ],
+        "coordinate_order": [
+          "q_C",
+          "q_W",
+          "x_D=q_D/lambda_D"
+        ],
+        "exact_next_object": "MINIMAL_M4_CHARGED_LEPTON_ACTION_WITH_TRACE_NORMALIZED_HOPF_SEMIGROUP",
+        "family_octaves": {
+          "heavy": 0,
+          "light": 99,
+          "middle": 35
+        },
+        "ground_hessian_matrix": [
+          [
+            0.181391690148362,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "ground_reduced_hessian": [
+          [
+            0.181391690148362,
+            0.181391690148362
+          ],
+          [
+            0.181391690148362,
+            1.181391690148362
+          ]
+        ],
+        "inverse_octave_checks": {
+          "heavy": 5.995204332975845e-15,
+          "light": 98.99999999914081,
+          "middle": 34.99999999999181
+        },
+        "kinetic_matrix": [
+          [
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1
+          ]
+        ],
+        "lower_family_roots": {
+          "heavy": 0.08620600507952429,
+          "light": 0.09065467908218731,
+          "middle": 0.09058131073338889
+        },
+        "normalization_fix": "retain the v11.3 action-whitened coordinates and apply one shared map W to both K_white=W^T K_action W and H_white=W^T H_action W; do not combine them with the separate unwhitened packet pencil",
+        "primary_verdict": "BHSM_COMMON_ATTACHMENT_RESPONSE_POSITIVE_AND_NONDEGENERATE_ON_SELECTED_CORE_BRANCH",
+        "reduced_kinetic_matrix": [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "source_ledger": {
+          "constraint": {
+            "source": "v11.3 reciprocal Lambda85 matcher",
+            "status": "ACTION_DERIVED"
+          },
+          "core_curvature": {
+            "source": "BHSM_dynamic_envelope_reduction_v10_0 breathing_frequency_squared",
+            "status": "ACTION_DERIVED_ON_SELECTED_FINITE_RADIUS_CORE_BRANCH"
+          },
+          "depth_curvature": {
+            "source": "v11.0 positive Haar support metric plus the round S3 spectral octave",
+            "status": "CONDITIONAL_SPECTRAL_ACTION_ASSIGNMENT"
+          },
+          "kinetic_gram": {
+            "source": "v11.3 action-normalized local KKT model",
+            "status": "ACTION_WHITENED_CONDITIONAL"
+          },
+          "wall_curvature": {
+            "source": "BHSM_fixed_h_lyapunov_schmidt_potential_v6_30_5 critical quadratic coefficient",
+            "status": "ACTION_DERIVED_AT_CRITICAL_WALL_BRANCH"
+          }
+        },
+        "tangent_basis": [
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "validation": {
+          "critical_wall_curvature_zero": true,
+          "family_octaves_reconstructed": true,
+          "family_roots_nondegenerate": true,
+          "family_roots_positive": true,
+          "ground_depth_curvature_one": true,
+          "no_measured_mass_input": true,
+          "reduced_hessian_positive": true,
+          "reduced_kinetic_exact": true,
+          "shared_whitening_map_applied_to_gram_and_hessian": true,
+          "tangent_basis_exact": true,
+          "v11_3_constraint_preserved": true,
+          "whitened_kinetic_preserved": true
+        },
+        "validation_passed": true,
+        "version": "v11.4",
+        "whitening_provenance": {
+          "gram_transform": "K_white=W^T K_action W",
+          "hessian_transform": "H_white=W^T H_action W",
+          "incompatible_unwhitened_packet_pencil_used": false,
+          "map_from_v11_3_action_whitened_coordinates": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ]
+        }
+      },
+      "exact_next_object": "ACTION_NORMALIZED_SU2L_RAISING_CURRENT_CROSS_GRAM_KERNEL_ON_FROZEN_UP_DOWN_FAMILY_MODULES",
+      "frozen_predictions_changed": false,
+      "official_prediction_logic_changed": false,
+      "open": [
+        "ACTION_NORMALIZED_SU2L_RAISING_CURRENT_CROSS_GRAM_KERNEL_ON_FROZEN_UP_DOWN_FAMILY_MODULES",
+        "sector-wide action normalization for up/down absolute masses",
+        "RG transport and external comparison",
+        "Mark III physical orbit/current completion",
+        "Mark IV empirical replacement and release"
+      ],
+      "primary_verdict": "BHSM_MARK_II_RESPONSE_CLOSED_AND_MINIMAL_M4_FLAVOR_ACTION_ASSEMBLED_CONDITIONALLY",
+      "quark_yukawa_ckm_gate": {
+        "anisotropy": 1.157054135733433,
+        "artifact": "BHSM_quark_yukawa_CKM_gate_v11_4",
+        "canonical_CKM": "I3",
+        "canonical_Jarlskog": 0,
+        "canonical_commutator": [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "classification": "CONDITIONAL_SPECTRAL_PAIR_AND_EXACT_OBSTRUCTION",
+        "down_overlap_eigenvalues": {
+          "heavy": 1.0,
+          "light": 0.0011165200546001757,
+          "middle": 0.021933971495439474
+        },
+        "exact_next_object": "ACTION_NORMALIZED_SU2L_RAISING_CURRENT_CROSS_GRAM_KERNEL_ON_FROZEN_UP_DOWN_FAMILY_MODULES",
+        "primary_verdict": "BHSM_QUARK_SPECTRAL_PAIR_ASSEMBLED_BUT_NONTRIVIAL_CKM_REQUIRES_CROSS_CURRENT_KERNEL",
+        "required_kernel": "K_ud[i,j]=<u_i,J_plus_action d_j>_common",
+        "up_overlap_eigenvalues": {
+          "heavy": 1.0,
+          "light": 1.2690463017606151e-05,
+          "middle": 0.004155250277034144
+        },
+        "validation": {
+          "arbitrary_unitary_not_inserted": true,
+          "canonical_ckm_identity": true,
+          "canonical_jarlskog_zero": true,
+          "canonical_left_responses_commute": true,
+          "down_hierarchy_positive": true,
+          "middle_up_virtual_door_once": true,
+          "missing_cross_kernel_exposed": true,
+          "up_hierarchy_positive": true
+        },
+        "validation_passed": true,
+        "version": "v11.4"
+      },
+      "validation": {
+        "charged_lepton_action_valid": true,
+        "common_response_valid": true,
+        "conditional_inputs_visible": true,
+        "frozen_predictions_unchanged": true,
+        "mark_ii_operator_block_closed": true,
+        "nontrivial_CKM_not_fabricated": true,
+        "quark_gate_valid": true,
+        "release_not_overclaimed": true
+      },
+      "validation_passed": true,
+      "version": "v11.4"
+    },
+    "validated_in_v11_5": [
+      "full-rank author-selected no-fit K_ud candidate",
+      "unitarity of the CKM candidate",
+      "nonzero candidate CP invariant",
+      "exact SU2 algebra for the declared candidate kernel",
+      "family-central neutral current for the declared candidate kernel"
+    ],
+    "validation": {
+      "CP_orientation_present": true,
+      "SU2_closed": true,
+      "author_selected_candidate_boundary_exposed": true,
+      "downstream_tests_do_not_replace_provenance": true,
+      "no_measured_CKM_input": true,
+      "nontrivial_CKM_kernel_present": true,
+      "provenance_gate_open": true,
+      "spectral_current_valid": true,
+      "v11_4_assembly_valid": true
+    },
+    "validation_passed": true,
+    "version": "v11.5"
+  },
+  "validated_in_v11_6": [
+    "the live effective-action SU2L Dirac current reduces to family kernel I3",
+    "the v11.5 spectral kernel is not equivalent to that current under physical quark rephasings",
+    "full rank, unitarity, SU2 closure, neutral-current centrality, and nonzero CP leave a continuous kernel family",
+    "joint functional calculus of the commuting v11.4 response pair remains diagonal",
+    "the missing data are common-domain family wavefunctions, their action-owned relative orientation, and the current pairing map"
+  ],
+  "validation": {
+    "downstream_tests_do_not_replace_provenance": true,
+    "flavor_action_not_unconditionally_closed": true,
+    "frozen_predictions_unchanged": true,
+    "live_action_current_is_family_universal": true,
+    "mixed_variation_reduced": true,
+    "narrower_missing_action_object_identified": true,
+    "nontrivial_CKM_not_unconditionally_closed": true,
+    "parent_action_sources_traced": true,
+    "v11_5_candidate_not_promoted": true,
+    "v11_5_not_action_equivalent": true,
+    "v11_5_recovery_point_valid": true,
+    "viability_axioms_not_unique": true
+  },
+  "validation_passed": true,
+  "version": "v11.6"
+}

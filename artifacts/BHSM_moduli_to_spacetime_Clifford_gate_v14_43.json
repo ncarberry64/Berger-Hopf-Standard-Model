@@ -1,0 +1,38 @@
+{
+  "artifact": "BHSM_moduli_to_spacetime_Clifford_gate_v14_43",
+  "bosonic_moduli_principal_symbols": {
+    "FR_effect": "flat Z2 equivariance changes global signs and allowed spin representations, not the local differential order",
+    "nonrelativistic": "sigma_2(H_mod)=G^{AB}p_A p_B times identity on the FR line",
+    "relativistic_translation": "mass shell p_mu p^mu+M_eta^2=0 with scalar symbol"
+  },
+  "canonical_moduli_square_root": {
+    "base": "eta-knot moduli space",
+    "operator": "D_moduli=d_(L_FR)+d_(L_FR)^dagger",
+    "square": "D_moduli^2=Delta_moduli on differential forms twisted by L_FR",
+    "why_not_spacetime_Dirac": "Its symbol is Clifford multiplication by T*Moduli, not by T*M4; it also enlarges states to exterior forms and does not select a Spin(1,3) representation or chirality."
+  },
+  "conditional_minimal_linearization": "After separately declaring a spacetime Clifford module, a first-order operator gamma^mu p_mu is a square root of the scalar mass shell. The choice of module, chirality, connection, and normalization is additional data not fixed by the bosonic moduli metric or FR character.",
+  "numerical_residuals": {
+    "Cl4_anticommutator": 0.0,
+    "sample_symbol_square": 2.6645352591003756e-17
+  },
+  "primary_verdict": "BHSM_BOSONIC_FR_KNOT_MODULI_QUANTIZATION_AND_THE_FLAT_Z2_FR_LINE_DO_NOT_DERIVE_A_UNIQUE_LOCAL_SPACETIME_CLIFFORD_PRINCIPAL_SYMBOL_OR_CANONICAL_SECOND_QUANTIZED_FIELD_NORMALIZATION",
+  "rank_obstruction": {
+    "FR_line_complex_rank": 1,
+    "consequence": "The FR line cannot itself furnish gamma matrices. A separate spinor/Clifford module is required even after odd-degree FR quantization.",
+    "minimum_complex_Cl3_module_rank": 2,
+    "minimum_complex_Cl4_module_rank": 4
+  },
+  "validation": {
+    "Clifford_square_returns_scalar_symbol": true,
+    "FR_line_cannot_carry_spacetime_Clifford": true,
+    "FR_line_rank_one": true,
+    "explicit_Cl4_representation_valid": true,
+    "local_Dirac_normal_form_not_promoted": true,
+    "moduli_Hodge_Dirac_has_wrong_base_for_M4_principal_symbol": true,
+    "spacetime_Cl4_minimum_rank_four": true,
+    "spatial_Cl3_minimum_rank_two": true
+  },
+  "validation_passed": true,
+  "version": "v14.43"
+}

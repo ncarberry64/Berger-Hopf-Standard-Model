@@ -1,0 +1,34 @@
+{
+  "additional_requirements": [
+    "U_cw is unitary for the seam Hermitian metrics",
+    "U_cw intertwines the retained color, weak, hypercharge, and FR transition actions",
+    "U_cw has the regularity needed to preserve the H1 transmission domain"
+  ],
+  "artifact": "BHSM_core_wall_Dirac_transmission_matcher_v14_43",
+  "common_normal_condition": "U_cw^dagger alpha_n^wall U_cw=alpha_n^core",
+  "green_boundary_form": "B(psi,phi)=-i int_Seam [psi_c^dagger alpha_(n_c) phi_c+psi_w^dagger alpha_(n_w) phi_w]",
+  "nonuniqueness": {
+    "physical_meaning": "Self-adjointness fixes a matcher class, not a unique relative phase or holonomy.",
+    "rank4_normal_commutant_example": "U(2)_plus x U(2)_minus before internal-bundle restrictions",
+    "reference_matcher": "If U0 is one solution, U=U0 C is another whenever C is unitary and commutes with alpha_n and all retained seam structures."
+  },
+  "outward_normal_condition": "U_cw^dagger alpha_(n_w)^wall U_cw=-alpha_(n_c)^core",
+  "ownership_status": "MATCHER_CLASS_DERIVED_ACTION_SELECTED_MEMBER_OPEN",
+  "relative_vertex": "V_rel=V_core-U_cw^dagger V_wall U_cw",
+  "residuals": {
+    "bad_generic_unitary": 2.82842712474619,
+    "good": 0.0
+  },
+  "secondary_verdict": "BHSM_SELF_ADJOINT_CORE_WALL_DIRAC_TRANSMISSION_REQUIRES_A_UNITARY_CLIFFORD_INTERTWINER_FAMILY_BUT_THE_ACTION_DOES_NOT_SELECT_ITS_RELATIVE_HOLONOMY",
+  "transmission_domain": "psi_wall=U_cw psi_core",
+  "validation": {
+    "action_selected_matcher_not_claimed": true,
+    "generic_unitary_need_not_satisfy_intertwining": true,
+    "good_matcher_satisfies_Clifford_intertwining": true,
+    "good_matcher_unitary": true,
+    "matcher_family_nonunique": true,
+    "self_adjointness_does_not_select_relative_holonomy": true
+  },
+  "validation_passed": true,
+  "version": "v14.43"
+}

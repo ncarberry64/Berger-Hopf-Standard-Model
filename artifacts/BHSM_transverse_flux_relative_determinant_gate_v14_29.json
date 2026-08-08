@@ -1,0 +1,21 @@
+{
+  "artifact": "BHSM_transverse_flux_relative_determinant_gate_v14_29",
+  "confinement_boundary": "a stable straight tube precedes but does not prove a Wilson-loop area law or exclude string breaking",
+  "convexity": "sigma''=6K_Z/R^4+2pi B+sigma_residual''; require it positive at the saddle",
+  "definition": "sigma_k=inf_R inf_Phi (Gamma[Phi;W_k]-Gamma[parent])/(beta L)",
+  "derivative_expansion": "Delta sigma_det=pi R^2 delta B+2pi R delta tau+delta kappa+delta alpha/R+Delta sigma_nonlocal",
+  "reduction": "sigma(R)=K_Z/R^2+pi B R^2+2pi tau R+sigma_residual(R)",
+  "relative_determinant": "include gauge fixing, ghosts, fermion signs, zero-mode removal, negative-mode audit, common counterterms and regulator",
+  "renormalization": "B_ren=B_cl+delta B, tau_ren=tau_cl+delta tau (no double counting)",
+  "stationarity": "-2K_Z/R^3+2pi B R+2pi tau+sigma_residual'(R)=0",
+  "validation": {
+    "Gaussian_collar_string_tension_zero_result_preserved": true,
+    "classical_convexity_positive_for_nonnegative_B": true,
+    "stable_tube_not_called_area_law": true,
+    "stationary_equation_exact": true,
+    "wall_only_formula_exact": true,
+    "wallless_formula_exact": true
+  },
+  "validation_passed": true,
+  "version": "v14.29"
+}

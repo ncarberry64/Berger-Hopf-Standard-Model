@@ -1,0 +1,54 @@
+{
+  "exact_map": "N(delta)=q[tanh(q(L+delta))+tanh(q(L-delta))]",
+  "expansion": "N=2qt-2q^3 t(1-t^2) delta^2+(2/3)q^5 t(1-t^2)(2-3t^2) delta^4+O(delta^6)",
+  "negative_region": "qL>atanh(sqrt(2/3))",
+  "odd_derivatives_cancel": "D1=D3=0 by equal-cap reflection",
+  "physical_ell2_Landau_coefficient": false,
+  "positive_region": "0<qL<atanh(sqrt(2/3))",
+  "quadratic_coefficient": "-2 q^3 t(1-t^2) < 0 for q,L>0",
+  "quartic_coefficient": "(2/3) q^5 t(1-t^2)(2-3t^2)",
+  "rows": [
+    {
+      "a2": -0.46045435881856595,
+      "a4": 0.27934914821421664,
+      "quartic_sign": "POSITIVE",
+      "tanh_squared": 0.05998515119362204,
+      "x_qL": 0.25
+    },
+    {
+      "a2": -0.7578417022780214,
+      "a4": 0.19950370374349302,
+      "quartic_sign": "POSITIVE",
+      "tanh_squared": 0.40341419171866855,
+      "x_qL": 0.75
+    },
+    {
+      "a2": -0.5443310539518175,
+      "a4": 4.0288591274385735e-17,
+      "quartic_sign": "ZERO",
+      "tanh_squared": 0.6666666666666666,
+      "x_qL": 1.1462158347805889
+    },
+    {
+      "a2": -0.3271325972875479,
+      "a4": -0.04992916695765303,
+      "quartic_sign": "NEGATIVE",
+      "tanh_squared": 0.8192933610763514,
+      "x_qL": 1.5
+    },
+    {
+      "a2": -0.019634494363042477,
+      "a4": -0.0063511168032370875,
+      "quartic_sign": "NEGATIVE",
+      "tanh_squared": 0.9901339628345598,
+      "x_qL": 3.0
+    }
+  ],
+  "t": "tanh(qL)",
+  "this_is_a_shape_derivative_of_exact_DtN": true,
+  "this_is_v14_30_derivative_expansion_c4": false,
+  "threshold_exact": "atanh(sqrt(2/3))",
+  "threshold_numeric": 1.1462158347805889,
+  "version": "v14.77",
+  "x": "qL"
+}

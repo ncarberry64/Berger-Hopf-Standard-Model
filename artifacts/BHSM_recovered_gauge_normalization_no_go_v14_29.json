@@ -1,0 +1,64 @@
+{
+  "artifact": "BHSM_recovered_gauge_normalization_no_go_v14_29",
+  "common_coefficient_rows": [
+    {
+      "c_YM": 0.25,
+      "inverse_couplings": [
+        0.8333333333333334,
+        0.5,
+        0.5
+      ],
+      "normalized_g_squared_ratio": [
+        0.6,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "c_YM": 1.0,
+      "inverse_couplings": [
+        3.3333333333333335,
+        2.0,
+        2.0
+      ],
+      "normalized_g_squared_ratio": [
+        0.6,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "c_YM": 4.0,
+      "inverse_couplings": [
+        13.333333333333334,
+        8.0,
+        8.0
+      ],
+      "normalized_g_squared_ratio": [
+        0.6,
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "identity": "6*pi^2=Vol(S3_unit) Tr_C3(I); it becomes one for normalized measure and normalized trace",
+  "invariance_theorem": "on a compact simple adjoint module an invariant projector is 0 or I; rank dim(g)-1 cannot define an unbroken kinetic form",
+  "source_versions": [
+    "v14.20",
+    "v14.21"
+  ],
+  "status": "COMMON_DIMENSIONLESS_YANG_MILLS_NORMALIZATION_OPEN",
+  "topology_result": "integer integral tr(F wedge F) does not quantize the coefficient of tr(F wedge star F)",
+  "trace_result": "kY:k2:k3=10/3:2:2 fixes gY^2:g2^2:g3^2=3/5:1:1 but leaves c_YM free",
+  "validation": {
+    "absolute_couplings_change_under_common_rescaling": true,
+    "instanton_number_does_not_fix_F_star_F_coefficient": true,
+    "normalized_measure_trace_product_is_one": true,
+    "one_two_seven_not_unbroken_kinetic_weights": true,
+    "rank_dim_minus_one_projector_not_Ad_invariant_for_simple_factor": true,
+    "ratios_invariant_under_common_rescaling": true,
+    "six_pi2_equals_S3_volume_times_C3_trace": true,
+    "trace_ratio_is_three_fifths_one_one_for_g_squared": true
+  },
+  "validation_passed": true
+}

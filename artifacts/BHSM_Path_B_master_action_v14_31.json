@@ -1,0 +1,85 @@
+{
+  "action_ownership_gate": "PASSED_BY_EXPLICIT_FOUNDATIONAL_POSTULATE",
+  "artifact": "BHSM_Path_B_master_action_v14_31",
+  "authoritative_action": "S_BHSM^PathB=S_retained_non_eta+S_YM[A]+S_eta_phys[A,eta]+S_constraint+retained gravity/Higgs/seam terms",
+  "field_space": "Conn(P_color) x Gamma(Q_G2/SU3) x retained independent fields",
+  "object_ledger": [
+    {
+      "equation": "Yang-Mills equation with eta and retained matter sources",
+      "independent_or_composite": "independent",
+      "object": "P_color and A_physical",
+      "status": "FOUNDATIONAL_RETAINED",
+      "type": "physical SU3 principal bundle and connection",
+      "variation": "delta A"
+    },
+    {
+      "equation": "none",
+      "independent_or_composite": "canonical structure-group extension",
+      "object": "Q_G2=P_color x_SU3 G2",
+      "status": "FOUNDATIONAL_POSTULATE",
+      "type": "extended parent bundle",
+      "variation": "none independently"
+    },
+    {
+      "equation": "gauged p2+p8 eta Euler equation",
+      "independent_or_composite": "independent physical sigma-model field",
+      "object": "eta",
+      "status": "AUTHORITATIVE_PHYSICAL_FIELD",
+      "type": "section of Q_G2/SU3",
+      "variation": "tangent delta eta"
+    },
+    {
+      "equation": "none independently",
+      "independent_or_composite": "composite",
+      "object": "theta=Theta_eta(D_A eta)",
+      "status": "NO_INDEPENDENT_VECTOR_FIELD",
+      "type": "G2/SU3 intrinsic torsion",
+      "variation": "chain rule from delta A and delta eta"
+    },
+    {
+      "equation": "UV matching problem",
+      "independent_or_composite": "not co-varied with eta_phys",
+      "object": "M8 eta construction",
+      "status": "OPEN_PROVENANCE_NOT_DUPLICATE_PHYSICAL_FIELD",
+      "type": "candidate ultraviolet/geometric origin",
+      "variation": "outside the physical Path-B action unless a future matching theorem replaces eta_phys"
+    },
+    {
+      "equation": "Wilson-sourced BVP",
+      "independent_or_composite": "functional of A and endpoints",
+      "object": "Wilson singlet",
+      "status": "EXACT_SOURCE_NOT_DYNAMICAL_FIELD",
+      "type": "gauge-invariant source/observable insertion",
+      "variation": "source response"
+    },
+    {
+      "equation": "future first-order Dirac equation",
+      "independent_or_composite": "not yet admitted simultaneously",
+      "object": "Psi_eta",
+      "status": "OPEN_NO_DOUBLE_COUNTING_GATE",
+      "type": "future FR collective Dirac representative",
+      "variation": "after collective matching only"
+    }
+  ],
+  "postulates": [
+    "Q_G2=P_color x_SU3 G2",
+    "eta is the physical section of Q_G2/SU3",
+    "the v14.29 gauged p2+p8 eta density is a foundational physical action term",
+    "theta=Theta_eta(D_A eta) is composite"
+  ],
+  "primary_verdict": "BHSM_V14_31_PATH_B_ADOPTS_THE_CANONICAL_G2_EXTENSION_OF_THE_PHYSICAL_COLOR_BUNDLE_AND_THE_COMPOSITE_ETA_SU3_SIGMA_ACTION_AS_FOUNDATIONAL_PHYSICAL_DATA_CLOSING_THE_COLOR_ETA_ACTION_OWNERSHIP_GATE_WITHOUT_ADDITIONAL_VECTOR_FIELDS",
+  "replacement_rule": "do not add a second independently varied M8 eta copy; M8 is a UV-origin candidate until matched",
+  "secondary_verdict": "THE_M8_TO_PHYSICAL_ETA_REDUCTION_IS_RECLASSIFIED_AS_AN_OPEN_ULTRAVIOLET_PROVENANCE_AND_MATCHING_THEOREM_NOT_A_BLOCKER_ON_THE_PHYSICAL_BHSM_MASTER_ACTION",
+  "validation": {
+    "FR_field_not_prematurely_added": true,
+    "Wilson_operator_is_source_not_field": true,
+    "action_ownership_gate_closed_by_declared_postulate": true,
+    "all_path_B_dependencies_pass": true,
+    "old_M8_eta_not_double_counted": true,
+    "one_physical_color_bundle": true,
+    "one_physical_eta_field": true,
+    "theta_not_independently_varied": true
+  },
+  "validation_passed": true,
+  "version": "v14.31"
+}

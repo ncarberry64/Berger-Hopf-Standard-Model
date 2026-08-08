@@ -2,6 +2,30 @@
 
 ## Current public claim boundary
 
+V11.6 verdict:
+`BHSM_PARENT_ACTION_CURRENT_REDUCTION_BLOCKED_BY_UNFIXED_COMMON_DOMAIN_FAMILY_WAVEFUNCTION_MAP`.
+The live effective SU(2)L Dirac mixed variation has family kernel `I3`. It is
+not rephasing-equivalent to the v11.5 spectral kernel. Full rank, unitarity,
+SU(2) closure, nonzero CP, and neutral-current centrality leave a continuous
+family of inequivalent kernels, so they do not establish uniqueness. The
+commuting v11.4 response pair also cannot generate mixing by joint functional
+calculus. The v11.5 kernel remains an author-selected no-fit action candidate,
+not an action-derived physical CKM matrix. Mark III remains open.
+No parameter-free absolute quark spectrum, PMNS completion, or empirical
+replacement claim is made. The next exact object is
+`ACTION_OWNED_COMMON_DOMAIN_UP_DOWN_FAMILY_WAVEFUNCTION_ORIENTATION_AND_CURRENT_PAIRING_MAP`.
+
+### v11.5 historical claim boundary
+
+V11.5 verdict was
+`BHSM_FLAVOR_ACTION_CANDIDATES_ASSEMBLED_WITH_CHARGED_CURRENT_PROVENANCE_GATE_OPEN`,
+with exact next object
+`PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL`.
+V11.6 attacks both branches of that disjunction and replaces it with the more
+precise action-level missing object above.
+
+### v11.3 historical claim boundary
+
 V11.3 verdict:
 `BHSM_RECIPROCAL_ATTACHMENT_ACTION_AND_CURRENT_DERIVED_WITH_THREE_MODE_DOMAIN_CONDITIONAL`.
 The existing action-owned `Lambda85` compatibility matcher admits the
@@ -2367,3 +2391,99 @@ The exact next object is
 This records the author ontology and conditional intrinsic/extrinsic split
 without promoting a force law, Casimir contribution, de-envelopment transfer,
 cosmological result, or any changed frozen prediction.
+
+## v14.29 claim boundary
+
+Validated only for a conditional common-domain candidate: the minimally covariantized eta `p=2+p=8` density, its convention-corrected SU(3) source/Noether identity, the pure-wall zero-current limit, a finite-action off-shell tangent witness, and the absence of an independent theta vector pole. The prior stratified action does not derive the required eta-to-physical-SU3 reduction. FR/Dirac quantization, matching, and its self-adjoint domain are open. Exact source identity: Wilson singlet zero total charge with `-4/3` mesonic color correlation. Not claimed: a physical quark current, confinement, area law, common gauge normalization, physical scale, mass, CKM/PMNS, neutrino spectrum, or `c_sigma`.
+<!-- BHSM_V14_31_TO_V14_33_CUMULATIVE -->
+## v14.31–v14.33 claim boundary
+
+BHSM owns a foundational bosonic Path-B color–eta action and a conditional full-preimage topological-current transgression. It does not yet claim a smooth action-normalized `SU(3)`-equivariant smash map, normalized FR Hilbert bundle, self-adjoint collective Dirac action, confinement, string tension, scale, mass, CKM, PMNS, or neutrino output.
+<!-- /BHSM_V14_31_TO_V14_33_CUMULATIVE -->
+<!-- BHSM_V14_34_HOPF_PHASE_FLAVOR -->
+## v14.34 phase-flavor claim boundary
+
+BHSM validates the `c/s` same-shell Hopf-imbalance mechanism and exact selection-rule no-go for a constant or single-weight phase. A Feshbach-dressed cross-Gram route is mathematically valid, but the stationary phase texture, tower Hessians, current pairing, polar CKM matrix, CP phase, masses and RG transport are not action derived.
+<!-- /BHSM_V14_34_HOPF_PHASE_FLAVOR -->
+<!-- BHSM_V14_35_HOPF_PHASE_BIFURCATION -->
+## v14.35 phase-bifurcation claim boundary
+
+BHSM derives the smallest flavor-bearing harmonic support and its rephasing-invariant phase resonance. It does not derive the nonaxisymmetric stationary solution, Hessian eigenvalues, physical phase, CKM matrix, Jarlskog invariant, masses or RG transport.
+<!-- /BHSM_V14_35_HOPF_PHASE_BIFURCATION -->
+<!-- BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->
+## v14.36 phase-Hessian claim boundary
+
+BHSM proves nonnegativity of the isometry-generated phase Hessian for the foundational Path B action and finds no negative phase mode in the five requested flavor channels on the round-smash surrogate. It does not prove full nonradial stability, construct the compact-cap spectrum, attach the v12 holonomy, or derive CKM, CP, masses or scale.
+<!-- /BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->
+<!-- BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->
+## v14.37 claim boundary
+
+BHSM may claim that the v12 relative holonomy orients an already nonzero bridge but does not create its amplitude at quadratic order. BHSM may also report the positive finite-box full-shape surrogate spectra. It may not claim the compact physical cap spectrum, a derived mixed block, a zero crossing, CKM, CP, masses, scale, or total completion.
+<!-- /BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->
+<!-- BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->
+## v14.38 claim boundary
+
+BHSM may claim an exact zero mixed block between the currently retained homogeneous Lambda85 attachment reduction and the nontrivial `(ell,p)` flavor channels. It may also claim that Lambda85 is an algebraic multiplier and that the canonical C3 projection is family diagonal. It may not claim that all unreduced nonhomogeneous attachment modes vanish, that the Spin(4) block is action-owned, or that CKM, CP, masses, scale, or BHSM completion has been derived.
+<!-- /BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->
+<!-- BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->
+## v14.39 claim boundary
+
+BHSM may claim the exact local eta/metric mixed second-variation identity and the zero static eta momentum/shift source under the stated static assumptions. It may not claim that every spatial metric mixed block vanishes, that the Spin(4) response is action-selected in a sourced state, or that CKM, CP, masses, scales, or BHSM completion are derived.
+<!-- /BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->
+<!-- BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->
+## v14.40 claim boundary
+
+BHSM may claim the source-character and family-selection no-go results under the stated equivariant, static-Wilson, and diagonal-occupation assumptions. It may not claim that every time-dependent or deformed matter source vanishes, that the compact-cap shift spectrum is solved, or that CKM, CP, masses, scales, or BHSM completion are derived.
+<!-- /BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->
+<!-- BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->
+## v14.41 claim boundary
+
+BHSM may claim the classical source-free coexact-shift no-go under stationary, source-free, nonrotating-boundary and self-adjoint-domain assumptions. It may not claim that every sourced, time-dependent, quantum, or rotating-boundary branch vanishes, or that a collective determinant, CKM matrix, CP phase, mass, scale, or completed BHSM has been derived.
+<!-- /BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->
+<!-- BHSM_V14_42_COLLECTIVE_DIRAC_VACUUM_POLARIZATION -->
+## v14.42 claim boundary
+
+BHSM may claim a conditional compact Dirac-domain theorem, a coefficient-free single-cap Kosmann/ADM shift vertex, and a nonpositive finite-cutoff filled-sea transition term. BHSM may not claim that FR quantization derives the local Dirac principal symbol, that the determinant is action normalized, that a renormalized `Pi_2` or `Pi_3` has been calculated, or that the flavor bifurcation, CKM matrix, CP phase, mass, coupling, or physical scale is derived.
+<!-- /BHSM_V14_42_COLLECTIVE_DIRAC_VACUUM_POLARIZATION -->
+<!-- BHSM_V14_43_MODULI_CLIFFORD_MATCHER_ZETA -->
+## v14.43 claim boundary
+
+BHSM may claim a moduli-to-Clifford rank obstruction, a conditional unitary seam-transmission theorem, exact orbital-to-spinor 6j recoupling factors, and free round-S3 zeta diagnostics. BHSM may not claim that FR parity derives gamma matrices, that the local collective Dirac action or field residue is action normalized, that the core-wall matcher is uniquely selected, that the displayed orbital Clebsch factors are complete Dirac/Kosmann matrix elements, or that a renormalized L2/L3 crossing, CKM matrix, CP phase, mass, coupling, radius, or scale is derived.
+<!-- /BHSM_V14_43_MODULI_CLIFFORD_MATCHER_ZETA -->
+<!-- BHSM_V14_44_WORLDLINE_CLIFFORD_SPIN_LIFT -->
+## v14.44 claim boundary
+
+BHSM may claim the odd-field/action-ownership obstruction, a conditional worldline-SUSY and product-superconnection architecture, the full-Clifford seam-commutant reduction, and the twelve-of-sixteen orbital spinor-branch connectivity theorem. BHSM may not claim that FR parity derives gamma matrices, that the worldline or local fermion action is action-owned, that the parent spin coframe or physical seam matcher is selected, that relative flavor holonomy follows from the universal spin lift, that full Kosmann matrix elements or a determinant crossing are calculated, or that CKM, CP, masses, couplings, radii, or scales are derived.
+<!-- /BHSM_V14_44_WORLDLINE_CLIFFORD_SPIN_LIFT -->
+<!-- BHSM_V14_45_FOUNDATIONAL_DIRAC_SPIN_GLUE -->
+## v14.45 claim boundary
+
+BHSM may claim a foundational effective eta-bound Dirac action, exact unit normal-mode pullback, global-spin-bundle seam cancellation, a collective-coordinate no-double-counting projector, and the determinant-420 L2/L3 counterterm underdetermination theorem. BHSM must not describe the local fermion action as derived from Path B, treat the global spin lift as relative flavor holonomy, claim full compact-cap Kosmann matrix elements, choose renormalized curvature coefficients without an explicit microscopic or renormalization principle, or emit a physical determinant, bifurcation, CKM matrix, CP phase, mass, coupling, radius, or scale.
+<!-- /BHSM_V14_45_FOUNDATIONAL_DIRAC_SPIN_GLUE -->
+
+<!-- BHSM_V14_83_MANUAL_RECOVERY -->
+## v14.83 recovery claim boundary
+
+BHSM may claim the exact reduced two-stratum kinetic decomposition, its
+negative-semidefinite relative-flow stiffness contribution, the positive
+isotropic ell=2 susceptibility, and the round-reference first-band ordering.
+It may not claim that black holes produce the physical shear, that the two
+strata or their inertias are action-derived, that the ordering survives the
+complete Hessian, that shear directly creates three modes, or that CKM, PMNS,
+particle observables, Mark III, or full BHSM completion are derived.
+<!-- /BHSM_V14_83_MANUAL_RECOVERY -->
+
+<!-- BHSM_V14_84_CAP_INERTIA_OPERATOR -->
+## v14.84 cap-inertia operator claim boundary
+
+BHSM may claim that the two candidate strata are the existing reflected
+full-preimage cap domains; that the operator parallel-sum kinetic identity is
+exact on a common positive reduced trace space; that its shear operator is
+positive semidefinite; and that reflection plus round SO(4) equivariance
+conditionally fixes the normalized inertia factor to `nu=1/4`. It may not
+claim that the full reduced cap actions or positive inertias have been
+constructed, that reflection alone derives the physical transport covariance,
+that ADM coordinate shift is the shear source, that the complete ell=2
+Hessian is known, or that `chi_2`, Landau coefficients, CKM, PMNS, particle
+observables, Mark III, or full BHSM completion are unconditional outputs.
+<!-- /BHSM_V14_84_CAP_INERTIA_OPERATOR -->

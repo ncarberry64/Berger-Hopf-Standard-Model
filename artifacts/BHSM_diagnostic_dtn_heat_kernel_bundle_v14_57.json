@@ -1,0 +1,266 @@
+{
+  "artifact": "BHSM_diagnostic_dtn_heat_kernel_bundle_v14_57",
+  "coefficients": {
+    "cycle_period": 1.7,
+    "moving_seam_bvp_scale": 1.0,
+    "values_are_synthetic": true,
+    "zeta_prime_shape_derivatives": [
+      0.071,
+      -0.046,
+      0.033
+    ]
+  },
+  "diagnostic_fixture_sha256": "f70ed75d270677d0b27a71f086324fb658ca8726004a439827469cf20a466319",
+  "matrices": {
+    "child_dtn": [
+      [
+        1.77,
+        0.19,
+        0.04
+      ],
+      [
+        0.19,
+        2.23,
+        0.17
+      ],
+      [
+        0.04,
+        0.17,
+        2.91
+      ]
+    ],
+    "child_heat_operator": [
+      [
+        1.43,
+        0.07,
+        0.02
+      ],
+      [
+        0.07,
+        2.37,
+        0.05
+      ],
+      [
+        0.02,
+        0.05,
+        3.31
+      ]
+    ],
+    "detector_basis": [
+      [
+        0.9314116724778378,
+        0.2983567772452824,
+        [
+          0.1553389812806888,
+          -0.13901557732327582
+        ]
+      ],
+      [
+        [
+          -0.33897812451767684,
+          -0.05995725347515574
+        ],
+        [
+          0.827609262834655,
+          -0.019205957417021337
+        ],
+        0.44293678795531183
+      ],
+      [
+        [
+          0.006263140048900194,
+          -0.11803401333073067
+        ],
+        [
+          -0.4735480032169995,
+          -0.0378095410045674
+        ],
+        0.8719813484427207
+      ]
+    ],
+    "interface_hessian": [
+      [
+        0.11,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.07,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.13
+      ]
+    ],
+    "matter_kick_generator": [
+      [
+        0.0,
+        0.17,
+        [
+          0.0,
+          -0.09
+        ]
+      ],
+      [
+        0.17,
+        0.0,
+        -0.13
+      ],
+      [
+        [
+          0.0,
+          0.09
+        ],
+        -0.13,
+        0.0
+      ]
+    ],
+    "parent_dtn": [
+      [
+        1.4,
+        0.08,
+        0.0
+      ],
+      [
+        0.08,
+        1.92,
+        0.06
+      ],
+      [
+        0.0,
+        0.06,
+        2.48
+      ]
+    ],
+    "parent_heat_operator": [
+      [
+        1.2,
+        0.04,
+        0.0
+      ],
+      [
+        0.04,
+        2.1,
+        0.03
+      ],
+      [
+        0.0,
+        0.03,
+        3.0
+      ]
+    ],
+    "physical_projector": [
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "shape_generator_1": [
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "shape_generator_2": [
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ]
+    ],
+    "shape_generator_3": [
+      [
+        0.0,
+        0.0,
+        [
+          0.0,
+          -1.0
+        ]
+      ],
+      [
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        [
+          0.0,
+          1.0
+        ],
+        0.0,
+        0.0
+      ]
+    ]
+  },
+  "mode": "diagnostic",
+  "physical_interpretation_forbidden": true,
+  "proof_flags": {
+    "action_owned_parent_child_contrast": false,
+    "complete_zero_mode_projector": false,
+    "fixed_pair_identity_preserved": false,
+    "gauge_fixed_operator_domain": false,
+    "hermitian_dtn_maps": false,
+    "large_time_control": false,
+    "matched_parent_child_backgrounds": false,
+    "moving_seam_bvp_converged": false,
+    "no_retuning_policy_enforced": false,
+    "shape_derivatives_action_derived": false,
+    "small_time_control": false,
+    "trace_class_relative_heat_kernel": false
+  },
+  "provenance": {
+    "child_background_sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+    "child_operator_sha256": "4444444444444444444444444444444444444444444444444444444444444444",
+    "coefficient_bundle_sha256": "6666666666666666666666666666666666666666666666666666666666666666",
+    "coefficients_frozen_before_target_access": true,
+    "derivation_sha256": "5555555555555555555555555555555555555555555555555555555555555555",
+    "measured_data_used_to_choose_coefficients": false,
+    "parent_background_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+    "parent_operator_sha256": "3333333333333333333333333333333333333333333333333333333333333333",
+    "post_comparison_retuning_allowed": false,
+    "provenance_status": "synthetic_test_fixture_not_action_derived",
+    "source_commit_sha": "0000000000000000000000000000000000000000",
+    "target_ledger_sha256": "7777777777777777777777777777777777777777777777777777777777777777"
+  },
+  "target_ledger": {
+    "blinded_before_model_freeze": true,
+    "diagnostic_only": true,
+    "physical_windows": []
+  },
+  "version": "v14.57"
+}

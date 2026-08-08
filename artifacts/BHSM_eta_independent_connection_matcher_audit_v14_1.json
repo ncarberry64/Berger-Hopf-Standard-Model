@@ -1,0 +1,80 @@
+{
+  "artifact": "BHSM_eta_independent_connection_matcher_audit_v14_1",
+  "branch_decision": "BHSM_COMMON_PARENT_BUNDLE_AND_REDUCTION_ARCHITECTURE_ALREADY_EXISTS_CONDITIONALLY",
+  "candidates": [
+    {
+      "candidate": "A=Phi_*AP",
+      "effect": "removes the independent gluon configuration space; cannot arise without a matcher/constraint",
+      "status": "NOT_ACTION_OWNED"
+    },
+    {
+      "candidate": "F_A=Phi_*F_P",
+      "effect": "forces the independent bundle into c2=0 and eliminates general instanton/gluon sectors",
+      "status": "NOT_ACTION_OWNED_AND_OVERCONSTRAINING"
+    },
+    {
+      "candidate": "connection transgression",
+      "effect": "the generic v7 reduction framework exists, but no common color/eta bundle, connection, or transgression is declared",
+      "status": "NOT_INSTANTIATED_IN_RECOVERED_ARCHITECTURE"
+    },
+    {
+      "candidate": "tr(A-Phi_*AP)^2",
+      "effect": "requires Phi and a dimensionful locking coefficient and gives an unbroken-color gauge boson mass",
+      "status": "REJECTED"
+    },
+    {
+      "candidate": "tr(F_A-Phi_*F_P)^2",
+      "effect": "requires Phi and a new relative normalization; it changes both dynamics without imposing equality exactly",
+      "status": "UNSELECTED_EXTENSION"
+    },
+    {
+      "candidate": "v7 parent-bundle connection eta extension",
+      "effect": "audit whether the recovered parent functor already induces both restrictions before proposing any new term",
+      "status": "RECOVERY_AND_EXTENSION_GATE"
+    }
+  ],
+  "eta_sourced_independent_Gauss_law": null,
+  "exact_next_object": "RECOVERY_AND_ETA_EXTENSION_OF_THE_V7_0_V7_1_UNIFIED_PARENT_BUNDLE_CONNECTION_AND_COVARIANT_REDUCTION_FUNCTOR_TO_THE_M4_SU3_AND_ETA_POLARIZATION_ASSOCIATED_BUNDLES",
+  "projection_provenance_verdict": "BHSM_ETA_POLARIZATION_AND_INDEPENDENT_M4_SU3_CONNECTION_HAVE_NOT_YET_BEEN_PROVEN_TO_BE_ASSOCIATED_PROJECTIONS_OF_THAT_PARENT_CONNECTION",
+  "retained_S4_gauge_term": {
+    "coefficient": "g1,g2,g3",
+    "expression": "-int sqrt(-h) sum_i Tr(F_i^2)/(4 g_i^2)",
+    "fields": [
+      "A_i",
+      "h_ab"
+    ],
+    "gauge_invariant": true,
+    "level": "S4eff",
+    "mass_dimension_closed": true,
+    "real": true,
+    "term_id": "T4_gauge",
+    "variation_used": "Yang-Mills equations and stress"
+  },
+  "retained_matcher": null,
+  "stratified_ownership": {
+    "S4_intrinsic": "retained localized EFT; not claimed to descend from G_AB",
+    "S5_and_GHY": "retained conditional stratified action",
+    "S8_env": "STRUCTURAL_POSTULATE",
+    "S_compatibility": "retained conditional ownership map",
+    "S_current": "eta spin current candidate plus unresolved physical pullback",
+    "classification": "DERIVED_CONDITIONAL",
+    "complete_action": "S_BHSM^env=S8^env+sum_(epsilon=+/-)(S5,epsilon+S_GHY,epsilon)+S4,intrinsic+S_compatibility+S_current",
+    "intrinsic_SM_from_metric_derived": false
+  },
+  "validation": {
+    "Lambda54_matches_seam_metrics_not_connections": true,
+    "Lambda85_matches_metrics_not_connections": true,
+    "S4_YM_has_no_eta": true,
+    "S8_eta_has_no_independent_SU3_connection": true,
+    "branch_decision_recovers_conditional_architecture": true,
+    "gauge_reduction_missing": true,
+    "generic_cross_stratum_compatibility_framework_exists": true,
+    "independent_SU3_Gauss_equation_not_eta_sourced": true,
+    "no_candidate_silently_added": true,
+    "no_instantiated_multiplier_or_transgression_for_eta_color": true,
+    "physical_eta_current_pullback_missing": true,
+    "projection_provenance_remains_open": true
+  },
+  "validation_passed": true,
+  "version": "v14.1"
+}

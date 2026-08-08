@@ -1,0 +1,37 @@
+{
+  "K_ud": null,
+  "artifact": "BHSM_eta_knot_independent_Gauss_current_v14_2",
+  "charged_current": "J_+^family=I3",
+  "conditional_derivation": {
+    "assumptions": [
+      "a physical associated 3 or bar3 eta-knot Hilbert bundle over M4",
+      "an action-owned minimally coupled collective Dirac term",
+      "anti-Hermitian generators with A_mu=A_mu^a T^a and no g3 absorbed into A"
+    ],
+    "conditional_equation": "D_nu F^{nu mu a}=g3^2 J_eta^{mu a}",
+    "current_conservation": "D_mu J_eta^{mu}=0 on the conditional collective Dirac equations",
+    "gauge_variation": "delta[-Tr(F^2)/(4g3^2)] gives (1/g3^2)D_nu F^{nu mu a}",
+    "matter_variation": "delta S_knot/delta A_mu^a=J_eta^{mu a}=bar(Psi_eta) gamma^mu T^a Psi_eta"
+  },
+  "flavor_factorization": "rho_color(A) tensor I_C3",
+  "retained_action_result": {
+    "eta_knot_current": null,
+    "eta_sourced_independent_Gauss_equation": null,
+    "reason": "the physical color representation and collective minimal-coupling action are not action/quantization derived"
+  },
+  "validation": {
+    "YM_principal_symbol_preserved": true,
+    "color_induced_Kud_absent": true,
+    "conditional_current_Hermitian_after_standard_generator_convention": true,
+    "conditional_current_gauge_covariant": true,
+    "conditional_variation_normalization_explicit": true,
+    "family_centrality_preserved": true,
+    "independent_c2_sectors_preserved": true,
+    "new_continuous_coefficient_absent": true,
+    "prerequisites_not_promoted": true,
+    "repository_gauge_parent_reduction_still_missing": true
+  },
+  "validation_passed": true,
+  "verdict": "CONDITIONAL_GAUSS_VARIATION_IS_TYPED_BUT_NOT_OWNED_BY_THE_RETAINED_ETA_KNOT_ACTION",
+  "version": "v14.2"
+}

@@ -1,0 +1,40 @@
+{
+  "Gram_matrix": "G_AB=<zeta_A,zeta_B>",
+  "artifact": "BHSM_collective_mode_no_double_counting_v14_45",
+  "collective_tangents": "zeta_A=partial eta_*/partial q^A",
+  "finite_projector_witness": {
+    "ambient_dimension": 8,
+    "collective_dimension": 3,
+    "rank_P": 3,
+    "residuals": {
+      "P2_minus_P": 3.173738112879707e-16,
+      "P_Q": 3.3631017432615507e-16,
+      "P_minus_PT": 1.921083875298536e-16,
+      "Q_zeta": 9.383177797163748e-16
+    },
+    "seed": 14545,
+    "validation": {
+      "P_and_Q_are_orthogonal": true,
+      "P_is_symmetric": true,
+      "P_squared_equals_P": true,
+      "Q_annihilates_collective_tangents": true
+    },
+    "validation_passed": true
+  },
+  "measure_contract": {
+    "Jacobian": "the collective-coordinate/Faddeev-Popov Jacobian must be included once, not once in each sector",
+    "bosonic_one_loop_sector": "det-prime(Q_eta H_eta Q_eta), excluding collective zero modes",
+    "fermionic_sector": "Psi quantizes the retained FR/topological collective sector"
+  },
+  "orthogonal_projector": "Q_eta=I-P_coll",
+  "projector": "P_coll v=zeta_A G^(AB)<zeta_B,v>",
+  "validation": {
+    "bosonic_determinant_excludes_same_collective_zero_modes": true,
+    "collective_projector_is_orthogonal": true,
+    "eta_background_remains_classical_stationary_solution": true,
+    "fermion_field_represents_collective_topological_sector": true,
+    "no_second_independent_UV_fermion_copy_added": true
+  },
+  "validation_passed": true,
+  "version": "v14.45"
+}

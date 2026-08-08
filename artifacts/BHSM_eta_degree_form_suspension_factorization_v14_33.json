@@ -1,0 +1,23 @@
+{
+  "artifact": "BHSM_eta_degree_form_suspension_factorization_v14_33",
+  "consequence": "integrating the collar/radial profile converts the normalized S7 degree form into the normalized S6 degree form of the lifted nonbasic selector",
+  "normalized_degree_form": "nu7=sin(f)^6 df wedge u^*(vol_S6)/(Vol(S7))",
+  "numerical_values": {
+    "Vol_S6": 33.07336179231981,
+    "Vol_S7": 32.46969701133414,
+    "normalized_factor": 0.030235813531124523,
+    "radial_integral": 0.9817477042468103
+  },
+  "radial_identity": "integral_0^pi sin(f)^6 df=5pi/16 and this divided by Vol(S7) equals 1/Vol(S6)",
+  "suspension_field": "eta8=(cos f, sin f u), with u valued in S6",
+  "validation": {
+    "Vol_S6_exact_numeric": true,
+    "Vol_S7_exact_numeric": true,
+    "degree_form_closed": true,
+    "orientation_must_be_fixed": true,
+    "radial_integral_exact_numeric": true,
+    "suspension_normalization_identity": true
+  },
+  "validation_passed": true,
+  "version": "v14.33"
+}

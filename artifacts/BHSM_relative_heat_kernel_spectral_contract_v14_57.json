@@ -1,0 +1,32 @@
+{
+  "artifact": "BHSM_relative_heat_kernel_spectral_contract_v14_57",
+  "continuum_physical_requirements": [
+    "common gauge-fixed Hilbert-space comparison",
+    "complete zero-mode subtraction",
+    "trace-class relative heat kernel for every t>0",
+    "controlled small-time asymptotic subtraction",
+    "controlled large-time decay",
+    "shape derivatives justified under trace/integral interchange"
+  ],
+  "diagnostic_child_positive_eigenvalues": [
+    1.4246755134661493,
+    2.3723738090378514,
+    3.3129506774959987
+  ],
+  "diagnostic_parent_positive_eigenvalues": [
+    1.1982247386630167,
+    2.100775385189143,
+    3.0009998761478407
+  ],
+  "diagnostic_zeta_prime_zero": -0.39358126485867917,
+  "diagnostic_zeta_zero": 0.0,
+  "finite_mode_formulas": {
+    "relative_heat_trace": "Theta_rel(t)=Tr exp(-t A_child)-Tr exp(-t A_parent)",
+    "relative_zeta": "zeta_rel(s)=sum lambda_child^(-s)-sum lambda_parent^(-s)",
+    "zeta_prime_zero": "zeta_rel'(0)=-log det'(A_child)+log det'(A_parent)",
+    "zeta_zero": "zeta_rel(0)=rank'(A_child)-rank'(A_parent)"
+  },
+  "physical_completion": false,
+  "relative_spectral_verdict": "BHSM_FOR_POSITIVE_FINITE_MODE_OPERATORS_THE_RELATIVE_HEAT_TRACE_ZETA_VALUE_AND_ZETA_DERIVATIVE_REDUCE_EXACTLY_TO_SPECTRAL_SUMS_AND_A_PRIMED_LOG_DETERMINANT_DIFFERENCE",
+  "version": "v14.57"
+}

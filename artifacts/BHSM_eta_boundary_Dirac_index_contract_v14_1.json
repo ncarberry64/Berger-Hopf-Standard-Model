@@ -1,0 +1,51 @@
+{
+  "APS_formula_status": "NOT_EVALUABLE: bulk, Euclidean continuation, connection, domain, eta invariant, and kernel dimension are incomplete",
+  "Euclidean_principal_symbol": "sigma_D(x,xi)=i c(xi), sigma_D^2=-|xi|^2 I",
+  "Green_boundary_form": "int_boundary <psi,c(n)phi>",
+  "Index_D_rel": null,
+  "artifact": "BHSM_eta_boundary_Dirac_index_contract_v14_1",
+  "candidate_domains": [
+    "APS spectral projector after a complete tangential operator is defined",
+    "local maximal-isotropic/MIT-type domain if compatible with gauge and orientation bundles",
+    "relative transmission domain across the two-cap collar"
+  ],
+  "contract": {
+    "FR_bundle": "flat Z2 line over the odd-degree eta-knot moduli fiber, conditional over M4",
+    "boundary_condition": null,
+    "boundary_manifold": "B1 or effective M4; the exact compact Euclidean index manifold is not selected",
+    "color_bundle": "E_P only after the missing wall-to-M4 extension, or independent E_color",
+    "family_bundle": "exact C3 module",
+    "formal_operator": "D_boundary=i gamma^mu(nabla_spin+A_FR+A_color+A_weak+A_Y) on the tensor product bundle",
+    "hypercharge_bundle": "retained effective U1 representation bundle",
+    "mass_or_domain_wall_profile": null,
+    "normal_orientation": "degree branch plus boundary normal; convention does not by itself select physics",
+    "self_adjoint_extension": null,
+    "signature": "retained M4 is Lorentzian; an APS index requires a declared Riemannian continuation/bulk",
+    "spin_structure": "required, not selected globally by the eta wall alone",
+    "weak_bundle": "retained effective SU2 representation bundle"
+  },
+  "eta_D_boundary": null,
+  "exact_missing_inputs": [
+    "mass_or_domain_wall_profile",
+    "boundary_condition",
+    "self_adjoint_extension",
+    "action-owned wall-to-M4 color bundle map",
+    "complete Berry/FR connection",
+    "compact Euclidean bulk and characteristic-form normalization"
+  ],
+  "exact_next_object": "ACTION_DERIVED_ORIENTED_BOUNDARY_DIRAC_OPERATOR_ON_THE_FR_ETA_KNOT_BUNDLE_WITH_SELF_ADJOINT_DOMAIN",
+  "formal_self_adjointness": "holds for the metric-compatible tensor connection before boundary-domain selection",
+  "validation": {
+    "APS_domain_is_candidate_not_selected": true,
+    "Euclidean_symbol_elliptic_for_nonzero_covector_conditionally": true,
+    "Lorentzian_operator_not_called_elliptic": true,
+    "color_conjugation_not_weak_chirality": true,
+    "eta_invariant_not_emitted": true,
+    "formal_Green_boundary_form_identified": true,
+    "formal_principal_symbol_is_Clifford": true,
+    "index_not_emitted": true,
+    "maximal_isotropic_domain_required": true
+  },
+  "validation_passed": true,
+  "version": "v14.1"
+}

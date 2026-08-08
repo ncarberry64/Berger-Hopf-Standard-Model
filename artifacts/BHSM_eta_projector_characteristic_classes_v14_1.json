@@ -1,0 +1,41 @@
+{
+  "M4_pullback_classes": {
+    "bundle": "E_P=u_eta^* E_canonical",
+    "c1": "0",
+    "c2": "0",
+    "c3": "0"
+  },
+  "artifact": "BHSM_eta_projector_characteristic_classes_v14_1",
+  "boundary_caveat": "On noncompact M4 or a manifold with boundary, the integral of tr(FP wedge FP) can reduce to boundary data and need not vanish pointwise, but it is not a nonzero second-Chern instanton sector of E_P.",
+  "eta_knot_topology": "degree N in pi7(S7), distinct from c2(E_P); universal c3 lives in H6(S6)",
+  "instanton_number_closed_M4": 0,
+  "naturality": "c_k(u^*E)=u^*c_k(E)",
+  "universal_base": "S6=G2/SU3",
+  "universal_classes": {
+    "bundle": "E_canonical=T^(1,0)S6 for the G2-invariant almost-complex polarization",
+    "c1": "0 because H2(S6,Z)=0",
+    "c2": "0 because H4(S6,Z)=0",
+    "c3": "2 generator of H6(S6,Z), with sign fixed by the complex orientation"
+  },
+  "universal_cohomology": {
+    "H0(S6,Z)": "Z",
+    "H2(S6,Z)": "0",
+    "H4(S6,Z)": "0",
+    "H6(S6,Z)": "Z"
+  },
+  "validation": {
+    "H2_S6_zero": true,
+    "H4_S6_zero": true,
+    "H6_S6_integer": true,
+    "closed_M4_instanton_number_zero": true,
+    "eta_degree_is_pi7_S7_not_c2": true,
+    "local_curvature_need_not_vanish": true,
+    "pullback_c2_zero_by_naturality": true,
+    "pullback_c3_zero_on_four_base_by_dimension": true,
+    "universal_c1_zero": true,
+    "universal_c2_zero": true
+  },
+  "validation_passed": true,
+  "verdict": "THE_ETA_PROJECTOR_CONNECTION_CANNOT_SPAN_GENERAL_NONZERO_INSTANTON_SU3_SECTORS",
+  "version": "v14.1"
+}

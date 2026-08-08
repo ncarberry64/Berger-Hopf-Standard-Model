@@ -1,0 +1,51 @@
+{
+  "artifact": "BHSM_eta_projector_local_DOF_rank_v14_1",
+  "constant_selector_Jacobian_rank": 0,
+  "curvature_plane_span_rank": [
+    8,
+    8,
+    8,
+    8
+  ],
+  "dP_rank_per_covector": [
+    6,
+    6,
+    6,
+    6
+  ],
+  "frame_covariance": {
+    "validation": {
+      "connection_transformation_anti_Hermitian": true,
+      "curvature_transforms_adjointly": true,
+      "frame_change_does_not_change_projector_configuration": true,
+      "frame_covariance_not_independent_connection_configuration_space": true,
+      "unitary_SU3": true
+    },
+    "validation_passed": true
+  },
+  "generic_spacetime_curvature_Jacobian_rank_24_to_48": [
+    23,
+    23,
+    23,
+    23
+  ],
+  "holonomy_algebra_dimensions": [
+    8,
+    8,
+    8,
+    8
+  ],
+  "interpretation": "The universal curvature generators span su3 and can have full holonomy, but the composite spacetime curvature occupies a constrained 23-dimensional tangent image inside 48 curvature components and has zero linear response at the constant-selector vacuum. Full holonomy is not field-space equivalence.",
+  "validation": {
+    "constant_selector_linear_curvature_rank_zero": true,
+    "curvature_plane_span_is_su3": true,
+    "dP_rank_six_stable": true,
+    "frame_covariance_valid": true,
+    "generic_YM_curvature_output_dimension_48_exceeds_composite_rank": true,
+    "generic_curvature_Jacobian_rank_23": true,
+    "holonomy_full_su3_at_generic_frames": true,
+    "selector_configuration_components_six_not_gauge_vectors_32": true
+  },
+  "validation_passed": true,
+  "version": "v14.1"
+}

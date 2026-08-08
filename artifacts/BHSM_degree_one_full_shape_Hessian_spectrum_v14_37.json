@@ -1,0 +1,177 @@
+{
+  "artifact": "BHSM_degree_one_full_shape_Hessian_spectrum_v14_37",
+  "background": "eta=(cos f,sin f n) from the v13.1 degree-one solution",
+  "classification": "FULL_TANGENT_SECTOR_FINITE_BOX_AUDIT_ON_V13_1_FLAT_R7_DEGREE_ONE_SURROGATE",
+  "ell1_stabilizer_zero_mode_mesh_convergence": {
+    "160": 0.001341918495,
+    "240": 0.000594247472,
+    "320": 0.000333589457
+  },
+  "ell2_mesh_convergence": {
+    "160": {
+      "coexact": 0.002996276761,
+      "polar": 0.003556999818,
+      "polar_exact": 0.002185146883
+    },
+    "240": {
+      "coexact": 0.003020455154,
+      "polar": 0.003586376857,
+      "polar_exact": 0.002203173547
+    },
+    "320": {
+      "coexact": 0.00302858284,
+      "polar": 0.003595243044,
+      "polar_exact": 0.00220826179
+    }
+  },
+  "general_second_variation": "Q[V]=int w{2F'(X)(|nabla V|^2-<R(V,deta_i)deta_i,V>)+4F''(X)(sum_i<nabla_i V,deta_i>)^2}",
+  "interpretation": "no negative finite-box non-isometric mode is found at ell=2,4,6,8,10; the ell=1 coexact stabilizer rotation converges toward its symmetry zero",
+  "limitations": [
+    "the true compact cap and its self-adjoint boundary operator remain absent",
+    "the flat-R7 angular decomposition resolves ell but not the independent Hopf weight p",
+    "metric, gauge, sigma, Wilson, and attachment mixed blocks are not included",
+    "box expansion still moves continuum modes toward zero and is not a physical mass gap"
+  ],
+  "reference_box": [
+    -7.0,
+    5.0
+  ],
+  "reference_points": 240,
+  "rows": [
+    {
+      "S6_scalar_eigenvalue": 14.0,
+      "coexact_vector_lowest_four": [
+        0.003020455154,
+        0.006202619487,
+        0.010294644667,
+        0.015345147421
+      ],
+      "ell": 2,
+      "negative_mode_found": false,
+      "polar_exact_coupled_lowest_four": [
+        0.002203293163,
+        0.00394806504,
+        0.004911906974,
+        0.007611043479
+      ],
+      "polar_lowest_four": [
+        0.003585838472,
+        0.007067309611,
+        0.011453226952,
+        0.016802294926
+      ]
+    },
+    {
+      "S6_scalar_eigenvalue": 36.0,
+      "coexact_vector_lowest_four": [
+        0.004983674562,
+        0.009135501761,
+        0.014176905518,
+        0.020188948672
+      ],
+      "ell": 4,
+      "negative_mode_found": false,
+      "polar_exact_coupled_lowest_four": [
+        0.003948775936,
+        0.006125900505,
+        0.007611032505,
+        0.010773722247
+      ],
+      "polar_lowest_four": [
+        0.005480576013,
+        0.0098519161,
+        0.015107994481,
+        0.021336499714
+      ]
+    },
+    {
+      "S6_scalar_eigenvalue": 66.0,
+      "coexact_vector_lowest_four": [
+        0.007372141502,
+        0.012523012049,
+        0.018531538161,
+        0.025516917032
+      ],
+      "ell": 6,
+      "negative_mode_found": false,
+      "polar_exact_coupled_lowest_four": [
+        0.006125483508,
+        0.008721625589,
+        0.010773110462,
+        0.014382967849
+      ],
+      "polar_lowest_four": [
+        0.00782690079,
+        0.013154468118,
+        0.019330832828,
+        0.026486914827
+      ]
+    },
+    {
+      "S6_scalar_eigenvalue": 104.0,
+      "coexact_vector_lowest_four": [
+        0.010174315943,
+        0.016349892892,
+        0.023341413946,
+        0.031312632592
+      ],
+      "ell": 8,
+      "negative_mode_found": false,
+      "polar_exact_coupled_lowest_four": [
+        0.008721802536,
+        0.011727136762,
+        0.01438191794,
+        0.018425055456
+      ],
+      "polar_lowest_four": [
+        0.010601057484,
+        0.016924405907,
+        0.024056290735,
+        0.032166102962
+      ]
+    },
+    {
+      "S6_scalar_eigenvalue": 150.0,
+      "coexact_vector_lowest_four": [
+        0.013380915966,
+        0.020604804205,
+        0.028593328157,
+        0.037557251284
+      ],
+      "ell": 10,
+      "negative_mode_found": false,
+      "polar_exact_coupled_lowest_four": [
+        0.011726618762,
+        0.015133762317,
+        0.018424968349,
+        0.022888563014
+      ],
+      "polar_lowest_four": [
+        0.013788389878,
+        0.021138635362,
+        0.029245395296,
+        0.038329246932
+      ]
+    }
+  ],
+  "sector_forms": {
+    "coexact": "A[v_x^2+(Lambda-6 sin^2f-f_x^2)v^2]",
+    "kinetic_norm": "int dx M(x)(u^2+v^2), M=e^(7x)(kappa1+X^3)",
+    "polar": "A[u_x^2+(Lambda+6 cos2f)u^2]+D[f_x u_x+6 sinf cosf u]^2",
+    "polar_exact": "coupled uY e_f plus v gradY/sqrt(Lambda) form with the exact A and D cross terms"
+  },
+  "validation": {
+    "Hopf_weight_p_not_resolved_by_the_S6_hedgehog_decomposition": true,
+    "all_requested_ell_sectors_positive_on_reference_box": true,
+    "coexact_vector_sector_derived": true,
+    "compact_cap_full_preimage_spectrum_not_claimed": true,
+    "ell1_stabilizer_rotation_moves_toward_zero_with_mesh_refinement": true,
+    "ell2_nonisometric_modes_remain_positive_under_mesh_refinement": true,
+    "flat_R7_profile_is_surrogate_only": true,
+    "general_sphere_target_Jacobi_form_used": true,
+    "polar_exact_coupled_sector_derived": true,
+    "scalar_polar_sector_derived": true
+  },
+  "validation_passed": true,
+  "version": "v14.37"
+}

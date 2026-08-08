@@ -1,0 +1,82 @@
+{
+  "E_P": "Image(Pi_10(u_eta)), complex rank 3 with induced Hermitian metric",
+  "E_color": "independent retained M4 SU3 associated bundle B4_spin_gauge",
+  "artifact": "BHSM_eta_SU3_bundle_isomorphism_audit_v14_1",
+  "candidate_isomorphism": "Phi:E_P->E_color",
+  "candidate_isomorphism_status": "NOT_DECLARED_OR_ACTION_SELECTED",
+  "eta_wall_selector_bundle": {
+    "base": "Sigma_eta={f=pi/2} inside the localized eta enclosure",
+    "fiber": "S6=G2/SU3",
+    "section": "u_eta=nabla_n eta/||nabla_n eta|| where the denominator is nonzero"
+  },
+  "obstructions": [
+    "the current selector is naturally defined on Sigma_eta rather than all M4",
+    "no base/collar pushforward identifies Sigma_eta data with M4",
+    "no transition-function cocycle equality is owned by the action",
+    "E_P has c2=0 whereas the independent color bundle admits general c2 sectors",
+    "orientation reversal exchanges E_10 and E_01 and requires a declared conjugation branch"
+  ],
+  "polarization_bundle": "u_eta^*(G2 x_SU3 C3) on the selector base",
+  "recovered_architecture_boundary": "v7.0-v7.1 owns conditional associated-bundle and covariant reduction architecture, but not this eta/color isomorphism or the two explicit projections from one parent connection",
+  "retained_bundle_ledger": {
+    "artifact": "BHSM_master_field_bundle_ledger_v7_0",
+    "bhsm_1_0_release_complete_claimed": false,
+    "bundles": [
+      {
+        "base": "M8",
+        "bundle_id": "B8_tensor",
+        "fiber": "Lorentz metrics and real scalars",
+        "status": "PROVISIONAL_PARENT"
+      },
+      {
+        "base": "M5_+ disjoint_union M5_-",
+        "bundle_id": "B5_cap_tensor",
+        "fiber": "cap metrics, lapse/shift, sigma",
+        "status": "FROZEN_RELATIVE_PROBLEM"
+      },
+      {
+        "base": "B1 or M4",
+        "bundle_id": "B4_spin_gauge",
+        "fiber": "S_h tensor E_SM tensor C3_family",
+        "status": "CONDITIONAL_EFFECTIVE"
+      },
+      {
+        "base": "B1/collar",
+        "bundle_id": "B4_response",
+        "fiber": "neutral response and scalar/topographic modes",
+        "status": "CONDITIONAL_EFFECTIVE"
+      }
+    ],
+    "comparison_data_used_in_action": false,
+    "cross_level_bundle_isomorphism": null,
+    "fitted_parameter_used": false,
+    "frozen_prediction_changed": false,
+    "lambda5_sign_selected": false,
+    "lambda5_value_selected": false,
+    "missing_object": "COVARIANT_BULK_BOUNDARY_REDUCTION_FUNCTOR",
+    "official_prediction_changed": false,
+    "physical_mass_claimed": false,
+    "physical_scale_claimed": false,
+    "quantum_completion_claimed": false,
+    "source_main_sha": "c7abad29688839add1ab06480b0a284c442d6a70",
+    "sprint": "bhsm-complete-unified-parent-action-v7-0",
+    "unconditional_stability_claimed": false,
+    "unified_parent_action_claimed_closed": false,
+    "version": "v7.0"
+  },
+  "validation": {
+    "E_P_complex_rank_three_Hermitian": true,
+    "E_color_complex_rank_three_Hermitian": true,
+    "canonical_Phi_absent": true,
+    "collar_extension_not_declared": true,
+    "common_base_map_not_declared": true,
+    "connection_pullback_not_declared": true,
+    "equal_rank_and_group_not_sufficient_for_isomorphism": true,
+    "eta_selector_naturally_wall_based": true,
+    "family_C3_action_is_identity_on_color_connection": true,
+    "generic_color_c2_not_forced_zero_but_EP_c2_zero": true,
+    "transition_cocycle_identification_not_declared": true
+  },
+  "validation_passed": true,
+  "version": "v14.1"
+}

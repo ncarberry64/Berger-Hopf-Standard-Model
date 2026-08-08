@@ -1,5 +1,22 @@
 # BHSM Artifact Index
 
+## BHSM v11.5 conditional flavor-action assembly
+
+- `artifacts/BHSM_common_attachment_response_v11_4.json`: canonical whitened
+  common-domain response and family-octave roots.
+- `artifacts/BHSM_minimal_M4_charged_lepton_action_v11_4.json`: conditional
+  trace-normalized charged-lepton spectral action.
+- `artifacts/BHSM_quark_yukawa_CKM_gate_v11_4.json`: up/down spectral pair and
+  canonical-identification no-mixing theorem.
+- `artifacts/BHSM_spectral_charged_current_v11_5.json`: full-rank no-fit
+  author-selected charged-current candidate, SU(2) audit, CP invariant, and open action-provenance gate.
+- `artifacts/BHSM_completion_gate_v11_5.json`: current conditional candidate and provenance gate.
+- `artifacts/BHSM_download_progress_review_2026_08_03.json`: hash-locked review
+  of the nine manual research packets.
+
+Verdict: `BHSM_FLAVOR_ACTION_CANDIDATES_ASSEMBLED_WITH_CHARGED_CURRENT_PROVENANCE_GATE_OPEN`.
+Next object: `PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL`.
+
 ## BHSM v11.3 reciprocal core-surface attachment campaign
 
 Ten deterministic v11.3 records cover the recovered incidence ledger,
@@ -1754,3 +1771,121 @@ Doctrine and manuscript chapter:
 - `artifacts/BHSM_final_completion_gate_v10_4.json`: marks I--IV, exact
   verdict hierarchy, hindsight report, validation, and next object.
 - `artifacts/BHSM_1_0_completion_gate.json`: canonical v10.4 RB-15/RB-16 gate.
+
+## v14.29 View 2 action artifacts
+
+The deterministic v14.29 set contains the v14.9-v14.28 lineage ledger, `G2/SU3` bundle/composite-theta and Hessian audits, conditional minimally gauged eta candidate, convention-corrected Noether/current and wall/tangent screens, FR no-double-counting policy/open matching ledger, Wilson singlet source functional, conditional master-action completion audit, downstream BVP/relative-determinant gates, and `BHSM_completion_gate_v14_29.json`. Regenerate with `python scripts/materialize_view2_completion_v14_29.py` and read the controlling scientific proof audit before interpreting the payloads.
+
+## v14.30 common-domain and full-preimage reduction artifacts
+
+The v14.30 extension adds the arbitrary-`c2` bundle/transition audit, exact
+Hopf-section and non-basic topology obstruction, collar Jacobian and nonlinear
+fiber-moment calculation, Dirichlet-to-Neumann variational counterexample,
+uniqueness audit, full-recall path-composition ledger, exact Peter--Weyl fiber
+spectrum, conditional parent Hessian, quadratic DtN/Schur calculation,
+low-energy matching table, and retained-action Outcome-D gate. Regenerate the combined
+v14.29-v14.30 set with
+`python scripts/materialize_view2_completion_v14_30.py`. The controlling proof
+chain is `docs/BHSM_COMMON_DOMAIN_ETA_SU3_REDUCTION_PROOF.md`,
+`docs/BHSM_FULL_RECALL_PATH_COMPOSITION_AUDIT_v14_30.md`, and
+`docs/BHSM_FULL_HOPF_PREIMAGE_EFFECTIVE_ACTION_PROOF.md`.
+<!-- BHSM_V14_31_TO_V14_33_CUMULATIVE -->
+## v14.31–v14.33 artifacts
+
+Regenerate the cumulative artifacts with `python scripts/materialize_hopf_smash_transgression_v14_33.py`. Controlling reports: `BHSM_PATH_B_FOUNDATIONAL_ACTION_V14_31.md`, `BHSM_PATH_B_PHYSICAL_TOPOLOGY_AND_FR_GATE_V14_32.md`, and `BHSM_HOPF_SMASH_TOPOLOGICAL_TRANSGRESSION_V14_33.md`.
+<!-- /BHSM_V14_31_TO_V14_33_CUMULATIVE -->
+<!-- BHSM_V14_34_HOPF_PHASE_FLAVOR -->
+## v14.34 phase-flavor artifacts
+
+Regenerate with `python scripts/materialize_hopf_phase_flavor_v14_34.py`. The controlling report is `docs/BHSM_HOPF_PHASE_FLAVOR_CROSS_GRAM_V14_34.md`.
+<!-- /BHSM_V14_34_HOPF_PHASE_FLAVOR -->
+<!-- BHSM_V14_35_HOPF_PHASE_BIFURCATION -->
+## v14.35 phase-bifurcation artifacts
+
+Regenerate with `python scripts/materialize_hopf_phase_bifurcation_v14_35.py`. The controlling report is `docs/BHSM_HOPF_PHASE_BIFURCATION_CP_V14_35.md`.
+<!-- /BHSM_V14_35_HOPF_PHASE_BIFURCATION -->
+<!-- BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->
+## v14.36 phase-Hessian artifacts
+
+Regenerate with `python scripts/materialize_degree_one_phase_hessian_v14_36.py`. The controlling report is `docs/BHSM_DEGREE_ONE_PHASE_HESSIAN_SPECTRUM_V14_36.md`.
+<!-- /BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->
+<!-- BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->
+## v14.37 Hessian artifacts
+
+Regenerate with `python scripts/materialize_relative_holonomy_full_shape_hessian_v14_37.py`. The controlling report is `docs/BHSM_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN_V14_37.md`.
+<!-- /BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->
+<!-- BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->
+## v14.38 mixed-Hessian artifacts
+
+Regenerate with `python scripts/materialize_lambda85_eta_mixed_hessian_v14_38.py`. The controlling report is `docs/BHSM_LAMBDA85_ETA_MIXED_HESSIAN_V14_38.md`.
+<!-- /BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->
+<!-- BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->
+## v14.39 static eta/metric and Spin(4) artifacts
+
+Regenerate with `python scripts/materialize_static_eta_metric_spin4_source_v14_39.py`. The controlling report is `docs/BHSM_STATIC_ETA_METRIC_SPIN4_SOURCE_V14_39.md`.
+<!-- /BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->
+<!-- BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->
+## v14.40 matter-sourced Spin(4) artifacts
+
+Regenerate with `python scripts/materialize_matter_sourced_spin4_multipole_v14_40.py`. The controlling report is `docs/BHSM_MATTER_SOURCED_SPIN4_MULTIPOLE_V14_40.md`.
+<!-- /BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->
+<!-- BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->
+## v14.41 source-free relative-frame artifacts
+
+Regenerate with `python scripts/materialize_source_free_relative_frame_v14_41.py`. The controlling report is `docs/BHSM_SOURCE_FREE_RELATIVE_FRAME_V14_41.md`.
+<!-- /BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->
+<!-- BHSM_V14_42_COLLECTIVE_DIRAC_VACUUM_POLARIZATION -->
+## v14.42 collective Dirac vacuum-polarization artifacts
+
+Regenerate with `python scripts/materialize_collective_dirac_vacuum_polarization_v14_42.py`. The controlling report is `docs/BHSM_COLLECTIVE_DIRAC_VACUUM_POLARIZATION_V14_42.md`.
+<!-- /BHSM_V14_42_COLLECTIVE_DIRAC_VACUUM_POLARIZATION -->
+<!-- BHSM_V14_43_MODULI_CLIFFORD_MATCHER_ZETA -->
+## v14.43 moduli/Clifford matcher-zeta artifacts
+
+Regenerate with `python scripts/materialize_moduli_clifford_matcher_zeta_v14_43.py`. The controlling report is `docs/BHSM_MODULI_CLIFFORD_MATCHER_ZETA_V14_43.md`.
+<!-- /BHSM_V14_43_MODULI_CLIFFORD_MATCHER_ZETA -->
+<!-- BHSM_V14_44_WORLDLINE_CLIFFORD_SPIN_LIFT -->
+## v14.44 worldline/Clifford spin-lift artifacts
+
+Regenerate with `python scripts/materialize_worldline_clifford_spin_lift_v14_44.py`. The controlling report is `docs/BHSM_WORLDLINE_CLIFFORD_SPIN_LIFT_V14_44.md`.
+<!-- /BHSM_V14_44_WORLDLINE_CLIFFORD_SPIN_LIFT -->
+<!-- BHSM_V14_45_FOUNDATIONAL_DIRAC_SPIN_GLUE -->
+## v14.45 foundational Dirac/spin-glue artifacts
+
+Regenerate with `python scripts/materialize_foundational_dirac_spin_glue_v14_45.py`. The controlling report is `docs/BHSM_FOUNDATIONAL_DIRAC_SPIN_GLUE_V14_45.md`.
+<!-- /BHSM_V14_45_FOUNDATIONAL_DIRAC_SPIN_GLUE -->
+
+<!-- BHSM_V14_83_MANUAL_RECOVERY -->
+## v14.83 manual recovery and differential-shear artifacts
+
+Regenerate `BHSM_manual_campaign_recovery_v14_83.json` with `python scripts/materialize_manual_campaign_recovery_v14_83.py` and `BHSM_differential_shear_softening_v14_83.json` with `python scripts/materialize_differential_shear_softening_v14_83.py`. The controlling report is `docs/BHSM_MANUAL_CAMPAIGN_RECOVERY_V14_83.md`.
+<!-- /BHSM_V14_83_MANUAL_RECOVERY -->
+
+<!-- BHSM_V14_84_CAP_INERTIA_OPERATOR -->
+## v14.84 full-preimage cap-inertia operator artifact
+
+Regenerate `BHSM_full_preimage_cap_inertia_operator_theorem_v14_84.json` with
+`python scripts/materialize_full_preimage_cap_inertia_operator_v14_84.py`.
+The controlling report is
+`docs/BHSM_FULL_PREIMAGE_CAP_INERTIA_OPERATOR_THEOREM_V14_84.md`.
+<!-- /BHSM_V14_84_CAP_INERTIA_OPERATOR -->
+
+<!-- BHSM_V14_87_ETA_LEGENDRE_CURRENT_GATE -->
+## v14.87 eta relative-periodic Legendre/current artifact
+
+Regenerate `BHSM_eta_relative_periodic_legendre_current_gate_v14_87.json`
+with
+`python scripts/materialize_eta_relative_periodic_legendre_current_gate_v14_87.py`.
+The controlling report is
+`docs/BHSM_ETA_RELATIVE_PERIODIC_LEGENDRE_CURRENT_GATE_V14_87.md`.
+<!-- /BHSM_V14_87_ETA_LEGENDRE_CURRENT_GATE -->
+
+<!-- BHSM_V14_88_ACTION_SELECTED_CHARGE_SCHUR_GATE -->
+## v14.88 action-selected charge/current-shape Schur artifact
+
+Regenerate `BHSM_action_selected_charge_current_shape_schur_gate_v14_88.json`
+with
+`python scripts/materialize_action_selected_charge_current_shape_schur_gate_v14_88.py`.
+The controlling report is
+`docs/BHSM_ACTION_SELECTED_CHARGE_CURRENT_SHAPE_SCHUR_GATE_V14_88.md`.
+<!-- /BHSM_V14_88_ACTION_SELECTED_CHARGE_SCHUR_GATE -->

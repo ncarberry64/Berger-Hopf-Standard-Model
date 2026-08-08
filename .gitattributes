@@ -10,5 +10,8 @@ artifacts/*.tex text eol=lf
 artifacts/**/*.tex text eol=lf
 docs/frozen_predictions.md text eol=crlf
 docs/frozen_predictions.json text eol=crlf
+docs/current_bhsm_status.json text eol=lf
 artifacts/CKM_no_fit_operator_output_v1.json text eol=crlf
 src/bhsm/interface/predictions.py text eol=crlf
+# Download research packets are immutable byte-for-byte source archives.
+docs/research_packets/2026-08-03/*.md -text -diff

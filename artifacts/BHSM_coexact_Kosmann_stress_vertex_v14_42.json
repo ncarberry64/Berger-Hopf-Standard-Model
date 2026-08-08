@@ -1,0 +1,36 @@
+{
+  "Killing_gate": {
+    "commutator": "[H0,V_beta]=0",
+    "condition": "beta is Killing and all gauge/response backgrounds are invariant under beta",
+    "positive_negative_transition_block": "P_plus V_beta P_minus=0",
+    "vacuum_transition_susceptibility": 0
+  },
+  "artifact": "BHSM_coexact_Kosmann_stress_vertex_v14_42",
+  "harmonic_gate": {
+    "L1": "Killing/global-rotation channel; transition susceptibility vanishes in invariant vacuum",
+    "L2": "kinematically allowed non-Killing stress vertex; reduced matrix elements open",
+    "L3": "kinematically allowed non-Killing stress vertex; reduced matrix elements open"
+  },
+  "relative_core_wall_vertex": {
+    "formula": "V_rel=V_core-U_cw^dagger V_wall U_cw",
+    "required_matcher": "a unitary seam identification U_cw between the normalized core and wall spinor bundles on one common domain",
+    "status": "OPEN"
+  },
+  "single_cap_vertex": {
+    "Hermitian_ADM_vertex": "V_beta=-i L_beta^K for D_i beta^i=0",
+    "coefficient": "fixed by the Dirac action; no independent spin-rotation coupling",
+    "interpretation": "the beta^i T_0i coupling obtained by varying the tetrad and its Levi-Civita spin connection together",
+    "spinorial_Lie_derivative": "L_beta^K psi=beta^i nabla_i psi+(1/4)(D_i beta_j) gamma^{ij} psi, gamma^{ij}=(1/2)[gamma^i,gamma^j]"
+  },
+  "validation": {
+    "Killing_vertex_commutes_with_invariant_Dirac_operator": true,
+    "L2_L3_reduced_matrix_elements_not_emitted": true,
+    "divergence_free_vertex_is_formally_Hermitian": true,
+    "matcher_not_invented": true,
+    "no_new_fermion_rotation_coefficient": true,
+    "relative_vertex_requires_unitary_core_wall_matcher": true,
+    "vertex_contains_orbital_and_spin_connection_parts": true
+  },
+  "validation_passed": true,
+  "version": "v14.42"
+}

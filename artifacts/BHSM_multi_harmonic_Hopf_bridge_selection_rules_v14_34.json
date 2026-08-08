@@ -1,0 +1,112 @@
+{
+  "artifact": "BHSM_multi_harmonic_Hopf_bridge_selection_rules_v14_34",
+  "channel_table": [
+    {
+      "allowed": true,
+      "down": "light_d",
+      "ell": 4,
+      "ell_max": 18,
+      "p": 4,
+      "up": "light_u"
+    },
+    {
+      "allowed": true,
+      "down": "middle_s",
+      "ell": 8,
+      "ell_max": 16,
+      "p": 8,
+      "up": "light_u"
+    },
+    {
+      "allowed": true,
+      "down": "heavy_b",
+      "ell": 10,
+      "ell_max": 10,
+      "p": 8,
+      "up": "light_u"
+    },
+    {
+      "allowed": true,
+      "down": "light_d",
+      "ell": 2,
+      "ell_max": 14,
+      "p": 2,
+      "up": "middle_c"
+    },
+    {
+      "allowed": true,
+      "down": "middle_s",
+      "ell": 6,
+      "ell_max": 12,
+      "p": 6,
+      "up": "middle_c"
+    },
+    {
+      "allowed": true,
+      "down": "heavy_b",
+      "ell": 6,
+      "ell_max": 6,
+      "p": 6,
+      "up": "middle_c"
+    },
+    {
+      "allowed": true,
+      "down": "light_d",
+      "ell": 8,
+      "ell_max": 8,
+      "p": -4,
+      "up": "heavy_t"
+    },
+    {
+      "allowed": true,
+      "down": "middle_s",
+      "ell": 6,
+      "ell_max": 6,
+      "p": 0,
+      "up": "heavy_t"
+    },
+    {
+      "allowed": true,
+      "down": "heavy_b",
+      "ell": 0,
+      "ell_max": 0,
+      "p": 0,
+      "up": "heavy_t"
+    }
+  ],
+  "interpretation": "the phase texture must contain a multiplet/tower of harmonics; a single Cabibbo-like scalar angle is not the parent field",
+  "minimum_same_slot_support": "(ell,p)=(0,0),(4,4),(6,6); one weight cannot span all three generations",
+  "same_slot_channels": {
+    "c_to_s": {
+      "allowed": true,
+      "ell": 6,
+      "ell_max": 12,
+      "p": 6
+    },
+    "t_to_b": {
+      "allowed": true,
+      "ell": 0,
+      "ell_max": 0,
+      "p": 0
+    },
+    "u_to_d": {
+      "allowed": true,
+      "ell": 4,
+      "ell_max": 18,
+      "p": 4
+    }
+  },
+  "selection_rule": "p=q_u-q_d, |k_u-k_d|<=ell<=k_u+k_d, |p|<=ell, and parity compatibility",
+  "status": "KINEMATICALLY_ALLOWED_NOT_ACTION_SELECTED",
+  "validation": {
+    "Clebsch_coefficients_and_action_profile_not_invented": true,
+    "all_nine_minimal_channels_allowed": true,
+    "at_least_three_distinct_weight_components_needed_for_same_slot_full_rank": true,
+    "off_diagonal_channels_exist_by_selection_rules": true,
+    "same_slot_c_s_requires_ell6_p6": true,
+    "same_slot_t_b_requires_scalar_ell0_p0": true,
+    "same_slot_u_d_requires_ell4_p4": true
+  },
+  "validation_passed": true,
+  "version": "v14.34"
+}

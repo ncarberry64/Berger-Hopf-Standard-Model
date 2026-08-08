@@ -1,14 +1,18 @@
 from __future__ import annotations
 
 import hashlib
+import io
 import json
 import zlib
 from pathlib import Path
+from unittest.mock import patch
 
 import numpy as np
+import pytest
 
 from bhsm.interface.benchmarks.cern_open_data import (
     REAL_DATA_STATUS,
+    download_open_data,
     load_cms_dimuon_vectors,
     load_manifest,
     verify_download,
@@ -64,6 +68,36 @@ def test_loader_verifies_checksums_and_extracts_two_four_vectors(tmp_path: Path)
     assert vectors.vector_count == 4
     np.testing.assert_allclose(vectors.states[0], [5.0, 3.0, 4.0, 0.0])
     np.testing.assert_allclose(vectors.states[3], [2.0, 1.0, 0.0, 0.0])
+
+
+def test_download_retries_from_zero_without_weakening_integrity(tmp_path: Path) -> None:
+    source, manifest = _fixture(tmp_path)
+    expected = source.read_bytes()
+    source.unlink()
+    manifest["file"]["url"] = "https://example.invalid/dimuon.csv"
+    with patch(
+        "bhsm.interface.benchmarks.cern_open_data.urllib.request.urlopen",
+        side_effect=[io.BytesIO(b"truncated"), io.BytesIO(expected)],
+    ) as mocked:
+        result = download_open_data(manifest, source, attempts=2)
+    assert mocked.call_count == 2
+    assert result.read_bytes() == expected
+    verify_download(result, manifest)
+    assert not source.with_suffix(".csv.part").exists()
+
+
+def test_download_fails_closed_after_bounded_integrity_retries(tmp_path: Path) -> None:
+    source, manifest = _fixture(tmp_path)
+    source.unlink()
+    manifest["file"]["url"] = "https://example.invalid/dimuon.csv"
+    with patch(
+        "bhsm.interface.benchmarks.cern_open_data.urllib.request.urlopen",
+        side_effect=[io.BytesIO(b"bad"), io.BytesIO(b"still bad")],
+    ) as mocked, pytest.raises(ValueError, match="size does not match"):
+        download_open_data(manifest, source, attempts=2)
+    assert mocked.call_count == 2
+    assert not source.exists()
+    assert not source.with_suffix(".csv.part").exists()
 
 
 def test_real_data_report_is_equivalent_and_claim_bounded(tmp_path: Path) -> None:

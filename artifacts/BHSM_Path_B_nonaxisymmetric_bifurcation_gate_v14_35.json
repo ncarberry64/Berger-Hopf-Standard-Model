@@ -1,0 +1,52 @@
+{
+  "artifact": "BHSM_Path_B_nonaxisymmetric_bifurcation_gate_v14_35",
+  "branch_gate": "a required block must contain a zero mode at an equivariant bifurcation or a negative mode leading to a nonlinear branch; otherwise the axisymmetric branch does not generate flavor texture",
+  "classification_examples": {
+    "negative": "NONAXISYMMETRIC_INSTABILITY_BRANCH_SEARCH_REQUIRED",
+    "positive": "LOCALLY_STABLE_NO_LINEAR_BIFURCATION",
+    "zero": "ZERO_MODE_EQUIVARIANT_BIFURCATION_CANDIDATE"
+  },
+  "conditional_theorem": "about an axisymmetric degree-one stationary background, U(1) orthogonality removes linear p!=0 forcing and the self-adjoint Hessian decomposes into (ell,p) blocks",
+  "current_status": "the full-preimage degree-one stationary background, cap domain and its nonaxisymmetric Hessian spectrum are not constructed",
+  "existing_constant_background_result": "insufficient because the physical texture must be expanded around the degree-one branch",
+  "required_blocks": [
+    {
+      "ell": 2,
+      "lowest_eigenvalue": null,
+      "p": 2
+    },
+    {
+      "ell": 4,
+      "lowest_eigenvalue": null,
+      "p": 4
+    },
+    {
+      "ell": 6,
+      "lowest_eigenvalue": null,
+      "p": 6
+    },
+    {
+      "ell": 8,
+      "lowest_eigenvalue": null,
+      "p": 8
+    },
+    {
+      "ell": 10,
+      "lowest_eigenvalue": null,
+      "p": 8
+    }
+  ],
+  "validation": {
+    "axisymmetric_stationary_background_has_zero_linear_nonzero_weight_source": true,
+    "branch_not_promoted": true,
+    "constant_background_Hessian_does_not_replace_degree_one_Hessian": true,
+    "negative_block_requires_new_branch_search": true,
+    "no_action_owned_nonaxisymmetric_boundary_source_attached": true,
+    "positive_blocks_forbid_local_nonaxisymmetric_bifurcation": true,
+    "symmetric_Hessian_block_diagonal_in_ell_p": true,
+    "zero_block_is_equivariant_bifurcation_candidate": true
+  },
+  "validation_passed": true,
+  "verdict": "PATH_B_ACTION_DOES_NOT_YET_SELECT_THE_REQUIRED_NONAXISYMMETRIC_TEXTURE",
+  "version": "v14.35"
+}

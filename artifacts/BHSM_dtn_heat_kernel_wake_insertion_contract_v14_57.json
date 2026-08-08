@@ -1,0 +1,81 @@
+{
+  "artifact": "BHSM_dtn_heat_kernel_wake_insertion_contract_v14_57",
+  "diagnostic_effective_wake_generator": [
+    [
+      -0.006666666666666654,
+      0.181,
+      [
+        0.04,
+        -0.033
+      ]
+    ],
+    [
+      0.181,
+      -0.026666666666666727,
+      0.06400000000000002
+    ],
+    [
+      [
+        0.04,
+        0.033
+      ],
+      0.06400000000000002,
+      0.03333333333333338
+    ]
+  ],
+  "diagnostic_local_matching_operator": [
+    [
+      0.2600000000000001,
+      0.11,
+      0.04
+    ],
+    [
+      0.11,
+      0.24000000000000005,
+      0.11000000000000001
+    ],
+    [
+      0.04,
+      0.11000000000000001,
+      0.30000000000000016
+    ]
+  ],
+  "diagnostic_nonlocal_shape_term": [
+    [
+      0.0,
+      0.071,
+      [
+        0.0,
+        -0.033
+      ]
+    ],
+    [
+      0.071,
+      0.0,
+      -0.046
+    ],
+    [
+      [
+        0.0,
+        0.033
+      ],
+      -0.046,
+      0.0
+    ]
+  ],
+  "formulae": {
+    "local_matching_operator": "M=P(N_child-N_parent-J_interface)P",
+    "monodromy": "U(T)=exp(-i T H_wake)",
+    "moving_seam_equation": "i dot q-H_wake q=0 with U(T)q(0)=exp(-i theta_h)q(0)",
+    "nonlocal_shape_term": "H_nonlocal=sum_A (partial_A zeta_rel'(0)) G_A",
+    "wake_generator": "H_wake=traceless_hermitian_part(M+H_nonlocal)"
+  },
+  "physical_coefficient_bundle_present": false,
+  "synthetic_fixture_is_prediction": false,
+  "three_shape_generators_pairwise_commutator_norms": [
+    1.4142135623730951,
+    1.4142135623730951,
+    1.4142135623730951
+  ],
+  "version": "v14.57"
+}

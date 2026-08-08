@@ -1,0 +1,28 @@
+{
+  "full_BHSM_global_hessian_proved_positive": false,
+  "functional": "1/2 int[(u')^2+mu2 u^2] + gamma/2(int rho u-q x)^2 + eta_s/2(s-chi_s x)^2 + eta_t/2(t-chi_t x)^2 + nu/2(x-x_ref)^2 - J int sigma u",
+  "hessian_condition_number": 3808676.764281388,
+  "hessian_dimension": 9,
+  "hessian_max_eigenvalue": 8.567133124439504,
+  "hessian_min_eigenvalue": 2.249372591634799e-06,
+  "hessian_positive_definite": true,
+  "physical_uniqueness_claimed": false,
+  "quadratic_variation": "int[(delta u')^2+mu2(delta u)^2] + gamma(int rho delta u-q delta x)^2 + eta_s(delta s-chi_s delta x)^2 + eta_t(delta t-chi_t delta x)^2 + nu(delta x)^2",
+  "stationarity_residual": 1.0446063016321356e-14,
+  "strict_convexity_conditions": [
+    "mu2>0",
+    "gamma>0",
+    "eta_s>0",
+    "eta_t>0",
+    "nu>0"
+  ],
+  "unique_stationary_solution_in_reduced_class": true,
+  "variation_coordinates": [
+    "seam_value_s",
+    "seam_normal_traction_t",
+    "interior_profile_coefficients",
+    "x=log(R_child/R_parent)"
+  ],
+  "verdict": "BHSM_THE_REDUCED_GLOBAL_ENVELOPMENT_FUNCTIONAL_IS_STRICTLY_CONVEX_FOR_POSITIVE_LOCAL_ENERGY_AND_PARENT_BUDGET_WEIGHTS_SO_ITS_STATIONARY_PARENT_CHILD_CAP_AND_NESTING_SOLUTION_IS_UNIQUE_IN_THE_REDUCED_CLASS",
+  "version": "v14.60"
+}

@@ -1,6 +1,25 @@
 # BHSM Roadmap
 
-## v11.3 current critical path
+## v11.6 current critical path
+
+The current verdict is
+`BHSM_PARENT_ACTION_CURRENT_REDUCTION_BLOCKED_BY_UNFIXED_COMMON_DOMAIN_FAMILY_WAVEFUNCTION_MAP`.
+Resume from
+`ACTION_OWNED_COMMON_DOMAIN_UP_DOWN_FAMILY_WAVEFUNCTION_ORIENTATION_AND_CURRENT_PAIRING_MAP`.
+The next construction must supply normalized up/down family wavefunctions on
+one action-owned common domain, their relative complex orientation, the SU(2)L
+raising operator, and the action measure/projector pairing. RG transport,
+sector-wide quark normalization, and finite empirical replacement tests cannot
+close this provenance gate. Marks III and IV remain fail closed.
+
+## v11.5 historical critical path
+
+V11.5 stopped at
+`PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL`.
+V11.6 evaluates both routes: direct variation gives `I3`, and the viability
+axioms fail uniqueness by a continuous counterexample family.
+
+## v11.3 historical critical path
 
 The current verdict is
 `BHSM_RECIPROCAL_ATTACHMENT_ACTION_AND_CURRENT_DERIVED_WITH_THREE_MODE_DOMAIN_CONDITIONAL`.
@@ -412,3 +431,100 @@ inverse-square-kinetic families (and their couplings), fix the core variational
 ensemble, and preserve the frozen-action limit. Only a healthy uniquely
 action-owned local degree licenses reconstruction of the common three-mode
 Hessian and downstream orbit campaign.
+
+## v14.29 next campaign
+
+First derive the common-domain map from the retained `M8` eta field to the physical-SU3 collar bundle, including its measure and variational intertwiner, then derive the FR/Dirac collective matching and mode subtraction. Only then fix the self-adjoint gauge/ghost/FR domain and solve the nonradial parent-relative SU(3)-eta-collar Wilson-singlet BVP. A stable transverse saddle and negative-mode audit must precede the determinant/worldsheet limit. Common Yang-Mills normalization, dimensional anchoring, masses, and flavor remain downstream and may not be supplied from measurements.
+<!-- BHSM_V14_31_TO_V14_33_CUMULATIVE -->
+## v14.33 exact continuation
+
+1. Construct the smooth Hopf-clutching-compatible `SU(3)`-equivariant degree-one smash map.
+2. Solve the full-preimage stationary profile and self-adjoint cap domain.
+3. Derive internal zero-mode pinning, normalized collective measure and physical rotation loop.
+4. Derive the self-adjoint Dirac transgression and mode-subtraction theorem.
+5. Continue the external Wilson-response BVP and confinement audit in parallel.
+<!-- /BHSM_V14_31_TO_V14_33_CUMULATIVE -->
+<!-- BHSM_V14_34_HOPF_PHASE_FLAVOR -->
+## v14.34 exact continuation
+
+1. Solve/select the non-axisymmetric full-preimage Hopf phase texture.
+2. Construct the common self-adjoint up/down Hessians and omitted harmonic tower.
+3. Compute Feshbach-dressed family embeddings and the action current pairing.
+4. Test full rank, polar unitarity, CP orientation and nonlinear stability.
+5. Only then promote a CKM result and continue absolute-scale/RG closure.
+<!-- /BHSM_V14_34_HOPF_PHASE_FLAVOR -->
+<!-- BHSM_V14_35_HOPF_PHASE_BIFURCATION -->
+## v14.35 exact continuation
+
+1. Construct the degree-one full-preimage stationary background and cap domain.
+2. Compute the self-adjoint `(ell,p)=(2,2),(4,4),(6,6),(8,8),(10,8)` Hessian blocks.
+3. Prove or reject an equivariant nonaxisymmetric bifurcation branch.
+4. Derive phase-locking coefficients and attach the existing relative holonomy.
+5. Construct the tower resolvent, dressed embeddings and physical cross-Gram kernel.
+<!-- /BHSM_V14_35_HOPF_PHASE_BIFURCATION -->
+<!-- BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->
+## v14.36 exact continuation
+
+1. Attach the v12 relative holonomy to the Path B/full-preimage action.
+2. Derive its signed channel potential on the degree-one background.
+3. Construct the compact-cap self-adjoint domain and full coupled Hessian.
+4. Test zero crossing in `(2,2),(4,4),(6,6),(8,8),(10,8)`.
+5. Continue to the nonlinear branch and dressed cross-Gram kernel only after a crossing is proved.
+<!-- /BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->
+<!-- BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->
+## v14.37 exact continuation
+
+1. Put the compact full-preimage eta and attachment modes on one self-adjoint cap domain.
+2. Derive the `Lambda85` or Spin(4) mixed second variation `B`.
+3. Resolve both angular degree `ell` and Hopf weight `p`.
+4. Evaluate `sigma_max(H_eta^-1/2 B H_A^-1/2)` channel by channel.
+5. Continue to a nonlinear `Z6`-oriented branch only if the singular value crosses one.
+<!-- /BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->
+<!-- BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->
+## v14.38 exact continuation
+
+1. Extend the metric/incidence KKT reduction to nonhomogeneous `(ell,p)` blocks.
+2. Eliminate the algebraic Lambda85 multiplier on each block and prove a self-adjoint physical domain.
+3. Derive the Path B eta-stress pullback into the same metric/incidence variables, or complete the Spin(4) tetrad pullback.
+4. Recompute `sigma_max(H_eta^-1/2 B H_A^-1/2)` on the compact cap.
+5. Continue to a nonlinear Z6-oriented branch only after a genuine zero crossing.
+<!-- /BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->
+<!-- BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->
+## v14.39 exact continuation
+
+1. Solve a self-consistent fermion or Wilson-sourced coexact L=2,L=3 momentum constraint on the compact cap.
+2. Pull the resulting relative shift into the matched tetrad and Levi-Civita spin connection.
+3. Construct normalized common-domain Dirac modes.
+4. Evaluate the action-normalized L=2,L=3 family response and its up/down mismatch.
+5. Attach the existing Z6 relative orientation only after nonzero bridge amplitudes are derived.
+<!-- /BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->
+<!-- BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->
+## v14.40 exact continuation
+
+1. Derive a family-independent nonaxisymmetric relative-frame background or the collective-fermion effective action.
+2. Solve the compact-cap coexact L=2,L=3 operator with physical seam conditions.
+3. Match the resulting shift to the tetrad and spin connection.
+4. Construct normalized common-domain Dirac modes and action-derived up/down responses.
+5. Compute CKM only after the raw response kernel is action owned.
+<!-- /BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->
+<!-- BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->
+## v14.41 exact continuation
+
+1. Construct the normalized Path-B/FR one-knot Hilbert bundle.
+2. Derive the collective Weyl/Dirac operator and compact cap/seam self-adjoint domain.
+3. Match the relative tetrad and spin connection.
+4. Compute and renormalize the coexact stress polarization in L=2 and L=3.
+5. Test whether c_G lambda_L plus Pi_L crosses zero.
+6. Derive up/down response matrices only after the raw determinant kernel is action owned.
+<!-- /BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->
+
+<!-- BHSM_V14_83_MANUAL_RECOVERY -->
+## v14.83 exact continuation
+
+1. Derive the two physical strata and their common shape kinetic term from the full-preimage action.
+2. Derive positive layer inertias, covariant normal transport, and the shear covariance without measured inputs.
+3. Solve the degree-one stationary parent-child background and self-adjoint Dirac/Calderon domain.
+4. Recompute the complete bulk, GHY, KKT, matter, and nonlocal Hessian and D2/D3/D4 Landau response.
+5. Derive the noncentral left-handed current and charged-current kernel before CKM/PMNS evaluation.
+6. Run frozen downstream and Floquet gates only after those upstream objects close.
+<!-- /BHSM_V14_83_MANUAL_RECOVERY -->

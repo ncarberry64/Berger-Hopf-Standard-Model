@@ -1,0 +1,32 @@
+{
+  "artifact": "BHSM_round_S3_Dirac_zeta_diagnostics_v14_43",
+  "exact_values": {
+    "R_times_two_component_fermion_Casimir": "17/960",
+    "R_times_zeta_abs_D_at_minus_1": "-17/480",
+    "zeta_abs_D_at_0": "0"
+  },
+  "finite_ambiguity": [
+    "renormalized Einstein/background-curvature coefficient c2^ren",
+    "independent curvature-squared coefficient c4^ren",
+    "seam-local counterterms allowed by the matched geometry"
+  ],
+  "interpretation": "These values validate the free round-cap spectral convention. The physical L=2/L=3 susceptibility is a second variation of the full four-dimensional determinant with seam, mass, gauge, response, and counterterm data. It is not fixed by the unperturbed spatial zeta.",
+  "renormalized_channel_contract": "Lambda_L^ren=c2^ren q_L+c4^ren q_L^2+Pi_L^nonlocal with q_L=(L-1)(L+3)",
+  "spectrum": {
+    "absolute_eigenvalues": "(n+3/2)/R, n=0,1,...",
+    "absolute_spectral_zeta": "zeta_|D|(s)=2 R^s [zeta_H(s-2,3/2)-(1/4)zeta_H(s,3/2)]",
+    "multiplicity_each_sign": "(n+1)(n+2)"
+  },
+  "validation": {
+    "Pi2_Pi3_not_emitted": true,
+    "absolute_Dirac_zeta_at_zero_vanishes": true,
+    "absolute_Dirac_zeta_minus_one_exact": true,
+    "four_dimensional_polarization_counterterms_still_required": true,
+    "odd_spatial_zeta_diagnostic_has_no_log_scale_at_free_level": true,
+    "two_component_Casimir_exact": true,
+    "zeta_scheme_does_not_fix_finite_gravitational_couplings": true
+  },
+  "validation_passed": true,
+  "version": "v14.43",
+  "zeta_verdict": "ROUND_S3_ZETA_DIAGNOSTICS_ARE_EXACT_AND_SCHEME_CONSISTENT_BUT_DO_NOT_FIX_THE_FOUR_DIMENSIONAL_RENORMALIZED_COEXACT_STRESS_POLARIZATION"
+}

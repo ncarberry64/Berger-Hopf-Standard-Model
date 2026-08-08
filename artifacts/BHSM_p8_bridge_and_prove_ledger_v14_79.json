@@ -1,0 +1,64 @@
+{
+  "bridge_active": true,
+  "bridge_may_emit_physical_predictions": false,
+  "bridge_retired": false,
+  "protocol": "BRIDGE_AND_PROVE",
+  "rows": [
+    {
+      "object": "retained parent p8 coefficient",
+      "statement": "magnitude 1/8 with no new coefficient",
+      "status": "RECOVERED_FROM_V14_29_V14_30",
+      "step": 1
+    },
+    {
+      "object": "round full-preimage measure",
+      "statement": "fiber-integrated factor 16 pi^2 a_F^3 cos^3 rho on declared round branch",
+      "status": "DERIVED_CONDITIONAL_ROUND_BRANCH",
+      "step": 2
+    },
+    {
+      "object": "nonlinear fiber normalization theorem",
+      "statement": "M8[psi]>=V_F^-3; L2 normalization alone does not fix p8",
+      "status": "DERIVED_V14_79",
+      "step": 3
+    },
+    {
+      "object": "constant-modulus bridge",
+      "statement": "M8=V_F^-3",
+      "status": "PROVISIONAL_BRIDGE_ASSUMPTION",
+      "step": 4
+    },
+    {
+      "object": "degree-one full-preimage stationary profile psi_b",
+      "statement": "derive actual profile and M8_b from parent Euler equation",
+      "status": "OPEN",
+      "step": 5
+    },
+    {
+      "object": "nonlinear p8 Clebsch-Gordan/profile reduction",
+      "statement": "derive products/mode tower rather than zero-mode substitution",
+      "status": "OPEN",
+      "step": 6
+    },
+    {
+      "object": "eta-to-band/common-domain variational intertwiner",
+      "statement": "derive map carrying parent eta variations to physical band/shape Q_b",
+      "status": "OPEN",
+      "step": 7
+    },
+    {
+      "object": "self-adjoint cap domain",
+      "statement": "derive the physical operator domain used in nonlinear reduction",
+      "status": "OPEN",
+      "step": 8
+    },
+    {
+      "object": "master-action promotion",
+      "statement": "replace conditional View-2 bridge with authoritative action ownership",
+      "status": "OPEN",
+      "step": 9
+    }
+  ],
+  "version": "v14.79",
+  "working_rule": "downstream algebra may use step 4 only with BRIDGED_ASSUMPTION provenance; a physical gate cannot close until all OPEN/PROVISIONAL steps are derived"
+}

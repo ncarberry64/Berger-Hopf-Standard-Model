@@ -884,6 +884,23 @@ def build_parser() -> argparse.ArgumentParser:
         "--format", choices=("json", "markdown"), default="markdown"
     )
     integrated_status_commands = (
+        ("manual-recovery-status-v14-83", "Render the BHSM v14.83 manual recovery and shear gate"),
+        ("foundational-dirac-spin-glue-status-v14-45", "Render the BHSM v14.45 foundational Dirac/spin-glue gate"),
+        ("worldline-clifford-spin-lift-status-v14-44", "Render the BHSM v14.44 worldline/Clifford spin-lift gate"),
+        ("moduli-clifford-matcher-zeta-status-v14-43", "Render the BHSM v14.43 moduli/Clifford matcher-zeta gate"),
+        ("collective-dirac-vacuum-polarization-status-v14-42", "Render the BHSM v14.42 collective Dirac vacuum-polarization gate"),
+        ("source-free-relative-frame-status-v14-41", "Render the BHSM v14.41 source-free relative-frame gate"),
+        ("matter-sourced-spin4-multipole-status-v14-40", "Render the BHSM v14.40 matter-sourced Spin(4) multipole gate"),
+        ("static-eta-metric-spin4-source-status-v14-39", "Render the BHSM v14.39 static eta/metric and Spin(4) source gate"),
+        ("lambda85-eta-mixed-hessian-status-v14-38", "Render the BHSM v14.38 Lambda85/eta mixed-Hessian gate"),
+        ("relative-holonomy-full-shape-hessian-status-v14-37", "Render the BHSM v14.37 relative-holonomy/full-shape Hessian gate"),
+        ("degree-one-phase-hessian-status-v14-36", "Render the BHSM v14.36 degree-one phase-Hessian gate"),
+        ("hopf-phase-bifurcation-status-v14-35", "Render the BHSM v14.35 Hopf-phase bifurcation gate"),
+        ("hopf-phase-flavor-status-v14-34", "Render the BHSM v14.34 Hopf-phase flavor gate"),
+        ("hopf-smash-status-v14-33", "Render the BHSM v14.33 Hopf-smash transgression gate"),
+        ("path-b-topology-status-v14-32", "Render the BHSM v14.32 Path B topology and FR gate"),
+        ("path-b-completion-status-v14-31", "Render the BHSM v14.31 Path B foundational action gate"),
+        ("view2-completion-status-v14-29", "Render the authoritative BHSM v14.29 View 2 completion gate"),
         ("composite-carrier-current-status", "Render the BHSM v8.4 composite-carrier/current closure"),
         ("topographic-profile-status", "Render the BHSM v8.5 profile component-selection audit"),
         ("complex-profile-status", "Render the BHSM v8.6 complex-profile attachment audit"),
@@ -1017,6 +1034,119 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main(argv: Sequence[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
+    if args.command == "manual-recovery-status-v14-83":
+        from .completion.manual_campaign_recovery_v14_83 import completion_payload, deterministic_json, status_text
+        if args.format == "markdown":
+            print(status_text())
+        else:
+            print(deterministic_json(completion_payload()), end="")
+        return 0
+    if args.command == "foundational-dirac-spin-glue-status-v14-45":
+        from .completion.foundational_dirac_spin_glue_completion_gate_v14_45 import completion_payload, deterministic_json, status_text
+        if args.format == "markdown":
+            print(status_text())
+        else:
+            print(deterministic_json(completion_payload()), end="")
+        return 0
+    if args.command == "worldline-clifford-spin-lift-status-v14-44":
+        from .completion.worldline_clifford_spin_lift_completion_gate_v14_44 import completion_payload, deterministic_json, status_text
+        if args.format == "markdown":
+            print(status_text())
+        else:
+            print(deterministic_json(completion_payload()), end="")
+        return 0
+    if args.command == "moduli-clifford-matcher-zeta-status-v14-43":
+        from .completion.moduli_clifford_matcher_zeta_completion_gate_v14_43 import completion_payload, deterministic_json, status_text
+        if args.format == "markdown":
+            print(status_text())
+        else:
+            print(deterministic_json(completion_payload()), end="")
+        return 0
+    if args.command == "collective-dirac-vacuum-polarization-status-v14-42":
+        from .completion.collective_dirac_vacuum_polarization_completion_gate_v14_42 import completion_payload, deterministic_json, status_text
+        if args.format == "markdown":
+            print(status_text())
+        else:
+            print(deterministic_json(completion_payload()), end="")
+        return 0
+    if args.command == "source-free-relative-frame-status-v14-41":
+        from .completion.source_free_relative_frame_completion_gate_v14_41 import completion_payload, deterministic_json, status_text
+        if args.format == "markdown":
+            print(status_text())
+        else:
+            print(deterministic_json(completion_payload()), end="")
+        return 0
+    if args.command == "matter-sourced-spin4-multipole-status-v14-40":
+        from .completion.matter_sourced_spin4_completion_gate_v14_40 import completion_payload, deterministic_json, status_text
+        if args.format == "markdown":
+            print(status_text())
+        else:
+            print(deterministic_json(completion_payload()), end="")
+        return 0
+    if args.command == "static-eta-metric-spin4-source-status-v14-39":
+        from .completion.static_eta_metric_spin4_completion_gate_v14_39 import completion_payload, deterministic_json, status_text
+        if args.format == "markdown":
+            print(status_text())
+        else:
+            print(deterministic_json(completion_payload()), end="")
+        return 0
+    if args.command == "lambda85-eta-mixed-hessian-status-v14-38":
+        from .completion.lambda85_eta_mixed_hessian_completion_gate_v14_38 import completion_payload, deterministic_json, status_text
+        if args.format == "markdown":
+            print(status_text())
+        else:
+            print(deterministic_json(completion_payload()), end="")
+        return 0
+    if args.command == "relative-holonomy-full-shape-hessian-status-v14-37":
+        from .completion.relative_holonomy_full_shape_hessian_completion_gate_v14_37 import completion_payload, deterministic_json, status_text
+        if args.format == "markdown":
+            print(status_text())
+        else:
+            print(deterministic_json(completion_payload()), end="")
+        return 0
+    if args.command == "degree-one-phase-hessian-status-v14-36":
+        from .completion.degree_one_phase_hessian_completion_gate_v14_36 import completion_payload, deterministic_json, status_text
+        if args.format == "markdown":
+            print(status_text())
+        else:
+            print(deterministic_json(completion_payload()), end="")
+        return 0
+    if args.command == "hopf-phase-bifurcation-status-v14-35":
+        from .completion.hopf_phase_bifurcation_completion_gate_v14_35 import completion_payload, deterministic_json, status_text
+        if args.format == "markdown":
+            print(status_text())
+        else:
+            print(deterministic_json(completion_payload()), end="")
+        return 0
+    if args.command == "hopf-phase-flavor-status-v14-34":
+        from .completion.hopf_phase_flavor_completion_gate_v14_34 import completion_payload, deterministic_json, status_text
+        if args.format == "markdown":
+            print(status_text())
+        else:
+            print(deterministic_json(completion_payload()), end="")
+        return 0
+    if args.command == "hopf-smash-status-v14-33":
+        from .completion.hopf_smash_completion_gate_v14_33 import completion_payload, deterministic_json, status_text
+        if args.format == "markdown": print(status_text())
+        else: print(deterministic_json(completion_payload()), end="")
+        return 0
+    if args.command == "path-b-topology-status-v14-32":
+        from .completion.path_b_completion_gate_v14_32 import completion_payload, deterministic_json, status_text
+        if args.format == "markdown": print(status_text())
+        else: print(deterministic_json(completion_payload()), end="")
+        return 0
+    if args.command == "path-b-completion-status-v14-31":
+        from .completion.path_b_completion_gate_v14_31 import completion_payload, deterministic_json, status_text
+        if args.format == "markdown": print(status_text())
+        else: print(deterministic_json(completion_payload()), end="")
+        return 0
+    if args.command == "view2-completion-status-v14-29":
+        from .completion.view2_completion_gate_v14_29 import completion_payload, deterministic_json, status_text
+        if args.format == "markdown":
+            print(status_text())
+        else:
+            print(deterministic_json(completion_payload()), end="")
+        return 0
     if args.command == "master-action-status":
         payload = master_action_status_payload()
         if args.format == "markdown":

@@ -1,6 +1,15 @@
 # BHSM Documentation Index
 
-## Current v11.3 campaign
+## Current v11.5 campaign
+
+- [Conditional flavor-action assembly](BHSM_FLAVOR_ACTION_COMPLETION_v11_5.md)
+- [2026-08-03 Downloads progress review](BHSM_DOWNLOAD_PROGRESS_REVIEW_2026-08-03.md)
+- [Archived manual research packets](research_packets/2026-08-03/)
+
+Current verdict: `BHSM_FLAVOR_ACTION_CANDIDATES_ASSEMBLED_WITH_CHARGED_CURRENT_PROVENANCE_GATE_OPEN`.
+Next object: `PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL`.
+
+## Historical v11.3 campaign
 
 - [Reciprocal core-surface attachment](BHSM_RECIPROCAL_CORE_SURFACE_ATTACHMENT_v11_3.md)
 - [Attachment character and current](BHSM_ATTACHMENT_CHARACTER_AND_CURRENT_v11_3.md)
@@ -237,3 +246,118 @@ The current minimal-action theory dictionary is documented in
 - [Release checklist](bhsm_v1_2_0_release_checklist.md)
 - [Institutional HEP handoff](institutional_hep_handoff_index.md)
 - [Citation guide](how_to_cite.md)
+<!-- BHSM_V14_31_TO_V14_33_CUMULATIVE -->
+## v14.31–v14.33 Path B continuation
+
+The three controlling reports document the foundational action, physical-topology correction, and full-preimage Hopf-smash transgression route.
+<!-- /BHSM_V14_31_TO_V14_33_CUMULATIVE -->
+<!-- BHSM_V14_34_HOPF_PHASE_FLAVOR -->
+## v14.34 Hopf-phase flavor
+
+See `BHSM_HOPF_PHASE_FLAVOR_CROSS_GRAM_V14_34.md` for the same-shell `c/s` result, single-phase no-go, multi-harmonic selection rules and Feshbach-dressed CKM route.
+<!-- /BHSM_V14_34_HOPF_PHASE_FLAVOR -->
+<!-- BHSM_V14_35_HOPF_PHASE_BIFURCATION -->
+## v14.35 Hopf-phase bifurcation
+
+See `BHSM_HOPF_PHASE_BIFURCATION_CP_V14_35.md` for the five-component support theorem, phase resonance, nonlinear tower gate and exact Hessian-bifurcation dependency.
+<!-- /BHSM_V14_35_HOPF_PHASE_BIFURCATION -->
+<!-- BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->
+## v14.36 degree-one phase-Hessian audit
+
+See `BHSM_DEGREE_ONE_PHASE_HESSIAN_SPECTRUM_V14_36.md` for the exact nonnegative phase-Hessian theorem, five-channel finite-box spectrum, and the relative-holonomy continuation gate.
+<!-- /BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->
+<!-- BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->
+## v14.37 relative-holonomy/full-shape Hessian audit
+
+See `BHSM_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN_V14_37.md` for the v12 holonomy Hessian no-go, the complete v13.1 surrogate tangent-sector spectra, and the exact mixed-block zero-crossing criterion.
+<!-- /BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->
+<!-- BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->
+## v14.38 Lambda85–eta mixed-Hessian audit
+
+See `BHSM_LAMBDA85_ETA_MIXED_HESSIAN_V14_38.md` for the homogeneous-character selection theorem, the exact zero-crossing result, the canonical C3 family-diagonality theorem, and the corrected nonhomogeneous continuation.
+<!-- /BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->
+<!-- BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->
+## v14.39 static eta/metric and Spin(4) source audit
+
+See `BHSM_STATIC_ETA_METRIC_SPIN4_SOURCE_V14_39.md` for the exact eta/metric mixed variation, static ADM source no-go, and the pivot to a self-consistent matter-sourced coexact shift.
+<!-- /BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->
+<!-- BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->
+## v14.40 matter-sourced Spin(4) multipole audit
+
+See `BHSM_MATTER_SOURCED_SPIN4_MULTIPOLE_V14_40.md` for the rigid-rotor L=1 theorem, diagonal-family r=0 theorem, static-Wilson source audit, and universality gate.
+<!-- /BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->
+<!-- BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->
+## v14.41 source-free relative-frame gate
+
+See `BHSM_SOURCE_FREE_RELATIVE_FRAME_V14_41.md` for the weighted Killing-square theorem, the exact round-cap L=2/L=3 spectrum, and the collective-fermion vacuum-polarization threshold contract.
+<!-- /BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->
+<!-- BHSM_V14_42_COLLECTIVE_DIRAC_VACUUM_POLARIZATION -->
+## v14.42 collective Dirac vacuum-polarization audit
+
+See `BHSM_COLLECTIVE_DIRAC_VACUUM_POLARIZATION_V14_42.md` for the action-ownership audit, compact Dirac domain, Kosmann stress vertex, filled-sea sign theorem, and renormalized `L=2,3` crossing contract.
+<!-- /BHSM_V14_42_COLLECTIVE_DIRAC_VACUUM_POLARIZATION -->
+<!-- BHSM_V14_43_MODULI_CLIFFORD_MATCHER_ZETA -->
+## v14.43 moduli/Clifford matcher-zeta audit
+
+See `BHSM_MODULI_CLIFFORD_MATCHER_ZETA_V14_43.md` for the FR-line Clifford-rank obstruction, local-field normalization ambiguity, unitary seam-transmission theorem, spinor recoupling audit, and exact free round-S3 zeta diagnostics.
+<!-- /BHSM_V14_43_MODULI_CLIFFORD_MATCHER_ZETA -->
+<!-- BHSM_V14_44_WORLDLINE_CLIFFORD_SPIN_LIFT -->
+## v14.44 worldline/Clifford spin-lift audit
+
+See `BHSM_WORLDLINE_CLIFFORD_SPIN_LIFT_V14_44.md` for the odd-field action-ownership no-go, conditional product superconnection, full-Clifford seam matcher theorem, parent spin-lift condition, and spinor branch-connectivity audit.
+<!-- /BHSM_V14_44_WORLDLINE_CLIFFORD_SPIN_LIFT -->
+<!-- BHSM_V14_45_FOUNDATIONAL_DIRAC_SPIN_GLUE -->
+## v14.45 foundational Dirac and spin-glue continuation
+
+See `BHSM_FOUNDATIONAL_DIRAC_SPIN_GLUE_V14_45.md` for the foundational fermion-action declaration, exact eta zero-mode pullback, global spin-bundle seam theorem, collective no-double-counting projector, and the full-rank L2/L3 renormalization obstruction.
+<!-- /BHSM_V14_45_FOUNDATIONAL_DIRAC_SPIN_GLUE -->
+
+<!-- BHSM_V14_83_MANUAL_RECOVERY -->
+## v14.83 manual campaign recovery
+
+See `BHSM_MANUAL_CAMPAIGN_RECOVERY_V14_83.md` for the 49-package provenance audit, independently checked Landau/DtN/core-softening results, final differential-shear theorem, and the current fail-closed completion gate.
+<!-- /BHSM_V14_83_MANUAL_RECOVERY -->
+
+<!-- BHSM_V14_84_CAP_INERTIA_OPERATOR -->
+## v14.84 full-preimage cap-inertia operator theorem
+
+See `BHSM_FULL_PREIMAGE_CAP_INERTIA_OPERATOR_THEOREM_V14_84.md` for the exact
+noncommuting operator parallel-sum identity, reflection intertwining theorem,
+conditional `nu=1/4` result, ADM-shift exclusion, and four sequential gates.
+<!-- /BHSM_V14_84_CAP_INERTIA_OPERATOR -->
+
+<!-- BHSM_V14_85_STATIONARY_TRANSPORT_NO_GO -->
+## v14.85 Norman/BHSM recall and stationary transport no-go
+
+See `BHSM_NORMAN_FULL_RECALL_AND_STATIONARY_TRANSPORT_NO_GO_V14_85.md` for the
+Norman/BHSM source reconciliation, pure-repartition inertia no-go,
+time-symmetric Brown--York momentum theorem, present-branch zero-transport
+evaluation, and sourced relative-periodic reopening condition.
+<!-- /BHSM_V14_85_STATIONARY_TRANSPORT_NO_GO -->
+
+<!-- BHSM_V14_86_LONGITUDINAL_COEXACT_GATE -->
+## v14.86 longitudinal-threading/coexact-rotation gate
+
+See `BHSM_LONGITUDINAL_THREADING_COEXACT_ROTATION_GATE_V14_86.md` for the
+recovered v6.18 reflection-odd source, exact Hodge separation theorem,
+nine-dimensional representation claim boundary, reflection-equivariant
+response theorem, and eta/Dirac coexact-current continuation object.
+<!-- /BHSM_V14_86_LONGITUDINAL_COEXACT_GATE -->
+
+<!-- BHSM_V14_87_ETA_LEGENDRE_CURRENT_GATE -->
+## v14.87 eta relative-periodic Legendre/current gate
+
+See `BHSM_ETA_RELATIVE_PERIODIC_LEGENDRE_CURRENT_GATE_V14_87.md` for the
+exact Path-B velocity Legendre spectrum, pointwise kinetic kill screen,
+zero-momentum current theorem, conditional sourced L2 coexact resolvent, and
+the sharpened charge/exchange-sector blocker.
+<!-- /BHSM_V14_87_ETA_LEGENDRE_CURRENT_GATE -->
+
+<!-- BHSM_V14_88_ACTION_SELECTED_CHARGE_SCHUR_GATE -->
+## v14.88 action-selected charge/current-shape Schur gate
+
+See `BHSM_ACTION_SELECTED_CHARGE_CURRENT_SHAPE_SCHUR_GATE_V14_88.md` for the
+charge-sector and FR selection audit, exact fixed-charge Routh reduction,
+general common-domain Schur Hessian, round Spin(4) kill screen, and conserved
+exchange-current continuation object.
+<!-- /BHSM_V14_88_ACTION_SELECTED_CHARGE_SCHUR_GATE -->

@@ -1,0 +1,35 @@
+{
+  "artifact": "BHSM_collective_field_normalization_gate_v14_43",
+  "invariant_collective_data": [
+    "FR sign",
+    "normalized one-particle rays",
+    "spin parity",
+    "moduli-space probability after wavefunction renormalization"
+  ],
+  "local_action": "S_eff=Z_Psi int sqrt(-h) bar(Psi) i slash(D) Psi+...",
+  "missing_normalization_data": [
+    "an action-derived map from localized eta fluctuations to the local field Psi_eta",
+    "the pole residue or equal-time canonical anticommutator",
+    "the action-normalized stress and gauge currents",
+    "the number of independent local spinor species after constraints"
+  ],
+  "rescaling": {
+    "coefficient_map": "Z_new=Z_old/|c|^2",
+    "definition": "Psi_new=c Psi_old",
+    "witness": {
+      "Z_new": 0.9999999999999999,
+      "Z_old": 7.0,
+      "c": 2.6457513110645907
+    }
+  },
+  "status": "OPEN_NOT_FIXED_BY_FR_HILBERT_NORM",
+  "validation": {
+    "FR_ray_probabilities_invariant_under_constant_rescaling_after_renormalization": true,
+    "canonical_local_field_normalization_not_claimed": true,
+    "current_normalization_requires_action_variation": true,
+    "field_rescaling_changes_local_kinetic_residue": true,
+    "one_particle_inner_product_not_equal_to_local_LSZ_residue_without_field_map": true
+  },
+  "validation_passed": true,
+  "version": "v14.43"
+}

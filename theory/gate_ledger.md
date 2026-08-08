@@ -1,5 +1,42 @@
 # Gate Ledger
 
+## v14.1 eta/SU3 connection fork gate
+
+The composite eta projector connection fails full physical-SU3 equivalence on
+three independent grounds: its constant-selector quadratic principal symbol
+has rank zero versus rank 24 for independent Yang-Mills; its generic
+spacetime-curvature Jacobian has rank 23 into 48 components; and its pullback
+bundle has c2=0, excluding general nonzero-instanton sectors. Full universal
+SU3 holonomy remains valid but is not field-space equivalence.
+
+The retained action owns no wall-to-M4 bundle map, no `E_P -> E_color`
+isomorphism, and no connection matcher or eta-sourced independent Gauss law.
+The unique branch classification is
+`BHSM_COLOR_DYNAMICS_REQUIRES_A_NEW_DECLARED_CROSS_STRATUM_BUNDLE_CONNECTION_ACTION_OBJECT`.
+The next gate is
+`ACTION_OWNED_COMMON_HIGHER_DIMENSIONAL_CONNECTION_WHOSE_M4_SU3_RESTRICTION_AND_ETA_POLARIZATION_CONNECTION_ARE_DERIVED_COMPATIBLE_PROJECTIONS`.
+Gauge-dressed singlet BVPs remain ineligible. Mark III and Mark IV are not
+reached.
+
+## v14.0 eta-knot action gate
+
+The degree-one static eta-knot, FR odd-degree spin parity, eta-wall G2/SU3
+polarization, canonical projector curvature, and meson/baryon covariant
+singlet closure are reached at their declared conditional or exact
+mathematical levels.
+
+The nonlinear gauge-dressed singlet BVP is not eligible under the current
+action. Eta belongs to S8, the independent Yang–Mills connection belongs to
+S4eff, and the gauge bundle/measure pushforward and physical eta-current
+pullback are absent. The first missing action object is
+`ACTION_OWNED_ETA_WALL_TO_M4_SU3_BUNDLE_PULLBACK_AND_CONNECTION_IDENTIFICATION_WITH_VARIATIONAL_GAUSS_LAW`.
+
+The oriented projector connection acts on color as (A^P\otimes I_{C_3}),
+so it remains family central and reduces to the v11.6 I3 weak current when the
+orientation variation is removed. The chiral index and nontrivial flavor
+current remain blocked separately. Physical Mark III and Mark IV are not
+reached.
+
 ## v11.3 current gate
 
 The recovered action-owned `Lambda85` compatibility matcher fixes the
@@ -302,3 +339,222 @@ Current verdict:
 
 Exact next object:
 `ACTION_PRINCIPLE_FIXING_Z_UPSILON_U_UPSILON_AND_SUPPORT_COUPLINGS`.
+# v11.6 parent-action charged-current gate
+
+- Direct action route: evaluated. The effective SU(2)L Dirac mixed variation has family kernel `I3`.
+- Physical rephasing equivalence: rejected because entrywise magnitudes differ from the v11.5 kernel.
+- Uniqueness route: rejected for the current axioms by a continuous family of full-rank, unitary, CP-odd, SU(2)-closing, rephasing-inequivalent kernels.
+- Spectral-only route: commuting v11.4 `H_u,H_d` have diagonal joint functional calculus and cannot generate nontrivial mixing.
+- Mark III: `NOT_REACHED`.
+- Mark IV: `NOT_REACHED`.
+- Exact next object: `ACTION_OWNED_COMMON_DOMAIN_UP_DOWN_FAMILY_WAVEFUNCTION_ORIENTATION_AND_CURRENT_PAIRING_MAP`.
+- Verdict: `BHSM_PARENT_ACTION_CURRENT_REDUCTION_BLOCKED_BY_UNFIXED_COMMON_DOMAIN_FAMILY_WAVEFUNCTION_MAP`.
+
+# v14.29 View 2 classical action/current gate
+
+- Bundle/action/current/Hessian: `VALIDATED_CONDITIONALLY` for a candidate common-domain action; not derived from the prior stratified action.
+- Projector/Berry connection versus physical SU(3): `DISTINCT`.
+- Selector and pure-wall source: `ZERO`, retained as the background limit.
+- Tangent source: `NONZERO_OFF_SHELL_CANDIDATE_ACTION_VARIATION`.
+- FR current: `OPEN_COLLECTIVE_MATCHING_THEOREM_NOT_ADDITIVE_SOURCE`.
+- Confinement and worldsheet: `OPEN`.
+- Mark III / Mark IV: `NOT_REACHED` / `NOT_REACHED`.
+- Exact next object: `COMMON_DOMAIN_ETA_TO_PHYSICAL_SU3_ASSOCIATED_BUNDLE_REDUCTION_WITH_COLLAR_MEASURE_AND_VARIATIONAL_INTERTWINER`.
+<!-- BHSM_V14_31_TO_V14_33_CUMULATIVE -->
+## v14.31–v14.33 cumulative gates
+
+- Color–eta physical action ownership: `PASSED_BY_FOUNDATIONAL_POSTULATE`.
+- Extra vector pole gate: `PASSED_NO_NEW_VECTORS`.
+- M4 S6 degree/FR gate: `FAILED_PI3_AND_PI4_ZERO`.
+- Full-preimage smash topology: `PASSED_TOPOLOGY_HOMOLOGY_LEVEL`.
+- M8 degree to M4 particle-number current: `PASSED_CONDITIONALLY_ZERO_CAP_FLUX`.
+- Smooth equivariant map/stationary background/collective Dirac: `OPEN`.
+- Wilson-response BVP and confinement: `PARALLEL_OPEN`.
+<!-- /BHSM_V14_31_TO_V14_33_CUMULATIVE -->
+<!-- BHSM_V14_34_HOPF_PHASE_FLAVOR -->
+## v14.34 Hopf-phase flavor gates
+
+- `c/s` same-shell imbalance: `VALIDATED`.
+- Constant phase: `FAILED_REPHASING_ONLY`.
+- Single fixed Hopf weight: `FAILED_MAXIMUM_RANK_ONE`.
+- Multi-harmonic bridge: `KINEMATICALLY_ALLOWED_NOT_ACTION_SELECTED`.
+- Full-space weak current: `PRESERVED_I3`.
+- Feshbach-dressed cross-Gram route: `VALID_MATHEMATICALLY_ACTION_OWNERSHIP_OPEN`.
+- Physical CKM/CP/masses: `OPEN`.
+<!-- /BHSM_V14_34_HOPF_PHASE_FLAVOR -->
+<!-- BHSM_V14_35_HOPF_PHASE_BIFURCATION -->
+## v14.35 Hopf-phase bifurcation gates
+
+- Minimal connected five-component texture: `PASSED_KINEMATICALLY`.
+- Generic full-rank determinant condition: `DERIVED_NOT_ACTION_EVALUATED`.
+- Rephasing cycle and weight resonance: `DERIVED`.
+- Nontrivial CP phase: `NORMAL_FORM_ROUTE_ONLY`.
+- Degree-one nonaxisymmetric Hessian: `OPEN`.
+- Exact finite truncation: `FAILED`; tower required.
+- Relative holonomy attachment: `OPEN`.
+- Physical CKM/CP/masses: `OPEN`.
+<!-- /BHSM_V14_35_HOPF_PHASE_BIFURCATION -->
+<!-- BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->
+## v14.36 degree-one phase-Hessian gates
+
+- Exact Path B phase-Hessian sign: `PASSED_NONNEGATIVE`.
+- Requested finite-box channel spectra: `PASSED_NO_NEGATIVE_MODE`.
+- Infinite-volume positive mass gap: `NOT_CLAIMED`; threshold approaches zero.
+- Pure Path B phase bifurcation: `FAILED_TO_TURN_ON`.
+- Full non-isometric/cap Hessian: `OPEN`.
+- Relative holonomy signed contribution: `OPEN_NEXT`.
+- Physical CKM/CP/masses: `OPEN`.
+<!-- /BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->
+<!-- BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->
+## v14.37 relative-holonomy/full-shape gates
+
+- Relative `Z6` holonomy as quadratic amplitude source: `FAILED`.
+- Relative `Z6` holonomy as branch orientation: `VALIDATED_CONDITIONALLY`.
+- v13.1 full non-isometric surrogate spectrum: `PASSED_NO_NEGATIVE_TESTED_MODE`.
+- Compact-cap/Hopf-resolved spectrum: `OPEN`.
+- Action-owned eta–attachment mixed Hessian: `OPEN_NEXT`.
+- Normalized singular-value crossing: `NOT_EVALUABLE_UNTIL_MIXED_BLOCK_EXISTS`.
+- Physical CKM/CP/masses: `OPEN`.
+<!-- /BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->
+<!-- BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->
+## v14.38 Lambda85–eta mixed-Hessian gates
+
+- Homogeneous Lambda85/eta flavor mixed block: `FAILED_EXACT_ZERO`.
+- Normalized singular-value crossing: `FAILED_SIGMA_MAX_ZERO`.
+- Canonical C3 family-chain off-diagonal response: `FAILED_ZERO`.
+- Lambda85 as propagating field: `INVALIDATED_ALGEBRAIC_MULTIPLIER`.
+- Nonhomogeneous constraint-reduced metric/incidence spectrum: `OPEN`.
+- Spin(4) matched tetrad/spin-connection block: `OPEN`.
+- Physical CKM/CP/masses: `OPEN`.
+<!-- /BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->
+<!-- BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->
+## v14.39 source gates
+
+- Path-B eta/metric local mixed variation: `DERIVED_EXACT`.
+- Static eta ADM momentum source: `FAILED_ZERO`.
+- Static shift/phase mixed Hessian: `FAILED_ZERO`.
+- Spin(4) L=2,L=3 activation on static branch: `OFF`.
+- Nonhomogeneous spatial metric/Lambda85-reduced operator: `OPEN`.
+- Fermion/Wilson-sourced coexact shift: `OPEN`.
+- Physical CKM/CP/masses: `OPEN`.
+<!-- /BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->
+<!-- BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->
+## v14.40 matter-source gates
+
+- Rigid eta rotor source: `L1_ONLY`.
+- Static Wilson coexact source: `ZERO_OR_NOT_DYNAMICAL`.
+- Diagonal family occupation source: `R0_ONLY_NOT_CONNECTED`.
+- Off-diagonal coherence source: `KINEMATICALLY_ALLOWED_BUT_CIRCULAR_UNTIL_ACTION_SELECTED`.
+- Universal L2/L3 relative-frame background: `OPEN`.
+- Physical CKM/CP/masses: `OPEN`.
+<!-- /BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->
+<!-- BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->
+## v14.41 universal relative-frame gates
+
+- Source-free coexact L=1: `KILLING_KERNEL_ONLY`.
+- Source-free coexact L=2: `STRICTLY_POSITIVE_OFF`.
+- Source-free coexact L=3: `STRICTLY_POSITIVE_OFF`.
+- Classical spontaneous relative frame: `FAILED`.
+- Collective-fermion vacuum determinant: `OPEN_NOT_EVALUABLE`.
+- Renormalized Pi_2 and Pi_3: `OPEN`.
+- Physical CKM/CP/masses: `OPEN`.
+<!-- /BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->
+<!-- BHSM_V14_42_COLLECTIVE_DIRAC_VACUUM_POLARIZATION -->
+## v14.42 collective determinant gates
+
+- FR spin/statistics gate: `PRESERVED_CONDITIONAL`.
+- Local collective Dirac principal symbol: `OPEN_NOT_DERIVED_FROM_MODULI_ACTION`.
+- Compact `H1` domain: `PASSED_CONDITIONAL_ON_SUPPLIED_DIRAC_NORMAL_FORM`.
+- Single-cap Kosmann vertex: `PASSED_CONDITIONAL`.
+- Core-wall spinor matcher: `OPEN`.
+- Bare coexact transition susceptibility: `NONPOSITIVE_ZERO_ON_KILLING_MODES`.
+- Renormalized `L=2,3` crossing: `OPEN_NOT_NUMERICALLY_DEFINED`.
+- Physical CKM/CP/masses: `OPEN`.
+<!-- /BHSM_V14_42_COLLECTIVE_DIRAC_VACUUM_POLARIZATION -->
+<!-- BHSM_V14_43_MODULI_CLIFFORD_MATCHER_ZETA -->
+## v14.43 first-order collective-field gates
+
+- FR spin/statistics: `PRESERVED_CONDITIONAL`.
+- Moduli Hodge-Dirac: `CANONICAL_BUT_WRONG_BASE_FOR_LOCAL_M4_DIRAC`.
+- Local spacetime Clifford principal symbol: `OPEN_NOT_DERIVED`.
+- Canonical local-field normalization: `OPEN`.
+- Self-adjoint matcher class: `DERIVED_CONDITIONAL`.
+- Action-selected matcher member: `OPEN`.
+- Orbital L2/L3 Clebsch factors: `DERIVED`.
+- Full spinorial Kosmann reduced elements: `OPEN`.
+- Free round-S3 zeta diagnostic: `DERIVED`.
+- Renormalized L2/L3 polarization and physical CKM/CP/masses: `OPEN`.
+<!-- /BHSM_V14_43_MODULI_CLIFFORD_MATCHER_ZETA -->
+<!-- BHSM_V14_44_WORLDLINE_CLIFFORD_SPIN_LIFT -->
+## v14.44 graded-fermion and seam-spin gates
+
+- Bosonic Path B to odd worldline variables: `FAILED_NOT_DERIVED`.
+- Moduli N=1 Hodge-Dirac: `CONDITIONAL_NEW_EXTENSION_WRONG_BASE`.
+- Product spacetime/moduli superconnection: `CONDITIONAL_ARCHITECTURE`.
+- Full Clifford matcher commutant: `U1_BEFORE_INTERNAL_BUNDLES`.
+- Parent coframe spin lift: `CONDITIONAL_THEOREM_PARENT_COFRAME_OPEN`.
+- Relative flavor holonomy from universal spin lift: `ZERO_FAMILY_CENTRAL`.
+- Orbital spinor branch connectivity: `12_OF_16`.
+- Full normalized Kosmann L2/L3 polarization: `OPEN`.
+<!-- /BHSM_V14_44_WORLDLINE_CLIFFORD_SPIN_LIFT -->
+<!-- BHSM_V14_45_FOUNDATIONAL_DIRAC_SPIN_GLUE -->
+## v14.45 foundational fermion and renormalization gates
+
+- Local eta-bound Dirac action: `ADOPTED_FOUNDATIONAL_EFFECTIVE_DATA`.
+- Derivation from bosonic Path B: `FAILED_NOT_CLAIMED`.
+- Normal zero-mode pullback: `EXACT_UNIT_COEFFICIENT`.
+- Two-sheet seam-Higgs normal overlap: `EXACTLY_ONE`.
+- Parent spin-bundle seam matcher: `FIXED_FOUNDATIONALLY_UP_TO_GLOBAL_SIGN_OR_GAUGE`.
+- Relative flavor holonomy from spin glue: `ZERO_FAMILY_CENTRAL`.
+- Collective zero-mode double counting: `REMOVED_BY_P_COLL_Q_ETA_SPLIT`.
+- L2/L3 local counterterm map: `FULL_RANK_DETERMINANT_420`.
+- Renormalized bifurcation: `UNDERDETERMINED`.
+- Tangential compact-cap Kosmann spectrum: `OPEN`.
+<!-- /BHSM_V14_45_FOUNDATIONAL_DIRAC_SPIN_GLUE -->
+
+<!-- BHSM_V14_83_MANUAL_RECOVERY -->
+## v14.83 recovery gates
+
+- Canonical manual package integrity: `PASSED_49_BUNDLES`.
+- Reduced two-stratum kinetic identity: `PASSED_EXACT`.
+- Reduced isotropic ell=2 shear-sign gate: `PASSED_CHI_POSITIVE`.
+- Equal-inertia coefficient: `CHI2_EQUALS_2_OVER_3R2`.
+- Full-preimage two-stratum action and physical shear covariance: `OPEN`.
+- Degree-one stationary background and self-adjoint stratified domain: `OPEN`.
+- Complete D2/D3/D4 Landau response and Goldstone/Floquet stability: `OPEN`.
+- Action-owned noncentral left-handed current and charged-current provenance: `OPEN`.
+- Mark III / BHSM completion / USB synchronization: `NOT_REACHED`.
+<!-- /BHSM_V14_83_MANUAL_RECOVERY -->
+
+<!-- BHSM_V14_87_ETA_LEGENDRE_CURRENT_GATE -->
+## v14.87 eta relative-periodic kinetic/current gates
+
+- Eta velocity Legendre spectrum: `DERIVED_EXACT`.
+- Pointwise positivity cone: `KAPPA1_PLUS_X3_MINUS_6X2_SPEED2_POSITIVE`.
+- Unknown periodic-branch eta inertia: `CONDITIONAL_NOT_EVALUATED`.
+- Zero-momentum stationary eta current: `FAILED_ZERO`.
+- Sourced round L2 coexact resolvent: `DERIVED_CONDITIONAL`.
+- Sourced ADM response as physical shape transport: `OPEN_MIXED_VARIATION`.
+- Action-selected reflected L2 eta/Dirac charge sector: `OPEN`.
+- Degree-one periodic background/common domain/complete Hessian: `OPEN`.
+- Mark III / BHSM completion / USB synchronization: `NOT_REACHED`.
+<!-- /BHSM_V14_87_ETA_LEGENDRE_CURRENT_GATE -->
+
+<!-- BHSM_V14_88_ACTION_SELECTED_CHARGE_SCHUR_GATE -->
+## v14.88 action-selected charge/current-shape gates
+
+- Physical M4 S6 eta FR charge: `FAILED_PI4_S6_EQUALS_ZERO`.
+- Historical M8 S7 FR charge: `CONDITIONAL_NOT_PHYSICALLY_TRANSGRESSED_OR_STATE_SELECTED`.
+- Fixed-zero-charge eta current map and L2 shape vertex: `ZERO_IDENTICALLY_IN_POSITIVE_LEGENDRE_BRANCH`.
+- Foundational Dirac nonzero charge/occupancy: `ALLOWED_SUPERSELECTION_DATA_NOT_ACTION_SELECTED`.
+- Round Spin4 rigid-L1-current times scalar-ell2 to coexact L2: `FORBIDDEN_BY_REPRESENTATION_PRODUCT`.
+- Reduced diagonal-SO3 degree-one vertex: `ALLOWED_BUT_BACKGROUND_DOMAIN_AND_MATRIX_ELEMENTS_OPEN`.
+- General common-domain Routh/Schur Hessian: `DERIVED_EXACT`.
+- Zero-background positive-momentum-operator response: `MINUS_B_DAGGER_K_INVERSE_B_NONPOSITIVE`.
+- Physical nonzero B_L2: `NOT_DERIVED`.
+- Reflection-odd full-preimage parity and common domain: `OPEN`.
+- Cap inertias and complete ell2 Hessian: `OPEN`.
+- Next route: `ACTION_DERIVED_CONSERVED_REFLECTION_ODD_COEXACT_L2_EXCHANGE_CURRENT_SHAPE_VERTEX_FROM_THE_DRIVER_BHSM_COUPLED_FUNCTIONAL_WITH_NO_ARBITRARY_PROFILE_OR_SUSCEPTIBILITY`.
+- Flavor provenance gates: `OPEN_UNCHANGED`.
+- Mark III / BHSM completion / USB synchronization: `NOT_REACHED`.
+<!-- /BHSM_V14_88_ACTION_SELECTED_CHARGE_SCHUR_GATE -->

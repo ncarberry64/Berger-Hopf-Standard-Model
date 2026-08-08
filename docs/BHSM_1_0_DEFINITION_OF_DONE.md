@@ -301,3 +301,52 @@ Exact verdict:
 
 Exact next object:
 `ACTION_PRINCIPLE_FIXING_Z_UPSILON_U_UPSILON_AND_SUPPORT_COUPLINGS`.
+# v14.2 eta-knot color-matter blocker update
+
+The classical stabilizer selector has zero SU3 current. FR spin/statistics
+parity, a rank-three polarization label, and a conditional Weyl normal form do
+not yet construct the normalized one-particle Hilbert bundle, physical
+`3/bar3` transition maps, collective Dirac action, or eta-sourced independent
+Gauss equation. The active exact object is
+`ACTION_OWNED_ETA_EXTENSION_OF_THE_V7_1_PARENT_BUNDLE_REDUCTION_FUNCTOR_WITH_COMMON_SU3_CONNECTION_COLOR_AND_POLARIZATION_REPRESENTATIONS_AND_VARIATIONAL_GAUSS_LAW`.
+Mark III remains open.
+
+## v14.29 View 2 progress
+
+A conditional action candidate lets the independent physical SU(3) connection gauge an eta collar term and yields a variational tangent current with no new vector field. It does not close the View 2 ownership subgate: the original `M8` eta sector lacks a common-domain reduction/measure theorem to the physical `M4` connection, and FR/Dirac matching is absent. Those objects precede the nonlinear BVP, center-sector saddle, worldsheet/area-law limit, common gauge normalization, physical scale, and all mass/flavor/neutrino outputs.
+
+## v14.30 common-domain proof result
+
+The associated physical-color `G2/SU3` collar bundle exists for arbitrary
+retained `c2`, but the retained stratified action does not supply its eta
+reduction. The action selects no canonical collar lift and the nontrivial Hopf
+bundle has no full-base lift; the degree-one
+eta sector is non-basic, its `p=8` action does not close under fiber averaging,
+and reduction requires a boundary-domain-dependent Dirichlet-to-Neumann
+operator. This is Outcome C, not a unique completion postulate. BHSM 1.0 remains
+incomplete and the physical downstream gates remain closed.
+
+## v14.30 full-recall and full-preimage result
+
+The corpus already contains the exact triality `3/bar3` branching, Hopf fiber
+modes, conditional eta-knot polarization, normalized zero-mode localization,
+conditional opposite collar chiralities, and generic DtN/Schur machinery.
+This narrows rather than closes the completion gate. No authoritative work
+identifies the triality triplet bundle and connection with the independent
+physical color bundle, and no work solves the degree-one full-preimage parent
+background with a self-adjoint cap domain. Accordingly the v14.29 local action
+does not match the retained parent as a derived low-energy action. BHSM 1.0 and
+every downstream physical gate remain open.
+
+## v14.83 manual-campaign recovery update
+
+The v14.31--v14.83 manual campaign is incorporated without promoting its
+provisional bridges. The reduced two-stratum differential-shear calculation
+closes the susceptibility sign gate and gives `chi_2=2/(3R^2)` for equal
+inertias. It does not close the action-owned full-preimage kinetic reduction,
+physical shear covariance, degree-one stationary background, complete
+operator domain/Hessian, noncentral charged current, or observable gates.
+Marks III and IV remain not reached and BHSM 1.0 remains incomplete.
+
+Exact next object:
+`ACTION_OWNED_FULL_PREIMAGE_TWO_STRATUM_KINETIC_REDUCTION_WITH_DERIVED_LAYER_INERTIAS_SHEAR_COVARIANCE_AND_DEGREE_ONE_SELF_ADJOINT_BACKGROUND`.

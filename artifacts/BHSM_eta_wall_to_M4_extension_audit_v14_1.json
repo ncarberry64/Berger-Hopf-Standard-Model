@@ -1,0 +1,52 @@
+{
+  "artifact": "BHSM_eta_wall_to_M4_extension_audit_v14_1",
+  "candidates": [
+    {
+      "failure": "singular where D eta or its chosen normal component vanishes",
+      "local": true,
+      "name": "normalized covariant derivative",
+      "unique": false
+    },
+    {
+      "failure": "requires an already selected collar connection and initial identification",
+      "local": true,
+      "name": "collar-normal parallel transport",
+      "unique": false
+    },
+    {
+      "failure": "requires metric, boundary data, gauge, and global elliptic boundary problem",
+      "local": false,
+      "name": "harmonic extension",
+      "unique": "conditional"
+    },
+    {
+      "failure": "fails at cut loci and depends on an arbitrary tubular neighborhood",
+      "local": false,
+      "name": "nearest-wall projection",
+      "unique": false
+    },
+    {
+      "failure": "requires flow time, equation, and behavior at critical points",
+      "local": false,
+      "name": "gradient-flow extension",
+      "unique": false
+    },
+    {
+      "failure": "the required eta/color common connection is precisely the missing action object",
+      "local": true,
+      "name": "action-derived collar transport",
+      "unique": null
+    }
+  ],
+  "canonical_extension": null,
+  "exact_blocker": "ACTION_OWNED_ETA_WALL_TO_M4_SELECTOR_EXTENSION_OR_COMMON_CONNECTION_PULLBACK",
+  "validation": {
+    "all_candidates_audited": true,
+    "no_candidate_action_selected": true,
+    "normalization_singularity_detected": true,
+    "orientation_reversal_can_be_imposed_but_does_not_select_extension": true,
+    "wall_to_M4_extension_not_promoted": true
+  },
+  "validation_passed": true,
+  "version": "v14.1"
+}
