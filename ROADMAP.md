@@ -480,3 +480,12 @@ First derive the common-domain map from the retained `M8` eta field to the physi
 4. Evaluate `sigma_max(H_eta^-1/2 B H_A^-1/2)` channel by channel.
 5. Continue to a nonlinear `Z6`-oriented branch only if the singular value crosses one.
 <!-- /BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->
+<!-- BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->
+## v14.38 exact continuation
+
+1. Extend the metric/incidence KKT reduction to nonhomogeneous `(ell,p)` blocks.
+2. Eliminate the algebraic Lambda85 multiplier on each block and prove a self-adjoint physical domain.
+3. Derive the Path B eta-stress pullback into the same metric/incidence variables, or complete the Spin(4) tetrad pullback.
+4. Recompute `sigma_max(H_eta^-1/2 B H_A^-1/2)` on the compact cap.
+5. Continue to a nonlinear Z6-oriented branch only after a genuine zero crossing.
+<!-- /BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->

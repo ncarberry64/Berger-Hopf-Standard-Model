@@ -1814,3 +1814,8 @@ Regenerate with `python scripts/materialize_degree_one_phase_hessian_v14_36.py`.
 
 Regenerate with `python scripts/materialize_relative_holonomy_full_shape_hessian_v14_37.py`. The controlling report is `docs/BHSM_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN_V14_37.md`.
 <!-- /BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->
+<!-- BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->
+## v14.38 mixed-Hessian artifacts
+
+Regenerate with `python scripts/materialize_lambda85_eta_mixed_hessian_v14_38.py`. The controlling report is `docs/BHSM_LAMBDA85_ETA_MIXED_HESSIAN_V14_38.md`.
+<!-- /BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->

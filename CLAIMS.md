@@ -2420,3 +2420,8 @@ BHSM proves nonnegativity of the isometry-generated phase Hessian for the founda
 
 BHSM may claim that the v12 relative holonomy orients an already nonzero bridge but does not create its amplitude at quadratic order. BHSM may also report the positive finite-box full-shape surrogate spectra. It may not claim the compact physical cap spectrum, a derived mixed block, a zero crossing, CKM, CP, masses, scale, or total completion.
 <!-- /BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->
+<!-- BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->
+## v14.38 claim boundary
+
+BHSM may claim an exact zero mixed block between the currently retained homogeneous Lambda85 attachment reduction and the nontrivial `(ell,p)` flavor channels. It may also claim that Lambda85 is an algebraic multiplier and that the canonical C3 projection is family diagonal. It may not claim that all unreduced nonhomogeneous attachment modes vanish, that the Spin(4) block is action-owned, or that CKM, CP, masses, scale, or BHSM completion has been derived.
+<!-- /BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->

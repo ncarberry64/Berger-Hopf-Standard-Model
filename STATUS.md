@@ -3027,3 +3027,10 @@ The pure Path B phase Hessian is a sum of nonnegative squares. The requested `(e
 
 The recovered v12 `Z6` phase preserves isolated-sector spectra and has no quadratic amplitude curvature. The v13.1 degree-one surrogate has no negative polar, coexact, or coupled polar/exact mode in the tested `ell=2,4,6,8,10` sectors. A bifurcation now requires an action-owned eta–attachment mixed Hessian block reaching the normalized singular-value threshold one.
 <!-- /BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->
+<!-- BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->
+## BHSM v14.38 Lambda85–eta mixed-Hessian audit
+
+`BHSM_V11_3_HOMOGENEOUS_LAMBDA85_ATTACHMENT_HAS_ZERO_MIXED_HESSIAN_WITH_ALL_NONTRIVIAL_HOPF_FLAVOR_CHANNELS_AND_CANNOT_TRIGGER_THE_V14_35_BIFURCATION`
+
+The available v11.3 KKT attachment reduction is a homogeneous `(ell,p)=(0,0)` branch. It is orthogonal to all requested nontrivial flavor channels, so the normalized mixed singular value is exactly zero. The canonical C3 projection is diagonal in the exact family-projector basis. A nonhomogeneous constraint-reduced attachment mode or matched Spin(4) pullback is still required.
+<!-- /BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->

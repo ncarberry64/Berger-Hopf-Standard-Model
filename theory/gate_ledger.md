@@ -416,3 +416,14 @@ Exact next object:
 - Normalized singular-value crossing: `NOT_EVALUABLE_UNTIL_MIXED_BLOCK_EXISTS`.
 - Physical CKM/CP/masses: `OPEN`.
 <!-- /BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->
+<!-- BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->
+## v14.38 Lambda85–eta mixed-Hessian gates
+
+- Homogeneous Lambda85/eta flavor mixed block: `FAILED_EXACT_ZERO`.
+- Normalized singular-value crossing: `FAILED_SIGMA_MAX_ZERO`.
+- Canonical C3 family-chain off-diagonal response: `FAILED_ZERO`.
+- Lambda85 as propagating field: `INVALIDATED_ALGEBRAIC_MULTIPLIER`.
+- Nonhomogeneous constraint-reduced metric/incidence spectrum: `OPEN`.
+- Spin(4) matched tetrad/spin-connection block: `OPEN`.
+- Physical CKM/CP/masses: `OPEN`.
+<!-- /BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->

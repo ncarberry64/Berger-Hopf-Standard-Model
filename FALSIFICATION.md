@@ -115,3 +115,8 @@ The pure Path B phase mechanism is falsified as a spontaneous flavor-bifurcation
 
 The hypothesis that the artifact-backed `pi/3` holonomy itself destabilizes the zero-amplitude eta branch is rejected. The broader flavor-bifurcation route survives only if the action-derived mixed eta–attachment Hessian block reaches the exact zero-crossing threshold while the remaining physical Hessian stays admissible.
 <!-- /BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->
+<!-- BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->
+## v14.38 attachment bifurcation falsification boundary
+
+The hypothesis that the already-derived homogeneous v11.3 Lambda85/KKT branch triggers the nonaxisymmetric flavor bifurcation is rejected. The broader attachment route survives only through an action-owned nonhomogeneous constraint-reduced metric or Spin(4) mode with the same `(ell,p)` character and a nonzero normalized mixed Hessian.
+<!-- /BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->
