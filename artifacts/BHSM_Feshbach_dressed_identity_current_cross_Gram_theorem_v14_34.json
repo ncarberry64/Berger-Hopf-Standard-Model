@@ -1,0 +1,177 @@
+{
+  "CKM_rule": "V_CKM=Pol(K_ud) after mass ordering and removal of unphysical rephasings",
+  "artifact": "BHSM_Feshbach_dressed_identity_current_cross_Gram_theorem_v14_34",
+  "claim_boundary": "the witness matrices prove possibility only; BHSM must compute H_u,H_d, the stationary phase texture, tower resolvents, measure and domains from its action",
+  "cross_Gram": "K_ud(E)=iota_u(E)^dagger J_plus iota_d(E)",
+  "effective_response": "H_eff^f(E)=H_PP^f-H_PQ^f(H_QQ^f-E)^(-1)H_QP^f",
+  "existence_witness": {
+    "commutator_norm": 0.33996163222279885,
+    "distance_from_identity": 0.010411099981386562,
+    "effective_down": {
+      "imag": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.058181818181818196
+        ],
+        [
+          0.0,
+          -0.058181818181818196,
+          0.0
+        ]
+      ],
+      "real": [
+        [
+          1.2507692307692309,
+          -0.04923076923076924,
+          0.0
+        ],
+        [
+          -0.04923076923076924,
+          2.5925874125874127,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          4.141818181818182
+        ]
+      ]
+    },
+    "effective_up": {
+      "imag": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "real": [
+        [
+          0.9359999999999999,
+          0.0,
+          -0.06400000000000002
+        ],
+        [
+          0.0,
+          1.9466666666666668,
+          -0.05333333333333334
+        ],
+        [
+          -0.06400000000000002,
+          -0.05333333333333334,
+          3.8826666666666667
+        ]
+      ]
+    },
+    "jarlskog": -1.194309235607022e-08,
+    "polar_unitary": {
+      "imag": [
+        [
+          2.5644381173785908e-06,
+          5.42238583149242e-06,
+          -0.002892904262886095
+        ],
+        [
+          1.9750336238334974e-05,
+          -7.18477188880791e-06,
+          4.2408075859927665e-05
+        ],
+        [
+          -0.0029045672108061558,
+          1.145481735753177e-05,
+          -0.0057897117621529765
+        ]
+      ],
+      "real": [
+        [
+          0.9999933992328499,
+          0.0008375343152374945,
+          -0.0020325097657511544
+        ],
+        [
+          -0.0008474100846324009,
+          0.9999875284543346,
+          -0.004921645232825618
+        ],
+        [
+          0.00201158632530581,
+          0.004923541390676313,
+          0.9999648768114041
+        ]
+      ]
+    },
+    "raw_kernel": {
+      "imag": [
+        [
+          -2.3375428710294417e-08,
+          8.265881689078533e-06,
+          -0.005758445311073023
+        ],
+        [
+          -1.6256623318859528e-08,
+          5.748571574151702e-06,
+          0.0026339983010836366
+        ],
+        [
+          7.359569862552255e-06,
+          -0.00260244783187973,
+          -0.00573351009321778
+        ]
+      ],
+      "real": [
+        [
+          0.9949297942327613,
+          0.0038683756307988037,
+          -0.0031508931763591375
+        ],
+        [
+          0.0022083376119586863,
+          0.9973563077148577,
+          -0.0021913131143334727
+        ],
+        [
+          0.000896384279701289,
+          0.007591998863865069,
+          0.9920339322222504
+        ]
+      ]
+    },
+    "singular_values": [
+      1.0000000000000002,
+      0.9966147572465308,
+      0.987759082466296
+    ],
+    "unitarity_residual": 7.080333640582775e-16
+  },
+  "full_space_current": "J_plus=I on the common left-handed Hilbert space, consistent with the live v11.6 action",
+  "sector_embeddings": "iota_f(E)=[I;-(H_QQ^f-E)^(-1)H_QP^f] followed by Gram whitening",
+  "theorem": "the weak current may remain family-universal while sector-dependent action-owned wavefunction embeddings generate a nontrivial relative polar unitary",
+  "validation": {
+    "complex_relative_tower_orientation_can_supply_CP": true,
+    "effective_sector_responses_noncommute": true,
+    "full_space_weak_current_is_identity": true,
+    "polar_kernel_nontrivial": true,
+    "polar_kernel_unitary": true,
+    "raw_cross_gram_full_rank": true,
+    "sector_dressed_embeddings_are_isometric": true,
+    "witness_not_promoted_to_BHSM_prediction": true
+  },
+  "validation_passed": true,
+  "version": "v14.34"
+}

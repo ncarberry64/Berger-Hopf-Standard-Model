@@ -1794,3 +1794,8 @@ chain is `docs/BHSM_COMMON_DOMAIN_ETA_SU3_REDUCTION_PROOF.md`,
 
 Regenerate the cumulative artifacts with `python scripts/materialize_hopf_smash_transgression_v14_33.py`. Controlling reports: `BHSM_PATH_B_FOUNDATIONAL_ACTION_V14_31.md`, `BHSM_PATH_B_PHYSICAL_TOPOLOGY_AND_FR_GATE_V14_32.md`, and `BHSM_HOPF_SMASH_TOPOLOGICAL_TRANSGRESSION_V14_33.md`.
 <!-- /BHSM_V14_31_TO_V14_33_CUMULATIVE -->
+<!-- BHSM_V14_34_HOPF_PHASE_FLAVOR -->
+## v14.34 phase-flavor artifacts
+
+Regenerate with `python scripts/materialize_hopf_phase_flavor_v14_34.py`. The controlling report is `docs/BHSM_HOPF_PHASE_FLAVOR_CROSS_GRAM_V14_34.md`.
+<!-- /BHSM_V14_34_HOPF_PHASE_FLAVOR -->

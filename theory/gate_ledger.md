@@ -371,3 +371,14 @@ Exact next object:
 - Smooth equivariant map/stationary background/collective Dirac: `OPEN`.
 - Wilson-response BVP and confinement: `PARALLEL_OPEN`.
 <!-- /BHSM_V14_31_TO_V14_33_CUMULATIVE -->
+<!-- BHSM_V14_34_HOPF_PHASE_FLAVOR -->
+## v14.34 Hopf-phase flavor gates
+
+- `c/s` same-shell imbalance: `VALIDATED`.
+- Constant phase: `FAILED_REPHASING_ONLY`.
+- Single fixed Hopf weight: `FAILED_MAXIMUM_RANK_ONE`.
+- Multi-harmonic bridge: `KINEMATICALLY_ALLOWED_NOT_ACTION_SELECTED`.
+- Full-space weak current: `PRESERVED_I3`.
+- Feshbach-dressed cross-Gram route: `VALID_MATHEMATICALLY_ACTION_OWNERSHIP_OPEN`.
+- Physical CKM/CP/masses: `OPEN`.
+<!-- /BHSM_V14_34_HOPF_PHASE_FLAVOR -->

@@ -95,3 +95,8 @@ The View 2 candidate fails if the associated `G2/SU3` section forces trivial `c2
 
 The physical `M4` `S6` field alone cannot support a degree-one or FR sector. The full-preimage transgression fails if no smooth clutching-compatible representative exists, cap flux prevents current conservation, the stationary degree-one branch is absent/unstable, or collective quantization cannot yield the required normalized Dirac matter sector without double counting.
 <!-- /BHSM_V14_31_TO_V14_33_CUMULATIVE -->
+<!-- BHSM_V14_34_HOPF_PHASE_FLAVOR -->
+## v14.34 flavor falsification boundary
+
+The phase-harmonic route fails if the action-selected stationary texture is axisymmetric, if its bridge has insufficient harmonic support, if the dressed cross-Gram kernel is rank deficient, if the effective sector operators commute, if the self-adjoint tower reduction fails, or if no stable no-fit polar kernel follows.
+<!-- /BHSM_V14_34_HOPF_PHASE_FLAVOR -->

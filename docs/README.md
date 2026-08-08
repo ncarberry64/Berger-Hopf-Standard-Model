@@ -251,3 +251,8 @@ The current minimal-action theory dictionary is documented in
 
 The three controlling reports document the foundational action, physical-topology correction, and full-preimage Hopf-smash transgression route.
 <!-- /BHSM_V14_31_TO_V14_33_CUMULATIVE -->
+<!-- BHSM_V14_34_HOPF_PHASE_FLAVOR -->
+## v14.34 Hopf-phase flavor
+
+See `BHSM_HOPF_PHASE_FLAVOR_CROSS_GRAM_V14_34.md` for the same-shell `c/s` result, single-phase no-go, multi-harmonic selection rules and Feshbach-dressed CKM route.
+<!-- /BHSM_V14_34_HOPF_PHASE_FLAVOR -->

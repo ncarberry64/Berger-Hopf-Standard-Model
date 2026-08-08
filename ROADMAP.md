@@ -444,3 +444,12 @@ First derive the common-domain map from the retained `M8` eta field to the physi
 4. Derive the self-adjoint Dirac transgression and mode-subtraction theorem.
 5. Continue the external Wilson-response BVP and confinement audit in parallel.
 <!-- /BHSM_V14_31_TO_V14_33_CUMULATIVE -->
+<!-- BHSM_V14_34_HOPF_PHASE_FLAVOR -->
+## v14.34 exact continuation
+
+1. Solve/select the non-axisymmetric full-preimage Hopf phase texture.
+2. Construct the common self-adjoint up/down Hessians and omitted harmonic tower.
+3. Compute Feshbach-dressed family embeddings and the action current pairing.
+4. Test full rank, polar unitarity, CP orientation and nonlinear stability.
+5. Only then promote a CKM result and continue absolute-scale/RG closure.
+<!-- /BHSM_V14_34_HOPF_PHASE_FLAVOR -->

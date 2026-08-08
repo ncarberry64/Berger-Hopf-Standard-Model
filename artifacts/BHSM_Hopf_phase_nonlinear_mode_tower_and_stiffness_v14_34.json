@@ -1,0 +1,18 @@
+{
+  "artifact": "BHSM_Hopf_phase_nonlinear_mode_tower_and_stiffness_v14_34",
+  "authorized_reduction": "solve or define the full tower and use a self-adjoint Schur/Feshbach critical-value map before computing the finite family response",
+  "closure_result": "a finite nonzero harmonic set is generically not closed; nonlinear products populate the omitted Peter-Weyl/Clebsch-Gordan tower",
+  "density": "F(X)=kappa1 X/2+X^4/8 with X=|D eta|^2",
+  "small_amplitude_scaling": "D eta~epsilon implies X~epsilon^2 and X^4~epsilon^8; the p8 term does not amplify an infinitesimal constant phase",
+  "stiff_regime": "F'(X)=(kappa1+X^3)/2 and F''(X)=3X^2/2 grow rapidly once the stationary profile develops large gradients",
+  "validation": {
+    "frozen_six_mode_set_not_exactly_closed_under_the_nonlinear_action": true,
+    "generic_products_of_nonzero_harmonics_generate_higher_Clebsch_Gordan_channels": true,
+    "large_gradient_wall_can_be_stiff_from_Fprime_kappa_plus_X3": true,
+    "p8_density_is_eighth_order_in_first_derivative_amplitude": true,
+    "small_phase_is_not_stiff_from_X4_at_linear_order": true,
+    "tower_may_be_integrated_out_by_action_owned_Schur_or_Feshbach_map": true
+  },
+  "validation_passed": true,
+  "version": "v14.34"
+}

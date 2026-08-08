@@ -2999,3 +2999,10 @@ The formal scientific audit issues Outcome B: `BHSM_VIEW2_MINIMALLY_GAUGED_ETA_A
 
 v14.31 adopts the canonical `G2` extension of the physical color bundle and the gauged eta `p=2+p=8` sigma action as foundational physical data, closing local color–eta action ownership without six new vector fields. v14.32 proves that the physical `M4` `S6` field alone has no degree-one or FR sector because `pi3(S6)=pi4(S6)=0`. v14.33 then identifies the full-preimage resolution: `S3_base smash S3_fiber = S6` and its suspension gives `S7`; oriented fiber integration of the closed degree form yields a conserved physical particle-number current when cap flux vanishes. The smooth equivariant map, full-preimage stationary solution, collective measure and Dirac action remain open.
 <!-- /BHSM_V14_31_TO_V14_33_CUMULATIVE -->
+<!-- BHSM_V14_34_HOPF_PHASE_FLAVOR -->
+## BHSM v14.34 Hopf-phase flavor audit
+
+`BHSM_HOPF_IMBALANCE_GEOMETRICALLY_SPLITS_THE_FROZEN_QUARK_HARMONICS_BUT_A_CONSTANT_OR_SINGLE_WEIGHT_PHASE_AND_THE_LIVE_I3_WEAK_CURRENT_CANNOT_BY_THEMSELVES_GENERATE_A_FULL_RANK_NONTRIVIAL_CKM_KERNEL`
+
+Charm and strange are validated as the same `K=48` harmonic shell with `q=6` versus `q=0`. A constant phase is only a rephasing, and one fixed Hopf weight has rank at most one for the frozen ledger. The viable route retains the live `I3` weak current and derives mixing from action-selected non-axisymmetric multi-harmonic phase textures plus sector-dependent Feshbach-dressed up/down embeddings. CKM remains uncomputed.
+<!-- /BHSM_V14_34_HOPF_PHASE_FLAVOR -->

@@ -2400,3 +2400,8 @@ Validated only for a conditional common-domain candidate: the minimally covarian
 
 BHSM owns a foundational bosonic Path-B color–eta action and a conditional full-preimage topological-current transgression. It does not yet claim a smooth action-normalized `SU(3)`-equivariant smash map, normalized FR Hilbert bundle, self-adjoint collective Dirac action, confinement, string tension, scale, mass, CKM, PMNS, or neutrino output.
 <!-- /BHSM_V14_31_TO_V14_33_CUMULATIVE -->
+<!-- BHSM_V14_34_HOPF_PHASE_FLAVOR -->
+## v14.34 phase-flavor claim boundary
+
+BHSM validates the `c/s` same-shell Hopf-imbalance mechanism and exact selection-rule no-go for a constant or single-weight phase. A Feshbach-dressed cross-Gram route is mathematically valid, but the stationary phase texture, tower Hessians, current pairing, polar CKM matrix, CP phase, masses and RG transport are not action derived.
+<!-- /BHSM_V14_34_HOPF_PHASE_FLAVOR -->
