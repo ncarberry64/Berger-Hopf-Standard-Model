@@ -196,3 +196,16 @@ mathematically viable action candidate. It is not action-derived.
 - Mark III: **not reached**;
 - BHSM complete: **false**;
 - USB synchronization eligible: **false**.
+
+## Validation record
+
+- Authoritative full repository suite: `5983 passed in 791.84s`, exit code
+  `0`.
+- Pre-commit integrity run: `5968 passed, 15 failed in 789.39s`, exit code
+  `1`; all 15 failures were the same guard rejecting the then-untracked new
+  source module. The committed-state rerun above resolves that condition.
+- Focused v14.39/v14.41/v14.77/v14.81/v14.84/v14.85 source-chain suite:
+  `81 passed`.
+- All 40 v14.46--v14.85 deterministic materializers are byte-identical on
+  repeated materialization.
+- Frozen predictions and official prediction logic are unchanged.

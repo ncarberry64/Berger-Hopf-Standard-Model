@@ -979,3 +979,9 @@ is now a sourced relative-periodic full-preimage solution with a nonzero
 conserved cap momentum difference, global constraint-reduced ell=2 inertia,
 degree-one self-adjoint domain, and complete Hessian. BHSM remains incomplete,
 Mark III is not reached, and USB synchronization is not eligible.
+
+Validation: the authoritative full suite passed `5983` tests in `791.84s`
+with exit code `0`; the 81-test source-chain suite passed; and all 40
+v14.46--v14.85 materializers were byte-identical on repeated runs. The earlier
+pre-commit run recorded `5968 passed, 15 failed` solely because the frozen
+source-integrity guards reject an untracked source module.
