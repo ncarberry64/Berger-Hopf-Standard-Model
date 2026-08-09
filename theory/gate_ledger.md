@@ -621,3 +621,25 @@ Exact next object:
 - Flavor provenance gates: `OPEN_UNCHANGED`.
 - Mark III / BHSM completion / USB synchronization: `NOT_REACHED`.
 <!-- /BHSM_V14_91_DEGREE_ONE_LORENTZIAN_PHASE_SPACE_GATE -->
+
+<!-- BHSM_V14_92_CROSS_LEVEL_CRITICAL_VALUE_FUNCTOR_GATE -->
+## v14.92 cross-level critical-value functor gates
+
+- Historical geometric chain: `M8_TO_M5_HOPF_PUSHFORWARD_THEN_M4_EQUATORIAL_TRACE`.
+- Direct geometric M8-to-M4 quotient: `ABSENT`.
+- Composed `R84=R54 R85`: `CONDITIONAL_ON_SHARED_INVARIANT_EQUIVARIANT_DOMAIN`.
+- Stratified action: `VALID_SIMULTANEOUS_KKT_CORRESPONDENCE`.
+- Physical M4 action as critical value of M8 alone: `NO`.
+- Generic envelope and Schur theorems: `EXACT_CONDITIONAL`.
+- Generic cotangent-lift symplectic theorem: `EXACT_CONDITIONAL`.
+- Recovered Hopf parent connection: `SP1_TRANSPORT_NOT_PHYSICAL_SM_GAUGE`.
+- Action-owned physical SU3 parent projection: `ABSENT`.
+- M8 parent Dirac field and critical-mode map: `ABSENT`.
+- Adopted M4 collar Dirac Green domain: `INTRINSIC_FOUNDATIONAL_NOT_M8_DERIVED`.
+- v14.91 coefficient locus: `EXACT_STATIONARITY_NOT_ACTION_SELECTED`.
+- Full coupled stationary background and physical projector: `UNDEFINED`.
+- Physical `DeltaPi`, `M_plus,M_minus`, and `B_dyn,L2`: `UNDEFINED_NOT_ZERO`.
+- Next route: `FOUNDATIONAL_COMMON_PARENT_GAUGE_SPIN_BUNDLE_ACTION_WITH_PHYSICAL_SU3_AND_DIRAC_CRITICAL_MODES_AND_NO_DOUBLE_COUNTING_M8_TO_M5_TO_M4_VARIATIONAL_SYMPLECTIC_REDUCTION_FUNCTOR`.
+- Flavor provenance gates: `OPEN_UNCHANGED`.
+- Mark III / BHSM completion / USB synchronization: `NOT_REACHED`.
+<!-- /BHSM_V14_92_CROSS_LEVEL_CRITICAL_VALUE_FUNCTOR_GATE -->

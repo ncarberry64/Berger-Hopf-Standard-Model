@@ -363,3 +363,20 @@ independent M4 metric/gauge/Dirac sector has no action-owned critical-value or
 bundle intertwiner with M8. Consequently the full stationary stratified
 background, physical projector, relative tensor spectrum, cap inertias, and
 coexact L2 mixed vertex remain open. BHSM 1.0 is not complete.
+
+## v14.92 cross-level critical-value result
+
+The historical construction is a genuine M8-to-M5 Hopf fiber pushforward on
+an invariant/equivariant retained subcategory followed by M5-to-M4 equatorial
+trace and cap response. It is a valid constrained KKT correspondence action,
+not a full critical-value derivation of the intrinsic M4 theory from M8. The
+generic envelope, Schur-complement, adjoint, and cotangent-lift identities are
+exactly verified, but their physical hypotheses fail in the retained field
+ledger: the Hopf `Sp(1)` connection is explicitly not the physical gauge
+field, no common eta/color bundle map exists, and M8 has no parent Dirac field.
+The v14.45 Dirac domain remains valid foundational M4 collar data rather than
+an M8-derived mode. The v14.91 coefficient locus remains unselected, so the
+full stationary background and all downstream response objects remain open.
+
+Exact next object:
+`FOUNDATIONAL_COMMON_PARENT_GAUGE_SPIN_BUNDLE_ACTION_WITH_PHYSICAL_SU3_AND_DIRAC_CRITICAL_MODES_AND_NO_DOUBLE_COUNTING_M8_TO_M5_TO_M4_VARIATIONAL_SYMPLECTIC_REDUCTION_FUNCTOR`.

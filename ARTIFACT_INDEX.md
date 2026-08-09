@@ -1918,3 +1918,13 @@ with
 The controlling report is
 `docs/BHSM_DEGREE_ONE_LORENTZIAN_FULL_PREIMAGE_PHASE_SPACE_V14_91.md`.
 <!-- /BHSM_V14_91_DEGREE_ONE_LORENTZIAN_PHASE_SPACE_GATE -->
+
+<!-- BHSM_V14_92_CROSS_LEVEL_CRITICAL_VALUE_FUNCTOR_GATE -->
+## v14.92 cross-level critical-value functor artifact
+
+Regenerate `BHSM_lorentzian_cross_level_critical_value_functor_gate_v14_92.json`
+with
+`python scripts/materialize_lorentzian_cross_level_critical_value_functor_v14_92.py`.
+The controlling report is
+`docs/BHSM_LORENTZIAN_CROSS_LEVEL_CRITICAL_VALUE_FUNCTOR_V14_92.md`.
+<!-- /BHSM_V14_92_CROSS_LEVEL_CRITICAL_VALUE_FUNCTOR_GATE -->

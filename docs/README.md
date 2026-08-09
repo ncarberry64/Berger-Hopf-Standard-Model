@@ -388,3 +388,13 @@ global M8 degree provenance, exact conditional round identity-map background,
 Hopf cap/seam smooth-transmission domain, canonical field ledger, and the
 full-coupled M8/M4 variational-ownership obstruction.
 <!-- /BHSM_V14_91_DEGREE_ONE_LORENTZIAN_PHASE_SPACE_GATE -->
+
+<!-- BHSM_V14_92_CROSS_LEVEL_CRITICAL_VALUE_FUNCTOR_GATE -->
+## v14.92 cross-level critical-value functor gate
+
+See `BHSM_LORENTZIAN_CROSS_LEVEL_CRITICAL_VALUE_FUNCTOR_V14_92.md` for the
+historical M8-to-M5-to-M4 provenance, exact conditional KKT/envelope/Schur and
+cotangent-lift theorems, and the proof that the retained theory has no physical
+SU3 parent connection or M8 Dirac field from which to instantiate the full
+gauge/Dirac critical-value functor.
+<!-- /BHSM_V14_92_CROSS_LEVEL_CRITICAL_VALUE_FUNCTOR_GATE -->

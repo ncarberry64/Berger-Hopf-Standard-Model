@@ -1221,3 +1221,45 @@ tolerance. The implementation now validates the frame and returns the exact
 theorem value zero; the focused post-fix v14.89/v14.90 chain passed `18`
 tests. The earlier pre-fix local v14.90 full run passed `6027` tests in
 `797.45s`; it is superseded by the post-fix authoritative run above.
+
+## v14.92 Lorentzian cross-level critical-value functor gate
+
+The historical reduction has been recovered at its actual claim strength.
+`R85` is a normalized Hopf-fiber pushforward and retained-mode projection only
+on admissible invariant/equivariant data. `R54` is equatorial trace plus cap
+critical response, not a quotient, so `R84=R54 R85` is defined only on their
+shared domain and there is no independent direct M8-to-M4 geometric quotient.
+
+The stratified action is a valid simultaneous KKT correspondence involving
+independent M8, M5, and localized M4 actions plus compatibility multipliers.
+Exact executable witnesses close the conditional reduction-composition,
+tangent, weighted-adjoint, envelope, Schur-Hessian, Green-form, cotangent-lift,
+gauge-covariance, and transition-cocycle identities. They do not establish a
+physical functor because the historical action explicitly keeps the physical
+M4 Yang--Mills and Dirac variables intrinsic.
+
+The recovered Hopf `Sp(1)` connection is explicitly not the Standard Model
+gauge connection, and no transition/characteristic-class intertwiner maps it
+or the eta projector connection to the independent physical color bundle.
+There is no M8 parent Dirac field. The v14.45 collar spin domain therefore
+closes its intrinsic two-sided Green form but is not an M8 critical-mode
+reduction. A total common Green domain and physical symplectic pullback do not
+exist in the retained theory.
+
+The v14.91 coefficient locus remains an exact conditional stationarity locus,
+not an action-selected branch. The full coupled background, physical
+projector, `DeltaPi`, `M_plus,M_minus`, and `B_dyn,L2` remain undefined rather
+than zero. Frozen predictions and CKM/PMNS provenance boundaries are unchanged.
+
+Exact next irreducible object:
+`FOUNDATIONAL_COMMON_PARENT_GAUGE_SPIN_BUNDLE_ACTION_WITH_PHYSICAL_SU3_AND_DIRAC_CRITICAL_MODES_AND_NO_DOUBLE_COUNTING_M8_TO_M5_TO_M4_VARIATIONAL_SYMPLECTIC_REDUCTION_FUNCTOR`.
+
+Validation: the committed-state suite passed `6048` tests in `803.30s` with
+exit code `0`. All `47` v14.46--v14.92 materializers exited `0` on each of two
+runs (`94` total) with zero tracked artifact drift. The focused v14.92 package
+passed `12` tests. Frozen-prediction, forbidden-claim, BHSM-status,
+public-readiness, precision, physics-status CLI, and all `1839` artifact-JSON
+audits exited `0`. The precommit suite recorded `6032` passes and `16`
+source-diff guard failures in `800.02s`; all 16 were the expected requirement
+that `git diff HEAD -- src` be empty and were cleared by the scoped commit.
+USB remains untouched and synchronization is not eligible.
