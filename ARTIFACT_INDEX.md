@@ -1948,3 +1948,19 @@ with
 The controlling report is
 `docs/BHSM_LOCAL_ENVIRONMENT_FINITE_TIME_ENCAPSULATION_GATE_V14_94.md`.
 <!-- /BHSM_V14_94_LOCAL_ENVIRONMENT_FINITE_TIME_ENCAPSULATION_GATE -->
+
+<!-- BHSM_V15_0_AETHER_PREGEOMETRIC_PARENT_CALCULUS -->
+## v15.0 Aether pregeometric parent-calculus artifacts
+
+Regenerate the seven `BHSM_aether_*_v15_0.json` / completion-gate artifacts
+with
+`python scripts/materialize_aether_pregeometric_parent_calculus_v15_0.py`.
+The controlling report is
+`docs/BHSM_AETHER_PREGEOMETRIC_PARENT_CALCULUS_V15_0.md`.
+
+The artifacts prove the regular Haar barrier, type a conservative separate
+core stratum, preserve the v14.64 continuum-domain obstruction, implement the
+conditional reconstruction/clock/energy gates, and test associative abstract
+event-span composition. They do not promote the span to an action-derived
+physical transition.
+<!-- /BHSM_V15_0_AETHER_PREGEOMETRIC_PARENT_CALCULUS -->

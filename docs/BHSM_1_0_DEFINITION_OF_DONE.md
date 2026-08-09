@@ -405,3 +405,20 @@ nonhomogeneous Path A remains open.
 Definition-of-done remains unmet: a constraint-solved nonhomogeneous incoming
 wave packet, physical quasilocal flux, local threshold, nonlinear completion,
 event energy accounting and selected completion class are still absent.
+
+## v15.0 Aether pregeometry prerequisite result
+
+The regular support endpoint remains at infinite Haar distance; no bounded
+coordinate chart or finite-action regular trajectory makes `upsilon=0`
+finitely accessible. A separate non-geometric core stratum is mathematically
+admissible as a conservative extension, and restriction to the regular
+stratum preserves all existing BHSM equations, domains, no-go results, and
+frozen predictions.
+
+Definition-of-done remains unmet. The associative invariant-matched event span,
+relative clock ratio, and clocked-generator energy map are conditional
+mathematical candidates, not outputs of the retained action. A physical core
+transition requires an action-owned pregeometric correspondence with a
+self-adjoint relative/boundary domain, selected parent invariants, clock
+calibration, and exact regular-theory recovery. Mark III and physical
+encapsulation remain not reached.

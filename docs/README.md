@@ -419,3 +419,18 @@ instability screen, converged finite-time propagator, and Outcome-D event
 boundary. No external environment, nonlinear completion, particle, color,
 Dirac or Path-B promotion is introduced.
 <!-- /BHSM_V14_94_LOCAL_ENVIRONMENT_FINITE_TIME_ENCAPSULATION_GATE -->
+
+<!-- BHSM_V15_0_AETHER_PREGEOMETRIC_PARENT_CALCULUS -->
+## v15.0 Aether pregeometric parent calculus
+
+See `BHSM_AETHER_PREGEOMETRIC_PARENT_CALCULUS_V15_0.md` for the exact Haar
+barrier theorem, core-nonidentification gate, conservative stratified
+extension, operator/domain reconstruction predicate, emergent distance and
+conditional clock/energy maps, associative abstract encapsulation span,
+invariant matching, low-energy recovery, and preferred-frame firewall.
+
+The result is Outcome B: the parent stratification is mathematically
+compatible, but a finite core transition still requires an action-owned
+pregeometric correspondence law. No Aether existence, physical transition,
+spacetime-emergence, particle, or completion claim is introduced.
+<!-- /BHSM_V15_0_AETHER_PREGEOMETRIC_PARENT_CALCULUS -->

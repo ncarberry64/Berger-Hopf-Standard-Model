@@ -1298,6 +1298,41 @@ BHSM remains incomplete, Mark III is not reached, physical execution remains
 blocked, frozen predictions and flavor provenance are unchanged, and USB is
 untouched and ineligible for synchronization.
 
+## v15.0 Aether pregeometric parent-calculus gate
+
+The existing regular support geometry is exactly the half-line
+`q_D=-lambda_D log(upsilon)`. Its `upsilon -> 0+` endpoint is infinitely far
+away, and no smooth bounded plotting coordinate changes the physical Haar
+length. A finite-duration regular path with finite kinetic action cannot reach
+that endpoint.
+
+Consequently a finite Aether event cannot identify its core with regular
+`upsilon=0`. A disjoint non-geometric core stratum is mathematically
+admissible as a conservative extension: `upsilon` remains defined only on the
+regular reconstructible stratum, and the core schema carries no spacetime,
+time, energy, velocity, metric-size, or preferred-frame field. Restricting the
+extension to the regular stratum exactly recovers current BHSM, including the
+v14.64 domain obstruction and v14.91--v14.94 results.
+
+The package defines a conditional operator/domain reconstruction predicate,
+reuses edge-restricted spectral distance, constructs a dimensionless additive
+process cocycle and relative clock ratio, and derives the conditional
+Stone-generator formula `E_eff=(hbar/tau_clock) kappa` only after clock
+calibration. It also implements an associative invariant-matched abstract
+event span. None of these algebraic structures is promoted to an
+action-derived physical core transition.
+
+No monotonic high-excitation/low-reconstructibility theorem follows without a
+new coupling. The exact Outcome-B verdict is
+`AETHER_PARENT_STRATIFICATION_IS_MATHEMATICALLY_COMPATIBLE_WITH_CURRENT_BHSM_BUT_FINITE_CORE_TRANSITION_REQUIRES_AN_ACTION_OWNED_PREGEOMETRIC_CORRESPONDENCE_LAW`.
+
+The exact next object is
+`ACTION_OWNED_PREGEOMETRIC_CORE_EVENT_CORRESPONDENCE_WITH_SELF_ADJOINT_RELATIVE_BOUNDARY_DOMAIN_PARENT_INVARIANT_MATCHING_CLOCK_CALIBRATION_AND_EXACT_REGULAR_BHSM_RECOVERY`.
+
+BHSM remains incomplete, Mark III is not reached, no new continuous parameter
+or fundamental dynamical field is introduced, frozen predictions and official
+prediction logic are unchanged, and USB remains untouched and ineligible.
+
 Prepublication validation: the focused v14.94 package passed `11` tests and
 the dependent P1/v14.90/v14.93/v14.94/guard selection passed `65`. All `49`
 v14.46--v14.94 materializers completed two runs (`98` executions) with zero

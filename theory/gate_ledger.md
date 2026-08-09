@@ -693,3 +693,32 @@ Exact next object:
 - Flavor provenance gates: `OPEN_UNCHANGED`.
 - Mark III / BHSM completion / USB synchronization: `NOT_REACHED`.
 <!-- /BHSM_V14_94_LOCAL_ENVIRONMENT_FINITE_TIME_ENCAPSULATION_GATE -->
+
+<!-- BHSM_V15_0_AETHER_PREGEOMETRIC_PARENT_CALCULUS -->
+## v15.0 Aether pregeometric parent-calculus gates
+
+- Historical-Aether firewall: `PASS_BHSM_AETHER_IS_NOT_A_MATERIAL_MEDIUM_OR_PREFERRED_FRAME`.
+- Haar endpoint: `INFINITE_REGULAR_FIELD_DISTANCE`.
+- Smooth bounded coordinate compactification: `DOES_NOT_CHANGE_PHYSICAL_DISTANCE`.
+- Finite-duration finite-action access to regular `upsilon=0`: `FORBIDDEN`.
+- Core identification: `C_A_NOT_EQUAL_TO_UPSILON_ZERO`.
+- Separate non-geometric core stratum: `MATHEMATICALLY_ADMISSIBLE_CONSERVATIVE_EXTENSION`.
+- Core spacetime/time/energy/velocity data: `ABSENT_BY_TYPED_CONSTRUCTION`.
+- Reconstruction: `CONDITIONAL_OPERATOR_DOMAIN_PREDICATE`.
+- v14.64 trace/domain obstruction: `PRESERVED`.
+- Core metric size/distance: `UNDEFINED_NOT_ZERO`.
+- Relational order: `DIMENSIONLESS_ADDITIVE_PROCESS_COCYCLE`.
+- Clock: `CONDITIONAL_RELATIVE_RATIO_AFTER_STABLE_REFERENCE_PROCESS`.
+- Conventional energy: `CONDITIONAL_STONE_GENERATOR_MAP_AFTER_CLOCK_CALIBRATION`.
+- Event span: `ASSOCIATIVE_INVARIANT_MATCHED_ABSTRACT_CANDIDATE_NOT_ACTION_DERIVED`.
+- Finite exterior clock interval versus core duration: `CONSISTENT_CORE_DURATION_UNDEFINED`.
+- High-excitation/low-reconstructibility monotonicity: `NOT_DERIVED`.
+- Low-energy regular BHSM recovery: `EXACT_BY_RESTRICTION_WITHOUT_RETUNING`.
+- Microscopic action: `NOT_UNIQUELY_SELECTED`.
+- Outcome: `OUTCOME_B`.
+- Exact verdict: `AETHER_PARENT_STRATIFICATION_IS_MATHEMATICALLY_COMPATIBLE_WITH_CURRENT_BHSM_BUT_FINITE_CORE_TRANSITION_REQUIRES_AN_ACTION_OWNED_PREGEOMETRIC_CORRESPONDENCE_LAW`.
+- Next route: `ACTION_OWNED_PREGEOMETRIC_CORE_EVENT_CORRESPONDENCE_WITH_SELF_ADJOINT_RELATIVE_BOUNDARY_DOMAIN_PARENT_INVARIANT_MATCHING_CLOCK_CALIBRATION_AND_EXACT_REGULAR_BHSM_RECOVERY`.
+- Frozen predictions / official logic: `UNCHANGED`.
+- New continuous parameter / fundamental dynamical field: `NONE`.
+- Mark III / BHSM completion / USB synchronization: `NOT_REACHED`.
+<!-- /BHSM_V15_0_AETHER_PREGEOMETRIC_PARENT_CALCULUS -->
