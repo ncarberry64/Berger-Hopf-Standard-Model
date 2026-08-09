@@ -1,5 +1,20 @@
 # BHSM Falsification Entry Point
 
+## Current v15.7 falsification boundary
+
+The current calculation rejects the proposition that a Hessian zero alone is
+a formation event: v14.93 supplies a zero mode without cavitation. It does not
+reject all localized or finite-amplitude cavitation branches. The v15.7 target
+is falsified positively only by deriving an owned incoming packet/domain whose
+physical sigma eigenvalue crosses dynamically and whose full action equations
+continue into a nonlinear enclosure, or negatively by a theorem covering all
+retained localized sectors.
+
+Exact next object:
+`ACTION_DERIVED_LOCALIZED_CAVITATION_OF_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_SOLVED_NONHOMOGENEOUS_LORENTZIAN_INCOMING_PACKET_TIME_PRESERVED_COMMON_SELF_ADJOINT_DOMAIN_PHYSICAL_SIGMA_HESSIAN_ZERO_CROSSING_AND_NONLINEAR_ENVELOPMENT_CONTINUATION`.
+
+## Historical v11.6 boundary
+
 For v11.6, the verdict
 `BHSM_PARENT_ACTION_CURRENT_REDUCTION_BLOCKED_BY_UNFIXED_COMMON_DOMAIN_FAMILY_WAVEFUNCTION_MAP`
 is falsified by an existing action term and declared common domain whose mixed
@@ -89,9 +104,9 @@ the existing axioms and action with no extra unselected coefficient.
 
 ## v14.29 View 2 falsifiers
 
-The View 2 candidate fails if the associated `G2/SU3` section forces trivial `c2(P_color)`, theta admits an independent variation/pole, finite variation disagrees with the source convention, gauge covariance/Noether identity fails, or the eta term duplicates the ungauged action. Outcome A also fails—and currently does—when the retained `M8` eta action lacks a common-domain reduction to the physical `M4` SU3 field or when no FR/Dirac matching theorem prevents double counting. Confinement remains falsified for the Gaussian collar by its zero asymptotic string tension; a finite tube alone is not an area-law proof.
+The View 2 candidate fails if the associated `G2/SU3` section forces trivial `c2(P_color)`, theta admits an independent variation/pole, finite variation disagrees with the source convention, gauge covariance/Noether identity fails, or the eta term duplicates the ungauged action. Outcome A also failsÃ¢â‚¬â€and currently doesÃ¢â‚¬â€when the retained `M8` eta action lacks a common-domain reduction to the physical `M4` SU3 field or when no FR/Dirac matching theorem prevents double counting. Confinement remains falsified for the Gaussian collar by its zero asymptotic string tension; a finite tube alone is not an area-law proof.
 <!-- BHSM_V14_31_TO_V14_33_CUMULATIVE -->
-## v14.31–v14.33 falsification boundary
+## v14.31Ã¢â‚¬â€œv14.33 falsification boundary
 
 The physical `M4` `S6` field alone cannot support a degree-one or FR sector. The full-preimage transgression fails if no smooth clutching-compatible representative exists, cap flux prevents current conservation, the stationary degree-one branch is absent/unstable, or collective quantization cannot yield the required normalized Dirac matter sector without double counting.
 <!-- /BHSM_V14_31_TO_V14_33_CUMULATIVE -->
@@ -113,7 +128,7 @@ The pure Path B phase mechanism is falsified as a spontaneous flavor-bifurcation
 <!-- BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->
 ## v14.37 bifurcation falsification boundary
 
-The hypothesis that the artifact-backed `pi/3` holonomy itself destabilizes the zero-amplitude eta branch is rejected. The broader flavor-bifurcation route survives only if the action-derived mixed eta–attachment Hessian block reaches the exact zero-crossing threshold while the remaining physical Hessian stays admissible.
+The hypothesis that the artifact-backed `pi/3` holonomy itself destabilizes the zero-amplitude eta branch is rejected. The broader flavor-bifurcation route survives only if the action-derived mixed etaÃ¢â‚¬â€œattachment Hessian block reaches the exact zero-crossing threshold while the remaining physical Hessian stays admissible.
 <!-- /BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->
 <!-- BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->
 ## v14.38 attachment bifurcation falsification boundary
@@ -141,3 +156,15 @@ The hypothesis that the present source-free classical ADM action spontaneously s
 
 The reduced shear route fails if the full action does not derive two positive-inertia strata carrying one common shape coordinate, if the physical shear covariance vanishes, or if the complete gauge-reduced Hessian prevents the round-reference ell=2 crossing. A positive reduced susceptibility does not establish a black-hole source, a physical crossing, diagonal locking, or three lifted physical channels.
 <!-- /BHSM_V14_83_MANUAL_RECOVERY -->
+# Current falsification boundary Ã¢â‚¬â€ v15.7
+
+The current calculation does not falsify all nonlinear BHSM enclosure
+branches. It rejects a nearby equivariant radial bifurcation at the v14.93
+identity seed and blocks the full cycle at the absent action-derived localized
+incoming cavitation packet and dynamically induced crossing.
+
+Current verdict:
+`BHSM_V15_7_ONE_ALL_ENCOMPASSING_PARENT_SURFACE_IS_THE_CONTROLLING_AUTHOR_ONTOLOGY_BUT_THE_RETAINED_ACTION_HAS_NOT_DERIVED_A_CONSTRAINT_SOLVED_LOCALIZED_NONHOMOGENEOUS_LORENTZIAN_INCOMING_PACKET_ON_A_TIME_PRESERVED_COMMON_SELF_ADJOINT_DOMAIN;_THEREFORE_NO_DYNAMIC_PHYSICAL_SIGMA_HESSIAN_CAVITATION_CROSSING_OR_NONLINEAR_ENVELOPMENT_CONTINUATION_EXISTS;_THE_V14_93_RADIAL_ZERO_IS_A_ZERO_MODE_WITHOUT_CAVITATION_NOT_A_GLOBAL_NO_GO;_DOWNSTREAM_NORMAN_CYCLE_AND_MASTER_CLOSURE_REMAIN_UNDEFINED_AND_FULL_BHSM_COMPLETION_IS_FALSE`.
+
+Exact next object:
+`ACTION_DERIVED_LOCALIZED_CAVITATION_OF_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_SOLVED_NONHOMOGENEOUS_LORENTZIAN_INCOMING_PACKET_TIME_PRESERVED_COMMON_SELF_ADJOINT_DOMAIN_PHYSICAL_SIGMA_HESSIAN_ZERO_CROSSING_AND_NONLINEAR_ENVELOPMENT_CONTINUATION`.

@@ -1,5 +1,20 @@
 # BHSM in plain language
 
+## Current frontier (v15.7)
+
+BHSM assumes one all-encompassing parent surface. It can now state precisely
+what would count as the start of a physical formation event, but it has not yet
+derived that event. The action must produce a localized incoming disturbance
+from fields it already owns, solve its constraints and boundary conditions,
+and show that it drives the local enclosure mode from stable through zero to
+unstable before continuing into a real nonlinear enclosure. Those ingredients
+are not yet derived.
+
+One well-controlled symmetric radial route has been tested and does not branch
+nearby. That negative result is valuable, but it does not rule out less
+symmetric or finite-size transitions. Full BHSM completion, absolute scale,
+action-derived flavor mixing, and empirical validation remain open.
+
 ## The one-minute version
 
 The Berger-Hopf Standard Model (BHSM) is a research program asking whether

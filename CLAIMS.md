@@ -2,6 +2,34 @@
 
 ## Current public claim boundary
 
+Current version: **v15.7**.
+
+Supported: one all-encompassing parent surface is the controlling author
+ontology, not a derived uniqueness theorem or a choice among parent universes.
+The retained BHSM action defines a general conditional sigma-Hessian threshold
+problem. The v14.93 equivariant radial identity branch
+has a unique conformal quadratic zero with zero cubic and positive quartic
+coefficient, proving no nearby bifurcation in that local radial sector.
+
+Not supported: an action-derived localized incoming packet, dynamically induced
+physical cavitation crossing, nonlinear formation map, persistent orbit,
+de-envelopment receiving domain, complete event Noether
+ledger, physical tangent monodromy, loop spectrum, Floquet reconstruction,
+master map, absolute scale, action-derived CKM/PMNS, or completed encapsulation
+event. The radial result is not a global no-go theorem.
+
+`FULL_BHSM_COMPLETE = FALSE`.
+
+Exact next object:
+`ACTION_DERIVED_LOCALIZED_CAVITATION_OF_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_SOLVED_NONHOMOGENEOUS_LORENTZIAN_INCOMING_PACKET_TIME_PRESERVED_COMMON_SELF_ADJOINT_DOMAIN_PHYSICAL_SIGMA_HESSIAN_ZERO_CROSSING_AND_NONLINEAR_ENVELOPMENT_CONTINUATION`.
+
+The coefficient-free spectral charged-current kernel remains an
+author-selected, no-fit action candidate. Full rank, unitarity, SU(2) closure,
+nonzero CP invariant, and frozen inputs establish mathematical viability but
+not parent-action provenance.
+
+## Historical claim boundaries
+
 V11.6 verdict:
 `BHSM_PARENT_ACTION_CURRENT_REDUCTION_BLOCKED_BY_UNFIXED_COMMON_DOMAIN_FAMILY_WAVEFUNCTION_MAP`.
 The live effective SU(2)L Dirac mixed variation has family kernel `I3`. It is
@@ -160,7 +188,7 @@ no physical mass claim follows.
 - Euclidean, Lorentzian, canonical, and independent-product domains remain distinct conditional candidates; none is selected by aesthetics or legacy wording.
 - Energy-driven enclosure of spacetime is a conditional physicality criterion requiring a conserved bulk stress source, metric constraint, boundary/junction equation, and energy-transfer law. It is not yet a derived BHSM equation.
 - Standard S7 metrics, volume factorizations, and collar identities may be used as convention-controlled mathematical checks without being called physically action-selected.
-- v6.0 derives the canonical nested Hopf–twistor bundle diagram and a fiber-integration theorem conditional on explicit orientation, compactness, integrability, metric/action measure, and boundary hypotheses.
+- v6.0 derives the canonical nested Hopfâ€“twistor bundle diagram and a fiber-integration theorem conditional on explicit orientation, compactness, integrability, metric/action measure, and boundary hypotheses.
 - v6.0 reports `BHSM_S7_ARCHITECTURE_AMBIGUOUS`: the repository's explicit Berger source is S3-type and does not select an S7 physical action domain, B8 bulk, signature, time assignment, S7 metric, fiber scale, or collar matching map.
 - Fiber pushforward uses the actual integral. A normalized probability average is not substituted unless independently selected by the action.
 - BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity. Physical eV/GeV neutrino mass closure remains open pending a numeric neutral stiffness length `sqrt(A_nu/Z_nu)`, a physical `K_neutral,eff` map in `m^-2`, and complete-action derivation of the admissible response cone.
@@ -225,12 +253,12 @@ no physical mass claim follows.
 
 Do not claim that:
 
-- The finite Lovelock classification selects Einstein–Hilbert gravity or any physical BHSM parent action.
+- The finite Lovelock classification selects Einsteinâ€“Hilbert gravity or any physical BHSM parent action.
 - The eight-dimensional Euler density supplies bulk metric dynamics or a physicality threshold.
 - The stored normalized `A_ST=-2` and `G_ST=8` are parent-action coefficients.
 - A nonzero energy current creates Lorentzian signature.
 - A required GHY, Myers, or transgression boundary completion is physical surface tension.
-- BHSM currently contains a foundational B8 geometry–stress action.
+- BHSM currently contains a foundational B8 geometryâ€“stress action.
 - Energy enclosure language alone derives physicality, a boundary source, or an equation of motion.
 - A topologically permitted S7 metric is a stationary BHSM solution without a parent action.
 - Full v6.1 scalar localization may proceed before the parent-domain action gate closes.
@@ -315,9 +343,9 @@ The coefficient form is distinct from the coefficient value. Runtime and registe
 
 ## v3.1 Gauge-Coupling Quantum Claim Boundary
 
-The pattern α_i = w_i/(6π²) is not an action derivation unless attached to the normalized gauge action.
+The pattern Î±_i = w_i/(6Ï€Â²) is not an action derivation unless attached to the normalized gauge action.
 
-The identity 6π² = 3 Vol(S³) does not by itself derive the gauge couplings. Sector weights do not by themselves derive the gauge couplings. Registered coupling expressions are not action derivations.
+The identity 6Ï€Â² = 3 Vol(SÂ³) does not by itself derive the gauge couplings. Sector weights do not by themselves derive the gauge couplings. Registered coupling expressions are not action derivations.
 
 The overall gauge-action coefficient k remains open unless the action fixes it. The CKM coefficient value remains open unless g2_BH is action-derived. The CKM exponent remains not derived.
 
@@ -338,13 +366,13 @@ The deterministic blocker DAG is in [docs/full_theorem_blocker_dag.md](docs/full
 
 - BHSM is not complete until the full action-normalization and scale gates close.
 - The 1:2:7 gauge-coupling registry pattern is artifact-backed but not action-derived.
-- The candidate denominator 6π² = 3 Vol(S³) is not a coupling derivation unless attached to the normalized gauge action.
+- The candidate denominator 6Ï€Â² = 3 Vol(SÂ³) is not a coupling derivation unless attached to the normalized gauge action.
 - Sector weights do not derive gauge couplings without action attachment.
 - The overall gauge-action coefficient k remains open unless fixed by the action.
 - The CKM coefficient form is artifact-backed, but the CKM coefficient value remains open unless g2_BH is action-derived.
 - The CKM exponent remains not derived unless all CKM action, transport, identification, and log-averaging gates close.
 - Dimensionless neutral/PMNS structure does not imply physical neutrino masses.
-- Physical Delta m², matter effects, radiative corrections, stiffness length, curvature, and unit normalization remain open unless separately derived.
+- Physical Delta mÂ², matter effects, radiative corrections, stiffness length, curvature, and unit normalization remain open unless separately derived.
 - Full BHSM completion is not claimed by this repository unless every completion gate passes.
 
 <!-- BHSM_BOUNDARY_COLLAR_MEASURE_V4_1 -->
@@ -354,13 +382,13 @@ Measure status: `CONDITIONAL_BOUNDARY_COLLAR_MEASURE_SOURCE`. Three coframe dire
 `ARTIFACT_BACKED_THREE_BOUNDARY_FRAME_DIRECTIONS`. Unit-S3 normalization, frame averaging,
 gauge trace attachment, and the gauge denominator remain open.
 
-- The mathematical identity Vol(S³_unit)=2π² is not by itself a gauge-coupling derivation.
-- The candidate denominator 6π² = 3 Vol(S³_unit) is not action-derived unless BHSM supplies an action-selected three-frame boundary average.
+- The mathematical identity Vol(SÂ³_unit)=2Ï€Â² is not by itself a gauge-coupling derivation.
+- The candidate denominator 6Ï€Â² = 3 Vol(SÂ³_unit) is not action-derived unless BHSM supplies an action-selected three-frame boundary average.
 - A three-frame decomposition does not by itself imply a frame average.
 - A frame average does not derive gauge couplings unless attached to gauge trace densities in the normalized action.
-- The gauge coupling quantum λ_gauge = 1/(6π²) remains open unless the denominator is action-attached.
-- The α_i values remain open unless the gauge quantum, sector weights, and action coefficient are attached by the normalized action.
-- g2_BH remains open unless α2_BH is action-derived and the weak convention applies.
+- The gauge coupling quantum Î»_gauge = 1/(6Ï€Â²) remains open unless the denominator is action-attached.
+- The Î±_i values remain open unless the gauge quantum, sector weights, and action coefficient are attached by the normalized action.
+- g2_BH remains open unless Î±2_BH is action-derived and the weak convention applies.
 - The CKM coefficient value remains open unless g2_BH is action-derived.
 - The CKM exponent remains not derived.
 - Full BHSM remains not complete unless all action-normalization and scale gates close.
@@ -376,9 +404,9 @@ coupling gates remain open.
 - Equal weighting does not by itself imply average normalization by 1/3.
 - Average normalization does not by itself attach to gauge trace densities.
 - Berger anisotropy must be checked before equal frame averaging can be promoted.
-- The denominator 1/[3 Vol(S³)] remains open unless equal frame averaging, unit-volume normalization, and gauge-trace attachment are supported.
+- The denominator 1/[3 Vol(SÂ³)] remains open unless equal frame averaging, unit-volume normalization, and gauge-trace attachment are supported.
 - The gauge coupling quantum remains open unless the denominator is action-attached.
-- α_i, g2_BH, CKM coefficient value, and CKM exponent remain open unless downstream action gates close.
+- Î±_i, g2_BH, CKM coefficient value, and CKM exponent remain open unless downstream action gates close.
 - Full BHSM remains not complete.
 
 <!-- BHSM_GAUGE_COFRAME_HODGE_V4_3 -->
@@ -408,7 +436,7 @@ The explicit component map is conditionally derived from the Berger metric and c
 <!-- BHSM_CASIMIR_SHELL_SPECTRAL_RESIDUE_V4_5 -->
 ## Casimir-shell spectral residue v4.5
 
-BHSM should not interpret w=(1,2,7) as gauge-boson counts. Gauge algebra dimensions remain (1,3,8). The candidate interpretation is that w=(1,2,7) are active Casimir-shell spectral residues: U(1) retains its sole abelian amplitude channel, while SU(2) and SU(3) separate one radial quadratic Casimir coordinate into the relative-boundary scale layer, leaving tangent residues 2 and 7. The universal factor 1/(6π²) is a candidate 3D boundary Weyl-density coefficient. The resulting λ_i=w_i/(6π²) is a candidate whitened boundary fluctuation covariance density. The action must still derive inverse-covariance placement and coupling identification before α_i is claimed as derived.
+BHSM should not interpret w=(1,2,7) as gauge-boson counts. Gauge algebra dimensions remain (1,3,8). The candidate interpretation is that w=(1,2,7) are active Casimir-shell spectral residues: U(1) retains its sole abelian amplitude channel, while SU(2) and SU(3) separate one radial quadratic Casimir coordinate into the relative-boundary scale layer, leaving tangent residues 2 and 7. The universal factor 1/(6Ï€Â²) is a candidate 3D boundary Weyl-density coefficient. The resulting Î»_i=w_i/(6Ï€Â²) is a candidate whitened boundary fluctuation covariance density. The action must still derive inverse-covariance placement and coupling identification before Î±_i is claimed as derived.
 
 Statuses: `CASIMIR_SHELL_RESIDUE_STRONG_CANDIDATE`, `SPECTRAL_DENSITY_GAUGE_QUANTUM_CONDITIONAL`, `WHITENED_BOUNDARY_FLUCTUATION_CONDITIONAL`, and `INVERSE_COVARIANCE_PLACEMENT_CONDITIONAL`. All action and downstream gates remain open.
 
@@ -449,7 +477,7 @@ Statuses: `CASIMIR_SHELL_RESIDUE_STRONG_CANDIDATE`, `SPECTRAL_DENSITY_GAUGE_QUAN
 <!-- BHSM_SECTOR_BOUNDARY_OPERATOR_V4_6 -->
 ## Sector boundary operator / whitened gauge action v4.6
 
-BHSM v4.6 treats the sector boundary kinetic operator L_i(ρ) as a conditional Laplace-type candidate on active adjoint-valued boundary one-form fluctuations over the relative Berger boundary Σ_ρ. The operator is used only to define a whitened boundary fluctuation B_i=L_i(ρ)^{1/2}A_i and a candidate inverse-covariance quadratic action S_i=(1/2λ_i)<A_i,L_i(ρ)A_i>. The three boundary coframe channels are evaluated through the normalized primitive frame state τ_frame=1/3, so the raw one-form factor of three does not overcount the active residue. The v4.5 residue λ_i=w_i/(6π²) remains a conditional whitened fluctuation covariance density, not yet a derived physical gauge coupling. The action source for L_i(ρ), the gauge-fixed boundary domain, lower-order curvature/collar terms, Z_i(μ,ρ), ρ_i(μ), α_i identification, g2_BH, CKM value/exponent, and full BHSM completion remain open.
+BHSM v4.6 treats the sector boundary kinetic operator L_i(Ï) as a conditional Laplace-type candidate on active adjoint-valued boundary one-form fluctuations over the relative Berger boundary Î£_Ï. The operator is used only to define a whitened boundary fluctuation B_i=L_i(Ï)^{1/2}A_i and a candidate inverse-covariance quadratic action S_i=(1/2Î»_i)<A_i,L_i(Ï)A_i>. The three boundary coframe channels are evaluated through the normalized primitive frame state Ï„_frame=1/3, so the raw one-form factor of three does not overcount the active residue. The v4.5 residue Î»_i=w_i/(6Ï€Â²) remains a conditional whitened fluctuation covariance density, not yet a derived physical gauge coupling. The action source for L_i(Ï), the gauge-fixed boundary domain, lower-order curvature/collar terms, Z_i(Î¼,Ï), Ï_i(Î¼), Î±_i identification, g2_BH, CKM value/exponent, and full BHSM completion remain open.
 
 Statuses: `SECTOR_BOUNDARY_OPERATOR_CONDITIONAL_CANDIDATE`, `LAPLACE_TYPE_PRINCIPAL_SYMBOL_CONDITIONAL`, `FRAME_NORMALIZED_PRINCIPAL_RESIDUE_CONDITIONAL`, and `WHITENED_GAUGE_ACTION_CONDITIONAL`.
 
@@ -1215,7 +1243,7 @@ Needs empirical or global test:
 
 - spacetime-sheet causal/global propagation;
 - physical U(1), chirality, localization, and anomaly closure;
-- Berger–Higgs and connection normalization;
+- Bergerâ€“Higgs and connection normalization;
 - CKM/PMNS transport observables;
 - the `1:2:7` representation/incidence theorem and scale-transfer map.
 
@@ -1859,7 +1887,7 @@ a release-relevance firewall. It does not currently satisfy
 The exact D0 neighboring-branch obstruction is a completed, nonblocking
 scientific result. Peer review, institutional acceptance, and future
 experimental confirmation are external stages. No prior package-level
-“complete/exported” label may be interpreted as satisfying the new
+â€œcomplete/exportedâ€ label may be interpreted as satisfying the new
 cumulative release contract without all six gates.
 
 <!-- BHSM_SCALAR_WALL_QUARTIC_SOURCE_V6_30_7 -->
@@ -1879,7 +1907,7 @@ Supported:
 
 Not supported:
 
-- selecting `G5>0` from the phrase “stable wall”;
+- selecting `G5>0` from the phrase â€œstable wallâ€;
 - setting `G5=1` as removal of all physical freedom;
 - choosing the exact-branch cancellation value;
 - unconditional or global stability;
@@ -2396,9 +2424,9 @@ cosmological result, or any changed frozen prediction.
 
 Validated only for a conditional common-domain candidate: the minimally covariantized eta `p=2+p=8` density, its convention-corrected SU(3) source/Noether identity, the pure-wall zero-current limit, a finite-action off-shell tangent witness, and the absence of an independent theta vector pole. The prior stratified action does not derive the required eta-to-physical-SU3 reduction. FR/Dirac quantization, matching, and its self-adjoint domain are open. Exact source identity: Wilson singlet zero total charge with `-4/3` mesonic color correlation. Not claimed: a physical quark current, confinement, area law, common gauge normalization, physical scale, mass, CKM/PMNS, neutrino spectrum, or `c_sigma`.
 <!-- BHSM_V14_31_TO_V14_33_CUMULATIVE -->
-## v14.31–v14.33 claim boundary
+## v14.31â€“v14.33 claim boundary
 
-BHSM owns a foundational bosonic Path-B color–eta action and a conditional full-preimage topological-current transgression. It does not yet claim a smooth action-normalized `SU(3)`-equivariant smash map, normalized FR Hilbert bundle, self-adjoint collective Dirac action, confinement, string tension, scale, mass, CKM, PMNS, or neutrino output.
+BHSM owns a foundational bosonic Path-B colorâ€“eta action and a conditional full-preimage topological-current transgression. It does not yet claim a smooth action-normalized `SU(3)`-equivariant smash map, normalized FR Hilbert bundle, self-adjoint collective Dirac action, confinement, string tension, scale, mass, CKM, PMNS, or neutrino output.
 <!-- /BHSM_V14_31_TO_V14_33_CUMULATIVE -->
 <!-- BHSM_V14_34_HOPF_PHASE_FLAVOR -->
 ## v14.34 phase-flavor claim boundary

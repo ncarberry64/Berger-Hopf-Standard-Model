@@ -1,5 +1,26 @@
 # Gate Ledger
 
+## v15.7 unique-parent localized-cavitation gate
+
+One all-encompassing parent surface/common core-interface is the controlling
+Norman/BHSM author ontology. Uniqueness here does not freeze its local state and
+is not an action-derived surface-selection theorem. The retained fields may
+deform, oscillate, and exchange content.
+
+The general conditional physical sigma-Hessian criterion exists. The action
+does not yet supply a localized, constraint-solved nonhomogeneous Lorentzian
+incoming solution assembled from owned variables, with finite norm/action,
+quasilocal transport flux, gauge reduction, regularity, and a time-preserved
+common self-adjoint domain. v14.94's permanently tachyonic homogeneous Jensen
+mode is not a local induced event. v14.93's radial conformal zero is a
+`ZERO_MODE_WITHOUT_CAVITATION` because its cubic coefficient vanishes and its
+quartic coefficient is positive.
+
+Formation, persistence, release, the complete Noether ledger, monodromy,
+Floquet reconstruction, and master closure are therefore not reached. The one
+open object is
+`ACTION_DERIVED_LOCALIZED_CAVITATION_OF_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_SOLVED_NONHOMOGENEOUS_LORENTZIAN_INCOMING_PACKET_TIME_PRESERVED_COMMON_SELF_ADJOINT_DOMAIN_PHYSICAL_SIGMA_HESSIAN_ZERO_CROSSING_AND_NONLINEAR_ENVELOPMENT_CONTINUATION`.
+
 ## v14.1 eta/SU3 connection fork gate
 
 The composite eta projector connection fails full physical-SU3 equivalence on

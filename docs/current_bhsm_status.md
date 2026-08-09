@@ -2,29 +2,37 @@
 
 Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a completed replacement of the Standard Model. The program goal remains replacement by derivation, with the Standard Model retained as the preserved infrared layer until that derivation is complete.
 
-## v15.6 Norman formation--persistence--de-envelopment cycle
+## v15.7 nonlinear Norman-cycle BVP
 
-The recovered Norman doctrine is consistent with BHSM when typed as
-`C_n --F--> K_n --P--> K'_n --D--> C_(n+1)`. De-envelopment is a forward
-release/reconciliation into an updated parent; it is neither `F^-1` nor
-`F^dagger` without an additional action theorem.
+The v15.7 audit attempts the first irreducible gate of the v15.6 cycle BVP.
+One all-encompassing parent surface is the controlling author ontology; the
+problem is its local dynamical state, not selection among parent universes.
+The retained action defines the general conditional operator
 
-BHSM owns the `sigma=0` Hessian crossing as the formation threshold and owns
-the relative-periodic/Floquet theorem class for persistence. It does not yet
-derive the nonlinear formation continuation, select a physical persistent
-orbit, or supply a release condition, receiving parent domain, complete
-Noether ledger, and orphan-free transfer theorem. Consequently the typed
-composite is not a physical operator, its spectrum and primitive-to-Floquet
-reconstruction are undefined, and the master map remains nonconstructible.
+`H_sigma^(0) = -nabla_A(Z_0 nabla^A) + A_0 + sum Xi`
 
-Primary result:
-`BHSM_V15_6_THE_NORMAN_FORMATION_PERSISTENCE_DE_ENVELOPMENT_ONTOLOGY_IS_COMPATIBLE_WITH_THE_RETAINED_BHSM_ARCHITECTURE_BUT_THE_PHYSICAL_CYCLE_IS_NOT_ACTION_CLOSED`.
+and therefore the formal criterion for a time-dependent cavitation eigenvalue.
+It does not derive the required localized, constraint-solved nonhomogeneous
+Lorentzian incoming packet, finite action/norm and quasilocal flux, or its
+time-preserved common self-adjoint domain. Hence no dynamically induced local
+zero crossing, critical mode, or nonlinear continuation is available.
+
+The v14.93 local theorem is preserved: the unique equivariant radial
+conformal zero is a `ZERO_MODE_WITHOUT_CAVITATION`: it has zero cubic coefficient and quartic coefficient
+`27*pi*X^4/128 > 0`, hence no nearby radial bifurcation. Nonhomogeneous and
+finite-amplitude branches remain open.
+
+Consequently formation is undefined; persistence, de-envelopment, the event
+Noether ledger, physical monodromy, loop spectrum, Floquet reconstruction,
+and master reclosure are not reached. De-envelopment remains a forward map to
+an updated parent and is neither formation's inverse nor dagger.
 
 Exact next object:
-`ACTION_DERIVED_NONLINEAR_NORMAN_CYCLE_BOUNDARY_VALUE_PROBLEM_WITH_FORMATION_CONTINUATION_RELATIVE_PERIODIC_PERSISTENCE_DE_ENVELOPMENT_RECEIVING_DOMAIN_COMPLETE_NOETHER_LEDGER_AND_PHYSICAL_TANGENT_MONODROMY`.
+`ACTION_DERIVED_LOCALIZED_CAVITATION_OF_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_SOLVED_NONHOMOGENEOUS_LORENTZIAN_INCOMING_PACKET_TIME_PRESERVED_COMMON_SELF_ADJOINT_DOMAIN_PHYSICAL_SIGMA_HESSIAN_ZERO_CROSSING_AND_NONLINEAR_ENVELOPMENT_CONTINUATION`.
 
 `FULL_BHSM_COMPLETE = FALSE`; master-solution counts remain
-`UNDEFINED_MISSING_UPSTREAM_STRUCTURE`.
+`UNDEFINED_MISSING_UPSTREAM_STRUCTURE`. Frozen predictions and official
+prediction logic are unchanged. See the [controlling report](BHSM_NONLINEAR_NORMAN_CYCLE_BVP_AND_MAIN_SYNC_V15_7.md).
 
 ## v14.2 FR eta-knot color-matter completion audit
 
@@ -98,7 +106,7 @@ introduced. Mark III and BHSM physical completion remain open.
 
 ## v14.0 eta-knot action-completion result
 
-The recovered v13.1–v13.5 chain has been reproduced and integrated
+The recovered v13.1â€“v13.5 chain has been reproduced and integrated
 semantically. The retained p=2+p=8 eta action has a degree-one equivariant
 static solution satisfying the Derrick identity, a positive finite-interval
 radial Jacobi spectrum, and a finite collective inertia. Odd topological
@@ -107,9 +115,9 @@ wall selects conjugate rank-three G2/SU3 polarizations, and its varying
 projector defines a nonzero su(3)-valued Grassmann curvature. Meson and baryon
 invariant tensors close exactly under that transport.
 
-The requested gauge-dressed singlet BVP is not yet an Euler–Lagrange problem
+The requested gauge-dressed singlet BVP is not yet an Eulerâ€“Lagrange problem
 of the retained action. Eta is owned by S8, while the independent SU3
-connection and its Yang–Mills density are owned by S4eff. The master-action
+connection and its Yangâ€“Mills density are owned by S4eff. The master-action
 ledger records the gauge bundle/measure pushforward as missing, the physical
 eta-current pullback is unresolved, and no density depends jointly on eta and
 the independent SU3 connection. A composite projector connection is not

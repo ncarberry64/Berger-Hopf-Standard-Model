@@ -1,5 +1,30 @@
 # BHSM Artifact Index
 
+## Current BHSM v15.7 nonlinear cycle BVP
+
+Ten deterministic records are controlled by
+[`aether_nonlinear_norman_cycle_bvp_v15_7.py`](src/bhsm/interface/aether_nonlinear_norman_cycle_bvp_v15_7.py)
+and the [v15.7 report](docs/BHSM_NONLINEAR_NORMAN_CYCLE_BVP_AND_MAIN_SYNC_V15_7.md):
+
+- `BHSM_nonlinear_norman_cycle_bvp_v15_7.json`
+- `BHSM_formation_continuation_v15_7.json`
+- `BHSM_relative_periodic_persistence_v15_7.json`
+- `BHSM_de_envelopment_receiving_domain_v15_7.json`
+- `BHSM_complete_noether_ledger_v15_7.json`
+- `BHSM_physical_tangent_monodromy_v15_7.json`
+- `BHSM_floquet_reconstruction_v15_7.json`
+- `BHSM_master_reclosure_v15_7.json`
+- `BHSM_full_completion_gate_v15_7.json`
+- `BHSM_public_repository_sync_v15_7.json`
+
+The package proves that the physical nonlinear BVP is blocked before
+continuation at the missing action-derived localized incoming cavitation
+packet on the unique parent surface. All artifacts fail closed and
+`USB_TOUCHED` is false.
+
+Exact next object:
+`ACTION_DERIVED_LOCALIZED_CAVITATION_OF_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_SOLVED_NONHOMOGENEOUS_LORENTZIAN_INCOMING_PACKET_TIME_PRESERVED_COMMON_SELF_ADJOINT_DOMAIN_PHYSICAL_SIGMA_HESSIAN_ZERO_CROSSING_AND_NONLINEAR_ENVELOPMENT_CONTINUATION`.
+
 ## BHSM v11.5 conditional flavor-action assembly
 
 - `artifacts/BHSM_common_attachment_response_v11_4.json`: canonical whitened
@@ -97,7 +122,7 @@ Primary CLI:
 Primary verdict:
 `BHSM_MULTIPLICATIVE_SUPPORT_HAAR_KINEMATICS_DERIVED_BUT_NORMALIZATION_AND_SUPPORT_WEIGHTS_NOT_ACTION_FIXED`.
 
-## B8 geometry–energy parent action v6.0.2
+## B8 geometryâ€“energy parent action v6.0.2
 
 | Package | Contents | Primary artifact | Status | CLI |
 | --- | --- | --- | --- | --- |
@@ -204,13 +229,13 @@ The deterministic blocker DAG is in [docs/full_theorem_blocker_dag.md](docs/full
 
 - BHSM is not complete until the full action-normalization and scale gates close.
 - The 1:2:7 gauge-coupling registry pattern is artifact-backed but not action-derived.
-- The candidate denominator 6π² = 3 Vol(S³) is not a coupling derivation unless attached to the normalized gauge action.
+- The candidate denominator 6Ï€Â² = 3 Vol(SÂ³) is not a coupling derivation unless attached to the normalized gauge action.
 - Sector weights do not derive gauge couplings without action attachment.
 - The overall gauge-action coefficient k remains open unless fixed by the action.
 - The CKM coefficient form is artifact-backed, but the CKM coefficient value remains open unless g2_BH is action-derived.
 - The CKM exponent remains not derived unless all CKM action, transport, identification, and log-averaging gates close.
 - Dimensionless neutral/PMNS structure does not imply physical neutrino masses.
-- Physical Delta m², matter effects, radiative corrections, stiffness length, curvature, and unit normalization remain open unless separately derived.
+- Physical Delta mÂ², matter effects, radiative corrections, stiffness length, curvature, and unit normalization remain open unless separately derived.
 - Full BHSM completion is not claimed by this repository unless every completion gate passes.
 
 <!-- BHSM_BOUNDARY_COLLAR_MEASURE_V4_1 -->
@@ -226,13 +251,13 @@ Measure status: `CONDITIONAL_BOUNDARY_COLLAR_MEASURE_SOURCE`. Three coframe dire
 `ARTIFACT_BACKED_THREE_BOUNDARY_FRAME_DIRECTIONS`. Unit-S3 normalization, frame averaging,
 gauge trace attachment, and the gauge denominator remain open.
 
-- The mathematical identity Vol(S³_unit)=2π² is not by itself a gauge-coupling derivation.
-- The candidate denominator 6π² = 3 Vol(S³_unit) is not action-derived unless BHSM supplies an action-selected three-frame boundary average.
+- The mathematical identity Vol(SÂ³_unit)=2Ï€Â² is not by itself a gauge-coupling derivation.
+- The candidate denominator 6Ï€Â² = 3 Vol(SÂ³_unit) is not action-derived unless BHSM supplies an action-selected three-frame boundary average.
 - A three-frame decomposition does not by itself imply a frame average.
 - A frame average does not derive gauge couplings unless attached to gauge trace densities in the normalized action.
-- The gauge coupling quantum λ_gauge = 1/(6π²) remains open unless the denominator is action-attached.
-- The α_i values remain open unless the gauge quantum, sector weights, and action coefficient are attached by the normalized action.
-- g2_BH remains open unless α2_BH is action-derived and the weak convention applies.
+- The gauge coupling quantum Î»_gauge = 1/(6Ï€Â²) remains open unless the denominator is action-attached.
+- The Î±_i values remain open unless the gauge quantum, sector weights, and action coefficient are attached by the normalized action.
+- g2_BH remains open unless Î±2_BH is action-derived and the weak convention applies.
 - The CKM coefficient value remains open unless g2_BH is action-derived.
 - The CKM exponent remains not derived.
 - Full BHSM remains not complete unless all action-normalization and scale gates close.
@@ -253,9 +278,9 @@ coupling gates remain open.
 - Equal weighting does not by itself imply average normalization by 1/3.
 - Average normalization does not by itself attach to gauge trace densities.
 - Berger anisotropy must be checked before equal frame averaging can be promoted.
-- The denominator 1/[3 Vol(S³)] remains open unless equal frame averaging, unit-volume normalization, and gauge-trace attachment are supported.
+- The denominator 1/[3 Vol(SÂ³)] remains open unless equal frame averaging, unit-volume normalization, and gauge-trace attachment are supported.
 - The gauge coupling quantum remains open unless the denominator is action-attached.
-- α_i, g2_BH, CKM coefficient value, and CKM exponent remain open unless downstream action gates close.
+- Î±_i, g2_BH, CKM coefficient value, and CKM exponent remain open unless downstream action gates close.
 - Full BHSM remains not complete.
 
 <!-- BHSM_GAUGE_COFRAME_HODGE_V4_3 -->
@@ -290,7 +315,7 @@ The explicit component map is conditionally derived from the Berger metric and c
 <!-- BHSM_CASIMIR_SHELL_SPECTRAL_RESIDUE_V4_5 -->
 ## Casimir-shell spectral residue v4.5
 
-BHSM should not interpret w=(1,2,7) as gauge-boson counts. Gauge algebra dimensions remain (1,3,8). The candidate interpretation is that w=(1,2,7) are active Casimir-shell spectral residues: U(1) retains its sole abelian amplitude channel, while SU(2) and SU(3) separate one radial quadratic Casimir coordinate into the relative-boundary scale layer, leaving tangent residues 2 and 7. The universal factor 1/(6π²) is a candidate 3D boundary Weyl-density coefficient. The resulting λ_i=w_i/(6π²) is a candidate whitened boundary fluctuation covariance density. The action must still derive inverse-covariance placement and coupling identification before α_i is claimed as derived.
+BHSM should not interpret w=(1,2,7) as gauge-boson counts. Gauge algebra dimensions remain (1,3,8). The candidate interpretation is that w=(1,2,7) are active Casimir-shell spectral residues: U(1) retains its sole abelian amplitude channel, while SU(2) and SU(3) separate one radial quadratic Casimir coordinate into the relative-boundary scale layer, leaving tangent residues 2 and 7. The universal factor 1/(6Ï€Â²) is a candidate 3D boundary Weyl-density coefficient. The resulting Î»_i=w_i/(6Ï€Â²) is a candidate whitened boundary fluctuation covariance density. The action must still derive inverse-covariance placement and coupling identification before Î±_i is claimed as derived.
 
 Statuses: `CASIMIR_SHELL_RESIDUE_STRONG_CANDIDATE`, `SPECTRAL_DENSITY_GAUGE_QUANTUM_CONDITIONAL`, `WHITENED_BOUNDARY_FLUCTUATION_CONDITIONAL`, and `INVERSE_COVARIANCE_PLACEMENT_CONDITIONAL`. All action and downstream gates remain open.
 
@@ -331,7 +356,7 @@ Statuses: `CASIMIR_SHELL_RESIDUE_STRONG_CANDIDATE`, `SPECTRAL_DENSITY_GAUGE_QUAN
 <!-- BHSM_SECTOR_BOUNDARY_OPERATOR_V4_6 -->
 ## Sector boundary operator / whitened gauge action v4.6
 
-BHSM v4.6 treats the sector boundary kinetic operator L_i(ρ) as a conditional Laplace-type candidate on active adjoint-valued boundary one-form fluctuations over the relative Berger boundary Σ_ρ. The operator is used only to define a whitened boundary fluctuation B_i=L_i(ρ)^{1/2}A_i and a candidate inverse-covariance quadratic action S_i=(1/2λ_i)<A_i,L_i(ρ)A_i>. The three boundary coframe channels are evaluated through the normalized primitive frame state τ_frame=1/3, so the raw one-form factor of three does not overcount the active residue. The v4.5 residue λ_i=w_i/(6π²) remains a conditional whitened fluctuation covariance density, not yet a derived physical gauge coupling. The action source for L_i(ρ), the gauge-fixed boundary domain, lower-order curvature/collar terms, Z_i(μ,ρ), ρ_i(μ), α_i identification, g2_BH, CKM value/exponent, and full BHSM completion remain open.
+BHSM v4.6 treats the sector boundary kinetic operator L_i(Ï) as a conditional Laplace-type candidate on active adjoint-valued boundary one-form fluctuations over the relative Berger boundary Î£_Ï. The operator is used only to define a whitened boundary fluctuation B_i=L_i(Ï)^{1/2}A_i and a candidate inverse-covariance quadratic action S_i=(1/2Î»_i)<A_i,L_i(Ï)A_i>. The three boundary coframe channels are evaluated through the normalized primitive frame state Ï„_frame=1/3, so the raw one-form factor of three does not overcount the active residue. The v4.5 residue Î»_i=w_i/(6Ï€Â²) remains a conditional whitened fluctuation covariance density, not yet a derived physical gauge coupling. The action source for L_i(Ï), the gauge-fixed boundary domain, lower-order curvature/collar terms, Z_i(Î¼,Ï), Ï_i(Î¼), Î±_i identification, g2_BH, CKM value/exponent, and full BHSM completion remain open.
 
 Statuses: `SECTOR_BOUNDARY_OPERATOR_CONDITIONAL_CANDIDATE`, `LAPLACE_TYPE_PRINCIPAL_SYMBOL_CONDITIONAL`, `FRAME_NORMALIZED_PRINCIPAL_RESIDUE_CONDITIONAL`, and `WHITENED_GAUGE_ACTION_CONDITIONAL`.
 
@@ -397,7 +422,7 @@ Doctrine: `docs/bhsm_ckm_relative_current_normalization_killscreen_v4_8.md`.
 
 | Artifact | Verdict | Purpose |
 |---|---|---|
-| `artifacts/BHSM_coupling_bridge_blocker_consolidation_v4_9.json` | `COUPLING_BRIDGE_BLOCKED_PENDING_ACTION_PRINCIPLE` | Consolidates v4.5–v4.8, freezes both blocked bridges, and records the CKM transport pivot. |
+| `artifacts/BHSM_coupling_bridge_blocker_consolidation_v4_9.json` | `COUPLING_BRIDGE_BLOCKED_PENDING_ACTION_PRINCIPLE` | Consolidates v4.5â€“v4.8, freezes both blocked bridges, and records the CKM transport pivot. |
 
 Doctrine: `docs/bhsm_coupling_bridge_blocker_consolidation_v4_9.md`.
 
@@ -929,7 +954,7 @@ Doctrine: `docs/bhsm_scalar_wall_puiseux_fold_v6_1_7.md`.
 The 16 deterministic artifacts enumerated by
 `src/bhsm/interface/triality_generation_scale_architecture.py` cover the
 advanced handoff; regulated scalar-wall cusp and flat-kink retirement;
-adopted spacetime-sheet and Berger–Higgs ledgers; exact Spin(8) triality
+adopted spacetime-sheet and Bergerâ€“Higgs ledgers; exact Spin(8) triality
 projectors; the triality/Berger no-double-counting intertwiner; conditional
 triality-fixed G2/SU(3) branching and color constraint; the three-family slot
 map; CKM/PMNS transport separation; exact sphere-volume anchors; coupling and
@@ -1790,7 +1815,7 @@ chain is `docs/BHSM_COMMON_DOMAIN_ETA_SU3_REDUCTION_PROOF.md`,
 `docs/BHSM_FULL_RECALL_PATH_COMPOSITION_AUDIT_v14_30.md`, and
 `docs/BHSM_FULL_HOPF_PREIMAGE_EFFECTIVE_ACTION_PROOF.md`.
 <!-- BHSM_V14_31_TO_V14_33_CUMULATIVE -->
-## v14.31–v14.33 artifacts
+## v14.31â€“v14.33 artifacts
 
 Regenerate the cumulative artifacts with `python scripts/materialize_hopf_smash_transgression_v14_33.py`. Controlling reports: `BHSM_PATH_B_FOUNDATIONAL_ACTION_V14_31.md`, `BHSM_PATH_B_PHYSICAL_TOPOLOGY_AND_FR_GATE_V14_32.md`, and `BHSM_HOPF_SMASH_TOPOLOGICAL_TRANSGRESSION_V14_33.md`.
 <!-- /BHSM_V14_31_TO_V14_33_CUMULATIVE -->

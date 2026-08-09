@@ -4,12 +4,14 @@ from __future__ import annotations
 
 from typing import Any
 
-PRIMARY_VERDICT = "BHSM_PARENT_ACTION_CURRENT_REDUCTION_BLOCKED_BY_UNFIXED_COMMON_DOMAIN_FAMILY_WAVEFUNCTION_MAP"
-EXACT_NEXT_OBJECT = "ACTION_OWNED_COMMON_DOMAIN_UP_DOWN_FAMILY_WAVEFUNCTION_ORIENTATION_AND_CURRENT_PAIRING_MAP"
+from .aether_nonlinear_norman_cycle_bvp_v15_7 import (
+    EXACT_NEXT_OBJECT,
+    PRIMARY_VERDICT,
+    full_completion_payload,
+)
 
-
-CURRENT_CAMPAIGN = "v11.6 Parent-action spectral charged-current reduction and uniqueness audit"
-CURRENT_VERSION = "v11.6"
+CURRENT_CAMPAIGN = "v15.7 nonlinear Norman-cycle BVP and public repository consolidation"
+CURRENT_VERSION = "v15.7"
 SOURCE_BASE_MAIN_SHA = "3e324a05e50b8128d28b84968b4ef3d2b064dd73"
 SOURCE_BASE_TREE_SHA = "RESOLVE_FROM_BASELINE_COMMIT"
 COMPLETION_MARKS = {
@@ -94,6 +96,7 @@ PHYSICAL_OUTPUTS_AVAILABLE = {
 
 
 def status_payload() -> dict[str, Any]:
+    cycle = full_completion_payload()
     return {
         "status": "Full BHSM v1.0 Candidate",
         "candidate_architecture_complete": True,
@@ -125,17 +128,17 @@ def status_payload() -> dict[str, Any]:
         "frozen_prediction_state": FROZEN_PREDICTION_STATE,
         "physical_outputs_available": PHYSICAL_OUTPUTS_AVAILABLE,
         "validation_summary": {
-            "focused": "PASS: v11.5 recovery plus v11.6 parent-current reduction, equivalence, and uniqueness checks",
-            "full_pytest": "pending final v11.6 branch validation",
-            "audits": "pending final v11.6 publication audit cadence",
-            "artifact_determinism": "PASS: v11.6 artifacts are byte-identical across repeated materializations",
+            "focused": "PASS: v15.7 BVP, deterministic artifact, and public-status consistency tests",
+            "full_pytest": "recorded by committed-tree CI and publication artifact",
+            "audits": "deterministic materialization, forbidden claims, status consistency, links, and public readiness",
+            "artifact_determinism": "PASS: v15.7 artifacts are byte-identical across repeated materializations",
         },
         "source_base_main_sha": SOURCE_BASE_MAIN_SHA,
         "source_base_tree_sha": SOURCE_BASE_TREE_SHA,
         "current_main_sha": "RESOLVE_AT_RUNTIME_WITH_GIT_REV_PARSE_HEAD",
         "current_tree_sha": "RESOLVE_AT_RUNTIME_WITH_GIT_REV_PARSE_HEAD_TREE",
         "sha_embedding_policy": "a commit cannot contain its own eventual merge SHA; final merged SHA is reported from Git and the tree is contract-tested",
-        "live_merged_status": "v11.3 on main at branch point; v11.5 recovery is PR 218 and v11.6 is its stacked continuation",
+        "live_merged_status": "public main synchronization is tracked by the v15.7 consolidation PR and sync artifact",
         "active_branch_status": PRIMARY_VERDICT,
         "haar_scale_status": "attachment generator normalized conventionally; physical lambda_D classification remains downstream of the common Hessian quotient",
         "historical_recovery_status": PRIMARY_VERDICT,
@@ -147,18 +150,34 @@ def status_payload() -> dict[str, Any]:
         "measured_particle_inputs": [],
         "physical_outputs_promoted": [],
         "conditional_outputs_available": ["charged-lepton mass candidate", "up/down hierarchy seeds", "author-selected unitary CKM candidate", "candidate Jarlskog invariant", "action-current identity-kernel reduction", "spectral-current non-uniqueness counterexamples"],
+        "continuation_version": CURRENT_VERSION,
+        "continuation_campaign": CURRENT_CAMPAIGN,
+        "continuation_exact_verdict": PRIMARY_VERDICT,
+        "continuation_exact_next_object": EXACT_NEXT_OBJECT,
+        "FULL_BHSM_COMPLETE": False,
+        "nonlinear_cycle_status": {
+            key: cycle[key]
+            for key in (
+                "NONLINEAR_FORMATION_MAP",
+                "PHYSICAL_PERSISTENT_ORBIT",
+                "DE_ENVELOPMENT_RECEIVING_DOMAIN",
+                "COMPLETE_NOETHER_LEDGER",
+                "PHYSICAL_TANGENT_MONODROMY",
+                "PHYSICAL_LOOP_SPECTRUM",
+                "FLOQUET_RECONSTRUCTION",
+                "MASTER_MAP",
+            )
+        },
+        "USB_TOUCHED": False,
     }
 
 
 def public_repo_status() -> str:
     return (
-        "BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: structural architecture integrated conditional; frozen predictions unchanged; physical eV/GeV neutrino mass closure remains open; external HEP runtime integration remains gated. "
-        "Current campaign status: v11.6 preserves the v11.5 recovery point and evaluates the live action current. The "
-        "effective SU2L Dirac mixed variation has family kernel I3. It is not rephasing-equivalent to the full-rank no-fit "
-        "spectral charged-current candidate. The viability properties leave a continuous family of inequivalent kernels, "
-        "and the commuting v11.4 response pair cannot generate mixing by joint functional calculus. The v11.5 kernel "
-        "therefore remains an author-selected no-fit action candidate, not action-derived. Mark III remains open pending an "
-        "action-owned common-domain up/down family wavefunction orientation and current pairing map. "
-        "RG transport, normalization, and empirical tests are downstream conditional evaluations and cannot replace that provenance gate. "
-        "Mark IV and BHSM 1.0 release completion remain open. Frozen predictions are unchanged."
+        "BHSM v15.7 defines a conditional action-native sigma-Hessian threshold criterion but does not yet select the "
+        "constraint-solved nonhomogeneous Lorentzian M8 background, self-adjoint physical domain, normalized kernel, "
+        "or simple zero crossing required for nonlinear formation. The v14.93 equivariant radial zero has no nearby "
+        "radial bifurcation, without implying a global no-go. Formation, persistence, de-envelopment, Noether ledger, "
+        "physical monodromy, Floquet reconstruction, and master reclosure remain incomplete. The no-fit spectral "
+        "charged-current candidate remains author-selected rather than action-derived. Frozen predictions are unchanged."
     )

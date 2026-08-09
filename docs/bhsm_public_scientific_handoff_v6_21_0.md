@@ -1,5 +1,10 @@
 # BHSM public scientific handoff v6.21.0
 
+> Historical handoff, now supplemented by the current
+> [v15.7 nonlinear-cycle report](BHSM_NONLINEAR_NORMAN_CYCLE_BVP_AND_MAIN_SYNC_V15_7.md).
+> The current exact object is
+> `ACTION_DERIVED_LOCALIZED_CAVITATION_OF_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_SOLVED_NONHOMOGENEOUS_LORENTZIAN_INCOMING_PACKET_TIME_PRESERVED_COMMON_SELF_ADJOINT_DOMAIN_PHYSICAL_SIGMA_HESSIAN_ZERO_CROSSING_AND_NONLINEAR_ENVELOPMENT_CONTINUATION`.
+
 ## 1. Purpose
 
 This document is the shortest evidence-based route into the Berger-Hopf

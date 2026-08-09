@@ -1,21 +1,36 @@
 # Berger-Hopf Standard Model (BHSM)
 
 [![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml)
-[![Latest release](https://img.shields.io/github/v/release/ncarberry64/Berger-Hopf-Standard-Model)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/releases/latest)
+[![Latest archival release](https://img.shields.io/github/v/release/ncarberry64/Berger-Hopf-Standard-Model?label=archival%20release)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/releases/latest)
+[![Current research status](https://img.shields.io/badge/current%20research-v15.7-orange)](docs/BHSM_NONLINEAR_NORMAN_CYCLE_BVP_AND_MAIN_SYNC_V15_7.md)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
-BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v14.91 identifies the global parent degree as the M8 map class in `pi7(S7)`, constructs an exact compact round degree-one Einstein--eta identity-map branch on an explicit existing-coefficient locus, and derives the smooth zero-flux transmission domain of the two Hopf hemispherical preimage caps. The coefficient locus is not action-selected, and the independent M4 gauge/Dirac sector still has no action-owned common-domain critical-value or variational bundle intertwiner with M8. The full coupled projector, relative tensor spectrum, cap inertias, and physical L2 vertex therefore remain undefined. Mark III, Mark IV, and BHSM 1.0 remain open. Frozen predictions and official prediction logic are unchanged.
+BHSM is an independent artifact-backed mathematical-physics research program investigating whether Standard Model structure and particle-like dynamics can be derived from Berger-Hopf boundary/envelopment geometry and a common action architecture.
 
-## Current BHSM status -- v14.91 degree-one Lorentzian full-preimage phase-space gate
+## Current research status -- v15.7
 
-Verdict: `BHSM_V14_91_THE_RETAINED_M8_P1_ETA_BLOCK_HAS_AN_EXACT_COMPACT_ROUND_DEGREE_ONE_IDENTITY_MAP_BRANCH_ON_THE_EXISTING_COEFFICIENT_LOCUS_KAPPA0_EQUALS_15_OVER_4_KAPPA1_TIMES_5KAPPA1_TO_THE_ONE_THIRD_AND_THE_HOPF_HEMISPHERE_SPLIT_HAS_A_SMOOTH_ZERO_FLUX_TRANSMISSION_DOMAIN;_BUT_THIS_LOCUS_IS_NOT_ACTION_SELECTED_AND_THE_INDEPENDENT_M4_GAUGE_DIRAC_SECTOR_HAS_NO_ACTION_OWNED_COMMON_DOMAIN_CRITICAL_VALUE_OR_VARIATIONAL_BUNDLE_INTERTWINER_WITH_M8,_SO_THE_REQUESTED_FULL_COUPLED_BVP_PHYSICAL_PROJECTOR_RELATIVE_TENSOR_SPECTRUM_DELTA_PI_CAP_INERTIAS_AND_B_DYN_L2_REMAIN_UNDEFINED`. See the [v14.91 degree-one phase-space gate](docs/BHSM_DEGREE_ONE_LORENTZIAN_FULL_PREIMAGE_PHASE_SPACE_V14_91.md), [v14.90 intrinsic dynamical momentum gate](docs/BHSM_INTRINSIC_FULL_PREIMAGE_DYNAMICAL_MOMENTUM_GATE_V14_90.md), and [reviewer reproduction guide](docs/reviewer_reproduction_guide.md).
+BHSM assumes one all-encompassing parent surface/common core-interface. The v15.7 audit finds that the retained action has not yet derived a localized, constraint-solved nonhomogeneous Lorentzian disturbance of that surface on a time-preserved common self-adjoint domain. Without that incoming packet, the physical enclosure Hessian cannot be shown to cross dynamically or continue into a nonlinear encapsulated state. The v14.93 local radial zero is preserved as a **zero mode without cavitation**: it has zero cubic and positive quartic coefficient, so that radial branch does not bifurcate nearby; this is not a global no-go theorem.
 
-### Preserved v11.6 compatibility record
+`FULL_BHSM_COMPLETE = FALSE`
 
-BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: structural architecture integrated conditional; frozen predictions unchanged; physical eV/GeV neutrino mass closure remains open; external HEP runtime integration remains gated. Current campaign status: v11.6 preserves the v11.5 recovery point and evaluates the live action current. The effective SU2L Dirac mixed variation has family kernel I3. It is not rephasing-equivalent to the full-rank no-fit spectral charged-current candidate. The viability properties leave a continuous family of inequivalent kernels, and the commuting v11.4 response pair cannot generate mixing by joint functional calculus. The v11.5 kernel therefore remains an author-selected no-fit action candidate, not action-derived. Mark III remains open pending an action-owned common-domain up/down family wavefunction orientation and current pairing map. RG transport, normalization, and empirical tests are downstream conditional evaluations and cannot replace that provenance gate. Mark IV and BHSM 1.0 release completion remain open. Frozen predictions are unchanged.
+Exact next object:
 
-Historical v11.6 verdict: `BHSM_PARENT_ACTION_CURRENT_REDUCTION_BLOCKED_BY_UNFIXED_COMMON_DOMAIN_FAMILY_WAVEFUNCTION_MAP`. Historical v11.6 exact next object: `ACTION_OWNED_COMMON_DOMAIN_UP_DOWN_FAMILY_WAVEFUNCTION_ORIENTATION_AND_CURRENT_PAIRING_MAP`.
+`ACTION_DERIVED_LOCALIZED_CAVITATION_OF_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_SOLVED_NONHOMOGENEOUS_LORENTZIAN_INCOMING_PACKET_TIME_PRESERVED_COMMON_SELF_ADJOINT_DOMAIN_PHYSICAL_SIGMA_HESSIAN_ZERO_CROSSING_AND_NONLINEAR_ENVELOPMENT_CONTINUATION`
+
+Read the [v15.7 controlling report](docs/BHSM_NONLINEAR_NORMAN_CYCLE_BVP_AND_MAIN_SYNC_V15_7.md), [current status](docs/current_bhsm_status.md), [claim boundaries](CLAIMS.md), and [reviewer reproduction guide](docs/reviewer_reproduction_guide.md).
+
+| Layer | Current status |
+| --- | --- |
+| Computational framework | Validated software/tests; this does not validate nature |
+| Current test corpus | 6,379 committed-tree tests |
+| Internal mathematical program | Incomplete at the exact v15.7 unique-surface localized-cavitation BVP |
+| Nonlinear Norman cycle | Formation undefined; persistence, release, Noether ledger, and monodromy not reached |
+| Scale and flavor | Absolute scale, action-derived CKM, and PMNS remain open |
+| Frozen predictions | Unchanged |
+| Empirical status | Not established |
+
+Historical v11.x and v14.x campaigns remain preserved in the [documentation index](docs/README.md) and [artifact index](ARTIFACT_INDEX.md); they are evidence layers, not competing current-status declarations.
 
 This independent mathematical-physics project investigates whether Berger-Hopf boundary geometry can organize structures associated with Standard Model fields, flavor, generations, interactions, and dimensional emergence. It records calculations and candidate relationships; it has not received empirical validation, completed a derivation or replacement of the Standard Model, or received institutional endorsement.
 

@@ -1,5 +1,15 @@
 # BHSM scientific contribution ledger
 
+## Current consolidation — v15.7
+
+The v15.7 campaign corrects the formation claim boundary: one parent surface
+is the author ontology, while BHSM owns the general conditional sigma-Hessian
+criterion but not an action-derived localized cavitation packet or crossing.
+It preserves the v14.93 zero-mode-without-cavitation theorem and identifies one
+earliest incoming-packet/domain/crossing/continuation object.
+It also consolidates the linear v14.20–v15.7 research stack into the public
+default-branch narrative while retaining every historical artifact.
+
 ## How to read “achievement” here
 
 This ledger records pull requests that materially changed the explanatory

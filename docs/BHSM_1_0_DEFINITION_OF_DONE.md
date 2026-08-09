@@ -1,6 +1,23 @@
 # BHSM 1.0 definition of done
 
-## Current v11.1 evaluation
+## Current v15.7 evaluation
+
+`FULL_BHSM_COMPLETE = FALSE`. One all-encompassing parent surface/common
+core-interface is the controlling author ontology, but the retained action has
+not derived the localized, constraint-solved nonhomogeneous Lorentzian incoming
+packet, time-preserved common self-adjoint domain, dynamically induced physical
+sigma-Hessian crossing, and nonlinear enclosure continuation required for the
+formation map. Persistence and every later Norman-cycle/master gate are not
+reached.
+
+Exact next object:
+`ACTION_DERIVED_LOCALIZED_CAVITATION_OF_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_SOLVED_NONHOMOGENEOUS_LORENTZIAN_INCOMING_PACKET_TIME_PRESERVED_COMMON_SELF_ADJOINT_DOMAIN_PHYSICAL_SIGMA_HESSIAN_ZERO_CROSSING_AND_NONLINEAR_ENVELOPMENT_CONTINUATION`.
+
+The v14.93 radial result is a `ZERO_MODE_WITHOUT_CAVITATION`, not a global
+no-go. Absolute scale, action-derived CKM/PMNS, and empirical validation remain
+open.
+
+## Historical v11.1 evaluation
 
 Mark I is reached; Marks II-IV are not reached. The current verdict is
 `BHSM_SUPPORT_FUNCTOR_PHYSICAL_EQUIVALENCE_QUOTIENT_BLOCKED_BY_ABSENT_COMPLETE_LOCAL_BOUNDARY_AND_CORE_ACTION_DATA`.

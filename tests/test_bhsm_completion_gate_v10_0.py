@@ -49,7 +49,7 @@ def test_primary_status_has_no_mass_or_matrix_promotion():
 
 
 def test_v10_master_action_api_remains_available_below_current_campaign():
-    assert CURRENT_VERSION == "v11.6"
+    assert CURRENT_VERSION == "v15.7"
     assert CURRENT_VERDICT != gate.PRIMARY_VERDICT
     assert CURRENT_MISSING_OBJECT != gate.NEXT_EXACT_OBJECT
     assert unified_envelopment_status_payload()["primary_verdict"] == gate.PRIMARY_VERDICT
