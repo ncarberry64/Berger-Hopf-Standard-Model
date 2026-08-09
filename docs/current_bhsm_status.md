@@ -1206,6 +1206,14 @@ BHSM remains incomplete, Mark III is not reached, physical execution remains
 blocked, frozen predictions and flavor provenance gates are unchanged, and
 USB synchronization is not eligible.
 
+Validation: the authoritative committed-state suite passed `6036` tests in
+`803.76s` with exit code `0`. All `46` v14.46--v14.91 materializers exited
+`0` on each of two runs (`92` total) with zero tracked artifact drift. The
+focused v14.91 package passed `9` tests and the concentrated v14.89--v14.91
+plus frozen/status/public/precision guard selection passed `114` tests.
+Frozen-prediction, forbidden-claim, BHSM-status, public-readiness, precision,
+physics-status CLI, all-artifact JSON, and diff-hygiene audits exited `0`.
+
 The prior exact-head Linux CI run at v14.89 recorded `6017` passes and one
 failure in `1490.98s`: numerical evaluation of the analytically zero isotropic
 tangential traction left platform-dependent roundoff that crossed its vertex
