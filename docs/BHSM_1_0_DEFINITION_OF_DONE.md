@@ -1,16 +1,15 @@
 # BHSM 1.0 definition of done
 
-## Current v15.7 evaluation
+## Current v15.8 evaluation
 
-`FULL_BHSM_COMPLETE = FALSE`. One all-encompassing parent surface and local
-instability causing cavitation/encapsulation are author ontology. The retained
-action has not derived the localized, constraint-reduced physical stability
-operator and common self-adjoint domain, nor a nonlinear theorem selecting
-encapsulation rather than restoration. Persistence and every later
-Norman-cycle/master gate are not reached.
+`FULL_BHSM_COMPLETE = FALSE`. Existing conditional stability, gauge/domain,
+normal-form, persistence, and cycle-mass machinery is reusable but does not
+compose into formation. The localized constraint-solved unstable physical
+configuration and an exact same-action nonlinear endpoint remain absent.
+Cavitation is one candidate mechanism rather than a required completion form.
 
 Exact next object:
-`ACTION_DERIVED_LOCAL_SPACETIME_INSTABILITY_ON_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_REDUCED_PHYSICAL_STABILITY_LOSS_COMMON_SELF_ADJOINT_DOMAIN_AND_NONLINEAR_ENCAPSULATION_CONTINUATION`.
+`ACTION_OWNED_LOCALIZED_CONSTRAINT_SOLVED_UNSTABLE_PARENT_CONFIGURATION_WITH_PHYSICAL_ATTACHMENT_OF_THE_EXISTING_GAUGE_REDUCTION_AND_SELF_ADJOINT_DOMAIN_MACHINERY`.
 
 The v14.93 radial result is a `ZERO_MODE_WITHOUT_CAVITATION`, not a global
 no-go. Absolute scale, action-derived CKM/PMNS, and empirical validation remain

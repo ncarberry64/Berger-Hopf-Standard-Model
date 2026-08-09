@@ -2,41 +2,38 @@
 
 Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a completed replacement of the Standard Model. The program goal remains replacement by derivation, with the Standard Model retained as the preserved infrared layer until that derivation is complete.
 
-## v15.7 nonlinear Norman-cycle BVP
+## v15.8 backward closure / existing-answer audit
 
-The v15.7 audit attempts the first irreducible gate of the v15.6 cycle BVP.
-One all-encompassing parent surface and local spacetime instability causing
-cavitation/encapsulation are author ontology; the problem is its local
-dynamical state, not selection among parent universes.
-The retained action defines the general conditional operator
+The v15.8 audit works backward from formation and exhausts compatible existing
+BHSM results before permitting a new object. The retained action defines the
+general conditional operator
 
 `H_sigma^(0) = -nabla_A(Z_0 nabla^A) + A_0 + sum Xi`
 
-and therefore a formal stability criterion. It does not derive an
-action-compatible localization, constraint-reduced physical local stability
-operator, or common self-adjoint domain. Nor does it determine whether a local
-instability restores the parent configuration or completes nonlinearly into an
-encapsulated state. A packet is a possible driver/witness, not a fundamental
-ontology-level requirement.
+and the repository also owns gauge-reduction interfaces, self-adjoint theorem
+classes, nonlinear normal forms, persistence typing, and the conditional cycle
+mass-energy readout. These are not attached to a localized constraint-solved,
+nonhomogeneous physical parent solution with a negative mode. No exact
+same-action continuation to an enclosure endpoint exists.
 
 The v14.93 local theorem is preserved: the unique equivariant radial
-conformal zero is a zero mode without cavitation (`ZERO_MODE_WITHOUT_CAVITATION`): it has zero cubic coefficient and quartic coefficient
+conformal zero is a zero mode without a nearby equivariant radial enclosure
+(`ZERO_MODE_WITHOUT_NEARBY_EQUIVARIANT_RADIAL_ENCAPSULATION`): it has zero cubic coefficient and quartic coefficient
 `27*pi*X^4/128 > 0`, hence no nearby radial bifurcation. Nonhomogeneous and
 finite-amplitude branches remain open.
 
 The white-hole-origin to plasma/acoustic-BAO to cooled-cosmology sequence and
 analogous core-energy-matching quantum recurrence are underived author
-hypotheses. Consequently formation is undefined; persistence, de-envelopment, the event
-Noether ledger, physical monodromy, loop spectrum, Floquet reconstruction,
-and master reclosure are not reached. De-envelopment remains a forward map to
-an updated parent and is neither formation's inverse nor dagger.
+hypotheses. Cavitation is one candidate nonlinear response, not a universal
+formation law. Pair capture, bifurcation locking, and nonhomogeneous
+localization remain alternatives that the action has not selected.
 
 Exact next object:
-`ACTION_DERIVED_LOCAL_SPACETIME_INSTABILITY_ON_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_REDUCED_PHYSICAL_STABILITY_LOSS_COMMON_SELF_ADJOINT_DOMAIN_AND_NONLINEAR_ENCAPSULATION_CONTINUATION`.
+`ACTION_OWNED_LOCALIZED_CONSTRAINT_SOLVED_UNSTABLE_PARENT_CONFIGURATION_WITH_PHYSICAL_ATTACHMENT_OF_THE_EXISTING_GAUGE_REDUCTION_AND_SELF_ADJOINT_DOMAIN_MACHINERY`.
 
 `FULL_BHSM_COMPLETE = FALSE`; master-solution counts remain
 `UNDEFINED_MISSING_UPSTREAM_STRUCTURE`. Frozen predictions and official
-prediction logic are unchanged. See the [controlling report](BHSM_NONLINEAR_NORMAN_CYCLE_BVP_AND_MAIN_SYNC_V15_7.md).
+prediction logic are unchanged. See the [controlling report](BHSM_BACKWARD_CLOSURE_EXISTING_ANSWER_AUDIT_V15_8.md).
 
 ## v14.2 FR eta-knot color-matter completion audit
 

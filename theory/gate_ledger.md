@@ -1,31 +1,22 @@
 # Gate Ledger
 
-## v15.7 unique-parent localized-cavitation gate
+## v15.8 backward-closure existing-answer gate
 
-One all-encompassing parent surface/common core-interface is the controlling
-Norman/BHSM author ontology. Uniqueness here does not freeze its local state and
-is not an action-derived surface-selection theorem. The retained fields may
-deform, oscillate, and exchange content.
-
-The general conditional physical sigma-Hessian criterion exists. The action
-does not yet supply an action-compatible localization, constraint-reduced
-physical local stability operator, and common self-adjoint domain. Nor does it
-select encapsulation over restoration through a full nonlinear solution.
-Packets, collisions, curvature focusing, and boundary exchange remain possible
-drivers/witnesses, not mandatory primitive causes. v14.94's permanently
-tachyonic homogeneous Jensen mode is not a local induced event. v14.93's radial conformal zero is a
-`ZERO_MODE_WITHOUT_CAVITATION` because its cubic coefficient vanishes and its
-quartic coefficient is positive.
+The reverse dependency audit confirms that conditional Hessian, gauge quotient,
+self-adjoint-domain, nonlinear-normal-form, persistence, and cycle-mass
+machinery already exists. The Jensen tachyon is global and homogeneous, while
+the radial v14.93 control only excludes a nearby equivariant radial enclosure.
+Neither is a localized constraint-solved unstable parent configuration.
+Cavitation remains one candidate nonlinear response alongside pair capture,
+bifurcation locking, and localization/bound-state formation.
 
 The author further proposes a white-hole origin followed by plasma/acoustic-BAO
 and cooled late-time cosmological stages, plus an analogous scaled quantum
 process for events matching the core energy. These hypotheses are not derived
 thresholds, fields, or empirical results.
 
-Formation, persistence, release, the complete Noether ledger, monodromy,
-Floquet reconstruction, and master closure are therefore not reached. The one
-open object is
-`ACTION_DERIVED_LOCAL_SPACETIME_INSTABILITY_ON_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_REDUCED_PHYSICAL_STABILITY_LOSS_COMMON_SELF_ADJOINT_DOMAIN_AND_NONLINEAR_ENCAPSULATION_CONTINUATION`.
+Formation and its downstream cycle remain open. The first missing arrow is
+`ACTION_OWNED_LOCALIZED_CONSTRAINT_SOLVED_UNSTABLE_PARENT_CONFIGURATION_WITH_PHYSICAL_ATTACHMENT_OF_THE_EXISTING_GAUGE_REDUCTION_AND_SELF_ADJOINT_DOMAIN_MACHINERY`.
 
 ## v14.1 eta/SU3 connection fork gate
 

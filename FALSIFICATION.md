@@ -1,17 +1,16 @@
 # BHSM Falsification Entry Point
 
-## Current v15.7 falsification boundary
+## Current v15.8 falsification boundary
 
-The current calculation rejects the proposition that a Hessian zero alone is
-a formation event: v14.93 supplies a zero mode without cavitation. It does not
-reject all localized or finite-amplitude cavitation branches. The v15.7 target
-is falsified positively only by deriving an owned incoming packet/domain whose
-physical sigma eigenvalue crosses dynamically and whose full action equations
-continue into a nonlinear enclosure, or negatively by a theorem covering all
-retained localized sectors.
+The current audit rejects three shortcuts: an abstract instability criterion is
+not an unstable physical configuration; a nonlinear normal form is not an
+exact enclosure solution; and cavitation is not a universal formation law.
+The gate closes positively by exhibiting a localized constraint-solved parent
+solution and negative physical mode on the attached self-adjoint domain. A
+same-action nonlinear endpoint is deliberately the subsequent test.
 
 Exact next object:
-`ACTION_DERIVED_LOCAL_SPACETIME_INSTABILITY_ON_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_REDUCED_PHYSICAL_STABILITY_LOSS_COMMON_SELF_ADJOINT_DOMAIN_AND_NONLINEAR_ENCAPSULATION_CONTINUATION`.
+`ACTION_OWNED_LOCALIZED_CONSTRAINT_SOLVED_UNSTABLE_PARENT_CONFIGURATION_WITH_PHYSICAL_ATTACHMENT_OF_THE_EXISTING_GAUGE_REDUCTION_AND_SELF_ADJOINT_DOMAIN_MACHINERY`.
 
 ## Historical v11.6 boundary
 

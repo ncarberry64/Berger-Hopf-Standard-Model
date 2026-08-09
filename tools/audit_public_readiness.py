@@ -68,10 +68,10 @@ ALIGNMENT_FILES = [
 ]
 
 ALIGNMENT_PHRASES = [
-    "one all-encompassing parent surface",
-    "local spacetime instability",
-    "encapsulation",
-    "zero mode without cavitation",
+    "conditional stability",
+    "localized constraint-solved",
+    "same-action",
+    "cavitation is one candidate",
     "full_bhsm_complete = false",
     "frozen predictions",
 ]

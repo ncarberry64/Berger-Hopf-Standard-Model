@@ -1,29 +1,21 @@
 # BHSM Artifact Index
 
-## Current BHSM v15.7 nonlinear cycle BVP
+## Current BHSM v15.8 backward closure audit
 
-Ten deterministic records are controlled by
-[`aether_nonlinear_norman_cycle_bvp_v15_7.py`](src/bhsm/interface/aether_nonlinear_norman_cycle_bvp_v15_7.py)
-and the [v15.7 report](docs/BHSM_NONLINEAR_NORMAN_CYCLE_BVP_AND_MAIN_SYNC_V15_7.md):
+The deterministic current record is controlled by
+[`aether_backward_closure_existing_answer_audit_v15_8.py`](src/bhsm/interface/aether_backward_closure_existing_answer_audit_v15_8.py)
+and the [v15.8 report](docs/BHSM_BACKWARD_CLOSURE_EXISTING_ANSWER_AUDIT_V15_8.md):
 
-- `BHSM_nonlinear_norman_cycle_bvp_v15_7.json`
-- `BHSM_formation_continuation_v15_7.json`
-- `BHSM_relative_periodic_persistence_v15_7.json`
-- `BHSM_de_envelopment_receiving_domain_v15_7.json`
-- `BHSM_complete_noether_ledger_v15_7.json`
-- `BHSM_physical_tangent_monodromy_v15_7.json`
-- `BHSM_floquet_reconstruction_v15_7.json`
-- `BHSM_master_reclosure_v15_7.json`
-- `BHSM_full_completion_gate_v15_7.json`
-- `BHSM_public_repository_sync_v15_7.json`
+- `BHSM_backward_closure_existing_answer_audit_v15_8.json`
 
-The package proves that the physical nonlinear BVP is blocked before
-continuation at the missing action-derived localized incoming cavitation
-packet on the unique parent surface. All artifacts fail closed and
-`USB_TOUCHED` is false.
+The audit classifies the full existing formation lineage before permitting a
+new object. Conditional operator/domain/normal-form/cycle machinery survives;
+the first absent physical object is a localized constraint-solved unstable
+configuration on the attached domain. Cavitation is only one candidate
+response. The artifact fails closed and `USB_TOUCHED` is false.
 
 Exact next object:
-`ACTION_DERIVED_LOCAL_SPACETIME_INSTABILITY_ON_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_REDUCED_PHYSICAL_STABILITY_LOSS_COMMON_SELF_ADJOINT_DOMAIN_AND_NONLINEAR_ENCAPSULATION_CONTINUATION`.
+`ACTION_OWNED_LOCALIZED_CONSTRAINT_SOLVED_UNSTABLE_PARENT_CONFIGURATION_WITH_PHYSICAL_ATTACHMENT_OF_THE_EXISTING_GAUGE_REDUCTION_AND_SELF_ADJOINT_DOMAIN_MACHINERY`.
 
 ## BHSM v11.5 conditional flavor-action assembly
 
