@@ -1,0 +1,37 @@
+{
+  "FR_boundary": "FR/Dirac matching is required for dynamical quark fields, not for the external-Wilson classical saddle",
+  "artifact": "BHSM_Path_B_nonAbelian_BVP_eligibility_v14_31",
+  "confinement_boundary": "a stationary finite-width saddle does not establish a Wilson-loop area law, worldsheet limit, string breaking or physical c_sigma",
+  "eligibility_scope": "classical eta+SU3 system with external Wilson-dressed singlet source",
+  "eligible": true,
+  "equations": [
+    "g3^(-2)D_nu F^(nu mu)=J_eta^mu+J_Wilson^mu+J_retained^mu",
+    "D_mu[w(kappa1+X_eta^3)D^mu eta]+constraint and target-curvature terms=0",
+    "retained Einstein/Higgs/seam equations when included"
+  ],
+  "exact_next_object": "GAUGE_FIXED_WILSON_SOURCED_ETA_SU3_NONABELIAN_STATIONARY_BVP_WITH_SELF_ADJOINT_DOMAIN_PARENT_RELATIVE_SUBTRACTION_NONRADIAL_HESSIAN_AND_RELATIVE_DETERMINANT",
+  "numerical_requirement": "non-Abelian nonradial continuation with mesh refinement, residual controls and full fluctuation Hessian",
+  "required_domain": "background-covariant gauge, FP zero-mode quotient, regular axis/cap, finite parent-relative action, declared eta topological sector and self-adjoint transmission conditions",
+  "source": "normalized Wilson-dressed meson or baryon insertion in a fixed center/N-ality sector",
+  "status": "ELIGIBLE_NOT_SOLVED",
+  "unknowns": [
+    "physical SU3 connection A",
+    "physical eta section",
+    "retained collar/metric response if varied",
+    "ghost and gauge-fixing fields at quadratic order"
+  ],
+  "validation": {
+    "BVP_not_claimed_solved": true,
+    "Wilson_singlet_source_available": true,
+    "authoritative_joint_eta_SU3_action_exists": true,
+    "classical_BVP_does_not_require_premature_FR_identification": true,
+    "confinement_not_claimed": true,
+    "eta_sourced_Gauss_equation_exists": true,
+    "gauge_fixing_and_FP_domain_required": true,
+    "nonradial_Hessian_required": true,
+    "parent_relative_subtraction_required": true,
+    "self_adjoint_domain_required": true
+  },
+  "validation_passed": true,
+  "version": "v14.31"
+}

@@ -64,16 +64,16 @@ ALIGNMENT_FILES = [
     "README.md",
     "STATUS.md",
     "CLAIMS.md",
-    "docs/bhsm_public_scientific_handoff_v6_21_0.md",
+    "docs/current_bhsm_status.md",
 ]
 
 ALIGNMENT_PHRASES = [
-    "threading response",
-    "no explicit energy threshold",
-    "lapse--weyl principal block",
-    "t_mu_nu^(x)",
-    "fold kinetic sign is unresolved",
-    "no physical mass",
+    "one all-encompassing parent surface",
+    "local spacetime instability",
+    "encapsulation",
+    "zero mode without cavitation",
+    "full_bhsm_complete = false",
+    "frozen predictions",
 ]
 
 FROZEN_HASHES = {

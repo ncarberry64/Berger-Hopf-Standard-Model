@@ -1,0 +1,78 @@
+{
+  "artifact": "BHSM_eta_collar_measure_action_variation_no_go_v14_30",
+  "boundary_volume": "dmu4=N a^3 dt dmu_S3",
+  "conditional_measure_identity": "on C8=pi85^(-1)(C5), dmu8=dmuF cos(rho)^3 ds dmu4; ds=a(t)d rho",
+  "dtn_counterexample": {
+    "bulk_Euler_operator_on_critical_field": 0.0,
+    "bulk_action": "1/2 int_-L^L[(phi')^2+m^2 phi^2]ds with phi(0)=q",
+    "conclusion": "the derivative is conormal flux, not the trace/pushforward of the vanishing interior Euler operator",
+    "dirichlet_reduced_Hessian": 3.3423831933048667,
+    "neumann_reduced_Hessian": 2.0225089731006807,
+    "reduced_derivative_at_q": 1.4157562811704765
+  },
+  "endpoint_behavior": "requires a declared trace or self-adjoint normal boundary condition at rho=0 and rho=epsilon_chi",
+  "fiber_volume": "V_F=16 pi^2 a_F^3 on the invariant round branch",
+  "integration_domain": "one cap: 0<=rho<epsilon_chi<pi/2; full preimage includes the closed oriented Hopf S3 fiber",
+  "no_double_action_ledger": [
+    {
+      "entry": "parent eta term",
+      "owner": "S8 on M8",
+      "status": "retained"
+    },
+    {
+      "entry": "collar gauged eta term",
+      "owner": "candidate C_eta",
+      "status": "not in retained action"
+    },
+    {
+      "entry": "restriction map",
+      "owner": null,
+      "status": "R_eta absent"
+    },
+    {
+      "entry": "replacement/critical value",
+      "owner": null,
+      "status": "not derived"
+    },
+    {
+      "entry": "independent variables",
+      "owner": "eta8 and intrinsic Aphysical currently live on separate strata",
+      "status": "known"
+    },
+    {
+      "entry": "eliminated variables",
+      "owner": null,
+      "status": "not specified"
+    },
+    {
+      "entry": "residual boundary term",
+      "owner": null,
+      "status": "normal eta flux unresolved"
+    },
+    {
+      "entry": "double counting",
+      "owner": null,
+      "status": "unresolved; candidate cannot be added to S8"
+    }
+  ],
+  "p8_Jensen_witness": {
+    "average_then_power": 16.0,
+    "defect": 25.0,
+    "power_then_average": 41.0
+  },
+  "pushforward_scope": "fiber-basic densities give V_F cos(rho)^3 ds dmu4; general eta fields retain vertical energy and all mode moments",
+  "topological_nonbasic_obstruction": "a fiber-basic eta:S7->S7 factors through S4 and has degree zero because pi4(S7)=0; the degree-one eta-knot sector is therefore nonbasic",
+  "validation": {
+    "critical_value_depends_on_endpoint_domain": true,
+    "eta_metric_and_multiplier_variations_not_supplied": true,
+    "no_double_action_replacement_unproved": true,
+    "normal_flux_is_required": true,
+    "p8_fiber_average_not_closed": true,
+    "reduced_variation_not_pushforward_of_zero_bulk_Euler_operator": true,
+    "regular_finite_collar_integral": true,
+    "v7_collar_jacobian_recovered": true
+  },
+  "validation_passed": true,
+  "variational_identity_status": "FAILED_WITH_EXACT_COUNTEREXAMPLE_UNLESS_A_CRITICAL_VALUE_DOMAIN_AND_DIRICHLET_TO_NEUMANN_ADJOINT_ARE_ADDED",
+  "version": "v14.30"
+}

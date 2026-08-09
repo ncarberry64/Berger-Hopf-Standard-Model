@@ -1,0 +1,32 @@
+{
+  "invariant_clock": {
+    "absolute_clock_scale_derived": false,
+    "clock_map": "t_eff/tau_ref=chi/chi_ref",
+    "clocked_eigenvalue": "E_eff=(hbar/tau_clock)kappa",
+    "clocked_generator": "H_eff=(hbar/tau_clock)K_A",
+    "commutator_residuals": [
+      0.0,
+      0.0
+    ],
+    "conditional_consistency_closed": true,
+    "external_background_clock_introduced": false,
+    "matching_condition": "I_alpha(A_minus)=I_alpha(A_plus)",
+    "parent_invariant_condition": "[K_A,I_alpha]=0 on every closed-event sector",
+    "stable_reference_cycle_action_selected": false,
+    "unit_reference_cycle_convention": "chi_ref=1 only after an action-selected stable recurring process",
+    "version": "v15.1"
+  },
+  "regular_recovery": {
+    "all_residuals_exactly_zero": true,
+    "artifact_drift_permitted": false,
+    "event_action_at_identity": "0",
+    "field_equation_residuals_at_identity": [
+      "0",
+      "0",
+      "0"
+    ],
+    "formal_marker_is_physical_parameter": false,
+    "regular_density": "sqrt_g*(X**4/8 + X*kappa1/2 + curvature*kappa1 - kappa0/2)",
+    "total_density_with_formal_identity_deviation": "sqrt_g*(X**4/8 + X*kappa1/2 + curvature*kappa1 - kappa0/2) + z*(X**2 + X*curvature + sqrt_g**2)"
+  }
+}

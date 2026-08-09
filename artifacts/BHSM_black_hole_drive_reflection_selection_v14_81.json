@@ -1,0 +1,31 @@
+{
+  "couplings": [
+    {
+      "effect": "additive forcing / bias",
+      "parity": "odd unless J is itself reflection-odd",
+      "status": "EXPLICIT_REFLECTION_BREAKING_FOR_SCALAR_ACTIVITY",
+      "term": "-D_BH <J,Q>"
+    },
+    {
+      "effect": "r_eff=r0-chi_b D_BH",
+      "parity": "even",
+      "status": "LEADING_REFLECTION_PRESERVING_PARAMETRIC_COUPLING",
+      "term": "-(1/2) chi_b D_BH I2(Q)"
+    },
+    {
+      "effect": "quartic coefficient modulation",
+      "parity": "even",
+      "status": "ALLOWED_HIGHER_ORDER",
+      "term": "-chi4_b D_BH I4(Q)"
+    }
+  ],
+  "physical_chi_b": null,
+  "symmetry_fixes_magnitude_of_chi_b": false,
+  "symmetry_fixes_sign_of_chi_b": false,
+  "transformations": {
+    "D_BH_scalar_activity": "even",
+    "I2(Q)": "even",
+    "Q": "odd under equal-cap exchange"
+  },
+  "version": "v14.81"
+}

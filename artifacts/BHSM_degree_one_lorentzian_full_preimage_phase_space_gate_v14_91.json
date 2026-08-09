@@ -1,0 +1,292 @@
+{
+  "Hindsight_20_20": {
+    "invalidated": [
+      "the claim that no compact degree-one M8 background candidate exists",
+      "individual cap degree as an independent integer",
+      "the requested full coupled BVP as an Euler-Lagrange problem of the currently retained cross-level action"
+    ],
+    "open": [
+      "ACTION_OWNED_LORENTZIAN_M8_TO_M4_METRIC_ETA_GAUGE_DIRAC_COMMON_DOMAIN_CRITICAL_VALUE_FUNCTOR_WITH_VARIATIONAL_BUNDLE_INTERTWINER"
+    ],
+    "reclassified": [
+      "the background obstruction is a full stratified ownership/junction obstruction, not absence of an M8 degree-one stationary point",
+      "the M8 smooth seam domain is derived, while the M4 intrinsic common domain remains absent"
+    ],
+    "validated": [
+      "the global M8 eta degree is well-defined in pi7(S7)",
+      "the round eta identity map gives an exact compact degree-one M8 Einstein-eta branch on an explicit existing-coefficient locus",
+      "the Hopf hemisphere cap split has the smooth global-field transmission domain and zero internal flux"
+    ]
+  },
+  "artifact": "BHSM_degree_one_lorentzian_full_preimage_phase_space_gate_v14_91",
+  "canonical_phase_space": {
+    "M8_owned": "T_star[Met_plus(S7)_x_chi_x_sigma_x_Map_degree1(S7,S7)]_subject_to_ADM_and_eta_constraints",
+    "full_stratified_phase_space": null,
+    "ledger": [
+      {
+        "action_term": "S8_env_Einstein_Hilbert_plus_GHY",
+        "canonical_momentum": "pi^ij=(kappa1/2)sqrt(h)(K^ij-Kh^ij)",
+        "domain": "spatial_S7_in_M8=I_t_x_S7",
+        "field": "M8_spatial_metric_h_ij",
+        "full_preimage_ownership": true,
+        "gauge_symmetry": "spatial_diffeomorphisms_and_refoliation",
+        "physical_dof": "28_spatial_symmetric_components_before_ADM_reduction;_20_vacuum_graviton_configuration_DOF_in_8D",
+        "primary_constraint": null,
+        "secondary_constraint": "Hamiltonian_and_momentum_constraints"
+      },
+      {
+        "action_term": "ADM_multiplier",
+        "canonical_momentum": "p_N=0",
+        "domain": "M8",
+        "field": "lapse_N",
+        "full_preimage_ownership": true,
+        "gauge_symmetry": "time_reparameterization",
+        "physical_dof": 0,
+        "primary_constraint": "p_N=0",
+        "secondary_constraint": "Hamiltonian_constraint"
+      },
+      {
+        "action_term": "ADM_multiplier",
+        "canonical_momentum": "p_beta=0",
+        "domain": "M8_spatial_slice",
+        "field": "shift_beta_i",
+        "full_preimage_ownership": true,
+        "gauge_symmetry": "spatial_diffeomorphisms",
+        "physical_dof": 0,
+        "primary_constraint": "p_beta=0",
+        "secondary_constraint": "momentum_constraint"
+      },
+      {
+        "action_term": "-Zchi(1+g_sigma^2)|dchi|^2/2",
+        "canonical_momentum": "p_chi=sqrt(h)Zchi(1+g_sigma^2)D_perp_chi",
+        "domain": "M8",
+        "field": "chi",
+        "full_preimage_ownership": true,
+        "gauge_symmetry": null,
+        "physical_dof": 1,
+        "primary_constraint": null,
+        "secondary_constraint": null
+      },
+      {
+        "action_term": "-Zsigma|d_sigma|^2/2-U(sigma)",
+        "canonical_momentum": "p_sigma=sqrt(h)Zsigma D_perp_sigma",
+        "domain": "M8",
+        "field": "sigma",
+        "full_preimage_ownership": true,
+        "gauge_symmetry": null,
+        "physical_dof": 1,
+        "primary_constraint": null,
+        "secondary_constraint": null
+      },
+      {
+        "action_term": "-(1+g_sigma^2)[kappa1 X_eta/2+X_eta^4/8]",
+        "canonical_momentum": "p_eta=sqrt(h)(1+g_sigma^2)(kappa1+X_eta^3)D_perp_eta_on_T_eta_S7",
+        "domain": "M8_with_eta_t:S7_to_S7",
+        "field": "eta",
+        "full_preimage_ownership": true,
+        "gauge_symmetry": "diffeomorphism_and_induced_spin_frame_covariance",
+        "physical_dof": "7_target_tangent_components_before_diffeomorphism_reduction",
+        "primary_constraint": "eta_dot_eta-1=0_with_tangent_momentum",
+        "secondary_constraint": "multiplier-fixed_normal_eta_equation"
+      },
+      {
+        "action_term": "Lambda_eta(eta_dot_eta-1)/2",
+        "canonical_momentum": "p_Lambda=0",
+        "domain": "M8",
+        "field": "Lambda_eta",
+        "full_preimage_ownership": true,
+        "gauge_symmetry": null,
+        "physical_dof": 0,
+        "primary_constraint": "p_Lambda=0",
+        "secondary_constraint": "eta_dot_eta=1"
+      },
+      {
+        "action_term": "provisional_B1_Yang_Mills_or_later_candidate_action",
+        "canonical_momentum": "electric_flux_on_M4_when_the_B1_action_is_adopted",
+        "domain": "intrinsic_M4=I_t_x_S3",
+        "field": "A_physical",
+        "full_preimage_ownership": false,
+        "gauge_symmetry": "SU3_x_SU2_x_U1",
+        "physical_dof": "transverse_M4_modes_conditionally",
+        "primary_constraint": "temporal_connection_momentum_zero",
+        "secondary_constraint": "M4_Gauss_law"
+      },
+      {
+        "action_term": "adopted_first_order_Dirac_sector",
+        "canonical_momentum": "first_order_Dirac_constraint",
+        "domain": "intrinsic_or_stratified_M4_Dirac_domain",
+        "field": "Psi",
+        "full_preimage_ownership": false,
+        "gauge_symmetry": "spin_and_internal_gauge",
+        "physical_dof": "not_counted_without_the_selected_self_adjoint_domain",
+        "primary_constraint": "first_order_second_class_constraints",
+        "secondary_constraint": "state_and_boundary_domain_dependent"
+      },
+      {
+        "action_term": null,
+        "canonical_momentum": null,
+        "domain": "candidate_internal_seam",
+        "field": "seam_embedding_X_seam",
+        "full_preimage_ownership": false,
+        "gauge_symmetry": "normal_reparameterization_if_introduced",
+        "physical_dof": 0,
+        "primary_constraint": null,
+        "secondary_constraint": null
+      },
+      {
+        "action_term": null,
+        "canonical_momentum": null,
+        "domain": null,
+        "field": "environment_or_driver_x_env",
+        "full_preimage_ownership": false,
+        "gauge_symmetry": null,
+        "physical_dof": 0,
+        "primary_constraint": null,
+        "secondary_constraint": null
+      }
+    ]
+  },
+  "cap_inertias": {
+    "M_minus": null,
+    "M_plus": null,
+    "equal_inertia": "CONDITIONAL_V14_84_INTERTWINING_THEOREM_ONLY",
+    "nu": "ONE_QUARTER_NOT_PHYSICAL_YET"
+  },
+  "cap_seam_geometry_and_domain": {
+    "GHY_internal_pair": "cancels_for_the_two_opposite_outward_normals_on_a_smooth_cut",
+    "Green_form": "cap_Green_forms_cancel_pairwise_on_smooth_transmission_data",
+    "cap_embeddings": "X_plus_minus:C_tilde_plus_minus_hookrightarrow_M8_are_subset_inclusions",
+    "chi_sigma_matching": "continuous_trace_and_opposite_outward_conormal_flux",
+    "eta_conormal_matching": "n_plus.J_eta_plus+n_minus.J_eta_minus=0",
+    "eta_trace_matching": "eta_plus|Sigma=eta_minus|Sigma",
+    "gravity_momentum_matching": "normal_canonical_flux_plus+normal_canonical_flux_minus=0",
+    "induced_metric_matching": "h_plus|Sigma=h_minus|Sigma",
+    "normals": "n_minus=-n_plus_under_the_common_seam_identification",
+    "not_derived": "a_moving_seam_degree_of_freedom_or_the_M4_intrinsic_field_junction_domain",
+    "outer_cap_behavior": "regularity_at_the_two_Hopf_base_poles",
+    "status": "DERIVED_FOR_THE_M8_BLOCK_AS_THE_RESTRICTION_OF_GLOBAL_SMOOTH_FIELDS",
+    "symplectic_flux": "Omega_plus+R_pullback_Omega_minus=0_on_global_smooth_perturbations"
+  },
+  "complete_L2": {
+    "Floquet": "NOT_REACHED",
+    "Hessian": null,
+    "Landau_r_u_v": null,
+    "alpha_critical": "NOT_REACHED",
+    "eigenvalues": null,
+    "first_instability_ordering": null,
+    "three_Goldstone_locking": "NOT_REACHED"
+  },
+  "completion_status": {
+    "FULL_BHSM_COMPLETE": false,
+    "MARK_III": "NOT_REACHED",
+    "PHYSICAL_EXECUTION_BLOCKED": true,
+    "USB_SYNCHRONIZATION_ELIGIBLE": false,
+    "frozen_predictions_changed": false,
+    "official_prediction_logic_changed": false
+  },
+  "degree_one_background": {
+    "M8_block_stationary_solution": true,
+    "ansatz": "ds8^2=-dt^2+a^2 g_round_S7;_eta=id_S7;_chi=sigma=0;_Lambda_eta=(kappa1+X^3)X",
+    "coefficient_locus_action_selected": false,
+    "covariant_map_realization": "the_retained_Map(S7,S7)_ledger_with_the_round_pullback_connection;_the_domain_and_target_Levi_Civita_connections_agree_under_constant_rescaling",
+    "degree": 1,
+    "full_stratified_stationary_solution": false,
+    "maximum_finite_residual": 1.7763568394002505e-15,
+    "reason_not_full": "intrinsic_M4_Einstein_Yang_Mills_Dirac_variation_and_M8_to_M4_junction_are_not_closed",
+    "representative": {
+      "X_eta": 1.7099759466766968,
+      "dimensionless_coefficient_ratio": 6.412409800037613,
+      "kappa0": 6.412409800037613,
+      "radius": 2.023270825544127,
+      "radius_squared": 4.093624833498013
+    },
+    "representative_kappa1": 1.0,
+    "required_relations": "X^3=5kappa1;_a^2=7/X;_kappa0=(15/4)kappa1 X",
+    "residuals": {
+      "Gauss_constraint_residual": null,
+      "Hamiltonian_constraint_residual": 0.0,
+      "X_eta": 1.7099759466766968,
+      "energy_density": 1.9237229400112836,
+      "eta_Einstein_compatibility_residual": -1.7763568394002505e-15,
+      "isotropic_pressure": -0.45802927143125816,
+      "momentum_constraint_residual": 0.0,
+      "spatial_Einstein_residual": 0.0
+    }
+  },
+  "exact_next_object": "ACTION_OWNED_LORENTZIAN_M8_TO_M4_METRIC_ETA_GAUGE_DIRAC_COMMON_DOMAIN_CRITICAL_VALUE_FUNCTOR_WITH_VARIATIONAL_BUNDLE_INTERTWINER",
+  "flavor_provenance": {
+    "CKM": "PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL",
+    "PMNS_neutrino": "OPEN_UNCHANGED",
+    "noncentral_left_handed_current": "ACTION_OWNED_FAMILY_NONCENTRAL_LEFT_HANDED_CURRENT_SOURCE"
+  },
+  "full_coupled_BVP": {
+    "block_diagonal_formal_embedding": "mixed_M8_eta_to_M4_gauge_Dirac_second_variations_are_zero_but_this_is_not_the_requested_coupled_problem",
+    "classification": "PRIMARY_OBJECT_CLOSED_NEGATIVELY_AT_FULL_COUPLED_VARIATIONAL_OWNERSHIP",
+    "eligible": false,
+    "first_missing_foundational_object": "ACTION_OWNED_LORENTZIAN_M8_TO_M4_METRIC_ETA_GAUGE_DIRAC_COMMON_DOMAIN_CRITICAL_VALUE_FUNCTOR_WITH_VARIATIONAL_BUNDLE_INTERTWINER",
+    "requirements": {
+      "M4_Dirac_domain_selected": false,
+      "M4_physical_gauge_action_parent_derived": false,
+      "M8_Einstein_eta_joint_density": true,
+      "M8_eta_to_M4_gauge_bundle_intertwiner": false,
+      "M8_to_M4_metric_critical_value_and_junction": false,
+      "coefficient_locus_selected_by_retained_axioms": false,
+      "exact_conditional_M8_identity_background": true,
+      "global_M8_degree_one_sector": true,
+      "single_coupled_Green_form": false,
+      "single_coupled_symplectic_form": false,
+      "smooth_M8_cap_transmission_domain": true
+    }
+  },
+  "gauge_reduced_physical_projector": null,
+  "linearized_dynamical_spectrum": {
+    "M8_background_block": "NOT_COMPUTED_BECAUSE_THE_BRANCH_IS_CONDITIONAL_AND_NOT_THE_FULL_STATIONARY_STRATIFIED_BACKGROUND",
+    "full_metric_eta_gauge_Dirac": null,
+    "gyroscopic_block_C": null
+  },
+  "long_range_object": "ACTION_OWNED_FULL_PREIMAGE_TWO_STRATUM_KINETIC_REDUCTION_WITH_DERIVED_LAYER_INERTIAS_SHEAR_COVARIANCE_AND_DEGREE_ONE_SELF_ADJOINT_BACKGROUND",
+  "physical_current_and_vertex": {
+    "B_dyn_L2": null,
+    "J_dyn": null,
+    "static_or_dynamic_Schur_insertion": "INELIGIBLE"
+  },
+  "primary_object": "LORENTZIAN_DEGREE_ONE_FULL_PREIMAGE_BACKGROUND_AND_GAUGE_REDUCED_COUPLED_METRIC_ETA_GAUGE_DIRAC_LINEARIZED_SYMPLECTIC_BOUNDARY_VALUE_PROBLEM_WITH_REFLECTION_ODD_CAP_RELATIVE_TENSOR_MODES_AND_EXPLICIT_COEXACT_L2_MIXED_VARIATION",
+  "primary_verdict": "BHSM_V14_91_THE_RETAINED_M8_P1_ETA_BLOCK_HAS_AN_EXACT_COMPACT_ROUND_DEGREE_ONE_IDENTITY_MAP_BRANCH_ON_THE_EXISTING_COEFFICIENT_LOCUS_KAPPA0_EQUALS_15_OVER_4_KAPPA1_TIMES_5KAPPA1_TO_THE_ONE_THIRD_AND_THE_HOPF_HEMISPHERE_SPLIT_HAS_A_SMOOTH_ZERO_FLUX_TRANSMISSION_DOMAIN;_BUT_THIS_LOCUS_IS_NOT_ACTION_SELECTED_AND_THE_INDEPENDENT_M4_GAUGE_DIRAC_SECTOR_HAS_NO_ACTION_OWNED_COMMON_DOMAIN_CRITICAL_VALUE_OR_VARIATIONAL_BUNDLE_INTERTWINER_WITH_M8,_SO_THE_REQUESTED_FULL_COUPLED_BVP_PHYSICAL_PROJECTOR_RELATIVE_TENSOR_SPECTRUM_DELTA_PI_CAP_INERTIAS_AND_B_DYN_L2_REMAIN_UNDEFINED",
+  "reflection_odd_relative_tensor_sector": {
+    "DeltaPi": null,
+    "claim_boundary": "not_derived_is_not_zero",
+    "kinematically_allowed_on_global_S7": true,
+    "physical_reduced_spectrum": null
+  },
+  "topology": {
+    "Hopf_map": "p_H:S7_to_S4_with_c2=+1",
+    "Lorentzian_parent": "M8=I_t_x_S7",
+    "base_caps": "B4_plus_union_over_S3_B4_minus=S4",
+    "cap_degree_warning": "individual_caps_with_boundary_have_no_absolute_integer_degree_without_the_common_boundary_gluing_data",
+    "cap_topology": "each_cap_is_B4_x_S3_because_the_bundle_trivializes_over_B4",
+    "degree_carrier": "global_closed_spatial_map_eta_t",
+    "degree_one_witness": "eta_identity:S7_to_S7",
+    "full_preimage_caps": "C_tilde_plus_minus=p_H^-1(B4_plus_minus)",
+    "homotopy_group": "pi7(S7)=Z",
+    "lifted_seam": "Sigma_tilde=p_H^-1(S3)=S3_x_S3",
+    "path_B_no_double_counting": "only_the_global_M8_degree_is_retained;_no_M4_degree_or_second_eta_copy_is_added",
+    "physical_M4_eta_map": "M4_spatial_S3_to_S6_has_pi3(S6)=0_and_pi4(S6)=0",
+    "physical_or_UV": "M8_parent_topological_sector;_not_the_physical_M4_FR_charge",
+    "spatial_map": "eta_t:S7_domain_to_S7_target",
+    "union": "C_tilde_plus_union_over_Sigma_tilde_C_tilde_minus=S7"
+  },
+  "validation": {
+    "CKM_and_noncentral_current_gates_preserved": true,
+    "M4_false_degree_not_reintroduced": true,
+    "degree_one_is_global_M8_pi7_sector": true,
+    "frozen_predictions_unchanged": true,
+    "full_BHSM_not_claimed": true,
+    "full_coupled_BVP_fails_closed": true,
+    "identity_branch_not_promoted_off_coefficient_locus": true,
+    "identity_branch_residuals_close": true,
+    "smooth_M8_transmission_flux_closes": true,
+    "undefined_not_relabelled_zero": true
+  },
+  "validation_passed": true,
+  "version": "v14.91"
+}

@@ -1,5 +1,36 @@
 # BHSM Falsification Entry Point
 
+## Current v15.7 falsification boundary
+
+The current calculation rejects the proposition that a Hessian zero alone is
+a formation event: v14.93 supplies a zero mode without cavitation. It does not
+reject all localized or finite-amplitude cavitation branches. The v15.7 target
+is falsified positively only by deriving an owned incoming packet/domain whose
+physical sigma eigenvalue crosses dynamically and whose full action equations
+continue into a nonlinear enclosure, or negatively by a theorem covering all
+retained localized sectors.
+
+Exact next object:
+`ACTION_DERIVED_LOCAL_SPACETIME_INSTABILITY_ON_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_REDUCED_PHYSICAL_STABILITY_LOSS_COMMON_SELF_ADJOINT_DOMAIN_AND_NONLINEAR_ENCAPSULATION_CONTINUATION`.
+
+## Historical v11.6 boundary
+
+For v11.6, the verdict
+`BHSM_PARENT_ACTION_CURRENT_REDUCTION_BLOCKED_BY_UNFIXED_COMMON_DOMAIN_FAMILY_WAVEFUNCTION_MAP`
+is falsified by an existing action term and declared common domain whose mixed
+variation yields the v11.5 kernel up to quark rephasing, or by a valid theorem
+showing that prior declared BHSM axioms uniquely select that kernel. A target
+interface term, an unsourced raw kernel followed by polar decomposition, or
+downstream empirical success is not a falsifier. Its exact upstream gate is:
+`ACTION_OWNED_COMMON_DOMAIN_UP_DOWN_FAMILY_WAVEFUNCTION_ORIENTATION_AND_CURRENT_PAIRING_MAP`.
+
+For v11.5, the historical verdict was
+`BHSM_FLAVOR_ACTION_CANDIDATES_ASSEMBLED_WITH_CHARGED_CURRENT_PROVENANCE_GATE_OPEN`,
+and its gate was
+`PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL`.
+
+The v11.3 criterion below is retained as historical chronology.
+
 For v11.3, the verdict
 `BHSM_RECIPROCAL_ATTACHMENT_ACTION_AND_CURRENT_DERIVED_WITH_THREE_MODE_DOMAIN_CONDITIONAL`
 is falsified if the inherited `Lambda85` slot does not own `Q_H(G8)` and `g5`,
@@ -70,3 +101,70 @@ negative DeWitt direction, fixing the lapse before variation, or relabeling a
 positive anisotropy shape is not a falsifier. The author-selection verdict
 fails if one compared geometric extension can be proved uniquely minimal from
 the existing axioms and action with no extra unselected coefficient.
+
+## v14.29 View 2 falsifiers
+
+The View 2 candidate fails if the associated `G2/SU3` section forces trivial `c2(P_color)`, theta admits an independent variation/pole, finite variation disagrees with the source convention, gauge covariance/Noether identity fails, or the eta term duplicates the ungauged action. Outcome A also fails—and currently does—when the retained `M8` eta action lacks a common-domain reduction to the physical `M4` SU3 field or when no FR/Dirac matching theorem prevents double counting. Confinement remains falsified for the Gaussian collar by its zero asymptotic string tension; a finite tube alone is not an area-law proof.
+<!-- BHSM_V14_31_TO_V14_33_CUMULATIVE -->
+## v14.31–v14.33 falsification boundary
+
+The physical `M4` `S6` field alone cannot support a degree-one or FR sector. The full-preimage transgression fails if no smooth clutching-compatible representative exists, cap flux prevents current conservation, the stationary degree-one branch is absent/unstable, or collective quantization cannot yield the required normalized Dirac matter sector without double counting.
+<!-- /BHSM_V14_31_TO_V14_33_CUMULATIVE -->
+<!-- BHSM_V14_34_HOPF_PHASE_FLAVOR -->
+## v14.34 flavor falsification boundary
+
+The phase-harmonic route fails if the action-selected stationary texture is axisymmetric, if its bridge has insufficient harmonic support, if the dressed cross-Gram kernel is rank deficient, if the effective sector operators commute, if the self-adjoint tower reduction fails, or if no stable no-fit polar kernel follows.
+<!-- /BHSM_V14_34_HOPF_PHASE_FLAVOR -->
+<!-- BHSM_V14_35_HOPF_PHASE_BIFURCATION -->
+## v14.35 flavor-branch falsification boundary
+
+The route fails if all required Hessian blocks are strictly positive with no nonaxisymmetric source, if the nonlinear branch is absent or unstable, if the tower resolvent does not exist, if phase locking is CP conserving only, or if the final dressed cross-Gram kernel is rank deficient or has zero physical Jarlskog invariant.
+<!-- /BHSM_V14_35_HOPF_PHASE_BIFURCATION -->
+<!-- BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->
+## v14.36 bifurcation falsification boundary
+
+The pure Path B phase mechanism is falsified as a spontaneous flavor-bifurcation source by the nonnegative Hessian theorem. The broader route remains viable only if an action-owned holonomy, Wilson/background source, compact-cap coupling, or non-isometric shape mode produces a genuine zero crossing without destabilizing the full system.
+<!-- /BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->
+<!-- BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->
+## v14.37 bifurcation falsification boundary
+
+The hypothesis that the artifact-backed `pi/3` holonomy itself destabilizes the zero-amplitude eta branch is rejected. The broader flavor-bifurcation route survives only if the action-derived mixed eta–attachment Hessian block reaches the exact zero-crossing threshold while the remaining physical Hessian stays admissible.
+<!-- /BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->
+<!-- BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->
+## v14.38 attachment bifurcation falsification boundary
+
+The hypothesis that the already-derived homogeneous v11.3 Lambda85/KKT branch triggers the nonaxisymmetric flavor bifurcation is rejected. The broader attachment route survives only through an action-owned nonhomogeneous constraint-reduced metric or Spin(4) mode with the same `(ell,p)` character and a nonzero normalized mixed Hessian.
+<!-- /BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->
+<!-- BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->
+## v14.39 source falsification boundary
+
+The hypothesis that the static degree-one eta background itself activates the Spin(4) L=2,L=3 family branch is rejected. The route survives only if a time-dependent collective, fermion, Wilson, or rotating-boundary source generates a nonzero coexact momentum mode and the matched spin connection.
+<!-- /BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->
+<!-- BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->
+## v14.40 source falsification boundary
+
+The hypothesis that the current rigid FR rotor, a static Wilson insertion, or diagonal stationary family occupations supply the universal L=2,L=3 Spin(4) source is rejected. The route survives only through an action-selected nonaxisymmetric background or a derived collective-fermion effective action.
+<!-- /BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->
+<!-- BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->
+## v14.41 relative-frame falsification boundary
+
+The hypothesis that the present source-free classical ADM action spontaneously selects an L=2 or L=3 relative frame is rejected. The route survives only through an action-owned source, rotating boundary data, time dependence, or a derived renormalized quantum effective action.
+<!-- /BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->
+
+<!-- BHSM_V14_83_MANUAL_RECOVERY -->
+## v14.83 differential-shear falsification boundary
+
+The reduced shear route fails if the full action does not derive two positive-inertia strata carrying one common shape coordinate, if the physical shear covariance vanishes, or if the complete gauge-reduced Hessian prevents the round-reference ell=2 crossing. A positive reduced susceptibility does not establish a black-hole source, a physical crossing, diagonal locking, or three lifted physical channels.
+<!-- /BHSM_V14_83_MANUAL_RECOVERY -->
+# Current falsification boundary — v15.7
+
+The current calculation does not falsify all nonlinear BHSM enclosure
+branches. It rejects a nearby equivariant radial bifurcation at the v14.93
+identity seed and blocks the full cycle at the absent action-derived localized
+incoming cavitation packet and dynamically induced crossing.
+
+Current verdict:
+`BHSM_V15_7_ONE_ALL_ENCOMPASSING_PARENT_SURFACE_AND_LOCAL_INSTABILITY_TO_ENCAPSULATION_CAUSALITY_ARE_AUTHOR_ONTOLOGY;_THE_RETAINED_ACTION_DEFINES_A_GENERAL_CONDITIONAL_SIGMA_HESSIAN_BUT_HAS_NOT_DERIVED_A_LOCALIZED_CONSTRAINT_REDUCED_PHYSICAL_STABILITY_OPERATOR_ON_A_COMMON_SELF_ADJOINT_DOMAIN_OR_A_LOCAL_INSTABILITY_WHOSE_NONLINEAR_RESPONSE_COMPLETES_INTO_ENCAPSULATION_RATHER_THAN_RESTORATION;_THE_V14_93_RADIAL_ZERO_IS_A_ZERO_MODE_WITHOUT_CAVITATION_NOT_A_GLOBAL_NO_GO;_DOWNSTREAM_NORMAN_CYCLE_AND_MASTER_CLOSURE_REMAIN_UNDEFINED_AND_FULL_BHSM_COMPLETION_IS_FALSE`.
+
+Exact next object:
+`ACTION_DERIVED_LOCALIZED_CAVITATION_OF_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_SOLVED_NONHOMOGENEOUS_LORENTZIAN_INCOMING_PACKET_TIME_PRESERVED_COMMON_SELF_ADJOINT_DOMAIN_PHYSICAL_SIGMA_HESSIAN_ZERO_CROSSING_AND_NONLINEAR_ENVELOPMENT_CONTINUATION`.

@@ -1,0 +1,55 @@
+{
+  "artifact": "BHSM_L2_L3_counterterm_underdetermination_v14_45",
+  "consequence": "even exact nonlocal fermion spectral sums do not decide whether L2, L3, both, or neither cross zero until the two local renormalized gravitational coefficients are fixed by a microscopic action or two renormalization conditions",
+  "counterterm_matrix": [
+    [
+      5,
+      25
+    ],
+    [
+      12,
+      144
+    ]
+  ],
+  "determinant": 420,
+  "exact_rational_witness": {
+    "Pi_2": "7/13",
+    "Pi_3": "-5/17",
+    "c2_ren": "-54097/185640",
+    "c4_ren": "6821/185640",
+    "reconstructed": [
+      "0",
+      "3/2"
+    ],
+    "target_Lambda_2": "0",
+    "target_Lambda_3": "3/2"
+  },
+  "exact_solution": {
+    "c2_ren": "[144(Lambda_2-Pi_2)-25(Lambda_3-Pi_3)]/420",
+    "c4_ren": "[-12(Lambda_2-Pi_2)+5(Lambda_3-Pi_3)]/420"
+  },
+  "inverse": [
+    [
+      "12/35",
+      "-5/84"
+    ],
+    [
+      "-1/35",
+      "1/84"
+    ]
+  ],
+  "renormalization_verdict": "THE_L2_L3_FERMION_DETERMINANT_CANNOT_PREDICT_A_BIFURCATION_UNTIL_TWO_INDEPENDENT_RENORMALIZED_GRAVITATIONAL_COUNTERTERM_CONDITIONS_ARE_FIXED",
+  "renormalized_channels": {
+    "L2": "Lambda_2=5 c2_ren+25 c4_ren+Pi_2_nonlocal",
+    "L3": "Lambda_3=12 c2_ren+144 c4_ren+Pi_3_nonlocal"
+  },
+  "validation": {
+    "L2_and_L3_can_be_shifted_independently": true,
+    "arbitrary_target_pair_reconstructed_exactly": true,
+    "counterterm_channel_matrix_is_invertible": true,
+    "no_physical_counterterms_selected": true,
+    "no_physical_crossing_claimed": true
+  },
+  "validation_passed": true,
+  "version": "v14.45"
+}

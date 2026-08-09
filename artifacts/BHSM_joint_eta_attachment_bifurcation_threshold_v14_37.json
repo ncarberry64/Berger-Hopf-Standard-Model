@@ -1,0 +1,44 @@
+{
+  "Schur_form": "H_eff=H_eta-B H_attachment^(-1) B^dagger",
+  "artifact": "BHSM_joint_eta_attachment_bifurcation_threshold_v14_37",
+  "diagnostic_sample": {
+    "above_eigenvalues": [
+      -0.000557619995,
+      0.013557619995
+    ],
+    "at_eigenvalues": [
+      0.0,
+      0.013
+    ],
+    "below_eigenvalues": [
+      0.000549369781,
+      0.012450630219
+    ],
+    "critical_magnitude": 0.006,
+    "lambda_down": 0.009,
+    "lambda_up": 0.004,
+    "physical": false
+  },
+  "eigenvalues": "(lambda_u+lambda_d)/2 +/- sqrt(((lambda_u-lambda_d)/2)^2+|b|^2)",
+  "missing_action_data": [
+    "the Lambda85 or Spin4 mixed second variation B",
+    "the attachment-sector self-adjoint Hessian and inverse domain",
+    "normalization of the common full-preimage eta/attachment inner product",
+    "Hopf-resolved projection into the requested (ell,p) channels"
+  ],
+  "multi_mode_condition": "sigma_max(H_u^(-1/2) B H_d^(-1/2))=1",
+  "phase_role": "delta=pi/3 can select a CP-odd orientation only after a nonzero mixed block exists",
+  "two_mode_block": "[[lambda_u,-b exp(i delta)],[-b exp(-i delta),lambda_d]]",
+  "validation": {
+    "above_threshold_negative": true,
+    "at_threshold_zero": true,
+    "below_threshold_positive": true,
+    "holonomy_orients_eigenvectors_not_threshold": true,
+    "multi_mode_threshold_is_normalized_singular_value_one": true,
+    "relative_phase_drops_out_of_block_eigenvalues": true,
+    "v12_bridge_magnitude_not_action_derived": true
+  },
+  "validation_passed": true,
+  "version": "v14.37",
+  "zero_crossing": "|b|_critical=sqrt(lambda_u lambda_d)"
+}

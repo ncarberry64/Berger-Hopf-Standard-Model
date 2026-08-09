@@ -1,0 +1,56 @@
+{
+  "CP_orientation": "The quadratic determinant at beta=0 is real and even under beta->-beta. It may create an amplitude if a channel crosses zero, but it cannot by itself choose between conjugate CP orientations; the separate relative-holonomy/Z6 mechanism remains a post-crossing orientation candidate.",
+  "artifact": "BHSM_Dirac_vacuum_polarization_sign_and_renormalization_v14_42",
+  "conditional_spectral_theorem": {
+    "Killing_result": "if [H0,V_beta]=0 then P_plus V_beta P_minus=0 and Q_para=0",
+    "assumptions": [
+      "self-adjoint gapped one-particle Dirac Hamiltonian H0",
+      "Hermitian stationary shift vertex V_beta",
+      "filled negative-energy subspace and empty positive-energy subspace",
+      "symmetry-preserving finite cutoff before renormalization"
+    ],
+    "finite_matrix_witness": {
+      "commuting_vertex": 0.0,
+      "noncommuting_vertex": -0.41133333333333333
+    },
+    "formula": "Q_para[beta]=-sum_(a occupied,b empty) |<b|V_beta|a>|^2/(E_b-E_a) <= 0",
+    "meaning": "the fermionic transition term has the sign required to oppose the positive classical ADM stiffness in non-Killing channels"
+  },
+  "renormalization_audit": {
+    "bare_status": "UV_DIVERGENT_IN_CONTINUUM",
+    "dimensionless_channel_normal_form": "Lambda_L^ren=c2^ren q_L+c4^ren q_L^2+Pi_L^nonlocal, q_L=(L-1)(L+3)",
+    "local_terms_generated": [
+      "renormalization of the Einstein/background-curvature shift coefficient",
+      "independent curvature-squared/four-derivative shift operators",
+      "possible finite local terms fixed only by renormalization conditions"
+    ],
+    "physical_statement": "Only the total renormalized channel coefficient Lambda_L^ren is scheme independent; Pi_L^ren by itself is not a physical observable.",
+    "restricted_v14_41_contract": "Pi_L=-c_G q_L/R^2 is valid only after choosing an Einstein-only renormalization contract or fixing every independent four-derivative coefficient"
+  },
+  "renormalization_verdict": "THE_V14_41_EINSTEIN_ONLY_THRESHOLD_IS_A_RESTRICTED_SCHEME_CONTRACT_BECAUSE_CURVATURE_SQUARED_COUNTERTERMS_ADD_INDEPENDENT_LAMBDA_L_SQUARED_CONTRIBUTIONS",
+  "requested_channels": {
+    "L2": {
+      "crossing_equation": "5 c2^ren+25 c4^ren+Pi_2^nonlocal=0",
+      "q_L": 5,
+      "status": "OPEN"
+    },
+    "L3": {
+      "crossing_equation": "12 c2^ren+144 c4^ren+Pi_3^nonlocal=0",
+      "q_L": 12,
+      "status": "OPEN"
+    }
+  },
+  "validation": {
+    "Einstein_and_curvature_squared_counterterms_are_independent": true,
+    "Killing_channel_zero_by_symmetry": true,
+    "bare_spectral_term_is_nonpositive": true,
+    "commuting_vertex_transition_term_zero": true,
+    "continuum_sum_requires_regulator": true,
+    "noncommuting_vertex_transition_term_negative": true,
+    "only_total_renormalized_Hessian_is_scheme_independent": true,
+    "physical_L2_L3_crossing_not_evaluated": true,
+    "quadratic_kernel_is_real_and_even_at_zero_background": true
+  },
+  "validation_passed": true,
+  "version": "v14.42"
+}

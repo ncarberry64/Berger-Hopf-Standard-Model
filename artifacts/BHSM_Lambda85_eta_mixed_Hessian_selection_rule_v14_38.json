@@ -1,0 +1,74 @@
+{
+  "Lambda85_Lambda85_Hessian": 0.0,
+  "Lambda85_is_algebraic_multiplier": true,
+  "artifact": "BHSM_Lambda85_eta_mixed_Hessian_selection_rule_v14_38",
+  "available_attachment_character": {
+    "ell": 0,
+    "hopf_weight": 0
+  },
+  "bifurcation_threshold": 1.0,
+  "classification": "DERIVED_EXACT_ON_AVAILABLE_V11_3_HOMOGENEOUS_REDUCTION",
+  "direct_eta_dependence_of_S_attach": false,
+  "gate": "FAILED_NO_MIXED_FLAVOR_BLOCK_ON_CURRENT_REDUCTION",
+  "mixed_block": [
+    [
+      0.0
+    ],
+    [
+      0.0
+    ],
+    [
+      0.0
+    ],
+    [
+      0.0
+    ],
+    [
+      0.0
+    ]
+  ],
+  "normalized_singular_value": 0.0,
+  "requested_channels": [
+    [
+      2,
+      2
+    ],
+    [
+      4,
+      4
+    ],
+    [
+      6,
+      6
+    ],
+    [
+      8,
+      8
+    ],
+    [
+      10,
+      8
+    ]
+  ],
+  "scope_boundary": "The full local Lambda85 tensor functional is not proved to have zero nonhomogeneous modes. Those modes lack an eta-stress pullback, action-normalized kinetic/domain operator, and matched ell,p spectrum.",
+  "selection_rule": "<A_(0,0),eta_(ell,p)>=0 unless (ell,p)=(0,0)",
+  "source_action": "S_attach=int_M5 <Lambda85,upsilon^(-1/2)I_W-upsilon^(1/2)I_C> dmu5",
+  "source_incidence": {
+    "I_C": "Q_H(G8)",
+    "I_W": "g5"
+  },
+  "unreduced_KKT_operator": "saddle block [[H_metric,C^*],[C,0]]; reduce to ker(C) before any spectrum",
+  "validation": {
+    "KKT_gram_positive": true,
+    "KKT_hessian_positive": true,
+    "Lambda85_Lambda85_Hessian_zero": true,
+    "all_requested_channels_nontrivial": true,
+    "all_requested_overlaps_zero": true,
+    "mu_minus_matches_v11_3": true,
+    "normalized_singular_value_zero": true,
+    "unreduced_local_tensor_modes_not_promoted": true,
+    "zero_crossing_absent": true
+  },
+  "validation_passed": true,
+  "version": "v14.38"
+}

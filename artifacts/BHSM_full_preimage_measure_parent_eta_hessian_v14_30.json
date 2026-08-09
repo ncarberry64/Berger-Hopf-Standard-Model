@@ -1,0 +1,57 @@
+{
+  "artifact": "BHSM_full_preimage_measure_parent_eta_hessian_v14_30",
+  "candidate_gauged_parent_action": "undefined on the retained eta bundle; Pi^*A acts only after the missing eta/color morphism",
+  "constant_background_hessian": "H_eta=w kappa1 P_T(-Delta_horizontal-Delta_normal-Delta_fiber)P_T on seven tangent modes; X^4 starts at eighth fluctuation order",
+  "diagram": {
+    "C5": {
+      "dimension": 5,
+      "topology": "M4 x [0,epsilon_chi) locally"
+    },
+    "C_tilde": {
+      "definition": "pi85^(-1)(C5) subset M8",
+      "dimension": 8
+    },
+    "M4": {
+      "dimension": 4,
+      "topology": "I_t x S3 equatorial seam"
+    },
+    "M5": {
+      "dimension": 5,
+      "topology": "I_t x S4"
+    },
+    "M8": {
+      "dimension": 8,
+      "topology": "I_t x S7"
+    },
+    "Sigma_tilde": {
+      "definition": "pi85^(-1)(M4), the lifted seam",
+      "dimension": 7
+    },
+    "commutative_identity": "Pi=(r composed with pi85)|C_tilde",
+    "maps": {
+      "Pi": "C_tilde -> M4 equals r composed with p",
+      "inclusion": "C_tilde -> M8 is canonical subset inclusion",
+      "p": "C_tilde -> C5 is pi85 restricted, fiber Sp(1)=S3",
+      "r": "C5 -> M4 is equatorial collar retraction"
+    }
+  },
+  "full_preimage_stationary_background": null,
+  "measure": "dmu8=dmuF cos(rho)^3 ds dmu4, ds=a(t)d rho; block connection cross terms cancel from the determinant but remain in covariant derivatives",
+  "metric": "G8=g5_horizontal+<I_F(omega+connection),(omega+connection)> on the bundle-like branch",
+  "nonconstant_background_p8": "delta2 F=F'(X0)delta2 X+(3/2)X0^2(delta X)^2, requiring the actual degree-one full-preimage background",
+  "orientation": "or(C_tilde)=or(M4) wedge d rho wedge or(Sp1), consistent with the retained base-before-fiber convention after the declared pushforward sign",
+  "parent_action": "S_eta8=int_M8 dmu8[-w(kappa1 X/2+X^4/8)+Lambda_eta(<eta,eta>-1)/2]",
+  "retained_degree_one_solution_scope": "v13.1 flat R7 cohomogeneity-one BVP only",
+  "self_adjoint_domain": null,
+  "validation": {
+    "connection_cross_terms_retained_in_horizontal_derivative": true,
+    "degree_one_full_preimage_background_absent": true,
+    "dimension_hierarchy_exact": true,
+    "measure_factor_exact_on_bundle_like_round_branch": true,
+    "p8_zero_in_constant_background_quadratic_hessian": true,
+    "self_adjoint_cap_domain_absent": true,
+    "seven_parent_tangent_modes_retained": true
+  },
+  "validation_passed": true,
+  "version": "v14.30"
+}

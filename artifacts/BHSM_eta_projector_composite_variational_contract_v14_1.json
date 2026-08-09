@@ -1,0 +1,27 @@
+{
+  "Gauss_identity": "only Image(P) frame covariance; no Euler equation from varying an independent A_SU3",
+  "artifact": "BHSM_eta_projector_composite_variational_contract_v14_1",
+  "boundary_form": "obtained by integrating tr(FP delta F); depends on delta u and normal derivatives after u(eta) substitution",
+  "candidate_action": "S_P=-(4g3^2)^(-1) int_M4 sqrt(h) tr(FP_mu_nu FP^mu_nu)",
+  "curvature_variation": "delta F=delta P[dP,dP]P+P[d(delta P),dP]P+P[dP,d(delta P)]P+P[dP,dP]delta P",
+  "derivative_order": {
+    "u_as_independent_extended_selector": "second-order quasilinear equation with vanishing Hessian at du=0",
+    "u_as_normalized_derivative_of_eta": "generically fourth-order in eta after extension, plus wall shape derivative"
+  },
+  "normalized_selector_variation": "delta u=(I-u tensor u)delta v/||v||, v=nabla_n eta",
+  "projector_variation": "delta P=(-delta u tensor u-u tensor delta u-iJ_delta_u)/2 plus normalization projection",
+  "regularity": "singular at ||nabla_n eta||=0 and undefined away from the wall without an extension",
+  "status": "CANDIDATE_NOT_A_RETAINED_ACTION_TERM",
+  "validation": {
+    "delta_F_includes_all_projector_variations": true,
+    "delta_P_tangent_to_projector_manifold": true,
+    "derived_u_of_eta_can_generate_fourth_order_eta_equation": true,
+    "independent_SU3_Gauss_law_absent": true,
+    "independent_u_equation_at_most_second_order_but_degenerate": true,
+    "normalized_gradient_singular_at_zero": true,
+    "self_adjoint_domain_not_declared": true,
+    "wall_location_shape_variation_required": true
+  },
+  "validation_passed": true,
+  "version": "v14.1"
+}

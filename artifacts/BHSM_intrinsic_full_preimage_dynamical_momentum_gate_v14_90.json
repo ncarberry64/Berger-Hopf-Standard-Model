@@ -1,0 +1,232 @@
+{
+  "Hindsight_20_20": {
+    "invalidated": [
+      "all gravitational momentum vanishes because stationary shift vanishes",
+      "homogeneous parent expansion as relative cap shear",
+      "moving seam contract as an active canonical coordinate",
+      "allowed oscillator as automatically populated classical shear"
+    ],
+    "open": [
+      "LORENTZIAN_DEGREE_ONE_FULL_PREIMAGE_BACKGROUND_AND_GAUGE_REDUCED_COUPLED_METRIC_ETA_GAUGE_DIRAC_LINEARIZED_SYMPLECTIC_BOUNDARY_VALUE_PROBLEM_WITH_REFLECTION_ODD_CAP_RELATIVE_TENSOR_MODES_AND_EXPLICIT_COEXACT_L2_MIXED_VARIATION"
+    ],
+    "reclassified": [
+      "P1 is sufficient for a general ADM momentum formula but not a full-preimage reduced phase space",
+      "intrinsic dynamics is an open nonhomogeneous tensor-mode route rather than an external-driver route"
+    ],
+    "validated": [
+      "P1 owns dynamical canonical metric momentum",
+      "v14.41 stationary shift no-go does not kill dot(h) momentum",
+      "explicit homogeneous round/Jensen dynamics is cap-common and has DeltaPi=0",
+      "a positive dynamical block gives conditional static Schur softening"
+    ]
+  },
+  "artifact": "BHSM_intrinsic_full_preimage_dynamical_momentum_gate_v14_90",
+  "canonical_Lorentzian_action": {
+    "ADM_form": "(1/2)int dt d7x N sqrt(h)[kappa1(R7+KijKij-K^2)-kappa0]",
+    "intrinsic_M4_B1": "PROVISIONAL_BOUNDARY_AXIOM_NOT_PARENT_DERIVED",
+    "momentum": "pi^ij=(kappa1/2)sqrt(h)(K^ij-Kh^ij)",
+    "phase_space_metric_term": "int dt d7x pi^ij dot(h_ij)-H_constraints",
+    "recovered": "S_P1=(1/2)int_M8 sqrt(-G)(kappa1 R-kappa0)+kappa1 int_boundary epsilon K",
+    "status": "ACTION_OWNED_GENERAL_FORM;_EXPLICITLY_REDUCED_ONLY_IN_HOMOGENEOUS_M8_IxS7_ANSATZ"
+  },
+  "canonical_long_range_object": "ACTION_OWNED_FULL_PREIMAGE_TWO_STRATUM_KINETIC_REDUCTION_WITH_DERIVED_LAYER_INERTIAS_SHEAR_COVARIANCE_AND_DEGREE_ONE_SELF_ADJOINT_BACKGROUND",
+  "canonical_variables": [
+    {
+      "action_owned": true,
+      "canonical_momentum": "pi^ij=(kappa1/2)sqrt(h)(K^ij-Kh^ij)",
+      "constraint": "Hamiltonian_and_momentum_constraints",
+      "full_preimage_status": "HOMOGENEOUS_SCALE_SHAPE_TRUNCATION_ONLY",
+      "gauge": "spatial_diffeomorphisms_and_refoliation",
+      "physical_dynamical_mode": "YES_AFTER_CONSTRAINT_AND_GAUGE_REDUCTION",
+      "variable": "spatial_metric_h_ij_on_M8_slice"
+    },
+    {
+      "action_owned": true,
+      "canonical_momentum": "p_N=0",
+      "constraint": "primary_constraint_generates_Hamiltonian_constraint",
+      "full_preimage_status": "RETAINED_IN_HOMOGENEOUS_P1_VARIATION",
+      "gauge": "time_reparameterization_multiplier",
+      "physical_dynamical_mode": false,
+      "variable": "lapse_N"
+    },
+    {
+      "action_owned": "ADM_MULTIPLIER_STANDARD;_ZERO_SHIFT_IN_EXPLICIT_P1_ANSATZ",
+      "canonical_momentum": "p_beta=0",
+      "constraint": "momentum_constraint",
+      "full_preimage_status": "STATIONARY_NONKILLING_COEXACT_MODE_CLOSED_BY_V14_41",
+      "gauge": "spatial_coordinate_multiplier",
+      "physical_dynamical_mode": false,
+      "variable": "shift_beta_i"
+    },
+    {
+      "action_owned": true,
+      "canonical_momentum": "p_eta=w(kappa1+X^3)D_0eta",
+      "constraint": "global_and_gauge_constraints_branch_dependent",
+      "full_preimage_status": "DEGREE_ONE_PERIODIC_BACKGROUND_AND_DOMAIN_ABSENT",
+      "gauge": "associated_bundle_gauge_action",
+      "physical_dynamical_mode": "CONDITIONAL_INSIDE_POSITIVE_LEGENDRE_CONE",
+      "variable": "eta"
+    },
+    {
+      "action_owned": "PARENT_GEOMETRIC_NORMALIZATION_AND_PROVISIONAL_B1_SECTORS",
+      "canonical_momentum": "electric_momentum_E^i",
+      "constraint": "Gauss_law",
+      "full_preimage_status": "NO_COUPLED_DEGREE_ONE_LINEARIZED_DOMAIN",
+      "gauge": "internal_gauge",
+      "physical_dynamical_mode": "TRANSVERSE_MODES_CONDITIONAL",
+      "variable": "gauge_connection_A_i"
+    },
+    {
+      "action_owned": "ADOPTED_FOUNDATIONAL_EFFECTIVE_ACTION",
+      "canonical_momentum": "FIRST_ORDER_DIRAC_MOMENTUM_CONSTRAINT",
+      "constraint": "first_order_second_class_and_gauge_constraints",
+      "full_preimage_status": "COMMON_COUPLED_DOMAIN_NOT_DERIVED",
+      "gauge": "spin_and_internal_gauge",
+      "physical_dynamical_mode": "STATE_DEPENDENT",
+      "variable": "fermion_psi"
+    },
+    {
+      "action_owned": false,
+      "canonical_momentum": null,
+      "constraint": "moving_seam_contract_only",
+      "full_preimage_status": "VARIABLE_EMBEDDING_ABSENT_FROM_ACTIVE_ACTION",
+      "gauge": "normal_reparameterization_must_be_quotiented",
+      "physical_dynamical_mode": "NOT_ESTABLISHED",
+      "variable": "seam_embedding_X"
+    },
+    {
+      "action_owned": "STATIC_GLOBAL_ACTION_COORDINATE_ONLY",
+      "canonical_momentum": null,
+      "constraint": "stationarity_equation_not_Hamiltonian_constraint",
+      "full_preimage_status": "SYNTHETIC_FIXTURE_NOT_LORENTZIAN_PHASE_SPACE",
+      "gauge": false,
+      "physical_dynamical_mode": "NOT_DERIVED",
+      "variable": "enclosure_log_scale_x"
+    },
+    {
+      "action_owned": "GEOMETRIC_DOMAIN_LABEL",
+      "canonical_momentum": null,
+      "constraint": "matching_and_regular_cap_conditions",
+      "full_preimage_status": "PURE_REPARTITION_HAS_ZERO_TOTAL_ACTION_HESSIAN",
+      "gauge": "coordinate_choice_until_physical_collective_mode_is_derived",
+      "physical_dynamical_mode": false,
+      "variable": "collar_or_relative_cap_coordinate"
+    },
+    {
+      "action_owned": true,
+      "canonical_momentum": "NO_INDEPENDENT_RELATIVE_CAP_MOMENTUM_IN_V11_3_TERM",
+      "constraint": "internal_core_wall_depth_Ward_transfer",
+      "full_preimage_status": "NOT_A_TWO_CAP_TRANSPORT_COORDINATE",
+      "gauge": "relational_attachment_redundancies",
+      "physical_dynamical_mode": "INTERNAL_ATTACHMENT_RESPONSE_ONLY",
+      "variable": "reciprocal_attachment_depth_q_D"
+    }
+  ],
+  "cap_inertias": {
+    "M_minus": "UNDEFINED_FOR_PHYSICAL_L2_MODE",
+    "M_plus": "UNDEFINED_FOR_PHYSICAL_L2_MODE",
+    "nu": "ONE_QUARTER_CONDITIONAL_NOT_PHYSICAL",
+    "positivity": "NOT_TESTABLE",
+    "reflection_equal_inertia": "CONDITIONAL_OPERATOR_THEOREM_ONLY"
+  },
+  "common_domain": {
+    "Green_form": "NOT_COMPUTABLE_FOR_ABSENT_COUPLED_LINEARIZED_OPERATOR",
+    "seam_symplectic_flux": "NOT_COMPUTABLE_FOR_ABSENT_MOVING_SEAM_PHASE_SPACE",
+    "status": "FULL_PREIMAGE_DYNAMICAL_COMMON_SELF_ADJOINT_SYMPLECTIC_DOMAIN_NOT_DERIVED"
+  },
+  "complete_L2": {
+    "Hessian": "NOT_CONSTRUCTED",
+    "locking_alpha_Floquet": "NOT_REACHED",
+    "spectrum": "NOT_REACHED"
+  },
+  "completion_status": {
+    "FULL_BHSM_COMPLETE": false,
+    "MARK_III": "NOT_REACHED",
+    "PHYSICAL_EXECUTION_BLOCKED": true,
+    "USB_SYNCHRONIZATION_ELIGIBLE": false,
+    "frozen_predictions_changed": false,
+    "official_prediction_logic_changed": false
+  },
+  "degree_one_background": "NOT_DERIVED",
+  "dynamic_response": {
+    "conditional_static": "DeltaH=-B^dagger K_dyn^-1 B<=0_FOR_POSITIVE_K_dyn",
+    "finite_frequency": "DeltaH(omega)=-B^dagger[K_dyn-omega^2 M_dyn]^-1B_AWAY_FROM_POLES",
+    "physical_insertion": "NOT_ALLOWED_WITH_B_DYN_UNDEFINED",
+    "zero_homogeneous_insertion": "ZERO"
+  },
+  "exact_next_object": "LORENTZIAN_DEGREE_ONE_FULL_PREIMAGE_BACKGROUND_AND_GAUGE_REDUCED_COUPLED_METRIC_ETA_GAUGE_DIRAC_LINEARIZED_SYMPLECTIC_BOUNDARY_VALUE_PROBLEM_WITH_REFLECTION_ODD_CAP_RELATIVE_TENSOR_MODES_AND_EXPLICIT_COEXACT_L2_MIXED_VARIATION",
+  "flavor_firewall": {
+    "noncentral_left_handed_current": "ACTION_OWNED_FAMILY_NONCENTRAL_LEFT_HANDED_CURRENT_SOURCE",
+    "spectral_charged_current": "PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL",
+    "status": "OPEN_UNCHANGED"
+  },
+  "intrinsic_observable": {
+    "B_dyn_L2": "UNDEFINED_PHYSICALLY;_ZERO_IN_EXPLICIT_HOMOGENEOUS_TRUNCATION",
+    "formal_candidate": "J_dyn=P_coex,L2 J[DeltaPi,DeltaSigma]",
+    "homogeneous_restriction": "ZERO",
+    "physical_status": "UNDEFINED_NO_COMMON_REDUCED_DOMAIN_OR_PROJECTOR"
+  },
+  "linear_dynamical_spectrum": {
+    "Jensen_fixed_shape": "HOMOGENEOUS_MASSES_SQUARED_52_OVER_5A2_AND_MINUS_4_OVER_A2;_CAP_COMMON",
+    "associated_tower": "INSTANTANEOUS_OPERATOR_AND_ADIABATIC_CONTROL_ONLY",
+    "nonhomogeneous_gravitational_vector_tensor_spectrum": "NOT_DERIVED",
+    "physical_DeltaPi_nonzero_mode": "NOT_FOUND_IN_EXPLICIT_SECTOR;_GENERAL_ROUTE_OPEN",
+    "round_fixed_shape": "TWO_HOMOGENEOUS_SHAPE_MASSES_SQUARED_4_OVER_A2;_CAP_COMMON"
+  },
+  "primary_executable_object": "ACTION_OWNED_INTRINSIC_FULL_PREIMAGE_DYNAMICAL_RELATIVE_CAP_MOMENTUM_AND_COEXACT_L2_SHAPE_TRANSPORT_FROM_CANONICAL_METRIC_EXTRINSIC_CURVATURE_AND_EXISTING_MATTER_FIELDS_WITHOUT_EXTERNAL_DRIVER",
+  "primary_verdict": "BHSM_V14_90_THE_RETAINED_LORENTZIAN_P1_ACTION_OWNS_GENUINE_TIME_DEPENDENT_CANONICAL_METRIC_MOMENTUM_BUT_ITS_ONLY_EXPLICIT_CONSTRAINT_REDUCED_ROUND_AND_JENSEN_DYNAMICAL_SOLUTIONS_ARE_HOMOGENEOUS_CAP_COMMON_MODES_WITH_ZERO_REFLECTION_RELATIVE_MOMENTUM;_THE_NONHOMOGENEOUS_DEGREE_ONE_FULL_PREIMAGE_PHASE_SPACE_COMMON_SEAM_SYMPLECTIC_DOMAIN_CAP_INERTIAS_AND_COEXACT_L2_MIXED_VERTEX_ARE_NOT_RETAINED,_SO_GENERAL_INTRINSIC_RELATIVE_TENSOR_MODES_ARE_NOT_RULED_OUT_BUT_NO_PHYSICAL_B_DYN_L2_OR_SOFTENING_CORRECTION_CAN_BE_INSERTED",
+  "representation": {
+    "claim_boundary": "different tensor representation content reopens possibility, not a proof of a nonzero vertex",
+    "homogeneous_P1_metric_momentum": "SPIN4_SINGLET_CAP_COMMON",
+    "homogeneous_to_relative_coexact_L2": "FORBIDDEN_ZERO_RELATIVE_SOURCE",
+    "rank2_route_current_status": "UNDEFINED_WITHOUT_NONHOMOGENEOUS_OPERATOR_DOMAIN_AND_PROJECTORS",
+    "rank2_traceless_tensor_route": "NOT_EXCLUDED_BY_THE_RIGID_L1_THEOREM",
+    "v14_88_rigid_L1_times_scalar_L2_to_coexact_L2": "FORBIDDEN_PRESERVED"
+  },
+  "state_selection": {
+    "existence_is_population": false,
+    "oscillator_witness": {
+      "classical_ground_state_amplitude": 0.0,
+      "coordinate": 0.2786826837388662,
+      "cycle_mean_momentum": 0.0,
+      "cycle_mean_momentum_squared": 1.2230479999999997,
+      "mode_exists_for_positive_frequency": true,
+      "momentum": -1.1219449261668535,
+      "nonzero_amplitude_is_initial_state_data": true
+    },
+    "vacuum_loop": "OPEN_REQUIRES_OPERATOR_GHOST_DOMAIN_AND_RENORMALIZATION_PRESCRIPTION"
+  },
+  "stationary_v14_41_consistency": {
+    "dynamical_metric_velocity": "NOT_IDENTICAL_TO_SHIFT_AND_NOT_KILLED_BY_V14_41",
+    "explicit_P1_common_expansion_momentum": "NONZERO_AWAY_FROM_COSH_TURNING_POINT",
+    "relative_cap_momentum": "ZERO_IN_HOMOGENEOUS_TRUNCATION",
+    "stationary_shift": "ZERO_AFTER_NONKILLING_QUOTIENT"
+  },
+  "two_cap_momenta": {
+    "counterpropagating_reflection_symmetric_state": "KINEMATICALLY_POSSIBLE_NOT_ACTION_SOLVED_OR_STATE_SELECTED",
+    "definition": "DeltaPi=Pi_plus-R^dagger Pi_minus R",
+    "homogeneous_formal_restriction": {
+      "common_momentum_norm": 2.6986663372858826,
+      "dimension": 7,
+      "interpretation": "time dependence is physical in the homogeneous truncation but is cap-common, not relative shear",
+      "nonzero_common_expansion_momentum": true,
+      "relative_momentum_norm": 0.0,
+      "traceless_shear_norm": 7.343435057440258e-17,
+      "zero_reflection_relative_momentum": true
+    },
+    "parity": "ZERO_IN_EXPLICIT_HOMOGENEOUS_SECTOR;_GENERAL_PHYSICAL_PARITY_UNDEFINED",
+    "physical_reduced_Pi_plus_minus": "UNDEFINED_NO_NONHOMOGENEOUS_TWO_CAP_CONSTRAINT_REDUCTION"
+  },
+  "validation": {
+    "P1_has_nonzero_common_dynamic_metric_momentum": true,
+    "conditional_positive_static_block_softens": true,
+    "explicit_homogeneous_P1_relative_momentum_is_zero": true,
+    "flavor_firewalls_preserved": true,
+    "full_BHSM_not_claimed": true,
+    "homogeneous_isotropic_extrinsic_shear_is_zero": true,
+    "oscillator_population_separated_from_existence": true,
+    "zero_vertex_has_zero_Schur_correction": true
+  },
+  "validation_passed": true,
+  "version": "v14.90"
+}

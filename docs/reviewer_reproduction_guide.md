@@ -1,6 +1,18 @@
 # Reviewer Reproduction Guide
 
-## Current v11.3 audit
+## Current v15.7 audit
+
+Recommended current reviewer command:
+
+```bash
+python -m pytest -q tests/test_bhsm_aether_nonlinear_norman_cycle_bvp_v15_7.py tests/test_bhsm_public_status_sync_v15_7.py
+```
+
+Then inspect the
+[controlling report](BHSM_NONLINEAR_NORMAN_CYCLE_BVP_AND_MAIN_SYNC_V15_7.md)
+and run `python -m bhsm.interface physics-status --format json`.
+
+## Historical v11.3 audit
 
 ```bash
 python scripts/materialize_reciprocal_attachment_v11_3.py

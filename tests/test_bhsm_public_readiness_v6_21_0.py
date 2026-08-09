@@ -53,11 +53,8 @@ def test_current_surfaces_share_the_frozen_scientific_boundary():
     assert AUDIT.check_science_alignment()["passed"] is True
     for relative in AUDIT.ALIGNMENT_FILES:
         text = " ".join(AUDIT.current_slice(relative).split()).casefold()
-        assert "threading response" in text
-        assert "no explicit energy threshold" in text
-        assert "t_mu_nu^(x)" in text
-        assert "fold kinetic sign is unresolved" in text
-        assert "no physical mass" in text
+        for phrase in AUDIT.ALIGNMENT_PHRASES:
+            assert phrase in text
 
 
 def test_handoff_has_supported_and_not_supported_review_sections():

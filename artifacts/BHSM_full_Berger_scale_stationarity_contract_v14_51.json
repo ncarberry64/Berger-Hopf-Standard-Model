@@ -1,0 +1,30 @@
+{
+  "artifact": "BHSM_full_Berger_scale_stationarity_contract_v14_51",
+  "current_status": {
+    "absolute_scale_selected": false,
+    "child_parent_operators_supplied": false,
+    "frozen_nonround_a_selected": false,
+    "nonlocal_Berger_derivative_computed": false,
+    "relative_zeta_anomaly_computed": false
+  },
+  "discrete_solution_gate": "det d(F_L,F_a)/d(log L,a) != 0 at the candidate solution",
+  "eta_mass_derivative": "d m_eta/da=-d_s[cot(f_eta) d f_eta/da], m_eta=-d_s log sin(f_eta)",
+  "fermion_Feynman_Hellmann": "d Gamma_F_rel/da=-Tr_rel[D^(-1) dD/da] with the declared zeta/relative regulator",
+  "on_shell_rule": "implicit profile derivatives cancel only when the same quantum-corrected Gamma_rel supplies the f_eta, lapse, collar, a, and L equations",
+  "quantum_corrected_background_equations": [
+    "delta Gamma_rel / delta f_eta = 0",
+    "delta Gamma_rel / delta N = 0",
+    "delta Gamma_rel / delta J = 0",
+    "F_a := d Gamma_rel_on_shell / da = 0",
+    "F_L := d Gamma_rel_on_shell / d log L = 0"
+  ],
+  "stability_gate": "the 2x2 Hessian in (log L,a), after all constrained fields are Schur-reduced, must be positive definite",
+  "total_relative_action": "Gamma_rel=S_eta_rel+S_gravity_rel+S_collar_lapse_rel+S_zeta_local_rel+Gamma_nonlocal_rel",
+  "validation": {
+    "classical_profile_cannot_be_reused_without_backreaction": true,
+    "coupled_not_sequential_stationarity_required": true,
+    "no_proxy_determinant_promoted": true,
+    "nondegenerate_Jacobian_required": true
+  },
+  "version": "v14.51"
+}

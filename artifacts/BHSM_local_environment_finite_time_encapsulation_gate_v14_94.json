@@ -1,0 +1,472 @@
+{
+  "CONSTRAINTS_PRESERVED_THROUGH_EVENT": null,
+  "EVENT_ENERGY_ACCOUNTED": null,
+  "FINITE_TIME_ENCAPSULATION_EVENT_DERIVED": false,
+  "HOMOGENEOUS_GLOBAL_INSTABILITY_DERIVED": true,
+  "Hindsight_20_20": {
+    "invalidated": [
+      "homogeneous expansion as localized outgoing flux",
+      "the Jensen tachyon as a local environmental threshold crossing",
+      "linear amplification alone as nonlinear encapsulation completion"
+    ],
+    "open": [
+      "CONSTRAINT_SOLVED_NONHOMOGENEOUS_LORENTZIAN_M8_INCOMING_WAVE_PACKET_WITH_QUASILOCAL_NOETHER_FLUX_TIME_PRESERVED_COMMON_DOMAIN_AND_LOCAL_PHYSICAL_TANGENT_PROPAGATOR"
+    ],
+    "reclassified": [
+      "encapsulation as a finite event rather than a permanent soliton",
+      "the exact P1 branches as incoming-dynamics controls rather than event solutions"
+    ],
+    "validated": [
+      "exact round and Jensen branches provide constraint-satisfying time-dependent canonical momentum",
+      "round homogeneous shape dynamics has no instability",
+      "Jensen has one global homogeneous tachyon at every finite time",
+      "finite-time reduced propagator converges and obeys the Wronskian identity"
+    ]
+  },
+  "LOCAL_ENVIRONMENT_INSTABILITY_DERIVED": false,
+  "MODE_SELECTION_DERIVED": false,
+  "NONLINEAR_COMPLETION_DERIVED": false,
+  "PATH_A_STATUS": "NO_ENCAPSULATION_EVENT_IN_CONTROLLED_RETAINED_SECTORS_PATH_A_REMAINS_OPEN",
+  "PATH_B_FALLBACK_ACTIVATED": false,
+  "PROTECTED_INTERNAL_SPECTRAL_BAND_DERIVED": false,
+  "SMOOTH_INTERNAL_MODE_BUNDLE_DERIVED": false,
+  "action_owned_environment": [
+    {
+      "action": "M8_P1_Einstein_Hilbert_plus_GHY",
+      "canonical": "configuration",
+      "dynamics": "independent_subject_to_constraints",
+      "interpretation": "local_spatial_geometry",
+      "scope": "local",
+      "variable": "h_ij"
+    },
+    {
+      "action": "M8_P1_ADM_kinetic_block",
+      "canonical": "momentum",
+      "dynamics": "constraint_reduced",
+      "interpretation": "extrinsic_curvature_momentum",
+      "scope": "local_density",
+      "variable": "pi^ij"
+    },
+    {
+      "action": "M8_eta_p2_plus_p8",
+      "canonical": "configuration",
+      "dynamics": "independent_unit_map",
+      "interpretation": "degree_one_internal_geometry",
+      "scope": "local_with_global_degree",
+      "variable": "eta"
+    },
+    {
+      "action": "M8_eta_Legendre_map",
+      "canonical": "momentum",
+      "dynamics": "positive_Legendre_cone_only",
+      "interpretation": "eta_transport",
+      "scope": "local_density",
+      "variable": "p_eta"
+    },
+    {
+      "action": "M8_chi_kinetic_block",
+      "canonical": "pair",
+      "dynamics": "independent",
+      "interpretation": "bulk_scalar_environment",
+      "scope": "local",
+      "variable": "chi,p_chi"
+    },
+    {
+      "action": "M8_sigma_kinetic_potential_eta_multiplier",
+      "canonical": "pair",
+      "dynamics": "independent",
+      "interpretation": "envelopment_order_parameter",
+      "scope": "local",
+      "variable": "sigma,p_sigma"
+    },
+    {
+      "action": "derived_from_h_dot_lapse_shift",
+      "canonical": "derived",
+      "dynamics": "not_independent",
+      "interpretation": "expansion_and_shear",
+      "scope": "local",
+      "variable": "K_ij"
+    },
+    {
+      "action": "retained_cap_GHY_and_matchers",
+      "canonical": "boundary_response",
+      "dynamics": "constrained",
+      "interpretation": "quasilocal_transfer_after_boundary_choice",
+      "scope": "interface",
+      "variable": "cap_seam_GHY_Brown_York_data"
+    },
+    {
+      "action": "retained_stratified_KKT_correspondence",
+      "canonical": "partial_only",
+      "dynamics": "no_closed_common_Lorentzian_phase_space",
+      "interpretation": "cross_stratum_environment",
+      "scope": "stratified",
+      "variable": "parent_child_scales_and_attachment"
+    }
+  ],
+  "artifact": "BHSM_local_environment_finite_time_encapsulation_gate_v14_94",
+  "completion_status": {
+    "FULL_BHSM_COMPLETE": false,
+    "MARK_III": "NOT_REACHED",
+    "PHYSICAL_EXECUTION_BLOCKED": true,
+    "USB_SYNCHRONIZATION_ELIGIBLE": false,
+    "frozen_predictions_changed": false,
+    "official_prediction_logic_changed": false
+  },
+  "event_gate": {
+    "B_dyn_L2": null,
+    "DeltaPi_t": 0.0,
+    "J_dyn": null,
+    "L2_instability": null,
+    "M_minus": null,
+    "M_plus": null,
+    "common_domain": "GLOBAL_CLOSED_S7_AND_FIXED_SMOOTH_CAP_TRANSMISSION_PRESERVED_BY_HOMOGENEITY;_NO_MOVING_DOMAIN_EVENT",
+    "completion_criterion_C_enc": null,
+    "constraints_through_event": null,
+    "discrete_completion_class": null,
+    "energy_geometry_interference": null,
+    "event_energy_accounting": null,
+    "event_phases": {
+      "encapsulation": null,
+      "incoming": "EXACT_HOMOGENEOUS_DYNAMICS_ONLY",
+      "outgoing": null,
+      "threshold": null
+    },
+    "growth": "FINITE_TIME_LINEAR_PROPAGATOR_COMPUTED_NO_LOCAL_THRESHOLD",
+    "initial_condition_robustness": "JENSEN_TACHYON_LINEARLY_ROBUST_BUT_NOT_LOCAL_ENCAPSULATION",
+    "internal_spectral_bundle_eligibility": false,
+    "local_environment_profile": "SPATIALLY_CONSTANT_ON_EXACT_BRANCHES",
+    "mode_selection": null,
+    "nonlinear_coefficients": null,
+    "nonlinear_completion": null,
+    "persistence_class": null,
+    "phase_diagram": {
+      "jensen": "GLOBAL_HOMOGENEOUS_TACHYON",
+      "local_event": "UNTESTED_REQUIRES_NONHOMOGENEOUS_CONSTRAINT_SOLVE",
+      "round_contracting": "GLOBAL_ANTIFRICTION_AMPLIFICATION",
+      "round_expanding": "STABLE_HOMOGENEOUS_SHAPE_PROPAGATION"
+    },
+    "post_event_state": null,
+    "sigma_symmetry": "SIGMA_EQUALS_ZERO_ON_EXACT_BRANCHES_Z2_CUBIC_REMAINS_ZERO",
+    "threshold_condition": null,
+    "threshold_location_time": null,
+    "unstable_mode": "JENSEN_HOMOGENEOUS_SHAPE_MODE_1_GLOBAL_AT_ALL_FINITE_TIMES"
+  },
+  "exact_next_object": "CONSTRAINT_SOLVED_NONHOMOGENEOUS_LORENTZIAN_M8_INCOMING_WAVE_PACKET_WITH_QUASILOCAL_NOETHER_FLUX_TIME_PRESERVED_COMMON_DOMAIN_AND_LOCAL_PHYSICAL_TANGENT_PROPAGATOR",
+  "finite_time_evolution": {
+    "difference_200_400": 1.2485358060016406e-10,
+    "difference_400_800": 7.821370210391726e-12,
+    "discretization": "fixed_step_RK4_on_exact_time_dependent_reduced_operator",
+    "domain": "t_in=0_to_t_out=4_in_primitive_lambda_equals_1_units",
+    "maximum_Wronskian_residual": 1.7415330288983455e-10,
+    "nonlinear_event_simulated": false,
+    "observed_refinement": 15.963133983132463,
+    "resolutions": [
+      {
+        "Wronskian_residual": 1.7415330288983455e-10,
+        "branch": "jensen",
+        "coordinate_norm_warning": "q_v_Euclidean_singular_value_is_not_a_background_independent_physical_norm",
+        "determinant": 0.28467942926253714,
+        "expected_Wronskian_determinant": 0.28467942908838384,
+        "fundamental_matrix_q_v": [
+          [
+            2.3706912117840977,
+            4.253676103024214
+          ],
+          [
+            0.5499130100163133,
+            1.1067790042282404
+          ]
+        ],
+        "interval": [
+          0.0,
+          4.0
+        ],
+        "largest_coordinate_singular_value": 5.023752599416412,
+        "mode": 1,
+        "steps": 200
+      },
+      {
+        "Wronskian_residual": 1.082528511275882e-11,
+        "branch": "jensen",
+        "coordinate_norm_warning": "q_v_Euclidean_singular_value_is_not_a_background_independent_physical_norm",
+        "determinant": 0.2846794290992091,
+        "expected_Wronskian_determinant": 0.28467942908838384,
+        "fundamental_matrix_q_v": [
+          [
+            2.3706912118721837,
+            4.253676103022527
+          ],
+          [
+            0.5499130100974715,
+            1.1067790042634509
+          ]
+        ],
+        "interval": [
+          0.0,
+          4.0
+        ],
+        "largest_coordinate_singular_value": 5.023752599473565,
+        "mode": 1,
+        "steps": 400
+      },
+      {
+        "Wronskian_residual": 6.812883590612273e-13,
+        "branch": "jensen",
+        "coordinate_norm_warning": "q_v_Euclidean_singular_value_is_not_a_background_independent_physical_norm",
+        "determinant": 0.28467942908906513,
+        "expected_Wronskian_determinant": 0.28467942908838384,
+        "fundamental_matrix_q_v": [
+          [
+            2.370691211877721,
+            4.253676103022444
+          ],
+          [
+            0.5499130101025359,
+            1.1067790042656547
+          ]
+        ],
+        "interval": [
+          0.0,
+          4.0
+        ],
+        "largest_coordinate_singular_value": 5.023752599477171,
+        "mode": 1,
+        "steps": 800
+      }
+    ]
+  },
+  "incoming_states": {
+    "jensen": {
+      "Hamiltonian_constraint_residual": -2.7755575615628914e-16,
+      "branch": "jensen",
+      "canonical_metric_momentum": "pi^ij=(kappa1/2)sqrt(h)(K^ij-Kh^ij)",
+      "canonical_momentum_nonzero": true,
+      "constraint_propagation": "dot(C_H)=-Theta*C_H=0",
+      "extrinsic_rates": {
+        "H1": 0.023622341818568284,
+        "H2": 0.023622341818568284,
+        "H4": 0.023622341818568284
+      },
+      "incoming_localized_flux_state": false,
+      "metric_scales": {
+        "a1": 1.9674136720955469,
+        "a2": 1.9674136720955469,
+        "a4": 4.399270710668124
+      },
+      "momentum_constraint_residual": 0.0,
+      "physical_time_dependent": true,
+      "spatially_homogeneous": true,
+      "time": 1.0
+    },
+    "round": {
+      "Hamiltonian_constraint_residual": 0.0,
+      "branch": "round",
+      "canonical_metric_momentum": "pi^ij=(kappa1/2)sqrt(h)(K^ij-Kh^ij)",
+      "canonical_momentum_nonzero": true,
+      "constraint_propagation": "dot(C_H)=-Theta*C_H=0",
+      "extrinsic_rates": {
+        "H1": 0.023622341818568284,
+        "H2": 0.023622341818568284,
+        "H4": 0.023622341818568284
+      },
+      "incoming_localized_flux_state": false,
+      "metric_scales": {
+        "a1": 3.2790227868259114,
+        "a2": 3.2790227868259114,
+        "a4": 3.2790227868259114
+      },
+      "momentum_constraint_residual": 0.0,
+      "physical_time_dependent": true,
+      "spatially_homogeneous": true,
+      "time": 1.0
+    }
+  },
+  "instability_mechanisms": [
+    {
+      "jensen": "NO_CROSSING_one_m2=-4/a4^2_at_every_finite_time",
+      "mechanism": "stiffness_crossing",
+      "round": "NO_m2=4/a2_positive"
+    },
+    {
+      "jensen": "NOT_NEEDED_ALREADY_INDEFINITE_STIFFNESS",
+      "mechanism": "Hamiltonian_Krein_collision",
+      "round": "NONE_IN_TWO_DECOUPLED_POSITIVE_HOMOGENEOUS_MODES"
+    },
+    {
+      "jensen": "GLOBAL_TACHYON_DOMINATES",
+      "mechanism": "parametric_instability",
+      "round": "NONPERIODIC_COSH_BACKGROUND_NO_FLOQUET_BAND_DERIVED"
+    },
+    {
+      "jensen": "POSSIBLE_BUT_NOT_AN_ENVIRONMENTAL_THRESHOLD",
+      "mechanism": "non_normal_transient_growth",
+      "round": "CONTRACTING_ANTIFRICTION_CAN_AMPLIFY_GLOBALLY_NOT_LOCALLY"
+    },
+    {
+      "jensen": "NO_ACTION_DERIVED_MULTIMODE_COMPLETION_TENSOR",
+      "mechanism": "resonant_transfer",
+      "round": "SIGMA_10_4_4_CUBIC_ZERO_AT_SIGMA_ZERO"
+    }
+  ],
+  "outgoing_flux_and_energy": {
+    "Brown_York_energy": "available_only_after_physical_boundary_normal_reference_and_ensemble_are_selected",
+    "balance_law": "dH_Omega/dt=-integral_boundary(F_H)+S_Omega_requires_a_selected_quasilocal_Hamiltonian",
+    "closed_S7_Hamiltonian": "constraint_generator_zero_on_shell_not_positive_scalar_energy",
+    "closed_S7_boundary": null,
+    "event_energy_accounting": null,
+    "geometric_work": "common_scale_evolution_not_local_transport",
+    "homogeneous_cap_relative_flux": 0.0,
+    "homogeneous_spatial_gravitational_transport_flux": 0.0,
+    "homogeneous_spatial_matter_flux": 0.0,
+    "internal_exchange": "none_on_eta_identity_chi_sigma_zero_P1_branches",
+    "local_gravitational_energy_density": null,
+    "reason": "generally_covariant_P1_gravity_has_no_gauge_invariant_local_energy_density",
+    "seam_transfer": 0.0
+  },
+  "physical_time_dependent_operator": {
+    "jensen": {
+      "M_proportional_to": "a4^7_times_constant_shape_volume_ratio",
+      "branch": "jensen",
+      "domain": "two_homogeneous_shape_modes_on_closed_S7",
+      "equation": "M(t)q_ddot+M_dot(t)q_dot+M(t)m_squared(t)q=0",
+      "first_order_form": "d_t(q,v)=L_phys(t)(q,v)",
+      "gauge_reduction": "lapse_time_and_Hamiltonian_volume_direction_removed_v6_0_10",
+      "operators": [
+        {
+          "instantaneous_growth_exponents": [
+            {
+              "imag": 0.728376632437645,
+              "real": -0.08267819636498899
+            },
+            {
+              "imag": -0.728376632437645,
+              "real": -0.08267819636498899
+            }
+          ],
+          "mass_squared": 0.5373682028353721,
+          "mode": 0,
+          "positive_growth_exponent": false,
+          "q_velocity_operator": [
+            [
+              0.0,
+              1.0
+            ],
+            [
+              -0.5373682028353721,
+              -0.16535639272997799
+            ]
+          ]
+        },
+        {
+          "instantaneous_growth_exponents": [
+            {
+              "imag": 0.0,
+              "real": 0.37939946179191913
+            },
+            {
+              "imag": 0.0,
+              "real": -0.5447558545218969
+            }
+          ],
+          "mass_squared": -0.20668007801360466,
+          "mode": 1,
+          "positive_growth_exponent": true,
+          "q_velocity_operator": [
+            [
+              0.0,
+              1.0
+            ],
+            [
+              0.20668007801360466,
+              -0.16535639272997799
+            ]
+          ]
+        }
+      ],
+      "time": 1.0
+    },
+    "round": {
+      "M_proportional_to": "a4^7_times_constant_shape_volume_ratio",
+      "branch": "round",
+      "domain": "two_homogeneous_shape_modes_on_closed_S7",
+      "equation": "M(t)q_ddot+M_dot(t)q_dot+M(t)m_squared(t)q=0",
+      "first_order_form": "d_t(q,v)=L_phys(t)(q,v)",
+      "gauge_reduction": "lapse_time_and_Hamiltonian_volume_direction_removed_v6_0_10",
+      "operators": [
+        {
+          "instantaneous_growth_exponents": [
+            {
+              "imag": 0.604308246071755,
+              "real": -0.08267819636498902
+            },
+            {
+              "imag": -0.604308246071755,
+              "real": -0.08267819636498902
+            }
+          ],
+          "mass_squared": 0.37202414042448845,
+          "mode": 0,
+          "positive_growth_exponent": false,
+          "q_velocity_operator": [
+            [
+              0.0,
+              1.0
+            ],
+            [
+              -0.37202414042448845,
+              -0.16535639272997799
+            ]
+          ]
+        },
+        {
+          "instantaneous_growth_exponents": [
+            {
+              "imag": 0.604308246071755,
+              "real": -0.08267819636498902
+            },
+            {
+              "imag": -0.604308246071755,
+              "real": -0.08267819636498902
+            }
+          ],
+          "mass_squared": 0.37202414042448845,
+          "mode": 1,
+          "positive_growth_exponent": false,
+          "q_velocity_operator": [
+            [
+              0.0,
+              1.0
+            ],
+            [
+              -0.37202414042448845,
+              -0.16535639272997799
+            ]
+          ]
+        }
+      ],
+      "time": 1.0
+    }
+  },
+  "primary_object": "ACTION_OWNED_LOCAL_ENVIRONMENT_DRIVEN_FINITE_TIME_INSTABILITY_AND_ENCAPSULATION_EVENT_WITH_THRESHOLD_CROSSING_NONLINEAR_SATURATION_CONSTRAINT_CLOSURE_AND_MODE_SELECTION",
+  "primary_verdict": "BHSM_V14_94_THE_EXACT_CONSTRAINT_REDUCED_ROUND_AND_JENSEN_LORENTZIAN_P1_BRANCHES_SUPPLY_ACTION_OWNED_TIME_DEPENDENT_CANONICAL_MOMENTUM_BUT_ARE_SPATIALLY_HOMOGENEOUS_CAP_COMMON_AND_HAVE_ZERO_LOCAL_TRANSPORT_FLUX_AND_ZERO_DELTA_PI;_THE_ROUND_BRANCH_HAS_NO_HOMOGENEOUS_SHAPE_INSTABILITY_WHILE_JENSEN_HAS_ONE_GLOBAL_TACHYON_AT_EVERY_FINITE_TIME_RATHER_THAN_A_LOCAL_THRESHOLD_CROSSING_AND_NO_ACTION_DERIVED_NONLINEAR_COMPLETION;_THEREFORE_NO_ENCAPSULATION_EVENT_EXISTS_IN_THE_CONTROLLED_RETAINED_SECTORS_BUT_GENERAL_NONHOMOGENEOUS_PATH_A_DYNAMICS_REMAINS_OPEN",
+  "validation": {
+    "Path_B_not_activated": true,
+    "RK4_fourth_order_refinement": true,
+    "USB_untouched": true,
+    "Wronskian_identity_converged": true,
+    "frozen_predictions_unchanged": true,
+    "global_instability_not_mislabeled_local_event": true,
+    "homogeneous_flux_not_mislabeled_outgoing": true,
+    "incoming_canonical_momenta_nonzero": true,
+    "jensen_has_no_stiffness_threshold": true,
+    "jensen_has_one_global_tachyon": true,
+    "jensen_initial_constraints_close": true,
+    "no_new_environment_field_or_parameter": true,
+    "round_initial_constraints_close": true,
+    "round_stiffness_positive": true,
+    "undefined_event_objects_not_relabelled_zero": true
+  },
+  "validation_passed": true,
+  "version": "v14.94"
+}

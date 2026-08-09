@@ -1,0 +1,22 @@
+{
+  "F_double_prime": "3 X^2/2 >= 0",
+  "F_prime": "(kappa1+X^3)/2 > 0",
+  "Hessian_density": "2 w F'(X)|T eta|^2|d phi|^2+4 w F''(X)(j.d phi)^2",
+  "artifact": "BHSM_Path_B_phase_Hessian_positivity_theorem_v14_36",
+  "background": "any stationary Path-B eta background with admissible boundary flux",
+  "kinematic_identity": "X_epsilon=X+2 epsilon j^mu partial_mu(phi)+epsilon^2 |T eta|^2 |d phi|^2",
+  "local_phase_variation": "eta_epsilon=exp(epsilon phi T) eta for target isometry generator T",
+  "spectral_consequence": "phase-sector Hessian is positive semidefinite; no negative phase eigenmode can originate from the pure p2+p8 action",
+  "validation": {
+    "F_double_prime_nonnegative": true,
+    "F_prime_strictly_positive_for_kappa1_positive": true,
+    "constant_global_phase_is_the_only_symmetry_zero_direction": true,
+    "full_nonisometric_shape_Hessian_not_claimed": true,
+    "nonconstant_requested_channels_cannot_be_negative": true,
+    "phase_Hessian_is_sum_of_nonnegative_squares": true,
+    "sample_densities_positive": true
+  },
+  "validation_passed": true,
+  "version": "v14.36",
+  "zero_mode_boundary": "a globally constant target-isometry rotation is a collective symmetry zero mode, not a flavor texture"
+}

@@ -1,6 +1,22 @@
 # BHSM 1.0 definition of done
 
-## Current v11.1 evaluation
+## Current v15.7 evaluation
+
+`FULL_BHSM_COMPLETE = FALSE`. One all-encompassing parent surface and local
+instability causing cavitation/encapsulation are author ontology. The retained
+action has not derived the localized, constraint-reduced physical stability
+operator and common self-adjoint domain, nor a nonlinear theorem selecting
+encapsulation rather than restoration. Persistence and every later
+Norman-cycle/master gate are not reached.
+
+Exact next object:
+`ACTION_DERIVED_LOCAL_SPACETIME_INSTABILITY_ON_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_REDUCED_PHYSICAL_STABILITY_LOSS_COMMON_SELF_ADJOINT_DOMAIN_AND_NONLINEAR_ENCAPSULATION_CONTINUATION`.
+
+The v14.93 radial result is a `ZERO_MODE_WITHOUT_CAVITATION`, not a global
+no-go. Absolute scale, action-derived CKM/PMNS, and empirical validation remain
+open.
+
+## Historical v11.1 evaluation
 
 Mark I is reached; Marks II-IV are not reached. The current verdict is
 `BHSM_SUPPORT_FUNCTOR_PHYSICAL_EQUIVALENCE_QUOTIENT_BLOCKED_BY_ABSENT_COMPLETE_LOCAL_BOUNDARY_AND_CORE_ACTION_DATA`.
@@ -301,3 +317,237 @@ Exact verdict:
 
 Exact next object:
 `ACTION_PRINCIPLE_FIXING_Z_UPSILON_U_UPSILON_AND_SUPPORT_COUPLINGS`.
+# v14.2 eta-knot color-matter blocker update
+
+The classical stabilizer selector has zero SU3 current. FR spin/statistics
+parity, a rank-three polarization label, and a conditional Weyl normal form do
+not yet construct the normalized one-particle Hilbert bundle, physical
+`3/bar3` transition maps, collective Dirac action, or eta-sourced independent
+Gauss equation. The active exact object is
+`ACTION_OWNED_ETA_EXTENSION_OF_THE_V7_1_PARENT_BUNDLE_REDUCTION_FUNCTOR_WITH_COMMON_SU3_CONNECTION_COLOR_AND_POLARIZATION_REPRESENTATIONS_AND_VARIATIONAL_GAUSS_LAW`.
+Mark III remains open.
+
+## v14.29 View 2 progress
+
+A conditional action candidate lets the independent physical SU(3) connection gauge an eta collar term and yields a variational tangent current with no new vector field. It does not close the View 2 ownership subgate: the original `M8` eta sector lacks a common-domain reduction/measure theorem to the physical `M4` connection, and FR/Dirac matching is absent. Those objects precede the nonlinear BVP, center-sector saddle, worldsheet/area-law limit, common gauge normalization, physical scale, and all mass/flavor/neutrino outputs.
+
+## v14.30 common-domain proof result
+
+The associated physical-color `G2/SU3` collar bundle exists for arbitrary
+retained `c2`, but the retained stratified action does not supply its eta
+reduction. The action selects no canonical collar lift and the nontrivial Hopf
+bundle has no full-base lift; the degree-one
+eta sector is non-basic, its `p=8` action does not close under fiber averaging,
+and reduction requires a boundary-domain-dependent Dirichlet-to-Neumann
+operator. This is Outcome C, not a unique completion postulate. BHSM 1.0 remains
+incomplete and the physical downstream gates remain closed.
+
+## v14.30 full-recall and full-preimage result
+
+The corpus already contains the exact triality `3/bar3` branching, Hopf fiber
+modes, conditional eta-knot polarization, normalized zero-mode localization,
+conditional opposite collar chiralities, and generic DtN/Schur machinery.
+This narrows rather than closes the completion gate. No authoritative work
+identifies the triality triplet bundle and connection with the independent
+physical color bundle, and no work solves the degree-one full-preimage parent
+background with a self-adjoint cap domain. Accordingly the v14.29 local action
+does not match the retained parent as a derived low-energy action. BHSM 1.0 and
+every downstream physical gate remain open.
+
+## v14.83 manual-campaign recovery update
+
+The v14.31--v14.83 manual campaign is incorporated without promoting its
+provisional bridges. The reduced two-stratum differential-shear calculation
+closes the susceptibility sign gate and gives `chi_2=2/(3R^2)` for equal
+inertias. It does not close the action-owned full-preimage kinetic reduction,
+physical shear covariance, degree-one stationary background, complete
+operator domain/Hessian, noncentral charged current, or observable gates.
+Marks III and IV remain not reached and BHSM 1.0 remains incomplete.
+
+Exact next object:
+`ACTION_OWNED_FULL_PREIMAGE_TWO_STRATUM_KINETIC_REDUCTION_WITH_DERIVED_LAYER_INERTIAS_SHEAR_COVARIANCE_AND_DEGREE_ONE_SELF_ADJOINT_BACKGROUND`.
+
+## v14.91 degree-one Lorentzian full-preimage result
+
+The parent degree is the global M8 spatial map `S7->S7` in `pi7(S7)=Z`, not
+an M4 FR charge and not an independent degree on either Hopf cap. The retained
+M8 P1--eta block has an exact compact round identity-map stationary point on
+the existing-coefficient locus `X^3=5 kappa1` and
+`kappa0=(15/4)kappa1 X`. Smooth cap transmission closes the M8 internal Green
+form and symplectic flux. The locus is not selected by retained axioms, and the
+independent M4 metric/gauge/Dirac sector has no action-owned critical-value or
+bundle intertwiner with M8. Consequently the full stationary stratified
+background, physical projector, relative tensor spectrum, cap inertias, and
+coexact L2 mixed vertex remain open. BHSM 1.0 is not complete.
+
+## v14.92 cross-level critical-value result
+
+The historical construction is a genuine M8-to-M5 Hopf fiber pushforward on
+an invariant/equivariant retained subcategory followed by M5-to-M4 equatorial
+trace and cap response. It is a valid constrained KKT correspondence action,
+not a full critical-value derivation of the intrinsic M4 theory from M8. The
+generic envelope, Schur-complement, adjoint, and cotangent-lift identities are
+exactly verified, but their physical hypotheses fail in the retained field
+ledger: the Hopf `Sp(1)` connection is explicitly not the physical gauge
+field, no common eta/color bundle map exists, and M8 has no parent Dirac field.
+The v14.45 Dirac domain remains valid foundational M4 collar data rather than
+an M8-derived mode. The v14.91 coefficient locus remains unselected, so the
+full stationary background and all downstream response objects remain open.
+
+Exact next object:
+`FOUNDATIONAL_COMMON_PARENT_GAUGE_SPIN_BUNDLE_ACTION_WITH_PHYSICAL_SU3_AND_DIRAC_CRITICAL_MODES_AND_NO_DOUBLE_COUNTING_M8_TO_M5_TO_M4_VARIATIONAL_SYMPLECTIC_REDUCTION_FUNCTOR`.
+## v14.93 nonlinear encapsulation prerequisite result
+
+The exact v14.91 identity seed has passed a first nonlinear kill screen but is
+not an encapsulated state. In the degree-one equivariant radial sector its
+physical quadratic form has spectrum `n(n+8)` and its unique conformal zero
+mode has a positive exact quartic lift. This kills a nearby radial
+encapsulated bifurcation, not the full coupled nonhomogeneous problem.
+
+Definition-of-done remains unmet: no localized nonlinear state, stability
+theorem about that state, isolated physical band, constant-rank smooth
+projector or internal mode bundle exists. Path A remains open without a valid
+terminal A--E outcome, and Path B is not activated.
+
+## v14.94 finite-time event prerequisite result
+
+The exact constraint-reduced round and Jensen P1 trajectories close the first
+controlled incoming-dynamics screen. Round is homogeneous-shape stable;
+Jensen has one global tachyon at all finite times. Neither has localized flux
+or a local threshold, and no nonlinear completion event follows. Outcome D is
+therefore established for the controlled retained sectors while general
+nonhomogeneous Path A remains open.
+
+Definition-of-done remains unmet: a constraint-solved nonhomogeneous incoming
+wave packet, physical quasilocal flux, local threshold, nonlinear completion,
+event energy accounting and selected completion class are still absent.
+
+## v15.0 Aether pregeometry prerequisite result
+
+The regular support endpoint remains at infinite Haar distance; no bounded
+coordinate chart or finite-action regular trajectory makes `upsilon=0`
+finitely accessible. A separate non-geometric core stratum is mathematically
+admissible as a conservative extension, and restriction to the regular
+stratum preserves all existing BHSM equations, domains, no-go results, and
+frozen predictions.
+
+Definition-of-done remains unmet. The associative invariant-matched event span,
+relative clock ratio, and clocked-generator energy map are conditional
+mathematical candidates, not outputs of the retained action. A physical core
+transition requires an action-owned pregeometric correspondence with a
+self-adjoint relative/boundary domain, selected parent invariants, clock
+calibration, and exact regular-theory recovery. Mark III and physical
+encapsulation remain not reached.
+
+## v15.1 dynamical-correspondence prerequisite result
+
+The universal relational first-order action, unitary transition kernel,
+self-adjoint Wentzell boundary theorem class, invariant commutant condition,
+conditional clock calibration, and exact identity-limit metric--eta recovery
+are now executable. Two inequivalent fixed integer-spectrum generators satisfy
+all closed gates, proving that those requirements do not select a physical
+event law.
+
+Definition-of-done remains unmet because the parent action still supplies no
+core-boundary Hilbert module, physical Wentzell/Calderon response, unique
+pregeometric generator, or stable reference cycle. No nontrivial physical
+core transition is derived.
+
+## v15.2 generator-selection prerequisite result
+
+Physical generator equivalence is now defined on the complete structured
+tuple rather than on a matrix representative alone. Structure-preserving
+unitaries are basis gauge, and positive generator scaling is a pre-clock
+reparameterization when process depth and the reference-cycle depth transform
+inversely. Uniform central shifts remain conditional on an action-owned
+projective/interference theorem.
+
+The v15.1 two-level witness is therefore reclassified as scale equivalent.
+The corrected fixed three-level pair `diag(0,1,2)` and `diag(0,1,3)` remains
+inequivalent after unitary, central-shift, and positive-scale quotients, so the
+admissibility conditions still do not select one generator class.
+
+Definition-of-done remains unmet more fundamentally: the retained action owns
+no pregeometric core Hilbert correspondence, trace pairing, core operator,
+core-boundary quadratic form, physical core Wentzell/Calderon block, or stable
+reference cycle. Consequently neither `K_A`, its physical equivalence class,
+nor `H_eff` is uniquely action-selected.
+
+## v15.3 harmonic microscopic-core prerequisite result
+
+The pregeometric firewall is now explicit: the core construction uses event
+composition, resonance spectra, and operator forms, never a core coordinate,
+metric, volume element, spatial integral, energy density, or preferred frame.
+The retained architecture derives an associative, identity-bearing,
+invariant-graded event-composition skeleton.
+
+That skeleton does not derive a dagger, positive state, C-star completion,
+GNS representation, trace pairing, closed invariant core Dirichlet form, or
+bounded geometry--core correspondence. Fixed positive `Z_2` and `Z_3`
+harmonic completions meet all present admissibility and exact-recovery gates
+but are inequivalent. They therefore prove a real selection obstruction and
+are not adopted as physical models.
+
+Definition-of-done remains unmet. Total-form self-adjointness is available
+only conditionally once the missing core and attachment data are selected;
+the physical boundary operator, event generator, harmonic-to-geometric
+reconstruction map, clock recurrence, and mass overtones are not action
+derived. Exact regular BHSM recovery remains unchanged.
+
+## v15.4 foundational event-algebra/state prerequisite result
+
+The event architecture now has a precise algebraic floor. Composable
+correspondences multiply categorically, noncomposable pairs become zero after
+linearization, composition is associative, and every event object has an
+identity. The physical morphism set, loop relations, and reversal functor are
+not selected.
+
+The strengthened fixed witnesses `M4(C[Z_2])` and `M4(C[Z_3])` both carry a
+valid reversal dagger, faithful positive states, GNS representations, and the
+same four-object BHSM incidence quotient. They remain star nonisomorphic with
+GNS ranks 32 and 48. Even cap reflection plus cyclic relabeling leaves
+continuous faithful invariant-state families.
+
+Definition-of-done remains unmet. Positivity, faithfulness, symmetry, and
+traciality do not select a physical foundational triple. No canonical map to
+the downstream regular finite algebra is derived, and Dirichlet-form
+existence does not imply uniqueness or generator selection.
+
+## v15.5 global master-closure prerequisite result
+
+Unique Actualization now supplies a strict authorial completion criterion, but
+the criterion is not itself a selection theorem. The simultaneous master
+constraint can be typed, yet its self-reconstruction map cannot be built: the
+physical reversible event category and loop spectrum are not action-derived,
+and neither the forward geometry--core emergence map nor the regular-to-core
+return functor exists.
+
+Even a strong joint state--dynamics condition is insufficient on its own.
+Every faithful witness state supports a primitive gapped detailed-balance
+reset semigroup with that state as unique invariant state, so continuous
+state--dynamics fixed-pair families remain unless the form or generator is
+independently action-owned.
+
+Definition-of-done remains unmet. The physical and gauge-quotiented master
+solution counts are undefined because there is no master map; clock, absolute
+scale, gauge normalization, scalar/topographic source, mass, mixing and
+encapsulation ownership also remain open. The next prerequisite is an
+action-derived primitive event reversal and loop spectrum on the four-object
+pregeometric category.
+
+## v15.6 Norman-cycle prerequisite result
+
+The recovered Norman formation--persistence--de-envelopment ontology is
+mathematically compatible with BHSM and now has explicit typed domains. The
+sigma=0 Hessian crossing is the action-owned onset condition and the
+relative-periodic/Floquet framework is the correct persistence theorem class.
+De-envelopment is a distinct forward map to an updated parent state; it is not
+formation's inverse or dagger.
+
+Definition-of-done remains unmet. The threshold does not construct the
+nonlinear formation map, no physical persistent orbit has been selected, and
+the action supplies no release condition, receiving parent domain, complete
+Noether ledger, or orphan-free transfer theorem. Thus the conditional
+parent-to-updated-parent composite is not a physical operator and has no
+legitimate loop spectrum or Floquet reconstruction. The master map, unique
+fixed point, clock, absolute scale, and regular ownership gates remain open.

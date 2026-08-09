@@ -1,0 +1,83 @@
+{
+  "action_ownership_audit": {
+    "G2_C3_odd_response_is_noncentral": false,
+    "Lambda85_has_fermionic_tensor_current": false,
+    "S8_has_local_chiral_fermion_current": false,
+    "current_action_fixes_channel_coefficients": false,
+    "foundational_M4_Dirac_current_family_kernel": "I3"
+  },
+  "allowed_foundational_extension": "an intrinsic M4 tensor-current/Yukawa functional may be adopted as new foundational effective data, but it must be labeled adopted unless its coefficients follow from a larger parent action",
+  "artifact": "BHSM_Peter_Weyl_tensor_current_contract_v14_53",
+  "minimum_current_structure": {
+    "mixed_action_variation": "Gamma_plus=delta^3 S/(delta W_plus delta bar(Psi_u,L) delta Psi_d,L)",
+    "projected_coefficients": "c_ij^(L,r)=<T_u e_i, P_u Gamma_plus[M_(L,r)] P_d T_d e_j>_common",
+    "rank_three_requirement": "at least three independent separable channels or one genuinely nonseparable extended kernel",
+    "raw_kernel": "K_ud=sum_(L,r)c^(L,r)M_(L,r)",
+    "required_noncentral_basis": "normalized Peter-Weyl tensors M_(L,r)",
+    "unitary_readout": "V=Pol(G_uu^(-1/2) K_ud G_dd^(-1/2))"
+  },
+  "validation": {
+    "connection_functional_calculus_not_sufficient": true,
+    "current_action_does_not_satisfy_contract": true,
+    "minimum_three_separable_channels": true,
+    "table_is_three_by_three": true
+  },
+  "version": "v14.53",
+  "weak_current_channel_table": {
+    "all_nine_have_nonzero_normalized_witnesses": true,
+    "column_order": [
+      "D0",
+      "D1",
+      "D2"
+    ],
+    "entries_minimal_L_r": [
+      [
+        [
+          0,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          -2
+        ]
+      ],
+      [
+        [
+          3,
+          3
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      [
+        [
+          5,
+          4
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          2,
+          2
+        ]
+      ]
+    ],
+    "row_order": [
+      "U0",
+      "U1",
+      "U2"
+    ]
+  }
+}

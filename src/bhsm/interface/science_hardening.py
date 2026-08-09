@@ -10,6 +10,7 @@ from typing import Any
 
 from .action_derivation_gates import build_action_derivation_report
 from .engine_invariants import build_engine_invariant_report
+from .current_program_status import status_payload as current_status_payload
 
 
 ROOT = Path(__file__).resolve().parents[3]
@@ -19,8 +20,9 @@ ENGINE_PHYSICS_BOUNDARY = (
 
 
 def engine_physics_status() -> dict[str, object]:
+    current = current_status_payload()
     return {
-        "version": "1.9",
+        "version": "15.7",
         "engine_validated_capabilities": [
             "high-throughput precision-gated four-vector coordinate transformations",
             "synthetic boundary-stress validation",
@@ -35,14 +37,18 @@ def engine_physics_status() -> dict[str, object]:
             "empirical validation of BHSM particle physics",
             "CMS, CERN, or ATLAS endorsement",
         ],
-        "physics_current_status": "integrated conditional Berger-Hopf boundary-mode framework",
+        "physics_current_status": {
+            "current_version": current["current_version"],
+            "primary_verdict": current["primary_verdict"],
+            "exact_next_object": current["exact_next_object"],
+            "FULL_BHSM_COMPLETE": current["FULL_BHSM_COMPLETE"],
+            "nonlinear_cycle_status": current["nonlinear_cycle_status"],
+        },
         "physics_open_blockers": [
-            "complete action derivations",
-            "transport theorems",
-            "physical normalization and unit maps",
-            "gauge/scalar normalization",
-            "physical neutrino mass closure",
-            "external runtime/export gates",
+            current["exact_next_object"],
+            "absolute scale",
+            "action-derived CKM and PMNS provenance",
+            "physical encapsulation event",
         ],
         "claim_boundaries": [
             ENGINE_PHYSICS_BOUNDARY,

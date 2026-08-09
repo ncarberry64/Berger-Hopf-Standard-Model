@@ -1,0 +1,40 @@
+{
+  "artifact": "BHSM_collective_fermion_vacuum_polarization_gate_v14_41",
+  "currently_missing": [
+    "normalized Path-B/FR one-knot Hilbert bundle",
+    "action-derived collective Weyl/Dirac principal symbol",
+    "compact-cap self-adjoint boundary and seam domain",
+    "matched relative tetrad and spin connection",
+    "vacuum state and zero-mode quotient",
+    "diffeomorphism-preserving regulator",
+    "renormalized gravitational counterterm prescription",
+    "sector-resolved up/down embeddings and stress-current matrix elements",
+    "two independently oriented CP-capable response channels"
+  ],
+  "effective_action": "Gamma_eff[beta]=S_ADM[beta]-log det D_collective[beta]+Gamma_counterterms",
+  "family_gate": "The live weak-family current remains I3.  A family-factorized collective operator produces a family-central vacuum polarization. A CKM-capable noncentral kernel requires action-derived inequivalent up/down embeddings before the determinant is evaluated.",
+  "quadratic_harmonic_form": "Gamma_eff^(2)=1/2 sum_(L,r,epsilon) [c_G lambda_L^shift+Pi_Lr^epsilon,ren] |beta_Lr^epsilon|^2",
+  "round_cap_thresholds": {
+    "L2": {
+      "normalized_classical_eigenvalue": 5,
+      "zero_crossing": "Pi_2^ren=-5 c_G/R^2"
+    },
+    "L3": {
+      "normalized_classical_eigenvalue": 12,
+      "zero_crossing": "Pi_3^ren=-12 c_G/R^2"
+    }
+  },
+  "status": "OPEN_NOT_NUMERICALLY_EVALUABLE",
+  "validation": {
+    "L2_threshold_formula": true,
+    "L3_threshold_formula": true,
+    "current_family_kernel_I3_does_not_by_itself_supply_noncentral_CKM_response": true,
+    "determinant_requires_regulator_and_counterterm_scheme": true,
+    "determinant_requires_self_adjoint_Dirac_domain": true,
+    "physical_polarization_not_invented": true,
+    "symmetric_vacuum_has_no_linear_coexact_tadpole_without_anomaly_or_source": true
+  },
+  "validation_passed": true,
+  "version": "v14.41",
+  "zero_crossing_condition": "min_eigenvalue(c_G O_shift+Pi_ren)=0 in L=2 or L=3"
+}

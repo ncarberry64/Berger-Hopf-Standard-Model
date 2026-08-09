@@ -1,5 +1,26 @@
 # BHSM in plain language
 
+## Current frontier (v15.7)
+
+BHSM assumes one all-encompassing parent surface and treats cavitation-like
+encapsulation as a response to local spacetime instability. It has not yet
+derived that event. The action must define a genuine local physical stability
+problem after constraints and gauge are removed, then show that its nonlinear
+response completes into an enclosure rather than relaxing back. An incoming
+wave, collision, or curvature concentration may drive the instability, but no
+single driver is required by the ontology.
+
+The author also proposes that spacetime formation was itself a scaled process:
+a white-hole origin event followed by plasma/acoustic-BAO evolution and cooled
+late-time cosmology, with analogous quantum-scale events when core energy is
+matched. This is a physical hypothesis for future action derivation, not a
+result currently proved by the repository.
+
+One well-controlled symmetric radial route has been tested and does not branch
+nearby. That negative result is valuable, but it does not rule out less
+symmetric or finite-size transitions. Full BHSM completion, absolute scale,
+action-derived flavor mixing, and empirical validation remain open.
+
 ## The one-minute version
 
 The Berger-Hopf Standard Model (BHSM) is a research program asking whether

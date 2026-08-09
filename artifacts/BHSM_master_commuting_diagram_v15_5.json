@@ -1,0 +1,60 @@
+{
+  "arrows": [
+    {
+      "source": "event_category",
+      "status": "DERIVED",
+      "target": "event_algebra"
+    },
+    {
+      "source": "event_algebra",
+      "status": "BLOCKED",
+      "target": "dagger_and_state"
+    },
+    {
+      "source": "dagger_and_state",
+      "status": "CONDITIONAL",
+      "target": "GNS"
+    },
+    {
+      "source": "GNS",
+      "status": "NONUNIQUE",
+      "target": "Dirichlet_form"
+    },
+    {
+      "source": "Dirichlet_form",
+      "status": "NONUNIQUE",
+      "target": "event_generator"
+    },
+    {
+      "source": "event_generator",
+      "status": "BLOCKED",
+      "target": "geometry_core_correspondence"
+    },
+    {
+      "source": "geometry_core_correspondence",
+      "status": "BLOCKED",
+      "target": "boundary_relation"
+    },
+    {
+      "source": "boundary_relation",
+      "status": "BLOCKED",
+      "target": "BHSM_reconstruction"
+    },
+    {
+      "source": "BHSM_reconstruction",
+      "status": "CONDITIONAL",
+      "target": "regular_BHSM"
+    },
+    {
+      "source": "regular_BHSM",
+      "status": "BLOCKED",
+      "target": "reconstructed_event_category"
+    }
+  ],
+  "artifact": "BHSM_master_commuting_diagram_v15_5",
+  "diagram_commutes": "UNDEFINED_MISSING_UPSTREAM_STRUCTURE",
+  "feedback_chain_complete": false,
+  "forward_chain_complete": false,
+  "master_map_constructible": false,
+  "version": "v15.5"
+}

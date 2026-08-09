@@ -1,6 +1,30 @@
 # BHSM Documentation Index
 
-## Current v11.3 campaign
+## Current v15.7 campaign
+
+- [Nonlinear Norman-cycle BVP and public-main synchronization](BHSM_NONLINEAR_NORMAN_CYCLE_BVP_AND_MAIN_SYNC_V15_7.md)
+- [Current machine/human status](current_bhsm_status.md)
+- [Reviewer reproduction guide](reviewer_reproduction_guide.md)
+- [Artifact index](../ARTIFACT_INDEX.md)
+
+Current result: one parent surface and local-instability-to-encapsulation
+causality are author ontology. The retained action does not derive the
+constraint-reduced local physical stability operator/domain or the nonlinear
+selection of encapsulation over restoration. `FULL_BHSM_COMPLETE = FALSE`.
+
+Exact next object:
+`ACTION_DERIVED_LOCAL_SPACETIME_INSTABILITY_ON_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_REDUCED_PHYSICAL_STABILITY_LOSS_COMMON_SELF_ADJOINT_DOMAIN_AND_NONLINEAR_ENCAPSULATION_CONTINUATION`.
+
+## Historical v11.5 campaign
+
+- [Conditional flavor-action assembly](BHSM_FLAVOR_ACTION_COMPLETION_v11_5.md)
+- [2026-08-03 Downloads progress review](BHSM_DOWNLOAD_PROGRESS_REVIEW_2026-08-03.md)
+- [Archived manual research packets](research_packets/2026-08-03/)
+
+Current verdict: `BHSM_FLAVOR_ACTION_CANDIDATES_ASSEMBLED_WITH_CHARGED_CURRENT_PROVENANCE_GATE_OPEN`.
+Next object: `PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL`.
+
+## Historical v11.3 campaign
 
 - [Reciprocal core-surface attachment](BHSM_RECIPROCAL_CORE_SURFACE_ATTACHMENT_v11_3.md)
 - [Attachment character and current](BHSM_ATTACHMENT_CHARACTER_AND_CURRENT_v11_3.md)
@@ -237,3 +261,277 @@ The current minimal-action theory dictionary is documented in
 - [Release checklist](bhsm_v1_2_0_release_checklist.md)
 - [Institutional HEP handoff](institutional_hep_handoff_index.md)
 - [Citation guide](how_to_cite.md)
+<!-- BHSM_V14_31_TO_V14_33_CUMULATIVE -->
+## v14.31–v14.33 Path B continuation
+
+The three controlling reports document the foundational action, physical-topology correction, and full-preimage Hopf-smash transgression route.
+<!-- /BHSM_V14_31_TO_V14_33_CUMULATIVE -->
+<!-- BHSM_V14_34_HOPF_PHASE_FLAVOR -->
+## v14.34 Hopf-phase flavor
+
+See `BHSM_HOPF_PHASE_FLAVOR_CROSS_GRAM_V14_34.md` for the same-shell `c/s` result, single-phase no-go, multi-harmonic selection rules and Feshbach-dressed CKM route.
+<!-- /BHSM_V14_34_HOPF_PHASE_FLAVOR -->
+<!-- BHSM_V14_35_HOPF_PHASE_BIFURCATION -->
+## v14.35 Hopf-phase bifurcation
+
+See `BHSM_HOPF_PHASE_BIFURCATION_CP_V14_35.md` for the five-component support theorem, phase resonance, nonlinear tower gate and exact Hessian-bifurcation dependency.
+<!-- /BHSM_V14_35_HOPF_PHASE_BIFURCATION -->
+<!-- BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->
+## v14.36 degree-one phase-Hessian audit
+
+See `BHSM_DEGREE_ONE_PHASE_HESSIAN_SPECTRUM_V14_36.md` for the exact nonnegative phase-Hessian theorem, five-channel finite-box spectrum, and the relative-holonomy continuation gate.
+<!-- /BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->
+<!-- BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->
+## v14.37 relative-holonomy/full-shape Hessian audit
+
+See `BHSM_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN_V14_37.md` for the v12 holonomy Hessian no-go, the complete v13.1 surrogate tangent-sector spectra, and the exact mixed-block zero-crossing criterion.
+<!-- /BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->
+<!-- BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->
+## v14.38 Lambda85–eta mixed-Hessian audit
+
+See `BHSM_LAMBDA85_ETA_MIXED_HESSIAN_V14_38.md` for the homogeneous-character selection theorem, the exact zero-crossing result, the canonical C3 family-diagonality theorem, and the corrected nonhomogeneous continuation.
+<!-- /BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->
+<!-- BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->
+## v14.39 static eta/metric and Spin(4) source audit
+
+See `BHSM_STATIC_ETA_METRIC_SPIN4_SOURCE_V14_39.md` for the exact eta/metric mixed variation, static ADM source no-go, and the pivot to a self-consistent matter-sourced coexact shift.
+<!-- /BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->
+<!-- BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->
+## v14.40 matter-sourced Spin(4) multipole audit
+
+See `BHSM_MATTER_SOURCED_SPIN4_MULTIPOLE_V14_40.md` for the rigid-rotor L=1 theorem, diagonal-family r=0 theorem, static-Wilson source audit, and universality gate.
+<!-- /BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->
+<!-- BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->
+## v14.41 source-free relative-frame gate
+
+See `BHSM_SOURCE_FREE_RELATIVE_FRAME_V14_41.md` for the weighted Killing-square theorem, the exact round-cap L=2/L=3 spectrum, and the collective-fermion vacuum-polarization threshold contract.
+<!-- /BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->
+<!-- BHSM_V14_42_COLLECTIVE_DIRAC_VACUUM_POLARIZATION -->
+## v14.42 collective Dirac vacuum-polarization audit
+
+See `BHSM_COLLECTIVE_DIRAC_VACUUM_POLARIZATION_V14_42.md` for the action-ownership audit, compact Dirac domain, Kosmann stress vertex, filled-sea sign theorem, and renormalized `L=2,3` crossing contract.
+<!-- /BHSM_V14_42_COLLECTIVE_DIRAC_VACUUM_POLARIZATION -->
+<!-- BHSM_V14_43_MODULI_CLIFFORD_MATCHER_ZETA -->
+## v14.43 moduli/Clifford matcher-zeta audit
+
+See `BHSM_MODULI_CLIFFORD_MATCHER_ZETA_V14_43.md` for the FR-line Clifford-rank obstruction, local-field normalization ambiguity, unitary seam-transmission theorem, spinor recoupling audit, and exact free round-S3 zeta diagnostics.
+<!-- /BHSM_V14_43_MODULI_CLIFFORD_MATCHER_ZETA -->
+<!-- BHSM_V14_44_WORLDLINE_CLIFFORD_SPIN_LIFT -->
+## v14.44 worldline/Clifford spin-lift audit
+
+See `BHSM_WORLDLINE_CLIFFORD_SPIN_LIFT_V14_44.md` for the odd-field action-ownership no-go, conditional product superconnection, full-Clifford seam matcher theorem, parent spin-lift condition, and spinor branch-connectivity audit.
+<!-- /BHSM_V14_44_WORLDLINE_CLIFFORD_SPIN_LIFT -->
+<!-- BHSM_V14_45_FOUNDATIONAL_DIRAC_SPIN_GLUE -->
+## v14.45 foundational Dirac and spin-glue continuation
+
+See `BHSM_FOUNDATIONAL_DIRAC_SPIN_GLUE_V14_45.md` for the foundational fermion-action declaration, exact eta zero-mode pullback, global spin-bundle seam theorem, collective no-double-counting projector, and the full-rank L2/L3 renormalization obstruction.
+<!-- /BHSM_V14_45_FOUNDATIONAL_DIRAC_SPIN_GLUE -->
+
+<!-- BHSM_V14_83_MANUAL_RECOVERY -->
+## v14.83 manual campaign recovery
+
+See `BHSM_MANUAL_CAMPAIGN_RECOVERY_V14_83.md` for the 49-package provenance audit, independently checked Landau/DtN/core-softening results, final differential-shear theorem, and the current fail-closed completion gate.
+<!-- /BHSM_V14_83_MANUAL_RECOVERY -->
+
+<!-- BHSM_V14_84_CAP_INERTIA_OPERATOR -->
+## v14.84 full-preimage cap-inertia operator theorem
+
+See `BHSM_FULL_PREIMAGE_CAP_INERTIA_OPERATOR_THEOREM_V14_84.md` for the exact
+noncommuting operator parallel-sum identity, reflection intertwining theorem,
+conditional `nu=1/4` result, ADM-shift exclusion, and four sequential gates.
+<!-- /BHSM_V14_84_CAP_INERTIA_OPERATOR -->
+
+<!-- BHSM_V14_85_STATIONARY_TRANSPORT_NO_GO -->
+## v14.85 Norman/BHSM recall and stationary transport no-go
+
+See `BHSM_NORMAN_FULL_RECALL_AND_STATIONARY_TRANSPORT_NO_GO_V14_85.md` for the
+Norman/BHSM source reconciliation, pure-repartition inertia no-go,
+time-symmetric Brown--York momentum theorem, present-branch zero-transport
+evaluation, and sourced relative-periodic reopening condition.
+<!-- /BHSM_V14_85_STATIONARY_TRANSPORT_NO_GO -->
+
+<!-- BHSM_V14_86_LONGITUDINAL_COEXACT_GATE -->
+## v14.86 longitudinal-threading/coexact-rotation gate
+
+See `BHSM_LONGITUDINAL_THREADING_COEXACT_ROTATION_GATE_V14_86.md` for the
+recovered v6.18 reflection-odd source, exact Hodge separation theorem,
+nine-dimensional representation claim boundary, reflection-equivariant
+response theorem, and eta/Dirac coexact-current continuation object.
+<!-- /BHSM_V14_86_LONGITUDINAL_COEXACT_GATE -->
+
+<!-- BHSM_V14_87_ETA_LEGENDRE_CURRENT_GATE -->
+## v14.87 eta relative-periodic Legendre/current gate
+
+See `BHSM_ETA_RELATIVE_PERIODIC_LEGENDRE_CURRENT_GATE_V14_87.md` for the
+exact Path-B velocity Legendre spectrum, pointwise kinetic kill screen,
+zero-momentum current theorem, conditional sourced L2 coexact resolvent, and
+the sharpened charge/exchange-sector blocker.
+<!-- /BHSM_V14_87_ETA_LEGENDRE_CURRENT_GATE -->
+
+<!-- BHSM_V14_88_ACTION_SELECTED_CHARGE_SCHUR_GATE -->
+## v14.88 action-selected charge/current-shape Schur gate
+
+See `BHSM_ACTION_SELECTED_CHARGE_CURRENT_SHAPE_SCHUR_GATE_V14_88.md` for the
+charge-sector and FR selection audit, exact fixed-charge Routh reduction,
+general common-domain Schur Hessian, round Spin(4) kill screen, and conserved
+exchange-current continuation object.
+<!-- /BHSM_V14_88_ACTION_SELECTED_CHARGE_SCHUR_GATE -->
+
+<!-- BHSM_V14_89_DRIVER_BHSM_EXCHANGE_TRACTION_NO_GO -->
+## v14.89 driver--BHSM exchange/traction no-go
+
+See `BHSM_DRIVER_BHSM_EXCHANGE_TRACTION_NO_GO_V14_89.md` for the exhaustive
+driver-coupling provenance audit, decoupled Ward theorem, tangential-traction
+and Hodge/Spin(4) kill screens, v14.83 bridge disposition, and foundational
+driver-sector continuation object.
+<!-- /BHSM_V14_89_DRIVER_BHSM_EXCHANGE_TRACTION_NO_GO -->
+
+<!-- BHSM_V14_90_INTRINSIC_DYNAMICAL_MOMENTUM_GATE -->
+## v14.90 intrinsic full-preimage dynamical momentum gate
+
+See `BHSM_INTRINSIC_FULL_PREIMAGE_DYNAMICAL_MOMENTUM_GATE_V14_90.md` for the
+Lorentzian canonical-variable audit, metric-velocity/shift separation,
+homogeneous cap-relative momentum theorem, dynamical response kernel, and
+degree-one coupled symplectic-BVP continuation object.
+<!-- /BHSM_V14_90_INTRINSIC_DYNAMICAL_MOMENTUM_GATE -->
+
+<!-- BHSM_V14_91_DEGREE_ONE_LORENTZIAN_PHASE_SPACE_GATE -->
+## v14.91 degree-one Lorentzian full-preimage phase-space gate
+
+See `BHSM_DEGREE_ONE_LORENTZIAN_FULL_PREIMAGE_PHASE_SPACE_V14_91.md` for the
+global M8 degree provenance, exact conditional round identity-map background,
+Hopf cap/seam smooth-transmission domain, canonical field ledger, and the
+full-coupled M8/M4 variational-ownership obstruction.
+<!-- /BHSM_V14_91_DEGREE_ONE_LORENTZIAN_PHASE_SPACE_GATE -->
+
+<!-- BHSM_V14_92_CROSS_LEVEL_CRITICAL_VALUE_FUNCTOR_GATE -->
+## v14.92 cross-level critical-value functor gate
+
+See `BHSM_LORENTZIAN_CROSS_LEVEL_CRITICAL_VALUE_FUNCTOR_V14_92.md` for the
+historical M8-to-M5-to-M4 provenance, exact conditional KKT/envelope/Schur and
+cotangent-lift theorems, and the proof that the retained theory has no physical
+SU3 parent connection or M8 Dirac field from which to instantiate the full
+gauge/Dirac critical-value functor.
+<!-- /BHSM_V14_92_CROSS_LEVEL_CRITICAL_VALUE_FUNCTOR_GATE -->
+
+<!-- BHSM_V14_93_NONLINEAR_ENCAPSULATED_STATE_SPECTRAL_BAND_GATE -->
+## v14.93 nonlinear encapsulated-state spectral-band gate
+
+See `BHSM_NONLINEAR_ENCAPSULATED_STATE_SPECTRAL_BAND_GATE_V14_93.md` for the
+exact compact virial audit, degree-one equivariant radial Hessian theorem,
+positive conformal quartic lift, nonlinear resonance ledger, and the fail-closed
+state/band/projector status. No new field, terminal Path-A verdict, color,
+Dirac, particle or completion claim is introduced.
+<!-- /BHSM_V14_93_NONLINEAR_ENCAPSULATED_STATE_SPECTRAL_BAND_GATE -->
+
+<!-- BHSM_V14_94_LOCAL_ENVIRONMENT_FINITE_TIME_ENCAPSULATION_GATE -->
+## v14.94 local-environment finite-time encapsulation gate
+
+See `BHSM_LOCAL_ENVIRONMENT_FINITE_TIME_ENCAPSULATION_GATE_V14_94.md` for the
+action-owned environment audit, exact constraint-satisfying round/Jensen
+incoming controls, time-dependent reduced physical operator, five-mechanism
+instability screen, converged finite-time propagator, and Outcome-D event
+boundary. No external environment, nonlinear completion, particle, color,
+Dirac or Path-B promotion is introduced.
+<!-- /BHSM_V14_94_LOCAL_ENVIRONMENT_FINITE_TIME_ENCAPSULATION_GATE -->
+
+<!-- BHSM_V15_0_AETHER_PREGEOMETRIC_PARENT_CALCULUS -->
+## v15.0 Aether pregeometric parent calculus
+
+See `BHSM_AETHER_PREGEOMETRIC_PARENT_CALCULUS_V15_0.md` for the exact Haar
+barrier theorem, core-nonidentification gate, conservative stratified
+extension, operator/domain reconstruction predicate, emergent distance and
+conditional clock/energy maps, associative abstract encapsulation span,
+invariant matching, low-energy recovery, and preferred-frame firewall.
+
+The result is Outcome B: the parent stratification is mathematically
+compatible, but a finite core transition still requires an action-owned
+pregeometric correspondence law. No Aether existence, physical transition,
+spacetime-emergence, particle, or completion claim is introduced.
+<!-- /BHSM_V15_0_AETHER_PREGEOMETRIC_PARENT_CALCULUS -->
+
+<!-- BHSM_V15_1_AETHER_DYNAMICAL_CORRESPONDENCE -->
+## v15.1 Aether dynamical correspondence
+
+See `BHSM_AETHER_DYNAMICAL_CORRESPONDENCE_V15_1.md` for the universal
+relational action and unitary kernel, exact self-adjoint relative-boundary
+theorem class, invariant commutant and clock calibration, symbolic regular
+metric--eta recovery, and discrete generator nonuniqueness theorem.
+
+The structural dynamical class closes, but the physical generator,
+core-boundary Hilbert module, physical Wentzell/Calderon blocks, and stable
+reference clock remain unselected by the retained action.
+<!-- /BHSM_V15_1_AETHER_DYNAMICAL_CORRESPONDENCE -->
+
+<!-- BHSM_V15_2_AETHER_GENERATOR_SELECTION -->
+## v15.2 physical Aether-generator selection
+
+See `BHSM_AETHER_PHYSICAL_GENERATOR_SELECTION_V15_2.md` for the physical
+equivalence quotient, central-shift and pre-clock scaling gates, corrected
+three-sector nonuniqueness theorem, core Hilbert-module ownership audit,
+boundary-action selection test, Schur/Feshbach route, invariant commutant,
+composition gate, and joint generator/clock analysis.
+
+The result is Outcome F. Existing BHSM classifies self-adjoint correspondence
+laws but does not contain the pregeometric core-boundary quadratic form needed
+to select a physical generator, boundary response, or stable clock.
+<!-- /BHSM_V15_2_AETHER_GENERATOR_SELECTION -->
+
+<!-- BHSM_V15_3_AETHER_MICROSCOPIC_CORE_ACTION -->
+## v15.3 harmonic microscopic Aether-core action
+
+See `BHSM_AETHER_MICROSCOPIC_CORE_ACTION_V15_3.md` for the no-spacetime-core
+firewall, harmonic event-algebra audit, positive representation and trace
+obstruction, fixed cyclic resonance nonuniqueness theorem, conditional KLMN
+total-form analysis, boundary-variation gate, and reconstruction/clock audit.
+
+The result is Outcome G. Harmonic and spectral mathematics provide an
+admissible pregeometric language, but the retained BHSM action does not select
+the dagger, positive state, representation, closed Dirichlet form, or bounded
+geometry--core correspondence needed to turn that language into a physical
+microscopic action.
+<!-- /BHSM_V15_3_AETHER_MICROSCOPIC_CORE_ACTION -->
+
+<!-- BHSM_V15_4_AETHER_EVENT_ALGEBRA_STATE -->
+## v15.4 foundational event algebra, state, and GNS selection
+
+See `BHSM_AETHER_FOUNDATIONAL_EVENT_ALGEBRA_STATE_V15_4.md` for the derived
+category product, conditional reversal dagger, explicit positive/faithful
+state cones, automorphism-invariance audit, pointed GNS construction, and the
+incidence-compatible `Z_2/Z_3` kill screen.
+
+The result is Outcome G with an Outcome-H refinement. Both finite dagger
+groupoids reconstruct the same BHSM incidence grammar but remain star
+nonisomorphic, while strengthened symmetry conditions leave continuous
+faithful state families. A new action-derived reversal, loop-spectrum, and
+state-selection principle is required.
+<!-- /BHSM_V15_4_AETHER_EVENT_ALGEBRA_STATE -->
+
+<!-- BHSM_V15_5_GLOBAL_MASTER_CLOSURE -->
+## v15.5 global pregeometric master closure
+
+See `BHSM_GLOBAL_PREGEOMETRIC_MASTER_CLOSURE_V15_5.md` for the typed master
+constraint, complete dependency/feedback audit, state--dynamics reset-semigroup
+no-selection theorem, `Z_2/Z_3` master kill screen, strict physical-solution
+count, and clock/scale/regular-action ownership review.
+
+The result is Outcome G: the self-reconstruction map cannot be constructed.
+The first absent arrow is the action-derived primitive event reversal and loop
+spectrum. Physical and gauge-quotiented master-solution counts are undefined,
+and full BHSM completion remains false.
+<!-- /BHSM_V15_5_GLOBAL_MASTER_CLOSURE -->
+
+<!-- BHSM_V15_6_NORMAN_CYCLE_MASTER_CLOSURE -->
+## v15.6 Norman-cycle master closure
+
+See `BHSM_NORMAN_CYCLE_MASTER_CLOSURE_V15_6.md` for the typed
+formation--persistence--de-envelopment cycle, the proof that release is not
+automatically a dagger or inverse, the parent invariant ledger, conditional
+primitive-loop and Floquet reconstruction audits, Z2/Z3 full-cycle kill
+screen, and strict 30-condition completion gate.
+
+The Norman ontology is consistent with BHSM, but the nonlinear formation map,
+selected persistent orbit, and de-envelopment receiving law are not jointly
+action-derived. The cycle is therefore not a physical operator and full BHSM
+completion remains false.
+<!-- /BHSM_V15_6_NORMAN_CYCLE_MASTER_CLOSURE -->

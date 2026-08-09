@@ -1,0 +1,50 @@
+{
+  "Index_D_rel": null,
+  "J_CKM_from_eta_orientation": null,
+  "K_ud_from_eta_projector_holonomy": null,
+  "artifact": "BHSM_eta_orientation_chirality_flavor_audit_v14_0",
+  "boundary_Dirac_operator": null,
+  "chiral_exact_next_object": "ACTION_DERIVED_ORIENTED_BOUNDARY_DIRAC_OPERATOR_WITH_COMPUTED_INDEX_OR_ETA_ASYMMETRY",
+  "chiral_status": "CONDITIONAL_WEYL_NORMAL_FORM_ONLY",
+  "eta_invariant": null,
+  "family_centrality": {
+    "bundle_factorization": "E_color tensor C3_family",
+    "family_commutator_norm": 0.0,
+    "projector_connection_action": "A_color^P tensor I3",
+    "validation": {
+      "acts_as_identity_on_C3_family": true,
+      "no_noncentral_up_down_current_generated": true,
+      "projector_holonomy_unitary": true,
+      "zero_orientation_curvature_zero": true,
+      "zero_orientation_family_current_I3": true
+    },
+    "validation_passed": true,
+    "zero_orientation_limit": "du_eta=0 => F^P=0 and J_weak,family=I3"
+  },
+  "flavor_exact_next_object": "PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL",
+  "orientation_reversal": {
+    "curvature_identity": "F^P(-u,-du)=F^P(u,du)^*",
+    "forward_degree": "+1",
+    "physical_interpretation": "orientation reversal is the conjugate topological branch, not a passive external-frame rotation",
+    "projector_identity": "Pi_10(-u)=Pi_01(u)=Pi_10(u)^*",
+    "reversed_degree": "-1",
+    "validation": {
+      "curvature_conjugates": true,
+      "degree_plus_and_minus_are_distinct_topological_components": true,
+      "orientation_branch_is_degree_branch_not_basis_sign": true,
+      "projector_exchange": true
+    },
+    "validation_passed": true
+  },
+  "validation": {
+    "CKM_kernel_not_inserted": true,
+    "CKM_orientation_identity_not_claimed_without_kernel": true,
+    "boundary_Dirac_operator_absent": true,
+    "conjugate_color_branch_derived": true,
+    "external_preferred_frame_not_used": true,
+    "family_central_no_go_preserved": true,
+    "index_or_eta_invariant_not_computed": true
+  },
+  "validation_passed": true,
+  "version": "v14.0"
+}

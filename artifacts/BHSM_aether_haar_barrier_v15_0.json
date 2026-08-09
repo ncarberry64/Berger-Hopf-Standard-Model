@@ -1,0 +1,41 @@
+{
+  "bounded_coordinate": "z=q_D/(lambda_D+q_D)",
+  "bounded_coordinate_limit": 1.0,
+  "coordinate_compactification_changes_physical_distance": false,
+  "distance_formula": "d(u,v)=lambda_D*abs(log(u/v))",
+  "distance_to_endpoint": "infinite",
+  "finite_event_regular_trajectory_gate": "For finite exterior duration and finite regular Haar kinetic action, Cauchy--Schwarz bounds path length by a finite number; the infinite-distance endpoint cannot be reached.",
+  "high_precision_witness": {
+    "distances_to_one": [
+      "2.3025850929940456840179914546843642076011014886287729760333279009675726096773525",
+      "4.6051701859880913680359829093687284152022029772575459520666558019351452193547050",
+      "9.2103403719761827360719658187374568304044059545150919041333116038702904387094100",
+      "18.420680743952365472143931637474913660808811909030183808266623207740580877418820",
+      "36.841361487904730944287863274949827321617623818060367616533246415481161754837640",
+      "73.682722975809461888575726549899654643235247636120735233066492830962323509675280"
+    ],
+    "exponents": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32
+    ]
+  },
+  "metric": "ds_D^2=lambda_D^2*dupsilon^2/upsilon^2",
+  "metric_completion_contains_upsilon_zero_at_finite_distance": false,
+  "new_parameter_introduced": false,
+  "option_A_finite_accessibility": false,
+  "physical_distances_at_z=1-delta": [
+    1.0,
+    3.0,
+    7.0,
+    15.0
+  ],
+  "proof": "Every smooth reparameterization pulls back the same line element; its length integral is invariant. A bounded chart can place the ideal endpoint at a finite coordinate value but the pulled-back metric coefficient remains nonintegrable there.",
+  "regular_domain": "0<upsilon<=1",
+  "support_depth": "q_D=-lambda_D*log(upsilon)",
+  "theorem": "HAAR_BARRIER_THEOREM",
+  "version": "v15.0"
+}

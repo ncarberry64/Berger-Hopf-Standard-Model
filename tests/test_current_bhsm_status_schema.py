@@ -3,6 +3,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+from bhsm.interface.aether_nonlinear_norman_cycle_bvp_v15_7 import EXACT_NEXT_OBJECT, PRIMARY_VERDICT
+
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -13,9 +15,9 @@ def test_current_bhsm_status_json_schema() -> None:
     assert status["candidate_architecture_complete"] is True
     assert status["full_bhsm_proven"] is False
     assert status["standard_model_fully_derived"] is False
-    assert status["current_version"] == "v11.3"
-    assert status["current_exact_verdict"] == "BHSM_RECIPROCAL_ATTACHMENT_ACTION_AND_CURRENT_DERIVED_WITH_THREE_MODE_DOMAIN_CONDITIONAL"
-    assert status["next_exact_object"] == "ACTION_NORMALIZED_CORE_WALL_RESPONSE_GRAM_HESSIAN_ON_COMMON_ATTACHMENT_DOMAIN"
+    assert status["current_version"] == "v15.7"
+    assert status["current_exact_verdict"] == PRIMARY_VERDICT
+    assert status["next_exact_object"] == EXACT_NEXT_OBJECT
     assert status["frozen_predictions_changed"] is False
     assert status["official_predictions_changed"] is False
 

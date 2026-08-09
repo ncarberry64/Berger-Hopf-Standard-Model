@@ -1,6 +1,230 @@
-# Current BHSM Status
+# Current BHSM status
 
-## v11.3 authoritative reciprocal-attachment status
+Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a completed replacement of the Standard Model. The program goal remains replacement by derivation, with the Standard Model retained as the preserved infrared layer until that derivation is complete.
+
+## v15.7 nonlinear Norman-cycle BVP
+
+The v15.7 audit attempts the first irreducible gate of the v15.6 cycle BVP.
+One all-encompassing parent surface and local spacetime instability causing
+cavitation/encapsulation are author ontology; the problem is its local
+dynamical state, not selection among parent universes.
+The retained action defines the general conditional operator
+
+`H_sigma^(0) = -nabla_A(Z_0 nabla^A) + A_0 + sum Xi`
+
+and therefore a formal stability criterion. It does not derive an
+action-compatible localization, constraint-reduced physical local stability
+operator, or common self-adjoint domain. Nor does it determine whether a local
+instability restores the parent configuration or completes nonlinearly into an
+encapsulated state. A packet is a possible driver/witness, not a fundamental
+ontology-level requirement.
+
+The v14.93 local theorem is preserved: the unique equivariant radial
+conformal zero is a zero mode without cavitation (`ZERO_MODE_WITHOUT_CAVITATION`): it has zero cubic coefficient and quartic coefficient
+`27*pi*X^4/128 > 0`, hence no nearby radial bifurcation. Nonhomogeneous and
+finite-amplitude branches remain open.
+
+The white-hole-origin to plasma/acoustic-BAO to cooled-cosmology sequence and
+analogous core-energy-matching quantum recurrence are underived author
+hypotheses. Consequently formation is undefined; persistence, de-envelopment, the event
+Noether ledger, physical monodromy, loop spectrum, Floquet reconstruction,
+and master reclosure are not reached. De-envelopment remains a forward map to
+an updated parent and is neither formation's inverse nor dagger.
+
+Exact next object:
+`ACTION_DERIVED_LOCAL_SPACETIME_INSTABILITY_ON_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_REDUCED_PHYSICAL_STABILITY_LOSS_COMMON_SELF_ADJOINT_DOMAIN_AND_NONLINEAR_ENCAPSULATION_CONTINUATION`.
+
+`FULL_BHSM_COMPLETE = FALSE`; master-solution counts remain
+`UNDEFINED_MISSING_UPSTREAM_STRUCTURE`. Frozen predictions and official
+prediction logic are unchanged. See the [controlling report](BHSM_NONLINEAR_NORMAN_CYCLE_BVP_AND_MAIN_SYNC_V15_7.md).
+
+## v14.2 FR eta-knot color-matter completion audit
+
+V14.2 proves that the classical eta-wall stabilizer selector cannot source the
+retained independent SU3 Gauss law: every stabilizer generator satisfies
+`T^a u_eta=0`, hence `D_mu u_eta=partial_mu u_eta` and the conventional
+selector current vanishes. The selector fixes color polarization but is not
+the color-charged matter state.
+
+FR odd topology and the finite diagnostic inertia are preserved, but the
+physical one-particle Hilbert bundle is not derived. Normalized collective
+states, a complete moduli metric/measure, zero-mode quotient, regular domain,
+M4 gluing, retained-principal-bundle transition maps, and the physical
+`3/bar3` action remain open. FR parity does not derive a local Dirac action,
+and the existing S4 effective fermion term is not reused as eta provenance.
+
+Primary result:
+`BHSM_ETA_KNOT_TO_M4_COLOR_COUPLING_REMAINS_BLOCKED_AT_THE_COMMON_PARENT_CONNECTION_OR_EQUIVALENT_BUNDLE_GAUGING_THEOREM`.
+
+Exact next object:
+`ACTION_OWNED_ETA_EXTENSION_OF_THE_V7_1_PARENT_BUNDLE_REDUCTION_FUNCTOR_WITH_COMMON_SU3_CONNECTION_COLOR_AND_POLARIZATION_REPRESENTATIONS_AND_VARIATIONAL_GAUSS_LAW`.
+
+The conditional minimal-coupling variation is typed, but no eta-knot current
+or sourced independent Gauss equation is promoted. `A^P` remains restricted
+Berry geometry and `A` remains the independent physical connection; general
+color `c2` sectors and the Yang-Mills principal symbol are preserved. The
+boundary Dirac domain/index remains open, color is family central,
+`J_+^family=I3`, and no `K_ud`, physical `g3`, CKM, PMNS, or gauge-dressed BVP
+is emitted.
+
+## v14.1 eta-induced versus independent SU3 fork theorem
+
+The eta projector connection is reclassified as a restricted induced
+polarization-frame/Berry connection, not the full independent QCD connection.
+Its universal curvature planes and commutator closure can generate all eight
+su(3) directions, but the selector-derived spacetime curvature map has generic
+Jacobian rank 23 into 48 curvature components and linear rank zero at a
+constant selector. The composite `Tr(F_P^2)` action begins quartically in
+selector perturbations and has no quadratic gluon kinetic term at that vacuum.
+
+The universal polarization bundle over S6 has c1=c2=0. Naturality forces the
+M4 pullback bundle to have c2=0, so it cannot span general nonzero-instanton
+SU3 sectors. No action-owned wall-to-M4 extension or bundle isomorphism
+`Phi:E_P->E_color` exists. The retained Lambda85/Lambda54 matchers act on
+metric incidence data and do not currently instantiate a color connection
+constraint, transgression, or eta-sourced independent Gauss equation.
+
+The historical recovery corrects the earlier overstatement: v7.0-v7.1
+already owns a conditional parent associated-bundle and covariant reduction
+architecture, including normalized bulk-boundary measures, generic
+associated-mode transport, trace/pushforward maps, compatibility multipliers,
+and KKT variational intertwiners. The v8.8 current architecture also uses
+parent-induced associated-bundle connections. What remains unproved is that
+the eta polarization connection and independent M4 SU3 connection are the two
+associated projections of one action-owned parent connection.
+
+Branch decision:
+`BHSM_COMMON_PARENT_BUNDLE_AND_REDUCTION_ARCHITECTURE_ALREADY_EXISTS_CONDITIONALLY`.
+
+Projection-provenance verdict:
+`BHSM_ETA_POLARIZATION_AND_INDEPENDENT_M4_SU3_CONNECTION_HAVE_NOT_YET_BEEN_PROVEN_TO_BE_ASSOCIATED_PROJECTIONS_OF_THAT_PARENT_CONNECTION`.
+
+Exact continuation object:
+`RECOVERY_AND_ETA_EXTENSION_OF_THE_V7_0_V7_1_UNIFIED_PARENT_BUNDLE_CONNECTION_AND_COVARIANT_REDUCTION_FUNCTOR_TO_THE_M4_SU3_AND_ETA_POLARIZATION_ASSOCIATED_BUNDLES`.
+
+The boundary Dirac/index object remains a contract without a selected
+self-adjoint domain or evaluable APS invariant. Color remains identity on the
+C3 family factor, the weak family current remains I3, and no K_ud, physical
+CKM/PMNS value, physical g3, new field, or new continuous coefficient is
+introduced. Mark III and BHSM physical completion remain open.
+
+## v14.0 eta-knot action-completion result
+
+The recovered v13.1–v13.5 chain has been reproduced and integrated
+semantically. The retained p=2+p=8 eta action has a degree-one equivariant
+static solution satisfying the Derrick identity, a positive finite-interval
+radial Jacobi spectrum, and a finite collective inertia. Odd topological
+degree supports the discrete FR half-integer-spin sector. The oriented knot
+wall selects conjugate rank-three G2/SU3 polarizations, and its varying
+projector defines a nonzero su(3)-valued Grassmann curvature. Meson and baryon
+invariant tensors close exactly under that transport.
+
+The requested gauge-dressed singlet BVP is not yet an Euler–Lagrange problem
+of the retained action. Eta is owned by S8, while the independent SU3
+connection and its Yang–Mills density are owned by S4eff. The master-action
+ledger records the gauge bundle/measure pushforward as missing, the physical
+eta-current pullback is unresolved, and no density depends jointly on eta and
+the independent SU3 connection. A composite projector connection is not
+automatically the S4 connection varied by the action.
+
+Current verdict:
+`ETA_WALL_PROJECTOR_GEOMETRY_IS_DERIVED_BUT_GAUGE_DRESSED_BVP_IS_NOT_OWNED_BY_THE_CURRENT_ACTION`.
+
+Exact next action object:
+`ACTION_OWNED_ETA_WALL_TO_M4_SU3_BUNDLE_PULLBACK_AND_CONNECTION_IDENTIFICATION_WITH_VARIATIONAL_GAUSS_LAW`.
+
+Orientation reversal exchanges the conjugate color polarizations and
+complex-conjugates the projector curvature. This is a physical degree-branch
+reversal, not rotation relative to an external frame. It does not yet prove a
+chiral index because no oriented boundary Dirac operator or self-adjoint
+domain has been derived. The projector connection acts as identity on the
+independent C3 family factor; it cannot generate a family-noncentral up/down
+current. In the zero-orientation limit its curvature vanishes and the weak
+family current remains I3.
+
+The v11.5 spectral charged-current kernel is not inserted. Its unchanged
+flavor provenance gate remains
+`PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL`.
+No physical CKM/PMNS matrix, confinement theorem, gauge-dressed hadron
+solution, or unconditional flavor action is claimed. Frozen predictions and
+official prediction logic are unchanged.
+
+## v11.6 parent-action charged-current result
+
+The live effective four-dimensional action contains the left-handed quark
+current through `i bar(Psi) gamma^mu D_mu Psi`. Its mixed variation with
+respect to `W+`, `bar(u_L,i)`, and `d_L,j` has family factor `delta_ij`; the
+action-owned weak-basis kernel is therefore `I3`. The diagonal, commuting
+v11.4 up/down response pair leaves this result diagonal up to quark-field
+rephasings and common slot ordering.
+
+The v11.5 spectral kernel is not equivalent to this action current under
+allowed left/right diagonal quark rephasings: those rephasings preserve every
+entry magnitude, whereas `I3` has zero off-diagonal entries and the v11.5
+kernel does not.
+
+The uniqueness route also fails for the current declared axioms. A continuous
+family of rephasing-inequivalent unitary kernels remains full rank, closes the
+same SU(2) algebra, preserves the family-central neutral current, and has a
+nonzero CP invariant. Joint functional calculus of the commuting v11.4
+response operators is diagonal and cannot supply the missing orientation.
+
+Verdict:
+`BHSM_PARENT_ACTION_CURRENT_REDUCTION_BLOCKED_BY_UNFIXED_COMMON_DOMAIN_FAMILY_WAVEFUNCTION_MAP`.
+
+Exact next object:
+`ACTION_OWNED_COMMON_DOMAIN_UP_DOWN_FAMILY_WAVEFUNCTION_ORIENTATION_AND_CURRENT_PAIRING_MAP`.
+
+Mark I is reached. Mark II is reached on the selected finite-radius core
+branch. Mark III and Mark IV are not reached, and BHSM 1.0 is incomplete. The
+v11.5 kernel remains an author-selected no-fit action candidate; no physical
+CKM matrix or unconditional flavor action is claimed. RG transport,
+normalization, and empirical replacement tests remain downstream conditional
+evaluations and cannot replace the action-provenance gate. Frozen predictions
+are unchanged.
+
+## Preserved historical audit statements
+
+No numerical neutrino prediction or local FTL claim is made. No numerical closure is claimed by the legacy scalar/topographic audits. PO-BH-61 completes a derivation-source audit; it does not close the numerical profile problem. The full virtual loop/threshold source remains open.
+
+| Release invariant | Value |
+| --- | --- |
+| Official predictions changed | no |
+
+## Preserved full historical status ledger
+
+## v11.5 authoritative conditional flavor-action status
+
+V11.5 retains the reciprocal v11.3 attachment and fixes the packet's
+normalization conflict by keeping the canonical whitened coordinates
+`(q_C,q_W,x_D)`. On the selected finite-radius core branch, the KKT response
+has positive nondegenerate lower roots for the charged-family octaves
+`K=(0,35,99)`.
+
+The intrinsic M4 candidate contains an explicit minimal charged-lepton
+spectral Yukawa operator and conditional up/down spectral pair. The no-fit
+charged-current candidate uses only the frozen overlap eigenvalues and
+`S=1/(4*pi)` to define its three angles and CP phase. It is full rank and
+unitary, closes the SU(2) algebra, preserves family-central neutral currents,
+and has a nonzero Jarlskog invariant. No measured CKM quantity is used. These
+properties establish mathematical viability but not action provenance.
+
+Current verdict:
+`BHSM_FLAVOR_ACTION_CANDIDATES_ASSEMBLED_WITH_CHARGED_CURRENT_PROVENANCE_GATE_OPEN`.
+
+Exact next object:
+`PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL`.
+
+Mark I is reached. Mark II is reached on the selected finite-radius branch.
+Mark III remains open. The kernel must be recovered by explicit parent-action
+mixed second variation/current pairing or selected by a stated uniqueness
+theorem from declared BHSM axioms. Mark IV and BHSM 1.0 release completion remain open.
+The absolute charged-lepton triplet is a one-calibration conditional output;
+up/down absolute normalization, common-scheme transport, PMNS, and the final
+empirical replacement audit remain downstream conditional evaluations. None
+substitutes for the charged-current provenance gate. Frozen predictions are unchanged.
+
+## v11.3 historical reciprocal-attachment status
 
 The v7.0/v7.1 reduction owns the compatibility incidence pair
 `I_C=Q_H(G8)` and `I_W=g5`. V11.3 applies the adopted reciprocal attachment
@@ -14,7 +238,6 @@ the intrinsic enclosure neutral. The multiplier equation is
 signed scalar source and the diffeomorphism Ward identity closes total
 core/wall/depth transfer. Since the matcher contains no derivatives, its
 linear `A_D` and quadratic `A_D^2` contributions are exactly zero.
-
 The boundary presymplectic contribution is zero, and ordinary-core closure
 is finite on the constraint surface. The exact action-character matrix grows
 from rank 7/nullity 12 to rank 11/nullity 8, while the isolated attachment
@@ -62,7 +285,6 @@ directions. Boundary, core-finiteness, anomaly, and equivalence tests do not
 remove this kernel. The five directions are not one common normalization.
 
 ## v11.1 historical support-representation status
-
 The stratified action category and two fixed-character support lifts are now
 explicit. The representatives are not linearly naturally isomorphic, but this
 does not establish physical inequivalence: on the regular domain their ratio
@@ -638,7 +860,6 @@ physical response matrices remain undefined; the virtual-door factor
 remains diagnostic and alpha has no action attachment to mass incidence.
 
 RB-15 remains `BLOCKED_EXACT_OBJECT_PROVED`; RB-16 remains downstream.
-
 Current exact verdict:
 `BHSM_PROJECTED_SPECTRAL_MODE_STRESS_BLOCKED_BY_NO_ACTION_DERIVED_INTERTWINER_FROM_FROZEN_LEDGER_TO_LOCALIZED_ACTION_SPECTRUM`.
 
@@ -686,3 +907,676 @@ parent object closing all missing arrows, so no extended theory is adopted.
 
 Current exact verdict:
 `BHSM_GEOMETRY_ONLY_PARENT_ACTION_CANNOT_GENERATE_THE_REQUIRED_FR_CHIRAL_FLAVOR_CARRIER`.
+
+## v14.29 continuation override
+
+The v14.29 scientific proof audit reclassifies View 2 as Outcome B: `BHSM_VIEW2_MINIMALLY_GAUGED_ETA_ACTION_AND_COMPOSITE_THETA_CURRENT_ARE_CONSTRUCTED_CONDITIONALLY_BUT_FULL_MASTER_ACTION_OWNERSHIP_REMAINS_BLOCKED`. It validates the local candidate variation and no-new-vector Hessian, but the retained `M8` eta sector is not reduced to a common collar with the independent `M4` physical SU3 field, and no FR/Dirac matching theorem prevents double counting. Exact next object: `COMMON_DOMAIN_ETA_TO_PHYSICAL_SU3_ASSOCIATED_BUNDLE_REDUCTION_WITH_COLLAR_MEASURE_AND_VARIATIONAL_INTERTWINER`.
+
+## v14.30 common-domain reduction audit
+
+The requested common-domain theorem reaches Outcome C:
+`BHSM_COMMON_DOMAIN_ETA_TO_PHYSICAL_SU3_GAUGING_REMAINS_BLOCKED_OR_NONUNIQUE`.
+The arbitrary-`c2` associated `G2/SU3` bundle and pulled-back physical
+connection are valid, but v7.1 supplies no action-owned `R_eta`. It selects no
+canonical collar section, and its `c2=+1` Hopf bundle has no full-base section;
+a degree-one eta texture
+cannot be fiber-basic, the nonlinear `p=8` density is not closed under fiber
+averaging, and an exact Dirichlet-to-Neumann witness disproves naive
+trace/variation intertwining. The v14.29 local current remains conditional.
+FR/Dirac matching and all later physical gates remain ineligible. Exact next
+object:
+`ACTION_OWNED_SU3_EQUIVARIANT_ETA_BUNDLE_MORPHISM_AND_NONBASIC_HOPF_COLLAR_CRITICAL_VALUE_FUNCTOR_WITH_SELF_ADJOINT_NORMAL_DOMAIN`.
+
+## v14.30 full-recall and full-preimage matching result
+
+The complete repository/Downloads recall recovers an exact algebraic
+`8 -> 1+1+3+bar3` triality branching, the Hopf Peter--Weyl tower, conditional
+eta-wall color polarization, normalized eta zero-mode localization, a
+conditional two-sided chiral pair, and generic DtN/Schur reduction machinery.
+The v12 historical noncommuting up/down responses and CP-odd relative holonomy
+remain mechanism witnesses because their bridge normalization and mixed
+second variation are not action-owned.
+
+The missing result is not an algebraic SU3 representation. It is the
+action-owned equivariant identification of the triality `3/bar3` cocycle and
+connection with the pulled physical color bundle, together with a degree-one
+full Hopf-preimage stationary background and self-adjoint cap domain. Without
+those objects the physical gauged parent critical value, current, and
+coefficient matching are undefined. View 2 therefore reaches retained-action
+Outcome D without invalidating the local v14.29 candidate. Exact next object:
+`ACTION_OWNED_TRIALITY_THREE_ANTITHREE_TO_PHYSICAL_COLOR_BUNDLE_IDENTIFICATION_WITH_DEGREE_ONE_FULL_HOPF_PREIMAGE_STATIONARY_BACKGROUND_AND_SELF_ADJOINT_CAP_DOMAIN`.
+
+## v14.83 manual-campaign recovery and differential-shear result
+
+The 49 canonical v14.31--v14.83 packages are integrated. Their foundational
+postulates, conditional theorems, provisional bridges, and no-go results keep
+their original classifications. The final reduced two-stratum theorem gives
+
+\[
+H_{\rm eff}=H_0-\mu D_{\Delta u}^{\dagger}D_{\Delta u}
+\]
+
+and therefore a positive isotropic shear susceptibility
+\(\chi_2=8\nu/(3R^2)\), equal to \(2/(3R^2)\) for equal inertias. This closes
+the reduced sign gate, not the full physical driver. The action-owned strata,
+physical inertias, shear covariance, degree-one stationary full-preimage
+background, self-adjoint domain, and complete Hessian remain open.
+
+Nontrivial CKM/PMNS, physical Landau coefficients, family count, neutrino
+observables, and BHSM completion are not derived. Mark III is not reached and
+the USB is not eligible for synchronization.
+
+Exact next object:
+`ACTION_OWNED_FULL_PREIMAGE_TWO_STRATUM_KINETIC_REDUCTION_WITH_DERIVED_LAYER_INERTIAS_SHEAR_COVARIANCE_AND_DEGREE_ONE_SELF_ADJOINT_BACKGROUND`.
+
+## v14.84 full-preimage cap-inertia operator theorem
+
+The two strata are narrowed to the reflected domains of the existing v14.30
+full-preimage collar. No new fluid, field, or duplicate eta action is added.
+For positive cap inertia operators on the common reduced ell=2 trace space,
+the exact noncommutative parallel-sum identity gives
+
+\[
+H_{\rm eff}=H_0-\Delta A^\dagger
+(M_+^{-1}+M_-^{-1})^{-1}\Delta A,
+\]
+
+so the differential-shear contribution is negative semidefinite in the
+stiffness. Reflection covariance is properly an intertwining theorem; after
+canonical cap identification and round SO(4) reduction it conditionally
+derives `nu=1/4`, independent of the absolute inertia. The coefficient
+`chi_2=2/(3R^2)` still assumes normalized isotropic physical relative
+transport.
+
+The cap critical actions, positivity after complete constraint/gauge/ghost
+reduction, physical nonzero transport, degree-one self-adjoint background,
+and complete Hessian remain open. V14.41 excludes source-free ADM coordinate
+shift as the transport source. The exact next object is unchanged:
+
+`ACTION_OWNED_FULL_PREIMAGE_TWO_STRATUM_KINETIC_REDUCTION_WITH_DERIVED_LAYER_INERTIAS_SHEAR_COVARIANCE_AND_DEGREE_ONE_SELF_ADJOINT_BACKGROUND`.
+
+## v14.85 Norman/BHSM recall and stationary transport no-go
+
+The recalled Norman compact-S3 topographic EFT supplies useful harmonic
+intuition but introduces an independent scalar and continuous coefficients,
+so it is not a completion of the retained BHSM action. The historical BHSM
+closure report is superseded by later common-domain, mixed-Hessian, and
+action-provenance no-go results.
+
+On the presently retained reflection-symmetric stationary classical branch,
+pure cap motion is only a complementary-domain repartition and has zero total
+action inertia. The source-free non-Killing ADM shift, static eta/Yang--Mills
+momentum, and time-symmetric Brown--York momentum also vanish. Consequently
+`Delta A=0` and the v14.84 normalized shear operator evaluates to zero on this
+branch. Its positive-semidefinite sign theorem is preserved.
+
+The canonical exact next object is unchanged. The first executable subobject
+is now a sourced relative-periodic full-preimage solution with a nonzero
+conserved cap momentum difference, global constraint-reduced ell=2 inertia,
+degree-one self-adjoint domain, and complete Hessian. BHSM remains incomplete,
+Mark III is not reached, and USB synchronization is not eligible.
+
+Validation: the authoritative full suite passed `5983` tests in `791.84s`
+with exit code `0`; the 81-test source-chain suite passed; and all 40
+v14.46--v14.85 materializers were byte-identical on repeated runs. The earlier
+pre-commit run recorded `5968 passed, 15 failed` solely because the frozen
+source-integrity guards reject an untracked source module.
+
+## v14.86 longitudinal-threading/coexact-rotation gate
+
+The full recall recovers the v6.18 coefficient-free, action-owned,
+reflection-odd constrained-collar response. Its scalar ell=2 harmonic space
+has dimension nine, but the response one-form is exact/longitudinal. On the
+closed S3 it has zero vorticity, zero coexact projection, and zero Hodge
+pairing with the transverse relative-frame sector. It remains a valid scalar
+fold Schur response and cannot be relabeled as the v14.84 rotational
+transport.
+
+Reflection-equivariant linear response also proves that an even environmental
+scalar cannot directly source the required odd cap current; a parametric
+route would require a derived Floquet crossing and nonlinear branch
+selection. The rigid eta rotor supplies only L1 Killing content. The next
+executable no-new-field object is therefore an action-selected
+nonaxisymmetric relative-periodic eta or collective-Dirac solution with a
+reflection-odd coexact L2 cap momentum current and an explicit mixed
+variation into the full-preimage ell=2 Hessian.
+
+The canonical exact next object remains unchanged. Flavor provenance gates
+remain open, BHSM remains incomplete, Mark III is not reached, and USB
+synchronization is not eligible.
+
+Validation: the authoritative committed-state suite passed `5990` tests in
+`791.43s` with exit code `0`; the focused source-chain/status suite passed
+`168` tests; the final guard suite passed `90` tests; and all 41
+v14.46--v14.86 materializers exited `0` with deterministic output. Frozen,
+forbidden-claim, status, public-readiness, and precision audits passed.
+
+## v14.87 eta relative-periodic Legendre/current gate
+
+For the retained Lorentzian Path-B density, the exact eta velocity Legendre
+eigenvalues are `w(kappa1+X^3)` transversely and
+`w[kappa1+X^3-6X^2|D0 eta|^2]` parallel to the velocity. Thus positivity of
+the eta contribution to a periodic cap inertia is conditional on an explicit
+pointwise convexity cone and cannot be assumed before the periodic background
+is known.
+
+On the retained positive branch, zero pointwise canonical eta momentum is
+equivalent to `D0 eta=0` and forces zero eta spatial current, including its
+reflection-odd coexact L2 projection. If a nonzero current is supplied, the
+round reference sourced response is
+`beta_L2=(kappa_grav R^2/5)J_L2`, but this ADM response is not yet the
+physical shape transport without the canonical mixed variation.
+
+The source-free zero-momentum eta route is closed. The sharper open object is
+an action-selected nonzero reflected coexact L2 eta or collective-Dirac charge
+or exchange sector that satisfies the Legendre kill screen, global
+constraints, and common self-adjoint domain. BHSM remains incomplete, Mark
+III is not reached, and USB synchronization remains ineligible.
+
+Validation: the authoritative committed-state suite passed `6000` tests in
+`791.99s` with exit code `0`; the focused scientific/status chain passed `67`
+tests; the final guard suite passed `90` tests; and all 42 v14.46--v14.87
+materializers reproduced with zero tracked artifact difference. Frozen,
+forbidden-claim, status, public-readiness, precision and CLI audits exited
+`0`.
+
+## v14.88 action-selected charge/current-shape Schur gate
+
+The retained charge sectors have now been exhausted at the selection gate. The
+physical M4 S6 eta field has trivial relevant FR loop group because
+`pi4(S6)=0`. The historical M8 S7 odd-degree `j=1/2` rule remains conditional
+on physical transgression, rotation-loop identification and state selection.
+The adopted Dirac action permits charged states but does not select occupancy,
+charge or orientation. Gauge charge is constrained or superselected, and
+Wilson states are externally sourced. No presently retained physical sector
+therefore action-selects the required nonzero charge.
+
+More strongly, fixing `p_eta=0` throughout the connected positive Legendre
+branch gives `D0 eta(Q)=0`, so `J_eta(Q)=0` and `B_L2=0` for every nearby shape.
+On the round Spin(4) reference, `(1,0)+(0,1)` rigid current times the `(1,1)`
+scalar ell=2 shape does not contain the `(3/2,1/2)+(1/2,3/2)` coexact L2
+representation. Diagonal SO3 would allow L2, so this round theorem is not
+overextended to the unconstructed degree-one reduced-symmetry background.
+
+The exact fixed-charge Routh reduction and the complete common-domain second
+variation of `-J(Q)^dagger K(Q)^-1 J(Q)/2` are derived. For `J0=0` and positive
+gauge-reduced K, the response is exactly `-B^dagger K^-1 B <= 0`, including
+the round coefficient `-(kappa_grav R^2/5)B_L2^dagger B_L2`. This conditional
+softening theorem has no retained physical nonzero vertex. Projector,
+zero-mode and moving-domain variations require a common-domain trivialization,
+which remains open.
+
+The closed-system charge route is therefore closed at current action content.
+The exactly next executable object is
+`ACTION_DERIVED_CONSERVED_REFLECTION_ODD_COEXACT_L2_EXCHANGE_CURRENT_SHAPE_VERTEX_FROM_THE_DRIVER_BHSM_COUPLED_FUNCTIONAL_WITH_NO_ARBITRARY_PROFILE_OR_SUSCEPTIBILITY`.
+BHSM remains incomplete, Mark III is not reached, physical execution remains
+blocked, and USB synchronization remains ineligible. Flavor provenance gates
+remain open and unchanged.
+
+Validation: the authoritative committed-state suite passed `6009` tests in
+`811.23s` with exit code `0`; all `43` v14.46--v14.88 materializers exited `0`
+on each of two runs and reproduced with zero tracked artifact difference. The
+v14.88 focused package passed `9` tests. The final frozen/status/public/
+precision guard selection passed `120` tests; frozen-prediction,
+forbidden-claim, BHSM-status, public-readiness, precision and physics-status
+CLI audits each exited `0`.
+
+## v14.89 driver--BHSM exchange/traction no-go
+
+The retained archive has now been exhausted for an action-owned driver
+coupling. M8/M5/M4, GHY/corner, global-envelopment, attachment, eta, Dirac,
+Yang--Mills and nonlocal structures are internal BHSM sectors or incomplete
+boundary structures. The v11.3 reciprocal attachment gives genuine internal
+Ward transfer, but not an external driver. V14.81 is conservation
+architecture, v14.82 explicitly records the physical driver functional as
+absent, and v14.83 is a Bridge-And-Prove response normal form.
+
+With no independent driver field and no direct interaction, the physical
+`Q_ex`, tangential coexact L2 traction `J_ex,L2`, and Frechet vertex `B_ex,L2`
+are undefined. In the formal decoupled embedding they vanish. Shared metric
+dependence does not create a direct transfer current: on the separate field
+equations, diffeomorphism invariance supplies separate sector Ward identities.
+
+An isotropic scalar activity or normal pressure has exactly zero tangential
+traction for every scalar shape profile. Its scalar-gradient route is exact,
+not coexact; and `(0,0) tensor (2,2)=(2,2)` cannot reach the coexact L2 target
+`(3,1)+(1,3)` on the round Spin(4) branch. The v14.83 `R^7` expression is
+therefore retired as a physical driver claim and retained only as provisional
+dimensional intuition. The general v14.88 Schur theorem remains valid
+conditionally; its formal zero-coupling insertion gives zero correction.
+
+The exactly next executable object is
+`FOUNDATIONAL_OR_DERIVED_DRIVER_SECTOR_AND_ITS_UNIQUE_COVARIANT_COUPLING_TO_THE_BHSM_FULL_PREIMAGE_BOUNDARY_ACTION_WITH_CONSERVED_INTERFACE_TRACTION_REFLECTION_PARITY_AND_COMMON_SELF_ADJOINT_DOMAIN`.
+BHSM remains incomplete, Mark III is not reached, physical execution remains
+blocked, and USB synchronization remains ineligible. Flavor provenance gates
+remain open and unchanged.
+
+Validation: the authoritative committed-state suite passed `6018` tests in
+`796.57s` with exit code `0`; all `44` v14.46--v14.89 materializers exited
+`0` on each of two runs and reproduced with zero tracked artifact difference.
+The v14.89 focused package passed `9` tests. Frozen-prediction,
+forbidden-claim, BHSM-status, public-readiness, precision and physics-status
+CLI audits each exited `0`; the final frozen/status/public/precision guard
+selection passed `161` tests. The pre-commit diagnostic run recorded `6002`
+passes and `16` identical committed-source guard failures in `826.04s`, exit
+code `1`; no physics or numerical test failed in that diagnostic run.
+
+## v14.90 intrinsic full-preimage dynamical momentum gate
+
+The retained Lorentzian P1 action has an action-owned ADM symplectic
+structure and canonical metric momentum
+`pi^ij=(kappa1/2)sqrt(h)(K^ij-Kh^ij)`. Metric velocity is distinct from the
+stationary shift, so v14.41 does not imply that all dynamical gravitational
+momentum vanishes.
+
+The only explicit constraint-reduced P1 dynamical solutions are homogeneous
+round and Jensen trajectories. They carry cap-common expansion momentum, but
+reflection identification gives `DeltaPi=0` and zero traceless relative shear.
+The round branch's two homogeneous masses squared are `4/a^2`; Jensen has
+`52/(5a^2)` and `-4/a^2`. These are common modes, not the requested relative
+coexact L2 transport.
+
+The nonhomogeneous degree-one full-preimage phase space, coupled
+metric/eta/gauge/Dirac linearized operator, moving-seam symplectic reduction,
+Green form, seam flux, cap inertias and coexact L2 mixed variation are not
+retained. General rank-two intrinsic relative modes are not excluded by the
+rigid-L1 representation theorem, but their physical `J_dyn` and `B_dyn,L2`
+are undefined; both are zero only in the explicit homogeneous truncation.
+Reflection equal inertia and `nu=1/4` remain conditional.
+
+For a future positive momentum block, the static response remains
+`-B^dagger K_dyn^-1 B<=0`; at finite frequency the kernel is instead
+`-B^dagger[K_dyn-omega^2 M_dyn]^-1B` away from poles. No such physical term is
+inserted now, and oscillator existence is not promoted to population.
+
+The exactly next executable object is
+`LORENTZIAN_DEGREE_ONE_FULL_PREIMAGE_BACKGROUND_AND_GAUGE_REDUCED_COUPLED_METRIC_ETA_GAUGE_DIRAC_LINEARIZED_SYMPLECTIC_BOUNDARY_VALUE_PROBLEM_WITH_REFLECTION_ODD_CAP_RELATIVE_TENSOR_MODES_AND_EXPLICIT_COEXACT_L2_MIXED_VARIATION`.
+BHSM remains incomplete, Mark III is not reached, physical execution remains
+blocked, and USB synchronization remains ineligible. Flavor provenance gates
+remain open and unchanged.
+
+Validation: after the cross-platform exact-zero traction repair, the
+authoritative committed-state suite passed `6027` tests in `807.50s` with
+exit code `0`. All `45` v14.46--v14.90 materializers exited `0` on each of
+two runs and reproduced with zero tracked artifact difference. The v14.90
+focused package passed `9` tests, and the final v14.89/v14.90 plus
+frozen/status/public/precision guard selection passed `179` tests.
+Frozen-prediction, forbidden-claim, BHSM-status, public-readiness, precision,
+physics-status CLI, JSON and diff audits each exited `0`.
+
+## v14.91 degree-one Lorentzian full-preimage phase-space gate
+
+The global degree-one object is now fixed precisely: on an M8 spatial slice it
+is the parent map `eta:S7->S7`, with degree in `pi7(S7)=Z`. It is not a
+physical M4 FR charge; the M4 `S3->S6` candidate has trivial `pi3(S6)` and
+`pi4(S6)`. Splitting the Hopf base into reflected hemispheres gives actual
+full-preimage domains `C_tilde_plus/minus` with lifted seam `S3xS3` and no new
+fluid or field. The integer degree belongs to the glued closed S7, not to an
+individual cap.
+
+The retained M8 P1--eta block has an exact compact round static identity-map
+branch. With `X=7/a^2`, its equations reduce to
+`X^3=5 kappa1`, `a^2=7/X`, and
+`kappa0=(15/4) kappa1 X`. The M8 eta, Hamiltonian, spatial Einstein, and
+momentum residuals vanish on this locus. This is a conditional existence
+theorem, not an action selection of the locus, because `kappa0` and `kappa1`
+remain independent primitives.
+
+The smooth Hopf cap cut inherits continuous traces and matched opposite
+conormal/canonical fluxes. Its internal GHY pair, Green form, and symplectic
+flux cancel for restrictions of global smooth M8 perturbations. This closes
+the M8 transmission-domain question, but not the full stratified domain.
+
+The physical M4 gauge connection and adopted Dirac sector remain independent
+intrinsic data. There is no action-owned M8-to-M4 critical-value reduction,
+eta/color bundle intertwiner, common Green form, or closed intrinsic Einstein
+junction. Therefore the exact M8 branch is not a full stationary solution of
+the stratified action, and the requested coupled physical projector, spectrum,
+`DeltaPi`, cap inertias, `J_dyn`, and `B_dyn,L2` are undefined rather than
+zero. Equal inertia and `nu=1/4` remain conditional.
+
+Exact next object:
+`ACTION_OWNED_LORENTZIAN_M8_TO_M4_METRIC_ETA_GAUGE_DIRAC_COMMON_DOMAIN_CRITICAL_VALUE_FUNCTOR_WITH_VARIATIONAL_BUNDLE_INTERTWINER`.
+
+BHSM remains incomplete, Mark III is not reached, physical execution remains
+blocked, frozen predictions and flavor provenance gates are unchanged, and
+USB synchronization is not eligible.
+
+Validation: the authoritative committed-state suite passed `6036` tests in
+`803.76s` with exit code `0`. All `46` v14.46--v14.91 materializers exited
+`0` on each of two runs (`92` total) with zero tracked artifact drift. The
+focused v14.91 package passed `9` tests and the concentrated v14.89--v14.91
+plus frozen/status/public/precision guard selection passed `114` tests.
+Frozen-prediction, forbidden-claim, BHSM-status, public-readiness, precision,
+physics-status CLI, all-artifact JSON, and diff-hygiene audits exited `0`.
+
+The prior exact-head Linux CI run at v14.89 recorded `6017` passes and one
+failure in `1490.98s`: numerical evaluation of the analytically zero isotropic
+tangential traction left platform-dependent roundoff that crossed its vertex
+tolerance. The implementation now validates the frame and returns the exact
+theorem value zero; the focused post-fix v14.89/v14.90 chain passed `18`
+tests. The earlier pre-fix local v14.90 full run passed `6027` tests in
+`797.45s`; it is superseded by the post-fix authoritative run above.
+
+## v14.92 Lorentzian cross-level critical-value functor gate
+
+The historical reduction has been recovered at its actual claim strength.
+`R85` is a normalized Hopf-fiber pushforward and retained-mode projection only
+on admissible invariant/equivariant data. `R54` is equatorial trace plus cap
+critical response, not a quotient, so `R84=R54 R85` is defined only on their
+shared domain and there is no independent direct M8-to-M4 geometric quotient.
+
+The stratified action is a valid simultaneous KKT correspondence involving
+independent M8, M5, and localized M4 actions plus compatibility multipliers.
+Exact executable witnesses close the conditional reduction-composition,
+tangent, weighted-adjoint, envelope, Schur-Hessian, Green-form, cotangent-lift,
+gauge-covariance, and transition-cocycle identities. They do not establish a
+physical functor because the historical action explicitly keeps the physical
+M4 Yang--Mills and Dirac variables intrinsic.
+
+The recovered Hopf `Sp(1)` connection is explicitly not the Standard Model
+gauge connection, and no transition/characteristic-class intertwiner maps it
+or the eta projector connection to the independent physical color bundle.
+There is no M8 parent Dirac field. The v14.45 collar spin domain therefore
+closes its intrinsic two-sided Green form but is not an M8 critical-mode
+reduction. A total common Green domain and physical symplectic pullback do not
+exist in the retained theory.
+
+The v14.91 coefficient locus remains an exact conditional stationarity locus,
+not an action-selected branch. The full coupled background, physical
+projector, `DeltaPi`, `M_plus,M_minus`, and `B_dyn,L2` remain undefined rather
+than zero. Frozen predictions and CKM/PMNS provenance boundaries are unchanged.
+
+Exact next irreducible object:
+`FOUNDATIONAL_COMMON_PARENT_GAUGE_SPIN_BUNDLE_ACTION_WITH_PHYSICAL_SU3_AND_DIRAC_CRITICAL_MODES_AND_NO_DOUBLE_COUNTING_M8_TO_M5_TO_M4_VARIATIONAL_SYMPLECTIC_REDUCTION_FUNCTOR`.
+
+Validation: the committed-state suite passed `6048` tests in `803.30s` with
+exit code `0`. All `47` v14.46--v14.92 materializers exited `0` on each of two
+runs (`94` total) with zero tracked artifact drift. The focused v14.92 package
+passed `12` tests. Frozen-prediction, forbidden-claim, BHSM-status,
+public-readiness, precision, physics-status CLI, and all `1839` artifact-JSON
+audits exited `0`. The precommit suite recorded `6032` passes and `16`
+source-diff guard failures in `800.02s`; all 16 were the expected requirement
+that `git diff HEAD -- src` be empty and were cleared by the scoped commit.
+USB remains untouched and synchronization is not eligible.
+
+## v14.93 nonlinear encapsulated-state spectral-band gate
+
+The retained Lorentzian state-bearing system remains the constrained M8 phase
+space; no separate energy field is added. A seven-dimensional eta-only flat
+Derrick screen would require `E8/E2=5`, whereas the compact v14.91 identity
+branch has `E8/E2=5/4`. Its full stationarity identity includes Einstein
+curvature, cosmological volume and compact-scale variation, so stationary
+localization is not forbidden by the virial screen.
+
+The minimal degree-one nonhomogeneous map
+`eta=(cos f(chi),sin f(chi)n)` yields an exact radial Hessian spectrum
+`lambda_n=n(n+8)`. Every `n>=1` mode is positive. The unique quadratic zero
+mode is the tangent to the conformal family
+`f_s=2 atan(exp(s)tan(chi/2))`; reflection kills its cubic and the complete
+eta action gives `E''''(0)=27 pi X^4/128>0`. Thus the zero direction is
+quartically stable and no nearby equivariant radial encapsulated branch
+bifurcates from the identity seed. This local theorem is not promoted to a
+global no-go for the coupled nonhomogeneous Einstein--eta--chi--sigma system.
+
+The known round-S7 `l=4,10` octave remains inactive because the sigma
+`10-4-4` cubic is zero by Z2 at `sigma=0`. No nonlinear bound state,
+phase-locking solution, localization diagnostic, Hamiltonian gap, physical
+state Hessian, isolated band, Riesz projector, constant rank, smooth bundle,
+color eligibility or Dirac eligibility is derived.
+
+No A--E terminal Path-A outcome is scientifically justified yet: A--C need a
+state, D needs a global static no-go, and E needs a retained-action no-go.
+Path B therefore remains inactive. The exact next object is
+`ACTION_OWNED_NONHOMOGENEOUS_DEGREE_ONE_M8_EINSTEIN_ETA_CHI_SIGMA_COMMON_DOMAIN_BOUNDARY_VALUE_PROBLEM_WITH_LOCALIZATION_AND_CONSTRAINT_CONVERGENCE`.
+
+BHSM remains incomplete, Mark III is not reached, physical execution remains
+blocked, frozen predictions and flavor provenance are unchanged, and USB is
+untouched and ineligible for synchronization.
+
+## v15.0 Aether pregeometric parent-calculus gate
+
+The existing regular support geometry is exactly the half-line
+`q_D=-lambda_D log(upsilon)`. Its `upsilon -> 0+` endpoint is infinitely far
+away, and no smooth bounded plotting coordinate changes the physical Haar
+length. A finite-duration regular path with finite kinetic action cannot reach
+that endpoint.
+
+Consequently a finite Aether event cannot identify its core with regular
+`upsilon=0`. A disjoint non-geometric core stratum is mathematically
+admissible as a conservative extension: `upsilon` remains defined only on the
+regular reconstructible stratum, and the core schema carries no spacetime,
+time, energy, velocity, metric-size, or preferred-frame field. Restricting the
+extension to the regular stratum exactly recovers current BHSM, including the
+v14.64 domain obstruction and v14.91--v14.94 results.
+
+The package defines a conditional operator/domain reconstruction predicate,
+reuses edge-restricted spectral distance, constructs a dimensionless additive
+process cocycle and relative clock ratio, and derives the conditional
+Stone-generator formula `E_eff=(hbar/tau_clock) kappa` only after clock
+calibration. It also implements an associative invariant-matched abstract
+event span. None of these algebraic structures is promoted to an
+action-derived physical core transition.
+
+No monotonic high-excitation/low-reconstructibility theorem follows without a
+new coupling. The exact Outcome-B verdict is
+`AETHER_PARENT_STRATIFICATION_IS_MATHEMATICALLY_COMPATIBLE_WITH_CURRENT_BHSM_BUT_FINITE_CORE_TRANSITION_REQUIRES_AN_ACTION_OWNED_PREGEOMETRIC_CORRESPONDENCE_LAW`.
+
+The exact next object is
+`ACTION_OWNED_PREGEOMETRIC_CORE_EVENT_CORRESPONDENCE_WITH_SELF_ADJOINT_RELATIVE_BOUNDARY_DOMAIN_PARENT_INVARIANT_MATCHING_CLOCK_CALIBRATION_AND_EXACT_REGULAR_BHSM_RECOVERY`.
+
+BHSM remains incomplete, Mark III is not reached, no new continuous parameter
+or fundamental dynamical field is introduced, frozen predictions and official
+prediction logic are unchanged, and USB remains untouched and ineligible.
+
+## v15.1 Aether dynamical-correspondence gate
+
+The v15.0 kinematic event span now admits the universal conditional functional
+`S_A=integral dchi [-Im<psi,D_chi psi>-<psi,K_A psi>]`, kernel
+`U_A(chi)=exp(-i chi K_A)`, and weight `W[E]=exp(iS_A[E])`. Hermitian
+Wentzell data give an exact self-adjoint `G_A`--`C_A` attachment theorem class:
+the boundary-triple rank condition closes, `AB*=BA*`, and the Green form
+vanishes.
+
+Parent invariants are conserved when `[K_A,I_alpha]=0`. After an
+action-selected stable recurring process exists, the conditional clock map
+gives `H_eff=(hbar/tau_clock)K_A`. No external clock scale is introduced.
+At zero process depth, `U_A(0)=I`; symbolic variation of the retained
+metric--eta density verifies exact regular action and field-equation recovery.
+
+The physical law is nevertheless underdetermined. The fixed generators
+`diag(0,1)` and `diag(0,2)` are both self-adjoint, invariant preserving,
+unitary, and identity recovering, but have different spectra and kernels.
+Thus the existing axioms do not select `K_A`. The physical core-boundary
+Hilbert module, Wentzell/Calderon blocks, and stable reference cycle are also
+absent.
+
+The exact next object is
+`ACTION_DERIVED_PREGEOMETRIC_EVENT_GENERATOR_K_A_ON_AN_ACTION_DERIVED_CORE_BOUNDARY_HILBERT_MODULE_WITH_PHYSICAL_WENTZELL_CALDERON_BLOCKS_INVARIANT_COMMUTANT_AND_STABLE_REFERENCE_CLOCK_CYCLE`.
+
+BHSM remains incomplete and Mark III is not reached. Frozen predictions and
+official prediction logic are unchanged. No new continuous parameter,
+primitive field, preferred frame, empirical input, or USB operation enters
+v15.1.
+
+Prepublication validation: the focused v14.94 package passed `11` tests and
+the dependent P1/v14.90/v14.93/v14.94/guard selection passed `65`. All `49`
+v14.46--v14.94 materializers completed two runs (`98` executions) with zero
+byte drift, and all `1841` artifact JSON files parsed. Frozen-prediction,
+forbidden-claim, BHSM-status, public-readiness, precision, physics-status CLI
+and diff-hygiene audits exited `0`. The precommit full suite recorded `6054`
+passes and `15` identical expected untracked-source guard failures in
+`804.31s`, exit code `1`; the scoped commit is required before the
+authoritative exact-head rerun.
+
+Prepublication validation: the focused v14.93 package passed `10` tests and
+the dependent v14.91--v14.93/harmonic/guard selection passed `79`. All `48`
+v14.46--v14.93 materializers completed the required two runs (`96`
+executions) with zero byte drift; an additional confirmation pass was also
+clean. All `1840` artifact JSON files parsed. Frozen-prediction,
+forbidden-claim, BHSM-status, public-readiness, precision, physics-status CLI,
+and diff-hygiene audits exited `0`. The precommit full suite recorded `6043`
+passes and `15` identical expected untracked-source guard failures in
+`782.14s` with exit code `1`; the scoped commit is required before the
+authoritative exact-head rerun.
+
+## v14.94 local-environment finite-time encapsulation gate
+
+Encapsulation is now treated as a finite local completion event rather than a
+necessarily permanent soliton. The retained environmental variables are only
+the M8 canonical fields, derived extrinsic geometry and existing boundary/KKT
+data; no energy, detector or measurement field is added.
+
+The exact round and Jensen P1 branches supply genuine time-dependent,
+constraint-satisfying canonical momentum. They are spatially homogeneous,
+however, and have zero spatial transport, seam transfer and cap-relative
+momentum. The expanding round branch has two positive homogeneous shape
+stiffnesses. Jensen has one tachyonic homogeneous shape direction at every
+finite time, not a local threshold crossing.
+
+The Jensen finite-time reduced propagator was evaluated at 200, 400 and 800
+steps. It converges at fourth order with refinement factor `15.963` and
+maximum Wronskian residual `1.742e-10`. The coordinate amplification is not
+promoted to an invariant event observable. No nonlinear saturation,
+completion criterion, local event map, energy transfer, physical L2
+threshold, cap inertia or mixed vertex is derived.
+
+The exact Path-A verdict is Outcome D:
+`NO_ENCAPSULATION_EVENT_IN_CONTROLLED_RETAINED_SECTORS_PATH_A_REMAINS_OPEN`.
+Path B remains inactive. The exact next object is
+`CONSTRAINT_SOLVED_NONHOMOGENEOUS_LORENTZIAN_M8_INCOMING_WAVE_PACKET_WITH_QUASILOCAL_NOETHER_FLUX_TIME_PRESERVED_COMMON_DOMAIN_AND_LOCAL_PHYSICAL_TANGENT_PROPAGATOR`.
+
+BHSM remains incomplete, Mark III is not reached, physical execution remains
+blocked, frozen predictions and flavor provenance are unchanged, and USB is
+untouched and ineligible for synchronization.
+
+## v15.2 physical Aether-generator selection
+
+Physical generator equivalence now applies to the complete structured tuple
+containing the Hilbert representation, invariant algebra, relative domain,
+boundary response, reconstruction projection, generator, and clock. A unitary
+is only a basis change when it intertwines every owned structure. Positive
+`K_A` scaling is a pre-clock process reparameterization when `chi` and the
+reference-cycle depth scale inversely. Uniform central shifts remain only
+conditionally projective because the retained action does not define event
+interference or prove the depth cocycle is an endpoint coboundary.
+
+This corrects the interpretation of the v15.1 pair `diag(0,1)` and
+`diag(0,2)`: it is scale-equivalent before clock selection. The fixed pair
+`diag(0,1,2)` and `diag(0,1,3)` has unequal affine gap ratios and remains
+inequivalent after unitary, shift, and positive-scale quotients while sharing
+the same invariant, self-adjoint domain, Green cancellation, norm
+conservation, composition, identity, and regular recovery gates.
+
+The decisive result is Outcome F. Existing M8/M5/M4 action data provide
+regular incidence and theorem-class Calderon/Wentzell structures but no
+pregeometric core Hilbert correspondence, trace pairing, core operator,
+core-boundary quadratic form, physical core boundary block, or stable
+reference cycle. Therefore literal `K_A`, `[K_A]_phys`, and `H_eff` are not
+uniquely action-selected; the physical quotient cardinality is undefined
+rather than zero. The representative admissible quotient remains continuous.
+
+The exact next object is
+`MICROSCOPIC_ACTION_DERIVATION_OF_THE_PREGEOMETRIC_CORE_BOUNDARY_HILBERT_CORRESPONDENCE_QUADRATIC_FORM_WITH_TRACE_PAIRING_CORE_OPERATOR_ATTACHMENT_COUPLING_AND_STABLE_REFERENCE_CYCLE_WHOSE_VARIATION_JOINTLY_SELECTS_THETA_A_K_A_AND_H_EFF`.
+
+BHSM remains incomplete and Mark III is not reached. Frozen predictions and
+official prediction logic are unchanged. No continuous parameter, primitive
+field, preferred frame, empirical input, or USB operation enters v15.2.
+
+## v15.3 harmonic microscopic Aether-core action
+
+The v15.3 core audit enforces a strict pregeometric firewall. No core
+coordinate, metric, volume form, spatial integral, ordinary energy density,
+or preferred frame is introduced. The native retained data are only
+composable events, invariant/process-depth gradings, and algebraic harmonic
+relations.
+
+Those data derive an associative identity-bearing composition skeleton, but
+not a dagger, positive cone or state, C-star norm/completion, GNS
+representation, trace pairing, closed invariant Dirichlet form, or bounded
+geometry--core correspondence. The fixed cyclic forms
+`L_n=2I-S_n-S_n^*` for `n=2,3` are positive, closed, self-adjoint and obey the
+same identity regular-recovery gate, yet have spectra `{0,4}` and `{0,3,3}`
+and inequivalent representation ranks. They are diagnostic witnesses, not
+physical core models.
+
+Consequently the desired total form is a conditional KLMN theorem class, not
+an action-owned BHSM functional. No physical `Theta_A`, `K_A`, event kernel,
+scale-adaptive reconstruction map, clock recurrence, mass overtone, or
+`H_eff` is selected. Restriction to the regular stratum exactly preserves the
+existing BHSM action, equations, no-go results, and frozen predictions.
+
+The result is
+`OUTCOME_G_EXISTING_BHSM_INSUFFICIENT_TO_DEFINE_A_POSITIVE_CORE_STRUCTURE`.
+The exact next object is
+`FOUNDATIONAL_PREGEOMETRIC_DAGGER_EVENT_ALGEBRA_WITH_A_DISTINGUISHED_FAITHFUL_POSITIVE_STATE_CLOSED_INVARIANT_DIRICHLET_FORM_AND_BOUNDED_GEOMETRY_CORE_CORRESPONDENCE_MORPHISM_FROM_WHICH_THE_GNS_REPRESENTATION_BOUNDARY_VARIATION_RELATIONAL_GENERATOR_AND_RECONSTRUCTION_MAP_ARE_DERIVED`.
+
+BHSM remains incomplete and Mark III is not reached. No continuous parameter,
+primitive field, preferred frame, empirical input, or USB operation enters
+v15.3.
+
+## v15.4 foundational event algebra, state, and GNS gate
+
+Categorical event multiplication and object identities are now explicit. A
+compatible dagger exists after a reversible groupoid completion is declared,
+but BHSM does not derive the physical reversal functor, loop relations, or
+complete morphism set. The historical regular-boundary orientation
+involution is a grading, not reversal of arbitrary pregeometric events.
+
+The strengthened kill screen uses the exact four BHSM incidence objects with
+finite cyclic isotropy. Both `M4(C[Z_2])` and `M4(C[Z_3])` reconstruct the
+same distinguished diamond grammar and admit normalized faithful positive
+states. Their faithful GNS ranks are 32 and 48, and their center dimensions
+are two and three, so they remain star nonisomorphic after every legitimate
+event relabeling and structured GNS quotient.
+
+For each witness, positive states form a finite spectrahedron and faithful
+states its continuous open interior. Cap reflection and maximal cyclic
+relabeling still leave continuous faithful invariant-state families.
+Traciality and invariance under the entire abstract star-automorphism group
+are not action-owned physical axioms. No distinguished state or pointed GNS
+triple is selected.
+
+The outcome is
+`OUTCOME_G_Z2_Z3_OBSTRUCTION_SURVIVES_ALL_CURRENTLY_DERIVED_PRINCIPLES`,
+with the refinement
+`OUTCOME_H_ACTION_DERIVED_EVENT_REVERSAL_LOOP_SPECTRUM_AND_STATE_SELECTION_PRINCIPLE_REQUIRED`.
+
+The exact next object is
+`ACTION_OR_ARCHITECTURE_DERIVED_PRIMITIVE_EVENT_REVERSAL_LOOP_SPECTRUM_AND_RECONSTRUCTION_FUNCTOR_THAT_FIXES_THE_PHYSICAL_DAGGER_CATEGORY_AND_AUTOMORPHISM_GROUP_AND_THEN_PROVES_OR_REFUTES_UNIQUENESS_OF_A_NORMALIZED_FAITHFUL_INVARIANT_POSITIVE_STATE`.
+
+BHSM remains incomplete and Mark III is not reached. Frozen predictions and
+official prediction logic are unchanged. No continuous parameter, primitive
+field, preferred frame, empirical input, or USB operation enters v15.4.
+
+## v15.5 global pregeometric master closure
+
+The authorial Unique Actualization Principle is now an explicit strict
+completion criterion: any surviving non-gauge multiplicity means the theory
+is incomplete. The retained architecture does not yet turn this principle
+into a theorem. The master dependency graph stops at the first arrow from the
+four-object category skeleton to an action-selected reversible event category
+with loop spectrum; the geometry--core forward map and regular-to-foundation
+return map are also absent.
+
+The strongest new kill screen couples state and dynamics. Every faithful state
+on either finite witness algebra admits a primitive, gapped, GNS
+detailed-balance reset semigroup for which it is the unique invariant state.
+Therefore stationarity, detailed balance, primitivity, a gap and uniqueness
+for a fixed generator still leave a continuous family of joint
+state--generator pairs when the generator is not independently action-owned.
+
+The result is `OUTCOME_G_MASTER_MAP_CANNOT_BE_CONSTRUCTED`, with the secondary
+classification `OUTCOME_E_CONTINUOUS_STATE_DYNAMICS_FIXED_PAIR_FAMILY`.
+`physical_master_solution_count` and
+`gauge_quotiented_master_solution_count` are both
+`UNDEFINED_MISSING_UPSTREAM_STRUCTURE`; they are not reported as zero or one.
+Clock, scale, gauge normalization, scalar/topographic, mass, CKM, PMNS,
+neutrino and encapsulation gates remain open without retuning.
+
+The exact next object is
+`ACTION_DERIVED_PRIMITIVE_EVENT_REVERSAL_AND_LOOP_SPECTRUM_ON_THE_FOUR_OBJECT_PREGEOMETRIC_CATEGORY`.
+
+`FULL_BHSM_COMPLETE = FALSE`. Frozen predictions and official prediction
+logic remain unchanged. No empirical input, fitted or arbitrary continuous
+parameter, primitive field, or preferred frame enters v15.5.

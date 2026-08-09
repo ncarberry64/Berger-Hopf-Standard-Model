@@ -1,0 +1,69 @@
+{
+  "artifact": "BHSM_three_harmonic_observability_v14_55",
+  "at_least_one_noncommuting_pair": true,
+  "bounded_interpretation": "three independent noncentral channel directions are available to a periodic Galerkin/Floquet solver; their amplitudes, phases and order remain action inputs",
+  "channel_rank": 3,
+  "channels": [
+    {
+      "L": 0,
+      "label": "M_(0,0)",
+      "r": 0,
+      "slot": "U0-D0"
+    },
+    {
+      "L": 3,
+      "label": "M_(3,0)",
+      "r": 0,
+      "slot": "U0-D1"
+    },
+    {
+      "L": 1,
+      "label": "M_(1,1)",
+      "r": 1,
+      "slot": "U1-D2"
+    }
+  ],
+  "commutators": [
+    {
+      "frobenius_norm": 0.9999999999999999,
+      "pair": [
+        "M_(0,0)",
+        "M_(3,0)"
+      ]
+    },
+    {
+      "frobenius_norm": 0.0,
+      "pair": [
+        "M_(0,0)",
+        "M_(1,1)"
+      ]
+    },
+    {
+      "frobenius_norm": 0.7071067811865474,
+      "pair": [
+        "M_(3,0)",
+        "M_(1,1)"
+      ]
+    }
+  ],
+  "gram_matrix": [
+    [
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.9999999999999998,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.9999999999999998
+    ]
+  ],
+  "physical_prediction": false,
+  "rank_three_basis": true,
+  "version": "v14.55"
+}

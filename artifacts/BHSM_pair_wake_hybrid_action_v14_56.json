@@ -1,0 +1,16 @@
+{
+  "artifact": "BHSM_pair_wake_hybrid_action_v14_56",
+  "closed_coherent_action": "S_closed=integral d tau [P_mu dot X^mu+p_phi dot phi+i z^dagger D_tau z-H_pair(Xi)-H_cm-H_phi-z^dagger H_wake z-H_cross]-sum_k G_k delta(tau-tau_k)",
+  "coherent_matter_map": {
+    "collective": "P_X^+=P_X^-+I_k",
+    "pair_identity": "unchanged",
+    "scalar_cycle": "phi^+=R_k(phi^-,I_k,E_k) with nonzero Jacobian",
+    "wake": "z^+=exp(-i K_k(I_k,E_k))z^-"
+  },
+  "fixed_pair": "Xi_AB is selected at inception and D_tau Xi_AB=0",
+  "mandatory_cross_term": "H_cross or G_k must depend jointly on collective motion/environment and the wake variables; otherwise a common-mode push cannot alter flavor response",
+  "mass_readout": "physical mass remains a parent-relative complete-cycle Hamiltonian/Floquet quasi-energy, not an instantaneous wake label",
+  "open_branch": "S_closed must be enlarged by environment/radiation degrees of freedom before a reduced many-to-one reset map is permitted",
+  "physical_coefficients_derived": false,
+  "version": "v14.56"
+}

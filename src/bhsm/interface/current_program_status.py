@@ -4,16 +4,19 @@ from __future__ import annotations
 
 from typing import Any
 
-from .completion.reciprocal_attachment_action_v11_3 import EXACT_NEXT_OBJECT, PRIMARY_VERDICT
+from .aether_nonlinear_norman_cycle_bvp_v15_7 import (
+    EXACT_NEXT_OBJECT,
+    PRIMARY_VERDICT,
+    full_completion_payload,
+)
 
-
-CURRENT_CAMPAIGN = "v11.3 Reciprocal core-surface attachment construction sprint"
-CURRENT_VERSION = "v11.3"
-SOURCE_BASE_MAIN_SHA = "1aa1ebf1c924e494c903e794aaed5f0d7d42e173"
-SOURCE_BASE_TREE_SHA = "8975c13c1993dcca1e88a73d28e613b22704ac6d"
+CURRENT_CAMPAIGN = "v15.7 nonlinear Norman-cycle BVP and public repository consolidation"
+CURRENT_VERSION = "v15.7"
+SOURCE_BASE_MAIN_SHA = "3e324a05e50b8128d28b84968b4ef3d2b064dd73"
+SOURCE_BASE_TREE_SHA = "RESOLVE_FROM_BASELINE_COMMIT"
 COMPLETION_MARKS = {
     "Mark_I_Canonical_ontology": "REACHED",
-    "Mark_II_Complete_conditional_architecture": "REACHED_CONDITIONALLY",
+    "Mark_II_Complete_conditional_architecture": "REACHED_ON_SELECTED_FINITE_RADIUS_CORE_BRANCH",
     "Mark_III_Physical_derivation": "NOT_REACHED",
     "Mark_IV_Empirical_replacement": "NOT_REACHED",
 }
@@ -42,9 +45,19 @@ DERIVED_RESULTS = [
     "opposite half-characters w(I_C)=-1/2 and w(I_W)=+1/2 with neutral intrinsic metric",
     "signed q_D attachment source and total three-sector diffeomorphism stress-transfer identity",
     "differentiable algebraic attachment boundary completion and finite ordinary core closure",
+    "canonical whitened common-domain KKT response with positive nondegenerate family-octave roots",
+    "minimal intrinsic M4 charged-lepton spectral action with one universal scale calibration",
+    "conditional up/down spectral Yukawa operator pair",
+    "explicit mixed variation of the effective SU2L Dirac current with family kernel I3",
+    "rephasing-invariant proof that the v11.5 spectral kernel is not the live action current",
+    "continuous counterexample family disproving selection by the v11.5 viability properties",
+    "joint-functional-calculus no-go for nontrivial mixing from the commuting v11.4 response pair",
 ]
 CONDITIONAL_RESULTS = [
-    "full numerical core/wall Gram-Hessian on the common attachment domain",
+    "author-selected finite-radius core branch",
+    "full-rank coefficient-free spectral charged-current action candidate with exact SU2 closure and nonzero CP, not action-derived",
+    "absolute charged-lepton triplet with one universal dimensionful calibration",
+    "up/down sector-wide absolute normalization and common-scheme RG transport",
     "physical equivalence quotient of the provisional support lifts",
     "core transfer, three-mode, cycle, buoyancy, Higgs, global, generation, M4, and quantum interfaces",
 ]
@@ -61,13 +74,16 @@ INVALIDATED_RESULTS = [
     "black-hole de-envelopment without a conserved surface receiving channel",
     "the recovered algebraic matcher requires an independent linear A_D current or seagull term",
     "flatness of A_D proves physical removability at the boundary or core",
+    "full rank, unitarity, SU2 closure, family-central neutral current, and nonzero CP uniquely select the v11.5 kernel",
+    "commuting diagonal up/down spectral response operators alone generate nontrivial CKM mixing",
 ]
 OPEN_RESULTS = [
     EXACT_NEXT_OBJECT,
     "complete supported parent action with its action-derived support current and quadratic connection completion",
     "core asymptotic phase space and conservative transfer operator",
-    "physical three-mode Hessian and stable cycles",
-    "physical masses, CKM, PMNS, effective M4 action, and quantum measurement law",
+    "action-owned common-domain up/down family wavefunction orientation and current pairing map",
+    "downstream conditional RG, normalization, and empirical replacement evaluations",
+    "physical PMNS extension, stable cycles, and quantum measurement law",
 ]
 FROZEN_PREDICTION_STATE = "UNCHANGED"
 PHYSICAL_OUTPUTS_AVAILABLE = {
@@ -80,6 +96,7 @@ PHYSICAL_OUTPUTS_AVAILABLE = {
 
 
 def status_payload() -> dict[str, Any]:
+    cycle = full_completion_payload()
     return {
         "status": "Full BHSM v1.0 Candidate",
         "candidate_architecture_complete": True,
@@ -96,6 +113,7 @@ def status_payload() -> dict[str, Any]:
         "canonical_ontology_complete": True,
         "canonical_ontology_is_physical_completion": False,
         "physical_flavor_matrix_derived": False,
+        "conditional_no_fit_flavor_matrix_available": True,
         "current_exact_verdict": PRIMARY_VERDICT,
         "next_exact_object": EXACT_NEXT_OBJECT,
         "current_campaign": CURRENT_CAMPAIGN,
@@ -110,17 +128,17 @@ def status_payload() -> dict[str, Any]:
         "frozen_prediction_state": FROZEN_PREDICTION_STATE,
         "physical_outputs_available": PHYSICAL_OUTPUTS_AVAILABLE,
         "validation_summary": {
-            "focused": "PASS: v11.3 construction plus current/historical integration checks; post-commit clean-tree guards 16 passed",
-            "full_pytest": "4862 passed, 16 legacy git-diff dirty-tree guards failed in 12:42 before commit; all 16 passed on the clean commit; protected clean-checkout CI pending",
-            "audits": "PASS: precision, forbidden claims, BHSM status, frozen prediction integrity, and public readiness",
-            "artifact_determinism": "PASS: ten v11.3 artifacts plus canonical gate were byte-identical across two materializations",
+            "focused": "PASS: v15.7 BVP, deterministic artifact, and public-status consistency tests",
+            "full_pytest": "recorded by committed-tree CI and publication artifact",
+            "audits": "deterministic materialization, forbidden claims, status consistency, links, and public readiness",
+            "artifact_determinism": "PASS: v15.7 artifacts are byte-identical across repeated materializations",
         },
         "source_base_main_sha": SOURCE_BASE_MAIN_SHA,
         "source_base_tree_sha": SOURCE_BASE_TREE_SHA,
         "current_main_sha": "RESOLVE_AT_RUNTIME_WITH_GIT_REV_PARSE_HEAD",
         "current_tree_sha": "RESOLVE_AT_RUNTIME_WITH_GIT_REV_PARSE_HEAD_TREE",
         "sha_embedding_policy": "a commit cannot contain its own eventual merge SHA; final merged SHA is reported from Git and the tree is contract-tested",
-        "live_merged_status": "v11.2 at campaign branch point; v11.3 becomes live when this tree is merged to main",
+        "live_merged_status": "public main synchronization is tracked by the v15.7 consolidation PR and sync artifact",
         "active_branch_status": PRIMARY_VERDICT,
         "haar_scale_status": "attachment generator normalized conventionally; physical lambda_D classification remains downstream of the common Hessian quotient",
         "historical_recovery_status": PRIMARY_VERDICT,
@@ -131,20 +149,35 @@ def status_payload() -> dict[str, Any]:
         "new_continuous_physical_parameters": [],
         "measured_particle_inputs": [],
         "physical_outputs_promoted": [],
+        "conditional_outputs_available": ["charged-lepton mass candidate", "up/down hierarchy seeds", "author-selected unitary CKM candidate", "candidate Jarlskog invariant", "action-current identity-kernel reduction", "spectral-current non-uniqueness counterexamples"],
+        "continuation_version": CURRENT_VERSION,
+        "continuation_campaign": CURRENT_CAMPAIGN,
+        "continuation_exact_verdict": PRIMARY_VERDICT,
+        "continuation_exact_next_object": EXACT_NEXT_OBJECT,
+        "FULL_BHSM_COMPLETE": False,
+        "nonlinear_cycle_status": {
+            key: cycle[key]
+            for key in (
+                "LOCAL_PHYSICAL_SPACETIME_INSTABILITY",
+                "NONLINEAR_FORMATION_MAP",
+                "PHYSICAL_PERSISTENT_ORBIT",
+                "DE_ENVELOPMENT_RECEIVING_DOMAIN",
+                "COMPLETE_NOETHER_LEDGER",
+                "PHYSICAL_TANGENT_MONODROMY",
+                "PHYSICAL_LOOP_SPECTRUM",
+                "FLOQUET_RECONSTRUCTION",
+                "MASTER_MAP",
+            )
+        },
+        "USB_TOUCHED": False,
     }
 
 
 def public_repo_status() -> str:
     return (
-        "BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. "
-        "Current campaign status: v11.3 dresses the action-owned Lambda85 compatibility matcher reciprocally, with "
-        "I_C=Q_H(G8), I_W=g5, w(I_C)=-1/2, and w(I_W)=+1/2 while the intrinsic enclosure remains neutral. "
-        "The algebraic matcher derives a signed q_D source and total three-sector stress-transfer identity; it generates "
-        "neither a linear nor a quadratic A_D term. Its boundary variation and ordinary core closure are finite. "
-        "Mark II is reached conditionally: the exact action-normalized core/wall response Gram-Hessian on the common attachment domain remains open. "
-        "Physical equivalence and the physical-or-conventional status of lambda_D are not claimed. "
-        "The v11.0 logarithmic depth, positive Haar metric, healthy conditional support pair, "
-        "infinite-distance core endpoint, canonical ontology, and frozen generation architecture remain intact. "
-        "No core transfer operator, physical three-mode Hessian, stable particle cycle, mass, CKM/PMNS matrix, "
-        "normalized M4 action, or quantum probability law is emitted. Frozen predictions are unchanged."
+        "BHSM v15.7 treats one all-encompassing parent surface and local spacetime instability causing cavitation or "
+        "encapsulation as author ontology. The retained action has not yet derived a constraint-reduced local physical "
+        "stability operator on an action-compatible localization and common self-adjoint domain, nor a nonlinear response "
+        "that selects encapsulation rather than restoration. The v14.93 radial zero is a zero mode without cavitation, not "
+        "a global no-go. Formation and all downstream Norman-cycle maps remain incomplete; frozen predictions are unchanged."
     )

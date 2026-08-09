@@ -1,0 +1,93 @@
+{
+  "artifact": "BHSM_norman_cycle_ontology_v15_6",
+  "composition": {
+    "parent_to_updated_parent": true,
+    "physical_operator_exists": false,
+    "same_parent_state_assumed": false,
+    "source": "parent_core_state_C_n",
+    "symbol": "H_A=D o P o F",
+    "target": "updated_parent_core_state_C_n_plus_1",
+    "typed_composition_exists": true
+  },
+  "cycle": "C_n --F--> K_n --P--> K_prime_n --D--> C_n_plus_1",
+  "cycle_action_closed": false,
+  "external_frame_used": false,
+  "historical_dependency_map": [
+    {
+      "BHSM_mathematics": "nonlinear enclosure candidate",
+      "Norman_language": "particle bubble or foam",
+      "status": "CONDITIONAL"
+    },
+    {
+      "BHSM_mathematics": "sigma collective branch and sigma=0 Hessian",
+      "Norman_language": "surface tension",
+      "status": "DERIVED_STABILITY_GATE"
+    },
+    {
+      "BHSM_mathematics": "lambda_min(H_sigma^(0)[Phi])=0",
+      "Norman_language": "cavitation",
+      "status": "DERIVED_THRESHOLD_MAP_NOT_DERIVED"
+    },
+    {
+      "BHSM_mathematics": "boundary attachment and enclosure stress",
+      "Norman_language": "compressed skin",
+      "status": "CONDITIONAL"
+    },
+    {
+      "BHSM_mathematics": "forward invariant reconciliation",
+      "Norman_language": "differential equalization",
+      "status": "NOT_ACTION_DERIVED"
+    },
+    {
+      "BHSM_mathematics": "quasilocal Noether-flux receiving BVP",
+      "Norman_language": "black-hole de-envelopment",
+      "status": "OPEN_V14_94"
+    },
+    {
+      "BHSM_mathematics": "updated reconstructed parent state",
+      "Norman_language": "released spacetime",
+      "status": "NOT_DERIVED"
+    },
+    {
+      "BHSM_mathematics": "common parent/core correspondence",
+      "Norman_language": "one common core",
+      "status": "ARCHITECTURE_ONLY"
+    },
+    {
+      "BHSM_mathematics": "relative-periodic process depth and recurrence",
+      "Norman_language": "relational time",
+      "status": "CLOCK_NOT_SELECTED"
+    }
+  ],
+  "morphisms": [
+    {
+      "action_derived_map": false,
+      "first_failure": "FORMATION_MAP_NOT_ACTION_DERIVED",
+      "physical_role": "nonlinear continuation through the sigma=0 Hessian instability",
+      "source": "parent_core_state_C_n",
+      "symbol": "F",
+      "target": "enveloped_state_K_n",
+      "theorem_class_owned": true
+    },
+    {
+      "action_derived_map": false,
+      "first_failure": "PERSISTENT_ORBIT_NOT_ACTION_SELECTED",
+      "physical_role": "relative-periodic evolution Phi(tau+T)=h Phi(tau)",
+      "source": "enveloped_state_K_n",
+      "symbol": "P",
+      "target": "persisted_enveloped_state_K_prime_n",
+      "theorem_class_owned": true
+    },
+    {
+      "action_derived_map": false,
+      "first_failure": "DE_ENVELOPMENT_RULE_NOT_ACTION_DERIVED",
+      "physical_role": "forward invariant reconciliation and release to the updated parent",
+      "source": "persisted_enveloped_state_K_prime_n",
+      "symbol": "D",
+      "target": "updated_parent_core_state_C_n_plus_1",
+      "theorem_class_owned": false
+    }
+  ],
+  "ontology_consistent": true,
+  "version": "v15.6"
+}

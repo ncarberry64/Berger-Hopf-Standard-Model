@@ -1,5 +1,19 @@
 # BHSM CLI Reference
 
+## Current v15.7 status
+
+```bash
+python -m bhsm.interface physics-status --format json
+python tools/audit_public_status_sync_v15_7.py
+```
+
+The physics-status command reports the unique-parent local-instability-to-encapsulation BVP
+as the current exact gate. `registry` remains the frozen prediction registry;
+it is not a physical-completion declaration.
+
+Exact next object:
+`ACTION_DERIVED_LOCAL_SPACETIME_INSTABILITY_ON_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_REDUCED_PHYSICAL_STABILITY_LOSS_COMMON_SELF_ADJOINT_DOMAIN_AND_NONLINEAR_ENCAPSULATION_CONTINUATION`.
+
 ## BHSM v11.2 supported-action completion gate
 
 ```bash
@@ -980,3 +994,13 @@ python -m bhsm.interface coupled-deformation-rank-status --format json
 These reports import the exact seam--fold projection, type every kinetic and
 Hessian block, keep missing fold--Hopf blocks `UNDEFINED_CROSS_DOMAIN`, and
 return `EQUIVALENCE_UNRESOLVED` rather than physical inequivalence.
+
+## v14.29 View 2
+
+```bash
+python -m bhsm.interface view2-completion-status-v14-29 --format markdown
+python -m bhsm.interface view2-completion-status-v14-29 --format json
+python scripts/materialize_view2_completion_v14_29.py
+```
+
+The command reports Outcome B: a valid local candidate action/current audit, open common-domain action ownership, open FR/Dirac matching, forbidden physical outputs, and the exact upstream reduction object.

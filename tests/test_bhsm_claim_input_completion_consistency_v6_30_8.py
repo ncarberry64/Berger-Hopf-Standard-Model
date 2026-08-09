@@ -3,7 +3,6 @@ from __future__ import annotations
 import hashlib
 import json
 from pathlib import Path
-import subprocess
 import sys
 
 
@@ -142,14 +141,13 @@ def test_ten_versioned_artifacts_are_deterministic_and_current():
         json.loads(content)
 
 
-def test_materializer_is_idempotent_and_updates_canonical_gate():
-    script = ROOT / "scripts" / "materialize_claim_input_completion_consistency_v6_30_8.py"
-    subprocess.run([sys.executable, str(script)], cwd=ROOT, check=True)
-    first = {name: (ROOT / "artifacts" / name).read_bytes() for name in audit.ARTIFACT_FILES.values()}
-    canonical_first = (ROOT / "artifacts" / "BHSM_1_0_completion_gate.json").read_bytes()
-    subprocess.run([sys.executable, str(script)], cwd=ROOT, check=True)
-    second = {name: (ROOT / "artifacts" / name).read_bytes() for name in audit.ARTIFACT_FILES.values()}
-    canonical_second = (ROOT / "artifacts" / "BHSM_1_0_completion_gate.json").read_bytes()
+def test_materializer_is_idempotent_and_updates_canonical_gate(tmp_path):
+    audit.materialize_artifacts(tmp_path, source_root=ROOT)
+    first = {name: (tmp_path / "artifacts" / name).read_bytes() for name in audit.ARTIFACT_FILES.values()}
+    canonical_first = (tmp_path / "artifacts" / "BHSM_1_0_completion_gate.json").read_bytes()
+    audit.materialize_artifacts(tmp_path, source_root=ROOT)
+    second = {name: (tmp_path / "artifacts" / name).read_bytes() for name in audit.ARTIFACT_FILES.values()}
+    canonical_second = (tmp_path / "artifacts" / "BHSM_1_0_completion_gate.json").read_bytes()
     assert first == second == audit.artifact_bytes(ROOT)
     assert canonical_first == canonical_second
     assert json.loads(canonical_second)["version"] == "v11.3"

@@ -1,5 +1,16 @@
 # BHSM scientific contribution ledger
 
+## Current consolidation — v15.7
+
+The v15.7 campaign corrects the formation claim boundary: one parent surface
+and local-instability-to-encapsulation causality are author ontology, while
+BHSM owns the general conditional sigma-Hessian architecture but not the local
+constraint-reduced stability operator/domain or nonlinear encapsulation
+selection. It preserves the v14.93 zero-mode-without-cavitation theorem and
+identifies one earliest local-instability-to-encapsulation object.
+It also consolidates the linear v14.20–v15.7 research stack into the public
+default-branch narrative while retaining every historical artifact.
+
 ## How to read “achievement” here
 
 This ledger records pull requests that materially changed the explanatory

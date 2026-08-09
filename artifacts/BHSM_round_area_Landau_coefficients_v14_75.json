@@ -1,0 +1,63 @@
+{
+  "action_ownership": "GEOMETRIC_JACOBI_WITNESS_ONLY_NOT_AUTOMATIC_BHSM_SEAM_TENSION",
+  "area_density_expansion": "1+t^2[(grad f)^2/2-3f^2/2]+t^4[7f^4/8-f^2(grad f)^2/4-(grad f)^4/8]+O(t^6)",
+  "ell2_eigenvalue": 8,
+  "exact_landau_coefficients": {
+    "r": "5/3",
+    "u": "-83/15",
+    "v": "43/30"
+  },
+  "float_landau_coefficients": {
+    "r": 1.6666666666666667,
+    "u": -5.533333333333333,
+    "v": 1.4333333333333333
+  },
+  "functional": "normalized mean area of normal graph chi=pi/2+t f_Q in unit S4",
+  "locking_cone_satisfied": false,
+  "normalization": "Haar mean over S3 equals one; physical area multiplies by Vol(S3) a^3 and any owned action coefficient",
+  "physical_prediction": false,
+  "ray_checks": [
+    {
+      "I2": 1,
+      "I4": 1,
+      "a2": "5/6",
+      "a4": "-41/40",
+      "name": "A",
+      "quadratic_residual": 0.0,
+      "quartic_residual": 0.0
+    },
+    {
+      "I2": 2,
+      "I4": 2,
+      "a2": "5/3",
+      "a4": "-289/60",
+      "name": "B",
+      "quadratic_residual": 0.0,
+      "quartic_residual": 0.0
+    },
+    {
+      "I2": 3,
+      "I4": 3,
+      "a2": "5/2",
+      "a4": "-91/8",
+      "name": "C",
+      "quadratic_residual": 0.0,
+      "quartic_residual": 0.0
+    },
+    {
+      "I2": 2,
+      "I4": 4,
+      "a2": "5/3",
+      "a4": "-41/10",
+      "name": "D",
+      "quadratic_residual": 0.0,
+      "quartic_residual": 0.0
+    }
+  ],
+  "reason_locking_fails": [
+    "r_area>0",
+    "3 u_area+v_area<0"
+  ],
+  "three_u_plus_v": "-91/6",
+  "version": "v14.75"
+}

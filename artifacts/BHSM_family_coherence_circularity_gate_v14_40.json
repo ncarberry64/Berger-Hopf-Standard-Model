@@ -1,0 +1,139 @@
+{
+  "Wigner_Eckart_selection": "r=m_target-m_source",
+  "artifact": "BHSM_family_coherence_circularity_gate_v14_40",
+  "circularity_statement": "The r=3, r=1, and r=2 sources require off-diagonal family density matrix elements.  Inserting those coherences before the common-domain response or collective Dirac dynamics selects them presupposes the family superposition that the CKM derivation is meant to explain.",
+  "connected_graph": {
+    "down": false,
+    "up": false
+  },
+  "diagonal_density_support": {
+    "allowed_r": [
+      0
+    ]
+  },
+  "frozen_states": {
+    "down": [
+      {
+        "J": 0,
+        "m": 0,
+        "sector": "down",
+        "slot": "heavy"
+      },
+      {
+        "J": 3,
+        "m": 0,
+        "sector": "down",
+        "slot": "middle"
+      },
+      {
+        "J": 4,
+        "m": 2,
+        "sector": "down",
+        "slot": "light"
+      }
+    ],
+    "up": [
+      {
+        "J": 0,
+        "m": 0,
+        "sector": "up",
+        "slot": "heavy"
+      },
+      {
+        "J": 3,
+        "m": 3,
+        "sector": "up",
+        "slot": "middle"
+      },
+      {
+        "J": 5,
+        "m": 4,
+        "sector": "up",
+        "slot": "light"
+      }
+    ]
+  },
+  "required_coherences": {
+    "down": [
+      {
+        "coherence_required": false,
+        "density_entry": "rho_middle,heavy",
+        "off_diagonal": true,
+        "required_magnetic_transfer": 0,
+        "required_rank": 3
+      },
+      {
+        "coherence_required": true,
+        "density_entry": "rho_light,middle",
+        "off_diagonal": true,
+        "required_magnetic_transfer": 2,
+        "required_rank": 2
+      }
+    ],
+    "up": [
+      {
+        "coherence_required": true,
+        "density_entry": "rho_middle,heavy",
+        "off_diagonal": true,
+        "required_magnetic_transfer": 3,
+        "required_rank": 3
+      },
+      {
+        "coherence_required": true,
+        "density_entry": "rho_light,middle",
+        "off_diagonal": true,
+        "required_magnetic_transfer": 1,
+        "required_rank": 2
+      }
+    ]
+  },
+  "required_edges": [
+    {
+      "L": 3,
+      "r": 3,
+      "sector": "up",
+      "source_slot": "heavy",
+      "target_slot": "middle"
+    },
+    {
+      "L": 2,
+      "r": 1,
+      "sector": "up",
+      "source_slot": "middle",
+      "target_slot": "light"
+    },
+    {
+      "L": 3,
+      "r": 0,
+      "sector": "down",
+      "source_slot": "heavy",
+      "target_slot": "middle"
+    },
+    {
+      "L": 2,
+      "r": 2,
+      "sector": "down",
+      "source_slot": "middle",
+      "target_slot": "light"
+    }
+  ],
+  "supported_edges_from_diagonal_occupations": [
+    {
+      "L": 3,
+      "r": 0,
+      "sector": "down",
+      "source_slot": "heavy",
+      "target_slot": "middle"
+    }
+  ],
+  "validation": {
+    "diagonal_density_has_r0_only": true,
+    "down_connected_chain_not_sourced": true,
+    "off_diagonal_coherence_required_for_full_chain": true,
+    "only_down_heavy_middle_edge_survives": true,
+    "up_connected_chain_not_sourced": true,
+    "using_unowned_coherence_as_mixing_source_is_circular": true
+  },
+  "validation_passed": true,
+  "version": "v14.40"
+}

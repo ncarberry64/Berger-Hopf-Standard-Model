@@ -5,7 +5,40 @@ evidence, not competing public status pages.
 
 ## Current public summary
 
-BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current campaign status: v11.3 dresses the action-owned Lambda85 compatibility matcher reciprocally, with I_C=Q_H(G8), I_W=g5, w(I_C)=-1/2, and w(I_W)=+1/2 while the intrinsic enclosure remains neutral. The algebraic matcher derives a signed q_D source and total three-sector stress-transfer identity; it generates neither a linear nor a quadratic A_D term. Its boundary variation and ordinary core closure are finite. Mark II is reached conditionally: the exact action-normalized core/wall response Gram-Hessian on the common attachment domain remains open. Physical equivalence and the physical-or-conventional status of lambda_D are not claimed. The v11.0 logarithmic depth, positive Haar metric, healthy conditional support pair, infinite-distance core endpoint, canonical ontology, and frozen generation architecture remain intact. No core transfer operator, physical three-mode Hessian, stable particle cycle, mass, CKM/PMNS matrix, normalized M4 action, or quantum probability law is emitted. Frozen predictions are unchanged.
+Current version: **v15.7**.
+
+BHSM v15.7 treats one all-encompassing parent surface and local spacetime instability causing cavitation or encapsulation as author ontology. The retained action has not yet derived a constraint-reduced local physical stability operator on an action-compatible localization and common self-adjoint domain, nor a nonlinear response that selects encapsulation rather than restoration. The v14.93 radial zero is a zero mode without cavitation, not a global no-go. Formation and all downstream Norman-cycle maps remain incomplete; frozen predictions are unchanged.
+
+An incoming packet is one possible driver or witness, not a required primitive
+or the fundamental cause. The white-hole-to-plasma/acoustic-BAO-to-cooled-
+cosmology scale process and analogous core-energy-matching quantum recurrence
+are author hypotheses; neither has been derived from the retained action.
+
+The v14.93 radial theorem remains valid and local: the unique equivariant
+conformal quadratic zero has zero cubic coefficient and positive quartic
+coefficient. It is a `ZERO_MODE_WITHOUT_CAVITATION`, not a global no-go, and
+does not exclude nonhomogeneous or finite-amplitude branches.
+
+Current verdict:
+`BHSM_V15_7_ONE_ALL_ENCOMPASSING_PARENT_SURFACE_AND_LOCAL_INSTABILITY_TO_ENCAPSULATION_CAUSALITY_ARE_AUTHOR_ONTOLOGY;_THE_RETAINED_ACTION_DEFINES_A_GENERAL_CONDITIONAL_SIGMA_HESSIAN_BUT_HAS_NOT_DERIVED_A_LOCALIZED_CONSTRAINT_REDUCED_PHYSICAL_STABILITY_OPERATOR_ON_A_COMMON_SELF_ADJOINT_DOMAIN_OR_A_LOCAL_INSTABILITY_WHOSE_NONLINEAR_RESPONSE_COMPLETES_INTO_ENCAPSULATION_RATHER_THAN_RESTORATION;_THE_V14_93_RADIAL_ZERO_IS_A_ZERO_MODE_WITHOUT_CAVITATION_NOT_A_GLOBAL_NO_GO;_DOWNSTREAM_NORMAN_CYCLE_AND_MASTER_CLOSURE_REMAIN_UNDEFINED_AND_FULL_BHSM_COMPLETION_IS_FALSE`.
+
+Exact next object:
+`ACTION_DERIVED_LOCAL_SPACETIME_INSTABILITY_ON_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_REDUCED_PHYSICAL_STABILITY_LOSS_COMMON_SELF_ADJOINT_DOMAIN_AND_NONLINEAR_ENCAPSULATION_CONTINUATION`.
+
+`FULL_BHSM_COMPLETE = FALSE`. Physical master-solution counts, absolute scale,
+action-derived CKM/PMNS, and an encapsulation event remain undefined or open.
+Frozen predictions and official prediction logic are unchanged.
+
+## Historical v11.6 charged-current status
+
+The v11.5 whitening correction and flavor candidate remain preserved. Its
+unitary, CP-odd, SU(2)-closing properties establish mathematical viability
+only. The coefficient-free spectral charged-current kernel remains an
+author-selected no-fit candidate, not action-derived. Its historical exact
+next object was
+`ACTION_OWNED_COMMON_DOMAIN_UP_DOWN_FAMILY_WAVEFUNCTION_ORIENTATION_AND_CURRENT_PAIRING_MAP`.
+
+## v11.3 historical reciprocal-attachment status
 
 BHSM v11.3 recovers the v7 compatibility incidence and dresses the existing
 `Lambda85` matcher without adding a field, mediator, or normalization. The
@@ -2978,3 +3011,135 @@ Current exact verdict:
 
 Exact next object:
 `ACTION_DOMAIN_THEOREM_SELECTING_ONE_PHYSICAL_NORMAL_OR_RADION_DEGREE_WITH_COMPLETE_LOCALIZED_STRESS_PULLBACK_AND_COVARIANT_GLOBAL_RESTORING_CONSTRAINT`.
+
+## v14.29 authoritative View 2 update
+
+The formal scientific audit issues Outcome B: `BHSM_VIEW2_MINIMALLY_GAUGED_ETA_ACTION_AND_COMPOSITE_THETA_CURRENT_ARE_CONSTRUCTED_CONDITIONALLY_BUT_FULL_MASTER_ACTION_OWNERSHIP_REMAINS_BLOCKED`. The local candidate variation and no-new-vector result are valid, but the original `M8` eta action has no derived common-domain reduction to the physical `M4` SU3 connection, and the bosonic-to-FR/Dirac matching theorem is absent. First exact object: `COMMON_DOMAIN_ETA_TO_PHYSICAL_SU3_ASSOCIATED_BUNDLE_REDUCTION_WITH_COLLAR_MEASURE_AND_VARIATIONAL_INTERTWINER`.
+<!-- BHSM_V14_31_TO_V14_33_CUMULATIVE -->
+## BHSM v14.31–v14.33 Path B and Hopf-smash continuation
+
+v14.31 adopts the canonical `G2` extension of the physical color bundle and the gauged eta `p=2+p=8` sigma action as foundational physical data, closing local color–eta action ownership without six new vector fields. v14.32 proves that the physical `M4` `S6` field alone has no degree-one or FR sector because `pi3(S6)=pi4(S6)=0`. v14.33 then identifies the full-preimage resolution: `S3_base smash S3_fiber = S6` and its suspension gives `S7`; oriented fiber integration of the closed degree form yields a conserved physical particle-number current when cap flux vanishes. The smooth equivariant map, full-preimage stationary solution, collective measure and Dirac action remain open.
+<!-- /BHSM_V14_31_TO_V14_33_CUMULATIVE -->
+<!-- BHSM_V14_34_HOPF_PHASE_FLAVOR -->
+## BHSM v14.34 Hopf-phase flavor audit
+
+`BHSM_HOPF_IMBALANCE_GEOMETRICALLY_SPLITS_THE_FROZEN_QUARK_HARMONICS_BUT_A_CONSTANT_OR_SINGLE_WEIGHT_PHASE_AND_THE_LIVE_I3_WEAK_CURRENT_CANNOT_BY_THEMSELVES_GENERATE_A_FULL_RANK_NONTRIVIAL_CKM_KERNEL`
+
+Charm and strange are validated as the same `K=48` harmonic shell with `q=6` versus `q=0`. A constant phase is only a rephasing, and one fixed Hopf weight has rank at most one for the frozen ledger. The viable route retains the live `I3` weak current and derives mixing from action-selected non-axisymmetric multi-harmonic phase textures plus sector-dependent Feshbach-dressed up/down embeddings. CKM remains uncomputed.
+<!-- /BHSM_V14_34_HOPF_PHASE_FLAVOR -->
+<!-- BHSM_V14_35_HOPF_PHASE_BIFURCATION -->
+## BHSM v14.35 Hopf-phase bifurcation audit
+
+`BHSM_V14_35_MINIMAL_FOUR_COMPONENT_MIXING_SEED_AND_FIVE_COMPONENT_CABIBBO_CP_TEXTURE_ARE_DERIVED_KINEMATICALLY_BUT_THE_PATH_B_ACTION_HAS_NOT_SELECTED_THE_NONAXISYMMETRIC_BIFURCATION_BRANCH_OR_SELF_ADJOINT_TOWER_RESOLVENT`
+
+The minimal connected full-rank mixing seed uses four components, while the Cabibbo-aligned CP texture uses `(ell,p)=(0,0),(2,2),(4,4),(6,6),(8,8)`, has one rephasing cycle, and admits a generic full-rank cross-Gram normal form. The physical branch, phase-locking coefficients, tower resolvent and CKM remain open.
+<!-- /BHSM_V14_35_HOPF_PHASE_BIFURCATION -->
+<!-- BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->
+## BHSM v14.36 degree-one phase-Hessian audit
+
+`BHSM_PATH_B_DEGREE_ONE_PHASE_HESSIAN_IS_NONNEGATIVE_AND_THE_REQUESTED_HOPF_FLAVOR_CHANNELS_HAVE_NO_NEGATIVE_MODE_ON_THE_ROUND_SMASH_SURROGATE`
+
+The pure Path B phase Hessian is a sum of nonnegative squares. The requested `(ell,p)` flavor channels have positive finite-box lower-bound spectra on the v13.1 round-smash surrogate, approaching zero from above as the noncompact box expands. The phase bifurcation does not turn on without a signed holonomy or other action source.
+<!-- /BHSM_V14_36_DEGREE_ONE_PHASE_HESSIAN -->
+<!-- BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->
+## BHSM v14.37 relative-holonomy/full-shape Hessian audit
+
+`BHSM_V12_Z6_RELATIVE_HOLONOMY_IS_AN_ORIENTATION_CONSTRAINT_NOT_A_QUADRATIC_BIFURCATION_SOURCE_AND_THE_V13_1_DEGREE_ONE_FULL_SHAPE_SURROGATE_HAS_NO_NEGATIVE_MODE_IN_THE_TESTED_ELL_SECTORS`
+
+The recovered v12 `Z6` phase preserves isolated-sector spectra and has no quadratic amplitude curvature. The v13.1 degree-one surrogate has no negative polar, coexact, or coupled polar/exact mode in the tested `ell=2,4,6,8,10` sectors. A bifurcation now requires an action-owned eta–attachment mixed Hessian block reaching the normalized singular-value threshold one.
+<!-- /BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->
+<!-- BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->
+## BHSM v14.38 Lambda85–eta mixed-Hessian audit
+
+`BHSM_V11_3_HOMOGENEOUS_LAMBDA85_ATTACHMENT_HAS_ZERO_MIXED_HESSIAN_WITH_ALL_NONTRIVIAL_HOPF_FLAVOR_CHANNELS_AND_CANNOT_TRIGGER_THE_V14_35_BIFURCATION`
+
+The available v11.3 KKT attachment reduction is a homogeneous `(ell,p)=(0,0)` branch. It is orthogonal to all requested nontrivial flavor channels, so the normalized mixed singular value is exactly zero. The canonical C3 projection is diagonal in the exact family-projector basis. A nonhomogeneous constraint-reduced attachment mode or matched Spin(4) pullback is still required.
+<!-- /BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->
+<!-- BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->
+## BHSM v14.39 static eta/metric and Spin(4) source audit
+
+`BHSM_STATIC_DEGREE_ONE_PATH_B_BACKGROUND_HAS_ZERO_COEXACT_ADM_MOMENTUM_SOURCE_AND_ZERO_STATIC_ETA_SHIFT_MIXED_BLOCK_SO_THE_SPIN4_L2_L3_BRANCH_DOES_NOT_TURN_ON`
+
+The exact Path-B eta/spatial-metric mixed variation is derived. A static eta background has zero ADM momentum density, so it does not activate the coexact L=2,L=3 Spin(4) branch. The nonhomogeneous Lambda85 continuation is a gauge-fixed constraint-reduced metric problem, not a multiplier spectrum.
+<!-- /BHSM_V14_39_STATIC_ETA_METRIC_SPIN4_SOURCE -->
+<!-- BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->
+## BHSM v14.40 matter-sourced Spin(4) multipole audit
+
+`BHSM_RIGID_FR_ETA_ROTOR_STATIC_WILSON_INSERTIONS_AND_DIAGONAL_FAMILY_OCCUPATIONS_DO_NOT_SUPPLY_THE_UNIVERSAL_CONNECTED_L2_L3_COEXACT_SHIFT_REQUIRED_FOR_CKM`
+
+The rigid eta rotor supplies only L=1. Static Wilson insertions supply no universal coexact momentum source. Diagonal family occupations have r=0 only and do not connect the frozen family chains. Off-diagonal coherence remains circular until selected by the collective action.
+<!-- /BHSM_V14_40_MATTER_SOURCED_SPIN4_MULTIPOLE -->
+<!-- BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->
+## BHSM v14.41 source-free relative-frame gate
+
+`BHSM_SOURCE_FREE_CLASSICAL_COMPACT_CAP_ADM_ACTION_HAS_ONLY_KILLING_COEXACT_SHIFT_ZERO_MODES_AND_CANNOT_SPONTANEOUSLY_SELECT_THE_L2_L3_RELATIVE_FRAME_BACKGROUND`
+
+The source-free stationary coexact shift is a weighted Killing-operator square. On a round S3 cap its L=2 and L=3 eigenvalues are 5/R^2 and 12/R^2. The classical universal relative-frame branch is therefore off. A renormalized collective-fermion vacuum polarization remains open.
+<!-- /BHSM_V14_41_SOURCE_FREE_RELATIVE_FRAME -->
+<!-- BHSM_V14_42_COLLECTIVE_DIRAC_VACUUM_POLARIZATION -->
+## v14.42 collective Dirac vacuum-polarization audit
+
+- FR parity, rotor inertia, and the compact `H1` domain do not by themselves derive an action-normalized local collective Dirac operator.
+- Conditional on a supplied gapped self-adjoint Dirac completion, the coexact ADM/Kosmann filled-sea transition susceptibility is nonpositive and vanishes on Killing modes.
+- The continuum polarization requires a regulator and independent Einstein plus curvature-squared counterterms.
+- Physical `L=2` and `L=3` zero crossings remain undefined.
+- Frozen predictions are unchanged; BHSM is not complete.
+<!-- /BHSM_V14_42_COLLECTIVE_DIRAC_VACUUM_POLARIZATION -->
+<!-- BHSM_V14_43_MODULI_CLIFFORD_MATCHER_ZETA -->
+## v14.43 moduli/Clifford matcher-zeta audit
+
+- Bosonic FR-knot moduli quantization supplies a scalar mass-shell/Laplace symbol and a global Z2 spin/statistics character, not a local spacetime Clifford principal symbol.
+- The rank-one FR line cannot carry the full complex spacetime Clifford algebra; the canonical Hodge-Dirac acts on moduli space, not M4.
+- The self-adjoint core-wall transmission domain is a nonunique family of unitary Clifford intertwiners.
+- The v12.1 L2/L3 Clebsch factors are exact orbital factors; full Kosmann elements require a selected spinor lift and radial/seam integrals.
+- Exact free round-S3 zeta diagnostics are recorded, but the renormalized L2/L3 polarization remains open.
+- Frozen predictions are unchanged; BHSM is not complete.
+<!-- /BHSM_V14_43_MODULI_CLIFFORD_MATCHER_ZETA -->
+<!-- BHSM_V14_44_WORLDLINE_CLIFFORD_SPIN_LIFT -->
+## v14.44 worldline/Clifford spin-lift audit
+
+- The bosonic Path B eta/FR collective action does not generate the odd worldline variables or local supercharge needed for a spacetime Dirac operator.
+- N=1 supersymmetric quantum mechanics gives a coefficient-fixed moduli Hodge-Dirac only after new Grassmann variables are added; it acts on configuration space rather than M4.
+- Full Clifford seam compatibility reduces the spin matcher from U(2)xU(2) to one common phase before internal bundle intertwiners.
+- A parent spin coframe would select the seam spin lift up to a common sign/phase, but the current metric action does not own that coframe attachment.
+- The orbital L2/L3 library retains twelve of sixteen connected spinor branch pairs; full Kosmann vertices remain open.
+- Frozen predictions are unchanged; BHSM is not complete.
+<!-- /BHSM_V14_44_WORLDLINE_CLIFFORD_SPIN_LIFT -->
+<!-- BHSM_V14_45_FOUNDATIONAL_DIRAC_SPIN_GLUE -->
+## v14.45 foundational Dirac and spin-glue continuation
+
+- BHSM adopts the canonically normalized two-sided eta-bound Dirac action as foundational low-energy data, not as a derivation from the bosonic Path-B action.
+- The normalized eta zero mode gives an exact unit four-dimensional kinetic pullback and unit two-sheet Higgs overlap.
+- A single global parent spin bundle fixes the seam transmission and cancels the internal Green form; the remaining common sign or gauge phase is family central.
+- Collective eta zero modes are removed from the bosonic determinant through an explicit orthogonal projector, preventing double counting with the local fermion field.
+- The two renormalized local gravitational coefficients span the L=2 and L=3 channels independently; their channel matrix has determinant 420.
+- The physical bifurcation remains underdetermined until a microscopic regulator or two renormalization conditions and the tangential Kosmann spectrum are supplied.
+- Frozen predictions are unchanged; BHSM is not complete.
+<!-- /BHSM_V14_45_FOUNDATIONAL_DIRAC_SPIN_GLUE -->
+
+<!-- BHSM_V14_83_MANUAL_RECOVERY -->
+## BHSM v14.83 manual recovery and shear gate
+
+All 49 canonical manual packages through v14.83 are integrated. The reduced
+two-stratum kinetic identity derives a positive isotropic ell=2 shear
+susceptibility, with `chi_2=2/(3R^2)` for equal inertias. The full-preimage
+shear action, physical layer data, degree-one background, complete Hessian,
+noncentral current, and observables remain open. `FULL_BHSM_COMPLETE=FALSE`,
+`MARK_III=NOT_REACHED`, and USB synchronization is ineligible.
+<!-- /BHSM_V14_83_MANUAL_RECOVERY -->
+
+<!-- BHSM_V14_84_CAP_INERTIA_OPERATOR -->
+## BHSM v14.84 full-preimage cap-inertia operator gate
+
+The natural strata are the existing reflected full-preimage caps, not new
+fluids or fields. On a common positive reduced ell=2 domain, the exact
+operator parallel-sum identity proves
+`H_eff=H0-DeltaA^dagger P DeltaA` with a positive-semidefinite softening
+operator, even when the cap inertias do not commute. Reflection intertwining
+conditionally gives `nu=1/4`; `chi_2=2/(3R^2)` additionally retains the
+normalized isotropic-transport hypothesis. Actual cap inertias, positive
+gravity/gauge/ghost reduction, physical nonzero transport, the degree-one
+self-adjoint background, and the complete Hessian remain open. Source-free
+ADM coordinate shift is excluded as the physical shear source. BHSM remains
+incomplete and USB synchronization remains ineligible.
+<!-- /BHSM_V14_84_CAP_INERTIA_OPERATOR -->
