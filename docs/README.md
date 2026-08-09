@@ -505,3 +505,18 @@ The first absent arrow is the action-derived primitive event reversal and loop
 spectrum. Physical and gauge-quotiented master-solution counts are undefined,
 and full BHSM completion remains false.
 <!-- /BHSM_V15_5_GLOBAL_MASTER_CLOSURE -->
+
+<!-- BHSM_V15_6_NORMAN_CYCLE_MASTER_CLOSURE -->
+## v15.6 Norman-cycle master closure
+
+See `BHSM_NORMAN_CYCLE_MASTER_CLOSURE_V15_6.md` for the typed
+formation--persistence--de-envelopment cycle, the proof that release is not
+automatically a dagger or inverse, the parent invariant ledger, conditional
+primitive-loop and Floquet reconstruction audits, Z2/Z3 full-cycle kill
+screen, and strict 30-condition completion gate.
+
+The Norman ontology is consistent with BHSM, but the nonlinear formation map,
+selected persistent orbit, and de-envelopment receiving law are not jointly
+action-derived. The cycle is therefore not a physical operator and full BHSM
+completion remains false.
+<!-- /BHSM_V15_6_NORMAN_CYCLE_MASTER_CLOSURE -->

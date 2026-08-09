@@ -2,6 +2,30 @@
 
 Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a completed replacement of the Standard Model. The program goal remains replacement by derivation, with the Standard Model retained as the preserved infrared layer until that derivation is complete.
 
+## v15.6 Norman formation--persistence--de-envelopment cycle
+
+The recovered Norman doctrine is consistent with BHSM when typed as
+`C_n --F--> K_n --P--> K'_n --D--> C_(n+1)`. De-envelopment is a forward
+release/reconciliation into an updated parent; it is neither `F^-1` nor
+`F^dagger` without an additional action theorem.
+
+BHSM owns the `sigma=0` Hessian crossing as the formation threshold and owns
+the relative-periodic/Floquet theorem class for persistence. It does not yet
+derive the nonlinear formation continuation, select a physical persistent
+orbit, or supply a release condition, receiving parent domain, complete
+Noether ledger, and orphan-free transfer theorem. Consequently the typed
+composite is not a physical operator, its spectrum and primitive-to-Floquet
+reconstruction are undefined, and the master map remains nonconstructible.
+
+Primary result:
+`BHSM_V15_6_THE_NORMAN_FORMATION_PERSISTENCE_DE_ENVELOPMENT_ONTOLOGY_IS_COMPATIBLE_WITH_THE_RETAINED_BHSM_ARCHITECTURE_BUT_THE_PHYSICAL_CYCLE_IS_NOT_ACTION_CLOSED`.
+
+Exact next object:
+`ACTION_DERIVED_NONLINEAR_NORMAN_CYCLE_BOUNDARY_VALUE_PROBLEM_WITH_FORMATION_CONTINUATION_RELATIVE_PERIODIC_PERSISTENCE_DE_ENVELOPMENT_RECEIVING_DOMAIN_COMPLETE_NOETHER_LEDGER_AND_PHYSICAL_TANGENT_MONODROMY`.
+
+`FULL_BHSM_COMPLETE = FALSE`; master-solution counts remain
+`UNDEFINED_MISSING_UPSTREAM_STRUCTURE`.
+
 ## v14.2 FR eta-knot color-matter completion audit
 
 V14.2 proves that the classical eta-wall stabilizer selector cannot source the

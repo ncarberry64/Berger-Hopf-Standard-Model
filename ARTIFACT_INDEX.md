@@ -2041,3 +2041,19 @@ clock, scale and regular-action ownership. They record an undefined master
 solution count because the master map is absent; they do not select a
 foundational model or claim full BHSM completion.
 <!-- /BHSM_V15_5_GLOBAL_MASTER_CLOSURE -->
+
+<!-- BHSM_V15_6_NORMAN_CYCLE_MASTER_CLOSURE -->
+## v15.6 Norman-cycle master-closure artifacts
+
+Regenerate the ten `BHSM_*_v15_6.json` artifacts with
+`python scripts/materialize_aether_norman_cycle_closure_v15_6.py`.
+The controlling report is
+`docs/BHSM_NORMAN_CYCLE_MASTER_CLOSURE_V15_6.md`.
+
+The artifacts type the Norman formation--persistence--de-envelopment cycle,
+separate release from dagger/inverse, audit the parent invariant ledger,
+enforce the operator-before-spectrum firewall, test primitive-to-Floquet
+reconstruction, and re-run the Z2/Z3, state/GNS, self-reconstruction, and
+strict 30-condition completion gates. They do not promote the conditional
+cycle to a physical operator or claim full BHSM completion.
+<!-- /BHSM_V15_6_NORMAN_CYCLE_MASTER_CLOSURE -->

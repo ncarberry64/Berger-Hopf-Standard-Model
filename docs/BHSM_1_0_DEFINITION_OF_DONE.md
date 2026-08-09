@@ -518,3 +518,20 @@ scale, gauge normalization, scalar/topographic source, mass, mixing and
 encapsulation ownership also remain open. The next prerequisite is an
 action-derived primitive event reversal and loop spectrum on the four-object
 pregeometric category.
+
+## v15.6 Norman-cycle prerequisite result
+
+The recovered Norman formation--persistence--de-envelopment ontology is
+mathematically compatible with BHSM and now has explicit typed domains. The
+sigma=0 Hessian crossing is the action-owned onset condition and the
+relative-periodic/Floquet framework is the correct persistence theorem class.
+De-envelopment is a distinct forward map to an updated parent state; it is not
+formation's inverse or dagger.
+
+Definition-of-done remains unmet. The threshold does not construct the
+nonlinear formation map, no physical persistent orbit has been selected, and
+the action supplies no release condition, receiving parent domain, complete
+Noether ledger, or orphan-free transfer theorem. Thus the conditional
+parent-to-updated-parent composite is not a physical operator and has no
+legitimate loop spectrum or Floquet reconstruction. The master map, unique
+fixed point, clock, absolute scale, and regular ownership gates remain open.
