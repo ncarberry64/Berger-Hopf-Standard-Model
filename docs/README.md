@@ -476,3 +476,18 @@ the dagger, positive state, representation, closed Dirichlet form, or bounded
 geometry--core correspondence needed to turn that language into a physical
 microscopic action.
 <!-- /BHSM_V15_3_AETHER_MICROSCOPIC_CORE_ACTION -->
+
+<!-- BHSM_V15_4_AETHER_EVENT_ALGEBRA_STATE -->
+## v15.4 foundational event algebra, state, and GNS selection
+
+See `BHSM_AETHER_FOUNDATIONAL_EVENT_ALGEBRA_STATE_V15_4.md` for the derived
+category product, conditional reversal dagger, explicit positive/faithful
+state cones, automorphism-invariance audit, pointed GNS construction, and the
+incidence-compatible `Z_2/Z_3` kill screen.
+
+The result is Outcome G with an Outcome-H refinement. Both finite dagger
+groupoids reconstruct the same BHSM incidence grammar but remain star
+nonisomorphic, while strengthened symmetry conditions leave continuous
+faithful state families. A new action-derived reversal, loop-spectrum, and
+state-selection principle is required.
+<!-- /BHSM_V15_4_AETHER_EVENT_ALGEBRA_STATE -->

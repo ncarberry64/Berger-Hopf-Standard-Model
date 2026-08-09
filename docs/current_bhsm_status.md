@@ -1478,3 +1478,37 @@ The exact next object is
 BHSM remains incomplete and Mark III is not reached. No continuous parameter,
 primitive field, preferred frame, empirical input, or USB operation enters
 v15.3.
+
+## v15.4 foundational event algebra, state, and GNS gate
+
+Categorical event multiplication and object identities are now explicit. A
+compatible dagger exists after a reversible groupoid completion is declared,
+but BHSM does not derive the physical reversal functor, loop relations, or
+complete morphism set. The historical regular-boundary orientation
+involution is a grading, not reversal of arbitrary pregeometric events.
+
+The strengthened kill screen uses the exact four BHSM incidence objects with
+finite cyclic isotropy. Both `M4(C[Z_2])` and `M4(C[Z_3])` reconstruct the
+same distinguished diamond grammar and admit normalized faithful positive
+states. Their faithful GNS ranks are 32 and 48, and their center dimensions
+are two and three, so they remain star nonisomorphic after every legitimate
+event relabeling and structured GNS quotient.
+
+For each witness, positive states form a finite spectrahedron and faithful
+states its continuous open interior. Cap reflection and maximal cyclic
+relabeling still leave continuous faithful invariant-state families.
+Traciality and invariance under the entire abstract star-automorphism group
+are not action-owned physical axioms. No distinguished state or pointed GNS
+triple is selected.
+
+The outcome is
+`OUTCOME_G_Z2_Z3_OBSTRUCTION_SURVIVES_ALL_CURRENTLY_DERIVED_PRINCIPLES`,
+with the refinement
+`OUTCOME_H_ACTION_DERIVED_EVENT_REVERSAL_LOOP_SPECTRUM_AND_STATE_SELECTION_PRINCIPLE_REQUIRED`.
+
+The exact next object is
+`ACTION_OR_ARCHITECTURE_DERIVED_PRIMITIVE_EVENT_REVERSAL_LOOP_SPECTRUM_AND_RECONSTRUCTION_FUNCTOR_THAT_FIXES_THE_PHYSICAL_DAGGER_CATEGORY_AND_AUTOMORPHISM_GROUP_AND_THEN_PROVES_OR_REFUTES_UNIQUENESS_OF_A_NORMALIZED_FAITHFUL_INVARIANT_POSITIVE_STATE`.
+
+BHSM remains incomplete and Mark III is not reached. Frozen predictions and
+official prediction logic are unchanged. No continuous parameter, primitive
+field, preferred frame, empirical input, or USB operation enters v15.4.

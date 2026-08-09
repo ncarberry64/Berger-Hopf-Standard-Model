@@ -477,3 +477,22 @@ only conditionally once the missing core and attachment data are selected;
 the physical boundary operator, event generator, harmonic-to-geometric
 reconstruction map, clock recurrence, and mass overtones are not action
 derived. Exact regular BHSM recovery remains unchanged.
+
+## v15.4 foundational event-algebra/state prerequisite result
+
+The event architecture now has a precise algebraic floor. Composable
+correspondences multiply categorically, noncomposable pairs become zero after
+linearization, composition is associative, and every event object has an
+identity. The physical morphism set, loop relations, and reversal functor are
+not selected.
+
+The strengthened fixed witnesses `M4(C[Z_2])` and `M4(C[Z_3])` both carry a
+valid reversal dagger, faithful positive states, GNS representations, and the
+same four-object BHSM incidence quotient. They remain star nonisomorphic with
+GNS ranks 32 and 48. Even cap reflection plus cyclic relabeling leaves
+continuous faithful invariant-state families.
+
+Definition-of-done remains unmet. Positivity, faithfulness, symmetry, and
+traciality do not select a physical foundational triple. No canonical map to
+the downstream regular finite algebra is derived, and Dirichlet-form
+existence does not imply uniqueness or generator selection.

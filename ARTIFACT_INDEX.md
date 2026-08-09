@@ -2010,3 +2010,18 @@ variation, event kernel, clock/reconstruction, and completion gates. Fixed
 `Z_2` and `Z_3` resonance forms are diagnostic nonuniqueness witnesses only;
 neither is promoted to physical BHSM data.
 <!-- /BHSM_V15_3_AETHER_MICROSCOPIC_CORE_ACTION -->
+
+<!-- BHSM_V15_4_AETHER_EVENT_ALGEBRA_STATE -->
+## v15.4 foundational event-algebra/state artifacts
+
+Regenerate the ten `BHSM_aether_*_v15_4.json` / completion-gate artifacts
+with `python scripts/materialize_aether_event_algebra_state_v15_4.py`.
+The controlling report is
+`docs/BHSM_AETHER_FOUNDATIONAL_EVENT_ALGEBRA_STATE_V15_4.md`.
+
+The artifacts audit categorical multiplication, reversal dagger, positive and
+faithful state cones, automorphism-invariant states, pointed GNS data, the
+incidence-compatible `Z_2/Z_3` kill screen, regular reconstruction, and
+Dirichlet-form readiness. The finite groupoids remain diagnostic witnesses,
+not physical Aether foundations.
+<!-- /BHSM_V15_4_AETHER_EVENT_ALGEBRA_STATE -->
