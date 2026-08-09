@@ -1995,3 +1995,18 @@ Schur/Feshbach, invariant, composition, and clock gates. They record Outcome F:
 the retained action does not own the microscopic core-boundary quadratic form
 required to define, much less uniquely select, the physical generator.
 <!-- /BHSM_V15_2_AETHER_GENERATOR_SELECTION -->
+
+<!-- BHSM_V15_3_AETHER_MICROSCOPIC_CORE_ACTION -->
+## v15.3 harmonic microscopic Aether-core action artifacts
+
+Regenerate the ten `BHSM_aether_*_v15_3.json` / completion-gate artifacts
+with `python scripts/materialize_aether_microscopic_core_action_v15_3.py`.
+The controlling report is
+`docs/BHSM_AETHER_MICROSCOPIC_CORE_ACTION_V15_3.md`.
+
+The artifacts audit the harmonic event algebra, positive representation and
+pairing, core Dirichlet form, geometry--core attachment, total form, boundary
+variation, event kernel, clock/reconstruction, and completion gates. Fixed
+`Z_2` and `Z_3` resonance forms are diagnostic nonuniqueness witnesses only;
+neither is promoted to physical BHSM data.
+<!-- /BHSM_V15_3_AETHER_MICROSCOPIC_CORE_ACTION -->

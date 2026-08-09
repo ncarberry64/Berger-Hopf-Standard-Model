@@ -456,3 +456,24 @@ no pregeometric core Hilbert correspondence, trace pairing, core operator,
 core-boundary quadratic form, physical core Wentzell/Calderon block, or stable
 reference cycle. Consequently neither `K_A`, its physical equivalence class,
 nor `H_eff` is uniquely action-selected.
+
+## v15.3 harmonic microscopic-core prerequisite result
+
+The pregeometric firewall is now explicit: the core construction uses event
+composition, resonance spectra, and operator forms, never a core coordinate,
+metric, volume element, spatial integral, energy density, or preferred frame.
+The retained architecture derives an associative, identity-bearing,
+invariant-graded event-composition skeleton.
+
+That skeleton does not derive a dagger, positive state, C-star completion,
+GNS representation, trace pairing, closed invariant core Dirichlet form, or
+bounded geometry--core correspondence. Fixed positive `Z_2` and `Z_3`
+harmonic completions meet all present admissibility and exact-recovery gates
+but are inequivalent. They therefore prove a real selection obstruction and
+are not adopted as physical models.
+
+Definition-of-done remains unmet. Total-form self-adjointness is available
+only conditionally once the missing core and attachment data are selected;
+the physical boundary operator, event generator, harmonic-to-geometric
+reconstruction map, clock recurrence, and mass overtones are not action
+derived. Exact regular BHSM recovery remains unchanged.

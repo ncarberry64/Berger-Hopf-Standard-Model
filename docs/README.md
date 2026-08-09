@@ -461,3 +461,18 @@ The result is Outcome F. Existing BHSM classifies self-adjoint correspondence
 laws but does not contain the pregeometric core-boundary quadratic form needed
 to select a physical generator, boundary response, or stable clock.
 <!-- /BHSM_V15_2_AETHER_GENERATOR_SELECTION -->
+
+<!-- BHSM_V15_3_AETHER_MICROSCOPIC_CORE_ACTION -->
+## v15.3 harmonic microscopic Aether-core action
+
+See `BHSM_AETHER_MICROSCOPIC_CORE_ACTION_V15_3.md` for the no-spacetime-core
+firewall, harmonic event-algebra audit, positive representation and trace
+obstruction, fixed cyclic resonance nonuniqueness theorem, conditional KLMN
+total-form analysis, boundary-variation gate, and reconstruction/clock audit.
+
+The result is Outcome G. Harmonic and spectral mathematics provide an
+admissible pregeometric language, but the retained BHSM action does not select
+the dagger, positive state, representation, closed Dirichlet form, or bounded
+geometry--core correspondence needed to turn that language into a physical
+microscopic action.
+<!-- /BHSM_V15_3_AETHER_MICROSCOPIC_CORE_ACTION -->

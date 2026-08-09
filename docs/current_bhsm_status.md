@@ -1446,3 +1446,35 @@ The exact next object is
 BHSM remains incomplete and Mark III is not reached. Frozen predictions and
 official prediction logic are unchanged. No continuous parameter, primitive
 field, preferred frame, empirical input, or USB operation enters v15.2.
+
+## v15.3 harmonic microscopic Aether-core action
+
+The v15.3 core audit enforces a strict pregeometric firewall. No core
+coordinate, metric, volume form, spatial integral, ordinary energy density,
+or preferred frame is introduced. The native retained data are only
+composable events, invariant/process-depth gradings, and algebraic harmonic
+relations.
+
+Those data derive an associative identity-bearing composition skeleton, but
+not a dagger, positive cone or state, C-star norm/completion, GNS
+representation, trace pairing, closed invariant Dirichlet form, or bounded
+geometry--core correspondence. The fixed cyclic forms
+`L_n=2I-S_n-S_n^*` for `n=2,3` are positive, closed, self-adjoint and obey the
+same identity regular-recovery gate, yet have spectra `{0,4}` and `{0,3,3}`
+and inequivalent representation ranks. They are diagnostic witnesses, not
+physical core models.
+
+Consequently the desired total form is a conditional KLMN theorem class, not
+an action-owned BHSM functional. No physical `Theta_A`, `K_A`, event kernel,
+scale-adaptive reconstruction map, clock recurrence, mass overtone, or
+`H_eff` is selected. Restriction to the regular stratum exactly preserves the
+existing BHSM action, equations, no-go results, and frozen predictions.
+
+The result is
+`OUTCOME_G_EXISTING_BHSM_INSUFFICIENT_TO_DEFINE_A_POSITIVE_CORE_STRUCTURE`.
+The exact next object is
+`FOUNDATIONAL_PREGEOMETRIC_DAGGER_EVENT_ALGEBRA_WITH_A_DISTINGUISHED_FAITHFUL_POSITIVE_STATE_CLOSED_INVARIANT_DIRICHLET_FORM_AND_BOUNDED_GEOMETRY_CORE_CORRESPONDENCE_MORPHISM_FROM_WHICH_THE_GNS_REPRESENTATION_BOUNDARY_VARIATION_RELATIONAL_GENERATOR_AND_RECONSTRUCTION_MAP_ARE_DERIVED`.
+
+BHSM remains incomplete and Mark III is not reached. No continuous parameter,
+primitive field, preferred frame, empirical input, or USB operation enters
+v15.3.
