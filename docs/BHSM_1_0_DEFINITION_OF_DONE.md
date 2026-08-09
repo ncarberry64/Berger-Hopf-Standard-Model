@@ -2,16 +2,15 @@
 
 ## Current v15.7 evaluation
 
-`FULL_BHSM_COMPLETE = FALSE`. One all-encompassing parent surface/common
-core-interface is the controlling author ontology, but the retained action has
-not derived the localized, constraint-solved nonhomogeneous Lorentzian incoming
-packet, time-preserved common self-adjoint domain, dynamically induced physical
-sigma-Hessian crossing, and nonlinear enclosure continuation required for the
-formation map. Persistence and every later Norman-cycle/master gate are not
-reached.
+`FULL_BHSM_COMPLETE = FALSE`. One all-encompassing parent surface and local
+instability causing cavitation/encapsulation are author ontology. The retained
+action has not derived the localized, constraint-reduced physical stability
+operator and common self-adjoint domain, nor a nonlinear theorem selecting
+encapsulation rather than restoration. Persistence and every later
+Norman-cycle/master gate are not reached.
 
 Exact next object:
-`ACTION_DERIVED_LOCALIZED_CAVITATION_OF_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_SOLVED_NONHOMOGENEOUS_LORENTZIAN_INCOMING_PACKET_TIME_PRESERVED_COMMON_SELF_ADJOINT_DOMAIN_PHYSICAL_SIGMA_HESSIAN_ZERO_CROSSING_AND_NONLINEAR_ENVELOPMENT_CONTINUATION`.
+`ACTION_DERIVED_LOCAL_SPACETIME_INSTABILITY_ON_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_REDUCED_PHYSICAL_STABILITY_LOSS_COMMON_SELF_ADJOINT_DOMAIN_AND_NONLINEAR_ENCAPSULATION_CONTINUATION`.
 
 The v14.93 radial result is a `ZERO_MODE_WITHOUT_CAVITATION`, not a global
 no-go. Absolute scale, action-derived CKM/PMNS, and empirical validation remain

@@ -3,10 +3,11 @@
 ## Current consolidation — v15.7
 
 The v15.7 campaign corrects the formation claim boundary: one parent surface
-is the author ontology, while BHSM owns the general conditional sigma-Hessian
-criterion but not an action-derived localized cavitation packet or crossing.
-It preserves the v14.93 zero-mode-without-cavitation theorem and identifies one
-earliest incoming-packet/domain/crossing/continuation object.
+and local-instability-to-encapsulation causality are author ontology, while
+BHSM owns the general conditional sigma-Hessian architecture but not the local
+constraint-reduced stability operator/domain or nonlinear encapsulation
+selection. It preserves the v14.93 zero-mode-without-cavitation theorem and
+identifies one earliest local-instability-to-encapsulation object.
 It also consolidates the linear v14.20–v15.7 research stack into the public
 default-branch narrative while retaining every historical artifact.
 

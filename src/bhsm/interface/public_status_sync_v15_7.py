@@ -13,7 +13,7 @@ from .science_hardening import payload_for_command
 
 ROOT = Path(__file__).resolve().parents[3]
 CURRENT_SECTIONS = {
-    "README.md": ("## Current research status", "This independent mathematical-physics project"),
+    "README.md": ("## Current Public Status", "This independent mathematical-physics project"),
     "STATUS.md": ("## Current public summary", "## Historical v11.6"),
     "CLAIMS.md": ("## Current public claim boundary", "## Historical claim boundaries"),
     "ARTIFACT_INDEX.md": ("## Current BHSM v15.7", "## BHSM v11.5"),

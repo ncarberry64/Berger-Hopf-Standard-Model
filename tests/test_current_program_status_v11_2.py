@@ -15,7 +15,7 @@ def test_python_current_status_is_v15_7_and_fail_closed() -> None:
     assert CURRENT_VERSION == "v15.7"
     assert payload["primary_verdict"] == PRIMARY_VERDICT
     assert payload["exact_next_object"] == EXACT_NEXT_OBJECT
-    assert "no-fit spectral charged-current candidate" in public_repo_status()
+    assert "local spacetime instability" in public_repo_status()
     assert payload["completion_marks"]["Mark_III_Physical_derivation"] == "NOT_REACHED"
     assert payload["FULL_BHSM_COMPLETE"] is False
 

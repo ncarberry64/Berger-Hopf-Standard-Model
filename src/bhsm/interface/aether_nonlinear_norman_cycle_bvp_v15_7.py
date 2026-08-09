@@ -3,10 +3,10 @@
 This module attempts the first gate of the v15.6 exact next object and fails
 closed at the earliest mathematically necessary datum.  The retained action
 defines a *form* of the sigma-Hessian threshold problem, but the repository
-does not contain an action-derived, constraint-solved localized Lorentzian
-incoming disturbance of the unique parent surface on a time-preserved common
-self-adjoint domain. Consequently no dynamically induced physical zero
-crossing, Lyapunov--Schmidt continuation, persistent
+does not contain an action-derived, constraint-reduced local physical
+stability problem on an action-compatible localization and common
+self-adjoint domain. Consequently no local instability can be shown to
+complete nonlinearly into encapsulation rather than restoration, and no persistent
 orbit, release BVP, or physical monodromy may be constructed.
 
 The v14.93 radial result is preserved independently: its unique conformal
@@ -27,22 +27,22 @@ from bhsm.interface.aether_master_closure_v15_5 import (
 
 VERSION = "v15.7"
 FULL_BHSM_COMPLETE = False
-OUTCOME = "OUTCOME_UNIQUE_PARENT_SURFACE_CAVITATION_BVP_BLOCKED_AT_LOCALIZED_INCOMING_PACKET"
+OUTCOME = "OUTCOME_LOCAL_SPACETIME_INSTABILITY_TO_ENCAPSULATION_BVP_NOT_ACTION_DERIVED"
 EXACT_NEXT_OBJECT = (
-    "ACTION_DERIVED_LOCALIZED_CAVITATION_OF_THE_UNIQUE_PARENT_SURFACE_WITH_"
-    "CONSTRAINT_SOLVED_NONHOMOGENEOUS_LORENTZIAN_INCOMING_PACKET_TIME_"
-    "PRESERVED_COMMON_SELF_ADJOINT_DOMAIN_PHYSICAL_SIGMA_HESSIAN_ZERO_"
-    "CROSSING_AND_NONLINEAR_ENVELOPMENT_CONTINUATION"
+    "ACTION_DERIVED_LOCAL_SPACETIME_INSTABILITY_ON_THE_UNIQUE_PARENT_SURFACE_"
+    "WITH_CONSTRAINT_REDUCED_PHYSICAL_STABILITY_LOSS_COMMON_SELF_ADJOINT_"
+    "DOMAIN_AND_NONLINEAR_ENCAPSULATION_CONTINUATION"
 )
 PRIMARY_VERDICT = (
-    "BHSM_V15_7_ONE_ALL_ENCOMPASSING_PARENT_SURFACE_IS_THE_CONTROLLING_"
-    "AUTHOR_ONTOLOGY_BUT_THE_RETAINED_ACTION_HAS_NOT_DERIVED_A_CONSTRAINT_"
-    "SOLVED_LOCALIZED_NONHOMOGENEOUS_LORENTZIAN_INCOMING_PACKET_ON_A_TIME_"
-    "PRESERVED_COMMON_SELF_ADJOINT_DOMAIN;_THEREFORE_NO_DYNAMIC_PHYSICAL_"
-    "SIGMA_HESSIAN_CAVITATION_CROSSING_OR_NONLINEAR_ENVELOPMENT_"
-    "CONTINUATION_EXISTS;_THE_V14_93_RADIAL_ZERO_IS_A_ZERO_MODE_WITHOUT_"
-    "CAVITATION_NOT_A_GLOBAL_NO_GO;_DOWNSTREAM_NORMAN_CYCLE_AND_MASTER_"
-    "CLOSURE_REMAIN_UNDEFINED_AND_FULL_BHSM_COMPLETION_IS_FALSE"
+    "BHSM_V15_7_ONE_ALL_ENCOMPASSING_PARENT_SURFACE_AND_LOCAL_INSTABILITY_"
+    "TO_ENCAPSULATION_CAUSALITY_ARE_AUTHOR_ONTOLOGY;_THE_RETAINED_ACTION_"
+    "DEFINES_A_GENERAL_CONDITIONAL_SIGMA_HESSIAN_BUT_HAS_NOT_DERIVED_A_"
+    "LOCALIZED_CONSTRAINT_REDUCED_PHYSICAL_STABILITY_OPERATOR_ON_A_COMMON_"
+    "SELF_ADJOINT_DOMAIN_OR_A_LOCAL_INSTABILITY_WHOSE_NONLINEAR_RESPONSE_"
+    "COMPLETES_INTO_ENCAPSULATION_RATHER_THAN_RESTORATION;_THE_V14_93_"
+    "RADIAL_ZERO_IS_A_ZERO_MODE_WITHOUT_CAVITATION_NOT_A_GLOBAL_NO_GO;_"
+    "DOWNSTREAM_NORMAN_CYCLE_AND_MASTER_CLOSURE_REMAIN_UNDEFINED_AND_FULL_"
+    "BHSM_COMPLETION_IS_FALSE"
 )
 UNDEFINED = "UNDEFINED_MISSING_UPSTREAM_STRUCTURE"
 
@@ -63,20 +63,34 @@ def unknown_state_domain_payload() -> dict[str, Any]:
         ],
         "unique_parent_surface": "Sigma_A",
         "unique_parent_surface_status": "AUTHOR_ONTOLOGY_PHYSICAL_MECHANISM_TARGET",
+        "local_instability_causes_encapsulation_status": "AUTHOR_ONTOLOGY_PHYSICAL_MECHANISM_TARGET",
         "multiple_parent_surface_selection_required": False,
         "unique_does_not_mean_static": True,
         "local_state": None,
-        "localized_incoming_packet_W_in": None,
+        "localized_incoming_packet_W_in": "CANDIDATE_DRIVER_OR_WITNESS_NOT_FUNDAMENTAL_CAUSE",
         "packet_is_new_primitive_field": False,
         "constraint_solved_nonhomogeneous_Lorentzian_packet": False,
         "self_adjoint_sigma_domain_selected": False,
         "complete_cross_stratum_domain_selected": False,
         "BVP_well_posed": False,
-        "first_failure": "LOCALIZED_INCOMING_PACKET_NOT_ACTION_DERIVED",
+        "local_physical_stability_operator": None,
+        "action_compatible_localization": None,
+        "first_failure": "LOCAL_PHYSICAL_SPACETIME_INSTABILITY_UNDEFINED_MISSING_ACTION_OWNED_CONFIGURATION_OR_DOMAIN",
         "first_missing_object": EXACT_NEXT_OBJECT,
         "new_fields": [],
         "new_parameters": [],
         "preferred_frame": False,
+        "author_cosmological_scale_process": {
+            "sequence": ["white_hole_origin_event", "plasma_and_acoustic_BAO_era", "cooled_late_time_cosmology"],
+            "classification": "AUTHOR_ONTOLOGY_UNDERIVED_PHYSICAL_MECHANISM_TARGET",
+            "action_derived": False,
+        },
+        "author_core_energy_quantum_recurrence": {
+            "statement": "an event capable of matching the core energy may undergo an analogous scaled quantum process",
+            "classification": "AUTHOR_HYPOTHESIS_UNDERIVED",
+            "core_energy_threshold_derived": False,
+            "empirical_input_added": False,
+        },
     }
 
 
@@ -91,23 +105,25 @@ def formation_continuation_payload() -> dict[str, Any]:
             "Xi_boundary+Xi_collar+Xi_flux+Xi_other"
         ),
         "operator_architecture_status": "GENERAL_ACTION_NATIVE_OPERATOR_DERIVED_CONDITIONALLY",
-        "threshold_criterion": "lambda_cav(tau)=lambda_min(H_sigma,phys[Phi_A acted on by W_in(tau)])",
+        "threshold_criterion": "lambda_min(H_loc,phys[Phi;U])=0",
         "threshold_problem_well_defined_conditionally": True,
         "parent_surface_selection_problem": False,
         "unique_parent_surface_ontology": True,
-        "localized_packet_action_derived": False,
-        "packet_constraints_solved": False,
-        "packet_finite_action_or_norm": None,
-        "packet_quasilocal_flux_owned": False,
-        "packet_time_preserved_common_domain": False,
+        "incoming_packet_role": "POSSIBLE_DRIVER_OR_WITNESS_ONLY",
+        "incoming_packet_fundamentally_required": False,
+        "action_compatible_localization_derived": False,
+        "constraint_reduced_local_physical_operator_derived": False,
+        "common_self_adjoint_local_domain_derived": False,
         "domain_action_selected": False,
         "normalized_kernel_available": False,
-        "dynamic_zero_crossing_proved": False,
+        "local_physical_stability_loss_proved": False,
         "crossing_simplicity_assumed": False,
         "simple_zero_crossing_proved": False,
         "transversality_proved": False,
         "Lyapunov_Schmidt_reduction_allowed": False,
-        "nonlinear_formation_map": "UNDEFINED_NO_ACTION_DERIVED_LOCALIZED_CAVITATION_PACKET",
+        "nonlinear_response_fork": ["RESTORATION", "ENCAPSULATION"],
+        "encapsulation_selected_over_restoration": False,
+        "nonlinear_formation_map": "UNDEFINED_MISSING_ACTION_OWNED_LOCAL_CONFIGURATION_OR_DOMAIN",
         "radial_v14_93": {
             "unique_conformal_quadratic_zero": True,
             "cubic_coefficient": 0,
@@ -151,6 +167,23 @@ def cavitation_seed_eligibility(
         finite_action_or_norm,
         common_domain_time_preserved,
         physical_zero_crossing,
+    ))
+
+
+def local_instability_to_encapsulation_eligibility(
+    *, action_compatible_localization: bool, constraints_reduced: bool,
+    gauge_quotiented: bool, common_self_adjoint_domain: bool,
+    physical_stability_loss: bool, nonlinear_encapsulation_solution: bool,
+) -> bool:
+    """Require both physical local instability and its encapsulating response."""
+
+    return all((
+        action_compatible_localization,
+        constraints_reduced,
+        gauge_quotiented,
+        common_self_adjoint_domain,
+        physical_stability_loss,
+        nonlinear_encapsulation_solution,
     ))
 
 
@@ -235,7 +268,7 @@ def master_reclosure_payload() -> dict[str, Any]:
         "absolute_scale": "OPEN",
         "CKM": "OPEN_ACTION_PROVENANCE_GATE",
         "PMNS": "OPEN_ACTION_AND_SCALE_PROVENANCE_GATES",
-        "encapsulation_event": "OPEN_NONHOMOGENEOUS_LORENTZIAN_FORMATION_GATE",
+        "encapsulation_event": "OPEN_LOCAL_INSTABILITY_TO_ENCAPSULATION_GATE",
     }
 
 
@@ -246,7 +279,8 @@ def full_completion_payload() -> dict[str, Any]:
         "primary_verdict": PRIMARY_VERDICT,
         "outcome": OUTCOME,
         "FULL_BHSM_COMPLETE": FULL_BHSM_COMPLETE,
-        "NONLINEAR_FORMATION_MAP": "UNDEFINED_NO_ACTION_DERIVED_LOCALIZED_CAVITATION_PACKET",
+        "LOCAL_PHYSICAL_SPACETIME_INSTABILITY": "UNDEFINED_MISSING_ACTION_OWNED_CONFIGURATION_OR_DOMAIN",
+        "NONLINEAR_FORMATION_MAP": "UNDEFINED_MISSING_ACTION_OWNED_LOCAL_CONFIGURATION_OR_DOMAIN",
         "PHYSICAL_PERSISTENT_ORBIT": "NOT_REACHED_FORMATION_GATE",
         "DE_ENVELOPMENT_RECEIVING_DOMAIN": "NOT_REACHED_AND_UNOWNED",
         "COMPLETE_NOETHER_LEDGER": "UNDEFINED_NO_COMPLETE_CYCLE_DOMAIN",
@@ -259,7 +293,7 @@ def full_completion_payload() -> dict[str, Any]:
         "ABSOLUTE_SCALE": "OPEN",
         "CKM": "OPEN_ACTION_PROVENANCE_GATE",
         "PMNS": "OPEN_ACTION_AND_SCALE_PROVENANCE_GATES",
-        "ENCAPSULATION_EVENT": "OPEN_NONHOMOGENEOUS_LORENTZIAN_FORMATION_GATE",
+        "ENCAPSULATION_EVENT": "OPEN_LOCAL_INSTABILITY_TO_ENCAPSULATION_GATE",
         "exact_next_object": EXACT_NEXT_OBJECT,
         "empirical_inputs_added": False,
         "fitted_parameters_added": False,
@@ -271,20 +305,22 @@ def full_completion_payload() -> dict[str, Any]:
         "Hindsight_20_20": {
             "VALIDATED": [
                 "one all-encompassing parent surface is the controlling author ontology",
+                "local spacetime instability causing cavitation or encapsulation is author ontology rather than a derived theorem",
                 "the general sigma-Hessian threshold criterion is action-native conditionally",
                 "the v14.93 radial zero is a zero mode without cavitation",
                 "de-envelopment remains a forward map rather than formation inverse or dagger",
             ],
             "INVALIDATED": [
-                "treating formation as selection among multiple physical parent surfaces",
-                "calling the formal Hessian criterion a dynamically induced cavitation event",
-                "starting nonlinear continuation without an action-derived localized packet, domain, crossing, kernel, and transversality",
+                "treating a particular incoming packet as fundamentally required by the ontology",
+                "equating incoming forcing, marginality, or instability with encapsulation",
+                "assuming every local instability selects encapsulation rather than restoration",
                 "using the v14.93 local radial result as a global no-go theorem",
             ],
             "RECLASSIFIED": [
-                "background selection is a unique-parent localized-state and packet derivation problem",
-                "formation threshold is a dynamically induced cavitation crossing",
-                "formation is blocked before nonlinear continuation at the incoming-packet BVP gate",
+                "an incoming packet is a possible instability driver or witness",
+                "formation threshold is constraint-reduced local physical stability loss",
+                "cavitation is the nonlinear encapsulating response rather than the cause",
+                "formation is blocked at the local-instability-to-encapsulation BVP",
                 "all later Norman-cycle maps are not reached rather than independently evaluated",
             ],
             "OPEN": [EXACT_NEXT_OBJECT],
@@ -306,9 +342,9 @@ def public_repository_sync_payload() -> dict[str, Any]:
         "physics_status_CLI_current": True,
         "stale_current_status_hits": 0,
         "broken_current_links": 0,
-        "focused_tests": 51,
-        "dependency_tests": 891,
-        "committed_full_suite_tests": 6379,
+        "focused_tests": 60,
+        "dependency_tests": 900,
+        "committed_full_suite_tests": 6388,
         "artifact_json_count": 1916,
         "artifact_json_parse_failures": 0,
         "deterministic_artifact_count": 10,

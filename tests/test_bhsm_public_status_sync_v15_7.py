@@ -51,7 +51,9 @@ def test_cli_physics_status_is_semantically_current() -> None:
 def test_python_status_exposes_cycle_failures() -> None:
     payload = status_payload()
     assert payload["FULL_BHSM_COMPLETE"] is False
-    assert payload["nonlinear_cycle_status"]["NONLINEAR_FORMATION_MAP"].startswith("UNDEFINED")
+    assert payload["nonlinear_cycle_status"]["NONLINEAR_FORMATION_MAP"] == (
+        "UNDEFINED_MISSING_ACTION_OWNED_LOCAL_CONFIGURATION_OR_DOMAIN"
+    )
 
 
 def test_public_audit_passes_and_never_touches_usb() -> None:

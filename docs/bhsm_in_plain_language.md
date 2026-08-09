@@ -2,13 +2,19 @@
 
 ## Current frontier (v15.7)
 
-BHSM assumes one all-encompassing parent surface. It can now state precisely
-what would count as the start of a physical formation event, but it has not yet
-derived that event. The action must produce a localized incoming disturbance
-from fields it already owns, solve its constraints and boundary conditions,
-and show that it drives the local enclosure mode from stable through zero to
-unstable before continuing into a real nonlinear enclosure. Those ingredients
-are not yet derived.
+BHSM assumes one all-encompassing parent surface and treats cavitation-like
+encapsulation as a response to local spacetime instability. It has not yet
+derived that event. The action must define a genuine local physical stability
+problem after constraints and gauge are removed, then show that its nonlinear
+response completes into an enclosure rather than relaxing back. An incoming
+wave, collision, or curvature concentration may drive the instability, but no
+single driver is required by the ontology.
+
+The author also proposes that spacetime formation was itself a scaled process:
+a white-hole origin event followed by plasma/acoustic-BAO evolution and cooled
+late-time cosmology, with analogous quantum-scale events when core energy is
+matched. This is a physical hypothesis for future action derivation, not a
+result currently proved by the repository.
 
 One well-controlled symmetric radial route has been tested and does not branch
 nearby. That negative result is valuable, but it does not rule out less

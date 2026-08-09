@@ -5,30 +5,34 @@ Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a compl
 ## v15.7 nonlinear Norman-cycle BVP
 
 The v15.7 audit attempts the first irreducible gate of the v15.6 cycle BVP.
-One all-encompassing parent surface is the controlling author ontology; the
-problem is its local dynamical state, not selection among parent universes.
+One all-encompassing parent surface and local spacetime instability causing
+cavitation/encapsulation are author ontology; the problem is its local
+dynamical state, not selection among parent universes.
 The retained action defines the general conditional operator
 
 `H_sigma^(0) = -nabla_A(Z_0 nabla^A) + A_0 + sum Xi`
 
-and therefore the formal criterion for a time-dependent cavitation eigenvalue.
-It does not derive the required localized, constraint-solved nonhomogeneous
-Lorentzian incoming packet, finite action/norm and quasilocal flux, or its
-time-preserved common self-adjoint domain. Hence no dynamically induced local
-zero crossing, critical mode, or nonlinear continuation is available.
+and therefore a formal stability criterion. It does not derive an
+action-compatible localization, constraint-reduced physical local stability
+operator, or common self-adjoint domain. Nor does it determine whether a local
+instability restores the parent configuration or completes nonlinearly into an
+encapsulated state. A packet is a possible driver/witness, not a fundamental
+ontology-level requirement.
 
 The v14.93 local theorem is preserved: the unique equivariant radial
-conformal zero is a `ZERO_MODE_WITHOUT_CAVITATION`: it has zero cubic coefficient and quartic coefficient
+conformal zero is a zero mode without cavitation (`ZERO_MODE_WITHOUT_CAVITATION`): it has zero cubic coefficient and quartic coefficient
 `27*pi*X^4/128 > 0`, hence no nearby radial bifurcation. Nonhomogeneous and
 finite-amplitude branches remain open.
 
-Consequently formation is undefined; persistence, de-envelopment, the event
+The white-hole-origin to plasma/acoustic-BAO to cooled-cosmology sequence and
+analogous core-energy-matching quantum recurrence are underived author
+hypotheses. Consequently formation is undefined; persistence, de-envelopment, the event
 Noether ledger, physical monodromy, loop spectrum, Floquet reconstruction,
 and master reclosure are not reached. De-envelopment remains a forward map to
 an updated parent and is neither formation's inverse nor dagger.
 
 Exact next object:
-`ACTION_DERIVED_LOCALIZED_CAVITATION_OF_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_SOLVED_NONHOMOGENEOUS_LORENTZIAN_INCOMING_PACKET_TIME_PRESERVED_COMMON_SELF_ADJOINT_DOMAIN_PHYSICAL_SIGMA_HESSIAN_ZERO_CROSSING_AND_NONLINEAR_ENVELOPMENT_CONTINUATION`.
+`ACTION_DERIVED_LOCAL_SPACETIME_INSTABILITY_ON_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_REDUCED_PHYSICAL_STABILITY_LOSS_COMMON_SELF_ADJOINT_DOMAIN_AND_NONLINEAR_ENCAPSULATION_CONTINUATION`.
 
 `FULL_BHSM_COMPLETE = FALSE`; master-solution counts remain
 `UNDEFINED_MISSING_UPSTREAM_STRUCTURE`. Frozen predictions and official
@@ -106,7 +110,7 @@ introduced. Mark III and BHSM physical completion remain open.
 
 ## v14.0 eta-knot action-completion result
 
-The recovered v13.1â€“v13.5 chain has been reproduced and integrated
+The recovered v13.1–v13.5 chain has been reproduced and integrated
 semantically. The retained p=2+p=8 eta action has a degree-one equivariant
 static solution satisfying the Derrick identity, a positive finite-interval
 radial Jacobi spectrum, and a finite collective inertia. Odd topological
@@ -115,9 +119,9 @@ wall selects conjugate rank-three G2/SU3 polarizations, and its varying
 projector defines a nonzero su(3)-valued Grassmann curvature. Meson and baryon
 invariant tensors close exactly under that transport.
 
-The requested gauge-dressed singlet BVP is not yet an Eulerâ€“Lagrange problem
+The requested gauge-dressed singlet BVP is not yet an Euler–Lagrange problem
 of the retained action. Eta is owned by S8, while the independent SU3
-connection and its Yangâ€“Mills density are owned by S4eff. The master-action
+connection and its Yang–Mills density are owned by S4eff. The master-action
 ledger records the gauge bundle/measure pushforward as missing, the physical
 eta-current pullback is unresolved, and no density depends jointly on eta and
 the independent SU3 connection. A composite projector connection is not

@@ -6,31 +6,35 @@
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
-BHSM is an independent artifact-backed mathematical-physics research program investigating whether Standard Model structure and particle-like dynamics can be derived from Berger-Hopf boundary/envelopment geometry and a common action architecture.
+BHSM is an independent artifact-backed computational framework and mathematical-physics research program investigating whether Standard Model structure and particle-like dynamics can be derived from Berger-Hopf boundary/envelopment geometry and a common action architecture.
 
-## Current research status -- v15.7
+## Current Public Status -- v15.7
 
-BHSM assumes one all-encompassing parent surface/common core-interface. The v15.7 audit finds that the retained action has not yet derived a localized, constraint-solved nonhomogeneous Lorentzian disturbance of that surface on a time-preserved common self-adjoint domain. Without that incoming packet, the physical enclosure Hessian cannot be shown to cross dynamically or continue into a nonlinear encapsulated state. The v14.93 local radial zero is preserved as a **zero mode without cavitation**: it has zero cubic and positive quartic coefficient, so that radial branch does not bifurcate nearby; this is not a global no-go theorem.
+BHSM v15.7 treats one all-encompassing parent surface and local spacetime instability causing cavitation or encapsulation as author ontology. The retained action has not yet derived a constraint-reduced local physical stability operator on an action-compatible localization and common self-adjoint domain, nor a nonlinear response that selects encapsulation rather than restoration. The v14.93 radial zero is a zero mode without cavitation, not a global no-go. Formation and all downstream Norman-cycle maps remain incomplete; frozen predictions are unchanged.
+
+An incoming packet, collision, curvature concentration, or boundary exchange is a possible driver or witness, not the fundamental cause. The author additionally proposes a scale-dependent cosmological sequence from a white-hole origin event through the plasma/acoustic-BAO era to cooled late-time cosmology, and an analogous quantum process when an event matches the core energy. These are underived author hypotheses, not current theorems or empirical claims.
 
 `FULL_BHSM_COMPLETE = FALSE`
 
 Exact next object:
 
-`ACTION_DERIVED_LOCALIZED_CAVITATION_OF_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_SOLVED_NONHOMOGENEOUS_LORENTZIAN_INCOMING_PACKET_TIME_PRESERVED_COMMON_SELF_ADJOINT_DOMAIN_PHYSICAL_SIGMA_HESSIAN_ZERO_CROSSING_AND_NONLINEAR_ENVELOPMENT_CONTINUATION`
+`ACTION_DERIVED_LOCAL_SPACETIME_INSTABILITY_ON_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_REDUCED_PHYSICAL_STABILITY_LOSS_COMMON_SELF_ADJOINT_DOMAIN_AND_NONLINEAR_ENCAPSULATION_CONTINUATION`
 
 Read the [v15.7 controlling report](docs/BHSM_NONLINEAR_NORMAN_CYCLE_BVP_AND_MAIN_SYNC_V15_7.md), [current status](docs/current_bhsm_status.md), [claim boundaries](CLAIMS.md), and [reviewer reproduction guide](docs/reviewer_reproduction_guide.md).
 
 | Layer | Current status |
 | --- | --- |
 | Computational framework | Validated software/tests; this does not validate nature |
-| Current test corpus | 6,379 committed-tree tests |
-| Internal mathematical program | Incomplete at the exact v15.7 unique-surface localized-cavitation BVP |
+| Current test corpus | 6,388 committed-tree tests |
+| Internal mathematical program | Incomplete at the exact v15.7 local-instability-to-encapsulation BVP |
 | Nonlinear Norman cycle | Formation undefined; persistence, release, Noether ledger, and monodromy not reached |
 | Scale and flavor | Absolute scale, action-derived CKM, and PMNS remain open |
 | Frozen predictions | Unchanged |
 | Empirical status | Not established |
 
 Historical v11.x and v14.x campaigns remain preserved in the [documentation index](docs/README.md) and [artifact index](ARTIFACT_INDEX.md); they are evidence layers, not competing current-status declarations.
+
+BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity. Physical eV/GeV neutrino mass closure remains open pending a numeric neutral stiffness length sqrt(A_nu/Z_nu), a physical K_neutral,eff map in m^-2, and complete-action derivation of the admissible response cone.
 
 This independent mathematical-physics project investigates whether Berger-Hopf boundary geometry can organize structures associated with Standard Model fields, flavor, generations, interactions, and dimensional emergence. It records calculations and candidate relationships; it has not received empirical validation, completed a derivation or replacement of the Standard Model, or received institutional endorsement.
 
@@ -44,41 +48,6 @@ This independent mathematical-physics project investigates whether Berger-Hopf b
 - [BHSM v11.6 parent-action current reduction](docs/BHSM_PARENT_ACTION_SPECTRAL_CURRENT_COMPLETION_v11_6.md), [v11.5 flavor-action assembly](docs/BHSM_FLAVOR_ACTION_COMPLETION_v11_5.md), [v11.3 reciprocal attachment](docs/BHSM_RECIPROCAL_CORE_SURFACE_ATTACHMENT_v11_3.md), and [historical documentation index](docs/README.md)
 - [Reviewer reproduction guide](docs/reviewer_reproduction_guide.md)
 - [Frozen records](docs/frozen_predictions.md), [artifact index](ARTIFACT_INDEX.md), and historical v11.1-v11.3 chronology in the status records
-
-## Current Public Status
-
-| Area | Classification | Evidence boundary |
-| --- | --- | --- |
-| Computational engine | Numerically validated | Coordinate transforms, precision gates, provenance adapters, and offline reports execute. |
-| Frozen artifacts | Derived consequence | Versioned records and byte-integrity guards exist; comparison data are not derivation inputs. |
-| Threading response | Derived consequence | `Pi_perp S_Sigma = -tau (pi chi_1/16) Pi_perp q` on the declared domain. |
-| Homogeneous threading | Adopted BHSM axiom | `C_Sigma=0` in the source-free resting configuration. |
-| Lapse--Weyl block | Derived consequence | The principal bulk block and radial measure are action-derived. |
-| Fold kinetic classification | Active construction target | Mixed source, boundary domain, Schur complement, and sign remain open. |
-| Dimensionless core action | Internally complete, finite-input stratified EFT | The v7.1 correspondence action owns every retained term; physical scheme/observable transport remains open. |
-| External physics test | Needs empirical test | Engine tests do not validate BHSM particle physics. |
-
-The threading response is derived and no explicit energy threshold is required. The lapse--Weyl principal block is derived. The historical fold target below remains a conditional operator problem, but it is no longer the highest-upstream BHSM 1.0 gate. The live target is the common scheme/observable transport functor identified by v7.1. The fold construction had targeted the gauge-quotiented metric tangent
-
-```text
-T_mu_nu^(X) (x,x')
-  = delta hbar_mu_nu[X] (x) / delta X(x') evaluated at X=2,
-delta R_4[T^(X)] = tau chi_1 q.
-```
-
-At `X_c=2`, `N_0=pi/4`, and
-`a_0(t)=sqrt(2) sin(pi t/4)`, the radial measure is
-`pi sin^4(pi t/4) dt`, and the principal block is
-`[[0,6 kappa_1/a_0^2],[6 kappa_1/a_0^2,12 kappa_1/a_0^2]]`.
-
-The scalar curvature response does not uniquely specify a symmetric metric
-tangent, gauge representative, or boundary domain. Therefore the mixed
-source, B1/matcher conditions, adjoint kernels, compatibility, and Schur
-complement remain open. The fold kinetic sign is unresolved. No physical mass
-claim follows, nor does any ghost, null, tachyon, nonlinear-stability,
-production, or white-hole dynamics claim.
-
-BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity. Physical eV/GeV neutrino mass closure remains open pending a numeric neutral stiffness length sqrt(A_nu/Z_nu), a physical K_neutral,eff map in m^-2, and complete-action derivation of the admissible response cone.
 
 ## BHSM Engine on real CMS Open Data
 

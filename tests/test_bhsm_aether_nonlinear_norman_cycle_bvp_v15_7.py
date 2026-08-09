@@ -19,6 +19,7 @@ from bhsm.interface.aether_nonlinear_norman_cycle_bvp_v15_7 import (
     floquet_reconstruction_payload,
     formation_continuation_payload,
     full_completion_payload,
+    local_instability_to_encapsulation_eligibility,
     master_reclosure_payload,
     materialize,
     physical_tangent_monodromy_payload,
@@ -52,21 +53,21 @@ def test_bvp_fails_before_continuation() -> None:
     payload = unknown_state_domain_payload()
     assert payload["BVP_well_posed"] is False
     assert payload["unique_parent_surface"] == "Sigma_A"
-    assert payload["localized_incoming_packet_W_in"] is None
+    assert payload["localized_incoming_packet_W_in"].startswith("CANDIDATE_DRIVER")
     assert payload["first_missing_object"] == EXACT_NEXT_OBJECT
 
 
 def test_general_hessian_is_conditional_not_realized_threshold() -> None:
     payload = formation_continuation_payload()
     assert payload["threshold_problem_well_defined_conditionally"] is True
-    assert payload["localized_packet_action_derived"] is False
-    assert payload["simple_zero_crossing_proved"] is False
+    assert payload["constraint_reduced_local_physical_operator_derived"] is False
+    assert payload["local_physical_stability_loss_proved"] is False
 
 
 def test_lyapunov_schmidt_is_not_started_without_gate_data() -> None:
     payload = formation_continuation_payload()
     assert payload["Lyapunov_Schmidt_reduction_allowed"] is False
-    assert payload["nonlinear_formation_map"] == "UNDEFINED_NO_ACTION_DERIVED_LOCALIZED_CAVITATION_PACKET"
+    assert payload["nonlinear_formation_map"] == "UNDEFINED_MISSING_ACTION_OWNED_LOCAL_CONFIGURATION_OR_DOMAIN"
 
 
 def test_unique_parent_surface_is_ontology_not_selection_problem() -> None:
@@ -80,6 +81,7 @@ def test_w_in_is_diagnostic_not_a_new_field() -> None:
     payload = unknown_state_domain_payload()
     assert payload["packet_is_new_primitive_field"] is False
     assert payload["new_fields"] == []
+    assert formation_continuation_payload()["incoming_packet_fundamentally_required"] is False
 
 
 @pytest.mark.parametrize("missing", range(6))
@@ -105,6 +107,49 @@ def test_complete_cavitation_seed_is_eligible_for_continuation() -> None:
         common_domain_time_preserved=True,
         physical_zero_crossing=True,
     ) is True
+
+
+@pytest.mark.parametrize("missing", range(6))
+def test_every_local_instability_encapsulation_condition_is_required(missing: int) -> None:
+    gates = [True] * 6
+    gates[missing] = False
+    assert local_instability_to_encapsulation_eligibility(
+        action_compatible_localization=gates[0],
+        constraints_reduced=gates[1],
+        gauge_quotiented=gates[2],
+        common_self_adjoint_domain=gates[3],
+        physical_stability_loss=gates[4],
+        nonlinear_encapsulation_solution=gates[5],
+    ) is False
+
+
+def test_instability_plus_nonlinear_encapsulation_closes_formation_seed() -> None:
+    assert local_instability_to_encapsulation_eligibility(
+        action_compatible_localization=True,
+        constraints_reduced=True,
+        gauge_quotiented=True,
+        common_self_adjoint_domain=True,
+        physical_stability_loss=True,
+        nonlinear_encapsulation_solution=True,
+    ) is True
+
+
+def test_restoration_and_encapsulation_are_distinct_nonlinear_responses() -> None:
+    payload = formation_continuation_payload()
+    assert payload["nonlinear_response_fork"] == ["RESTORATION", "ENCAPSULATION"]
+    assert payload["encapsulation_selected_over_restoration"] is False
+
+
+def test_cosmological_and_quantum_scale_statements_are_author_hypotheses() -> None:
+    payload = unknown_state_domain_payload()
+    cosmic = payload["author_cosmological_scale_process"]
+    quantum = payload["author_core_energy_quantum_recurrence"]
+    assert cosmic["sequence"] == [
+        "white_hole_origin_event", "plasma_and_acoustic_BAO_era", "cooled_late_time_cosmology"
+    ]
+    assert cosmic["action_derived"] is False
+    assert quantum["classification"] == "AUTHOR_HYPOTHESIS_UNDERIVED"
+    assert quantum["core_energy_threshold_derived"] is False
 
 
 @pytest.mark.parametrize(

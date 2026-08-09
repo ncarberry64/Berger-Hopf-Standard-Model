@@ -7,13 +7,13 @@
 - [Reviewer reproduction guide](reviewer_reproduction_guide.md)
 - [Artifact index](../ARTIFACT_INDEX.md)
 
-Current result: one parent surface is the author ontology, while the retained
-action does not derive its localized nonhomogeneous Lorentzian incoming packet,
-time-preserved self-adjoint physical domain, dynamically induced cavitation
-crossing, or nonlinear continuation. `FULL_BHSM_COMPLETE = FALSE`.
+Current result: one parent surface and local-instability-to-encapsulation
+causality are author ontology. The retained action does not derive the
+constraint-reduced local physical stability operator/domain or the nonlinear
+selection of encapsulation over restoration. `FULL_BHSM_COMPLETE = FALSE`.
 
 Exact next object:
-`ACTION_DERIVED_LOCALIZED_CAVITATION_OF_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_SOLVED_NONHOMOGENEOUS_LORENTZIAN_INCOMING_PACKET_TIME_PRESERVED_COMMON_SELF_ADJOINT_DOMAIN_PHYSICAL_SIGMA_HESSIAN_ZERO_CROSSING_AND_NONLINEAR_ENVELOPMENT_CONTINUATION`.
+`ACTION_DERIVED_LOCAL_SPACETIME_INSTABILITY_ON_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_REDUCED_PHYSICAL_STABILITY_LOSS_COMMON_SELF_ADJOINT_DOMAIN_AND_NONLINEAR_ENCAPSULATION_CONTINUATION`.
 
 ## Historical v11.5 campaign
 
@@ -262,7 +262,7 @@ The current minimal-action theory dictionary is documented in
 - [Institutional HEP handoff](institutional_hep_handoff_index.md)
 - [Citation guide](how_to_cite.md)
 <!-- BHSM_V14_31_TO_V14_33_CUMULATIVE -->
-## v14.31â€“v14.33 Path B continuation
+## v14.31–v14.33 Path B continuation
 
 The three controlling reports document the foundational action, physical-topology correction, and full-preimage Hopf-smash transgression route.
 <!-- /BHSM_V14_31_TO_V14_33_CUMULATIVE -->
@@ -287,7 +287,7 @@ See `BHSM_DEGREE_ONE_PHASE_HESSIAN_SPECTRUM_V14_36.md` for the exact nonnegative
 See `BHSM_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN_V14_37.md` for the v12 holonomy Hessian no-go, the complete v13.1 surrogate tangent-sector spectra, and the exact mixed-block zero-crossing criterion.
 <!-- /BHSM_V14_37_RELATIVE_HOLONOMY_FULL_SHAPE_HESSIAN -->
 <!-- BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->
-## v14.38 Lambda85â€“eta mixed-Hessian audit
+## v14.38 Lambda85–eta mixed-Hessian audit
 
 See `BHSM_LAMBDA85_ETA_MIXED_HESSIAN_V14_38.md` for the homogeneous-character selection theorem, the exact zero-crossing result, the canonical C3 family-diagonality theorem, and the corrected nonhomogeneous continuation.
 <!-- /BHSM_V14_38_LAMBDA85_ETA_MIXED_HESSIAN -->

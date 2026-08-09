@@ -7,12 +7,12 @@ python -m bhsm.interface physics-status --format json
 python tools/audit_public_status_sync_v15_7.py
 ```
 
-The physics-status command reports the unique-parent localized-cavitation BVP
+The physics-status command reports the unique-parent local-instability-to-encapsulation BVP
 as the current exact gate. `registry` remains the frozen prediction registry;
 it is not a physical-completion declaration.
 
 Exact next object:
-`ACTION_DERIVED_LOCALIZED_CAVITATION_OF_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_SOLVED_NONHOMOGENEOUS_LORENTZIAN_INCOMING_PACKET_TIME_PRESERVED_COMMON_SELF_ADJOINT_DOMAIN_PHYSICAL_SIGMA_HESSIAN_ZERO_CROSSING_AND_NONLINEAR_ENVELOPMENT_CONTINUATION`.
+`ACTION_DERIVED_LOCAL_SPACETIME_INSTABILITY_ON_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_REDUCED_PHYSICAL_STABILITY_LOSS_COMMON_SELF_ADJOINT_DOMAIN_AND_NONLINEAR_ENCAPSULATION_CONTINUATION`.
 
 ## BHSM v11.2 supported-action completion gate
 

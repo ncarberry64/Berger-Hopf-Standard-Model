@@ -158,6 +158,7 @@ def status_payload() -> dict[str, Any]:
         "nonlinear_cycle_status": {
             key: cycle[key]
             for key in (
+                "LOCAL_PHYSICAL_SPACETIME_INSTABILITY",
                 "NONLINEAR_FORMATION_MAP",
                 "PHYSICAL_PERSISTENT_ORBIT",
                 "DE_ENVELOPMENT_RECEIVING_DOMAIN",
@@ -174,10 +175,9 @@ def status_payload() -> dict[str, Any]:
 
 def public_repo_status() -> str:
     return (
-        "BHSM v15.7 defines a conditional action-native sigma-Hessian threshold criterion but does not yet select the "
-        "constraint-solved nonhomogeneous Lorentzian M8 background, self-adjoint physical domain, normalized kernel, "
-        "or simple zero crossing required for nonlinear formation. The v14.93 equivariant radial zero has no nearby "
-        "radial bifurcation, without implying a global no-go. Formation, persistence, de-envelopment, Noether ledger, "
-        "physical monodromy, Floquet reconstruction, and master reclosure remain incomplete. The no-fit spectral "
-        "charged-current candidate remains author-selected rather than action-derived. Frozen predictions are unchanged."
+        "BHSM v15.7 treats one all-encompassing parent surface and local spacetime instability causing cavitation or "
+        "encapsulation as author ontology. The retained action has not yet derived a constraint-reduced local physical "
+        "stability operator on an action-compatible localization and common self-adjoint domain, nor a nonlinear response "
+        "that selects encapsulation rather than restoration. The v14.93 radial zero is a zero mode without cavitation, not "
+        "a global no-go. Formation and all downstream Norman-cycle maps remain incomplete; frozen predictions are unchanged."
     )

@@ -5,13 +5,14 @@
 `FULL_BHSM_COMPLETE = FALSE`.
 
 The controlling Norman/BHSM author ontology contains one all-encompassing
-parent surface/common core-interface. The retained action supplies the general
-conditional sigma-Hessian architecture, but it does not derive a localized,
-constraint-solved nonhomogeneous Lorentzian incoming disturbance of that
-surface on a time-preserved common self-adjoint domain. The first missing datum
-is therefore a dynamic cavitation seed, not selection among parent universes:
+parent surface/common core-interface and treats cavitation/encapsulation as a
+nonlinear response to local spacetime instability. The retained action supplies
+the general conditional sigma-Hessian architecture, but it does not derive an
+action-compatible local physical stability operator after constraint/gauge
+reduction on a common self-adjoint domain, nor a nonlinear solution selecting
+encapsulation rather than restoration. The first missing object is:
 
-`ACTION_DERIVED_LOCALIZED_CAVITATION_OF_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_SOLVED_NONHOMOGENEOUS_LORENTZIAN_INCOMING_PACKET_TIME_PRESERVED_COMMON_SELF_ADJOINT_DOMAIN_PHYSICAL_SIGMA_HESSIAN_ZERO_CROSSING_AND_NONLINEAR_ENVELOPMENT_CONTINUATION`.
+`ACTION_DERIVED_LOCAL_SPACETIME_INSTABILITY_ON_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_REDUCED_PHYSICAL_STABILITY_LOSS_COMMON_SELF_ADJOINT_DOMAIN_AND_NONLINEAR_ENCAPSULATION_CONTINUATION`.
 
 This is the one exact next object.
 
@@ -24,8 +25,9 @@ Intrinsic M4 fields `A_SM` and `Psi_SM` are not silently promoted to M8
 variables. The existing exact round degree-one identity branch is on an
 existing-coefficient locus that has not itself been selected by the action,
 and no complete nonhomogeneous Lorentzian cross-stratum stationary solution or
-self-adjoint sigma domain has been derived. `W_in` is diagnostic notation for
-a solution assembled from these owned variables; it is not a new field.
+self-adjoint local physical domain has been derived. `W_in` is diagnostic
+notation for one possible driver/witness assembled from owned variables; it is
+not a new field or the fundamental cause.
 
 ## 2. Formation threshold versus formation map
 
@@ -33,22 +35,23 @@ The repository defines conditionally
 
 `H_sigma^(0) = -nabla_A(Z_0 nabla^A) + A_0 + Xi_geom + Xi_matter + Xi_boundary + Xi_collar + Xi_flux + Xi_other`
 
-and the time-dependent cavitation problem
+and motivates the local physical stability problem
 
-`lambda_cav(tau) = lambda_min(H_sigma,phys[Phi_A acted on by W_in(tau)])`.
+`lambda_min(H_loc,phys[Phi;U]) = 0`.
 
-That is a legitimate action-native operator criterion. The repository does
-not yet provide `W_in` with solved Hamiltonian/momentum constraints, gauge
-reduction, localization, regularity, finite norm/action, actual transport
-flux, and a time-preserved common domain. v14.94 identifies precisely this
-nonhomogeneous incoming Path-A object as open. Its homogeneous Jensen tachyon
-is permanent and global, so it is not reused as a local induced event. Without
-the packet, the required positive-to-zero-to-negative crossing and its critical
-mode cannot be tested. Simplicity is not assumed.
+That is a legitimate conditional architecture, not yet a local operator. A
+global spectrum cannot simply be made pointwise. The repository lacks an
+action-compatible localization, constraint/gauge-reduced tangent subspace, and
+common self-adjoint local domain. v14.94's Path-A packet remains one possible
+driver/witness; its homogeneous Jensen tachyon is permanent and global and is
+not a local induced event. Even if stability loss is later derived, the
+nonlinear equations must still choose between restoration and encapsulation.
 
 Therefore:
 
-`NONLINEAR_FORMATION_MAP = UNDEFINED_NO_ACTION_DERIVED_LOCALIZED_CAVITATION_PACKET`.
+`LOCAL_PHYSICAL_SPACETIME_INSTABILITY = UNDEFINED_MISSING_ACTION_OWNED_CONFIGURATION_OR_DOMAIN`.
+
+`NONLINEAR_FORMATION_MAP = UNDEFINED_MISSING_ACTION_OWNED_LOCAL_CONFIGURATION_OR_DOMAIN`.
 
 ## 3. Preserved v14.93 theorem
 
@@ -78,7 +81,8 @@ undefined.
 
 | Required output | v15.7 status |
 | --- | --- |
-| Nonlinear formation map | `UNDEFINED_NO_ACTION_DERIVED_LOCALIZED_CAVITATION_PACKET` |
+| Local physical spacetime instability | `UNDEFINED_MISSING_ACTION_OWNED_CONFIGURATION_OR_DOMAIN` |
+| Nonlinear formation map | `UNDEFINED_MISSING_ACTION_OWNED_LOCAL_CONFIGURATION_OR_DOMAIN` |
 | Physical persistent orbit | `NOT_REACHED_FORMATION_GATE` |
 | De-envelopment receiving domain | `NOT_REACHED_AND_UNOWNED` |
 | Complete Noether ledger | `UNDEFINED_NO_COMPLETE_CYCLE_DOMAIN` |
@@ -89,7 +93,7 @@ undefined.
 | Absolute scale | Open |
 | CKM | Open action-provenance gate |
 | PMNS | Open action and scale-provenance gates |
-| Encapsulation event | Open nonhomogeneous Lorentzian formation gate |
+| Encapsulation event | Open local-instability-to-encapsulation gate |
 
 ## 5. Claim and integrity boundaries
 
@@ -101,11 +105,18 @@ candidate; mathematical viability does not establish parent-action
 provenance. No removable-media path was inspected or modified:
 `USB_TOUCHED = FALSE`.
 
+The author additionally proposes a scaled formation sequence beginning with a
+white-hole origin event, proceeding through plasma/acoustic-BAO evolution to
+cooled late-time cosmology, and an analogous quantum process for events capable
+of matching the core energy. v15.7 records this as underived author ontology/
+hypothesis. It introduces no primitive field, fitted energy, cosmological
+parameter, or theorem claim.
+
 ## Hindsight 20/20
 
 ### VALIDATED
 
-- One parent surface is the controlling author ontology; the surface can still deform, oscillate, and exchange content.
+- One parent surface and local-instability-to-encapsulation causality are the controlling author ontology.
 - The general sigma-Hessian threshold criterion is action-native
   conditionally.
 - The v14.93 radial zero is a zero mode without cavitation.
@@ -114,20 +125,18 @@ provenance. No removable-media path was inspected or modified:
 
 ### INVALIDATED
 
-- Treating formation as a choice among multiple physical parent surfaces.
-- Treating existence of the formal threshold criterion as a dynamically
-  induced cavitation event.
-- Starting nonlinear continuation before deriving the localized packet,
-  common domain, crossing, kernel, and transversality.
+- Treating a particular incoming packet as fundamentally required by the ontology.
+- Equating a driver, marginality, or local instability with encapsulation.
+- Assuming every instability makes a particle rather than restoring the parent.
 - Promoting the local radial no-bifurcation result to a global no-go theorem.
 - Assigning a loop spectrum or Floquet logarithm without a physical cycle.
 
 ### RECLASSIFIED
 
-- The former background-selection wording is a unique-parent localized-state
-  and packet-derivation problem.
-- Formation is blocked at the incoming-packet cavitation BVP gate, earlier
-  than the nonlinear continuation gate stated in v15.6.
+- An incoming packet is one candidate driver/witness.
+- Formation threshold means constraint-reduced local physical stability loss.
+- Cavitation means the nonlinear encapsulating response.
+- Formation is blocked at the local-instability-to-encapsulation BVP.
 - Persistence, release, ledger, and monodromy are not reached rather than
   separately closed or disproved.
 - v11.x and v14.x status documents are historical evidence rather than current
@@ -135,7 +144,7 @@ provenance. No removable-media path was inspected or modified:
 
 ### OPEN
 
-- `ACTION_DERIVED_LOCALIZED_CAVITATION_OF_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_SOLVED_NONHOMOGENEOUS_LORENTZIAN_INCOMING_PACKET_TIME_PRESERVED_COMMON_SELF_ADJOINT_DOMAIN_PHYSICAL_SIGMA_HESSIAN_ZERO_CROSSING_AND_NONLINEAR_ENVELOPMENT_CONTINUATION`
+- `ACTION_DERIVED_LOCAL_SPACETIME_INSTABILITY_ON_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_REDUCED_PHYSICAL_STABILITY_LOSS_COMMON_SELF_ADJOINT_DOMAIN_AND_NONLINEAR_ENCAPSULATION_CONTINUATION`
 
 ### PUBLIC REPOSITORY CORRECTIONS
 
@@ -149,10 +158,15 @@ provenance. No removable-media path was inspected or modified:
 
 ## Reproduction
 
-The v15.7 tree contains 6,379 collected tests. Focused BVP/status validation
-passes 51 tests; the complete v14.91–v15.7/downstream dependency corridor
-passes 891 tests. Ten v15.7 artifacts reproduce with zero byte drift, and all
+The v15.7 tree contains 6,388 collected tests. Focused BVP/status validation
+passes 60 tests; the complete v14.91-v15.7/downstream dependency corridor
+passes 900 tests. Ten v15.7 artifacts reproduce with zero byte drift, and all
 1,916 artifact JSON files parse successfully.
+
+The superseded pre-correction commit `8aa172c` completed with exit code 1:
+6,371 passed and eight public-status/encoding compatibility tests failed in
+816.30 seconds. The follow-up correction repairs all eight failure classes;
+that failed run is retained as validation provenance rather than hidden.
 
 Run the focused package:
 

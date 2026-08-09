@@ -8,18 +8,24 @@ is not an action-derived surface-selection theorem. The retained fields may
 deform, oscillate, and exchange content.
 
 The general conditional physical sigma-Hessian criterion exists. The action
-does not yet supply a localized, constraint-solved nonhomogeneous Lorentzian
-incoming solution assembled from owned variables, with finite norm/action,
-quasilocal transport flux, gauge reduction, regularity, and a time-preserved
-common self-adjoint domain. v14.94's permanently tachyonic homogeneous Jensen
-mode is not a local induced event. v14.93's radial conformal zero is a
+does not yet supply an action-compatible localization, constraint-reduced
+physical local stability operator, and common self-adjoint domain. Nor does it
+select encapsulation over restoration through a full nonlinear solution.
+Packets, collisions, curvature focusing, and boundary exchange remain possible
+drivers/witnesses, not mandatory primitive causes. v14.94's permanently
+tachyonic homogeneous Jensen mode is not a local induced event. v14.93's radial conformal zero is a
 `ZERO_MODE_WITHOUT_CAVITATION` because its cubic coefficient vanishes and its
 quartic coefficient is positive.
+
+The author further proposes a white-hole origin followed by plasma/acoustic-BAO
+and cooled late-time cosmological stages, plus an analogous scaled quantum
+process for events matching the core energy. These hypotheses are not derived
+thresholds, fields, or empirical results.
 
 Formation, persistence, release, the complete Noether ledger, monodromy,
 Floquet reconstruction, and master closure are therefore not reached. The one
 open object is
-`ACTION_DERIVED_LOCALIZED_CAVITATION_OF_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_SOLVED_NONHOMOGENEOUS_LORENTZIAN_INCOMING_PACKET_TIME_PRESERVED_COMMON_SELF_ADJOINT_DOMAIN_PHYSICAL_SIGMA_HESSIAN_ZERO_CROSSING_AND_NONLINEAR_ENVELOPMENT_CONTINUATION`.
+`ACTION_DERIVED_LOCAL_SPACETIME_INSTABILITY_ON_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_REDUCED_PHYSICAL_STABILITY_LOSS_COMMON_SELF_ADJOINT_DOMAIN_AND_NONLINEAR_ENCAPSULATION_CONTINUATION`.
 
 ## v14.1 eta/SU3 connection fork gate
 
