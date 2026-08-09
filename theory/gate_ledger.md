@@ -643,3 +643,29 @@ Exact next object:
 - Flavor provenance gates: `OPEN_UNCHANGED`.
 - Mark III / BHSM completion / USB synchronization: `NOT_REACHED`.
 <!-- /BHSM_V14_92_CROSS_LEVEL_CRITICAL_VALUE_FUNCTOR_GATE -->
+
+<!-- BHSM_V14_93_NONLINEAR_ENCAPSULATED_STATE_SPECTRAL_BAND_GATE -->
+## v14.93 nonlinear encapsulation and spectral-band gates
+
+- State-bearing system: `GAUGE_REDUCED_LORENTZIAN_M8_PHASE_SPACE_NO_NEW_ENERGY_FIELD`.
+- Complete compact virial: `STATIONARY_LOCALIZATION_NOT_FORBIDDEN`.
+- Eta-only flat Derrick condition: `E8_EQUALS_5_E2_NOT_THE_COMPACT_IDENTITY_RELATION`.
+- v14.91 identity eta ratio: `E8_OVER_E2_EQUALS_5_OVER_4`.
+- Minimal nonhomogeneous sector: `DEGREE_ONE_EQUIVARIANT_RADIAL_MAP`.
+- Radial Hessian spectrum: `LAMBDA_N_EQUALS_N_TIMES_N_PLUS_8`.
+- Nonconformal radial modes: `STRICTLY_POSITIVE`.
+- Unique conformal quadratic mode: `ZERO`.
+- Exact conformal cubic: `ZERO_BY_REFLECTION`.
+- Exact conformal quartic: `27_PI_X4_OVER_128_POSITIVE`.
+- Nearby radial encapsulated branch: `KILLED`.
+- Global nonhomogeneous static branch: `OPEN_NOT_KILLED`.
+- Exact round-S7 4/10 frequency relation: `COMMENSURATE`.
+- Sigma 10-4-4 cubic: `ZERO_BY_Z2_AT_SIGMA_ZERO`.
+- Phase locking / bound state: `NOT_DERIVED`.
+- Physical spectrum, band, projector and bundle: `UNDEFINED_WITHOUT_PHI_ENC`.
+- Path-A A--E terminal outcome: `NONE_SCIENTIFICALLY_JUSTIFIED_YET`.
+- Path-B fallback: `NOT_ACTIVATED`.
+- Next route: `ACTION_OWNED_NONHOMOGENEOUS_DEGREE_ONE_M8_EINSTEIN_ETA_CHI_SIGMA_COMMON_DOMAIN_BOUNDARY_VALUE_PROBLEM_WITH_LOCALIZATION_AND_CONSTRAINT_CONVERGENCE`.
+- Flavor provenance gates: `OPEN_UNCHANGED`.
+- Mark III / BHSM completion / USB synchronization: `NOT_REACHED`.
+<!-- /BHSM_V14_93_NONLINEAR_ENCAPSULATED_STATE_SPECTRAL_BAND_GATE -->

@@ -1928,3 +1928,13 @@ with
 The controlling report is
 `docs/BHSM_LORENTZIAN_CROSS_LEVEL_CRITICAL_VALUE_FUNCTOR_V14_92.md`.
 <!-- /BHSM_V14_92_CROSS_LEVEL_CRITICAL_VALUE_FUNCTOR_GATE -->
+
+<!-- BHSM_V14_93_NONLINEAR_ENCAPSULATED_STATE_SPECTRAL_BAND_GATE -->
+## v14.93 nonlinear encapsulated-state and spectral-band artifact
+
+Regenerate `BHSM_nonlinear_encapsulated_state_spectral_band_gate_v14_93.json`
+with
+`python scripts/materialize_nonlinear_encapsulated_state_spectral_band_gate_v14_93.py`.
+The controlling report is
+`docs/BHSM_NONLINEAR_ENCAPSULATED_STATE_SPECTRAL_BAND_GATE_V14_93.md`.
+<!-- /BHSM_V14_93_NONLINEAR_ENCAPSULATED_STATE_SPECTRAL_BAND_GATE -->

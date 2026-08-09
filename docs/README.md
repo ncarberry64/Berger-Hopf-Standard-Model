@@ -398,3 +398,13 @@ cotangent-lift theorems, and the proof that the retained theory has no physical
 SU3 parent connection or M8 Dirac field from which to instantiate the full
 gauge/Dirac critical-value functor.
 <!-- /BHSM_V14_92_CROSS_LEVEL_CRITICAL_VALUE_FUNCTOR_GATE -->
+
+<!-- BHSM_V14_93_NONLINEAR_ENCAPSULATED_STATE_SPECTRAL_BAND_GATE -->
+## v14.93 nonlinear encapsulated-state spectral-band gate
+
+See `BHSM_NONLINEAR_ENCAPSULATED_STATE_SPECTRAL_BAND_GATE_V14_93.md` for the
+exact compact virial audit, degree-one equivariant radial Hessian theorem,
+positive conformal quartic lift, nonlinear resonance ledger, and the fail-closed
+state/band/projector status. No new field, terminal Path-A verdict, color,
+Dirac, particle or completion claim is introduced.
+<!-- /BHSM_V14_93_NONLINEAR_ENCAPSULATED_STATE_SPECTRAL_BAND_GATE -->

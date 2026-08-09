@@ -1263,3 +1263,48 @@ audits exited `0`. The precommit suite recorded `6032` passes and `16`
 source-diff guard failures in `800.02s`; all 16 were the expected requirement
 that `git diff HEAD -- src` be empty and were cleared by the scoped commit.
 USB remains untouched and synchronization is not eligible.
+
+## v14.93 nonlinear encapsulated-state spectral-band gate
+
+The retained Lorentzian state-bearing system remains the constrained M8 phase
+space; no separate energy field is added. A seven-dimensional eta-only flat
+Derrick screen would require `E8/E2=5`, whereas the compact v14.91 identity
+branch has `E8/E2=5/4`. Its full stationarity identity includes Einstein
+curvature, cosmological volume and compact-scale variation, so stationary
+localization is not forbidden by the virial screen.
+
+The minimal degree-one nonhomogeneous map
+`eta=(cos f(chi),sin f(chi)n)` yields an exact radial Hessian spectrum
+`lambda_n=n(n+8)`. Every `n>=1` mode is positive. The unique quadratic zero
+mode is the tangent to the conformal family
+`f_s=2 atan(exp(s)tan(chi/2))`; reflection kills its cubic and the complete
+eta action gives `E''''(0)=27 pi X^4/128>0`. Thus the zero direction is
+quartically stable and no nearby equivariant radial encapsulated branch
+bifurcates from the identity seed. This local theorem is not promoted to a
+global no-go for the coupled nonhomogeneous Einstein--eta--chi--sigma system.
+
+The known round-S7 `l=4,10` octave remains inactive because the sigma
+`10-4-4` cubic is zero by Z2 at `sigma=0`. No nonlinear bound state,
+phase-locking solution, localization diagnostic, Hamiltonian gap, physical
+state Hessian, isolated band, Riesz projector, constant rank, smooth bundle,
+color eligibility or Dirac eligibility is derived.
+
+No A--E terminal Path-A outcome is scientifically justified yet: A--C need a
+state, D needs a global static no-go, and E needs a retained-action no-go.
+Path B therefore remains inactive. The exact next object is
+`ACTION_OWNED_NONHOMOGENEOUS_DEGREE_ONE_M8_EINSTEIN_ETA_CHI_SIGMA_COMMON_DOMAIN_BOUNDARY_VALUE_PROBLEM_WITH_LOCALIZATION_AND_CONSTRAINT_CONVERGENCE`.
+
+BHSM remains incomplete, Mark III is not reached, physical execution remains
+blocked, frozen predictions and flavor provenance are unchanged, and USB is
+untouched and ineligible for synchronization.
+
+Prepublication validation: the focused v14.93 package passed `10` tests and
+the dependent v14.91--v14.93/harmonic/guard selection passed `79`. All `48`
+v14.46--v14.93 materializers completed the required two runs (`96`
+executions) with zero byte drift; an additional confirmation pass was also
+clean. All `1840` artifact JSON files parsed. Frozen-prediction,
+forbidden-claim, BHSM-status, public-readiness, precision, physics-status CLI,
+and diff-hygiene audits exited `0`. The precommit full suite recorded `6043`
+passes and `15` identical expected untracked-source guard failures in
+`782.14s` with exit code `1`; the scoped commit is required before the
+authoritative exact-head rerun.

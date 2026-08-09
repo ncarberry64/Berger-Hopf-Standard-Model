@@ -380,3 +380,15 @@ full stationary background and all downstream response objects remain open.
 
 Exact next object:
 `FOUNDATIONAL_COMMON_PARENT_GAUGE_SPIN_BUNDLE_ACTION_WITH_PHYSICAL_SU3_AND_DIRAC_CRITICAL_MODES_AND_NO_DOUBLE_COUNTING_M8_TO_M5_TO_M4_VARIATIONAL_SYMPLECTIC_REDUCTION_FUNCTOR`.
+## v14.93 nonlinear encapsulation prerequisite result
+
+The exact v14.91 identity seed has passed a first nonlinear kill screen but is
+not an encapsulated state. In the degree-one equivariant radial sector its
+physical quadratic form has spectrum `n(n+8)` and its unique conformal zero
+mode has a positive exact quartic lift. This kills a nearby radial
+encapsulated bifurcation, not the full coupled nonhomogeneous problem.
+
+Definition-of-done remains unmet: no localized nonlinear state, stability
+theorem about that state, isolated physical band, constant-rank smooth
+projector or internal mode bundle exists. Path A remains open without a valid
+terminal A--E outcome, and Path B is not activated.
