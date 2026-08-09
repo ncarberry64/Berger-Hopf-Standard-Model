@@ -496,3 +496,25 @@ Definition-of-done remains unmet. Positivity, faithfulness, symmetry, and
 traciality do not select a physical foundational triple. No canonical map to
 the downstream regular finite algebra is derived, and Dirichlet-form
 existence does not imply uniqueness or generator selection.
+
+## v15.5 global master-closure prerequisite result
+
+Unique Actualization now supplies a strict authorial completion criterion, but
+the criterion is not itself a selection theorem. The simultaneous master
+constraint can be typed, yet its self-reconstruction map cannot be built: the
+physical reversible event category and loop spectrum are not action-derived,
+and neither the forward geometry--core emergence map nor the regular-to-core
+return functor exists.
+
+Even a strong joint state--dynamics condition is insufficient on its own.
+Every faithful witness state supports a primitive gapped detailed-balance
+reset semigroup with that state as unique invariant state, so continuous
+state--dynamics fixed-pair families remain unless the form or generator is
+independently action-owned.
+
+Definition-of-done remains unmet. The physical and gauge-quotiented master
+solution counts are undefined because there is no master map; clock, absolute
+scale, gauge normalization, scalar/topographic source, mass, mixing and
+encapsulation ownership also remain open. The next prerequisite is an
+action-derived primitive event reversal and loop spectrum on the four-object
+pregeometric category.

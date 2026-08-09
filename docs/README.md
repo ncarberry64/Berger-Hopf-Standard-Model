@@ -491,3 +491,17 @@ nonisomorphic, while strengthened symmetry conditions leave continuous
 faithful state families. A new action-derived reversal, loop-spectrum, and
 state-selection principle is required.
 <!-- /BHSM_V15_4_AETHER_EVENT_ALGEBRA_STATE -->
+
+<!-- BHSM_V15_5_GLOBAL_MASTER_CLOSURE -->
+## v15.5 global pregeometric master closure
+
+See `BHSM_GLOBAL_PREGEOMETRIC_MASTER_CLOSURE_V15_5.md` for the typed master
+constraint, complete dependency/feedback audit, state--dynamics reset-semigroup
+no-selection theorem, `Z_2/Z_3` master kill screen, strict physical-solution
+count, and clock/scale/regular-action ownership review.
+
+The result is Outcome G: the self-reconstruction map cannot be constructed.
+The first absent arrow is the action-derived primitive event reversal and loop
+spectrum. Physical and gauge-quotiented master-solution counts are undefined,
+and full BHSM completion remains false.
+<!-- /BHSM_V15_5_GLOBAL_MASTER_CLOSURE -->

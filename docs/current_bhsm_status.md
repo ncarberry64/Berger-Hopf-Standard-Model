@@ -1512,3 +1512,35 @@ The exact next object is
 BHSM remains incomplete and Mark III is not reached. Frozen predictions and
 official prediction logic are unchanged. No continuous parameter, primitive
 field, preferred frame, empirical input, or USB operation enters v15.4.
+
+## v15.5 global pregeometric master closure
+
+The authorial Unique Actualization Principle is now an explicit strict
+completion criterion: any surviving non-gauge multiplicity means the theory
+is incomplete. The retained architecture does not yet turn this principle
+into a theorem. The master dependency graph stops at the first arrow from the
+four-object category skeleton to an action-selected reversible event category
+with loop spectrum; the geometry--core forward map and regular-to-foundation
+return map are also absent.
+
+The strongest new kill screen couples state and dynamics. Every faithful state
+on either finite witness algebra admits a primitive, gapped, GNS
+detailed-balance reset semigroup for which it is the unique invariant state.
+Therefore stationarity, detailed balance, primitivity, a gap and uniqueness
+for a fixed generator still leave a continuous family of joint
+state--generator pairs when the generator is not independently action-owned.
+
+The result is `OUTCOME_G_MASTER_MAP_CANNOT_BE_CONSTRUCTED`, with the secondary
+classification `OUTCOME_E_CONTINUOUS_STATE_DYNAMICS_FIXED_PAIR_FAMILY`.
+`physical_master_solution_count` and
+`gauge_quotiented_master_solution_count` are both
+`UNDEFINED_MISSING_UPSTREAM_STRUCTURE`; they are not reported as zero or one.
+Clock, scale, gauge normalization, scalar/topographic, mass, CKM, PMNS,
+neutrino and encapsulation gates remain open without retuning.
+
+The exact next object is
+`ACTION_DERIVED_PRIMITIVE_EVENT_REVERSAL_AND_LOOP_SPECTRUM_ON_THE_FOUR_OBJECT_PREGEOMETRIC_CATEGORY`.
+
+`FULL_BHSM_COMPLETE = FALSE`. Frozen predictions and official prediction
+logic remain unchanged. No empirical input, fitted or arbitrary continuous
+parameter, primitive field, or preferred frame enters v15.5.

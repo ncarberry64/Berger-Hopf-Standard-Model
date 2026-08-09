@@ -2025,3 +2025,19 @@ incidence-compatible `Z_2/Z_3` kill screen, regular reconstruction, and
 Dirichlet-form readiness. The finite groupoids remain diagnostic witnesses,
 not physical Aether foundations.
 <!-- /BHSM_V15_4_AETHER_EVENT_ALGEBRA_STATE -->
+
+<!-- BHSM_V15_5_GLOBAL_MASTER_CLOSURE -->
+## v15.5 global pregeometric master-closure artifacts
+
+Regenerate the thirteen `BHSM_master_*_v15_5.json` artifacts with
+`python scripts/materialize_aether_master_closure_v15_5.py`.
+The controlling report is
+`docs/BHSM_GLOBAL_PREGEOMETRIC_MASTER_CLOSURE_V15_5.md`.
+
+The artifacts type the simultaneous master constraint and dependency diagram,
+evaluate the `Z_2/Z_3` incompleteness witnesses, prove the continuous
+state--dynamics fixed-pair kill screen, and audit reconstruction, fixed-point,
+clock, scale and regular-action ownership. They record an undefined master
+solution count because the master map is absent; they do not select a
+foundational model or claim full BHSM completion.
+<!-- /BHSM_V15_5_GLOBAL_MASTER_CLOSURE -->
