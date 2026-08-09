@@ -1964,3 +1964,18 @@ conditional reconstruction/clock/energy gates, and test associative abstract
 event-span composition. They do not promote the span to an action-derived
 physical transition.
 <!-- /BHSM_V15_0_AETHER_PREGEOMETRIC_PARENT_CALCULUS -->
+
+<!-- BHSM_V15_1_AETHER_DYNAMICAL_CORRESPONDENCE -->
+## v15.1 Aether dynamical-correspondence artifacts
+
+Regenerate the four `BHSM_aether_*_v15_1.json` artifacts with
+`python scripts/materialize_aether_dynamical_correspondence_v15_1.py`.
+The controlling report is
+`docs/BHSM_AETHER_DYNAMICAL_CORRESPONDENCE_V15_1.md`.
+
+The artifacts implement the universal relational action/kernel form, exact
+self-adjoint relative-boundary theorem class, invariant/clock calibration,
+symbolic identity-limit recovery, and fixed-spectrum generator nonuniqueness
+witness. They do not promote a theorem-class generator to a physical
+action-selected core law.
+<!-- /BHSM_V15_1_AETHER_DYNAMICAL_CORRESPONDENCE -->

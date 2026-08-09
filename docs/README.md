@@ -434,3 +434,16 @@ compatible, but a finite core transition still requires an action-owned
 pregeometric correspondence law. No Aether existence, physical transition,
 spacetime-emergence, particle, or completion claim is introduced.
 <!-- /BHSM_V15_0_AETHER_PREGEOMETRIC_PARENT_CALCULUS -->
+
+<!-- BHSM_V15_1_AETHER_DYNAMICAL_CORRESPONDENCE -->
+## v15.1 Aether dynamical correspondence
+
+See `BHSM_AETHER_DYNAMICAL_CORRESPONDENCE_V15_1.md` for the universal
+relational action and unitary kernel, exact self-adjoint relative-boundary
+theorem class, invariant commutant and clock calibration, symbolic regular
+metric--eta recovery, and discrete generator nonuniqueness theorem.
+
+The structural dynamical class closes, but the physical generator,
+core-boundary Hilbert module, physical Wentzell/Calderon blocks, and stable
+reference clock remain unselected by the retained action.
+<!-- /BHSM_V15_1_AETHER_DYNAMICAL_CORRESPONDENCE -->

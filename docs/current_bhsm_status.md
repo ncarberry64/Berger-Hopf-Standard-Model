@@ -1333,6 +1333,36 @@ BHSM remains incomplete, Mark III is not reached, no new continuous parameter
 or fundamental dynamical field is introduced, frozen predictions and official
 prediction logic are unchanged, and USB remains untouched and ineligible.
 
+## v15.1 Aether dynamical-correspondence gate
+
+The v15.0 kinematic event span now admits the universal conditional functional
+`S_A=integral dchi [-Im<psi,D_chi psi>-<psi,K_A psi>]`, kernel
+`U_A(chi)=exp(-i chi K_A)`, and weight `W[E]=exp(iS_A[E])`. Hermitian
+Wentzell data give an exact self-adjoint `G_A`--`C_A` attachment theorem class:
+the boundary-triple rank condition closes, `AB*=BA*`, and the Green form
+vanishes.
+
+Parent invariants are conserved when `[K_A,I_alpha]=0`. After an
+action-selected stable recurring process exists, the conditional clock map
+gives `H_eff=(hbar/tau_clock)K_A`. No external clock scale is introduced.
+At zero process depth, `U_A(0)=I`; symbolic variation of the retained
+metric--eta density verifies exact regular action and field-equation recovery.
+
+The physical law is nevertheless underdetermined. The fixed generators
+`diag(0,1)` and `diag(0,2)` are both self-adjoint, invariant preserving,
+unitary, and identity recovering, but have different spectra and kernels.
+Thus the existing axioms do not select `K_A`. The physical core-boundary
+Hilbert module, Wentzell/Calderon blocks, and stable reference cycle are also
+absent.
+
+The exact next object is
+`ACTION_DERIVED_PREGEOMETRIC_EVENT_GENERATOR_K_A_ON_AN_ACTION_DERIVED_CORE_BOUNDARY_HILBERT_MODULE_WITH_PHYSICAL_WENTZELL_CALDERON_BLOCKS_INVARIANT_COMMUTANT_AND_STABLE_REFERENCE_CLOCK_CYCLE`.
+
+BHSM remains incomplete and Mark III is not reached. Frozen predictions and
+official prediction logic are unchanged. No new continuous parameter,
+primitive field, preferred frame, empirical input, or USB operation enters
+v15.1.
+
 Prepublication validation: the focused v14.94 package passed `11` tests and
 the dependent P1/v14.90/v14.93/v14.94/guard selection passed `65`. All `49`
 v14.46--v14.94 materializers completed two runs (`98` executions) with zero

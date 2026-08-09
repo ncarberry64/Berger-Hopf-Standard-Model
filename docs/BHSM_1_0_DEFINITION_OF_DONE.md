@@ -422,3 +422,17 @@ transition requires an action-owned pregeometric correspondence with a
 self-adjoint relative/boundary domain, selected parent invariants, clock
 calibration, and exact regular-theory recovery. Mark III and physical
 encapsulation remain not reached.
+
+## v15.1 dynamical-correspondence prerequisite result
+
+The universal relational first-order action, unitary transition kernel,
+self-adjoint Wentzell boundary theorem class, invariant commutant condition,
+conditional clock calibration, and exact identity-limit metric--eta recovery
+are now executable. Two inequivalent fixed integer-spectrum generators satisfy
+all closed gates, proving that those requirements do not select a physical
+event law.
+
+Definition-of-done remains unmet because the parent action still supplies no
+core-boundary Hilbert module, physical Wentzell/Calderon response, unique
+pregeometric generator, or stable reference cycle. No nontrivial physical
+core transition is derived.
