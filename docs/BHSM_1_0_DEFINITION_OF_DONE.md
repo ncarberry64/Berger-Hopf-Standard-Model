@@ -392,3 +392,16 @@ Definition-of-done remains unmet: no localized nonlinear state, stability
 theorem about that state, isolated physical band, constant-rank smooth
 projector or internal mode bundle exists. Path A remains open without a valid
 terminal A--E outcome, and Path B is not activated.
+
+## v14.94 finite-time event prerequisite result
+
+The exact constraint-reduced round and Jensen P1 trajectories close the first
+controlled incoming-dynamics screen. Round is homogeneous-shape stable;
+Jensen has one global tachyon at all finite times. Neither has localized flux
+or a local threshold, and no nonlinear completion event follows. Outcome D is
+therefore established for the controlled retained sectors while general
+nonhomogeneous Path A remains open.
+
+Definition-of-done remains unmet: a constraint-solved nonhomogeneous incoming
+wave packet, physical quasilocal flux, local threshold, nonlinear completion,
+event energy accounting and selected completion class are still absent.

@@ -1298,6 +1298,16 @@ BHSM remains incomplete, Mark III is not reached, physical execution remains
 blocked, frozen predictions and flavor provenance are unchanged, and USB is
 untouched and ineligible for synchronization.
 
+Prepublication validation: the focused v14.94 package passed `11` tests and
+the dependent P1/v14.90/v14.93/v14.94/guard selection passed `65`. All `49`
+v14.46--v14.94 materializers completed two runs (`98` executions) with zero
+byte drift, and all `1841` artifact JSON files parsed. Frozen-prediction,
+forbidden-claim, BHSM-status, public-readiness, precision, physics-status CLI
+and diff-hygiene audits exited `0`. The precommit full suite recorded `6054`
+passes and `15` identical expected untracked-source guard failures in
+`804.31s`, exit code `1`; the scoped commit is required before the
+authoritative exact-head rerun.
+
 Prepublication validation: the focused v14.93 package passed `10` tests and
 the dependent v14.91--v14.93/harmonic/guard selection passed `79`. All `48`
 v14.46--v14.93 materializers completed the required two runs (`96`
@@ -1308,3 +1318,33 @@ and diff-hygiene audits exited `0`. The precommit full suite recorded `6043`
 passes and `15` identical expected untracked-source guard failures in
 `782.14s` with exit code `1`; the scoped commit is required before the
 authoritative exact-head rerun.
+
+## v14.94 local-environment finite-time encapsulation gate
+
+Encapsulation is now treated as a finite local completion event rather than a
+necessarily permanent soliton. The retained environmental variables are only
+the M8 canonical fields, derived extrinsic geometry and existing boundary/KKT
+data; no energy, detector or measurement field is added.
+
+The exact round and Jensen P1 branches supply genuine time-dependent,
+constraint-satisfying canonical momentum. They are spatially homogeneous,
+however, and have zero spatial transport, seam transfer and cap-relative
+momentum. The expanding round branch has two positive homogeneous shape
+stiffnesses. Jensen has one tachyonic homogeneous shape direction at every
+finite time, not a local threshold crossing.
+
+The Jensen finite-time reduced propagator was evaluated at 200, 400 and 800
+steps. It converges at fourth order with refinement factor `15.963` and
+maximum Wronskian residual `1.742e-10`. The coordinate amplification is not
+promoted to an invariant event observable. No nonlinear saturation,
+completion criterion, local event map, energy transfer, physical L2
+threshold, cap inertia or mixed vertex is derived.
+
+The exact Path-A verdict is Outcome D:
+`NO_ENCAPSULATION_EVENT_IN_CONTROLLED_RETAINED_SECTORS_PATH_A_REMAINS_OPEN`.
+Path B remains inactive. The exact next object is
+`CONSTRAINT_SOLVED_NONHOMOGENEOUS_LORENTZIAN_M8_INCOMING_WAVE_PACKET_WITH_QUASILOCAL_NOETHER_FLUX_TIME_PRESERVED_COMMON_DOMAIN_AND_LOCAL_PHYSICAL_TANGENT_PROPAGATOR`.
+
+BHSM remains incomplete, Mark III is not reached, physical execution remains
+blocked, frozen predictions and flavor provenance are unchanged, and USB is
+untouched and ineligible for synchronization.

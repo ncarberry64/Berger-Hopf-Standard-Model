@@ -669,3 +669,27 @@ Exact next object:
 - Flavor provenance gates: `OPEN_UNCHANGED`.
 - Mark III / BHSM completion / USB synchronization: `NOT_REACHED`.
 <!-- /BHSM_V14_93_NONLINEAR_ENCAPSULATED_STATE_SPECTRAL_BAND_GATE -->
+
+<!-- BHSM_V14_94_LOCAL_ENVIRONMENT_FINITE_TIME_ENCAPSULATION_GATE -->
+## v14.94 local-environment finite-time encapsulation gates
+
+- Encapsulation ontology: `FINITE_EVENT_NOT_REQUIRED_TO_BE_PERMANENT_SOLITON`.
+- Action-owned environment: `M8_CANONICAL_FIELDS_GEOMETRY_AND_RETAINED_BOUNDARY_DATA_ONLY`.
+- Exact incoming dynamics: `ROUND_AND_JENSEN_P1_FIXED_SHAPE_BRANCHES`.
+- Hamiltonian/momentum constraints: `EXACTLY_CLOSED_ON_CONTROL_BRANCHES`.
+- Localized outgoing flux: `ZERO_IN_SPATIALLY_HOMOGENEOUS_CONTROLS`.
+- Round physical shape stiffness: `TWO_POSITIVE_MODES_NO_INSTABILITY`.
+- Jensen physical shape stiffness: `ONE_GLOBAL_TACHYON_AT_EVERY_FINITE_TIME`.
+- Local environmental threshold crossing: `NOT_DERIVED`.
+- Finite-time propagator: `DERIVED_NUMERICALLY_WITH_FOURTH_ORDER_CONVERGENCE_AND_WRONSKIAN_CHECK`.
+- Nonlinear completion / event criterion / outgoing state: `UNDEFINED_NO_EVENT`.
+- Sigma cubic revival: `NO_SIGMA_REMAINS_ZERO`.
+- Physical L2 threshold: `UNDEFINED`.
+- DeltaPi on exact controls: `ZERO`.
+- Physical cap inertias, J_dyn and B_dyn,L2: `UNDEFINED`.
+- Path-A outcome: `NO_ENCAPSULATION_EVENT_IN_CONTROLLED_RETAINED_SECTORS_PATH_A_REMAINS_OPEN`.
+- Path-B fallback: `NOT_ACTIVATED`.
+- Next route: `CONSTRAINT_SOLVED_NONHOMOGENEOUS_LORENTZIAN_M8_INCOMING_WAVE_PACKET_WITH_QUASILOCAL_NOETHER_FLUX_TIME_PRESERVED_COMMON_DOMAIN_AND_LOCAL_PHYSICAL_TANGENT_PROPAGATOR`.
+- Flavor provenance gates: `OPEN_UNCHANGED`.
+- Mark III / BHSM completion / USB synchronization: `NOT_REACHED`.
+<!-- /BHSM_V14_94_LOCAL_ENVIRONMENT_FINITE_TIME_ENCAPSULATION_GATE -->

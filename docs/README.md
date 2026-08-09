@@ -408,3 +408,14 @@ positive conformal quartic lift, nonlinear resonance ledger, and the fail-closed
 state/band/projector status. No new field, terminal Path-A verdict, color,
 Dirac, particle or completion claim is introduced.
 <!-- /BHSM_V14_93_NONLINEAR_ENCAPSULATED_STATE_SPECTRAL_BAND_GATE -->
+
+<!-- BHSM_V14_94_LOCAL_ENVIRONMENT_FINITE_TIME_ENCAPSULATION_GATE -->
+## v14.94 local-environment finite-time encapsulation gate
+
+See `BHSM_LOCAL_ENVIRONMENT_FINITE_TIME_ENCAPSULATION_GATE_V14_94.md` for the
+action-owned environment audit, exact constraint-satisfying round/Jensen
+incoming controls, time-dependent reduced physical operator, five-mechanism
+instability screen, converged finite-time propagator, and Outcome-D event
+boundary. No external environment, nonlinear completion, particle, color,
+Dirac or Path-B promotion is introduced.
+<!-- /BHSM_V14_94_LOCAL_ENVIRONMENT_FINITE_TIME_ENCAPSULATION_GATE -->

@@ -1938,3 +1938,13 @@ with
 The controlling report is
 `docs/BHSM_NONLINEAR_ENCAPSULATED_STATE_SPECTRAL_BAND_GATE_V14_93.md`.
 <!-- /BHSM_V14_93_NONLINEAR_ENCAPSULATED_STATE_SPECTRAL_BAND_GATE -->
+
+<!-- BHSM_V14_94_LOCAL_ENVIRONMENT_FINITE_TIME_ENCAPSULATION_GATE -->
+## v14.94 local-environment finite-time encapsulation artifact
+
+Regenerate `BHSM_local_environment_finite_time_encapsulation_gate_v14_94.json`
+with
+`python scripts/materialize_local_environment_finite_time_encapsulation_gate_v14_94.py`.
+The controlling report is
+`docs/BHSM_LOCAL_ENVIRONMENT_FINITE_TIME_ENCAPSULATION_GATE_V14_94.md`.
+<!-- /BHSM_V14_94_LOCAL_ENVIRONMENT_FINITE_TIME_ENCAPSULATION_GATE -->
