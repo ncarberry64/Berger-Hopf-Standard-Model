@@ -1413,3 +1413,36 @@ Path B remains inactive. The exact next object is
 BHSM remains incomplete, Mark III is not reached, physical execution remains
 blocked, frozen predictions and flavor provenance are unchanged, and USB is
 untouched and ineligible for synchronization.
+
+## v15.2 physical Aether-generator selection
+
+Physical generator equivalence now applies to the complete structured tuple
+containing the Hilbert representation, invariant algebra, relative domain,
+boundary response, reconstruction projection, generator, and clock. A unitary
+is only a basis change when it intertwines every owned structure. Positive
+`K_A` scaling is a pre-clock process reparameterization when `chi` and the
+reference-cycle depth scale inversely. Uniform central shifts remain only
+conditionally projective because the retained action does not define event
+interference or prove the depth cocycle is an endpoint coboundary.
+
+This corrects the interpretation of the v15.1 pair `diag(0,1)` and
+`diag(0,2)`: it is scale-equivalent before clock selection. The fixed pair
+`diag(0,1,2)` and `diag(0,1,3)` has unequal affine gap ratios and remains
+inequivalent after unitary, shift, and positive-scale quotients while sharing
+the same invariant, self-adjoint domain, Green cancellation, norm
+conservation, composition, identity, and regular recovery gates.
+
+The decisive result is Outcome F. Existing M8/M5/M4 action data provide
+regular incidence and theorem-class Calderon/Wentzell structures but no
+pregeometric core Hilbert correspondence, trace pairing, core operator,
+core-boundary quadratic form, physical core boundary block, or stable
+reference cycle. Therefore literal `K_A`, `[K_A]_phys`, and `H_eff` are not
+uniquely action-selected; the physical quotient cardinality is undefined
+rather than zero. The representative admissible quotient remains continuous.
+
+The exact next object is
+`MICROSCOPIC_ACTION_DERIVATION_OF_THE_PREGEOMETRIC_CORE_BOUNDARY_HILBERT_CORRESPONDENCE_QUADRATIC_FORM_WITH_TRACE_PAIRING_CORE_OPERATOR_ATTACHMENT_COUPLING_AND_STABLE_REFERENCE_CYCLE_WHOSE_VARIATION_JOINTLY_SELECTS_THETA_A_K_A_AND_H_EFF`.
+
+BHSM remains incomplete and Mark III is not reached. Frozen predictions and
+official prediction logic are unchanged. No continuous parameter, primitive
+field, preferred frame, empirical input, or USB operation enters v15.2.

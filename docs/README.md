@@ -447,3 +447,17 @@ The structural dynamical class closes, but the physical generator,
 core-boundary Hilbert module, physical Wentzell/Calderon blocks, and stable
 reference clock remain unselected by the retained action.
 <!-- /BHSM_V15_1_AETHER_DYNAMICAL_CORRESPONDENCE -->
+
+<!-- BHSM_V15_2_AETHER_GENERATOR_SELECTION -->
+## v15.2 physical Aether-generator selection
+
+See `BHSM_AETHER_PHYSICAL_GENERATOR_SELECTION_V15_2.md` for the physical
+equivalence quotient, central-shift and pre-clock scaling gates, corrected
+three-sector nonuniqueness theorem, core Hilbert-module ownership audit,
+boundary-action selection test, Schur/Feshbach route, invariant commutant,
+composition gate, and joint generator/clock analysis.
+
+The result is Outcome F. Existing BHSM classifies self-adjoint correspondence
+laws but does not contain the pregeometric core-boundary quadratic form needed
+to select a physical generator, boundary response, or stable clock.
+<!-- /BHSM_V15_2_AETHER_GENERATOR_SELECTION -->

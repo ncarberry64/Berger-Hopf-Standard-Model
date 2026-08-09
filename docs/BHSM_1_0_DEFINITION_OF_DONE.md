@@ -436,3 +436,23 @@ Definition-of-done remains unmet because the parent action still supplies no
 core-boundary Hilbert module, physical Wentzell/Calderon response, unique
 pregeometric generator, or stable reference cycle. No nontrivial physical
 core transition is derived.
+
+## v15.2 generator-selection prerequisite result
+
+Physical generator equivalence is now defined on the complete structured
+tuple rather than on a matrix representative alone. Structure-preserving
+unitaries are basis gauge, and positive generator scaling is a pre-clock
+reparameterization when process depth and the reference-cycle depth transform
+inversely. Uniform central shifts remain conditional on an action-owned
+projective/interference theorem.
+
+The v15.1 two-level witness is therefore reclassified as scale equivalent.
+The corrected fixed three-level pair `diag(0,1,2)` and `diag(0,1,3)` remains
+inequivalent after unitary, central-shift, and positive-scale quotients, so the
+admissibility conditions still do not select one generator class.
+
+Definition-of-done remains unmet more fundamentally: the retained action owns
+no pregeometric core Hilbert correspondence, trace pairing, core operator,
+core-boundary quadratic form, physical core Wentzell/Calderon block, or stable
+reference cycle. Consequently neither `K_A`, its physical equivalence class,
+nor `H_eff` is uniquely action-selected.

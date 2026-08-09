@@ -1979,3 +1979,19 @@ symbolic identity-limit recovery, and fixed-spectrum generator nonuniqueness
 witness. They do not promote a theorem-class generator to a physical
 action-selected core law.
 <!-- /BHSM_V15_1_AETHER_DYNAMICAL_CORRESPONDENCE -->
+
+<!-- BHSM_V15_2_AETHER_GENERATOR_SELECTION -->
+## v15.2 physical Aether-generator selection artifacts
+
+Regenerate the seven `BHSM_aether_*_v15_2.json` / completion-gate artifacts
+with `python scripts/materialize_aether_generator_selection_v15_2.py`.
+The controlling report is
+`docs/BHSM_AETHER_PHYSICAL_GENERATOR_SELECTION_V15_2.md`.
+
+The artifacts define physical generator equivalence, correct the v15.1
+two-level witness for pre-clock scaling, provide a three-sector affine-quotient
+nonuniqueness witness, and audit the core-module, boundary-selection,
+Schur/Feshbach, invariant, composition, and clock gates. They record Outcome F:
+the retained action does not own the microscopic core-boundary quadratic form
+required to define, much less uniquely select, the physical generator.
+<!-- /BHSM_V15_2_AETHER_GENERATOR_SELECTION -->
