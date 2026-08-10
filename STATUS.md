@@ -5,9 +5,12 @@ evidence, not competing public status pages.
 
 ## Current public summary
 
-Current version: **v15.9**.
+Current version: **v15.10**.
 
-BHSM v15.9 derives an exact cycle-controlled supercritical radial eta spread-to-concentration bifurcation from the retained p=2+p=8 action and reproduces its degree-one full Euler branch by independent Galerkin and collocation methods. The existing sigma coupling can cross zero conditionally, but its retained coefficient ratio is not action selected; the eta-only Hopf sector remains strictly positive. A coupled Hopf parent-child enclosure and its persistent relative-periodic domain are still open. Full completion remains false and frozen predictions are unchanged.
+BHSM v15.10 preserves the v15.9 cycle-controlled degree-one radial eta branch and derives the exact minimal sigma-response inverse for alpha, r and gamma. The current Aether state supplies no physical sigma tangent derivative or nonlinear response, and explicit stable witnesses prove retained-action nonuniqueness. No physical sigma onset or Hopf child is promoted. Full completion remains false and frozen predictions are unchanged.
+
+The homogeneous cycle inverse conditionally selects `kappa1,kappa0` and exactly
+meets the v14.91 identity locus on the stationary v15.9 slice.
 
 An incoming packet is one possible driver or witness, not a required primitive
 or the fundamental cause. The white-hole-to-plasma/acoustic-BAO-to-cooled-
@@ -19,10 +22,10 @@ positive quartic term is the restoring part of the supercritical branch; the
 quadratic term changes sign when the parent radius crosses its exact threshold.
 
 Current verdict:
-`BHSM_V15_9_THE_RETAINED_P2_PLUS_P8_ETA_ACTION_HAS_AN_EXACT_SUPERCRITICAL_CYCLE_DRIVEN_RADIAL_SPREAD_TO_CONCENTRATION_BIFURCATION_AT_A_C_SIX_EQUALS_343_OVER_5_KAPPA1_WITH_THE_REPRODUCED_FULL_EULER_LYAPUNOV_SCHMIDT_BRANCH_AND_POSITIVE_RADIAL_BRANCH_HESSIAN;_THE_RESULT_CONDITIONALLY_DRIVES_THE_EXISTING_SIGMA_CURVATURE_THROUGH_LOCAL_SUPPORT_DEPLETION_BUT_ETA_ONLY_HOPF_COHOMOGENEITY_ONE_HAS_A_STRICTLY_POSITIVE_IDENTITY_HESSIAN_AT_EVERY_RADIUS;_THEREFORE_THE_RADIAL_BRANCH_IS_AN_ACTION_DERIVED_ENVIRONMENT_GENERATING_PRECURSOR_NOT_A_PHYSICAL_HOPF_CHILD_AND_FULL_BHSM_COMPLETION_REMAINS_FALSE`.
+`BHSM_V15_10_THE_RETAINED_SIGMA_ACTION_HAS_AN_EXACT_INJECTIVE_THREE_RESPONSE_INVERSE_FOR_ALPHA_R_GAMMA_AND_THE_HOMOGENEOUS_CYCLE_INVERSE_CONDITIONALLY_SELECTS_KAPPA1_KAPPA0_BUT_THE_CURRENT_AETHER_STATE_SUPPLIES_NO_PHYSICAL_SIGMA_TANGENT_X_DERIVATIVE_OR_NONLINEAR_RESPONSE_JET;_EXPLICIT_STABLE_INEQUIVALENT_TRIPLES_SHARE_THE_SAME_SIGMA_ZERO_PARENT_AND_EVEN_THE_SAME_THRESHOLD_QUADRATIC_CURVATURE;_THEREFORE_NO_PHYSICAL_SIGMA_ONSET_HOPF_CHILD_OR_PERSISTENT_ENCLOSURE_IS_SELECTED_AND_FULL_BHSM_COMPLETION_REMAINS_FALSE`.
 
 Exact next object:
-`FULL_HOPF_PARENT_CHILD_EINSTEIN_ETA_SIGMA_CONSTRAINT_CONTINUATION_FROM_THE_ACTION_DERIVED_RADIAL_CONCENTRATION_BRANCH_WITH_ACTION_SELECTED_SIGMA_COEFFICIENT_BRANCH_NESTED_SCALE_AND_RELATIVE_PERIODIC_COMMON_DOMAIN`.
+`ACTION_OWNED_AETHER_CYCLE_TO_REGULAR_SIGMA_RESPONSE_JET_MAP_PRODUCING_THE_PHYSICAL_SIGMA_TANGENT_PROPAGATOR_X_DERIVATIVE_AND_BACKREACTION_UNREDUCED_CANONICAL_QUARTIC_ON_THE_V15_9_BRANCH`.
 
 `FULL_BHSM_COMPLETE = FALSE`. Physical master-solution counts, absolute scale,
 action-derived CKM/PMNS, and an encapsulation event remain undefined or open.

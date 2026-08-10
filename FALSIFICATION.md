@@ -1,16 +1,17 @@
 # BHSM Falsification Entry Point
 
-## Current v15.9 falsification boundary
+## Current v15.10 falsification boundary
 
-The radial theorem is falsified by failure of either independent numerical
-method to converge to the degree-one branch, loss of degree, disagreement with
-the exact normal form near threshold, or loss of its tested radial Hessian
-positivity. It does not close formation. The physical gate closes only with a
-coupled constraint-solved Hopf parent-child solution on the common domain,
-action selection of the sigma branch, and persistent nested-scale dynamics.
+The v15.10 nonuniqueness verdict is falsified by an existing action-owned map
+from the same current Aether state to numerical physical sigma response data
+that distinguishes every constructed witness, or by a valid current axiom
+that uniquely fixes those data. The response inverse itself is falsified by a
+retained-action derivative or canonical-normalization calculation that fails
+one of its three algebraic formulas. A selected physical sigma branch remains
+necessary before a coupled Hopf parent-child solution may close formation.
 
 Exact next object:
-`FULL_HOPF_PARENT_CHILD_EINSTEIN_ETA_SIGMA_CONSTRAINT_CONTINUATION_FROM_THE_ACTION_DERIVED_RADIAL_CONCENTRATION_BRANCH_WITH_ACTION_SELECTED_SIGMA_COEFFICIENT_BRANCH_NESTED_SCALE_AND_RELATIVE_PERIODIC_COMMON_DOMAIN`.
+`ACTION_OWNED_AETHER_CYCLE_TO_REGULAR_SIGMA_RESPONSE_JET_MAP_PRODUCING_THE_PHYSICAL_SIGMA_TANGENT_PROPAGATOR_X_DERIVATIVE_AND_BACKREACTION_UNREDUCED_CANONICAL_QUARTIC_ON_THE_V15_9_BRANCH`.
 
 ## Historical v11.6 boundary
 

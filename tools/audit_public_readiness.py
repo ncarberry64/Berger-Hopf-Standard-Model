@@ -68,9 +68,10 @@ ALIGNMENT_FILES = [
 ]
 
 ALIGNMENT_PHRASES = [
-    "v15.9",
+    "v15.10",
     "radial eta",
     "sigma",
+    "response",
     "hopf",
     "degree",
     "full_bhsm_complete = false",

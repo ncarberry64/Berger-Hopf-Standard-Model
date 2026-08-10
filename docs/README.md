@@ -1,19 +1,37 @@
 # BHSM Documentation Index
 
-## Current v15.9 campaign
+## Current v15.10 campaign
+
+- [Aether-cycle sigma-coefficient reconstruction](BHSM_AETHER_CYCLE_SIGMA_COEFFICIENT_RECONSTRUCTION_V15_10.md)
+- [v15.9 cycle-driven eta upstream theorem](BHSM_CYCLE_DRIVEN_ETA_SPREAD_CONCENTRATION_V15_9.md)
+- [Current machine/human status](current_bhsm_status.md)
+- [Reviewer reproduction guide](reviewer_reproduction_guide.md)
+- [Artifact index](../ARTIFACT_INDEX.md)
+
+Current result: the invariant coefficient triple has an exact injective
+three-response inverse, but the present Aether/cycle state does not provide
+the physical sigma tangent derivative or nonlinear response. Constructive
+stable witnesses prove retained-action nonuniqueness. The v15.9 eta branch is
+preserved; physical sigma onset and Hopf continuation remain open.
+`FULL_BHSM_COMPLETE = FALSE`.
+
+Exact next object:
+`ACTION_OWNED_AETHER_CYCLE_TO_REGULAR_SIGMA_RESPONSE_JET_MAP_PRODUCING_THE_PHYSICAL_SIGMA_TANGENT_PROPAGATOR_X_DERIVATIVE_AND_BACKREACTION_UNREDUCED_CANONICAL_QUARTIC_ON_THE_V15_9_BRANCH`.
+
+## Historical v15.9 campaign
 
 - [Cycle-driven eta spread-to-concentration calculation](BHSM_CYCLE_DRIVEN_ETA_SPREAD_CONCENTRATION_V15_9.md)
 - [Current machine/human status](current_bhsm_status.md)
 - [Reviewer reproduction guide](reviewer_reproduction_guide.md)
 - [Artifact index](../ARTIFACT_INDEX.md)
 
-Current result: the retained radial eta action has an exact supercritical
+Historical result: the retained radial eta action has an exact supercritical
 cycle-controlled spread-to-concentration branch, independently continued with
 degree one preserved. The existing sigma curvature can cross zero
 conditionally, but the coefficient branch and coupled Hopf parent-child
 continuation remain open. `FULL_BHSM_COMPLETE = FALSE`.
 
-Exact next object:
+Historical next object:
 `FULL_HOPF_PARENT_CHILD_EINSTEIN_ETA_SIGMA_CONSTRAINT_CONTINUATION_FROM_THE_ACTION_DERIVED_RADIAL_CONCENTRATION_BRANCH_WITH_ACTION_SELECTED_SIGMA_COEFFICIENT_BRANCH_NESTED_SCALE_AND_RELATIVE_PERIODIC_COMMON_DOMAIN`.
 
 ## Historical v11.5 campaign

@@ -2,13 +2,20 @@
 
 ## Current public claim boundary
 
-Current version: **v15.9**.
+Current version: **v15.10**.
 
 Supported now: the retained radial eta action has an exact critical radius,
 supercritical Lyapunov-Schmidt branch, and full degree-one numerical branch
 reproduced by two methods. Its degree-density concentration can conditionally
 drive the existing sigma curvature through zero. Eta-only Hopf
 cohomogeneity-one perturbations remain strictly positive at the identity.
+
+Also supported: the retained sigma action has an exact injective inverse from
+the canonical response jet `(S_sigma,dS_sigma/dX,lambda_sigma,bare)` to
+`(alpha,r,gamma)`. The homogeneous cycle inverse conditionally reconstructs
+`kappa1,kappa0` and is compatible with the stationary v15.9 crossing. Explicit
+stable counterexamples prove that the current sigma-zero parent and partial
+response data do not select the invariant triple.
 
 Supported: one all-encompassing parent surface is the controlling author
 ontology, not a derived uniqueness theorem or a choice among parent universes.
@@ -27,7 +34,7 @@ event. The radial result is not a global no-go theorem.
 `FULL_BHSM_COMPLETE = FALSE`.
 
 Exact next object:
-`FULL_HOPF_PARENT_CHILD_EINSTEIN_ETA_SIGMA_CONSTRAINT_CONTINUATION_FROM_THE_ACTION_DERIVED_RADIAL_CONCENTRATION_BRANCH_WITH_ACTION_SELECTED_SIGMA_COEFFICIENT_BRANCH_NESTED_SCALE_AND_RELATIVE_PERIODIC_COMMON_DOMAIN`.
+`ACTION_OWNED_AETHER_CYCLE_TO_REGULAR_SIGMA_RESPONSE_JET_MAP_PRODUCING_THE_PHYSICAL_SIGMA_TANGENT_PROPAGATOR_X_DERIVATIVE_AND_BACKREACTION_UNREDUCED_CANONICAL_QUARTIC_ON_THE_V15_9_BRANCH`.
 
 The coefficient-free spectral charged-current kernel remains an
 author-selected, no-fit action candidate. Full rank, unitarity, SU(2) closure,
