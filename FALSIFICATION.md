@@ -1,16 +1,16 @@
 # BHSM Falsification Entry Point
 
-## Current v15.8 falsification boundary
+## Current v15.9 falsification boundary
 
-The current audit rejects three shortcuts: an abstract instability criterion is
-not an unstable physical configuration; a nonlinear normal form is not an
-exact enclosure solution; and cavitation is not a universal formation law.
-The gate closes positively by exhibiting a localized constraint-solved parent
-solution and negative physical mode on the attached self-adjoint domain. A
-same-action nonlinear endpoint is deliberately the subsequent test.
+The radial theorem is falsified by failure of either independent numerical
+method to converge to the degree-one branch, loss of degree, disagreement with
+the exact normal form near threshold, or loss of its tested radial Hessian
+positivity. It does not close formation. The physical gate closes only with a
+coupled constraint-solved Hopf parent-child solution on the common domain,
+action selection of the sigma branch, and persistent nested-scale dynamics.
 
 Exact next object:
-`ACTION_OWNED_LOCALIZED_CONSTRAINT_SOLVED_UNSTABLE_PARENT_CONFIGURATION_WITH_PHYSICAL_ATTACHMENT_OF_THE_EXISTING_GAUGE_REDUCTION_AND_SELF_ADJOINT_DOMAIN_MACHINERY`.
+`FULL_HOPF_PARENT_CHILD_EINSTEIN_ETA_SIGMA_CONSTRAINT_CONTINUATION_FROM_THE_ACTION_DERIVED_RADIAL_CONCENTRATION_BRANCH_WITH_ACTION_SELECTED_SIGMA_COEFFICIENT_BRANCH_NESTED_SCALE_AND_RELATIVE_PERIODIC_COMMON_DOMAIN`.
 
 ## Historical v11.6 boundary
 

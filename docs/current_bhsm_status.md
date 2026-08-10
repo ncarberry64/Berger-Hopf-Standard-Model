@@ -2,38 +2,36 @@
 
 Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a completed replacement of the Standard Model. The program goal remains replacement by derivation, with the Standard Model retained as the preserved infrared layer until that derivation is complete.
 
-## v15.8 backward closure / existing-answer audit
+## v15.9 cycle-driven eta spread-to-concentration result
 
-The v15.8 audit works backward from formation and exhausts compatible existing
-BHSM results before permitting a new object. The retained action defines the
-general conditional operator
+The retained degree-one radial eta action has an exact cycle-controlled
+supercritical bifurcation at `a_c^6=343/(5*kappa1)`. Its Lyapunov-Schmidt
+profile begins
 
-`H_sigma^(0) = -nabla_A(Z_0 nabla^A) + A_0 + sum Xi`
+`f=chi+q sin(chi)+(19/108)q^2 sin(chi)cos(chi)+...`,
 
-and the repository also owns gauge-reduction interfaces, self-adjoint theorem
-classes, nonlinear normal forms, persistence typing, and the conditional cycle
-mass-energy readout. These are not attached to a localized constraint-solved,
-nonhomogeneous physical parent solution with a negative mode. No exact
-same-action continuation to an enclosure endpoint exists.
+with `a^6/a_c^6=1+(23/45)q^2+...`. Fourier-Galerkin stationarity and an
+independent adaptive collocation BVP reproduce the full Euler branch, preserve
+degree one, and give a positive radial branch Hessian at all tested radii and
+resolutions. The degree-density concentration obeys
+`C_eta=1+(49/8)q^2+...`.
 
-The v14.93 local theorem is preserved: the unique equivariant radial
-conformal zero is a zero mode without a nearby equivariant radial enclosure
-(`ZERO_MODE_WITHOUT_NEARBY_EQUIVARIANT_RADIAL_ENCAPSULATION`): it has zero cubic coefficient and quartic coefficient
-`27*pi*X^4/128 > 0`, hence no nearby radial bifurcation. Nonhomogeneous and
-finite-amplitude branches remain open.
+The concentration conditionally lowers the existing sigma support curvature
+through zero for retained coefficient ratios in the stable-parent interval.
+Those ratios remain independent theory inputs and are not action selected. The
+eta-only Hopf cohomogeneity-one identity Hessian is strictly positive at every
+radius, so this radial branch is an action-derived formation precursor rather
+than the physical `S3 x S3` Hopf child.
 
 The white-hole-origin to plasma/acoustic-BAO to cooled-cosmology sequence and
-analogous core-energy-matching quantum recurrence are underived author
-hypotheses. Cavitation is one candidate nonlinear response, not a universal
-formation law. Pair capture, bifurcation locking, and nonhomogeneous
-localization remain alternatives that the action has not selected.
+analogous core-energy-matching quantum recurrence remain underived author
+hypotheses. Cavitation remains one possible response, not a universal law.
 
 Exact next object:
-`ACTION_OWNED_LOCALIZED_CONSTRAINT_SOLVED_UNSTABLE_PARENT_CONFIGURATION_WITH_PHYSICAL_ATTACHMENT_OF_THE_EXISTING_GAUGE_REDUCTION_AND_SELF_ADJOINT_DOMAIN_MACHINERY`.
+`FULL_HOPF_PARENT_CHILD_EINSTEIN_ETA_SIGMA_CONSTRAINT_CONTINUATION_FROM_THE_ACTION_DERIVED_RADIAL_CONCENTRATION_BRANCH_WITH_ACTION_SELECTED_SIGMA_COEFFICIENT_BRANCH_NESTED_SCALE_AND_RELATIVE_PERIODIC_COMMON_DOMAIN`.
 
-`FULL_BHSM_COMPLETE = FALSE`; master-solution counts remain
-`UNDEFINED_MISSING_UPSTREAM_STRUCTURE`. Frozen predictions and official
-prediction logic are unchanged. See the [controlling report](BHSM_BACKWARD_CLOSURE_EXISTING_ANSWER_AUDIT_V15_8.md).
+`FULL_BHSM_COMPLETE = FALSE`. Frozen predictions and official prediction logic
+are unchanged. See the [controlling report](BHSM_CYCLE_DRIVEN_ETA_SPREAD_CONCENTRATION_V15_9.md).
 
 ## v14.2 FR eta-knot color-matter completion audit
 

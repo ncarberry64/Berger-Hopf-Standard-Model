@@ -5,25 +5,24 @@ evidence, not competing public status pages.
 
 ## Current public summary
 
-Current version: **v15.8**.
+Current version: **v15.9**.
 
-BHSM v15.8 exhausts the existing formation lineage before adding another object. Conditional stability, gauge-reduction, self-adjoint-domain, nonlinear-normal-form, persistence, and cycle-mass machinery already exists. What is absent is a localized constraint-solved physical parent configuration with a negative mode on the attached domain, followed by an exact same-action nonlinear endpoint. Cavitation is one candidate response, not the universal formation law. Full completion remains false and frozen predictions are unchanged.
+BHSM v15.9 derives an exact cycle-controlled supercritical radial eta spread-to-concentration bifurcation from the retained p=2+p=8 action and reproduces its degree-one full Euler branch by independent Galerkin and collocation methods. The existing sigma coupling can cross zero conditionally, but its retained coefficient ratio is not action selected; the eta-only Hopf sector remains strictly positive. A coupled Hopf parent-child enclosure and its persistent relative-periodic domain are still open. Full completion remains false and frozen predictions are unchanged.
 
 An incoming packet is one possible driver or witness, not a required primitive
 or the fundamental cause. The white-hole-to-plasma/acoustic-BAO-to-cooled-
 cosmology scale process and analogous core-energy-matching quantum recurrence
 are author hypotheses; neither has been derived from the retained action.
 
-The v14.93 radial theorem remains valid and local: the unique equivariant
-conformal quadratic zero has zero cubic coefficient and positive quartic
-coefficient. It is a `ZERO_MODE_WITHOUT_CAVITATION`, not a global no-go, and
-does not exclude nonhomogeneous or finite-amplitude branches.
+The v14.93 radial theorem remains valid as the critical-radius slice. Its
+positive quartic term is the restoring part of the supercritical branch; the
+quadratic term changes sign when the parent radius crosses its exact threshold.
 
 Current verdict:
-`BHSM_V15_8_BACKWARD_CLOSURE_FINDS_THAT_THE_REPOSITORY_ALREADY_OWNS_CONDITIONAL_STABILITY_HESSIAN_GAUGE_REDUCTION_SELF_ADJOINT_DOMAIN_NONLINEAR_NORMAL_FORM_PERSISTENCE_AND_CYCLE_MASS_READOUT_MACHINERY;_IT_DOES_NOT_OWN_A_LOCALIZED_CONSTRAINT_SOLVED_PHYSICAL_CONFIGURATION_WITH_A_NEGATIVE_MODE_ON_THE_ATTACHED_DOMAIN_OR_AN_EXACT_CONTINUATION_TO_ANY_ENCAPSULATED_BRANCH;_CAVITATION_IS_ONE_CANDIDATE_FORMATION_MECHANISM_NOT_THE_UNIVERSAL_LAW_AND_FULL_BHSM_COMPLETION_REMAINS_FALSE`.
+`BHSM_V15_9_THE_RETAINED_P2_PLUS_P8_ETA_ACTION_HAS_AN_EXACT_SUPERCRITICAL_CYCLE_DRIVEN_RADIAL_SPREAD_TO_CONCENTRATION_BIFURCATION_AT_A_C_SIX_EQUALS_343_OVER_5_KAPPA1_WITH_THE_REPRODUCED_FULL_EULER_LYAPUNOV_SCHMIDT_BRANCH_AND_POSITIVE_RADIAL_BRANCH_HESSIAN;_THE_RESULT_CONDITIONALLY_DRIVES_THE_EXISTING_SIGMA_CURVATURE_THROUGH_LOCAL_SUPPORT_DEPLETION_BUT_ETA_ONLY_HOPF_COHOMOGENEITY_ONE_HAS_A_STRICTLY_POSITIVE_IDENTITY_HESSIAN_AT_EVERY_RADIUS;_THEREFORE_THE_RADIAL_BRANCH_IS_AN_ACTION_DERIVED_ENVIRONMENT_GENERATING_PRECURSOR_NOT_A_PHYSICAL_HOPF_CHILD_AND_FULL_BHSM_COMPLETION_REMAINS_FALSE`.
 
 Exact next object:
-`ACTION_OWNED_LOCALIZED_CONSTRAINT_SOLVED_UNSTABLE_PARENT_CONFIGURATION_WITH_PHYSICAL_ATTACHMENT_OF_THE_EXISTING_GAUGE_REDUCTION_AND_SELF_ADJOINT_DOMAIN_MACHINERY`.
+`FULL_HOPF_PARENT_CHILD_EINSTEIN_ETA_SIGMA_CONSTRAINT_CONTINUATION_FROM_THE_ACTION_DERIVED_RADIAL_CONCENTRATION_BRANCH_WITH_ACTION_SELECTED_SIGMA_COEFFICIENT_BRANCH_NESTED_SCALE_AND_RELATIVE_PERIODIC_COMMON_DOMAIN`.
 
 `FULL_BHSM_COMPLETE = FALSE`. Physical master-solution counts, absolute scale,
 action-derived CKM/PMNS, and an encapsulation event remain undefined or open.

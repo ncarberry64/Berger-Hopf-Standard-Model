@@ -1,0 +1,559 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "Hindsight_20_20": {
+    "INVALIDATED": [
+      "v14.93 zero as a dead-end when the parent radius is dynamical",
+      "radial S6 concentration level sets as the Hopf S3xS3 seam",
+      "eta-only Hopf linear bifurcation at any parent radius",
+      "negative parent Hessian as a universal prerequisite for formation"
+    ],
+    "OPEN": [
+      "FULL_HOPF_PARENT_CHILD_EINSTEIN_ETA_SIGMA_CONSTRAINT_CONTINUATION_FROM_THE_ACTION_DERIVED_RADIAL_CONCENTRATION_BRANCH_WITH_ACTION_SELECTED_SIGMA_COEFFICIENT_BRANCH_NESTED_SCALE_AND_RELATIVE_PERIODIC_COMMON_DOMAIN"
+    ],
+    "RECLASSIFIED": [
+      "v14.93 fixed-radius quartic theorem as the critical-cycle slice",
+      "radial eta concentration as environment-generating precursor",
+      "cavitation as the zero-barrier member of a broader basin-boundary problem"
+    ],
+    "VALIDATED_DERIVED": [
+      "exact radial eta cycle threshold and supercritical branch",
+      "two-method radial continuation with degree preservation",
+      "regular-state degree-density concentration diagnostic",
+      "conditional eta-depletion sigma-curvature crossing",
+      "eta-only Hopf cohomogeneity-one identity Hessian positivity",
+      "S7 k=2 vector-harmonic spectrum and participation moments"
+    ]
+  },
+  "Hopf_topology_firewall": {
+    "all_coefficients_positive_for": "a>0_and_kappa1>0",
+    "ansatz": "eta(chi,u,v)=(cos(f(chi))*u,sin(f(chi))*v),_u,v_in_S3",
+    "derivation": "delta_z=2[y_prime+3(cot-tan)y];_delta2_z=2[y_prime^2+3(cot-tan)^2y^2]",
+    "kernel": null,
+    "physical_full_preimage_seam": "S3_times_S3",
+    "quadratic_form": "a^5(kappa1+343/a^6)int w[y_prime^2+3(cot-tan)^2y^2+294/(kappa1*a^6+343)*(y_prime+3(cot-tan)y)^2]dchi",
+    "radial_S6_level_surface_identified_with_Hopf_seam": false,
+    "scope": "HOPF_COHOMOGENEITY_ONE_ETA_ONLY_IDENTITY_BRANCH",
+    "verdict": "NO_ETA_ONLY_HOPF_LINEAR_BIFURCATION_AT_ANY_PARENT_RADIUS",
+    "weight": "w=sin(chi)^3*cos(chi)^3"
+  },
+  "artifact": "BHSM_cycle_driven_eta_spread_concentration_v15_9",
+  "de_envelopment_status": "OPEN_NO_PHYSICAL_ENCLOSURE_INPUT",
+  "downstream_status": "NOT_REACHED_NO_PHYSICAL_HOPF_COMMON_DOMAIN_GAUGE_DIRAC_STATE",
+  "eta_to_sigma": {
+    "actual_branch_diagnostics": [
+      {
+        "alpha": -2.0,
+        "alpha_definition": "A0/(g*kappa1*X_critical)",
+        "classification": "DERIVED_CONDITIONAL_ON_RETAINED_UNSELECTED_ALPHA",
+        "continued_radius_ratio_six": 1.0002541333086516,
+        "leading_radius_ratio_six": 1.0002475846872618,
+        "minimum_X_eta_over_critical_X": 0.9559816028104329,
+        "q_on_continued_branch": 0.02229989477941475,
+        "sigma_curvature_residual": 2.8985036593098812e-11,
+        "y_sigma_at_critical_normalization": 0.9559816028050335
+      },
+      {
+        "alpha": -1.0,
+        "alpha_definition": "A0/(g*kappa1*X_critical)",
+        "classification": "DERIVED_CONDITIONAL_ON_RETAINED_UNSELECTED_ALPHA",
+        "continued_radius_ratio_six": 1.0137736830172481,
+        "leading_radius_ratio_six": 1.011503530263748,
+        "minimum_X_eta_over_critical_X": 0.6999539565937697,
+        "q_on_continued_branch": 0.1647772758869525,
+        "sigma_curvature_residual": -5.727435192781627e-11,
+        "y_sigma_at_critical_normalization": 0.6999539566148678
+      },
+      {
+        "alpha": -0.25,
+        "alpha_definition": "A0/(g*kappa1*X_critical)",
+        "classification": "DERIVED_CONDITIONAL_ON_RETAINED_UNSELECTED_ALPHA",
+        "continued_radius_ratio_six": 1.1233295571893256,
+        "leading_radius_ratio_six": 1.072747382065157,
+        "minimum_X_eta_over_critical_X": 0.24546216933726833,
+        "q_on_continued_branch": 0.5041244985903319,
+        "sigma_curvature_residual": 5.482593545824699e-15,
+        "y_sigma_at_critical_normalization": 0.24546216933726323
+      }
+    ],
+    "coefficient_selection_evidence": "v9.0_parent_action_record_explicitly_classifies_kappa0_kappa1_Zchi_Zsigma_g_A0_G0_as_independent_theory_inputs;_v6.0.3_and_v6.1.2_preserve_the_unselected_threshold_and_localization_status",
+    "coupled_eta_sigma_metric_branch_solved": false,
+    "formation_promoted": false,
+    "leading_threshold": "a_sigma^6/a_c^6-1=(23/180)(1-y_sigma)^2+O((1-y_sigma)^3)",
+    "physical_alpha_selected_by_action": false,
+    "sigma_curvature": "A0+g[kappa1*X_eta+X_eta^4/4];_normalized_at_a_c_as_F_alpha=alpha+x+(5/4)x^4",
+    "stable_ordinary_parent_interval": "-9/4<alpha<0"
+  },
+  "exact_next_object": "FULL_HOPF_PARENT_CHILD_EINSTEIN_ETA_SIGMA_CONSTRAINT_CONTINUATION_FROM_THE_ACTION_DERIVED_RADIAL_CONCENTRATION_BRANCH_WITH_ACTION_SELECTED_SIGMA_COEFFICIENT_BRANCH_NESTED_SCALE_AND_RELATIVE_PERIODIC_COMMON_DOMAIN",
+  "exact_reproduction": {
+    "amplitude_relation": "q^2=(45/23)(a^6/a_c^6-1)+O(m^2)",
+    "bifurcation": "SUPERCRITICAL_PITCHFORK_MODULO_ORIENTATION_REVERSAL",
+    "branch_radial_curvature_sign": "POSITIVE",
+    "complement_coefficient_c": "19/108",
+    "critical_radius_six": "343/(5*kappa1)",
+    "identity_hessian_ratio_to_E2_id": "343/(4*kappa1*a^6)-5/4",
+    "kernel": "y0=sin(chi)",
+    "order_q2_Euler_residual": "-(6/7)(108*c-19)sin(chi)^7cos(chi)",
+    "order_q3_kernel_projection": "35*pi*(45*alpha-23)/1152",
+    "profile": "f=chi+q*sin(chi)+(19/108)q^2*sin(chi)cos(chi)+O(q^3)",
+    "radius_relation": "a^6/a_c^6=1+(23/45)q^2+O(q^4)",
+    "radius_relation_alpha": "23/45",
+    "reduced_energy_m_q2": "-5/8",
+    "reduced_energy_over_E2c": "-(5/8)m*q^2+(23/144)q^4+O(q^6)",
+    "reduced_energy_q4": "23/144",
+    "retained_functional": "integral_0^pi sin(chi)^6[kappa1*X/2+X^4/8]dchi;_X=(f_prime^2+6sin(f)^2/sin(chi)^2)/a^2"
+  },
+  "first_non_Killing_dynamic_seed": {
+    "Hodge_spectrum": "Lambda_k+12=(k+1)(k+5)",
+    "ambient_divergence_free": true,
+    "candidate_constraint_reduced_frequency_squared": "21/a^2",
+    "candidate_frequency": "sqrt(21)/a",
+    "classification": "GEOMETRIC_SPECTRUM_AND_MOMENTS_DERIVED;_FULL_COUPLED_ADM_FREQUENCY_ATTACHMENT_DERIVED_CONDITIONAL",
+    "coexact_relative_spectrum": "Lambda_k=(k-1)(k+7),_k>=1",
+    "explicit_field": "V=x0*(-x2*d_x1+x1*d_x2)",
+    "first_non_Killing_k": 2,
+    "free_equation_of_state": "P=rho/7",
+    "free_fixed_action_energy_scaling": "E_L2=sqrt(21)*I/a",
+    "k1": "KILLING_DIFF_ORBIT_NOT_A_PHYSICAL_INTERNAL_CLOCK",
+    "mass_condition": "internal_scale_must_decouple_from_parent_a(tau)",
+    "mean_norm_fourth": "1/560",
+    "mean_norm_squared": "1/40",
+    "participation_ratio": "20/7",
+    "tangent": true
+  },
+  "formation_status": "RADIAL_PRECURSOR_AND_CONDITIONAL_SIGMA_ZERO_DERIVED;_FULL_HOPF_PARENT_CHILD_FORMATION_MAP_OPEN",
+  "nested_scale_status": "OPEN_NO_INTERNAL_SCALE_DECOUPLING_SOLUTION",
+  "no_retuning_certificate": {
+    "USB_REMOVABLE_MEDIA_TOUCHED": false,
+    "frozen_predictions_changed": false,
+    "measured_particle_inputs": [],
+    "new_continuous_physical_parameters": [],
+    "new_fields": [],
+    "official_prediction_logic_changed": false
+  },
+  "persistence_status": "OPEN_NO_RELATIVE_PERIODIC_HOPF_ENCLOSURE",
+  "positive_response_Schur_attachment": {
+    "assumption": "H_response_positive_on_the_existing_common_physical_domain",
+    "consequence": "the_negative_radial_identity_direction_for_a>a_c_cannot_be_removed_by_positive_block_elimination",
+    "formula": "H_eff=H_eta-B*H_response^{-1}*B_dagger",
+    "new_branch_full_coupled_stability": "OPEN_REQUIRES_ACTUAL_METRIC_SIGMA_RESPONSE_BLOCKS_ON_THE_BRANCH",
+    "order": "H_eff<=H_eta_in_quadratic_form_order"
+  },
+  "primary_object": "CYCLE_DRIVEN_ETA_SPREAD_TO_CONCENTRATION_BIFURCATION_FOLLOWED_BY_LOCAL_SIGMA_SUPPORT_DEPLETION_AND_FULL_HOPF_PARENT_CHILD_CONSTRAINT_CONTINUATION_WITH_NESTED_SCALE_DECOUPLING_COMMON_DOMAIN_AND_FLOQUET_PERSISTENCE",
+  "primary_verdict": "BHSM_V15_9_THE_RETAINED_P2_PLUS_P8_ETA_ACTION_HAS_AN_EXACT_SUPERCRITICAL_CYCLE_DRIVEN_RADIAL_SPREAD_TO_CONCENTRATION_BIFURCATION_AT_A_C_SIX_EQUALS_343_OVER_5_KAPPA1_WITH_THE_REPRODUCED_FULL_EULER_LYAPUNOV_SCHMIDT_BRANCH_AND_POSITIVE_RADIAL_BRANCH_HESSIAN;_THE_RESULT_CONDITIONALLY_DRIVES_THE_EXISTING_SIGMA_CURVATURE_THROUGH_LOCAL_SUPPORT_DEPLETION_BUT_ETA_ONLY_HOPF_COHOMOGENEITY_ONE_HAS_A_STRICTLY_POSITIVE_IDENTITY_HESSIAN_AT_EVERY_RADIUS;_THEREFORE_THE_RADIAL_BRANCH_IS_AN_ACTION_DERIVED_ENVIRONMENT_GENERATING_PRECURSOR_NOT_A_PHYSICAL_HOPF_CHILD_AND_FULL_BHSM_COMPLETION_REMAINS_FALSE",
+  "radial_numerical_continuation": {
+    "above_crossing": {
+      "1.001": [
+        {
+          "C_eta": 1.0120279472683684,
+          "coefficients": [
+            0.04424449397806389,
+            0.0001714170383381114,
+            7.742594420697605e-06,
+            3.711356201170961e-08
+          ],
+          "degree": 1.0,
+          "galerkin_residual_inf": 4.385380947269368e-15,
+          "lowest_radial_coefficient_hessian_eigenvalues": [
+            0.008564340440996018,
+            16.091080886172147,
+            42.81420594403944,
+            96.93838021784966
+          ],
+          "minimum_X_eta_over_critical_X": 0.9137754139252469,
+          "modes": 4,
+          "pointwise_weighted_Euler_residual_inf": 1.893961385761554e-09,
+          "q_fourier": 0.04424449397806389,
+          "q_leading_prediction": 0.04423258684646671,
+          "quadrature_points": 480,
+          "radial_coefficient_hessian_positive": true,
+          "radius_ratio_six": 1.001,
+          "right_pole_slope": 0.9560752607695983
+        },
+        {
+          "C_eta": 1.012027947268332,
+          "coefficients": [
+            0.04424449398681463,
+            0.0001714171021840771,
+            7.742614046044062e-06,
+            3.720377019932879e-08,
+            1.4622055646124678e-11,
+            6.151041449933277e-11,
+            -1.1417416399835293e-12,
+            2.7868992340730517e-14
+          ],
+          "degree": 1.0,
+          "galerkin_residual_inf": 5.417888360170764e-14,
+          "lowest_radial_coefficient_hessian_eigenvalues": [
+            0.008563543799457141,
+            4.473973310088816,
+            7.754539652043727,
+            31.002168580134896
+          ],
+          "minimum_X_eta_over_critical_X": 0.9137754153112189,
+          "modes": 8,
+          "pointwise_weighted_Euler_residual_inf": 1.5721317795135133e-14,
+          "q_fourier": 0.04424449398681463,
+          "q_leading_prediction": 0.04423258684646671,
+          "quadrature_points": 480,
+          "radial_coefficient_hessian_positive": true,
+          "radius_ratio_six": 1.001,
+          "right_pole_slope": 0.9560752614946635
+        },
+        {
+          "C_eta": 1.012027947268225,
+          "coefficients": [
+            0.04424449398661856,
+            0.00017141710218275335,
+            7.74261404630215e-06,
+            3.720377059421349e-08,
+            1.4622454571918383e-11,
+            6.151092002462671e-11,
+            -1.141379332677089e-12,
+            2.8351643590478608e-14,
+            2.2035356881931747e-16,
+            3.49000918455898e-16,
+            3.1925169078780415e-17,
+            1.4642097841049383e-16
+          ],
+          "degree": 1.0,
+          "galerkin_residual_inf": 6.639133687258436e-14,
+          "lowest_radial_coefficient_hessian_eigenvalues": [
+            0.008562871682520906,
+            1.521281486284844,
+            2.459839964273558,
+            14.049286458638779
+          ],
+          "minimum_X_eta_over_critical_X": 0.9137754153116002,
+          "modes": 12,
+          "pointwise_weighted_Euler_residual_inf": 1.5337053505489634e-14,
+          "q_fourier": 0.04424449398661856,
+          "q_leading_prediction": 0.04423258684646671,
+          "quadrature_points": 480,
+          "radial_coefficient_hessian_positive": true,
+          "radius_ratio_six": 1.001,
+          "right_pole_slope": 0.956075261494863
+        }
+      ],
+      "1.01": [
+        {
+          "C_eta": 1.1243301702006407,
+          "coefficients": [
+            0.14025628092410397,
+            0.00165230171913793,
+            0.0002461067942126907,
+            3.918311838874297e-06
+          ],
+          "degree": 1.0,
+          "galerkin_residual_inf": 4.9404924595819466e-15,
+          "lowest_radial_coefficient_hessian_eigenvalues": [
+            0.08331973260491615,
+            14.139817490177764,
+            45.98052503427504,
+            94.23339818248947
+          ],
+          "minimum_X_eta_over_critical_X": 0.7411432822885802,
+          "modes": 4,
+          "pointwise_weighted_Euler_residual_inf": 1.89861674037672e-06,
+          "q_fourier": 0.14025628092410397,
+          "q_leading_prediction": 0.13987572123604713,
+          "quadrature_points": 480,
+          "radial_coefficient_hessian_positive": true,
+          "radius_ratio_six": 1.01,
+          "right_pole_slope": 0.8623256753788893
+        },
+        {
+          "C_eta": 1.1243301704904654,
+          "coefficients": [
+            0.14025624681925308,
+            0.0016523874484467042,
+            0.00024602959716925484,
+            4.032918818792329e-06,
+            -6.076683533593543e-08,
+            6.766482556867148e-08,
+            -3.931591786324824e-09,
+            2.6549762653376034e-10
+          ],
+          "degree": 1.0,
+          "galerkin_residual_inf": 5.5289106626332796e-14,
+          "lowest_radial_coefficient_hessian_eigenvalues": [
+            0.08322774566066327,
+            3.2420271370817804,
+            10.214169326933213,
+            26.50112083306669
+          ],
+          "minimum_X_eta_over_critical_X": 0.7411460928463065,
+          "modes": 8,
+          "pointwise_weighted_Euler_residual_inf": 4.5288143648882804e-10,
+          "q_fourier": 0.14025624681925308,
+          "q_leading_prediction": 0.13987572123604713,
+          "quadrature_points": 480,
+          "radial_coefficient_hessian_positive": true,
+          "radius_ratio_six": 1.01,
+          "right_pole_slope": 0.8623273104296614
+        },
+        {
+          "C_eta": 1.1243301704904745,
+          "coefficients": [
+            0.14025624682706425,
+            0.0016523874393239266,
+            0.000246029617965001,
+            4.032903699509361e-06,
+            -6.074015373138905e-08,
+            6.764898230741773e-08,
+            -3.908314495856463e-09,
+            2.5438770358195947e-10,
+            1.2220904826779995e-11,
+            -3.677553545865792e-12,
+            4.975301628508668e-13,
+            -3.8465339477217245e-14
+          ],
+          "degree": 0.9999999999999998,
+          "galerkin_residual_inf": 7.194245199571014e-14,
+          "lowest_radial_coefficient_hessian_eigenvalues": [
+            0.08314172176605276,
+            1.0185926619609327,
+            3.5367687742901928,
+            10.365163418930539
+          ],
+          "minimum_X_eta_over_critical_X": 0.741146091502252,
+          "modes": 12,
+          "pointwise_weighted_Euler_residual_inf": 1.0388918917050563e-13,
+          "q_fourier": 0.14025624682706425,
+          "q_leading_prediction": 0.13987572123604713,
+          "quadrature_points": 480,
+          "radial_coefficient_hessian_positive": true,
+          "radius_ratio_six": 1.01,
+          "right_pole_slope": 0.8623273096477542
+        }
+      ],
+      "1.04": [
+        {
+          "C_eta": 1.5546912152533865,
+          "coefficients": [
+            0.28283246059968115,
+            0.005781521606422739,
+            0.0019842344241249106,
+            7.727525356619238e-05
+          ],
+          "degree": 1.0,
+          "galerkin_residual_inf": 8.493206138382448e-15,
+          "lowest_radial_coefficient_hessian_eigenvalues": [
+            0.3033808938917173,
+            10.155778285037456,
+            52.62027760113698,
+            87.09440986661821
+          ],
+          "minimum_X_eta_over_critical_X": 0.5160636906567081,
+          "modes": 4,
+          "pointwise_weighted_Euler_residual_inf": 0.00016983091603097584,
+          "q_fourier": 0.28283246059968115,
+          "q_leading_prediction": 0.27975144247209427,
+          "quadrature_points": 480,
+          "radial_coefficient_hessian_positive": true,
+          "radius_ratio_six": 1.04,
+          "right_pole_slope": 0.7230869803550544
+        },
+        {
+          "C_eta": 1.5546921199051142,
+          "coefficients": [
+            0.2828262112242433,
+            0.005792455316858027,
+            0.001969921223092692,
+            9.048812913041149e-05,
+            -1.0540781043143188e-05,
+            5.634303640139023e-06,
+            -5.647315109972108e-07,
+            3.405176322330808e-08
+          ],
+          "degree": 0.9999999999999998,
+          "galerkin_residual_inf": 5.218048215738236e-14,
+          "lowest_radial_coefficient_hessian_eigenvalues": [
+            0.30102512990849123,
+            1.8618919485134104,
+            15.501156505581779,
+            17.94071757745831
+          ],
+          "minimum_X_eta_over_critical_X": 0.5163701157111195,
+          "modes": 8,
+          "pointwise_weighted_Euler_residual_inf": 8.02923297609002e-07,
+          "q_fourier": 0.2828262112242433,
+          "q_leading_prediction": 0.27975144247209427,
+          "quadrature_points": 480,
+          "radial_coefficient_hessian_positive": true,
+          "radius_ratio_six": 1.04,
+          "right_pole_slope": 0.7233016235184556
+        },
+        {
+          "C_eta": 1.5546921199250179,
+          "coefficients": [
+            0.2828262304661343,
+            0.0057924267695769445,
+            0.0019699722227659307,
+            9.044144461860053e-05,
+            -1.0476100856434816e-05,
+            5.58682865705016e-06,
+            -5.096410010852917e-07,
+            3.1021376394320644e-09,
+            2.741405842263048e-08,
+            -7.755533402838363e-09,
+            1.329973374078433e-09,
+            -7.686132949261568e-11
+          ],
+          "degree": 0.9999999999999998,
+          "galerkin_residual_inf": 7.30526750203353e-14,
+          "lowest_radial_coefficient_hessian_eigenvalues": [
+            0.29582420162744916,
+            0.5549024261120903,
+            5.599960336311275,
+            6.367898079889645
+          ],
+          "minimum_X_eta_over_critical_X": 0.5163672638151934,
+          "modes": 12,
+          "pointwise_weighted_Euler_residual_inf": 2.536419253095497e-09,
+          "q_fourier": 0.2828262304661343,
+          "q_leading_prediction": 0.27975144247209427,
+          "quadrature_points": 480,
+          "radial_coefficient_hessian_positive": true,
+          "radius_ratio_six": 1.04,
+          "right_pole_slope": 0.7232996261296265
+        }
+      ]
+    },
+    "below_crossing": [
+      {
+        "C_eta": 1.0000000000000002,
+        "coefficients": [
+          -2.6781119142217868e-14,
+          2.047886023446897e-16,
+          1.052525160961615e-17,
+          -1.6879932786116924e-16
+        ],
+        "degree": 1.0,
+        "galerkin_residual_inf": 4.385380947269368e-15,
+        "lowest_radial_coefficient_hessian_eigenvalues": [
+          0.04336947584011802,
+          16.50272188020607,
+          42.824296947574304,
+          98.17759328066244
+        ],
+        "minimum_X_eta_over_critical_X": 1.003355729848039,
+        "modes": 4,
+        "pointwise_weighted_Euler_residual_inf": 5.956041120658672e-15,
+        "q_fourier": -2.6781119142217868e-14,
+        "q_leading_prediction": 0.0,
+        "quadrature_points": 480,
+        "radial_coefficient_hessian_positive": true,
+        "radius_ratio_six": 0.99,
+        "right_pole_slope": 1.0000000000000264
+      },
+      {
+        "C_eta": 1.0,
+        "coefficients": [
+          2.6244398683184496e-15,
+          1.8838050455574142e-16,
+          4.1379615301795375e-17,
+          -1.9221725275066952e-16,
+          1.880245289610574e-17,
+          -4.8892829654207377e-17,
+          1.1579958740862886e-18,
+          -6.36585918672587e-17
+        ],
+        "degree": 1.0000000000000002,
+        "galerkin_residual_inf": 5.5067062021407764e-14,
+        "lowest_radial_coefficient_hessian_eigenvalues": [
+          0.043349526094093004,
+          4.796837754370697,
+          7.410505523640493,
+          31.919380365554925
+        ],
+        "minimum_X_eta_over_critical_X": 1.0033557298479778,
+        "modes": 8,
+        "pointwise_weighted_Euler_residual_inf": 9.123554440537119e-15,
+        "q_fourier": 2.6244398683184496e-15,
+        "q_leading_prediction": 0.0,
+        "quadrature_points": 480,
+        "radial_coefficient_hessian_positive": true,
+        "radius_ratio_six": 0.99,
+        "right_pole_slope": 0.999999999999996
+      },
+      {
+        "C_eta": 1.0,
+        "coefficients": [
+          -9.388148335436536e-14,
+          4.630096349828115e-16,
+          3.1721140499313467e-16,
+          4.550747623314781e-16,
+          3.9883381848298736e-16,
+          7.220887259757119e-16,
+          3.4692186693598445e-16,
+          6.218041558387592e-16,
+          2.2740715096324813e-16,
+          4.561794766282082e-16,
+          8.709761651832502e-17,
+          1.7508828297303028e-16
+        ],
+        "degree": 1.0,
+        "galerkin_residual_inf": 6.705747068735946e-14,
+        "lowest_radial_coefficient_hessian_eigenvalues": [
+          0.04333240705328077,
+          1.6942440802313967,
+          2.2612099318567855,
+          14.974041444873972
+        ],
+        "minimum_X_eta_over_critical_X": 1.0033557298481948,
+        "modes": 12,
+        "pointwise_weighted_Euler_residual_inf": 1.6251500168095538e-14,
+        "q_fourier": -9.388148335436536e-14,
+        "q_leading_prediction": 0.0,
+        "quadrature_points": 480,
+        "radial_coefficient_hessian_positive": true,
+        "radius_ratio_six": 0.99,
+        "right_pole_slope": 1.0000000000001041
+      }
+    ],
+    "full_metric_eta_sigma_constraint_solution": false,
+    "interpretation": "below_a_c_the_seed_returns_to_identity;_above_a_c_two_orientation_related_nonuniform_radial_branches_exist_and_are_radially_positive",
+    "method_1": "pole_regular_Fourier_Galerkin_variational_stationarity",
+    "method_2": {
+      "boundary_residual_inf": 1.708702623837155e-16,
+      "converged": true,
+      "first_order_equation_residual_inf": 2.175599187040139e-08,
+      "method": "adaptive_solve_bvp_with_pole_regular_Robin_limits",
+      "nodes": 518,
+      "pole_cutoff": 0.001,
+      "profile_difference_from_Fourier_inf": 1.2780887459484802e-11,
+      "status": 0
+    }
+  },
+  "spread_concentration": {
+    "C_eta": "<j_eta^2>",
+    "C_eta_bound": "C_eta>=1_by_Cauchy_Schwarz",
+    "C_eta_q2": "49/8",
+    "C_eta_radius_coefficient": "2205/184",
+    "C_eta_radius_series": "1+(2205/184)(a^6/a_c^6-1)+higher_order",
+    "C_eta_series": "1+(49/8)q^2+O(q^4)",
+    "classification": "ACTION_COMPATIBLE_REGULAR_STATE_SPREAD_CONCENTRATION_DIAGNOSTIC",
+    "degree_density": "j_eta=f_prime*(sin(f)/sin(chi))^6",
+    "degree_normalization": "<j_eta>=1",
+    "depleted_pole_q2": "73/54",
+    "depleted_pole_support_ratio": "1-2q+(73/54)q^2+O(q^3)",
+    "primitive_Aether_density_claimed": false
+  },
+  "validation": {
+    "Hopf_eta_only_not_mislabeled_full_no_go": true,
+    "USB_removable_media_untouched": true,
+    "above_crossing_nonuniform": true,
+    "below_crossing_returns_identity": true,
+    "critical_radius_positive": true,
+    "degree_preserved": true,
+    "exact_LS_coefficients_reproduced": true,
+    "frozen_predictions_unchanged": true,
+    "hessian_changes_sign": true,
+    "independent_BVP_agrees": true,
+    "no_new_field_source_or_coefficient": true,
+    "radial_branch_stable_at_tested_resolutions": true,
+    "sigma_thresholds_close_on_actual_branch": true
+  },
+  "validation_passed": true,
+  "version": "v15.9"
+}

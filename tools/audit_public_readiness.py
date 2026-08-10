@@ -68,10 +68,11 @@ ALIGNMENT_FILES = [
 ]
 
 ALIGNMENT_PHRASES = [
-    "conditional stability",
-    "localized constraint-solved",
-    "same-action",
-    "cavitation is one candidate",
+    "v15.9",
+    "radial eta",
+    "sigma",
+    "hopf",
+    "degree",
     "full_bhsm_complete = false",
     "frozen predictions",
 ]

@@ -2,21 +2,22 @@
 
 ## Current public claim boundary
 
-Current version: **v15.8**.
+Current version: **v15.9**.
 
-Supported now: conditional stability/Hessian architecture, gauge-reduction interfaces, several self-adjoint theorem classes, nonlinear normal forms, persistence typing, and the conditional cycle-energy mass readout already exist in BHSM. The v14.93 radial control excludes only a nearby equivariant radial enclosure branch; it is not a global no-go.
-Cavitation is one candidate response, not the universal formation law.
+Supported now: the retained radial eta action has an exact critical radius,
+supercritical Lyapunov-Schmidt branch, and full degree-one numerical branch
+reproduced by two methods. Its degree-density concentration can conditionally
+drive the existing sigma curvature through zero. Eta-only Hopf
+cohomogeneity-one perturbations remain strictly positive at the identity.
 
 Supported: one all-encompassing parent surface is the controlling author
 ontology, not a derived uniqueness theorem or a choice among parent universes.
-The retained BHSM action defines a general conditional sigma-Hessian threshold
-problem. The v14.93 equivariant radial identity branch
-has a unique conformal quadratic zero with zero cubic and positive quartic
-coefficient, proving no nearby bifurcation in that local radial sector.
+The retained BHSM action defines the sigma-Hessian threshold problem, but it
+does not select the coefficient ratio used to locate a physical threshold.
 
-Not supported: a localized constraint-solved physical parent configuration
-with a negative mode on the physically attached domain, an exact same-action
-continuation to any enclosure endpoint, a universal cavitation law, a
+Not supported: a coupled constraint-solved Einstein-eta-sigma continuation to
+a Hopf parent-child enclosure, action selection of the sigma coefficient
+branch, nested scale decoupling, a universal cavitation law, a
 nonlinear formation map, persistent orbit,
 de-envelopment receiving domain, complete event Noether
 ledger, physical tangent monodromy, loop spectrum, Floquet reconstruction,
@@ -26,7 +27,7 @@ event. The radial result is not a global no-go theorem.
 `FULL_BHSM_COMPLETE = FALSE`.
 
 Exact next object:
-`ACTION_OWNED_LOCALIZED_CONSTRAINT_SOLVED_UNSTABLE_PARENT_CONFIGURATION_WITH_PHYSICAL_ATTACHMENT_OF_THE_EXISTING_GAUGE_REDUCTION_AND_SELF_ADJOINT_DOMAIN_MACHINERY`.
+`FULL_HOPF_PARENT_CHILD_EINSTEIN_ETA_SIGMA_CONSTRAINT_CONTINUATION_FROM_THE_ACTION_DERIVED_RADIAL_CONCENTRATION_BRANCH_WITH_ACTION_SELECTED_SIGMA_COEFFICIENT_BRANCH_NESTED_SCALE_AND_RELATIVE_PERIODIC_COMMON_DOMAIN`.
 
 The coefficient-free spectral charged-current kernel remains an
 author-selected, no-fit action candidate. Full rank, unitarity, SU(2) closure,

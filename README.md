@@ -2,15 +2,15 @@
 
 [![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml)
 [![Latest archival release](https://img.shields.io/github/v/release/ncarberry64/Berger-Hopf-Standard-Model?label=archival%20release)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/releases/latest)
-[![Current research status](https://img.shields.io/badge/current%20research-v15.8-orange)](docs/BHSM_BACKWARD_CLOSURE_EXISTING_ANSWER_AUDIT_V15_8.md)
+[![Current research status](https://img.shields.io/badge/current%20research-v15.9-orange)](docs/BHSM_CYCLE_DRIVEN_ETA_SPREAD_CONCENTRATION_V15_9.md)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
 BHSM is an independent artifact-backed computational framework and mathematical-physics research program investigating whether Standard Model structure and particle-like dynamics can be derived from Berger-Hopf boundary/envelopment geometry and a common action architecture.
 
-## Current Public Status -- v15.8
+## Current Public Status -- v15.9
 
-BHSM v15.8 exhausts the existing formation lineage before adding another object. Conditional stability, gauge-reduction, self-adjoint-domain, nonlinear-normal-form, persistence, and cycle-mass machinery already exists. What is absent is a localized constraint-solved physical parent configuration with a negative mode on the attached domain, followed by an exact same-action nonlinear endpoint. Cavitation is one candidate response, not the universal formation law. Full completion remains false and frozen predictions are unchanged.
+BHSM v15.9 derives an exact cycle-controlled supercritical radial eta spread-to-concentration bifurcation from the retained p=2+p=8 action and reproduces its degree-one full Euler branch by independent Galerkin and collocation methods. The existing sigma coupling can cross zero conditionally, but its retained coefficient ratio is not action selected; the eta-only Hopf sector remains strictly positive. A coupled Hopf parent-child enclosure and its persistent relative-periodic domain are still open. Full completion remains false and frozen predictions are unchanged.
 
 Pair capture/collision-assisted formation, bifurcation locking, and nonhomogeneous localization remain candidate mechanisms. The action has not selected among them. The proposed scale-dependent cosmological and quantum recurrence pictures remain underived author hypotheses.
 
@@ -18,15 +18,15 @@ Pair capture/collision-assisted formation, bifurcation locking, and nonhomogeneo
 
 Exact next object:
 
-`ACTION_OWNED_LOCALIZED_CONSTRAINT_SOLVED_UNSTABLE_PARENT_CONFIGURATION_WITH_PHYSICAL_ATTACHMENT_OF_THE_EXISTING_GAUGE_REDUCTION_AND_SELF_ADJOINT_DOMAIN_MACHINERY`
+`FULL_HOPF_PARENT_CHILD_EINSTEIN_ETA_SIGMA_CONSTRAINT_CONTINUATION_FROM_THE_ACTION_DERIVED_RADIAL_CONCENTRATION_BRANCH_WITH_ACTION_SELECTED_SIGMA_COEFFICIENT_BRANCH_NESTED_SCALE_AND_RELATIVE_PERIODIC_COMMON_DOMAIN`
 
-Read the [v15.8 controlling report](docs/BHSM_BACKWARD_CLOSURE_EXISTING_ANSWER_AUDIT_V15_8.md), [current status](docs/current_bhsm_status.md), [claim boundaries](CLAIMS.md), and [reviewer reproduction guide](docs/reviewer_reproduction_guide.md).
+Read the [v15.9 controlling report](docs/BHSM_CYCLE_DRIVEN_ETA_SPREAD_CONCENTRATION_V15_9.md), [current status](docs/current_bhsm_status.md), [claim boundaries](CLAIMS.md), and [reviewer reproduction guide](docs/reviewer_reproduction_guide.md).
 
 | Layer | Current status |
 | --- | --- |
 | Computational framework | Validated software/tests; this does not validate nature |
-| Current test corpus | v15.8 validation extending the 6,388-test protected checkpoint |
-| Internal mathematical program | Incomplete at the exact v15.8 localized physical unstable-configuration gate |
+| Current test corpus | v15.9 validation extending the 6,408-test protected checkpoint |
+| Internal mathematical program | Radial formation precursor derived; full Hopf parent-child continuation open |
 | Nonlinear Norman cycle | Formation undefined; persistence, release, Noether ledger, and monodromy not reached |
 | Scale and flavor | Absolute scale, action-derived CKM, and PMNS remain open |
 | Frozen predictions | Unchanged |
