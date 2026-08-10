@@ -10,7 +10,7 @@ import sys
 from bhsm.interface.envelopment import relational_completion_gate as gate
 from bhsm.interface.envelopment.relational_axioms import doctrine_sha256
 from bhsm.interface.master_action import CURRENT_MISSING_OBJECT, CURRENT_VERDICT, CURRENT_VERSION
-from bhsm.interface.aether_backward_closure_existing_answer_audit_v15_8 import EXACT_NEXT_OBJECT, PRIMARY_VERDICT
+from bhsm.interface.aether_cycle_spread_concentration_v15_9 import EXACT_NEXT_OBJECT, PRIMARY_VERDICT
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -29,7 +29,7 @@ def test_completion_gate_is_conditional_and_fail_closed():
 
 
 def test_current_master_api_advances_while_historical_gate_stays_v101():
-    assert CURRENT_VERSION == "v15.8"
+    assert CURRENT_VERSION == "v15.9"
     assert CURRENT_VERDICT == PRIMARY_VERDICT
     assert CURRENT_MISSING_OBJECT == EXACT_NEXT_OBJECT
     canonical = gate.canonical_completion_gate_payload()

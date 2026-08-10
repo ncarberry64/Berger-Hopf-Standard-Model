@@ -1,20 +1,20 @@
 # BHSM Documentation Index
 
-## Current v15.8 campaign
+## Current v15.9 campaign
 
-- [Backward closure / existing-answer exhaustion audit](BHSM_BACKWARD_CLOSURE_EXISTING_ANSWER_AUDIT_V15_8.md)
+- [Cycle-driven eta spread-to-concentration calculation](BHSM_CYCLE_DRIVEN_ETA_SPREAD_CONCENTRATION_V15_9.md)
 - [Current machine/human status](current_bhsm_status.md)
 - [Reviewer reproduction guide](reviewer_reproduction_guide.md)
 - [Artifact index](../ARTIFACT_INDEX.md)
 
-Current result: existing conditional stability, domain, gauge-reduction,
-normal-form, persistence, and mass-readout machinery does not compose because
-the localized constraint-solved unstable physical configuration and exact
-same-action nonlinear endpoint are absent. Cavitation is one candidate
-mechanism, not a universal law. `FULL_BHSM_COMPLETE = FALSE`.
+Current result: the retained radial eta action has an exact supercritical
+cycle-controlled spread-to-concentration branch, independently continued with
+degree one preserved. The existing sigma curvature can cross zero
+conditionally, but the coefficient branch and coupled Hopf parent-child
+continuation remain open. `FULL_BHSM_COMPLETE = FALSE`.
 
 Exact next object:
-`ACTION_OWNED_LOCALIZED_CONSTRAINT_SOLVED_UNSTABLE_PARENT_CONFIGURATION_WITH_PHYSICAL_ATTACHMENT_OF_THE_EXISTING_GAUGE_REDUCTION_AND_SELF_ADJOINT_DOMAIN_MACHINERY`.
+`FULL_HOPF_PARENT_CHILD_EINSTEIN_ETA_SIGMA_CONSTRAINT_CONTINUATION_FROM_THE_ACTION_DERIVED_RADIAL_CONCENTRATION_BRANCH_WITH_ACTION_SELECTED_SIGMA_COEFFICIENT_BRANCH_NESTED_SCALE_AND_RELATIVE_PERIODIC_COMMON_DOMAIN`.
 
 ## Historical v11.5 campaign
 

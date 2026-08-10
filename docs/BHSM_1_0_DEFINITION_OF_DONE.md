@@ -1,19 +1,18 @@
 # BHSM 1.0 definition of done
 
-## Current v15.8 evaluation
+## Current v15.9 evaluation
 
-`FULL_BHSM_COMPLETE = FALSE`. Existing conditional stability, gauge/domain,
-normal-form, persistence, and cycle-mass machinery is reusable but does not
-compose into formation. The localized constraint-solved unstable physical
-configuration and an exact same-action nonlinear endpoint remain absent.
-Cavitation is one candidate mechanism rather than a required completion form.
+`FULL_BHSM_COMPLETE = FALSE`. The action-derived radial eta formation precursor
+is now explicit, regular, degree one, and reproduced by independent numerical
+methods. The action-selected sigma branch, coupled Hopf parent-child enclosure,
+nested scale decoupling, and persistent relative-periodic domain remain absent.
 
 Exact next object:
-`ACTION_OWNED_LOCALIZED_CONSTRAINT_SOLVED_UNSTABLE_PARENT_CONFIGURATION_WITH_PHYSICAL_ATTACHMENT_OF_THE_EXISTING_GAUGE_REDUCTION_AND_SELF_ADJOINT_DOMAIN_MACHINERY`.
+`FULL_HOPF_PARENT_CHILD_EINSTEIN_ETA_SIGMA_CONSTRAINT_CONTINUATION_FROM_THE_ACTION_DERIVED_RADIAL_CONCENTRATION_BRANCH_WITH_ACTION_SELECTED_SIGMA_COEFFICIENT_BRANCH_NESTED_SCALE_AND_RELATIVE_PERIODIC_COMMON_DOMAIN`.
 
-The v14.93 radial result is a `ZERO_MODE_WITHOUT_CAVITATION`, not a global
-no-go. Absolute scale, action-derived CKM/PMNS, and empirical validation remain
-open.
+The v14.93 radial result is the critical slice of the supercritical branch,
+not a global no-go. Absolute scale, action-derived CKM/PMNS, and empirical
+validation remain open.
 
 ## Historical v11.1 evaluation
 

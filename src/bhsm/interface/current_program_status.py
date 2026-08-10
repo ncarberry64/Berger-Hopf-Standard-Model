@@ -4,16 +4,17 @@ from __future__ import annotations
 
 from typing import Any
 
-from .aether_backward_closure_existing_answer_audit_v15_8 import (
+from .aether_backward_closure_existing_answer_audit_v15_8 import composition_payload
+from .aether_cycle_spread_concentration_v15_9 import (
     EXACT_NEXT_OBJECT,
     PRIMARY_VERDICT,
-    composition_payload,
+    completion_payload as cycle_concentration_payload,
 )
 from .aether_nonlinear_norman_cycle_bvp_v15_7 import full_completion_payload
 
-CURRENT_CAMPAIGN = "v15.8 backward closure and existing-answer exhaustion audit"
-CURRENT_VERSION = "v15.8"
-SOURCE_BASE_MAIN_SHA = "3e324a05e50b8128d28b84968b4ef3d2b064dd73"
+CURRENT_CAMPAIGN = "v15.9 cycle-driven eta spread-to-concentration completion drive"
+CURRENT_VERSION = "v15.9"
+SOURCE_BASE_MAIN_SHA = "a24b1125b8c5e01fb08a8695ae9f21f69e6e643e"
 SOURCE_BASE_TREE_SHA = "RESOLVE_FROM_BASELINE_COMMIT"
 COMPLETION_MARKS = {
     "Mark_I_Canonical_ontology": "REACHED",
@@ -53,6 +54,10 @@ DERIVED_RESULTS = [
     "rephasing-invariant proof that the v11.5 spectral kernel is not the live action current",
     "continuous counterexample family disproving selection by the v11.5 viability properties",
     "joint-functional-calculus no-go for nontrivial mixing from the commuting v11.4 response pair",
+    "exact cycle-controlled radial eta threshold and supercritical branch",
+    "two-method full radial Euler continuation with degree preservation and concentration",
+    "eta-only Hopf cohomogeneity-one positivity with a limited sector scope",
+    "first non-Killing S7 vector-harmonic spectrum and exact participation moments",
 ]
 CONDITIONAL_RESULTS = [
     "author-selected finite-radius core branch",
@@ -99,6 +104,7 @@ PHYSICAL_OUTPUTS_AVAILABLE = {
 
 def status_payload() -> dict[str, Any]:
     cycle = full_completion_payload()
+    concentration = cycle_concentration_payload()
     return {
         "status": "Full BHSM v1.0 Candidate",
         "candidate_architecture_complete": True,
@@ -130,17 +136,17 @@ def status_payload() -> dict[str, Any]:
         "frozen_prediction_state": FROZEN_PREDICTION_STATE,
         "physical_outputs_available": PHYSICAL_OUTPUTS_AVAILABLE,
         "validation_summary": {
-            "focused": "PASS: v15.8 backward-closure, deterministic artifact, and public-status consistency tests",
+            "focused": "PASS: v15.9 exact, Galerkin, collocation, sigma-threshold, Hopf-firewall, deterministic-artifact, and public-status tests",
             "full_pytest": "recorded by committed-tree CI and publication artifact",
             "audits": "deterministic materialization, forbidden claims, status consistency, links, and public readiness",
-            "artifact_determinism": "PASS: v15.8 artifact is byte-identical across repeated materializations",
+            "artifact_determinism": "PASS: v15.9 artifact is byte-identical across repeated materializations",
         },
         "source_base_main_sha": SOURCE_BASE_MAIN_SHA,
         "source_base_tree_sha": SOURCE_BASE_TREE_SHA,
         "current_main_sha": "RESOLVE_AT_RUNTIME_WITH_GIT_REV_PARSE_HEAD",
         "current_tree_sha": "RESOLVE_AT_RUNTIME_WITH_GIT_REV_PARSE_HEAD_TREE",
         "sha_embedding_policy": "a commit cannot contain its own eventual merge SHA; final merged SHA is reported from Git and the tree is contract-tested",
-        "live_merged_status": "v15.7 is the protected checkpoint; v15.8 is its backward-closure follow-up",
+        "live_merged_status": "v15.8 is the protected checkpoint; v15.9 is the cycle-driven formation follow-up",
         "active_branch_status": PRIMARY_VERDICT,
         "haar_scale_status": "attachment generator normalized conventionally; physical lambda_D classification remains downstream of the common Hessian quotient",
         "historical_recovery_status": PRIMARY_VERDICT,
@@ -159,6 +165,17 @@ def status_payload() -> dict[str, Any]:
         "FULL_BHSM_COMPLETE": False,
         "REPOSITORY_EXISTING_ANSWER_EXHAUSTED": True,
         "backward_closure_status": composition_payload(),
+        "cycle_spread_concentration_status": {
+            key: concentration[key]
+            for key in (
+                "formation_status",
+                "persistence_status",
+                "de_envelopment_status",
+                "nested_scale_status",
+                "downstream_status",
+                "validation_passed",
+            )
+        },
         "nonlinear_cycle_status": {
             key: cycle[key]
             for key in (
@@ -179,9 +196,9 @@ def status_payload() -> dict[str, Any]:
 
 def public_repo_status() -> str:
     return (
-        "BHSM v15.8 exhausts the existing formation lineage before adding another object. Conditional stability, gauge-"
-        "reduction, self-adjoint-domain, nonlinear-normal-form, persistence, and cycle-mass machinery already exists. "
-        "What is absent is a localized constraint-solved physical parent configuration with a negative mode on the "
-        "attached domain, followed by an exact same-action nonlinear endpoint. Cavitation is one candidate response, "
-        "not the universal formation law. Full completion remains false and frozen predictions are unchanged."
+        "BHSM v15.9 derives an exact cycle-controlled supercritical radial eta spread-to-concentration bifurcation from "
+        "the retained p=2+p=8 action and reproduces its degree-one full Euler branch by independent Galerkin and collocation methods. "
+        "The existing sigma coupling can cross zero conditionally, but its retained coefficient ratio is not action "
+        "selected; the eta-only Hopf sector remains strictly positive. A coupled Hopf parent-child enclosure and its "
+        "persistent relative-periodic domain are still open. Full completion remains false and frozen predictions are unchanged."
     )

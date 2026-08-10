@@ -1,19 +1,19 @@
 # BHSM CLI Reference
 
-## Current v15.8 status
+## Current v15.9 status
 
 ```bash
 python -m bhsm.interface physics-status --format json
 python tools/audit_public_status_sync_v15_7.py
 ```
 
-The physics-status command reports the localized constraint-solved unstable
-parent configuration and attached physical domain as the current exact gate.
+The physics-status command reports the action-derived radial concentration
+branch and the coupled Hopf parent-child continuation as the current exact gate.
 `registry` remains the frozen prediction registry;
 it is not a physical-completion declaration.
 
 Exact next object:
-`ACTION_OWNED_LOCALIZED_CONSTRAINT_SOLVED_UNSTABLE_PARENT_CONFIGURATION_WITH_PHYSICAL_ATTACHMENT_OF_THE_EXISTING_GAUGE_REDUCTION_AND_SELF_ADJOINT_DOMAIN_MACHINERY`.
+`FULL_HOPF_PARENT_CHILD_EINSTEIN_ETA_SIGMA_CONSTRAINT_CONTINUATION_FROM_THE_ACTION_DERIVED_RADIAL_CONCENTRATION_BRANCH_WITH_ACTION_SELECTED_SIGMA_COEFFICIENT_BRANCH_NESTED_SCALE_AND_RELATIVE_PERIODIC_COMMON_DOMAIN`.
 
 ## BHSM v11.2 supported-action completion gate
 

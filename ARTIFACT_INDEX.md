@@ -1,21 +1,21 @@
 # BHSM Artifact Index
 
-## Current BHSM v15.8 backward closure audit
+## Current BHSM v15.9 cycle-driven spread-to-concentration calculation
 
 The deterministic current record is controlled by
-[`aether_backward_closure_existing_answer_audit_v15_8.py`](src/bhsm/interface/aether_backward_closure_existing_answer_audit_v15_8.py)
-and the [v15.8 report](docs/BHSM_BACKWARD_CLOSURE_EXISTING_ANSWER_AUDIT_V15_8.md):
+[`aether_cycle_spread_concentration_v15_9.py`](src/bhsm/interface/aether_cycle_spread_concentration_v15_9.py)
+and the [v15.9 report](docs/BHSM_CYCLE_DRIVEN_ETA_SPREAD_CONCENTRATION_V15_9.md):
 
-- `BHSM_backward_closure_existing_answer_audit_v15_8.json`
+- `BHSM_cycle_driven_eta_spread_concentration_v15_9.json`
 
-The audit classifies the full existing formation lineage before permitting a
-new object. Conditional operator/domain/normal-form/cycle machinery survives;
-the first absent physical object is a localized constraint-solved unstable
-configuration on the attached domain. Cavitation is only one candidate
-response. The artifact fails closed and `USB_TOUCHED` is false.
+The artifact contains the exact threshold and Lyapunov-Schmidt coefficients,
+multi-resolution full Euler continuation, independent collocation check,
+conditional sigma threshold, Hopf positivity firewall, and non-Killing mode
+moments. It fails closed at the coupled Hopf parent-child continuation and
+records that removable media was untouched.
 
 Exact next object:
-`ACTION_OWNED_LOCALIZED_CONSTRAINT_SOLVED_UNSTABLE_PARENT_CONFIGURATION_WITH_PHYSICAL_ATTACHMENT_OF_THE_EXISTING_GAUGE_REDUCTION_AND_SELF_ADJOINT_DOMAIN_MACHINERY`.
+`FULL_HOPF_PARENT_CHILD_EINSTEIN_ETA_SIGMA_CONSTRAINT_CONTINUATION_FROM_THE_ACTION_DERIVED_RADIAL_CONCENTRATION_BRANCH_WITH_ACTION_SELECTED_SIGMA_COEFFICIENT_BRANCH_NESTED_SCALE_AND_RELATIVE_PERIODIC_COMMON_DOMAIN`.
 
 ## BHSM v11.5 conditional flavor-action assembly
 

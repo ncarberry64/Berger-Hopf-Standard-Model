@@ -1,14 +1,14 @@
 # Gate Ledger
 
-## v15.8 backward-closure existing-answer gate
+## v15.9 cycle-driven eta formation gate
 
-The reverse dependency audit confirms that conditional Hessian, gauge quotient,
-self-adjoint-domain, nonlinear-normal-form, persistence, and cycle-mass
-machinery already exists. The Jensen tachyon is global and homogeneous, while
-the radial v14.93 control only excludes a nearby equivariant radial enclosure.
-Neither is a localized constraint-solved unstable parent configuration.
-Cavitation remains one candidate nonlinear response alongside pair capture,
-bifurcation locking, and localization/bound-state formation.
+The retained radial eta action has an exact conformal crossing at
+`a_c^6=343/(5*kappa1)` and a supercritical degree-one concentration branch.
+Fourier-Galerkin and adaptive collocation solutions agree. The retained sigma
+curvature can cross zero on that branch only conditionally on an unselected
+coefficient ratio. The eta-only Hopf identity Hessian is positive at every
+radius, so the radial branch is a formation precursor rather than a completed
+Hopf child.
 
 The author further proposes a white-hole origin followed by plasma/acoustic-BAO
 and cooled late-time cosmological stages, plus an analogous scaled quantum
@@ -16,7 +16,7 @@ process for events matching the core energy. These hypotheses are not derived
 thresholds, fields, or empirical results.
 
 Formation and its downstream cycle remain open. The first missing arrow is
-`ACTION_OWNED_LOCALIZED_CONSTRAINT_SOLVED_UNSTABLE_PARENT_CONFIGURATION_WITH_PHYSICAL_ATTACHMENT_OF_THE_EXISTING_GAUGE_REDUCTION_AND_SELF_ADJOINT_DOMAIN_MACHINERY`.
+`FULL_HOPF_PARENT_CHILD_EINSTEIN_ETA_SIGMA_CONSTRAINT_CONTINUATION_FROM_THE_ACTION_DERIVED_RADIAL_CONCENTRATION_BRANCH_WITH_ACTION_SELECTED_SIGMA_COEFFICIENT_BRANCH_NESTED_SCALE_AND_RELATIVE_PERIODIC_COMMON_DOMAIN`.
 
 ## v14.1 eta/SU3 connection fork gate
 
