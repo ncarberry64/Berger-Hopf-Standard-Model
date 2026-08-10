@@ -194,3 +194,8 @@ The exact next object is
 No empirical input, fitted coefficient, new field, preferred frame, or frozen
 prediction change is introduced. USB/removable media is not inspected or
 touched.
+
+The committed JSON rounds materialized floating diagnostics to nine decimal
+places. Raw runtime values and test tolerances are unchanged. This makes the
+evidence record byte-reproducible across BLAS implementations while discarding
+only nonphysical solver noise many orders below every acceptance threshold.

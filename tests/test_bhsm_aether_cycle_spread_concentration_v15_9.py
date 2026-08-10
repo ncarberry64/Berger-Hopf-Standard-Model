@@ -176,6 +176,20 @@ def test_json_is_strict_and_deterministic(tmp_path: Path) -> None:
     assert hashlib.sha256(first.read_bytes()).digest() == hashlib.sha256(second.read_bytes()).digest()
 
 
+def test_materialization_removes_cross_platform_solver_noise() -> None:
+    windows_like = {
+        "threshold": 1.0002541333086516,
+        "eigenvalue": 0.043349526094093004,
+        "residual": 5.5e-14,
+    }
+    linux_like = {
+        "threshold": 1.0002541333086437,
+        "eigenvalue": 0.043349526094092344,
+        "residual": -6.9e-14,
+    }
+    assert deterministic_json(windows_like) == deterministic_json(linux_like)
+
+
 def test_committed_artifact_matches_materializer(tmp_path: Path) -> None:
     generated = materialize(tmp_path)
     committed = ROOT / "artifacts" / generated.name

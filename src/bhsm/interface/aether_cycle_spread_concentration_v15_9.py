@@ -651,12 +651,37 @@ def completion_payload() -> dict[str, Any]:
             "official_prediction_logic_changed": False,
             "USB_REMOVABLE_MEDIA_TOUCHED": USB_REMOVABLE_MEDIA_TOUCHED,
         },
+        "materialization_policy": {
+            "floating_diagnostics_decimal_places": 9,
+            "reason": (
+                "remove_nonphysical_cross_platform_BLAS_solver_noise_from_"
+                "the_byte_reproducible_record_without_changing_raw_runtime_"
+                "diagnostics_or_acceptance_tolerances"
+            ),
+        },
     }
+
+
+def _canonical_json_value(value: Any) -> Any:
+    if isinstance(value, float):
+        if not math.isfinite(value):
+            raise ValueError("non-finite float cannot be materialized")
+        rounded = round(value, 9)
+        return 0.0 if rounded == 0.0 else rounded
+    if isinstance(value, dict):
+        return {key: _canonical_json_value(item) for key, item in value.items()}
+    if isinstance(value, (list, tuple)):
+        return [_canonical_json_value(item) for item in value]
+    return value
 
 
 def deterministic_json(payload: dict[str, Any]) -> str:
     return json.dumps(
-        payload, indent=2, sort_keys=True, ensure_ascii=False, allow_nan=False
+        _canonical_json_value(payload),
+        indent=2,
+        sort_keys=True,
+        ensure_ascii=False,
+        allow_nan=False,
     ) + "\n"
 
 
