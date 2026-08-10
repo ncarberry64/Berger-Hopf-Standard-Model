@@ -1,6 +1,23 @@
 # BHSM Artifact Index
 
-## Current BHSM v15.9 cycle-driven spread-to-concentration calculation
+## Current BHSM v15.10 sigma-coefficient response reconstruction
+
+The deterministic current record is controlled by
+[`aether_cycle_sigma_coefficient_reconstruction_v15_10.py`](src/bhsm/interface/aether_cycle_sigma_coefficient_reconstruction_v15_10.py)
+and the [v15.10 report](docs/BHSM_AETHER_CYCLE_SIGMA_COEFFICIENT_RECONSTRUCTION_V15_10.md):
+
+- `BHSM_aether_cycle_sigma_coefficient_reconstruction_v15_10.json`
+
+The artifact contains the homogeneous cycle inverse compatibility theorem,
+same-`g` response identities, exact invariant response inverse, Schur
+unreduction rule, physical tangent-generator extraction, complete backward
+route audit, and three stable retained-action nonuniqueness witnesses. It
+preserves v15.9 and fails closed before physical sigma onset.
+
+Exact next object:
+`ACTION_OWNED_AETHER_CYCLE_TO_REGULAR_SIGMA_RESPONSE_JET_MAP_PRODUCING_THE_PHYSICAL_SIGMA_TANGENT_PROPAGATOR_X_DERIVATIVE_AND_BACKREACTION_UNREDUCED_CANONICAL_QUARTIC_ON_THE_V15_9_BRANCH`.
+
+## BHSM v15.9 cycle-driven spread-to-concentration calculation
 
 The deterministic current record is controlled by
 [`aether_cycle_spread_concentration_v15_9.py`](src/bhsm/interface/aether_cycle_spread_concentration_v15_9.py)

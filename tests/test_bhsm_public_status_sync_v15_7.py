@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from bhsm.interface.aether_cycle_spread_concentration_v15_9 import EXACT_NEXT_OBJECT, PRIMARY_VERDICT
+from bhsm.interface.aether_cycle_sigma_coefficient_reconstruction_v15_10 import EXACT_NEXT_OBJECT, PRIMARY_VERDICT
 from bhsm.interface.current_program_status import CURRENT_VERSION, status_payload
 from bhsm.interface.public_status_sync_v15_7 import (
     audit_payload,
@@ -17,13 +17,13 @@ from bhsm.interface.science_hardening import payload_for_command
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def test_current_version_is_v15_9() -> None:
-    assert CURRENT_VERSION == "v15.9"
+def test_current_version_is_v15_10() -> None:
+    assert CURRENT_VERSION == "v15.10"
 
 
-def test_all_human_current_sections_name_v15_9_and_exact_object() -> None:
+def test_all_human_current_sections_name_v15_10_and_exact_object() -> None:
     for name, section in current_surface_sections().items():
-        assert "v15.9" in section, name
+        assert "v15.10" in section, name
         assert EXACT_NEXT_OBJECT in section, name
 
 

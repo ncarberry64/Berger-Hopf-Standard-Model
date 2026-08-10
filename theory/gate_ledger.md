@@ -1,5 +1,25 @@
 # Gate Ledger
 
+## v15.10 Aether-cycle sigma-coefficient reconstruction gate
+
+The retained local eta-sigma energy gives an exact minimal response inverse:
+`r=S_sigma,X/(1+X0^3/kappa1)`,
+`alpha=S_sigma/(rX0)-1-X0^3/(4kappa1)`, and
+`gamma=lambda_sigma,bare*kappa1^2/(r^2X0^4)`. At the v15.9 crossing,
+`r=S_sigma,X/6` and `alpha=S_sigma/(rXc)-9/4`.
+
+The homogeneous cycle inverse conditionally recovers `kappa1,kappa0`; on the
+stationary crossing slice it exactly reproduces the v14.91 identity locus.
+It is blind to sigma coefficients at `sigma=0`. Support/Haar, global
+stationarity, Calderon/Wentzell, v14.94 tangent, spectral, and v15.x Aether
+routes provide no physical sigma response jet. Explicit stable triples prove
+nonuniqueness after background, one curvature, and complete quadratic data.
+
+Outcome: `OUTCOME_D_TRUE_RETAINED_ACTION_NONUNIQUENESS`.
+
+The first missing arrow is
+`ACTION_OWNED_AETHER_CYCLE_TO_REGULAR_SIGMA_RESPONSE_JET_MAP_PRODUCING_THE_PHYSICAL_SIGMA_TANGENT_PROPAGATOR_X_DERIVATIVE_AND_BACKREACTION_UNREDUCED_CANONICAL_QUARTIC_ON_THE_V15_9_BRANCH`.
+
 ## v15.9 cycle-driven eta formation gate
 
 The retained radial eta action has an exact conformal crossing at

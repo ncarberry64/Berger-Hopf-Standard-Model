@@ -2,6 +2,34 @@
 
 Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a completed replacement of the Standard Model. The program goal remains replacement by derivation, with the Standard Model retained as the preserved infrared layer until that derivation is complete.
 
+## v15.10 Aether-cycle sigma-coefficient reconstruction
+
+The v15.9 full-Euler radial eta branch remains a derived upstream theorem.
+V15.10 derives the exact response inverse
+
+`r=(dS_sigma/dX)/(1+X0^3/kappa1)`,
+
+`alpha=S_sigma/(r X0)-1-X0^3/(4kappa1)`,
+
+`gamma=lambda_sigma,bare kappa1^2/(r^2 X0^4)`.
+
+At the cycle crossing these reduce to `r=(dS_sigma/dX)/6` and
+`alpha=S_sigma/(r Xc)-9/4`. The homogeneous cycle inverse also exactly meets
+the v14.91 identity locus on the stationary crossing slice.
+
+The current Aether/cycle state has no physical sigma propagator, X derivative,
+or nonlinear response. Three explicit stable witnesses prove that the same
+sigma-zero eta/metric parent, one common quadratic curvature, and even a common
+complete quadratic jet do not select `(alpha,r,gamma)`. The result is
+`OUTCOME_D_TRUE_RETAINED_ACTION_NONUNIQUENESS`; no physical sigma threshold or
+Hopf child is promoted.
+
+Exact next object:
+`ACTION_OWNED_AETHER_CYCLE_TO_REGULAR_SIGMA_RESPONSE_JET_MAP_PRODUCING_THE_PHYSICAL_SIGMA_TANGENT_PROPAGATOR_X_DERIVATIVE_AND_BACKREACTION_UNREDUCED_CANONICAL_QUARTIC_ON_THE_V15_9_BRANCH`.
+
+`FULL_BHSM_COMPLETE = FALSE`. Frozen predictions and official prediction logic
+are unchanged. See the [v15.10 controlling report](BHSM_AETHER_CYCLE_SIGMA_COEFFICIENT_RECONSTRUCTION_V15_10.md).
+
 ## v15.9 cycle-driven eta spread-to-concentration result
 
 The retained degree-one radial eta action has an exact cycle-controlled
@@ -27,7 +55,7 @@ The white-hole-origin to plasma/acoustic-BAO to cooled-cosmology sequence and
 analogous core-energy-matching quantum recurrence remain underived author
 hypotheses. Cavitation remains one possible response, not a universal law.
 
-Exact next object:
+Historical v15.9 next object:
 `FULL_HOPF_PARENT_CHILD_EINSTEIN_ETA_SIGMA_CONSTRAINT_CONTINUATION_FROM_THE_ACTION_DERIVED_RADIAL_CONCENTRATION_BRANCH_WITH_ACTION_SELECTED_SIGMA_COEFFICIENT_BRANCH_NESTED_SCALE_AND_RELATIVE_PERIODIC_COMMON_DOMAIN`.
 
 `FULL_BHSM_COMPLETE = FALSE`. Frozen predictions and official prediction logic

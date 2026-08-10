@@ -2,15 +2,15 @@
 
 [![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml)
 [![Latest archival release](https://img.shields.io/github/v/release/ncarberry64/Berger-Hopf-Standard-Model?label=archival%20release)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/releases/latest)
-[![Current research status](https://img.shields.io/badge/current%20research-v15.9-orange)](docs/BHSM_CYCLE_DRIVEN_ETA_SPREAD_CONCENTRATION_V15_9.md)
+[![Current research status](https://img.shields.io/badge/current%20research-v15.10-orange)](docs/BHSM_AETHER_CYCLE_SIGMA_COEFFICIENT_RECONSTRUCTION_V15_10.md)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
 BHSM is an independent artifact-backed computational framework and mathematical-physics research program investigating whether Standard Model structure and particle-like dynamics can be derived from Berger-Hopf boundary/envelopment geometry and a common action architecture.
 
-## Current Public Status -- v15.9
+## Current Public Status -- v15.10
 
-BHSM v15.9 derives an exact cycle-controlled supercritical radial eta spread-to-concentration bifurcation from the retained p=2+p=8 action and reproduces its degree-one full Euler branch by independent Galerkin and collocation methods. The existing sigma coupling can cross zero conditionally, but its retained coefficient ratio is not action selected; the eta-only Hopf sector remains strictly positive. A coupled Hopf parent-child enclosure and its persistent relative-periodic domain are still open. Full completion remains false and frozen predictions are unchanged.
+BHSM v15.10 preserves the v15.9 cycle-controlled degree-one radial eta branch and derives the exact minimal sigma-response inverse for alpha, r and gamma. The current Aether state supplies no physical sigma tangent derivative or nonlinear response, and explicit stable witnesses prove retained-action nonuniqueness. No physical sigma onset or Hopf child is promoted. Full completion remains false and frozen predictions are unchanged.
 
 Pair capture/collision-assisted formation, bifurcation locking, and nonhomogeneous localization remain candidate mechanisms. The action has not selected among them. The proposed scale-dependent cosmological and quantum recurrence pictures remain underived author hypotheses.
 
@@ -18,15 +18,15 @@ Pair capture/collision-assisted formation, bifurcation locking, and nonhomogeneo
 
 Exact next object:
 
-`FULL_HOPF_PARENT_CHILD_EINSTEIN_ETA_SIGMA_CONSTRAINT_CONTINUATION_FROM_THE_ACTION_DERIVED_RADIAL_CONCENTRATION_BRANCH_WITH_ACTION_SELECTED_SIGMA_COEFFICIENT_BRANCH_NESTED_SCALE_AND_RELATIVE_PERIODIC_COMMON_DOMAIN`
+`ACTION_OWNED_AETHER_CYCLE_TO_REGULAR_SIGMA_RESPONSE_JET_MAP_PRODUCING_THE_PHYSICAL_SIGMA_TANGENT_PROPAGATOR_X_DERIVATIVE_AND_BACKREACTION_UNREDUCED_CANONICAL_QUARTIC_ON_THE_V15_9_BRANCH`
 
-Read the [v15.9 controlling report](docs/BHSM_CYCLE_DRIVEN_ETA_SPREAD_CONCENTRATION_V15_9.md), [current status](docs/current_bhsm_status.md), [claim boundaries](CLAIMS.md), and [reviewer reproduction guide](docs/reviewer_reproduction_guide.md).
+Read the [v15.10 controlling report](docs/BHSM_AETHER_CYCLE_SIGMA_COEFFICIENT_RECONSTRUCTION_V15_10.md), [v15.9 upstream theorem](docs/BHSM_CYCLE_DRIVEN_ETA_SPREAD_CONCENTRATION_V15_9.md), [current status](docs/current_bhsm_status.md), [claim boundaries](CLAIMS.md), and [reviewer reproduction guide](docs/reviewer_reproduction_guide.md).
 
 | Layer | Current status |
 | --- | --- |
 | Computational framework | Validated software/tests; this does not validate nature |
-| Current test corpus | v15.9 validation extending the 6,408-test protected checkpoint |
-| Internal mathematical program | Radial formation precursor derived; full Hopf parent-child continuation open |
+| Current test corpus | v15.10 validation extending the 6,432-test protected checkpoint |
+| Internal mathematical program | Sigma response inverse derived; response values and Hopf continuation open |
 | Nonlinear Norman cycle | Formation undefined; persistence, release, Noether ledger, and monodromy not reached |
 | Scale and flavor | Absolute scale, action-derived CKM, and PMNS remain open |
 | Frozen predictions | Unchanged |

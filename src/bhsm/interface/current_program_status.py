@@ -5,17 +5,18 @@ from __future__ import annotations
 from typing import Any
 
 from .aether_backward_closure_existing_answer_audit_v15_8 import composition_payload
-from .aether_cycle_spread_concentration_v15_9 import (
+from .aether_cycle_sigma_coefficient_reconstruction_v15_10 import (
     EXACT_NEXT_OBJECT,
     PRIMARY_VERDICT,
-    completion_payload as cycle_concentration_payload,
+    completion_payload as coefficient_reconstruction_payload,
 )
+from .aether_cycle_spread_concentration_v15_9 import completion_payload as cycle_concentration_payload
 from .aether_nonlinear_norman_cycle_bvp_v15_7 import full_completion_payload
 
-CURRENT_CAMPAIGN = "v15.9 cycle-driven eta spread-to-concentration completion drive"
-CURRENT_VERSION = "v15.9"
-SOURCE_BASE_MAIN_SHA = "a24b1125b8c5e01fb08a8695ae9f21f69e6e643e"
-SOURCE_BASE_TREE_SHA = "RESOLVE_FROM_BASELINE_COMMIT"
+CURRENT_CAMPAIGN = "v15.10 Aether-cycle sigma-coefficient response reconstruction"
+CURRENT_VERSION = "v15.10"
+SOURCE_BASE_MAIN_SHA = "d206ddb63134af38743fe7a74f343fd7aaacc63f"
+SOURCE_BASE_TREE_SHA = "9b1d6fba11bf3cd74b0ce3eeebd41175746fdbb3"
 COMPLETION_MARKS = {
     "Mark_I_Canonical_ontology": "REACHED",
     "Mark_II_Complete_conditional_architecture": "REACHED_ON_SELECTED_FINITE_RADIUS_CORE_BRANCH",
@@ -58,6 +59,9 @@ DERIVED_RESULTS = [
     "two-method full radial Euler continuation with degree preservation and concentration",
     "eta-only Hopf cohomogeneity-one positivity with a limited sector scope",
     "first non-Killing S7 vector-harmonic spectrum and exact participation moments",
+    "homogeneous cycle inverse compatibility with the stationary v15.9 crossing",
+    "exact three-observable sigma response inverse for alpha r gamma",
+    "constructive retained-action sigma-coefficient nonuniqueness witnesses",
 ]
 CONDITIONAL_RESULTS = [
     "author-selected finite-radius core branch",
@@ -82,6 +86,10 @@ INVALIDATED_RESULTS = [
     "flatness of A_D proves physical removability at the boundary or core",
     "full rank, unitarity, SU2 closure, family-central neutral current, and nonzero CP uniquely select the v11.5 kernel",
     "commuting diagonal up/down spectral response operators alone generate nontrivial CKM mixing",
+    "sigma-zero background equations select Zsigma g A0 G0",
+    "one sigma curvature selects alpha and r",
+    "quadratic sigma response selects gamma",
+    "the v14.94 metric-shape propagator is a physical sigma propagator",
 ]
 OPEN_RESULTS = [
     EXACT_NEXT_OBJECT,
@@ -105,6 +113,7 @@ PHYSICAL_OUTPUTS_AVAILABLE = {
 def status_payload() -> dict[str, Any]:
     cycle = full_completion_payload()
     concentration = cycle_concentration_payload()
+    coefficient = coefficient_reconstruction_payload()
     return {
         "status": "Full BHSM v1.0 Candidate",
         "candidate_architecture_complete": True,
@@ -136,17 +145,17 @@ def status_payload() -> dict[str, Any]:
         "frozen_prediction_state": FROZEN_PREDICTION_STATE,
         "physical_outputs_available": PHYSICAL_OUTPUTS_AVAILABLE,
         "validation_summary": {
-            "focused": "PASS: v15.9 exact, Galerkin, collocation, sigma-threshold, Hopf-firewall, deterministic-artifact, and public-status tests",
+            "focused": "PASS: v15.10 cycle inverse, response identities, invariant inverse, nonuniqueness, deterministic-artifact, and public-status tests",
             "full_pytest": "recorded by committed-tree CI and publication artifact",
             "audits": "deterministic materialization, forbidden claims, status consistency, links, and public readiness",
-            "artifact_determinism": "PASS: v15.9 artifact is byte-identical across repeated materializations",
+            "artifact_determinism": "PASS: v15.10 artifact is byte-identical across repeated materializations",
         },
         "source_base_main_sha": SOURCE_BASE_MAIN_SHA,
         "source_base_tree_sha": SOURCE_BASE_TREE_SHA,
         "current_main_sha": "RESOLVE_AT_RUNTIME_WITH_GIT_REV_PARSE_HEAD",
         "current_tree_sha": "RESOLVE_AT_RUNTIME_WITH_GIT_REV_PARSE_HEAD_TREE",
         "sha_embedding_policy": "a commit cannot contain its own eventual merge SHA; final merged SHA is reported from Git and the tree is contract-tested",
-        "live_merged_status": "v15.8 is the protected checkpoint; v15.9 is the cycle-driven formation follow-up",
+        "live_merged_status": "v15.9 is the protected merged checkpoint; v15.10 is the coefficient-response follow-up",
         "active_branch_status": PRIMARY_VERDICT,
         "haar_scale_status": "attachment generator normalized conventionally; physical lambda_D classification remains downstream of the common Hessian quotient",
         "historical_recovery_status": PRIMARY_VERDICT,
@@ -176,6 +185,17 @@ def status_payload() -> dict[str, Any]:
                 "validation_passed",
             )
         },
+        "coefficient_reconstruction_status": {
+            "outcome": coefficient["coefficient_selection_outcome"],
+            "homogeneous_kappa0_kappa1_inverse": "DERIVED_CONDITIONALLY",
+            "minimal_response_inverse": "DERIVED_EXACTLY",
+            "alpha_selected": coefficient["eta_to_sigma"]["physical_alpha_selected"],
+            "r_selected": False,
+            "gamma_selected": False,
+            "physical_sigma_tangent_available": coefficient["minimal_response_inverse"]["physical_sigma_propagator_present_in_repository"],
+            "physical_sigma_nonlinear_response_available": coefficient["minimal_response_inverse"]["physical_nonlinear_sigma_response_present_in_repository"],
+            "v15_9_eta_branch": coefficient["v15_9_preservation"]["supercritical_radial_eta_branch"],
+        },
         "nonlinear_cycle_status": {
             key: cycle[key]
             for key in (
@@ -196,9 +216,8 @@ def status_payload() -> dict[str, Any]:
 
 def public_repo_status() -> str:
     return (
-        "BHSM v15.9 derives an exact cycle-controlled supercritical radial eta spread-to-concentration bifurcation from "
-        "the retained p=2+p=8 action and reproduces its degree-one full Euler branch by independent Galerkin and collocation methods. "
-        "The existing sigma coupling can cross zero conditionally, but its retained coefficient ratio is not action "
-        "selected; the eta-only Hopf sector remains strictly positive. A coupled Hopf parent-child enclosure and its "
-        "persistent relative-periodic domain are still open. Full completion remains false and frozen predictions are unchanged."
+        "BHSM v15.10 preserves the v15.9 cycle-controlled degree-one radial eta branch and derives the exact minimal "
+        "sigma-response inverse for alpha, r and gamma. The current Aether state supplies no physical sigma tangent derivative or "
+        "nonlinear response, and explicit stable witnesses prove retained-action nonuniqueness. No physical sigma "
+        "onset or Hopf child is promoted. Full completion remains false and frozen predictions are unchanged."
     )

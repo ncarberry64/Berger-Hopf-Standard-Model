@@ -1,19 +1,20 @@
 # BHSM CLI Reference
 
-## Current v15.9 status
+## Current v15.10 status
 
 ```bash
 python -m bhsm.interface physics-status --format json
 python tools/audit_public_status_sync_v15_7.py
 ```
 
-The physics-status command reports the action-derived radial concentration
-branch and the coupled Hopf parent-child continuation as the current exact gate.
+The physics-status command reports the preserved radial concentration branch,
+the exact sigma-response inverse, and the missing physical response jet as the
+current exact gate.
 `registry` remains the frozen prediction registry;
 it is not a physical-completion declaration.
 
 Exact next object:
-`FULL_HOPF_PARENT_CHILD_EINSTEIN_ETA_SIGMA_CONSTRAINT_CONTINUATION_FROM_THE_ACTION_DERIVED_RADIAL_CONCENTRATION_BRANCH_WITH_ACTION_SELECTED_SIGMA_COEFFICIENT_BRANCH_NESTED_SCALE_AND_RELATIVE_PERIODIC_COMMON_DOMAIN`.
+`ACTION_OWNED_AETHER_CYCLE_TO_REGULAR_SIGMA_RESPONSE_JET_MAP_PRODUCING_THE_PHYSICAL_SIGMA_TANGENT_PROPAGATOR_X_DERIVATIVE_AND_BACKREACTION_UNREDUCED_CANONICAL_QUARTIC_ON_THE_V15_9_BRANCH`.
 
 ## BHSM v11.2 supported-action completion gate
 

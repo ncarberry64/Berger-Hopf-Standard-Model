@@ -1,14 +1,16 @@
 # BHSM 1.0 definition of done
 
-## Current v15.9 evaluation
+## Current v15.10 evaluation
 
-`FULL_BHSM_COMPLETE = FALSE`. The action-derived radial eta formation precursor
-is now explicit, regular, degree one, and reproduced by independent numerical
-methods. The action-selected sigma branch, coupled Hopf parent-child enclosure,
-nested scale decoupling, and persistent relative-periodic domain remain absent.
+`FULL_BHSM_COMPLETE = FALSE`. The action-derived v15.9 radial eta precursor is
+preserved. The retained action now has an exact inverse from three canonical
+sigma-response observables to `(alpha,r,gamma)`, but the Aether/cycle state does
+not generate those observables. Stable inequivalent response witnesses prove
+retained-action nonuniqueness. The physical sigma branch, coupled Hopf
+parent-child enclosure, nested scale, and persistence remain absent.
 
 Exact next object:
-`FULL_HOPF_PARENT_CHILD_EINSTEIN_ETA_SIGMA_CONSTRAINT_CONTINUATION_FROM_THE_ACTION_DERIVED_RADIAL_CONCENTRATION_BRANCH_WITH_ACTION_SELECTED_SIGMA_COEFFICIENT_BRANCH_NESTED_SCALE_AND_RELATIVE_PERIODIC_COMMON_DOMAIN`.
+`ACTION_OWNED_AETHER_CYCLE_TO_REGULAR_SIGMA_RESPONSE_JET_MAP_PRODUCING_THE_PHYSICAL_SIGMA_TANGENT_PROPAGATOR_X_DERIVATIVE_AND_BACKREACTION_UNREDUCED_CANONICAL_QUARTIC_ON_THE_V15_9_BRANCH`.
 
 The v14.93 radial result is the critical slice of the supercritical branch,
 not a global no-go. Absolute scale, action-derived CKM/PMNS, and empirical

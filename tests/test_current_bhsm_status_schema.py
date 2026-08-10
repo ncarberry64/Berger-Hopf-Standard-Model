@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from bhsm.interface.aether_cycle_spread_concentration_v15_9 import EXACT_NEXT_OBJECT, PRIMARY_VERDICT
+from bhsm.interface.aether_cycle_sigma_coefficient_reconstruction_v15_10 import EXACT_NEXT_OBJECT, PRIMARY_VERDICT
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -15,7 +15,7 @@ def test_current_bhsm_status_json_schema() -> None:
     assert status["candidate_architecture_complete"] is True
     assert status["full_bhsm_proven"] is False
     assert status["standard_model_fully_derived"] is False
-    assert status["current_version"] == "v15.9"
+    assert status["current_version"] == "v15.10"
     assert status["current_exact_verdict"] == PRIMARY_VERDICT
     assert status["next_exact_object"] == EXACT_NEXT_OBJECT
     assert status["frozen_predictions_changed"] is False

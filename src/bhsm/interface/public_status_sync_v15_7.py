@@ -1,4 +1,4 @@
-"""Machine checks for the v15.9 public current-status contract.
+"""Machine checks for the v15.10 public current-status contract.
 
 The historical filename remains a compatibility surface for existing tooling.
 """
@@ -9,7 +9,7 @@ from pathlib import Path
 import re
 from typing import Any
 
-from .aether_cycle_spread_concentration_v15_9 import EXACT_NEXT_OBJECT, PRIMARY_VERDICT
+from .aether_cycle_sigma_coefficient_reconstruction_v15_10 import EXACT_NEXT_OBJECT, PRIMARY_VERDICT
 from .current_program_status import CURRENT_VERSION, status_payload
 from .science_hardening import payload_for_command
 
@@ -19,14 +19,14 @@ CURRENT_SECTIONS = {
     "README.md": ("## Current Public Status", "This independent mathematical-physics project"),
     "STATUS.md": ("## Current public summary", "## Historical v11.6"),
     "CLAIMS.md": ("## Current public claim boundary", "## Historical claim boundaries"),
-    "ARTIFACT_INDEX.md": ("## Current BHSM v15.9", "## BHSM v11.5"),
-    "docs/README.md": ("## Current v15.9", "## Historical v11.5"),
-    "docs/current_bhsm_status.md": ("## v15.9", "## v14.2"),
-    "docs/BHSM_1_0_DEFINITION_OF_DONE.md": ("## Current v15.9", "## Historical v11.1"),
-    "theory/gate_ledger.md": ("## v15.9", "## v14.1"),
-    "CLI_REFERENCE.md": ("## Current v15.9", "## BHSM v11.2"),
-    "ROADMAP.md": ("## Current v15.9", "## Historical v11.6"),
-    "FALSIFICATION.md": ("## Current v15.9", "## Historical v11.6"),
+    "ARTIFACT_INDEX.md": ("## Current BHSM v15.10", "## BHSM v15.9"),
+    "docs/README.md": ("## Current v15.10", "## Historical v15.9"),
+    "docs/current_bhsm_status.md": ("## v15.10", "## v15.9"),
+    "docs/BHSM_1_0_DEFINITION_OF_DONE.md": ("## Current v15.10", "## Historical v11.1"),
+    "theory/gate_ledger.md": ("## v15.10", "## v15.9"),
+    "CLI_REFERENCE.md": ("## Current v15.10", "## BHSM v11.2"),
+    "ROADMAP.md": ("## Current v15.10", "## Historical v11.6"),
+    "FALSIFICATION.md": ("## Current v15.10", "## Historical v11.6"),
 }
 
 
@@ -47,7 +47,7 @@ def current_surface_sections(root: Path = ROOT) -> dict[str, str]:
 def stale_current_status_hits(root: Path = ROOT) -> list[dict[str, str]]:
     hits: list[dict[str, str]] = []
     for name, text in current_surface_sections(root).items():
-        for match in re.finditer(r"(?i)current[^\n]{0,80}\bv(?!15\.9\b)\d+(?:\.\d+)+", text):
+        for match in re.finditer(r"(?i)current[^\n]{0,80}\bv(?!15\.10\b)\d+(?:\.\d+)+", text):
             hits.append({"file": name, "text": match.group(0)})
     return hits
 
