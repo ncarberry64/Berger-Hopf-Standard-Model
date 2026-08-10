@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from bhsm.interface.aether_nonlinear_norman_cycle_bvp_v15_7 import EXACT_NEXT_OBJECT, PRIMARY_VERDICT
+from bhsm.interface.aether_backward_closure_existing_answer_audit_v15_8 import EXACT_NEXT_OBJECT, PRIMARY_VERDICT
 from bhsm.interface.current_program_status import CURRENT_VERSION, status_payload
 from bhsm.interface.public_status_sync_v15_7 import (
     audit_payload,
@@ -17,13 +17,13 @@ from bhsm.interface.science_hardening import payload_for_command
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def test_current_version_is_v15_7() -> None:
-    assert CURRENT_VERSION == "v15.7"
+def test_current_version_is_v15_8() -> None:
+    assert CURRENT_VERSION == "v15.8"
 
 
-def test_all_human_current_sections_name_v15_7_and_exact_object() -> None:
+def test_all_human_current_sections_name_v15_8_and_exact_object() -> None:
     for name, section in current_surface_sections().items():
-        assert "v15.7" in section, name
+        assert "v15.8" in section, name
         assert EXACT_NEXT_OBJECT in section, name
 
 
@@ -54,6 +54,10 @@ def test_python_status_exposes_cycle_failures() -> None:
     assert payload["nonlinear_cycle_status"]["NONLINEAR_FORMATION_MAP"] == (
         "UNDEFINED_MISSING_ACTION_OWNED_LOCAL_CONFIGURATION_OR_DOMAIN"
     )
+    assert payload["backward_closure_status"]["PHYSICAL_UNSTABLE_CONFIGURATION"] == (
+        "OPEN_NO_LOCALIZED_CONSTRAINT_SOLVED_NEGATIVE_MODE"
+    )
+    assert payload["REPOSITORY_EXISTING_ANSWER_EXHAUSTED"] is True
 
 
 def test_public_audit_passes_and_never_touches_usb() -> None:

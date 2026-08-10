@@ -5,9 +5,9 @@ evidence, not competing public status pages.
 
 ## Current public summary
 
-Current version: **v15.7**.
+Current version: **v15.8**.
 
-BHSM v15.7 treats one all-encompassing parent surface and local spacetime instability causing cavitation or encapsulation as author ontology. The retained action has not yet derived a constraint-reduced local physical stability operator on an action-compatible localization and common self-adjoint domain, nor a nonlinear response that selects encapsulation rather than restoration. The v14.93 radial zero is a zero mode without cavitation, not a global no-go. Formation and all downstream Norman-cycle maps remain incomplete; frozen predictions are unchanged.
+BHSM v15.8 exhausts the existing formation lineage before adding another object. Conditional stability, gauge-reduction, self-adjoint-domain, nonlinear-normal-form, persistence, and cycle-mass machinery already exists. What is absent is a localized constraint-solved physical parent configuration with a negative mode on the attached domain, followed by an exact same-action nonlinear endpoint. Cavitation is one candidate response, not the universal formation law. Full completion remains false and frozen predictions are unchanged.
 
 An incoming packet is one possible driver or witness, not a required primitive
 or the fundamental cause. The white-hole-to-plasma/acoustic-BAO-to-cooled-
@@ -20,10 +20,10 @@ coefficient. It is a `ZERO_MODE_WITHOUT_CAVITATION`, not a global no-go, and
 does not exclude nonhomogeneous or finite-amplitude branches.
 
 Current verdict:
-`BHSM_V15_7_ONE_ALL_ENCOMPASSING_PARENT_SURFACE_AND_LOCAL_INSTABILITY_TO_ENCAPSULATION_CAUSALITY_ARE_AUTHOR_ONTOLOGY;_THE_RETAINED_ACTION_DEFINES_A_GENERAL_CONDITIONAL_SIGMA_HESSIAN_BUT_HAS_NOT_DERIVED_A_LOCALIZED_CONSTRAINT_REDUCED_PHYSICAL_STABILITY_OPERATOR_ON_A_COMMON_SELF_ADJOINT_DOMAIN_OR_A_LOCAL_INSTABILITY_WHOSE_NONLINEAR_RESPONSE_COMPLETES_INTO_ENCAPSULATION_RATHER_THAN_RESTORATION;_THE_V14_93_RADIAL_ZERO_IS_A_ZERO_MODE_WITHOUT_CAVITATION_NOT_A_GLOBAL_NO_GO;_DOWNSTREAM_NORMAN_CYCLE_AND_MASTER_CLOSURE_REMAIN_UNDEFINED_AND_FULL_BHSM_COMPLETION_IS_FALSE`.
+`BHSM_V15_8_BACKWARD_CLOSURE_FINDS_THAT_THE_REPOSITORY_ALREADY_OWNS_CONDITIONAL_STABILITY_HESSIAN_GAUGE_REDUCTION_SELF_ADJOINT_DOMAIN_NONLINEAR_NORMAL_FORM_PERSISTENCE_AND_CYCLE_MASS_READOUT_MACHINERY;_IT_DOES_NOT_OWN_A_LOCALIZED_CONSTRAINT_SOLVED_PHYSICAL_CONFIGURATION_WITH_A_NEGATIVE_MODE_ON_THE_ATTACHED_DOMAIN_OR_AN_EXACT_CONTINUATION_TO_ANY_ENCAPSULATED_BRANCH;_CAVITATION_IS_ONE_CANDIDATE_FORMATION_MECHANISM_NOT_THE_UNIVERSAL_LAW_AND_FULL_BHSM_COMPLETION_REMAINS_FALSE`.
 
 Exact next object:
-`ACTION_DERIVED_LOCAL_SPACETIME_INSTABILITY_ON_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_REDUCED_PHYSICAL_STABILITY_LOSS_COMMON_SELF_ADJOINT_DOMAIN_AND_NONLINEAR_ENCAPSULATION_CONTINUATION`.
+`ACTION_OWNED_LOCALIZED_CONSTRAINT_SOLVED_UNSTABLE_PARENT_CONFIGURATION_WITH_PHYSICAL_ATTACHMENT_OF_THE_EXISTING_GAUGE_REDUCTION_AND_SELF_ADJOINT_DOMAIN_MACHINERY`.
 
 `FULL_BHSM_COMPLETE = FALSE`. Physical master-solution counts, absolute scale,
 action-derived CKM/PMNS, and an encapsulation event remain undefined or open.

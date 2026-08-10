@@ -1,18 +1,19 @@
 # BHSM CLI Reference
 
-## Current v15.7 status
+## Current v15.8 status
 
 ```bash
 python -m bhsm.interface physics-status --format json
 python tools/audit_public_status_sync_v15_7.py
 ```
 
-The physics-status command reports the unique-parent local-instability-to-encapsulation BVP
-as the current exact gate. `registry` remains the frozen prediction registry;
+The physics-status command reports the localized constraint-solved unstable
+parent configuration and attached physical domain as the current exact gate.
+`registry` remains the frozen prediction registry;
 it is not a physical-completion declaration.
 
 Exact next object:
-`ACTION_DERIVED_LOCAL_SPACETIME_INSTABILITY_ON_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_REDUCED_PHYSICAL_STABILITY_LOSS_COMMON_SELF_ADJOINT_DOMAIN_AND_NONLINEAR_ENCAPSULATION_CONTINUATION`.
+`ACTION_OWNED_LOCALIZED_CONSTRAINT_SOLVED_UNSTABLE_PARENT_CONFIGURATION_WITH_PHYSICAL_ATTACHMENT_OF_THE_EXISTING_GAUGE_REDUCTION_AND_SELF_ADJOINT_DOMAIN_MACHINERY`.
 
 ## BHSM v11.2 supported-action completion gate
 

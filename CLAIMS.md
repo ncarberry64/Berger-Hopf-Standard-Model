@@ -2,9 +2,10 @@
 
 ## Current public claim boundary
 
-Current version: **v15.7**.
+Current version: **v15.8**.
 
-BHSM v15.7 treats one all-encompassing parent surface and local spacetime instability causing cavitation or encapsulation as author ontology. The retained action has not yet derived a constraint-reduced local physical stability operator on an action-compatible localization and common self-adjoint domain, nor a nonlinear response that selects encapsulation rather than restoration. The v14.93 radial zero is a zero mode without cavitation, not a global no-go. Formation and all downstream Norman-cycle maps remain incomplete; frozen predictions are unchanged.
+Supported now: conditional stability/Hessian architecture, gauge-reduction interfaces, several self-adjoint theorem classes, nonlinear normal forms, persistence typing, and the conditional cycle-energy mass readout already exist in BHSM. The v14.93 radial control excludes only a nearby equivariant radial enclosure branch; it is not a global no-go.
+Cavitation is one candidate response, not the universal formation law.
 
 Supported: one all-encompassing parent surface is the controlling author
 ontology, not a derived uniqueness theorem or a choice among parent universes.
@@ -13,8 +14,9 @@ problem. The v14.93 equivariant radial identity branch
 has a unique conformal quadratic zero with zero cubic and positive quartic
 coefficient, proving no nearby bifurcation in that local radial sector.
 
-Not supported: a constraint-reduced local physical instability operator and
-domain, a nonlinear theorem selecting encapsulation over restoration, a
+Not supported: a localized constraint-solved physical parent configuration
+with a negative mode on the physically attached domain, an exact same-action
+continuation to any enclosure endpoint, a universal cavitation law, a
 nonlinear formation map, persistent orbit,
 de-envelopment receiving domain, complete event Noether
 ledger, physical tangent monodromy, loop spectrum, Floquet reconstruction,
@@ -24,7 +26,7 @@ event. The radial result is not a global no-go theorem.
 `FULL_BHSM_COMPLETE = FALSE`.
 
 Exact next object:
-`ACTION_DERIVED_LOCAL_SPACETIME_INSTABILITY_ON_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_REDUCED_PHYSICAL_STABILITY_LOSS_COMMON_SELF_ADJOINT_DOMAIN_AND_NONLINEAR_ENCAPSULATION_CONTINUATION`.
+`ACTION_OWNED_LOCALIZED_CONSTRAINT_SOLVED_UNSTABLE_PARENT_CONFIGURATION_WITH_PHYSICAL_ATTACHMENT_OF_THE_EXISTING_GAUGE_REDUCTION_AND_SELF_ADJOINT_DOMAIN_MACHINERY`.
 
 The coefficient-free spectral charged-current kernel remains an
 author-selected, no-fit action candidate. Full rank, unitarity, SU(2) closure,

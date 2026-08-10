@@ -2,31 +2,31 @@
 
 [![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml)
 [![Latest archival release](https://img.shields.io/github/v/release/ncarberry64/Berger-Hopf-Standard-Model?label=archival%20release)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/releases/latest)
-[![Current research status](https://img.shields.io/badge/current%20research-v15.7-orange)](docs/BHSM_NONLINEAR_NORMAN_CYCLE_BVP_AND_MAIN_SYNC_V15_7.md)
+[![Current research status](https://img.shields.io/badge/current%20research-v15.8-orange)](docs/BHSM_BACKWARD_CLOSURE_EXISTING_ANSWER_AUDIT_V15_8.md)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
 BHSM is an independent artifact-backed computational framework and mathematical-physics research program investigating whether Standard Model structure and particle-like dynamics can be derived from Berger-Hopf boundary/envelopment geometry and a common action architecture.
 
-## Current Public Status -- v15.7
+## Current Public Status -- v15.8
 
-BHSM v15.7 treats one all-encompassing parent surface and local spacetime instability causing cavitation or encapsulation as author ontology. The retained action has not yet derived a constraint-reduced local physical stability operator on an action-compatible localization and common self-adjoint domain, nor a nonlinear response that selects encapsulation rather than restoration. The v14.93 radial zero is a zero mode without cavitation, not a global no-go. Formation and all downstream Norman-cycle maps remain incomplete; frozen predictions are unchanged.
+BHSM v15.8 exhausts the existing formation lineage before adding another object. Conditional stability, gauge-reduction, self-adjoint-domain, nonlinear-normal-form, persistence, and cycle-mass machinery already exists. What is absent is a localized constraint-solved physical parent configuration with a negative mode on the attached domain, followed by an exact same-action nonlinear endpoint. Cavitation is one candidate response, not the universal formation law. Full completion remains false and frozen predictions are unchanged.
 
-An incoming packet, collision, curvature concentration, or boundary exchange is a possible driver or witness, not the fundamental cause. The author additionally proposes a scale-dependent cosmological sequence from a white-hole origin event through the plasma/acoustic-BAO era to cooled late-time cosmology, and an analogous quantum process when an event matches the core energy. These are underived author hypotheses, not current theorems or empirical claims.
+Pair capture/collision-assisted formation, bifurcation locking, and nonhomogeneous localization remain candidate mechanisms. The action has not selected among them. The proposed scale-dependent cosmological and quantum recurrence pictures remain underived author hypotheses.
 
 `FULL_BHSM_COMPLETE = FALSE`
 
 Exact next object:
 
-`ACTION_DERIVED_LOCAL_SPACETIME_INSTABILITY_ON_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_REDUCED_PHYSICAL_STABILITY_LOSS_COMMON_SELF_ADJOINT_DOMAIN_AND_NONLINEAR_ENCAPSULATION_CONTINUATION`
+`ACTION_OWNED_LOCALIZED_CONSTRAINT_SOLVED_UNSTABLE_PARENT_CONFIGURATION_WITH_PHYSICAL_ATTACHMENT_OF_THE_EXISTING_GAUGE_REDUCTION_AND_SELF_ADJOINT_DOMAIN_MACHINERY`
 
-Read the [v15.7 controlling report](docs/BHSM_NONLINEAR_NORMAN_CYCLE_BVP_AND_MAIN_SYNC_V15_7.md), [current status](docs/current_bhsm_status.md), [claim boundaries](CLAIMS.md), and [reviewer reproduction guide](docs/reviewer_reproduction_guide.md).
+Read the [v15.8 controlling report](docs/BHSM_BACKWARD_CLOSURE_EXISTING_ANSWER_AUDIT_V15_8.md), [current status](docs/current_bhsm_status.md), [claim boundaries](CLAIMS.md), and [reviewer reproduction guide](docs/reviewer_reproduction_guide.md).
 
 | Layer | Current status |
 | --- | --- |
 | Computational framework | Validated software/tests; this does not validate nature |
-| Current test corpus | 6,388 committed-tree tests |
-| Internal mathematical program | Incomplete at the exact v15.7 local-instability-to-encapsulation BVP |
+| Current test corpus | v15.8 validation extending the 6,388-test protected checkpoint |
+| Internal mathematical program | Incomplete at the exact v15.8 localized physical unstable-configuration gate |
 | Nonlinear Norman cycle | Formation undefined; persistence, release, Noether ledger, and monodromy not reached |
 | Scale and flavor | Absolute scale, action-derived CKM, and PMNS remain open |
 | Frozen predictions | Unchanged |

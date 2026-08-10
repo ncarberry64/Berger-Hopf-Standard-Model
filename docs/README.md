@@ -1,19 +1,20 @@
 # BHSM Documentation Index
 
-## Current v15.7 campaign
+## Current v15.8 campaign
 
-- [Nonlinear Norman-cycle BVP and public-main synchronization](BHSM_NONLINEAR_NORMAN_CYCLE_BVP_AND_MAIN_SYNC_V15_7.md)
+- [Backward closure / existing-answer exhaustion audit](BHSM_BACKWARD_CLOSURE_EXISTING_ANSWER_AUDIT_V15_8.md)
 - [Current machine/human status](current_bhsm_status.md)
 - [Reviewer reproduction guide](reviewer_reproduction_guide.md)
 - [Artifact index](../ARTIFACT_INDEX.md)
 
-Current result: one parent surface and local-instability-to-encapsulation
-causality are author ontology. The retained action does not derive the
-constraint-reduced local physical stability operator/domain or the nonlinear
-selection of encapsulation over restoration. `FULL_BHSM_COMPLETE = FALSE`.
+Current result: existing conditional stability, domain, gauge-reduction,
+normal-form, persistence, and mass-readout machinery does not compose because
+the localized constraint-solved unstable physical configuration and exact
+same-action nonlinear endpoint are absent. Cavitation is one candidate
+mechanism, not a universal law. `FULL_BHSM_COMPLETE = FALSE`.
 
 Exact next object:
-`ACTION_DERIVED_LOCAL_SPACETIME_INSTABILITY_ON_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_REDUCED_PHYSICAL_STABILITY_LOSS_COMMON_SELF_ADJOINT_DOMAIN_AND_NONLINEAR_ENCAPSULATION_CONTINUATION`.
+`ACTION_OWNED_LOCALIZED_CONSTRAINT_SOLVED_UNSTABLE_PARENT_CONFIGURATION_WITH_PHYSICAL_ATTACHMENT_OF_THE_EXISTING_GAUGE_REDUCTION_AND_SELF_ADJOINT_DOMAIN_MACHINERY`.
 
 ## Historical v11.5 campaign
 
