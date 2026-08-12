@@ -1,0 +1,117 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_aether_eta_sigma_response_constraint_v15_40",
+  "child_system_reclassification": {
+    "active_equations": "Einstein_eta_KKT_response_system_with_local_carrier_and_FR_expectation_energy",
+    "complete_child_scale": "x=log(B/A)_at_the_zero_of_C_J[f]-1/2_after_the_joint_solution",
+    "constraint_multiplier": "lambda_sigma",
+    "derived_material_field": "sigma=C_J[f]-1/2_on_each_constraint_solution",
+    "equation_count": "six_independent_field_equations_plus_response_constraint_and_its_adjoint_reaction",
+    "independent_variables": [
+      "N",
+      "beta_chi",
+      "C",
+      "A",
+      "B",
+      "f"
+    ],
+    "v15_34_fixed-profile_off-seam_minimum": "CONDITIONAL_UNCONSTRAINED_MATERIAL_COLLECTIVE_RESULT_NOT_THE_COMPLETE_CHILD_SCALE",
+    "v15_37_zero-current_FR_domain": "PRESERVED",
+    "v15_38_conformal_lapse_method": "PRESERVED_AS_A_METHOD_BUT_MUST_BE_RESOLVED_WITH_SIGMA=C_J[f]-1/2"
+  },
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "complete_child_material_constraint_derived": true,
+    "joint_Einstein_eta_response_solution_derived": false,
+    "physical_child_scale_derived": false,
+    "v15_32_skin_mode_is_complete_child_mode": false
+  },
+  "classification": "BHSM_ACTION_COMPLETION_DERIVED_FROM_MATERIAL_RESPONSE_ONTOLOGY",
+  "completion_ledger": {
+    "ACTIVE_DEPENDENCY": "SOLVE_THE_NONROUND_EINSTEIN_ETA_KKT_RESPONSE_SYSTEM_WITH_SIGMA=C_J_F_MINUS_ONE_HALF_AND_ZERO-CURRENT_FR_STRESS",
+    "CLOSED_THIS_RUN": [
+      "variational_implementation_of_sigma_is_material_response",
+      "linearized_complete-child_material_tangent_space"
+    ],
+    "INVALIDATED": [
+      "independent_sigma_wall_translation_as_a_complete-child_mode",
+      "fixed-profile_FR_minimum_as_the_final_child_scale"
+    ],
+    "RECLASSIFIED": [
+      "v15_32_negative_mode_as_an_unconstrained_material-subsystem_mode_excluded_by_the_complete_material-response_constraint"
+    ],
+    "VALIDATED": [
+      "sigma_as_normalized_reciprocal_join_response",
+      "coefficient-free_KKT_material_constraint",
+      "complete-child_tangent_relation_delta_sigma=delta_C_J[f]"
+    ]
+  },
+  "constrained_tangent": {
+    "independent_skin_translation": {
+      "delta_f": 0.0,
+      "delta_sigma_nonzero": true,
+      "satisfies_linearized_constraint": false
+    },
+    "left_endpoint_tangent": "delta_sigma(0)=0",
+    "linearized_constraint": "delta_sigma_prime=delta_W/Z-W*delta_Z/Z^2",
+    "linearized_normalization": "delta_Z=integral_delta_W*dchi",
+    "linearized_weight": "delta_W=(1/2)*sin(4f)*delta_f",
+    "mode_removed_by_actual_constraint": true,
+    "physical_enclosure_mode": "must_move_f_eta_geometry_and_sigma_together_on_the_solution_map",
+    "right_endpoint_tangent": "delta_sigma(pi/2)=0",
+    "stable_auxiliary_Schur_argument_used": false,
+    "v15_32_negative_mode_status": "VALID_FOR_THE_UNCONSTRAINED_MATERIAL_SUBSYSTEM_BUT_NOT_A_TANGENT_OF_THE_COMPLETE_RESPONSE-CONSTRAINED_CHILD"
+  },
+  "finite_difference_tangent": {
+    "left_endpoint_residual": 0.0,
+    "maximum_tangent_residual": 2e-09,
+    "normalized_tangent_verified": true,
+    "right_endpoint_residual": 0.0
+  },
+  "identity_join_recovery": {
+    "expected_normalization": 0.196349541,
+    "identity_join_trace_recovered": true,
+    "maximum_trace_residual": 4e-09,
+    "normalization": 0.196349541,
+    "reflection_residual": 0.0
+  },
+  "no_retuning_certificate": {
+    "USB_REMOVABLE_MEDIA_TOUCHED_DURING_SCIENCE": false,
+    "constraint_multipliers": [
+      "lambda_sigma"
+    ],
+    "empirical_inputs": [],
+    "frozen_predictions_changed": false,
+    "new_continuous_coefficients": [],
+    "new_physical_fields": []
+  },
+  "response_constraint_action": {
+    "KKT_term": "S_response=integral_lambda_sigma*C_sigma*dchi",
+    "W_J": "sin(f)^2*cos(f)^2",
+    "constraint": "C_sigma=sigma_prime-W_J[f]/integral_0^(pi/2)W_J[f]dchi=0",
+    "endpoint_data": [
+      "sigma(0)=-1/2",
+      "sigma(pi/2)=+1/2"
+    ],
+    "independent_Zsigma_skin_action": "SUPERSEDED_IN_THE_COMPLETE_RESPONSE_SYSTEM_TO_AVOID_DOUBLE_IMPOSITION_OF_THE_SAME_ETA_TO_SIGMA_MAP",
+    "lambda_sigma": "nonpropagating_constraint_multiplier",
+    "locality": "local_after_adjoining_the_single_global_normalization_constraint_whose_value_is_fixed_by_the_endpoint_jump_one",
+    "new_continuous_coefficient": false,
+    "new_physical_field": false,
+    "paired_orientation": "f(chi)_to_pi/2-f(pi/2-chi),_sigma_to-sigma_reflected",
+    "provenance": "BHSM_ACTION_COMPLETION_DERIVED_FROM_MATERIAL_RESPONSE_ONTOLOGY"
+  },
+  "validation": {
+    "USB_untouched": true,
+    "fixed_profile_child_not_overclaimed": true,
+    "frozen_predictions_unchanged": true,
+    "identity_join_trace_recovered": true,
+    "no_Schur_sign_misuse": true,
+    "no_new_physical_field_or_coefficient": true,
+    "response_tangent_verified": true,
+    "skin_only_mode_excluded_by_constraint": true,
+    "zero_current_FR_domain_preserved": true
+  },
+  "validation_passed": true,
+  "version": "v15.40"
+}

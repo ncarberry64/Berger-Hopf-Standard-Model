@@ -1,0 +1,136 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "FORMULATE_THE_MINIMAL_GLOBAL_STRATIFIED_OPERATOR-MEASURE_OBJECT_AND_TEST_UNIQUENESS_AGAINST_THE_FIXED_EVENT,_RANK16_CARRIER,_ROUND_INTERNAL_DIRAC_SPECTRUM,_AND_NO-NEW-COEFFICIENT_RULE",
+  "actual_operator_spectral_contract": {
+    "M4_radius": 1.011635412772,
+    "Yukawa_entries_generated_by_heat_trace": false,
+    "a4_common_amplitude_fixed_by_representation_trace": false,
+    "a4_gauge_trace_ray": "K_Y:K_2:K_3=5/3:1:1",
+    "canonical_matching_scale": "mu_star=1/R4=2/R_F",
+    "finite_off_diagonal_Dirac_block": "0",
+    "inner_fluctuation_contains_Higgs_doublet": false,
+    "operator": "D_actual=i*gamma^mu*(nabla_mu+A_mu)_on_the_rank48_Weyl_bundle_with_U_phys=I_and_D_finite_left-right=0",
+    "reason": "a_heat_trace_is_a_function_of_the_operator_entries_and_cannot_create_a_zero-order_bifundamental_entry_absent_from_D_actual"
+  },
+  "artifact": "BHSM_aether_zeta_rg_microscopic_completion_v15_61",
+  "claim_boundary": {
+    "absolute_M4_normalization_selected": false,
+    "actual_child_zeta_candidate_evaluated_structurally": true,
+    "child_matching_scale_selected": true,
+    "finite_Dirac_Yukawa_block_selected": false,
+    "interacting_RG_fixed_point_selected": false
+  },
+  "classification": "BHSM_ACTUAL_CHILD_ZETA_RG_MICROSCOPIC_COMPLETION_GATE",
+  "microscopic_candidate_exhaustion": {
+    "cutoff_spectral_action": {
+      "can_generate": [
+        "relevant_and_marginal_local_terms"
+      ],
+      "requires": [
+        "cutoff_profile_moments",
+        "cross-stratum_trace",
+        "finite_Dirac_data"
+      ]
+    },
+    "local_zeta_a4": {
+      "does_not_fix": [
+        "operator_zero-order_entries",
+        "relevant_Higgs_mass_term",
+        "overall_physical_matching_amplitude"
+      ],
+      "fixes": [
+        "dimension-four_coefficient_ratios_after_operator_is_given"
+      ]
+    },
+    "one_loop_RG_fixed_point": {
+      "only_common_fixed_point_in_current_perturbative_sector": "Gaussian",
+      "produces_interacting_SM": false
+    },
+    "pure_zeta_determinant": {
+      "does_not_fix": [
+        "finite_local_Z_gauge",
+        "Higgs_potential",
+        "finite_Dirac_Yukawas"
+      ],
+      "fixes": [
+        "nonlocal_part",
+        "log_anomaly"
+      ]
+    },
+    "single_zero-input_candidate_closes_observed_interacting_SM": false,
+    "smallest_missing_foundational_object": "a_global_stratified_spectral_triple_or_equivalent_operator-measure_principle_that_derives_its_finite_Dirac_block_and_renormalized_boundary_conditions_from_the_child_event_data"
+  },
+  "one_loop_gauge_ray_flow": {
+    "Gaussian_fixed_point": "g_Y=g_2=g_3=0",
+    "convention": "dK_i/dlog(mu)=-b_i/(8pi^2),_K_i=1/g_i^2",
+    "flow_derivative": {
+      "SU3": 0.088656035687,
+      "Sp1": 0.040106301858,
+      "Y": -0.086545177694
+    },
+    "inverse_coupling_ray": {
+      "SU3": "1",
+      "Sp1": "1",
+      "Y": "5/3"
+    },
+    "matching_amplitude_selected_by_RG_fixed_point": false,
+    "matching_scale_selected_by_child": "mu_star=2/R_F",
+    "nonzero_common_perturbative_fixed_point": false,
+    "one_loop_b": {
+      "SU3": "-7",
+      "Sp1": "-19/6",
+      "Y": "41/6"
+    },
+    "ray_tangent_projection": [
+      -0.005399869283,
+      -0.00323992157,
+      -0.00323992157
+    ],
+    "ray_transverse_component": [
+      -0.081145308411,
+      0.043346223428,
+      0.091895957257
+    ],
+    "ray_transverse_norm": 0.13003200807,
+    "trace_ray_preserved_by_one_loop_SM_flow": false
+  },
+  "validation": {
+    "SM_flow_leaves_trace_ray": true,
+    "USB_untouched": true,
+    "actual_matching_scale_is_geometric": true,
+    "candidate_exhaustion_fail_closed": true,
+    "finite_counterterms_not_falsely_fixed": true,
+    "heat_trace_does_not_create_missing_Yukawa": true,
+    "no_new_continuous_coefficient": true,
+    "nonzero_fixed_point_not_fabricated": true,
+    "zeta_scale_law_examples_finite": true
+  },
+  "validation_passed": true,
+  "version": "v15.61",
+  "zeta_renormalization": {
+    "canonical_child_scale_fixes_finite_counterterm_values": false,
+    "canonical_child_scale_removes_need_to_name_mu_star": true,
+    "examples": [
+      {
+        "Gamma_shift_twice_convention": 1.38629436112,
+        "scale_ratio": 2.0,
+        "zeta_zero": 1.0
+      },
+      {
+        "Gamma_shift_twice_convention": 2.77258872224,
+        "scale_ratio": 0.5,
+        "zeta_zero": -2.0
+      },
+      {
+        "Gamma_shift_twice_convention": 0.0,
+        "scale_ratio": 3.0,
+        "zeta_zero": 0.0
+      }
+    ],
+    "finite_local_F_squared_Higgs_and_curvature_counterterms_fixed": false,
+    "induced_action": "Gamma_zeta=(1/2)*STr*log_det_zeta(P/mu^2)",
+    "logarithmic_anomaly_fixed_once_operator_fixed": true,
+    "nonlocal_spectral_part_fixed_once_operator_fixed": true,
+    "scale_law": "Gamma_zeta(mu2)-Gamma_zeta(mu1)=-STr[zeta_P(0)]*log(mu2/mu1)"
+  }
+}

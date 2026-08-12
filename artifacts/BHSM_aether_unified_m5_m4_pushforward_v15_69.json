@@ -1,0 +1,124 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "CONSTRUCT_R_parent_ON_THE_ACTUAL_M5_MAXWELL-DIRAC_BLOCK_WITH_THE_AETHER_RESET_DOMAIN,_THEN_DIFFERENTIATE_THE_SINGLE_RENORMALIZED_Gamma_boundary_TO_OBTAIN_BOTH_Z_g_AND_THE_LR_GAP/YUKAWA_RESIDUES",
+  "artifact": "BHSM_aether_unified_m5_m4_pushforward_v15_69",
+  "claim_boundary": {
+    "absolute_local_gauge_and_nonzero_Yukawa_jointly_derived": false,
+    "common_parent_regulator_and_subtraction_derived": false,
+    "independent_gauge_or_Yukawa_completion_excluded": true,
+    "tree_transverse_and_Coulomb_DtN_blocks_derived": true,
+    "unified_required_action_shape_derived": true
+  },
+  "classification": "BHSM_UNIFIED_M5_M4_GAUGE_YUKAWA_PUSHFORWARD",
+  "closure_rejection_gate": {
+    "absolute_gauge_and_nonzero_Yukawa_are_one_closure_gate": true,
+    "accepted_form": "one_parent_operator_measure_and_event-fixed_subtraction_whose_source_derivatives_generate_Z_g,_Delta_star,_Z_H,_Y_f,_m_H^2,_lambda_H",
+    "candidate_A_bulk_DtN_plus_independent_intrinsic_Yukawa": "REJECTED_SPLIT_ORIGIN",
+    "candidate_B_intrinsic_local_gauge_term_plus_independent_composite_gap": "REJECTED_SPLIT_ORIGIN",
+    "candidate_C_same_pushforward_but_separate_finite_subtractions": "REJECTED_SPLIT_RENORMALIZATION",
+    "gate_closed_in_current_state": false
+  },
+  "common_derivative_ledger": {
+    "Higgs_mass_and_quartic": "m_H^2_and_lambda_H_are_the_second_and_fourth_derivatives_of_Gamma_boundary_along_the_same_normalized_Delta_star",
+    "Higgs_wavefunction_residue": "Z_H=partial_(p^2)<Delta_star,K_H(p)*Delta_star>|p^2=0",
+    "Yukawa_residue": "Y_f=Z_H^(-1/2)*Res_Delta_star[Gamma_boundary^(barL,R,H)]",
+    "absolute_local_gauge_residue": "Z_g=partial_(p^2)<a_T,K_A(p)*a_T>|p^2=mu_star^2",
+    "composite_inverse_two_point": "K_H,f=(2*C_f*G_DtN)^(-1)-Chi_LR,f",
+    "gap_equation": "K_H,f*Delta_f=0",
+    "gauge_two_point": "K_A=delta^2_Gamma_boundary/(delta_a*delta_a)|star=K_F^(5)*N_DtN+Pi_AA",
+    "left_right_four_point": "G_LR=-delta^4_Gamma_boundary/(delta_barL*delta_R*delta_barR*delta_L)|star",
+    "same_Gamma_generates_every_entry": true
+  },
+  "common_renormalization_contract": {
+    "Ward_identity_requirement": "boundary_BRST_Ward_identities_hold_for_the_common_subtraction",
+    "commutation_requirement": "delta_source(Ren_parent*Gamma_boundary)=Ren_parent*(delta_source*Gamma_boundary)",
+    "current_parent_subtraction_map_derived": false,
+    "event_requirement": "the_subtraction_is_fixed_by_the_selected_Aether_reset_class_I_star",
+    "postcomparison_Yukawa_counterterm_allowed": false,
+    "postcomparison_gauge_normalization_allowed": false,
+    "separate_gauge_and_Higgs_subtraction_scales_allowed": false,
+    "single_regulator": "R_parent_on_the_full_M5_operator_H5",
+    "single_subtraction_map": "Ren_parent_before_taking_any_M4_source_derivative"
+  },
+  "finite_block_Schur_witness": {
+    "boundary_Schur_kernel": [
+      [
+        0.342465753425,
+        0.102739726027
+      ],
+      [
+        0.102739726027,
+        0.530821917808
+      ]
+    ],
+    "boundary_kernel_positive": true,
+    "boundary_trace": [
+      [
+        1.0,
+        0.0
+      ],
+      [
+        0.5,
+        1.0
+      ]
+    ],
+    "bulk_Hessian": [
+      [
+        3.0,
+        0.4
+      ],
+      [
+        0.4,
+        2.0
+      ]
+    ],
+    "current_current_kernel": [
+      [
+        0.390410958904,
+        -0.01301369863
+      ],
+      [
+        -0.01301369863,
+        0.253767123288
+      ]
+    ],
+    "current_incidence": [
+      [
+        1.0,
+        -0.2
+      ],
+      [
+        0.3,
+        0.7
+      ]
+    ],
+    "current_kernel_positive": true,
+    "physical_coefficient_prediction": false,
+    "same_inverse_bulk_operator_used": true
+  },
+  "unified_parent_boundary_functional": {
+    "boundary_effective_action": "Gamma_boundary=-log_integral_over_fixed-trace_bulk_fields_exp(-S5[A5,Psi5])",
+    "carrier_extension": "one_rank16_trace_extends_the_diagonal_Sp1_operator_to_(SU3_times_Sp1_times_U1Y)/Z6",
+    "one_loop_term": "Gamma_1loop=(1/2)*STr_log(H5_with_boundary_sources)",
+    "one_pushforward_only": true,
+    "parent_fields": "bulk_connection_A5_and_global_spinor_Psi5_with_wall_trace_B",
+    "single_boundary_trace": "B=(Dirichlet_trace,_normal_flux_trace,_normalized_wall_spinor_trace)",
+    "single_parent_quadratic_operator": "H5=diag(K_F^(5)*Delta_Maxwell5,_D5)_with_action-owned_domains",
+    "tree_Schur_term": "Gamma_tree=(K_F^(5)/2)<a,N_DtN*a>-(1/(2*K_F^(5)))<J,G_DtN*J>",
+    "wall_normalization": "integral_ds*J*abs(u0)^2=1"
+  },
+  "validation": {
+    "USB_untouched": true,
+    "finite_Schur_witness_positive": true,
+    "gauge_and_Yukawa_are_one_gate": true,
+    "independent_postcomparison_inputs_forbidden": true,
+    "missing_common_subtraction_not_fabricated": true,
+    "no_new_continuous_coefficient": true,
+    "one_pushforward_declared": true,
+    "same_effective_action_generates_all_outputs": true,
+    "split_renormalization_forbidden": true,
+    "unified_gate_not_prematurely_closed": true
+  },
+  "validation_passed": true,
+  "version": "v15.69"
+}

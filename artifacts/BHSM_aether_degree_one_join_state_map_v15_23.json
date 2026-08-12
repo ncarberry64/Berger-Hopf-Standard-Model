@@ -1,0 +1,208 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "Hindsight_20_20": {
+    "INVALIDATED": [
+      "a_fixed_radial_two_warp_shape_truncation_is_a_closed_physical_Hessian_domain",
+      "the_v15_9_formation_crossing_by_itself_is_a_nonround_shape_instability"
+    ],
+    "OPEN": [
+      "ACTION_OWNED_GAUGE_INVARIANT_COHOMOGENEITY_ONE_JOIN_MASTER_OPERATOR_WITH_HAMILTONIAN_CONSTRAINT_ELIMINATION_SELF_ADJOINT_TWO_POLE_DOMAIN_SPECTRUM_AND_NONROUND_BIFURCATING_ETA_SIGMA_METRIC_SOLUTION"
+    ],
+    "RECLASSIFIED": [
+      "the_nonround_warp_as_a_component_of_a_constrained_metric_master_mode_not_a_standalone_scalar",
+      "the_eta_profile_perturbation_as_part_of_the_radial_gauge_invariant_shape_coordinate"
+    ],
+    "VALIDATED": [
+      "the_degree_one_eta_identity_map_and_round_S7_share_one_exact_join_ansatz",
+      "the_existing_Einstein_action_supplies_a_direct_positive_nonround_shape_kinetic_direction",
+      "the_smooth_lowest_fixed_radial_trial_is_stable_at_the_v15_9_critical_radius",
+      "the_exact_metric_log_momenta_are_invertible_before_the_lapse_and_shift_constraints",
+      "three_round_join_radial_gauge_invariants_follow_from_the_existing_eta_clock_profile"
+    ]
+  },
+  "artifact": "BHSM_aether_degree_one_join_state_map_v15_23",
+  "campaign_object": "ACTION_OWNED_COUPLED_ETA_SIGMA_METRIC_VARIED_EMBEDDING_NONROUND_CENTER_MANIFOLD_BIFURCATION_SOLUTION_WITH_COMPLEMENT_HESSIAN_INVERTIBLE_FULL_LORENTZIAN_LEGENDRE_MAP_AND_ACTION_SELECTED_SHAPE_MODE",
+  "canonical_metric_block": {
+    "inverse_control": {
+      "H_A": -0.1,
+      "H_B": 0.3,
+      "H_C": 0.2
+    },
+    "kinetic_Hamiltonian_formula": "(p_a^2-2p_a p_b-2p_a p_c+p_b^2-2p_b p_c+5p_c^2)/(12*kappa1*C*A^3*B^3)",
+    "log_momenta_control": {
+      "p_a": -10.098,
+      "p_b": -5.61,
+      "p_c": -2.244
+    },
+    "radial_momentum_constraint": "-partial_chi p_c+p_c c'+p_a a'+p_b b'+p_f f'+p_sigma sigma'=0"
+  },
+  "exact_next_object": "ACTION_OWNED_GAUGE_INVARIANT_COHOMOGENEITY_ONE_JOIN_MASTER_OPERATOR_WITH_HAMILTONIAN_CONSTRAINT_ELIMINATION_SELF_ADJOINT_TWO_POLE_DOMAIN_SPECTRUM_AND_NONROUND_BIFURCATING_ETA_SIGMA_METRIC_SOLUTION",
+  "fixed_radial_domain_audit": {
+    "cause": "the_fixed_C_fixed_product_slice_omits_radial_metric_lapse_shift_companions_required_by_the_Einstein_constraints",
+    "fixed_radial_shape_operator_preserves_smooth_pole_domain": false,
+    "input_leading_order": "chi^2",
+    "not_a_physical_instability_claim": true,
+    "operator_leading_coefficient": -40.0,
+    "operator_leading_order": "chi^0",
+    "same_regular_eigenfunction_order": false
+  },
+  "fixed_radial_shape_trial": {
+    "F_prime_round": 3.0,
+    "X_eta_round": 1.709975946677,
+    "constraint_reduced_eigenfrequency": false,
+    "geometric_Rayleigh_value": -6.666666666667,
+    "gradient_integral": 0.152380952381,
+    "norm_integral": 0.057142857143,
+    "omega_squared_diagnostic": 1.302838816516,
+    "singular_potential_integral": 0.266666666667,
+    "smooth_pole_trial": true,
+    "trial": "sin(2chi)^2"
+  },
+  "gravitational_velocity_form": {
+    "constraint_warning": "fixed_volume_is_a_diagnostic_not_a_substitute_for_the_Hamiltonian_and_momentum_constraints",
+    "coordinate_order": [
+      "c_dot",
+      "h_dot",
+      "u_dot"
+    ],
+    "direct_shape_coefficient": 6.0,
+    "direct_shape_velocity_Hessian": "6*kappa1*sqrt(h)/N",
+    "eigenvalues": [
+      -31.155494421404,
+      1.155494421404,
+      6.0
+    ],
+    "fixed_volume_form": "42*h_dot^2+6*u_dot^2",
+    "matrix": [
+      [
+        0.0,
+        -6.0,
+        0.0
+      ],
+      [
+        -6.0,
+        -30.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        6.0
+      ]
+    ],
+    "pointwise_fixed_volume_relation": "c_dot=-6*h_dot",
+    "quadratic_form": "-12*c_dot*h_dot-30*h_dot^2+6*u_dot^2",
+    "rank": 3
+  },
+  "no_retuning_certificate": {
+    "USB_REMOVABLE_MEDIA_TOUCHED_DURING_SCIENCE": false,
+    "frozen_predictions_changed": false,
+    "new_continuous_coefficients": [],
+    "new_empirical_inputs": [],
+    "new_fields": []
+  },
+  "outcome": "EXACT_DEGREE_ONE_JOIN_REDUCTION_CANONICAL_MOMENTA_MOMENTUM_CONSTRAINT_AND_RADIAL_GAUGE_INVARIANTS_DERIVED_BUT_HAMILTONIAN_ELIMINATION_AND_THE_PHYSICAL_MASTER_BVP_REMAIN_UNSOLVED",
+  "physical_nonround_bifurcating_solution_derived": false,
+  "physical_nonround_eigenmode_derived": false,
+  "retained_reduced_action": {
+    "boundary_terms": [
+      "retained_GHY",
+      "retained_Hayward",
+      "retained_matcher"
+    ],
+    "bulk_density": "sqrt(-G){(kappa1*R8-kappa0)/2-(1+g*sigma^2)F(X_eta)-Zsigma*(grad sigma)^2/2-A0*sigma^2/2-G0*sigma^4/4}",
+    "eta_density": "F(X)=kappa1*X/2+X^4/8",
+    "eta_invariant": "X_eta=-(D_t f)^2/N^2+(partial_chi f)^2/C^2+3*cos(f)^2/A^2+3*sin(f)^2/B^2",
+    "existing_fields_only": [
+      "N",
+      "beta_chi",
+      "C",
+      "A",
+      "B",
+      "f",
+      "sigma"
+    ],
+    "new_continuous_coefficients": [],
+    "new_fields": [],
+    "preferred_external_frame": false,
+    "volume_density": "N*C*A^3*B^3*Vol(S3)^2"
+  },
+  "round_join_recovery": {
+    "R7": 7.939508506616,
+    "R7_expected": 7.939508506616,
+    "X_eta": 1.323251417769,
+    "X_eta_expected": 1.323251417769,
+    "degree_one_recovery": true,
+    "eta": "eta=(cos(chi)u,sin(chi)v)",
+    "metric": "R^2[dchi^2+cos^2(chi)dOmega3_u^2+sin^2(chi)dOmega3_v^2]",
+    "round_recovery": true
+  },
+  "round_radial_gauge_invariants": {
+    "control_after_diffeomorphism": {
+      "C_GI": 0.13,
+      "H_GI": -0.296690288969,
+      "U_GI": 0.141655766151
+    },
+    "control_before": {
+      "C_GI": 0.13,
+      "H_GI": -0.296690288969,
+      "U_GI": 0.141655766151
+    },
+    "definitions": [
+      "C_GI=delta_c-partial_chi(delta_f)",
+      "H_GI=delta_h-cot(2chi)*delta_f",
+      "U_GI=delta_u+csc(2chi)*delta_f"
+    ]
+  },
+  "smooth_boundary_domain": {
+    "chi_0": [
+      "B=0",
+      "partial_chi_B=C",
+      "partial_chi_A=0"
+    ],
+    "chi_interval": "[0,pi/2]",
+    "chi_pi_over_2": [
+      "A=0",
+      "partial_chi_A=-C",
+      "partial_chi_B=0"
+    ],
+    "eta_degree_one": [
+      "f(0)=0",
+      "f(pi/2)=pi/2"
+    ],
+    "fixed_C_shape_regular_leading_order": "u=O(chi^2)_and_O((pi/2-chi)^2)",
+    "self_adjoint_boundary_form_must_vanish": true,
+    "shape_definition": "A=R*cos(chi)*exp(u),_B=R*sin(chi)*exp(-u)",
+    "sigma": "regular_even_normal_expansion_at_each_collapse_pole"
+  },
+  "static_Legendre_certificate": {
+    "dynamical_field_block_regular": true,
+    "eta_velocity_Hessian": 8.9856,
+    "interpretation": "degeneracy_is_confined_to_the_expected_diffeomorphism_multipliers_at_the_static_round_branch",
+    "metric_velocity_Hessian_determinant": -1728.000000000001,
+    "metric_velocity_Hessian_rank": 3,
+    "primary_constraint_variables": [
+      "lapse_N",
+      "radial_shift_beta_chi"
+    ],
+    "sigma_velocity_Hessian": 1.6
+  },
+  "validation": {
+    "USB_untouched": true,
+    "critical_round_shape_trial_is_positive": true,
+    "critical_trial_exact_value_recovered": true,
+    "degree_one_eta_invariant_recovered": true,
+    "domain_failure_not_misreported_as_instability": true,
+    "fixed_radial_domain_failure_detected": true,
+    "frozen_predictions_unchanged": true,
+    "full_metric_velocity_form_has_rank_three_before_constraints": true,
+    "metric_momenta_invert_exactly": true,
+    "no_new_field_or_coefficient": true,
+    "nonround_shape_has_positive_direct_kinetic_coefficient": true,
+    "round_S7_curvature_recovered": true,
+    "round_radial_gauge_invariants_verified": true,
+    "static_dynamical_legendre_block_regular": true
+  },
+  "validation_passed": true,
+  "version": "v15.23"
+}

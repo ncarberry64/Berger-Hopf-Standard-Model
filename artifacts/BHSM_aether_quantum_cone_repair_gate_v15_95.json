@@ -1,0 +1,52 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "FORMULATE_AND_DISCRETIZE_THE_COMMON_GAUGE-GHOST-SPINOR-HS_SUPERDETERMINANT_ON_THE_PROPER_CYCLE_AND_SOLVE_THE_COUPLED_QUANTUM_EVENT_SADDLE_WITHOUT_SPLITTING_GAUGE_FROM_YUKAWA",
+  "artifact": "BHSM_aether_quantum_cone_repair_gate_v15_95",
+  "claim_boundary": {
+    "controlled_one_loop_cone_repair_excluded": true,
+    "full_nonperturbative_quantum_saddle_solved": false,
+    "perturbative_RG_cone_repair_excluded": true,
+    "separate_gauge_or_Yukawa_counterterm_inserted": false
+  },
+  "classification": "BHSM_QUANTUM_GAUGE_CONE_REPAIR_GATE",
+  "exact_quantum_problem": {
+    "Yukawa_must_be_recomputed_with_same_quantum_saddle": true,
+    "common_regulator": "R_parent=exp(-ell_kappa^2*H5)",
+    "effective_action": "Gamma_quantum=Gamma_classical+(1/2)*STr_log_det_Rparent(Phi_star;A,H)",
+    "one_loop_evaluation_about_unshifted_classical_saddle_sufficient": false,
+    "reason": "the_correction_needed_for_cone_matching_is_larger_than_the_smaller_classical_quadratic_coefficient_and_would_shift_the_saddle_nonperturbatively",
+    "required_Hessian": "Pi_AB=delta^2_Gamma_quantum/delta_A_A_delta_A_B_on_the_proper_anisotropic_cycle_with_complete_gauge-ghost-spinor-HS_blocks",
+    "required_solution": "solve_delta_Gamma_quantum/delta_Phi=0_and_the_event_condition_together,_then_recompute_K_E,K_B,Z_Psi,Z_H,Y",
+    "separate_gauge_counterterm_allowed": false
+  },
+  "necessary_quantum_correction": {
+    "K_electric_classical": 2717.004292357735,
+    "K_magnetic_classical": 813.476974796934,
+    "at_least_one_correction_exceeds_smaller_classical_coefficient": true,
+    "cone_coefficient_mismatch": 1903.527317560801,
+    "controlled_one_loop_repair_possible": false,
+    "matching_equation": "delta_K_E-delta_K_B=-(K_E-K_B)",
+    "minimum_correction_over_K_magnetic": 1.16999458899,
+    "triangle_inequality_minimum_max_correction": 951.7636587804
+  },
+  "perturbative_RG_scale_test": {
+    "interpretation": "even_granting_opposite_maximal_one-loop_running_to_the_two_components_would_require_more_than_10^4_e-folds;_long_before_that_the_fixed-one-loop_expansion_and_compact-cycle_matching_cease_to_be_the_same_controlled_problem",
+    "maximum_absolute_SM_one_loop_b": 7.0,
+    "maximum_single_K_shift_per_log_mu": 0.088656035687,
+    "minimum_log_scale_interval_at_that_rate": 10735.463766281086,
+    "natural_finite_log_interval_can_repair": false,
+    "optimistic_two_component_difference_rate_per_log_mu": 0.177312071374
+  },
+  "scientific_result": "CONE_MATCHING_REQUIRES_AT_LEAST_ONE_QUANTUM_CORRECTION_OF_MAGNITUDE_951.763659,_WHICH_IS_1.16999_TIMES_THE_ENTIRE_CLASSICAL_K_B;_THEREFORE_NO_CONTROLLED_ONE-LOOP_OR_RG_REPAIR_EXISTS_AND_THE_FULL_COMMON_QUANTUM_SADDLE_IS_REQUIRED",
+  "validation": {
+    "RG_interval_enormous": true,
+    "USB_untouched": true,
+    "Yukawa_kept_in_same_problem": true,
+    "full_quantum_saddle_required": true,
+    "no_split_counterterm": true,
+    "one_loop_repair_rejected": true,
+    "triangle_lower_bound_exceeds_KB": true
+  },
+  "validation_passed": true,
+  "version": "v15.95"
+}

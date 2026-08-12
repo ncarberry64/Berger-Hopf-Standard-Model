@@ -1,0 +1,93 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "DIAGONALIZE_B_u,0_IN_THE_ODD-FR_SPINOR-HARMONIC_BASIS_AND_CONTINUE_THE_CONSTRAINT-SOLVED_CHILD_THROUGH_THE_SUPERCRITICAL_COMPOSITE_BRANCH_WITH_THE_SAME_GAMMA_BOUNDARY_STRESS",
+  "artifact": "BHSM_aether_legendre_crossing_unified_condensation_v15_72",
+  "branch_intermediate_value_theorem": {
+    "continuity_before_event": true,
+    "covers_every_L_between_last_controlled_state_and_zero": true,
+    "crosses_L_star_before_firewall": true,
+    "event_definition": "first_eta_Legendre_zero",
+    "event_limit": 0.0,
+    "last_controlled_Legendre_minimum": 0.80112484,
+    "selected_branch": "attached_constraint-solved_child_flow"
+  },
+  "claim_boundary": {
+    "backreacted_broken_child_flow_integrated": false,
+    "exact_L_star_defined_spectrally": true,
+    "exact_L_star_numerically_diagonalized": false,
+    "family_noncentral_structure_derived": false,
+    "independent_gauge_or_Yukawa_problem_retained": false,
+    "joint_crossing_existence_derived": true
+  },
+  "classification": "BHSM_ACTION_COMPLETION_DERIVED_FROM_EXISTING_BHSM_STRUCTURE",
+  "composite_bifurcation": {
+    "Yukawa_nonzero_on_broken_side": true,
+    "Yukawa_residue": "Y_u=Z_H^(-1/2)*Res_h_u[delta^3_Gamma_boundary/(delta_barQ_L*delta_u_R*delta_H)]",
+    "composite_representation": "h_u_in_(1,2)_(+1/2)",
+    "elementary_Higgs_inserted": false,
+    "gap_equation": "[I-B_u(L)]Delta_u+O(norm(Delta_u)^3)=0",
+    "normalized_critical_mode": "B_u,0*h_u=lambda_u,0*h_u,_norm(h_u)=1",
+    "quartic_coefficient": "beta_u=Tr[(D_L^(-1)*h_u*D_R^(-1)*h_u^dagger)^2]_Reg_parent>0",
+    "supercritical_solution": "Delta_u=v_u*h_u+O(v_u^3),_v_u^2=(L_star/L-1)/beta_u"
+  },
+  "crossing_theorem": {
+    "base_operator": "B_u,0=2*C_u*Chi_LR^(1/2)*G_DtN,0*Chi_LR^(1/2),_C_u=7/5",
+    "broken_side": "0<L<L_star",
+    "critical_Legendre_value": "L_star=lambda_u,0",
+    "crossing_identity": "lambda_max(B_u(L_star))=1",
+    "exact_uncomputed_symbol": "lambda_u,0=lambda_max(B_u,0)",
+    "existence": true,
+    "fitted_value_used": false,
+    "numerical_upper_bound_on_L_star": 9.0133442e-05,
+    "operator_properties": [
+      "positive",
+      "compact_after_the_common_parent_heat_regulator",
+      "nonzero_because_C_u>0,_G_DtN,0>0,_Chi_LR>0"
+    ],
+    "strict_interval": "0<lambda_u,0<=9.0133442266599e-05<1",
+    "subcritical_side": "L>L_star",
+    "uniqueness_of_first_crossing": true
+  },
+  "event_weight_contract": {
+    "factor_dependent_weights": "5/3:1:1_from_the_same_carrier_trace",
+    "new_continuous_coefficient": false,
+    "non_Gaussian_origin": "L_eta_is_the_velocity-dependent_Legendre_factor_of_F(X_eta)=X_eta/2+X_eta^4/8",
+    "owned_localized_inertia_factor": "W_event=Lambda(sigma)*L_eta,_Lambda=1-4sigma^2,_L_eta=1+X_eta^3",
+    "placement": "inside_one_parent_Hessian_before_all_source_derivatives",
+    "rank16_extension": "S5_event=(K_F^(5)/4)*integral W_event*Tr_16(F^2)"
+  },
+  "joint_absolute_normalization": {
+    "Yukawa_and_gauge_share_L_star": true,
+    "Yukawa_matrix_independently_chosen": false,
+    "absolute_gauge_normalization_independently_chosen": false,
+    "composite_residue": "Z_H=partial_(p^2)<h_u,K_H,u(p;L_star)h_u>|p^2=0",
+    "evaluation_point": "L=L_star=lambda_max(B_u,0)",
+    "gauge_couplings": "g_i^(-2)=Z_g,i",
+    "gauge_residues": "Z_g,i=partial_(p^2)<a_i,[L_star*K_F^(5)*w_i*N_Lambda+Pi_i]a_i>|p^2=mu_star^2,_w_i=(5/3,1,1)",
+    "joint_source": "one_renormalized_Gamma_boundary"
+  },
+  "scaled_pushforward_operator": {
+    "gauge_operator": "K_A(L)=L*K_A,0+Pi_AA(L)",
+    "principal_eigenvalue": "lambda_u(L)=lambda_u,0/L",
+    "regular_branch_parameter": "L=min_M5(1+X_eta^3)>0",
+    "regulated_up_LR_operator": "B_u(L)=L^(-1)*B_u,0",
+    "same_parent_regulator": "exp(-ell_kappa^2*H5_event)",
+    "same_subtraction": "Ren_parent_before_gauge_or_LR_differentiation",
+    "tree_current_kernel": "G_DtN(L)=L^(-1)*G_DtN,0"
+  },
+  "scientific_result": "THE_ACTION-SELECTED_LORENTZIAN_ETA_LEGENDRE_FLOW_FORCES_ONE_COMMON-PUSHFORWARD_LR_EIGENVALUE_THROUGH_ONE_BEFORE_THE_FIREWALL;_THE_SAME_CRITICAL_L_STAR_FIXES_THE_GAUGE_QUADRATIC_RESIDUES_AND_THE_NONZERO_COMPOSITE_YUKAWA_RESIDUE",
+  "validation": {
+    "USB_untouched": true,
+    "base_state_subcritical": true,
+    "branch_forces_crossing": true,
+    "gauge_and_Yukawa_share_crossing": true,
+    "no_fitted_value": true,
+    "no_independent_normalizations": true,
+    "no_new_continuous_coefficient": true,
+    "one_event_weight_in_parent_Hessian": true,
+    "positive_nonzero_base_eigenvalue": true,
+    "quartic_stabilizes_supercritical_branch": true
+  },
+  "validation_passed": true,
+  "version": "v15.72"
+}

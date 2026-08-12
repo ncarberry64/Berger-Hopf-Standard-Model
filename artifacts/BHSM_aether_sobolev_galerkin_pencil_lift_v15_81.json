@@ -1,0 +1,114 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "USE_THE_MEASURED_N2-N4_BEHAVIOR_TO_FORM_THE_SCHUR-COMPLEMENT_TAIL_BOUND_AND_EITHER_CERTIFY_OR_REJECT_THE_SOFT_BRANCH_LIMIT",
+  "artifact": "BHSM_aether_sobolev_galerkin_pencil_lift_v15_81",
+  "basis": {
+    "lapse": "sum_(k=1)^N n_k*cos(4k*chi)",
+    "nested_dense_limit": "even/odd_cohomogeneity-one_H^s_sector",
+    "shift": "sin(4chi)*sum_(j=0)^(N-1) b_j*cos(4j*chi)",
+    "u": "sum_(k=1)^N u_k*cos(4k*chi)",
+    "w_v": "sin(2chi)^2*sum_(j=0)^(N-1) a_j*cos(4j*chi)"
+  },
+  "claim_boundary": {
+    "nested_spectral_lift_computed_through_N4": true,
+    "non_axisymmetric_modes_included": false,
+    "norm_resolvent_full_Sobolev_limit_proved": false
+  },
+  "classification": "BHSM_SOBOLEV_SPECTRAL_GALERKIN_EVENT_PENCIL_LIFT",
+  "convergence_rows": [
+    {
+      "condition_number": 197207.02122673023,
+      "embedding_overlap": 1.0,
+      "g_s0": 0.103705794404,
+      "order": 2,
+      "pencil_dimension": 11,
+      "soft_delta_H4": -0.022002241719,
+      "soft_delta_log_lapse": -0.092199882969,
+      "tracked_eigenvalue": -0.003513307186,
+      "vector": [
+        -0.043974048663,
+        0.006747431772,
+        0.028692853248,
+        -0.356669336906,
+        -0.892597559085,
+        0.170357864662,
+        0.170665127479,
+        0.027570202292,
+        -0.064629680677,
+        -0.076486374712,
+        0.065714473462
+      ]
+    },
+    {
+      "condition_number": 116630.95282521943,
+      "embedding_overlap": 0.99294703106,
+      "g_s0": 0.057278910603,
+      "order": 3,
+      "pencil_dimension": 16,
+      "soft_delta_H4": -0.018431250961,
+      "soft_delta_log_lapse": -0.057275955754,
+      "tracked_eigenvalue": -0.006405484726,
+      "vector": [
+        -0.049335223766,
+        -0.000355618911,
+        0.026955725705,
+        -0.004052309755,
+        -0.36071695397,
+        -0.888467020995,
+        0.110546409727,
+        0.167938544794,
+        0.144690081167,
+        -0.017895401301,
+        0.019161600102,
+        -0.050552562582,
+        -0.01243820693,
+        -0.075375876261,
+        0.082819465896,
+        0.005929244318
+      ]
+    },
+    {
+      "condition_number": 4322326.10015655,
+      "embedding_overlap": 0.732596591077,
+      "g_s0": -0.000601793462,
+      "order": 4,
+      "pencil_dimension": 21,
+      "soft_delta_H4": -0.000323575631,
+      "soft_delta_log_lapse": 7.8523151e-05,
+      "tracked_eigenvalue": 0.000224100683,
+      "vector": [
+        -6.9651403e-05,
+        0.005284646875,
+        0.012193546204,
+        0.010332732806,
+        0.003253623539,
+        -0.364532794305,
+        -0.71104873287,
+        -0.541668749542,
+        -0.214824810511,
+        0.073985705507,
+        0.115146278149,
+        0.051514960634,
+        0.00937952226,
+        -0.001903006973,
+        -0.006135195326,
+        -0.005826352037,
+        -0.001515640532,
+        -0.002066878738,
+        0.002906565732,
+        0.007569903667,
+        0.007415916691
+      ]
+    }
+  ],
+  "scientific_result": "THE_ACTUAL_v15.80_SOFT_EIGENBRANCH_IS_TRACKED_BY_NESTED_SPECTRAL-GALERKIN_OVERLAP_THROUGH_N=4;_ITS_EIGENVALUE_AND_FERMION_SOURCE_CONVERGENCE_DECIDE_WHETHER_THE_JOINT_CROSSING_SURVIVES_THE_COHOMOGENEITY-ONE_SOBOLEV_LIFT",
+  "validation": {
+    "USB_untouched": true,
+    "nested_orders_evaluated": true,
+    "soft_sources_finite": true,
+    "tracked_branch_has_nonzero_overlap": true,
+    "tracked_eigenvalues_finite": true
+  },
+  "validation_passed": true,
+  "version": "v15.81"
+}

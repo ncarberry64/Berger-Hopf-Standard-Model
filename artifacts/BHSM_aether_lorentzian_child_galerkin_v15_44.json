@@ -1,0 +1,340 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "Lorentzian_reduction_contract": {
+    "ADM_kinetic": "KijKij-K^2=Hc^2+3Ha^2+3Hb^2-(Hc+3Ha+3Hb)^2",
+    "FR_inertia": "I=Vol(S3)^2*integral_mu*Lambda*(kappa1+X^3)dchi",
+    "Lagrangian": "L=Vol(S3)^2*integral_mu*[kappa1*(R7+KijKij-K^2)/2-kappa0/2-Lambda*F(X)]dchi-J^2/(2I)",
+    "carrier": "Lambda=1-4sigma^2",
+    "coordinate_order": [
+      "log_R",
+      "u2",
+      "u4",
+      "w0",
+      "w1",
+      "v0",
+      "v1",
+      "q2",
+      "q4"
+    ],
+    "eta_invariant": "X=X_spatial-f_dot^2",
+    "gauge": "unit_lapse_zero_shift_Galerkin_time_after_v15.43_constraints",
+    "metric": "C=R*exp(u+w),_A=R*exp(u+v)*coschi,_B=R*exp(u-v)*sinchi",
+    "modes": "u=u2*cos2chi+u4*cos4chi;_w=sin(2chi)^2*(w0+w1*cos2chi);_v=sin(2chi)^2*(v0+v1*cos2chi);_f=chi+q2*sin2chi+q4*sin4chi",
+    "new_continuous_coefficient": false,
+    "response": "sigma=C_J[f]-1/2"
+  },
+  "artifact": "BHSM_aether_lorentzian_child_galerkin_v15_44",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Lorentzian_reduced_Euler_operator_derived": true,
+    "constraint_solved_initial_acceleration_derived": true,
+    "derived_surface_separation_reached": true,
+    "negative_child_scale_reached": true,
+    "nonlinear_encapsulation_trajectory_integrated": true,
+    "persistent_child_derived": false
+  },
+  "classification": "BHSM_LORENTZIAN_RESPONSE_CHILD_GALERKIN_EVOLUTION",
+  "initial_Euler_data": {
+    "Legendre_map_invertible": true,
+    "TT_orientation_branch": "the_conjugate_initial_slice_is_obtained_by_velocity_to_minus_velocity",
+    "TT_projection_velocity_rescale": 0.98883226,
+    "accelerations": [
+      -0.05801121,
+      0.0,
+      -0.06028339,
+      -0.32244965,
+      -3.5e-07,
+      4e-08,
+      -0.22630557,
+      -1e-08,
+      -0.12701698
+    ],
+    "canonical_energy": 0.0,
+    "coordinates": [
+      0.02657773,
+      0.0,
+      -0.00431343,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.03641421
+    ],
+    "eta_Legendre_minimum": 4.69168023,
+    "finite_acceleration": true,
+    "projected_child_scale_x": 0.0,
+    "reduced_Hamiltonian_constraint_residual": 0.0,
+    "velocities": [
+      0.05294081,
+      0.0,
+      -0.04657858,
+      -0.70405833,
+      0.0,
+      0.0,
+      1.1331759,
+      0.0,
+      0.0
+    ],
+    "velocity_Hessian_condition_number": 1085.45297177,
+    "velocity_Hessian_eigenvalues": [
+      -854.28802709,
+      -118.32831259,
+      -75.53314659,
+      0.78703366,
+      6.45700826,
+      8.29947473,
+      20.01968369,
+      45.98119219,
+      58.68167285
+    ]
+  },
+  "nonlinear_child_oriented_trajectory": {
+    "eta_Legendre_reconstruction_firewall_reached": false,
+    "exit_reason": "target_child_scale_reached",
+    "final_child_scale_x": -0.00207504,
+    "final_coordinates": [
+      0.19103541,
+      3.388e-05,
+      0.24012148,
+      -1.0302255,
+      -0.00342397,
+      0.00112328,
+      -0.20579138,
+      -0.00046491,
+      0.25727537
+    ],
+    "final_eta_Legendre_minimum": 5.10141501,
+    "final_independent_grid_energy": -2.577e-05,
+    "final_projection_grid_energy": 0.0,
+    "final_surface_observables": {
+      "absolute_proper_separation": 0.00121243,
+      "child_scale_x": -0.00207514,
+      "geometric_Hopf_surface_chi": 0.78730696,
+      "material_surface_chi": 0.78554372,
+      "signed_proper_separation_d": 0.00121243
+    },
+    "final_time": 2.0,
+    "final_velocities": [
+      0.01219767,
+      -0.0003702,
+      0.23069662,
+      0.09894973,
+      -0.00264556,
+      0.00308189,
+      2.34252546,
+      -0.00102811,
+      -0.16960304
+    ],
+    "maximum_energy_projection_rescale": 9.071e-05,
+    "orientation": "child_branch_x_negative",
+    "parent_and_child_surfaces_distinguishable": true,
+    "seed": 0.001,
+    "seed_role": "numerical_time-origin_on_the_one-dimensional_unstable_manifold_not_a_physical_continuous_input",
+    "steps_completed": 40,
+    "target_child_scale": -0.002,
+    "target_reached": true,
+    "time_step": 0.05,
+    "trajectory_samples": [
+      {
+        "canonical_energy": 0.0,
+        "child_scale_x": -0.00010891,
+        "eta_Legendre_minimum": 4.69197916,
+        "time": 0.0
+      },
+      {
+        "canonical_energy": 0.0,
+        "child_scale_x": -0.00010627,
+        "eta_Legendre_minimum": 4.71122575,
+        "time": 0.25
+      },
+      {
+        "canonical_energy": 0.0,
+        "child_scale_x": -9.915e-05,
+        "eta_Legendre_minimum": 4.83391628,
+        "time": 0.5
+      },
+      {
+        "canonical_energy": 0.0,
+        "child_scale_x": -0.0001127,
+        "eta_Legendre_minimum": 4.57227174,
+        "time": 0.75
+      },
+      {
+        "canonical_energy": 0.0,
+        "child_scale_x": -0.00018283,
+        "eta_Legendre_minimum": 4.19084069,
+        "time": 1.0
+      },
+      {
+        "canonical_energy": 0.0,
+        "child_scale_x": -0.00031238,
+        "eta_Legendre_minimum": 3.96589268,
+        "time": 1.25
+      },
+      {
+        "canonical_energy": 0.0,
+        "child_scale_x": -0.00054945,
+        "eta_Legendre_minimum": 3.86092261,
+        "time": 1.5
+      },
+      {
+        "canonical_energy": 0.0,
+        "child_scale_x": -0.00109838,
+        "eta_Legendre_minimum": 4.16964033,
+        "time": 1.75
+      },
+      {
+        "canonical_energy": 0.0,
+        "child_scale_x": -0.00207481,
+        "eta_Legendre_minimum": 5.10278632,
+        "time": 2.0
+      }
+    ]
+  },
+  "orientation_odd_enclosure_linearization": {
+    "Floquet_claim": false,
+    "child_scale_derivative_along_dominant_direction": -0.10868378,
+    "dominant_child_oriented_coordinate_direction": [
+      0.0,
+      -0.00458724,
+      0.0,
+      0.0,
+      -0.75467766,
+      0.08417429,
+      0.0,
+      -0.04642972,
+      0.0
+    ],
+    "dominant_child_oriented_velocity_direction": [
+      0.0,
+      -0.00607841,
+      0.0,
+      0.0,
+      -1.0,
+      0.11153674,
+      0.0,
+      -0.06152258,
+      0.0
+    ],
+    "generator_eigenvalues": [
+      {
+        "imag": 2.21000677,
+        "real": 0.0171946
+      },
+      {
+        "imag": -2.21000677,
+        "real": 0.0171946
+      },
+      {
+        "imag": 0.0,
+        "real": 1.32506904
+      },
+      {
+        "imag": 0.0,
+        "real": -1.30153885
+      },
+      {
+        "imag": 1.05133928,
+        "real": -0.3080597
+      },
+      {
+        "imag": -1.05133928,
+        "real": -0.3080597
+      },
+      {
+        "imag": 1.03103543,
+        "real": 0.29125465
+      },
+      {
+        "imag": -1.03103543,
+        "real": 0.29125465
+      }
+    ],
+    "instantaneous_nonautonomous_linearization": true,
+    "largest_real_growth_rate": 1.32506904,
+    "odd_coordinate_indices": [
+      1,
+      4,
+      5,
+      7
+    ],
+    "odd_coordinate_names": [
+      "u2",
+      "w1",
+      "v0",
+      "q2"
+    ],
+    "orientation_odd_enclosure_direction_grows": true,
+    "stiffness_matrix": [
+      [
+        -1.51026763,
+        -0.0637206,
+        0.03289424,
+        0.16282049
+      ],
+      [
+        -0.53290295,
+        -0.51607694,
+        -16.48939854,
+        -0.284929
+      ],
+      [
+        2.81446658,
+        0.01259666,
+        -0.42404364,
+        -2.35663554
+      ],
+      [
+        -0.29805182,
+        -0.02573113,
+        -2.99510385,
+        -3.27177101
+      ]
+    ],
+    "velocity_coupling_matrix": [
+      [
+        -0.48005606,
+        -0.00061153,
+        -0.5541622,
+        5e-08
+      ],
+      [
+        5.66843875,
+        0.4686441,
+        1.44230499,
+        3.182e-05
+      ],
+      [
+        -0.87285159,
+        -0.09099659,
+        0.00165366,
+        1e-08
+      ],
+      [
+        6.81e-06,
+        6.81e-06,
+        -1.362e-05,
+        0.03406759
+      ]
+    ]
+  },
+  "validation": {
+    "USB_untouched": true,
+    "derived_parent_child_surface_separation_nonzero": true,
+    "eta_Legendre_sector_regular": true,
+    "frozen_predictions_unchanged": true,
+    "full_trajectory_not_overclaimed": true,
+    "initial_Legendre_map_invertible": true,
+    "initial_acceleration_finite": true,
+    "no_new_continuous_coefficient": true,
+    "nonlinear_child_branch_reaches_negative_scale": true,
+    "odd_enclosure_linearization_finite": true,
+    "reduced_Hamiltonian_constraint_closed": true,
+    "response_substituted_at_every_evaluation": true,
+    "trajectory_Hamiltonian_projection_controlled": true,
+    "trajectory_eta_Legendre_regular": true
+  },
+  "validation_passed": true,
+  "version": "v15.44"
+}

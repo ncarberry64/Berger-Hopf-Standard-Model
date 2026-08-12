@@ -1,0 +1,116 @@
+{
+  "ADM_DtN_equations": {
+    "ADM_metric": "ds5^2=-N^2dt^2+C^2(dchi+beta*dt)^2+r^2dOmega3^2",
+    "Coulomb": {
+      "boundary_DtN": "N_0=(N_b/R_b)*p*u_prime/u",
+      "lowest_lambda": 3.0,
+      "p": "K*W*r^3/(N*C)",
+      "q": "lambda_0*K*W*C*r/N"
+    },
+    "independent_gauge_rescaling": false,
+    "same_event_weight": "W=(1-4sigma^2)*(1+X_eta^3)",
+    "same_parent_coefficient": "K=pi^2*(A^2+B^2)^(5/2)",
+    "transverse": {
+      "boundary_DtN": "N_T=(R_b/N_b)*p*u_prime/u",
+      "lowest_lambda": 4.0,
+      "p": "K*W*N*r/C",
+      "q": "lambda_T*K*W*N*C/r"
+    },
+    "zero_shift_static_gauge": "beta=0_by_interior_diffeomorphism_fixed_at_M4"
+  },
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "COMPUTE_THE_FULL_SHIFT-COVARIANT_FREQUENCY-DEPENDENT_DtN_SCHUR_COMPLEMENT_AND_EVENT/RESET_SECOND_VARIATION_FROM_THE_SAME_ACTION",
+  "artifact": "BHSM_aether_adm_dtn_proper_gap_v15_92",
+  "claim_boundary": {
+    "ADM_corrected_static_DtN_evaluated": true,
+    "frequency_dependent_shift_covariant_DtN_evaluated": false,
+    "nonzero_Yukawa_vertex_derived": true,
+    "nonzero_composite_background_derived": false,
+    "proper_time_gap_operator_evaluated": true
+  },
+  "classification": "BHSM_ADM_STATIC_DTN_AND_PROPER_TIME_GAP_THEOREM",
+  "proper_ADM_DtN_residues": {
+    "Coulomb_envelope": [
+      3195.643724115598,
+      3966.180437498767
+    ],
+    "proper_cycle_lowest_Coulomb_DtN": 3795.978188551599,
+    "proper_cycle_lowest_transverse_DtN": 2405.175268358851,
+    "rows": [
+      {
+        "lowest_Coulomb_DtN": 3195.643724115598,
+        "lowest_transverse_DtN": 2776.67816197805,
+        "provenance": "reset",
+        "time": 0.0
+      },
+      {
+        "lowest_Coulomb_DtN": 3966.180437498767,
+        "lowest_transverse_DtN": 2270.617168801081,
+        "provenance": "controlled",
+        "time": 0.08
+      },
+      {
+        "lowest_Coulomb_DtN": 3905.105028435953,
+        "lowest_transverse_DtN": 2079.644644384278,
+        "provenance": "controlled",
+        "time": 0.1
+      },
+      {
+        "lowest_Coulomb_DtN": 3361.111579091035,
+        "lowest_transverse_DtN": 2003.257539985286,
+        "provenance": "controlled",
+        "time": 0.103
+      },
+      {
+        "lowest_Coulomb_DtN": 3601.585392839462,
+        "lowest_transverse_DtN": 1934.513273786259,
+        "provenance": "controlled",
+        "time": 0.10602
+      },
+      {
+        "lowest_Coulomb_DtN": 3601.585392839462,
+        "lowest_transverse_DtN": 1934.513273786259,
+        "provenance": "event_limit",
+        "time": 0.1060372
+      }
+    ],
+    "transverse_envelope": [
+      1934.513273786259,
+      2776.67816197805
+    ]
+  },
+  "proper_composite_gap": {
+    "gap_equation": "1=G_u(t)*chi(m;t)",
+    "gap_operator_envelope": [
+      6.531738e-05,
+      6.785542e-05
+    ],
+    "kernel": "G_u=2*(7/5)*(N_T(4)^(-1)+N_0(3)^(-1))+G_EC",
+    "nonzero_gap_solution_exists": false,
+    "proper_cycle_Floquet_mass": 0.0,
+    "proper_cycle_H_star": 0.0,
+    "proper_cycle_Yukawa_vertex": "23.791084*I3_not_zero",
+    "proper_cycle_gap_operator": 6.5564165e-05,
+    "proper_cycle_quadratic_coefficient": 119.013852300245,
+    "quadratic_coefficient_envelope": [
+      113.067303138724,
+      120.486102082767
+    ],
+    "reason": "max_t_G_u*chi(0;t)<1_and_chi_decreases_with_m_squared",
+    "same_proper_Gamma_cycle": true,
+    "susceptibility_monotonicity": "d_chi/d_(m^2)<0"
+  },
+  "scientific_result": "THE_ADM-CORRECTED_PROPER_CYCLE_GIVES_LOWEST_DtN_RESIDUES_N_T=2405.175268_AND_N_0=3795.978189;_THE_SAME_EC-GAUGE_KERNEL_HAS_MAX_GAP_OPERATOR_6.7856e-5,_SO_Y=23.791084*I3_IS_NONZERO_WHILE_H_STAR_AND_M_FLOQUET_ARE_ZERO",
+  "validation": {
+    "ADM_DtN_positive": true,
+    "USB_untouched": true,
+    "Yukawa_nonzero_with_zero_mass": true,
+    "no_split_gauge_rescaling": true,
+    "nonzero_gap_excluded": true,
+    "one_pushforward": true,
+    "proper_gap_strictly_subcritical": true,
+    "proper_quadratic_positive": true
+  },
+  "validation_passed": true,
+  "version": "v15.92"
+}

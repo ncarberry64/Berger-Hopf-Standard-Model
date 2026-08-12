@@ -1,0 +1,99 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_aether_semiclassical_conformal_constraint_v15_38",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "complete_child_Hessian_derived": false,
+    "complete_stationary_child_solution_derived": false,
+    "nonround_Hamiltonian_constraint_companion_derived": true
+  },
+  "classification": "NONROUND_SEMICLASSICAL_HAMILTONIAN_CONSTRAINT_COMPANION",
+  "completion_ledger": {
+    "ACTIVE_DEPENDENCY": "JOINT_NONCONFORMAL_A_B_F_SIGMA_SPATIAL_EINSTEIN_AND_MATTER_EULER_BVP_WITH_COMPLETE_PHYSICAL_HESSIAN",
+    "CLOSED_THIS_RUN": [
+      "round_positive-energy_constraint_no-go",
+      "off-seam_nonround_conformal_Hamiltonian_constraint_companion"
+    ],
+    "INVALIDATED": [
+      "freezing_the_round_geometry_after_adding_skin_and_FR_energy",
+      "varying_only_the_global_radius_to_restore_the_constraint"
+    ],
+    "RECLASSIFIED": [
+      "enclosed-spacetime_response_as_a_nonround_constraint_field_rather_than_phenomenological_pressure"
+    ],
+    "VALIDATED": [
+      "no_round_time-symmetric_radius_with_added_positive_child_energy",
+      "nonround_conformal_Hamiltonian_constraint_response",
+      "zero-current_FR_normalization_on_the_constraint_solution"
+    ]
+  },
+  "conformal_constraint_contract": {
+    "FR_energy_density": "rho_FR=(kappa1+X_eta^3)*(1-4sigma^2)/(8*I^2)",
+    "Hamiltonian_constraint": "kappa1*R_h/2-kappa0/2-rho_eta-rho_sigma-rho_FR=0",
+    "eta_identity_invariant": "X_eta=7*exp(-2u)/R^2",
+    "localized_inertia": "I=Vol(S3)^2*R^7*integral_w*exp(7u)*(kappa1+X_eta^3)*(1-4sigma^2)dchi",
+    "metric": "h_7=R^2*exp(2*u(chi))*[dchi^2+cos^2chi*dOmega3_u^2+sin^2chi*dOmega3_v^2]",
+    "nonlocal_normalization": "I_is_solved_as_an_auxiliary_integral_state",
+    "pole_domain": "u_prime(0)=u_prime(pi/2)=0",
+    "scalar_curvature": "R_h=exp(-2u)/R^2*[42-12*(u_second+3*(cotchi-tanchi)*u_prime)-30*u_prime^2]",
+    "sigma_energy": "rho_sigma=Zsigma*exp(-2u)*sigma_prime^2/(2R^2)+Zsigma*U(sigma)"
+  },
+  "no_retuning_certificate": {
+    "USB_REMOVABLE_MEDIA_TOUCHED_DURING_SCIENCE": false,
+    "empirical_inputs": [],
+    "free_pressure_added": false,
+    "frozen_predictions_changed": false,
+    "new_continuous_coefficients": [],
+    "new_fields": []
+  },
+  "nonround_constraint_solution": {
+    "FR_effective_omega": 0.8299843,
+    "FR_normalization_residual": -1.84e-05,
+    "Hamiltonian_constraint_companion_solved": true,
+    "child_scale_x_input": -4.7875315,
+    "conformal_factor_u_max": 0.0206922,
+    "conformal_factor_u_min": 0.0022446,
+    "connected_by_homotopy_to_round_identity_branch": true,
+    "localized_inertia": 0.6023989,
+    "maximum_boundary_residual": 1.84e-05,
+    "maximum_pointwise_constraint_residual": 0.0009356,
+    "maximum_solver_relative_residual": 0.0004825,
+    "mesh_nodes": 7404,
+    "nonround_response_nonzero": true,
+    "pole_cutoff": 0.002
+  },
+  "remaining_equations": {
+    "Hamiltonian_constraint": "SOLVED_IN_THE_CONFORMAL_COMPANION_TRUNCATION",
+    "complete_child_Hessian": "OPEN",
+    "eta_Euler_equation_on_backreacted_metric": "OPEN",
+    "lapse_and_radial_shift": "unit_static_lapse_and_zero_mean_shift_in_this_constraint_slice",
+    "mean_momentum_constraint": "SOLVED_BY_ZERO_CURRENT_FR_STATE",
+    "nonconformal_A_minus_B_shape": "OPEN",
+    "reason_not_full_solution": "solving_the_lapse_constraint_does_not_imply_stationarity_under_independent_A_B_f_sigma_variations",
+    "sigma_Euler_equation_on_backreacted_metric": "OPEN",
+    "spatial_Einstein_equations": "OPEN"
+  },
+  "round_constraint_theorem": {
+    "C_round_nonpositive_for_positive_radius": true,
+    "added_positive_skin_or_FR_density": "makes_the_round_time-symmetric_constraint_strictly_negative",
+    "critical_definitions": "X_c^3=5*kappa1,_kappa0=(15/4)*kappa1*X_c",
+    "equality_only_at_identity_radius": true,
+    "factorization": "y^4-4*y+3=(y-1)^2*(y^2+2*y+3)",
+    "required_response": "nonround_geometry_nonzero_extrinsic_curvature_or_a_changed_matter_profile;_the_stationary_child_uses_nonround_geometry",
+    "round_constraint_density": "C_round=(5*kappa1*X_c/8)*(4*y-3-y^4),_y=X/X_c",
+    "round_radius_adjustment_can_solve_child_constraint": false
+  },
+  "validation": {
+    "FR_normalization_closed": true,
+    "Hamiltonian_constraint_residual_controlled": true,
+    "USB_untouched": true,
+    "boundary_conditions_closed": true,
+    "frozen_predictions_unchanged": true,
+    "nonround_constraint_response_found": true,
+    "remaining_Euler_equations_not_overclaimed": true,
+    "round_positive_energy_obstruction_proved": true,
+    "round_shortcut_rejected": true
+  },
+  "validation_passed": true,
+  "version": "v15.38"
+}

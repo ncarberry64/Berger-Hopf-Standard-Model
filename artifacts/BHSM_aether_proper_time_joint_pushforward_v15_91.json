@@ -1,0 +1,105 @@
+{
+  "ADM_derivation": {
+    "Lorentz_matching_equation": "K_E=K_B",
+    "boundary_normalization": "K_B=R_b*I_B/N_b,_K_E=N_b*I_E/R_b",
+    "electric_frequency_weight": "I_E=integral_dchi*K*W*C*r/N",
+    "lapse_is_same_constraint_solved_lapse_used_in_eta_and_Gamma_cycle": true,
+    "magnetic_radial_weight": "I_B=integral_dchi*K*W*N*C/r",
+    "metric": "ds5^2=-N^2dt^2+C^2(dchi+beta*dt)^2+r^2dOmega3^2",
+    "separate_gauge_normalization_inserted": false,
+    "zero_shift_gauge": "beta_is_removed_by_an_interior_radial_diffeomorphism_fixed_at_the_boundary"
+  },
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "COMPUTE_THE_FULL_SHIFT-COVARIANT_FREQUENCY-DEPENDENT_DtN_SCHUR_COMPLEMENT_AND_TEST_WHETHER_EVENT/RESET_GLUING_SUPPLIES_THE_MISSING_GAUGE-CONE_TERM_WITHIN_THE_SAME_Gamma_cycle",
+  "artifact": "BHSM_aether_proper_time_joint_pushforward_v15_91",
+  "claim_boundary": {
+    "Lorentz_invariant_Maxwell_matching_derived": false,
+    "absolute_local_magnetic_and_electric_coefficients_evaluated": true,
+    "dense_constraint_solved_time_quadrature_evaluated": false,
+    "proper_time_joint_pushforward_evaluated": true,
+    "proper_time_nonzero_Yukawa_evaluated": true
+  },
+  "classification": "BHSM_PROPER_TIME_JOINT_GAUGE_YUKAWA_PUSHFORWARD",
+  "proper_time_cycle_pushforward": {
+    "coordinate_cycle_duration": 0.1060372,
+    "electric_to_magnetic_ratio": 3.33998917798,
+    "family_Yukawa_matrix": "Y_proper*I3",
+    "gauge_cone_speed_relative_to_boundary_metric": 0.547176541626,
+    "mean_boundary_lapse": 2.227359892154,
+    "physical_cycle_functional": "Gamma_cycle=integral_0^Tstar N_boundary(t)dt*Gamma_proper(t)+Gamma_reset",
+    "proper_cycle_K_electric": 2717.004292357735,
+    "proper_cycle_K_magnetic": 813.476974796934,
+    "proper_cycle_Z_H": 0.00176673551,
+    "proper_cycle_canonical_Yukawa": 23.791084030763,
+    "proper_cycle_duration": 0.236183006356,
+    "proper_log_mean_R4_in_ell_kappa": 1.02210543861,
+    "proper_matching_scale_in_ell_kappa_inverse": 0.978372643589,
+    "rows": [
+      {
+        "K_electric": 1760.16857546519,
+        "K_magnetic": 1047.012993064123,
+        "boundary_lapse": 1.47804315847,
+        "provenance": "reset",
+        "time": 0.0
+      },
+      {
+        "K_electric": 2982.874990370266,
+        "K_magnetic": 733.166317007997,
+        "boundary_lapse": 2.658444009299,
+        "provenance": "controlled",
+        "time": 0.08
+      },
+      {
+        "K_electric": 2905.877429853535,
+        "K_magnetic": 639.142899856196,
+        "boundary_lapse": 3.194725614623,
+        "provenance": "controlled",
+        "time": 0.1
+      },
+      {
+        "K_electric": 2108.695994485279,
+        "K_magnetic": 610.405035557754,
+        "boundary_lapse": 3.057654645683,
+        "provenance": "controlled",
+        "time": 0.103
+      },
+      {
+        "K_electric": 2430.379698496332,
+        "K_magnetic": 578.944458782788,
+        "boundary_lapse": 3.651112952158,
+        "provenance": "controlled",
+        "time": 0.10602
+      },
+      {
+        "K_electric": 2430.379698496332,
+        "K_magnetic": 578.944458782788,
+        "boundary_lapse": 3.651112952158,
+        "provenance": "event_limit",
+        "time": 0.1060372
+      }
+    ],
+    "same_proper_time_measure_for_gauge_and_Yukawa": true
+  },
+  "scientific_result": "ONE_PROPER-TIME_Gamma_cycle_GIVES_K_B=813.476975,_K_E=2717.004292,_Z_H=0.00176673551_AND_Y=23.7910840*I3;_THE_GAUGE_AND_YUKAWA_NORMALIZATIONS_REMAIN_JOINT,_WHILE_THE_DERIVED_LOCAL_GAUGE_CONE_DOES_NOT_EQUAL_THE_BOUNDARY_METRIC_CONE",
+  "semantic_reclassification": {
+    "Lorentz_invariant_local_Maxwell_term_derived": false,
+    "gauge_and_Yukawa_treated_as_unrelated_problems": false,
+    "physical_absolute_cycle_values": "V15_91_PROPER-TIME_VALUES",
+    "reason": "proper_cycle_K_E_not_equal_proper_cycle_K_B",
+    "v15_86_coordinate_time_PCHIP_values": "VALID_FROZEN-SPATIAL_DIAGNOSTICS",
+    "v15_89_coordinate_log_mean_scale": "SUPERSEDED_BY_PROPER-TIME_MEAN",
+    "v15_90_lapse-free_local_coefficients": "VALID_UNIT-LAPSE_STATIC_DIAGNOSTICS"
+  },
+  "validation": {
+    "Lorentz_mismatch_detected": true,
+    "USB_untouched": true,
+    "no_split_normalization": true,
+    "old_coordinate_average_not_called_physical": true,
+    "one_measure": true,
+    "proper_Yukawa_nonzero": true,
+    "proper_duration_positive": true,
+    "proper_gauge_coefficients_positive": true
+  },
+  "validation_passed": true,
+  "version": "v15.91"
+}

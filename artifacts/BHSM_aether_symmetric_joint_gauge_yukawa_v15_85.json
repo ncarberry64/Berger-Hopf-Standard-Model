@@ -1,0 +1,92 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "Hubbard_Stratonovich_identity": {
+    "composite_background_on_subcritical_branch": 0.0,
+    "elementary_Higgs_added": false,
+    "fermion_mass_vanishes_when_background_vanishes": true,
+    "fermion_operator": "O_f=bar(Psi_L)*Psi_R",
+    "four_fermion_factor": "exp[+G_f*integral O_f^dagger*O_f]",
+    "identity": "proportional_to_integral_DH_f*exp[-integral(|H_f|^2/G_f-H_f*O_f^dagger-H_f^dagger*O_f)]",
+    "unnormalized_LR_H_vertex": 1.0,
+    "vertex_vanishes_when_background_vanishes": false
+  },
+  "active_calculation": "PUSH_THE_SAME_NONZERO_SYMMETRIC-PHASE_YUKAWA_AND_GAUGE_DERIVATIVES_THROUGH_THE_CONSTRAINT-CONSISTENT_HYBRID_CYCLE_AND_COMPUTE_THEIR_FLOQUET/ONE-PERIOD_RESIDUES",
+  "artifact": "BHSM_aether_symmetric_joint_gauge_yukawa_v15_85",
+  "channel_ledger": {
+    "all_channels_nonzero": true,
+    "charged_lepton": {
+      "Y_canonical": 24.344287996225,
+      "composite": "bar(L_L)*e_R_in_(1,2,-1/2)"
+    },
+    "down": {
+      "Y_canonical": 24.344287996225,
+      "composite": "bar(Q_L)*d_R_in_(1,2,-1/2)"
+    },
+    "family_operator": "Y_canonical*I3_before_noncentral_event_data",
+    "family_splitting_derived": false,
+    "neutrino": {
+      "Y_canonical": 24.344287996225,
+      "composite": "bar(L_L)*nu_R_in_(1,2,+1/2)"
+    },
+    "up": {
+      "Y_canonical": 24.344287996225,
+      "composite": "bar(Q_L)*u_R_in_(1,2,+1/2)"
+    }
+  },
+  "claim_boundary": {
+    "absolute_same_slice_gauge_normalization_evaluated": true,
+    "family_hierarchy_derived": false,
+    "full_cycle_average_evaluated": false,
+    "nonzero_mass_or_broken_electroweak_vacuum_derived": false,
+    "nonzero_same_slice_Yukawa_sector_evaluated": true
+  },
+  "classification": "BHSM_SYMMETRIC_PHASE_JOINT_GAUGE_YUKAWA_PUSHFORWARD",
+  "one_pushforward_derivatives": {
+    "LR_kernel": "G_f=-delta^4_Gamma_boundary/delta_barPsi_L_delta_Psi_R_delta_barPsi_R_delta_Psi_L",
+    "Yukawa": "Y_f=Z_H^(-1/2)*delta^3_Gamma_boundary/delta_barPsi_L_delta_Psi_R_delta_H",
+    "absolute_gauge_and_Yukawa_are_independent_inputs": false,
+    "composite_kinetic": "Z_H=delta^2_Gamma_boundary/delta_(D_H)_delta_(D_Hdagger)",
+    "functional": "Gamma_boundary=-log integral_(B_Phi=fixed) exp(-S5_EH+Dirac+gauge)",
+    "gauge": "Z_i=delta^2_Gamma_boundary/delta_F_i^2",
+    "same_localization_calculation": true
+  },
+  "same_slice_joint_coefficients": {
+    "Yukawa_vertex_nonzero": true,
+    "Z_H_at_H_zero": 0.001687352603,
+    "absolute_electric_DtN": 1919.465751556852,
+    "absolute_transverse_DtN": 2588.002371504945,
+    "canonical_Yukawa_per_normalized_paired_mode": 24.344287996225,
+    "composite_background_H_star": 0.0,
+    "composite_quadratic_coefficient": 113.351231132035,
+    "condensate_nonzero": false,
+    "fermion_mass_m_star": 0.0,
+    "gap_operator_at_H_zero": 6.6952364e-05,
+    "regular_Einstein_Cartan_LR_kernel": 0.006280890761,
+    "regulated_susceptibility": 0.007589641085,
+    "same_parent_Gamma_boundary": true,
+    "same_slice": true,
+    "time": 0.10602,
+    "total_up_LR_kernel": 0.008821545542,
+    "unit_HS_vertex": 1.0,
+    "up_gauge_kernel": 0.00254065478
+  },
+  "scientific_result": "ONE_PHYSICAL_M5-TO-M4_BOUNDARY_FUNCTIONAL_GENERATES_BOTH_THE_ABSOLUTE_TRANSVERSE/ELECTRIC_GAUGE_DtN_AND_A_NONZERO_CANONICAL_YUKAWA_VERTEX_IN_EVERY_SM_LR_CHANNEL;_THE_SUBCRITICAL_SYMMETRIC_BACKGROUND_HAS_H_STAR=0_AND_M_STAR=0_BUT_Y_f_NOT_ZERO",
+  "semantic_correction": {
+    "nonzero_Yukawa_sector_requires_nonzero_condensate": false,
+    "nonzero_Yukawa_sector_requires_nonzero_fermion_mass": false,
+    "v15_77_symmetric_side_Yukawa_equal_zero_reclassified": true
+  },
+  "validation": {
+    "USB_untouched": true,
+    "Yukawa_not_confused_with_condensate": true,
+    "absolute_gauge_DtN_positive": true,
+    "all_SM_LR_channels_nonzero": true,
+    "canonical_Yukawa_nonzero": true,
+    "composite_residue_positive": true,
+    "one_pushforward": true,
+    "regular_LR_kernel_positive": true,
+    "symmetric_background_and_mass_zero": true
+  },
+  "validation_passed": true,
+  "version": "v15.85"
+}

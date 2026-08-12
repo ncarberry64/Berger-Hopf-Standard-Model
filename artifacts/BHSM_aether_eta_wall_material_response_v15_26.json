@@ -1,0 +1,269 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "analytic_BPS_quartic_recovery": {
+    "BPS_energy": "Z_sigma/(2*ell_eta^2)*(1/2-2*sigma^2)^2=Z_sigma/ell_eta^2*(1/8-sigma^2+2*sigma^4)",
+    "analytic_profile": "sin(f_eta)=sech(s/ell_eta)",
+    "claim_boundary": "exact_for_the_v14_45_analytic_sech_control;_not_exact_for_the_retained_v13_1_p2_plus_p8_profile_and_therefore_not_promoted_as_the_full_physical_sigma_potential",
+    "constant_subtracted_potential": "V_eta_BPS=Z_sigma/ell_eta^2*(-sigma^2+2*sigma^4)",
+    "first_order_identity": "ell_eta*d_s_sigma=1/2-2*sigma^2",
+    "first_order_residual": 0.0,
+    "historical_coefficients_in_dimensionless_convention": {
+      "A_ST": -2.0,
+      "G_ST": 8.0,
+      "vacua": [
+        -0.5,
+        0.5
+      ]
+    },
+    "physical_scale_owner_if_promoted": "ell_eta=kappa1^(-1/6)",
+    "second_order_residual": 0.0
+  },
+  "analytic_eta_wall": {
+    "endpoint_values": [
+      -0.5,
+      0.5
+    ],
+    "first_order_residual": 0.0,
+    "second_order_residual": 0.0,
+    "unit_holonomy": 1.0
+  },
+  "artifact": "BHSM_aether_eta_wall_material_response_v15_26",
+  "claim_boundary": {
+    "analytic_historical_quartic_promoted_to_full_profile": false,
+    "candidate_affine_orientation_and_endpoint_amplitude_normalized": true,
+    "derived_from_existing_BHSM_structure_after_completing_action": true,
+    "derived_from_old_retained_bosonic_action": false,
+    "downstream_particle_or_SM_completion_claimed": false,
+    "moving_profile_derivatives_C_q_C_s_evaluated": false,
+    "nonlinear_material_skin_solved": false,
+    "physical_material_response_selected": false
+  },
+  "classification": "BHSM_ACTION_COMPLETION",
+  "completed_sigma_action": {
+    "Euler_Lagrange_equation": "Z_sigma*nabla_a(nabla^a_sigma-alpha_eta^a)-V_even_prime(sigma)=0",
+    "added_term": "+Z_sigma*nabla_a(sigma)*alpha_eta^a-Z_sigma/2*alpha_eta_a*alpha_eta^a",
+    "affine_sigma_domain_derived_from_retained_action": false,
+    "candidate_affine_domain": "sigma_eta(right)-sigma_eta(left)=integral_alpha_eta=1",
+    "candidate_centering": "sigma_eta(left)+sigma_eta(right)=0",
+    "classification": "BHSM_ACTION_COMPLETION",
+    "coefficient_uniqueness_theorem_present": false,
+    "completed_kinetic_block": "-Z_sigma/2*(nabla_sigma-alpha_eta)^2",
+    "free_response_limit": "V_even=0_implies_nabla_sigma=alpha_eta_on_the_ground_section",
+    "ground_section": "sigma_eta=C_eta-1/2",
+    "locality_boundary": "the_density_is_local_once_the_self_adjoint_zero_mode_is_normalized;_its_unit_normalization_is_global_domain_data",
+    "new_continuous_coefficient": false,
+    "normalization_owner": "canonical_v14_45_eta_zero_mode_norm_and_existing_Z_sigma",
+    "old_bosonic_Path_B_derivation_claimed": false,
+    "old_kinetic_block": "-Z_sigma/2*(nabla_sigma)^2",
+    "oriented_source_form": "Z_sigma*Box(sigma)-V_even_prime(sigma)=Z_sigma*nabla_a(alpha_eta^a)",
+    "physical_status": "CANDIDATE_NOT_ACTION_SELECTED"
+  },
+  "completion_ledger": {
+    "ACTIVE_DEPENDENCY": "ACTION_OWNED_DISTRIBUTIONAL_DJ3_FIBER_BOUNDARY_FLUX_AT_THE_RECONSTRUCTION_TOPOLOGY_CHANGE_EVENT_WITH_SELF_ADJOINT_SIGMA_TRACE_PAIRING_AND_NO_FREE_VERTEX_COEFFICIENT",
+    "CLOSED_THIS_RUN": [
+      "canonical_normalized_eta_probability_one_form",
+      "exact_analytic_wall_to_historical_quartic_identity",
+      "field_redefinition_audit_of_the_minimal_gradient_completion"
+    ],
+    "INVALIDATED": [
+      "promoting_the_sech_BPS_quartic_as_exact_for_the_retained_p2_plus_p8_eta_solution",
+      "claiming_the_completion_was_already_derived_by_the_old_bosonic_Path_B_action",
+      "promoting_the_rank_one_coordinate_Gram_block_as_irreducible_physical_transfer"
+    ],
+    "RECLASSIFIED": [
+      "sigma_sign_as_a_canonical_affine_eta_orientation_candidate_not_yet_a_physical_material_state",
+      "the_covariantized_sigma_kinetic_term_as_a_domain_completion_candidate"
+    ],
+    "VALIDATED": [
+      "normalized_eta_zero_mode_probability_one_form_has_unit_open_path_transport",
+      "orientation_reversal_maps_sigma_eta_to_its_negative_branch",
+      "minimal_kinetic_covariantization_has_no_new_continuous_coefficient",
+      "candidate_completed_action_has_diagonal_not_independent_reflection_symmetry",
+      "analytic_sech_control_exactly_recovers_the_historical_normalized_quartic",
+      "exact_gradient_covariantization_is_locally_field_redefinition_trivial"
+    ]
+  },
+  "diagonal_symmetry": {
+    "diagonal_reversal": {
+      "completed_square_invariant": true,
+      "map": "(d_sigma,alpha_eta)->(-d_sigma,-alpha_eta)"
+    },
+    "independent_orientation_reversal": {
+      "completed_square_invariant": false,
+      "map": "(d_sigma,alpha_eta)->(d_sigma,-alpha_eta)"
+    },
+    "independent_sigma_reversal": {
+      "completed_square_invariant": false,
+      "map": "(d_sigma,alpha_eta)->(-d_sigma,alpha_eta)"
+    },
+    "old_truncation": "Z2_sigma_x_Z2_eta_orientation",
+    "physical_branches": "sigma_eta[-u_eta]=-sigma_eta[u_eta]_after_collaring_pullback",
+    "product_symmetry_reduced_by_completed_action_not_imposed_as_domain_axiom": true
+  },
+  "exact_gradient_field_redefinition_audit": {
+    "closed_path_holonomy": 0.0,
+    "collar_topology": "oriented_interval",
+    "configuration_space_curvature": "d_alpha_eta=0_for_alpha_eta=dC_eta",
+    "field_redefinition": "xi=sigma-C_eta",
+    "identity": "alpha_eta=dC_eta",
+    "irreducible_bulk_q_sigma_transfer_from_this_square": false,
+    "kinetic_reduction": "(d_sigma-alpha_eta)^2=(d_xi)^2",
+    "open_path_transport": "integral_left_to_right_alpha_eta=1",
+    "open_path_transport_is_not_closed_loop_holonomy": true,
+    "physical_sigma_activation_closed": false,
+    "what_would_make_it_physical": [
+      "an_action_derived_affine_sigma_boundary_domain",
+      "a_nonexact_eta_Hopf_connection_with_nonzero_curvature_or_closed_holonomy",
+      "an_independently_normalized_nonderivative_sigma_O_eta_vertex"
+    ]
+  },
+  "moving_q_s_sigma_pullback": {
+    "C_q_C_s_status": "must_be_evaluated_from_the_moving_constraint_solved_eta_join_BVP",
+    "G_qsigma": -0.17,
+    "G_ssigma": 0.08,
+    "Gram_completion": [
+      [
+        0.0289,
+        -0.0136,
+        -0.17
+      ],
+      [
+        -0.0136,
+        0.0064,
+        0.08
+      ],
+      [
+        -0.17,
+        0.08,
+        1.0
+      ]
+    ],
+    "coordinate_order": [
+      "q",
+      "s",
+      "sigma"
+    ],
+    "covariant_velocity": "sigma_dot-C_q*q_dot-C_s*s_dot",
+    "cross_terms_nonzero_if_profile_moves": true,
+    "eigenvalues": [
+      0.0,
+      0.0,
+      1.0353
+    ],
+    "field_redefinition_warning": "because_C_eta_is_a_global_scalar_this_rank_one_block_is_removed_by_xi=sigma-C_eta_unless_the_affine_domain_or_connection_curvature_is_independently_physical",
+    "positive_semidefinite": true,
+    "promoted_as_physical_transfer": false,
+    "rank": 1
+  },
+  "no_retuning_certificate": {
+    "USB_REMOVABLE_MEDIA_TOUCHED_DURING_SCIENCE": false,
+    "frozen_predictions_changed": false,
+    "kinetic_change": "nabla_sigma_to_nabla_sigma-alpha_eta",
+    "new_continuous_coefficients": [],
+    "new_empirical_inputs": [],
+    "new_fields": [],
+    "provenance": "BHSM_ACTION_COMPLETION"
+  },
+  "nonexact_orientation_route_audit": {
+    "eta_projector_connection": {
+      "bundle_role": "rank_three_eta_polarization_SU3_reference_connection",
+      "can_source_singlet_sigma_without_new_contraction_or_coefficient": false,
+      "curvature_nonzero": true,
+      "gauge_invariant_linear_scalar_from_F": false,
+      "physical_Yang_Mills_normalization_fixed": false,
+      "restricted_trace_norm": 0.0
+    },
+    "extrinsic_and_mean_curvature_scalars": {
+      "examples": [
+        "div(u_eta)",
+        "u_eta^a*nabla_a(F(eta))"
+      ],
+      "independent_function_or_normalization_freedom_removed": false,
+      "orientation_odd": true,
+      "unique_action_vertex": false
+    },
+    "first_upstream_nonzero_possibility": "THE_DISTRIBUTIONAL_DJ3_FIBER_BOUNDARY_FLUX_AT_AN_ACTUAL_RECONSTRUCTION_OR_TOPOLOGY_CHANGE_EVENT",
+    "relative_Z6_holonomy": {
+      "action_ownership": "the recovered holonomy is an artifact-backed orientation/constraint, not an action-derived signed eta potential",
+      "can_close_sigma_activation": false,
+      "can_orient": true,
+      "creates_quadratic_amplitude": false
+    },
+    "result": "NO_EXISTING_RETAINED_OR_FOUNDATIONAL_BHSM_OBJECT_SUPPLIES_A_NONEXACT_GAUGE_SINGLET_ORIENTATION_CONNECTION_OR_A_UNIQUELY_NORMALIZED_NONDERIVATIVE_SIGMA_VERTEX_ON_THE_REGULAR_FORMED_BRANCH",
+    "transgressed_degree_current": {
+      "current": "j3=Pi_!(nu7)",
+      "event_source": "-sigma*dj3_can_exist_only_at_derived_fiber_boundary_flux_or_topology_change",
+      "only_coefficient_free_4form_linear_in_dsigma": "d_sigma_wedge_j3",
+      "physical_event_flux_present_in_current_repository": false,
+      "regular_branch_conserved": true,
+      "regular_branch_identity": "d_sigma_wedge_j3=d(sigma*j3)_when_dj3=0",
+      "regular_bulk_sigma_source": false
+    }
+  },
+  "orientation_odd_invariant_audit": {
+    "candidates": {
+      "div_alpha_eta": {
+        "odd": true,
+        "status": "canonical_after_normalized_eta_zero_mode_domain_is_adopted"
+      },
+      "div_u_eta_or_oriented_mean_curvature": {
+        "odd": true,
+        "status": "geometric_but_does_not_fix_material_response_normalization"
+      },
+      "m_eta_minus_u_grad_log_sin_f": {
+        "odd": true,
+        "status": "canonical_clifford_domain_coefficient_not_a_scalar_material_map_by_itself"
+      },
+      "u_eta_dot_grad_F_eta": {
+        "odd": true,
+        "status": "nonunique_for_arbitrary_F_and_boundary_equivalent_after_parts"
+      }
+    },
+    "orientation_carrier": "u_eta=grad(f_eta)/|grad(f_eta)|_on_the_regular_wall_collar",
+    "selected_one_form": "alpha_eta=J|u0|^2 ds=N^2 sin(f_eta)^2 ds;_integral_alpha_eta=1",
+    "selected_scalar_source": "O_eta=Z_sigma*nabla_a(alpha_eta^a)",
+    "uniqueness_scope": "unique_probability_one_form_of_the_existing_normalized_eta_bound_zero_mode;_not_a_uniqueness_theorem_over_all_possible_higher_derivative_action_completions"
+  },
+  "retained_degree_one_eta_wall": {
+    "analytic_sech_BPS_profile_is_exact_for_retained_solution": false,
+    "best_BPS_inverse_length": 1.63122175976,
+    "endpoint_values": [
+      -0.5,
+      0.5
+    ],
+    "median_radius": 1.167657961105,
+    "monotone": true,
+    "orientation_reversal_residual": 0.507048677647,
+    "profile": "retained_v13_1_p2_plus_p8_degree_one_eta_solution",
+    "proper_radial_domain": [
+      0.000335462628,
+      403.428793492735
+    ],
+    "relative_BPS_profile_residual": 0.239731116982,
+    "unit_holonomy": 1.0
+  },
+  "scientific_result": "THE_EXISTING_NORMALIZED_ETA_BOUND_ZERO_MODE_DEFINES_A_UNIT_OPEN_PATH_ORIENTATION_ONE_FORM_AND_A_COEFFICIENT_FREE_AFFINE_SIGMA_COMPLETION_CANDIDATE;_HOWEVER_ALPHA_ETA_EQUALS_D_C_ETA_ON_THE_COLLAR_SO_THE_BULK_SQUARE_IS_FIELD_REDEFINITION_EQUIVALENT_TO_A_FREE_SIGMA_KINETIC_TERM_AND_DOES_NOT_BY_ITSELF_CLOSE_PHYSICAL_MATERIAL_ACTIVATION",
+  "validation": {
+    "USB_untouched": true,
+    "analytic_material_response_obeys_exact_BPS_identity": true,
+    "analytic_material_response_obeys_historical_quartic_equation": true,
+    "analytic_zero_mode_probability_is_unit_normalized": true,
+    "candidate_collective_Gram_is_positive_semidefinite_rank_one": true,
+    "completed_action_has_only_diagonal_reversal": true,
+    "exact_gradient_not_misreported_as_physical_transfer": true,
+    "field_redefinition_obstruction_recorded": true,
+    "foundational_not_old_bosonic_provenance_recorded": true,
+    "frozen_predictions_unchanged": true,
+    "generic_probability_one_form_has_unit_holonomy": true,
+    "generic_response_endpoints_are_fixed": true,
+    "no_new_continuous_coefficient": true,
+    "orientation_reversal_is_CP_conjugate_material_branch": true,
+    "projector_curvature_is_real_but_not_a_sigma_source": true,
+    "regular_topological_current_coupling_is_boundary_exact": true,
+    "relative_holonomy_not_misused_as_amplitude_source": true,
+    "retained_eta_profile_not_silently_replaced_by_sech": true,
+    "retained_eta_solution_supplies_unit_response": true
+  },
+  "validation_passed": true,
+  "version": "v15.26"
+}

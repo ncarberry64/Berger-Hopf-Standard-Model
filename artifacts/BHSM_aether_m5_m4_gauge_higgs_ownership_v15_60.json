@@ -1,0 +1,115 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "Higgs_representation_ownership": {
+    "Higgs_kinetic_coefficient_derived_from_parent": false,
+    "Higgs_potential_derived_from_parent": false,
+    "active_parent_bosonic_fields": {
+      "Path-B_eta_tangent": "(3_plus_bar3,1,0)_under_color_times_weak",
+      "mechanical_connection_fluctuation": "(1,3,0)_adjoint_weak_one-form",
+      "metric_G": "gauge-singlet_symmetric_tensor",
+      "quotient_base_coordinate": "invariant_under_the_diagonal_principal_Sp1_action_and_not_an_associated_fundamental_doublet",
+      "response_sigma": "real_gauge_singlet"
+    },
+    "fiber_coordinate_as_Higgs": false,
+    "fiber_coordinate_reason": "a_principal-fiber_coordinate_is_gauge_redundancy,_not_a_physical_associated-bundle_section",
+    "nonzero_Higgs_vacuum_derived_from_parent": false,
+    "required_Higgs_representation": "(SU3,Sp1,Y)=(1,2,1/2)",
+    "required_representation_occurs_in_active_parent_tangent_bundle": false,
+    "v15_53_Higgs_doublet_status": "FOUNDATIONAL_INTRINSIC_M4_FIELD"
+  },
+  "active_calculation": "CONSTRUCT_THE_SMALLEST_SINGLE_COVARIANT_BOUNDARY_FUNCTIONAL_FROM_THE_EXISTING_GLOBAL_SPIN-GAUGE_BUNDLE_AND_TEST_WHETHER_ITS_HEAT-KERNEL_COEFFICIENTS_UNIQUELY_FIX_Z_GAUGE,_V_H,_AND_Y_F",
+  "artifact": "BHSM_aether_m5_m4_gauge_higgs_ownership_v15_60",
+  "claim_boundary": {
+    "absolute_gauge_Higgs_Yukawa_data_derived": false,
+    "active_parent_Higgs_ownership_excluded": true,
+    "intrinsic_boundary_gauge_term_required": true,
+    "microscopic_boundary_functional_derived": false,
+    "smooth_bulk_gauge_pushforward_no_go_derived": true
+  },
+  "classification": "BHSM_M5_M4_GAUGE_PUSHFORWARD_AND_HIGGS_OWNERSHIP",
+  "forced_intrinsic_M4_action": {
+    "action": "S_M4=int_sqrt(-h)[-Z_g/4*((5/3)F_Y^2+F_2^2+F_3^2)+Z_H*abs(DH)^2-V(H)-sum_f(barPsi_L*Y_f*H_f*Psi_R+h.c.)]",
+    "coupling_ray_already_fixed": "K_Y:K_2:K_3=5/3:1:1",
+    "field_rescaling": "H_canonical=sqrt(Z_H)*H_removes_Z_H_from_the_kinetic_term",
+    "independent_data_after_canonicalization": [
+      "Z_gauge",
+      "renormalized_Higgs_potential",
+      "Y_u",
+      "Y_d",
+      "Y_e",
+      "Y_nu"
+    ],
+    "setting_them_to_observed_values_allowed": false,
+    "setting_them_to_one_is_a_derivation": false,
+    "smallest_required_microscopic_completion": "one_covariant_functional_whose_boundary_reduction_generates_Z_gauge,_the_Higgs_potential,_and_the_four_Yukawa_operators",
+    "these_data_selected_by_current_parent_child_action": false
+  },
+  "smooth_gauge_pushforward": {
+    "Lorentz_matching_condition": "I_E=r_boundary^2*I_B",
+    "boundary_localization_normalization_fixed_by_bulk_EH_term": false,
+    "consequence": "an_intrinsic_Wentzell_or_boundary_Yang-Mills_term_is_required_for_a_local_Lorentz-invariant_M4_gauge_action",
+    "electric_weight": "I_E=integral_dchi*R_F*r*u^2",
+    "equality_limit": "p_to_infinity_distribution_localized_at_chi=pi/4",
+    "exact_family_ratio": "I_E/(r_boundary^2*I_B)=2p/(2p+1)<1",
+    "magnetic_weight": "I_B=integral_dchi*R_F*u^2/r",
+    "mode": "A_mu(chi,x)=u(chi)*a_mu(x),_A_chi=0",
+    "regular_test_family": "u_p=sin(2chi)^p,_p>=1",
+    "round_M5_metric": "ds5^2=-dt^2+R_F^2*dchi^2+r(chi)^2*dOmega3^2,_r=R_F*sin(chi)*cos(chi),_0<=chi<=pi/4",
+    "rows": [
+      {
+        "boundary_radius": 1.011635412772,
+        "electric_weight_integral": 0.682270805583,
+        "exact_ratio": 0.666666666667,
+        "inferred_M4_coefficient_ratio": 0.666666666667,
+        "magnetic_weight_integral": 1.0,
+        "power": 1
+      },
+      {
+        "boundary_radius": 1.011635412772,
+        "electric_weight_integral": 0.545816644466,
+        "exact_ratio": 0.8,
+        "inferred_M4_coefficient_ratio": 0.8,
+        "magnetic_weight_integral": 0.666666666667,
+        "power": 2
+      },
+      {
+        "boundary_radius": 1.011635412772,
+        "electric_weight_integral": 0.415860300546,
+        "exact_ratio": 0.888888888889,
+        "inferred_M4_coefficient_ratio": 0.888888888889,
+        "magnetic_weight_integral": 0.457142857143,
+        "power": 4
+      },
+      {
+        "boundary_radius": 1.011635412772,
+        "electric_weight_integral": 0.306549427634,
+        "exact_ratio": 0.941176470588,
+        "inferred_M4_coefficient_ratio": 0.941176470588,
+        "magnetic_weight_integral": 0.31825951826,
+        "power": 8
+      },
+      {
+        "boundary_radius": 1.011635412772,
+        "electric_weight_integral": 0.158482389249,
+        "exact_ratio": 0.984615384615,
+        "inferred_M4_coefficient_ratio": 0.984615384615,
+        "magnetic_weight_integral": 0.157277408778,
+        "power": 32
+      }
+    ],
+    "smooth_bulk_profile_closes_Lorentz_invariant_M4_Maxwell_term": false
+  },
+  "validation": {
+    "Higgs_representation_absent_from_parent_tangent": true,
+    "USB_untouched": true,
+    "all_smooth_test_profiles_fail_Lorentz_matching": true,
+    "analytic_radial_ratios_verified": true,
+    "boundary_limit_approaches_one": true,
+    "dimensionful_K5_not_relabelled_M4_coupling": true,
+    "missing_M4_data_not_fabricated": true,
+    "no_new_continuous_coefficient": true,
+    "principal_coordinate_not_relabelled_Higgs": true
+  },
+  "validation_passed": true,
+  "version": "v15.60"
+}

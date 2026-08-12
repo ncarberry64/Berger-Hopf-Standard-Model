@@ -1,0 +1,234 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "HS_channel_normalization": {
+    "candidate_direction": "H_f=c_f*h",
+    "canonical_Y_if_channels_are_independent": {
+      "charged_lepton": 11.294760438111,
+      "down": 6.521032979376,
+      "neutrino": 11.294760438111,
+      "up": 6.521032979376
+    },
+    "channel_basis": [
+      "up",
+      "down",
+      "charged_lepton",
+      "neutrino"
+    ],
+    "directional_canonical_vertices": "Y_f(c)=c_f/sqrt(Z_pair*c_dagger*diag(9,9,3,3)*c)",
+    "directional_kinetic_residue": "Z(c)=Z_pair*c_dagger*diag(9,9,3,3)*c",
+    "equal_collective_direction_Y_each_channel": 3.993300848833,
+    "equal_collective_direction_Z": 0.062709875572,
+    "equal_collective_direction_c": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "kinetic_matrix_if_channels_are_independent": {
+      "charged_lepton": 0.007838734447,
+      "down": 0.02351620334,
+      "neutrino": 0.007838734447,
+      "up": 0.02351620334
+    },
+    "nonzero_vertex_for_every_direction_component_c_f_nonzero": true,
+    "pairing_multiplicity_matrix": "D=diag(9,9,3,3)",
+    "per_normalized_pair_Z": 0.002612911482,
+    "physical_direction_selected": false,
+    "selection_operator": "the_full_four-channel_HS_quadratic_kernel_including_EC,_gauge_DtN,_and_the_same_heat_determinant_on_the_replacement_saddle",
+    "v15_97_per-paired-mode_Y_is_a_kernel_basis_value": true,
+    "v15_97_per-paired-mode_Y_is_the_physical_single-Higgs_Yukawa": false
+  },
+  "U1_dense_repair_fraction": {
+    "U1_matter_HS_block_alone_repairs_cone": false,
+    "classical_U1_mismatch": 2840.560874451507,
+    "fraction_of_required_U1_repair": 0.00216699134,
+    "matter_HS_quantum_difference_delta_KE_minus_delta_KB": -6.155470816278,
+    "sign_reduces_classical_mismatch": true
+  },
+  "active_calculation": "ASSEMBLE_THE_SU2_AND_SU3_ADJOINT_GAUGE-GHOST_VERTICES,_THEN_EVALUATE_THE_314-KKT_SYMMETRIC_REPLACEMENT_SADDLE_AND_ITS_FULL_FOUR-CHANNEL_HS_HESSIAN_BEFORE_ANY_SINGLE-HIGGS_CANONICALIZATION",
+  "angular_heat_tail": {
+    "angular_heat_tail_converged": true,
+    "converged_response": {
+      "HS_constant_response": -45.104395597038,
+      "HS_delta_Z_per_normalized_pair_seed": 0.002612911482,
+      "HS_delta_Z_seed": 0.062709875572,
+      "HS_first_frequency_response": 0.000323364129,
+      "U1_constant_coexact_response": 23.469209839061,
+      "U1_delta_K_electric_seed": -0.030063151793,
+      "U1_delta_K_magnetic_seed": 6.125407664485,
+      "U1_first_frequency_coexact_response": 1.845980637029,
+      "gauge_ghost_U1_adjoint_response": 0.0,
+      "independent_channel_Z_seeds": {
+        "charged_lepton": 0.007838734447,
+        "down": 0.02351620334,
+        "neutrino": 0.007838734447,
+        "up": 0.02351620334
+      },
+      "independent_channel_canonical_Y_seeds": {
+        "charged_lepton": 11.294760438111,
+        "down": 6.521032979376,
+        "neutrino": 11.294760438111,
+        "up": 6.521032979376
+      },
+      "independent_channel_pairing_multiplicities": {
+        "charged_lepton": 3,
+        "down": 9,
+        "neutrino": 3,
+        "up": 9
+      },
+      "interpretation": "FOURIER-GALERKIN_HEAT-REGULATED_COLLOCATION_SEED_WITHOUT_A_CENTERED-DIFFERENCE_FERMION_DOUBLER;_LEVEL_CONVERGENCE_AND_THE_FULL_NONABELIAN_ADJOINT_BLOCK_AND_HS-CHANNEL_HESSIAN_DIAGONALIZATION_PRECEDE_PHYSICAL_YUKAWA_CANONICALIZATION",
+      "lattice_points": 24,
+      "maximum_homogeneous_level": 6,
+      "proper_duration": 0.234280880357,
+      "radial_wall_overlap": 1.0,
+      "rank16_group_and_unit_HS_vertices_share_one_geometry": true,
+      "rows": [
+        {
+          "HS_U1_constant": 1.709877816159,
+          "HS_U1_first_frequency": 1.709876751414,
+          "Weyl_U1_constant": 24.376861788891,
+          "Weyl_U1_first_frequency": 0.055018333197,
+          "fermion_HS_constant": -22.034569772576,
+          "fermion_HS_first_frequency": 0.000149373602,
+          "level": 0
+        },
+        {
+          "HS_U1_constant": -0.136752997417,
+          "HS_U1_first_frequency": 0.096085573048,
+          "Weyl_U1_constant": -2.558061641207,
+          "Weyl_U1_first_frequency": -0.015577050057,
+          "fermion_HS_constant": -22.550516279212,
+          "fermion_HS_first_frequency": 0.000161580145,
+          "level": 1
+        },
+        {
+          "HS_U1_constant": -0.00377748065,
+          "HS_U1_first_frequency": 0.000792115155,
+          "Weyl_U1_constant": 0.079894474987,
+          "Weyl_U1_first_frequency": -0.000217185611,
+          "fermion_HS_constant": -0.517627229665,
+          "fermion_HS_first_frequency": 1.230838e-05,
+          "level": 2
+        },
+        {
+          "HS_U1_constant": -9.05732e-06,
+          "HS_U1_first_frequency": 9.57889e-07,
+          "Weyl_U1_constant": 0.001175736607,
+          "Weyl_U1_first_frequency": 1.139803e-06,
+          "fermion_HS_constant": -0.001681518916,
+          "fermion_HS_first_frequency": 1.01898e-07,
+          "level": 3
+        },
+        {
+          "HS_U1_constant": -2.656e-09,
+          "HS_U1_first_frequency": 1.7e-10,
+          "Weyl_U1_constant": 1.201522e-06,
+          "Weyl_U1_first_frequency": 2.021e-09,
+          "fermion_HS_constant": -7.96614e-07,
+          "fermion_HS_first_frequency": 1.05e-10,
+          "level": 4
+        },
+        {
+          "HS_U1_constant": -0.0,
+          "HS_U1_first_frequency": 0.0,
+          "Weyl_U1_constant": 1.43e-10,
+          "Weyl_U1_first_frequency": 0.0,
+          "fermion_HS_constant": -5.5e-11,
+          "fermion_HS_first_frequency": 0.0,
+          "level": 5
+        },
+        {
+          "HS_U1_constant": -0.0,
+          "HS_U1_first_frequency": 0.0,
+          "Weyl_U1_constant": 0.0,
+          "Weyl_U1_first_frequency": 0.0,
+          "fermion_HS_constant": -0.0,
+          "fermion_HS_first_frequency": 0.0,
+          "level": 6
+        }
+      ],
+      "single_collective_24-pair_canonical_Y_seed": 3.993300848833,
+      "single_collective_direction_selected_by_current_calculation": false
+    },
+    "points": 24,
+    "rows": [
+      {
+        "Z_H_all_24_pairings": 0.030635253423,
+        "delta_K_B_U1": 6.808576676163,
+        "delta_K_E_U1": -0.033815083625,
+        "maximum_level": 0
+      },
+      {
+        "Z_H_all_24_pairings": 0.061987853221,
+        "delta_K_B_U1": 6.105236497478,
+        "delta_K_E_U1": -0.029956503544,
+        "maximum_level": 1
+      },
+      {
+        "Z_H_all_24_pairings": 0.062707536478,
+        "delta_K_B_U1": 6.125102851041,
+        "delta_K_E_U1": -0.030061530991,
+        "maximum_level": 2
+      },
+      {
+        "Z_H_all_24_pairings": 0.062709874464,
+        "delta_K_B_U1": 6.125407351547,
+        "delta_K_E_U1": -0.030063150129,
+        "maximum_level": 3
+      },
+      {
+        "Z_H_all_24_pairings": 0.062709875572,
+        "delta_K_B_U1": 6.125407664448,
+        "delta_K_E_U1": -0.030063151793,
+        "maximum_level": 4
+      },
+      {
+        "Z_H_all_24_pairings": 0.062709875572,
+        "delta_K_B_U1": 6.125407664485,
+        "delta_K_E_U1": -0.030063151793,
+        "maximum_level": 5
+      },
+      {
+        "Z_H_all_24_pairings": 0.062709875572,
+        "delta_K_B_U1": 6.125407664485,
+        "delta_K_E_U1": -0.030063151793,
+        "maximum_level": 6
+      }
+    ],
+    "tail_absolute_change": {
+      "Z_H_all_24_pairings": 0.0,
+      "delta_K_B_U1": 0.0,
+      "delta_K_E_U1": 0.0
+    }
+  },
+  "artifact": "BHSM_aether_hs_channel_normalization_v16_02",
+  "broken_branch_dimension_contract": {
+    "broken-neutral-channel_KKT_dimension": 410,
+    "four_neutral_HS_channel_amplitudes_per_node": 4,
+    "single_Higgs_direction_assumed_before_Hessian": false,
+    "solve_order": "solve_314_symmetric_replacement_saddle;_diagonalize_the_full_HS_Hessian;_only_if_an_eigenvalue_is_nonpositive_continue_its_eigenvector_into_the_410-dimensional_broken-branch_KKT",
+    "symmetric_replacement_KKT_dimension": 314
+  },
+  "claim_boundary": {
+    "angular_level_convergence_established": true,
+    "broken_replacement_branch_solved": false,
+    "physical_HS_channel_formula_derived": true,
+    "physical_single_Higgs_direction_selected": false,
+    "rank16_U1_matter_HS_response_evaluated": true,
+    "symmetric_replacement_saddle_solved": false
+  },
+  "classification": "BHSM_HS_CHANNEL_KINETIC_MATRIX_AND_ANGULAR_CONVERGENCE",
+  "scientific_result": "THE_24-NODE_ANGULAR_HEAT_TAIL_CONVERGES_TO_DELTA_KB_U1=6.125408,_DELTA_KE_U1=-0.0300632,_AND_Z_H(24_PAIRINGS)=0.0627099;_THE_OLD_PER-PAIR_Y_IS_NOT_A_PHYSICAL_SINGLE-HIGGS_NORMALIZATION,_WHICH_REQUIRES_DIAGONALIZING_THE_FOUR-CHANNEL_HS_HESSIAN",
+  "validation": {
+    "HS_trace_positive": true,
+    "U1_seed_too_small_for_repair": true,
+    "USB_untouched": true,
+    "angular_tail_converged": true,
+    "broken_branch_not_assumed": true,
+    "nonzero_directional_vertex_retained": true,
+    "old_per_mode_Y_not_overclaimed": true,
+    "pairing_multiplicities_complete": true
+  },
+  "validation_passed": true,
+  "version": "v16.02"
+}

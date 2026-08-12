@@ -1,0 +1,83 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "action_ownership": {
+    "K_F": "(kappa1/2)*Vol(S3_sqrt(S))*S",
+    "M5_connection_term": "-(1/4)K_F(rho)F_omega^a F_omega^a",
+    "add_connection_background_energy_again": false,
+    "background_curvature_already_in_parent_R8": true,
+    "boundary_operator": "pullback_of_the_gauge-fixed_connection_Hessian_to_M4=R_t_times_S3",
+    "classical_connection_background": "mechanical_connection_omega",
+    "color_connection": "not_the_same_as_the_diagonal_Sp1_connection",
+    "fermion_background": "zero_classically;_determinant_backreaction_quantum",
+    "independent_connection_fluctuations": "sections_of_Tstar(M5)tensor_ad(P)_with_the_parent_K_F_norm",
+    "next_non_double_counted_term": "the_gauge-fixed_and_spin-glued_M4_one-loop_determinant",
+    "parent_source": "S8_EH=(kappa1/2)integral_M8_sqrt(-G)R8",
+    "physical_weak_identification": "representation_attachment_required"
+  },
+  "active_calculation": "CONSTRUCT_THE_CLOSED_M4_GAUGE-GHOST_AND_WEYL_SPECTRAL_ZETA_FROM_THE_ACTION-NORMALIZED_DIAGONAL_QUOTIENT_AND_ANOMALY-FREE_BHSM_REPRESENTATION",
+  "artifact": "BHSM_aether_diagonal_sp1_m4_attachment_v15_50",
+  "attachment_states": {
+    "last_regular_Dirac_event": {
+      "A": 1.6663,
+      "B": 1.21895,
+      "M4_spatial_radius": 0.983812304,
+      "M4_spatial_volume": 18.7960456124,
+      "S": 4.2623947925,
+      "boundary_C": 2.53776,
+      "canonical_geometric_coupling_squared": 0.002701258,
+      "child_scale_x": -0.3126157671,
+      "connection_kinetic_coefficient": 370.1978795165,
+      "fiber_radius": 2.0645568029,
+      "fiber_volume": 173.7041722029,
+      "lambda": 0.6514074423,
+      "radius_ratio_M4_to_fiber": 0.4765246965,
+      "radius_ratio_from_x": 0.4765246965,
+      "time": 0.3095
+    },
+    "reconstructed_round_boundary": {
+      "A": 1.4306685209,
+      "B": 1.4306685209,
+      "M4_spatial_radius": 1.0116354128,
+      "M4_spatial_volume": 20.4362784726,
+      "S": 4.0936248335,
+      "canonical_geometric_coupling_squared": 0.002988341,
+      "child_scale_x": 0.0,
+      "connection_kinetic_coefficient": 334.6338282383,
+      "fiber_radius": 2.0232708255,
+      "fiber_volume": 163.4902277805,
+      "lambda": 0.5,
+      "radius_ratio_M4_to_fiber": 0.5,
+      "radius_ratio_from_x": 0.5
+    }
+  },
+  "classification": "BHSM_POST_CUT_DIAGONAL_SP1_M5_M4_ATTACHMENT",
+  "metric_completion_sample_residual": 0.0,
+  "quotient_contract": {
+    "M4": "R_t_times_S3_boundary",
+    "M5": "R_t_times_B4",
+    "S": "A^2+B^2",
+    "action_is_free_at_regular_pole": true,
+    "boundary_quotient": "(S3_u_times_S3_v)/Sp1_diag=S3",
+    "coframes": "theta_u=u^-1du,_theta_v=v^-1dv,_delta=theta_u-theta_v",
+    "connection_curvature": "F_omega=d(lambda)wedge(delta)-lambda(1-lambda)[delta,delta]/2",
+    "lambda": "A^2/S",
+    "mechanical_connection": "omega=lambda*theta_u+(1-lambda)*theta_v",
+    "metric_completion": "A^2|theta_u|^2+B^2|theta_v|^2=S|omega|^2+(A^2B^2/S)|delta|^2",
+    "new_continuous_coefficient": false,
+    "principal_action": "(u,v)mapsto(u*q,v*q),_q_in_Sp1",
+    "quotient": "(B4_times_S3)/Sp1=B4",
+    "total_spatial_cap": "C_child=B4_times_S3"
+  },
+  "validation": {
+    "USB_untouched": true,
+    "boundary_is_Lorentzian_M4": true,
+    "classical_energy_not_double_counted": true,
+    "connection_coefficient_positive": true,
+    "global_free_diagonal_action": true,
+    "metric_square_completion_exact": true,
+    "no_new_continuous_coefficient": true,
+    "x_radius_identity": true
+  },
+  "validation_passed": true,
+  "version": "v15.50"
+}

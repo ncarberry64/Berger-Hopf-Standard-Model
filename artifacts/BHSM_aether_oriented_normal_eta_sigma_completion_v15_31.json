@@ -1,0 +1,97 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_aether_oriented_normal_eta_sigma_completion_v15_31",
+  "candidate": {
+    "H_selected_by_exact_trace_matching_at_leading_order": true,
+    "classification": "BHSM_LOCAL_ACTION_COMPLETION_CANDIDATE",
+    "full_nonlinear_matching": false,
+    "gauge_covariant": true,
+    "local": true,
+    "new_continuous_coefficient": false,
+    "recovered_by_variation_of_historical_parent_action": false,
+    "regular_on_normalized_sigma_interval": true,
+    "term": "H(sigma)*a*N^A*nabla_A(a^2*X_eta)",
+    "uniqueness_among_all_local_oriented_invariants": false,
+    "uses_existing_fields_and_geometry": true,
+    "vanishes_on_unoriented_identity_branch": true
+  },
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "candidate_action_completion": true,
+    "constraint_solved_Hopf_child": false,
+    "event_sigma_domain_activation": false,
+    "full_nonlinear_q_matching": false,
+    "historical_parent_action_derivation": false,
+    "uniqueness_theorem": false
+  },
+  "classification": "BHSM_LOCAL_ACTION_COMPLETION_CANDIDATE",
+  "completion_ledger": {
+    "ACTIVE_DEPENDENCY": "PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_AND_FULL_NONLINEAR_CONSTRAINT_CONTINUATION_OF_THE_ORIENTED_NORMAL_GRADIENT_ETA_SIGMA_COMPLETION",
+    "CLOSED_THIS_RUN": [
+      "smallest_regular_local_oriented_eta_sigma_source_candidate",
+      "exact_trace_selected_H_prime_without_a_free_coefficient",
+      "paired_internal_orientation_reversal_and_unoriented_limit",
+      "explicit_sigma_mixed_variation_and_eta_backreaction_density"
+    ]
+  },
+  "integration_by_parts": {
+    "boundary_term": "div(x*H*N)",
+    "bulk_equivalent": "-x*H_prime(sigma)*N.nabla_sigma-x*H(sigma)*K_N",
+    "existing_geometric_objects_only": [
+      "eta_invariant_X_eta",
+      "material_sigma",
+      "action_owned_core_wall_normal_N",
+      "normal_expansion_or_extrinsic_curvature_K_N"
+    ],
+    "gauge_covariant": true,
+    "identity": "H*N.nabla_x=div(x*H*N)-x*H_prime*N.nabla_sigma-x*H*div(N)",
+    "new_field": false,
+    "preferred_external_frame": false
+  },
+  "mixed_second_variation_and_source": {
+    "covariant_density": "a2_U_mix=H(sigma)*a*N^A*nabla_A(a2*X_eta)",
+    "identity_limit_density_zero": true,
+    "matching_order": "O(q)_exact_with_residual_O(q^2)",
+    "maximum_force_residual_over_q": 0.009919585517,
+    "mixed_density_finite": true,
+    "q": 0.00442327056,
+    "radius_ratio_six": 1.00001,
+    "reduced_action_density": "a2_U_mix=H(sigma)*dchi(a2_X_eta)",
+    "rms_force_residual_over_q": 0.005884664768,
+    "sigma_variation": "delta_U_mix/delta_sigma=H_prime(sigma)*dchi(a2_X_eta)"
+  },
+  "no_retuning_certificate": {
+    "USB_REMOVABLE_MEDIA_TOUCHED_DURING_SCIENCE": false,
+    "empirical_inputs": [],
+    "frozen_predictions_changed": false,
+    "new_continuous_coefficients": [],
+    "new_fields": [],
+    "preferred_external_frame": false
+  },
+  "orientation_reversal": {
+    "H_is_odd_residual": 0.0,
+    "H_prime_is_even_residual": 0.0,
+    "identity_or_unoriented_limit": "q=0_implies_nabla_X_eta=0_and_U_mix=0",
+    "normal_derivative_is_odd": true,
+    "paired_map": "sigma_to_minus_sigma,_N_to_minus_N,_q_to_minus_q",
+    "product_H_times_normal_derivative_is_even": true,
+    "sign_convention_distinguished_from_branch": "reversing_only_the_symbol_for_N_changes_component_signs_but_the_physical_conjugate_solution_reverses_N_sigma_and_q_together"
+  },
+  "scientific_result": "THE_EXACT_LEADING_FORMATION_TO_MATERIAL_SOURCE_HAS_A_REGULAR_COEFFICIENT_FREE_LOCAL_ORIENTED_COMPLETION_H_SIGMA_N_GRAD_XETA_WHOSE_SIGMA_VARIATION_MATCHES_THE_COMPACT_BRANCH_AT_ORDER_Q_AND_WHOSE_UNORIENTED_LIMIT_VANISHES",
+  "validation": {
+    "H_odd": true,
+    "H_prime_even": true,
+    "USB_untouched": true,
+    "candidate_not_overclaimed_as_parent_derived": true,
+    "candidate_not_overclaimed_unique": true,
+    "covariant_by_parts_form_uses_existing_geometry": true,
+    "frozen_predictions_unchanged": true,
+    "mixed_density_finite": true,
+    "mixed_variation_matches_exact_leading_source": true,
+    "no_external_frame": true,
+    "no_new_continuous_coefficient": true,
+    "unoriented_limit_zero": true
+  },
+  "validation_passed": true,
+  "version": "v15.31"
+}

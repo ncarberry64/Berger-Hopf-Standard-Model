@@ -1,0 +1,55 @@
+{
+  "Dirichlet_monotonicity_theorem": {
+    "LR_order": "B_u[W_1]>=B_u[W_2]",
+    "current_order": "G[W_1]>=G[W_2]_on_the_positive_Gauss_quotient",
+    "gauge_order": "N[W_1]<=N[W_2]_as_boundary_quadratic_forms",
+    "hypothesis": "0<W_1<=W_2_almost_everywhere_on_the_regular_cap",
+    "physical_semantics": "event_softening_reduces_gauge_stiffness_and_strengthens_LR_binding_in_the_same_calculation",
+    "proof": "take_the_infimum_of_the_pointwise-ordered_bulk_Dirichlet_forms"
+  },
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "EVALUATE_N[W_t]_AND_B_u(t)_ON_SUCCESSIVE_CONSTRAINT-SOLVED_LORENTZIAN_CHILD_SLICES_AND_LOCATE_THE_FIRST_COMMON_t_star",
+  "artifact": "BHSM_aether_event_shell_joint_operator_v15_73",
+  "classification": "BHSM_EXACT_EVENT_SHELL_UNIFIED_PUSHFORWARD_CORRECTION",
+  "exact_joint_crossing_problem": {
+    "Yukawa_residue": "Y_u=Z_H^(-1/2)*Res_h_u[Gamma_boundary^(barQ_L,u_R,H)]_at_t_star",
+    "absolute_gauge_residue": "g_i^(-2)=partial_(p^2)<a_i,K_A,i(t_star;p)a_i>|p^2=mu_star^2",
+    "composite_mode": "B_u(t_star)h_u=h_u",
+    "first_crossing": "t_star=inf{t:F(t)=0_and_F(t-epsilon)<0}",
+    "gauge_two_point": "K_A,i(t)=K_F^(5)*w_i*N[W_t]+Pi_i[W_t],_w_i=(5/3,1,1)",
+    "same_t_star_and_same_Gamma_boundary": true,
+    "separate_normalization_allowed": false,
+    "single_crossing_function": "F(t)=lambda_max(B_u(t))-1",
+    "up_channel_operator": "B_u(t)=2*(7/5)*Chi_LR,t^(1/2)*G[W_t]*Chi_LR,t^(1/2)"
+  },
+  "scientific_result": "ONE_SPATIALLY_WEIGHTED_M5_OPERATOR_NOW_DEFINES_BOTH_THE_ABSOLUTE_GAUGE_RESIDUE_AND_THE_LR/YUKAWA_CROSSING;_EVENT_SOFTENING_MOVES_THEM_MONOTONICALLY_IN_OPPOSITE_DIRECTIONS_WITH_NO_SPLIT_INPUT",
+  "v15_72_reclassification": {
+    "claimed_actual_crossing": false,
+    "not_exact_for_actual_cap": true,
+    "reason": "the_Legendre_minimum_is_on_an_interior_cohomogeneity-one_shell_and_the_outer_annulus_remains_part_of_the_DtN_problem",
+    "retained_result": "it_proves_how_a_uniform_event_mode_would_link_the_two_residues_but_does_not_prove_the_actual_shell_crosses",
+    "status": "RECLASSIFIED_AS_A_CONTROLLED_UNIFORM-SOFTENING_MODEL",
+    "uniform_replacement": "W_t(rho)_to_Lambda(rho)*min_rho(L_eta)"
+  },
+  "validation": {
+    "USB_untouched": true,
+    "actual_crossing_not_fabricated": true,
+    "gauge_and_LR_orders_are_opposite": true,
+    "no_new_continuous_coefficient": true,
+    "one_crossing_fixes_both": true,
+    "one_weighted_parent_operator": true,
+    "separate_normalization_forbidden": true,
+    "uniform_minimum_overclaim_retracted": true
+  },
+  "validation_passed": true,
+  "version": "v15.73",
+  "weighted_parent_operator": {
+    "DtN_form": "<a,N[W_t]a>=min_(B A=a) integral_M5 W_t*abs(d_A A)^2",
+    "Green_operator": "G[W_t]=B*A_t^(-1)*B^dagger_on_the_Gauss_quotient",
+    "Lambda": "1-4*sigma^2",
+    "one_operator_only": true,
+    "parent_quadratic_form": "Q_t[A]=(K_F^(5)/2)*integral_M5 W_t*Tr_16(d_A A,d_A A)",
+    "weight_field": "W_t(rho)=Lambda(sigma_t(rho))*(1+X_eta,t(rho)^3)",
+    "weighted_operator": "A_t=d_A^dagger*W_t*d_A_on_the_gauge-fixed_domain"
+  }
+}

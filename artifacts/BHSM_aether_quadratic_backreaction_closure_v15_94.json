@@ -1,0 +1,68 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "COMPUTE_THE_COMMON_ONE-LOOP_ANISOTROPIC_SUPERDETERMINANT_VELOCITY_FLOW_FOR_GAUGE,_FERMION,_GHOST_AND_COMPOSITE_BLOCKS_FROM_THE_SAME_PROPER_Gamma_cycle",
+  "artifact": "BHSM_aether_quadratic_backreaction_closure_v15_94",
+  "block_matrix_witness": {
+    "Schur_minus_direct_matter_norm": 0.0,
+    "mixed_block_norm": 0.0
+  },
+  "claim_boundary": {
+    "Lorentz_invariant_SM_phase_derived": false,
+    "anisotropic_quantum_superdeterminant_evaluated": false,
+    "classical_quadratic_backreaction_exhausted": true,
+    "common_reset_or_Lorentz_boundary_repair_excluded": true
+  },
+  "classification": "BHSM_ZERO_BACKGROUND_QUADRATIC_BACKREACTION_CLOSURE",
+  "common_boundary_term_no_repair": {
+    "classical_action_owned_quadratic_correction_remaining": false,
+    "common_Lorentz_invariant_term": "DeltaK*(E^2-B^2)_adds_DeltaK_to_both_coefficients",
+    "current_K_electric": 2717.004292357735,
+    "current_K_magnetic": 813.476974796934,
+    "difference_K_electric_minus_K_magnetic": 1903.527317560801,
+    "difference_after_common_term": "(K_E+DeltaK)-(K_B+DeltaK)=K_E-K_B",
+    "field_rescaling_can_match_cones": false,
+    "finite_common_DeltaK_can_match_cones": false,
+    "possible_remaining_source": "the_common_quantum_superdeterminant_on_the_anisotropic_cycle,_which_is_a_direct_matter_two-point_derivative_not_classical_geometry_backreaction"
+  },
+  "constrained_Schur_theorem": {
+    "composite_two_point_changed_by_classical_geometry_elimination": false,
+    "effective_matter_Hessian": "H_eff=H_matter-H_mx*H_xx^(-1)*H_xm=H_matter",
+    "fermion_two_point_changed_by_classical_geometry_elimination": false,
+    "first_backreaction_orders": {
+      "composite": "O((Hdagger*H)^2)",
+      "fermion": "O((barPsi*Psi)^2)",
+      "gauge": "O(A^4)"
+    },
+    "gauge_two_point_changed_by_classical_geometry_elimination": false,
+    "includes_event_reset": "reset_quadratic_residue_is_zero_by_v15.93",
+    "includes_lapse_shift_constraints": true,
+    "quadratic_Hessian": "H2=[[H_xx,0],[0,H_matter]]"
+  },
+  "field_degree_selection_rule": {
+    "background": "A_star=Psi_star=H_star=0_on_the_selected_symmetric_cycle",
+    "composite_action_degree": "S_H[x,H]=S_H[x,0]+O(Hdagger*H)",
+    "composite_reason": "the_symmetric_HS_action_is_even_and_H_star=0",
+    "constraint_projection_changes_this_degree_count": false,
+    "fermion_action_degree": "S_Dirac[x,Psi]=O(barPsi*Psi)",
+    "fermion_reason": "the_Grassmann_action_is_bilinear_and_Psi_star=0",
+    "gauge_action_degree": "S_gauge[x,A]=S_gauge[x,0]+O(A^2)",
+    "gauge_reason": "gauge_invariance_and_A_star=0_make_D_A_S[x,0]=0_for_every_x",
+    "geometry_constraint_variables": "x=(metric,lapse,shift,eta,sigma,FR)_on_the_physical_quotient",
+    "mixed_quadratic_blocks": {
+      "D_x_D_A": 0.0,
+      "D_x_D_H": 0.0,
+      "D_x_D_Psi": 0.0
+    }
+  },
+  "scientific_result": "ON_A_STAR=Psi_STAR=H_STAR=0_ALL_GEOMETRY-MATTER_MIXED_HESSIAN_BLOCKS_VANISH,_SO_CLASSICAL_CONSTRAINT/BACKREACTION_ELIMINATION_CANNOT_CHANGE_THE_THREE_PRINCIPAL_SYMBOLS;_A_COMMON_LORENTZ_BOUNDARY_TERM_ALSO_PRESERVES_K_E-K_B",
+  "validation": {
+    "Schur_witness_exact": true,
+    "USB_untouched": true,
+    "all_mixed_quadratic_blocks_zero": true,
+    "classical_two_points_unchanged": true,
+    "common_term_cannot_repair_difference": true,
+    "no_classical_correction_fabricated": true
+  },
+  "validation_passed": true,
+  "version": "v15.94"
+}

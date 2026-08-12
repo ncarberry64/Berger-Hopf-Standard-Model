@@ -1,0 +1,124 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "DENSIFY_THE_CONSTRAINT-SOLVED_CYCLE_QUADRATURE_AND_DERIVE_THE_FAMILY-NONCENTRAL_EVENT_OPERATOR_OR_PROVE_FAMILY_CENTRALITY",
+  "artifact": "BHSM_aether_one_cycle_joint_residues_v15_86",
+  "claim_boundary": {
+    "controlled_PCHIP_one_cycle_residues_evaluated": true,
+    "dense_constraint_solved_time_quadrature_evaluated": false,
+    "nonzero_Yukawa_vertex_derived": true,
+    "nonzero_fermion_mass_derived": false,
+    "rigorous_monotone_envelopes_recorded": true
+  },
+  "classification": "BHSM_ONE_CYCLE_JOINT_GAUGE_YUKAWA_RESIDUES",
+  "cycle_sample_rows": [
+    {
+      "R4": 1.011635412768,
+      "Y_instantaneous": 24.344287996445,
+      "Z_H": 0.001687352603,
+      "electric_DtN": 2452.702507715,
+      "provenance": "reset",
+      "time": 0.0,
+      "transverse_DtN": 3327.187430359
+    },
+    {
+      "R4": 1.025740203932,
+      "Y_instantaneous": 23.607078646719,
+      "Z_H": 0.001794384488,
+      "electric_DtN": 2302.72391,
+      "provenance": "controlled",
+      "time": 0.08,
+      "transverse_DtN": 3091.98465
+    },
+    {
+      "R4": 1.030028403588,
+      "Y_instantaneous": 23.392885567786,
+      "Z_H": 0.001827394895,
+      "electric_DtN": 2105.54807,
+      "provenance": "controlled",
+      "time": 0.1,
+      "transverse_DtN": 2840.35368
+    },
+    {
+      "R4": 1.030560550557,
+      "Y_instantaneous": 23.36661454249,
+      "Z_H": 0.001831506275,
+      "electric_DtN": 1929.66934,
+      "provenance": "controlled",
+      "time": 0.103,
+      "transverse_DtN": 2603.85714
+    },
+    {
+      "R4": 1.031092979734,
+      "Y_instantaneous": 23.340397129782,
+      "Z_H": 0.001835623114,
+      "electric_DtN": 1919.465751557,
+      "provenance": "controlled",
+      "time": 0.10602,
+      "transverse_DtN": 2588.002371505
+    },
+    {
+      "R4": 1.031092979734,
+      "Y_instantaneous": 23.340397129782,
+      "Z_H": 0.001835623114,
+      "electric_DtN": 1919.465751557,
+      "provenance": "event_limit",
+      "time": 0.1060372,
+      "transverse_DtN": 2588.002371505
+    }
+  ],
+  "fermion_Floquet_operator": {
+    "Floquet_mass_eigenvalues": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "Floquet_mass_matrix": "0_3_in_each_LR_channel",
+    "Yukawa_vertex_matrix": "Y_cycle*I3_not_zero",
+    "flow_monodromy": "U_f=Texp[-i*integral_0^Tstar H_Dirac(t)dt]",
+    "instantaneous_mass": "M_f(t)=Y_f(t)*H_star(t)=0",
+    "mass_part_of_monodromy": "identity",
+    "massless_does_not_imply_zero_Yukawa": true,
+    "reset_bundle_gluing": "same_SM_bundle_isomorphism_class"
+  },
+  "one_cycle_residues": {
+    "Gamma_cycle": "integral_0^Tstar dt*Gamma_boundary[Phi_star(t)]+Gamma_reset",
+    "PCHIP_cycle_Z_H": 0.001757141062,
+    "PCHIP_cycle_canonical_Yukawa": 23.855948368356,
+    "PCHIP_cycle_electric_DtN": 2345.290876580072,
+    "PCHIP_cycle_transverse_DtN": 3166.083808336222,
+    "Yukawa_monotone_envelope": [
+      23.340397129782,
+      24.344287996445
+    ],
+    "Z_H_monotone_envelope": [
+      0.001687352603,
+      0.001835623114
+    ],
+    "electric_monotone_envelope": [
+      1919.465751557,
+      2452.702507715
+    ],
+    "nonzero_cycle_Yukawa": true,
+    "positive_cycle_gauge_residues": true,
+    "reason_reset_does_not_add_kinetic_residue": "D_Reconstruct=0_on_the_selected_Aether_event_component",
+    "reset_probe_derivative": 0.0,
+    "same_Gamma_cycle": true,
+    "transverse_monotone_envelope": [
+      2588.002371505,
+      3327.187430359
+    ]
+  },
+  "scientific_result": "THE_SAME_Gamma_cycle_HAS_POSITIVE_ABSOLUTE_GAUGE_RESIDUES_AND_A_NONZERO_CANONICAL_YUKAWA_VERTEX;_THE_ZERO RESET_DERIVATIVE_ADDS_NO_SECOND_NORMALIZATION_AND_THE_SYMMETRIC_FLOQUET_MASS_REMAINS_ZERO",
+  "validation": {
+    "Floquet_mass_zero_but_Yukawa_nonzero": true,
+    "USB_untouched": true,
+    "cycle_Yukawa_nonzero": true,
+    "cycle_endpoints_present": true,
+    "cycle_gauge_positive": true,
+    "one_cycle_functional": true,
+    "reset_derivative_zero": true,
+    "sampled_DtN_monotone": true
+  },
+  "validation_passed": true,
+  "version": "v15.86"
+}

@@ -1,0 +1,152 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "PROVE_THE_RECONSTRUCTION_SELECTOR_AND_ZERO_RESET_DERIVATIVE_ON_THE_FULL_FUNCTION_SPACE_THEN_ATTACH_THE_MASSIVE_INTERACTING_SM_OPERATOR_TO_THE_HYBRID_CYCLE",
+  "actualization_invariants": {
+    "FR_parity": -1,
+    "child_boundary_identity": "Sigma_c_minus_to_Sigma_c_plus",
+    "global_event_degree": 1,
+    "incidence": [
+      "C_child_has_boundary_Sigma_c",
+      "C_parent_has_boundary_Sigma_p"
+    ],
+    "not_transported": [
+      "metric",
+      "proper_distance",
+      "proper_time",
+      "velocity",
+      "curvature",
+      "local_energy_density",
+      "canonical_metric_momentum"
+    ],
+    "orientation_branch": "child_x_negative",
+    "parent_boundary_identity": "Sigma_p_minus_to_Sigma_p_plus",
+    "response_endpoint_order": [
+      "sigma=-1/2",
+      "sigma=+1/2"
+    ]
+  },
+  "artifact": "BHSM_aether_hybrid_actualization_persistence_v15_52",
+  "claim_boundary": {
+    "finite_chart_hybrid_persistence_derived": true,
+    "full_standard_model_mass_and_interaction_backreaction_derived": false,
+    "global_infinite_dimensional_reconstruction_uniqueness_derived": false,
+    "hybrid_event_relative_periodic_orbit_derived": true,
+    "smooth_relative_periodic_orbit_derived": false
+  },
+  "classification": "BHSM_HYBRID_ACTUALIZATION_PERSISTENCE",
+  "hybrid_cycle": {
+    "event_functor": "I_star=Event(z_fire)",
+    "event_limit": "z_fire=lim_t_up_to_T_star Phi_t(z_star)",
+    "event_surface": "Sigma_Legendre={min_chi(1+X_eta^3)=0}",
+    "first_event_time_controlled": 0.103,
+    "flow": "z(t)=Phi_t(z_star)_on_the_attached_Euler-Dirac_constraint_surface",
+    "free_conformal_cycle_has_turning_point": false,
+    "free_conformal_cycle_reaches_event": true,
+    "hybrid_fixed_point": "P(z_star)=z_star",
+    "hybrid_persistence_criterion": "fixed_discrete_invariant_tuple,_positive_Legendre_open_segments,_single-valued_constraint_reconstruction,_bounded_event_interval",
+    "reset": "z_star=Reconstruct(I_star)",
+    "return_map": "P=Reconstruct o Event o Phi_Tstar",
+    "smooth_relative_periodicity_required": false,
+    "start": "z_star=Reconstruct(I_star)"
+  },
+  "hybrid_monodromy": {
+    "FR_projective_multiplier": 1.0,
+    "FR_ray_transport": "the_odd_FR_ground_ray_is_carried_by_parity_and_returns_projectively_to_itself",
+    "Floquet_multipliers": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "continuous_geometric_cycle_asymptotically_stable": true,
+    "discrete_degree_orientation_parity_are_not_linear_tangent_modes": true,
+    "formula": "DP=DR*DE_event*D_Phi_Tstar=0",
+    "monodromy_rank": 0,
+    "physical_tangent_dimension": 12,
+    "reset_rank": 0,
+    "spectral_radius": 0.0
+  },
+  "reconstruction_selector": {
+    "constraint_residual": 0.0,
+    "coordinate_gauge": "f=chi",
+    "coordinates": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "independent_grid_constraint_residual": 0.000158142,
+    "input": {
+      "FR_parity": -1,
+      "child_boundary_identity": "Sigma_c_minus_to_Sigma_c_plus",
+      "global_event_degree": 1,
+      "incidence": [
+        "C_child_has_boundary_Sigma_c",
+        "C_parent_has_boundary_Sigma_p"
+      ],
+      "not_transported": [
+        "metric",
+        "proper_distance",
+        "proper_time",
+        "velocity",
+        "curvature",
+        "local_energy_density",
+        "canonical_metric_momentum"
+      ],
+      "orientation_branch": "child_x_negative",
+      "parent_boundary_identity": "Sigma_p_minus_to_Sigma_p_plus",
+      "response_endpoint_order": [
+        "sigma=-1/2",
+        "sigma=+1/2"
+      ]
+    },
+    "multipliers": [
+      0.0927292289,
+      0.4855275451,
+      0.0662148756,
+      0.0115148687
+    ],
+    "selection_rule": "minimum_normalized_distance_constraint_projection_followed_by_the_unique_transported_child_x_negative_time_orientation",
+    "single_output_for_fixed_invariant_tuple_in_finite_chart": true,
+    "velocities": [
+      0.1437967077,
+      0.0657069982,
+      0.0666927845,
+      1.6942938866,
+      0.8568064206,
+      -1.5122369664,
+      -1.6724089025,
+      0.0,
+      0.0
+    ]
+  },
+  "validation": {
+    "FR_ray_persistent": true,
+    "USB_untouched": true,
+    "continuous_reset_derivative_zero": true,
+    "degree_one_preserved": true,
+    "event_data_metric_free": true,
+    "event_return_is_fixed": true,
+    "hybrid_spectral_radius_below_one": true,
+    "negative_child_orientation_preserved": true,
+    "no_new_continuous_coefficient": true,
+    "odd_FR_parity_preserved": true,
+    "reconstruction_constraints_close": true,
+    "reconstruction_single_valued_in_chart": true
+  },
+  "validation_passed": true,
+  "version": "v15.52"
+}

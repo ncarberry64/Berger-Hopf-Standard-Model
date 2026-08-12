@@ -1,0 +1,89 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "DERIVE_THE_SINGLE_COMMON_DYNAMIC_BOUNDARY/BACKREACTION_BLOCK_OF_Gamma_cycle_AND_SOLVE_ITS_COUPLED_PRINCIPAL-SYMBOL_MATCHING_WITH_GAUGE,_FERMION,_AND_COMPOSITE_SECTORS_TOGETHER",
+  "artifact": "BHSM_aether_reset_hessian_matter_cones_v15_93",
+  "claim_boundary": {
+    "Lorentz_invariant_SM_phase_derived": false,
+    "common_metric_gauge_fermion_cone_derived": false,
+    "independent_sector_normalization_inserted": false,
+    "proper_fermion_cone_evaluated": true,
+    "reset_second_variation_evaluated": true
+  },
+  "classification": "BHSM_RESET_HESSIAN_AND_MATTER_CONE_THEOREM",
+  "proper_fermion_cone": {
+    "fermion_cone_speed_relative_to_boundary_metric": 0.657256737598,
+    "proper_cycle_spatial_residue": 0.657256737598,
+    "proper_temporal_residue": 1.0,
+    "rows": [
+      {
+        "provenance": "reset",
+        "spatial_residue": 0.843022346987,
+        "time": 0.0
+      },
+      {
+        "provenance": "controlled",
+        "spatial_residue": 0.59872205317,
+        "time": 0.08
+      },
+      {
+        "provenance": "controlled",
+        "spatial_residue": 0.550713921311,
+        "time": 0.1
+      },
+      {
+        "provenance": "controlled",
+        "spatial_residue": 0.559258978724,
+        "time": 0.103
+      },
+      {
+        "provenance": "controlled",
+        "spatial_residue": 0.520959838441,
+        "time": 0.10602
+      },
+      {
+        "provenance": "event_limit",
+        "spatial_residue": 0.520959838441,
+        "time": 0.1060372
+      }
+    ],
+    "slice_spatial_ratio": "integral_probability*(N/N_b)*(R_b/r)",
+    "wall_mode_normalization": "integral_dchi*C*J*abs(u0)^2=1"
+  },
+  "reset_second_variation": {
+    "Gamma_reset_composite_quadratic_residue": 0.0,
+    "Gamma_reset_gauge_quadratic_residue": 0.0,
+    "first_Frechet_derivative": "D R_hat_s=0",
+    "gauge_tadpole_at_A_zero": 0.0,
+    "pullback_Hessian_chain_rule": "D2(F_o_R)=(DR)^star*D2F*(DR)+DF_dot_D2R",
+    "pullback_Hessian_on_selected_component": 0.0,
+    "reason": "constant_reconstruction_has_no_continuous_first_or_second_variation;_discrete_degree_orientation_and_FR_parity_are_not_continuous_gauge_probe_directions",
+    "reset_on_selected_event_component": "R_hat_s(z)=z_star_constant",
+    "reset_repairs_gauge_cone_mismatch": false,
+    "second_Frechet_derivative": "D2 R_hat_s=0"
+  },
+  "scientific_result": "THE_CONSTANT_EVENT_RECONSTRUCTION_HAS_ZERO_GAUGE_AND_COMPOSITE_HESSIAN_AND_CANNOT_REPAIR_THE_CONE;_THE_SAME_PROPER_CYCLE_GIVES_c_metric=1,_c_fermion=0.657256738_AND_c_gauge=0.547176542,_SO_THE_CURRENT_SYMMETRIC_PHASE_IS_DEFINITELY_LORENTZ-BREAKING",
+  "three_cone_comparison": {
+    "common_emergent_matter_metric_exists": false,
+    "coordinate_time_rescaling_can_equalize_all_cones": false,
+    "current_action_phase": "LORENTZ-BREAKING_THREE-CONE_SYMMETRIC_PHASE",
+    "fermion_cone_speed": 0.657256737598,
+    "fermion_equals_gauge_cone": false,
+    "fermion_equals_metric_cone": false,
+    "fermion_to_gauge_speed_ratio": 1.201178573272,
+    "gauge_cone_speed": 0.547176541626,
+    "gauge_equals_metric_cone": false,
+    "independent_sector_rescaling_allowed": false,
+    "metric_cone_speed": 1.0,
+    "needed_action_owned_resolution": "a_single_common_dynamic_boundary_or_backreaction_block_in_Gamma_cycle_that_changes_the_relative_principal_symbols"
+  },
+  "validation": {
+    "USB_untouched": true,
+    "fermion_residues_positive": true,
+    "no_split_rescaling": true,
+    "reset_Hessian_zero": true,
+    "reset_not_used_as_hidden_gauge_term": true,
+    "three_cones_distinct": true
+  },
+  "validation_passed": true,
+  "version": "v15.93"
+}

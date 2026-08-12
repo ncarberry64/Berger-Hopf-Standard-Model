@@ -1,0 +1,91 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "LR_Fierz_projection": {
+    "channels": [
+      "up",
+      "down",
+      "charged_lepton",
+      "neutrino"
+    ],
+    "elementary_Higgs_required": false,
+    "family_action": "I3_before_family-noncentral_event_coefficients",
+    "four_dimensional_identity": "(barPsi*gamma_mu*gamma5*Psi)^2_contains_+4*(barPsi_L*Psi_R)*(barPsi_R*Psi_L)",
+    "gauge_invariance": "(barL*R)*(barR*L)_is_a_gauge_singlet_although_barL*R_is_a_doublet",
+    "nonzero_LR_projection": true,
+    "sign": "attractive_in_the_scalar_LR_Hubbard-Stratonovich_channel"
+  },
+  "active_calculation": "COMPUTE_THE_EXACT_CLIFFORD_COEFFICIENT_AND_NORMALIZED_u0_QUARTIC_OVERLAP_ON_THE_ACTUAL_EVENT_SHELL,_SOLVE_epsilon_star,f,_AND_INSERT_THE_COMPOSITE_STRESS_IN_THE_CONSTRAINED_CHILD_FLOW",
+  "artifact": "BHSM_aether_einstein_cartan_joint_pushforward_v15_75",
+  "claim_boundary": {
+    "backreacted_broken_child_solved": false,
+    "critical_epsilon_numerically_solved": false,
+    "family_hierarchy_or_mixing_derived": false,
+    "joint_crossing_existence_derived": true
+  },
+  "classification": "BHSM_ACTION_COMPLETION_DERIVED_FROM_FOUNDATIONAL_DIRAC_AND_EH_COMPATIBILITY",
+  "contorsion_Schur_complement": {
+    "coefficient_inserted_by_hand": false,
+    "decomposition": "omega=omega_LeviCivita+C",
+    "induced_current_action": "Gamma_EC=-1/2<J_S,M_C[W]^(-1)J_S>",
+    "quadratic_form": "S_C=(1/2)<C,M_C[W]C>+<C,J_S>,_M_C[W]=K_G5*W*M_Clifford",
+    "same_parent_Hessian_as_gauge_pushforward": true,
+    "spin_current": "J_S^ABC=(1/4)*barPsi*Gamma^[A*Gamma^B*Gamma^C]*Psi",
+    "stationary_contorsion": "C_star=-M_C[W]^(-1)J_S"
+  },
+  "first_order_parent_action": {
+    "K_F5": "K_G5*RF^2/2",
+    "K_G5": "kappa1*Vol(S3_RF)",
+    "action": "S5=(K_G5/2)*integral W*e*e_A^M*e_B^N*R_MN^AB(omega)+(K_F5/4)*integral W*Tr_16(F_A^2)+S_Dirac[e,omega,A,Psi]",
+    "coefficient_relation": "K_F5/K_G5=RF^2/2",
+    "event_weight": "W=(1-4sigma^2)*(1+X_eta^3)",
+    "fields": "coframe_e,_spin_connection_omega,_rank16_gauge_connection_A,_Psi",
+    "first_order_spin_connection_completion_historically_explicit": false,
+    "historically_retained_metric_form": true,
+    "new_continuous_coefficient": false,
+    "provenance": "BHSM_ACTION_COMPLETION_DERIVED_FROM_FOUNDATIONAL_DIRAC_AND_EH_COMPATIBILITY"
+  },
+  "forced_joint_crossing": {
+    "Yukawa_residue_at_same_crossing": "Y_f=Z_H,f^(-1/2)*Res_hf(Gamma_boundary^(3))_at_epsilon_star,f",
+    "continuity": "norm-resolvent_continuity_for_epsilon>0",
+    "critical_value": "epsilon_star,f=sup{epsilon>0:lambda_max(B_f(epsilon))=1_on_the_first_inward_crossing}",
+    "crossing_exists": true,
+    "event_limit": "lambda_max(B_f)->+infinity",
+    "gap_operator": "B_f(epsilon)=Chi_LR^(1/2)*[G_gauge(epsilon)+G_EC(epsilon)]*Chi_LR^(1/2)",
+    "gauge_residue_at_same_crossing": "g_i^(-2)=partial_p2<K_A,i[W_epsilon_star,f]>",
+    "independent_Yukawa_coupling": false,
+    "independent_gauge_normalization": false,
+    "regular_side": "lambda_max(B_f)>0_and_finite"
+  },
+  "quadratic_shell_divergence": {
+    "EC_kernel_limit": "+infinity_as_epsilon_down_to_zero",
+    "asymptotic_integral": "integral_ds*J*abs(u0)^4/W_epsilon=pi*J_e*abs(u0(s_e))^4/(Lambda_e*sqrt(c_e*epsilon))+O(1)",
+    "gauge_DtN_limit": "finite_because_the_outer_annulus_retains_positive_angular_Dirichlet_energy",
+    "local_shell": "W_epsilon(s)=Lambda_e*[epsilon+c_e*(s-s_e)^2+o((s-s_e)^2)],_Lambda_e>0,_c_e>0",
+    "sampled_zero_shell_gauge_stiffness": {
+      "electric": 1524.54,
+      "transverse": 2043.43
+    },
+    "zero_mode_condition": "abs(u0(s_e))>0_for_an_interior_degree-one_eta_shell"
+  },
+  "scientific_result": "THE_COEFFICIENT-FREE_FIRST-ORDER_EINSTEIN-DIRAC_COMPLETION_ADDS_AN_ACTION-OWNED_LR_KERNEL_TO_THE_SAME_M5_PUSHFORWARD;_ITS_1/W_WALL_PROJECTION_DIVERGES_AT_THE_INTERIOR_EVENT_SHELL_AND_FORCES_A_NONZERO_COMPOSITE_GAP_AT_A_FINITE_SLICE_WHERE_THE_SAME_WEIGHTED_OPERATOR_FIXES_THE_ABSOLUTE_GAUGE_RESIDUE",
+  "validation": {
+    "LR_projection_nonzero": true,
+    "USB_untouched": true,
+    "contorsion_is_same-pushforward_Schur_block": true,
+    "elementary_Higgs_not_reintroduced": true,
+    "event_shell_kernel_diverges": true,
+    "first_order_completion_has_no_new_coefficient": true,
+    "joint_crossing_exists": true,
+    "no_split_normalization": true,
+    "wall_kernel_uses_same_weight": true
+  },
+  "validation_passed": true,
+  "version": "v15.75",
+  "wall_projected_kernel": {
+    "effective_kernel": "G_EC(t)=c_EC/K_G5*integral_ds*J*abs(u0)^4/W_t(s),_c_EC>0_fixed_by_the_Clifford/Fierz_convention",
+    "new_four_fermion_parameter": false,
+    "same_event_weight_as_gauge": true,
+    "total_up_kernel": "G_u,total=2*(7/5)*G_gauge+G_EC",
+    "zero_mode": "u0=N*J^(-1/2)*sin(f_eta),_integral J*abs(u0)^2=1"
+  }
+}
