@@ -1,0 +1,63 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "DERIVE_THE_CONSTRAINT-COMPATIBLE_CONTINUATION_OR_BOUNDARY_CONDITION_AT_THE_CONVERGED_ETA-LEGENDRE_EXIT_BEFORE_RETESTING_THE_EULER-DIRAC_SOFT_MODE",
+  "artifact": "BHSM_aether_n3_terminal_joint_pushforward_v16_09",
+  "classification": "BHSM_N3_CONTINUUM_DOMAIN_EXIT_AUDIT",
+  "dependency_advanced": "FULL-ORBIT_SOBOLEV_CONVERGENCE_EXPOSED_THE_FIRST_PHYSICAL_DOMAIN_BOUNDARY_AND_INVALIDATED_THE_ASSUMED_N3_SOFT-EVENT_LAYER",
+  "domain_exit_convergence": {
+    "Euler_Dirac_soft_event_before_domain_exit": false,
+    "H6_product_state_distance_h0005_to_h00025": 124.372731446774,
+    "H6_product_state_distance_h001_to_h0005": 10028.70381867808,
+    "fine_event": {
+      "chi_at_minimum": 0.308471071756,
+      "maximum_constraint_residual": 1.82e-10,
+      "minimum_eta_Legendre": 3.3185e-08,
+      "time": 0.044107140541,
+      "time_bracket_width": 9.54e-10
+    },
+    "fine_event_state_H6_product_norm": 273563.29585552466,
+    "fine_relative_product_state_change": 0.000454633815,
+    "rows": [
+      {
+        "exit_time": 0.04260585022,
+        "successive_time_change": null,
+        "time_step": 0.002
+      },
+      {
+        "exit_time": 0.043963565826,
+        "successive_time_change": 0.001357715607,
+        "time_step": 0.001
+      },
+      {
+        "exit_time": 0.044109703064,
+        "successive_time_change": 0.000146137238,
+        "time_step": 0.0005
+      },
+      {
+        "exit_time": 0.044107140541,
+        "successive_time_change": 2.562523e-06,
+        "time_step": 0.00025
+      }
+    ]
+  },
+  "rejected_post_domain_terminal_layer": {
+    "common_event_layer_admissible": false,
+    "failure": "44_NODE_ORBIT_QUADRATURE_MISSED_A_NEGATIVE_POLE_LAYER_IN_THE_CONTINUUM_ETA_LEGENDRE_PROFILE",
+    "gauge_DtN_and_LR_crossing_accepted": false,
+    "independent_gauge_or_Yukawa_normalization": false,
+    "minimum_eta_Legendre": -14040.044212472221,
+    "same_physical_event_layer_required": true,
+    "t_star_N3": 0.090543472049
+  },
+  "scientific_result": "THE_INDEPENDENT_N3_CONSTRAINT-SOLVED_ORBIT_CONVERGES_TO_A_CONTINUUM_ETA-LEGENDRE_DOMAIN_EXIT_BEFORE_ANY_EULER-DIRAC_SOFT_EVENT;_THE_POST-EXIT_GAUGE_DtN_AND_LR_CROSSING_ARE_THEREFORE_REJECTED",
+  "validation": {
+    "constraints_controlled_at_exit": true,
+    "fine_full_state_relative_Sobolev_change_below_5e-4": true,
+    "fine_time_change_below_3e-6": true,
+    "four_independent_time_steps": true,
+    "invalid_terminal_pushforward_rejected": true,
+    "soft_event_absent_on_admissible_orbit": true
+  },
+  "validation_passed": true,
+  "version": "v16.09"
+}

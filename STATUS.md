@@ -3145,3 +3145,170 @@ self-adjoint background, and the complete Hessian remain open. Source-free
 ADM coordinate shift is excluded as the physical shear source. BHSM remains
 incomplete and USB synchronization remains ineligible.
 <!-- /BHSM_V14_84_CAP_INERTIA_OPERATOR -->
+<!-- BHSM_V16_21_TO_V16_30_CURRENT_FRONTIER -->
+## v16.21-v16.30 current microscopic frontier
+
+The exact v16.20 N=3 projected KKT residual is overwhelmingly inside the
+refreshed symmetric Jacobian range: its outside-range fraction falls from
+`1.03034e-4` at relative cutoff `1e-8` to `2.20074e-6` at `1e-14`. Direct
+finite differences verify that the endpoint-scale and period equations are
+variations of the same anchored discrete action. The prior failure is thus
+reclassified as severe numerical conditioning, not a missing endpoint law.
+
+The full Norman-works/BHSM hindsight audit finds no action-owned boundary,
+mass, or Yukawa normalization that can be imported. Norman's causal ordering
+survives as formation -> encapsulation -> reconstruction -> return guidance;
+its separate scalar/topographic fields and phenomenological coefficients do
+not enter the replacement action. Gauge normalization and the nonzero
+rank-16 mass-generating sector remain outputs of one shared M5 -> M4
+localization/pushforward.
+
+Rank-aware fresh-Hessian continuation has reduced the complete joint N=3 KKT
+residual
+
+`38.061644747011 -> 28.127172454276 -> 21.947135009643 -> 13.904169345267 -> 9.375559567031 -> 8.756109455622`.
+
+The latest accepted v16.32 state has soft-event residual `0.049515802141` and
+eta minimum `1.246389506846`. Simultaneous stationarity is not yet closed, so
+the common event pushforward, independent N=4 convergence, broken branch,
+return, mass, flavor and Unique Actualization gates remain open.
+
+`FULL_BHSM_COMPLETE = FALSE`. No GitHub or USB synchronization is authorized.
+<!-- /BHSM_V16_21_TO_V16_30_CURRENT_FRONTIER -->
+<!-- BHSM_V16_33_TO_V16_45_CURRENT_FRONTIER -->
+## v16.33-v16.46 physical-inverse and filtered-KKT frontier
+
+Fresh exact-Hessian continuation of the unchanged anchored N=3 event KKT has
+reduced the complete projected nonlinear residual further:
+
+`8.756109455622 -> 8.492887411566 -> 7.542317783457 -> 7.248359787313 -> 6.768163464224 -> 6.604262580172 -> 6.514658743303 -> 6.500896923864 -> 6.482403137748 -> 6.457090170150 -> 6.452526898856`.
+
+Hard multirank truncation and continuous spectral damping were compared on the
+same freshly rebuilt physical Hessian. Continuous damping won at v16.42 and
+remained residual-reducing through the targeted v16.46 refresh. The latest
+state preserves all 376 hex-precision unknowns, `eta_min=1.257955928423`, and
+has soft-event residual `0.018374397122`.
+
+The v16.36 physical inverse-closure matrix now treats known particle physics
+only as structural requirements. It quarantines all measured numerical values,
+makes the electron the first complete returned child, forbids a final
+family-central charged mass operator, requires nonzero CKM commutator and CP
+invariants, and collapses absolute gauge and fermion mass normalization to one
+common M5 -> M4 localization/pushforward.
+
+The v16.45 residual-role audit shows that the latest defect remains parent
+geometry stationarity, dominated by `v_0` Hopf anisotropy/gauge-breaking
+geometry (`5.002755095280`), `w_0` fiber-localization geometry
+(`2.920541937115`), and common `log_scale` geometry (`2.025397358000`). Thus
+the soft crossing alone is not promoted: the simultaneous N=3 saddle remains
+active and the common event pushforward remains downstream.
+
+`FULL_BHSM_COMPLETE = FALSE`. No GitHub, publication, PR, Zenodo, or USB
+synchronization has been performed.
+<!-- /BHSM_V16_33_TO_V16_45_CURRENT_FRONTIER -->
+<!-- BHSM_V16_47_TO_V16_62_CURRENT_FRONTIER -->
+## v16.47-v16.69 soft-chart correction and fresh SBP frontier
+
+Strong damping first continued the old collocation branch to
+`6.442521870987`. Exact event-multiplier elimination then exposed a derivative
+inconsistency: the old scalar event Hessian contributed a merit gradient of
+`4.86e7`, while measured projected derivatives had the opposite sign. The
+terminal soft eigenvalue remained isolated, so v16.53 replaced the oversized
+scalar stencil by the Jacobian of the normalized event covector on its stable
+local spectral chart. Repeated corrected steps reached `6.402764176590`.
+
+At that state the Euler--Dirac soft vector has unit norm, eigenpair residual
+`2.6e-14`, lower gap `0.009950403300`, and upper gap `0.008632454820`.
+Nevertheless 96.44% of the squared norm of the sixteen largest coordinate
+residuals lies in the first/last collocation layers. The retained derivative
+and trapezoid quadrature have SBP defect `1.322875655532`; the minimal
+trapezoid-SBP derivative has exactly zero defect and changes only endpoint rows
+0 and 23.
+
+This new calculation activates a fresh canonical-reset N=3 SBP orbit. No old
+event state is transplanted. Its chain-rule covector matches the SBP action to
+relative error `1.5226e-6`. Fresh joint descent has progressed
+
+`48.253144201259 -> 43.174769353899 -> 41.719520750542 -> 40.862135076362 -> 39.777540884050 -> 39.402296278684 -> 35.031833552213 -> 33.536084439259 -> 32.849238639466 -> 32.483095487141`.
+
+The v16.64 total-merit ray exposed no common event descent. v16.65 therefore
+derived the closest common-descent cone from the gradients of the complete
+merit and the absolute actual event, without changing either normalization.
+The construction persists through v16.68. The latest residual is
+`32.483095487141`, event residual `0.351154201685`, and
+`eta_min=0.074945802608`. v16.69 identifies the dominant remaining block as
+boundary/common-pushforward `log_scale` stationarity (`31.683912119440`), not
+a missing independent normalization. This is not saddle closure.
+The common gauge/rank-16 LR pushforward remains ineligible until all SBP KKT
+blocks and the event close together.
+
+`FULL_BHSM_COMPLETE = FALSE`. No external synchronization was performed.
+<!-- /BHSM_V16_47_TO_V16_62_CURRENT_FRONTIER -->
+<!-- BHSM_V16_70_TO_V16_79_CURRENT_FRONTIER -->
+## v16.70-v16.79 conditioned SBP and scale-ownership frontier
+
+Damped Gauss--Newton common-cone steps reduced the fresh, exact-SBP N=3
+residual
+
+`32.483095487141 -> 24.960382194479 -> 15.380754137909 -> 14.948044514439 -> 14.803880474836 -> 14.379752225156 -> 14.002288116708 -> 12.853643589435`.
+
+Every promoted step also reduced the magnitude of the identical actual
+Euler--Dirac event; it is now `0.300983851426`, with
+`eta_min=0.822309989842`. v16.76 replaces the Euclidean event-half-space
+correction by the damped Gauss--Newton normal-metric projection on the 375
+physical base variables. Independent fresh-Jacobian refreshes validate the
+mechanism through v16.79.
+
+The v16.78 physical ownership audit shows that reconstruction already fixes
+the canonical reset scale, `q_log_scale(0)=0`, and that this coordinate is not
+an unknown. The 23 free scale coordinates are the open-orbit breathing
+history and have exactly 23 stationarity rows. At v16.77 their norm is
+`13.209761147662`, with 89.87% of its squared value in the final four free
+nodes. Thus the earlier `14.016355587104` obstruction is not proved to be an
+extra particle-scale degree of freedom and no row is removed.
+
+The still-missing downstream relation is
+`C_rec=q_log_scale(return)-log(R_rec[I_event,I_environment]/R_star)=0`, owned
+by the nonlinear broken reconstruction/return BVP. It is ineligible until
+that action-derived solution map exists. The reconstructed child channel is
+restricted by transported degree, orientation, FR parity, incidence,
+boundary identities, SM representation labels, C3 family projectors,
+hypercharge and bundle isomorphism class; arbitrary cross-sector selection is
+forbidden without adding an empirical rule.
+
+Simultaneous N=3 closure, common event pushforward, N=4+ convergence, broken
+return, mass/flavor, absolute spectrum and Unique Actualization remain open.
+`FULL_BHSM_COMPLETE = FALSE`. No external synchronization was performed.
+<!-- /BHSM_V16_70_TO_V16_79_CURRENT_FRONTIER -->
+<!-- BHSM_V16_80_TO_V16_92_CURRENT_FRONTIER -->
+## v16.80-v16.92 expanded-ray and Pareto-balanced N=3 frontier
+
+Fresh normal-metric steps, expanded nonlinear rays and a dense local trust
+grid reduce the unchanged exact-SBP N=3 residual
+
+`12.853643589435 -> 11.635355049010 -> 10.539813695735 -> 7.763437876353 -> 5.821724926846 -> 3.816380155748 -> 2.897637137967`.
+
+At that point event-row weights are introduced only in the Gauss--Newton
+preconditioner. Every trial is still evaluated and accepted with the original
+376-component physical residual and identical ordered Euler--Dirac event.
+Event-balanced and Pareto-selected fresh-Jacobian steps continue to
+`2.486624819288`, with event residual `-0.211419776681` and
+`eta_min=0.840494687332`.
+
+The v16.92 audit resolves the scale-ownership question empirically. The
+`log_scale` stationarity norm falls from `14.016355587104` at v16.75 to
+`0.465980389110` without deleting its variables or equations. The remaining
+owners are period stationarity `1.853375463700`, `w_0=1.148018415647`, and
+`v_0=1.074632770789`. The terminal soft eigenpair residual is `1.00e-14` and
+the branch remains isolated. The next same-action correction targets these
+newly measured owners while retaining simultaneous event closure.
+
+v16.93 tests diagonal owner equilibration and stronger event emphasis. The
+identity metric wins and advances the canonical state to residual
+`2.437270312411`, event `-0.208275968279`, and `eta_min=0.840365825398`;
+the owner weights are not promoted.
+
+`FULL_BHSM_COMPLETE = FALSE`. The common event pushforward, independent N=4+
+convergence and downstream broken-return/mass/flavor chain remain open. No
+external synchronization was performed.
+<!-- /BHSM_V16_80_TO_V16_92_CURRENT_FRONTIER -->

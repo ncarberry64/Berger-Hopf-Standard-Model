@@ -1,0 +1,2 @@
+from bhsm.interface.aether_n3_fresh_sbp_joint_filter_v16_63 import v16_62_selected_raw_vector
+def test_v16_62_selected_state_has_complete_dimension():assert v16_62_selected_raw_vector().shape==(376,)

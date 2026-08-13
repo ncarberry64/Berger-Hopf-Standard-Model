@@ -104,7 +104,7 @@ def project_nested_constraints_sobolev(
         nv = size["coordinates"]
         return float(
             correction[:nv] @ correction[:nv]
-            + 1.0e-8 * correction[nv:] @ correction[nv:]
+            + correction[nv:] @ correction[nv:]
         )
 
     # Orthogonal Newton projection in the scaled Hilbert coordinates.  At
@@ -294,8 +294,8 @@ def completion_payload() -> dict[str, Any]:
         "FULL_BHSM_COMPLETE": FULL_BHSM_COMPLETE,
         "regularity": "s=6>11/2",
         "selection_rule": (
-            "MINIMIZE_THE_H^(s-1)_RATE_CORRECTION_PLUS_A_SMALL_H^s_"
-            "MULTIPLIER_TIE-BREAKER_SUBJECT_TO_ALL_2N+1_DIRAC_CONSTRAINTS"
+            "MINIMIZE_THE_H^(s-1)_RATE_CORRECTION_PLUS_THE_H^s_"
+            "MULTIPLIER_CORRECTION_SUBJECT_TO_ALL_2N+1_DIRAC_CONSTRAINTS"
         ),
         "sobolev_constraint_rows": rows,
         "static_event_embedding_Cauchy_test": {

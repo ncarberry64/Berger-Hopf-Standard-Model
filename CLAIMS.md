@@ -2533,3 +2533,125 @@ that ADM coordinate shift is the shear source, that the complete ell=2
 Hessian is known, or that `chi_2`, Landau coefficients, CKM, PMNS, particle
 observables, Mark III, or full BHSM completion are unconditional outputs.
 <!-- /BHSM_V14_84_CAP_INERTIA_OPERATOR -->
+<!-- BHSM_V16_21_TO_V16_30_CLAIM_BOUNDARY -->
+## v16.21-v16.30 claim boundary
+
+BHSM may claim that the v16.20 endpoint/period residual lies overwhelmingly
+inside the numerical range of the refreshed anchored KKT Jacobian; that the
+audited endpoint and period rows are true variations of the same discrete
+action; that a rank-aware, repeatedly refreshed continuation reduces the full
+N=3 residual from `38.061644747011` to `8.756109455622`; and that the soft-event
+residual at the latest accepted state is `0.049515802141` with a nonsingular
+eta domain. It may not claim a solved N=3 saddle, Sobolev convergence, a
+persistent particle, a broken branch, physical mass matrices, gauge/mass
+normalization, CKM, PMNS, CP, neutrino predictions, Unique Actualization, or
+full BHSM completion.
+<!-- /BHSM_V16_21_TO_V16_30_CLAIM_BOUNDARY -->
+<!-- BHSM_V16_33_TO_V16_45_CLAIM_BOUNDARY -->
+## v16.33-v16.46 claim boundary
+
+BHSM may claim a validated machine-readable structural inverse requirement
+matrix with a two-tier data firewall; an electron-first returned-particle
+certificate expressed as operator rank, charge, spin/statistics, mass and
+return invariants; and repeated exact-Hessian descent of the same N=3 physical
+KKT residual from `8.756109455622` to `6.452526898856`. It may also claim that
+the latest residual is physically localized mainly in the existing `v_0`,
+`w_0`, and `log_scale` parent-geometry coordinates.
+
+BHSM may not claim that the N=3 saddle is solved merely because its scaled
+soft-event residual is `0.018374397122`. It may not claim the common gauge/LR
+pushforward, N=4+ Sobolev convergence, broken branch, persistent returned
+electron mass, family mass matrices, CKM, PMNS, CP, neutrino splittings,
+absolute gauge/mass spectrum, Unique Actualization, or full completion.
+Measured numerical particle data remain forbidden as construction or branch
+selection inputs.
+<!-- /BHSM_V16_33_TO_V16_45_CLAIM_BOUNDARY -->
+<!-- BHSM_V16_47_TO_V16_62_CLAIM_BOUNDARY -->
+## v16.47-v16.69 claim boundary
+
+BHSM may claim that the old event-curvature stencil left the smooth ordered
+soft-eigenvalue chart; that a normalized event-covector Jacobian corrects its
+five-order merit-gradient inconsistency; and that the latest old-grid soft
+mode is normalized, spectrally isolated, and accurately resolved. BHSM may
+also claim that the old residual plateau is 96.44% endpoint-concentrated among
+its sixteen largest coordinate components, that the old derivative/quadrature
+pair is non-SBP, and that the minimal endpoint-only correction is exactly SBP.
+
+BHSM may claim a fresh canonical-reset SBP KKT with no state transplant, a
+verified action covector, and strict joint descent to complete residual
+`32.483095487141` and event residual `0.351154201685`. It may claim that a
+gradient-derived common-descent cone exists and persists across two freshly
+rebuilt physical Hessians, and that the latest defect is dominated by the
+existing common `log_scale` geometry. It may not claim that
+the N=3 saddle, common pushforward, broken branch, returned particle, mass,
+flavor, absolute spectrum, or Unique Actualization is solved.
+<!-- /BHSM_V16_47_TO_V16_62_CLAIM_BOUNDARY -->
+<!-- BHSM_V16_70_TO_V16_79_CLAIM_BOUNDARY -->
+## v16.70-v16.79 claim boundary
+
+BHSM may claim repeated strict joint descent of the exact-SBP N=3 KKT and
+actual soft event to residual `12.853643589435` and event magnitude
+`0.300983851426`; and may claim that the Gauss--Newton normal metric supplies
+the correct closest event-compatible correction among the tested directions.
+
+BHSM may also claim that the canonical reset scale is already fixed and
+substituted, that the 23 remaining scale coordinates are physical open-orbit
+history with 23 stationarity equations, and that the measured scale defect is
+not proven to be an over-independence defect. A future event-conditioned
+return-scale relation has been typed and square-system counts derived, but
+its right-hand side has not been constructed from the broken reconstruction
+BVP. BHSM may not claim the N=3 saddle, return-scale map, common pushforward,
+N=4+ convergence, broken returned child, spectrum, flavor, or completion.
+<!-- /BHSM_V16_70_TO_V16_79_CLAIM_BOUNDARY -->
+<!-- BHSM_V16_80_TO_V16_92_CLAIM_BOUNDARY -->
+## v16.80-v16.92 claim boundary
+
+BHSM may claim repeated fresh-Jacobian strict joint descent of the original
+N=3 SBP KKT and identical actual event to residual `2.486624819288` and event
+`-0.211419776681`. It may claim that event-row weighting is only a proposed
+direction preconditioner, because all promotions are judged using the
+unweighted physical equations. It may claim that Pareto promotion prevents
+asymptotic neglect of either mandatory closure.
+
+BHSM may also claim that the scale block closes materially without row or
+variable deletion, refuting its interpretation as the current obstruction.
+Simple diagonal equilibration of period, `w_0`, `v_0` and the event was tested
+at v16.93 and did not outperform the identity normal metric.
+It may not claim simultaneous N=3 closure, an exact soft crossing, the common
+gauge/rank-16 pushforward, N=4+ convergence, broken persistent return, mass or
+flavor observables, absolute spectrum, Unique Actualization, or completion.
+<!-- /BHSM_V16_80_TO_V16_92_CLAIM_BOUNDARY -->
+<!-- BHSM_V16_93_TO_V17_00_CLAIM_BOUNDARY -->
+## Current v16.93-v17.00 claim boundary
+
+- The anchored N=3 fresh-SBP event problem remains an unchanged square 376 by
+  376 KKT system; simultaneous closure has not yet been obtained.
+- The reset scale is fixed data. The other 23 scale values are open-orbit
+  history variables with 23 stationarity rows, not particle-size labels.
+- Their norm fell from `14.016355587104` to `0.191104025726` with all rows
+  retained, falsifying the over-independence diagnosis for that obstruction.
+- An event/environment-conditioned return scale is not action-derived and
+  cannot be inserted before the broken reconstruction BVP is solved.
+- Existing invariants restrict the child superselection block but do not yet
+  select a complete physical particle or its scale.
+- Mass/flavor/absolute-spectrum and completion claims remain open.
+<!-- /BHSM_V16_93_TO_V17_00_CLAIM_BOUNDARY -->
+<!-- BHSM_V17_01_TO_V17_05_CLAIM_BOUNDARY -->
+## v17.01-v17.05 claim boundary
+
+- Centered measurements of the unchanged KKT residual correct a sign defect
+  in the analytic owner-response model; the failed v17.01 state was not used.
+- The v17.05 accepted direction decreases total, period, `w_0`, `v_0`, scale,
+  and the identical ordered soft event simultaneously.
+- This is numerical continuation evidence, not yet a closed N=3 saddle or a
+  physical mass/gauge prediction.
+<!-- /BHSM_V17_01_TO_V17_05_CLAIM_BOUNDARY -->
+<!-- BHSM_V17_06_TO_V17_14_CLAIM_BOUNDARY -->
+## v17.06-v17.14 claim boundary
+
+- Failure of one tangent subspace is not a saddle no-go; the expanded measured
+  physical-normal span contains certified common directions.
+- The latest state reduces all six active owners and preserves the identical
+  resolved soft branch and positive Legendre domain.
+- N=3 closure and every downstream physical prediction remain unproved.
+<!-- /BHSM_V17_06_TO_V17_14_CLAIM_BOUNDARY -->

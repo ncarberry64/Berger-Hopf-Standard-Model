@@ -1,0 +1,51 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "CONTINUE_THE_FRESH_MULTIRANK_SOLVE_TO_SIMULTANEOUS_N3_CLOSURE",
+  "artifact": "BHSM_aether_n3_third_physical_refresh_v16_29",
+  "classification": "BHSM_N3_THIRD_FRESH_PHYSICAL_KKT",
+  "dependency_advanced": "REFRESHES_THE_COMMON_PHYSICAL_HESSIAN_AFTER_THE_V16_28_STEP_THAT_RESTORED_THE_SOFT_EVENT_TO_ABSOLUTE_RESIDUAL_BELOW_0P1",
+  "status": "ACTIVE",
+  "third_refresh": {
+    "event_multiplier_scaled": 0.144863936823,
+    "event_residual": 0.084978311862,
+    "multiplier_stationarity_norm": 1.310621383835,
+    "period_stationarity": 2.017858535031,
+    "q_stationarity_norm": 13.694130946841,
+    "residual_norm": 13.904169345267,
+    "spectral_scale": 121549352.84861007,
+    "symmetric_relative_residual": 0.0,
+    "tolerance_audit": {
+      "relative_1e-08": {
+        "fraction_outside_range": 0.021289827532,
+        "nullity": 304,
+        "rank": 72,
+        "unrestricted_direction_norm": 0.15411802795
+      },
+      "relative_1e-10": {
+        "fraction_outside_range": 0.00113524186,
+        "nullity": 280,
+        "rank": 96,
+        "unrestricted_direction_norm": 5.320119991387
+      },
+      "relative_1e-12": {
+        "fraction_outside_range": 0.000293195677,
+        "nullity": 273,
+        "rank": 103,
+        "unrestricted_direction_norm": 42.164031276235
+      },
+      "relative_1e-14": {
+        "fraction_outside_range": 7.1372506e-05,
+        "nullity": 243,
+        "rank": 133,
+        "unrestricted_direction_norm": 492.736135775789
+      }
+    }
+  },
+  "validation": {
+    "accepted_v16_28_residual_reproduced": true,
+    "fresh_physical_jacobian_is_symmetric": true,
+    "soft_event_nearly_restored": true
+  },
+  "validation_passed": true,
+  "version": "v16.29"
+}

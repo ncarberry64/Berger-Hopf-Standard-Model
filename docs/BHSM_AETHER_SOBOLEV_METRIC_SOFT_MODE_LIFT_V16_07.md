@@ -10,7 +10,7 @@ selector minimizes
 
 \[
  \|\dot q_N-\iota\dot q_{N-1}\|_{H^{s-1}}^2
- +10^{-8}\|m_N-\iota m_{N-1}\|_{H^s}^2
+ +\|m_N-\iota m_{N-1}\|_{H^s}^2
 \]
 
 subject to all (2N) lapse/shift equations and the Hamiltonian constraint.

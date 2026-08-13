@@ -5,12 +5,33 @@ import numpy as np
 from bhsm.interface.aether_replacement_geometry_force_v16_06 import (
     force_finite_difference_witness,
     log_radius_coordinate_jacobian,
+    zero_source_heat_geometry_response,
     zeta_geometry_response,
 )
 
 
 def test_heat_geometry_force_matches_finite_difference():
     assert force_finite_difference_witness()["relative_residual"] < 2.0e-8
+
+
+def test_heat_proper_step_force_matches_finite_difference():
+    radii = np.asarray([1.0, 1.04, 0.98, 1.02, 1.01, 0.99])
+    step = 0.07
+    epsilon = 1.0e-3
+    response = zero_source_heat_geometry_response(radii, step)
+    plus = zero_source_heat_geometry_response(radii, step * np.exp(epsilon))[
+        "Gamma_heat"
+    ]
+    minus = zero_source_heat_geometry_response(radii, step * np.exp(-epsilon))[
+        "Gamma_heat"
+    ]
+    finite = (plus - minus) / (2.0 * epsilon)
+    assert math.isclose(
+        response["d_Gamma_heat_d_log_proper_step"],
+        finite,
+        rel_tol=2.0e-5,
+        abs_tol=1.0e-9,
+    )
 
 
 def test_exact_boundary_radius_coordinate_jacobian():

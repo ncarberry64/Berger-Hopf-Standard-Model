@@ -1467,13 +1467,14 @@ functional is the replacement
 \]
 
 Consequently the dense v15.97 orbit is a collocation seed, not the final
-quantum orbit.  With 24 cycle nodes, nine geometry coordinates and four
-lapse/shift multipliers per node, plus the period and phase multiplier, the
-replacement action gives a square (24(9+4)+2=314) dimensional global KKT
-system.  The determinant couples the cycle nodes and cannot be inserted as an
-independent local acceleration.  This same replacement, saddle, and regulator
-must precede both absolute gauge normalization and the nonzero Yukawa
-extraction.
+quantum orbit. The earlier 314 count described that low-order dense seed. At
+the independently solved N=3 frontier the constant reset fixes ten initial
+coordinates. The anchored event saddle therefore has 230 free coordinates,
+144 constraint multipliers, one period, and one event multiplier: a square
+376-dimensional KKT system. The determinant couples the cycle nodes and
+cannot be inserted as an independent local acceleration. This same
+replacement, saddle, and regulator must precede both absolute gauge
+normalization and the nonzero Yukawa extraction.
 
 ## 5. Standard Model attachment
 
@@ -1514,3 +1515,43 @@ canonicalization awaits the same functional's HS eigenvector. The active calcula
 common gauge--ghost--spinor--HS superdeterminant and quantum saddle inside that
 same functional; it is not an independent normalization choice and not a
 stopping condition.
+
+## N=3 full-orbit redirection (v16.08--v16.09)
+
+The invalid static event embedding has now been replaced by an independent
+(N=3) reintegration from the canonical reset, with all seven constraints and
+the declared product Sobolev norm enforced. A pointwise continuum audit finds
+that this orbit exits the eta-Legendre domain at
+(t_\eta=0.0441071405411), before any Euler--Dirac soft zero. The last two
+full-orbit refinements differ by (2.56\times10^{-6}) in exit time and
+(4.55\times10^{-4}) relatively in the full product-Sobolev event state.
+
+Accordingly, the post-exit rank-16 source and gauge DtN/LR residues are not
+physical and are rejected. The active dependency is now the
+constraint-compatible continuation or boundary condition at this converged
+hyperregularity boundary. This redirection was triggered by the newly solved
+orbit itself; it does not repair or extrapolate the rejected static embedding.
+
+## Common replacement event-KKT continuation (v16.11--v16.18)
+
+The classical boundary obstruction has now been redirected upstream into the
+already derived common gauge--ghost--rank-16--HS replacement determinant. The
+N=3 anchored system has 376 unknowns and equations. Its action covector
+includes both the boundary-radius response and the proper-time-step response
+of the same M5-to-M4 heat operator; a full-action directional finite difference
+agrees to \(6.225\times10^{-7}\).
+
+Safeguarded Newton and symmetric SR1 steps reduce the complete scaled KKT
+residual from \(100.785773\) to \(48.480541\) while increasing the minimum
+eta-Legendre margin from \(0.068891\) to \(1.100022\). A soft eigenvalue
+crossing during this process is not promoted by itself because stationarity is
+not yet closed. The exposed event-multiplier block is then projected exactly,
+moving rho from \(0.892657\) to \(1.337113\) and reducing the residual further
+to \(39.344023\) without changing the orbit, event equation, or eta margin.
+The fresh projected-state Jacobian accepts three more steps and lowers the
+residual to \(38.863349\). Reprojecting the event multiplier lowers it to
+\(38.061645\). The multiplier-stationarity norm is only \(0.01047\); the
+remaining dominant components are the scale coordinates at the first and last
+free collocation nodes plus the period equation. The active dependency is
+therefore the endpoint-scale/period range of this same anchored common KKT
+system.

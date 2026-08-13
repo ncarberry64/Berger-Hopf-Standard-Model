@@ -150,7 +150,7 @@ def test_downstream_standard_model_is_defined_on_actual_child_pullback():
     assert "852.168262>K_B" in result["quantum_cone_repair_gate"]
     assert "Gamma_1=1.27293717" in result["common_quantum_superdeterminant"]
     assert "NONCOMMUTING_RESPONSE_ENGINE" in result["common_source_Frechet_response"]
-    assert "314_GLOBAL_KKT" in result["quantum_functional_accounting"]
+    assert "376_GLOBAL_KKT" in result["quantum_functional_accounting"]
     assert "NO_NYQUIST_DOUBLER" in result["rank16_U1_HS_vertex_matrices"]
     assert "diag(9,9,3,3)" in result["HS_channel_normalization"]
     assert "-2ad(F0z)" in result["nonabelian_deRham_response"]
@@ -164,7 +164,9 @@ def test_downstream_standard_model_is_defined_on_actual_child_pullback():
 def test_payload_is_deterministic_and_constructive():
     payload = completion_payload()
     assert payload["validation_passed"]
-    assert payload["active_calculation"].startswith("REINTEGRATE_THE_N3")
+    assert payload["active_calculation"].startswith(
+        "RESOLVE_THE_ANCHORED_ENDPOINT-SCALE/PERIOD_RANGE_DEFECT"
+    )
     assert payload["FULL_BHSM_COMPLETE"] is False
     first = deterministic_json(payload)
     second = deterministic_json(completion_payload())

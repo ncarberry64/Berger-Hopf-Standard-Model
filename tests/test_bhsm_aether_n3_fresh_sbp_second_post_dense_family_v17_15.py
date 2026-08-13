@@ -1,0 +1,2 @@
+from bhsm.interface.aether_n3_fresh_sbp_second_post_dense_family_v17_15 import completion_payload
+def test_second_post_dense_family_validates():assert completion_payload()["validation_passed"]

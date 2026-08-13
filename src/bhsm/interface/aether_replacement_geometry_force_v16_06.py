@@ -45,6 +45,7 @@ def zero_source_heat_geometry_response(
     laplacian = periodic_laplacian(len(r), proper_step)
     gamma_components: dict[str, float] = {}
     force_components: dict[str, np.ndarray] = {}
+    duration_components: dict[str, float] = {}
     retained: dict[str, int] = {}
     sectors = (
         ("gauge_transverse", 1.0, 2,
@@ -57,6 +58,7 @@ def zero_source_heat_geometry_response(
     for name, sign, start, degeneracy, energy in sectors:
         gamma = 0.0
         force = np.zeros(len(r))
+        duration_force = 0.0
         quiet = 0
         level = start
         retained[name] = start - 1
@@ -80,21 +82,33 @@ def zero_source_heat_geometry_response(
                 diagonal_fprime = probabilities @ regulator_first(
                     eigenvalues, heat_length
                 )
+                laplacian_expectation = np.real(np.einsum(
+                    "ij,ij->j", eigenvectors.conj(), laplacian @ eigenvectors
+                ))
                 force += (
                     sign * multiplicity * (-2.0 * spatial) * diagonal_fprime
                 )
+                duration_force += sign * multiplicity * float(np.sum(
+                    regulator_first(eigenvalues, heat_length)
+                    * (-2.0 * laplacian_expectation)
+                ))
             level += 1
             if level > 256:
                 raise RuntimeError("heat tail did not terminate")
         gamma_components[name] = gamma
         force_components[name] = force
+        duration_components[name] = duration_force
     total_force = sum(force_components.values(), np.zeros(len(r)))
     return {
         "Gamma_heat": float(sum(gamma_components.values())),
         "d_Gamma_heat_d_log_R_nodes": total_force,
         "d_Gamma_heat_d_log_common_R": float(np.sum(total_force)),
+        "d_Gamma_heat_d_log_proper_step": float(sum(
+            duration_components.values()
+        )),
         "Gamma_components": gamma_components,
         "force_components": force_components,
+        "proper_step_force_components": duration_components,
         "last_retained_spatial_level": retained,
         "same_rank16_gauge_ghost_HS_direct_sum_as_source_response": True,
     }

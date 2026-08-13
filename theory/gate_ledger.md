@@ -901,3 +901,196 @@ Exact next object:
 - Full BHSM completion: `FALSE`.
 - Exact next object: `ACTION_DERIVED_NONLINEAR_NORMAN_CYCLE_BOUNDARY_VALUE_PROBLEM_WITH_FORMATION_CONTINUATION_RELATIVE_PERIODIC_PERSISTENCE_DE_ENVELOPMENT_RECEIVING_DOMAIN_COMPLETE_NOETHER_LEDGER_AND_PHYSICAL_TANGENT_MONODROMY`.
 <!-- /BHSM_V15_6_NORMAN_CYCLE_MASTER_CLOSURE -->
+<!-- BHSM_V16_21_TO_V16_30_GATES -->
+## v16.21-v16.30 current gates
+
+- N=3 endpoint/period action ownership: `VALIDATED`.
+- v16.20 numerical-range classification: `RECLASSIFIED_AS_CASE_1_ILL_CONDITIONING`.
+- Norman-work import as missing equation/normalization: `INVALIDATED`.
+- Rank-aware descent of unchanged N=3 KKT: `VALIDATED_THROUGH_V16_32`.
+- Latest complete residual: `8.756109455622`.
+- Latest soft-event residual: `0.049515802141`.
+- Simultaneous N=3 saddle closure: `ACTIVE`.
+- Common gauge/rank-16 event pushforward: `OPEN_AFTER_N3_CLOSURE`.
+- Independent N=4+ full-Sobolev orbit convergence: `OPEN`.
+- Fermion-backreacted broken branch and one-cycle return: `OPEN`.
+- Physical mass/flavor/absolute-spectrum reconstruction: `OPEN`.
+- Full BHSM completion: `FALSE`.
+<!-- /BHSM_V16_21_TO_V16_30_GATES -->
+<!-- BHSM_V16_33_TO_V16_45_GATES -->
+## v16.33-v16.46 physical inverse and numerical gates
+
+- Two-tier structural/numerical particle-data firewall: `VALIDATED_V16_36`.
+- Electron-first returned-child requirements: `VALIDATED_AS_REQUIREMENTS`.
+- Independent gauge versus Yukawa normalization: `INVALIDATED`; one common
+  M5 -> M4 pushforward is required.
+- Final family-central charged mass operator: `INVALIDATED_BY_STRUCTURE`.
+- Exact fresh-Hessian hard/filtered solver comparison: `VALIDATED_V16_42`.
+- Sub-`1e-12` damping provenance: `CORRECTED_AND_VALIDATED_V16_43_V16_44`.
+- Targeted continuation around the v16.44 winner: `VALIDATED_V16_46`.
+- Latest complete projected KKT residual: `6.452526898856`.
+- Latest scaled soft-event residual: `0.018374397122`.
+- Latest eta minimum: `1.257955928423`.
+- Remaining defect owner: `RECLASSIFIED_V16_45_AS_EXISTING_PARENT_GEOMETRY_STATIONARITY_DOMINATED_BY_V0_W0_LOG_SCALE`.
+- Simultaneous N=3 saddle closure: `ACTIVE`.
+- Common gauge/rank-16 LR event pushforward: `OPEN_AFTER_N3_CLOSURE`.
+- Independent N=4+ Sobolev convergence: `OPEN`.
+- Broken child and persistent returned electron order parameter: `OPEN`.
+- Families, flavor, neutrino propagation and absolute spectrum: `OPEN`.
+- Held-out numerical kill screen and Unique Actualization: `INELIGIBLE_UNTIL_STRUCTURAL_CLOSURE`.
+- Full BHSM completion: `FALSE`.
+<!-- /BHSM_V16_33_TO_V16_45_GATES -->
+<!-- BHSM_V16_47_TO_V16_62_GATES -->
+## v16.47-v16.69 curvature, SBP and fresh-orbit gates
+
+- Old scalar event-curvature stencil: `INVALIDATED_OUTSIDE_LOCAL_SOFT_CHART`.
+- Normalized event-covector curvature: `VALIDATED_V16_53_V16_55`.
+- Latest old-grid normalized soft eigenvector: `VALIDATED_V16_56`.
+- Old derivative/trapezoid SBP identity: `INVALIDATED_DEFECT_1.322875655532`.
+- Minimal trapezoid-SBP endpoint closure: `VALIDATED_EXACT_ZERO_DEFECT`.
+- Old v16.55 state transplant into SBP orbit: `INVALIDATED_NOT_USED`.
+- Fresh canonical-reset SBP action covector: `VALIDATED_RELATIVE_ERROR_1.5226E-6`.
+- Fresh SBP complete residual: `32.483095487141`.
+- Fresh SBP actual event residual: `0.351154201685`.
+- Fresh SBP eta minimum: `0.074945802608`.
+- Strict complete-residual plus actual-event filter: `VALIDATED_V16_62`.
+- Total-merit ray at v16.63: `RECLASSIFIED_NO_STRICT_COMMON_STEP_V16_64`.
+- Gradient-derived common total/event descent cone: `VALIDATED_V16_65_THROUGH_V16_68`.
+- Latest dominant residual owner: `RECLASSIFIED_V16_69_AS_EXISTING_COMMON_LOG_SCALE_AND_PERIOD_STATIONARITY`.
+- Simultaneous N=3 SBP saddle closure: `ACTIVE`.
+- Common gauge/rank-16 LR pushforward: `OPEN_AFTER_SIMULTANEOUS_CLOSURE`.
+- N=4+ independent Sobolev convergence and downstream chain: `OPEN`.
+- Full BHSM completion: `FALSE`.
+<!-- /BHSM_V16_47_TO_V16_62_GATES -->
+<!-- BHSM_V16_70_TO_V16_79_GATES -->
+## v16.70-v16.79 conditioned descent and ownership gates
+
+- Damped Gauss--Newton common event cone: `VALIDATED_V16_70_V16_71`.
+- Coarse line grid at v16.71: `RECLASSIFIED_V16_72_AS_RESOLUTION_DEFECT`.
+- Refined small-radius cone: `VALIDATED_V16_73_V16_74`.
+- Gauss--Newton normal-metric half-space projection: `VALIDATED_V16_76`.
+- Fresh metric-projected continuation: `VALIDATED_V16_77_V16_79`.
+- Latest complete N=3 residual: `12.853643589435`.
+- Latest actual event residual: `-0.300983851426`.
+- Latest eta minimum: `0.822309989842`.
+- Canonical reset scale as free KKT unknown: `FALSE_ALREADY_SUBSTITUTED`.
+- Free open-orbit scale unknowns/stationarity rows: `23/23`.
+- v16.75 scale obstruction as proven over-independence: `FALSE_V16_78`.
+- Event/environment-conditioned return scale map: `OPEN_BROKEN_RETURN_BVP`.
+- Empirical or unrestricted child branch selection: `FORBIDDEN`.
+- Transported topological/gauge/bundle superselection restrictions: `PRESERVED`.
+- Simultaneous N=3 SBP saddle closure: `ACTIVE`.
+- Common pushforward and N=4+ convergence: `OPEN_AFTER_CLOSURE`.
+- Broken return, mass/flavor/spectrum and Unique Actualization: `OPEN`.
+- Full BHSM completion: `FALSE`.
+<!-- /BHSM_V16_70_TO_V16_79_GATES -->
+<!-- BHSM_V16_80_TO_V16_92_GATES -->
+## v16.80-v16.92 expanded trust and Pareto gates
+
+- Expanded physical nonlinear ray: `VALIDATED_V16_83_V16_84`.
+- Dense local joint boundary: `VALIDATED_V16_85_V16_86`.
+- Event-row weighting as equation/normalization change: `FALSE`.
+- Event-row weighting as direction preconditioner: `VALIDATED_V16_87`.
+- Minimum-total selection neglecting event progress: `RECLASSIFIED_V16_88`.
+- Pareto minimum-fractional-progress promotion: `VALIDATED_V16_89_V16_91`.
+- Latest complete residual: `2.486624819288`.
+- Latest actual event residual: `-0.211419776681`.
+- Latest eta minimum: `0.840494687332`.
+- Terminal soft eigenpair: `RESOLVED_AND_ISOLATED_V16_92`.
+- Scale norm: `0.465980389110_DOWN_FROM_14.016355587104`.
+- Current residual owners: `PERIOD_W0_V0`.
+- Diagonal owner-equilibrated metric: `TESTED_V16_93_IDENTITY_WINS_NOT_PROMOTED`.
+- Latest residual/event: `2.437270312411/-0.208275968279`.
+- Simultaneous N=3 closure: `ACTIVE`.
+- Common pushforward, N=4+ and downstream completion chain: `OPEN`.
+- Full BHSM completion: `FALSE`.
+<!-- /BHSM_V16_80_TO_V16_92_GATES -->
+<!-- BHSM_V16_93_TO_V17_00_GATES -->
+## v16.93-v17.00 coupled-owner and scale-ownership gates
+
+- Coupled complete/period/w0/v0/identical-event descent cone:
+  `VALIDATED_V16_94_V16_95_V16_96_V16_98_V17_00`.
+- Latest complete residual/event magnitude: `1.474584035022/0.129386144537`.
+- Latest eta minimum: `0.779446598841`.
+- Latest log-scale norm: `0.191104025726_DOWN_FROM_14.016355587104`.
+- Open-orbit log-scale unknowns/stationarity rows retained: `23/23`.
+- 14.016 obstruction as over-independence defect:
+  `NUMERICALLY_FALSIFIED_WITH_UNCHANGED_SQUARE_SYSTEM`.
+- Valid event/environment return-scale relation:
+  `OPEN_UNTIL_BROKEN_RECONSTRUCTION_BVP`.
+- Current anchored KKT count: `376_UNKNOWNS_376_EQUATIONS`.
+- Simultaneous N=3 closure: `ACTIVE_V0_CURRENT_MAXIMIN_BOTTLENECK`.
+- Common M5 -> M4 pushforward, N=4+, broken return and spectrum: `OPEN`.
+- Full BHSM completion: `FALSE`.
+<!-- /BHSM_V16_93_TO_V17_00_GATES -->
+<!-- BHSM_V17_01_TO_V17_05_GATES -->
+## v17.01-v17.05 measured-response gates
+
+- Uncalibrated analytic fractional-maximin direction:
+  `RECLASSIFIED_V17_01_V0_SIGN_MISMATCH_NOT_PROMOTED`.
+- Centered actual-residual response in physical-normal owner subspace:
+  `VALIDATED_V17_02_V17_03`.
+- Scale re-entry into active owner set: `MEASURED_V17_04`.
+- Six-owner complete/period/w0/v0/scale/event descent: `VALIDATED_V17_05`.
+- Latest complete residual/event: `1.428689906334/0.122933895890`.
+- Latest period/w0/v0/scale: `0.703793411493/0.973745697552/0.620368346240/0.432309885844`.
+- Latest eta minimum: `0.778050948322`.
+- Scale-row deletion or empirical normalization: `NOT_USED`.
+- Simultaneous N=3 closure: `ACTIVE`.
+- Full BHSM completion: `FALSE`.
+<!-- /BHSM_V17_01_TO_V17_05_GATES -->
+<!-- BHSM_V17_06_TO_V17_14_GATES -->
+## v17.06-v17.14 expanded measured-tangent gates
+
+- Single six-owner subspace: `NO_COMMON_DIRECTION_V17_06`.
+- Expanded 18-direction measured span: `COMMON_DIRECTION_CERTIFIED_V17_07`.
+- Maximin certificate: `CONVEX_OWNER_SIMPLEX_DUAL`.
+- Nonlinear tangent-family selection: `VALIDATED_V17_08_V17_10_V17_11_V17_13`.
+- Dense exact-radius promotion: `VALIDATED_FACTOR_0_064_V17_12`.
+- Latest complete residual/event: `1.383417886043/0.118278228365`.
+- Latest period/w0/v0/scale: `0.677117633290/0.940057261626/0.610774014072/0.417559825333`.
+- Latest eta minimum: `0.777122429571`.
+- Terminal soft eigenpair: `RESOLVED_AND_ISOLATED_V17_14`.
+- Same 376 equations and all 23 scale rows: `PRESERVED`.
+- Simultaneous N=3 closure: `ACTIVE`.
+- Full BHSM completion: `FALSE`.
+<!-- /BHSM_V17_06_TO_V17_14_GATES -->
+<!-- BHSM_V17_15_TO_V17_16_GATES -->
+## v17.15-v17.16 accelerated post-dense gates
+
+- Same fresh measured tangent family: `VALIDATED_TWICE`.
+- Latest complete residual/event: `1.329816603643/0.113054939136`.
+- Latest period/w0/v0/scale: `0.644977936704/0.899842579758/0.599765834697/0.400779135003`.
+- Latest eta minimum: `0.775832703564`.
+- Minimum simultaneous owner progress: `0.010824146325`.
+- Simultaneous N=3 closure: `ACTIVE_ACCELERATING_BASIN`.
+- Full BHSM completion: `FALSE`.
+<!-- /BHSM_V17_15_TO_V17_16_GATES -->
+<!-- BHSM_V17_17_TO_V17_18_GATES -->
+## v17.17-v17.18 continued accelerated gates
+
+- Fresh measured tangent-family passes: `VALIDATED_TWICE`.
+- Latest complete residual/event: `1.272877993568/0.107558924761`.
+- Latest period/w0/v0/scale: `0.611901245067/0.857718051797/0.585620731388/0.382990119281`.
+- Latest eta minimum: `0.773679579542`.
+- Minimum simultaneous owner progress: `0.010976073540`.
+- Simultaneous N=3 closure: `ACTIVE`.
+- Full BHSM completion: `FALSE`.
+<!-- /BHSM_V17_17_TO_V17_18_GATES -->
+<!-- BHSM_V17_19_TO_V17_22_GATES -->
+## v17.19-v17.22 owner audit and v0-priority gates
+
+- v17.19 owner ordering: `W0_V0_LOG_SCALE_UNCHANGED`.
+- v17.19 terminal soft eigenpair: `RESOLVED_1E-14_AND_ISOLATED`.
+- v17.20 fresh six-owner family: `VALIDATED`.
+- v17.21 dense fixed-direction radius: `VALIDATED_FACTOR_0_075`.
+- Bounded v0-priority tangent preconditioners: `TESTED_1_TO_4_V17_22`.
+- Physical residual/acceptance weighting changed: `FALSE`.
+- Winning family/priority: `SINGLE_FILTER_1E-06_V0_PRIORITY_3`.
+- Latest complete residual/event: `1.192046120259/0.099693053009`.
+- Latest period/w0/v0/scale: `0.571634002410/0.805293753488/0.546193432306/0.359549472209`.
+- Latest eta minimum: `0.772159229346`.
+- Minimum simultaneous owner progress: `0.044173001142`.
+- Simultaneous N=3 closure: `ACTIVE_MATERIALLY_ADVANCED`.
+- Full BHSM completion: `FALSE`.
+<!-- /BHSM_V17_19_TO_V17_22_GATES -->

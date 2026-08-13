@@ -1,0 +1,2 @@
+from bhsm.interface.aether_n3_fresh_sbp_expanded_measured_tangent_v17_07 import completion_payload
+def test_expanded_measured_tangent_validates():assert completion_payload()["validation_passed"]

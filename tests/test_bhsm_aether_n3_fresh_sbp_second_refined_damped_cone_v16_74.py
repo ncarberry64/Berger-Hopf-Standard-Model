@@ -1,0 +1,2 @@
+from bhsm.interface.aether_n3_fresh_sbp_second_refined_damped_cone_v16_74 import v16_73_selected_raw_vector
+def test_v16_73_state_has_complete_dimension():assert v16_73_selected_raw_vector().shape==(376,)

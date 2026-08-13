@@ -1603,3 +1603,80 @@ The exact next object is
 `FULL_BHSM_COMPLETE = FALSE`. Frozen predictions and official prediction
 logic remain unchanged. No empirical input, fitted or arbitrary continuous
 parameter, primitive field, or preferred frame enters v15.5.
+
+## v16.93-v17.00 current microscopic frontier
+
+The anchored fresh-SBP N=3 system remains the same 376 by 376 KKT problem.
+Five accepted fresh-Jacobian coupled-owner passes reduce the complete residual
+from `2.437270312411` to `1.474584035022` and the identical ordered terminal
+Euler--Dirac event magnitude from `0.208275968279` to `0.129386144537`.
+The latest state preserves `eta_min=0.779446598841`; simultaneous closure is
+not yet claimed and `v_0` is the current maximin bottleneck.
+
+The canonical reset already substitutes `q_log_scale(0)=0`. The 23 remaining
+scale values are physical breathing-history variables and own 23 stationarity
+rows. Their norm fell from `14.016355587104` to `0.191104025726` without
+deleting a row or variable, so the old defect is not an independent
+particle-scale coordinate. A return endpoint constraint is ineligible until
+the nonlinear broken reconstruction BVP derives
+`R_rec[I_event,I_environment]`.
+
+The typed reconstruction channel is
+
+`(I_event,I_environment,B_SM) -> (admissible child superselection block,
+R_rec,z_return)`.
+
+Degree, orientation, FR parity, endpoint order, incidence, boundary identity,
+SM representation/hypercharge, C3 family projector and transported bundle
+class already restrict its codomain. They do not yet derive the continuous
+broken-return boundary data, event scale or complete particle.
+
+`FULL_BHSM_COMPLETE = FALSE`.
+
+## v17.01-v17.05 measured-response continuation
+
+The first analytic fractional-maximin normal direction was rejected because
+the unchanged residual measured `v_0` ascent despite predicted descent. The
+solver was redirected to centered actual-residual calibration inside the same
+physical-normal owner subspace. Two accepted calibrated five-owner steps and
+one accepted six-owner step reach complete residual `1.428689906334`, event
+`0.122933895890`, period `0.703793411493`, `w_0=0.973745697552`,
+`v_0=0.620368346240`, scale `0.432309885844`, and
+`eta_min=0.778050948322`.
+
+The scale block was reintroduced as a descent requirement when it became
+active; all 23 scale variables and stationarity rows remain present. No
+return-scale constraint, empirical child selector, extra normalization or new
+physical mechanism entered. Simultaneous N=3 closure remains active.
+
+## v17.06-v17.14 expanded measured-tangent continuation
+
+The solver expanded a locally insufficient six-owner subspace to the measured
+span of all 18 owner/filter normal directions and certified maximin descent by
+the convex owner-simplex dual. Exact nonlinear selection across truncated and
+single-filter families, plus dense radius refinement, reaches complete
+residual `1.383417886043`, event `0.118278228365`, period
+`0.677117633290`, `w_0=0.940057261626`, `v_0=0.610774014072`, scale
+`0.417559825333`, and `eta_min=0.777122429571`. The same soft branch remains
+normalized, isolated and resolved. No physical equation or normalization
+changed.
+
+Fresh post-dense v17.15-v17.16 passes accelerate the same unchanged physical
+continuation to complete residual `1.329816603643`, event
+`0.113054939136`, period `0.644977936704`, `w_0=0.899842579758`,
+`v_0=0.599765834697`, scale `0.400779135003`, and
+`eta_min=0.775832703564`. N=3 closure remains active.
+
+v17.17-v17.18 continue the same family to complete residual
+`1.272877993568`, event `0.107558924761`, period `0.611901245067`,
+`w_0=0.857718051797`, `v_0=0.585620731388`, scale `0.382990119281`, and
+`eta_min=0.773679579542`. All six owner norms decrease; closure is not yet
+claimed.
+
+The v17.19 audit preserves the owner ordering and resolved soft mode. After a
+fresh pass and dense-radius refinement, v17.22 compensates the measured `v_0`
+curvature bottleneck inside the same physical-normal span. Exact unweighted
+acceptance reaches complete residual `1.192046120259`, event
+`0.099693053009`, period `0.571634002410`, `w_0=0.805293753488`,
+`v_0=0.546193432306`, scale `0.359549472209`, and
+`eta_min=0.772159229346`. No action or residual weighting changes.

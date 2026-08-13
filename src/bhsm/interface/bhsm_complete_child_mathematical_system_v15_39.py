@@ -489,6 +489,22 @@ def current_constructive_state() -> dict[str, Any]:
                 "BE_REINTEGRATED_FROM_THE_RESET_BEFORE_REMEASURING_THE_"
                 "v15.80_SOFT_COVECTOR_V16_07"
             ),
+            "post_cut_hybrid_N3_constraint_solved_orbit": (
+                "THE_CANONICAL_RESET_IS_PROJECTED_DIRECTLY_ON_THE_N3_"
+                "SEVEN-CONSTRAINT_SURFACE_AND_REINTEGRATED_WITH_THE_H5xH6_"
+                "PRODUCT_NORM;_NO_N2_EVENT_STATE_IS_TRANSPLANTED_V16_08"
+            ),
+            "post_cut_hybrid_N3_continuum_domain_exit": (
+                "FOUR_INDEPENDENT_N3_REINTEGRATIONS_CONVERGE_TO_THE_FIRST_"
+                "ETA-LEGENDRE_DOMAIN_EXIT_AT_t=0.0441071405411_BEFORE_ANY_"
+                "EULER-DIRAC_ZERO;_POST-EXIT_DtN_AND_LR_ARE_REJECTED_V16_09"
+            ),
+            "post_cut_hybrid_N3_eta_boundary_transversality": (
+                "THE_SEVEN-CONSTRAINT_FLOW_HAS_dMIN_Leta/dt=-90.795067_"
+                "AT_THE_CONVERGED_DOMAIN_EXIT_WHILE_THE_EULER-DIRAC_"
+                "HESSIAN_REMAINS_INVERTIBLE;_THE_REPLACEMENT_QUANTUM_FORCE_"
+                "MUST_ENTER_UPSTREAM_V16_10"
+            ),
             "post_cut_hybrid_common_parent_subtraction": (
                 "ONE_HEAT_REGULATOR_AND_REN_PARENT_BEFORE_ALL_DERIVATIVES"
             ),
@@ -763,8 +779,8 @@ def downstream_attachment_definition() -> dict[str, Any]:
         "quantum_functional_accounting": (
             "DO_NOT_ADD_THE_V15.96_HEAT_DETERMINANT_TO_THE_V15.51_ZETA-"
             "ATTACHED_ACTION;_REPLACE_Gamma_SM_ZETA_BY_THE_ONE_SOURCED_HEAT_"
-            "SUPERDETERMINANT,_THEN_SOLVE_24*(9+4)+2=314_GLOBAL_KKT_"
-            "EQUATIONS_BEFORE_EXTRACTING_GAUGE_OR_YUKAWA_V16_00"
+            "SUPERDETERMINANT;_THE_LATER_N3_ANCHORED_COUNT_IS_376_GLOBAL_"
+            "KKT_EQUATIONS_AFTER_FIXED_RESET_ELIMINATION_V16_00_V16_11"
         ),
         "rank16_U1_HS_vertex_matrices": (
             "Tr_Y2=10_AND_24_UNIT_HS_PAIRINGS_ENTER_EXPLICIT_HERMITIAN_"
@@ -793,6 +809,51 @@ def downstream_attachment_definition() -> dict[str, Any]:
             "EVENT_EMBEDDING:_ALL_N3_CONSTRAINTS_CLOSE_BELOW_1e-13_BUT_THE_"
             "H5_RATE-CORRECTION_NORM-SQUARED_IS_1.0460221e7;_REINTEGRATE_"
             "THE_N3_EULER-DIRAC_ORBIT_FROM_THE_SELECTED_RESET_V16_07"
+        ),
+        "N3_constraint_solved_orbit": (
+            "N3_STARTS_FROM_THE_CANONICAL_RESET_ON_ALL_SEVEN_CONSTRAINTS_"
+            "AND_EVOLVES_BY_ITS_OWN_EXACT_EULER-DIRAC_SYSTEM_WITH_SOBOLEV_"
+            "PROJECTED_STEPS_V16_08"
+        ),
+        "N3_continuum_domain_exit": (
+            "t_eta=(0.0426058502,0.0439635658,0.0441097031,0.0441071405)_"
+            "FOR_h=(0.002,0.001,0.0005,0.00025);_THE_FINE_RELATIVE_FULL-"
+            "STATE_SOBOLEV_CHANGE_IS_4.546e-4_AND_NO_ADMISSIBLE_SOFT_EVENT_"
+            "OCCURS_V16_09"
+        ),
+        "N3_eta_boundary_transversality": (
+            "rank(DC)=7,_sigma_min(DC)=0.831485,_dMIN_Leta/dt=-90.795067,_"
+            "AND_MIN_ABS_EULER-DIRAC_EIGENVALUE=1.7076e-4;_NO_SMOOTH_"
+            "CLASSICAL_IN-DOMAIN_CONTINUATION_EXISTS_V16_10"
+        ),
+        "N3_anchored_replacement_KKT": (
+            "THE_CONSTANT_RESET_ELIMINATES_10_FIXED_q0_COORDINATES;_WITH_"
+            "230_FREE_q,_144_MULTIPLIERS,_PERIOD,_AND_EVENT_MULTIPLIER_THE_"
+            "PHYSICAL_EVENT-KKT_IS_376-BY-376,_NOT_386_V16_11"
+        ),
+        "N3_common_pushforward_covector": (
+            "ONE_GAUGE-GHOST-RANK16-HS_HEAT_OPERATOR_SUPPLIES_BOTH_RADIUS_"
+            "AND_PROPER-TIME_DERIVATIVES;_THE_COMPLETE_375-COMPONENT_ACTION_"
+            "COVECTOR_MATCHES_THE_FULL_ACTION_DIRECTION_TO_6.225e-7_V16_12"
+        ),
+        "N3_replacement_KKT_continuation": (
+            "SAFEGUARDED_NEWTON-SR1_STEPS_REDUCE_THE_SCALED_RESIDUAL_FROM_"
+            "100.785773_TO_48.480541_WHILE_THE_eta_MARGIN_RISES_FROM_"
+            "0.068891_TO_1.100022;_A_SOFT-EVENT_CROSSING_ALONE_IS_NOT_"
+            "MISREPORTED_AS_A_STATIONARY_SOLUTION_V16_13_TO_V16_17"
+        ),
+        "N3_exact_event_multiplier_projection": (
+            "THE_EXPOSED_ONE-DIMENSIONAL_EVENT-MULTIPLIER_BLOCK_PROJECTS_"
+            "rho_FROM_0.892657_TO_1.337113_AND_REDUCES_THE_COMPLETE_"
+            "RESIDUAL_FROM_48.480541_TO_39.344023_WITHOUT_CHANGING_THE_"
+            "ORBIT,_EVENT,_OR_eta_MARGIN_V16_18"
+        ),
+        "N3_projected_refresh_and_range_defect": (
+            "A_FRESH_PROJECTED-STATE_JACOBIAN_ACCEPTS_3_STEPS_AND_REDUCES_"
+            "THE_RESIDUAL_TO_38.863349;_EXACT_rho_REPROJECTION_REDUCES_IT_"
+            "TO_38.061645_AND_LOCALIZES_THE_REMAINDER_TO_THE_ANCHORED_"
+            "ENDPOINT-SCALE/PERIOD_BLOCK_WITH_MULTIPLIER_NORM_0.01047_"
+            "V16_19_TO_V16_20"
         ),
         "electric_gauge_DtN": (
             "N_0=Omega-Omega^(-1)/R4^2_with_Omega=sqrt(-Delta0+R4^(-2));_"
@@ -945,7 +1006,7 @@ def completion_payload() -> dict[str, Any]:
             and "ONE_BACKGROUND-COVARIANT_OPERATOR" in state["geometry"][
                 "post_cut_hybrid_common_source_Frechet_response"
             ]
-            and "314_GLOBAL_KKT" in downstream[
+            and "376_GLOBAL_KKT" in downstream[
                 "quantum_functional_accounting"
             ]
             and "REMOVES_DOUBLE_COUNTING" in state["geometry"][
@@ -981,6 +1042,15 @@ def completion_payload() -> dict[str, Any]:
             and state["geometry"][
                 "post_cut_hybrid_Sobolev_metric_soft_mode_lift"
             ].endswith("V16_07")
+            and state["geometry"][
+                "post_cut_hybrid_N3_constraint_solved_orbit"
+            ].endswith("V16_08")
+            and state["geometry"][
+                "post_cut_hybrid_N3_continuum_domain_exit"
+            ].endswith("V16_09")
+            and state["geometry"][
+                "post_cut_hybrid_N3_eta_boundary_transversality"
+            ].endswith("V16_10")
         ),
         "state_theory_uniqueness_distinguished": (
             state["geometry"]["post_cut_hybrid_state_level_unique"]
@@ -1005,9 +1075,8 @@ def completion_payload() -> dict[str, Any]:
         "constructive_state": state,
         "downstream_attachment": downstream,
         "active_calculation": (
-            "REINTEGRATE_THE_N3_CONSTRAINT-SOLVED_EULER-DIRAC_ORBIT_FROM_"
-            "THE_SELECTED_RESET,_LOCATE_ITS_EVENT_SOFT_MODE,_THEN_CONTINUE_"
-            "THE_SOBOLEV_LIMIT_INTO_THE_NONLINEAR_FERMION-BACKREACTED_BRANCH"
+            "RESOLVE_THE_ANCHORED_ENDPOINT-SCALE/PERIOD_RANGE_DEFECT_IN_"
+            "THE_SAME_376-VARIABLE_COMMON-PUSHFORWARD_EVENT-KKT_SYSTEM"
         ),
         "validation": validation,
         "validation_passed": all(validation.values()),

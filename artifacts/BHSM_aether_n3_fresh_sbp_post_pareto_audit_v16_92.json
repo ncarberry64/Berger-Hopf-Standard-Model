@@ -1,0 +1,91 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "BUILD_THE_NEXT_SAME_ACTION_PRECONDITIONER_FOR_PERIOD_W0_V0_AND_THE_IDENTICAL_EVENT",
+  "artifact": "BHSM_aether_n3_fresh_sbp_post_pareto_audit_v16_92",
+  "classification": "BHSM_N3_FRESH_SBP_POST_PARETO_PHYSICAL_BLOCK_SOFT_AUDIT",
+  "dependency_advanced": "RETARGETS_SIMULTANEOUS_N3_EVENT_SADDLE_CLOSURE_AFTER_MATERIAL_SCALE_BLOCK_REDUCTION",
+  "fresh_sbp_post_pareto_audit": {
+    "complete_residual_norm": 2.486624819288495,
+    "coordinate_group_ranking": [
+      {
+        "coordinate": "w_0",
+        "stationarity_norm": 1.148018415647027
+      },
+      {
+        "coordinate": "v_0",
+        "stationarity_norm": 1.074632770788796
+      },
+      {
+        "coordinate": "log_scale",
+        "stationarity_norm": 0.465980389109624
+      },
+      {
+        "coordinate": "u_1",
+        "stationarity_norm": 0.001083718220695
+      },
+      {
+        "coordinate": "v_1",
+        "stationarity_norm": 0.000574118843783
+      },
+      {
+        "coordinate": "w_1",
+        "stationarity_norm": 0.000161408225166
+      },
+      {
+        "coordinate": "u_2",
+        "stationarity_norm": 5.310538149e-05
+      },
+      {
+        "coordinate": "v_2",
+        "stationarity_norm": 1.5986801835e-05
+      },
+      {
+        "coordinate": "u_3",
+        "stationarity_norm": 6.474164326e-06
+      },
+      {
+        "coordinate": "w_2",
+        "stationarity_norm": 1.293138263e-06
+      }
+    ],
+    "interpretation": "THE_SCALE_BLOCK_HAS_MATERIALLY_CLOSED_WITHOUT_REMOVING_ITS_ROW;THE_NEXT_SAME_ORBIT_CORRECTION_MUST_TARGET_PERIOD_W0_V0_WHILE_CONTINUING_THE_IDENTICAL_EVENT",
+    "late_four_scale_squared_fraction": 0.902163328774052,
+    "multiplier_stationarity_norm": 0.116974054819041,
+    "owner_transition": {
+      "current_coordinate_owners": [
+        "w_0",
+        "v_0"
+      ],
+      "current_log_scale_norm": 0.465980389109624,
+      "current_primary_owner": "period_stationarity",
+      "scale_over_independence_hypothesis_supported": false,
+      "v16_75_log_scale_norm": 14.016355587104261
+    },
+    "period_stationarity": 1.853375463700372,
+    "q_stationarity_norm": 1.640097902865028,
+    "scaled_event_residual": -0.211419776681132,
+    "source_state": "v16.91_selected_refreshed_pareto_state",
+    "terminal_soft_mode": {
+      "eigenpair_residual_norm": 1e-14,
+      "eigenvalue": -0.000211419776681,
+      "eigenvector_norm": 1.0,
+      "gap_above": 0.007996572397181,
+      "gap_below": 0.170116896187381,
+      "scaled_event_value": -0.211419776681245
+    }
+  },
+  "real_physical_property_explained": "CURRENT_PERIOD_FIBER_LOCALIZATION_AND_HOPF_ANISOTROPY_OWNERS_OF_THE_UNCLOSED_PHYSICAL_EVENT_ORBIT",
+  "status": "RECLASSIFIED",
+  "validation": {
+    "event_matches_soft_spectrum": true,
+    "no_false_scale_over_independence_claim": true,
+    "scale_block_materially_reduced": true,
+    "simultaneous_closure_not_claimed": true,
+    "soft_branch_isolated": true,
+    "soft_eigenpair_resolved": true,
+    "soft_vector_normalized": true,
+    "v16_91_residual_reproduced": true
+  },
+  "validation_passed": true,
+  "version": "v16.92"
+}
