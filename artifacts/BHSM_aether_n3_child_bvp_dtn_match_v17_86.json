@@ -1,0 +1,108 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "ADD_THE_ETA_SIGMA_REACTION_AND_LORENTZIAN_CAUCHY_MATCH_TO_CLOSE_THE_COMPLETE_GRAVITY_MATERIAL_F_child_BLOCK",
+  "artifact": "BHSM_aether_n3_child_bvp_dtn_match_v17_86",
+  "child_bvp_dtn_match": {
+    "child_BVP": {
+      "achieved_trace_A_B_N": [
+        1.458725205984826,
+        1.380162700143785,
+        3.887471990234437
+      ],
+      "child_outward_DtN_flux_logA_logB_logN": [
+        25.60805881744343,
+        -75.9380714147828,
+        -13.45264175331984
+      ],
+      "coordinates": [
+        0.63510320786847,
+        0.875276816488208,
+        -0.128863612963586,
+        -0.440335134329772,
+        -0.325641561048206,
+        0.397126399573348,
+        -1.070429078236804,
+        0.599164020657075,
+        0.190249032336382,
+        -0.031885791750593,
+        5.757561581770587,
+        -4.999971600471469,
+        0.600169091095889,
+        -0.638748040731519,
+        0.699999999588363
+      ],
+      "function_evaluations": 41,
+      "interpretation": "INSTANTANEOUS_DIRICHLET_RECONSTRUCTION_SLICE_NOT_A_STATIC_OR_ETERNALLY_STABLE_PARTICLE_REQUIREMENT",
+      "localized_inertia_without_orbit": 7.011221299806275,
+      "maximum_KKT_stationarity_residual": 0.74546493115113,
+      "maximum_log_trace_residual": 0.0,
+      "maximum_reduced_stationarity_residual": 0.74546493115113,
+      "maximum_solve_grid_reduced_stationarity_residual": 0.745723097017592,
+      "minimum_eta_Legendre": 1.162069636144065,
+      "minimum_f_prime": 0.077777640959442,
+      "physical_boundary_multipliers_logA_logB_logN": [
+        -25.60805881744343,
+        75.9380714147828,
+        13.45264175331984
+      ],
+      "routhian": 3.458823598701831,
+      "scaled_KKT_residual_norm": 0.007323800797036,
+      "solver_message": "`xtol` termination condition is satisfied.",
+      "success": true,
+      "target_trace_A_B_N": [
+        1.458725205984826,
+        1.380162700143785,
+        3.887471990234436
+      ]
+    },
+    "child_static_spatial_BVP_closed": false,
+    "complete_correspondence_evaluated": false,
+    "event_outward_flux_logA_logB_logN": [
+      35.02471983487227,
+      -35.02471983487227,
+      0.0
+    ],
+    "event_trace_A_B_N": [
+      1.458725205984826,
+      1.380162700143785,
+      3.887471990234436
+    ],
+    "flux_orientation": "OUTWARD_EVENT_PLUS_OUTWARD_CHILD_EQUALS_ZERO",
+    "metric_lapse_DtN_flux_promotable": false,
+    "metric_lapse_F_child": [
+      60.6327786523157,
+      -110.96279124965507,
+      -13.45264175331984
+    ],
+    "metric_lapse_F_child_norm": 127.16150541401436,
+    "missing_blocks": [
+      "ETA_ENDPOINT_REACTION_AND_SIGMA_ADJOINT_FLUX",
+      "GAUGE_SPINOR_GHOST_CALDERON_BLOCKS",
+      "EVENT_ATTACHMENT_WENTZELL_BLOCK",
+      "LORENTZIAN_TEMPORAL_CAUCHY_CONSTRAINT_MATCH",
+      "FUNCTION_SPACE_AND_N_TO_INFINITY_CHILD_BVP_CONTROL"
+    ],
+    "near_flat_selection_test_eligible": false,
+    "source_state": "v17.75_selected_fine_period_log_mix_state",
+    "why_not_yet": "THE_STATIC_SPATIAL_DIRICHLET_SLICE_DOES_NOT_CLOSE_AT_THE_EVENT_TRACE_AND_IS_NOT_A_REQUIRED_PARTICLE_EQUILIBRIUM;THE_LORENTZIAN_NONEQUILIBRIUM_CAUCHY_MATCH_MUST_REPLACE_IT"
+  },
+  "classification": "BHSM_N3_COMPLETE_CHILD_FINITE_CHART_BVP_DTN_MATCH",
+  "dependency_advanced": "TESTS_AND_RECLASSIFIES_THE_STATIC_DIRICHLET_DtN_ROUTE_BEFORE_THE_REQUIRED_NONEQUILIBRIUM_CAUCHY_MATCH",
+  "real_physical_property_explained": "THE_EVENT_TRACE_DEFINES_A_CHILD_DIRICHLET_RECONSTRUCTION_AND_ITS_KKT_MULTIPLIERS_ARE_THE_FINITE_CHART_DtN_FLUX",
+  "status": "RECLASSIFIED",
+  "validation": {
+    "child_BVP_solver_classified": true,
+    "child_eta_domain_positive": true,
+    "child_independent_grid_residual_reported": true,
+    "child_trace_matched": true,
+    "event_trace_used_without_new_coordinate": true,
+    "failed_static_slice_not_made_particle_no_go": true,
+    "finite_metric_lapse_DtN_mismatch": true,
+    "incomplete_blocks_not_hidden": true,
+    "no_premature_near_flat_selection_claim": true,
+    "nonequilibrium_particle_doctrine_preserved": true,
+    "static_BVP_result_classified": true
+  },
+  "validation_passed": true,
+  "version": "v17.86"
+}

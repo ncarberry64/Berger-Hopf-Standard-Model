@@ -1,0 +1,596 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "REMEASURE_AND_CONTINUE_THE_EXACT_NONLINEAR_MERIT_MANIFOLD_FROM_V18_47",
+  "artifact": "BHSM_aether_n3_v18_43_sector_compression_diagnostic_v18_48",
+  "classification": "BHSM_N3_V18_43_SECTOR_COMPRESSION_DIAGNOSTIC",
+  "dependency_advanced": "NONLINEAR_N3_EVENT_SADDLE_CLOSURE",
+  "real_physical_property_explained": "THE_V18_43_GEOMETRIC_PROBE_IS_DECOMPOSED_BY_ACTION_OWNED_PHYSICAL_SECTOR_WITHOUT_CHANGING_THE_NONLINEAR_PROBLEM",
+  "status": "VALIDATED",
+  "v18_43_sector_compression_diagnostic": {
+    "accepted_line_fraction": 0.125,
+    "accepted_nonlinear_line_state": "v18.47",
+    "bending_classification": {
+      "first_departure_sector": "lapse",
+      "high_u_shift_lapse_or_coupling_dominates_absolute_bending": false,
+      "largest_absolute_nonlinear_defect_sector": "w",
+      "largest_normalized_departure_sector": "eta_sensitive_shift",
+      "largest_u_eta_shift_lapse_interaction": {
+        "exact_combined_residual_change_norm": 0.005438920444323,
+        "interaction_fraction_of_combined_change": 0.001784807137488,
+        "interaction_residual_norm": 9.707424029e-06,
+        "sectors": [
+          "u",
+          "eta_sensitive_shift",
+          "lapse"
+        ]
+      },
+      "measured_interpretation": "LAPSE_DEPARTS_FIRST_AND_ETA_SHIFT_LAPSE_HAVE_LARGE_NORMALIZED_DEPARTURE_BUT_W_DOMINATES_ABSOLUTE_NONLINEAR_BENDING_AND_THE_AUDITED_U_ETA_SHIFT_LAPSE_INTERACTIONS_ARE_ABSOLUTELY_SUBDOMINANT"
+    },
+    "constraint_added": false,
+    "coordinate_map": {
+      "action_reference": 163.9327594050074,
+      "invertible": true,
+      "maximum_singular_value": 7996441.41109079,
+      "minimum_singular_value": 0.093857079030427,
+      "multiplier_resolved_rank": 6,
+      "q_resolved_rank": 10,
+      "source": "VALIDATED_V18_15_ACTION_CURVATURE_COORDINATE_MAP"
+    },
+    "first_sector_showing_nonlinear_departure": {
+      "fraction": 0.00048828125,
+      "physical_scaled_displacement_norm": 1.111924849e-06,
+      "relative_departure_from_1e-6_response": 3.534324689462605,
+      "sector": "lapse"
+    },
+    "full_exact_residual_change_norm_at_accepted_line": 0.03050685985802,
+    "local_response_step": 1e-06,
+    "nonlinear_departure_threshold": 0.005,
+    "particle_data_used": false,
+    "physical_equations_changed": false,
+    "proposal_norms": {
+      "action_owned": 0.001437085619623,
+      "physical_scaled": 0.003937360371082,
+      "raw": 0.036421071051609
+    },
+    "proposal_source": "v18.43_invalidated_Newton_JFNK_geometric_probe",
+    "rejected_aggressive_fraction": 0.25,
+    "residual_rows_left_scaled": false,
+    "sector_measurements": [
+      {
+        "absolute_nonlinear_defect_norm_at_accepted_line": 0.192612109466246,
+        "accepted_line_fraction": 0.125,
+        "accepted_physical_scaled_displacement_norm": 1.1916805639e-05,
+        "action_owned_norm": 0.001009443879593,
+        "action_owned_squared_fraction_allocation": 0.388018169791634,
+        "departure_scan": [
+          {
+            "fraction": 0.015625,
+            "physical_scaled_displacement_norm": 1.489600705e-06,
+            "relative_departure_from_1e-6_response": 0.011744797166066
+          },
+          {
+            "fraction": 0.03125,
+            "physical_scaled_displacement_norm": 2.97920141e-06,
+            "relative_departure_from_1e-6_response": 0.023815075945017
+          },
+          {
+            "fraction": 0.0625,
+            "physical_scaled_displacement_norm": 5.95840282e-06,
+            "relative_departure_from_1e-6_response": 0.04874385297142
+          },
+          {
+            "fraction": 0.125,
+            "physical_scaled_displacement_norm": 1.1916805639e-05,
+            "relative_departure_from_1e-6_response": 0.102049791577496
+          }
+        ],
+        "exact_residual_change_norm_at_accepted_line": 2.078927415499532,
+        "first_departure": {
+          "fraction": 0.015625,
+          "physical_scaled_displacement_norm": 1.489600705e-06,
+          "relative_departure_from_1e-6_response": 0.011744797166066
+        },
+        "raw_norm": 9.5334445115e-05,
+        "raw_squared_fraction_of_proposal": 6.851635643e-06,
+        "relative_departure_at_accepted_line": 0.102049791577496,
+        "response_norm_at_1e-6": 158384.1103145185,
+        "secant_response_norm_at_accepted_line": 174453.412970489,
+        "sector": "scale"
+      },
+      {
+        "absolute_nonlinear_defect_norm_at_accepted_line": 0.000391201464322,
+        "accepted_line_fraction": 0.125,
+        "accepted_physical_scaled_displacement_norm": 0.000120434621821,
+        "action_owned_norm": 1.33071066e-06,
+        "action_owned_squared_fraction_allocation": 6.7430282e-07,
+        "departure_scan": [
+          {
+            "fraction": 0.001953125,
+            "physical_scaled_displacement_norm": 1.881790966e-06,
+            "relative_departure_from_1e-6_response": 0.109266891337606
+          },
+          {
+            "fraction": 0.00390625,
+            "physical_scaled_displacement_norm": 3.763581932e-06,
+            "relative_departure_from_1e-6_response": 0.074616284981603
+          },
+          {
+            "fraction": 0.0078125,
+            "physical_scaled_displacement_norm": 7.527163864e-06,
+            "relative_departure_from_1e-6_response": 0.076643801407951
+          },
+          {
+            "fraction": 0.015625,
+            "physical_scaled_displacement_norm": 1.5054327728e-05,
+            "relative_departure_from_1e-6_response": 0.073955010790761
+          },
+          {
+            "fraction": 0.03125,
+            "physical_scaled_displacement_norm": 3.0108655455e-05,
+            "relative_departure_from_1e-6_response": 0.073268689874265
+          },
+          {
+            "fraction": 0.0625,
+            "physical_scaled_displacement_norm": 6.021731091e-05,
+            "relative_departure_from_1e-6_response": 0.073251383659681
+          },
+          {
+            "fraction": 0.125,
+            "physical_scaled_displacement_norm": 0.000120434621821,
+            "relative_departure_from_1e-6_response": 0.072558035652178
+          }
+        ],
+        "exact_residual_change_norm_at_accepted_line": 0.005477616722296,
+        "first_departure": {
+          "fraction": 0.001953125,
+          "physical_scaled_displacement_norm": 1.881790966e-06,
+          "relative_departure_from_1e-6_response": 0.109266891337606
+        },
+        "raw_norm": 1.66005208e-07,
+        "raw_squared_fraction_of_proposal": 2.0775e-11,
+        "relative_departure_at_accepted_line": 0.072558035652178,
+        "response_norm_at_1e-6": 44.767578297433715,
+        "secant_response_norm_at_accepted_line": 45.482076827030376,
+        "sector": "u"
+      },
+      {
+        "absolute_nonlinear_defect_norm_at_accepted_line": 0.346401631822041,
+        "accepted_line_fraction": 0.125,
+        "accepted_physical_scaled_displacement_norm": 0.000243041214353,
+        "action_owned_norm": 0.000806418335518,
+        "action_owned_squared_fraction_allocation": 0.247632984580114,
+        "departure_scan": [
+          {
+            "fraction": 0.0009765625,
+            "physical_scaled_displacement_norm": 1.898759487e-06,
+            "relative_departure_from_1e-6_response": 0.001111319369137
+          },
+          {
+            "fraction": 0.001953125,
+            "physical_scaled_displacement_norm": 3.797518974e-06,
+            "relative_departure_from_1e-6_response": 0.002185824659238
+          },
+          {
+            "fraction": 0.00390625,
+            "physical_scaled_displacement_norm": 7.595037949e-06,
+            "relative_departure_from_1e-6_response": 0.004555612243436
+          },
+          {
+            "fraction": 0.0078125,
+            "physical_scaled_displacement_norm": 1.5190075897e-05,
+            "relative_departure_from_1e-6_response": 0.009138120470948
+          },
+          {
+            "fraction": 0.015625,
+            "physical_scaled_displacement_norm": 3.0380151794e-05,
+            "relative_departure_from_1e-6_response": 0.018194277796958
+          },
+          {
+            "fraction": 0.03125,
+            "physical_scaled_displacement_norm": 6.0760303588e-05,
+            "relative_departure_from_1e-6_response": 0.035837397779985
+          },
+          {
+            "fraction": 0.0625,
+            "physical_scaled_displacement_norm": 0.000121520607176,
+            "relative_departure_from_1e-6_response": 0.069351480999731
+          },
+          {
+            "fraction": 0.125,
+            "physical_scaled_displacement_norm": 0.000243041214353,
+            "relative_departure_from_1e-6_response": 0.130040265350035
+          }
+        ],
+        "exact_residual_change_norm_at_accepted_line": 2.319004202558039,
+        "first_departure": {
+          "fraction": 0.0078125,
+          "physical_scaled_displacement_norm": 1.5190075897e-05,
+          "relative_departure_from_1e-6_response": 0.009138120470948
+        },
+        "raw_norm": 0.000509878825159,
+        "raw_squared_fraction_of_proposal": 0.00019598756925,
+        "relative_departure_at_accepted_line": 0.130040265350035,
+        "response_norm_at_1e-6": 10960.292785322836,
+        "secant_response_norm_at_accepted_line": 9541.608853181466,
+        "sector": "w"
+      },
+      {
+        "absolute_nonlinear_defect_norm_at_accepted_line": 0.149869553630931,
+        "accepted_line_fraction": 0.125,
+        "accepted_physical_scaled_displacement_norm": 0.00026571462186,
+        "action_owned_norm": 0.000966248497501,
+        "action_owned_squared_fraction_allocation": 0.355521089109687,
+        "departure_scan": [
+          {
+            "fraction": 0.00048828125,
+            "physical_scaled_displacement_norm": 1.037947742e-06,
+            "relative_departure_from_1e-6_response": 0.000901906192485
+          },
+          {
+            "fraction": 0.0009765625,
+            "physical_scaled_displacement_norm": 2.075895483e-06,
+            "relative_departure_from_1e-6_response": 0.000823667884327
+          },
+          {
+            "fraction": 0.001953125,
+            "physical_scaled_displacement_norm": 4.151790967e-06,
+            "relative_departure_from_1e-6_response": 0.001494888649111
+          },
+          {
+            "fraction": 0.00390625,
+            "physical_scaled_displacement_norm": 8.303581933e-06,
+            "relative_departure_from_1e-6_response": 0.002988321215693
+          },
+          {
+            "fraction": 0.0078125,
+            "physical_scaled_displacement_norm": 1.6607163866e-05,
+            "relative_departure_from_1e-6_response": 0.005832279230785
+          },
+          {
+            "fraction": 0.015625,
+            "physical_scaled_displacement_norm": 3.3214327733e-05,
+            "relative_departure_from_1e-6_response": 0.011755740074325
+          },
+          {
+            "fraction": 0.03125,
+            "physical_scaled_displacement_norm": 6.6428655465e-05,
+            "relative_departure_from_1e-6_response": 0.023741600026779
+          },
+          {
+            "fraction": 0.0625,
+            "physical_scaled_displacement_norm": 0.00013285731093,
+            "relative_departure_from_1e-6_response": 0.048479689005415
+          },
+          {
+            "fraction": 0.125,
+            "physical_scaled_displacement_norm": 0.00026571462186,
+            "relative_departure_from_1e-6_response": 0.101272753615734
+          }
+        ],
+        "exact_residual_change_norm_at_accepted_line": 1.629682712494892,
+        "first_departure": {
+          "fraction": 0.0078125,
+          "physical_scaled_displacement_norm": 1.6607163866e-05,
+          "relative_departure_from_1e-6_response": 0.005832279230785
+        },
+        "raw_norm": 0.00033883433639,
+        "raw_squared_fraction_of_proposal": 8.6550464197e-05,
+        "relative_departure_at_accepted_line": 0.101272753615734,
+        "response_norm_at_1e-6": 5569.360644115642,
+        "secant_response_norm_at_accepted_line": 6133.206750478645,
+        "sector": "v"
+      },
+      {
+        "absolute_nonlinear_defect_norm_at_accepted_line": 9.1652468121e-05,
+        "accepted_line_fraction": 0.125,
+        "accepted_physical_scaled_displacement_norm": 4.1489209351e-05,
+        "action_owned_norm": 1.561187e-09,
+        "action_owned_squared_fraction_allocation": 9.28e-13,
+        "departure_scan": [
+          {
+            "fraction": 0.00390625,
+            "physical_scaled_displacement_norm": 1.296537792e-06,
+            "relative_departure_from_1e-6_response": 2.343851712861152
+          },
+          {
+            "fraction": 0.0078125,
+            "physical_scaled_displacement_norm": 2.593075584e-06,
+            "relative_departure_from_1e-6_response": 1.603666786779271
+          },
+          {
+            "fraction": 0.015625,
+            "physical_scaled_displacement_norm": 5.186151169e-06,
+            "relative_departure_from_1e-6_response": 1.421352486882419
+          },
+          {
+            "fraction": 0.03125,
+            "physical_scaled_displacement_norm": 1.0372302338e-05,
+            "relative_departure_from_1e-6_response": 1.106417751920429
+          },
+          {
+            "fraction": 0.0625,
+            "physical_scaled_displacement_norm": 2.0744604675e-05,
+            "relative_departure_from_1e-6_response": 1.030415181727862
+          },
+          {
+            "fraction": 0.125,
+            "physical_scaled_displacement_norm": 4.1489209351e-05,
+            "relative_departure_from_1e-6_response": 1.009009162857418
+          }
+        ],
+        "exact_residual_change_norm_at_accepted_line": 5.628298591e-06,
+        "first_departure": {
+          "fraction": 0.00390625,
+          "physical_scaled_displacement_norm": 1.296537792e-06,
+          "relative_departure_from_1e-6_response": 2.343851712861152
+        },
+        "raw_norm": 2.011612e-09,
+        "raw_squared_fraction_of_proposal": 3e-15,
+        "relative_departure_at_accepted_line": 1.009009162857418,
+        "response_norm_at_1e-6": 2.189343448197856,
+        "secant_response_norm_at_accepted_line": 0.135656925711673,
+        "sector": "eta_sensitive_shift"
+      },
+      {
+        "absolute_nonlinear_defect_norm_at_accepted_line": 0.000434703337576,
+        "accepted_line_fraction": 0.125,
+        "accepted_physical_scaled_displacement_norm": 0.000284652761342,
+        "action_owned_norm": 6.3913368e-08,
+        "action_owned_squared_fraction_allocation": 1.555504e-09,
+        "departure_scan": [
+          {
+            "fraction": 0.00048828125,
+            "physical_scaled_displacement_norm": 1.111924849e-06,
+            "relative_departure_from_1e-6_response": 3.534324689462605
+          },
+          {
+            "fraction": 0.0009765625,
+            "physical_scaled_displacement_norm": 2.223849698e-06,
+            "relative_departure_from_1e-6_response": 1.689082678455686
+          },
+          {
+            "fraction": 0.001953125,
+            "physical_scaled_displacement_norm": 4.447699396e-06,
+            "relative_departure_from_1e-6_response": 1.174236338640232
+          },
+          {
+            "fraction": 0.00390625,
+            "physical_scaled_displacement_norm": 8.895398792e-06,
+            "relative_departure_from_1e-6_response": 0.921832178378257
+          },
+          {
+            "fraction": 0.0078125,
+            "physical_scaled_displacement_norm": 1.7790797584e-05,
+            "relative_departure_from_1e-6_response": 1.027841807855573
+          },
+          {
+            "fraction": 0.015625,
+            "physical_scaled_displacement_norm": 3.5581595168e-05,
+            "relative_departure_from_1e-6_response": 1.004756720538562
+          },
+          {
+            "fraction": 0.03125,
+            "physical_scaled_displacement_norm": 7.1163190336e-05,
+            "relative_departure_from_1e-6_response": 0.963070819511889
+          },
+          {
+            "fraction": 0.0625,
+            "physical_scaled_displacement_norm": 0.000142326380671,
+            "relative_departure_from_1e-6_response": 0.950757386814335
+          },
+          {
+            "fraction": 0.125,
+            "physical_scaled_displacement_norm": 0.000284652761342,
+            "relative_departure_from_1e-6_response": 0.951748087617009
+          }
+        ],
+        "exact_residual_change_norm_at_accepted_line": 3.8550234055e-05,
+        "first_departure": {
+          "fraction": 0.00048828125,
+          "physical_scaled_displacement_norm": 1.111924849e-06,
+          "relative_departure_from_1e-6_response": 3.534324689462605
+        },
+        "raw_norm": 3.64255653e-07,
+        "raw_squared_fraction_of_proposal": 1.00025e-10,
+        "relative_departure_at_accepted_line": 0.951748087617009,
+        "response_norm_at_1e-6": 1.604558519030047,
+        "secant_response_norm_at_accepted_line": 0.1354289832767,
+        "sector": "lapse"
+      },
+      {
+        "absolute_nonlinear_defect_norm_at_accepted_line": 0.029979692613726,
+        "accepted_line_fraction": 0.125,
+        "accepted_physical_scaled_displacement_norm": 2.2730704612e-05,
+        "action_owned_norm": 3.9720332347e-05,
+        "action_owned_squared_fraction_allocation": 0.000600777212905,
+        "departure_scan": [
+          {
+            "fraction": 0.0078125,
+            "physical_scaled_displacement_norm": 1.420669038e-06,
+            "relative_departure_from_1e-6_response": 0.002396033594738
+          },
+          {
+            "fraction": 0.015625,
+            "physical_scaled_displacement_norm": 2.841338077e-06,
+            "relative_departure_from_1e-6_response": 0.00483898940362
+          },
+          {
+            "fraction": 0.03125,
+            "physical_scaled_displacement_norm": 5.682676153e-06,
+            "relative_departure_from_1e-6_response": 0.009706353354925
+          },
+          {
+            "fraction": 0.0625,
+            "physical_scaled_displacement_norm": 1.1365352306e-05,
+            "relative_departure_from_1e-6_response": 0.01926131949113
+          },
+          {
+            "fraction": 0.125,
+            "physical_scaled_displacement_norm": 2.2730704612e-05,
+            "relative_departure_from_1e-6_response": 0.037911534555945
+          }
+        ],
+        "exact_residual_change_norm_at_accepted_line": 0.760826550615328,
+        "first_departure": {
+          "fraction": 0.03125,
+          "physical_scaled_displacement_norm": 5.682676153e-06,
+          "relative_departure_from_1e-6_response": 0.009706353354925
+        },
+        "raw_norm": 0.000181845636897,
+        "raw_squared_fraction_of_proposal": 2.492874093e-05,
+        "relative_departure_at_accepted_line": 0.037911534555945,
+        "response_norm_at_1e-6": 34789.07756111999,
+        "secant_response_norm_at_accepted_line": 33471.313960418214,
+        "sector": "period"
+      },
+      {
+        "absolute_nonlinear_defect_norm_at_accepted_line": 1e-15,
+        "accepted_line_fraction": 0.125,
+        "accepted_physical_scaled_displacement_norm": 4.551831785e-06,
+        "action_owned_norm": 3.6414654279e-05,
+        "action_owned_squared_fraction_allocation": 0.000504940361579,
+        "departure_scan": [
+          {
+            "fraction": 0.03125,
+            "physical_scaled_displacement_norm": 1.137957946e-06,
+            "relative_departure_from_1e-6_response": 4.083e-12
+          },
+          {
+            "fraction": 0.0625,
+            "physical_scaled_displacement_norm": 2.275915892e-06,
+            "relative_departure_from_1e-6_response": 5.124e-12
+          },
+          {
+            "fraction": 0.125,
+            "physical_scaled_displacement_norm": 4.551831785e-06,
+            "relative_departure_from_1e-6_response": 1.388e-12
+          }
+        ],
+        "exact_residual_change_norm_at_accepted_line": 0.000467813200931,
+        "first_departure": null,
+        "raw_norm": 0.036414654278815,
+        "raw_squared_fraction_of_proposal": 0.999647664992343,
+        "relative_departure_at_accepted_line": 1.388e-12,
+        "response_norm_at_1e-6": 102.77471203743626,
+        "secant_response_norm_at_accepted_line": 102.7747120375027,
+        "sector": "explicit_event_multiplier"
+      },
+      {
+        "absolute_nonlinear_defect_norm_at_accepted_line": 0.000465381050084,
+        "accepted_line_fraction": 0.125,
+        "accepted_physical_scaled_displacement_norm": 0.000120936350562,
+        "action_owned_norm": 0.000142397752651,
+        "action_owned_squared_fraction_allocation": 0.007721363084828,
+        "departure_scan": [
+          {
+            "fraction": 0.001953125,
+            "physical_scaled_displacement_norm": 1.889630478e-06,
+            "relative_departure_from_1e-6_response": 0.006084464273815
+          },
+          {
+            "fraction": 0.00390625,
+            "physical_scaled_displacement_norm": 3.779260955e-06,
+            "relative_departure_from_1e-6_response": 0.005799209119167
+          },
+          {
+            "fraction": 0.0078125,
+            "physical_scaled_displacement_norm": 7.55852191e-06,
+            "relative_departure_from_1e-6_response": 0.005067857674028
+          },
+          {
+            "fraction": 0.015625,
+            "physical_scaled_displacement_norm": 1.511704382e-05,
+            "relative_departure_from_1e-6_response": 0.005262040131337
+          },
+          {
+            "fraction": 0.03125,
+            "physical_scaled_displacement_norm": 3.0234087641e-05,
+            "relative_departure_from_1e-6_response": 0.0051893415479
+          },
+          {
+            "fraction": 0.0625,
+            "physical_scaled_displacement_norm": 6.0468175281e-05,
+            "relative_departure_from_1e-6_response": 0.005270459642086
+          },
+          {
+            "fraction": 0.125,
+            "physical_scaled_displacement_norm": 0.000120936350562,
+            "relative_departure_from_1e-6_response": 0.005415452166998
+          }
+        ],
+        "exact_residual_change_norm_at_accepted_line": 0.086005107938022,
+        "first_departure": {
+          "fraction": 0.001953125,
+          "physical_scaled_displacement_norm": 1.889630478e-06,
+          "relative_departure_from_1e-6_response": 0.006084464273815
+        },
+        "raw_norm": 0.000224563229987,
+        "raw_squared_fraction_of_proposal": 3.8016476835e-05,
+        "relative_departure_at_accepted_line": 0.005415452166998,
+        "response_norm_at_1e-6": 710.5867613073175,
+        "secant_response_norm_at_accepted_line": 711.1601064368317,
+        "sector": "remaining_physical_blocks"
+      }
+    ],
+    "sector_sum_physical_scaled_reconstruction_error": 0.0,
+    "sector_sum_raw_reconstruction_error": 0.0,
+    "source_state": "v18.41_accepted_frontier",
+    "u_eta_shift_lapse_interactions_at_accepted_line": [
+      {
+        "exact_combined_residual_change_norm": 0.005476749079784,
+        "interaction_fraction_of_combined_change": 0.001699711992605,
+        "interaction_residual_norm": 9.308896091e-06,
+        "sectors": [
+          "u",
+          "eta_sensitive_shift"
+        ]
+      },
+      {
+        "exact_combined_residual_change_norm": 0.005438919966078,
+        "interaction_fraction_of_combined_change": 0.00117080734007,
+        "interaction_residual_norm": 6.367927418e-06,
+        "sectors": [
+          "u",
+          "lapse"
+        ]
+      },
+      {
+        "exact_combined_residual_change_norm": 3.8065390677e-05,
+        "interaction_fraction_of_combined_change": 0.170453662776658,
+        "interaction_residual_norm": 6.488385266e-06,
+        "sectors": [
+          "eta_sensitive_shift",
+          "lapse"
+        ]
+      },
+      {
+        "exact_combined_residual_change_norm": 0.005438920444323,
+        "interaction_fraction_of_combined_change": 0.001784807137488,
+        "interaction_residual_norm": 9.707424029e-06,
+        "sectors": [
+          "u",
+          "eta_sensitive_shift",
+          "lapse"
+        ]
+      }
+    ]
+  },
+  "validation": {
+    "accepted_fraction_reproduced": true,
+    "accepted_state_is_v18_47": true,
+    "all_requested_sectors_measured": true,
+    "bending_classified_without_equation_change": true,
+    "coordinate_map_invertible": true,
+    "interaction_diagnostic_present": true,
+    "local_response_measured_at_1e-6": true,
+    "no_constraint_added": true,
+    "no_left_residual_scaling": true,
+    "no_particle_data": true,
+    "physical_equations_unchanged": true,
+    "sector_sum_reconstructs_raw_direction": true,
+    "sector_sum_reconstructs_scaled_direction": true,
+    "source_is_v18_41": true
+  },
+  "validation_passed": true,
+  "version": "v18.48"
+}

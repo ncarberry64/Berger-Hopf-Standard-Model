@@ -1,0 +1,142 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "VERIFY_FLUX_ENVELOPE_AND_POSITIVE_DURATION_PERSISTENCE_THEN_PROMOTE",
+  "artifact": "BHSM_aether_n3_third_direct_line_child_v18_44",
+  "classification": "BHSM_N3_THIRD_DIRECT_LINE_CHILD",
+  "dependency_advanced": "NONLINEAR_N3_EVENT_SADDLE_CLOSURE",
+  "real_physical_property_explained": "THE_INDEPENDENT_V18_43_LINE_STATE_SELECTS_A_COMPLETE_MOVING_CHILD_WITHOUT_REASSERTING_THE_INVALIDATED_DIRECTION",
+  "status": "VALIDATED",
+  "third_direct_line_child": {
+    "additional_global_KKT_rows": 0,
+    "chart": {
+      "full_chart_rank": 14,
+      "function_evaluations": 12,
+      "jacobian_step": 0.0002,
+      "row_scaling": "LOCAL_JACOBIAN_ROW_NORMS_NUMERICAL_ONLY_SAME_ZERO_SET",
+      "scaled_final_norm": 7.62e-13,
+      "selected_variable_indices": [
+        12,
+        2,
+        3,
+        9,
+        1,
+        10,
+        6,
+        0,
+        7,
+        23,
+        17,
+        13,
+        25,
+        8
+      ],
+      "smallest_resolved_singular_value": 0.006104070276773,
+      "solver_message": "`xtol` termination condition is satisfied.",
+      "solver_success": true
+    },
+    "child_state": {
+      "coordinates": [
+        -0.00025635581548,
+        0.020922105392161,
+        -0.014192959616717,
+        -0.027194812405524,
+        0.057413155990941,
+        -0.245447539361421,
+        5.9855488326e-05,
+        -0.075907513368912,
+        0.038769824298276,
+        0.142154642072816
+      ],
+      "eta_Legendre_minimum": {
+        "chi_at_minimum": 0.331124802179177,
+        "minimum": 0.999977630968943
+      },
+      "multipliers": [
+        1.048719631064667,
+        0.058893892680204,
+        0.887537730725834,
+        -0.148997458636655,
+        -0.127575172284358,
+        0.804816295492497
+      ],
+      "velocities": [
+        -0.315176183000587,
+        -0.149205097669796,
+        0.172780976043725,
+        -0.022509564419096,
+        -4.068908887371832,
+        -8.074375896635235,
+        -2.029422534396062,
+        0.3626968052182,
+        0.60091196917862,
+        0.196569377902582
+      ],
+      "velocity_norm": 9.303406005234487
+    },
+    "event_definition_changed": false,
+    "final_physical_rows": [
+      1.2e-14,
+      -5.6e-14,
+      -1.8e-14,
+      -3.28407e-10,
+      -4.7945e-11,
+      -6.758e-11,
+      3.0433e-11,
+      -4.1303e-11,
+      9.3751e-11,
+      4.542e-12,
+      8.049209e-09,
+      -2.9708e-11,
+      -3.96905172e-07,
+      -1.2492396e-08
+    ],
+    "initial_physical_rows": [
+      -3.225203971e-05,
+      4.9278744491e-05,
+      -4.2294698424e-05,
+      5.4e-14,
+      1.54e-13,
+      2.8e-14,
+      -1.88e-13,
+      -1e-13,
+      2.74e-13,
+      -8.5e-14,
+      0.530874831528864,
+      -0.085767382267557,
+      27.0417304294238,
+      -1.378019209000268
+    ],
+    "nonzero_motion_retained": true,
+    "physical_equations_changed": false,
+    "physical_residuals": {
+      "dynamic_flux_norm_at_4e-4": 3.97101719e-07,
+      "maximum_seven_constraints": 3.28407e-10,
+      "maximum_trace": 5.6e-14,
+      "momentum_norm": 8.049264e-09
+    },
+    "physical_row_count": 14,
+    "source_event": "v18.43_independent_exact_merit_line_proposal",
+    "source_germ": "v18.40_validated_complete_child",
+    "source_solver_model": "INVALIDATED_NOT_REASSERTED",
+    "whole_child_variable_count": 26
+  },
+  "validation": {
+    "child_eta_hyperregular": true,
+    "complete_26_variable_child_considered": true,
+    "dynamic_flux_closed": true,
+    "event_definition_unchanged": true,
+    "fourteen_physical_rows": true,
+    "full_rank_local_chart": true,
+    "invalidated_solver_model_not_reasserted": true,
+    "local_solve_converged": true,
+    "momentum_closed": true,
+    "no_extra_global_row": true,
+    "nonzero_motion_retained": true,
+    "numerical_row_scaling_same_zero_set": true,
+    "physical_equations_unchanged": true,
+    "seven_constraints_closed": true,
+    "trace_closed": true
+  },
+  "validation_passed": true,
+  "version": "v18.44"
+}

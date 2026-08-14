@@ -1,5 +1,140 @@
 # Gate Ledger
 
+## v17.84-v18.58 N=3 complete-child, stiffness and continuation gates
+
+- v17.32 parallel Jacobian equivalence: `VALIDATED_AND_ADOPTED`; no further
+  performance optimization is active.
+- Whole-system/fourth-body interpretation:
+  `DERIVED_COMPLETE_RECONSTRUCTED_CHILD_NOT_EXTRA_COORDINATE`.
+- Event-to-child physical row map:
+  `3_TRACE_PLUS_7_DIRAC_PLUS_2_MOMENTUM_PLUS_2_DYNAMIC_FLUX`.
+- Extra global KKT row: `NONE`; the global system remains 376 by 376.
+- Physical nonlinear solve: `SQUARE_376_VARIABLE_KKT_WITH_EXPLICIT_EVENT_MULTIPLIER`.
+- Componentwise monotonicity: `NOT_REQUIRED_FOR_INTERMEDIATE_STEPS`.
+- Previous-iterate path retention: `NOT_A_PHYSICAL_CONSTRAINT`.
+- Trust regions, damping, line searches and Krylov tolerances:
+  `NUMERICAL_RELIABILITY_CONTROLS_NOT_BHSM_EQUATIONS`.
+- Zero-background gauge/spinor/ghost/HS Calderon block: `CLOSED_V17_97`.
+- Firewall core ownership: `DISCRETE_ROWS_CLOSED_V17_98`; the unknown
+  microscopic generator is not fabricated as a classical child row.
+- Positive-duration persistence: `VALIDATED_V17_99_V18_00_V18_02_V18_04_V18_06_V18_09_V18_12_V18_25_V18_29_V18_33_V18_37_V18_41_V18_47_V18_54_V18_58`.
+- Staticity requirement: `REJECTED`; nonzero motion, momentum and time
+  dependence are allowed and retained when relative evolution is
+  constraint-consistent and persistent.
+- Latest accepted N=3 residual: `0.815925953107132`.
+- Latest accepted event magnitude: `0.084105974509345`.
+- Latest accepted global eta minimum: `0.77423036838536`.
+- Latest child trace/constraint/momentum/flux maxima:
+  `9.9E-14/4.88E-10/5.12E-8/1.19E-5`.
+- v18.11-v18.12 square-KKT proposal and complete-child promotion:
+  `VALIDATED_INDEPENDENT_TOTAL_MERIT_DESCENT_WITHOUT_COMPONENTWISE_OR_PREVIOUS_PATH_FILTER`.
+- v18.14 measured action radius powers:
+  `SPATIAL_GRAVITY_5/INTRINSIC_CURVATURE_5/COSMOLOGICAL_7/ADM_KINETIC_7/BOUNDARY_CASIMIR_MINUS_1`.
+- Mixed eta/Hopf-inertia local radius exponents over the tested family:
+  `1.8083/-2.1733`; measured mixed-term fits, not assumed exact monomials.
+- Genuine physical response anisotropy: `VALIDATED_SCALE_V_W_PERIOD`.
+- Intrinsic `1E-6` action-normalized stiffness hypothesis:
+  `INVALIDATED_MAX_DIMENSIONLESS_CURVATURE_94.0122_CHARACTERISTIC_STEP_0.103135`.
+- Raw-coordinate near-stall:
+  `RECLASSIFIED_PREDOMINANTLY_COORDINATE_CONDITIONING_AND_SOFT_MODE_DEGENERACY`.
+- v18.15 action-curvature coordinate map:
+  `VALIDATED_INVERTIBLE_RIGHT_COORDINATE_MAP_SAME_376_RESIDUAL_ROOT_ETA_EVENT_AND_COMPLETE_CHILD_GATE`.
+- v18.16-v18.17 inherited response direction and reverse orientation:
+  `RECLASSIFIED_NO_EXACT_MERIT_DESCENT_NO_PROMOTION`.
+- v18.18 exact global action Hessian:
+  `VALIDATED_MAXIMUM_AUDITED_DIRECTIONAL_RELATIVE_RESIDUAL_1.81E-7`.
+- v18.19 and v18.21 coordinatewise event Hessians:
+  `INVALIDATED_NOT_USED_FOR_PHYSICAL_STEP`.
+- v18.20-v18.22 directional event response and merit direction:
+  `VALIDATED_NO_FULL_EVENT_HESSIAN_CLAIM`.
+- v18.24 complete-child chart:
+  `VALIDATED_RANK_14_FROM_ALL_26_CHILD_VARIABLES`.
+- v18.25 global promotion:
+  `VALIDATED_TRUE_376_MERIT_ETA_TWO_SCALE_FLUX_AND_POSITIVE_DURATION_PERSISTENCE`.
+- v18.26 continuation at the inherited coarse trial floor:
+  `INVALIDATED_NO_FORWARD_DESCENT_AT_OR_ABOVE_1E-8_DESPITE_VALIDATED_DIRECTIONAL_RESPONSE`.
+- v18.27 exact fine merit bracket:
+  `VALIDATED_3E-9_SCALED_STEP_REDUCES_THE_UNCHANGED_376_ROW_NORM`.
+- v18.28 recomputed complete-child chart:
+  `VALIDATED_RANK_14_FROM_ALL_26_CHILD_VARIABLES`.
+- v18.29 global promotion:
+  `VALIDATED_TRUE_376_MERIT_ETA_TWO_SCALE_FLUX_AND_POSITIVE_DURATION_PERSISTENCE`.
+- v18.30 right-mapped matrix-free GMRES:
+  `RECLASSIFIED_DIRECTIONAL_RESPONSE_VALID_NEWTON_EQUATION_NOT_SOLVED`.
+- v18.31 congruent action-map MINRES:
+  `INVALIDATED_DIRECTION_FAILS_EXACT_NONLINEAR_RESPONSE_CHECK`.
+- v18.32 complete-child chart for the independent v18.31 proposal:
+  `VALIDATED_RANK_14_WITH_INVALIDATED_SOLVER_MODEL_NOT_REASSERTED`.
+- v18.33 physical promotion:
+  `VALIDATED_BY_RECOMPUTED_EXACT_376_MERIT_ETA_CHILD_FLUX_AND_PERSISTENCE_ONLY`.
+- v18.34 direct nested-residual response scale:
+  `VALIDATED_COMMON_3E-6_TO_1E-6_DIRECTIONAL_PLATEAU`.
+- v18.35 direct-residual JFNK direction:
+  `INVALIDATED_RESULTING_DIRECTION_LEAVES_MEASURED_RESPONSE_PLATEAU`.
+- v18.36 child reconstruction:
+  `VALIDATED_RANK_14_WITH_INVALIDATED_JFNK_MODEL_NOT_REASSERTED`.
+- v18.37 physical promotion:
+  `VALIDATED_EXACT_NORM_REDUCTION_0.00302809525_ETA_FLUX_AND_PERSISTENCE`.
+- v18.38 remeasured direct nested-residual response scale:
+  `VALIDATED_COMMON_3E-6_TO_1E-6_DIRECTIONAL_PLATEAU`.
+- v18.39 second direct-residual JFNK direction:
+  `INVALIDATED_RESULTING_DIRECTION_LEAVES_MEASURED_RESPONSE_PLATEAU`.
+- v18.40 child reconstruction:
+  `VALIDATED_RANK_14_WITH_INVALIDATED_JFNK_MODEL_NOT_REASSERTED`.
+- v18.41 physical promotion:
+  `VALIDATED_EXACT_NORM_REDUCTION_0.00168862805_ETA_FLUX_AND_PERSISTENCE`.
+- v18.42 remeasured direct nested-residual response scale:
+  `VALIDATED_COMMON_3E-6_TO_1E-6_DIRECTIONAL_PLATEAU`.
+- v18.43 third direct-residual JFNK direction:
+  `INVALIDATED_RESULTING_DIRECTION_LEAVES_MEASURED_RESPONSE_PLATEAU`.
+- v18.44 most aggressive line-child reconstruction:
+  `VALIDATED_LOCAL_RANK_14_CHILD_INVALIDATED_SOLVER_MODEL_NOT_REASSERTED`.
+- v18.45 most aggressive physical promotion:
+  `INVALIDATED_TWO_SCALE_FLUX_ENVELOPE_2.27582E-5_EXCEEDS_EXISTING_2E-5_GATE`.
+- v18.46 next exact-merit line-child reconstruction:
+  `VALIDATED_RANK_14_AFTER_UNCHANGED_GATE_REJECTS_MORE_AGGRESSIVE_STATE`.
+- v18.47 physical promotion:
+  `VALIDATED_EXACT_NORM_REDUCTION_0.00497706683_ETA_FLUX_AND_PERSISTENCE`.
+- v18.48 v18.43 physical-sector compression diagnostic:
+  `VALIDATED_LAPSE_FIRST_DEPARTURE_ETA_SHIFT_LARGEST_NORMALIZED_DEPARTURE_W_LARGEST_ABSOLUTE_DEFECT_U_ETA_SHIFT_LAPSE_INTERACTIONS_ABSOLUTELY_SUBDOMINANT`.
+- v18.49 accepted-frontier direct-response scale:
+  `VALIDATED_COMMON_3E-6_TO_1E-6_DIRECTIONAL_PLATEAU`.
+- v18.50 bidirectional merit-manifold probe:
+  `VALIDATED_EXACT_NONLINEAR_LINE_SCAN_WITH_INVALIDATED_SOLVER_INTERPRETATION`.
+- v18.51 lowest-merit bidirectional child:
+  `VALIDATED_LOCAL_RANK_14_CHILD_INVALIDATED_SOLVER_INTERPRETATION_NOT_REASSERTED`.
+- v18.52 lowest-merit physical promotion:
+  `INVALIDATED_TWO_SCALE_FLUX_ENVELOPE_2.09204E-5_EXCEEDS_EXISTING_2E-5_GATE`.
+- v18.53 next bidirectional exact-merit child:
+  `VALIDATED_RANK_14_AFTER_UNCHANGED_GATE_REJECTS_LOWER_MERIT_STATE`.
+- v18.54 physical promotion:
+  `VALIDATED_EXACT_NORM_REDUCTION_0.00134272343_ETA_FLUX_AND_PERSISTENCE`.
+- v18.55 accepted-frontier direct-response scale:
+  `VALIDATED_COMMON_3E-6_TO_1E-6_DIRECTIONAL_PLATEAU`.
+- v18.56 second bidirectional merit-manifold probe:
+  `VALIDATED_EXACT_NONLINEAR_LINE_SCAN_WITH_INVALIDATED_SOLVER_INTERPRETATION`.
+- v18.57 selected bidirectional child:
+  `VALIDATED_FRESH_RANK_14_CHILD_INVALIDATED_SOLVER_INTERPRETATION_NOT_REASSERTED`.
+- v18.58 physical promotion:
+  `VALIDATED_EXACT_NORM_REDUCTION_0.00201664283_ETA_FLUX_AND_PERSISTENCE`.
+- Residual left scaling or new acceptance restriction: `NONE`.
+- Event definition as current blocker: `FALSE_COMPLETE_CHILD_MAP_CLOSED`.
+- Simultaneous N=3 saddle closure: `OPEN_RESIDUAL_NONZERO`.
+- v18.05 fixed-rho chain-rule Jacobian claim:
+  `INVALIDATED_DIFFERENT_COVECTOR_AND_INCOMPLETE_PROJECTED_RESPONSE`.
+- v18.07-v18.08 coordinate-column projected Jacobian claims:
+  `INVALIDATED_BY_DIRECTIONAL_MISMATCH`.
+- Trials from invalidated proposal models:
+  `PROMOTABLE_ONLY_BY_INDEPENDENT_TRUE_MERIT_ETA_AND_COMPLETE_CHILD_GATES`.
+- N=4+ independent convergence: `OPEN_AFTER_N3_CLOSURE`.
+- Microscopic pregeometric generator and one-loop source/saddle chain: `OPEN`.
+- Broken return, physical mass/flavor/absolute spectrum and Unique
+  Actualization: `OPEN`.
+- Full BHSM completion: `FALSE`.
+- GitHub and USB synchronization: `AUTHORIZED_V18_58_REPRODUCIBILITY_SNAPSHOT_WITH_FULL_COMPLETION_FALSE`.
+- Exact next object:
+  `REMEASURE_THE_DIRECT_376_ROW_RESPONSE_AT_V18_58_AND_CONTINUE_BIDIRECTIONAL_EXACT_MERIT_DESCENT_WITH_ETA_AND_RECOMPUTED_COMPLETE_CHILD_PERSISTENCE_GATING`.
+
 ## v15.10 Aether-cycle sigma-coefficient reconstruction gate
 
 The retained local eta-sigma energy gives an exact minimal response inverse:

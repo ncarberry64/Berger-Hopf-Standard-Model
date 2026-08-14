@@ -1,0 +1,2 @@
+from bhsm.interface.aether_n3_direct_period_corrected_continuation_v17_79 import completion_payload
+def test_classifies_direct_period_corrected_continuation():assert completion_payload()["validation_passed"]

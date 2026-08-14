@@ -1,0 +1,198 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "DERIVE_A_SAME_ACTION_SOFT_EIGENVALUE_CONSTRAINED_EVENT_CORRECTION_WITH_ORIGINAL_SIX_OWNER_ACCEPTANCE",
+  "artifact": "BHSM_aether_n3_coupled_contraction_audit_v17_50",
+  "classification": "BHSM_N3_COUPLED_MEASURED_TANGENT_CONTRACTION_ADEQUACY_AUDIT",
+  "coupled_contraction_audit": {
+    "classification_scope": "EMPIRICAL_ADEQUACY_NOT_MATHEMATICAL_NO_GO",
+    "closure_tolerance": 1e-06,
+    "contraction_by_owner": {
+      "complete": {
+        "constant_rate_projected_additional_passes": 1100,
+        "cumulative_fractional_reduction": 0.094613099512814,
+        "final": 0.855054105118296,
+        "initial": 0.944407418152609,
+        "ratio_per_pass": 0.9876527466307
+      },
+      "event": {
+        "constant_rate_projected_additional_passes": 5708,
+        "cumulative_fractional_reduction": 0.015766594353099,
+        "final": 0.084012053757297,
+        "initial": 0.085357856454871,
+        "ratio_per_pass": 0.998015445687542
+      },
+      "log_scale": {
+        "constant_rate_projected_additional_passes": 2097,
+        "cumulative_fractional_reduction": 0.046960401793754,
+        "final": 0.298065780452896,
+        "initial": 0.312752776499421,
+        "ratio_per_pass": 0.994005684891326
+      },
+      "period": {
+        "constant_rate_projected_additional_passes": 1495,
+        "cumulative_fractional_reduction": 0.067407733711609,
+        "final": 0.458962505842041,
+        "initial": 0.492136298394001,
+        "ratio_per_pass": 0.991314540032685
+      },
+      "v0": {
+        "constant_rate_projected_additional_passes": 755,
+        "cumulative_fractional_reduction": 0.128211937405804,
+        "final": 0.4142318178187,
+        "initial": 0.475151972815575,
+        "ratio_per_pass": 0.982995126615351
+      },
+      "w0": {
+        "constant_rate_projected_additional_passes": 887,
+        "cumulative_fractional_reduction": 0.111645418727571,
+        "final": 0.498076792616773,
+        "initial": 0.560673410276509,
+        "ratio_per_pass": 0.985310913831233
+      }
+    },
+    "extrapolation_bottleneck": "event",
+    "interpretation": "COUPLED_MEASURED_TANGENT_PASSES_ADVANCE_GEOMETRY_BUT_EVENT_CONTRACTION_REMAINS_INADEQUATE_FOR_DIRECT_COMPLETION",
+    "projected_additional_passes": 5708,
+    "promoted_passes": 8,
+    "states": [
+      {
+        "limiting_owner": "v0",
+        "metrics": {
+          "complete": 0.944407418152609,
+          "event": 0.085357856454871,
+          "log_scale": 0.312752776499421,
+          "period": 0.492136298394001,
+          "v0": 0.475151972815575,
+          "w0": 0.560673410276509
+        },
+        "minimum_fractional_progress": 0.002430617749544,
+        "validation_passed": true,
+        "version": "v17.41"
+      },
+      {
+        "limiting_owner": "event",
+        "metrics": {
+          "complete": 0.933415266557169,
+          "event": 0.085030910850866,
+          "log_scale": 0.311279229246984,
+          "period": 0.488210502650819,
+          "v0": 0.471870641043664,
+          "w0": 0.54927052432409
+        },
+        "minimum_fractional_progress": 0.00383029304605,
+        "validation_passed": true,
+        "version": "v17.42"
+      },
+      {
+        "limiting_owner": "v0",
+        "metrics": {
+          "complete": 0.932849421101113,
+          "event": 0.08500803032792,
+          "log_scale": 0.311217595294413,
+          "period": 0.488083886305492,
+          "v0": 0.471851037698269,
+          "w0": 0.548467513746267
+        },
+        "minimum_fractional_progress": 4.1543897183e-05,
+        "validation_passed": true,
+        "version": "v17.43"
+      },
+      {
+        "limiting_owner": "v0",
+        "metrics": {
+          "complete": 0.923948500589993,
+          "event": 0.084743853413746,
+          "log_scale": 0.310402260791455,
+          "period": 0.483522327282992,
+          "v0": 0.471098439727366,
+          "w0": 0.538519493260644
+        },
+        "minimum_fractional_progress": 0.001594990602488,
+        "validation_passed": true,
+        "version": "v17.44"
+      },
+      {
+        "limiting_owner": "log_scale",
+        "metrics": {
+          "complete": 0.90860300358975,
+          "event": 0.084453180372185,
+          "log_scale": 0.309655974126937,
+          "period": 0.47589473115174,
+          "v0": 0.463992524740298,
+          "w0": 0.525669230957381
+        },
+        "minimum_fractional_progress": 0.002404256536713,
+        "validation_passed": true,
+        "version": "v17.45"
+      },
+      {
+        "limiting_owner": "period",
+        "metrics": {
+          "complete": 0.905943090332693,
+          "event": 0.084408573065833,
+          "log_scale": 0.309368919828107,
+          "period": 0.475657599035912,
+          "v0": 0.459766885614552,
+          "w0": 0.525179436761655
+        },
+        "minimum_fractional_progress": 0.00049828691159,
+        "validation_passed": true,
+        "version": "v17.46"
+      },
+      {
+        "limiting_owner": "event",
+        "metrics": {
+          "complete": 0.879898336329803,
+          "event": 0.084126802048116,
+          "log_scale": 0.298449521726526,
+          "period": 0.460985991028286,
+          "v0": 0.452091400543593,
+          "w0": 0.506448111460568
+        },
+        "minimum_fractional_progress": 0.003338180086247,
+        "validation_passed": true,
+        "version": "v17.47"
+      },
+      {
+        "limiting_owner": "log_scale",
+        "metrics": {
+          "complete": 0.856932797541498,
+          "event": 0.084045632483275,
+          "log_scale": 0.298176934178732,
+          "period": 0.459410588927536,
+          "v0": 0.415294477026052,
+          "w0": 0.499984519534489
+        },
+        "minimum_fractional_progress": 0.00091334556751,
+        "validation_passed": true,
+        "version": "v17.48"
+      },
+      {
+        "limiting_owner": "log_scale",
+        "metrics": {
+          "complete": 0.855054105118296,
+          "event": 0.084012053757297,
+          "log_scale": 0.298065780452896,
+          "period": 0.458962505842041,
+          "v0": 0.4142318178187,
+          "w0": 0.498076792616773
+        },
+        "minimum_fractional_progress": 0.000372777747354,
+        "validation_passed": true,
+        "version": "v17.49"
+      }
+    ]
+  },
+  "dependency_advanced": "REASSESS_EVENT_CLOSURE_DIRECTION_BEFORE_MORE_COUPLED_TANGENT_REPETITION",
+  "status": "RECLASSIFIED",
+  "validation": {
+    "eight_passes_measured": true,
+    "event_is_extrapolation_bottleneck": true,
+    "final_residual_reproduced": true,
+    "more_than_one_thousand_projected_passes": true,
+    "nine_validated_states_loaded": true,
+    "no_mathematical_no_go_claimed": true
+  },
+  "validation_passed": true,
+  "version": "v17.50"
+}

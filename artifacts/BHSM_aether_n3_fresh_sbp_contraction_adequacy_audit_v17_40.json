@@ -1,0 +1,174 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "DERIVE_A_SAME_ACTION_COUPLED_PERIOD_V0_CORRECTION_WITH_ORIGINAL_SIX_OWNER_ACCEPTANCE",
+  "artifact": "BHSM_aether_n3_fresh_sbp_contraction_adequacy_audit_v17_40",
+  "classification": "BHSM_N3_FRESH_SBP_DIRECT_REPETITION_CONTRACTION_ADEQUACY_AUDIT",
+  "dependency_advanced": "REASSESS_THE_N3_CORRECTION_BEFORE_FURTHER_DIRECT_REPETITION",
+  "fresh_sbp_contraction_adequacy_audit": {
+    "all_six_metrics_strictly_decrease_at_every_pass": true,
+    "classification_scope": "EMPIRICAL_ADEQUACY_OF_DIRECT_REPETITION_NOT_A_MATHEMATICAL_NO_GO",
+    "closure_tolerance": 1e-06,
+    "constant_rate_extrapolated_additional_passes": 3587,
+    "constant_rate_extrapolation_bottleneck": "period",
+    "contraction_by_owner": {
+      "complete": {
+        "constant_rate_extrapolated_additional_passes_to_1e-6": 1217,
+        "cumulative_fractional_reduction": 0.065674191246381,
+        "final": 0.95790800098592,
+        "initial": 1.025239795381184,
+        "observed_geometric_ratio_per_promoted_pass": 0.988742170690376
+      },
+      "event": {
+        "constant_rate_extrapolated_additional_passes_to_1e-6": 1839,
+        "cumulative_fractional_reduction": 0.036394253314776,
+        "final": 0.085691826053784,
+        "initial": 0.088928305324622,
+        "observed_geometric_ratio_per_promoted_pass": 0.993840209032303
+      },
+      "log_scale": {
+        "constant_rate_extrapolated_additional_passes_to_1e-6": 2289,
+        "cumulative_fractional_reduction": 0.032642010277523,
+        "final": 0.313664735988864,
+        "initial": 0.324248870967459,
+        "observed_geometric_ratio_per_promoted_pass": 0.994484160828813
+      },
+      "period": {
+        "constant_rate_extrapolated_additional_passes_to_1e-6": 3587,
+        "cumulative_fractional_reduction": 0.021721853622466,
+        "final": 0.502219306221006,
+        "initial": 0.513370668741476,
+        "observed_geometric_ratio_per_promoted_pass": 0.996346482706054
+      },
+      "v0": {
+        "constant_rate_extrapolated_additional_passes_to_1e-6": 1886,
+        "cumulative_fractional_reduction": 0.040742072792576,
+        "final": 0.476309699625765,
+        "initial": 0.496539758615694,
+        "observed_geometric_ratio_per_promoted_pass": 0.993091427020428
+      },
+      "w0": {
+        "constant_rate_extrapolated_additional_passes_to_1e-6": 629,
+        "cumulative_fractional_reduction": 0.118943026165385,
+        "final": 0.572883730650994,
+        "initial": 0.650223251917113,
+        "observed_geometric_ratio_per_promoted_pass": 0.979115664762779
+      }
+    },
+    "interpretation": "DIRECT_REPETITION_IS_STRICTLY_DESCENDING_BUT_NOT_A_CREDIBLE_COMPLETION_PATH_AT_THE_OBSERVED_CONTRACTION_RATE",
+    "promoted_passes": 6,
+    "states": [
+      {
+        "limiting_owner": "period",
+        "metrics": {
+          "complete": 1.025239795381184,
+          "event": 0.088928305324622,
+          "log_scale": 0.324248870967459,
+          "period": 0.513370668741476,
+          "v0": 0.496539758615694,
+          "w0": 0.650223251917113
+        },
+        "minimum_fractional_progress": 0.015344872525485,
+        "validation_passed": true,
+        "version": "v17.31"
+      },
+      {
+        "limiting_owner": "v0",
+        "metrics": {
+          "complete": 1.022619475373664,
+          "event": 0.088785177341884,
+          "log_scale": 0.323777486246983,
+          "period": 0.512544248918597,
+          "v0": 0.496103978875637,
+          "w0": 0.647364807684206
+        },
+        "minimum_fractional_progress": 0.000877633125033,
+        "validation_passed": true,
+        "version": "v17.33"
+      },
+      {
+        "limiting_owner": "v0",
+        "metrics": {
+          "complete": 1.001308539666789,
+          "event": 0.08752101877492,
+          "log_scale": 0.319868946297666,
+          "period": 0.507827141530888,
+          "v0": 0.491756055364741,
+          "w0": 0.623040209891889
+        },
+        "minimum_fractional_progress": 0.00876413755187,
+        "validation_passed": true,
+        "version": "v17.34"
+      },
+      {
+        "limiting_owner": "period",
+        "metrics": {
+          "complete": 0.982211944328571,
+          "event": 0.086699384225563,
+          "log_scale": 0.316745294187824,
+          "period": 0.505407074800507,
+          "v0": 0.484473224378212,
+          "w0": 0.601712409988755
+        },
+        "minimum_fractional_progress": 0.00476553246659,
+        "validation_passed": true,
+        "version": "v17.36"
+      },
+      {
+        "limiting_owner": "v0",
+        "metrics": {
+          "complete": 0.979916849149738,
+          "event": 0.086613377720454,
+          "log_scale": 0.316515759529297,
+          "period": 0.504939766867792,
+          "v0": 0.484236819571081,
+          "w0": 0.598701546040208
+        },
+        "minimum_fractional_progress": 0.000487962585412,
+        "validation_passed": true,
+        "version": "v17.37"
+      },
+      {
+        "limiting_owner": "period",
+        "metrics": {
+          "complete": 0.967259770189984,
+          "event": 0.086068858490042,
+          "log_scale": 0.31502782310554,
+          "period": 0.503227811016495,
+          "v0": 0.48063784220659,
+          "w0": 0.583123328104972
+        },
+        "minimum_fractional_progress": 0.003390415973605,
+        "validation_passed": true,
+        "version": "v17.38"
+      },
+      {
+        "limiting_owner": "period",
+        "metrics": {
+          "complete": 0.95790800098592,
+          "event": 0.085691826053784,
+          "log_scale": 0.313664735988864,
+          "period": 0.502219306221006,
+          "v0": 0.476309699625765,
+          "w0": 0.572883730650994
+        },
+        "minimum_fractional_progress": 0.002004072059237,
+        "validation_passed": true,
+        "version": "v17.39"
+      }
+    ]
+  },
+  "real_physical_property_explained": "OBSERVED_CONTRACTION_OF_THE_UNCHANGED_SIX_OWNER_N3_PHYSICAL_SYSTEM",
+  "status": "RECLASSIFIED",
+  "validation": {
+    "all_six_metrics_strictly_descend": true,
+    "direct_repetition_exceeds_one_thousand_projected_passes": true,
+    "final_residual_reproduced": true,
+    "no_mathematical_no_go_claimed": true,
+    "period_is_extrapolation_bottleneck": true,
+    "seven_authoritative_states_compared": true,
+    "six_promoted_passes_measured": true,
+    "validated_state_chain_loaded": true
+  },
+  "validation_passed": true,
+  "version": "v17.40"
+}

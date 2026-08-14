@@ -1,0 +1,142 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "VERIFY_FLUX_ENVELOPE_AND_POSITIVE_DURATION_PERSISTENCE_THEN_PROMOTE",
+  "artifact": "BHSM_aether_n3_congruent_proposal_child_reconstruction_v18_32",
+  "classification": "BHSM_N3_CONGRUENT_PROPOSAL_CHILD_RECONSTRUCTION",
+  "congruent_proposal_child_reconstruction": {
+    "additional_global_KKT_rows": 0,
+    "chart": {
+      "full_chart_rank": 14,
+      "function_evaluations": 9,
+      "jacobian_step": 0.0002,
+      "row_scaling": "LOCAL_JACOBIAN_ROW_NORMS_NUMERICAL_ONLY_SAME_ZERO_SET",
+      "scaled_final_norm": 5.51e-12,
+      "selected_variable_indices": [
+        12,
+        2,
+        3,
+        9,
+        1,
+        10,
+        6,
+        0,
+        7,
+        23,
+        17,
+        13,
+        25,
+        8
+      ],
+      "smallest_resolved_singular_value": 0.006176736663671,
+      "solver_message": "`xtol` termination condition is satisfied.",
+      "solver_success": true
+    },
+    "child_state": {
+      "coordinates": [
+        -0.000500616706563,
+        0.021841640311354,
+        -0.013170823882058,
+        -0.027253075511384,
+        0.057413155990941,
+        -0.245447539361421,
+        0.000293715365447,
+        -0.082767502467005,
+        0.027896315060286,
+        0.138344398643011
+      ],
+      "eta_Legendre_minimum": {
+        "chi_at_minimum": 0.331003657683323,
+        "minimum": 0.999968647238126
+      },
+      "multipliers": [
+        1.048719631064667,
+        0.058893892680204,
+        0.887537730725834,
+        -0.152022911873941,
+        -0.127575172284358,
+        0.80359089728887
+      ],
+      "velocities": [
+        -0.316480192356292,
+        -0.149205097669796,
+        0.172703151432587,
+        -0.024017235724878,
+        -4.068908887371832,
+        -8.074375896635235,
+        -2.029422534396062,
+        0.361296439570329,
+        0.60091196917862,
+        0.196569377902582
+      ],
+      "velocity_norm": 9.303398109762934
+    },
+    "event_definition_changed": false,
+    "final_physical_rows": [
+      5.27e-13,
+      1.658e-12,
+      -3.54e-13,
+      9.59371e-10,
+      1.15302e-10,
+      2.0613e-10,
+      2.31628e-10,
+      -9.5161e-11,
+      -2.05671e-10,
+      2.74666e-10,
+      -3.5068171e-08,
+      1.13419e-09,
+      3.167954553e-06,
+      -8.3835965e-07
+    ],
+    "initial_physical_rows": [
+      2.88e-13,
+      1.036e-12,
+      -9.14e-13,
+      7.49158e-10,
+      8.8531e-11,
+      1.99515e-10,
+      -1.6376e-11,
+      6.447e-11,
+      -1.45676e-10,
+      8.162e-12,
+      -1.8574141e-08,
+      2.269374e-09,
+      5.394198382e-06,
+      -6.97901935e-07
+    ],
+    "nonzero_motion_retained": true,
+    "physical_equations_changed": false,
+    "physical_residuals": {
+      "dynamic_flux_norm_at_4e-4": 3.277008232e-06,
+      "maximum_seven_constraints": 9.59371e-10,
+      "maximum_trace": 1.658e-12,
+      "momentum_norm": 3.5086507e-08
+    },
+    "physical_row_count": 14,
+    "source_event": "v18.31_independent_exact_merit_proposal",
+    "source_germ": "v18.28_validated_complete_child",
+    "source_solver_model": "INVALIDATED_NOT_REASSERTED",
+    "whole_child_variable_count": 26
+  },
+  "dependency_advanced": "NONLINEAR_N3_EVENT_SADDLE_CLOSURE",
+  "real_physical_property_explained": "THE_INDEPENDENT_EXACT_MERIT_PROPOSAL_SELECTS_A_COMPLETE_MOVING_CHILD_WITHOUT_RELYING_ON_THE_INVALIDATED_NEWTON_CLAIM",
+  "status": "VALIDATED",
+  "validation": {
+    "child_eta_hyperregular": true,
+    "complete_26_variable_child_considered": true,
+    "dynamic_flux_closed": true,
+    "event_definition_unchanged": true,
+    "fourteen_physical_rows": true,
+    "full_rank_local_chart": true,
+    "invalidated_solver_model_not_reasserted": true,
+    "local_solve_converged": true,
+    "momentum_closed": true,
+    "no_extra_global_row": true,
+    "nonzero_motion_retained": true,
+    "numerical_row_scaling_same_zero_set": true,
+    "physical_equations_unchanged": true,
+    "seven_constraints_closed": true,
+    "trace_closed": true
+  },
+  "validation_passed": true,
+  "version": "v18.32"
+}

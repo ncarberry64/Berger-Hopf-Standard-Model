@@ -1,0 +1,2 @@
+from bhsm.interface.aether_n3_extended_event_path_correction_v17_81 import completion_payload
+def test_classifies_extended_event_path_correction():assert completion_payload()["validation_passed"]

@@ -68,12 +68,11 @@ ALIGNMENT_FILES = [
 ]
 
 ALIGNMENT_PHRASES = [
-    "v15.10",
-    "radial eta",
-    "sigma",
-    "response",
-    "hopf",
-    "degree",
+    "v18.58",
+    "376",
+    "complete-child",
+    "eta",
+    "persistence",
     "full_bhsm_complete = false",
     "frozen predictions",
 ]
@@ -585,23 +584,18 @@ def manifest_payload(result: dict) -> dict:
         },
         "external_urls_recorded": result["external_urls"],
         "current_scientific_summary": {
-            "threading_response": (
-                "derived: Pi_perp S_Sigma="
-                "-tau(pi chi_1/16)Pi_perp q"
-            ),
-            "explicit_energy_threshold": "not required",
-            "threading_unresolved_trace_count": 0,
-            "critical_lapse_weyl_principal_block": (
-                "[[0,6 kappa_1/a_0^2],"
-                "[6 kappa_1/a_0^2,12 kappa_1/a_0^2]]"
-            ),
-            "fold_kinetic_sign": "unresolved",
+            "research_frontier": "v18.58",
+            "n3_exact_residual_norm": 0.815925953107132,
+            "event_to_complete_child_map": "derived_and_executed",
+            "complete_child_chart_rank": 14,
+            "complete_child_persistence": "validated_for_1e-4",
+            "simultaneous_n3_saddle": "open_residual_nonzero",
             "physical_mass_claim": False,
         },
         "active_construction_target": (
-            "T_mu_nu^(X)=delta hbar_mu_nu[X]/delta X|X=2, "
-            "delta R_4[T^(X)]=tau chi_1 q, with M4 gauge quotient "
-            "and regulated domain"
+            "Remeasure the direct 376-row response at v18.58 and continue "
+            "bidirectional exact-merit descent with eta and recomputed "
+            "complete-child persistence gating"
         ),
         "unsupported_claims": UNSUPPORTED_CLAIMS,
         "citation": {

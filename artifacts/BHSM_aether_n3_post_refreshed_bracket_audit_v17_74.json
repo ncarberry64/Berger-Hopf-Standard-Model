@@ -1,0 +1,71 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "REFINE_THE_PERIOD_LOG_MIX_NEAR_0_10",
+  "artifact": "BHSM_aether_n3_post_refreshed_bracket_audit_v17_74",
+  "classification": "BHSM_N3_POST_REFRESHED_BRACKET_SOFT_AUDIT",
+  "dependency_advanced": "RESOLVE_THE_MEASURED_PERIOD_LOG_MIX_BOUNDARY_AT_V17_73",
+  "post_refreshed_bracket_audit": {
+    "classification_scope": "EMPIRICAL_ADEQUACY_NOT_MATHEMATICAL_NO_GO",
+    "contraction_by_owner": {
+      "complete": {
+        "constant_rate_projected_additional_passes": 2494712,
+        "ratio_per_pass": 0.999994535820178
+      },
+      "event": {
+        "constant_rate_projected_additional_passes": 46369311,
+        "ratio_per_pass": 0.999999755508241
+      },
+      "log_scale": {
+        "constant_rate_projected_additional_passes": 11812237,
+        "ratio_per_pass": 0.999998933848093
+      },
+      "period": {
+        "constant_rate_projected_additional_passes": 302999103,
+        "ratio_per_pass": 0.999999956984152
+      },
+      "v0": {
+        "constant_rate_projected_additional_passes": 1374844,
+        "ratio_per_pass": 0.999990650571179
+      },
+      "w0": {
+        "constant_rate_projected_additional_passes": 1306326,
+        "ratio_per_pass": 0.999989974321144
+      }
+    },
+    "eta_minimum_provenance": 0.774408141130219,
+    "extrapolation_bottleneck": "period",
+    "metrics": {
+      "complete": 0.832001410265343,
+      "event": 0.08386098344997,
+      "log_scale": 0.294680074692547,
+      "period": 0.457605901657266,
+      "v0": 0.382337405359484,
+      "w0": 0.487414621370866
+    },
+    "projected_additional_passes": 302999103,
+    "source_state": "v17.73_selected_refreshed_period_log_bracket_state",
+    "terminal_soft_mode": {
+      "eigenpair_residual_norm": 9e-15,
+      "eigenvalue": -8.386098345e-05,
+      "eigenvector_norm": 1.0,
+      "gap_above": 0.000753870268593,
+      "gap_below": 0.578780046372581,
+      "scaled_event_value": -0.083860983449991
+    }
+  },
+  "real_physical_property_explained": "ISOLATED_SOFT_BRANCH_AFTER_THE_REFRESHED_PERIOD_LOG_PROMOTION",
+  "status": "RECLASSIFIED",
+  "validation": {
+    "constant_rate_still_inadequate": true,
+    "eta_domain_preserved": true,
+    "event_matches_soft_spectrum": true,
+    "no_no_go_claimed": true,
+    "soft_branch_isolated": true,
+    "soft_eigenpair_resolved": true,
+    "soft_vector_normalized": true,
+    "v17_73_event_reproduced": true,
+    "v17_73_residual_reproduced": true
+  },
+  "validation_passed": true,
+  "version": "v17.74"
+}

@@ -1,0 +1,2 @@
+from bhsm.interface.aether_n3_scale_period_event_correction_cone_v17_80 import completion_payload
+def test_classifies_scale_period_event_correction_cone():assert completion_payload()["validation_passed"]

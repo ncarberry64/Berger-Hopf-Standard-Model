@@ -1,0 +1,142 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "VERIFY_FLUX_ENVELOPE_AND_POSITIVE_DURATION_PERSISTENCE_THEN_PROMOTE",
+  "artifact": "BHSM_aether_n3_direct_jfnk_proposal_child_v18_36",
+  "classification": "BHSM_N3_DIRECT_JFNK_PROPOSAL_CHILD",
+  "dependency_advanced": "NONLINEAR_N3_EVENT_SADDLE_CLOSURE",
+  "direct_jfnk_proposal_child": {
+    "additional_global_KKT_rows": 0,
+    "chart": {
+      "full_chart_rank": 14,
+      "function_evaluations": 17,
+      "jacobian_step": 0.0002,
+      "row_scaling": "LOCAL_JACOBIAN_ROW_NORMS_NUMERICAL_ONLY_SAME_ZERO_SET",
+      "scaled_final_norm": 1.481e-12,
+      "selected_variable_indices": [
+        12,
+        2,
+        3,
+        9,
+        1,
+        10,
+        6,
+        0,
+        7,
+        23,
+        17,
+        13,
+        25,
+        8
+      ],
+      "smallest_resolved_singular_value": 0.006176738447354,
+      "solver_message": "`xtol` termination condition is satisfied.",
+      "solver_success": true
+    },
+    "child_state": {
+      "coordinates": [
+        -6.3031109155e-05,
+        0.02184563014903,
+        -0.013487294538285,
+        -0.027194360428423,
+        0.057413155990941,
+        -0.245447539361421,
+        9.0847045826e-05,
+        -0.081638500841656,
+        0.030082645208442,
+        0.13929825015861
+      ],
+      "eta_Legendre_minimum": {
+        "chi_at_minimum": 0.331043469891299,
+        "minimum": 0.999964180797215
+      },
+      "multipliers": [
+        1.048719631064667,
+        0.058893892680204,
+        0.887537730725834,
+        -0.150983906176332,
+        -0.127575172284358,
+        0.804490857046138
+      ],
+      "velocities": [
+        -0.315750124981658,
+        -0.149205097669796,
+        0.172666601559638,
+        -0.023248532335664,
+        -4.068908887371832,
+        -8.074375896635235,
+        -2.029422534396062,
+        0.362287221382914,
+        0.60091196917862,
+        0.196569377902582
+      ],
+      "velocity_norm": 9.303409201737129
+    },
+    "event_definition_changed": false,
+    "final_physical_rows": [
+      2e-15,
+      -1.9e-14,
+      2e-15,
+      -9.6675e-11,
+      -1.6929e-11,
+      -2.5349e-11,
+      1.194e-12,
+      -2.0284e-11,
+      1.6331e-11,
+      2.48e-13,
+      3.520817e-09,
+      -9.237e-12,
+      1.280530974e-06,
+      -1.65531372e-07
+    ],
+    "initial_physical_rows": [
+      0.000144458299079,
+      4.5066986646e-05,
+      -0.000161887027749,
+      9.59473e-10,
+      1.15087e-10,
+      2.06185e-10,
+      2.31873e-10,
+      -9.519e-11,
+      -2.05736e-10,
+      2.74791e-10,
+      -0.921002029548061,
+      0.087932539392151,
+      41.422269658204335,
+      -5.093760919526783
+    ],
+    "nonzero_motion_retained": true,
+    "physical_equations_changed": false,
+    "physical_residuals": {
+      "dynamic_flux_norm_at_4e-4": 1.291185583e-06,
+      "maximum_seven_constraints": 9.6675e-11,
+      "maximum_trace": 1.9e-14,
+      "momentum_norm": 3.52083e-09
+    },
+    "physical_row_count": 14,
+    "source_event": "v18.35_independent_exact_merit_line_proposal",
+    "source_germ": "v18.32_validated_complete_child",
+    "source_solver_model": "INVALIDATED_NOT_REASSERTED",
+    "whole_child_variable_count": 26
+  },
+  "real_physical_property_explained": "THE_INDEPENDENT_V18_35_LINE_STATE_SELECTS_A_COMPLETE_MOVING_CHILD_WITHOUT_REASSERTING_THE_INVALIDATED_JFNK_DIRECTION",
+  "status": "VALIDATED",
+  "validation": {
+    "child_eta_hyperregular": true,
+    "complete_26_variable_child_considered": true,
+    "dynamic_flux_closed": true,
+    "event_definition_unchanged": true,
+    "fourteen_physical_rows": true,
+    "full_rank_local_chart": true,
+    "invalidated_solver_model_not_reasserted": true,
+    "local_solve_converged": true,
+    "momentum_closed": true,
+    "no_extra_global_row": true,
+    "nonzero_motion_retained": true,
+    "numerical_row_scaling_same_zero_set": true,
+    "physical_equations_unchanged": true,
+    "seven_constraints_closed": true,
+    "trace_closed": true
+  },
+  "validation_passed": true,
+  "version": "v18.36"
+}
