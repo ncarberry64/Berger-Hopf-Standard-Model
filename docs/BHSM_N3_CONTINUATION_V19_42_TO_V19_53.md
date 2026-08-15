@@ -63,3 +63,33 @@ No equation, selector, componentwise filter, previous-iterate-path condition,
 or child acceptance restriction was introduced. The exact residual is still
 nonzero, so `N3_EXACT_KKT_CLOSURE` and `FULL_BHSM_COMPLETE` remain false.
 GitHub publication, the long regression, and USB archival remain deferred.
+
+## v19.54-v19.62 compact continuation/ownership ledger
+
+- v19.57 accepted: `||F376||=0.788966669806045`, flux
+  `1.6446767051e-5`, eta/persistence/motion valid.
+- v19.61 accepted: `||F376||=0.788717933323162`, flux
+  `1.3575146128e-5`, eta/persistence/motion valid.
+- v19.62 exact-F376 ownership audit: **OUTCOME A —
+  DISTRIBUTED_DESCENT_CONTINUES**.
+
+Latest exact block ownership:
+
+| Block | L2 norm | Squared fraction | Recent slope/accepted step | Trend |
+|---|---:|---:|---:|---|
+| scale | 0.311754207109 | 0.156236 | +0.00317161 | growing |
+| u | 0.003788056253 | 0.000023 | +0.00000188 | growing |
+| w | 0.455733552495 | 0.333871 | -0.00173207 | falling |
+| v | 0.227990941407 | 0.083559 | -0.00060070 | falling |
+| lapse | 0.000012674527 | <0.000001 | -0.00000002 | falling |
+| shift | 0.073123661670 | 0.008596 | -0.00023659 | falling |
+| period | 0.502918891951 | 0.406586 | -0.00109375 | falling |
+| event | 0.083207698891 | 0.011130 | -0.00004537 | falling |
+
+Stationarity residual is split between interior (`47.89%`) and event-near
+(`51.96%`), below the diagnostic `70%` localization threshold; reset-near is
+`0.15%`. The total recent slope is `-0.000677488675` per accepted step; the
+linear zero estimate is `1164.18` accepted steps and is explicitly naive and
+nonphysical. Recent response diagnostics do not establish entry into a local
+root basin. No first action-owned blocker is identified, so unchanged N=3
+continuation resumes. `FULL_BHSM_COMPLETE` remains false.
