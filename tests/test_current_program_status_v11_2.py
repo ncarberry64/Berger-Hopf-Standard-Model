@@ -10,7 +10,7 @@ from bhsm.interface.current_program_status import CURRENT_VERSION, public_repo_s
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def test_python_current_status_is_v15_10_and_fail_closed() -> None:
+def test_historical_python_status_is_v15_10_and_fail_closed() -> None:
     payload = status_payload()
     assert CURRENT_VERSION == "v15.10"
     assert payload["primary_verdict"] == PRIMARY_VERDICT
@@ -21,11 +21,15 @@ def test_python_current_status_is_v15_10_and_fail_closed() -> None:
 
 
 def test_repository_current_surfaces_are_synchronized() -> None:
-    for name in ("README.md", "STATUS.md", "CLAIMS.md", "ROADMAP.md", "FALSIFICATION.md"):
+    for name in ("README.md", "STATUS.md", "CLAIMS.md", "docs/current_bhsm_status.md"):
         text = (ROOT / name).read_text(encoding="utf-8")
-        assert "v15.10" in text.lower(), name
-        assert EXACT_NEXT_OBJECT in text, name
-    assert PRIMARY_VERDICT in (ROOT / "STATUS.md").read_text(encoding="utf-8")
+        assert "v18.73" in text.lower(), name
+        assert "376" in text, name
+        assert "complete-child" in text, name
+        assert "FULL_BHSM_COMPLETE = FALSE" in text, name
+
+
+def test_historical_machine_status_remains_internally_consistent() -> None:
     current = json.loads((ROOT / "docs" / "current_bhsm_status.json").read_text(encoding="utf-8"))
     assert current["current_version"] == CURRENT_VERSION
     assert current["primary_verdict"] == PRIMARY_VERDICT

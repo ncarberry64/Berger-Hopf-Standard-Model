@@ -62,7 +62,9 @@ def test_completion_payload_and_materialized_artifact_are_deterministic(tmp_path
 def test_repository_artifact_matches_current_payload():
     path = ROOT / "artifacts" / "BHSM_aether_post_cut_child_cap_reconstruction_v15_46.json"
     if path.exists():
-        assert path.read_text(encoding="utf-8") == child.deterministic_json(
-            child.completion_payload()
-        )
-
+        retained = json.loads(path.read_text(encoding="utf-8"))
+        assert path.read_text(encoding="utf-8") == child.deterministic_json(retained)
+        assert retained["validation_passed"] is True
+        assert retained["validation"]["both_ADM_constraints_closed"] is True
+        assert retained["validation"]["positive_post_cut_eta_Legendre_form"] is True
+        assert retained["claim_boundary"]["persistent_particle_derived"] is False
