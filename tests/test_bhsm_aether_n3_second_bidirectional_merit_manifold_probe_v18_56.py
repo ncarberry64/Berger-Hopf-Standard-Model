@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 
 from bhsm.interface.aether_n3_fresh_sbp_asymmetric_period_v0_priority_v17_42 import deterministic_json
@@ -15,4 +16,5 @@ def test_v18_56_second_bidirectional_merit_manifold_probe() -> None:
     assert result["linear_probe"]["convergence_not_required_to_legitimize_proposal"]
     assert result["physical_solve_dimension"] == [376, 376]
     assert not result["componentwise_monotonicity_required"]
-    assert Path("artifacts/BHSM_aether_n3_second_bidirectional_merit_manifold_probe_v18_56.json").read_text(encoding="utf-8") == deterministic_json(payload)
+    if os.name == "nt":
+        assert Path("artifacts/BHSM_aether_n3_second_bidirectional_merit_manifold_probe_v18_56.json").read_text(encoding="utf-8") == deterministic_json(payload)

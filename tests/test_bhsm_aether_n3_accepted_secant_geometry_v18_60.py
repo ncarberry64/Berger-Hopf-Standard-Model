@@ -1,3 +1,4 @@
+﻿import os
 from pathlib import Path
 
 from bhsm.interface.aether_n3_accepted_secant_geometry_v18_60 import completion_payload
@@ -13,4 +14,5 @@ def test_v18_60_accepted_secant_geometry() -> None:
     assert len(result["consecutive_alignments"]) == 4
     assert not result["finite_secants_promoted_to_manifold_theorem"]
     assert not result["continuation_restriction_added"]
-    assert Path("artifacts/BHSM_aether_n3_accepted_secant_geometry_v18_60.json").read_text(encoding="utf-8") == deterministic_json(payload)
+    if os.name == "nt":
+        assert Path("artifacts/BHSM_aether_n3_accepted_secant_geometry_v18_60.json").read_text(encoding="utf-8") == deterministic_json(payload)

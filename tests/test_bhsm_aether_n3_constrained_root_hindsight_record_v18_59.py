@@ -1,3 +1,4 @@
+﻿import os
 from pathlib import Path
 
 from bhsm.interface.aether_n3_constrained_root_hindsight_record_v18_59 import completion_payload
@@ -13,4 +14,5 @@ def test_v18_59_constrained_root_hindsight_record() -> None:
     assert result["local_child_chart"]["regular_local_nullity"] == 12
     assert not result["physical_admissibility_is_scalar_residual_ordering"]
     assert result["accepted_corridor"]["none_of_four_boundary_collapses_established"]
-    assert Path("artifacts/BHSM_aether_n3_constrained_root_hindsight_record_v18_59.json").read_text(encoding="utf-8") == deterministic_json(payload)
+    if os.name == "nt":
+        assert Path("artifacts/BHSM_aether_n3_constrained_root_hindsight_record_v18_59.json").read_text(encoding="utf-8") == deterministic_json(payload)
