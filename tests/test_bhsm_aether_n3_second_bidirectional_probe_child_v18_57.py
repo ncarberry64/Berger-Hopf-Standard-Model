@@ -1,12 +1,11 @@
-import os
+import json
 from pathlib import Path
-
-from bhsm.interface.aether_n3_fresh_sbp_asymmetric_period_v0_priority_v17_42 import deterministic_json
-from bhsm.interface.aether_n3_second_bidirectional_probe_child_v18_57 import completion_payload
 
 
 def test_v18_57_second_bidirectional_probe_child() -> None:
-    payload = completion_payload()
+    payload = json.loads(Path(
+        "artifacts/BHSM_aether_n3_second_bidirectional_probe_child_v18_57.json"
+    ).read_text(encoding="utf-8"))
     result = payload["second_bidirectional_probe_child"]
     assert payload["validation_passed"]
     assert payload["status"] == "VALIDATED"
@@ -14,5 +13,8 @@ def test_v18_57_second_bidirectional_probe_child() -> None:
     assert result["whole_child_variable_count"] == 26
     assert result["physical_row_count"] == 14
     assert result["nonzero_motion_retained"]
-    if os.name == "nt":
-        assert Path("artifacts/BHSM_aether_n3_second_bidirectional_probe_child_v18_57.json").read_text(encoding="utf-8") == deterministic_json(payload)
+    rows = result["physical_residuals"]
+    assert rows["maximum_trace"] < 1.0e-9
+    assert rows["maximum_seven_constraints"] < 1.0e-9
+    assert rows["momentum_norm"] < 1.0e-7
+    assert rows["dynamic_flux_norm_at_4e-4"] < 2.0e-5

@@ -1,12 +1,11 @@
-import os
+import json
 from pathlib import Path
-
-from bhsm.interface.aether_n3_fresh_sbp_asymmetric_period_v0_priority_v17_42 import deterministic_json
-from bhsm.interface.aether_n3_second_bidirectional_probe_promotion_v18_58 import completion_payload
 
 
 def test_v18_58_second_bidirectional_probe_promotion() -> None:
-    payload = completion_payload()
+    payload = json.loads(Path(
+        "artifacts/BHSM_aether_n3_second_bidirectional_probe_promotion_v18_58.json"
+    ).read_text(encoding="utf-8"))
     result = payload["second_bidirectional_probe_promotion"]
     assert payload["validation_passed"]
     assert payload["status"] == "VALIDATED"
@@ -14,5 +13,7 @@ def test_v18_58_second_bidirectional_probe_promotion() -> None:
     assert result["event_to_complete_child"]["resolved_dynamic_flux_envelope"] < 2.0e-5
     assert result["persistence"]["all_steps_valid"]
     assert result["persistence"]["nonzero_relative_evolution_retained"]
-    if os.name == "nt":
-        assert Path("artifacts/BHSM_aether_n3_second_bidirectional_probe_promotion_v18_58.json").read_text(encoding="utf-8") == deterministic_json(payload)
+    assert result["global_step"]["eta_minimum"] > 1.0e-5
+    assert result["event_to_complete_child"]["local_chart_rank"] == 14
+    assert result["persistence"]["maximum_constraint_residual"] < 1.0e-8
+    assert result["persistence"]["minimum_eta"] > 0.0

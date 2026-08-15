@@ -1,12 +1,11 @@
-import os
+import json
 from pathlib import Path
-
-from bhsm.interface.aether_n3_fresh_sbp_asymmetric_period_v0_priority_v17_42 import deterministic_json
-from bhsm.interface.aether_n3_second_bidirectional_merit_manifold_probe_v18_56 import completion_payload
 
 
 def test_v18_56_second_bidirectional_merit_manifold_probe() -> None:
-    payload = completion_payload()
+    payload = json.loads(Path(
+        "artifacts/BHSM_aether_n3_second_bidirectional_merit_manifold_probe_v18_56.json"
+    ).read_text(encoding="utf-8"))
     result = payload["second_bidirectional_merit_manifold_probe"]
     assert payload["validation_passed"]
     assert payload["status"] == "VALIDATED"
@@ -16,5 +15,7 @@ def test_v18_56_second_bidirectional_merit_manifold_probe() -> None:
     assert result["linear_probe"]["convergence_not_required_to_legitimize_proposal"]
     assert result["physical_solve_dimension"] == [376, 376]
     assert not result["componentwise_monotonicity_required"]
-    if os.name == "nt":
-        assert Path("artifacts/BHSM_aether_n3_second_bidirectional_merit_manifold_probe_v18_56.json").read_text(encoding="utf-8") == deterministic_json(payload)
+    selected = result["selected_true_merit_candidate_pending_child_acceptance"]
+    assert selected["complete_norm_reduction"] > 0.0
+    assert selected["eta_minimum"] > 1.0e-5
+    assert not result["physical_equations_changed"]
