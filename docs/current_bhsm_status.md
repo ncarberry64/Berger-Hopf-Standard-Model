@@ -2,7 +2,7 @@
 
 Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a completed replacement of the Standard Model. The program goal remains replacement by derivation, with the Standard Model retained as the preserved infrared layer until that derivation is complete.
 
-## v18.58 N=3 event-to-complete-child and merit-manifold frontier
+## v18.64 N=3 constrained-root and physical-continuation frontier
 
 The missing event-to-child relation is now explicit.  For each candidate N=3
 event, `F_child=0` requires three event traces, seven local Dirac constraints,
@@ -12,11 +12,11 @@ core ownership close without adding a continuous row.  A positive projected
 evolution interval then tests persistence.  The whole reconstructed child is
 the additional system-level object; no fourth coordinate is introduced.
 
-The latest accepted v18.58 state has global residual `0.815925953107132` and
-positive global eta.  Its recomputed child closes trace to `9.9e-14`, constraints
-to `4.88e-10`, attachment momentum to `5.12e-8`, and the two-scale dynamic
-flux envelope to `1.19e-5`.  It persists through time `1e-4` with positive eta
-and maximum constraint residual `5.95e-11`.  Velocity, momentum and time dependence remain
+The latest accepted physical state is v18.64, with global residual `0.8115026784613` and
+positive global eta.  Its recomputed child closes trace to `1.66e-12`, constraints
+to `3.32e-10`, attachment momentum to `2.56e-8`, and the two-scale dynamic
+flux envelope to `1.09e-5`.  It persists through time `1e-4` with positive eta
+and maximum constraint residual `5.93e-11`.  Velocity, momentum and time dependence remain
 nonzero; stability means constraint-consistent relative persistence, not
 staticity.
 
@@ -31,18 +31,31 @@ The physical nonlinear problem is the square 376-variable KKT system with the
 event multiplier explicit.  v18.11-v18.12, v18.22-v18.25, v18.27-v18.29 and
 v18.31-v18.33, v18.35-v18.37, v18.39-v18.41, v18.43-v18.47, v18.50-v18.54 and v18.55-v18.58 demonstrate
 independent total-merit descent and complete-child promotion without
-componentwise monotonicity or a previous-iterate-path restriction.  The next
-direct dependency is remeasuring the direct 376-row response at v18.58 and
-continuing exact-merit descent without reasserting failed solver models; every proposed
+componentwise monotonicity or a previous-iterate-path restriction.  The direct
+dependency is continuing physically admissible exact 376-row descent from the
+latest accepted frontier without reasserting failed solver models; every proposed
 state still requires independent merit, eta and recomputed complete-child
 evaluation.  v18.26 records that the validated local direction has no forward
 descent at the inherited `1e-8` coarse floor.  v18.27 measures, rather than
-assumes, the finer line bracket and finds the accepted `3e-9` step.  N=4+,
+assumes, the finer line bracket and finds the accepted `3e-9` step.  v18.59
+then records the actual target as `find z* in A such that F(z*)=0`: unchanged
+square `F_376`, with the already implemented rank-14 complete-child, eta, flux,
+and persistence gate defining physical admissibility.  Two lower-residual
+candidates remain rejected solely by the unchanged flux gate.  No measured
+accepted-corridor boundary collapses monotonically.  v18.60 measures curved,
+geometry-dominated accepted secants in the existing action-owned coordinates;
+it adds no continuation restriction or manifold theorem.  v18.61 then resolves
+the next direct-response plateau, v18.62 locates an independently lower exact-
+merit state while invalidating its solver interpretation, and v18.63-v18.64
+recompute and pass the entire child/eta/flux/persistence gate.  N=4+,
 the microscopic pregeometric transition generator, one-loop source/saddle
 closure, broken return and physical observables remain downstream and open.
 
 `FULL_BHSM_COMPLETE = FALSE`.  The v18.58 sprint snapshot is authorized for
 GitHub and USB publication without implying scientific completion.
+
+Active dependency:
+`CONTINUE_PHYSICALLY_ADMISSIBLE_EXACT_376_ROW_DESCENT_FROM_THE_LATEST_ACCEPTED_FRONTIER_TO_F376_ZERO`.
 
 At the exact v18.12 source, v18.14 separately measures the proposed
 small-support stiffness mechanism.  Pure retained-action pieces scale as
@@ -62,7 +75,7 @@ event KKT normalization.  The map is invertible and acts on variables only;
 the exact 376 residual rows are not transformed.  Source and nonzero-probe
 checks give identical exact residuals, exact eta agreement, a bijective root
 set, and the unchanged complete-child gate.  Its application and limitations
-are classified by v18.16-v18.58 below.
+are classified by v18.16-v18.64 below.
 
 That application is now classified.  v18.16-v18.17 find no descent in either
 orientation of the inherited inexact response.  v18.18 assembles and validates

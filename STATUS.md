@@ -5,9 +5,9 @@ evidence, not competing public status pages.
 
 ## Current public summary
 
-Current version: **v18.58**.
+Current version: **v18.64**.
 
-BHSM v17.84-v18.58 derives and executes the missing N=3
+BHSM v17.84-v18.64 derives and executes the missing N=3
 event-to-complete-child correspondence.  A candidate event is accepted only
 when it reconstructs a whole child satisfying three boundary traces, all seven
 local Dirac constraints, two attachment momenta, two resolved dynamic-flux
@@ -17,13 +17,13 @@ positive constraint-projected persistence interval.  This is a 14-row child
 boundary/BVP map evaluated on event states; it adds no equation to the global
 376-row KKT system.
 
-The latest physically promoted state is v18.58.  Its exact 376-row norm is
-`0.815925953107132`, its event magnitude is `0.084105974509345`, and its global
-eta minimum is `0.77423036838536`.  The child chart was recomputed from all 26
+The latest physically promoted state is v18.64.  Its exact 376-row norm is
+`0.8115026784613`, its event magnitude is `0.083949717316251`, and its global
+eta minimum is `0.77426450046114`.  The child chart was recomputed from all 26
 child variables and has rank 14.  The reconstructed child has trace residual
-`9.9e-14`, seven-constraint residual `4.88e-10`, momentum mismatch `5.12e-8`,
-resolved two-scale flux envelope `1.19e-5`, and persists for `1e-4` with
-constraint residual below `5.95e-11` and positive eta.  Its motion, momentum,
+`1.66e-12`, seven-constraint residual `3.32e-10`, momentum mismatch `2.56e-8`,
+resolved two-scale flux envelope `1.09e-5`, and persists for `1e-4` with
+constraint residual below `5.93e-11` and positive eta.  Its motion, momentum,
 and time dependence remain nonzero and are classified as physical
 constraint-consistent relative evolution, not particle defects.
 
@@ -127,6 +127,31 @@ rank-14 whole child, and v18.58 promotes the physical state only after eta,
 two-scale flux, and positive-duration persistence pass, reducing the exact
 norm by `0.00201664283`.
 
+v18.59 formalizes the existing pipeline as the constrained-root target
+`find z* in A such that F(z*)=0`, with unchanged `F:R^376->R^376` and the
+rank-14 child map evaluated as a physical admissibility gate, never as equation
+377.  Its disk audit preserves six accepted and two rejected states.  The two
+rejected states have lower scalar residual than later accepted states but fail
+only the unchanged flux gate, so physical admissibility is not scalar residual
+ordering.  The measured accepted corridor shows no monotonic collapse toward
+the flux, eta, rank, or persistence boundaries; this is not proof that the root
+lies inside the admissible set.
+
+v18.60 measures five accepted secants in one fixed copy of the validated
+v18.15 action-owned coordinate chart.  Their turning angles are `10.06`,
+`66.07`, `99.49`, and `8.56` degrees, while scale/w/v geometry carries mean
+action-owned squared fraction `0.985975`.  The two retained rejected directions
+do not support systematic u/eta-shift/lapse compression.  These are finite
+diagnostics, not a manifold theorem or continuation restriction.
+
+v18.61 remeasures the direct response at v18.58 and resolves a common
+`1e-6/3e-7` plateau under the unchanged criteria.  v18.62 scans both
+orientations with exact nonlinear merit; its solver interpretation is
+invalidated, while the positive `0.03125` line state lowers exact norm by
+`0.00442327465`.  v18.63 reconstructs its fresh rank-14 moving child, and
+v18.64 promotes the state only after eta, independent two-scale flux, and
+positive-duration persistence pass.
+
 An incoming packet is one possible driver or witness, not a required primitive
 or the fundamental cause. The white-hole-to-plasma/acoustic-BAO-to-cooled-
 cosmology scale process and analogous core-energy-matching quantum recurrence
@@ -140,7 +165,7 @@ Current verdict:
 `BHSM_V15_10_THE_RETAINED_SIGMA_ACTION_HAS_AN_EXACT_INJECTIVE_THREE_RESPONSE_INVERSE_FOR_ALPHA_R_GAMMA_AND_THE_HOMOGENEOUS_CYCLE_INVERSE_CONDITIONALLY_SELECTS_KAPPA1_KAPPA0_BUT_THE_CURRENT_AETHER_STATE_SUPPLIES_NO_PHYSICAL_SIGMA_TANGENT_X_DERIVATIVE_OR_NONLINEAR_RESPONSE_JET;_EXPLICIT_STABLE_INEQUIVALENT_TRIPLES_SHARE_THE_SAME_SIGMA_ZERO_PARENT_AND_EVEN_THE_SAME_THRESHOLD_QUADRATIC_CURVATURE;_THEREFORE_NO_PHYSICAL_SIGMA_ONSET_HOPF_CHILD_OR_PERSISTENT_ENCLOSURE_IS_SELECTED_AND_FULL_BHSM_COMPLETION_REMAINS_FALSE`.
 
 Exact next object:
-`REMEASURE_THE_DIRECT_376_ROW_RESPONSE_AT_V18_58_AND_CONTINUE_BIDIRECTIONAL_EXACT_MERIT_DESCENT_WITH_ETA_AND_RECOMPUTED_COMPLETE_CHILD_PERSISTENCE_GATING`.
+`CONTINUE_PHYSICALLY_ADMISSIBLE_EXACT_376_ROW_DESCENT_FROM_THE_LATEST_ACCEPTED_FRONTIER_TO_F376_ZERO`.
 
 `FULL_BHSM_COMPLETE = FALSE`. N=3 saddle closure, independent N=4+ convergence,
 the microscopic pregeometric transition generator, the one-loop source/saddle

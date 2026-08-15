@@ -68,7 +68,7 @@ ALIGNMENT_FILES = [
 ]
 
 ALIGNMENT_PHRASES = [
-    "v18.58",
+    "v18.64",
     "376",
     "complete-child",
     "eta",
@@ -584,8 +584,8 @@ def manifest_payload(result: dict) -> dict:
         },
         "external_urls_recorded": result["external_urls"],
         "current_scientific_summary": {
-            "research_frontier": "v18.58",
-            "n3_exact_residual_norm": 0.815925953107132,
+            "research_frontier": "v18.64",
+            "n3_exact_residual_norm": 0.8115026784613,
             "event_to_complete_child_map": "derived_and_executed",
             "complete_child_chart_rank": 14,
             "complete_child_persistence": "validated_for_1e-4",
@@ -593,9 +593,8 @@ def manifest_payload(result: dict) -> dict:
             "physical_mass_claim": False,
         },
         "active_construction_target": (
-            "Remeasure the direct 376-row response at v18.58 and continue "
-            "bidirectional exact-merit descent with eta and recomputed "
-            "complete-child persistence gating"
+            "Continue physically admissible exact 376-row descent from the "
+            "latest accepted frontier to F376 zero"
         ),
         "unsupported_claims": UNSUPPORTED_CLAIMS,
         "citation": {

@@ -1,6 +1,6 @@
 # Gate Ledger
 
-## v17.84-v18.58 N=3 complete-child, stiffness and continuation gates
+## v17.84-v18.64 N=3 complete-child, constrained-root and continuation gates
 
 - v17.32 parallel Jacobian equivalence: `VALIDATED_AND_ADOPTED`; no further
   performance optimization is active.
@@ -21,11 +21,11 @@
 - Staticity requirement: `REJECTED`; nonzero motion, momentum and time
   dependence are allowed and retained when relative evolution is
   constraint-consistent and persistent.
-- Latest accepted N=3 residual: `0.815925953107132`.
-- Latest accepted event magnitude: `0.084105974509345`.
-- Latest accepted global eta minimum: `0.77423036838536`.
+- Latest accepted N=3 residual: `0.8115026784613`.
+- Latest accepted event magnitude: `0.083949717316251`.
+- Latest accepted global eta minimum: `0.77426450046114`.
 - Latest child trace/constraint/momentum/flux maxima:
-  `9.9E-14/4.88E-10/5.12E-8/1.19E-5`.
+  `1.66E-12/3.32E-10/2.56E-8/1.09E-5`.
 - v18.11-v18.12 square-KKT proposal and complete-child promotion:
   `VALIDATED_INDEPENDENT_TOTAL_MERIT_DESCENT_WITHOUT_COMPONENTWISE_OR_PREVIOUS_PATH_FILTER`.
 - v18.14 measured action radius powers:
@@ -117,6 +117,26 @@
   `VALIDATED_FRESH_RANK_14_CHILD_INVALIDATED_SOLVER_INTERPRETATION_NOT_REASSERTED`.
 - v18.58 physical promotion:
   `VALIDATED_EXACT_NORM_REDUCTION_0.00201664283_ETA_FLUX_AND_PERSISTENCE`.
+- v18.59 constrained-root hindsight:
+  `VALIDATED_UNCHANGED_F376_ON_EXISTING_ADMISSIBLE_SET_NO_EQUATION_377_RANK_14_NULLITY_12`.
+- v18.59 scalar residual ordering as physical admissibility:
+  `INVALIDATED_BY_TWO_LOWER_RESIDUAL_FLUX_GATE_REJECTIONS`.
+- v18.59 accepted-corridor boundary collapse:
+  `NONE_ESTABLISHED_FLUX_ETA_RANK_PERSISTENCE_ROOT_IN_ADMISSIBLE_SET_REMAINS_OPEN`.
+- v18.60 accepted secant geometry:
+  `VALIDATED_CURVED_NONCOLLINEAR_ACTION_OWNED_SECANTS_MEAN_SCALE_W_V_FRACTION_0.985975`.
+- v18.60 rejected-direction systematic u/eta-shift/lapse compression:
+  `INVALIDATED_TWO_DIRECTION_SAMPLE_SPLIT`.
+- v18.60 causal scale/w/v coupling or manifold theorem:
+  `INSUFFICIENT_RESOLUTION_NOT_PROMOTED`.
+- v18.61 accepted-frontier direct-response scale:
+  `VALIDATED_COMMON_1E-6_TO_3E-7_DIRECTIONAL_PLATEAU_WITH_UNCHANGED_CRITERIA`.
+- v18.62 third bidirectional merit probe:
+  `VALIDATED_EXACT_NONLINEAR_LINE_SCAN_WITH_INVALIDATED_SOLVER_INTERPRETATION`.
+- v18.63 third bidirectional child:
+  `VALIDATED_FRESH_RANK_14_CHILD_INVALIDATED_SOLVER_INTERPRETATION_NOT_REASSERTED`.
+- v18.64 physical promotion:
+  `VALIDATED_EXACT_NORM_REDUCTION_0.00442327465_ETA_FLUX_AND_PERSISTENCE`.
 - Residual left scaling or new acceptance restriction: `NONE`.
 - Event definition as current blocker: `FALSE_COMPLETE_CHILD_MAP_CLOSED`.
 - Simultaneous N=3 saddle closure: `OPEN_RESIDUAL_NONZERO`.
@@ -133,7 +153,7 @@
 - Full BHSM completion: `FALSE`.
 - GitHub and USB synchronization: `AUTHORIZED_V18_58_REPRODUCIBILITY_SNAPSHOT_WITH_FULL_COMPLETION_FALSE`.
 - Exact next object:
-  `REMEASURE_THE_DIRECT_376_ROW_RESPONSE_AT_V18_58_AND_CONTINUE_BIDIRECTIONAL_EXACT_MERIT_DESCENT_WITH_ETA_AND_RECOMPUTED_COMPLETE_CHILD_PERSISTENCE_GATING`.
+  `CONTINUE_PHYSICALLY_ADMISSIBLE_EXACT_376_ROW_DESCENT_FROM_THE_LATEST_ACCEPTED_FRONTIER_TO_F376_ZERO`.
 
 ## v15.10 Aether-cycle sigma-coefficient reconstruction gate
 

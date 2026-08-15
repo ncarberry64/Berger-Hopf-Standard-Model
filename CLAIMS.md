@@ -2,7 +2,7 @@
 
 ## Current public claim boundary
 
-Current version: **v18.58**.
+Current version: **v18.64**.
 
 Supported now: the N=3 event-to-complete-child correspondence is explicitly
 derived and numerically solved.  The complete child is the reconstructed whole
@@ -14,8 +14,8 @@ retained as physical relative evolution.
 
 Supported now: complete-child-gated global promotions reduce the
 unchanged 376-row residual from `0.831926246412044` to
-`0.815925953107132`.  The latest accepted v18.56 line state was independently evaluated
-and promoted at v18.58 only after its complete moving child was recomputed
+`0.8115026784613`.  The latest accepted v18.62 line state was independently evaluated
+and promoted at v18.64 only after its complete moving child was recomputed
 from all 26 variables and shown persistent.  No componentwise event
 monotonicity, handcrafted
 direction mixture, empirical particle selector, or 377th row is used.
@@ -100,6 +100,27 @@ recompute the moving child and promote the exact-merit state only after all
 unchanged eta, flux, and persistence gates pass, reducing exact merit by
 `0.00201664283`.
 
+Supported/reclassified: v18.59 records the existing N=3 target as an unchanged
+square root problem on the already implemented physically admissible event
+set.  Rank 14 in 26 child variables gives regular local chart nullity 12, not
+twelve new physical parameters.  Two lower-residual candidates are preserved
+as rejected because only their unchanged two-scale flux gate fails.  The
+accepted corridor shows no measured monotonic collapse toward flux, eta, rank,
+or persistence boundaries, but no root-in-admissible-set theorem is claimed.
+
+Validated diagnostic: v18.60 finds noncollinear action-owned accepted secants
+with mean scale/w/v squared fraction `0.985975`.  The available rejected
+directions are not systematically more u/eta-shift/lapse-compressed.  Finite
+secant turning is not promoted to a manifold theorem, causal coupling claim, or
+new continuation condition.
+
+Supported/reclassified: v18.61 resolves a common direct-response plateau at
+`1e-6/3e-7` without relaxing its scale-consistency criteria.  v18.62's bounded
+Krylov vector fails its independent Newton interpretation but locates an exact
+nonlinear line state with norm `0.8115026784613`.  v18.63-v18.64 promote that
+state only after a fresh rank-14 child, eta, unchanged two-scale flux, and
+positive-duration nonzero-motion persistence all pass.
+
 Supported now: the v18.18 exact action Hessian reproduces the unchanged
 v17.61 action-covector response to at worst `1.81e-7` on the audited
 directions.  v18.22 validates the needed directional event response without
@@ -128,7 +149,7 @@ completion.
 `FULL_BHSM_COMPLETE = FALSE`.
 
 Exact next object:
-`REMEASURE_THE_DIRECT_376_ROW_RESPONSE_AT_V18_58_AND_CONTINUE_BIDIRECTIONAL_EXACT_MERIT_DESCENT_WITH_ETA_AND_RECOMPUTED_COMPLETE_CHILD_PERSISTENCE_GATING`.
+`CONTINUE_PHYSICALLY_ADMISSIBLE_EXACT_376_ROW_DESCENT_FROM_THE_LATEST_ACCEPTED_FRONTIER_TO_F376_ZERO`.
 
 The coefficient-free spectral charged-current kernel remains an
 author-selected, no-fit action candidate. Full rank, unitarity, SU(2) closure,

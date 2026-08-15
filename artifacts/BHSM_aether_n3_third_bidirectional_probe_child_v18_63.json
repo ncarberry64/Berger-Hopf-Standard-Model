@@ -1,0 +1,152 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "VERIFY_TWO_SCALE_FLUX_AND_POSITIVE_DURATION_PERSISTENCE_THEN_PROMOTE",
+  "artifact": "BHSM_aether_n3_third_bidirectional_probe_child_v18_63",
+  "classification": "BHSM_N3_THIRD_BIDIRECTIONAL_PROBE_CHILD",
+  "dependency_advanced": "NONLINEAR_N3_EVENT_SADDLE_CLOSURE",
+  "real_physical_property_explained": "THE_LOWEST_V18_56_EXACT_MERIT_STATE_SELECTS_A_COMPLETE_MOVING_CHILD_WITHOUT_A_NEWTON_CLAIM",
+  "status": "VALIDATED",
+  "third_bidirectional_probe_child": {
+    "additional_global_KKT_rows": 0,
+    "chart": {
+      "full_chart_rank": 14,
+      "function_evaluations": 13,
+      "jacobian_step": 0.0002,
+      "row_scaling": "LOCAL_JACOBIAN_ROW_NORMS_NUMERICAL_ONLY_SAME_ZERO_SET",
+      "scaled_final_norm": 3.854e-12,
+      "selected_variable_indices": [
+        12,
+        2,
+        3,
+        9,
+        1,
+        10,
+        6,
+        0,
+        7,
+        23,
+        17,
+        25,
+        13,
+        8
+      ],
+      "smallest_resolved_singular_value": 0.006083857995719,
+      "solver_message": "`xtol` termination condition is satisfied.",
+      "solver_success": true
+    },
+    "child_state": {
+      "coordinates": [
+        -0.000501948646455,
+        0.021653170779092,
+        -0.013352077642428,
+        -0.027265553035386,
+        0.057413155990941,
+        -0.245447539361421,
+        0.000159080657859,
+        -0.081326489205937,
+        0.030238262864044,
+        0.139126243738639
+      ],
+      "eta_Legendre_minimum": {
+        "chi_at_minimum": 0.331025175367254,
+        "minimum": 0.999972833368021
+      },
+      "multipliers": [
+        1.048719631064667,
+        0.058893892680204,
+        0.887537730725834,
+        -0.15137457836765,
+        -0.127575172284358,
+        0.803684811331195
+      ],
+      "velocities": [
+        -0.316310965767657,
+        -0.149205097669796,
+        0.172607401385368,
+        -0.023948161811407,
+        -4.068908887371832,
+        -8.074375896635235,
+        -2.029422534396062,
+        0.361209739788997,
+        0.60091196917862,
+        0.196569377902582
+      ],
+      "velocity_norm": 9.303387033003858
+    },
+    "event_definition_changed": false,
+    "final_physical_rows": [
+      -1.93e-13,
+      -1.628e-12,
+      1.66e-12,
+      -3.32274e-10,
+      7.1852e-11,
+      -2.09294e-10,
+      6.73e-11,
+      -3.1617e-11,
+      -5.2055e-11,
+      -8.2459e-11,
+      2.5619935e-08,
+      -2.86416e-10,
+      3.291576263e-06,
+      -3.31224534e-07
+    ],
+    "initial_physical_rows": [
+      1.5689534495e-05,
+      -1.58359377e-07,
+      5.6354570031e-05,
+      2.11972e-10,
+      -2.90388e-10,
+      1.36267e-10,
+      -1.62136e-10,
+      1.33931e-10,
+      4.88063e-10,
+      1.84637e-10,
+      0.294878801021609,
+      -0.013429369926863,
+      -46.850446288814,
+      5.598577228937607
+    ],
+    "line_selection": {
+      "alpha": 0.03125,
+      "backtrack": 5,
+      "complete_norm": 0.8115026784613,
+      "complete_norm_reduction": 0.004423274645832,
+      "eta_minimum": 0.77426450046114,
+      "orientation": "positive",
+      "selected_by": "LOWEST_INDEPENDENT_EXACT_MERIT_ACROSS_BOTH_ORIENTATIONS"
+    },
+    "nonzero_motion_retained": true,
+    "physical_equations_changed": false,
+    "physical_residuals": {
+      "dynamic_flux_norm_at_4e-4": 3.308199508e-06,
+      "maximum_seven_constraints": 3.32274e-10,
+      "maximum_trace": 1.66e-12,
+      "momentum_norm": 2.5621536e-08
+    },
+    "physical_row_count": 14,
+    "source_event": "v18.62_bidirectional_exact_merit_candidate",
+    "source_germ": "v18.57_child_of_accepted_v18.58_state",
+    "source_solver_interpretation": "INVALIDATED_NOT_REASSERTED",
+    "whole_child_variable_count": 26
+  },
+  "validation": {
+    "bidirectional_exact_merit_selection": true,
+    "child_eta_hyperregular": true,
+    "complete_26_variable_child_considered": true,
+    "dynamic_flux_closed": true,
+    "event_definition_unchanged": true,
+    "fourteen_physical_rows": true,
+    "full_rank_local_chart": true,
+    "invalidated_solver_not_reasserted": true,
+    "local_solve_converged": true,
+    "momentum_closed": true,
+    "no_extra_global_row": true,
+    "nonzero_motion_retained": true,
+    "numerical_row_scaling_same_zero_set": true,
+    "physical_equations_unchanged": true,
+    "seven_constraints_closed": true,
+    "trace_closed": true
+  },
+  "validation_passed": true,
+  "version": "v18.63"
+}

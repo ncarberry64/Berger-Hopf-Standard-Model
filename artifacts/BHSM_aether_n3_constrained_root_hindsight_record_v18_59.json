@@ -1,0 +1,393 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "CONTINUE_PHYSICALLY_ADMISSIBLE_EXACT_376_ROW_DESCENT_FROM_THE_LATEST_ACCEPTED_FRONTIER_TO_F376_ZERO",
+  "artifact": "BHSM_aether_n3_constrained_root_hindsight_record_v18_59",
+  "classification": "BHSM_N3_CONSTRAINED_ROOT_HINDSIGHT_RECORD",
+  "constrained_root_hindsight_record": {
+    "FULL_BHSM_COMPLETE": false,
+    "acceptance_gate_changed": false,
+    "accepted_corridor": {
+      "continuation_restriction_added": false,
+      "measured_statement": "The currently observed admissible corridor does not show a monotonic collapse toward the flux, eta, rank, or persistence boundaries over the measured accepted frontier.",
+      "none_of_four_boundary_collapses_established": true,
+      "root_inside_admissible_set_proven": false,
+      "rows": [
+        {
+          "candidate_version": "v18.33",
+          "child_rank": 14,
+          "eta_minimum": 0.774408284487263,
+          "exact_376_norm": 0.828979109495249,
+          "independent_two_scale_flux_envelope": 3.45106501e-06,
+          "persistence_constraint_maximum": 5.9294e-11
+        },
+        {
+          "candidate_version": "v18.37",
+          "child_rank": 14,
+          "eta_minimum": 0.774291106247388,
+          "exact_376_norm": 0.825951014247091,
+          "independent_two_scale_flux_envelope": 1.2563210738e-05,
+          "persistence_constraint_maximum": 1.06847e-10
+        },
+        {
+          "candidate_version": "v18.41",
+          "child_rank": 14,
+          "eta_minimum": 0.774209908393729,
+          "exact_376_norm": 0.824262386198657,
+          "independent_two_scale_flux_envelope": 1.1807080625e-05,
+          "persistence_constraint_maximum": 6.5994e-11
+        },
+        {
+          "candidate_version": "v18.47",
+          "child_rank": 14,
+          "eta_minimum": 0.774175041952178,
+          "exact_376_norm": 0.819285319373273,
+          "independent_two_scale_flux_envelope": 3.012796089e-06,
+          "persistence_constraint_maximum": 1.30145e-10
+        },
+        {
+          "candidate_version": "v18.54",
+          "child_rank": 14,
+          "eta_minimum": 0.774201192884694,
+          "exact_376_norm": 0.817942595938606,
+          "independent_two_scale_flux_envelope": 4.67458357e-06,
+          "persistence_constraint_maximum": 1.92802e-10
+        },
+        {
+          "candidate_version": "v18.58",
+          "child_rank": 14,
+          "eta_minimum": 0.77423036838536,
+          "exact_376_norm": 0.815925953107132,
+          "independent_two_scale_flux_envelope": 1.194931425e-05,
+          "persistence_constraint_maximum": 5.9402e-11
+        }
+      ],
+      "tests": {
+        "child_rank_degrades": false,
+        "eta_monotonically_approaches_zero": false,
+        "flux_margin_monotonically_collapses": false,
+        "persistence_residual_degrades_monotonically": false
+      }
+    },
+    "constrained_root_target": {
+      "additional_KKT_rows": 0,
+      "admissible_set": "A={z: exists c with G(z,c)=0, eta admissible, unchanged two-scale flux gate passed, and positive-duration persistence with nonzero relative evolution}",
+      "child_correspondence": "G(z,c)=0",
+      "child_physical_rows": {
+        "canonical_momentum": 2,
+        "constraints": 7,
+        "dynamic_flux": 2,
+        "total": 14,
+        "trace": 3
+      },
+      "closure_problem": "FIND z* in A SUCH THAT F(z*)=0",
+      "complete_child_chart": "c in R^26",
+      "event_state": "z in R^376",
+      "flux_inequality_promoted_into_KKT": false,
+      "intersection_statement": "A intersection F^{-1}(0) != empty remains OPEN",
+      "unchanged_exact_physical_residual": "F(z) in R^376"
+    },
+    "hindsight_ledger": {
+      "ACTIVE": "CONTINUE_PHYSICALLY_ADMISSIBLE_EXACT_376_ROW_DESCENT_FROM_THE_LATEST_ACCEPTED_FRONTIER_TO_F376_ZERO",
+      "INVALIDATED": [
+        "exact stationary soliton or fixed return as universal particle criterion",
+        "whole child as equation or coordinate 377",
+        "terminal constraints or a static boundary law as complete child solvability",
+        "componentwise, event-row, period, scale, v, or w monotonicity",
+        "decreasing motion as acceptance",
+        "raw 1e-6 steps or condition number alone as proof of physical stiffness",
+        "unresolved coordinatewise full-event Hessian",
+        "failed Krylov vectors as automatically valid Newton directions"
+      ],
+      "RECLASSIFIED": [
+        "Krylov and JFNK vectors are exploratory local geometric probes until their Newton claim independently validates",
+        "invalid solver interpretation can still generate a physically validated exact-line state",
+        "lower exact F_376 norm does not guarantee physical admissibility",
+        "derivative-measurement displacement differs from useful nonlinear displacement",
+        "exact nonlinear F_376 decides merit; eta, fresh child, flux, and persistence decide physical promotion"
+      ],
+      "VALIDATED": [
+        "complete moving-child reconstruction through the retained Lorentzian dynamic correspondence",
+        "repeated full physical child-row rank 14 and regular local nullity 12",
+        "positive-duration persistence with nonzero relative motion",
+        "measurable direct finite-difference response plateaus of unchanged F_376",
+        "v18.14 physical anisotropy without evidence that action-normalized stiffness forces the old raw 1e-6 crawl",
+        "v18.48 separation of lapse plateau departure, eta-shift normalized compression, w absolute bending, and subdominant audited interactions",
+        "continued discovery of lower-residual physically admissible states through v18.58"
+      ]
+    },
+    "local_child_chart": {
+      "interpretation": "LOCAL_CHART_FREEDOM_UNDER_EXISTING_PHYSICAL_EQUATIONS_NOT_TWELVE_NEW_PHYSICAL_PARAMETERS",
+      "measured_rank": [
+        14
+      ],
+      "physical_rows": 14,
+      "regular_local_nullity": 12,
+      "variables": 26
+    },
+    "nonredundancy_witnesses": [
+      {
+        "later_accepted": "v18.47",
+        "later_accepted_norm": 0.819285319373273,
+        "rejected": "v18.43/v18.45",
+        "rejected_norm": 0.816723990665515,
+        "rejection_reason": [
+          "resolved_dynamic_flux_closed"
+        ]
+      },
+      {
+        "later_accepted": "v18.54",
+        "later_accepted_norm": 0.817942595938606,
+        "rejected": "v18.43/v18.45",
+        "rejected_norm": 0.816723990665515,
+        "rejection_reason": [
+          "resolved_dynamic_flux_closed"
+        ]
+      },
+      {
+        "later_accepted": "v18.54",
+        "later_accepted_norm": 0.817942595938606,
+        "rejected": "v18.50/v18.52",
+        "rejected_norm": 0.817749466104251,
+        "rejection_reason": [
+          "resolved_dynamic_flux_closed"
+        ]
+      }
+    ],
+    "physical_admissibility_is_scalar_residual_ordering": false,
+    "physical_equations_changed": false,
+    "state_hindsight": [
+      {
+        "artifact": "BHSM_aether_n3_invalid_model_exact_merit_promotion_v18_33.json",
+        "candidate_version": "v18.33",
+        "child_chart_nullity": 12,
+        "child_rank": 14,
+        "constraint_maximum": 9.59473e-10,
+        "disposition": "ACCEPTED",
+        "eta_minimum": 0.774408284487263,
+        "event_magnitude": 0.083904820944236,
+        "exact_376_norm": 0.828979109495249,
+        "exact_norm_reduction": 2.525885295e-06,
+        "exact_rejection_reason": null,
+        "independent_two_scale_flux_envelope": 3.45106501e-06,
+        "local_dynamic_flux": null,
+        "momentum_mismatch": 3.5080617e-08,
+        "motion_velocity_witness": 9.303398109762934,
+        "nonzero_relative_evolution": true,
+        "persistence_constraint_maximum": 5.9294e-11,
+        "source_version": "v18.29",
+        "trace_residual": 1.658e-12,
+        "two_scale_flux_rows": []
+      },
+      {
+        "artifact": "BHSM_aether_n3_direct_line_exact_merit_promotion_v18_37.json",
+        "candidate_version": "v18.37",
+        "child_chart_nullity": 12,
+        "child_rank": 14,
+        "constraint_maximum": 9.6644e-11,
+        "disposition": "ACCEPTED",
+        "eta_minimum": 0.774291106247388,
+        "event_magnitude": 0.084149281180645,
+        "exact_376_norm": 0.825951014247091,
+        "exact_norm_reduction": 0.003028095248158,
+        "exact_rejection_reason": null,
+        "independent_two_scale_flux_envelope": 1.2563210738e-05,
+        "local_dynamic_flux": null,
+        "momentum_mismatch": 3.506431e-09,
+        "motion_velocity_witness": 9.303409201737129,
+        "nonzero_relative_evolution": true,
+        "persistence_constraint_maximum": 1.06847e-10,
+        "source_version": "v18.33",
+        "trace_residual": 1.8e-14,
+        "two_scale_flux_rows": []
+      },
+      {
+        "artifact": "BHSM_aether_n3_second_direct_line_promotion_v18_41.json",
+        "candidate_version": "v18.41",
+        "child_chart_nullity": 12,
+        "child_rank": 14,
+        "constraint_maximum": 2.74e-13,
+        "disposition": "ACCEPTED",
+        "eta_minimum": 0.774209908393729,
+        "event_magnitude": 0.084298653948376,
+        "exact_376_norm": 0.824262386198657,
+        "exact_norm_reduction": 0.001688628048434,
+        "exact_rejection_reason": null,
+        "independent_two_scale_flux_envelope": 1.1807080625e-05,
+        "local_dynamic_flux": null,
+        "momentum_mismatch": 1.9062e-11,
+        "motion_velocity_witness": 9.303419257390303,
+        "nonzero_relative_evolution": true,
+        "persistence_constraint_maximum": 6.5994e-11,
+        "source_version": "v18.37",
+        "trace_residual": 1e-15,
+        "two_scale_flux_rows": []
+      },
+      {
+        "artifact": "BHSM_aether_n3_third_direct_line_promotion_v18_45.json",
+        "candidate_version": "v18.43/v18.45",
+        "child_chart_nullity": 12,
+        "child_rank": 14,
+        "constraint_maximum": 3.28404e-10,
+        "disposition": "REJECTED",
+        "eta_minimum": 0.774140171867545,
+        "event_magnitude": 0.084304140994225,
+        "exact_376_norm": 0.816723990665515,
+        "exact_norm_reduction": 0.007538395533142,
+        "exact_rejection_reason": [
+          "resolved_dynamic_flux_closed"
+        ],
+        "independent_two_scale_flux_envelope": 2.2758236534e-05,
+        "local_dynamic_flux": null,
+        "momentum_mismatch": 8.056954e-09,
+        "motion_velocity_witness": 9.303406005234487,
+        "nonzero_relative_evolution": true,
+        "persistence_constraint_maximum": 5.9517e-11,
+        "source_version": "v18.41",
+        "trace_residual": 5.6e-14,
+        "two_scale_flux_rows": []
+      },
+      {
+        "artifact": "BHSM_aether_n3_third_direct_admissible_line_promotion_v18_47.json",
+        "candidate_version": "v18.47",
+        "child_chart_nullity": 12,
+        "child_rank": 14,
+        "constraint_maximum": 9.6816e-11,
+        "disposition": "ACCEPTED",
+        "eta_minimum": 0.774175041952178,
+        "event_magnitude": 0.084300068171502,
+        "exact_376_norm": 0.819285319373273,
+        "exact_norm_reduction": 0.004977066825384,
+        "exact_rejection_reason": null,
+        "independent_two_scale_flux_envelope": 3.012796089e-06,
+        "local_dynamic_flux": 3.012796089e-06,
+        "momentum_mismatch": 1.325003e-09,
+        "motion_velocity_witness": 9.303412621226839,
+        "nonzero_relative_evolution": true,
+        "persistence_constraint_maximum": 1.30145e-10,
+        "source_version": "v18.41",
+        "trace_residual": 7.85e-13,
+        "two_scale_flux_rows": [
+          {
+            "norm": 3.012796089e-06,
+            "relative_step": 0.0008
+          },
+          {
+            "norm": 2.208484556e-06,
+            "relative_step": 0.0004
+          }
+        ]
+      },
+      {
+        "artifact": "BHSM_aether_n3_bidirectional_probe_promotion_v18_52.json",
+        "candidate_version": "v18.50/v18.52",
+        "child_chart_nullity": 12,
+        "child_rank": 14,
+        "constraint_maximum": 1.54e-13,
+        "disposition": "REJECTED",
+        "eta_minimum": 0.774227342520563,
+        "event_magnitude": 0.084140584731788,
+        "exact_376_norm": 0.817749466104251,
+        "exact_norm_reduction": 0.001535853269021,
+        "exact_rejection_reason": [
+          "resolved_dynamic_flux_closed"
+        ],
+        "independent_two_scale_flux_envelope": 2.0920371105e-05,
+        "local_dynamic_flux": 2.0920371105e-05,
+        "momentum_mismatch": 1.5307e-11,
+        "motion_velocity_witness": 9.30339738421078,
+        "nonzero_relative_evolution": true,
+        "persistence_constraint_maximum": 6.6107e-11,
+        "source_version": "v18.47",
+        "trace_residual": 1e-15,
+        "two_scale_flux_rows": [
+          {
+            "norm": 2.0920371105e-05,
+            "relative_step": 0.0008
+          },
+          {
+            "norm": 6.996388107e-06,
+            "relative_step": 0.0004
+          }
+        ]
+      },
+      {
+        "artifact": "BHSM_aether_n3_bidirectional_next_candidate_promotion_v18_54.json",
+        "candidate_version": "v18.54",
+        "child_chart_nullity": 12,
+        "child_rank": 14,
+        "constraint_maximum": 1.99408e-10,
+        "disposition": "ACCEPTED",
+        "eta_minimum": 0.774201192884694,
+        "event_magnitude": 0.084221033038717,
+        "exact_376_norm": 0.817942595938606,
+        "exact_norm_reduction": 0.001342723434667,
+        "exact_rejection_reason": null,
+        "independent_two_scale_flux_envelope": 4.67458357e-06,
+        "local_dynamic_flux": 3.12168627e-06,
+        "momentum_mismatch": 1.5882131e-08,
+        "motion_velocity_witness": 9.30340510057227,
+        "nonzero_relative_evolution": true,
+        "persistence_constraint_maximum": 1.92802e-10,
+        "source_version": "v18.47",
+        "trace_residual": 3.24e-13,
+        "two_scale_flux_rows": [
+          {
+            "norm": 3.12168627e-06,
+            "relative_step": 0.0008
+          },
+          {
+            "norm": 4.67458357e-06,
+            "relative_step": 0.0004
+          }
+        ]
+      },
+      {
+        "artifact": "BHSM_aether_n3_second_bidirectional_probe_promotion_v18_58.json",
+        "candidate_version": "v18.58",
+        "child_chart_nullity": 12,
+        "child_rank": 14,
+        "constraint_maximum": 4.88063e-10,
+        "disposition": "ACCEPTED",
+        "eta_minimum": 0.77423036838536,
+        "event_magnitude": 0.084105974509345,
+        "exact_376_norm": 0.815925953107132,
+        "exact_norm_reduction": 0.002016642831474,
+        "exact_rejection_reason": null,
+        "independent_two_scale_flux_envelope": 1.194931425e-05,
+        "local_dynamic_flux": 4.856340405e-06,
+        "momentum_mismatch": 5.1210406e-08,
+        "motion_velocity_witness": 9.303393091835531,
+        "nonzero_relative_evolution": true,
+        "persistence_constraint_maximum": 5.9402e-11,
+        "source_version": "v18.54",
+        "trace_residual": 9.9e-14,
+        "two_scale_flux_rows": [
+          {
+            "norm": 4.856340405e-06,
+            "relative_step": 0.0008
+          },
+          {
+            "norm": 1.194931425e-05,
+            "relative_step": 0.0004
+          }
+        ]
+      }
+    ]
+  },
+  "dependency_advanced": "NONLINEAR_N3_EVENT_SADDLE_CLOSURE",
+  "real_physical_property_explained": "N3_IS_THE_UNCHANGED_SQUARE_ROOT_PROBLEM_RESTRICTED_BY_THE_ALREADY_IMPLEMENTED_COMPLETE_CHILD_ADMISSIBILITY_GATE",
+  "status": "VALIDATED",
+  "validation": {
+    "eight_historical_candidates_preserved": true,
+    "no_continuation_restriction": true,
+    "no_corridor_boundary_collapse_established": true,
+    "no_equation_377": true,
+    "no_equation_or_gate_change": true,
+    "rank_14_nullity_12": true,
+    "rejected_lower_merit_witness_retained": true,
+    "root_in_A_not_claimed": true,
+    "six_accepted_and_two_rejected": true
+  },
+  "validation_passed": true,
+  "version": "v18.59"
+}
