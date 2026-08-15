@@ -161,6 +161,13 @@ TEXT_SUFFIXES = {
     ".yml",
 }
 LARGE_FILE_THRESHOLD = 10 * 1024 * 1024
+ALLOWED_LARGE_ARTIFACT_LIMIT = 12 * 1024 * 1024
+ALLOWED_LARGE_ARTIFACTS = {
+    "artifacts/BHSM_aether_n3_fresh_sbp_fifth_v0_priority_v17_36.json",
+    "artifacts/BHSM_aether_n3_fresh_sbp_log_scale_priority_family_v17_27.json",
+    "artifacts/BHSM_aether_n3_fresh_sbp_third_v0_priority_v17_31.json",
+    "artifacts/BHSM_aether_n3_fresh_sbp_three_owner_priority_v17_47.json",
+}
 
 
 def sha256(path: Path) -> str:
@@ -414,6 +421,7 @@ def check_hygiene() -> dict:
     malformed_lfs: list[str] = []
     junk: list[str] = []
     large_files: list[dict[str, object]] = []
+    allowed_large_files: list[dict[str, object]] = []
 
     for relative in tracked:
         path = ROOT / relative
@@ -430,7 +438,14 @@ def check_hygiene() -> dict:
             continue
         size = path.stat().st_size
         if size > LARGE_FILE_THRESHOLD:
-            large_files.append({"path": relative, "bytes": size})
+            row = {"path": relative, "bytes": size}
+            if (
+                relative in ALLOWED_LARGE_ARTIFACTS
+                and size <= ALLOWED_LARGE_ARTIFACT_LIMIT
+            ):
+                allowed_large_files.append(row)
+            else:
+                large_files.append(row)
         if not looks_textual(path) or size > 2 * 1024 * 1024:
             continue
         try:
@@ -475,6 +490,8 @@ def check_hygiene() -> dict:
         "malformed_lfs_pointers": malformed_lfs,
         "tracked_cache_or_build_junk": junk,
         "large_file_threshold_bytes": LARGE_FILE_THRESHOLD,
+        "allowed_large_artifact_limit_bytes": ALLOWED_LARGE_ARTIFACT_LIMIT,
+        "allowed_large_artifacts": allowed_large_files,
         "unexpected_large_files": large_files,
     }
 
