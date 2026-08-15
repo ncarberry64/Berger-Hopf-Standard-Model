@@ -2,7 +2,7 @@
 
 ## Current public claim boundary
 
-Current version: **v18.73**.
+Current version: **v18.83**.
 
 Supported now: the N=3 event-to-complete-child correspondence is explicitly
 derived and numerically solved.  The complete child is the reconstructed whole
@@ -14,8 +14,8 @@ retained as physical relative evolution.
 
 Supported now: complete-child-gated global promotions reduce the
 unchanged 376-row residual from `0.831926246412044` to
-`0.807144219141348`. The latest accepted v18.71 line state was independently evaluated
-and promoted at v18.73 only after its complete moving child was recomputed
+`0.80554785212226`. The latest accepted v18.79 fallback line state was independently evaluated
+and promoted at v18.83 only after its complete moving child was recomputed
 from all 26 variables and shown persistent.  No componentwise event
 monotonicity, handcrafted
 direction mixture, empirical particle selector, or 377th row is used.
@@ -24,6 +24,13 @@ explicit event multiplier.  Intermediate rows may worsen during a legitimate
 coupled step, and remaining on the previous iterate path is not a physical
 condition.  Trust regions, damping and line-search rules are numerical
 controls only.
+
+Supported/reclassified: the lower-norm primary v18.79 state is not accepted.
+Its fresh child passes rank, trace, constraint, momentum, eta and persistence
+checks, but the independently recomputed two-scale flux envelope is
+`2.3188127181e-5`, above the unchanged `2e-5` gate. v18.83 instead promotes the
+next-lowest exact-merit state with flux envelope `1.1596040404e-5`. This is a
+physical-gate rejection and fallback, not a componentwise line-search rule.
 
 Supported/reclassified: v18.69 confirms that the regular 14-row child map has
 rank 14 and nullity 12 across neighboring Jacobian steps. Six canonical

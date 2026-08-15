@@ -2,7 +2,7 @@
 
 Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a completed replacement of the Standard Model. The program goal remains replacement by derivation, with the Standard Model retained as the preserved infrared layer until that derivation is complete.
 
-## v18.73 N=3 constrained-root, child-fiber and continuation frontier
+## v18.83 N=3 constrained-root, child-fiber and continuation frontier
 
 The missing event-to-child relation is now explicit.  For each candidate N=3
 event, `F_child=0` requires three event traces, seven local Dirac constraints,
@@ -12,11 +12,11 @@ core ownership close without adding a continuous row.  A positive projected
 evolution interval then tests persistence.  The whole reconstructed child is
 the additional system-level object; no fourth coordinate is introduced.
 
-The latest accepted physical state is v18.73, with global residual `0.807144219141348` and
-positive global eta. Its recomputed child closes trace to `1e-15`, constraints
-to `2.9e-13`, attachment momentum to `1.90e-11`, and the two-scale dynamic
-flux envelope to `5.64e-6`. It persists through time `1e-4` with positive eta
-and maximum constraint residual `6.54e-11`. Velocity, momentum and time dependence remain
+The latest accepted physical state is v18.83, with global residual `0.80554785212226` and
+positive global eta. Its recomputed child closes trace to `2e-15`, constraints
+to `1.78e-13`, attachment momentum to `3.49e-11`, and the two-scale dynamic
+flux envelope to `1.16e-5`. It persists through time `1e-4` with positive eta
+and maximum constraint residual `6.56e-11`. Velocity, momentum and time dependence remain
 nonzero; stability means constraint-consistent relative persistence, not
 staticity.
 
@@ -63,7 +63,15 @@ persistence pass. The exact norm advances to `0.807144219141348`. N=4+,
 the microscopic pregeometric transition generator, one-loop source/saddle
 closure, broken return and physical observables remain downstream and open.
 
-`FULL_BHSM_COMPLETE = FALSE`. The v18.73 sprint snapshot is authorized for
+v18.74-v18.77 repeat the unchanged physical cycle and advance the norm to
+`0.806818034168188`. v18.78-v18.81 then locate a lower-norm primary state but
+reject it because the independent flux envelope `2.3188127181e-5` exceeds the
+unchanged `2e-5` gate. v18.82-v18.83 reconstruct and promote the next-lowest
+already measured line state, advancing the accepted norm to
+`0.80554785212226` without changing equations, tolerances, or acceptance
+semantics.
+
+`FULL_BHSM_COMPLETE = FALSE`. The v18.83 sprint snapshot is authorized for
 GitHub and USB publication without implying scientific completion.
 
 Active dependency:

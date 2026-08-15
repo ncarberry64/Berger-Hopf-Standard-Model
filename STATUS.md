@@ -5,9 +5,9 @@ evidence, not competing public status pages.
 
 ## Current public summary
 
-Current version: **v18.73**.
+Current version: **v18.83**.
 
-BHSM v17.84-v18.73 derives and executes the missing N=3
+BHSM v17.84-v18.83 derives and executes the missing N=3
 event-to-complete-child correspondence.  A candidate event is accepted only
 when it reconstructs a whole child satisfying three boundary traces, all seven
 local Dirac constraints, two attachment momenta, two resolved dynamic-flux
@@ -17,15 +17,22 @@ positive constraint-projected persistence interval.  This is a 14-row child
 boundary/BVP map evaluated on event states; it adds no equation to the global
 376-row KKT system.
 
-The latest physically promoted state is v18.73. Its exact 376-row norm is
-`0.807144219141348`, its event magnitude is `0.083752222964491`, and its global
-eta minimum is `0.774053610471969`. The child chart was recomputed from all 26
+The latest physically promoted state is v18.83. Its exact 376-row norm is
+`0.80554785212226`, its event magnitude is `0.083598507276914`, and its global
+eta minimum is `0.774215156076363`. The child chart was recomputed from all 26
 child variables and has rank 14.  The reconstructed child has trace residual
-`1e-15`, seven-constraint residual `2.9e-13`, momentum mismatch `1.90e-11`,
-resolved two-scale flux envelope `5.64e-6`, and persists for `1e-4` with
-constraint residual below `6.54e-11` and positive eta. Its motion, momentum,
+`2e-15`, seven-constraint residual `1.78e-13`, momentum mismatch `3.49e-11`,
+resolved two-scale flux envelope `1.16e-5`, and persists for `1e-4` with
+constraint residual below `6.56e-11` and positive eta. Its motion, momentum,
 and time dependence remain nonzero and are classified as physical
 constraint-consistent relative evolution, not particle defects.
+
+v18.74-v18.77 execute another unchanged response, bidirectional exact-merit,
+fresh-child, flux, and persistence cycle. v18.78-v18.81 then find a still lower
+exact-merit state but reject it because its independently recomputed flux
+envelope is `2.3188127181e-5`, above the unchanged `2e-5` gate. v18.82-v18.83
+test the next-lowest already measured line state and promote it only after the
+entire gate passes. No threshold or physical equation is changed.
 
 The event definition is therefore no longer the current N=3 blocker.  The
 simultaneous N=3 saddle remains open: the residual is far from zero.  v18.05

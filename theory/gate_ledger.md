@@ -1,6 +1,6 @@
 # Gate Ledger
 
-## v17.84-v18.73 N=3 complete-child, constrained-root and continuation gates
+## v17.84-v18.83 N=3 complete-child, constrained-root and continuation gates
 
 - v17.32 parallel Jacobian equivalence: `VALIDATED_AND_ADOPTED`; no further
   performance optimization is active.
@@ -21,11 +21,17 @@
 - Staticity requirement: `REJECTED`; nonzero motion, momentum and time
   dependence are allowed and retained when relative evolution is
   constraint-consistent and persistent.
-- Latest accepted N=3 residual: `0.807144219141348`.
-- Latest accepted event magnitude: `0.083752222964491`.
-- Latest accepted global eta minimum: `0.774053610471969`.
+- Latest accepted N=3 residual: `0.80554785212226`.
+- Latest accepted event magnitude: `0.083598507276914`.
+- Latest accepted global eta minimum: `0.774215156076363`.
 - Latest child trace/constraint/momentum/flux maxima:
-  `1.0E-15/2.9E-13/1.90E-11/5.64E-6`.
+  `2.0E-15/1.78E-13/3.49E-11/1.16E-5`.
+- v18.74-v18.77 response, bidirectional merit, child and promotion:
+  `VALIDATED_NORM_0.806818034168188_FLUX_1.38023E-5_PERSISTENT_MOVING_CHILD`.
+- v18.78-v18.81 lower-norm primary state:
+  `REJECTED_UNCHANGED_TWO_SCALE_FLUX_ENVELOPE_2.31881E-5_ABOVE_2E-5`.
+- v18.82-v18.83 next-lowest fallback state:
+  `VALIDATED_NORM_0.80554785212226_FLUX_1.15960E-5_PERSISTENT_MOVING_CHILD`.
 - v18.70 direct-response plateau:
   `VALIDATED_1E-6_TO_3E-7_COMMON_PAIR`.
 - v18.71 solver interpretation:
