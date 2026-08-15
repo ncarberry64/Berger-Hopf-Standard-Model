@@ -1,6 +1,6 @@
 # Gate Ledger
 
-## v17.84-v18.69 N=3 complete-child, constrained-root and continuation gates
+## v17.84-v18.73 N=3 complete-child, constrained-root and continuation gates
 
 - v17.32 parallel Jacobian equivalence: `VALIDATED_AND_ADOPTED`; no further
   performance optimization is active.
@@ -21,11 +21,19 @@
 - Staticity requirement: `REJECTED`; nonzero motion, momentum and time
   dependence are allowed and retained when relative evolution is
   constraint-consistent and persistent.
-- Latest accepted N=3 residual: `0.811248056430707`.
-- Latest accepted event magnitude: `0.083931074020022`.
-- Latest accepted global eta minimum: `0.774255587310955`.
+- Latest accepted N=3 residual: `0.807144219141348`.
+- Latest accepted event magnitude: `0.083752222964491`.
+- Latest accepted global eta minimum: `0.774053610471969`.
 - Latest child trace/constraint/momentum/flux maxima:
-  `3.5E-14/2.04E-10/2.10E-8/9.67E-6`.
+  `1.0E-15/2.9E-13/1.90E-11/5.64E-6`.
+- v18.70 direct-response plateau:
+  `VALIDATED_1E-6_TO_3E-7_COMMON_PAIR`.
+- v18.71 solver interpretation:
+  `INVALIDATED_GMRES_INFO_1_DIRECTION_MISMATCH_0.543344`.
+- v18.71 independent exact-merit state:
+  `VALIDATED_NORM_0.807144219141348_REDUCTION_0.004103837289358`.
+- v18.72-v18.73 fresh child and physical promotion:
+  `VALIDATED_RANK_14_ETA_TWO_SCALE_FLUX_PERSISTENCE_NONZERO_RELATIVE_EVOLUTION`.
 - v18.69 neighboring-step child Jacobian rank/nullity:
   `VALIDATED_RANK_14_NULLITY_12_AT_1E-4_2E-4_4E-4`.
 - v18.69 child-fiber ownership:

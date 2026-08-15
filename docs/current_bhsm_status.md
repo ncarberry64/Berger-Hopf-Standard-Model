@@ -2,7 +2,7 @@
 
 Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a completed replacement of the Standard Model. The program goal remains replacement by derivation, with the Standard Model retained as the preserved infrared layer until that derivation is complete.
 
-## v18.69 N=3 constrained-root, child-fiber and continuation frontier
+## v18.73 N=3 constrained-root, child-fiber and continuation frontier
 
 The missing event-to-child relation is now explicit.  For each candidate N=3
 event, `F_child=0` requires three event traces, seven local Dirac constraints,
@@ -12,11 +12,11 @@ core ownership close without adding a continuous row.  A positive projected
 evolution interval then tests persistence.  The whole reconstructed child is
 the additional system-level object; no fourth coordinate is introduced.
 
-The latest accepted physical state is v18.68, with global residual `0.811248056430707` and
-positive global eta.  Its recomputed child closes trace to `3.5e-14`, constraints
-to `2.04e-10`, attachment momentum to `2.10e-8`, and the two-scale dynamic
-flux envelope to `9.67e-6`.  It persists through time `1e-4` with positive eta
-and maximum constraint residual `5.92e-11`.  Velocity, momentum and time dependence remain
+The latest accepted physical state is v18.73, with global residual `0.807144219141348` and
+positive global eta. Its recomputed child closes trace to `1e-15`, constraints
+to `2.9e-13`, attachment momentum to `1.90e-11`, and the two-scale dynamic
+flux envelope to `5.64e-6`. It persists through time `1e-4` with positive eta
+and maximum constraint residual `6.54e-11`. Velocity, momentum and time dependence remain
 nonzero; stability means constraint-consistent relative persistence, not
 staticity.
 
@@ -56,11 +56,14 @@ genuine Cauchy directions and six unresolved Cauchy-multiplier mixtures.  All
 24 signed reprojected probes preserve the retained rows, eta and nonzero
 one-step persistence, while action/eta observables vary.  The fiber is not
 merely gauge/chart freedom, but no new selector is introduced; the downstream
-action/Unique-Actualization owner remains open.  N=4+,
+action/Unique-Actualization owner remains open. v18.70-v18.73 then remeasure the direct-response plateau, scan both
+orientations, invalidate the failed GMRES interpretation, reconstruct the
+fresh child, and promote only after exact merit, eta, two-scale flux and
+persistence pass. The exact norm advances to `0.807144219141348`. N=4+,
 the microscopic pregeometric transition generator, one-loop source/saddle
 closure, broken return and physical observables remain downstream and open.
 
-`FULL_BHSM_COMPLETE = FALSE`.  The v18.58 sprint snapshot is authorized for
+`FULL_BHSM_COMPLETE = FALSE`. The v18.73 sprint snapshot is authorized for
 GitHub and USB publication without implying scientific completion.
 
 Active dependency:

@@ -2,7 +2,7 @@
 
 ## Current public claim boundary
 
-Current version: **v18.69**.
+Current version: **v18.73**.
 
 Supported now: the N=3 event-to-complete-child correspondence is explicitly
 derived and numerically solved.  The complete child is the reconstructed whole
@@ -14,8 +14,8 @@ retained as physical relative evolution.
 
 Supported now: complete-child-gated global promotions reduce the
 unchanged 376-row residual from `0.831926246412044` to
-`0.811248056430707`.  The latest accepted v18.66 line state was independently evaluated
-and promoted at v18.68 only after its complete moving child was recomputed
+`0.807144219141348`. The latest accepted v18.71 line state was independently evaluated
+and promoted at v18.73 only after its complete moving child was recomputed
 from all 26 variables and shown persistent.  No componentwise event
 monotonicity, handcrafted
 direction mixture, empirical particle selector, or 377th row is used.
