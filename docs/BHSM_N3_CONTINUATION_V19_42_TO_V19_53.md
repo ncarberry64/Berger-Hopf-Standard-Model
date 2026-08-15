@@ -93,3 +93,18 @@ linear zero estimate is `1164.18` accepted steps and is explicitly naive and
 nonphysical. Recent response diagnostics do not establish entry into a local
 root basin. No first action-owned blocker is identified, so unchanged N=3
 continuation resumes. `FULL_BHSM_COMPLETE` remains false.
+
+## v19.63-v19.68 compact continuation ledger
+
+v19.64 found a primary exact-merit candidate at `0.788121714849599`, but
+v19.66 rejected it solely because independently recomputed two-scale flux was
+`2.6357431541e-5 > 2e-5`. The unchanged scan's next-lowest candidate,
+negative `alpha=-0.00390625`, was reconstructed afresh and promoted at v19.68:
+
+- exact norm: `0.788591183052825`;
+- reduction from accepted v19.61: `0.000126750270337`;
+- rank / flux: `14 / 1.2296338804e-5`;
+- eta, positive-duration persistence, and nonzero evolution: valid.
+
+The rejected primary is not an accepted frontier. `FULL_BHSM_COMPLETE` remains
+false; unchanged continuation proceeds from v19.68.
