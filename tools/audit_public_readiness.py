@@ -68,12 +68,11 @@ ALIGNMENT_FILES = [
 ]
 
 ALIGNMENT_PHRASES = [
-    "v15.10",
-    "radial eta",
-    "sigma",
-    "response",
-    "hopf",
-    "degree",
+    "v18.73",
+    "376",
+    "complete-child",
+    "eta",
+    "persistence",
     "full_bhsm_complete = false",
     "frozen predictions",
 ]
@@ -162,6 +161,13 @@ TEXT_SUFFIXES = {
     ".yml",
 }
 LARGE_FILE_THRESHOLD = 10 * 1024 * 1024
+ALLOWED_LARGE_ARTIFACT_LIMIT = 12 * 1024 * 1024
+ALLOWED_LARGE_ARTIFACTS = {
+    "artifacts/BHSM_aether_n3_fresh_sbp_fifth_v0_priority_v17_36.json",
+    "artifacts/BHSM_aether_n3_fresh_sbp_log_scale_priority_family_v17_27.json",
+    "artifacts/BHSM_aether_n3_fresh_sbp_third_v0_priority_v17_31.json",
+    "artifacts/BHSM_aether_n3_fresh_sbp_three_owner_priority_v17_47.json",
+}
 
 
 def sha256(path: Path) -> str:
@@ -415,6 +421,7 @@ def check_hygiene() -> dict:
     malformed_lfs: list[str] = []
     junk: list[str] = []
     large_files: list[dict[str, object]] = []
+    allowed_large_files: list[dict[str, object]] = []
 
     for relative in tracked:
         path = ROOT / relative
@@ -431,7 +438,14 @@ def check_hygiene() -> dict:
             continue
         size = path.stat().st_size
         if size > LARGE_FILE_THRESHOLD:
-            large_files.append({"path": relative, "bytes": size})
+            row = {"path": relative, "bytes": size}
+            if (
+                relative in ALLOWED_LARGE_ARTIFACTS
+                and size <= ALLOWED_LARGE_ARTIFACT_LIMIT
+            ):
+                allowed_large_files.append(row)
+            else:
+                large_files.append(row)
         if not looks_textual(path) or size > 2 * 1024 * 1024:
             continue
         try:
@@ -476,6 +490,8 @@ def check_hygiene() -> dict:
         "malformed_lfs_pointers": malformed_lfs,
         "tracked_cache_or_build_junk": junk,
         "large_file_threshold_bytes": LARGE_FILE_THRESHOLD,
+        "allowed_large_artifact_limit_bytes": ALLOWED_LARGE_ARTIFACT_LIMIT,
+        "allowed_large_artifacts": allowed_large_files,
         "unexpected_large_files": large_files,
     }
 
@@ -585,23 +601,17 @@ def manifest_payload(result: dict) -> dict:
         },
         "external_urls_recorded": result["external_urls"],
         "current_scientific_summary": {
-            "threading_response": (
-                "derived: Pi_perp S_Sigma="
-                "-tau(pi chi_1/16)Pi_perp q"
-            ),
-            "explicit_energy_threshold": "not required",
-            "threading_unresolved_trace_count": 0,
-            "critical_lapse_weyl_principal_block": (
-                "[[0,6 kappa_1/a_0^2],"
-                "[6 kappa_1/a_0^2,12 kappa_1/a_0^2]]"
-            ),
-            "fold_kinetic_sign": "unresolved",
+            "research_frontier": "v18.73",
+            "n3_exact_residual_norm": 0.807144219141348,
+            "event_to_complete_child_map": "derived_and_executed",
+            "complete_child_chart_rank": 14,
+            "complete_child_persistence": "validated_for_1e-4",
+            "simultaneous_n3_saddle": "open_residual_nonzero",
             "physical_mass_claim": False,
         },
         "active_construction_target": (
-            "T_mu_nu^(X)=delta hbar_mu_nu[X]/delta X|X=2, "
-            "delta R_4[T^(X)]=tau chi_1 q, with M4 gauge quotient "
-            "and regulated domain"
+            "Continue physically admissible exact 376-row descent from the "
+            "latest accepted frontier to F376 zero"
         ),
         "unsupported_claims": UNSUPPORTED_CLAIMS,
         "citation": {

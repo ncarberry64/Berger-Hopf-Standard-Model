@@ -1,0 +1,95 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "DERIVE_THE_COLOR_AND_HYPERCHARGE_BULK-TO-BOUNDARY_CURRENT_KERNELS_FROM_THE_PATH-B_ETA_AND_GLOBAL_SPIN-GAUGE_ATTACHMENT,_THEN_APPLY_THE_EXACT_DtN_SPECTRAL_PROJECTOR_TO_THE_QUARK_AND_LEPTON_LR_CHANNELS",
+  "artifact": "BHSM_aether_round_cap_maxwell_dtn_v15_65",
+  "boundary_effective_operator": {
+    "DtN_operator": "N_T=(Delta_1_coexact)^(1/2)",
+    "bulk_action": "S5=(K_F^(5)/4)*integral_M5*sqrt(g)*F_MN*F^MN",
+    "equals_local_M4_Maxwell_action": false,
+    "local_Maxwell_operator_order": 2,
+    "on_shell_boundary_action": "S_DtN=(K_F^(5)/2)*integral_boundary*sqrt(h)*A_i*N_T*A^i",
+    "outward_normal_derivative": "partial_n*u_m=m/R4",
+    "pseudodifferential_order": 1,
+    "regular_normalized_solution": "u_m=tan(rho/2)^m,_u_m(pi/2)=1",
+    "relation_to_v15_60": "the_exact_bulk_pushforward_is_a_nonlocal_order-one_DtN_kernel,_so_it_does_not_supply_the_missing_local_order-two_boundary_term",
+    "static_transverse_radial_equation": "-d_rho(sin(rho)*d_rho_u)+m^2*u/sin(rho)=0"
+  },
+  "claim_boundary": {
+    "color_or_hypercharge_DtN_kernel_derived": false,
+    "exact_static_weak_DtN_spectrum_derived": true,
+    "local_M4_Yang-Mills_term_derived": false,
+    "nonlocal_weak_boundary_kernel_derived": true,
+    "weak_kernel_induces_composite_Higgs_gap": false
+  },
+  "classification": "BHSM_ROUND_CAP_STATIC_MAXWELL_DTN_AND_LR_PROJECTION",
+  "hemisphere_geometry": {
+    "boundary": "equatorial_round_S3_R4",
+    "coordinate_change": "rho=2*chi",
+    "metric": "ds5_E^2=dtau^2+R4^2*(drho^2+sin(rho)^2*dOmega3^2),_R4=RF/2",
+    "range": "0<=rho<=pi/2",
+    "spatial_cap": "closed_northern_hemisphere_of_round_S4_R4"
+  },
+  "static_mode_ledger": [
+    {
+      "boundary_derivative": 2.0,
+      "boundary_value": 1.0,
+      "exact_DtN_eigenvalue": 1.976996825882,
+      "mode": 2,
+      "physical_DtN_eigenvalue": 1.976996825882,
+      "unit_S3_Hodge_eigenvalue": 4.0
+    },
+    {
+      "boundary_derivative": 3.0,
+      "boundary_value": 1.0,
+      "exact_DtN_eigenvalue": 2.965495238823,
+      "mode": 3,
+      "physical_DtN_eigenvalue": 2.965495238823,
+      "unit_S3_Hodge_eigenvalue": 9.0
+    },
+    {
+      "boundary_derivative": 4.0,
+      "boundary_value": 1.0,
+      "exact_DtN_eigenvalue": 3.953993651764,
+      "mode": 4,
+      "physical_DtN_eigenvalue": 3.953993651764,
+      "unit_S3_Hodge_eigenvalue": 16.0
+    },
+    {
+      "boundary_derivative": 8.0,
+      "boundary_value": 1.0,
+      "exact_DtN_eigenvalue": 7.907987303527,
+      "mode": 8,
+      "physical_DtN_eigenvalue": 7.907987303527,
+      "unit_S3_Hodge_eigenvalue": 64.0
+    }
+  ],
+  "validation": {
+    "DtN_eigenvalues_exact": true,
+    "USB_untouched": true,
+    "boundary_normalization_exact": true,
+    "exact_profiles_solve_radial_ODE": true,
+    "hemisphere_radius_positive": true,
+    "no_new_continuous_coefficient": true,
+    "nonlocal_not_relabelled_local_Maxwell": true,
+    "weak_singlet_projection_zero": true
+  },
+  "validation_passed": true,
+  "version": "v15.65",
+  "weak_left_right_projection": {
+    "left_doublet_generator": "T_L^a=sigma^a/2",
+    "owned_bulk_connection": "diagonal_Sp1_weak_connection",
+    "required_nonzero_LR_sources": [
+      "color_DtN_kernel_for_quark_channels",
+      "hypercharge_DtN_kernel_for_charged_channels",
+      "or_an_action-owned_direct_finite_Dirac/four-fermion_term"
+    ],
+    "right_singlet_generator": "T_R^a=0_for_u_R,d_R,e_R,nu_R",
+    "scalar_LR_group_factor": "sum_a*T_L^a*T_R^a=0",
+    "those_nonzero_LR_kernel_normalizations_derived_in_current_parent_action": false,
+    "weak_DtN_kernel_projects_nontrivially_to_LR_Higgs_channel": false,
+    "weak_kernel_still_generates": [
+      "left-left_current_response",
+      "weak_vector_boundary_response"
+    ]
+  }
+}

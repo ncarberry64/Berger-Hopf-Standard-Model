@@ -1,0 +1,94 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "INSERT_V_hat_AND_ITS_epsilon_DERIVATIVE_INTO_THE_CHILD_KKT_EVENT-LAYER_EQUATIONS_AND_COMPUTE_THE_HYBRID-CYCLE_MASS_AND_GAUGE_RESIDUE_FROM_ONE_PERIOD",
+  "artifact": "BHSM_aether_nonlinear_cartan_gap_branch_v15_77",
+  "claim_boundary": {
+    "cycle-averaged_physical_mass_solved": false,
+    "event_layer_backreaction_solved": false,
+    "nonzero_Yukawa_residue_solved_on_branch": true,
+    "nonzero_composite_mass_branch_solved": true
+  },
+  "classification": "BHSM_NONLINEAR_CARTAN_COMPOSITE_GAP_BRANCH",
+  "effective_potential": {
+    "canonical_Yukawa": "Y=Z_H^(-1/2)_for_unit_Hubbard-Stratonovich_vertex",
+    "composite_residue": "Z_H=-partial_Chi_LR/partial_(m^2)>0",
+    "dimensionless_coupling": "g_hat(epsilon)=G_total(epsilon)/(2*pi^2*R4^2)",
+    "potential": "V_hat(x;epsilon)=x^2/(2*g_hat)-sum_n d_n*exp(-t*E_n^2)*[sqrt(E_n^2+x^2)-E_n]",
+    "same_regulator_and_Gamma_boundary": true,
+    "stationarity": "dV_hat/dx=0_iff_x=0_or_G_total*Chi_LR(x)=1"
+  },
+  "gap_branch_rows": [
+    {
+      "Yukawa_residue": 0.0,
+      "Z_H": 0.001687352603,
+      "broken": false,
+      "critical_epsilon": 3.08e-10,
+      "epsilon": 3.39e-10,
+      "epsilon_fraction": 1.1,
+      "mass_in_ell_kappa_inverse": 0.0,
+      "mass_times_R4": 0.0
+    },
+    {
+      "Yukawa_residue": 0.0,
+      "Z_H": 0.001687352603,
+      "broken": false,
+      "critical_epsilon": 3.08e-10,
+      "epsilon": 3.08e-10,
+      "epsilon_fraction": 1.0,
+      "mass_in_ell_kappa_inverse": 0.0,
+      "mass_times_R4": 0.0
+    },
+    {
+      "Yukawa_residue": 26.375515284506,
+      "Z_H": 0.001437467697,
+      "broken": true,
+      "critical_epsilon": 3.08e-10,
+      "epsilon": 2.78e-10,
+      "epsilon_fraction": 0.9,
+      "mass_in_ell_kappa_inverse": 0.500168853878,
+      "mass_times_R4": 0.505988524948
+    },
+    {
+      "Yukawa_residue": 41.197491267672,
+      "Z_H": 0.000589194195,
+      "broken": true,
+      "critical_epsilon": 3.08e-10,
+      "epsilon": 1.54e-10,
+      "epsilon_fraction": 0.5,
+      "mass_in_ell_kappa_inverse": 1.505208270567,
+      "mass_times_R4": 1.522721990103
+    },
+    {
+      "Yukawa_residue": 138.457879613273,
+      "Z_H": 5.2163251e-05,
+      "broken": true,
+      "critical_epsilon": 3.08e-10,
+      "epsilon": 3.1e-11,
+      "epsilon_fraction": 0.1,
+      "mass_in_ell_kappa_inverse": 4.541796087252,
+      "mass_times_R4": 4.594641759454
+    },
+    {
+      "Yukawa_residue": 778.961532735794,
+      "Z_H": 1.648041e-06,
+      "broken": true,
+      "critical_epsilon": 3.08e-10,
+      "epsilon": 3e-12,
+      "epsilon_fraction": 0.01,
+      "mass_in_ell_kappa_inverse": 15.09464603442,
+      "mass_times_R4": 15.270278471679
+    }
+  ],
+  "scientific_result": "THE_SAME_CARTAN-PLUS-GAUGE_PUSHFORWARD_HAS_A_UNIQUE_NONZERO_COMPOSITE_MASS_BRANCH_BELOW_epsilon_star;_Z_H_AND_THE_NONZERO_YUKAWA_RESIDUE_ARE_DERIVATIVES_OF_THE_SAME_REGULATED_SUSCEPTIBILITY_AND_ARE_NOT_INDEPENDENT_INPUTS",
+  "validation": {
+    "USB_untouched": true,
+    "broken_side_nonzero": true,
+    "composite_residue_positive": true,
+    "mass_grows_inward": true,
+    "no_Yukawa_inserted": true,
+    "one_effective_action": true,
+    "symmetric_side_massless": true
+  },
+  "validation_passed": true,
+  "version": "v15.77"
+}

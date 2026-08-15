@@ -1,0 +1,2 @@
+from bhsm.interface.aether_n3_refreshed_period_log_bracket_v17_73 import completion_payload
+def test_classifies_refreshed_period_log_bracket(): assert completion_payload()["validation_passed"]

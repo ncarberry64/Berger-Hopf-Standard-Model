@@ -1,0 +1,2 @@
+from bhsm.interface.aether_n3_fresh_sbp_measured_fractional_cone_v17_02 import completion_payload
+def test_measured_fractional_cone_validates():assert completion_payload()["validation_passed"]

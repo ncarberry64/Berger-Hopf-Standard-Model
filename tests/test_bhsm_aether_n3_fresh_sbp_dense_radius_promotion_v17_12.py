@@ -1,0 +1,2 @@
+from bhsm.interface.aether_n3_fresh_sbp_dense_radius_promotion_v17_12 import completion_payload
+def test_dense_radius_promotion_validates():assert completion_payload()["validation_passed"]

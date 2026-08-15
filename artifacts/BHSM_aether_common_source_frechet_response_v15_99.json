@@ -1,0 +1,54 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "Frechet_response_witness": {
+    "absolute_residual": 1.6e-11,
+    "analytic_mixed_response": 0.001274818743,
+    "centered_mixed_finite_difference": 0.001274818727,
+    "relative_residual": 1.6e-11
+  },
+  "active_calculation": "ASSEMBLE_THE_PHYSICAL_RADIAL-TIMES-S3_GAUGE_AND_HS_VERTEX_MATRICES_ON_EACH_DENSE_STATE_AND_INSERT_THEIR_COMMON_FRECHET_RESPONSES_IN_THE_QUANTUM_EVENT_EULER-DIRAC_SYSTEM",
+  "artifact": "BHSM_aether_common_source_frechet_response_v15_99",
+  "claim_boundary": {
+    "common_Frechet_response_engine_evaluated": true,
+    "physical_source_vertex_contract_fixed": true,
+    "quantum_event_saddle_solved": false,
+    "radial_angular_vertex_matrices_assembled": false
+  },
+  "classification": "BHSM_COMMON_QUANTUM_SOURCE_FRECHET_RESPONSE",
+  "physical_source_vertex_contract": {
+    "Ward_identity": "background_covariance_implies_p_mu*Pi_munu=0_after_the_same_BRST_quotient",
+    "bare_HS_LR_vertex": "unit_vertex_fixed_by_the_exact_Einstein-Cartan_HS_transform",
+    "differentiate_before_extracting_sectors": true,
+    "group_generators": "fixed_rank16_SM_generators_with_Tr16(T_Y^2):Tr16(T_2^2):Tr16(T_3^2)=5/3:1:1",
+    "one_operator": "P_cycle[Phi;A,H,Psi]=P_A+ghost_direct_sum_P_Weyl[A,H,Psi]_direct_sum_P_HS[A,Psi]",
+    "quantum_responses": {
+      "Pi_BB": "D2_Gamma_1[J_B,J_B;Q_BB]",
+      "Pi_EE": "D2_Gamma_1[J_E,J_E;Q_EE]",
+      "Y": "Z_Psi^(-1)*Z_H^(-1/2)*V_LRH",
+      "Z_H": "low-momentum_part_of_D2_Gamma_q[J_H,J_Hdagger;Q_HH]",
+      "saddle_force": "D_Phi_Gamma_cl+D_Gamma_1[J_x]=0"
+    },
+    "remaining_matrix_assembly": "evaluate_J_E,J_B,J_H,Q_EE,Q_BB,Q_HH_in_the_constraint-solved_radial_times_round-S3_harmonic_basis",
+    "separate_finite_Yukawa_insertion": false,
+    "separate_finite_gauge_counterterm": false,
+    "vertices": {
+      "HS": "J_H=partial_H_P_cycle,_Q_HH=partial_Hdagger_partial_H_P_cycle",
+      "Yukawa": "V_LRH=partial_barPsi_L_partial_Psi_R_partial_H_Gamma_q",
+      "electric": "J_E=partial_A0_P_cycle,_Q_EE=partial_A0^2_P_cycle",
+      "geometry": "J_x=partial_x_P_cycle_for_all_constraint-quotiented_Phi",
+      "magnetic": "J_B=partial_Acoexact_P_cycle,_Q_BB=partial_Acoexact^2_P_cycle"
+    }
+  },
+  "scientific_result": "THE_NONCOMMUTING_HEAT-REGULATED_FRECHET_HESSIAN_WITH_SEAGULL_CONTACT_VERTICES_IS_EXECUTABLE_AND_VERIFIED;_K_E,K_B,Z_H,Y_AND_THE_QUANTUM_SADDLE_FORCE_ARE_DERIVATIVES_OF_ONE_OPERATOR",
+  "validation": {
+    "USB_untouched": true,
+    "all_responses_from_one_operator": true,
+    "contact_vertex_included": true,
+    "fixed_group_ray_retained": true,
+    "no_split_terms": true,
+    "noncommuting_Frechet_Hessian_verified": true,
+    "unit_HS_vertex_retained": true
+  },
+  "validation_passed": true,
+  "version": "v15.99"
+}

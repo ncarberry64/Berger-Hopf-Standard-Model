@@ -1,0 +1,137 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "York_constraint_contract": {
+    "FR_normalization": "omega*I=1/2",
+    "Hamiltonian_constraint": "kappa1*[R7+42H^2]/2-kappa0/2-rho_eta-rho_sigma-rho_FR=0",
+    "conformal_gauge": "integral_sin(chi)^3cos(chi)^3*u_dchi=0",
+    "eta_profile": "v15.41_spatial-Euler_Galerkin_profile",
+    "extrinsic_curvature": "K_ij=H*h_ij_with_spatially_constant_H",
+    "material_response": "sigma=C_J[f]-1/2",
+    "metric": "h7=R^2*exp(2u(chi))*[dchi2+cos(chi)^2dOmega3_u2+sin(chi)^2dOmega3_v2]",
+    "momentum_constraint": "D_j(K^ij-h^ij*K)=0_identically",
+    "new_physical_coefficient": false
+  },
+  "artifact": "BHSM_aether_york_response_initial_data_v15_42",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Lorentzian_encapsulation_evolution_solved": false,
+    "persistent_child_derived": false,
+    "response_constrained_real_CMC_initial_data_solved": false,
+    "trace_free_shape_shear_required": true
+  },
+  "classification": "BHSM_PURE_TRACE_YORK_CMC_RESPONSE_OBSTRUCTION",
+  "pure_trace_constraint_continuation": {
+    "FR_normalization_residual": 1.3e-07,
+    "H": null,
+    "H_squared": -0.02135657,
+    "H_squared_positive": false,
+    "conformal_response_nonconstant": true,
+    "conformal_u_max": 0.00613502,
+    "conformal_u_min": -0.02562267,
+    "eta_q2": 0.0,
+    "eta_q4": 0.03641421,
+    "formal_pointwise_constraint_equation_solved": true,
+    "homotopy_history": [
+      {
+        "H_squared": 0.0017289,
+        "homotopy": 0.0,
+        "maximum_solver_relative_residual": 7.402e-05,
+        "omega": 0.0
+      },
+      {
+        "H_squared": -0.00056739,
+        "homotopy": 0.1,
+        "maximum_solver_relative_residual": 7.401e-05,
+        "omega": 2.43e-06
+      },
+      {
+        "H_squared": -0.00286628,
+        "homotopy": 0.2,
+        "maximum_solver_relative_residual": 7.4e-05,
+        "omega": 4.85e-06
+      },
+      {
+        "H_squared": -0.00516779,
+        "homotopy": 0.3,
+        "maximum_solver_relative_residual": 7.399e-05,
+        "omega": 7.27e-06
+      },
+      {
+        "H_squared": -0.00747198,
+        "homotopy": 0.4,
+        "maximum_solver_relative_residual": 7.398e-05,
+        "omega": 9.69e-06
+      },
+      {
+        "H_squared": -0.0097789,
+        "homotopy": 0.5,
+        "maximum_solver_relative_residual": 7.397e-05,
+        "omega": 1.21e-05
+      },
+      {
+        "H_squared": -0.0120886,
+        "homotopy": 0.6,
+        "maximum_solver_relative_residual": 7.395e-05,
+        "omega": 1.451e-05
+      },
+      {
+        "H_squared": -0.01440114,
+        "homotopy": 0.7,
+        "maximum_solver_relative_residual": 7.394e-05,
+        "omega": 1.692e-05
+      },
+      {
+        "H_squared": -0.0167166,
+        "homotopy": 0.8,
+        "maximum_solver_relative_residual": 7.393e-05,
+        "omega": 1.932e-05
+      },
+      {
+        "H_squared": -0.01903505,
+        "homotopy": 0.9,
+        "maximum_solver_relative_residual": 7.392e-05,
+        "omega": 2.172e-05
+      },
+      {
+        "H_squared": -0.02135657,
+        "homotopy": 1.0,
+        "maximum_solver_relative_residual": 7.39e-05,
+        "omega": 2.411e-05
+      }
+    ],
+    "localized_inertia": 20737.02405281,
+    "maximum_boundary_residual": 1.3e-07,
+    "maximum_pointwise_Hamiltonian_residual": 1.544e-05,
+    "maximum_solver_relative_residual": 7.39e-05,
+    "mean_conformal_gauge_residual": 0.0,
+    "momentum_constraint_residual": 0.0,
+    "omega": 2.411e-05,
+    "physical_real_CMC_initial_data": false,
+    "radius": 2.07776573,
+    "source_Galerkin_coefficients": [
+      0.02657773,
+      0.0,
+      0.01797436,
+      0.0,
+      -0.03459943,
+      0.0,
+      0.03641421,
+      0.0,
+      0.0,
+      -0.08573241
+    ]
+  },
+  "validation": {
+    "CMC_test_uses_action_owned_geometry_not_pressure": true,
+    "FR_normalization_closed": true,
+    "Hamiltonian_constraint_pointwise_controlled": true,
+    "USB_untouched": true,
+    "boundary_and_mean_gauge_closed": true,
+    "frozen_predictions_unchanged": true,
+    "momentum_constraint_closed": true,
+    "nonconstant_geometry_response": true,
+    "pure_trace_CMC_rejected_by_negative_H_squared": true
+  },
+  "validation_passed": true,
+  "version": "v15.42"
+}

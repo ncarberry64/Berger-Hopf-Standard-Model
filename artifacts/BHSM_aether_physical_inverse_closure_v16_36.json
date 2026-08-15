@@ -1,0 +1,531 @@
+{
+  "EXTERNAL_SYNC_AUTHORIZED": false,
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "CONTINUE_THE_EXISTING_FRESH_N3_KKT_SOLVE",
+  "artifact": "BHSM_aether_physical_inverse_closure_v16_36",
+  "classification": "BHSM_PHYSICAL_INVERSE_CLOSURE_REQUIREMENT_MATRIX",
+  "collapsed_completion_graph": {
+    "duplicate_dependency_collapses": {
+      "CKM_and_CP": "F_relative_up/down_orientation_after_nonzero_mass",
+      "PMNS_and_neutrino_splittings": "F_neutral_propagation_operator",
+      "absolute_gauge_and_fermion_mass_normalization": "B_plus_H_one_shared_pushforward",
+      "electron_muon_tau_quark_mass": "F_family-resolved_returned_LR_operator",
+      "stability_and_decay": "E_plus_G_return_monodromy_and_channel_domain"
+    },
+    "edges": [
+      [
+        "A_simultaneous_N3_physical_event_saddle",
+        "B_common_event_gauge-rank16-HS_pushforward"
+      ],
+      [
+        "B_common_event_gauge-rank16-HS_pushforward",
+        "C_independent_N4plus_full-Sobolev_orbit_convergence"
+      ],
+      [
+        "C_independent_N4plus_full-Sobolev_orbit_convergence",
+        "D_nonlinear_fermion-backreacted_broken_child"
+      ],
+      [
+        "D_nonlinear_fermion-backreacted_broken_child",
+        "E_reconstruction_and_one-cycle_return_with_persistent_order_parameter"
+      ],
+      [
+        "E_reconstruction_and_one-cycle_return_with_persistent_order_parameter",
+        "F_returned_fermion_gauge_and_neutral_family_operators"
+      ],
+      [
+        "F_returned_fermion_gauge_and_neutral_family_operators",
+        "G_color-singlet_asymptotic_and_decay-classifier_domains"
+      ],
+      [
+        "B_common_event_gauge-rank16-HS_pushforward",
+        "H_absolute_scale_from_the_same_pushforward"
+      ],
+      [
+        "F_returned_fermion_gauge_and_neutral_family_operators",
+        "I_held-out_numerical_kill_screen_and_unique_actualization"
+      ],
+      [
+        "G_color-singlet_asymptotic_and_decay-classifier_domains",
+        "I_held-out_numerical_kill_screen_and_unique_actualization"
+      ],
+      [
+        "H_absolute_scale_from_the_same_pushforward",
+        "I_held-out_numerical_kill_screen_and_unique_actualization"
+      ]
+    ],
+    "independent_remaining_objects": [
+      "A_simultaneous_N3_physical_event_saddle",
+      "B_common_event_gauge-rank16-HS_pushforward",
+      "C_independent_N4plus_full-Sobolev_orbit_convergence",
+      "D_nonlinear_fermion-backreacted_broken_child",
+      "E_reconstruction_and_one-cycle_return_with_persistent_order_parameter",
+      "F_returned_fermion_gauge_and_neutral_family_operators",
+      "G_color-singlet_asymptotic_and_decay-classifier_domains",
+      "H_absolute_scale_from_the_same_pushforward",
+      "I_held-out_numerical_kill_screen_and_unique_actualization"
+    ]
+  },
+  "current_KKT_physical_role_diagnostic": {
+    "coordinate_group_ranking": [
+      {
+        "coordinate": "v_0",
+        "downstream_physical_role": "Hopf_anisotropy_and_gauge-breaking_background_geometry",
+        "stationarity_norm_across_free_nodes": 6.62136351833
+      },
+      {
+        "coordinate": "log_scale",
+        "downstream_physical_role": "boundary_scale_and_common_pushforward_geometry",
+        "stationarity_norm_across_free_nodes": 4.193487929397
+      },
+      {
+        "coordinate": "w_0",
+        "downstream_physical_role": "normal/fiber_localization_geometry",
+        "stationarity_norm_across_free_nodes": 2.579424745038
+      },
+      {
+        "coordinate": "u_1",
+        "downstream_physical_role": "conformal_shape_and_reconstruction_geometry",
+        "stationarity_norm_across_free_nodes": 0.003919666317
+      },
+      {
+        "coordinate": "v_1",
+        "downstream_physical_role": "Hopf_anisotropy_and_gauge-breaking_background_geometry",
+        "stationarity_norm_across_free_nodes": 0.00103557376
+      },
+      {
+        "coordinate": "w_1",
+        "downstream_physical_role": "normal/fiber_localization_geometry",
+        "stationarity_norm_across_free_nodes": 0.000345209543
+      },
+      {
+        "coordinate": "u_2",
+        "downstream_physical_role": "conformal_shape_and_reconstruction_geometry",
+        "stationarity_norm_across_free_nodes": 0.000185247664
+      },
+      {
+        "coordinate": "v_2",
+        "downstream_physical_role": "Hopf_anisotropy_and_gauge-breaking_background_geometry",
+        "stationarity_norm_across_free_nodes": 1.6816355e-05
+      },
+      {
+        "coordinate": "u_3",
+        "downstream_physical_role": "conformal_shape_and_reconstruction_geometry",
+        "stationarity_norm_across_free_nodes": 1.6656819e-05
+      },
+      {
+        "coordinate": "w_2",
+        "downstream_physical_role": "normal/fiber_localization_geometry",
+        "stationarity_norm_across_free_nodes": 7.086469e-06
+      }
+    ],
+    "explicit_broken_HS_LR_order_parameter_coordinate_present": false,
+    "explicit_family_orientation_coordinate_present": false,
+    "interpretation": "THE_CURRENT_KKT_OWNS_THE_UNBROKEN_PARENT_GEOMETRY_CONSTRAINTS_AND_COMMON_DETERMINANT_RESPONSE_NEEDED_TO_LOCATE_THE_EVENT;_THE_FIRST_ELECTRON-LIKE_MASS_REQUIRES_THE_DOWNSTREAM_EXPLICIT_BROKEN_HS/LR_BRANCH_AND_RETURN_OPERATOR,_NOT_A_NEW_UNBROKEN_KKT_COORDINATE",
+    "largest_coordinate_components": [
+      {
+        "coordinate": "v_0",
+        "node": 1,
+        "residual": 4.040694612455
+      },
+      {
+        "coordinate": "v_0",
+        "node": 22,
+        "residual": 3.800380316045
+      },
+      {
+        "coordinate": "v_0",
+        "node": 23,
+        "residual": 3.206130744407
+      },
+      {
+        "coordinate": "log_scale",
+        "node": 17,
+        "residual": -2.504053284795
+      },
+      {
+        "coordinate": "w_0",
+        "node": 1,
+        "residual": 1.792852098171
+      },
+      {
+        "coordinate": "log_scale",
+        "node": 18,
+        "residual": -1.659259261856
+      },
+      {
+        "coordinate": "v_0",
+        "node": 2,
+        "residual": -1.605921672749
+      },
+      {
+        "coordinate": "log_scale",
+        "node": 20,
+        "residual": -1.37041896663
+      },
+      {
+        "coordinate": "log_scale",
+        "node": 16,
+        "residual": -1.3172245485
+      },
+      {
+        "coordinate": "log_scale",
+        "node": 21,
+        "residual": -1.173298995695
+      },
+      {
+        "coordinate": "w_0",
+        "node": 23,
+        "residual": -1.082184830133
+      },
+      {
+        "coordinate": "w_0",
+        "node": 22,
+        "residual": -1.077408934592
+      }
+    ],
+    "source_state": "v16.34_best_accepted"
+  },
+  "dependency_advanced": "COLLAPSES_REAL-PARTICLE_REQUIREMENTS_TO_NINE_ACTION-OWNED_OBJECTS_AND_PROVES_THAT_THE_LIVE_N3_SOLVE_SHOULD_CONTINUE_UNCHANGED_WHILE_THE_EXPLICIT_HS/LR_ORDER_PARAMETER_FIRST_ENTERS_THE_BROKEN_BRANCH",
+  "electron_child_certificate": {
+    "charge_return_invariant": "U_return*P_Qminus1=P_Qminus1*U_return",
+    "chirality_owner": "rank16_left-Weyl_bundle_and_L/R_representation_projectors",
+    "electric_charge_owner": "geometric_hypercharge_operator_plus_returned_unbroken_Q_EM_generator",
+    "measured_electron_mass_used": false,
+    "one_cycle_mass_invariant": "rank(P_eR*M_return^dagger*M_return*P_eR)=1_and_its_positive_singular_value_is_preserved_under_the_physical_return_intertwiner",
+    "persistent_mass_owner": "electron_projection_of_returned_common_LR_HS_mass_operator",
+    "required_nonzero_condition": "sigma_min(P_eL*M_phys_return*P_eR)>0",
+    "spin_statistics_owner": "M4_spin_bundle_Dirac_domain_plus_odd_FR_projective_line",
+    "stable_child_condition": "projective_return_eigenvalue_has_unit_modulus_and_the_action-owned_decay_channel_graph_has_no_lower_state_with_the_same_exact_charges",
+    "transient_LR_or_HS_pulse_is_sufficient": false
+  },
+  "hindsight": {
+    "ACTIVE": [
+      "simultaneous_N3_event_saddle_closure",
+      "first_electron-like_broken_child_after_common_pushforward_and_N-convergence"
+    ],
+    "INVALIDATED": [
+      "family-central_returned_mass_operator_as_a_final_three-generation_answer",
+      "transient_LR_or_HS_pulse_as_an_electron",
+      "independent_electroweak_or_Yukawa_normalization"
+    ],
+    "RECLASSIFIED": [
+      "observed_particles_as_structural_operator_tests_not_parameter_inputs",
+      "current_KKT_as_event-locating_parent_system_not_the_complete_broken_electron_state"
+    ],
+    "VALIDATED": [
+      "rank16_representation_charge_chirality_and_three-family_carrier_are_structurally_adequate",
+      "current_N3_unknowns_own_the_unbroken_event_geometry_and_common_determinant_response"
+    ]
+  },
+  "inverse_observation_ledger": [
+    {
+      "ACTION_OWNER": "rank16_bundle_plus_common_LR_HS_pushforward_plus_return_monodromy",
+      "CURRENT_STATUS": "REPRESENTATION_VALIDATED_DYNAMICAL_MASS_AND_RETURN_OPEN",
+      "EARLIEST_ELIGIBLE_STAGE": "after_N3/N4_converged_event_and_nonlinear_broken_return",
+      "HELD_OUT_NUMERICAL_TEST": "electron_mass",
+      "MISSING_MATHEMATICAL_OBJECT": "returned_broken_child_with_positive_electron_mass_singular_value_and_no_allowed_decay_channel",
+      "OBSERVED_FACT": "stable_charged_spin_half_color_singlet_matter_exists",
+      "REQUIRED_BHSM_INVARIANT": "rank_one_electron_projector_with_Q=-1_FR-odd_spin_domain_and_persistent_nonzero_LR_singular_value"
+    },
+    {
+      "ACTION_OWNER": "family-resolved_residues_of_returned_common_LR_kernel",
+      "CURRENT_STATUS": "FAMILY_I3_CARRIER_VALIDATED_CURRENT_GAUGE_RESPONSE_FAMILY_CENTRAL",
+      "EARLIEST_ELIGIBLE_STAGE": "returned_broken_child",
+      "HELD_OUT_NUMERICAL_TEST": "charged_lepton_mass_triplet",
+      "MISSING_MATHEMATICAL_OBJECT": "action-selected_family-noncentral_broken_return_response",
+      "OBSERVED_FACT": "three_charged_leptons_share_gauge_quantum_numbers_but_not_mass",
+      "REQUIRED_BHSM_INVARIANT": "charged_lepton_mass_operator_not_c_times_I3_and_with_three_distinct_singular_values"
+    },
+    {
+      "ACTION_OWNER": "sector-dependent_family_orientation_of_returned_LR_residues",
+      "CURRENT_STATUS": "RESET_MASSLESS_AND_GAUGE_LEVEL_FAMILY_CENTRAL",
+      "EARLIEST_ELIGIBLE_STAGE": "returned_broken_child_after_mass_operators_exist",
+      "HELD_OUT_NUMERICAL_TEST": "CKM_and_J_CP",
+      "MISSING_MATHEMATICAL_OBJECT": "noncommuting_up/down_returned_family_Hermitians_with_dynamical_complex_orientation",
+      "OBSERVED_FACT": "quark_charged_current_mixing_and_CP_violation_exist",
+      "REQUIRED_BHSM_INVARIANT": "commutator_of_MuMu_dagger_and_MdMd_dagger_nonzero_and_CP_odd_Jarlskog_invariant_nonzero"
+    },
+    {
+      "ACTION_OWNER": "reconstructed-spacetime_neutral_self-energy_and_cycle_monodromy",
+      "CURRENT_STATUS": "RESET_PROJECTIVE_MASSLESS_PROPAGATION_ONLY",
+      "EARLIEST_ELIGIBLE_STAGE": "returned_child_propagating_in_reconstructed_spacetime",
+      "HELD_OUT_NUMERICAL_TEST": "neutrino_splittings_and_PMNS",
+      "MISSING_MATHEMATICAL_OBJECT": "propagation-dependent_family-noncentral_neutral_operator",
+      "OBSERVED_FACT": "neutrino_oscillation_requires_nonzero_propagation_splittings",
+      "REQUIRED_BHSM_INVARIANT": "neutral_propagation_operator_has_three_modes_and_at_least_two_nonzero_eigenvalue_differences"
+    },
+    {
+      "ACTION_OWNER": "gauge_generator_second_variation_of_same_common_gauge-ghost-rank16-HS_pushforward",
+      "CURRENT_STATUS": "COMMON_DETERMINANT_EXISTS_RETURNED_BROKEN_GAUGE_HESSIAN_OPEN",
+      "EARLIEST_ELIGIBLE_STAGE": "nonlinear_broken_child_and_return",
+      "HELD_OUT_NUMERICAL_TEST": "W_Z_masses_and_gauge_couplings",
+      "MISSING_MATHEMATICAL_OBJECT": "returned_broken_gauge_Hessian_with_8_plus_1_kernel_and_3-dimensional_positive_image",
+      "OBSERVED_FACT": "unbroken_SU3_color_and_U1_electromagnetism_coexist_with_broken_electroweak_directions",
+      "REQUIRED_BHSM_INVARIANT": "gauge_mass_Hessian_on_12_generators_has_kernel_dimension_9_and_rank_3_with_positive_broken_block"
+    },
+    {
+      "ACTION_OWNER": "nonabelian_Gauss_constraint_self-adjoint_domain_and_returned_composite_dynamics",
+      "CURRENT_STATUS": "COLOR_REPRESENTATION_AND_PARTIAL_GAUSS_STRUCTURE_VALIDATED_CONFINEMENT_PROOF_OPEN",
+      "EARLIEST_ELIGIBLE_STAGE": "returned_colored_internal_modes_and_composite_domain",
+      "HELD_OUT_NUMERICAL_TEST": "hadron_spectrum_and_strong_observables",
+      "MISSING_MATHEMATICAL_OBJECT": "global_asymptotic_singlet_theorem_without_empirical_string_tension",
+      "OBSERVED_FACT": "isolated_colored_asymptotic_matter_is_absent",
+      "REQUIRED_BHSM_INVARIANT": "physical_asymptotic_child_space_equals_color-Gauss-law_singlet_subspace"
+    },
+    {
+      "ACTION_OWNER": "physical_return_map_Floquet_monodromy_and_interacting_selection_rules",
+      "CURRENT_STATUS": "THEOREM_CLASS_EXISTS_PHYSICAL_BROKEN_RETURN_NOT_SOLVED",
+      "EARLIEST_ELIGIBLE_STAGE": "one-cycle_broken_return",
+      "HELD_OUT_NUMERICAL_TEST": "decay_lifetimes",
+      "MISSING_MATHEMATICAL_OBJECT": "broken-child_monodromy_with_decay-channel_operator",
+      "OBSERVED_FACT": "stable_metastable_and_transient_particle_classes_exist",
+      "REQUIRED_BHSM_INVARIANT": "return_map_spectrum_and_action-allowed_decay-channel_graph_separate_persistent_metastable_and_transient_children"
+    }
+  ],
+  "physical_requirement_matrix": [
+    {
+      "BHSM_owning_operator": "rank16_chiral_bundle_projectors_and_geometric_hypercharge_operator+returned_broken_LR_HS_mass_operator_from_common_M5_to_M4_pushforward",
+      "CP_structure": "none_intrinsic_at_one_state",
+      "chirality": "L_doublet_plus_R_singlet",
+      "color": "singlet",
+      "current_theorem_status": "REPRESENTATION_VALIDATED_MASS_AND_RETURN_OPEN",
+      "electric_charge": "-1",
+      "generation_multiplicity": "one_of_three",
+      "mass_required": "nonzero_returned_rest_mass",
+      "missing_dependency": "broken_child_with_persistent_nonzero_electron_LR_singular_value_and_stable_return_invariant",
+      "mixing_required": "family_embedding_required",
+      "numerical_measurement_intentionally_held_out": "electron_mass",
+      "particle_or_sector": "electron",
+      "propagation_supported_mass": false,
+      "spin": "1/2",
+      "stability_class_required": "stable_child"
+    },
+    {
+      "BHSM_owning_operator": "returned_broken_LR_HS_mass_operator_from_common_M5_to_M4_pushforward",
+      "CP_structure": "decay_channels_required",
+      "chirality": "L_doublet_plus_R_singlet",
+      "color": "singlet",
+      "current_theorem_status": "FAMILY_DIMENSION_VALIDATED_DISTINCT_MASS_OPEN",
+      "electric_charge": "-1",
+      "generation_multiplicity": "one_of_three",
+      "mass_required": "distinct_nonzero_returned_rest_mass",
+      "missing_dependency": "three-eigenvalue_noncentral_charged-lepton_operator_and_allowed_decay_channel",
+      "mixing_required": "noncentral_charged_lepton_family_operator",
+      "numerical_measurement_intentionally_held_out": "muon_mass_and_lifetime",
+      "particle_or_sector": "muon",
+      "propagation_supported_mass": false,
+      "spin": "1/2",
+      "stability_class_required": "metastable_child"
+    },
+    {
+      "BHSM_owning_operator": "returned_broken_LR_HS_mass_operator_from_common_M5_to_M4_pushforward",
+      "CP_structure": "decay_channels_required",
+      "chirality": "L_doublet_plus_R_singlet",
+      "color": "singlet",
+      "current_theorem_status": "FAMILY_DIMENSION_VALIDATED_DISTINCT_MASS_OPEN",
+      "electric_charge": "-1",
+      "generation_multiplicity": "one_of_three",
+      "mass_required": "distinct_nonzero_returned_rest_mass",
+      "missing_dependency": "three-eigenvalue_noncentral_charged-lepton_operator_and_allowed_decay_channel",
+      "mixing_required": "noncentral_charged_lepton_family_operator",
+      "numerical_measurement_intentionally_held_out": "tau_mass_and_lifetime",
+      "particle_or_sector": "tau",
+      "propagation_supported_mass": false,
+      "spin": "1/2",
+      "stability_class_required": "metastable_child"
+    },
+    {
+      "BHSM_owning_operator": "returned_neutral_Dirac_self_energy_and_propagation_monodromy",
+      "CP_structure": "possibly_dynamical",
+      "chirality": "L_doublet_plus_neutral_R_singlet",
+      "color": "singlet",
+      "current_theorem_status": "RESET_NULL_PROPAGATION_VALIDATED_PHYSICAL_SPLITTINGS_OPEN",
+      "electric_charge": "0",
+      "generation_multiplicity": "three",
+      "mass_required": "nonzero_splittings_after_propagation",
+      "missing_dependency": "propagation-dependent_family-noncentral_neutral_operator_with_two_nonzero_splittings",
+      "mixing_required": "nontrivial_PMNS",
+      "numerical_measurement_intentionally_held_out": "neutrino_splittings_absolute_scale_and_PMNS",
+      "particle_or_sector": "neutrino_family",
+      "propagation_supported_mass": true,
+      "spin": "1/2",
+      "stability_class_required": "propagating_child"
+    },
+    {
+      "BHSM_owning_operator": "returned_broken_LR_HS_mass_operator_from_common_M5_to_M4_pushforward",
+      "CP_structure": "shared_quark_CP_phase",
+      "chirality": "L_doublet_plus_R_singlet",
+      "color": "triplet_internal_no_colored_asymptote",
+      "current_theorem_status": "REPRESENTATION_VALIDATED_NONCENTRAL_RETURNED_MASS_OPEN",
+      "electric_charge": "+2/3",
+      "generation_multiplicity": "three",
+      "mass_required": "three_distinct_nonzero_masses",
+      "missing_dependency": "family-noncentral_Mu_and_asymptotic_color-singlet_projection",
+      "mixing_required": "nontrivial_CKM",
+      "numerical_measurement_intentionally_held_out": "up_type_masses_and_CKM",
+      "particle_or_sector": "up_type_quark_family",
+      "propagation_supported_mass": false,
+      "spin": "1/2",
+      "stability_class_required": "confined_or_metastable_internal_mode"
+    },
+    {
+      "BHSM_owning_operator": "returned_broken_LR_HS_mass_operator_from_common_M5_to_M4_pushforward",
+      "CP_structure": "shared_quark_CP_phase",
+      "chirality": "L_doublet_plus_R_singlet",
+      "color": "triplet_internal_no_colored_asymptote",
+      "current_theorem_status": "REPRESENTATION_VALIDATED_NONCENTRAL_RETURNED_MASS_OPEN",
+      "electric_charge": "-1/3",
+      "generation_multiplicity": "three",
+      "mass_required": "three_distinct_nonzero_masses",
+      "missing_dependency": "family-noncentral_Md_not_simultaneously_diagonalizable_with_Mu",
+      "mixing_required": "nontrivial_CKM",
+      "numerical_measurement_intentionally_held_out": "down_type_masses_and_CKM",
+      "particle_or_sector": "down_type_quark_family",
+      "propagation_supported_mass": false,
+      "spin": "1/2",
+      "stability_class_required": "confined_or_metastable_internal_mode"
+    },
+    {
+      "BHSM_owning_operator": "returned_gauge_generator_Hessian_of_the_same_common_pushforward",
+      "CP_structure": "CP_even_kinetic_sector",
+      "chirality": "vector",
+      "color": "singlet",
+      "current_theorem_status": "GAUGE_ALGEBRA_VALIDATED_RETURNED_BROKEN_KERNEL_OPEN",
+      "electric_charge": "0",
+      "generation_multiplicity": "one",
+      "mass_required": "massless_kernel_direction",
+      "missing_dependency": "one_unbroken_electromagnetic_generator_in_returned_kernel",
+      "mixing_required": "none",
+      "numerical_measurement_intentionally_held_out": "gauge_couplings",
+      "particle_or_sector": "photon",
+      "propagation_supported_mass": false,
+      "spin": "1",
+      "stability_class_required": "stable_gauge_mode"
+    },
+    {
+      "BHSM_owning_operator": "returned_gauge_generator_Hessian_of_the_same_common_pushforward",
+      "CP_structure": "CP_links_to_flavor",
+      "chirality": "charged_vector_pair",
+      "color": "singlet",
+      "current_theorem_status": "GAUGE_ALGEBRA_VALIDATED_RETURNED_BROKEN_KERNEL_OPEN",
+      "electric_charge": "+/-1",
+      "generation_multiplicity": "one_pair",
+      "mass_required": "massive_broken_directions",
+      "missing_dependency": "two_real_broken_weak_generator_directions_with_positive_mass_Hessian",
+      "mixing_required": "charged_current",
+      "numerical_measurement_intentionally_held_out": "W_mass_and_width",
+      "particle_or_sector": "W_plus_minus",
+      "propagation_supported_mass": false,
+      "spin": "1",
+      "stability_class_required": "unstable_gauge_modes"
+    },
+    {
+      "BHSM_owning_operator": "returned_gauge_generator_Hessian_of_the_same_common_pushforward",
+      "CP_structure": "CP_even_mass_sector",
+      "chirality": "neutral_vector",
+      "color": "singlet",
+      "current_theorem_status": "GAUGE_ALGEBRA_VALIDATED_RETURNED_BROKEN_KERNEL_OPEN",
+      "electric_charge": "0",
+      "generation_multiplicity": "one",
+      "mass_required": "massive_broken_direction",
+      "missing_dependency": "one_neutral_broken_direction_orthogonal_to_electromagnetism",
+      "mixing_required": "neutral_current",
+      "numerical_measurement_intentionally_held_out": "Z_mass_and_width",
+      "particle_or_sector": "Z",
+      "propagation_supported_mass": false,
+      "spin": "1",
+      "stability_class_required": "unstable_gauge_mode"
+    },
+    {
+      "BHSM_owning_operator": "returned_gauge_generator_Hessian_of_the_same_common_pushforward",
+      "CP_structure": "CP_even_kinetic_sector",
+      "chirality": "vector",
+      "color": "adjoint_8_internal",
+      "current_theorem_status": "SU3_REPRESENTATION_AND_GAUSS_LAW_STRUCTURE_VALIDATED_ASYMPTOTIC_PROOF_OPEN",
+      "electric_charge": "0",
+      "generation_multiplicity": "eight",
+      "mass_required": "massless_gauge_kernel_directions",
+      "missing_dependency": "eight_unbroken_color_generators_plus_physical_color-singlet_asymptotic_domain",
+      "mixing_required": "color_adjoint",
+      "numerical_measurement_intentionally_held_out": "strong_coupling_and_hadron_data",
+      "particle_or_sector": "gluons",
+      "propagation_supported_mass": false,
+      "spin": "1",
+      "stability_class_required": "no_isolated_asymptotic_colored_particle"
+    },
+    {
+      "BHSM_owning_operator": "Gauss_law_color-singlet_projector_plus_returned_bound-state_operator",
+      "CP_structure": "strong_sector_CP_constraint",
+      "chirality": "composite_Dirac_state",
+      "color": "singlet",
+      "current_theorem_status": "COLOR_SINGLET_KINEMATICS_PARTIAL_BINDING_AND_RETURN_OPEN",
+      "electric_charge": "+1_or_0",
+      "generation_multiplicity": "isospin_pair",
+      "mass_required": "nonzero_bound_state_mass",
+      "missing_dependency": "action-owned_confining/binding_operator_and_composite_return_monodromy",
+      "mixing_required": "internal_constituent_orientation",
+      "numerical_measurement_intentionally_held_out": "nucleon_masses_and_lifetimes",
+      "particle_or_sector": "proton_neutron_minimal_composite",
+      "propagation_supported_mass": false,
+      "spin": "1/2",
+      "stability_class_required": "stable_or_metastable_color-singlet_child"
+    }
+  ],
+  "real_physical_property_explained": "THE_COMPLETE_RETURNED_CHILD_MUST_SUPPORT_STABLE_CHARGED_SPIN-HALF_MATTER_AND_THE_SHARED_OPERATOR_STRUCTURE_OF_ALL_OBSERVED_SECTORS",
+  "status": "RECLASSIFIED",
+  "two_tier_data_firewall": {
+    "TIER_A_ALLOWED_STRUCTURAL_PHYSICS": [
+      "three_generations",
+      "spin_assignments",
+      "gauge_charges",
+      "color_representations",
+      "massive_charged_fermions_exist",
+      "photon_and_gluon_unbroken_directions",
+      "electroweak_breaking",
+      "nontrivial_CKM",
+      "nontrivial_PMNS",
+      "CP_violation_exists",
+      "neutrino_oscillation_exists",
+      "color_confinement",
+      "qualitative_stability_and_decay_classes"
+    ],
+    "TIER_B_HELD_OUT_NUMERICAL_KILL_SCREEN": [
+      "charged_lepton_masses",
+      "quark_masses",
+      "CKM_elements_and_angles",
+      "PMNS_angles",
+      "J_CP",
+      "neutrino_mass_squared_splittings",
+      "W_and_Z_masses",
+      "gauge_couplings",
+      "decay_lifetimes",
+      "all_frozen_numerical_prediction_observables"
+    ],
+    "forbidden_uses": [
+      "coefficient_inference_from_measurement",
+      "geometry_or_branch_selection_by_data_proximity",
+      "sector_specific_normalization",
+      "empirical_Yukawa_matrix_insertion",
+      "neutral_operator_construction_from_measured_splittings",
+      "KKT_tuning_to_make_a_named_particle"
+    ],
+    "historical_provenance": {
+      "frozen_and_calibrated_screens_exist": true,
+      "legacy_curvature_threshold_mass_tables": "HISTORICALLY_CALIBRATED_NOT_HELD_OUT_PREDICTIONS",
+      "quarantined_from_current_action_branch_selection": true,
+      "treated_as_held_out_only_if_not_previously_used_as_input": true
+    },
+    "measured_numerical_values_embedded_in_this_artifact": false
+  },
+  "validation": {
+    "current_KKT_not_falsely_expanded": true,
+    "every_observation_has_complete_inverse_fields": true,
+    "gauge_and_mass_normalization_not_split": true,
+    "no_measured_numbers_used": true,
+    "required_particle_rows_present": true,
+    "sync_unauthorized": true
+  },
+  "validation_passed": true,
+  "version": "v16.36"
+}

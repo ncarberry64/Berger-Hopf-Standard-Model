@@ -1,0 +1,118 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "DERIVE_THE_NONLINEAR_EVENT_ATTACHMENT_FORCE_AND_TWO_SIDED_COMPLETE_CHILD_CALDERON_FLUX_ON_THE_V17_89_RANK_TWO_IMAGE",
+  "artifact": "BHSM_aether_n3_dynamic_child_wentzell_cauchy_v17_90",
+  "classification": "BHSM_N3_DYNAMIC_CHILD_WENTZELL_CAUCHY_LAW",
+  "dependency_advanced": "REPLACES_STATIC_EVENT_BALANCE_BY_THE_CONSTRAINT_REDUCED_DYNAMIC_WENTZELL_CAUCHY_SOLVABILITY_LAW",
+  "direct_N3_solve_authorized_next": false,
+  "dynamic_event_to_child_cauchy_law": {
+    "Legendre_certificate": {
+      "ambient_rank": 10,
+      "combined_rank": 8,
+      "compliance_condition_number": 13288.045665799551,
+      "constraint_rank": 6,
+      "reduced_eigenvalues": [
+        -114.84063704125057,
+        45.74639184194883
+      ],
+      "reduced_rank": 2
+    },
+    "c": [
+      -0.009025516184652,
+      -0.024003331908312
+    ],
+    "c_ddot_from_current_child_Euler_Dirac_field": [
+      -150.7945035551491,
+      -644.9285715497202
+    ],
+    "c_dot": [
+      0.070941364214902,
+      -0.410238080411701
+    ],
+    "complete_F_child_components": {
+      "attachment_Legendre_rank": "DERIVED_HERE_IN_THE_N3_SCALAR_SECTOR",
+      "attachment_state_and_differential": "DERIVED_IN_V17_89",
+      "complete_gauge_spinor_ghost_projector": "OPEN",
+      "interior_Cauchy_identity": "DERIVED_ON_THE_REGULAR_INTERIOR",
+      "nonlinear_event_attachment_force": "OPEN",
+      "terminal_Dirac_replacement_constraints": "OWNED_BY_ROWS_368_TO_373_BUT_NOT_CLOSED_AT_V17_75",
+      "two_sided_complete_child_Calderon_flux": "OPEN"
+    },
+    "constraint_reduced_attachment_Legendre_form": [
+      [
+        -113.78744018516234,
+        12.962273347320806
+      ],
+      [
+        12.962273347320806,
+        44.693194985860586
+      ]
+    ],
+    "constraint_reduced_instantaneous_coordinate_response": [
+      [
+        -139.07065191999752,
+        427.87399891248856
+      ],
+      [
+        427.87399891248856,
+        -235.70218728656167
+      ]
+    ],
+    "coordinate_response_certificate": {
+      "ambient_rank": 10,
+      "combined_rank": 8,
+      "compliance_condition_number": 1228223.1914947182,
+      "constraint_rank": 6,
+      "reduced_eigenvalues": [
+        -617.9796991051654,
+        243.20685989860618
+      ],
+      "reduced_rank": 2
+    },
+    "current_Euler_Dirac_condition_number": 3004873.0203350903,
+    "current_Euler_Dirac_field_finite": true,
+    "dynamic_boundary_law": {
+      "equation": "K_att(c)*D_tau^2_c+C_att(c,c_dot)+dV_att/dc+P_phys*(Gamma1_event+Gamma1_child)=0",
+      "equivalent_frequency_domain_form": "P_phys*(Gamma1_event+Gamma1_child+W_phys(omega,c)*Gamma0)=0",
+      "nonzero_momentum_is_a_defect": false,
+      "nonzero_time_dependence_is_a_defect": false,
+      "static_W_times_c_equals_zero_required": false,
+      "zero_c_ddot_required": false,
+      "zero_c_dot_required": false,
+      "zero_c_required": false
+    },
+    "independent_attachment_coordinates": [
+      "q_W",
+      "x_D"
+    ],
+    "persistence_rule": "AFTER_ALL_F_child_COMPONENTS_CLOSE_EVOLVE_THIS_NONZERO_CAUCHY_STATE_AND_REQUIRE_CONSTRAINT_CONSISTENT_RELATIVE_EVOLUTION_INSIDE_B_child_FOR_NONZERO_PROPER_TIME",
+    "signature_interpretation": "INDEFINITE_GRAVITATIONAL_SIGNATURE_IS_ALLOWED;INVERTIBILITY_RATHER_THAN_POSITIVITY_IS_THE_CAUCHY_WELL_POSEDNESS_TEST",
+    "terminal_coordinate_acceleration": [
+      -795.7230751048694,
+      -785.3520718791243,
+      -188.3918016002611,
+      -80.74531029949617,
+      -1349.835706439032,
+      146.07966056102842,
+      7606.691509532617,
+      8066.6943405451375,
+      13703.521594808833,
+      6225.782262540796
+    ]
+  },
+  "real_physical_property_explained": "A_PARTICLE_CHILD_MAY_HAVE_NONZERO_MOTION_MOMENTUM_AND_ACCELERATION_WHILE_ITS_DYNAMIC_BOUNDARY_LAW_AND_CONSTRAINTS_CLOSE",
+  "status": "VALIDATED",
+  "validation": {
+    "Euler_Dirac_field_finite": true,
+    "attachment_Legendre_rank_two": true,
+    "indefinite_signature_not_misreported": true,
+    "momentum_not_defect": true,
+    "nonzero_acceleration_retained": true,
+    "nonzero_motion_retained": true,
+    "open_physical_blocks_not_fabricated": true,
+    "static_balance_invalidated": true,
+    "time_dependence_not_defect": true
+  },
+  "validation_passed": true,
+  "version": "v17.90"
+}

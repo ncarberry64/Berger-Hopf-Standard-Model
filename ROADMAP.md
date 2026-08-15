@@ -557,3 +557,141 @@ Current verdict:
 
 Exact next object:
 `ACTION_DERIVED_LOCALIZED_CAVITATION_OF_THE_UNIQUE_PARENT_SURFACE_WITH_CONSTRAINT_SOLVED_NONHOMOGENEOUS_LORENTZIAN_INCOMING_PACKET_TIME_PRESERVED_COMMON_SELF_ADJOINT_DOMAIN_PHYSICAL_SIGMA_HESSIAN_ZERO_CROSSING_AND_NONLINEAR_ENVELOPMENT_CONTINUATION`.
+<!-- BHSM_V16_21_TO_V16_30_EXACT_CONTINUATION -->
+## v16.21-v16.30 exact continuation
+
+1. Refresh the full action-plus-event Hessian at the accepted v16.32 state.
+2. Continue rank-aware joint descent until all N=3 stationarity, constraint,
+   period and soft-event residuals close together.
+3. Evaluate the common gauge DtN/two-point residue and rank-16 fermionic stress
+   projection on that identical physical event layer and solve the shared LR
+   crossing.
+4. Independently solve N=4 and higher orbits from their canonical resets and
+   establish full-Sobolev orbit convergence.
+5. Continue immediately to the nonlinear fermion-backreacted broken child,
+   one-cycle return and persistent nonzero mass-generating order parameter.
+6. Derive mass matrices, CKM, PMNS, CP, neutrino splittings and the absolute
+   gauge/mass spectrum from the same localization/pushforward, then run the
+   final Unique Actualization audit.
+<!-- /BHSM_V16_21_TO_V16_30_EXACT_CONTINUATION -->
+<!-- BHSM_V16_33_TO_V16_45_EXACT_CONTINUATION -->
+## v16.33-v16.46 exact continuation
+
+1. Continue the unchanged filtered N=3 KKT solve from v16.46 until `v_0`,
+   `w_0`, `log_scale`, multiplier, period and event residuals close together.
+2. On that one solved physical event, compute the normalized Euler--Dirac soft
+   vector, rank-16 fermion stress projection, gauge DtN/two-point residue and
+   shared LR crossing using the common determinant/pushforward.
+3. Independently reintegrate N=4 and higher from canonical reset data and test
+   full-orbit Sobolev convergence rather than transplanted event snapshots.
+4. Continue the converged event to the nonlinear fermion-backreacted broken
+   child and through reconstruction/one-cycle return.
+5. Require the returned electron-like child to preserve spin, charge,
+   statistics and a nonzero LR mass singular value before constructing the
+   other charged families.
+6. Construct noncentral charged-family operators, CKM/PMNS/CP and neutral
+   propagation splittings, then derive the absolute gauge and fermion spectrum
+   from the same M5 -> M4 pushforward.
+7. Apply the quarantined numerical kill screen and final Unique Actualization
+   audit only after all structural operators exist.
+<!-- /BHSM_V16_33_TO_V16_45_EXACT_CONTINUATION -->
+<!-- BHSM_V16_47_TO_V16_62_EXACT_CONTINUATION -->
+## v16.47-v16.69 exact continuation
+
+1. Continue from the v16.68 common-cone SBP state, rebuilding the full action
+   Hessian, normalized event-covector curvature, and event half-space at every
+   accepted step, with current attention on the dominant existing `log_scale`
+   and period stationarity blocks.
+2. Require every promoted step to reduce both the complete projected KKT norm
+   and the absolute actual Euler--Dirac event residual until simultaneous N=3
+   closure is reached.
+3. At closure, recompute the normalized soft vector and perform the one common
+   gauge DtN/rank-16 stress/LR crossing pushforward on that identical layer.
+4. Independently solve N=4+ with the same canonical-reset SBP construction and
+   establish full-orbit Sobolev convergence.
+5. Continue the converged event through broken child, reconstruction, one-cycle
+   return, electron certificate, families, flavor, neutrino propagation,
+   absolute spectrum, held-out screen and Unique Actualization.
+<!-- /BHSM_V16_47_TO_V16_62_EXACT_CONTINUATION -->
+<!-- BHSM_V16_70_TO_V16_79_EXACT_CONTINUATION -->
+## v16.70-v16.79 exact continuation
+
+1. Continue fresh-Jacobian Gauss--Newton-metric projection until all 376 N=3
+   SBP KKT and actual-event residuals close simultaneously.
+2. Do not delete the scale stationarity row or impose an underived return
+   scale. Preserve the anchored reset relation already substituted.
+3. At N=3 closure compute the common gauge DtN, rank-16 stress and LR crossing
+   on the identical physical event layer, then solve N=4+ independently.
+4. On the converged nonlinear broken branch derive the reconstruction solution
+   map `R_rec[I_event,I_environment]` from the same action and impose its return
+   condition by substitution or one constraint plus its conjugate multiplier.
+5. Carry only the superselection channel allowed by transported topological,
+   gauge, representation, family and FR invariants through one-cycle return.
+6. Require a persistent nonzero mass operator, then derive family, flavor,
+   neutrino and absolute gauge/mass outputs and apply the held-out kill screen.
+<!-- /BHSM_V16_70_TO_V16_79_EXACT_CONTINUATION -->
+<!-- BHSM_V16_80_TO_V16_92_EXACT_CONTINUATION -->
+## v16.80-v16.92 exact continuation
+
+1. Retarget the same physical Jacobian/preconditioner to period, `w_0`, and
+   `v_0`, while Pareto-enforcing progress of the identical event equation.
+2. Continue fresh curvature rebuilds until all N=3 blocks and the event close
+   simultaneously; do not revive scale deletion or an underived return map.
+3. Compute the common gauge DtN/rank-16 stress/LR crossing on that exact layer.
+4. Solve N=4+ independently and establish full-orbit Sobolev convergence.
+5. Derive the broken reconstruction channel and its environment-owned scale,
+   persistent mass order, flavor, absolute spectrum and final audit.
+<!-- /BHSM_V16_80_TO_V16_92_EXACT_CONTINUATION -->
+<!-- BHSM_V16_93_TO_V17_00_EXACT_CONTINUATION -->
+## Live frontier after v17.00
+
+1. Close the unchanged N=3 fresh-SBP KKT saddle and identical Euler--Dirac
+   event simultaneously; `v_0` is the current maximin bottleneck.
+2. Evaluate the common gauge--ghost--rank16--HS M5 -> M4 pushforward on the
+   exact event layer, with one shared normalization and LR crossing.
+3. Independently reintegrate N=4+ and establish full-orbit convergence.
+4. Solve the nonlinear fermion-backreacted broken branch.
+5. Derive the event/environment reconstruction BVP and only then impose the
+   dependent return scale by substitution or its equivalent KKT pair.
+6. Complete persistent return, physical mass matrices, flavor/CP, neutrino
+   splittings, absolute spectrum, held-out tests and final audit.
+<!-- /BHSM_V16_93_TO_V17_00_EXACT_CONTINUATION -->
+<!-- BHSM_V17_01_TO_V17_05_EXACT_CONTINUATION -->
+## Immediate continuation after v17.05
+
+1. Repeat the measured six-owner physical-normal correction from the v17.05
+   full-precision state and audit owner transitions after each accepted step.
+2. Require all 376 KKT residuals and the identical event to close together.
+3. Only then perform the common event-layer pushforward and N=4+ convergence.
+<!-- /BHSM_V17_01_TO_V17_05_EXACT_CONTINUATION -->
+<!-- BHSM_V17_06_TO_V17_14_EXACT_CONTINUATION -->
+## Immediate continuation after v17.14
+
+1. Rebuild the measured tangent family from the v17.13 full-precision state.
+2. Refine exact radius whenever the coarse grid brackets a better maximin step.
+3. Continue until all 376 residuals and the identical event close together,
+   then advance to the single common event-layer pushforward.
+<!-- /BHSM_V17_06_TO_V17_14_EXACT_CONTINUATION -->
+<!-- BHSM_V17_15_TO_V17_16_EXACT_CONTINUATION -->
+## Immediate continuation after v17.16
+
+Repeat the fresh measured tangent family from the v17.16 state while the
+minimum six-owner progress is increasing; re-audit at the first owner
+transition or loss of acceleration. Do not evaluate the common pushforward
+until simultaneous N=3 closure.
+<!-- /BHSM_V17_15_TO_V17_16_EXACT_CONTINUATION -->
+<!-- BHSM_V17_17_TO_V17_18_EXACT_CONTINUATION -->
+## Immediate continuation after v17.18
+
+Audit the complete coordinate blocks and terminal soft spectrum at v17.18,
+then rebuild the measured family unless the audit identifies an owner
+transition. Preserve all six current owners and every scale row.
+<!-- /BHSM_V17_17_TO_V17_18_EXACT_CONTINUATION -->
+<!-- BHSM_V17_19_TO_V17_22_EXACT_CONTINUATION -->
+## Immediate continuation after v17.22
+
+Rebuild the bounded v0-priority measured family from the v17.22 state and
+promote only exact unweighted six-owner descent. Re-audit the soft spectrum
+after the next material step. The common event pushforward remains ineligible
+until simultaneous N=3 closure.
+<!-- /BHSM_V17_19_TO_V17_22_EXACT_CONTINUATION -->

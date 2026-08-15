@@ -1,0 +1,2 @@
+from bhsm.interface.aether_n3_fresh_sbp_first_descent_v16_59 import v16_58_projected_raw_vector
+def test_fresh_projected_sbp_state_has_complete_dimension():assert v16_58_projected_raw_vector().shape==(376,)

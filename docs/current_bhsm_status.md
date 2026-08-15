@@ -2,6 +2,164 @@
 
 Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a completed replacement of the Standard Model. The program goal remains replacement by derivation, with the Standard Model retained as the preserved infrared layer until that derivation is complete.
 
+## v18.73 N=3 constrained-root, child-fiber and continuation frontier
+
+The missing event-to-child relation is now explicit.  For each candidate N=3
+event, `F_child=0` requires three event traces, seven local Dirac constraints,
+two attachment momenta and two dynamic projected-flux rows.  The
+zero-background gauge/spinor/ghost/HS Calderon sector and discrete firewall
+core ownership close without adding a continuous row.  A positive projected
+evolution interval then tests persistence.  The whole reconstructed child is
+the additional system-level object; no fourth coordinate is introduced.
+
+The latest accepted physical state is v18.73, with global residual `0.807144219141348` and
+positive global eta. Its recomputed child closes trace to `1e-15`, constraints
+to `2.9e-13`, attachment momentum to `1.90e-11`, and the two-scale dynamic
+flux envelope to `5.64e-6`. It persists through time `1e-4` with positive eta
+and maximum constraint residual `6.54e-11`. Velocity, momentum and time dependence remain
+nonzero; stability means constraint-consistent relative persistence, not
+staticity.
+
+The N=3 saddle itself is not solved.  The inherited Jacobian does not consistently
+differentiate the exact v17.61 residual after analytic event-multiplier
+projection, and direct coordinate-column reconstruction accumulates a
+directional mismatch.  v18.05, v18.07 and v18.08 retain invalidated Jacobian
+claims.  Their actual norm-reducing trials are accepted only after independent
+true-merit, eta and complete-child checks.
+
+The physical nonlinear problem is the square 376-variable KKT system with the
+event multiplier explicit.  v18.11-v18.12, v18.22-v18.25, v18.27-v18.29 and
+v18.31-v18.33, v18.35-v18.37, v18.39-v18.41, v18.43-v18.47, v18.50-v18.54 and v18.55-v18.58 demonstrate
+independent total-merit descent and complete-child promotion without
+componentwise monotonicity or a previous-iterate-path restriction.  The direct
+dependency is continuing physically admissible exact 376-row descent from the
+latest accepted frontier without reasserting failed solver models; every proposed
+state still requires independent merit, eta and recomputed complete-child
+evaluation.  v18.26 records that the validated local direction has no forward
+descent at the inherited `1e-8` coarse floor.  v18.27 measures, rather than
+assumes, the finer line bracket and finds the accepted `3e-9` step.  v18.59
+then records the actual target as `find z* in A such that F(z*)=0`: unchanged
+square `F_376`, with the already implemented rank-14 complete-child, eta, flux,
+and persistence gate defining physical admissibility.  Two lower-residual
+candidates remain rejected solely by the unchanged flux gate.  No measured
+accepted-corridor boundary collapses monotonically.  v18.60 measures curved,
+geometry-dominated accepted secants in the existing action-owned coordinates;
+it adds no continuation restriction or manifold theorem.  v18.61 then resolves
+the next direct-response plateau, v18.62 locates an independently lower exact-
+merit state while invalidating its solver interpretation, and v18.63-v18.64
+recompute and pass the entire child/eta/flux/persistence gate.
+v18.65-v18.68 repeat the unchanged response, bidirectional exact-merit, fresh
+child, and promotion sequence and advance the accepted norm to
+`0.811248056430707`.  v18.69 then confirms rank 14/nullity 12 under neighboring
+child-Jacobian steps.  Its action-owned ownership decomposition finds six
+genuine Cauchy directions and six unresolved Cauchy-multiplier mixtures.  All
+24 signed reprojected probes preserve the retained rows, eta and nonzero
+one-step persistence, while action/eta observables vary.  The fiber is not
+merely gauge/chart freedom, but no new selector is introduced; the downstream
+action/Unique-Actualization owner remains open. v18.70-v18.73 then remeasure the direct-response plateau, scan both
+orientations, invalidate the failed GMRES interpretation, reconstruct the
+fresh child, and promote only after exact merit, eta, two-scale flux and
+persistence pass. The exact norm advances to `0.807144219141348`. N=4+,
+the microscopic pregeometric transition generator, one-loop source/saddle
+closure, broken return and physical observables remain downstream and open.
+
+`FULL_BHSM_COMPLETE = FALSE`. The v18.73 sprint snapshot is authorized for
+GitHub and USB publication without implying scientific completion.
+
+Active dependency:
+`CONTINUE_PHYSICALLY_ADMISSIBLE_EXACT_376_ROW_DESCENT_FROM_THE_LATEST_ACCEPTED_FRONTIER_TO_F376_ZERO`.
+
+At the exact v18.12 source, v18.14 separately measures the proposed
+small-support stiffness mechanism.  Pure retained-action pieces scale as
+`R^5` (spatial and intrinsic curvature), `R^7` (cosmological and ADM kinetic),
+and `R^-1` (boundary Casimir); eta and Hopf-inertia are mixed terms with local
+fitted powers `1.8083` and `-2.1733`.  Coherent scale, v, w and period
+directions show genuine physical response anisotropy.  Nevertheless the
+action-derived dimensionless maximum curvature is `94.0122`; its unit-action
+displacement is `0.103135`, over `1e5` times the apparent `1e-6` step.  Thus
+physical anisotropy is validated, while intrinsic `1e-6` microscopic
+stiffness is invalidated and the near-stall is reclassified as predominantly
+coordinate conditioning/soft-mode degeneracy.
+
+v18.15 derives a numerical map from the exact action curvature, existing H6
+and Sobolev amplitudes, canonical period-induced velocity scale, and explicit
+event KKT normalization.  The map is invertible and acts on variables only;
+the exact 376 residual rows are not transformed.  Source and nonzero-probe
+checks give identical exact residuals, exact eta agreement, a bijective root
+set, and the unchanged complete-child gate.  Its application and limitations
+are classified by v18.16-v18.68 below.
+
+That application is now classified.  v18.16-v18.17 find no descent in either
+orientation of the inherited inexact response.  v18.18 assembles and validates
+the exact global action Hessian.  v18.19 and v18.21 invalidate coordinatewise
+event Hessians rather than using them.  v18.20 resolves directional event
+curvature, and v18.22 forms only the Hessian-vector product needed for the
+current merit direction.  The exact residual response agrees to `7.20e-5` at
+the resolved scale and supplies a norm-reducing candidate.  v18.24 recomputes
+the complete-child chart from all 26 variables; v18.25 validates flux and
+persistence and promotes the state.  v18.26 then invalidates the coarse
+forward-step set despite a validated directional response.  v18.27 resolves
+the finer line minimum, v18.28 recomputes the rank-14 child chart, and v18.29
+validates flux and persistence and promotes the next state.
+
+v18.30-v18.31 then test the demonstrated linear-response blocker directly.
+The matrix-free response operator is locally accurate, but right-mapped GMRES
+does not solve the Newton equation and the congruent MINRES direction fails its
+exact nonlinear response check.  These solver claims remain reclassified or
+invalidated.  A line state proposed by v18.31 independently reduces exact
+physical merit; v18.32 reconstructs its full-rank child and v18.33 promotes it
+after two-scale flux and persistence.  Solver failure is neither promoted as
+physics nor allowed to veto an independently valid physical state.
+
+v18.34 measures the derivative of the unchanged nested event residual directly
+and identifies a common `3e-6`/`1e-6` scale plateau.  v18.35 uses that measured
+scale but its resulting Krylov direction fails the same response-consistency
+test, so the JFNK/Newton claim is invalidated.  Its exact line state lowers the
+unchanged norm by `0.00302809525`.  v18.36 reconstructs a new rank-14 child and
+v18.37 promotes the physical state after flux and persistence, without
+reasserting the invalidated direction model.
+
+v18.38 remeasures the finest common direct-response plateau at v18.37.  The
+v18.39 proposed direction again fails its scale-consistency test and is
+invalidated as a Newton model, but an independently evaluated line state lowers
+total exact merit.  v18.40 reconstructs the complete child and v18.41 promotes
+only the physical state after flux and persistence, reducing the norm by
+another `0.00168862805`.
+
+v18.42 remeasures the direct-response plateau at v18.41.  v18.43 again
+invalidates the proposed Newton model because its resulting direction leaves
+that plateau, while retaining independently evaluated exact-merit line states.
+The most aggressive state closes a local child at v18.44 but fails the
+unchanged two-scale flux envelope at v18.45, so it is not promoted.  v18.46
+reconstructs the next lowest-merit existing line state; v18.47 validates its
+two-scale flux and persistence and promotes it, reducing the exact norm by
+`0.00497706683`.
+
+v18.48 measures the requested physical-sector decomposition of the v18.43
+proposal.  The explicit event multiplier contributes `99.965%` of raw squared
+norm but only `0.0505%` of the action-owned allocation.  Scale, v and w carry
+`38.8%`, `35.6%` and `24.8%` of that action-owned allocation.  Lapse is the
+first sector to leave the `1e-6` response plateau; eta-sensitive shift has the
+largest normalized departure, while w has the largest absolute nonlinear
+defect.  The u/eta-shift/lapse interaction residuals are absolutely
+subdominant.  No equation, constraint, row scaling, or acceptance gate changes.
+
+v18.49 remeasures the local direct-response plateau at v18.47.  v18.50 scans
+both orientations of a bounded local geometric probe with exact nonlinear
+merit; its Newton interpretation is invalidated and never used as a physical
+gate.  The lowest-merit state reconstructs a child at v18.51 but fails the
+unchanged two-scale flux envelope at v18.52.  The next exact-merit state closes
+its child at v18.53 and is promoted at v18.54 after flux and persistence,
+lowering the exact norm by `0.00134272343`.
+
+v18.55 remeasures the accepted-frontier direct-response plateau.  v18.56
+again treats the bounded Krylov result only as a geometric probe and scans
+both orientations with exact nonlinear merit.  Its solver interpretation is
+invalidated.  The independently improving `0.03125` state closes a freshly
+recomputed rank-14 child at v18.57, and v18.58 promotes it after the unchanged
+two-scale flux and positive-duration persistence gates, lowering the exact
+norm by `0.00201664283`.
+
 ## v15.10 Aether-cycle sigma-coefficient reconstruction
 
 The v15.9 full-Euler radial eta branch remains a derived upstream theorem.
@@ -1603,3 +1761,80 @@ The exact next object is
 `FULL_BHSM_COMPLETE = FALSE`. Frozen predictions and official prediction
 logic remain unchanged. No empirical input, fitted or arbitrary continuous
 parameter, primitive field, or preferred frame enters v15.5.
+
+## v16.93-v17.00 current microscopic frontier
+
+The anchored fresh-SBP N=3 system remains the same 376 by 376 KKT problem.
+Five accepted fresh-Jacobian coupled-owner passes reduce the complete residual
+from `2.437270312411` to `1.474584035022` and the identical ordered terminal
+Euler--Dirac event magnitude from `0.208275968279` to `0.129386144537`.
+The latest state preserves `eta_min=0.779446598841`; simultaneous closure is
+not yet claimed and `v_0` is the current maximin bottleneck.
+
+The canonical reset already substitutes `q_log_scale(0)=0`. The 23 remaining
+scale values are physical breathing-history variables and own 23 stationarity
+rows. Their norm fell from `14.016355587104` to `0.191104025726` without
+deleting a row or variable, so the old defect is not an independent
+particle-scale coordinate. A return endpoint constraint is ineligible until
+the nonlinear broken reconstruction BVP derives
+`R_rec[I_event,I_environment]`.
+
+The typed reconstruction channel is
+
+`(I_event,I_environment,B_SM) -> (admissible child superselection block,
+R_rec,z_return)`.
+
+Degree, orientation, FR parity, endpoint order, incidence, boundary identity,
+SM representation/hypercharge, C3 family projector and transported bundle
+class already restrict its codomain. They do not yet derive the continuous
+broken-return boundary data, event scale or complete particle.
+
+`FULL_BHSM_COMPLETE = FALSE`.
+
+## v17.01-v17.05 measured-response continuation
+
+The first analytic fractional-maximin normal direction was rejected because
+the unchanged residual measured `v_0` ascent despite predicted descent. The
+solver was redirected to centered actual-residual calibration inside the same
+physical-normal owner subspace. Two accepted calibrated five-owner steps and
+one accepted six-owner step reach complete residual `1.428689906334`, event
+`0.122933895890`, period `0.703793411493`, `w_0=0.973745697552`,
+`v_0=0.620368346240`, scale `0.432309885844`, and
+`eta_min=0.778050948322`.
+
+The scale block was reintroduced as a descent requirement when it became
+active; all 23 scale variables and stationarity rows remain present. No
+return-scale constraint, empirical child selector, extra normalization or new
+physical mechanism entered. Simultaneous N=3 closure remains active.
+
+## v17.06-v17.14 expanded measured-tangent continuation
+
+The solver expanded a locally insufficient six-owner subspace to the measured
+span of all 18 owner/filter normal directions and certified maximin descent by
+the convex owner-simplex dual. Exact nonlinear selection across truncated and
+single-filter families, plus dense radius refinement, reaches complete
+residual `1.383417886043`, event `0.118278228365`, period
+`0.677117633290`, `w_0=0.940057261626`, `v_0=0.610774014072`, scale
+`0.417559825333`, and `eta_min=0.777122429571`. The same soft branch remains
+normalized, isolated and resolved. No physical equation or normalization
+changed.
+
+Fresh post-dense v17.15-v17.16 passes accelerate the same unchanged physical
+continuation to complete residual `1.329816603643`, event
+`0.113054939136`, period `0.644977936704`, `w_0=0.899842579758`,
+`v_0=0.599765834697`, scale `0.400779135003`, and
+`eta_min=0.775832703564`. N=3 closure remains active.
+
+v17.17-v17.18 continue the same family to complete residual
+`1.272877993568`, event `0.107558924761`, period `0.611901245067`,
+`w_0=0.857718051797`, `v_0=0.585620731388`, scale `0.382990119281`, and
+`eta_min=0.773679579542`. All six owner norms decrease; closure is not yet
+claimed.
+
+The v17.19 audit preserves the owner ordering and resolved soft mode. After a
+fresh pass and dense-radius refinement, v17.22 compensates the measured `v_0`
+curvature bottleneck inside the same physical-normal span. Exact unweighted
+acceptance reaches complete residual `1.192046120259`, event
+`0.099693053009`, period `0.571634002410`, `w_0=0.805293753488`,
+`v_0=0.546193432306`, scale `0.359549472209`, and
+`eta_min=0.772159229346`. No action or residual weighting changes.

@@ -1,0 +1,2 @@
+from bhsm.interface.aether_n3_extended_refreshed_manifold_bracket_v17_78 import completion_payload
+def test_classifies_extended_refreshed_manifold_bracket():assert completion_payload()["validation_passed"]

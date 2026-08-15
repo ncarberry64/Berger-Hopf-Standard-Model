@@ -1,0 +1,5 @@
+﻿from bhsm.interface.aether_n3_third_bidirectional_probe_promotion_v18_64 import materialize
+
+
+if __name__ == "__main__":
+    print(materialize("artifacts"))

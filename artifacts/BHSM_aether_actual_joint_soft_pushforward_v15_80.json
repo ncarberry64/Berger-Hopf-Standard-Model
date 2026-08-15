@@ -1,0 +1,61 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "LIFT_THE_MEASURED_SOFT_SOURCE_AND_DtN_PAIR_FROM_THE_FIXED_GALERKIN_CHART_TO_THE_FULL_SOBOLEV_KKT_PENCIL,_THEN_SOLVE_THE_BACKREACTED_ONE-CYCLE_GAP_AND_FLOQUET_MASS",
+  "artifact": "BHSM_aether_actual_joint_soft_pushforward_v15_80",
+  "claim_boundary": {
+    "absolute_same_slice_gauge_DtN_evaluated": true,
+    "family_hierarchy_and_full_cycle_backreaction_evaluated": false,
+    "full_Sobolev_soft_source_projection_evaluated": false,
+    "joint_actual_event_crossing_in_Galerkin_chart": true,
+    "nonzero_same_slice_LR_residue_evaluated": true
+  },
+  "classification": "BHSM_ACTUAL_EVENT_JOINT_SOFT_PUSHFORWARD",
+  "first_actual_joint_crossing": {
+    "control": "delta=-lambda_soft(D_Euler-Dirac)",
+    "crossing_equation": "1=gauge_norm+Chi_LR*g_s0^2/(2*delta_star)",
+    "crossing_time": 0.106037008576,
+    "delta_star": 4.0834936e-05,
+    "gauge_norm_at_reference_slice": 1.9282658e-05,
+    "minimum_eta_Legendre_at_crossing": 0.828765518743,
+    "regulated_LR_susceptibility": 0.007589641085,
+    "soft_scalar_coefficient": 0.00538024771,
+    "time_increment_from_0.10602": 1.7008576e-05
+  },
+  "same_slice_residues": {
+    "absolute_electric_DtN_residue": 1924.315265454324,
+    "absolute_transverse_DtN_residue": 2594.567654389325,
+    "common_Gamma_boundary": true,
+    "common_slice": true,
+    "crossing_time": 0.106037008576,
+    "delta_star": 4.0834936e-05,
+    "independent_Yukawa_normalization": false,
+    "minimum_eta_Legendre": 0.825261729671,
+    "nonzero_LR_soft_residue": 131.755995589432
+  },
+  "scientific_result": "IN_THE_FIXED_CONSTRAINT-SOLVED_GALERKIN_CHART_THE_MEASURED_EULER-DIRAC_SOFT_MODE_HAS_A_NONZERO_NORMALIZED_FERMION_SOURCE;_ITS_SCALAR_LR_FIERZ_BLOCK_FIRST_CROSSES_AT_delta_star_ON_THE_SAME_CHILD_SLICE_WHERE_THE_ABSOLUTE_TRANSVERSE_AND_ELECTRIC_GAUGE_DtN_RESIDUES_ARE_EVALUATED",
+  "soft_wall_source_projection": {
+    "boundary_Berger_v": 0.043042325827,
+    "coordinate_scope": "FIXED_v15.51_DIMENSIONLESS_GALERKIN_CHART",
+    "g_s0": 0.103732807824,
+    "lowest_S3_Dirac_energy": 1.482747619411,
+    "nonzero": true,
+    "normal_zero_mode_overlap": 1.0,
+    "soft_delta_H4": -0.022005280914,
+    "soft_delta_log_lapse": -0.092221176015,
+    "soft_delta_u_boundary": 0.021949168829,
+    "soft_delta_v_boundary": -0.000310949193,
+    "source_formula": "g_s0=-delta_logN*E0+(3/2)*delta_H4",
+    "temporal_density_Fierz_scalar_fraction": 0.5
+  },
+  "validation": {
+    "LR_residue_nonzero": true,
+    "USB_untouched": true,
+    "crossing_precedes_Dirac_zero": true,
+    "eta_operator_regular_at_actual_crossing": true,
+    "gauge_residues_positive": true,
+    "same_slice_and_functional": true,
+    "soft_fermion_source_nonzero": true
+  },
+  "validation_passed": true,
+  "version": "v15.80"
+}

@@ -1,0 +1,147 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_aether_Hopf_rotor_skin_stabilization_v15_33",
+  "charge_type_and_selection": {
+    "FR_parity_is_not_event_flux": true,
+    "event_degree_flux": {
+      "canonical_rotor_momentum": false,
+      "integer_normalized": true,
+      "object": "Q_Gamma=N_plus-N_minus",
+      "reason": "Q_Gamma_labels_a_topology_change_correspondence_and_does_not_supply_a_cyclic_coordinate_or_positive_collective_inertia"
+    },
+    "historical_M8_FR_line": {
+      "collective_self_adjoint_domain_derived": false,
+      "conditional_lowest_rotor_sector": "j=1/2_or_half_odd_U1_momentum",
+      "configuration_loop_group": "pi8(S7)=Z2",
+      "continuous_charge_magnitude_fitted": false,
+      "odd_degree_character": -1,
+      "physical_M4_transgression_derived": false,
+      "physical_rotation_loop_identification_derived": false
+    },
+    "nonzero_action_selected_physical_charge_present": false,
+    "retained_classical_background": {
+      "action_selects_nonzero_vector_orientation": false,
+      "eta_canonical_charge": 0,
+      "gauge_color_charge": "singlet_or_superselection_data"
+    }
+  },
+  "classification": "RETAINED_CHARGE_STABILIZATION_EXHAUSTED_NO_CHILD",
+  "completion_ledger": {
+    "ACTIVE_DEPENDENCY": "ACTION_OWNED_SKIN_LOCALIZED_HOPF_FIBER_CYCLIC_INERTIA_WITH_ODD_DEGREE_FR_ANTIPERIODIC_SELF_ADJOINT_DOMAIN_AND_POSITIVE_COUPLED_CONSTRAINT_HESSIAN",
+    "CLOSED_THIS_RUN": [
+      "event_degree_versus_canonical_charge_type_separation",
+      "FR_sign_versus_physical_rotor_selection_boundary",
+      "fixed_eta_sigma_blind_charge_zero_curvature_theorem",
+      "retained_positive_g_sigma_weighted_rotor_wrong_sign_theorem",
+      "nonlinear_retained_charge_stabilization_exhaustion"
+    ]
+  },
+  "fixed_eta_charge_theorem": {
+    "admissible_variation": "delta_sigma_nonzero_with_delta_eta=delta_metric=delta_gauge=0",
+    "first_sigma_variation": 0.0,
+    "fixed_charge_energy": "V_C[sigma]=C^2/(2*I[eta,g_metric,gauge])",
+    "reason": "sigma_is_an_independent_parent_field_and_the_common_domain_does_not_impose_sigma_as_a_hard_function_of_eta",
+    "scope": "all_retained_charges_whose_collective_inertia_has_no_material_sigma_dependence",
+    "second_sigma_variation": 0.0,
+    "topological_eta_stability_does_not_lock_sigma": true,
+    "v15_32_negative_direction_lifted": false
+  },
+  "minimal_missing_stabilizer": {
+    "candidate_problem": "multiplying_a_Hopf_rotor_by_this_density_is_a_new_action_completion_and_no_existing_uniqueness_or_parent_variation_selects_it",
+    "coefficient_free_candidate_density": "one_quarter_minus_sigma_squared",
+    "exact_next_object": "ACTION_OWNED_SKIN_LOCALIZED_HOPF_FIBER_CYCLIC_INERTIA_WITH_ODD_DEGREE_FR_ANTIPERIODIC_SELF_ADJOINT_DOMAIN_AND_POSITIVE_COUPLED_CONSTRAINT_HESSIAN",
+    "fixed_charge_effect": "C_nonzero_implies_V_C=C_squared/(2*I_skin)_diverges_at_both_collapse_poles_and_can_force_an_interior_minimum",
+    "g_equals_minus_four_shortcut_rejected": "1-4*sigma_squared_makes_the_eta_Legendre_weight_degenerate_at_both_vacua_and_is_not_selected_by_the_retained_action",
+    "inserted_in_this_campaign": false,
+    "new_action_structure_required": true,
+    "new_field_required": false,
+    "required_collective_form": "L_rot=I_skin[eta,sigma,geometry]*theta_dot_squared/2_with_I_skin_positive_in_the_wall_and_vanishing_at_both_sigma_vacua"
+  },
+  "no_retuning_certificate": {
+    "USB_REMOVABLE_MEDIA_TOUCHED_DURING_SCIENCE": false,
+    "candidate_skin_localized_rotor_inserted": false,
+    "empirical_inputs": [],
+    "frozen_predictions_changed": false,
+    "new_continuous_coefficients": [],
+    "new_fields": [],
+    "nonzero_charge_inserted": false
+  },
+  "nonlinear_encapsulated_child_verdict": {
+    "actual_outcome": "THE_RETAINED_NONLINEAR_SYSTEM_PRODUCES_A_CRITICAL_MATERIAL_SKIN_BUT_NOT_A_STABLE_ENCAPSULATED_CHILD;_THE_SKIN_COLLAPSES_OR_DEENVELOPS_AND_THE_NEAREST_RETAINED_FIXED_CHARGE_TERMS_CANNOT_REVERSE_THE_PHYSICAL_NEGATIVE_MODE",
+    "nonlinear_pole_limits_remain_favored_by_positive_g_charge": true,
+    "positive_g_fixed_charge_correction_sign": "negative",
+    "regular_persistent_encapsulated_child": false,
+    "sigma_blind_charge_correction": 0.0,
+    "skin_collective_second_variation": -0.267570827,
+    "stable_material_skin": false,
+    "support": {
+      "retained_inertia_has_wrong_sign": true,
+      "skin_path_reaches_poles": true
+    },
+    "total_curvature_can_be_nonnegative_from_retained_charge": false
+  },
+  "retained_sigma_weighted_rotor": {
+    "S_at_seam": 0.068844157,
+    "S_definition": "S(ell)=join_volume_average_of_sigma_ell_squared",
+    "S_first_derivative_at_seam": 0.0,
+    "S_second_derivative_at_seam": 0.282271179,
+    "fixed_charge_curvature_at_seam": "V_C_second=-C_squared*g*S_second/[2*I_eta*(1+g*S0)^2]_for_S_first=0",
+    "g_negative_result": "could_have_the_opposite_local_sign_but_is_not_action_selected_and_is_not_the_positive_formation_inertia_branch",
+    "g_positive_result": "STRICTLY_NEGATIVE_FOR_EVERY_NONZERO_C",
+    "g_zero_result": "NO_EFFECT",
+    "large_shift_tends_to_vacuum_value_one_quarter": true,
+    "retained_multiplier": "I_g(ell)=I_eta*[1+g*S(ell)]",
+    "samples": [
+      {
+        "mean_sigma_squared": 0.249944133,
+        "shift": -4.0
+      },
+      {
+        "mean_sigma_squared": 0.23756437,
+        "shift": -2.0
+      },
+      {
+        "mean_sigma_squared": 0.164139363,
+        "shift": -1.0
+      },
+      {
+        "mean_sigma_squared": 0.100590094,
+        "shift": -0.5
+      },
+      {
+        "mean_sigma_squared": 0.068844157,
+        "shift": 0.0
+      },
+      {
+        "mean_sigma_squared": 0.100590094,
+        "shift": 0.5
+      },
+      {
+        "mean_sigma_squared": 0.164139363,
+        "shift": 1.0
+      },
+      {
+        "mean_sigma_squared": 0.23756437,
+        "shift": 2.0
+      },
+      {
+        "mean_sigma_squared": 0.249944133,
+        "shift": 4.0
+      }
+    ],
+    "seam_is_strict_inertia_minimum_for_positive_g": true
+  },
+  "validation": {
+    "FR_claim_boundary_preserved": true,
+    "USB_untouched": true,
+    "event_flux_not_misidentified_as_rotor_momentum": true,
+    "frozen_predictions_unchanged": true,
+    "missing_stabilizer_not_inserted": true,
+    "nonlinear_child_result_decided": true,
+    "positive_g_fixed_charge_strictly_softens": true,
+    "retained_positive_g_inertia_has_wrong_sign": true,
+    "sigma_blind_charge_cannot_lift_mode": true
+  },
+  "validation_passed": true,
+  "version": "v15.33"
+}

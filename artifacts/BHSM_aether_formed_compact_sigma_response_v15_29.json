@@ -1,0 +1,164 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "analytic_small_q_source": {
+    "coefficient": 2.122065907892,
+    "dimensionless_force": "a^2*U_sigma=w_prime+6*cot(chi)*w",
+    "direct_profile_contribution": "-4*q/pi",
+    "median_location": "chi_1/2=pi/2-(2/3)q+O(q^2)",
+    "median_shift_contribution": "32*q/(3*pi)",
+    "normalized_density": "w=(2/pi)sin(chi)^2[1+2q*cos(chi)]+O(q^2)",
+    "odd_under_formation_orientation_reversal": true,
+    "profile": "f=chi+q*sin(chi)+O(q^2)",
+    "result": "a^2*U_sigma(0)=20*q/(3*pi)+O(q^2)",
+    "zero_on_identity_branch": true
+  },
+  "artifact": "BHSM_aether_formed_compact_sigma_response_v15_29",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "Hopf_child_constructed": false,
+    "branchwise_U_q_is_one_local_state_independent_parent_potential": false,
+    "coupled_metric_eta_sigma_stationary_solution": false,
+    "effective_action_completion_candidate": true,
+    "eta_profile_is_retained_v15_9_solution": true,
+    "historical_independent_sigma_identified_with_trace": false,
+    "nonlinear_enclosure_continuation": false,
+    "old_parent_action_already_contains_U_q": false
+  },
+  "classification": "BHSM_ACTION_COMPLETION_CANDIDATE",
+  "completion_ledger": {
+    "ACTIVE_DEPENDENCY": "JOINT_PARENT_ACTION_DERIVATION_AND_CONSTRAINT_SOLVED_EINSTEIN_ETA_SIGMA_CONTINUATION_OF_THE_Q_DEPENDENT_MATERIAL_RESPONSE_INTO_A_REGULAR_HOPF_CHILD",
+    "CLOSED_THIS_RUN": [
+      "formation_q_to_sigma_zero_force_in_the_compact_formation_geometry",
+      "analytic_near_critical_coefficient_20_over_3pi",
+      "internal_orientation_reversal_of_the_material_force",
+      "identity_branch_zero_source_limit"
+    ]
+  },
+  "critical_radius_kappa1_one": 2.023270825544,
+  "identity_branch": {
+    "Euler_identity_residual": 0.0,
+    "a2_U_sigma_at_sigma_zero": 0.0,
+    "dimensionless_kinetic_energy_per_Omega6_Zsigma_a5": 0.156668147106,
+    "dimensionless_potential_energy_per_Omega6_Zsigma_a5": 0.62667257888,
+    "dimensionless_total_energy_per_Omega6_Zsigma_a5": 0.783340725986,
+    "leading_source_prediction": 0.0,
+    "median_chi": 1.570796326795,
+    "physical_scaling": {
+      "U": "a2_U/a^2",
+      "U_sigma": "a2_U_sigma/a^2",
+      "a_c": "(343/(5*kappa1))^(1/6)",
+      "energy": "Omega6*Zsigma*a^5*dimensionless_energy",
+      "radius": "a=a_c*(radius_ratio_six)^(1/6)"
+    },
+    "potential_reflection_asymmetry": 0.0,
+    "q": 0.0,
+    "radius_over_critical": 1.0,
+    "radius_ratio_six": 1.0,
+    "sigma_endpoints": [
+      -0.5,
+      0.5
+    ],
+    "source_over_q": null,
+    "trace_norm": 1.570796326795
+  },
+  "inverse_Euler_theorem": {
+    "compact_Euler_equation": "a^-2[sigma_chichi+6cot(chi)sigma_chi]=U_q_prime(sigma)",
+    "derived_force": "a^2 U_q_prime(sigma_q)=w_q_prime+6cot(chi)w_q",
+    "profile": "sigma_q=C_q-1/2",
+    "uniqueness": "w_q>0_on_(0,pi)_makes_chi_a_function_of_sigma_and_fixes_U_q_up_to_the_parent_relative_vacuum_constant"
+  },
+  "near_critical_formed_branch": {
+    "Euler_identity_residual": 0.0,
+    "a2_U_sigma_at_sigma_zero": 0.094009356833,
+    "dimensionless_kinetic_energy_per_Omega6_Zsigma_a5": 0.156530143218,
+    "dimensionless_potential_energy_per_Omega6_Zsigma_a5": 0.572180292424,
+    "dimensionless_total_energy_per_Omega6_Zsigma_a5": 0.728710435642,
+    "leading_source_prediction": 0.093889732301,
+    "median_chi": 1.541294233688,
+    "physical_scaling": {
+      "U": "a2_U/a^2",
+      "U_sigma": "a2_U_sigma/a^2",
+      "a_c": "(343/(5*kappa1))^(1/6)",
+      "energy": "Omega6*Zsigma*a^5*dimensionless_energy",
+      "radius": "a=a_c*(radius_ratio_six)^(1/6)"
+    },
+    "potential_reflection_asymmetry": 0.113351915937,
+    "q": 0.044244493987,
+    "radius_over_critical": 1.000166597265,
+    "radius_ratio_six": 1.001,
+    "sigma_endpoints": [
+      -0.5,
+      0.5
+    ],
+    "source_over_q": 2.124769623581,
+    "trace_norm": 1.569529125828
+  },
+  "no_retuning_certificate": {
+    "USB_REMOVABLE_MEDIA_TOUCHED_DURING_SCIENCE": false,
+    "empirical_inputs": [],
+    "formation_profile_source": "retained_v15.9_action_solution",
+    "frozen_predictions_changed": false,
+    "material_force_source": "inverse_compact_Euler_map",
+    "new_continuous_coefficients": [],
+    "new_fields": []
+  },
+  "orientation_pair": {
+    "coordinate_domain_residual": 0.0,
+    "external_preferred_frame_used": false,
+    "force_map": "U_minus_prime(sigma)=-U_plus_prime(-sigma)",
+    "force_reflection_residual": 0.0,
+    "orientation_is_internal_branch_of_retained_radial_solution": true,
+    "orientation_map": "f_minus(chi)=pi-f_plus(pi-chi);_sigma_minus(chi)=-sigma_plus(pi-chi)",
+    "potential_map": "U_minus(sigma)=U_plus(-sigma)",
+    "potential_reflection_residual": 0.0,
+    "profile_reflection_residual": 0.0,
+    "q_minus": -0.140256246827,
+    "q_plus": 0.140256246827,
+    "source_minus": -0.301505871021,
+    "source_plus": 0.301505871021,
+    "source_sum_residual": 0.0
+  },
+  "representative_formed_branch": {
+    "Euler_identity_residual": 0.0,
+    "a2_U_sigma_at_sigma_zero": 0.301505871476,
+    "dimensionless_kinetic_energy_per_Omega6_Zsigma_a5": 0.155298913357,
+    "dimensionless_potential_energy_per_Omega6_Zsigma_a5": 0.465545900856,
+    "dimensionless_total_energy_per_Omega6_Zsigma_a5": 0.620844814213,
+    "leading_source_prediction": 0.297632999761,
+    "median_chi": 1.4771106577,
+    "physical_scaling": {
+      "U": "a2_U/a^2",
+      "U_sigma": "a2_U_sigma/a^2",
+      "a_c": "(343/(5*kappa1))^(1/6)",
+      "energy": "Omega6*Zsigma*a^5*dimensionless_energy",
+      "radius": "a=a_c*(radius_ratio_six)^(1/6)"
+    },
+    "potential_reflection_asymmetry": 0.362469905091,
+    "q": 0.140256246827,
+    "radius_over_critical": 1.001659764362,
+    "radius_ratio_six": 1.01,
+    "sigma_endpoints": [
+      -0.5,
+      0.5
+    ],
+    "source_over_q": 2.149678736574,
+    "trace_norm": 1.558045568864
+  },
+  "retained_formation_action": "v15.9_round_S7_degree_one_p2_plus_p8_eta_functional",
+  "scientific_result": "THE_ACTUAL_COMPACT_V15_9_FORMATION_BRANCH_BREAKS_THE_FIXED_SIGMA_REFLECTION_OF_THE_IDENTITY_BRANCH_AND_IN_THE_UNIQUE_CANONICAL_INVERSE_EULER_COMPLETION_GENERATES_A_NONZERO_MATERIAL_FORCE_A2_U_SIGMA_ZERO_EQUALS_20Q_OVER_3PI_PLUS_HIGHER_ORDER;_THE_CONJUGATE_FORMATION_BRANCH_FLIPS_THE_FORCE",
+  "validation": {
+    "USB_untouched": true,
+    "formed_branch_has_nonzero_source": true,
+    "frozen_predictions_unchanged": true,
+    "identity_branch_has_zero_source": true,
+    "inverse_Euler_identity": true,
+    "near_branch_matches_analytic_linear_source": true,
+    "no_empirical_inputs": true,
+    "no_external_frame": true,
+    "no_new_continuous_coefficient": true,
+    "orientation_reversal_flips_source": true,
+    "trace_endpoints_exact": true
+  },
+  "validation_passed": true,
+  "version": "v15.29"
+}

@@ -1,0 +1,2 @@
+from bhsm.interface.aether_n3_fresh_sbp_damped_newton_cone_v16_70 import FILTER_RELATIVE_SCALES,CONE_FACTORS
+def test_damped_newton_cone_grid_is_complete():assert len(FILTER_RELATIVE_SCALES)*len(CONE_FACTORS)==9

@@ -1,0 +1,116 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "INTEGRATE_THE_NONROUND_CAP_FLOW_AND_SOLVE_THE_RELATIVE-PERIODIC_SHOOTING_AND_MONODROMY_EQUATIONS",
+  "artifact": "BHSM_aether_post_cut_nonround_lorentzian_cap_v15_48",
+  "claim_boundary": {
+    "Floquet_spectrum_computed": false,
+    "constraint_solved_initial_data_embedded": true,
+    "nonround_Lorentzian_cap_equations_derived": true,
+    "persistent_particle_derived": false,
+    "relative_periodic_orbit_solved": false
+  },
+  "classification": "BHSM_POST_CUT_NONROUND_LORENTZIAN_CAP_FLOW",
+  "contract": {
+    "ADM_kinetic": "(KijKij-K^2)/2",
+    "FR_Routhian": "-J^2/(2I),_J^2=1/4",
+    "boundary_values": "f(0)=0,_f(pi/4)=pi/4",
+    "child_scale": "x=log(B/A)_boundary=-2*(v0-v1)",
+    "coordinate_order": [
+      "log_R",
+      "u1",
+      "u2",
+      "w0",
+      "w1",
+      "v0",
+      "v1",
+      "q1",
+      "q2"
+    ],
+    "domain": "0<=chi<=pi/4,_C_child=B4_times_S3",
+    "eta": "-Lambda*(X/2+X^4/8),_X=X_spatial-f_dot^2",
+    "metric": "C=R*exp(u+w),_A=R*exp(u+v)*coschi,_B=R*exp(u-v)*sinchi",
+    "modes": "u=u1*cos4chi+u2*cos8chi;_w=sin(2chi)^2*(w0+w1*cos4chi);_v=sin(2chi)^2*(v0+v1*cos4chi);_f=chi+q1*sin4chi+q2*sin8chi",
+    "new_continuous_coefficient": false,
+    "response": "sigma=-1/2+(2Z_c)^-1*integral_0^chi_sin(f)^2cos(f)^2ds",
+    "spatial_action": "Einstein-Hilbert_plus_coefficient-locked_timelike_GHY"
+  },
+  "projected_initial_data": {
+    "Legendre_map_invertible": true,
+    "accelerations": [
+      -0.22175137,
+      -0.15202725,
+      0.07979824,
+      -1.82953287,
+      -0.84580692,
+      -0.01554273,
+      -1.87422137,
+      -2.2654337,
+      -2.60715345
+    ],
+    "canonical_energy": 0.0,
+    "coordinates": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "eta_Legendre_minimum": 6.0,
+    "initial_child_scale_velocity": -0.13910777,
+    "initial_child_scale_x": 0.0,
+    "maximum_TT_projection_residual": 1.09904334,
+    "raw_projected_velocities": [
+      -0.08503633,
+      -0.13946106,
+      -0.07163344,
+      -1.78411551,
+      -0.86733303,
+      1.39223262,
+      1.32581308,
+      0.0,
+      0.0
+    ],
+    "velocities": [
+      -0.08904921,
+      -0.14604225,
+      -0.07501383,
+      -1.86830815,
+      -0.9082626,
+      1.45793226,
+      1.38837838,
+      0.0,
+      0.0
+    ],
+    "velocity_Hessian_condition_number": 2432.83578781,
+    "velocity_Hessian_eigenvalues": [
+      -363.36364659,
+      -129.1704723,
+      -9.59018616,
+      0.14935807,
+      1.04673541,
+      1.60727926,
+      5.46244309,
+      19.60388912,
+      38.84971185
+    ],
+    "velocity_energy_rescale": 1.04719013,
+    "weighted_TT_projection_residual": 0.08406259,
+    "zero_velocity_energy": -3.06352887
+  },
+  "validation": {
+    "Legendre_map_invertible": true,
+    "USB_untouched": true,
+    "cap_topology_and_boundary_fixed": true,
+    "eta_Legendre_positive": true,
+    "finite_initial_acceleration": true,
+    "frozen_predictions_unchanged": true,
+    "reconstructed_ADM_data_projected": true,
+    "reduced_Hamiltonian_constraint_closed": true
+  },
+  "validation_passed": true,
+  "version": "v15.48"
+}

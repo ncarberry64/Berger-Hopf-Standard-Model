@@ -1,0 +1,113 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "EXTEND_THE_COMMON_VERTEX_SUM_TO_HEAT-TRACE_CONVERGENCE,_ASSEMBLE_THE_SU2_AND_SU3_ADJOINT_GAUGE-GHOST_BLOCKS,_AND_INSERT_ALL_RESPONSES_IN_THE_314-EQUATION_REPLACEMENT_KKT_SYSTEM",
+  "artifact": "BHSM_aether_rank16_u1_hs_vertex_matrices_v16_01",
+  "claim_boundary": {
+    "level_convergence_established": false,
+    "low_level_response_seed_evaluated": true,
+    "nonabelian_adjoint_vertices_assembled": false,
+    "physical_single_Higgs_direction_selected": false,
+    "rank16_U1_vertex_matrices_assembled": true,
+    "replacement_quantum_saddle_solved": false,
+    "unit_HS_vertex_matrices_assembled": true
+  },
+  "classification": "BHSM_RANK16_U1_AND_HS_DENSE_CYCLE_VERTEX_MATRICES",
+  "low_level_response_seed": {
+    "HS_constant_response": -44.35465740393,
+    "HS_delta_Z_per_normalized_pair_seed": 0.002569503678,
+    "HS_delta_Z_seed": 0.061668088262,
+    "HS_first_frequency_response": 0.000745386014,
+    "U1_constant_coexact_response": 23.303883206771,
+    "U1_delta_K_electric_seed": -0.029842806736,
+    "U1_delta_K_magnetic_seed": 6.072415179559,
+    "U1_first_frequency_coexact_response": 1.839139439592,
+    "gauge_ghost_U1_adjoint_response": 0.0,
+    "independent_channel_Z_seeds": {
+      "charged_lepton": 0.007708511033,
+      "down": 0.023125533098,
+      "neutrino": 0.007708511033,
+      "up": 0.023125533098
+    },
+    "independent_channel_canonical_Y_seeds": {
+      "charged_lepton": 11.389764666281,
+      "down": 6.575883696084,
+      "neutrino": 11.389764666281,
+      "up": 6.575883696084
+    },
+    "independent_channel_pairing_multiplicities": {
+      "charged_lepton": 3,
+      "down": 9,
+      "neutrino": 3,
+      "up": 9
+    },
+    "interpretation": "FOURIER-GALERKIN_HEAT-REGULATED_COLLOCATION_SEED_WITHOUT_A_CENTERED-DIFFERENCE_FERMION_DOUBLER;_LEVEL_CONVERGENCE_AND_THE_FULL_NONABELIAN_ADJOINT_BLOCK_AND_HS-CHANNEL_HESSIAN_DIAGONALIZATION_PRECEDE_PHYSICAL_YUKAWA_CANONICALIZATION",
+    "lattice_points": 8,
+    "maximum_homogeneous_level": 1,
+    "proper_duration": 0.234280880357,
+    "radial_wall_overlap": 1.0,
+    "rank16_group_and_unit_HS_vertices_share_one_geometry": true,
+    "rows": [
+      {
+        "HS_U1_constant": 1.704462475695,
+        "HS_U1_first_frequency": 1.704459569095,
+        "Weyl_U1_constant": 24.284500428125,
+        "Weyl_U1_first_frequency": 0.054826187028,
+        "fermion_HS_constant": -21.922258382433,
+        "fermion_HS_first_frequency": 0.000359936552,
+        "level": 0
+      },
+      {
+        "HS_U1_constant": -0.135983878967,
+        "HS_U1_first_frequency": 0.09533336833,
+        "Weyl_U1_constant": -2.549095818082,
+        "Weyl_U1_first_frequency": -0.015479684861,
+        "fermion_HS_constant": -22.432399021497,
+        "fermion_HS_first_frequency": 0.000385449462,
+        "level": 1
+      }
+    ],
+    "single_collective_24-pair_canonical_Y_seed": 4.026889915823,
+    "single_collective_direction_selected_by_current_calculation": false
+  },
+  "matrix_contract_witness": {
+    "HS": {
+      "contact_Hermitian_residual": 0.0,
+      "dimension": 32,
+      "minimum_operator_eigenvalue": 2.197586843676,
+      "operator_Hermitian_residual": 0.0,
+      "vertex_Hermitian_residual": 0.0
+    },
+    "coexact_gauge": {
+      "contact_Hermitian_residual": 0.0,
+      "dimension": 32,
+      "minimum_operator_eigenvalue": 2.197586843676,
+      "operator_Hermitian_residual": 0.0,
+      "vertex_Hermitian_residual": 0.0
+    }
+  },
+  "rank16_trace_ledger": {
+    "complex_HS_doublet_hypercharge_square_trace": 0.5,
+    "derivation": "6*(1/6)^2+2*(-1/2)^2+3*(-2/3)^2+3*(1/3)^2+1^2=10/3",
+    "effective_HS_hypercharge_square_weight": 1.0,
+    "family_matrix": "I3",
+    "neutral_singlet_contribution": 0.0,
+    "new_continuous_coefficient": false,
+    "one_family_hypercharge_square_trace": "10/3",
+    "real_Gaussian_HS_trace_factor": 2.0,
+    "three_family_hypercharge_square_trace": 10.0,
+    "three_family_unit_EC_HS_Dirac_pairings": 24,
+    "unit_EC_HS_Dirac_pairings_per_family": 8
+  },
+  "scientific_result": "THE_THREE-FAMILY_HYPERCHARGE_TRACE_10,_THE_COMPLEX_HS-DOUBLET_TRACE,_AND_24_UNIT_EC-HS_DIRAC_PAIRINGS_ARE_ASSEMBLED_AS_EXPLICIT_HERMITIAN_FIRST-ORDER_PRODUCT-DIRAC_SOURCE_AND_CONTACT_MATRICES_ON_ONE_DENSE_PROPER-CYCLE_GEOMETRY_WITH_AN_EXACT_PERIODIC_FOURIER_DERIVATIVE_AND_NO_TIME-LATTICE_FERMION_DOUBLER",
+  "validation": {
+    "USB_untouched": true,
+    "all_matrices_Hermitian": true,
+    "all_squared_operators_positive": true,
+    "one_geometry": true,
+    "rank16_trace_exact": true,
+    "responses_finite": true,
+    "unit_HS_pairings_complete": true
+  },
+  "validation_passed": true,
+  "version": "v16.01"
+}

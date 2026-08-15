@@ -1,0 +1,159 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "DERIVE_THE_EVENT_STATE_DEPENDENT_ATTACHMENT_INCIDENCE_AND_OUTER_LAYER_CALDERON_WENTZELL_FLUX_MAP_BEFORE_MORE_N3_SOLVING",
+  "artifact": "BHSM_aether_n3_lorentzian_child_cauchy_correspondence_v17_88",
+  "classification": "BHSM_N3_LORENTZIAN_COMPLETE_CHILD_CAUCHY_CORRESPONDENCE",
+  "dependency_advanced": "IDENTIFIES_THE_DIRAC_SUBBLOCK_OF_F_child_AND_INVALIDATES_EQUATING_IT_WITH_THE_COMPLETE_CORRESPONDENCE",
+  "event_to_complete_child_cauchy_correspondence": {
+    "F_child": {
+      "component_order": [
+        "lapse_1",
+        "lapse_2",
+        "lapse_3",
+        "shift_0",
+        "shift_1",
+        "shift_2",
+        "Hamiltonian_energy"
+      ],
+      "current_candidate_closed": false,
+      "current_candidate_norm": 14.745579867774499,
+      "current_candidate_rows": [
+        7.310008738618371,
+        -3.43535762921725,
+        4.265299403845912,
+        -3.098527455653164,
+        5.048211389899835,
+        -4.752328589444461,
+        8.73678998148451
+      ],
+      "current_candidate_terminal_multiplier_rows": [
+        -1.1471792025e-05,
+        2.17250534e-07,
+        4.7672089e-08,
+        -0.053682795885458,
+        -2.0772257531e-05,
+        4.94926797e-07
+      ],
+      "definition": "F_child_Dirac(z_event)=C_terminal_replacement(z_event);THIS_IS_ONLY_ONE_COMPONENT_OF_THE_COMPLETE_F_child",
+      "local_classical_constraint_rows": [
+        7.310008738618371,
+        -3.43535762921725,
+        4.265299403845912,
+        -3.098527455653164,
+        5.048211389899835,
+        -4.752328589444461,
+        8.73678998148451
+      ],
+      "local_constraint_differential_rank": 7,
+      "local_constraint_differential_singular_values": [
+        1684.5624991502225,
+        362.1482639679115,
+        276.89651971269063,
+        93.06171522020354,
+        58.61504257349802,
+        17.54059558883161,
+        8.198341542535028
+      ],
+      "missing_outer_layer_component": "F_child_outer=P_physical[Gamma1_event+Gamma1_child+W_phys(z_event)*Gamma0]",
+      "row_ownership": "SIX_TERMINAL_MULTIPLIER_ROWS_ARE_ROWS_368_THROUGH_373_OF_THE_ZERO_BASED_376_KKT_RESIDUAL;THE_SEVENTH_LOCAL_ENERGY_CONSTRAINT_IS_OWNED_GLOBALLY_BY_PERIOD_STATIONARITY",
+      "selection_rank_witness": "THE_SEVEN_ACTION_CONSTRAINT_DIRECTIONS_ARE_LOCALLY_INDEPENDENT_IN_THE_TERMINAL_CAUCHY_CHART_BUT_DO_NOT_SUPPLY_THE_OUTER_LAYER_EVENT_TO_CHILD_SELECTION"
+    },
+    "KKT_integration": {
+      "F_child_already_present": false,
+      "candidate_acceptance": "ALL_376_KKT_ROWS_CLOSE;ETA_REMAINS_POSITIVE;AND_THE_SEPARATELY_DERIVED_OUTER_LAYER_F_child_CLOSES",
+      "direct_N3_solve_authorized_next": false,
+      "new_equations": 0,
+      "new_unknowns": 0,
+      "pre_event_unknown_count": 376,
+      "why_no_377th_coordinate": "THE_WHOLE_CHILD_IS_THE_DERIVED_POST_EVENT_CAUCHY_STATE_AND_CANONICAL_RELATION_NOT_A_PRE_EVENT_SCALAR"
+    },
+    "complete_child_initial_state_map": {
+      "boundary_trace": {
+        "A_child_boundary_radius": 1.458725205984826,
+        "B_child_boundary_radius": 1.380162700143785,
+        "C_radial_gauge_factor": 2.717222349944885,
+        "f": 0.785398163397448,
+        "lapse": 3.887471990234436,
+        "localization": 1.0,
+        "log_B_over_A": -0.055361516845463,
+        "shift": 0.0,
+        "sigma": 0.0
+      },
+      "canonical_momentum": [
+        -15.421277180792972,
+        -2.332849569550921,
+        -5.121569452647305,
+        28.787921410858626,
+        -0.851118134586478,
+        -0.300560309312085,
+        0.806698081703918,
+        -10.070721980816321,
+        3.797984641282959,
+        3.549836843648408
+      ],
+      "configuration": [
+        -0.033028848092965,
+        -0.015574503165602,
+        0.007449027869827,
+        -0.001745634179463,
+        0.060790328894521,
+        -0.254744831931286,
+        -0.012380736743075,
+        0.016557569585857,
+        -0.008428990954551,
+        0.002694197882323
+      ],
+      "configuration_rule": "q_child_0=q_event_terminal_in_the_same_N3_chart",
+      "eta_gauge": "f=chi;the_two_eta_shape_modes_are_quotiented",
+      "lapse_shift": [
+        -1.089478806593876,
+        0.332890684430058,
+        0.064610418628928,
+        -0.446379941979437,
+        -0.145283651633168,
+        0.34520387336455
+      ],
+      "reconstruction_scale": -0.033028848092965,
+      "reconstruction_scale_rule": "log_R_child=q_event[0]_ONLY_ON_THE_SOLVABLE_CANONICAL_RELATION;IT_IS_NOT_AN_INDEPENDENT_OR_TRANSPORTED_VARIABLE",
+      "sigma_response": "sigma=C_J[f]-1/2_WITH_NORMAL_DERIVATIVE_FIXED_BY_THE_NORMALIZED_RESPONSE",
+      "topology_and_carrier": "degree_1;child_x_negative;odd_FR;transported_SM_bundle_class;same_rank16_replacement_operator",
+      "velocity": [
+        -0.339296716196799,
+        -0.181518234801708,
+        0.212682087170578,
+        0.00168855330823,
+        -3.080665551833842,
+        -8.246678499988633,
+        -2.408788325283732,
+        0.209989459244536,
+        0.96549160076753,
+        0.434983145007474
+      ],
+      "velocity_rule": "dot_q_child_0=dot_q_event_terminal_AND_Pi_child=Pi_event_BY_THE_COMMON_ACTION_LEGENDRE_MAP"
+    },
+    "joined_action_derivation": {
+      "W_phys": null,
+      "canonical_relation": "q_child(0)=q_event(T);Pi_child(0)=Pi_event(T);I_child=I_event_and_environment",
+      "event_first_variation": "delta_S_joined=(Pi_parent-Pi_child)*delta_q_event+C_child*delta_m_event",
+      "firewall_compatibility": "CONTINUOUS_TRACES_ARE_ARGUMENTS_OF_THE_ACTION_OWNED_CANONICAL_RELATION_ONLY;THEY_ARE_NOT_PREGEOMETRIC_TRANSPORTED_PRIMITIVES",
+      "joined_action": "PROVISIONAL_JOIN_NOT_ACTION_OWNED",
+      "why_W_is_open": "V14_67_TO_V14_69_OWN_A_NONZERO_ATTACHMENT_RESPONSE_AND_INCIDENCE_THEOREM_CLASS_BUT_NOT_ITS_EVENT_STATE_DEPENDENT_PHYSICAL_PULLBACK;ZERO_CANNOT_BE_INFERRED"
+    }
+  },
+  "real_physical_property_explained": "THE_TERMINAL_DIRAC_ROWS_ARE_NECESSARY_BUT_NOT_SUFFICIENT_FOR_ONE_COMPLETE_NONEQUILIBRIUM_CHILD",
+  "status": "RECLASSIFIED",
+  "validation": {
+    "F_child_has_seven_owned_rows": true,
+    "constraint_selection_rank_seven": true,
+    "current_candidate_not_false_promoted": true,
+    "direct_solve_deferred_until_complete_F_child": true,
+    "finite_reconstruction_scale": true,
+    "firewall_not_violated": true,
+    "same_action_momentum_map": true,
+    "same_order_three_chart": true,
+    "whole_child_not_extra_coordinate": true,
+    "zero_W_not_fabricated": true
+  },
+  "validation_passed": true,
+  "version": "v17.88"
+}

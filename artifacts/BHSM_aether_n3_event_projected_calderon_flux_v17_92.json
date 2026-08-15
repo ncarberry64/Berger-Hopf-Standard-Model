@@ -1,0 +1,67 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "SOLVE_THE_RECONSTRUCTED_CHILD_METRIC_ETA_SCALAR_CAUCHY_BOUNDARY_FLUX_WITH_NONZERO_ATTACHMENT_MOTION",
+  "artifact": "BHSM_aether_n3_event_projected_calderon_flux_v17_92",
+  "classification": "BHSM_N3_EVENT_PROJECTED_CALDERON_FLUX",
+  "dependency_advanced": "CLOSES_THE_N3_EVENT_METRIC_ETA_SCALAR_HALF_OF_THE_TWO_SIDED_F_child_CALDERON_FLUX",
+  "direct_N3_solve_authorized_next": false,
+  "event_projected_calderon_flux": {
+    "complete_outer_flux_ledger": {
+      "N3_event_metric_eta_scalar_projection": "DERIVED_HERE",
+      "event_core_pregeometric_generator_flux": "OPEN",
+      "gauge_spinor_ghost_projection": "OPEN",
+      "reconstructed_child_metric_eta_scalar_projection": "OPEN",
+      "sum_not_set_to_zero_by_reflection": true
+    },
+    "constraint_preserving_event_attachment_flux": [
+      344.9638098588559,
+      15.692600043014362
+    ],
+    "coordinate_order": [
+      "q_W",
+      "x_D"
+    ],
+    "event_attachment_flux_norm": 345.3205580449083,
+    "event_metric_q_flux_covector": [
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      70.04943966974454,
+      -70.04943966974454,
+      70.04943966974454
+    ],
+    "nonzero_flux_interpretation": "A_NONZERO_ONE_SIDED_EVENT_FLUX_IS_NOT_A_PARTICLE_DEFECT;IT_ENTERS_THE_TWO_SIDED_DYNAMIC_WENTZELL_EQUATION",
+    "orientation": "Gamma1_event_USES_THE_TERMINAL_PRE_EVENT_OUTWARD_NORMAL;THE_CHILD_TERM_MUST_BE_COMPUTED_WITH_ITS_OWN_OUTWARD_NORMAL",
+    "projection_rules": {
+      "constraint_lift": "THE_SAME_V17_91_COORDINATE_LIFT_IS_USED_FOR_FORCE_AND_FLUX",
+      "eta": "Pi_f_RETAINED_BUT_d_attachment_f=0_IN_THE_f_equals_chi_QUOTIENT",
+      "lapse": "Pi_log_N_RETAINED_BUT_THE_TWO_ATTACHMENT_CONFIGURATION_TANGENTS_DO_NOT_VARY_THE_MULTIPLIER",
+      "metric": "Gamma1_q=Pi_log_A*d_q_log_A+Pi_log_B*d_q_log_B"
+    },
+    "raw_terminal_Gamma1": {
+      "Pi_f": -62.034496249581814,
+      "Pi_log_A": 35.02471983487227,
+      "Pi_log_B": -35.02471983487227,
+      "Pi_log_N": 0.0
+    }
+  },
+  "real_physical_property_explained": "THE_EVENT_EXERTS_A_FINITE_ATTACHMENT_FLUX_THAT_MUST_BE_BALANCED_D dynamically_BY_THE_COMPLETE_CHILD_AND_EVENT_CORE",
+  "status": "VALIDATED",
+  "validation": {
+    "child_flux_not_fabricated": true,
+    "core_flux_not_fabricated": true,
+    "event_scalar_projection_derived": true,
+    "full_projector_not_fabricated": true,
+    "nonzero_event_flux_retained": true,
+    "nonzero_flux_not_defect": true,
+    "projected_flux_finite": true,
+    "reflection_cancellation_not_assumed": true,
+    "two_projected_components": true
+  },
+  "validation_passed": true,
+  "version": "v17.92"
+}

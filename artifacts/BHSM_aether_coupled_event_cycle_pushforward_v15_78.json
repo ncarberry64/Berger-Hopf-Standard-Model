@@ -1,0 +1,85 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "EVALUATE_THE_CONSTRAINED_KKT_VECTOR_FIELD_ACTING_ON_THE_MINIMUM_LEGENDRE_EIGENVALUE_TO_FIX_p,_THEN_EVALUATE_THE_FULL_ONE-PERIOD_GAUGE_AND_FERMION_RESIDUES",
+  "artifact": "BHSM_aether_coupled_event_cycle_pushforward_v15_78",
+  "backreaction_rows": [
+    {
+      "V_star": -0.00049013415,
+      "dV_star_d_epsilon": 33537264.666816484,
+      "epsilon_fraction": 0.9
+    },
+    {
+      "V_star": -0.02151260779,
+      "dV_star_d_epsilon": 407500213.27967846,
+      "epsilon_fraction": 0.5
+    },
+    {
+      "V_star": -0.264646987445,
+      "dV_star_d_epsilon": 8296242940.474883,
+      "epsilon_fraction": 0.1
+    },
+    {
+      "V_star": -1.459033430224,
+      "dV_star_d_epsilon": 289784856043.5964,
+      "epsilon_fraction": 0.01
+    }
+  ],
+  "claim_boundary": {
+    "constrained_Legendre_event_exponent_p_evaluated": false,
+    "coupled_dominant_event_power_solved": false,
+    "full_cycle_absolute_numbers_evaluated": false,
+    "one_cycle_residue_functional_derived": true
+  },
+  "classification": "BHSM_COUPLED_EVENT_CYCLE_PUSHFORWARD",
+  "cycle_pushforward": {
+    "Floquet_mass": "M_F=(i/Tstar)*Log[U_reset*Texp(-i*integral_0^Tstar M(t)dt)]",
+    "absolute_gauge_normalization": "Z_i^cycle=(1/Tstar)*delta^2_Gamma_cycle/delta_F_i_delta_F_i_at_zero",
+    "canonical_Yukawa": "Y_f^cycle=(Z_L^cycle)^(-1/2)*R_f^cycle*(Z_R^cycle)^(-1/2)*(Z_H^cycle)^(-1/2)",
+    "central_family_specialization": "M(t)=m(t)*I3_implies_time_ordering_drops_and_the_event_mass_impulse_is_positive_and_finite",
+    "composite_kinetic_residue": "Z_H^cycle=(1/Tstar)*delta^2_Gamma_cycle/delta_(D_H)_delta_(D_Hbar)_at_H_star",
+    "independent_normalization_conditions": false,
+    "left_right_vertex": "R_f^cycle=(1/Tstar)*delta^3_Gamma_cycle/delta_bar_fL_delta_fR_delta_H_at_H_star",
+    "one_period_functional": "Gamma_cycle[B]=Gamma_reset[B(T_star),B(0)]+integral_0^Tstar dt*Gamma_boundary[W_t;B(t)]",
+    "same_parent_functional_for_gauge_and_Yukawa": true
+  },
+  "scientific_result": "THE_CARTAN_GAP_STRESS_DRIVES_THE_SAME_LEGENDRE_EVENT;_FOR_THE_KKT-DERIVED_EVENT_LAW_epsilon~TAU^p_THE_MASS_AND_YUKAWA_INSERTIONS_ARE_CYCLE-INTEGRABLE_IFF_p<2_AND_p<4/3,_WHILE_THE_FINITE_GAUGE_DtN_IS_INTEGRABLE;_ALL_ARE_DERIVATIVES_OF_ONE_Gamma_cycle",
+  "simple_legendre_event_balance": {
+    "Yukawa_law": "Y(t)=O((T_star-t)^(-3p/4))",
+    "Yukawa_vertex_integrable_iff": "p<4/3",
+    "event_law_to_be_computed_from_KKT": "epsilon(t)~a*(T_star-t)^p,_a>0",
+    "frozen_transverse_p_equals_1_would_be_integrable": true,
+    "gauge_DtN_law": "Z_g(t)=O(1)",
+    "gauge_residue_integrable": true,
+    "mass_impulse_integrable_iff": "p<2",
+    "mass_law": "m(t)=O((T_star-t)^(-p/2))",
+    "p_equals_4_over_7_not_assumed": true,
+    "reason": "a_vanishing_phase-space_Legendre_eigenvalue_is_not_itself_a_configuration_coordinate_with_epsilon*dot(epsilon)^2_kinetics",
+    "reset_value_can_be_zero_while_cycle_functional_is_nonzero": true,
+    "simple_event_coordinate": "epsilon=lambda_min(H_Legendre),_d_epsilon_not_zero_at_Sigma"
+  },
+  "strong_branch_asymptotics": {
+    "D": 3.172792e-06,
+    "V_star": "V_star~-D*epsilon^(-1/2)",
+    "Y": "Y~Y0*epsilon^(-3/4)",
+    "Y0": 1.812969e-06,
+    "Z0": 304242214331.94904,
+    "Z_H": "Z_H~Z0*epsilon^(3/2)",
+    "dV_star_d_epsilon": "+(D/2)*epsilon^(-3/2)",
+    "g0": 0.00011454459,
+    "g_hat": "g_hat~g0*epsilon^(-1/2)",
+    "heat_weight_count": 0.235368600193,
+    "mass_in_ell_kappa_inverse_coefficient": 2.6650115e-05,
+    "mass_times_R4": "x~x0*epsilon^(-1/2)",
+    "x0": 2.69602e-05
+  },
+  "validation": {
+    "USB_untouched": true,
+    "backreaction_drives_epsilon_down": true,
+    "broken_potential_strictly_negative": true,
+    "cycle_integrability_threshold_derived": true,
+    "one_parent_cycle_functional": true,
+    "strong_mass_coefficient_positive": true
+  },
+  "validation_passed": true,
+  "version": "v15.78"
+}

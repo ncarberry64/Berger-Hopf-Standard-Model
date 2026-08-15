@@ -1,0 +1,134 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "SOLVE_THE_LORENTZIAN_RECONSTRUCTED_CHILD_WITH_THIS_DIRICHLET_CAUCHY_NEUMANN_TARGET_AND_EVALUATE_F_child_scalar",
+  "artifact": "BHSM_aether_n3_required_complete_child_cauchy_flux_v17_93",
+  "classification": "BHSM_N3_REQUIRED_COMPLETE_CHILD_CAUCHY_FLUX_MAP",
+  "dependency_advanced": "DERIVES_THE_EVENT_TO_CHILD_DYNAMIC_BOUNDARY_FORM_AND_EXPOSES_THE_NEED_FOR_A_CONSTRAINT_CONSISTENT_CHILD_TANGENT",
+  "direct_N3_solve_authorized_next": false,
+  "real_physical_property_explained": "THE_DYNAMIC_NEUMANN_FORM_IS_DERIVED_BUT_MUST_BE_EVALUATED_ON_THE_CONSTRAINT_CONSISTENT_RECONSTRUCTED_CHILD_GERM",
+  "required_complete_child_cauchy_flux": {
+    "F_child_scalar": {
+      "actual_reconstructed_child_flux": "OPEN",
+      "definition": "F_child_scalar(z_event)=Gamma1_child_actual_from_the_reconstructed_Lorentzian_child_minus_Gamma1_child_required",
+      "event_local_constraint_residual": [
+        7.310008738618369,
+        -3.435357629217246,
+        4.265299403845914,
+        -3.098527455653166,
+        5.048211389899836,
+        -4.752328589444454,
+        8.736789981484513
+      ],
+      "event_local_maximum_constraint_residual": 8.736789981484513,
+      "physical_target_promotable": false,
+      "required_flux_derived_algebraically": true,
+      "smooth_reflection_assumed_as_solution": false,
+      "static_zero_flux_required": false,
+      "why_not_promotable": "THE_MOMENTUM_RATE_WAS_DIFFERENTIATED_ALONG_THE_PRE_EVENT_TERMINAL_LOCAL_STATE_BEFORE_THAT_STATE_WAS_RECONSTRUCTED_ON_THE_SEVEN_CONSTRAINT_CHILD_SURFACE"
+    },
+    "boundary_map": {
+      "Cauchy_configuration": [
+        -0.033028848092965,
+        -0.015574503165602,
+        0.007449027869827,
+        -0.001745634179463,
+        0.060790328894521,
+        -0.254744831931286,
+        -0.012380736743075,
+        0.016557569585857,
+        -0.008428990954551,
+        0.002694197882323
+      ],
+      "Cauchy_velocity": [
+        -0.339296716196799,
+        -0.181518234801708,
+        0.212682087170578,
+        0.00168855330823,
+        -3.080665551833842,
+        -8.246678499988633,
+        -2.408788325283732,
+        0.209989459244536,
+        0.96549160076753,
+        0.434983145007474
+      ],
+      "Dirichlet_Gamma0": {
+        "A_child_boundary_radius": 1.458725205984826,
+        "B_child_boundary_radius": 1.380162700143785,
+        "C_radial_gauge_factor": 2.717222349944885,
+        "f": 0.785398163397448,
+        "lapse": 3.887471990234436,
+        "localization": 1.0,
+        "log_B_over_A": -0.055361516845463,
+        "shift": 0.0,
+        "sigma": 0.0
+      },
+      "Neumann_Gamma1_child_required_attachment_projection": [
+        8900.743360555101,
+        -27349.806069432907
+      ],
+      "definition": "B_child_required(z_event)=(Gamma0_event,q_event,dot_q_event,m_event,Gamma1_child_required)",
+      "lapse_shift": [
+        -1.089478806593876,
+        0.332890684430058,
+        0.064610418628928,
+        -0.446379941979437,
+        -0.145283651633168,
+        0.34520387336455
+      ]
+    },
+    "canonical_momentum": [
+      -15.777856292948746,
+      -14.531863546673819
+    ],
+    "coordinate_order": [
+      "q_W",
+      "x_D"
+    ],
+    "coordinate_time_momentum_rate": [
+      -8934.246510048059,
+      27221.327732193527
+    ],
+    "dynamic_attachment_correction_to_smooth_reference": [
+      9245.707170413958,
+      -27334.113469389893
+    ],
+    "event_projected_flux": [
+      344.9638098588559,
+      15.692600043014362
+    ],
+    "finite_difference": {
+      "epsilon": 1.45948e-10,
+      "follows_full_Euler_Dirac_tangent": true,
+      "primitive_background_time_introduced": false,
+      "state_dependent_lift_recomputed_at_both_sides": true
+    },
+    "instantaneous_action_force": [
+      311.46066036589934,
+      -112.78573719636567
+    ],
+    "interpretation": "THE_ALGEBRAIC_DYNAMIC_SCALAR_BOUNDARY_FORM_IS_DERIVED_BUT_ITS_PRE_EVENT_TANGENT_EVALUATION_IS_PROVISIONAL;NONZERO_MOMENTUM_FORCE_ACCELERATION_AND_FLUX_ARE_BALANCED_TERMS_NOT_INDIVIDUAL_DEFECTS",
+    "required_child_projected_flux": [
+      8900.743360555101,
+      -27349.806069432907
+    ],
+    "smooth_opposite_normal_reference": [
+      -344.9638098588559,
+      -15.692600043014362
+    ]
+  },
+  "status": "RECLASSIFIED",
+  "validation": {
+    "actual_child_flux_not_fabricated": true,
+    "dynamic_correction_nonzero": true,
+    "inadmissible_pre_event_tangent_not_promoted": true,
+    "momentum_rate_finite": true,
+    "required_flux_finite": true,
+    "required_flux_form_derived": true,
+    "smooth_reflection_not_assumed": true,
+    "state_dependent_lift_differentiated": true,
+    "static_flux_not_required": true,
+    "two_required_flux_components": true
+  },
+  "validation_passed": true,
+  "version": "v17.93"
+}

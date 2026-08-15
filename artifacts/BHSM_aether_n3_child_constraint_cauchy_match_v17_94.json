@@ -1,0 +1,165 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "VARY_THE_CHILD_INTERIOR_COORDINATES_VELOCITIES_AND_MULTIPLIERS_SUBJECT_TO_FIXED_Gamma0_SEVEN_CONSTRAINTS_TWO_MOMENTUM_ROWS_AND_TWO_DYNAMIC_FLUX_ROWS",
+  "artifact": "BHSM_aether_n3_child_constraint_cauchy_match_v17_94",
+  "child_constraint_cauchy_match": {
+    "attachment_cauchy_match": {
+      "F_child_scalar_flux_residual": [
+        -8848.722650644648,
+        27412.324797327135
+      ],
+      "F_child_scalar_flux_residual_norm": 28805.128768019556,
+      "actual_projected_child_flux": [
+        52.0207099104528,
+        62.51872789422892
+      ],
+      "actual_raw_child_metric_flux": {
+        "Pi_log_A": 0.778418287996028,
+        "Pi_log_B": -0.778418287996028,
+        "Pi_log_N": 0.0,
+        "lapse": 0.086398386783322
+      },
+      "coordinate_order": [
+        "q_W",
+        "x_D"
+      ],
+      "event_instantaneous_force": [
+        311.46066036589934,
+        -112.78573719636567
+      ],
+      "event_momentum": [
+        -15.777856292948746,
+        -14.531863546673819
+      ],
+      "momentum_matching_residual_child_minus_event": [
+        73.37012414520493,
+        17.157958818239017
+      ],
+      "momentum_matching_residual_norm": 75.34965605688701,
+      "projected_child_instantaneous_force": [
+        608.344509014325,
+        795.6430554013145
+      ],
+      "projected_child_momentum": [
+        57.592267852256185,
+        2.626095271565198
+      ],
+      "required_projected_child_flux": [
+        8900.743360555101,
+        -27349.806069432907
+      ]
+    },
+    "complete_scalar_child_map": {
+      "Dirac_constraint_residual": [
+        9.86e-13,
+        -1.508e-12,
+        5.355e-12,
+        9.549e-12,
+        -3.651e-12,
+        -1.69e-12,
+        1.7568e-11
+      ],
+      "Gamma0_trace_residual": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "canonical_momentum_residual": [
+        73.37012414520493,
+        17.157958818239017
+      ],
+      "closed": false,
+      "dynamic_Calderon_flux_residual": [
+        -8848.722650644648,
+        27412.324797327135
+      ],
+      "next_BVP": "VARY_THE_CHILD_INTERIOR_COORDINATES_VELOCITIES_AND_MULTIPLIERS_SUBJECT_TO_FIXED_Gamma0_SEVEN_CONSTRAINTS_TWO_MOMENTUM_ROWS_AND_TWO_DYNAMIC_FLUX_ROWS",
+      "why_open": "THE_NEAREST_FIXED_TRACE_SEVEN_CONSTRAINT_PROJECTION_DOES_NOT_ALSO_SATISFY_CANONICAL_MOMENTUM_AND_DYNAMIC_FLUX_MATCHING"
+    },
+    "constraint_projection": {
+      "constraint_order": [
+        "lapse_1",
+        "lapse_2",
+        "lapse_3",
+        "shift_0",
+        "shift_1",
+        "shift_2",
+        "Hamiltonian_energy"
+      ],
+      "coordinate_trace_held_fixed": true,
+      "coordinates": [
+        -0.033028848092965,
+        -0.015574503165602,
+        0.007449027869827,
+        -0.001745634179463,
+        0.060790328894521,
+        -0.254744831931286,
+        -0.012380736743075,
+        0.016557569585857,
+        -0.008428990954551,
+        0.002694197882323
+      ],
+      "event_constraint_norm": 14.745579867774497,
+      "event_constraint_residual": [
+        7.310008738618369,
+        -3.435357629217246,
+        4.265299403845914,
+        -3.098527455653166,
+        5.048211389899836,
+        -4.752328589444454,
+        8.736789981484513
+      ],
+      "message": "Optimization terminated successfully",
+      "multipliers": [
+        1.421662441937489,
+        0.130555635235733,
+        1.157679468134009,
+        0.07382234840109,
+        0.106428900147226,
+        0.608353460042972
+      ],
+      "projected_child_constraint_residual": [
+        9.86e-13,
+        -1.508e-12,
+        5.355e-12,
+        9.549e-12,
+        -3.651e-12,
+        -1.69e-12,
+        1.7568e-11
+      ],
+      "projected_child_maximum_constraint_residual": 1.7568e-11,
+      "projection_objective": 0.002092792705238,
+      "success": true,
+      "velocities": [
+        -0.345044161837698,
+        -0.180065821279897,
+        0.208641622736142,
+        0.006113744772665,
+        -3.078190007394014,
+        -8.428243569714564,
+        -2.396654747553378,
+        0.210436153224072,
+        0.948782391076979,
+        0.439059340923987
+      ]
+    },
+    "interpretation": "THE_PROJECTED_CHILD_HAS_FINITE_NONZERO_MOTION_MOMENTUM_FORCE_AND_FLUX;THE_DEFECT_IS_ONLY_THE_FAILURE_OF_THE_COUPLED_CONSTRAINT_AND_BOUNDARY_MATCHING_RELATIONS",
+    "source_state": "v17.75_selected_fine_period_log_mix_state"
+  },
+  "classification": "BHSM_N3_SEVEN_CONSTRAINT_CHILD_CAUCHY_MATCH",
+  "dependency_advanced": "EVALUATES_THE_ACTUAL_SEVEN_CONSTRAINT_CHILD_PROJECTION_IN_THE_EVENT_TO_CHILD_MOMENTUM_AND_DYNAMIC_FLUX_MAP",
+  "direct_N3_solve_authorized_next": false,
+  "real_physical_property_explained": "LOCAL_CONSTRAINT_CONSISTENCY_IS_NECESSARY_BUT_NOT_SUFFICIENT_FOR_A_COMPLETE_PERSISTENT_CHILD",
+  "status": "RECLASSIFIED",
+  "validation": {
+    "fixed_trace_projection_succeeded": true,
+    "flux_match_evaluated": true,
+    "incomplete_projection_not_promoted": true,
+    "momentum_match_evaluated": true,
+    "nonzero_motion_not_called_defect": true,
+    "projected_constraints_closed": true,
+    "seven_child_constraints_owned": true
+  },
+  "validation_passed": true,
+  "version": "v17.94"
+}

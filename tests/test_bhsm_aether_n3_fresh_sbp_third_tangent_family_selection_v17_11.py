@@ -1,0 +1,3 @@
+from bhsm.interface.aether_n3_fresh_sbp_third_tangent_family_selection_v17_11 import completion_payload,v17_10_selected_raw_vector
+def test_v17_10_state_has_complete_dimension():assert v17_10_selected_raw_vector().shape==(376,)
+def test_third_tangent_family_selection_validates():assert completion_payload()["validation_passed"]

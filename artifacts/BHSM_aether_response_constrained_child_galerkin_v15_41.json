@@ -1,0 +1,138 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_aether_response_constrained_child_galerkin_v15_41",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "finite_Galerkin_spatial_Euler_projection_solved": true,
+    "full_two-pole_function-space_BVP_solved": false,
+    "moving_shape_shear_sign_and_integrated_amplitude_derived": true,
+    "one_response_constrained_child_functional_written": true,
+    "physical_child_Hessian_derived": false
+  },
+  "classification": "BHSM_RESPONSE_CONSTRAINED_CHILD_GALERKIN_CONTINUATION",
+  "reduced_action_contract": {
+    "F": "kappa1*X_eta/2+X_eta^4/8",
+    "FR_domain": "odd_antiperiodic_ground_sector_J_squared=1/4",
+    "R7": "6/A^2+6/B^2-6(A_second/A+B_second/B)/C^2+6C_prime(A_prime/A+B_prime/B)/C^3-6[(A_prime/A)^2+(B_prime/B)^2]/C^2-18A_prime*B_prime/(C^2*A*B)",
+    "X_eta": "f_prime^2/C^2+3cos(f)^2/A^2+3sin(f)^2/B^2",
+    "constraint_semantics": "lapse_variations_are_Hamiltonian-constraint_projections;_sigma_variations_are_induced_only_through_f",
+    "eta": "eta=(cos(f)u,sin(f)v)",
+    "eta_carrier_weight": "1+g*sigma^2=1-4sigma^2,_hence_g=-4_from_even-quadratic_seam-normalized_vacuum-localization",
+    "lapse_weighted_inertia": "I_N=Vol(S3)^2*integral_mu*(kappa1+X_eta^3)*(1-4sigma^2)/N_dchi",
+    "material_sector": "coefficient-free_KKT_response_replaces_the_independent_Zsigma_gradient-plus-inverse-Euler_skin_action",
+    "metric": "ds2=-N(chi)^2dt2+C(chi)^2dchi2+A(chi)^2dOmega3_u2+B(chi)^2dOmega3_v2",
+    "response": "sigma=C_J[f]-1/2,_C_J_prime=sin(f)^2cos(f)^2/Z_J[f]",
+    "static_action": "S0=Vol(S3)^2*integral_N*mu*[kappa1*R7/2-kappa0/2-(1-4sigma^2)F(X_eta)]dchi-J^2/(2I_N)",
+    "volume_density": "mu=C*A^3*B^3"
+  },
+  "response_constrained_Galerkin_solution": {
+    "coefficient_order": [
+      "log_R",
+      "u2",
+      "u4",
+      "v0",
+      "v1",
+      "q2",
+      "q4",
+      "n0",
+      "n2",
+      "n4"
+    ],
+    "coefficients": [
+      0.02657772,
+      0.0,
+      0.01797285,
+      0.0,
+      -0.03459287,
+      0.0,
+      0.03640529,
+      0.0,
+      0.0,
+      -0.08573152
+    ],
+    "eta_monotonicity_margin": 0.85438887,
+    "finite_fields": true,
+    "homotopy_history": [
+      {
+        "homotopy": 0.1,
+        "integrated_Hamiltonian_defect": 0.61540514,
+        "maximum_spatial_Euler_residual": 0.0
+      },
+      {
+        "homotopy": 0.2,
+        "integrated_Hamiltonian_defect": 1.2362971,
+        "maximum_spatial_Euler_residual": 0.0
+      },
+      {
+        "homotopy": 0.3,
+        "integrated_Hamiltonian_defect": 1.86280827,
+        "maximum_spatial_Euler_residual": 0.0
+      },
+      {
+        "homotopy": 0.4,
+        "integrated_Hamiltonian_defect": 2.49510806,
+        "maximum_spatial_Euler_residual": 0.0
+      },
+      {
+        "homotopy": 0.5,
+        "integrated_Hamiltonian_defect": 3.13341367,
+        "maximum_spatial_Euler_residual": 0.0
+      },
+      {
+        "homotopy": 0.6,
+        "integrated_Hamiltonian_defect": 3.77800521,
+        "maximum_spatial_Euler_residual": 0.0
+      },
+      {
+        "homotopy": 0.7,
+        "integrated_Hamiltonian_defect": 4.42924763,
+        "maximum_spatial_Euler_residual": 0.0
+      },
+      {
+        "homotopy": 0.8,
+        "integrated_Hamiltonian_defect": 5.08762329,
+        "maximum_spatial_Euler_residual": 0.0
+      },
+      {
+        "homotopy": 0.9,
+        "integrated_Hamiltonian_defect": 5.75378198,
+        "maximum_spatial_Euler_residual": 0.0
+      },
+      {
+        "homotopy": 1.0,
+        "integrated_Hamiltonian_defect": 6.42862089,
+        "maximum_spatial_Euler_residual": 0.0
+      }
+    ],
+    "integrated_Hamiltonian_constraint_defect": 6.428758,
+    "interpretation": "stationary_spatial-Euler_projection_plus_action-derived_trace-free-shape-shear_sign_for_moving_constraint_data_not_yet_the_full_function-space_evolution",
+    "material_seam_chi": 0.78539816,
+    "maximum_independent_grid_spatial_Euler_residual": 0.00111686,
+    "maximum_solve_grid_spatial_Euler_residual": 0.0,
+    "mean_Hamiltonian_constraint_defect": 0.4969043,
+    "projected_child_scale_x": 0.0,
+    "shape_shear_closes_integrated_constraint": true,
+    "uniform_shape_shear_estimate": 0.40698251,
+    "uniform_shape_shear_squared_estimate": 0.16563477
+  },
+  "round_branch_check": {
+    "maximum_R7_residual": 8.76e-06,
+    "maximum_X_eta_residual": 0.0,
+    "maximum_projected_Euler_residual": 4.4e-07,
+    "radius": 2.02327083,
+    "round_critical_branch_recovered": true
+  },
+  "validation": {
+    "USB_untouched": true,
+    "all_fields_finite": true,
+    "critical_round_branch_recovered": true,
+    "degree_one_eta_map_preserved": true,
+    "frozen_predictions_unchanged": true,
+    "full_BVP_not_overclaimed": true,
+    "independent_quadrature_check": true,
+    "integrated_constraint_selects_shape_shear": true,
+    "projected_spatial_Euler_equations_solved": true
+  },
+  "validation_passed": true,
+  "version": "v15.41"
+}

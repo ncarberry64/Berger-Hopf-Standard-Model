@@ -1,0 +1,2 @@
+from bhsm.interface.aether_n3_fresh_sbp_second_refreshed_pareto_v16_91 import completion_payload
+def test_second_refreshed_pareto_validates():assert completion_payload()["validation_passed"]

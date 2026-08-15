@@ -1,0 +1,226 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "SOLVE_THE_CONSTRAINT_REDUCED_COMPLETE_CHILD_GALERKIN_BVP_WITH_THIS_TRACE_AND_COMPUTE_ITS_CALDERON_DtN_FLUX_MISMATCH",
+  "artifact": "BHSM_aether_n3_terminal_child_boundary_map_v17_85",
+  "classification": "BHSM_N3_TERMINAL_COMPLETE_CHILD_BOUNDARY_DATA_MAP",
+  "dependency_advanced": "CONSTRUCTS_z_event_TO_Gamma_child_INPUT_WITHOUT_ADDING_A_376_VARIABLE",
+  "event_child_datum_ownership_ledger": [
+    {
+      "class": "DIRECTLY_INHERITED",
+      "datum": "spatial_geometry",
+      "owner": "terminal_N3_q_trace_Gamma0"
+    },
+    {
+      "class": "DIRECTLY_INHERITED",
+      "datum": "conjugate_geometry_extrinsic_data",
+      "owner": "SBP_terminal_rate_plus_lapse_shift_then_action_Legendre_map"
+    },
+    {
+      "class": "QUOTIENTED/GAUGE",
+      "datum": "eta_configuration",
+      "owner": "degree_one_eta_coordinate_gauge_f=chi"
+    },
+    {
+      "class": "CONSTRAINT-DETERMINED",
+      "datum": "eta_momentum_flow",
+      "owner": "shift_covariant_eta_Legendre_map"
+    },
+    {
+      "class": "CONSTRAINT-DETERMINED",
+      "datum": "sigma_material_response",
+      "owner": "sigma=C_J[f]-1/2"
+    },
+    {
+      "class": "CONSTRAINT-DETERMINED",
+      "datum": "sigma_response_derivative",
+      "owner": "normalized_W_J[f]_response_constraint"
+    },
+    {
+      "class": "DIRECTLY_INHERITED",
+      "datum": "scale_history",
+      "owner": "23_free_log_scale_nodes_plus_fixed_reset"
+    },
+    {
+      "class": "MISSING",
+      "datum": "local_reconstruction_scale",
+      "owner": "event_environment_conditioned_child_BVP_solution"
+    },
+    {
+      "class": "POST-EVENT DYNAMIC",
+      "datum": "period_internal_phase",
+      "owner": "pre_event_period_direct;child_FR_phase_from_reconstructed_inertia"
+    },
+    {
+      "class": "DIRECTLY_INHERITED",
+      "datum": "v0_w0_and_remaining_u_v_w_modes",
+      "owner": "terminal_N3_q_and_SBP_rate"
+    },
+    {
+      "class": "CONSTRAINT-DETERMINED",
+      "datum": "lapse_shift_constraints",
+      "owner": "terminal_N3_multiplier_block"
+    },
+    {
+      "class": "DIRECTLY_INHERITED",
+      "datum": "Hopf_orientation_topology",
+      "owner": "degree_1_child_x_negative_event_quotient"
+    },
+    {
+      "class": "DIRECTLY_INHERITED",
+      "datum": "FR_parity",
+      "owner": "event_quotient_FR=-1"
+    },
+    {
+      "class": "DIRECTLY_INHERITED",
+      "datum": "gauge_carrier",
+      "owner": "transported_SM_bundle_isomorphism_class"
+    },
+    {
+      "class": "RECONSTRUCTED",
+      "datum": "rank16_fermion_carrier",
+      "owner": "same_replacement_heat_HS_operator_on_child_geometry"
+    },
+    {
+      "class": "ENVIRONMENT-DETERMINED",
+      "datum": "environmental_event_invariants",
+      "owner": "I_event_I_environment_B_SM_channel"
+    },
+    {
+      "class": "DIRECTLY_INHERITED",
+      "datum": "incidence_projector_family_information",
+      "owner": "boundary_identity_C3_family_and_bundle_projectors"
+    },
+    {
+      "class": "POST-EVENT DYNAMIC",
+      "datum": "persistent_child_imbalance",
+      "owner": "to_be_derived_from_reconstructed_child_action_and_nonzero_Cauchy_momenta"
+    }
+  ],
+  "real_physical_property_explained": "THE_TERMINAL_EVENT_OWNS_A_COMPLETE_GAUGE_TYPED_TRACE_AND_ACTION_LEGENDRE_FLUX_INPUT_FOR_CHILD_RECONSTRUCTION",
+  "status": "VALIDATED",
+  "terminal_event_boundary_data": {
+    "GHY_eta_radial_flux_Gamma1": {
+      "Pi_f": -62.034496249581814,
+      "Pi_log_A": 35.02471983487227,
+      "Pi_log_B": -35.02471983487227,
+      "Pi_log_N": 0.0
+    },
+    "material_response": {
+      "Lambda": 1.0,
+      "X_eta": 1.627832027996744,
+      "eta_Legendre": 5.313489718865701,
+      "sigma": 0.0,
+      "sigma_normal_derivative": "CONSTRAINT_DETERMINED_BY_NORMALIZED_W_J[f]_RESPONSE"
+    },
+    "mode_state": {
+      "scale_history": [
+        0.0,
+        -0.001495821521708,
+        -0.003073202816624,
+        -0.004507781842732,
+        -0.006027481302747,
+        -0.007408886805498,
+        -0.008875186112785,
+        -0.010210650328903,
+        -0.01163568844034,
+        -0.012924506915805,
+        -0.014305919791639,
+        -0.015556652886215,
+        -0.016896397128716,
+        -0.018100006819644,
+        -0.019387497249685,
+        -0.020564371350326,
+        -0.021808843739221,
+        -0.023034428238208,
+        -0.024525805505567,
+        -0.025974384939332,
+        -0.027746695771651,
+        -0.02929187343169,
+        -0.031591600923352,
+        -0.033028848092965
+      ],
+      "terminal_lapse_shift_multipliers": [
+        -1.089478806593876,
+        0.332890684430058,
+        0.064610418628928,
+        -0.446379941979437,
+        -0.145283651633168,
+        0.34520387336455
+      ],
+      "terminal_q": [
+        -0.033028848092965,
+        -0.015574503165602,
+        0.007449027869827,
+        -0.001745634179463,
+        0.060790328894521,
+        -0.254744831931286,
+        -0.012380736743075,
+        0.016557569585857,
+        -0.008428990954551,
+        0.002694197882323
+      ],
+      "terminal_q_rate": [
+        -0.339296716196799,
+        -0.181518234801708,
+        0.212682087170578,
+        0.00168855330823,
+        -3.080665551833842,
+        -8.246678499988633,
+        -2.408788325283732,
+        0.209989459244536,
+        0.96549160076753,
+        0.434983145007474
+      ]
+    },
+    "period": 0.097427069945239,
+    "quotient_certificate": {
+      "boundary_shift_zero_from_regular_odd_basis": true,
+      "radial_coordinate_factor_C_is_not_an_independent_child_scale": true,
+      "time_phase_fixed_by_anchored_reset": true
+    },
+    "radial_derivatives": {
+      "d_chi_f": 1.0,
+      "d_chi_log_A": -1.0,
+      "d_chi_log_B": 1.0,
+      "d_chi_log_C": 0.0,
+      "d_chi_log_N": 0.0
+    },
+    "source": "v17.75_selected_fine_period_log_mix_state",
+    "spatial_trace_Gamma0": {
+      "A_child_boundary_radius": 1.458725205984826,
+      "B_child_boundary_radius": 1.380162700143785,
+      "C_radial_gauge_factor": 2.717222349944885,
+      "f": 0.785398163397448,
+      "lapse": 3.887471990234436,
+      "localization": 1.0,
+      "log_B_over_A": -0.055361516845463,
+      "shift": 0.0,
+      "sigma": 0.0
+    },
+    "temporal_Cauchy_data": {
+      "H_A": -0.068760352414049,
+      "H_B": 0.09613806862702,
+      "H_C": 0.768332225907899,
+      "canonical_momenta": {
+        "Pi_f": 0.0,
+        "Pi_log_A": -61.147671548023006,
+        "Pi_log_B": -50.178489340793284,
+        "Pi_log_C": -1.821188800122668
+      },
+      "eta_normal_flow": 0.0
+    },
+    "terminal_node": 23
+  },
+  "validation": {
+    "all_requested_event_child_data_classified": true,
+    "eta_boundary_and_response_closed": true,
+    "full_N3_mode_state_retained": true,
+    "full_scale_history_retained": true,
+    "missing_reconstruction_scale_not_fabricated": true,
+    "regular_boundary_shift_closed": true,
+    "terminal_flux_finite": true,
+    "terminal_trace_finite": true
+  },
+  "validation_passed": true,
+  "version": "v17.85"
+}

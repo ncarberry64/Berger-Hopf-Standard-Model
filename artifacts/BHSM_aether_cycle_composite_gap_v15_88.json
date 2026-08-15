@@ -1,0 +1,114 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "DENSIFY_THE_CONSTRAINT-SOLVED_ONE-CYCLE_QUADRATURE_AND_COMPLETE_THE_ABSOLUTE_SCALE_AND_RENORMALIZATION_MAP_OF_THE_SAME_PUSHFORWARD",
+  "artifact": "BHSM_aether_cycle_composite_gap_v15_88",
+  "claim_boundary": {
+    "controlled_cycle_gap_test_evaluated": true,
+    "dense_constraint_solved_time_quadrature_evaluated": false,
+    "nonzero_Yukawa_vertex_derived": true,
+    "nonzero_composite_background_derived": false,
+    "nonzero_fermion_mass_derived": false
+  },
+  "classification": "BHSM_ONE_CYCLE_COMPOSITE_GAP_TEST",
+  "cycle_gap_rows": [
+    {
+      "R4": 1.011635412768,
+      "composite_quadratic_coefficient": 111.8210420609,
+      "gap_operator_at_zero": 6.7868496e-05,
+      "regular_Einstein_Cartan_kernel": 0.006959104224,
+      "regulated_susceptibility": 0.007589641085,
+      "time": 0.0,
+      "total_up_LR_kernel": 0.008942253739,
+      "up_gauge_kernel": 0.001983149515
+    },
+    {
+      "R4": 1.025740203932,
+      "composite_quadratic_coefficient": 117.894759692273,
+      "gap_operator_at_zero": 6.6752968e-05,
+      "regular_Einstein_Cartan_kernel": 0.006360056524,
+      "regulated_susceptibility": 0.007870350547,
+      "time": 0.08,
+      "total_up_LR_kernel": 0.008481575005,
+      "up_gauge_kernel": 0.002121518481
+    },
+    {
+      "R4": 1.030028403588,
+      "composite_quadratic_coefficient": 116.10756148967,
+      "gap_operator_at_zero": 6.8508083e-05,
+      "regular_Einstein_Cartan_kernel": 0.006296500692,
+      "regulated_susceptibility": 0.00795485148,
+      "time": 0.1,
+      "total_up_LR_kernel": 0.00861211345,
+      "up_gauge_kernel": 0.002315612758
+    },
+    {
+      "R4": 1.030560550557,
+      "composite_quadratic_coefficient": 113.442235196937,
+      "gap_operator_at_zero": 7.0209746e-05,
+      "regular_Einstein_Cartan_kernel": 0.006288086516,
+      "regulated_susceptibility": 0.007965309758,
+      "time": 0.103,
+      "total_up_LR_kernel": 0.008814440129,
+      "up_gauge_kernel": 0.002526353613
+    },
+    {
+      "R4": 1.031092979734,
+      "composite_quadratic_coefficient": 113.350845005741,
+      "gap_operator_at_zero": 7.0358595e-05,
+      "regular_Einstein_Cartan_kernel": 0.006280890761,
+      "regulated_susceptibility": 0.007975767381,
+      "time": 0.10602,
+      "total_up_LR_kernel": 0.008821545542,
+      "up_gauge_kernel": 0.00254065478
+    },
+    {
+      "R4": 1.031092979734,
+      "composite_quadratic_coefficient": 113.350845005741,
+      "gap_operator_at_zero": 7.0358595e-05,
+      "regular_Einstein_Cartan_kernel": 0.006280890761,
+      "regulated_susceptibility": 0.007975767381,
+      "time": 0.1060372,
+      "total_up_LR_kernel": 0.008821545542,
+      "up_gauge_kernel": 0.00254065478
+    }
+  ],
+  "cycle_gap_theorem": {
+    "PCHIP_cycle_average_gap_operator": 6.7246799e-05,
+    "PCHIP_cycle_average_quadratic_coefficient": 116.327318147053,
+    "all_instantaneous_zero_mass_gap_operators_below_one": true,
+    "cycle_Yukawa_vertex_nonzero": true,
+    "cycle_composite_background": 0.0,
+    "cycle_fermion_mass_eigenvalues": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "gap_equation": "1=G_LR(t)*chi(m(t);t)",
+    "instantaneous_gap_operator_envelope": [
+      6.6752968e-05,
+      7.0358595e-05
+    ],
+    "instantaneous_quadratic_coefficient_envelope": [
+      111.8210420609,
+      117.894759692273
+    ],
+    "nonzero_gap_solution_exists": false,
+    "reason": "G_LR(t)*chi(0;t)<1_for_every_t_and_chi(m;t)_strictly_decreases_with_m_squared;_the_positive_composite_kinetic_term_cannot_create_a_negative_cycle_mode",
+    "separate_Yukawa_or_gauge_normalization_used": false,
+    "susceptibility_monotonicity": "d_chi/d_(m^2)<0"
+  },
+  "scientific_result": "THE_SAME_ONE-CYCLE_GAUGE-EC-YUKAWA_PUSHFORWARD_HAS_A_NONZERO_CANONICAL_YUKAWA_VERTEX_BUT_ITS_LR_GAP_OPERATOR_IS_BELOW_7.04e-5_AT_EVERY_CONTROLLED_SLICE;_MONOTONE_SUSCEPTIBILITY_EXCLUDES_A_NONZERO_COMPOSITE_BACKGROUND_AND_FERMION_MASS",
+  "validation": {
+    "USB_untouched": true,
+    "Yukawa_still_nonzero": true,
+    "cycle_strictly_subcritical": true,
+    "gauge_kernel_positive": true,
+    "no_nonzero_gap_solution": true,
+    "no_split_normalization": true,
+    "quadratic_form_positive_through_cycle": true,
+    "regular_EC_positive": true,
+    "same_cycle_samples_used": true
+  },
+  "validation_passed": true,
+  "version": "v15.88"
+}

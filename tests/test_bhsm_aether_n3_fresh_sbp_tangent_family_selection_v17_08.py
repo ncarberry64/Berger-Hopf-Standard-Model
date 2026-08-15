@@ -1,0 +1,2 @@
+from bhsm.interface.aether_n3_fresh_sbp_tangent_family_selection_v17_08 import completion_payload
+def test_tangent_family_selection_validates():assert completion_payload()["validation_passed"]

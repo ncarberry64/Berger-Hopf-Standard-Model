@@ -1,0 +1,116 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_aether_parent_child_relative_rotor_v15_36",
+  "claim_boundary": {
+    "FULL_BHSM_COMPLETE": false,
+    "complete_constraint_solved_child_derived": false,
+    "local_Hopf_shift_constraint_solved": false,
+    "single_rotor_physical_child_claim_retracted": true,
+    "zero_total_charge_reduced_child_derived": true
+  },
+  "classification": "COMPACT_CONSTRAINT_CORRECTED_RELATIVE_ROTOR",
+  "compact_Killing_momentum_constraint": {
+    "admissible_nonzero_sector": "parent-child_relative_rotation_with_J_child+J_parent=0",
+    "boundary_term": 0.0,
+    "compact_result": "integral_S7_K^i*P_i_matter=0",
+    "event_degree_can_replace_countercharge": false,
+    "integrated_left_side": "integral_K^i*D_j*pi^j_i=-integral_pi^ji*D_jK_i=0",
+    "local_constraint_requirement": "solve_the_Hopf_coexact_shift_or_gravitational_countercurrent_profile_not_only_the_integrated_charge",
+    "momentum_constraint": "-2*D_j*pi^j_i=P_i_matter",
+    "single_nonzero_Hopf_rotor_admissible": false,
+    "test_field": "any_spatial_Killing_field_K^i"
+  },
+  "compact_constraint_corrected_Routhian": {
+    "child_branch": {
+      "I_child": 0.599383874,
+      "I_parent": 27040.058162772,
+      "I_relative_parallel_sum": 0.599370588,
+      "J_child": 0.5,
+      "J_parent": -0.5,
+      "J_total": 0.0,
+      "child_rotor_energy": 0.208547486,
+      "ell": -4.787520049,
+      "enclosure_collective_mass": 0.000670561,
+      "energy_sum_residual": 0.0,
+      "parent_counterrotor_energy": 4.623e-06,
+      "relative_rotor_energy": 0.208552109,
+      "relative_routhian": 0.51193309,
+      "skin_energy": 0.303380982,
+      "wall_chi": 0.008332905
+    },
+    "child_scale_x": -4.787520049,
+    "child_scale_x_negative": true,
+    "finite_minimum_survives_compact_charge_constraint": true,
+    "omega_enclosure_squared": 4623.772024693,
+    "reason": "the_parent_counterrotor_adds_a_finite_positive_term_while_the_child_rotor_energy_still_diverges_when_I_child_goes_to_zero",
+    "relative_child_curvature": 3.100520621,
+    "relative_child_curvature_positive": true,
+    "stationarity_residual": 6.553e-06
+  },
+  "completion_ledger": {
+    "ACTIVE_DEPENDENCY": "NONROUND_OFF_SEAM_HOPF_SHIFT_MOMENTUM_CONSTRAINT_WITH_PARENT_CHILD_COUNTERCURRENT_AND_COMPLETE_MIXED_HESSIAN",
+    "CLOSED_THIS_RUN": [
+      "integrated_compact_momentum_constraint",
+      "zero-total-charge_relative_Routhian_correction"
+    ],
+    "INVALIDATED": [
+      "a_lone_nonzero_Hopf_rotor_on_closed_S7_as_a_constraint_solved_child"
+    ],
+    "RECLASSIFIED": [
+      "the_FR_half-odd_sector_as_relative_parent-child_momentum_rather_than_nonzero_total_compact_momentum"
+    ],
+    "VALIDATED": [
+      "compact_zero_total_Killing_momentum_theorem",
+      "parent-child_parallel-sum_relative_inertia",
+      "finite_stable_relative_Routhian_child_minimum"
+    ]
+  },
+  "local_momentum_constraint": {
+    "integrated_Killing_constraint_satisfied_by_relative_sector": true,
+    "pointwise_shift_equation_solved": false,
+    "radial_shift_alone_sufficient": false,
+    "required_metric_companion": "beta_H(chi)_times_the_relevant_Hopf_Killing_or_coexact_one_form",
+    "required_next_calculation": "NONROUND_OFF_SEAM_HOPF_SHIFT_MOMENTUM_CONSTRAINT_WITH_PARENT_CHILD_COUNTERCURRENT_AND_COMPLETE_MIXED_HESSIAN",
+    "shift_Schur_sign": "subtractive_on_a_positive_gauge-reduced_shift_block_and_must_be_included_in_the_full_child_Hessian",
+    "source": "P_H(chi)=coefficient*inner(D_t_eta,D_H_eta)_with_equal_and_opposite_integrated_parent-child_charge"
+  },
+  "no_retuning_certificate": {
+    "USB_REMOVABLE_MEDIA_TOUCHED_DURING_SCIENCE": false,
+    "empirical_inputs": [],
+    "frozen_predictions_changed": false,
+    "net_compact_charge_inserted": false,
+    "new_continuous_coefficients": [],
+    "new_fields": []
+  },
+  "relative_rotor_seam_control": {
+    "I_child": 19593.85820271,
+    "I_parent": 27040.058162772,
+    "I_relative_parallel_sum": 11361.238916373,
+    "J_child": 0.5,
+    "J_parent": -0.5,
+    "J_total": 0.0,
+    "child_rotor_energy": 6.38e-06,
+    "ell": 0.0,
+    "enclosure_collective_mass": 1113.287395072,
+    "energy_sum_residual": 0.0,
+    "parent_counterrotor_energy": 4.623e-06,
+    "relative_rotor_energy": 1.1002e-05,
+    "relative_routhian": 2141.656505437,
+    "skin_energy": 2141.656494434,
+    "wall_chi": 0.785398163
+  },
+  "validation": {
+    "USB_untouched": true,
+    "frozen_predictions_unchanged": true,
+    "local_shift_not_overclaimed": true,
+    "parallel_sum_energy_identity": true,
+    "parent_counterterm_finite_at_seam": true,
+    "relative_child_curvature_positive": true,
+    "relative_child_x_negative": true,
+    "relative_finite_child_survives": true,
+    "relative_total_charge_zero": true,
+    "single_rotor_constraint_error_corrected": true
+  },
+  "validation_passed": true,
+  "version": "v15.36"
+}

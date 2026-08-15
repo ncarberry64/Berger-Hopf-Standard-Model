@@ -1,0 +1,2 @@
+from bhsm.interface.aether_n3_fresh_sbp_joint_multirefresh_v16_64 import ITERATIONS
+def test_joint_multirefresh_is_bounded():assert ITERATIONS==2

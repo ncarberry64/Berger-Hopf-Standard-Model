@@ -1,5 +1,184 @@
 # Gate Ledger
 
+## v17.84-v18.73 N=3 complete-child, constrained-root and continuation gates
+
+- v17.32 parallel Jacobian equivalence: `VALIDATED_AND_ADOPTED`; no further
+  performance optimization is active.
+- Whole-system/fourth-body interpretation:
+  `DERIVED_COMPLETE_RECONSTRUCTED_CHILD_NOT_EXTRA_COORDINATE`.
+- Event-to-child physical row map:
+  `3_TRACE_PLUS_7_DIRAC_PLUS_2_MOMENTUM_PLUS_2_DYNAMIC_FLUX`.
+- Extra global KKT row: `NONE`; the global system remains 376 by 376.
+- Physical nonlinear solve: `SQUARE_376_VARIABLE_KKT_WITH_EXPLICIT_EVENT_MULTIPLIER`.
+- Componentwise monotonicity: `NOT_REQUIRED_FOR_INTERMEDIATE_STEPS`.
+- Previous-iterate path retention: `NOT_A_PHYSICAL_CONSTRAINT`.
+- Trust regions, damping, line searches and Krylov tolerances:
+  `NUMERICAL_RELIABILITY_CONTROLS_NOT_BHSM_EQUATIONS`.
+- Zero-background gauge/spinor/ghost/HS Calderon block: `CLOSED_V17_97`.
+- Firewall core ownership: `DISCRETE_ROWS_CLOSED_V17_98`; the unknown
+  microscopic generator is not fabricated as a classical child row.
+- Positive-duration persistence: `VALIDATED_V17_99_V18_00_V18_02_V18_04_V18_06_V18_09_V18_12_V18_25_V18_29_V18_33_V18_37_V18_41_V18_47_V18_54_V18_58`.
+- Staticity requirement: `REJECTED`; nonzero motion, momentum and time
+  dependence are allowed and retained when relative evolution is
+  constraint-consistent and persistent.
+- Latest accepted N=3 residual: `0.807144219141348`.
+- Latest accepted event magnitude: `0.083752222964491`.
+- Latest accepted global eta minimum: `0.774053610471969`.
+- Latest child trace/constraint/momentum/flux maxima:
+  `1.0E-15/2.9E-13/1.90E-11/5.64E-6`.
+- v18.70 direct-response plateau:
+  `VALIDATED_1E-6_TO_3E-7_COMMON_PAIR`.
+- v18.71 solver interpretation:
+  `INVALIDATED_GMRES_INFO_1_DIRECTION_MISMATCH_0.543344`.
+- v18.71 independent exact-merit state:
+  `VALIDATED_NORM_0.807144219141348_REDUCTION_0.004103837289358`.
+- v18.72-v18.73 fresh child and physical promotion:
+  `VALIDATED_RANK_14_ETA_TWO_SCALE_FLUX_PERSISTENCE_NONZERO_RELATIVE_EVOLUTION`.
+- v18.69 neighboring-step child Jacobian rank/nullity:
+  `VALIDATED_RANK_14_NULLITY_12_AT_1E-4_2E-4_4E-4`.
+- v18.69 child-fiber ownership:
+  `6_GENUINE_PHYSICAL_CAUCHY_PLUS_6_UNRESOLVED_CAUCHY_MULTIPLIER_MIXTURES`.
+- Remaining child fiber as pure gauge/chart redundancy:
+  `INVALIDATED_NOT_SUPPORTED_BY_RETAINED_GENERATORS_OR_OBSERVABLE_RESPONSE`.
+- Child-fiber selector:
+  `OPEN_ACTION_DERIVED_CHILD_FIBER_SELECTION_OR_UNIQUE_ACTUALIZATION_OWNER_NO_SELECTOR_INSERTED`.
+- v18.11-v18.12 square-KKT proposal and complete-child promotion:
+  `VALIDATED_INDEPENDENT_TOTAL_MERIT_DESCENT_WITHOUT_COMPONENTWISE_OR_PREVIOUS_PATH_FILTER`.
+- v18.14 measured action radius powers:
+  `SPATIAL_GRAVITY_5/INTRINSIC_CURVATURE_5/COSMOLOGICAL_7/ADM_KINETIC_7/BOUNDARY_CASIMIR_MINUS_1`.
+- Mixed eta/Hopf-inertia local radius exponents over the tested family:
+  `1.8083/-2.1733`; measured mixed-term fits, not assumed exact monomials.
+- Genuine physical response anisotropy: `VALIDATED_SCALE_V_W_PERIOD`.
+- Intrinsic `1E-6` action-normalized stiffness hypothesis:
+  `INVALIDATED_MAX_DIMENSIONLESS_CURVATURE_94.0122_CHARACTERISTIC_STEP_0.103135`.
+- Raw-coordinate near-stall:
+  `RECLASSIFIED_PREDOMINANTLY_COORDINATE_CONDITIONING_AND_SOFT_MODE_DEGENERACY`.
+- v18.15 action-curvature coordinate map:
+  `VALIDATED_INVERTIBLE_RIGHT_COORDINATE_MAP_SAME_376_RESIDUAL_ROOT_ETA_EVENT_AND_COMPLETE_CHILD_GATE`.
+- v18.16-v18.17 inherited response direction and reverse orientation:
+  `RECLASSIFIED_NO_EXACT_MERIT_DESCENT_NO_PROMOTION`.
+- v18.18 exact global action Hessian:
+  `VALIDATED_MAXIMUM_AUDITED_DIRECTIONAL_RELATIVE_RESIDUAL_1.81E-7`.
+- v18.19 and v18.21 coordinatewise event Hessians:
+  `INVALIDATED_NOT_USED_FOR_PHYSICAL_STEP`.
+- v18.20-v18.22 directional event response and merit direction:
+  `VALIDATED_NO_FULL_EVENT_HESSIAN_CLAIM`.
+- v18.24 complete-child chart:
+  `VALIDATED_RANK_14_FROM_ALL_26_CHILD_VARIABLES`.
+- v18.25 global promotion:
+  `VALIDATED_TRUE_376_MERIT_ETA_TWO_SCALE_FLUX_AND_POSITIVE_DURATION_PERSISTENCE`.
+- v18.26 continuation at the inherited coarse trial floor:
+  `INVALIDATED_NO_FORWARD_DESCENT_AT_OR_ABOVE_1E-8_DESPITE_VALIDATED_DIRECTIONAL_RESPONSE`.
+- v18.27 exact fine merit bracket:
+  `VALIDATED_3E-9_SCALED_STEP_REDUCES_THE_UNCHANGED_376_ROW_NORM`.
+- v18.28 recomputed complete-child chart:
+  `VALIDATED_RANK_14_FROM_ALL_26_CHILD_VARIABLES`.
+- v18.29 global promotion:
+  `VALIDATED_TRUE_376_MERIT_ETA_TWO_SCALE_FLUX_AND_POSITIVE_DURATION_PERSISTENCE`.
+- v18.30 right-mapped matrix-free GMRES:
+  `RECLASSIFIED_DIRECTIONAL_RESPONSE_VALID_NEWTON_EQUATION_NOT_SOLVED`.
+- v18.31 congruent action-map MINRES:
+  `INVALIDATED_DIRECTION_FAILS_EXACT_NONLINEAR_RESPONSE_CHECK`.
+- v18.32 complete-child chart for the independent v18.31 proposal:
+  `VALIDATED_RANK_14_WITH_INVALIDATED_SOLVER_MODEL_NOT_REASSERTED`.
+- v18.33 physical promotion:
+  `VALIDATED_BY_RECOMPUTED_EXACT_376_MERIT_ETA_CHILD_FLUX_AND_PERSISTENCE_ONLY`.
+- v18.34 direct nested-residual response scale:
+  `VALIDATED_COMMON_3E-6_TO_1E-6_DIRECTIONAL_PLATEAU`.
+- v18.35 direct-residual JFNK direction:
+  `INVALIDATED_RESULTING_DIRECTION_LEAVES_MEASURED_RESPONSE_PLATEAU`.
+- v18.36 child reconstruction:
+  `VALIDATED_RANK_14_WITH_INVALIDATED_JFNK_MODEL_NOT_REASSERTED`.
+- v18.37 physical promotion:
+  `VALIDATED_EXACT_NORM_REDUCTION_0.00302809525_ETA_FLUX_AND_PERSISTENCE`.
+- v18.38 remeasured direct nested-residual response scale:
+  `VALIDATED_COMMON_3E-6_TO_1E-6_DIRECTIONAL_PLATEAU`.
+- v18.39 second direct-residual JFNK direction:
+  `INVALIDATED_RESULTING_DIRECTION_LEAVES_MEASURED_RESPONSE_PLATEAU`.
+- v18.40 child reconstruction:
+  `VALIDATED_RANK_14_WITH_INVALIDATED_JFNK_MODEL_NOT_REASSERTED`.
+- v18.41 physical promotion:
+  `VALIDATED_EXACT_NORM_REDUCTION_0.00168862805_ETA_FLUX_AND_PERSISTENCE`.
+- v18.42 remeasured direct nested-residual response scale:
+  `VALIDATED_COMMON_3E-6_TO_1E-6_DIRECTIONAL_PLATEAU`.
+- v18.43 third direct-residual JFNK direction:
+  `INVALIDATED_RESULTING_DIRECTION_LEAVES_MEASURED_RESPONSE_PLATEAU`.
+- v18.44 most aggressive line-child reconstruction:
+  `VALIDATED_LOCAL_RANK_14_CHILD_INVALIDATED_SOLVER_MODEL_NOT_REASSERTED`.
+- v18.45 most aggressive physical promotion:
+  `INVALIDATED_TWO_SCALE_FLUX_ENVELOPE_2.27582E-5_EXCEEDS_EXISTING_2E-5_GATE`.
+- v18.46 next exact-merit line-child reconstruction:
+  `VALIDATED_RANK_14_AFTER_UNCHANGED_GATE_REJECTS_MORE_AGGRESSIVE_STATE`.
+- v18.47 physical promotion:
+  `VALIDATED_EXACT_NORM_REDUCTION_0.00497706683_ETA_FLUX_AND_PERSISTENCE`.
+- v18.48 v18.43 physical-sector compression diagnostic:
+  `VALIDATED_LAPSE_FIRST_DEPARTURE_ETA_SHIFT_LARGEST_NORMALIZED_DEPARTURE_W_LARGEST_ABSOLUTE_DEFECT_U_ETA_SHIFT_LAPSE_INTERACTIONS_ABSOLUTELY_SUBDOMINANT`.
+- v18.49 accepted-frontier direct-response scale:
+  `VALIDATED_COMMON_3E-6_TO_1E-6_DIRECTIONAL_PLATEAU`.
+- v18.50 bidirectional merit-manifold probe:
+  `VALIDATED_EXACT_NONLINEAR_LINE_SCAN_WITH_INVALIDATED_SOLVER_INTERPRETATION`.
+- v18.51 lowest-merit bidirectional child:
+  `VALIDATED_LOCAL_RANK_14_CHILD_INVALIDATED_SOLVER_INTERPRETATION_NOT_REASSERTED`.
+- v18.52 lowest-merit physical promotion:
+  `INVALIDATED_TWO_SCALE_FLUX_ENVELOPE_2.09204E-5_EXCEEDS_EXISTING_2E-5_GATE`.
+- v18.53 next bidirectional exact-merit child:
+  `VALIDATED_RANK_14_AFTER_UNCHANGED_GATE_REJECTS_LOWER_MERIT_STATE`.
+- v18.54 physical promotion:
+  `VALIDATED_EXACT_NORM_REDUCTION_0.00134272343_ETA_FLUX_AND_PERSISTENCE`.
+- v18.55 accepted-frontier direct-response scale:
+  `VALIDATED_COMMON_3E-6_TO_1E-6_DIRECTIONAL_PLATEAU`.
+- v18.56 second bidirectional merit-manifold probe:
+  `VALIDATED_EXACT_NONLINEAR_LINE_SCAN_WITH_INVALIDATED_SOLVER_INTERPRETATION`.
+- v18.57 selected bidirectional child:
+  `VALIDATED_FRESH_RANK_14_CHILD_INVALIDATED_SOLVER_INTERPRETATION_NOT_REASSERTED`.
+- v18.58 physical promotion:
+  `VALIDATED_EXACT_NORM_REDUCTION_0.00201664283_ETA_FLUX_AND_PERSISTENCE`.
+- v18.59 constrained-root hindsight:
+  `VALIDATED_UNCHANGED_F376_ON_EXISTING_ADMISSIBLE_SET_NO_EQUATION_377_RANK_14_NULLITY_12`.
+- v18.59 scalar residual ordering as physical admissibility:
+  `INVALIDATED_BY_TWO_LOWER_RESIDUAL_FLUX_GATE_REJECTIONS`.
+- v18.59 accepted-corridor boundary collapse:
+  `NONE_ESTABLISHED_FLUX_ETA_RANK_PERSISTENCE_ROOT_IN_ADMISSIBLE_SET_REMAINS_OPEN`.
+- v18.60 accepted secant geometry:
+  `VALIDATED_CURVED_NONCOLLINEAR_ACTION_OWNED_SECANTS_MEAN_SCALE_W_V_FRACTION_0.985975`.
+- v18.60 rejected-direction systematic u/eta-shift/lapse compression:
+  `INVALIDATED_TWO_DIRECTION_SAMPLE_SPLIT`.
+- v18.60 causal scale/w/v coupling or manifold theorem:
+  `INSUFFICIENT_RESOLUTION_NOT_PROMOTED`.
+- v18.61 accepted-frontier direct-response scale:
+  `VALIDATED_COMMON_1E-6_TO_3E-7_DIRECTIONAL_PLATEAU_WITH_UNCHANGED_CRITERIA`.
+- v18.62 third bidirectional merit probe:
+  `VALIDATED_EXACT_NONLINEAR_LINE_SCAN_WITH_INVALIDATED_SOLVER_INTERPRETATION`.
+- v18.63 third bidirectional child:
+  `VALIDATED_FRESH_RANK_14_CHILD_INVALIDATED_SOLVER_INTERPRETATION_NOT_REASSERTED`.
+- v18.64 physical promotion:
+  `VALIDATED_EXACT_NORM_REDUCTION_0.00442327465_ETA_FLUX_AND_PERSISTENCE`.
+- v18.65 accepted-frontier direct-response scale:
+  `VALIDATED_COMMON_3E-7_TO_1E-7_DIRECTIONAL_PLATEAU_WITH_UNCHANGED_CRITERIA`.
+- v18.66 fourth bidirectional merit probe:
+  `VALIDATED_EXACT_NONLINEAR_LINE_SCAN_WITH_INVALIDATED_SOLVER_INTERPRETATION`.
+- v18.67 fourth bidirectional child:
+  `VALIDATED_FRESH_RANK_14_CHILD_INVALIDATED_SOLVER_INTERPRETATION_NOT_REASSERTED`.
+- v18.68 physical promotion:
+  `VALIDATED_EXACT_NORM_REDUCTION_0.000254622031_ETA_FLUX_AND_PERSISTENCE`.
+- Residual left scaling or new acceptance restriction: `NONE`.
+- Event definition as current blocker: `FALSE_COMPLETE_CHILD_MAP_CLOSED`.
+- Simultaneous N=3 saddle closure: `OPEN_RESIDUAL_NONZERO`.
+- v18.05 fixed-rho chain-rule Jacobian claim:
+  `INVALIDATED_DIFFERENT_COVECTOR_AND_INCOMPLETE_PROJECTED_RESPONSE`.
+- v18.07-v18.08 coordinate-column projected Jacobian claims:
+  `INVALIDATED_BY_DIRECTIONAL_MISMATCH`.
+- Trials from invalidated proposal models:
+  `PROMOTABLE_ONLY_BY_INDEPENDENT_TRUE_MERIT_ETA_AND_COMPLETE_CHILD_GATES`.
+- N=4+ independent convergence: `OPEN_AFTER_N3_CLOSURE`.
+- Microscopic pregeometric generator and one-loop source/saddle chain: `OPEN`.
+- Broken return, physical mass/flavor/absolute spectrum and Unique
+  Actualization: `OPEN`.
+- Full BHSM completion: `FALSE`.
+- GitHub and USB synchronization: `AUTHORIZED_V18_58_REPRODUCIBILITY_SNAPSHOT_WITH_FULL_COMPLETION_FALSE`.
+- Exact next object:
+  `CONTINUE_PHYSICALLY_ADMISSIBLE_EXACT_376_ROW_DESCENT_FROM_THE_LATEST_ACCEPTED_FRONTIER_TO_F376_ZERO`.
+
 ## v15.10 Aether-cycle sigma-coefficient reconstruction gate
 
 The retained local eta-sigma energy gives an exact minimal response inverse:
@@ -901,3 +1080,196 @@ Exact next object:
 - Full BHSM completion: `FALSE`.
 - Exact next object: `ACTION_DERIVED_NONLINEAR_NORMAN_CYCLE_BOUNDARY_VALUE_PROBLEM_WITH_FORMATION_CONTINUATION_RELATIVE_PERIODIC_PERSISTENCE_DE_ENVELOPMENT_RECEIVING_DOMAIN_COMPLETE_NOETHER_LEDGER_AND_PHYSICAL_TANGENT_MONODROMY`.
 <!-- /BHSM_V15_6_NORMAN_CYCLE_MASTER_CLOSURE -->
+<!-- BHSM_V16_21_TO_V16_30_GATES -->
+## v16.21-v16.30 current gates
+
+- N=3 endpoint/period action ownership: `VALIDATED`.
+- v16.20 numerical-range classification: `RECLASSIFIED_AS_CASE_1_ILL_CONDITIONING`.
+- Norman-work import as missing equation/normalization: `INVALIDATED`.
+- Rank-aware descent of unchanged N=3 KKT: `VALIDATED_THROUGH_V16_32`.
+- Latest complete residual: `8.756109455622`.
+- Latest soft-event residual: `0.049515802141`.
+- Simultaneous N=3 saddle closure: `ACTIVE`.
+- Common gauge/rank-16 event pushforward: `OPEN_AFTER_N3_CLOSURE`.
+- Independent N=4+ full-Sobolev orbit convergence: `OPEN`.
+- Fermion-backreacted broken branch and one-cycle return: `OPEN`.
+- Physical mass/flavor/absolute-spectrum reconstruction: `OPEN`.
+- Full BHSM completion: `FALSE`.
+<!-- /BHSM_V16_21_TO_V16_30_GATES -->
+<!-- BHSM_V16_33_TO_V16_45_GATES -->
+## v16.33-v16.46 physical inverse and numerical gates
+
+- Two-tier structural/numerical particle-data firewall: `VALIDATED_V16_36`.
+- Electron-first returned-child requirements: `VALIDATED_AS_REQUIREMENTS`.
+- Independent gauge versus Yukawa normalization: `INVALIDATED`; one common
+  M5 -> M4 pushforward is required.
+- Final family-central charged mass operator: `INVALIDATED_BY_STRUCTURE`.
+- Exact fresh-Hessian hard/filtered solver comparison: `VALIDATED_V16_42`.
+- Sub-`1e-12` damping provenance: `CORRECTED_AND_VALIDATED_V16_43_V16_44`.
+- Targeted continuation around the v16.44 winner: `VALIDATED_V16_46`.
+- Latest complete projected KKT residual: `6.452526898856`.
+- Latest scaled soft-event residual: `0.018374397122`.
+- Latest eta minimum: `1.257955928423`.
+- Remaining defect owner: `RECLASSIFIED_V16_45_AS_EXISTING_PARENT_GEOMETRY_STATIONARITY_DOMINATED_BY_V0_W0_LOG_SCALE`.
+- Simultaneous N=3 saddle closure: `ACTIVE`.
+- Common gauge/rank-16 LR event pushforward: `OPEN_AFTER_N3_CLOSURE`.
+- Independent N=4+ Sobolev convergence: `OPEN`.
+- Broken child and persistent returned electron order parameter: `OPEN`.
+- Families, flavor, neutrino propagation and absolute spectrum: `OPEN`.
+- Held-out numerical kill screen and Unique Actualization: `INELIGIBLE_UNTIL_STRUCTURAL_CLOSURE`.
+- Full BHSM completion: `FALSE`.
+<!-- /BHSM_V16_33_TO_V16_45_GATES -->
+<!-- BHSM_V16_47_TO_V16_62_GATES -->
+## v16.47-v16.69 curvature, SBP and fresh-orbit gates
+
+- Old scalar event-curvature stencil: `INVALIDATED_OUTSIDE_LOCAL_SOFT_CHART`.
+- Normalized event-covector curvature: `VALIDATED_V16_53_V16_55`.
+- Latest old-grid normalized soft eigenvector: `VALIDATED_V16_56`.
+- Old derivative/trapezoid SBP identity: `INVALIDATED_DEFECT_1.322875655532`.
+- Minimal trapezoid-SBP endpoint closure: `VALIDATED_EXACT_ZERO_DEFECT`.
+- Old v16.55 state transplant into SBP orbit: `INVALIDATED_NOT_USED`.
+- Fresh canonical-reset SBP action covector: `VALIDATED_RELATIVE_ERROR_1.5226E-6`.
+- Fresh SBP complete residual: `32.483095487141`.
+- Fresh SBP actual event residual: `0.351154201685`.
+- Fresh SBP eta minimum: `0.074945802608`.
+- Strict complete-residual plus actual-event filter: `VALIDATED_V16_62`.
+- Total-merit ray at v16.63: `RECLASSIFIED_NO_STRICT_COMMON_STEP_V16_64`.
+- Gradient-derived common total/event descent cone: `VALIDATED_V16_65_THROUGH_V16_68`.
+- Latest dominant residual owner: `RECLASSIFIED_V16_69_AS_EXISTING_COMMON_LOG_SCALE_AND_PERIOD_STATIONARITY`.
+- Simultaneous N=3 SBP saddle closure: `ACTIVE`.
+- Common gauge/rank-16 LR pushforward: `OPEN_AFTER_SIMULTANEOUS_CLOSURE`.
+- N=4+ independent Sobolev convergence and downstream chain: `OPEN`.
+- Full BHSM completion: `FALSE`.
+<!-- /BHSM_V16_47_TO_V16_62_GATES -->
+<!-- BHSM_V16_70_TO_V16_79_GATES -->
+## v16.70-v16.79 conditioned descent and ownership gates
+
+- Damped Gauss--Newton common event cone: `VALIDATED_V16_70_V16_71`.
+- Coarse line grid at v16.71: `RECLASSIFIED_V16_72_AS_RESOLUTION_DEFECT`.
+- Refined small-radius cone: `VALIDATED_V16_73_V16_74`.
+- Gauss--Newton normal-metric half-space projection: `VALIDATED_V16_76`.
+- Fresh metric-projected continuation: `VALIDATED_V16_77_V16_79`.
+- Latest complete N=3 residual: `12.853643589435`.
+- Latest actual event residual: `-0.300983851426`.
+- Latest eta minimum: `0.822309989842`.
+- Canonical reset scale as free KKT unknown: `FALSE_ALREADY_SUBSTITUTED`.
+- Free open-orbit scale unknowns/stationarity rows: `23/23`.
+- v16.75 scale obstruction as proven over-independence: `FALSE_V16_78`.
+- Event/environment-conditioned return scale map: `OPEN_BROKEN_RETURN_BVP`.
+- Empirical or unrestricted child branch selection: `FORBIDDEN`.
+- Transported topological/gauge/bundle superselection restrictions: `PRESERVED`.
+- Simultaneous N=3 SBP saddle closure: `ACTIVE`.
+- Common pushforward and N=4+ convergence: `OPEN_AFTER_CLOSURE`.
+- Broken return, mass/flavor/spectrum and Unique Actualization: `OPEN`.
+- Full BHSM completion: `FALSE`.
+<!-- /BHSM_V16_70_TO_V16_79_GATES -->
+<!-- BHSM_V16_80_TO_V16_92_GATES -->
+## v16.80-v16.92 expanded trust and Pareto gates
+
+- Expanded physical nonlinear ray: `VALIDATED_V16_83_V16_84`.
+- Dense local joint boundary: `VALIDATED_V16_85_V16_86`.
+- Event-row weighting as equation/normalization change: `FALSE`.
+- Event-row weighting as direction preconditioner: `VALIDATED_V16_87`.
+- Minimum-total selection neglecting event progress: `RECLASSIFIED_V16_88`.
+- Pareto minimum-fractional-progress promotion: `VALIDATED_V16_89_V16_91`.
+- Latest complete residual: `2.486624819288`.
+- Latest actual event residual: `-0.211419776681`.
+- Latest eta minimum: `0.840494687332`.
+- Terminal soft eigenpair: `RESOLVED_AND_ISOLATED_V16_92`.
+- Scale norm: `0.465980389110_DOWN_FROM_14.016355587104`.
+- Current residual owners: `PERIOD_W0_V0`.
+- Diagonal owner-equilibrated metric: `TESTED_V16_93_IDENTITY_WINS_NOT_PROMOTED`.
+- Latest residual/event: `2.437270312411/-0.208275968279`.
+- Simultaneous N=3 closure: `ACTIVE`.
+- Common pushforward, N=4+ and downstream completion chain: `OPEN`.
+- Full BHSM completion: `FALSE`.
+<!-- /BHSM_V16_80_TO_V16_92_GATES -->
+<!-- BHSM_V16_93_TO_V17_00_GATES -->
+## v16.93-v17.00 coupled-owner and scale-ownership gates
+
+- Coupled complete/period/w0/v0/identical-event descent cone:
+  `VALIDATED_V16_94_V16_95_V16_96_V16_98_V17_00`.
+- Latest complete residual/event magnitude: `1.474584035022/0.129386144537`.
+- Latest eta minimum: `0.779446598841`.
+- Latest log-scale norm: `0.191104025726_DOWN_FROM_14.016355587104`.
+- Open-orbit log-scale unknowns/stationarity rows retained: `23/23`.
+- 14.016 obstruction as over-independence defect:
+  `NUMERICALLY_FALSIFIED_WITH_UNCHANGED_SQUARE_SYSTEM`.
+- Valid event/environment return-scale relation:
+  `OPEN_UNTIL_BROKEN_RECONSTRUCTION_BVP`.
+- Current anchored KKT count: `376_UNKNOWNS_376_EQUATIONS`.
+- Simultaneous N=3 closure: `ACTIVE_V0_CURRENT_MAXIMIN_BOTTLENECK`.
+- Common M5 -> M4 pushforward, N=4+, broken return and spectrum: `OPEN`.
+- Full BHSM completion: `FALSE`.
+<!-- /BHSM_V16_93_TO_V17_00_GATES -->
+<!-- BHSM_V17_01_TO_V17_05_GATES -->
+## v17.01-v17.05 measured-response gates
+
+- Uncalibrated analytic fractional-maximin direction:
+  `RECLASSIFIED_V17_01_V0_SIGN_MISMATCH_NOT_PROMOTED`.
+- Centered actual-residual response in physical-normal owner subspace:
+  `VALIDATED_V17_02_V17_03`.
+- Scale re-entry into active owner set: `MEASURED_V17_04`.
+- Six-owner complete/period/w0/v0/scale/event descent: `VALIDATED_V17_05`.
+- Latest complete residual/event: `1.428689906334/0.122933895890`.
+- Latest period/w0/v0/scale: `0.703793411493/0.973745697552/0.620368346240/0.432309885844`.
+- Latest eta minimum: `0.778050948322`.
+- Scale-row deletion or empirical normalization: `NOT_USED`.
+- Simultaneous N=3 closure: `ACTIVE`.
+- Full BHSM completion: `FALSE`.
+<!-- /BHSM_V17_01_TO_V17_05_GATES -->
+<!-- BHSM_V17_06_TO_V17_14_GATES -->
+## v17.06-v17.14 expanded measured-tangent gates
+
+- Single six-owner subspace: `NO_COMMON_DIRECTION_V17_06`.
+- Expanded 18-direction measured span: `COMMON_DIRECTION_CERTIFIED_V17_07`.
+- Maximin certificate: `CONVEX_OWNER_SIMPLEX_DUAL`.
+- Nonlinear tangent-family selection: `VALIDATED_V17_08_V17_10_V17_11_V17_13`.
+- Dense exact-radius promotion: `VALIDATED_FACTOR_0_064_V17_12`.
+- Latest complete residual/event: `1.383417886043/0.118278228365`.
+- Latest period/w0/v0/scale: `0.677117633290/0.940057261626/0.610774014072/0.417559825333`.
+- Latest eta minimum: `0.777122429571`.
+- Terminal soft eigenpair: `RESOLVED_AND_ISOLATED_V17_14`.
+- Same 376 equations and all 23 scale rows: `PRESERVED`.
+- Simultaneous N=3 closure: `ACTIVE`.
+- Full BHSM completion: `FALSE`.
+<!-- /BHSM_V17_06_TO_V17_14_GATES -->
+<!-- BHSM_V17_15_TO_V17_16_GATES -->
+## v17.15-v17.16 accelerated post-dense gates
+
+- Same fresh measured tangent family: `VALIDATED_TWICE`.
+- Latest complete residual/event: `1.329816603643/0.113054939136`.
+- Latest period/w0/v0/scale: `0.644977936704/0.899842579758/0.599765834697/0.400779135003`.
+- Latest eta minimum: `0.775832703564`.
+- Minimum simultaneous owner progress: `0.010824146325`.
+- Simultaneous N=3 closure: `ACTIVE_ACCELERATING_BASIN`.
+- Full BHSM completion: `FALSE`.
+<!-- /BHSM_V17_15_TO_V17_16_GATES -->
+<!-- BHSM_V17_17_TO_V17_18_GATES -->
+## v17.17-v17.18 continued accelerated gates
+
+- Fresh measured tangent-family passes: `VALIDATED_TWICE`.
+- Latest complete residual/event: `1.272877993568/0.107558924761`.
+- Latest period/w0/v0/scale: `0.611901245067/0.857718051797/0.585620731388/0.382990119281`.
+- Latest eta minimum: `0.773679579542`.
+- Minimum simultaneous owner progress: `0.010976073540`.
+- Simultaneous N=3 closure: `ACTIVE`.
+- Full BHSM completion: `FALSE`.
+<!-- /BHSM_V17_17_TO_V17_18_GATES -->
+<!-- BHSM_V17_19_TO_V17_22_GATES -->
+## v17.19-v17.22 owner audit and v0-priority gates
+
+- v17.19 owner ordering: `W0_V0_LOG_SCALE_UNCHANGED`.
+- v17.19 terminal soft eigenpair: `RESOLVED_1E-14_AND_ISOLATED`.
+- v17.20 fresh six-owner family: `VALIDATED`.
+- v17.21 dense fixed-direction radius: `VALIDATED_FACTOR_0_075`.
+- Bounded v0-priority tangent preconditioners: `TESTED_1_TO_4_V17_22`.
+- Physical residual/acceptance weighting changed: `FALSE`.
+- Winning family/priority: `SINGLE_FILTER_1E-06_V0_PRIORITY_3`.
+- Latest complete residual/event: `1.192046120259/0.099693053009`.
+- Latest period/w0/v0/scale: `0.571634002410/0.805293753488/0.546193432306/0.359549472209`.
+- Latest eta minimum: `0.772159229346`.
+- Minimum simultaneous owner progress: `0.044173001142`.
+- Simultaneous N=3 closure: `ACTIVE_MATERIALLY_ADVANCED`.
+- Full BHSM completion: `FALSE`.
+<!-- /BHSM_V17_19_TO_V17_22_GATES -->

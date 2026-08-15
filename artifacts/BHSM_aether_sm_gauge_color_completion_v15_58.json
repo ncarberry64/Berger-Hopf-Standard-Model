@@ -1,0 +1,79 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "DERIVE_THE_NORMALIZED_M5-TO-M4_GAUGE_MODE_PUSHFORWARD,_THE_MASSLESS_NEUTRINO_PROPAGATION_MONODROMY,_AND_THE_ABSOLUTE_GEOMETRIC_SCALE",
+  "artifact": "BHSM_aether_sm_gauge_color_completion_v15_58",
+  "carrier_trace_extension": {
+    "completion_rule": "use_one_positive_carrier_trace_on_the_rank-16_family_and_fix_its_single_overall_coefficient_by_the_action-owned_Sp1_term",
+    "faithful_group": "(SU3_times_Sp1_times_U1Y)/Z6",
+    "historically_derived_from_EH_for_SU3_or_U1": false,
+    "new_continuous_coefficient": false,
+    "one_family_trace_indices": {
+      "I_2": "2",
+      "I_3": "2",
+      "I_Y": "10/3"
+    },
+    "provenance": "BHSM_ACTION_COMPLETION_DERIVED_FROM_EXISTING_RANK16_CARRIER_AND_DIAGONAL_SP1_ATTACHMENT",
+    "trace_ratio": "10/3:2:2",
+    "uniqueness_scope": "unique_among_extensions_using_the_selected_single_carrier_trace_and_no_additional_factor-dependent_invariant_bilinear_coefficients"
+  },
+  "claim_boundary": {
+    "M4_gauge_coupling_ray_derived_by_carrier_trace": true,
+    "RG_flow_to_observed_scale_derived": false,
+    "absolute_M4_gauge_couplings_derived": false,
+    "closed_child_color_singlet_confinement_derived": true,
+    "hadron_mass_spectrum_derived": false,
+    "weak_mixing_angle_on_the_derived_ray": true
+  },
+  "classification": "BHSM_SM_GAUGE_NORMALIZATION_AND_COLOR_SINGLET_COMPLETION",
+  "color_Gauss_singlets": {
+    "Gauss_operator": "G^a=(D_i_E^i)^a-rho^a",
+    "antibaryon_singlet": "Bbar=epsilon^ijk*bar(q)_i*bar(q)_j*bar(q)_k/sqrt(6)",
+    "baryon_decomposition": "3_tensor_3_tensor_3=1_direct_sum_8_direct_sum_8_direct_sum_10",
+    "baryon_singlet": "B=epsilon_ijk*q^i*q^j*q^k/sqrt(6)",
+    "dynamical_area_law_or_Yang-Mills_mass_gap_derived": false,
+    "global_color_open_asymptotic_state_allowed": false,
+    "global_color_singlet_envelopment": true,
+    "global_condition": "the_constant_global_SU3_generators_annihilate_physical_states;_there_is_no_boundary_color_flux_sector_on_closed_S3",
+    "hadron_mass_spectrum_derived": false,
+    "kinematic_confinement_on_the_closed_child": true,
+    "local_quark": "section_in_3_or_bar3_and_not_a_gauge-invariant_state_by_itself",
+    "meson_decomposition": "3_tensor_bar3=1_direct_sum_8",
+    "meson_singlet": "M=bar(q)^i*q_i/sqrt(3)",
+    "physical_state_condition": "G^a(x)|physical>=0",
+    "spatial_manifold": "S3_closed_without_boundary"
+  },
+  "reset_gauge_normalization_ray": {
+    "K_F_five_dimensional": 334.633828238316,
+    "K_F_five_dimensional_status": "ACTION_DERIVED_V15_50_DIMENSIONFUL_DENSITY",
+    "M4_inverse_coupling_ray": "K_Y:K_2:K_3=5/3:1:1",
+    "M4_parameterization": {
+      "K_2": "Z_gauge",
+      "K_3": "Z_gauge",
+      "K_Y": "(5/3)*Z_gauge"
+    },
+    "M5_convention": "L5=-K_F^(5)*F_2^a_F_2^a/4",
+    "RG_evolved_to_external_experimental_scale": false,
+    "Z_gauge": "the_dimensionless_normalized_M5-to-M4_connection-mode_or_boundary-localization_pushforward",
+    "Z_gauge_derived": false,
+    "absolute_M4_couplings_derived": false,
+    "coupling_squared_ratio": "g_Y^2:g_2^2:g_3^2=3/5:1:1",
+    "external_measured_coupling_used": false,
+    "five_dimensional_K_F_identified_directly_with_M4_inverse_g_squared": false,
+    "matching_location": "hybrid_reset_at_R_F=(343/5)^(1/6)_in_kappa1_units",
+    "sin_squared_theta_W_on_this_ray": 0.375
+  },
+  "validation": {
+    "M5_weak_density_inherited": true,
+    "USB_untouched": true,
+    "color_open_asymptotic_state_excluded": true,
+    "color_singlet_constraint_derived": true,
+    "five_dimensional_coefficient_not_misidentified_as_M4_coupling": true,
+    "no_mass_gap_overclaim": true,
+    "no_measured_coupling_inserted": true,
+    "no_new_continuous_coefficient": true,
+    "trace_indices_exact": true,
+    "weak_angle_is_three_eighths": true
+  },
+  "validation_passed": true,
+  "version": "v15.58"
+}

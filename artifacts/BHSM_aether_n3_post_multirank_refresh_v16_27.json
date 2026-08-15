@@ -1,0 +1,51 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "CONTINUE_THE_JOINT_STATIONARITY_EVENT_SOLVE_USING_THE_NEW_RANK_AND_BLOCK_STRUCTURE",
+  "artifact": "BHSM_aether_n3_post_multirank_refresh_v16_27",
+  "classification": "BHSM_N3_POST_MULTIRANK_FRESH_PHYSICAL_KKT",
+  "dependency_advanced": "REFRESHES_AND_BLOCK_DECOMPOSES_THE_COMMON_N3_KKT_AFTER_THE_ROBUST_RANK_80_RESIDUAL_REDUCTION",
+  "post_multirank_refresh": {
+    "event_multiplier_scaled": 0.000222606615,
+    "event_residual": 3.720914139329,
+    "multiplier_stationarity_norm": 0.066774431256,
+    "period_stationarity": 3.245931758257,
+    "q_stationarity_norm": 21.384363476506,
+    "residual_norm": 21.947135009643,
+    "spectral_scale": 475348.3649673365,
+    "symmetric_relative_residual": 0.0,
+    "tolerance_audit": {
+      "relative_1e-08": {
+        "fraction_outside_range": 0.000188236337,
+        "nullity": 280,
+        "rank": 96,
+        "unrestricted_direction_norm": 2.37082360087
+      },
+      "relative_1e-10": {
+        "fraction_outside_range": 2.9102912e-05,
+        "nullity": 261,
+        "rank": 115,
+        "unrestricted_direction_norm": 7.842224173898
+      },
+      "relative_1e-12": {
+        "fraction_outside_range": 8.87223e-06,
+        "nullity": 220,
+        "rank": 156,
+        "unrestricted_direction_norm": 315.097095411516
+      },
+      "relative_1e-14": {
+        "fraction_outside_range": 9.22208e-07,
+        "nullity": 185,
+        "rank": 191,
+        "unrestricted_direction_norm": 6324.912528157657
+      }
+    }
+  },
+  "status": "ACTIVE",
+  "validation": {
+    "accepted_v16_26_residual_reproduced": true,
+    "all_residual_blocks_reported": true,
+    "fresh_physical_jacobian_is_symmetric": true
+  },
+  "validation_passed": true,
+  "version": "v16.27"
+}

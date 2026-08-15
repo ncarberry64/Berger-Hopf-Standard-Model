@@ -1,0 +1,142 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "CONVERGE_THE_NONABELIAN_DE_RHAM_HEAT_TAIL,_COMBINE_IT_WITH_THE_RANK16_U1-HS_RESPONSE,_AND_EVALUATE_THE_COMPLETE_QUANTUM_CONE_HESSIAN_ON_THE_DENSE_REPLACEMENT-SADDLE_INITIAL_GUESS",
+  "artifact": "BHSM_aether_nonabelian_derham_response_v16_04",
+  "claim_boundary": {
+    "angular_heat_tail_converged": false,
+    "background_BRST_quotient_assembled": true,
+    "full_nonabelian_deRham_vertices_assembled": true,
+    "nonabelian_electric_response_seed_evaluated": true,
+    "nonabelian_magnetic_response_seed_evaluated": true,
+    "replacement_quantum_saddle_solved": false
+  },
+  "classification": "BHSM_NONABELIAN_FULL_DERHAM_ELECTRIC_MAGNETIC_RESPONSE",
+  "deRham_identity_witness": [
+    {
+      "curl_gradient_residual": 0.0,
+      "expected_longitudinal_eigenvalue_count": 2,
+      "level": 1,
+      "longitudinal_eigenvalue_count": 2,
+      "scalar_laplacian_residual": 0.0
+    },
+    {
+      "curl_gradient_residual": 0.0,
+      "expected_longitudinal_eigenvalue_count": 3,
+      "level": 2,
+      "longitudinal_eigenvalue_count": 3,
+      "scalar_laplacian_residual": 0.0
+    },
+    {
+      "curl_gradient_residual": 0.0,
+      "expected_longitudinal_eigenvalue_count": 4,
+      "level": 3,
+      "longitudinal_eigenvalue_count": 4,
+      "scalar_laplacian_residual": 0.0
+    },
+    {
+      "curl_gradient_residual": 0.0,
+      "expected_longitudinal_eigenvalue_count": 5,
+      "level": 4,
+      "longitudinal_eigenvalue_count": 5,
+      "scalar_laplacian_residual": 0.0
+    },
+    {
+      "curl_gradient_residual": 0.0,
+      "expected_longitudinal_eigenvalue_count": 6,
+      "level": 5,
+      "longitudinal_eigenvalue_count": 6,
+      "scalar_laplacian_residual": 0.0
+    },
+    {
+      "curl_gradient_residual": 0.0,
+      "expected_longitudinal_eigenvalue_count": 7,
+      "level": 6,
+      "longitudinal_eigenvalue_count": 7,
+      "scalar_laplacian_residual": 0.0
+    }
+  ],
+  "low_level_nonabelian_response": {
+    "SU2_adjoint_delta_KB": -0.170693632107,
+    "SU2_adjoint_delta_KE": -0.004188499607,
+    "SU3_adjoint_delta_KB": -0.25604044816,
+    "SU3_adjoint_delta_KE": -0.00628274941,
+    "U1_adjoint_delta_KB": 0.0,
+    "U1_adjoint_delta_KE": 0.0,
+    "full_oneform_minus_two_complex_ghost_weight": true,
+    "global_gauge_zero_mode_removed": true,
+    "gyromagnetic_F0z_vertex_included": true,
+    "maximum_level": 3,
+    "points": 8,
+    "rows": [
+      {
+        "constant_response": -0.39177728934,
+        "cumulative_constant_response": -0.39177728934,
+        "cumulative_first_frequency_response": -0.025504470227,
+        "first_frequency_response": -0.025504470227,
+        "level": 0
+      },
+      {
+        "constant_response": -0.00682462246,
+        "cumulative_constant_response": -0.3986019118,
+        "cumulative_first_frequency_response": -1.797798857056,
+        "first_frequency_response": -1.772294386829,
+        "level": 1
+      },
+      {
+        "constant_response": 0.071871948093,
+        "cumulative_constant_response": -0.326729963707,
+        "cumulative_first_frequency_response": -1.83359791099,
+        "first_frequency_response": -0.035799053934,
+        "level": 2
+      },
+      {
+        "constant_response": -0.000802356558,
+        "cumulative_constant_response": -0.327532320265,
+        "cumulative_first_frequency_response": -1.83384289656,
+        "first_frequency_response": -0.00024498557,
+        "level": 3
+      }
+    ],
+    "unit_adjoint_delta_KB": -0.085346816053,
+    "unit_adjoint_delta_KE": -0.002094249803
+  },
+  "matrix_witness": {
+    "ghost_contact": {
+      "Hermitian_residual": 0.0,
+      "dimension": 8
+    },
+    "ghost_operator": {
+      "Hermitian_residual": 0.0,
+      "dimension": 8
+    },
+    "ghost_vertex": {
+      "Hermitian_residual": 0.0,
+      "dimension": 8
+    },
+    "oneform_contact": {
+      "Hermitian_residual": 0.0,
+      "dimension": 32
+    },
+    "oneform_operator": {
+      "Hermitian_residual": 0.0,
+      "dimension": 32
+    },
+    "oneform_vertex": {
+      "Hermitian_residual": 0.0,
+      "dimension": 32
+    }
+  },
+  "scientific_result": "THE_FULL_TEMPORAL-PLUS-SPATIAL_ONE-FORM_OPERATOR,_COMPLEX_GHOST_SUBTRACTION,_GLOBAL_ZERO-MODE_QUOTIENT,_AND_-2ad(F0z)_GYROMAGNETIC_VERTEX_ARE_EXPLICIT;_SU2_AND_SU3_ELECTRIC_AND_MAGNETIC_RESPONSES_ARE_NOW_DERIVATIVES_OF_THE_SAME_DE_RHAM_BLOCK",
+  "validation": {
+    "BRST_weights_complete": true,
+    "USB_untouched": true,
+    "all_matrices_Hermitian": true,
+    "curl_gradient_complex_exact": true,
+    "gyromagnetic_vertex_included": true,
+    "longitudinal_spectrum_exact": true,
+    "responses_finite": true,
+    "scalar_laplacian_exact": true
+  },
+  "validation_passed": true,
+  "version": "v16.04"
+}

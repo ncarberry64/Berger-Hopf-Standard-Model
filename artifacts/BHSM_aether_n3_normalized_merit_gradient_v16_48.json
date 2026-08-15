@@ -1,0 +1,135 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "PROMOTE_THE_BEST_MERIT_DESCENT_OR_REDIRECT_TO_THE_REMAINING_PARENT_GEOMETRY_BLOCK",
+  "artifact": "BHSM_aether_n3_normalized_merit_gradient_v16_48",
+  "classification": "BHSM_N3_NORMALIZED_EXACT_MERIT_GRADIENT_CONTINUATION",
+  "dependency_advanced": "SIMULTANEOUS_N3_PHYSICAL_EVENT_SADDLE_CLOSURE",
+  "normalized_merit_continuation": {
+    "fresh_physical_audit": {
+      "event_multiplier_scaled": 0.217839069972652,
+      "event_residual": 0.019161996986998,
+      "multiplier_stationarity_norm": 2.083135121489062,
+      "period_stationarity": 0.638952852578537,
+      "q_stationarity_norm": 6.062838295206353,
+      "residual_norm": 6.442521870987222,
+      "spectral_scale": 115063543.48683096,
+      "symmetric_relative_residual": 0.0,
+      "tolerance_audit": {
+        "relative_1e-08": {
+          "fraction_outside_range": 0.027606641511692,
+          "nullity": 302,
+          "rank": 74,
+          "unrestricted_direction_norm": 0.252292428646256
+        },
+        "relative_1e-10": {
+          "fraction_outside_range": 0.000786456651532,
+          "nullity": 280,
+          "rank": 96,
+          "unrestricted_direction_norm": 1.950828564163803
+        },
+        "relative_1e-12": {
+          "fraction_outside_range": 0.000278841843414,
+          "nullity": 277,
+          "rank": 99,
+          "unrestricted_direction_norm": 19.55127509334926
+        },
+        "relative_1e-14": {
+          "fraction_outside_range": 0.000207348645989,
+          "nullity": 250,
+          "rank": 126,
+          "unrestricted_direction_norm": 523.4655792533622
+        }
+      }
+    },
+    "normalized_merit_gradient_trial_bank": {
+      "best_accepted": null,
+      "initial_residual_norm": 6.442521870987222,
+      "merit_gradient_norm": 49971240.267745905,
+      "method": "normalized_negative_gradient_of_one_half_complete_KKT_residual_squared",
+      "residual_reducing_trial_count": 0,
+      "trial_count": 6,
+      "trials": [
+        {
+          "domain_valid": true,
+          "eta_minimum": 1.258259017908809,
+          "event_residual": 6.575962487790386,
+          "linear_predicted_residual_norm": 10188.099341743915,
+          "post_projection_step_norm": 0.217589894936753,
+          "pre_projection_step_norm": 0.0001,
+          "residual_norm": 12.018297781777004,
+          "residual_reduction": -5.575775910789782,
+          "trust_radius": 0.0001
+        },
+        {
+          "domain_valid": true,
+          "eta_minimum": 1.257560631764018,
+          "event_residual": 7.573863313202867,
+          "linear_predicted_residual_norm": 30565.273550465758,
+          "post_projection_step_norm": 0.227278453118702,
+          "pre_projection_step_norm": 0.0003,
+          "residual_norm": 26.59826625157773,
+          "residual_reduction": -20.15574438059051,
+          "trust_radius": 0.0003
+        },
+        {
+          "domain_valid": true,
+          "eta_minimum": 1.255127904049129,
+          "event_residual": 3.146834778759567,
+          "linear_predicted_residual_norm": 101885.38753396571,
+          "post_projection_step_norm": 0.223621125642967,
+          "pre_projection_step_norm": 0.001,
+          "residual_norm": 31.15092279142726,
+          "residual_reduction": -24.708400920440038,
+          "trust_radius": 0.001
+        },
+        {
+          "domain_valid": true,
+          "eta_minimum": 1.248276110734231,
+          "event_residual": 0.052916312580556,
+          "linear_predicted_residual_norm": 305657.142987616,
+          "post_projection_step_norm": 0.518612427700742,
+          "pre_projection_step_norm": 0.003,
+          "residual_norm": 29.383684036370138,
+          "residual_reduction": -22.941162165382917,
+          "trust_radius": 0.003
+        },
+        {
+          "domain_valid": true,
+          "eta_minimum": 1.225418387672673,
+          "event_residual": 76.76995382396704,
+          "linear_predicted_residual_norm": 1018858.2875006631,
+          "post_projection_step_norm": 0.170623862022954,
+          "pre_projection_step_norm": 0.01,
+          "residual_norm": 100.30135347980718,
+          "residual_reduction": -93.85883160881995,
+          "trust_radius": 0.01
+        },
+        {
+          "domain_valid": true,
+          "eta_minimum": 1.169012772067993,
+          "event_residual": 98.51656808373066,
+          "linear_predicted_residual_norm": 3056575.8433737312,
+          "post_projection_step_norm": 1.421068169145133,
+          "pre_projection_step_norm": 0.03,
+          "residual_norm": 742.7847981795826,
+          "residual_reduction": -736.3422763085954,
+          "trust_radius": 0.03
+        }
+      ]
+    }
+  },
+  "real_physical_property_explained": "JOINT_PARENT_GEOMETRY_AND_SOFT_EVENT_STATIONARITY_IN_THE_DECLARED_SOBOLEV_METRIC",
+  "status": "RECLASSIFIED",
+  "validation": {
+    "accepted_v16_47_residual_reproduced": true,
+    "at_least_one_joint_step_accepted": false,
+    "complete_residual_reduced": false,
+    "eta_domain_preserved": false,
+    "fresh_physical_jacobian_symmetric": true,
+    "full_precision_state_preserved": false,
+    "normalized_merit_gradient_nonzero": true,
+    "trust_radius_grid_probed": true
+  },
+  "validation_passed": false,
+  "version": "v16.48"
+}

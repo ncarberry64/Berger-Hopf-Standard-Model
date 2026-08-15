@@ -1,0 +1,107 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "Hubbard_Stratonovich_semantics": {
+    "arbitrary_four_fermion_G_inserted": false,
+    "avoids_relabelling_internal_Dirac_KK_levels_as_fermion_masses": true,
+    "identity": "G*(barL*R)*(barR*L)_equivalent_to_-HdaggerH/G+barL*H*R+barR*Hdagger*L_after_algebraic_elimination_of_H",
+    "interpretation": "an_auxiliary_H_is_a_coordinate_on_the_bilinear_channel_until_the_fermion_determinant_generates_a_positive_kinetic_residue",
+    "required_source_of_G": "the_action-owned_bulk-to-boundary_current_kernel"
+  },
+  "active_calculation": "COMPUTE_THE_GAUGE-AND-DIRAC_BULK-TO-BOUNDARY_DtN_CURRENT_KERNEL_ON_THE_ACTUAL_ROUND_QUOTIENT_CHILD,_PROJECT_IT_TO_THE_FOUR_COLOR-SINGLET_LEFT-RIGHT_DOUBLETS,_AND_SOLVE_lambda_max(K_LR)=1",
+  "artifact": "BHSM_aether_composite_higgs_channel_v15_64",
+  "claim_boundary": {
+    "Higgs_representation_exists_as_derived_fermion_bilinear": true,
+    "action-owned_interaction_kernel_derived": false,
+    "electroweak_condensate_or_nonzero_Yukawa_derived": false,
+    "elementary_Higgs_parent_ownership_restored": false
+  },
+  "classification": "BHSM_DERIVED_FERMION_BILINEAR_COMPOSITE_HIGGS_CHANNELS",
+  "composite_channel_ledger": {
+    "H_channels": [
+      "color-singlet_bar(Q_L)u_R",
+      "bar(L_L)nu_R"
+    ],
+    "H_quantum_numbers": "(SU3,Sp1,Y)=(1,2,+1/2)",
+    "H_tilde_channels": [
+      "color-singlet_bar(Q_L)d_R",
+      "bar(L_L)e_R"
+    ],
+    "H_tilde_quantum_numbers": "(SU3,Sp1,Y)=(1,2,-1/2)",
+    "all_channels_color_singlet": true,
+    "all_required_hypercharges_exact": true,
+    "channels": {
+      "charged_lepton": {
+        "Lorentz_channel": "scalar_after_left-right_spinor_contraction",
+        "bilinear": "bar(L_L)*e_R",
+        "color_singlet_occurs": true,
+        "color_tensor_product": "1_times_1=1",
+        "hypercharge": -0.5,
+        "weak_representation": "2"
+      },
+      "down": {
+        "Lorentz_channel": "scalar_after_left-right_spinor_contraction",
+        "bilinear": "bar(Q_L)*d_R",
+        "color_singlet_occurs": true,
+        "color_tensor_product": "bar3_times_3=1_plus_8",
+        "hypercharge": -0.5,
+        "weak_representation": "2"
+      },
+      "neutrino": {
+        "Lorentz_channel": "scalar_after_left-right_spinor_contraction",
+        "bilinear": "bar(L_L)*nu_R",
+        "color_singlet_occurs": true,
+        "color_tensor_product": "1_times_1=1",
+        "hypercharge": 0.5,
+        "weak_representation": "2"
+      },
+      "up": {
+        "Lorentz_channel": "scalar_after_left-right_spinor_contraction",
+        "bilinear": "bar(Q_L)*u_R",
+        "color_singlet_occurs": true,
+        "color_tensor_product": "bar3_times_3=1_plus_8",
+        "hypercharge": 0.5,
+        "weak_representation": "2"
+      }
+    }
+  },
+  "composite_field_definition": {
+    "R4_power_reason": "a_4D_fermion_bilinear_has_mass_dimension_3",
+    "composite_representation_owned_by_derived_fermion_bundle": true,
+    "condensate_selected": false,
+    "dimension_one_order_parameters": [
+      "H_u=R4^2*Pi_1[bar(Q_L)u_R]",
+      "H_nu=R4^2*bar(L_L)nu_R",
+      "Htilde_d=R4^2*Pi_1[bar(Q_L)d_R]",
+      "Htilde_e=R4^2*bar(L_L)e_R"
+    ],
+    "elementary_parent_boson_required_for_representation_ownership": false,
+    "one_physical_Higgs_linear_combination_selected": false,
+    "wavefunction_normalization_selected": false
+  },
+  "gap_equation_target": {
+    "Higgs_alignment": "normalized_eigenvector_of_K_LR_at_the_first_supercritical_channel",
+    "Higgs_mass_and_quartic": "second_and_fourth_variations_of_the_fermion-plus-boundary-kernel_effective_action_along_the_selected_eigenvector",
+    "Yukawa_matrices": "left-right_residues_of_the_same_normalized_kernel_eigenvector_in_the_up_down_e_nu_channel_ledgers",
+    "boundary_kernel": "K_LR=(Pi_H)*(D_boundary_plus_J_A*G_DtN*J_A)*(Pi_H)_star_on_the_actual_R_times_S3_child",
+    "critical_surface": "lambda_max(K_LR)=1",
+    "current_DtN_kernel_computed_on_actual_child": false,
+    "formation_gate": "largest_physical_eigenvalue_of_K_LR_exceeds_1",
+    "linearized_gap_equation": "Delta=K_LR(mu_star)*Delta",
+    "nonzero_solution_claimed": false,
+    "uses_absolute_local_M4_gauge_coupling_as_input": false,
+    "uses_bulk_to_boundary_DtN_kernel_instead": true
+  },
+  "validation": {
+    "KK_levels_not_relabelled_masses": true,
+    "USB_untouched": true,
+    "all_channels_are_color_singlets": true,
+    "channel_hypercharges_are_plus_minus_half": true,
+    "composite_has_correct_engineering_dimension": true,
+    "elementary_Higgs_not_reintroduced": true,
+    "four_fermion_coefficient_not_inserted": true,
+    "no_new_continuous_coefficient": true,
+    "nonzero_condensate_not_fabricated": true
+  },
+  "validation_passed": true,
+  "version": "v15.64"
+}

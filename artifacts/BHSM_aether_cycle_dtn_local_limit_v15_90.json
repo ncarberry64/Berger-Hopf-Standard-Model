@@ -1,0 +1,90 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "ADD_CONTINUOUS_BOUNDARY_FREQUENCY_TO_THE_SAME_M5_RADIAL_STURM-LIOUVILLE_PROBLEM_AND_COMPARE_dN/d(omega^2)_WITH_THE_SPATIAL_LOCAL_COEFFICIENT",
+  "artifact": "BHSM_aether_cycle_dtn_local_limit_v15_90",
+  "claim_boundary": {
+    "Lorentz_invariant_FmunuFmunu_coefficient_derived": false,
+    "dynamic_frequency_response_derived": false,
+    "independent_intrinsic_boundary_normalization_added": false,
+    "local_Gauss_constraint_derivative_coefficient_derived": true,
+    "local_spatial_Fij_derivative_coefficient_derived": true,
+    "reason": "the_static_transverse_and_Gauss_maps_fix_spatial_and_constraint_derivatives;_the_omega_squared_response_is_required_before_identifying_a_single_local_Lorentzian_Maxwell_coefficient",
+    "same_DtN_operator_as_absolute_cycle_residue": true
+  },
+  "classification": "BHSM_ONE_CYCLE_DTN_LOW_MOMENTUM_LOCAL_LIMIT",
+  "cycle_local_coefficients": {
+    "carrier_trace_local_ray": {
+      "SU3": 1394.790186982647,
+      "Sp1": 1394.790186982647,
+      "Y": 2324.650311637745
+    },
+    "cycle_K_E_Gauss_local": 1082.968993955627,
+    "cycle_K_T_local": 1394.790186982647,
+    "cycle_rows": [
+      {
+        "K_E_Gauss_local": 1139.437174490874,
+        "K_T_local": 1499.276520650369,
+        "provenance": "reset",
+        "time": 0.0
+      },
+      {
+        "K_E_Gauss_local": 1071.320841083698,
+        "K_T_local": 1355.048672485251,
+        "provenance": "controlled",
+        "time": 0.08
+      },
+      {
+        "K_E_Gauss_local": 925.696431605093,
+        "K_T_local": 1151.570250130681,
+        "provenance": "controlled",
+        "time": 0.1
+      },
+      {
+        "K_E_Gauss_local": 810.025611251513,
+        "K_T_local": 995.354171034984,
+        "provenance": "controlled",
+        "time": 0.103
+      },
+      {
+        "K_E_Gauss_local": 800.537698869365,
+        "K_T_local": 976.91747290666,
+        "provenance": "controlled",
+        "time": 0.10602
+      },
+      {
+        "K_E_Gauss_local": 800.537698869365,
+        "K_T_local": 976.91747290666,
+        "provenance": "event_limit",
+        "time": 0.1060372
+      }
+    ],
+    "local_expansions": {
+      "electric": "N_E(lambda)=K_E_local*lambda+O(lambda^2)",
+      "transverse": "N_T(lambda)=K_T_local*lambda+O(lambda^2)"
+    },
+    "spatial_local_inverse_coupling_ray": "5/3:1:1",
+    "spectral_parameters": {
+      "electric": "lambda_E=ell*(ell+2)_for_the_Gauss_scalar_problem",
+      "transverse": "lambda_T=n^2_for_the_coexact_vector_problem"
+    }
+  },
+  "scientific_result": "DIFFERENTIATING_THE_SAME_WEIGHTED_DtN_EQUATION_AT_lambda=0_DERIVES_POSITIVE_CYCLE-LOCAL_SPATIAL_AND_GAUSS_COEFFICIENTS_K_T=1394.790187_AND_K_E=1082.968994;_A_DYNAMIC_omega^2_CALCULATION_IS_STILL_REQUIRED_FOR_A_LORENTZIAN_MAXWELL_IDENTITY",
+  "small_lambda_validation": {
+    "electric_direct_over_lambda": 800.535362834389,
+    "electric_variational": 800.537528202214,
+    "lambda": 1e-05,
+    "transverse_direct_over_lambda": 976.913793463827,
+    "transverse_variational": 976.917316098969
+  },
+  "validation": {
+    "Lorentz_completion_not_overclaimed": true,
+    "USB_untouched": true,
+    "cycle_local_coefficients_positive": true,
+    "electric_small_lambda_matches_variation": true,
+    "local_trace_ray_exact": true,
+    "no_independent_normalization": true,
+    "transverse_small_lambda_matches_variation": true
+  },
+  "validation_passed": true,
+  "version": "v15.90"
+}

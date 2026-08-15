@@ -1,0 +1,106 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "absolute_cycle_form_factors": {
+    "independent_Lorentzian_Maxwell_coefficients_inserted": false,
+    "inverse_coupling_ray_in_each_form_factor": "K_Y:K_2:K_3=5/3:1:1",
+    "local_zero_momentum_coupling_identified_with_DtN_form_factor": false,
+    "normalization_convention": "Gamma_cycle_contains_(K_i/4)*F_i*F_i",
+    "sectors": {
+      "SU3": {
+        "K_electric": 2345.290876580072,
+        "K_transverse": 3166.083808336222,
+        "boundary_form_factor_g_electric": 0.020649124508,
+        "boundary_form_factor_g_transverse": 0.017772101979,
+        "trace_factor": "1"
+      },
+      "Sp1": {
+        "K_electric": 2345.290876580072,
+        "K_transverse": 3166.083808336222,
+        "boundary_form_factor_g_electric": 0.020649124508,
+        "boundary_form_factor_g_transverse": 0.017772101979,
+        "trace_factor": "1"
+      },
+      "Y": {
+        "K_electric": 3908.818127633453,
+        "K_transverse": 5276.806347227038,
+        "boundary_form_factor_g_electric": 0.015994743067,
+        "boundary_form_factor_g_transverse": 0.013766210999,
+        "trace_factor": "5/3"
+      }
+    },
+    "transverse_and_electric_are_two_components_of_one_nonlocal_DtN_operator": true,
+    "weak_angle_on_matching_ray": 0.375
+  },
+  "active_calculation": "DENSIFY_THE_CONSTRAINT-SOLVED_ONE-CYCLE_QUADRATURE_AND_DERIVE_THE_LOW-MOMENTUM_LOCAL_LIMIT_OF_THE_SAME_NONLOCAL_DtN_OPERATOR",
+  "artifact": "BHSM_aether_cycle_scale_renormalization_v15_89",
+  "claim_boundary": {
+    "RG_transport_law_recorded": true,
+    "absolute_dimensionless_boundary_form_factors_derived": true,
+    "cycle_matching_scale_in_kappa_units_derived": true,
+    "external_SI_value_of_kappa1_derived": false,
+    "local_zero_momentum_SM_couplings_derived": false
+  },
+  "classification": "BHSM_ONE_CYCLE_ABSOLUTE_SCALE_AND_RENORMALIZATION_MAP",
+  "cycle_matching_scale": {
+    "cycle_log_mean_R4_in_ell_kappa": 1.020827793518,
+    "cycle_matching_scale_in_ell_kappa_inverse": 0.979597152771,
+    "definition": "log(mu_cycle^(-1))=Tstar^(-1)*integral_0^Tstar log(R4(t))dt",
+    "external_SI_value_of_kappa1_inserted": false,
+    "fundamental_length": "ell_kappa=kappa1^(-1/6)"
+  },
+  "one_loop_RG_transport_example": {
+    "SM_one_loop_flow_preserves_matching_ray": false,
+    "interpretation": "the_trace_ray_is_a_boundary_condition_at_mu_cycle,_not_an_RG-invariant_identity_at_all_scales",
+    "law": "K_i(mu)=K_i(mu_cycle)-b_i*log(mu/mu_cycle)/(8*pi^2)",
+    "new_matching_coefficient_introduced": false,
+    "scale_ratio_mu_over_mu_cycle": 2.0,
+    "transported_form_factors": {
+      "SU3": {
+        "Delta_K": 0.061451681176,
+        "K_electric_at_mu": 2345.352328261248,
+        "K_transverse_at_mu": 3166.145260017398,
+        "one_loop_b": "-7"
+      },
+      "Sp1": {
+        "Delta_K": 0.027799570056,
+        "K_electric_at_mu": 2345.318676150127,
+        "K_transverse_at_mu": 3166.111607906278,
+        "one_loop_b": "-19/6"
+      },
+      "Y": {
+        "Delta_K": -0.05998854591,
+        "K_electric_at_mu": 3908.758139087543,
+        "K_transverse_at_mu": 5276.746358681128,
+        "one_loop_b": "41/6"
+      }
+    }
+  },
+  "renormalization_semantics": {
+    "common_parent_prescription": "exp(-ell_kappa^2*H5)_before_all_Gamma_cycle_derivatives",
+    "dimensionful_SI_calibration_missing": true,
+    "dimensionless_normalization_missing": false,
+    "finite_shift_of_only_gauge_or_only_Yukawa_allowed": false,
+    "matched_outputs": [
+      "transverse_gauge_form_factor",
+      "electric_gauge_form_factor",
+      "composite_Z_H",
+      "canonical_Yukawa_vertex"
+    ],
+    "scheme_change": "a_common_reparameterization_of_Gamma_cycle_with_all_derived_operators_transformed_together",
+    "why": "kappa1_is_the_single_dimensionful_action_datum;_BHSM_predicts_dimensionless_ratios_and_values_in_ell_kappa_units_but_does_not_derive_a_number_of_meters_from_dimensionless_mathematics"
+  },
+  "scientific_result": "THE_SAME_Gamma_cycle_FIXES_ABSOLUTE_DIMENSIONLESS_GAUGE_AND_YUKAWA_RESIDUES_AT_mu_cycle=0.97959715*ell_kappa^(-1);_RG_IS_JOINT_TRANSPORT_OF_THOSE_MATCHED_OUTPUTS,_WHILE_AN_SI_VALUE_REQUIRES_THE_SINGLE_DIMENSIONFUL_ACTION_DATUM_kappa1",
+  "validation": {
+    "RG_is_transport_not_retuning": true,
+    "USB_untouched": true,
+    "all_form_factors_positive": true,
+    "common_scheme_only": true,
+    "cycle_scale_positive": true,
+    "dimensionless_absolute_normalization_closed": true,
+    "no_external_scale_fabricated": true,
+    "no_split_Maxwell_normalization": true,
+    "trace_ray_exact": true
+  },
+  "validation_passed": true,
+  "version": "v15.89"
+}

@@ -1,0 +1,2 @@
+from bhsm.interface.aether_n3_covector_curvature_continuation_v16_55 import ITERATIONS
+def test_multirefresh_count_is_bounded():assert ITERATIONS==3

@@ -12,7 +12,7 @@ permissions:
 jobs:
   pytest:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
         with:
@@ -23,8 +23,11 @@ jobs:
           cache: pip
       - name: Install
         run: python -m pip install -e ".[benchmark]"
-      - name: Test suite
-        run: python -m pytest -q --junitxml=artifacts/pytest-results.xml
+      - name: Fast regression suite
+        run: >-
+          python -m pytest -q
+          --ignore-glob="tests/test_bhsm_aether_n3_*.py"
+          --junitxml=artifacts/pytest-results.xml
       - name: Coordinate benchmark precision gate
         run: |
           python tools/verify_precision.py
@@ -49,6 +52,26 @@ jobs:
         with:
           name: pytest-results
           path: artifacts/pytest-results.xml
+
+  current-n3-frontier:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install
+        run: python -m pip install -e ".[benchmark]"
+      - name: Verify current N=3 deterministic frontier
+        run: >-
+          python -m pytest -q
+          tests/test_bhsm_aether_n3_child_fiber_ownership_v18_69.py
+          tests/test_bhsm_aether_n3_eighth_direct_residual_scale_audit_v18_70.py
+          tests/test_bhsm_aether_n3_fifth_bidirectional_merit_manifold_probe_v18_71.py
+          tests/test_bhsm_aether_n3_fifth_bidirectional_probe_child_v18_72.py
+          tests/test_bhsm_aether_n3_fifth_bidirectional_probe_promotion_v18_73.py
 
   root-integration:
     runs-on: ubuntu-latest

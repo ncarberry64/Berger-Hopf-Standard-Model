@@ -1,0 +1,221 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "CLOSE_F_child_WITH_THE_LORENTZIAN_CAUCHY_CORRESPONDENCE_THEN_EVOLVE_THE_RECONSTRUCTED_CHILD_TO_MEASURE_ITS_FIRST_NONZERO_PERSISTENCE_INTERVAL",
+  "artifact": "BHSM_aether_persistent_nonequilibrium_child_v17_87",
+  "classification": "BHSM_PERSISTENT_NONEQUILIBRIUM_WHOLE_CHILD",
+  "dependency_advanced": "REPLACES_UNIVERSAL_STABILITY_WITH_ACTION_OWNED_CANONICAL_IMBALANCE_PERSISTENCE_AND_DECAY_ONTOLOGY",
+  "persistence_and_decay_contract": {
+    "decay": {
+      "clock": "RECONSTRUCTED_CHILD_PROPER_TIME_d_tau=N_child*dt;IF_ONLY_A_RETURN_MAP_IS_AVAILABLE_REPORT_INTERNAL_CYCLE_COUNT_UNTIL_A_PROPER_TIME_MAP_IS_DERIVED",
+      "daughter_condition": "THE_EXIT_STATE_MAY_RECONSTRUCT_ONLY_IN_CHANNELS_COMPATIBLE_WITH_CONSERVED_TOPOLOGY_FR_GAUGE_CHARGE_COLOR_HYPERCHARGE_INCIDENCE_FAMILY_PROJECTORS_AND_ENVIRONMENT_DATA",
+      "definition": "tau_decay=inf{tau>0:z_child(tau)_notin_B_child}",
+      "phenomenological_decay_term_added": false
+    },
+    "particle_definition": "COMPLETE_RECONSTRUCTED_ENCAPSULATED_PERSISTENT_NONEQUILIBRIUM_CHILD",
+    "persistence": "A_CHILD_IS_THE_SAME_PHYSICAL_CHILD_WHILE_z_child(tau)_IN_B_child_FOR_A_NONZERO_PROPER_TIME_INTERVAL",
+    "persistence_domain_B_child": {
+      "arbitrary_balance_tolerance_used_as_physics": false,
+      "carrier_component": "fixed_gauge_representation_hypercharge_color_C3_family_projector_and_bundle_isomorphism_class",
+      "constraint_domain": "Hamiltonian_momentum_eta_sigma_gauge_and_FR_constraints=0",
+      "dynamic_domain": "the_same_action_owned_child_flow_exists_and_remains_in_the_above_common_domain",
+      "geometric_domain": "positive_spatial_metric_and_lapse;finite_H6xH5_phase_state",
+      "hyperregular_domain": "minimum_eta_Legendre>0",
+      "measured_lifetime_threshold_used": false,
+      "reconstruction_domain": "F_child=0_AND_THE_COMPLETE_CHILD_BVP_IS_LOCALLY_WELL_POSED",
+      "topological_component": "fixed_degree_orientation_FR_parity_incidence_and_boundary_identity"
+    },
+    "special_limits_not_universal_requirements": [
+      "stationary_constrained_extremum",
+      "positive_reduced_Hessian",
+      "relative_periodic_orbit",
+      "exact_hybrid_fixed_point",
+      "unit_modulus_Floquet_spectrum"
+    ]
+  },
+  "real_physical_property_explained": "PARTICLE_EXISTENCE_IS_FINITE_PERSISTENCE_OF_A_COMPLETE_NONEQUILIBRIUM_CHILD_AND_DECAY_IS_ITS_FIRST_DOMAIN_EXIT",
+  "stability_reclassification_ledger": [
+    {
+      "classification": "KEEP_AS_LOCAL_MATHEMATICAL_CONDITION",
+      "historical_gate": "stationary_child_dH/dx=0",
+      "new_role": "instantaneous_constrained_extremum_or_drift_reference"
+    },
+    {
+      "classification": "KEEP_AS_LOCAL_MATHEMATICAL_CONDITION",
+      "historical_gate": "positive_child_Hessian",
+      "new_role": "local_restoring_response_and_possible_long_persistence"
+    },
+    {
+      "classification": "REINTERPRET_AS_PERSISTENCE_CONDITION",
+      "historical_gate": "relative_periodic_child",
+      "new_role": "special_recurrent_persistent_trajectory"
+    },
+    {
+      "classification": "REINTERPRET_AS_PERSISTENCE_CONDITION",
+      "historical_gate": "unit_modulus_Floquet_spectrum",
+      "new_role": "local_cycle_drift_diagnostic_not_particle_definition"
+    },
+    {
+      "classification": "INVALIDATE_AS_FINAL_PARTICLE_REQUIREMENT",
+      "historical_gate": "constant_reset_hybrid_fixed_point",
+      "new_role": "historical_finite_chart_witness_not_event_specific_child"
+    },
+    {
+      "classification": "REPLACE",
+      "historical_gate": "exact_return_to_identical_state",
+      "new_role": "remain_inside_B_child_for_nonzero_interval"
+    },
+    {
+      "classification": "INVALIDATE_AS_FINAL_PARTICLE_REQUIREMENT",
+      "historical_gate": "stable_soliton_particle",
+      "new_role": "persistent_nonequilibrium_complete_child"
+    },
+    {
+      "classification": "KEEP_AS_LOCAL_MATHEMATICAL_CONDITION",
+      "historical_gate": "N3_event_KKT_saddle",
+      "new_role": "formation_encapsulation_gate_not_particle_persistence"
+    }
+  ],
+  "status": "VALIDATED",
+  "validation": {
+    "Legendre_diagnostics_finite": true,
+    "all_stability_gate_classes_present": true,
+    "decay_is_first_exit": true,
+    "imbalance_is_action_derived_covector": true,
+    "measured_lifetimes_not_used": true,
+    "no_phenomenological_decay_force": true,
+    "nonequilibrium_momentum_nonzero": true,
+    "persistence_not_fixed_point": true,
+    "whole_child_state_not_extra_coordinate": true
+  },
+  "validation_passed": true,
+  "version": "v17.87",
+  "whole_child_imbalance": {
+    "action_derived_diagnostics": {
+      "canonical_momentum_dual_H5_norm": 18.437994665459474,
+      "eta_minimum_on_event_history": 0.774408510471172,
+      "local_force_dual_H6_proxy_norm": 52.46590627833509,
+      "nonzero_nonequilibrium_momentum": true,
+      "positive_polar_kinetic_magnitude": 21.295723639725562,
+      "signed_kinetic_quadratic_form": -9.596956421973564,
+      "terminal_global_constraint_norm": 0.053682801132792,
+      "terminal_global_constraint_rows": [
+        -1.1471792025e-05,
+        2.17250534e-07,
+        4.7672089e-08,
+        -0.053682795885458,
+        -2.0772257531e-05,
+        4.94926797e-07
+      ],
+      "velocity_Legendre_eigenvalues": [
+        -174.41209188255925,
+        -100.94982398812645,
+        -69.27540268326067,
+        -5.68380846113745,
+        0.019988219071325,
+        0.139958664567662,
+        0.7478094088345,
+        2.360373268358944,
+        5.26882045931622,
+        16.820987612833658
+      ],
+      "velocity_Legendre_rank": 10
+    },
+    "imbalance_covector": {
+      "canonical_velocity_momentum": [
+        -15.421277180792972,
+        -2.332849569550921,
+        -5.121569452647305,
+        28.787921410858626,
+        -0.851118134586478,
+        -0.300560309312085,
+        0.806698081703918,
+        -10.070721980816321,
+        3.797984641282959,
+        3.549836843648408
+      ],
+      "child_matching_component": "F_child_OPEN_NOT_SET_TO_ZERO",
+      "definition": "I_child=(Pi_phys,dH_child/dq,F_child)_ON_THE_CONSTRAINT_REDUCED_WHOLE_CHILD_STATE",
+      "local_action_force": [
+        41.054284795974326,
+        -116.27160140415106,
+        321.61606998933655,
+        -257.6693167226935,
+        -27.083683400896977,
+        20.18152179941932,
+        -2.728355699259638,
+        18.267197603351573,
+        -26.11960604383546,
+        65.20485689925391
+      ],
+      "not_an_independent_scalar_field": true
+    },
+    "relationship_of_imbalance_contributions": {
+      "decay": "THE_EVOLVED_CANONICAL_STATE_CAUSES_EXIT_FROM_B_child;NO_SEPARATE_DECAY_FORCE_IS_ADDED",
+      "dynamics": "Pi_phys_AND_dH_child/dq_FORM_THE_CANONICAL_NONEQUILIBRIUM_STATE_AND_EVOLVE_BY_THE_SAME_CHILD_ACTION",
+      "reconstruction": "F_child=0_IS_REQUIRED_TO_CREATE_ONE_CONSISTENT_CHILD_AND_IS_NOT_THE_POST_RECONSTRUCTION_DYNAMICAL_IMBALANCE"
+    },
+    "source_state": "v17.75_selected_fine_period_log_mix_state",
+    "whole_child_state": {
+      "FR_sector": "odd_antiperiodic;J_squared=1/4",
+      "SM_carrier": "transported_bundle_class_plus_same_rank16_replacement_operator",
+      "boundary_radial_flux": {
+        "Pi_f": -62.034496249581814,
+        "Pi_log_A": 35.02471983487227,
+        "Pi_log_B": -35.02471983487227,
+        "Pi_log_N": 0.0
+      },
+      "boundary_trace": {
+        "A_child_boundary_radius": 1.458725205984826,
+        "B_child_boundary_radius": 1.380162700143785,
+        "C_radial_gauge_factor": 2.717222349944885,
+        "f": 0.785398163397448,
+        "lapse": 3.887471990234436,
+        "localization": 1.0,
+        "log_B_over_A": -0.055361516845463,
+        "shift": 0.0,
+        "sigma": 0.0
+      },
+      "geometry_modes": [
+        -0.033028848092965,
+        -0.015574503165602,
+        0.007449027869827,
+        -0.001745634179463,
+        0.060790328894521,
+        -0.254744831931286,
+        -0.012380736743075,
+        0.016557569585857,
+        -0.008428990954551,
+        0.002694197882323
+      ],
+      "geometry_rates": [
+        -0.339296716196799,
+        -0.181518234801708,
+        0.212682087170578,
+        0.00168855330823,
+        -3.080665551833842,
+        -8.246678499988633,
+        -2.408788325283732,
+        0.209989459244536,
+        0.96549160076753,
+        0.434983145007474
+      ],
+      "lapse_shift_constraint_state": [
+        -1.089478806593876,
+        0.332890684430058,
+        0.064610418628928,
+        -0.446379941979437,
+        -0.145283651633168,
+        0.34520387336455
+      ],
+      "material_state": {
+        "Lambda": 1.0,
+        "X_eta": 1.627832027996744,
+        "eta_Legendre": 5.313489718865701,
+        "sigma": 0.0,
+        "sigma_normal_derivative": "CONSTRAINT_DETERMINED_BY_NORMALIZED_W_J[f]_RESPONSE"
+      },
+      "reconstruction_scale": "OPEN_EVENT_ENVIRONMENT_CHILD_BVP_OUTPUT",
+      "topology_orientation": "degree_1;child_x_negative"
+    }
+  }
+}

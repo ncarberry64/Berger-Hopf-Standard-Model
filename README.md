@@ -2,32 +2,32 @@
 
 [![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml)
 [![Latest archival release](https://img.shields.io/github/v/release/ncarberry64/Berger-Hopf-Standard-Model?label=archival%20release)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/releases/latest)
-[![Current research status](https://img.shields.io/badge/current%20research-v15.10-orange)](docs/BHSM_AETHER_CYCLE_SIGMA_COEFFICIENT_RECONSTRUCTION_V15_10.md)
+[![Current research status](https://img.shields.io/badge/current%20research-v18.73-orange)](docs/current_bhsm_status.md)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
 BHSM is an independent artifact-backed computational framework and mathematical-physics research program investigating whether Standard Model structure and particle-like dynamics can be derived from Berger-Hopf boundary/envelopment geometry and a common action architecture.
 
-## Current Public Status -- v15.10
+## Current Public Status -- v18.73
 
-BHSM v15.10 preserves the v15.9 cycle-controlled degree-one radial eta branch and derives the exact minimal sigma-response inverse for alpha, r and gamma. The current Aether state supplies no physical sigma tangent derivative or nonlinear response, and explicit stable witnesses prove retained-action nonuniqueness. No physical sigma onset or Hopf child is promoted. Full completion remains false and frozen predictions are unchanged.
+BHSM v17.84-v18.73 derives and executes the missing N=3 event-to-complete-child boundary/BVP map, records the resulting constrained-root geometry, classifies its local child fiber, and continues the unchanged physical solve. The global problem remains the square 376-variable KKT system with explicit event multiplier. Candidate events are promoted only after independent reduction of exact 376-row merit, admissible eta, fresh rank-14 reconstruction from all 26 child variables, two-scale flux closure, and positive-duration constraint-consistent persistence. Nonzero motion and time dependence are retained as physical relative evolution.
 
-Pair capture/collision-assisted formation, bifurcation locking, and nonhomogeneous localization remain candidate mechanisms. The action has not selected among them. The proposed scale-dependent cosmological and quantum recurrence pictures remain underived author hypotheses.
+The latest accepted physical state is v18.73. Its exact residual norm is `0.807144219141348`, event magnitude is `0.083752222964491`, and global eta minimum is `0.774053610471969`. Its freshly reconstructed child has rank 14, flux envelope `5.637086789e-6`, and positive-duration persistence with nonzero relative evolution. v18.69 confirms rank 14/nullity 12 at neighboring Jacobian steps and classifies the fiber as six genuine Cauchy directions plus six unresolved Cauchy-multiplier mixtures. The fiber is not merely gauge/chart freedom; its action-derived selection owner remains open and no selector is inserted. The N=3 saddle is not solved because the global residual remains nonzero; N=4+ and all downstream physical gates remain open.
 
 `FULL_BHSM_COMPLETE = FALSE`
 
 Exact next object:
 
-`ACTION_OWNED_AETHER_CYCLE_TO_REGULAR_SIGMA_RESPONSE_JET_MAP_PRODUCING_THE_PHYSICAL_SIGMA_TANGENT_PROPAGATOR_X_DERIVATIVE_AND_BACKREACTION_UNREDUCED_CANONICAL_QUARTIC_ON_THE_V15_9_BRANCH`
+`CONTINUE_PHYSICALLY_ADMISSIBLE_EXACT_376_ROW_DESCENT_FROM_THE_LATEST_ACCEPTED_FRONTIER_TO_F376_ZERO`
 
-Read the [v15.10 controlling report](docs/BHSM_AETHER_CYCLE_SIGMA_COEFFICIENT_RECONSTRUCTION_V15_10.md), [v15.9 upstream theorem](docs/BHSM_CYCLE_DRIVEN_ETA_SPREAD_CONCENTRATION_V15_9.md), [current status](docs/current_bhsm_status.md), [claim boundaries](CLAIMS.md), and [reviewer reproduction guide](docs/reviewer_reproduction_guide.md).
+Read the [v18.70-v18.73 continuation report](docs/BHSM_N3_FIFTH_BIDIRECTIONAL_CONTINUATION_V18_70_TO_V18_73.md), [v18.69 child-fiber audit](docs/BHSM_N3_CHILD_FIBER_OWNERSHIP_V18_69.md), [v18.59 constrained-root record](docs/BHSM_N3_CONSTRAINED_ROOT_HINDSIGHT_RECORD_V18_59.md), [v18.60 secant diagnostic](docs/BHSM_N3_ACCEPTED_SECANT_GEOMETRY_V18_60.md), [current status](docs/current_bhsm_status.md), [claim boundaries](CLAIMS.md), [gate ledger](theory/gate_ledger.md), and [reviewer reproduction guide](docs/reviewer_reproduction_guide.md).
 
 | Layer | Current status |
 | --- | --- |
 | Computational framework | Validated software/tests; this does not validate nature |
-| Current test corpus | v15.10 validation extending the 6,432-test protected checkpoint |
-| Internal mathematical program | Sigma response inverse derived; response values and Hopf continuation open |
-| Nonlinear Norman cycle | Formation undefined; persistence, release, Noether ledger, and monodromy not reached |
+| Current test corpus | Deterministic v17.84-v18.73 N=3 correspondence, continuation, hindsight, secant, and child-fiber artifacts plus protected historical corpus |
+| Internal mathematical program | Event-to-complete-child map derived; simultaneous N=3 saddle remains open |
+| Nonlinear Norman cycle | Moving child persists locally; global N=3 root and downstream release/monodromy remain open |
 | Scale and flavor | Absolute scale, action-derived CKM, and PMNS remain open |
 | Frozen predictions | Unchanged |
 | Empirical status | Not established |

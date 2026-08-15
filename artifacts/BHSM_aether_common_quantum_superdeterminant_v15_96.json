@@ -1,0 +1,181 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "INSERT_THE_BACKGROUND-COVARIANT_GAUGE_AND_HS_SOURCE_VERTICES_IN_THE_SAME_GALERKIN_OPERATOR,_DIFFERENTIATE_THE_SINGLE_SUPERDETERMINANT,_AND_SOLVE_ITS_COUPLED_QUANTUM_EVENT_SADDLE",
+  "artifact": "BHSM_aether_common_quantum_superdeterminant_v15_96",
+  "claim_boundary": {
+    "common_quantum_operator_formulated": true,
+    "coupled_quantum_event_saddle_solved": false,
+    "finite_proper_cycle_Galerkin_seed_evaluated": true,
+    "interacting_source_Hessian_discretized": false,
+    "quantum_geometry_force_derivative_verified": true
+  },
+  "classification": "BHSM_COMMON_PROPER_CYCLE_QUANTUM_SUPERDETERMINANT",
+  "graded_operator_ledger": {
+    "Hubbard_Strattonovich": {
+      "degeneracy_per_species": "m^2",
+      "levels": "m>=1",
+      "spatial_eigenvalue": "m^2/R4(tau)^2",
+      "species": 4,
+      "supertrace_sign": 1
+    },
+    "Weyl": {
+      "degeneracy_per_species": "(n+1)*(n+2)",
+      "levels": "n>=0",
+      "spatial_eigenvalue": "(n+3/2)^2/R4(tau)^2",
+      "species": 48,
+      "squared_operator": "D_Weyl^dagger*D_Weyl",
+      "supertrace_sign": -1
+    },
+    "gauge_longitudinal_ghost": {
+      "net_supertrace_sign": 0,
+      "statement": "BRST_longitudinal_and_complex_ghost_blocks_cancel_mode_by_mode;_global_gauge_zero_modes_are_quotiented"
+    },
+    "gauge_transverse": {
+      "degeneracy_per_species": "2*(m^2-1)",
+      "levels": "m>=2",
+      "spatial_eigenvalue": "m^2/R4(tau)^2",
+      "species": 12,
+      "supertrace_sign": 1
+    }
+  },
+  "joint_quantum_derivative_contract": {
+    "Higgs_residue": "Z_H_is_the_derivative_part_of_D_Hdagger_D_H_Gamma_q",
+    "Yukawa_vertex": "Y_bare_is_D_barPsi_D_Psi_D_H_Gamma_q_and_Y_phys=Z_H^(-1/2)*Y_bare",
+    "evaluation_order": "solve_quantum_event_saddle_then_take_A,H,Psi_derivatives_then_proper-cycle_pushforward_and_canonicalize",
+    "first_variation": "D_Gamma_1[deltaP]=(1/2)*integral_ds*STr(exp(-sP)*deltaP)",
+    "gauge_coefficients": "K_E,K_B_are_low-momentum_components_of_D_A^2_Gamma_q",
+    "graded_cycle_operator": "P_cycle[Phi;A,H]=P_gauge+ghost_direct_sum_P_Weyl_direct_sum_P_HS_on_L2(S1_tau_times_S3_R4(Phi))",
+    "independent_Yukawa_insertion_allowed": false,
+    "independent_gauge_counterterm_allowed": false,
+    "quantum_saddle": "D_Phi_Gamma_q=0_together_with_the_same_event_condition",
+    "regulated_functional": "Gamma_q=Gamma_cl-(1/2)*integral_(ell_kappa^2)^infinity_ds/s*STr(exp(-s*P_cycle)-exp(-s*P_reference))",
+    "second_variation": "D2_Gamma_1[a,b]=(1/2)*integral_ds*STr(exp(-sP)*P_ab)-(1/2)*integral_ds*integral_0^s_du*STr(exp(-uP)*P_a*exp(-(s-u)P)*P_b)"
+  },
+  "proper_cycle_lattice": {
+    "coordinate_times": [
+      0.0,
+      0.006572585164,
+      0.012945115036,
+      0.01908807547,
+      0.024987926938,
+      0.030643015719,
+      0.036059668438,
+      0.041249043282,
+      0.046224845455,
+      0.051001790911,
+      0.055594637465,
+      0.060017613337,
+      0.064284109448,
+      0.068406539482,
+      0.072396302479,
+      0.076263805243,
+      0.080018517349,
+      0.083658539945,
+      0.087156080444,
+      0.090508720768,
+      0.093737597933,
+      0.096876138166,
+      0.099965471641,
+      0.103115115081
+    ],
+    "event_gluing": "periodic_same_SM_bundle_isomorphism_class",
+    "points": 24,
+    "proper_duration": 0.236183006356,
+    "proper_step": 0.009840958598,
+    "proper_times": [
+      0.0,
+      0.009840958598,
+      0.019681917196,
+      0.029522875795,
+      0.039363834393,
+      0.049204792991,
+      0.059045751589,
+      0.068886710187,
+      0.078727668785,
+      0.088568627384,
+      0.098409585982,
+      0.10825054458,
+      0.118091503178,
+      0.127932461776,
+      0.137773420374,
+      0.147614378973,
+      0.157455337571,
+      0.167296296169,
+      0.177137254767,
+      0.186978213365,
+      0.196819171964,
+      0.206660130562,
+      0.21650108916,
+      0.226342047758
+    ],
+    "radii": [
+      1.011635412768,
+      1.012615028538,
+      1.013603615276,
+      1.014590574058,
+      1.015567952038,
+      1.016530187412,
+      1.017473667264,
+      1.018396260439,
+      1.019296907157,
+      1.02017529214,
+      1.02103159925,
+      1.021866334296,
+      1.022680200462,
+      1.023474012535,
+      1.024248638889,
+      1.025004962985,
+      1.02574385936,
+      1.02649646203,
+      1.027264777793,
+      1.028017680261,
+      1.028735629737,
+      1.029406489751,
+      1.030021848613,
+      1.030581647041
+    ]
+  },
+  "regulated_free_superdeterminant_seed": {
+    "BRST_longitudinal_ghost_net": 0.0,
+    "Gamma_one_loop_free_seed": 1.272937166358,
+    "common_heat_length_in_ell_kappa": 1.0,
+    "components": {
+      "Hubbard_Strattonovich": -0.508659270435,
+      "Weyl": 1.950480062269,
+      "gauge_transverse": -0.168883625475
+    },
+    "d_Gamma_one_loop_d_log_common_radius": 8.370660134847,
+    "definition": "Gamma_1^R=-(1/2)*STr*E1(ell_kappa^2*P_cycle)",
+    "last_retained_spatial_level": {
+      "Hubbard_Strattonovich": 6,
+      "Weyl": 4,
+      "gauge_transverse": 6
+    },
+    "lattice_points": 24,
+    "numerical_tail_tolerance": 0.0,
+    "proper_duration": 0.236183006356,
+    "same_operator_family_for_all_derivatives": true,
+    "scale_force_components": {
+      "Hubbard_Strattonovich": -1.888458339155,
+      "Weyl": 11.85520570044,
+      "gauge_transverse": -1.596087226438
+    }
+  },
+  "scale_force_check": {
+    "Frechet_trace_derivative": 8.370660134847,
+    "centered_finite_difference": 8.370660139595,
+    "relative_residual": 5.67e-10
+  },
+  "scientific_result": "ONE_PROPER-CYCLE_GRADED_OPERATOR_AND_ONE_PARENT_HEAT_REGULATOR_NOW_DEFINE_THE_GAUGE,_GHOST,_48-WEYL,_AND_FOUR-HS_DETERMINANT;_GAUGE_NORMALIZATION,_Z_H,_AND_Y_ARE_DERIVATIVES_AFTER_ONE_COUPLED_QUANTUM_EVENT_SADDLE",
+  "validation": {
+    "BRST_quotient_exact": true,
+    "Frechet_derivative_verified": true,
+    "USB_untouched": true,
+    "all_free_blocks_finite": true,
+    "no_split_sector_terms": true,
+    "one_operator_family": true,
+    "proper_lattice_positive": true
+  },
+  "validation_passed": true,
+  "version": "v15.96"
+}

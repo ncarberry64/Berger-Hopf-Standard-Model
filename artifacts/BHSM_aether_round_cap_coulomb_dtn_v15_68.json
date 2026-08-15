@@ -1,0 +1,83 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "ASSEMBLE_THE_SCALAR-HARMONIC_COULOMB_PROPAGATOR_WITH_THE_EXACT_S3_SPINOR_CURRENT_CLEBSCH-GORDAN_COEFFICIENTS_AND_THE_WEYL_BUBBLE,_THEN_DIAGONALIZE_THE_COLOR-SINGLET_LR_CHANNEL",
+  "artifact": "BHSM_aether_round_cap_coulomb_dtn_v15_68",
+  "claim_boundary": {
+    "Bethe_Salpeter_Clebsch_Gordan_matrix_derived": false,
+    "electric_Coulomb_DtN_spectrum_derived": true,
+    "global_Gauss_zero_mode_identified": true,
+    "local_M4_Yang-Mills_action_derived": false,
+    "static_transverse_plus_electric_kernel_complete": true
+  },
+  "classification": "BHSM_ROUND_CAP_COULOMB_GAUSS_DTN_OPERATOR",
+  "electric_DtN_contract": {
+    "boundary_normalization": "u_ell(pi/2)=1",
+    "constant_mode": "ell=0_has_nu_0=0_and_is_removed_or_constrained_by_global_Gauss_law",
+    "inverse_Coulomb_eigenvalue": "G_ell=R4*(ell+1)/[K_F^(5)*ell*(ell+2)],_ell>=1",
+    "operator_form": "N_0=Omega-Omega^(-1)/R4^2,_Omega=sqrt(-Delta_0+1/R4^2)",
+    "outward_derivative": "d_rho_u(pi/2)=ell*(ell+2)/(ell+1)",
+    "physical_DtN_eigenvalue": "nu_ell=ell*(ell+2)/[(ell+1)*R4]",
+    "radial_equation": "-d_rho(sin(rho)^3*d_rho_u)+ell*(ell+2)*sin(rho)*u=0",
+    "regular_solution": "u_ell=N_ell^-1*sin(rho)^ell*2F1(ell/2,(ell+3)/2;ell+2;sin(rho)^2)",
+    "static_ansatz": "A_tau(rho,Omega)=u_ell(rho)*Y_ell(Omega)",
+    "unit_S3_scalar_eigenvalue": "ell*(ell+2)"
+  },
+  "full_static_gauge_kernel_correction": {
+    "electric_sector_v15_68": "N_0=Omega-Omega^(-1)/R4^2_on_nonconstant_scalar_harmonics",
+    "ghost_role": "cancels_gauge-volume_not_the_physical_Coulomb_response",
+    "local_M4_Maxwell_term_derived": false,
+    "longitudinal_spatial_sector": "fixed_by_Gauss/gauge_condition_and_not_an_independent_physical_vector",
+    "static_current_kernel_complete_after_v15_68": true,
+    "transverse_sector_v15_65": "N_T=sqrt(Delta_1_coexact),_order_one",
+    "v15_66_full_current_kernel_wording": "RECLASSIFIED_AS_TRANSVERSE_CARRIER_EXTENSION"
+  },
+  "mode_rows": [
+    {
+      "boundary_derivative_limit": 1.499999983321,
+      "boundary_value_limit": 0.99992500375,
+      "exact_boundary_derivative": 1.5,
+      "level": 1,
+      "physical_DtN_eigenvalue": 1.482747619411
+    },
+    {
+      "boundary_derivative_limit": 2.666666603691,
+      "boundary_value_limit": 0.999866676666,
+      "exact_boundary_derivative": 2.666666666667,
+      "level": 2,
+      "physical_DtN_eigenvalue": 2.635995767842
+    },
+    {
+      "boundary_derivative_limit": 3.749999845837,
+      "boundary_value_limit": 0.999812518749,
+      "exact_boundary_derivative": 3.75,
+      "level": 3,
+      "physical_DtN_eigenvalue": 3.706869048528
+    },
+    {
+      "boundary_derivative_limit": 4.799999694712,
+      "boundary_value_limit": 0.999760029998,
+      "exact_boundary_derivative": 4.8,
+      "level": 4,
+      "physical_DtN_eigenvalue": 4.744792382116
+    },
+    {
+      "boundary_derivative_limit": 8.888887079797,
+      "boundary_value_limit": 0.999555655541,
+      "exact_boundary_derivative": 8.888888888889,
+      "level": 8,
+      "physical_DtN_eigenvalue": 8.786652559475
+    }
+  ],
+  "validation": {
+    "USB_untouched": true,
+    "boundary_derivatives_match_exact_limit": true,
+    "boundary_values_converge_to_one": true,
+    "electric_DtN_positive_off_constant_mode": true,
+    "hypergeometric_profiles_solve_radial_equation": true,
+    "no_new_continuous_coefficient": true,
+    "static_kernel_sector_audit_complete": true,
+    "transverse_overclaim_corrected": true
+  },
+  "validation_passed": true,
+  "version": "v15.68"
+}

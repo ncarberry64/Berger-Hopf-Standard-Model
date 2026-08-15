@@ -2091,3 +2091,180 @@ reconstruction, and re-run the Z2/Z3, state/GNS, self-reconstruction, and
 strict 30-condition completion gates. They do not promote the conditional
 cycle to a physical operator or claim full BHSM completion.
 <!-- /BHSM_V15_6_NORMAN_CYCLE_MASTER_CLOSURE -->
+<!-- BHSM_V16_21_TO_V16_30_ARTIFACTS -->
+## v16.21-v16.30 N=3 range, recall, and rank-aware continuation
+
+- `artifacts/BHSM_aether_n3_kkt_range_nullspace_audit_v16_21.json`
+- `artifacts/BHSM_aether_norman_bhsm_full_recall_hindsight_v16_22.json`
+- `artifacts/BHSM_aether_n3_rank_aware_trust_step_v16_23.json`
+- `artifacts/BHSM_aether_n3_rank_aware_basin_step_v16_24.json`
+- `artifacts/BHSM_aether_n3_post_basin_refresh_v16_25.json`
+- `artifacts/BHSM_aether_n3_post_basin_multirank_step_v16_26.json`
+- `artifacts/BHSM_aether_n3_post_multirank_refresh_v16_27.json`
+- `artifacts/BHSM_aether_n3_second_multirank_step_v16_28.json`
+- `artifacts/BHSM_aether_n3_third_physical_refresh_v16_29.json`
+- `artifacts/BHSM_aether_n3_third_multirank_step_v16_30.json`
+- `artifacts/BHSM_aether_n3_fourth_physical_refresh_v16_31.json`
+- `artifacts/BHSM_aether_n3_fourth_multirank_step_v16_32.json`
+
+The controlling recall report is
+`docs/BHSM_NORMAN_BHSM_FULL_RECALL_HINDSIGHT_V16_22.md`; the current numerical
+frontier is `docs/BHSM_AETHER_N3_FOURTH_MULTIRANK_STEP_V16_32.md`.
+<!-- /BHSM_V16_21_TO_V16_30_ARTIFACTS -->
+<!-- BHSM_V16_33_TO_V16_45_ARTIFACTS -->
+## v16.33-v16.46 inverse closure and continued N=3 solve
+
+- `artifacts/BHSM_aether_n3_fifth_physical_refresh_v16_33.json`
+- `artifacts/BHSM_aether_n3_fifth_multirank_step_v16_34.json`
+- `artifacts/BHSM_aether_n3_sixth_physical_refresh_v16_35.json`
+- `artifacts/BHSM_aether_physical_inverse_closure_v16_36.json`
+- `artifacts/BHSM_aether_n3_sixth_multirank_step_v16_37.json`
+- `artifacts/BHSM_aether_n3_combined_fresh_continuation_v16_38.json`
+- `artifacts/BHSM_aether_n3_combined_fresh_continuation_v16_39.json`
+- `artifacts/BHSM_aether_n3_combined_fresh_continuation_v16_40.json`
+- `artifacts/BHSM_aether_n3_filtered_merit_continuation_v16_41.json`
+- `artifacts/BHSM_aether_n3_adaptive_spectral_continuation_v16_42.json`
+- `artifacts/BHSM_aether_n3_refined_filter_continuation_v16_43.json`
+- `artifacts/BHSM_aether_n3_second_refined_filter_continuation_v16_44.json`
+- `artifacts/BHSM_aether_n3_physical_residual_role_audit_v16_45.json`
+- `artifacts/BHSM_aether_n3_targeted_filter_continuation_v16_46.json`
+
+The physical inverse requirements are documented in
+`docs/BHSM_PHYSICAL_INVERSE_CLOSURE_V16_36.md`. The latest numerical state is
+documented in `docs/BHSM_AETHER_N3_SECOND_REFINED_FILTER_CONTINUATION_V16_44.md`,
+and its physical residual ownership is classified in
+`docs/BHSM_AETHER_N3_PHYSICAL_RESIDUAL_ROLE_AUDIT_V16_45.md`. The current
+accepted state is `docs/BHSM_AETHER_N3_TARGETED_FILTER_CONTINUATION_V16_46.md`.
+<!-- /BHSM_V16_33_TO_V16_45_ARTIFACTS -->
+<!-- BHSM_V16_47_TO_V16_62_ARTIFACTS -->
+## v16.47-v16.69 event-curvature correction and fresh SBP solve
+
+- `artifacts/BHSM_aether_n3_strong_damping_continuation_v16_47.json`
+- `artifacts/BHSM_aether_n3_normalized_merit_gradient_v16_48.json`
+- `artifacts/BHSM_aether_n3_projected_cauchy_continuation_v16_49.json`
+- `artifacts/BHSM_aether_n3_second_projected_cauchy_v16_50.json`
+- `artifacts/BHSM_aether_n3_oriented_projected_cauchy_v16_51.json`
+- `artifacts/BHSM_aether_n3_projected_derivative_scale_audit_v16_52.json`
+- `artifacts/BHSM_aether_n3_covector_consistent_curvature_v16_53.json`
+- `artifacts/BHSM_aether_n3_second_covector_consistent_curvature_v16_54.json`
+- `artifacts/BHSM_aether_n3_covector_curvature_continuation_v16_55.json`
+- `artifacts/BHSM_aether_n3_post_curvature_soft_mode_audit_v16_56.json`
+- `artifacts/BHSM_aether_n3_sbp_redirect_audit_v16_57.json`
+- `artifacts/BHSM_aether_n3_fresh_sbp_kkt_v16_58.json`
+- `artifacts/BHSM_aether_n3_fresh_sbp_first_descent_v16_59.json`
+- `artifacts/BHSM_aether_n3_fresh_sbp_second_descent_v16_60.json`
+- `artifacts/BHSM_aether_n3_fresh_sbp_third_descent_v16_61.json`
+- `artifacts/BHSM_aether_n3_fresh_sbp_fourth_descent_v16_62.json`
+- `artifacts/BHSM_aether_n3_fresh_sbp_joint_filter_v16_63.json`
+- `artifacts/BHSM_aether_n3_fresh_sbp_joint_multirefresh_v16_64.json`
+- `artifacts/BHSM_aether_n3_fresh_sbp_common_descent_cone_v16_65.json`
+- `artifacts/BHSM_aether_n3_fresh_sbp_second_common_cone_v16_66.json`
+- `artifacts/BHSM_aether_n3_fresh_sbp_third_common_cone_v16_67.json`
+- `artifacts/BHSM_aether_n3_fresh_sbp_fourth_common_cone_v16_68.json`
+- `artifacts/BHSM_aether_n3_fresh_sbp_block_audit_v16_69.json`
+
+The redirect is controlled by
+`docs/BHSM_AETHER_N3_SBP_REDIRECT_AUDIT_V16_57.md`. The current fresh-orbit
+frontier is `docs/BHSM_AETHER_N3_FRESH_SBP_BLOCK_AUDIT_V16_69.md`.
+<!-- /BHSM_V16_47_TO_V16_62_ARTIFACTS -->
+<!-- BHSM_V16_70_TO_V16_79_ARTIFACTS -->
+## v16.70-v16.79 conditioned SBP and scale ownership
+
+- `artifacts/BHSM_aether_n3_fresh_sbp_damped_newton_cone_v16_70.json`
+- `artifacts/BHSM_aether_n3_fresh_sbp_second_damped_newton_cone_v16_71.json`
+- `artifacts/BHSM_aether_n3_fresh_sbp_third_damped_newton_cone_v16_72.json`
+- `artifacts/BHSM_aether_n3_fresh_sbp_refined_damped_cone_v16_73.json`
+- `artifacts/BHSM_aether_n3_fresh_sbp_second_refined_damped_cone_v16_74.json`
+- `artifacts/BHSM_aether_n3_fresh_sbp_post_refined_block_audit_v16_75.json`
+- `artifacts/BHSM_aether_n3_fresh_sbp_metric_projected_newton_v16_76.json`
+- `artifacts/BHSM_aether_n3_fresh_sbp_second_metric_projected_newton_v16_77.json`
+- `artifacts/BHSM_aether_scale_child_ownership_audit_v16_78.json`
+- `artifacts/BHSM_aether_n3_fresh_sbp_third_metric_projected_newton_v16_79.json`
+
+The conditioning result is documented in
+`docs/BHSM_AETHER_N3_FRESH_SBP_METRIC_PROJECTED_NEWTON_V16_76.md`; the scale
+and channel audit is
+`docs/BHSM_AETHER_SCALE_CHILD_OWNERSHIP_AUDIT_V16_78.md`; the current numerical
+frontier is
+`docs/BHSM_AETHER_N3_FRESH_SBP_THIRD_METRIC_PROJECTED_NEWTON_V16_79.md`.
+<!-- /BHSM_V16_70_TO_V16_79_ARTIFACTS -->
+<!-- BHSM_V16_80_TO_V16_92_ARTIFACTS -->
+## v16.80-v16.92 expanded metric and Pareto-balanced continuation
+
+- `artifacts/BHSM_aether_n3_fresh_sbp_fourth_metric_projected_newton_v16_80.json`
+- `artifacts/BHSM_aether_n3_fresh_sbp_fifth_metric_projected_newton_v16_81.json`
+- `artifacts/BHSM_aether_n3_fresh_sbp_post_metric_block_audit_v16_82.json`
+- `artifacts/BHSM_aether_n3_fresh_sbp_expanded_metric_ray_v16_83.json`
+- `artifacts/BHSM_aether_n3_fresh_sbp_second_expanded_metric_ray_v16_84.json`
+- `artifacts/BHSM_aether_n3_fresh_sbp_dense_metric_ray_v16_85.json`
+- `artifacts/BHSM_aether_n3_fresh_sbp_second_dense_metric_ray_v16_86.json`
+- `artifacts/BHSM_aether_n3_fresh_sbp_event_balanced_metric_v16_87.json`
+- `artifacts/BHSM_aether_n3_fresh_sbp_second_event_balanced_metric_v16_88.json`
+- `artifacts/BHSM_aether_n3_fresh_sbp_pareto_balanced_selection_v16_89.json`
+- `artifacts/BHSM_aether_n3_fresh_sbp_refreshed_pareto_balance_v16_90.json`
+- `artifacts/BHSM_aether_n3_fresh_sbp_second_refreshed_pareto_v16_91.json`
+- `artifacts/BHSM_aether_n3_fresh_sbp_post_pareto_audit_v16_92.json`
+- `artifacts/BHSM_aether_n3_fresh_sbp_owner_balanced_metric_v16_93.json`
+
+The current report is
+`docs/BHSM_AETHER_N3_FRESH_SBP_PARETO_FRONTIER_V16_92.md`.
+The owner-weight comparison is
+`docs/BHSM_AETHER_N3_FRESH_SBP_OWNER_BALANCED_METRIC_V16_93.md`.
+<!-- /BHSM_V16_80_TO_V16_92_ARTIFACTS -->
+<!-- BHSM_V16_93_TO_V17_00_ARTIFACTS -->
+## v16.93-v17.00 active N=3 continuation
+
+- `BHSM_aether_n3_fresh_sbp_owner_balanced_metric_v16_93.json`
+- `BHSM_aether_n3_fresh_sbp_coupled_owner_cone_v16_94.json`
+- `BHSM_aether_n3_fresh_sbp_second_coupled_owner_cone_v16_95.json`
+- `BHSM_aether_n3_fresh_sbp_third_coupled_owner_cone_v16_96.json`
+- `BHSM_aether_n3_fresh_sbp_post_coupled_audit_v16_97.json`
+- `BHSM_aether_n3_fresh_sbp_fourth_coupled_owner_cone_v16_98.json`
+- `BHSM_aether_n3_fresh_sbp_post_fourth_coupled_audit_v16_99.json`
+- `BHSM_aether_n3_fresh_sbp_fifth_coupled_owner_cone_v17_00.json`
+<!-- /BHSM_V16_93_TO_V17_00_ARTIFACTS -->
+<!-- BHSM_V17_01_TO_V17_05_ARTIFACTS -->
+## v17.01-v17.05 measured-response continuation
+
+- `BHSM_aether_n3_fresh_sbp_fractional_maximin_cone_v17_01.json`
+- `BHSM_aether_n3_fresh_sbp_measured_fractional_cone_v17_02.json`
+- `BHSM_aether_n3_fresh_sbp_second_measured_fractional_cone_v17_03.json`
+- `BHSM_aether_n3_fresh_sbp_post_measured_audit_v17_04.json`
+- `BHSM_aether_n3_fresh_sbp_six_owner_measured_cone_v17_05.json`
+
+The mathematical report is
+`docs/BHSM_AETHER_N3_MEASURED_SIX_OWNER_CONTINUATION_V17_05.md`.
+<!-- /BHSM_V17_01_TO_V17_05_ARTIFACTS -->
+<!-- BHSM_V17_06_TO_V17_14_ARTIFACTS -->
+## v17.06-v17.14 expanded measured-tangent continuation
+
+- `BHSM_aether_n3_fresh_sbp_second_six_owner_measured_cone_v17_06.json`
+- `BHSM_aether_n3_fresh_sbp_expanded_measured_tangent_v17_07.json`
+- `BHSM_aether_n3_fresh_sbp_tangent_family_selection_v17_08.json`
+- `BHSM_aether_n3_fresh_sbp_post_tangent_family_audit_v17_09.json`
+- `BHSM_aether_n3_fresh_sbp_second_tangent_family_selection_v17_10.json`
+- `BHSM_aether_n3_fresh_sbp_third_tangent_family_selection_v17_11.json`
+- `BHSM_aether_n3_fresh_sbp_dense_radius_promotion_v17_12.json`
+- `BHSM_aether_n3_fresh_sbp_post_dense_tangent_family_v17_13.json`
+- `BHSM_aether_n3_fresh_sbp_post_dense_family_audit_v17_14.json`
+<!-- /BHSM_V17_06_TO_V17_14_ARTIFACTS -->
+<!-- BHSM_V17_15_TO_V17_16_ARTIFACTS -->
+## v17.15-v17.16 accelerated post-dense continuation
+
+- `BHSM_aether_n3_fresh_sbp_second_post_dense_family_v17_15.json`
+- `BHSM_aether_n3_fresh_sbp_third_post_dense_family_v17_16.json`
+<!-- /BHSM_V17_15_TO_V17_16_ARTIFACTS -->
+<!-- BHSM_V17_17_TO_V17_18_ARTIFACTS -->
+## v17.17-v17.18 continued accelerated continuation
+
+- `BHSM_aether_n3_fresh_sbp_fourth_post_dense_family_v17_17.json`
+- `BHSM_aether_n3_fresh_sbp_fifth_post_dense_family_v17_18.json`
+<!-- /BHSM_V17_17_TO_V17_18_ARTIFACTS -->
+<!-- BHSM_V17_19_TO_V17_22_ARTIFACTS -->
+## v17.19-v17.22 owner audit and v0-priority continuation
+
+- `BHSM_aether_n3_fresh_sbp_post_acceleration_audit_v17_19.json`
+- `BHSM_aether_n3_fresh_sbp_sixth_post_dense_family_v17_20.json`
+- `BHSM_aether_n3_fresh_sbp_second_dense_radius_v17_21.json`
+- `BHSM_aether_n3_fresh_sbp_v0_priority_family_v17_22.json`
+<!-- /BHSM_V17_19_TO_V17_22_ARTIFACTS -->

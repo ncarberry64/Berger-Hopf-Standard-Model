@@ -5,12 +5,168 @@ evidence, not competing public status pages.
 
 ## Current public summary
 
-Current version: **v15.10**.
+Current version: **v18.73**.
 
-BHSM v15.10 preserves the v15.9 cycle-controlled degree-one radial eta branch and derives the exact minimal sigma-response inverse for alpha, r and gamma. The current Aether state supplies no physical sigma tangent derivative or nonlinear response, and explicit stable witnesses prove retained-action nonuniqueness. No physical sigma onset or Hopf child is promoted. Full completion remains false and frozen predictions are unchanged.
+BHSM v17.84-v18.73 derives and executes the missing N=3
+event-to-complete-child correspondence.  A candidate event is accepted only
+when it reconstructs a whole child satisfying three boundary traces, all seven
+local Dirac constraints, two attachment momenta, two resolved dynamic-flux
+rows, positive eta-Legendre margin, the inherited zero-background
+gauge/spinor/ghost/HS Calderon block, discrete firewall-core ownership, and a
+positive constraint-projected persistence interval.  This is a 14-row child
+boundary/BVP map evaluated on event states; it adds no equation to the global
+376-row KKT system.
 
-The homogeneous cycle inverse conditionally selects `kappa1,kappa0` and exactly
-meets the v14.91 identity locus on the stationary v15.9 slice.
+The latest physically promoted state is v18.73. Its exact 376-row norm is
+`0.807144219141348`, its event magnitude is `0.083752222964491`, and its global
+eta minimum is `0.774053610471969`. The child chart was recomputed from all 26
+child variables and has rank 14.  The reconstructed child has trace residual
+`1e-15`, seven-constraint residual `2.9e-13`, momentum mismatch `1.90e-11`,
+resolved two-scale flux envelope `5.64e-6`, and persists for `1e-4` with
+constraint residual below `6.54e-11` and positive eta. Its motion, momentum,
+and time dependence remain nonzero and are classified as physical
+constraint-consistent relative evolution, not particle defects.
+
+The event definition is therefore no longer the current N=3 blocker.  The
+simultaneous N=3 saddle remains open: the residual is far from zero.  v18.05
+and v18.07-v18.08 demonstrate that the inherited fixed-event-multiplier and
+coordinate-column Jacobian interpretations do not accurately differentiate
+the exact v17.61 projected residual.  Their trial directions may be promoted
+only by independent true-merit and complete-child checks; their Jacobian
+claims remain invalidated.
+
+v18.69 audits the 12-dimensional local child fiber at v18.68. Rank 14 and
+nullity 12 persist at neighboring Jacobian steps. In the retained action-owned
+Sobolev coordinates, six directions are genuine gauge-fixed Cauchy freedom
+and six are unresolved Cauchy-multiplier mixtures. No remaining direction is
+asserted to be gauge, and no observable selector is invented. Exact
+reprojected probes preserve the retained child rows, eta and nonzero one-step
+persistence while changing action/eta observables. The fiber is therefore not
+a harmless chart degeneracy; its action/Unique-Actualization owner is open but
+does not locally obstruct event continuation.
+
+The physical solve is the square 376-variable KKT system with explicit event
+multiplier.  A coupled step may temporarily worsen any individual row and may
+leave the path followed by earlier iterates.  Componentwise monotonicity,
+trust-region acceptance, damping, line-search and Krylov tolerances are solver
+controls, not additional BHSM constraints.  Promotion requires total physical
+merit reduction, admissible eta, and complete-child persistence.
+
+v18.14 measures the proposed microscopic-stiffness mechanism at the exact
+accepted v18.12 state.  Radius-family fits recover action-owned powers `R^5`
+for spatial and intrinsic curvature, `R^7` for the cosmological and ADM
+kinetic terms, and `R^-1` for the boundary Casimir term; the mixed eta and
+Hopf-inertia terms have measured local exponents `1.8083` and `-2.1733` over
+the tested radius interval.  Physical response is strongly anisotropic, most
+notably in period and coherent scale directions, but the action-normalized
+maximum curvature is `94.0122`, giving an order-one-action characteristic
+step `0.103135`: `1.03135e5` times `1e-6`.  The enormous spectral ratio comes
+primarily from very soft directions, not an action-owned maximum curvature
+that forces a `1e-6` step.  The intrinsic microscopic-stiffness hypothesis is
+therefore not promoted.
+
+v18.15 derives an action-curvature numerical coordinate map after that
+measurement.  It is an invertible right-coordinate transformation only: no
+376 residual row is scaled or changed.  It reproduces the source state,
+exact residual and eta exactly, preserves the event and complete-child gate,
+and uses no tuned coefficient or particle data.  This is an equivalence
+result, not yet evidence of a larger accepted Newton step.
+
+v18.16-v18.17 show that the inherited v17.58 proposal direction and its
+opposite do not reduce exact merit, so no state is promoted from that model.
+v18.18 then assembles the exact 375-dimensional action Hessian from the local
+action jets and heat response; its four directional checks agree with the
+exact v17.61 covector to `1.81e-7` or better.  Coordinatewise event Hessians in
+v18.19 and v18.21 are invalidated by exact-response checks.  v18.20 identifies
+a resolved directional event-curvature scale instead, and v18.22 combines the
+exact action response with only the required event Hessian-vector product.
+That response agrees with the exact nonlinear response to `7.20e-5` at its
+resolved scale and yields the v18.25 complete-child-gated promotion.  At that
+new state v18.26 validates the local response but invalidates the inherited
+coarse trial floor: all forward steps at or above `1e-8` worsen exact merit.
+v18.27 directly measures the finer line bracket and selects a `3e-9` scaled
+step.  v18.28 recomputes the full-rank 14-row child chart, and v18.29 promotes
+the state only after independent two-scale flux and persistence checks.
+v18.30 validates the matrix-free directional operator but reclassifies the
+right-mapped GMRES attempt because it does not solve the Newton equation.
+v18.31 invalidates the congruent MINRES direction by its exact nonlinear
+response check.  Its line trial nevertheless proposes an independently
+merit-reducing eta-admissible state.  v18.32-v18.33 recompute the child and
+promote that physical state without reasserting either failed solver model.
+v18.34 then measures the direct derivative of the unchanged nested residual
+and finds a common `3e-6`/`1e-6` response plateau.  v18.35 applies the measured
+scale, but its resulting JFNK direction leaves that plateau and its Newton
+claim is invalidated.  The exact line trial nevertheless lowers total merit
+materially.  v18.36-v18.37 recompute the complete child and promote only that
+physical state, reducing the exact norm by `0.00302809525`.
+v18.38 remeasures the same finest direct-response plateau at v18.37.  The
+v18.39 Krylov direction again fails its response-consistency check and remains
+invalidated, while an independently evaluated line state reduces exact merit.
+v18.40-v18.41 recompute the child and promote the physical state only, lowering
+the exact norm by a further `0.00168862805`.
+v18.42 remeasures the same direct-response plateau at v18.41.  v18.43 again
+invalidates its proposed Newton direction while retaining independently
+eta-admissible exact-merit line states.  The most aggressive candidate closes
+its local child at v18.44 but fails the unchanged two-scale flux envelope at
+v18.45 and is not promoted.  v18.46 then reconstructs the next lowest-merit
+existing line state, and v18.47 promotes it after the unchanged flux and
+persistence gates, lowering the exact norm by `0.00497706683`.
+
+v18.48 decomposes the v18.43 proposal without changing the equations.  Raw
+norm is almost entirely explicit event-multiplier units, while action-owned
+norm lies primarily in scale, v and w geometry.  Lapse leaves the local
+response plateau first and eta-sensitive shift has the largest normalized
+departure, but w supplies the largest absolute nonlinear defect.  The audited
+u/eta-shift/lapse interactions are absolutely subdominant, so they do not
+explain the dominant bending of this proposal.
+
+v18.49 remeasures the direct-response plateau at v18.47.  v18.50 then treats
+the bounded Krylov vector strictly as a local geometric probe and scans both
+line orientations with exact nonlinear merit.  Its Newton interpretation is
+invalidated, while exact-merit candidates remain physical proposals.  The
+lowest-merit candidate reconstructs a child at v18.51 but fails the unchanged
+two-scale flux envelope at v18.52 and is not promoted.  v18.53 reconstructs the
+next lowest-merit existing line state, and v18.54 promotes it after flux and
+persistence, reducing the exact norm by `0.00134272343`.
+
+v18.55 remeasures the unchanged `3e-6`/`1e-6` direct-response plateau at
+v18.54.  v18.56 scans both orientations of a fresh bounded geometric probe.
+Its solver interpretation is invalidated, while its positive `0.03125` line
+state independently lowers the exact norm.  v18.57 reconstructs a fresh
+rank-14 whole child, and v18.58 promotes the physical state only after eta,
+two-scale flux, and positive-duration persistence pass, reducing the exact
+norm by `0.00201664283`.
+
+v18.59 formalizes the existing pipeline as the constrained-root target
+`find z* in A such that F(z*)=0`, with unchanged `F:R^376->R^376` and the
+rank-14 child map evaluated as a physical admissibility gate, never as equation
+377.  Its disk audit preserves six accepted and two rejected states.  The two
+rejected states have lower scalar residual than later accepted states but fail
+only the unchanged flux gate, so physical admissibility is not scalar residual
+ordering.  The measured accepted corridor shows no monotonic collapse toward
+the flux, eta, rank, or persistence boundaries; this is not proof that the root
+lies inside the admissible set.
+
+v18.60 measures five accepted secants in one fixed copy of the validated
+v18.15 action-owned coordinate chart.  Their turning angles are `10.06`,
+`66.07`, `99.49`, and `8.56` degrees, while scale/w/v geometry carries mean
+action-owned squared fraction `0.985975`.  The two retained rejected directions
+do not support systematic u/eta-shift/lapse compression.  These are finite
+diagnostics, not a manifold theorem or continuation restriction.
+
+v18.61 remeasures the direct response at v18.58 and resolves a common
+`1e-6/3e-7` plateau under the unchanged criteria.  v18.62 scans both
+orientations with exact nonlinear merit; its solver interpretation is
+invalidated, while the positive `0.03125` line state lowers exact norm by
+`0.00442327465`.  v18.63 reconstructs its fresh rank-14 moving child, and
+v18.64 promotes the state only after eta, independent two-scale flux, and
+positive-duration persistence pass.
+
+v18.65 resolves a finest common `3e-7/1e-7` response plateau at v18.64.
+v18.66 again invalidates the solver interpretation while retaining an exact-
+merit candidate.  v18.67 closes its fresh rank-14 child, and v18.68 promotes
+the state only after the unchanged eta, two-scale flux, and positive-duration
+persistence gates pass, lowering exact norm by `0.000254622031`.
 
 An incoming packet is one possible driver or witness, not a required primitive
 or the fundamental cause. The white-hole-to-plasma/acoustic-BAO-to-cooled-
@@ -25,11 +181,14 @@ Current verdict:
 `BHSM_V15_10_THE_RETAINED_SIGMA_ACTION_HAS_AN_EXACT_INJECTIVE_THREE_RESPONSE_INVERSE_FOR_ALPHA_R_GAMMA_AND_THE_HOMOGENEOUS_CYCLE_INVERSE_CONDITIONALLY_SELECTS_KAPPA1_KAPPA0_BUT_THE_CURRENT_AETHER_STATE_SUPPLIES_NO_PHYSICAL_SIGMA_TANGENT_X_DERIVATIVE_OR_NONLINEAR_RESPONSE_JET;_EXPLICIT_STABLE_INEQUIVALENT_TRIPLES_SHARE_THE_SAME_SIGMA_ZERO_PARENT_AND_EVEN_THE_SAME_THRESHOLD_QUADRATIC_CURVATURE;_THEREFORE_NO_PHYSICAL_SIGMA_ONSET_HOPF_CHILD_OR_PERSISTENT_ENCLOSURE_IS_SELECTED_AND_FULL_BHSM_COMPLETION_REMAINS_FALSE`.
 
 Exact next object:
-`ACTION_OWNED_AETHER_CYCLE_TO_REGULAR_SIGMA_RESPONSE_JET_MAP_PRODUCING_THE_PHYSICAL_SIGMA_TANGENT_PROPAGATOR_X_DERIVATIVE_AND_BACKREACTION_UNREDUCED_CANONICAL_QUARTIC_ON_THE_V15_9_BRANCH`.
+`CONTINUE_PHYSICALLY_ADMISSIBLE_EXACT_376_ROW_DESCENT_FROM_THE_LATEST_ACCEPTED_FRONTIER_TO_F376_ZERO`.
 
-`FULL_BHSM_COMPLETE = FALSE`. Physical master-solution counts, absolute scale,
-action-derived CKM/PMNS, and an encapsulation event remain undefined or open.
-Frozen predictions and official prediction logic are unchanged.
+`FULL_BHSM_COMPLETE = FALSE`. N=3 saddle closure, independent N=4+ convergence,
+the microscopic pregeometric transition generator, the one-loop source/saddle
+chain, broken-return observables, absolute scale, and action-derived flavor
+remain open. Frozen predictions and official prediction logic are unchanged.
+The user authorized a reproducibility snapshot at the v18.58 sprint boundary;
+publication does not imply full scientific closure.
 
 ## Historical v11.6 charged-current status
 
@@ -3145,3 +3304,170 @@ self-adjoint background, and the complete Hessian remain open. Source-free
 ADM coordinate shift is excluded as the physical shear source. BHSM remains
 incomplete and USB synchronization remains ineligible.
 <!-- /BHSM_V14_84_CAP_INERTIA_OPERATOR -->
+<!-- BHSM_V16_21_TO_V16_30_CURRENT_FRONTIER -->
+## v16.21-v16.30 current microscopic frontier
+
+The exact v16.20 N=3 projected KKT residual is overwhelmingly inside the
+refreshed symmetric Jacobian range: its outside-range fraction falls from
+`1.03034e-4` at relative cutoff `1e-8` to `2.20074e-6` at `1e-14`. Direct
+finite differences verify that the endpoint-scale and period equations are
+variations of the same anchored discrete action. The prior failure is thus
+reclassified as severe numerical conditioning, not a missing endpoint law.
+
+The full Norman-works/BHSM hindsight audit finds no action-owned boundary,
+mass, or Yukawa normalization that can be imported. Norman's causal ordering
+survives as formation -> encapsulation -> reconstruction -> return guidance;
+its separate scalar/topographic fields and phenomenological coefficients do
+not enter the replacement action. Gauge normalization and the nonzero
+rank-16 mass-generating sector remain outputs of one shared M5 -> M4
+localization/pushforward.
+
+Rank-aware fresh-Hessian continuation has reduced the complete joint N=3 KKT
+residual
+
+`38.061644747011 -> 28.127172454276 -> 21.947135009643 -> 13.904169345267 -> 9.375559567031 -> 8.756109455622`.
+
+The latest accepted v16.32 state has soft-event residual `0.049515802141` and
+eta minimum `1.246389506846`. Simultaneous stationarity is not yet closed, so
+the common event pushforward, independent N=4 convergence, broken branch,
+return, mass, flavor and Unique Actualization gates remain open.
+
+`FULL_BHSM_COMPLETE = FALSE`. No GitHub or USB synchronization is authorized.
+<!-- /BHSM_V16_21_TO_V16_30_CURRENT_FRONTIER -->
+<!-- BHSM_V16_33_TO_V16_45_CURRENT_FRONTIER -->
+## v16.33-v16.46 physical-inverse and filtered-KKT frontier
+
+Fresh exact-Hessian continuation of the unchanged anchored N=3 event KKT has
+reduced the complete projected nonlinear residual further:
+
+`8.756109455622 -> 8.492887411566 -> 7.542317783457 -> 7.248359787313 -> 6.768163464224 -> 6.604262580172 -> 6.514658743303 -> 6.500896923864 -> 6.482403137748 -> 6.457090170150 -> 6.452526898856`.
+
+Hard multirank truncation and continuous spectral damping were compared on the
+same freshly rebuilt physical Hessian. Continuous damping won at v16.42 and
+remained residual-reducing through the targeted v16.46 refresh. The latest
+state preserves all 376 hex-precision unknowns, `eta_min=1.257955928423`, and
+has soft-event residual `0.018374397122`.
+
+The v16.36 physical inverse-closure matrix now treats known particle physics
+only as structural requirements. It quarantines all measured numerical values,
+makes the electron the first complete returned child, forbids a final
+family-central charged mass operator, requires nonzero CKM commutator and CP
+invariants, and collapses absolute gauge and fermion mass normalization to one
+common M5 -> M4 localization/pushforward.
+
+The v16.45 residual-role audit shows that the latest defect remains parent
+geometry stationarity, dominated by `v_0` Hopf anisotropy/gauge-breaking
+geometry (`5.002755095280`), `w_0` fiber-localization geometry
+(`2.920541937115`), and common `log_scale` geometry (`2.025397358000`). Thus
+the soft crossing alone is not promoted: the simultaneous N=3 saddle remains
+active and the common event pushforward remains downstream.
+
+`FULL_BHSM_COMPLETE = FALSE`. No GitHub, publication, PR, Zenodo, or USB
+synchronization has been performed.
+<!-- /BHSM_V16_33_TO_V16_45_CURRENT_FRONTIER -->
+<!-- BHSM_V16_47_TO_V16_62_CURRENT_FRONTIER -->
+## v16.47-v16.69 soft-chart correction and fresh SBP frontier
+
+Strong damping first continued the old collocation branch to
+`6.442521870987`. Exact event-multiplier elimination then exposed a derivative
+inconsistency: the old scalar event Hessian contributed a merit gradient of
+`4.86e7`, while measured projected derivatives had the opposite sign. The
+terminal soft eigenvalue remained isolated, so v16.53 replaced the oversized
+scalar stencil by the Jacobian of the normalized event covector on its stable
+local spectral chart. Repeated corrected steps reached `6.402764176590`.
+
+At that state the Euler--Dirac soft vector has unit norm, eigenpair residual
+`2.6e-14`, lower gap `0.009950403300`, and upper gap `0.008632454820`.
+Nevertheless 96.44% of the squared norm of the sixteen largest coordinate
+residuals lies in the first/last collocation layers. The retained derivative
+and trapezoid quadrature have SBP defect `1.322875655532`; the minimal
+trapezoid-SBP derivative has exactly zero defect and changes only endpoint rows
+0 and 23.
+
+This new calculation activates a fresh canonical-reset N=3 SBP orbit. No old
+event state is transplanted. Its chain-rule covector matches the SBP action to
+relative error `1.5226e-6`. Fresh joint descent has progressed
+
+`48.253144201259 -> 43.174769353899 -> 41.719520750542 -> 40.862135076362 -> 39.777540884050 -> 39.402296278684 -> 35.031833552213 -> 33.536084439259 -> 32.849238639466 -> 32.483095487141`.
+
+The v16.64 total-merit ray exposed no common event descent. v16.65 therefore
+derived the closest common-descent cone from the gradients of the complete
+merit and the absolute actual event, without changing either normalization.
+The construction persists through v16.68. The latest residual is
+`32.483095487141`, event residual `0.351154201685`, and
+`eta_min=0.074945802608`. v16.69 identifies the dominant remaining block as
+boundary/common-pushforward `log_scale` stationarity (`31.683912119440`), not
+a missing independent normalization. This is not saddle closure.
+The common gauge/rank-16 LR pushforward remains ineligible until all SBP KKT
+blocks and the event close together.
+
+`FULL_BHSM_COMPLETE = FALSE`. No external synchronization was performed.
+<!-- /BHSM_V16_47_TO_V16_62_CURRENT_FRONTIER -->
+<!-- BHSM_V16_70_TO_V16_79_CURRENT_FRONTIER -->
+## v16.70-v16.79 conditioned SBP and scale-ownership frontier
+
+Damped Gauss--Newton common-cone steps reduced the fresh, exact-SBP N=3
+residual
+
+`32.483095487141 -> 24.960382194479 -> 15.380754137909 -> 14.948044514439 -> 14.803880474836 -> 14.379752225156 -> 14.002288116708 -> 12.853643589435`.
+
+Every promoted step also reduced the magnitude of the identical actual
+Euler--Dirac event; it is now `0.300983851426`, with
+`eta_min=0.822309989842`. v16.76 replaces the Euclidean event-half-space
+correction by the damped Gauss--Newton normal-metric projection on the 375
+physical base variables. Independent fresh-Jacobian refreshes validate the
+mechanism through v16.79.
+
+The v16.78 physical ownership audit shows that reconstruction already fixes
+the canonical reset scale, `q_log_scale(0)=0`, and that this coordinate is not
+an unknown. The 23 free scale coordinates are the open-orbit breathing
+history and have exactly 23 stationarity rows. At v16.77 their norm is
+`13.209761147662`, with 89.87% of its squared value in the final four free
+nodes. Thus the earlier `14.016355587104` obstruction is not proved to be an
+extra particle-scale degree of freedom and no row is removed.
+
+The still-missing downstream relation is
+`C_rec=q_log_scale(return)-log(R_rec[I_event,I_environment]/R_star)=0`, owned
+by the nonlinear broken reconstruction/return BVP. It is ineligible until
+that action-derived solution map exists. The reconstructed child channel is
+restricted by transported degree, orientation, FR parity, incidence,
+boundary identities, SM representation labels, C3 family projectors,
+hypercharge and bundle isomorphism class; arbitrary cross-sector selection is
+forbidden without adding an empirical rule.
+
+Simultaneous N=3 closure, common event pushforward, N=4+ convergence, broken
+return, mass/flavor, absolute spectrum and Unique Actualization remain open.
+`FULL_BHSM_COMPLETE = FALSE`. No external synchronization was performed.
+<!-- /BHSM_V16_70_TO_V16_79_CURRENT_FRONTIER -->
+<!-- BHSM_V16_80_TO_V16_92_CURRENT_FRONTIER -->
+## v16.80-v16.92 expanded-ray and Pareto-balanced N=3 frontier
+
+Fresh normal-metric steps, expanded nonlinear rays and a dense local trust
+grid reduce the unchanged exact-SBP N=3 residual
+
+`12.853643589435 -> 11.635355049010 -> 10.539813695735 -> 7.763437876353 -> 5.821724926846 -> 3.816380155748 -> 2.897637137967`.
+
+At that point event-row weights are introduced only in the Gauss--Newton
+preconditioner. Every trial is still evaluated and accepted with the original
+376-component physical residual and identical ordered Euler--Dirac event.
+Event-balanced and Pareto-selected fresh-Jacobian steps continue to
+`2.486624819288`, with event residual `-0.211419776681` and
+`eta_min=0.840494687332`.
+
+The v16.92 audit resolves the scale-ownership question empirically. The
+`log_scale` stationarity norm falls from `14.016355587104` at v16.75 to
+`0.465980389110` without deleting its variables or equations. The remaining
+owners are period stationarity `1.853375463700`, `w_0=1.148018415647`, and
+`v_0=1.074632770789`. The terminal soft eigenpair residual is `1.00e-14` and
+the branch remains isolated. The next same-action correction targets these
+newly measured owners while retaining simultaneous event closure.
+
+v16.93 tests diagonal owner equilibration and stronger event emphasis. The
+identity metric wins and advances the canonical state to residual
+`2.437270312411`, event `-0.208275968279`, and `eta_min=0.840365825398`;
+the owner weights are not promoted.
+
+`FULL_BHSM_COMPLETE = FALSE`. The common event pushforward, independent N=4+
+convergence and downstream broken-return/mass/flavor chain remain open. No
+external synchronization was performed.
+<!-- /BHSM_V16_80_TO_V16_92_CURRENT_FRONTIER -->

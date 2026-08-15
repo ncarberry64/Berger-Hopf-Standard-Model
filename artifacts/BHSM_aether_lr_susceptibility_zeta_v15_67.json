@@ -1,0 +1,91 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "LIFT_THE_PARENT_DtN_CURRENT_KERNEL_AND_THE_FERMION_BUBBLE_TO_THE_FULL_S3_CLEBSCH-GORDAN_MODE_SPACE,_ISOLATE_THE_SINGLE_LOCAL_HdaggerH_SUBTRACTION,_AND_DERIVE_ITS_VALUE_FROM_THE_AETHER_EVENT_RESET_RATHER_THAN_A_RENORMALIZATION_CONVENTION",
+  "artifact": "BHSM_aether_lr_susceptibility_zeta_v15_67",
+  "claim_boundary": {
+    "UV_pole_and_scale_dependence_derived": true,
+    "free_Weyl_LR_spectral_sum_derived": true,
+    "gap_eigenvalue_derived": false,
+    "nonlocal_susceptibility_structure_derived": true,
+    "renormalized_local_Higgs_quadratic_form_derived": false
+  },
+  "classification": "BHSM_ROUND_S3_LEFT_RIGHT_SUSCEPTIBILITY_ZETA_STRUCTURE",
+  "cutoff_rows": [
+    {
+      "closed_sum": 1.333333333333,
+      "direct_sum": 1.333333333333,
+      "max_level": 0,
+      "physical_susceptibility": 0.066002585492
+    },
+    {
+      "closed_sum": 3.733333333333,
+      "direct_sum": 3.733333333333,
+      "max_level": 1,
+      "physical_susceptibility": 0.184807239378
+    },
+    {
+      "closed_sum": 7.161904761905,
+      "direct_sum": 7.161904761905,
+      "max_level": 2,
+      "physical_susceptibility": 0.354528173501
+    },
+    {
+      "closed_sum": 17.060894660895,
+      "direct_sum": 17.060894660895,
+      "max_level": 4,
+      "physical_susceptibility": 0.844547368823
+    },
+    {
+      "closed_sum": 48.93337223492,
+      "direct_sum": 48.93337223492,
+      "max_level": 8,
+      "physical_susceptibility": 2.42229681327
+    },
+    {
+      "closed_sum": 576.627523352747,
+      "direct_sum": 576.627523352747,
+      "max_level": 32,
+      "physical_susceptibility": 28.544180555464
+    }
+  ],
+  "exact_spectral_contract": {
+    "Laurent_expansion": "S(s;q)=-1/(8s)+1/24-gamma_E/4-log(2)/2-log(q)/4+O(s)",
+    "M4": "R_times_S3_R4",
+    "finite_local_HdaggerH_subtraction_fixed": false,
+    "meromorphic_regulator": "S(s;q)=q^(2s)*[HurwitzZeta(2s-1,3/2)-HurwitzZeta(2s+1,3/2)/4],_q=mu*R4",
+    "multiplicities": "d_n=(n+1)(n+2)",
+    "nonlocal_mode_dependence_fixed": true,
+    "odd_FR_effect": "the_selected_projective_spin_ray_is_already_realized_by_the_half-integer_S3_Weyl_spectrum_and_adds_no_continuous_parameter",
+    "one_particle_energies": "E_n=(n+3/2)/R4",
+    "per_left-right_pair_susceptibility": "chi_LR=(1/(2*pi^2*R4^2))*sum_n[d_n/(n+3/2)]",
+    "pole_operator": "local_color-singlet_weak-doublet_HdaggerH"
+  },
+  "renormalization_semantics": {
+    "MS_finite_part_positive": false,
+    "cutoff_asymptotics": "S_N=(N+1)(N+3)/2-[psi(N+5/2)-psi(3/2)]/4",
+    "divergence": "quadratic_with_a_subleading_logarithm",
+    "gap_threshold_scheme_independent_without_that_output": false,
+    "physical_interpretation": "analytic_continuation_is_not_a_positive_mode_cutoff_and_its_finite_part_is_a_renormalization_convention,_not_the_gap_susceptibility_selected_by_the_child",
+    "positive_cutoff_sums": true,
+    "required_microscopic_output": "the_renormalized_local_composite_Higgs_quadratic_form_or_equivalently_the_parent-selected_UV_subtraction_rule",
+    "zeta_MS_finite_part_at_mu_equals_1_over_R4": -0.449210839839
+  },
+  "validation": {
+    "Laurent_residue_exact": true,
+    "USB_untouched": true,
+    "closed_cutoff_formula_exact": true,
+    "cutoff_sum_monotone": true,
+    "cutoff_susceptibility_positive": true,
+    "finite_subtraction_not_fabricated": true,
+    "gap_threshold_not_overclaimed": true,
+    "no_new_continuous_coefficient": true
+  },
+  "validation_passed": true,
+  "version": "v15.67",
+  "zeta_Laurent_at_matching_scale": {
+    "dimensionless_minimal_subtraction_finite_part": -0.449210839839,
+    "dimensionless_residue_at_s0": -0.125,
+    "physical_minimal_subtraction_finite_part": -0.022236807645,
+    "physical_residue": -0.00618774239
+  }
+}

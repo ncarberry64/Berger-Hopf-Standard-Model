@@ -1,0 +1,71 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "COMPUTE_THE_FERMIONIC_SPIN-STRESS_PROJECTION_ON_e_s_AND_THE_GAUGE_DtN_ON_THE_SAME_delta-CONTROLLED_EVENT_LAYER",
+  "actual_event_pushforward": {
+    "LR_scalar_projection": "G_LR,soft(delta)=delta^(-1)*P_scalarLR[<J_s,J_s>]/2",
+    "absolute_gauge_residue": "Z_i^cycle=T^(-1)*delta_Fi^2_Gamma_cycle",
+    "actual_control": "delta(t)=-lambda_soft(D_Euler-Dirac[q,dotq,m])_downarrow_zero",
+    "canonical_Yukawa": "Y_f^cycle=(Z_L*Z_R*Z_H)^(-1/2)*delta_bar_fL_delta_fR_delta_H_Gamma_cycle",
+    "common_parent_cycle": "Gamma_cycle=Gamma_reset+integral_dt*[-log_integral_B_Phi=fixed_exp(-S5)]",
+    "not_the_actual_control": "epsilon_eta=min_chi(1+X_eta^3)",
+    "principal_pencil_split": "D_KKT=-delta*P_s+D_perp,_P_s=e_s_tensor_e_s",
+    "required_next_evaluation": "COMPUTE_THE_FERMIONIC_SPIN-STRESS_PROJECTION_ON_e_s_AND_THE_GAUGE_DtN_ON_THE_SAME_delta-CONTROLLED_EVENT_LAYER",
+    "same_parent_functional_required": true,
+    "soft_source": "J_s=e_s^T*delta_Gamma5/delta_(dotq,m);_Gamma_soft=-(2*delta)^(-1)<J_s,J_s>",
+    "split_normalization_forbidden": true
+  },
+  "artifact": "BHSM_aether_actual_dirac_event_pencil_v15_79",
+  "claim_boundary": {
+    "actual_event_control_identified": true,
+    "actual_event_linearized_time_estimated": true,
+    "actual_soft_fermion_source_projection_evaluated": false,
+    "physical_joint_gauge_Yukawa_residues_evaluated": false
+  },
+  "classification": "BHSM_ACTUAL_CONSTRAINED_DIRAC_EVENT_PENCIL",
+  "event_pencil_diagnostics": {
+    "Dirac_condition_number": 197148.54890899238,
+    "delta_time_derivative": -204.221441171102,
+    "dominant_component": "dot_w1",
+    "linearized_crossing_increment": 1.720853e-05,
+    "linearized_crossing_time": 0.10603720853,
+    "minimum_eta_Legendre": 0.780737927868,
+    "minimum_eta_Legendre_at_linearized_Dirac_event": 0.829330135037,
+    "minimum_eta_Legendre_time_derivative": 2823.727996347225,
+    "positive_distance_delta": 0.003514350741,
+    "soft_Dirac_eigenvalue": -0.003514350741,
+    "soft_eigenvalue_time_derivative": 204.221441171102,
+    "soft_eigenvector_components": {
+      "dot_log_R": -0.04398115177,
+      "dot_u1": 0.006742469292,
+      "dot_u2": 0.028691638122,
+      "dot_v0": 0.170363534758,
+      "dot_v1": 0.170674483951,
+      "dot_w0": -0.356645218978,
+      "dot_w1": -0.892601970118,
+      "lapse_n1": 0.027572506564,
+      "lapse_n2": -0.064648669451,
+      "shift_b0": -0.076492303079,
+      "shift_b1": 0.065716197114
+    },
+    "soft_mode_is_metric_shape_dominated": true,
+    "time": 0.10602
+  },
+  "scientific_result": "THE_ACTUAL_CHILD_APPROACHES_A_METRIC-SHAPE-DOMINATED_SIMPLE_EULER-DIRAC_EIGENVALUE_ZERO_NEAR_t=0.1060372_WHILE_min_L_eta_REMAINS_ABOUT_0.829_AND_IS_INCREASING;_THE_v15.75-v15.78_L_eta-DOWNARROW-ZERO_BRANCH_IS_OFF-ORBIT_AND_CANNOT_SUPPLY_THE_PHYSICAL_NORMALIZATION",
+  "supersession": {
+    "Cartan_shell_coefficient_c_EC_equals_3_over_4_retained": true,
+    "off-orbit_L_eta_shell_crossing_promoted_to_physical": false,
+    "v15_77_gap_branch_status": "CONDITIONAL_OFF-ORBIT_BRANCH",
+    "v15_78_epsilon_power_count_status": "CONDITIONAL_OFF-ORBIT_BRANCH"
+  },
+  "validation": {
+    "USB_untouched": true,
+    "actual_soft_mode_is_metric_shape_dominated": true,
+    "eta_Legendre_moves_away_from_zero": true,
+    "eta_Legendre_stays_strictly_positive": true,
+    "linearized_event_is_nearby": true,
+    "one_pushforward_required": true,
+    "soft_Dirac_mode_approaches_zero": true
+  },
+  "validation_passed": true,
+  "version": "v15.79"
+}
