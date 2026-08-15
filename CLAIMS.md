@@ -2,7 +2,7 @@
 
 ## Current public claim boundary
 
-Current version: **v18.64**.
+Current version: **v18.69**.
 
 Supported now: the N=3 event-to-complete-child correspondence is explicitly
 derived and numerically solved.  The complete child is the reconstructed whole
@@ -14,8 +14,8 @@ retained as physical relative evolution.
 
 Supported now: complete-child-gated global promotions reduce the
 unchanged 376-row residual from `0.831926246412044` to
-`0.8115026784613`.  The latest accepted v18.62 line state was independently evaluated
-and promoted at v18.64 only after its complete moving child was recomputed
+`0.811248056430707`.  The latest accepted v18.66 line state was independently evaluated
+and promoted at v18.68 only after its complete moving child was recomputed
 from all 26 variables and shown persistent.  No componentwise event
 monotonicity, handcrafted
 direction mixture, empirical particle selector, or 377th row is used.
@@ -24,6 +24,15 @@ explicit event multiplier.  Intermediate rows may worsen during a legitimate
 coupled step, and remaining on the previous iterate path is not a physical
 condition.  Trust regions, damping and line-search rules are numerical
 controls only.
+
+Supported/reclassified: v18.69 confirms that the regular 14-row child map has
+rank 14 and nullity 12 across neighboring Jacobian steps. Six canonical
+ownership directions are genuine gauge-fixed Cauchy freedom and six remain
+Cauchy-multiplier mixtures. The retained formulation does not justify calling
+them all gauge/chart redundancy. Reprojected fiber probes preserve the
+existing physical gates while retained action and eta observables vary. No
+action selector, extra equation, or optimization over the fiber is claimed;
+the Unique-Actualization/selection owner remains open.
 
 Supported now: the retained action has measured radius powers `5` for spatial
 and intrinsic curvature, `7` for cosmological and ADM kinetic contributions,
@@ -120,6 +129,12 @@ Krylov vector fails its independent Newton interpretation but locates an exact
 nonlinear line state with norm `0.8115026784613`.  v18.63-v18.64 promote that
 state only after a fresh rank-14 child, eta, unchanged two-scale flux, and
 positive-duration nonzero-motion persistence all pass.
+
+Supported/reclassified: v18.65 measures a common `3e-7/1e-7` response plateau
+at v18.64.  v18.66's bounded solver interpretation is invalidated, but its
+exact bidirectional line scan yields an independently lower-merit state.
+v18.67-v18.68 promote that state only after the fresh rank-14 child, eta,
+unchanged two-scale flux, and persistence gates all pass.
 
 Supported now: the v18.18 exact action Hessian reproduces the unchanged
 v17.61 action-covector response to at worst `1.81e-7` on the audited

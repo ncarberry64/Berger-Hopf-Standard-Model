@@ -2,7 +2,7 @@
 
 Full BHSM v1.0 Candidate is a repo-audited completion framework, not yet a completed replacement of the Standard Model. The program goal remains replacement by derivation, with the Standard Model retained as the preserved infrared layer until that derivation is complete.
 
-## v18.64 N=3 constrained-root and physical-continuation frontier
+## v18.69 N=3 constrained-root, child-fiber and continuation frontier
 
 The missing event-to-child relation is now explicit.  For each candidate N=3
 event, `F_child=0` requires three event traces, seven local Dirac constraints,
@@ -12,11 +12,11 @@ core ownership close without adding a continuous row.  A positive projected
 evolution interval then tests persistence.  The whole reconstructed child is
 the additional system-level object; no fourth coordinate is introduced.
 
-The latest accepted physical state is v18.64, with global residual `0.8115026784613` and
-positive global eta.  Its recomputed child closes trace to `1.66e-12`, constraints
-to `3.32e-10`, attachment momentum to `2.56e-8`, and the two-scale dynamic
-flux envelope to `1.09e-5`.  It persists through time `1e-4` with positive eta
-and maximum constraint residual `5.93e-11`.  Velocity, momentum and time dependence remain
+The latest accepted physical state is v18.68, with global residual `0.811248056430707` and
+positive global eta.  Its recomputed child closes trace to `3.5e-14`, constraints
+to `2.04e-10`, attachment momentum to `2.10e-8`, and the two-scale dynamic
+flux envelope to `9.67e-6`.  It persists through time `1e-4` with positive eta
+and maximum constraint residual `5.92e-11`.  Velocity, momentum and time dependence remain
 nonzero; stability means constraint-consistent relative persistence, not
 staticity.
 
@@ -47,7 +47,16 @@ geometry-dominated accepted secants in the existing action-owned coordinates;
 it adds no continuation restriction or manifold theorem.  v18.61 then resolves
 the next direct-response plateau, v18.62 locates an independently lower exact-
 merit state while invalidating its solver interpretation, and v18.63-v18.64
-recompute and pass the entire child/eta/flux/persistence gate.  N=4+,
+recompute and pass the entire child/eta/flux/persistence gate.
+v18.65-v18.68 repeat the unchanged response, bidirectional exact-merit, fresh
+child, and promotion sequence and advance the accepted norm to
+`0.811248056430707`.  v18.69 then confirms rank 14/nullity 12 under neighboring
+child-Jacobian steps.  Its action-owned ownership decomposition finds six
+genuine Cauchy directions and six unresolved Cauchy-multiplier mixtures.  All
+24 signed reprojected probes preserve the retained rows, eta and nonzero
+one-step persistence, while action/eta observables vary.  The fiber is not
+merely gauge/chart freedom, but no new selector is introduced; the downstream
+action/Unique-Actualization owner remains open.  N=4+,
 the microscopic pregeometric transition generator, one-loop source/saddle
 closure, broken return and physical observables remain downstream and open.
 
@@ -75,7 +84,7 @@ event KKT normalization.  The map is invertible and acts on variables only;
 the exact 376 residual rows are not transformed.  Source and nonzero-probe
 checks give identical exact residuals, exact eta agreement, a bijective root
 set, and the unchanged complete-child gate.  Its application and limitations
-are classified by v18.16-v18.64 below.
+are classified by v18.16-v18.68 below.
 
 That application is now classified.  v18.16-v18.17 find no descent in either
 orientation of the inherited inexact response.  v18.18 assembles and validates

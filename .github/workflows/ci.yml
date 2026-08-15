@@ -67,12 +67,11 @@ jobs:
       - name: Verify current N=3 deterministic frontier
         run: >-
           python -m pytest -q
-          tests/test_bhsm_aether_n3_constrained_root_hindsight_record_v18_59.py
-          tests/test_bhsm_aether_n3_accepted_secant_geometry_v18_60.py
-          tests/test_bhsm_aether_n3_sixth_direct_residual_scale_audit_v18_61.py
-          tests/test_bhsm_aether_n3_third_bidirectional_merit_manifold_probe_v18_62.py
-          tests/test_bhsm_aether_n3_third_bidirectional_probe_child_v18_63.py
-          tests/test_bhsm_aether_n3_third_bidirectional_probe_promotion_v18_64.py
+          tests/test_bhsm_aether_n3_seventh_direct_residual_scale_audit_v18_65.py
+          tests/test_bhsm_aether_n3_fourth_bidirectional_merit_manifold_probe_v18_66.py
+          tests/test_bhsm_aether_n3_fourth_bidirectional_probe_child_v18_67.py
+          tests/test_bhsm_aether_n3_fourth_bidirectional_probe_promotion_v18_68.py
+          tests/test_bhsm_aether_n3_child_fiber_ownership_v18_69.py
 
   root-integration:
     runs-on: ubuntu-latest

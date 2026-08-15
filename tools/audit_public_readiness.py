@@ -68,7 +68,7 @@ ALIGNMENT_FILES = [
 ]
 
 ALIGNMENT_PHRASES = [
-    "v18.64",
+    "v18.68",
     "376",
     "complete-child",
     "eta",
@@ -601,8 +601,8 @@ def manifest_payload(result: dict) -> dict:
         },
         "external_urls_recorded": result["external_urls"],
         "current_scientific_summary": {
-            "research_frontier": "v18.64",
-            "n3_exact_residual_norm": 0.8115026784613,
+            "research_frontier": "v18.68",
+            "n3_exact_residual_norm": 0.811248056430707,
             "event_to_complete_child_map": "derived_and_executed",
             "complete_child_chart_rank": 14,
             "complete_child_persistence": "validated_for_1e-4",

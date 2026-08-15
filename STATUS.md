@@ -5,9 +5,9 @@ evidence, not competing public status pages.
 
 ## Current public summary
 
-Current version: **v18.64**.
+Current version: **v18.69**.
 
-BHSM v17.84-v18.64 derives and executes the missing N=3
+BHSM v17.84-v18.69 derives and executes the missing N=3
 event-to-complete-child correspondence.  A candidate event is accepted only
 when it reconstructs a whole child satisfying three boundary traces, all seven
 local Dirac constraints, two attachment momenta, two resolved dynamic-flux
@@ -17,13 +17,13 @@ positive constraint-projected persistence interval.  This is a 14-row child
 boundary/BVP map evaluated on event states; it adds no equation to the global
 376-row KKT system.
 
-The latest physically promoted state is v18.64.  Its exact 376-row norm is
-`0.8115026784613`, its event magnitude is `0.083949717316251`, and its global
-eta minimum is `0.77426450046114`.  The child chart was recomputed from all 26
+The latest physically promoted state is v18.68.  Its exact 376-row norm is
+`0.811248056430707`, its event magnitude is `0.083931074020022`, and its global
+eta minimum is `0.774255587310955`.  The child chart was recomputed from all 26
 child variables and has rank 14.  The reconstructed child has trace residual
-`1.66e-12`, seven-constraint residual `3.32e-10`, momentum mismatch `2.56e-8`,
-resolved two-scale flux envelope `1.09e-5`, and persists for `1e-4` with
-constraint residual below `5.93e-11` and positive eta.  Its motion, momentum,
+`3.5e-14`, seven-constraint residual `2.04e-10`, momentum mismatch `2.10e-8`,
+resolved two-scale flux envelope `9.67e-6`, and persists for `1e-4` with
+constraint residual below `5.92e-11` and positive eta.  Its motion, momentum,
 and time dependence remain nonzero and are classified as physical
 constraint-consistent relative evolution, not particle defects.
 
@@ -34,6 +34,16 @@ coordinate-column Jacobian interpretations do not accurately differentiate
 the exact v17.61 projected residual.  Their trial directions may be promoted
 only by independent true-merit and complete-child checks; their Jacobian
 claims remain invalidated.
+
+v18.69 audits the 12-dimensional local child fiber at v18.68. Rank 14 and
+nullity 12 persist at neighboring Jacobian steps. In the retained action-owned
+Sobolev coordinates, six directions are genuine gauge-fixed Cauchy freedom
+and six are unresolved Cauchy-multiplier mixtures. No remaining direction is
+asserted to be gauge, and no observable selector is invented. Exact
+reprojected probes preserve the retained child rows, eta and nonzero one-step
+persistence while changing action/eta observables. The fiber is therefore not
+a harmless chart degeneracy; its action/Unique-Actualization owner is open but
+does not locally obstruct event continuation.
 
 The physical solve is the square 376-variable KKT system with explicit event
 multiplier.  A coupled step may temporarily worsen any individual row and may
@@ -151,6 +161,12 @@ invalidated, while the positive `0.03125` line state lowers exact norm by
 `0.00442327465`.  v18.63 reconstructs its fresh rank-14 moving child, and
 v18.64 promotes the state only after eta, independent two-scale flux, and
 positive-duration persistence pass.
+
+v18.65 resolves a finest common `3e-7/1e-7` response plateau at v18.64.
+v18.66 again invalidates the solver interpretation while retaining an exact-
+merit candidate.  v18.67 closes its fresh rank-14 child, and v18.68 promotes
+the state only after the unchanged eta, two-scale flux, and positive-duration
+persistence gates pass, lowering exact norm by `0.000254622031`.
 
 An incoming packet is one possible driver or witness, not a required primitive
 or the fundamental cause. The white-hole-to-plasma/acoustic-BAO-to-cooled-

@@ -1,6 +1,6 @@
 # Gate Ledger
 
-## v17.84-v18.64 N=3 complete-child, constrained-root and continuation gates
+## v17.84-v18.69 N=3 complete-child, constrained-root and continuation gates
 
 - v17.32 parallel Jacobian equivalence: `VALIDATED_AND_ADOPTED`; no further
   performance optimization is active.
@@ -21,11 +21,19 @@
 - Staticity requirement: `REJECTED`; nonzero motion, momentum and time
   dependence are allowed and retained when relative evolution is
   constraint-consistent and persistent.
-- Latest accepted N=3 residual: `0.8115026784613`.
-- Latest accepted event magnitude: `0.083949717316251`.
-- Latest accepted global eta minimum: `0.77426450046114`.
+- Latest accepted N=3 residual: `0.811248056430707`.
+- Latest accepted event magnitude: `0.083931074020022`.
+- Latest accepted global eta minimum: `0.774255587310955`.
 - Latest child trace/constraint/momentum/flux maxima:
-  `1.66E-12/3.32E-10/2.56E-8/1.09E-5`.
+  `3.5E-14/2.04E-10/2.10E-8/9.67E-6`.
+- v18.69 neighboring-step child Jacobian rank/nullity:
+  `VALIDATED_RANK_14_NULLITY_12_AT_1E-4_2E-4_4E-4`.
+- v18.69 child-fiber ownership:
+  `6_GENUINE_PHYSICAL_CAUCHY_PLUS_6_UNRESOLVED_CAUCHY_MULTIPLIER_MIXTURES`.
+- Remaining child fiber as pure gauge/chart redundancy:
+  `INVALIDATED_NOT_SUPPORTED_BY_RETAINED_GENERATORS_OR_OBSERVABLE_RESPONSE`.
+- Child-fiber selector:
+  `OPEN_ACTION_DERIVED_CHILD_FIBER_SELECTION_OR_UNIQUE_ACTUALIZATION_OWNER_NO_SELECTOR_INSERTED`.
 - v18.11-v18.12 square-KKT proposal and complete-child promotion:
   `VALIDATED_INDEPENDENT_TOTAL_MERIT_DESCENT_WITHOUT_COMPONENTWISE_OR_PREVIOUS_PATH_FILTER`.
 - v18.14 measured action radius powers:
@@ -137,6 +145,14 @@
   `VALIDATED_FRESH_RANK_14_CHILD_INVALIDATED_SOLVER_INTERPRETATION_NOT_REASSERTED`.
 - v18.64 physical promotion:
   `VALIDATED_EXACT_NORM_REDUCTION_0.00442327465_ETA_FLUX_AND_PERSISTENCE`.
+- v18.65 accepted-frontier direct-response scale:
+  `VALIDATED_COMMON_3E-7_TO_1E-7_DIRECTIONAL_PLATEAU_WITH_UNCHANGED_CRITERIA`.
+- v18.66 fourth bidirectional merit probe:
+  `VALIDATED_EXACT_NONLINEAR_LINE_SCAN_WITH_INVALIDATED_SOLVER_INTERPRETATION`.
+- v18.67 fourth bidirectional child:
+  `VALIDATED_FRESH_RANK_14_CHILD_INVALIDATED_SOLVER_INTERPRETATION_NOT_REASSERTED`.
+- v18.68 physical promotion:
+  `VALIDATED_EXACT_NORM_REDUCTION_0.000254622031_ETA_FLUX_AND_PERSISTENCE`.
 - Residual left scaling or new acceptance restriction: `NONE`.
 - Event definition as current blocker: `FALSE_COMPLETE_CHILD_MAP_CLOSED`.
 - Simultaneous N=3 saddle closure: `OPEN_RESIDUAL_NONZERO`.
