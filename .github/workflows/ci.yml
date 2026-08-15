@@ -28,13 +28,6 @@ jobs:
           python -m pytest -q
           --ignore-glob="tests/test_bhsm_aether_n3_*.py"
           --junitxml=artifacts/pytest-results.xml
-      - name: Current N=3 deterministic frontier
-        run: >-
-          python -m pytest -q
-          tests/test_bhsm_aether_n3_fifth_direct_residual_scale_audit_v18_55.py
-          tests/test_bhsm_aether_n3_second_bidirectional_merit_manifold_probe_v18_56.py
-          tests/test_bhsm_aether_n3_second_bidirectional_probe_child_v18_57.py
-          tests/test_bhsm_aether_n3_second_bidirectional_probe_promotion_v18_58.py
       - name: Coordinate benchmark precision gate
         run: |
           python tools/verify_precision.py
@@ -59,6 +52,25 @@ jobs:
         with:
           name: pytest-results
           path: artifacts/pytest-results.xml
+
+  current-n3-frontier:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install
+        run: python -m pip install -e ".[benchmark]"
+      - name: Verify current N=3 deterministic frontier
+        run: >-
+          python -m pytest -q
+          tests/test_bhsm_aether_n3_fifth_direct_residual_scale_audit_v18_55.py
+          tests/test_bhsm_aether_n3_second_bidirectional_merit_manifold_probe_v18_56.py
+          tests/test_bhsm_aether_n3_second_bidirectional_probe_child_v18_57.py
+          tests/test_bhsm_aether_n3_second_bidirectional_probe_promotion_v18_58.py
 
   root-integration:
     runs-on: ubuntu-latest
