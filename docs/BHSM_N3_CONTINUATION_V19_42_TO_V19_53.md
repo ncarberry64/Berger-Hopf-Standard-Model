@@ -108,3 +108,17 @@ negative `alpha=-0.00390625`, was reconstructed afresh and promoted at v19.68:
 
 The rejected primary is not an accepted frontier. `FULL_BHSM_COMPLETE` remains
 false; unchanged continuation proceeds from v19.68.
+
+## v19.69-v19.76 compact continuation ledger
+
+Two unchanged cycles pass the full physical gate:
+
+| Accepted state | Exact norm | Reduction | Flux envelope |
+|---|---:|---:|---:|
+| v19.72 | 0.787400095824 | 0.001191087229 | 1.0854703348e-5 |
+| v19.76 | 0.783424601550 | 0.003975494274 | 1.0243076159e-5 |
+
+Both states retain rank-14 complete children, positive eta, positive-duration
+persistence, and nonzero relative evolution. Solver interpretations remain
+invalidated and unused. `FULL_BHSM_COMPLETE` remains false; continuation
+proceeds from v19.76.
