@@ -201,3 +201,15 @@ unchanged child gate at v19.98:
 
 The response noise floor is numerical and is not a physical blocker.
 `FULL_BHSM_COMPLETE` remains false; continuation proceeds from v19.98.
+
+## v19.99-v20.02 compact continuation ledger
+
+The response gate recovers at `3e-8 / 1e-8`; the solver interpretation remains
+invalidated. Exact merit selects positive `alpha=0.00048828125`, and v20.02
+passes the unchanged child gate:
+
+- exact norm / reduction: `0.769441416391865 / 0.000671625767787`;
+- rank / flux: `14 / 5.93116292e-6`;
+- eta, positive-duration persistence, and nonzero evolution: valid.
+
+`FULL_BHSM_COMPLETE` remains false; continuation proceeds from v20.02.
