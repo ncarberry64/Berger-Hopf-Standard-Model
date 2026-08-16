@@ -266,6 +266,27 @@ def test_v21_isolated_eigenpair_event_hessian_and_corrected_continuation() -> No
         - 0.781486218597499
     ) < 5.0e-12
 
+    for filename, key in (
+        ("BHSM_N3_EXPANDED_RADIUS_PREDICTIVE_CONTINUATION_V21_22.json",
+         "expanded_radius_predictive_continuation"),
+        ("BHSM_N3_EXPANDED_RADIUS_REFRESHED_CONTINUATION_V21_23.json",
+         "expanded_radius_refreshed_continuation"),
+    ):
+        payload = json.loads(Path("artifacts", filename).read_text(encoding="utf-8"))
+        assert payload["validation_passed"]
+        result = payload[key]
+        assert result["promotion"]["promoted"]
+        assert result["promotion"]["child"]["all_pass"]
+
+    refreshed = json.loads(Path(
+        "artifacts/BHSM_N3_EXPANDED_RADIUS_REFRESHED_CONTINUATION_V21_23.json"
+    ).read_text(encoding="utf-8"))["expanded_radius_refreshed_continuation"]
+    assert refreshed["curvature_refresh_validation"]["validated"]
+    assert abs(
+        refreshed["exact_search"]["best"]["exact_rayleigh_f376_l2"]
+        - 0.781148984940364
+    ) < 5.0e-12
+
     exact = json.loads(Path(
         "artifacts/BHSM_N3_EXACT_MATRIX_FREE_RESPONSE_PROPOSAL_V21_14.json"
     ).read_text(encoding="utf-8"))
