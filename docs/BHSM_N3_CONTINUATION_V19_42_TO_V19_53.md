@@ -225,3 +225,17 @@ passes every unchanged child gate:
 - eta, positive-duration persistence, and nonzero evolution: valid.
 
 `FULL_BHSM_COMPLETE` remains false; continuation proceeds from v20.06.
+
+## v20.07-v20.10 compact continuation ledger
+
+v20.07 validates no stable direct-response pair. v20.08 preserves that
+invalidated status and uses the bounded derivative proposal-only; independent
+exact merit selects positive `alpha=0.00048828125`. The fresh v20.10 child
+passes every unchanged gate:
+
+- exact norm / reduction: `0.768773268629423 / 0.000129117907943`;
+- rank / flux: `14 / 9.31578123e-6`;
+- eta, positive-duration persistence, and nonzero evolution: valid.
+
+The response noise floor remains numerical, not a physical blocker.
+`FULL_BHSM_COMPLETE` remains false; continuation proceeds from v20.10.
