@@ -311,6 +311,21 @@ def test_v21_isolated_eigenpair_event_hessian_and_corrected_continuation() -> No
         assert abs(result["exact_search"]["best"]["exact_rayleigh_f376_l2"] - expected) < 5.0e-12
 
     for filename, key, expected in (
+        ("BHSM_N3_SIXTH_EXPANDED_RADIUS_REFRESHED_CONTINUATION_V21_31.json",
+         "sixth_expanded_radius_refreshed_continuation", 0.780212770711283),
+        ("BHSM_N3_SEVENTH_EXPANDED_RADIUS_REFRESHED_CONTINUATION_V21_32.json",
+         "seventh_expanded_radius_refreshed_continuation", 0.780052491009458),
+        ("BHSM_N3_EIGHTH_EXPANDED_RADIUS_REFRESHED_CONTINUATION_V21_33.json",
+         "eighth_expanded_radius_refreshed_continuation", 0.779902477787777),
+    ):
+        payload = json.loads(Path("artifacts", filename).read_text(encoding="utf-8"))
+        assert payload["validation_passed"]
+        result = payload[key]
+        assert result["promotion"]["promoted"]
+        assert result["promotion"]["child"]["all_pass"]
+        assert abs(result["exact_search"]["best"]["exact_rayleigh_f376_l2"] - expected) < 5.0e-12
+
+    for filename, key, expected in (
         ("BHSM_N3_FIFTH_EXPANDED_RADIUS_REFRESHED_CONTINUATION_V21_29.json",
          "fifth_expanded_radius_refreshed_continuation", 0.780394860938150),
         ("BHSM_N3_FIFTH_EXPANDED_PREDICTIVE_CONTINUATION_V21_30.json",
