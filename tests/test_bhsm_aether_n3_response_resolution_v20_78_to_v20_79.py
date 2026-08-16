@@ -92,3 +92,53 @@ def test_rayleigh_event_curvature_block_and_preconditioned_promotion() -> None:
     assert result["promotion"]["promoted"]
     assert result["exact_line_search"]["best"]["exact_reduction"] > 0.0
     assert result["promotion"]["child"]["all_pass"]
+
+
+def test_weak_subspace_and_dual_metric_recovery() -> None:
+    audit = json.loads(Path(
+        "artifacts/BHSM_N3_CURVATURE_SINGULAR_SUBSPACE_AUDIT_V20_89.json"
+    ).read_text(encoding="utf-8"))
+    assert audit["validation_passed"]
+    assert audit["curvature_singular_subspace_audit"]["child_compatible_tangent"]["rank_DcG"] == 14
+
+    bounded = json.loads(Path(
+        "artifacts/BHSM_N3_BOUNDED_RANGE_SPACE_PROPOSAL_V20_90.json"
+    ).read_text(encoding="utf-8"))
+    assert bounded["validation_passed"]
+    assert bounded["bounded_range_space_proposal"]["outcome"] == "BOUNDED_RANGE_SPACE_NO_EXACT_DESCENT"
+
+    for filename, key in (
+        ("BHSM_N3_DUAL_METRIC_RANGE_SPACE_PROPOSAL_V20_91.json", "dual_metric_range_space_proposal"),
+        ("BHSM_N3_DUAL_METRIC_RANGE_SPACE_CONTINUATION_V20_92.json", "dual_metric_range_space_continuation"),
+    ):
+        payload = json.loads(Path("artifacts", filename).read_text(encoding="utf-8"))
+        assert payload["validation_passed"]
+        assert payload[key]["promotion"]["promoted"]
+        assert payload[key]["promotion"]["child"]["all_pass"]
+
+
+def test_refreshed_curvature_recovery_and_one_time_ownership_audit() -> None:
+    for filename in (
+        "BHSM_N3_CURVATURE_SINGULAR_SUBSPACE_REFRESH_V20_93.json",
+        "BHSM_N3_REFRESHED_DUAL_METRIC_PROPOSAL_V20_94.json",
+        "BHSM_N3_REFRESHED_DUAL_METRIC_CONTINUATION_V20_95.json",
+        "BHSM_N3_RAYLEIGH_OWNERSHIP_AUDIT_V20_96.json",
+        "BHSM_N3_CURVATURE_SINGULAR_SUBSPACE_REFRESH_V20_97.json",
+        "BHSM_N3_REFRESHED_DUAL_METRIC_PROPOSAL_V20_98.json",
+        "BHSM_N3_REFRESHED_DUAL_METRIC_CONTINUATION_V20_99.json",
+    ):
+        payload = json.loads(Path("artifacts", filename).read_text(encoding="utf-8"))
+        assert payload["validation_passed"]
+
+    ownership = json.loads(Path(
+        "artifacts/BHSM_N3_RAYLEIGH_OWNERSHIP_AUDIT_V20_96.json"
+    ).read_text(encoding="utf-8"))["rayleigh_ownership_audit"]
+    assert ownership["classification"].startswith("E:")
+    assert ownership["first_action_owned_blocker"] is None
+
+    latest = json.loads(Path(
+        "artifacts/BHSM_N3_REFRESHED_DUAL_METRIC_CONTINUATION_V20_99.json"
+    ).read_text(encoding="utf-8"))["refreshed_dual_metric_continuation"]
+    assert latest["promotion"]["promoted"]
+    assert latest["promotion"]["child"]["all_pass"]
+    assert abs(latest["exact_search"]["best"]["exact_rayleigh_f376_l2"] - 0.782780987846174) < 5.0e-12

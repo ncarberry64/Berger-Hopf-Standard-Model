@@ -1,0 +1,137 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N3_BOUNDED_RANGE_SPACE_PROPOSAL_V20_90",
+  "bounded_range_space_proposal": {
+    "acceptance_gate_changed": false,
+    "bounded_model": {
+      "coordinate_map": {
+        "action_reference": 164.0061302054045,
+        "invertible": true,
+        "maximum_singular_value": 8070029.7524209265,
+        "minimum_singular_value": 0.097180235806809,
+        "multiplier_resolved_rank": 6,
+        "q_resolved_rank": 10,
+        "source": "VALIDATED_V18_15_ACTION_CURVATURE_COORDINATE_MAP"
+      },
+      "dimension": 376,
+      "physical_equations_changed": false,
+      "radii": {
+        "LARGE_DESCENT": 0.000194865512328,
+        "MEDIUM_DESCENT": 2.2164944277e-05,
+        "PLATEAU_DESCENT": 2.6392836e-07
+      },
+      "radii_source": "VALIDATED_V20_68_ACCEPTED_HISTORY_ACTION_COORDINATE_CLASS_MEDIANS",
+      "rank": 305,
+      "used_only_to_propose": true
+    },
+    "componentwise_monotonicity_added": false,
+    "event_definition_changed": false,
+    "exact_search": {
+      "best": null,
+      "both_orientations": true,
+      "original_unweighted_376_rows_authoritative": true,
+      "trial_count": 6,
+      "trials": [
+        {
+          "action_coordinate_radius": 2.6392836e-07,
+          "eta_minimum": 0.774728279624036,
+          "exact_rayleigh_f376_l2": 0.787498986105396,
+          "exact_reduction": -2.6227421822e-05,
+          "lagrange_multiplier_numerical_control": 10368057420.970678,
+          "orientation": "positive",
+          "physical_scaled_step_norm": 1.152327992529496,
+          "predicted_residual_l2_has_no_physical_authority": 0.78623887953566,
+          "radius_class": "PLATEAU_DESCENT",
+          "realized_action_coordinate_norm": 2.6392836e-07
+        },
+        {
+          "action_coordinate_radius": 2.6392836e-07,
+          "eta_minimum": 0.774728285847777,
+          "exact_rayleigh_f376_l2": 0.787508110251961,
+          "exact_reduction": -3.5351568388e-05,
+          "lagrange_multiplier_numerical_control": 10368057420.970678,
+          "orientation": "negative",
+          "physical_scaled_step_norm": 1.152327992529496,
+          "predicted_residual_l2_has_no_physical_authority": 0.789335021132821,
+          "radius_class": "PLATEAU_DESCENT",
+          "realized_action_coordinate_norm": 2.6392836e-07
+        },
+        {
+          "action_coordinate_radius": 2.2164944277e-05,
+          "eta_minimum": 0.774728887386728,
+          "exact_rayleigh_f376_l2": 3.837713561741394,
+          "exact_reduction": -3.05024080305782,
+          "lagrange_multiplier_numerical_control": 49179043.217117116,
+          "orientation": "negative",
+          "physical_scaled_step_norm": 39.896415659861084,
+          "predicted_residual_l2_has_no_physical_authority": 0.829021918538128,
+          "radius_class": "MEDIUM_DESCENT",
+          "realized_action_coordinate_norm": 2.2164944277e-05
+        },
+        {
+          "action_coordinate_radius": 2.2164944277e-05,
+          "eta_minimum": 0.774727678084019,
+          "exact_rayleigh_f376_l2": 6.66319470766648,
+          "exact_reduction": -5.875721948982906,
+          "lagrange_multiplier_numerical_control": 49179043.217117116,
+          "orientation": "positive",
+          "physical_scaled_step_norm": 39.896415659861084,
+          "predicted_residual_l2_has_no_physical_authority": 0.752004517828818,
+          "radius_class": "MEDIUM_DESCENT",
+          "realized_action_coordinate_norm": 2.2164944277e-05
+        },
+        {
+          "action_coordinate_radius": 0.000194865512328,
+          "eta_minimum": 0.774725266295747,
+          "exact_rayleigh_f376_l2": 19.55236984282743,
+          "exact_reduction": -18.764897084143858,
+          "lagrange_multiplier_numerical_control": 2006902.3232753188,
+          "orientation": "positive",
+          "physical_scaled_step_norm": 275.83655714037354,
+          "predicted_residual_l2_has_no_physical_authority": 0.569034111010082,
+          "radius_class": "LARGE_DESCENT",
+          "realized_action_coordinate_norm": 0.000194865512328
+        },
+        {
+          "action_coordinate_radius": 0.000194865512328,
+          "eta_minimum": 0.774731299180428,
+          "exact_rayleigh_f376_l2": 7344.797265380561,
+          "exact_reduction": -7344.009792621878,
+          "lagrange_multiplier_numerical_control": 2006902.3232753188,
+          "orientation": "negative",
+          "physical_scaled_step_norm": 275.83655714037354,
+          "predicted_residual_l2_has_no_physical_authority": 1.097371853694155,
+          "radius_class": "LARGE_DESCENT",
+          "realized_action_coordinate_norm": 0.000194865512328
+        }
+      ]
+    },
+    "outcome": "BOUNDED_RANGE_SPACE_NO_EXACT_DESCENT",
+    "physical_equations_changed": false,
+    "promotion": {
+      "attempted": false,
+      "child": null,
+      "child_attempts": [],
+      "promoted": false
+    },
+    "source": {
+      "exact_rayleigh_f376_l2": 0.787472758683574,
+      "version": "v20.88"
+    }
+  },
+  "classification": "BHSM_N3_CURVATURE_AWARE_BOUNDED_RANGE_SPACE_PROPOSAL",
+  "status": "VALIDATED",
+  "validation": {
+    "all_radii_tested_both_signs": true,
+    "candidate_reduces_merit": true,
+    "exact_rows_decide": true,
+    "no_componentwise_gate": true,
+    "promotion_requires_child": true,
+    "radii_bhsm_owned": true,
+    "same_physics": true,
+    "source_v20_88_reproduced": true,
+    "validated_rank_used": true
+  },
+  "validation_passed": true,
+  "version": "v20.90"
+}
