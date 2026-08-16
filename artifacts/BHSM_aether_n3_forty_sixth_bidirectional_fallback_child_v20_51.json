@@ -1,0 +1,160 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "active_calculation": "VERIFY_TWO_SCALE_FLUX_AND_POSITIVE_DURATION_PERSISTENCE_THEN_PROMOTE",
+  "artifact": "BHSM_aether_n3_forty_sixth_bidirectional_fallback_child_v20_51",
+  "classification": "BHSM_N3_FORTY_SIXTH_BIDIRECTIONAL_FALLBACK_CHILD",
+  "dependency_advanced": "NONLINEAR_N3_EVENT_SADDLE_CLOSURE",
+  "forty_sixth_bidirectional_fallback_child": {
+    "additional_global_KKT_rows": 0,
+    "chart": {
+      "full_chart_rank": 14,
+      "function_evaluations": 12,
+      "jacobian_step": 0.0002,
+      "row_scaling": "EXISTING_PHYSICAL_ROW_TOLERANCES_NUMERICAL_ONLY_SAME_ZERO_SET",
+      "scaled_final_norm": 0.116442679461712,
+      "selected_variable_indices": [
+        12,
+        2,
+        3,
+        9,
+        1,
+        10,
+        6,
+        0,
+        7,
+        23,
+        17,
+        13,
+        25,
+        8
+      ],
+      "smallest_resolved_singular_value": 0.006576495242071,
+      "solver_message": "`xtol` termination condition is satisfied.",
+      "solver_success": true
+    },
+    "child_state": {
+      "coordinates": [
+        -0.007800399526649,
+        0.015918247532744,
+        -0.013627885984321,
+        -0.028984888848181,
+        0.057413155990941,
+        -0.245447539361421,
+        0.000163798499869,
+        -0.072019139312046,
+        0.047446665595507,
+        0.146961596476869
+      ],
+      "eta_Legendre_minimum": {
+        "chi_at_minimum": 0.331959174902928,
+        "minimum": 1.000014744878289
+      },
+      "multipliers": [
+        1.048719631064667,
+        0.058893892680204,
+        0.871170109842946,
+        -0.149571193416465,
+        -0.127575172284358,
+        0.806882728417611
+      ],
+      "velocities": [
+        -0.321806631277701,
+        -0.149205097669796,
+        0.17024695099093,
+        -0.033209713264531,
+        -4.068908887371832,
+        -8.074375896635235,
+        -2.029422534396062,
+        0.357596630849158,
+        0.60091196917862,
+        0.196569377902582
+      ],
+      "velocity_norm": 9.30342088271404
+    },
+    "event_definition_changed": false,
+    "final_physical_rows": [
+      -3.4313e-11,
+      6.285e-12,
+      2.8779e-11,
+      5.549e-12,
+      -4.213e-12,
+      1.5e-14,
+      -2.269e-12,
+      1.066e-12,
+      4.63e-13,
+      1.462e-12,
+      -1.190564e-09,
+      -1.85732e-10,
+      1.410570874e-06,
+      1.592121698e-06
+    ],
+    "initial_physical_rows": [
+      2.6071922e-08,
+      -4.523114e-09,
+      1.37e-13,
+      3.711e-12,
+      -6.051e-12,
+      -7.37e-13,
+      -2.438e-12,
+      8.85e-13,
+      1.689e-12,
+      2.567e-12,
+      5.785208838e-06,
+      4.107095684e-06,
+      0.0018683759711,
+      -0.000985337257195
+    ],
+    "line_selection": {
+      "alpha": -1.5258789062e-05,
+      "backtrack": 16,
+      "complete_norm": 0.76702869003898,
+      "complete_norm_reduction": 4.58054297e-06,
+      "eta_minimum": 0.77469688207993,
+      "orientation": "negative",
+      "selected_by": "NEXT_LOWEST_INDEPENDENT_EXACT_MERIT_AFTER_V20_50_FLUX_REJECTION"
+    },
+    "nonzero_motion_retained": true,
+    "physical_equations_changed": false,
+    "physical_residuals": {
+      "dynamic_flux_norm_at_4e-4": 2.127101712e-06,
+      "maximum_seven_constraints": 5.549e-12,
+      "maximum_trace": 3.4313e-11,
+      "momentum_norm": 1.204964e-09
+    },
+    "physical_row_count": 14,
+    "rejected_predecessor": {
+      "acceptance_gate_changed": false,
+      "measured_envelope": 2.8031396872e-05,
+      "rejection_gate": "INDEPENDENT_TWO_SCALE_FLUX_ENVELOPE",
+      "retained_limit": 2e-05,
+      "state": "v20.48_primary_candidate"
+    },
+    "source_event": "v20.48_next_exact_merit_candidate",
+    "source_germ": "v20.45_child_of_accepted_v20.46_state",
+    "source_solver_interpretation": "INVALIDATED_NOT_REASSERTED",
+    "whole_child_variable_count": 26
+  },
+  "real_physical_property_explained": "THE_NEXT_V19_78_EXACT_MERIT_STATE_SELECTS_A_COMPLETE_MOVING_CHILD_AFTER_THE_PRIMARY_STATE_FAILS_THE_UNCHANGED_FLUX_GATE",
+  "status": "VALIDATED",
+  "validation": {
+    "child_eta_hyperregular": true,
+    "complete_26_variable_child_considered": true,
+    "dynamic_flux_closed": true,
+    "event_definition_unchanged": true,
+    "failed_primary_not_promoted": true,
+    "fourteen_physical_rows": true,
+    "full_rank_local_chart": true,
+    "invalidated_solver_not_reasserted": true,
+    "local_solve_converged": true,
+    "momentum_closed": true,
+    "next_exact_merit_candidate_selected": true,
+    "no_extra_global_row": true,
+    "nonzero_motion_retained": true,
+    "numerical_row_scaling_same_zero_set": true,
+    "physical_equations_unchanged": true,
+    "seven_constraints_closed": true,
+    "trace_closed": true
+  },
+  "validation_passed": true,
+  "version": "v20.51"
+}
