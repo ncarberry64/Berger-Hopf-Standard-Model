@@ -1,7 +1,7 @@
 # BHSM N=3 continuation ledger
 
-- Authoritative corrected frontier: v20.86, exact unweighted Rayleigh-event `||F376|| = 0.787514011519100`.
-- Promotion: rank-14 fresh complete child; eta, trace, seven constraints, momentum, two-scale flux (`4.706241445e-6`), positive-duration persistence, and nonzero relative motion pass.
+- Authoritative corrected frontier: v20.88, exact unweighted Rayleigh-event `||F376|| = 0.787472758683574`.
+- Promotion: rank-14 fresh complete child; eta, trace, seven constraints, momentum, two-scale flux (`8.411747733e-6`), positive-duration persistence, and nonzero relative motion pass.
 - v20.62 plateau audit: Outcome E, proposal mechanism stalled; no dominant physical or history-localized owner and no local-root-basin signature.
 - Historical hindsight: H5, no material recovery. Large descents were more scale/v/period and less shift dominated; `rank(D_cG)=14` made all tested event directions locally child-compatible without adding a selector.
 - Controlled shake: temporary historical scale/w/v/period excitation generated a proposal only; excitation was removed before exact evaluation. Original F376 reduction was `0.002529967631119` and the unchanged child gate promoted it.
@@ -10,5 +10,7 @@
 - Corrected continuation: v20.81-v20.86 reduced Rayleigh-F376 through `0.794237505175150`, `0.792168779696871`, `0.787990238928623`, `0.787884419734758`, `0.787515112996569`, and `0.787514011519100`; every promoted state passed the fresh complete-moving-child gate.
 - Corrected ownership at v20.85 remained distributed: period `44.57%`, w `34.03%`, scale `11.34%`, v `8.01%`; history was broadly split between interior and event-near nodes. No physical block owns 60%.
 - Krylov restriction audit: doubling restart 12 to 24 left proposal residual `0.994385` and recovered only `1.101477469e-6` exact physical descent. The merit-best trial failed flux; the next exact-descent trial passed unchanged child physics and was promoted. Krylov depth is not the missing physics.
-- FULL_BHSM_COMPLETE: false. Precise active dependency: assemble the physics-owned 37-support Rayleigh ordered-event curvature (dominated by the isolated near-pair; current upper gap `3.91049167e-5`) into an equivalent square-KKT preconditioner. It may change coordinates only, not F376, the event, or the child gate.
-- Next calculation: derive/validate that Rayleigh event-curvature block against the existing matrix-free response, then take one original-F376 proposal; do not repeat the action-only Krylov step.
+- Rayleigh event curvature: the 37-support block is validated against matrix-free response (worst relative check `1.38296e-2`, raw asymmetry `5.82410e-5`). Its stationarity contribution is `2.7337559e7`, versus action-Hessian norm `1.5046913e5`, confirming that the action-only Krylov map omitted the dominant physical curvature.
+- Curvature-aware proposal: v20.88 promoted exact descent `4.1252835526e-5` with unchanged equations and child gates. The assembled response has rank `305`; its near-null inverse produced scaled direction norm `1.5684968e6`, so only alpha `-7.629394531e-6` remained nonlinear-merit improving.
+- FULL_BHSM_COMPLETE: false. Precise active dependency: resolve the weak singular subspace of the validated curvature-aware square response using only BHSM-owned action/constraint scales. This is a proposal-coordinate solvability/trust object, not an added equation or physical gate.
+- Next calculation: localize the retained-rank/near-null singular vectors by physical block and child-compatible tangent content, then form one bounded range-space proposal; do not repeat the unbounded curvature inverse.

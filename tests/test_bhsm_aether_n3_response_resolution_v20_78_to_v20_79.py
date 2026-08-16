@@ -74,3 +74,21 @@ def test_corrected_rayleigh_continuation_and_krylov_audit() -> None:
     assert not audit["promotion"]["child_attempts"][0]["all_pass"]
     assert audit["promotion"]["child_attempts"][1]["all_pass"]
     assert audit["response"]["krylov_restart_numerical_control"] == 24
+
+
+def test_rayleigh_event_curvature_block_and_preconditioned_promotion() -> None:
+    curvature = json.loads(Path(
+        "artifacts/BHSM_N3_RAYLEIGH_EVENT_CURVATURE_BLOCK_V20_87.json"
+    ).read_text(encoding="utf-8"))
+    assert curvature["validation_passed"]
+    block = curvature["rayleigh_event_curvature_block"]
+    assert block["support_dimension"] == 37
+    assert block["raw_block_relative_asymmetry"] < 2.0e-2
+    proposal = json.loads(Path(
+        "artifacts/BHSM_N3_RAYLEIGH_CURVATURE_PRECONDITIONED_PROPOSAL_V20_88.json"
+    ).read_text(encoding="utf-8"))
+    assert proposal["validation_passed"]
+    result = proposal["rayleigh_curvature_preconditioned_proposal"]
+    assert result["promotion"]["promoted"]
+    assert result["exact_line_search"]["best"]["exact_reduction"] > 0.0
+    assert result["promotion"]["child"]["all_pass"]
