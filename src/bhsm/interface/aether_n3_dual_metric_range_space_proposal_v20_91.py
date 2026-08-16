@@ -68,12 +68,16 @@ def dual_metric_range_space_proposal(
         "artifacts/BHSM_N3_CURVATURE_SINGULAR_SUBSPACE_AUDIT_V20_89.json"
     ),
     curvature_key: str = "curvature_singular_subspace_audit",
+    curvature_override: dict[str, Any] | None = None,
+    radius_schedule_override: list[dict[str, float | str]] | None = None,
 ) -> dict[str, Any]:
     scales = kkt_variable_scales()
     raw = v20_88_selected_raw_vector() if source_raw_override is None else np.asarray(source_raw_override, dtype=float)
     y = raw * scales
     residual = rayleigh_square_physical_residual(y); source_norm = float(np.linalg.norm(residual))
-    audit = json.loads(Path(curvature_artifact).read_text(encoding="utf-8"))[curvature_key]
+    audit = curvature_override if curvature_override is not None else json.loads(
+        Path(curvature_artifact).read_text(encoding="utf-8")
+    )[curvature_key]
     support = np.asarray(audit["event_curvature_support_indices"], dtype=int)
     block = np.asarray(audit["event_curvature_symmetric_block"], dtype=float)
     inverse = 1.0 / scales[:-1]
@@ -86,9 +90,19 @@ def dual_metric_range_space_proposal(
     transform, transform_audit = _action_curvature_transform(raw)
     left, singular, right_t = np.linalg.svd(matrix, full_matrices=True); coefficients = left.T @ (-residual)
     physical_radii = _physical_history_radii(scales); action_radii = audit["bhsm_owned_action_coordinate_radii"]
+    radius_schedule = radius_schedule_override or [
+        {
+            "label": label,
+            "physical_radius": physical_radii[label],
+            "action_radius": float(action_radii[label]),
+        }
+        for label in ("PLATEAU_DESCENT", "MEDIUM_DESCENT", "LARGE_DESCENT")
+    ]
     trials = []; eligible = []
-    for label in ("PLATEAU_DESCENT", "MEDIUM_DESCENT", "LARGE_DESCENT"):
-        physical_radius = physical_radii[label]; action_radius = float(action_radii[label])
+    for schedule_row in radius_schedule:
+        label = str(schedule_row["label"])
+        physical_radius = float(schedule_row["physical_radius"])
+        action_radius = float(schedule_row["action_radius"])
         physical_direction, lagrange = _physical_trust_solution(singular, right_t, coefficients, physical_radius)
         action_direction = np.linalg.solve(transform, physical_direction)
         intersection_factor = min(1.0, action_radius / max(float(np.linalg.norm(action_direction)), 1.0e-300))
@@ -132,10 +146,15 @@ def dual_metric_range_space_proposal(
         "source": {"version": source_label, "exact_rayleigh_f376_l2": source_norm},
         "dual_metric_model": {"physical_metric": "EXISTING_BHSM_H6_SCALED_KKT_COORDINATES",
                               "action_metric": "VALIDATED_V18_15_ACTION_CURVATURE_COORDINATES",
-                              "curvature_artifact": str(curvature_artifact),
+                              "curvature_artifact": (
+                                  "IN_MEMORY_ACTION_OWNED_TRANSPORT"
+                                  if curvature_override is not None else str(curvature_artifact)
+                              ),
                               "curvature_key": curvature_key,
                               "physical_radii": physical_radii, "action_radii": action_radii,
                               "radii_source": "V20_68_ACCEPTED_HISTORY_CLASS_MEDIANS",
+                              "radius_schedule": radius_schedule,
+                              "radius_schedule_interpolated_only_if_explicitly_overridden": radius_schedule_override is not None,
                               "singular_rank_not_used_AS_PHYSICS": True,
                               "coordinate_map": transform_audit, "used_only_to_propose": True},
         "exact_search": {"both_orientations": True, "trial_count": len(trials),

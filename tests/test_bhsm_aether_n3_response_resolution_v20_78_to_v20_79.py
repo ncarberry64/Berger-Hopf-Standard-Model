@@ -142,3 +142,35 @@ def test_refreshed_curvature_recovery_and_one_time_ownership_audit() -> None:
     assert latest["promotion"]["promoted"]
     assert latest["promotion"]["child"]["all_pass"]
     assert abs(latest["exact_search"]["best"]["exact_rayleigh_f376_l2"] - 0.782780987846174) < 5.0e-12
+
+
+def test_v21_proposal_mechanisms_isolate_full_residual_manifold_curvature() -> None:
+    for filename in (
+        "BHSM_N3_CURVATURE_TRANSPORT_PROPOSAL_V21_00.json",
+        "BHSM_N3_CURVATURE_SINGULAR_SUBSPACE_REFRESH_V21_01.json",
+        "BHSM_N3_DIRECT_REFRESH_PROPOSAL_V21_02.json",
+        "BHSM_N3_RAYLEIGH_STRUCTURED_SHAKE_RECOVERY_V21_03.json",
+        "BHSM_N3_NATURAL_RADIUS_SCAN_V21_04.json",
+        "BHSM_N3_CORRECTED_RAYLEIGH_MULTI_SECANT_V21_05.json",
+    ):
+        payload = json.loads(Path("artifacts", filename).read_text(encoding="utf-8"))
+        assert payload["validation_passed"]
+
+    shake = json.loads(Path(
+        "artifacts/BHSM_N3_RAYLEIGH_STRUCTURED_SHAKE_RECOVERY_V21_03.json"
+    ).read_text(encoding="utf-8"))["rayleigh_structured_shake_recovery"]
+    assert shake["classification"] == "STRUCTURED_SHAKE_NO_MATERIAL_RECOVERY"
+
+    radius = json.loads(Path(
+        "artifacts/BHSM_N3_NATURAL_RADIUS_SCAN_V21_04.json"
+    ).read_text(encoding="utf-8"))["natural_radius_scan"]
+    assert radius["promotion"]["promoted"]
+    assert radius["promotion"]["child"]["all_pass"]
+    assert abs(radius["exact_search"]["best"]["exact_rayleigh_f376_l2"] - 0.782775399601569) < 5.0e-12
+
+    multisecant = json.loads(Path(
+        "artifacts/BHSM_N3_CORRECTED_RAYLEIGH_MULTI_SECANT_V21_05.json"
+    ).read_text(encoding="utf-8"))["corrected_rayleigh_multisecant"]
+    assert multisecant["classification"] == "CORRECTED_MULTI_SECANT_NO_MATERIAL_RECOVERY"
+    assert multisecant["multisecant_model"]["rank"] == 13
+    assert multisecant["exact_search"]["best"]["alpha"] < 2.0e-5

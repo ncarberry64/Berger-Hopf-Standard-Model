@@ -1,8 +1,11 @@
 """Run one continuation after the promoted v20.98 refreshed proposal."""
 from __future__ import annotations
 
+import json
 from pathlib import Path
 from typing import Any
+
+import numpy as np
 
 from bhsm.interface.aether_n3_dual_metric_range_space_proposal_v20_91 import dual_metric_range_space_proposal
 from bhsm.interface.aether_n3_fresh_sbp_asymmetric_period_v0_priority_v17_42 import deterministic_json
@@ -12,6 +15,17 @@ from bhsm.interface.aether_n3_refreshed_dual_metric_proposal_v20_98 import v20_9
 VERSION = "v20.99"
 CLASSIFICATION = "BHSM_N3_REFRESHED_DUAL_METRIC_CONTINUATION"
 FULL_BHSM_COMPLETE = False
+
+
+def v20_99_selected_raw_vector() -> np.ndarray:
+    payload = json.loads(Path(
+        "artifacts/BHSM_N3_REFRESHED_DUAL_METRIC_CONTINUATION_V20_99.json"
+    ).read_text(encoding="utf-8"))["refreshed_dual_metric_continuation"]
+    if not payload["promotion"]["promoted"]:
+        raise ValueError("v20.99 has no physically promoted state")
+    return np.asarray([
+        float.fromhex(value) for value in payload["exact_search"]["best"]["raw_vector_hex"]
+    ])
 
 
 def completion_payload() -> dict[str, Any]:
@@ -55,4 +69,7 @@ def materialize(directory: str | Path) -> Path:
     return path
 
 
-__all__ = ["VERSION", "CLASSIFICATION", "FULL_BHSM_COMPLETE", "completion_payload", "materialize"]
+__all__ = [
+    "VERSION", "CLASSIFICATION", "FULL_BHSM_COMPLETE", "v20_99_selected_raw_vector",
+    "completion_payload", "materialize",
+]
