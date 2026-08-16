@@ -315,3 +315,14 @@ merit selects negative `alpha=-0.0001220703125`; v20.38 passes:
 - eta, positive-duration persistence, and nonzero evolution: valid.
 
 `FULL_BHSM_COMPLETE` remains false; continuation proceeds from v20.38.
+
+## v20.39-v20.42 compact continuation ledger
+
+The response remains invalidated and proposal-only. Independent exact merit
+selects positive `alpha=3.0517578125e-5`; v20.42 passes:
+
+- exact norm / reduction: `0.767036374162936 / 3.4034577664e-5`;
+- rank / flux: `14 / 5.792687854e-6`;
+- eta, positive-duration persistence, and nonzero evolution: valid.
+
+`FULL_BHSM_COMPLETE` remains false; continuation proceeds from v20.42.
