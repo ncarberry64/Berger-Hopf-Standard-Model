@@ -122,3 +122,22 @@ Both states retain rank-14 complete children, positive eta, positive-duration
 persistence, and nonzero relative evolution. Solver interpretations remain
 invalidated and unused. `FULL_BHSM_COMPLETE` remains false; continuation
 proceeds from v19.76.
+
+## v19.77-v19.82 compact continuation ledger
+
+v19.77 found no pair satisfying the existing direct-response stability gate.
+Finer measurement identified a noise floor: `3e-8 / 1e-8` had full-response
+change `0.003489198144159` but event-row change `3.36162116662e-4`, above the
+`2e-4` numerical audit threshold; smaller steps worsened. v19.78 therefore
+used that derivative only as an explicitly invalidated bounded proposal
+generator. Independent exact merit remained authoritative.
+
+The primary state (`0.781619005072963`) was rejected at v19.80 for flux
+`3.2901650332e-5`. The next-lowest state passed unchanged gates at v19.82:
+
+- exact norm / reduction: `0.781663574515915 / 0.001761027033807`;
+- rank / flux: `14 / 1.3073533916e-5`;
+- eta, persistence, and nonzero evolution: valid.
+
+No physical equation, threshold, or acceptance rule changed.
+`FULL_BHSM_COMPLETE` remains false; continuation proceeds from v19.82.
