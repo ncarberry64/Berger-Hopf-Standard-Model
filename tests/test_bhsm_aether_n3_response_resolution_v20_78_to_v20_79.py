@@ -174,3 +174,75 @@ def test_v21_proposal_mechanisms_isolate_full_residual_manifold_curvature() -> N
     assert multisecant["classification"] == "CORRECTED_MULTI_SECANT_NO_MATERIAL_RECOVERY"
     assert multisecant["multisecant_model"]["rank"] == 13
     assert multisecant["exact_search"]["best"]["alpha"] < 2.0e-5
+
+
+def test_v21_full_curvature_and_terminal_event_owner() -> None:
+    normal = json.loads(Path(
+        "artifacts/BHSM_N3_RESIDUAL_MANIFOLD_NORMAL_ACCELERATION_V21_06.json"
+    ).read_text(encoding="utf-8"))
+    assert normal["validation_passed"]
+    assert normal["residual_manifold_normal_acceleration"]["classification"] == (
+        "NORMAL_ACCELERATION_NO_MATERIAL_RECOVERY"
+    )
+
+    merit = json.loads(Path(
+        "artifacts/BHSM_N3_EXACT_MERIT_SUBSPACE_HESSIAN_V21_07.json"
+    ).read_text(encoding="utf-8"))
+    assert merit["validation_passed"]
+    assert not merit["exact_merit_subspace_hessian"]["prospective_exact_search"][
+        "material_recovery"
+    ]
+
+    localization = json.loads(Path(
+        "artifacts/BHSM_N3_EXACT_RESPONSE_GRADIENT_LOCALIZATION_V21_08.json"
+    ).read_text(encoding="utf-8"))
+    assert localization["validation_passed"]
+    assert localization["exact_response_gradient_localization"]["first_action_owned_blocker"] == (
+        "EVENT_NEAR_SCALE_V_ASSEMBLED_SQUARE_RESPONSE_DERIVATIVE"
+    )
+
+    owner = json.loads(Path(
+        "artifacts/BHSM_N3_TERMINAL_DERIVATIVE_OWNER_AUDIT_V21_09.json"
+    ).read_text(encoding="utf-8"))
+    assert owner["validation_passed"]
+    assert owner["terminal_derivative_owner_audit"]["first_action_owned_blocker"] == (
+        "RAYLEIGH_EVENT_HESSIAN_TERMINAL_SCALE_V_ASSEMBLY"
+    )
+
+
+def test_v21_event_block_failures_and_exact_matrix_free_boundary() -> None:
+    resolved = json.loads(Path(
+        "artifacts/BHSM_N3_EVENT_CURVATURE_STEP_RESOLUTION_V21_10.json"
+    ).read_text(encoding="utf-8"))
+    assert resolved["validation_passed"]
+    assert resolved["event_curvature_step_resolution"]["classification"] == (
+        "DIRECTIONAL_EVENT_CURVATURE_STEP_RESOLVED"
+    )
+
+    for filename in (
+        "BHSM_N3_RESOLVED_EVENT_CURVATURE_BLOCK_V21_11.json",
+        "BHSM_N3_DIRECT_SCALAR_EVENT_HESSIAN_V21_12.json",
+        "BHSM_N3_ADAPTIVE_EVENT_CURVATURE_BLOCK_V21_13.json",
+    ):
+        payload = json.loads(Path("artifacts", filename).read_text(encoding="utf-8"))
+        assert not payload["validation_passed"]
+
+    exact = json.loads(Path(
+        "artifacts/BHSM_N3_EXACT_MATRIX_FREE_RESPONSE_PROPOSAL_V21_14.json"
+    ).read_text(encoding="utf-8"))
+    assert exact["validation_passed"]
+    response = exact["exact_matrix_free_response_proposal"]["matrix_free_response"][
+        "response_audit"
+    ]
+    assert response["half_vs_reference_relative"] < 1.0e-3
+    assert response["double_vs_reference_relative"] < 1.0e-3
+    assert not exact["exact_matrix_free_response_proposal"]["prospective_exact_search"][
+        "material_recovery"
+    ]
+
+    for filename in (
+        "BHSM_N3_EXACT_MATRIX_FREE_RESTART_AUDIT_V21_15.json",
+        "BHSM_N3_EXACT_MATRIX_FREE_ACTION_PRECONDITIONED_PROPOSAL_V21_16.json",
+    ):
+        payload = json.loads(Path("artifacts", filename).read_text(encoding="utf-8"))
+        assert not payload["validation_passed"]

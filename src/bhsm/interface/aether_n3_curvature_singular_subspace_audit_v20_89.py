@@ -28,6 +28,7 @@ SCALED_EVENT_STEP = 3.0e-8
 
 def curvature_singular_subspace_audit(
     source_raw_override: np.ndarray | None = None, *, source_label: str = "v20.88",
+    scaled_event_step: float = SCALED_EVENT_STEP,
 ) -> dict[str, Any]:
     scales = kkt_variable_scales()
     raw = v20_88_selected_raw_vector() if source_raw_override is None else np.asarray(source_raw_override, dtype=float)
@@ -38,9 +39,12 @@ def curvature_singular_subspace_audit(
         return rayleigh_sbp_event_covector(ybase / scales[:-1]) * inverse / scales[-1]
     gradient = event_gradient(y[:-1]); raw_block = np.empty((support.size, support.size))
     for column_position, column in enumerate(support):
-        delta = np.zeros(375); delta[int(column)] = SCALED_EVENT_STEP
-        response = (event_gradient(y[:-1] + delta) - event_gradient(y[:-1] - delta)) / (2.0 * SCALED_EVENT_STEP)
+        delta = np.zeros(375); delta[int(column)] = scaled_event_step
+        response = (event_gradient(y[:-1] + delta) - event_gradient(y[:-1] - delta)) / (2.0 * scaled_event_step)
         raw_block[:, column_position] = response[support]
+    raw_asymmetry = float(
+        np.linalg.norm(raw_block - raw_block.T) / max(np.linalg.norm(raw_block), 1.0)
+    )
     block = 0.5 * (raw_block + raw_block.T)
     action = exact_sbp_action_hessian(raw[:-1]); action_raw = np.asarray(action.pop("hessian"))
     action_scaled = inverse[:, None] * action_raw * inverse[None, :]
@@ -100,6 +104,8 @@ def curvature_singular_subspace_audit(
             "coordinate_map": transform_audit,
         },
         "event_curvature_support_indices": support.tolist(),
+        "event_curvature_scaled_step": scaled_event_step,
+        "event_curvature_raw_block_relative_asymmetry": raw_asymmetry,
         "event_curvature_symmetric_block": block.tolist(),
         "localized_modes": modes,
         "largest_physical_solution_contributions": [
