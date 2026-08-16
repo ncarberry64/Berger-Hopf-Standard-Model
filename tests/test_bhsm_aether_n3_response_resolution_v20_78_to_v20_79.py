@@ -227,6 +227,45 @@ def test_v21_event_block_failures_and_exact_matrix_free_boundary() -> None:
         payload = json.loads(Path("artifacts", filename).read_text(encoding="utf-8"))
         assert not payload["validation_passed"]
 
+
+def test_v21_isolated_eigenpair_event_hessian_and_corrected_continuation() -> None:
+    hessian = json.loads(Path(
+        "artifacts/BHSM_N3_ISOLATED_EIGENPAIR_EVENT_HESSIAN_V21_17.json"
+    ).read_text(encoding="utf-8"))
+    assert hessian["validation_passed"]
+    derived = hessian["isolated_eigenpair_event_hessian"]
+    assert derived["classification"] == "ISOLATED_EIGENPAIR_EVENT_HESSIAN_VALIDATED"
+    assert derived["derivation"]["isolated_eigenvector_response_included"]
+    assert derived["derivation"]["terminal_SBP_and_period_second_pullback_included"]
+    assert derived["maximum_stable_derived_vs_exact_event_response_relative"] < 1.0e-3
+
+    for filename, key in (
+        ("BHSM_N3_EIGENPAIR_CURVATURE_DUAL_METRIC_PROPOSAL_V21_18.json",
+         "eigenpair_curvature_dual_metric_proposal"),
+        ("BHSM_N3_REFRESHED_EIGENPAIR_CURVATURE_CONTINUATION_V21_19.json",
+         "refreshed_eigenpair_curvature_continuation"),
+        ("BHSM_N3_EIGENPAIR_CURVATURE_PREDICTIVE_CONTINUATION_V21_20.json",
+         "eigenpair_curvature_predictive_continuation"),
+        ("BHSM_N3_EIGENPAIR_CURVATURE_EXPANDED_RADIUS_V21_21.json",
+         "eigenpair_curvature_expanded_radius"),
+    ):
+        payload = json.loads(Path("artifacts", filename).read_text(encoding="utf-8"))
+        assert payload["validation_passed"]
+        result = payload[key]
+        assert result["promotion"]["promoted"]
+        assert result["promotion"]["child"]["all_pass"]
+        assert result["exact_search"]["best"]["exact_reduction"] > 0.0
+
+    latest = json.loads(Path(
+        "artifacts/BHSM_N3_EIGENPAIR_CURVATURE_EXPANDED_RADIUS_V21_21.json"
+    ).read_text(encoding="utf-8"))["eigenpair_curvature_expanded_radius"]
+    assert latest["expanded_radius_audit"]["uses_only_existing_accepted_history_radii"]
+    assert latest["exact_search"]["best"]["radius_class"] == "PLATEAU_TO_LARGE_21"
+    assert abs(
+        latest["exact_search"]["best"]["exact_rayleigh_f376_l2"]
+        - 0.781486218597499
+    ) < 5.0e-12
+
     exact = json.loads(Path(
         "artifacts/BHSM_N3_EXACT_MATRIX_FREE_RESPONSE_PROPOSAL_V21_14.json"
     ).read_text(encoding="utf-8"))
