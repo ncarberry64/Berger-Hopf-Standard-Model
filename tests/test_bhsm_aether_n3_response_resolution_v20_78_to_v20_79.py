@@ -310,6 +310,19 @@ def test_v21_isolated_eigenpair_event_hessian_and_corrected_continuation() -> No
         assert result["promotion"]["child"]["all_pass"]
         assert abs(result["exact_search"]["best"]["exact_rayleigh_f376_l2"] - expected) < 5.0e-12
 
+    for filename, key, expected in (
+        ("BHSM_N3_FOURTH_EXPANDED_RADIUS_REFRESHED_CONTINUATION_V21_27.json",
+         "fourth_expanded_radius_refreshed_continuation", 0.780634951423550),
+        ("BHSM_N3_FOURTH_EXPANDED_PREDICTIVE_CONTINUATION_V21_28.json",
+         "fourth_expanded_predictive_continuation", 0.780582944226373),
+    ):
+        payload = json.loads(Path("artifacts", filename).read_text(encoding="utf-8"))
+        assert payload["validation_passed"]
+        result = payload[key]
+        assert result["promotion"]["promoted"]
+        assert result["promotion"]["child"]["all_pass"]
+        assert abs(result["exact_search"]["best"]["exact_rayleigh_f376_l2"] - expected) < 5.0e-12
+
     exact = json.loads(Path(
         "artifacts/BHSM_N3_EXACT_MATRIX_FREE_RESPONSE_PROPOSAL_V21_14.json"
     ).read_text(encoding="utf-8"))
