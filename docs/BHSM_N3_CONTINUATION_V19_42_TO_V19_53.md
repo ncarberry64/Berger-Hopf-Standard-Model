@@ -141,3 +141,23 @@ The primary state (`0.781619005072963`) was rejected at v19.80 for flux
 
 No physical equation, threshold, or acceptance rule changed.
 `FULL_BHSM_COMPLETE` remains false; continuation proceeds from v19.82.
+
+## v19.83-v19.86 compact continuation ledger
+
+v19.83 recovered the existing response-stability gate at `3e-8 / 1e-8`:
+maximum relative response change `0.003786023703974` and event-row change
+`1.4482743708e-4`. v19.84 retained the invalidated solver interpretation
+but used the validated response only as a bounded proposal generator; independent
+exact merit selected positive `alpha=0.0009765625`.
+
+The freshly reconstructed v19.86 state passes all unchanged physical gates:
+
+- exact norm / reduction: `0.777227123413482 / 0.004436451102433`;
+- rank / flux: `14 / 7.873542925e-6`;
+- trace / constraints / momentum:
+  `1.6137e-11 / 3.39e-12 / 3.61245e-9`;
+- global / child / persistence eta: positive;
+- positive-duration persistence and nonzero relative evolution: retained.
+
+No physical equation or acceptance rule changed. `FULL_BHSM_COMPLETE` remains
+false; continuation proceeds from v19.86.
