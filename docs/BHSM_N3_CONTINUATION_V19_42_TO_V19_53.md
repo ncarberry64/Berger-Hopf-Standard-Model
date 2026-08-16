@@ -161,3 +161,16 @@ The freshly reconstructed v19.86 state passes all unchanged physical gates:
 
 No physical equation or acceptance rule changed. `FULL_BHSM_COMPLETE` remains
 false; continuation proceeds from v19.86.
+
+## v19.87-v19.90 compact continuation ledger
+
+v19.87 validates the existing response gate at `1e-7 / 3e-8`. The v19.88
+solver interpretation remains invalidated; independent exact merit selects
+negative `alpha=-0.0009765625`. The freshly reconstructed v19.90 state passes
+the unchanged physical gate:
+
+- exact norm / reduction: `0.777122666596459 / 0.000104456817023`;
+- rank / flux: `14 / 7.32986481e-6`;
+- eta, positive-duration persistence, and nonzero evolution: valid.
+
+`FULL_BHSM_COMPLETE` remains false; continuation proceeds from v19.90.
