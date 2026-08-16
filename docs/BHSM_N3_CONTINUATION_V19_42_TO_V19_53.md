@@ -266,3 +266,15 @@ merit to `0.768573744724912` but v20.18 rejects it solely for flux
 
 The rejected primary is not an accepted frontier. `FULL_BHSM_COMPLETE`
 remains false; continuation proceeds from v20.20.
+
+## v20.21-v20.24 compact continuation ledger
+
+v20.21 validates no stable response pair; v20.22 preserves the invalidated
+status and uses the bounded derivative proposal-only. Independent exact merit
+selects negative `alpha=-0.00390625`, and v20.24 passes every unchanged gate:
+
+- exact norm / reduction: `0.767729672729035 / 0.000884913049795`;
+- rank / flux: `14 / 9.024487044e-6`;
+- eta, positive-duration persistence, and nonzero evolution: valid.
+
+`FULL_BHSM_COMPLETE` remains false; continuation proceeds from v20.24.
