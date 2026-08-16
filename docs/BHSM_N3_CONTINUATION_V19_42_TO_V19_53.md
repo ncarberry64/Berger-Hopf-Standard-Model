@@ -251,3 +251,18 @@ the bounded proposal-only derivative selects positive
 - eta, positive-duration persistence, and nonzero evolution: valid.
 
 `FULL_BHSM_COMPLETE` remains false; continuation proceeds from v20.14.
+
+## v20.15-v20.20 compact continuation ledger
+
+v20.15 validates no stable response pair; v20.16 preserves that status and
+uses its bounded derivative proposal-only. The primary candidate reduces exact
+merit to `0.768573744724912` but v20.18 rejects it solely for flux
+`2.3327599244e-5 > 2e-5`. The next-lowest exact-merit state, negative
+`alpha=-0.0001220703125`, passes the unchanged gate at v20.20:
+
+- exact norm / reduction: `0.768614585778829 / 8.9856554492e-5`;
+- rank / flux: `14 / 9.810900851e-6`;
+- eta, positive-duration persistence, and nonzero evolution: valid.
+
+The rejected primary is not an accepted frontier. `FULL_BHSM_COMPLETE`
+remains false; continuation proceeds from v20.20.
