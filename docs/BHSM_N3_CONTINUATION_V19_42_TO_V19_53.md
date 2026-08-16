@@ -366,3 +366,14 @@ exact merit to `0.767005215853596` but is rejected solely for flux
 
 The rejected primary is not accepted. `FULL_BHSM_COMPLETE` remains false;
 continuation proceeds from v20.58.
+
+## v20.59-v20.62 compact continuation ledger
+
+The response remains invalidated and proposal-only. Independent exact merit
+selects negative `alpha=-0.000244140625`; v20.62 passes:
+
+- exact norm / reduction: `0.766997331117846 / 1.7594630445e-5`;
+- rank / flux: `14 / 7.93619067e-6`;
+- eta, positive-duration persistence, and nonzero evolution: valid.
+
+`FULL_BHSM_COMPLETE` remains false; continuation proceeds from v20.62.
