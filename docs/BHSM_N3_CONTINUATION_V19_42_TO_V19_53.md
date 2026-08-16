@@ -326,3 +326,15 @@ selects positive `alpha=3.0517578125e-5`; v20.42 passes:
 - eta, positive-duration persistence, and nonzero evolution: valid.
 
 `FULL_BHSM_COMPLETE` remains false; continuation proceeds from v20.42.
+
+## v20.43-v20.46 compact continuation ledger
+
+The response gate recovers at `3e-8 / 1e-8`; solver interpretation remains
+invalidated. Independent exact merit selects negative
+`alpha=-1.5258789062e-5`; v20.46 passes:
+
+- exact norm / reduction: `0.767033270581951 / 3.103580986e-6`;
+- rank / flux: `14 / 2.812075954e-6`;
+- eta, positive-duration persistence, and nonzero evolution: valid.
+
+`FULL_BHSM_COMPLETE` remains false; continuation proceeds from v20.46.
