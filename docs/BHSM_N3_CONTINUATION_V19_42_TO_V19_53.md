@@ -174,3 +174,15 @@ the unchanged physical gate:
 - eta, positive-duration persistence, and nonzero evolution: valid.
 
 `FULL_BHSM_COMPLETE` remains false; continuation proceeds from v19.90.
+
+## v19.91-v19.94 compact continuation ledger
+
+The existing response gate validates at `1e-7 / 3e-8`; the solver
+interpretation remains invalidated. Independent exact merit selects positive
+`alpha=0.0078125`, and the fresh child passes every unchanged gate:
+
+- exact norm / reduction: `0.774048801461998 / 0.003073865134462`;
+- rank / flux: `14 / 5.997068438e-6`;
+- eta, positive-duration persistence, and nonzero evolution: valid.
+
+`FULL_BHSM_COMPLETE` remains false; continuation proceeds from v19.94.
