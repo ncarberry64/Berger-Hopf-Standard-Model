@@ -213,3 +213,15 @@ passes the unchanged child gate:
 - eta, positive-duration persistence, and nonzero evolution: valid.
 
 `FULL_BHSM_COMPLETE` remains false; continuation proceeds from v20.02.
+
+## v20.03-v20.06 compact continuation ledger
+
+The response gate validates at `3e-8 / 1e-8`; solver interpretation remains
+invalidated. Exact merit selects positive `alpha=0.0009765625`, and v20.06
+passes every unchanged child gate:
+
+- exact norm / reduction: `0.768902386537366 / 0.000539029854498`;
+- rank / flux: `14 / 3.843828152e-6`;
+- eta, positive-duration persistence, and nonzero evolution: valid.
+
+`FULL_BHSM_COMPLETE` remains false; continuation proceeds from v20.06.
