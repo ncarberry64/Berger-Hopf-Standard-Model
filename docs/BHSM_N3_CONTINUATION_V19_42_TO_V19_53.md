@@ -239,3 +239,15 @@ passes every unchanged gate:
 
 The response noise floor remains numerical, not a physical blocker.
 `FULL_BHSM_COMPLETE` remains false; continuation proceeds from v20.10.
+
+## v20.11-v20.14 compact continuation ledger
+
+v20.11 again validates no stable response pair. With that status preserved,
+the bounded proposal-only derivative selects positive
+`alpha=0.000244140625` by independent exact merit. The v20.14 child passes:
+
+- exact norm / reduction: `0.768704442333321 / 6.8826296102e-5`;
+- rank / flux: `14 / 1.4031727279e-5`;
+- eta, positive-duration persistence, and nonzero evolution: valid.
+
+`FULL_BHSM_COMPLETE` remains false; continuation proceeds from v20.14.
