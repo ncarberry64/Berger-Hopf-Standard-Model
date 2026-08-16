@@ -1,7 +1,7 @@
 # BHSM N=3 continuation ledger
 
-- Authoritative corrected frontier: v21.23, exact unweighted Rayleigh-event `||F376|| = 0.781148984940364`.
-- Promotion: rank-14 fresh complete child; eta, trace, seven constraints, momentum, two-scale flux (`7.620680764e-6`), positive-duration persistence, and nonzero relative motion pass.
+- Authoritative corrected frontier: v21.24, exact unweighted Rayleigh-event `||F376|| = 0.781113538817264`.
+- Promotion: rank-14 fresh complete child; eta, trace, seven constraints, momentum, two-scale flux (`6.483044721e-6`), positive-duration persistence, and nonzero relative motion pass.
 - v20.62 plateau audit: Outcome E, proposal mechanism stalled; no dominant physical or history-localized owner and no local-root-basin signature.
 - Historical hindsight: H5, no material recovery. Large descents were more scale/v/period and less shift dominated; `rank(D_cG)=14` made all tested event directions locally child-compatible without adding a selector.
 - Controlled shake: temporary historical scale/w/v/period excitation generated a proposal only; excitation was removed before exact evaluation. Original F376 reduction was `0.002529967631119` and the unchanged child gate promoted it.
@@ -30,5 +30,6 @@
 - Corrected physical continuation: v21.18, v21.19, and v21.20 promoted unchanged-gate descents `2.112030e-4`, `2.103730e-4`, and `2.115956e-4`, reaching `0.782142227982532`. All selected the upper plateau-to-medium radius boundary.
 - Natural-radius restriction audit: v21.21 refreshed the validated eigenpair curvature and extended only to the already-owned accepted-history large-descent radius. The exact optimum was interior (`PLATEAU_TO_LARGE_21`) and promoted descent `6.560094e-4` to `0.781486218597499`; rank 14 and all complete-moving-child gates pass.
 - Predictive/refresh cadence: one reuse at v21.22 contracted to descent `1.774410e-5` but remained physical. The mandated v21.23 refresh matched exact event response to `5.878692e-6` and recovered material descent `3.194896e-4`, reaching `0.781148984940364`; all unchanged gates pass.
-- FULL_BHSM_COMPLETE: false. The previous terminal scale/v derivative blocker remains resolved. Active dependency: continue the validated corrected-curvature physical path from v21.23, with at most one predictive reuse before refresh.
-- Next calculation: take one predictive continuation with the validated v21.23 curvature over the same BHSM-owned plateau-to-large interval; refresh after that single reuse or any contraction.
+- The single v21.23-curvature reuse promoted v21.24 with descent `3.544612e-5` to `0.781113538817264`; all unchanged gates pass. Its contraction triggers refresh rather than further reuse.
+- FULL_BHSM_COMPLETE: false. The previous terminal scale/v derivative blocker remains resolved. Active dependency: refresh the validated eigenpair curvature at v21.24 and continue the exact physical path.
+- Next calculation: refresh the isolated-eigenpair event Hessian at v21.24, validate against exact event response, and search the unchanged history-owned plateau-to-large interval once.

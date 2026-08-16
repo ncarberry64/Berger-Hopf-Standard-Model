@@ -287,6 +287,16 @@ def test_v21_isolated_eigenpair_event_hessian_and_corrected_continuation() -> No
         - 0.781148984940364
     ) < 5.0e-12
 
+    predictive = json.loads(Path(
+        "artifacts/BHSM_N3_SECOND_EXPANDED_PREDICTIVE_CONTINUATION_V21_24.json"
+    ).read_text(encoding="utf-8"))["second_expanded_predictive_continuation"]
+    assert predictive["promotion"]["promoted"]
+    assert predictive["promotion"]["child"]["all_pass"]
+    assert abs(
+        predictive["exact_search"]["best"]["exact_rayleigh_f376_l2"]
+        - 0.781113538817264
+    ) < 5.0e-12
+
     exact = json.loads(Path(
         "artifacts/BHSM_N3_EXACT_MATRIX_FREE_RESPONSE_PROPOSAL_V21_14.json"
     ).read_text(encoding="utf-8"))
