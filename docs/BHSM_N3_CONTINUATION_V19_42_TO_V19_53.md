@@ -290,3 +290,17 @@ physical gate:
 - eta, positive-duration persistence, and nonzero evolution: valid.
 
 `FULL_BHSM_COMPLETE` remains false; continuation proceeds from v20.28.
+
+## v20.29-v20.34 compact continuation ledger
+
+The response remains invalidated and proposal-only. The v20.32 primary reduces
+exact merit to `0.7670717667451` but is rejected solely for flux
+`2.547828065e-5 > 2e-5`. The next-lowest candidate, positive
+`alpha=6.103515625e-5`, passes at v20.34:
+
+- exact norm / reduction: `0.767087818463417 / 7.0251374267e-5`;
+- rank / flux: `14 / 1.8457285595e-5`;
+- eta, positive-duration persistence, and nonzero evolution: valid.
+
+The rejected primary is not accepted. `FULL_BHSM_COMPLETE` remains false;
+continuation proceeds from v20.34.
