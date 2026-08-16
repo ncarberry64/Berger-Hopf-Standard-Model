@@ -186,3 +186,18 @@ interpretation remains invalidated. Independent exact merit selects positive
 - eta, positive-duration persistence, and nonzero evolution: valid.
 
 `FULL_BHSM_COMPLETE` remains false; continuation proceeds from v19.94.
+
+## v19.95-v19.98 compact continuation ledger
+
+v19.95 again reaches the direct-response numerical noise floor and validates
+no stable pair. As at v19.78, v19.96 preserves the invalidated source status
+and uses a bounded derivative only to generate proposals; independent exact
+merit remains authoritative. Positive `alpha=0.00048828125` passes the fresh
+unchanged child gate at v19.98:
+
+- exact norm / reduction: `0.770113042159652 / 0.003935759302345`;
+- rank / flux: `14 / 1.4745217154e-5`;
+- eta, positive-duration persistence, and nonzero evolution: valid.
+
+The response noise floor is numerical and is not a physical blocker.
+`FULL_BHSM_COMPLETE` remains false; continuation proceeds from v19.98.
