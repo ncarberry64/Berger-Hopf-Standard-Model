@@ -278,3 +278,15 @@ selects negative `alpha=-0.00390625`, and v20.24 passes every unchanged gate:
 - eta, positive-duration persistence, and nonzero evolution: valid.
 
 `FULL_BHSM_COMPLETE` remains false; continuation proceeds from v20.24.
+
+## v20.25-v20.28 compact continuation ledger
+
+The response audit remains invalidated and proposal-only. Independent exact
+merit selects positive `alpha=0.000244140625`; v20.28 passes every unchanged
+physical gate:
+
+- exact norm / reduction: `0.767158069837684 / 0.00057160289135`;
+- rank / flux: `14 / 6.230428158e-6`;
+- eta, positive-duration persistence, and nonzero evolution: valid.
+
+`FULL_BHSM_COMPLETE` remains false; continuation proceeds from v20.28.
