@@ -1,10 +1,14 @@
 # BHSM N=3 continuation ledger
 
-- Authoritative accepted frontier: v20.77, exact unweighted `||F376|| = 0.758671922543989`.
-- Promotion: rank-14 fresh complete child; eta, trace, seven constraints, momentum, two-scale flux (`1.0817296102e-5`), positive-duration persistence, and nonzero relative motion pass.
+- Authoritative corrected frontier: v20.86, exact unweighted Rayleigh-event `||F376|| = 0.787514011519100`.
+- Promotion: rank-14 fresh complete child; eta, trace, seven constraints, momentum, two-scale flux (`4.706241445e-6`), positive-duration persistence, and nonzero relative motion pass.
 - v20.62 plateau audit: Outcome E, proposal mechanism stalled; no dominant physical or history-localized owner and no local-root-basin signature.
 - Historical hindsight: H5, no material recovery. Large descents were more scale/v/period and less shift dominated; `rank(D_cG)=14` made all tested event directions locally child-compatible without adding a selector.
 - Controlled shake: temporary historical scale/w/v/period excitation generated a proposal only; excitation was removed before exact evaluation. Original F376 reduction was `0.002529967631119` and the unchanged child gate promoted it.
 - Recovered continuation: v20.69 through v20.73 reduced F376 materially to `0.758723504671207`; v20.74-v20.77 contracted back to micro-descent. The v20.76 audit found distributed w/period/scale/v ownership with no dominant physical or history-localized owner. The v20.77 accepted-secant model overpredicted its exact reduction and is not a closure mechanism.
-- FULL_BHSM_COMPLETE: false. Open dependency: exact N=3 KKT closure from v20.77.
-- Next calculation: measure direct-response resolution at v20.77, then use a validated response only to propose the next original-F376 trial; no repetitive secant microsteps.
+- Foundational derivative correction: v20.78 found no common nested-finite-difference response scale. At v20.77 the legacy coordinatewise ordered-event covector differed from the isolated-eigenvalue Rayleigh derivative by `25.0151%`; it is numerically invalid near the narrow upper event gap. The Rayleigh covector is step-stable, matches independent event directional derivatives, and changes no physical event or equation. Reprojecting only the explicit multiplier gave the corrected seed `||F376|| = 0.798607212645983`.
+- Corrected continuation: v20.81-v20.86 reduced Rayleigh-F376 through `0.794237505175150`, `0.792168779696871`, `0.787990238928623`, `0.787884419734758`, `0.787515112996569`, and `0.787514011519100`; every promoted state passed the fresh complete-moving-child gate.
+- Corrected ownership at v20.85 remained distributed: period `44.57%`, w `34.03%`, scale `11.34%`, v `8.01%`; history was broadly split between interior and event-near nodes. No physical block owns 60%.
+- Krylov restriction audit: doubling restart 12 to 24 left proposal residual `0.994385` and recovered only `1.101477469e-6` exact physical descent. The merit-best trial failed flux; the next exact-descent trial passed unchanged child physics and was promoted. Krylov depth is not the missing physics.
+- FULL_BHSM_COMPLETE: false. Precise active dependency: assemble the physics-owned 37-support Rayleigh ordered-event curvature (dominated by the isolated near-pair; current upper gap `3.91049167e-5`) into an equivalent square-KKT preconditioner. It may change coordinates only, not F376, the event, or the child gate.
+- Next calculation: derive/validate that Rayleigh event-curvature block against the existing matrix-free response, then take one original-F376 proposal; do not repeat the action-only Krylov step.

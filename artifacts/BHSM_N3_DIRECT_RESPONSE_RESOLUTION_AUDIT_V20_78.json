@@ -1,0 +1,326 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact": "BHSM_N3_DIRECT_RESPONSE_RESOLUTION_AUDIT_V20_78",
+  "classification": "BHSM_N3_V20_77_DIRECT_RESPONSE_RESOLUTION_AUDIT",
+  "direct_response_resolution_audit": {
+    "acceptance_gate_changed": false,
+    "componentwise_monotonicity_added": false,
+    "diagnostic_stability_definition": {
+      "maximum_event_row_absolute_change": 0.001,
+      "maximum_relative_change": 0.005
+    },
+    "directions": [
+      {
+        "direction": "physical_residual",
+        "physical_scaled_direction_norm": 0.758671922543989,
+        "responses": [
+          {
+            "event_row_response": -0.087028060236264,
+            "response_l2": 393674.6307783626,
+            "step": 1e-06
+          },
+          {
+            "event_row_response": -0.087018403937844,
+            "response_l2": 393698.42581163143,
+            "step": 3e-07
+          },
+          {
+            "event_row_response": -0.087004680863509,
+            "response_l2": 393685.5471019879,
+            "step": 1e-07
+          },
+          {
+            "event_row_response": -0.087033747570281,
+            "response_l2": 393679.7407860211,
+            "step": 3e-08
+          },
+          {
+            "event_row_response": -0.08683872257752,
+            "response_l2": 393798.634626048,
+            "step": 1e-08
+          },
+          {
+            "event_row_response": -0.086457405612222,
+            "response_l2": 393713.91691993707,
+            "step": 3e-09
+          }
+        ]
+      },
+      {
+        "direction": "latest_accepted_secant_v20_75_to_v20_77",
+        "physical_scaled_direction_norm": 0.00019711223689,
+        "responses": [
+          {
+            "event_row_response": 2.0157909e-08,
+            "response_l2": 0.002452059810704,
+            "step": 1e-06
+          },
+          {
+            "event_row_response": 1.8820169e-08,
+            "response_l2": 0.003643572640374,
+            "step": 3e-07
+          },
+          {
+            "event_row_response": 2.1484583e-08,
+            "response_l2": 0.004452359578672,
+            "step": 1e-07
+          },
+          {
+            "event_row_response": 2.8810824e-08,
+            "response_l2": 0.018773955574849,
+            "step": 3e-08
+          },
+          {
+            "event_row_response": 2.191258e-09,
+            "response_l2": 0.025384414364233,
+            "step": 1e-08
+          },
+          {
+            "event_row_response": 2.38648447e-07,
+            "response_l2": 0.155864965794084,
+            "step": 3e-09
+          }
+        ]
+      },
+      {
+        "direction": "material_corridor_secant_v20_72_to_v20_73",
+        "physical_scaled_direction_norm": 0.001562881520222,
+        "responses": [
+          {
+            "event_row_response": 2.08246243e-07,
+            "response_l2": 0.036200885506167,
+            "step": 1e-06
+          },
+          {
+            "event_row_response": 2.18895705e-07,
+            "response_l2": 0.034320692430875,
+            "step": 3e-07
+          },
+          {
+            "event_row_response": 1.81325361e-07,
+            "response_l2": 0.061415882967734,
+            "step": 1e-07
+          },
+          {
+            "event_row_response": 3.0360627e-07,
+            "response_l2": 0.123804937260331,
+            "step": 3e-08
+          },
+          {
+            "event_row_response": 1.8619863e-07,
+            "response_l2": 0.370183195816094,
+            "step": 1e-08
+          },
+          {
+            "event_row_response": -2.83512183e-07,
+            "response_l2": 0.862001311920869,
+            "step": 3e-09
+          }
+        ]
+      },
+      {
+        "direction": "multisecant_proposal_direction",
+        "physical_scaled_direction_norm": 0.71766375315505,
+        "responses": [
+          {
+            "event_row_response": 7.3392706833e-05,
+            "response_l2": 8.927677319683575,
+            "step": 1e-06
+          },
+          {
+            "event_row_response": 6.8522145943e-05,
+            "response_l2": 13.265843142197205,
+            "step": 3e-07
+          },
+          {
+            "event_row_response": 7.8222981201e-05,
+            "response_l2": 16.210546519324225,
+            "step": 1e-07
+          },
+          {
+            "event_row_response": 0.000104897008097,
+            "response_l2": 68.3538862529611,
+            "step": 3e-08
+          },
+          {
+            "event_row_response": 7.978125791e-06,
+            "response_l2": 92.42183220968695,
+            "step": 1e-08
+          },
+          {
+            "event_row_response": 0.000868892479385,
+            "response_l2": 567.4870221267269,
+            "step": 3e-09
+          }
+        ]
+      }
+    ],
+    "event_definition_changed": false,
+    "next_action": "DERIVE_ANALYTIC_OR_COMPLEX_STEP_EVENT_RESPONSE_BEFORE_MORE_NEWTON_PROPOSALS",
+    "outcome": "DIRECT_RESPONSE_RESOLUTION_BLOCKER",
+    "physical_equations_changed": false,
+    "selected_finest_common_stable_pair": null,
+    "source_frontier": {
+      "exact_f376_l2": 0.758671922543989,
+      "version": "v20.77"
+    },
+    "successive_scale_comparisons": [
+      {
+        "all_directions_stable": false,
+        "coarse_step": 1e-06,
+        "directions": [
+          {
+            "direction": "physical_residual",
+            "event_row_absolute_change": 9.656298421e-06,
+            "relative_change": 6.150848882e-05
+          },
+          {
+            "direction": "latest_accepted_secant_v20_75_to_v20_77",
+            "event_row_absolute_change": 1.33774e-09,
+            "relative_change": 0.001951303789899
+          },
+          {
+            "direction": "material_corridor_secant_v20_72_to_v20_73",
+            "event_row_absolute_change": 1.0649461e-08,
+            "relative_change": 0.012141470230023
+          },
+          {
+            "direction": "multisecant_proposal_direction",
+            "event_row_absolute_change": 4.87056089e-06,
+            "relative_change": 0.535546833422892
+          }
+        ],
+        "fine_step": 3e-07,
+        "maximum_event_row_absolute_change": 9.656298421e-06,
+        "maximum_relative_change": 0.535546833422892
+      },
+      {
+        "all_directions_stable": false,
+        "coarse_step": 3e-07,
+        "directions": [
+          {
+            "direction": "physical_residual",
+            "event_row_absolute_change": 1.3723074335e-05,
+            "relative_change": 5.0350918864e-05
+          },
+          {
+            "direction": "latest_accepted_secant_v20_75_to_v20_77",
+            "event_row_absolute_change": 2.664414e-09,
+            "relative_change": 0.003654471092042
+          },
+          {
+            "direction": "material_corridor_secant_v20_72_to_v20_73",
+            "event_row_absolute_change": 3.7570344e-08,
+            "relative_change": 0.051644355190209
+          },
+          {
+            "direction": "multisecant_proposal_direction",
+            "event_row_absolute_change": 9.700835258e-06,
+            "relative_change": 0.820794238980132
+          }
+        ],
+        "fine_step": 1e-07,
+        "maximum_event_row_absolute_change": 1.3723074335e-05,
+        "maximum_relative_change": 0.820794238980132
+      },
+      {
+        "all_directions_stable": false,
+        "coarse_step": 1e-07,
+        "directions": [
+          {
+            "direction": "physical_residual",
+            "event_row_absolute_change": 2.9066706773e-05,
+            "relative_change": 0.000131949265935
+          },
+          {
+            "direction": "latest_accepted_secant_v20_75_to_v20_77",
+            "event_row_absolute_change": 7.32624e-09,
+            "relative_change": 0.019810686903726
+          },
+          {
+            "direction": "material_corridor_secant_v20_72_to_v20_73",
+            "event_row_absolute_change": 1.2228091e-07,
+            "relative_change": 0.122038989930315
+          },
+          {
+            "direction": "multisecant_proposal_direction",
+            "event_row_absolute_change": 2.6674026896e-05,
+            "relative_change": 1.055221784495193
+          }
+        ],
+        "fine_step": 3e-08,
+        "maximum_event_row_absolute_change": 2.9066706773e-05,
+        "maximum_relative_change": 1.055221784495193
+      },
+      {
+        "all_directions_stable": false,
+        "coarse_step": 3e-08,
+        "directions": [
+          {
+            "direction": "physical_residual",
+            "event_row_absolute_change": 0.000195024992762,
+            "relative_change": 0.000544328833945
+          },
+          {
+            "direction": "latest_accepted_secant_v20_75_to_v20_77",
+            "event_row_absolute_change": 2.6619566e-08,
+            "relative_change": 0.032916270411288
+          },
+          {
+            "direction": "material_corridor_secant_v20_72_to_v20_73",
+            "event_row_absolute_change": 1.17407641e-07,
+            "relative_change": 0.397810507591769
+          },
+          {
+            "direction": "multisecant_proposal_direction",
+            "event_row_absolute_change": 9.6918882305e-05,
+            "relative_change": 1.296711830298049
+          }
+        ],
+        "fine_step": 1e-08,
+        "maximum_event_row_absolute_change": 0.000195024992762,
+        "maximum_relative_change": 1.296711830298049
+      },
+      {
+        "all_directions_stable": false,
+        "coarse_step": 1e-08,
+        "directions": [
+          {
+            "direction": "physical_residual",
+            "event_row_absolute_change": 0.000381316965297,
+            "relative_change": 0.001317491995262
+          },
+          {
+            "direction": "latest_accepted_secant_v20_75_to_v20_77",
+            "event_row_absolute_change": 2.36457189e-07,
+            "relative_change": 0.163836482495524
+          },
+          {
+            "direction": "material_corridor_secant_v20_72_to_v20_73",
+            "event_row_absolute_change": 4.69710813e-07,
+            "relative_change": 0.867566878110728
+          },
+          {
+            "direction": "multisecant_proposal_direction",
+            "event_row_absolute_change": 0.000860914353593,
+            "relative_change": 1.051143736251618
+          }
+        ],
+        "fine_step": 3e-09,
+        "maximum_event_row_absolute_change": 0.000860914353593,
+        "maximum_relative_change": 1.051143736251618
+      }
+    ]
+  },
+  "status": "VALIDATED",
+  "validation": {
+    "all_adjacent_pairs_compared": true,
+    "all_steps_measured": true,
+    "four_physical_directions": true,
+    "no_componentwise_gate": true,
+    "same_physics": true,
+    "source_v20_77_reproduced": true
+  },
+  "validation_passed": true,
+  "version": "v20.78"
+}
