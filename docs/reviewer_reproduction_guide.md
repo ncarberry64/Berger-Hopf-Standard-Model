@@ -1,6 +1,31 @@
 # Reviewer Reproduction Guide
 
-## Current v15.7 audit
+## Current corrected-Rayleigh N=3 audit
+
+The canonical snapshot is the validated rolling checkpoint at exact
+`||F376|| = 0.777030406838571`. It is not a closed root. Run:
+
+```bash
+python -m pytest -q tests/test_bhsm_aether_n3_response_resolution_v20_78_to_v20_79.py tests/test_bhsm_public_readiness_v6_21_0.py
+python tools/audit_public_readiness.py --format human
+python tools/audit_frozen_prediction_integrity.py
+git diff --check
+```
+
+Then inspect the
+[N=3 continuation ledger](BHSM_N3_CONTINUATION_LEDGER.md),
+[rolling checkpoint artifact](../artifacts/BHSM_N3_FRESH_EIGENPAIR_CURVATURE_CONTINUATION_CHECKPOINT.json),
+[claim boundaries](../CLAIMS.md), and [gate ledger](../theory/gate_ledger.md).
+The checkpoint must show exact v21.32 -> v21.33 replay equivalence, fresh
+curvature validation at every rolling step, strict exact-merit descent, and a
+fresh rank-14 complete child passing eta, trace, constraints, momentum, flux,
+persistence, and nonzero-motion gates at every promotion.
+
+Do not compare legacy `~0.758...` residual values directly to the corrected
+ordered-Rayleigh `~0.787...` series unless the legacy state is reevaluated with
+the corrected definition.
+
+## Historical v15.7 audit
 
 Recommended current reviewer command:
 

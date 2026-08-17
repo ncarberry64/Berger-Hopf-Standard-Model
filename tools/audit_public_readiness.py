@@ -68,9 +68,11 @@ ALIGNMENT_FILES = [
 ]
 
 ALIGNMENT_PHRASES = [
-    "v18.83",
+    "rolling checkpoint",
+    "0.777030406838571",
     "376",
     "complete-child",
+    "rayleigh",
     "eta",
     "persistence",
     "full_bhsm_complete = false",
@@ -601,8 +603,10 @@ def manifest_payload(result: dict) -> dict:
         },
         "external_urls_recorded": result["external_urls"],
         "current_scientific_summary": {
-            "research_frontier": "v18.83",
-            "n3_exact_residual_norm": 0.80554785212226,
+            "research_frontier": "rolling-checkpoint-step-36",
+            "n3_exact_residual_norm": 0.777030406838571,
+            "residual_definition": "corrected_ordered_rayleigh",
+            "legacy_residual_series_directly_comparable": False,
             "event_to_complete_child_map": "derived_and_executed",
             "complete_child_chart_rank": 14,
             "complete_child_persistence": "validated_for_1e-4",
@@ -628,7 +632,10 @@ def manifest_payload(result: dict) -> dict:
         "frozen_predictions_changed": False,
         "official_prediction_logic_changed": False,
         "scientific_formulas_changed": False,
-        "scientific_source_modules_changed": False,
+        "scientific_source_modules_changed": True,
+        "proposal_workflow_source_changed": True,
+        "physical_equations_changed": False,
+        "acceptance_gate_changed": False,
         "public_readiness_verdict": result["verdict"],
         "blockers": blockers,
     }

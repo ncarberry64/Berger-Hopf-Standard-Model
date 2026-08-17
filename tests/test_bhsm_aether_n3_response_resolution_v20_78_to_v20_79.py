@@ -160,6 +160,19 @@ def test_v21_proposal_mechanisms_isolate_full_residual_manifold_curvature() -> N
         "artifacts/BHSM_N3_RAYLEIGH_STRUCTURED_SHAKE_RECOVERY_V21_03.json"
     ).read_text(encoding="utf-8"))["rayleigh_structured_shake_recovery"]
     assert shake["classification"] == "STRUCTURED_SHAKE_NO_MATERIAL_RECOVERY"
+    assert not shake["physical_equations_changed"]
+    assert not shake["event_definition_changed"]
+    assert not shake["complete_child_gate_changed"]
+    assert shake["prospective_exact_search"][
+        "candidate_origin_is_unshaken_v21_00"
+    ]
+    assert shake["prospective_exact_search"][
+        "exact_original_rayleigh_f376_authoritative"
+    ]
+    assert all(
+        row["temporary_excitation_removed_before_candidate_evaluation"]
+        for row in shake["structured_excitation"]["records"]
+    )
 
     radius = json.loads(Path(
         "artifacts/BHSM_N3_NATURAL_RADIUS_SCAN_V21_04.json"
@@ -370,3 +383,28 @@ def test_v21_isolated_eigenpair_event_hessian_and_corrected_continuation() -> No
     ):
         payload = json.loads(Path("artifacts", filename).read_text(encoding="utf-8"))
         assert not payload["validation_passed"]
+
+
+def test_v21_fresh_eigenpair_rolling_checkpoint_preserves_physics() -> None:
+    payload = json.loads(Path(
+        "artifacts/BHSM_N3_FRESH_EIGENPAIR_CURVATURE_CONTINUATION_CHECKPOINT.json"
+    ).read_text(encoding="utf-8"))
+    assert payload["validation_passed"]
+    assert payload["validation"]["v21_32_to_v21_33_exact_replay"]
+    assert payload["promoted_step_count"] == 36
+    assert not payload["physical_equations_changed"]
+    assert not payload["event_definition_changed"]
+    assert not payload["acceptance_gate_changed"]
+    assert abs(
+        payload["authoritative_checkpoint"]["exact_rayleigh_f376_l2"]
+        - 0.777030406838571
+    ) < 5.0e-12
+    previous = 0.779902477787777
+    for step in payload["steps"]:
+        assert step["curvature_validation"]["validated"]
+        assert step["same_physics"]
+        assert step["promotion"]["promoted"]
+        assert step["promotion"]["child"]["all_pass"]
+        assert step["best"]["exact_reduction"] > 0.0
+        assert step["best"]["exact_rayleigh_f376_l2"] < previous
+        previous = step["best"]["exact_rayleigh_f376_l2"]

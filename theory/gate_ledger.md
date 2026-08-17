@@ -1,5 +1,37 @@
 # Gate Ledger
 
+## Corrected-Rayleigh N=3 rolling checkpoint gates
+
+- `N3_EXACT_KKT_ROOT`: `OPEN_RESIDUAL_NONZERO` at exact unweighted
+  `||F376|| = 0.777030406838571` (rolling checkpoint step 36).
+- `COMPLETE_MOVING_CHILD`: `VALIDATED_AT_ACCEPTED_FRONTIERS`.
+- `CHILD_MATCHING_RANK`: `14` for the 14-row map on 26 child variables.
+- Latest child eta/flux/max-row/persistence:
+  `1.00003772292787/1.6172791659E-5/6.51707072E-7/6.1803E-11`;
+  trace, seven constraints, momentum, unchanged two-scale flux, persistence,
+  and nonzero relative motion pass.
+- `ORDERED_RAYLEIGH_EVENT_COVECTOR`: `VALIDATED`.
+- `LEGACY_EVENT_COVECTOR_NEAR_DEGENERACY`:
+  `NUMERICALLY_INVALIDATED_APPROX_25.0151_PERCENT_DISAGREEMENT`.
+- Residual-series boundary:
+  `LEGACY_0.758_SERIES_NOT_DIRECTLY_COMPARABLE_TO_CORRECTED_RAYLEIGH_0.787_SERIES_WITHOUT_REEVALUATION`.
+- `TERMINAL_SCALE_V_ISOLATED_EIGENPAIR_SECOND_VARIATION`:
+  `VALIDATED_COVECTOR_1.8E-14_SCALE_STABILITY_3.232284E-9_DIRECTIONAL_1.185584E-4`.
+- `COORDINATEWISE_EVENT_HESSIAN_ASSEMBLY`: `NUMERICALLY_INVALIDATED`.
+- `FRESH_EIGENPAIR_CURVATURE_PROPOSAL`:
+  `VALIDATED_PROPOSAL_MECHANISM_36_ROLLING_PROMOTIONS`.
+- Rolling driver equivalence:
+  `VALIDATED_EXACT_REPRODUCTION_OF_MANUAL_V21_32_TO_V21_33_STATE`.
+- `STALE_CURVATURE_REUSE`: `INVALIDATED_AS_REQUIRED_CADENCE`.
+- Historical plateau/hindsight: `OUTCOME_E/H5_NO_MATERIAL_RECOVERY`.
+- `CURRENT_RESIDUAL_OWNERSHIP`:
+  `DISTRIBUTED_DESCENT_PERIOD_45.9739_PERCENT_BELOW_DOMINANCE`.
+- Numerical rank cutoff, trust metrics, preconditioners, Krylov tolerances,
+  structured shake, and secant memory as physical selectors: `FORBIDDEN`.
+- Exact residual, event definition, action equations, child definition, flux
+  tolerance, and downstream frozen predictions changed: `FALSE`.
+- `FULL_BHSM_COMPLETE`: `FALSE`.
+
 ## v17.84-v18.83 N=3 complete-child, constrained-root and continuation gates
 
 - v17.32 parallel Jacobian equivalence: `VALIDATED_AND_ADOPTED`; no further

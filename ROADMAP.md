@@ -1,20 +1,35 @@
 # BHSM Roadmap
 
-## Current v15.10 critical path
+## Current corrected-Rayleigh N=3 critical path
 
-Start from the derived regular radial eta concentration branch and compute the
-physical sigma tangent propagator, its eta-support derivative, and the
-backreaction-unreduced canonical quartic from one action-owned Aether-to-regular
-response map. The exact v15.10 inverse then selects `(alpha,r,gamma)`. Only
-after that selection may the coupled Einstein-eta-sigma constraints be
-continued into a degree-one Hopf parent-child enclosure, nested scale, and
-relative-periodic/Floquet persistence.
+1. Resume the validated rolling checkpoint from exact unweighted
+   `||F376|| = 0.777030406838571` using freshly recomputed isolated-eigenpair
+   event curvature, the existing bounded action/physical radius search, exact
+   original `F376`, and the unchanged fresh complete-child promotion gates.
+2. Continue while material distributed descent persists. Re-audit ownership
+   or activate the already-authorized structural-hindsight proposal basis only
+   when exact reductions genuinely collapse into the historical plateau
+   regime; do not elevate the largest residual block into physics without the
+   established dominance evidence.
+3. Close the square 376-variable N=3 KKT root without equation 377, empirical
+   targets, relaxed eta/flux/persistence gates, residual left scaling, or a
+   numerical rank selector.
+4. Only after exact N=3 closure, evaluate the common event-layer pushforward,
+   solve N>=4 independently, close reconstruction/return, and derive the held-
+   out mass, flavor, gauge, neutrino, decay, and Unique-Actualization objects.
 
-Current verdict:
-`BHSM_V15_10_THE_RETAINED_SIGMA_ACTION_HAS_AN_EXACT_INJECTIVE_THREE_RESPONSE_INVERSE_FOR_ALPHA_R_GAMMA_AND_THE_HOMOGENEOUS_CYCLE_INVERSE_CONDITIONALLY_SELECTS_KAPPA1_KAPPA0_BUT_THE_CURRENT_AETHER_STATE_SUPPLIES_NO_PHYSICAL_SIGMA_TANGENT_X_DERIVATIVE_OR_NONLINEAR_RESPONSE_JET;_EXPLICIT_STABLE_INEQUIVALENT_TRIPLES_SHARE_THE_SAME_SIGMA_ZERO_PARENT_AND_EVEN_THE_SAME_THRESHOLD_QUADRATIC_CURVATURE;_THEREFORE_NO_PHYSICAL_SIGMA_ONSET_HOPF_CHILD_OR_PERSISTENT_ENCLOSURE_IS_SELECTED_AND_FULL_BHSM_COMPLETION_REMAINS_FALSE`.
+The complete moving child is validated at accepted frontiers, but the N=3 root
+remains open and `FULL_BHSM_COMPLETE = FALSE`. Frozen predictions are
+unchanged. Legacy `~0.758...` and corrected-Rayleigh `~0.787...` norm series
+are separate numerical eras unless reevaluated under one definition.
 
 Exact next object:
-`ACTION_OWNED_AETHER_CYCLE_TO_REGULAR_SIGMA_RESPONSE_JET_MAP_PRODUCING_THE_PHYSICAL_SIGMA_TANGENT_PROPAGATOR_X_DERIVATIVE_AND_BACKREACTION_UNREDUCED_CANONICAL_QUARTIC_ON_THE_V15_9_BRANCH`.
+`CONTINUE_PHYSICALLY_ADMISSIBLE_EXACT_376_ROW_DESCENT_FROM_THE_LATEST_ACCEPTED_FRONTIER_TO_F376_ZERO`.
+
+## Historical v15.10 critical path
+
+The v15.10 sigma-response dependency is preserved as downstream historical
+provenance; it is not the current N=3 frontier.
 
 ## Historical v11.6 critical path
 

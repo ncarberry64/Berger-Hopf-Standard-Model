@@ -2,17 +2,46 @@
 
 [![CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml)
 [![Latest archival release](https://img.shields.io/github/v/release/ncarberry64/Berger-Hopf-Standard-Model?label=archival%20release)](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/releases/latest)
-[![Current research status](https://img.shields.io/badge/current%20research-v18.83-orange)](docs/current_bhsm_status.md)
+[![Current research status](https://img.shields.io/badge/current%20research-N3%20Rayleigh%20snapshot-orange)](docs/current_bhsm_status.md)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-3776AB)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg)](https://doi.org/10.5281/zenodo.20663419)
 
 BHSM is an independent artifact-backed computational framework and mathematical-physics research program investigating whether Standard Model structure and particle-like dynamics can be derived from Berger-Hopf boundary/envelopment geometry and a common action architecture.
 
-## Current Public Status -- v18.83
+## Current Public Status -- corrected-Rayleigh N=3 snapshot
 
-BHSM v17.84-v18.83 derives and executes the missing N=3 event-to-complete-child boundary/BVP map, records the resulting constrained-root geometry, classifies its local child fiber, and continues the unchanged physical solve. The global problem remains the square 376-variable KKT system with explicit event multiplier. Candidate events are promoted only after independent reduction of exact 376-row merit, admissible eta, fresh rank-14 reconstruction from all 26 child variables, two-scale flux closure, and positive-duration constraint-consistent persistence. Nonzero motion and time dependence are retained as physical relative evolution.
+BHSM remains under active derivation. The N=3 physical solve is still the square
+376-variable KKT system with an explicit event multiplier; no equation 377 was
+added. The event-to-complete-child boundary/BVP map is implemented, and every
+accepted state must independently reduce the exact unweighted corrected-Rayleigh
+`F376` merit and then reconstruct a fresh complete moving child from all 26 child
+variables. Promotion retains rank 14, admissible eta, trace, seven constraints,
+momentum, the unchanged `2e-5` two-scale flux gate, positive-duration
+constraint-consistent persistence, and nonzero relative motion.
 
-The latest accepted physical state is v18.83. Its exact residual norm is `0.80554785212226`, event magnitude is `0.083598507276914`, and global eta minimum is `0.774215156076363`. Its freshly reconstructed child has rank 14, flux envelope `1.1596040404e-5`, and positive-duration persistence with nonzero relative evolution. A lower-norm v18.79 primary state remains rejected because its independently evaluated flux envelope exceeded the unchanged gate; v18.83 promotes the next exact-merit state without changing that gate. v18.69 confirms rank 14/nullity 12 and classifies the fiber as six genuine Cauchy directions plus six unresolved Cauchy-multiplier mixtures. The N=3 saddle is not solved because the global residual remains nonzero; N=4+ and all downstream physical gates remain open.
+The current accepted rolling checkpoint is a snapshot, not a scientific version
+or a closed root: exact `||F376|| = 0.777030406838571`. Its fresh child has rank
+14, eta minimum `1.00003772292787`, flux envelope `1.6172791659e-5`, maximum
+14-row mismatch `6.51707072e-7`, and persistence constraint
+`6.1803e-11`; every retained child gate passes. The rolling driver was adopted
+only after reproducing the manual v21.32 -> v21.33 continuation state exactly.
+It automates fresh isolated-eigenpair curvature proposals while leaving the exact
+residual, event definition, physical root, and acceptance gates unchanged.
+
+**Residual-series provenance:** legacy values near `0.758...` and corrected
+ordered-Rayleigh values near `0.787...` belong to different numerical
+measurement eras. They are not a single directly comparable monotone series
+unless the legacy states are reevaluated with the corrected definition. The
+apparent jump is not evidence that the physical residual worsened; it records
+the correction of an invalid legacy event covector near ordered-event
+degeneracy.
+
+The isolated-eigenpair second variation, including eigenvector response and the
+terminal scale/v pullback, repaired the demonstrated event-curvature assembly
+blocker and restored material prospective descent. Exact `F376` and the complete
+moving child remain authoritative; curvature, trust metrics, Krylov models, and
+structured probes only propose. The exact N=3 root remains open, so N=4+ and all
+downstream physical closure gates remain open. Frozen predictions are unchanged.
 
 `FULL_BHSM_COMPLETE = FALSE`
 
@@ -20,14 +49,14 @@ Exact next object:
 
 `CONTINUE_PHYSICALLY_ADMISSIBLE_EXACT_376_ROW_DESCENT_FROM_THE_LATEST_ACCEPTED_FRONTIER_TO_F376_ZERO`
 
-Read the [v18.74-v18.83 continuation report](docs/BHSM_N3_CONTINUATION_V18_74_TO_V18_83.md), [v18.70-v18.73 continuation report](docs/BHSM_N3_FIFTH_BIDIRECTIONAL_CONTINUATION_V18_70_TO_V18_73.md), [v18.69 child-fiber audit](docs/BHSM_N3_CHILD_FIBER_OWNERSHIP_V18_69.md), [v18.59 constrained-root record](docs/BHSM_N3_CONSTRAINED_ROOT_HINDSIGHT_RECORD_V18_59.md), [current status](docs/current_bhsm_status.md), [claim boundaries](CLAIMS.md), [gate ledger](theory/gate_ledger.md), and [reviewer reproduction guide](docs/reviewer_reproduction_guide.md).
+Read the authoritative [N=3 continuation ledger](docs/BHSM_N3_CONTINUATION_LEDGER.md), [rolling checkpoint artifact](artifacts/BHSM_N3_FRESH_EIGENPAIR_CURVATURE_CONTINUATION_CHECKPOINT.json), [current status](docs/current_bhsm_status.md), [claim boundaries](CLAIMS.md), [gate ledger](theory/gate_ledger.md), and [reviewer reproduction guide](docs/reviewer_reproduction_guide.md). Historical v18 correspondence and child-fiber reports remain linked from the continuation ledger and documentation index.
 
 | Layer | Current status |
 | --- | --- |
 | Computational framework | Validated software/tests; this does not validate nature |
-| Current test corpus | Deterministic v17.84-v18.83 N=3 correspondence, continuation, hindsight, rejection, fallback, and child-fiber artifacts plus protected historical corpus |
-| Internal mathematical program | Event-to-complete-child map derived; simultaneous N=3 saddle remains open |
-| Nonlinear Norman cycle | Moving child persists locally; global N=3 root and downstream release/monodromy remain open |
+| Current test corpus | Deterministic complete-child, corrected-Rayleigh, isolated-eigenpair curvature, rolling-continuation, claim-firewall, and protected historical tests |
+| Internal mathematical program | Event-to-complete-child map and proposal curvature validated; exact N=3 saddle remains open |
+| Nonlinear Norman cycle | Complete moving child persists locally; global N=3 root and downstream release/monodromy remain open |
 | Scale and flavor | Absolute scale, action-derived CKM, and PMNS remain open |
 | Frozen predictions | Unchanged |
 | Empirical status | Not established |

@@ -1,4 +1,5 @@
 {
+  "acceptance_gate_changed": false,
   "active_construction_target": "Continue physically admissible exact 376-row descent from the latest accepted frontier to F376 zero",
   "artifact": "BHSM_public_review_readiness_manifest_v6_21_0",
   "audit_results": {
@@ -28,15 +29,17 @@
     "complete_child_chart_rank": 14,
     "complete_child_persistence": "validated_for_1e-4",
     "event_to_complete_child_map": "derived_and_executed",
-    "n3_exact_residual_norm": 0.80554785212226,
+    "legacy_residual_series_directly_comparable": false,
+    "n3_exact_residual_norm": 0.777030406838571,
     "physical_mass_claim": false,
-    "research_frontier": "v18.83",
+    "research_frontier": "rolling-checkpoint-step-36",
+    "residual_definition": "corrected_ordered_rayleigh",
     "simultaneous_n3_saddle": "open_residual_nonzero"
   },
   "external_urls_recorded": [
     "https://doi.org/10.5281/zenodo.20663419",
     "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg",
-    "https://img.shields.io/badge/current%20research-v18.83-orange",
+    "https://img.shields.io/badge/current%20research-N3%20Rayleigh%20snapshot-orange",
     "https://img.shields.io/badge/python-3.10%2B-3776AB",
     "https://img.shields.io/github/v/release/ncarberry64/Berger-Hopf-Standard-Model?label=archival%20release",
     "https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg"
@@ -47,7 +50,9 @@
   },
   "frozen_predictions_changed": false,
   "official_prediction_logic_changed": false,
+  "physical_equations_changed": false,
   "predecessor_merge_sha": "5fbad0de4e414084743c081693aebe510bb0b84f",
+  "proposal_workflow_source_changed": true,
   "public_file_inventory": {
     ".zenodo.json": true,
     "ARTIFACT_INDEX.md": true,
@@ -69,7 +74,7 @@
   },
   "scientific_commit": "5fbad0de4e414084743c081693aebe510bb0b84f",
   "scientific_formulas_changed": false,
-  "scientific_source_modules_changed": false,
+  "scientific_source_modules_changed": true,
   "source_main_sha": "5fbad0de4e414084743c081693aebe510bb0b84f",
   "tested_quickstart_commands": [
     "python -m bhsm.interface --help",

@@ -5,7 +5,65 @@ evidence, not competing public status pages.
 
 ## Current public summary
 
-Current version: **v18.83**.
+Current identifier: **corrected-Rayleigh N=3 rolling snapshot**. It is a
+development checkpoint, not a release version.
+
+BHSM remains under active derivation. The exact N=3 KKT root remains open and
+`FULL_BHSM_COMPLETE = FALSE`. The retained physical problem is the square
+376-variable KKT system with explicit event multiplier. No equation 377,
+empirical particle selector, residual left scaling, componentwise monotonicity,
+or relaxed gate has been introduced.
+
+The authoritative accepted rolling checkpoint is step 36 with exact unweighted
+corrected-Rayleigh `||F376|| = 0.777030406838571`. Its complete-child map is 14
+physical rows on 26 variables with rank 14. The fresh reconstructed moving
+child has eta minimum `1.00003772292787`, flux envelope
+`1.6172791659e-5` under the unchanged `2e-5` limit, maximum 14-row mismatch
+`6.51707072e-7`, persistence constraint `6.1803e-11`, and passing trace,
+seven-constraint, momentum, persistence, and nonzero-relative-motion gates.
+
+The legacy event covector was numerically invalid near ordered-event
+degeneracy, differing from the retained Rayleigh derivative by approximately
+`25.0151%`. Earlier residual values near `0.758...` therefore belong to a
+legacy numerical series. Corrected ordered-Rayleigh values near `0.787...` are
+not directly comparable unless the older states are reevaluated with the same
+definition. The apparent jump is a correction of derivative/evaluation
+machinery, not established physical regression; the event definition and 376
+physical equations did not change.
+
+The terminal scale/v isolated-eigenpair second variation includes eigenvector
+response and the terminal SBP/period second pullback. It reproduces the
+Rayleigh covector to `1.8e-14`, is stable to `3.232284e-9` across the audited
+local scales, and matches stable directional event response with worst
+discrepancy `1.185584e-4`. This resolved the demonstrated terminal scale/v
+assembly blocker and restored material prospective descent.
+
+The rolling driver first reproduced the manual v21.32 -> v21.33 state exactly,
+then promoted 36 consecutive freshly recomputed curvature steps. It is
+workflow automation only. Every proposal is still evaluated by original exact
+`F376` and a fresh complete-child reconstruction. Structured shake,
+action/physical trust metrics, curvature, Krylov, and secant memory can propose
+but cannot decide physics.
+
+The current ownership classification is distributed descent: period is the
+largest squared block at `45.9739%` but below the 60% dominance criterion;
+scale and v continue falling, and interior/event-near stationarity weight is
+split approximately evenly. There is no demonstrated dominant physical or
+history-localized blocker. The historical plateau result was Outcome E and
+structural hindsight was H5; invalid numerical routes and their provenance are
+retained in the [N=3 continuation ledger](docs/BHSM_N3_CONTINUATION_LEDGER.md).
+
+Frozen predictions and official prediction logic are unchanged. N=4+
+convergence, reconstruction/return, absolute scale, masses, CKM, PMNS, CP,
+neutrino splittings, gauge spectrum, decay law, Unique Actualization, and full
+completion remain open.
+
+Exact next object:
+`CONTINUE_PHYSICALLY_ADMISSIBLE_EXACT_376_ROW_DESCENT_FROM_THE_LATEST_ACCEPTED_FRONTIER_TO_F376_ZERO`.
+
+## Historical v18.83 snapshot (superseded as current frontier)
+
+Historical version: **v18.83**.
 
 BHSM v17.84-v18.83 derives and executes the missing N=3
 event-to-complete-child correspondence.  A candidate event is accepted only

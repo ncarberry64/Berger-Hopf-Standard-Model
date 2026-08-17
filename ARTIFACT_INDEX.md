@@ -2268,3 +2268,22 @@ The mathematical report is
 - `BHSM_aether_n3_fresh_sbp_second_dense_radius_v17_21.json`
 - `BHSM_aether_n3_fresh_sbp_v0_priority_family_v17_22.json`
 <!-- /BHSM_V17_19_TO_V17_22_ARTIFACTS -->
+
+## Current corrected-Rayleigh N=3 canonization checkpoint
+
+- `artifacts/BHSM_N3_RAYLEIGH_EVENT_COVECTOR_V20_80.json`
+- `artifacts/BHSM_N3_V20_62_PLATEAU_PROPOSAL_MECHANISM_AUDIT_V20_67.json`
+- `artifacts/BHSM_N3_STRUCTURAL_HINDSIGHT_RECOVERY_V20_68.json`
+- `artifacts/BHSM_N3_ISOLATED_EIGENPAIR_EVENT_HESSIAN_V21_17.json`
+- `artifacts/BHSM_N3_EIGENPAIR_CURVATURE_EXPANDED_RADIUS_V21_21.json`
+- `artifacts/BHSM_N3_EIGHTH_EXPANDED_RADIUS_REFRESHED_CONTINUATION_V21_33.json`
+- `artifacts/BHSM_N3_FRESH_EIGENPAIR_CURVATURE_CONTINUATION_CHECKPOINT.json`
+
+The current reproducibility narrative is
+`docs/BHSM_N3_CONTINUATION_LEDGER.md`. The rolling artifact is authoritative
+for the latest accepted snapshot and preserves every accepted raw vector in
+hexadecimal form. It first reproduces the manual v21.32 -> v21.33 state exactly
+and then records 36 fresh-curvature promotions through corrected-Rayleigh
+`||F376|| = 0.777030406838571`. Legacy-event-covector and corrected-Rayleigh
+norm series are separate measurement eras unless reevaluated under one
+definition.
