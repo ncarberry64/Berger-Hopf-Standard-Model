@@ -25,6 +25,7 @@ from scipy.optimize import (
 
 from bhsm.interface.aether_constraint_consistent_sobolev_lift_v15_84 import (
     constraint_residual,
+    embed_nested_state,
 )
 from bhsm.interface.aether_exact_radial_schur_lift_v15_83 import (
     exact_action_jet_at_state,
@@ -1349,9 +1350,9 @@ def breadth_first_closure_network_audit() -> dict[str, Any]:
         {
             "priority": 1,
             "object": (
-                "DERIVE_THE_ACTION_OWNED_ON_SHELL_CHILD_CALDERON_OR_RETURN_"
-                "POLARIZATION_J_boundary_AND_USE_ITS_COMPATIBLE_METRIC_FOR_"
-                "THE_FULL_DYNAMIC_FLUX_INF_SUP"
+                "DERIVE_THE_ON_SHELL_CHILD_EULER_BVP_CALDERON_TRACE_FROM_"
+                "THE_SAME_ACTION_SO_VERTICAL_INTERIOR_VARIATIONS_VANISH_"
+                "AND_REEVALUATE_THE_N3_N4_N5_BOUNDARY_MOMENTUM_FLUX_RELATION"
             ),
             "feeds": ["GENERAL_N_RETURN_INTERFACE", "PERSISTENCE"],
         },
@@ -1359,7 +1360,8 @@ def breadth_first_closure_network_audit() -> dict[str, Any]:
             "priority": 2,
             "object": (
                 "REGULAR_POLE_ATTACHMENT_MATERIAL_TRANSMISSION_BVP_AND_"
-                "ACTION_DERIVED_ENVIRONMENT_TO_RECONSTRUCTION_RETURN_MAP"
+                "ACTION_DERIVED_ENVIRONMENT_TO_RECONSTRUCTION_RETURN_MAP_"
+                "WITH_ON_SHELL_CALDERON_OR_RETURN_POLARIZATION_J_boundary"
             ),
             "feeds": ["RETURN_INTERFACE", "SCALE_INTERFACE"],
         },
@@ -1400,8 +1402,9 @@ def breadth_first_closure_network_audit() -> dict[str, Any]:
             shared_invariants["required_by_multiple_interfaces"]
         ) >= 3,
         "first_blocker_action_owned_and_localized": (
-            "POLARIZATION_J_boundary" in blockers[0]["object"]
-            and "DYNAMIC_FLUX_INF_SUP" in blockers[0]["object"]
+            "ON_SHELL_CHILD_EULER_BVP_CALDERON_TRACE" in blockers[0]["object"]
+            and "VERTICAL_INTERIOR_VARIATIONS_VANISH" in blockers[0]["object"]
+            and "BOUNDARY_MOMENTUM_FLUX_RELATION" in blockers[0]["object"]
         ),
         "higher_variation_requirement_derived": (
             not flux_variation["higher_variation_verdict"]
@@ -6264,6 +6267,13 @@ def cross_resolution_boundary_symplectic_polarization_audit(
         "action_Hessian_itself_is_a_positive_boundary_norm": False,
         "taking_entrywise_or_spectral_absolute_values_is_action_derived": False,
         "solver_row_scales_are_the_boundary_Hilbert_metric": False,
+        "fixed_analytic_boundary_norm_for_general_N": {
+            "coordinates": "(q_W,x_D,p_q_W,p_x_D)_IN_RETAINED_DIMENSIONLESS_ACTION_UNITS",
+            "norm": "THE_FIXED_EUCLIDEAN_NORM_ON_THIS_N_INDEPENDENT_R4_CHART",
+            "role": "FUNCTION_SPACE_ESTIMATE_ONLY_NOT_A_PHYSICAL_OBSERVABLE_OR_GATE",
+            "requires_a_positive_Calderon_polarization": False,
+            "all_fixed_finite_dimensional_norms_are_equivalent": True,
+        },
         "local_generator_type_is_identical_at_N3_N4_N5": False,
         "N4_N5_mixed_type_agrees": True,
         "N3_may_be_declared_underresolved_from_this_alone": False,
@@ -6281,14 +6291,170 @@ def cross_resolution_boundary_symplectic_polarization_audit(
                 "g_boundary(a,b)=Omega_boundary(a,J_boundary*b)"
             ),
             "J_boundary_derived_now": False,
+            "blocks_general_N_root_relation_convergence": False,
+            "blocks_physical_return_Floquet_and_positive_frequency_readout": True,
         },
         "required_next": (
             "DERIVE_THE_ACTION_OWNED_ON_SHELL_CHILD_CALDERON_OR_RETURN_"
-            "POLARIZATION_J_boundary_AND_USE_ITS_COMPATIBLE_METRIC_FOR_THE_"
-            "FULL_DYNAMIC_FLUX_INF_SUP"
+            "POLARIZATION_J_boundary_FOR_PHYSICAL_RETURN_FLOQUET_READOUT"
         ),
         "physical_rows_changed": False,
         "acceptance_gates_changed": False,
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
+def nested_attachment_lift_consistency_audit(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+    *,
+    points: int = 64,
+) -> dict[str, Any]:
+    """Test the current attachment lift on one exact nested N3 state."""
+
+    target = Path(path)
+    n3_payload = json.loads((target.parent / (
+        "BHSM_aether_n3_complete_child_persistence_v17_99.json"
+    )).read_text(encoding="utf-8"))
+    source = n3_payload["complete_child_persistence"]["evolution"]["rows"][0]
+    q3 = np.asarray(source["coordinates"], dtype=float)
+    v3 = np.asarray(source["velocities"], dtype=float)
+    m3 = np.asarray(source["multipliers"], dtype=float)
+    frequencies3 = spectral_frequencies(3)
+    regularity3 = sobolev_weights(3)
+    domain_weights3 = np.concatenate((
+        (1.0 + frequencies3["coordinates"] ** 2) ** 3.0,
+        regularity3["velocities"],
+        regularity3["multipliers"],
+    ))
+    strong_constraint_weights3 = (
+        1.0 + frequencies3["multipliers"] ** 2
+    ) ** 2.0
+
+    def common_matrix(order: int) -> np.ndarray:
+        if order == 3:
+            q, velocity, multipliers = q3.copy(), v3.copy(), m3.copy()
+        else:
+            q, velocity, multipliers = embed_nested_state(
+                q3, v3, m3, 3, order
+            )
+        qdim = q.size
+        jet = exact_full_action_jet_at_state(
+            order, q, velocity, multipliers, points=points
+        )
+        gradient = np.asarray(jet.gradient, dtype=float)
+        hessian = np.asarray(jet.hessian, dtype=float)
+        constraint_jacobian = hessian[2 * qdim:, :]
+        energy_gradient = np.concatenate((
+            velocity @ hessian[qdim:2 * qdim, :qdim] - gradient[:qdim],
+            hessian[qdim:2 * qdim, qdim:2 * qdim] @ velocity,
+            velocity @ hessian[qdim:2 * qdim, 2 * qdim:]
+            - gradient[2 * qdim:],
+        ))
+        matrix = np.empty((12, 26))
+        trace = _trace_jacobian_at_order(order)
+        for column in range(26):
+            direction3 = np.zeros(26)
+            direction3[column] = 1.0 / domain_weights3[column]
+            dq3 = direction3[:10]
+            dv3 = direction3[10:20]
+            dm3 = direction3[20:]
+            if order == 3:
+                dq, dv, dm = dq3, dv3, dm3
+            else:
+                dq, dv, dm = embed_nested_state(
+                    dq3, dv3, dm3, 3, order
+                )
+            direction = np.concatenate((dq, dv, dm))
+            matrix[:3, column] = trace @ dq
+            constraints = constraint_jacobian @ direction
+            matrix[3:6, column] = constraints[:3]
+            matrix[6:9, column] = constraints[order:order + 3]
+            matrix[9, column] = energy_gradient @ direction
+            complex_q = q.astype(complex) + 1j * 1.0e-20 * dq
+            complex_v = velocity.astype(complex) + 1j * 1.0e-20 * dv
+            complex_m = multipliers.astype(complex) + 1j * 1.0e-20 * dm
+            momentum, _, _, _ = _canonical_pair_at_order(
+                order, complex_q, complex_v, complex_m, points=points
+            )
+            matrix[10:, column] = np.imag(momentum) / 1.0e-20
+        matrix[3:9] *= strong_constraint_weights3[:, None]
+        return matrix
+
+    matrices = {order: common_matrix(order) for order in (3, 4, 5)}
+    blocks = {
+        "trace": slice(0, 3),
+        "strong_H4_constraints": slice(3, 9),
+        "energy": slice(9, 10),
+        "attachment_momentum": slice(10, 12),
+    }
+    comparisons = []
+    for low, high in ((3, 4), (3, 5), (4, 5)):
+        difference = matrices[high] - matrices[low]
+        block_changes = {}
+        for name, block in blocks.items():
+            block_changes[name] = float(
+                np.linalg.norm(difference[block])
+                / max(1.0, np.linalg.norm(matrices[low][block]))
+            )
+        comparisons.append({
+            "low_order": low,
+            "high_order": high,
+            "total_relative_change": float(
+                np.linalg.norm(difference) / np.linalg.norm(matrices[low])
+            ),
+            "maximum_absolute_change": float(np.max(np.abs(difference))),
+            "block_relative_changes": block_changes,
+        })
+    validation = {
+        "trace_nested_to_machine_precision": all(
+            row["block_relative_changes"]["trace"] < 1.0e-13
+            for row in comparisons
+        ),
+        "strong_constraints_nested_to_machine_precision": all(
+            row["block_relative_changes"]["strong_H4_constraints"] < 1.0e-13
+            for row in comparisons
+        ),
+        "energy_nested_to_machine_precision": all(
+            row["block_relative_changes"]["energy"] < 1.0e-12
+            for row in comparisons
+        ),
+        "attachment_momentum_lift_not_nested": all(
+            row["block_relative_changes"]["attachment_momentum"] > 0.5
+            for row in comparisons
+        ),
+    }
+    return {
+        "classification": (
+            "NONLINEAR_ACTION_TRACE_CONSTRAINT_ENERGY_CORE_NESTED;_"
+            "STATE_DEPENDENT_HESSIAN_HORIZONTAL_ATTACHMENT_MOMENTUM_LIFT_"
+            "NOT_SPECTRALLY_CONSISTENT"
+        ),
+        "source": (
+            "ONE_ACCEPTED_N3_CHILD_STATE_EXACTLY_INJECTED_INTO_N4_AND_N5_"
+            "FOR_OPERATOR_CONSISTENCY_ONLY"
+        ),
+        "accepted_N3_state_used_as_higher_N_child_existence_evidence": False,
+        "points": points,
+        "domain_norm": "COMMON_H6_q_CROSS_H5_v_CROSS_H6_m",
+        "constraint_codomain": "COMMON_STRONG_H4",
+        "comparisons": comparisons,
+        "finite_N_N3_N4_N5_roots_remain_valid_for_their_stated_maps": True,
+        "current_lift_may_be_promoted_as_a_general_N_Calderon_projector": False,
+        "why": (
+            "THE_HESSIAN_HORIZONTAL_LIFT_RECOMPUTES_AN_INDEFINITE_GLOBAL_"
+            "SCHUR_INVERSE_WHEN_NEW_SPECTRAL_MODES_ARE_ADDED;_THE_ORDER_ONE_"
+            "MOMENTUM_CHANGE_IS_NOT_OWNED_BY_THE_EXACT_NESTED_ACTION_CORE"
+        ),
+        "required_next": (
+            "DERIVE_THE_ON_SHELL_CHILD_EULER_BVP_CALDERON_TRACE_FROM_THE_"
+            "SAME_ACTION_SO_VERTICAL_INTERIOR_VARIATIONS_VANISH_AND_"
+            "REEVALUATE_THE_N3_N4_N5_BOUNDARY_MOMENTUM_FLUX_RELATION"
+        ),
+        "new_physics_rows_constraints_or_gates_added": False,
         "validation": validation,
         "validation_passed": all(validation.values()),
         "FULL_BHSM_COMPLETE": False,
@@ -6299,8 +6465,9 @@ def event_to_child_on_shell_calderon_interface() -> dict[str, Any]:
     """Reconcile the validated local child roots with the required full BVP."""
 
     missing = (
-        "REGULAR_POLE_ATTACHMENT_AND_MATERIAL_TRANSMISSION_COMPLEMENTING_"
-        "BOUNDARY_WITH_GLOBAL_GAUGE_REDUCED_INF_SUP_ESTIMATE"
+        "DERIVE_THE_ON_SHELL_CHILD_EULER_BVP_CALDERON_TRACE_FROM_THE_SAME_"
+        "ACTION_SO_VERTICAL_INTERIOR_VARIATIONS_VANISH_AND_REEVALUATE_THE_"
+        "N3_N4_N5_BOUNDARY_MOMENTUM_FLUX_RELATION"
     )
     principal_symbol = child_jacobi_radial_principal_symbol_audit()
     weighted_principal = weighted_pole_attachment_principal_estimate()
@@ -6399,9 +6566,9 @@ def general_n_galerkin_transfer_certificate() -> dict[str, Any]:
 
     calderon = event_to_child_on_shell_calderon_interface()
     missing = (
-        "DERIVE_THE_ACTION_OWNED_ON_SHELL_CHILD_CALDERON_OR_RETURN_"
-        "POLARIZATION_J_boundary_AND_USE_ITS_COMPATIBLE_METRIC_FOR_THE_"
-        "FULL_DYNAMIC_FLUX_INF_SUP"
+        "DERIVE_THE_ON_SHELL_CHILD_EULER_BVP_CALDERON_TRACE_FROM_THE_SAME_"
+        "ACTION_SO_VERTICAL_INTERIOR_VARIATIONS_VANISH_AND_REEVALUATE_THE_"
+        "N3_N4_N5_BOUNDARY_MOMENTUM_FLUX_RELATION"
     )
     return {
         "classification": (
@@ -7338,12 +7505,16 @@ def promote_existing_general_n_statement(path: str | Path) -> Path:
     boundary_polarization_audit = (
         cross_resolution_boundary_symplectic_polarization_audit(target)
     )
+    attachment_lift_audit = nested_attachment_lift_consistency_audit(target)
     statement["cross_resolution_principal_symbol_frame_audit"] = frame_audit
     statement["cross_resolution_strong_constraint_infsup_audit"] = (
         strong_constraint_audit
     )
     statement["cross_resolution_boundary_symplectic_polarization_audit"] = (
         boundary_polarization_audit
+    )
+    statement["nested_attachment_lift_consistency_audit"] = (
+        attachment_lift_audit
     )
     required_next = statement["required_next"]
     result["general_N_complete_child_reconstruction_and_convergence_statement"] = (
@@ -7356,6 +7527,7 @@ def promote_existing_general_n_statement(path: str | Path) -> Path:
     result["cross_resolution_boundary_symplectic_polarization_audit"] = (
         boundary_polarization_audit
     )
+    result["nested_attachment_lift_consistency_audit"] = attachment_lift_audit
     child = dict(n5)
     child["required_next"] = required_next
     result["N5_event_conditioned_complete_child_reconstruction"] = child
@@ -7448,6 +7620,9 @@ def promote_existing_general_n_statement(path: str | Path) -> Path:
         ),
         "cross_resolution_boundary_symplectic_polarization_audit_validated": (
             boundary_polarization_audit["validation_passed"]
+        ),
+        "nested_attachment_lift_consistency_audit_validated": (
+            attachment_lift_audit["validation_passed"]
         ),
     })
     payload["validation"] = validation
@@ -7542,6 +7717,7 @@ __all__ = [
     "weighted_pole_attachment_principal_estimate",
     "cross_resolution_strong_constraint_infsup_audit",
     "cross_resolution_boundary_symplectic_polarization_audit",
+    "nested_attachment_lift_consistency_audit",
     "event_to_child_on_shell_calderon_interface",
     "general_n_galerkin_transfer_certificate",
     "general_n_complete_child_reconstruction_statement",
