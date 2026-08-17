@@ -1,4 +1,5 @@
 import json
+from pathlib import Path
 
 from bhsm.interface.aether_cross_resolution_reconnaissance_v21_35 import (
     completion_payload,
@@ -79,3 +80,21 @@ def test_reconnaissance_serialization_is_deterministic():
     second = deterministic_json(payload)
     assert first == second
     assert json.loads(first)["validation_passed"] is True
+
+
+def test_latest_n4_child_checkpoint_uses_fixed_merit_full_space_proposal():
+    payload = json.loads(Path(
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ).read_text(encoding="utf-8"))
+    child = payload["cross_resolution_reconnaissance"][
+        "N4_event_conditioned_complete_child_reconstruction"
+    ]
+    assert child["chart"]["solver_variable_count"] == 34
+    assert child["chart"][
+        "merit_reference_preserved_from_checkpoint"
+    ] is True
+    promotion = child["rolling_checkpoint_promotion"]
+    assert promotion["eligible"] is True
+    assert promotion["fixed_reference_merit_reduced"] is True
+    assert promotion["componentwise_monotonicity_required"] is False
+    assert child["complete_child_candidate_validated"] is False

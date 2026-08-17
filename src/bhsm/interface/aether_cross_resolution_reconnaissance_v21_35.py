@@ -2579,6 +2579,7 @@ def n4_event_conditioned_complete_child_reconstruction(
         )
     )
     continuation_checkpoint_used = False
+    stored_checkpoint: dict[str, Any] | None = None
     if resume_from_checkpoint:
         stored = payload["cross_resolution_reconnaissance"].get(
             "N4_event_conditioned_complete_child_reconstruction"
@@ -2601,6 +2602,7 @@ def n4_event_conditioned_complete_child_reconstruction(
             if checkpoint.shape == germ.shape:
                 germ = checkpoint
                 continuation_checkpoint_used = True
+                stored_checkpoint = stored
                 selected_seed = {
                     "source": "LATEST_ADMISSIBLE_N4_CHILD_ROLLING_CHECKPOINT",
                     "prior_scaled_final_norm": stored["chart"][
@@ -2702,7 +2704,23 @@ def n4_event_conditioned_complete_child_reconstruction(
         4.0 * outer_mid - outer_coarse
     ) / 3.0
     jacobian = (4.0 * outer_fine - outer_mid) / 3.0
-    row_scales = np.maximum(np.linalg.norm(jacobian, axis=1), 1.0)
+    local_curvature_row_scales = np.maximum(
+        np.linalg.norm(jacobian, axis=1), 1.0
+    )
+    row_scales = local_curvature_row_scales.copy()
+    merit_reference_preserved = False
+    if continuation_checkpoint_used and stored_checkpoint is not None:
+        stored_chart = stored_checkpoint["chart"]
+        stored_scales = np.asarray(
+            stored_chart.get(
+                "merit_reference_row_scales",
+                stored_chart["row_scales"],
+            ),
+            dtype=float,
+        )
+        if stored_scales.shape == (row_count,) and np.all(stored_scales > 0.0):
+            row_scales = stored_scales
+            merit_reference_preserved = True
     scaled_jacobian = jacobian / row_scales[:, None]
     _, _, pivots = qr(scaled_jacobian, mode="economic", pivoting=True)
     singular = np.linalg.svd(scaled_jacobian, compute_uv=False)
@@ -2712,13 +2730,11 @@ def n4_event_conditioned_complete_child_reconstruction(
     rank = int(np.count_nonzero(singular > tolerance))
     chart = np.asarray(pivots[:row_count], dtype=int)
     chart_weights = direction_weights[chart]
-    fixed = germ.copy()
 
     def residual(
-        chart_values: np.ndarray, *, fixed_flux_time_step: float | None = None,
+        solver_values: np.ndarray, *, fixed_flux_time_step: float | None = None,
     ) -> np.ndarray:
-        value = fixed.copy()
-        value[chart] = chart_values / chart_weights
+        value = solver_values / direction_weights
         return _n4_child_rows(
             value,
             q_event,
@@ -2729,20 +2745,19 @@ def n4_event_conditioned_complete_child_reconstruction(
         ) / row_scales
 
     def resolved_chart_jacobian(
-        chart_values: np.ndarray, *, base_step: float = jacobian_step,
+        solver_values: np.ndarray, *, base_step: float = jacobian_step,
     ) -> np.ndarray:
-        center = fixed.copy()
-        center[chart] = chart_values / chart_weights
-        full = directional_jacobian(center, base_step, chart)
-        half = directional_jacobian(center, 0.5 * base_step, chart)
+        center = solver_values / direction_weights
+        full = directional_jacobian(center, base_step, all_columns)
+        half = directional_jacobian(center, 0.5 * base_step, all_columns)
         return ((4.0 * half - full) / 3.0) / row_scales[:, None]
 
-    chart_values = germ[chart] * chart_weights
+    chart_values = germ * direction_weights
     scaled_rows = residual(chart_values)
-    solver_jacobian = scaled_jacobian[:, chart].copy()
+    solver_jacobian = scaled_jacobian.copy()
     refined_solver_jacobian = solver_jacobian.copy()
     initial_chart_jacobian = (
-        coarse_richardson_jacobian[:, chart] / row_scales[:, None]
+        coarse_richardson_jacobian / row_scales[:, None]
     )
     jacobian_step_relative_change = float(
         np.linalg.norm(refined_solver_jacobian - initial_chart_jacobian)
@@ -2810,8 +2825,7 @@ def n4_event_conditioned_complete_child_reconstruction(
         candidate_rows = scaled_rows
         while factor >= 2.0**-28:
             trial_values = chart_values + factor * delta
-            trial_full = fixed.copy()
-            trial_full[chart] = trial_values / chart_weights
+            trial_full = trial_values / direction_weights
             trial_q = trial_full[:qdim]
             trial_m = trial_full[2 * qdim:]
             if _eta_legendre_minimum(
@@ -2845,8 +2859,7 @@ def n4_event_conditioned_complete_child_reconstruction(
                 factor = 1.0
                 while factor >= 2.0**-28:
                     trial_values = chart_values + factor * gradient_delta
-                    trial_full = fixed.copy()
-                    trial_full[chart] = trial_values / chart_weights
+                    trial_full = trial_values / direction_weights
                     trial_q = trial_full[:qdim]
                     trial_m = trial_full[2 * qdim:]
                     if _eta_legendre_minimum(
@@ -2876,7 +2889,7 @@ def n4_event_conditioned_complete_child_reconstruction(
         if not accepted:
             if jacobian_refreshes < 3:
                 solver_jacobian = resolved_chart_jacobian(chart_values)
-                function_evaluations += 2 * row_count
+                function_evaluations += 4 * variable_count
                 jacobian_refreshes += 1
                 trust_radius = 0.5
                 continue
@@ -2901,8 +2914,7 @@ def n4_event_conditioned_complete_child_reconstruction(
     if float(np.linalg.norm(scaled_rows)) < 1.0e-11:
         solver_success = True
         solver_message = "scaled complete-child merit converged"
-    child = fixed.copy()
-    child[chart] = chart_values / chart_weights
+    child = chart_values / direction_weights
     final_rows = _n4_child_rows(
         child, q_event, event_momentum, event_flux, points=points
     )
@@ -2921,6 +2933,11 @@ def n4_event_conditioned_complete_child_reconstruction(
     flux_refinement = float(
         np.linalg.norm(final_rows[-2:] - coarse_rows[-2:])
         / max(1.0, np.linalg.norm(final_rows[-2:]))
+    )
+    initial_reference_merit = float(np.linalg.norm(initial_rows / row_scales))
+    final_reference_merit = float(np.linalg.norm(final_rows / row_scales))
+    fixed_reference_merit_reduced = bool(
+        final_reference_merit < initial_reference_merit
     )
     validation = {
         "validated_independent_N4_event_used": True,
@@ -3040,18 +3057,26 @@ def n4_event_conditioned_complete_child_reconstruction(
                 jacobian_derivative_resolved
             ),
             "row_scaling": (
-                "LOCAL_JACOBIAN_ROW_NORMS_NUMERICAL_ONLY_SAME_ZERO_SET"
+                "FIXED_REFERENCE_ROW_NORMS_NUMERICAL_ONLY_SAME_ZERO_SET"
             ),
             "row_scales": row_scales.tolist(),
+            "local_curvature_row_scales": (
+                local_curvature_row_scales.tolist()
+            ),
+            "merit_reference_row_scales": row_scales.tolist(),
+            "merit_reference_preserved_from_checkpoint": (
+                merit_reference_preserved
+            ),
             "solver_jacobian": (
-                "REGULAR_BROKEN_GERM_FULL_RANK_16_VARIABLE_PIVOT_CHART_"
-                "WITH_CENTER_FIXED_TENSOR_PRODUCT_RICHARDSON_AND_GOOD_"
-                "BROYDEN_UPDATES"
+                "FULL_16_BY_34_CENTER_FIXED_TENSOR_PRODUCT_RICHARDSON_"
+                "JACOBIAN_WITH_MINIMUM_NORM_GAUSS_NEWTON_AND_GOOD_BROYDEN_"
+                "UPDATES"
             ),
             "solver_coordinates": (
-                "16_LOCAL_CHART_VARIABLES_FROM_THE_ROW_FULL_RANK_16_BY_34_"
-                "PHYSICAL_MAP;_NO_PHYSICAL_ROW_ADDED"
+                "ALL_34_EXISTING_H6_COORDINATE_H5_VELOCITY_H6_MULTIPLIER_"
+                "VARIABLES;_THE_16_PHYSICAL_ROWS_ARE_UNCHANGED"
             ),
+            "solver_variable_count": variable_count,
             "solver_merit": (
                 "GLOBAL_L2_NORM_OF_ALL_16_ROW_SCALED_PHYSICAL_MAP;_NO_"
                 "COMPONENTWISE_MONOTONICITY"
@@ -3064,6 +3089,21 @@ def n4_event_conditioned_complete_child_reconstruction(
             "resolved_jacobian_refreshes": jacobian_refreshes,
             "accepted_gradient_fallback_steps": gradient_fallback_steps,
             "scaled_final_norm": float(np.linalg.norm(scaled_rows)),
+        },
+        "rolling_checkpoint_promotion": {
+            "independently_evaluated_merit": (
+                "L2_NORM_OF_THE_EXACT_16_PHYSICAL_ROWS_IN_THE_FIXED_"
+                "REFERENCE_SCALING"
+            ),
+            "initial_fixed_reference_merit": initial_reference_merit,
+            "final_fixed_reference_merit": final_reference_merit,
+            "fixed_reference_merit_reduced": fixed_reference_merit_reduced,
+            "eta_admissible": eta["minimum"] > 0.0,
+            "eligible": bool(
+                fixed_reference_merit_reduced and eta["minimum"] > 0.0
+            ),
+            "componentwise_monotonicity_required": False,
+            "physical_equations_or_gates_added": False,
         },
         "child_state": {
             "coordinates": q_child.tolist(),
@@ -3107,6 +3147,245 @@ def n4_event_conditioned_complete_child_reconstruction(
             "DIRECTIONAL_DERIVATIVE_OF_THE_ACTION_OWNED_DYNAMIC_CALDERON_"
             "FLUX_MAP_BEFORE_ANOTHER_NONLINEAR_CHILD_SOLVE"
         ),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
+@lru_cache(maxsize=1)
+def n4_latest_checkpoint_proposal_audit(
+    *, points: int = 44,
+) -> dict[str, Any]:
+    """Compare pivot-chart and full-space proposals at the latest N4 stop."""
+
+    artifact_path = Path("artifacts") / (
+        "BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    )
+    payload = json.loads(artifact_path.read_text(encoding="utf-8"))
+    result = payload["cross_resolution_reconnaissance"]
+    stored = result["N4_event_conditioned_complete_child_reconstruction"]
+    event_run = result["N4_adaptive_event_convergence_audit"][
+        "quadrature_control"
+    ]
+    event = event_run["event"]
+    if event is None or int(event_run["quadrature_points"]) != points:
+        raise RuntimeError("validated N4 event does not match proposal audit")
+    order = 4
+    size = dimensions(order)
+    qdim = size["coordinates"]
+    variable_count = 2 * qdim + size["multipliers"]
+    state = stored["child_state"]
+    center = np.concatenate((
+        np.asarray(state["coordinates"], dtype=float),
+        np.asarray(state["velocities"], dtype=float),
+        np.asarray(state["multipliers"], dtype=float),
+    ))
+    q_event = np.asarray(event["coordinates"], dtype=float)
+    v_event = np.asarray(event["velocities"], dtype=float)
+    m_event = np.asarray(event["multipliers"], dtype=float)
+    event_momentum, _, event_lift, _ = _canonical_pair_at_order(
+        order, q_event, v_event, m_event, points=points
+    )
+    event_flux = event_lift.T @ _metric_radial_flux_covector_at_order(
+        order, q_event, m_event
+    )
+    frequencies = spectral_frequencies(order)
+    regularity_weights = sobolev_weights(order)
+    direction_weights = np.concatenate((
+        (1.0 + frequencies["coordinates"] ** 2) ** 3.0,
+        regularity_weights["velocities"],
+        regularity_weights["multipliers"],
+    ))
+    row_scales = np.asarray(
+        stored["chart"].get(
+            "merit_reference_row_scales", stored["chart"]["row_scales"]
+        ),
+        dtype=float,
+    )
+    center_rows = _n4_child_rows(
+        center, q_event, event_momentum, event_flux, points=points
+    )
+    center_merit = float(np.linalg.norm(center_rows / row_scales))
+    inner_step = _n4_child_flux_time_step(
+        center, points=points, relative_flux_step=4.0e-3
+    )
+
+    def central_jacobian(step: float) -> np.ndarray:
+        matrix = np.empty((16, variable_count))
+        for column in range(variable_count):
+            delta = np.zeros(variable_count)
+            delta[column] = step / direction_weights[column]
+            matrix[:, column] = (
+                _n4_child_rows(
+                    center + delta,
+                    q_event,
+                    event_momentum,
+                    event_flux,
+                    points=points,
+                    fixed_flux_time_step=inner_step,
+                )
+                - _n4_child_rows(
+                    center - delta,
+                    q_event,
+                    event_momentum,
+                    event_flux,
+                    points=points,
+                    fixed_flux_time_step=inner_step,
+                )
+            ) / (2.0 * step)
+        return matrix
+
+    base_step = 1.0e-4
+    coarse = central_jacobian(2.0 * base_step)
+    middle = central_jacobian(base_step)
+    fine = central_jacobian(0.5 * base_step)
+    coarse_richardson = (4.0 * middle - coarse) / 3.0
+    jacobian = (4.0 * fine - middle) / 3.0
+    scaled_jacobian = jacobian / row_scales[:, None]
+    scaled_rows = center_rows / row_scales
+    singular = np.linalg.svd(scaled_jacobian, compute_uv=False)
+    tolerance = (
+        np.finfo(float).eps * max(scaled_jacobian.shape) * singular[0]
+    )
+    rank = int(np.count_nonzero(singular > tolerance))
+    derivative_change = float(
+        np.linalg.norm(jacobian - coarse_richardson)
+        / max(1.0, np.linalg.norm(coarse_richardson))
+    )
+    _, _, pivots = qr(scaled_jacobian, mode="economic", pivoting=True)
+    fresh_chart = np.asarray(pivots[:16], dtype=int)
+    stored_chart = np.asarray(
+        stored["chart"]["selected_variable_indices"], dtype=int
+    )
+
+    def trust_limited(direction: np.ndarray) -> np.ndarray:
+        norm = float(np.linalg.norm(direction))
+        return direction if norm <= 1.0 else direction / norm
+
+    full_direction = trust_limited(np.linalg.lstsq(
+        scaled_jacobian, -scaled_rows, rcond=1.0e-12
+    )[0])
+    fresh_direction = np.zeros(variable_count)
+    fresh_direction[fresh_chart] = np.linalg.lstsq(
+        scaled_jacobian[:, fresh_chart], -scaled_rows, rcond=1.0e-12
+    )[0]
+    fresh_direction = trust_limited(fresh_direction)
+    stored_direction = np.zeros(variable_count)
+    stored_direction[stored_chart] = np.linalg.lstsq(
+        scaled_jacobian[:, stored_chart], -scaled_rows, rcond=1.0e-12
+    )[0]
+    stored_direction = trust_limited(stored_direction)
+    gradient_direction = trust_limited(-scaled_jacobian.T @ scaled_rows)
+
+    def line_audit(direction: np.ndarray) -> dict[str, Any]:
+        best: dict[str, Any] | None = None
+        admissible_trials = 0
+        for exponent in range(0, 29):
+            factor = 2.0 ** (-exponent)
+            trial = center + factor * direction / direction_weights
+            eta = _eta_legendre_minimum(
+                order, trial[:qdim], trial[2 * qdim:], points=800
+            )
+            if eta["minimum"] <= 0.0:
+                continue
+            admissible_trials += 1
+            try:
+                rows = _n4_child_rows(
+                    trial,
+                    q_event,
+                    event_momentum,
+                    event_flux,
+                    points=points,
+                )
+            except (
+                ArithmeticError, RuntimeError, ValueError,
+                np.linalg.LinAlgError,
+            ):
+                continue
+            merit = float(np.linalg.norm(rows / row_scales))
+            candidate = {
+                "factor": factor,
+                "fixed_reference_merit": merit,
+                "merit_change": merit - center_merit,
+                "eta_minimum": eta["minimum"],
+                "raw_step_norm": float(np.linalg.norm(trial - center)),
+                "scaled_step_norm": float(factor * np.linalg.norm(direction)),
+                "physical_block_norms": {
+                    "trace": float(np.linalg.norm(rows[:3])),
+                    "constraints": float(np.linalg.norm(rows[3:12])),
+                    "momentum": float(np.linalg.norm(rows[12:14])),
+                    "dynamic_flux": float(np.linalg.norm(rows[14:16])),
+                },
+            }
+            if best is None or merit < best["fixed_reference_merit"]:
+                best = candidate
+        return {
+            "direction_norm_before_line_search": float(
+                np.linalg.norm(direction)
+            ),
+            "admissible_trials": admissible_trials,
+            "best": best,
+            "strict_fixed_merit_reduction_found": bool(
+                best is not None
+                and best["fixed_reference_merit"] < center_merit
+            ),
+        }
+
+    proposals = {
+        "full_34_variable_minimum_norm_Gauss_Newton": line_audit(
+            full_direction
+        ),
+        "fresh_16_variable_pivot_chart_Newton": line_audit(fresh_direction),
+        "stored_16_variable_pivot_chart_Newton": line_audit(stored_direction),
+        "full_34_variable_fixed_merit_gradient": line_audit(
+            gradient_direction
+        ),
+    }
+    full_reduces = proposals[
+        "full_34_variable_minimum_norm_Gauss_Newton"
+    ]["strict_fixed_merit_reduction_found"]
+    fresh_reduces = proposals[
+        "fresh_16_variable_pivot_chart_Newton"
+    ]["strict_fixed_merit_reduction_found"]
+    stored_reduces = proposals[
+        "stored_16_variable_pivot_chart_Newton"
+    ]["strict_fixed_merit_reduction_found"]
+    if full_reduces and not (fresh_reduces or stored_reduces):
+        classification = "PIVOT_CHART_PROPOSAL_BLOCKER_IDENTIFIED"
+        required_next = (
+            "USE_THE_FULL_34_VARIABLE_MINIMUM_NORM_PROPOSAL_WITH_EXACT_"
+            "FIXED_MERIT_AND_ETA_PROMOTION"
+        )
+    elif full_reduces or fresh_reduces or stored_reduces:
+        classification = "LOCAL_ROOT_DESCENT_DIRECTION_EXISTS"
+        required_next = (
+            "RESUME_WITH_THE_BEST_VALIDATED_FIXED_MERIT_DIRECTION"
+        )
+    else:
+        classification = "NO_TESTED_LOCAL_DESCENT_DIRECTION"
+        required_next = (
+            "AUDIT_DYNAMIC_FLUX_LINEARIZATION_OR_LOCAL_STATIONARITY_BEFORE_"
+            "MORE_CONTINUATION"
+        )
+    return {
+        "source": "LATEST_PROMOTED_ADMISSIBLE_N4_CHILD_CHECKPOINT",
+        "exact_fixed_reference_merit": center_merit,
+        "exact_physical_rows": center_rows.tolist(),
+        "derivative": {
+            "rank": rank,
+            "smallest_singular_value": float(singular[rank - 1]),
+            "coarse_to_fine_Richardson_relative_change": derivative_change,
+            "outer_directions": (
+                "H6_COORDINATES_H5_VELOCITIES_H6_MULTIPLIERS"
+            ),
+            "physical_equations_changed": False,
+        },
+        "fresh_chart": fresh_chart.tolist(),
+        "stored_chart": stored_chart.tolist(),
+        "proposals": proposals,
+        "classification": classification,
+        "required_next": required_next,
+        "componentwise_monotonicity_required": False,
+        "new_physical_rows_constraints_or_gates_added": False,
         "FULL_BHSM_COMPLETE": False,
     }
 
@@ -3419,9 +3698,13 @@ def refresh_existing_n4_child_checkpoint(
     target = Path(path)
     payload = json.loads(target.read_text(encoding="utf-8"))
     result = dict(payload["cross_resolution_reconnaissance"])
+    n4_event_conditioned_complete_child_reconstruction.cache_clear()
     child = n4_event_conditioned_complete_child_reconstruction(
         points=44, resume_from_checkpoint=True
     )
+    if not child["rolling_checkpoint_promotion"]["eligible"]:
+        n4_latest_checkpoint_proposal_audit.cache_clear()
+        return target
     result["N4_event_conditioned_complete_child_reconstruction"] = child
     questions = dict(result["questions"])
     child_question = dict(questions["same_rank14_complete_child_reconstructs"])
@@ -3457,6 +3740,7 @@ def refresh_existing_n4_child_checkpoint(
     payload["validation"] = validation
     payload["validation_passed"] = all(validation.values())
     target.write_text(deterministic_json(payload), encoding="utf-8")
+    n4_latest_checkpoint_proposal_audit.cache_clear()
     return target
 
 
@@ -3473,6 +3757,7 @@ __all__ = [
     "n4_ordered_event_resolution_audit",
     "n4_adaptive_event_convergence_audit",
     "n4_event_conditioned_complete_child_reconstruction",
+    "n4_latest_checkpoint_proposal_audit",
     "cross_resolution_reconnaissance",
     "completion_payload",
     "materialize",
