@@ -187,6 +187,48 @@ def test_latest_n4_child_checkpoint_uses_fixed_merit_full_space_proposal():
     )
     assert frame["raw_crossing_is_a_physical_defect"] is False
     assert frame["raw_crossing_is_a_new_acceptance_gate"] is False
+    assert frame["N5_over_N4_weighted_principal_minimum_ratio"] > 0.5
+    assert frame[
+        "principal_geometry_degeneracy_supported_as_the_owner_of_the_"
+        "reported_full_map_small_singular_values"
+    ] is False
+    strong = payload["cross_resolution_reconnaissance"][
+        "cross_resolution_strong_constraint_infsup_audit"
+    ]
+    assert strong["validation_passed"] is True
+    assert all(
+        row["normalizations"]["strong_H4"]["rank"]
+        == row["normalizations"]["strong_H4"]["row_count"]
+        for row in strong["rows"]
+    )
+    assert strong["rows"][2]["normalizations"]["weak_Hminus6_dual"][
+        "rank"
+    ] < strong["rows"][2]["normalizations"]["weak_Hminus6_dual"][
+        "row_count"
+    ]
+    assert strong["physical_rows_changed"] is False
+    assert strong["acceptance_gates_changed"] is False
+    boundary = payload["cross_resolution_reconnaissance"][
+        "cross_resolution_boundary_symplectic_polarization_audit"
+    ]
+    assert boundary["validation_passed"] is True
+    assert boundary["action_Hessian_itself_is_a_positive_boundary_norm"] is False
+    assert boundary[
+        "taking_entrywise_or_spectral_absolute_values_is_action_derived"
+    ] is False
+    assert boundary["required_positive_polarization"][
+        "J_boundary_derived_now"
+    ] is False
+    assert [
+        row["Hamiltonian_generator_type"] for row in boundary["rows"]
+    ] == [
+        "HYPERBOLIC_HYPERBOLIC",
+        "HYPERBOLIC_ELLIPTIC",
+        "HYPERBOLIC_ELLIPTIC",
+    ]
+    assert boundary["N3_may_be_declared_underresolved_from_this_alone"] is False
+    assert boundary["physical_rows_changed"] is False
+    assert boundary["acceptance_gates_changed"] is False
 
 
 def test_general_n_reconstruction_statement_preserves_the_physical_map():
@@ -230,6 +272,15 @@ def test_general_n_reconstruction_statement_preserves_the_physical_map():
     )
     assert symbol["algebra_validation_passed"] is True
     assert symbol["new_physics_or_acceptance_gate"] is False
+    weighted = calderon["weighted_pole_attachment_principal_estimate"]
+    assert weighted["validation_passed"] is True
+    assert weighted["canonical_physical_matrix"][
+        "smallest_absolute_eigenvalue"
+    ] > 0.0
+    assert weighted["action_weight_factorization"][
+        "uniform_general_N_bound_proved"
+    ] is False
+    assert weighted["new_equations_constraints_or_acceptance_gates"] is False
     assert calderon["new_action_terms_equations_constraints_or_gates"] is False
     assert transfer["current_evidence"][
         "finite_rank_implies_a_uniform_inf_sup_bound"
