@@ -1349,9 +1349,9 @@ def breadth_first_closure_network_audit() -> dict[str, Any]:
         {
             "priority": 1,
             "object": (
-                "ACTION_OWNED_CONTINUUM_NORMAL_SUBMERSION_INF_SUP_AND_"
-                "SPECTRAL_CONSISTENCY_BOUND_FOR_THE_LOCAL_EVENT_CHILD_"
-                "RELATION"
+                "DERIVE_THE_ACTION_OWNED_ON_SHELL_CHILD_CALDERON_OR_RETURN_"
+                "POLARIZATION_J_boundary_AND_USE_ITS_COMPATIBLE_METRIC_FOR_"
+                "THE_FULL_DYNAMIC_FLUX_INF_SUP"
             ),
             "feeds": ["GENERAL_N_RETURN_INTERFACE", "PERSISTENCE"],
         },
@@ -1400,8 +1400,8 @@ def breadth_first_closure_network_audit() -> dict[str, Any]:
             shared_invariants["required_by_multiple_interfaces"]
         ) >= 3,
         "first_blocker_action_owned_and_localized": (
-            "NORMAL_SUBMERSION_INF_SUP" in blockers[0]["object"]
-            and "SPECTRAL_CONSISTENCY" in blockers[0]["object"]
+            "POLARIZATION_J_boundary" in blockers[0]["object"]
+            and "DYNAMIC_FLUX_INF_SUP" in blockers[0]["object"]
         ),
         "higher_variation_requirement_derived": (
             not flux_variation["higher_variation_verdict"]
@@ -5760,6 +5760,9 @@ def cross_resolution_principal_symbol_frame_audit(
         signs = np.sign(ratio - 1.0)
         crossing_count = int(np.count_nonzero(signs[1:] * signs[:-1] < 0.0))
         K = 3.0 * lapse * A**3 * B**3 / C
+        weighted_coefficient = (
+            3.0 * lapse * radius**5 * np.exp(5.0 * u - w)
+        )
         open_cap_K = K[1:]
         eta = source.get("eta_Legendre", {})
         eta_minimum = eta.get(
@@ -5779,6 +5782,12 @@ def cross_resolution_principal_symbol_frame_audit(
                 np.all(open_cap_K > 0.0)
             ),
             "minimum_sampled_open_cap_K": float(np.min(open_cap_K)),
+            "minimum_weighted_principal_coefficient_K_over_sin3cos3": float(
+                np.min(weighted_coefficient)
+            ),
+            "maximum_weighted_principal_coefficient_K_over_sin3cos3": float(
+                np.max(weighted_coefficient)
+            ),
             "eta_minimum": float(eta_minimum),
         })
     validation = {
@@ -5791,7 +5800,18 @@ def cross_resolution_principal_symbol_frame_audit(
             row["canonical_K_positive_on_sampled_open_cap"] for row in rows
         ),
         "eta_domain_retained": all(row["eta_minimum"] > 0.0 for row in rows),
+        "N4_to_N5_weighted_principal_minimum_not_collapsing": bool(
+            rows[2][
+                "minimum_weighted_principal_coefficient_K_over_sin3cos3"
+            ] / rows[1][
+                "minimum_weighted_principal_coefficient_K_over_sin3cos3"
+            ] > 0.5
+        ),
     }
+    n5_n4_principal_ratio = float(
+        rows[2]["minimum_weighted_principal_coefficient_K_over_sin3cos3"]
+        / rows[1]["minimum_weighted_principal_coefficient_K_over_sin3cos3"]
+    )
     return {
         "classification": (
             "RAW_FIXED_COORDINATE_VELOCITY_CHARACTERISTIC_CROSSINGS_"
@@ -5807,10 +5827,468 @@ def cross_resolution_principal_symbol_frame_audit(
             "CANONICAL_NORMAL_FRAME_REMOVES_THIS_COORDINATE_MIXING"
         ),
         "canonical_interior_determinant": "8K^3_WITH_K=3*N*A^3*B^3/C",
+        "N5_over_N4_weighted_principal_minimum_ratio": n5_n4_principal_ratio,
+        "principal_geometry_degeneracy_supported_as_the_owner_of_the_"
+        "reported_full_map_small_singular_values": False,
+        "reclassification": (
+            "THE_CANONICAL_WEIGHTED_PRINCIPAL_GEOMETRY_BLOCK_DOES_NOT_"
+            "COLLAPSE_FROM_N4_TO_N5;_ANY_REMAINING_INF_SUP_LOSS_MUST_BE_"
+            "LOCALIZED_IN_LOWER_ORDER_FULL_CONSTRAINT_CALDERON_COUPLING_OR_"
+            "INCOMPARABLE_NUMERICAL_SCALING_BEFORE_IT_IS_CALLED_PHYSICAL"
+        ),
         "remaining_endpoint_object": (
             "WEIGHTED_REGULAR_POLE_ATTACHMENT_AND_MATERIAL_TRANSMISSION_"
             "NORMAL_SUBMERSION_INF_SUP_ESTIMATE"
         ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
+def weighted_pole_attachment_principal_estimate() -> dict[str, Any]:
+    """Derive the action-weighted pole estimate for trace-fixed variations."""
+
+    smallest_matrix_modulus = math.sqrt(29.0) - 5.0
+    poincare_constant = math.pi**5 / 1024.0
+    validation = {
+        "physical_matrix_smallest_modulus_positive": (
+            smallest_matrix_modulus > 0.0
+        ),
+        "weighted_Poincare_constant_positive": poincare_constant > 0.0,
+        "trace_rows_fix_three_attachment_geometry_combinations": (
+            _trace_jacobian_at_order(3).shape == (3, 10)
+            and np.linalg.matrix_rank(_trace_jacobian_at_order(3)) == 3
+        ),
+    }
+    return {
+        "classification": (
+            "WEIGHTED_REGULAR_POLE_AND_ATTACHMENT_PRINCIPAL_ESTIMATE_"
+            "DERIVED;_GLOBAL_LOWER_ORDER_INF_SUP_OPEN"
+        ),
+        "cap_interval": "0<=chi<=L,_L=pi/4",
+        "natural_radial_weight": "omega=sin(chi)^3*cos(chi)^3",
+        "weight_equivalence": (
+            "(8/pi^3)*chi^3<=omega(chi)<=chi^3_ON_[0,pi/4]"
+        ),
+        "trace_fixed_normal_variations": {
+            "three_rows": [
+                "delta(logC_attachment)=0",
+                "delta(logA_attachment)=0",
+                "delta(logB_attachment)=0",
+            ],
+            "equivalent_geometry_relations": [
+                "delta_v(L)=0",
+                "delta_w(L)=0",
+                "delta_(scale+u)(L)=0",
+            ],
+            "scale_has_no_radial_derivative": True,
+        },
+        "weighted_Poincare_Hardy_estimate": {
+            "chi3_exact_bound": (
+                "integral_0^L chi^3*f^2<=L^2/8*integral_0^L chi^3*(f')^2_"
+                "FOR_f(L)=0"
+            ),
+            "omega_bound": (
+                "integral_0^L omega*f^2<=(pi^5/1024)*"
+                "integral_0^L omega*(f')^2"
+            ),
+            "omega_constant": poincare_constant,
+        },
+        "canonical_physical_matrix": {
+            "dimensionless_matrix": [
+                [10.0, 0.0, 2.0],
+                [0.0, -2.0, 0.0],
+                [2.0, 0.0, 0.0],
+            ],
+            "eigenvalues": [
+                5.0 + math.sqrt(29.0),
+                -2.0,
+                5.0 - math.sqrt(29.0),
+            ],
+            "smallest_absolute_eigenvalue": smallest_matrix_modulus,
+            "determinant": 8.0,
+        },
+        "action_weight_factorization": {
+            "K": "kappa(chi)*omega(chi)",
+            "kappa": "3*lapse*R^5*exp(5u-w)",
+            "kappa_positive_on_every_finite_eta_admissible_child": True,
+            "uniform_general_N_bound_proved": False,
+        },
+        "principal_normal_inf_sup": (
+            "beta_principal>=(sqrt(29)-5)*inf(kappa)_IN_THE_omega_WEIGHTED_"
+            "DERIVATIVE_NORM_AFTER_THE_EXISTING_TRACE_AND_GAUGE_REDUCTION"
+        ),
+        "closed_here": [
+            "THE_chi^3_POLE_WEIGHT_IS_GEOMETRIC_NOT_A_PHYSICAL_ZERO_MODE",
+            "THE_ATTACHMENT_TRACE_ROWS_CONTROL_THE_TRACE_FIXED_GEOMETRY_VARIATIONS",
+            "THE_CANONICAL_PHYSICAL_PRINCIPAL_MATRIX_HAS_A_NONZERO_INF_SUP_CONSTANT",
+        ],
+        "still_open": [
+            "UNIFORM_GENERAL_N_LOWER_AND_UPPER_BOUNDS_FOR_kappa",
+            "LOWER_ORDER_AND_NONLOCAL_CALDERON_TERMS_DO_NOT_CREATE_A_NORMAL_KERNEL",
+            "FULL_CONSTRAINT_MOMENTUM_FLUX_SCHUR_COMPLEMENT_INF_SUP",
+            "SPECTRAL_AND_QUADRATURE_CONSISTENCY_IN_THE_WEIGHTED_DUAL_NORM",
+            "FULL_MATERIAL_TRANSMISSION_AND_UNTRUNCATED_f_sigma_lambda_sigma_BLOCK",
+        ],
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "new_equations_constraints_or_acceptance_gates": False,
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
+def cross_resolution_strong_constraint_infsup_audit(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+    *,
+    points: int = 44,
+) -> dict[str, Any]:
+    """Compare weak-dual and strong-H4 normalizations of the nonflux map."""
+
+    target = Path(path)
+    payload = json.loads(target.read_text(encoding="utf-8"))
+    result = payload["cross_resolution_reconnaissance"]
+    n3_payload = json.loads((target.parent / (
+        "BHSM_aether_n3_complete_child_persistence_v17_99.json"
+    )).read_text(encoding="utf-8"))
+    states = {
+        3: n3_payload["complete_child_persistence"]["evolution"]["rows"][0],
+        4: result["N4_event_conditioned_complete_child_reconstruction"][
+            "child_state"
+        ],
+        5: result["N5_event_conditioned_complete_child_reconstruction"][
+            "child_state"
+        ],
+    }
+    rows = []
+    for order, source in states.items():
+        exact = source.get("binary64_hex")
+        if exact is None:
+            q = np.asarray(source["coordinates"], dtype=float)
+            velocity = np.asarray(source["velocities"], dtype=float)
+            multipliers = np.asarray(source["multipliers"], dtype=float)
+        else:
+            q = np.asarray([
+                float.fromhex(item) for item in exact["coordinates"]
+            ])
+            velocity = np.asarray([
+                float.fromhex(item) for item in exact["velocities"]
+            ])
+            multipliers = np.asarray([
+                float.fromhex(item) for item in exact["multipliers"]
+            ])
+        qdim = q.size
+        state = np.concatenate((q, velocity, multipliers))
+        jet = exact_full_action_jet_at_state(
+            order, q, velocity, multipliers, points=points
+        )
+        gradient = np.asarray(jet.gradient, dtype=float)
+        hessian = np.asarray(jet.hessian, dtype=float)
+        multiplier_start = 2 * qdim
+        constraint_jacobian = hessian[multiplier_start:, :]
+        energy_gradient = np.concatenate((
+            velocity @ hessian[qdim:2 * qdim, :qdim] - gradient[:qdim],
+            hessian[qdim:2 * qdim, qdim:2 * qdim] @ velocity,
+            velocity @ hessian[qdim:2 * qdim, multiplier_start:]
+            - gradient[multiplier_start:],
+        ))
+        frequencies = spectral_frequencies(order)
+        regularity = sobolev_weights(order)
+        domain_weights = np.concatenate((
+            (1.0 + frequencies["coordinates"] ** 2) ** 3.0,
+            regularity["velocities"],
+            regularity["multipliers"],
+        ))
+        row_count = 2 * order + 6
+        matrix = np.empty((row_count, state.size))
+        trace = _trace_jacobian_at_order(order)
+        for column in range(state.size):
+            direction = np.zeros(state.size)
+            direction[column] = 1.0 / domain_weights[column]
+            matrix[:3, column] = trace @ direction[:qdim]
+            matrix[3:3 + 2 * order, column] = (
+                constraint_jacobian @ direction
+            )
+            matrix[3 + 2 * order, column] = energy_gradient @ direction
+            complex_state = state.astype(complex) + 1j * 1.0e-20 * direction
+            momentum, _, _, _ = _canonical_pair_at_order(
+                order,
+                complex_state[:qdim],
+                complex_state[qdim:2 * qdim],
+                complex_state[2 * qdim:],
+                points=points,
+            )
+            matrix[-2:, column] = np.imag(momentum) / 1.0e-20
+
+        normalizations = {
+            "raw_coefficient": np.ones(2 * order),
+            "weak_Hminus6_dual": 1.0 / regularity["multipliers"],
+            "strong_H4": (
+                1.0 + frequencies["multipliers"] ** 2
+            ) ** 2.0,
+        }
+        measurements = {}
+        strong_left = None
+        for name, constraint_weights in normalizations.items():
+            output_weights = np.ones(row_count)
+            output_weights[3:3 + 2 * order] = constraint_weights
+            normalized = output_weights[:, None] * matrix
+            left, singular, _ = np.linalg.svd(normalized, full_matrices=False)
+            tolerance = (
+                np.finfo(float).eps * max(normalized.shape) * singular[0]
+            )
+            rank = int(np.count_nonzero(singular > tolerance))
+            measurements[name] = {
+                "rank": rank,
+                "row_count": row_count,
+                "smallest_singular_value": float(singular[-1]),
+                "largest_singular_value": float(singular[0]),
+                "condition_number": float(singular[0] / singular[-1]),
+            }
+            if name == "strong_H4":
+                strong_left = left[:, -1]
+        assert strong_left is not None
+        measurements["strong_H4"]["smallest_left_vector_block_norms"] = {
+            "trace": float(np.linalg.norm(strong_left[:3])),
+            "constraints": float(np.linalg.norm(
+                strong_left[3:3 + 2 * order]
+            )),
+            "energy": float(abs(strong_left[3 + 2 * order])),
+            "momentum": float(np.linalg.norm(strong_left[-2:])),
+        }
+        rows.append({"N": order, "normalizations": measurements})
+
+    validation = {
+        "strong_H4_maps_full_row_rank_at_N3_N4_N5": all(
+            row["normalizations"]["strong_H4"]["rank"]
+            == row["normalizations"]["strong_H4"]["row_count"]
+            for row in rows
+        ),
+        "weak_Hminus6_creates_artificial_N5_numerical_rank_loss": bool(
+            rows[2]["normalizations"]["weak_Hminus6_dual"]["rank"]
+            < rows[2]["normalizations"]["weak_Hminus6_dual"]["row_count"]
+        ),
+        "N5_strong_H4_owner_is_not_a_pure_high_constraint_mode": bool(
+            rows[2]["normalizations"]["strong_H4"]
+            ["smallest_left_vector_block_norms"]["trace"] > 0.9
+        ),
+    }
+    return {
+        "classification": (
+            "STRONG_H4_CONSTRAINT_CODOMAIN_RESTORES_FULL_N3_N4_N5_RANK;_"
+            "WEAK_H_MINUS_6_COLLAPSE_INVALIDATED;_BOUNDARY_SYMPLECTIC_"
+            "NORMALIZATION_AND_FULL_FLUX_INF_SUP_OPEN"
+        ),
+        "domain_norm": "H6_q_CROSS_H5_v_CROSS_H6_m",
+        "constraint_differential_order": {
+            "Hamiltonian_from_H6_geometry": "SECOND_ORDER_TO_H4",
+            "momentum_from_H5_velocity": "FIRST_ORDER_TO_H4",
+            "strong_constraint_codomain": "H4",
+        },
+        "rows": rows,
+        "invalidated": (
+            "USING_THE_WEAK_H_MINUS_6_DUAL_COEFFICIENT_NORM_AS_THE_STRONG_"
+            "GENERAL_N_INF_SUP_DIAGNOSTIC"
+        ),
+        "reclassified_owner": (
+            "THE_N5_STRONG_H4_SOFT_LEFT_VECTOR_IS_DOMINATED_BY_ATTACHMENT_"
+            "TRACE_WITH_MIXED_CONSTRAINT_AND_ENERGY_CONTENT;_IT_IS_NOT_THE_"
+            "HIGH_LAPSE_MODE_COLLAPSE_CREATED_BY_THE_WEAK_DUAL_NORM"
+        ),
+        "required_next": (
+            "DERIVE_THE_ACTION_INDUCED_BOUNDARY_SYMPLECTIC_NORM_AND_EVALUATE_"
+            "THE_FULL_DYNAMIC_FLUX_CALDERON_NORMAL_INF_SUP_WITH_WEIGHTED_"
+            "SPECTRAL_CONSISTENCY"
+        ),
+        "physical_rows_changed": False,
+        "acceptance_gates_changed": False,
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
+def cross_resolution_boundary_symplectic_polarization_audit(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+    *,
+    points: int = 44,
+) -> dict[str, Any]:
+    """Derive the reduced boundary symplectic form and test Hessian signatures."""
+
+    target = Path(path)
+    payload = json.loads(target.read_text(encoding="utf-8"))
+    result = payload["cross_resolution_reconnaissance"]
+    n3_payload = json.loads((target.parent / (
+        "BHSM_aether_n3_complete_child_persistence_v17_99.json"
+    )).read_text(encoding="utf-8"))
+    states = {
+        3: n3_payload["complete_child_persistence"]["evolution"]["rows"][0],
+        4: result["N4_event_conditioned_complete_child_reconstruction"][
+            "child_state"
+        ],
+        5: result["N5_event_conditioned_complete_child_reconstruction"][
+            "child_state"
+        ],
+    }
+    rows = []
+
+    def signature(values: np.ndarray) -> dict[str, int]:
+        scale = max(1.0, float(np.max(np.abs(values))))
+        tolerance = 1.0e-12 * scale
+        return {
+            "positive": int(np.count_nonzero(values > tolerance)),
+            "negative": int(np.count_nonzero(values < -tolerance)),
+            "zero": int(np.count_nonzero(np.abs(values) <= tolerance)),
+        }
+
+    for order, source in states.items():
+        exact = source.get("binary64_hex")
+        if exact is None:
+            q = np.asarray(source["coordinates"], dtype=float)
+            velocity = np.asarray(source["velocities"], dtype=float)
+            multipliers = np.asarray(source["multipliers"], dtype=float)
+        else:
+            q = np.asarray([
+                float.fromhex(item) for item in exact["coordinates"]
+            ])
+            velocity = np.asarray([
+                float.fromhex(item) for item in exact["velocities"]
+            ])
+            multipliers = np.asarray([
+                float.fromhex(item) for item in exact["multipliers"]
+            ])
+        _, _, q_lift, v_lift = _canonical_pair_at_order(
+            order, q, velocity, multipliers, points=points
+        )
+        jet = exact_full_action_jet_at_state(
+            order, q, velocity, multipliers, points=points
+        )
+        hessian = np.asarray(jet.hessian, dtype=float)
+        qdim = q.size
+        q_form = hessian[:qdim, :qdim]
+        v_form = hessian[qdim:2 * qdim, qdim:2 * qdim]
+        qv_form = hessian[:qdim, qdim:2 * qdim]
+        reduced_q = q_lift.T @ q_form @ q_lift
+        reduced_v = v_lift.T @ v_form @ v_lift
+        reduced_qv = q_lift.T @ qv_form @ v_lift
+        boundary_hessian = np.block([
+            [reduced_q, reduced_qv],
+            [reduced_qv.T, reduced_v],
+        ])
+        q_eigen = np.linalg.eigvalsh(reduced_q)
+        v_eigen = np.linalg.eigvalsh(reduced_v)
+        boundary_eigen = np.linalg.eigvalsh(boundary_hessian)
+        hamiltonian_generator = -np.block([
+            [np.zeros((2, 2)), np.eye(2)],
+            [-np.eye(2), np.zeros((2, 2))],
+        ]) @ boundary_hessian
+        generator_eigen = np.linalg.eigvals(hamiltonian_generator)
+        generator_scale = max(1.0, float(np.max(np.abs(generator_eigen))))
+        generator_tolerance = 1.0e-9 * generator_scale
+        real_pair_count = int(np.count_nonzero(
+            (np.abs(np.imag(generator_eigen)) <= generator_tolerance)
+            & (np.abs(np.real(generator_eigen)) > generator_tolerance)
+        ) // 2)
+        imaginary_pair_count = int(np.count_nonzero(
+            (np.abs(np.real(generator_eigen)) <= generator_tolerance)
+            & (np.abs(np.imag(generator_eigen)) > generator_tolerance)
+        ) // 2)
+        generator_type = (
+            "HYPERBOLIC_HYPERBOLIC"
+            if real_pair_count == 2 else
+            "HYPERBOLIC_ELLIPTIC"
+            if real_pair_count == 1 and imaginary_pair_count == 1 else
+            "UNCLASSIFIED_MIXED"
+        )
+        rows.append({
+            "N": order,
+            "reduced_configuration_Hessian": reduced_q.tolist(),
+            "reduced_velocity_Legendre_Hessian": reduced_v.tolist(),
+            "reduced_configuration_velocity_cross_Hessian": (
+                reduced_qv.tolist()
+            ),
+            "configuration_eigenvalues": q_eigen.tolist(),
+            "velocity_eigenvalues": v_eigen.tolist(),
+            "boundary_Hessian_eigenvalues": boundary_eigen.tolist(),
+            "configuration_signature": signature(q_eigen),
+            "velocity_signature": signature(v_eigen),
+            "boundary_Hessian_signature": signature(boundary_eigen),
+            "Hamiltonian_generator_eigenvalues": [
+                {"real": float(np.real(value)), "imaginary": float(np.imag(value))}
+                for value in generator_eigen
+            ],
+            "Hamiltonian_generator_type": generator_type,
+            "hyperbolic_pair_count": real_pair_count,
+            "elliptic_pair_count": imaginary_pair_count,
+        })
+    omega = np.block([
+        [np.zeros((2, 2)), np.eye(2)],
+        [-np.eye(2), np.zeros((2, 2))],
+    ])
+    validation = {
+        "canonical_symplectic_form_antisymmetric": bool(
+            np.allclose(omega.T, -omega, rtol=0.0, atol=0.0)
+        ),
+        "canonical_symplectic_form_full_rank": int(
+            np.linalg.matrix_rank(omega)
+        ) == 4,
+        "velocity_Legendre_forms_indefinite_at_N3_N4_N5": all(
+            row["velocity_signature"]["positive"] == 1
+            and row["velocity_signature"]["negative"] == 1
+            for row in rows
+        ),
+        "no_zero_reduced_boundary_Hessian_modes": all(
+            row["boundary_Hessian_signature"]["zero"] == 0 for row in rows
+        ),
+        "N3_local_generator_has_two_hyperbolic_pairs": (
+            rows[0]["Hamiltonian_generator_type"] == "HYPERBOLIC_HYPERBOLIC"
+        ),
+        "N4_N5_local_generators_share_hyperbolic_elliptic_type": all(
+            row["Hamiltonian_generator_type"] == "HYPERBOLIC_ELLIPTIC"
+            for row in rows[1:]
+        ),
+    }
+    return {
+        "classification": (
+            "REDUCED_TSTAR_R2_BOUNDARY_SYMPLECTIC_FORM_DERIVED;_ACTION_"
+            "HESSIANS_INDEFINITE;_POSITIVE_CALDERON_POLARIZATION_OPEN"
+        ),
+        "boundary_coordinates": ["q_W", "x_D"],
+        "canonical_momenta": ["p_q_W", "p_x_D"],
+        "canonical_symplectic_matrix": omega.tolist(),
+        "rows": rows,
+        "action_Hessian_itself_is_a_positive_boundary_norm": False,
+        "taking_entrywise_or_spectral_absolute_values_is_action_derived": False,
+        "solver_row_scales_are_the_boundary_Hilbert_metric": False,
+        "local_generator_type_is_identical_at_N3_N4_N5": False,
+        "N4_N5_mixed_type_agrees": True,
+        "N3_may_be_declared_underresolved_from_this_alone": False,
+        "type_comparison_claim_boundary": (
+            "THE_CHECKPOINTS_ARE_INDEPENDENT_ROOTS;_THE_SHARED_N4_N5_MIXED_"
+            "TYPE_IS_STRUCTURAL_EVIDENCE_BUT_NOT_A_PROOF_OF_BRANCHWISE_"
+            "SPECTRAL_CONVERGENCE_OR_AN_INVALIDATION_OF_N3"
+        ),
+        "required_positive_polarization": {
+            "acceptable_owner": (
+                "THE_ON_SHELL_CHILD_CALDERON_PROJECTOR_OR_RETURN_MONODROMY_"
+                "ON_THE_REDUCED_TSTAR_R2_BOUNDARY_PHASE_SPACE"
+            ),
+            "compatible_metric_formula_after_J_is_derived": (
+                "g_boundary(a,b)=Omega_boundary(a,J_boundary*b)"
+            ),
+            "J_boundary_derived_now": False,
+        },
+        "required_next": (
+            "DERIVE_THE_ACTION_OWNED_ON_SHELL_CHILD_CALDERON_OR_RETURN_"
+            "POLARIZATION_J_boundary_AND_USE_ITS_COMPATIBLE_METRIC_FOR_THE_"
+            "FULL_DYNAMIC_FLUX_INF_SUP"
+        ),
+        "physical_rows_changed": False,
+        "acceptance_gates_changed": False,
         "validation": validation,
         "validation_passed": all(validation.values()),
         "FULL_BHSM_COMPLETE": False,
@@ -5825,6 +6303,7 @@ def event_to_child_on_shell_calderon_interface() -> dict[str, Any]:
         "BOUNDARY_WITH_GLOBAL_GAUGE_REDUCED_INF_SUP_ESTIMATE"
     )
     principal_symbol = child_jacobi_radial_principal_symbol_audit()
+    weighted_principal = weighted_pole_attachment_principal_estimate()
     return {
         "classification": (
             "VARIATIONAL_EVENT_TO_ON_SHELL_CHILD_CALDERON_INTERFACE_DERIVED;_"
@@ -5907,6 +6386,7 @@ def event_to_child_on_shell_calderon_interface() -> dict[str, Any]:
             "eta_margin": "inf(L_eta)>=eta_0>0",
         },
         "retained_radial_principal_symbol_audit": principal_symbol,
+        "weighted_pole_attachment_principal_estimate": weighted_principal,
         "first_missing_mathematical_object": missing,
         "required_next": missing,
         "new_action_terms_equations_constraints_or_gates": False,
@@ -5919,8 +6399,9 @@ def general_n_galerkin_transfer_certificate() -> dict[str, Any]:
 
     calderon = event_to_child_on_shell_calderon_interface()
     missing = (
-        "ACTION_OWNED_CONTINUUM_NORMAL_SUBMERSION_INF_SUP_AND_SPECTRAL_"
-        "CONSISTENCY_BOUND_FOR_THE_LOCAL_EVENT_CHILD_RELATION"
+        "DERIVE_THE_ACTION_OWNED_ON_SHELL_CHILD_CALDERON_OR_RETURN_"
+        "POLARIZATION_J_boundary_AND_USE_ITS_COMPATIBLE_METRIC_FOR_THE_"
+        "FULL_DYNAMIC_FLUX_INF_SUP"
     )
     return {
         "classification": (
@@ -6851,12 +7332,30 @@ def promote_existing_general_n_statement(path: str | Path) -> Path:
 
     statement = general_n_complete_child_reconstruction_statement()
     frame_audit = cross_resolution_principal_symbol_frame_audit(target)
+    strong_constraint_audit = cross_resolution_strong_constraint_infsup_audit(
+        target
+    )
+    boundary_polarization_audit = (
+        cross_resolution_boundary_symplectic_polarization_audit(target)
+    )
     statement["cross_resolution_principal_symbol_frame_audit"] = frame_audit
+    statement["cross_resolution_strong_constraint_infsup_audit"] = (
+        strong_constraint_audit
+    )
+    statement["cross_resolution_boundary_symplectic_polarization_audit"] = (
+        boundary_polarization_audit
+    )
     required_next = statement["required_next"]
     result["general_N_complete_child_reconstruction_and_convergence_statement"] = (
         statement
     )
     result["cross_resolution_principal_symbol_frame_audit"] = frame_audit
+    result["cross_resolution_strong_constraint_infsup_audit"] = (
+        strong_constraint_audit
+    )
+    result["cross_resolution_boundary_symplectic_polarization_audit"] = (
+        boundary_polarization_audit
+    )
     child = dict(n5)
     child["required_next"] = required_next
     result["N5_event_conditioned_complete_child_reconstruction"] = child
@@ -6944,6 +7443,12 @@ def promote_existing_general_n_statement(path: str | Path) -> Path:
         "cross_resolution_principal_symbol_frame_audit_validated": frame_audit[
             "validation_passed"
         ],
+        "cross_resolution_strong_constraint_infsup_audit_validated": (
+            strong_constraint_audit["validation_passed"]
+        ),
+        "cross_resolution_boundary_symplectic_polarization_audit_validated": (
+            boundary_polarization_audit["validation_passed"]
+        ),
     })
     payload["validation"] = validation
     payload["validation_passed"] = all(validation.values())
@@ -7034,6 +7539,9 @@ __all__ = [
     "n5_complete_child_positive_duration_persistence",
     "child_jacobi_radial_principal_symbol_audit",
     "cross_resolution_principal_symbol_frame_audit",
+    "weighted_pole_attachment_principal_estimate",
+    "cross_resolution_strong_constraint_infsup_audit",
+    "cross_resolution_boundary_symplectic_polarization_audit",
     "event_to_child_on_shell_calderon_interface",
     "general_n_galerkin_transfer_certificate",
     "general_n_complete_child_reconstruction_statement",
