@@ -1,36 +1,820 @@
 {
   "FULL_BHSM_COMPLETE": false,
   "artifact": "BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35",
+  "breadth_first_closure_network_audit": {
+    "FULL_BHSM_COMPLETE": false,
+    "doctrine": {
+      "active_N4_child_dependency_preserved": true,
+      "conditional_derivations_allowed": true,
+      "downstream_requirements_may_identify_upstream_invariants": true,
+      "new_fields_coefficients_events_or_gates_added": false,
+      "observed_particle_values_may_select_upstream_branch": false,
+      "rule": "HINDSIGHT_MAY_CONSTRAIN_STRUCTURE_BUT_MAY_NOT_OVERRIDE_THE_ORIGINAL_EQUATIONS",
+      "strategy": "BREADTH_FIRST_SELF_CONSISTENCY_NETWORK"
+    },
+    "interfaces": {
+      "event_child_reconstruction_return": {
+        "classification": "DERIVED_SET_VALUED_INTERFACE_CHILD_ROOT_OPEN",
+        "current_N4_status": "EVENT_VALIDATED;_16_ROW_MAP_STRUCTURALLY_FULL_RANK;_DYNAMIC_FLUX_JACOBIAN_NOT_STEP_CONVERGED;_CHILD_OPEN",
+        "equations": {
+          "child_BVP": "E_child(Phi_c)=0_AND_B_child(Phi_c,z_event)=0",
+          "finite_N_map": "F_child=(3_TRACE,2N+1_CONSTRAINT,2_MOMENTUM,2_DYNAMIC_FLUX)=0",
+          "return_relation": "R_return(z_event)={z_c:F_child(z_event,z_c)=0,_L_eta(z_c)>0}",
+          "return_scale": "C_rec=q_logR(return)-log(R_rec[I_event,I_environment]/R_star)=0",
+          "row_count": "2N+8"
+        },
+        "inputs": [
+          "CONSTRAINT_ETA_ADMISSIBLE_ORDERED_EVENT_STATE",
+          "EVENT_TRACE_CANONICAL_MOMENTUM_AND_GHY_NOETHER_FLUX",
+          "EVENT_TOPOLOGY_ORIENTATION_FR_AND_BUNDLE_INVARIANTS",
+          "ACTION_DERIVED_ENVIRONMENT_BOUNDARY_DATA"
+        ],
+        "interface": "z_event->(Gamma0_event,p_event,Gamma1_event,I_event)->SolveChildBVP->R_return(z_event)",
+        "outputs": [
+          "COMPLETE_CONSTRAINED_CHILD_CAUCHY_STATE",
+          "R4_DIAGONAL_SP1_CONNECTION_omega_AND_KF",
+          "RECONSTRUCTED_SCALE_AND_RETURN_STATE_RELATION",
+          "SPIN_GAUGE_DOMAIN_AND_BUNDLE_ISOMORPHISM_CLASS"
+        ],
+        "single_valued_return_proved": false,
+        "sources": [
+          "bhsm_complete_child_mathematical_system_v15_39.py",
+          "aether_n3_event_complete_child_correspondence_v17_84.py",
+          "aether_n3_required_child_cauchy_flux_v17_93.py",
+          "aether_diagonal_sp1_m4_attachment_v15_50.py",
+          "aether_scale_child_ownership_audit_v16_78.py"
+        ]
+      },
+      "generic_child_scale_mass": {
+        "classification": "CONDITIONAL_OPERATOR_INTERFACE_DERIVED",
+        "conditional_mass_forms": {
+          "Floquet_mass_operator": "M_Floquet[c]=hbar*(-i_Log(U_rel,c(T_c)))/(c^2*T_c)",
+          "rest_mass": "M_rest[c|P]=Delta_H_xi[parent+child_minus_matched_parent]/c^2",
+          "stationary_consistency": "M_Floquet_MUST_AGREE_WITH_Delta_H_xi/c^2_IN_THE_STATIONARY_LIMIT"
+        },
+        "derived_scale_outputs": {
+          "N_is_physical_scale": false,
+          "R_star": "(343/(5*kappa1))^(1/6)",
+          "rho": "q_scale=log(R_child/R_star)",
+          "shape_coordinate": "x_child=log(B/A)|sigma=0"
+        },
+        "dimensionful_bridge": "OPEN_KAPPA1_HAS_NO_ACTION_DERIVED_SI_VALUE",
+        "family_Yukawa_entries_from_current_child_action": "OPEN",
+        "interface": "GENERIC_COMPLETE_PERSISTENT_CHILD->SCALE_AND_MASS_OPERATOR",
+        "not_mass": [
+          "THE_ZERO_CANONICAL_HAMILTONIAN_CONSTRAINT_BY_ITSELF",
+          "A_POST_HOC_SUM_OF_ABSOLUTE_SIGNED_ACTION_TERMS",
+          "THE_FR_ENERGY_1/(8I_skin)_BY_ITSELF"
+        ],
+        "sources": [
+          "aether_cycle_spread_concentration_v15_9.py",
+          "aether_boundary_identity_ejection_v15_13.py",
+          "aether_fr_zero_current_child_v15_37.py",
+          "completion/cosmological_parent_dynamic_envelopment_v14_54.py",
+          "aether_nonlinear_norman_cycle_bvp_v15_7.py",
+          "aether_hybrid_yukawa_mass_semantics_v15_56.py"
+        ]
+      },
+      "generic_family_children_mixing": {
+        "N_is_family_number": false,
+        "classification": "CONDITIONAL_FUNCTOR_DERIVED_NUMERICAL_OPERATOR_OPEN",
+        "conditional_equations": {
+          "CKM": "V_CKM=W_u^dagger*U_ud*W_d",
+          "Feshbach": "H_eff_f=H_PP-H_PQ*(H_QQ-E)^(-1)*H_QP",
+          "Gram": "G_f=iota_f^dagger*iota_f",
+          "PMNS": "U_PMNS=W_e^dagger*U_e_nu*W_nu",
+          "current_kernel": "K_fg=iota_f^dagger*J_fg*iota_g_OR_WITH_RETURN_TRANSPORT_iota_f^dagger*J_f*T_f_from_g*iota_g",
+          "embedding": "iota_f=[I;-(H_QQ-E)^(-1)*H_QP]",
+          "polar_transport": "U_fg=Pol(G_f^(-1/2)*K_fg*G_g^(-1/2))"
+        },
+        "current_child_export_is_sufficient": false,
+        "derived_structure": [
+          "RANK3_C3_ORTHOGONAL_FAMILY_PROJECTORS",
+          "RANK16_CHIRAL_BUNDLE_PER_FAMILY_AND_Z6_QUOTIENT",
+          "FAMILY_UNIVERSAL_WEAK_BASIS_CURRENT",
+          "BASIS_COVARIANT_FESHBACH_CROSS_GRAM_POLAR_FUNCTOR"
+        ],
+        "interface": "GENERIC_FAMILY_CHILD_DATA->MIXING_OPERATOR",
+        "missing_outputs": [
+          "ACTION_NORMALIZED_CHILD_SPINOR_GAUGE_HILBERT_DOMAIN",
+          "RETURNED_FAMILY_DIRAC_YUKAWA_OR_PROPAGATION_OPERATORS",
+          "ACTION_SELECTED_RETAINED_TOWER_PROJECTORS_AND_SPECTRAL_FRAMES",
+          "COMMON_DOMAIN_CURRENT_OR_CHILD_TO_CHILD_RETURN_TRANSPORT",
+          "NONDEGENERATE_ACTION_OWNED_FAMILY_ORDERING"
+        ],
+        "sources": [
+          "aether_hybrid_flavor_spectrum_v15_54.py",
+          "aether_hybrid_standard_model_bundle_v15_53.py",
+          "completion/parent_action_charged_current_v11_6.py",
+          "completion/hopf_phase_flavor_cross_gram_v14_34.py",
+          "master_action/common_parent_charged_current_attachment.py",
+          "aether_cycle_family_centrality_v15_87.py"
+        ],
+        "zero_or_degenerate_family_operator_meaning": "MIXING_UNOBSERVABLE",
+        "zero_or_degenerate_family_operator_predicts_identity_mixing": false
+      }
+    },
+    "ordered_open_interfaces": [
+      {
+        "feeds": [
+          "RETURN_INTERFACE",
+          "PERSISTENCE"
+        ],
+        "object": "CONVERGENCE_STABLE_DIRECTIONAL_DERIVATIVE_OF_THE_N4_DYNAMIC_CALDERON_FLUX_MAP_ON_THE_REGULAR_BROKEN_GERM",
+        "priority": 1
+      },
+      {
+        "feeds": [
+          "RETURN_INTERFACE",
+          "MASS_INTERFACE"
+        ],
+        "object": "ACTION_DERIVED_ENVIRONMENT_TO_RECONSTRUCTION_MAP_AND_COMPOSITE_MINUS_PARENT_NOETHER_HAMILTONIAN",
+        "priority": 2
+      },
+      {
+        "feeds": [
+          "MASS_INTERFACE",
+          "MIXING_INTERFACE"
+        ],
+        "object": "RETURNED_FAMILY_OPERATORS_AND_ACTION_DERIVED_COMMON_DOMAIN_TRANSPORT",
+        "priority": 3
+      }
+    ],
+    "scientific_classification": "THREE_CONDITIONAL_INTERFACES_FROZEN;_NO_DOWNSTREAM_NUMERICAL_PREDICTION_PROMOTED;_N4_DYNAMIC_FLUX_DERIVATIVE_REMAINS_ACTIVE",
+    "shared_child_invariants": {
+      "hindsight_use": "THESE_OBJECTS_MAY_PRIORITIZE_UPSTREAM_DERIVATIONS_AND_CLASSIFY_BRANCH_COMPATIBILITY_BUT_MAY_NOT_ADD_ROWS_OR_SELECT_BY_DATA",
+      "required_by_multiple_interfaces": [
+        "CONSTRAINT_AND_DENSE_L_eta_ADMISSIBILITY",
+        "POSITIVE_DURATION_RELATIVE_PERSISTENCE",
+        "Gamma0_Gamma1_CANONICAL_MOMENTUM_AND_NOETHER_FLUX",
+        "RECONSTRUCTED_SCALE_AND_ACTION_OWNED_RETURN_RELATION",
+        "TOPOLOGY_ORIENTATION_FR_PARITY_AND_BUNDLE_ISOMORPHISM_CLASS",
+        "ACTION_NORMALIZED_SPIN_GAUGE_DOMAIN_AND_INDUCED_MEASURE",
+        "RETURN_MONODROMY_OR_COMMON_DOMAIN_TRANSPORT"
+      ]
+    },
+    "validation": {
+      "N_not_scale_or_family": true,
+      "active_N4_dependency_retained": true,
+      "conditional_interfaces_not_numerical_claims": true,
+      "first_blocker_action_owned_and_localized": true,
+      "fixed_physics_preserved": true,
+      "observed_values_held_out": true,
+      "shared_invariants_exposed": true
+    },
+    "validation_passed": true
+  },
   "classification": "BHSM_CROSS_RESOLUTION_INDEPENDENT_HINDSIGHT_RECONNAISSANCE",
   "cross_resolution_reconnaissance": {
-    "N4_targeted_event_step_audit": {
-      "branch_overlap": 0.514691063888005,
-      "claim_boundary": "AN_EIGENVALUE_SIGN_CHANGE_ON_A_CONSTRAINT_OR_ETA_INVALID_TRIAL_IS_NOT_AN_ORDERED_PHYSICAL_EVENT",
-      "classification": "INVALIDATED",
-      "eta_Legendre": {
-        "chi": 0.104132047345467,
-        "minimum": -347434.63601042744
+    "N4_adaptive_event_convergence_audit": {
+      "FULL_BHSM_COMPLETE": false,
+      "N4_ordered_event_validated": true,
+      "all_runs_individually_constraint_eta_branch_admissible": true,
+      "classification": "VALIDATED_N4_ADAPTIVE_QUADRATURE_INDEPENDENT_ORDERED_EVENT",
+      "loose_time_control": {
+        "event": {
+          "branch_index": 8,
+          "branch_overlap": 0.99778905554894,
+          "coordinates": [
+            -0.000275322496218,
+            -0.00030391593471,
+            -1.3669387168e-05,
+            1.453234384e-06,
+            6.08462208e-07,
+            0.001144692911609,
+            -0.000556841621854,
+            -6.2901211322e-05,
+            -2.4814148716e-05,
+            0.000455815260712,
+            0.000447030095836,
+            1.863720975e-06,
+            1.504170861e-06
+          ],
+          "eta_Legendre": {
+            "chi": 0.425931266488329,
+            "minimum": 1.001589503586009
+          },
+          "event_time": 0.000305747476695,
+          "lambda_directional_derivative": 0.74243109818111,
+          "lambda_ordered": 1.3e-14,
+          "left_lambda_ordered": -9.722978749e-06,
+          "locator": "ONE_SIDED_EXACT_FLOW_TANGENT_WITH_EXISTING_SOBOLEV_CONSTRAINT_PROJECTION_AND_TRACKED_ROOT",
+          "maximum_constraint_residual": 9e-15,
+          "multipliers": [
+            0.705128925510928,
+            0.485209921915384,
+            -4.9455779823e-05,
+            -2.3705255084e-05,
+            -0.74857583042847,
+            -0.202041016025251,
+            0.007787946227139,
+            0.00772766236348
+          ],
+          "negative_inertia_at_selected_side": 8,
+          "negative_inertia_left": 9,
+          "offset_from_last_regular_state": 1.4515835691e-05,
+          "velocities": [
+            -0.91461836169947,
+            -1.011982938715286,
+            -0.044702416259278,
+            0.011288333768357,
+            0.004263956463464,
+            3.591529410446542,
+            -2.163676334837886,
+            -0.578491371793238,
+            -0.22575519607112,
+            1.580486945743399,
+            1.600520921163979,
+            0.063865595745945,
+            0.013362753044556
+          ]
+        },
+        "integration_obstruction": null,
+        "local_error_tolerance": 1e-08,
+        "maximum_Dirac_condition_number": 59456840.90586233,
+        "maximum_accepted_relative_Sobolev_local_error": 6.765972e-09,
+        "maximum_constraint_residual": 1.99255e-10,
+        "minimum_accepted_time_step": 8.67361738e-07,
+        "ordered_event_found": true,
+        "ordered_event_validated_at_this_resolution": true,
+        "quadrature_points": 32,
+        "rejected_adaptive_steps": 9,
+        "steps_completed": 41,
+        "time_step_cap": 1e-05
       },
-      "gates": {
-        "constraint_projection_succeeded": false,
-        "constraint_surface_retained": false,
-        "eta_domain_retained": false,
-        "ordered_branch_overlap_retained": false
+      "numerical_reliability_thresholds_not_physics": true,
+      "physical_equations_changed": false,
+      "physical_gates_changed": false,
+      "quadrature_control": {
+        "event": {
+          "branch_index": 8,
+          "branch_overlap": 0.997886172173712,
+          "coordinates": [
+            -0.000273437320109,
+            -0.000301834935546,
+            -1.3579080837e-05,
+            1.438523302e-06,
+            6.02796906e-07,
+            0.00113706953053,
+            -0.000552716438451,
+            -6.2203660876e-05,
+            -2.4542544919e-05,
+            0.000452615015703,
+            0.000443863778296,
+            1.818997736e-06,
+            1.489247906e-06
+          ],
+          "eta_Legendre": {
+            "chi": 0.425937070535278,
+            "minimum": 1.001592506859126
+          },
+          "event_time": 0.000303650266348,
+          "lambda_directional_derivative": 0.753106351054863,
+          "lambda_ordered": -8e-15,
+          "left_lambda_ordered": -9.502186602e-06,
+          "locator": "ONE_SIDED_EXACT_FLOW_TANGENT_WITH_EXISTING_SOBOLEV_CONSTRAINT_PROJECTION_AND_TRACKED_ROOT",
+          "maximum_constraint_residual": 4.5e-14,
+          "multipliers": [
+            0.705077976088288,
+            0.485214176624264,
+            -4.9191983295e-05,
+            -2.357817403e-05,
+            -0.748573556590812,
+            -0.202031348906513,
+            0.007762353695524,
+            0.00770089203635
+          ],
+          "negative_inertia_at_selected_side": 9,
+          "negative_inertia_left": 9,
+          "offset_from_last_regular_state": 1.3957471352e-05,
+          "velocities": [
+            -0.914593286270755,
+            -1.011953082297017,
+            -0.044719229987803,
+            0.011254103716468,
+            0.004252858836682,
+            3.5928015389867,
+            -2.161579433083664,
+            -0.576550464630211,
+            -0.225015260668502,
+            1.580021645797589,
+            1.599854013361968,
+            0.063621883336815,
+            0.013327711165725
+          ]
+        },
+        "integration_obstruction": null,
+        "local_error_tolerance": 3e-09,
+        "maximum_Dirac_condition_number": 60837917.95272905,
+        "maximum_accepted_relative_Sobolev_local_error": 2.105477e-09,
+        "maximum_constraint_residual": 1.9577e-10,
+        "minimum_accepted_time_step": 6.46234854e-07,
+        "ordered_event_found": true,
+        "ordered_event_validated_at_this_resolution": true,
+        "quadrature_points": 44,
+        "rejected_adaptive_steps": 12,
+        "steps_completed": 48,
+        "time_step_cap": 1e-05
       },
-      "integrator": "RK4_THEN_EXISTING_SOBOLEV_CONSTRAINT_PROJECTION",
-      "lambda_start": -0.000100622957126,
-      "lambda_trial": 0.022883257757095,
-      "maximum_constraint_residual": 16920734.483514097,
-      "negative_inertia_start": 9,
-      "negative_inertia_trial": 12,
-      "order": 4,
-      "ordered_event_established": false,
-      "projection_message": "maximum Sobolev projection iterations reached",
-      "projection_success": false,
-      "step": 0.0006,
-      "target_branch": 8
+      "quadrature_control_converged": true,
+      "quadrature_control_difference": {
+        "both_events_available": true,
+        "event_state_relative_H6_product_difference": 0.001477580162062,
+        "event_time_absolute_difference": 2.248712128e-06,
+        "event_time_relative_difference": 0.007351159324681
+      },
+      "required_next": "DERIVE_AND_SOLVE_THE_EVENT_CONDITIONED_N4_COMPLETE_CHILD_BOUNDARY_BVP",
+      "tight_time_control": {
+        "event": {
+          "branch_index": 8,
+          "branch_overlap": 0.997739454847751,
+          "coordinates": [
+            -0.00027545999522,
+            -0.000304067829651,
+            -1.367605833e-05,
+            1.454500685e-06,
+            6.08949525e-07,
+            0.001145246059541,
+            -0.000557148101307,
+            -6.2963388078e-05,
+            -2.4838378394e-05,
+            0.000456048126734,
+            0.000447262338053,
+            1.869096084e-06,
+            1.505569599e-06
+          ],
+          "eta_Legendre": {
+            "chi": 0.425931274743653,
+            "minimum": 1.001589501232011
+          },
+          "event_time": 0.000305898978477,
+          "lambda_directional_derivative": 0.736372982035374,
+          "lambda_ordered": 9e-15,
+          "left_lambda_ordered": -9.834690764e-06,
+          "locator": "ONE_SIDED_EXACT_FLOW_TANGENT_WITH_EXISTING_SOBOLEV_CONSTRAINT_PROJECTION_AND_TRACKED_ROOT",
+          "maximum_constraint_residual": 9e-15,
+          "multipliers": [
+            0.705126997083305,
+            0.485209086371703,
+            -4.9386520859e-05,
+            -2.3679709819e-05,
+            -0.748575444666026,
+            -0.2020379633783,
+            0.007789062434756,
+            0.007728256681327
+          ],
+          "negative_inertia_at_selected_side": 8,
+          "negative_inertia_left": 9,
+          "offset_from_last_regular_state": 1.4818404699e-05,
+          "velocities": [
+            -0.914617493844076,
+            -1.011980336866501,
+            -0.044700077786775,
+            0.011289041201806,
+            0.004264098233371,
+            3.591482961177106,
+            -2.16375709436156,
+            -0.578527567015861,
+            -0.225766742618718,
+            1.580485469798744,
+            1.600516544190725,
+            0.06386294488806,
+            0.013362396379974
+          ]
+        },
+        "integration_obstruction": null,
+        "local_error_tolerance": 3e-09,
+        "maximum_Dirac_condition_number": 58780392.95552446,
+        "maximum_accepted_relative_Sobolev_local_error": 2.271323e-09,
+        "maximum_constraint_residual": 1.9597e-10,
+        "minimum_accepted_time_step": 6.46234854e-07,
+        "ordered_event_found": true,
+        "ordered_event_validated_at_this_resolution": true,
+        "quadrature_points": 32,
+        "rejected_adaptive_steps": 12,
+        "steps_completed": 48,
+        "time_step_cap": 1e-05
+      },
+      "time_control_converged": true,
+      "time_control_difference": {
+        "both_events_available": true,
+        "event_state_relative_H6_product_difference": 2.5039675435e-05,
+        "event_time_absolute_difference": 1.51501781e-07,
+        "event_time_relative_difference": 0.000495267365858
+      }
     },
-    "active_dependency": "LOCATE_OR_RULE_OUT_THE_FIRST_ISOLATED_ORDERED_DIRAC_EVENT_ON_THE_ADMISSIBLE_INDEPENDENT_N4_ORBIT;_DO_NOT_ADVANCE_THE_CURRENT_N5_RESET_PAST_ITS_ETA_DOMAIN_FAILURE",
+    "N4_event_conditioned_complete_child_reconstruction": {
+      "FULL_BHSM_COMPLETE": false,
+      "additional_global_KKT_rows": 0,
+      "broken_branch_child_germ": {
+        "accepted_N3_trajectory_or_child_used": false,
+        "event_soft_branch_index": 8,
+        "event_soft_eigenvalue": -1.8e-14,
+        "scan": [
+          {
+            "admissible": true,
+            "amplitude": -0.0001,
+            "dynamic_flux_norm": 1164920.8351777266,
+            "maximum_constraint_residual": 2.6995e-11,
+            "minimum_eta_Legendre": 1.001592168480466,
+            "momentum_norm": 1.2155761799e-05,
+            "projection_success": true
+          },
+          {
+            "admissible": true,
+            "amplitude": 0.0001,
+            "dynamic_flux_norm": 1166764.4972888825,
+            "maximum_constraint_residual": 2.699e-11,
+            "minimum_eta_Legendre": 1.001592845283558,
+            "momentum_norm": 1.2155768493e-05,
+            "projection_success": true
+          },
+          {
+            "admissible": true,
+            "amplitude": -0.001,
+            "dynamic_flux_norm": 115660.21934974432,
+            "maximum_constraint_residual": 1e-14,
+            "minimum_eta_Legendre": 1.001589125095314,
+            "momentum_norm": 0.000121538987512,
+            "projection_success": true
+          },
+          {
+            "admissible": true,
+            "amplitude": 0.001,
+            "dynamic_flux_norm": 117510.03462962437,
+            "maximum_constraint_residual": 3.7e-14,
+            "minimum_eta_Legendre": 1.001595893126938,
+            "momentum_norm": 0.000121576363871,
+            "projection_success": true
+          },
+          {
+            "admissible": true,
+            "amplitude": -0.01,
+            "dynamic_flux_norm": 10743.02845941734,
+            "maximum_constraint_residual": 1.8e-14,
+            "minimum_eta_Legendre": 1.001558891545811,
+            "momentum_norm": 0.001213710950562,
+            "projection_success": true
+          },
+          {
+            "admissible": true,
+            "amplitude": 0.01,
+            "dynamic_flux_norm": 12591.374641913704,
+            "maximum_constraint_residual": 5.6e-14,
+            "minimum_eta_Legendre": 1.001626572571329,
+            "momentum_norm": 0.001217446658853,
+            "projection_success": true
+          },
+          {
+            "admissible": true,
+            "amplitude": -0.1,
+            "dynamic_flux_norm": 525.4890396998883,
+            "maximum_constraint_residual": 1.43227e-10,
+            "minimum_eta_Legendre": 1.001276259985621,
+            "momentum_norm": 0.011971111392457,
+            "projection_success": true
+          },
+          {
+            "admissible": true,
+            "amplitude": 0.1,
+            "dynamic_flux_norm": 2135.3989617292473,
+            "maximum_constraint_residual": 1.45237e-10,
+            "minimum_eta_Legendre": 1.001953779575958,
+            "momentum_norm": 0.012344604382383,
+            "projection_success": true
+          }
+        ],
+        "selected": {
+          "admissible": true,
+          "amplitude": -0.1,
+          "dynamic_flux_norm": 525.4890396998883,
+          "maximum_constraint_residual": 1.43227e-10,
+          "minimum_eta_Legendre": 1.001276259985621,
+          "momentum_norm": 0.011971111392457,
+          "projection_success": true
+        },
+        "selection_role": "NUMERICAL_REGULAR_BROKEN_BRANCH_GERM_ONLY;_NOT_A_NEW_PHYSICAL_COEFFICIENT_OR_ACCEPTANCE_GATE",
+        "source": "SYMMETRIC_PREDECLARED_AMPLITUDE_SCAN_ALONG_THE_N4_EVENT_ORDERED_SOFT_EIGENVECTOR_WITH_OWN_CONSTRAINT_PROJECTION"
+      },
+      "chart": {
+        "accepted_gradient_fallback_steps": 0,
+        "accepted_steps": 0,
+        "dynamic_flux_jacobian_step_converged": false,
+        "full_chart_rank": 16,
+        "function_evaluations": 1,
+        "half_step_rank": 16,
+        "half_step_smallest_singular_value": 0.002463941598155,
+        "jacobian_2e-4_to_1e-4_relative_change": 1.125331669564629,
+        "jacobian_step": 0.0002,
+        "rank_tolerance": 2e-14,
+        "rejected_line_trials": 0,
+        "resolved_jacobian_refreshes": 0,
+        "row_scales": [
+          3.0,
+          3.0,
+          3.0,
+          382.14470924772945,
+          428.2175369001735,
+          604.6190089989237,
+          810.8652271289469,
+          543.4587350947997,
+          676.7197419746299,
+          1018.3723575507188,
+          1753.2074267568253,
+          594.5719015978123,
+          3260.992191457991,
+          75.50621208547136,
+          14498748.31744217,
+          4322265.140269505
+        ],
+        "row_scaling": "LOCAL_JACOBIAN_ROW_NORMS_NUMERICAL_ONLY_SAME_ZERO_SET",
+        "scaled_final_norm": 0.000124669426562,
+        "selected_variable_indices": [
+          4,
+          3,
+          1,
+          2,
+          14,
+          12,
+          0,
+          8,
+          16,
+          30,
+          9,
+          17,
+          33,
+          11,
+          13,
+          15
+        ],
+        "smallest_resolved_singular_value": 0.004857392771058,
+        "solver_coordinates": "16_LOCAL_CHART_VARIABLES_FROM_THE_ROW_FULL_RANK_16_BY_34_PHYSICAL_MAP;_NO_PHYSICAL_ROW_ADDED",
+        "solver_jacobian": "REGULAR_BROKEN_GERM_FULL_RANK_16_VARIABLE_PIVOT_CHART_WITH_RESOLVED_2e-4_GOOD_BROYDEN_UPDATES",
+        "solver_merit": "GLOBAL_L2_NORM_OF_ALL_16_ROW_SCALED_PHYSICAL_MAP;_NO_COMPONENTWISE_MONOTONICITY",
+        "solver_message": "nonlinear solve deferred because nested dynamic-flux Jacobian is not step-converged",
+        "solver_success": false
+      },
+      "child_state": {
+        "coordinates": [
+          -0.000273437320109,
+          -0.000301834935546,
+          -1.3579080837e-05,
+          1.438523302e-06,
+          6.02796906e-07,
+          0.00113706953053,
+          -0.000552716438451,
+          -6.2203660876e-05,
+          -2.4542544919e-05,
+          0.000452615015703,
+          0.000443863778296,
+          1.818997736e-06,
+          1.489247906e-06
+        ],
+        "eta_Legendre_minimum": {
+          "chi": 0.425554517245348,
+          "minimum": 1.001276259985621
+        },
+        "multipliers": [
+          0.707329070857393,
+          0.485491185410909,
+          -7.5167615718e-05,
+          -3.3046259265e-05,
+          -0.750173088930661,
+          -0.204761691042695,
+          0.008344735620765,
+          0.008567807195291
+        ],
+        "raw_state_displacement_from_event": 0.0,
+        "velocities": [
+          -0.917650126632473,
+          -1.016142040020525,
+          -0.045192915861366,
+          0.012434831652799,
+          0.004684178855423,
+          3.571411775760344,
+          -2.214519000339353,
+          -0.644657689376653,
+          -0.251909627050395,
+          1.598540807729463,
+          1.628816820852315,
+          0.075841782048176,
+          0.015104383729887
+        ],
+        "velocity_norm": 5.022879742376498
+      },
+      "claim_boundary": "A_VALIDATED_FINITE_N4_EVENT_CONDITIONED_COMPLETE_CHILD_CAUCHY_STATE_IS_NOT_YET_A_PERSISTENT_CHILD_OR_AN_N_LIMIT_PROOF",
+      "complete_child_candidate_validated": false,
+      "event_definition_changed": false,
+      "event_to_child_map": "F_child=(THREE_TRACE,_NINE_CONSTRAINT,_TWO_CANONICAL_MOMENTUM,_TWO_DYNAMIC_CALDERON_FLUX_ROWS)",
+      "final_physical_rows": [
+        0.0,
+        0.0,
+        0.0,
+        4.5923e-11,
+        4.8241e-11,
+        -6.2769e-11,
+        1.494e-11,
+        -1.3351e-11,
+        -2.544e-12,
+        2.0544e-11,
+        -6.845e-12,
+        1.43227e-10,
+        0.01162655571866,
+        -0.002851440003139,
+        -117.85505248629899,
+        512.1024481958298
+      ],
+      "initial_physical_rows": [
+        0.0,
+        0.0,
+        0.0,
+        4.5923e-11,
+        4.8241e-11,
+        -6.2769e-11,
+        1.494e-11,
+        -1.3351e-11,
+        -2.544e-12,
+        2.0544e-11,
+        -6.845e-12,
+        1.43227e-10,
+        0.01162655571866,
+        -0.002851440003139,
+        -117.85505248629899,
+        512.1024481958298
+      ],
+      "persistence_evaluated": false,
+      "physical_equations_changed": false,
+      "physical_residuals": {
+        "dynamic_flux_8e-4_to_4e-4_relative_difference": 1.758408e-09,
+        "dynamic_flux_norm_at_4e-4": 525.4890396998883,
+        "maximum_nine_constraints": 1.43227e-10,
+        "maximum_trace": 0.0,
+        "momentum_norm": 0.011971111392457
+      },
+      "physical_row_count": 16,
+      "required_next": "DERIVE_A_CONVERGENCE_STABLE_DIRECTIONAL_DERIVATIVE_OF_THE_ACTION_OWNED_DYNAMIC_CALDERON_FLUX_MAP_BY_DIFFERENTIATING_THE_REGULAR_CHILD_BVP_OR_VALIDATING_THE_REQUIRED_HIGHER_VARIATION_BEFORE_ANOTHER_NONLINEAR_CHILD_SOLVE",
+      "source_event": "INDEPENDENT_N4_ADAPTIVE_44_POINT_QUADRATURE_VALIDATED_EVENT",
+      "validation": {
+        "child_eta_hyperregular": true,
+        "dynamic_flux_closed": false,
+        "dynamic_flux_difference_resolved": true,
+        "dynamic_flux_jacobian_step_converged": false,
+        "full_rank_local_chart": true,
+        "local_solve_converged": false,
+        "momentum_closed": false,
+        "nine_constraints_closed": true,
+        "nonzero_motion_retained": true,
+        "sixteen_physical_rows": true,
+        "trace_closed": true,
+        "validated_independent_N4_event_used": true
+      },
+      "whole_child_variable_count": 34
+    },
+    "N4_ordered_event_resolution_audit": {
+      "both_individually_constraint_eta_branch_admissible": true,
+      "classification": "INVALIDATED_AS_RESOLUTION_INDEPENDENT_EVENT",
+      "coarse": {
+        "event": {
+          "branch_index": 8,
+          "branch_overlap": 0.999836423001548,
+          "coordinates": [
+            -0.000744349585281,
+            -0.00081852005347,
+            -3.3366620615e-05,
+            3.833421113e-06,
+            1.454964103e-06,
+            0.003065769212745,
+            -0.001579580600344,
+            -0.000158343959549,
+            -5.9000848843e-05,
+            0.001219847310056,
+            0.00118206071287,
+            -1.0074041279e-05,
+            1.982368686e-06
+          ],
+          "eta_Legendre": {
+            "chi": 0.425934995250265,
+            "minimum": 1.001582101097461
+          },
+          "event_time": 0.000831192689545,
+          "lambda_directional_derivative": 2.187823492460908,
+          "lambda_ordered": 1e-15,
+          "left_lambda_ordered": -2.531150429e-06,
+          "locator": "ONE_SIDED_EXACT_FLOW_TANGENT_WITH_EXISTING_SOBOLEV_CONSTRAINT_PROJECTION_AND_TRACKED_ROOT",
+          "maximum_constraint_residual": 2.178e-12,
+          "multipliers": [
+            0.698268168247745,
+            0.482333612831955,
+            0.000147406829562,
+            4.5186245338e-05,
+            -0.747242480660642,
+            -0.191458514393381,
+            0.011649198366979,
+            0.009814700304881
+          ],
+          "negative_inertia_at_selected_side": 8,
+          "negative_inertia_left": 9,
+          "offset_from_last_regular_state": 1.192689545e-06,
+          "velocities": [
+            -0.911523793931606,
+            -1.00284396161034,
+            -0.036551302677832,
+            0.013760904251965,
+            0.004775208497464,
+            3.430339656455283,
+            -2.444307428777523,
+            -0.70454911165122,
+            -0.26662996867323,
+            1.575520159036373,
+            1.585730178546437,
+            0.05493957840107,
+            0.012222636542738
+          ]
+        },
+        "integration_obstruction": null,
+        "maximum_Dirac_condition_number": 228124630.66253787,
+        "maximum_constraint_residual": 1.97456e-10,
+        "ordered_event_found": true,
+        "ordered_event_validated_at_this_resolution": true,
+        "steps_completed": 83,
+        "time_step": 1e-05
+      },
+      "event_state_relative_H6_product_difference": 0.085501786026529,
+      "event_time_absolute_difference": 0.000529227518013,
+      "event_time_relative_difference": 0.636708581138976,
+      "fine": {
+        "event": {
+          "branch_index": 8,
+          "branch_overlap": 0.998987962212891,
+          "coordinates": [
+            -0.000271885842969,
+            -0.000300118626328,
+            -1.3502551356e-05,
+            1.419941393e-06,
+            5.95700116e-07,
+            0.001130918713386,
+            -0.00054910780389,
+            -6.1252776435e-05,
+            -2.4171686248e-05,
+            0.000449977250123,
+            0.000441194147553,
+            1.713623554e-06,
+            1.466935558e-06
+          ],
+          "eta_Legendre": {
+            "chi": 0.425931125051293,
+            "minimum": 1.001589560471969
+          },
+          "event_time": 0.000301965171532,
+          "lambda_directional_derivative": 1.00590315589535,
+          "lambda_ordered": -1.2e-14,
+          "left_lambda_ordered": -6.517540174e-06,
+          "locator": "ONE_SIDED_EXACT_FLOW_TANGENT_WITH_EXISTING_SOBOLEV_CONSTRAINT_PROJECTION_AND_TRACKED_ROOT",
+          "maximum_constraint_residual": 6.5955e-11,
+          "multipliers": [
+            0.705176959123165,
+            0.485230849150544,
+            -5.1179429672e-05,
+            -2.4346634936e-05,
+            -0.748585494733897,
+            -0.202117022129544,
+            0.007759976782885,
+            0.007712789081632
+          ],
+          "negative_inertia_at_selected_side": 9,
+          "negative_inertia_left": 9,
+          "offset_from_last_regular_state": 6.965171532e-06,
+          "velocities": [
+            -0.914639983401883,
+            -1.01204783304217,
+            -0.044760875697211,
+            0.011270545195017,
+            0.004260394867357,
+            3.592691523914683,
+            -2.161655431403428,
+            -0.577582623856733,
+            -0.225465884873974,
+            1.580523394911612,
+            1.60062941602211,
+            0.063931593752857,
+            0.013371734496977
+          ]
+        },
+        "integration_obstruction": null,
+        "maximum_Dirac_condition_number": 88747323.06014743,
+        "maximum_constraint_residual": 1.99539e-10,
+        "ordered_event_found": true,
+        "ordered_event_validated_at_this_resolution": true,
+        "steps_completed": 59,
+        "time_step": 5e-06
+      },
+      "numerical_reliability_thresholds_not_physics": true,
+      "physical_equations_changed": false,
+      "physical_gates_changed": false,
+      "required_next": "ACTION_EQUIVALENT_ADAPTIVE_STEP_DOUBLING_CONSTRAINT_PROJECTED_N4_FLOW_BEFORE_ANY_CHILD_RECONSTRUCTION",
+      "resolution_independent_event_validated": false
+    },
+    "active_dependency": "DERIVE_A_CONVERGENCE_STABLE_DIRECTIONAL_DERIVATIVE_OF_THE_ACTION_OWNED_DYNAMIC_CALDERON_FLUX_MAP_BY_DIFFERENTIATING_THE_REGULAR_CHILD_BVP_OR_VALIDATING_THE_REQUIRED_HIGHER_VARIATION_BEFORE_ANOTHER_NONLINEAR_CHILD_SOLVE",
     "cross_resolution_measurements": {
       "N4_vs_N5_common_N2_fiber_relative_difference": 0.746579156611337,
       "N4_vs_N5_rate_comparison_is_physical": false,
@@ -406,9 +1190,10 @@
         "classification": "VALIDATED"
       },
       "N5_confirms_or_contradicts_N4": {
-        "answer": "CONTRADICTS_AT_THE_CURRENT_DIRECT_RESET",
+        "answer": "CURRENT_BRANCH_INADMISSIBLE_NO_CROSS_RESOLUTION_VERDICT",
         "blocker": "N5_DENSE_ETA_LEGENDRE_MINIMUM_IS_NONPOSITIVE",
-        "classification": "RECLASSIFIED",
+        "classification": "OPEN",
+        "eta_classification": "ETA-D",
         "event_child_confirmation": false,
         "physical_reset_eta_admissible": false,
         "structural_confirmation": "SAME_ACTION,_INDEPENDENT_CONSTRAINT_SURFACE,_AND_SEVEN_ROW_BOUNDARY_CORE"
@@ -420,10 +1205,12 @@
         "validated_extent": "RESET_AND_ONE_CONSTRAINT_CONSISTENT_FORWARD_TANGENT_FRAME"
       },
       "ordered_event_exists": {
+        "N4_adaptive_quadrature_audit": "VALIDATED_N4_ADAPTIVE_QUADRATURE_INDEPENDENT_ORDERED_EVENT",
         "N4_forward_local_bracket": false,
+        "N4_ordered_event_exists": true,
         "N5_forward_local_bracket": false,
-        "claim_boundary": "A_LOCAL_BRACKET_VALIDATES_EXISTENCE_ONLY_IF_TRUE;_OTHERWISE_A_BOUNDED_LOCAL_PROBE_DOES_NOT_PROVE_ABSENCE",
-        "classification": "OPEN"
+        "claim_boundary": "VALIDATES_THE_ORDERED_EVENT_FOR_THE_INDEPENDENT_N4_TRAJECTORY_ONLY;_DOES_NOT_IMPLY_ENCLOSURE_OR_A_CHILD",
+        "classification": "VALIDATED"
       },
       "period_scale_w_v_survive_resolution": {
         "classification": "OPEN",
@@ -431,6 +1218,11 @@
         "scale_u_w_v_local_rates_measured": true
       },
       "same_rank14_complete_child_reconstructs": {
+        "N4_active_blocker": "DERIVE_A_CONVERGENCE_STABLE_DIRECTIONAL_DERIVATIVE_OF_THE_ACTION_OWNED_DYNAMIC_CALDERON_FLUX_MAP_BY_DIFFERENTIATING_THE_REGULAR_CHILD_BVP_OR_VALIDATING_THE_REQUIRED_HIGHER_VARIATION_BEFORE_ANOTHER_NONLINEAR_CHILD_SOLVE",
+        "N4_complete_child_candidate_validated": false,
+        "N4_dynamic_flux_jacobian_step_converged": false,
+        "N4_physical_row_count": 16,
+        "N4_structural_row_rank": 16,
         "answer": null,
         "classification": "RECLASSIFIED",
         "literal_rank14_survives": false,
@@ -438,7 +1230,526 @@
         "reconstruction_gate": "OPEN_UNTIL_AN_INDEPENDENT_ORDERED_EVENT_SUPPLIES_EVENT_CONDITIONED_CHILD_DATA"
       }
     },
-    "scientific_status": "N4_INDEPENDENT_ACTION_DERIVATION_VALIDATED;_N5_DIRECT_RESET_CONSTRAINTS_CLOSE_BUT_FAILS_THE_EXISTING_ETA_DOMAIN;_EVENT,_COMPLETE_CHILD,_FULL_MOVIE,_AND_PERIOD_REMAIN_UNPROMOTED"
+    "scientific_status": "N4_INDEPENDENT_ACTION_DERIVATION_VALIDATED;_N5_DIRECT_RESET_CONSTRAINTS_CLOSE_BUT_THE_CURRENT_BRANCH_FAILS_THE_EXISTING_ETA_DOMAIN_WITH_OTHER_BRANCHES_OPEN;_EVENT,_COMPLETE_CHILD,_FULL_MOVIE,_AND_PERIOD_REMAIN_UNPROMOTED"
+  },
+  "ingredient_process_ownership_audit": {
+    "FULL_BHSM_COMPLETE": false,
+    "cross_resolution_stage_status": {
+      "N3": {
+        "CHILD_STATUS": "OPEN",
+        "EVENT_STATUS": "OPEN",
+        "EVOLUTION_STATUS": "OPEN",
+        "PERSISTENCE_STATUS": "OPEN",
+        "RESET_CONSTRUCTION": "PASS",
+        "RESET_DOMAIN_STATUS": "PASS",
+        "note": "CANDIDATE_CHILD_AND_POSITIVE_DURATION_GATES_PASS,_BUT_THE_EXACT_F376_ROOT_AND_FINAL_EVENT_REMAIN_OPEN"
+      },
+      "N4": {
+        "CHILD_STATUS": "OPEN",
+        "EVENT_STATUS": "PASS",
+        "EVOLUTION_STATUS": "PASS_TO_FIRST_ORDERED_EVENT",
+        "PERSISTENCE_STATUS": "NOT_YET_APPLICABLE",
+        "RESET_CONSTRUCTION": "PASS",
+        "RESET_DOMAIN_STATUS": "PASS",
+        "note": "THE_INDEPENDENT_ADAPTIVE_EVENT_IS_TIME_CONTROL_AND_QUADRATURE_CONVERGED;_THE_16_ROW_CHILD_MAP_IS_STRUCTURALLY_FULL_RANK_BUT_ITS_DYNAMIC_FLUX_JACOBIAN_IS_NOT_STEP_CONVERGED_AND_NO_CHILD_IS_PROMOTED"
+      },
+      "N5": {
+        "CHILD_STATUS": "NOT_YET_APPLICABLE",
+        "EVENT_STATUS": "NOT_YET_APPLICABLE",
+        "EVOLUTION_STATUS": "NOT_YET_APPLICABLE",
+        "PERSISTENCE_STATUS": "NOT_YET_APPLICABLE",
+        "RESET_CONSTRUCTION": "PASS",
+        "RESET_DOMAIN_STATUS": "FAIL",
+        "note": "FAIL_APPLIES_ONLY_TO_THE_CURRENT_INDEPENDENT_RESET_BRANCH;_OTHER_N5_BRANCHES_HAVE_NOT_BEEN_CLASSIFIED"
+      }
+    },
+    "eta_audit": {
+      "A_hard_on_every_regular_physical_state_including_reset": true,
+      "B_later_stage_only": false,
+      "C_not_checked": [
+        "ETA_FIELD_VALUE_ITSELF",
+        "ORIENTATION",
+        "NORMALIZATION",
+        "ENCLOSURE_COMPLETION"
+      ],
+      "C_quantity_checked": "POINTWISE_MINIMUM_OF_L_eta=kappa1+X_eta^3,_WITH_kappa1=1_IN_THE_CURRENT_NORMALIZATION",
+      "D_reset_must_lie_in_domain": true,
+      "E_action_density_algebraically_defined_outside": true,
+      "E_regular_Euler_Dirac_Legendre_chart_physical_outside": false,
+      "F_N3_N4_temporal_interpretation_consistent": true,
+      "F_formal_projection_enforces_eta_domain": false,
+      "classification": "ETA-D",
+      "classification_text": "CURRENT_N5_BRANCH_INADMISSIBLE_BUT_OTHER_BRANCHES_OPEN",
+      "implementation_gap": "exact_action_jet_at_state_AND_THE_SOBLEV_CONSTRAINT_PROJECTION_CAN_RETURN_FORMAL_ROWS_OUTSIDE_L_eta>0;_THE_INDEPENDENT_DENSE_DOMAIN_CERTIFICATE_MUST_REJECT_SUCH_A_STATE",
+      "mathematical_reason": "L_eta_IS_THE_ETA_NORMAL_VELOCITY_LEGENDRE_PRINCIPAL_FACTOR;_POSITIVITY_OWNS_THE_REGULAR_HYPERREGULAR_PHASE_SPACE,_WHILE_THE_POLYNOMIAL_F(X_eta)_CAN_STILL_BE_FORMALLY_EVALUATED",
+      "why_not_ETA_A": "NO_DERIVATION_OR_SEARCH_PROVES_THAT_EVERY_INDEPENDENT_N5_RESET_BRANCH_FAILS_THE_DOMAIN",
+      "why_not_ETA_C": "THE_DENSE_CERTIFICATE_EVALUATES_THE_SAME_L_eta_OBJECT;_THE_MISMATCH_IS_MISSING_ENFORCEMENT_IN_THE_FORMAL_JET_PROJECTION"
+    },
+    "exact_next_calculation": "DERIVE_A_CONVERGENCE_STABLE_DIRECTIONAL_DERIVATIVE_OF_THE_N4_ACTION_OWNED_DYNAMIC_CALDERON_FLUX_MAP_ON_THE_REGULAR_BROKEN_CHILD_GERM_BEFORE_ANOTHER_NONLINEAR_CHILD_SOLVE;_DO_NOT_ADVANCE_THE_CURRENT_N5_BRANCH",
+    "ingredient_vs_process_test": {
+      "complete_child": "S5_OUTCOME_OF_CONSTITUENTS_PLUS_EVOLUTION_PLUS_MATCHING",
+      "enclosure": "PROCESS_OUTCOME_NOT_INGREDIENT",
+      "new_enclosure_trapping_persistence_field_required": false,
+      "persistence": "S6_OUTCOME_OR_GATE_NOT_FIELD",
+      "surface_matching": "EVENT_TO_CHILD_COMPATIBILITY_NOT_CONSTITUENT"
+    },
+    "ordered_event_ownership": {
+      "E_R_zero_implies_topological_or_geometric_closure": false,
+      "E_R_zero_is_enclosure_completion": false,
+      "classification": "EVENT_ENCLOSURE_EQUIVALENCE_OPEN",
+      "event_meaning": "ISOLATED_ORDERED_EULER_DIRAC_HESSIAN_SOFT_MODE_REACHES_ZERO",
+      "historical_eta_zero_event_superseded": true,
+      "historical_note": "V15_52_V15_72_ETA_ZERO_EVENT_IS_NOT_THE_RETAINED_V15_79_PLUS_ORDERED_RAYLEIGH_EVENT",
+      "surface_matching_implied_by_E_R_zero": false,
+      "surface_matching_relation": "SEPARATE_ACTION_DERIVED_EVENT_TO_CHILD_BOUNDARY_CANONICAL_RELATION_USING_TRACE_AND_FLUX_DATA"
+    },
+    "ownership_ledger": [
+      {
+        "derivation": "DEGREE_ONE_MAP_IN_THE_RETAINED_FIELD_TUPLE;_ITS_POINTWISE_LEGENDRE_FACTOR_DEFINES_THE_REGULAR_DOMAIN",
+        "object": "eta",
+        "primary_role": "CONSTITUENT",
+        "secondary_roles": [
+          "DOMAIN_CONDITION"
+        ],
+        "timing": [
+          "AT_ALL_STAGES"
+        ]
+      },
+      {
+        "derivation": "ACTION_OWNED_MATERIAL_RESPONSE_SIGMA=C_J[f]-1/2,_NOT_AN_ENCLOSURE_FIELD",
+        "object": "sigma",
+        "primary_role": "CONSTITUENT",
+        "secondary_roles": [
+          "DERIVED_CHILD_CONDITION"
+        ],
+        "timing": [
+          "AT_ALL_STAGES"
+        ]
+      },
+      {
+        "derivation": "LOG_RADIUS_COLLECTIVE_GEOMETRY_COORDINATE",
+        "object": "geometric_scale",
+        "primary_role": "CONSTITUENT",
+        "secondary_roles": [],
+        "timing": [
+          "AT_ALL_STAGES"
+        ]
+      },
+      {
+        "derivation": "RETAINED_REGULAR_SPECTRAL_METRIC_SHAPE_FIELDS",
+        "object": "u_w_v_geometry",
+        "primary_role": "CONSTITUENT",
+        "secondary_roles": [],
+        "timing": [
+          "AT_ALL_STAGES"
+        ]
+      },
+      {
+        "derivation": "METRIC_MULTIPLIER_ENFORCING_HAMILTONIAN_ROWS",
+        "object": "lapse",
+        "primary_role": "CONSTITUENT",
+        "secondary_roles": [
+          "EVOLUTION_LAW"
+        ],
+        "timing": [
+          "AT_ALL_STAGES"
+        ]
+      },
+      {
+        "derivation": "METRIC_MULTIPLIER_ENFORCING_MOMENTUM_ROWS",
+        "object": "shift",
+        "primary_role": "CONSTITUENT",
+        "secondary_roles": [
+          "EVOLUTION_LAW"
+        ],
+        "timing": [
+          "AT_ALL_STAGES"
+        ]
+      },
+      {
+        "derivation": "EULER_LAGRANGE_DIRAC_KKT_EQUATIONS_OF_ONE_ACTION",
+        "object": "action_stationarity",
+        "primary_role": "EVOLUTION_LAW",
+        "secondary_roles": [
+          "DERIVED_CHILD_CONDITION"
+        ],
+        "timing": [
+          "AT_ALL_STAGES"
+        ]
+      },
+      {
+        "derivation": "INITIAL_POINT_ON_THE_2N_PLUS_1_CONSTRAINT_SURFACE",
+        "object": "reset_constraints",
+        "primary_role": "DOMAIN_CONDITION",
+        "secondary_roles": [],
+        "timing": [
+          "RESET_ONLY"
+        ]
+      },
+      {
+        "derivation": "ZERO_OF_AN_ISOLATED_ORDERED_EULER_DIRAC_HESSIAN_EIGENVALUE_WITH_RAYLEIGH_DERIVATIVE",
+        "object": "ordered_Rayleigh_event",
+        "primary_role": "PROCESS_MILESTONE",
+        "secondary_roles": [
+          "DIAGNOSTIC"
+        ],
+        "timing": [
+          "EVENT_ONLY"
+        ]
+      },
+      {
+        "derivation": "FINITE_LOCAL_NONLINEAR_PROCESS_OUTCOME;_NO_ENCLOSURE_FIELD_OR_EVENT_EQUIVALENCE_HAS_BEEN_DERIVED",
+        "object": "enclosure",
+        "primary_role": "PROCESS_MILESTONE",
+        "secondary_roles": [],
+        "timing": [
+          "UNRESOLVED_FROM_DERIVATION"
+        ]
+      },
+      {
+        "derivation": "BOUNDARY_CANONICAL_RELATION_USING_S4_EVENT_DATA",
+        "object": "surface_matching",
+        "primary_role": "DERIVED_CHILD_CONDITION",
+        "secondary_roles": [],
+        "timing": [
+          "CHILD_ONLY"
+        ]
+      },
+      {
+        "derivation": "GAMMA0_EVENT_MINUS_GAMMA0_CHILD_EQUALS_ZERO",
+        "object": "trace_matching",
+        "primary_role": "DERIVED_CHILD_CONDITION",
+        "secondary_roles": [],
+        "timing": [
+          "CHILD_ONLY"
+        ]
+      },
+      {
+        "derivation": "N3_TWO_N_PLUS_ONE_CHILD_CONSTRAINT_ROWS",
+        "object": "seven_child_constraints",
+        "primary_role": "DERIVED_CHILD_CONDITION",
+        "secondary_roles": [
+          "DOMAIN_CONDITION"
+        ],
+        "timing": [
+          "CHILD_ONLY"
+        ]
+      },
+      {
+        "derivation": "ACTION_LEGENDRE_CANONICAL_MOMENTUM_CONTINUITY",
+        "object": "momentum_matching",
+        "primary_role": "DERIVED_CHILD_CONDITION",
+        "secondary_roles": [],
+        "timing": [
+          "CHILD_ONLY"
+        ]
+      },
+      {
+        "derivation": "GHY_CALDERON_DYNAMIC_FLUX_BALANCE",
+        "object": "flux_matching",
+        "primary_role": "DERIVED_CHILD_CONDITION",
+        "secondary_roles": [],
+        "timing": [
+          "CHILD_ONLY"
+        ]
+      },
+      {
+        "derivation": "POSITIVE_DURATION_CONSTRAINT_SOLVED_RELATIVE_EVOLUTION_OR_THE_RETAINED_RELATIVE_PERIODIC_FLOQUET_CLASS",
+        "object": "persistence",
+        "primary_role": "DERIVED_CHILD_CONDITION",
+        "secondary_roles": [
+          "PROCESS_MILESTONE"
+        ],
+        "timing": [
+          "PERSISTENCE_ONLY"
+        ]
+      },
+      {
+        "derivation": "WITNESS_OF_NONTRIVIAL_RELATIVE_EVOLUTION;_MOTION_ITSELF_IS_NOT_A_DEFECT",
+        "object": "nonzero_motion",
+        "primary_role": "DIAGNOSTIC",
+        "secondary_roles": [
+          "DERIVED_CHILD_CONDITION"
+        ],
+        "timing": [
+          "CHILD_ONLY",
+          "PERSISTENCE_ONLY"
+        ]
+      },
+      {
+        "derivation": "WHOLE_CONSTRAINT_SOLVED_BOUNDARY_MATCHED_CHILD",
+        "object": "complete_child",
+        "primary_role": "PROCESS_MILESTONE",
+        "secondary_roles": [
+          "DERIVED_CHILD_CONDITION"
+        ],
+        "timing": [
+          "CHILD_ONLY"
+        ]
+      },
+      {
+        "derivation": "KKT_MULTIPLIER_ENFORCING_THE_EXISTING_EVENT_ROW;_NOT_A_NEW_FIELD_OR_PHYSICAL_ACCEPTANCE_LAW",
+        "object": "event_multiplier",
+        "primary_role": "EVOLUTION_LAW",
+        "secondary_roles": [],
+        "timing": [
+          "EVENT_ONLY"
+        ]
+      },
+      {
+        "derivation": "LOCAL_SOLVABILITY_RANK_OF_THE_N3_THREE_TRACE_PLUS_SEVEN_CONSTRAINT_PLUS_TWO_MOMENTUM_PLUS_TWO_FLUX_MAP",
+        "object": "child_rank_14_condition",
+        "primary_role": "DIAGNOSTIC",
+        "secondary_roles": [
+          "DERIVED_CHILD_CONDITION"
+        ],
+        "timing": [
+          "CHILD_ONLY"
+        ]
+      },
+      {
+        "derivation": "ACTION_DERIVED_NOETHER_CANONICAL_OR_QUASILOCAL_DATA;_NOT_AN_ENERGY_SURROUNDING_FIELD",
+        "object": "surrounding_energy_or_flux",
+        "primary_role": "DIAGNOSTIC",
+        "secondary_roles": [
+          "EVOLUTION_LAW"
+        ],
+        "timing": [
+          "PRE_EVENT",
+          "EVENT_ONLY"
+        ]
+      },
+      {
+        "derivation": "NO_INDEPENDENT_TRAPPING_FIELD_OR_CLOSED_GATE_EXISTS",
+        "object": "trapping_of_reconstructed_spacetime",
+        "primary_role": "PROCESS_MILESTONE",
+        "secondary_roles": [],
+        "timing": [
+          "UNRESOLVED_FROM_DERIVATION"
+        ]
+      }
+    ],
+    "sequencing_audit": {
+      "N4_adaptive_event_time_and_quadrature_converged": true,
+      "N4_allowed_method": "EXISTING_EXACT_EULER_DIRAC_FLOW_WITH_SMALL_OR_ADAPTIVE_STEPS,_SOBOLEV_CONSTRAINT_PROJECTION,_DENSE_ETA_CERTIFICATION,_AND_ORDERED_BRANCH_OVERLAP",
+      "N4_child_dynamic_flux_jacobian_step_converged": false,
+      "N4_complete_child_validated": false,
+      "N4_fixed_step_event_resolution_converged": false,
+      "N4_fixed_step_event_times": {
+        "h_1e-5": 0.000831192689545,
+        "h_5e-6": 0.000301965171532
+      },
+      "N4_needs_different_physics": false,
+      "N4_needs_manifold_preserving_evolution": true,
+      "N4_ordered_event_validated": true,
+      "N5_remains_true_physical_warning": true,
+      "N5_warning_scope": "CURRENT_DIRECT_RESET_BRANCH_ONLY",
+      "demonstrated_bugs": [
+        "PREMATURELY_LABELING_THE_CURRENT_N5_RESET_AS_A_CROSS_RESOLUTION_CONTRADICTION_INSTEAD_OF_ETA_D",
+        "FORMAL_EXACT_JET_CONSTRAINT_PROJECTION_CAN_CLOSE_ROWS_WITHOUT_ENFORCING_THE_EXISTING_POINTWISE_ETA_DOMAIN",
+        "THE_N4_6e-4_TRIAL_TARGETED_AN_S4_SPECTRAL_CONDITION_AFTER_LEAVING_THE_EARLIER_CONSTRAINT_AND_DOMAIN_MANIFOLD",
+        "HISTORICAL_ETA_ZERO_EVENT_LANGUAGE_MUST_NOT_BE_APPLIED_TO_THE_CURRENT_ORDERED_RAYLEIGH_EVENT",
+        "N4_FIXED_STEP_PROJECTED_RK4_EVENT_TIME_IS_NOT_RESOLUTION_CONVERGED_AND_CANNOT_BE_PROMOTED"
+      ]
+    },
+    "source_trace": {
+      "complete_child_rows": "aether_n3_complete_child_chart_reconstruction_v18_24.py::_child_rows",
+      "current_event": "aether_actual_dirac_event_pencil_v15_79.py::event_pencil_diagnostics",
+      "enclosure_claim_boundary": "BHSM_LOCAL_ENVIRONMENT_FINITE_TIME_ENCAPSULATION_GATE_V14_94.md",
+      "eta_boundary_transversality": "aether_n3_eta_boundary_transversality_v16_10.py::boundary_transversality",
+      "eta_domain_exit": "aether_n3_terminal_joint_pushforward_v16_09.py::domain_exit_convergence",
+      "eta_phase_space_domain": "aether_sobolev_galerkin_pencil_lift_v15_81.py::generalized_lagrangian",
+      "event_child_relation": "aether_n3_event_complete_child_correspondence_v17_84.py::event_to_child_correspondence_derivation",
+      "field_action_and_child_definition": "bhsm_complete_child_mathematical_system_v15_39.py::complete_child_configuration,complete_child_functional,variational_problem",
+      "persistence": "aether_n3_chain_trial_complete_child_promotion_v18_06.py::chain_trial_complete_child_promotion"
+    },
+    "validation": {
+      "N5_classified_ETA_D": true,
+      "eta_is_hard_from_reset": true,
+      "event_not_equated_to_enclosure": true,
+      "every_object_has_exactly_one_primary_role": true,
+      "later_N5_stages_not_failed_early": true,
+      "no_process_field_added": true
+    },
+    "validation_passed": true
+  },
+  "physical_scale_accessibility_audit": {
+    "FULL_BHSM_COMPLETE": false,
+    "action_sector_ownership": {
+      "C_ES_formula_if_prerequisite_closes": "(H_E-H_ST)/(H_E+H_ST)",
+      "C_ES_status": "OPEN_UNDEFINED_NOT_ZERO",
+      "H_E_and_H_ST_nonnegative": false,
+      "H_E_canonically_defined": false,
+      "H_ST_canonically_defined": false,
+      "Hamiltonian_constraint_present": true,
+      "Xi_ES_status": "OPEN_UNDEFINED",
+      "blocking_mathematical_object": "ACTION_DERIVED_GAUGE_COMPATIBLE_SECTOR_PROJECTORS_OR_AN_EQUIVALENT_ON_SHELL_RELATIVE_HAMILTONIAN_DECOMPOSITION_THAT_PROVES_TWO_SAME_DIMENSION_NONNEGATIVE_SECTOR_FUNCTIONALS",
+      "canonical_sector_projectors_derived": false,
+      "forbidden_shortcut": "DO_NOT_GROUP_SIGNED_LAGRANGIAN_TERMS_BY_POST_HOC_PHYSICAL_INTUITION_OR_TAKE_ABSOLUTE_VALUES",
+      "high_low_high_hypothesis_status": "UNTESTED",
+      "local_gravitational_energy_positive_definite": false,
+      "retained_action_terms": [
+        {
+          "action_ownership": "BULK_GRAVITY_PLUS_LAPSE_GRADIENT",
+          "reason": "CONSTRAINT_AND_GEOMETRY_ARE_MIXED_BY_THE_ADM_SPLIT",
+          "separable_energy_or_spacetime_owner": false,
+          "sign": "INDEFINITE",
+          "term": "spatial_gravity"
+        },
+        {
+          "action_ownership": "BULK_INTRINSIC_GEOMETRY",
+          "reason": "NOT_A_SEPARATELY_CONSERVED_POSITIVE_HAMILTONIAN_SECTOR",
+          "separable_energy_or_spacetime_owner": false,
+          "sign": "POSITIVE_IN_THIS_REGULAR_CHART_BEFORE_LEGENDRE_SIGN",
+          "term": "intrinsic_curvature"
+        },
+        {
+          "action_ownership": "BULK_GEOMETRIC_POTENTIAL",
+          "reason": "LEGENDRE_SIGN_DOES_NOT_DEFINE_AN_ORTHOGONAL_SECTOR",
+          "separable_energy_or_spacetime_owner": false,
+          "sign": "NEGATIVE_LAGRANGIAN_TERM",
+          "term": "cosmological"
+        },
+        {
+          "action_ownership": "DEGREE_ONE_ETA_COUPLED_TO_THE_METRIC",
+          "reason": "X_eta_CONTAINS_BOTH_SPATIAL_GEOMETRY_AND_NORMAL_FLOW",
+          "separable_energy_or_spacetime_owner": false,
+          "sign": "INDEFINITE_ON_THE_FULL_L_eta_POSITIVE_DOMAIN",
+          "term": "eta_potential"
+        },
+        {
+          "action_ownership": "GRAVITATIONAL_KINETIC_SUPERMETRIC",
+          "reason": "THE_CONFORMAL_DIRECTION_PREVENTS_POSITIVE_LOCAL_ENERGY",
+          "separable_energy_or_spacetime_owner": false,
+          "sign": "INDEFINITE_DEWITT_FORM",
+          "term": "adm_kinetic"
+        },
+        {
+          "action_ownership": "FIXED_CHARGE_ROUTHIAN",
+          "reason": "ENERGY_CANDIDATE_BUT_ITS_INERTIA_IS_METRIC_ETA_MIXED",
+          "separable_energy_or_spacetime_owner": false,
+          "sign": "NEGATIVE_IN_LAGRANGIAN_POSITIVE_FIXED_CHARGE_ENERGY",
+          "term": "hopf_inertia"
+        },
+        {
+          "action_ownership": "BOUNDARY_STANDARD_MODEL_CASIMIR_SOURCE",
+          "reason": "BOUNDARY_ENERGY_AND_RECONSTRUCTED_RADIUS_ARE_COUPLED",
+          "separable_energy_or_spacetime_owner": false,
+          "sign": "NEGATIVE_IN_THE_RETAINED_LAGRANGIAN_CONVENTION",
+          "term": "boundary_casimir"
+        }
+      ],
+      "same_dimension_action_terms_available": true
+    },
+    "event_approach_metric_audit": {
+      "allowed_current_diagnostics": [
+        "E_R",
+        "CORRECTED_DIRECTIONAL_DERIVATIVE",
+        "BRANCH_OVERLAP",
+        "CONSTRAINT_RESIDUAL",
+        "L_eta_MINIMUM"
+      ],
+      "chi_E_formula_candidate": "-<grad(E_R),z_dot>_G/(norm_G(grad(E_R))*norm_G(z_dot))",
+      "chi_E_status": "OPEN_UNDEFINED_UNTIL_G_IS_DERIVED",
+      "corrected_directional_derivative_available": true,
+      "event_is_enclosure": false,
+      "existing_H6_Sobolev_metric_role": "REGULARITY_TOPOLOGY_AND_NUMERICAL_NESTED_PROJECTION_METRIC",
+      "existing_H6_metric_may_be_called_action_metric": false,
+      "ordered_event_scalar": "E_R=TRACKED_ORDERED_DIRAC_HESSIAN_EIGENVALUE",
+      "positive_action_metric_G_derived": false
+    },
+    "first_action_owned_blocker": "ACTION_DERIVED_GAUGE_COMPATIBLE_SECTOR_PROJECTORS_OR_AN_EQUIVALENT_ON_SHELL_RELATIVE_HAMILTONIAN_DECOMPOSITION_THAT_PROVES_TWO_SAME_DIMENSION_NONNEGATIVE_SECTOR_FUNCTIONALS",
+    "physical_scale_coordinate": {
+      "N_role": "SPECTRAL_APPROXIMATION_AT_FIXED_PHYSICAL_STATE",
+      "R_star": 2.023270825544127,
+      "R_star_action_relation": "R_star^6=343/(5*kappa1)",
+      "action_source": "aether_cycle_spread_concentration_v15_9.py::critical_radius;_aether_sobolev_galerkin_pencil_lift_v15_81.py::generalized_lagrangian",
+      "canonical_reset_is_only_currently_derived_reset_scale": true,
+      "canonical_reset_rho": 0.0,
+      "current_normalization": "kappa1=1",
+      "definition": "rho=q_scale=log(R_phys/R_star)",
+      "dimensionful_bridge_to_meters": "OPEN",
+      "free_post_reset_scale_coordinates_are_dynamical_history": true,
+      "human_scale_claim_allowed": false,
+      "independent_particle_scale_parameter_added": false,
+      "numerical_resolution_N_is_rho": false,
+      "reconstruction": "R_phys=R_star*exp(q_scale)",
+      "symbol": "rho"
+    },
+    "scale_sweep_falsification_protocol": {
+      "classification": "FALSIFICATION_PROTOCOL_DERIVED_EXECUTION_BLOCKED",
+      "empirical_particle_data_used": false,
+      "event_association_is_separate_hypothesis": true,
+      "event_association_promotion_rule": "VALID_ORDERED_EVENT_ACCESSIBILITY_MUST_COVARY_WITH_C_ES_UNDER_A_PREDECLARED_STATISTIC_AND_SURVIVE_N_AND_TIME_REFINEMENT",
+      "evolution": "UNCHANGED_EULER_DIRAC_FLOW_WITH_MANIFOLD_PROJECTION_AND_LOCAL_ERROR_CONTROL_USED_ONLY_FOR_NUMERICAL_RELIABILITY",
+      "execution_blockers": [
+        "CANONICAL_NONNEGATIVE_H_E_H_ST_DECOMPOSITION",
+        "ACTION_DERIVED_ADMISSIBLE_ONE_PARAMETER_SCALE_FAMILY"
+      ],
+      "fixed_physics_across_rho": [
+        "UNCHANGED_ACTION",
+        "UNCHANGED_COEFFICIENTS",
+        "ACTION_DERIVED_BOUNDARY_DATA",
+        "SAME_TOPOLOGICAL_SECTOR",
+        "SAME_EXISTING_CONSTRAINT_AND_EVENT_AND_CHILD_DEFINITIONS"
+      ],
+      "global_encapsulation_cost_implemented": false,
+      "high_low_high_falsifiers": [
+        "NO_TWO_C_ES_ZERO_CROSSINGS_ON_THE_DERIVED_ADMISSIBLE_INTERVAL",
+        "THE_INTERMEDIATE_NEGATIVE_INTERVAL_DISAPPEARS_UNDER_REFINEMENT",
+        "EXTREME_POSITIVE_SIGNS_FAIL_RESOLUTION_CONVERGENCE",
+        "THE_REQUIRED_SCALE_FAMILY_LEAVES_THE_ETA_OR_CONSTRAINT_DOMAIN"
+      ],
+      "high_low_high_promotion_rule": "REQUIRE_POSITIVE_C_ES_ON_TWO_VALIDATED_SCALE_EXTREMES_AND_A_NEGATIVE_OPEN_INTERVAL_BETWEEN_TWO_CONVERGED_ZERO_CROSSINGS;_THE_SIGN_TOPOLOGY_MUST_SURVIVE_GRID_AND_N_REFINEMENT",
+      "meters_or_human_scale_interpretation_allowed": false,
+      "new_equations_or_acceptance_gates_added": false,
+      "numerical_convergence_checks": [
+        "SPECTRAL_N",
+        "QUADRATURE",
+        "TIME_STEP_LOCAL_ERROR",
+        "EVENT_TIME",
+        "EVENT_STATE",
+        "ORDERED_BRANCH_OVERLAP"
+      ],
+      "per_rho_measurements_after_sector_derivation": [
+        "rho",
+        "H_E",
+        "H_ST",
+        "C_ES",
+        "E_R",
+        "CORRECTED_dE_R_dt",
+        "L_eta_MIN",
+        "EVENT_STATUS"
+      ],
+      "per_rho_pre_evolution_gates": [
+        "INDEPENDENT_CONSTRAINT_CLOSURE",
+        "DENSE_L_eta=kappa1+X_eta^3_POSITIVITY",
+        "REGULAR_ACTION_LEGENDRE_CHART"
+      ],
+      "post_event_only": [
+        "EVENT_TO_COMPLETE_CHILD_BOUNDARY_BVP",
+        "COMPLETE_CHILD_RECONSTRUCTION",
+        "RELATIVE_PERSISTENCE"
+      ],
+      "resolution_firewall": "REPEAT_THE_SAME_rho_STATE_AT_N3_N4_N5;_N_MAY_TEST_CONVERGENCE_BUT_MAY_NOT_LABEL_PHYSICAL_SCALE",
+      "scale_family_requirement": "DERIVE_A_CONNECTED_FAMILY_z_reset(rho)_FROM_THE_UNCHANGED_ACTION_BOUNDARY_AND_CONSTRAINT_EQUATIONS;_DO_NOT_OBTAIN_IT_BY_OVERWRITING_q_scale_IN_THE_CANONICAL_RESET",
+      "scale_grid_rule": "PREDECLARE_NESTED_RHO_NODES_ON_A_COMPACT_INTERIOR_OF_THE_DERIVED_CONNECTED_ADMISSIBLE_SCALE_INTERVAL_BEFORE_EVALUATING_C_ES_OR_EVENT_OUTCOMES"
+    },
+    "scientific_classification": "rho_VALIDATED;_C_ES_AND_chi_E_OPEN_UNDEFINED;_SCALE_HYPOTHESIS_UNTESTED;_FALSIFICATION_PROTOCOL_DERIVED",
+    "validation": {
+      "N_firewalled_from_physical_scale": true,
+      "R_star_action_derived": true,
+      "Sobolev_topology_not_promoted_to_action_metric": true,
+      "canonical_reset_not_naively_shifted": true,
+      "eta_domain_required_before_evolution": true,
+      "event_not_equated_to_enclosure": true,
+      "global_cost_deferred": true,
+      "indefinite_action_not_forced_into_positive_sectors": true,
+      "no_dimensionful_overclaim": true,
+      "no_physics_or_gate_added": true,
+      "rho_owned_by_retained_action_coordinate": true
+    },
+    "validation_passed": true
   },
   "quadrature_points": 32,
   "validation": {
@@ -446,9 +1757,15 @@
     "N5_eta_failure_not_promoted": true,
     "all_constraint_fibers_full_row_rank": true,
     "all_independent_constraint_projections_closed": true,
+    "breadth_first_closure_network_validated": true,
+    "included_N4_adaptive_event_audit_internally_consistent": true,
+    "included_N4_child_map_not_overpromoted": true,
+    "ingredient_process_ownership_validated": true,
     "no_accepted_N3_trajectory_transplanted": true,
     "orders_N3_N4_N5_measured": true,
+    "physical_scale_accessibility_audit_validated": true,
     "rank14_not_silently_imposed_at_higher_N": true,
+    "undefined_sector_balance_not_promoted": true,
     "unresolved_questions_not_promoted": true
   },
   "validation_passed": true,
