@@ -4,6 +4,7 @@ from pathlib import Path
 from bhsm.interface.aether_cross_resolution_reconnaissance_v21_35 import (
     completion_payload,
     deterministic_json,
+    general_n_complete_child_reconstruction_statement,
 )
 
 
@@ -126,7 +127,7 @@ def test_latest_n4_child_checkpoint_uses_fixed_merit_full_space_proposal():
     assert len(n5["quadrature_runs"]) == 3
     assert payload["cross_resolution_reconnaissance"][
         "questions"
-    ]["N5_confirms_or_contradicts_N4"]["event_child_confirmation"] is False
+    ]["N5_confirms_or_contradicts_N4"]["event_child_confirmation"] is True
     n5_chart = payload["cross_resolution_reconnaissance"][
         "N5_event_conditioned_complete_child_chart_audit"
     ]
@@ -151,10 +152,46 @@ def test_latest_n4_child_checkpoint_uses_fixed_merit_full_space_proposal():
         "componentwise_monotonicity_required"
     ] is False
     assert n5_child["checkpoint_promotion_eligible"] is True
-    assert n5_child["complete_child_candidate_validated"] is False
-    assert n5_child["plateau_classification"] == (
-        "DOMINANT_DYNAMIC_CALDERON_FLUX_JACOBIAN_OWNER_IDENTIFIED"
-    )
+    assert n5_child["complete_child_candidate_validated"] is True
+    assert n5_child["complete_persistent_child_validated"] is True
+    assert n5_child["physical_residuals"]["dynamic_flux_norm"] < 2.0e-5
+    assert n5_child["fiber_reduction"][
+        "final_fixed_reference_merit"
+    ] < 1.0e-12
+    assert n5_child["fiber_reduction"][
+        "new_rows_constraints_or_gates"
+    ] is False
+    assert "binary64_hex" in n5_child["child_state"]
     assert payload["cross_resolution_reconnaissance"][
         "N5_child_flux_step_and_outer_direction_audit"
     ]["physical_map_or_gate_changed"] is False
+    persistence = payload["cross_resolution_reconnaissance"][
+        "N5_complete_child_positive_duration_persistence"
+    ]
+    assert persistence[
+        "positive_duration_relative_persistence_validated"
+    ] is True
+    assert persistence["nonzero_relative_evolution_retained"] is True
+    assert persistence["finite_duration_numerical_movie_converged"] is True
+
+
+def test_general_n_reconstruction_statement_preserves_the_physical_map():
+    statement = general_n_complete_child_reconstruction_statement()
+    ledgers = statement["validated_resolution_ledger"]
+    assert [row["whole_child_variables"] for row in ledgers] == [26, 34, 42]
+    assert [row["compatibility_rows"] for row in ledgers] == [12, 14, 16]
+    assert [row["complete_child_rows"] for row in ledgers] == [14, 16, 18]
+    assert [
+        row["compatibility_fiber_dimension"] for row in ledgers
+    ] == [14, 20, 26]
+    assert [
+        row["complete_child_fiber_dimension"] for row in ledgers
+    ] == [12, 18, 24]
+    theorem = statement["local_reconstruction_theorem"]
+    assert theorem["new_equations_constraints_or_acceptance_gates"] is False
+    continuation = statement["cross_resolution_continuation_criterion"]
+    assert continuation["extra_gauge_or_physical_selector_added"] is False
+    assert statement["resolution_independent_limit_criterion"][
+        "three_resolutions_alone_prove_the_limit"
+    ] is False
+    assert statement["FULL_BHSM_COMPLETE"] is False
