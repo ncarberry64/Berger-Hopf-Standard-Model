@@ -137,7 +137,7 @@
           "GENERAL_N_RETURN_INTERFACE",
           "PERSISTENCE"
         ],
-        "object": "ACTION_OWNED_UNIFORM_SOBOLEV_RIGHT_INVERSE_AND_SPECTRAL_DEFECT_BOUND_FOR_THE_EVENT_CONDITIONED_CHILD_MAP",
+        "object": "GAUGE_FIXED_CONTINUUM_CHILD_JACOBI_BVP_COMPLEMENTING_BOUNDARY_AND_INF_SUP_ESTIMATE",
         "priority": 1
       },
       {
@@ -2912,7 +2912,7 @@
         "inner_relative_flux_step": 0.1,
         "outer_step": 0.001
       },
-      "required_next": "ACTION_OWNED_UNIFORM_SOBOLEV_RIGHT_INVERSE_AND_SPECTRAL_DEFECT_BOUND_FOR_THE_EVENT_CONDITIONED_CHILD_MAP",
+      "required_next": "GAUGE_FIXED_CONTINUUM_CHILD_JACOBI_BVP_COMPLEMENTING_BOUNDARY_AND_INF_SUP_ESTIMATE",
       "selected_broken_germ_amplitude": 0.1,
       "solver": {
         "accepted_derivative_free_poll_steps": 1,
@@ -3653,7 +3653,7 @@
       "source_event": "INDEPENDENT_N5_ZERO_MULTIPLIER_ETA_ADMISSIBLE_44_POINT_EVENT",
       "whole_child_variable_count": 42
     },
-    "active_dependency": "ACTION_OWNED_UNIFORM_SOBOLEV_RIGHT_INVERSE_AND_SPECTRAL_DEFECT_BOUND_FOR_THE_EVENT_CONDITIONED_CHILD_MAP",
+    "active_dependency": "GAUGE_FIXED_CONTINUUM_CHILD_JACOBI_BVP_COMPLEMENTING_BOUNDARY_AND_INF_SUP_ESTIMATE",
     "cross_resolution_measurements": {
       "N4_vs_N5_common_N2_fiber_relative_difference": 0.746579156611337,
       "N4_vs_N5_rate_comparison_is_physical": false,
@@ -3687,7 +3687,131 @@
         "order_independent_boundary_core_rows": 7,
         "whole_child_variable_count": "8N+2"
       },
-      "first_missing_mathematical_object": "ACTION_OWNED_UNIFORM_SOBOLEV_RIGHT_INVERSE_AND_SPECTRAL_DEFECT_BOUND_FOR_THE_EVENT_CONDITIONED_CHILD_MAP",
+      "first_missing_mathematical_object": "GAUGE_FIXED_CONTINUUM_CHILD_JACOBI_BVP_COMPLEMENTING_BOUNDARY_AND_INF_SUP_ESTIMATE",
+      "galerkin_transfer_certificate": {
+        "FULL_BHSM_COMPLETE": false,
+        "classification": "ACTION_OWNED_GALERKIN_TRANSFER_THEOREM_DERIVED;_CONTINUUM_INF_SUP_AND_TAIL_CERTIFICATE_OPEN",
+        "continuum_spaces": {
+          "basis": "THE_EXISTING_NESTED_POLE_REGULAR_COSINE_AND_WINDOWED_COSINE_BASIS",
+          "boundary_space": "R3_TRACE_CROSS_R2_MOMENTUM_CROSS_R2_FLUX",
+          "constraint_space": "THE_H_MINUS_6_DUAL_OF_THE_H6_LAPSE_SHIFT_MULTIPLIER_SPACE",
+          "numerical_fixed_ROW_scales_are_the_continuum_norm": false,
+          "output_space": "Y=R3_CROSS_H_MINUS_6_CONSTRAINTS_CROSS_R2_CROSS_R2",
+          "state_space": "X=H6_q_CROSS_H5_v_CROSS_H6_m"
+        },
+        "current_evidence": {
+          "N3_N4_N5_complete_persistence": true,
+          "N3_N4_N5_discrete_full_row_rank": true,
+          "accepted_child_local_map_smallest_resolved_singular_values": {
+            "N4_full_map": 1.550576651e-06,
+            "N5_final_nonflux_map": 2.88434876e-07,
+            "N5_structural_full_map": 2.39514503e-07
+          },
+          "existing_cross_resolution_common_mode_differences_are_proof": false,
+          "finite_rank_implies_a_uniform_inf_sup_bound": false,
+          "independent_root_coordinates_are_a_convergence_sequence": false,
+          "initial_constraint_fiber_smallest_singular_values": {
+            "N3": 0.000169802344039,
+            "N4": 5.6894892171e-05,
+            "N5": 4.09514089e-06
+          },
+          "naive_uniform_lower_bound_supported": false,
+          "singular_values_are_directly_cross_resolution_comparable": false,
+          "why_not_comparable": "THE_STATES_WERE_INDEPENDENT_AND_THE_REPORTED_MATRICES_USE_N_DEPENDENT_NUMERICAL_ROW_AND_SOBOLEV_COORDINATE_SCALINGS"
+        },
+        "event_to_child_on_shell_calderon_interface": {
+          "FULL_BHSM_COMPLETE": false,
+          "classification": "VARIATIONAL_EVENT_TO_ON_SHELL_CHILD_CALDERON_INTERFACE_DERIVED;_FUNCTION_SPACE_BVP_AND_COMPLEMENTING_ESTIMATE_OPEN",
+          "differentiated_BVP": {
+            "Jacobi_operator": "J_e=D_Phi(delta_Gamma_child,CONSTRAINTS,BOUNDARY_MATCHING)",
+            "N5_proposal_Jacobian_reopened": false,
+            "calderon_derivative": "D_Lambda_child*delta_e=Gamma1_Phi*delta_Phi+Gamma1_e*delta_e",
+            "replaces_the_validated_exact_F_N_residual": false,
+            "uses_only_the_retained_action_Hessian_after_the_BVP_is_defined": true,
+            "variation_solve": "J_e*delta_Phi=-D_e(E_child,B_child)*delta_e"
+          },
+          "first_missing_mathematical_object": "GAUGE_FIXED_CONTINUUM_CHILD_JACOBI_BVP_COMPLEMENTING_BOUNDARY_AND_INF_SUP_ESTIMATE",
+          "full_BVP_solution_and_return_map": {
+            "calderon_output": "Lambda_child(e)=Gamma1(Phi_e)",
+            "reconstructed_radius": "R_rec(e)=R_star*exp(q_scale(Trace_return(Phi_e)))",
+            "return_output": "R_return(e)=Trace_return(Phi_e)_OR_THE_SET_OF_SUCH_TRACES_WHEN_THE_INTERIOR_SOLUTION_IS_NOT_UNIQUE",
+            "single_valuedness_assumed": false,
+            "solution": "Phi_e=SolveChildBVP[Gamma0_event(e),p_event(e),I_event,I_env,B_SM]"
+          },
+          "new_action_terms_equations_constraints_or_gates": false,
+          "on_shell_child_relation": {
+            "canonical_momentum_matching": "p_child=p_event",
+            "definition": "C_child={(Gamma0(Phi),Gamma1(Phi)):delta_Gamma_child(Phi)=0,_CONSTRAINTS=0,_POLE_AND_TRANSMISSION_DOMAIN,_L_eta>0}",
+            "dynamic_flux_balance": "Gamma1_event+Gamma1_child+D_t(p_child)-partial_q(L_child)=0",
+            "event_trace_matching": "Gamma0_child=Gamma0_event",
+            "staticity_zero_momentum_or_zero_flux_required": false,
+            "topology_bundle_and_FR_block": "THE_EXISTING_I_event_I_env_B_SM_SUPERSELECTION_BLOCK"
+          },
+          "required_function_space_proof": {
+            "complementing_condition": "THE_GAUGE_FIXED_JACOBI_PRINCIPAL_BOUNDARY_SYMBOL_HAS_NO_NONZERO_DECAYING_HOMOGENEOUS_SOLUTION",
+            "domain": "TWO_POLE_FRIEDRICHS_DOMAIN_WITH_MATERIAL_TRANSMISSION_AND_THE_EXISTING_EVENT_BOUNDARY_MODE",
+            "eta_margin": "inf(L_eta)>=eta_0>0",
+            "gauge_reduction": "QUOTIENT_TIME_REPARAMETERIZATION_AND_RADIAL_DIFFEOMORPHISM_WITH_THE_EXISTING_ETA_CLOCK_INVARIANTS",
+            "inf_sup": "THE_NORMAL_JACOBI_CALDERON_SCHUR_COMPLEMENT_HAS_beta_0>0"
+          },
+          "required_next": "GAUGE_FIXED_CONTINUUM_CHILD_JACOBI_BVP_COMPLEMENTING_BOUNDARY_AND_INF_SUP_ESTIMATE",
+          "retained_total_functional": "Gamma_total=Gamma_pre[z]+Gamma_child[Phi]+Gamma_match[Gamma0_event(z),Gamma0_child(Phi);I_event,I_env,B_SM]",
+          "validated_finite_N_local_map": {
+            "N3_N4_N5_roots_and_positive_duration_persistence": true,
+            "formula": "F_N=(TRACE_3,CONSTRAINTS_(2N+1),MOMENTUM_2,DYNAMIC_FLUX_2)",
+            "is_already_a_global_function_space_child_BVP": false,
+            "is_sufficient_to_prove_a_single_valued_return_map": false,
+            "role": "CONSTRAINT_CONSISTENT_LOCAL_CAUCHY_GERM_INTERSECTION_WITH_THE_EVENT_BOUNDARY_RELATION"
+          }
+        },
+        "first_missing_mathematical_object": "GAUGE_FIXED_CONTINUUM_CHILD_JACOBI_BVP_COMPLEMENTING_BOUNDARY_AND_INF_SUP_ESTIMATE",
+        "galerkin_transfer_lemma": {
+          "discrete_inf_sup": "beta_N>=beta_0-delta_N",
+          "hypothesis": "delta_N<beta_0",
+          "local_zero_set_distance_bound": "dist_graph(R_N,R)<=2*epsilon_N/(beta_0-delta_N)",
+          "newton_kantorovich_condition": "L_N*epsilon_N/(beta_0-delta_N)^2<=1/2",
+          "right_inverse_bound": "kappa_N<=1/(beta_0-delta_N)",
+          "summable_bound_consequence": "IF_THE_DISTANCE_BOUNDS_ARE_SUMMABLE_THEN_THE_NESTED_LOCAL_CHILD_RELATIONS_ARE_CAUCHY_IN_GRAPH_DISTANCE"
+        },
+        "new_equations_constraints_or_acceptance_gates": false,
+        "normal_inf_sup_condition": {
+          "definition": "beta=inf_(lambda_ne_0)norm(D_F(Y_star;e_star)^*lambda)_X_star/norm(lambda)_Y",
+          "kernel_removed_as_a_defect": false,
+          "meaning": "THE_CONTINUUM_LINEARIZATION_IS_SURJECTIVE_WITH_A_BOUNDED_NORMAL_RIGHT_INVERSE;_ITS_KERNEL_IS_THE_CHILD_MANIFOLD",
+          "required_bound": "beta>=beta_0>0_AFTER_EXISTING_GAUGE_REDUCTION"
+        },
+        "proof_obligations": [
+          "DEFINE_THE_CONTINUUM_EVENT_CONDITIONED_ON_SHELL_CALDERON_MAP",
+          "PROVE_THE_GAUGE_REDUCED_COMPLEMENTING_BOUNDARY_FREDHOLM_PROPERTY",
+          "LOWER_BOUND_THE_CONTINUUM_NORMAL_INF_SUP_CONSTANT_beta_0",
+          "BOUND_SPECTRAL_TRUNCATION_AND_GAUSS_QUADRATURE_ALIASING_ERRORS",
+          "PROVE_ORDERED_EVENT_BRANCH_CONVERGENCE_AND_A_UNIFORM_ETA_MARGIN",
+          "TRANSFER_POSITIVE_DURATION_EULER_DIRAC_PERSISTENCE_UNIFORMLY"
+        ],
+        "required_next": "GAUGE_FIXED_CONTINUUM_CHILD_JACOBI_BVP_COMPLEMENTING_BOUNDARY_AND_INF_SUP_ESTIMATE",
+        "set_valued_continuum_relation": {
+          "arbitrary_root_coordinates_must_form_a_Cauchy_sequence": false,
+          "correct_convergence_object": "LOCAL_GRAPH_OR_HAUSDORFF_CONVERGENCE_OF_R_N_TO_R",
+          "definition": "R(e)={Y_IN_X:F(Y;e)=0,_L_eta(Y)>0,_Y_PERSISTS}",
+          "finite_N_relation": "R_N(e_N)={Y_N:F_N(Y_N;e_N)=0,_L_eta(Y_N)>0,_Y_N_PERSISTS}",
+          "physical_branch_selector_added": false
+        },
+        "smoothness_from_the_retained_action": {
+          "consequence": "THE_EXPONENTIAL_GEOMETRY_RECIPROCAL_LAPSE_ETA_RESPONSE_AND_BOUNDARY_TRACES_DEFINE_A_SMOOTH_LOCAL_ACTION_MAP",
+          "eta_interior_requirement": "inf(L_eta)>=eta_0>0",
+          "new_action_term_added": false,
+          "regularity": "s=6>11/2",
+          "sobolev_algebra_and_trace_control": true
+        },
+        "solver_proposal_curvature_is_part_of_this_certificate": false,
+        "spectral_consistency_condition": {
+          "derivative_defect": "delta_N=norm(D_F_N-Q_N*D_F*P_N)_X_N_TO_Y_N",
+          "event_defect": "norm(e_N-P_N*e_star)_EVENT_TO_ZERO",
+          "nonlinear_injected_defect": "epsilon_N=norm(F_N(P_N*Y_star;e_N))_Y_N",
+          "quadrature_aliasing_included": true,
+          "required_limits": "delta_N_TO_0_AND_epsilon_N_TO_0"
+        }
+      },
       "local_reconstruction_theorem": {
         "compatibility_map": "A_N=(TRACE_3,CONSTRAINTS_(2N+1),MOMENTUM_2)",
         "conclusion": "THE_IMPLICIT_FUNCTION_THEOREM_GIVES_A_LOCAL_SMOOTH_COMPLETE_CHILD_MANIFOLD_OF_DIMENSION_6N-6",
@@ -3710,7 +3834,7 @@
         "uniform_eta_and_event_margin": true,
         "uniform_right_inverse_bound": true
       },
-      "required_next": "ACTION_OWNED_UNIFORM_SOBOLEV_RIGHT_INVERSE_AND_SPECTRAL_DEFECT_BOUND_FOR_THE_EVENT_CONDITIONED_CHILD_MAP",
+      "required_next": "GAUGE_FIXED_CONTINUUM_CHILD_JACOBI_BVP_COMPLEMENTING_BOUNDARY_AND_INF_SUP_ESTIMATE",
       "resolution_independent_limit_criterion": {
         "persistence_convergence_requires": [
           "UNIFORM_LOCAL_LIPSCHITZ_CONTROL_OF_THE_RETAINED_EULER_DIRAC_VECTOR_FIELDS",
