@@ -137,7 +137,7 @@
           "GENERAL_N_RETURN_INTERFACE",
           "PERSISTENCE"
         ],
-        "object": "DERIVE_THE_ACTION_OWNED_ON_SHELL_CHILD_CALDERON_OR_RETURN_POLARIZATION_J_boundary_AND_USE_ITS_COMPATIBLE_METRIC_FOR_THE_FULL_DYNAMIC_FLUX_INF_SUP",
+        "object": "DERIVE_THE_ON_SHELL_CHILD_EULER_BVP_CALDERON_TRACE_FROM_THE_SAME_ACTION_SO_VERTICAL_INTERIOR_VARIATIONS_VANISH_AND_REEVALUATE_THE_N3_N4_N5_BOUNDARY_MOMENTUM_FLUX_RELATION",
         "priority": 1
       },
       {
@@ -145,7 +145,7 @@
           "RETURN_INTERFACE",
           "SCALE_INTERFACE"
         ],
-        "object": "REGULAR_POLE_ATTACHMENT_MATERIAL_TRANSMISSION_BVP_AND_ACTION_DERIVED_ENVIRONMENT_TO_RECONSTRUCTION_RETURN_MAP",
+        "object": "REGULAR_POLE_ATTACHMENT_MATERIAL_TRANSMISSION_BVP_AND_ACTION_DERIVED_ENVIRONMENT_TO_RECONSTRUCTION_RETURN_MAP_WITH_ON_SHELL_CALDERON_OR_RETURN_POLARIZATION_J_boundary",
         "priority": 2
       },
       {
@@ -2919,7 +2919,7 @@
         "inner_relative_flux_step": 0.1,
         "outer_step": 0.001
       },
-      "required_next": "DERIVE_THE_ACTION_OWNED_ON_SHELL_CHILD_CALDERON_OR_RETURN_POLARIZATION_J_boundary_AND_USE_ITS_COMPATIBLE_METRIC_FOR_THE_FULL_DYNAMIC_FLUX_INF_SUP",
+      "required_next": "DERIVE_THE_ON_SHELL_CHILD_EULER_BVP_CALDERON_TRACE_FROM_THE_SAME_ACTION_SO_VERTICAL_INTERIOR_VARIATIONS_VANISH_AND_REEVALUATE_THE_N3_N4_N5_BOUNDARY_MOMENTUM_FLUX_RELATION",
       "selected_broken_germ_amplitude": 0.1,
       "solver": {
         "accepted_derivative_free_poll_steps": 1,
@@ -3660,7 +3660,7 @@
       "source_event": "INDEPENDENT_N5_ZERO_MULTIPLIER_ETA_ADMISSIBLE_44_POINT_EVENT",
       "whole_child_variable_count": 42
     },
-    "active_dependency": "DERIVE_THE_ACTION_OWNED_ON_SHELL_CHILD_CALDERON_OR_RETURN_POLARIZATION_J_boundary_AND_USE_ITS_COMPATIBLE_METRIC_FOR_THE_FULL_DYNAMIC_FLUX_INF_SUP",
+    "active_dependency": "DERIVE_THE_ON_SHELL_CHILD_EULER_BVP_CALDERON_TRACE_FROM_THE_SAME_ACTION_SO_VERTICAL_INTERIOR_VARIATIONS_VANISH_AND_REEVALUATE_THE_N3_N4_N5_BOUNDARY_MOMENTUM_FLUX_RELATION",
     "cross_resolution_boundary_symplectic_polarization_audit": {
       "FULL_BHSM_COMPLETE": false,
       "N3_may_be_declared_underresolved_from_this_alone": false,
@@ -3702,12 +3702,21 @@
         ]
       ],
       "classification": "REDUCED_TSTAR_R2_BOUNDARY_SYMPLECTIC_FORM_DERIVED;_ACTION_HESSIANS_INDEFINITE;_POSITIVE_CALDERON_POLARIZATION_OPEN",
+      "fixed_analytic_boundary_norm_for_general_N": {
+        "all_fixed_finite_dimensional_norms_are_equivalent": true,
+        "coordinates": "(q_W,x_D,p_q_W,p_x_D)_IN_RETAINED_DIMENSIONLESS_ACTION_UNITS",
+        "norm": "THE_FIXED_EUCLIDEAN_NORM_ON_THIS_N_INDEPENDENT_R4_CHART",
+        "requires_a_positive_Calderon_polarization": false,
+        "role": "FUNCTION_SPACE_ESTIMATE_ONLY_NOT_A_PHYSICAL_OBSERVABLE_OR_GATE"
+      },
       "local_generator_type_is_identical_at_N3_N4_N5": false,
       "physical_rows_changed": false,
-      "required_next": "DERIVE_THE_ACTION_OWNED_ON_SHELL_CHILD_CALDERON_OR_RETURN_POLARIZATION_J_boundary_AND_USE_ITS_COMPATIBLE_METRIC_FOR_THE_FULL_DYNAMIC_FLUX_INF_SUP",
+      "required_next": "DERIVE_THE_ACTION_OWNED_ON_SHELL_CHILD_CALDERON_OR_RETURN_POLARIZATION_J_boundary_FOR_PHYSICAL_RETURN_FLOQUET_READOUT",
       "required_positive_polarization": {
         "J_boundary_derived_now": false,
         "acceptable_owner": "THE_ON_SHELL_CHILD_CALDERON_PROJECTOR_OR_RETURN_MONODROMY_ON_THE_REDUCED_TSTAR_R2_BOUNDARY_PHASE_SPACE",
+        "blocks_general_N_root_relation_convergence": false,
+        "blocks_physical_return_Floquet_and_positive_frequency_readout": true,
         "compatible_metric_formula_after_J_is_derived": "g_boundary(a,b)=Omega_boundary(a,J_boundary*b)"
       },
       "rows": [
@@ -4201,12 +4210,21 @@
           ]
         ],
         "classification": "REDUCED_TSTAR_R2_BOUNDARY_SYMPLECTIC_FORM_DERIVED;_ACTION_HESSIANS_INDEFINITE;_POSITIVE_CALDERON_POLARIZATION_OPEN",
+        "fixed_analytic_boundary_norm_for_general_N": {
+          "all_fixed_finite_dimensional_norms_are_equivalent": true,
+          "coordinates": "(q_W,x_D,p_q_W,p_x_D)_IN_RETAINED_DIMENSIONLESS_ACTION_UNITS",
+          "norm": "THE_FIXED_EUCLIDEAN_NORM_ON_THIS_N_INDEPENDENT_R4_CHART",
+          "requires_a_positive_Calderon_polarization": false,
+          "role": "FUNCTION_SPACE_ESTIMATE_ONLY_NOT_A_PHYSICAL_OBSERVABLE_OR_GATE"
+        },
         "local_generator_type_is_identical_at_N3_N4_N5": false,
         "physical_rows_changed": false,
-        "required_next": "DERIVE_THE_ACTION_OWNED_ON_SHELL_CHILD_CALDERON_OR_RETURN_POLARIZATION_J_boundary_AND_USE_ITS_COMPATIBLE_METRIC_FOR_THE_FULL_DYNAMIC_FLUX_INF_SUP",
+        "required_next": "DERIVE_THE_ACTION_OWNED_ON_SHELL_CHILD_CALDERON_OR_RETURN_POLARIZATION_J_boundary_FOR_PHYSICAL_RETURN_FLOQUET_READOUT",
         "required_positive_polarization": {
           "J_boundary_derived_now": false,
           "acceptable_owner": "THE_ON_SHELL_CHILD_CALDERON_PROJECTOR_OR_RETURN_MONODROMY_ON_THE_REDUCED_TSTAR_R2_BOUNDARY_PHASE_SPACE",
+          "blocks_general_N_root_relation_convergence": false,
+          "blocks_physical_return_Floquet_and_positive_frequency_readout": true,
           "compatible_metric_formula_after_J_is_derived": "g_boundary(a,b)=Omega_boundary(a,J_boundary*b)"
         },
         "rows": [
@@ -4674,7 +4692,7 @@
         "order_independent_boundary_core_rows": 7,
         "whole_child_variable_count": "8N+2"
       },
-      "first_missing_mathematical_object": "DERIVE_THE_ACTION_OWNED_ON_SHELL_CHILD_CALDERON_OR_RETURN_POLARIZATION_J_boundary_AND_USE_ITS_COMPATIBLE_METRIC_FOR_THE_FULL_DYNAMIC_FLUX_INF_SUP",
+      "first_missing_mathematical_object": "DERIVE_THE_ON_SHELL_CHILD_EULER_BVP_CALDERON_TRACE_FROM_THE_SAME_ACTION_SO_VERTICAL_INTERIOR_VARIATIONS_VANISH_AND_REEVALUATE_THE_N3_N4_N5_BOUNDARY_MOMENTUM_FLUX_RELATION",
       "galerkin_transfer_certificate": {
         "FULL_BHSM_COMPLETE": false,
         "classification": "ACTION_OWNED_GALERKIN_TRANSFER_THEOREM_DERIVED;_CONTINUUM_INF_SUP_AND_TAIL_CERTIFICATE_OPEN",
@@ -4717,7 +4735,7 @@
             "uses_only_the_retained_action_Hessian_after_the_BVP_is_defined": true,
             "variation_solve": "J_e*delta_Phi=-D_e(E_child,B_child)*delta_e"
           },
-          "first_missing_mathematical_object": "REGULAR_POLE_ATTACHMENT_AND_MATERIAL_TRANSMISSION_COMPLEMENTING_BOUNDARY_WITH_GLOBAL_GAUGE_REDUCED_INF_SUP_ESTIMATE",
+          "first_missing_mathematical_object": "DERIVE_THE_ON_SHELL_CHILD_EULER_BVP_CALDERON_TRACE_FROM_THE_SAME_ACTION_SO_VERTICAL_INTERIOR_VARIATIONS_VANISH_AND_REEVALUATE_THE_N3_N4_N5_BOUNDARY_MOMENTUM_FLUX_RELATION",
           "full_BVP_solution_and_return_map": {
             "calderon_output": "Lambda_child(e)=Gamma1(Phi_e)",
             "reconstructed_radius": "R_rec(e)=R_star*exp(q_scale(Trace_return(Phi_e)))",
@@ -4741,7 +4759,7 @@
             "gauge_reduction": "QUOTIENT_TIME_REPARAMETERIZATION_AND_RADIAL_DIFFEOMORPHISM_WITH_THE_EXISTING_ETA_CLOCK_INVARIANTS",
             "inf_sup": "THE_NORMAL_JACOBI_CALDERON_SCHUR_COMPLEMENT_HAS_beta_0>0"
           },
-          "required_next": "REGULAR_POLE_ATTACHMENT_AND_MATERIAL_TRANSMISSION_COMPLEMENTING_BOUNDARY_WITH_GLOBAL_GAUGE_REDUCED_INF_SUP_ESTIMATE",
+          "required_next": "DERIVE_THE_ON_SHELL_CHILD_EULER_BVP_CALDERON_TRACE_FROM_THE_SAME_ACTION_SO_VERTICAL_INTERIOR_VARIATIONS_VANISH_AND_REEVALUATE_THE_N3_N4_N5_BOUNDARY_MOMENTUM_FLUX_RELATION",
           "retained_radial_principal_symbol_audit": {
             "FULL_BHSM_COMPLETE": false,
             "algebra_validation": {
@@ -4943,7 +4961,7 @@
             }
           }
         },
-        "first_missing_mathematical_object": "DERIVE_THE_ACTION_OWNED_ON_SHELL_CHILD_CALDERON_OR_RETURN_POLARIZATION_J_boundary_AND_USE_ITS_COMPATIBLE_METRIC_FOR_THE_FULL_DYNAMIC_FLUX_INF_SUP",
+        "first_missing_mathematical_object": "DERIVE_THE_ON_SHELL_CHILD_EULER_BVP_CALDERON_TRACE_FROM_THE_SAME_ACTION_SO_VERTICAL_INTERIOR_VARIATIONS_VANISH_AND_REEVALUATE_THE_N3_N4_N5_BOUNDARY_MOMENTUM_FLUX_RELATION",
         "galerkin_transfer_lemma": {
           "discrete_inf_sup": "beta_N>=beta_0-delta_N",
           "hypothesis": "delta_N<beta_0",
@@ -4967,7 +4985,7 @@
           "PROVE_ORDERED_EVENT_BRANCH_CONVERGENCE_AND_A_UNIFORM_ETA_MARGIN",
           "TRANSFER_POSITIVE_DURATION_EULER_DIRAC_PERSISTENCE_UNIFORMLY"
         ],
-        "required_next": "DERIVE_THE_ACTION_OWNED_ON_SHELL_CHILD_CALDERON_OR_RETURN_POLARIZATION_J_boundary_AND_USE_ITS_COMPATIBLE_METRIC_FOR_THE_FULL_DYNAMIC_FLUX_INF_SUP",
+        "required_next": "DERIVE_THE_ON_SHELL_CHILD_EULER_BVP_CALDERON_TRACE_FROM_THE_SAME_ACTION_SO_VERTICAL_INTERIOR_VARIATIONS_VANISH_AND_REEVALUATE_THE_N3_N4_N5_BOUNDARY_MOMENTUM_FLUX_RELATION",
         "set_valued_continuum_relation": {
           "arbitrary_root_coordinates_must_form_a_Cauchy_sequence": false,
           "correct_convergence_object": "LOCAL_GRAPH_OR_HAUSDORFF_CONVERGENCE_OF_R_N_TO_R",
@@ -5006,6 +5024,65 @@
         "new_equations_constraints_or_acceptance_gates": false,
         "return_map": "Phi_N=DYNAMIC_CALDERON_FLUX_2"
       },
+      "nested_attachment_lift_consistency_audit": {
+        "FULL_BHSM_COMPLETE": false,
+        "accepted_N3_state_used_as_higher_N_child_existence_evidence": false,
+        "classification": "NONLINEAR_ACTION_TRACE_CONSTRAINT_ENERGY_CORE_NESTED;_STATE_DEPENDENT_HESSIAN_HORIZONTAL_ATTACHMENT_MOMENTUM_LIFT_NOT_SPECTRALLY_CONSISTENT",
+        "comparisons": [
+          {
+            "block_relative_changes": {
+              "attachment_momentum": 1.031705068662507,
+              "energy": 1e-15,
+              "strong_H4_constraints": 0.0,
+              "trace": 0.0
+            },
+            "high_order": 4,
+            "low_order": 3,
+            "maximum_absolute_change": 18212.112459809225,
+            "total_relative_change": 0.002769451282435
+          },
+          {
+            "block_relative_changes": {
+              "attachment_momentum": 0.989605334755004,
+              "energy": 1e-15,
+              "strong_H4_constraints": 0.0,
+              "trace": 0.0
+            },
+            "high_order": 5,
+            "low_order": 3,
+            "maximum_absolute_change": 17556.30731009379,
+            "total_relative_change": 0.002656441115478
+          },
+          {
+            "block_relative_changes": {
+              "attachment_momentum": 1.064245247117577,
+              "energy": 2e-15,
+              "strong_H4_constraints": 0.0,
+              "trace": 0.0
+            },
+            "high_order": 5,
+            "low_order": 4,
+            "maximum_absolute_change": 1607.7774305399562,
+            "total_relative_change": 0.000318500191915
+          }
+        ],
+        "constraint_codomain": "COMMON_STRONG_H4",
+        "current_lift_may_be_promoted_as_a_general_N_Calderon_projector": false,
+        "domain_norm": "COMMON_H6_q_CROSS_H5_v_CROSS_H6_m",
+        "finite_N_N3_N4_N5_roots_remain_valid_for_their_stated_maps": true,
+        "new_physics_rows_constraints_or_gates_added": false,
+        "points": 64,
+        "required_next": "DERIVE_THE_ON_SHELL_CHILD_EULER_BVP_CALDERON_TRACE_FROM_THE_SAME_ACTION_SO_VERTICAL_INTERIOR_VARIATIONS_VANISH_AND_REEVALUATE_THE_N3_N4_N5_BOUNDARY_MOMENTUM_FLUX_RELATION",
+        "source": "ONE_ACCEPTED_N3_CHILD_STATE_EXACTLY_INJECTED_INTO_N4_AND_N5_FOR_OPERATOR_CONSISTENCY_ONLY",
+        "validation": {
+          "attachment_momentum_lift_not_nested": true,
+          "energy_nested_to_machine_precision": true,
+          "strong_constraints_nested_to_machine_precision": true,
+          "trace_nested_to_machine_precision": true
+        },
+        "validation_passed": true,
+        "why": "THE_HESSIAN_HORIZONTAL_LIFT_RECOMPUTES_AN_INDEFINITE_GLOBAL_SCHUR_INVERSE_WHEN_NEW_SPECTRAL_MODES_ARE_ADDED;_THE_ORDER_ONE_MOMENTUM_CHANGE_IS_NOT_OWNED_BY_THE_EXACT_NESTED_ACTION_CORE"
+      },
       "open": {
         "common_duration_persistence_convergence": true,
         "numerical_state_convergence_from_N3_N4_N5": true,
@@ -5013,7 +5090,7 @@
         "uniform_eta_and_event_margin": true,
         "uniform_right_inverse_bound": true
       },
-      "required_next": "DERIVE_THE_ACTION_OWNED_ON_SHELL_CHILD_CALDERON_OR_RETURN_POLARIZATION_J_boundary_AND_USE_ITS_COMPATIBLE_METRIC_FOR_THE_FULL_DYNAMIC_FLUX_INF_SUP",
+      "required_next": "DERIVE_THE_ON_SHELL_CHILD_EULER_BVP_CALDERON_TRACE_FROM_THE_SAME_ACTION_SO_VERTICAL_INTERIOR_VARIATIONS_VANISH_AND_REEVALUATE_THE_N3_N4_N5_BOUNDARY_MOMENTUM_FLUX_RELATION",
       "resolution_independent_limit_criterion": {
         "persistence_convergence_requires": [
           "UNIFORM_LOCAL_LIPSCHITZ_CONTROL_OF_THE_RETAINED_EULER_DIRAC_VECTOR_FIELDS",
@@ -5086,6 +5163,65 @@
           "whole_child_variables": 42
         }
       ]
+    },
+    "nested_attachment_lift_consistency_audit": {
+      "FULL_BHSM_COMPLETE": false,
+      "accepted_N3_state_used_as_higher_N_child_existence_evidence": false,
+      "classification": "NONLINEAR_ACTION_TRACE_CONSTRAINT_ENERGY_CORE_NESTED;_STATE_DEPENDENT_HESSIAN_HORIZONTAL_ATTACHMENT_MOMENTUM_LIFT_NOT_SPECTRALLY_CONSISTENT",
+      "comparisons": [
+        {
+          "block_relative_changes": {
+            "attachment_momentum": 1.031705068662507,
+            "energy": 1e-15,
+            "strong_H4_constraints": 0.0,
+            "trace": 0.0
+          },
+          "high_order": 4,
+          "low_order": 3,
+          "maximum_absolute_change": 18212.112459809225,
+          "total_relative_change": 0.002769451282435
+        },
+        {
+          "block_relative_changes": {
+            "attachment_momentum": 0.989605334755004,
+            "energy": 1e-15,
+            "strong_H4_constraints": 0.0,
+            "trace": 0.0
+          },
+          "high_order": 5,
+          "low_order": 3,
+          "maximum_absolute_change": 17556.30731009379,
+          "total_relative_change": 0.002656441115478
+        },
+        {
+          "block_relative_changes": {
+            "attachment_momentum": 1.064245247117577,
+            "energy": 2e-15,
+            "strong_H4_constraints": 0.0,
+            "trace": 0.0
+          },
+          "high_order": 5,
+          "low_order": 4,
+          "maximum_absolute_change": 1607.7774305399562,
+          "total_relative_change": 0.000318500191915
+        }
+      ],
+      "constraint_codomain": "COMMON_STRONG_H4",
+      "current_lift_may_be_promoted_as_a_general_N_Calderon_projector": false,
+      "domain_norm": "COMMON_H6_q_CROSS_H5_v_CROSS_H6_m",
+      "finite_N_N3_N4_N5_roots_remain_valid_for_their_stated_maps": true,
+      "new_physics_rows_constraints_or_gates_added": false,
+      "points": 64,
+      "required_next": "DERIVE_THE_ON_SHELL_CHILD_EULER_BVP_CALDERON_TRACE_FROM_THE_SAME_ACTION_SO_VERTICAL_INTERIOR_VARIATIONS_VANISH_AND_REEVALUATE_THE_N3_N4_N5_BOUNDARY_MOMENTUM_FLUX_RELATION",
+      "source": "ONE_ACCEPTED_N3_CHILD_STATE_EXACTLY_INJECTED_INTO_N4_AND_N5_FOR_OPERATOR_CONSISTENCY_ONLY",
+      "validation": {
+        "attachment_momentum_lift_not_nested": true,
+        "energy_nested_to_machine_precision": true,
+        "strong_constraints_nested_to_machine_precision": true,
+        "trace_nested_to_machine_precision": true
+      },
+      "validation_passed": true,
+      "why": "THE_HESSIAN_HORIZONTAL_LIFT_RECOMPUTES_AN_INDEFINITE_GLOBAL_SCHUR_INVERSE_WHEN_NEW_SPECTRAL_MODES_ARE_ADDED;_THE_ORDER_ONE_MOMENTUM_CHANGE_IS_NOT_OWNED_BY_THE_EXACT_NESTED_ACTION_CORE"
     },
     "orders": [
       {
@@ -6072,6 +6208,7 @@
     "included_N4_positive_duration_persistence": true,
     "independent_N3_N4_N5_complete_persistent_children": true,
     "ingredient_process_ownership_validated": true,
+    "nested_attachment_lift_consistency_audit_validated": true,
     "no_accepted_N3_trajectory_transplanted": true,
     "no_cross_resolution_state_transplant": true,
     "orders_N3_N4_N5_measured": true,

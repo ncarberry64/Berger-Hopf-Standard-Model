@@ -219,6 +219,12 @@ def test_latest_n4_child_checkpoint_uses_fixed_merit_full_space_proposal():
     assert boundary["required_positive_polarization"][
         "J_boundary_derived_now"
     ] is False
+    assert boundary["required_positive_polarization"][
+        "blocks_general_N_root_relation_convergence"
+    ] is False
+    assert boundary["fixed_analytic_boundary_norm_for_general_N"][
+        "requires_a_positive_Calderon_polarization"
+    ] is False
     assert [
         row["Hamiltonian_generator_type"] for row in boundary["rows"]
     ] == [
@@ -229,6 +235,24 @@ def test_latest_n4_child_checkpoint_uses_fixed_merit_full_space_proposal():
     assert boundary["N3_may_be_declared_underresolved_from_this_alone"] is False
     assert boundary["physical_rows_changed"] is False
     assert boundary["acceptance_gates_changed"] is False
+    lift = payload["cross_resolution_reconnaissance"][
+        "nested_attachment_lift_consistency_audit"
+    ]
+    assert lift["validation_passed"] is True
+    assert all(
+        row["block_relative_changes"]["trace"] < 1.0e-13
+        and row["block_relative_changes"]["strong_H4_constraints"] < 1.0e-13
+        and row["block_relative_changes"]["energy"] < 1.0e-12
+        for row in lift["comparisons"]
+    )
+    assert all(
+        row["block_relative_changes"]["attachment_momentum"] > 0.5
+        for row in lift["comparisons"]
+    )
+    assert lift[
+        "current_lift_may_be_promoted_as_a_general_N_Calderon_projector"
+    ] is False
+    assert lift["new_physics_rows_constraints_or_gates_added"] is False
 
 
 def test_general_n_reconstruction_statement_preserves_the_physical_map():
