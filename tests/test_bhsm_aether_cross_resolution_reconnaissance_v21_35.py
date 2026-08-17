@@ -63,6 +63,14 @@ def test_independent_cross_resolution_reconnaissance_contract():
     assert network["interfaces"]["generic_family_children_mixing"][
         "current_child_export_is_sufficient"
     ] is False
+    flux_variation = network["dynamic_flux_variation_interface"]
+    assert flux_variation["higher_variation_verdict"][
+        "third_variation_alone_is_sufficient"
+    ] is False
+    assert flux_variation["physical_rows_or_gates_changed"] is False
+    assert "RICHARDSON" in flux_variation[
+        "immediate_unchanged_map_derivative"
+    ]
 
 
 def test_reconnaissance_serialization_is_deterministic():
