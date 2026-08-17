@@ -1,5 +1,20 @@
 # Reviewer Reproduction Guide
 
+## Current cross-resolution checkpoint
+
+```bash
+python -m pytest -q tests/test_bhsm_aether_cross_resolution_reconnaissance_v21_35.py tests/test_engine_invariant_preservation.py tests/test_engine_physics_status_separation.py
+python tools/audit_forbidden_claims.py
+python tools/audit_bhsm_status.py
+python tools/audit_frozen_prediction_integrity.py
+git diff --check
+```
+
+Inspect the [v21.35 cross-resolution artifact](../artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json).
+The full historical pytest corpus remains available locally but is not a
+mandatory pull-request check; run `python -m pytest -q` only when a full
+historical regression is scientifically warranted.
+
 ## Current corrected-Rayleigh N=3 audit
 
 The canonical snapshot is the validated rolling checkpoint at exact

@@ -1,5 +1,16 @@
 # BHSM Artifact Index
 
+## Current cross-resolution encapsulation checkpoint (v21.35)
+
+- [`BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json`](artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json)
+- Source: [`aether_cross_resolution_reconnaissance_v21_35.py`](src/bhsm/interface/aether_cross_resolution_reconnaissance_v21_35.py)
+- Focused test: [`test_bhsm_aether_cross_resolution_reconnaissance_v21_35.py`](tests/test_bhsm_aether_cross_resolution_reconnaissance_v21_35.py)
+
+This checkpoint records independent N4/N5 construction, validated N4 ordered
+event, complete rank-16 N4 child and positive-duration persistence, plus the
+admissible ordered N5 event and structurally full-rank 18-row child map. The N5
+exact root and persistence remain active. `FULL_BHSM_COMPLETE = FALSE`.
+
 ## Current BHSM v15.10 sigma-coefficient response reconstruction
 
 The deterministic current record is controlled by

@@ -1,5 +1,18 @@
 # BHSM Roadmap
 
+## Active cross-resolution completion path
+
+1. Close the unchanged independent N5 18-row complete-child root.
+2. Apply the already-defined eta, event-branch, constraint, boundary, and
+   complete-child certification criteria.
+3. Validate positive-duration constraint-consistent N5 persistence.
+4. With independent N3/N4/N5 complete persistent children, derive and test the
+   general-N reconstruction statement instead of increasing N mechanically.
+5. Resume the existing action/scale/returned-family-operator dependency chain
+   without reopening closed sectors or retuning frozen predictions.
+
+`FULL_BHSM_COMPLETE = FALSE`.
+
 ## Current corrected-Rayleigh N=3 critical path
 
 1. Resume the validated rolling checkpoint from exact unweighted
