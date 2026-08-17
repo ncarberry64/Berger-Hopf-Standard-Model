@@ -6461,6 +6461,163 @@ def nested_attachment_lift_consistency_audit(
     }
 
 
+def on_shell_boundary_reaction_audit(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+    *,
+    points: int = 44,
+) -> dict[str, Any]:
+    """Test what the lift-independent child boundary relation must retain."""
+
+    target = Path(path)
+    payload = json.loads(target.read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    event = next(
+        row["event"]
+        for row in payload[
+            "N5_independent_eta_branch_event_classification"
+        ]["quadrature_runs"]
+        if int(row["points"]) == points
+    )
+    child = payload[
+        "N5_event_conditioned_complete_child_reconstruction"
+    ]["child_state"]
+    exact = child["binary64_hex"]
+    q_event = np.asarray(event["coordinates"], dtype=float)
+    v_event = np.asarray(event["velocities"], dtype=float)
+    m_event = np.asarray(event["multipliers"], dtype=float)
+    q_child = np.asarray([
+        float.fromhex(value) for value in exact["coordinates"]
+    ])
+    v_child = np.asarray([
+        float.fromhex(value) for value in exact["velocities"]
+    ])
+    m_child = np.asarray([
+        float.fromhex(value) for value in exact["multipliers"]
+    ])
+    order = 5
+    qdim = q_child.size
+    event_momentum, _, event_lift, _ = _canonical_pair_at_order(
+        order, q_event, v_event, m_event, points=points
+    )
+    child_momentum, _, child_lift, _ = _canonical_pair_at_order(
+        order, q_child, v_child, m_child, points=points
+    )
+    event_flux = event_lift.T @ _metric_radial_flux_covector_at_order(
+        order, q_event, m_event
+    )
+    child_flux = child_lift.T @ _metric_radial_flux_covector_at_order(
+        order, q_child, m_child
+    )
+    child_state = np.concatenate((q_child, v_child, m_child))
+    physical_rows = _child_rows_at_order(
+        order,
+        child_state,
+        q_event,
+        event_momentum,
+        event_flux,
+        points=points,
+        flux_derivative_method="complex_step",
+    )
+    dynamics = _exact_full_jet_euler_dirac_acceleration(
+        order, q_child, v_child, m_child, points=points
+    )
+    jet = exact_full_action_jet_at_state(
+        order, q_child, v_child, m_child, points=points
+    )
+    gradient = np.asarray(jet.gradient, dtype=float)
+    hessian = np.asarray(jet.hessian, dtype=float)
+    momentum_rate = (
+        hessian[qdim:2 * qdim, :qdim] @ v_child
+        + hessian[qdim:2 * qdim, qdim:2 * qdim]
+        @ np.asarray(dynamics["acceleration"], dtype=float)
+        + hessian[qdim:2 * qdim, 2 * qdim:]
+        @ np.asarray(dynamics["multiplier_rate"], dtype=float)
+    )
+    full_euler_covector = momentum_rate - gradient[:qdim]
+    raw_two_sided = event_flux + child_flux
+    validation = {
+        "exact_binary64_N5_root_replayed": bool(
+            np.linalg.norm(physical_rows[-2:]) < 2.0e-7
+        ),
+        "canonical_momentum_match_replayed": bool(
+            np.linalg.norm(child_momentum - event_momentum) < 1.0e-10
+        ),
+        "full_Euler_Dirac_tangent_closes": bool(
+            np.linalg.norm(full_euler_covector) < 1.0e-8
+        ),
+        "raw_two_sided_radial_flux_is_not_the_validated_dynamic_row": bool(
+            np.linalg.norm(raw_two_sided) > 1.0
+            and np.linalg.norm(physical_rows[-2:]) < 2.0e-7
+        ),
+    }
+    return {
+        "classification": (
+            "LIFT_INDEPENDENT_ON_SHELL_BOUNDARY_REACTION_FORM_DERIVED;_"
+            "RAW_FLUX_ONLY_REPLACEMENT_INVALIDATED;_LORENTZIAN_CHILD_"
+            "HISTORY_BVP_OPEN"
+        ),
+        "finite_N_definition": {
+            "vertical_space": (
+                "V_Phi=KER(D_Gamma0)_INTERSECT_EXISTING_POLE_DOMAIN_"
+                "INTERSECT_EXISTING_CONSTRAINT_GAUGE_TANGENT"
+            ),
+            "on_shell_condition": (
+                "<E_child(Phi),delta_Phi>=0_FOR_ALL_delta_Phi_IN_V_Phi"
+            ),
+            "boundary_reaction": (
+                "Lambda_child=H^star*E_child_FOR_ANY_H_WITH_"
+                "D_Gamma0*H=IDENTITY"
+            ),
+            "lift_independence_proof": (
+                "H1-H2_MAPS_INTO_V_Phi_SO_(H1-H2)^star*E_child=0"
+            ),
+            "complete_event_to_child_equation": (
+                "F_child(e)=Lambda_event(e)+Lambda_child(Phi_e)=0"
+            ),
+            "single_valued_child_assumed": False,
+        },
+        "N5_exact_checkpoint_measurement": {
+            "event_projected_radial_flux": event_flux.tolist(),
+            "child_projected_radial_flux": child_flux.tolist(),
+            "raw_two_sided_radial_flux": raw_two_sided.tolist(),
+            "raw_two_sided_radial_flux_norm": float(
+                np.linalg.norm(raw_two_sided)
+            ),
+            "validated_dynamic_F18_rows": physical_rows[-2:].tolist(),
+            "validated_dynamic_F18_norm": float(
+                np.linalg.norm(physical_rows[-2:])
+            ),
+            "full_Euler_Dirac_covector_norm": float(
+                np.linalg.norm(full_euler_covector)
+            ),
+            "current_attachment_momentum_match_norm": float(
+                np.linalg.norm(child_momentum - event_momentum)
+            ),
+        },
+        "decisive_result": (
+            "THE_ORDER_10^3_RAW_TWO_SIDED_RADIAL_SUM_CANNOT_REPLACE_THE_"
+            "ORDER_10^-7_VALIDATED_DYNAMIC_ROWS;_THE_REDUCED_MOMENTUM_"
+            "FORCE_CONNECTION_TERMS_ARE_PHYSICAL_PARTS_OF_THE_BOUNDARY_"
+            "REACTION_UNTIL_ELIMINATED_BY_A_SAME_ACTION_ON_SHELL_BVP"
+        ),
+        "current_Hessian_minimal_lift_promoted_as_general_N_physics": False,
+        "validated_finite_N_F18_root_changed": False,
+        "new_equations_constraints_or_acceptance_gates": False,
+        "required_next": (
+            "SOLVE_THE_SAME_ACTION_LORENTZIAN_CHILD_HISTORY_BVP_WITH_THE_"
+            "EXISTING_POLE_ATTACHMENT_CAUCHY_AND_ETA_DOMAIN;_EXTRACT_"
+            "ITS_BOUNDARY_REACTION_MULTIPLIER_AND_TEST_N3_N4_N5_"
+            "SPECTRAL_CONSISTENCY"
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
 def event_to_child_on_shell_calderon_interface() -> dict[str, Any]:
     """Reconcile the validated local child roots with the required full BVP."""
 
@@ -6532,6 +6689,22 @@ def event_to_child_on_shell_calderon_interface() -> dict[str, Any]:
             "uses_only_the_retained_action_Hessian_after_the_BVP_is_defined": True,
             "replaces_the_validated_exact_F_N_residual": False,
             "N5_proposal_Jacobian_reopened": False,
+        },
+        "lift_independent_boundary_reaction": {
+            "vertical_on_shell_equation": (
+                "E_child(Phi)_RESTRICTED_TO_KER(D_Gamma0)=0"
+            ),
+            "reaction_definition": (
+                "Lambda_child=H^star*E_child,_D_Gamma0*H=IDENTITY"
+            ),
+            "independence": (
+                "(H1-H2)^star*E_child=0_BECAUSE_H1-H2_IS_VERTICAL"
+            ),
+            "event_to_complete_child_map": (
+                "F_child(e)=Lambda_event(e)+Lambda_child(Phi_e)=0"
+            ),
+            "raw_Gamma1_event_plus_raw_Gamma1_child_is_sufficient": False,
+            "existing_local_Hessian_lift_is_the_general_N_projector": False,
         },
         "required_function_space_proof": {
             "gauge_reduction": (
@@ -7506,6 +7679,7 @@ def promote_existing_general_n_statement(path: str | Path) -> Path:
         cross_resolution_boundary_symplectic_polarization_audit(target)
     )
     attachment_lift_audit = nested_attachment_lift_consistency_audit(target)
+    boundary_reaction_audit = on_shell_boundary_reaction_audit(target)
     statement["cross_resolution_principal_symbol_frame_audit"] = frame_audit
     statement["cross_resolution_strong_constraint_infsup_audit"] = (
         strong_constraint_audit
@@ -7516,6 +7690,7 @@ def promote_existing_general_n_statement(path: str | Path) -> Path:
     statement["nested_attachment_lift_consistency_audit"] = (
         attachment_lift_audit
     )
+    statement["on_shell_boundary_reaction_audit"] = boundary_reaction_audit
     required_next = statement["required_next"]
     result["general_N_complete_child_reconstruction_and_convergence_statement"] = (
         statement
@@ -7528,6 +7703,7 @@ def promote_existing_general_n_statement(path: str | Path) -> Path:
         boundary_polarization_audit
     )
     result["nested_attachment_lift_consistency_audit"] = attachment_lift_audit
+    result["on_shell_boundary_reaction_audit"] = boundary_reaction_audit
     child = dict(n5)
     child["required_next"] = required_next
     result["N5_event_conditioned_complete_child_reconstruction"] = child
@@ -7624,6 +7800,9 @@ def promote_existing_general_n_statement(path: str | Path) -> Path:
         "nested_attachment_lift_consistency_audit_validated": (
             attachment_lift_audit["validation_passed"]
         ),
+        "on_shell_boundary_reaction_audit_validated": (
+            boundary_reaction_audit["validation_passed"]
+        ),
     })
     payload["validation"] = validation
     payload["validation_passed"] = all(validation.values())
@@ -7718,6 +7897,7 @@ __all__ = [
     "cross_resolution_strong_constraint_infsup_audit",
     "cross_resolution_boundary_symplectic_polarization_audit",
     "nested_attachment_lift_consistency_audit",
+    "on_shell_boundary_reaction_audit",
     "event_to_child_on_shell_calderon_interface",
     "general_n_galerkin_transfer_certificate",
     "general_n_complete_child_reconstruction_statement",

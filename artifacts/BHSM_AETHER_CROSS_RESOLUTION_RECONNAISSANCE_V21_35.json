@@ -4743,6 +4743,14 @@
             "single_valuedness_assumed": false,
             "solution": "Phi_e=SolveChildBVP[Gamma0_event(e),p_event(e),I_event,I_env,B_SM]"
           },
+          "lift_independent_boundary_reaction": {
+            "event_to_complete_child_map": "F_child(e)=Lambda_event(e)+Lambda_child(Phi_e)=0",
+            "existing_local_Hessian_lift_is_the_general_N_projector": false,
+            "independence": "(H1-H2)^star*E_child=0_BECAUSE_H1-H2_IS_VERTICAL",
+            "raw_Gamma1_event_plus_raw_Gamma1_child_is_sufficient": false,
+            "reaction_definition": "Lambda_child=H^star*E_child,_D_Gamma0*H=IDENTITY",
+            "vertical_on_shell_equation": "E_child(Phi)_RESTRICTED_TO_KER(D_Gamma0)=0"
+          },
           "new_action_terms_equations_constraints_or_gates": false,
           "on_shell_child_relation": {
             "canonical_momentum_matching": "p_child=p_event",
@@ -5083,6 +5091,52 @@
         "validation_passed": true,
         "why": "THE_HESSIAN_HORIZONTAL_LIFT_RECOMPUTES_AN_INDEFINITE_GLOBAL_SCHUR_INVERSE_WHEN_NEW_SPECTRAL_MODES_ARE_ADDED;_THE_ORDER_ONE_MOMENTUM_CHANGE_IS_NOT_OWNED_BY_THE_EXACT_NESTED_ACTION_CORE"
       },
+      "on_shell_boundary_reaction_audit": {
+        "FULL_BHSM_COMPLETE": false,
+        "N5_exact_checkpoint_measurement": {
+          "child_projected_radial_flux": [
+            397.4134493372278,
+            -1208.7469072438344
+          ],
+          "current_attachment_momentum_match_norm": 4.363e-12,
+          "event_projected_radial_flux": [
+            -1931.0182984960784,
+            6138.225220686596
+          ],
+          "full_Euler_Dirac_covector_norm": 2.9964e-11,
+          "raw_two_sided_radial_flux": [
+            -1533.6048491588506,
+            4929.478313442762
+          ],
+          "raw_two_sided_radial_flux_norm": 5162.528477022285,
+          "validated_dynamic_F18_norm": 1.16652022e-07,
+          "validated_dynamic_F18_rows": [
+            1.16635647e-07,
+            -1.954504e-09
+          ]
+        },
+        "classification": "LIFT_INDEPENDENT_ON_SHELL_BOUNDARY_REACTION_FORM_DERIVED;_RAW_FLUX_ONLY_REPLACEMENT_INVALIDATED;_LORENTZIAN_CHILD_HISTORY_BVP_OPEN",
+        "current_Hessian_minimal_lift_promoted_as_general_N_physics": false,
+        "decisive_result": "THE_ORDER_10^3_RAW_TWO_SIDED_RADIAL_SUM_CANNOT_REPLACE_THE_ORDER_10^-7_VALIDATED_DYNAMIC_ROWS;_THE_REDUCED_MOMENTUM_FORCE_CONNECTION_TERMS_ARE_PHYSICAL_PARTS_OF_THE_BOUNDARY_REACTION_UNTIL_ELIMINATED_BY_A_SAME_ACTION_ON_SHELL_BVP",
+        "finite_N_definition": {
+          "boundary_reaction": "Lambda_child=H^star*E_child_FOR_ANY_H_WITH_D_Gamma0*H=IDENTITY",
+          "complete_event_to_child_equation": "F_child(e)=Lambda_event(e)+Lambda_child(Phi_e)=0",
+          "lift_independence_proof": "H1-H2_MAPS_INTO_V_Phi_SO_(H1-H2)^star*E_child=0",
+          "on_shell_condition": "<E_child(Phi),delta_Phi>=0_FOR_ALL_delta_Phi_IN_V_Phi",
+          "single_valued_child_assumed": false,
+          "vertical_space": "V_Phi=KER(D_Gamma0)_INTERSECT_EXISTING_POLE_DOMAIN_INTERSECT_EXISTING_CONSTRAINT_GAUGE_TANGENT"
+        },
+        "new_equations_constraints_or_acceptance_gates": false,
+        "required_next": "SOLVE_THE_SAME_ACTION_LORENTZIAN_CHILD_HISTORY_BVP_WITH_THE_EXISTING_POLE_ATTACHMENT_CAUCHY_AND_ETA_DOMAIN;_EXTRACT_ITS_BOUNDARY_REACTION_MULTIPLIER_AND_TEST_N3_N4_N5_SPECTRAL_CONSISTENCY",
+        "validated_finite_N_F18_root_changed": false,
+        "validation": {
+          "canonical_momentum_match_replayed": true,
+          "exact_binary64_N5_root_replayed": true,
+          "full_Euler_Dirac_tangent_closes": true,
+          "raw_two_sided_radial_flux_is_not_the_validated_dynamic_row": true
+        },
+        "validation_passed": true
+      },
       "open": {
         "common_duration_persistence_convergence": true,
         "numerical_state_convergence_from_N3_N4_N5": true,
@@ -5222,6 +5276,52 @@
       },
       "validation_passed": true,
       "why": "THE_HESSIAN_HORIZONTAL_LIFT_RECOMPUTES_AN_INDEFINITE_GLOBAL_SCHUR_INVERSE_WHEN_NEW_SPECTRAL_MODES_ARE_ADDED;_THE_ORDER_ONE_MOMENTUM_CHANGE_IS_NOT_OWNED_BY_THE_EXACT_NESTED_ACTION_CORE"
+    },
+    "on_shell_boundary_reaction_audit": {
+      "FULL_BHSM_COMPLETE": false,
+      "N5_exact_checkpoint_measurement": {
+        "child_projected_radial_flux": [
+          397.4134493372278,
+          -1208.7469072438344
+        ],
+        "current_attachment_momentum_match_norm": 4.363e-12,
+        "event_projected_radial_flux": [
+          -1931.0182984960784,
+          6138.225220686596
+        ],
+        "full_Euler_Dirac_covector_norm": 2.9964e-11,
+        "raw_two_sided_radial_flux": [
+          -1533.6048491588506,
+          4929.478313442762
+        ],
+        "raw_two_sided_radial_flux_norm": 5162.528477022285,
+        "validated_dynamic_F18_norm": 1.16652022e-07,
+        "validated_dynamic_F18_rows": [
+          1.16635647e-07,
+          -1.954504e-09
+        ]
+      },
+      "classification": "LIFT_INDEPENDENT_ON_SHELL_BOUNDARY_REACTION_FORM_DERIVED;_RAW_FLUX_ONLY_REPLACEMENT_INVALIDATED;_LORENTZIAN_CHILD_HISTORY_BVP_OPEN",
+      "current_Hessian_minimal_lift_promoted_as_general_N_physics": false,
+      "decisive_result": "THE_ORDER_10^3_RAW_TWO_SIDED_RADIAL_SUM_CANNOT_REPLACE_THE_ORDER_10^-7_VALIDATED_DYNAMIC_ROWS;_THE_REDUCED_MOMENTUM_FORCE_CONNECTION_TERMS_ARE_PHYSICAL_PARTS_OF_THE_BOUNDARY_REACTION_UNTIL_ELIMINATED_BY_A_SAME_ACTION_ON_SHELL_BVP",
+      "finite_N_definition": {
+        "boundary_reaction": "Lambda_child=H^star*E_child_FOR_ANY_H_WITH_D_Gamma0*H=IDENTITY",
+        "complete_event_to_child_equation": "F_child(e)=Lambda_event(e)+Lambda_child(Phi_e)=0",
+        "lift_independence_proof": "H1-H2_MAPS_INTO_V_Phi_SO_(H1-H2)^star*E_child=0",
+        "on_shell_condition": "<E_child(Phi),delta_Phi>=0_FOR_ALL_delta_Phi_IN_V_Phi",
+        "single_valued_child_assumed": false,
+        "vertical_space": "V_Phi=KER(D_Gamma0)_INTERSECT_EXISTING_POLE_DOMAIN_INTERSECT_EXISTING_CONSTRAINT_GAUGE_TANGENT"
+      },
+      "new_equations_constraints_or_acceptance_gates": false,
+      "required_next": "SOLVE_THE_SAME_ACTION_LORENTZIAN_CHILD_HISTORY_BVP_WITH_THE_EXISTING_POLE_ATTACHMENT_CAUCHY_AND_ETA_DOMAIN;_EXTRACT_ITS_BOUNDARY_REACTION_MULTIPLIER_AND_TEST_N3_N4_N5_SPECTRAL_CONSISTENCY",
+      "validated_finite_N_F18_root_changed": false,
+      "validation": {
+        "canonical_momentum_match_replayed": true,
+        "exact_binary64_N5_root_replayed": true,
+        "full_Euler_Dirac_tangent_closes": true,
+        "raw_two_sided_radial_flux_is_not_the_validated_dynamic_row": true
+      },
+      "validation_passed": true
     },
     "orders": [
       {
@@ -6211,6 +6311,7 @@
     "nested_attachment_lift_consistency_audit_validated": true,
     "no_accepted_N3_trajectory_transplanted": true,
     "no_cross_resolution_state_transplant": true,
+    "on_shell_boundary_reaction_audit_validated": true,
     "orders_N3_N4_N5_measured": true,
     "physical_scale_accessibility_audit_validated": true,
     "rank14_not_silently_imposed_at_higher_N": true,

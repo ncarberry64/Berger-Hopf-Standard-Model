@@ -253,6 +253,21 @@ def test_latest_n4_child_checkpoint_uses_fixed_merit_full_space_proposal():
         "current_lift_may_be_promoted_as_a_general_N_Calderon_projector"
     ] is False
     assert lift["new_physics_rows_constraints_or_gates_added"] is False
+    reaction = payload["cross_resolution_reconnaissance"][
+        "on_shell_boundary_reaction_audit"
+    ]
+    assert reaction["validation_passed"] is True
+    assert reaction["N5_exact_checkpoint_measurement"][
+        "validated_dynamic_F18_norm"
+    ] < 2.0e-7
+    assert reaction["N5_exact_checkpoint_measurement"][
+        "raw_two_sided_radial_flux_norm"
+    ] > 1.0
+    assert reaction[
+        "current_Hessian_minimal_lift_promoted_as_general_N_physics"
+    ] is False
+    assert reaction["validated_finite_N_F18_root_changed"] is False
+    assert reaction["new_equations_constraints_or_acceptance_gates"] is False
 
 
 def test_general_n_reconstruction_statement_preserves_the_physical_map():
@@ -287,6 +302,13 @@ def test_general_n_reconstruction_statement_preserves_the_physical_map():
     ] is False
     assert calderon["differentiated_BVP"][
         "N5_proposal_Jacobian_reopened"
+    ] is False
+    reaction = calderon["lift_independent_boundary_reaction"]
+    assert reaction[
+        "raw_Gamma1_event_plus_raw_Gamma1_child_is_sufficient"
+    ] is False
+    assert reaction[
+        "existing_local_Hessian_lift_is_the_general_N_projector"
     ] is False
     symbol = calderon["retained_radial_principal_symbol_audit"]
     assert symbol["algebraic_rank"]["generic_rank"] == 3
