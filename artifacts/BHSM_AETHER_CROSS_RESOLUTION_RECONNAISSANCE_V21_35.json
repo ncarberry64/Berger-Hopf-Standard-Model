@@ -4,7 +4,7 @@
   "breadth_first_closure_network_audit": {
     "FULL_BHSM_COMPLETE": false,
     "doctrine": {
-      "active_N4_child_dependency_preserved": true,
+      "active_cross_resolution_dependency_preserved": true,
       "conditional_derivations_allowed": true,
       "downstream_requirements_may_identify_upstream_invariants": true,
       "new_fields_coefficients_events_or_gates_added": false,
@@ -31,8 +31,8 @@
     },
     "interfaces": {
       "event_child_reconstruction_return": {
-        "classification": "DERIVED_SET_VALUED_INTERFACE_CHILD_ROOT_OPEN",
-        "current_N4_status": "EVENT_VALIDATED;_16_ROW_MAP_STRUCTURALLY_FULL_RANK;_CENTER_FIXED_SOBOLEV_NORMALIZED_RICHARDSON_DERIVATIVE_VALIDATED;_GLOBAL_MERIT_CHILD_CONTINUATION_OPEN",
+        "classification": "DERIVED_SET_VALUED_INTERFACE_N4_ROOT_VALIDATED_N5_ROOT_OPEN",
+        "current_N4_status": "EVENT_VALIDATED;_16_ROW_MAP_STRUCTURALLY_FULL_RANK;_CENTER_FIXED_SOBOLEV_NORMALIZED_RICHARDSON_DERIVATIVE_VALIDATED;_COMPLETE_CHILD_AND_LOCAL_POSITIVE_DURATION_RELATIVE_PERSISTENCE_VALIDATED",
         "equations": {
           "child_BVP": "E_child(Phi_c)=0_AND_B_child(Phi_c,z_event)=0",
           "finite_N_map": "F_child=(3_TRACE,2N+1_CONSTRAINT,2_MOMENTUM,2_DYNAMIC_FLUX)=0",
@@ -137,7 +137,7 @@
           "RETURN_INTERFACE",
           "PERSISTENCE"
         ],
-        "object": "CONTINUE_THE_UNCHANGED_GLOBAL_MERIT_N4_CHILD_SOLVE_FROM_THE_LATEST_ADMISSIBLE_CHECKPOINT_WITH_FRESH_CENTER_FIXED_DYNAMIC_CALDERON_FLUX_CURVATURE",
+        "object": "DERIVE_THE_N5_DYNAMIC_CALDERON_FLUX_JACOBIAN_FROM_THE_ACTION_FOURTH_VARIATION_OR_DIFFERENTIATED_CHILD_BVP",
         "priority": 1
       },
       {
@@ -157,7 +157,7 @@
         "priority": 3
       }
     ],
-    "scientific_classification": "THREE_CONDITIONAL_INTERFACES_FROZEN;_NO_DOWNSTREAM_NUMERICAL_PREDICTION_PROMOTED;_N4_COMPLETE_CHILD_CONTINUATION_ACTIVE",
+    "scientific_classification": "THREE_CONDITIONAL_INTERFACES_FROZEN;_NO_DOWNSTREAM_NUMERICAL_PREDICTION_PROMOTED;_N4_COMPLETE_PERSISTENT_CHILD_VALIDATED;_N5_COMPLETE_CHILD_MAP_ACTIVE",
     "shared_child_invariants": {
       "hindsight_use": "THESE_OBJECTS_MAY_PRIORITIZE_UPSTREAM_DERIVATIONS_AND_CLASSIFY_BRANCH_COMPATIBILITY_BUT_MAY_NOT_ADD_ROWS_OR_SELECT_BY_DATA",
       "required_by_multiple_interfaces": [
@@ -172,7 +172,7 @@
     },
     "validation": {
       "N_not_scale_or_family": true,
-      "active_N4_dependency_retained": true,
+      "active_cross_resolution_dependency_retained": true,
       "conditional_interfaces_not_numerical_claims": true,
       "first_blocker_action_owned_and_localized": true,
       "fixed_physics_preserved": true,
@@ -421,6 +421,581 @@
         "event_time_relative_difference": 0.000495267365858
       }
     },
+    "N4_complete_child_positive_duration_persistence": {
+      "FULL_BHSM_COMPLETE": false,
+      "coarse_evolution": {
+        "child_proper_duration": 0.000106513606191,
+        "completed": true,
+        "coordinate_duration": 0.0001,
+        "final_configuration_displacement_norm": 0.000529184300751,
+        "final_state": [
+          0.002298438264379,
+          0.005652587519176,
+          0.003543785625592,
+          0.000173865041078,
+          4.038112911e-06,
+          0.139628119697873,
+          0.137496828348242,
+          5.2746317618e-05,
+          -1.9210083287e-05,
+          -0.099374365456319,
+          -0.100871684569521,
+          -0.001455800523042,
+          4.0300138129e-05,
+          -0.927554555414713,
+          -1.045364261134925,
+          -0.062091249700167,
+          0.000819838907135,
+          0.003370021726453,
+          3.916084234371064,
+          -1.854436046930472,
+          -0.400161935904778,
+          -0.143848522088589,
+          1.854259111362154,
+          1.950487659309436,
+          0.022558456419397,
+          0.004686125325717,
+          0.419993394460192,
+          0.48329697915969,
+          -3.0675146428e-05,
+          -1.2931404967e-05,
+          -0.744885596428579,
+          -0.241882915256715,
+          0.007399629542768,
+          0.005272052011069
+        ],
+        "final_velocity_displacement_norm": 0.369417845721588,
+        "first_exit": null,
+        "maximum_Dirac_condition_number": 3195455783.414814,
+        "maximum_constraint_residual": 1.0016e-11,
+        "minimum_eta_Legendre": 1.005251432581881,
+        "requested_steps": 10,
+        "rows": [
+          {
+            "boundary_lapse": 1.061325473579656,
+            "child_proper_time": 0.0,
+            "configuration_displacement_norm": 0.0,
+            "coordinate_time": 0.0,
+            "eta_Legendre_minimum": 1.005251432581881,
+            "finite": true,
+            "inside_persistence_domain": true,
+            "maximum_constraint_residual": 3.05e-13,
+            "outgoing_Dirac_condition_number": 3195455783.414814,
+            "outgoing_projection_success": true,
+            "step": 0,
+            "velocity_displacement_norm": 0.0
+          },
+          {
+            "boundary_lapse": 1.065245119952896,
+            "child_proper_time": 1.0632852968e-05,
+            "configuration_displacement_norm": 5.3079482426e-05,
+            "coordinate_time": 1e-05,
+            "eta_Legendre_minimum": 1.009299043657703,
+            "finite": true,
+            "inside_persistence_domain": true,
+            "maximum_constraint_residual": 2e-14,
+            "outgoing_Dirac_condition_number": 28126958.461160436,
+            "outgoing_projection_success": true,
+            "step": 1,
+            "velocity_displacement_norm": 0.596705443566975
+          },
+          {
+            "boundary_lapse": 1.065277009356558,
+            "child_proper_time": 2.1285463614e-05,
+            "configuration_displacement_norm": 0.00010586826102,
+            "coordinate_time": 2e-05,
+            "eta_Legendre_minimum": 1.009156944265638,
+            "finite": true,
+            "inside_persistence_domain": true,
+            "maximum_constraint_residual": 2.24e-13,
+            "outgoing_Dirac_condition_number": 29125115.86214127,
+            "outgoing_projection_success": true,
+            "step": 2,
+            "velocity_displacement_norm": 0.574045818552193
+          },
+          {
+            "boundary_lapse": 1.065305477825662,
+            "child_proper_time": 3.193837605e-05,
+            "configuration_displacement_norm": 0.000158685320138,
+            "coordinate_time": 3e-05,
+            "eta_Legendre_minimum": 1.009011945776773,
+            "finite": true,
+            "inside_persistence_domain": true,
+            "maximum_constraint_residual": 5.46e-13,
+            "outgoing_Dirac_condition_number": 30226737.215955775,
+            "outgoing_projection_success": true,
+            "step": 3,
+            "velocity_displacement_norm": 0.550886023079306
+          },
+          {
+            "boundary_lapse": 1.065330176355808,
+            "child_proper_time": 4.2591554321e-05,
+            "configuration_displacement_norm": 0.000211526838859,
+            "coordinate_time": 4e-05,
+            "eta_Legendre_minimum": 1.008863749358329,
+            "finite": true,
+            "inside_persistence_domain": true,
+            "maximum_constraint_residual": 9.42e-13,
+            "outgoing_Dirac_condition_number": 31450915.582675967,
+            "outgoing_projection_success": true,
+            "step": 4,
+            "velocity_displacement_norm": 0.527178230037793
+          },
+          {
+            "boundary_lapse": 1.065350694073312,
+            "child_proper_time": 5.3244958673e-05,
+            "configuration_displacement_norm": 0.000264393665729,
+            "coordinate_time": 5e-05,
+            "eta_Legendre_minimum": 1.008712002674903,
+            "finite": true,
+            "inside_persistence_domain": true,
+            "maximum_constraint_residual": 1.475e-12,
+            "outgoing_Dirac_condition_number": 32822067.62186918,
+            "outgoing_projection_success": true,
+            "step": 5,
+            "velocity_displacement_norm": 0.502866599967678
+          },
+          {
+            "boundary_lapse": 1.065366541652544,
+            "child_proper_time": 6.3898544852e-05,
+            "configuration_displacement_norm": 0.00031728759187,
+            "coordinate_time": 6e-05,
+            "eta_Legendre_minimum": 1.00855628548516,
+            "finite": true,
+            "inside_persistence_domain": true,
+            "maximum_constraint_residual": 2.195e-12,
+            "outgoing_Dirac_condition_number": 34372007.31353346,
+            "outgoing_projection_success": true,
+            "step": 6,
+            "velocity_displacement_norm": 0.477885296905933
+          },
+          {
+            "boundary_lapse": 1.065377128533168,
+            "child_proper_time": 7.4552263203e-05,
+            "configuration_displacement_norm": 0.000370210847637,
+            "coordinate_time": 7e-05,
+            "eta_Legendre_minimum": 1.008396089840079,
+            "finite": true,
+            "inside_persistence_domain": true,
+            "maximum_constraint_residual": 3.206e-12,
+            "outgoing_Dirac_condition_number": 36143100.90505243,
+            "outgoing_projection_success": true,
+            "step": 7,
+            "velocity_displacement_norm": 0.452155837517828
+          },
+          {
+            "boundary_lapse": 1.065381730842586,
+            "child_proper_time": 8.52060575e-05,
+            "configuration_displacement_norm": 0.000423166013891,
+            "coordinate_time": 8e-05,
+            "eta_Legendre_minimum": 1.008230792183872,
+            "finite": true,
+            "inside_persistence_domain": true,
+            "maximum_constraint_residual": 4.638e-12,
+            "outgoing_Dirac_condition_number": 38193239.080147795,
+            "outgoing_projection_success": true,
+            "step": 8,
+            "velocity_displacement_norm": 0.425583486138894
+          },
+          {
+            "boundary_lapse": 1.065379444918035,
+            "child_proper_time": 9.5859863378e-05,
+            "configuration_displacement_norm": 0.0004761560383,
+            "coordinate_time": 9e-05,
+            "eta_Legendre_minimum": 1.00805961290327,
+            "finite": true,
+            "inside_persistence_domain": true,
+            "maximum_constraint_residual": 6.764e-12,
+            "outgoing_Dirac_condition_number": 40604009.02474078,
+            "outgoing_projection_success": true,
+            "step": 9,
+            "velocity_displacement_norm": 0.398052257253327
+          },
+          {
+            "boundary_lapse": 1.065369117634083,
+            "child_proper_time": 0.000106513606191,
+            "configuration_displacement_norm": 0.000529184300751,
+            "coordinate_time": 0.0001,
+            "eta_Legendre_minimum": 1.007881555649214,
+            "finite": true,
+            "inside_persistence_domain": true,
+            "maximum_constraint_residual": 1.0016e-11,
+            "step": 10,
+            "velocity_displacement_norm": 0.369417845721588
+          }
+        ],
+        "time_step": 1e-05
+      },
+      "coarse_fine_final_H6_H5_relative_difference": 0.044406752418955,
+      "decay_observed_on_witness_interval": false,
+      "eternal_stability_claimed": false,
+      "fine_evolution": {
+        "child_proper_duration": 0.000106245511732,
+        "completed": true,
+        "coordinate_duration": 0.0001,
+        "final_configuration_displacement_norm": 0.0005398975839,
+        "final_state": [
+          0.002297628804009,
+          0.005651539668859,
+          0.003543808926857,
+          0.00017431982077,
+          4.213795606e-06,
+          0.139615981639635,
+          0.13746968424994,
+          2.5130794506e-05,
+          -3.0977124168e-05,
+          -0.099367295143395,
+          -0.100860450301303,
+          -0.001450633070154,
+          4.1261970446e-05,
+          -0.929070875135615,
+          -1.047322078267206,
+          -0.062035293990838,
+          0.00168061284185,
+          0.003700055328882,
+          3.893126913517141,
+          -1.905694602945544,
+          -0.452176361224558,
+          -0.165912110518525,
+          1.867506253573596,
+          1.971539908233446,
+          0.032229934044543,
+          0.006478699768807,
+          0.420573086816452,
+          0.483366814943504,
+          -3.6808179715e-05,
+          -1.3487930713e-05,
+          -0.745784055230556,
+          -0.243097344134982,
+          0.00777317536221,
+          0.005975756582637
+        ],
+        "final_velocity_displacement_norm": 0.286305629222977,
+        "first_exit": null,
+        "maximum_Dirac_condition_number": 7604557588.166197,
+        "maximum_constraint_residual": 1.08702e-10,
+        "minimum_eta_Legendre": 1.003987951259683,
+        "requested_steps": 20,
+        "rows": [
+          {
+            "boundary_lapse": 1.061325473579656,
+            "child_proper_time": 0.0,
+            "configuration_displacement_norm": 0.0,
+            "coordinate_time": 0.0,
+            "eta_Legendre_minimum": 1.005251432581881,
+            "finite": true,
+            "inside_persistence_domain": true,
+            "maximum_constraint_residual": 3.05e-13,
+            "outgoing_Dirac_condition_number": 3195455783.414814,
+            "outgoing_projection_success": true,
+            "step": 0,
+            "velocity_displacement_norm": 0.0
+          },
+          {
+            "boundary_lapse": 1.063258344847331,
+            "child_proper_time": 5.311459546e-06,
+            "configuration_displacement_norm": 2.6799539293e-05,
+            "coordinate_time": 5e-06,
+            "eta_Legendre_minimum": 1.007071003882942,
+            "finite": true,
+            "inside_persistence_domain": true,
+            "maximum_constraint_residual": 2.1e-14,
+            "outgoing_Dirac_condition_number": 63382676.90355685,
+            "outgoing_projection_success": true,
+            "step": 1,
+            "velocity_displacement_norm": 0.293633556074237
+          },
+          {
+            "boundary_lapse": 1.063213322687539,
+            "child_proper_time": 1.0627638715e-05,
+            "configuration_displacement_norm": 5.3520667365e-05,
+            "coordinate_time": 1e-05,
+            "eta_Legendre_minimum": 1.006947203823616,
+            "finite": true,
+            "inside_persistence_domain": true,
+            "maximum_constraint_residual": 2.873e-12,
+            "outgoing_Dirac_condition_number": 68548409.47546951,
+            "outgoing_projection_success": true,
+            "step": 2,
+            "velocity_displacement_norm": 0.272743883414139
+          },
+          {
+            "boundary_lapse": 1.063159942491438,
+            "child_proper_time": 1.5943571878e-05,
+            "configuration_displacement_norm": 8.0262980027e-05,
+            "coordinate_time": 1.5e-05,
+            "eta_Legendre_minimum": 1.006816069097567,
+            "finite": true,
+            "inside_persistence_domain": true,
+            "maximum_constraint_residual": 7.812e-12,
+            "outgoing_Dirac_condition_number": 75139941.23901613,
+            "outgoing_projection_success": true,
+            "step": 3,
+            "velocity_displacement_norm": 0.250561525448446
+          },
+          {
+            "boundary_lapse": 1.063096083763793,
+            "child_proper_time": 2.1259211943e-05,
+            "configuration_displacement_norm": 0.000107027846557,
+            "coordinate_time": 2e-05,
+            "eta_Legendre_minimum": 1.006675725486401,
+            "finite": true,
+            "inside_persistence_domain": true,
+            "maximum_constraint_residual": 1.7127e-11,
+            "outgoing_Dirac_condition_number": 83961555.43922979,
+            "outgoing_projection_success": true,
+            "step": 4,
+            "velocity_displacement_norm": 0.226761117575013
+          },
+          {
+            "boundary_lapse": 1.063018541871725,
+            "child_proper_time": 2.6574498508e-05,
+            "configuration_displacement_norm": 0.000133817760946,
+            "coordinate_time": 2.5e-05,
+            "eta_Legendre_minimum": 1.006523338323454,
+            "finite": true,
+            "inside_persistence_domain": true,
+            "maximum_constraint_residual": 3.6791e-11,
+            "outgoing_Dirac_condition_number": 96639997.00577214,
+            "outgoing_projection_success": true,
+            "step": 5,
+            "velocity_displacement_norm": 0.200853053028685
+          },
+          {
+            "boundary_lapse": 1.062922043586752,
+            "child_proper_time": 3.1889349971e-05,
+            "configuration_displacement_norm": 0.000160636183471,
+            "coordinate_time": 3e-05,
+            "eta_Legendre_minimum": 1.006354239455276,
+            "finite": true,
+            "inside_persistence_domain": true,
+            "maximum_constraint_residual": 8.6055e-11,
+            "outgoing_Dirac_condition_number": 117159731.14425871,
+            "outgoing_projection_success": true,
+            "step": 6,
+            "velocity_displacement_norm": 0.172037207322059
+          },
+          {
+            "boundary_lapse": 1.062796686144129,
+            "child_proper_time": 3.7203646796e-05,
+            "configuration_displacement_norm": 0.000187488122382,
+            "coordinate_time": 3.5e-05,
+            "eta_Legendre_minimum": 1.006159655267002,
+            "finite": true,
+            "inside_persistence_domain": true,
+            "maximum_constraint_residual": 3.5e-14,
+            "outgoing_Dirac_condition_number": 159451528.45381013,
+            "outgoing_projection_success": true,
+            "step": 7,
+            "velocity_displacement_norm": 0.138829474188897
+          },
+          {
+            "boundary_lapse": 1.062618825050416,
+            "child_proper_time": 4.2517185574e-05,
+            "configuration_displacement_norm": 0.00021438178203,
+            "coordinate_time": 4e-05,
+            "eta_Legendre_minimum": 1.005918618939791,
+            "finite": true,
+            "inside_persistence_domain": true,
+            "maximum_constraint_residual": 1.1e-14,
+            "outgoing_Dirac_condition_number": 367416129.0118603,
+            "outgoing_projection_success": true,
+            "step": 8,
+            "velocity_displacement_norm": 0.097785316471574
+          },
+          {
+            "boundary_lapse": 1.062275429986084,
+            "child_proper_time": 4.7829421211e-05,
+            "configuration_displacement_norm": 0.000241335454156,
+            "coordinate_time": 4.5e-05,
+            "eta_Legendre_minimum": 1.005530785507486,
+            "finite": true,
+            "inside_persistence_domain": true,
+            "maximum_constraint_residual": 1.2e-14,
+            "outgoing_Dirac_condition_number": 1865752342.6032946,
+            "outgoing_projection_success": true,
+            "step": 9,
+            "velocity_displacement_norm": 0.035215423811005
+          },
+          {
+            "boundary_lapse": 1.063119736315986,
+            "child_proper_time": 5.3142909127e-05,
+            "configuration_displacement_norm": 0.000268252127383,
+            "coordinate_time": 5e-05,
+            "eta_Legendre_minimum": 1.006266683250891,
+            "finite": true,
+            "inside_persistence_domain": true,
+            "maximum_constraint_residual": 3e-14,
+            "outgoing_Dirac_condition_number": 131117420.60244651,
+            "outgoing_projection_success": true,
+            "step": 10,
+            "velocity_displacement_norm": 0.149891805341164
+          },
+          {
+            "boundary_lapse": 1.06297598774549,
+            "child_proper_time": 5.8458148437e-05,
+            "configuration_displacement_norm": 0.00029511685469,
+            "coordinate_time": 5.5e-05,
+            "eta_Legendre_minimum": 1.006056038678387,
+            "finite": true,
+            "inside_persistence_domain": true,
+            "maximum_constraint_residual": 1.5e-14,
+            "outgoing_Dirac_condition_number": 199709748.043917,
+            "outgoing_projection_success": true,
+            "step": 11,
+            "velocity_displacement_norm": 0.114522185083105
+          },
+          {
+            "boundary_lapse": 1.062755851917975,
+            "child_proper_time": 6.3772478036e-05,
+            "configuration_displacement_norm": 0.000322029723569,
+            "coordinate_time": 6e-05,
+            "eta_Legendre_minimum": 1.005777862050148,
+            "finite": true,
+            "inside_persistence_domain": true,
+            "maximum_constraint_residual": 1.2e-14,
+            "outgoing_Dirac_condition_number": 845428332.5542994,
+            "outgoing_projection_success": true,
+            "step": 12,
+            "velocity_displacement_norm": 0.069148741867787
+          },
+          {
+            "boundary_lapse": 1.062602748927979,
+            "child_proper_time": 6.9085874538e-05,
+            "configuration_displacement_norm": 0.000349027532423,
+            "coordinate_time": 6.5e-05,
+            "eta_Legendre_minimum": 1.005569277935719,
+            "finite": true,
+            "inside_persistence_domain": true,
+            "maximum_constraint_residual": 2.6378e-11,
+            "outgoing_Dirac_condition_number": 2925112459.763909,
+            "outgoing_projection_success": true,
+            "step": 13,
+            "velocity_displacement_norm": 0.040034130567302
+          },
+          {
+            "boundary_lapse": 1.060771305204578,
+            "child_proper_time": 7.4394309674e-05,
+            "configuration_displacement_norm": 0.0003762137697,
+            "coordinate_time": 7e-05,
+            "eta_Legendre_minimum": 1.003987951259683,
+            "finite": true,
+            "inside_persistence_domain": true,
+            "maximum_constraint_residual": 1.8e-14,
+            "outgoing_Dirac_condition_number": 84791071.9028728,
+            "outgoing_projection_success": true,
+            "step": 14,
+            "velocity_displacement_norm": 0.280452593974148
+          },
+          {
+            "boundary_lapse": 1.060979625919869,
+            "child_proper_time": 7.9698687001e-05,
+            "configuration_displacement_norm": 0.000403585819567,
+            "coordinate_time": 7.5e-05,
+            "eta_Legendre_minimum": 1.004091540300195,
+            "finite": true,
+            "inside_persistence_domain": true,
+            "maximum_constraint_residual": 1.1711e-11,
+            "outgoing_Dirac_condition_number": 94684479.91326502,
+            "outgoing_projection_success": true,
+            "step": 15,
+            "velocity_displacement_norm": 0.261604331722282
+          },
+          {
+            "boundary_lapse": 1.06120324463818,
+            "child_proper_time": 8.5004144178e-05,
+            "configuration_displacement_norm": 0.000430933484553,
+            "coordinate_time": 8e-05,
+            "eta_Legendre_minimum": 1.004208469561156,
+            "finite": true,
+            "inside_persistence_domain": true,
+            "maximum_constraint_residual": 3.7824e-11,
+            "outgoing_Dirac_condition_number": 109384746.11354896,
+            "outgoing_projection_success": true,
+            "step": 16,
+            "velocity_displacement_norm": 0.240484718880592
+          },
+          {
+            "boundary_lapse": 1.061448602943066,
+            "child_proper_time": 9.0310773797e-05,
+            "configuration_displacement_norm": 0.000458250305599,
+            "coordinate_time": 8.5e-05,
+            "eta_Legendre_minimum": 1.004344414577289,
+            "finite": true,
+            "inside_persistence_domain": true,
+            "maximum_constraint_residual": 1.08702e-10,
+            "outgoing_Dirac_condition_number": 134686616.51202065,
+            "outgoing_projection_success": true,
+            "step": 17,
+            "velocity_displacement_norm": 0.216153336359583
+          },
+          {
+            "boundary_lapse": 1.061728602993757,
+            "child_proper_time": 9.5618716812e-05,
+            "configuration_displacement_norm": 0.000485528321365,
+            "coordinate_time": 9e-05,
+            "eta_Legendre_minimum": 1.004510752176389,
+            "finite": true,
+            "inside_persistence_domain": true,
+            "maximum_constraint_residual": 9e-15,
+            "outgoing_Dirac_condition_number": 195649074.52704242,
+            "outgoing_projection_success": true,
+            "step": 18,
+            "velocity_displacement_norm": 0.186752263062447
+          },
+          {
+            "boundary_lapse": 1.062078678320556,
+            "child_proper_time": 0.000100928235015,
+            "configuration_displacement_norm": 0.000512755226506,
+            "coordinate_time": 9.5e-05,
+            "eta_Legendre_minimum": 1.00473875126737,
+            "finite": true,
+            "inside_persistence_domain": true,
+            "maximum_constraint_residual": 3.7e-14,
+            "outgoing_Dirac_condition_number": 7604557588.166197,
+            "outgoing_projection_success": true,
+            "step": 19,
+            "velocity_displacement_norm": 0.147305394602965
+          },
+          {
+            "boundary_lapse": 1.06483200866435,
+            "child_proper_time": 0.000106245511732,
+            "configuration_displacement_norm": 0.0005398975839,
+            "coordinate_time": 0.0001,
+            "eta_Legendre_minimum": 1.007298556193769,
+            "finite": true,
+            "inside_persistence_domain": true,
+            "maximum_constraint_residual": 3.1e-14,
+            "step": 20,
+            "velocity_displacement_norm": 0.286305629222977
+          }
+        ],
+        "time_step": 5e-06
+      },
+      "finite_duration_numerical_movie_converged": false,
+      "local_existence_theorem": {
+        "Dirac_condition_number": 3195455783.414814,
+        "Dirac_smallest_singular_value": 1.49951273e-07,
+        "analytic_vector_field_domain": "FINITE_BHSM_EXPONENTIAL_ACTION_CHART_WITH_L_eta_POSITIVE_AND_INVERTIBLE_EULER_DIRAC_HESSIAN",
+        "constraint_tangency": "D_t(L_m)=L_mq*v+[L_mv,L_mm]*(a,mdot)=0_BY_THE_SECOND_EULER_DIRAC_BLOCK",
+        "energy_tangency": "D_t(L_v*v-L)=0_BY_THE_AUTONOMOUS_EULER_LAGRANGE_IDENTITY_ON_THE_CONSTRAINT_SURFACE",
+        "initial_boundary_lapse": 1.061325473579656,
+        "initial_constraint_maximum": 3.05e-13,
+        "initial_eta_margin": 1.005251432581881,
+        "lifetime_or_eternal_stability_inferred": false,
+        "positive_duration_exists": true,
+        "proper_time_relation": "d_tau=N_boundary*dt_WITH_N_boundary_POSITIVE",
+        "vector_field_finite": true,
+        "vector_field_norm": 180503.67315666468
+      },
+      "nonzero_relative_evolution_retained": true,
+      "numerical_convergence_is_reliability_not_new_physics": true,
+      "persistence_domain": "FINITE_CONSTRAINT_CONSISTENT_L_eta_POSITIVE_RELATIVE_CHILD_EVOLUTION_WITH_FIXED_DISCRETE_TOPOLOGY_AND_CARRIER_CLASS",
+      "persistence_validation_basis": "LOCAL_ANALYTIC_EULER_DIRAC_EXISTENCE_THEOREM",
+      "positive_duration_relative_persistence_validated": true,
+      "source": "VALIDATED_INDEPENDENT_N4_COMPLETE_CHILD",
+      "staticity_zero_momentum_or_zero_time_dependence_required": false
+    },
     "N4_event_conditioned_complete_child_reconstruction": {
       "FULL_BHSM_COMPLETE": false,
       "additional_global_KKT_rows": 0,
@@ -434,7 +1009,7 @@
           {
             "admissible": true,
             "amplitude": -0.0001,
-            "dynamic_flux_norm": 1164919.9058344977,
+            "dynamic_flux_norm": 1164919.9344871235,
             "maximum_constraint_residual": 2.6995e-11,
             "minimum_eta_Legendre": 1.001592168480466,
             "momentum_norm": 1.2155761799e-05,
@@ -443,7 +1018,7 @@
           {
             "admissible": true,
             "amplitude": 0.0001,
-            "dynamic_flux_norm": 1166763.68795654,
+            "dynamic_flux_norm": 1166763.7679599181,
             "maximum_constraint_residual": 2.699e-11,
             "minimum_eta_Legendre": 1.001592845283558,
             "momentum_norm": 1.2155768493e-05,
@@ -452,7 +1027,7 @@
           {
             "admissible": true,
             "amplitude": -0.001,
-            "dynamic_flux_norm": 115660.15292535617,
+            "dynamic_flux_norm": 115660.14623332277,
             "maximum_constraint_residual": 1e-14,
             "minimum_eta_Legendre": 1.001589125095314,
             "momentum_norm": 0.000121538987512,
@@ -461,7 +1036,7 @@
           {
             "admissible": true,
             "amplitude": 0.001,
-            "dynamic_flux_norm": 117509.98635757348,
+            "dynamic_flux_norm": 117509.96410211464,
             "maximum_constraint_residual": 3.7e-14,
             "minimum_eta_Legendre": 1.001595893126938,
             "momentum_norm": 0.000121576363871,
@@ -470,7 +1045,7 @@
           {
             "admissible": true,
             "amplitude": -0.01,
-            "dynamic_flux_norm": 10743.023121925915,
+            "dynamic_flux_norm": 10743.020938335532,
             "maximum_constraint_residual": 1.8e-14,
             "minimum_eta_Legendre": 1.001558891545811,
             "momentum_norm": 0.001213710950562,
@@ -479,7 +1054,7 @@
           {
             "admissible": true,
             "amplitude": 0.01,
-            "dynamic_flux_norm": 12591.365681149719,
+            "dynamic_flux_norm": 12591.367322346063,
             "maximum_constraint_residual": 5.6e-14,
             "minimum_eta_Legendre": 1.001626572571329,
             "momentum_norm": 0.001217446658853,
@@ -488,7 +1063,7 @@
           {
             "admissible": true,
             "amplitude": -0.1,
-            "dynamic_flux_norm": 525.4887794643207,
+            "dynamic_flux_norm": 525.4887841338523,
             "maximum_constraint_residual": 1.43227e-10,
             "minimum_eta_Legendre": 1.001276259985621,
             "momentum_norm": 0.011971111392457,
@@ -497,7 +1072,7 @@
           {
             "admissible": true,
             "amplitude": 0.1,
-            "dynamic_flux_norm": 2135.398150869956,
+            "dynamic_flux_norm": 2135.3980955153825,
             "maximum_constraint_residual": 1.45237e-10,
             "minimum_eta_Legendre": 1.001953779575958,
             "momentum_norm": 0.012344604382383,
@@ -506,38 +1081,38 @@
         ],
         "selected": {
           "eta_admissible": true,
-          "prior_dynamic_flux_norm": 249.07400136436934,
-          "prior_scaled_final_norm": 0.000765147078467,
+          "prior_dynamic_flux_norm": 3.6702990465e-05,
+          "prior_scaled_final_norm": 2.0996e-11,
           "source": "LATEST_ADMISSIBLE_N4_CHILD_ROLLING_CHECKPOINT"
         },
         "selection_role": "NUMERICAL_REGULAR_BROKEN_BRANCH_GERM_ONLY;_NOT_A_NEW_PHYSICAL_COEFFICIENT_OR_ACCEPTANCE_GATE",
         "source": "SYMMETRIC_PREDECLARED_AMPLITUDE_SCAN_ALONG_THE_N4_EVENT_ORDERED_SOFT_EIGENVECTOR_WITH_OWN_CONSTRAINT_PROJECTION"
       },
       "chart": {
-        "accepted_gradient_fallback_steps": 24,
-        "accepted_steps": 509,
+        "accepted_gradient_fallback_steps": 0,
+        "accepted_steps": 2,
         "dynamic_flux_jacobian_step_converged": true,
         "full_chart_rank": 16,
-        "function_evaluations": 2395,
+        "function_evaluations": 4,
         "half_step_rank": 16,
-        "half_step_smallest_singular_value": 1.13868561e-07,
+        "half_step_smallest_singular_value": 1.550576651e-06,
         "local_curvature_row_scales": [
-          1.41421359167746,
-          1.414213591677321,
-          1.414213591677337,
-          65.54202579107914,
-          48.32810560546476,
-          25.07972172844978,
-          17.61481537277097,
-          55.8828898237877,
-          39.74792520728376,
-          38.46930126485544,
-          44.11365903595403,
-          72.25038845266502,
-          1061.1124957327368,
-          31.08980171890531,
-          124611.33217831302,
-          8392.207832815897
+          1.414213591679349,
+          1.414213591677124,
+          1.414213591677255,
+          69.2146861095224,
+          50.284038114792494,
+          26.608505656548605,
+          19.21083435031104,
+          59.40790686714281,
+          41.609570106010594,
+          36.71567778249284,
+          49.250609685642274,
+          72.56527520950583,
+          636.2648447434356,
+          28.554056441376243,
+          317101444.18964565,
+          18752172.781315945
         ],
         "merit_reference_preserved_from_checkpoint": true,
         "merit_reference_row_scales": [
@@ -559,17 +1134,17 @@
           259304.4035456671
         ],
         "outer_Richardson_block_relative_changes": {
-          "canonical_momentum": 4.556372e-09,
-          "constraints": 1.2847e-11,
-          "dynamic_Calderon_flux": 2.696466042e-06,
-          "trace": 2.59e-13
+          "canonical_momentum": 1.498626e-09,
+          "constraints": 1.15331e-10,
+          "dynamic_Calderon_flux": 0.006823098267577,
+          "trace": 2.217e-12
         },
-        "outer_Richardson_coarse_base_step": 0.0002,
-        "outer_Richardson_coarse_to_fine_relative_change": 5.8707091e-08,
-        "outer_Richardson_fine_base_step": 0.0001,
-        "rank_tolerance": 1.8e-14,
-        "rejected_line_trials": 1477,
-        "resolved_jacobian_refreshes": 3,
+        "outer_Richardson_coarse_base_step": 2.5e-05,
+        "outer_Richardson_coarse_to_fine_relative_change": 0.006847383710441,
+        "outer_Richardson_fine_base_step": 1.25e-05,
+        "rank_tolerance": 1.468e-12,
+        "rejected_line_trials": 1,
+        "resolved_jacobian_refreshes": 0,
         "row_scales": [
           1.414213591677337,
           1.414213591677402,
@@ -589,7 +1164,7 @@
           259304.4035456671
         ],
         "row_scaling": "FIXED_REFERENCE_ROW_NORMS_NUMERICAL_ONLY_SAME_ZERO_SET",
-        "scaled_final_norm": 0.000674735912054,
+        "scaled_final_norm": 3.62e-12,
         "selected_direction_weights": [
           1.0,
           1.0,
@@ -601,94 +1176,94 @@
           4913.0,
           1191.577525803504,
           4913.0,
-          4913.0,
-          1191.577525803504,
           1191.577525803504,
           4913.0,
+          1191.577525803504,
+          274625.0,
           4913.0,
-          274625.0
+          253174.52601910802
         ],
         "selected_variable_indices": [
-          9,
-          13,
           0,
           30,
-          5,
+          13,
+          9,
           22,
+          5,
           18,
           1,
           14,
           31,
-          10,
           23,
+          10,
           19,
+          2,
           26,
-          6,
-          2
+          16
         ],
-        "smallest_resolved_singular_value": 1.13868561e-07,
+        "smallest_resolved_singular_value": 1.550576651e-06,
         "solver_coordinates": "ALL_34_EXISTING_H6_COORDINATE_H5_VELOCITY_H6_MULTIPLIER_VARIABLES;_THE_16_PHYSICAL_ROWS_ARE_UNCHANGED",
         "solver_jacobian": "FULL_16_BY_34_CENTER_FIXED_TENSOR_PRODUCT_RICHARDSON_JACOBIAN_WITH_MINIMUM_NORM_GAUSS_NEWTON_AND_GOOD_BROYDEN_UPDATES",
         "solver_merit": "GLOBAL_L2_NORM_OF_ALL_16_ROW_SCALED_PHYSICAL_MAP;_NO_COMPONENTWISE_MONOTONICITY",
-        "solver_message": "maximum bounded Broyden iterations reached",
-        "solver_success": false,
+        "solver_message": "scaled complete-child merit converged",
+        "solver_success": true,
         "solver_variable_count": 34
       },
       "child_state": {
         "coordinates": [
-          0.002660503113731,
-          0.006905497586737,
-          0.004386689520089,
-          0.000127070538924,
-          2.68559647e-07,
-          0.123608881736298,
-          0.121893108839541,
-          -6.3141238802e-05,
-          -1.6906827912e-05,
-          -0.106974038512942,
-          -0.107905473336413,
-          -0.000888760756082,
-          3.8139025021e-05
+          0.002391085326955,
+          0.005757052979748,
+          0.003550111972427,
+          0.00017390053274,
+          3.73902131e-06,
+          0.139232364435364,
+          0.137673818677382,
+          8.6238408257e-05,
+          -7.340686786e-06,
+          -0.099558589595596,
+          -0.101064941094732,
+          -0.001457304877371,
+          3.9965634529e-05
         ],
         "eta_Legendre_minimum": {
-          "chi": 0.400975259148639,
-          "minimum": 1.002024309384934
+          "chi": 0.397126546395631,
+          "minimum": 1.005251432581881
         },
         "multipliers": [
-          0.450842989659862,
-          0.484841145461254,
-          -7.4474550946e-05,
-          -3.2502280452e-05,
-          -0.761691502088006,
-          -0.23770828935786,
-          0.008362116125612,
-          0.008569071215311
+          0.424947923565573,
+          0.484421096244363,
+          -7.8247870462e-05,
+          -3.2846809453e-05,
+          -0.749665121938785,
+          -0.250617167033883,
+          0.00830829021234,
+          0.008567040467568
         ],
-        "raw_state_displacement_from_broken_germ": 0.242298427625256,
+        "raw_state_displacement_from_broken_germ": 2.98196e-10,
         "velocities": [
-          -0.938261536030478,
-          -1.050395264505843,
-          -0.057956307404277,
-          0.004380958062773,
-          0.004967996683933,
-          3.718756280339173,
-          -2.115968042276835,
-          -0.642072587432726,
-          -0.251961316836644,
-          1.997201299356016,
-          2.134614120512477,
-          0.076386542903866,
-          0.015043360583875
+          -0.936280976328545,
+          -1.058053323355537,
+          -0.064133466672159,
+          0.004585014022252,
+          0.00497679015486,
+          3.835779744965395,
+          -2.050528855850774,
+          -0.641284839228444,
+          -0.252000886333077,
+          1.925416225996255,
+          2.065920258890977,
+          0.077140754213212,
+          0.014972852087088
         ],
-        "velocity_norm": 5.414861969665681
+        "velocity_norm": 5.419807410602895
       },
       "claim_boundary": "A_VALIDATED_FINITE_N4_EVENT_CONDITIONED_COMPLETE_CHILD_CAUCHY_STATE_IS_NOT_YET_A_PERSISTENT_CHILD_OR_AN_N_LIMIT_PROOF",
-      "complete_child_candidate_validated": false,
+      "complete_child_candidate_validated": true,
       "dynamic_flux_variation_audit": {
         "analytic_exact_Jacobian_requires": "GENERICALLY_L_FOURTH_VARIATION",
         "analytic_exact_flux_requires": "GENERICALLY_L_THIRD_VARIATION",
-        "center_inner_relative_step": 0.004,
-        "center_inner_time_step": 2.432744246e-06,
+        "center_inner_relative_step": 0.1,
+        "center_inner_time_step": 8.94320992e-07,
         "frozen_lift_derivative_status": "QUASI_NEWTON_ONLY;_EXACT_RECOMPUTED_RESIDUAL_REMAINS_PROMOTION_AUTHORITY",
         "higher_variation_owner": "STATE_DEPENDENT_HESSIAN_MINIMAL_BOUNDARY_LIFTS_Q_AND_V",
         "inner_momentum_rate": "CENTER_SELECTED_FIXED_TIME_STEP_CENTRAL_DIFFERENCE_WITH_RICHARDSON_EXTRAPOLATION",
@@ -702,82 +1277,86 @@
       "event_to_child_map": "F_child=(THREE_TRACE,_NINE_CONSTRAINT,_TWO_CANONICAL_MOMENTUM,_TWO_DYNAMIC_CALDERON_FLUX_ROWS)",
       "exact_full_jet_dynamics_equivalence": {
         "new_coordinate_finite_difference_used": false,
-        "old_exact_z_coordinate_finite_difference_acceleration_relative_difference": 8.06136562e-07,
-        "old_exact_z_coordinate_finite_difference_multiplier_rate_relative_difference": 4.20400445e-07,
+        "old_exact_z_coordinate_finite_difference_acceleration_relative_difference": 9.00092196e-07,
+        "old_exact_z_coordinate_finite_difference_multiplier_rate_relative_difference": 8.90068387e-07,
         "physical_equations_changed": false,
         "same_Euler_Dirac_linear_system": true,
         "same_retained_action": true
       },
       "final_physical_rows": [
-        1.8323892444e-05,
-        -3.635685268e-06,
-        5.456204471e-06,
-        0.001959810507062,
-        0.001331066313478,
-        -0.000257319303103,
-        -0.000179856508915,
-        0.000788960119943,
-        0.001628939715508,
-        0.001516045076278,
-        -0.001069330872666,
-        0.000723376390135,
-        -0.026950167797644,
-        -0.000509032915856,
-        140.24332015462946,
-        172.1021021548523
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        0.0,
+        3e-15,
+        -2e-15,
+        5e-15,
+        -3e-15,
+        -4e-15,
+        -1e-15,
+        1.2e-14,
+        -1.42e-13,
+        8.6e-14,
+        -6.238880815e-06,
+        -1.81364499e-07
       ],
       "initial_physical_rows": [
-        1.3908512333e-05,
-        -2.740622025e-06,
-        3.527635665e-06,
-        0.001297816596895,
-        0.001282644603959,
-        -7.2180640677e-05,
-        1.7909523834e-05,
-        0.001717028218212,
-        0.001470083975163,
-        0.001289737397369,
-        -0.000368491788908,
-        -0.000556436237687,
-        -0.00945509957042,
-        -0.000854103030768,
-        153.50742997251209,
-        196.14617685699162
+        2e-15,
+        2e-15,
+        2e-15,
+        -1.76e-13,
+        9.9e-14,
+        7.9e-14,
+        -8.8e-14,
+        3.76e-13,
+        -2.52e-13,
+        -1.88e-13,
+        4.48e-13,
+        4e-14,
+        -3.6e-14,
+        6.7e-14,
+        -2.2609348889e-05,
+        2.8752313938e-05
       ],
-      "persistence_evaluated": false,
+      "persistence_evaluated": true,
+      "persistence_validated": true,
       "physical_equations_changed": false,
       "physical_residuals": {
-        "dynamic_flux_8e-4_to_4e-4_relative_difference": 3.770895e-08,
-        "dynamic_flux_norm_at_4e-4": 222.0074827885608,
-        "maximum_nine_constraints": 0.001959810507062,
-        "maximum_trace": 1.8323892444e-05,
-        "momentum_norm": 0.026954974658318
+        "dynamic_flux_2e-1_to_1e-1_relative_difference": 2.615578586e-06,
+        "dynamic_flux_norm_at_1e-1": 6.241516394e-06,
+        "maximum_nine_constraints": 1.2e-14,
+        "maximum_trace": 0.0,
+        "momentum_norm": 1.66e-13
       },
       "physical_row_count": 16,
-      "required_next": "CONTINUE_THE_UNCHANGED_GLOBAL_MERIT_N4_COMPLETE_CHILD_SOLVE_FROM_THE_LATEST_ADMISSIBLE_CANDIDATE_WITH_A_FRESH_CENTER_FIXED_RICHARDSON_CURVATURE",
+      "required_next": "CLASSIFY_THE_N4_COMPLETE_PERSISTENT_CHILD_AGAINST_N3_AND_TEST_THE_INDEPENDENT_N5_ETA_ADMISSIBLE_BRANCH",
       "rolling_checkpoint_promotion": {
+        "accepted_coupled_steps_positive": true,
+        "checkpoint_state_authoritative": true,
         "componentwise_monotonicity_required": false,
+        "directional_derivative_resolved": true,
         "eligible": true,
         "eta_admissible": true,
-        "final_fixed_reference_merit": 0.000674735912054,
+        "final_fixed_reference_merit": 3.62e-12,
         "fixed_reference_merit_reduced": true,
         "independently_evaluated_merit": "L2_NORM_OF_THE_EXACT_16_PHYSICAL_ROWS_IN_THE_FIXED_REFERENCE_SCALING",
-        "initial_fixed_reference_merit": 0.000765147081028,
+        "initial_fixed_reference_merit": 1.11627e-10,
         "physical_equations_or_gates_added": false
       },
       "source_event": "INDEPENDENT_N4_ADAPTIVE_44_POINT_QUADRATURE_VALIDATED_EVENT",
       "validation": {
         "child_eta_hyperregular": true,
-        "dynamic_flux_closed": false,
+        "dynamic_flux_closed": true,
         "dynamic_flux_difference_resolved": true,
         "dynamic_flux_jacobian_step_converged": true,
         "full_rank_local_chart": true,
-        "local_solve_converged": false,
-        "momentum_closed": false,
-        "nine_constraints_closed": false,
+        "local_solve_converged": true,
+        "momentum_closed": true,
+        "nine_constraints_closed": true,
         "nonzero_motion_retained": true,
         "sixteen_physical_rows": true,
-        "trace_closed": false,
+        "trace_closed": true,
         "validated_independent_N4_event_used": true
       },
       "whole_child_variable_count": 34
@@ -926,7 +1505,933 @@
       "required_next": "ACTION_EQUIVALENT_ADAPTIVE_STEP_DOUBLING_CONSTRAINT_PROJECTED_N4_FLOW_BEFORE_ANY_CHILD_RECONSTRUCTION",
       "resolution_independent_event_validated": false
     },
-    "active_dependency": "CONTINUE_THE_UNCHANGED_GLOBAL_MERIT_N4_COMPLETE_CHILD_SOLVE_FROM_THE_LATEST_ADMISSIBLE_CANDIDATE_WITH_A_FRESH_CENTER_FIXED_RICHARDSON_CURVATURE",
+    "N5_child_flux_step_and_outer_direction_audit": {
+      "FULL_BHSM_COMPLETE": false,
+      "action_Sobolev_normalized_outer_direction_ladder": {
+        "coordinates": {
+          "Richardson_flux_derivatives": [
+            [
+              -28417.719853962102,
+              -1424.9466418962902
+            ],
+            [
+              22097.99591402465,
+              -676.7756115095116
+            ],
+            [
+              21147.449526317196,
+              6456.856501514806
+            ],
+            [
+              -61785.290756840106,
+              78720.90723423143
+            ],
+            [
+              -339161.1059695527,
+              443026.7561950309
+            ],
+            [
+              -1164678.5726374444,
+              730223.5504231959
+            ]
+          ],
+          "adjacent_Richardson_relative_changes": [
+            1.775577444501509,
+            0.325476664733435,
+            1.09920559956236,
+            0.820657832519172,
+            0.635826884658331
+          ],
+          "central_flux_derivatives": [
+            [
+              25914.738256401855,
+              -289.85519175183526
+            ],
+            [
+              -14834.605326371115,
+              -1141.1737793601765
+            ],
+            [
+              12864.845603925707,
+              -792.8751534721778
+            ],
+            [
+              19076.798545719324,
+              4644.42358776806
+            ],
+            [
+              -41569.768431200246,
+              60201.78632261559
+            ],
+            [
+              -264763.2715849646,
+              347320.51372692705
+            ],
+            [
+              -939699.7473743244,
+              634497.7912491286
+            ]
+          ],
+          "minimum_eta_margins": [
+            0.963076853469706,
+            0.989202492535225,
+            0.996239242692277,
+            0.998266835099688,
+            0.998947135004252,
+            0.999212113638595,
+            0.999327079958985
+          ],
+          "steps": [
+            0.4,
+            0.2,
+            0.1,
+            0.05,
+            0.025,
+            0.0125,
+            0.00625
+          ]
+        },
+        "multipliers": {
+          "Richardson_flux_derivatives": [
+            [
+              -18846.834742953262,
+              5987.133329185326
+            ],
+            [
+              -58641.877223607014,
+              233572.29034631632
+            ],
+            [
+              127290.85193824016,
+              -633668.69934581
+            ],
+            [
+              -2808374.1325496207,
+              9454649.099155916
+            ],
+            [
+              -9635.611879211696,
+              -1149938.7129279214
+            ],
+            [
+              137386.582863313,
+              713962.6362568522
+            ]
+          ],
+          "adjacent_Richardson_relative_changes": [
+            0.959376210278611,
+            1.372290247607608,
+            1.065279291943223,
+            1.112011511597378,
+            1.625847678798743
+          ],
+          "central_flux_derivatives": [
+            [
+              34219.78399542502,
+              1118.3875376276603
+            ],
+            [
+              -5580.180058358692,
+              4769.946881295909
+            ],
+            [
+              -45376.45293229494,
+              176371.70448006122
+            ],
+            [
+              84124.02572060638,
+              -431158.59838934214
+            ],
+            [
+              -2085249.592982064,
+              6983197.174769601
+            ],
+            [
+              -528539.1071549248,
+              883345.2589964591
+            ],
+            [
+              -29094.839641246435,
+              756308.2919417539
+            ]
+          ],
+          "minimum_eta_margins": [
+            0.750868964179391,
+            0.95852520267522,
+            0.99046619242169,
+            0.996833809117587,
+            0.998490943058098,
+            0.999037117821805,
+            0.999251416552977
+          ],
+          "steps": [
+            0.4,
+            0.2,
+            0.1,
+            0.05,
+            0.025,
+            0.0125,
+            0.00625
+          ]
+        },
+        "velocities": {
+          "Richardson_flux_derivatives": [
+            [
+              18218.75206437649,
+              -798.3795367774974
+            ],
+            [
+              42820.969991018435,
+              -2488.407839668229
+            ],
+            [
+              -35960.026119457856,
+              46384.350376694754
+            ],
+            [
+              -300165.6759698413,
+              630361.6798647336
+            ],
+            [
+              -950270.3783026504,
+              1057829.8767750699
+            ],
+            [
+              1526311.908732165,
+              800662.1074455805
+            ]
+          ],
+          "adjacent_Richardson_relative_changes": [
+            0.574920737394341,
+            1.579615381266574,
+            0.918049031721072,
+            0.547162377906302,
+            1.444618434367019
+          ],
+          "central_flux_derivatives": [
+            [
+              5135.746504075899,
+              4204.206667741305
+            ],
+            [
+              14948.000674301344,
+              452.2670143522032
+            ],
+            [
+              35852.72766183916,
+              -1753.239126163121
+            ],
+            [
+              -18006.837674133603,
+              34349.953000980284
+            ],
+            [
+              -229625.96639591438,
+              481358.7481487953
+            ],
+            [
+              -770109.2753259664,
+              913712.0946185013
+            ],
+            [
+              952206.6127176322,
+              828924.6042388107
+            ]
+          ],
+          "minimum_eta_margins": [
+            0.999430902169501,
+            0.999430902169501,
+            0.999430902169501,
+            0.999430902169501,
+            0.999430902169501,
+            0.999430902169501,
+            0.999430902169501
+          ],
+          "steps": [
+            0.4,
+            0.2,
+            0.1,
+            0.05,
+            0.025,
+            0.0125,
+            0.00625
+          ]
+        }
+      },
+      "eta_Legendre": {
+        "chi": 0.599261902023591,
+        "minimum": 0.999430902169501
+      },
+      "event_soft_eigenvalue": -1.1e-14,
+      "maximum_constraint_residual": 1.7e-14,
+      "order": 5,
+      "physical_map_or_gate_changed": false,
+      "projection_success": true,
+      "source": "INDEPENDENT_N5_EVENT_BROKEN_GERM_AMPLITUDE_PLUS_1E-1",
+      "step_ladder": [
+        {
+          "flux": [
+            404249.3511158487,
+            15462.485920665127
+          ],
+          "flux_norm": 404544.96208509564,
+          "relative_change_from_previous": null,
+          "relative_step": 0.4
+        },
+        {
+          "flux": [
+            404249.3731169309,
+            15462.48554331823
+          ],
+          "flux_norm": 404544.98405567824,
+          "relative_change_from_previous": 5.4392759e-08,
+          "relative_step": 0.32
+        },
+        {
+          "flux": [
+            404249.38352191116,
+            15462.48536433097
+          ],
+          "flux_norm": 404544.99444621406,
+          "relative_change_from_previous": 2.572401e-08,
+          "relative_step": 0.24
+        },
+        {
+          "flux": [
+            404249.38607647986,
+            15462.48532358756
+          ],
+          "flux_norm": 404544.9969973588,
+          "relative_change_from_previous": 6.315474e-09,
+          "relative_step": 0.2
+        },
+        {
+          "flux": [
+            404249.3874143581,
+            15462.485301309198
+          ],
+          "flux_norm": 404544.9983334079,
+          "relative_change_from_previous": 3.307577e-09,
+          "relative_step": 0.16
+        },
+        {
+          "flux": [
+            404249.3881314996,
+            15462.485290935487
+          ],
+          "flux_norm": 404544.99904962885,
+          "relative_change_from_previous": 1.772897e-09,
+          "relative_step": 0.12
+        },
+        {
+          "flux": [
+            404249.3881411169,
+            15462.485282649986
+          ],
+          "flux_norm": 404544.99905892246,
+          "relative_change_from_previous": 3.1379e-11,
+          "relative_step": 0.1
+        },
+        {
+          "flux": [
+            404249.3884483758,
+            15462.48528933054
+          ],
+          "flux_norm": 404544.99936621217,
+          "relative_change_from_previous": 7.59697e-10,
+          "relative_step": 0.08
+        },
+        {
+          "flux": [
+            404249.38819015096,
+            15462.48527453098
+          ],
+          "flux_norm": 404544.9991076103,
+          "relative_change_from_previous": 6.39357e-10,
+          "relative_step": 0.06
+        },
+        {
+          "flux": [
+            404249.3883207419,
+            15462.485281017372
+          ],
+          "flux_norm": 404544.99923835375,
+          "relative_change_from_previous": 3.23207e-10,
+          "relative_step": 0.05
+        }
+      ]
+    },
+    "N5_event_conditioned_complete_child_chart_audit": {
+      "FULL_BHSM_COMPLETE": false,
+      "accepted_N3_trajectory_or_N4_child_used": false,
+      "broken_branch_seed_scan": [
+        {
+          "admissible": true,
+          "amplitude": -0.0001,
+          "dynamic_flux_norm": 403790518.1355536,
+          "maximum_constraint_residual": 1.6003e-11,
+          "minimum_eta_Legendre": 0.99941307141365,
+          "momentum_norm": 8.2272646368e-05,
+          "projection_success": true
+        },
+        {
+          "admissible": true,
+          "amplitude": 0.0001,
+          "dynamic_flux_norm": 403651155.32632524,
+          "maximum_constraint_residual": 1.5986e-11,
+          "minimum_eta_Legendre": 0.999413107792502,
+          "momentum_norm": 8.2273214086e-05,
+          "projection_success": true
+        },
+        {
+          "admissible": true,
+          "amplitude": -0.001,
+          "dynamic_flux_norm": 40374963.6545824,
+          "maximum_constraint_residual": 2.2e-14,
+          "minimum_eta_Legendre": 0.999412907670955,
+          "momentum_norm": 0.000822641910534,
+          "projection_success": true
+        },
+        {
+          "admissible": true,
+          "amplitude": 0.001,
+          "dynamic_flux_norm": 40368875.847822875,
+          "maximum_constraint_residual": 1.6e-14,
+          "minimum_eta_Legendre": 0.999413271459485,
+          "momentum_norm": 0.000822816662568,
+          "projection_success": true
+        },
+        {
+          "admissible": true,
+          "amplitude": -0.01,
+          "dynamic_flux_norm": 4040729.0730205295,
+          "maximum_constraint_residual": 1.53e-13,
+          "minimum_eta_Legendre": 0.999411266869501,
+          "momentum_norm": 0.008218561380018,
+          "projection_success": true
+        },
+        {
+          "admissible": true,
+          "amplitude": 0.01,
+          "dynamic_flux_norm": 4034954.3582021478,
+          "maximum_constraint_residual": 1.88e-13,
+          "minimum_eta_Legendre": 0.999414904758833,
+          "momentum_norm": 0.008236036719363,
+          "projection_success": true
+        },
+        {
+          "admissible": true,
+          "amplitude": -0.1,
+          "dynamic_flux_norm": 439720.5063965082,
+          "maximum_constraint_residual": 2e-14,
+          "minimum_eta_Legendre": 0.999394519255764,
+          "momentum_norm": 0.081405400244153,
+          "projection_success": true
+        },
+        {
+          "admissible": true,
+          "amplitude": 0.1,
+          "dynamic_flux_norm": 404544.9791911047,
+          "maximum_constraint_residual": 2.5e-14,
+          "minimum_eta_Legendre": 0.999430902172622,
+          "momentum_norm": 0.083152888829033,
+          "projection_success": true
+        }
+      ],
+      "chart": {
+        "dynamic_flux_jacobian_step_converged": false,
+        "full_chart_rank": 18,
+        "inner_flux_time_step": 3.02294738e-07,
+        "inner_relative_flux_step": 0.1,
+        "outer_Richardson_base_step": 0.0001,
+        "outer_Richardson_block_relative_changes": {
+          "canonical_momentum": 3.191023e-09,
+          "constraints": 3.3554e-11,
+          "dynamic_Calderon_flux": 2.497109870095858,
+          "trace": 0.0
+        },
+        "outer_Richardson_relative_change": 2.497109870095858,
+        "rank_tolerance": 2.5e-14,
+        "row_scales": [
+          1.414213591677412,
+          1.414213591677412,
+          1.414213591677412,
+          48.35474298729752,
+          39.330580085044545,
+          24.461518334039408,
+          21.055201502036642,
+          16.24810670238824,
+          70.57946225306306,
+          36.588179394268465,
+          23.68065928984793,
+          33.33891270624064,
+          18.977450147935514,
+          34.2717941972579,
+          507.346952576622,
+          15.629636000396609,
+          111348933071.16362,
+          815752482.3663828
+        ],
+        "smallest_resolved_singular_value": 2.39514503e-07
+      },
+      "complete_child_candidate_validated": false,
+      "event_definition_changed": false,
+      "event_soft_branch_index": 10,
+      "event_soft_eigenvalue": -1e-15,
+      "event_to_child_map": "F_child=(THREE_TRACE,_ELEVEN_CONSTRAINT,_TWO_CANONICAL_MOMENTUM,_TWO_DYNAMIC_CALDERON_FLUX_ROWS)",
+      "initial_physical_residual_norm": 404544.97919111326,
+      "initial_physical_rows": [
+        0.0,
+        0.0,
+        0.0,
+        -7e-15,
+        0.0,
+        1e-15,
+        -1e-15,
+        -2e-15,
+        -2.5e-14,
+        1.2e-14,
+        1.1e-14,
+        -2e-14,
+        8e-15,
+        6e-15,
+        -0.083150657037848,
+        0.000609224743227,
+        404249.36825714406,
+        15462.485325176103
+      ],
+      "physical_equations_changed": false,
+      "physical_row_count": 18,
+      "required_next": "RESOLVE_THE_N5_CHILD_MAP_DIRECTIONAL_DERIVATIVE_BEFORE_A_NONLINEAR_CHILD_SOLVE",
+      "source_event": "INDEPENDENT_N5_ZERO_MULTIPLIER_ETA_ADMISSIBLE_44_POINT_EVENT",
+      "structurally_full_row_rank": true,
+      "whole_child_variable_count": 42
+    },
+    "N5_event_conditioned_complete_child_reconstruction": {
+      "FULL_BHSM_COMPLETE": false,
+      "accepted_N3_trajectory_or_N4_child_used": false,
+      "checkpoint_promotion_eligible": true,
+      "child_state": {
+        "coordinates": [
+          -9.1242323e-08,
+          -2.5908216e-07,
+          -1.48947186e-07,
+          -8.4138477e-08,
+          -8.6889e-11,
+          -1.227724e-09,
+          1.828908522e-06,
+          4.231071695e-06,
+          -1.1885647e-08,
+          -1.522175e-09,
+          5.1766e-11,
+          -5.75218084e-07,
+          -4.9696557e-07,
+          6.7308003e-08,
+          3.76595e-10,
+          -6.46095e-10
+        ],
+        "eta_Legendre": {
+          "chi": 0.599262585557749,
+          "minimum": 0.999428636714513
+        },
+        "multipliers": [
+          0.65953604848711,
+          -0.018385623109866,
+          0.000695360358006,
+          -3.3663080943e-05,
+          -2.215674e-05,
+          0.39507442315646,
+          -1.116352688460579,
+          -0.014357223871756,
+          -0.000789315341114,
+          -0.000942017536724
+        ],
+        "velocities": [
+          -0.326334745627836,
+          -0.922882325455118,
+          -0.531479855630593,
+          -0.009325220963111,
+          -0.000958154701962,
+          -0.004784299670002,
+          10.124756213182234,
+          15.172639541754124,
+          0.082216302859497,
+          0.043142579921049,
+          0.036483230844246,
+          -2.059633546641564,
+          -1.797262133412839,
+          0.218826318495397,
+          -0.007047626202637,
+          -0.005388905795255
+        ]
+      },
+      "complete_child_candidate_validated": false,
+      "continuation_checkpoint_used": true,
+      "event_definition_changed": false,
+      "event_soft_branch_index": 10,
+      "event_soft_eigenvalue": -1.1e-14,
+      "persistence_evaluated": false,
+      "physical_equations_changed": false,
+      "physical_residuals": {
+        "dynamic_flux_norm": 624302.3698704926,
+        "maximum_eleven_constraints": 0.000611348321874,
+        "maximum_trace": 9.17995773e-07,
+        "momentum_norm": 0.080097949433417
+      },
+      "physical_row_count": 18,
+      "plateau_classification": "DOMINANT_DYNAMIC_CALDERON_FLUX_JACOBIAN_OWNER_IDENTIFIED",
+      "proposal_model": {
+        "classification": "COARSE_ACTION_SOBOLEV_QUASI_NEWTON_MODEL_EXACT_RESIDUAL_CONTROLS_PROMOTION",
+        "componentwise_monotonicity_required": false,
+        "finite_difference_derivative_promoted_as_physics": false,
+        "fixed_merit_scaling_preserved_from_checkpoint": true,
+        "fixed_reference_row_scales": [
+          1.414213591677412,
+          1.414213591677412,
+          1.414213591677412,
+          48.32191234896168,
+          40.05672434698214,
+          24.840185764894937,
+          21.274303080450714,
+          16.67449322824923,
+          70.66481548120079,
+          36.66975772194659,
+          23.704318108810337,
+          33.34718689242142,
+          19.032281142713103,
+          38.616591327547994,
+          275.24758352163997,
+          18.196990646748024,
+          17204232.615128435,
+          217285.9829931108
+        ],
+        "inner_relative_flux_step": 0.1,
+        "outer_step": 0.1
+      },
+      "required_next": "DERIVE_THE_ACTION_OWNED_N5_DYNAMIC_CALDERON_FLUX_JACOBIAN_VIA_THE_REQUIRED_FOURTH_VARIATION_OR_A_DIFFERENTIATED_CHILD_BVP_BEFORE_FURTHER_REPETITIVE_CONTINUATION",
+      "selected_broken_germ_amplitude": 0.1,
+      "solver": {
+        "accepted_derivative_free_poll_steps": 1,
+        "accepted_steps": 6,
+        "derivative_free_poll_evaluations": 84,
+        "derivative_free_poll_radii_attempted": 1,
+        "final_fixed_reference_merit": 0.073022439008169,
+        "fixed_reference_merit_reduced": true,
+        "initial_fixed_reference_merit": 0.073058999349158,
+        "message": "maximum quasi-Newton iterations reached",
+        "proposal_refreshes": 2,
+        "rejected_trials": 99
+      },
+      "source_event": "INDEPENDENT_N5_ZERO_MULTIPLIER_ETA_ADMISSIBLE_44_POINT_EVENT",
+      "whole_child_variable_count": 42
+    },
+    "N5_independent_eta_branch_event_classification": {
+      "FULL_BHSM_COMPLETE": false,
+      "N5_confirms_N4": "QUALITATIVE_ETA_ADMISSIBLE_ORDERED_EVENT_STRUCTURE_ONLY;_N5_COMPLETE_CHILD_AND_PERSISTENCE_REMAIN_OPEN",
+      "accepted_N3_trajectory_or_N4_child_used": false,
+      "classification": "VALIDATED_QUALITATIVE_N5_ORDERED_EVENT_EXISTENCE_EVENT_TIME_NOT_QUADRATURE_CONVERGED",
+      "event_time_relative_quadrature_spread": 0.41175949078382,
+      "observed_particle_values_used": false,
+      "quadrature_runs": [
+        {
+          "event": {
+            "branch_index": 10,
+            "branch_overlap": 0.997955397136253,
+            "coordinates": [
+              -1.43102676e-07,
+              -4.03390945e-07,
+              -2.31089091e-07,
+              -3.305629e-09,
+              -1.50154e-10,
+              -1.904803e-09,
+              4.3890153e-06,
+              6.55826032e-06,
+              -1.8340186e-08,
+              -2.368655e-09,
+              8.0337e-11,
+              -8.8818082e-07,
+              -7.66856777e-07,
+              1.04317762e-07,
+              5.85583e-10,
+              -1.002863e-09
+            ],
+            "eta_Legendre": {
+              "chi": 0.599598272284197,
+              "minimum": 0.99947363879061
+            },
+            "event_time": 4.36799101e-07,
+            "lambda_ordered": -5e-15,
+            "locator": "EARLIEST_OF_BOTH_INERTIA_BOUNDARY_MODES_WITH_ONE_SIDED_PROJECTED_TANGENT_AND_TRACKED_BRENT_ROOT",
+            "maximum_constraint_residual": 2.1e-14,
+            "multipliers": [
+              0.661410957767872,
+              -0.018377373401001,
+              0.000444979097938,
+              -2.8906561948e-05,
+              -1.4181812642e-05,
+              0.392592687386462,
+              -1.116592701521901,
+              -0.012919573980627,
+              -0.000987556270573,
+              -0.000627427447877
+            ],
+            "negative_inertia_event_side": 11,
+            "negative_inertia_reset": 10,
+            "velocities": [
+              -0.32899760682933,
+              -0.925034296436201,
+              -0.530525397616059,
+              -0.008688006575935,
+              -0.000767139357586,
+              -0.004643788063792,
+              10.096131332830302,
+              15.105612577275224,
+              0.039201816849804,
+              0.026337506034537,
+              0.024463080642909,
+              -2.043931769258699,
+              -1.776473374169016,
+              0.225455082990997,
+              -0.004211169591363,
+              -0.004359315651659
+            ]
+          },
+          "ordered_event_validated": true,
+          "points": 32,
+          "selected_multiplier_seed_rule": "ZERO_MULTIPLIER"
+        },
+        {
+          "event": {
+            "branch_index": 10,
+            "branch_overlap": 0.998870874829963,
+            "coordinates": [
+              -9.1248023e-08,
+              -2.59089547e-07,
+              -1.48949184e-07,
+              -2.134657e-09,
+              -8.6933e-11,
+              -1.227723e-09,
+              2.829034893e-06,
+              4.231196988e-06,
+              -1.1886799e-08,
+              -1.522197e-09,
+              5.1767e-11,
+              -5.75245576e-07,
+              -4.96997018e-07,
+              6.7304074e-08,
+              3.76621e-10,
+              -6.46096e-10
+            ],
+            "eta_Legendre": {
+              "chi": 0.599315391803356,
+              "minimum": 0.999413089603109
+            },
+            "event_time": 2.81464794e-07,
+            "lambda_ordered": -1e-15,
+            "locator": "EARLIEST_OF_BOTH_INERTIA_BOUNDARY_MODES_WITH_ONE_SIDED_PROJECTED_TANGENT_AND_TRACKED_BRENT_ROOT",
+            "maximum_constraint_residual": 8e-15,
+            "multipliers": [
+              0.656715619275551,
+              -0.018344910003225,
+              0.000349711721013,
+              -2.7606823252e-05,
+              -1.1156320906e-05,
+              0.396751983431694,
+              -1.118126632748264,
+              -0.012477363479753,
+              -0.001085113337877,
+              -0.000507948014002
+            ],
+            "negative_inertia_event_side": 11,
+            "negative_inertia_reset": 10,
+            "velocities": [
+              -0.325318723132027,
+              -0.92174453361011,
+              -0.53039664005028,
+              -0.008503343261794,
+              -0.000655796509921,
+              -0.004591543168374,
+              10.090298629051944,
+              15.10727750734078,
+              0.024172985850163,
+              0.020607265816154,
+              0.019897502411483,
+              -2.0523391000084,
+              -1.782747442601772,
+              0.228192284491154,
+              -0.003197163956759,
+              -0.003974363071669
+            ]
+          },
+          "ordered_event_validated": true,
+          "points": 44,
+          "selected_multiplier_seed_rule": "ZERO_MULTIPLIER"
+        },
+        {
+          "event": {
+            "branch_index": 10,
+            "branch_overlap": 0.997798430321017,
+            "coordinates": [
+              -1.56296646e-07,
+              -4.41531031e-07,
+              -2.53200547e-07,
+              -3.621718e-09,
+              -1.58628e-10,
+              -2.085759e-09,
+              4.808962916e-06,
+              7.187862874e-06,
+              -2.0194103e-08,
+              -2.588106e-09,
+              8.7823e-11,
+              -9.74632515e-07,
+              -8.41781158e-07,
+              1.14221811e-07,
+              6.39843e-10,
+              -1.097539e-09
+            ],
+            "eta_Legendre": {
+              "chi": 0.599508662949743,
+              "minimum": 0.999446471484131
+            },
+            "event_time": 4.78485907e-07,
+            "lambda_ordered": -3e-15,
+            "locator": "EARLIEST_OF_BOTH_INERTIA_BOUNDARY_MODES_WITH_ONE_SIDED_PROJECTED_TANGENT_AND_TRACKED_BRENT_ROOT",
+            "maximum_constraint_residual": 8e-15,
+            "multipliers": [
+              0.66057544421135,
+              -0.018375657394853,
+              0.000470115028295,
+              -2.8963814756e-05,
+              -1.4842335635e-05,
+              0.393587859171789,
+              -1.116865753886481,
+              -0.013103167367824,
+              -0.000963526117785,
+              -0.000660342383895
+            ],
+            "negative_inertia_event_side": 11,
+            "negative_inertia_reset": 10,
+            "velocities": [
+              -0.328101147194067,
+              -0.924362445288665,
+              -0.530719041754792,
+              -0.008747759080044,
+              -0.000777342277154,
+              -0.004656751871698,
+              10.100856227856504,
+              15.118074780829685,
+              0.043245713833639,
+              0.028042496795857,
+              0.025722521220974,
+              -2.048009562923803,
+              -1.781207215103509,
+              0.224631700128544,
+              -0.004510774746594,
+              -0.00446476366347
+            ]
+          },
+          "ordered_event_validated": true,
+          "points": 56,
+          "selected_multiplier_seed_rule": "ZERO_MULTIPLIER"
+        }
+      ],
+      "qualitative_ordered_event_existence_validated": true,
+      "quantitative_event_time_validated": false,
+      "same_boundary_mode_and_inertia_transition": true
+    },
+    "N5_rejected_child_proposal_audit": {
+      "FULL_BHSM_COMPLETE": false,
+      "accepted_N3_trajectory_or_N4_child_used": false,
+      "checkpoint_promotion_eligible": false,
+      "child_state": {
+        "coordinates": [
+          -9.1248023e-08,
+          -2.59089547e-07,
+          -1.48949184e-07,
+          -2.134657e-09,
+          -8.6933e-11,
+          -1.227723e-09,
+          2.829034893e-06,
+          4.231196988e-06,
+          -1.1886799e-08,
+          -1.522197e-09,
+          5.1767e-11,
+          -5.75245576e-07,
+          -4.96997018e-07,
+          6.7304074e-08,
+          3.76621e-10,
+          -6.46096e-10
+        ],
+        "eta_Legendre": {
+          "chi": 0.599261908237651,
+          "minimum": 0.999430902169501
+        },
+        "multipliers": [
+          0.659536048529654,
+          -0.018385623110681,
+          0.000695360357995,
+          -3.3663080943e-05,
+          -2.215674e-05,
+          0.395074423146613,
+          -1.11630180315928,
+          -0.014357223874278,
+          -0.000789315341134,
+          -0.000942017536723
+        ],
+        "velocities": [
+          -0.32633474565084,
+          -0.922882325568778,
+          -0.531479855700084,
+          -0.009325220964632,
+          -0.000958154702111,
+          -0.004784299669934,
+          10.12475621394079,
+          15.172639543404442,
+          0.082216302848794,
+          0.043142579921185,
+          0.036483230844261,
+          -2.059633546566632,
+          -1.79726213335892,
+          0.218826318519305,
+          -0.007047626203372,
+          -0.005388905795235
+        ]
+      },
+      "complete_child_candidate_validated": false,
+      "event_definition_changed": false,
+      "event_soft_branch_index": 10,
+      "event_soft_eigenvalue": -1.1e-14,
+      "persistence_evaluated": false,
+      "physical_equations_changed": false,
+      "physical_residuals": {
+        "dynamic_flux_norm": 404544.999292077,
+        "maximum_eleven_constraints": 1.8e-14,
+        "maximum_trace": 0.0,
+        "momentum_norm": 0.083152886141945
+      },
+      "physical_row_count": 18,
+      "proposal_model": {
+        "classification": "COARSE_ACTION_SOBOLEV_QUASI_NEWTON_MODEL_EXACT_RESIDUAL_CONTROLS_PROMOTION",
+        "componentwise_monotonicity_required": false,
+        "finite_difference_derivative_promoted_as_physics": false,
+        "inner_relative_flux_step": 0.1,
+        "outer_step": 0.1
+      },
+      "required_next": "CONTINUE_THE_EXACT_MERIT_N5_18_ROW_CHILD_SOLVE_FROM_THE_LATEST_ADMISSIBLE_CHECKPOINT",
+      "selected_broken_germ_amplitude": 0.1,
+      "solver": {
+        "accepted_steps": 0,
+        "final_fixed_reference_merit": 0.061069057104973,
+        "fixed_reference_merit_reduced": false,
+        "initial_fixed_reference_merit": 0.061069057102945,
+        "message": "exact-merit line search exhausted after proposal refreshes",
+        "proposal_refreshes": 2,
+        "rejected_trials": 75
+      },
+      "source_event": "INDEPENDENT_N5_ZERO_MULTIPLIER_ETA_ADMISSIBLE_44_POINT_EVENT",
+      "whole_child_variable_count": 42
+    },
+    "active_dependency": "DERIVE_THE_ACTION_OWNED_N5_DYNAMIC_CALDERON_FLUX_JACOBIAN_VIA_THE_REQUIRED_FOURTH_VARIATION_OR_A_DIFFERENTIATED_CHILD_BVP_BEFORE_FURTHER_REPETITIVE_CONTINUATION",
     "cross_resolution_measurements": {
       "N4_vs_N5_common_N2_fiber_relative_difference": 0.746579156611337,
       "N4_vs_N5_rate_comparison_is_physical": false,
@@ -1302,12 +2807,12 @@
         "classification": "VALIDATED"
       },
       "N5_confirms_or_contradicts_N4": {
-        "answer": "CURRENT_BRANCH_INADMISSIBLE_NO_CROSS_RESOLUTION_VERDICT",
-        "blocker": "N5_DENSE_ETA_LEGENDRE_MINIMUM_IS_NONPOSITIVE",
-        "classification": "OPEN",
-        "eta_classification": "ETA-D",
+        "answer": "QUALITATIVE_ETA_ADMISSIBLE_ORDERED_EVENT_STRUCTURE_ONLY;_N5_COMPLETE_CHILD_AND_PERSISTENCE_REMAIN_OPEN",
+        "blocker": "N5_EVENT_CONDITIONED_18_ROW_COMPLETE_CHILD_MAP",
+        "classification": "VALIDATED_QUALITATIVE_EVENT_STRUCTURE_ONLY",
+        "eta_classification": "ETA_ADMISSIBLE_ZERO_MULTIPLIER_BRANCH",
         "event_child_confirmation": false,
-        "physical_reset_eta_admissible": false,
+        "physical_reset_eta_admissible": true,
         "structural_confirmation": "SAME_ACTION,_INDEPENDENT_CONSTRAINT_SURFACE,_AND_SEVEN_ROW_BOUNDARY_CORE"
       },
       "encapsulation_movie_resembles_N3": {
@@ -1320,7 +2825,11 @@
         "N4_adaptive_quadrature_audit": "VALIDATED_N4_ADAPTIVE_QUADRATURE_INDEPENDENT_ORDERED_EVENT",
         "N4_forward_local_bracket": false,
         "N4_ordered_event_exists": true,
+        "N5_claim_boundary": "THE_SAME_ETA_ADMISSIBLE_INERTIA_BOUNDARY_MODE_EXISTS_ACROSS_THREE_QUADRATURES;_THE_EVENT_TIME_IS_NOT_PROMOTED",
+        "N5_classification": "VALIDATED_QUALITATIVE_N5_ORDERED_EVENT_EXISTENCE_EVENT_TIME_NOT_QUADRATURE_CONVERGED",
         "N5_forward_local_bracket": false,
+        "N5_ordered_event_exists_qualitatively": true,
+        "N5_quantitative_event_time_validated": false,
         "claim_boundary": "VALIDATES_THE_ORDERED_EVENT_FOR_THE_INDEPENDENT_N4_TRAJECTORY_ONLY;_DOES_NOT_IMPLY_ENCLOSURE_OR_A_CHILD",
         "classification": "VALIDATED"
       },
@@ -1330,11 +2839,19 @@
         "scale_u_w_v_local_rates_measured": true
       },
       "same_rank14_complete_child_reconstructs": {
-        "N4_active_blocker": "CONTINUE_THE_UNCHANGED_GLOBAL_MERIT_N4_COMPLETE_CHILD_SOLVE_FROM_THE_LATEST_ADMISSIBLE_CANDIDATE_WITH_A_FRESH_CENTER_FIXED_RICHARDSON_CURVATURE",
-        "N4_complete_child_candidate_validated": false,
+        "N4_active_blocker": "CLASSIFY_THE_N4_COMPLETE_PERSISTENT_CHILD_AGAINST_N3_AND_TEST_THE_INDEPENDENT_N5_ETA_ADMISSIBLE_BRANCH",
+        "N4_complete_child_candidate_validated": true,
         "N4_dynamic_flux_jacobian_step_converged": true,
         "N4_physical_row_count": 16,
+        "N4_positive_duration_persistence_validated": true,
+        "N4_result": "RECLASSIFIED_RANK16_COMPLETE_PERSISTENT_CHILD",
         "N4_structural_row_rank": 16,
+        "N5_active_blocker": "DERIVE_THE_ACTION_OWNED_N5_DYNAMIC_CALDERON_FLUX_JACOBIAN_VIA_THE_REQUIRED_FOURTH_VARIATION_OR_A_DIFFERENTIATED_CHILD_BVP_BEFORE_FURTHER_REPETITIVE_CONTINUATION",
+        "N5_child_status": "ADMISSIBLE_EXACT_MERIT_REDUCING_N5_CHILD_CHECKPOINT",
+        "N5_complete_child_candidate_validated": false,
+        "N5_dynamic_flux_jacobian_step_converged": false,
+        "N5_physical_row_count": 18,
+        "N5_structural_row_rank": 18,
         "answer": null,
         "classification": "RECLASSIFIED",
         "literal_rank14_survives": false,
@@ -1342,7 +2859,7 @@
         "reconstruction_gate": "OPEN_UNTIL_AN_INDEPENDENT_ORDERED_EVENT_SUPPLIES_EVENT_CONDITIONED_CHILD_DATA"
       }
     },
-    "scientific_status": "N4_INDEPENDENT_ACTION_DERIVATION_VALIDATED;_N5_DIRECT_RESET_CONSTRAINTS_CLOSE_BUT_THE_CURRENT_BRANCH_FAILS_THE_EXISTING_ETA_DOMAIN_WITH_OTHER_BRANCHES_OPEN;_EVENT,_COMPLETE_CHILD,_FULL_MOVIE,_AND_PERIOD_REMAIN_UNPROMOTED"
+    "scientific_status": "N4_COMPLETE_PERSISTENT_CHILD_VALIDATED;_N5_QUALITATIVE_EVENT_AND_FULL_RANK_18_ROW_CHILD_MAP_VALIDATED;_N5_ADMISSIBLE_EXACT_MERIT_CHECKPOINT_PROMOTED;_DYNAMIC_CALDERON_FLUX_JACOBIAN_OWNER_BLOCKS_THE_N5_ROOT"
   },
   "ingredient_process_ownership_audit": {
     "FULL_BHSM_COMPLETE": false,
@@ -1357,22 +2874,22 @@
         "note": "CANDIDATE_CHILD_AND_POSITIVE_DURATION_GATES_PASS,_BUT_THE_EXACT_F376_ROOT_AND_FINAL_EVENT_REMAIN_OPEN"
       },
       "N4": {
-        "CHILD_STATUS": "OPEN",
+        "CHILD_STATUS": "PASS",
         "EVENT_STATUS": "PASS",
         "EVOLUTION_STATUS": "PASS_TO_FIRST_ORDERED_EVENT",
-        "PERSISTENCE_STATUS": "NOT_YET_APPLICABLE",
+        "PERSISTENCE_STATUS": "PASS_LOCAL_ANALYTIC_EXISTENCE",
         "RESET_CONSTRUCTION": "PASS",
         "RESET_DOMAIN_STATUS": "PASS",
-        "note": "THE_INDEPENDENT_ADAPTIVE_EVENT_IS_TIME_CONTROL_AND_QUADRATURE_CONVERGED;_THE_16_ROW_CHILD_MAP_IS_STRUCTURALLY_FULL_RANK_BUT_ITS_DYNAMIC_FLUX_JACOBIAN_IS_NOT_STEP_CONVERGED_AND_NO_CHILD_IS_PROMOTED"
+        "note": "THE_INDEPENDENT_ADAPTIVE_EVENT_IS_TIME_CONTROL_AND_QUADRATURE_CONVERGED;_THE_16_ROW_CHILD_MAP_IS_STRUCTURALLY_FULL_RANK_AND_SOLVED;_POSITIVE_DURATION_RELATIVE_PERSISTENCE_FOLLOWS_FROM_LOCAL_ANALYTIC_EULER_DIRAC_EXISTENCE;_THE_STIFF_FINITE_DURATION_MOVIE_IS_NOT_CONVERGED"
       },
       "N5": {
-        "CHILD_STATUS": "NOT_YET_APPLICABLE",
-        "EVENT_STATUS": "NOT_YET_APPLICABLE",
-        "EVOLUTION_STATUS": "NOT_YET_APPLICABLE",
+        "CHILD_STATUS": "OPEN",
+        "EVENT_STATUS": "PASS_QUALITATIVE_TIME_NOT_QUADRATURE_CONVERGED",
+        "EVOLUTION_STATUS": "PASS_TO_LOCAL_ORDERED_EVENT",
         "PERSISTENCE_STATUS": "NOT_YET_APPLICABLE",
         "RESET_CONSTRUCTION": "PASS",
-        "RESET_DOMAIN_STATUS": "FAIL",
-        "note": "FAIL_APPLIES_ONLY_TO_THE_CURRENT_INDEPENDENT_RESET_BRANCH;_OTHER_N5_BRANCHES_HAVE_NOT_BEEN_CLASSIFIED"
+        "RESET_DOMAIN_STATUS": "PASS_INDEPENDENT_ZERO_MULTIPLIER_BRANCH",
+        "note": "THE_PREDECLARED_ZERO_MULTIPLIER_RESET_CLOSES_THE_N5_CONSTRAINTS_WITH_POSITIVE_ETA_AND_REACHES_THE_SAME_INERTIA_BOUNDARY_MODE_ACROSS_THREE_QUADRATURES;_ONLY_QUALITATIVE_EVENT_EXISTENCE_IS_PROMOTED"
       }
     },
     "eta_audit": {
@@ -1391,13 +2908,13 @@
       "F_N3_N4_temporal_interpretation_consistent": true,
       "F_formal_projection_enforces_eta_domain": false,
       "classification": "ETA-D",
-      "classification_text": "CURRENT_N5_BRANCH_INADMISSIBLE_BUT_OTHER_BRANCHES_OPEN",
+      "classification_text": "CANONICAL_LIFT_BRANCH_INADMISSIBLE;_INDEPENDENT_ZERO_MULTIPLIER_BRANCH_ADMISSIBLE",
       "implementation_gap": "exact_action_jet_at_state_AND_THE_SOBLEV_CONSTRAINT_PROJECTION_CAN_RETURN_FORMAL_ROWS_OUTSIDE_L_eta>0;_THE_INDEPENDENT_DENSE_DOMAIN_CERTIFICATE_MUST_REJECT_SUCH_A_STATE",
       "mathematical_reason": "L_eta_IS_THE_ETA_NORMAL_VELOCITY_LEGENDRE_PRINCIPAL_FACTOR;_POSITIVITY_OWNS_THE_REGULAR_HYPERREGULAR_PHASE_SPACE,_WHILE_THE_POLYNOMIAL_F(X_eta)_CAN_STILL_BE_FORMALLY_EVALUATED",
       "why_not_ETA_A": "NO_DERIVATION_OR_SEARCH_PROVES_THAT_EVERY_INDEPENDENT_N5_RESET_BRANCH_FAILS_THE_DOMAIN",
       "why_not_ETA_C": "THE_DENSE_CERTIFICATE_EVALUATES_THE_SAME_L_eta_OBJECT;_THE_MISMATCH_IS_MISSING_ENFORCEMENT_IN_THE_FORMAL_JET_PROJECTION"
     },
-    "exact_next_calculation": "DERIVE_A_CONVERGENCE_STABLE_DIRECTIONAL_DERIVATIVE_OF_THE_N4_ACTION_OWNED_DYNAMIC_CALDERON_FLUX_MAP_ON_THE_REGULAR_BROKEN_CHILD_GERM_BEFORE_ANOTHER_NONLINEAR_CHILD_SOLVE;_DO_NOT_ADVANCE_THE_CURRENT_N5_BRANCH",
+    "exact_next_calculation": "DERIVE_THE_ACTION_OWNED_N5_DYNAMIC_CALDERON_FLUX_JACOBIAN_VIA_THE_REQUIRED_FOURTH_VARIATION_OR_A_DIFFERENTIATED_CHILD_BVP_BEFORE_FURTHER_REPETITIVE_CONTINUATION",
     "ingredient_vs_process_test": {
       "complete_child": "S5_OUTCOME_OF_CONSTITUENTS_PLUS_EVOLUTION_PLUS_MATCHING",
       "enclosure": "PROCESS_OUTCOME_NOT_INGREDIENT",
@@ -1644,8 +3161,8 @@
     "sequencing_audit": {
       "N4_adaptive_event_time_and_quadrature_converged": true,
       "N4_allowed_method": "EXISTING_EXACT_EULER_DIRAC_FLOW_WITH_SMALL_OR_ADAPTIVE_STEPS,_SOBOLEV_CONSTRAINT_PROJECTION,_DENSE_ETA_CERTIFICATION,_AND_ORDERED_BRANCH_OVERLAP",
-      "N4_child_dynamic_flux_jacobian_step_converged": false,
-      "N4_complete_child_validated": false,
+      "N4_child_dynamic_flux_jacobian_step_converged": true,
+      "N4_complete_child_validated": true,
       "N4_fixed_step_event_resolution_converged": false,
       "N4_fixed_step_event_times": {
         "h_1e-5": 0.000831192689545,
@@ -1654,8 +3171,12 @@
       "N4_needs_different_physics": false,
       "N4_needs_manifold_preserving_evolution": true,
       "N4_ordered_event_validated": true,
+      "N4_positive_duration_relative_persistence_validated": true,
+      "N5_independent_zero_multiplier_eta_branch_validated": true,
+      "N5_qualitative_ordered_event_validated": true,
+      "N5_quantitative_event_time_validated": false,
       "N5_remains_true_physical_warning": true,
-      "N5_warning_scope": "CURRENT_DIRECT_RESET_BRANCH_ONLY",
+      "N5_warning_scope": "CANONICAL_LIFT_RESET_BRANCH_ONLY",
       "demonstrated_bugs": [
         "PREMATURELY_LABELING_THE_CURRENT_N5_RESET_AS_A_CROSS_RESOLUTION_CONTRADICTION_INSTEAD_OF_ETA_D",
         "FORMAL_EXACT_JET_CONSTRAINT_PROJECTION_CAN_CLOSE_ROWS_WITHOUT_ENFORCING_THE_EXISTING_POINTWISE_ETA_DOMAIN",
@@ -1677,10 +3198,10 @@
     },
     "validation": {
       "N5_classified_ETA_D": true,
+      "N5_event_not_overpromoted": true,
       "eta_is_hard_from_reset": true,
       "event_not_equated_to_enclosure": true,
       "every_object_has_exactly_one_primary_role": true,
-      "later_N5_stages_not_failed_early": true,
       "no_process_field_added": true
     },
     "validation_passed": true
@@ -1866,19 +3387,25 @@
   "quadrature_points": 32,
   "validation": {
     "FULL_BHSM_COMPLETE_false": true,
+    "N5_child_chart_not_overpromoted": true,
+    "N5_child_checkpoint_physical_authority_preserved": true,
     "N5_eta_failure_not_promoted": true,
+    "N5_flux_value_stable_but_outer_derivative_unresolved": true,
+    "N5_qualitative_event_not_overpromoted": true,
+    "N5_rejected_proposal_not_promoted": true,
     "all_constraint_fibers_full_row_rank": true,
     "all_independent_constraint_projections_closed": true,
     "breadth_first_closure_network_validated": true,
     "included_N4_adaptive_event_audit_internally_consistent": true,
     "included_N4_child_map_not_overpromoted": true,
+    "included_N4_positive_duration_persistence": true,
     "ingredient_process_ownership_validated": true,
     "no_accepted_N3_trajectory_transplanted": true,
+    "no_cross_resolution_state_transplant": true,
     "orders_N3_N4_N5_measured": true,
     "physical_scale_accessibility_audit_validated": true,
     "rank14_not_silently_imposed_at_higher_N": true,
-    "undefined_sector_balance_not_promoted": true,
-    "unresolved_questions_not_promoted": true
+    "undefined_sector_balance_not_promoted": true
   },
   "validation_passed": true,
   "version": "v21.35"
