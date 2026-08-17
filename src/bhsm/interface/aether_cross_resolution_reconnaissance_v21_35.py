@@ -42,6 +42,15 @@ from bhsm.interface.aether_n3_constraint_solved_orbit_v16_08 import (
 from bhsm.interface.aether_n3_fresh_sbp_asymmetric_period_v0_priority_v17_42 import (
     deterministic_json,
 )
+from bhsm.interface.aether_n3_replacement_global_kkt_v16_11 import (
+    unpack_reduced,
+)
+from bhsm.interface.aether_n3_sbp_redirect_audit_v16_57 import (
+    trapezoid_sbp_difference,
+)
+from bhsm.interface.aether_n3_scale_corrected_period_log_continuation_v17_76 import (
+    v17_75_selected_raw_vector,
+)
 from bhsm.interface.aether_post_cut_nonround_lorentzian_cap_v15_48 import (
     RADIUS0,
 )
@@ -6905,6 +6914,246 @@ def child_history_bvp_bordered_operator_audit(
     }
 
 
+def event_child_two_sided_reaction_match_audit(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+    *,
+    points: int = 44,
+) -> dict[str, Any]:
+    """Solve the derived event-to-child boundary-reaction correspondence."""
+
+    target = Path(path)
+    payload = json.loads(target.read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    n3_payload = json.loads((target.parent / (
+        "BHSM_aether_n3_complete_child_persistence_v17_99.json"
+    )).read_text(encoding="utf-8"))
+    n3_state = unpack_reduced(v17_75_selected_raw_vector())
+    n3_q_history = np.asarray(n3_state["coordinates"], dtype=float)
+    n3_m_history = np.asarray(n3_state["multipliers"], dtype=float)
+    n3_v_history = (
+        trapezoid_sbp_difference() @ n3_q_history
+        / float(n3_state["period"])
+    )
+    n4_event = payload["N4_adaptive_event_convergence_audit"][
+        "quadrature_control"
+    ]["event"]
+    n5_event = next(
+        row["event"]
+        for row in payload[
+            "N5_independent_eta_branch_event_classification"
+        ]["quadrature_runs"]
+        if int(row["points"]) == points
+    )
+    events = {
+        3: {
+            "coordinates": n3_q_history[-1],
+            "velocities": n3_v_history[-1],
+            "multipliers": n3_m_history[-1],
+            "source": "V17_75_ACCEPTED_EVENT_HISTORY",
+        },
+        4: {**n4_event, "source": "INDEPENDENT_N4_ACCEPTED_EVENT_HISTORY"},
+        5: {**n5_event, "source": "INDEPENDENT_N5_ACCEPTED_EVENT_HISTORY"},
+    }
+    children = {
+        3: n3_payload["complete_child_persistence"]["evolution"]["rows"][0],
+        4: payload[
+            "N4_event_conditioned_complete_child_reconstruction"
+        ]["child_state"],
+        5: payload[
+            "N5_event_conditioned_complete_child_reconstruction"
+        ]["child_state"],
+    }
+    rows = []
+    for order in (3, 4, 5):
+        event = events[order]
+        child = children[order]
+        q_event = np.asarray(event["coordinates"], dtype=float)
+        v_event = np.asarray(event["velocities"], dtype=float)
+        m_event = np.asarray(event["multipliers"], dtype=float)
+        exact = child.get("binary64_hex")
+        if exact is None:
+            q_child = np.asarray(child["coordinates"], dtype=float)
+            v_child = np.asarray(child["velocities"], dtype=float)
+            m_child = np.asarray(child["multipliers"], dtype=float)
+        else:
+            q_child = np.asarray([
+                float.fromhex(value) for value in exact["coordinates"]
+            ])
+            v_child = np.asarray([
+                float.fromhex(value) for value in exact["velocities"]
+            ])
+            m_child = np.asarray([
+                float.fromhex(value) for value in exact["multipliers"]
+            ])
+        event_boundary = _attachment_jacobian_at_order(order, q_event)
+        child_boundary = _attachment_jacobian_at_order(order, q_child)
+        event_dynamics = _exact_full_jet_euler_dirac_acceleration(
+            order, q_event, v_event, m_event, points=points
+        )
+        event_boundary_acceleration = (
+            event_boundary @ np.asarray(
+                event_dynamics["acceleration"], dtype=float
+            )
+            + _attachment_chart_curvature_on_velocity(
+                order, q_event, v_event
+            )
+        )
+        event_reaction = _child_history_boundary_reaction_solve(
+            order,
+            q_event,
+            v_event,
+            m_event,
+            event_boundary_acceleration,
+            points=points,
+        )
+        child_zero = _child_history_boundary_reaction_solve(
+            order,
+            q_child,
+            v_child,
+            m_child,
+            np.zeros(2),
+            points=points,
+        )
+        child_offset = np.asarray(
+            child_zero["boundary_reaction"], dtype=float
+        )
+        child_response = np.empty((2, 2))
+        for column in range(2):
+            unit = np.zeros(2)
+            unit[column] = 1.0
+            unit_reaction = _child_history_boundary_reaction_solve(
+                order,
+                q_child,
+                v_child,
+                m_child,
+                unit,
+                points=points,
+            )
+            child_response[:, column] = (
+                np.asarray(unit_reaction["boundary_reaction"], dtype=float)
+                - child_offset
+            )
+        event_reaction_vector = np.asarray(
+            event_reaction["boundary_reaction"], dtype=float
+        )
+        child_boundary_acceleration = np.linalg.solve(
+            child_response, -event_reaction_vector - child_offset
+        )
+        child_reaction = _child_history_boundary_reaction_solve(
+            order,
+            q_child,
+            v_child,
+            m_child,
+            child_boundary_acceleration,
+            points=points,
+        )
+        child_reaction_vector = np.asarray(
+            child_reaction["boundary_reaction"], dtype=float
+        )
+        event_momentum = _canonical_pair_at_order(
+            order, q_event, v_event, m_event, points=points
+        )[0]
+        child_momentum = _canonical_pair_at_order(
+            order, q_child, v_child, m_child, points=points
+        )[0]
+        rows.append({
+            "N": order,
+            "event_source": event["source"],
+            "event_boundary_acceleration": (
+                event_boundary_acceleration.tolist()
+            ),
+            "event_boundary_reaction": event_reaction_vector.tolist(),
+            "child_reaction_response_matrix": child_response.tolist(),
+            "child_reaction_response_determinant": float(
+                np.linalg.det(child_response)
+            ),
+            "child_reaction_response_condition_number": float(
+                np.linalg.cond(child_response)
+            ),
+            "solved_child_boundary_acceleration": (
+                child_boundary_acceleration.tolist()
+            ),
+            "solved_child_boundary_reaction": (
+                child_reaction_vector.tolist()
+            ),
+            "two_sided_reaction_match_norm": float(np.linalg.norm(
+                event_reaction_vector + child_reaction_vector
+            )),
+            "attachment_configuration_jump_norm": float(np.linalg.norm(
+                _attachment_coordinates_at_order(order, q_child)
+                - _attachment_coordinates_at_order(order, q_event)
+            )),
+            "attachment_rate_jump_norm": float(np.linalg.norm(
+                child_boundary @ v_child - event_boundary @ v_event
+            )),
+            "accepted_attachment_momentum_match_norm": float(
+                np.linalg.norm(child_momentum - event_momentum)
+            ),
+            "maximum_child_BVP_block_residual": max(
+                child_reaction["maximum_Euler_reaction_residual"],
+                child_reaction["maximum_constraint_tangent_residual"],
+                child_reaction["maximum_boundary_acceleration_residual"],
+            ),
+        })
+    validation = {
+        "N3_N4_N5_event_histories_and_children_used": (
+            [row["N"] for row in rows] == [3, 4, 5]
+        ),
+        "all_child_reaction_response_matrices_invertible": all(
+            abs(row["child_reaction_response_determinant"]) > 1.0e-10
+            for row in rows
+        ),
+        "all_two_sided_reaction_matches_close": all(
+            row["two_sided_reaction_match_norm"] < 1.0e-6
+            for row in rows
+        ),
+        "all_bordered_equations_replay": all(
+            row["maximum_child_BVP_block_residual"] < 1.0e-6
+            for row in rows
+        ),
+        "N4_N5_accepted_momentum_rows_replay": all(
+            row["accepted_attachment_momentum_match_norm"] < 1.0e-10
+            for row in rows[1:]
+        ),
+    }
+    return {
+        "classification": (
+            "EVENT_TO_COMPLETE_CHILD_TWO_SIDED_BOUNDARY_REACTION_MAP_"
+            "DERIVED_AND_FINITE_N_SOLVABLE_AT_N3_N4_N5;_UNIFORM_"
+            "GENERAL_N_GRAPH_CONVERGENCE_AND_RETURN_MAP_OPEN"
+        ),
+        "map": (
+            "Lambda_child_N(b_ddot_child;Y_child)="
+            "-Lambda_event_N(b_ddot_event;z_event)"
+        ),
+        "selection": (
+            "THE_ACCEPTED_EVENT_HISTORY_FIXES_THE_EVENT_REACTION;_THE_"
+            "SAME_ACTION_CHILD_BORDERED_OPERATOR_DETERMINES_THE_CHILD_"
+            "BOUNDARY_ACCELERATION_WITHOUT_A_NEW_PHYSICAL_ROW"
+        ),
+        "rows": rows,
+        "configuration_or_rate_continuity_imposed_as_a_new_gate": False,
+        "why_not": (
+            "THE_RECONSTRUCTED_CHILD_IS_A_NEW_PIECEWISE_LORENTZIAN_"
+            "SOLUTION;_THE_EXISTING_TRACE_AND_CANONICAL_MOMENTUM_ROWS_"
+            "ARE_RETAINED_AND_NO_EXTRA_C1_MATCH_IS_ASSUMED"
+        ),
+        "accepted_F_N_roots_or_persistence_changed": False,
+        "new_equations_constraints_or_acceptance_gates": False,
+        "required_next": (
+            "TEST_THE_TWO_BY_TWO_REACTION_CALDERON_GRAPH_UNDER_EXACT_"
+            "NESTED_SPECTRAL_INJECTION_AND_DERIVE_A_UNIFORM_NORMAL_"
+            "RIGHT_INVERSE_OR_LOCALIZE_ITS_FIRST_ACTION_OWNED_FAILURE"
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
 def event_to_child_on_shell_calderon_interface() -> dict[str, Any]:
     """Reconcile the validated local child roots with the required full BVP."""
 
@@ -7968,6 +8217,9 @@ def promote_existing_general_n_statement(path: str | Path) -> Path:
     attachment_lift_audit = nested_attachment_lift_consistency_audit(target)
     boundary_reaction_audit = on_shell_boundary_reaction_audit(target)
     history_bvp_audit = child_history_bvp_bordered_operator_audit(target)
+    two_sided_reaction_audit = event_child_two_sided_reaction_match_audit(
+        target
+    )
     statement["cross_resolution_principal_symbol_frame_audit"] = frame_audit
     statement["cross_resolution_strong_constraint_infsup_audit"] = (
         strong_constraint_audit
@@ -7981,6 +8233,9 @@ def promote_existing_general_n_statement(path: str | Path) -> Path:
     statement["on_shell_boundary_reaction_audit"] = boundary_reaction_audit
     statement["child_history_bvp_bordered_operator_audit"] = (
         history_bvp_audit
+    )
+    statement["event_child_two_sided_reaction_match_audit"] = (
+        two_sided_reaction_audit
     )
     required_next = statement["required_next"]
     result["general_N_complete_child_reconstruction_and_convergence_statement"] = (
@@ -7996,6 +8251,9 @@ def promote_existing_general_n_statement(path: str | Path) -> Path:
     result["nested_attachment_lift_consistency_audit"] = attachment_lift_audit
     result["on_shell_boundary_reaction_audit"] = boundary_reaction_audit
     result["child_history_bvp_bordered_operator_audit"] = history_bvp_audit
+    result["event_child_two_sided_reaction_match_audit"] = (
+        two_sided_reaction_audit
+    )
     child = dict(n5)
     child["required_next"] = required_next
     result["N5_event_conditioned_complete_child_reconstruction"] = child
@@ -8098,6 +8356,9 @@ def promote_existing_general_n_statement(path: str | Path) -> Path:
         "child_history_bvp_bordered_operator_audit_validated": (
             history_bvp_audit["validation_passed"]
         ),
+        "event_child_two_sided_reaction_match_audit_validated": (
+            two_sided_reaction_audit["validation_passed"]
+        ),
     })
     payload["validation"] = validation
     payload["validation_passed"] = all(validation.values())
@@ -8194,6 +8455,7 @@ __all__ = [
     "nested_attachment_lift_consistency_audit",
     "on_shell_boundary_reaction_audit",
     "child_history_bvp_bordered_operator_audit",
+    "event_child_two_sided_reaction_match_audit",
     "event_to_child_on_shell_calderon_interface",
     "general_n_galerkin_transfer_certificate",
     "general_n_complete_child_reconstruction_statement",

@@ -4254,6 +4254,138 @@
       },
       "validation_passed": true
     },
+    "event_child_two_sided_reaction_match_audit": {
+      "FULL_BHSM_COMPLETE": false,
+      "accepted_F_N_roots_or_persistence_changed": false,
+      "classification": "EVENT_TO_COMPLETE_CHILD_TWO_SIDED_BOUNDARY_REACTION_MAP_DERIVED_AND_FINITE_N_SOLVABLE_AT_N3_N4_N5;_UNIFORM_GENERAL_N_GRAPH_CONVERGENCE_AND_RETURN_MAP_OPEN",
+      "configuration_or_rate_continuity_imposed_as_a_new_gate": false,
+      "map": "Lambda_child_N(b_ddot_child;Y_child)=-Lambda_event_N(b_ddot_event;z_event)",
+      "new_equations_constraints_or_acceptance_gates": false,
+      "required_next": "TEST_THE_TWO_BY_TWO_REACTION_CALDERON_GRAPH_UNDER_EXACT_NESTED_SPECTRAL_INJECTION_AND_DERIVE_A_UNIFORM_NORMAL_RIGHT_INVERSE_OR_LOCALIZE_ITS_FIRST_ACTION_OWNED_FAILURE",
+      "rows": [
+        {
+          "N": 3,
+          "accepted_attachment_momentum_match_norm": 3.8032348e-08,
+          "attachment_configuration_jump_norm": 0.032569197517948,
+          "attachment_rate_jump_norm": 0.073298033382641,
+          "child_reaction_response_condition_number": 188.8671961702146,
+          "child_reaction_response_determinant": -7165.62366939749,
+          "child_reaction_response_matrix": [
+            [
+              -1157.8038828508538,
+              80.24639174051816
+            ],
+            [
+              80.24639174052096,
+              0.627170363461374
+            ]
+          ],
+          "event_boundary_acceleration": [
+            -150.79450354391992,
+            -644.9285756045892
+          ],
+          "event_boundary_reaction": [
+            -295.97672425406574,
+            3.550781025872612
+          ],
+          "event_source": "V17_75_ACCEPTED_EVENT_HISTORY",
+          "maximum_child_BVP_block_residual": 8.413e-12,
+          "solved_child_boundary_acceleration": [
+            0.899335680332802,
+            12.043193895926937
+          ],
+          "solved_child_boundary_reaction": [
+            295.976724254063,
+            -3.550781025872557
+          ],
+          "two_sided_reaction_match_norm": 2.729e-12
+        },
+        {
+          "N": 4,
+          "accepted_attachment_momentum_match_norm": 2.264e-12,
+          "attachment_configuration_jump_norm": 0.002664522647064,
+          "attachment_rate_jump_norm": 0.03626442912605,
+          "child_reaction_response_condition_number": 11069435.971435692,
+          "child_reaction_response_determinant": -2.483381464123538,
+          "child_reaction_response_matrix": [
+            [
+              -5240.566752152745,
+              114.20602862045916
+            ],
+            [
+              114.20602862080689,
+              -2.488382308359277
+            ]
+          ],
+          "event_boundary_acceleration": [
+            -5509353620.243089,
+            -179255188942.16788
+          ],
+          "event_boundary_reaction": [
+            50.084063018221144,
+            -1.525675197511955
+          ],
+          "event_source": "INDEPENDENT_N4_ACCEPTED_EVENT_HISTORY",
+          "maximum_child_BVP_block_residual": 9.60426e-10,
+          "solved_child_boundary_acceleration": [
+            160.95885882895956,
+            7364.7436225613865
+          ],
+          "solved_child_boundary_reaction": [
+            -50.0840629842212,
+            1.525675196704889
+          ],
+          "two_sided_reaction_match_norm": 3.4009523e-08
+        },
+        {
+          "N": 5,
+          "accepted_attachment_momentum_match_norm": 4.363e-12,
+          "attachment_configuration_jump_norm": 0.005471841290956,
+          "attachment_rate_jump_norm": 0.016199377248301,
+          "child_reaction_response_condition_number": 1219.5959957040777,
+          "child_reaction_response_determinant": 0.043997160084473,
+          "child_reaction_response_matrix": [
+            [
+              -7.263014452869079,
+              0.67185019179098
+            ],
+            [
+              0.671850191778697,
+              -0.068205817777233
+            ]
+          ],
+          "event_boundary_acceleration": [
+            23072862626.667797,
+            70245013688.05615
+          ],
+          "event_boundary_reaction": [
+            -18.00608686942492,
+            0.849913151109685
+          ],
+          "event_source": "INDEPENDENT_N5_ACCEPTED_EVENT_HISTORY",
+          "maximum_child_BVP_block_residual": 4.4793e-11,
+          "solved_child_boundary_acceleration": [
+            -24.368410619661184,
+            -177.44902696012247
+          ],
+          "solved_child_boundary_reaction": [
+            18.006086869399716,
+            -0.849913151104302
+          ],
+          "two_sided_reaction_match_norm": 2.5772e-11
+        }
+      ],
+      "selection": "THE_ACCEPTED_EVENT_HISTORY_FIXES_THE_EVENT_REACTION;_THE_SAME_ACTION_CHILD_BORDERED_OPERATOR_DETERMINES_THE_CHILD_BOUNDARY_ACCELERATION_WITHOUT_A_NEW_PHYSICAL_ROW",
+      "validation": {
+        "N3_N4_N5_event_histories_and_children_used": true,
+        "N4_N5_accepted_momentum_rows_replay": true,
+        "all_bordered_equations_replay": true,
+        "all_child_reaction_response_matrices_invertible": true,
+        "all_two_sided_reaction_matches_close": true
+      },
+      "validation_passed": true,
+      "why_not": "THE_RECONSTRUCTED_CHILD_IS_A_NEW_PIECEWISE_LORENTZIAN_SOLUTION;_THE_EXISTING_TRACE_AND_CANONICAL_MOMENTUM_ROWS_ARE_RETAINED_AND_NO_EXTRA_C1_MATCH_IS_ASSUMED"
+    },
     "general_N_complete_child_reconstruction_and_convergence_statement": {
       "FULL_BHSM_COMPLETE": false,
       "child_history_bvp_bordered_operator_audit": {
@@ -4857,6 +4989,138 @@
         "validation_passed": true
       },
       "domain": "INTEGER_SPECTRAL_ORDER_N_AT_LEAST_3",
+      "event_child_two_sided_reaction_match_audit": {
+        "FULL_BHSM_COMPLETE": false,
+        "accepted_F_N_roots_or_persistence_changed": false,
+        "classification": "EVENT_TO_COMPLETE_CHILD_TWO_SIDED_BOUNDARY_REACTION_MAP_DERIVED_AND_FINITE_N_SOLVABLE_AT_N3_N4_N5;_UNIFORM_GENERAL_N_GRAPH_CONVERGENCE_AND_RETURN_MAP_OPEN",
+        "configuration_or_rate_continuity_imposed_as_a_new_gate": false,
+        "map": "Lambda_child_N(b_ddot_child;Y_child)=-Lambda_event_N(b_ddot_event;z_event)",
+        "new_equations_constraints_or_acceptance_gates": false,
+        "required_next": "TEST_THE_TWO_BY_TWO_REACTION_CALDERON_GRAPH_UNDER_EXACT_NESTED_SPECTRAL_INJECTION_AND_DERIVE_A_UNIFORM_NORMAL_RIGHT_INVERSE_OR_LOCALIZE_ITS_FIRST_ACTION_OWNED_FAILURE",
+        "rows": [
+          {
+            "N": 3,
+            "accepted_attachment_momentum_match_norm": 3.8032348e-08,
+            "attachment_configuration_jump_norm": 0.032569197517948,
+            "attachment_rate_jump_norm": 0.073298033382641,
+            "child_reaction_response_condition_number": 188.8671961702146,
+            "child_reaction_response_determinant": -7165.62366939749,
+            "child_reaction_response_matrix": [
+              [
+                -1157.8038828508538,
+                80.24639174051816
+              ],
+              [
+                80.24639174052096,
+                0.627170363461374
+              ]
+            ],
+            "event_boundary_acceleration": [
+              -150.79450354391992,
+              -644.9285756045892
+            ],
+            "event_boundary_reaction": [
+              -295.97672425406574,
+              3.550781025872612
+            ],
+            "event_source": "V17_75_ACCEPTED_EVENT_HISTORY",
+            "maximum_child_BVP_block_residual": 8.413e-12,
+            "solved_child_boundary_acceleration": [
+              0.899335680332802,
+              12.043193895926937
+            ],
+            "solved_child_boundary_reaction": [
+              295.976724254063,
+              -3.550781025872557
+            ],
+            "two_sided_reaction_match_norm": 2.729e-12
+          },
+          {
+            "N": 4,
+            "accepted_attachment_momentum_match_norm": 2.264e-12,
+            "attachment_configuration_jump_norm": 0.002664522647064,
+            "attachment_rate_jump_norm": 0.03626442912605,
+            "child_reaction_response_condition_number": 11069435.971435692,
+            "child_reaction_response_determinant": -2.483381464123538,
+            "child_reaction_response_matrix": [
+              [
+                -5240.566752152745,
+                114.20602862045916
+              ],
+              [
+                114.20602862080689,
+                -2.488382308359277
+              ]
+            ],
+            "event_boundary_acceleration": [
+              -5509353620.243089,
+              -179255188942.16788
+            ],
+            "event_boundary_reaction": [
+              50.084063018221144,
+              -1.525675197511955
+            ],
+            "event_source": "INDEPENDENT_N4_ACCEPTED_EVENT_HISTORY",
+            "maximum_child_BVP_block_residual": 9.60426e-10,
+            "solved_child_boundary_acceleration": [
+              160.95885882895956,
+              7364.7436225613865
+            ],
+            "solved_child_boundary_reaction": [
+              -50.0840629842212,
+              1.525675196704889
+            ],
+            "two_sided_reaction_match_norm": 3.4009523e-08
+          },
+          {
+            "N": 5,
+            "accepted_attachment_momentum_match_norm": 4.363e-12,
+            "attachment_configuration_jump_norm": 0.005471841290956,
+            "attachment_rate_jump_norm": 0.016199377248301,
+            "child_reaction_response_condition_number": 1219.5959957040777,
+            "child_reaction_response_determinant": 0.043997160084473,
+            "child_reaction_response_matrix": [
+              [
+                -7.263014452869079,
+                0.67185019179098
+              ],
+              [
+                0.671850191778697,
+                -0.068205817777233
+              ]
+            ],
+            "event_boundary_acceleration": [
+              23072862626.667797,
+              70245013688.05615
+            ],
+            "event_boundary_reaction": [
+              -18.00608686942492,
+              0.849913151109685
+            ],
+            "event_source": "INDEPENDENT_N5_ACCEPTED_EVENT_HISTORY",
+            "maximum_child_BVP_block_residual": 4.4793e-11,
+            "solved_child_boundary_acceleration": [
+              -24.368410619661184,
+              -177.44902696012247
+            ],
+            "solved_child_boundary_reaction": [
+              18.006086869399716,
+              -0.849913151104302
+            ],
+            "two_sided_reaction_match_norm": 2.5772e-11
+          }
+        ],
+        "selection": "THE_ACCEPTED_EVENT_HISTORY_FIXES_THE_EVENT_REACTION;_THE_SAME_ACTION_CHILD_BORDERED_OPERATOR_DETERMINES_THE_CHILD_BOUNDARY_ACCELERATION_WITHOUT_A_NEW_PHYSICAL_ROW",
+        "validation": {
+          "N3_N4_N5_event_histories_and_children_used": true,
+          "N4_N5_accepted_momentum_rows_replay": true,
+          "all_bordered_equations_replay": true,
+          "all_child_reaction_response_matrices_invertible": true,
+          "all_two_sided_reaction_matches_close": true
+        },
+        "validation_passed": true,
+        "why_not": "THE_RECONSTRUCTED_CHILD_IS_A_NEW_PIECEWISE_LORENTZIAN_SOLUTION;_THE_EXISTING_TRACE_AND_CANONICAL_MOMENTUM_ROWS_ARE_RETAINED_AND_NO_EXTRA_C1_MATCH_IS_ASSUMED"
+      },
       "exact_dimension_formulas": {
         "compatibility_fiber_dimension_at_full_row_rank": "6N-4",
         "compatibility_row_count": "2N+6",
@@ -6477,6 +6741,7 @@
     "cross_resolution_boundary_symplectic_polarization_audit_validated": true,
     "cross_resolution_principal_symbol_frame_audit_validated": true,
     "cross_resolution_strong_constraint_infsup_audit_validated": true,
+    "event_child_two_sided_reaction_match_audit_validated": true,
     "general_N_dimension_law_validated_at_N3_N4_N5": true,
     "general_N_local_fiber_equivalence_adds_no_physics": true,
     "general_N_uniform_convergence_not_overpromoted": true,

@@ -281,6 +281,19 @@ def test_latest_n4_child_checkpoint_uses_fixed_merit_full_space_proposal():
     assert bvp["finite_rank_implies_uniform_general_N_inf_sup"] is False
     assert bvp["existing_N3_N4_N5_F_rows_or_persistence_changed"] is False
     assert bvp["new_equations_constraints_or_acceptance_gates"] is False
+    match = payload["cross_resolution_reconnaissance"][
+        "event_child_two_sided_reaction_match_audit"
+    ]
+    assert match["validation_passed"] is True
+    assert all(
+        row["two_sided_reaction_match_norm"] < 1.0e-6
+        for row in match["rows"]
+    )
+    assert match[
+        "configuration_or_rate_continuity_imposed_as_a_new_gate"
+    ] is False
+    assert match["accepted_F_N_roots_or_persistence_changed"] is False
+    assert match["new_equations_constraints_or_acceptance_gates"] is False
 
 
 def test_general_n_reconstruction_statement_preserves_the_physical_map():
