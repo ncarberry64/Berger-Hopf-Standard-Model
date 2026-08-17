@@ -5,23 +5,28 @@
 Current public identifier: **v21.35 cross-resolution encapsulation
 checkpoint**. This is not a release and does not claim BHSM completion.
 
-Supported now: N3 and N4 independently reconstruct complete persistent
-children under their retained equations. Supported now: the independent N5
-branch is eta-admissible, has an ordered event, and exposes a structurally
-full-rank 18-row child map. The N5 exact root, certification, and persistence
-are not yet closed.
+Supported now: N3, N4, and N5 independently reconstruct complete persistent
+children under their retained finite-resolution equations. N5 closes its
+unchanged 18-row map at fixed-reference merit `5.90723795458673e-14` (raw
+`||F18||=1.1665202200968536e-7`), is eta-admissible, and passes the existing
+certification and persistence gates with nonzero relative evolution.
 
 Supported numerical equivalence: splitting the unchanged N5 map as
 `F18=(A16,Phi2)`, solving the local compatibility fiber `A16=0`, and evaluating
 `Phi2` on that fiber has the same roots as `F18=0`. It adds no row, constraint,
 coefficient, event definition, or acceptance gate.
 
-Not supported: resolution-independent general-N reconstruction, absolute
+Supported finite-N mathematics: the whole-child variable/row/manifold laws are
+`8N+2`, `2N+8`, and `6N-6`; the same-action two-sided event/child reaction map
+is finite-N solvable at N3/N4/N5 without adding a physical row or C1 gate.
+
+Not supported: resolution-independent general-N reconstruction or uniform
+reaction-Calderon graph convergence, absolute
 scale, physical masses, CKM, PMNS, CP, neutrino splittings, empirical
 validation, or `FULL_BHSM_COMPLETE = TRUE`.
 
 Active dependency:
-`CLOSE_THE_UNCHANGED_N5_F18_ROOT_CERTIFY_N5_PERSISTENCE_THEN_DERIVE_THE_GENERAL_N_RECONSTRUCTION_STATEMENT`.
+`PROVE_OR_LOCALIZE_THE_FIRST_FAILURE_OF_UNIFORM_GENERAL_N_REACTION_CALDERON_GRAPH_CONVERGENCE`.
 
 ### Historical corrected-Rayleigh N3 claim boundary
 

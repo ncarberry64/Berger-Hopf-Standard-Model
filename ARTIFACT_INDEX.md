@@ -6,10 +6,14 @@
 - Source: [`aether_cross_resolution_reconnaissance_v21_35.py`](src/bhsm/interface/aether_cross_resolution_reconnaissance_v21_35.py)
 - Focused test: [`test_bhsm_aether_cross_resolution_reconnaissance_v21_35.py`](tests/test_bhsm_aether_cross_resolution_reconnaissance_v21_35.py)
 
-This checkpoint records independent N4/N5 construction, validated N4 ordered
-event, complete rank-16 N4 child and positive-duration persistence, plus the
-admissible ordered N5 event and structurally full-rank 18-row child map. The N5
-exact root and persistence remain active. `FULL_BHSM_COMPLETE = FALSE`.
+This checkpoint records independent N3/N4/N5 complete persistent children for
+their retained finite-N maps. N5 closes the unchanged 18-row map at
+fixed-reference merit `5.90723795458673e-14` (raw
+`||F18||=1.1665202200968536e-7`), with eta admissibility, certification,
+positive-duration persistence, and nonzero relative evolution. It also records
+the `8N+2` variable, `2N+8` row, `6N-6` manifold laws and finite-N solvability
+of the same-action two-sided event/child reaction map. Uniform general-N
+convergence remains open. `FULL_BHSM_COMPLETE = FALSE`.
 
 ## Current BHSM v15.10 sigma-coefficient response reconstruction
 
