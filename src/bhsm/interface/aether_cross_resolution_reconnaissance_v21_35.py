@@ -1349,8 +1349,8 @@ def breadth_first_closure_network_audit() -> dict[str, Any]:
         {
             "priority": 1,
             "object": (
-                "ACTION_OWNED_UNIFORM_SOBOLEV_RIGHT_INVERSE_AND_SPECTRAL_"
-                "DEFECT_BOUND_FOR_THE_EVENT_CONDITIONED_CHILD_MAP"
+                "GAUGE_FIXED_CONTINUUM_CHILD_JACOBI_BVP_COMPLEMENTING_"
+                "BOUNDARY_AND_INF_SUP_ESTIMATE"
             ),
             "feeds": ["GENERAL_N_RETURN_INTERFACE", "PERSISTENCE"],
         },
@@ -1394,8 +1394,9 @@ def breadth_first_closure_network_audit() -> dict[str, Any]:
             shared_invariants["required_by_multiple_interfaces"]
         ) >= 3,
         "first_blocker_action_owned_and_localized": (
-            "UNIFORM_SOBOLEV_RIGHT_INVERSE" in blockers[0]["object"]
-            and "SPECTRAL_DEFECT" in blockers[0]["object"]
+            "CHILD_JACOBI_BVP" in blockers[0]["object"]
+            and "INF_SUP" in blockers[0]["object"]
+            and "COMPLEMENTING_BOUNDARY" in blockers[0]["object"]
         ),
         "higher_variation_requirement_derived": (
             not flux_variation["higher_variation_verdict"]
@@ -5553,6 +5554,226 @@ def n5_complete_child_positive_duration_persistence(
     )
 
 
+def event_to_child_on_shell_calderon_interface() -> dict[str, Any]:
+    """Reconcile the validated local child roots with the required full BVP."""
+
+    missing = (
+        "GAUGE_FIXED_CONTINUUM_CHILD_JACOBI_BVP_COMPLEMENTING_BOUNDARY_"
+        "AND_INF_SUP_ESTIMATE"
+    )
+    return {
+        "classification": (
+            "VARIATIONAL_EVENT_TO_ON_SHELL_CHILD_CALDERON_INTERFACE_DERIVED;_"
+            "FUNCTION_SPACE_BVP_AND_COMPLEMENTING_ESTIMATE_OPEN"
+        ),
+        "retained_total_functional": (
+            "Gamma_total=Gamma_pre[z]+Gamma_child[Phi]+"
+            "Gamma_match[Gamma0_event(z),Gamma0_child(Phi);I_event,I_env,B_SM]"
+        ),
+        "on_shell_child_relation": {
+            "definition": (
+                "C_child={(Gamma0(Phi),Gamma1(Phi)):delta_Gamma_child(Phi)=0,_"
+                "CONSTRAINTS=0,_POLE_AND_TRANSMISSION_DOMAIN,_L_eta>0}"
+            ),
+            "event_trace_matching": "Gamma0_child=Gamma0_event",
+            "canonical_momentum_matching": "p_child=p_event",
+            "dynamic_flux_balance": (
+                "Gamma1_event+Gamma1_child+D_t(p_child)-partial_q(L_child)=0"
+            ),
+            "topology_bundle_and_FR_block": (
+                "THE_EXISTING_I_event_I_env_B_SM_SUPERSELECTION_BLOCK"
+            ),
+            "staticity_zero_momentum_or_zero_flux_required": False,
+        },
+        "validated_finite_N_local_map": {
+            "formula": (
+                "F_N=(TRACE_3,CONSTRAINTS_(2N+1),MOMENTUM_2,DYNAMIC_FLUX_2)"
+            ),
+            "role": (
+                "CONSTRAINT_CONSISTENT_LOCAL_CAUCHY_GERM_INTERSECTION_WITH_"
+                "THE_EVENT_BOUNDARY_RELATION"
+            ),
+            "N3_N4_N5_roots_and_positive_duration_persistence": True,
+            "is_already_a_global_function_space_child_BVP": False,
+            "is_sufficient_to_prove_a_single_valued_return_map": False,
+        },
+        "full_BVP_solution_and_return_map": {
+            "solution": (
+                "Phi_e=SolveChildBVP[Gamma0_event(e),p_event(e),I_event,I_env,B_SM]"
+            ),
+            "calderon_output": "Lambda_child(e)=Gamma1(Phi_e)",
+            "return_output": (
+                "R_return(e)=Trace_return(Phi_e)_OR_THE_SET_OF_SUCH_TRACES_"
+                "WHEN_THE_INTERIOR_SOLUTION_IS_NOT_UNIQUE"
+            ),
+            "reconstructed_radius": (
+                "R_rec(e)=R_star*exp(q_scale(Trace_return(Phi_e)))"
+            ),
+            "single_valuedness_assumed": False,
+        },
+        "differentiated_BVP": {
+            "Jacobi_operator": (
+                "J_e=D_Phi(delta_Gamma_child,CONSTRAINTS,BOUNDARY_MATCHING)"
+            ),
+            "variation_solve": "J_e*delta_Phi=-D_e(E_child,B_child)*delta_e",
+            "calderon_derivative": (
+                "D_Lambda_child*delta_e=Gamma1_Phi*delta_Phi+Gamma1_e*delta_e"
+            ),
+            "uses_only_the_retained_action_Hessian_after_the_BVP_is_defined": True,
+            "replaces_the_validated_exact_F_N_residual": False,
+            "N5_proposal_Jacobian_reopened": False,
+        },
+        "required_function_space_proof": {
+            "gauge_reduction": (
+                "QUOTIENT_TIME_REPARAMETERIZATION_AND_RADIAL_"
+                "DIFFEOMORPHISM_WITH_THE_EXISTING_ETA_CLOCK_INVARIANTS"
+            ),
+            "domain": (
+                "TWO_POLE_FRIEDRICHS_DOMAIN_WITH_MATERIAL_TRANSMISSION_AND_"
+                "THE_EXISTING_EVENT_BOUNDARY_MODE"
+            ),
+            "complementing_condition": (
+                "THE_GAUGE_FIXED_JACOBI_PRINCIPAL_BOUNDARY_SYMBOL_HAS_NO_"
+                "NONZERO_DECAYING_HOMOGENEOUS_SOLUTION"
+            ),
+            "inf_sup": (
+                "THE_NORMAL_JACOBI_CALDERON_SCHUR_COMPLEMENT_HAS_beta_0>0"
+            ),
+            "eta_margin": "inf(L_eta)>=eta_0>0",
+        },
+        "first_missing_mathematical_object": missing,
+        "required_next": missing,
+        "new_action_terms_equations_constraints_or_gates": False,
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
+def general_n_galerkin_transfer_certificate() -> dict[str, Any]:
+    """Derive the continuum-to-Galerkin certificate required by general N."""
+
+    calderon = event_to_child_on_shell_calderon_interface()
+    missing = calderon["required_next"]
+    return {
+        "classification": (
+            "ACTION_OWNED_GALERKIN_TRANSFER_THEOREM_DERIVED;_CONTINUUM_"
+            "INF_SUP_AND_TAIL_CERTIFICATE_OPEN"
+        ),
+        "continuum_spaces": {
+            "state_space": "X=H6_q_CROSS_H5_v_CROSS_H6_m",
+            "constraint_space": (
+                "THE_H_MINUS_6_DUAL_OF_THE_H6_LAPSE_SHIFT_MULTIPLIER_SPACE"
+            ),
+            "boundary_space": "R3_TRACE_CROSS_R2_MOMENTUM_CROSS_R2_FLUX",
+            "output_space": (
+                "Y=R3_CROSS_H_MINUS_6_CONSTRAINTS_CROSS_R2_CROSS_R2"
+            ),
+            "basis": (
+                "THE_EXISTING_NESTED_POLE_REGULAR_COSINE_AND_WINDOWED_"
+                "COSINE_BASIS"
+            ),
+            "numerical_fixed_ROW_scales_are_the_continuum_norm": False,
+        },
+        "smoothness_from_the_retained_action": {
+            "regularity": "s=6>11/2",
+            "sobolev_algebra_and_trace_control": True,
+            "eta_interior_requirement": "inf(L_eta)>=eta_0>0",
+            "consequence": (
+                "THE_EXPONENTIAL_GEOMETRY_RECIPROCAL_LAPSE_ETA_RESPONSE_"
+                "AND_BOUNDARY_TRACES_DEFINE_A_SMOOTH_LOCAL_ACTION_MAP"
+            ),
+            "new_action_term_added": False,
+        },
+        "set_valued_continuum_relation": {
+            "definition": (
+                "R(e)={Y_IN_X:F(Y;e)=0,_L_eta(Y)>0,_Y_PERSISTS}"
+            ),
+            "finite_N_relation": (
+                "R_N(e_N)={Y_N:F_N(Y_N;e_N)=0,_L_eta(Y_N)>0,_Y_N_PERSISTS}"
+            ),
+            "correct_convergence_object": (
+                "LOCAL_GRAPH_OR_HAUSDORFF_CONVERGENCE_OF_R_N_TO_R"
+            ),
+            "arbitrary_root_coordinates_must_form_a_Cauchy_sequence": False,
+            "physical_branch_selector_added": False,
+        },
+        "event_to_child_on_shell_calderon_interface": calderon,
+        "normal_inf_sup_condition": {
+            "definition": (
+                "beta=inf_(lambda_ne_0)norm(D_F(Y_star;e_star)^*lambda)_"
+                "X_star/norm(lambda)_Y"
+            ),
+            "required_bound": "beta>=beta_0>0_AFTER_EXISTING_GAUGE_REDUCTION",
+            "meaning": (
+                "THE_CONTINUUM_LINEARIZATION_IS_SURJECTIVE_WITH_A_BOUNDED_"
+                "NORMAL_RIGHT_INVERSE;_ITS_KERNEL_IS_THE_CHILD_MANIFOLD"
+            ),
+            "kernel_removed_as_a_defect": False,
+        },
+        "spectral_consistency_condition": {
+            "derivative_defect": (
+                "delta_N=norm(D_F_N-Q_N*D_F*P_N)_X_N_TO_Y_N"
+            ),
+            "nonlinear_injected_defect": (
+                "epsilon_N=norm(F_N(P_N*Y_star;e_N))_Y_N"
+            ),
+            "event_defect": "norm(e_N-P_N*e_star)_EVENT_TO_ZERO",
+            "quadrature_aliasing_included": True,
+            "required_limits": "delta_N_TO_0_AND_epsilon_N_TO_0",
+        },
+        "galerkin_transfer_lemma": {
+            "hypothesis": "delta_N<beta_0",
+            "discrete_inf_sup": "beta_N>=beta_0-delta_N",
+            "right_inverse_bound": "kappa_N<=1/(beta_0-delta_N)",
+            "newton_kantorovich_condition": (
+                "L_N*epsilon_N/(beta_0-delta_N)^2<=1/2"
+            ),
+            "local_zero_set_distance_bound": (
+                "dist_graph(R_N,R)<=2*epsilon_N/(beta_0-delta_N)"
+            ),
+            "summable_bound_consequence": (
+                "IF_THE_DISTANCE_BOUNDS_ARE_SUMMABLE_THEN_THE_NESTED_"
+                "LOCAL_CHILD_RELATIONS_ARE_CAUCHY_IN_GRAPH_DISTANCE"
+            ),
+        },
+        "current_evidence": {
+            "N3_N4_N5_discrete_full_row_rank": True,
+            "N3_N4_N5_complete_persistence": True,
+            "initial_constraint_fiber_smallest_singular_values": {
+                "N3": 1.69802344039e-4,
+                "N4": 5.6894892171e-5,
+                "N5": 4.09514089e-6,
+            },
+            "accepted_child_local_map_smallest_resolved_singular_values": {
+                "N4_full_map": 1.550576651e-6,
+                "N5_structural_full_map": 2.39514503e-7,
+                "N5_final_nonflux_map": 2.88434876e-7,
+            },
+            "singular_values_are_directly_cross_resolution_comparable": False,
+            "why_not_comparable": (
+                "THE_STATES_WERE_INDEPENDENT_AND_THE_REPORTED_MATRICES_USE_"
+                "N_DEPENDENT_NUMERICAL_ROW_AND_SOBOLEV_COORDINATE_SCALINGS"
+            ),
+            "naive_uniform_lower_bound_supported": False,
+            "finite_rank_implies_a_uniform_inf_sup_bound": False,
+            "independent_root_coordinates_are_a_convergence_sequence": False,
+            "existing_cross_resolution_common_mode_differences_are_proof": False,
+        },
+        "proof_obligations": [
+            "DEFINE_THE_CONTINUUM_EVENT_CONDITIONED_ON_SHELL_CALDERON_MAP",
+            "PROVE_THE_GAUGE_REDUCED_COMPLEMENTING_BOUNDARY_FREDHOLM_PROPERTY",
+            "LOWER_BOUND_THE_CONTINUUM_NORMAL_INF_SUP_CONSTANT_beta_0",
+            "BOUND_SPECTRAL_TRUNCATION_AND_GAUSS_QUADRATURE_ALIASING_ERRORS",
+            "PROVE_ORDERED_EVENT_BRANCH_CONVERGENCE_AND_A_UNIFORM_ETA_MARGIN",
+            "TRANSFER_POSITIVE_DURATION_EULER_DIRAC_PERSISTENCE_UNIFORMLY",
+        ],
+        "first_missing_mathematical_object": missing,
+        "required_next": missing,
+        "solver_proposal_curvature_is_part_of_this_certificate": False,
+        "new_equations_constraints_or_acceptance_gates": False,
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
 def general_n_complete_child_reconstruction_statement() -> dict[str, Any]:
     """State the exact general-N child-map architecture and open uniform bound."""
 
@@ -5580,10 +5801,8 @@ def general_n_complete_child_reconstruction_statement() -> dict[str, Any]:
             "complete_child_fiber_dimension": state_count - physical_rows,
             "complete_persistent_child_validated": True,
         })
-    missing_object = (
-        "ACTION_OWNED_UNIFORM_SOBOLEV_RIGHT_INVERSE_AND_SPECTRAL_DEFECT_"
-        "BOUND_FOR_THE_EVENT_CONDITIONED_CHILD_MAP"
-    )
+    transfer = general_n_galerkin_transfer_certificate()
+    missing_object = transfer["required_next"]
     return {
         "classification": (
             "GENERAL_N_LOCAL_RECONSTRUCTION_ARCHITECTURE_DERIVED;_"
@@ -5676,6 +5895,7 @@ def general_n_complete_child_reconstruction_statement() -> dict[str, Any]:
             ],
             "three_resolutions_alone_prove_the_limit": False,
         },
+        "galerkin_transfer_certificate": transfer,
         "validated": {
             "independent_N3_N4_N5_complete_persistent_children": True,
             "row_and_fiber_dimension_law_at_N3_N4_N5": True,
@@ -6537,6 +6757,8 @@ __all__ = [
     "n5_child_flux_step_audit",
     "n5_event_conditioned_complete_child_reconstruction",
     "n5_complete_child_positive_duration_persistence",
+    "event_to_child_on_shell_calderon_interface",
+    "general_n_galerkin_transfer_certificate",
     "general_n_complete_child_reconstruction_statement",
     "cross_resolution_reconnaissance",
     "completion_payload",

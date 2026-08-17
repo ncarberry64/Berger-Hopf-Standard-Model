@@ -191,6 +191,29 @@ def test_general_n_reconstruction_statement_preserves_the_physical_map():
     assert theorem["new_equations_constraints_or_acceptance_gates"] is False
     continuation = statement["cross_resolution_continuation_criterion"]
     assert continuation["extra_gauge_or_physical_selector_added"] is False
+    transfer = statement["galerkin_transfer_certificate"]
+    assert transfer["continuum_spaces"]["state_space"] == (
+        "X=H6_q_CROSS_H5_v_CROSS_H6_m"
+    )
+    assert transfer["set_valued_continuum_relation"][
+        "physical_branch_selector_added"
+    ] is False
+    calderon = transfer["event_to_child_on_shell_calderon_interface"]
+    assert calderon["validated_finite_N_local_map"][
+        "N3_N4_N5_roots_and_positive_duration_persistence"
+    ] is True
+    assert calderon["validated_finite_N_local_map"][
+        "is_already_a_global_function_space_child_BVP"
+    ] is False
+    assert calderon["differentiated_BVP"][
+        "N5_proposal_Jacobian_reopened"
+    ] is False
+    assert calderon["new_action_terms_equations_constraints_or_gates"] is False
+    assert transfer["current_evidence"][
+        "finite_rank_implies_a_uniform_inf_sup_bound"
+    ] is False
+    assert transfer["solver_proposal_curvature_is_part_of_this_certificate"] is False
+    assert transfer["new_equations_constraints_or_acceptance_gates"] is False
     assert statement["resolution_independent_limit_criterion"][
         "three_resolutions_alone_prove_the_limit"
     ] is False
