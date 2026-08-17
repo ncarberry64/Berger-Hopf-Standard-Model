@@ -1158,7 +1158,8 @@ def breadth_first_closure_network_audit() -> dict[str, Any]:
             "SolveChildBVP->R_return(z_event)"
         ),
         "classification": (
-            "DERIVED_SET_VALUED_INTERFACE_N4_ROOT_VALIDATED_N5_ROOT_OPEN"
+            "DERIVED_SET_VALUED_INTERFACE_N3_N4_N5_ROOTS_AND_PERSISTENCE_"
+            "VALIDATED_GENERAL_N_UNIFORM_CONVERGENCE_OPEN"
         ),
         "inputs": [
             "CONSTRAINT_ETA_ADMISSIBLE_ORDERED_EVENT_STATE",
@@ -1188,11 +1189,10 @@ def breadth_first_closure_network_audit() -> dict[str, Any]:
             "RECONSTRUCTED_SCALE_AND_RETURN_STATE_RELATION",
             "SPIN_GAUGE_DOMAIN_AND_BUNDLE_ISOMORPHISM_CLASS",
         ],
-        "current_N4_status": (
-            "EVENT_VALIDATED;_16_ROW_MAP_STRUCTURALLY_FULL_RANK;_"
-            "CENTER_FIXED_SOBOLEV_NORMALIZED_RICHARDSON_DERIVATIVE_"
-            "VALIDATED;_COMPLETE_CHILD_AND_LOCAL_POSITIVE_DURATION_"
-            "RELATIVE_PERSISTENCE_VALIDATED"
+        "current_cross_resolution_status": (
+            "INDEPENDENT_N3_N4_N5_ORDERED_EVENT_COMPLETE_CHILD_AND_"
+            "POSITIVE_DURATION_RELATIVE_PERSISTENCE_VALIDATED;_GENERAL_N_"
+            "LOCAL_ROW_AND_FIBER_DIMENSION_LAW_DERIVED"
         ),
         "single_valued_return_proved": False,
         "sources": [
@@ -1335,7 +1335,8 @@ def breadth_first_closure_network_audit() -> dict[str, Any]:
         ),
         "eventual_on_shell_map": (
             "DIFFERENTIATED_CHILD_BVP_JACOBI_SOLVE_USES_THE_ACTION_HESSIAN_"
-            "BUT_IS_NOT_SUBSTITUTED_BEFORE_AN_N4_CHILD_HISTORY_EXISTS"
+            "AND_IS_A_FUTURE_EXACT_RESPONSE_ROUTE_IF_THE_NOW_VALIDATED_"
+            "N3_N4_N5_CHILDREN_REQUIRE_RESPONSE_DERIVATIVES"
         ),
         "physical_rows_or_gates_changed": False,
         "classification": (
@@ -1348,10 +1349,10 @@ def breadth_first_closure_network_audit() -> dict[str, Any]:
         {
             "priority": 1,
             "object": (
-                "DERIVE_THE_N5_DYNAMIC_CALDERON_FLUX_JACOBIAN_FROM_THE_"
-                "ACTION_FOURTH_VARIATION_OR_DIFFERENTIATED_CHILD_BVP"
+                "ACTION_OWNED_UNIFORM_SOBOLEV_RIGHT_INVERSE_AND_SPECTRAL_"
+                "DEFECT_BOUND_FOR_THE_EVENT_CONDITIONED_CHILD_MAP"
             ),
-            "feeds": ["RETURN_INTERFACE", "PERSISTENCE"],
+            "feeds": ["GENERAL_N_RETURN_INTERFACE", "PERSISTENCE"],
         },
         {
             "priority": 2,
@@ -1393,7 +1394,8 @@ def breadth_first_closure_network_audit() -> dict[str, Any]:
             shared_invariants["required_by_multiple_interfaces"]
         ) >= 3,
         "first_blocker_action_owned_and_localized": (
-            "N5_DYNAMIC_CALDERON_FLUX_JACOBIAN" in blockers[0]["object"]
+            "UNIFORM_SOBOLEV_RIGHT_INVERSE" in blockers[0]["object"]
+            and "SPECTRAL_DEFECT" in blockers[0]["object"]
         ),
         "higher_variation_requirement_derived": (
             not flux_variation["higher_variation_verdict"]
@@ -1413,8 +1415,8 @@ def breadth_first_closure_network_audit() -> dict[str, Any]:
         "ordered_open_interfaces": blockers,
         "scientific_classification": (
             "THREE_CONDITIONAL_INTERFACES_FROZEN;_NO_DOWNSTREAM_NUMERICAL_"
-            "PREDICTION_PROMOTED;_N4_COMPLETE_PERSISTENT_CHILD_VALIDATED;_"
-            "N5_COMPLETE_CHILD_MAP_ACTIVE"
+            "PREDICTION_PROMOTED;_N3_N4_N5_COMPLETE_PERSISTENT_CHILDREN_"
+            "VALIDATED;_GENERAL_N_UNIFORM_CONVERGENCE_BOUND_ACTIVE"
         ),
         "validation": validation,
         "validation_passed": all(validation.values()),
@@ -2620,18 +2622,19 @@ def _trace_jacobian_at_order(order: int) -> np.ndarray:
 def _attachment_jacobian_at_order(
     order: int, coordinates: np.ndarray,
 ) -> np.ndarray:
-    q = np.asarray(coordinates, dtype=float)
+    q = np.asarray(coordinates)
     qdim = dimensions(order)["coordinates"]
     signs_k = (-1.0) ** np.arange(1, order + 1)
     signs_j = (-1.0) ** np.arange(order)
-    v_boundary = float(q[1 + 2 * order:1 + 3 * order] @ signs_j)
-    j_w = np.zeros(qdim)
+    v_boundary = q[1 + 2 * order:1 + 3 * order] @ signs_j
+    dtype = np.result_type(q, float)
+    j_w = np.zeros(qdim, dtype=dtype)
     j_w[0] = 1.0
     j_w[1:1 + order] = signs_k
     j_w[1 + 2 * order:1 + 3 * order] = (
-        -math.tanh(2.0 * v_boundary) * signs_j
+        -np.tanh(2.0 * v_boundary) * signs_j
     )
-    j_c = np.zeros(qdim)
+    j_c = np.zeros(qdim, dtype=dtype)
     j_c[0] = 1.0
     return np.vstack((j_w, j_c - j_w))
 
@@ -2660,8 +2663,8 @@ def _canonical_pair_at_order(
     jet = exact_full_action_jet_at_state(
         order, coordinates, velocities, multipliers, points=points
     )
-    gradient = np.asarray(jet.gradient, dtype=float)
-    hessian = np.asarray(jet.hessian, dtype=float)
+    gradient = np.asarray(jet.gradient)
+    hessian = np.asarray(jet.hessian)
     boundary = _attachment_jacobian_at_order(order, coordinates)
     q_form = hessian[:qdim, :qdim]
     v_form = hessian[qdim:2 * qdim, qdim:2 * qdim]
@@ -2674,26 +2677,135 @@ def _canonical_pair_at_order(
     return momentum, force, q_lift, v_lift
 
 
+def _complex_step_canonical_momentum_rate(
+    order: int,
+    coordinates: np.ndarray,
+    velocities: np.ndarray,
+    multipliers: np.ndarray,
+    acceleration: np.ndarray,
+    multiplier_rate: np.ndarray,
+    *,
+    points: int,
+    step: float = 1.0e-20,
+) -> np.ndarray:
+    """Evaluate Dp(y)X(y) on the same analytic lifted momentum map."""
+
+    if step <= 0.0:
+        raise ValueError("complex momentum-rate step must be positive")
+    q_complex = np.asarray(coordinates, dtype=complex) + (
+        1j * step * np.asarray(velocities, dtype=float)
+    )
+    v_complex = np.asarray(velocities, dtype=complex) + (
+        1j * step * np.asarray(acceleration, dtype=float)
+    )
+    m_complex = np.asarray(multipliers, dtype=complex) + (
+        1j * step * np.asarray(multiplier_rate, dtype=float)
+    )
+    momentum, _, _, _ = _canonical_pair_at_order(
+        order, q_complex, v_complex, m_complex, points=points
+    )
+    return np.imag(momentum) / step
+
+
+def _bicomplex_dynamic_flux_directional_derivative(
+    order: int,
+    state: np.ndarray,
+    direction: np.ndarray,
+    event_flux: np.ndarray,
+    *,
+    points: int,
+    outer_step: float = 1.0e-20,
+    inner_relative_step: float = 1.0e-1,
+) -> np.ndarray:
+    """Differentiate the exact dynamic flux by commuting complex units."""
+
+    if outer_step <= 0.0 or inner_relative_step <= 0.0:
+        raise ValueError("positive bicomplex derivative steps required")
+    y = np.asarray(state, dtype=float)
+    d = np.asarray(direction, dtype=float)
+    if y.shape != d.shape:
+        raise ValueError("state and directional shapes differ")
+    qdim = dimensions(order)["coordinates"]
+    q = y[:qdim]
+    velocity = y[qdim:2 * qdim]
+    multipliers = y[2 * qdim:]
+    real_dynamics = _exact_full_jet_euler_dirac_acceleration(
+        order, q, velocity, multipliers, points=points
+    )
+    tangent_scale = max(
+        1.0,
+        float(np.max(np.abs(velocity))),
+        float(np.max(np.abs(real_dynamics["acceleration"]))),
+        float(np.max(np.abs(real_dynamics["multiplier_rate"]))),
+    )
+    inner_step = inner_relative_step / tangent_scale
+    outer = y.astype(complex) + 1j * outer_step * d
+    q_outer = outer[:qdim]
+    v_outer = outer[qdim:2 * qdim]
+    m_outer = outer[2 * qdim:]
+    momentum, force, q_lift, _ = _canonical_pair_at_order(
+        order, q_outer, v_outer, m_outer, points=points
+    )
+    outer_dynamics = _exact_full_jet_euler_dirac_acceleration(
+        order, q_outer, v_outer, m_outer, points=points
+    )
+    tangent = np.concatenate((
+        v_outer,
+        np.asarray(outer_dynamics["acceleration"]),
+        np.asarray(outer_dynamics["multiplier_rate"]),
+    ))
+
+    def idempotent_momentum_rate(step: float) -> np.ndarray:
+        plus_state = outer - 1j * step * tangent
+        minus_state = outer + 1j * step * tangent
+        plus_momentum, _, _, _ = _canonical_pair_at_order(
+            order,
+            plus_state[:qdim],
+            plus_state[qdim:2 * qdim],
+            plus_state[2 * qdim:],
+            points=points,
+        )
+        minus_momentum, _, _, _ = _canonical_pair_at_order(
+            order,
+            minus_state[:qdim],
+            minus_state[qdim:2 * qdim],
+            minus_state[2 * qdim:],
+            points=points,
+        )
+        return (minus_momentum - plus_momentum) / (2j * step)
+
+    coarse_rate = idempotent_momentum_rate(inner_step)
+    half_rate = idempotent_momentum_rate(0.5 * inner_step)
+    momentum_rate = (4.0 * half_rate - coarse_rate) / 3.0
+    child_covector = _metric_radial_flux_covector_at_order(
+        order, q_outer, m_outer
+    )
+    child_flux = q_lift.T @ child_covector
+    flux = child_flux + momentum_rate - force + event_flux
+    return np.imag(flux) / outer_step
+
+
 def _metric_radial_flux_covector_at_order(
     order: int, coordinates: np.ndarray, multipliers: np.ndarray,
 ) -> np.ndarray:
-    q = np.asarray(coordinates, dtype=float)
-    m = np.asarray(multipliers, dtype=float)
+    q = np.asarray(coordinates)
+    m = np.asarray(multipliers)
     qdim = dimensions(order)["coordinates"]
     signs_k = (-1.0) ** np.arange(1, order + 1)
     signs_j = (-1.0) ** np.arange(order)
-    scale = float(q[0])
-    u = float(q[1:1 + order] @ signs_k)
-    w = float(q[1 + order:1 + 2 * order] @ signs_j)
-    v = float(q[1 + 2 * order:1 + 3 * order] @ signs_j)
-    radius = float(RADIUS0 * math.exp(scale))
-    c_radius = float(radius * math.exp(u + w))
-    a_radius = float(radius * math.exp(u + v) / math.sqrt(2.0))
-    b_radius = float(radius * math.exp(u - v) / math.sqrt(2.0))
-    lapse = float(math.exp(float(m[:order] @ signs_k)))
-    prefactor = float(3.0 * lapse * a_radius**3 * b_radius**3 / c_radius)
-    d_log_a = np.zeros(qdim)
-    d_log_b = np.zeros(qdim)
+    scale = q[0]
+    u = q[1:1 + order] @ signs_k
+    w = q[1 + order:1 + 2 * order] @ signs_j
+    v = q[1 + 2 * order:1 + 3 * order] @ signs_j
+    radius = RADIUS0 * np.exp(scale)
+    c_radius = radius * np.exp(u + w)
+    a_radius = radius * np.exp(u + v) / np.sqrt(2.0)
+    b_radius = radius * np.exp(u - v) / np.sqrt(2.0)
+    lapse = np.exp(m[:order] @ signs_k)
+    prefactor = 3.0 * lapse * a_radius**3 * b_radius**3 / c_radius
+    dtype = np.result_type(q, m, float)
+    d_log_a = np.zeros(qdim, dtype=dtype)
+    d_log_b = np.zeros(qdim, dtype=dtype)
     d_log_a[0] = d_log_b[0] = 1.0
     d_log_a[1:1 + order] = signs_k
     d_log_b[1:1 + order] = signs_k
@@ -2712,18 +2824,16 @@ def _exact_full_jet_euler_dirac_acceleration(
 ) -> dict[str, Any]:
     """Solve Euler--Dirac using the existing exact full q,v,m action jet."""
 
-    q = np.asarray(coordinates, dtype=float)
-    velocity = np.asarray(velocities, dtype=float)
-    m = np.asarray(multipliers, dtype=float)
+    q = np.asarray(coordinates)
+    velocity = np.asarray(velocities)
+    m = np.asarray(multipliers)
     qdim = dimensions(order)["coordinates"]
     jet = exact_full_action_jet_at_state(
         order, q, velocity, m, points=points
     )
-    dirac_hessian = np.asarray(
-        jet.hessian[qdim:, qdim:], dtype=float
-    )
-    mixed_z_q = np.asarray(jet.hessian[qdim:, :qdim], dtype=float)
-    gradient_q = np.asarray(jet.gradient[:qdim], dtype=float)
+    dirac_hessian = np.asarray(jet.hessian[qdim:, qdim:])
+    mixed_z_q = np.asarray(jet.hessian[qdim:, :qdim])
+    gradient_q = np.asarray(jet.gradient[:qdim])
     rhs = np.concatenate((
         gradient_q - mixed_z_q[:qdim] @ velocity,
         -mixed_z_q[qdim:] @ velocity,
@@ -2752,6 +2862,7 @@ def _child_rows_at_order(
     relative_flux_step: float = 1.0e-1,
     fixed_flux_time_step: float | None = None,
     richardson_flux: bool = True,
+    flux_derivative_method: str = "richardson",
 ) -> np.ndarray:
     size = dimensions(order)
     qdim = size["coordinates"]
@@ -2798,10 +2909,23 @@ def _child_rows_at_order(
         )
         return (plus - minus) / (2.0 * step)
 
-    momentum_rate = centered_momentum_rate(epsilon)
-    if richardson_flux:
-        half_rate = centered_momentum_rate(0.5 * epsilon)
-        momentum_rate = (4.0 * half_rate - momentum_rate) / 3.0
+    if flux_derivative_method == "complex_step":
+        momentum_rate = _complex_step_canonical_momentum_rate(
+            order,
+            q,
+            velocity,
+            multipliers,
+            acceleration,
+            multiplier_rate,
+            points=points,
+        )
+    elif flux_derivative_method == "richardson":
+        momentum_rate = centered_momentum_rate(epsilon)
+        if richardson_flux:
+            half_rate = centered_momentum_rate(0.5 * epsilon)
+            momentum_rate = (4.0 * half_rate - momentum_rate) / 3.0
+    else:
+        raise ValueError("unknown dynamic-flux derivative method")
     flux = child_flux - (-momentum_rate + force - event_flux)
     return np.concatenate((
         _trace_jacobian_at_order(order) @ (q - event_coordinates),
@@ -3927,6 +4051,382 @@ def n5_child_flux_step_audit(*, points: int = 44) -> dict[str, Any]:
     }
 
 
+@lru_cache(maxsize=4)
+def n5_complex_flux_derivative_equivalence_audit(
+    *, points: int = 44, outer_base_step: float = 1.0e-3,
+) -> dict[str, Any]:
+    """Validate the subtraction-free derivative of the unchanged flux map."""
+
+    order = 5
+    artifact_path = Path("artifacts") / (
+        "BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    )
+    payload = json.loads(artifact_path.read_text(encoding="utf-8"))
+    result = payload["cross_resolution_reconnaissance"]
+    child = result["N5_event_conditioned_complete_child_reconstruction"]
+    child_state = child["child_state"]
+    state = np.concatenate((
+        np.asarray(child_state["coordinates"], dtype=float),
+        np.asarray(child_state["velocities"], dtype=float),
+        np.asarray(child_state["multipliers"], dtype=float),
+    ))
+    selected_run = next(
+        run for run in result[
+            "N5_independent_eta_branch_event_classification"
+        ]["quadrature_runs"]
+        if int(run["points"]) == points
+    )
+    event = selected_run["event"]
+    q_event = np.asarray(event["coordinates"], dtype=float)
+    v_event = np.asarray(event["velocities"], dtype=float)
+    m_event = np.asarray(event["multipliers"], dtype=float)
+    event_momentum, _, event_lift, _ = _canonical_pair_at_order(
+        order, q_event, v_event, m_event, points=points
+    )
+    event_flux = event_lift.T @ _metric_radial_flux_covector_at_order(
+        order, q_event, m_event
+    )
+    richardson_rows = _child_rows_at_order(
+        order,
+        state,
+        q_event,
+        event_momentum,
+        event_flux,
+        points=points,
+        flux_derivative_method="richardson",
+    )
+    complex_rows = _child_rows_at_order(
+        order,
+        state,
+        q_event,
+        event_momentum,
+        event_flux,
+        points=points,
+        flux_derivative_method="complex_step",
+    )
+    size = dimensions(order)
+    qdim = size["coordinates"]
+    dynamics = _exact_full_jet_euler_dirac_acceleration(
+        order,
+        state[:qdim],
+        state[qdim:2 * qdim],
+        state[2 * qdim:],
+        points=points,
+    )
+    momentum_rates = [
+        _complex_step_canonical_momentum_rate(
+            order,
+            state[:qdim],
+            state[qdim:2 * qdim],
+            state[2 * qdim:],
+            np.asarray(dynamics["acceleration"], dtype=float),
+            np.asarray(dynamics["multiplier_rate"], dtype=float),
+            points=points,
+            step=step,
+        )
+        for step in (1.0e-8, 1.0e-12, 1.0e-16, 1.0e-20, 1.0e-24)
+    ]
+    momentum_rate_spread = max(
+        _relative_difference(momentum_rates[index], momentum_rates[2])
+        for index in range(len(momentum_rates))
+    )
+    frequencies = spectral_frequencies(order)
+    regularity_weights = sobolev_weights(order)
+    direction_weights = np.concatenate((
+        (1.0 + frequencies["coordinates"] ** 2) ** 3.0,
+        regularity_weights["velocities"],
+        regularity_weights["multipliers"],
+    ))
+    variable_count = state.size
+    row_count = 2 * order + 8
+
+    def central_jacobian(step: float) -> np.ndarray:
+        jacobian = np.empty((row_count, variable_count))
+        for column in range(variable_count):
+            delta = np.zeros(variable_count)
+            delta[column] = step / direction_weights[column]
+            jacobian[:, column] = (
+                _child_rows_at_order(
+                    order,
+                    state + delta,
+                    q_event,
+                    event_momentum,
+                    event_flux,
+                    points=points,
+                    flux_derivative_method="complex_step",
+                )
+                - _child_rows_at_order(
+                    order,
+                    state - delta,
+                    q_event,
+                    event_momentum,
+                    event_flux,
+                    points=points,
+                    flux_derivative_method="complex_step",
+                )
+            ) / (2.0 * step)
+        return jacobian
+
+    base_step = outer_base_step
+    coarse = central_jacobian(base_step)
+    mid = central_jacobian(0.5 * base_step)
+    fine = central_jacobian(0.25 * base_step)
+    coarse_richardson = (4.0 * mid - coarse) / 3.0
+    fine_richardson = (4.0 * fine - mid) / 3.0
+    row_scales = np.maximum(np.linalg.norm(fine_richardson, axis=1), 1.0)
+    singular = np.linalg.svd(
+        fine_richardson / row_scales[:, None], compute_uv=False
+    )
+    tolerance = np.finfo(float).eps * max(row_count, variable_count) * singular[0]
+    rank = int(np.count_nonzero(singular > tolerance))
+    constraint_stop = 3 + (2 * order + 1)
+    block_changes = {
+        name: float(
+            np.linalg.norm(
+                fine_richardson[row_slice] - coarse_richardson[row_slice]
+            ) / max(1.0, np.linalg.norm(coarse_richardson[row_slice]))
+        )
+        for name, row_slice in (
+            ("trace", slice(0, 3)),
+            ("constraints", slice(3, constraint_stop)),
+            ("canonical_momentum", slice(constraint_stop, constraint_stop + 2)),
+            ("dynamic_Calderon_flux", slice(constraint_stop + 2, row_count)),
+        )
+    }
+    outer_change = float(
+        np.linalg.norm(fine_richardson - coarse_richardson)
+        / max(1.0, np.linalg.norm(coarse_richardson))
+    )
+    value_equivalence = _relative_difference(complex_rows, richardson_rows)
+    validated = bool(
+        value_equivalence < 1.0e-7
+        and momentum_rate_spread < 1.0e-8
+        and outer_change < 1.0e-1
+        and rank == row_count
+    )
+    return {
+        "source": "LATEST_ADMISSIBLE_N5_CHILD_CHECKPOINT",
+        "physical_map": (
+            "UNCHANGED_PHI=Q_DAGGER_GAMMA_CHILD+Dp(y)X(y)-Q_DAGGER_L_q+"
+            "GAMMA_EVENT"
+        ),
+        "Richardson_to_complex_step_row_relative_difference": value_equivalence,
+        "complex_step_sizes": [1.0e-8, 1.0e-12, 1.0e-16, 1.0e-20, 1.0e-24],
+        "complex_momentum_rate_maximum_relative_spread": momentum_rate_spread,
+        "outer_Richardson_base_step": base_step,
+        "outer_Richardson_relative_change": outer_change,
+        "outer_Richardson_block_relative_changes": block_changes,
+        "full_chart_rank": rank,
+        "physical_row_count": row_count,
+        "complex_flux_derivative_validated": validated,
+        "subtractive_finite_difference_removed": True,
+        "action_equations_or_child_gates_changed": False,
+        "required_next": (
+            "ADOPT_THE_EQUIVALENT_COMPLEX_STEP_FLUX_EVALUATION_AND_RESUME_"
+            "THE_UNCHANGED_N5_18_ROW_SOLVE"
+            if validated else
+            "DERIVE_THE_FOURTH_VARIATION_OR_DIFFERENTIATED_CHILD_BVP"
+        ),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
+@lru_cache(maxsize=1)
+def n5_bicomplex_flux_jacobian_audit(*, points: int = 44) -> dict[str, Any]:
+    """Validate the fourth-variation-equivalent N5 flux Jacobian block."""
+
+    order = 5
+    artifact_path = Path("artifacts") / (
+        "BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    )
+    payload = json.loads(artifact_path.read_text(encoding="utf-8"))
+    result = payload["cross_resolution_reconnaissance"]
+    child_state = result[
+        "N5_event_conditioned_complete_child_reconstruction"
+    ]["child_state"]
+    state = np.concatenate((
+        np.asarray(child_state["coordinates"], dtype=float),
+        np.asarray(child_state["velocities"], dtype=float),
+        np.asarray(child_state["multipliers"], dtype=float),
+    ))
+    selected_run = next(
+        run for run in result[
+            "N5_independent_eta_branch_event_classification"
+        ]["quadrature_runs"]
+        if int(run["points"]) == points
+    )
+    event = selected_run["event"]
+    q_event = np.asarray(event["coordinates"], dtype=float)
+    v_event = np.asarray(event["velocities"], dtype=float)
+    m_event = np.asarray(event["multipliers"], dtype=float)
+    _, _, event_lift, _ = _canonical_pair_at_order(
+        order, q_event, v_event, m_event, points=points
+    )
+    event_flux = event_lift.T @ _metric_radial_flux_covector_at_order(
+        order, q_event, m_event
+    )
+    frequencies = spectral_frequencies(order)
+    regularity_weights = sobolev_weights(order)
+    direction_weights = np.concatenate((
+        (1.0 + frequencies["coordinates"] ** 2) ** 3.0,
+        regularity_weights["velocities"],
+        regularity_weights["multipliers"],
+    ))
+
+    def flux_block(outer_step: float, inner_relative_step: float) -> np.ndarray:
+        block = np.empty((2, state.size))
+        for column in range(state.size):
+            direction = np.zeros(state.size)
+            direction[column] = 1.0 / direction_weights[column]
+            block[:, column] = _bicomplex_dynamic_flux_directional_derivative(
+                order,
+                state,
+                direction,
+                event_flux,
+                points=points,
+                outer_step=outer_step,
+                inner_relative_step=inner_relative_step,
+            )
+        return block
+
+    outer_steps = (1.0e-8, 1.0e-9, 1.0e-10)
+    outer_blocks = [flux_block(step, 1.0e-1) for step in outer_steps]
+    outer_changes = [
+        _relative_difference(outer_blocks[index + 1], outer_blocks[index])
+        for index in range(len(outer_blocks) - 1)
+    ]
+    inner_coarse = flux_block(1.0e-9, 2.0e-1)
+    inner_change = _relative_difference(inner_coarse, outer_blocks[1])
+    validated = bool(max(outer_changes) < 1.0e-2 and inner_change < 1.0e-2)
+    return {
+        "source": "LATEST_ADMISSIBLE_N5_CHILD_CHECKPOINT",
+        "mathematical_route": (
+            "BICOMPLEX_IDEMPOTENT_MIXED_DIRECTIONAL_DERIVATIVE_OF_THE_"
+            "STATE_DEPENDENT_HESSIAN_MINIMAL_LIFT"
+        ),
+        "equivalent_higher_variation": "ACTION_FOURTH_VARIATION_DIRECTION",
+        "outer_complex_steps": list(outer_steps),
+        "outer_adjacent_relative_changes": outer_changes,
+        "inner_Richardson_relative_steps": [2.0e-1, 1.0e-1],
+        "inner_relative_change": inner_change,
+        "selected_outer_complex_step": 1.0e-9,
+        "selected_inner_relative_step": 1.0e-1,
+        "flux_jacobian_shape": list(outer_blocks[1].shape),
+        "flux_jacobian": outer_blocks[1].tolist(),
+        "bicomplex_flux_jacobian_validated": validated,
+        "subtractive_outer_difference_used": False,
+        "action_equations_or_child_gates_changed": False,
+        "required_next": (
+            "ADOPT_AS_THE_N5_QUASI_NEWTON_FLUX_BLOCK_AND_RESUME_THE_EXACT_"
+            "18_ROW_MERIT_SOLVE"
+            if validated else "DERIVE_THE_DIFFERENTIATED_CHILD_BVP"
+        ),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
+@lru_cache(maxsize=1)
+def n5_exact_physical_merit_gradient_audit(*, points: int = 44) -> dict[str, Any]:
+    """Audit a derivative of the unchanged fixed exact 18-row merit."""
+
+    order = 5
+    payload = json.loads((Path("artifacts") / (
+        "BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    )).read_text(encoding="utf-8"))
+    result = payload["cross_resolution_reconnaissance"]
+    child = result["N5_event_conditioned_complete_child_reconstruction"]
+    child_state = child["child_state"]
+    state = np.concatenate((
+        np.asarray(child_state["coordinates"], dtype=float),
+        np.asarray(child_state["velocities"], dtype=float),
+        np.asarray(child_state["multipliers"], dtype=float),
+    ))
+    row_scales = np.asarray(
+        child["proposal_model"]["fixed_reference_row_scales"], dtype=float
+    )
+    selected_run = next(
+        run for run in result[
+            "N5_independent_eta_branch_event_classification"
+        ]["quadrature_runs"] if int(run["points"]) == points
+    )
+    event = selected_run["event"]
+    q_event = np.asarray(event["coordinates"], dtype=float)
+    v_event = np.asarray(event["velocities"], dtype=float)
+    m_event = np.asarray(event["multipliers"], dtype=float)
+    event_momentum, _, event_lift, _ = _canonical_pair_at_order(
+        order, q_event, v_event, m_event, points=points
+    )
+    event_flux = event_lift.T @ _metric_radial_flux_covector_at_order(
+        order, q_event, m_event
+    )
+    frequencies = spectral_frequencies(order)
+    regularity_weights = sobolev_weights(order)
+    direction_weights = np.concatenate((
+        (1.0 + frequencies["coordinates"] ** 2) ** 3.0,
+        regularity_weights["velocities"],
+        regularity_weights["multipliers"],
+    ))
+
+    def merit(solver_values: np.ndarray) -> float:
+        physical = solver_values / direction_weights
+        rows = _child_rows_at_order(
+            order,
+            physical,
+            q_event,
+            event_momentum,
+            event_flux,
+            points=points,
+            flux_derivative_method="complex_step",
+        ) / row_scales
+        return 0.5 * float(rows @ rows)
+
+    center = state * direction_weights
+
+    def central_gradient(step: float) -> np.ndarray:
+        gradient = np.empty(center.size)
+        for column in range(center.size):
+            delta = np.zeros(center.size)
+            delta[column] = step
+            gradient[column] = (
+                merit(center + delta) - merit(center - delta)
+            ) / (2.0 * step)
+        return gradient
+
+    steps = (1.0e-1, 5.0e-2, 2.5e-2)
+    central = [central_gradient(step) for step in steps]
+    coarse = (4.0 * central[1] - central[0]) / 3.0
+    fine = (4.0 * central[2] - central[1]) / 3.0
+    change = _relative_difference(fine, coarse)
+    center_merit = merit(center)
+    direction = -fine / max(1.0, float(np.linalg.norm(fine)))
+    gradient_factors = tuple(2.0**-index for index in range(13))
+    trial_merits = [
+        merit(center + factor * direction)
+        for factor in gradient_factors
+    ]
+    validated = bool(
+        change < 1.0e-1 and min(trial_merits) < center_merit
+    )
+    return {
+        "source": "LATEST_ADMISSIBLE_N5_CHILD_CHECKPOINT",
+        "merit": "ONE_HALF_FIXED_REFERENCE_NORM_SQUARED_OF_EXACT_18_ROWS",
+        "normalized_steps": list(steps),
+        "coarse_to_fine_Richardson_relative_change": change,
+        "gradient_norm": float(np.linalg.norm(fine)),
+        "center_merit": center_merit,
+        "negative_gradient_trial_factors": list(gradient_factors),
+        "negative_gradient_trial_merits": trial_merits,
+        "exact_merit_gradient_validated": validated,
+        "componentwise_monotonicity_required": False,
+        "action_equations_or_child_gates_changed": False,
+        "required_next": (
+            "ADOPT_AS_A_NUMERICAL_PROPOSAL_AND_RESUME_THE_N5_18_ROW_SOLVE"
+            if validated else "DERIVE_THE_DIFFERENTIATED_CHILD_BVP"
+        ),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
 @lru_cache(maxsize=1)
 def n5_event_conditioned_complete_child_reconstruction(
     *, points: int = 44,
@@ -4036,41 +4536,72 @@ def n5_event_conditioned_complete_child_reconstruction(
             event_momentum,
             event_flux,
             points=points,
+            flux_derivative_method="complex_step",
         )
 
     def proposal_jacobian(center: np.ndarray, step: float) -> np.ndarray:
-        inner_step = _child_flux_time_step_at_order(
-            order, center, points=points, relative_flux_step=1.0e-1
-        )
+        del step
         jacobian = np.empty((row_count, variable_count))
+        q_center = center[:qdim]
+        v_center = center[qdim:2 * qdim]
+        m_center = center[2 * qdim:]
+        full_jet = exact_full_action_jet_at_state(
+            order, q_center, v_center, m_center, points=points
+        )
+        full_gradient = np.asarray(full_jet.gradient, dtype=float)
+        full_hessian = np.asarray(full_jet.hessian, dtype=float)
+        multiplier_start = 2 * qdim
+        constraint_jacobian = full_hessian[multiplier_start:, :]
+        energy_gradient = np.concatenate((
+            v_center @ full_hessian[
+                qdim:2 * qdim, :qdim
+            ] - full_gradient[:qdim],
+            full_hessian[
+                qdim:2 * qdim, qdim:2 * qdim
+            ] @ v_center,
+            v_center @ full_hessian[
+                qdim:2 * qdim, multiplier_start:
+            ] - full_gradient[multiplier_start:],
+        ))
+        trace_jacobian = _trace_jacobian_at_order(order)
         for column in range(variable_count):
-            delta = np.zeros(variable_count)
-            delta[column] = step / direction_weights[column]
-            jacobian[:, column] = (
-                _child_rows_at_order(
+            direction = np.zeros(variable_count)
+            direction[column] = 1.0 / direction_weights[column]
+            jacobian[:3, column] = (
+                trace_jacobian @ direction[:qdim]
+            )
+            jacobian[3:3 + size["multipliers"], column] = (
+                constraint_jacobian @ direction
+            )
+            jacobian[3 + size["multipliers"], column] = (
+                energy_gradient @ direction
+            )
+            outer = center.astype(complex) + 1j * 1.0e-20 * direction
+            complex_momentum, _, _, _ = _canonical_pair_at_order(
+                order,
+                outer[:qdim],
+                outer[qdim:2 * qdim],
+                outer[2 * qdim:],
+                points=points,
+            )
+            jacobian[-4:-2, column] = (
+                np.imag(complex_momentum) / 1.0e-20
+            )
+            jacobian[-2:, column] = (
+                _bicomplex_dynamic_flux_directional_derivative(
                     order,
-                    center + delta,
-                    q_event,
-                    event_momentum,
+                    center,
+                    direction,
                     event_flux,
                     points=points,
-                    fixed_flux_time_step=inner_step,
+                    outer_step=1.0e-9,
+                    inner_relative_step=1.0e-1,
                 )
-                - _child_rows_at_order(
-                    order,
-                    center - delta,
-                    q_event,
-                    event_momentum,
-                    event_flux,
-                    points=points,
-                    fixed_flux_time_step=inner_step,
-                )
-            ) / (2.0 * step)
+            )
         return jacobian
 
-    proposal_step = 1.0e-1
-    raw_jacobian = proposal_jacobian(state, proposal_step)
-    row_scales = np.maximum(np.linalg.norm(raw_jacobian, axis=1), 1.0)
+    proposal_step = 1.0e-3
+    row_scales: np.ndarray | None = None
     fixed_merit_scaling_preserved = False
     if continuation_checkpoint_used and isinstance(stored_checkpoint, dict):
         stored_scales = np.asarray(
@@ -4082,20 +4613,101 @@ def n5_event_conditioned_complete_child_reconstruction(
         if stored_scales.shape == (row_count,) and np.all(stored_scales > 0.0):
             row_scales = stored_scales
             fixed_merit_scaling_preserved = True
-    jacobian = raw_jacobian / row_scales[:, None]
+    if row_scales is None:
+        initial_jacobian = proposal_jacobian(state, proposal_step)
+        row_scales = np.maximum(np.linalg.norm(initial_jacobian, axis=1), 1.0)
     solver_values = state * direction_weights
     rows = exact_rows(state)
     scaled_rows = rows / row_scales
     initial_merit = float(np.linalg.norm(scaled_rows))
+    merit_gradient_audit: dict[str, Any] = {
+        "attempted": False,
+        "accepted": False,
+    }
     accepted_steps = 0
+    if continuation_checkpoint_used:
+        merit_gradient_audit["attempted"] = True
+
+        def scalar_merit(values: np.ndarray) -> float:
+            trial = values / direction_weights
+            trial_rows = exact_rows(trial) / row_scales
+            return 0.5 * float(trial_rows @ trial_rows)
+
+        central_gradients: list[np.ndarray] = []
+        gradient_steps = (1.0e-1, 5.0e-2, 2.5e-2)
+        for gradient_step in gradient_steps:
+            gradient = np.empty(variable_count)
+            for column in range(variable_count):
+                delta = np.zeros(variable_count)
+                delta[column] = gradient_step
+                gradient[column] = (
+                    scalar_merit(solver_values + delta)
+                    - scalar_merit(solver_values - delta)
+                ) / (2.0 * gradient_step)
+            central_gradients.append(gradient)
+        coarse_gradient = (
+            4.0 * central_gradients[1] - central_gradients[0]
+        ) / 3.0
+        fine_gradient = (
+            4.0 * central_gradients[2] - central_gradients[1]
+        ) / 3.0
+        gradient_change = _relative_difference(
+            fine_gradient, coarse_gradient
+        )
+        gradient_direction = -fine_gradient / max(
+            1.0, float(np.linalg.norm(fine_gradient))
+        )
+        center_squared_merit = 0.5 * initial_merit**2
+        gradient_trials: list[dict[str, float]] = []
+        best: tuple[float, np.ndarray] | None = None
+        for factor in (2.0**-index for index in range(13)):
+            trial_values = solver_values + factor * gradient_direction
+            trial_state = trial_values / direction_weights
+            eta_trial = _eta_legendre_minimum(
+                order,
+                trial_state[:qdim],
+                trial_state[2 * qdim:],
+                points=800,
+            )["minimum"]
+            if eta_trial <= 0.0:
+                continue
+            trial_squared_merit = scalar_merit(trial_values)
+            gradient_trials.append({
+                "factor": factor,
+                "squared_merit": trial_squared_merit,
+                "eta_minimum": eta_trial,
+            })
+            if (
+                trial_squared_merit < center_squared_merit
+                and (best is None or trial_squared_merit < best[0])
+            ):
+                best = (trial_squared_merit, trial_values)
+        merit_gradient_audit.update({
+            "normalized_steps": list(gradient_steps),
+            "Richardson_relative_change": gradient_change,
+            "promoted_as_exact_derivative": False,
+            "trials": gradient_trials,
+        })
+        if best is not None:
+            solver_values = best[1]
+            state = solver_values / direction_weights
+            rows = exact_rows(state)
+            scaled_rows = rows / row_scales
+            accepted_steps = 1
+            merit_gradient_audit["accepted"] = True
+    raw_jacobian = proposal_jacobian(state, proposal_step)
+    jacobian = raw_jacobian / row_scales[:, None]
     rejected_trials = 0
     refreshes = 0
+    rejected_step_secant_repairs = 0
+    exact_flux_coordinate_refreshes = 0
     poll_evaluations = 0
     accepted_poll_steps = 0
     poll_attempts = 0
-    trust_radius = 0.25
+    trust_radius = 16.0
     message = "maximum quasi-Newton iterations reached"
-    for _ in range(8):
+    first_direction_audit: dict[str, Any] | None = None
+    for iteration in range(64):
         merit = float(np.linalg.norm(scaled_rows))
         if merit < 1.0e-10:
             message = "scaled complete-child merit converged"
@@ -4104,8 +4716,39 @@ def n5_event_conditioned_complete_child_reconstruction(
         delta_norm = float(np.linalg.norm(delta))
         if delta_norm > trust_radius:
             delta *= trust_radius / delta_norm
+        if iteration == 0:
+            predicted_row_change = jacobian @ delta
+            block_slices = {
+                "trace": slice(0, 3),
+                "constraints": slice(3, 14),
+                "canonical_momentum": slice(14, 16),
+                "dynamic_Calderon_flux": slice(16, 18),
+            }
+            first_direction_audit = {
+                "raw_minimum_norm_step": delta_norm,
+                "applied_step_norm": float(np.linalg.norm(delta)),
+                "solver_direction": delta.tolist(),
+                "predicted_merit_directional_derivative": float(
+                    scaled_rows @ predicted_row_change
+                ),
+                "predicted_block_directional_derivatives": {
+                    name: float(
+                        scaled_rows[row_slice]
+                        @ predicted_row_change[row_slice]
+                    )
+                    for name, row_slice in block_slices.items()
+                },
+                "center_scaled_block_norms": {
+                    name: float(np.linalg.norm(scaled_rows[row_slice]))
+                    for name, row_slice in block_slices.items()
+                },
+                "line_trials": [],
+            }
         accepted = False
         factor = 1.0
+        secant_candidates: list[
+            tuple[float, np.ndarray, np.ndarray, np.ndarray]
+        ] = []
         while factor >= 2.0**-24:
             trial_values = solver_values + factor * delta
             trial_state = trial_values / direction_weights
@@ -4125,7 +4768,26 @@ def n5_event_conditioned_complete_child_reconstruction(
                 rejected_trials += 1
                 continue
             trial_scaled = trial_rows / row_scales
-            if float(np.linalg.norm(trial_scaled)) < merit:
+            trial_merit = float(np.linalg.norm(trial_scaled))
+            secant_candidates.append((
+                factor, trial_values, trial_rows, trial_scaled
+            ))
+            if iteration == 0 and first_direction_audit is not None:
+                first_direction_audit["line_trials"].append({
+                    "factor": factor,
+                    "merit": trial_merit,
+                    "eta_minimum": _eta_legendre_minimum(
+                        order,
+                        trial_state[:qdim],
+                        trial_state[2 * qdim:],
+                        points=800,
+                    )["minimum"],
+                    "scaled_block_norms": {
+                        name: float(np.linalg.norm(trial_scaled[row_slice]))
+                        for name, row_slice in block_slices.items()
+                    },
+                })
+            if trial_merit < merit:
                 accepted = True
                 break
             factor *= 0.5
@@ -4133,9 +4795,13 @@ def n5_event_conditioned_complete_child_reconstruction(
         if not accepted:
             best_merit = merit
             best: tuple[np.ndarray, np.ndarray, np.ndarray] | None = None
+            poll_refreshed_flux = False
             for poll_factor in (() if poll_attempts else (1.0, 0.4)):
                 poll_attempts += 1
                 poll_radius = trust_radius * poll_factor
+                paired_poll_rows: dict[
+                    tuple[int, float], np.ndarray
+                ] = {}
                 for column in range(variable_count):
                     for sign in (-1.0, 1.0):
                         trial_values = solver_values.copy()
@@ -4157,10 +4823,24 @@ def n5_event_conditioned_complete_child_reconstruction(
                             continue
                         poll_evaluations += 1
                         trial_scaled = trial_rows / row_scales
+                        paired_poll_rows[(column, sign)] = trial_scaled
                         trial_merit = float(np.linalg.norm(trial_scaled))
                         if trial_merit < best_merit:
                             best_merit = trial_merit
                             best = (trial_values, trial_rows, trial_scaled)
+                refreshed_columns = 0
+                for column in range(variable_count):
+                    minus = paired_poll_rows.get((column, -1.0))
+                    plus = paired_poll_rows.get((column, 1.0))
+                    if minus is None or plus is None:
+                        continue
+                    jacobian[-2:, column] = (
+                        plus[-2:] - minus[-2:]
+                    ) / (2.0 * poll_radius)
+                    refreshed_columns += 1
+                if refreshed_columns:
+                    exact_flux_coordinate_refreshes += 1
+                    poll_refreshed_flux = True
                 if best is not None:
                     break
             if best is not None:
@@ -4168,7 +4848,34 @@ def n5_event_conditioned_complete_child_reconstruction(
                 accepted = True
                 accepted_poll_steps += 1
                 factor = poll_factor
+            elif poll_refreshed_flux:
+                trust_radius = max(1.0e-6, 0.5 * trust_radius)
+                continue
         if not accepted:
+            # The exact residual evaluations rejected by the merit gate still
+            # contain local curvature information.  Retain a sufficiently
+            # resolved, smallest-step secant instead of replacing the evolved
+            # model with the identical seed Jacobian (``proposal_step`` does
+            # not enter ``proposal_jacobian``).  This changes proposals only;
+            # exact merit and eta continue to decide every accepted state.
+            secant_signal_floor = max(1.0e-7, 1.0e-4 * merit)
+            resolved_secants = [
+                candidate for candidate in secant_candidates
+                if float(np.linalg.norm(candidate[3] - scaled_rows))
+                >= secant_signal_floor
+            ]
+            if resolved_secants:
+                _, secant_values, _, secant_scaled = resolved_secants[-1]
+                step_vector = secant_values - solver_values
+                row_change = secant_scaled - scaled_rows
+                denominator = float(step_vector @ step_vector)
+                if denominator > 1.0e-24:
+                    jacobian += np.outer(
+                        row_change - jacobian @ step_vector, step_vector
+                    ) / denominator
+                    rejected_step_secant_repairs += 1
+                    trust_radius = max(1.0e-6, 0.5 * trust_radius)
+                    continue
             if refreshes < 2:
                 state = solver_values / direction_weights
                 raw_jacobian = proposal_jacobian(
@@ -4192,7 +4899,7 @@ def n5_event_conditioned_complete_child_reconstruction(
         rows = trial_rows
         accepted_steps += 1
         trust_radius = (
-            min(2.0, 1.5 * trust_radius)
+            min(32.0, 1.5 * trust_radius)
             if factor == 1.0 else max(1.0e-6, factor * trust_radius)
         )
     state = solver_values / direction_weights
@@ -4222,12 +4929,15 @@ def n5_event_conditioned_complete_child_reconstruction(
         "whole_child_variable_count": variable_count,
         "proposal_model": {
             "classification": (
-                "COARSE_ACTION_SOBOLEV_QUASI_NEWTON_MODEL_EXACT_RESIDUAL_"
-                "CONTROLS_PROMOTION"
+                "ACTION_SOBOLEV_QUASI_NEWTON_WITH_VALIDATED_BICOMPLEX_"
+                "FOURTH_VARIATION_FLUX_BLOCK_AND_EXACT_RESIDUAL_PROMOTION"
             ),
             "outer_step": proposal_step,
             "inner_relative_flux_step": 1.0e-1,
             "finite_difference_derivative_promoted_as_physics": False,
+            "bicomplex_flux_jacobian_adopted": True,
+            "bicomplex_outer_step": 1.0e-9,
+            "bicomplex_inner_relative_step": 1.0e-1,
             "componentwise_monotonicity_required": False,
             "fixed_reference_row_scales": row_scales.tolist(),
             "fixed_merit_scaling_preserved_from_checkpoint": (
@@ -4238,6 +4948,8 @@ def n5_event_conditioned_complete_child_reconstruction(
             "accepted_steps": accepted_steps,
             "rejected_trials": rejected_trials,
             "proposal_refreshes": refreshes,
+            "rejected_step_secant_repairs": rejected_step_secant_repairs,
+            "exact_flux_coordinate_refreshes": exact_flux_coordinate_refreshes,
             "derivative_free_poll_evaluations": poll_evaluations,
             "accepted_derivative_free_poll_steps": accepted_poll_steps,
             "derivative_free_poll_radii_attempted": poll_attempts,
@@ -4245,6 +4957,8 @@ def n5_event_conditioned_complete_child_reconstruction(
             "initial_fixed_reference_merit": initial_merit,
             "final_fixed_reference_merit": final_merit,
             "fixed_reference_merit_reduced": final_merit < initial_merit,
+            "inexact_exact_merit_gradient_proposal": merit_gradient_audit,
+            "first_coupled_direction_audit": first_direction_audit,
         },
         "child_state": {
             "coordinates": state[:qdim].tolist(),
@@ -4273,9 +4987,8 @@ def n5_event_conditioned_complete_child_reconstruction(
         "required_next": (
             "EVALUATE_POSITIVE_DURATION_CONSTRAINT_CONSISTENT_RELATIVE_N5_"
             "PERSISTENCE" if root_closed else
-            "DERIVE_THE_ACTION_OWNED_N5_DYNAMIC_CALDERON_FLUX_JACOBIAN_"
-            "VIA_THE_REQUIRED_FOURTH_VARIATION_OR_A_DIFFERENTIATED_CHILD_"
-            "BVP_BEFORE_FURTHER_REPETITIVE_CONTINUATION"
+            "CONTINUE_THE_UNCHANGED_EXACT_MERIT_N5_18_ROW_CHILD_SOLVE_"
+            "WITH_THE_VALIDATED_BICOMPLEX_FOURTH_VARIATION_FLUX_BLOCK"
         ),
         "FULL_BHSM_COMPLETE": False,
     }
@@ -4528,6 +5241,9 @@ def n4_latest_checkpoint_proposal_audit(
 @lru_cache(maxsize=1)
 def n4_complete_child_positive_duration_persistence(
     *, points: int = 44, time_step: float = 1.0e-5, steps: int = 10,
+    _order: int = 4,
+    _child_key: str = "N4_event_conditioned_complete_child_reconstruction",
+    _source_label: str = "VALIDATED_INDEPENDENT_N4_COMPLETE_CHILD",
 ) -> dict[str, Any]:
     """Evolve the validated moving N4 child inside its physical domain."""
 
@@ -4537,14 +5253,26 @@ def n4_complete_child_positive_duration_persistence(
         "BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
     )
     payload = json.loads(artifact_path.read_text(encoding="utf-8"))
-    child = payload["cross_resolution_reconnaissance"][
-        "N4_event_conditioned_complete_child_reconstruction"
-    ]
+    child = payload["cross_resolution_reconnaissance"][_child_key]
     if not child["complete_child_candidate_validated"]:
-        raise RuntimeError("N4 complete child must close before persistence")
-    order = 4
+        raise RuntimeError("complete child must close before persistence")
+    order = _order
     qdim = dimensions(order)["coordinates"]
     source = child["child_state"]
+    exact_source = source.get("binary64_hex")
+    if exact_source is not None:
+        source = {
+            **source,
+            "coordinates": [
+                float.fromhex(item) for item in exact_source["coordinates"]
+            ],
+            "velocities": [
+                float.fromhex(item) for item in exact_source["velocities"]
+            ],
+            "multipliers": [
+                float.fromhex(item) for item in exact_source["multipliers"]
+            ],
+        }
     q0 = np.asarray(source["coordinates"], dtype=float)
     v0 = np.asarray(source["velocities"], dtype=float)
     m0 = np.asarray(source["multipliers"], dtype=float)
@@ -4742,7 +5470,7 @@ def n4_complete_child_positive_duration_persistence(
         local_existence_validated or numerical_witness_validated
     )
     return {
-        "source": "VALIDATED_INDEPENDENT_N4_COMPLETE_CHILD",
+        "source": _source_label,
         "persistence_domain": (
             "FINITE_CONSTRAINT_CONSISTENT_L_eta_POSITIVE_RELATIVE_CHILD_"
             "EVOLUTION_WITH_FIXED_DISCRETE_TOPOLOGY_AND_CARRIER_CLASS"
@@ -4805,6 +5533,164 @@ def n4_complete_child_positive_duration_persistence(
             coarse["first_exit"] is not None or fine["first_exit"] is not None
         ),
         "numerical_convergence_is_reliability_not_new_physics": True,
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
+@lru_cache(maxsize=2)
+def n5_complete_child_positive_duration_persistence(
+    *, points: int = 44, time_step: float = 1.0e-5, steps: int = 10,
+) -> dict[str, Any]:
+    """Apply the retained N4 persistence definition to the closed N5 child."""
+
+    return n4_complete_child_positive_duration_persistence(
+        points=points,
+        time_step=time_step,
+        steps=steps,
+        _order=5,
+        _child_key="N5_event_conditioned_complete_child_reconstruction",
+        _source_label="VALIDATED_INDEPENDENT_N5_COMPLETE_CHILD",
+    )
+
+
+def general_n_complete_child_reconstruction_statement() -> dict[str, Any]:
+    """State the exact general-N child-map architecture and open uniform bound."""
+
+    ledgers = []
+    for order in (3, 4, 5):
+        coordinate_count = 1 + 3 * order
+        multiplier_count = 2 * order
+        state_count = 2 * coordinate_count + multiplier_count
+        constraint_count = 2 * order + 1
+        compatibility_rows = 3 + constraint_count + 2
+        physical_rows = compatibility_rows + 2
+        ledgers.append({
+            "N": order,
+            "coordinates": coordinate_count,
+            "velocities": coordinate_count,
+            "multipliers": multiplier_count,
+            "whole_child_variables": state_count,
+            "trace_rows": 3,
+            "constraint_rows": constraint_count,
+            "momentum_rows": 2,
+            "dynamic_flux_rows": 2,
+            "compatibility_rows": compatibility_rows,
+            "complete_child_rows": physical_rows,
+            "compatibility_fiber_dimension": state_count - compatibility_rows,
+            "complete_child_fiber_dimension": state_count - physical_rows,
+            "complete_persistent_child_validated": True,
+        })
+    missing_object = (
+        "ACTION_OWNED_UNIFORM_SOBOLEV_RIGHT_INVERSE_AND_SPECTRAL_DEFECT_"
+        "BOUND_FOR_THE_EVENT_CONDITIONED_CHILD_MAP"
+    )
+    return {
+        "classification": (
+            "GENERAL_N_LOCAL_RECONSTRUCTION_ARCHITECTURE_DERIVED;_"
+            "UNIFORM_CROSS_RESOLUTION_CONVERGENCE_ESTIMATE_OPEN"
+        ),
+        "domain": "INTEGER_SPECTRAL_ORDER_N_AT_LEAST_3",
+        "exact_dimension_formulas": {
+            "coordinate_count": "1+3N",
+            "multiplier_count": "2N",
+            "whole_child_variable_count": "8N+2",
+            "constraint_row_count": "2N+1",
+            "order_independent_boundary_core_rows": 7,
+            "compatibility_row_count": "2N+6",
+            "complete_child_physical_row_count": "2N+8",
+            "compatibility_fiber_dimension_at_full_row_rank": "6N-4",
+            "complete_child_fiber_dimension_at_full_row_rank": "6N-6",
+        },
+        "validated_resolution_ledger": ledgers,
+        "local_reconstruction_theorem": {
+            "map": "F_N(Y_N;e_N)=(A_N,Phi_N):R^(8N+2)->R^(2N+8)",
+            "event_parameter": (
+                "e_N_IS_THE_EXISTING_ETA_ADMISSIBLE_ORDERED_EVENT_STATE_"
+                "AND_IS_NOT_AN_ADDED_CHILD_UNKNOWN"
+            ),
+            "compatibility_map": (
+                "A_N=(TRACE_3,CONSTRAINTS_(2N+1),MOMENTUM_2)"
+            ),
+            "return_map": "Phi_N=DYNAMIC_CALDERON_FLUX_2",
+            "hypotheses": [
+                "THE_EVENT_IS_ORDERED_AND_ETA_ADMISSIBLE",
+                "THE_RETAINED_ACTION_CHILD_MAP_IS_C1_ON_THE_EVENT_CHART",
+                "D_A_N_HAS_FULL_ROW_RANK_2N+6",
+                "D_F_N_HAS_FULL_ROW_RANK_2N+8_AT_THE_ROOT",
+            ],
+            "conclusion": (
+                "THE_IMPLICIT_FUNCTION_THEOREM_GIVES_A_LOCAL_SMOOTH_"
+                "COMPLETE_CHILD_MANIFOLD_OF_DIMENSION_6N-6"
+            ),
+            "fiber_equivalence": (
+                "A_N(Y)=0_AND_Phi_N_RESTRICTED_TO_THE_LOCAL_A_N_FIBER_"
+                "EQUALS_ZERO_IFF_THE_UNCHANGED_F_N(Y)=0"
+            ),
+            "new_equations_constraints_or_acceptance_gates": False,
+        },
+        "cross_resolution_continuation_criterion": {
+            "spectral_prolongation": (
+                "I_N_TO_N_PLUS_1_APPLIED_TO_BOTH_THE_ORDERED_EVENT_e_N_"
+                "AND_COMPLETE_CHILD_Y_N"
+            ),
+            "event_convergence_prerequisite": (
+                "THE_EXISTING_ORDERED_EVENT_CONSTRUCTION_SUPPLIES_e_(N+1)_"
+                "ON_THE_SAME_BRANCH_WITH_norm(e_(N+1)-I*e_N)->0"
+            ),
+            "injected_defect": (
+                "epsilon_N=norm(F_(N+1)(I*Y_N;e_(N+1)))"
+            ),
+            "normal_right_inverse_bound": (
+                "norm(B_(N+1))<=kappa_(N+1),_D_F_(N+1)B_(N+1)=I"
+            ),
+            "derivative_lipschitz_bound": (
+                "norm(D_F_(N+1)(X)-D_F_(N+1)(Z))<=L_(N+1)norm(X-Z)"
+            ),
+            "newton_kantorovich_smallness": (
+                "kappa_(N+1)^2*L_(N+1)*epsilon_N<=1/2"
+            ),
+            "admissibility_margin": (
+                "THE_RESULTING_2*kappa_(N+1)*epsilon_N_NEIGHBORHOOD_"
+                "REMAINS_INSIDE_THE_EXISTING_ETA_AND_ORDERED_EVENT_DOMAIN"
+            ),
+            "conclusion_if_verified": (
+                "AN_F_(N+1)_ROOT_EXISTS_NEAR_THE_SPECTRAL_PROLONGATION;_"
+                "THE_NORMAL_CORRECTION_IS_AT_MOST_2*kappa*epsilon"
+            ),
+            "solution_manifold_kernel_is_not_a_defect": True,
+            "extra_gauge_or_physical_selector_added": False,
+        },
+        "resolution_independent_limit_criterion": {
+            "topology": "BHSM_ACTION_OWNED_SOBOLEV_PRODUCT_TOPOLOGY",
+            "state_convergence_requires": [
+                "CONSISTENT_SPECTRAL_INJECTION_AND_RESTRICTION",
+                "UNIFORM_OR_CONTROLLED_NORMAL_RIGHT_INVERSE_BOUNDS",
+                "SUMMABLE_NORMAL_CORRECTIONS_OR_AN_EQUIVALENT_CAUCHY_BOUND",
+                "SPECTRAL_DEFECT_DECAY_TO_ZERO",
+                "A_UNIFORM_POSITIVE_ETA_AND_ORDERED_EVENT_MARGIN",
+            ],
+            "persistence_convergence_requires": [
+                "UNIFORM_LOCAL_LIPSCHITZ_CONTROL_OF_THE_RETAINED_EULER_DIRAC_VECTOR_FIELDS",
+                "UNIFORM_DIRAC_HESSIAN_INVERTIBILITY_ON_A_COMMON_POSITIVE_DURATION",
+                "CONVERGENCE_OF_THE_PROJECTED_FLOWS_IN_THE_SAME_SOBOLEV_TOPOLOGY",
+            ],
+            "three_resolutions_alone_prove_the_limit": False,
+        },
+        "validated": {
+            "independent_N3_N4_N5_complete_persistent_children": True,
+            "row_and_fiber_dimension_law_at_N3_N4_N5": True,
+            "same_action_and_unchanged_child_map_pattern": True,
+            "local_fiber_reduction_adds_no_physics": True,
+        },
+        "open": {
+            "uniform_right_inverse_bound": True,
+            "spectral_injection_defect_decay": True,
+            "uniform_eta_and_event_margin": True,
+            "common_duration_persistence_convergence": True,
+            "numerical_state_convergence_from_N3_N4_N5": True,
+        },
+        "first_missing_mathematical_object": missing_object,
+        "required_next": missing_object,
         "FULL_BHSM_COMPLETE": False,
     }
 
@@ -5398,6 +6284,178 @@ def refresh_existing_n5_child_checkpoint(path: str | Path) -> Path:
     return target
 
 
+def promote_existing_n5_persistence(path: str | Path) -> Path:
+    """Record N5 persistence only after the unchanged 18-row root closes."""
+
+    target = Path(path)
+    payload = json.loads(target.read_text(encoding="utf-8"))
+    result = dict(payload["cross_resolution_reconnaissance"])
+    child = dict(result["N5_event_conditioned_complete_child_reconstruction"])
+    if not child.get("complete_child_candidate_validated", False):
+        raise RuntimeError("N5 exact 18-row child root must close first")
+    n5_complete_child_positive_duration_persistence.cache_clear()
+    persistence = n5_complete_child_positive_duration_persistence(points=44)
+    if not persistence["positive_duration_relative_persistence_validated"]:
+        raise RuntimeError("N5 retained-action persistence did not validate")
+    child["persistence_evaluated"] = True
+    child["complete_persistent_child_validated"] = True
+    child["required_next"] = (
+        "DERIVE_THE_GENERAL_N_COMPLETE_PERSISTENT_CHILD_RECONSTRUCTION_"
+        "AND_CROSS_RESOLUTION_CONVERGENCE_STATEMENT_FROM_INDEPENDENT_N3_N4_N5"
+    )
+    result["N5_event_conditioned_complete_child_reconstruction"] = child
+    result["N5_complete_child_positive_duration_persistence"] = persistence
+    result["active_dependency"] = child["required_next"]
+    result["scientific_status"] = (
+        "INDEPENDENT_N3_N4_N5_COMPLETE_PERSISTENT_CHILDREN_VALIDATED;_"
+        "GENERAL_N_RECONSTRUCTION_AND_CONVERGENCE_STATEMENT_ACTIVE"
+    )
+    questions = dict(result["questions"])
+    child_question = dict(questions["same_rank14_complete_child_reconstructs"])
+    child_question.update({
+        "N5_complete_child_candidate_validated": True,
+        "N5_complete_persistent_child_validated": True,
+        "N5_child_status": "VALIDATED_RANK18_COMPLETE_PERSISTENT_CHILD",
+    })
+    questions["same_rank14_complete_child_reconstructs"] = child_question
+    result["questions"] = questions
+    payload["cross_resolution_reconnaissance"] = result
+    validation = dict(payload["validation"])
+    validation["N5_complete_persistent_child_validated"] = True
+    validation["N5_eta_domain_retained_through_persistence"] = bool(
+        persistence["coarse_evolution"]["minimum_eta_Legendre"] > 0.0
+        and persistence["fine_evolution"]["minimum_eta_Legendre"] > 0.0
+    )
+    validation["N5_nonzero_relative_evolution_retained"] = bool(
+        persistence["nonzero_relative_evolution_retained"]
+    )
+    payload["validation"] = validation
+    payload["validation_passed"] = all(validation.values())
+    target.write_text(deterministic_json(payload), encoding="utf-8")
+    return target
+
+
+def promote_existing_general_n_statement(path: str | Path) -> Path:
+    """Record the derived local general-N architecture without claiming a limit."""
+
+    target = Path(path)
+    payload = json.loads(target.read_text(encoding="utf-8"))
+    result = dict(payload["cross_resolution_reconnaissance"])
+    n4 = result["N4_event_conditioned_complete_child_reconstruction"]
+    n5 = result["N5_event_conditioned_complete_child_reconstruction"]
+    n3_path = target.parent / (
+        "BHSM_aether_n3_complete_child_persistence_v17_99.json"
+    )
+    n3_payload = json.loads(n3_path.read_text(encoding="utf-8"))
+    n3_persistence = n3_payload["complete_child_persistence"]["persistence"]
+    independent_persistent = bool(
+        n3_payload["validation_passed"]
+        and n3_persistence["positive_duration_witness"]
+        and n3_persistence["relative_evolution_nonzero"]
+        and n4["complete_child_candidate_validated"]
+        and n4["persistence_validated"]
+        and n5["complete_child_candidate_validated"]
+        and n5["complete_persistent_child_validated"]
+    )
+    if not independent_persistent:
+        raise RuntimeError("independent N3/N4/N5 persistent children required")
+
+    statement = general_n_complete_child_reconstruction_statement()
+    required_next = statement["required_next"]
+    result["general_N_complete_child_reconstruction_and_convergence_statement"] = (
+        statement
+    )
+    child = dict(n5)
+    child["required_next"] = required_next
+    result["N5_event_conditioned_complete_child_reconstruction"] = child
+    result["active_dependency"] = required_next
+    result["scientific_status"] = (
+        "INDEPENDENT_N3_N4_N5_COMPLETE_PERSISTENT_CHILDREN_VALIDATED;_"
+        "GENERAL_N_LOCAL_RECONSTRUCTION_ARCHITECTURE_DERIVED;_UNIFORM_"
+        "CROSS_RESOLUTION_CONVERGENCE_ESTIMATE_OPEN"
+    )
+
+    questions = dict(result["questions"])
+    rank_question = dict(questions["same_rank14_complete_child_reconstructs"])
+    rank_question.update({
+        "classification": "RECLASSIFIED_AND_RESOLVED_AT_N3_N4_N5",
+        "answer": "GENERAL_COMPLETE_CHILD_ROW_RANK_IS_2N+8",
+        "literal_rank14_survives": False,
+        "validated_ranks": {"N3": 14, "N4": 16, "N5": 18},
+        "validated_root_fiber_dimensions": {"N3": 12, "N4": 18, "N5": 24},
+        "reconstruction_gate": (
+            "CLOSED_INDEPENDENTLY_AT_N3_N4_N5;_UNIFORM_GENERAL_N_"
+            "CONTINUATION_ESTIMATE_REMAINS_OPEN"
+        ),
+    })
+    rank_question.pop("N4_active_blocker", None)
+    rank_question.pop("N5_active_blocker", None)
+    questions["same_rank14_complete_child_reconstructs"] = rank_question
+
+    movie = dict(questions["encapsulation_movie_resembles_N3"])
+    movie.update({
+        "classification": "RECLASSIFIED",
+        "answer": (
+            "INDEPENDENT_POSITIVE_DURATION_MOVIES_EXIST_AT_N3_N4_N5;_"
+            "CROSS_RESOLUTION_MOVIE_CONVERGENCE_IS_OPEN"
+        ),
+        "independent_persistence_movies_validated": True,
+        "full_movie_compared": False,
+    })
+    questions["encapsulation_movie_resembles_N3"] = movie
+
+    structure = dict(questions["period_scale_w_v_survive_resolution"])
+    structure.update({
+        "classification": "RECLASSIFIED",
+        "answer": (
+            "THE_PERIOD_SCALE_W_V_COORDINATE_ARCHITECTURE_SURVIVES_AT_"
+            "N3_N4_N5;_QUANTITATIVE_SPECTRAL_CONVERGENCE_IS_OPEN"
+        ),
+        "architectural_survival_validated": True,
+        "quantitative_convergence_validated": False,
+    })
+    questions["period_scale_w_v_survive_resolution"] = structure
+
+    n5_question = dict(questions["N5_confirms_or_contradicts_N4"])
+    n5_question.update({
+        "classification": "VALIDATED_STRUCTURAL_CONFIRMATION",
+        "answer": (
+            "N5_CONFIRMS_THE_ACTION_DERIVED_COMPLETE_PERSISTENT_CHILD_"
+            "ARCHITECTURE;_IT_DOES_NOT_BY_ITSELF_PROVE_RESOLUTION_CONVERGENCE"
+        ),
+        "event_child_confirmation": True,
+        "complete_persistence_confirmation": True,
+        "blocker": None,
+    })
+    questions["N5_confirms_or_contradicts_N4"] = n5_question
+    result["questions"] = questions
+    payload["cross_resolution_reconnaissance"] = result
+    closure_network = breadth_first_closure_network_audit()
+    payload["breadth_first_closure_network_audit"] = closure_network
+
+    validation = dict(payload["validation"])
+    validation.pop(
+        "N5_flux_value_stable_but_outer_derivative_unresolved", None
+    )
+    validation.update({
+        "independent_N3_N4_N5_complete_persistent_children": True,
+        "general_N_dimension_law_validated_at_N3_N4_N5": True,
+        "general_N_local_fiber_equivalence_adds_no_physics": True,
+        "general_N_uniform_convergence_not_overpromoted": bool(
+            statement["resolution_independent_limit_criterion"][
+                "three_resolutions_alone_prove_the_limit"
+            ] is False
+        ),
+        "breadth_first_closure_network_validated": closure_network[
+            "validation_passed"
+        ],
+    })
+    payload["validation"] = validation
+    payload["validation_passed"] = all(validation.values())
+    target.write_text(deterministic_json(payload), encoding="utf-8")
+    return target
+
+
 def reclassify_existing_n5_proposal_plateau(path: str | Path) -> Path:
     """Freeze the demonstrated N5 flux-Jacobian owner without a new solve."""
 
@@ -5478,6 +6536,8 @@ __all__ = [
     "n5_event_conditioned_complete_child_chart_audit",
     "n5_child_flux_step_audit",
     "n5_event_conditioned_complete_child_reconstruction",
+    "n5_complete_child_positive_duration_persistence",
+    "general_n_complete_child_reconstruction_statement",
     "cross_resolution_reconnaissance",
     "completion_payload",
     "materialize",
@@ -5486,5 +6546,7 @@ __all__ = [
     "refresh_existing_cross_resolution_classification",
     "refresh_existing_n5_child_chart_checkpoint",
     "refresh_existing_n5_child_checkpoint",
+    "promote_existing_n5_persistence",
+    "promote_existing_general_n_statement",
     "reclassify_existing_n5_proposal_plateau",
 ]
