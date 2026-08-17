@@ -2648,6 +2648,38 @@ def _attachment_jacobian_at_order(
     return np.vstack((j_w, j_c - j_w))
 
 
+def _attachment_coordinates_at_order(
+    order: int, coordinates: np.ndarray,
+) -> np.ndarray:
+    """Exact two-coordinate attachment chart whose derivative is B(q)."""
+
+    q = np.asarray(coordinates)
+    signs_k = (-1.0) ** np.arange(1, order + 1)
+    signs_j = (-1.0) ** np.arange(order)
+    u_boundary = q[1:1 + order] @ signs_k
+    v_boundary = q[1 + 2 * order:1 + 3 * order] @ signs_j
+    q_w = q[0] + u_boundary - 0.5 * np.log(np.cosh(2.0 * v_boundary))
+    return np.asarray([q_w, q[0] - q_w])
+
+
+def _attachment_chart_curvature_on_velocity(
+    order: int, coordinates: np.ndarray, velocities: np.ndarray,
+) -> np.ndarray:
+    """Return D^2 b(q)[v,v] for the exact attachment chart."""
+
+    q = np.asarray(coordinates)
+    velocity = np.asarray(velocities)
+    signs_j = (-1.0) ** np.arange(order)
+    v_boundary = q[1 + 2 * order:1 + 3 * order] @ signs_j
+    v_boundary_rate = (
+        velocity[1 + 2 * order:1 + 3 * order] @ signs_j
+    )
+    first = (
+        -2.0 * v_boundary_rate**2 / np.cosh(2.0 * v_boundary) ** 2
+    )
+    return np.asarray([first, -first])
+
+
 def _boundary_lift(
     form: np.ndarray, boundary: np.ndarray, constraints: np.ndarray,
 ) -> np.ndarray:
@@ -6618,6 +6650,261 @@ def on_shell_boundary_reaction_audit(
     }
 
 
+def _child_history_boundary_reaction_solve(
+    order: int,
+    coordinates: np.ndarray,
+    velocities: np.ndarray,
+    multipliers: np.ndarray,
+    boundary_acceleration: np.ndarray,
+    *,
+    points: int,
+) -> dict[str, Any]:
+    """Solve the same-action Euler--Dirac boundary-reaction system."""
+
+    q = np.asarray(coordinates, dtype=float)
+    velocity = np.asarray(velocities, dtype=float)
+    m = np.asarray(multipliers, dtype=float)
+    bddot = np.asarray(boundary_acceleration, dtype=float)
+    qdim = q.size
+    mdim = m.size
+    boundary = _attachment_jacobian_at_order(order, q)
+    boundary_curvature = _attachment_chart_curvature_on_velocity(
+        order, q, velocity
+    )
+    jet = exact_full_action_jet_at_state(
+        order, q, velocity, m, points=points
+    )
+    gradient = np.asarray(jet.gradient, dtype=float)
+    hessian = np.asarray(jet.hessian, dtype=float)
+    zero_m_boundary = np.zeros((mdim, 2))
+    matrix = np.block([
+        [
+            hessian[qdim:2 * qdim, qdim:2 * qdim],
+            hessian[qdim:2 * qdim, 2 * qdim:],
+            -boundary.T,
+        ],
+        [
+            hessian[2 * qdim:, qdim:2 * qdim],
+            hessian[2 * qdim:, 2 * qdim:],
+            zero_m_boundary,
+        ],
+        [
+            boundary,
+            np.zeros((2, mdim)),
+            np.zeros((2, 2)),
+        ],
+    ])
+    radial_flux = _metric_radial_flux_covector_at_order(order, q, m)
+    right_hand_side = np.concatenate((
+        gradient[:qdim]
+        - hessian[qdim:2 * qdim, :qdim] @ velocity
+        - radial_flux,
+        -hessian[2 * qdim:, :qdim] @ velocity,
+        bddot - boundary_curvature,
+    ))
+    solved = np.linalg.solve(matrix, right_hand_side)
+    acceleration = solved[:qdim]
+    multiplier_rate = solved[qdim:qdim + mdim]
+    reaction = solved[-2:]
+    euler_reaction_residual = (
+        hessian[qdim:2 * qdim, :qdim] @ velocity
+        + hessian[qdim:2 * qdim, qdim:2 * qdim] @ acceleration
+        + hessian[qdim:2 * qdim, 2 * qdim:] @ multiplier_rate
+        - gradient[:qdim]
+        + radial_flux
+        - boundary.T @ reaction
+    )
+    constraint_tangent_residual = (
+        hessian[2 * qdim:, :qdim] @ velocity
+        + hessian[2 * qdim:, qdim:2 * qdim] @ acceleration
+        + hessian[2 * qdim:, 2 * qdim:] @ multiplier_rate
+    )
+    boundary_acceleration_residual = (
+        boundary @ acceleration + boundary_curvature - bddot
+    )
+    singular = np.linalg.svd(matrix, compute_uv=False)
+    return {
+        "matrix_dimension": int(matrix.shape[0]),
+        "matrix_rank": int(np.linalg.matrix_rank(matrix)),
+        "smallest_singular_value": float(singular[-1]),
+        "condition_number": float(singular[0] / singular[-1]),
+        "boundary_reaction": reaction.tolist(),
+        "boundary_reaction_norm": float(np.linalg.norm(reaction)),
+        "acceleration": acceleration,
+        "multiplier_rate": multiplier_rate,
+        "maximum_Euler_reaction_residual": float(
+            np.max(np.abs(euler_reaction_residual))
+        ),
+        "maximum_constraint_tangent_residual": float(
+            np.max(np.abs(constraint_tangent_residual))
+        ),
+        "maximum_boundary_acceleration_residual": float(
+            np.max(np.abs(boundary_acceleration_residual))
+        ),
+    }
+
+
+def child_history_bvp_bordered_operator_audit(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+    *,
+    points: int = 44,
+) -> dict[str, Any]:
+    """Construct the finite-N Lorentzian child-history BVP operator."""
+
+    target = Path(path)
+    payload = json.loads(target.read_text(encoding="utf-8"))[
+        "cross_resolution_reconnaissance"
+    ]
+    n3_payload = json.loads((target.parent / (
+        "BHSM_aether_n3_complete_child_persistence_v17_99.json"
+    )).read_text(encoding="utf-8"))
+    states = {
+        3: n3_payload["complete_child_persistence"]["evolution"]["rows"][0],
+        4: payload[
+            "N4_event_conditioned_complete_child_reconstruction"
+        ]["child_state"],
+        5: payload[
+            "N5_event_conditioned_complete_child_reconstruction"
+        ]["child_state"],
+    }
+    rows = []
+    attachment_derivative_errors = []
+    for order, source in states.items():
+        exact = source.get("binary64_hex")
+        if exact is None:
+            q = np.asarray(source["coordinates"], dtype=float)
+            velocity = np.asarray(source["velocities"], dtype=float)
+            m = np.asarray(source["multipliers"], dtype=float)
+        else:
+            q = np.asarray([
+                float.fromhex(value) for value in exact["coordinates"]
+            ])
+            velocity = np.asarray([
+                float.fromhex(value) for value in exact["velocities"]
+            ])
+            m = np.asarray([
+                float.fromhex(value) for value in exact["multipliers"]
+            ])
+        analytic_boundary = _attachment_jacobian_at_order(order, q)
+        complex_boundary = np.empty_like(analytic_boundary)
+        for column in range(q.size):
+            perturbed = q.astype(complex)
+            perturbed[column] += 1j * 1.0e-20
+            complex_boundary[:, column] = np.imag(
+                _attachment_coordinates_at_order(order, perturbed)
+            ) / 1.0e-20
+        derivative_error = float(np.max(np.abs(
+            analytic_boundary - complex_boundary
+        )))
+        attachment_derivative_errors.append(derivative_error)
+        free = _exact_full_jet_euler_dirac_acceleration(
+            order, q, velocity, m, points=points
+        )
+        boundary_acceleration_probe = (
+            analytic_boundary @ np.asarray(free["acceleration"], dtype=float)
+            + _attachment_chart_curvature_on_velocity(order, q, velocity)
+        )
+        solved = _child_history_boundary_reaction_solve(
+            order,
+            q,
+            velocity,
+            m,
+            boundary_acceleration_probe,
+            points=points,
+        )
+        rows.append({
+            "N": order,
+            "coordinate_dimension": int(q.size),
+            "multiplier_dimension": int(m.size),
+            "bordered_dimension": solved["matrix_dimension"],
+            "expected_bordered_dimension_5N_plus_3": 5 * order + 3,
+            "bordered_rank": solved["matrix_rank"],
+            "smallest_singular_value": solved["smallest_singular_value"],
+            "condition_number": solved["condition_number"],
+            "attachment_chart_derivative_error": derivative_error,
+            "probe_boundary_reaction": solved["boundary_reaction"],
+            "probe_boundary_reaction_norm": solved[
+                "boundary_reaction_norm"
+            ],
+            "maximum_Euler_reaction_residual": solved[
+                "maximum_Euler_reaction_residual"
+            ],
+            "maximum_constraint_tangent_residual": solved[
+                "maximum_constraint_tangent_residual"
+            ],
+            "maximum_boundary_acceleration_residual": solved[
+                "maximum_boundary_acceleration_residual"
+            ],
+        })
+    validation = {
+        "exact_attachment_chart_differentiates_to_existing_boundary_rows": (
+            max(attachment_derivative_errors) < 1.0e-12
+        ),
+        "general_N_dimension_law_holds_at_N3_N4_N5": all(
+            row["bordered_dimension"]
+            == row["expected_bordered_dimension_5N_plus_3"]
+            for row in rows
+        ),
+        "all_finite_N_bordered_operators_full_rank": all(
+            row["bordered_rank"] == row["bordered_dimension"]
+            for row in rows
+        ),
+        "all_equation_blocks_replay": all(
+            row["maximum_Euler_reaction_residual"] < 1.0e-7
+            and row["maximum_constraint_tangent_residual"] < 1.0e-7
+            and row["maximum_boundary_acceleration_residual"] < 1.0e-7
+            for row in rows
+        ),
+    }
+    return {
+        "classification": (
+            "SAME_ACTION_LORENTZIAN_CHILD_HISTORY_BVP_BORDERED_OPERATOR_"
+            "DERIVED_AND_FINITE_N_INVERTIBLE;_EVENT_CHILD_REACTION_"
+            "MATCHING_AND_UNIFORM_GENERAL_N_BOUND_OPEN"
+        ),
+        "unknowns": "(a_(3N+1),m_dot_(2N),Lambda_boundary_2)",
+        "equations": {
+            "Euler_reaction": (
+                "L_vv*a+L_vm*m_dot-B^star*Lambda="
+                "L_q-L_vq*v-Gamma1_child"
+            ),
+            "constraint_tangency": (
+                "L_mv*a+L_mm*m_dot=-L_mq*v"
+            ),
+            "boundary_history": (
+                "B*a=b_ddot-D2b[v,v]"
+            ),
+        },
+        "exact_attachment_chart": {
+            "q_W": "scale+u_L-(1/2)log(cosh(2v_L))",
+            "x_D": "scale-q_W",
+            "derivative": "B=D_q(q_W,x_D)",
+        },
+        "general_N_bordered_dimension": "5N+3",
+        "rows": rows,
+        "probe_boundary_acceleration_is_a_physical_junction_solution": False,
+        "probe_role": (
+            "USES_THE_UNCONSTRAINED_EULER_DIRAC_BOUNDARY_ACCELERATION_ONLY_"
+            "TO_TEST_THE_BORDERED_OPERATOR;_REACTION_VALUES_ARE_NOT_"
+            "PROMOTED_AS_EVENT_CHILD_MATCHES"
+        ),
+        "finite_rank_implies_uniform_general_N_inf_sup": False,
+        "existing_N3_N4_N5_F_rows_or_persistence_changed": False,
+        "new_equations_constraints_or_acceptance_gates": False,
+        "required_next": (
+            "EVALUATE_THE_EVENT_SIDE_REACTION_FROM_EACH_ACCEPTED_EVENT_"
+            "HISTORY_AND_SOLVE_THE_EXISTING_TWO_SIDED_REACTION_MATCH;_"
+            "THEN_TEST_THE_REACTION_CALDERON_GRAPH_UNDER_NESTED_SPECTRAL_"
+            "INJECTION"
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
 def event_to_child_on_shell_calderon_interface() -> dict[str, Any]:
     """Reconcile the validated local child roots with the required full BVP."""
 
@@ -7680,6 +7967,7 @@ def promote_existing_general_n_statement(path: str | Path) -> Path:
     )
     attachment_lift_audit = nested_attachment_lift_consistency_audit(target)
     boundary_reaction_audit = on_shell_boundary_reaction_audit(target)
+    history_bvp_audit = child_history_bvp_bordered_operator_audit(target)
     statement["cross_resolution_principal_symbol_frame_audit"] = frame_audit
     statement["cross_resolution_strong_constraint_infsup_audit"] = (
         strong_constraint_audit
@@ -7691,6 +7979,9 @@ def promote_existing_general_n_statement(path: str | Path) -> Path:
         attachment_lift_audit
     )
     statement["on_shell_boundary_reaction_audit"] = boundary_reaction_audit
+    statement["child_history_bvp_bordered_operator_audit"] = (
+        history_bvp_audit
+    )
     required_next = statement["required_next"]
     result["general_N_complete_child_reconstruction_and_convergence_statement"] = (
         statement
@@ -7704,6 +7995,7 @@ def promote_existing_general_n_statement(path: str | Path) -> Path:
     )
     result["nested_attachment_lift_consistency_audit"] = attachment_lift_audit
     result["on_shell_boundary_reaction_audit"] = boundary_reaction_audit
+    result["child_history_bvp_bordered_operator_audit"] = history_bvp_audit
     child = dict(n5)
     child["required_next"] = required_next
     result["N5_event_conditioned_complete_child_reconstruction"] = child
@@ -7803,6 +8095,9 @@ def promote_existing_general_n_statement(path: str | Path) -> Path:
         "on_shell_boundary_reaction_audit_validated": (
             boundary_reaction_audit["validation_passed"]
         ),
+        "child_history_bvp_bordered_operator_audit_validated": (
+            history_bvp_audit["validation_passed"]
+        ),
     })
     payload["validation"] = validation
     payload["validation_passed"] = all(validation.values())
@@ -7898,6 +8193,7 @@ __all__ = [
     "cross_resolution_boundary_symplectic_polarization_audit",
     "nested_attachment_lift_consistency_audit",
     "on_shell_boundary_reaction_audit",
+    "child_history_bvp_bordered_operator_audit",
     "event_to_child_on_shell_calderon_interface",
     "general_n_galerkin_transfer_certificate",
     "general_n_complete_child_reconstruction_statement",

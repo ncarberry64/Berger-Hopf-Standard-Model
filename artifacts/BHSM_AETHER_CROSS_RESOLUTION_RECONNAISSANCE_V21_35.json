@@ -3661,6 +3661,94 @@
       "whole_child_variable_count": 42
     },
     "active_dependency": "DERIVE_THE_ON_SHELL_CHILD_EULER_BVP_CALDERON_TRACE_FROM_THE_SAME_ACTION_SO_VERTICAL_INTERIOR_VARIATIONS_VANISH_AND_REEVALUATE_THE_N3_N4_N5_BOUNDARY_MOMENTUM_FLUX_RELATION",
+    "child_history_bvp_bordered_operator_audit": {
+      "FULL_BHSM_COMPLETE": false,
+      "classification": "SAME_ACTION_LORENTZIAN_CHILD_HISTORY_BVP_BORDERED_OPERATOR_DERIVED_AND_FINITE_N_INVERTIBLE;_EVENT_CHILD_REACTION_MATCHING_AND_UNIFORM_GENERAL_N_BOUND_OPEN",
+      "equations": {
+        "Euler_reaction": "L_vv*a+L_vm*m_dot-B^star*Lambda=L_q-L_vq*v-Gamma1_child",
+        "boundary_history": "B*a=b_ddot-D2b[v,v]",
+        "constraint_tangency": "L_mv*a+L_mm*m_dot=-L_mq*v"
+      },
+      "exact_attachment_chart": {
+        "derivative": "B=D_q(q_W,x_D)",
+        "q_W": "scale+u_L-(1/2)log(cosh(2v_L))",
+        "x_D": "scale-q_W"
+      },
+      "existing_N3_N4_N5_F_rows_or_persistence_changed": false,
+      "finite_rank_implies_uniform_general_N_inf_sup": false,
+      "general_N_bordered_dimension": "5N+3",
+      "new_equations_constraints_or_acceptance_gates": false,
+      "probe_boundary_acceleration_is_a_physical_junction_solution": false,
+      "probe_role": "USES_THE_UNCONSTRAINED_EULER_DIRAC_BOUNDARY_ACCELERATION_ONLY_TO_TEST_THE_BORDERED_OPERATOR;_REACTION_VALUES_ARE_NOT_PROMOTED_AS_EVENT_CHILD_MATCHES",
+      "required_next": "EVALUATE_THE_EVENT_SIDE_REACTION_FROM_EACH_ACCEPTED_EVENT_HISTORY_AND_SOLVE_THE_EXISTING_TWO_SIDED_REACTION_MATCH;_THEN_TEST_THE_REACTION_CALDERON_GRAPH_UNDER_NESTED_SPECTRAL_INJECTION",
+      "rows": [
+        {
+          "N": 3,
+          "attachment_chart_derivative_error": 0.0,
+          "bordered_dimension": 18,
+          "bordered_rank": 18,
+          "condition_number": 6874504.489754269,
+          "coordinate_dimension": 10,
+          "expected_bordered_dimension_5N_plus_3": 18,
+          "maximum_Euler_reaction_residual": 7.189e-12,
+          "maximum_boundary_acceleration_residual": 2.5e-14,
+          "maximum_constraint_tangent_residual": 2.615e-12,
+          "multiplier_dimension": 6,
+          "probe_boundary_reaction": [
+            -3.049149989021602,
+            -0.361735428785337
+          ],
+          "probe_boundary_reaction_norm": 3.070532230084705,
+          "smallest_singular_value": 0.000345681148275
+        },
+        {
+          "N": 4,
+          "attachment_chart_derivative_error": 0.0,
+          "bordered_dimension": 23,
+          "bordered_rank": 23,
+          "condition_number": 184590906.50923467,
+          "coordinate_dimension": 13,
+          "expected_bordered_dimension_5N_plus_3": 23,
+          "maximum_Euler_reaction_residual": 3.5061e-10,
+          "maximum_boundary_acceleration_residual": 5.002e-12,
+          "maximum_constraint_tangent_residual": 2.05546e-10,
+          "multiplier_dimension": 8,
+          "probe_boundary_reaction": [
+            -712.9483335082966,
+            14.013732643394587
+          ],
+          "probe_boundary_reaction_norm": 713.0860473707629,
+          "smallest_singular_value": 2.595817711e-06
+        },
+        {
+          "N": 5,
+          "attachment_chart_derivative_error": 0.0,
+          "bordered_dimension": 28,
+          "bordered_rank": 28,
+          "condition_number": 56761838.61371557,
+          "coordinate_dimension": 16,
+          "expected_bordered_dimension_5N_plus_3": 28,
+          "maximum_Euler_reaction_residual": 2.9521e-11,
+          "maximum_boundary_acceleration_residual": 1.762e-12,
+          "maximum_constraint_tangent_residual": 1.8645e-11,
+          "multiplier_dimension": 10,
+          "probe_boundary_reaction": [
+            -4.219027368621818,
+            -0.683225747602506
+          ],
+          "probe_boundary_reaction_norm": 4.273989864209664,
+          "smallest_singular_value": 1.2279989992e-05
+        }
+      ],
+      "unknowns": "(a_(3N+1),m_dot_(2N),Lambda_boundary_2)",
+      "validation": {
+        "all_equation_blocks_replay": true,
+        "all_finite_N_bordered_operators_full_rank": true,
+        "exact_attachment_chart_differentiates_to_existing_boundary_rows": true,
+        "general_N_dimension_law_holds_at_N3_N4_N5": true
+      },
+      "validation_passed": true
+    },
     "cross_resolution_boundary_symplectic_polarization_audit": {
       "FULL_BHSM_COMPLETE": false,
       "N3_may_be_declared_underresolved_from_this_alone": false,
@@ -4168,6 +4256,94 @@
     },
     "general_N_complete_child_reconstruction_and_convergence_statement": {
       "FULL_BHSM_COMPLETE": false,
+      "child_history_bvp_bordered_operator_audit": {
+        "FULL_BHSM_COMPLETE": false,
+        "classification": "SAME_ACTION_LORENTZIAN_CHILD_HISTORY_BVP_BORDERED_OPERATOR_DERIVED_AND_FINITE_N_INVERTIBLE;_EVENT_CHILD_REACTION_MATCHING_AND_UNIFORM_GENERAL_N_BOUND_OPEN",
+        "equations": {
+          "Euler_reaction": "L_vv*a+L_vm*m_dot-B^star*Lambda=L_q-L_vq*v-Gamma1_child",
+          "boundary_history": "B*a=b_ddot-D2b[v,v]",
+          "constraint_tangency": "L_mv*a+L_mm*m_dot=-L_mq*v"
+        },
+        "exact_attachment_chart": {
+          "derivative": "B=D_q(q_W,x_D)",
+          "q_W": "scale+u_L-(1/2)log(cosh(2v_L))",
+          "x_D": "scale-q_W"
+        },
+        "existing_N3_N4_N5_F_rows_or_persistence_changed": false,
+        "finite_rank_implies_uniform_general_N_inf_sup": false,
+        "general_N_bordered_dimension": "5N+3",
+        "new_equations_constraints_or_acceptance_gates": false,
+        "probe_boundary_acceleration_is_a_physical_junction_solution": false,
+        "probe_role": "USES_THE_UNCONSTRAINED_EULER_DIRAC_BOUNDARY_ACCELERATION_ONLY_TO_TEST_THE_BORDERED_OPERATOR;_REACTION_VALUES_ARE_NOT_PROMOTED_AS_EVENT_CHILD_MATCHES",
+        "required_next": "EVALUATE_THE_EVENT_SIDE_REACTION_FROM_EACH_ACCEPTED_EVENT_HISTORY_AND_SOLVE_THE_EXISTING_TWO_SIDED_REACTION_MATCH;_THEN_TEST_THE_REACTION_CALDERON_GRAPH_UNDER_NESTED_SPECTRAL_INJECTION",
+        "rows": [
+          {
+            "N": 3,
+            "attachment_chart_derivative_error": 0.0,
+            "bordered_dimension": 18,
+            "bordered_rank": 18,
+            "condition_number": 6874504.489754269,
+            "coordinate_dimension": 10,
+            "expected_bordered_dimension_5N_plus_3": 18,
+            "maximum_Euler_reaction_residual": 7.189e-12,
+            "maximum_boundary_acceleration_residual": 2.5e-14,
+            "maximum_constraint_tangent_residual": 2.615e-12,
+            "multiplier_dimension": 6,
+            "probe_boundary_reaction": [
+              -3.049149989021602,
+              -0.361735428785337
+            ],
+            "probe_boundary_reaction_norm": 3.070532230084705,
+            "smallest_singular_value": 0.000345681148275
+          },
+          {
+            "N": 4,
+            "attachment_chart_derivative_error": 0.0,
+            "bordered_dimension": 23,
+            "bordered_rank": 23,
+            "condition_number": 184590906.50923467,
+            "coordinate_dimension": 13,
+            "expected_bordered_dimension_5N_plus_3": 23,
+            "maximum_Euler_reaction_residual": 3.5061e-10,
+            "maximum_boundary_acceleration_residual": 5.002e-12,
+            "maximum_constraint_tangent_residual": 2.05546e-10,
+            "multiplier_dimension": 8,
+            "probe_boundary_reaction": [
+              -712.9483335082966,
+              14.013732643394587
+            ],
+            "probe_boundary_reaction_norm": 713.0860473707629,
+            "smallest_singular_value": 2.595817711e-06
+          },
+          {
+            "N": 5,
+            "attachment_chart_derivative_error": 0.0,
+            "bordered_dimension": 28,
+            "bordered_rank": 28,
+            "condition_number": 56761838.61371557,
+            "coordinate_dimension": 16,
+            "expected_bordered_dimension_5N_plus_3": 28,
+            "maximum_Euler_reaction_residual": 2.9521e-11,
+            "maximum_boundary_acceleration_residual": 1.762e-12,
+            "maximum_constraint_tangent_residual": 1.8645e-11,
+            "multiplier_dimension": 10,
+            "probe_boundary_reaction": [
+              -4.219027368621818,
+              -0.683225747602506
+            ],
+            "probe_boundary_reaction_norm": 4.273989864209664,
+            "smallest_singular_value": 1.2279989992e-05
+          }
+        ],
+        "unknowns": "(a_(3N+1),m_dot_(2N),Lambda_boundary_2)",
+        "validation": {
+          "all_equation_blocks_replay": true,
+          "all_finite_N_bordered_operators_full_rank": true,
+          "exact_attachment_chart_differentiates_to_existing_boundary_rows": true,
+          "general_N_dimension_law_holds_at_N3_N4_N5": true
+        },
+        "validation_passed": true
+      },
       "classification": "GENERAL_N_LOCAL_RECONSTRUCTION_ARCHITECTURE_DERIVED;_UNIFORM_CROSS_RESOLUTION_CONVERGENCE_ESTIMATE_OPEN",
       "cross_resolution_boundary_symplectic_polarization_audit": {
         "FULL_BHSM_COMPLETE": false,
@@ -6297,6 +6473,7 @@
     "all_constraint_fibers_full_row_rank": true,
     "all_independent_constraint_projections_closed": true,
     "breadth_first_closure_network_validated": true,
+    "child_history_bvp_bordered_operator_audit_validated": true,
     "cross_resolution_boundary_symplectic_polarization_audit_validated": true,
     "cross_resolution_principal_symbol_frame_audit_validated": true,
     "cross_resolution_strong_constraint_infsup_audit_validated": true,
