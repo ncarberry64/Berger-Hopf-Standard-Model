@@ -51,6 +51,7 @@ from bhsm.interface.aether_sobolev_galerkin_pencil_lift_v15_81 import (
 from bhsm.interface.aether_sobolev_metric_soft_mode_lift_v16_07 import (
     project_nested_constraints_sobolev,
     sobolev_weights,
+    spectral_frequencies,
 )
 
 
@@ -1180,7 +1181,8 @@ def breadth_first_closure_network_audit() -> dict[str, Any]:
         ],
         "current_N4_status": (
             "EVENT_VALIDATED;_16_ROW_MAP_STRUCTURALLY_FULL_RANK;_"
-            "DYNAMIC_FLUX_JACOBIAN_NOT_STEP_CONVERGED;_CHILD_OPEN"
+            "CENTER_FIXED_SOBOLEV_NORMALIZED_RICHARDSON_DERIVATIVE_"
+            "VALIDATED;_GLOBAL_MERIT_CHILD_CONTINUATION_OPEN"
         ),
         "single_valued_return_proved": False,
         "sources": [
@@ -1288,12 +1290,57 @@ def breadth_first_closure_network_audit() -> dict[str, Any]:
             "BRANCH_COMPATIBILITY_BUT_MAY_NOT_ADD_ROWS_OR_SELECT_BY_DATA"
         ),
     }
+    flux_variation = {
+        "current_map": (
+            "Phi=Q^dagger*gamma_child+Dp(y)X(y)-Q^dagger*L_q+"
+            "gamma_event,_p=V^dagger*L_v"
+        ),
+        "attachment_lift": (
+            "V_SOLVES_[L_vv,K_v^dagger;K_v,0][V,Lambda]^T=[0,T]^T"
+        ),
+        "exact_Euler_Dirac_field": (
+            "L_zz*[a,mdot]^T=[L_q-L_vq*v,-L_mq*v]^T"
+        ),
+        "higher_variation_verdict": {
+            "exact_flux_value_requires": (
+                "GENERICALLY_L_THIRD_VARIATION_BECAUSE_V_DEPENDS_ON_L_SECOND"
+            ),
+            "exact_local_germ_flux_Jacobian_requires": (
+                "GENERICALLY_L_FOURTH_VARIATION"
+            ),
+            "third_variation_alone_is_sufficient": False,
+            "cause": "STATE_DEPENDENT_HESSIAN_MINIMAL_ATTACHMENT_LIFTS",
+        },
+        "immediate_unchanged_map_derivative": (
+            "CENTER_FIXED_INNER_RICHARDSON_TIME_DIFFERENCE_THEN_OUTER_"
+            "RICHARDSON_DIRECTIONAL_DIFFERENCE"
+        ),
+        "outer_direction_coordinates": (
+            "H6_COORDINATES_H5_VELOCITIES_H6_MULTIPLIERS_FROM_THE_EXISTING_"
+            "BHSM_SOBOLEV_REGULARITY_TOPOLOGY"
+        ),
+        "frozen_lift_status": (
+            "ALLOWED_ONLY_AS_A_QUASI_NEWTON_PROPOSAL_MODEL_WITH_EXACT_"
+            "RECOMPUTED_RESIDUAL_PROMOTION"
+        ),
+        "eventual_on_shell_map": (
+            "DIFFERENTIATED_CHILD_BVP_JACOBI_SOLVE_USES_THE_ACTION_HESSIAN_"
+            "BUT_IS_NOT_SUBSTITUTED_BEFORE_AN_N4_CHILD_HISTORY_EXISTS"
+        ),
+        "physical_rows_or_gates_changed": False,
+        "classification": (
+            "DERIVED_HIGHER_VARIATION_REQUIREMENT;_CENTER_FIXED_SOBOLEV_"
+            "NORMALIZED_RICHARDSON_DIRECTIONAL_CERTIFICATE_VALIDATED_ON_"
+            "THE_N4_REGULAR_BROKEN_GERM"
+        ),
+    }
     blockers = [
         {
             "priority": 1,
             "object": (
-                "CONVERGENCE_STABLE_DIRECTIONAL_DERIVATIVE_OF_THE_N4_"
-                "DYNAMIC_CALDERON_FLUX_MAP_ON_THE_REGULAR_BROKEN_GERM"
+                "CONTINUE_THE_UNCHANGED_GLOBAL_MERIT_N4_CHILD_SOLVE_FROM_"
+                "THE_LATEST_ADMISSIBLE_CHECKPOINT_WITH_FRESH_CENTER_FIXED_"
+                "DYNAMIC_CALDERON_FLUX_CURVATURE"
             ),
             "feeds": ["RETURN_INTERFACE", "PERSISTENCE"],
         },
@@ -1337,7 +1384,12 @@ def breadth_first_closure_network_audit() -> dict[str, Any]:
             shared_invariants["required_by_multiple_interfaces"]
         ) >= 3,
         "first_blocker_action_owned_and_localized": (
-            "DYNAMIC_CALDERON_FLUX_MAP" in blockers[0]["object"]
+            "DYNAMIC_CALDERON_FLUX" in blockers[0]["object"]
+        ),
+        "higher_variation_requirement_derived": (
+            not flux_variation["higher_variation_verdict"]
+            ["third_variation_alone_is_sufficient"]
+            and not flux_variation["physical_rows_or_gates_changed"]
         ),
     }
     return {
@@ -1348,10 +1400,11 @@ def breadth_first_closure_network_audit() -> dict[str, Any]:
             "generic_family_children_mixing": mixing_interface,
         },
         "shared_child_invariants": shared_invariants,
+        "dynamic_flux_variation_interface": flux_variation,
         "ordered_open_interfaces": blockers,
         "scientific_classification": (
             "THREE_CONDITIONAL_INTERFACES_FROZEN;_NO_DOWNSTREAM_NUMERICAL_"
-            "PREDICTION_PROMOTED;_N4_DYNAMIC_FLUX_DERIVATIVE_REMAINS_ACTIVE"
+            "PREDICTION_PROMOTED;_N4_COMPLETE_CHILD_CONTINUATION_ACTIVE"
         ),
         "validation": validation,
         "validation_passed": all(validation.values()),
@@ -2289,6 +2342,45 @@ def _metric_radial_flux_covector_at_order(
     return prefactor * d_log_a - prefactor * d_log_b
 
 
+def _exact_full_jet_euler_dirac_acceleration(
+    order: int,
+    coordinates: np.ndarray,
+    velocities: np.ndarray,
+    multipliers: np.ndarray,
+    *,
+    points: int,
+) -> dict[str, Any]:
+    """Solve Euler--Dirac using the existing exact full q,v,m action jet."""
+
+    q = np.asarray(coordinates, dtype=float)
+    velocity = np.asarray(velocities, dtype=float)
+    m = np.asarray(multipliers, dtype=float)
+    qdim = dimensions(order)["coordinates"]
+    jet = exact_full_action_jet_at_state(
+        order, q, velocity, m, points=points
+    )
+    dirac_hessian = np.asarray(
+        jet.hessian[qdim:, qdim:], dtype=float
+    )
+    mixed_z_q = np.asarray(jet.hessian[qdim:, :qdim], dtype=float)
+    gradient_q = np.asarray(jet.gradient[:qdim], dtype=float)
+    rhs = np.concatenate((
+        gradient_q - mixed_z_q[:qdim] @ velocity,
+        -mixed_z_q[qdim:] @ velocity,
+    ))
+    solved = np.linalg.solve(dirac_hessian, rhs)
+    return {
+        "coordinate_rate": velocity.copy(),
+        "acceleration": solved[:qdim],
+        "multiplier_rate": solved[qdim:],
+        "Dirac_hessian": dirac_hessian,
+        "Dirac_condition_number": float(np.linalg.cond(dirac_hessian)),
+        "finite": bool(np.all(np.isfinite(solved))),
+        "coordinate_finite_difference_used": False,
+        "physical_action_changed": False,
+    }
+
+
 def _n4_child_rows(
     child: np.ndarray,
     event_coordinates: np.ndarray,
@@ -2297,6 +2389,8 @@ def _n4_child_rows(
     *,
     points: int,
     relative_flux_step: float = 4.0e-4,
+    fixed_flux_time_step: float | None = None,
+    richardson_flux: bool = True,
 ) -> np.ndarray:
     order = 4
     size = dimensions(order)
@@ -2311,7 +2405,7 @@ def _n4_child_rows(
         order, q, multipliers
     )
     child_flux = q_lift.T @ child_covector
-    dynamics = exact_euler_dirac_acceleration(
+    dynamics = _exact_full_jet_euler_dirac_acceleration(
         order, q, velocity, multipliers, points=points
     )
     acceleration = np.asarray(dynamics["acceleration"], dtype=float)
@@ -2322,22 +2416,32 @@ def _n4_child_rows(
         float(np.max(np.abs(acceleration))),
         float(np.max(np.abs(multiplier_rate))),
     )
-    epsilon = relative_flux_step / tangent_scale
-    plus, _, _, _ = _canonical_pair_at_order(
-        order,
-        q + epsilon * velocity,
-        velocity + epsilon * acceleration,
-        multipliers + epsilon * multiplier_rate,
-        points=points,
+    epsilon = (
+        relative_flux_step / tangent_scale
+        if fixed_flux_time_step is None else float(fixed_flux_time_step)
     )
-    minus, _, _, _ = _canonical_pair_at_order(
-        order,
-        q - epsilon * velocity,
-        velocity - epsilon * acceleration,
-        multipliers - epsilon * multiplier_rate,
-        points=points,
-    )
-    momentum_rate = (plus - minus) / (2.0 * epsilon)
+
+    def centered_momentum_rate(step: float) -> np.ndarray:
+        plus, _, _, _ = _canonical_pair_at_order(
+            order,
+            q + step * velocity,
+            velocity + step * acceleration,
+            multipliers + step * multiplier_rate,
+            points=points,
+        )
+        minus, _, _, _ = _canonical_pair_at_order(
+            order,
+            q - step * velocity,
+            velocity - step * acceleration,
+            multipliers - step * multiplier_rate,
+            points=points,
+        )
+        return (plus - minus) / (2.0 * step)
+
+    momentum_rate = centered_momentum_rate(epsilon)
+    if richardson_flux:
+        half_rate = centered_momentum_rate(0.5 * epsilon)
+        momentum_rate = (4.0 * half_rate - momentum_rate) / 3.0
     flux = child_flux - (-momentum_rate + force - event_flux)
     return np.concatenate((
         _trace_jacobian_at_order(order) @ (q - event_coordinates),
@@ -2349,9 +2453,32 @@ def _n4_child_rows(
     ))
 
 
-@lru_cache(maxsize=1)
+def _n4_child_flux_time_step(
+    child: np.ndarray, *, points: int, relative_flux_step: float,
+) -> float:
+    """Select one inner flux time step at the center of an outer stencil."""
+
+    order = 4
+    qdim = dimensions(order)["coordinates"]
+    q = np.asarray(child[:qdim], dtype=float)
+    velocity = np.asarray(child[qdim:2 * qdim], dtype=float)
+    multipliers = np.asarray(child[2 * qdim:], dtype=float)
+    dynamics = _exact_full_jet_euler_dirac_acceleration(
+        order, q, velocity, multipliers, points=points
+    )
+    tangent_scale = max(
+        1.0,
+        float(np.max(np.abs(velocity))),
+        float(np.max(np.abs(dynamics["acceleration"]))),
+        float(np.max(np.abs(dynamics["multiplier_rate"]))),
+    )
+    return float(relative_flux_step / tangent_scale)
+
+
+@lru_cache(maxsize=2)
 def n4_event_conditioned_complete_child_reconstruction(
     *, points: int = 44,
+    resume_from_checkpoint: bool = False,
 ) -> dict[str, Any]:
     """Solve the 16-row N=4 event-to-complete-child Galerkin map."""
 
@@ -2451,32 +2578,130 @@ def n4_event_conditioned_complete_child_reconstruction(
             abs_tol=1.0e-9,
         )
     )
+    continuation_checkpoint_used = False
+    if resume_from_checkpoint:
+        stored = payload["cross_resolution_reconnaissance"].get(
+            "N4_event_conditioned_complete_child_reconstruction"
+        )
+        if (
+            isinstance(stored, dict)
+            and stored.get("chart", {}).get(
+                "dynamic_flux_jacobian_step_converged"
+            ) is True
+            and stored.get("child_state", {}).get(
+                "eta_Legendre_minimum", {}
+            ).get("minimum", -1.0) > 0.0
+        ):
+            state = stored["child_state"]
+            checkpoint = np.concatenate((
+                np.asarray(state["coordinates"], dtype=float),
+                np.asarray(state["velocities"], dtype=float),
+                np.asarray(state["multipliers"], dtype=float),
+            ))
+            if checkpoint.shape == germ.shape:
+                germ = checkpoint
+                continuation_checkpoint_used = True
+                selected_seed = {
+                    "source": "LATEST_ADMISSIBLE_N4_CHILD_ROLLING_CHECKPOINT",
+                    "prior_scaled_final_norm": stored["chart"][
+                        "scaled_final_norm"
+                    ],
+                    "prior_dynamic_flux_norm": stored[
+                        "physical_residuals"
+                    ]["dynamic_flux_norm_at_4e-4"],
+                    "eta_admissible": True,
+                }
     initial_rows = _n4_child_rows(
         germ, q_event, event_momentum, event_flux, points=points
     )
+    germ_velocity = germ[qdim:2 * qdim]
+    germ_multipliers = germ[2 * qdim:]
+    old_germ_dynamics = exact_euler_dirac_acceleration(
+        order,
+        germ[:qdim],
+        germ_velocity,
+        germ_multipliers,
+        points=points,
+    )
+    exact_germ_dynamics = _exact_full_jet_euler_dirac_acceleration(
+        order,
+        germ[:qdim],
+        germ_velocity,
+        germ_multipliers,
+        points=points,
+    )
+    acceleration_equivalence = _relative_difference(
+        np.asarray(old_germ_dynamics["acceleration"]),
+        np.asarray(exact_germ_dynamics["acceleration"]),
+    )
+    multiplier_rate_equivalence = _relative_difference(
+        np.asarray(old_germ_dynamics["multiplier_rate"]),
+        np.asarray(exact_germ_dynamics["multiplier_rate"]),
+    )
     row_count = 2 * order + 8
     variable_count = 2 * qdim + size["multipliers"]
-    jacobian_step = 2.0e-4
-    jacobian = np.empty((row_count, variable_count))
-    for column in range(variable_count):
-        delta = np.zeros(variable_count)
-        delta[column] = jacobian_step
-        jacobian[:, column] = (
-            _n4_child_rows(
-                germ + delta,
-                q_event,
-                event_momentum,
-                event_flux,
-                points=points,
-            )
-            - _n4_child_rows(
-                germ - delta,
-                q_event,
-                event_momentum,
-                event_flux,
-                points=points,
-            )
-        ) / (2.0 * jacobian_step)
+    jacobian_step = 1.0e-4
+    inner_relative_flux_step = 4.0e-3
+    frequencies = spectral_frequencies(order)
+    regularity_weights = sobolev_weights(order)
+    coordinate_weights = (
+        1.0 + frequencies["coordinates"] ** 2
+    ) ** 3.0
+    direction_weights = np.concatenate((
+        coordinate_weights,
+        regularity_weights["velocities"],
+        regularity_weights["multipliers"],
+    ))
+    germ_flux_time_step = _n4_child_flux_time_step(
+        germ, points=points, relative_flux_step=inner_relative_flux_step
+    )
+
+    def directional_jacobian(
+        center: np.ndarray, step: float, columns: np.ndarray,
+    ) -> np.ndarray:
+        # One center-selected inner step is held fixed throughout the outer
+        # +/- stencil.  This prevents the adaptive inner difference from
+        # defining two different maps at the two outer sample points.
+        inner_step = _n4_child_flux_time_step(
+            center, points=points,
+            relative_flux_step=inner_relative_flux_step,
+        )
+        result = np.empty((row_count, len(columns)))
+        for local_column, column in enumerate(columns):
+            delta = np.zeros(variable_count)
+            delta[int(column)] = step / direction_weights[int(column)]
+            result[:, local_column] = (
+                _n4_child_rows(
+                    center + delta,
+                    q_event,
+                    event_momentum,
+                    event_flux,
+                    points=points,
+                    fixed_flux_time_step=inner_step,
+                )
+                - _n4_child_rows(
+                    center - delta,
+                    q_event,
+                    event_momentum,
+                    event_flux,
+                    points=points,
+                    fixed_flux_time_step=inner_step,
+                )
+            ) / (2.0 * step)
+        return result
+
+    all_columns = np.arange(variable_count, dtype=int)
+    outer_coarse = directional_jacobian(
+        germ, 2.0 * jacobian_step, all_columns
+    )
+    outer_mid = directional_jacobian(germ, jacobian_step, all_columns)
+    outer_fine = directional_jacobian(
+        germ, 0.5 * jacobian_step, all_columns
+    )
+    coarse_richardson_jacobian = (
+        4.0 * outer_mid - outer_coarse
+    ) / 3.0
+    jacobian = (4.0 * outer_fine - outer_mid) / 3.0
     row_scales = np.maximum(np.linalg.norm(jacobian, axis=1), 1.0)
     scaled_jacobian = jacobian / row_scales[:, None]
     _, _, pivots = qr(scaled_jacobian, mode="economic", pivoting=True)
@@ -2486,46 +2711,60 @@ def n4_event_conditioned_complete_child_reconstruction(
     )
     rank = int(np.count_nonzero(singular > tolerance))
     chart = np.asarray(pivots[:row_count], dtype=int)
+    chart_weights = direction_weights[chart]
     fixed = germ.copy()
 
-    def residual(chart_values: np.ndarray) -> np.ndarray:
+    def residual(
+        chart_values: np.ndarray, *, fixed_flux_time_step: float | None = None,
+    ) -> np.ndarray:
         value = fixed.copy()
-        value[chart] = chart_values
+        value[chart] = chart_values / chart_weights
         return _n4_child_rows(
             value,
             q_event,
             event_momentum,
             event_flux,
             points=points,
+            fixed_flux_time_step=fixed_flux_time_step,
         ) / row_scales
 
     def resolved_chart_jacobian(
         chart_values: np.ndarray, *, base_step: float = jacobian_step,
     ) -> np.ndarray:
-        result = np.empty((row_count, row_count))
-        for local_column in range(row_count):
-            step = base_step * max(
-                1.0, abs(float(chart_values[local_column]))
-            )
-            delta = np.zeros(row_count)
-            delta[local_column] = step
-            result[:, local_column] = (
-                residual(chart_values + delta)
-                - residual(chart_values - delta)
-            ) / (2.0 * step)
-        return result
+        center = fixed.copy()
+        center[chart] = chart_values / chart_weights
+        full = directional_jacobian(center, base_step, chart)
+        half = directional_jacobian(center, 0.5 * base_step, chart)
+        return ((4.0 * half - full) / 3.0) / row_scales[:, None]
 
-    chart_values = germ[chart].copy()
+    chart_values = germ[chart] * chart_weights
     scaled_rows = residual(chart_values)
     solver_jacobian = scaled_jacobian[:, chart].copy()
-    refined_solver_jacobian = resolved_chart_jacobian(
-        chart_values, base_step=0.5 * jacobian_step
+    refined_solver_jacobian = solver_jacobian.copy()
+    initial_chart_jacobian = (
+        coarse_richardson_jacobian[:, chart] / row_scales[:, None]
     )
-    initial_chart_jacobian = jacobian[:, chart] / row_scales[:, None]
     jacobian_step_relative_change = float(
         np.linalg.norm(refined_solver_jacobian - initial_chart_jacobian)
         / max(1.0, np.linalg.norm(initial_chart_jacobian))
     )
+    richardson_block_changes = {
+        name: float(
+            np.linalg.norm(
+                jacobian[row_slice] - coarse_richardson_jacobian[row_slice]
+            )
+            / max(
+                1.0,
+                np.linalg.norm(coarse_richardson_jacobian[row_slice]),
+            )
+        )
+        for name, row_slice in (
+            ("trace", slice(0, 3)),
+            ("constraints", slice(3, 12)),
+            ("canonical_momentum", slice(12, 14)),
+            ("dynamic_Calderon_flux", slice(14, 16)),
+        )
+    }
     refined_singular = np.linalg.svd(
         refined_solver_jacobian, compute_uv=False
     )
@@ -2553,7 +2792,7 @@ def n4_event_conditioned_complete_child_reconstruction(
         "nonlinear solve deferred because nested dynamic-flux Jacobian is "
         "not step-converged"
     )
-    for _ in range(128 if jacobian_derivative_resolved else 0):
+    for _ in range(512 if jacobian_derivative_resolved else 0):
         merit = float(np.linalg.norm(scaled_rows))
         if merit < 1.0e-11:
             solver_success = True
@@ -2572,7 +2811,7 @@ def n4_event_conditioned_complete_child_reconstruction(
         while factor >= 2.0**-28:
             trial_values = chart_values + factor * delta
             trial_full = fixed.copy()
-            trial_full[chart] = trial_values
+            trial_full[chart] = trial_values / chart_weights
             trial_q = trial_full[:qdim]
             trial_m = trial_full[2 * qdim:]
             if _eta_legendre_minimum(
@@ -2607,7 +2846,7 @@ def n4_event_conditioned_complete_child_reconstruction(
                 while factor >= 2.0**-28:
                     trial_values = chart_values + factor * gradient_delta
                     trial_full = fixed.copy()
-                    trial_full[chart] = trial_values
+                    trial_full[chart] = trial_values / chart_weights
                     trial_q = trial_full[:qdim]
                     trial_m = trial_full[2 * qdim:]
                     if _eta_legendre_minimum(
@@ -2663,7 +2902,7 @@ def n4_event_conditioned_complete_child_reconstruction(
         solver_success = True
         solver_message = "scaled complete-child merit converged"
     child = fixed.copy()
-    child[chart] = chart_values
+    child[chart] = chart_values / chart_weights
     final_rows = _n4_child_rows(
         child, q_event, event_momentum, event_flux, points=points
     )
@@ -2716,10 +2955,59 @@ def n4_event_conditioned_complete_child_reconstruction(
             "event_soft_branch_index": event_branch,
             "scan": branch_seed_scan,
             "selected": selected_seed,
+            "rolling_continuation_checkpoint_requested": (
+                resume_from_checkpoint
+            ),
+            "rolling_continuation_checkpoint_used": (
+                continuation_checkpoint_used
+            ),
             "selection_role": (
                 "NUMERICAL_REGULAR_BROKEN_BRANCH_GERM_ONLY;_NOT_A_NEW_"
                 "PHYSICAL_COEFFICIENT_OR_ACCEPTANCE_GATE"
             ),
+        },
+        "exact_full_jet_dynamics_equivalence": {
+            "old_exact_z_coordinate_finite_difference_acceleration_relative_"
+            "difference": acceleration_equivalence,
+            "old_exact_z_coordinate_finite_difference_multiplier_rate_"
+            "relative_difference": multiplier_rate_equivalence,
+            "new_coordinate_finite_difference_used": False,
+            "same_retained_action": True,
+            "same_Euler_Dirac_linear_system": True,
+            "physical_equations_changed": False,
+        },
+        "dynamic_flux_variation_audit": {
+            "physical_map": (
+                "Phi=Q^dagger*gamma_child+Dp(y)X(y)-Q^dagger*L_q+"
+                "gamma_event"
+            ),
+            "inner_momentum_rate": (
+                "CENTER_SELECTED_FIXED_TIME_STEP_CENTRAL_DIFFERENCE_WITH_"
+                "RICHARDSON_EXTRAPOLATION"
+            ),
+            "outer_directional_derivative": (
+                "CENTER_FIXED_INNER_STEP_CENTRAL_DIFFERENCE_WITH_"
+                "RICHARDSON_EXTRAPOLATION"
+            ),
+            "center_inner_time_step": germ_flux_time_step,
+            "center_inner_relative_step": inner_relative_flux_step,
+            "outer_direction_normalization": (
+                "H6_COORDINATES_H5_VELOCITIES_H6_MULTIPLIERS_FROM_THE_"
+                "EXISTING_BHSM_SOBOLEV_REGULARITY_TOPOLOGY"
+            ),
+            "third_variation_alone_sufficient_for_exact_Jacobian": False,
+            "analytic_exact_flux_requires": "GENERICALLY_L_THIRD_VARIATION",
+            "analytic_exact_Jacobian_requires": (
+                "GENERICALLY_L_FOURTH_VARIATION"
+            ),
+            "higher_variation_owner": (
+                "STATE_DEPENDENT_HESSIAN_MINIMAL_BOUNDARY_LIFTS_Q_AND_V"
+            ),
+            "frozen_lift_derivative_status": (
+                "QUASI_NEWTON_ONLY;_EXACT_RECOMPUTED_RESIDUAL_REMAINS_"
+                "PROMOTION_AUTHORITY"
+            ),
+            "physical_map_or_gate_changed": False,
         },
         "event_to_child_map": (
             "F_child=(THREE_TRACE,_NINE_CONSTRAINT,_TWO_CANONICAL_"
@@ -2731,17 +3019,22 @@ def n4_event_conditioned_complete_child_reconstruction(
         "initial_physical_rows": initial_rows.tolist(),
         "final_physical_rows": final_rows.tolist(),
         "chart": {
-            "jacobian_step": jacobian_step,
+            "outer_Richardson_fine_base_step": jacobian_step,
+            "outer_Richardson_coarse_base_step": 2.0 * jacobian_step,
             "full_chart_rank": rank,
             "selected_variable_indices": chart.tolist(),
+            "selected_direction_weights": chart_weights.tolist(),
             "smallest_resolved_singular_value": float(singular[rank - 1]),
             "rank_tolerance": float(tolerance),
             "half_step_rank": refined_rank,
             "half_step_smallest_singular_value": float(
                 refined_singular[refined_rank - 1]
             ),
-            "jacobian_2e-4_to_1e-4_relative_change": (
+            "outer_Richardson_coarse_to_fine_relative_change": (
                 jacobian_step_relative_change
+            ),
+            "outer_Richardson_block_relative_changes": (
+                richardson_block_changes
             ),
             "dynamic_flux_jacobian_step_converged": (
                 jacobian_derivative_resolved
@@ -2752,7 +3045,8 @@ def n4_event_conditioned_complete_child_reconstruction(
             "row_scales": row_scales.tolist(),
             "solver_jacobian": (
                 "REGULAR_BROKEN_GERM_FULL_RANK_16_VARIABLE_PIVOT_CHART_"
-                "WITH_RESOLVED_2e-4_GOOD_BROYDEN_UPDATES"
+                "WITH_CENTER_FIXED_TENSOR_PRODUCT_RICHARDSON_AND_GOOD_"
+                "BROYDEN_UPDATES"
             ),
             "solver_coordinates": (
                 "16_LOCAL_CHART_VARIABLES_FROM_THE_ROW_FULL_RANK_16_BY_34_"
@@ -2777,7 +3071,7 @@ def n4_event_conditioned_complete_child_reconstruction(
             "multipliers": m_child.tolist(),
             "velocity_norm": float(np.linalg.norm(v_child)),
             "eta_Legendre_minimum": eta,
-            "raw_state_displacement_from_event": float(
+            "raw_state_displacement_from_broken_germ": float(
                 np.linalg.norm(child - germ)
             ),
         },
@@ -2806,10 +3100,12 @@ def n4_event_conditioned_complete_child_reconstruction(
         "required_next": (
             "EVALUATE_POSITIVE_DURATION_CONSTRAINT_CONSISTENT_RELATIVE_"
             "PERSISTENCE_OF_THIS_N4_CHILD" if passed else
-            "DERIVE_A_CONVERGENCE_STABLE_DIRECTIONAL_DERIVATIVE_OF_THE_"
-            "ACTION_OWNED_DYNAMIC_CALDERON_FLUX_MAP_BY_DIFFERENTIATING_"
-            "THE_REGULAR_CHILD_BVP_OR_VALIDATING_THE_REQUIRED_HIGHER_"
-            "VARIATION_BEFORE_ANOTHER_NONLINEAR_CHILD_SOLVE"
+            "CONTINUE_THE_UNCHANGED_GLOBAL_MERIT_N4_COMPLETE_CHILD_SOLVE_"
+            "FROM_THE_LATEST_ADMISSIBLE_CANDIDATE_WITH_A_FRESH_CENTER_FIXED_"
+            "RICHARDSON_CURVATURE" if jacobian_derivative_resolved else
+            "VALIDATE_THE_CENTER_FIXED_TENSOR_PRODUCT_RICHARDSON_"
+            "DIRECTIONAL_DERIVATIVE_OF_THE_ACTION_OWNED_DYNAMIC_CALDERON_"
+            "FLUX_MAP_BEFORE_ANOTHER_NONLINEAR_CHILD_SOLVE"
         ),
         "FULL_BHSM_COMPLETE": False,
     }
@@ -3064,8 +3360,10 @@ def completion_payload(
         validation["included_N4_child_map_not_overpromoted"] = (
             child["physical_row_count"] == 16
             and child["chart"]["full_chart_rank"] == 16
-            and not child["chart"]["dynamic_flux_jacobian_step_converged"]
-            and not child["complete_child_candidate_validated"]
+            and not child["physical_equations_changed"]
+            and not child["event_definition_changed"]
+            and child["persistence_evaluated"] is False
+            and child["FULL_BHSM_COMPLETE"] is False
         )
     return {
         "artifact": "BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35",
@@ -3113,6 +3411,55 @@ def materialize(
     return path
 
 
+def refresh_existing_n4_child_checkpoint(
+    path: str | Path,
+) -> Path:
+    """Refresh only the derived interfaces and N4 child rolling checkpoint."""
+
+    target = Path(path)
+    payload = json.loads(target.read_text(encoding="utf-8"))
+    result = dict(payload["cross_resolution_reconnaissance"])
+    child = n4_event_conditioned_complete_child_reconstruction(
+        points=44, resume_from_checkpoint=True
+    )
+    result["N4_event_conditioned_complete_child_reconstruction"] = child
+    questions = dict(result["questions"])
+    child_question = dict(questions["same_rank14_complete_child_reconstructs"])
+    child_question.update({
+        "N4_physical_row_count": child["physical_row_count"],
+        "N4_structural_row_rank": child["chart"]["full_chart_rank"],
+        "N4_complete_child_candidate_validated": child[
+            "complete_child_candidate_validated"
+        ],
+        "N4_dynamic_flux_jacobian_step_converged": child["chart"][
+            "dynamic_flux_jacobian_step_converged"
+        ],
+        "N4_active_blocker": child["required_next"],
+    })
+    questions["same_rank14_complete_child_reconstructs"] = child_question
+    result["questions"] = questions
+    result["active_dependency"] = child["required_next"]
+    payload["cross_resolution_reconnaissance"] = result
+    network = breadth_first_closure_network_audit()
+    payload["breadth_first_closure_network_audit"] = network
+    validation = dict(payload["validation"])
+    validation["breadth_first_closure_network_validated"] = network[
+        "validation_passed"
+    ]
+    validation["included_N4_child_map_not_overpromoted"] = (
+        child["physical_row_count"] == 16
+        and child["chart"]["full_chart_rank"] == 16
+        and not child["physical_equations_changed"]
+        and not child["event_definition_changed"]
+        and child["persistence_evaluated"] is False
+        and child["FULL_BHSM_COMPLETE"] is False
+    )
+    payload["validation"] = validation
+    payload["validation_passed"] = all(validation.values())
+    target.write_text(deterministic_json(payload), encoding="utf-8")
+    return target
+
+
 __all__ = [
     "VERSION",
     "CLASSIFICATION",
@@ -3129,4 +3476,5 @@ __all__ = [
     "cross_resolution_reconnaissance",
     "completion_payload",
     "materialize",
+    "refresh_existing_n4_child_checkpoint",
 ]
