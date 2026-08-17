@@ -268,6 +268,19 @@ def test_latest_n4_child_checkpoint_uses_fixed_merit_full_space_proposal():
     ] is False
     assert reaction["validated_finite_N_F18_root_changed"] is False
     assert reaction["new_equations_constraints_or_acceptance_gates"] is False
+    bvp = payload["cross_resolution_reconnaissance"][
+        "child_history_bvp_bordered_operator_audit"
+    ]
+    assert bvp["validation_passed"] is True
+    assert [row["bordered_dimension"] for row in bvp["rows"]] == [18, 23, 28]
+    assert all(
+        row["bordered_rank"] == row["bordered_dimension"]
+        for row in bvp["rows"]
+    )
+    assert bvp["probe_boundary_acceleration_is_a_physical_junction_solution"] is False
+    assert bvp["finite_rank_implies_uniform_general_N_inf_sup"] is False
+    assert bvp["existing_N3_N4_N5_F_rows_or_persistence_changed"] is False
+    assert bvp["new_equations_constraints_or_acceptance_gates"] is False
 
 
 def test_general_n_reconstruction_statement_preserves_the_physical_map():
