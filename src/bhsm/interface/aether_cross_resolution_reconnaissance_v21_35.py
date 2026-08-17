@@ -1349,21 +1349,27 @@ def breadth_first_closure_network_audit() -> dict[str, Any]:
         {
             "priority": 1,
             "object": (
-                "GAUGE_FIXED_CONTINUUM_CHILD_JACOBI_BVP_COMPLEMENTING_"
-                "BOUNDARY_AND_INF_SUP_ESTIMATE"
+                "ACTION_OWNED_CONTINUUM_NORMAL_SUBMERSION_INF_SUP_AND_"
+                "SPECTRAL_CONSISTENCY_BOUND_FOR_THE_LOCAL_EVENT_CHILD_"
+                "RELATION"
             ),
             "feeds": ["GENERAL_N_RETURN_INTERFACE", "PERSISTENCE"],
         },
         {
             "priority": 2,
             "object": (
-                "ACTION_DERIVED_ENVIRONMENT_TO_RECONSTRUCTION_MAP_AND_"
-                "COMPOSITE_MINUS_PARENT_NOETHER_HAMILTONIAN"
+                "REGULAR_POLE_ATTACHMENT_MATERIAL_TRANSMISSION_BVP_AND_"
+                "ACTION_DERIVED_ENVIRONMENT_TO_RECONSTRUCTION_RETURN_MAP"
             ),
-            "feeds": ["RETURN_INTERFACE", "MASS_INTERFACE"],
+            "feeds": ["RETURN_INTERFACE", "SCALE_INTERFACE"],
         },
         {
             "priority": 3,
+            "object": "COMPOSITE_MINUS_PARENT_NOETHER_HAMILTONIAN",
+            "feeds": ["MASS_INTERFACE"],
+        },
+        {
+            "priority": 4,
             "object": (
                 "RETURNED_FAMILY_OPERATORS_AND_ACTION_DERIVED_COMMON_"
                 "DOMAIN_TRANSPORT"
@@ -1394,9 +1400,8 @@ def breadth_first_closure_network_audit() -> dict[str, Any]:
             shared_invariants["required_by_multiple_interfaces"]
         ) >= 3,
         "first_blocker_action_owned_and_localized": (
-            "CHILD_JACOBI_BVP" in blockers[0]["object"]
-            and "INF_SUP" in blockers[0]["object"]
-            and "COMPLEMENTING_BOUNDARY" in blockers[0]["object"]
+            "NORMAL_SUBMERSION_INF_SUP" in blockers[0]["object"]
+            and "SPECTRAL_CONSISTENCY" in blockers[0]["object"]
         ),
         "higher_variation_requirement_derived": (
             not flux_variation["higher_variation_verdict"]
@@ -5554,13 +5559,272 @@ def n5_complete_child_positive_duration_persistence(
     )
 
 
+def child_jacobi_radial_principal_symbol_audit() -> dict[str, Any]:
+    """Derive the radial principal form of the retained Galerkin action."""
+
+    lapse = 1.3
+    radial_scale = 0.9
+    warp_a = 1.1
+    warp_b = 1.2
+    shift = 0.2
+    K_value = 3.0 * lapse * warp_a**3 * warp_b**3 / radial_scale
+    J_value = radial_scale * warp_a**3 * warp_b**3 / (2.0 * lapse)
+
+    def matrix(beta: float) -> np.ndarray:
+        return np.asarray([
+            [10.0 * K_value - 84.0 * J_value * beta**2,
+             -12.0 * J_value * beta**2, 0.0, 2.0 * K_value,
+             -12.0 * J_value * beta],
+            [-12.0 * J_value * beta**2, 0.0, 0.0, 0.0, 0.0],
+            [0.0, 0.0, 12.0 * J_value * beta**2 - 2.0 * K_value,
+             0.0, 0.0],
+            [2.0 * K_value, 0.0, 0.0, 0.0, 0.0],
+            [-12.0 * J_value * beta, 0.0, 0.0, 0.0, 0.0],
+        ])
+
+    generic_matrix = matrix(shift)
+    beta_zero_matrix = matrix(0.0)
+    null_one = np.asarray([
+        0.0, K_value / (6.0 * J_value * shift**2), 0.0, 1.0, 0.0,
+    ])
+    null_two = np.asarray([0.0, -1.0 / shift, 0.0, 0.0, 1.0])
+    raw_v = 12.0 * J_value * shift**2 - 2.0 * K_value
+    reduced_v = -2.0 * K_value * (
+        1.0 - radial_scale**2 * shift**2 / lapse**2
+    )
+    validation = {
+        "generic_rank_three": int(np.linalg.matrix_rank(generic_matrix)) == 3,
+        "beta_zero_rank_three": int(
+            np.linalg.matrix_rank(beta_zero_matrix)
+        ) == 3,
+        "two_generic_null_directions_verified": bool(
+            np.linalg.norm(generic_matrix @ null_one) < 1.0e-10
+            and np.linalg.norm(generic_matrix @ null_two) < 1.0e-10
+        ),
+        "v_coefficient_reduction_verified": math.isclose(
+            raw_v, reduced_v, rel_tol=1.0e-14, abs_tol=1.0e-14
+        ),
+        "representative_point_subluminal": bool(
+            lapse**2 > radial_scale**2 * shift**2
+        ),
+        "canonical_physical_block_determinant_verified": math.isclose(
+            float(np.linalg.det(np.asarray([
+                [10.0 * K_value, 0.0, 2.0 * K_value],
+                [0.0, -2.0 * K_value, 0.0],
+                [2.0 * K_value, 0.0, 0.0],
+            ]))),
+            8.0 * K_value**3,
+            rel_tol=1.0e-14,
+            abs_tol=1.0e-12,
+        ),
+    }
+    return {
+        "classification": (
+            "RETAINED_ACTION_RADIAL_INTERIOR_PRINCIPAL_SYMBOL_DERIVED;_"
+            "BOUNDARY_COMPLEMENTING_AND_GLOBAL_INF_SUP_OPEN"
+        ),
+        "scope": (
+            "CURRENT_COHOMOGENEITY_ONE_RETAINED_u_w_v_LOG_LAPSE_SHIFT_"
+            "ACTION_SECTOR_WITH_f=chi_AND_DERIVED_MATERIAL_PROFILE"
+        ),
+        "derivative_variables": [
+            "u_chi", "w_chi", "v_chi", "logN_chi", "beta_chi",
+        ],
+        "positive_background_factors": {
+            "K": "3*N*A^3*B^3/C",
+            "J": "C*A^3*B^3/(2*N)",
+        },
+        "principal_quadratic_form": (
+            "K*(2*logN_chi*u_chi+5*u_chi^2-v_chi^2)+"
+            "J*(-6*beta*(7*beta*u_chi^2+2*beta*u_chi*w_chi-"
+            "beta*v_chi^2+2*beta_chi*u_chi))"
+        ),
+        "principal_hessian": [
+            ["10K-84J*beta^2", "-12J*beta^2", "0", "2K", "-12J*beta"],
+            ["-12J*beta^2", "0", "0", "0", "0"],
+            ["0", "0", "12J*beta^2-2K", "0", "0"],
+            ["2K", "0", "0", "0", "0"],
+            ["-12J*beta", "0", "0", "0", "0"],
+        ],
+        "algebraic_rank": {
+            "generic_rank": 3,
+            "generic_nullity": 2,
+            "beta_zero_rank": 3,
+            "compatible_with_existing_two_diffeomorphism_gauge_directions": True,
+            "boundary_compatible_gauge_identification_proved": False,
+        },
+        "physical_v_mode_coefficient": {
+            "frame": "RAW_COORDINATE_TIME_VELOCITIES_HELD_FIXED",
+            "raw": "12J*beta^2-2K",
+            "reduced": "-2K*(1-C^2*beta^2/N^2)",
+            "nonzero_on_regular_subluminal_domain": "N^2>C^2*beta^2",
+            "characteristic_degeneracy": "N^2=C^2*beta^2",
+            "used_as_a_new_admissibility_gate": False,
+        },
+        "canonical_normal_frame_reduction": {
+            "held_fixed": (
+                "NORMAL_LEGENDRE_CAUCHY_DATA_H_C_H_A_H_B_OR_EQUIVALENT_"
+                "CANONICAL_MOMENTA"
+            ),
+            "ADM_kinetic_spatial_symbol_contribution": 0,
+            "physical_derivative_variables": [
+                "u_chi", "v_chi", "logN_chi",
+            ],
+            "physical_principal_hessian": [
+                ["10K", "0", "2K"],
+                ["0", "-2K", "0"],
+                ["2K", "0", "0"],
+            ],
+            "determinant": "8K^3",
+            "interior_nondegenerate_when": "K=3*N*A^3*B^3/C>0",
+            "independent_of_shift": True,
+        },
+        "derived_conclusion": (
+            "THE_RAW_COORDINATE_TIME_FORM_HAS_THREE_NONNULL_DIRECTIONS_AND_"
+            "TWO_GAUGE_COMPATIBLE_NULL_DIRECTIONS;_AFTER_THE_ACTION_OWNED_"
+            "NORMAL_LEGENDRE_REDUCTION_THE_THREE_BY_THREE_PHYSICAL_INTERIOR_"
+            "BLOCK_HAS_DETERMINANT_8K^3_AND_IS_SHIFT_INDEPENDENT"
+        ),
+        "not_yet_proved": [
+            "THE_NULLSPACE_EQUALS_THE_GLOBAL_BOUNDARY_COMPATIBLE_GAUGE_ORBIT",
+            "THE_REGULAR_POLE_ATTACHMENT_AND_MATERIAL_TRANSMISSION_CONDITIONS_COMPLEMENT_THE_SYMBOL",
+            "A_GLOBAL_GAUGE_REDUCED_INF_SUP_LOWER_BOUND",
+            "THE_FULL_UNTRUNCATED_f_sigma_lambda_sigma_SYSTEM_SYMBOL",
+        ],
+        "algebra_validation": validation,
+        "algebra_validation_passed": all(validation.values()),
+        "new_physics_or_acceptance_gate": False,
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
+def cross_resolution_principal_symbol_frame_audit(
+    path: str | Path = (
+        "artifacts/BHSM_AETHER_CROSS_RESOLUTION_RECONNAISSANCE_V21_35.json"
+    ),
+    *,
+    samples: int = 20001,
+) -> dict[str, Any]:
+    """Measure raw-shift crossings and the canonical interior symbol at N3-N5."""
+
+    if samples < 1001:
+        raise ValueError("dense principal-symbol sampling required")
+    target = Path(path)
+    payload = json.loads(target.read_text(encoding="utf-8"))
+    result = payload["cross_resolution_reconnaissance"]
+    n3_payload = json.loads((target.parent / (
+        "BHSM_aether_n3_complete_child_persistence_v17_99.json"
+    )).read_text(encoding="utf-8"))
+    n3_state = n3_payload["complete_child_persistence"]["evolution"][
+        "rows"
+    ][0]
+    states = {
+        3: n3_state,
+        4: result["N4_event_conditioned_complete_child_reconstruction"][
+            "child_state"
+        ],
+        5: result["N5_event_conditioned_complete_child_reconstruction"][
+            "child_state"
+        ],
+    }
+    chi = np.linspace(0.0, math.pi / 4.0, samples)
+    rows = []
+    for order, source in states.items():
+        exact = source.get("binary64_hex")
+        if exact is None:
+            q = np.asarray(source["coordinates"], dtype=float)
+            m = np.asarray(source["multipliers"], dtype=float)
+        else:
+            q = np.asarray([
+                float.fromhex(item) for item in exact["coordinates"]
+            ])
+            m = np.asarray([
+                float.fromhex(item) for item in exact["multipliers"]
+            ])
+        ks = np.arange(1, order + 1, dtype=float)
+        js = np.arange(order, dtype=float)
+        cos_k = np.cos(4.0 * np.outer(ks, chi))
+        cos_j = np.cos(4.0 * np.outer(js, chi))
+        u = q[1:1 + order] @ cos_k
+        window = np.sin(2.0 * chi) ** 2
+        w = window * (q[1 + order:1 + 2 * order] @ cos_j)
+        v = window * (q[1 + 2 * order:1 + 3 * order] @ cos_j)
+        radius = RADIUS0 * math.exp(float(q[0]))
+        C = radius * np.exp(u + w)
+        A = radius * np.exp(u + v) * np.cos(chi)
+        B = radius * np.exp(u - v) * np.sin(chi)
+        lapse = np.exp(m[:order] @ cos_k)
+        beta = np.sin(4.0 * chi) * (m[order:] @ cos_j)
+        ratio = (C * beta / lapse) ** 2
+        maximum_index = int(np.argmax(ratio))
+        signs = np.sign(ratio - 1.0)
+        crossing_count = int(np.count_nonzero(signs[1:] * signs[:-1] < 0.0))
+        K = 3.0 * lapse * A**3 * B**3 / C
+        open_cap_K = K[1:]
+        eta = source.get("eta_Legendre", {})
+        eta_minimum = eta.get(
+            "minimum", source.get("eta_Legendre_minimum", {}).get("minimum")
+        )
+        rows.append({
+            "N": order,
+            "maximum_raw_shift_ratio_C2_beta2_over_N2": float(
+                ratio[maximum_index]
+            ),
+            "minimum_raw_fixed_velocity_v_coefficient_factor": float(
+                np.min(1.0 - ratio)
+            ),
+            "chi_at_maximum_raw_shift_ratio": float(chi[maximum_index]),
+            "raw_coordinate_characteristic_crossing_count": crossing_count,
+            "canonical_K_positive_on_sampled_open_cap": bool(
+                np.all(open_cap_K > 0.0)
+            ),
+            "minimum_sampled_open_cap_K": float(np.min(open_cap_K)),
+            "eta_minimum": float(eta_minimum),
+        })
+    validation = {
+        "orders_N3_N4_N5_measured": [row["N"] for row in rows] == [3, 4, 5],
+        "raw_coordinate_crossings_exposed": all(
+            row["raw_coordinate_characteristic_crossing_count"] > 0
+            for row in rows
+        ),
+        "canonical_K_positive_on_sampled_open_caps": all(
+            row["canonical_K_positive_on_sampled_open_cap"] for row in rows
+        ),
+        "eta_domain_retained": all(row["eta_minimum"] > 0.0 for row in rows),
+    }
+    return {
+        "classification": (
+            "RAW_FIXED_COORDINATE_VELOCITY_CHARACTERISTIC_CROSSINGS_"
+            "MEASURED;_CANONICAL_NORMAL_FRAME_INTERIOR_SYMBOL_"
+            "NONDEGENERATE;_WEIGHTED_POLE_ATTACHMENT_ESTIMATE_OPEN"
+        ),
+        "rows": rows,
+        "raw_crossing_is_a_physical_defect": False,
+        "raw_crossing_is_a_new_acceptance_gate": False,
+        "reason": (
+            "A_LARGE_SHIFT_CAN_MAKE_THE_COORDINATE_TIME_VECTOR_SPACELIKE_"
+            "WITHOUT_DESTROYING_THE_ADM_LORENTZIAN_NORMAL;_THE_ACTION_OWNED_"
+            "CANONICAL_NORMAL_FRAME_REMOVES_THIS_COORDINATE_MIXING"
+        ),
+        "canonical_interior_determinant": "8K^3_WITH_K=3*N*A^3*B^3/C",
+        "remaining_endpoint_object": (
+            "WEIGHTED_REGULAR_POLE_ATTACHMENT_AND_MATERIAL_TRANSMISSION_"
+            "NORMAL_SUBMERSION_INF_SUP_ESTIMATE"
+        ),
+        "validation": validation,
+        "validation_passed": all(validation.values()),
+        "FULL_BHSM_COMPLETE": False,
+    }
+
+
 def event_to_child_on_shell_calderon_interface() -> dict[str, Any]:
     """Reconcile the validated local child roots with the required full BVP."""
 
     missing = (
-        "GAUGE_FIXED_CONTINUUM_CHILD_JACOBI_BVP_COMPLEMENTING_BOUNDARY_"
-        "AND_INF_SUP_ESTIMATE"
+        "REGULAR_POLE_ATTACHMENT_AND_MATERIAL_TRANSMISSION_COMPLEMENTING_"
+        "BOUNDARY_WITH_GLOBAL_GAUGE_REDUCED_INF_SUP_ESTIMATE"
     )
+    principal_symbol = child_jacobi_radial_principal_symbol_audit()
     return {
         "classification": (
             "VARIATIONAL_EVENT_TO_ON_SHELL_CHILD_CALDERON_INTERFACE_DERIVED;_"
@@ -5629,8 +5893,9 @@ def event_to_child_on_shell_calderon_interface() -> dict[str, Any]:
                 "DIFFEOMORPHISM_WITH_THE_EXISTING_ETA_CLOCK_INVARIANTS"
             ),
             "domain": (
-                "TWO_POLE_FRIEDRICHS_DOMAIN_WITH_MATERIAL_TRANSMISSION_AND_"
-                "THE_EXISTING_EVENT_BOUNDARY_MODE"
+                "THE_VALIDATED_CAP_0_LE_chi_LE_pi/4_WITH_ONE_REGULAR_POLE_"
+                "AND_THE_EXISTING_ATTACHMENT_BOUNDARY_MODE;_A_FULL_TWO_POLE_"
+                "CHILD_REQUIRES_THE_DERIVED_GLUE_TRANSMISSION"
             ),
             "complementing_condition": (
                 "THE_GAUGE_FIXED_JACOBI_PRINCIPAL_BOUNDARY_SYMBOL_HAS_NO_"
@@ -5641,6 +5906,7 @@ def event_to_child_on_shell_calderon_interface() -> dict[str, Any]:
             ),
             "eta_margin": "inf(L_eta)>=eta_0>0",
         },
+        "retained_radial_principal_symbol_audit": principal_symbol,
         "first_missing_mathematical_object": missing,
         "required_next": missing,
         "new_action_terms_equations_constraints_or_gates": False,
@@ -5652,7 +5918,10 @@ def general_n_galerkin_transfer_certificate() -> dict[str, Any]:
     """Derive the continuum-to-Galerkin certificate required by general N."""
 
     calderon = event_to_child_on_shell_calderon_interface()
-    missing = calderon["required_next"]
+    missing = (
+        "ACTION_OWNED_CONTINUUM_NORMAL_SUBMERSION_INF_SUP_AND_SPECTRAL_"
+        "CONSISTENCY_BOUND_FOR_THE_LOCAL_EVENT_CHILD_RELATION"
+    )
     return {
         "classification": (
             "ACTION_OWNED_GALERKIN_TRANSFER_THEOREM_DERIVED;_CONTINUUM_"
@@ -5760,7 +6029,7 @@ def general_n_galerkin_transfer_certificate() -> dict[str, Any]:
         },
         "proof_obligations": [
             "DEFINE_THE_CONTINUUM_EVENT_CONDITIONED_ON_SHELL_CALDERON_MAP",
-            "PROVE_THE_GAUGE_REDUCED_COMPLEMENTING_BOUNDARY_FREDHOLM_PROPERTY",
+            "PROVE_THE_GAUGE_REDUCED_CONSTRAINT_BOUNDARY_MAP_IS_A_BANACH_SUBMERSION",
             "LOWER_BOUND_THE_CONTINUUM_NORMAL_INF_SUP_CONSTANT_beta_0",
             "BOUND_SPECTRAL_TRUNCATION_AND_GAUSS_QUADRATURE_ALIASING_ERRORS",
             "PROVE_ORDERED_EVENT_BRANCH_CONVERGENCE_AND_A_UNIFORM_ETA_MARGIN",
@@ -6581,10 +6850,13 @@ def promote_existing_general_n_statement(path: str | Path) -> Path:
         raise RuntimeError("independent N3/N4/N5 persistent children required")
 
     statement = general_n_complete_child_reconstruction_statement()
+    frame_audit = cross_resolution_principal_symbol_frame_audit(target)
+    statement["cross_resolution_principal_symbol_frame_audit"] = frame_audit
     required_next = statement["required_next"]
     result["general_N_complete_child_reconstruction_and_convergence_statement"] = (
         statement
     )
+    result["cross_resolution_principal_symbol_frame_audit"] = frame_audit
     child = dict(n5)
     child["required_next"] = required_next
     result["N5_event_conditioned_complete_child_reconstruction"] = child
@@ -6667,6 +6939,9 @@ def promote_existing_general_n_statement(path: str | Path) -> Path:
             ] is False
         ),
         "breadth_first_closure_network_validated": closure_network[
+            "validation_passed"
+        ],
+        "cross_resolution_principal_symbol_frame_audit_validated": frame_audit[
             "validation_passed"
         ],
     })
@@ -6757,6 +7032,8 @@ __all__ = [
     "n5_child_flux_step_audit",
     "n5_event_conditioned_complete_child_reconstruction",
     "n5_complete_child_positive_duration_persistence",
+    "child_jacobi_radial_principal_symbol_audit",
+    "cross_resolution_principal_symbol_frame_audit",
     "event_to_child_on_shell_calderon_interface",
     "general_n_galerkin_transfer_certificate",
     "general_n_complete_child_reconstruction_statement",

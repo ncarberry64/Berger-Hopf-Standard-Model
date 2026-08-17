@@ -173,6 +173,20 @@ def test_latest_n4_child_checkpoint_uses_fixed_merit_full_space_proposal():
     ] is True
     assert persistence["nonzero_relative_evolution_retained"] is True
     assert persistence["finite_duration_numerical_movie_converged"] is True
+    frame = payload["cross_resolution_reconnaissance"][
+        "cross_resolution_principal_symbol_frame_audit"
+    ]
+    assert frame["validation_passed"] is True
+    assert all(
+        row["maximum_raw_shift_ratio_C2_beta2_over_N2"] > 1.0
+        for row in frame["rows"]
+    )
+    assert all(
+        row["canonical_K_positive_on_sampled_open_cap"]
+        for row in frame["rows"]
+    )
+    assert frame["raw_crossing_is_a_physical_defect"] is False
+    assert frame["raw_crossing_is_a_new_acceptance_gate"] is False
 
 
 def test_general_n_reconstruction_statement_preserves_the_physical_map():
@@ -208,6 +222,14 @@ def test_general_n_reconstruction_statement_preserves_the_physical_map():
     assert calderon["differentiated_BVP"][
         "N5_proposal_Jacobian_reopened"
     ] is False
+    symbol = calderon["retained_radial_principal_symbol_audit"]
+    assert symbol["algebraic_rank"]["generic_rank"] == 3
+    assert symbol["algebraic_rank"]["generic_nullity"] == 2
+    assert symbol["physical_v_mode_coefficient"]["reduced"] == (
+        "-2K*(1-C^2*beta^2/N^2)"
+    )
+    assert symbol["algebra_validation_passed"] is True
+    assert symbol["new_physics_or_acceptance_gate"] is False
     assert calderon["new_action_terms_equations_constraints_or_gates"] is False
     assert transfer["current_evidence"][
         "finite_rank_implies_a_uniform_inf_sup_bound"
