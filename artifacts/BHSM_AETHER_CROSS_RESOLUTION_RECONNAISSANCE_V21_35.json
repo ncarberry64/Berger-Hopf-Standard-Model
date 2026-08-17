@@ -137,16 +137,23 @@
           "GENERAL_N_RETURN_INTERFACE",
           "PERSISTENCE"
         ],
-        "object": "GAUGE_FIXED_CONTINUUM_CHILD_JACOBI_BVP_COMPLEMENTING_BOUNDARY_AND_INF_SUP_ESTIMATE",
+        "object": "ACTION_OWNED_CONTINUUM_NORMAL_SUBMERSION_INF_SUP_AND_SPECTRAL_CONSISTENCY_BOUND_FOR_THE_LOCAL_EVENT_CHILD_RELATION",
         "priority": 1
       },
       {
         "feeds": [
           "RETURN_INTERFACE",
+          "SCALE_INTERFACE"
+        ],
+        "object": "REGULAR_POLE_ATTACHMENT_MATERIAL_TRANSMISSION_BVP_AND_ACTION_DERIVED_ENVIRONMENT_TO_RECONSTRUCTION_RETURN_MAP",
+        "priority": 2
+      },
+      {
+        "feeds": [
           "MASS_INTERFACE"
         ],
-        "object": "ACTION_DERIVED_ENVIRONMENT_TO_RECONSTRUCTION_MAP_AND_COMPOSITE_MINUS_PARENT_NOETHER_HAMILTONIAN",
-        "priority": 2
+        "object": "COMPOSITE_MINUS_PARENT_NOETHER_HAMILTONIAN",
+        "priority": 3
       },
       {
         "feeds": [
@@ -154,7 +161,7 @@
           "MIXING_INTERFACE"
         ],
         "object": "RETURNED_FAMILY_OPERATORS_AND_ACTION_DERIVED_COMMON_DOMAIN_TRANSPORT",
-        "priority": 3
+        "priority": 4
       }
     ],
     "scientific_classification": "THREE_CONDITIONAL_INTERFACES_FROZEN;_NO_DOWNSTREAM_NUMERICAL_PREDICTION_PROMOTED;_N3_N4_N5_COMPLETE_PERSISTENT_CHILDREN_VALIDATED;_GENERAL_N_UNIFORM_CONVERGENCE_BOUND_ACTIVE",
@@ -2912,7 +2919,7 @@
         "inner_relative_flux_step": 0.1,
         "outer_step": 0.001
       },
-      "required_next": "GAUGE_FIXED_CONTINUUM_CHILD_JACOBI_BVP_COMPLEMENTING_BOUNDARY_AND_INF_SUP_ESTIMATE",
+      "required_next": "ACTION_OWNED_CONTINUUM_NORMAL_SUBMERSION_INF_SUP_AND_SPECTRAL_CONSISTENCY_BOUND_FOR_THE_LOCAL_EVENT_CHILD_RELATION",
       "selected_broken_germ_amplitude": 0.1,
       "solver": {
         "accepted_derivative_free_poll_steps": 1,
@@ -3653,12 +3660,60 @@
       "source_event": "INDEPENDENT_N5_ZERO_MULTIPLIER_ETA_ADMISSIBLE_44_POINT_EVENT",
       "whole_child_variable_count": 42
     },
-    "active_dependency": "GAUGE_FIXED_CONTINUUM_CHILD_JACOBI_BVP_COMPLEMENTING_BOUNDARY_AND_INF_SUP_ESTIMATE",
+    "active_dependency": "ACTION_OWNED_CONTINUUM_NORMAL_SUBMERSION_INF_SUP_AND_SPECTRAL_CONSISTENCY_BOUND_FOR_THE_LOCAL_EVENT_CHILD_RELATION",
     "cross_resolution_measurements": {
       "N4_vs_N5_common_N2_fiber_relative_difference": 0.746579156611337,
       "N4_vs_N5_rate_comparison_is_physical": false,
       "N4_vs_N5_terminal_scale_u_w_v_rate_relative_difference": 0.462652744942222,
       "all_constraint_fibers_full_row_rank": true
+    },
+    "cross_resolution_principal_symbol_frame_audit": {
+      "FULL_BHSM_COMPLETE": false,
+      "canonical_interior_determinant": "8K^3_WITH_K=3*N*A^3*B^3/C",
+      "classification": "RAW_FIXED_COORDINATE_VELOCITY_CHARACTERISTIC_CROSSINGS_MEASURED;_CANONICAL_NORMAL_FRAME_INTERIOR_SYMBOL_NONDEGENERATE;_WEIGHTED_POLE_ATTACHMENT_ESTIMATE_OPEN",
+      "raw_crossing_is_a_new_acceptance_gate": false,
+      "raw_crossing_is_a_physical_defect": false,
+      "reason": "A_LARGE_SHIFT_CAN_MAKE_THE_COORDINATE_TIME_VECTOR_SPACELIKE_WITHOUT_DESTROYING_THE_ADM_LORENTZIAN_NORMAL;_THE_ACTION_OWNED_CANONICAL_NORMAL_FRAME_REMOVES_THIS_COORDINATE_MIXING",
+      "remaining_endpoint_object": "WEIGHTED_REGULAR_POLE_ATTACHMENT_AND_MATERIAL_TRANSMISSION_NORMAL_SUBMERSION_INF_SUP_ESTIMATE",
+      "rows": [
+        {
+          "N": 3,
+          "canonical_K_positive_on_sampled_open_cap": true,
+          "chi_at_maximum_raw_shift_ratio": 0.333362250454047,
+          "eta_minimum": 0.999967471135859,
+          "maximum_raw_shift_ratio_C2_beta2_over_N2": 7.200621424753483,
+          "minimum_raw_fixed_velocity_v_coefficient_factor": -6.200621424753483,
+          "minimum_sampled_open_cap_K": 4.1193e-11,
+          "raw_coordinate_characteristic_crossing_count": 4
+        },
+        {
+          "N": 4,
+          "canonical_K_positive_on_sampled_open_cap": true,
+          "chi_at_maximum_raw_shift_ratio": 0.39701877159741,
+          "eta_minimum": 1.005251432581881,
+          "maximum_raw_shift_ratio_C2_beta2_over_N2": 7.113064606269309,
+          "minimum_raw_fixed_velocity_v_coefficient_factor": -6.113064606269309,
+          "minimum_sampled_open_cap_K": 1.6227e-11,
+          "raw_coordinate_characteristic_crossing_count": 2
+        },
+        {
+          "N": 5,
+          "canonical_K_positive_on_sampled_open_cap": true,
+          "chi_at_maximum_raw_shift_ratio": 0.595606697212455,
+          "eta_minimum": 1.006162307589007,
+          "maximum_raw_shift_ratio_C2_beta2_over_N2": 6.256860723575919,
+          "minimum_raw_fixed_velocity_v_coefficient_factor": -5.256860723575919,
+          "minimum_sampled_open_cap_K": 1.0155e-11,
+          "raw_coordinate_characteristic_crossing_count": 2
+        }
+      ],
+      "validation": {
+        "canonical_K_positive_on_sampled_open_caps": true,
+        "eta_domain_retained": true,
+        "orders_N3_N4_N5_measured": true,
+        "raw_coordinate_crossings_exposed": true
+      },
+      "validation_passed": true
     },
     "general_N_complete_child_reconstruction_and_convergence_statement": {
       "FULL_BHSM_COMPLETE": false,
@@ -3675,6 +3730,54 @@
         "solution_manifold_kernel_is_not_a_defect": true,
         "spectral_prolongation": "I_N_TO_N_PLUS_1_APPLIED_TO_BOTH_THE_ORDERED_EVENT_e_N_AND_COMPLETE_CHILD_Y_N"
       },
+      "cross_resolution_principal_symbol_frame_audit": {
+        "FULL_BHSM_COMPLETE": false,
+        "canonical_interior_determinant": "8K^3_WITH_K=3*N*A^3*B^3/C",
+        "classification": "RAW_FIXED_COORDINATE_VELOCITY_CHARACTERISTIC_CROSSINGS_MEASURED;_CANONICAL_NORMAL_FRAME_INTERIOR_SYMBOL_NONDEGENERATE;_WEIGHTED_POLE_ATTACHMENT_ESTIMATE_OPEN",
+        "raw_crossing_is_a_new_acceptance_gate": false,
+        "raw_crossing_is_a_physical_defect": false,
+        "reason": "A_LARGE_SHIFT_CAN_MAKE_THE_COORDINATE_TIME_VECTOR_SPACELIKE_WITHOUT_DESTROYING_THE_ADM_LORENTZIAN_NORMAL;_THE_ACTION_OWNED_CANONICAL_NORMAL_FRAME_REMOVES_THIS_COORDINATE_MIXING",
+        "remaining_endpoint_object": "WEIGHTED_REGULAR_POLE_ATTACHMENT_AND_MATERIAL_TRANSMISSION_NORMAL_SUBMERSION_INF_SUP_ESTIMATE",
+        "rows": [
+          {
+            "N": 3,
+            "canonical_K_positive_on_sampled_open_cap": true,
+            "chi_at_maximum_raw_shift_ratio": 0.333362250454047,
+            "eta_minimum": 0.999967471135859,
+            "maximum_raw_shift_ratio_C2_beta2_over_N2": 7.200621424753483,
+            "minimum_raw_fixed_velocity_v_coefficient_factor": -6.200621424753483,
+            "minimum_sampled_open_cap_K": 4.1193e-11,
+            "raw_coordinate_characteristic_crossing_count": 4
+          },
+          {
+            "N": 4,
+            "canonical_K_positive_on_sampled_open_cap": true,
+            "chi_at_maximum_raw_shift_ratio": 0.39701877159741,
+            "eta_minimum": 1.005251432581881,
+            "maximum_raw_shift_ratio_C2_beta2_over_N2": 7.113064606269309,
+            "minimum_raw_fixed_velocity_v_coefficient_factor": -6.113064606269309,
+            "minimum_sampled_open_cap_K": 1.6227e-11,
+            "raw_coordinate_characteristic_crossing_count": 2
+          },
+          {
+            "N": 5,
+            "canonical_K_positive_on_sampled_open_cap": true,
+            "chi_at_maximum_raw_shift_ratio": 0.595606697212455,
+            "eta_minimum": 1.006162307589007,
+            "maximum_raw_shift_ratio_C2_beta2_over_N2": 6.256860723575919,
+            "minimum_raw_fixed_velocity_v_coefficient_factor": -5.256860723575919,
+            "minimum_sampled_open_cap_K": 1.0155e-11,
+            "raw_coordinate_characteristic_crossing_count": 2
+          }
+        ],
+        "validation": {
+          "canonical_K_positive_on_sampled_open_caps": true,
+          "eta_domain_retained": true,
+          "orders_N3_N4_N5_measured": true,
+          "raw_coordinate_crossings_exposed": true
+        },
+        "validation_passed": true
+      },
       "domain": "INTEGER_SPECTRAL_ORDER_N_AT_LEAST_3",
       "exact_dimension_formulas": {
         "compatibility_fiber_dimension_at_full_row_rank": "6N-4",
@@ -3687,7 +3790,7 @@
         "order_independent_boundary_core_rows": 7,
         "whole_child_variable_count": "8N+2"
       },
-      "first_missing_mathematical_object": "GAUGE_FIXED_CONTINUUM_CHILD_JACOBI_BVP_COMPLEMENTING_BOUNDARY_AND_INF_SUP_ESTIMATE",
+      "first_missing_mathematical_object": "ACTION_OWNED_CONTINUUM_NORMAL_SUBMERSION_INF_SUP_AND_SPECTRAL_CONSISTENCY_BOUND_FOR_THE_LOCAL_EVENT_CHILD_RELATION",
       "galerkin_transfer_certificate": {
         "FULL_BHSM_COMPLETE": false,
         "classification": "ACTION_OWNED_GALERKIN_TRANSFER_THEOREM_DERIVED;_CONTINUUM_INF_SUP_AND_TAIL_CERTIFICATE_OPEN",
@@ -3730,7 +3833,7 @@
             "uses_only_the_retained_action_Hessian_after_the_BVP_is_defined": true,
             "variation_solve": "J_e*delta_Phi=-D_e(E_child,B_child)*delta_e"
           },
-          "first_missing_mathematical_object": "GAUGE_FIXED_CONTINUUM_CHILD_JACOBI_BVP_COMPLEMENTING_BOUNDARY_AND_INF_SUP_ESTIMATE",
+          "first_missing_mathematical_object": "REGULAR_POLE_ATTACHMENT_AND_MATERIAL_TRANSMISSION_COMPLEMENTING_BOUNDARY_WITH_GLOBAL_GAUGE_REDUCED_INF_SUP_ESTIMATE",
           "full_BVP_solution_and_return_map": {
             "calderon_output": "Lambda_child(e)=Gamma1(Phi_e)",
             "reconstructed_radius": "R_rec(e)=R_star*exp(q_scale(Trace_return(Phi_e)))",
@@ -3749,12 +3852,127 @@
           },
           "required_function_space_proof": {
             "complementing_condition": "THE_GAUGE_FIXED_JACOBI_PRINCIPAL_BOUNDARY_SYMBOL_HAS_NO_NONZERO_DECAYING_HOMOGENEOUS_SOLUTION",
-            "domain": "TWO_POLE_FRIEDRICHS_DOMAIN_WITH_MATERIAL_TRANSMISSION_AND_THE_EXISTING_EVENT_BOUNDARY_MODE",
+            "domain": "THE_VALIDATED_CAP_0_LE_chi_LE_pi/4_WITH_ONE_REGULAR_POLE_AND_THE_EXISTING_ATTACHMENT_BOUNDARY_MODE;_A_FULL_TWO_POLE_CHILD_REQUIRES_THE_DERIVED_GLUE_TRANSMISSION",
             "eta_margin": "inf(L_eta)>=eta_0>0",
             "gauge_reduction": "QUOTIENT_TIME_REPARAMETERIZATION_AND_RADIAL_DIFFEOMORPHISM_WITH_THE_EXISTING_ETA_CLOCK_INVARIANTS",
             "inf_sup": "THE_NORMAL_JACOBI_CALDERON_SCHUR_COMPLEMENT_HAS_beta_0>0"
           },
-          "required_next": "GAUGE_FIXED_CONTINUUM_CHILD_JACOBI_BVP_COMPLEMENTING_BOUNDARY_AND_INF_SUP_ESTIMATE",
+          "required_next": "REGULAR_POLE_ATTACHMENT_AND_MATERIAL_TRANSMISSION_COMPLEMENTING_BOUNDARY_WITH_GLOBAL_GAUGE_REDUCED_INF_SUP_ESTIMATE",
+          "retained_radial_principal_symbol_audit": {
+            "FULL_BHSM_COMPLETE": false,
+            "algebra_validation": {
+              "beta_zero_rank_three": true,
+              "canonical_physical_block_determinant_verified": true,
+              "generic_rank_three": true,
+              "representative_point_subluminal": true,
+              "two_generic_null_directions_verified": true,
+              "v_coefficient_reduction_verified": true
+            },
+            "algebra_validation_passed": true,
+            "algebraic_rank": {
+              "beta_zero_rank": 3,
+              "boundary_compatible_gauge_identification_proved": false,
+              "compatible_with_existing_two_diffeomorphism_gauge_directions": true,
+              "generic_nullity": 2,
+              "generic_rank": 3
+            },
+            "canonical_normal_frame_reduction": {
+              "ADM_kinetic_spatial_symbol_contribution": 0,
+              "determinant": "8K^3",
+              "held_fixed": "NORMAL_LEGENDRE_CAUCHY_DATA_H_C_H_A_H_B_OR_EQUIVALENT_CANONICAL_MOMENTA",
+              "independent_of_shift": true,
+              "interior_nondegenerate_when": "K=3*N*A^3*B^3/C>0",
+              "physical_derivative_variables": [
+                "u_chi",
+                "v_chi",
+                "logN_chi"
+              ],
+              "physical_principal_hessian": [
+                [
+                  "10K",
+                  "0",
+                  "2K"
+                ],
+                [
+                  "0",
+                  "-2K",
+                  "0"
+                ],
+                [
+                  "2K",
+                  "0",
+                  "0"
+                ]
+              ]
+            },
+            "classification": "RETAINED_ACTION_RADIAL_INTERIOR_PRINCIPAL_SYMBOL_DERIVED;_BOUNDARY_COMPLEMENTING_AND_GLOBAL_INF_SUP_OPEN",
+            "derivative_variables": [
+              "u_chi",
+              "w_chi",
+              "v_chi",
+              "logN_chi",
+              "beta_chi"
+            ],
+            "derived_conclusion": "THE_RAW_COORDINATE_TIME_FORM_HAS_THREE_NONNULL_DIRECTIONS_AND_TWO_GAUGE_COMPATIBLE_NULL_DIRECTIONS;_AFTER_THE_ACTION_OWNED_NORMAL_LEGENDRE_REDUCTION_THE_THREE_BY_THREE_PHYSICAL_INTERIOR_BLOCK_HAS_DETERMINANT_8K^3_AND_IS_SHIFT_INDEPENDENT",
+            "new_physics_or_acceptance_gate": false,
+            "not_yet_proved": [
+              "THE_NULLSPACE_EQUALS_THE_GLOBAL_BOUNDARY_COMPATIBLE_GAUGE_ORBIT",
+              "THE_REGULAR_POLE_ATTACHMENT_AND_MATERIAL_TRANSMISSION_CONDITIONS_COMPLEMENT_THE_SYMBOL",
+              "A_GLOBAL_GAUGE_REDUCED_INF_SUP_LOWER_BOUND",
+              "THE_FULL_UNTRUNCATED_f_sigma_lambda_sigma_SYSTEM_SYMBOL"
+            ],
+            "physical_v_mode_coefficient": {
+              "characteristic_degeneracy": "N^2=C^2*beta^2",
+              "frame": "RAW_COORDINATE_TIME_VELOCITIES_HELD_FIXED",
+              "nonzero_on_regular_subluminal_domain": "N^2>C^2*beta^2",
+              "raw": "12J*beta^2-2K",
+              "reduced": "-2K*(1-C^2*beta^2/N^2)",
+              "used_as_a_new_admissibility_gate": false
+            },
+            "positive_background_factors": {
+              "J": "C*A^3*B^3/(2*N)",
+              "K": "3*N*A^3*B^3/C"
+            },
+            "principal_hessian": [
+              [
+                "10K-84J*beta^2",
+                "-12J*beta^2",
+                "0",
+                "2K",
+                "-12J*beta"
+              ],
+              [
+                "-12J*beta^2",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "0",
+                "0",
+                "12J*beta^2-2K",
+                "0",
+                "0"
+              ],
+              [
+                "2K",
+                "0",
+                "0",
+                "0",
+                "0"
+              ],
+              [
+                "-12J*beta",
+                "0",
+                "0",
+                "0",
+                "0"
+              ]
+            ],
+            "principal_quadratic_form": "K*(2*logN_chi*u_chi+5*u_chi^2-v_chi^2)+J*(-6*beta*(7*beta*u_chi^2+2*beta*u_chi*w_chi-beta*v_chi^2+2*beta_chi*u_chi))",
+            "scope": "CURRENT_COHOMOGENEITY_ONE_RETAINED_u_w_v_LOG_LAPSE_SHIFT_ACTION_SECTOR_WITH_f=chi_AND_DERIVED_MATERIAL_PROFILE"
+          },
           "retained_total_functional": "Gamma_total=Gamma_pre[z]+Gamma_child[Phi]+Gamma_match[Gamma0_event(z),Gamma0_child(Phi);I_event,I_env,B_SM]",
           "validated_finite_N_local_map": {
             "N3_N4_N5_roots_and_positive_duration_persistence": true,
@@ -3764,7 +3982,7 @@
             "role": "CONSTRAINT_CONSISTENT_LOCAL_CAUCHY_GERM_INTERSECTION_WITH_THE_EVENT_BOUNDARY_RELATION"
           }
         },
-        "first_missing_mathematical_object": "GAUGE_FIXED_CONTINUUM_CHILD_JACOBI_BVP_COMPLEMENTING_BOUNDARY_AND_INF_SUP_ESTIMATE",
+        "first_missing_mathematical_object": "ACTION_OWNED_CONTINUUM_NORMAL_SUBMERSION_INF_SUP_AND_SPECTRAL_CONSISTENCY_BOUND_FOR_THE_LOCAL_EVENT_CHILD_RELATION",
         "galerkin_transfer_lemma": {
           "discrete_inf_sup": "beta_N>=beta_0-delta_N",
           "hypothesis": "delta_N<beta_0",
@@ -3782,13 +4000,13 @@
         },
         "proof_obligations": [
           "DEFINE_THE_CONTINUUM_EVENT_CONDITIONED_ON_SHELL_CALDERON_MAP",
-          "PROVE_THE_GAUGE_REDUCED_COMPLEMENTING_BOUNDARY_FREDHOLM_PROPERTY",
+          "PROVE_THE_GAUGE_REDUCED_CONSTRAINT_BOUNDARY_MAP_IS_A_BANACH_SUBMERSION",
           "LOWER_BOUND_THE_CONTINUUM_NORMAL_INF_SUP_CONSTANT_beta_0",
           "BOUND_SPECTRAL_TRUNCATION_AND_GAUSS_QUADRATURE_ALIASING_ERRORS",
           "PROVE_ORDERED_EVENT_BRANCH_CONVERGENCE_AND_A_UNIFORM_ETA_MARGIN",
           "TRANSFER_POSITIVE_DURATION_EULER_DIRAC_PERSISTENCE_UNIFORMLY"
         ],
-        "required_next": "GAUGE_FIXED_CONTINUUM_CHILD_JACOBI_BVP_COMPLEMENTING_BOUNDARY_AND_INF_SUP_ESTIMATE",
+        "required_next": "ACTION_OWNED_CONTINUUM_NORMAL_SUBMERSION_INF_SUP_AND_SPECTRAL_CONSISTENCY_BOUND_FOR_THE_LOCAL_EVENT_CHILD_RELATION",
         "set_valued_continuum_relation": {
           "arbitrary_root_coordinates_must_form_a_Cauchy_sequence": false,
           "correct_convergence_object": "LOCAL_GRAPH_OR_HAUSDORFF_CONVERGENCE_OF_R_N_TO_R",
@@ -3834,7 +4052,7 @@
         "uniform_eta_and_event_margin": true,
         "uniform_right_inverse_bound": true
       },
-      "required_next": "GAUGE_FIXED_CONTINUUM_CHILD_JACOBI_BVP_COMPLEMENTING_BOUNDARY_AND_INF_SUP_ESTIMATE",
+      "required_next": "ACTION_OWNED_CONTINUUM_NORMAL_SUBMERSION_INF_SUP_AND_SPECTRAL_CONSISTENCY_BOUND_FOR_THE_LOCAL_EVENT_CHILD_RELATION",
       "resolution_independent_limit_criterion": {
         "persistence_convergence_requires": [
           "UNIFORM_LOCAL_LIPSCHITZ_CONTROL_OF_THE_RETAINED_EULER_DIRAC_VECTOR_FIELDS",
@@ -4882,6 +5100,7 @@
     "all_constraint_fibers_full_row_rank": true,
     "all_independent_constraint_projections_closed": true,
     "breadth_first_closure_network_validated": true,
+    "cross_resolution_principal_symbol_frame_audit_validated": true,
     "general_N_dimension_law_validated_at_N3_N4_N5": true,
     "general_N_local_fiber_equivalence_adds_no_physics": true,
     "general_N_uniform_convergence_not_overpromoted": true,
